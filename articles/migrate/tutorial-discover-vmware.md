@@ -5,14 +5,14 @@ author: vineetvikram
 ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: tutorial
-ms.date: 03/17/2021
+ms.date: 03/25/2021
 ms.custom: mvc
-ms.openlocfilehash: 9f433815838cc4d8dd41f3b95fc1bd6fe0acc955
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: 2e9dafc111478f35263dc9db0cc07d913327c936
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/26/2021
-ms.locfileid: "105562729"
+ms.locfileid: "105612055"
 ---
 # <a name="tutorial-discover-servers-running-in-vmware-environment-with-azure-migrate-discovery-and-assessment"></a>Zelf studie: servers die worden uitgevoerd in de VMware-omgeving detecteren met Azure Migrate: detectie en evaluatie
 
@@ -34,11 +34,9 @@ In deze zelfstudie leert u het volgende:
 
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/pricing/free-trial/) aan voordat u begint.
 
-
 ## <a name="prerequisites"></a>Vereisten
 
 Controleer of deze vereisten aanwezig zijn voordat u met deze zelfstudie begint.
-
 
 **Vereiste** | **Details**
 --- | ---
@@ -97,7 +95,6 @@ Stel in de vSphere-webclient als volgt een account in:
 6. Als u ook de detectie van geïnstalleerde toepassingen en afhankelijkheids analyse zonder agent wilt uitvoeren, gaat u naar **rollen** > selecteert u de rol **alleen-lezen** en selecteert u in **bevoegdheden** **gast bewerkingen**. U kunt de bevoegdheden door geven aan alle objecten onder de vCenter Server door de selectie vakje ' door geven aan onderliggende items ' in te scha kelen.
 
     :::image type="content" source="./media/tutorial-discover-vmware/guest-operations.png" alt-text="Selectievakje om gastbewerkingen toe te staan voor de rol Alleen-lezen":::
-
 
 > [!NOTE]
 > U kunt de detectie beperken tot specifieke vCenter Server Data Centers, clusters, een map met clusters, hosts, een map van hosts of afzonderlijke servers door de vCenter Server-account te bereiknen. Meer [**informatie**](set-discovery-scope.md) over het bereik van de vCenter Server-gebruikers account.
@@ -197,11 +194,9 @@ Het gedownloade bestand importeren en een server maken in de VMware-omgeving
 8. Geef bij **netwerk toewijzing** het netwerk op waarmee de server verbinding maakt. Het netwerk heeft Internet connectiviteit nodig om meta gegevens naar Azure Migrate te verzenden.
 9. Controleer en bevestig de instellingen en klik op **Voltooien**.
 
-
 ### <a name="verify-appliance-access-to-azure"></a>Apparaattoegang tot Azure controleren
 
 Zorg ervoor dat de toestel server verbinding kan maken met Azure-Url's voor [open bare](migrate-appliance.md#public-cloud-urls) en [overheids](migrate-appliance.md#government-cloud-urls) Clouds.
-
 
 ### <a name="4-configure-the-appliance"></a>4. het apparaat configureren
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: f2baeaf72bb77dfe9247380b8b26f3860cbfd5b0
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: bdd68a4f0dafd3b336bf5a3fb34399d725c9ff5c
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "95999158"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105626075"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-iqualify-lms"></a>Zelfstudie: Integratie van Azure Active Directory met iQualify LMS
 
@@ -88,44 +88,41 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configurere
 
 1. Ga in [Azure Portal](https://portal.azure.com/) naar de pagina met de integratie van de toepassing **iQualify LMS** en selecteer **Eenmalige aanmelding**.
 
-    ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
+   ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
 2. In het dialoogvenster **Een methode voor eenmalige aanmelding selecteren** selecteert u de modus **SAML/WS-Federation** om eenmalige aanmelding in te schakelen.
 
-    ![De modus Eenmalige aanmelding selecteren](common/select-saml-option.png)
+   ![De modus Eenmalige aanmelding selecteren](common/select-saml-option.png)
 
 3. Op de pagina **Eenmalige aanmelding met SAML instellen** klikt u op het pictogram **Bewerken** om het dialoogvenster **Standaard SAML-configuratie** te openen.
 
-    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
+   ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
 4. In de sectie **Standaard SAML-configuratie** voert u de volgende stappen uit als u de toepassing in de door **IDP** geïnitieerde modus wilt configureren:
 
-    ![Schermopname die de Standaard SAML-configuratie toont, waar u de id en URL kunt invoeren en vervolgens Opslaan selecteert.](common/idp-intiated.png)
+   ![Schermopname die de Standaard SAML-configuratie toont, waar u de id en URL kunt invoeren en vervolgens Opslaan selecteert.](common/idp-intiated.png)
+   
+   1. In het tekstvak **Id** typt u een URL met het volgende patroon:
 
-    a. In het tekstvak **Id** typt u een URL met het volgende patroon:
-    | |
-    |--|--|
-    | Productieomgeving: `https://<yourorg>.iqualify.com/`|
-    | Testomgeving: `https://<yourorg>.iqualify.io`|
+      * Productieomgeving: `https://<yourorg>.iqualify.com/`
+      * Testomgeving: `https://<yourorg>.iqualify.io`
 
-    b. In het tekstvak **Antwoord-URL** typt u een URL met het volgende patroon:
-    | |
-    |--|--|
-    | Productieomgeving: `https://<yourorg>.iqualify.com/auth/saml2/callback` |
-    | Testomgeving: `https://<yourorg>.iqualify.io/auth/saml2/callback` |
+   2. In het tekstvak **Antwoord-URL** typt u een URL met het volgende patroon:
+
+      * Productieomgeving: `https://<yourorg>.iqualify.com/auth/saml2/callback` 
+      * Testomgeving: `https://<yourorg>.iqualify.io/auth/saml2/callback`
 
 5. Klik op **Extra URL's instellen** en voer de volgende stap uit als u de toepassing in de door **SP** geïnitieerde modus wilt configureren:
 
-    ![Schermopname die Extra URL's instellen toont, waar u een aanmeldings-URL kunt invoeren.](common/metadata-upload-additional-signon.png)
+   ![Schermopname die Extra URL's instellen toont, waar u een aanmeldings-URL kunt invoeren.](common/metadata-upload-additional-signon.png)
 
-    Typ in het tekstvak **Aanmeldings-URL** een URL met het volgende patroon:
-    | |
-    |--|--|
-    | Productieomgeving: `https://<yourorg>.iqualify.com/login` |
-    | Testomgeving: `https://<yourorg>.iqualify.io/login` |
+   Typ in het tekstvak **Aanmeldings-URL** een URL met het volgende patroon:
 
-    > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke-id, de antwoord-URL en de aanmeldings-URL. Neem contact op met het [ondersteuningsteam van iQualify LMS](https://www.iqualify.com/) om deze waarden op te vragen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+      * Productieomgeving: `https://<yourorg>.iqualify.com/login`
+      * Testomgeving: `https://<yourorg>.iqualify.io/login`
+
+   > [!NOTE]
+   > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke-id, de antwoord-URL en de aanmeldings-URL. Neem contact op met het [ondersteuningsteam van iQualify LMS](https://www.iqualify.com/) om deze waarden op te vragen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
 6. In de iQualify LMS-toepassing worden de SAML-asserties in een specifieke indeling verwacht. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van uw SAML-tokenkenmerken. In de volgende schermafbeelding wordt de lijst met standaardkenmerken weergegeven. Klik op het pictogram **Bewerken** om het dialoogvenster **Gebruikerskenmerken** te openen.
 

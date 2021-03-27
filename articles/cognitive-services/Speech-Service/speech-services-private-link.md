@@ -10,30 +10,33 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/04/2021
 ms.author: alexeyo
-ms.openlocfilehash: c9af0cda14261e8eab7f1ecc05c50a289d7ddfdb
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 6971c6f0959135c7de1f41bcd49adde514f87941
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99559661"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105625480"
 ---
 # <a name="use-speech-services-through-a-private-endpoint"></a>Spraak Services gebruiken via een persoonlijk eind punt
 
 Met de [persoonlijke Azure-koppeling](../../private-link/private-link-overview.md) kunt u verbinding maken met Services in azure met behulp van een [persoonlijk eind punt](../../private-link/private-endpoint-overview.md). Een persoonlijk eind punt is een privé-IP-adres dat alleen toegankelijk is binnen een specifiek [virtueel netwerk](../../virtual-network/virtual-networks-overview.md) en subnet.
 
 In dit artikel wordt uitgelegd hoe u persoonlijke koppelingen en privé-eind punten instelt en gebruikt met spraak Services in azure Cognitive Services.
+In dit artikel wordt beschreven hoe u privé-eind punten later kunt verwijderen, maar nog steeds de spraak resource kunt gebruiken.
 
 > [!NOTE]
 > Lees [hoe u virtuele netwerken gebruikt met Cognitive Services](../cognitive-services-virtual-networks.md)voordat u doorgaat.
 
-In dit artikel wordt ook beschreven [hoe u privé-eind punten later kunt verwijderen, maar nog steeds de spraak resource kunt gebruiken](#use-a-speech-resource-with-a-custom-domain-name-and-without-private-endpoints).
+
 
 ## <a name="create-a-custom-domain-name"></a>Een aangepaste domein naam maken
 
 Voor privé-eind punten is een [aangepaste subdomeinnaam vereist voor Cognitive Services](../cognitive-services-custom-subdomains.md). Gebruik de volgende instructies om een voor uw spraak bron te maken.
 
 > [!WARNING]
-> Een spraak bron waarvoor een aangepaste domein naam is ingeschakeld, maakt gebruik van een andere manier om te communiceren met spraak Services. Mogelijk moet u uw toepassings code aanpassen voor beide scenario's: [persoonlijk eind punt is ingeschakeld](#use-a-speech-resource-with-a-custom-domain-name-and-a-private-endpoint-enabled) en [ *er geen* persoonlijk eind punt is ingeschakeld](#use-a-speech-resource-with-a-custom-domain-name-and-without-private-endpoints).
+> Een spraak bron die gebruikmaakt van een aangepaste domein naam communiceert op een andere manier met spraak Services.
+> Mogelijk moet u uw toepassings code aanpassen om een spraak resource met een persoonlijk eind punt te gebruiken en ook een spraak resource _zonder persoonlijk eind_ punt gebruiken.
+> Beide scenario's zijn mogelijk nodig omdat de switch naar de aangepaste domein naam _niet_ omkeerbaar is.
 >
 > Wanneer u een aangepaste domein naam inschakelt, kan de bewerking [niet onomkeerbaar](../cognitive-services-custom-subdomains.md#can-i-change-a-custom-domain-name)zijn. De enige manier om terug te gaan naar de [regionale naam](../cognitive-services-custom-subdomains.md#is-there-a-list-of-regional-endpoints) is het maken van een nieuwe spraak resource.
 >
@@ -183,9 +186,9 @@ Als de naam al wordt gebruikt, ziet u het volgende antwoord:
   "type": null
 }
 ```
-## <a name="enable-a-custom-domain-name"></a>Een aangepaste domein naam inschakelen
+## <a name="turn-on-a-custom-domain-name"></a>Een aangepaste domein naam inschakelen
 
-Als u een aangepaste domein naam voor de geselecteerde spraak resource wilt inschakelen, gebruikt u de opdracht [AZ cognitiveservices account update](/cli/azure/cognitiveservices/account#az_cognitiveservices_account_update) .
+Als u een aangepaste domein naam met de geselecteerde spraak resource wilt gebruiken, gebruikt u de opdracht [AZ cognitiveservices account update](/cli/azure/cognitiveservices/account#az_cognitiveservices_account_update) .
 
 Selecteer het Azure-abonnement met de spraak resource. Als uw Azure-account slechts één actief abonnement heeft, kunt u deze stap overs Laan. Vervang `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` door de id van uw Azure-abonnement.
 ```azurecli-interactive
@@ -202,13 +205,14 @@ az cognitiveservices account update --name my-speech-resource-name --resource-gr
 
 ***
 
-## <a name="enable-private-endpoints"></a>Privé-eind punten inschakelen
+## <a name="turn-on-private-endpoints"></a>Privé-eind punten inschakelen
 
-Het is raadzaam om de [privé-DNS-zone](../../dns/private-dns-overview.md) die aan het virtuele netwerk is gekoppeld, te gebruiken met de vereiste updates voor de persoonlijke eind punten. Tijdens het inrichtings proces maakt u standaard een privé-DNS-zone. Als u uw eigen DNS-server gebruikt, moet u mogelijk ook uw DNS-configuratie wijzigen. 
+Het is raadzaam om de [privé-DNS-zone](../../dns/private-dns-overview.md) die aan het virtuele netwerk is gekoppeld, te gebruiken met de vereiste updates voor de persoonlijke eind punten. U kunt tijdens het inrichtings proces een privé-DNS-zone maken. Als u uw eigen DNS-server gebruikt, moet u mogelijk ook uw DNS-configuratie wijzigen.
 
 Beslis of u een DNS-strategie hebt *voordat* u persoonlijke eind punten inricht voor een spraak bron voor productie. En test uw DNS-wijzigingen, met name als u uw eigen DNS-server gebruikt.
 
-Gebruik een van de volgende artikelen om persoonlijke eind punten te maken. In deze artikelen wordt een web-app als voorbeeld bron gebruikt om persoonlijke eind punten in te scha kelen.
+Gebruik een van de volgende artikelen om persoonlijke eind punten te maken.
+In deze artikelen wordt een web-app als voorbeeld bron gebruikt om beschikbaar te maken via persoonlijke eind punten.
 
 - [Een persoonlijk eind punt maken met behulp van de Azure Portal](../../private-link/create-private-endpoint-portal.md)
 - [Een persoonlijk eind punt maken met behulp van Azure PowerShell](../../private-link/create-private-endpoint-powershell.md)
@@ -271,18 +275,20 @@ Als u van plan bent om toegang te krijgen tot de resource door alleen een persoo
 > [!NOTE]
 > Het omgezette IP-adres wijst naar een eind punt van een virtuele netwerk proxy, waarmee het netwerk verkeer wordt verzonden naar het persoonlijke eind punt voor de Cognitive Services bron. Het gedrag verschilt voor een resource met een aangepaste domein naam, maar *zonder* persoonlijke eind punten. Zie [deze sectie](#dns-configuration) voor meer informatie.
 
-## <a name="adjust-existing-applications-and-solutions"></a>Bestaande toepassingen en oplossingen aanpassen
+## <a name="adjust-an-application-to-use-a-speech-resource-with-a-private-endpoint"></a>Een toepassing aanpassen voor gebruik van een spraak resource met een persoonlijk eind punt
 
-Een spraak bron waarvoor een aangepast domein is ingeschakeld, maakt gebruik van een andere manier om te communiceren met spraak Services. Dit geldt voor een op een domein ingeschakelde spraak resource met en zonder persoonlijke eind punten. De informatie in deze sectie is van toepassing op beide scenario's.
+Een spraak bron met een aangepast domein communiceert op een andere manier met spraak Services. Dit geldt voor een op een domein ingeschakelde spraak resource met en zonder persoonlijke eind punten. De informatie in deze sectie is van toepassing op beide scenario's.
 
-### <a name="use-a-speech-resource-with-a-custom-domain-name-and-a-private-endpoint-enabled"></a>Een spraak bron gebruiken waarvoor een aangepaste domein naam en een persoonlijk eind punt zijn ingeschakeld
+Volg de instructies in deze sectie om bestaande toepassingen en oplossingen aan te passen voor het gebruik van een spraak resource met een aangepaste domein naam en een persoonlijk eind punt ingeschakeld.
 
-Een spraak bron met een aangepaste domein naam en een persoonlijk eind punt is ingeschakeld, maakt gebruik van een andere manier om te communiceren met spraak Services. In deze sectie wordt uitgelegd hoe u een dergelijke resource gebruikt met de speech Services REST-Api's en de [Speech-SDK](speech-sdk.md).
+Een spraak bron met een aangepaste domein naam en een persoonlijk eind punt dat is ingeschakeld, maakt gebruik van een andere manier om te communiceren met spraak Services. In deze sectie wordt uitgelegd hoe u een dergelijke resource gebruikt met de speech Services REST-Api's en de [Speech-SDK](speech-sdk.md).
 
 > [!NOTE]
-> Een spraak bron zonder persoonlijke eind punten maar waarbij een aangepaste domein naam is ingeschakeld, heeft ook een speciale manier om te communiceren met spraak Services. Deze manier wijkt af van het scenario van een spraak resource met persoonlijke eind punten. Zie de sectie [een spraak resource met een aangepaste domein naam en zonder persoonlijke eind punten gebruiken](#use-a-speech-resource-with-a-custom-domain-name-and-without-private-endpoints)als u een dergelijke resource hebt (bijvoorbeeld als u een resource met persoonlijke eind punten hebt die u vervolgens hebt gekozen).
+> Een spraak bron zonder persoonlijke eind punten die gebruikmaakt van een aangepaste domein naam, heeft ook een speciale manier om te communiceren met spraak Services.
+> Deze manier wijkt af van het scenario van een spraak bron die gebruikmaakt van een persoonlijk eind punt. Dit is belang rijk om te overwegen, omdat u er mogelijk voor kiest om later persoonlijke eind punten te verwijderen.
+> Zie een _toepassing aanpassen voor het gebruik van een spraak resource zonder persoonlijke eind punten_ verderop in dit artikel.
 
-#### <a name="speech-resource-with-a-custom-domain-name-and-a-private-endpoint-usage-with-the-rest-apis"></a>Spraak bron met een aangepaste domein naam en een persoonlijk eind punt: gebruik met de REST Api's
+### <a name="speech-resource-with-a-custom-domain-name-and-a-private-endpoint-usage-with-the-rest-apis"></a>Spraak bron met een aangepaste domein naam en een persoonlijk eind punt: gebruik met de REST Api's
 
 We gebruiken `my-private-link-speech.cognitiveservices.azure.com` als een voor beeld van een DNS-naam voor een spraak bron (aangepast domein) voor deze sectie.
 
@@ -300,7 +306,7 @@ Spraak-naar-tekst-REST API v 3.0 maakt gebruik van een andere set eind punten. h
 
 In de volgende subsecties worden beide gevallen beschreven.
 
-##### <a name="speech-to-text-rest-api-v30"></a>Spraak-naar-tekst REST API v 3.0
+#### <a name="speech-to-text-rest-api-v30"></a>Spraak-naar-tekst REST API v 3.0
 
 Spraak bronnen gebruiken meestal [Cognitive Services regionale eind punten](../cognitive-services-custom-subdomains.md#is-there-a-list-of-regional-endpoints) voor communicatie met de [spraak-naar-tekst rest API v 3.0](rest-speech-to-text.md#speech-to-text-rest-api-v30). Deze resources hebben de volgende naamgevings indeling: <p/>`{region}.api.cognitive.microsoft.com`.
 
@@ -313,9 +319,9 @@ https://westeurope.api.cognitive.microsoft.com/speechtotext/v3.0/transcriptions
 > [!NOTE]
 > Zie [dit artikel](sovereign-clouds.md) voor Azure Government en Azure China-eind punten.
 
-Nadat u een aangepast domein hebt ingeschakeld voor een spraak bron (die nodig is voor persoonlijke eind punten), gebruikt die resource het volgende DNS-naam patroon voor het basis REST API-eind punt: <p/>`{your custom name}.cognitiveservices.azure.com`.
+Nadat u een aangepast domein voor een spraak bron (die nodig is voor persoonlijke eind punten) hebt ingeschakeld, gebruikt die resource het volgende DNS-naam patroon voor het basis REST API-eind punt: <p/>`{your custom name}.cognitiveservices.azure.com`
 
-Dat betekent dat in het volgende voor beeld de naam van het REST API-eind punt is: <p/>`my-private-link-speech.cognitiveservices.azure.com`.
+Dat betekent dat in het volgende voor beeld de naam van het REST API-eind punt is: <p/>`my-private-link-speech.cognitiveservices.azure.com`
 
 En de URL van de voorbeeld aanvraag moet worden geconverteerd naar:
 ```http
@@ -330,7 +336,7 @@ Nadat u een aangepaste domein naam voor een spraak resource hebt ingeschakeld, v
 >
 > Een aangepast domein voor een spraak resource bevat *geen* informatie over de regio waarin de resource is geïmplementeerd. De eerder beschreven toepassings logica werkt dus *niet* en moet worden gewijzigd.
 
-##### <a name="speech-to-text-rest-api-for-short-audio-and-text-to-speech-rest-api"></a>Spraak-naar-tekst REST API voor korte audio en tekst naar spraak REST API
+#### <a name="speech-to-text-rest-api-for-short-audio-and-text-to-speech-rest-api"></a>Spraak-naar-tekst REST API voor korte audio en tekst naar spraak REST API
 
 De [spraak-naar-tekst rest API voor korte audio](rest-speech-to-text.md#speech-to-text-rest-api-for-short-audio) en de [tekst-naar-spraak-rest API](rest-text-to-speech.md) twee typen eind punten gebruiken:
 - [Cognitive Services regionale eind punten](../cognitive-services-custom-subdomains.md#is-there-a-list-of-regional-endpoints) voor de communicatie met de Cognitive Services rest API voor het verkrijgen van een autorisatie token
@@ -366,13 +372,13 @@ https://my-private-link-speech.cognitiveservices.azure.com/tts/cognitiveservices
 ```
 Zie een gedetailleerde uitleg in de Subsectie URL van het [Construct-eind punt](#construct-endpoint-url) voor de spraak-SDK.
 
-#### <a name="speech-resource-with-a-custom-domain-name-and-a-private-endpoint-usage-with-the-speech-sdk"></a>Spraak bron met een aangepaste domein naam en een persoonlijk eind punt: gebruik met de spraak-SDK
+### <a name="speech-resource-with-a-custom-domain-name-and-a-private-endpoint-usage-with-the-speech-sdk"></a>Spraak bron met een aangepaste domein naam en een persoonlijk eind punt: gebruik met de spraak-SDK
 
 Voor het gebruik van de Speech SDK met een aangepaste domein naam en spraak bronnen met persoonlijke eind punten moet u uw toepassings code controleren en waarschijnlijk wijzigen.
 
 We gebruiken `my-private-link-speech.cognitiveservices.azure.com` als een voor beeld van een DNS-naam voor een spraak bron (aangepast domein) voor deze sectie.
 
-##### <a name="construct-endpoint-url"></a>Eind punt-URL maken
+#### <a name="construct-endpoint-url"></a>Eind punt-URL maken
 
 Doorgaans in SDK-scenario's (en in de spraak-naar-tekst REST API voor korte audio-en tekst-naar-spraak-REST API scenario's), gebruiken spraak bronnen de toegewezen regionale eind punten voor verschillende service aanbiedingen. De indeling van de DNS-naam voor deze eind punten is:
 
@@ -423,7 +429,7 @@ Let op de details:
 https://westeurope.voice.speech.microsoft.com/cognitiveservices/v1?deploymentId=974481cc-b769-4b29-af70-2fb557b897c4
 ```
 
-De volgende equivalente URL maakt gebruik van een persoonlijk eind punt dat is ingeschakeld, waarbij de aangepaste domein naam van de spraak bron `my-private-link-speech.cognitiveservices.azure.com` :
+De volgende equivalente URL maakt gebruik van een persoonlijk eind punt, waarbij de aangepaste domein naam van de spraak bron `my-private-link-speech.cognitiveservices.azure.com` :
 
 ```http
 https://my-private-link-speech.cognitiveservices.azure.com/voice/cognitiveservices/v1?deploymentId=974481cc-b769-4b29-af70-2fb557b897c4
@@ -431,13 +437,13 @@ https://my-private-link-speech.cognitiveservices.azure.com/voice/cognitiveservic
 
 Hetzelfde principe in voor beeld 1 wordt toegepast, maar het sleutel element is deze tijd `voice` .
 
-##### <a name="modifying-applications"></a>Toepassingen wijzigen
+#### <a name="modifying-applications"></a>Toepassingen wijzigen
 
 Volg deze stappen om uw code te wijzigen:
 
 1. De URL van het eind punt van de toepassing bepalen:
 
-   - [Schakel logboek registratie in voor uw toepassing](how-to-use-logging.md) en voer deze uit om activiteiten te registreren.
+   - [Schakel logboek registratie in voor uw toepassing](how-to-use-logging.md) en voer deze uit om de activiteit te registreren.
    - Zoek in het logboek bestand naar `SPEECH-ConnectionUrl` . In overeenkomende regels bevat de `value` para meter de volledige URL die uw toepassing gebruikt om spraak services te bereiken.
 
    Voorbeeld:
@@ -494,13 +500,13 @@ Volg deze stappen om uw code te wijzigen:
 
 Na deze wijziging moet uw toepassing samen werken met de spraak bronnen met het persoonlijke eind punt ingeschakeld. We werken aan een naadloze ondersteuning van scenario's voor persoonlijke eind punten.
 
-### <a name="use-a-speech-resource-with-a-custom-domain-name-and-without-private-endpoints"></a>Een spraak bron gebruiken met een aangepaste domein naam en zonder persoonlijke eind punten
+## <a name="adjust-an-application-to-use-a-speech-resource-without-private-endpoints"></a>Een toepassing aanpassen voor het gebruik van een spraak resource zonder persoonlijke eind punten
 
 In dit artikel hebben we verschillende keren geduurd dat het inschakelen van een aangepast domein voor een spraak resource *onomkeerbaar* is. Een dergelijke resource gebruikt een andere manier om te communiceren met spraak Services, vergeleken met de bronnen die gebruikmaken van [regionale eindpunt namen](../cognitive-services-custom-subdomains.md#is-there-a-list-of-regional-endpoints).
 
-In deze sectie wordt uitgelegd hoe u een spraak bron gebruikt met een ingeschakelde aangepaste domein naam, maar *zonder* persoonlijke eind punten met de speech Services rest-Api's en [spraak-SDK](speech-sdk.md). Dit kan een resource zijn die eenmaal is gebruikt in een scenario met een persoonlijk eind punt, maar vervolgens de persoonlijke eind punten had verwijderd.
+In deze sectie wordt uitgelegd hoe u een spraak bron gebruikt met een aangepaste domein naam, maar *zonder* persoonlijke eind punten met de speech Services rest-Api's en [spraak-SDK](speech-sdk.md). Dit kan een resource zijn die eenmaal is gebruikt in een scenario met een persoonlijk eind punt, maar vervolgens de persoonlijke eind punten had verwijderd.
 
-#### <a name="dns-configuration"></a>DNS-configuratie
+### <a name="dns-configuration"></a>DNS-configuratie
 
 Onthoud hoe een aangepast domein-DNS-naam van de spraak bron met persoonlijke eind punten wordt [omgezet vanuit open bare netwerken](#resolve-dns-from-other-networks). In dit geval wijst het IP-adres dat wordt omgezet naar een proxy-eind punt voor een virtueel netwerk. Dit eind punt wordt gebruikt voor het verzenden van het netwerk verkeer naar de Cognitive Services resource met het persoonlijke eind punt ingeschakeld.
 
@@ -524,13 +530,13 @@ Aliases:  my-private-link-speech.cognitiveservices.azure.com
 ```
 Vergelijk het met de uitvoer van [deze sectie](#resolve-dns-from-other-networks).
 
-#### <a name="speech-resource-with-a-custom-domain-name-and-without-private-endpoints-usage-with-the-rest-apis"></a>Spraak bron met een aangepaste domein naam en zonder persoonlijke eind punten: gebruik met de REST-Api's
+### <a name="speech-resource-with-a-custom-domain-name-and-without-private-endpoints-usage-with-the-rest-apis"></a>Spraak bron met een aangepaste domein naam en zonder persoonlijke eind punten: gebruik met de REST-Api's
 
-##### <a name="speech-to-text-rest-api-v30"></a>Spraak-naar-tekst REST API v 3.0
+#### <a name="speech-to-text-rest-api-v30"></a>Spraak-naar-tekst REST API v 3.0
 
 Het gebruik van spraak-naar-tekst REST API v 3.0 is volledig gelijk aan het geval van [spraak bronnen met persoonlijke eind punten](#speech-to-text-rest-api-v30).
 
-##### <a name="speech-to-text-rest-api-for-short-audio-and-text-to-speech-rest-api"></a>Spraak-naar-tekst REST API voor korte audio en tekst naar spraak REST API
+#### <a name="speech-to-text-rest-api-for-short-audio-and-text-to-speech-rest-api"></a>Spraak-naar-tekst REST API voor korte audio en tekst naar spraak REST API
 
 In dit geval is het gebruik van de spraak-naar-tekst REST API voor korte audio en het gebruik van de tekst-naar-spraak-REST API geen verschillen van het algemene geval, met één uitzonde ring. (Zie de volgende opmerking.) U moet beide Api's gebruiken zoals beschreven in de [rest API voor spraak naar tekst voor korte audio](rest-speech-to-text.md#speech-to-text-rest-api-for-short-audio) en [tekst naar spraak rest API](rest-text-to-speech.md) documentatie.
 
@@ -539,7 +545,7 @@ In dit geval is het gebruik van de spraak-naar-tekst REST API voor korte audio e
 >
 > Het gebruik van een autorisatie token en het door geven aan het speciale eind punt via de `Authorization` header werkt *alleen* als u de optie **alle netwerken** hebt ingeschakeld in de sectie **netwerken** van uw spraak bron. In andere gevallen krijgt u een `Forbidden` `BadRequest` fout melding wanneer u probeert een autorisatie token te verkrijgen.
 
-#### <a name="speech-resource-with-a-custom-domain-name-and-without-private-endpoints-usage-with-the-speech-sdk"></a>Spraak bron met een aangepaste domein naam en zonder persoonlijke eind punten: gebruik met de spraak-SDK
+### <a name="speech-resource-with-a-custom-domain-name-and-without-private-endpoints-usage-with-the-speech-sdk"></a>Spraak bron met een aangepaste domein naam en zonder persoonlijke eind punten: gebruik met de spraak-SDK
 
 Het gebruik van de Speech SDK met aangepaste, door het domein ingeschakelde spraak bronnen *zonder* persoonlijke eind punten is gelijk aan het algemene geval zoals beschreven in de [Speech SDK-documentatie](speech-sdk.md).
 
@@ -559,7 +565,7 @@ var config = SpeechConfig.FromSubscription(subscriptionKey, azureRegion);
 
 Zie [prijzen van Azure Private Link](https://azure.microsoft.com/pricing/details/private-link) voor meer informatie over prijzen.
 
-## <a name="learn-more"></a>Meer informatie
+## <a name="learn-more"></a>Lees meer
 
 * [Azure Private Link](../../private-link/private-link-overview.md)
 * [Speech-SDK](speech-sdk.md)

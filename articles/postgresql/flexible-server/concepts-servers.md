@@ -6,12 +6,12 @@ ms.author: sunila
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: e3b04563b0da3255c63208b73c9ecdbd62ff0cf7
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.openlocfilehash: 60edbcf97b43747246e84517cc65bb0dca4ff546
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105609290"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105626840"
 ---
 # <a name="servers---azure-database-for-postgresql---flexible-server"></a>Servers-Azure Database for PostgreSQL-flexibele server
 
@@ -42,8 +42,8 @@ Binnen een Azure Database for PostgreSQL-server kunt u een of meer data bases ma
 
 De volgende elementen zorgen voor veilige toegang tot uw Data Base:
 
-|||
-|:--|:--|
+| Beveiligings concept | Description |
+| :-- | :-- |
 | **Verificatie en autorisatie** | Azure Database for PostgreSQL-Server ondersteunt native PostgreSQL-verificatie. U kunt verbinding maken met en verifiëren met de server met de beheerders aanmelding van de server. |
 | **Protocol** | De service ondersteunt een op berichten gebaseerd protocol dat door PostgreSQL wordt gebruikt. |
 | **TCP/IP** | Het protocol wordt ondersteund via TCP/IP en via Unix-domein sockets. |

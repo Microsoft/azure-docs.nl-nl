@@ -9,12 +9,12 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 09/17/2020
-ms.openlocfilehash: 7c89527218e34bea0819a1e2446441216cde45ae
-ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
+ms.openlocfilehash: 3eb5ea468a234aea228539c2390ab6cae9352948
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105105932"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105630155"
 ---
 **Rekendoelen kunnen opnieuw worden gebruikt voor trainingstaken.** Als u een externe VM koppelt aan uw werkruimte, kunt u die bijvoorbeeld voor meerdere taken gebruiken. Voor machine learning-pijplijn gebruikt u de juiste [pijplijnstap](/python/api/azureml-pipeline-steps/azureml.pipeline.steps) voor elk rekendoel.
 
@@ -32,4 +32,4 @@ U kunt voor de meeste taken een van de volgende resources gebruiken voor een rek
 |[Azure Batch](../articles/machine-learning/how-to-attach-compute-targets.md#azbatch) | &nbsp; | Ja | &nbsp; |
 
 > [!TIP]
-> Het Compute-exemplaar heeft 120 GB besturingssysteem schijf. Als er onvoldoende schijf ruimte beschikbaar is, wist u voldoende ruimte voordat u de reken instantie stopt of opnieuw opstart.
+> Het Compute-exemplaar heeft 120 GB besturingssysteem schijf. Als er onvoldoende schijf ruimte beschikbaar is, [gebruikt u de Terminal](../articles/machine-learning/how-to-access-terminal.md) om ten minste 1-2 GB te wissen voordat u het reken exemplaar [stopt of opnieuw opstart](../articles/machine-learning/how-to-create-manage-compute-instance.md#manage) .

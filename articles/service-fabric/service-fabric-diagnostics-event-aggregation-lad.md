@@ -1,16 +1,14 @@
 ---
 title: Verzamelen van gebeurtenissen met Linux-Azure Diagnostics
 description: Meer informatie over het samen voegen en verzamelen van gebeurtenissen met LAD voor bewaking en diagnose van Azure Service Fabric-clusters.
-author: srrengar
 ms.topic: conceptual
 ms.date: 2/25/2019
-ms.author: srrengar
-ms.openlocfilehash: 453258bb5768a2faa8f4e42cce86d02125283026
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: bd5efc6b661bf25ce7946cda0bcfa01be4c351a7
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96002167"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105628931"
 ---
 # <a name="event-aggregation-and-collection-using-linux-azure-diagnostics"></a>Gebeurtenis aggregatie en verzameling met Linux Azure Diagnostics
 > [!div class="op_single_selector"]

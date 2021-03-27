@@ -4,12 +4,12 @@ description: Hierin wordt een overzicht gegeven van de ondersteunings instelling
 ms.topic: conceptual
 ms.date: 01/07/2021
 ms.custom: references_regions
-ms.openlocfilehash: 38c35824118979c900dacd9c103ae8f9ec11ad65
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: 88ec26837cc8f69c1e84c77ea6b57ce16e462e0a
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105107275"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105612854"
 ---
 # <a name="azure-disk-backup-support-matrix"></a>Azure Disck Backup-ondersteuningsmatrix
 
@@ -51,7 +51,7 @@ Er worden meer regio's aangekondigd wanneer deze beschikbaar komen.
 
 - Op dit moment is de Azure Portal-ervaring voor het configureren van de back-up van schijven beperkt tot Maxi maal 20 schijven van hetzelfde abonnement.
 
-- Het gebruik van Power shell en Azure CLI voor het configureren van back-ups en het terugzetten van schijven wordt momenteel niet ondersteund (tijdens de preview-versie).
+- Azure Disk Backup ondersteunt Power shell. Momenteel wordt Azure CLI niet ondersteund.
 
 - Bij het configureren van de back-up moet de schijf die u hebt geselecteerd om een back-up te maken en de resource groep met moment opnamen waarvan de moment opnamen moeten worden opgeslagen, deel uitmaken van hetzelfde abonnement. U kunt geen incrementele moment opname maken voor een bepaalde schijf buiten het abonnement van de schijf. Meer informatie over [incrementele moment opnamen](../virtual-machines/disks-incremental-snapshots.md#restrictions) voor beheerde schijven. Zie  [back-up configureren](backup-managed-disks.md#configure-backup)voor meer informatie over het kiezen van een resource groep voor moment opnamen.
 
@@ -61,7 +61,7 @@ Er worden meer regio's aangekondigd wanneer deze beschikbaar komen.
 
 - Met de ondersteuning voor [persoonlijke koppelingen](../virtual-machines/disks-enable-private-links-for-import-export-portal.md) voor Managed disks kunt u het exporteren en importeren van beheerde schijven beperken zodat deze alleen plaatsvindt in uw virtuele Azure-netwerk. Azure Disk Backup ondersteunt back-ups van schijven waarop privé-eind punten zijn ingeschakeld. Dit omvat niet de back-upgegevens of moment opnamen die toegankelijk moeten zijn via het persoonlijke eind punt.
 
-- Tijdens de preview-versie kunt u de back-up niet uitschakelen, waardoor de optie **back-up stoppen en back-upgegevens behouden** niet wordt ondersteund. U kunt een back-upexemplaar verwijderen, waardoor de back-up niet alleen wordt gestopt, maar ook alle back-upgegevens worden verwijderd.
+- U kunt een back-upexemplaar verwijderen, waardoor de back-up wordt gestopt. ook worden alle back-upgegevens verwijderd. Op dit moment kunt u een back-up niet uitschakelen, omdat de optie **back-up stoppen en back-upgegevens behouden** niet wordt ondersteund.
 
 ## <a name="next-steps"></a>Volgende stappen
 

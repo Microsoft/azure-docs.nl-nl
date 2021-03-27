@@ -10,12 +10,12 @@ ms.date: 03/10/2021
 ms.topic: overview
 ms.custom: references_regions
 ms.service: azure-communication-services
-ms.openlocfilehash: 6ec0b32e487739c33b1b2b49bd0645130fc88581
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 7b295c6dabfce6a624d93d75991163f464cfd46e
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104729529"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105625225"
 ---
 # <a name="phone-number-types-in-azure-communication-services"></a>Typen telefoonnummers in Azure Communication Services
 
@@ -31,7 +31,7 @@ Met Azure Communication Services kunt u telefoonnummers gebruiken om gesprekken 
 
 ## <a name="azure-subscriptions-eligibility"></a>Geschiktheid Azure-abonnementen
 
-Als u een telefoonnummer wilt verkrijgen, moet u een betaald Azure-abonnement hebben. Telefoonnummers kunnen niet worden verkregen voor proefaccounts of via gratis Azure-tegoeden. 
+Als u een telefoonnummer wilt verkrijgen, moet u een betaald Azure-abonnement hebben. Telefoonnummers kunnen niet worden verkregen voor proefaccounts of via gratis Azure-tegoeden.
 
 De beschik baarheid van telefoon nummers is momenteel beperkt tot Azure-abonnementen die een factuur adres hebben in de Verenigde Staten-en communicatie services-resources die een Amerikaanse gegevens locatie hebben.
 
@@ -59,13 +59,13 @@ In de volgende tabel vindt u een overzicht van deze typen telefoonnummers:
 | Gratis         | \+ 1 (gratis *netnummer*) XXX XX XX | VS                      | Oproepen (uitgaand), sms (inkomend/uitgaand)| Het toewijzen van telefoonnummers aan IVR-systemen (Interactive Voice Response)/bots, sms-toepassingen                                        |
 
 
-### <a name="phone-number-features-in-azure-communication-services"></a>Functies voor telefoonnummers in Azure Communication Services
+### <a name="phone-number-capabilities-in-azure-communication-services"></a>Mogelijkheden voor telefoon nummers in azure Communication Services
 
 [!INCLUDE [Emergency Calling Notice](../../includes/emergency-calling-notice-include.md)]
 
-Voor de meeste telefoonnummers kunt u een reeks functies 'à la carte' configureren. Deze functies kunnen worden geselecteerd wanneer u uw telefoonnummers least in Azure Communication Services.
+Voor de meeste telefoon nummers kunt u een set met mogelijkheden van een "a la carte" configureren. Deze mogelijkheden kunnen worden geselecteerd wanneer u uw telefoon nummers in azure Communication Services huurt.
 
-Welke functies voor u beschikbaar zijn, is afhankelijk van het land waarin u werkt, uw gebruik en het type telefoonnummer dat u hebt geselecteerd. Deze functies verschillen per land als gevolg van wettelijke vereisten. Azure Communication Services biedt de volgende functies voor telefoonnummers:
+De mogelijkheden die voor u beschikbaar zijn, zijn afhankelijk van het land dat u gebruikt, uw use-case en het type telefoon nummer dat u hebt geselecteerd. Deze mogelijkheden verschillen per land als gevolg van wettelijke vereisten. Azure Communication Services biedt de volgende mogelijkheden voor telefoon nummer:
 
 - **Uitgaande sms in één richting** Met deze optie kunt u sms-berichten verzenden naar uw gebruikers. Dat kan handig zijn voor meldingen en tweeledige verificatie.
 - **Inkomende en uitgaande sms in twee richtingen** Met deze optie kunt u berichten van uw gebruikers verzenden en ontvangen met behulp van telefoonnummers. Dat kan handig zijn voor klantenservicescenario's.

@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 03/23/2021
 ms.author: apedward
-ms.openlocfilehash: af359734ff5bfe90dedbb7f8389aecdc6e056654
-ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
+ms.openlocfilehash: 701f999427d743c18f5dbcadb00cf303f97a8f53
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105543552"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105627286"
 ---
 # <a name="tutorial-publish-azure-static-web-apps-with-azure-devops"></a>Zelf studie: Azure static-Web Apps publiceren met Azure DevOps
 
@@ -36,35 +36,13 @@ In deze zelfstudie leert u het volgende:
 
 1. Navigeer naar uw Azure DevOps-opslag plaats.
 
-1. Gebruik een bestaande opslag plaats of _Importeer een opslag plaats_ zoals hieronder wordt weer gegeven.
+1. Selecteer **importeren** om te beginnen met het importeren van een voorbeeld toepassing.
   
     :::image type="content" source="media/publish-devops/devops-repo.png" alt-text="DevOps opslag plaats":::
 
-1. Maak een nieuw bestand voor uw front-end-web-app.
+1. Voer in **kloon-URL** in `https://github.com/staticwebdev/vanilla-api.git` .
 
-1. Kopieer en plak de volgende HTML-opmaak in het nieuwe bestand:
-
-    ```html
-    <!DOCTYPE html>
-    <html lang="en">
-  
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="styles.css">
-      <title>Hello World!</title>
-    </head>
-  
-    <body>
-      <main>
-        <h1>Hello World!</h1>
-      </main>
-    </body>
-  
-    </html>
-    ```
-
-1. Sla het bestand op.
+1. Selecteer **Importeren**.
 
 ## <a name="create-a-static-web-app"></a>Statische web-app maken
 
@@ -85,7 +63,9 @@ In deze zelfstudie leert u het volgende:
 
     :::image type="content" source="media/publish-devops/create-resource.png" alt-text="Implementatie Details-Overig":::
 
-1. Wanneer de implementatie is voltooid, selecteert u **implementatie token beheren**.
+1. Zodra de implementatie is voltooid, gaat u naar de nieuwe statische Web Apps resource.
+
+1. Selecteer **implementatie token beheren**.
 
 1. Kopieer het **implementatie token** en plak het in een tekst editor voor gebruik in een ander scherm.
 
@@ -96,16 +76,17 @@ In deze zelfstudie leert u het volgende:
 
 ## <a name="create-the-pipeline-task-in-azure-devops"></a>De pijplijn taak maken in azure DevOps
 
-1. Ga naar het Azure DevOps-project dat u eerder hebt gemaakt.
+1. Ga naar de Azure DevOps-opslag plaats die u eerder hebt gemaakt.
 
-2. Maak een nieuwe **Build-pijp lijn** en selecteer **Build instellen**.
+1. Selecteer **Build instellen**.
 
     :::image type="content" source="media/publish-devops/azdo-build.png" alt-text="Build-pipeline":::
 
-3. Kopieer en plak de volgende YAML in de pijp lijn.
+1. Selecteer in het scherm *uw pijp lijn configureren* de optie **Start pijp lijn**.
 
-    > [!NOTE]
-    > De waarden die zijn ingevoerd voor _app_location_,_api_location_ en _output_location_ moeten worden gewijzigd voor uw app.  
+    :::image type="content" source="media/publish-devops/configure-pipeline.png" alt-text="Pijp lijn configureren":::
+
+1. Kopieer en plak de volgende YAML in de pijp lijn.
 
     ```yaml
     trigger:
@@ -117,40 +98,47 @@ In deze zelfstudie leert u het volgende:
     steps:
       - task: AzureStaticWebApp@0
         inputs:
-          app_location: frontend 
-          api_location: api
-          output_location: build
+          app_location: "/" 
+          api_location: "api"
+          output_location: ""
         env:
           azure_static_web_apps_api_token: $(deployment_token)
     ```
 
-    Configureer de invoer van de statische Azure-web-app op basis van de mapstructuur van uw toepassing.
+    > [!NOTE]
+    > Als u de voor beeld-app niet gebruikt, worden de waarden voor en `app_location` `api_location` `output_location` gewijzigd zodat deze overeenkomen met de waarden in uw toepassing.
 
     [!INCLUDE [static-web-apps-folder-structure](../../includes/static-web-apps-folder-structure.md)]
 
     De `azure_static_web_apps_api_token` waarde is zelf beheerd en is hand matig geconfigureerd.
 
-4. Selecteer **variabelen**.
+1. Selecteer **variabelen**.
 
-5. Maak een nieuwe variabele.
+1. Maak een nieuwe variabele.
 
-6. Geef een naam op voor de variabele **deployment_token** (die overeenkomt met de naam in de werk stroom).
+1. Geef een naam op voor de variabele **deployment_token** (die overeenkomt met de naam in de werk stroom).
 
-7. Kopieer het implementatie token dat u eerder hebt geplakt in een tekst editor.
+1. Kopieer het implementatie token dat u eerder hebt geplakt in een tekst editor.
 
-8. Plak het implementatie token in het vak _waarde_ .
+1. Plak het implementatie token in het vak _waarde_ .
 
     :::image type="content" source="media/publish-devops/variable-token.png" alt-text="Variabele token":::
 
-9. Selecteer **OK**.
+1. Selecteer **geheim van deze waarde blijven**.
 
-10. Selecteer **opslaan en voer** de pijp lijn uit.
+1. Selecteer **OK**.
+
+1. Selecteer **Opslaan** om terug te keren naar de pijplijn YAML.
+
+1. Selecteer **opslaan en uitvoeren** om het dialoog venster _opslaan en uitvoeren_ te openen.
 
     :::image type="content" source="media/publish-devops/save-and-run.png" alt-text="Pijplijn":::
 
-11. Zodra de implementatie is voltooid, gaat u naar het **overzicht** van statische web apps van Azure met koppelingen naar de implementatie configuratie.
+1. Selecteer **opslaan en uitvoeren** om de pijp lijn uit te voeren.
 
-12. Selecteer de **URL** om de zojuist geïmplementeerde website weer te geven. U ziet dat de _bron_ koppeling nu verwijst naar de vertakking en locatie van de Azure DevOps-opslag plaats.
+1. Zodra de implementatie is voltooid, gaat u naar het **overzicht** van statische web apps van Azure met koppelingen naar de implementatie configuratie. U ziet dat de _bron_ koppeling nu verwijst naar de vertakking en locatie van de Azure DevOps-opslag plaats.
+
+1. Selecteer de **URL** om de zojuist geïmplementeerde website weer te geven.
 
     :::image type="content" source="media/publish-devops/deployment-location.png" alt-text="Implementatie locatie":::
 

@@ -12,12 +12,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova
 ms.date: 12/14/2018
-ms.openlocfilehash: 9b2333e38415a2c0ad50ce36c213ead711c70ab4
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 15aead5c9f93205baac28e8b93a88015c9689e3a
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96928797"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105625310"
 ---
 # <a name="quickstart-restore-a-database-to-azure-sql-managed-instance-with-ssms"></a>Quickstart: Een database terugzetten in Azure SQL Managed Instance met SQL Server Management Studio
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -42,7 +42,7 @@ Voor deze snelstartgids geldt het volgende:
   - [Vanuit on-premises een punt-naar-site-verbinding configureren naar SQL Managed Instance](point-to-site-p2s-configure.md).
 
 > [!NOTE]
-> Zie [Back-up van SQL Server naar URL](/sql/relational-databases/backup-restore/sql-server-backup-to-url?view=sql-server-2017) voor meer informatie over het maken van een back-up van een SQL Server-database met behulp van Azure Blob Storage en een [SAS-sleutel (Shared Access Signature)](../../storage/common/storage-sas-overview.md) en het herstellen van de back-up.
+> Zie [Back-up van SQL Server naar URL](/sql/relational-databases/backup-restore/sql-server-backup-to-url) voor meer informatie over het maken van een back-up van een SQL Server-database met behulp van Azure Blob Storage en een [SAS-sleutel (Shared Access Signature)](../../storage/common/storage-sas-overview.md) en het herstellen van de back-up.
 
 ## <a name="restore-from-a-backup-file"></a>Herstellen vanuit een back-upbestand
 

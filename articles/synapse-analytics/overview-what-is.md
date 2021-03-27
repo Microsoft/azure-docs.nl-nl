@@ -9,17 +9,18 @@ ms.subservice: overview
 ms.date: 03/24/2021
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: a7dcd630b0d5987c796ebb5a02657af9130221e6
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 78b31cb32e3df9b0d8e198d8c2122e492e609283
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105045617"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105625807"
 ---
 # <a name="what-is-azure-synapse-analytics"></a>Wat is Azure Synapse Analytics?
 
 **Azure Synapse** is een Enter prise Analytics-service die tijd voor inzicht in data warehouses en Big data systemen versnelt. Azure Synapse combineert het beste van de **SQL**-technologieën die in zakelijke datawarehousing worden gebruikt, **Spark**-technologieën die voor big data worden gebruikt en **Pijplijnen** voor gegevensintegratie en ETL/ELT, en diepe integratie met andere Azure-services, zoals **Power BI**, **CosmosDB** en **AzureML**.
 
+![Diagram van Azure Synapse Analytics-architectuur.](./media/overview-what-is/synapse-architecture.png)
 
 ## <a name="industry-leading-sql"></a>Toonaangevende SQL
 
@@ -66,7 +67,7 @@ Azure Synapse biedt ondernemingen één manier om analyse-resources te beheren, 
 
 **Synapse Studio** is de gebruikers ervaring die alles samen met gegevens technici verbindt. Hiermee kunnen ze elke taak uitvoeren die ze nodig hebben om een volledige analyse oplossing te bouwen.
 
-* Belang rijke gegevens engingeer taken op één locatie: opnemen, verkennen, voorbereiden, indelen, visualiseren
+* Belangrijkste gegevens engineer op één locatie: opnemen, verkennen, voorbereiden, organiseren, visualiseren
 * Toonaangevende productiviteit voor het schrijven van SQL-of Spark-code: ontwerpen, fout opsporing en optimalisatie van prestaties
 * Integreren met Enter prise CI/CD-proces
 

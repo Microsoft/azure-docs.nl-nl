@@ -3,42 +3,41 @@ title: De preview-versie van Windows virtueel bureau blad controleren gebruiken-
 description: Azure Monitor gebruiken voor virtueel bureau blad van Windows.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 12/01/2020
+ms.date: 03/25/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: e9da1071686dafa003a5a49d0864b77644493344
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 1c87763cb2ca482fc8ee15588d7287f0d9275fff
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100594459"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105627163"
 ---
 # <a name="use-azure-monitor-for-windows-virtual-desktop-to-monitor-your-deployment-preview"></a>Gebruik Azure Monitor voor virtuele Windows-Bureau bladen om uw implementatie te bewaken (preview-versie)
 
 >[!IMPORTANT]
 >Azure Monitor voor het virtuele bureau blad van Windows is momenteel beschikbaar als open bare preview. Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-Azure Monitor voor virtueel bureau blad van Windows (preview) is een dash board dat is gebaseerd op Azure Monitor werkmappen waarmee IT-professionals hun virtuele Windows-desktop omgevingen kunnen begrijpen. In dit onderwerp vindt u instructies voor het instellen van Azure Monitor voor virtuele Windows-Bureau bladen voor het bewaken van uw virtuele Windows-bureaublad omgevingen.
+Azure Monitor voor virtueel bureau blad van Windows (preview) is een dash board dat is gebaseerd op Azure Monitor werkmappen waarmee IT-professionals hun virtuele Windows-desktop omgevingen kunnen begrijpen. In dit artikel vindt u instructies voor het instellen van Azure Monitor voor virtuele Windows-Bureau bladen voor het bewaken van uw virtuele Windows-bureaublad omgevingen.
 
 ## <a name="requirements"></a>Vereisten
 
 Voordat u Azure Monitor voor Windows virtueel bureau blad gaat gebruiken, moet u de volgende dingen instellen:
 
 - Alle Windows virtueel-bureaublad omgevingen die u bewaakt, moeten zijn gebaseerd op de nieuwste versie van het virtuele Windows-bureau blad dat compatibel is met Azure Resource Manager.
-
-- Ten minste één geconfigureerde Log Analytics-werk ruimte.
-
+- Ten minste één geconfigureerde Log Analytics-werk ruimte. Gebruik een aangewezen Log Analytics-werk ruimte voor uw Windows Virtual Desktop-sessie hosts om ervoor te zorgen dat prestatie meter items en gebeurtenissen alleen worden verzameld van sessiehost in uw Windows-implementatie voor virtueel bureau blad.
 - Schakel gegevens verzameling in voor de volgende dingen in uw Log Analytics-werk ruimte:
-    - Vereiste prestatie meter items
-    - Prestatie meter items of gebeurtenissen die worden gebruikt in Azure Monitor voor virtueel bureau blad van Windows
-    - Gegevens uit het diagnostische hulp programma voor alle objecten in de omgeving die u wilt bewaken.
-    - Virtuele machines (Vm's) in de omgeving die u wilt bewaken.
+    - Diagnostische gegevens van uw Windows Virtual Desktop-omgeving
+    - Aanbevolen prestatie meter items van uw Windows Virtual Desktop-sessie hosts
+    - Aanbevolen Windows-gebeurtenis logboeken van uw Windows Virtual Desktop Session hosts
 
-Iedereen die de Azure Monitor voor het virtuele bureau blad van Windows voor uw omgeving bewaakt, heeft ook de volgende machtigingen voor lees toegang nodig:
+ De procedure voor het instellen van gegevens die in dit artikel wordt beschreven, is de enige die u nodig hebt voor het bewaken van het virtuele bureau blad van Windows. U kunt alle andere items die gegevens verzenden naar uw Log Analytics-werk ruimte uitschakelen om kosten te besparen.
 
-- Lees toegang tot de resource groep waar de resources van de omgeving zich bevinden.
+Iedereen die de controle Azure Monitor voor het virtuele bureau blad van Windows voor uw omgeving heeft, heeft ook de volgende machtigingen voor lees toegang nodig:
 
-- Lees toegang tot de resource groep (en) waar de sessie-hosts van de omgeving zich bevinden
+- Lees toegang tot de Azure-abonnementen die uw virtueel bureau blad-resources van Windows bevatten
+- Lees toegang tot de resource groepen van het abonnement die uw Windows Virtual Desktop-sessie hosts bevatten
+- Lees toegang tot de Log Analytics-werk ruimte of-werk ruimten
 
 >[!NOTE]
 > Met alleen-lezen toegang kunnen beheerders gegevens weer geven. Ze hebben verschillende machtigingen nodig om resources te beheren in de virtuele bureau blad-portal van Windows.
@@ -48,130 +47,138 @@ Iedereen die de Azure Monitor voor het virtuele bureau blad van Windows voor uw 
 U kunt Azure Monitor voor Windows virtueel bureau blad openen met een van de volgende methoden:
 
 - Ga naar [aka.MS/azmonwvdi](https://portal.azure.com/#blade/Microsoft_Azure_WVD/WvdManagerMenuBlade/workbooks).
-
 - Zoek en selecteer **Windows virtueel bureau blad** in het Azure Portal en selecteer vervolgens **inzichten**.
-
-- Zoek en selecteer **Azure monitor** in de Azure Portal. Selecteer **Insights-hub** onder **inzichten** en selecteer  onder andere **Windows virtueel bureau blad** om het dash board te openen op de pagina Azure monitor.
-
-Wanneer u Azure Monitor voor Windows virtueel bureau blad hebt geopend, selecteert u een of meer van de selectie vakjes met het naam **abonnement**, de **resource groep**, de **hostgroep** en het **tijds bereik** op basis van de omgeving die u wilt bewaken.
+- Zoek en selecteer **Azure monitor** in de Azure Portal. Selecteer **Insights hub** onder **inzichten** en selecteer vervolgens **Windows virtueel bureau blad**.
+Nadat u de pagina hebt geopend, voert u het **abonnement**, de **resource groep**, de **hostgroep** en het **tijds bereik** in van de omgeving die u wilt bewaken.
 
 >[!NOTE]
 >Virtueel bureau blad van Windows biedt momenteel alleen ondersteuning voor bewaking van één abonnement, resource groep en hostgroep per keer. Als u de omgeving die u wilt bewaken niet kunt vinden, raadpleegt u de documentatie voor het [oplossen van problemen met](troubleshoot-azure-monitor.md) bekende functie aanvragen en problemen.
 
-## <a name="set-up-with-the-configuration-workbook"></a>Instellen met de configuratie werkmap
+## <a name="log-analytics-settings"></a>Log Analytics instellingen
 
-Als dit de eerste keer is dat u Azure Monitor voor Windows virtueel bureau blad opent, moet u Azure Monitor configureren voor uw virtuele Windows-bureau blad-resources. Uw resources configureren:
+U hebt ten minste één Log Analytics-werk ruimte nodig om Azure Monitor voor Windows Virtual Desktop te gaan gebruiken. Gebruik een aangewezen Log Analytics-werk ruimte voor uw Windows Virtual Desktop-sessie hosts om ervoor te zorgen dat prestatie meter items en gebeurtenissen alleen worden verzamelde formulier sessie hosts in uw Windows-implementatie voor virtueel bureau blad. Als u al een werk ruimte hebt ingesteld, gaat u verder met [het instellen van de configuratie werkmap](#set-up-using-the-configuration-workbook). Zie [een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/logs/quick-create-workspace.md)om er een in te stellen.
 
-1. Open de werkmap in de Azure Portal.
-2. Selecteer **de werkmap configuratie openen**.
+>[!NOTE]
+>Er gelden standaard kosten voor gegevens opslag voor Log Analytics. We raden u aan om het model voor betalen naar gebruik te kiezen en aan te passen wanneer u uw implementatie schaalt en meer gegevens in beslag neemt. Zie [Azure monitor prijzen](https://azure.microsoft.com/pricing/details/monitor/)voor meer informatie.
 
-Met de configuratie werkmap wordt uw bewakings omgeving ingesteld en kunt u de configuratie controleren nadat u het installatie proces hebt voltooid. Het is belang rijk om uw configuratie te controleren als items in het dash board niet correct worden weer gegeven of als de product groep updates publiceert waarvoor extra gegevens punten nodig zijn.
+## <a name="set-up-using-the-configuration-workbook"></a>Instellen met behulp van de configuratie werkmap
 
-## <a name="host-pool-diagnostic-settings"></a>Diagnostische instellingen hostgroep
+Als dit de eerste keer is dat u Azure Monitor voor Windows virtueel bureau blad opent, moet u Azure Monitor instellen voor uw virtuele Windows-desktop omgeving. Uw resources configureren:
 
-U moet Azure Monitor Diagnostische instellingen inschakelen voor alle objecten in de virtuele Windows-bureaublad omgeving die deze functie ondersteunen.
+1. Open Azure Monitor voor virtueel bureau blad van Windows in de Azure Portal op [aka.MS/azmonwvdi](https://portal.azure.com/#blade/Microsoft_Azure_WVD/WvdManagerMenuBlade/workbooks)en selecteer vervolgens **configuratie werkmap**.
+2. Selecteer een omgeving om te configureren onder **abonnement**, **resource groep** en **hostgroep**.
 
-1. Open Azure Monitor voor Windows virtueel bureau blad op [aka.MS/azmonwvdi](https://portal.azure.com/#blade/Microsoft_Azure_WVD/WvdManagerMenuBlade/workbooks)en selecteer vervolgens **configuratie werkmap**.
+Met de configuratie werkmap wordt uw bewakings omgeving ingesteld en kunt u de configuratie controleren nadat u het installatie proces hebt voltooid. Het is belang rijk om uw configuratie te controleren als items in het dash board niet correct worden weer gegeven of wanneer de product groep updates publiceert waarvoor nieuwe instellingen zijn vereist.
 
-2. Selecteer een omgeving om te bewaken onder **abonnement**, **resource groep** en **hostgroep**.
+### <a name="resource-diagnostic-settings"></a>Diagnostische instellingen voor bronnen
 
-3. Controleer onder **Diagnostische instellingen voor hostgroep** of Windows diagnostische gegevens over virtueel bureau blad zijn ingeschakeld voor de hostgroep. Als dat niet het geval is, wordt een fout bericht weer gegeven met de tekst ' er is geen bestaande diagnostische configuratie gevonden voor de geselecteerde hostgroep. ' 
-   
-   De volgende tabellen moeten worden ingeschakeld:
+Als u informatie wilt verzamelen over uw virtuele bureau blad-infra structuur van Windows, moet u verschillende diagnostische instellingen inschakelen op uw Windows Virtual Desktop-hostgroepen en-werk ruimten (dit is uw virtuele Windows-bureau blad, niet uw Log Analytics-werk ruimte). Zie onze [omgevings handleiding](environment-setup.md)voor meer informatie over hostgroepen, werk ruimten en andere resource objecten van het virtueel bureau blad van Windows.
+
+U vindt meer informatie over de diagnostische gegevens van het virtuele bureau blad van Windows en de ondersteunde diagnostische tabellen bij het [verzenden van diagnostische gegevens van Windows virtueel bureau blad naar log Analytics](diagnostics-log-analytics.md).
+
+De diagnostische instellingen voor bronnen instellen in de configuratie werkmap: 
+
+1. Selecteer het tabblad **Diagnostische instellingen voor bronnen** in de werk blad configuratie. 
+2. Selecteer **log Analytics werk ruimte** voor het verzenden van diagnostische gegevens van Windows virtueel bureau blad. 
+
+#### <a name="host-pool-diagnostic-settings"></a>Diagnostische instellingen hostgroep
+
+Als u Diagnostische gegevens van een hostgroep wilt instellen met behulp van de sectie Diagnostische instellingen voor bronnen in de werk blad configuratie:
+
+1. Controleer onder **hostgroep** of Windows diagnostische gegevens over virtueel bureau blad zijn ingeschakeld. Als dat niet het geval is, wordt een fout bericht weer gegeven met de tekst ' er is geen bestaande diagnostische configuratie gevonden voor de geselecteerde hostgroep. ' U moet de volgende ondersteunde diagnostische tabellen inschakelen:
 
     - Controlepunt
     - Fout
     - Beheer
     - Verbinding
     - HostRegistration
-
+    - AgentHealthStatus
+    
     >[!NOTE]
-    > Als het fout bericht niet wordt weer gegeven, hoeft u stap 4 niet uit te voeren.
+    > Als het fout bericht niet wordt weer gegeven, hoeft u de stappen 2 t/m 4 niet uit te voeren.
 
-4. Selecteer **hostgroep configureren**.
+2. Selecteer **hostgroep configureren**.
+3. Selecteer **Implementeren**.
+4. Vernieuw de configuratie werkmap.
 
-5. Selecteer **Implementeren**.
+#### <a name="workspace-diagnostic-settings"></a>Diagnostische instellingen werk ruimte 
 
-6. Vernieuw de werkmap.
+Werk ruimte diagnostiek instellen met behulp van de sectie Diagnostische instellingen voor bronnen in de werkmap van de configuratie:
 
-Meer informatie over het inschakelen van diagnostische gegevens voor alle objecten in de virtueel-bureaublad omgeving van Windows of toegang tot de Log Analytics-werk ruimte op [Windows virtuele bureau blad diagnostische gegevens verzenden naar log Analytics](diagnostics-log-analytics.md).
+ 1. Controleer onder **werk ruimte** of de diagnostische gegevens van Windows virtueel bureau blad zijn ingeschakeld voor de virtuele bureau blad-werk ruimte van Windows. Als dat niet het geval is, wordt een fout bericht weer gegeven met de tekst ' er is geen bestaande diagnostische configuratie gevonden voor de geselecteerde werk ruimte. ' U moet de volgende ondersteunde diagnostische tabellen inschakelen:
+ 
+    - Controlepunt
+    - Fout
+    - Beheer
+    - Feed
+    
+    >[!NOTE]
+    > Als het fout bericht niet wordt weer gegeven, hoeft u stap 2-4 niet uit te voeren.
 
-## <a name="configure-log-analytics"></a>Log Analytics configureren
+2. Selecteer **werk ruimte configureren**.
+3. Selecteer **Implementeren**.
+4. Vernieuw de configuratie werkmap.
 
-Als u Azure Monitor voor Windows virtueel bureau blad wilt gebruiken, hebt u ook ten minste één Log Analytics werk ruimte nodig om gegevens te verzamelen uit de omgeving die u wilt bewaken en deze aan de werkmap te leveren. Als u al een hebt ingesteld, gaat u verder met het [instellen van prestatie meter items](#set-up-performance-counters). Zie [een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/logs/quick-create-workspace.md)om een nieuwe log Analytics-werk ruimte in te stellen voor het Azure-abonnement met uw virtuele Windows-desktop omgeving.
+### <a name="session-host-data-settings"></a>Instellingen voor Session Host-gegevens
 
->[!NOTE]
->Er gelden standaard kosten voor gegevens opslag voor Log Analytics. We raden u aan om het model voor betalen naar gebruik te kiezen en aan te passen wanneer u uw implementatie schaalt en meer gegevens in beslag neemt. Zie [Azure monitor prijzen](https://azure.microsoft.com/pricing/details/monitor/)voor meer informatie.
+Als u informatie wilt verzamelen over uw Windows Virtual Desktop-sessie-hosts, moet u de Log Analytics-agent installeren op alle sessie hosts in de hostgroep, ervoor zorgen dat de sessie-hosts naar een Log Analytics werkruimte worden verzonden en de instellingen van uw Log Analytics-agent configureren om prestatie gegevens en Windows-gebeurtenis logboeken te verzamelen.
 
-### <a name="set-up-performance-counters"></a>Prestatie meter items instellen
+De Log Analytics werk ruimte waarmee u de sessiehost verzendt, hoeft niet hetzelfde te zijn als de gegevens die u naar de diagnostische gegevens verzendt. Als u Azure Session hosts hebt die zich buiten uw virtuele Windows-bureaublad omgeving bevinden, kunt u het beste een aangewezen Log Analytics-werk ruimte hebben voor de Windows-sessie hosts met virtueel bureau blad. 
 
-U moet specifieke prestatie meter items voor de verzameling inschakelen in het bijbehorende steekproef interval in de werk ruimte Log Analytics. Deze prestatie meter items zijn de enige items die u nodig hebt om het virtuele bureau blad van Windows te bewaken. U kunt alle andere uitschakelen om kosten te besparen.
+Instellen van de Log Analytics-werk ruimte waar u de sessiehost wilt verzamelen: 
 
-Als u de prestatie meter items al hebt ingeschakeld en wilt verwijderen, volgt u de instructies in [prestatie meter items configureren](../azure-monitor/agents/data-sources-performance-counters.md) om de prestatie meter items opnieuw te configureren. In het artikel wordt beschreven hoe u items toevoegt, maar u kunt ze ook op dezelfde locatie verwijderen.
+1. Selecteer het tabblad **Session Host data Settings** in de werkmap van de configuratie. 
+2. Selecteer de **log Analytics werk ruimte** waarnaar u de sessiehost wilt verzenden. 
 
-Als u prestatie meter items nog niet hebt ingesteld, gaat u als volgt te werk om ze te configureren voor Azure Monitor voor virtuele Windows-bureau blad:
+#### <a name="session-hosts"></a>Sessie-hosts
 
-1. Ga naar [aka.MS/azmonwvdi](https://portal.azure.com/#blade/Microsoft_Azure_WVD/WvdManagerMenuBlade/workbooks)en selecteer de **configuratie werkmap** onder in het venster.
-
-2. Onder **log Analytics configuratie** selecteert u de werk ruimte die u hebt ingesteld voor uw abonnement.
-
-3. In de **werk ruimte-prestatie meter items** ziet u de lijst met prestatie meter items die nodig zijn voor de bewaking. Controleer aan de rechter kant van de lijst de items in de lijst **ontbrekende items** om de prestatie meter items in te scha kelen die u nodig hebt om uw werk ruimte te bewaken.
-
-4. Selecteer **prestatie meter items configureren**.
-
-5. Selecteer **configuratie Toep assen**.
-
-6. Vernieuw de configuratie werkmap en ga door met het instellen van uw omgeving.
-
-U kunt ook nieuwe prestatie meter items toevoegen na de initiële configuratie wanneer de service wordt bijgewerkt en nieuwe controle hulpprogramma's vereist. U kunt controleren of alle vereiste items zijn ingeschakeld door deze te selecteren in de lijst **ontbrekende items** .
-
->[!NOTE]
->De prestatie meter items voor de invoer vertraging zijn alleen compatibel met Windows 10 RS5 en hoger, of Windows Server 2019 en hoger.
-
-Zie [prestatie meter items configureren](../azure-monitor/agents/data-sources-performance-counters.md)voor meer informatie over het hand matig toevoegen van prestatie meter items die nog niet zijn ingeschakeld voor verzameling.
-
-### <a name="set-up-windows-events"></a>Windows-gebeurtenissen instellen
-
-Vervolgens moet u specifieke Windows-gebeurtenissen inschakelen voor de verzameling in de werk ruimte Log Analytics. De gebeurtenissen die in deze sectie worden beschreven, zijn de enige Azure Monitor voor virtuele Windows-Desktop behoeften. U kunt alle andere uitschakelen om kosten te besparen.
-
-Windows-gebeurtenissen instellen:
-
-1. Als Windows-gebeurtenissen al zijn ingeschakeld en u deze wilt verwijderen, verwijdert u de gebeurtenissen die u niet wilt gebruiken voordat u de werkmap van de configuratie gebruikt om de vereiste set voor bewaking in te scha kelen.
-
-2. Ga naar Azure Monitor voor virtueel bureau blad van Windows op [aka.MS/azmonwvdi](https://portal.azure.com/#blade/Microsoft_Azure_WVD/WvdManagerMenuBlade/workbooks)en selecteer vervolgens **configuratie werkmap** onder aan het venster.
-
-3. In de **configuratie van Windows-gebeurtenissen** vindt u een lijst met Windows-gebeurtenissen die vereist zijn voor de bewaking. Aan de rechter kant van de lijst ziet u de lijst met **ontbrekende gebeurtenissen** , waar u de vereiste gebeurtenis namen en gebeurtenis typen vindt die momenteel niet zijn ingeschakeld voor uw werk ruimte. Noteer elk van deze namen voor later.
-
-4. Selecteer **configuratie van werk ruimten openen**.
-
-5. Selecteer **gegevens**.
-
-6. Selecteer **Windows-gebeurtenis logboeken**.
-
-7. Voeg de ontbrekende gebeurtenis namen uit stap 3 en het vereiste gebeurtenis type voor elk toe.
-
-8. Vernieuw de configuratie werkmap en ga door met het instellen van uw omgeving.
-
-U kunt nieuwe Windows-gebeurtenissen na de eerste configuratie toevoegen als er voor het bewakings hulpprogramma updates nieuwe gebeurtenissen moeten worden ingeschakeld. Als u wilt controleren of alle vereiste gebeurtenissen zijn ingeschakeld, gaat u terug naar de lijst met **ontbrekende** gebeurtenissen en schakelt u de ontbrekende gebeurtenissen in die u ziet.
-
-## <a name="install-the-log-analytics-agent-on-all-hosts"></a>De Log Analytics-agent op alle hosts installeren
-
-Ten slotte moet u de Log Analytics-agent installeren op alle hosts in de hostgroep om gegevens te verzenden van de hosts naar de geselecteerde werk ruimte.
-
-De Log Analytics-agent installeren:
-
-1. Ga naar Azure Monitor voor virtueel bureau blad van Windows op [aka.MS/azmonwvdi](https://portal.azure.com/#blade/Microsoft_Azure_WVD/WvdManagerMenuBlade/workbooks)en selecteer vervolgens **configuratie werkmap** onder aan het venster.
-
-2. Als Log Analytics niet is geconfigureerd voor alle hosts in de hostgroep, ziet u een fout onder aan de sectie Log Analytics configuratie met het bericht ' sommige hosts in de hostgroep verzenden geen gegevens naar de geselecteerde Log Analytics-werk ruimte. ' Selecteer **hosts toevoegen aan werk ruimte** om de geselecteerde hosts toe te voegen. Als het fout bericht niet wordt weer gegeven, kunt u hier stoppen.
-
-3. Vernieuw de configuratie werkmap.
+U moet de Log Analytics-agent installeren op alle sessie hosts in de hostgroep en gegevens van die hosts naar de geselecteerde Log Analytics-werk ruimte verzenden. Als Log Analytics niet is geconfigureerd voor alle sessie-hosts in de hostgroep, ziet u boven aan de **Session Host-gegevens instellingen** het gedeelte **Session hosts** in het bericht ' sommige hosts in de hostgroep verzenden geen gegevens naar de geselecteerde log Analytics werk ruimte. '
 
 >[!NOTE]
->De hostmachine moet worden uitgevoerd om de Log Analytics-uitbrei ding te installeren. Als automatische implementatie mislukt op een host, kunt u de extensie altijd hand matig installeren op een host. Zie [log Analytics virtuele machine-extensie voor Windows voor](../virtual-machines/extensions/oms-windows.md)meer informatie over het hand matig installeren van de extensie.
+> Als u de sectie **Session hosts** of het fout bericht niet ziet, worden alle sessie-hosts correct ingesteld. Ga verder met het instellen van instructies voor de [prestatie meter items van de werk ruimte](#workspace-performance-counters).
+
+Om uw resterende sessie-hosts in te stellen met behulp van de configuratie werkmap:
+
+1. Selecteer **hosts toevoegen aan de werk ruimte**. 
+2. Vernieuw de configuratie werkmap.
+
+>[!NOTE]
+>De hostmachine moet worden uitgevoerd om de Log Analytics-uitbrei ding te installeren. Als automatische implementatie niet werkt, kunt u in plaats daarvan de extensie hand matig installeren op een host. Zie [log Analytics virtuele machine-extensie voor Windows voor](../virtual-machines/extensions/oms-windows.md)meer informatie over het hand matig installeren van de extensie.
+
+#### <a name="workspace-performance-counters"></a>Prestatie meter items voor werk ruimte
+
+U dient specifieke prestatie meter items in te scha kelen voor het verzamelen van prestatie gegevens van uw sessie-hosts en deze naar de Log Analytics-werk ruimte te verzenden.
+
+Als u de prestatie meter items al hebt ingeschakeld en wilt verwijderen, volgt u de instructies in [prestatie meter items configureren](../azure-monitor/agents/data-sources-performance-counters.md). U kunt prestatie meter items op dezelfde locatie toevoegen en verwijderen.
+
+Prestatie meter items instellen met behulp van de configuratie werkmap: 
+
+1. Controleer onder **prestatie meter items voor de werk ruimte** de optie **geconfigureerde items** om de items te zien die u al hebt ingeschakeld voor verzen ding naar de log Analytics-werk ruimte. Controleer de **ontbrekende items** om ervoor te zorgen dat u alle vereiste tellers hebt ingeschakeld.
+2. Als u ontbrekende tellers hebt, selecteert u **prestatie meter items configureren**.
+3. Selecteer **configuratie Toep assen**.
+4. Vernieuw de configuratie werkmap.
+5. Controleer of alle vereiste items zijn ingeschakeld door de lijst **ontbrekende items** te controleren. 
+
+#### <a name="configure-windows-event-logs"></a>Windows-gebeurtenis logboeken configureren
+
+U moet ook specifieke Windows-gebeurtenis logboeken inschakelen voor het verzamelen van fouten, waarschuwingen en informatie van de sessie-hosts en deze naar de Log Analytics-werk ruimte verzenden.
+
+Als u Windows-gebeurtenis logboeken al hebt ingeschakeld en deze wilt verwijderen, volgt u de instructies in [Windows-gebeurtenis logboeken configureren](../azure-monitor/agents/data-sources-windows-events.md#configuring-windows-event-logs).  U kunt Windows-gebeurtenis logboeken op dezelfde locatie toevoegen en verwijderen.
+
+Windows-gebeurtenis logboeken instellen met behulp van de configuratie werkmap:
+
+1. Controleer onder **configuratie van Windows-gebeurtenis logboeken** **geconfigureerde gebeurtenis logboeken** om te zien welke gebeurtenis logboeken u al hebt ingeschakeld om naar de log Analytics-werk ruimte te verzenden. Controleer de **ontbrekende gebeurtenis logboeken** om ervoor te zorgen dat u alle Windows-gebeurtenis Logboeken hebt ingeschakeld.
+2. Als u Windows-gebeurtenis Logboeken hebt ontbreken, selecteert u **gebeurtenissen configureren**.
+3. Selecteer **Implementeren**.
+4. Vernieuw de configuratie werkmap.
+5. Zorg ervoor dat alle vereiste Windows-gebeurtenis logboeken zijn ingeschakeld door de lijst **ontbrekende gebeurtenis logboeken** te controleren. 
+
+>[!NOTE]
+>Als automatische gebeurtenis implementatie mislukt, selecteert u **configuratie van agent openen** in de werkmap configuratie om hand matig ontbrekende Windows-gebeurtenis Logboeken toe te voegen. 
 
 ## <a name="optional-configure-alerts"></a>Optioneel: waarschuwingen configureren
 
-U kunt Azure Monitor voor Windows virtueel bureau blad configureren om u te waarschuwen als er ernstige Azure Monitor waarschuwingen optreden binnen het geselecteerde abonnement. Volg hiervoor de instructies in [reageren op gebeurtenissen met Azure monitor-waarschuwingen](../azure-monitor/alerts/tutorial-response.md).
+Met Azure Monitor voor virtueel bureau blad van Windows kunt u Azure Monitor waarschuwingen in uw geselecteerde abonnement bewaken in de context van de Windows-gegevens van virtueel bureau blad. Azure Monitor waarschuwingen zijn een optioneel onderdeel van uw Azure-abonnementen en u moet deze afzonderlijk instellen van Azure Monitor voor Windows virtueel bureau blad. U kunt het Framework van Azure Monitor-waarschuwingen gebruiken om aangepaste waarschuwingen in te stellen voor gebeurtenissen van het virtueel bureau blad van Windows, diagnostische gegevens en bronnen. Zie [reageren op gebeurtenissen met Azure monitor-waarschuwingen](../azure-monitor/alerts/tutorial-response.md)voor meer informatie over Azure monitor-waarschuwingen.
 
 ## <a name="diagnostic-and-usage-data"></a>Diagnostische en gebruiks gegevens
 
@@ -186,7 +193,7 @@ Zie de [privacyverklaring voor micro soft Online Services](https://privacy.micro
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u uw virtuele Windows-bureau blad hebt geconfigureerd Azure Portal, zijn hier enkele bronnen beschikbaar waarmee u het volgende kunt doen:
+Nu u Azure Monitor hebt geconfigureerd voor uw virtuele Windows-bureau blad-omgeving, zijn er enkele resources die u kunnen helpen bij het bewaken van uw omgeving:
 
 - Bekijk onze [verklarende woorden lijst](azure-monitor-glossary.md) voor meer informatie over de termen en concepten die betrekking hebben op Azure monitor voor virtueel bureau blad van Windows.
-- Als u een probleem ondervindt, raadpleegt u de [hand leiding](troubleshoot-azure-monitor.md) voor het oplossen van problemen.
+- Als er een probleem optreedt, raadpleegt u de [gids voor probleem oplossing](troubleshoot-azure-monitor.md) voor hulp en bekende problemen.

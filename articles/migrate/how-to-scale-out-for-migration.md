@@ -6,12 +6,12 @@ ms.author: anvar
 ms.manager: bsiva
 ms.topic: how-to
 ms.date: 03/02/2021
-ms.openlocfilehash: 634eb2d22e3fa570ac9412d4fb8afd917b5c2eaa
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: 5ca821cb4f85deb77595e4a9029cc10298dbb884
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/26/2021
-ms.locfileid: "105564004"
+ms.locfileid: "105611970"
 ---
 # <a name="scale-agentless-migration-of-vmware-virtual-machines-to-azure"></a>De migratie van virtuele VMware-machines in een agent schalen naar Azure
 
@@ -43,8 +43,8 @@ Raadpleeg de zelf studie over het [migreren van virtuele VMware-machines naar Az
 
 Volg de onderstaande stappen om een scale-out apparaat toe te voegen:
 
-1. Klik op **Discover**  >  **worden computers gevirtualiseerde?** 
-1. Selecteer **Ja, met VMware VSphere Hyper Visor.**
+1. Klik op **Discover**  >  **zijn uw machines gevirtualiseerd?** 
+1. Selecteer **Ja, met VMware vSphere Hyper Visor.**
 1. Selecteer in de volgende stap replicatie zonder agent.
 1. Selecteer **een bestaand primair apparaat uitschalen** in het menu Type apparaat selecteren.
 1. Selecteer het primaire apparaat (het apparaat dat wordt gebruikt om de detectie uit te voeren) dat u wilt uitschalen.
@@ -54,7 +54,7 @@ Volg de onderstaande stappen om een scale-out apparaat toe te voegen:
 ### <a name="1-generate-the-azure-migrate-project-key"></a>1. de Azure Migrate project sleutel genereren
 
 1. Geef in **Azure migrate project sleutel genereren** een achtervoegsel naam op voor het scale-out-toestel. Het achtervoegsel mag alleen alfanumerieke tekens bevatten en mag Maxi maal 14 tekens lang zijn.
-2. Klik op **sleutel genereren** om te beginnen met het maken van de vereiste Azure-resources. Sluit de detectie pagina niet tijdens het maken van resources.
+2. Klik op **sleutel genereren** om te beginnen met het maken van de vereiste Azure-resources. Sluit de detectie pagina niet af tijdens het maken van resources.
 3. Kopieer de gegenereerde sleutel. U hebt de sleutel later nodig om de registratie van het scale-out-toestel te volt ooien.
 
 ### <a name="2-download-the-installer-for-the-scale-out-appliance"></a>2. down load het installatie programma voor het scale-out-toestel
@@ -68,8 +68,8 @@ Klik in **Azure migrate apparaat downloaden** op  **downloaden**. U moet het Pow
 > 1. Open de opdracht prompt als beheerder
 > 2. Gebruik de volgende opdracht om de hash voor het zip-bestand te genereren:
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
-    - Voorbeeld van gebruik voor openbare cloud: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller.zip SHA256 ```
-> 3. Down load de nieuwste versie van het installatie programma voor de scale-out-toestel vanuit de portal als de berekende hash-waarde niet overeenkomt met deze teken reeks: e9c9a1fe4f3ebae81008328e8f3a7933d78ff835ecd871d1b17f367621ce3c74
+    - Voorbeeld van gebruik voor openbare cloud: ```C:\>Get-FileHash -Path .\AzureMigrateInstaller-VMware-Public-Scaleout.zip -Algorithm SHA256 ```
+> 3. Down load de nieuwste versie van het installatie programma voor de scale-out-toestel vanuit de portal als de berekende hash-waarde niet overeenkomt met deze teken reeks: 1E6B6E3EE8B2A800818B925F5DA67EF7874DAD87E32847120B32F3E21F5960F9
 
 ### <a name="3-run-the-azure-migrate-installer-script"></a>3. Voer het Azure Migrate-installatie script uit
 Het installatiescript doet het volgende:
@@ -108,7 +108,7 @@ Voordat u begint, moet u ervoor zorgen dat de [Azure-eind punten](migrate-applia
 - Accepteer de **licentievoorwaarden** en lees de informatie van derden.
 - Ga als volgt te werk in de Configuration Manager-> vereisten in te **stellen**:
    - **Connectiviteit**: het apparaat controleert of de server toegang heeft tot internet. Als de server gebruikmaakt van een proxy:
-     1. Klik op **Proxy instellen** en geef het proxyadres (in het formulier http://ProxyIPAddress of http://ProxyFQDN) ) en de controlepoort op.
+     1. Klik op **proxy voor installatie** om het proxy adres op te geven (in de vorm http://ProxyIPAddress of http://ProxyFQDN) en luister poort.
      2. Geef referenties op als de proxy verificatie nodig heeft.
      3. Alleen HTTP-proxy wordt ondersteund.
      4. Als u proxydetails hebt toegevoegd of de proxy en/of de verificatie hebt uitgeschakeld, klikt u op **Opslaan** om de connectiviteitscontrole opnieuw te activeren.
@@ -124,7 +124,7 @@ Voordat u begint, moet u ervoor zorgen dat de [Azure-eind punten](migrate-applia
 :::image type="content" source="./media/tutorial-discover-vmware/device-code.png" alt-text="Modaal waarin de apparaatcode wordt weergegeven":::
 
 1. Klik op **Code kopiëren en aanmelden** om de apparaatcode te kopiëren en een Azure-aanmeldingsprompt te openen op een nieuw browsertabblad. Als dit niet wordt weergegeven, controleert u of de pop-upblokkering in de browser is uitgeschakeld.
-1. Plak de apparaatcode in het nieuwe tabblad en meld u aan met de gebruikersnaam en het wachtwoord van Azure.
+1. Plak op het tabblad Nieuw de code van het apparaat en meld u aan met behulp van uw Azure-gebruikers naam en-wacht woord.
    
    Aanmelden met een pincode wordt niet ondersteund.
 3. Als u het aanmeldingstabblad per ongeluk sluit zonder u aan te melden, vernieuwt u het browsertabblad van Apparaatconfiguratiebeheer om de knop Aanmelden opnieuw in te schakelen.

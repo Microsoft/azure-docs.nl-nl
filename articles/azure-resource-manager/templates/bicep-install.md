@@ -2,15 +2,15 @@
 title: Ontwikkel-en implementatie omgevingen van Bicep instellen
 description: Ontwikkel-en implementatie omgevingen van Bicep configureren
 ms.topic: conceptual
-ms.date: 03/17/2021
-ms.openlocfilehash: 7cd3721aca83488de61494a94826bfcd0b6acc26
-ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
+ms.date: 03/25/2021
+ms.openlocfilehash: 9a35355d1035943081ac58b36623af772fb8d547
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105543734"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105612582"
 ---
-# <a name="setup-bicep-development-and-deployment-environment"></a>Ontwikkel-en implementatie omgeving van Bicep instellen
+# <a name="install-bicep-preview"></a>Bicep installeren (preview-versie)
 
 Meer informatie over het instellen van Bicep-ontwikkel-en implementatie omgevingen.
 

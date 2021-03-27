@@ -2,15 +2,15 @@
 title: Bicep-modules
 description: Hierin wordt beschreven hoe u een module definieert en gebruikt, en hoe u module bereik kunt gebruiken.
 ms.topic: conceptual
-ms.date: 03/17/2021
-ms.openlocfilehash: 2edeb5c96f771867f964963b2d27768291ae2d4a
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.date: 03/25/2021
+ms.openlocfilehash: 7a680e8aa0fa4d5ef9cac7f9e7ba07a3aa4ee1e2
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104889702"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105611732"
 ---
-# <a name="use-bicep-modules"></a>Bicep-modules gebruiken
+# <a name="use-bicep-modules-preview"></a>Bicep-modules (preview-versie) gebruiken
 
 Met Bicep kunt u een complexe oplossing in modules opsplitsen. Een Bicep-module is een verzameling van een of meer resources die samen moeten worden geïmplementeerd. Modules abstracten complexe details van de onbewerkte resource declaratie, waardoor de Lees baarheid kan toenemen. U kunt deze modules opnieuw gebruiken en delen met anderen. Gecombineerd met [sjabloon specificaties](./template-specs.md)maakt het een manier om de modulariteit en code hergebruik toe te voegen. Zie [zelf studie: Bicep-modules toevoegen](./bicep-tutorial-add-modules.md)voor een zelf studie.
 

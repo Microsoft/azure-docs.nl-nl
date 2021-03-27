@@ -6,12 +6,12 @@ manager: nitinme
 ms.author: lajanuar
 author: laujan
 ms.date: 02/11/2021
-ms.openlocfilehash: 692033e323880db1699d7265a991775d41b05f7f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: f84dc66828f2ebf13316b3348fd93933a2223b5a
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104656002"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105612276"
 ---
 # <a name="what-is-document-translation-preview"></a>Wat is document vertalingen (preview)?
 
@@ -43,7 +43,7 @@ In onze hand leiding leert u hoe u snel aan de slag kunt gaan met behulp van doc
 
 De volgende document bestands typen worden ondersteund door document vertalingen:
 
-| Bestands type| Bestandsextensie|Beschrijving|
+| Bestands type| Bestandsextensie|Description|
 |---|---|--|
 |Adobe PDF|.pdf|Adobe Acrobat Portable Document Format|
 |HTML|.html|Taal van de Hyper tekst opmaak.|
@@ -52,7 +52,7 @@ De volgende document bestands typen worden ondersteund door document vertalingen
 |Microsoft Outlook|. msg|Een e-mail bericht dat is gemaakt of opgeslagen in micro soft Outlook.|
 |Microsoft PowerPoint|.pptx| Een presentatie bestand dat wordt gebruikt om inhoud in een diapresentatie-indeling weer te geven.|
 |Microsoft Word|.docx| Een tekst document bestand.|
-|Door tabs gescheiden waarden/tabblad|. TSV/. tab| een door tabs gescheiden bestand met ruwe gegevens dat wordt gebruikt door spreadsheetprogram ma's.|
+|Door tabs gescheiden waarden/tabblad|. TSV/. tab| Een door tabs gescheiden bestand met ruwe gegevens dat wordt gebruikt door spreadsheetprogram ma's.|
 |Tekst|.txt| Een niet-opgemaakt tekst document.|
 |Vertaal geheugen uitwisseling|.tmx|Een open XML-standaard die wordt gebruikt voor het uitwisselen van Vertaal geheugen gegevens (TM) die zijn gemaakt door computer aided translation (kat) en lokalisatie toepassingen.|
 
@@ -60,10 +60,10 @@ De volgende document bestands typen worden ondersteund door document vertalingen
 
 De volgende woordenlijst bestands typen worden ondersteund door document vertalingen:
 
-| Bestands type| Bestandsextensie|Beschrijving|
+| Bestands type| Bestandsextensie|Description|
 |---|---|--|
 |Lokalisatie van Interchange File-indeling|.xlf. , XLIFF| Een parallelle document indeling, export van Vertaal geheugen systemen. De gebruikte talen worden in het bestand gedefinieerd.|
-|Door tabs gescheiden waarden/tabblad|. TSV/. tab| een door tabs gescheiden bestand met ruwe gegevens dat wordt gebruikt door spreadsheetprogram ma's.|
+|Door tabs gescheiden waarden/tabblad|. TSV/. tab| Een door tabs gescheiden bestand met ruwe gegevens dat wordt gebruikt door spreadsheetprogram ma's.|
 
 ## <a name="next-steps"></a>Volgende stappen
 

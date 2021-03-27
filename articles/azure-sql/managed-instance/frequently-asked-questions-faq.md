@@ -12,12 +12,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 09/21/2020
-ms.openlocfilehash: 42e263a47c6c771d2b1fef6586468cfc5a698e28
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 9faaf79958443c252a8d913fbd7448389c610e09
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105047912"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105628574"
 ---
 # <a name="azure-sql-managed-instance-frequently-asked-questions-faq"></a>Veelgestelde vragen over Azure SQL Managed Instance (FAQ)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -135,7 +135,7 @@ Beheerde instantie biedt dezelfde prestatie niveaus per Compute en opslag groott
 
 U kunt ook [een Data Base exporteren naar BACPAC](../database/database-export.md) en vervolgens [het BACPAC-bestand importeren](../database/database-import.md). Dit is de aanbevolen benadering als uw data base kleiner is dan 100 GB.
 
-[Transactionele replicatie](replication-two-instances-and-sql-server-configure-tutorial.md?view=sql-server-2017&preserve-view=true) kan worden gebruikt als alle tabellen in de Data Base *primaire* sleutels hebben en er geen in-Memory OLTP-objecten in de Data Base zijn.
+[Transactionele replicatie](replication-two-instances-and-sql-server-configure-tutorial.md) kan worden gebruikt als alle tabellen in de Data Base *primaire* sleutels hebben en er geen in-Memory OLTP-objecten in de Data Base zijn.
 
 Systeem eigen COPY_ONLY back-ups die zijn gemaakt van het beheerde exemplaar, kunnen niet worden hersteld naar SQL Server omdat het beheerde exemplaar een hogere database versie heeft dan SQL Server. Zie [kopie-only backup](/sql/relational-databases/backup-restore/copy-only-backups-sql-server?preserve-view=true&view=sql-server-ver15)voor meer informatie.
 
@@ -171,7 +171,7 @@ Zie de [belangrijkste oorzaken van prestatie verschillen tussen het beheerde exe
 
 U kunt de prestaties van uw beheerde exemplaar optimaliseren door:
 - [Automatisch afstemmen](../database/automatic-tuning-overview.md) waarmee de prestaties en stabiele workloads met een voortdurende prestaties worden afgestemd op basis van AI en machine learning.
--   [In-Memory OLTP](../in-memory-oltp-overview.md) waarmee de door Voer en latentie van transactionele werk belastingen worden verbeterd en waarmee zakelijke inzichten sneller worden geleverd. 
+-    [In-Memory OLTP](../in-memory-oltp-overview.md) waarmee de door Voer en latentie van transactionele werk belastingen worden verbeterd en waarmee zakelijke inzichten sneller worden geleverd. 
 
 Als u de prestaties nog verder wilt afstemmen, kunt u overwegen enkele van de *Aanbevolen procedures* voor het [afstemmen van toepassingen en data bases](../database/performance-guidance.md#tune-your-database)toe te passen.
 Als uw werk belasting uit veel kleine trans acties bestaat, kunt u overwegen om [het verbindings type van de proxy naar de omleidings modus te scha kelen voor een](connection-types-overview.md#changing-connection-type) lagere latentie en een hogere door voer.
@@ -263,9 +263,9 @@ Ja. Nadat een beheerd exemplaar is ingericht, kunt u NSG instellen die de toegan
 **Kan ik de NVA of on-premises firewall zo instellen dat het uitgaande beheer verkeer wordt gefilterd op basis van FQDN-namen?**
 
 Nee. Dit kan om verschillende redenen niet worden ondersteund:
--   Routerings verkeer dat antwoord geeft op inkomende beheer aanvragen, is asymmetrisch en kan niet worden gebruikt.
--   Route ring van verkeer dat naar de opslag gaat, wordt beïnvloed door doorvoer beperkingen en latentie, zodat we de verwachte kwaliteit en beschik baarheid van de service niet kunnen leveren.
--   Op basis van de ervaring zijn deze configuraties gevoelig en niet-ondersteund.
+-    Routerings verkeer dat antwoord geeft op inkomende beheer aanvragen, is asymmetrisch en kan niet worden gebruikt.
+-    Route ring van verkeer dat naar de opslag gaat, wordt beïnvloed door doorvoer beperkingen en latentie, zodat we de verwachte kwaliteit en beschik baarheid van de service niet kunnen leveren.
+-    Op basis van de ervaring zijn deze configuraties gevoelig en niet-ondersteund.
 
 **Kan ik de NVA of firewall instellen voor het uitgaande niet-beheer verkeer?**
 
@@ -416,9 +416,9 @@ SQL Managed instance biedt [vCore-gebaseerd aankoop model](sql-managed-instance-
 **Welke kosten voordelen zijn beschikbaar voor SQL Managed instance?**
 
 U kunt kosten besparen met de voor delen van Azure SQL op de volgende manieren:
--   Maximaliseer bestaande investeringen in on-premises licenties en Bespaar tot 55 procent met [Azure Hybrid Benefit](../azure-hybrid-benefit.md?tabs=azure-powershell). 
--   Leg een reserve ring toe voor reken resources en Bespaar tot 33 procent met een [gereserveerde instantie voordelen](../database/reserved-capacity-overview.md). Combi neer dit met Azure Hybrid voordelen voor een besparing van Maxi maal 82 procent. 
--   Bespaar tot 55 procent tegenover lijst prijzen met de [prijs voordelen van Azure dev/test](https://azure.microsoft.com/pricing/dev-test/) , die kortings tarieven bieden voor uw lopende ontwikkelings-en test werkbelastingen.
+-    Maximaliseer bestaande investeringen in on-premises licenties en Bespaar tot 55 procent met [Azure Hybrid Benefit](../azure-hybrid-benefit.md?tabs=azure-powershell). 
+-    Leg een reserve ring toe voor reken resources en Bespaar tot 33 procent met een [gereserveerde instantie voordelen](../database/reserved-capacity-overview.md). Combi neer dit met Azure Hybrid voordelen voor een besparing van Maxi maal 82 procent. 
+-    Bespaar tot 55 procent tegenover lijst prijzen met de [prijs voordelen van Azure dev/test](https://azure.microsoft.com/pricing/dev-test/) , die kortings tarieven bieden voor uw lopende ontwikkelings-en test werkbelastingen.
 
 **Wie komt in aanmerking voor het voor deel van een gereserveerde instantie?**
 

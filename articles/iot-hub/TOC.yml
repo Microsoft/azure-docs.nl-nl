@@ -4,7 +4,7 @@
   items:
     - name: Wat is Azure IoT Hub?
       href: about-iot-hub.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Telemetrie verzenden
@@ -84,6 +84,22 @@
       href: tutorial-firmware-update.md
     - name: Connectiviteit van apparaten testen
       href: tutorial-connectivity.md
+    - name: X. 509-certificaten gebruiken
+      items:
+        - name: Introductie
+          href: tutorial-x509-introduction.md
+        - name: Certificaat velden
+          href: tutorial-x509-certificates.md
+        - name: De opgegeven scripts gebruiken
+          href: tutorial-x509-scripts.md
+        - name: OpenSSL gebruiken
+          href: tutorial-x509-openssl.md
+        - name: Zelfondertekende certificaten maken
+          href: tutorial-x509-self-sign.md
+        - name: Te bewijzen
+          href: tutorial-x509-prove-possession.md
+        - name: Verificatie testen
+          href: tutorial-x509-test-certificate.md
 - name: Concepten
   items:
     - name: TLS-ondersteuning
@@ -319,8 +335,6 @@
               href: iot-hub-configure-file-upload-powershell.md
             - name: Azure CLI gebruiken
               href: iot-hub-configure-file-upload-cli.md
-        - name: Uw hub beveiligen met een X.509-certificaat
-          href: iot-hub-security-x509-get-started.md
         - name: Een IoT-hub upgraden
           href: iot-hub-upgrade.md
         - name: IP-filtering configureren

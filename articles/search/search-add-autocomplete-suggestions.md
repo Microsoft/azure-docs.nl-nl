@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/24/2021
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: a46c7f35e30b2dda7b4800ed553447cef5bb5d33
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.openlocfilehash: 6bc45bb6eec9dbf46e039dd1e2c32197820bb09d
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105609352"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105626704"
 ---
 # <a name="add-autocomplete-and-suggestions-to-client-apps-using-azure-cognitive-search"></a>Automatisch aanvullen en suggesties toevoegen aan client-apps met behulp van Azure Cognitive Search
 
@@ -81,13 +81,15 @@ De volgende aanvullende para meters zijn van toepassing op zowel AutoAanvullen a
 
 Voor het automatisch aanvullen van een query voorwaarde of het omlaag plaatsen van een lijst met overeenkomende koppelingen is gebruikers interactie code vereist, meestal java script, waarmee u aanvragen van externe bronnen kunt gebruiken, zoals automatisch aanvullen of suggestie query's voor een Azure Search cognitieve index.
 
-Hoewel u deze code systeem eigen kunt schrijven, is het veel eenvoudiger om functies uit de bestaande Java script-bibliotheek te gebruiken. Dit artikel vermeldt twee, één voor suggesties en een andere voor automatisch aanvullen. 
+Hoewel u deze code systeem eigen kunt schrijven, is het veel eenvoudiger om functies uit de bestaande Java script-bibliotheek te gebruiken, zoals een van de volgende. 
 
 + De [widget automatisch aanvullen (jQuery gebruikers interface)](https://jqueryui.com/autocomplete/) wordt weer gegeven in het code fragment voor suggesties. U kunt een zoekvak maken en hiernaar verwijzen in een Java script-functie die gebruikmaakt van de widget automatisch aanvullen. Eigenschappen van de widget stellen de bron (een functie voor automatisch aanvullen of suggesties), de minimum lengte van invoer tekens voordat actie wordt uitgevoerd en plaatsing.
 
 + De [XDSoft automatisch aanvullen-invoeg toepassing](https://xdsoft.net/jqplugins/autocomplete/) wordt weer gegeven in het code fragment automatisch aanvullen.
 
-We gebruiken deze bibliotheken om het zoekvak te bouwen dat zowel suggesties als automatisch aanvullen ondersteunt. De invoer die in het zoekvak wordt verzameld, is gekoppeld aan suggesties en acties voor automatisch aanvullen.
++ [suggesties](https://www.npmjs.com/package/suggestions) worden weer gegeven in de [zelf studie java script](tutorial-javascript-overview.md) en code sample.
+
+Gebruik deze bibliotheken in de-client om een zoekvak te maken dat zowel suggesties als automatisch aanvullen ondersteunt. In het zoekvak verzamelde invoer kan vervolgens worden gekoppeld aan suggesties en acties voor automatisch aanvullen in de zoek service.
 
 ## <a name="suggestions"></a>Suggesties
 
@@ -247,7 +249,7 @@ De functie automatisch aanvullen neemt de invoer van de zoek term. De methode ma
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Volg deze koppelingen voor end-to-end instructies of code die zowel zoek-als-u-type-ervaringen demonstreert. In het voor beeld worden de hybride implementaties van suggesties en automatisch aanvullen gedemonstreerd.
+Volg deze koppelingen voor end-to-end instructies of code die zowel zoek-als-u-type-ervaringen demonstreert. In het voor beeld wordt de hybride implementatie van suggesties en automatisch aanvullen gedemonstreerd.
 
-+ [Zelf studie: uw eerste app maken in C# (Les 3)](tutorial-csharp-type-ahead-and-suggestions.md)
-+ [Voor beeld van C#-code: Azure-Search-DotNet-samples/Create-first-app/3-add-typeahead/](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/create-first-app/v10/3-add-typeahead)
++ Het toevoegen van een [Zoek opdracht aan een website (Java script)](tutorial-javascript-search-query-integration.md#azure-function-suggestions-from-the-catalog) maakt gebruik van een open source Suggestions-pakket voor een gedeeltelijke termijn voltooiing in de client-app.
++ [Zelf studie: uw eerste app maken in C# (Les 3)](tutorial-csharp-type-ahead-and-suggestions.md) met het bijbehorende  [C#-code voorbeeld: Azure-Search-DotNet-samples/Create-first-app/3-add-typeahead/](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/create-first-app/v10/3-add-typeahead) demonstred support voor typeahead.

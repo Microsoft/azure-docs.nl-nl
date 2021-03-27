@@ -8,12 +8,12 @@ ms.date: 10/23/2020
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: c2121f429b928d58a2df7b4e4663341cf600da3e
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: 520a36a0896cc2b4b14366350f66d365ea04a557
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104879277"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105612790"
 ---
 # <a name="quickstart-deploy-your-first-azure-spring-cloud-application"></a>Quickstart: Uw eerste Azure Spring Cloud-toepassing implementeren
 
@@ -349,6 +349,7 @@ Begin met [Spring Initializr](https://start.spring.io/#!type=maven-project&langu
 ```url
 https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.3.4.RELEASE&packaging=jar&jvmVersion=1.8&groupId=com.example&artifactId=hellospring&name=hellospring&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.hellospring&dependencies=web,cloud-eureka,actuator,cloud-starter-sleuth,cloud-starter-zipkin,cloud-config-client
 ```
+Houd er rekening mee dat in dit voor beeld Java versie 8 wordt gebruikt.  Als u Java versie 11 wilt gebruiken, wijzigt u de optie onder **project meta data**.
 
   ![Initializr-pagina](media/spring-cloud-quickstart-java/initializr-page.png)
 
@@ -413,7 +414,7 @@ Met de volgende procedure wordt de toepassing gebouwd en geïmplementeerd met be
     az extension add --name spring-cloud
     ```
     
-1. Maak de app met een toegewezen openbaar eindpunt:
+1. Maak de app waaraan een openbaar eind punt is toegewezen. Als u Java 11 gebruikt, neem dan de `--runtime-version=Java_11` Switch op.
 
     ```azurecli
     az spring-cloud app create -n hellospring -s <service instance name> -g <resource group name> --assign-endpoint true

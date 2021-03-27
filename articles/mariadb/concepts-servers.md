@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: 4d8293258083ea3e8d0172f510e5b41e91328736
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 9a5cd55576d505114c15028cf637114f3baf7668
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98664126"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105627979"
 ---
 # <a name="server-concepts-in-azure-database-for-mariadb"></a>Server concepten in Azure Database for MariaDB
 In dit artikel vindt u overwegingen en richt lijnen voor het werken met Azure Database for MariaDB-servers.
@@ -37,8 +37,8 @@ Op een Azure Database for MariaDB-server kunt u een of meerdere databases maken.
 
 De volgende elementen helpen veilige toegang tot uw data base te garanderen.
 
-|||
-| :--| :--|
+| Beveiligings concept | Description |
+| :-- | :-- |
 | **Verificatie en autorisatie** | Azure Database for MariaDB-server ondersteunt native MySQL-verificatie. U kunt verbinding maken met en verifiëren met een server met de beheerders aanmelding van de server. |
 | **Protocol** | De service ondersteunt een op berichten gebaseerd protocol dat wordt gebruikt door MySQL. |
 | **TCP/IP** | Het protocol wordt ondersteund via TCP/IP en via Unix-domein sockets. |

@@ -13,12 +13,12 @@ metadata:
   author: Juliako
   ms.author: juliako
   ms.date: 07//2020
-  ms.openlocfilehash: b2fa1520bf73dcd1608c0f3494f4ccc1a3b13be2
-  ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+  ms.openlocfilehash: a1847273df196eea7aeebd846f83a35cd9e43f31
+  ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 01/22/2021
-  ms.locfileid: "98707403"
+  ms.lasthandoff: 03/27/2021
+  ms.locfileid: "105628489"
 highlightedContent:
   items:
   - title: Over Azure Media Services v3
@@ -102,6 +102,9 @@ conceptualContent:
     - url: ./latest/analyze-videos-tutorial-with-api.md
       itemType: tutorial
       text: Video's analyseren
+    - url: ./latest/analyze-face-redaction-concept.md
+      itemType: concept
+      text: Gezichts detectie en redactie
   - title: Meer informatie over Media Services-specificaties
     links:
     - url: media-services-specifications-live-timed-metadata.md

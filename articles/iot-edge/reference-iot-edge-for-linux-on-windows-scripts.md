@@ -9,12 +9,12 @@ ms.topic: reference
 ms.service: iot-edge
 services: iot-edge
 monikerRange: =iotedge-2018-06
-ms.openlocfilehash: 5286362369e0c4881cdf0c56bc13d1d340056be1
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: 41827c5db58f3d4755fb34e46067357cd0255676
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/26/2021
-ms.locfileid: "105562508"
+ms.locfileid: "105612769"
 ---
 # <a name="powershell-scripts-for-iot-edge-for-linux-on-windows"></a>Power shell-scripts voor IoT Edge voor Linux in Windows
 
@@ -46,12 +46,15 @@ De opdracht **Deploy-Eflow** is de belangrijkste implementatie methode. Met de i
 | vmSizeDefintion | Maxi maal 30 tekens | Definitie van het aantal kernen en het beschik bare RAM-geheugen voor de virtuele machine. **Standaard waarde**: Standard_K8S_v1. |
 | vmDiskSize | Tussen 8 GB en 256 GB | Maximale schijf grootte van de dynamisch uitbreid bare virtuele harde schijf. **Standaard waarde**: 16 GB. |
 | vmUser | Maxi maal 30 tekens | Gebruikers naam voor aanmelding bij de virtuele machine. |
-| vnetType | **Transparant** of **ICS** | Het type virtuele switch. **Standaard waarde**: transparant. |
+| vnetType | **Transparant** of **ICS** | Het type virtuele switch. **Standaard waarde**: transparant. Transparant verwijst naar een externe switch, terwijl ICS naar een interne switch verwijst. |
 | vnetName | Maxi maal 64 tekens | De naam van de virtuele switch. **Standaard waarde**: extern. |
 | enableVtpm | Geen | **Switch-para meter**. Maak de virtuele machine met TPM ingeschakeld of uitgeschakeld. |
 | mobyPackageVersion | Maxi maal 30 tekens |  De versie van het Moby-pakket dat moet worden gecontroleerd of geïnstalleerd op de virtuele machine.  **Standaard waarde:** 19.03.11. |
 | iotedgePackageVersion | Maxi maal 30 tekens | Versie van IoT Edge pakket dat moet worden gecontroleerd of geïnstalleerd op de virtuele machine. **Standaard waarde:** 1.1.0. |
 | installPackages | Geen | **Switch-para meter**. Wanneer u deze optie inschakelt, probeert het script de Moby-en IoT Edge-pakketten te installeren in plaats van alleen te controleren of de pakketten aanwezig zijn. |
+
+>[!NOTE]
+>Als het proces geen externe switch met de naam kan vinden `External` , wordt standaard een wille keurige externe switch gezocht waarmee een IP-adres kan worden verkregen. Als er geen externe switch beschikbaar is, wordt gezocht naar een interne switch. Als er geen interne switch beschikbaar is, wordt geprobeerd de standaard switch te maken waarmee een IP-adres wordt verkregen.
 
 ## <a name="verify-eflowvm"></a>Verify-EflowVm
 

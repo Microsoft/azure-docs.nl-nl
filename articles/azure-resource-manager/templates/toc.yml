@@ -8,13 +8,13 @@
       href: bicep-overview.md
 - name: Snelstartgidsen
   items:
-    - name: Sjablonen maken - portal
-      href: quickstart-create-templates-use-the-portal.md
-    - name: Sjablonen maken - VS Code
+    - name: JSON-sjablonen maken-VS code
       href: quickstart-create-templates-use-visual-studio-code.md
-    - name: Bicep-VS-code maken
+    - name: Bicep-sjablonen maken-VS code
       href: quickstart-create-bicep-use-visual-studio-code.md
-    - name: SjabSjabloonspecificaties maken en implementeren maken en implementeren
+    - name: JSON-sjablonen maken-Portal
+      href: quickstart-create-templates-use-the-portal.md
+    - name: Sjabloon Specificaties maken
       href: quickstart-create-template-specs.md
 - name: Zelfstudies
   items:
@@ -43,24 +43,34 @@
     - name: Beginners Bicep
       items:
         - name: '1: Uw eerste sjabloon maken'
+          displayName: Bicep
           href: bicep-tutorial-create-first-bicep.md
         - name: 2-para meters toevoegen
+          displayName: Bicep
           href: bicep-tutorial-add-parameters.md
         - name: 3-sjabloon functies toevoegen
+          displayName: Bicep
           href: bicep-tutorial-add-functions.md
         - name: 4-variabelen toevoegen
+          displayName: Bicep
           href: bicep-tutorial-add-variables.md
         - name: '5: uitvoer toevoegen'
+          displayName: Bicep
           href: bicep-tutorial-add-outputs.md
         - name: 6-geëxporteerde sjabloon gebruiken
+          displayName: Bicep
           href: bicep-tutorial-export-template.md
         - name: 7-Quick Start-sjabloon gebruiken
+          displayName: Bicep
           href: bicep-tutorial-quickstart-template.md
         - name: 8-labels toevoegen
+          displayName: Bicep
           href: bicep-tutorial-add-tags.md
         - name: 9-parameter bestand gebruiken
+          displayName: Bicep
           href: bicep-tutorial-use-parameter-file.md
         - name: 10-modules toevoegen
+          displayName: Bicep
           href: bicep-tutorial-add-modules.md
     - name: Implementatie
       items:

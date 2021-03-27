@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: conceptual
 ms.date: 10/23/2020
 ms.author: inhenkel
-ms.openlocfilehash: a66532856263d31e9070bc99f297ae105ca48312
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 1ef49b66e6bba7c829abd35f6c8cc4169a2c14a0
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102454784"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105625293"
 ---
 # <a name="live-events-and-live-outputs-in-media-services"></a>Livegebeurtenissen en live-uitvoer in Media Services
 
@@ -117,47 +117,68 @@ Zie ook [naam conventies voor streaming-eind punten](streaming-endpoint-concept.
 Zodra de live gebeurtenis is gemaakt, kunt u opname-Url's ophalen die u aanbiedt aan de Live on-premises encoder. De live-encoder gebruikt deze URL's voor het invoeren van een live-stream. Zie [Aanbevolen on-premises Live coderings](recommended-on-premises-live-encoders.md)Programma's voor meer informatie.
 
 >[!NOTE]
-> Vanaf de 2020-05-01 API-release worden Vanity Url's aangeduid als statische hostnamen
+> Vanaf de 2020-05-01 API-release worden ' Vanity-Url's aangeduid als statische hostnamen (useStaticHostname: True)
 
-U kunt niet-vanity-URL's en vanity-URL's gebruiken.
 
 > [!NOTE]
-> Stel de vanity-modus in om een URL voor opnemen voorspellend te maken.
+> Stel de eigenschap **useStaticHostname** in op True en stel de eigenschap **accessToken** in op dezelfde GUID bij elke maken om een opname-URL statisch en voorspelbaar te maken voor gebruik in een hardware encoder Setup. 
 
-* Niet-Vanity-URL
+### <a name="example-liveevent-and-liveeventinput-configuration-settings-for-a-static-non-random-ingest-rtmp-url"></a>Voor beeld van LiveEvent-en LiveEventInput-configuratie-instellingen voor een statische (niet-wille keurige) RTMP-URL.
 
-    Niet-Vanity-URL is de standaard modus in Media Services v3. Mogelijk wordt de live-gebeurtenis snel opgehaald, maar is de opname-URL alleen bekend wanneer de live-gebeurtenis wordt gestart. Als u de live-gebeurtenis stopt/start, wordt de URL gewijzigd. Niet-Vanity is handig in scenario's wanneer een eind gebruiker wil streamen met behulp van een app waarin de app een live gebeurtenis spoed wil ontvangen en een dynamische opname-URL geen problemen vormt.
+```csharp
+             LiveEvent liveEvent = new LiveEvent(
+                    location: mediaService.Location,
+                    description: "Sample LiveEvent from .NET SDK sample",
+                    // Set useStaticHostname to true to make the ingest and preview URL host name the same. 
+                    // This can slow things down a bit. 
+                    useStaticHostname: true,
+
+                    // 1) Set up the input settings for the Live event...
+                    input: new LiveEventInput(
+                        streamingProtocol: LiveEventInputProtocol.RTMP,  // options are RTMP or Smooth Streaming ingest format.
+                                                                         // This sets a static access token for use on the ingest path. 
+                                                                         // Combining this with useStaticHostname:true will give you the same ingest URL on every creation.
+                                                                         // This is helpful when you only want to enter the URL into a single encoder one time for this Live Event name
+                        accessToken: "acf7b6ef-8a37-425f-b8fc-51c2d6a5a86a",  // Use this value when you want to make sure the ingest URL is static and always the same. If omitted, the service will generate a random GUID value.
+                        accessControl: liveEventInputAccess, // controls the IP restriction for the source encoder.
+                        keyFrameIntervalDuration: "PT2S" // Set this to match the ingest encoder's settings
+                    ),
+```
+
+* Niet-statische hostnaam
+
+    Een niet-statische hostnaam is de standaard modus in Media Services v3 bij het maken van een **LiveEvent**. U kunt de live-gebeurtenis iets sneller toewijzen, maar de opname-URL die u nodig hebt voor uw Live encoding-hardware of-software wordt wille keurig weer geven. Als u de live-gebeurtenis stopt/start, wordt de URL gewijzigd. Niet-statische hostnamen zijn alleen nuttig in scenario's waarbij een eind gebruiker een app wil streamen die snel een live gebeurtenis nodig heeft en een dynamische opname-URL is geen probleem.
 
     Als een client-app geen opname-URL hoeft te genereren voordat de live-gebeurtenis wordt gemaakt, kunt u Media Services automatisch het toegangs token genereren voor de live-gebeurtenis.
 
-* Vanity-URL
+* Statische hostnamen 
 
-    De Vanity-modus wordt aanbevolen door grote media-broadcasters die gebruikmaken van hardware broadcast encoders en ze hun encoders niet opnieuw moeten configureren wanneer ze de live-gebeurtenis starten. Deze broadcasters willen een voorspellende opname-URL die in de loop van de tijd niet verandert.
+    De statische hostname-modus wordt aanbevolen door de meeste Opera tors die hun Live encoding-hardware of-software vooraf willen configureren met een RTMP-opname-URL die nooit wijzigt bij het maken of stoppen/starten van een specifieke live-gebeurtenis. Deze opera tors willen een voorspellende RTMP-opname-URL die in de loop van de tijd niet verandert. Dit is ook handig als u een statische RTMP-opname-URL wilt pushen naar de configuratie-instellingen van een hardware encoding-apparaat, zoals de BlackMagic Atem mini Pro, of vergelijk bare hardware encoding en productie hulpprogramma's. 
 
     > [!NOTE]
-    > In de Azure Portal heeft de Vanity-URL de naam '*statisch hostname-voor voegsel*'.
+    > In de Azure Portal wordt de statische URL van de hostnaam '*statisch hostname-voor voegsel*' genoemd.
 
     Als u deze modus in de API wilt opgeven, moet u instellen op de `useStaticHostName` `true` aanmaak tijd (standaard instelling `false` ). Wanneer `useStaticHostname` is ingesteld op True, `hostnamePrefix` geeft het het eerste deel van de hostnaam aan die is toegewezen aan de preview van Live Event en opname-eind punten. De uiteindelijke hostnaam zou een combi natie zijn van dit voor voegsel, de naam van het media service account en een korte code voor het Azure Media Services Data Center.
 
     Als u een wille keurig token in de URL wilt vermijden, moet u ook uw eigen toegangs token () door geven `LiveEventInput.accessToken` tijdens de aanmaak tijd.  Het toegangs token moet een geldige GUID-teken reeks zijn (met of zonder de afbreek streepjes). Zodra de modus is ingesteld, kan deze niet worden bijgewerkt.
 
-    Het toegangs token moet uniek zijn in uw Data Center. Als uw app een Vanity-URL moet gebruiken, is het raadzaam om altijd een nieuw GUID-exemplaar voor uw toegangs token te maken (in plaats van een bestaande GUID opnieuw te gebruiken).
+    Het toegangs token moet uniek zijn in uw Azure-regio en Media Services-account. Als uw app een statische URL van de host moet gebruiken, is het raadzaam om altijd een vers GUID-exemplaar te maken voor gebruik met een specifieke combi natie van regio, Media Services-account en live gebeurtenis.
 
-    Gebruik de volgende Api's om de Vanity-URL in te scha kelen en het toegangs token in te stellen op een geldige GUID (bijvoorbeeld `"accessToken": "1fce2e4b-fb15-4718-8adc-68c6eb4c26a7"` ).  
+    Gebruik de volgende Api's om de statische URL van de hostnaam in te scha kelen en het toegangs token in te stellen op een geldige GUID (bijvoorbeeld `"accessToken": "1fce2e4b-fb15-4718-8adc-68c6eb4c26a7"` ).  
 
-    |Taal|Vanity-URL inschakelen|Toegangstoken instellen|
+    |Taal|URL van statische hostnaam inschakelen|Toegangstoken instellen|
     |---|---|---|
-    |REST|[Eigenschappen. vanityUrl](/rest/api/media/liveevents/create#liveevent)|[LiveEventInput. accessToken](/rest/api/media/liveevents/create#liveeventinput)|
-    |CLI|[--Vanity-URL](/cli/azure/ams/live-event#az-ams-live-event-create)|[--Access-token](/cli/azure/ams/live-event#optional-parameters)|
-    |.NET|[LiveEvent.VanityUrl](/dotnet/api/microsoft.azure.management.media.models.liveevent#Microsoft_Azure_Management_Media_Models_LiveEvent_VanityUrl)|[LiveEventInput. AccessToken](/dotnet/api/microsoft.azure.management.media.models.liveeventinput.accesstoken#Microsoft_Azure_Management_Media_Models_LiveEventInput_AccessToken)|
+    |REST|[Eigenschappen. useStaticHostname](/rest/api/media/liveevents/create#liveevent)|[LiveEventInput.useStaticHostname](/rest/api/media/liveevents/create#liveeventinput)|
+    |CLI|[--use-static-hostname](/cli/azure/ams/live-event#az-ams-live-event-create)|[--Access-token](/cli/azure/ams/live-event#optional-parameters)|
+    |.NET|[LiveEvent.useStaticHostname](/dotnet/api/microsoft.azure.management.media.models.liveevent.usestatichostname?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEvent_UseStaticHostname)|[LiveEventInput. AccessToken](/dotnet/api/microsoft.azure.management.media.models.liveeventinput.accesstoken#Microsoft_Azure_Management_Media_Models_LiveEventInput_AccessToken)|
 
 ### <a name="live-ingest-url-naming-rules"></a>Naamgevingsregels voor live-opname-URL's
 
 * De *willekeurige* tekenreeks hieronder is een 128-bits hexadecimaal getal (bestaande uit 32 tekens, van 0-9 en a-f).
-* *uw toegangs token*: de geldige GUID-teken reeks die u instelt wanneer u de Vanity-modus gebruikt. Bijvoorbeeld `"1fce2e4b-fb15-4718-8adc-68c6eb4c26a7"`.
+* *uw toegangs token*: de geldige GUID-teken reeks die u hebt ingesteld bij het gebruik van de instelling voor statische hostnamen. Bijvoorbeeld `"1fce2e4b-fb15-4718-8adc-68c6eb4c26a7"`.
 * *Stream name*: geeft de naam van de stream voor een specifieke verbinding aan. De waarde van de stroom naam wordt meestal toegevoegd door de live encoder die u gebruikt. U kunt het Live coderings programma zodanig configureren dat elke naam wordt gebruikt om de verbinding te beschrijven, bijvoorbeeld: "video1_audio1", "video2_audio1", "Stream".
 
-#### <a name="non-vanity-url"></a>Niet-Vanity-URL
+#### <a name="non-static-hostname-ingest-url"></a>Niet-statische URL van de host voor opname
 
 ##### <a name="rtmp"></a>RTMP
 
@@ -171,7 +192,7 @@ U kunt niet-vanity-URL's en vanity-URL's gebruiken.
 `http://<random 128bit hex string>.channel.media.azure.net/<auto-generated access token>/ingest.isml/streams(<stream name>)`<br/>
 `https://<random 128bit hex string>.channel.media.azure.net/<auto-generated access token>/ingest.isml/streams(<stream name>)`<br/>
 
-#### <a name="vanity-url"></a>Vanity-URL
+#### <a name="static-hostname-ingest-url"></a>Opname-URL van statische hostnaam
 
 In de volgende paden `<live-event-name>` staat voor de naam van de gebeurtenis of de aangepaste naam die wordt gebruikt bij het maken van de live-gebeurtenis.
 

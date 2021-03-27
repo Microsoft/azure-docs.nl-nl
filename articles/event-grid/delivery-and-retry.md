@@ -3,12 +3,12 @@ title: Azure Event Grid levering en probeer het opnieuw
 description: Hierin wordt beschreven hoe Azure Event Grid gebeurtenissen levert en hoe er niet-bezorgde berichten worden verwerkt.
 ms.topic: conceptual
 ms.date: 10/29/2020
-ms.openlocfilehash: 3c4ed6ec2c9eae4dbcf70a831e3e7f70a28a57a0
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: e7fa627464ddb85ebded3ae99229b7fe8dd3fde3
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98247366"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105629271"
 ---
 # <a name="event-grid-message-delivery-and-retry"></a>Bericht bezorging Event Grid en probeer het opnieuw
 
@@ -25,7 +25,7 @@ Event Grid standaard elke gebeurtenis afzonderlijk naar abonnees verzenden. De a
 
 De batch levering heeft twee instellingen:
 
-* **Max. gebeurtenissen per batch** -maximum aantal gebeurtenissen Event grid per batch worden geleverd. Dit aantal wordt nooit overschreden. er kunnen echter minder gebeurtenissen worden geleverd als er geen andere gebeurtenissen beschikbaar zijn op het moment van publiceren. Event Grid vertraging gebeurtenissen niet op om een batch te maken als er minder gebeurtenissen beschikbaar zijn. Moet tussen 1 en 5.000.
+* **Max. gebeurtenissen per batch** -maximum aantal gebeurtenissen Event grid per batch worden geleverd. Dit aantal wordt nooit overschreden. er kunnen echter minder gebeurtenissen worden geleverd als er geen andere gebeurtenissen beschikbaar zijn op het moment van publiceren. Event Grid vertraagt geen gebeurtenissen om een batch te maken als er minder gebeurtenissen beschikbaar zijn. Moet tussen 1 en 5.000.
 * De **voor Keurs-Batch grootte in kilo bytes** -doel plafond voor Batch grootte in kB. Net als bij de maximale gebeurtenissen kan de Batch grootte kleiner zijn als er meer gebeurtenissen niet beschikbaar zijn op het moment van publiceren. Het is mogelijk dat een batch groter is dan de voorkeurs Batch grootte *als* één gebeurtenis groter is dan de voorkeurs grootte. Als de voorkeurs grootte bijvoorbeeld 4 KB is en een gebeurtenis van 10 KB naar Event Grid wordt gepusht, wordt de gebeurtenis met 10 KB nog steeds in een eigen batch opgenomen, in plaats van dat deze wordt verwijderd.
 
 Batch levering is geconfigureerd op basis van per gebeurtenis abonnement via de portal, CLI, Power shell of Sdk's.
@@ -57,7 +57,7 @@ Voor meer informatie over het gebruik van Azure CLI met Event Grid raadpleegt [u
 
 Wanneer EventGrid een fout ontvangt voor een gebeurtenis bezorgings poging, bepaalt EventGrid of het een nieuwe levering of onbestelbare letter moet doen of de gebeurtenis wilt verwijderen op basis van het type fout. 
 
-Als de fout die wordt geretourneerd door het geabonneerde eind punt, configuratie gerelateerde fout is die niet kan worden opgelost met nieuwe pogingen (bijvoorbeeld als het eind punt wordt verwijderd), voert EventGrid de gebeurtenis onbestelbare berichten uit of verwijdert u de gebeurtenis als de onbestelbare letter niet is geconfigureerd.
+Als de fout die door het geabonneerde eind punt wordt geretourneerd, een configuratie fout is die niet kan worden opgelost met nieuwe pogingen (bijvoorbeeld als het eind punt is verwijderd), voert EventGrid de gebeurtenis onbestelbare berichten uit of verwijdert de gebeurtenis als de onbestelbare letter niet is geconfigureerd.
 
 Hier volgen de typen eind punten waarvoor het nieuwe pogingen niet gebeurt:
 
@@ -69,7 +69,7 @@ Hier volgen de typen eind punten waarvoor het nieuwe pogingen niet gebeurt:
 > [!NOTE]
 > Als Dead-Letter niet is geconfigureerd voor het eind punt, worden gebeurtenissen verwijderd wanneer de bovenstaande fouten optreden. Overweeg het configureren van onbestelbare berichten als u niet wilt dat dit soort gebeurtenissen wordt verwijderd.
 
-Als de fout die is geretourneerd door het geabonneerde eind punt niet voor komt in de bovenstaande lijst, voert EventGrid de volgende stappen uit die hieronder worden beschreven:
+Als de fout die wordt geretourneerd door het geabonneerde eind punt niet voor komt in de bovenstaande lijst, voert EventGrid de volgende stappen uit die hieronder worden beschreven:
 
 Event Grid 30 seconden wachten op een reactie na het afleveren van een bericht. Als het eind punt 30 seconden niet heeft gereageerd, wordt het bericht in de wachtrij geplaatst voor opnieuw proberen. Event Grid gebruikt een exponentiële uitstel beleid voor opnieuw proberen voor gebeurtenis levering. Event Grid nieuwe pogingen op het volgende schema worden uitgevoerd op basis van de beste inspanningen:
 
@@ -109,7 +109,7 @@ Als aan een van de voor waarden wordt voldaan, wordt de gebeurtenis verwijderd o
 
 Event Grid verzendt een gebeurtenis naar de locatie van de onbestelbare berichten wanneer deze alle nieuwe pogingen heeft geprobeerd uit te voeren. Als Event Grid een respons code van 400 (ongeldige aanvraag) of 413 (te grote aanvraag entiteit) ontvangt, wordt de gebeurtenis direct gepland voor onbestelbare berichten. Met deze antwoord codes wordt aangegeven dat de levering van de gebeurtenis nooit slaagt.
 
-De time-to-Live-verval datum wordt alleen gecontroleerd bij de volgende geplande leverings poging. Dus als time-to-Live verloopt vóór de volgende geplande lever poging, wordt gebeurtenis verloop alleen gecontroleerd op het tijdstip van de volgende levering en vervolgens onbestelbare berichten. 
+De time-to-Live-verval datum wordt alleen gecontroleerd bij de volgende geplande leverings poging. , Zelfs als time-to-Live verloopt vóór de volgende geplande leverings poging, wordt gebeurtenis verloop alleen gecontroleerd op het tijdstip van de volgende levering en vervolgens onbestelbare berichten. 
 
 Er is een vertraging van vijf minuten tussen de laatste poging om een gebeurtenis te leveren en wanneer deze wordt geleverd aan de locatie van de onbestelbare berichten. Deze vertraging is bedoeld om het aantal Blob Storage-bewerkingen te verminderen. Als de locatie voor onbestelbare berichten vier uur niet beschikbaar is, wordt de gebeurtenis verwijderd.
 
@@ -288,6 +288,15 @@ Alle andere codes die zich niet in de bovenstaande set (200-204) bevinden, worde
 | 503 Service niet beschikbaar | Opnieuw proberen na 30 seconden of langer |
 | Alle andere | Opnieuw proberen na 10 seconden of langer |
 
+## <a name="delivery-with-custom-headers"></a>Levering met aangepaste kopteksten
+Met gebeurtenis abonnementen kunt u HTTP-headers instellen die in de geleverde gebeurtenissen zijn opgenomen. Met deze mogelijkheid kunt u aangepaste headers instellen die vereist zijn voor een doel. U kunt Maxi maal 10 kopteksten instellen bij het maken van een gebeurtenis abonnement. Elke header waarde mag niet groter zijn dan 4.096 bytes (4.000). U kunt aangepaste kopteksten instellen voor de gebeurtenissen die worden geleverd aan de volgende bestemmingen:
+
+- Webhooks
+- Azure Service Bus onderwerpen en wacht rijen
+- Azure Event Hubs
+- Hybride verbindingen doorgeven
+
+Zie [levering met aangepaste kopteksten](delivery-properties.md)voor meer informatie. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

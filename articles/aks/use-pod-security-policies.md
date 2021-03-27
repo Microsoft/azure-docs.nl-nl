@@ -3,27 +3,20 @@ title: Pod-beveiligings beleid gebruiken in azure Kubernetes service (AKS)
 description: Meer informatie over het beheren van pod-toelatingen met behulp van PodSecurityPolicy in azure Kubernetes service (AKS)
 services: container-service
 ms.topic: article
-ms.date: 02/12/2021
-ms.openlocfilehash: cf520f4b0dc2f51e6431d65ef178b6635d7fd857
-ms.sourcegitcommit: 44edde1ae2ff6c157432eee85829e28740c6950d
+ms.date: 03/25/2021
+ms.openlocfilehash: d95cdb51136511bdd8529c829c3f680d19e14ba9
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105544244"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105611766"
 ---
 # <a name="preview---secure-your-cluster-using-pod-security-policies-in-azure-kubernetes-service-aks"></a>Voor beeld: uw cluster beveiligen met behulp van pod-beveiligings beleid in azure Kubernetes service (AKS)
 
 > [!WARNING]
-> **De functie die wordt beschreven in dit document, Pod-beveiligings beleid (preview), is ingesteld voor afschaffing en is niet meer beschikbaar na 30 juni 2021** voor het voor deel van [Azure Policy voor AKS](use-azure-policy.md). De datum van afschaffing is verlengd vanaf de vorige datum van 15 oktober 2020.
+> **De functie die in dit document wordt beschreven, Pod-beveiligings beleid (preview), begint met Kubernetes versie 1,21 en wordt verwijderd in versie 1,25.** Als Kubernetes upstream benadert deze mijl paal, dan zal de Kubernetes-Community zich bezig gehouden met het documenteren van levensvat bare alternatieven. De vorige aankondiging van de afschaffing werd gedaan op het moment dat er geen geschikte optie is voor klanten. Nu de Kubernetes-community aan een ander werkt, is het niet meer mogelijk om Kubernetes te vervangen.
 >
 > Nadat de functie voor beveiligingsbeleid voor pods (preview) is afgeschaft, moet u de functie op alle bestaande clusters uitschakelen met behulp van de afgeschafte functie om toekomstige clusterupgrades uit te voeren en de ondersteuning van Azure te kunnen blijven gebruiken.
->
-> Het wordt sterk aanbevolen om te beginnen met het testen van scenario's met Azure Policy voor AKS, die ingebouwde beleids regels biedt voor het beveiligen van de peulen en ingebouwde initiatieven die zijn toegewezen aan pod-beveiligings beleid. Als u wilt migreren vanuit pod-beveiligings beleid, moet u de volgende acties uitvoeren op een cluster.
-> 
-> 1. Het [pod-beveiligings beleid](#clean-up-resources) op het cluster uitschakelen
-> 1. De [invoeg toepassing Azure Policy][azure-policy-add-on] inschakelen
-> 1. Schakel het gewenste Azure-beleid in op basis van het [beschik bare ingebouwde beleid][policy-samples]
-> 1. Wijzigingen in het [gedrag controleren tussen pod-beveiligings beleid en Azure Policy](#behavior-changes-between-pod-security-policy-and-azure-policy)
 
 Als u de beveiliging van uw AKS-cluster wilt verbeteren, kunt u het aantal peulen dat kan worden gepland, beperken. De meeste resources die u niet toestaat, kunnen niet worden uitgevoerd in het AKS-cluster. U definieert deze toegang met behulp van pod-beveiligings beleid. Dit artikel laat u zien hoe u pod-beveiligings beleid kunt gebruiken om de implementatie van een van de peulen in AKS te beperken.
 

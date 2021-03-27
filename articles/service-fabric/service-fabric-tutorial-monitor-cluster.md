@@ -1,17 +1,15 @@
 ---
 title: Een Service Fabric-cluster bewaken in Azure
 description: In deze zelfstudie leert u hoe u een cluster kunt bewaken door Service Fabric-gebeurtenissen te bekijken, query's uit te voeren op de EventStore-API's, prestatiemeteritems te controleren en statusrapporten te bekijken.
-author: srrengar
 ms.topic: tutorial
 ms.date: 07/22/2019
-ms.author: srrengar
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: ecd05a838425d57e0eaff2fa571d72b5a87e92a6
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 3e9c8011647567b6f07423e113f98493d80d8402
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98791775"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105628778"
 ---
 # <a name="tutorial-monitor-a-service-fabric-cluster-in-azure"></a>Zelfstudie: Een Service Fabric-cluster bewaken in Azure
 

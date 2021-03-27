@@ -1,16 +1,14 @@
 ---
 title: Lijst met Azure Service Fabric-gebeurtenissen
 description: Uitgebreide lijst met gebeurtenissen die door Azure Service Fabric worden verschaft om clusters te bewaken.
-author: srrengar
 ms.topic: reference
 ms.date: 2/25/2019
-ms.author: srrengar
-ms.openlocfilehash: e69b407bc7d58a83616daa44272ec008ccff9fad
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 3f65d7c3ddec8263ff6f115df9616b48814afc93
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "85846655"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105628880"
 ---
 # <a name="list-of-service-fabric-events"></a>Lijst met Service Fabric gebeurtenissen 
 
@@ -33,11 +31,11 @@ Meer informatie over cluster upgrades vindt u [hier](service-fabric-cluster-upgr
 
 | Gebeurtenis | Name | Categorie | Beschrijving |Bron (taak) | Niveau | 
 | --- | --- | --- | --- | --- | --- | 
-| 29627 | ClusterUpgradeStarted | Upgraden | Een upgrade van een cluster is gestart | CM | Informatief |
-| 29628 | ClusterUpgradeCompleted | Upgraden | Een cluster upgrade is voltooid | CM | Informatief | 
-| 29629 | ClusterUpgradeRollbackStarted | Upgraden | Een upgrade van een cluster is gestart om terug te draaien  | CM | Waarschuwing | 
-| 29630 | ClusterUpgradeRollbackCompleted | Upgraden | Het terugdraaien van een cluster upgrade is voltooid | CM | Waarschuwing | 
-| 29631 | ClusterUpgradeDomainCompleted | Upgraden | Een upgrade domein is bijgewerkt tijdens een cluster upgrade | CM | Informatief | 
+| 29627 | ClusterUpgradeStarted | Upgrade uitvoeren | Een upgrade van een cluster is gestart | CM | Informatief |
+| 29628 | ClusterUpgradeCompleted | Upgrade uitvoeren | Een cluster upgrade is voltooid | CM | Informatief | 
+| 29629 | ClusterUpgradeRollbackStarted | Upgrade uitvoeren | Een upgrade van een cluster is gestart om terug te draaien  | CM | Waarschuwing | 
+| 29630 | ClusterUpgradeRollbackCompleted | Upgrade uitvoeren | Het terugdraaien van een cluster upgrade is voltooid | CM | Waarschuwing | 
+| 29631 | ClusterUpgradeDomainCompleted | Upgrade uitvoeren | Een upgrade domein is bijgewerkt tijdens een cluster upgrade | CM | Informatief | 
 
 ## <a name="node-events"></a>Knooppunt gebeurtenissen
 
@@ -56,6 +54,13 @@ Meer informatie over cluster upgrades vindt u [hier](service-fabric-cluster-upgr
 | 25624 | NodeClosed | StateTransition |  Een knoop punt is afgesloten | FabricNode | Informatief | 
 | 25626 | NodeAborted | StateTransition |  Een knoop punt is niet probleemloos afgesloten | FabricNode | Fout | 
 
+**KTL-logboek registratie knooppunt gebeurtenissen** 
+
+| Gebeurtenis | Name | Categorie | Beschrijving |Bron (taak) | Niveau |
+| --- | --- | --- | --- | --- | --- | 
+| 50187 | SharedLogWriteThrottled | Gezondheidszorg | Schrijf bewerkingen naar een gedeeld logboek worden beperkt | KtlLoggerNode | Informatief | 
+| 50188 | SharedLogWriteUnthrottled | Gezondheidszorg | Schrijf bewerkingen naar een gedeeld logboek zijn niet-beperkt | KtlLoggerNode | Informatief | 
+
 ## <a name="application-events"></a>Toepassings gebeurtenissen
 
 **Toepassings levenscyclus gebeurtenissen**
@@ -72,11 +77,11 @@ Meer informatie over toepassings upgrades vindt u [hier](service-fabric-applicat
 
 | Gebeurtenis | Name | Categorie | Beschrijving |Bron (taak) | Niveau | 
 | --- | --- | ---| --- | --- | --- | 
-| 29621 | ApplicationUpgradeStarted | Upgraden | Een toepassings upgrade is gestart | CM | Informatief | 
-| 29622 | ApplicationUpgradeCompleted | Upgraden | Een toepassings upgrade is voltooid | CM | Informatief | 
-| 29623 | ApplicationUpgradeRollbackStarted | Upgraden | Het terugdraaien van een toepassings upgrade is gestart |CM | Waarschuwing | 
-| 29624 | ApplicationUpgradeRollbackCompleted | Upgraden | Het terugdraaien van een toepassings upgrade is voltooid | CM | Waarschuwing | 
-| 29626 | ApplicationUpgradeDomainCompleted | Upgraden | Een upgrade domein is bijgewerkt tijdens een toepassings upgrade | CM | Informatief | 
+| 29621 | ApplicationUpgradeStarted | Upgrade uitvoeren | Een toepassings upgrade is gestart | CM | Informatief | 
+| 29622 | ApplicationUpgradeCompleted | Upgrade uitvoeren | Een toepassings upgrade is voltooid | CM | Informatief | 
+| 29623 | ApplicationUpgradeRollbackStarted | Upgrade uitvoeren | Het terugdraaien van een toepassings upgrade is gestart |CM | Waarschuwing | 
+| 29624 | ApplicationUpgradeRollbackCompleted | Upgrade uitvoeren | Het terugdraaien van een toepassings upgrade is voltooid | CM | Waarschuwing | 
+| 29626 | ApplicationUpgradeDomainCompleted | Upgrade uitvoeren | Een upgrade domein is bijgewerkt tijdens een toepassings upgrade | CM | Informatief | 
 
 ## <a name="service-events"></a>Service gebeurtenissen
 

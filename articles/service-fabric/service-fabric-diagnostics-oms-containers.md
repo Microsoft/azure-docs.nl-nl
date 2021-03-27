@@ -1,16 +1,14 @@
 ---
 title: Containers controleren met Azure Monitor-logboeken
 description: Gebruik Azure Monitor logboeken voor het controleren van containers die worden uitgevoerd op Azure Service Fabric-clusters.
-author: srrengar
 ms.topic: conceptual
 ms.date: 02/25/2019
-ms.author: srrengar
-ms.openlocfilehash: 6539815875b87a0d0f525d7e89464fa7d2505746
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 6217569dc50517c88a5a8a7bc0f3752e7e327f4e
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100570198"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105626653"
 ---
 # <a name="monitor-containers-with-azure-monitor-logs"></a>Containers controleren met Azure Monitor-logboeken
  

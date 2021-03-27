@@ -6,12 +6,12 @@ manager: nitinme
 ms.author: lajanuar
 author: laujan
 ms.date: 03/05/2021
-ms.openlocfilehash: 70c8bce840bca6f2e99b29dc32f5e71bbad8d379
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 780e6defe4f7d09e2d136c080525447ffd29bbb4
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105047232"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105612378"
 ---
 # <a name="get-started-with-document-translation-preview"></a>Aan de slag met document vertalingen (preview-versie)
 
@@ -37,8 +37,8 @@ Om aan de slag te gaan, hebt u het volgende nodig:
 
 > [!IMPORTANT]
 >
-> * U gebruikt niet het eind punt dat u hebt gevonden op uw Azure Portal bron _sleutels en eindpunt_ pagina of het globale Translator-eind punt — `api.cognitive.microsofttranslator.com` — om HTTP-aanvragen te maken voor document vertalingen.
 > * **Voor alle API-aanvragen voor de document Vertaal service is een aangepast domein eindpunt vereist**.
+> * U gebruikt niet het eind punt dat u hebt gevonden op uw Azure Portal bron _sleutels en eindpunt_ pagina of het globale Translator-eind punt — `api.cognitive.microsofttranslator.com` — om HTTP-aanvragen te maken voor document vertalingen.
 
 ### <a name="what-is-the-custom-domain-endpoint"></a>Wat is het aangepaste domein eindpunt?
 
@@ -93,7 +93,7 @@ De `sourceUrl` , `targetUrl` en optioneel `glossaryUrl`  moeten een Shared Acces
 
 * Een nieuw project maken.
 * Vervang Program.cs door de hieronder weergegeven C#-code.
-* Stel uw eind punt in. abonnements sleutel en container-URL-waarden in Program. cs.
+* Stel de waarden van uw eind punt, abonnements sleutel en container-URL in programma. cs in.
 * Als u JSON-gegevens wilt verwerken, voegt [ uNewtonsoft.Jstoe aan het pakket met behulp van .net cli](https://www.nuget.org/packages/Newtonsoft.Json/).
 * Voer het programma uit vanuit de projectmap.
 
@@ -101,7 +101,7 @@ De `sourceUrl` , `targetUrl` en optioneel `glossaryUrl`  moeten een Shared Acces
 
 * Een nieuw Node.js project maken.
 * Installeer de Axios-bibliotheek met `npm i axios` .
-* Kopieer de onderstaande code in uw project.
+* Kopieer/Plak de code hieronder in uw project.
 * Stel de waarden van uw eind punt, abonnements sleutel en container-URL in.
 * Voer het programma uit.
 
@@ -174,7 +174,7 @@ gradle run
 * Stel de waarden van uw eind punt, abonnements sleutel en container-URL in.
 * Sla het bestand op met de extensie .go.
 * Open een opdrachtprompt op een computer waarop Go is geïnstalleerd.
-* Compileer het bestand. Bijvoorbeeld: go build example-code.go.
+* Bouw het bestand. Bijvoorbeeld: go build example-code. go.
 * Voer het bestand uit, bijvoorbeeld: voorbeeldcode.
 
  ---
@@ -187,7 +187,7 @@ Er wordt een aanvraag voor een batch-document vertaling verzonden naar het Verta
 
 De volgende headers zijn opgenomen in elke document Translator API-aanvraag:
 
-|HTTP-header|Beschrijving|
+|HTTP-header|Description|
 |---|--|
 |Ocp-Apim-Subscription-Key|**Vereist**: de waarde is de Azure-abonnements sleutel voor uw Translator of Cognitive Services resource.|
 |Content-Type|**Vereist**: Hiermee geeft u het inhouds type van de payload op. Geaccepteerde waarden zijn application/json of charset = UTF-8.|
@@ -207,26 +207,49 @@ De volgende headers zijn opgenomen in elke document Translator API-aanvraag:
 ## <a name="post-a-translation-request"></a>Een Vertaal aanvraag plaatsen
 
 <!-- markdownlint-disable MD024 -->
-### <a name="post-request-body-without-optional-glossaryurl"></a>POST-aanvraag hoofdtekst zonder optionele glossaryURL
+### <a name="post-request-body-to-translate-all-documents-in-a-container"></a>Hoofd tekst van bericht om alle documenten in een container te vertalen
 
 ```json
 {
     "inputs": [
         {
             "source": {
-                "sourceUrl": "<https://YOUR-SOURCE-URL-WITH-READ-LIST-ACCESS-SAS>",
-                "storageSource": "AzureBlob",
-                "filter": {
-                    "prefix": "News",
-                    "suffix": ".txt"
-                },
-                "language": "en"
+                "sourceUrl": https://my.blob.core.windows.net/source-en?sv=2019-12-12&st=2021-03-05T17%3A45%3A25Z&se=2021-03-13T17%3A45%3A00Z&sr=c&sp=rl&sig=SDRPMjE4nfrH3csmKLILkT%2Fv3e0Q6SWpssuuQl1NmfM%3D
             },
             "targets": [
                 {
-                    "targetUrl": "<https://YOUR-SOURCE-URL-WITH-WRITE-LIST-ACCESS-SAS>",
-                    "storageSource": "AzureBlob",
-                    "category": "general",
+                    "targetUrl": https://my.blob.core.windows.net/target-fr?sv=2019-12-12&st=2021-03-05T17%3A49%3A02Z&se=2021-03-13T17%3A49%3A00Z&sr=c&sp=wdl&sig=Sq%2BYdNbhgbq4hLT0o1UUOsTnQJFU590sWYo4BOhhQhs%3D,
+                    "language": "fr"
+                }
+            ]
+        }
+    ]
+}
+```
+
+
+### <a name="post-request-body-to-translate-a-specific-document-in-a-container"></a>Hoofd tekst van bericht om een specifiek document in een container te vertalen
+
+* Zorg ervoor dat u ' para ' hebt opgegeven: ' bestand '
+* Zorg ervoor dat u een bron-URL hebt gemaakt & SAS-token voor de specifieke BLOB/het opgegeven document (niet voor de container) 
+* Zorg ervoor dat u de doel bestandsnaam hebt opgegeven als onderdeel van de doel-URL, hoewel het SAS-token nog steeds voor de container is.
+* Hieronder ziet u een voor beeld van een document dat wordt vertaald in twee doel talen
+
+```json
+{
+    "inputs": [
+        {
+            "storageType": "File",
+            "source": {
+                "sourceUrl": https://my.blob.core.windows.net/source-en/source-english.docx?sv=2019-12-12&st=2021-01-26T18%3A30%3A20Z&se=2021-02-05T18%3A30%3A00Z&sr=c&sp=rl&sig=d7PZKyQsIeE6xb%2B1M4Yb56I%2FEEKoNIF65D%2Fs0IFsYcE%3D
+            },
+            "targets": [
+                {
+                    "targetUrl": https://my.blob.core.windows.net/target/try/Target-Spanish.docx?sv=2019-12-12&st=2021-01-26T18%3A31%3A11Z&se=2021-02-05T18%3A31%3A00Z&sr=c&sp=wl&sig=AgddSzXLXwHKpGHr7wALt2DGQJHCzNFF%2F3L94JHAWZM%3D,
+                    "language": "es"
+                },
+                {
+                    "targetUrl": https://my.blob.core.windows.net/target/try/Target-German.docx?sv=2019-12-12&st=2021-01-26T18%3A31%3A11Z&se=2021-02-05T18%3A31%3A00Z&sr=c&sp=wl&sig=AgddSzXLXwHKpGHr7wALt2DGQJHCzNFF%2F3L94JHAWZM%3D,
                     "language": "de"
                 }
             ]
@@ -235,44 +258,10 @@ De volgende headers zijn opgenomen in elke document Translator API-aanvraag:
 }
 ```
 
-### <a name="post-request-body-with-optional-glossaryurl"></a>POST-aanvraag tekst met optionele glossaryURL
-
-```json
-{
-  "inputs":[
-    {
-      "source":{
-        "sourceUrl":"<https://YOUR-SOURCE-URL-WITH-READ-LIST-ACCESS-SAS>",
-        "storageSource":"AzureBlob",
-        "filter":{
-          "prefix":"News",
-          "suffix":".txt"
-        },
-        "language":"en"
-      },
-      "targets":[
-        {
-          "targetUrl":"<https://YOUR-SOURCE-URL-WITH-WRITE-LIST-ACCESS-SAS>",
-          "storageSource":"AzureBlob",
-          "category":"general",
-          "language":"de",
-          "glossaries":[
-            {
-              "glossaryUrl":"<https://YOUR-GLOSSARY-URL-WITH-READ-LIST-ACCESS-SAS>",
-              "format":"xliff",
-              "version":"1.2"
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
-```
 
 > [!IMPORTANT]
 >
-> Voor de onderstaande code voorbeelden geeft u uw sleutel en het eind punt op waar aangegeven. Vergeet niet om de sleutel uit uw code te verwijderen wanneer u klaar bent en deze nooit openbaar te plaatsen.  Zie [Azure Cognitive Services Security](../../cognitive-services-security.md?tabs=command-line%2ccsharp) voor manieren om uw referenties veilig op te slaan en te openen.
+> Voor de onderstaande code voorbeelden geeft u uw sleutel en het eind punt op waar aangegeven. Vergeet niet om de sleutel uit uw code te verwijderen wanneer u klaar bent en deze nooit openbaar te plaatsen.  Zie [Azure Cognitive Services Security](/azure/cognitive-services/cognitive-services-security?tabs=command-line%2Ccsharp) voor manieren om uw referenties veilig op te slaan en te openen.
 >
 > Mogelijk moet u de volgende velden bijwerken, afhankelijk van de bewerking:
 >>>
@@ -1247,7 +1236,7 @@ func main() {
 
 ## <a name="content-limits"></a>Inhouds beperkingen
 
-De volgende tabel bevat de limieten voor gegevens die u naar document vertalingen verzendt.
+De volgende tabel bevat de limieten voor gegevens die u naar document vertalingen verzendt (preview).
 
 |Kenmerk | Limiet|
 |---|---|

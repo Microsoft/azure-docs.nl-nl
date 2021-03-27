@@ -1,16 +1,14 @@
 ---
 title: Azure Service Fabric-bewakings partners
 description: Meer informatie over het bewaken van Azure Service Fabric-toepassingen,-clusters en-infra structuur met oplossingen voor partner bewaking.
-author: srrengar
 ms.topic: article
 ms.date: 10/16/2018
-ms.author: srrengar
-ms.openlocfilehash: fd24d65ebdf4e458870819286024d1ea2e13d83e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 92ac0627f02ccefdd4c93aa51cac7c9dd7790460
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "75645715"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105627724"
 ---
 # <a name="azure-service-fabric-monitoring-partners"></a>Azure Service Fabric-bewakings partners
 

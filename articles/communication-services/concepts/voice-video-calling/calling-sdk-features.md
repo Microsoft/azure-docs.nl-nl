@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 31b8e2e9a8e69fd730edb2c826005104f5f82bdc
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.openlocfilehash: 1475b8aaa4e925facb989e1c6977c4f4dacc6418
+ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105609187"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105625208"
 ---
 # <a name="calling-sdk-overview"></a>Overzicht van de SDK
 
@@ -77,8 +77,8 @@ De communicatie services die SDK aanroept, ondersteunt de volgende streaming-con
 
 | Limiet          |Web | Android/iOS|
 |-----------|----|------------|
-|**Aantal uitgaande streams dat tegelijkertijd kan worden verzonden** |1 video + 1 scherm delen | 1 video + 1 scherm delen|
-|**Aantal binnenkomende streams dat tegelijkertijd kan worden weergegeven** |1 video + 1 scherm delen| 6 video + 1 scherm delen |
+|**Aantal uitgaande streams dat tegelijkertijd kan worden verzonden** |1 video of 1 scherm delen | 1 video + 1 scherm delen|
+|**Aantal binnenkomende streams dat tegelijkertijd kan worden weergegeven** |1 video of 1 scherm delen| 6 video + 1 scherm delen |
 
 ## <a name="calling-sdk-timeouts"></a>SDK-time-outs aanroepen
 

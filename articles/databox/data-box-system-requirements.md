@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 02/22/2021
+ms.date: 03/25/2021
 ms.author: alkohli
-ms.openlocfilehash: 85a0ce20f1d8e5a7e943efc088c19a8ad1912fc1
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 7f999dbf7a4e0262e36181a98560931d32d3296b
+ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101706028"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105612497"
 ---
 # <a name="azure-data-box-system-requirements"></a>Systeem vereisten voor Azure Data Box
 
@@ -39,7 +39,7 @@ De software vereisten zijn onder andere ondersteunde besturings systemen, protoc
 [!INCLUDE [data-box-supported-file-systems-clients](../../includes/data-box-supported-file-systems-clients.md)]
 
 > [!IMPORTANT] 
-> Verbinding met Data Box shares wordt niet ondersteund via REST voor export orders. 
+> Verbinding met Data Box shares wordt niet ondersteund via REST voor export orders.
 
 ### <a name="supported-storage-accounts"></a>Ondersteunde opslagaccounts
 

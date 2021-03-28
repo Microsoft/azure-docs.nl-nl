@@ -11,14 +11,14 @@ ms.devlang: NA
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/26/2017
+ms.date: 03/26/2021
 ms.author: aldomel
-ms.openlocfilehash: bd46a09653f4d479ed0a09b73868d938aff1b825
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.openlocfilehash: c8d188c7bb7034cda450049c3d4912cc1517dae5
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105605209"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105645267"
 ---
 # <a name="virtual-network-traffic-routing"></a>Routering van verkeer in virtuele netwerken
 
@@ -96,10 +96,12 @@ U kunt de onderstaande 'volgende hoptypen' opgeven wanneer u een door de gebruik
 
 **VNet-peering** en **VirtualNetworkServiceEndpoint** kunt u niet opgeven als het 'volgende hoptype' in door de gebruiker gedefinieerde routes. Routes met het hoptype **VNet-peering** of **VirtualNetworkServiceEndpoint** worden alleen gemaakt door Azure, wanneer u peering van virtuele netwerken of een service-eindpunt configureert.
 
-### <a name="service-tags-for-user-defined-routes-public-preview"></a>Service tags voor door de gebruiker gedefinieerde routes (open bare preview)
+### <a name="service-tags-for-user-defined-routes-preview"></a>Service tags voor door de gebruiker gedefinieerde routes (preview-versie)
 
 U kunt nu [een servicetag opgeven als het](service-tags-overview.md) adres voorvoegsel voor een door de gebruiker gedefinieerde route in plaats van een expliciet IP-bereik. Een servicetag vertegenwoordigt een groep IP-adres voorvoegsels van een bepaalde Azure-service. Micro soft beheert de adres voorvoegsels die zijn opgenomen in het service label en werkt de servicetag automatisch bij met gewijzigde adressen, waardoor de complexiteit van regel matige updates voor door de gebruiker gedefinieerde routes wordt geminimaliseerd en het aantal routes dat u moet maken, wordt verminderd. U kunt momenteel 25 of minder routes maken met Service tags in elke route tabel. </br>
 
+> [!IMPORTANT]
+> Service tags voor door de gebruiker gedefinieerde routes zijn momenteel beschikbaar als preview-versie. Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 #### <a name="exact-match"></a>Exacte overeenkomst
 Wanneer er een exacte voor voegsel komt overeen met een route met een expliciet IP-voor voegsel en een route met een servicetag, wordt de voor keur gegeven aan de route met het expliciete voor voegsel. Wanneer meerdere routes met Service Tags overeenkomen met IP-voor voegsels, worden routes in de volgende volg orde geëvalueerd: 

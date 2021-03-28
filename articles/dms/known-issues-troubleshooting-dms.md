@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: troubleshooting
 ms.date: 02/20/2020
-ms.openlocfilehash: 785567685b77183df0f212897b923d911ac045f6
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: ce53e8a77186f96801879e5c9d8f8c65809470d0
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105567304"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105639797"
 ---
 # <a name="troubleshoot-common-azure-database-migration-service-issues-and-errors"></a>Veelvoorkomende problemen met Azure Database Migration Service oplossen
 
@@ -132,7 +132,7 @@ Wanneer u probeert om Azure Database Migration Service verbinding te maken met S
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Bekijk het artikel [Azure database Migration Service Power shell](/powershell/module/azurerm.datamigration/?view=azurermps-6.13.0#data_migration).
+* Bekijk het artikel [Azure database Migration Service Power shell](/powershell/module/azurerm.datamigration#data_migration).
 * Bekijk het artikel [How to Configure Server para meters in azure database for MySQL met behulp van de Azure Portal](../mysql/howto-server-parameters.md).
 * Bekijk het artikel [overzicht van de vereisten voor het gebruik van Azure database Migration service](./pre-reqs.md).
 * Raadpleeg de [Veelgestelde vragen over het gebruik van Azure database Migration service](./faq.md).

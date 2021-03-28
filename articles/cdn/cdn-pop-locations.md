@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/19/2020
 ms.author: allensu
-ms.openlocfilehash: b2c191c508aaa613d6846aebdc5a15a213918e52
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: ba6710629f52abd13ef84f2a814c10c6dca18837
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105567267"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105641735"
 ---
 # <a name="azure-cdn-coverage-by-metro"></a>Dekking Azure CDN per metro lijn 
 > [!div class="op_single_selector"]
@@ -49,4 +49,5 @@ In dit artikel vindt u een overzicht van de huidige metro lijnen die POP-locatie
 
 
 ## <a name="next-steps"></a>Volgende stappen
-* Als u de meest recente IP-adressen voor vermelding toestaan wilt ophalen, raadpleegt u de [Azure CDN Edge nodes-API](/rest/api/cdn/edgenodes).
+
+* Als u de meest recente IP-adressen voor vermelding toestaan wilt ophalen, raadpleegt u de [Azure CDN Edge nodes-API](/rest/api/cdn/cdn/edgenodes).

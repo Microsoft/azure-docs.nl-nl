@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3ec650f82b95cdfabc923e92325959c63f2846de
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: 0f775f97a204bc758e632c92702b93227b47bc15
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105110725"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105645352"
 ---
 ## <a name="add-managed-identity-to-your-communication-services-solution-js"></a>Beheerde identiteit toevoegen aan uw oplossing voor communicatie Services (JS)
 
@@ -27,7 +27,7 @@ import { CommunicationIdentityClient, CommunicationUserToken } from "@azure/comm
 import { SmsClient, SmsSendRequest } from "@azure/communication-sms";
 ```
 
-In de onderstaande voor beelden wordt gebruikgemaakt van de [DefaultAzureCredential](/javascript/api/azure.identity.defaultazurecredential). Deze referentie is geschikt voor productie-en ontwikkelings omgevingen.
+In de onderstaande voor beelden wordt gebruikgemaakt van de [DefaultAzureCredential](/javascript/api/@azure/identity/defaultazurecredential). Deze referentie is geschikt voor productie-en ontwikkelings omgevingen.
 
 Als u de toepassing wilt registreren in de ontwikkel omgeving en omgevings variabelen wilt instellen, raadpleegt u [toegang verlenen met beheerde identiteit](../managed-identity-from-cli.md)  
 

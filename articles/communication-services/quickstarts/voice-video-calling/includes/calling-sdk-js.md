@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 03/10/2021
 ms.author: mikben
-ms.openlocfilehash: af5ec07a8fb2db0bd4b9b8f1af556ef54199400d
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.openlocfilehash: 49054d9bbde67dc3670ec444e4b60c3ddf503db5
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105609374"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105645368"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -21,10 +21,10 @@ ms.locfileid: "105609374"
 ## <a name="install-the-sdk"></a>De SDK installeren
 
 > [!NOTE]
-> In dit document wordt versie 1.0.0-Beta. 6 van de aanroepende SDK gebruikt.
+> In dit document wordt versie 1.0.0-Beta. 10 van de aanroepende SDK gebruikt.
 
 Gebruik de `npm install` opdracht om de Azure Communication Services-aanroepende en common sdk's voor Java script te installeren.
-In dit document wordt verwezen naar typen in versie 1.0.0-Beta. 5 van de aanroepende bibliotheek.
+In dit document wordt verwezen naar typen in versie 1.0.0-Beta. 10 van de aanroepende bibliotheek.
 
 ```console
 npm install @azure/communication-common --save
@@ -54,6 +54,10 @@ De `createCallAgent` methode gebruikt `CommunicationTokenCredential` als een arg
 Nadat u een instantie hebt gemaakt `callAgent` , kunt u de- `getDeviceManager` methode gebruiken `CallClient` om toegang te krijgen tot het exemplaar `deviceManager` .
 
 ```js
+// Set the logger's log level
+setLogLevel('verbose');
+// Redirect logger output to wherever desired. By default it logs to console
+AzureLogger.log = (...args) => { console.log(...args) };
 const userToken = '<user token>';
 callClient = new CallClient(options);
 const tokenCredential = new AzureCommunicationTokenCredential(userToken);
@@ -113,8 +117,8 @@ Nadat u een camera hebt geselecteerd, gebruikt u deze om een instantie te maken 
 ```js
 const deviceManager = await callClient.getDeviceManager();
 const cameras = await deviceManager.getCameras();
-videoDeviceInfo = cameras[0];
-localVideoStream = new LocalVideoStream(videoDeviceInfo);
+const camera = cameras[0]
+localVideoStream = new LocalVideoStream(camera);
 const placeCallOptions = {videoOptions: {localVideoStreams:[localVideoStream]}};
 const call = callAgent.startCall(['acsUserId'], placeCallOptions);
 
@@ -168,14 +172,26 @@ Het `callAgent` exemplaar verzendt een `incomingCall` gebeurtenis wanneer de aan
 
 ```js
 const incomingCallHander = async (args: { incomingCall: IncomingCall }) => {
-    //Get information about caller
+
+    //Get incoming call ID
+    var incomingCallId = incomingCall.id
+
+    // Get information about caller
     var callerInfo = incomingCall.callerInfo
 
-    //Accept the call
+    // Accept the call
     var call = await incomingCall.accept();
 
-    //Reject the call
+    // Reject the call
     incomingCall.reject();
+
+    // Subscribe to callEnded event and get the call end reason
+     incomingCall.on('callEnded', args => {
+        console.log(args.callEndReason);
+    });
+
+    // callEndReason is also a property of IncomingCall
+    var callEndReason = incomingCall.callEndReason;
 };
 callAgentInstance.on('incomingCall', incomingCallHander);
 ```
@@ -194,7 +210,7 @@ De unieke ID (teken reeks) voor een aanroep ophalen:
     const callId: string = call.id;
    ```
 
-Meer informatie over andere deel nemers aan de oproep door de verzameling te controleren `remoteParticipant` :
+Meer informatie over andere deel nemers in de oproep door de verzameling te controleren `remoteParticipants` op het aanroep exemplaar:
 
    ```js
    const remoteParticipants = call.remoteParticipants;
@@ -217,7 +233,6 @@ De status van een aanroep ophalen:
    Hiermee wordt een teken reeks geretourneerd die de huidige status van een aanroep vertegenwoordigt:
 
   - `None`: Aanvankelijke oproep status.
-  - `Incoming`: Hiermee wordt aangegeven dat een aanroep inkomend is. Deze moet ofwel geaccepteerd of afgekeurd zijn.
   - `Connecting`: Initiële overgangs status wanneer een aanroep wordt geplaatst of geaccepteerd.
   - `Ringing`: Voor een uitgaande oproep geeft aan dat een aanroep wordt opgeroepen voor externe deel nemers. `Incoming`Aan de zijkant.
   - `EarlyMedia`: Hiermee wordt een status aangegeven waarin een aankondiging wordt afgespeeld voordat de aanroep is verbonden.
@@ -231,8 +246,8 @@ Ontdek waarom een gesprek is beëindigd door de eigenschap te controleren `callE
 
    ```js
    const callEndReason = call.callEndReason;
-   // callEndReason.code (number) code associated with the reason
-   // callEndReason.subCode (number) subCode associated with the reason
+   const callEndReasonCode = callEndReason.code // (number) code associated with the reason
+   const callEndReasonSubCode = callEndReason.subCode // (number) subCode associated with the reason
    ```
 
 Meer informatie over de huidige oproep inkomend of uitgaand door de eigenschap te controleren `direction` . Wordt geretourneerd `CallDirection` .
@@ -245,7 +260,7 @@ Meer informatie over de huidige oproep inkomend of uitgaand door de eigenschap t
 Controleer of de huidige microfoon is gedempt. Wordt geretourneerd `Boolean` .
 
    ```js
-   const muted = call.isMicrophoneMuted;
+   const muted = call.isMuted;
    ```
 
 Nagaan of de stroom voor het delen van het scherm wordt verzonden vanuit een bepaald eind punt door de eigenschap te controleren `isScreenSharingOn` . Wordt geretourneerd `Boolean` .
@@ -291,7 +306,10 @@ await call.unmute();
 Als u een video wilt starten, moet u camera's opgeven met behulp van de `getCameras` methode voor het `deviceManager` object. Maak vervolgens een nieuw exemplaar van `LocalVideoStream` door de gewenste camera door te geven aan de `startVideo` methode als een argument:
 
 ```js
-const localVideoStream = new LocalVideoStream(videoDeviceInfo);
+const deviceManager = await callClient.getDeviceManager();
+const cameras = await deviceManager.getCameras();
+const camera = cameras[0]
+const localVideoStream = new LocalVideoStream(camera);
 await call.startVideo(localVideoStream);
 ```
 
@@ -311,12 +329,13 @@ U kunt overschakelen naar een ander camera apparaat terwijl een video wordt verz
 
 ```js
 const cameras = await callClient.getDeviceManager().getCameras();
-localVideoStream.switchSource(cameras[1]);
+const camera = cameras[1];
+localVideoStream.switchSource(camera);
 ```
 
 ## <a name="manage-remote-participants"></a>Externe deel nemers beheren
 
-Alle externe deel nemers worden vertegenwoordigd door `remoteParticipant` en zijn beschikbaar via de `remoteParticipants` verzameling op een aanroep exemplaar.
+Alle externe deel nemers worden weer gegeven op `RemoteParticipant` type en beschikbaar via `remoteParticipants` verzameling op een aanroep exemplaar.
 
 ### <a name="list-the-participants-in-a-call"></a>De deel nemers in een gesprek weer geven
 
@@ -341,6 +360,7 @@ Externe deel nemers hebben een set gekoppelde eigenschappen en verzamelingen:
   - `{ communicationUserId: '<ACS_USER_ID'> }`: Object dat de ACS-gebruiker vertegenwoordigt.
   - `{ phoneNumber: '<E.164>' }`: Object dat het telefoon nummer in de indeling E. 164 vertegenwoordigt.
   - `{ microsoftTeamsUserId: '<TEAMS_USER_ID>', isAnonymous?: boolean; cloud?: "public" | "dod" | "gcch" }`: Object dat de gebruiker teams vertegenwoordigt.
+  - `{ id: string }`: object repredenting id die niet overeenkomt met een van de andere id-typen
 
 - `state`: De status van een externe deel nemer ophalen.
 
@@ -362,8 +382,8 @@ Externe deel nemers hebben een set gekoppelde eigenschappen en verzamelingen:
 
   ```js
   const callEndReason = remoteParticipant.callEndReason;
-  // callEndReason.code (number) code associated with the reason
-  // callEndReason.subCode (number) subCode associated with the reason
+  const callEndReasonCode = callEndReason.code // (number) code associated with the reason
+  const callEndReasonSubCode = callEndReason.subCode // (number) subCode associated with the reason
   ```
 
 - `isMuted` status: als u wilt weten of een externe deel nemer is gedempt, controleert u de `isMuted` eigenschap. Wordt geretourneerd `Boolean` .
@@ -382,6 +402,11 @@ Externe deel nemers hebben een set gekoppelde eigenschappen en verzamelingen:
 
   ```js
   const videoStreams = remoteParticipant.videoStreams; // [RemoteVideoStream, ...]
+  ```
+- `displayName`: Als u de weergave naam voor deze externe deel nemer wilt ophalen, inspecteert u de `displayName` eigenschap. deze geeft een teken reeks aan. 
+
+  ```js
+  const displayName = remoteParticipant.displayName;
   ```
 
 ### <a name="add-a-participant-to-a-call"></a>Een deel nemer aan een gesprek toevoegen
@@ -415,22 +440,22 @@ const remoteVideoStream: RemoteVideoStream = call.remoteParticipants[0].videoStr
 const streamType: MediaStreamType = remoteVideoStream.mediaStreamType;
 ```
 
-Als u wilt weer geven `RemoteVideoStream` , moet u zich abonneren op een `isAvailableChanged` gebeurtenis. Als de `isAvailable` eigenschap wordt gewijzigd in `true` , wordt een stroom door een externe deel nemer verzonden. Daarna maakt u een nieuw exemplaar van `Renderer` en maakt u een nieuw `RendererView` exemplaar met behulp van de asynchrone `createView` methode.  U kunt vervolgens koppelen `view.target` aan elk UI-element.
+Als u wilt weer geven `RemoteVideoStream` , moet u zich abonneren op een `isAvailableChanged` gebeurtenis. Als de `isAvailable` eigenschap wordt gewijzigd in `true` , wordt een stroom door een externe deel nemer verzonden. Daarna maakt u een nieuw exemplaar van `VideoStreamRenderer` en maakt u een nieuw `VideoStreamRendererView` exemplaar met behulp van de asynchrone `createView` methode.  U kunt vervolgens koppelen `view.target` aan elk UI-element.
 
-Wanneer de beschik baarheid van een externe stroom wordt gewijzigd, kunt u `Renderer` een specifiek exemplaar vernietigen, vernietigen `RendererView` of het allemaal blijven gebruiken. Renderers die zijn gekoppeld aan een niet-beschik bare stroom, resulteren in een leeg video frame.
+Wanneer de beschik baarheid van een externe stroom verandert, kunt u ervoor kiezen om het geheel te vernietigen `VideoStreamRenderer` , een specifiek `VideoStreamRendererView` of te blijven, maar dit resulteert in het weer geven van een leeg video frame.
 
 ```js
 function subscribeToRemoteVideoStream(remoteVideoStream: RemoteVideoStream) {
-    let renderer: Renderer = new Renderer(remoteVideoStream);
+    let videoStreamRenderer: VideoStreamRenderer = new VideoStreamRenderer(remoteVideoStream);
     const displayVideo = () => {
-        const view = await renderer.createView();
+        const view = await videoStreamRenderer.createView();
         htmlElement.appendChild(view.target);
     }
-    remoteVideoStream.on('availabilityChanged', async () => {
+    remoteVideoStream.on('isAvailableChanged', async () => {
         if (remoteVideoStream.isAvailable) {
             displayVideo();
         } else {
-            renderer.dispose();
+            videoStreamRenderer.dispose();
         }
     });
     if (remoteVideoStream.isAvailable) {
@@ -449,12 +474,6 @@ Externe video stromen hebben de volgende eigenschappen:
   const id: number = remoteVideoStream.id;
   ```
 
-- `Stream.size`: De hoogte en breedte van een externe video stroom.
-
-  ```js
-  const size: {width: number; height: number} = remoteVideoStream.size;
-  ```
-
 - `mediaStreamType`: Kan `Video` of `ScreenSharing` .
 
   ```js
@@ -467,32 +486,32 @@ Externe video stromen hebben de volgende eigenschappen:
   const type: boolean = remoteVideoStream.isAvailable;
   ```
 
-### <a name="renderer-methods-and-properties"></a>Methoden en eigenschappen van renderer
+### <a name="videostreamrenderer-methods-and-properties"></a>VideoStreamRenderer methoden en eigenschappen
 
-Maak een `rendererView` exemplaar dat kan worden gekoppeld in de gebruikers interface van de toepassing om de externe video stroom te renderen:
-
-  ```js
-  renderer.createView()
-  ```
-
-Verwijdering van `renderer` en alle gekoppelde `rendererView` instanties:
+Een `VideoStreamRendererView` instantie maken die kan worden gekoppeld in de gebruikers interface van de toepassing om de externe video stroom te genereren, een asynchrone methode te gebruiken `createView()` , wordt omgezet wanneer de stroom gereed is om te worden weer gegeven en een object wordt geretourneerd met `target` de eigenschap die het `video` element vertegenwoordigt dat overal in de DOM-structuur kan worden toegevoegd.
 
   ```js
-  renderer.dispose()
+  videoStreamRenderer.createView()
   ```
 
-### <a name="rendererview-methods-and-properties"></a>RendererView methoden en eigenschappen
+Verwijdering van `videoStreamRenderer` en alle gekoppelde `VideoStreamRendererView` instanties:
 
-Wanneer u maakt `rendererView` , kunt u de `scalingMode` Eigenschappen en opgeven `isMirrored` . `scalingMode` kan `Stretch` , `Crop` of `Fit` . Als `isMirrored` is opgegeven, wordt de gerenderde stroom verticaal gespiegeld.
+  ```js
+  videoStreamRenderer.dispose()
+  ```
+
+### <a name="videostreamrendererview-methods-and-properties"></a>VideoStreamRendererView methoden en eigenschappen
+
+Wanneer u een maakt `VideoStreamRendererView` , kunt u de `scalingMode` Eigenschappen en opgeven `isMirrored` . `scalingMode` kan `Stretch` , `Crop` of `Fit` . Als `isMirrored` is opgegeven, wordt de gerenderde stroom verticaal gespiegeld.
 
 ```js
-const rendererView: RendererView = renderer.createView({ scalingMode, isMirrored });
+const videoStreamRendererView: VideoStreamRendererView = await videoStreamRenderer.createView({ scalingMode, isMirrored });
 ```
 
-Elk `RendererView` exemplaar heeft een `target` eigenschap die het weergave oppervlak vertegenwoordigt. Voeg deze eigenschap toe aan de gebruikers interface van de toepassing:
+Elk `VideoStreamRendererView` exemplaar heeft een `target` eigenschap die het weergave oppervlak vertegenwoordigt. Voeg deze eigenschap toe aan de gebruikers interface van de toepassing:
 
 ```js
-document.body.appendChild(rendererView.target);
+htmlElement.appendChild(view.target);
 ```
 
 U kunt bijwerken `scalingMode` door de methode aan te roepen `updateScalingMode` :
@@ -506,9 +525,6 @@ view.updateScalingMode('Crop')
 In `deviceManager` kunt u lokale apparaten opgeven die uw audio-en video stromen in een gesprek kunnen verzenden. Het helpt u ook bij het aanvragen van machtigingen voor toegang tot de microfoon en camera van een andere gebruiker met behulp van de systeem eigen browser-API.
 
 U kunt toegang krijgen `deviceManager` door de methode aan te roepen `callClient.getDeviceManager()` :
-
-> [!IMPORTANT]
-> U moet een `callAgent` object hebben voordat u toegang kunt krijgen `deviceManager` .
 
 ```js
 const deviceManager = await callClient.getDeviceManager();
@@ -538,26 +554,26 @@ In `deviceManager` kunt u een standaard apparaat instellen dat u gebruikt om een
 const defaultMicrophone = deviceManager.selectedMicrophone;
 
 // Set the microphone device to use.
-await deviceManager.selectMicrophone(AudioDeviceInfo);
+await deviceManager.selectMicrophone(localMicrophones[0]);
 
 // Get the speaker device that is being used.
 const defaultSpeaker = deviceManager.selectedSpeaker;
 
 // Set the speaker device to use.
-await deviceManager.selectSpeaker(AudioDeviceInfo);
+await deviceManager.selectSpeaker(localSpeakers[0]);
 ```
 
 ### <a name="local-camera-preview"></a>Voor beeld van lokale camera
 
-U kunt `deviceManager` en gebruiken `Renderer` om streams van uw lokale camera te renderen. Deze stroom wordt niet naar andere deel nemers verzonden. het is een lokale preview-feed.
+U kunt `deviceManager` en gebruiken `VideoStreamRenderer` om streams van uw lokale camera te renderen. Deze stroom wordt niet naar andere deel nemers verzonden. het is een lokale preview-feed.
 
 ```js
 const cameras = await deviceManager.getCameras();
-const localVideoDevice = cameras[0];
-const localCameraStream = new LocalVideoStream(localVideoDevice);
-const renderer = new Renderer(localCameraStream);
-const view = await renderer.createView();
-document.body.appendChild(view.target);
+const camera = cameras[0];
+const localCameraStream = new LocalVideoStream(camera);
+const videoStreamRenderer = new VideoStreamRenderer(localCameraStream);
+const view = await videoStreamRenderer.createView();
+htmlElement.appendChild(view.target);
 
 ```
 

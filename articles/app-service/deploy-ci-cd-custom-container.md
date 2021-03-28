@@ -9,12 +9,12 @@ ms.date: 03/12/2021
 ms.author: msangapu
 ms.custom: seodec18
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: bc36325b55f049eebef823d836768fccc39a7615
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 654b0f842a3165926242d1ef03f2dfe4e5bacfdc
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103472172"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105643347"
 ---
 # <a name="continuous-deployment-with-custom-containers-in-azure-app-service"></a>Doorlopende implementatie met aangepaste containers in Azure App Service
 
@@ -32,7 +32,7 @@ Klik in het menu links op instellingen voor het **implementatie centrum**  >  .
 **Kies** de implementatie bron, afhankelijk van uw scenario:
 - Met **container Registry** wordt CI/cd ingesteld tussen uw container register en app service.
 - De **github-actie** optie is voor u als u de bron code voor de container installatie kopie in github bijhoudt. Door nieuwe door voer te laten door voeren in uw GitHub-opslag plaats, kan de actie implementeren worden uitgevoerd `docker build` en `docker push` rechtstreeks naar uw container register worden gedistribueerd. vervolgens werkt u de app service-app bij om de nieuwe installatie kopie uit te voeren. Zie [hoe CI/CD werkt met github-acties](#how-cicd-works-with-github-actions)voor meer informatie.
-- Zie [een Azure web app-container implementeren vanuit Azure pipelines](/devops/pipelines/targets/webapp-on-container-linux)om CI/cd met **Azure-pijp lijnen** in te stellen.
+- Zie [een Azure web app-container implementeren vanuit Azure pipelines](/azure/devops/pipelines/targets/webapp-on-container-linux)om CI/cd met **Azure-pijp lijnen** in te stellen.
 
 > [!NOTE]
 > Selecteer **container Registry** voor een docker-app voor opstellen.

@@ -13,12 +13,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: sstein
 ms.date: 03/23/2020
-ms.openlocfilehash: 6383c0fa3aad15da8abaea79136a75732ce9ea01
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.openlocfilehash: a0e9cc9967509eba05bd26f3bad86eefeeb6ca3e
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105605753"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105639477"
 ---
 # <a name="authorize-database-access-to-sql-database-sql-managed-instance-and-azure-synapse-analytics"></a>Databasetoegang verlenen tot SQL Database, SQL Managed Instance, en Azure Synapse Analytics
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -85,7 +85,7 @@ Op dit punt wordt de server of het beheerde exemplaar alleen geconfigureerd voor
 
   - Maak een extra SQL-aanmelding in de hoofd database.
   - Voeg de aanmelding toe aan de [vaste serverrol sysadmin](/sql/relational-databases/security/authentication-access/server-level-roles) met de instructie [ALTER server Role](/sql/t-sql/statements/alter-server-role-transact-sql) . Deze aanmelding heeft volledige beheerders machtigingen.
-  - U kunt ook een [Azure AD-aanmelding](authentication-aad-configure.md#provision-azure-ad-admin-sql-managed-instance) maken met de syntaxis voor het maken van een [aanmelding](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current) .
+  - U kunt ook een [Azure AD-aanmelding](authentication-aad-configure.md#provision-azure-ad-admin-sql-managed-instance) maken met de syntaxis voor het maken van een [aanmelding](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current&preserve-view=true) .
 
 - **Maak in SQL Database SQL-aanmeldingen met beperkte beheerders machtigingen**
 
@@ -122,9 +122,9 @@ U kunt met een van de volgende twee methoden accounts maken voor gebruikers die 
 
 Voor voor beelden van het maken van aanmeldingen en gebruikers raadpleegt u:
 
-- [Aanmelding voor Azure SQL Database maken](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-current#examples-1)
-- [Aanmelding maken voor Azure SQL Managed instance](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current#examples-2)
-- [Aanmelding voor Azure Synapse maken](/sql/t-sql/statements/create-login-transact-sql?view=azure-sqldw-latest#examples-3)
+- [Aanmelding voor Azure SQL Database maken](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-current&preserve-view=true#examples-1)
+- [Aanmelding maken voor Azure SQL Managed instance](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current&preserve-view=true#examples-2)
+- [Aanmelding voor Azure Synapse maken](/sql/t-sql/statements/create-login-transact-sql?view=azure-sqldw-latest&preserve-view=true#examples-3)
 - [Create user](/sql/t-sql/statements/create-user-transact-sql#examples)
 - [In azure AD opgenomen gebruikers maken](authentication-aad-configure.md#create-contained-users-mapped-to-azure-ad-identities)
 

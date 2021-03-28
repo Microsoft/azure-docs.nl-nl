@@ -11,12 +11,12 @@ author: NilsPohlmann
 ms.date: 03/02/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperf-fy21q1
-ms.openlocfilehash: 188df9564905443b8f975eb743b24885b5d03c32
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 38fd5b779c3a8ae71c2e4fafcaf65921b1be3f93
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102618199"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105642258"
 ---
 # <a name="create-and-run-machine-learning-pipelines-with-azure-machine-learning-sdk"></a>machine learning-pijp lijnen maken en uitvoeren met Azure Machine Learning SDK
 
@@ -89,7 +89,7 @@ from azureml.core import Dataset
 my_dataset = Dataset.File.from_files([(def_blob_store, 'train-images/')])
 ```
 
-Tussenliggende gegevens (of uitvoer van een stap) worden vertegenwoordigd door een [OutputFileDatasetConfig](/python/api/azureml-pipeline-core/azureml.data.output_dataset_config.outputfiledatasetconfig) -object. `output_data1` wordt geproduceerd als de uitvoer van een stap. Deze gegevens kunnen eventueel worden geregistreerd als een gegevensset door aan te roepen `register_on_complete` . Als u een `OutputFileDatasetConfig` in één stap maakt en deze gebruikt als invoer voor een andere stap, maakt die gegevens afhankelijkheid tussen de stappen een impliciete uitvoerings volgorde in de pijp lijn.
+Tussenliggende gegevens (of uitvoer van een stap) worden vertegenwoordigd door een [OutputFileDatasetConfig](/python/api/azureml-core/azureml.data.output_dataset_config.outputfiledatasetconfig) -object. `output_data1` wordt geproduceerd als de uitvoer van een stap. Deze gegevens kunnen eventueel worden geregistreerd als een gegevensset door aan te roepen `register_on_complete` . Als u een `OutputFileDatasetConfig` in één stap maakt en deze gebruikt als invoer voor een andere stap, maakt die gegevens afhankelijkheid tussen de stappen een impliciete uitvoerings volgorde in de pijp lijn.
 
 `OutputFileDatasetConfig` objecten retour neren een map en schrijft standaard uitvoer naar de standaard gegevens opslag van de werk ruimte.
 
@@ -106,7 +106,7 @@ output_data_dataset = output_data1.register_on_complete(name = 'prepared_output_
 > U moet op een programmatische manier tussenliggende gegevens verwijderen aan het einde van een pijplijn uitvoering, een gegevens opslag gebruiken met een beperkt beleid voor het bewaren van data-en hand matig opschonen.
 
 > [!TIP]
-> Upload alleen bestanden die relevant zijn voor de huidige taak. Wijzigingen in bestanden in de data directory worden gezien als de reden voor het opnieuw uitvoeren van de stap de volgende keer dat de pijp lijn wordt uitgevoerd, zelfs als hergebruik is opgegeven. 
+> Upload alleen bestanden die relevant zijn voor de huidige taak. Wijzigingen aan bestanden in de gegevensmap worden gezien als een reden om de stap opnieuw uit te voeren de volgende keer dat de pijplijn wordt uitgevoerd, zelfs als opnieuw gebruiken is opgegeven. 
 
 ## <a name="set-up-a-compute-target"></a>Een reken doel instellen
 
@@ -247,7 +247,7 @@ pipeline1 = Pipeline(workspace=ws, steps=[compare_models])
 
 ### <a name="use-a-dataset"></a>Een gegevensset gebruiken 
 
-Gegevens sets die zijn gemaakt op basis van Azure Blob-opslag, Azure Files, Azure Data Lake Storage Gen1, Azure Data Lake Storage Gen2, Azure SQL Database en Azure Database for PostgreSQL kunnen worden gebruikt als invoer voor elke pijplijn stap. U kunt een uitvoer schrijven naar een [DataTransferStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.datatransferstep), [DatabricksStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.databricks_step.databricksstep)of als u gegevens wilt schrijven naar een specifieke Data Store- [OutputFileDatasetConfig](/python/api/azureml-pipeline-core/azureml.data.outputfiledatasetconfig). 
+Gegevens sets die zijn gemaakt op basis van Azure Blob-opslag, Azure Files, Azure Data Lake Storage Gen1, Azure Data Lake Storage Gen2, Azure SQL Database en Azure Database for PostgreSQL kunnen worden gebruikt als invoer voor elke pijplijn stap. U kunt een uitvoer schrijven naar een [DataTransferStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.datatransferstep), [DatabricksStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.databricks_step.databricksstep)of als u gegevens wilt schrijven naar een specifieke Data Store- [OutputFileDatasetConfig](/python/api/azureml-core/azureml.data.outputfiledatasetconfig). 
 
 > [!IMPORTANT]
 > Het schrijven van uitvoer gegevens naar een gegevens opslag met `OutputFileDatasetConfig` wordt alleen ondersteund voor Azure Blob, Azure file share, ADLS gen 1 en gen 2 data stores. 

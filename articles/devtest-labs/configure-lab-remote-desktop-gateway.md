@@ -3,12 +3,12 @@ title: Een lab configureren om Extern bureaublad-gateway te gebruiken in Azure D
 description: Informatie over het configureren van een lab in Azure DevTest Labs met een extern bureau blad-gateway om beveiligde toegang tot de Lab-Vm's te garanderen zonder dat de RDP-poort moet worden weer gegeven.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: dcf5191dea64c3d7bf28b9ce1c616d3d2defb73e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: b15d4d39199c1a30eae292ece67f4553b656f530
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97695683"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105639590"
 ---
 # <a name="configure-your-lab-in-azure-devtest-labs-to-use-a-remote-desktop-gateway"></a>Uw Lab in Azure DevTest Labs configureren voor het gebruik van een extern bureau blad-gateway
 In Azure DevTest Labs kunt u een extern bureau blad-gateway voor uw lab configureren om te zorgen voor veilige toegang tot de virtuele lab-machines (Vm's) zonder dat de RDP-poort moet worden weer gegeven. Het Lab biedt een centrale locatie voor uw Lab-gebruikers om te zien en verbinding te maken met alle virtuele machines waartoe ze toegang hebben. De knop **verbinding maken** op de pagina **virtuele machine** maakt een apparaat-specifiek RDP-bestand dat u kunt openen om verbinding te maken met de computer. U kunt de RDP-verbinding verder aanpassen en beveiligen door uw Lab te koppelen aan een extern bureau blad-gateway. 
@@ -36,7 +36,7 @@ Als u wilt werken met de DevTest Labs-token verificatie, zijn er enkele configur
 ### <a name="requirements-for-remote-desktop-gateway-machines"></a>Vereisten voor extern bureau blad-gateway computers
 - Er moet een TLS/SSL-certificaat op de gateway computer zijn geïnstalleerd om HTTPS-verkeer te kunnen verwerken. Het certificaat moet overeenkomen met de Fully Qualified Domain Name (FQDN) van de load balancer voor de gateway Farm of de FQDN van de computer zelf als er slechts één computer is. TLS/SSL-certificaten met Joker tekens werken niet.  
 - Een handtekening certificaat dat is geïnstalleerd op de gateway computer (s). Een handtekening certificaat maken met behulp van [Create-SigningCertificate.ps1](https://github.com/Azure/azure-devtestlab/blob/master/samples/DevTestLabs/GatewaySample/tools/Create-SigningCertificate.ps1) script.
-- Installeer de module voor [Plug en authenticatie](https://code.msdn.microsoft.com/windowsdesktop/Remote-Desktop-Gateway-517d6273) die token verificatie ondersteunt voor de extern bureau blad-gateway. Een voor beeld van een dergelijke module is `RDGatewayFedAuth.msi` dat wordt geleverd met [installatie kopieën van System Center Virtual Machine Manager (VMM)](/system-center/vmm/install-console?view=sc-vmm-1807). Zie [System Center-documentatie](/system-center/) en [prijs informatie](https://www.microsoft.com/cloud-platform/system-center-pricing)voor meer informatie over System Center.  
+- Installeer de module voor [Plug en authenticatie](https://code.msdn.microsoft.com/windowsdesktop/Remote-Desktop-Gateway-517d6273) die token verificatie ondersteunt voor de extern bureau blad-gateway. Een voor beeld van een dergelijke module is `RDGatewayFedAuth.msi` dat wordt geleverd met [installatie kopieën van System Center Virtual Machine Manager (VMM)](/system-center/vmm/install-console?view=sc-vmm-1807&preserve-view=true). Zie [System Center-documentatie](/system-center/) en [prijs informatie](https://www.microsoft.com/cloud-platform/system-center-pricing)voor meer informatie over System Center.  
 - De gateway server kan aanvragen afhandelen naar `https://{gateway-hostname}/api/host/{lab-machine-name}/port/{port-number}` .
 
     De gateway-hostnaam is de FQDN-naam van de load balancer van de gateway Farm of de FQDN van de computer zelf als er slechts één computer is. De `{lab-machine-name}` is de naam van de test machine waarmee u verbinding wilt maken en de `{port-number}` poort waarmee de verbinding tot stand wordt gebracht.  Deze poort is standaard 3389.  Als de virtuele machine echter de [gedeelde IP-](devtest-lab-shared-ip.md) functie in DevTest Labs gebruikt, is de poort anders.
@@ -105,14 +105,14 @@ Volg deze stappen om een voor beeld van een oplossing voor de extern bureau blad
 
     ```powershell
     $cer = New-Object System.Security.Cryptography.X509Certificates.X509Certificate;
-    $cer.Import(‘path-to-certificate’);
+    $cer.Import('path-to-certificate');
     $hash = $cer.GetCertHashString()
     ```
 
     Gebruik de volgende opdracht om de base64-code ring op te halen met behulp van Power shell.
 
     ```powershell
-    [System.Convert]::ToBase64String([System.IO.File]::ReadAllBytes(‘path-to-certificate’))
+    [System.Convert]::ToBase64String([System.IO.File]::ReadAllBytes('path-to-certificate'))
     ```
 3. Bestanden downloaden van [https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/GatewaySample/arm/gateway](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/GatewaySample/arm/gateway) .
 

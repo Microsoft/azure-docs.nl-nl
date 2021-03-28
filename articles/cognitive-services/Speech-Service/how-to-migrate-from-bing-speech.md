@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/03/2020
 ms.author: nitinme
-ms.openlocfilehash: d0ffd786d3fb6bb5f0d70095d947c81caa070518
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: d6b7b298e7e4d18e68985ec3cf536c90ef773608
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96499132"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105644392"
 ---
 # <a name="migrate-from-bing-speech-to-the-speech-service"></a>Migreren van Bing Speech naar de speech-service
 
@@ -26,7 +26,7 @@ In dit artikel vindt u een overzicht van de verschillen tussen de Bing Speech Ap
 Een service-abonnements sleutel met één spraak verleent toegang tot de volgende functies. Elk wordt afzonderlijk gemeten, zodat u alleen betaalt voor de functies die u gebruikt.
 
 * [Spraak naar tekst](speech-to-text.md)
-* [Aangepaste spraak-naar-tekst](https://cris.ai)
+* [Aangepaste spraak-naar-tekst](/azure/cognitive-services/speech-service/custom-speech-overview)
 * [Tekst-naar-spraak](text-to-speech.md)
 * [Aangepaste tekst naar spraak](./how-to-custom-voice-create-voice.md)
 * [Spraakomzetting](speech-translation.md) (bevat geen [tekstomzetting](../translator/translator-info-overview.md))

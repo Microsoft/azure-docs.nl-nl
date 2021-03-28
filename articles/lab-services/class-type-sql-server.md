@@ -5,18 +5,18 @@ author: emaher
 ms.topic: article
 ms.date: 06/26/2020
 ms.author: enewman
-ms.openlocfilehash: 50f71ee1ce59f5809fe8905c58f0399cf484f11a
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: fb1b9e3458d08b8387c7f3978ff83c097fad2375
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "94659706"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105644029"
 ---
 # <a name="set-up-a-lab-to-manage-and-develop-with-sql-server"></a>Een Lab instellen om te beheren en te ontwikkelen met SQL Server
 
 In dit artikel wordt beschreven hoe u een Lab instelt voor een basis SQL Server-en ontwikkelings klasse in Azure Lab Services.  Database concepten zijn een van de in de meeste computer wetenschappen geschoolde cursussen. Structured Query Language (SQL) is een internationale standaard.  SQL is de standaard taal voor het beheer van relationele data bases, zoals het toevoegen, openen en beheren van inhoud in een Data Base.  Het wordt het meest vermeld voor de snelle verwerking, bewezen betrouw baarheid, het gemak en de flexibiliteit van gebruik.
 
-In dit artikel laten we zien hoe u een virtuele-machine sjabloon kunt instellen in een Lab met [Visual Studio 2019](https://visualstudio.microsoft.com/vs/), [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15)en [Azure Data Studio](https://github.com/microsoft/azuredatastudio).  Voor dit lab wordt één gedeelde [SQL Server-Data Base](../azure-sql/database/sql-database-paas-overview.md) gebruikt voor het hele Lab. [Azure SQL database](../azure-sql/database/sql-database-paas-overview.md) is platform as a Service (PaaS) data base engine-aanbieding van Azure.
+In dit artikel laten we zien hoe u een virtuele-machine sjabloon kunt instellen in een Lab met [Visual Studio 2019](https://visualstudio.microsoft.com/vs/), [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms)en [Azure Data Studio](https://github.com/microsoft/azuredatastudio).  Voor dit lab wordt één gedeelde [SQL Server-Data Base](../azure-sql/database/sql-database-paas-overview.md) gebruikt voor het hele Lab. [Azure SQL database](../azure-sql/database/sql-database-paas-overview.md) is platform as a Service (PaaS) data base engine-aanbieding van Azure.
 
 ## <a name="lab-configuration"></a>Lab-configuratie
 
@@ -82,9 +82,9 @@ Nu het lab is gemaakt, gaan we de sjabloon machine wijzigen met de software die 
 
 ## <a name="visual-studio"></a>Visual Studio
 
-De hierboven gekozen afbeelding bevat [Visual Studio 2019 Community](https://visualstudio.microsoft.com/vs/community/).  Alle werk belastingen en gereedschappen sets zijn al geïnstalleerd op de installatie kopie.  Gebruik het installatie programma van Visual Studio om [eventueel optionele hulpprogram ma's te installeren](/visualstudio/install/modify-visual-studio?view=vs-2019) .  [Meld u aan bij Visual Studio](/visualstudio/ide/signing-in-to-visual-studio?view=vs-2019#how-to-sign-in-to-visual-studio) om de Community-editie te ontgrendelen.
+De hierboven gekozen afbeelding bevat [Visual Studio 2019 Community](https://visualstudio.microsoft.com/vs/community/).  Alle werk belastingen en gereedschappen sets zijn al geïnstalleerd op de installatie kopie.  Gebruik het installatie programma van Visual Studio om [eventueel optionele hulpprogram ma's te installeren](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true) .  [Meld u aan bij Visual Studio](/visualstudio/ide/signing-in-to-visual-studio?view=vs-2019&preserve-view=true#how-to-sign-in-to-visual-studio) om de Community-editie te ontgrendelen.
 
-Visual Studio bevat het hulp programma voor het **opslaan en verwerken van gegevens** , dat SQL Server Data Tools bevat (SSDT).  Zie [SQL Server Data Tools Overview](/sql/ssdt/sql-server-data-tools?view=sql-server-ver15)voor meer informatie over de mogelijkheden van SSDT.  Zie [verbinding maken met een Data Base en bladeren door bestaande objecten](/sql/ssdt/how-to-connect-to-a-database-and-browse-existing-objects?view=sql-server-ver15)om te controleren of de verbinding met de gedeelde SQL Server voor de klasse is geslaagd. Als u wordt gevraagd om de sjabloon computer-IP toe te voegen aan de [lijst met toegestane computers](../azure-sql/database/firewall-configure.md) die verbinding kunnen maken met uw SQL Server-exemplaar.
+Visual Studio bevat het hulp programma voor het **opslaan en verwerken van gegevens** , dat SQL Server Data Tools bevat (SSDT).  Zie [SQL Server Data Tools Overview](/sql/ssdt/sql-server-data-tools)voor meer informatie over de mogelijkheden van SSDT.  Zie [verbinding maken met een Data Base en bladeren door bestaande objecten](/sql/ssdt/how-to-connect-to-a-database-and-browse-existing-objects)om te controleren of de verbinding met de gedeelde SQL Server voor de klasse is geslaagd. Als u wordt gevraagd om de sjabloon computer-IP toe te voegen aan de [lijst met toegestane computers](../azure-sql/database/firewall-configure.md) die verbinding kunnen maken met uw SQL Server-exemplaar.
 
 Visual Studio biedt ondersteuning voor verschillende werk belastingen, inclusief **Web-& Cloud** -en **Desktop & mobiele** werk belastingen.  Beide werk belastingen ondersteunen SQL Server als een gegevens bron. Zie [een ASP.net core-en SQL database-app bouwen in azure app service](../app-service/tutorial-dotnetcore-sqldb-app.md) zelf studie voor meer informatie over het gebruik van ASP.NET Core naar SQL Server.  Gebruik de [System. data. SqlClient](/dotnet/api/system.data.sqlclient) -bibliotheek om verbinding te maken met een SQL database vanuit een [Xamarin](/xamarin) -app.
 
@@ -113,7 +113,7 @@ Nu u Azure Data Studio hebt geïnstalleerd, kunt u de verbinding met Azure SQL D
 
 ## <a name="install-sql-server-management-studio"></a>Installeer SQL Server Management Studio
 
-[SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) is een geïntegreerde omgeving voor het beheren van een SQL-infra structuur.  SSMS is een hulp programma dat door database beheerders wordt gebruikt om de gegevens infrastructuur te implementeren, te bewaken en bij te werken.
+[SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) is een geïntegreerde omgeving voor het beheren van een SQL-infra structuur.  SSMS is een hulp programma dat door database beheerders wordt gebruikt om de gegevens infrastructuur te implementeren, te bewaken en bij te werken.
 
 1. [Down load SQL Server Management Studio](https://aka.ms/ssmsfullsetup). Start het installatie programma zodra het is gedownload.
 2. Klik op de pagina **Welkom** op **installeren**.

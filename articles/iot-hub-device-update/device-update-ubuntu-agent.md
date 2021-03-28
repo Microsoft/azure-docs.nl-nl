@@ -6,12 +6,12 @@ ms.author: vimeht
 ms.date: 2/16/2021
 ms.topic: tutorial
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 9468b3b53e0f7c435bf84b6ef99eb1e0f85d0c8e
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: ee09928cab6419d799d06de9cf2f69987e42d157
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105560264"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105644431"
 ---
 # <a name="device-update-for-azure-iot-hub-tutorial-using-the-package-agent-on-ubuntu-server-1804-x64"></a>Zelf studie over het bijwerken van apparaten voor Azure IoT Hub met behulp van de pakket agent op Ubuntu Server 18,04 x64
 
@@ -44,7 +44,7 @@ Voor het gemak maakt deze zelf studie gebruik van een [Azure Resource Manager sj
 
 1. Klik op de onderstaande knop om te beginnen:
 
-   [![De knop Implementeren naar Azure voor iotedge-vm-deploy](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fazure%2Fiotedge-vm-deploy%2F1.2.0-rc4%2FedgeDeploy.json)
+   [![De knop Implementeren naar Azure voor iotedge-vm-deploy](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fazure%2Fiotedge-vm-deploy%2Fdevice-update-tutorial%2FedgeDeploy.json)
 
 1. Vul in het venster Nieuw gestart de beschik bare formulier velden in:
 
@@ -126,9 +126,9 @@ Lees de licentie voorwaarden voordat u een pakket gebruikt. Uw installatie en he
 
 1. Ga in github naar updates voor het [apparaat](https://github.com/Azure/iot-hub-device-update/releases) en klik op de vervolg keuzelijst activa.
 
-3. Down load de `apt-update-import-samples.zip` door erop te klikken.
+3. Down load de `Edge.package.update.samples.zip` door erop te klikken.
 
-5. Pak de inhoud van de map uit om verschillende update voorbeelden en de bijbehorende import manifesten te detecteren. 
+5. Pak de inhoud van de map uit om een update voorbeeld en de bijbehorende import manifesten te detecteren. 
 
 2. Selecteer in Azure Portal de optie apparaat bijwerken onder Automatische Apparaatbeheer in de navigatie balk aan de linkerkant van uw IoT Hub.
 
@@ -136,10 +136,8 @@ Lees de licentie voorwaarden voordat u een pakket gebruikt. Uw installatie en he
 
 4. Selecteer + nieuwe update importeren.
 
-5. Selecteer het mappictogram of het tekstvak onder ' Selecteer een manifest bestand voor importeren '. U ziet een dialoog venster voor het kiezen van een bestand. Selecteer het `sample-package-update-1.0.1-importManifest.json` import manifest in de map die u eerder hebt gedownload. Selecteer vervolgens het mappictogram of het tekstvak onder ' Selecteer een of meer update bestanden '. U ziet een dialoog venster voor het kiezen van een bestand. Selecteer het `sample-1.0.1-libcurl4-doc-apt-manifest.json` apt-manifest update bestand in de map die u eerder hebt gedownload.
-Met deze update wordt de meest recente beschik bare versie van `libcurl4-doc package` op uw apparaat geïnstalleerd.
-
-   U kunt ook het `sample-package-update-2-2.0.1-importManifest.json` bestand manifest bestand importeren en `sample-2.0.1-libcurl4-doc-7.58-apt-manifest.json` apt manifest update in de map die u eerder hebt gedownload. Hiermee wordt een specifieke versie v-7.58.0 van de `libcurl4-doc package` op uw apparaat geïnstalleerd.
+5. Selecteer het mappictogram of het tekstvak onder ' Selecteer een manifest bestand voor importeren '. U ziet een dialoog venster voor het kiezen van een bestand. Selecteer het `sample-1.0.1-aziot-edge-importManifest.json` import manifest in de map die u eerder hebt gedownload. Selecteer vervolgens het mappictogram of het tekstvak onder ' Selecteer een of meer update bestanden '. U ziet een dialoog venster voor het kiezen van een bestand. Selecteer het `sample-1.0.1-aziot-edge-apt-manifest.json` apt-manifest update bestand in de map die u eerder hebt gedownload.
+Met deze update worden de `aziot-identity-service` en de `aziot-edge` pakketten bijgewerkt naar versie 1.2.0 ~ RC4-1 op het apparaat.
 
    :::image type="content" source="media/import-update/select-update-files.png" alt-text="Scherm opname van de selectie van update bestanden." lightbox="media/import-update/select-update-files.png":::
 
@@ -211,12 +209,6 @@ Met deze update wordt de meest recente beschik bare versie van `libcurl4-doc pac
 1. Selecteer vernieuwen om de meest recente status gegevens weer te geven. Herhaal dit proces totdat de status is gewijzigd in geslaagd.
 
 U hebt nu een voltooide end-to-end pakket update voltooid met update voor het bijwerken van het apparaat voor IoT Hub op een Ubuntu Server 18,04 x64-apparaat. 
-
-## <a name="bonus-steps"></a>Bonus stappen
-
-1. De secties ' update importeren ' en ' update implementeren ' herhalen
-
-3. Selecteer tijdens de stap import update de optie `sample-package-update-1.0.2-importManifest.json` manifest bestand en `sample-1.0.2-libcurl4-doc-remove-apt-manifest.json` apt manifest update bestand importeren uit de map die u eerder hebt gedownload. Met deze update wordt de installatie `libcurl4-doc package` van het apparaat verwijderd.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

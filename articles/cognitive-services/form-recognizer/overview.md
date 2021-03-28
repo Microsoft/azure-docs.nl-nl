@@ -11,12 +11,12 @@ ms.date: 03/15/2021
 ms.author: lajanuar
 ms.custom: cog-serv-seo-aug-2020
 keywords: geautomatiseerde gegevensverwerking, documentverwerking, geautomatiseerde gegevensinvoer, formulierverwerking
-ms.openlocfilehash: 4465f88e3b0ccab8eace1936f426af8dd32af27b
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: 8d6c2ea760b85e3170b26c63a28d4ac2b3a2ef5a
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104872248"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105639454"
 ---
 # <a name="what-is-form-recognizer"></a>Wat is Form Recognizer?
 
@@ -185,5 +185,5 @@ Zoals geldt voor alle services van Cognitive Services, dienen ontwikkelaars die 
 
 Probeer onze online tool en Quick start voor meer informatie over de formulier Recognizer-service.
 
-* [**Hulp programma voor formulier herkenning**](https://fott-preview.microsoft.com/)
+* [**Hulp programma voor formulier herkenning**](https://fott-preview.azurewebsites.net/)
 * [**Snelstartgids voor client bibliotheken en REST API**](quickstarts/client-library.md)

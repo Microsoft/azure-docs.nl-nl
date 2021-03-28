@@ -10,12 +10,12 @@ metadata:
   ms.service: dms
   ms.topic: landing-page
   ms.custom: seo-azure-migrate
-  ms.openlocfilehash: 454e79d8e9c00e9202b5ae64e382c4cf69f2eb68
-  ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+  ms.openlocfilehash: af2fb7c7e2499272f3c472e1571005e8e68e2fe5
+  ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/26/2021
-  ms.locfileid: "105567488"
+  ms.lasthandoff: 03/28/2021
+  ms.locfileid: "105641354"
 landingContent:
 - title: Over Azure Database Migration Service
   linkLists:
@@ -120,11 +120,11 @@ landingContent:
     - text: Handleiding voor databasemigratie
       url: https://datamigration.microsoft.com/
     - text: Data Migration Assistant
-      url: /sql/dma/dma-overview?view=sql-server-2017
+      url: /sql/dma/dma-overview
     - text: SQL Server Migration Assistant
-      url: /sql/ssma/sql-server-migration-assistant?view=sql-server-2017
+      url: /sql/ssma/sql-server-migration-assistant
     - text: Database Experimentation Assistant
-      url: /sql/dea/database-experimentation-assistant-overview?view=sql-server-2017
+      url: /sql/dea/database-experimentation-assistant-overview
     - text: Migratietoolkit voor gegevenstoegang
       url: https://marketplace.visualstudio.com/items?itemName=ms-databasemigration.data-access-migration-toolkit
 - title: Oracle migreren naar Azure

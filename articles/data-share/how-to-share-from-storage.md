@@ -6,12 +6,12 @@ ms.author: jife
 ms.service: data-share
 ms.topic: how-to
 ms.date: 02/23/2021
-ms.openlocfilehash: dc309e85373193e4f5d431f543ff3e59ea5bebc7
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c94d6f7d4d06d7dbaa6a2ad54f94575a6cc85d33
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101739259"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105644660"
 ---
 # <a name="share-and-receive-data-from-azure-blob-storage-and-azure-data-lake-storage"></a>Gegevens delen en ontvangen van Azure Blob Storage en Azure Data Lake Storage
 
@@ -178,7 +178,7 @@ Volg de stappen in deze sectie om een locatie te configureren voor het ontvangen
 
    ![Scherm afbeelding die laat zien waar u een doel opslag account selecteert.](./media/map-target.png "Doel opslag.") 
 
-1. Voor het delen op basis van moment opnamen, als de gegevens provider een momentopname schema gebruikt om de gegevens regel matig bij te werken, kunt u de planning inschakelen op het tabblad **schema voor moment opnamen** . Schakel het selectie vakje in naast het schema voor de moment opname. Selecteer vervolgens **inschakelen**.
+1. Voor het delen op basis van moment opnamen, als de gegevens provider een momentopname schema gebruikt om de gegevens regel matig bij te werken, kunt u de planning inschakelen op het tabblad **schema voor moment opnamen** . Schakel het selectie vakje in naast het schema voor de moment opname. Selecteer vervolgens **inschakelen**. Houd er rekening mee dat de eerste geplande moment opname begint binnen één minuut van de plannings tijd en volgende moment opnamen worden gestart binnen enkele seconden van de geplande tijd.
 
    ![Scherm afbeelding die laat zien hoe u een momentopname schema kunt inschakelen.](./media/enable-snapshot-schedule.png "Momentopname schema inschakelen.")
 

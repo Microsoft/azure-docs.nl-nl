@@ -10,12 +10,12 @@ ms.date: 03/11/2021
 ms.topic: include
 ms.custom: include file
 ms.author: lakshmans
-ms.openlocfilehash: 727e2166bad7f0d8980ffe4fa18c292a206c37d7
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: aba9b71ec2fbfedecf08577c7bd2eae7a28a5588
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105110334"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105644373"
 ---
 Ga aan de slag met Azure Communication Services met behulp van de SMS-SDK voor SMS Services voor het verzenden van berichten.
 
@@ -79,7 +79,7 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
-Breng een **SmsClient** tot stand met uw verbindingsreeks. Meer informatie over het [beheren van de verbindingsreeks van uw resource](../../create-communication-resource.md#store-your-connection-string).
+Breng een **SmsClient** tot stand met uw verbindingsreeks. Meer informatie over het [beheren van de Connection String van uw resource](../../create-communication-resource.md#store-your-connection-string).
 
 ```python
 # Create the SmsClient object which will be used to send SMS messages
@@ -107,7 +107,7 @@ sms_responses = sms_client.send(
 U moet `<from-phone-number>` vervangen door een telefoonnummer met sms-functionaliteit dat is gekoppeld aan uw communicatieservice en `<to-phone-number>` met het telefoonnummer waarnaar u een bericht wilt verzenden. 
 
 > [!WARNING]
-> Telefoonnummers moeten worden opgegeven in de internationale standaardindeling E.164. (bijvoorbeeld: + 12223334444).
+> Telefoonnummers moeten worden opgegeven in de internationale standaardindeling E.164. (bijvoorbeeld: + 14255550123).
 
 ## <a name="send-a-1n-sms-message"></a>Een SMS-bericht van 1: N verzenden
 
@@ -125,13 +125,16 @@ sms_responses = sms_client.send(
 
 ```
 
-Vervang door `<from-phone-number>` een SMS-telefoon nummer dat is gekoppeld aan uw communicatie service en `<to-phone-number-1>` en `<to-phone-number-2>` met de telefoon nummers waarnaar u een bericht wilt verzenden. 
+Vervang door `<from-phone-number>` een SMS-telefoon nummer dat is gekoppeld aan uw communicatie service en `<to-phone-number-1>` `<to-phone-number-2>` met een telefoon nummer (s) waarnaar u een bericht wilt verzenden. 
+
+> [!WARNING]
+> Telefoonnummers moeten worden opgegeven in de internationale standaardindeling E.164. (bijvoorbeeld: + 14255550123).
 
 ## <a name="optional-parameters"></a>Optionele parameters
 
 De parameter `enable_delivery_report` is een optionele parameter die u kunt gebruiken voor het configureren van leveringsrapporten. Dit is handig voor scenario's waarin u gebeurtenissen wilt verzenden wanneer sms-berichten worden bezorgd. Raadpleeg de quickstart [Sms-gebeurtenissen verwerken](../handle-sms-events.md) voor het configureren van leveringsrapporten voor uw sms-berichten.
 
-De `tag` para meter is een optionele para meter die u kunt gebruiken voor het configureren van aangepaste labels.
+De `tag` para meter is een optionele para meter die u kunt gebruiken om een label toe te passen op het leverings rapport.
 
 ## <a name="run-the-code"></a>De code uitvoeren
 Voer de toepassing op vanuit uw toepassingsmap met de opdracht `python`.

@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: conceptual
 ms.date: 10/23/2020
 ms.author: inhenkel
-ms.openlocfilehash: 1ef49b66e6bba7c829abd35f6c8cc4169a2c14a0
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.openlocfilehash: 0eff5b13a79f64de1863e82a2c9285788accf6fc
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105625293"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105641528"
 ---
 # <a name="live-events-and-live-outputs-in-media-services"></a>Livegebeurtenissen en live-uitvoer in Media Services
 
@@ -225,14 +225,6 @@ Zodra u de stroom naar de live gebeurtenis hebt gestroomd, kunt u de streaming-g
 
 Zie [een Cloud-DVR gebruiken](live-event-cloud-dvr.md)voor meer informatie over live-uitvoer.
 
-## <a name="frequently-asked-questions"></a>Veelgestelde vragen
+## <a name="live-event-output-questions"></a>Vragen over Live Event output
 
-Zie het artikel [Veelgestelde vragen](frequently-asked-questions.md#live-streaming) .
-
-## <a name="ask-questions-and-get-updates"></a>Vragen stellen en updates ophalen
-
-Ga naar het artikel van de [Azure Media Services-community](media-services-community.md) voor verschillende manieren om vragen te stellen, feedback te geven en updates voor Media Services op te halen.
-
-## <a name="next-steps"></a>Volgende stappen
-
-[Zelf studie over live streamen](stream-live-tutorial-with-api.md)
+Zie het artikel [over de live gebeurtenis uitvoer vragen](questions-collection.md#live-streaming) .

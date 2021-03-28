@@ -11,12 +11,12 @@ author: nibaccam
 ms.reviewer: nibaccam
 ms.date: 03/08/2021
 ms.custom: how-to, devx-track-python, data4ml, synapse-azureml
-ms.openlocfilehash: 9d2b416955234cae7a30ac65dff7d64dedad3b1d
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.openlocfilehash: dd62fb5e3c7450d50b9837ee5484ca480cab78aa
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104889107"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105640835"
 ---
 # <a name="link-azure-synapse-analytics-and-azure-machine-learning-workspaces-preview"></a>Azure Synapse Analytics en Azure Machine Learning-werk ruimten (preview) koppelen
 
@@ -35,9 +35,9 @@ U kunt ook werk ruimten koppelen en een Synapse Spark-groep koppelen aan een enk
 
 * [Een Azure Machine Learning-werkruimte maken](how-to-manage-workspace.md?tabs=python)
 
-* [Maak een Synapse-werk ruimte in azure Portal](/synapse-analytics/quickstart-create-workspace.md).
+* [Maak een Synapse-werk ruimte in azure Portal](/azure/synapse-analytics/quickstart-create-workspace).
 
-* [Apache Spark groep maken met behulp van Azure Portal, web tools of Synapse Studio](/synapse-analytics/quickstart-create-apache-spark-pool-portal.md)
+* [Apache Spark groep maken met behulp van Azure Portal, web tools of Synapse Studio](/azure/synapse-analytics/quickstart-create-apache-spark-pool-studio)
 
 * De [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/intro) installeren
 

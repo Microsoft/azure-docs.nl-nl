@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 08/31/2020
 ms.author: willzhan
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ea3d895970c6a18286d719471a693f774efaa387
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: aecae72b0bea07a0d8e240b3dcae7ee9b9662f95
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98955225"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105640715"
 ---
 # <a name="offline-playready-streaming-for-windows-10-with-media-services-v3"></a>Offline PlayReady streaming voor Windows 10 met Media Services v3
 
@@ -34,7 +34,7 @@ Azure Media Services offline downloaden/afspelen met DRM-beveiliging ondersteune
 > [!NOTE]
 > Offline DRM wordt alleen gefactureerd voor het maken van één aanvraag voor een licentie wanneer u de inhoud downloadt. Er worden geen fouten in rekening gebracht.
 
-## <a name="overview"></a>Overzicht
+## <a name="background-on-offline-mode-playback"></a>Achtergrond bij afspelen in offline modus
 
 Deze sectie bevat een achtergrond voor het afspelen van offline modus, met name waarom:
 
@@ -61,12 +61,12 @@ U kunt twee typen PlayReady-licentie levering gebruiken:
 
 Hieronder vindt u twee sets test assets, de eerste met PlayReady-licentie levering in AMS, terwijl de tweede een mijn PlayReady-licentie server gebruikt die wordt gehost op een virtuele machine van Azure:
 
-Activa #1:
+## <a name="asset-1"></a>Activa #1
 
 * URL voor progressieve down load: [https://willzhanmswest.streaming.mediaservices.windows.net/8d078cf8-d621-406c-84ca-88e6b9454acc/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4](https://willzhanmswest.streaming.mediaservices.windows.net/8d078cf8-d621-406c-84ca-88e6b9454acc/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4)
 * PlayReady LA_URL (AMS): `https://willzhanmswest.keydelivery.mediaservices.windows.net/PlayReady/`
 
-Activa #2:
+## <a name="asset-2"></a>Activa #2
 
 * URL voor progressieve down load: [https://willzhanmswest.streaming.mediaservices.windows.net/7c085a59-ae9a-411e-842c-ef10f96c3f89/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4](https://willzhanmswest.streaming.mediaservices.windows.net/7c085a59-ae9a-411e-842c-ef10f96c3f89/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4)
 * PlayReady LA_URL (on-premises): `https://willzhan12.cloudapp.net/playready/rightsmanager.asmx`
@@ -124,7 +124,3 @@ In samen vatting hebben we de offline modus op Azure Media Services bereikt:
 * Inhoud kan worden gehost in Azure Media Services of Azure Storage voor progressief downloaden.
 * De levering van PlayReady-licenties kan van Azure Media Services of elders zijn.
 * De voor bereide smooth streaming inhoud kan nog steeds worden gebruikt voor online streamen met behulp van een streepje of Smooth met PlayReady als DRM.
-
-## <a name="next-steps"></a>Volgende stappen
-
-[Ontwerp van een inhoudsbeveiligingssysteem van een multi-DRM met toegangsbeheer](design-multi-drm-system-with-access-control.md)

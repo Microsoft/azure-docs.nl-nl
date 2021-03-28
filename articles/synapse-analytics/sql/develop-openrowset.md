@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 987b850d569c238902f57baaed4a2178f51bd79d
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: a6af8f4600544007a9ecb4fcff5ac9016fd7dfbf
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104589613"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105640334"
 ---
 # <a name="how-to-use-openrowset-using-serverless-sql-pool-in-azure-synapse-analytics"></a>OPENROWSET gebruiken met behulp van serverloze SQL-pool in Azure Synapse Analytics
 
@@ -241,7 +241,7 @@ Hiermee geeft u de codering op: char wordt gebruikt voor UTF8, widechar wordt ge
 
 CODE TABEL = {' ACS ' | OEM | RAW | ' code_page '}
 
-Hiermee geeft u de code tabel van de gegevens in het gegevens bestand. De standaard waarde is 65001 (UTF-8-code ring). Bekijk [hier](/sql/t-sql/functions/openrowset-transact-sql?view=sql-server-ver15#codepage)meer informatie over deze optie.
+Hiermee geeft u de code tabel van de gegevens in het gegevens bestand. De standaard waarde is 65001 (UTF-8-code ring). Bekijk [hier](/sql/t-sql/functions/openrowset-transact-sql?view=sql-server-ver15&preserve-view=true#codepage)meer informatie over deze optie.
 
 ## <a name="fast-delimited-text-parsing"></a>Snel parseren van tekstbestand met scheidingstekens
 

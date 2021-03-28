@@ -8,12 +8,12 @@ ms.service: postgresql
 ms.subservice: migration-guide
 ms.topic: how-to
 ms.date: 03/18/2021
-ms.openlocfilehash: b41f894a7e4742b75ea06684a960221d4a5b7641
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: 1a20ffd7150ac75721b2affc2f4375301c4754c8
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105024758"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105643569"
 ---
 # <a name="migrate-oracle-to-azure-database-for-postgresql"></a>Oracle migreren naar Azure Database for PostgreSQL
 
@@ -324,7 +324,7 @@ Voor aanvullende hulp bij het volt ooien van dit migratie scenario raadpleegt u 
 | [Tijdelijke oplossingen voor migratie van Oracle naar Azure PostgreSQL](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/Oracle%20to%20Azure%20Database%20for%20PostgreSQL%20Migration%20Workarounds.pdf) | Dit document is bedoeld om architecten, consultants, Dba's en gerelateerde rollen te bieden met een hand leiding voor snelle vaststelling/probleem oplossing bij het migreren van werk belastingen van Oracle naar Azure Database for PostgreSQL. |
 | [Stappen voor het installeren van ora2pg in Windows of Linux](https://github.com/microsoft/DataMigrationTeam/blob/master/Whitepapers/Steps%20to%20Install%20ora2pg%20on%20Windows%20and%20Linux.pdf)                       | Dit document is bedoeld om te worden gebruikt als een snelle installatie handleiding voor het inschakelen van de migratie van schema & gegevens van Oracle naar Azure Database for PostgreSQL met behulp van ora2pg in Windows of Linux. Volledige informatie over het hulp programma vindt u op http://ora2pg.darold.net/documentation.html . |
 
-Deze resources zijn ontwikkeld als onderdeel van het data SQL expert-programma, dat wordt gesponsord door het technische team van de Azure-gegevens groep. Het kern Handvest van het data SQL expert-programma is het deblokkeren en versnellen van complexe modernisering en het concurreren van de migratie mogelijkheden van het gegevens platform naar het Azure-gegevens platform van micro soft. Als u denkt dat uw organisatie graag deelneemt aan het data SQL expert-programma, neemt u contact op met uw account team en vraagt u om een benoeming in te dienen.
+Het IT-team van data SQL heeft deze resources ontwikkeld. Het kern Handvest van dit team is het deblokkeren en versnellen van complexe modernisering voor data platform migratie projecten naar het Azure-gegevens platform van micro soft.
 
 
 ### <a name="contact-support"></a>Contact opnemen met ondersteuning

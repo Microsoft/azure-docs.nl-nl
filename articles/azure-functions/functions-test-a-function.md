@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.custom: devx-track-csharp, devx-track-js
 ms.date: 03/25/2019
 ms.author: cshoe
-ms.openlocfilehash: f75f42f3879f551a945bdeb2d88450ae3b9d6106
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 27bc8171509e16f25c508dd71515d8cb25a11b0b
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98674147"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105639858"
 ---
 # <a name="strategies-for-testing-your-code-in-azure-functions"></a>Strategieën voor het testen van uw code in Azure Functions
 
@@ -41,7 +41,7 @@ Als u uw omgeving wilt instellen, maakt u een functie-en test-app. De volgende s
 3. [Maak een timer functie op basis van de sjabloon](./functions-create-scheduled-function.md) en noem deze **MyTimerTrigger**.
 4. [Maak een xUnit-test-app](https://xunit.net/docs/getting-started/netcore/cmdline) in de oplossing en geef deze de naam **Function. tests**.
 5. Gebruik NuGet om een verwijzing toe te voegen vanuit de test-app naar [micro soft. AspNetCore. MVC](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc/)
-6. [Raadpleeg de *functions* -app](/visualstudio/ide/managing-references-in-a-project?view=vs-2017) vanuit *functions. app tests* .
+6. [Raadpleeg de *functions* -app](/visualstudio/ide/managing-references-in-a-project) vanuit *functions. app tests* .
 
 ### <a name="create-test-classes"></a>Test klassen maken
 

@@ -11,12 +11,12 @@ author: GithubMirek
 ms.author: MirekS
 ms.reviewer: vanto
 ms.date: 04/23/2020
-ms.openlocfilehash: 93831ec4c1dc3e34c2ea144e71b67dae711ee870
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: e2fa09ac8609310d4579590214bc25e5d7ee309f
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "94841645"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105641570"
 ---
 # <a name="connect-to-azure-sql-database-with-azure-ad-multi-factor-authentication"></a>Verbinding maken met Azure SQL Database met Azure AD Multi-Factor Authentication
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -113,7 +113,7 @@ Het C#-voor beeld is afhankelijk van de [`System.Data.SqlClient`](/dotnet/api/sy
   Gebruik deze waarde voor verificatie waarvoor een Azure AD-gebruikers naam en-wacht woord zijn vereist. Azure SQL Database voert de verificatie uit. Deze methode biedt geen ondersteuning voor Multi-Factor Authentication.
 
 > [!NOTE]
-> Als u .NET Core gebruikt, moet u de naam ruimte [micro soft. data. SqlClient](/dotnet/api/microsoft.data.sqlclient?view=sqlclient-dotnet-core-1.1) gebruiken. Zie de volgende [blog](https://devblogs.microsoft.com/dotnet/introducing-the-new-microsoftdatasqlclient/)voor meer informatie.
+> Als u .NET Core gebruikt, moet u de naam ruimte [micro soft. data. SqlClient](/dotnet/api/microsoft.data.sqlclient) gebruiken. Zie de volgende [blog](https://devblogs.microsoft.com/dotnet/introducing-the-new-microsoftdatasqlclient/)voor meer informatie.
 
 ## <a name="set-c-parameter-values-from-the-azure-portal"></a>C#-parameter waarden instellen vanuit de Azure Portal
 
@@ -148,7 +148,7 @@ Zie [multi-factor Authentication configureren voor SSMS en Azure AD](authenticat
 ## <a name="c-code-example"></a>Voor beeld van C#-code
 
 > [!NOTE]
-> Als u .NET Core gebruikt, moet u de naam ruimte [micro soft. data. SqlClient](/dotnet/api/microsoft.data.sqlclient?view=sqlclient-dotnet-core-1.1) gebruiken. Zie de volgende [blog](https://devblogs.microsoft.com/dotnet/introducing-the-new-microsoftdatasqlclient/)voor meer informatie.
+> Als u .NET Core gebruikt, moet u de naam ruimte [micro soft. data. SqlClient](/dotnet/api/microsoft.data.sqlclient) gebruiken. Zie de volgende [blog](https://devblogs.microsoft.com/dotnet/introducing-the-new-microsoftdatasqlclient/)voor meer informatie.
 
 Het voor beeld C#-programma is afhankelijk van de dll-assembly [*micro soft. Identity model. clients. ActiveDirectory*](/dotnet/api/microsoft.identitymodel.clients.activedirectory) .
 

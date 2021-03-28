@@ -10,12 +10,12 @@ ms.date: 03/10/2021
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 5af681b6edf8abc8145caf599fc0fb3c4daf5c15
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: 6fe1e092e1db4ad283f9d0096ea431a1e983f87c
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105107012"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105645363"
 ---
 ## <a name="prerequisites"></a>Vereisten
 Voordat u aan de slag gaat, moet u het volgende doen:
@@ -250,7 +250,7 @@ Message sent!, message id:<number>
 
 ## <a name="receive-chat-messages-from-a-chat-thread"></a>Chatberichten ontvangen van een chat-thread
 
-Met realtime signalering kunt u zich abonneren om te luisteren naar nieuwe inkomende berichten en de huidige berichten dienovereenkomstig bij te werken in het geheugen. Azure Communication Services ondersteunt een [lijst met gebeurtenissen waarop u zich kunt abonneren](../../../concepts/chat/concepts.md#real-time-signaling).
+Met realtime signalering kunt u zich abonneren om te luisteren naar nieuwe inkomende berichten en de huidige berichten dienovereenkomstig bij te werken in het geheugen. Azure Communication Services ondersteunt een [lijst met gebeurtenissen waarop u zich kunt abonneren](../../../concepts/chat/concepts.md#real-time-notifications).
 
 ```JavaScript
 // open notifications channel
@@ -286,17 +286,6 @@ Vernieuw uw tabblad, in de-console, vindt u de lijst met berichten die in deze c
 `listMessages` retourneert de meest recente versie van het bericht, inclusief eventuele bewerkingen of verwijderingen die zijn opgetreden in het bericht met `updateMessage` en `deleteMessage`.
 Voor verwijderde berichten retourneert `chatMessage.deletedOn` een datum/tijd-waarde die aangeeft wanneer het bericht verwijderd werd. Voor bewerkte berichten retourneert `chatMessage.editedOn` een datum/tijd die aangeeft wanneer het bericht is bewerkt. Het oorspronkelijke tijdstip waarop het bericht is gemaakt, kan worden geraadpleegd met `chatMessage.createdOn` en kan worden gebruikt om de berichten te ordenen.
 
-`listMessages` retourneert verschillende typen berichten die kunnen worden geïdentificeerd door `chatMessage.type`. Deze typen zijn:
-
-- `Text`: Het normale chat bericht dat door een thread deelnemer wordt verzonden.
-
-- `ThreadActivity/TopicUpdate`: Systeembericht dat aangeeft dat het onderwerp is bijgewerkt.
-
-- `ThreadActivity/AddParticipant`: Systeem bericht dat aangeeft dat een of meer deel nemers zijn toegevoegd aan de chat thread.
-
-- `ThreadActivity/RemoveParticipant`: Systeem bericht dat aangeeft dat een deel nemer is verwijderd uit de chat thread.
-
-Zie [Berichttypen](../../../concepts/chat/concepts.md#message-types)voor meer informatie.
 
 ## <a name="add-a-user-as-a-participant-to-the-chat-thread"></a>Een gebruiker toevoegen als deel nemer aan de chat thread
 

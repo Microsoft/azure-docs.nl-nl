@@ -10,12 +10,12 @@ ms.date: 03/11/2021
 ms.topic: include
 ms.custom: include file
 ms.author: bertong
-ms.openlocfilehash: b0a173d605da859830e288aebf355117b928090a
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: 8fe8b853fe07af40603950a61c0dd2a1df74d14e
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105110337"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105644384"
 ---
 Ga aan de slag met Azure Communication Services met de SMS SDK voor communicatie services java script om SMS-berichten te verzenden.
 
@@ -72,15 +72,15 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 | Naam                                  | Beschrijving                                                  |
 | ------------------------------------- | ------------------------------------------------------------ |
 | SmsClient | Deze klasse is vereist voor alle sms-functionaliteit. U instantieert deze klasse met uw abonnementsgegevens en gebruikt deze om sms-berichten te verzenden. |
-| SmsSendResult               | Deze klasse bevat het resultaat van de SMS-service.                                          |
-| SmsSendOptions | Deze interface biedt opties voor het configureren van leveringsrapporten. Als `enableDeliveryReport` is ingesteld op `true` , wordt een gebeurtenis verzonden wanneer de levering is geslaagd. |
 | SmsSendRequest | Deze interface is het model voor het bouwen van de sms-aanvraag (bijvoorbeeld: configureer de telefoonnummers van de afzender en ontvanger en de sms-inhoud). |
+| SmsSendOptions | Deze interface biedt opties voor het configureren van leveringsrapporten. Als `enableDeliveryReport` is ingesteld op `true` , wordt een gebeurtenis verzonden wanneer de levering is geslaagd. |
+| SmsSendResult               | Deze klasse bevat het resultaat van de SMS-service.                                          |
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
-Importeer de **SmsClient** uit de SDK en instantie deze met uw Connection String. Met de onderstaande code wordt de verbindingsreeks voor de resource opgehaald uit een omgevingsvariabele met de naam `COMMUNICATION_SERVICES_CONNECTION_STRING`. Meer informatie over het [beheren van de verbindingsreeks van uw resource](../../create-communication-resource.md#store-your-connection-string).
+Importeer de **SmsClient** uit de SDK en instantie deze met uw Connection String. Met de onderstaande code wordt de verbindingsreeks voor de resource opgehaald uit een omgevingsvariabele met de naam `COMMUNICATION_SERVICES_CONNECTION_STRING`. Meer informatie over het [beheren van de Connection String van uw resource](../../create-communication-resource.md#store-your-connection-string).
 
-Voeg de volgende code toe aan het bestand **send-sms.js**:
+Maak en open een bestand met de naam **send-sms.js** en voeg de volgende code toe:
 
 ```javascript
 const { SmsClient } = require('@azure/communication-sms');
@@ -118,7 +118,10 @@ async function main() {
 
 main();
 ```
-U moet `<from-phone-number>` vervangen door een telefoonnummer met sms-functionaliteit dat is gekoppeld aan uw Communication Services-resources en `<to-phone-number>` met het telefoonnummer waarnaar u een bericht wilt verzenden.
+Vervang door `<from-phone-number>` een SMS-telefoon nummer dat is gekoppeld aan uw communicatie Services-bron en `<to-phone-number-1>` en `<to-phone-number-2>` met de telefoon nummer (s) waarnaar u een bericht wilt verzenden.
+
+> [!WARNING]
+> Telefoonnummers moeten worden opgegeven in de internationale standaardindeling E.164. (bijvoorbeeld: + 14255550123).
 
 ## <a name="send-a-1n-sms-message-with-options"></a>Een SMS-bericht van 1: N verzenden met opties
 
@@ -127,12 +130,12 @@ U kunt ook een Options-object door geven om op te geven of het leverings rapport
 ```javascript
 
 async function main() {
-  await smsClient.send({
+  const sendResults = await smsClient.send({
     from: "<from-phone-number>",
     to: ["<to-phone-number-1>", "<to-phone-number-2>"],
     message: "Weekly Promotion!"
   }, {
-    //Optional parameter
+    //Optional parameters
     enableDeliveryReport: true,
     tag: "marketing"
   });
@@ -150,6 +153,11 @@ async function main() {
 
 main();
 ```
+
+Vervang door `<from-phone-number>` een SMS-telefoon nummer dat is gekoppeld aan uw communicatie Services-bron en `<to-phone-number-1>` en `<to-phone-number-2>` met een telefoon nummer (s) waarnaar u een bericht wilt verzenden.
+
+> [!WARNING]
+> Telefoonnummers moeten worden opgegeven in de internationale standaardindeling E.164. (bijvoorbeeld: + 14255550123).
 
 De parameter `enableDeliveryReport` is een optionele parameter die u kunt gebruiken voor het configureren van leveringsrapporten. Dit is handig voor scenario's waarin u gebeurtenissen wilt verzenden wanneer sms-berichten worden bezorgd. Raadpleeg de quickstart [Sms-gebeurtenissen verwerken](../handle-sms-events.md) voor het configureren van leveringsrapporten voor uw sms-berichten.
 `tag` is een optionele para meter die u kunt gebruiken om een label toe te passen op het leverings rapport.

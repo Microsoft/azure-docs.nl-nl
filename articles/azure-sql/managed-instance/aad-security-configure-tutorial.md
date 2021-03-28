@@ -10,12 +10,12 @@ author: GitHubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 11/06/2019
-ms.openlocfilehash: 9161bf4f99ddfed479451d2091458ab309aa2c17
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 50544507f9d83c216bb6c18e004c5ce7ad1ca346
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "92788618"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105639856"
 ---
 # <a name="tutorial-security-in-azure-sql-managed-instance-using-azure-ad-server-principals-logins"></a>Zelfstudie: Beveiliging van Azure SQL Managed Instance met behulp van Azure AD-serverprincipals (aanmeldingen)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -106,7 +106,7 @@ Zie de volgende artikelen voor voorbeelden van het maken van een verbinding met 
 
     ![Schermopname van het tabblad Resultaten in de S S M S Objectverkenner met de naam, de principal_id, de sid, het type en het type_desc van de zojuist toegevoegde aanmelding.](./media/aad-security-configure-tutorial/native-login.png)
 
-Zie [CREATE LOGIN](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current) voor meer informatie.
+Zie [CREATE LOGIN](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current&preserve-view=true) voor meer informatie.
 
 ## <a name="grant-permissions-to-create-logins"></a>Machtigingen verlenen om aanmeldingen te maken
 
@@ -182,7 +182,7 @@ Nadat de Azure AD-server-principal (aanmelding) is gemaakt en is voorzien van `s
     GO
     ```
 
-1. Maak een database in het beheerd exemplaar met behulp van de [CREATE DATABASE](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-mi-current)-syntaxis. Deze database wordt gebruikt voor het testen van aanmeldingen in de volgende sectie.
+1. Maak een database in het beheerd exemplaar met behulp van de [CREATE DATABASE](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-mi-current&preserve-view=true)-syntaxis. Deze database wordt gebruikt voor het testen van aanmeldingen in de volgende sectie.
     1. Klik in **Objectverkenner** met de rechtermuisknop op de server en kies **Nieuwe query**.
     1. Gebruik in het queryvenster de volgende syntaxis om een database te maken met de naam **MyMITestDB**.
 
@@ -264,7 +264,7 @@ Zie [Aan de slag met machtigingen voor database-engines](/sql/relational-databas
     > [!IMPORTANT]
     > Bij het maken van een **USER** op basis van een Azure AD-server-principal (aanmelding) is de user_name hetzelfde als de login_name van **LOGIN**.
 
-    Zie [CREATE USER](/sql/t-sql/statements/create-user-transact-sql?view=azuresqldb-mi-current) voor meer informatie.
+    Zie [CREATE USER](/sql/t-sql/statements/create-user-transact-sql?view=azuresqldb-mi-current&preserve-view=true) voor meer informatie.
 
 1. Maak in een nieuw queryvenster een testtabel met de volgende T-SQL-opdracht:
 

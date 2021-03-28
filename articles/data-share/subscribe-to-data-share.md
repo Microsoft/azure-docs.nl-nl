@@ -5,13 +5,13 @@ author: jifems
 ms.author: jife
 ms.service: data-share
 ms.topic: tutorial
-ms.date: 11/12/2020
-ms.openlocfilehash: a225989f0670e9b62b00a35bac719c9357c8a130
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 03/24/2021
+ms.openlocfilehash: ccfda4975b6453ed67edc2640520bc0a76df5709
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96017046"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105644877"
 ---
 # <a name="tutorial-accept-and-receive-data-using-azure-data-share"></a>Zelfstudie: Gegevens accepteren en ontvangen met Azure Data Share  
 
@@ -42,23 +42,10 @@ Zorg ervoor dat alle vereisten zijn voltooid voordat u een uitnodiging voor gege
 Als u ervoor kiest om gegevens te ontvangen in Azure SQL Database of Azure Synapse Analytics, vindt u hieronder de lijst met vereisten. 
 
 #### <a name="prerequisites-for-receiving-data-into-azure-sql-database-or-azure-synapse-analytics-formerly-azure-sql-dw"></a>Vereisten voor het ontvangen van gegevens in Azure SQL Database of Azure Synapse Analytics (voorheen Azure SQL DW)
-U kunt de [demo met stapsgewijze instructies volgen](https://youtu.be/aeGISgK1xro) voor het configureren van vereisten.
 
 * Een instantie van Azure SQL Database of Azure Synapse Analytics (voorheen Azure SQL DW).
 * Machtiging om naar databases op de SQL-server te schrijven, aanwezig in *Microsoft.Sql/servers/databases/write*. Deze machtiging maakt onderdeel uit van de rol **Inzender**. 
-* Machtiging voor de beheerde identiteit van de Data Share-resource voor toegang tot Azure SQL Database of Azure Synapse Analytics. U kunt dit doen via de volgende stappen: 
-    1. Navigeer in Azure Portal naar de SQL-server en stel uzelf in als de **Azure Active Directory-beheerder**.
-    1. Maak verbinding met de Azure SQL-database of het Azure SQL-datawarehouse met behulp van [Queryeditor](../azure-sql/database/connect-query-portal.md#connect-using-azure-active-directory) of SQL Server Management Studio met Azure Active Directory-verificatie. 
-    1. Voer het volgende script uit om de beheerde Data Share-identiteit toe te voegen als db_datareader, db_datawriter, db_ddladmin. U moet verbinding maken met behulp van Active Directory en niet via SQL Server-verificatie. 
-
-        ```sql
-        create user "<share_acc_name>" from external provider; 
-        exec sp_addrolemember db_datareader, "<share_acc_name>"; 
-        exec sp_addrolemember db_datawriter, "<share_acc_name>"; 
-        exec sp_addrolemember db_ddladmin, "<share_acc_name>";
-        ```      
-        U ziet dat *<share_acc_name>* de naam is van uw Data Share-resource. Als u nog geen Data Share-resource hebt gemaakt, kunt u later aan deze vereiste voldoen.         
-
+* De beheerder van de SQL-Server **Azure Active Directory**
 * Toegang tot SQL Server-firewall. U kunt dit doen via de volgende stappen: 
     1. Ga in SQL Server in de Azure-portal naar *Firewalls en virtuele netwerken*
     1. Klik op **Ja** bij *Toestaan dat Azure-services en -resources toegang tot deze server krijgen*.
@@ -92,7 +79,6 @@ U kunt de [demo met stapsgewijze instructies volgen](https://youtu.be/aeGISgK1xr
 
 * Een Azure Data Explorer-cluster in hetzelfde Azure-datacenter als het Data Explorer-cluster van de gegevensprovider: Hier kunt u een [Azure Data Explorer-account](/azure/data-explorer/create-cluster-database-portal) maken als u nog geen account hebt. Als u het Azure-datacenter van het cluster van de gegevensprovider niet weet, kunt u het cluster later in het proces maken.
 * Machtiging om naar het Azure Data Explorer-cluster te schrijven, aanwezig in *Microsoft.Kusto/clusters/write*. Deze machtiging maakt onderdeel uit van de rol Inzender. 
-* Machtiging om roltoewijzing toe te voegen aan het Azure Data Explorer-cluster, aanwezig in *Microsoft.Authorization/role assignments/write*. Deze machtiging maakt onderdeel uit van de rol Eigenaar. 
 
 ## <a name="sign-in-to-the-azure-portal"></a>Aanmelden bij Azure Portal
 
@@ -175,13 +161,13 @@ Volg de onderstaande stappen om te configureren waar u gegevens wilt ontvangen.
 
    ![Toewijzen aan doel](./media/dataset-map-target.png "Toewijzen aan doel") 
 
-1. Selecteer het type doelgegevensarchief waarin u de gegevens wilt opslaan. Alle gegevensbestanden of tabellen in het doelgegevensarchief met hetzelfde pad en dezelfde naam worden overschreven. 
+1. Selecteer het type doelgegevensarchief waarin u de gegevens wilt opslaan. Alle gegevensbestanden of tabellen in het doelgegevensarchief met hetzelfde pad en dezelfde naam worden overschreven. Als u gegevens ontvangt in Azure SQL Database of Azure Synapse Analytics (voorheen Azure SQL DW), schakelt u het selectie vakje **gegevens delen toestaan om het bovenstaande script voor het maken van gebruikers namens mij uit te voeren**.
 
    Selecteer voor in-place delen een gegevensarchief op de opgegeven locatie. De locatie is het Azure-datacenter waar het brongegevensarchief van de gegevensprovider zich bevindt. Zodra de gegevensset is toegewezen, kunt u de koppeling in het doelpad volgen om toegang te krijgen tot de gegevens.
 
    ![Doelopslagaccount](./media/dataset-map-target-sql.png "Doelopslag") 
 
-1. Als u wilt delen met behulp van momentopnamen, en de gegevensprovider een schema heeft opgesteld voor het maken van momentopnamen om de gegevens regelmatig bij te werken, kunt u het schema voor het maken van momentopnamen ook inschakelen door het tabblad **Schema voor momentopnamen** te selecteren. Schakel het selectievakje naast het schema voor momentopnamen in en selecteer **+ Inschakelen**.
+1. Als u wilt delen met behulp van momentopnamen, en de gegevensprovider een schema heeft opgesteld voor het maken van momentopnamen om de gegevens regelmatig bij te werken, kunt u het schema voor het maken van momentopnamen ook inschakelen door het tabblad **Schema voor momentopnamen** te selecteren. Schakel het selectievakje naast het schema voor momentopnamen in en selecteer **+ Inschakelen**. Houd er rekening mee dat de eerste geplande moment opname begint binnen één minuut van de plannings tijd en volgende moment opnamen worden gestart binnen enkele seconden van de geplande tijd.
 
    ![Schema voor momentopnamen inschakelen](./media/enable-snapshot-schedule.png "Schema voor momentopnamen inschakelen")
 

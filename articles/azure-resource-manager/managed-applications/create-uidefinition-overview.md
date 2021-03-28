@@ -3,14 +3,14 @@ title: CreateUiDefinition.jsin het deel venster bestand voor portal
 description: Hierin wordt beschreven hoe u gebruikers interface definities maakt voor de Azure Portal. Wordt gebruikt bij het definiëren van Azure Managed Applications.
 author: tfitzmac
 ms.topic: conceptual
-ms.date: 07/14/2020
+ms.date: 03/26/2021
 ms.author: tomfitz
-ms.openlocfilehash: 327fa1d7eb73d8e65bb4f81c1dff0fe2bec2913b
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 586237c6dd909312780163cf316220d2f3fddd8c
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "89319561"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105641651"
 ---
 # <a name="createuidefinitionjson-for-azure-managed-applications-create-experience"></a>CreateUiDefinition. json voor het maken van beheerde Azure-toepassingen
 
@@ -63,25 +63,29 @@ De `config` eigenschap is optioneel. Gebruik deze optie om het standaard gedrag 
             "constraints": {
                 "validations": [
                     {
-                        "isValid": "[expression for checking]",
-                        "message": "Please select a valid subscription."
+                        "isValid": "[not(contains(subscription().displayName, 'Test'))]",
+                        "message": "Can't use test subscription."
                     },
                     {
-                        "permission": "<Resource Provider>/<Action>",
-                        "message": "Must have correct permission to complete this step."
+                        "permission": "Microsoft.Compute/virtualmachines/write",
+                        "message": "Must have write permission for the virtual machine."
+                    },
+                    {
+                        "permission": "Microsoft.Compute/virtualMachines/extensions/write",
+                        "message": "Must have write permission for the extension."
                     }
                 ]
             },
             "resourceProviders": [
-                "<Resource Provider>"
+                "Microsoft.Compute"
             ]
         },
         "resourceGroup": {
             "constraints": {
                 "validations": [
                     {
-                        "isValid": "[expression for checking]",
-                        "message": "Please select a valid resource group."
+                        "isValid": "[not(contains(resourceGroup().name, 'test'))]",
+                        "message": "Resource group name can't contain 'test'."
                     }
                 ]
             },
@@ -103,6 +107,8 @@ De `config` eigenschap is optioneel. Gebruik deze optie om het standaard gedrag 
 },
 ```
 
+Voor de `isValid` eigenschap schrijft u een expressie die wordt omgezet in waar of onwaar. Geef voor de `permission` eigenschap een van de acties van de [resource provider](../../role-based-access-control/resource-provider-operations.md)op.
+
 ### <a name="wizard"></a>Wizard
 
 Met de `isWizard` eigenschap kunt u een geslaagde validatie van elke stap vereisen voordat u verdergaat met de volgende stap. Als de `isWizard` eigenschap niet is opgegeven, is de standaard waarde **False** en is de stap-voor-stap validatie niet vereist.
@@ -117,7 +123,7 @@ Met de basis principes van configuratie kunt u de stappen in de basis beginselen
 
 `description`Geef voor een teken reeks met kortings functionaliteit op waarmee uw resource wordt beschreven. Opmaak van meerdere regels en koppelingen worden ondersteund.
 
-`subscription`Met de `resourceGroup` elementen en kunt u aanvullende validaties opgeven. De syntaxis voor het opgeven van validaties is identiek aan de aangepaste validatie voor het [tekstvak](microsoft-common-textbox.md). U kunt ook `permission` validaties opgeven voor het abonnement of de resource groep.  
+`subscription`Met de `resourceGroup` elementen en kunt u meer validaties opgeven. De syntaxis voor het opgeven van validaties is identiek aan de aangepaste validatie voor het [tekstvak](microsoft-common-textbox.md). U kunt ook `permission` validaties opgeven voor het abonnement of de resource groep.  
 
 Het besturings element voor abonnementen accepteert een lijst met naam ruimten van de resource provider. U kunt bijvoorbeeld **micro soft. Compute** opgeven. Er wordt een fout bericht weer gegeven wanneer de gebruiker een abonnement selecteert dat geen ondersteuning biedt voor de resource provider. De fout treedt op wanneer de resource provider niet is geregistreerd bij dat abonnement en de gebruiker geen machtiging heeft om de resource provider te registreren.  
 
@@ -150,7 +156,7 @@ In het volgende voor beeld wordt een tekstvak weer gegeven dat is toegevoegd aan
 
 ## <a name="steps"></a>Stappen
 
-De eigenschap Steps bevat geen of meer extra stappen die na de basis beginselen worden weer gegeven. Elke stap bevat een of meer elementen. U kunt stappen toevoegen per rol of laag van de toepassing die wordt geïmplementeerd. Voeg bijvoorbeeld een stap toe voor invoer van hoofd knooppunten en een stap voor de worker-knoop punten in een cluster.
+De eigenschap Steps bevat nul of meer stappen die na de basis beginselen worden weer gegeven. Elke stap bevat een of meer elementen. U kunt stappen toevoegen per rol of laag van de toepassing die wordt geïmplementeerd. Voeg bijvoorbeeld een stap toe voor de invoer van primaire knoop punten en een stap voor de werk knooppunten in een cluster.
 
 ```json
 "steps": [

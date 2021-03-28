@@ -12,17 +12,17 @@ ms.date: 03/03/2021
 ms.author: yulili
 ms.custom: references_regions
 zone_pivot_groups: programming-languages-speech-services-nomore-variant
-ms.openlocfilehash: f74a242db2686eb4571ebbea80b88a75dda205d4
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: e97c48d4e42627d0fc2caaa4f66e81b9a0cafa86
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105044064"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105643900"
 ---
 # <a name="get-facial-pose-events"></a>Gebeurtenissen voor gezichts pose ophalen
 
 > [!NOTE]
-> Viseme werkt alleen voor `en-US-AriaNeural` spraak in de regio vs-West 2 ( `westus2` ) voor nu.
+> Viseme werkt nu alleen voor `en-US-AriaNeural` spraak.
 
 Een viseme is de visuele beschrijving van een foneem in een gesp roken taal.
 Hiermee wordt de positie van het gezicht en de mond gedefinieerd wanneer een woord wordt gesp roken.

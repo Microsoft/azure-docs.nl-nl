@@ -11,12 +11,12 @@ ms.workload: identity
 ms.subservice: fundamentals
 ms.date: 10/31/2019
 ms.author: martinco
-ms.openlocfilehash: 90e215ea445c8c700e351149e9c7a91d9a595252
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 0d425111e151d60ab38a60e38cd1805cef39f606
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96859518"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105641762"
 ---
 # <a name="azure-active-directory-authentication-management-operations-reference-guide"></a>Naslag Gids voor verificatie beheer van Azure Active Directory
 
@@ -365,8 +365,8 @@ U hebt toegang tot de aanmeldings activiteiten, audits en risico gebeurtenissen 
 
 #### <a name="logs-recommended-reading"></a>Aanbevolen Lees logboeken
 
-- [Naslag informatie over Azure Active Directory controle-API](/graph/api/resources/directoryaudit?view=graph-rest-beta%3fview%3dgraph-rest-beta)
-- [Rapport API-referentie voor Azure Active Directory-aanmeld activiteiten](/graph/api/resources/signin?view=graph-rest-beta%3fview%3dgraph-rest-beta)
+- [Naslag informatie over Azure Active Directory controle-API](/graph/api/resources/directoryaudit?view=graph-rest-beta)
+- [Rapport API-referentie voor Azure Active Directory-aanmeld activiteiten](/graph/api/resources/signin?view=graph-rest-beta)
 - [Gegevens ophalen met de rapportage-API van Azure AD met certificaten](../reports-monitoring/tutorial-access-api-with-certificates.md)
 - [Microsoft Graph voor Azure Active Directory Identity Protection](../identity-protection/howto-identity-protection-graph-api.md)
 - [Naslag informatie voor Office 365 Management Activity API](/office/office-365-management-api/office-365-management-activity-api-reference)

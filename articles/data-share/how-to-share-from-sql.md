@@ -6,12 +6,12 @@ ms.author: jife
 ms.service: data-share
 ms.topic: how-to
 ms.date: 02/24/2021
-ms.openlocfilehash: f87ad76e9bb1db4d71716bf860d5fee2d413e8e9
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: ef8c1a50cd3568c6cec9bdb053b02e6e14741eb0
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101740372"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105644679"
 ---
 # <a name="share-and-receive-data-from-azure-sql-database-and-azure-synapse-analytics"></a>Gegevens delen en ontvangen van Azure SQL Database en Azure Synapse Analytics
 
@@ -36,7 +36,20 @@ Wanneer gegevens worden ontvangen in de SQL-tabel en als de doel tabel nog niet 
 Hieronder ziet u de lijst met vereisten voor het delen van gegevens vanuit een SQL-bron. 
 
 #### <a name="prerequisites-for-sharing-from-azure-sql-database-or-azure-synapse-analytics-formerly-azure-sql-dw"></a>Vereisten voor het delen vanuit Azure SQL Database of Azure Synapse Analytics (voorheen Azure SQL DW)
-U kunt de [demo met stapsgewijze instructies volgen](https://youtu.be/hIE-TjJD8Dc) voor het configureren van vereisten.
+
+
+Hier volgt een lijst met vereisten voor het delen van gegevens met behulp van Azure Active Directory-verificatie:
+
+* Azure SQL Database of Azure Synapse Analytics (voorheen Azure SQL DW) met tabellen en weergaven die u wilt delen.
+* Machtiging om naar de databases op de SQL-server te schrijven, aanwezig in *Microsoft.Sql/servers/databases/write*. Deze machtiging maakt onderdeel uit van de rol **Inzender**.
+* SQL Server **Azure Active Directory-beheerder**
+* Toegang tot SQL Server-firewall. U kunt dit doen via de volgende stappen: 
+    1. Ga in Azure Portal naar SQL-server. Selecteer *Firewalls en virtuele netwerken* in de linkernavigatiebalk.
+    1. Klik op **Ja** bij *Toestaan dat Azure-services en -resources toegang tot deze server krijgen*.
+    1. Klik op **+IP van client toevoegen**. Het IP-adres van de client kan worden gewijzigd. Dit proces moet mogelijk worden herhaald de volgende keer dat u SQL-gegevens deelt vanuit de Azure-portal. U kunt ook een IP-bereik toevoegen.
+    1. Klik op **Opslaan**. 
+
+Hieronder vindt u een lijst met vereisten voor het delen van gegevens met behulp van SQL-verificatie. U kunt de [demo met stapsgewijze instructies volgen](https://youtu.be/hIE-TjJD8Dc) voor het configureren van vereisten.
 
 * Azure SQL Database of Azure Synapse Analytics (voorheen Azure SQL DW) met tabellen en weergaven die u wilt delen.
 * Machtiging om naar de databases op de SQL-server te schrijven, aanwezig in *Microsoft.Sql/servers/databases/write*. Deze machtiging maakt onderdeel uit van de rol **Inzender**.
@@ -132,7 +145,9 @@ Maak een Azure Data Share-resource in een Azure-resourcegroep.
 
     ![AddDatasets](./media/add-datasets.png "Gegevenssets toevoegen")    
 
-1. Selecteer uw SQL Server-of Synapse-werk ruimte, geef referenties op als u hierom wordt gevraagd en selecteer **volgende** om naar het object te navigeren dat u wilt delen en selecteer gegevens sets toevoegen. U kunt tabellen en weer gaven selecteren op basis van Azure SQL Database en Azure Synapse Analytics (voorheen Azure SQL DW) of tabellen uit een toegewezen SQL-groep in azure Synapse Analytics (workspace). 
+1. Selecteer uw SQL Server-of Synapse-werk ruimte. Schakel het selectie vakje in als u AAD-verificatie gebruikt en het selectie vakje **gegevens delen toestaan voor het uitvoeren van de bovenstaande gebruiker SQL-script maken in mijn naam** wordt weer gegeven. Als u SQL-verificatie gebruikt, geeft u referenties op en volgt u de stappen in de vereisten voor het uitvoeren van het script worden weer gegeven in het scherm. Hiermee beschikt u over een machtiging voor het delen van gegevens vanuit uw SQL-data base. 
+
+   Selecteer **volgende** om naar het object te navigeren dat u wilt delen en selecteer gegevens sets toevoegen. U kunt tabellen en weer gaven selecteren op basis van Azure SQL Database en Azure Synapse Analytics (voorheen Azure SQL DW) of tabellen uit een toegewezen SQL-groep in azure Synapse Analytics (workspace). 
 
     ![SelectDatasets](./media/select-datasets-sql.png "Gegevenssets selecteren")    
 
@@ -176,7 +191,18 @@ Als u ervoor kiest om gegevens te ontvangen in Azure Storage, hieronder volgt de
 Als u ervoor kiest om gegevens te ontvangen in Azure SQL Database of Azure Synapse Analytics, vindt u hieronder de lijst met vereisten. 
 
 #### <a name="prerequisites-for-receiving-data-into-azure-sql-database-or-azure-synapse-analytics-formerly-azure-sql-dw"></a>Vereisten voor het ontvangen van gegevens in Azure SQL Database of Azure Synapse Analytics (voorheen Azure SQL DW)
-U kunt de [demo met stapsgewijze instructies volgen](https://youtu.be/aeGISgK1xro) voor het configureren van vereisten.
+
+Als u gegevens wilt ontvangen op een SQL-server waarop u de **Azure Active Directory beheerder** van de SQL-server bent, is hier een lijst met vereisten:
+
+* Een instantie van Azure SQL Database of Azure Synapse Analytics (voorheen Azure SQL DW).
+* Machtiging om naar de databases op de SQL-server te schrijven, aanwezig in *Microsoft.Sql/servers/databases/write*. Deze machtiging maakt onderdeel uit van de rol **Inzender**.
+* Toegang tot SQL Server-firewall. U kunt dit doen via de volgende stappen: 
+    1. Ga in Azure Portal naar SQL-server. Selecteer *Firewalls en virtuele netwerken* in de linkernavigatiebalk.
+    1. Klik op **Ja** bij *Toestaan dat Azure-services en -resources toegang tot deze server krijgen*.
+    1. Klik op **+IP van client toevoegen**. Het IP-adres van de client kan worden gewijzigd. Dit proces moet mogelijk worden herhaald de volgende keer dat u SQL-gegevens deelt vanuit de Azure-portal. U kunt ook een IP-bereik toevoegen.
+    1. Klik op **Opslaan**. 
+    
+Hieronder vindt u een lijst met vereisten voor het ontvangen van gegevens in een SQL server waarvoor u niet de **Azure Active Directory-beheerder** bent. U kunt de [demo met stapsgewijze instructies volgen](https://youtu.be/aeGISgK1xro) voor het configureren van vereisten.
 
 * Een instantie van Azure SQL Database of Azure Synapse Analytics (voorheen Azure SQL DW).
 * Machtiging om naar databases op de SQL-server te schrijven, aanwezig in *Microsoft.Sql/servers/databases/write*. Deze machtiging maakt onderdeel uit van de rol **Inzender**. 
@@ -264,18 +290,18 @@ Volg de onderstaande stappen om te configureren waar u gegevens wilt ontvangen.
 
    ![Toewijzen aan doel](./media/dataset-map-target.png "Toewijzen aan doel") 
 
-1. Selecteer een doel gegevens archief waarvan u wilt dat de gegevens binnenkomen. Alle gegevensbestanden of tabellen in het doelgegevensarchief met hetzelfde pad en dezelfde naam worden overschreven. 
+1. Selecteer een doel gegevens archief waarvan u wilt dat de gegevens binnenkomen. Alle gegevensbestanden of tabellen in het doelgegevensarchief met hetzelfde pad en dezelfde naam worden overschreven. Schakel het selectie vakje in als u gegevens ontvangt in het SQL-doel en het selectie vakje **gegevens delen voor het maken van een gebruiker kan worden uitgevoerd** . Als dat niet het geval is, volgt u de instructie in vereisten voor het uitvoeren van het script op het scherm. Hiermee krijgt u schrijf machtiging voor de gegevens share bron voor uw doel-SQL-data base.
 
    ![Doelopslagaccount](./media/dataset-map-target-sql.png "Doel gegevens archief") 
 
-1. Als u wilt delen met behulp van momentopnamen, en de gegevensprovider een schema heeft opgesteld voor het maken van momentopnamen om de gegevens regelmatig bij te werken, kunt u het schema voor het maken van momentopnamen ook inschakelen door het tabblad **Schema voor momentopnamen** te selecteren. Schakel het selectievakje naast het schema voor momentopnamen in en selecteer **+ Inschakelen**.
+1. Als u wilt delen met behulp van momentopnamen, en de gegevensprovider een schema heeft opgesteld voor het maken van momentopnamen om de gegevens regelmatig bij te werken, kunt u het schema voor het maken van momentopnamen ook inschakelen door het tabblad **Schema voor momentopnamen** te selecteren. Schakel het selectievakje naast het schema voor momentopnamen in en selecteer **+ Inschakelen**. Houd er rekening mee dat de eerste geplande moment opname begint binnen één minuut van de plannings tijd en volgende moment opnamen worden gestart binnen enkele seconden van de geplande tijd.
 
    ![Schema voor momentopnamen inschakelen](./media/enable-snapshot-schedule.png "Schema voor momentopnamen inschakelen")
 
 ### <a name="trigger-a-snapshot"></a>Een momentopname activeren
 Deze stappen zijn alleen van toepassing bij delen op basis van momentopnamen.
 
-1. U kunt een momentopname activeren door **Momentopname activeren** te selecteren op het tabblad **Details**. Hier kunt u een volledige of incrementele momentopname van uw gegevens activeren. Als dit de eerste keer is dat u gegevens van uw gegevensprovider ontvangt, selecteert u volledig kopiëren. Voor SQL-bronnen wordt alleen volledige moment opname ondersteund. Wanneer een moment opname wordt uitgevoerd, worden volgende moment opnamen niet gestart totdat de vorige is voltooid.
+1. U kunt een momentopname activeren door **Momentopname activeren** te selecteren op het tabblad **Details**. Hier kunt u een volledige of incrementele moment opname van uw gegevens activeren. Als dit de eerste keer is dat u gegevens van uw gegevensprovider ontvangt, selecteert u volledig kopiëren. Voor SQL-bronnen wordt alleen volledige moment opname ondersteund. Wanneer een moment opname wordt uitgevoerd, worden volgende moment opnamen niet gestart totdat de vorige is voltooid.
 
    ![Momentopname activeren](./media/trigger-snapshot.png "Momentopname activeren") 
 

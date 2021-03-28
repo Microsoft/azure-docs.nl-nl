@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 06/21/2019
-ms.openlocfilehash: 322ef3b8ca30396bd4772850ff651f7545a21257
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 11c83a6ec364865eb3478112c9f33add22a5c09d
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100580755"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105643258"
 ---
 # <a name="restore-your-azure-sql-database-or-failover-to-a-secondary"></a>Uw Azure SQL Database of failover naar een secundaire herstellen
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -78,7 +78,7 @@ Gebruik een van de volgende hand leidingen voor een failover naar een secundaire
 
 - [Een failover uitvoeren naar een secundaire server met geo-replicatie met behulp van de Azure Portal](active-geo-replication-configure-portal.md)
 - [Failover naar de secundaire server met behulp van Power shell](scripts/setup-geodr-and-failover-database-powershell.md)
-- [Failover naar een secundaire server met behulp van Transact-SQL (T-SQL)](/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current#e-failover-to-a-geo-replication-secondary)
+- [Failover naar een secundaire server met behulp van Transact-SQL (T-SQL)](/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current&preserve-view=true#e-failover-to-a-geo-replication-secondary)
 
 ## <a name="recover-using-geo-restore"></a>Herstellen met behulp van geo-Restore
 

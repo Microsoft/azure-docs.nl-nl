@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 4fbb09a2687673ef96252d8bdb0523d0c5f235ae
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.openlocfilehash: ccad323c1834894367cca0ef0d3f98eb1b1b1ec3
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104772022"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105639916"
 ---
 # <a name="embedded-sign-in-experience"></a>Inge sloten aanmeldings ervaring
 
@@ -45,7 +45,7 @@ Het inline frame-element `<iframe>` wordt gebruikt om een document in een HTML5-
 Houd bij het gebruik van iframe rekening met het volgende:
 
 - Inge sloten aanmelding ondersteunt alleen lokale accounts. De meeste leveranciers van sociale identiteiten (bijvoorbeeld Google en Facebook) blok keren dat hun aanmeldings pagina's worden weer gegeven in inline frames.
-- Omdat Azure AD B2C sessie cookies binnen een IFRAME worden beschouwd als cookies van derden, blok keren of wissen van bepaalde browsers (bijvoorbeeld Safari of Chrome in Incognito-modus), worden deze cookies geblokkeerd, wat een ongewenste gebruikers ervaring oplevert. U kunt dit probleem voor komen door ervoor te zorgen dat de domein naam van uw toepassing en uw Azure AD B2C domein *dezelfde oorsprong* hebben. Als u dezelfde oorsprong wilt gebruiken, [schakelt u aangepaste domeinen](custom-domain.md) voor Azure AD B2C Tenant in en configureert u uw web-app met dezelfde oorsprong. Een toepassing die wordt gehost op https://app.contoso.com heeft bijvoorbeeld dezelfde oorsprong als Azure AD B2C uitgevoerd op https://login.contoso.com .
+- Omdat Azure AD B2C sessie cookies binnen een IFRAME worden beschouwd als cookies van derden, blok keren of wissen van bepaalde browsers (bijvoorbeeld Safari of Chrome in Incognito-modus), worden deze cookies geblokkeerd, wat een ongewenste gebruikers ervaring oplevert. U kunt dit probleem voor komen door ervoor te zorgen dat de domein naam van uw toepassing en uw Azure AD B2C domein *dezelfde oorsprong* hebben. Als u dezelfde oorsprong wilt gebruiken, [schakelt u aangepaste domeinen](custom-domain.md) voor Azure AD B2C Tenant in en configureert u uw web-app met dezelfde oorsprong. Een toepassing die wordt gehost op, https://app.contoso.com heeft bijvoorbeeld dezelfde oorsprong als Azure AD B2C uitgevoerd op https://login.contoso.com .
 
 ## <a name="prerequisites"></a>Vereisten
 

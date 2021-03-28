@@ -10,12 +10,12 @@ author: markjones-msft
 ms.author: markjon
 ms.reviewer: mathoma
 ms.date: 11/06/2020
-ms.openlocfilehash: e237cf09616cb645bfc4659af4439086979b2565
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: 2702451aa3645b2702f8f38c37574a6601249dac
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105023619"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105641420"
 ---
 # <a name="migration-overview-sql-server-to-sql-server-on-azure-vms"></a>Migratie overzicht: SQL Server SQL Server op virtuele machines van Azure
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlvm.md)]
@@ -131,7 +131,7 @@ Bij de voor bereiding voor het migreren van SQL Server-data bases naar SQL Serve
 
 Raadpleeg de volgende bronnen die zijn ontwikkeld voor de echte wereld wijde migratie projecten voor meer hulp.
 
-|Asset  |Beschrijving  |
+|Asset  |Description  |
 |---------|---------|
 |[Beoordelings model en hulp programma voor gegevens workload](https://github.com/microsoft/DataMigrationTeam/tree/master/IP%20and%20Scripts/Data%20Workload%20Assessment%20Model%20and%20Tool)| Dit hulp programma biedt voorgestelde ' Best passend ' doel platformen, Cloud gereedheids en toepassings-en database herstel niveau voor een bepaalde werk belasting. U kunt met één klik berekeningen en rapporten genereren waarmee u grote voor-en hand-evaluaties versnelt door het besluitvormings proces voor een geautomatiseerd en uniform doel platform te bieden.|
 |[Automatisering van perfmon Data Collection met logman](https://github.com/microsoft/DataMigrationTeam/tree/master/IP%20and%20Scripts/Perfmon%20Data%20Collection%20Automation%20Using%20Logman)|Een hulp programma waarmee u gegevens kunt verzamelen om inzicht te krijgen in de basislijn prestaties die helpt bij de aanbeveling voor migratie doel. Dit hulp programma dat logman.exe gebruikt voor het maken van de opdracht voor het maken, starten, stoppen en verwijderen van prestatie meter items die zijn ingesteld op een externe SQL Server.|
@@ -140,7 +140,7 @@ Raadpleeg de volgende bronnen die zijn ontwikkeld voor de echte wereld wijde mig
 |[Multiple-SQL-VM-VNet-ILB](https://github.com/microsoft/DataMigrationTeam/tree/master/IP%20and%20Scripts/ARM%20Templates/Multiple-SQL-VM-VNet-ILB)|In dit technisch document worden de stappen beschreven voor het instellen van meerdere virtuele Azure-machines in een configuratie van SQL Server always on-beschikbaarheids groep.|
 |[Virtuele Azure-machines die Ultra-SSD ondersteunen per regio](https://github.com/microsoft/DataMigrationTeam/tree/master/IP%20and%20Scripts/Find%20Azure%20VMs%20supporting%20Ultra%20SSD)|Deze Power shell-scripts bieden een programmatische optie voor het ophalen van de lijst met regio's die ondersteuning bieden voor virtuele Azure-machines die een ultra Ssd's ondersteunen.|
 
-Deze resources zijn ontwikkeld als onderdeel van het data SQL expert-programma, dat wordt gesponsord door het technische team van de Azure-gegevens groep. Het kern Handvest van het data SQL expert-programma is het deblokkeren en versnellen van complexe modernisering en het concurreren van de migratie mogelijkheden van het gegevens platform naar het Azure-gegevens platform van micro soft. Als u denkt dat uw organisatie graag deelneemt aan het data SQL expert-programma, neemt u contact op met uw account team en vraagt u om een benoeming in te dienen.
+Het IT-team van data SQL heeft deze resources ontwikkeld. Het kern Handvest van dit team is het deblokkeren en versnellen van complexe modernisering voor data platform migratie projecten naar het Azure-gegevens platform van micro soft.
 
 ## <a name="next-steps"></a>Volgende stappen
 

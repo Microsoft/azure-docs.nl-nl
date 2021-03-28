@@ -1,37 +1,32 @@
 ---
-title: Versleutelings bereiken maken en beheren (preview-versie)
+title: Versleutelings scopes maken en beheren
 description: Meer informatie over het maken van een versleutelings bereik voor het isoleren van blobgegevens op het niveau van de container of BLOB.
 services: storage
 author: tamram
 ms.service: storage
-ms.date: 03/05/2021
+ms.date: 03/26/2021
 ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: d5590ff275ce821c81f5751f4d92972c49adaafc
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: c29282637f6854248c98dff59f8fae46ad1a9d39
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102209588"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105640524"
 ---
-# <a name="create-and-manage-encryption-scopes-preview"></a>Versleutelings bereiken maken en beheren (preview-versie)
+# <a name="create-and-manage-encryption-scopes"></a>Versleutelings scopes maken en beheren
 
-Met versleutelings bereiken (preview) kunt u versleuteling op het niveau van een afzonderlijke BLOB of container beheren. Een versleutelingsbereik isoleert blobgegevens in een beveiligde enclave binnen een opslagaccount. U kunt versleutelings scopes gebruiken om beveiligde grenzen te maken tussen gegevens die zich in hetzelfde opslag account bevinden, maar deel uitmaakt van verschillende klanten. Zie [encrypties voor Blob Storage (preview)](encryption-scope-overview.md)voor meer informatie over versleutelings bereiken.
+Met een versleutelingsbereik kunt u versleuteling op het niveau van een afzonderlijke blob of container beheren. U kunt versleutelings scopes gebruiken om beveiligde grenzen te maken tussen gegevens die zich in hetzelfde opslag account bevinden, maar deel uitmaakt van verschillende klanten. Zie [encrypties voor Blob Storage](encryption-scope-overview.md)voor meer informatie over versleutelings bereiken.
 
 In dit artikel wordt beschreven hoe u een versleutelings bereik maakt. U ziet ook hoe u een versleutelings bereik opgeeft wanneer u een BLOB of container maakt.
-
-> [!IMPORTANT]
-> Versleutelings scopes zijn momenteel beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of nog niet beschikbaar zijn.
->
-> Om onverwachte kosten te voor komen, moet u alle versleutelings scopes uitschakelen die u momenteel niet nodig hebt.
 
 [!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
 
 ## <a name="create-an-encryption-scope"></a>Een versleutelings bereik maken
 
-U kunt een versleutelings bereik maken met een door micro soft beheerde sleutel of met een door de klant beheerde sleutel die is opgeslagen in Azure Key Vault of Azure Key Vault beheerde hardware security model (HSM) (preview). Als u een versleutelings bereik met een door de klant beheerde sleutel wilt maken, moet u eerst een sleutel kluis of beheerde HSM maken en de sleutel die u wilt gebruiken voor de scope toevoegen. De sleutel kluis of beheerde HSM moet de beveiliging opschonen ingeschakeld hebben en moet zich in dezelfde regio bevinden als het opslag account.
+U kunt een versleutelings bereik maken dat wordt beveiligd met een door micro soft beheerde sleutel of met een door de klant beheerde sleutel die is opgeslagen in een Azure Key Vault of in een Azure Key Vault beheerde hardware security model (HSM) (preview). Als u een versleutelings bereik met een door de klant beheerde sleutel wilt maken, moet u eerst een sleutel kluis of beheerde HSM maken en de sleutel die u wilt gebruiken voor de scope toevoegen. De sleutel kluis of beheerde HSM moet de beveiliging opschonen ingeschakeld hebben en moet zich in dezelfde regio bevinden als het opslag account.
 
 Een versleutelings bereik wordt automatisch ingeschakeld wanneer u het maakt. Nadat u het versleutelings bereik hebt gemaakt, kunt u dit opgeven wanneer u een BLOB maakt. U kunt ook een standaard versleutelings bereik opgeven wanneer u een container maakt, die automatisch van toepassing is op alle blobs in de container.
 
@@ -43,22 +38,16 @@ Voer de volgende stappen uit om een versleutelings bereik te maken in de Azure P
 1. Selecteer de **versleutelings** instelling.
 1. Selecteer het tabblad **versleutelings bereik** .
 1. Klik op de knop **toevoegen** om een nieuw versleutelings bereik toe te voegen.
-1. Voer in het deel venster **versleutelings Scope** maken een naam in voor de nieuwe scope.
-1. Selecteer het type versleuteling, door **micro soft beheerde sleutels** of door de **klant beheerde sleutels**.
+1. Voer in het deel venster **versleutelings scope maken** een naam in voor de nieuwe scope.
+1. Selecteer het gewenste type ondersteuning voor de coderings sleutel, door **micro soft beheerde sleutels** of door de **klant beheerde sleutels**.
     - Als u door **micro soft beheerde sleutels** hebt geselecteerd, klikt u op **maken** om het versleutelings bereik te maken.
-    - Als u door de **klant beheerde sleutels** hebt geselecteerd, geeft u een sleutel kluis of beheerde HSM, sleutel en sleutel versie op die voor dit versleutelings bereik moeten worden gebruikt, zoals wordt weer gegeven in de volgende afbeelding.
+    - Als u door de **klant beheerde sleutels** hebt geselecteerd, selecteert u een abonnement en geeft u een sleutel kluis of een beheerde HSM op en een sleutel die moet worden gebruikt voor dit versleutelings bereik, zoals wordt weer gegeven in de volgende afbeelding.
 
     :::image type="content" source="media/encryption-scope-manage/create-encryption-scope-customer-managed-key-portal.png" alt-text="Scherm afbeelding die laat zien hoe u het versleutelings bereik maakt in Azure Portal":::
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
-Als u een versleutelings bereik met Power shell wilt maken, installeert u eerst de module AZ. Storage preview. Het gebruik van de nieuwste preview-versie wordt aanbevolen, maar versleutelings bereiken worden ondersteund in versie 1.13.4-preview en hoger. Verwijder alle andere versies van de module AZ. storage.
-
-Met de volgende opdracht wordt AZ. Storage [2.1.1-Preview-](https://www.powershellgallery.com/packages/Az.Storage/2.1.1-preview) module:
-
-```powershell
-Install-Module -Name Az.Storage -RequiredVersion 2.1.1-preview -AllowPrerelease
-```
+Als u een versleutelings bereik met Power shell wilt maken, installeert u de module [AZ. Storage](https://www.powershellgallery.com/packages/Az.Storage) Power shell, version 3.4.0 of hoger.
 
 ### <a name="create-an-encryption-scope-protected-by-microsoft-managed-keys"></a>Een versleutelings bereik maken dat wordt beveiligd door door micro soft beheerde sleutels
 
@@ -89,9 +78,8 @@ Vergeet niet om de waarden van de tijdelijke aanduidingen in het voor beeld te v
 $rgName = "<resource-group>"
 $accountName = "<storage-account>"
 $keyVaultName = "<key-vault>"
-$keyUri = "<key-uri-with-version>"
+$keyUri = "<key-uri>"
 $scopeName2 = "customer2scope"
-
 
 # Assign a system managed identity to the storage account.
 $storageAccount = Set-AzStorageAccount -ResourceGroupName $rgName `
@@ -105,7 +93,9 @@ Set-AzKeyVaultAccessPolicy `
     -PermissionsToKeys wrapkey,unwrapkey,get
 ```
 
-Vervolgens roept u de opdracht **New-AzStorageEncryptionScope** aan met de `-KeyvaultEncryption` para meter en geeft u de sleutel-URI op. Zorg ervoor dat u de sleutel versie op de sleutel-URI opneemt. Vergeet niet om de waarden van de tijdelijke aanduidingen in het voor beeld te vervangen door uw eigen waarden:
+Vervolgens roept u de opdracht **New-AzStorageEncryptionScope** aan met de `-KeyvaultEncryption` para meter en geeft u de sleutel-URI op. Inclusief de sleutel versie op de sleutel-URI is optioneel. Als u de sleutel versie weglaat, wordt in het versleutelings bereik automatisch de meest recente sleutel versie gebruikt. Als u de sleutel versie opneemt, moet u de sleutel versie hand matig bijwerken om een andere versie te gebruiken.
+
+Vergeet niet om de waarden van de tijdelijke aanduidingen in het voor beeld te vervangen door uw eigen waarden:
 
 ```powershell
 New-AzStorageEncryptionScope -ResourceGroupName $rgName `
@@ -117,7 +107,7 @@ New-AzStorageEncryptionScope -ResourceGroupName $rgName `
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/cli)
 
-Als u een versleutelings bereik met Azure CLI wilt maken, moet u eerst Azure CLI versie 2.4.0 of hoger installeren.
+Als u een versleutelings bereik met Azure CLI wilt maken, moet u eerst Azure CLI versie 2.20.0 of hoger installeren.
 
 ### <a name="create-an-encryption-scope-protected-by-microsoft-managed-keys"></a>Een versleutelings bereik maken dat wordt beveiligd door door micro soft beheerde sleutels
 
@@ -163,7 +153,9 @@ az keyvault set-policy \
     --key-permissions get unwrapKey wrapKey
 ```
 
-Vervolgens roept u de opdracht **AZ Storage account Encryption-Scope Create** aan met de `--key-uri` para meter en geeft u de sleutel-URI op. Zorg ervoor dat u de sleutel versie op de sleutel-URI opneemt. Vergeet niet om de waarden van de tijdelijke aanduidingen in het voor beeld te vervangen door uw eigen waarden:
+Vervolgens roept u de opdracht **AZ Storage account Encryption-Scope Create** aan met de `--key-uri` para meter en geeft u de sleutel-URI op. Inclusief de sleutel versie op de sleutel-URI is optioneel. Als u de sleutel versie weglaat, wordt in het versleutelings bereik automatisch de meest recente sleutel versie gebruikt. Als u de sleutel versie opneemt, moet u de sleutel versie hand matig bijwerken om een andere versie te gebruiken.
+
+Vergeet niet om de waarden van de tijdelijke aanduidingen in het voor beeld te vervangen door uw eigen waarden:
 
 ```azurecli-interactive
 az storage account encryption-scope create \
@@ -176,7 +168,10 @@ az storage account encryption-scope create \
 
 ---
 
-Zie [Configure Encryption with door de klant beheerde sleutels die zijn opgeslagen in azure Key Vault](../common/customer-managed-keys-configure-key-vault.md)voor meer informatie over het configureren van Azure Storage versleuteling met door de klant beheerde sleutels in een sleutel kluis. Zie [versleuteling configureren met door de klant beheerde sleutels die zijn opgeslagen in azure Key Vault beheerde HSM (preview)](../common/customer-managed-keys-configure-key-vault-hsm.md)voor informatie over het configureren van door de klant beheerde sleutels in een beheerde HSM.
+Raadpleeg de volgende artikelen voor meer informatie over het configureren van Azure Storage versleuteling met door de klant beheerde sleutels in een sleutel kluis of beheerde HSM:
+
+- [Versleuteling configureren met door de klant beheerde sleutels die zijn opgeslagen in Azure Key Vault](../common/customer-managed-keys-configure-key-vault.md)
+- [Configureer versleuteling met door de klant beheerde sleutels die zijn opgeslagen in azure Key Vault beheerde HSM (preview)](../common/customer-managed-keys-configure-key-vault-hsm.md).
 
 ## <a name="list-encryption-scopes-for-storage-account"></a>Versleutelings bereik voor opslag account weer geven
 
@@ -185,6 +180,10 @@ Zie [Configure Encryption with door de klant beheerde sleutels die zijn opgeslag
 Als u de versleutelings bereiken voor een opslag account in de Azure Portal wilt weer geven, gaat u naar de instelling **versleutelings bereik** voor het opslag account. In dit deel venster kunt u een versleutelings bereik in-of uitschakelen of de sleutel voor een versleutelings bereik wijzigen.
 
 :::image type="content" source="media/encryption-scope-manage/list-encryption-scopes-portal.png" alt-text="Scherm opname met een lijst met versleutelings bereiken in Azure Portal":::
+
+Als u details wilt weer geven van een door de klant beheerde sleutel, met inbegrip van de sleutel-URI en-versie en of de sleutel versie automatisch wordt bijgewerkt, volgt u de koppeling in de **sleutel** kolom.
+
+:::image type="content" source="media/encryption-scope-manage/customer-managed-key-details-portal.png" alt-text="Scherm afbeelding met Details voor een sleutel die wordt gebruikt met een versleutelings bereik":::
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -217,7 +216,7 @@ az storage account encryption-scope list \
 
 Wanneer u een container maakt, kunt u een standaard versleutelings bereik opgeven. Blobs in deze container gebruiken standaard dat bereik.
 
-Een afzonderlijke Blob kan worden gemaakt met een eigen versleutelings bereik, tenzij de container is geconfigureerd om te vereisen dat alle blobs het standaard bereik gebruiken.
+Een afzonderlijke Blob kan worden gemaakt met een eigen versleutelings bereik, tenzij de container is geconfigureerd om te vereisen dat alle blobs het standaard bereik gebruiken. Zie [versleutelings bereiken voor containers en blobs](encryption-scope-overview.md#encryption-scopes-for-containers-and-blobs)voor meer informatie.
 
 # <a name="portal"></a>[Portal](#tab/portal)
 
@@ -232,18 +231,15 @@ Als u een container met een standaard versleutelings bereik in de Azure Portal w
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
-Als u een container met een standaard versleutelings bereik met Power shell wilt maken, roept u de opdracht [New-AzRmStorageContainer](/powershell/module/az.storage/new-azrmstoragecontainer) aan, waarbij u het bereik voor de `-DefaultEncryptionScope` para meter opgeeft. Met de opdracht **New-AzRmStorageContainer** wordt een container gemaakt met behulp van de resource provider Azure Storage, waarmee versleutelings bereiken en andere bewerkingen voor bron beheer kunnen worden geconfigureerd.
-
-Als u wilt afdwingen dat alle blobs in een container het standaard bereik van de container gebruiken, stelt `-PreventEncryptionScopeOverride` u de para meter in op `true` .
+Als u een container met een standaard versleutelings bereik met Power shell wilt maken, roept u de opdracht [New-AzStorageContainer](/powershell/module/az.storage/new-azstoragecontainer) aan, waarbij u het bereik voor de `-DefaultEncryptionScope` para meter opgeeft. Als u wilt afdwingen dat alle blobs in een container het standaard bereik van de container gebruiken, stelt `-PreventEncryptionScopeOverride` u de para meter in op `true` .
 
 ```powershell
 $containerName1 = "container1"
-$containerName2 = "container2"
+$ctx = New-AzStorageContext -StorageAccountName $accountName -UseConnectedAccount
 
 # Create a container with a default encryption scope that cannot be overridden.
-New-AzRmStorageContainer -ResourceGroupName $rgName `
-    -StorageAccountName $accountName `
-    -Name $containerName1 `
+New-AzStorageContainer -Name $containerName1 `
+    -Context $ctx `
     -DefaultEncryptionScope $scopeName1 `
     -PreventEncryptionScopeOverride $true
 ```
@@ -274,7 +270,7 @@ Wanneer u een BLOB uploadt, kunt u een versleutelings bereik voor die BLOB opgev
 
 # <a name="portal"></a>[Portal](#tab/portal)
 
-Als u een BLOB wilt uploaden met een versleutelings bereik dat is opgegeven in de Azure Portal, moet u eerst het versleutelings bereik maken, zoals beschreven in [een versleutelings bereik maken](#create-an-encryption-scope). Voer vervolgens de volgende stappen uit om de BLOB te maken:
+Als u via de Azure Portal een blob met een versleutelings bereik wilt uploaden, moet u eerst het versleutelings bereik maken, zoals beschreven in [een versleutelings bereik maken](#create-an-encryption-scope). Voer vervolgens de volgende stappen uit om de BLOB te maken:
 
 1. Ga naar de container waarnaar u de BLOB wilt uploaden.
 1. Selecteer de knop **uploaden** en zoek de blob die u wilt uploaden.
@@ -286,22 +282,28 @@ Als u een BLOB wilt uploaden met een versleutelings bereik dat is opgegeven in d
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
-Als u een BLOB wilt uploaden met een versleutelings bereik dat is opgegeven met Power shell, roept u de opdracht [set-AzStorageBlobContent](/powershell/module/az.storage/set-azstorageblobcontent) aan en geeft u het versleutelings bereik voor de BLOB op.
+Als u een BLOB wilt uploaden met een versleutelings bereik via Power shell, roept u de opdracht [set-AzStorageBlobContent](/powershell/module/az.storage/set-azstorageblobcontent) aan en geeft u het versleutelings bereik voor de BLOB op.
 
 ```powershell
 $containerName2 = "container2"
 $localSrcFile = "C:\temp\helloworld.txt"
-$ctx = (Get-AzStorageAccount -ResourceGroupName $rgName -StorageAccountName $accountName).Context
+$ctx = New-AzStorageContext -StorageAccountName $accountName -UseConnectedAccount
 
 # Create a new container with no default scope defined.
 New-AzStorageContainer -Name $containerName2 -Context $ctx
+
 # Upload a block upload with an encryption scope specified.
-Set-AzStorageBlobContent -Context $ctx -Container $containerName2 -File $localSrcFile -Blob "helloworld.txt" -BlobType Block -EncryptionScope $scopeName2
+Set-AzStorageBlobContent -Context $ctx `
+    -Container $containerName2 `
+    -File $localSrcFile `
+    -Blob "helloworld.txt" `
+    -BlobType Block `
+    -EncryptionScope $scopeName2
 ```
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/cli)
 
-Als u een BLOB wilt uploaden met een versleutelings bereik dat is opgegeven met behulp van Azure CLI, roept u de opdracht [AZ Storage BLOB upload](/cli/azure/storage/blob#az-storage-blob-upload) aan en geeft u het versleutelings bereik voor de BLOB op.
+Als u een blob met een versleutelings bereik wilt uploaden via Azure CLI, roept u de opdracht [AZ Storage BLOB upload](/cli/azure/storage/blob#az-storage-blob-upload) aan en geeft u het versleutelings bereik voor de BLOB op.
 
 Als u Azure Cloud Shell gebruikt, voert u de stappen uit die worden beschreven in [een BLOB uploaden](storage-quickstart-blobs-cli.md#upload-a-blob) om een bestand in de hoofdmap te maken. U kunt dit bestand vervolgens uploaden naar een blob met behulp van het volgende voor beeld.
 
@@ -406,10 +408,13 @@ az storage account encryption-scope update \
     --state Disabled
 ```
 
+> [!IMPORTANT]
+> Het is niet mogelijk om een versleutelings bereik te verwijderen. Om onverwachte kosten te voor komen, moet u alle versleutelings scopes uitschakelen die u momenteel niet nodig hebt.
+
 ---
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Azure Storage-versleuteling voor inactieve gegevens](../common/storage-service-encryption.md)
-- [Versleutelings bereik voor Blob-opslag (preview-versie)](encryption-scope-overview.md)
+- [Versleutelings bereik voor Blob Storage](encryption-scope-overview.md)
 - [Door de klant beheerde sleutels voor Azure Storage versleuteling](../common/customer-managed-keys-overview.md)

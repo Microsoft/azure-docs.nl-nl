@@ -5,21 +5,20 @@ description: Hierin wordt een overzicht gegeven van de SMS SDK en de bijbehorend
 author: mikben
 manager: jken
 services: azure-communication-services
-ms.author: mikben
-ms.date: 03/10/2021
+ms.author: prakulka
+ms.date: 03/26/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 25a5befab6ef141b059caaac7b1784d47f2f93cf
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: 2e9f782f0b8fa0be77e70ccdae8849caa4abb81e
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105108108"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105643817"
 ---
 # <a name="sms-sdk-overview"></a>SMS-SDK-overzicht
 
 [!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
-
 
 [!INCLUDE [Regional Availability Notice](../../includes/regional-availability-include.md)]
 
@@ -31,15 +30,16 @@ De volgende lijst bevat de set functies die momenteel beschikbaar zijn in onze S
 
 | Groep van functies | Mogelijkheid                                                                            | JS  | Java | .NET | Python |
 | ----------------- | ------------------------------------------------------------------------------------- | --- | ---- | ---- | ------ |
-| Belangrijkste mogelijkheden | Sms-berichten verzenden en ontvangen </br> *Ondersteuning voor Unicode-emoji's*                        | ✔️   | ✔️    | ✔️    | ✔️      |
-|                   | Bezorgingsrapporten ontvangen voor verzonden berichten                                            | ✔️   | ✔️    | ✔️    | ✔️      |
+| Belangrijkste mogelijkheden | Sms-berichten verzenden en ontvangen                                                         | ✔️   | ✔️    | ✔️    | ✔️      |
+|                   | Bezorgings rapporten inschakelen voor verzonden berichten                                             | ✔️   | ✔️    | ✔️    | ✔️      |
 |                   | Alle tekensets (taal-/Unicode-ondersteuning)                                         | ✔️   | ✔️    | ✔️    | ✔️      |
-|                   | Ondersteuning voor lange berichten (maximaal 2048 tekens)                                           | ✔️   | ✔️    | ✔️    | ✔️      |
+|                   | Ondersteuning voor lange berichten (Maxi maal 2048 bytes)                                          | ✔️   | ✔️    | ✔️    | ✔️      |
 |                   | Automatische samenvoeging van lange berichten                                                   | ✔️   | ✔️    | ✔️    | ✔️      |
+|                   | Berichten verzenden naar meerdere ontvangers per keer                                        | ✔️   | ✔️    | ✔️    | ✔️      |
+|                   | Ondersteuning voor idempotentie                                                               | ✔️   | ✔️    | ✔️    | ✔️      |
+|                   | Aangepaste labels voor berichten.                                                             | ✔️   | ✔️    | ✔️    | ✔️      |
 | Gebeurtenissen            | Event Grid gebruiken om webhooks te configureren voor het ontvangen van binnenkomende berichten en bezorgingsrapporten | ✔️   | ✔️    | ✔️    | ✔️      |
 | Telefoonnummer      | Gratis nummers                                                                     | ✔️   | ✔️    | ✔️    | ✔️      |
-| Regelgeving        | Afhandeling van uitschrijving                                                                      | ✔️   | ✔️    | ✔️    | ✔️      |
-| Bewaking        | Gebruik bewaken voor verzonden en ontvangen berichten                                          | ✔️   | ✔️    | ✔️    | ✔️      |
 | Bellen via PSTN      | Mogelijkheden voor bellen via PSTN toevoegen aan uw gratis nummer met sms-functionaliteit                    | ✔️   | ✔️    | ✔️    | ✔️      |
 
 ## <a name="next-steps"></a>Volgende stappen

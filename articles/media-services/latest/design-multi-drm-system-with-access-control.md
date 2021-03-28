@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: willzhan
 ms.custom: seodec18
-ms.openlocfilehash: bb43396260e1b914f9f5b9e9ae489e87042a3154
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 057a284f99dd7c3713249b19e8fc39212d9e6003
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "101092440"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105640270"
 ---
 # <a name="design-of-a-multi-drm-content-protection-system-with-access-control"></a>Ontwerp van een inhoudsbeveiligingssysteem van een multi-DRM met toegangsbeheer
 
@@ -357,9 +357,3 @@ De volgende scherm afbeelding toont een scenario dat gebruikmaakt van een asymme
 ![Aangepaste STS met een asymmetrische sleutel](./media/design-multi-drm-system-with-access-control/media-services-running-sts2.png)
 
 In beide gevallen blijft de verificatie van de gebruiker hetzelfde. Het wordt uitgevoerd via Azure AD. Het enige verschil is dat JWTs worden uitgegeven door de aangepaste STS in plaats van met Azure AD. Wanneer u dynamische CENC-beveiliging configureert, wordt door de licentie delivery service-beperking het type JWT opgegeven, ofwel een symmetrische of een asymmetrische sleutel.
-
-## <a name="next-steps"></a>Volgende stappen
-
-* [Veelgestelde vragen](frequently-asked-questions.md)
-* [Overzicht van inhoudsbeveiliging](content-protection-overview.md)
-* [Bescherm uw inhoud met DRM](protect-with-drm.md)

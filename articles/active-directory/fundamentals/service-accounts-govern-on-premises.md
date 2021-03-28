@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 36ad7cf7fe2ca1ddcb592e895014b1d956e55e1b
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 10ea524620f810e0bf1dddc230716031bbc10e69
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102557366"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105642379"
 ---
 # <a name="governing-on-premises-service-accounts"></a>On-premises service accounts beheren
 
@@ -60,7 +60,7 @@ Gebruik de volgende criteria bij het maken van een nieuw service account.
 
 Gebruik de volgende instellingen met gebruikers accounts die worden gebruikt als service accounts:
 
-* [**Verlopen account**](/powershell/module/activedirectory/set-adaccountexpiration?view=winserver2012-ps): Stel het service account in om automatisch een ingestelde tijd te laten verlopen na de beoordelings periode, tenzij wordt vastgesteld dat deze moet door gaan
+* [**Verlopen account**](/powershell/module/activedirectory/set-adaccountexpiration?view=winserver2012-ps&preserve-view=true): Stel het service account in om automatisch een ingestelde tijd te laten verlopen na de beoordelings periode, tenzij wordt vastgesteld dat deze moet door gaan
 
 *  **LogonWorkstations**: machtigingen beperken voor waar het service account zich kan aanmelden. Als het lokaal op een computer wordt uitgevoerd en alleen bronnen op die computer worden geopend, moet u de logboek registratie op elke wille keurige locatie anders uitvoeren.
 
@@ -149,7 +149,7 @@ De risico beoordeling, nadat deze is uitgevoerd en gedocumenteerd, kan gevolgen 
 
 U kunt alleen een service account maken als de relevante informatie wordt gedocumenteerd in uw CMDB en u een risico analyse uitvoert. Account beperkingen moeten worden afgestemd op de risico analyse. Houd rekening met de volgende beperkingen wanneer dit van toepassing is op uw beoordeling.:
 
-* [Verlopen van account](/powershell/module/activedirectory/set-adaccountexpiration?view=winserver2012-ps)
+* [Verlopen van account](/powershell/module/activedirectory/set-adaccountexpiration?view=winserver2012-ps&preserve-view=true)
 
    * Voor alle gebruikers accounts die worden gebruikt als service accounts, definieert u een realistische en eind datum voor gebruik. Stel dit in met de vlag ' account Expires '. Raadpleeg[ set-ADAccountExpiration](/powershell/module/addsadministration/set-adaccountexpiration)voor meer informatie. 
 
@@ -193,7 +193,7 @@ Nadat u alle machtigingen hebt verwijderd, gebruikt u dit proces voor het verwij
 
 3. Verwijder het service account nadat het beleid voor uitgeschakeld is afgehandeld. 
 
-   * Voor Msa's kunt u [deze verwijderen](/powershell/module/activedirectory/uninstall-adserviceaccount?view=winserver2012-ps) met behulp van Power shell of hand matig verwijderen uit de container van een beheerde service account.
+   * Voor Msa's kunt u [deze verwijderen](/powershell/module/activedirectory/uninstall-adserviceaccount?view=winserver2012-ps&preserve-view=true) met behulp van Power shell of hand matig verwijderen uit de container van een beheerde service account.
 
    * Voor computer-of gebruikers accounts kunt u het account hand matig verwijderen uit in Active Directory.
 

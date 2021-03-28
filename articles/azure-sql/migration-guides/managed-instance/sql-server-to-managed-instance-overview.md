@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 02/18/2020
-ms.openlocfilehash: 529bc5468c74ac9d50f64decad29fd070a7bda83
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: a3876b63e9dc41a22ac6e95b31f34665a0d0bdd8
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105566928"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105642350"
 ---
 # <a name="migration-overview-sql-server-to-azure-sql-managed-instance"></a>Migratie overzicht: SQL Server naar Azure SQL Managed instance
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -236,7 +236,7 @@ Raadpleeg de volgende bronnen die zijn ontwikkeld voor de echte wereld wijde mig
 |[Automatisering van perfmon Data Collection met logman](https://github.com/microsoft/DataMigrationTeam/tree/master/IP%20and%20Scripts/Perfmon%20Data%20Collection%20Automation%20Using%20Logman)|Een hulp programma waarmee u gegevens kunt verzamelen om inzicht te krijgen in de basislijn prestaties die helpt bij de aanbeveling voor migratie doel. Dit hulp programma dat logman.exe gebruikt voor het maken van de opdracht voor het maken, starten, stoppen en verwijderen van prestatie meter items die zijn ingesteld op een externe SQL Server.|
 |[White Paper: database migratie naar Azure SQL Managed instance door volledige en differentiële back-ups te herstellen](https://github.com/microsoft/DataMigrationTeam/blob/master/Whitepapers/Database%20migrations%20to%20Azure%20SQL%20DB%20Managed%20Instance%20-%20%20Restore%20with%20Full%20and%20Differential%20backups.pdf)|Dit technisch document bevat richt lijnen en stappen voor het versnellen van de migratie van SQL Server naar Azure SQL Managed instance als u alleen volledige en differentiële back-ups (en geen mogelijkheid tot logboek back-up) hebt.|
 
-Deze resources zijn ontwikkeld als onderdeel van het data SQL expert-programma, dat wordt gesponsord door het technische team van de Azure-gegevens groep. Het kern Handvest van het data SQL expert-programma is het deblokkeren en versnellen van complexe modernisering en het concurreren van de migratie mogelijkheden van het gegevens platform naar het Azure-gegevens platform van micro soft. Als u denkt dat uw organisatie graag deelneemt aan het data SQL expert-programma, neemt u contact op met uw account team en vraagt u om een benoeming in te dienen.
+Het IT-team van data SQL heeft deze resources ontwikkeld. Het kern Handvest van dit team is het deblokkeren en versnellen van complexe modernisering voor data platform migratie projecten naar het Azure-gegevens platform van micro soft.
 
 
 ## <a name="next-steps"></a>Volgende stappen

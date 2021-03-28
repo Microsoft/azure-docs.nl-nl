@@ -11,12 +11,12 @@ ms.date: 03/27/2019
 ms.author: procha
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: ba03fe86c126c76faf91a06a96aaea6d1ffeddc0
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 7eecacef7f678001c9d65da540432154305549e2
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104594905"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105645137"
 ---
 # <a name="azure-synapse-analytics-data-integration-partners"></a>Azure Synapse Analytics-gegevens integratie partners
 
@@ -27,6 +27,7 @@ Als u uw data warehouse-oplossing wilt maken met behulp van de toegewezen SQL-gr
 | Partner | Description | Website/product koppeling |
 | ------- | ----------- | -------------------- |
 | ![Ab initio](./media/sql-data-warehouse-partner-data-integration/abinitio-logo.png) |**Ab initio**<br> Met het flexibele Digital engineering-platform van ab initio kunt u de zwaarste problemen met gegevens verwerking en gegevens beheer in bedrijfs computing oplossen. Met het Cloud-native platform van ab initio kunt u overal in uw bedrijfs ecosysteem toegang krijgen tot en gebruiken van gegevens, ongeacht of deze zich in azure of on-premises bevinden, inclusief gegevens die op verouderde systemen zijn opgeslagen. Dankzij de combi natie van een intuïtieve interface met krachtige automatisering, gegevens kwaliteit, gegevens beheer en actieve meta gegevens mogelijkheden kunt u snel en op de echte wijze selfservice van de Data Services maken, zodat analisten hun taken snel en effectief kunnen uitvoeren. Neem deel aan de grootste bedrijven in het gebruik van ab initio om big data zinvolle gegevens in te scha kelen. |[Product pagina](https://www.abinitio.com/) |
+| ![Aecorsoft](./media/sql-data-warehouse-partner-data-integration/aecorsoft-logo.png) |**Aecorsoft**<br> AecorSoft biedt snelle, schaal bare en realtime ELT/ETL-software oplossing waarmee SAP-klanten complexe SAP-gegevens naar Azure Synapse Analytics en Azure data platform kunnen halen. Met volledige compatibiliteit met SAP Application Layer-beveiliging is AecorSoft-oplossing officieel SAP Premium gecertificeerd om te integreren met SAP-toepassingen. Met de unieke functies van de superdelta-en wijzigings functie voor gegevens vastlegging kunnen SAP-gebruikers Delta gegevens uit SAP-transparante, pool-en cluster tabellen streamen naar Azure in de CSV-, Parquet-, AVRO-, ORC-of GZIP-indeling. Naast SAP tabellaire gegevens worden veel andere zaken regel-zware SAP-objecten zoals BW-query's en S/4HANA CDS-weer gaven volledig ondersteund. |[Product pagina](https://www.aecorsoft.com/products/dataintegrator)<br>[Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/aecorsoftinc1588038796343.aecorsoftintegrationservice_adf)<br>|
 | ![Alooma](./media/sql-data-warehouse-partner-data-integration/alooma_logo.png) |**Alooma**<br> Alooma is een oplossing voor het uitpakken, transformeren en laden (ETL) waarmee gegevens teams gegevens van verschillende gegevens silo's kunnen integreren, verrijken en streamen naar een Azure Synapse-data warehouse in real-time. |[Product pagina](https://www.alooma.com/) |
 | ![Alteryx](./media/sql-data-warehouse-partner-data-integration/alteryx_logo.png) |**Alteryx**<br> Alteryx Designer biedt een Herhaal bare werk stroom voor Self-service voor gegevens analyse die leidt tot meer inzicht in uren, en niet in de weken van traditionele benaderingen. Alteryx Designer helpt gegevens analisten door het combi neren van gegevens voorbereiding, gegevens overvloeiing en analyses – predictief, statistisch en ruimtelijke, met behulp van dezelfde intuïtieve gebruikers interface. |[Product pagina](https://www.alteryx.com/partners/microsoft/)<br>[Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/alteryx.alteryx-designer)<br>|
 | ![Attunity](./media/sql-data-warehouse-partner-data-integration/attunity_logo.png) |**Attunity (CloudBeam)**<br>Attunity CloudBeam biedt een geautomatiseerde oplossing voor het laden van gegevens in een Azure Synapse Data Warehouse. Het vereenvoudigt batchgewijs laden en incrementele replicatie van gegevens uit een groot aantal bronnen-SQL Server, Oracle, DB2, Sybase, MySQL en meer. |[Product pagina](http://www.attunity.com/attunity-cloudbeam-for-azure/)<br>[Azure Marketplace](https://aws.amazon.com/marketplace/pp/Attunity-Attunity-CloudBeam/B00B5PB8IM) <br> |

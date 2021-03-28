@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/02/2021
 ms.author: timlt
-ms.openlocfilehash: 3f0ec053d806208b4a3c15604714f6bdb87399e7
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: e8fb6985da5046d0a1bad171cbc9742a15baf1af
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102613218"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105643436"
 ---
 # <a name="storsimple-8000-series-a-hybrid-cloud-storage-solution"></a>StorSimple 8000-serie: een Hybrid Cloud Storage oplossing
 
@@ -213,10 +213,10 @@ Hieronder vindt u een overzicht van de ondersteunde StorSimple-workloads.
 
 | Scenario | Workload | Ondersteund | Beperkingen | Versie |
 | --- | --- | --- | --- | --- |
-| Samenwerking |Bestanden delen |Ja | |Alle versies |
-| Samenwerking |Distributed File Sharing |Ja | |Alle versies |
+| Samenwerking |Bestanden delen |Yes | |Alle versies |
+| Samenwerking |Distributed File Sharing |Yes | |Alle versies |
 | Samenwerking |SharePoint |Ja* |Alleen ondersteund met lokaal vastgemaakte volumes |Update 2 en hoger |
-| Archivering |Eenvoudige bestands archivering |Ja | |Alle versies |
+| Archivering |Eenvoudige bestands archivering |Yes | |Alle versies |
 | Virtualisatie |Virtuele machines |Ja* |Alleen ondersteund met lokaal vastgemaakte volumes |Update 2 en hoger |
 | Database |SQL |Ja* |Alleen ondersteund met lokaal vastgemaakte volumes |Update 2 en hoger |
 | Videobewaking |Videobewaking |Ja* |Ondersteund wanneer het StorSimple-apparaat alleen aan deze werk belasting is toegewezen |Update 2 en hoger |
@@ -240,7 +240,7 @@ Hier volgt een lijst van de StorSimple-ondersteunde infrastructuur onderdelen.
 
 | Scenario | Workload | Ondersteund | Beperkingen | Versie |
 | --- | --- | --- | --- | --- |
-| Algemeen |ExpressRoute |Ja | |Alle versies |
+| Algemeen |ExpressRoute |Yes | |Alle versies |
 | Algemeen |DataCore FC |Ja* |Ondersteund met DataCore SANsymphony |Alle versies |
 | Algemeen |DFSR |Ja* |Alleen ondersteund met lokaal vastgemaakte volumes |Alle versies |
 | Algemeen |Indexeren |Ja* |Voor gelaagde volumes wordt alleen het indexeren van meta gegevens ondersteund (geen gegevens).<br>Voor lokaal vastgemaakte volumes wordt volledige indexering ondersteund. |Alle versies |
@@ -255,13 +255,13 @@ Hieronder volgt een lijst met andere software die met StorSimple wordt gebruikt 
 | Back-updoel |Veeam |Veeam v 9 en hoger |[StorSimple als een back-updoel met Veaam](storsimple-configure-backup-target-veeam.md)|
 | Back-updoel |Veritas Backup Exec |Backup Exec 16 en hoger |[StorSimple als back-updoel met Backup Exec](storsimple-configure-backup-target-using-backup-exec.md)|
 | Back-updoel |VERITAS NetBackup |NetBackup 7,7. x en hoger  |[StorSimple als back-updoel met NetBackup](storsimple-configure-backuptarget-netbackup.md)|
-| Global File Sharing <br></br> Samenwerking |Talon  |[StorSimple met Talon](https://www.talonstorage.com/products/archive/fast-deployment-azure-storsimple) | |
+| Global File Sharing <br></br> Samenwerking |Talon  |[StorSimple met Talon](https://www.theinfostride.com/talon-and-microsoft-to-host-azure-storsimple-web-conference-with-capita/) | |
 
 ## <a name="storsimple-terminology"></a>StorSimple terminologie
 Voordat u uw Microsoft Azure StorSimple-oplossing implementeert, wordt u aangeraden de volgende voor waarden en definities te bekijken.
 
 ### <a name="key-terms-and-definitions"></a>Belangrijkste termen en definities
-| Term (acroniem of afkorting) | Beschrijving |
+| Term (acroniem of afkorting) | Description |
 | --- | --- |
 | Access Control Record (ACR) |Een record die is gekoppeld aan een volume op uw Microsoft Azure StorSimple-apparaat dat bepaalt welke hosts er verbinding mee kunnen maken. De bepaling is gebaseerd op de iSCSI Qualified Name (IQN) van de hosts (opgenomen in de ACR) die verbinding maken met uw StorSimple-apparaat. |
 | AES-256 |Een 256-bits Advanced Encryption Standard (AES)-algoritme voor het versleutelen van gegevens tijdens het verplaatsen van en naar de Cloud. |

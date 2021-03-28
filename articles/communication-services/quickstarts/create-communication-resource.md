@@ -9,13 +9,13 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-zone_pivot_groups: acs-plat-azp-net
-ms.openlocfilehash: a1bdb1b8ac1f545933a92e78fd13b745606f1da3
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+zone_pivot_groups: acs-plat-azp-azcli-net-ps
+ms.openlocfilehash: bdfd4dfef57721a24b4c6981ae653ab4f17562fa
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105563771"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105644722"
 ---
 # <a name="quickstart-create-and-manage-communication-services-resources"></a>Quickstart: Communication Services-resources maken en beheren
 
@@ -23,8 +23,6 @@ ms.locfileid: "105563771"
 
 Ga aan de slag met Azure Communication Services door uw eerste Communication Services-resource te provisioneren. Communicatie services-resources kunnen worden ingericht via de [Azure Portal](https://portal.azure.com) of met de .net Management SDK. Met de Management SDK en de Azure Portal kunt u uw resources en interface maken, configureren, bijwerken en verwijderen met [Azure Resource Manager](../../azure-resource-manager/management/overview.md), de implementatie-en beheer service van Azure. Alle beschik bare functies in de Sdk's zijn beschikbaar in de Azure Portal. 
 
-
-Ga aan de slag met Azure Communication Services door uw eerste Communication Services-resource te provisioneren. Communicatie services-resources kunnen worden ingericht via de [Azure Portal](https://portal.azure.com) of met de .net Management SDK. Met de Management SDK en de Azure Portal kunt u uw resources en interface maken, configureren, bijwerken en verwijderen met [Azure Resource Manager](../../azure-resource-manager/management/overview.md), de implementatie-en beheer service van Azure. Alle beschik bare functies in de Sdk's zijn beschikbaar in de Azure Portal.
 
 > [!WARNING]
 > Houd er rekening mee dat terwijl communicatie services beschikbaar is in meerdere geographs, om een telefoon nummer op te halen waarvoor de resource een gegevens locatie moet hebben ingesteld op ' US '. Houd er ook rekening mee dat communicatie bronnen niet kunnen worden overgedragen naar een ander abonnement tijdens de openbare preview.
@@ -40,6 +38,11 @@ Ga aan de slag met Azure Communication Services door uw eerste Communication Ser
 ::: zone pivot="platform-net"
 [!INCLUDE [.NET](./includes/create-resource-net.md)]
 ::: zone-end
+
+::: zone pivot="platform-powershell"
+[!INCLUDE [PowerShell](./includes/create-resource-powershell.md)]
+::: zone-end
+
 
 ## <a name="access-your-connection-strings-and-service-endpoints"></a>Toegang tot uw verbindingsreeksen en service-eindpunten
 

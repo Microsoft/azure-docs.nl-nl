@@ -6,12 +6,12 @@ ms.date: 11/04/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 91ad5a6d95c634300db83d66df8f0407b4544cde
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: f349d260fff32427712442615cabf6d3958468ac
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105024163"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105640031"
 ---
 # <a name="configuration-options---azure-monitor-application-insights-for-java"></a>Configuratie opties-Azure Monitor Application Insights voor Java
 
@@ -284,6 +284,9 @@ Vanaf versie 3.0.2 kan specifiek automatisch verzamelde telemetrie worden onderd
   }
 }
 ```
+
+> Opmerking Als u op zoek bent naar meer nauw keurige controle, bijvoorbeeld om sommige redis-aanroepen, maar niet alle redis-aanroepen te onderdrukken, raadpleegt u voor beeld van [onderdrukkingen](./java-standalone-sampling-overrides.md).
+
 
 ## <a name="heartbeat"></a>Hartslag
 

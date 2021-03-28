@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 03/23/2021
 ms.author: apedward
-ms.openlocfilehash: 701f999427d743c18f5dbcadb00cf303f97a8f53
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.openlocfilehash: 472cf7b69078b3247c393ff65139bc29e5683a32
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105627286"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105639366"
 ---
 # <a name="tutorial-publish-azure-static-web-apps-with-azure-devops"></a>Zelf studie: Azure static-Web Apps publiceren met Azure DevOps
 
@@ -57,9 +57,6 @@ In deze zelfstudie leert u het volgende:
 1. Selecteer **Maken**.
 
 1. Onder _Implementatie Details_ moet u **andere** selecteren. Hiermee kunt u de code in uw Azure DevOps-opslag plaats gebruiken.
-
-    > [!NOTE]
-    > De functionaliteit voor het selecteren van _andere_ wordt momenteel geïmplementeerd en is mogelijk nog niet beschikbaar in alle Azure-abonnementen.
 
     :::image type="content" source="media/publish-devops/create-resource.png" alt-text="Implementatie Details-Overig":::
 

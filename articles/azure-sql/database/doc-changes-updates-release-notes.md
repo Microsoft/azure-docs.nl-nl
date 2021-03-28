@@ -11,12 +11,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 03/10/2021
 ms.author: sstein
-ms.openlocfilehash: 0ddd2c96be3513d253537cefd5b9eb83da2b3c12
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 9827a40b2ebc91c17ad7b5457259b8d82565edee
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102634835"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105640083"
 ---
 # <a name="whats-new-in-azure-sql-database--sql-managed-instance"></a>Wat is er nieuw in Azure SQL Database & SQL Managed instance?
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -61,12 +61,12 @@ Deze tabel bevat een snelle vergelijking voor de wijziging in de terminologie:
 
 | Functie | Details |
 | ---| --- |
-| <a href="/azure/azure-sql/database/elastic-transactions-overview">Gedistribueerde transacties</a> | Gedistribueerde trans acties over beheerde exemplaren. |
-| <a href="/azure/sql-database/sql-database-instance-pools">Exemplaargroepen</a> | Een handige en rendabele manier om kleinere SQL-instanties naar de cloud te migreren. |
-| <a href="/en-gb/sql/t-sql/statements/create-login-transact-sql">Azure AD server-principals op exemplaar niveau (aanmeldingen)</a> | Aanmeldingen op exemplaar niveau maken met behulp van de instructie een <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current&preserve-view=true">aanmelding maken vanuit een externe provider</a> . |
+| [Gedistribueerde transacties](/azure/azure-sql/database/elastic-transactions-overview) | Gedistribueerde trans acties over beheerde exemplaren. |
+| [Exemplaargroepen](/azure/sql-database/sql-database-instance-pools) | Een handige en rendabele manier om kleinere SQL-instanties naar de cloud te migreren. |
+| [Azure AD server-principals op exemplaar niveau (aanmeldingen)](/sql/t-sql/statements/create-login-transact-sql) | Aanmeldingen op exemplaar niveau maken met behulp van de instructie een [aanmelding maken vanuit een externe provider](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current&preserve-view=true) . |
 | [Transactionele replicatie](../managed-instance/replication-transactional-overview.md) | Repliceer de wijzigingen van uw tabellen in andere data bases in een SQL Managed instance, SQL Database of SQL Server. Of werk uw tabellen bij wanneer sommige rijen worden gewijzigd in andere exemplaren van SQL Managed instance of SQL Server. Zie [replicatie configureren in Azure SQL Managed instance](../managed-instance/replication-between-two-instances-configure-tutorial.md)voor meer informatie. |
 | Detectie van bedreigingen |Zie [detectie van dreigingen configureren in Azure SQL Managed instance](../managed-instance/threat-detection-configure.md)voor meer informatie.|
-| Langetermijnretentie van back-ups | Zie voor meer informatie [lange termijn back-up van Bewaar periode configureren in Azure SQL Managed instance](../managed-instance/long-term-backup-retention-configure.md), dat momenteel een beperkte open bare preview is. | 
+| Langetermijnretentie van back-ups | Zie voor meer informatie [lange termijn back-up van Bewaar periode configureren in Azure SQL Managed instance](../managed-instance/long-term-backup-retention-configure.md), dat momenteel een beperkte open bare preview is. |
 
 ---
 

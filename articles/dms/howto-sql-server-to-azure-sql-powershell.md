@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019, devx-track-azurepowershell
 ms.topic: how-to
 ms.date: 02/20/2020
-ms.openlocfilehash: a8f7e14500fb377b46f651b53e2704d8477aea7a
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 3152fe0bf77b73e593ac61efb5f386827bdc96ef
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102520656"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105643721"
 ---
 # <a name="migrate-a-sql-server-database-to-azure-sql-database-using-azure-powershell"></a>Een SQL Server-Data Base migreren naar Azure SQL Database met behulp van Azure PowerShell
 
@@ -151,7 +151,7 @@ Maak tot slot een Azure data base-migratie taak en start deze. De Azure data bas
 
 ### <a name="create-credential-parameters-for-source-and-target"></a>Referentie parameters maken voor bron en doel
 
-Beveiligings referenties voor de verbinding kunnen worden gemaakt als een [PSCredential](/dotnet/api/system.management.automation.pscredential?view=powershellsdk-1.1.0) -object.
+Beveiligings referenties voor de verbinding kunnen worden gemaakt als een [PSCredential](/dotnet/api/system.management.automation.pscredential) -object.
 
 In het volgende voor beeld ziet u het maken van *PSCredential* -objecten voor zowel de bron-als de doel verbindingen die wacht woorden als teken reeks variabelen *$sourcePassword* en *$targetPassword* geven.
 
@@ -195,8 +195,8 @@ Gebruik de `New-AzDataMigrationTask` cmdlet om een migratie taak te maken en te 
 * *Taaknaam*. De naam van de taak die moet worden gemaakt. 
 * *SourceConnection*. AzDmsConnInfo-object dat de verbinding van de bron SQL Server vertegenwoordigt.
 * *TargetConnection*. AzDmsConnInfo-object dat de verbinding met de doel Azure SQL Database vertegenwoordigt.
-* *SourceCred*. [PSCredential](/dotnet/api/system.management.automation.pscredential?view=powershellsdk-1.1.0) -object voor het maken van verbinding met de bron server.
-* *TargetCred*. [PSCredential](/dotnet/api/system.management.automation.pscredential?view=powershellsdk-1.1.0) -object om verbinding te maken met de doel server.
+* *SourceCred*. [PSCredential](/dotnet/api/system.management.automation.pscredential) -object voor het maken van verbinding met de bron server.
+* *TargetCred*. [PSCredential](/dotnet/api/system.management.automation.pscredential) -object om verbinding te maken met de doel server.
 * *SelectedDatabase*. AzDataMigrationSelectedDB-object dat de toewijzing van de bron-en doel database vertegenwoordigt.
 * *SchemaValidation*. (optioneel, Switch parameter) Na de migratie voert een vergelijking uit van de schema gegevens tussen de bron en het doel.
 * *DataIntegrityValidation*. (optioneel, Switch parameter) Na de migratie voert een validatie van de gegevens integriteit op basis van een controlesom uit tussen de bron en het doel.

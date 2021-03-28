@@ -9,12 +9,12 @@ ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: adwise
 ms.custom: secdec18
-ms.openlocfilehash: 660b5751e3b3cbc632331e99d797af3392a8aea4
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
-ms.translationtype: HT
+ms.openlocfilehash: cb54c5f7334120f6cd01ed1704939c5c1a55e7c6
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "91371963"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105645287"
 ---
 # <a name="assign-access-to-cost-management-data"></a>Toegang tot gegevens van Cost Management toewijzen
 
@@ -39,9 +39,9 @@ U moet minimaal leestoegang hebben tot een of meer van de volgende bereiken om k
 | Factureringsaccount<sup>1</sup> | [https://ea.azure.com](https://ea.azure.com/) | Enterprise-beheerder | Geen | Alle abonnementen uit de Enterprise Overeenkomst |
 | Afdeling | [https://ea.azure.com](https://ea.azure.com/) | Afdelingsbeheerder | **DA-kosten weergeven** ingeschakeld | Alle abonnementen die horen bij een inschrijvingsaccount dat is gekoppeld aan de afdeling |
 | Inschrijvingsaccount<sup>2</sup> | [https://ea.azure.com](https://ea.azure.com/) | Accounteigenaar | **AO-kosten weergeven** ingeschakeld | Alle abonnementen van het inschrijvingsaccount |
-| Beheergroep | [https://portal.azure.com](https://portal.azure.com/) | Cost Management Reader (of Reader) | **AO-kosten weergeven** ingeschakeld | Alle abonnementen onder de beheergroep |
-| Abonnement | [https://portal.azure.com](https://portal.azure.com/) | Cost Management Reader (of Reader) | **AO-kosten weergeven** ingeschakeld | Alle resources/resourcegroepen in het abonnement |
-| Resourcegroep | [https://portal.azure.com](https://portal.azure.com/) | Cost Management Reader (of Reader) | **AO-kosten weergeven** ingeschakeld | Alle resources in de resourcegroep |
+| Beheergroep | [https://portal.azure.com](https://portal.azure.com/) | Lezer (of Inzender) Cost Management | **AO-kosten weergeven** ingeschakeld | Alle abonnementen onder de beheergroep |
+| Abonnement | [https://portal.azure.com](https://portal.azure.com/) | Lezer (of Inzender) Cost Management | **AO-kosten weergeven** ingeschakeld | Alle resources/resourcegroepen in het abonnement |
+| Resourcegroep | [https://portal.azure.com](https://portal.azure.com/) | Lezer (of Inzender) Cost Management | **AO-kosten weergeven** ingeschakeld | Alle resources in de resourcegroep |
 
 <sup>1</sup>De factureringsrekening wordt ook wel aangeduid als de Enterprise Overeenkomst of Inschrijving.
 
@@ -52,8 +52,8 @@ U moet minimaal leestoegang hebben tot een of meer van de volgende bereiken om k
 
 U moet minimaal leestoegang hebben tot een of meer van de volgende bereiken om kostengegevens van andere Azure-abonnementen te kunnen bekijken:
 
-- Azure-account
 - Beheergroep
+- Abonnement
 - Resourcegroep
 
 Er zijn verschillende bereiken beschikbaar nadat partners onboarding van klanten voor een Microsoft-klantovereenkomst hebben uitgevoerd. CSP-klanten kunnen vervolgens Cost Management-functies gebruiken wanneer deze zijn ingeschakeld door hun CSP-partner. Zie [Aan de slag met Azure Cost Management voor partners](get-started-partners.md) voor meer informatie.

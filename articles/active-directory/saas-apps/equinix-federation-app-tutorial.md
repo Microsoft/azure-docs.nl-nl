@@ -9,18 +9,18 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 11/27/2020
+ms.date: 03/22/2021
 ms.author: jeedes
-ms.openlocfilehash: b0c772b3f30b211cf83512ca2ff2f10325fb4bc1
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c1172cd818a3b40e908bbf5a133ea76d6b0d17b9
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98735085"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105642871"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-equinix-federation-app"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Equinix Federation App
 
-In deze zelfstudie leert u hoe u Equinix Federation App integreert met Azure AD (Azure Active Directory). Wanneer u Equinix Federation App integreert met Azure AD, kunt u het volgende doen:
+In deze zelfstudie leert u hoe u Equinix Federation App integreert met Azure AD (Azure Active Directory). Wanneer u de Equinix Federation-app integreert met Azure AD, kunt u het volgende doen:
 
 * In Azure AD beheren wie toegang heeft tot Equinix Federation App.
 * Instellen dat gebruikers automatisch met hun Azure AD-account worden aangemeld bij Equinix Federation App.
@@ -37,7 +37,10 @@ U hebt het volgende nodig om aan de slag te gaan:
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* Equinix Federation App biedt ondersteuning voor met **SP** geïnitieerde eenmalige aanmelding
+* De Equinix Federation-app ondersteunt door **SP** geïnitieerde SSO.
+
+> [!NOTE]
+> De id van deze toepassing is een vaste tekenreekswaarde zodat maar één exemplaar in één tenant kan worden geconfigureerd.
 
 ## <a name="adding-equinix-federation-app-from-the-gallery"></a>Equinix Federation App toevoegen vanuit de galerie
 
@@ -70,20 +73,16 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. Ga in de Azure-portal op de integratiepagina van de toepassing **Equinix Federation App** naar de sectie **Beheren**, en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
 1. In de sectie **Standaard-SAML-configuratie** voert u de waarden in voor de volgende velden:
 
-    a. In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<SUBDOMAIN>.equinix.com/sp/ACS.saml2`
-
-    b. In het tekstvak **Id (Entiteits-id)** typt u een URL met de volgende notatie: `Equinix:<CUSTOM_IDENTIFIER>`
-
-    c. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://<SUBDOMAIN>.equinix.com/sp/ACS.saml2`
+    In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<customerprefix>customerportal.equinix.com`
 
     > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL, id en antwoord-URL. Neem contact op met het [klantondersteuningsteam van Equinix Federation App](mailto:prodsecops@equinix.com) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > De waarde van de aanmeldings-URL is niet echt. Werk de waarde bij met de werkelijke aanmeldings-URL. Neem contact op met het [ondersteunings team van Equinix Federation app-client](mailto:prodsecops@equinix.com) om de waarde te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
 1. Ga op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** naar **XML-bestand met federatieve metagegevens** en selecteer **Downloaden** om het certificaat te downloaden. Sla dit vervolgens op de computer op.
 
@@ -92,6 +91,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 1. Kopieer in de sectie **Equinix Federation App instellen** de juiste URL('s) op basis van wat u nodig hebt.
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
+
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
@@ -128,13 +128,14 @@ In deze sectie maakt u een gebruiker met de naam Britta Simon in Equinix Federat
 
 In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van Equinix Federation App, waar u de aanmeldingsstroom kunt initiëren. 
+Ga rechtstreeks naar de aanmeldings-URL van de Equinix Federation-app en start de aanmeldings stroom vanaf daar.
 
-* Ga rechtstreeks naar de aanmeldings-URL van Equinix Federation App en initieer de aanmeldingsstroom daar.
-
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u in Mijn apps op de tegel Equinix Federation App klikt, wordt u omgeleid naar de aanmeldings-URL van Equinix Federation App. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+ > [!NOTE]
+ > Als u probeert uw Azure-toepassing te testen met behulp van de koppeling **testen van deze toepassing** of door te klikken op de tegel Equinix Federation-app, werkt deze niet, zoals door IDP geïnitieerde SSO, wat Equinix niet standaard ondersteunt.  Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u Equinix Federation App hebt geconfigureerd, kunt u sessiebeheer afdwingen. Hierdoor worden exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
+Zodra u Equinix Federation App hebt geconfigureerd, kunt u sessiebeheer afdwingen. Hierdoor worden exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+
+

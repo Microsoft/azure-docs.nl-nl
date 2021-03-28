@@ -8,12 +8,12 @@ ms.collection: linux
 ms.topic: article
 ms.date: 05/12/2020
 ms.author: kegorman
-ms.openlocfilehash: 2f34e0bb3c4abcf4efba807f95decd798bbc1f86
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 8bcd45ab1270d478b05b3929d7b8914976612294
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "101669058"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105645305"
 ---
 # <a name="oracle-vm-images-and-their-deployment-on-microsoft-azure"></a>Oracle-VM-installatie kopieën en hun implementatie op Microsoft Azure
 
@@ -161,7 +161,7 @@ Zie KB-artikel **860340,1** op voor meer informatie <https://support.oracle.com>
 - **Beperkingen voor dynamische clustering en taak verdeling.** Stel dat u een dynamisch cluster wilt gebruiken in Oracle WebLogic Server en dit beschikbaar wilt maken via één openbaar eind punt met gelijke taak verdeling in Azure. U kunt dit doen als u een vast poort nummer gebruikt voor elk van de beheerde servers (niet dynamisch toegewezen vanuit een bereik) en niet meer beheerde servers start dan de computers die door de beheerder worden bijgehouden. Dat wil zeggen dat er niet meer dan één beheerde server per virtuele machine is. Als uw configuratie resulteert in meer Oracle WebLogic-servers die worden gestart dan er virtuele machines zijn (dat wil zeggen, waarbij meerdere Oracle WebLogic-Server instanties dezelfde virtuele machine delen), is het niet mogelijk dat er meer dan een van de exemplaren van Oracle WebLogic-servers aan een opgegeven poort nummer wordt gebonden. De andere op die virtuele machine mislukken.
 
    Als u de-beheer server zodanig configureert dat er automatisch unieke poort nummers worden toegewezen aan de beheerde servers, is taak verdeling niet mogelijk omdat Azure geen toewijzing van een enkele open bare poort aan meerdere persoonlijke poorten ondersteunt, zoals vereist voor deze configuratie.
-- **Meerdere exemplaren van Oracle WebLogic Server op een virtuele machine.** Afhankelijk van de vereisten van uw implementatie kunt u overwegen meerdere exemplaren van Oracle WebLogic Server op dezelfde virtuele machine uit te voeren als de virtuele machine groot genoeg is. U kunt bijvoorbeeld op een virtuele machine met een gemiddelde grootte, die twee kernen bevat, kiezen om twee exemplaren van Oracle WebLogic Server uit te voeren. We raden u echter aan om afzonderlijke punten van storingen in uw architectuur te voor komen. Dit is het geval als u slechts één virtuele machine hebt gebruikt met meerdere exemplaren van Oracle WebLogic Server. Het gebruik van ten minste twee virtuele machines kan een betere benadering zijn en elke virtuele machine kan vervolgens meerdere exemplaren van Oracle WebLogic Server uitvoeren. Elk exemplaar van Oracle WebLogic Server kan nog steeds deel uitmaken van hetzelfde cluster. Het is momenteel niet mogelijk om Azure te gebruiken voor het laden van eind punten die worden weer gegeven door dergelijke Oracle WebLogic Server-implementaties binnen dezelfde virtuele machine, omdat Azure load balancer vereist dat de servers met gelijke taak verdeling worden verdeeld over unieke virtuele machines.
+- **Meerdere exemplaren van Oracle WebLogic Server op een virtuele machine.** Afhankelijk van de vereisten van uw implementatie kunt u overwegen meerdere exemplaren van Oracle WebLogic Server op dezelfde virtuele machine uit te voeren als de virtuele machine groot genoeg is. Op een middel grote virtuele machine, die twee kernen bevat, kunt u bijvoorbeeld kiezen om twee exemplaren van Oracle WebLogic Server uit te voeren. We raden u echter aan om afzonderlijke punten van storingen in uw architectuur te voor komen. Dit is het geval als u slechts één virtuele machine hebt gebruikt met meerdere exemplaren van Oracle WebLogic Server. Het gebruik van ten minste twee virtuele machines kan een betere benadering zijn en elke virtuele machine kan vervolgens meerdere exemplaren van Oracle WebLogic Server uitvoeren. Elk exemplaar van Oracle WebLogic Server kan nog steeds deel uitmaken van hetzelfde cluster. Het is momenteel niet mogelijk om Azure te gebruiken voor het laden van eind punten die worden weer gegeven door dergelijke Oracle WebLogic Server-implementaties binnen dezelfde virtuele machine, omdat Azure load balancer vereist dat de servers met gelijke taak verdeling worden verdeeld over unieke virtuele machines.
 
 ## <a name="oracle-jdk-virtual-machine-images"></a>Installatie kopieën voor virtuele Oracle JDK-machines
 

@@ -4,12 +4,12 @@ description: Meer informatie over het schalen van uw resource web-app, Cloud ser
 ms.topic: conceptual
 ms.date: 07/07/2017
 ms.subservice: autoscale
-ms.openlocfilehash: 081e06fbd6506c76a068d7207e29efb66502a9dd
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: edc58ed4af3475a45804e3833424bec79d50ff89
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101726050"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105641553"
 ---
 # <a name="get-started-with-autoscale-in-azure"></a>Aan de slag met Automatische schaalaanpassing in Azure
 In dit artikel wordt beschreven hoe u uw instellingen voor automatisch schalen instelt voor uw resource in de Microsoft Azure-portal.
@@ -113,6 +113,10 @@ U kunt nu het aantal exemplaren dat u wilt schalen hand matig instellen.
 
 U kunt altijd terugkeren naar automatisch schalen door op **automatisch schalen inschakelen** te klikken en vervolgens op te **slaan**.
 
+### <a name="cool-down-period-effects"></a>Uitdagende periode-effecten
+
+Automatisch schalen maakt gebruik van een afkoele periode om gaat en neer te voor komen. Dit is de snelle, Repetative omhoog en omlaag schalen van instanties.  Zie voor meer informatie de [stappen voor het automatisch schalen](autoscale-understanding-settings.md#autoscale-evaluation)van de evaluatie.  Andere waardevolle informatie over gaat en neer en het bewaken van de engine voor automatisch schalen vindt u in [Aanbevolen procedures voor automatisch schalen](autoscale-best-practices.md#choose-the-thresholds-carefully-for-all-metric-types) en [automatisch schalen oplossen](autoscale-troubleshoot.md) . 
+
 ## <a name="route-traffic-to-healthy-instances-app-service"></a>Verkeer routeren naar gezonde instanties (App Service)
 
 <a id="health-check-path"></a>
@@ -136,6 +140,7 @@ Raadpleeg [resources verplaatsen naar een nieuwe resource groep of een nieuw abo
 ## <a name="next-steps"></a>Volgende stappen
 - [Een waarschuwing voor een activiteiten logboek maken om alle bewerkingen voor het automatisch schalen van de engine voor uw abonnement te bewaken](https://github.com/Azure/azure-quickstart-templates/tree/master/monitor-autoscale-alert)
 - [Een waarschuwing voor een activiteiten logboek maken voor het bewaken van alle mislukte schaal-in-en uitschaal bewerkingen voor automatisch schalen op uw abonnement](https://github.com/Azure/azure-quickstart-templates/tree/master/monitor-autoscale-failed-alert)
+
 
 <!--Reference-->
 [1]:https://portal.azure.com

@@ -11,12 +11,12 @@ ms.author: jovanpop
 ms.reviewer: sstein, bonova, danil
 ms.date: 3/16/2021
 ms.custom: seoapril2019, sqldbrb=1
-ms.openlocfilehash: 1afd5a0e24e144169280e683321b5843e9766136
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 227b573d3771efd3fd36e6d3d6222696647849f7
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103601369"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105644914"
 ---
 # <a name="t-sql-differences-between-sql-server--azure-sql-managed-instance"></a>T-SQL-verschillen tussen SQL Server & Azure SQL Managed instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -139,7 +139,7 @@ SQL Managed instance heeft geen toegang tot bestanden, zodat er geen cryptografi
 ### <a name="logins-and-users"></a>Aanmeldingen en gebruikers
 
 - SQL-aanmeldingen die zijn gemaakt met behulp van `FROM CERTIFICATE` , `FROM ASYMMETRIC KEY` en `FROM SID` worden ondersteund. Zie [login maken](/sql/t-sql/statements/create-login-transact-sql).
-- Azure Active Directory (Azure AD) server-principals (aanmeldingen) die zijn gemaakt met de syntaxis voor het maken van een [aanmelding](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current) of de syntaxis voor het [maken van een gebruiker op basis van aanmelding [Azure AD login]](/sql/t-sql/statements/create-user-transact-sql?view=azuresqldb-mi-current) worden ondersteund. Deze aanmeldingen worden gemaakt op server niveau.
+- Azure Active Directory (Azure AD) server-principals (aanmeldingen) die zijn gemaakt met de syntaxis voor het maken van een [aanmelding](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current&preserve-view=true) of de syntaxis voor het [maken van een gebruiker op basis van aanmelding [Azure AD login]](/sql/t-sql/statements/create-user-transact-sql?view=azuresqldb-mi-current&preserve-view=true) worden ondersteund. Deze aanmeldingen worden gemaakt op server niveau.
 
     SQL Managed instance ondersteunt Azure AD data base-principals met de syntaxis `CREATE USER [AADUser/AAD group] FROM EXTERNAL PROVIDER` . Deze functie is ook bekend als Azure AD, Inge sloten database gebruikers.
 
@@ -525,7 +525,7 @@ Systeem databases worden niet gerepliceerd naar het secundaire exemplaar in een 
 ### <a name="tempdb"></a>TEMPDB
 - De maximale bestands grootte van `tempdb` mag niet groter zijn dan 24 GB per kern op een algemeen laag. De maximale `tempdb` grootte van een bedrijfskritiek laag wordt beperkt door de opslag grootte van het SQL-beheerde exemplaar. `Tempdb` de grootte van het logboek bestand is beperkt tot 120 GB op Algemeen laag. Sommige query's retour neren mogelijk een fout als deze meer dan 24 GB per kern nodig heeft `tempdb` of als er meer dan 120 GB aan logboek gegevens worden geproduceerd.
 - `Tempdb` is altijd onderverdeeld in 12 gegevens bestanden: 1 primair, ook wel Master, Data File en 11 niet-primaire gegevens bestanden genoemd. Kan de bestands structuur niet wijzigen en er kunnen geen nieuwe bestanden aan worden toegevoegd `tempdb` . 
-- [ `tempdb` Meta gegevens](/sql/relational-databases/databases/tempdb-database?view=sql-server-ver15#memory-optimized-tempdb-metadata)die zijn geoptimaliseerd voor geheugen, een nieuwe SQL Server 2019 in-Memory database functie, worden niet ondersteund.
+- [ `tempdb` Meta gegevens](/sql/relational-databases/databases/tempdb-database?view=sql-server-ver15&preserve-view=true#memory-optimized-tempdb-metadata)die zijn geoptimaliseerd voor geheugen, een nieuwe SQL Server 2019 in-Memory database functie, worden niet ondersteund.
 - Objecten die in de model database zijn gemaakt, kunnen niet automatisch worden gemaakt `tempdb` na het opnieuw opstarten of een failover, omdat de `tempdb` initiële objecten lijst niet wordt opgehaald uit de model database. U moet objecten `tempdb` hand matig maken na elke herstart of een failover.
 
 ### <a name="msdb"></a>MSDB
@@ -534,13 +534,13 @@ De volgende MSDB-schema's in het SQL Managed instance moeten het eigendom zijn v
 
 - Algemene rollen
   - TargetServersRole
-- [Vaste database rollen](/sql/ssms/agent/sql-server-agent-fixed-database-roles?view=sql-server-ver15)
+- [Vaste database rollen](/sql/ssms/agent/sql-server-agent-fixed-database-roles?view=sql-server-ver15&preserve-view=true)
   - SQLAgentUserRole
   - SQLAgentReaderRole
   - SQLAgentOperatorRole
-- [DatabaseMail rollen](/sql/relational-databases/database-mail/database-mail-configuration-objects?view=sql-server-ver15#DBProfile):
+- [DatabaseMail rollen](/sql/relational-databases/database-mail/database-mail-configuration-objects?view=sql-server-ver15&preserve-view=true#DBProfile):
   - DatabaseMailUserRole
-- [Integratie Services-rollen](/sql/integration-services/security/integration-services-roles-ssis-service?view=sql-server-ver15):
+- [Integratie Services-rollen](/sql/integration-services/security/integration-services-roles-ssis-service?view=sql-server-ver15&preserve-view=true):
   - db_ssisadmin
   - db_ssisltduser
   - db_ssisoperator

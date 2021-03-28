@@ -10,12 +10,12 @@ ms.author: vanto
 ms.topic: article
 ms.date: 09/21/2020
 ms.reviewer: ''
-ms.openlocfilehash: 1217d3af855e96b6d6a0f403c2ff351a6b957d9a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 5d83f6585500316515139f937a56889dfc1f8fac
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96459663"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105642712"
 ---
 # <a name="playbook-for-addressing-common-security-requirements-with-azure-sql-database-and-azure-sql-managed-instance"></a>Playbook voor het adresseren van algemene beveiligings vereisten met Azure SQL Database en Azure SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -91,7 +91,7 @@ Centraal identiteits beheer biedt de volgende voor delen:
 - Toegangs rechten toewijzen aan resources voor Azure AD-principals via groeps toewijzing: Azure AD-groepen maken, toegang verlenen aan groepen en afzonderlijke leden toevoegen aan de groepen. Maak in uw data base Inge sloten database gebruikers die uw Azure AD-groepen toewijzen. Als u machtigingen wilt toewijzen in de-data base, plaatst u de gebruikers die zijn gekoppeld aan uw Azure AD-groepen in database rollen met de juiste machtigingen.
   - Zie de artikelen [Azure Active Directory verificatie met SQL configureren en beheren](authentication-aad-configure.md) en [Azure AD gebruiken voor verificatie met SQL](authentication-aad-overview.md).
   > [!NOTE]
-  > In SQL Managed Instance kunt u ook aanmeldingen maken die worden toegewezen aan Azure AD-principals in de hoofd database. Zie [login maken (Transact-SQL)](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current).
+  > In SQL Managed Instance kunt u ook aanmeldingen maken die worden toegewezen aan Azure AD-principals in de hoofd database. Zie [login maken (Transact-SQL)](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current&preserve-view=true).
 
 - Het gebruik van Azure AD-groepen vereenvoudigt het beheer van machtigingen en zowel de eigenaar van de groep als de eigenaar van de resource kan leden toevoegen aan of verwijderen uit de groep.
 
@@ -136,7 +136,7 @@ Azure AD Multi-Factor Authentication biedt extra beveiliging doordat er meer dan
 
 - Gebruik de interactieve verificatie modus van Azure AD voor Azure SQL Database en Azure SQL Managed instance waarbij een wacht woord interactief wordt aangevraagd, gevolgd door Multi-Factor Authentication:
   - Gebruik universele verificatie in SSMS. Zie het artikel [using multi-factor Azure AD Authentication with Azure SQL database, SQL Managed instance, Azure Synapse (SSMS-ondersteuning voor multi-factor Authentication) voor](authentication-mfa-ssms-overview.md)meer informatie.
-  - Interactieve verificatie gebruiken die wordt ondersteund in SQL Server Data Tools (SSDT). Zie het artikel [Azure Active Directory ondersteuning in SQL Server Data tools (SSDT)](/sql/ssdt/azure-active-directory?view=azuresqldb-current).
+  - Interactieve verificatie gebruiken die wordt ondersteund in SQL Server Data Tools (SSDT). Zie het artikel [Azure Active Directory ondersteuning in SQL Server Data tools (SSDT)](/sql/ssdt/azure-active-directory?view=azuresqldb-current&preserve-view=true).
   - Gebruik andere SQL-hulpprogram ma's die Multi-Factor Authentication ondersteunen.
     - Ondersteuning van de wizard SSMS voor het exporteren/extra heren/implementeren van de data base  
     - [sqlpackage.exe](/sql/tools/sqlpackage): optie '/UA '
@@ -196,7 +196,7 @@ Als wacht woorden niet kunnen worden voor komen, moet u ervoor zorgen dat deze z
 
 - Als u geen wacht woorden of geheimen kunt voor komen, slaat u gebruikers wachtwoorden en toepassings geheimen op in Azure Key Vault en beheert u de toegang via Key Vault toegangs beleid.
 
-- Verschillende frameworks voor het ontwikkelen van apps bieden mogelijk ook Framework-specifieke mechanismen voor het beveiligen van geheimen in de app. Bijvoorbeeld: [ASP.net core-app](/aspnet/core/security/app-secrets?tabs=windows&view=aspnetcore-2.1).
+- Verschillende frameworks voor het ontwikkelen van apps bieden mogelijk ook Framework-specifieke mechanismen voor het beveiligen van geheimen in de app. Bijvoorbeeld: [ASP.net core-app](/aspnet/core/security/app-secrets?tabs=windows).
 
 ### <a name="use-sql-authentication-for-legacy-applications"></a>SQL-verificatie gebruiken voor oudere toepassingen
 

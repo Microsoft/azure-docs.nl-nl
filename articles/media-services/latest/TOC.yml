@@ -4,11 +4,12 @@
   items:
     - name: Informatie over Media Services
       href: media-services-overview.md
-    - name: Nieuw in Media Services
-      displayName: release notes
+    - name: Opmerkingen bij de release
       href: release-notes.md
     - name: Media Services-naleving
       href: concept-compliance.md
+    - name: Veelgestelde vragen
+      href: frequently-asked-questions.yml
 - name: Snelstartgidsen
   items:
     - name: Uw omgeving instellen
@@ -262,9 +263,8 @@
       href: architectures-concept.md
     - name: Problemen oplossen
       items:
-        - name: Veelgestelde vragen
-          displayName: faqs
-          href: frequently-asked-questions.md
+        - name: Vraag verzameling
+          href: questions-collection.md
         - name: Foutcodes
           items:
             - name: Foutcodes voor streaming-eindpunten
@@ -346,7 +346,7 @@
           href: how-to-create-copyallbitratenoninterleaved-transform.md
         - name: Video's kopiëren zonder codering met REST
           href: how-to-create-copy-video-audio-transform.md
-        - name: Taken maken met .NET
+        - name: Taken maken met CLI
           href: cli-create-jobs.md
         - name: Taakinvoer maken met een lokaal bestand en .NET
           displayName: upload

@@ -9,16 +9,16 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: d238a889648e789087a0803f6b50288318462c7b
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: a6b3577fe820c9dadcb3c8415aa7a951a3283284
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "91629060"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105641816"
 ---
 # <a name="restore-the-adventureworks-sample-database-into-sql-managed-instance---azure-arc"></a>De AdventureWorks-voorbeeld database in een SQL-beheerd exemplaar herstellen-Azure-boog
 
-[AdventureWorks](/sql/samples/adventureworks-install-configure?view=sql-server-ver15&tabs=tsql&preserve-view=true) is een voorbeeld database met een OLTP-data base die vaak wordt gebruikt in zelf studies en voor beelden. Het wordt door micro soft aangehouden en onderhouden als onderdeel van de SQL Server-voor [beelden github-opslag plaats](https://github.com/microsoft/sql-server-samples/tree/master/samples/databases).
+[AdventureWorks](/sql/samples/adventureworks-install-configure) is een voorbeeld database met een OLTP-data base die vaak wordt gebruikt in zelf studies en voor beelden. Het wordt door micro soft aangehouden en onderhouden als onderdeel van de SQL Server-voor [beelden github-opslag plaats](https://github.com/microsoft/sql-server-samples/tree/master/samples/databases).
 
 In dit document wordt een eenvoudig proces beschreven om de AdventureWorks-voorbeeld database te herstellen in uw SQL Managed instance-Azure Arc.
 

@@ -10,12 +10,12 @@ ms.date: 03/12/2021
 ms.topic: include
 ms.custom: include file
 ms.author: pvicencio
-ms.openlocfilehash: 4a9deded16de6b0de2ef5f88ffebd813b8e5b8c0
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: 0a59b18fa2c09cff943dbccd2203027cd72e146a
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105110335"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105644362"
 ---
 Ga aan de slag met Azure Communication Services met behulp van de SMS-SDK voor communicatie Services om SMS-berichten te verzenden.
 
@@ -106,12 +106,12 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 | ---------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | SmsClientBuilder              | Deze klasse maakt de SmsClient. U geeft een eindpunt, referentie en een HTTP-client op. |
 | SmsClient                    | Deze klasse is vereist voor alle sms-functionaliteit. U kunt deze gebruiken om sms-berichten te verzenden.                |
-| SmsSendResult                | Deze klasse bevat het resultaat van de SMS-service.                                          |
 | SmsSendOptions               | Deze klasse bevat opties voor het toevoegen van aangepaste tags en het configureren van leverings rapporten. Als deliveryReportEnabled is ingesteld op True, wordt een gebeurtenis verzonden wanneer de levering is geslaagd|                           |
+| SmsSendResult                | Deze klasse bevat het resultaat van de SMS-service.                                          |
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
-Breng een `SmsClient` tot stand met uw verbindingsreeks. (Referentie is de `Key` van de Azure Portal. Meer informatie over het [beheren van de verbindingsreeks van uw resource](../../create-communication-resource.md#store-your-connection-string).
+Breng een `SmsClient` tot stand met uw verbindingsreeks. (Referentie is de `Key` van de Azure Portal. Meer informatie over het [beheren van de Connection String van uw resource](../../create-communication-resource.md#store-your-connection-string).
 
 Voeg de volgende code aan de `main` methode toe:
 
@@ -160,6 +160,12 @@ System.out.println("Message Id: " + sendResult.getMessageId());
 System.out.println("Recipient Number: " + sendResult.getTo());
 System.out.println("Send Result Successful:" + sendResult.isSuccessful());
 ```
+
+Vervang door `<from-phone-number>` een SMS-telefoon nummer dat is gekoppeld aan uw communicatie Services-resource en `<to-phone-number>` een telefoon nummer waarnaar u een bericht wilt verzenden.
+
+> [!WARNING]
+> Telefoonnummers moeten worden opgegeven in de internationale standaardindeling E.164. (bijvoorbeeld: + 14255550123).
+
 ## <a name="send-a-1n-sms-message-with-options"></a>Een SMS-bericht van 1: N verzenden met opties
 Als u een SMS-bericht naar een lijst met ontvangers wilt verzenden, roept u de- `send` methode aan met een lijst met telefoon nummers van de ontvanger. U kunt ook aanvullende para meters door geven om op te geven of het leverings rapport moet worden ingeschakeld en aangepaste tags moet worden ingesteld.
 ```java
@@ -181,13 +187,14 @@ for (SmsSendResult result : sendResults) {
 }
 ```
 
-Vervang door `<from-phone-number>` een SMS-telefoon nummer dat is gekoppeld aan uw communicatie Services-bron en `<to-phone-number>` met het telefoon nummer of een lijst met telefoon nummers waarnaar u een bericht wilt verzenden.
+Vervang door `<from-phone-number>` een SMS-telefoon nummer dat is gekoppeld aan uw communicatie Services-bron en `<to-phone-number-1>` en met een `<to-phone-number-2>` telefoon nummer (s) waarnaar u een bericht wilt verzenden.
 
-## <a name="optional-parameters"></a>Optionele parameters
+> [!WARNING]
+> Telefoonnummers moeten worden opgegeven in de internationale standaardindeling E.164. (bijvoorbeeld: + 14255550123).
 
-De parameter `deliveryReportEnabled` is een optionele parameter die u kunt gebruiken voor het configureren van leveringsrapporten. Dit is handig voor scenario's waarin u gebeurtenissen wilt verzenden wanneer sms-berichten worden bezorgd. Raadpleeg de quickstart [Sms-gebeurtenissen verwerken](../handle-sms-events.md) voor het configureren van leveringsrapporten voor uw sms-berichten.
+De `setDeliveryReportEnabled` methode wordt gebruikt voor het configureren van leverings rapportage. Dit is handig voor scenario's waarin u gebeurtenissen wilt verzenden wanneer sms-berichten worden bezorgd. Raadpleeg de quickstart [Sms-gebeurtenissen verwerken](../handle-sms-events.md) voor het configureren van leveringsrapporten voor uw sms-berichten.
 
-De `tag` para meter is een optionele para meter die u kunt gebruiken om een label toe te passen op het leverings rapport.
+De `setTag` methode wordt gebruikt om een label toe te passen op het leverings rapport.
 
 ## <a name="run-the-code"></a>De code uitvoeren
 

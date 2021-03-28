@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 10/29/2020
-ms.openlocfilehash: b88c7aabe135b8e64869980b806852d92191440b
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: 2412d3d2851d1b4d251b50ff3068b7dcafcccee8
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105568678"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105642034"
 ---
 # <a name="quickstart-import-a-bacpac-file-to-a-database-in-azure-sql-database-or-azure-sql-managed-instance"></a>Quickstart: Een BACPAC-bestand importeren in een database in Azure SQL Database of Azure SQL Managed Instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -48,7 +48,7 @@ Als u een database wilt migreren naar een [Azure SQL Managed Instance](../manage
 
 1. Selecteer het opslagaccount en de container voor het BACPAC-bestand en selecteer vervolgens het BACPAC-bestand waaruit u wilt importeren.
 
-1. Geef de grootte van de nieuwe database op (meestal hetzelfde als die van de oorspronkelijke) en geef de doel-SQL Server-referenties op. Zie [Database maken](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current) voor een lijst met mogelijke waarden voor een nieuwe database in Azure SQL Database.
+1. Geef de grootte van de nieuwe database op (meestal hetzelfde als die van de oorspronkelijke) en geef de doel-SQL Server-referenties op. Zie [Database maken](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current&preserve-view=true) voor een lijst met mogelijke waarden voor een nieuwe database in Azure SQL Database.
 
    ![Database-import2](./media/database-import/sql-server-import-database-settings.png)
 
@@ -89,7 +89,7 @@ sqlpackage.exe /a:Import /sf:testExport.bacpac /tdn:NewDacFX /tsn:apptestserver.
 > [Een SQL Managed Instance](../managed-instance/sql-managed-instance-paas-overview.md) biedt momenteel geen ondersteuning voor het migreren van een database naar een instantiedatabase vanuit een BACPAC-bestand met behulp van Azure PowerShell. Als u in een SQL Managed Instance wilt importeren, gebruikt u SQL Server Management Studio of SQLPackage.
 
 > [!NOTE]
-> Op de machines waarmee import-/exportaanvragen worden verwerkt die zijn verzonden via de portal of PowerShell, moet het BACPAC-bestand worden opgeslagen, evenals tijdelijke bestanden die worden gegenereerd door Data-Tier Application Framework (DacFX). De benodigde schijfruimte varieert aanzienlijk tussen databases met dezelfde grootte. Er kan tot drie keer zoveel schijfruimte nodig zijn als de grootte van de database. Machines waarmee de import-/exportaanvraag wordt uitgevoerd, hebben slechts 450 GB lokale schijfruimte. Als gevolg hiervan kunnen sommige aanvragen mislukken met de fout 'Er is niet voldoende ruimte beschikbaar op de schijf.'. Dit kan worden opgelost door sqlpackage.exe uit te voeren op een machine met voldoende lokale schijfruimte. Bij het importeren/exporteren van databases die groter zijn dan 150 GB, gebruikt u SqlPackage om dit probleem te voorkomen.
+> Op de machines waarmee import-/exportaanvragen worden verwerkt die zijn verzonden via de portal of PowerShell, moet het BACPAC-bestand worden opgeslagen, evenals tijdelijke bestanden die worden gegenereerd door Data-Tier Application Framework (DacFX). De benodigde schijfruimte varieert aanzienlijk tussen databases met dezelfde grootte. Er kan tot drie keer zoveel schijfruimte nodig zijn als de grootte van de database. Machines waarmee de import-/exportaanvraag wordt uitgevoerd, hebben slechts 450 GB lokale schijfruimte. Als gevolg hiervan kunnen sommige aanvragen mislukken met de fout ' er is onvoldoende ruimte op de schijf '. Dit kan worden opgelost door sqlpackage.exe uit te voeren op een machine met voldoende lokale schijfruimte. Bij het importeren/exporteren van databases die groter zijn dan 150 GB, gebruikt u SqlPackage om dit probleem te voorkomen.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 

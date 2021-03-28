@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
 ms.date: 03/19/2021
-ms.openlocfilehash: 1f1692aaa74f56c404a8fae7aa91e94baecbb7e1
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.openlocfilehash: 8952e6e1bda8763d403c02dcd5815f1e1c0941e8
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105626483"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105641873"
 ---
 # <a name="migration-guide-mysql-to-azure-sql-database"></a>Migratie handleiding: MySQL naar Azure SQL Database
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqldb.md)]
@@ -167,7 +167,7 @@ Zie de volgende resource voor meer informatie over het volt ooien van dit migrat
 | --- | --- |
 | [Beoordelings model en hulp programma voor gegevens workload](https://github.com/Microsoft/DataMigrationTeam/tree/master/Data%20Workload%20Assessment%20Model%20and%20Tool) | Biedt voorgestelde ' Best passend ' doel platforms, Cloud gereedheids en toepassings-en database herstel niveaus voor opgegeven werk belastingen. U kunt met één klik berekeningen en rapporten genereren waarmee u grote voor-en hand-evaluaties versnelt door een geautomatiseerd, uniform platform besluitvormings proces te bieden. |
 
-Het data IT-team van SQL IT heeft deze resource ontwikkeld. Het basis Handvest van het team is het deblokkeren en versnellen van complexe moderniserings voor data platform migratie projecten naar het Azure-gegevens platform van micro soft.
+Het IT-team van data SQL heeft deze resources ontwikkeld. Het kern Handvest van dit team is het deblokkeren en versnellen van complexe modernisering voor data platform migratie projecten naar het Azure-gegevens platform van micro soft.
 
 ## <a name="next-steps"></a>Volgende stappen 
 

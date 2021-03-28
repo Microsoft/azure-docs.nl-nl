@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: user-help
 ms.workload: identity
 ms.topic: end-user-help
-ms.date: 01/19/2021
+ms.date: 03/26/2021
 ms.author: curtand
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: 6dd9d65ee56bcbf8ca1da72f7d99d4545c5d7fbb
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: e72667ab562a9e12d233f45dc50efc9b70d2141b
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100094998"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105642111"
 ---
 # <a name="sign-in-and-start-apps-from-the-my-apps-portal"></a>Meld u aan en start apps vanuit de portal mijn apps
 
@@ -39,11 +39,12 @@ Als u geen toegang hebt tot de portal **mijn apps** , neemt u contact op met de 
 
 ## <a name="supported-browsers"></a>Ondersteunde browsers
 
-U kunt in de portal **mijn apps** een van de volgende webbrowsers openen:
+U kunt via de volgende webbrowser naar de portal voor **mijn apps** gaan. Micro soft raadt u aan om de meest recente browser te gebruiken die compatibel is met uw besturings systeem.
 
-- Micro soft Edge (de mobiele versie van Edge is momenteel de enige mobiele browser die wordt ondersteund)
-- Google Chrome
-- Mozilla Firefox, versie 26,0 of hoger
+- Micro soft Edge (nieuwste versie, desktop en mobiel)
+- Safari (meest recente versie, Mac en iOS)
+- Chrome (nieuwste versie, desktop en Mobile)
+- Firefox (meest recente versie)
 
 U kunt de portal mijn apps openen en gebruiken op uw computer of vanuit de mobiele versie van de Edge-browser op een iOS-of Android-apparaat.
 

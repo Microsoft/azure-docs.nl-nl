@@ -7,12 +7,12 @@ ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 03/18/2021
-ms.openlocfilehash: a475441a845300d74014924415a4e48ae4de16df
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.openlocfilehash: 7678d0fde21cefc950e0ac64a58563425c606298
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105628285"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105640228"
 ---
 # <a name="troubleshoot-mapping-data-flows-in-azure-data-factory"></a>Problemen met toewijzing van gegevens stromen in Azure Data Factory oplossen
 
@@ -317,24 +317,6 @@ In dit artikel worden algemene probleemoplossings methoden besproken voor het to
 ### <a name="error-code-df-excel-invalidfile"></a>Fout code: DF-Excel-InvalidFile
 - **Bericht**: er is een ongeldig Excel-bestand ingevoerd terwijl alleen. XLSX en. xls worden ondersteund.
 
-### <a name="error-code-df-adobeintegration-invalidmaptofilter"></a>Fout code: DF-AdobeIntegration-InvalidMapToFilter
-- **Bericht**: er kan slechts één sleutel/id aan het filter zijn toegewezen voor de aangepaste resource.
-
-### <a name="error-code-df-adobeintegration-invalidpartitionconfiguration"></a>Fout code: DF-AdobeIntegration-InvalidPartitionConfiguration
-- **Bericht**: er wordt slechts één partitie ondersteund. Het partitie schema kan RoundRobin of hash zijn.
-- **Aanbeveling**: in AdobeIntegration instellingen, bevestig dat u slechts één partitie hebt. Het partitie schema kan RoundRobin of hash zijn.
-
-### <a name="error-code-df-adobeintegration-keycolumnmissed"></a>Fout code: DF-AdobeIntegration-KeyColumnMissed
-- **Bericht**: sleutel moet worden opgegeven voor niet-invoeg bewerkingen.
-- **Aanbeveling**: Geef uw sleutel kolommen op in de AdobeIntegration-instellingen voor niet-invoeg bewerkingen.
-
-### <a name="error-code-df-adobeintegration-invalidpartitiontype"></a>Fout code: DF-AdobeIntegration-InvalidPartitionType
-- **Bericht**: partitie type moet roundRobin zijn.
-- **Aanbeveling**: Bevestig dat het partitie type RoundRobin in AdobeIntegration-instellingen is.
-
-### <a name="error-code-df-adobeintegration-invalidprivacyregulation"></a>Fout code: DF-AdobeIntegration-InvalidPrivacyRegulation
-- **Bericht**: er wordt momenteel alleen een privacybeleid ondersteund dat is AVG.
-- **Aanbeveling**: Bevestig dat de privacyverklaring in AdobeIntegration-instellingen is ingesteld op **' AVG '**.
 
 ## <a name="miscellaneous-troubleshooting-tips"></a>Diverse tips voor probleem oplossing
 - **Probleem**: er is een onverwachte uitzonde ring opgetreden en de uitvoering is mislukt.

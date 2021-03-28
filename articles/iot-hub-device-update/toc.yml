@@ -12,7 +12,7 @@
       href: device-update-simulator.md
     - name: 'Pakket update op Ubuntu Server 18,04 x64'
       href: device-update-ubuntu-agent.md
-    - name: Zelf studie over het bijwerken van apparaten voor Azure IoT Hub voor het besturings systeem real-time van Azure
+    - name: Update van het apparaat voor real-time-besturings systeem van Azure
       href: device-update-azure-real-time-operating-system.md
 - name: Concepten
   items:

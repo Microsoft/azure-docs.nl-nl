@@ -10,16 +10,19 @@ ms.topic: quickstart
 ms.custom: mvc,subject-armqs
 ms.date: 10/14/2020
 ms.author: sebansal
-ms.openlocfilehash: daf6d90ae6b5d95c54e0e83eff4c2d606e7054fe
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 48686fb78dc4295da3bd390d92ae3837cd09a4d0
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104585754"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105639432"
 ---
-# <a name="quickstart-create-an-azure-key-vault-and-a-key-by-using-arm-template-preview"></a>Quickstart: Een Azure-sleutelkluis en een sleutel maken met behulp van een ARM-sjabloon (preview)
+# <a name="quickstart-create-an-azure-key-vault-and-a-key-by-using-arm-template"></a>Snelstartgids: een Azure-sleutel kluis en een sleutel maken met ARM-sjabloon 
 
 [Azure Key Vault](../general/overview.md) is een cloudservice die een veilig archief biedt voor geheimen, zoals sleutels, wachtwoorden, certificaten en andere geheimen. Deze quickstart behandelt het implementeren van een ARM-sjabloon (Azure Resource Manager-sjabloon) voor het maken van een sleutelkluis en een sleutel.
+
+> [!NOTE]
+> Deze functie is niet beschikbaar voor Azure Government.
 
 ## <a name="prerequisites"></a>Vereisten
 

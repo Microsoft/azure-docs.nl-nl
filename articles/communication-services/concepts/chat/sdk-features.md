@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: b275c3af2e92dc5af677120b5082751d19676b2e
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: 02cfb4abc4f553c8f4353d8488390ed45eb3a7e7
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105110811"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105642237"
 ---
 # <a name="chat-sdk-overview"></a>Overzicht van chat-SDK 
 
@@ -28,7 +28,7 @@ De volgende lijst bevat de set functies die momenteel beschikbaar zijn in de cha
 
 | Groep van functies | Mogelijkheid | Javascript  | Java | .NET | Python | iOS | Android |
 |-----------------|-------------------|---|-----|----|-----|----|----|
-| Belangrijkste mogelijkheden | Een chatgesprek maken tussen 2 of meer gebruikers (max. 250 gebruikers)                                                       | ✔️   | ✔️  | ✔️    | ✔️   |  ✔️    | ✔️   |    
+| Belangrijkste mogelijkheden | Een chat-thread maken tussen twee of meer gebruikers                                                     | ✔️   | ✔️  | ✔️    | ✔️   |  ✔️    | ✔️   |    
 |                   | Het onderwerp van een chatgesprek bijwerken                                                                              | ✔️   | ✔️ | ✔️    | ✔️   |  ✔️    | ✔️   |   
 |                   | Deel nemers toevoegen aan of verwijderen uit een chat-thread                                                                           | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |  
 |                   | Kies of u de chat bericht geschiedenis wilt delen met de deel nemer die wordt toegevoegd                                   | ✔️   | ✔️   | ✔️    | ✔️  |  ✔️    | ✔️   | 
@@ -37,16 +37,16 @@ De volgende lijst bevat de set functies die momenteel beschikbaar zijn in de cha
 |                   | Bekijk aan de hand van een communicatie gebruiker de lijst met chat-threads waarvan de gebruiker deel uitmaakt                                           | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |   
 |                   | Informatie ophalen voor een bepaald chatgesprek                                                                              | ✔️   | ✔️  | ✔️ | ✔️ |  ✔️    | ✔️   |   
 |                   | Berichten verzenden en ontvangen in een chatgesprek                                                                            | ✔️   | ✔️   | ✔️    | ✔️  |  ✔️    | ✔️   |   
-|                   | De inhoud van een verzonden bericht bewerken                                                                                | ✔️   | ✔️  | ✔️ | ✔️ |  ✔️    | ✔️   |   
-|                   | Een bericht verwijderen                                                                                                       | ✔️   | ✔️  | ✔️ | ✔️ |  ✔️    | ✔️   |   
-|                   | Lees bevestigingen voor berichten die door andere deel nemers zijn gelezen in een chat sessie <br/> *Niet beschikbaar als er meer dan twintig deel nemers zijn in een chat thread*    | ✔️   | ✔️  | ✔️    | ✔️   |  ✔️    | ✔️   |   
-|                   | Ontvang een melding wanneer deel nemers een bericht in een chat-thread actief typen <br/> *Niet beschikbaar wanneer een chatgesprek meer dan 20 leden bevat*      | ✔️   | ✔️   | ✔️    | ✔️    |  ✔️    | ✔️   | 
-|                   | Alle berichten in een chatgesprek ophalen <br/>                                                                         | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |  
+|                   | De inhoud van het verzonden bericht bijwerken                                                                               | ✔️   | ✔️  | ✔️ | ✔️ |  ✔️    | ✔️   |    
+|                   | Een bericht verwijderen dat u eerder hebt verzonden                                                                                                      | ✔️   | ✔️  | ✔️ | ✔️ |  ✔️    | ✔️   |    
+|                   | Lees bevestigingen voor berichten die door andere deel nemers zijn gelezen in een chat sessie                                        | ✔️   | ✔️  | ✔️    | ✔️   |  ✔️    | ✔️   |   
+|                   | Ontvang een melding wanneer deel nemers een bericht in een chat-thread actief typen                                         | ✔️   | ✔️   | ✔️    | ✔️    |  ✔️    | ✔️   | 
+|                   | Alle berichten in een chatgesprek ophalen                                                                        | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   | 
 |                   | Unicode-emojis verzenden als onderdeel van de bericht inhoud                                                                            | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |    
-|Realtime-Signa lering (ingeschakeld door een specifiek signalerings pakket * *)|  Abonneer u om realtime-updates te ontvangen voor inkomende berichten en andere bewerkingen in uw chat-app. Zie [Chat concepten](concepts.md#real-time-signaling) (Engelstalig) voor een lijst met ondersteunde updates voor realtime-Signa lering                                     | ✔️   | ❌    | ❌  | ❌  | ❌  | ❌  |    
-| Ondersteuning voor Event Grid             | Gebruik integratie met Azure Event Grid en configureer uw communicatie service om bedrijfs logica uit te voeren op basis van chat activiteit of om een aangepaste service voor push meldingen te koppelen   | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |  
-| Bewaking        | Gebruik de metrische gegevens van de API-aanvraag die zijn verzonden in de Azure Portal om Dash boards te bouwen, de status van uw chat-app te controleren en waarschuwingen in te stellen voor het detecteren van afwijkingen      | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |    
-|                   | Uw communicatie Services-bron configureren voor het ontvangen van operationele logboeken voor het bewaken en diagnosticeren          | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |  
+|Realtime meldingen (ingeschakeld door een specifiek signalerings pakket * *)|  Chat-clients kunnen zich abonneren om realtime updates te ontvangen voor inkomende berichten en andere bewerkingen die in een chat-thread optreden. Zie [Chat concepten](concepts.md#real-time-notifications) (Engelstalig) voor een lijst met ondersteunde updates voor realtime meldingen                                     | ✔️   | ❌    | ❌  | ❌  | ❌  | ❌  | 
+| Integratie met Azure Event Grid             | Gebruik de chat gebeurtenissen die beschikbaar zijn in Azure Event Grid om aangepaste meldings services te koppelen of deze gebeurtenis te plaatsen in een webhook om bedrijfs logica uit te voeren, zoals het bijwerken van CRM-records nadat een chat is voltooid   | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |    
+| Rapportages </br>(Deze informatie is beschikbaar op het tabblad controle voor uw communicatie Services-resource op Azure Portal)      | Inzicht in API-verkeer van uw chat-app door de gepubliceerde metrische gegevens in azure Metrics Explorer te controleren en waarschuwingen in te stellen voor het detecteren van afwijkingen     | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |  
+|                   | De oplossing voor communicatie Services controleren en fouten opsporen door diagnostische logboek registratie in te scha kelen voor uw resource    | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |   
 
 
 * * Het pakket met de eigen signalering wordt geïmplementeerd met behulp van web sockets. Dit leidt tot een lange polling als web sockets niet worden ondersteund.  
@@ -68,3 +68,4 @@ De volgende tabel bevat de set van ondersteunde browsers en versies die momentee
 
 De volgende documenten zijn mogelijk interessant voor u:  
 - Uzelf bekend maken met de [chatconcepten](../chat/concepts.md)
+- Begrijpen hoe [prijzen](../pricing.md#chat) werken voor chat

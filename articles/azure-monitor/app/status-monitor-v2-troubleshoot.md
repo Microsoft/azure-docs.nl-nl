@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: be202a6016842ee82b3230c2841d416d3b53ea15
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 2641218fa9ddef65c45f2f1a9c9ce807cef35048
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102505576"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105642733"
 ---
 # <a name="troubleshooting-application-insights-agent-formerly-named-status-monitor-v2"></a>Problemen met Application Insights agent oplossen (voorheen Status Monitor v2 genoemd)
 
@@ -153,7 +153,15 @@ Raadpleeg de [API-naslag informatie](status-monitor-v2-api-reference.md) voor ee
 4. Probeer naar uw app te bladeren.
 5. Nadat de app is geladen, keert u terug naar PerfView en selecteert u **verzameling stoppen**.
 
+### <a name="how-to-capture-full-sql-command-text"></a>Volledige SQL-opdracht tekst vastleggen
 
+Als u de volledige SQL-opdracht tekst wilt vastleggen, moet u het applicationinsights.config bestand wijzigen met het volgende:
+
+```xml
+<Add Type="Microsoft.ApplicationInsights.DependencyCollector.DependencyTrackingTelemetryModule, Microsoft.AI.DependencyCollector">,
+<EnableSqlCommandTextInstrumentation>true</EnableSqlCommandTextInstrumentation>
+</Add>
+```
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -12,17 +12,17 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: how-to
 ms.date: 02/20/2020
-ms.openlocfilehash: e3e2aa055baf3dfb4bee0629040fc7c140844637
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 1f6df64a66c0700f3a13a40ea5046515a2bf1a51
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "101094017"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105643844"
 ---
 # <a name="migrate-sql-server-integration-services-packages-to-an-azure-sql-managed-instance"></a>SQL Server Integration Services-pakketten migreren naar een beheerd exemplaar van Azure SQL
 Als u SQL Server Integration Services (SSIS) gebruikt en u uw SSIS-projecten/-pakketten wilt migreren van de bron-SSISDB die wordt gehost door SQL Server naar de doel-SSISDB die wordt gehost door een door Azure SQL beheerd exemplaar, kunt u Azure Database Migration Service gebruiken.
 
-Als de gebruikte SSIS-versie ouder is dan 2012 of als u een niet-SSISDB gebruikt voor het migreren van uw SSIS-projecten/-pakketten, moet u deze converteren met behulp van de wizard Integratie Services-project conversie, die ook kan worden gestart vanuit SSMS. Zie het artikel [Converting projects to the project Deployment model](/sql/integration-services/packages/deploy-integration-services-ssis-projects-and-packages?view=sql-server-2017#convert)(Engelstalig) voor meer informatie.
+Als de gebruikte SSIS-versie ouder is dan 2012 of als u een niet-SSISDB gebruikt voor het migreren van uw SSIS-projecten/-pakketten, moet u deze converteren met behulp van de wizard Integratie Services-project conversie, die ook kan worden gestart vanuit SSMS. Zie het artikel [Converting projects to the project Deployment model](/sql/integration-services/packages/deploy-integration-services-ssis-projects-and-packages#convert)(Engelstalig) voor meer informatie.
 
 > [!NOTE]
 > Azure Database Migration Service (DMS) biedt momenteel geen ondersteuning voor Azure SQL Database als doel migratie bestemming. Als u SSIS-projecten/-pakketten opnieuw wilt implementeren op Azure SQL Database, raadpleegt u het artikel [SQL Server Integration Services pakketten opnieuw implementeren voor Azure SQL database](./how-to-migrate-ssis-packages.md).
@@ -39,7 +39,7 @@ Als u deze stappen wilt uitvoeren, hebt u het volgende nodig:
 
 * Als u een Microsoft Azure Virtual Network voor de Azure Database Migration Service wilt maken met behulp van het Azure Resource Manager implementatie model, dat een site-naar-site-verbinding met uw on-premises bron servers biedt met behulp van [ExpressRoute](../expressroute/expressroute-introduction.md) of [VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md). Zie het artikel [netwerktopologieën voor SQL Managed instance-migraties met Azure database Migration service]( https://aka.ms/dmsnetworkformi)voor meer informatie. Voor meer informatie over het maken van een virtueel netwerk raadpleegt u de [documentatie over virtuele netwerken](../virtual-network/index.yml) en dan met name de quickstart-artikelen met stapsgewijze informatie.
 * Om ervoor te zorgen dat de regels voor de netwerk beveiligings groep voor het virtuele netwerk niet de uitgaande poort 443 van ServiceTag voor ServiceBus, Storage en AzureMonitor blok keren. Zie het artikel [Netwerkverkeer filteren met netwerkbeveiligingsgroepen](../virtual-network/virtual-network-vnet-plan-design-arm.md) voor meer informatie over verkeer filteren van verkeer via de netwerkbeveiligingsgroep voor virtuele netwerken.
-* De Windows Firewall configureren [voor toegang tot de bron database-engine](/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access?view=sql-server-2017).
+* De Windows Firewall configureren [voor toegang tot de bron database-engine](/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
 * Als u uw Windows Firewall wilt openen om de Azure Database Migration Service toegang te geven tot de bron SQL Server, die standaard TCP-poort 1433 is.
 * Als u meerdere benoemde SQL Server-exemplaren uitvoert met behulp van dynamische poorten, kunt u desgewenst de SQL Browser Service inschakelen en toegang tot de UDP-poort 1434 via uw firewalls toestaan, zodat de Azure Database Migration Service verbinding kan maken met een benoemd exemplaar op uw bronserver.
 * Als u een firewallapparaat gebruikt vóór de brondatabases, moet u mogelijk firewallregels toevoegen om de Azure Database Migration Service toegang te geven tot de brondatabase(s) voor migratie. Hetzelfde geldt voor bestanden via SMB-poort 445.

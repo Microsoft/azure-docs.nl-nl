@@ -7,12 +7,12 @@ ms.service: storage
 ms.topic: conceptual
 ms.date: 02/11/2021
 ms.author: normesta
-ms.openlocfilehash: 769163dd09ec29c2c206d0273e71de27732fb9db
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 5c9eb1aa2e88019609f5ab26c2e995e4e43063ca
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100516275"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105640825"
 ---
 # <a name="blob-storage-features-available-in-azure-data-lake-storage-gen2"></a>Blob Storage-functies die beschikbaar zijn in Azure Data Lake Storage Gen2
 
@@ -50,7 +50,7 @@ De volgende tabel laat zien hoe elke Blob Storage-functie wordt ondersteund met 
 |Anonieme toegang voor iedereen |Algemeen beschikbaar|Algemeen beschikbaar| Zie [anonieme open bare Lees toegang configureren voor containers en blobs](anonymous-read-access-configure.md).|
 |Door de klant beheerde account-failover|Nog niet ondersteund|Nog niet ondersteund|[Herstel na nood gevallen en failover van accounts](../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |Door de klant verschafte sleutels|Nog niet ondersteund|Nog niet ondersteund|[Geef een versleutelings sleutel op voor een aanvraag voor Blob-opslag](encryption-customer-provided-keys.md)|
-|Versleutelingsbereiken|Nog niet ondersteund|Nog niet ondersteund|[Versleutelings bereiken maken en beheren (preview-versie)](encryption-scope-manage.md)|
+|Versleutelingsbereiken|Nog niet ondersteund|Nog niet ondersteund|[Versleutelings scopes maken en beheren](encryption-scope-manage.md)|
 |Feed wijzigen|Nog niet ondersteund|Nog niet ondersteund|[Ondersteuning voor feed wijzigen in Azure Blob-opslag](storage-blob-change-feed.md)|
 |Objectreplicatie|Nog niet ondersteund|Nog niet ondersteund|[Object replicatie configureren voor blok-blobs](object-replication-configure.md)|
 |BLOB-versie beheer|Nog niet ondersteund|Nog niet ondersteund|[BLOB-versie beheer inschakelen en beheren](versioning-enable.md)|

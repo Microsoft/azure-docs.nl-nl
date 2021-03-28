@@ -2,23 +2,18 @@
 title: Overzicht van live streamen
 description: Dit artikel geeft een overzicht van live streamen met behulp van Azure Media Services v3.
 services: media-services
-documentationcenter: ''
 author: IngridAtMicrosoft
 manager: femila
-editor: ''
 ms.service: media-services
-ms.workload: media
-ms.tgt_pltfrm: na
-ms.devlang: ne
 ms.topic: conceptual
-ms.date: 08/31/2020
+ms.date: 03/25/2021
 ms.author: inhenkel
-ms.openlocfilehash: b552dcc0e6766316e55e9cdda6e462b2d4abfd2b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c82c646e4befef9d409bb8e59a442642913ada22
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98955916"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105641510"
 ---
 # <a name="live-streaming-with-azure-media-services-v3"></a>Live streamen met Azure Media Services v3
 
@@ -123,16 +118,6 @@ De Asset waarnaar de live uitvoer wordt gearchiveerd, wordt automatisch een Asse
 - [Statussen en facturering](live-event-states-billing.md)
 - [Latentie](live-event-latency.md)
 
-## <a name="frequently-asked-questions"></a>Veelgestelde vragen
+## <a name="live-streaming-questions"></a>Vragen over live streamen
 
-Zie het artikel [Veelgestelde vragen](frequently-asked-questions.md#live-streaming) .
-
-## <a name="ask-questions-give-feedback-get-updates"></a>Vragen stellen, feedback geven, updates ophalen
-
-Ga naar het artikel van de [Azure Media Services-community](media-services-community.md) voor verschillende manieren om vragen te stellen, feedback te geven en updates voor Media Services op te halen.
-
-## <a name="next-steps"></a>Volgende stappen
-
-* [Snelstartgids voor live streamen](live-events-wirecast-quickstart.md)
-* [Zelf studie over live streamen](stream-live-tutorial-with-api.md)
-* [Migratie richtlijnen voor het overstappen van Media Services versie 2 naar v3](migrate-v-2-v-3-migration-introduction.md)
+Zie het artikel [over vragen over live streamen](questions-collection.md#live-streaming) .

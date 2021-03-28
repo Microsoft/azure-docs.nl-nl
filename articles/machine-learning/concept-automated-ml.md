@@ -10,12 +10,12 @@ author: cartacioS
 ms.author: sacartac
 ms.date: 10/27/2020
 ms.custom: automl
-ms.openlocfilehash: e7038a4e06a96ac2df1a7f0918877db9c97cb71d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 44bcc27f877f6b2a547c51ecd3848214719cb085
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102502532"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105643659"
 ---
 # <a name="what-is-automated-machine-learning-automl"></a>Wat is geautomatiseerde machine learning (AutoML)?
 
@@ -116,7 +116,7 @@ Voor automatische machine learning experimenten wordt parametrisatie automatisch
 
 In elk automatisch machine learning experiment worden uw gegevens automatisch geschaald of genormaliseerd om de Help-algoritmen goed uit te voeren. Tijdens de model training wordt een van de volgende schalen of normalisatie technieken toegepast op elk model. Meer informatie over hoe AutoML helpt [om te voor komen dat gegevens in uw modellen worden gespreid en niet in evenwicht worden gegeven](concept-manage-ml-pitfalls.md) .
 
-|Schaal &nbsp; & &nbsp; verwerking| Beschrijving |
+|Schaal &nbsp; & &nbsp; verwerking| Description |
 | ------------- | ------------- |
 | [StandardScaleWrapper](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)  | Functies standaardiseren door het gemiddelde en de schaal aanpassing te verwijderen voor eenheids variantie  |
 | [MinMaxScalar](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)  | Transformeert functies door elke functie te schalen op basis van het minimum en maximum van die kolom  |
@@ -263,7 +263,7 @@ Met Azure Machine Learning kunt u automatische ML gebruiken om een python-model 
 
 Lees hoe u kunt converteren naar ONNX-indeling [in dit Jupyter notebook-voor beeld](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb). Meer informatie over de [algoritmen die worden ondersteund in ONNX](how-to-configure-auto-train.md#select-your-experiment-type).
 
-De ONNX-runtime biedt ook ondersteuning voor C#, zodat u het model dat automatisch in uw C#-apps is gebouwd, kunt gebruiken zonder dat u hoeft te coderen of een van de netwerk latenties die REST-eind punten introduceren. Meer informatie over het [gebruik van een AUTOML ONNX-model in een .NET-toepassing met ml.net](./how-to-use-automl-onnx-model-dotnet.md) en het dezicht van [ONNX-modellen met de C#-API van ONNX runtime](https://github.com/Microsoft/onnxruntime/blob/master/docs/CSharp_API.md). 
+De ONNX-runtime biedt ook ondersteuning voor C#, zodat u het model dat automatisch in uw C#-apps is gebouwd, kunt gebruiken zonder dat u hoeft te coderen of een van de netwerk latenties die REST-eind punten introduceren. Meer informatie over het [gebruik van een AUTOML ONNX-model in een .NET-toepassing met ml.net](./how-to-use-automl-onnx-model-dotnet.md) en het dezicht van [ONNX-modellen met de C#-API van ONNX runtime](https://github.com/plaidml/onnxruntime/blob/plaidml/docs/CSharp_API.md). 
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -5,13 +5,13 @@ author: jifems
 ms.author: jife
 ms.service: data-share
 ms.topic: tutorial
-ms.date: 11/12/2020
-ms.openlocfilehash: 89c2a725b853b5a2a7578dccc1fd503917e12962
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.date: 03/24/2021
+ms.openlocfilehash: 8e149270d8f98cbf72d3864d238a3d8ddfd61c67
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "94659621"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105639546"
 ---
 # <a name="tutorial-share-data-using-azure-data-share"></a>Zelfstudie: Gegevens delen met Azure Data Share  
 
@@ -42,23 +42,10 @@ In deze zelfstudie leert u het volgende:
 Hieronder ziet u de lijst met vereisten voor het delen van gegevens vanuit een SQL-bron. 
 
 #### <a name="prerequisites-for-sharing-from-azure-sql-database-or-azure-synapse-analytics-formerly-azure-sql-dw"></a>Vereisten voor het delen vanuit Azure SQL Database of Azure Synapse Analytics (voorheen Azure SQL DW)
-U kunt de [demo met stapsgewijze instructies volgen](https://youtu.be/hIE-TjJD8Dc) voor het configureren van vereisten.
 
 * Azure SQL Database of Azure Synapse Analytics (voorheen Azure SQL DW) met tabellen en weergaven die u wilt delen.
 * Machtiging om naar de databases op de SQL-server te schrijven, aanwezig in *Microsoft.Sql/servers/databases/write*. Deze machtiging maakt onderdeel uit van de rol **Inzender**.
-* Machtiging voor de beheerde identiteit van de Data Share-resource voor toegang tot de database. U kunt dit doen via de volgende stappen: 
-    1. Navigeer in Azure Portal naar de SQL-server en stel uzelf in als de **Azure Active Directory-beheerder**.
-    1. Maak verbinding met de Azure SQL-database of het Azure SQL-datawarehouse met behulp van [Queryeditor](../azure-sql/database/connect-query-portal.md#connect-using-azure-active-directory) of SQL Server Management Studio met Azure Active Directory-verificatie. 
-    1. Voer het volgende script uit om de beheerde identiteit van de Data Share-resource toe te voegen als een db_datareader. U moet verbinding maken met behulp van Active Directory en niet via SQL Server-verificatie. 
-    
-        ```sql
-        create user "<share_acct_name>" from external provider;     
-        exec sp_addrolemember db_datareader, "<share_acct_name>"; 
-        ```                   
-       U ziet dat *<share_acc_name>* de naam is van uw Data Share-resource. Als u nog geen Data Share-resource hebt gemaakt, kunt u later aan deze vereiste voldoen.  
-
-* Een Azure SQL Database-gebruiker met **db_datareader**-toegang om door de tabellen en/of weergaven die u wilt delen, te navigeren en ze te selecteren. 
-
+* De beheerder van de SQL-Server **Azure Active Directory**
 * Toegang tot SQL Server-firewall. U kunt dit doen via de volgende stappen: 
     1. Ga in Azure Portal naar SQL-server. Selecteer *Firewalls en virtuele netwerken* in de linkernavigatiebalk.
     1. Klik op **Ja** bij *Toestaan dat Azure-services en -resources toegang tot deze server krijgen*.
@@ -90,7 +77,6 @@ U kunt de [demo met stapsgewijze instructies volgen](https://youtu.be/hIE-TjJD8D
 ### <a name="share-from-azure-data-explorer"></a>Delen vanuit Azure Data Explorer
 * Een Azure Data Explorer-cluster met databases die u wilt delen.
 * Machtiging om naar het Azure Data Explorer-cluster te schrijven, aanwezig in *Microsoft.Kusto/clusters/write*. Deze machtiging maakt onderdeel uit van de rol **Inzender**.
-* Machtiging om roltoewijzing toe te voegen aan het Azure Data Explorer-cluster, aanwezig in *Microsoft.Authorization/role assignments/write*. Deze machtiging maakt onderdeel uit van de rol **Eigenaar**.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Aanmelden bij Azure Portal
 
@@ -186,7 +172,7 @@ Gebruik deze opdrachten om de resource te maken:
 
     ![Gegevenssets toevoegen aan de share](./media/datasets.png "Gegevenssets")
 
-1. Selecteer het type gegevensset dat u wilt toevoegen. Welke lijst met typen gegevensset wordt weergegeven, is afhankelijk van het type share (momentopname of in-place) dat u in de vorige stap hebt geselecteerd. Als u deelt vanuit een Azure SQL Database of Azure Synapse Analytics (voorheen Azure SQL DW), wordt u om SQL-referenties gevraagd als u tabellen wilt weergeven.
+1. Selecteer het type gegevensset dat u wilt toevoegen. Welke lijst met typen gegevensset wordt weergegeven, is afhankelijk van het type share (momentopname of in-place) dat u in de vorige stap hebt geselecteerd. Als u deelt vanuit een Azure SQL Database of Azure Synapse Analytics (voorheen Azure SQL DW), wordt u gevraagd om een verificatie methode te maken voor het weer geven van tabellen. Selecteer AAD-verificatie en schakel het selectie vakje **gegevens delen toestaan om het bovenstaande script voor het maken van gebruikers namens mij uit te voeren**. 
 
     ![AddDatasets](./media/add-datasets.png "Gegevenssets toevoegen")    
 

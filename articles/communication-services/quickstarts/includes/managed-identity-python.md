@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b37ebebdb99530ab615a313d9b269b9ce937b7f1
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: cefdf77052e559853cc85d129799e288032186b8
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105110728"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105645354"
 ---
 ## <a name="add-managed-identity-to-your-communication-services-solution"></a>Beheerde identiteit toevoegen aan uw oplossing voor communicatie Services
 
@@ -24,7 +24,7 @@ Voeg het volgende toe `import` aan uw code voor gebruik van de Azure-identiteit.
 from azure.identity import DefaultAzureCredential
 ```
 
-In de onderstaande voor beelden wordt gebruikgemaakt van de [DefaultAzureCredential](/python/api/azure.identity.defaultazurecredential). Deze referentie is geschikt voor productie-en ontwikkelings omgevingen.
+In de onderstaande voor beelden wordt gebruikgemaakt van de [DefaultAzureCredential](/python/api/azure-identity/azure.identity.defaultazurecredential). Deze referentie is geschikt voor productie-en ontwikkelings omgevingen.
 
 Als u de toepassing wilt registreren in de ontwikkel omgeving en omgevings variabelen wilt instellen, raadpleegt u [toegang verlenen met beheerde identiteit](../managed-identity-from-cli.md)
 

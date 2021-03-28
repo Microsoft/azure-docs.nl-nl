@@ -7,12 +7,24 @@
     - name: AzureIoTSolutions.com
       href: iot-accelerators-permissions.md
     - name: Industriële IoT
+      href: overview-iot-industrial.md
+      items:
+        - name: Wat is OPC Twin?
+          href: overview-opc-twin.md
+        - name: Wat is OPC Vault?
+          href: overview-opc-vault.md
+        - name: Wat is OPC Publisher?
+          href: overview-opc-publisher.md
+        - name: Wat is een verbonden factory?
+          href: iot-accelerators-connected-factory-features.md
     - name: Apparaatsimulatie
       href: iot-accelerators-device-simulation-overview.md
 - name: Snelstartgidsen
   items:
     - name: De oplossingsverbetering voor apparaatsimulatie implementeren
       href: 'https://github.com/Azure/device-simulation-dotnet/blob/master/README.md'
+    - name: Een oplossing voor een verbonden fabriek uitproberen
+      href: quickstart-connected-factory-deploy.md
   expanded: true
 - name: Zelfstudies
   items:
@@ -25,14 +37,47 @@
 - name: Concepten
   items:
     - name: Industriële IoT
+      items:
+        - name: OPC Twin-architectuur
+          href: overview-opc-twin-architecture.md
+        - name: OPC Vault-architectuur
+          href: overview-opc-vault-architecture.md
 - name: Instructiegidsen
   items:
     - name: Industriële IoT
       items:
         - name: Verbonden factory
+          items:
+            - name: Het dashboard gebruiken
+              href: iot-accelerators-connected-factory-dashboard.md
+            - name: De oplossingsversneller configureren
+              href: iot-accelerators-connected-factory-configure.md
+            - name: De oplossingsversneller aanpassen
+              href: iot-accelerators-connected-factory-customize.md
         - name: OPC Twin
+          items:
+            - name: OPC Twin-services implementeren
+              href: howto-opc-twin-deploy-existing.md
+            - name: OPC Twin-module implementeren op IoT Edge
+              href: howto-opc-twin-deploy-modules.md
+            - name: Alleen OPC Twin-afhankelijkheden implementeren
+              href: howto-opc-twin-deploy-dependencies.md
         - name: OPC Vault
+          items:
+            - name: OPC Vault-service implementeren
+              href: howto-opc-vault-deploy.md
+            - name: OPC Vault-service beheren
+              href: howto-opc-vault-manage.md
+            - name: OPC UA-apparaatcommunicatie beveiligen met OPC Vault
+              href: howto-opc-vault-secure.md
+            - name: De OPC Vault-service veilig gebruiken
+              href: howto-opc-vault-secure-ca.md
         - name: OPC Publisher
+          items:
+            - name: OPC Publisher configureren
+              href: howto-opc-publisher-configure.md
+            - name: OPC Publisher uitvoeren
+              href: howto-opc-publisher-run.md
     - name: Apparaatsimulatie
       items:
         - name: Een bestaande IoT-hub gebruiken
@@ -89,6 +134,10 @@
         - name: Downloaden
           href: /azure/architecture/reference-architectures/iot
     - name: Veelgestelde vragen
-      href: iot-accelerators-faq.md
+      items:
+        - name: Veelgestelde vragen over oplossings versnellers
+          href: iot-accelerators-faq.md
+        - name: Veelgestelde vragen over Verbonden Factory
+          href: iot-accelerators-faq-cf.md
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-iot-suite'

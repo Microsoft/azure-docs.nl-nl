@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: sstein, vanto
 ms.date: 01/14/2021
-ms.openlocfilehash: dca4d699ac1253753c82949cb480d95a1dde26e2
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 5d49a5b57ff4b59005461f2bb13451822723b039
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104594101"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105644976"
 ---
 # <a name="what-is-azure-sql-managed-instance"></a>Wat is Azure SQL Managed Instance?
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -49,7 +49,7 @@ SQL Managed Instance combineert de beste functies die beschikbaar zijn in Azure 
 | --- | --- |
 |Geen hardware aankopen of beheren <br>Geen overhead voor het beheren van de onderliggende infrastructuur <br>Snelle inrichting en opschaling van services <br>Automatische patching en versie-upgrade <br>Integratie met andere PaaS-gegevensservices |SLA van 99,99% uptime  <br>Ingebouwde [hoge beschikbaarheid](../database/high-availability-sla.md) <br>Gegevens beveiligd met [automatische back-ups](../database/automated-backups-overview.md) <br>Door de klant configureerbare bewaarperiode voor back-ups <br>Door de gebruiker geïnitieerde [back-ups](/sql/t-sql/statements/backup-transact-sql?preserve-view=true&view=azuresqldb-mi-current) <br>Mogelijkheid om [een database te herstellen naar een bepaald tijdstip](../database/recovery-using-backups.md#point-in-time-restore) |
 |**Beveiliging en naleving** | **Beheer**|
-|Geïsoleerde omgeving ([VNet-integratie](connectivity-architecture-overview.md), single tenant service, toegewijde rekenkracht en opslag) <br>[TDE (Transparent Data Encryption)](/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql)<br>[Azure Active Directory (Azure AD)-verificatie](../database/authentication-aad-overview.md), ondersteuning voor eenmalige aanmelding <br> <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current&preserve-view=true">Azure AD-server-principals (aanmeldingen)</a>  <br>Voldoet aan dezelfde nalevingsnormen als Azure SQL Database <br>[SQL-controle](auditing-configure.md) <br>[Advanced Threat Protection](threat-detection-configure.md) |Azure Resource Manager-API voor het automatiseren van het inrichten en schalen van services <br>Azure-portaalfunctionaliteit om handmatig services in te richten en te schalen <br>Data Migration Service
+|Geïsoleerde omgeving ([VNet-integratie](connectivity-architecture-overview.md), single tenant service, toegewijde rekenkracht en opslag) <br>[TDE (Transparent Data Encryption)](/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql)<br>[Azure Active Directory (Azure AD)-verificatie](../database/authentication-aad-overview.md), ondersteuning voor eenmalige aanmelding <br> [Azure AD-server-principals (aanmeldingen)](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current&preserve-view=true) <br>Voldoet aan dezelfde nalevingsnormen als Azure SQL Database <br>[SQL-controle](auditing-configure.md) <br>[Advanced Threat Protection](threat-detection-configure.md) |Azure Resource Manager-API voor het automatiseren van het inrichten en schalen van services <br>Azure-portaalfunctionaliteit om handmatig services in te richten en te schalen <br>Data Migration Service
 
 > [!IMPORTANT]
 > Azure SQL Managed Instanced is gecertificeerd volgens een aantal nalevingsnormen. Raadpleeg voor meer informatie [Microsoft Azure Compliance-aanbiedingen](https://servicetrust.microsoft.com/ViewPage/MSComplianceGuideV3?command=Download&downloadType=Document&downloadId=44bbae63-bf4d-4e3b-9d3d-c96fb25ec363&tab=7027ead0-3d6b-11e9-b9e1-290b1eb4cdeb&docTab=7027ead0-3d6b-11e9-b9e1-290b1eb4cdeb_FAQ_and_White_Papers), waar u de meest recente lijst met nalevingscertificeringen voor SQL Managed Instance vindt onder **SQL Database**.
@@ -161,7 +161,7 @@ Migratie van een versleutelde database naar SQL Managed Instance wordt ondersteu
 
 SQL Managed Instance ondersteunt traditionele aanmeldingen met SQL Server-database-engine en aanmeldingen die zijn geïntegreerd met Azure AD. Azure AD server-principals (aanmeldingen) (**openbare preview**) zijn een Azure-cloudversie van on-premises database-aanmeldingen die u in uw on-premises omgeving gebruikt. Met Azure AD-server-principals (aanmeldingen) kunt u gebruikers en groepen van uw Azure AD-tenant opgeven als echte instantie-principals, waardoor elke bewerking op instantieniveau kan worden uitgevoerd, inclusief query's tussen databases binnen hetzelfde beheerde exemplaar.
 
-Er bestaat een nieuwe syntaxis voor het maken van Azure AD-server-principals (aanmeldingen) **VANUIT EXTERNE PROVIDER**. Voor meer informatie over de syntaxis raadpleegt u <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current&preserve-view=true">AANMELDING MAKEN</a> en leest u het artikel [Een Azure Active Directory-beheerder inrichten voor SQL Managed Instance](../database/authentication-aad-configure.md#provision-azure-ad-admin-sql-managed-instance).
+Er bestaat een nieuwe syntaxis voor het maken van Azure AD-server-principals (aanmeldingen) **VANUIT EXTERNE PROVIDER**. Voor meer informatie over de syntaxis raadpleegt u [AANMELDING MAKEN](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current&preserve-view=true) en leest u het artikel [Een Azure Active Directory-beheerder inrichten voor SQL Managed Instance](../database/authentication-aad-configure.md#provision-azure-ad-admin-sql-managed-instance).
 
 ### <a name="azure-active-directory-integration-and-multi-factor-authentication"></a>Azure Active Directory-integratie en meervoudige verificatie
 

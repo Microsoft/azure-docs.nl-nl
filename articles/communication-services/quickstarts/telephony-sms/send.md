@@ -11,12 +11,12 @@ ms.topic: overview
 ms.service: azure-communication-services
 ms.custom: tracking-python, devx-track-js
 zone_pivot_groups: acs-js-csharp-java-python
-ms.openlocfilehash: 70dce109ec751a5c14de539b9c7461857cedb941
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: 9514f1616c0d70d7d195af2f052c604973709204
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105110338"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105644301"
 ---
 # <a name="quickstart-send-an-sms-message"></a>Quickstart: Een sms-bericht verzenden
 
@@ -58,7 +58,7 @@ Als u een Communication Services-abonnement wilt opschonen en verwijderen, kunt 
 In deze quickstart hebt u geleerd hoe u sms-berichten kunt verzenden met Azure Communication Services.
 
 > [!div class="nextstepaction"]
-> [Abonneren op sms-gebeurtenissen](./handle-sms-events.md)
+> [SMS-en bezorgings rapport gebeurtenissen ontvangen](./handle-sms-events.md)
 
 > [!div class="nextstepaction"]
 > [Telefoon nummer typen](../../concepts/telephony-sms/plan-solution.md)

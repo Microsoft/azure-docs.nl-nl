@@ -13,12 +13,12 @@ ms.custom:
 - mqtt
 - fasttrack-edit
 - iot
-ms.openlocfilehash: adcbf4efc4dfaa7701c18440531327949640cb53
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: fca5c1a0aee6e62890d734e3233177549d932672
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100581996"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105643679"
 ---
 # <a name="trace-azure-iot-device-to-cloud-messages-with-distributed-tracing-preview"></a>Azure IoT-apparaat-naar-Cloud-berichten traceren met gedistribueerde tracering (voor beeld)
 
@@ -93,7 +93,7 @@ Deze instructies zijn voor het bouwen van het voor beeld in Windows. Zie voor an
 
 ### <a name="clone-the-source-code-and-initialize"></a>De bron code klonen en initialiseren
 
-1. Installeer [' Desktop Development with C++ ' workload](/cpp/build/vscpp-step-0-installation?view=vs-2019) voor Visual Studio 2019. Visual Studio 2017 en 2015 worden ook ondersteund.
+1. Installeer [' Desktop Development with C++ ' workload](/cpp/build/vscpp-step-0-installation?view=vs-2019&preserve-view=true) voor Visual Studio 2019. Visual Studio 2017 en 2015 worden ook ondersteund.
 
 1. Installeer [cmake](https://cmake.org/). Zorg ervoor dat deze in uw `PATH` typt door te typen `cmake -version` vanaf een opdracht prompt.
 

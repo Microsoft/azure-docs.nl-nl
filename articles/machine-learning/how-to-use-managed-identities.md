@@ -10,12 +10,12 @@ ms.subservice: core
 ms.reviewer: larryfr
 ms.topic: conceptual
 ms.date: 10/22/2020
-ms.openlocfilehash: a7efd57100ad89fa9824b7a635e11698515e13ae
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 3246f6668a653c05599001a2f8d8fc8d376936ce
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102521013"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105642409"
 ---
 # <a name="use-managed-identities-with-azure-machine-learning-preview"></a>Beheerde identiteiten gebruiken met Azure Machine Learning (preview-versie)
 
@@ -234,7 +234,7 @@ Zodra u ACR zonder beheer gebruiker hebt geconfigureerd zoals eerder beschreven,
 
 Bij het maken van de werk ruimte kunt u een door de gebruiker toegewezen beheerde identiteit opgeven die wordt gebruikt voor toegang tot de gekoppelde bronnen: ACR, sleutel kluis, opslag en app Insights.
 
-Maak eerst een door de [gebruiker toegewezen beheerde identiteit](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli])en noteer de arm-resource-id van de beheerde identiteit.
+Maak eerst een door de [gebruiker toegewezen beheerde identiteit](/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli)en noteer de arm-resource-id van de beheerde identiteit.
 
 Vervolgens gebruikt u de Azure CLI-of python-SDK om de werk ruimte te maken. Wanneer u de CLI gebruikt, geeft u de ID op met behulp van de `--primary-user-assigned-identity` para meter. Gebruik voor het gebruik van de SDK `primary_user_assigned_identity` . Hier volgen enkele voor beelden van het gebruik van de Azure CLI en python om een nieuwe werk ruimte te maken met behulp van de volgende para meters:
 

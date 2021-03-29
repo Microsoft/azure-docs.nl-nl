@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 12/31/2020
 ms.author: kenwith
-ms.openlocfilehash: c08ce3bc8b722f2ea417c854a606f1060aa174e3
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 6da003612d98d107390c9f20a5172786c30665a6
+ms.sourcegitcommit: dae6b628a8d57540263a1f2f1cdb10721ed1470d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100580053"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105709749"
 ---
 # <a name="plan-an-azure-ad-application-proxy-deployment"></a>Plan een implementatie voor de Azure AD-toepassingsproxy
 
@@ -172,7 +172,7 @@ De stappen voor het implementeren van uw toepassings proxy worden behandeld in d
 
 Bij het publiceren van toepassingen wordt ervan uitgegaan dat u aan alle vereisten hebt voldaan en dat u verschillende connectors hebt die worden weer gegeven als geregistreerd en actief op de pagina Toepassings proxy.
 
-U kunt ook toepassingen publiceren met behulp van [Power shell](/powershell/module/azuread/?view=azureadps-2.0-preview).
+U kunt ook toepassingen publiceren met behulp van [Power shell](/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true).
 
 Hieronder volgen enkele aanbevolen procedures voor het publiceren van een toepassing:
 

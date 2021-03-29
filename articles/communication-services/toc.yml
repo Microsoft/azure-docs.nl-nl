@@ -86,6 +86,10 @@
           href: concepts/telephony-sms/plan-solution.md
         - name: Vereisten voor de infra structuur van de SIP-interface
           href: concepts/telephony-sms/sip-interface-infrastructure.md
+        - name: VEELGESTELDE VRAGEN OVER SMS
+          href: concepts/telephony-sms/sms-faq.md
+        - name: Bericht beleid
+          href: concepts/telephony-sms/messaging-policy.md
     - name: Audio- en videobellen
       items:
         - name: Overzicht van de SDK

@@ -10,47 +10,44 @@ ms.service: cloud-services
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 3/12/2021
+ms.date: 3/28/2021
 ms.author: gunnarc
-ms.openlocfilehash: 8cdec61b971e7028326a22ac7f7bd6046376427b
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: c9a4a5229629b2a65b167a80fce8e502612dcf3c
+ms.sourcegitcommit: dae6b628a8d57540263a1f2f1cdb10721ed1470d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105559108"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105709902"
 ---
 # <a name="azure-guest-os"></a>Azure-gast besturingssysteem
 In de volgende tabellen ziet u de micro soft Security Response Center-updates (MSRC) die zijn toegepast op het Azure-gast besturingssysteem. Zoek in dit artikel om te bepalen of een bepaalde update van toepassing is op het gast besturingssysteem dat u gebruikt. Updates worden altijd uitgevoerd voor de desbetreffende [familie][family-explain] waarin ze zijn geïntroduceerd.
 
 ## <a name="march-2021-guest-os"></a>Maart 2021-gast besturingssysteem
 
->[!NOTE] 
-
->Het besturings systeem van maart wordt momenteel geïmplementeerd naar Cloud service-Vm's die zijn geconfigureerd voor automatische updates. Wanneer de implementatie is voltooid, wordt deze versie beschikbaar gesteld voor hand matige updates via de Azure Portal-en configuratie bestanden. De volgende patches zijn opgenomen in het besturings systeem voor de maart-gast. Deze lijst is onderhevig aan wijzigingen. 
 
 | Productcategorie | Bovenliggend KB-artikel | Beschrijving van het beveiligingslek | Gastbesturingssysteem | Datum eerste geïntroduceerd |
 | --- | --- | --- | --- | --- |
-|  Rel 21-03 |  [5000822]  |  Meest recente cumulatieve update (LCU) | 6,29 | 9 maart 2021 |
-|  Rel 21-03 |  [4580325]  |  Flash-Update | 3,95, 4,88, 5,53, 6,29 | 13 oktober 2020 |
-|  Rel 21-03 |  [5000800]  |  Cumulatieve updates voor Internet Explorer | 2,108, 3,95, 4,88 | 9 maart 2021 |
-|  Rel 21-03 |  [5000803]  |  Meest recente cumulatieve update (LCU) | 5,53 | 9 maart 2021 |
-|  Rel 21-03 |  [4578952]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen  | 2,108 | 13 oktober 2020 |
-|  Rel 21-03 |  [4578955]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen  | 2,108 | 13 oktober 2020 |
-|  Rel 21-03 |  [4578953]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen  | 4,88 | 13 oktober 2020 |
-|  Rel 21-03 |  [4578956]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen  | 4,88 | 13 oktober 2020 |
-|  Rel 21-03 |  [4578950]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen  | 3,95 | 13 oktober 2020 |
-|  Rel 21-03 |  [4578954]  |  . NET Framework 4.5.2 Security en Quality totalisatie  | 3,95 | 13 oktober 2020 |
-|  Rel 21-03 |  [4601060]  |  . NET Framework 3,5 en cumulatieve update 4.7.2  | 6,29 | 9 februari 2021 |
-|  Rel 21-03 |  [5000841]  |  Maandelijks samen vouwen  | 2,108 | 9 maart 2021 |
-|  Rel 21-03 |  [5000847]  |  Maandelijks samen vouwen  | 3,95 | 9 maart 2021 |
-|  Rel 21-03 |  [5000848]  |  Maandelijks samen vouwen  | 4,88 | 9 maart 2021 |
-|  Rel 21-03 |  [4566426]  |  Onderhouds stack-update  | 3,95 | 14 juli 2020 |
-|  Rel 21-03 |  [4566425]  |  Onderhouds stack-update  | 4,88 | 14 juli 2020 |
-|  OOB rel 21-03 |  [4578013]  |  Zelfstandige beveiligings update  | 4,88 | 19 augustus 2020 |
-|  Rel 21-03 |  [4592510]  |  Onderhouds stack-update  | 2,108 | 8 december 2020 |
-|  Rel 21-03 |  [5000859]  |  Onderhouds stack-update  | 6,29 | 9 maart 2021 |
-|  Rel 21-03 |  [4494175]  |  Micro  | 5,53 | 1 sep, 2020 |
-|  Rel 21-03 |  [4494174]  |  Micro  | 6,29 | 1 sep, 2020 |
+|  Rel 21-03 |  [5000822]  |  Meest recente cumulatieve update (LCU) | [6,29] | 9 maart 2021 |
+|  Rel 21-03 |  [4580325]  |  Flash-Update | [3,95], [4,88], [5,53], [6,29] | 13 oktober 2020 |
+|  Rel 21-03 |  [5000800]  |  Cumulatieve updates voor Internet Explorer | [2,108], [3,95], [4,88] | 9 maart 2021 |
+|  Rel 21-03 |  [5000803]  |  Meest recente cumulatieve update (LCU) | [5,53] | 9 maart 2021 |
+|  Rel 21-03 |  [4578952]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen  | [2,108] | 13 oktober 2020 |
+|  Rel 21-03 |  [4578955]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen  | [2,108] | 13 oktober 2020 |
+|  Rel 21-03 |  [4578953]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen  | [4,88] | 13 oktober 2020 |
+|  Rel 21-03 |  [4578956]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen  | [4,88] | 13 oktober 2020 |
+|  Rel 21-03 |  [4578950]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen  | [3,95] | 13 oktober 2020 |
+|  Rel 21-03 |  [4578954]  |  . NET Framework 4.5.2 Security en Quality totalisatie  | [3,95] | 13 oktober 2020 |
+|  Rel 21-03 |  [4601060]  |  . NET Framework 3,5 en cumulatieve update 4.7.2  | [6,29] | 9 februari 2021 |
+|  Rel 21-03 |  [5000841]  |  Maandelijks samen vouwen  | [2,108] | 9 maart 2021 |
+|  Rel 21-03 |  [5000847]  |  Maandelijks samen vouwen  | [3,95] | 9 maart 2021 |
+|  Rel 21-03 |  [5000848]  |  Maandelijks samen vouwen  | [4,88] | 9 maart 2021 |
+|  Rel 21-03 |  [4566426]  |  Onderhouds stack-update  | [3,95] | 14 juli 2020 |
+|  Rel 21-03 |  [4566425]  |  Onderhouds stack-update  | [4,88] | 14 juli 2020 |
+|  OOB rel 21-03 |  [4578013]  |  Zelfstandige beveiligings update  | [4,88] | 19 augustus 2020 |
+|  Rel 21-03 |  [4592510]  |  Onderhouds stack-update  | [2,108] | 8 december 2020 |
+|  Rel 21-03 |  [5000859]  |  Onderhouds stack-update  | [6,29] | 9 maart 2021 |
+|  Rel 21-03 |  [4494175]  |  Micro  | [5,53] | 1 sep, 2020 |
+|  Rel 21-03 |  [4494174]  |  Micro  | [6,29] | 1 sep, 2020 |
 
 [5000822]: https://support.microsoft.com/kb/5000822
 [4580325]: https://support.microsoft.com/kb/4580325
@@ -73,7 +70,11 @@ In de volgende tabellen ziet u de micro soft Security Response Center-updates (M
 [5000859]: https://support.microsoft.com/kb/5000859
 [4494175]: https://support.microsoft.com/kb/4494175
 [4494174]: https://support.microsoft.com/kb/4494174
-
+[2,108]: ./cloud-services-guestos-update-matrix.md#family-2-releases
+[3,95]: ./cloud-services-guestos-update-matrix.md#family-3-releases
+[4,88]: ./cloud-services-guestos-update-matrix.md#family-4-releases
+[5,53]: ./cloud-services-guestos-update-matrix.md#family-5-releases
+[6,29]: ./cloud-services-guestos-update-matrix.md#family-6-releases
 
 ## <a name="february-2021-guest-os"></a>Februari 2021-gast besturingssysteem
 

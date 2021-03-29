@@ -1,24 +1,21 @@
 ---
-title: De preview-versie van Windows virtueel bureau blad controleren gebruiken-Azure
+title: Monitor voor Windows virtueel bureau blad gebruiken-Azure
 description: Azure Monitor gebruiken voor virtueel bureau blad van Windows.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 03/25/2020
+ms.date: 03/29/2021
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 1c87763cb2ca482fc8ee15588d7287f0d9275fff
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.openlocfilehash: 1b93e0c0d61eaa390eda66da2a583a4f429ddd79
+ms.sourcegitcommit: dae6b628a8d57540263a1f2f1cdb10721ed1470d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105627163"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105709545"
 ---
-# <a name="use-azure-monitor-for-windows-virtual-desktop-to-monitor-your-deployment-preview"></a>Gebruik Azure Monitor voor virtuele Windows-Bureau bladen om uw implementatie te bewaken (preview-versie)
+# <a name="use-azure-monitor-for-windows-virtual-desktop-to-monitor-your-deployment"></a>Gebruik Azure Monitor voor virtuele Windows-Bureau bladen om uw implementatie te bewaken
 
->[!IMPORTANT]
->Azure Monitor voor het virtuele bureau blad van Windows is momenteel beschikbaar als open bare preview. Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
-
-Azure Monitor voor virtueel bureau blad van Windows (preview) is een dash board dat is gebaseerd op Azure Monitor werkmappen waarmee IT-professionals hun virtuele Windows-desktop omgevingen kunnen begrijpen. In dit artikel vindt u instructies voor het instellen van Azure Monitor voor virtuele Windows-Bureau bladen voor het bewaken van uw virtuele Windows-bureaublad omgevingen.
+Azure Monitor voor virtueel bureau blad van Windows is een dash board dat is gebaseerd op Azure Monitor werkmappen waarmee IT-professionals hun virtuele Windows-desktop omgevingen kunnen begrijpen. In dit onderwerp vindt u instructies voor het instellen van Azure Monitor voor virtuele Windows-Bureau bladen voor het bewaken van uw virtuele Windows-bureaublad omgevingen.
 
 ## <a name="requirements"></a>Vereisten
 

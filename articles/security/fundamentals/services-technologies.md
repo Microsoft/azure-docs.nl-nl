@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/29/2019
 ms.author: terrylan
-ms.openlocfilehash: 27443eb9c04c69567b3a1374f11e8b53837040f2
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 5914d5a54606f49f6fbd809a17e2b47375b58dcd
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100585417"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105641977"
 ---
 # <a name="security-services-and-technologies-available-on-azure"></a>Beveiligings Services en-technologieën die beschikbaar zijn op Azure
 
@@ -59,8 +59,8 @@ In de loop van de tijd wordt deze lijst gewijzigd en groeit, net zoals in Azure.
 | [Azure &nbsp; SQL- &nbsp; firewall](../../azure-sql/database/firewall-configure.md)|Een functie voor netwerk toegangs beheer die bescherming biedt tegen aanvallen via het netwerk tot data base. |
 |[Versleuteling van het niveau van Azure &nbsp; SQL- &nbsp; cellen &nbsp;](/archive/blogs/sqlsecurity/recommendations-for-using-cell-level-encryption-in-azure-sql-database)| Een Data Base-beveiligings technologie die versleuteling op een gedetailleerd niveau biedt.  |
 | [Versleuteling van Azure &nbsp; SQL- &nbsp; verbinding](../../azure-sql/database/logins-create-manage.md)|Voor de beveiliging regelt SQL Database toegang met firewallregels die de connectiviteit beperken op basis van IP-adres. Met behulp van verificatiemechanismen moeten gebruikers hun identiteit kunnen aantonen en met autorisatiemechanismen worden gebruikers beperkt tot bepaalde gegevens en acties. |
-| [Versleuteling van Azure SQL altijd](/sql/relational-databases/security/encryption/always-encrypted-database-engine?view=sql-server-2017)|Beveiligt gevoelige gegevens, zoals creditcard nummers of nationale identificatie nummers (bijvoorbeeld Amerikaans-sofi-nummers), die zijn opgeslagen in Azure SQL Database-of SQL Server-data bases.  |
-| [Azure &nbsp; SQL &nbsp; transparent Data Encryption](/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql?view=azuresqldb-current)| Een functie voor database beveiliging waarmee de opslag van een volledige data base wordt versleuteld. |
+| [Versleuteling van Azure SQL altijd](/sql/relational-databases/security/encryption/always-encrypted-database-engine)|Beveiligt gevoelige gegevens, zoals creditcard nummers of nationale identificatie nummers (bijvoorbeeld Amerikaans-sofi-nummers), die zijn opgeslagen in Azure SQL Database-of SQL Server-data bases.  |
+| [Azure &nbsp; SQL &nbsp; transparent Data Encryption](/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql)| Een functie voor database beveiliging waarmee de opslag van een volledige data base wordt versleuteld. |
 | [Azure SQL Database controle](../../azure-sql/database/auditing-overview.md)|Een functie voor het controleren van de data base waarmee database gebeurtenissen worden bijgehouden en naar een audit logboek in uw Azure Storage-account wordt geschreven.  |
 
 

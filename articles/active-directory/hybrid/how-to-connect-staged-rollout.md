@@ -10,12 +10,12 @@ ms.date: 06/03/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2038587aebe8fe98bd1adcccef6b895ec7370656
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 5c7f3de20ea3e86e3b56dc71d698354f7eaf782d
+ms.sourcegitcommit: dae6b628a8d57540263a1f2f1cdb10721ed1470d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102176855"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105709715"
 ---
 # <a name="migrate-to-cloud-authentication-using-staged-rollout-preview"></a>Migreren naar Cloud authenticatie met behulp van gefaseerde implementatie (preview-versie)
 
@@ -98,7 +98,7 @@ De volgende scenario's worden niet ondersteund voor gefaseerde implementatie:
 
 Als u het aanmelden voor *wachtwoord hash-synchronisatie* wilt testen met behulp van gefaseerde implementatie, volgt u de voor bereide instructies in de volgende sectie.
 
-Voor informatie over welke Power shell-cmdlets moeten worden gebruikt, raadpleegt u [Azure AD 2,0 Preview](/powershell/module/azuread/?view=azureadps-2.0-preview#staged_rollout).
+Voor informatie over welke Power shell-cmdlets moeten worden gebruikt, raadpleegt u [Azure AD 2,0 Preview](/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true#staged_rollout).
 
 ## <a name="pre-work-for-password-hash-sync"></a>Vooraf werken voor wachtwoord-hash-synchronisatie
 
@@ -251,9 +251,9 @@ A: Nee, deze functie is ontworpen voor het testen van Cloud verificatie. Nadat u
 
 **V: kan ik Power shell gebruiken voor het uitvoeren van een gefaseerde implementatie?**
 
-A: Ja. Zie [Preview van Azure AD](/powershell/module/azuread/?view=azureadps-2.0-preview#staged_rollout)voor meer informatie over het gebruik van Power shell om gefaseerde implementatie uit te voeren.
+A: Ja. Zie [Preview van Azure AD](/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true#staged_rollout)voor meer informatie over het gebruik van Power shell om gefaseerde implementatie uit te voeren.
 
 ## <a name="next-steps"></a>Volgende stappen
-- [Azure AD 2,0 Preview](/powershell/module/azuread/?view=azureadps-2.0-preview#staged_rollout )
+- [Azure AD 2,0 Preview](/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true#staged_rollout )
 - [De aanmeldings methode voor het synchroniseren van wacht woord-hashes wijzigen](plan-migrate-adfs-password-hash-sync.md#step-3-change-the-sign-in-method-to-password-hash-synchronization-and-enable-seamless-sso)
 - [Aanmeldings methode wijzigen in Pass-Through-verificatie](plan-migrate-adfs-password-hash-sync.md#step-3-change-the-sign-in-method-to-password-hash-synchronization-and-enable-seamless-sso)

@@ -12,18 +12,18 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: how-to
 ms.date: 02/20/2020
-ms.openlocfilehash: e6f94c006de8914fe3ae27cdb8ac4d75a0ac49cc
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: e42b5ab2bbdebb2584b38531bd6458a98563ef42
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "94962991"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105643738"
 ---
 # <a name="redeploy-ssis-packages-to-azure-sql-database-with-azure-database-migration-service"></a>SSIS-pakketten opnieuw implementeren om te Azure SQL Database met Azure Database Migration Service
 
 Als u SQL Server Integration Services (SSIS) gebruikt en u uw SSIS-projecten/-pakketten wilt migreren van de bron-SSISDB die wordt gehost door SQL Server naar de doel-SSISDB die door Azure SQL Database worden gehost, kunt u ze opnieuw implementeren met de wizard Integratie Services implementeren. U kunt de wizard starten vanuit SQL Server Management Studio (SSMS).
 
-Als de gebruikte SSIS-versie ouder is dan 2012, moet u deze eerst converteren met behulp van de wizard Integratie Services-project conversie, die ook kan worden gestart vanuit SSMS, voordat u uw SSIS-projecten/-pakketten opnieuw implementeert in het implementatie model van het project. Zie het artikel [Converting projects to the project Deployment model](/sql/integration-services/packages/deploy-integration-services-ssis-projects-and-packages?view=sql-server-2017#convert)(Engelstalig) voor meer informatie.
+Als de gebruikte SSIS-versie ouder is dan 2012, moet u deze eerst converteren met behulp van de wizard Integratie Services-project conversie, die ook kan worden gestart vanuit SSMS, voordat u uw SSIS-projecten/-pakketten opnieuw implementeert in het implementatie model van het project. Zie het artikel [Converting projects to the project Deployment model](/sql/integration-services/packages/deploy-integration-services-ssis-projects-and-packages#convert)(Engelstalig) voor meer informatie.
 
 > [!NOTE]
 > De Azure Database Migration Service (DMS) biedt momenteel geen ondersteuning voor de migratie van een bron-SSISDB naar Azure SQL Database, maar u kunt uw SSIS-projecten/-pakketten opnieuw implementeren met behulp van het volgende proces.

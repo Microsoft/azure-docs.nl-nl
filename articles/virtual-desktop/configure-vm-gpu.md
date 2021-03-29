@@ -5,12 +5,12 @@ author: gundarev
 ms.topic: how-to
 ms.date: 05/06/2019
 ms.author: denisgun
-ms.openlocfilehash: c3a23276ce19f6d7b4cf341bac155ec84363fe5f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: f95b9c1615cc58d9cc0589bad98c7315e571686e
+ms.sourcegitcommit: dae6b628a8d57540263a1f2f1cdb10721ed1470d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "95018338"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105709460"
 ---
 # <a name="configure-graphics-processing-unit-gpu-acceleration-for-windows-virtual-desktop"></a>GPU-versnelling (graphics processing unit) configureren voor Windows Virtual Desktop
 
@@ -23,10 +23,10 @@ Volg de instructies in dit artikel om een door GPU geoptimaliseerde virtuele mac
 
 ## <a name="select-an-appropriate-gpu-optimized-azure-virtual-machine-size"></a>Selecteer een geschikte door GPU geoptimaliseerde grootte voor virtuele Azure-machines
 
-Selecteer een van de VM-grootten van de [NV-serie](../virtual-machines/nv-series.md), de [NVv3](../virtual-machines/nvv3-series.md)of de [NVv4-serie](../virtual-machines/nvv4-series.md) . Deze zijn afgestemd op app-en bureau blad-virtualisatie en bieden apps en de Windows-gebruikers interface om GPU te versnellen. De juiste keuze voor uw hostgroep is afhankelijk van een aantal factoren, waaronder uw specifieke app-workloads, de gewenste kwaliteit van de gebruikers ervaring en de kosten. Over het algemeen bieden grotere en meer compatibele Gpu's een betere gebruikers ervaring met een bepaalde gebruikers densiteit, terwijl kleinere en fractionele GPU-grootten meer nauw keurige controle over de kosten en kwaliteit toestaan.
+Selecteer een van de VM-grootten van de [NV-serie](../virtual-machines/nv-series.md), de [NVv3](../virtual-machines/nvv3-series.md)of de [NVv4-serie](../virtual-machines/nvv4-series.md) . Deze zijn afgestemd op apps en bureau blad-virtualisatie, waardoor de meeste apps en de Windows-gebruikers interface GPU versnellen. De juiste keuze voor uw hostgroep is afhankelijk van een aantal factoren, waaronder uw specifieke app-workloads, de gewenste kwaliteit van de gebruikers ervaring en de kosten. Over het algemeen bieden grotere en meer compatibele Gpu's een betere gebruikers ervaring met een bepaalde gebruikers densiteit, terwijl kleinere en fractionele GPU-grootten meer nauw keurige controle over de kosten en kwaliteit toestaan.
 
 >[!NOTE]
->De virtuele machines NC, NCv2, NCv3, ND en NDv2 Series van Azure zijn over het algemeen niet geschikt voor Windows-sessies met een virtueel bureau blad. Deze Vm's zijn afgestemd op gespecialiseerde, high-performance Compute-of machine learning-hulpprogram ma's, zoals die zijn gebouwd met NVIDIA CUDA. Voor algemene app-en desktop versnelling met NVIDIA-Gpu's zijn NVIDIA-raster licenties vereist; Dit wordt door Azure verschaft voor de aanbevolen VM-grootten, maar moet afzonderlijk worden gerangschikt voor virtuele machines van NC/ND-Series.
+>De virtuele machines NC, NCv2, NCv3, ND en NDv2 Series van Azure zijn over het algemeen niet geschikt voor Windows-sessies met een virtueel bureau blad. Deze Vm's zijn afgestemd op gespecialiseerde, high-performance Compute-of machine learning-hulpprogram ma's, zoals die zijn gebouwd met NVIDIA CUDA. Ze bieden geen ondersteuning voor GPU-versnelling voor de meeste apps of de Windows-gebruikers interface.
 
 ## <a name="create-a-host-pool-provision-your-virtual-machine-and-configure-an-app-group"></a>Een hostgroep maken, uw virtuele machine inrichten en een app-groep configureren
 
@@ -41,9 +41,10 @@ U moet ook een app-groep configureren of de standaard bureau blad-app-groep (met
 
 ## <a name="install-supported-graphics-drivers-in-your-virtual-machine"></a>Ondersteunde grafische Stuur Programma's installeren in uw virtuele machine
 
-Als u gebruik wilt maken van de GPU-mogelijkheden van virtuele machines uit de Azure N-serie in Windows Virtual Desktop, moet u de juiste grafische Stuur Programma's installeren. Volg de instructies op de [ondersteunde besturings systemen en stuur Programma's](../virtual-machines/sizes-gpu.md#supported-operating-systems-and-drivers) om stuur Programma's te installeren van de juiste grafische leverancier, hetzij hand matig of via een Azure VM-extensie.
+Als u gebruik wilt maken van de GPU-mogelijkheden van virtuele machines uit de Azure N-serie in Windows Virtual Desktop, moet u de juiste grafische Stuur Programma's installeren. Volg de instructies op de [ondersteunde besturings systemen en stuur Programma's](../virtual-machines/sizes-gpu.md#supported-operating-systems-and-drivers) om stuur Programma's te installeren. Alleen stuur Programma's die door Azure worden gedistribueerd, worden ondersteund.
 
-Alleen stuur Programma's die worden gedistribueerd door Azure, worden ondersteund voor virtuele Windows-Bureau bladen. Voor virtuele machines uit de Azure NV met NVIDIA-Gpu's worden alleen [NVIDIA-raster Stuur Programma's](../virtual-machines/windows/n-series-driver-setup.md#nvidia-grid-drivers)en geen Nvidia Tesla (CUDA)-Stuur Programma's ondersteund, die ondersteuning bieden voor GPU-versnelling voor algemeen gebruik, apps en Desk tops.
+* Voor virtuele machines uit de Azure NV-of NVv3-serie worden alleen NVIDIA-raster Stuur Programma's en geen NVIDIA CUDA-Stuur Programma's ondersteund voor de meeste apps en de Windows-gebruikers interface. Als u ervoor kiest om stuur Programma's hand matig te installeren, moet u de raster Stuur Programma's installeren. Als u ervoor kiest om stuur Programma's te installeren met behulp van de Azure VM-extensie, worden er automatisch raster Stuur Programma's geïnstalleerd voor deze VM-grootten.
+* Voor virtuele machines uit de Azure NVv4-serie installeert u de AMD-Stuur Programma's die beschikbaar zijn gesteld door Azure. U kunt ze automatisch installeren met behulp van de Azure VM-extensie, maar u kunt ze ook hand matig installeren.
 
 Na installatie van het stuur programma is het opnieuw opstarten van de virtuele machine vereist. Gebruik de verificaties tappen in de bovenstaande instructies om te controleren of grafische Stuur Programma's zijn geïnstalleerd.
 

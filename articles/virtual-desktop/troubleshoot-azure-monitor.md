@@ -1,24 +1,21 @@
 ---
-title: Problemen met het bewaken van Windows virtueel bureau blad preview oplossen-Azure
+title: Problemen met het bewaken van virtueel bureau blad van Windows-Azure oplossen
 description: Problemen oplossen met Azure Monitor voor virtueel bureau blad van Windows.
 author: Heidilohr
 ms.topic: troubleshooting
-ms.date: 03/25/2020
+ms.date: 03/29/2021
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: a07d7536d3d71b121c1dde761d8c290b8be01fe7
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.openlocfilehash: dda58868432248fe93a9fbc83d1e538dfc9b61ba
+ms.sourcegitcommit: dae6b628a8d57540263a1f2f1cdb10721ed1470d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105628455"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105709443"
 ---
-# <a name="troubleshoot-azure-monitor-for-windows-virtual-desktop-preview"></a>Problemen met Azure Monitor voor virtueel bureau blad van Windows oplossen (preview-versie)
+# <a name="troubleshoot-azure-monitor-for-windows-virtual-desktop"></a>Problemen met Azure Monitor voor virtueel bureau blad van Windows oplossen
 
->[!IMPORTANT]
->Azure Monitor voor het virtuele bureau blad van Windows is momenteel beschikbaar als open bare preview. Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
-
-In dit artikel vindt u bekende problemen en oplossingen voor veelvoorkomende problemen in Azure Monitor voor virtueel bureau blad van Windows (preview).
+In dit artikel vindt u bekende problemen en oplossingen voor veelvoorkomende problemen in Azure Monitor voor virtueel bureau blad van Windows.
 
 ## <a name="issues-with-configuration-and-setup"></a>Problemen met configuratie en installatie
 

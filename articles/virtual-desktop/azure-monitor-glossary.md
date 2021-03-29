@@ -1,24 +1,21 @@
 ---
-title: Windows-voor beeld van virtuele Bureau bladen bewaken-Azure
+title: Windows-woorden lijst voor virtueel bureau blad bewaken-Azure
 description: Een woorden lijst met termen en concepten die betrekking hebben op Azure Monitor voor virtueel bureau blad van Windows.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 3/25/2020
+ms.date: 03/29/2021
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 7b824bc13bc4f553d22358b69237173effb51594
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.openlocfilehash: 38f34324a0cda518645f8b9231e08bafbd75cca0
+ms.sourcegitcommit: dae6b628a8d57540263a1f2f1cdb10721ed1470d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105627129"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105709528"
 ---
-# <a name="azure-monitor-for-windows-virtual-desktop-preview-glossary"></a>Azure Monitor voor de woorden lijst voor het virtuele bureau blad (preview) van Windows
-
->[!IMPORTANT]
->Azure Monitor voor het virtuele bureau blad van Windows is momenteel beschikbaar als open bare preview. Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+# <a name="azure-monitor-for-windows-virtual-desktop-glossary"></a>Azure Monitor voor Windows-woorden lijst voor virtueel bureau blad
 
 In dit artikel vindt u een korte beschrijving van belang rijke termen en concepten die betrekking hebben op Azure Monitor voor virtueel bureau blad van Windows (preview).
 

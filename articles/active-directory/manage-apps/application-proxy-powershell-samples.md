@@ -12,12 +12,12 @@ ms.date: 12/05/2019
 ms.author: kenwith
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aeff14e1676389eb2204cad45ea7b00d5aa9796b
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: e5189df623325578bb3b579f5c4c3456067986ff
+ms.sourcegitcommit: dae6b628a8d57540263a1f2f1cdb10721ed1470d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102566648"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105709477"
 ---
 # <a name="azure-ad-powershell-examples-for-azure-ad-application-proxy"></a>Azure AD PowerShell-voorbeelden voor Azure AD-toepassingsproxy
 
@@ -32,7 +32,7 @@ Voor meer informatie over de cmdlets die in deze voorbeelden worden gebruikt, ra
 | [Basisinformatie vermelden voor alle toepassingsproxy-apps](scripts/powershell-get-all-app-proxy-apps-basic.md) | Bevat basisinformatie (AppId, DisplayName, ObjId) over alle toepassingsproxy-apps in uw map. |
 | [Uitgebreide informatie vermelden voor alle toepassingsproxy-apps](scripts/powershell-get-all-app-proxy-apps-extended.md) | Bevat uitgebreide informatie (AppId, DisplayName, ExternalUrl, InternalUrl, ExternalAuthenticationType) over alle toepassingsproxy-apps in uw map.  |
 | [Alle toepassingsproxy-apps per connectorgroep vermelden](scripts/powershell-get-all-app-proxy-apps-by-connector-group.md) | Bevat informatie over alle toepassingsproxy-apps in uw map en aan welke connectorgroepen de apps worden toegewezen. |
-| [Alle toepassingsproxy-apps ophalen met een beleid voor de levensduur van het token](scripts/powershell-get-all-app-proxy-apps-with-policy.md) | Bevat alle toepassingsproxy-apps in uw map met een levensduurbeleid voor tokens en de bijbehorende details. Voor dit voorbeeld is de [AzureAD V2 PowerShell voor Graph-module (preview)](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview) vereist. |
+| [Alle toepassingsproxy-apps ophalen met een beleid voor de levensduur van het token](scripts/powershell-get-all-app-proxy-apps-with-policy.md) | Bevat alle toepassingsproxy-apps in uw map met een levensduurbeleid voor tokens en de bijbehorende details. Voor dit voorbeeld is de [AzureAD V2 PowerShell voor Graph-module (preview)](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview&preserve-view=true) vereist. |
 |**Connectorgroepen**||
 | [Alle connectorgroepen en connectors in de map ophalen](scripts/powershell-get-all-connectors.md) | Bevat alle connectorgroepen en connectors in uw map. |
 | [Alle apps die aan een connectorgroep zijn toegewezen, naar een andere connectorgroep verplaatsen](scripts/powershell-move-all-apps-to-connector-group.md) | Hiermee verplaatst u alle toepassingen die momenteel aan een connectorgroep zijn toegewezen naar een andere connectorgroep. |

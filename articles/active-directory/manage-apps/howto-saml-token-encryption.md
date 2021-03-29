@@ -15,12 +15,12 @@ ms.date: 03/13/2020
 ms.author: kenwith
 ms.reviewer: paulgarn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 32a6034f407bd81e5d2d2ab8227d08a67f034d4c
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: af5329f33cc4cbaa3309450165e657fc829c828b
+ms.sourcegitcommit: dae6b628a8d57540263a1f2f1cdb10721ed1470d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99258639"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105709494"
 ---
 # <a name="how-to-configure-azure-ad-saml-token-encryption"></a>Procedure: Azure AD SAML-token versleuteling configureren
 
@@ -124,7 +124,7 @@ Wanneer u een sleutel referentie configureert met Graph, Power shell of in het m
 
 1. Gebruik de nieuwste Azure AD Power shell-module om verbinding te maken met uw Tenant.
 
-1. Stel de coderings instellingen voor tokens in met de opdracht **[set-azurekunt](/powershell/module/azuread/set-azureadapplication?view=azureadps-2.0-preview)** .
+1. Stel de coderings instellingen voor tokens in met de opdracht **[set-azurekunt](/powershell/module/azuread/set-azureadapplication?view=azureadps-2.0-preview&preserve-view=true)** .
 
     ```
     Set-AzureADApplication -ObjectId <ApplicationObjectId> -KeyCredentials "<KeyCredentialsObject>"  -TokenEncryptionKeyId <keyID>

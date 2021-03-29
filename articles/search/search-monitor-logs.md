@@ -8,16 +8,16 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: e29e20d071e992b941b2f6bd803c8dade044fbfd
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 3c8dd5cd9da2fd1e741635a6471c0662066d147e
+ms.sourcegitcommit: dae6b628a8d57540263a1f2f1cdb10721ed1470d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100592477"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105709936"
 ---
 # <a name="collect-and-analyze-log-data-for-azure-cognitive-search"></a>Logboek gegevens voor Azure Cognitive Search verzamelen en analyseren
 
-Diagnostische of operationele logboeken bieden inzicht in de gedetailleerde bewerkingen van Azure Cognitive Search en zijn nuttig voor het bewaken van service-en workload-processen. Intern is voor een korte periode een aantal systeem gegevens op de back-end aanwezig, voldoende voor onderzoek en analyse als u een ondersteunings ticket bijwerkt. Als u echter zelf richting wilt hebben over operationele gegevens, moet u een diagnostische instelling configureren om op te geven waar logboek gegevens worden verzameld.
+Diagnostische of operationele logboeken bieden inzicht in de gedetailleerde bewerkingen van Azure Cognitive Search en zijn nuttig voor het bewaken van service-en workload-processen. Intern behoudt micro soft de systeem gegevens op de back-end korte tijd (ongeveer 30 dagen), voldoende voor onderzoek en analyse als u een ondersteunings ticket bijwerkt. Als u echter eigendom wilt zijn van operationele gegevens, moet u een diagnostische instelling configureren om op te geven waar logboek gegevens worden verzameld.
 
 Diagnostische logboek registratie wordt ingeschakeld via integratie met [Azure monitor](../azure-monitor/index.yml). 
 
@@ -76,14 +76,14 @@ Twee tabellen bevatten logboeken en metrische gegevens voor Azure Cognitive Sear
 
 1. Voer de volgende query in om een resultatenset in tabel vorm te retour neren.
 
-   ```
+   ```kusto
    AzureMetrics
-    | project MetricName, Total, Count, Maximum, Minimum, Average
+   | project MetricName, Total, Count, Maximum, Minimum, Average
    ```
 
 1. Herhaal de vorige stappen, beginnend met **AzureDiagnostics** om alle kolommen voor informatieve doel einden te retour neren, gevolgd door een meer selectieve query waarmee interessante informatie wordt geëxtraheerd.
 
-   ```
+   ```kusto
    AzureDiagnostics
    | project OperationName, resultSignature_d, DurationMs, Query_s, Documents_d, IndexName_s
    | where OperationName == "Query.Search" 
@@ -99,7 +99,7 @@ Als u diagnostische logboek registratie hebt ingeschakeld, kunt u een query uitv
 
 Retourneert een lijst met bewerkingen en een telling van elke bewerking.
 
-```
+```kusto
 AzureDiagnostics
 | summarize count() by OperationName
 ```
@@ -108,7 +108,7 @@ AzureDiagnostics
 
 Correleer een query aanvraag met indexerings bewerkingen en Genereer de gegevens punten in een tijd diagram om de bewerkingen samen te zien.
 
-```
+```kusto
 AzureDiagnostics
 | summarize OperationName, Count=count()
 | where OperationName in ('Query.Search', 'Indexing.Index')
@@ -120,7 +120,7 @@ AzureDiagnostics
 
 Geregistreerde gebeurtenissen die door Azure Monitor zijn vastgelegd, zijn onder andere die zijn gerelateerd aan indexering en query's. De **AzureDiagnostics** -tabel in log Analytics verzamelt operationele gegevens met betrekking tot query's en indexering.
 
-| OperationName | Beschrijving |
+| OperationName | Description |
 |---------------|-------------|
 | ServiceStats | Met deze bewerking wordt een routine aanroep uitgevoerd om [service statistieken](/rest/api/searchservice/get-service-statistics)op te halen, direct of impliciet te worden aangeroepen om een portal overzichts pagina te vullen wanneer deze wordt geladen of vernieuwd. |
 | Query. Search |  Query's aanvragen voor een index Zie [controle query's](search-monitor-queries.md) voor informatie over vastgelegde query's.|

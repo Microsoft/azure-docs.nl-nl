@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 09/04/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 07a3deaf67c4f269b01d62ea25ddb212c1e01f6f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 73251fcbe9f149979d3fd62d14bbca86d77027f2
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "101657533"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105640132"
 ---
 # <a name="create-a-real-time-dashboard-using-azure-cosmos-db-and-power-bi"></a>Maak een realtime-dash board met behulp van Azure Cosmos DB en Power BI
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -72,7 +72,7 @@ Stel een opname pijplijn in om [weer gegevens](https://catalog.data.gov/dataset?
    
    |Eigenschap  |Gegevenstype  |Filter  |
    |---------|---------|---------|
-   |_ts     |   Numeriek      |  [_ts] > duration. TotalSeconds (Range Start-#datetime (1970, 1, 1, 0, 0, 0)) en [_ts] < duration. TotalSeconds (RangeEnd-#datetime (1970, 1, 1, 0, 0, 0))       |
+   |_ts        |   Numeriek      |  [_ts] > duration. TotalSeconds (Range Start-#datetime (1970, 1, 1, 0, 0, 0)) en [_ts] < duration. TotalSeconds (RangeEnd-#datetime (1970, 1, 1, 0, 0, 0))       |
    |Datum (bijvoorbeeld:-2019-08-19)     |   Tekenreeks      | [Document. date] > DateTime. ToText (Range Start, "JJJJ-MM-DD") en [document. date] < DateTime. ToText (RangeEnd, "JJJJ-MM-DD")        |
    |Datum (bijvoorbeeld:-2019-08-11 12:00:00)   |  Tekenreeks       |  [Document. date] > DateTime. ToText (Range Start, "jjjj-mm-dd uu: mm: SS") en [document. date] < DateTime. ToText (RangeEnd, "jjjj-mm-dd uu: mm: SS")       |
 
@@ -100,7 +100,7 @@ Stel een opname pijplijn in om [weer gegevens](https://catalog.data.gov/dataset?
 
 1. **Een nieuw Azure Analysis Services-cluster maken**  -  [Maak een exemplaar van Azure Analysis Services](../analysis-services/analysis-services-create-server.md) in dezelfde regio als het Azure Cosmos-account en het Databricks-cluster.
 
-1. **Een nieuw Analysis Services Tabellaire project maken in Visual Studio**  -   [Installeer de SQL Server Data tools (SSDT)](/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017&preserve-view=true) en maak een Analysis Services tabellaire project in Visual Studio.
+1. **Een nieuw Analysis Services Tabellaire project maken in Visual Studio**  -   [Installeer de SQL Server Data tools (SSDT)](/sql/ssdt/download-sql-server-data-tools-ssdt) en maak een Analysis Services tabellaire project in Visual Studio.
 
    :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/create-analysis-services-project.png" alt-text="Azure Analysis Services project maken":::
 

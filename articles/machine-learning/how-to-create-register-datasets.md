@@ -12,12 +12,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 07/31/2020
-ms.openlocfilehash: 54b1fd14f97855dd42afde9a4bb34795373ff229
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 81779d942b31f940d579de623ecb39c35d3a8b14
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103417634"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105642137"
 ---
 # <a name="create-azure-machine-learning-datasets"></a>Azure Machine Learning-gegevenssets maken
 
@@ -52,7 +52,7 @@ Als u gegevens sets wilt maken en gebruiken, hebt u het volgende nodig:
     * Werk met uw eigen Jupyter-notebook en installeer de SDK zelf met [deze instructies](/python/api/overview/azure/ml/install).
 
 > [!NOTE]
-> Sommige dataset-klassen hebben afhankelijkheden van het pakket voor [azureml-dataprep](/python/api/azureml-dataprep/) . Dit is alleen compatibel met 64-bits python. Voor Linux-gebruikers worden deze klassen alleen ondersteund in de volgende distributies: Red Hat Enterprise Linux (7, 8), Ubuntu (14,04, 16,04, 18,04), Fedora (27, 28), Debian (8, 9) en CentOS (7). Als u niet-ondersteunde distributies gebruikt, volgt u [deze hand leiding](/dotnet/core/install/linux) om .net Core 2,1 te installeren om door te gaan. 
+> Sommige dataset-klassen hebben afhankelijkheden van het pakket voor [azureml-dataprep](https://pypi.org/project/azureml-dataprep/) . Dit is alleen compatibel met 64-bits python. Voor Linux-gebruikers worden deze klassen alleen ondersteund in de volgende distributies: Red Hat Enterprise Linux (7, 8), Ubuntu (14,04, 16,04, 18,04), Fedora (27, 28), Debian (8, 9) en CentOS (7). Als u niet-ondersteunde distributies gebruikt, volgt u [deze hand leiding](/dotnet/core/install/linux) om .net Core 2,1 te installeren om door te gaan. 
 
 ## <a name="compute-size-guidance"></a>Richt lijn voor reken capaciteit
 

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 3f348a5005f28fdd1d02be706ca2742d77368288
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: aa224a09317aafd49ae10c89ae0c50455ddd4602
+ms.sourcegitcommit: dae6b628a8d57540263a1f2f1cdb10721ed1470d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100592377"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105709919"
 ---
 # <a name="monitor-operations-and-activity-of-azure-cognitive-search"></a>Bewerkingen en activiteiten van Azure Cognitive Search bewaken
 
@@ -38,9 +38,9 @@ De volgende scherm afbeelding helpt u bij het vinden van controle-informatie in 
 
 * Op het tabblad **controle** , op de hoofd pagina overzicht, wordt een query volume, latentie en of de service onder druk staat weer gegeven.
 * **Activiteiten logboek**, in het navigatie deel venster aan de linkerkant, is verbonden met Azure Resource Manager. Het activiteiten logboek rapporteert over acties die door Resource Manager worden uitgevoerd: Beschik baarheid van de service en status, wijzigingen in capaciteit (replica's en partities) en activiteiten die betrekking hebben op de API-sleutel.
-* **Bewakings** instellingen, verder omlaag, biedt Configureer bare waarschuwingen, metrische gegevens en Diagnostische logboeken. Maak deze wanneer u ze nodig hebt. Zodra de gegevens zijn verzameld en opgeslagen, kunt u de informatie voor inzichten opvragen of visualiseren.
+* **Bewakings** instellingen, verder omlaag, biedt Configureer bare waarschuwingen, de visualisatie van metrische gegevens en Diagnostische logboeken. Maak deze wanneer u ze nodig hebt. Zodra de gegevens zijn verzameld en opgeslagen, kunt u de informatie voor inzichten opvragen of visualiseren.
 
-![Integratie in een zoek service Azure Monitor](./media/search-monitor-usage/azure-monitor-search.png
+  ![Integratie in een zoek service Azure Monitor](./media/search-monitor-usage/azure-monitor-search.png
  "Integratie in een zoek service Azure Monitor")
 
 > [!NOTE]
@@ -94,7 +94,7 @@ Azure Monitor heeft een eigen facturerings structuur en de diagnostische logboek
 
 ## <a name="monitor-user-access"></a>Gebruikers toegang controleren
 
-Omdat zoek indexen een onderdeel zijn van een grotere client toepassing, is er geen ingebouwde methodologie voor het beheren of bewaken van toegang per gebruiker tot een index. Er wordt van uitgegaan dat er aanvragen worden opgehaald uit een client toepassing, voor beheerders-of query aanvragen. Lees-en schrijf bewerkingen door de beheerder omvatten het maken, bijwerken en verwijderen van objecten in de gehele service. Alleen-lezen bewerkingen zijn query's voor de verzameling documenten, met een bereik van één index. 
+Omdat zoek indexen een onderdeel zijn van een grotere client toepassing, is er geen ingebouwde methodologie voor het beheren of bewaken van toegang per gebruiker tot een index. Er wordt van uitgegaan dat aanvragen afkomstig zijn van een client toepassing die ofwel een beheerder of een query aanvraag aanbiedt. Lees-en schrijf bewerkingen door de beheerder omvatten het maken, bijwerken en verwijderen van objecten in de gehele service. Alleen-lezen bewerkingen zijn query's voor de verzameling documenten, met een bereik van één index. 
 
 Wat u in de activiteiten logboeken ziet, zijn verwijzingen naar aanroepen met behulp van beheer sleutels of query sleutels. De juiste sleutel is opgenomen in aanvragen die afkomstig zijn van client code. De service is niet ingericht voor het afhandelen van identiteits tokens of imitatie.
 

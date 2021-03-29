@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: 7402172473056f191c2c50fa8aa8bd99d4e948eb
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 880185a33ec16ffc30d6412d3f27a69ce81a7880
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "101095917"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105642155"
 ---
 # <a name="protect-your-content-with-media-services-dynamic-encryption"></a>Uw inhoud beveiligen met Media Services dynamische versleuteling
 
@@ -265,12 +265,3 @@ Als er fouten optreden die eindigen op `_NOT_SPECIFIED_IN_URL` , zorg er dan voo
 ## <a name="ask-questions-give-feedback-get-updates"></a>Vragen stellen, feedback geven, updates ophalen
 
 Ga naar het artikel van de [Azure Media Services-community](media-services-community.md) voor verschillende manieren om vragen te stellen, feedback te geven en updates voor Media Services op te halen.
-
-## <a name="next-steps"></a>Volgende stappen
-
-* [Beveiligen met AES-versleuteling](protect-with-aes128.md)
-* [Beschermen met DRM](protect-with-drm.md)
-* [Multi-DRM-inhouds beschermings systeem ontwerpen met toegangs beheer](design-multi-drm-system-with-access-control.md)
-* [Versleuteling van opslag side](storage-account-concept.md#storage-side-encryption)
-* [Veelgestelde vragen](frequently-asked-questions.md)
-* [JSON Web Token-handler](/dotnet/framework/security/json-web-token-handler)

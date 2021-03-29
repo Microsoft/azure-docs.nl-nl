@@ -420,7 +420,7 @@
           href: search-security-rbac.md
     - name: Controleren
       items:
-        - name: Basisprincipes
+        - name: Overzicht
           href: search-monitor-usage.md
         - name: Diagnostische logboeken
           href: search-monitor-logs.md

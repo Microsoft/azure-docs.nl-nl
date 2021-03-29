@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 3/10/2021
 ms.author: anilmur
 ms.reviewer: juliako;johndeu
-ms.openlocfilehash: 8173da37792948e267aae2078fee9f864bf7bdc9
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 744d302afd21e6521fb17bf7bef6e68d21fb8372
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103011150"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105639385"
 ---
 # <a name="create-advanced-encoding-workflows-with-workflow-designer"></a>Geavanceerde encoding-werkstromen maken met Workflow Designer
 
@@ -45,7 +45,7 @@ Dit hulp programma kan ook worden gebruikt om een van onze [gepubliceerde werk s
 Zodra een werk stroom bestand is gemaakt, kan het worden geüpload als een Asset en vervolgens worden gebruikt voor het coderen van media bestanden. Zie [geavanceerde code ring met Media Encoder Premium workflow](media-services-encode-with-premium-workflow.md)voor meer informatie over het coderen met **Media Encoder Premium workflow** met behulp van **.net**.
 
 ## <a name="modify-existing-workflows"></a><a id="existing_workflows"></a>Bestaande werk stromen wijzigen
-De standaard [gepubliceerde werk stromen](media-services-workflow-designer.md#existing_workflows) kunnen worden gewijzigd met behulp van het ontwerp hulpprogramma. U kunt [hier](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/MediaEncoderPremiumWorkfows)de standaard werk stroom bestanden ophalen. De map bevat ook de beschrijving van deze bestanden.
+De standaard [gepubliceerde werk stromen](media-services-workflow-designer.md#existing_workflows) kunnen worden gewijzigd met behulp van het ontwerp hulpprogramma. U kunt [hier](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/media-services/previous/media-services-encode-with-premium-workflow.md)de standaard werk stroom bestanden ophalen. De map bevat ook de beschrijving van deze bestanden.
 
 De volgende Video's laten zien hoe u de ontwerp functie kunt gebruiken.
 

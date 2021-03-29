@@ -8,16 +8,16 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 03/05/2021
 ms.author: alkohli
-ms.openlocfilehash: 6683e39cfa3601b1ae1fbbe02e69e4dc0a54e8e7
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: ff1c7b79a49b0b659056c89af3c61f28b72ebc50
+ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103564892"
+ms.lasthandoff: 03/28/2021
+ms.locfileid: "105645237"
 ---
 # <a name="gpu-sharing-on-your-azure-stack-edge-pro-gpu-device"></a>GPU delen op uw Azure Stack Edge Pro GPU-apparaat
 
-GPU (graphics processing unit) is een gespecialiseerde processor die is ontworpen om grafische rendering te versnellen. Met Gpu's kunnen veel gegevens tegelijk worden verwerkt, waardoor ze nuttig zijn voor machine learning, video bewerking en gaming toepassingen. Naast CPU voor algemeen gebruik kan uw Azure Stack Edge Pro GPU-apparaten een of twee Nvidia Tesla T4-Gpu's bevatten voor computerintensieve werk belastingen, zoals versneld deprocessoren van hardware. Zie [Nvidia Tesla T4 GPU](https://www.nvidia.com/data-center/tesla-t4/)(Engelstalig) voor meer informatie.
+GPU (graphics processing unit) is een gespecialiseerde processor die is ontworpen om grafische rendering te versnellen. Met Gpu's kunnen veel gegevens tegelijk worden verwerkt, waardoor ze nuttig zijn voor machine learning, video bewerking en gaming toepassingen. Naast CPU voor algemeen gebruik kan uw Azure Stack Edge Pro GPU-apparaten een of twee Nvidia Tesla T4-Gpu's bevatten voor computerintensieve werk belastingen, zoals versneld deprocessoren van hardware. Zie [Nvidia Tesla T4 GPU](https://www.nvidia.com/en-us/data-center/tesla-t4/)(Engelstalig) voor meer informatie.
 
 
 ## <a name="about-gpu-sharing"></a>Over het delen van GPU

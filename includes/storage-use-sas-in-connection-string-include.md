@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: tamram
 ms.openlocfilehash: 2f27c50b1d016265c20102521a137bcbb0646115
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "67176253"
 ---
 Als u beschikt over een SAS-URL (Shared Access Signature) waarmee u toegang krijgt tot resources in een opslag account, kunt u de SAS gebruiken in een connection string. Omdat de SAS de informatie bevat die nodig is om de aanvraag te verifiëren, levert een connection string met een SAS het Protocol, het service-eind punt en de benodigde referenties voor toegang tot de bron.

@@ -4,10 +4,10 @@ description: Meer informatie over het gebruik van REST API voor het beheren en b
 ms.topic: conceptual
 ms.date: 02/17/2020
 ms.openlocfilehash: 5e2823472c6a7bdd6b3f9819db3079d7efa78c4e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "88892844"
 ---
 # <a name="manage-azure-file-share-backup-with-rest-api"></a>Back-ups van Azure-bestands shares beheren met REST API

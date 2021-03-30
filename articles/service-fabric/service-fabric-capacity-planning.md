@@ -4,10 +4,10 @@ description: Hierin wordt beschreven hoe u het aantal reken knooppunten kunt ide
 ms.topic: conceptual
 ms.date: 2/23/2018
 ms.openlocfilehash: cd5a5c55ff873e4891ac63361d0c4a0b56d70109
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "75377205"
 ---
 # <a name="capacity-planning-for-service-fabric-applications"></a>Capaciteits planning voor Service Fabric toepassingen

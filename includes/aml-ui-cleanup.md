@@ -9,10 +9,10 @@ author: sgilley
 ms.author: sgilley
 ms.date: 11/06/2019
 ms.openlocfilehash: 754c9799ed4c2fd90cbcf1e9717b0be21edd54cb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "75659866"
 ---
 >[!IMPORTANT]
@@ -36,7 +36,7 @@ Als u de resource groep verwijdert, worden ook alle resources verwijderd die u i
 
 In de ontwerpfunctie waar u uw experiment hebt gemaakt, verwijdert u afzonderlijke assets door ze te selecteren en vervolgens de knop **Verwijderen** te selecteren.
 
-Het rekendoel dat u hier hebt gemaakt, wordt, wanneer het niet wordt gebruikt, *automatisch geschaald* naar nul knooppunten. Deze actie wordt uitgevoerd om de kosten te minimaliseren. Als u het rekendoel wilt verwijderen, voert u de volgende stappen uit:
+Het rekendoel dat u hier hebt gemaakt, wordt, wanneer het niet wordt gebruikt, *automatisch geschaald* naar nul knooppunten. Deze actie wordt uitgevoerd om de kosten te minimaliseren.  Als u het rekendoel wilt verwijderen, voert u de volgende stappen uit:
 
 ![Assets verwijderen](./media/aml-ui-cleanup/delete-asset.png)
 

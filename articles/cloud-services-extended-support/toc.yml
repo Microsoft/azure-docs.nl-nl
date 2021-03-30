@@ -77,7 +77,7 @@
       href: sample-get-cloud-service.md
     - name: Een Cloud service opnieuw instellen
       href: sample-reset-cloud-service.md
-- name: Naslaginformatie
+- name: Referentie
   items:
     - name: Voor beelden van implementatie bestanden
       href: 'https://github.com/Azure-Samples/cloud-services-extended-support'
@@ -90,7 +90,7 @@
     - name: REST
       href: /rest/api/compute/cloudservices
     - name: .NET
-      href: /dotnet/api/overview/azure/virtualmachines/management?view=azure-dotnet-preview
+      href: /dotnet/api/overview/azure/virtualmachines/management
     - name: SDK
       href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.Compute/43.0.0-preview'
 - name: Resources

@@ -16,10 +16,10 @@ ms.date: 06/05/2017
 ms.author: alkohli
 ms.custom: ''
 ms.openlocfilehash: 35fa0fc134045585eebd21324352f9b4ff272e87
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "94954236"
 ---
 # <a name="use-storsimple-snapshot-manager-user-interface-to-manage-backup-jobs-and-backup-catalog"></a>StorSimple Snapshot Manager gebruikers interface gebruiken voor het beheren van back-uptaken en een back-upcatalogus
@@ -67,7 +67,7 @@ Klik op **bestand** in de menu balk om het menu **bestand** weer te geven. Het v
 #### <a name="menu-description"></a>Menu beschrijving
 In de volgende tabel worden de items beschreven die worden weer gegeven in het menu **bestand** .
 
-| Menu-item | Beschrijving |
+| Menu-item | Description |
 |:--- |:--- |
 | Nieuw |Klik op **Nieuw** om een nieuwe console te maken op basis van de StorSimple-Snapshot Manager. |
 | Openen |Klik op **openen** om een bestaande console te openen. |
@@ -107,7 +107,7 @@ De volgende tabel bevat een alfabetische lijst met StorSimple-Snapshot Manager a
 > 
 > 
 
-| Bewerking | Navigatie | Beschrijving |
+| Bewerking | Navigatie | Description |
 |:--- |:--- |:--- |
 | Verifiëren |Klik op het knoop punt **apparaten** en klik met de rechter muisknop op een apparaat in het **resultaten** venster. |Klik op **verifiëren** om het wacht woord in te voeren dat u voor het apparaat hebt geconfigureerd. |
 | Klonen |Vouw **back-upcatalogus** uit, vouw **Cloud momentopnamen** uit, klik op een gedateerde back-up en selecteer vervolgens een volume in het **resultaten** venster. |Klik op **klonen** om een kopie van een Cloud momentopname te maken en op te slaan op een locatie die u opgeeft. |
@@ -139,7 +139,7 @@ U kunt het menu **weer geven** openen via de menu balk of in het deel venster **
 #### <a name="menu-description"></a>Menu beschrijving
 In de volgende tabel worden de items beschreven die worden weer gegeven in het menu **beeld** .
 
-| Menu-item | Beschrijving |
+| Menu-item | Description |
 |:--- |:--- |
 | Kolommen toevoegen/verwijderen |Klik op **kolommen toevoegen/verwijderen** om kolommen toe te voegen aan of te verwijderen uit het **resultaten** venster. |
 | Aanpassen |Klik op **aanpassen** om items weer te geven of te verbergen in het StorSimple Snapshot Manager console venster. |
@@ -155,7 +155,7 @@ U kunt het menu **Favorieten** openen via de menu balk.
 #### <a name="menu-description"></a>Menu beschrijving
 In de volgende tabel worden de items beschreven die in het menu **Favorieten** worden weer gegeven.
 
-| Menu-item | Beschrijving |
+| Menu-item | Description |
 |:--- |:--- |
 | Toevoegen aan Favorieten |Klik op **toevoegen aan favorieten** om de huidige weer gave toe te voegen aan de lijst met favorieten. |
 | Favorieten ordenen |Klik op **Favorieten ordenen** om de inhoud van de map Favorieten in te delen. |
@@ -173,7 +173,7 @@ De genummerde lijst onder in het menu toont de Vensters die momenteel zijn geope
 #### <a name="menu-description"></a>Menu beschrijving
 In de volgende tabel worden de items beschreven die worden weer gegeven in het menu venster.
 
-| Menu-item | Beschrijving |
+| Menu-item | Description |
 |:--- |:--- |
 | Nieuw venster |Klik op **nieuw venster** om een nieuw console venster te openen (naast het bestaande venster). |
 | Vensters |Klik op **trapsgewijs** om de geopende console vensters in een trapsgewijze stijl weer te geven. |
@@ -190,7 +190,7 @@ U kunt het menu **Help** openen in de menu balk. U kunt ook toegang krijgen tot 
 #### <a name="menu-description"></a>Menu beschrijving
 In de volgende tabel worden de items beschreven die in het menu Help worden weer gegeven.
 
-| Menu-item | Beschrijving |
+| Menu-item | Description |
 |:--- |:--- |
 | Help bij StorSimple Snapshot Manager |Klik op **Help op StorSimple Snapshot Manager** om StorSimple Snapshot Manager Help in een afzonderlijk venster te openen. |
 | Help-onderwerpen |Klik op **Help-onderwerpen** om de online Help van MMC te openen in een afzonderlijk venster. |
@@ -204,7 +204,7 @@ De werk balk bevindt zich onder de menu balk en bevat navigatie-en taak pictogra
 ### <a name="icon-descriptions"></a>Pictogram beschrijvingen
 In de volgende tabel worden de pictogrammen beschreven die worden weer gegeven op de werk balk. 
 
-| Pictogram | Beschrijving |
+| Pictogram | Description |
 |:--- |:--- |
 | ![Pijl-links](./media/storsimple-use-snapshot-manager/HCS_SSM_LeftArrow.png) |Klik op het pictogram met de pijl naar links om terug te keren naar de vorige pagina. |
 | ![Pijl-rechts](./media/storsimple-use-snapshot-manager/HCS_SSM_RightArrow.png) |Klik op de pijl-rechts om naar de volgende pagina te gaan (als de pijl grijs is, is de actie niet beschikbaar). |

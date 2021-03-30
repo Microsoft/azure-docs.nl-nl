@@ -8,12 +8,12 @@ ms.author: parkerra
 ms.date: 11/20/2020
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 3048eb1ca7f9312a43bc1ab5885bf19d4c2e7931
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.openlocfilehash: 3ed9b18144bb727af751fbcbbdd5cc6631afc40f
+ms.sourcegitcommit: 91361cbe8fff7c866ddc4835251dcbbe2621c055
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185286"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105727226"
 ---
 # <a name="tutorial-share-spatial-anchors-across-sessions-and-devices"></a>Zelfstudie: Ruimtelijke ankers delen in sessies en apparaten
 
@@ -79,14 +79,14 @@ Gebruik deze instellingen in het deelvenster **Hostingabonnement configureren**:
 | Instelling | Voorgestelde waarde | Beschrijving |
 |-|-|-|
 |App Service-plan| MySharingServicePlan | De naam van het App Service-plan |
-| Locatie | VS - west | Het datacenter waar de web-app wordt gehost |
+| Locatie | VS - west | Het datacentrum waar de web-app wordt gehost |
 | Grootte | Gratis | De [prijscategorie](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) die de hosting-functies bepaalt |
 
 Selecteer **OK**.
 
 Open Visual Studio Code en open vervolgens het project in de map *Sharing\SharingServiceSample*. 
 
-Volg de instructies in <a href="/aspnet/core/tutorials/publish-to-azure-webapp-using-vscode?view=aspnetcore-2.2#open-it-with-visual-studio-code" target="_blank">Een ASP.NET Core-app publiceren in Azure met Visual Studio Code</a> als u de service voor delen via Visual Studio Code wilt implementeren. Begin met de sectie 'Openen met Visual Studio Code'. Maak geen ander ASP.NET-project zoals uitgelegd in de voorgaande stap, want u beschikt al over een project dat moet worden geïmplementeerd en gepubliceerd: SharingServiceSample.
+Volg de instructies in <a href="/aspnet/core/tutorials/publish-to-azure-webapp-using-vscode?view=aspnetcore-2.2&preserve-view=true#open-it-with-visual-studio-code" target="_blank">Een ASP.NET Core-app publiceren in Azure met Visual Studio Code</a> als u de service voor delen via Visual Studio Code wilt implementeren. Begin met de sectie 'Openen met Visual Studio Code'. Maak geen ander ASP.NET-project zoals uitgelegd in de voorgaande stap, want u beschikt al over een project dat moet worden geïmplementeerd en gepubliceerd: SharingServiceSample.
 
 ---
 

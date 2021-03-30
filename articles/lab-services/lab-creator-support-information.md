@@ -4,10 +4,10 @@ description: In dit artikel wordt uitgelegd hoe Lab makers ondersteunings inform
 ms.date: 06/26/2020
 ms.topic: how-to
 ms.openlocfilehash: 3e04245c3f2d9b0a4f4e98ae21287983cf679ec6
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "85445046"
 ---
 # <a name="view-support-information-lab-creator-in-azure-lab-services"></a>Ondersteunings informatie (ontwikkel aars in Azure Lab Services) weer geven

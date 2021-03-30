@@ -11,10 +11,10 @@ ms.date: 09/08/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 30348d7ca12ded2d1f4b0522a7cabeadf0553a07
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "94953352"
 ---
 # <a name="overview-of-policy-keys-in-azure-active-directory-b2c"></a>Overzicht van beleids sleutels in Azure Active Directory B2C
@@ -38,9 +38,9 @@ De resource op het hoogste niveau voor beleids sleutels in Azure AD B2C is de co
 
 | Kenmerk |  Vereist | Opmerkingen |
 | --- | --- |--- |
-| `use` | Ja | Gebruik: geeft het beoogde gebruik van de open bare sleutel aan. Gegevens versleutelen `enc` of de hand tekening op gegevens verifiëren `sig` .|
-| `nbf`| Nee | Datum en tijd van de activering. |
-| `exp`| Nee | Verval datum en-tijd. |
+| `use` | Yes | Gebruik: geeft het beoogde gebruik van de open bare sleutel aan. Gegevens versleutelen `enc` of de hand tekening op gegevens verifiëren `sig` .|
+| `nbf`| No | Datum en tijd van de activering. |
+| `exp`| No | Verval datum en-tijd. |
 
 We raden u aan om de sleutel activering en verloop waarden in te stellen op basis van uw PKI-standaarden. Mogelijk moet u deze certificaten regel matig draaien om beveiligings-of beleids redenen. Zo kunt u bijvoorbeeld een beleid hebben om elk jaar al uw certificaten te draaien.
 

@@ -9,10 +9,10 @@ ms.date: 07/06/2020
 ms.author: danlep
 ms.custom: include file
 ms.openlocfilehash: 1b7c8487eb42204f2741679c9ef6eb2717c272cd
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "86057348"
 ---
 In de uitvoer van de opdracht ziet u in de `identity` sectie een identiteit van `SystemAssigned` het type is ingesteld in de taak. De `principalId` is de principal-id van de taak identiteit:

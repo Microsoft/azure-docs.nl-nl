@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 03/04/2021
 ms.author: trbye
 ms.custom: devx-track-js
-ms.openlocfilehash: 7649f9c13db1a10bdb48d19f1019ec3b31244f45
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 5a8065daca11e5b79f02510f82ab622c8fb1af2d
+ms.sourcegitcommit: 91361cbe8fff7c866ddc4835251dcbbe2621c055
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105104378"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105729759"
 ---
 Een van de belangrijkste functies van de Speech-service is de mogelijkheid om menselijke spraak te herkennen en te transcriberen (ook wel spraak-naar-tekst genoemd). In deze quickstart leert u meer over het gebruik van de Speech-SDK in uw apps en producten om spraak-naar-tekst-conversie van hoge kwaliteit uit te voeren.
 
@@ -62,7 +62,7 @@ Het herkennen van spraak van een microfoon wordt **niet ondersteund in Node.js**
 
 ## <a name="recognize-from-file"></a>Herkennen vanuit bestand 
 
-Als u spraak wilt herkennen vanuit een audio bestand, maakt `AudioConfig` u een using `fromWavFileInput()` waarmee een object wordt geaccepteerd `Buffer` . Initialiseer vervolgens een [`SpeechRecognizer`](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechrecognizer?view=azure-node-latest), waarbij uw `audioConfig` en `speechConfig` worden doorgegeven.
+Als u spraak wilt herkennen vanuit een audio bestand, maakt `AudioConfig` u een using `fromWavFileInput()` waarmee een object wordt geaccepteerd `Buffer` . Initialiseer vervolgens een [`SpeechRecognizer`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechrecognizer), waarbij uw `audioConfig` en `speechConfig` worden doorgegeven.
 
 ```javascript
 const fs = require('fs');

@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: ccff5b4dc6ed5a571e25ab0569b9fa92674e1340
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "88140731"
 ---
 # <a name="provision-nodes-for-azure-vmware-solution-by-cloudsimple"></a>Knoop punten inrichten voor Azure VMware-oplossing op CloudSimple

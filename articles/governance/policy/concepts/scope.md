@@ -4,10 +4,10 @@ description: Hierin wordt het concept van bereik in Azure Resource Manager besch
 ms.date: 09/22/2020
 ms.topic: conceptual
 ms.openlocfilehash: 83eda330a35b007abfa37046a202b14728726849
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "90984438"
 ---
 # <a name="understand-scope-in-azure-policy"></a>Bereik in Azure Policy begrijpen

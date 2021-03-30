@@ -4,10 +4,10 @@ description: Meer informatie over het oplossen van problemen met de virtuele mac
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: b7d3f3ad34d8a5bb48607816623c67121d21d78c
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "85476475"
 ---
 # <a name="troubleshoot-virtual-machine-vm-and-environment-creation-failures-in-azure-devtest-labs"></a>Problemen met de virtuele machine (VM) en het maken van een omgeving oplossen in Azure DevTest Labs

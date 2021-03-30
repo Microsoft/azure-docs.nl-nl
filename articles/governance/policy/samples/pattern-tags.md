@@ -4,10 +4,10 @@ description: Dit Azure Policy-patroon biedt voorbeelden van hoe u tags met een p
 ms.date: 08/17/2020
 ms.topic: sample
 ms.openlocfilehash: 3016fc7889f68fd13e993c67ca645a4af055c651
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "88545553"
 ---
 # <a name="azure-policy-pattern-tags"></a>Azure Policy-patroon: tags

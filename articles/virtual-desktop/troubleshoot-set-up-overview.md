@@ -7,10 +7,10 @@ ms.date: 12/04/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 4d4bdc4fa15f634b36f12a650b70b9ffd89b40e0
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98539111"
 ---
 # <a name="troubleshooting-overview-feedback-and-support-for-windows-virtual-desktop"></a>Probleemoplossings overzicht, feedback en ondersteuning voor virtueel bureau blad van Windows
@@ -32,7 +32,7 @@ Voordat u iets anders doet, controleert u de [Azure-status pagina](https://statu
 
 Gebruik de volgende tabel voor het identificeren en oplossen van problemen die zich kunnen voordoen bij het instellen van een omgeving met Extern bureaublad-client. Als de omgeving is ingesteld, kunt u onze nieuwe [diagnose service](diagnostics-role-service.md) gebruiken om problemen voor algemene scenario's te identificeren.
 
-| **Name**                                                            | **Voorgestelde oplossing**  |
+| **Probleem**                                                            | **Voorgestelde oplossing**  |
 |----------------------------------------------------------------------|-------------------------------------------------|
 | Instellingen voor de Azure Virtual Network (VNET) en Express-route van de Session Host-pool               | [Open een ondersteunings aanvraag voor Azure](https://azure.microsoft.com/support/create-ticket/)en selecteer vervolgens de betreffende service (onder de categorie netwerken). |
 | De hostgroep van de virtuele machine (VM) maken wanneer Azure Resource Manager sjablonen die worden meegeleverd met Windows virtueel bureau blad niet worden gebruikt | [Open een ondersteunings aanvraag voor Azure](https://azure.microsoft.com/support/create-ticket/)en selecteer vervolgens **Windows virtueel bureau blad** voor de service. <br> <br> Voor problemen met de Azure Resource Manager sjablonen die worden meegeleverd met Windows virtueel bureau blad, raadpleegt u Azure Resource Manager sjabloon fouten sectie van het maken van een [hostgroep](troubleshoot-set-up-issues.md). |

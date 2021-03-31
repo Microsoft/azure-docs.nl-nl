@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 3/10/2021
 ms.author: inhenkel
 ms.openlocfilehash: 0961b52ebc7271fabf4cc05ed99eea23d911a2d4
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103009085"
 ---
 # <a name="streaming-endpoints-overview"></a>Overzicht van streaming-eind punten  
@@ -52,7 +52,7 @@ Voor alle extra eind punten: `{EndpointName}-{AccountName}.streaming.mediaservic
 Vanaf de versie van Media Services januari 2017 hebt u twee streaming-typen: **Standard** (preview) en **Premium**. Deze typen maken deel uit van de streaming-eindpunt versie ' 2,0 '.
 
 
-|Type|Beschrijving|
+|Type|Description|
 |--------|--------|  
 |**Standard**|Het standaard streaming-eind punt is een **standaard** type, dat kan worden gewijzigd in het Premium-type door streaming-eenheden aan te passen.|
 |**Premium** |Deze optie is geschikt voor professionele scenario's die een hogere schaal of beheer vereisen. U gaat naar een **Premium** -type door streaming-eenheden aan te passen.<br/>Toegewezen streaming-eind punten zijn Live in geïsoleerde omgevingen en concurreren niet voor resources.|
@@ -80,9 +80,9 @@ Als het streaming-eind punt van uw **versie 1,0** >= 1 Premium streaming-eenhede
 |Type|StreamingEndpointVersion|ScaleUnits|CDN|Billing|
 |--------------|----------|-----------------|-----------------|-----------------|
 |Klassiek|1.0|0|NA|Gratis|
-|Standard streaming-eind punt (preview-versie)|2,0|0|Ja|Betaald|
-|Premium-streaming-eenheden|1.0|>0|Ja|Betaald|
-|Premium-streaming-eenheden|2,0|>0|Ja|Betaald|
+|Standard streaming-eind punt (preview-versie)|2,0|0|Yes|Betaald|
+|Premium-streaming-eenheden|1.0|>0|Yes|Betaald|
+|Premium-streaming-eenheden|2,0|>0|Yes|Betaald|
 
 ### <a name="features"></a>Functies
 

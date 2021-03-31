@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: jingwang
 ms.openlocfilehash: 1ab404b838af65dcb75395dfeee1ca0553e497a1
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "67176705"
 ---
 ## <a name="specifying-structure-definition-for-rectangular-datasets"></a>De structuur definitie voor rechthoekige gegevens sets opgeven
@@ -18,10 +18,10 @@ Elke kolom bevat de volgende eigenschappen:
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| naam |De naam van de kolom. |Ja |
-| type |Het gegevens type van de kolom. Zie de sectie Type conversies hieronder voor meer informatie over wanneer u type gegevens moet opgeven |Nee |
-| culturele |Op .NET gebaseerde cultuur die moet worden gebruikt wanneer type is opgegeven en is .NET type datetime of date time offset. De standaard waarde is "en-US". |Nee |
-| indeling |Indelings teken reeks die moet worden gebruikt wanneer type is opgegeven en is .NET type datetime of date time offset. |Nee |
+| naam |De naam van de kolom. |Yes |
+| type |Het gegevens type van de kolom. Zie de sectie Type conversies hieronder voor meer informatie over wanneer u type gegevens moet opgeven |No |
+| culturele |Op .NET gebaseerde cultuur die moet worden gebruikt wanneer type is opgegeven en is .NET type datetime of date time offset. De standaard waarde is "en-US". |No |
+| indeling |Indelings teken reeks die moet worden gebruikt wanneer type is opgegeven en is .NET type datetime of date time offset. |No |
 
 In het volgende voor beeld ziet u de JSON sectie structure voor een tabel met drie kolommen GebruikersID, name en lastlogindate.
 

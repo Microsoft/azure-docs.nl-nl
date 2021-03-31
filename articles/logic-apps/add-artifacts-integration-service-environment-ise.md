@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 02/28/2020
 ms.openlocfilehash: 147247c663311cfb3e05a986c6fb2bffbb41158b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92675202"
 ---
 # <a name="add-resources-to-your-integration-service-environment-ise-in-azure-logic-apps"></a>Resources toevoegen aan uw integratie service omgeving (ISE) in Azure Logic Apps
@@ -79,7 +79,7 @@ Voer de volgende stappen uit om een integratie account te maken dat gebruikmaakt
    | **Naam** | Ja | De naam voor het integratie account dat u wilt maken |
    | **Abonnement** | Ja | De naam voor het Azure-abonnement dat u wilt gebruiken |
    | **Resourcegroep** | Ja | De naam voor de Azure-resource groep (nieuw of bestaand) die moet worden gebruikt |
-   | **Prijscategorie** | Ja | De prijs categorie die moet worden gebruikt voor het integratie account |
+   | **Prijscategorie** | Yes | De prijs categorie die moet worden gebruikt voor het integratie account |
    | **Locatie** | Ja | Onder **integratie service omgevingen** selecteert u dezelfde ISE als uw Logic apps, als deze nog niet is geselecteerd. <p><p> **Belang rijk**: als u uw integratie account wilt gebruiken met Logic apps, moeten beide dezelfde ISE gebruiken. |
    ||||
 

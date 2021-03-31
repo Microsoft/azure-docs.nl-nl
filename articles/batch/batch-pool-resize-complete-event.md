@@ -4,10 +4,10 @@ description: Verwijzing voor de voltooiings gebeurtenis voor het wijzigen van de
 ms.topic: reference
 ms.date: 12/28/2020
 ms.openlocfilehash: 9d3342587b5f6e0e134f4295a8c79deeb23df94b
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97803643"
 ---
 # <a name="pool-resize-complete-event"></a>Gebeurtenis formaat pool wijzigen voltooid

@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 01/11/2021
 ms.author: victorh
 ms.openlocfilehash: c425afc314435c38d15d53ab0c38dcd48e35a40b
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102508925"
 ---
 # <a name="azure-firewall-snat-private-ip-address-ranges"></a>Persoonlijke IP-adresbereiken van Azure Firewall SNAT

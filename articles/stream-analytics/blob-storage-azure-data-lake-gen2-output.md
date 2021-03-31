@@ -7,10 +7,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 01/27/2021
 ms.openlocfilehash: 3ce22837da2ca30249b399a297b6188d950b1ea4
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98935148"
 ---
 # <a name="blob-storage-and-azure-data-lake-gen2-output-from-azure-stream-analytics"></a>Blob-opslag en Azure Data Lake Gen2 uitvoer van Azure Stream Analytics
@@ -23,7 +23,7 @@ Azure Blob-opslag biedt een voordelige en schaal bare oplossing voor het opslaan
 
 De volgende tabel bevat de namen van de eigenschappen en de bijbehorende beschrijvingen voor het maken van een BLOB of ADLS Gen2 uitvoer.
 
-| Naam van eigenschap       | Beschrijving                                                                      |
+| Naam van eigenschap       | Description                                                                      |
 | ------------------- | ---------------------------------------------------------------------------------|
 | Uitvoeralias        | Een beschrijvende naam die wordt gebruikt in query's om de uitvoer van de query naar deze Blob-opslag te sturen. |
 | Storage-account     | De naam van het opslag account waarin u uw uitvoer wilt verzenden.               |

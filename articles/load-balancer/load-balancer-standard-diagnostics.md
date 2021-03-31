@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 01/25/2021
 ms.author: allensu
 ms.openlocfilehash: 29584a9453fa052745f417cba0bbe940766c30e9
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101699076"
 ---
 # <a name="standard-load-balancer-diagnostics-with-metrics-alerts-and-resource-health"></a>Diagnose van Standard Load Balancer met metrische gegevens, meldingen en status van resources
@@ -34,7 +34,7 @@ Azure Load Balancer biedt multidimensionale metrische gegevens via de metrische 
 
 De verschillende Standard Load Balancer configuraties bieden de volgende metrische gegevens:
 
-| Metrisch | Resourcetype | Beschrijving | Aanbevolen aggregatie |
+| Metrisch | Resourcetype | Description | Aanbevolen aggregatie |
 | --- | --- | --- | --- |
 | Gegevenspadbeschikbaarheid | Openbare en interne load balancer | Standard Load Balancer oefent doorlopend het gegevenspad vanuit een regio naar de front-end van de load balancer, helemaal tot de SDN-stack die ondersteuning biedt voor de VM. Zolang de gezonde instanties blijven bestaan, volgt de meting hetzelfde pad als het verkeer met gelijke taak verdeling van uw toepassing. Het gegevenspad dat uw klanten gebruiken, wordt ook gevalideerd. De meting is onzichtbaar voor de toepassing en heeft geen invloed op andere bewerkingen.| Average |
 | Status van statustest | Openbare en interne load balancer | Standard Load Balancer maakt gebruik van een gedistribueerde status-probing-service die de status van uw toepassings eindpunt bewaakt volgens de configuratie-instellingen. Deze metriek biedt een gefilterde weergave van een aggregatie of per-eindpunt van elk exemplaareindpunt in de load balancer-groep. U ziet hoe in Load Balancer de status van de toepassing wordt weergegeven, zoals aangeduid via de statustestconfiguratie. |  Average |
@@ -247,7 +247,7 @@ Via de gebruikte SNAT-poorten kunt u een waarschuwing krijgen over een hoger ris
 
 De integriteits status voor de Standard Load Balancer bronnen wordt weer gegeven via de bestaande **resource status** onder **monitor > service Health**. Het wordt elke **twee minuten** geëvalueerd door de beschik baarheid van het gegevenspad te meten. Dit bepaalt of uw frontend-taakverdelings eindpunten beschikbaar zijn.
 
-| Status van resource status | Beschrijving |
+| Status van resource status | Description |
 | --- | --- |
 | Beschikbaar | Uw standaard load balancer resource is in orde en beschikbaar. |
 | Verminderd beschikbaar | Uw standaard load balancer heeft platform of door de gebruiker gestarte gebeurtenissen die invloed hebben op de prestaties. De metriek voor het gegevenspad heeft een beschikbaarheid van minder dan 90% en meer dan 25% gerapporteerd gedurende ten minste twee minuten. U ondervindt aanzienlijke invloed op de prestaties. [Volg de RHC-hand leiding voor probleem oplossing](./troubleshoot-rhc.md) om te bepalen of er door de gebruiker geïnitieerde gebeurtenissen zijn die invloed hebben op uw Beschik baarheid.

@@ -10,10 +10,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 14df0f131aaef8a4c24e2d1eb242a9b440e7c7b0
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "86507587"
 ---
 # <a name="quickstart---create-azure-vmware-solution-by-cloudsimple-service"></a>Quick Start: een Azure VMware-oplossing maken op basis van de CloudSimple-service

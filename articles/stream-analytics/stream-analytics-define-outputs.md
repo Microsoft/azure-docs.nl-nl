@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: contperf-fy21q1
 ms.date: 12/9/2020
 ms.openlocfilehash: 3ce4f673657561e196520466b569d0cf83d75a8a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98019343"
 ---
 # <a name="outputs-from-azure-stream-analytics"></a>Uitvoer van Azure Stream Analytics
@@ -24,17 +24,17 @@ Sommige typen uitvoer ondersteunen [partitionering](#partitioning)en [uitvoer ba
 
 | Uitvoertype | Partitionering | Beveiliging | 
 |-------------|--------------|----------|
-|[Azure Data Lake Storage Gen 1](azure-data-lake-storage-gen1-output.md)|Ja|Azure Active Directory-gebruiker </br> , Beheerde identiteit|
+|[Azure Data Lake Storage Gen 1](azure-data-lake-storage-gen1-output.md)|Yes|Azure Active Directory-gebruiker </br> , Beheerde identiteit|
 |[Azure SQL Database](sql-database-output.md)|Ja, optioneel.|SQL-gebruikers auth, </br> Beheerde identiteit (preview)|
-|[Azure Synapse Analytics](azure-synapse-analytics-output.md)|Ja|SQL-gebruikers auth, </br> Beheerde identiteit (preview)|
-|[Blob-opslag en Azure Data Lake gen 2](blob-storage-azure-data-lake-gen2-output.md)|Ja|Toegangs sleutel, </br> Beheerde identiteit (preview)|
+|[Azure Synapse Analytics](azure-synapse-analytics-output.md)|Yes|SQL-gebruikers auth, </br> Beheerde identiteit (preview)|
+|[Blob-opslag en Azure Data Lake gen 2](blob-storage-azure-data-lake-gen2-output.md)|Yes|Toegangs sleutel, </br> Beheerde identiteit (preview)|
 |[Azure Event Hubs](event-hubs-output.md)|Ja, de partitie sleutel kolom moet worden ingesteld in de uitvoer configuratie.|Toegangs sleutel, </br> Beheerde identiteit (preview)|
-|[Power BI](power-bi-output.md)|Nee|Azure Active Directory gebruiker, </br> Beheerde identiteit|
-|[Azure Table storage](table-storage-output.md)|Ja|Accountsleutel|
-|[Azure Service Bus wachtrijen](service-bus-queues-output.md)|Ja|Toegangssleutel|
-|[Azure Service Bus onderwerpen](service-bus-topics-output.md)|Ja|Toegangssleutel|
-|[Azure Cosmos DB](azure-cosmos-db-output.md)|Ja|Toegangssleutel|
-|[Azure Functions](azure-functions-output.md)|Ja|Toegangssleutel|
+|[Power BI](power-bi-output.md)|No|Azure Active Directory gebruiker, </br> Beheerde identiteit|
+|[Azure Table storage](table-storage-output.md)|Yes|Accountsleutel|
+|[Azure Service Bus wachtrijen](service-bus-queues-output.md)|Yes|Toegangssleutel|
+|[Azure Service Bus onderwerpen](service-bus-topics-output.md)|Yes|Toegangssleutel|
+|[Azure Cosmos DB](azure-cosmos-db-output.md)|Yes|Toegangssleutel|
+|[Azure Functions](azure-functions-output.md)|Yes|Toegangssleutel|
 
 ## <a name="partitioning"></a>Partitionering
 

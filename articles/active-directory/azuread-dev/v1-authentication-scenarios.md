@@ -119,7 +119,7 @@ Welke claims aanwezig zijn in een bepaald beveiligingstoken, is afhankelijk van 
 
 In de onderstaande tabel staat een korte beschrijving van elk type claim dat door Azure AD wordt uitgegeven. Zie het [toegangs tokens](../develop/access-tokens.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json) en de [id-tokens](../develop/id-tokens.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json) die zijn uitgegeven door Azure AD voor meer gedetailleerde informatie.
 
-| Claim | Beschrijving |
+| Claim | Description |
 | --- | --- |
 | Toepassings-id | Identificeert de toepassing die gebruikmaakt van het token. |
 | Doelgroep | Identificeert de ontvangende resource waar het token voor is bedoeld. |

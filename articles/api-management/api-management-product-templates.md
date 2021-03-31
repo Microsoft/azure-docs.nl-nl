@@ -79,7 +79,7 @@ Azure API Management biedt u de mogelijkheid om de inhoud van de pagina's van de
   
 ### <a name="data-model"></a>Gegevensmodel  
   
-|Eigenschap|Type|Beschrijving|  
+|Eigenschap|Type|Description|  
 |--------------|----------|-----------------|  
 |Zoekresultaten oproepen|De entiteit [paging](api-management-template-data-model-reference.md#Paging) .|De paginerings gegevens voor de verzameling producten.|  
 |Filteren|[Filter](api-management-template-data-model-reference.md#Filtering) entiteit.|De filter gegevens voor de lijst pagina met producten.|  
@@ -204,7 +204,7 @@ Azure API Management biedt u de mogelijkheid om de inhoud van de pagina's van de
   
 ### <a name="data-model"></a>Gegevensmodel  
   
-|Eigenschap|Type|Beschrijving|  
+|Eigenschap|Type|Description|  
 |--------------|----------|-----------------|  
 |Product|[Product](api-management-template-data-model-reference.md#Product)|Het opgegeven product.|  
 |IsDeveloperSubscribed|booleaans|Hiermee wordt aangegeven of de huidige gebruiker is geabonneerd op dit product.|  

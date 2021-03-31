@@ -16,10 +16,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d976cd924644828f5861e4c54460a8b4e4f81444
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101643861"
 ---
 # <a name="troubleshooting-errors-during-synchronization"></a>Probleemoplossings fouten tijdens de synchronisatie
@@ -41,7 +41,7 @@ Fouten tijdens het exporteren naar Azure AD geven aan dat de bewerking voor het 
 
 ## <a name="data-mismatch-errors"></a>Fouten met niet-overeenkomende gegevens
 ### <a name="invalidsoftmatch"></a>InvalidSoftMatch
-#### <a name="description"></a>Beschrijving
+#### <a name="description"></a>Description
 * Wanneer de Azure AD Connect \( sync-engine \) Azure Active Directory om objecten toe te voegen of bij te werken, komt Azure AD overeen met het **Source Anchor** -kenmerk voor het kenmerk **IMMUTABLEID** van objecten in azure AD. Deze overeenkomst wordt een **harde overeenkomst** genoemd.
 * Als Azure AD geen object **vindt** dat overeenkomt met het kenmerk **immutableId** met het kenmerk **Source Anchor** van het inkomende object, moet u, voordat u een nieuw object inricht, de proxyAddresses-en userPrincipalName-kenmerken gebruiken om een overeenkomst te vinden. Dit komt overeen met een **zachte overeenkomst**. De zachte overeenkomst is ontworpen om te voldoen aan objecten die al aanwezig zijn in azure AD (die zijn gebrond in azure AD) met de nieuwe objecten die worden toegevoegd/bijgewerkt tijdens de synchronisatie die dezelfde entiteit (gebruikers, groepen) op locatie vertegenwoordigen.
 * **InvalidSoftMatch** -fout treedt op wanneer de harde overeenkomst geen overeenkomend object vindt **en** er zachte overeenkomsten zijn gevonden die overeenkomen met een gevonden object, maar dat object heeft een andere waarde van *immutableId* dan de *Source Anchor* van het binnenkomende object, waardoor wordt voorgesteld dat het overeenkomende object is gesynchroniseerd met een ander object van on-premises Active Directory.
@@ -109,7 +109,7 @@ Synchronisatie van fouten rapporten binnen Azure AD Connect Health voor synchron
 * [Door dubbele of ongeldige kenmerken kan Directory synchronisatie in Microsoft 365 niet worden toegestaan](https://support.microsoft.com/kb/2647098)
 
 ### <a name="objecttypemismatch"></a>ObjectTypeMismatch
-#### <a name="description"></a>Beschrijving
+#### <a name="description"></a>Description
 Wanneer Azure AD probeert een zachte overeenkomst met twee objecten te zoeken, is het mogelijk dat twee objecten van verschillende "object type" (zoals gebruiker, groep, contact enz.) dezelfde waarden hebben voor de kenmerken die worden gebruikt om de zachte overeenkomst uit te voeren. Als duplicatie van deze kenmerken is niet toegestaan in azure AD, kan de bewerking de synchronisatie fout ' ObjectTypeMismatch ' veroorzaken.
 
 #### <a name="example-scenarios-for-objecttypemismatch-error"></a>Voorbeeld Scenario's voor ObjectTypeMismatch-fout
@@ -130,7 +130,7 @@ De meest voorkomende reden voor de ObjectTypeMismatch-fout is dat twee objecten 
 
 ## <a name="duplicate-attributes"></a>Dubbele kenmerken
 ### <a name="attributevaluemustbeunique"></a>AttributeValueMustBeUnique
-#### <a name="description"></a>Beschrijving
+#### <a name="description"></a>Description
 Met Azure Active Directory schema kunnen twee of meer objecten niet dezelfde waarde hebben als de volgende kenmerken. Elk object in azure AD wordt gedwongen een unieke waarde van deze kenmerken te hebben op een bepaald exemplaar.
 
 * ProxyAddresses
@@ -168,7 +168,7 @@ De meest voorkomende reden voor de AttributeValueMustBeUnique-fout is dat twee o
 
 ## <a name="data-validation-failures"></a>Gegevens validatie fouten
 ### <a name="identitydatavalidationfailed"></a>IdentityDataValidationFailed
-#### <a name="description"></a>Beschrijving
+#### <a name="description"></a>Description
 Azure Active Directory dwingt verschillende beperkingen voor de gegevens zelf af voordat deze gegevens naar de Directory kunnen worden geschreven. Deze beperkingen zijn om ervoor te zorgen dat eind gebruikers de best mogelijke ervaringen krijgen bij het gebruik van de toepassingen die afhankelijk zijn van deze gegevens.
 
 #### <a name="scenarios"></a>Scenario's
@@ -182,7 +182,7 @@ a. Zorg ervoor dat het kenmerk userPrincipalName ondersteunde tekens en de verei
 * [Voorbereiden om gebruikers in te richten via Directory synchronisatie naar Microsoft 365](https://support.office.com/article/Prepare-to-provision-users-through-directory-synchronization-to-Office-365-01920974-9e6f-4331-a370-13aea4e82b3e)
 
 ### <a name="federateddomainchangeerror"></a>FederatedDomainChangeError
-#### <a name="description"></a>Beschrijving
+#### <a name="description"></a>Description
 Dit resulteert in een **' FederatedDomainChangeError** -synchronisatie fout wanneer het achtervoegsel van de userPrincipalName van een gebruiker wordt gewijzigd van een federatief domein naar een ander federatief domein.
 
 #### <a name="scenarios"></a>Scenario's
@@ -204,7 +204,7 @@ Als het UserPrincipalName-achtervoegsel van een gebruiker is bijgewerkt van bob@
 * [Wijzigingen worden niet gesynchroniseerd met het Azure Active Directory Sync-hulp programma nadat u de UPN van een gebruikers account hebt gewijzigd om een ander federatief domein te gebruiken](./howto-troubleshoot-upn-changes.md)
 
 ## <a name="largeobject"></a>LargeObject
-### <a name="description"></a>Beschrijving
+### <a name="description"></a>Description
 Wanneer een kenmerk de toegestane maximale grootte, de lengte limiet of de limiet overschrijdt die is ingesteld door Azure Active Directory schema, resulteert de synchronisatie bewerking in de synchronisatie fout **LargeObject** of **ExceededAllowedLength** . Deze fout treedt doorgaans op voor de volgende kenmerken
 
 * userCertificate
@@ -223,7 +223,7 @@ Wanneer een kenmerk de toegestane maximale grootte, de lengte limiet of de limie
 
 ## <a name="existing-admin-role-conflict"></a>Bestaande strijdige beheerdersrol
 
-### <a name="description"></a>Beschrijving
+### <a name="description"></a>Description
 Er wordt een bestaand beheerdersrol- **conflict** opgetreden op een gebruikers object tijdens de synchronisatie wanneer dat gebruikers object:
 
 - beheerders machtigingen en

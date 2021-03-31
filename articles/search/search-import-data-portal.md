@@ -75,7 +75,7 @@ U moet deze afzonderlijke tabel of weer gave maken voordat u de wizard uitvoert,
 
 Achter de schermen worden de volgende objecten gemaakt, geconfigureerd en aangeroepen door de wizard. Nadat de wizard is uitgevoerd, kunt u de uitvoer ervan vinden in de portal pagina's. De overzichts pagina van uw service bevat lijsten met indexen, Indexeer functies, gegevens bronnen en vaardig heden. Index definities kunnen worden weer gegeven in volledige JSON in de portal. Voor andere definities kunt u de [rest API](/rest/api/searchservice/) gebruiken om specifieke objecten op te halen.
 
-| Object | Beschrijving | 
+| Object | Description | 
 |--------|-------------|
 | [Gegevensbron](/rest/api/searchservice/create-data-source)  | Persistente verbindings gegevens naar bron gegevens, met inbegrip van referenties. Een gegevens bron object wordt uitsluitend gebruikt met Indexeer functies. | 
 | [Index](/rest/api/searchservice/create-index) | Fysieke gegevens structuur die wordt gebruikt voor zoeken in volledige tekst en andere query's. | 

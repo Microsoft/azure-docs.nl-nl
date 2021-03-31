@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/27/2021
 ms.author: apimpm
 ms.openlocfilehash: 22d2960801cac2222f868c384a55b4bf436bc75b
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "99492600"
 ---
 # <a name="api-management-authentication-policies"></a>API Management-verificatiebeleid
@@ -50,14 +50,14 @@ In dit onderwerp vindt u een verwijzing naar de volgende API Management-beleids 
 
 |Naam|Beschrijving|Vereist|
 |----------|-----------------|--------------|
-|verificatie-basis|Hoofd element.|Ja|
+|verificatie-basis|Hoofd element.|Yes|
 
 ### <a name="attributes"></a>Kenmerken
 
 |Naam|Beschrijving|Vereist|Standaard|
 |----------|-----------------|--------------|-------------|
-|gebruikersnaam|Hiermee geeft u de gebruikers naam van de basis referentie.|Ja|N.v.t.|
-|wachtwoord|Hiermee geeft u het wacht woord van de basis referentie op.|Ja|N.v.t.|
+|gebruikersnaam|Hiermee geeft u de gebruikers naam van de basis referentie.|Yes|N.v.t.|
+|wachtwoord|Hiermee geeft u het wacht woord van de basis referentie op.|Yes|N.v.t.|
 
 ### <a name="usage"></a>Gebruik
  Dit beleid kan worden gebruikt in de volgende beleids [secties](./api-management-howto-policies.md#sections) en [bereiken](./api-management-howto-policies.md#scopes).
@@ -101,7 +101,7 @@ In dit voor beeld wordt het client certificaat ingesteld in het beleid in plaats
   
 |Naam|Beschrijving|Vereist|  
 |----------|-----------------|--------------|  
-|verificatie-certificaat|Hoofd element.|Ja|  
+|verificatie-certificaat|Hoofd element.|Yes|  
   
 ### <a name="attributes"></a>Kenmerken  
   
@@ -109,7 +109,7 @@ In dit voor beeld wordt het client certificaat ingesteld in het beleid in plaats
 |----------|-----------------|--------------|-------------|  
 |vingerafdruk|De vinger afdruk voor het client certificaat.|Ofwel `thumbprint` of `certificate-id` moeten aanwezig zijn.|N.v.t.|
 |certificaat-id|De naam van de certificaat resource.|Ofwel `thumbprint` of `certificate-id` moeten aanwezig zijn.|N.v.t.|
-|body|Client certificaat als een byte matrix.|Nee|N.v.t.|
+|body|Client certificaat als een byte matrix.|No|N.v.t.|
 |wachtwoord|Het wacht woord voor het client certificaat.|Wordt gebruikt als het certificaat dat is opgegeven in `body` , is beveiligd met een wacht woord.|N.v.t.|
   
 ### <a name="usage"></a>Gebruik  
@@ -178,16 +178,16 @@ Zowel door het systeem toegewezen identiteit als een van de door de gebruiker to
   
 |Naam|Beschrijving|Vereist|  
 |----------|-----------------|--------------|  
-|verificatie-beheerd identiteit |Hoofd element.|Ja|  
+|verificatie-beheerd identiteit |Hoofd element.|Yes|  
   
 ### <a name="attributes"></a>Kenmerken  
   
 |Naam|Beschrijving|Vereist|Standaard|  
 |----------|-----------------|--------------|-------------|  
-|resource|Tekenreeks. De App-ID van de doel-Web-API (beveiligde bron) in Azure Active Directory.|Ja|N.v.t.|
-|client-id|Tekenreeks. De App-ID van de door de gebruiker toegewezen identiteit in Azure Active Directory.|Nee|door het systeem toegewezen identiteit|
-|uitvoer-token-variabele-naam|Tekenreeks. De naam van de context variabele die de token waarde ontvangt als object type `string` . |Nee|N.v.t.|  
-|negeren-fout|True. Als `true` deze is ingesteld op, blijft de beleids pijplijn worden uitgevoerd, zelfs als er geen toegangs token is verkregen.|Nee|onjuist|  
+|resource|Tekenreeks. De App-ID van de doel-Web-API (beveiligde bron) in Azure Active Directory.|Yes|N.v.t.|
+|client-id|Tekenreeks. De App-ID van de door de gebruiker toegewezen identiteit in Azure Active Directory.|No|door het systeem toegewezen identiteit|
+|uitvoer-token-variabele-naam|Tekenreeks. De naam van de context variabele die de token waarde ontvangt als object type `string` . |No|N.v.t.|  
+|negeren-fout|True. Als `true` deze is ingesteld op, blijft de beleids pijplijn worden uitgevoerd, zelfs als er geen toegangs token is verkregen.|No|onjuist|  
   
 ### <a name="usage"></a>Gebruik  
  Dit beleid kan worden gebruikt in de volgende beleids [secties](./api-management-howto-policies.md#sections) en [bereiken](./api-management-howto-policies.md#scopes).  

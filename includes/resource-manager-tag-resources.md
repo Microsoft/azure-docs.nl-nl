@@ -9,10 +9,10 @@ ms.date: 03/19/2020
 ms.author: tomfitz
 ms.custom: include file
 ms.openlocfilehash: a00291182059506aeab9cde965fa4cbd5177ecf7
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "80132183"
 ---
 Als een gebruiker niet beschikt over de vereiste toegang voor het toepassen van tags, kunt u de rol **Inzender van tag** toewijzen aan de gebruiker. Zie [Zelfstudie: Verleen een gebruiker toegang tot Azure-resources verlenen met behulp van RBAC en Azure Portal](../articles/role-based-access-control/quickstart-assign-role-user-portal.md).

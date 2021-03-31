@@ -18,7 +18,7 @@ Opdrachten voor het beheren van Service Fabric clusters en entiteiten. Deze vers
 Opdrachten volgen het patroon van de zelfstandig naam woord. Zie subgroepen voor meer informatie.
 
 ## <a name="subgroups"></a>Subgroepen
-|Subgroep|Beschrijving|
+|Subgroep|Description|
 | --- | --- |
 | [toepassing](service-fabric-sfctl-application.md) | Toepassingen en toepassings typen maken, verwijderen en beheren. |
 | [chaos](service-fabric-sfctl-chaos.md) | Starten, stoppen en rapporteren op de chaos-test service. |

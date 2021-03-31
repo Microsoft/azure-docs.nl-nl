@@ -50,7 +50,7 @@ Met Site Recovery kan elke app die wordt uitgevoerd op een ondersteunde machine,
 | Linux (besturingssysteem en apps) |Ja (getest door micro soft) |Ja (getest door micro soft) |Ja (getest door micro soft) |Ja (getest door micro soft) |Ja (getest door micro soft)|
 | Dynamics AX |Ja |Ja |Ja |Ja |Ja|
 | Windows-bestandsserver |Ja |Ja |Ja |Ja |Ja|
-| Citrix XenApp en XenDesktop |Ja|N.v.t. |Ja |N.v.t. |Ja |
+| Citrix XenApp en XenDesktop |Yes|N.v.t. |Ja |N.v.t. |Ja |
 
 ## <a name="replicate-active-directory-and-dns"></a>Active Directory en DNS repliceren
 

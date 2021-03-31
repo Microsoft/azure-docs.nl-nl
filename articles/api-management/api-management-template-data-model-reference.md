@@ -127,7 +127,7 @@ In dit onderwerp worden de entiteits-en type representaties beschreven voor alge
 ##  <a name="comment"></a><a name="Comment"></a> Heffen  
  De `API` entiteit heeft de volgende eigenschappen:  
   
-|Eigenschap|Type|Beschrijving|  
+|Eigenschap|Type|Description|  
 |--------------|----------|-----------------|  
 |`Id`|getal|De ID van de opmerking.|  
 |`CommentText`|tekenreeks|De hoofd tekst van de opmerking. Kan HTML bevatten.|  
@@ -184,7 +184,7 @@ In dit onderwerp worden de entiteits-en type representaties beschreven voor alge
 ##  <a name="http-response"></a><a name="HTTPResponse"></a> HTTP-antwoord  
  In deze sectie wordt de `response` representatie beschreven.  
   
-|Eigenschap|Type|Beschrijving|  
+|Eigenschap|Type|Description|  
 |--------------|----------|-----------------|  
 |`statusCode`|positief geheel getal|Status code van bewerkings antwoord.|  
 |`description`|tekenreeks|Beschrijving van bewerkings antwoord.|  
@@ -227,7 +227,7 @@ In dit onderwerp worden de entiteits-en type representaties beschreven voor alge
 ##  <a name="paging"></a><a name="Paging"></a> Haalt  
  De `paging` entiteit heeft de volgende eigenschappen:  
   
-|Eigenschap|Type|Beschrijving|  
+|Eigenschap|Type|Description|  
 |--------------|----------|-----------------|  
 |`Page`|getal|Het huidige pagina nummer.|  
 |`PageSize`|getal|De maximum resultaten die op één pagina worden weer gegeven.|  
@@ -264,7 +264,7 @@ In dit onderwerp worden de entiteits-en type representaties beschreven voor alge
 ##  <a name="provider"></a><a name="Provider"></a> Providers  
  De `provider` entiteit heeft de volgende eigenschappen:  
   
-|Eigenschap|Type|Beschrijving|  
+|Eigenschap|Type|Description|  
 |--------------|----------|-----------------|  
 |`Properties`|teken reeks woordenlijst|Eigenschappen voor deze verificatie provider.|  
 |`AuthenticationType`|tekenreeks|Het provider type. (Azure Active Directory, Facebook-aanmelding, Google-account, micro soft-account, Twitter).|  

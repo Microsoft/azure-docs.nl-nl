@@ -35,11 +35,11 @@ Een Block Chain-toepassing bevat meta gegevens van de configuratie, werk stromen
 
 | Veld | Beschrijving | Vereist |
 |-------|-------------|:--------:|
-| ApplicationName | Unieke toepassings naam. Het bijbehorende slimme contract moet dezelfde **ApplicationName** gebruiken voor de toepasselijke contract klasse.  | Ja |
-| DisplayName | Beschrijvende weergave naam van de toepassing. | Ja |
-| Beschrijving | Beschrijving van de toepassing. | Nee |
-| ApplicationRoles | Verzameling van [ApplicationRoles](#application-roles). Gebruikers rollen die kunnen reageren op of deel nemen aan de toepassing.  | Ja |
-| Werkstromen | Verzameling  [werk stromen](#workflows). Elke werk stroom fungeert als een status computer om de stroom van de bedrijfs logica te beheren. | Ja |
+| ApplicationName | Unieke toepassings naam. Het bijbehorende slimme contract moet dezelfde **ApplicationName** gebruiken voor de toepasselijke contract klasse.  | Yes |
+| DisplayName | Beschrijvende weergave naam van de toepassing. | Yes |
+| Description | Beschrijving van de toepassing. | No |
+| ApplicationRoles | Verzameling van [ApplicationRoles](#application-roles). Gebruikers rollen die kunnen reageren op of deel nemen aan de toepassing.  | Yes |
+| Werkstromen | Verzameling  [werk stromen](#workflows). Elke werk stroom fungeert als een status computer om de stroom van de bedrijfs logica te beheren. | Yes |
 
 Zie het voor beeld van een [configuratie bestand](#configuration-file-example)voor een voor beeld.
 
@@ -49,15 +49,15 @@ De bedrijfs logica van een toepassing kan worden gemodelleerd als een status mac
 
 | Veld | Beschrijving | Vereist | Max. lengte |
 |-------|-------------|:--------:|-----------:|
-| Name | Unieke werk stroom naam. Het bijbehorende slimme contract moet dezelfde **naam** gebruiken voor de toepasselijke contract klasse. | Ja | 50 |
-| DisplayName | Beschrijvende weergave naam van de werk stroom. | Ja | 255 |
-| Beschrijving | Beschrijving van de werk stroom. | Nee | 255 |
-| Initia tors | Verzameling van [ApplicationRoles](#application-roles). Rollen die zijn toegewezen aan gebruikers die zijn gemachtigd om contracten te maken in de werk stroom. | Ja | |
-| StartState | De naam van de begin status van de werk stroom. | Ja | |
-| Eigenschappen | Verzameling [id's](#identifiers). Hiermee worden gegevens weer gegeven die kunnen worden gelezen uit een keten of visualiseren in een hulp programma voor gebruikers ervaring. | Ja | |
-| Constructor | Definieert de invoer parameters voor het maken van een exemplaar van de werk stroom. | Ja | |
-| Functions | Een verzameling [functies](#functions) die in de werk stroom kunnen worden uitgevoerd. | Ja | |
-| Staten | Een verzameling werk stroom [statussen](#states). | Ja | |
+| Name | Unieke werk stroom naam. Het bijbehorende slimme contract moet dezelfde **naam** gebruiken voor de toepasselijke contract klasse. | Yes | 50 |
+| DisplayName | Beschrijvende weergave naam van de werk stroom. | Yes | 255 |
+| Description | Beschrijving van de werk stroom. | No | 255 |
+| Initia tors | Verzameling van [ApplicationRoles](#application-roles). Rollen die zijn toegewezen aan gebruikers die zijn gemachtigd om contracten te maken in de werk stroom. | Yes | |
+| StartState | De naam van de begin status van de werk stroom. | Yes | |
+| Eigenschappen | Verzameling [id's](#identifiers). Hiermee worden gegevens weer gegeven die kunnen worden gelezen uit een keten of visualiseren in een hulp programma voor gebruikers ervaring. | Yes | |
+| Constructor | Definieert de invoer parameters voor het maken van een exemplaar van de werk stroom. | Yes | |
+| Functions | Een verzameling [functies](#functions) die in de werk stroom kunnen worden uitgevoerd. | Yes | |
+| Staten | Een verzameling werk stroom [statussen](#states). | Yes | |
 
 Zie het voor beeld van een [configuratie bestand](#configuration-file-example)voor een voor beeld.
 
@@ -65,7 +65,7 @@ Zie het voor beeld van een [configuratie bestand](#configuration-file-example)vo
 
 Ondersteunde gegevens typen.
 
-| Type | Beschrijving |
+| Type | Description |
 |-------|-------------|
 | adres  | Block Chain adres type, zoals *contracten* of *gebruikers*. |
 | matrix    | Eén niveau matrix van het type geheel getal, BOOL, Money of time. Matrices kunnen statisch of dynamisch zijn. Gebruik **element type** om het gegevens type van de elementen in de matrix op te geven. Zie [voorbeeld configuratie](#example-configuration-of-type-array). |
@@ -170,7 +170,7 @@ Definieert de invoer parameters voor een exemplaar van een werk stroom.
 
 | Veld | Beschrijving | Vereist |
 |-------|-------------|:--------:|
-| Parameters | Verzameling van [id's](#identifiers) die vereist zijn om een slim contract te initiëren. | Ja |
+| Parameters | Verzameling van [id's](#identifiers) die vereist zijn om een slim contract te initiëren. | Yes |
 
 ### <a name="constructor-example"></a>Voor beeld van constructor
 
@@ -203,10 +203,10 @@ Definieert functies die kunnen worden uitgevoerd in de werk stroom.
 
 | Veld | Beschrijving | Vereist | Max. lengte |
 |-------|-------------|:--------:|-----------:|
-| Name | De unieke naam van de functie. Het bijbehorende slimme contract moet dezelfde **naam** gebruiken voor de desbetreffende functie. | Ja | 50 |
-| DisplayName | Beschrijvende weergave naam van de functie. | Ja | 255 |
-| Beschrijving | Beschrijving van de functie | Nee | 255 |
-| Parameters | Verzameling van [id's](#identifiers) die overeenkomen met de para meters van de functie. | Ja | |
+| Name | De unieke naam van de functie. Het bijbehorende slimme contract moet dezelfde **naam** gebruiken voor de desbetreffende functie. | Yes | 50 |
+| DisplayName | Beschrijvende weergave naam van de functie. | Yes | 255 |
+| Description | Beschrijving van de functie | No | 255 |
+| Parameters | Verzameling van [id's](#identifiers) die overeenkomen met de para meters van de functie. | Yes | |
 
 ### <a name="functions-example"></a>Functions-voor beeld
 
@@ -251,12 +251,12 @@ Een verzameling unieke statussen binnen een werk stroom. Elke status legt een st
 
 | Veld | Beschrijving | Vereist | Max. lengte |
 |-------|-------------|:--------:|-----------:|
-| Name | De unieke naam van de status. Het bijbehorende slimme contract moet dezelfde **naam** gebruiken voor de betreffende status. | Ja | 50 |
-| DisplayName | Beschrijvende weergave naam van de status. | Ja | 255 |
-| Beschrijving | De beschrijving van de status. | Nee | 255 |
-| PercentComplete | Een integer-waarde die wordt weer gegeven in de Block Chain Workbench-gebruikers interface om de voortgang in de bedrijfs logica controle stroom weer te geven. | Ja | |
-| Stijl | Visuele hint die aangeeft of de status de status geslaagd of mislukt aangeeft. Er zijn twee geldige waarden: `Success` of `Failure` . | Ja | |
-| Overgangen | Verzameling van beschik bare [overgangen](#transitions) van de huidige status naar de volgende set statussen. | Nee | |
+| Name | De unieke naam van de status. Het bijbehorende slimme contract moet dezelfde **naam** gebruiken voor de betreffende status. | Yes | 50 |
+| DisplayName | Beschrijvende weergave naam van de status. | Yes | 255 |
+| Description | De beschrijving van de status. | No | 255 |
+| PercentComplete | Een integer-waarde die wordt weer gegeven in de Block Chain Workbench-gebruikers interface om de voortgang in de bedrijfs logica controle stroom weer te geven. | Yes | |
+| Stijl | Visuele hint die aangeeft of de status de status geslaagd of mislukt aangeeft. Er zijn twee geldige waarden: `Success` of `Failure` . | Yes | |
+| Overgangen | Verzameling van beschik bare [overgangen](#transitions) van de huidige status naar de volgende set statussen. | No | |
 
 ### <a name="states-example"></a>Voor beeld van statussen
 
@@ -320,12 +320,12 @@ Beschik bare acties voor de volgende status. Een of meer gebruikers rollen kunne
 
 | Veld | Beschrijving | Vereist |
 |-------|-------------|:--------:|
-| AllowedRoles | Lijst met toepassings rollen die de overgang kunnen initiëren. Alle gebruikers van de opgegeven rol kunnen de actie mogelijk uitvoeren. | Nee |
-| AllowedInstanceRoles | Een lijst met gebruikers rollen die in het slimme contract zijn gedeeld of opgegeven om de overgang te initiëren. Exemplaar rollen worden gedefinieerd in **Eigenschappen** binnen werk stromen. AllowedInstanceRoles vertegenwoordigen een gebruiker die deelneemt aan een exemplaar van een slim contract. AllowedInstanceRoles biedt u de mogelijkheid om een actie te beperken voor een gebruikersrol in een contract exemplaar.  Zo wilt u misschien alleen toestaan dat de gebruiker die het contract heeft gemaakt (InstanceOwner), in plaats van alle gebruikers in het type rol (eigenaar) kunnen beëindigen als u de rol hebt opgegeven in AllowedRoles. | Nee |
-| DisplayName | Beschrijvende weergave naam van de overgang. | Ja |
-| Beschrijving | Beschrijving van de overgang. | Nee |
-| Functie | De naam van de functie om de overgang te initiëren. | Ja |
-| NextStates | Een verzameling van mogelijke volgende statussen na een geslaagde overgang. | Ja |
+| AllowedRoles | Lijst met toepassings rollen die de overgang kunnen initiëren. Alle gebruikers van de opgegeven rol kunnen de actie mogelijk uitvoeren. | No |
+| AllowedInstanceRoles | Een lijst met gebruikers rollen die in het slimme contract zijn gedeeld of opgegeven om de overgang te initiëren. Exemplaar rollen worden gedefinieerd in **Eigenschappen** binnen werk stromen. AllowedInstanceRoles vertegenwoordigen een gebruiker die deelneemt aan een exemplaar van een slim contract. AllowedInstanceRoles biedt u de mogelijkheid om een actie te beperken voor een gebruikersrol in een contract exemplaar.  Zo wilt u misschien alleen toestaan dat de gebruiker die het contract heeft gemaakt (InstanceOwner), in plaats van alle gebruikers in het type rol (eigenaar) kunnen beëindigen als u de rol hebt opgegeven in AllowedRoles. | No |
+| DisplayName | Beschrijvende weergave naam van de overgang. | Yes |
+| Description | Beschrijving van de overgang. | No |
+| Functie | De naam van de functie om de overgang te initiëren. | Yes |
+| NextStates | Een verzameling van mogelijke volgende statussen na een geslaagde overgang. | Yes |
 
 ### <a name="transitions-example"></a>Overgangen-voor beeld
 
@@ -365,8 +365,8 @@ Met toepassings rollen wordt een set rollen gedefinieerd die kan worden toegewez
 
 | Veld | Beschrijving | Vereist | Max. lengte |
 |-------|-------------|:--------:|-----------:|
-| Name | De unieke naam van de toepassingsrol. Het bijbehorende slimme contract moet dezelfde **naam** gebruiken voor de toepasselijke rol. Namen van basis typen zijn gereserveerd. U kunt geen toepassingsrol een naam met dezelfde naam als het [type](#type)| Ja | 50 |
-| Beschrijving | Beschrijving van de toepassingsrol. | Nee | 255 |
+| Name | De unieke naam van de toepassingsrol. Het bijbehorende slimme contract moet dezelfde **naam** gebruiken voor de toepasselijke rol. Namen van basis typen zijn gereserveerd. U kunt geen toepassingsrol een naam met dezelfde naam als het [type](#type)| Yes | 50 |
+| Description | Beschrijving van de toepassingsrol. | No | 255 |
 
 ### <a name="application-roles-example"></a>Voor beeld van toepassings rollen
 
@@ -388,10 +388,10 @@ Id's vertegenwoordigen een verzameling gegevens die wordt gebruikt voor het besc
 
 | Veld | Beschrijving | Vereist | Max. lengte |
 |-------|-------------|:--------:|-----------:|
-| Name | De unieke naam van de eigenschap of para meter. Het bijbehorende slimme contract moet dezelfde **naam** gebruiken voor de toepasselijke eigenschap of para meter. | Ja | 50 |
-| DisplayName | Beschrijvende weergave naam voor de eigenschap of para meter. | Ja | 255 |
-| Beschrijving | Beschrijving van de eigenschap of para meter. | Nee | 255 |
-| Type | [Gegevens type](#type)van eigenschap. | Ja |
+| Name | De unieke naam van de eigenschap of para meter. Het bijbehorende slimme contract moet dezelfde **naam** gebruiken voor de toepasselijke eigenschap of para meter. | Yes | 50 |
+| DisplayName | Beschrijvende weergave naam voor de eigenschap of para meter. | Yes | 255 |
+| Description | Beschrijving van de eigenschap of para meter. | No | 255 |
+| Type | [Gegevens type](#type)van eigenschap. | Yes |
 
 ### <a name="identifiers-example"></a>Voor beelden van id's
 

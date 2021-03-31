@@ -4,10 +4,10 @@ description: In dit artikel worden de termen gedefinieerd die nuttig zijn voor g
 ms.topic: conceptual
 ms.date: 12/21/2020
 ms.openlocfilehash: fb46415c8bdb463556d57004e37d741c1b9a9b57
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "102502022"
 ---
 # <a name="azure-backup-glossary"></a>Azure Backup woordenlijst
@@ -198,7 +198,7 @@ Met Azure Backup Server kunt u werk belastingen van toepassingen, zoals virtuele
 
 Raadpleeg de [documentatie voor Managed disks](../virtual-machines/managed-disks-overview.md).
 
-## <a name="mars-agent"></a>MARS-agent
+## <a name="mars-agent"></a>MARS Agent
 
 (Werk belasting-specifieke termijn)
 

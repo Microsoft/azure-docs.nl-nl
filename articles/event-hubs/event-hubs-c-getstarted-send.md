@@ -4,10 +4,10 @@ description: 'Quickstart: Dit artikel bevat een overzicht voor het maken van een
 ms.topic: quickstart
 ms.date: 06/23/2020
 ms.openlocfilehash: bfe1ca1a45f7b33d7431aed13446d8d72f79fb90
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "85315671"
 ---
 # <a name="quickstart-send-events-to-azure-event-hubs-using-c"></a>Quickstart: Gebeurtenissen verzenden naar Azure-Event Hubs met C

@@ -8,17 +8,17 @@ ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/19/2020
 ms.openlocfilehash: d12a7d52562fe32126e12a844c2d36c14cf01431
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96553110"
 ---
 # <a name="apply-classifications-on-assets-in-azure-purview"></a>Classificaties Toep assen op assets in azure controle sfeer liggen
 
 In dit artikel wordt beschreven hoe u classificaties toepast op activa.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Classificaties kunnen systeem-of aangepaste typen zijn. Systeem classificaties zijn standaard aanwezig in controle sfeer liggen. Aangepaste classificaties kunnen worden gemaakt op basis van een reguliere-expressie patroon. Classificaties kunnen automatisch of hand matig worden toegepast op activa.
 

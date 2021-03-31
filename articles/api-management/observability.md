@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 06/01/2020
 ms.author: apimpm
 ms.openlocfilehash: 1ebebed465952bbb5d3e8f82ae1c7776c441c6b0
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "87096738"
 ---
 # <a name="observability-in-azure-api-management"></a>Waarneem bare API Management van Azure
@@ -35,8 +35,8 @@ De volgende tabel bevat een overzicht van alle hulpprogram ma's die door API Man
 | **Ingebouwde analyse** | Rapportage en bewaking | Minuten | Dood | 100% | Rapporten en Logboeken | Altijd |
 | **[Metrische gegevens van Azure Monitor](api-management-howto-use-azure-monitor.md)** | Rapportage en bewaking | Minuten | 93 dagen (upgrade om uit te breiden) | 100% | Metrische gegevens | Altijd |
 | **[Azure Monitor-logboeken](api-management-howto-use-azure-monitor.md)** | Rapportage, bewaking en fout opsporing | Minuten | 31 dagen/5 GB (upgrade naar uitbrei ding) | 100% (aanpasbaar) | Logboeken | Optioneel |
-| **[Inzichten Azure-toepassing](api-management-howto-app-insights.md)** | Rapportage, bewaking en fout opsporing | Seconden | 90 dagen/5 GB (upgrade om uit te breiden) | Aangepast telefoonnummer | Logboeken, metrische gegevens | Optioneel |
-| **[Logboek registratie via Azure Event hub](api-management-howto-log-event-hubs.md)** | Aangepaste scenario's | Seconden | Door gebruiker beheerd | Aangepast telefoonnummer | Aangepast telefoonnummer | Optioneel |
+| **[Inzichten Azure-toepassing](api-management-howto-app-insights.md)** | Rapportage, bewaking en fout opsporing | Seconden | 90 dagen/5 GB (upgrade om uit te breiden) | Aangepast | Logboeken, metrische gegevens | Optioneel |
+| **[Logboek registratie via Azure Event hub](api-management-howto-log-event-hubs.md)** | Aangepaste scenario's | Seconden | Door gebruiker beheerd | Aangepast | Aangepast | Optioneel |
 
 ### <a name="self-hosted-gateway"></a>Zelf-hostende gateway
 

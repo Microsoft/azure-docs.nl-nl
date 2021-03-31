@@ -7,17 +7,17 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 10/21/2020
 ms.openlocfilehash: c290236dfe7e88999847f8cb0d66b2d3c868c1ab
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98664262"
 ---
 # <a name="planned-maintenance-notification-in-azure-database-for-mariadb"></a>Melding over gepland onderhoud in Azure Database for MariaDB
 
 Meer informatie over het voorbereiden van geplande onderhouds gebeurtenissen op uw Azure Database for MariaDB.
 
-## <a name="what-is-a-planned-maintenance"></a>Wat is een gepland onderhoud?
+## <a name="what-is-a-planned-maintenance"></a>Wat is gepland onderhoud?
 
 Azure Database for MariaDB-service voert automatische patching uit van de onderliggende hardware, het besturings systeem en de data base-engine. De patch omvat nieuwe service functies, beveiliging en software-updates. Voor de MariaDB-engine worden upgrades van secundaire versies automatisch uitgevoerd en opgenomen als onderdeel van de patching-cyclus. Gebruikers hoeven zelf geen actie te ondernemen en er zijn geen configuratie-instellingen vereist voor patches. De patch wordt uitgebreid getest en geïmplementeerd met behulp van veilige implementatie procedures.
 
@@ -67,7 +67,7 @@ Zie [waarschuwingen voor activiteiten logboek maken voor service meldingen](../s
 
 Er is onderhoud nodig om uw server veilig, stabiel en up-to-date te houden. De geplande onderhouds gebeurtenis kan niet worden geannuleerd of uitgesteld. Zodra de melding is verzonden naar een bepaalde Azure-regio, kunnen de wijzigingen in het patch schema niet worden gemaakt voor een afzonderlijke server in die regio. De patch wordt uitgerold voor de hele regio tegelijk. Azure Database for MariaDB-service is ontworpen voor native Cloud toepassingen waarvoor geen gedetailleerde controle of aanpassing van de service nodig is.
 
-## <a name="are-all-the-azure-regions-patched-at-the-same-time"></a>Worden alle Azure-regio's tegelijkertijd patches uitgevoerd?
+## <a name="are-all-the-azure-regions-patched-at-the-same-time"></a>Worden in alle Azure-regio's tegelijkertijd patches uitgevoerd?
 
 Nee, alle Azure-regio's worden bijgewerkt tijdens de timing van het implementatie venster. Het venster implementaties wordt doorgaans uitgerekt van 5 PM-8 uur lokale tijd volgende dag in een bepaalde Azure-regio. Geografisch gekoppelde Azure-regio's worden op verschillende dagen gepatcheerd. Voor hoge Beschik baarheid en bedrijfs continuïteit van database servers wordt het gebruik van [meerdere regio's met lees replica's](./concepts-read-replicas.md#cross-region-replication) aanbevolen.
 

@@ -13,10 +13,10 @@ ms.author: kenwith
 ms.reviewer: arvindh, luleon, phsignor
 ms.custom: contperf-fy21q2
 ms.openlocfilehash: 68bb846ebb0199691161bc501441df908eb8ad87
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101643606"
 ---
 # <a name="configure-how-end-users-consent-to-applications"></a>Configureren hoe eindgebruikers toestemming geven voor toepassingen
@@ -81,7 +81,7 @@ Als u toestemming van de gebruiker wilt toestaan, kiest u welk app-machtigings b
 
 Vervang door `{consent-policy-id}` de id van het beleid dat u wilt Toep assen. U kunt kiezen voor een [aangepast app-toestemming beleid](manage-app-consent-policies.md#create-a-custom-app-consent-policy) dat u hebt gemaakt, of u kunt kiezen uit de volgende ingebouwde beleids regels:
 
-| Id | Beschrijving |
+| Id | Description |
 |:---|:------------|
 | micro soft-gebruiker-standaard-laag | **Gebruikers toestemming geven voor apps van geverifieerde uitgevers, voor geselecteerde machtigingen**<br /> Sta beperkte toestemming van de gebruiker alleen toe voor apps van geverifieerde uitgevers en apps die zijn geregistreerd in uw Tenant, en alleen voor machtigingen die u als ' lage impact ' classificeert. (Vergeet niet om [machtigingen te classificeren](configure-permission-classifications.md) om te selecteren naar welke machtigingen gebruikers toestemming mogen geven.) |
 | micro soft-gebruiker-standaard-verouderd | **Toestemming van de gebruiker voor apps toestaan**<br /> Met deze optie kunnen alle gebruikers toestemming geven voor machtigingen waarvoor geen beheerders toestemming is vereist voor elke toepassing |
@@ -145,7 +145,7 @@ U kunt de Azure AD Power shell preview-module, [AzureADPreview](/powershell/modu
 
 1. Meer informatie over de instellingen waarde:
 
-    | Instelling       | Type         | Beschrijving  |
+    | Instelling       | Type         | Description  |
     | ------------- | ------------ | ------------ |
     | _BlockUserConsentForRiskyApps_   | Booleaans |  Markering die aangeeft of de gebruikers toestemming wordt geblokkeerd wanneer een Risk ante aanvraag wordt gedetecteerd. |
 

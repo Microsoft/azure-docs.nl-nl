@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 06/26/2020
 ms.custom: data4ml
 ms.openlocfilehash: 5ab7bac635a0b670087800212727b0d2e2b96934
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103472207"
 ---
 # <a name="optimize-data-processing-with-azure-machine-learning"></a>Gegevens verwerking optimaliseren met Azure Machine Learning
@@ -62,7 +62,7 @@ Zie de bijbehorende pagina's van de VM-reeks, zoals, [dv2-Dsv2 Series](../virtua
 
 Als u geen RAM-geheugen kunt toevoegen aan uw computer, kunt u de volgende technieken Toep assen om de CPU-workloads te minimaliseren en verwerkings tijden te optimaliseren. Deze aanbevelingen zijn van toepassing op zowel één als gedistribueerde systemen.
 
-Techniek | Beschrijving
+Techniek | Description
 ----|----
 Compressie | Gebruik een andere weer gave voor uw gegevens, op een manier die minder geheugen gebruikt en de resultaten van de berekening niet aanzienlijk beïnvloeden.<br><br>*Voor beeld:* In plaats van vermeldingen op te slaan als een teken reeks met ongeveer 10 bytes of meer per vermelding, slaat u ze op als Boolean, True of False, die u in één byte kunt opslaan.
 Segmenterings | Laad gegevens in subsets (segmenten) in het geheugen, waarbij de gegevens één subset op tijdstip worden verwerkt of meerdere subsets parallel zijn. Deze methode werkt het beste als u alle gegevens wilt verwerken, maar niet alle gegevens in een keer in het geheugen hoeft te laden. <br><br>*Voor beeld:* In plaats van de gegevens van een volledig jaar tegelijk te verwerken, moet u de gegevens één maand per keer laden en verwerken.

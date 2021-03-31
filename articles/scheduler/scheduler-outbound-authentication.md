@@ -48,9 +48,9 @@ Wanneer u verificatie toevoegt met behulp van het `ClientCertificate` model, gee
 | Element | Vereist | Beschrijving |
 |---------|----------|-------------|
 | **verificatie** (bovenliggend element) | Het verificatie object voor het gebruik van een SSL/TLS-client certificaat |
-| **type** | Ja | Het verificatie type. Voor SSL/TLS-client certificaten is de waarde `ClientCertificate` . |
-| **pfx** | Ja | De met base64 gecodeerde inhoud van het PFX-bestand |
-| **password** | Ja | Het wacht woord voor toegang tot het PFX-bestand |
+| **type** | Yes | Het verificatie type. Voor SSL/TLS-client certificaten is de waarde `ClientCertificate` . |
+| **pfx** | Yes | De met base64 gecodeerde inhoud van het PFX-bestand |
+| **password** | Yes | Het wacht woord voor toegang tot het PFX-bestand |
 ||| 
 
 ### <a name="response-body---client-certificate"></a>Antwoord tekst-client certificaat 
@@ -168,9 +168,9 @@ Wanneer u verificatie toevoegt met behulp van het `Basic` model, geeft u deze ex
 | Element | Vereist | Beschrijving |
 |---------|----------|-------------|
 | **verificatie** (bovenliggend element) | Het verificatie object voor het gebruik van basis verificatie | 
-| **type** | Ja | Het verificatie type. De waarde is voor basis verificatie `Basic` . | 
-| **gebruikers** | Ja | De gebruikers naam voor verificatie | 
-| **password** | Ja | Het wacht woord voor verificatie |
+| **type** | Yes | Het verificatie type. De waarde is voor basis verificatie `Basic` . | 
+| **gebruikers** | Yes | De gebruikers naam voor verificatie | 
+| **password** | Yes | Het wacht woord voor verificatie |
 |||| 
 
 ### <a name="response-body---basic"></a>Antwoord tekst-basis
@@ -285,12 +285,12 @@ Wanneer u verificatie toevoegt met behulp van het `ActiveDirectoryOAuth` model, 
 
 | Element | Vereist | Beschrijving |
 |---------|----------|-------------|
-| **verificatie** (bovenliggend element) | Ja | Het verificatie object voor het gebruik van ActiveDirectoryOAuth-verificatie |
-| **type** | Ja | Het verificatie type. De waarde is voor ActiveDirectoryOAuth-verificatie `ActiveDirectoryOAuth` . |
-| **tenant** | Ja | De Tenant-id voor de Azure AD-Tenant. Voer in Azure PowerShell om de Tenant-id voor de Azure AD-Tenant te vinden `Get-AzureAccount` . |
-| **gericht** | Ja | Deze waarde is ingesteld op `https://management.core.windows.net/` . | 
-| **clientId** | Ja | De client-id voor de Azure AD-toepassing | 
-| **geheim** | Ja | Het geheim voor de client die het token aanvraagt | 
+| **verificatie** (bovenliggend element) | Yes | Het verificatie object voor het gebruik van ActiveDirectoryOAuth-verificatie |
+| **type** | Yes | Het verificatie type. De waarde is voor ActiveDirectoryOAuth-verificatie `ActiveDirectoryOAuth` . |
+| **tenant** | Yes | De Tenant-id voor de Azure AD-Tenant. Voer in Azure PowerShell om de Tenant-id voor de Azure AD-Tenant te vinden `Get-AzureAccount` . |
+| **gericht** | Yes | Deze waarde is ingesteld op `https://management.core.windows.net/` . | 
+| **clientId** | Yes | De client-id voor de Azure AD-toepassing | 
+| **geheim** | Yes | Het geheim voor de client die het token aanvraagt | 
 |||| 
 
 ### <a name="response-body---active-directory-oauth"></a>Antwoord tekst-Active Directory OAuth

@@ -37,7 +37,7 @@ Deel nemers aan een consortium kunnen individuen of organisaties zijn en kunnen 
 | Nieuwe leden uitnodigen | Nee | Ja |
 | Rol van leden deel nemer instellen of wijzigen | Nee | Ja |
 | Weergave naam van lid wijzigen | Alleen voor eigen lid | Alleen voor eigen lid |
-| Leden verwijderen | Alleen voor eigen lid | Ja |
+| Leden verwijderen | Alleen voor eigen lid | Yes |
 | Deel nemen aan block Chain-trans acties | Ja | Ja |
 
 ### <a name="user-role"></a>Gebruikersrol

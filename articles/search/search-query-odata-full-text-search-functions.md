@@ -69,7 +69,7 @@ De `search.ismatch` functie evalueert een zoek opdracht in volledige tekst als o
 
 De para meters worden gedefinieerd in de volgende tabel:
 
-| Parameternaam | Type | Beschrijving |
+| Parameternaam | Type | Description |
 | --- | --- | --- |
 | `search` | `Edm.String` | De zoek query (in een [eenvoudige](query-simple-syntax.md) of [volledige](query-lucene-syntax.md) lucene-query syntaxis). |
 | `searchFields` | `Edm.String` | Een door komma's gescheiden lijst met Doorzoek bare velden waarnaar moet worden gezocht; wordt standaard ingesteld op alle Doorzoek bare velden in de index. Bij gebruik van een [Zoek opdracht](query-lucene-syntax.md#bkmk_fields) in de `search` para meter, overschrijven de veld aanduidingen in de Lucene-query alle velden die zijn opgegeven in deze para meter. |

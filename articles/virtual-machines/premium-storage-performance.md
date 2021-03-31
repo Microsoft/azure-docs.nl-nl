@@ -8,10 +8,10 @@ ms.date: 10/05/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.openlocfilehash: 7e93c659ad58db8d82e68380ab6a0855af27e1bf
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98882379"
 ---
 # <a name="azure-premium-storage-design-for-high-performance"></a>Azure Premium-opslag: ontwerpen voor hoge prestaties
@@ -119,7 +119,7 @@ De beste manier om prestatie vereisten van uw toepassing te meten, is het gebrui
 
 De prestatie meter items zijn beschikbaar voor processor, geheugen en, elke logische schijf en fysieke schijf van uw server. Wanneer u Premium Storage-schijven met een virtuele machine gebruikt, zijn de fysieke-schijf tellers voor elke Premium-opslag schijf en worden voor elk volume dat op de Premium Storage-schijven wordt gemaakt, items voor logische schijven opgenomen. U moet de waarden vastleggen voor de schijven waarop de workload van uw toepassing wordt gehost. Als er een toewijzing is tussen logische en fysieke schijven, kunt u verwijzen naar fysieke-schijf items; Raadpleeg anders de items van de logische schijf. In Linux genereert de iostat gebruiken-opdracht een rapport voor CPU-en schijf gebruik. Het rapport schijf gebruik bevat statistieken per fysiek apparaat of partitie. Als u een database server hebt met gegevens en logboeken op afzonderlijke schijven, verzamelt u deze gegevens voor beide schijven. In de onderstaande tabel worden de items voor schijven, processors en geheugen beschreven:
 
-| Prestatiemeteritem | Beschrijving | Controle | Iostat gebruiken |
+| Prestatiemeteritem | Description | Controle | Iostat gebruiken |
 | --- | --- | --- | --- |
 | **IOPS of trans acties per seconde** |Het aantal I/O-aanvragen dat per seconde aan de opslag schijf is uitgegeven. |Lees bewerkingen per seconde <br> Schrijf bewerkingen per seconde |TPS <br> r/s <br> w/s |
 | **Lees-en schrijf bewerkingen op schijf** |% van lees-en schrijf bewerkingen die op de schijf worden uitgevoerd. |Percentage schijf leestijd <br> Percentage schrijf tijd schijf |r/s <br> w/s |

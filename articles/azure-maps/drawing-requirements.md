@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: philMea
 ms.openlocfilehash: 2a37e716b7804b11ab396909f746af84294bb4e3
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98895268"
 ---
 # <a name="drawing-package-requirements"></a>Vereisten voor tekenpakketten
@@ -198,7 +198,7 @@ In de volgende secties worden de vereisten voor elk object gedetailleerd beschre
 
 ### `directoryInfo`
 
-| Eigenschap  | Type | Vereist | Beschrijving |
+| Eigenschap  | Type | Vereist | Description |
 |-----------|------|----------|-------------|
 | `name`      | tekenreeks | true   |  De naam van het gebouw. |
 | `streetAddress`|    tekenreeks |    onjuist    | Het adres van het gebouw. |
@@ -219,7 +219,7 @@ In de volgende secties worden de vereisten voor elk object gedetailleerd beschre
 
 Het `buildingLevels` object bevat een JSON-matrix met de niveaus van gebouwen.
 
-| Eigenschap  | Type | Vereist | Beschrijving |
+| Eigenschap  | Type | Vereist | Description |
 |-----------|------|----------|-------------|
 |`levelName`    |tekenreeks    |true |    Beschrijvende niveau naam. Bijvoorbeeld: Floor 1, lobby, Blue parkeren of Basement.|
 |`ordinal` | geheel getal |    true | Bepaalt de verticale volg orde van niveaus. Elke faciliteit moet een niveau hebben met een rang telwoord van 0. |
@@ -251,7 +251,7 @@ Het `buildingLevels` object bevat een JSON-matrix met de niveaus van gebouwen.
 
 Het `unitProperties` object bevat een JSON-matrix met de eigenschappen van de eenheid.
 
-| Eigenschap  | Type | Vereist | Beschrijving |
+| Eigenschap  | Type | Vereist | Description |
 |-----------|------|----------|-------------|
 |`unitName`    |tekenreeks    |true    |De naam van de eenheid die aan deze record moet worden gekoppeld `unitProperty` . Deze record is alleen geldig wanneer er een label overeenkomst `unitName` in de lagen is gevonden `unitLabel` . |
 |`categoryName`|    tekenreeks|    onjuist    |Categorie naam. Raadpleeg de [categorie](https://aka.ms/pa-indoor-spacecategories)voor een volledige lijst met categorieën. |

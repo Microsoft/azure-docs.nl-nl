@@ -7,13 +7,13 @@ ms.service: media-services
 ms.topic: reference
 ms.date: 04/05/2020
 ms.openlocfilehash: cc6b11ebc930c7798cb252f9c322a19c0b8ae0ea
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "81727123"
 ---
-# <a name="release-notes"></a>Releaseopmerkingen
+# <a name="release-notes"></a>Opmerkingen bij de release
 
 Hieronder vindt u een lijst met bekende problemen die aan deze release zijn gekoppeld.  Daarnaast vindt u hier een lijst met geteste en niet-ondersteunde functies voor hulp bij het ontwikkelen.
 

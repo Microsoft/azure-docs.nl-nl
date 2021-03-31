@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 05/26/2020
 ms.openlocfilehash: fc0eb196ed24e413c35d64f0571ff29dc3725032
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "93421274"
 ---
 # <a name="init-image-transformation"></a>Afbeeldingstransformatie initiëren
@@ -93,7 +93,7 @@ Raadpleeg [https://pytorch.org/docs/stable/torchvision/transforms.html](https://
 
 ###  <a name="output"></a>Uitvoer  
 
-| Naam                        | Type                    | Beschrijving                              |
+| Naam                        | Type                    | Description                              |
 | --------------------------- | ----------------------- | ---------------------------------------- |
 | Trans formatie van uitvoer afbeelding | TransformationDirectory | Trans formatie van uitvoer afbeelding die kan worden verbonden om de **installatie kopie transformatie module toe te passen** . |
 

@@ -4,10 +4,10 @@ description: In deze snelstart wordt beschreven hoe u een event hub maakt met be
 ms.topic: quickstart
 ms.date: 06/23/2020
 ms.openlocfilehash: 1c81024a9195e463eeaaf384d5cbbd1e0054c485
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "88933950"
 ---
 # <a name="quickstart-create-an-event-hub-using-azure-powershell"></a>Quickstart: Een event hub maken met behulp van Azure PowerShell

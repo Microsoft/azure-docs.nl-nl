@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 09/20/2019
 ms.openlocfilehash: baa6e5732221d120ff71217a3a86a942794c53f4
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "84710368"
 ---
 # <a name="perform-data-operations-in-azure-logic-apps"></a>Gegevens bewerkingen uitvoeren in Azure Logic Apps
@@ -34,7 +34,7 @@ Deze acties helpen u bij het werken met gegevens in matrices.
 | [**CSV-tabel maken**](#create-csv-table-action) | Een tabel met door komma's gescheiden waarden (CSV) maken op basis van een matrix. |
 | [**HTML-tabel maken**](#create-html-table-action) | Een HTML-tabel maken op basis van een matrix. |
 | [**Matrix filteren**](#filter-array-action) | Maak een matrix subset van een matrix op basis van het opgegeven filter of voor waarde. |
-| [**Jointypen**](#join-action) | Maak een teken reeks van alle items in een matrix en scheid elk item met het opgegeven teken. |
+| [**Deelnemen**](#join-action) | Maak een teken reeks van alle items in een matrix en scheid elk item met het opgegeven teken. |
 | [**Selecteer**](#select-action) | Een matrix maken op basis van de opgegeven eigenschappen voor alle items in een andere matrix. |
 ||| 
 

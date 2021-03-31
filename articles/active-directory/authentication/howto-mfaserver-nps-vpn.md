@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 88fe09199cb50d2a3796c3b638dca1a723016dc4
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96742014"
 ---
 # <a name="advanced-scenarios-with-azure-mfa-server-and-third-party-vpn-solutions"></a>Geavanceerde scenario's met Azure MFA-server en VPN-oplossingen van derden
@@ -34,7 +34,7 @@ Azure Multi-Factor Authentication-server (Azure MFA-server) kan worden gebruikt 
 ## <a name="cisco-asa-vpn-appliance-and-azure-mfa-server"></a>Cisco ASA VPN-apparaat en Azure MFA-server
 De Azure MFA-server kan worden geïntegreerd met uw Cisco &reg; ASA VPN-apparaat om extra beveiliging te bieden voor Cisco AnyConnect &reg; VPN-aanmeldingen en toegang tot de portal.  U kunt het LDAP-of RADIUS-protocol gebruiken.  Selecteer een van de volgende stappen om de gedetailleerde stapsgewijze configuratie handleidingen te downloaden.
 
-| Configuratiegids | Beschrijving |
+| Configuratiegids | Description |
 | --- | --- |
 | [Cisco ASA met AnyConnect VPN-en Azure MFA-configuratie voor LDAP](https://download.microsoft.com/download/A/2/0/A201567C-C3DE-4227-AF89-4567A470899E/Cisco_ASA_Azure_MFA_LDAP.docx) | Uw Cisco ASA VPN-apparaat integreren met Azure MFA met behulp van LDAP |
 | [Cisco ASA met AnyConnect VPN-en Azure MFA-configuratie voor RADIUS](https://download.microsoft.com/download/4/5/7/4579C1CF-35B0-4FBE-8A1A-B49CB2CC0382/Cisco_ASA_Azure_MFA_RADIUS.docx) | Uw Cisco ASA VPN-apparaat integreren met Azure MFA met behulp van RADIUS |
@@ -42,7 +42,7 @@ De Azure MFA-server kan worden geïntegreerd met uw Cisco &reg; ASA VPN-apparaat
 ## <a name="citrix-netscaler-ssl-vpn-and-azure-mfa-server"></a>Citrix NetScaler SSL VPN-en Azure MFA-server
 De Azure MFA-server kan worden geïntegreerd met uw Citrix NetScaler SSL VPN-apparaat om extra beveiliging te bieden voor Citrix NetScaler SSL VPN-aanmeldingen en toegang tot de portal.  U kunt het LDAP-of RADIUS-protocol gebruiken.  Selecteer een van de volgende stappen om de gedetailleerde stapsgewijze configuratie handleidingen te downloaden.
 
-| Configuratiegids | Beschrijving |
+| Configuratiegids | Description |
 | --- | --- |
 | [Citrix NetScaler SSL VPN-en Azure MFA-configuratie voor LDAP](https://download.microsoft.com/download/2/4/E/24E1E722-72DF-471F-A88A-D1338DB1AF83/Citrix_NS_Azure_MFA_LDAP.docx) | Uw Citrix NetScaler SSL VPN integreren met Azure MFA-apparaat met behulp van LDAP |
 | [Citrix NetScaler SSL VPN-en Azure MFA-configuratie voor RADIUS](https://download.microsoft.com/download/1/A/4/1A482764-4A63-45C2-A5EC-2B673ACCDD12/Citrix_NS_Azure_MFA_RADIUS.docx) | Uw Citrix NetScaler SSL VPN-apparaat integreren met Azure MFA met RADIUS |
@@ -50,7 +50,7 @@ De Azure MFA-server kan worden geïntegreerd met uw Citrix NetScaler SSL VPN-app
 ## <a name="juniperpulse-secure-ssl-vpn-appliance-and-azure-mfa-server"></a>Juniper/Pulse Secure SSL VPN-apparaat en Azure MFA-server
 De Azure MFA-server kan worden geïntegreerd met uw Juniper/Pulse Secure SSL VPN-apparaat om extra beveiliging te bieden voor Juniper/Pulse Secure SSL VPN-aanmeldingen en toegang tot de portal.  U kunt het LDAP-of RADIUS-protocol gebruiken.  Selecteer een van de volgende stappen om de gedetailleerde stapsgewijze configuratie handleidingen te downloaden.
 
-| Configuratiegids | Beschrijving |
+| Configuratiegids | Description |
 | --- | --- |
 | [Juniper/Pulse Secure SSL VPN en Azure MFA-configuratie voor LDAP](https://download.microsoft.com/download/6/5/8/6587B418-75B1-4FCB-84D4-984BC479309E/JuniperPulse_Azure_MFA_LDAP.docx) | Uw Juniper/Pulse Secure SSL VPN integreren met Azure MFA-apparaat met behulp van LDAP |
 | [Juniper/Pulse Secure SSL VPN en Azure MFA-configuratie voor RADIUS](https://download.microsoft.com/download/7/9/A/79AB3DAD-4799-4379-B1DA-B95ABDF231DC/JuniperPulse_Azure_MFA_RADIUS.docx) | Uw Juniper/Pulse Secure SSL VPN-apparaat integreren met Azure MFA met behulp van RADIUS |

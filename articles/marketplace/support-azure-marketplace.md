@@ -8,10 +8,10 @@ author: navits09
 ms.author: navits
 ms.date: 04/14/2020
 ms.openlocfilehash: 02e64c6c6e5ab2ef77f02959ada6f95d1042b76d
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "94488754"
 ---
 # <a name="support-for-the-microsoft-commercial-marketplace"></a>Ondersteuning voor micro soft Commercial Marketplace
@@ -30,7 +30,7 @@ Open een ticket met ondersteuning voor micro soft [Marketplace-Uitgever](https:/
 
 ## <a name="technical"></a>Technisch  
 
-| Ondersteuningskanaal | Beschrijving |  
+| Ondersteuningskanaal | Description |  
 |:--- |:--- |  
 | MSDN-Forums: marketplace bevindt zich op [de micro soft Q&een vraag pagina](/answers/products/azure) | Het forum voor micro soft Developer Network. |  
 | Stack Overflow: Azure bevindt zich op [stackoverflow.com/questions/Tagged/Azure](https://stackoverflow.com/questions/tagged/azure) | Stack Overflow omgeving om oplossingen te verkrijgen en vragen te stellen over alles wat met Azure Marketplace te maken heeft.<ul> <li>Stack Overflow: Azure Marketplace bevindt zich op [stackoverflow.com/questions/Tagged/Azure-Marketplace](https://stackoverflow.com/questions/tagged/azure-marketplace)</li> <li>Stack Overflow: Azure Resource Manager bevindt zich op [stackoverflow.com/questions/Tagged/Azure-Resource-Manager](https://stackoverflow.com/questions/tagged/azure-resource-manager)</li> <li>Stack Overflow: Virtual Machines op Azure op [stackoverflow.com/questions/Tagged/Azure-virtual-machine](https://stackoverflow.com/questions/tagged/azure-virtual-machine)</li> <li>Stack Overflow: containers op Azure bevinden zich op [stackoverflow.com/search?q=Azure+container](https://stackoverflow.com/search?q=azure+container)</li> </ul> |

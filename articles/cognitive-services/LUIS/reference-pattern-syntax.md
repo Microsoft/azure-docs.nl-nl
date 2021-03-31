@@ -6,10 +6,10 @@ ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 04/14/2020
 ms.openlocfilehash: 3caccd6766226ce68b371856b081b052c1033f71
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "91542186"
 ---
 # <a name="pattern-syntax"></a>Patroonsyntaxis
@@ -57,8 +57,8 @@ Een combi natie van **groepering** met **optionele** syntaxis heeft een limiet v
 
 |Toegestaan|Voorbeeld|
 |--|--|
-|Ja|([(test1 &#x7c; Test2)] &#x7c; Test3)|
-|Nee|([([test1] &#x7c; Test2)] &#x7c; Test3)|
+|Yes|([(test1 &#x7c; Test2)] &#x7c; Test3)|
+|No|([([test1] &#x7c; Test2)] &#x7c; Test3)|
 
 ## <a name="nesting-limits-for-groups-with-or-ing-syntax"></a>Limieten voor het nesten van groepen met de syntaxis
 
@@ -66,8 +66,8 @@ Een combi natie van **groepering** met **of-ING-** syntaxis heeft een limiet van
 
 |Toegestaan|Voorbeeld|
 |--|--|
-|Ja|(test1 &#x7c; Test2 &#x7c; (Test3 &#x7c; test4))|
-|Nee|(test1 &#x7c; Test2 &#x7c; Test3 &#x7c; (test4 &#x7c; test5)) |
+|Yes|(test1 &#x7c; Test2 &#x7c; (Test3 &#x7c; test4))|
+|No|(test1 &#x7c; Test2 &#x7c; Test3 &#x7c; (test4 &#x7c; test5)) |
 
 ## <a name="syntax-to-add-an-entity-to-a-pattern-template"></a>Syntaxis om een entiteit toe te voegen aan een patroon sjabloon
 Als u een entiteit wilt toevoegen aan de patroon sjabloon, plaatst u de naam van de entiteit tussen accolades, zoals `Who does {Employee} manage?` .

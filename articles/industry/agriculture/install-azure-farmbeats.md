@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 1/17/2020
 ms.author: atinb
 ms.openlocfilehash: 5863dcc20fb13f1bb203c68ad168655371130601
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92674562"
 ---
 # <a name="install-azure-farmbeats"></a>Azure FarmBeats installeren
@@ -172,7 +172,7 @@ Nadat de installatie is voltooid, kunt u de installatie controleren en de FarmBe
 
 **Datahub** vindt u op https:// \<FarmBeats-website-name> -API.azurewebsites.net/Swagger. Hier ziet u de verschillende API-objecten van FarmBeats en worden REST-bewerkingen uitgevoerd op de Api's.
 
-## <a name="upgrade"></a>Upgrade uitvoeren
+## <a name="upgrade"></a>Upgraden
 
 Als u de FarmBeats wilt bijwerken naar de nieuwste versie, voert u de volgende stappen uit in een Cloud Shell-exemplaar met behulp van de Power shell-omgeving. De gebruiker moet de eigenaar zijn van het abonnement waarin FarmBeats is geïnstalleerd.
 

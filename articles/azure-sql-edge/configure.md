@@ -10,10 +10,10 @@ ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 09/22/2020
 ms.openlocfilehash: 0c49f5ab9f10456c32f7f8516cba0e851fa80e74
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "93392330"
 ---
 # <a name="configure-azure-sql-edge"></a>Azure SQL Edge configureren
@@ -32,7 +32,7 @@ In Azure SQL Edge worden verschillende omgevings variabelen weer gegeven die kun
 
 De volgende nieuwe omgevings variabelen zijn toegevoegd aan de Azure SQL-rand. 
 
-| Omgevingsvariabele | Beschrijving | Waarden |     
+| Omgevingsvariabele | Description | Waarden |     
 |-----|-----| ---------- | 
 | **PlanId** | Hiermee geeft u de Azure SQL Edge-SKU op die moet worden gebruikt tijdens de initialisatie. Deze omgevings variabele is alleen vereist bij het implementeren van Azure SQL Edge met behulp van Azure IoT Edge. | **ASDE-Developer-on-IOT-Edge** of **ASDE-Premium-on-IOT-Edge** | 
 | **MSSQL_TELEMETRY_ENABLED** | Het verzamelen van gebruiks-en diagnostische gegevens in-of uitschakelen. | TRUE of FALSE |  
@@ -42,7 +42,7 @@ De volgende nieuwe omgevings variabelen zijn toegevoegd aan de Azure SQL-rand.
 
 De volgende SQL Server on Linux omgevings variabele wordt niet ondersteund voor Azure SQL Edge. Indien gedefinieerd, wordt deze omgevings variabele genegeerd tijdens het initialiseren van de container.
 
-| Omgevingsvariabele | Beschrijving |
+| Omgevingsvariabele | Description |
 |-----|-----|
 | **MSSQL_ENABLE_HADR** | Beschikbaarheids groep inschakelen. Bijvoorbeeld: **1** is ingeschakeld en **0** is uitgeschakeld. |
 

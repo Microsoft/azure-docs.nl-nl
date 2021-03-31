@@ -7,17 +7,17 @@ ms.service: data-catalog
 ms.topic: how-to
 ms.date: 08/01/2019
 ms.openlocfilehash: 89fa1b542c54fc962f8c12a2142884c677afb259
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "104674645"
 ---
 # <a name="how-to-annotate-data-sources-in-azure-data-catalog"></a>Aantekeningen toevoegen aan gegevens bronnen in Azure Data Catalog
 
 [!INCLUDE [Azure Purview redirect](../../includes/data-catalog-use-purview.md)]
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 **Microsoft Azure Data Catalog** is een volledig beheerde Cloud service die fungeert als registratie systeem en detectie systeem voor zakelijke gegevens bronnen. Met andere woorden, het Data Catalog is alles wat helpt mensen bij het detecteren, begrijpen en gebruiken van gegevens bronnen, en helpt organisaties bij het verkrijgen van meer waarde dan hun bestaande gegevens. Wanneer een gegevens bron wordt geregistreerd bij Data Catalog, worden de meta gegevens gekopieerd en geïndexeerd door de service, maar het artikel eindigt daar niet. Met Data Catalog kunnen gebruikers hun eigen beschrijvende meta gegevens, zoals beschrijvingen en tags, opgeven om de meta gegevens die zijn geëxtraheerd uit de gegevens bron op te vullen en de gegevens bron beter te begrijpen voor meer mensen.
 
@@ -39,7 +39,7 @@ Data Catalog ondersteunt de volgende typen aantekeningen:
 | Aantekening | Notities |
 | --- | --- |
 | Beschrijvende naam |Er kunnen beschrijvende namen worden opgegeven op het niveau van de gegevens Asset, zodat de gegevens activa eenvoudiger kunnen worden begrepen. Beschrijvende namen zijn het handigst wanneer de onderliggende object naam cryptisch, afgekort of anderszins niet relevant is voor gebruikers. |
-| Beschrijving |Beschrijvingen kunnen worden opgegeven op het niveau van de gegevens Asset en het kenmerk/kolom. Beschrijvingen zijn vrije tekst aantekeningen met een korte vorm die het perspectief van de gebruiker voor de gegevens Asset of het gebruik beschrijven. |
+| Description |Beschrijvingen kunnen worden opgegeven op het niveau van de gegevens Asset en het kenmerk/kolom. Beschrijvingen zijn vrije tekst aantekeningen met een korte vorm die het perspectief van de gebruiker voor de gegevens Asset of het gebruik beschrijven. |
 | Tags (gebruikers codes) |Labels kunnen worden opgegeven op het niveau van de gegevens Asset en het kenmerk/kolom. Gebruikers codes zijn door de gebruiker gedefinieerde labels die kunnen worden gebruikt om gegevensassets of kenmerken te categoriseren. |
 | Tags (woordenlijst Tags) |Labels kunnen worden opgegeven op het niveau van de gegevens Asset en het kenmerk/kolom. Woordenlijst Tags zijn centraal gedefinieerde woorden lijst termen die kunnen worden gebruikt om gegevensassets of kenmerken te categoriseren met behulp van een algemene bedrijfs taxonomie. Zie voor meer informatie  [de zakelijke woorden lijst instellen voor het bepalen van geregeld labelen](data-catalog-how-to-business-glossary.md) |
 | Degenen |Experts kunnen worden verstrekt op het niveau van de gegevens Asset. Experts identificeren gebruikers of groepen met deskundig perspectieven voor de gegevens en kunnen dienen als contact punten voor gebruikers die de geregistreerde gegevens bronnen detecteren en vragen hebben die niet door de bestaande aantekeningen worden beantwoord. |

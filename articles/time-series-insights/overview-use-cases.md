@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 12/16/2020
 ms.custom: seodec18
 ms.openlocfilehash: 7d97958c5fd1274495da88c064b63e59e354f691
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97606960"
 ---
 # <a name="azure-time-series-insights-gen2-use-cases"></a>Gebruikscases van Azure Time Series Insights Gen2
@@ -30,7 +30,7 @@ In dit artikel worden met name de volgende vragen beantwoord:
 
 Een overzicht van deze gebruiks scenario's wordt beschreven in de volgende secties.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Azure Time Series Insights Gen2 is een end-to-end-, platform-as-a-service-aanbieding. Het wordt gebruikt voor het verzamelen, verwerken, opslaan, analyseren en opvragen van zeer contextuele, time-series geoptimaliseerde gegevens voor IoT-schaal. Het is ideaal voor het verkennen van ad hoc gegevens en operationele analyses. Azure Time Series Insights Gen2 is een unieke uitbreid bare, aangepaste service aanbieding die voldoet aan de uitgebreide behoeften van industriële IoT-implementaties.
 

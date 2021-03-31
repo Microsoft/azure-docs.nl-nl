@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: cynthn
 ms.openlocfilehash: 2c08797a0e019934c1aff1759fd32e244c8764ff
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "93364951"
 ---
-# <a name="guidance-for-mitigating-speculative-execution-side-channel-vulnerabilities"></a>Richt lijnen voor het beperken van problemen met speculatieve uitvoering van scripts
+# <a name="guidance-for-mitigating-speculative-execution-side-channel-vulnerabilities"></a>Richtlijnen voor het beperken van problemen met speculatieve uitvoering van side-channels
 
 [!INCLUDE [virtual-machines-common-mitigate-se](../../includes/virtual-machines-common-mitigate-se.md)]

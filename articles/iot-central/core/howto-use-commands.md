@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 ms.openlocfilehash: e53bf377a7ef8f2293debd288ba25ef8f04ff4fc
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98610995"
 ---
 # <a name="how-to-use-commands-in-an-azure-iot-central-solution"></a>Opdrachten gebruiken in een Azure IoT Central-oplossing
@@ -37,13 +37,13 @@ Opdrachten worden gedefinieerd als onderdeel van een apparaatprofiel. De volgend
 
 De volgende tabel bevat de configuratie-instellingen voor een opdracht mogelijkheid:
 
-| Veld             |Beschrijving|
+| Veld             |Description|
 |-------------------|-----------|
 |Weergavenaam       |De opdracht waarde die wordt gebruikt voor dash boards en formulieren.|
 | Name            | De naam van de opdracht. IoT Central genereert een waarde voor dit veld van de weergave naam, maar u kunt indien nodig uw eigen waarde kiezen. Dit veld moet alfanumeriek zijn. De apparaatcode gebruikt deze **naam** waarde.|
 | Type mogelijkheid | Cmd.|
 | Wachtrij indien offline | Hiermee wordt aangegeven of deze opdracht een *offline* opdracht moet zijn. |
-| Beschrijving     | Een beschrijving van de opdracht mogelijkheid.|
+| Description     | Een beschrijving van de opdracht mogelijkheid.|
 | Opmerking     | Eventuele opmerkingen over de opdracht mogelijkheid.|
 | Aanvraag     | De payload voor de opdracht apparaat.|
 | Antwoord     | De nettolading van het antwoord op de opdracht van het apparaat.|

@@ -18,14 +18,14 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 246f8326f7112825de98ee824cf4bab7952a7878
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "90014584"
 ---
 # <a name="azure-ad-connect-in-microsoft-cloud-germany---public-preview"></a>Azure AD Connect in Microsoft Cloud Duitsland - Openbare preview
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 Azure AD Connect voorziet in synchronisatie tussen uw on-premises Active Directory en Azure Active Directory.
 Op dit moment moeten veel van de scenario's in [Microsoft Cloud Duitsland](https://azure.microsoft.com/global-infrastructure/germany/
 ) worden uitgevoerd door de operator. Wanneer u Microsoft Cloud Duitsland gebruikt, moet u rekening houden met de volgende informatie:

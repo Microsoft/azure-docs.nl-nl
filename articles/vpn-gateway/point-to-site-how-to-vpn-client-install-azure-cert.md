@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: cherylmc
 ms.openlocfilehash: 8c4d37f67d89ad1b7973a85fb6c2a9f7e818a028
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "89421659"
 ---
 # <a name="install-client-certificates-for-p2s-certificate-authentication-connections"></a>Client certificaten installeren voor P2S-certificaat authenticatie verbindingen
@@ -35,7 +35,7 @@ Ongeacht het besturings systeem van de client waarmee u verbinding wilt maken, m
 
 [!INCLUDE [Install on Mac](../../includes/vpn-gateway-certificates-install-mac-client-cert-include.md)]
 
-## <a name="linux"></a><a name="installlinux"></a>Spreek
+## <a name="linux"></a><a name="installlinux"></a>Linux
 
 Het Linux-client certificaat wordt geïnstalleerd op de client als onderdeel van de client configuratie. Zie [client configuratie-Linux](point-to-site-vpn-client-configuration-azure-cert.md#linuxinstallcli) voor instructies.
 

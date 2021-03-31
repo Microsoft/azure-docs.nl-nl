@@ -227,7 +227,7 @@ Azure API Management biedt u de mogelijkheid om de inhoud van de pagina's van de
   
 ### <a name="data-model"></a>Gegevensmodel  
   
-|Eigenschap|Type|Beschrijving|  
+|Eigenschap|Type|Description|  
 |--------------|----------|-----------------|  
 |referenceCode|tekenreeks|Code gegenereerd als deze pagina wordt weer gegeven als gevolg van een interne fout.|  
 |errorCode|tekenreeks|Code gegenereerd als deze pagina wordt weer gegeven als gevolg van een interne fout.|  

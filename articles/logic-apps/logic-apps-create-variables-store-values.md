@@ -362,7 +362,7 @@ Dit zijn de eigenschappen voor de actie **variabele instellen** :
 | Eigenschap | Vereist | Waarde |  Beschrijving |
 |----------|----------|-------|--------------|
 | **Naam** | Ja | <*variabele-naam*> | De naam van de variabele die moet worden gewijzigd |
-| **Waarde** | Ja | <*nieuwe waarde*> | De waarde die u wilt toewijzen aan de variabele. Beide moeten hetzelfde gegevens type hebben. |
+| **Waarde** | Yes | <*nieuwe waarde*> | De waarde die u wilt toewijzen aan de variabele. Beide moeten hetzelfde gegevens type hebben. |
 ||||| 
 
 > [!NOTE]
@@ -420,7 +420,7 @@ Dit zijn de eigenschappen voor de acties **toevoegen aan..** .:
 | Eigenschap | Vereist | Waarde |  Beschrijving |
 |----------|----------|-------|--------------|
 | **Naam** | Ja | <*variabele-naam*> | De naam van de variabele die moet worden gewijzigd |
-| **Waarde** | Ja | <*toegevoegde waarde*> | De waarde die u wilt toevoegen, die elk type kan hebben |
+| **Waarde** | Yes | <*toegevoegde waarde*> | De waarde die u wilt toevoegen, die elk type kan hebben |
 |||||
 
 Als u overschakelt van de ontwerp functie naar de code weergave-editor, is dit de manier waarop de actie **toevoegen aan matrix variabele** wordt weer gegeven in de definitie van de logische app, in JSON-indeling. In dit voor beeld wordt een matrix variabele gemaakt en wordt een andere waarde toegevoegd als het laatste item in de matrix. Het resultaat is een bijgewerkte variabele die deze matrix bevat: `[1,2,3,"red"]`

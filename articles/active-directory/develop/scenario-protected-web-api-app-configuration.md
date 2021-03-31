@@ -13,10 +13,10 @@ ms.date: 07/15/2020
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: 5206c2295ee7c01b4a2908e59da1cfdd8782bccd
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102517715"
 ---
 # <a name="protected-web-api-code-configuration"></a>Beveiligde web-API: code configuratie
@@ -195,7 +195,7 @@ De validatie stappen worden vastgelegd in validators, die worden weer gegeven in
 
 In deze tabel worden de validatie functies beschreven:
 
-| Validator | Beschrijving |
+| Validator | Description |
 |---------|---------|
 | **ValidateAudience** | Zorgt ervoor dat het token voor de toepassing is die het token voor u valideert. |
 | **ValidateIssuer** | Hiermee zorgt u ervoor dat het token is uitgegeven door een vertrouwde STS, wat inhoudt dat u vertrouwt. |

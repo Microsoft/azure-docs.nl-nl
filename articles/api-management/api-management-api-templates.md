@@ -15,10 +15,10 @@ ms.date: 11/04/2019
 ms.author: apimpm
 ms.custom: devx-track-python
 ms.openlocfilehash: b63f38609b4b61130e515dd118e8ced9f201defd
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "87851711"
 ---
 # <a name="api-templates-in-azure-api-management"></a>API-sjablonen in azure API Management
@@ -90,7 +90,7 @@ Met de sjablonen in deze sectie kunt u de inhoud van de API-pagina's in de ontwi
   
 ### <a name="data-model"></a>Gegevensmodel  
   
-|Eigenschap|Type|Beschrijving|  
+|Eigenschap|Type|Description|  
 |--------------|----------|-----------------|  
 |`apis`|Verzameling van [API-overzichts](api-management-template-data-model-reference.md#APISummary) entiteiten.|De Api's die zichtbaar zijn voor de huidige gebruiker.|  
   

@@ -4,10 +4,10 @@ description: In deze zelfstudie maakt u een Resource Graph-query en deelt u de n
 ms.date: 01/27/2021
 ms.topic: tutorial
 ms.openlocfilehash: 7240a843cfa041137b28284e396c8a4b62a81926
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98916676"
 ---
 # <a name="tutorial-create-and-share-an-azure-resource-graph-query-in-the-azure-portal"></a>Zelfstudie: Een Azure Resource Graph-query maken en delen in het Azure-portal

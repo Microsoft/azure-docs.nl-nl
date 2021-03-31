@@ -16,7 +16,7 @@ ms.locfileid: "86257248"
 Service Fabric-mesh-toepassingen verwijderen en beheren.
 
 ## <a name="subgroups"></a>Subgroepen
-|Subgroep|Beschrijving|
+|Subgroep|Description|
 | --- | --- |
 | [app](service-fabric-sfctl-mesh-app.md) | Toepassings resources ophalen en verwijderen. |
 | [code-pakket-logboek](service-fabric-sfctl-mesh-code-package-log.md) | De logboeken ophalen voor de container van het opgegeven code pakket voor de opgegeven service replica. |

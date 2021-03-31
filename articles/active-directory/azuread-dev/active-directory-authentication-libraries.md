@@ -14,10 +14,10 @@ ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev
 ROBOTS: NOINDEX
 ms.openlocfilehash: 7b6ffd885e1be2dd59cea87cacd6e5fd5e0f8f49
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96861167"
 ---
 # <a name="azure-active-directory-authentication-libraries"></a>Verificatie bibliotheken Azure Active Directory
@@ -37,7 +37,7 @@ Met de Azure Active Directory Authentication Library (ADAL) v 1.0 kunnen ontwikk
 
 ## <a name="microsoft-supported-client-libraries"></a>Door micro soft ondersteunde client bibliotheken
 
-| Platform | Bibliotheek | Downloaden | Broncode | Voorbeeld | Naslaginformatie
+| Platform | Bibliotheek | Downloaden | Broncode | Voorbeeld | Referentie
 | --- | --- | --- | --- | --- | --- |
 | .NET-client, Windows Store, UWP, Xamarin iOS en Android |ADAL .NET v3 |[NuGet](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory) |[GitHub](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet) | [Desktop-app](../develop/quickstart-v2-windows-desktop.md) |[Verwijzing](/dotnet/api/microsoft.identitymodel.clients.activedirectory) |
 | Javascript |ADAL.js |[GitHub](https://github.com/AzureAD/azure-activedirectory-library-for-js) |[GitHub](https://github.com/AzureAD/azure-activedirectory-library-for-js) |[App met één pagina](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi) | |

@@ -53,14 +53,14 @@ Alleen Linux-machines met de volgende opslag kunnen worden gerepliceerd:
 
 **Configuratie** | **Ondersteund**  
 --- | --- 
-Host-NIC-koppeling | Ja 
-Host-VLAN | Ja 
-Host-IPv4 | Ja 
-Host-IPv6 | Nee 
-Gast-VM-NIC-koppeling | Nee
-Gast-VM-IPv4 | Ja
-Gast-VM-IPv6 | Nee
-Gast-VM-Windows/Linux-statisch IP-adres | Ja
+Host-NIC-koppeling | Yes 
+Host-VLAN | Yes 
+Host-IPv4 | Yes 
+Host-IPv6 | No 
+Gast-VM-NIC-koppeling | No
+Gast-VM-IPv4 | Yes
+Gast-VM-IPv6 | No
+Gast-VM-Windows/Linux-statisch IP-adres | Yes
 Gast-VM-multi-NIC | Ja
 
 
@@ -71,9 +71,9 @@ Gast-VM-multi-NIC | Ja
 **Opslag (host)** | **Ondersteund**
 --- | --- 
 NFS | N.v.t.
-SMB 3.0 |  Ja
-SAN (ISCSI) | Ja
-Meerdere paden (MPIO) | Ja
+SMB 3.0 |  Yes
+SAN (ISCSI) | Yes
+Meerdere paden (MPIO) | Yes
 
 ### <a name="guest-or-physical-server-storage"></a>Opslag van gast-of fysieke servers
 
@@ -81,26 +81,26 @@ Meerdere paden (MPIO) | Ja
 --- | --- | 
 VMDK |  N.v.t.
 VHD/VHDX | Ja (Maxi maal 16 schijven)
-VM van generatie 2 | Ja
-Gedeelde cluster schijf | Nee
-Versleutelde schijf | Nee
+VM van generatie 2 | Yes
+Gedeelde cluster schijf | No
+Versleutelde schijf | No
 UEFI| N.v.t.
-NFS | Nee
-SMB 3.0 | Nee
+NFS | No
+SMB 3.0 | No
 RDM | N.v.t.
-Schijf > 1 TB | Ja
-Volume met gestripte schijf > 1 TB<br/><br/> LVM | Ja
-Opslagruimten | Ja
-Hot toevoegen/verwijderen schijf | Nee
-Schijf uitsluiten | Ja
-Meerdere paden (MPIO) | Ja
+Schijf > 1 TB | Yes
+Volume met gestripte schijf > 1 TB<br/><br/> LVM | Yes
+Opslagruimten | Yes
+Hot toevoegen/verwijderen schijf | No
+Schijf uitsluiten | Yes
+Meerdere paden (MPIO) | Yes
 
 ## <a name="vaults"></a>Kluizen
 
 **Actie** | **Ondersteund**
 --- | --- 
-Kluizen verplaatsen tussen resource groepen (binnen of tussen abonnementen) |  Nee
-Opslag, netwerk, Azure-Vm's verplaatsen tussen resource groepen (binnen of tussen verschillende abonnementen) | Nee
+Kluizen verplaatsen tussen resource groepen (binnen of tussen abonnementen) |  No
+Opslag, netwerk, Azure-Vm's verplaatsen tussen resource groepen (binnen of tussen verschillende abonnementen) | No
 
 ## <a name="azure-site-recovery-provider"></a>Azure Site Recovery provider
 

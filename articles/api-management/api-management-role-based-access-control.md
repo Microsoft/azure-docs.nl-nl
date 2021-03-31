@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 06/20/2018
 ms.author: apimpm
 ms.openlocfilehash: fc41d2904d5a6676f1e9e1e2d178985bef0a9aa3
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101095547"
 ---
 # <a name="how-to-use-role-based-access-control-in-azure-api-management"></a>Op rollen gebaseerd toegangsbeheer gebruiken in API Management
@@ -32,7 +32,7 @@ API Management biedt momenteel drie ingebouwde rollen en voegt twee meer rollen 
 
 De volgende tabel bevat korte beschrijvingen van de ingebouwde rollen. U kunt deze rollen toewijzen met behulp van de Azure Portal of andere hulpprogram ma's, zoals Azure [Power shell](../role-based-access-control/role-assignments-powershell.md), [azure cli](../role-based-access-control/role-assignments-cli.md)en [rest API](../role-based-access-control/role-assignments-rest.md). Zie [Azure-rollen toewijzen voor het beheren van de toegang tot uw Azure-abonnements resources](../role-based-access-control/role-assignments-portal.md)voor meer informatie over het toewijzen van ingebouwde rollen.
 
-| Rol          | Lees toegang<sup>[1]</sup> | Schrijf toegang<sup>[2]</sup> | Service maken, verwijderen, schalen, VPN en aangepaste domein configuratie | Toegang tot de verouderde Publisher-Portal | Beschrijving
+| Rol          | Lees toegang<sup>[1]</sup> | Schrijf toegang<sup>[2]</sup> | Service maken, verwijderen, schalen, VPN en aangepaste domein configuratie | Toegang tot de verouderde Publisher-Portal | Description
 | ------------- | ---- | ---- | ---- | ---- | ---- 
 | Inzender van API Management-service | ✓ | ✓ | ✓ | ✓ | Super gebruiker. Heeft volledige ruwe toegang tot API Management Services en entiteiten (bijvoorbeeld Api's en beleids regels). Heeft toegang tot de verouderde Publisher-Portal. |
 | API Management-service lezer | ✓ | | || Heeft alleen-lezen toegang tot API Management Services en entiteiten. |

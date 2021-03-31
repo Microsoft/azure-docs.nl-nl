@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.openlocfilehash: 951111b217b7ace3f12676edf6febfa7266094df
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103489945"
 ---
 # <a name="properties-of-the-iot-edge-agent-and-iot-edge-hub-module-twins"></a>Eigenschappen van de IoT Edge agent en IoT Edge hub-module apparaatdubbels
@@ -35,33 +35,33 @@ De module voor de IoT Edge-agent wordt aangeroepen `$edgeAgent` en coördineert 
 
 | Eigenschap | Beschrijving | Vereist |
 | -------- | ----------- | -------- |
-| schemaVersion | "1,0" of "1,1". Versie 1,1 is geïntroduceerd in IoT Edge versie 1.0.10 en wordt aanbevolen. | Ja |
-| runtime. type | Moet ' docker ' zijn | Ja |
-| runtime. settings. minDockerVersion | Ingesteld op de minimale docker-versie die is vereist voor dit implementatie manifest | Ja |
-| runtime. settings. loggingOptions | Een stringified-JSON met de registratie opties voor de container van de IoT Edge agent. [Opties voor docker-logboek registratie](https://docs.docker.com/engine/admin/logging/overview/) | Nee |
-| runtime. settings. registryCredentials<br>. {registryId}. gebruikers naam | De gebruikers naam van het container register. Voor Azure Container Registry is de gebruikers naam meestal de register naam.<br><br> Register referenties zijn nodig voor installatie kopieën van een persoonlijke module. | Nee |
-| runtime. settings. registryCredentials<br>. {registryId}. wacht woord | Het wacht woord voor het container register. | Nee |
-| runtime. settings. registryCredentials<br>. {registryId}. adres | Het adres van het container register. Voor Azure Container Registry is het adres doorgaans *{Registry name}. azurecr. io*. | Nee |  
-| systemModules. edgeAgent. type | Moet ' docker ' zijn | Ja |
-| systemModules. edgeAgent. settings. image | De URI van de afbeelding van de IoT Edge agent. De IoT Edge agent kan momenteel niet worden bijgewerkt. | Ja |
-| systemModules. edgeAgent. settings<br>.createOptions | Een stringified-JSON met de opties voor het maken van de IoT Edge agent-container. [Opties voor het maken van docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate) | Nee |
+| schemaVersion | "1,0" of "1,1". Versie 1,1 is geïntroduceerd in IoT Edge versie 1.0.10 en wordt aanbevolen. | Yes |
+| runtime. type | Moet ' docker ' zijn | Yes |
+| runtime. settings. minDockerVersion | Ingesteld op de minimale docker-versie die is vereist voor dit implementatie manifest | Yes |
+| runtime. settings. loggingOptions | Een stringified-JSON met de registratie opties voor de container van de IoT Edge agent. [Opties voor docker-logboek registratie](https://docs.docker.com/engine/admin/logging/overview/) | No |
+| runtime. settings. registryCredentials<br>. {registryId}. gebruikers naam | De gebruikers naam van het container register. Voor Azure Container Registry is de gebruikers naam meestal de register naam.<br><br> Register referenties zijn nodig voor installatie kopieën van een persoonlijke module. | No |
+| runtime. settings. registryCredentials<br>. {registryId}. wacht woord | Het wacht woord voor het container register. | No |
+| runtime. settings. registryCredentials<br>. {registryId}. adres | Het adres van het container register. Voor Azure Container Registry is het adres doorgaans *{Registry name}. azurecr. io*. | No |  
+| systemModules. edgeAgent. type | Moet ' docker ' zijn | Yes |
+| systemModules. edgeAgent. settings. image | De URI van de afbeelding van de IoT Edge agent. De IoT Edge agent kan momenteel niet worden bijgewerkt. | Yes |
+| systemModules. edgeAgent. settings<br>.createOptions | Een stringified-JSON met de opties voor het maken van de IoT Edge agent-container. [Opties voor het maken van docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate) | No |
 | systemModules.edgeAgent.configuration.id | De ID van de implementatie die deze module heeft geïmplementeerd. | IoT Hub stelt deze eigenschap in wanneer het manifest wordt toegepast met behulp van een implementatie. Maakt geen deel uit van een implementatie manifest. |
-| systemModules. edgeHub. type | Moet ' docker ' zijn | Ja |
-| systemModules. edgeHub. status | Moet worden uitgevoerd | Ja |
-| systemModules.edgeHub.restartPolicy | Moet ' Always ' zijn | Ja |
-| systemModules.edgeHub.startupOrder | Een geheel getal dat een module in de opstart volgorde heeft. 0 is het eerste en maximum geheel getal (4294967295) is de laatste waarde. Als er geen waarde wordt gegeven, is de standaard instelling een maximum geheel getal.  | Nee |
-| systemModules. edgeHub. settings. image | De URI van de afbeelding van de IoT Edge hub. | Ja |
-| systemModules. edgeHub. settings<br>.createOptions | Een stringified-JSON met de opties voor het maken van de IoT Edge hub-container. [Opties voor het maken van docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate) | Nee |
+| systemModules. edgeHub. type | Moet ' docker ' zijn | Yes |
+| systemModules. edgeHub. status | Moet worden uitgevoerd | Yes |
+| systemModules.edgeHub.restartPolicy | Moet ' Always ' zijn | Yes |
+| systemModules.edgeHub.startupOrder | Een geheel getal dat een module in de opstart volgorde heeft. 0 is het eerste en maximum geheel getal (4294967295) is de laatste waarde. Als er geen waarde wordt gegeven, is de standaard instelling een maximum geheel getal.  | No |
+| systemModules. edgeHub. settings. image | De URI van de afbeelding van de IoT Edge hub. | Yes |
+| systemModules. edgeHub. settings<br>.createOptions | Een stringified-JSON met de opties voor het maken van de IoT Edge hub-container. [Opties voor het maken van docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate) | No |
 | systemModules.edgeHub.configuration.id | De ID van de implementatie die deze module heeft geïmplementeerd. | IoT Hub stelt deze eigenschap in wanneer het manifest wordt toegepast met behulp van een implementatie. Maakt geen deel uit van een implementatie manifest. |
-| modules. {moduleId}. versie | Een door de gebruiker gedefinieerde teken reeks die de versie van deze module voor stelt. | Ja |
-| modules. {moduleId}. type | Moet ' docker ' zijn | Ja |
-| modules. {moduleId}. status | {"uitvoeren" \| "gestopt"} | Ja |
-| modules. {moduleId}. restartPolicy | {"Never" \| "on-failure" \| " \| " altijd "} | Ja |
-| modules. {moduleId}. startupOrder | Een geheel getal dat een module in de opstart volgorde heeft. 0 is het eerste en maximum geheel getal (4294967295) is de laatste waarde. Als er geen waarde wordt gegeven, is de standaard instelling een maximum geheel getal.  | Nee |
-| modules. {moduleId}. imagePullPolicy | {"on-Create" \| ' Never '} | Nee |
-| modules. {moduleId}. env | Een lijst met omgevings variabelen die moeten worden door gegeven aan de module. Neemt de indeling `"<name>": {"value": "<value>"}` | Nee |
-| modules. {moduleId}. settings. image | De URI naar de module afbeelding. | Ja |
-| modules. {moduleId}. settings. createOptions | Een stringified-JSON met de opties voor het maken van de module container. [Opties voor het maken van docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate) | Nee |
+| modules. {moduleId}. versie | Een door de gebruiker gedefinieerde teken reeks die de versie van deze module voor stelt. | Yes |
+| modules. {moduleId}. type | Moet ' docker ' zijn | Yes |
+| modules. {moduleId}. status | {"uitvoeren" \| "gestopt"} | Yes |
+| modules. {moduleId}. restartPolicy | {"Never" \| "on-failure" \| " \| " altijd "} | Yes |
+| modules. {moduleId}. startupOrder | Een geheel getal dat een module in de opstart volgorde heeft. 0 is het eerste en maximum geheel getal (4294967295) is de laatste waarde. Als er geen waarde wordt gegeven, is de standaard instelling een maximum geheel getal.  | No |
+| modules. {moduleId}. imagePullPolicy | {"on-Create" \| ' Never '} | No |
+| modules. {moduleId}. env | Een lijst met omgevings variabelen die moeten worden door gegeven aan de module. Neemt de indeling `"<name>": {"value": "<value>"}` | No |
+| modules. {moduleId}. settings. image | De URI naar de module afbeelding. | Yes |
+| modules. {moduleId}. settings. createOptions | Een stringified-JSON met de opties voor het maken van de module container. [Opties voor het maken van docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate) | No |
 | modules. {moduleId}. configuratie.-id | De ID van de implementatie die deze module heeft geïmplementeerd. | IoT Hub stelt deze eigenschap in wanneer het manifest wordt toegepast met behulp van een implementatie. Maakt geen deel uit van een implementatie manifest. |
 
 ## <a name="edgeagent-reported-properties"></a>EdgeAgent gerapporteerde eigenschappen
@@ -111,9 +111,9 @@ De module voor de IoT Edge hub wordt aangeroepen `$edgeHub` en coördineert de c
 
 | Eigenschap | Beschrijving | Vereist in het implementatie manifest |
 | -------- | ----------- | -------- |
-| schemaVersion | "1,0" of "1,1". Versie 1,1 is geïntroduceerd in IoT Edge versie 1.0.10 en wordt aanbevolen. | Ja |
+| schemaVersion | "1,0" of "1,1". Versie 1,1 is geïntroduceerd in IoT Edge versie 1.0.10 en wordt aanbevolen. | Yes |
 | stuurt. RouteName | Een teken reeks die een IoT Edge hub-route vertegenwoordigt. Zie voor meer informatie [routes declareren](module-composition.md#declare-routes). | Het `routes` element kan aanwezig zijn, maar leeg zijn. |
-| storeAndForwardConfiguration.timeToLiveSecs | De tijd in seconden dat IoT Edge hub berichten houdt als de verbinding met de routerings eindpunten is verbroken, of IoT Hub of een lokale module. De waarde kan elk positief geheel getal zijn. | Ja |
+| storeAndForwardConfiguration.timeToLiveSecs | De tijd in seconden dat IoT Edge hub berichten houdt als de verbinding met de routerings eindpunten is verbroken, of IoT Hub of een lokale module. De waarde kan elk positief geheel getal zijn. | Yes |
 
 ## <a name="edgehub-reported-properties"></a>EdgeHub gerapporteerde eigenschappen
 

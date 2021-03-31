@@ -4,10 +4,10 @@ description: Meer informatie over hoe u met Azure function plan hosting uw code 
 ms.date: 8/31/2020
 ms.topic: conceptual
 ms.openlocfilehash: d292a70a8dfaa4cebdb99f2bcb5420c8b8ab9cd8
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98760547"
 ---
 # <a name="azure-functions-consumption-plan-hosting"></a>Hosting van Azure Functions-verbruiks abonnement

@@ -9,10 +9,10 @@ ms.date: 12/18/2019
 ms.author: tamram
 ms.custom: include file
 ms.openlocfilehash: 8c5c0c8f649e7cbab2c16688717de1aaabfb93c5
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "75477146"
 ---
 Deze referentie bevat schaal baarheid en prestatie doelen voor Azure Storage. De schaal baarheid en prestatie doelen die hier worden weer gegeven, zijn hoogwaardige doelen, maar kunnen worden behaald. In alle gevallen is de aanvraag snelheid en band breedte die door uw opslag account wordt behaald, afhankelijk van de grootte van de opgeslagen objecten, de toegangs patronen die worden gebruikt en het type werk belasting dat door uw toepassing wordt uitgevoerd.

@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 09/26/2020
 ms.openlocfilehash: 88a820d0f1fa9515b4f2992a8305a2d1065e0987
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "93421206"
 ---
 # <a name="resnet"></a>ResNet
@@ -58,7 +58,7 @@ Wanneer de uitvoering van de pijp lijn is voltooid, kunt u het model voor scores
 
 ###  <a name="output"></a>Uitvoer  
 
-| Naam            | Type                    | Beschrijving                              |
+| Naam            | Type                    | Description                              |
 | --------------- | ----------------------- | ---------------------------------------- |
 | Niet-traind model | UntrainedModelDirectory | Een niet-traind ResNet-model dat kan worden verbonden met Train Pytorch model. |
 

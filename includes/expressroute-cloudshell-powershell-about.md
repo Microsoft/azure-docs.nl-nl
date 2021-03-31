@@ -9,10 +9,10 @@ ms.date: 12/13/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 446a3b786686d96f68d2d0a09d00a75e176a7661
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "86218125"
 ---
 U kunt Azure Cloud Shell gebruiken om de meeste PowerShell-cmdlets en CLI-opdrachten uit te voeren. U hoeft Azure PowerShell of CLI niet lokaal te installeren. Azure Cloud Shell is een gratis, interactieve shell waarop algemene Azure-hulpprogramma's vooraf zijn geïnstalleerd. Het is geconfigureerd voor gebruik met uw account.

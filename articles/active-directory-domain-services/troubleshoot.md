@@ -12,10 +12,10 @@ ms.topic: troubleshooting
 ms.date: 07/06/2020
 ms.author: justinha
 ms.openlocfilehash: 89b04f86d41f8e4828580f70a9aec8acea3e0053
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96618447"
 ---
 # <a name="common-errors-and-troubleshooting-steps-for-azure-active-directory-domain-services"></a>Veelvoorkomende fouten en stappen voor probleem oplossing voor Azure Active Directory Domain Services
@@ -37,7 +37,7 @@ Als u problemen ondervindt met het inschakelen van Azure AD DS, raadpleegt u de 
 
 ### <a name="domain-name-conflict"></a>Conflict met domein naam
 
-**Foutbericht**
+**Fout bericht**
 
 *De naam aaddscontoso.com wordt al gebruikt in dit netwerk. Geef een naam op die niet wordt gebruikt.*
 
@@ -49,7 +49,7 @@ Deze fout wordt veroorzaakt door naam conflicten voor de domein naam in het virt
 
 ### <a name="inadequate-permissions"></a>Ontoereikende machtigingen
 
-**Foutbericht**
+**Fout bericht**
 
 *Domain Services kan niet worden ingeschakeld in deze Azure AD-Tenant. De service heeft niet de juiste machtigingen voor de toepassing met de naam Azure AD Domain Services Sync. Verwijder de toepassing met de naam Azure AD Domain Services Sync en probeer vervolgens Domain Services in te scha kelen voor uw Azure AD-Tenant.*
 
@@ -64,7 +64,7 @@ Controleer of er een toepassing met de naam *Azure AD Domain Services synchronis
 
 ### <a name="invalid-configuration"></a>Ongeldige configuratie
 
-**Foutbericht**
+**Fout bericht**
 
 *Domain Services kan niet worden ingeschakeld in deze Azure AD-Tenant. De domein Services-toepassing in uw Azure AD-Tenant beschikt niet over de vereiste machtigingen om domein Services in te scha kelen. Verwijder de toepassing met de toepassings-id d87dcbc6-a371-462e-88e3-28ad15ec4e64 en probeer vervolgens Domain Services in te scha kelen voor uw Azure AD-Tenant.*
 
@@ -108,7 +108,7 @@ if ($sp -ne $null)
 
 ### <a name="microsoft-graph-disabled"></a>Microsoft Graph uitgeschakeld
 
-**Foutbericht**
+**Fout bericht**
 
 *Domain Services kan niet worden ingeschakeld in deze Azure AD-Tenant. De Microsoft Azure AD toepassing is uitgeschakeld in uw Azure AD-Tenant. Schakel de toepassing met de toepassings-id 00000002-0000-0000-C000-000000000000 te gebruiken in en probeer vervolgens Domain Services in te scha kelen voor uw Azure AD-Tenant.*
 

@@ -14,10 +14,10 @@ ms.custom: aaddev
 ms.reviewer: celested
 ROBOTS: NOINDEX
 ms.openlocfilehash: a4bb9151e9d4b76507b0c7f8ab5aaa7f5f1820b8
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96608194"
 ---
 # <a name="azure-active-directory-developer-platform-videos"></a>Video's over het Azure Active Directory-ontwikkelaars platform

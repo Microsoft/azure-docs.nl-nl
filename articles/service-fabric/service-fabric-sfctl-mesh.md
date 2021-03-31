@@ -6,10 +6,10 @@ ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
 ms.openlocfilehash: 4682eee93b5ff9f01e65611e8d5e0920930776a5
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "86257248"
 ---
 # <a name="sfctl-mesh"></a>sfctl mesh
@@ -22,7 +22,7 @@ Service Fabric-mesh-toepassingen verwijderen en beheren.
 | [code-pakket-logboek](service-fabric-sfctl-mesh-code-package-log.md) | De logboeken ophalen voor de container van het opgegeven code pakket voor de opgegeven service replica. |
 | [inhoudsdistributiepad](service-fabric-sfctl-mesh-deployment.md) | Service Fabric netresources maken. |
 | [#b0](service-fabric-sfctl-mesh-gateway.md) | Netgateway-resources ophalen en verwijderen. |
-| [netwerk](service-fabric-sfctl-mesh-network.md) | Net-netwerk resources ophalen en verwijderen. |
+| [network](service-fabric-sfctl-mesh-network.md) | Net-netwerk resources ophalen en verwijderen. |
 | [geheim](service-fabric-sfctl-mesh-secret.md) | Geheim bronnen van het net ophalen en verwijderen. |
 | [secretvalue](service-fabric-sfctl-mesh-secretvalue.md) | Net secretvalue-resources ophalen en verwijderen. |
 | [service](service-fabric-sfctl-mesh-service.md) | Haal service Details en lijst Services van een toepassings bron op. |

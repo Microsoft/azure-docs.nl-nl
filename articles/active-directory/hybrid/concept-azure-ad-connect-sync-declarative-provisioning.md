@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 59dc94e37dfa1ef8b0b079bf5d78d0504e0cb8c7
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "91313617"
 ---
 # <a name="azure-ad-connect-sync-understanding-declarative-provisioning"></a>Azure AD Connect Sync: uitleg over declaratieve inrichting
@@ -66,7 +66,7 @@ De bereik module ondersteunt de volgende bewerkingen.
 | ISBITSET, ISNOTBITSET |Evalueert of een bepaalde bit is ingesteld. Kan bijvoorbeeld worden gebruikt om de bits in userAccountControl te evalueren om te controleren of een gebruiker is ingeschakeld of uitgeschakeld. |
 | ISMEMBEROF, ISNOTMEMBEROF |De waarde moet een DN bevatten voor een groep in de ruimte van de connector. Als het object lid is van de groep die is opgegeven, ligt de regel binnen het bereik. |
 
-## <a name="join"></a>Koppelen
+## <a name="join"></a>Deelnemen
 De samenvoegings module in de synchronisatie pijplijn is verantwoordelijk voor het vinden van de relatie tussen het object in de bron en een object in het doel. In een regel voor binnenkomende verbindingen zou deze relatie een object zijn in een connector ruimte waarmee een relatie wordt gezocht naar een object in de tekst.  
 ![Samen voegen tussen CS en MV](./media/concept-azure-ad-connect-sync-declarative-provisioning/join1.png)  
 Het doel is om te zien of er al een object is in de tekst die is gemaakt door een andere connector. In een account-bron-forest moet de gebruiker van het account forest bijvoorbeeld worden gekoppeld aan de gebruiker uit de bron-forest.

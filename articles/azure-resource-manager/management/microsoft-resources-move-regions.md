@@ -4,10 +4,10 @@ description: Weer geven hoe resources die zich in de micro soft. resources-naam 
 ms.topic: conceptual
 ms.date: 08/25/2020
 ms.openlocfilehash: 098e5c36969da12966d793b6e1eddd4f79701ead
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "88951052"
 ---
 # <a name="move-microsoftresources-resources-to-new-region"></a>Resources van micro soft. resources naar een nieuwe regio verplaatsen

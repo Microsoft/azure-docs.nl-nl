@@ -172,7 +172,7 @@
           displayName: 'connections, Purdue, zoom, delete device'
         - name: Werken met waarschuwingen die worden gedetecteerd door een sensor
           items:
-            - name: Over sensor waarschuwingen
+            - name: Meer informatie over sensor waarschuwingen
               href: how-to-work-with-alerts-on-your-sensor.md
             - name: Waarschuwingen filteren en beheren via de pagina waarschuwingen
               href: how-to-view-alerts.md
@@ -181,11 +181,11 @@
               displayName: 'PCAP, metadata, alerts, link, device map,'
             - name: Waarschuwings typen en-beschrijvingen
               href: alert-engine-messages.md
-              displayName: 'alert, alerts, description, engine, anomaly, protocol, policy, malware, violation, operational'
-            - name: De waarschuwingsgebeurtenis beheren
+              displayName: 'alert, alerts, description, engine, anomaly, protocol, policy, malware, violation, operational, severity, minor, major, critical, warning, alerts list, security alerts,'
+            - name: Waarschuwings gebeurtenissen beheren
               href: how-to-manage-the-alert-event.md
               displayName: 'PCAP, acknowledge, learn, mute, policy'
-            - name: Incidentrespons op waarschuwingen versnellen
+            - name: Waarschuwings werk stromen versnellen
               href: how-to-accelerate-alert-incident-response.md
               displayName: 'custom, alerts, comments, groups'
             - name: Waarschuwingsinformatie doorsturen

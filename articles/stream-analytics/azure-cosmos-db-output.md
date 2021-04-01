@@ -7,10 +7,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/25/2020
 ms.openlocfilehash: 9382ac8dc71d1ccb3a85dc0a7a027c8e99296cc6
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98016574"
 ---
 # <a name="azure-cosmos-db-output-from-azure-stream-analytics"></a>Azure Cosmos DB uitvoer van Azure Stream Analytics
@@ -25,7 +25,7 @@ Azure Cosmos DB uitvoer van Stream Analytics is momenteel niet beschikbaar in de
 
 In de volgende tabel worden de eigenschappen beschreven voor het maken van een Azure Cosmos DB uitvoer.
 
-| Naam van eigenschap | Beschrijving |
+| Naam van eigenschap | Description |
 | --- | --- |
 | Uitvoeralias | Een alias om deze uitvoer in uw Stream Analytics-query te verwijzen. |
 | Sink | Azure Cosmos DB. |

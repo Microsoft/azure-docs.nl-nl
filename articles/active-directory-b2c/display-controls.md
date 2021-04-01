@@ -12,10 +12,10 @@ ms.date: 12/11/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 441a77823c77305e567e9e1436715bc51ca48c11
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97387051"
 ---
 # <a name="display-controls"></a>Besturings elementen weer geven
@@ -46,12 +46,12 @@ Het element **DisplayControl** bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Id | Ja | Een id die wordt gebruikt voor het weergave besturings element. Hiernaar kan worden [verwezen](#referencing-display-controls). |
-| UserInterfaceControlType | Ja | Het type van het weergave besturings element. Momenteel wordt de [VerificationControl](display-control-verification.md) ondersteund |
+| Id | Yes | Een id die wordt gebruikt voor het weergave besturings element. Hiernaar kan worden [verwezen](#referencing-display-controls). |
+| UserInterfaceControlType | Yes | Het type van het weergave besturings element. Momenteel wordt de [VerificationControl](display-control-verification.md) ondersteund |
 
 Het element **DisplayControl** bevat de volgende elementen:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | InputClaims | 0:1 | **InputClaims** worden gebruikt om vooraf de waarde in te vullen van de claims die moeten worden verzameld van de gebruiker. Zie het element [InputClaims](technicalprofiles.md#input-claims) voor meer informatie. |
 | DisplayClaims | 0:1 | **DisplayClaims** worden gebruikt om claims weer te geven die van de gebruiker moeten worden verzameld. Zie het element [DisplayClaim](technicalprofiles.md#displayclaim) voor meer informatie.|
@@ -110,11 +110,11 @@ Het element **Action** bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Id | Ja | Het type bewerking. Mogelijke waarden: `SendCode` of `VerifyCode` . De `SendCode` waarde verzendt een code naar de gebruiker. Deze actie kan twee technische profielen voor validatie bevatten: één om een code te genereren en één om deze te verzenden. De `VerifyCode` waarde controleert de code die de gebruiker in het tekstvak invoer heeft getypt. |
+| Id | Yes | Het type bewerking. Mogelijke waarden: `SendCode` of `VerifyCode` . De `SendCode` waarde verzendt een code naar de gebruiker. Deze actie kan twee technische profielen voor validatie bevatten: één om een code te genereren en één om deze te verzenden. De `VerifyCode` waarde controleert de code die de gebruiker in het tekstvak invoer heeft getypt. |
 
 Het element **Action** bevat het volgende element:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | ValidationClaimsExchange | 1:1 | De id's van de technische profielen die worden gebruikt voor het valideren van enkele of alle weergave claims van het referentie-technische profiel. Alle invoer claims van het technische profiel waarnaar wordt verwezen, moeten worden weer gegeven in de weer gave claims van het technische profiel waarnaar wordt verwezen. |
 
@@ -122,7 +122,7 @@ Het element **Action** bevat het volgende element:
 
 Het element **ValidationClaimsExchange** bevat het volgende element:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | ValidationTechnicalProfile | 1: n | Een technisch profiel dat moet worden gebruikt voor het valideren van een aantal of alle weer gave claims van het referentie-technische profiel. |
 
@@ -130,13 +130,13 @@ Het **ValidationTechnicalProfile** -element bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| ReferenceId | Ja | Een id van een technisch profiel is al gedefinieerd in het beleid of het bovenliggende beleid. |
-|ContinueOnError|Nee| Geeft aan of validatie van de volgende validatie technische profielen moet worden voortgezet als het technische profiel voor validatie een fout veroorzaakt. Mogelijke waarden: `true` of `false` (de standaard instelling voor de verwerking van verdere validatie profielen wordt gestopt en er wordt een fout geretourneerd). |
-|ContinueOnSuccess | Nee | Geeft aan of validatie van volgende validatie profielen moet worden voortgezet als het technische profiel voor de validatie is geslaagd. Mogelijke waarden: `true` of `false` . De standaard waarde is `true` , wat inhoudt dat de verwerking van verdere validatie profielen zal worden voortgezet. |
+| ReferenceId | Yes | Een id van een technisch profiel is al gedefinieerd in het beleid of het bovenliggende beleid. |
+|ContinueOnError|No| Geeft aan of validatie van de volgende validatie technische profielen moet worden voortgezet als het technische profiel voor validatie een fout veroorzaakt. Mogelijke waarden: `true` of `false` (de standaard instelling voor de verwerking van verdere validatie profielen wordt gestopt en er wordt een fout geretourneerd). |
+|ContinueOnSuccess | No | Geeft aan of validatie van volgende validatie profielen moet worden voortgezet als het technische profiel voor de validatie is geslaagd. Mogelijke waarden: `true` of `false` . De standaard waarde is `true` , wat inhoudt dat de verwerking van verdere validatie profielen zal worden voortgezet. |
 
 Het element **ValidationTechnicalProfile** bevat het volgende element:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | Voor waarden | 0:1 | Een lijst met voor waarden waaraan moet worden voldaan om het technische profiel voor validatie te kunnen uitvoeren. |
 
@@ -145,11 +145,11 @@ Het element **voor waarde** bevat de volgende kenmerken:
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
 | `Type` | Ja | Het type controle of query dat moet worden uitgevoerd voor de voor waarde. Mogelijke waarden: `ClaimsExist` of `ClaimEquals` . `ClaimsExist` Hiermee geeft u op dat de acties moeten worden uitgevoerd als de opgegeven claims bestaan in de huidige claimset van de gebruiker. `ClaimEquals` Hiermee geeft u op dat de acties moeten worden uitgevoerd als de opgegeven claim bestaat en de waarde ervan gelijk is aan de opgegeven waarde. |
-| `ExecuteActionsIf` | Ja | Hiermee wordt aangegeven of de acties in de voor waarde moeten worden uitgevoerd als de test True of False is. |
+| `ExecuteActionsIf` | Yes | Hiermee wordt aangegeven of de acties in de voor waarde moeten worden uitgevoerd als de test True of False is. |
 
 Het element **voor waarde** bevat de volgende elementen:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | Waarde | 1: n | De gegevens die worden gebruikt door de controle. Als het type van deze controle is `ClaimsExist` , geeft dit veld een ClaimTypeReferenceId op die moet worden opgevraagd. Als het type controle is `ClaimEquals` , specificeert dit veld een ClaimTypeReferenceId om op te vragen. Geef de waarde op die moet worden ingecheckt in een ander element value.|
 | Bewerking | 1:1 | De actie die moet worden uitgevoerd als de voor waarde wordt gecontroleerd binnen een Orchestration-stap. De waarde van de **actie** wordt ingesteld op `SkipThisValidationTechnicalProfile` , waarmee wordt aangegeven dat het bijbehorende technische profiel voor validatie niet moet worden uitgevoerd. |

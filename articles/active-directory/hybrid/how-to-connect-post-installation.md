@@ -72,7 +72,7 @@ De volgende tabel bevat een samen vatting van deze taken en een korte beschrijvi
 
 ![Lijst met aanvullende taken](./media/how-to-connect-post-installation/addtasks2.png)
 
-| Aanvullende taak | Beschrijving |
+| Aanvullende taak | Description |
 | --- | --- |
 |**Privacyinstellingen**|Weer geven welke telemetriegegevens worden gedeeld met micro soft.|
 |**Huidige configuratie weer geven**|Bekijk uw huidige Azure AD Connect-oplossing.  Dit omvat algemene instellingen, gesynchroniseerde directory's en synchronisatie-instellingen. |

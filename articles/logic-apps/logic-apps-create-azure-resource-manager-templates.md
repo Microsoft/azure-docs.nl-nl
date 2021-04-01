@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 07/26/2019
 ms.openlocfilehash: 4535e6bf11f8c2abf20b1b323925c3fc3299d362
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "90971783"
 ---
 # <a name="create-azure-resource-manager-templates-to-automate-deployment-for-azure-logic-apps"></a>Azure Resource Manager-sjablonen maken voor het automatiseren van de implementatie voor Azure Logic Apps
@@ -121,8 +121,8 @@ Get-ParameterTemplate -TemplateFile $filename -KeyVault Static | Out-File $fileN
 
 | Parameters | Vereist | Beschrijving |
 |------------|----------|-------------|
-| TemplateFile | Ja | Het bestandspad naar het sjabloon bestand |
-| KeyVault | Nee | Een Enum die beschrijft hoe mogelijke sleutel kluis waarden moeten worden afgehandeld. De standaardwaarde is `None`. |
+| TemplateFile | Yes | Het bestandspad naar het sjabloon bestand |
+| KeyVault | No | Een Enum die beschrijft hoe mogelijke sleutel kluis waarden moeten worden afgehandeld. De standaardwaarde is `None`. |
 ||||
 
 ## <a name="next-steps"></a>Volgende stappen

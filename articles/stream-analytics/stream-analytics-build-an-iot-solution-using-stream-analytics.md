@@ -8,15 +8,15 @@ ms.topic: how-to
 ms.date: 12/06/2018
 ms.custom: seodec18
 ms.openlocfilehash: ddec53b18cd6f374a5665298b43b46122bcfa143
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98016147"
 ---
 # <a name="build-an-iot-solution-by-using-stream-analytics"></a>Een IoT-oplossing bouwen met behulp van Stream Analytics
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 In deze oplossing leert u hoe u Azure Stream Analytics kunt gebruiken om real-time inzichten uit uw gegevens te halen. Ontwikkel aars kunnen eenvoudig gegevens stromen combi neren, zoals Klik-streams, logboeken en door apparaten gegenereerde gebeurtenissen, met historische records of referentie gegevens om zakelijke inzichten af te leiden. Als volledig beheerde, realtime stroom berekenings service die wordt gehost in Microsoft Azure, bevat Azure Stream Analytics ingebouwde tolerantie, lage latentie en schaal baarheid, zodat u binnen enkele minuten aan de slag kunt.
 
 Nadat u deze oplossing hebt voltooid, kunt u het volgende doen:

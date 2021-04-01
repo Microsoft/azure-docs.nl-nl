@@ -11,10 +11,10 @@ ms.topic: how-to
 ms.date: 11/23/2020
 ms.author: yuajia
 ms.openlocfilehash: 8a4b48586c564ee5d14a0768156b0477e2935ccf
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100575442"
 ---
 # <a name="real-time-monitoring-metrics-and-access-logs-for-azure-cdn"></a>Real-time bewaking, metrische gegevens en logboeken voor toegang tot Azure CDN
@@ -219,7 +219,7 @@ Zie [Azure monitor metrische](../azure-monitor/essentials/data-platform-metrics.
 
 **Metrische gegevens die door Azure CDN van micro soft worden ondersteund**
 
-| Metrische gegevens  | Beschrijving | Dimensies |
+| Metrische gegevens  | Description | Dimensies |
 | ------------- | ------------- | ------------- |
 | Percentage treffers * | Het percentage van de uitvoer van de CDN-cache dat wordt berekend op basis van het totale aantal uitgangen. | Eindpunt |
 | RequestCount | Het aantal client aanvragen dat door CDN wordt geleverd. | Eindpunt </br> Land van de client. </br> Client regio. </br> HTTP-status. </br> HTTP-status groep. |

@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 10/09/2020
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: edca7e4e8f6a9ea8dd9efdaafab8c906efd671b6
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101708268"
 ---
 # <a name="how-to-update-container-insights-to-enable-metrics"></a>Container Insights bijwerken om metrische gegevens in te scha kelen

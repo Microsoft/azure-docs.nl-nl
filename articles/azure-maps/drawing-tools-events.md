@@ -9,17 +9,17 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.openlocfilehash: 6abe0ed88adbdf8263aa27d340fb2fff156d98e6
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "90089340"
 ---
 # <a name="drawing-tool-events"></a>Gebeurtenissen voor het tekenen van gereedschappen
 
 Wanneer u teken hulpprogramma's op een kaart gebruikt, is het handig om te reageren op bepaalde gebeurtenissen wanneer de gebruiker op de kaart tekent. Deze tabel geeft een lijst van alle gebeurtenissen die door de klasse worden ondersteund `DrawingManager` .
 
-| Gebeurtenis | Beschrijving |
+| Gebeurtenis | Description |
 |-------|-------------|
 | `drawingchanged` | Deze gebeurtenis wordt gestart wanneer een coördinaat in een vorm is toegevoegd of gewijzigd. | 
 | `drawingchanging` | Deze gebeurtenis wordt gestart wanneer een voor beeld-coördinaat voor een vorm wordt weer gegeven. Deze gebeurtenis wordt bijvoorbeeld meerdere keren geactiveerd wanneer een coördinaat wordt gesleept. | 

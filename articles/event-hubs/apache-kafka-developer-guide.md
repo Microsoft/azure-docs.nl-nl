@@ -22,7 +22,7 @@ U vindt Quick starts in GitHub en in deze inhoudsset waarmee u snel op Event Hub
 ### <a name="quickstarts-in-github"></a>Quick starts in GitHub
 Raadpleeg de volgende Quick starts in de **Azure-Event-hubs-for-Kafka** -opslag plaats: 
 
-| Client taal/-Framework | Beschrijving | 
+| Client taal/-Framework | Description | 
 | ------------------------- | ----------- | 
 | [.NET](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/quickstart/dotnet) | <p>In deze Quick start ziet u hoe u een Event Hubs Kafka-eind punt maakt en maakt met behulp van een voorbeeld producent en een consument die is geschreven in C# met behulp van .NET Core 2,0.</p><p>Dit voor beeld is gebaseerd op [confluente Apache Kafka .net-client](https://github.com/confluentinc/confluent-kafka-dotnet), gewijzigd voor gebruik met Event hubs voor Kafka.</p> | 
 | [Java](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/quickstart/java) | In deze Quick start ziet u hoe u een Event Hubs Kafka-eind punt maakt en er verbinding mee kunt maken met behulp van een voorbeeld producent en een consument die is geschreven in Java. |

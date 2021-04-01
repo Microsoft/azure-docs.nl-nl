@@ -11,10 +11,10 @@ ms.workload: big-data
 ms.date: 10/02/2020
 ms.custom: seodec18
 ms.openlocfilehash: 9bf857a66643b1e95ea2559601761a7217babad4
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "91665324"
 ---
 # <a name="share-a-custom-view-using-a-parameterized-url"></a>Een aangepaste weergave delen via een geparameteriseerde URL
@@ -86,7 +86,7 @@ De `timeSeriesDefinitions=<collection of term objects>` para meter bepaalt de vo
 * `timeBucketUnit=<Unit>&timeBucketSize=<integer>`U kunt de schuif regelaar voor het interval aanpassen om een meer gedetailleerde of vloeiendere weer gave van de grafiek te bieden.  
 * Met de `timezoneOffset=<integer>` para meter kunt u de tijd zone voor de grafiek instellen zodat deze wordt weer gegeven als een offset naar UTC.
 
-| Paar (s) | Beschrijving |
+| Paar (s) | Description |
 | --- | --- |
 | `multiChartStack=false` | `true` is standaard ingeschakeld, dus door gegeven `false` aan stack. |
 | `multiChartStack=false&multiChartSameScale=true` | Stapelen moet zijn ingeschakeld om dezelfde schaling van de Y-as te gebruiken voor verschillende onderdelen.  `false` `true` Deze functie is standaard ingeschakeld. |

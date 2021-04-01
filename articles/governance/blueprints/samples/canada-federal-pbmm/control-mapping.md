@@ -4,10 +4,10 @@ description: Toewijzing van beheeroptie van de blauwdrukvoorbeelden Canada Feder
 ms.date: 02/05/2021
 ms.topic: sample
 ms.openlocfilehash: 440b07db514d8af0cf7f4177a6bac497eead2b37
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "99627211"
 ---
 # <a name="control-mapping-of-the-canada-federal-pbmm-blueprint-sample"></a>Toewijzing van beheeroptie van het blauwdrukvoorbeeld Canada Federal PBMM

@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 02/03/2020
 ms.author: cherylmc
 ms.openlocfilehash: 7db85c5e1d5f67c30adf08969c51bb4c57838fb5
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92079136"
 ---
 # <a name="change-to-full-screen-view-for-a-vm-session-azure-bastion"></a>Overschakelen naar weer gave volledig scherm voor een VM-sessie: Azure Bastion

@@ -9,10 +9,10 @@ ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
 ms.openlocfilehash: f9029a36dc3b778e139b4553524e8e2ca6b4bbad
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98757166"
 ---
 # <a name="extensions-for-cloud-services-extended-support"></a>Uitbrei dingen voor Cloud Services (uitgebreide ondersteuning)

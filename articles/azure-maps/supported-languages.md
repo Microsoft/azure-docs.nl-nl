@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: 50e5d0721eb14d1fcdfad26aaf081bfa370e954e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96904513"
 ---
 # <a name="localization-support-in-azure-maps"></a>Ondersteuning voor lokalisatie in Azure Maps
@@ -147,7 +147,7 @@ De weer gave-para meter is standaard ingesteld op **Unified**, zelfs als u deze 
 
 De volgende tabel bevat ondersteunde weer gaven.
 
-| Weergave         | Beschrijving                            |  Maps | Zoeken | JS-Map Control |
+| Weergave         | Description                            |  Maps | Zoeken | JS-Map Control |
 |--------------|----------------------------------------|:-----:|:------:|:--------------:|
 | AE           | Verenigde Arabische Emiraten (Arabische weer gave)    |   ✓   |        |     ✓          |
 | AR           | Argentinië (Argentijnse weer gave)           |   ✓   |    ✓   |     ✓          |

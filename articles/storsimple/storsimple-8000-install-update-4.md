@@ -74,7 +74,7 @@ De hotfix-methode omvat de volgende drie stappen:
 
 U moet de volgende hotfixes downloaden en installeren in de voorgeschreven volg orde en de voorgestelde mappen:
 
-| Volgorde | KB | Beschrijving | Updatetype | Installatietijd |Installeren in map|
+| Volgorde | KB | Description | Updatetype | Installatietijd |Installeren in map|
 | --- | --- | --- | --- | --- | --- |
 | 1. |KB4011839 |Software-update |Regelmatig <br></br>Niet-verstorend |~ 25 minuten |FirstOrderUpdate|
 | 2. |KB4011841 <br> KB4011842 |Stuur programma-en firmware-updates voor LSI <br> EIGENSCHAPPEN van firmware-update (versie 3,38) |Regelmatig <br></br>Niet-verstorend |~ 3 uur <br> (inclusief 2A. + 2B. + 2C.)|SecondOrderUpdate|
@@ -83,7 +83,7 @@ U moet de volgende hotfixes downloaden en installeren in de voorgeschreven volg 
 
 Mogelijk moet u ook updates voor de schijf firmware installeren boven op alle updates die in de voor gaande tabellen worden weer gegeven. U kunt controleren of u de firmware-updates van de schijf nodig hebt door de cmdlet uit te voeren `Get-HcsFirmwareVersion` . Als u deze firmware versies uitvoert:,,,,,, `XMGJ` `XGEG` `KZ50` `F6C2` `VR08` `N002` `0106` , hoeft u deze updates niet te installeren.
 
-| Volgorde | KB | Beschrijving | Updatetype | Installatietijd | Installeren in map|
+| Volgorde | KB | Description | Updatetype | Installatietijd | Installeren in map|
 | --- | --- | --- | --- | --- | --- |
 | 3. |KB3121899 |Schijf firmware |Onderhoud <br></br>Verstorende |~ 30 minuten | ThirdOrderUpdate |
 

@@ -11,10 +11,10 @@ ms.topic: reference
 ms.date: 06/20/2019
 ms.author: metang
 ms.openlocfilehash: f2f5c8193454a3b7fa6be1cea7a1236b613d6c8f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "92636524"
 ---
 # <a name="immersive-reader-javascript-sdk-reference-v11"></a>Naslag informatie voor de Inge sloten Reader java script SDK (v 1.1)
@@ -115,7 +115,7 @@ renderButtons(options?: RenderButtonsOptions): void;
 
 #### <a name="renderbuttons-parameters"></a>renderButtons-para meters
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | ---- | ---- |------------ |
 | `options` | [opties voor renderButtons](#renderbuttons-options) | Opties voor het configureren van bepaald gedrag van de functie renderButtons. Optioneel. |
 
@@ -131,7 +131,7 @@ Opties voor het weer geven van de knoppen voor insluitende lezer.
 
 #### <a name="renderbuttons-options-parameters"></a>Para meters voor renderButtons-opties
 
-| Instelling | Type | Beschrijving |
+| Instelling | Type | Description |
 | ------- | ---- | ----------- |
 | opties | HTMLDivElement[] | Elementen voor het weer geven van de insluitende lezer in. |
 
@@ -156,7 +156,7 @@ Bevat de reactie van de aanroep van `ImmersiveReader.launchAsync` . Houd er reke
 
 #### <a name="launchresponse-parameters"></a>LaunchResponse-para meters
 
-| Instelling | Type | Beschrijving |
+| Instelling | Type | Description |
 | ------- | ---- | ----------- |
 | container | HTMLDivElement | HTML-element dat de insluitende Reader iframe bevat. |
 | sessionId | Tekenreeks | Wereld wijd unieke id voor deze sessie, die wordt gebruikt voor fout opsporing. |
@@ -174,14 +174,14 @@ Bevat informatie over een fout.
 
 #### <a name="error-parameters"></a>Fout parameters
 
-| Instelling | Type | Beschrijving |
+| Instelling | Type | Description |
 | ------- | ---- | ----------- |
 | code | Tekenreeks | Een van een set fout codes. Zie [Foutcodes](#error-codes). |
 | message | Tekenreeks | Door de mens lees bare weer gave van de fout. |
 
 #### <a name="error-codes"></a>Foutcodes
 
-| Code | Beschrijving |
+| Code | Description |
 | ---- | ----------- |
 | BadArgument | Het opgegeven argument is ongeldig `message` . Zie de para meter van de [fout](#error). |
 | Time-out | De insluitende lezer kan niet worden geladen binnen de opgegeven time-out. |
@@ -205,7 +205,7 @@ Bevat de inhoud die in de insluitende lezer moet worden weer gegeven.
 
 #### <a name="content-parameters"></a>Inhouds parameters
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | ---- | ---- |------------ |
 | title | Tekenreeks | Titel tekst die boven aan de insluitende lezer wordt weer gegeven (optioneel) |
 | segmenten | [Segment []](#chunk) | Matrix van segmenten |
@@ -240,7 +240,7 @@ Eén gegevens segment dat wordt door gegeven aan de inhoud van de insluitende le
 
 #### <a name="chunk-parameters"></a>Segment parameters
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | ---- | ---- |------------ |
 | inhoud | Tekenreeks | De teken reeks met de inhoud die naar de insluitende lezer wordt verzonden. |
 | lang | Tekenreeks | De taal van de tekst is de waarde in de indeling van de taal code van de IETF BCP 47, bijvoorbeeld en, es-ES. De taal wordt automatisch gedetecteerd als deze niet is opgegeven. Zie [Ondersteunde talen](#supported-languages) voor meer informatie. |
@@ -269,7 +269,7 @@ Default value: "text/plain"
 
 #### <a name="supported-mime-types"></a>Ondersteunde MIME-typen
 
-| MIME-type | Beschrijving |
+| MIME-type | Description |
 | --------- | ----------- |
 | tekst/zonder opmaak | Tekst zonder opmaak. |
 | text/html | HTML-inhoud. [Meer informatie](#html-support)|
@@ -305,7 +305,7 @@ Bevat eigenschappen die bepaald gedrag van de insluitende lezer configureren.
 
 #### <a name="options-parameters"></a>Opties para meters
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | ---- | ---- |------------ |
 | uiLang | Tekenreeks | Taal van de gebruikers interface, de waarde is in de indeling van de code van het IETF BCP 47-taal label, bijvoorbeeld en, es-ES. De standaard instelling is browser taal als deze niet is opgegeven. |
 | timeout | Aantal | De duur (in milliseconden) voordat [launchAsync](#launchasync) mislukt met een time-outfout (de standaard waarde is 15000 MS). Deze time-out is alleen van toepassing op de eerste keer dat de lees pagina wordt gestart, waar succes wordt waargenomen wanneer de lees pagina wordt geopend en het kring veld wordt gestart. De aanpassing van de time-out moet niet nodig zijn. |
@@ -390,7 +390,7 @@ type ReadAloudOptions = {
 
 #### <a name="readaloudoptions-parameters"></a>ReadAloudOptions-para meters
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | ---- | ---- |------------ |
 | stem | Tekenreeks | Stem, "vrouwelijk" of "mannelijk". Houd er rekening mee dat niet alle talen zowel geslachten ondersteunen. |
 | snelheid | Aantal | De afspeel snelheid moet liggen tussen 0,5 en 2,5. |
@@ -429,7 +429,7 @@ type TranslationOptions = {
 
 #### <a name="translationoptions-parameters"></a>TranslationOptions-para meters
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | ---- | ---- |------------ |
 | language | Tekenreeks | Hiermee stelt u de taal van de vertaling in, de waarde is in de indeling van de taal code van de IETF BCP 47, bijvoorbeeld fr-FR, es-MX, zh-Hans-CN. Vereist om automatische vertaling van woorden of documenten in te scha kelen. |
 | autoEnableDocumentTranslation | Booleaans | Het hele document automatisch vertalen. |
@@ -457,7 +457,7 @@ type DisplayOptions = {
 
 #### <a name="displayoptions-parameters"></a>DisplayOptions-para meters
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | ---- | ---- |------------ |
 | textSize | Aantal | Hiermee stelt u de gekozen tekst grootte. |
 | increaseSpacing | Booleaans | Hiermee wordt ingesteld of tekst afstand wordt in-of uitgeschakeld. |
@@ -491,7 +491,7 @@ enum CookiePolicy { Disable, Enable }
 
 #### <a name="settings-parameters"></a>Instellingen parameters
 
-| Instelling | Type | Beschrijving |
+| Instelling | Type | Description |
 | ------- | ---- | ----------- |
 | textSize | Aantal | Hiermee stelt u de gekozen tekst grootte. |
 | fontFamily | Tekenreeks | Hiermee stelt u het gekozen letter type (' Calibri ', ' ComicSans ' of ' Sitka '). |

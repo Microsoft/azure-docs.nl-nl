@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: 08379e66c97d34eea53410190475e90e156a58e2
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96903340"
 ---
 # <a name="stylesobject-schema-reference-guide-for-dynamic-maps"></a>Naslag Gids voor StylesObject-Schema's voor dynamische kaarten
@@ -88,9 +88,9 @@ In de JSON hieronder ziet u een voor beeld van het gebruik van elk van de drie s
 
 | Eigenschap | Type | Beschrijving | Vereist |
 |-----------|----------|-------------|-------------|
-| `keyName` | tekenreeks | De *naam* van de of dynamische eigenschap. Een `keyName` moet uniek zijn binnen de `StyleObject` matrix.| Ja |
-| `type` | tekenreeks | De waarde is "numeriek". | Ja |
-| `rules` | [`NumberRuleObject`](#numberruleobject)[]| Een matrix met numerieke stijl reeksen met gekoppelde kleuren. Elk bereik definieert een kleur die moet worden gebruikt wanneer de *status* waarde aan het bereik voldoet.| Ja |
+| `keyName` | tekenreeks | De *naam* van de of dynamische eigenschap. Een `keyName` moet uniek zijn binnen de `StyleObject` matrix.| Yes |
+| `type` | tekenreeks | De waarde is "numeriek". | Yes |
+| `rules` | [`NumberRuleObject`](#numberruleobject)[]| Een matrix met numerieke stijl reeksen met gekoppelde kleuren. Elk bereik definieert een kleur die moet worden gebruikt wanneer de *status* waarde aan het bereik voldoet.| Yes |
 
 ### <a name="numberruleobject"></a>NumberRuleObject
 
@@ -125,8 +125,8 @@ In het volgende JSON-voor beeld bevatten beide bereiken waar wanneer de waarde v
 
 | Eigenschap | Type | Beschrijving | Vereist |
 |-----------|----------|-------------|-------------|
-| `range` | [RangeObject](#rangeobject) | De [RangeObject](#rangeobject) definieert een set voor waarden voor logische rangen, die, indien `true` , de weergave kleur van de *status* wijzigt in de kleur die is opgegeven in de `color` eigenschap. Als `range` niet wordt opgegeven, wordt de kleur die in de eigenschap is gedefinieerd, `color` altijd gebruikt.   | Nee |
-| `color` | tekenreeks | De kleur die moet worden gebruikt wanneer de status waarde binnen het bereik valt. De `color` eigenschap is een JSON-teken reeks in een van de volgende indelingen: <ul><li> Hexadecimale waarden in HTML-notatie </li><li> RGB ("#ff0", "#ffff00", "RGB (255, 255, 0)")</li><li> RGBA ("RGBA (255, 255, 0, 1)")</li><li> HSL ("HSL (100, 50%, 50%)")</li><li> HSLA ("HSLA (100, 50%, 50%, 1)")</li><li> Vooraf gedefinieerde namen van HTML-kleuren, zoals geel en blauw.</li></ul> | Ja |
+| `range` | [RangeObject](#rangeobject) | De [RangeObject](#rangeobject) definieert een set voor waarden voor logische rangen, die, indien `true` , de weergave kleur van de *status* wijzigt in de kleur die is opgegeven in de `color` eigenschap. Als `range` niet wordt opgegeven, wordt de kleur die in de eigenschap is gedefinieerd, `color` altijd gebruikt.   | No |
+| `color` | tekenreeks | De kleur die moet worden gebruikt wanneer de status waarde binnen het bereik valt. De `color` eigenschap is een JSON-teken reeks in een van de volgende indelingen: <ul><li> Hexadecimale waarden in HTML-notatie </li><li> RGB ("#ff0", "#ffff00", "RGB (255, 255, 0)")</li><li> RGBA ("RGBA (255, 255, 0, 1)")</li><li> HSL ("HSL (100, 50%, 50%)")</li><li> HSLA ("HSLA (100, 50%, 50%, 1)")</li><li> Vooraf gedefinieerde namen van HTML-kleuren, zoals geel en blauw.</li></ul> | Yes |
 
 ### <a name="rangeobject"></a>RangeObject
 
@@ -134,10 +134,10 @@ De `RangeObject` definieert een numerieke bereik waarde van een [`NumberRuleObje
 
 | Eigenschap | Type | Beschrijving | Vereist |
 |-----------|----------|-------------|-------------|
-| `minimum` | double | Het getal x dat x ≥ `minimum` .| Nee |
-| `maximum` | double | Alle x met x ≤ `maximum` . | Nee |
-| `exclusiveMinimum` | double | Alle x > `exclusiveMinimum` .| Nee |
-| `exclusiveMaximum` | double | Alle x < `exclusiveMaximum` .| Nee |
+| `minimum` | double | Het getal x dat x ≥ `minimum` .| No |
+| `maximum` | double | Alle x met x ≤ `maximum` . | No |
+| `exclusiveMinimum` | double | Alle x > `exclusiveMinimum` .| No |
+| `exclusiveMaximum` | double | Alle x < `exclusiveMaximum` .| No |
 
 ### <a name="example-of-numerictypestylerule"></a>Voor beeld van NumericTypeStyleRule
 
@@ -172,9 +172,9 @@ A `StringTypeStyleRule` is een [`StyleObject`](#styleobject) en bestaat uit de v
 
 | Eigenschap | Type | Beschrijving | Vereist |
 |-----------|----------|-------------|-------------|
-| `keyName` | tekenreeks |  De *naam* van de of dynamische eigenschap.  Een `keyName` moet uniek zijn binnen de  `StyleObject` matrix.| Ja |
-| `type` | tekenreeks |De waarde is ' String '. | Ja |
-| `rules` | [`StringRuleObject`](#stringruleobject)[]| Een matrix van N aantal *status* waarden.| Ja |
+| `keyName` | tekenreeks |  De *naam* van de of dynamische eigenschap.  Een `keyName` moet uniek zijn binnen de  `StyleObject` matrix.| Yes |
+| `type` | tekenreeks |De waarde is ' String '. | Yes |
+| `rules` | [`StringRuleObject`](#stringruleobject)[]| Een matrix van N aantal *status* waarden.| Yes |
 
 ### <a name="stringruleobject"></a>StringRuleObject
 
@@ -184,9 +184,9 @@ De teken reeks waarde die overeenkomt, is hoofdletter gevoelig.
 
 | Eigenschap | Type | Beschrijving | Vereist |
 |-----------|----------|-------------|-------------|
-| `stateValue1` | tekenreeks | De kleur wanneer de waarde teken reeks stateValue1 is. | Nee |
-| `stateValue2` | tekenreeks | De kleur wanneer de waarde teken reeks stateValue is. | Nee |
-| `stateValueN` | tekenreeks | De kleur wanneer de waarde teken reeks stateValueN is. | Nee |
+| `stateValue1` | tekenreeks | De kleur wanneer de waarde teken reeks stateValue1 is. | No |
+| `stateValue2` | tekenreeks | De kleur wanneer de waarde teken reeks stateValue is. | No |
+| `stateValueN` | tekenreeks | De kleur wanneer de waarde teken reeks stateValueN is. | No |
 
 ### <a name="example-of-stringtypestylerule"></a>Voor beeld van StringTypeStyleRule
 
@@ -214,9 +214,9 @@ A `BooleanTypeStyleRule` is een [`StyleObject`](#styleobject) en bestaat uit de 
 
 | Eigenschap | Type | Beschrijving | Vereist |
 |-----------|----------|-------------|-------------|
-| `keyName` | tekenreeks |  De *naam* van de of dynamische eigenschap.  Een `keyName` moet uniek zijn binnen de `StyleObject`  matrix.| Ja |
-| `type` | tekenreeks |De waarde is Booleaans. | Ja |
-| `rules` | [`BooleanRuleObject`](#booleanruleobject)i| Een Boole-paar met kleuren voor `true` en `false` *status* waarden.| Ja |
+| `keyName` | tekenreeks |  De *naam* van de of dynamische eigenschap.  Een `keyName` moet uniek zijn binnen de `StyleObject`  matrix.| Yes |
+| `type` | tekenreeks |De waarde is Booleaans. | Yes |
+| `rules` | [`BooleanRuleObject`](#booleanruleobject)i| Een Boole-paar met kleuren voor `true` en `false` *status* waarden.| Yes |
 
 ### <a name="booleanruleobject"></a>BooleanRuleObject
 
@@ -224,8 +224,8 @@ Een `BooleanRuleObject` definieert kleuren voor `true` en `false` waarden.
 
 | Eigenschap | Type | Beschrijving | Vereist |
 |-----------|----------|-------------|-------------|
-| `true` | tekenreeks | De kleur die moet worden gebruikt wanneer de *status* waarde is `true` . De `color` eigenschap is een JSON-teken reeks in een van de volgende indelingen: <ul><li> Hexadecimale waarden in HTML-notatie </li><li> RGB ("#ff0", "#ffff00", "RGB (255, 255, 0)")</li><li> RGBA ("RGBA (255, 255, 0, 1)")</li><li> HSL ("HSL (100, 50%, 50%)")</li><li> HSLA ("HSLA (100, 50%, 50%, 1)")</li><li> Vooraf gedefinieerde namen van HTML-kleuren, zoals geel en blauw.</li></ul>| Ja |
-| `false` | tekenreeks | De kleur die moet worden gebruikt wanneer de *status* waarde is `false` . | Ja |
+| `true` | tekenreeks | De kleur die moet worden gebruikt wanneer de *status* waarde is `true` . De `color` eigenschap is een JSON-teken reeks in een van de volgende indelingen: <ul><li> Hexadecimale waarden in HTML-notatie </li><li> RGB ("#ff0", "#ffff00", "RGB (255, 255, 0)")</li><li> RGBA ("RGBA (255, 255, 0, 1)")</li><li> HSL ("HSL (100, 50%, 50%)")</li><li> HSLA ("HSLA (100, 50%, 50%, 1)")</li><li> Vooraf gedefinieerde namen van HTML-kleuren, zoals geel en blauw.</li></ul>| Yes |
+| `false` | tekenreeks | De kleur die moet worden gebruikt wanneer de *status* waarde is `false` . | Yes |
 
 ### <a name="example-of-booleantypestylerule"></a>Voor beeld van BooleanTypeStyleRule
 

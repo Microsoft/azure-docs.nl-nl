@@ -7,10 +7,10 @@ ms.date: 12/22/2020
 ms.topic: conceptual
 ms.custom: has-adal-ref
 ms.openlocfilehash: 5f6494eb72084c683ddbb8b27a49acdb1fbc2bfc
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "99054260"
 ---
 # <a name="manage-connections-in-azure-automation"></a>Verbindingen in Azure Automation beheren
@@ -52,7 +52,7 @@ Met de cmdlets in de volgende tabel worden Automation-verbindingen met Power she
 
 De interne cmdlet in de volgende tabel wordt gebruikt voor toegang tot verbindingen in uw runbooks en DSC-configuraties. Deze cmdlet wordt geleverd met de globale module `Orchestrator.AssetManagement.Cmdlets` . Zie [interne cmdlets](shared-resources/modules.md#internal-cmdlets)voor meer informatie.
 
-|Interne cmdlet|Beschrijving|
+|Interne cmdlet|Description|
 |---|---|
 |`Get-AutomationConnection` | Haalt de waarden van de verschillende velden in de verbinding op en retourneert deze als een [hashtabel](/powershell/module/microsoft.powershell.core/about/about_hash_tables). U kunt deze hashtabel vervolgens gebruiken met de juiste opdrachten in het runbook of de DSC-configuratie.|
 

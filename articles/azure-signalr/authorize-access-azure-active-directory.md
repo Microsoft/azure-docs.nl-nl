@@ -7,10 +7,10 @@ ms.date: 08/03/2020
 ms.service: signalr
 ms.topic: conceptual
 ms.openlocfilehash: 37c2e41b5c81f941245b895ecd144baee3b9db6d
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97797514"
 ---
 # <a name="authorize-access-to-azure-signalr-service-resources-using-azure-active-directory"></a>Toegang verlenen tot Azure signalerings service-resources met behulp van Azure Active Directory

@@ -7,13 +7,13 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 07/17/2020
 ms.openlocfilehash: eb178e38001e54ac39a269c8b8cdef12c77d74cf
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96901946"
 ---
-# <a name="azure-database-for-mysql-server-firewall-rules"></a>Firewall regels van Azure Database for MySQL server
+# <a name="azure-database-for-mysql-server-firewall-rules"></a>Firewallregels van Azure Database for MySQL-server
 Firewalls verhinderen alle toegang tot uw database server totdat u opgeeft welke computers zijn gemachtigd. De firewall verleent toegang tot de server op basis van het oorspronkelijke IP-adres van elke aanvraag.
 
 Als u een firewall wilt configureren, maakt u firewall regels die bereiken van acceptabele IP-adressen opgeven. U kunt Firewall regels maken op server niveau.

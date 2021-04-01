@@ -6,10 +6,10 @@ ms.author: cshoe
 ms.topic: conceptual
 ms.date: 11/20/2020
 ms.openlocfilehash: cde1c5ee45edb4472bed992ee9ac4075f8ad05ff
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "95002158"
 ---
 # <a name="azure-functions-pricing"></a>Azure Functions-prijzen

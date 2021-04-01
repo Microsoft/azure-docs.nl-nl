@@ -26,8 +26,8 @@ Wanneer u een *gitRepo* -volume koppelt, kunt u drie eigenschappen instellen voo
 | Eigenschap | Vereist | Beschrijving |
 | -------- | -------- | ----------- |
 | `repository` | Ja | De volledige URL, inclusief `http://` of `https://` , van de Git-opslag plaats die moet worden gekloond.|
-| `directory` | Nee | De map waarin de opslag plaats moet worden gekloond. Het pad mag niet bevatten of beginnen met `..` .  Als u " `.` " opgeeft, wordt de opslag plaats gekloond in de map van het volume. Anders wordt de Git-opslag plaats gekloond in een submap van de opgegeven naam binnen de map volume. |
-| `revision` | Nee | De doorvoer-hash van de revisie die moet worden gekloond. Als u deze niet opgeeft, `HEAD` wordt de revisie gekloond. |
+| `directory` | No | De map waarin de opslag plaats moet worden gekloond. Het pad mag niet bevatten of beginnen met `..` .  Als u " `.` " opgeeft, wordt de opslag plaats gekloond in de map van het volume. Anders wordt de Git-opslag plaats gekloond in een submap van de opgegeven naam binnen de map volume. |
+| `revision` | No | De doorvoer-hash van de revisie die moet worden gekloond. Als u deze niet opgeeft, `HEAD` wordt de revisie gekloond. |
 
 ## <a name="mount-gitrepo-volume-azure-cli"></a>GitRepo volume koppelen: Azure CLI
 

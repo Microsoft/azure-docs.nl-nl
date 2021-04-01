@@ -4,10 +4,10 @@ description: Krijg inzicht in de manier waarop Azure Lighthouse en Azure Managed
 ms.date: 12/18/2020
 ms.topic: conceptual
 ms.openlocfilehash: 5c30c3234a57e25ceaa521ad485f58d4d663ebe9
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97693966"
 ---
 # <a name="azure-lighthouse-and-azure-managed-applications"></a>Azure Lighthouse en door Azure beheerde toepassingen
@@ -25,7 +25,7 @@ In deze tabel ziet u enkele verschillen op hoog niveau die van invloed kunnen zi
 |---------|---------|---------|
 |Typische gebruiker     |Service providers of ondernemingen die meerdere tenants beheren         |Onafhankelijke software leveranciers (Isv's)         |
 |Bereik van cross-Tenant toegang     |Abonnement (en) of resource groep (en)         |Resource groep (bereik van één toepassing)         |
-|Tevens in azure Marketplace     |Nee (aanbiedingen kunnen worden gepubliceerd naar Azure Marketplace, maar klanten worden afzonderlijk gefactureerd)        |Ja         |
+|Tevens in azure Marketplace     |Nee (aanbiedingen kunnen worden gepubliceerd naar Azure Marketplace, maar klanten worden afzonderlijk gefactureerd)        |Yes         |
 |IP-beveiliging     |Ja (het IP-adres kan in de Tenant van de service provider blijven staan)        |Ja (op basis van het ontwerp, de resource groep is vergrendeld voor klanten)         |
 |Weigeringstoewijzingen     |Nee         |Ja        |
 

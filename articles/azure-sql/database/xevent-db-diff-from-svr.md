@@ -12,10 +12,10 @@ ms.author: wiassaf
 ms.reviewer: sstein
 ms.date: 12/19/2018
 ms.openlocfilehash: 139673e46421aa0dc19298697872fbff5fe587af
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96501206"
 ---
 # <a name="extended-events-in-azure-sql-database"></a>Uitgebreide gebeurtenissen in Azure SQL Database 
@@ -73,7 +73,7 @@ Verwante onderwerpen bieden twee voor beelden van code:
 
 De functie Extended Events wordt ondersteund door verschillende [catalogus weergaven](/sql/relational-databases/system-catalog-views/catalog-views-transact-sql). Catalogus weergaven geven informatie over *meta gegevens of definities* van door gebruikers gemaakte gebeurtenis sessies in de huidige data base. De weer gaven retour neren geen informatie over exemplaren van actieve gebeurtenis sessies.
 
-| Naam van<br/>Catalogus weergave | Beschrijving |
+| Naam van<br/>Catalogus weergave | Description |
 |:--- |:--- |
 | **sys.database_event_session_actions** |Retourneert een rij voor elke actie op elke gebeurtenis van een gebeurtenis sessie. |
 | **sys.database_event_session_events** |Retourneert een rij voor elke gebeurtenis in een gebeurtenis sessie. |
@@ -87,7 +87,7 @@ In Microsoft SQL Server hebben vergelijk bare catalogus weergaven namen die *. s
 
 Azure SQL Database heeft [dynamische beheer weergaven (dmv's)](/sql/relational-databases/system-dynamic-management-views/extended-events-dynamic-management-views) die ondersteuning bieden voor uitgebreide gebeurtenissen. Dmv's vertelt u over *actieve* gebeurtenis sessies.
 
-| Naam van DMV | Beschrijving |
+| Naam van DMV | Description |
 |:--- |:--- |
 | **sys.dm_xe_database_session_event_actions** |Hiermee wordt informatie over gebeurtenis sessie acties geretourneerd. |
 | **sys.dm_xe_database_session_events** |Retourneert informatie over sessie gebeurtenissen. |

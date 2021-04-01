@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/08/2020
 ms.author: scottnap
 ms.openlocfilehash: 70b5732e1293e35127a19fbe736d8562056a870b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96499676"
 ---
 # <a name="working-remotely-network-virtual-appliance-nva-considerations-for-remote-work"></a>Op afstand werken: NVA-overwegingen (Network Virtual Appliance) voor extern werk
@@ -35,7 +35,7 @@ Alle belang rijke NVA-leveranciers in azure Marketplace moeten aanbevelingen heb
 - **Aantal exemplaren** : als u verwacht een groot aantal gebruikers en verbindingen te hebben, zijn er beperkingen voor het schalen van de grootte van uw NVA-exemplaar.  Overweeg het implementeren van meerdere VM-exemplaren.
 - **IPSec VPN versus SSL VPN** -in algemene IPSec-VPN-implementaties werken beter dan SSL-VPN-implementaties.  
 - **Licentie verlening** : Zorg ervoor dat de software licenties die u hebt aangeschaft voor de NVA-oplossing, betrekking hebben op de plotselinge groei die u tijdens de COVID-19-epidemie kunt ervaren.  Veel NVA-licentie Programma's beperken het aantal verbindingen of de band breedte die door de oplossing kan worden ondersteund.
-- **Versneld netwerken** : overweeg een NVA-oplossing die ondersteuning biedt voor versneld netwerken.  Versneld netwerken maken gebruik van I/O-virtualisatie met één hoofdmap (SR-IOV) naar een virtuele machine, waardoor de netwerk prestaties aanzienlijk worden verbeterd. Dit pad met hoge prestaties omzeilt de host van het gegevenspad, beperkt latentie, jitter en CPU-gebruik voor gebruik met de meest veeleisende netwerk workloads op ondersteunde VM-typen. Versnelde netwerken worden ondersteund in de meeste algemene doel stellingen en met Compute geoptimaliseerde exemplaar grootten met twee of meer Vcpu's.
+- **Versneld netwerken** : overweeg een NVA-oplossing die ondersteuning biedt voor versneld netwerken.  Met Versnelde netwerken wordt I/O-virtualisatie met één hoofdmap (SR-IOV) mogelijk voor een VM, waarmee de netwerkprestaties van de VM aanzienlijk worden verbeterd. Dit pad met hoge prestaties omzeilt de host van het gegevenspad, beperkt latentie, jitter en CPU-gebruik voor gebruik met de meest veeleisende netwerk workloads op ondersteunde VM-typen. Versnelde netwerken worden ondersteund in de meeste algemene doel stellingen en met Compute geoptimaliseerde exemplaar grootten met twee of meer Vcpu's.
 
 ## <a name="monitoring-resources"></a>Bewakings bronnen
 

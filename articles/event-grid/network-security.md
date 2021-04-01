@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: vkukke
 ms.openlocfilehash: 10c9b165041f0a4a1f09511f17bef3629353c3b2
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "94917525"
 ---
 # <a name="network-security-for-azure-event-grid-resources"></a>Netwerk beveiliging voor Azure Event Grid bronnen
@@ -83,10 +83,10 @@ In de volgende tabel worden de verschillende statussen van de verbinding met het
 
 | Verbindings status   |  Publiceren voltooid (Ja/Nee) |
 | ------------------ | -------------------------------|
-| Goedgekeurd           | Ja                            |
-| Afgewezen           | Nee                             |
-| In behandeling            | Nee                             |
-| Ontkoppeld       | Nee                             |
+| Goedgekeurd           | Yes                            |
+| Afgewezen           | No                             |
+| In behandeling            | No                             |
+| Ontkoppeld       | No                             |
 
 Voor een geslaagde publicatie moet de verbindings status van het particuliere eind punt worden **goedgekeurd**. Als een verbinding wordt geweigerd, kan deze niet worden goedgekeurd met behulp van de Azure Portal. De enige mogelijkheid is de verbinding te verwijderen en in plaats daarvan een nieuwe te maken.
 

@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.openlocfilehash: acacf617d3f1d9ab891d08b32fc2dfb14deb64a4
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "91540520"
 ---
 # <a name="pii-detection-cognitive-skill"></a>PERSOONLIJKE detectie cognitieve vaardigheid
@@ -55,7 +55,7 @@ Para meters zijn hoofdletter gevoelig en zijn optioneel.
 
 ## <a name="skill-outputs"></a>Vaardigheids uitvoer
 
-| Uitvoer naam      | Beschrijving                   |
+| Uitvoer naam      | Description                   |
 |---------------|-------------------------------|
 | `piiEntities` | Een matrix met complexe typen die de volgende velden bevat: <ul><li>tekst (de werkelijke PII als geëxtraheerd)</li> <li>type</li><li>subType</li><li>Score (hogere waarde betekent dat er waarschijnlijk een echte entiteit is)</li><li>offset (in de invoer tekst)</li><li>lengte</li></ul> </br> [Mogelijke typen en subtypen kunt u hier vinden.](../cognitive-services/text-analytics/named-entity-types.md?tabs=personal) |
 | `maskedText` | Als `maskingMode` is ingesteld op een andere waarde dan `none` , wordt deze uitvoer het teken reeks resultaat van de maskering die wordt uitgevoerd op de invoer tekst, zoals wordt beschreven door de geselecteerde `maskingMode` .  Als `maskingMode` is ingesteld op `none` , is deze uitvoer niet aanwezig. |

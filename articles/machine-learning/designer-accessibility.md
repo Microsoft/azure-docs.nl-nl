@@ -11,10 +11,10 @@ author: peterclu
 ms.date: 01/09/2020
 ms.custom: designer
 ms.openlocfilehash: 86cb5260a59f864658fbb7ac1c1da2d943c6253e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "90893420"
 ---
 # <a name="use-a-keyboard-to-use-azure-machine-learning-designer"></a>Een toetsen bord gebruiken om Azure Machine Learning Designer te gebruiken
@@ -53,7 +53,7 @@ De eigenschappen van een module aanpassen:
 
 ## <a name="navigation-shortcuts"></a>Navigatie snelkoppelingen
 
-| Toetsaanslag | Beschrijving |
+| Toetsaanslag | Description |
 |-|-|
 | Ctrl + F6 | Scha kelen tussen de focus op het canvas en de module structuur |
 | CTRL + F1   | De informatie kaart openen bij het richten op een knoop punt in de module structuur |

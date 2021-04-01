@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: na
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6048ee9237640799b7bec37083e607fc74ffb8e4
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "85252964"
 ---
 # <a name="windows-10-roaming-settings-reference"></a>Naslaginformatie over roaminginstellingen voor Windows 10
@@ -26,7 +26,7 @@ Hier volgt een lijst met de instellingen die worden geroamd of waarvan een back-
 
 Raadpleeg de volgende tabel voor een overzicht van de apparaten en account typen die worden ondersteund door het Framework Sync, backup en Restore in Windows 10.
 
-| Account type en-bewerking | Bureaublad | Mobiel |
+| Account type en-bewerking | Desktop | Mobiel |
 | --- | --- | --- |
 | Azure Active Directory: synchroniseren |Ja |Nee |
 | Azure Active Directory: back-up/herstellen |Nee |Nee |
@@ -69,7 +69,7 @@ In de volgende tabel verwijzen andere vermeldingen in de kolom instellingen groe
 Interne vermeldingen in de kolom instellingen groep verwijzen naar instellingen en apps die alleen kunnen worden uitgeschakeld voor synchronisatie binnen de app zelf of door synchronisatie uit te scha kelen voor het hele apparaat met behulp van Mobile Device Management (MDM) of groepsbeleid instellingen.
 Instellingen die niet worden geroamd of gesynchroniseerd, behoren niet tot een groep.
 
-| Instellingen | Bureaublad | Mobiel | Groep |
+| Instellingen | Desktop | Mobiel | Groep |
 | --- | --- | --- | --- |
 | **Accounts**: account afbeelding |synchroniseren |X |Thema |
 | **Accounts**: andere account instellingen |X |X | |

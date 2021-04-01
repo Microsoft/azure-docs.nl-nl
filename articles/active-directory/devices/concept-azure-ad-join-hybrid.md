@@ -29,7 +29,7 @@ Organisaties met een on-premises footprint zijn doorgaans afhankelijk van de Ima
 
 Als uw omgeving een on-premises AD-voetafdruk heeft en u ook wilt profiteren van de mogelijkheden die Azure Active Directory biedt, kunt u hybride Azure AD-gekoppelde apparaten implementeren. Deze apparaten, zijn apparaten die zijn gekoppeld aan uw on-premises Active Directory en zijn geregistreerd bij uw Azure Active Directory.
 
-| Hybride Azure AD-deelname | Beschrijving |
+| Hybride Azure AD-deelname | Description |
 | --- | --- |
 | **Definition** | Lid van on-premises AD en Azure AD waarvoor een organisatie account is vereist om zich aan te melden bij het apparaat |
 | **Primaire doel groep** | Geschikt voor hybride organisaties met een bestaande on-premises AD-infra structuur |

@@ -9,10 +9,10 @@ ms.date: 6/2/2020
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: a42f963f5eb79ef5b430f6fc9d2a0144c370353a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98673841"
 ---
 Om de toegang tot het openbare eindpunt van het opslagaccount met behulp van service-eindpunten te beperken tot specifieke virtuele netwerken, moeten we eerst gegevens verzamelen van het opslagaccount en het virtuele netwerk. Geef waarden op voor `<storage-account-resource-group>`, `<storage-account-name>`, `<vnet-resource-group-name>`, `<vnet-name>` en `<subnet-name>` om deze gegevens te verzamelen.

@@ -8,10 +8,10 @@ ms.date: 05/15/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 02fc142a08176aa577250417c0e394218e832f34
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100387339"
 ---
 # <a name="copy-data-to-or-from-oracle-on-premises-by-using-azure-data-factory"></a>Gegevens naar of van Oracle on-premises kopiëren met behulp van Azure Data Factory
@@ -96,10 +96,10 @@ De volgende tabel beschrijft de JSON-elementen die specifiek zijn voor de aan Or
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| type |De eigenschap **type** moet worden ingesteld op **OnPremisesOracle**. |Ja |
-| driverType | Opgeven welk stuur programma moet worden gebruikt voor het kopiëren van gegevens van of naar een Oracle-data base. Toegestane waarden zijn **micro soft** en **ODP** (standaard). Zie de [ondersteunde versie en de installatie](#supported-versions-and-installation) voor details van Stuur Programma's. | Nee |
-| connectionString | Geef de gegevens op die nodig zijn om verbinding te maken met het Oracle data base-exemplaar voor de **Connections Tring** -eigenschap. | Ja |
-| gatewayName | De naam van de gateway die wordt gebruikt om verbinding te maken met de on-premises Oracle-server. |Ja |
+| type |De eigenschap **type** moet worden ingesteld op **OnPremisesOracle**. |Yes |
+| driverType | Opgeven welk stuur programma moet worden gebruikt voor het kopiëren van gegevens van of naar een Oracle-data base. Toegestane waarden zijn **micro soft** en **ODP** (standaard). Zie de [ondersteunde versie en de installatie](#supported-versions-and-installation) voor details van Stuur Programma's. | No |
+| connectionString | Geef de gegevens op die nodig zijn om verbinding te maken met het Oracle data base-exemplaar voor de **Connections Tring** -eigenschap. | Yes |
+| gatewayName | De naam van de gateway die wordt gebruikt om verbinding te maken met de on-premises Oracle-server. |Yes |
 
 **Voor beeld: het micro soft-stuur programma gebruiken**
 
@@ -166,7 +166,7 @@ Als de bron van het type **OracleSource** in Kopieer activiteit is, zijn de volg
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| oracleReaderQuery |Gebruik de aangepaste query om gegevens te lezen. |Een SQL-query teken reeks. Bijvoorbeeld ' Select \* from **myTable**'. <br/><br/>Als dit niet wordt opgegeven, wordt deze SQL-instructie uitgevoerd: ' Select \* from **myTable**' |Nee<br />(als **TableName** van **gegevensset** is opgegeven) |
+| oracleReaderQuery |Gebruik de aangepaste query om gegevens te lezen. |Een SQL-query teken reeks. Bijvoorbeeld ' Select \* from **myTable**'. <br/><br/>Als dit niet wordt opgegeven, wordt deze SQL-instructie uitgevoerd: ' Select \* from **myTable**' |No<br />(als **TableName** van **gegevensset** is opgegeven) |
 
 ### <a name="oraclesink"></a>OracleSink
 
@@ -174,10 +174,10 @@ Als de bron van het type **OracleSource** in Kopieer activiteit is, zijn de volg
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| writeBatchTimeout |De wacht tijd voor het volt ooien van de batch INSERT-bewerking voordat er een time-out optreedt. |**tijdsbestek**<br/><br/> Voor beeld: 00:30:00 (30 minuten) |Nee |
+| writeBatchTimeout |De wacht tijd voor het volt ooien van de batch INSERT-bewerking voordat er een time-out optreedt. |**tijdsbestek**<br/><br/> Voor beeld: 00:30:00 (30 minuten) |No |
 | writeBatchSize |Hiermee worden gegevens in de SQL-tabel ingevoegd wanneer de buffer grootte de waarde van **writeBatchSize** bereikt. |Geheel getal (aantal rijen) |Nee (standaard: 100) |
-| sqlWriterCleanupScript |Hiermee geeft u een query op voor het uitvoeren van de Kopieer activiteit, zodat de gegevens van een specifiek segment worden opgeruimd. |Een query-instructie. |Nee |
-| sliceIdentifierColumnName |Hiermee geeft u de kolom naam voor de Kopieer activiteit moet worden gevuld met een segment-id die automatisch is gegenereerd. De waarde voor **sliceIdentifierColumnName** wordt gebruikt voor het opschonen van gegevens van een specifiek segment wanneer het opnieuw wordt uitgevoerd. |De kolom naam van een kolom met het gegevens type **binary (32)**. |Nee |
+| sqlWriterCleanupScript |Hiermee geeft u een query op voor het uitvoeren van de Kopieer activiteit, zodat de gegevens van een specifiek segment worden opgeruimd. |Een query-instructie. |No |
+| sliceIdentifierColumnName |Hiermee geeft u de kolom naam voor de Kopieer activiteit moet worden gevuld met een segment-id die automatisch is gegenereerd. De waarde voor **sliceIdentifierColumnName** wordt gebruikt voor het opschonen van gegevens van een specifiek segment wanneer het opnieuw wordt uitgevoerd. |De kolom naam van een kolom met het gegevens type **binary (32)**. |No |
 
 ## <a name="json-examples-for-copying-data-to-and-from-the-oracle-database"></a>JSON-voor beelden voor het kopiëren van gegevens van en naar de Oracle-data base
 
@@ -549,7 +549,7 @@ De pijp lijn bevat een Kopieer activiteit die is geconfigureerd voor het gebruik
 
 ### <a name="problem-1-net-framework-data-provider"></a>Probleem 1: .NET Framework gegevens provider
 
-**Foutbericht**
+**Fout bericht**
 
 ```text
 Copy activity met invalid parameters: 'UnknownParameterName', Detailed message: Unable to find the requested .NET Framework Data Provider. It may not be installed.
@@ -571,7 +571,7 @@ Copy activity met invalid parameters: 'UnknownParameterName', Detailed message: 
 
 ### <a name="problem-2-datetime-formatting"></a>Probleem 2: notatie van datum/tijd
 
-**Foutbericht**
+**Fout bericht**
 
 ```text
 Message=Operation failed in Oracle Database with the following error: 'ORA-01861: literal does not match format string'.,Source=,''Type=Oracle.DataAccess.Client.OracleException,Message=ORA-01861: literal does not match format string,Source=Oracle Data Provider for .NET,'.

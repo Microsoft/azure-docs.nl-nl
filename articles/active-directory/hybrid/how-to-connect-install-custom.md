@@ -15,10 +15,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3afeadff71bd373354b891bd6690d94d28fc0805
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92096348"
 ---
 # <a name="custom-installation-of-azure-active-directory-connect"></a>Aangepaste installatie van Azure Active Directory Connect
@@ -46,7 +46,7 @@ Wanneer u de synchronisatie Services installeert, kunt u de sectie optionele con
 
 ![Scherm afbeelding met optionele selecties voor de vereiste installatie onderdelen in Azure AD Connect.](./media/how-to-connect-install-custom/requiredcomponents2.png)
 
-| Optionele configuratie | Beschrijving |
+| Optionele configuratie | Description |
 | --- | --- |
 |Een aangepaste installatie locatie opgeven| Hiermee kunt u het installatiepad voor Azure AD Connect wijzigen.|
 | Een bestaande SQL Server gebruiken |Hiermee kunt u de SQL Server naam en de naam van het exemplaar opgeven. Kies deze optie als u al een database server hebt die u wilt gebruiken. Voer bij **instantie naam** de naam van het exemplaar, een komma en het poort nummer in als uw SQL Server-exemplaar geen Blader functie heeft ingeschakeld.  Geef vervolgens de naam op van de Azure AD Connect-Data Base.  Uw SQL-bevoegdheden bepalen of een nieuwe Data Base kan worden gemaakt of dat de SQL-beheerder de data base vooraf moet maken.  Zie [Install Azure AD Connect met behulp van een bestaande data base](how-to-connect-install-existing-database.md)als u over SQL Server Administrator-machtigingen (SA) beschikt.  Zie [Install Azure AD Connect met behulp van SQL delegated Administrator Permissions](how-to-connect-install-sql-delegation.md)(Engelstalig) als u over gedelegeerde machtigingen (dbo) beschikt. |
@@ -59,7 +59,7 @@ Nadat u de vereiste onderdelen hebt geïnstalleerd, selecteert u de methode voor
 
 ![Scherm opname waarin de pagina gebruikers aanmelding wordt weer gegeven. De optie voor wachtwoord hash-synchronisatie is geselecteerd.](./media/how-to-connect-install-custom/usersignin4.png)
 
-| Optie voor eenmalige aanmelding | Beschrijving |
+| Optie voor eenmalige aanmelding | Description |
 | --- | --- |
 | Synchronisatie van wachtwoord-hashes |Gebruikers kunnen zich aanmelden bij micro soft-Cloud Services, zoals Microsoft 365, door gebruik te maken van hetzelfde wacht woord dat ze gebruiken in hun on-premises netwerk. Gebruikers wachtwoorden worden als wacht woord-hash gesynchroniseerd met Azure AD. Verificatie vindt plaats in de Cloud. Zie [Password Hash Synchronization](how-to-connect-password-hash-synchronization.md)(Engelstalig) voor meer informatie. |
 |Pass-through-verificatie|Gebruikers kunnen zich aanmelden bij micro soft-Cloud Services, zoals Microsoft 365, door gebruik te maken van hetzelfde wacht woord dat ze gebruiken in hun on-premises netwerk.  Gebruikers wachtwoorden worden gevalideerd door door te gegeven aan de on-premises Active Directory domein controller.
@@ -205,7 +205,7 @@ Op de volgende pagina kunt u optionele functies voor uw scenario selecteren.
 
 
 
-| Optionele functies | Beschrijving |
+| Optionele functies | Description |
 | --- | --- |
 | Hybride implementatie van Exchange |Met de functie hybride implementatie van Exchange kunnen Exchange-post vakken zowel on-premises als in Microsoft 365 worden uitgewisseld. Azure AD Connect synchroniseert een specifieke set [kenmerken](reference-connect-sync-attributes-synchronized.md#exchange-hybrid-writeback) van Azure AD terug naar uw on-premises Directory. |
 | Exchange-e-mail-open bare mappen | Met de functie open bare mappen van Exchange mail kunt u e-mail berichten met open bare mappen synchroniseren van uw on-premises exemplaar van Active Directory naar Azure AD. |

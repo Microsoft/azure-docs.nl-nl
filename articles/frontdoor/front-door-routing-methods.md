@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 09/28/2020
 ms.author: duau
 ms.openlocfilehash: 2bc056620ff964747dfd83e7525cb5bfd2eb8e52
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "91449146"
 ---
 # <a name="front-door-routing-methods"></a>Routerings methoden voor voor deur
@@ -69,7 +69,7 @@ De methode weighted maakt enkele handige scenario's mogelijk:
 * **Toepassings migratie naar Azure**: Maak een back-end-groep met zowel Azure als externe back-endservers. Pas het gewicht van de back-ends aan om de voor keur te geven aan de nieuwe back-end. U kunt dit geleidelijk instellen, te beginnen met het uitschakelen van de nieuwe back-ups en vervolgens de laagste gewichten toewijzen, waardoor deze langzaam toeneemt op het niveau van het verkeer. Vervolgens worden de minder voorkeurs back-ends uitgeschakeld en verwijderd uit de groep.  
 * **Cloud-bursting voor extra capaciteit**: Vouw snel een on-premises implementatie uit in de Cloud door deze achter de deur te plaatsen. Wanneer u extra capaciteit nodig hebt in de Cloud, kunt u meer back-endservers toevoegen of inschakelen en opgeven welk deel van het verkeer naar elke back-end gaat.
 
-## <a name="session-affinity"></a><a name = "affinity"></a>Sessie affiniteit
+## <a name="session-affinity"></a><a name = "affinity"></a>Sessieaffiniteit
 Standaard, zonder sessie affiniteit, worden aanvragen die afkomstig zijn van dezelfde client, doorgestuurd naar verschillende back-endservers. Sommige stateful toepassingen of in bepaalde scenario's waarbij aanvragen van dezelfde gebruiker worden verzonden, geven de voor keur aan dezelfde back-end die de eerste aanvraag heeft verwerkt. De functie Sessieaffiniteit op basis van cookies is handig als u een gebruikerssessie op dezelfde back-end wilt behouden. Met behulp van beheerde cookies kan Azure front-deur verkeer van een gebruikers sessie naar dezelfde back-end omleiden voor verwerking.
 
 U kunt sessieaffiniteit inschakelen op het hostniveau van de front-end, voor elk van de geconfigureerde domeinen (of subdomeinen). Na het inschakelen voegt Front Door een cookie toe aan de gebruikerssessie. Met op cookies gebaseerde sessieaffiniteit kan Front Door verschillende gebruikers herkennen, zelfs als deze hetzelfde IP-adres hebben. Hierdoor kan er nog meer verkeer worden verdeeld tussen uw verschillende back-ends.

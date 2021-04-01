@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 12/15/2020
 ms.custom: seodec18
 ms.openlocfilehash: cb9d8edd24dcc8809f2b207a4db80653b0e140e4
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98014033"
 ---
 # <a name="azure-stream-analytics-custom-blob-output-partitioning"></a>Aangepaste BLOB-uitvoer partitioneren Azure Stream Analytics
@@ -78,7 +78,7 @@ Met de aangepaste DateTime-paden kunt u een uitvoer indeling opgeven die wordt a
 
 De volgende indelings specificatie tokens kunnen alleen worden gebruikt of in combi natie met aangepaste DateTime-indelingen:
 
-|Indelings aanduiding   |Beschrijving   |Resultaten van de voorbeeld tijd 2018-01-02T10:06:08|
+|Indelings aanduiding   |Description   |Resultaten van de voorbeeld tijd 2018-01-02T10:06:08|
 |----------|-----------|------------|
 |{DateTime: jjjj}|Het jaar als een getal van vier cijfers|2018|
 |{DateTime: MM}|Maand van 01 tot en met 12|01|

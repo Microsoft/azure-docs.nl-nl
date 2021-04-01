@@ -4,10 +4,10 @@ description: In dit artikel vindt u antwoorden op veelgestelde vragen over het b
 ms.date: 04/22/2020
 ms.topic: conceptual
 ms.openlocfilehash: e2b6afb25e189ee2848f25c0ba59d843baf37090
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "91940832"
 ---
 # <a name="questions-about-backing-up-azure-files"></a>Vragen over het maken back-ups van Azure-bestanden

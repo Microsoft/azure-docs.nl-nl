@@ -12,10 +12,10 @@ ms.date: 10/12/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 322e4b78fbfb38f1822fb7a7cdcdbfcc0738b303
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "91950394"
 ---
 # <a name="define-a-phone-factor-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Een technisch profiel voor telefoon factor definiëren in een Azure Active Directory B2C aangepast beleid
@@ -57,10 +57,10 @@ Het InputClaimsTransformations-element kan een verzameling invoer claim transfor
 
 Het element InputClaims moet de volgende claims bevatten. U kunt de naam van uw claim ook toewijzen aan de naam die is gedefinieerd in het technische profiel voor telefoon factor. 
 
-|  Gegevenstype| Vereist | Beschrijving |
+|  Gegevenstype| Vereist | Description |
 | --------- | -------- | ----------- | 
-| tekenreeks| Ja | Een unieke id voor de gebruiker. De claim naam of PartnerClaimType moet worden ingesteld op `UserId` . Deze claim mag geen persoonlijke gegevens bevatten.|
-| tekenreeks| Ja | Lijst met claim typen. Elke claim bevat één telefoon nummer. Als een van de invoer claims geen telefoon nummer bevat, wordt de gebruiker gevraagd om een nieuw telefoon nummer in te schrijven en te verifiëren. Het gevalideerde telefoon nummer wordt geretourneerd als een uitvoer claim. Als een van de invoer claims een telefoon nummer bevat, wordt de gebruiker gevraagd om dit te verifiëren. Als meerdere invoer claims een telefoon nummer bevatten, wordt de gebruiker gevraagd een van de telefoon nummers te kiezen en te controleren. |
+| tekenreeks| Yes | Een unieke id voor de gebruiker. De claim naam of PartnerClaimType moet worden ingesteld op `UserId` . Deze claim mag geen persoonlijke gegevens bevatten.|
+| tekenreeks| Yes | Lijst met claim typen. Elke claim bevat één telefoon nummer. Als een van de invoer claims geen telefoon nummer bevat, wordt de gebruiker gevraagd om een nieuw telefoon nummer in te schrijven en te verifiëren. Het gevalideerde telefoon nummer wordt geretourneerd als een uitvoer claim. Als een van de invoer claims een telefoon nummer bevat, wordt de gebruiker gevraagd om dit te verifiëren. Als meerdere invoer claims een telefoon nummer bevatten, wordt de gebruiker gevraagd een van de telefoon nummers te kiezen en te controleren. |
 
 In het volgende voor beeld ziet u hoe u meerdere telefoon nummers gebruikt. Zie [voorbeeld beleid](https://github.com/azure-ad-b2c/samples/tree/master/policies/mfa-add-secondarymfa)voor meer informatie.
 
@@ -79,7 +79,7 @@ Het OutputClaims-element bevat een lijst met claims die worden geretourneerd doo
 |  Gegevenstype| Vereist | Beschrijving |
 |  -------- | ----------- |----------- |
 | booleaans | Ja | Hiermee wordt aangegeven of het nieuwe telefoon nummer door de gebruiker is ingevoerd. De claim naam of PartnerClaimType moet zijn ingesteld op `newPhoneNumberEntered`|
-| tekenreeks| Ja | Het geverifieerde telefoon nummer. De claim naam of PartnerClaimType moet worden ingesteld op `Verified.OfficePhone` .|
+| tekenreeks| Yes | Het geverifieerde telefoon nummer. De claim naam of PartnerClaimType moet worden ingesteld op `Verified.OfficePhone` .|
 
 Het OutputClaimsTransformations-element kan een verzameling OutputClaimsTransformation-elementen bevatten die worden gebruikt voor het wijzigen van de uitvoer claims of nieuwe genereren.
 
@@ -92,10 +92,10 @@ Het element **CryptographicKeys** wordt niet gebruikt.
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| ContentDefinitionReferenceId | Ja | De id van de [inhouds definitie](contentdefinitions.md) die aan dit technische profiel is gekoppeld. |
-| ManualPhoneNumberEntryAllowed| Nee | Opgeven of een gebruiker een telefoon nummer hand matig mag invoeren. Mogelijke waarden: `true` , of `false` (standaard).|
-| setting. authenticationMode | Nee | De methode voor het valideren van het telefoon nummer. Mogelijke waarden: `sms` , `phone` , of `mixed` (standaard).|
-| instelling. automatisch kiezen| Nee| Geef op of het technische profiel automatisch moet worden gekozen of automatisch een SMS mag verzenden. Mogelijke waarden: `true` , of `false` (standaard). Voor automatisch kiezen moet de `setting.authenticationMode` meta gegevens zijn ingesteld op `sms` of `phone` . De invoerende claim verzameling moet één telefoon nummer hebben. |
+| ContentDefinitionReferenceId | Yes | De id van de [inhouds definitie](contentdefinitions.md) die aan dit technische profiel is gekoppeld. |
+| ManualPhoneNumberEntryAllowed| No | Opgeven of een gebruiker een telefoon nummer hand matig mag invoeren. Mogelijke waarden: `true` , of `false` (standaard).|
+| setting. authenticationMode | No | De methode voor het valideren van het telefoon nummer. Mogelijke waarden: `sms` , `phone` , of `mixed` (standaard).|
+| instelling. automatisch kiezen| No| Geef op of het technische profiel automatisch moet worden gekozen of automatisch een SMS mag verzenden. Mogelijke waarden: `true` , of `false` (standaard). Voor automatisch kiezen moet de `setting.authenticationMode` meta gegevens zijn ingesteld op `sms` of `phone` . De invoerende claim verzameling moet één telefoon nummer hebben. |
 
 ### <a name="ui-elements"></a>UI-elementen
 

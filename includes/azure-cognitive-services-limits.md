@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 07/30/2019
 ms.author: erhopf
 ms.openlocfilehash: c9d73804484ea7cc72e0198b857099fd8fba46d5
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "95560653"
 ---
 De volgende limieten gelden voor het aantal Cognitive Services-resources per Azure-abonnement. Elk van de Cognitive Services kan extra beperkingen hebben, zie [Azure Cognitive Services](../articles/cognitive-services/index.yml) voor meer informatie.

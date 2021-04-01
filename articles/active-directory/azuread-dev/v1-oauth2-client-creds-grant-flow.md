@@ -52,7 +52,7 @@ Er zijn twee gevallen, afhankelijk van het feit of de client toepassing wordt be
 ### <a name="first-case-access-token-request-with-a-shared-secret"></a>Eerste case: toegangs token aanvraag met een gedeeld geheim
 Bij gebruik van een gedeeld geheim bevat een aanvraag voor service-naar-service-toegangs token de volgende para meters:
 
-| Parameter | Type | Beschrijving |
+| Parameter | Type | Description |
 | --- | --- | --- |
 | grant_type |vereist |Hiermee geeft u het aangevraagde toekennings type op. In een client referenties toekenning stroom moet de waarde **client_credentials** zijn. |
 | client_id |vereist |Hiermee geeft u de id op van de Azure AD-client van de aanroepende webservice. Als u de client-ID van de aanroepende toepassing wilt zoeken, klikt u in het [Azure Portal](https://portal.azure.com)op **Azure Active Directory**, klikt u op **app-registraties** en klikt u op de toepassing. De client_id is de *toepassings-id* |
@@ -73,7 +73,7 @@ grant_type=client_credentials&client_id=625bc9f6-3bf6-4b6d-94ba-e97cf07a22de&cli
 ### <a name="second-case-access-token-request-with-a-certificate"></a>Tweede geval: toegangs token aanvraag met een certificaat
 Een aanvraag voor service-naar-service-toegangs token met een certificaat bevat de volgende para meters:
 
-| Parameter | Type | Beschrijving |
+| Parameter | Type | Description |
 | --- | --- | --- |
 | grant_type |vereist |Hiermee geeft u het aangevraagde antwoord type op. In een client referenties toekenning stroom moet de waarde **client_credentials** zijn. |
 | client_id |vereist |Hiermee geeft u de id op van de Azure AD-client van de aanroepende webservice. Als u de client-ID van de aanroepende toepassing wilt zoeken, klikt u in het [Azure Portal](https://portal.azure.com)op **Azure Active Directory**, klikt u op **app-registraties** en klikt u op de toepassing. De client_id is de *toepassings-id* |

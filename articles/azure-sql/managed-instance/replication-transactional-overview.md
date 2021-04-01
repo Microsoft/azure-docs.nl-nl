@@ -13,10 +13,10 @@ ms.author: mathoma
 ms.reviewer: sstein
 ms.date: 04/20/2020
 ms.openlocfilehash: 3e4b4fc3d4a6c9529c7c0ac0daef8a28173e0bf3
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "99225340"
 ---
 # <a name="transactional-replication-with-azure-sql-managed-instance-preview"></a>Transactionele replicatie met Azure SQL Managed instance (preview-versie)
@@ -74,8 +74,8 @@ Er zijn verschillende [typen replicatie](/sql/relational-databases/replication/t
 
 | Replicatie | Azure SQL Database | Azure SQL Managed Instance |
 | :----| :------------- | :--------------- |
-| [**Standaard transactionele**](/sql/relational-databases/replication/transactional/transactional-replication) | Ja (alleen als abonnee) | Ja |
-| [**Snapshot**](/sql/relational-databases/replication/snapshot-replication) | Ja (alleen als abonnee) | Ja|
+| [**Standaard transactionele**](/sql/relational-databases/replication/transactional/transactional-replication) | Ja (alleen als abonnee) | Yes |
+| [**Snapshot**](/sql/relational-databases/replication/snapshot-replication) | Ja (alleen als abonnee) | Yes|
 | [**Samenvoeg replicatie**](/sql/relational-databases/replication/merge/merge-replication) | Nee | Nee|
 | [**Peer-to-peer**](/sql/relational-databases/replication/transactional/peer-to-peer-transactional-replication) | Nee | Nee|
 | [**Bidirectioneel**](/sql/relational-databases/replication/transactional/bidirectional-transactional-replication) | Nee | Ja|

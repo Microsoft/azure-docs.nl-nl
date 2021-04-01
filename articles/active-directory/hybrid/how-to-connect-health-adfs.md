@@ -108,7 +108,7 @@ Deze grafiek bevat de volgende informatie:
 
 Dit rapport bevat de volgende informatie:
 
-| Rapportitem | Beschrijving |
+| Rapportitem | Description |
 | --- | --- |
 | Gebruikers-id |De gebruikers-ID die is gebruikt. Deze waarde is wat de gebruiker heeft getypt, wat in sommige gevallen de verkeerder gebruikers-id is. |
 | Mislukte pogingen |Geeft het totale aantal mislukte pogingen voor die specifieke gebruikers-ID weer. De tabel is gesorteerd in aflopende volgorde, met het hoogste aantal mislukte pogingen bovenaan. |

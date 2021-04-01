@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9c8dcc8766b21551f3cd62289805fe735ef0f333
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "91317613"
 ---
 # <a name="azure-ad-connect-automatic-upgrade"></a>Azure AD Connect: automatische upgrade
@@ -79,7 +79,7 @@ De resultaat code bevat een voor voegsel met een overzicht van de status.
 
 Hier volgt een lijst met de meest voorkomende berichten die u vindt. Er worden niet alle weer gegeven, maar het resultaat moet duidelijk zijn bij wat het probleem is.
 
-| Resultaat bericht | Beschrijving |
+| Resultaat bericht | Description |
 | --- | --- |
 | **UpgradeAborted** | |
 | UpgradeAbortedCouldNotSetUpgradeMarker |Kan niet schrijven naar het REGI ster. |

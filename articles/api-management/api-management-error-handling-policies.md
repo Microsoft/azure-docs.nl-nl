@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: apimpm
 ms.openlocfilehash: a3b6f90d0aa26b478c0f2fcefac55dcd509da437
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92070942"
 ---
 # <a name="error-handling-in-api-management-policies"></a>Fout bij het verwerken van API Management-beleid
@@ -82,13 +82,13 @@ Als er een fout optreedt en er wordt verwezen naar de `on-error` beleids sectie,
 
 | Naam       | Type   | Beschrijving                                                                                               | Vereist |
 | ---------- | ------ | --------------------------------------------------------------------------------------------------------- | -------- |
-| `Source`   | tekenreeks | De naam van het element waarop de fout is opgetreden. Dit kan een beleids regel of een ingebouwde pijplijn naam zijn.      | Ja      |
-| `Reason`   | tekenreeks | Machine vriendelijke fout code, die kan worden gebruikt voor het afhandelen van fouten.                                       | Nee       |
-| `Message`  | tekenreeks | Beschrijving van door de mens lees bare fout.                                                                         | Ja      |
-| `Scope`    | tekenreeks | De naam van het bereik waarin de fout is opgetreden en kan een van de volgende zijn: ' Global ', ' product ', ' API ' of ' Operation ' | Nee       |
-| `Section`  | tekenreeks | Sectie naam waarin fout is opgetreden. Mogelijke waarden: ' binnenkomend ', ' back-end ', ' outbound ' of ' on-error '.      | Nee       |
-| `Path`     | tekenreeks | Hiermee geeft u genest beleid op, bijvoorbeeld ' Kies [3]/when [2] '.                                                 | Nee       |
-| `PolicyId` | tekenreeks | Waarde van het `id` kenmerk, indien opgegeven door de klant, op het beleid waar fout is opgetreden             | Nee       |
+| `Source`   | tekenreeks | De naam van het element waarop de fout is opgetreden. Dit kan een beleids regel of een ingebouwde pijplijn naam zijn.      | Yes      |
+| `Reason`   | tekenreeks | Machine vriendelijke fout code, die kan worden gebruikt voor het afhandelen van fouten.                                       | No       |
+| `Message`  | tekenreeks | Beschrijving van door de mens lees bare fout.                                                                         | Yes      |
+| `Scope`    | tekenreeks | De naam van het bereik waarin de fout is opgetreden en kan een van de volgende zijn: ' Global ', ' product ', ' API ' of ' Operation ' | No       |
+| `Section`  | tekenreeks | Sectie naam waarin fout is opgetreden. Mogelijke waarden: ' binnenkomend ', ' back-end ', ' outbound ' of ' on-error '.      | No       |
+| `Path`     | tekenreeks | Hiermee geeft u genest beleid op, bijvoorbeeld ' Kies [3]/when [2] '.                                                 | No       |
+| `PolicyId` | tekenreeks | Waarde van het `id` kenmerk, indien opgegeven door de klant, op het beleid waar fout is opgetreden             | No       |
 
 > [!TIP]
 > U kunt de status code openen met behulp van context. Response. status code.

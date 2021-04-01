@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/27/2021
 ms.openlocfilehash: cbb84a4934eed4d258cf07772753315785f98019
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "99218159"
 ---
 # <a name="net-c-code-samples-for-azure-cognitive-search"></a>Code voorbeelden van .NET (C#) voor Azure Cognitive Search
@@ -30,7 +30,7 @@ Meer informatie over de C#-code voorbeelden die de functionaliteit en werk stroo
 
 Code voorbeelden uit het ontwikkel team van Azure SDK illustreren het gebruik van de API. U kunt deze voor beelden vinden in [**Azure/Azure-SDK-voor-net/tree/master/SDK/Search/Azure.Search.Documents/samples**](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Azure.Search.Documents/samples/) op github.
 
-| Voorbeelden | Beschrijving |
+| Voorbeelden | Description |
 |---------|-------------|
 | ["Hallo wereld", synchroon](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Azure.Search.Documents/samples/Sample01a_HelloWorld.md) | Demonstreert hoe u een client maakt, de verificatie uitvoert en fouten afhandelt met behulp van synchrone methoden.|
 | ["Hallo wereld" asynchroon](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Azure.Search.Documents/samples/Sample01b_HelloWorldAsync.md) | Demonstreert hoe u een client maakt, een verificatie uitvoert en fouten afhandelt met behulp van asynchrone methoden.  |
@@ -63,7 +63,7 @@ Code voorbeelden van het Cognitive Search team illustreren de functies en werk s
 
 De volgende voor beelden worden ook gepubliceerd door het Cognitive Search-team, maar er wordt niet naar verwezen in de documentatie. Gekoppelde Leesmij-bestanden bieden gebruiks instructies.
 
-| Voorbeelden | Beschrijving |
+| Voorbeelden | Description |
 |---------|-------------|
 | [Azure-zoeken-Power-vaardig heden](https://github.com/Azure-Samples/azure-search-power-skills)  | Bron code voor verbruikte aangepaste vaardig heden die u kunt opnemen in uw gewonnen oplossingen.  |
 | [Oplossingsverbetering voor kennisanalyse](/samples/azure-samples/azure-search-knowledge-mining/azure-search-knowledge-mining/) | Bevat sjablonen, ondersteunings bestanden en analytische rapporten die u helpen bij het prototypen van een end-to-end kennis analyse oplossing.  |

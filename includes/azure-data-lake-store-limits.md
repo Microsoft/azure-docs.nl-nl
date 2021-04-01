@@ -9,10 +9,10 @@ ms.date: 09/30/2020
 ms.author: twooley
 ms.custom: include file
 ms.openlocfilehash: 7098f23e9b5b6f56fbbe761335afc65375aea680
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96509124"
 ---
 **Azure Data Lake Storage Gen2** is geen accounttype voor toegewezen service of opslag. Het behoort tot de nieuwste mogelijkheden voor de analyse van big data.  Deze mogelijkheden zijn beschikbaar in een opslagaccount voor algemeen gebruik v2 of in een BlockBlobStorage-opslagaccount, en u kunt deze mogelijkheden verkrijgen door de functie **Hiërarchische naamruimte** van het account in te schakelen. Raadpleeg deze artikelen voor schaaldoelen. 

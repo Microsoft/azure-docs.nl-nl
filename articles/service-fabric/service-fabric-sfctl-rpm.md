@@ -30,14 +30,14 @@ Deze API ondersteunt het Service Fabric-platform. het is niet bedoeld om rechtst
 
 ### <a name="arguments"></a>Argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --taak-id [vereist] | De ID van de herstel taak. |
 | --version | Het huidige versie nummer van de herstel taak. Als dit niet het geval is, wordt de aanvraag alleen uitgevoerd als deze waarde overeenkomt met de werkelijke huidige versie van de herstel taak. Als de waarde nul is, wordt er geen versie controle uitgevoerd. |
 
 ### <a name="global-arguments"></a>Algemene argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --debug | Verg root logboek registratie uitgebreid om alle logboeken voor fout opsporing weer te geven. |
 | --help -h | Dit Help-bericht weer geven en afsluiten. |
@@ -52,14 +52,14 @@ Deze API ondersteunt het Service Fabric-platform. het is niet bedoeld om rechtst
 
 ### <a name="arguments"></a>Argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --taak-id [vereist] | De ID van de voltooide herstel taak die moet worden verwijderd. |
 | --version | Het huidige versie nummer van de herstel taak. Als dit niet het geval is, wordt de aanvraag alleen uitgevoerd als deze waarde overeenkomt met de werkelijke huidige versie van de herstel taak. Als de waarde nul is, wordt er geen versie controle uitgevoerd. |
 
 ### <a name="global-arguments"></a>Algemene argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --debug | Verg root logboek registratie uitgebreid om alle logboeken voor fout opsporing weer te geven. |
 | --help -h | Dit Help-bericht weer geven en afsluiten. |
@@ -74,7 +74,7 @@ Deze API ondersteunt het Service Fabric-platform. het is niet bedoeld om rechtst
 
 ### <a name="arguments"></a>Argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --uitvoerbaar filter | De naam van de reparatie-uitvoerder waarvan de gedeclareerde taken moeten worden opgenomen in de lijst. |
 | --status-filter | Een bitsgewijze-of van de volgende waarden, opgeven welke taak statussen moeten worden opgenomen in de lijst met resultaten. <ul><li>1-gemaakt</li><li>2-geclaimd</li><li>4: voorbereiden</li><li>8-goedgekeurd</li><li>16-uitvoeren</li><li>32-herstellen</li><li>64-voltooid</li></ul>
@@ -82,7 +82,7 @@ Deze API ondersteunt het Service Fabric-platform. het is niet bedoeld om rechtst
 
 ### <a name="global-arguments"></a>Algemene argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --debug | Verg root logboek registratie uitgebreid om alle logboeken voor fout opsporing weer te geven. |
 | --help -h | Dit Help-bericht weer geven en afsluiten. |

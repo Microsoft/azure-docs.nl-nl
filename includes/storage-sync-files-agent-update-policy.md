@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 12/11/2018
 ms.author: rogarana
 ms.openlocfilehash: aeb15fbb8da44a203789e06a359cb664998602ab
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "77123184"
 ---
 De Azure File Sync-agent wordt regel matig bijgewerkt om nieuwe functionaliteit toe te voegen en om problemen op te lossen. We raden u aan Microsoft Update te configureren voor het ophalen van updates voor de Azure File Sync-agent wanneer deze beschikbaar zijn.

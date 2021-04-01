@@ -22,7 +22,7 @@ ms.locfileid: "91256435"
 
 Het doel van geregistreerde Azure AD-apparaten is om uw gebruikers ondersteuning te bieden voor de scenario's voor het nemen van uw eigen apparaten (BYOD) of mobiele apparaten. In deze scenario's heeft een gebruiker toegang tot de Azure Active Directory beheerde resources van uw organisatie met behulp van een persoonlijk apparaat.
 
-| Geregistreerde Azure AD | Beschrijving |
+| Geregistreerde Azure AD | Description |
 | --- | --- |
 | **Definition** | Geregistreerd bij Azure AD zonder organisatie account om u aan te melden bij het apparaat |
 | **Primaire doel groep** | Van toepassing op alle gebruikers met de volgende criteria: |

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 03/24/2020
 ms.author: caya
 ms.openlocfilehash: d8940d791920daca6ef0af186a4bb5e17009637b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100586121"
 ---
 # <a name="application-gateway-high-traffic-support"></a>Ondersteuning voor intensief verkeer in Application Gateway

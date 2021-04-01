@@ -8,17 +8,17 @@ ms.topic: conceptual
 ms.date: 08/29/2018
 ms.author: robinsh
 ms.openlocfilehash: da021e3ba0fd93a182ea76a1ba4b7042b325aacc
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92142380"
 ---
 # <a name="create-an-iot-hub-using-the-new-aziothub-cmdlet"></a>Een IoT-hub maken met behulp van de cmdlet New-AzIotHub
 
 [!INCLUDE [iot-hub-resource-manager-selector](../../includes/iot-hub-resource-manager-selector.md)]
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 U kunt Azure PowerShell-cmdlets gebruiken om Azure IoT hubs te maken en te beheren. In deze zelf studie wordt uitgelegd hoe u een IoT-hub maakt met Power shell.
 

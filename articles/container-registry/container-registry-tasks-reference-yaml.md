@@ -75,52 +75,52 @@ az configure --defaults acr=myregistry
 
 Taak eigenschappen worden meestal boven aan een bestand weer gegeven `acr-task.yaml` en zijn algemene eigenschappen die van toepassing zijn tijdens de volledige uitvoering van de taak stappen. Sommige van deze algemene eigenschappen kunnen in een afzonderlijke stap worden overschreven.
 
-| Eigenschap | Type | Optioneel | Beschrijving | Overschrijven ondersteund | Standaardwaarde |
+| Eigenschap | Type | Optioneel | Description | Overschrijven ondersteund | Standaardwaarde |
 | -------- | ---- | -------- | ----------- | ------------------ | ------------- |
-| `version` | tekenreeks | Ja | De versie van het `acr-task.yaml` bestand zoals geparseerd door de service ACR tasks. Hoewel ACR-taken streven om achterwaartse compatibiliteit te behouden, kunnen met deze waarde ACR-taken de compatibiliteit binnen een gedefinieerde versie behouden blijven. Als u geen waarde opgeeft, wordt de meest recente versie gebruikt. | Nee | Geen |
-| `stepTimeout` | int (seconden) | Ja | Het maximum aantal seconden dat een stap kan worden uitgevoerd. Als de eigenschap is opgegeven voor een taak, wordt de eigenschap Default `timeout` van alle stappen ingesteld. Als de `timeout` eigenschap in een stap is opgegeven, wordt de eigenschap die door de taak is opgegeven, overschreven. | Ja | 600 (10 minuten) |
-| `workingDirectory` | tekenreeks | Ja | De werkmap van de container tijdens runtime. Als de eigenschap is opgegeven voor een taak, wordt de eigenschap Default `workingDirectory` van alle stappen ingesteld. Als u een stap opgeeft, wordt de eigenschap die door de taak is opgegeven, overschreven. | Ja | `c:\workspace` in Windows of `/workspace` in Linux |
-| `env` | [teken reeks, teken reeks,...] | Ja |  Matrix van teken reeksen in `key=value` een indeling die de omgevings variabelen voor de taak definieert. Als de eigenschap is opgegeven voor een taak, wordt de eigenschap Default `env` van alle stappen ingesteld. Als u een stap opgeeft, worden de omgevings variabelen die zijn overgenomen van de taak, overschreven. | Ja | Geen |
-| `secrets` | [geheim, geheim,...] | Ja | Matrix van [geheime](#secret) objecten. | Nee | Geen |
-| `networks` | [netwerk, netwerk,...] | Ja | Matrix van [netwerk](#network) objecten. | Nee | Geen |
-| `volumes` | [volume, volume,...] | Ja | Matrix van [volume](#volume) -objecten. Hiermee geeft u de volumes met de bron inhoud aan een stap koppelen. | Nee | Geen |
+| `version` | tekenreeks | Yes | De versie van het `acr-task.yaml` bestand zoals geparseerd door de service ACR tasks. Hoewel ACR-taken streven om achterwaartse compatibiliteit te behouden, kunnen met deze waarde ACR-taken de compatibiliteit binnen een gedefinieerde versie behouden blijven. Als u geen waarde opgeeft, wordt de meest recente versie gebruikt. | No | Geen |
+| `stepTimeout` | int (seconden) | Yes | Het maximum aantal seconden dat een stap kan worden uitgevoerd. Als de eigenschap is opgegeven voor een taak, wordt de eigenschap Default `timeout` van alle stappen ingesteld. Als de `timeout` eigenschap in een stap is opgegeven, wordt de eigenschap die door de taak is opgegeven, overschreven. | Yes | 600 (10 minuten) |
+| `workingDirectory` | tekenreeks | Yes | De werkmap van de container tijdens runtime. Als de eigenschap is opgegeven voor een taak, wordt de eigenschap Default `workingDirectory` van alle stappen ingesteld. Als u een stap opgeeft, wordt de eigenschap die door de taak is opgegeven, overschreven. | Yes | `c:\workspace` in Windows of `/workspace` in Linux |
+| `env` | [teken reeks, teken reeks,...] | Yes |  Matrix van teken reeksen in `key=value` een indeling die de omgevings variabelen voor de taak definieert. Als de eigenschap is opgegeven voor een taak, wordt de eigenschap Default `env` van alle stappen ingesteld. Als u een stap opgeeft, worden de omgevings variabelen die zijn overgenomen van de taak, overschreven. | Yes | Geen |
+| `secrets` | [geheim, geheim,...] | Yes | Matrix van [geheime](#secret) objecten. | No | Geen |
+| `networks` | [netwerk, netwerk,...] | Yes | Matrix van [netwerk](#network) objecten. | No | Geen |
+| `volumes` | [volume, volume,...] | Yes | Matrix van [volume](#volume) -objecten. Hiermee geeft u de volumes met de bron inhoud aan een stap koppelen. | No | Geen |
 
 ### <a name="secret"></a>geheim
 
 Het geheim object heeft de volgende eigenschappen.
 
-| Eigenschap | Type | Optioneel | Beschrijving | Standaardwaarde |
+| Eigenschap | Type | Optioneel | Description | Standaardwaarde |
 | -------- | ---- | -------- | ----------- | ------- |
 | `id` | tekenreeks | No | De id van het geheim. | Geen |
-| `keyvault` | tekenreeks | Ja | De Azure Key Vault geheime URL. | Geen |
-| `clientID` | tekenreeks | Ja | De client-ID van de door de [gebruiker toegewezen beheerde identiteit](container-registry-tasks-authentication-managed-identity.md) voor Azure-resources. | Geen |
+| `keyvault` | tekenreeks | Yes | De Azure Key Vault geheime URL. | Geen |
+| `clientID` | tekenreeks | Yes | De client-ID van de door de [gebruiker toegewezen beheerde identiteit](container-registry-tasks-authentication-managed-identity.md) voor Azure-resources. | Geen |
 
 ### <a name="network"></a>network
 
 Het netwerk object heeft de volgende eigenschappen.
 
-| Eigenschap | Type | Optioneel | Beschrijving | Standaardwaarde |
+| Eigenschap | Type | Optioneel | Description | Standaardwaarde |
 | -------- | ---- | -------- | ----------- | ------- | 
 | `name` | tekenreeks | No | De naam van het netwerk. | Geen |
-| `driver` | tekenreeks | Ja | Het stuur programma voor het beheren van het netwerk. | Geen |
-| `ipv6` | booleaans | Ja | Of IPv6-netwerken zijn ingeschakeld. | `false` |
-| `skipCreation` | booleaans | Ja | Hiermee wordt aangegeven of het maken van netwerken moet worden overgeslagen. | `false` |
-| `isDefault` | booleaans | Ja | Of het netwerk een standaard netwerk is dat wordt meegeleverd met Azure Container Registry. | `false` |
+| `driver` | tekenreeks | Yes | Het stuur programma voor het beheren van het netwerk. | Geen |
+| `ipv6` | booleaans | Yes | Of IPv6-netwerken zijn ingeschakeld. | `false` |
+| `skipCreation` | booleaans | Yes | Hiermee wordt aangegeven of het maken van netwerken moet worden overgeslagen. | `false` |
+| `isDefault` | booleaans | Yes | Of het netwerk een standaard netwerk is dat wordt meegeleverd met Azure Container Registry. | `false` |
 
 ### <a name="volume"></a>volume
 
 Het object volume heeft de volgende eigenschappen.
 
-| Eigenschap | Type | Optioneel | Beschrijving | Standaardwaarde |
+| Eigenschap | Type | Optioneel | Description | Standaardwaarde |
 | -------- | ---- | -------- | ----------- | ------- | 
 | `name` | tekenreeks | No | De naam van het volume dat moet worden gekoppeld. Mag alleen alfanumerieke tekens,-en _ bevatten. | Geen |
-| `secret` | teken reeks voor map [string] | Nee | Elke sleutel van de kaart is de naam van een bestand dat is gemaakt en ingevuld in het volume. Elke waarde is de teken reeks versie van het geheim. Geheime waarden moeten base64-gecodeerd zijn. | Geen |
+| `secret` | teken reeks voor map [string] | No | Elke sleutel van de kaart is de naam van een bestand dat is gemaakt en ingevuld in het volume. Elke waarde is de teken reeks versie van het geheim. Geheime waarden moeten base64-gecodeerd zijn. | Geen |
 
 ## <a name="task-step-types"></a>Taak stap typen
 
 ACR-taken ondersteunen drie stap typen. Elk type stap ondersteunt verschillende eigenschappen, die in de sectie voor elk type stap worden beschreven.
 
-| Type stap | Beschrijving |
+| Type stap | Description |
 | --------- | ----------- |
 | [`build`](#build) | Hiermee maakt u een container installatie kopie met vertrouwde `docker build` syntaxis. |
 | [`push`](#push) | Hiermee voert `docker push` u een van de zojuist gemaakte of gelabelde installatie kopieën uit in een container register. Azure Container Registry, andere persoonlijke registers en de open bare docker-hub worden ondersteund. |
@@ -143,9 +143,9 @@ Het `build` stap type ondersteunt de para meters in de volgende tabel. Het `buil
 
 | Parameter | Beschrijving | Optioneel |
 | --------- | ----------- | :-------: |
-| `-t` &#124; `--image` | Hiermee wordt het volledig gekwalificeerde `image:tag` van de ingebouwde installatie kopie gedefinieerd.<br /><br />Als installatie kopieën kunnen worden gebruikt voor interne taak validaties, zoals functionele tests, maar niet voor alle installatie kopieën is `push` een REGI ster vereist. Als u echter een installatie kopie van een taak wilt laten uitvoeren, moet de installatie kopie een naam hebben waarnaar kan worden verwezen.<br /><br />In tegens telling tot `az acr build` , het uitvoeren van ACR-taken biedt geen standaard push gedrag. Met ACR-taken wordt in het standaard scenario aangenomen dat u een installatie kopie kunt bouwen, valideren en vervolgens kunt pushen. Zie [Push](#push) voor instructies voor het pushen van ingebouwde installatie kopieën. | Ja |
-| `-f` &#124; `--file` | Hiermee geeft u de Dockerfile door gegeven aan `docker build` . Als u niets opgeeft, wordt de standaard-Dockerfile in de hoofdmap van de context gebruikt. Als u een Dockerfile wilt opgeven, geeft u de bestands naam aan ten opzichte van de hoofdmap van de context. | Ja |
-| `context` | De hoofdmap is door gegeven aan `docker build` . De hoofdmap van elke taak is ingesteld op een gedeelde [variabele workingdirectory](#task-step-properties)en bevat de hoofdmap van de gekoppelde Git-gekloonde map. | Nee |
+| `-t` &#124; `--image` | Hiermee wordt het volledig gekwalificeerde `image:tag` van de ingebouwde installatie kopie gedefinieerd.<br /><br />Als installatie kopieën kunnen worden gebruikt voor interne taak validaties, zoals functionele tests, maar niet voor alle installatie kopieën is `push` een REGI ster vereist. Als u echter een installatie kopie van een taak wilt laten uitvoeren, moet de installatie kopie een naam hebben waarnaar kan worden verwezen.<br /><br />In tegens telling tot `az acr build` , het uitvoeren van ACR-taken biedt geen standaard push gedrag. Met ACR-taken wordt in het standaard scenario aangenomen dat u een installatie kopie kunt bouwen, valideren en vervolgens kunt pushen. Zie [Push](#push) voor instructies voor het pushen van ingebouwde installatie kopieën. | Yes |
+| `-f` &#124; `--file` | Hiermee geeft u de Dockerfile door gegeven aan `docker build` . Als u niets opgeeft, wordt de standaard-Dockerfile in de hoofdmap van de context gebruikt. Als u een Dockerfile wilt opgeven, geeft u de bestands naam aan ten opzichte van de hoofdmap van de context. | Yes |
+| `context` | De hoofdmap is door gegeven aan `docker build` . De hoofdmap van elke taak is ingesteld op een gedeelde [variabele workingdirectory](#task-step-properties)en bevat de hoofdmap van de gekoppelde Git-gekloonde map. | No |
 
 ### <a name="properties-build"></a>Eigenschappen: Build
 
@@ -381,36 +381,36 @@ az acr run -f mounts-secrets.yaml --set-secret mysecret=abcdefg123456 https://gi
 
 Elk stap type ondersteunt verschillende eigenschappen die geschikt zijn voor het type. In de volgende tabel worden alle beschik bare stap eigenschappen gedefinieerd. Niet alle stap typen ondersteunen alle eigenschappen. Als u wilt zien welke van deze eigenschappen beschikbaar zijn voor elk stap type, raadpleegt u de sectie met Naslag informatie voor het type [cmd](#cmd), [Build](#build)en [Push](#push) .
 
-| Eigenschap | Type | Optioneel | Beschrijving | Standaardwaarde |
+| Eigenschap | Type | Optioneel | Description | Standaardwaarde |
 | -------- | ---- | -------- | ----------- | ------- |
-| `detach` | booleaans | Ja | Hiermee wordt aangegeven of de container moet worden losgekoppeld wanneer deze wordt uitgevoerd. | `false` |
-| `disableWorkingDirectoryOverride` | booleaans | Ja | Hiermee wordt aangegeven of `workingDirectory` onderdrukkings functionaliteit moet worden uitgeschakeld. Gebruik dit in combi natie met `workingDirectory` om volledige controle te hebben over de werkmap van de container. | `false` |
-| `entryPoint` | tekenreeks | Ja | Overschrijft de `[ENTRYPOINT]` container van een stap. | Geen |
-| `env` | [teken reeks, teken reeks,...] | Ja | Matrix van teken reeksen in een `key=value` indeling die de omgevings variabelen voor de stap definieert. | Geen |
-| `expose` | [teken reeks, teken reeks,...] | Ja | Matrix van poorten die vanuit de container worden weer gegeven. |  Geen |
-| [`id`](#example-id) | tekenreeks | Ja | Identificeert de stap in de taak uniek. Andere stappen in de taak kunnen verwijzen naar een stap `id` , zoals bij afhankelijkheids controle met `when` .<br /><br />De `id` is ook de naam van de container die wordt uitgevoerd. Processen die worden uitgevoerd in andere containers in de taak, kunnen verwijzen naar de naam van de `id` DNS-host, of om deze te openen met docker-Logboeken [id], bijvoorbeeld. | `acb_step_%d`, waarbij `%d` de op 0 gebaseerde index van de stap top-down in het yaml-bestand |
-| `ignoreErrors` | booleaans | Ja | Hiermee wordt aangegeven of de stap moet worden gemarkeerd als geslaagd, ongeacht of er een fout is opgetreden tijdens het uitvoeren van de container. | `false` |
-| `isolation` | tekenreeks | Ja | Het isolatie niveau van de container. | `default` |
-| `keep` | booleaans | Ja | Hiermee wordt aangegeven of de container van de stap na uitvoering moet worden bewaard. | `false` |
-| `network` | object | Ja | Identificeert een netwerk waarin de container wordt uitgevoerd. | Geen |
-| `ports` | [teken reeks, teken reeks,...] | Ja | Matrix van poorten die vanuit de container naar de host worden gepubliceerd. |  Geen |
-| `pull` | booleaans | Ja | Hiermee wordt aangegeven of een pull van de container moet worden gedwongen voordat deze wordt uitgevoerd om het cache gedrag te voor komen. | `false` |
-| `privileged` | booleaans | Ja | Hiermee wordt aangegeven of de container moet worden uitgevoerd in de beschermde modus. | `false` |
+| `detach` | booleaans | Yes | Hiermee wordt aangegeven of de container moet worden losgekoppeld wanneer deze wordt uitgevoerd. | `false` |
+| `disableWorkingDirectoryOverride` | booleaans | Yes | Hiermee wordt aangegeven of `workingDirectory` onderdrukkings functionaliteit moet worden uitgeschakeld. Gebruik dit in combi natie met `workingDirectory` om volledige controle te hebben over de werkmap van de container. | `false` |
+| `entryPoint` | tekenreeks | Yes | Overschrijft de `[ENTRYPOINT]` container van een stap. | Geen |
+| `env` | [teken reeks, teken reeks,...] | Yes | Matrix van teken reeksen in een `key=value` indeling die de omgevings variabelen voor de stap definieert. | Geen |
+| `expose` | [teken reeks, teken reeks,...] | Yes | Matrix van poorten die vanuit de container worden weer gegeven. |  Geen |
+| [`id`](#example-id) | tekenreeks | Yes | Identificeert de stap in de taak uniek. Andere stappen in de taak kunnen verwijzen naar een stap `id` , zoals bij afhankelijkheids controle met `when` .<br /><br />De `id` is ook de naam van de container die wordt uitgevoerd. Processen die worden uitgevoerd in andere containers in de taak, kunnen verwijzen naar de naam van de `id` DNS-host, of om deze te openen met docker-Logboeken [id], bijvoorbeeld. | `acb_step_%d`, waarbij `%d` de op 0 gebaseerde index van de stap top-down in het yaml-bestand |
+| `ignoreErrors` | booleaans | Yes | Hiermee wordt aangegeven of de stap moet worden gemarkeerd als geslaagd, ongeacht of er een fout is opgetreden tijdens het uitvoeren van de container. | `false` |
+| `isolation` | tekenreeks | Yes | Het isolatie niveau van de container. | `default` |
+| `keep` | booleaans | Yes | Hiermee wordt aangegeven of de container van de stap na uitvoering moet worden bewaard. | `false` |
+| `network` | object | Yes | Identificeert een netwerk waarin de container wordt uitgevoerd. | Geen |
+| `ports` | [teken reeks, teken reeks,...] | Yes | Matrix van poorten die vanuit de container naar de host worden gepubliceerd. |  Geen |
+| `pull` | booleaans | Yes | Hiermee wordt aangegeven of een pull van de container moet worden gedwongen voordat deze wordt uitgevoerd om het cache gedrag te voor komen. | `false` |
+| `privileged` | booleaans | Yes | Hiermee wordt aangegeven of de container moet worden uitgevoerd in de beschermde modus. | `false` |
 | `repeat` | int | Ja | Het aantal nieuwe pogingen om de uitvoering van een container te herhalen. | 0 |
 | `retries` | int | Ja | Het aantal nieuwe pogingen dat wordt geprobeerd als de uitvoering van een container mislukt. Er wordt alleen geprobeerd een nieuwe poging uit te voeren als de afsluit code van een container niet gelijk is aan nul. | 0 |
-| `retryDelay` | int (seconden) | Ja | De vertraging in seconden tussen nieuwe pogingen van de uitvoering van een container. | 0 |
-| `secret` | object | Ja | Identificeert een Azure Key Vault geheime of [beheerde identiteit voor Azure-resources](container-registry-tasks-authentication-managed-identity.md). | Geen |
-| `startDelay` | int (seconden) | Ja | Aantal seconden dat de uitvoering van een container moet worden vertraagd. | 0 |
-| `timeout` | int (seconden) | Ja | Maximum aantal seconden dat een stap kan worden uitgevoerd voordat deze wordt beëindigd. | 600 |
-| [`when`](#example-when) | [teken reeks, teken reeks,...] | Ja | Hiermee configureert u de afhankelijkheid van een stap voor een of meer andere stappen in de taak. | Geen |
-| `user` | tekenreeks | Ja | De gebruikers naam of UID van een container | Geen |
-| `workingDirectory` | tekenreeks | Ja | Hiermee stelt u de werkmap voor een stap in. ACR-taken maken standaard een hoofdmap als werkmap. Als uw build echter verschillende stappen heeft, kunnen eerdere stappen artefacten delen met latere stappen door dezelfde werkmap op te geven. | `c:\workspace` in Windows of `/workspace` in Linux |
+| `retryDelay` | int (seconden) | Yes | De vertraging in seconden tussen nieuwe pogingen van de uitvoering van een container. | 0 |
+| `secret` | object | Yes | Identificeert een Azure Key Vault geheime of [beheerde identiteit voor Azure-resources](container-registry-tasks-authentication-managed-identity.md). | Geen |
+| `startDelay` | int (seconden) | Yes | Aantal seconden dat de uitvoering van een container moet worden vertraagd. | 0 |
+| `timeout` | int (seconden) | Yes | Maximum aantal seconden dat een stap kan worden uitgevoerd voordat deze wordt beëindigd. | 600 |
+| [`when`](#example-when) | [teken reeks, teken reeks,...] | Yes | Hiermee configureert u de afhankelijkheid van een stap voor een of meer andere stappen in de taak. | Geen |
+| `user` | tekenreeks | Yes | De gebruikers naam of UID van een container | Geen |
+| `workingDirectory` | tekenreeks | Yes | Hiermee stelt u de werkmap voor een stap in. ACR-taken maken standaard een hoofdmap als werkmap. Als uw build echter verschillende stappen heeft, kunnen eerdere stappen artefacten delen met latere stappen door dezelfde werkmap op te geven. | `c:\workspace` in Windows of `/workspace` in Linux |
 
 ### <a name="volumemount"></a>volumeMount
 
 Het object volumeMount heeft de volgende eigenschappen.
 
-| Eigenschap | Type | Optioneel | Beschrijving | Standaardwaarde |
+| Eigenschap | Type | Optioneel | Description | Standaardwaarde |
 | -------- | ---- | -------- | ----------- | ------- | 
 | `name` | tekenreeks | No | De naam van het volume dat moet worden gekoppeld. Moet exact overeenkomen met de naam van een `volumes` eigenschap. | Geen |
 | `mountPath`   | tekenreeks | nee | Het absolute pad voor het koppelen van bestanden in de container.  | Geen |

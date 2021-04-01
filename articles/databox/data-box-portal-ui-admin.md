@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 01/09/2019
 ms.author: alkohli
 ms.openlocfilehash: 538a650c6063422f89c8ed3d1753981a293693b7
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "94338038"
 ---
 # <a name="use-azure-portal-to-administer-your-data-box-disk"></a>De Azure-portal gebruiken om uw Data Box te beheren
@@ -119,7 +119,7 @@ Voer de volgende stappen uit om meldingsdetails te bewerken.
 
 ## <a name="view-order-status"></a>Orderstatus bekijken
 
-|Orderstatus |Beschrijving |
+|Orderstatus |Description |
 |---------|---------|
 |Besteld     | De order is geplaatst. <br> Als de schijven niet beschikbaar zijn, ontvangt u een melding. <br>Als de schijven beschikbaar zijn, identificeert Microsoft een schijf die moet worden verzonden en bereidt Microsoft een schijfpakket voor.        |
 |Verwerkt     | De order is verwerkt. <br> Tijdens de orderverwerking vinden de volgende acties plaats:<li>De schijven worden versleuteld met AES-128 BitLocker-versleuteling. </li> <li>De Data Box Disks worden vergrendeld om onbevoegde toegang te voorkomen.</li><li>De sleutel die de schijven ontgrendelt, wordt tijdens dit proces gegenereerd.</li>        |

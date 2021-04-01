@@ -9,10 +9,10 @@ ms.date: 02/10/2021
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 91dc6ba0bcd455aefe9de2efdff2feb20938152d
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100376379"
 ---
 ### <a name="step-1-navigate-to-the-virtual-network-gateway"></a>Stap 1: Navigeer naar de gateway van het virtuele netwerk

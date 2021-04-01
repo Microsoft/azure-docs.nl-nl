@@ -31,7 +31,7 @@ Hiermee verwijdert u de opgegeven Service Fabric eigenschap onder een bepaalde n
 
 ### <a name="arguments"></a>Argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --naam-id [vereist] | De naam van de Service Fabric, zonder het \: URI-schema ' fabric '. |
 | --eigenschap-naam [vereist] | Hiermee geeft u de naam op van de eigenschap die moet worden opgehaald. |
@@ -39,7 +39,7 @@ Hiermee verwijdert u de opgegeven Service Fabric eigenschap onder een bepaalde n
 
 ### <a name="global-arguments"></a>Algemene argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --debug | Verg root logboek registratie uitgebreid om alle logboeken voor fout opsporing weer te geven. |
 | --help -h | Dit Help-bericht weer geven en afsluiten. |
@@ -54,7 +54,7 @@ Hiermee wordt de opgegeven Service Fabric eigenschap met een opgegeven naam opge
 
 ### <a name="arguments"></a>Argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --naam-id [vereist] | De naam van de Service Fabric, zonder het \: URI-schema ' fabric '. |
 | --eigenschap-naam [vereist] | Hiermee geeft u de naam op van de eigenschap die moet worden opgehaald. |
@@ -62,7 +62,7 @@ Hiermee wordt de opgegeven Service Fabric eigenschap met een opgegeven naam opge
 
 ### <a name="global-arguments"></a>Algemene argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --debug | Verg root logboek registratie uitgebreid om alle logboeken voor fout opsporing weer te geven. |
 | --help -h | Dit Help-bericht weer geven en afsluiten. |
@@ -77,7 +77,7 @@ Een Service Fabric naam kan een of meer benoemde eigenschappen hebben die aangep
 
 ### <a name="arguments"></a>Argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --naam-id [vereist] | De naam van de Service Fabric, zonder het \: URI-schema ' fabric '. |
 | --vervolg token | De vervolg token parameter wordt gebruikt om de volgende set resultaten op te halen. Een vervolg token met een niet-lege waarde wordt opgenomen in het antwoord van de API wanneer de resultaten van het systeem niet in één antwoord passen. Wanneer deze waarde wordt door gegeven aan de volgende API-aanroep, retourneert de API de volgende set resultaten. Als er geen verdere resultaten zijn, bevat het vervolg token geen waarde. De waarde van deze para meter mag geen URL-code ring zijn. |
@@ -86,7 +86,7 @@ Een Service Fabric naam kan een of meer benoemde eigenschappen hebben die aangep
 
 ### <a name="global-arguments"></a>Algemene argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --debug | Verg root logboek registratie uitgebreid om alle logboeken voor fout opsporing weer te geven. |
 | --help -h | Dit Help-bericht weer geven en afsluiten. |
@@ -101,7 +101,7 @@ Hiermee wordt de opgegeven Service Fabric eigenschap met een bepaalde naam gemaa
 
 ### <a name="arguments"></a>Argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --naam-id [vereist] | De naam van de Service Fabric, zonder het \: URI-schema ' fabric '. |
 | --eigenschap-naam [vereist] | De naam van de eigenschap Service Fabric. |
@@ -111,7 +111,7 @@ Hiermee wordt de opgegeven Service Fabric eigenschap met een bepaalde naam gemaa
 
 ### <a name="global-arguments"></a>Algemene argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --debug | Verg root logboek registratie uitgebreid om alle logboeken voor fout opsporing weer te geven. |
 | --help -h | Dit Help-bericht weer geven en afsluiten. |

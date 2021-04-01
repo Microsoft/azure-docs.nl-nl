@@ -4,10 +4,10 @@ description: In dit onderwerp wordt het module dubbele JSON-schema van live vide
 ms.topic: conceptual
 ms.date: 04/27/2020
 ms.openlocfilehash: 8bd86bdc2c8de9ee586e785db2074fa772100420
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "87053071"
 ---
 # <a name="module-twin-json-schema"></a>Module dubbele JSON-schema
@@ -23,14 +23,14 @@ In dit onderwerp wordt het module dubbele JSON-schema van live video Analytics o
 
 Met live video Analytics op IoT Edge worden de volgende twee eigenschappen van de module weer gegeven. 
 
-|Eigenschap |Vereist |Dynamisch |Beschrijving |
+|Eigenschap |Vereist |Dynamisch |Description |
 |---|---|---|---|
 |applicationDataDirectory |Ja |Nee |Pad naar een gekoppeld volume voor permanente configuratie. |
 |azureMediaServicesArmId |Ja |Nee |Unieke id voor het beheer van Azure-resources voor het Media Services-account.|
 |aadTenantId |Ja |Nee |Azure AD-Tenant-ID van klant.|
 |aadServicePrincipalAppId |Ja |Ja |Klant heeft Azure AD AppId gemaakt.|
-|aadServicePrincipalCertificate |Klikt<sup>*</sup>  |Ja |Klant heeft Azure AD AppId-certificaat gemaakt.|
-|aadServicePrincipalPassword |Klikt<sup>*</sup>  |Ja |Klant heeft het Azure AD-toepassings-id-wacht woord gemaakt.|
+|aadServicePrincipalCertificate |Klikt<sup>*</sup>  |Yes |Klant heeft Azure AD AppId-certificaat gemaakt.|
+|aadServicePrincipalPassword |Klikt<sup>*</sup>  |Yes |Klant heeft het Azure AD-toepassings-id-wacht woord gemaakt.|
 |aadEndpoint |Nee |Nee |Cloud-specifiek Azure AD-eind punt. <br/>Prijs `https://login.microsoftonline.com` |
 |aadResourceId |Nee |Nee |Cloud-specifieke Azure AD-doel groep/Resource-ID <br/>Prijs `https://management.core.windows.net/` |
 |armEndpoint |Nee |Nee |Cloud-specifiek Azure resource Manage-eind punt. <br/>Prijs `https://management.azure.com/` |

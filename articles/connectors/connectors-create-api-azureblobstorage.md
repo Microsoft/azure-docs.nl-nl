@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 02/21/2020
 tags: connectors
 ms.openlocfilehash: cd23ff0f5ad9912440d38903a344011b069aaf16
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92677729"
 ---
 # <a name="create-and-manage-blobs-in-azure-blob-storage-by-using-azure-logic-apps"></a>Blobs in Azure Blob Storage maken en beheren met behulp van Azure Logic Apps
@@ -124,7 +124,7 @@ In dit voor beeld wordt alleen de inhoud van een BLOB opgehaald. Als u de inhoud
    | Eigenschap | Vereist | Waarde | Beschrijving |
    |----------|----------|-------|-------------|
    | **Verbindingsnaam** | Ja | <*verbindings naam*> | De naam die voor uw verbinding moet worden gemaakt |
-   | **Opslagaccount** | Ja | <*opslag account*> | Selecteer uw opslagaccount in de lijst. |
+   | **Opslagaccount** | Yes | <*opslag account*> | Selecteer uw opslagaccount in de lijst. |
    ||||
 
    Bijvoorbeeld:

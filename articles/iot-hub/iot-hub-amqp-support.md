@@ -11,10 +11,10 @@ ms.custom:
 - amqp
 - mqtt
 ms.openlocfilehash: 7b3dcfc51df7f0fe4291e9c5babccc1444ad32e9
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "81730757"
 ---
 # <a name="communicate-with-your-iot-hub-by-using-the-amqp-protocol"></a>Communiceren met uw IoT-hub met behulp van het AMQP-Protocol
@@ -68,7 +68,7 @@ receive_client = uamqp.ReceiveClient(uri, debug=True)
 
 Zie [Cloud-naar-apparaat-berichten vanuit uw IOT-hub verzenden](iot-hub-devguide-messages-c2d.md)voor meer informatie over de Cloud-naar-apparaat-bericht uitwisseling tussen de service en de IOT-hub en tussen het apparaat en de IOT-hub. De service-client gebruikt twee koppelingen om berichten te verzenden en feedback te ontvangen voor eerder verzonden berichten van apparaten, zoals wordt beschreven in de volgende tabel:
 
-| Gemaakt door | Type koppeling | Pad van koppeling | Beschrijving |
+| Gemaakt door | Type koppeling | Pad van koppeling | Description |
 |------------|-----------|-----------|-------------|
 | Service | Koppeling naar afzender | `/messages/devicebound` | Cloud-naar-apparaat-berichten die bestemd zijn voor apparaten, worden door de service naar deze koppeling verzonden. Voor berichten die via deze koppeling `To` worden verzonden, wordt de eigenschap ingesteld op het pad van de ontvanger van het doel apparaat `/devices/<deviceID>/messages/devicebound` . |
 | Service | Koppeling ontvanger | `/messages/serviceBound/feedback` | Het volt ooien, afkeuren en afhandelen van feedback berichten die afkomstig zijn van apparaten die op deze koppeling door de service zijn ontvangen. Zie [Cloud-naar-apparaat-berichten verzenden vanuit een IOT-hub](./iot-hub-devguide-messages-c2d.md#message-feedback)voor meer informatie over feedback berichten. |
@@ -262,7 +262,7 @@ send_client = uamqp.SendClient(uri, debug=True)
 
 De volgende koppelings paden worden ondersteund als apparaat-bewerkingen:
 
-| Gemaakt door | Type koppeling | Pad van koppeling | Beschrijving |
+| Gemaakt door | Type koppeling | Pad van koppeling | Description |
 |------------|-----------|-----------|-------------|
 | Apparaten | Koppeling ontvanger | `/devices/<deviceID>/messages/devicebound` | Cloud-naar-apparaat-berichten die bestemd zijn voor apparaten, worden op deze koppeling door elk doel apparaat ontvangen. |
 | Apparaten | Koppeling naar afzender | `/devices/<deviceID>/messages/events` | Apparaat-naar-Cloud-berichten die vanaf een apparaat worden verzonden, worden via deze koppeling verzonden. |

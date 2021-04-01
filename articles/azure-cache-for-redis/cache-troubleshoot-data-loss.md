@@ -7,10 +7,10 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 10/17/2019
 ms.openlocfilehash: 6db036752bab7b84b72a37b148eaec7aa5765ef3
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92538592"
 ---
 # <a name="troubleshoot-data-loss-in-azure-cache-for-redis"></a>Problemen met gegevensverlies in Azure Cache voor Redis oplossen
@@ -27,7 +27,7 @@ Azure cache voor redis verwijdert geen wille keurige sleutels nadat ze zijn opge
 
 Als u ontdekt dat sleutels zijn verdwenen uit uw cache, controleert u de volgende mogelijke oorzaken:
 
-| Oorzaak | Beschrijving |
+| Oorzaak | Description |
 |---|---|
 | [Verval datum van de sleutel](#key-expiration) | Sleutels worden verwijderd omdat er time-outs zijn ingesteld. |
 | [Sleutel verwijdering](#key-eviction) | Sleutels worden verwijderd onder geheugen belasting. |
@@ -86,7 +86,7 @@ Elk Azure-cache-exemplaar voor redis in de laag Standard of Premium is geconfigu
 
 Als de meeste of alle sleutels uit uw cache zijn verdwenen, controleert u de volgende mogelijke oorzaken:
 
-| Oorzaak | Beschrijving |
+| Oorzaak | Description |
 |---|---|
 | [Leegmaken van sleutel](#key-flushing) | Sleutels zijn hand matig verwijderd. |
 | [Onjuiste database selectie](#incorrect-database-selection) | Azure cache voor redis is ingesteld op het gebruik van een niet-standaard database. |

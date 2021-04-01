@@ -254,7 +254,7 @@ De zoek score wordt berekend op basis van de statistische eigenschappen van de g
 ##  <a name="set-interpolations"></a><a name="bkmk_interpolation"></a> Interpolatie instellen  
  Met interpolatie kunt u de vorm instellen van de helling die wordt gebruikt voor scores. Omdat score hoog naar laag is, is de helling altijd afnemen, maar de interpolatie bepaalt de curve van de neerwaartse helling. De volgende interpolatie kunnen worden gebruikt:  
 
-| Interpolatie | Beschrijving |  
+| Interpolatie | Description |  
 |-|-|  
 |`linear`|Voor items die binnen het bereik Max en min zijn, wordt de Boost toegepast op het item in een voortdurend dalende hoeveelheid. Lineair is de standaard interpolatie voor een score profiel.|  
 |`constant`|Voor items die zich binnen het begin-en eind bereik bevinden, wordt een constante Boost toegepast op de positie resultaten.|  

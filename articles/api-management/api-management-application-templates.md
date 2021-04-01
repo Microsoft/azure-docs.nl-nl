@@ -80,7 +80,7 @@ Azure API Management biedt u de mogelijkheid om de inhoud van de pagina's van de
   
 ### <a name="data-model"></a>Gegevensmodel  
   
-|Eigenschap|Type|Beschrijving|  
+|Eigenschap|Type|Description|  
 |--------------|----------|-----------------|  
 |`Paging`|De entiteit [paging](api-management-template-data-model-reference.md#Paging) .|De paginerings gegevens voor de verzameling toepassingen.|  
 |`Applications`|Verzameling [toepassings](api-management-template-data-model-reference.md#Application) entiteiten.|De toepassingen die zichtbaar zijn voor de huidige gebruiker.|  

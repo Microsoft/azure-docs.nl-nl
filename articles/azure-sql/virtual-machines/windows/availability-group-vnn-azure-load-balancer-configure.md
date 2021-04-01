@@ -1,5 +1,5 @@
 ---
-title: load balancer configureren voor AG VNN-listener
+title: Load balancer configureren voor AG VNN-listener
 description: Meer informatie over het configureren van een Azure Load Balancer voor het routeren van verkeer naar de VNN-listener (virtuele netwerk naam) voor uw beschikbaarheids groep met SQL Server op Azure-Vm's voor hoge Beschik baarheid en herstel na nood gevallen (HADR).
 services: virtual-machines-windows
 documentationcenter: na
@@ -16,13 +16,13 @@ ms.date: 06/02/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: 2d89759438cb625a0e220af10ab6b287096f6390
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97359877"
 ---
-# <a name="configure-load-balancer-for-ag-vnn-listener"></a>load balancer configureren voor AG VNN-listener
+# <a name="configure-load-balancer-for-ag-vnn-listener"></a>Load balancer configureren voor AG VNN-listener
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
 In azure Virtual Machines gebruiken clusters een load balancer om een IP-adres op te slaan dat op één cluster knooppunt tegelijk moet zijn. In deze oplossing bevat de load balancer het IP-adres voor de naam van het virtuele netwerk (VNN) voor de always on-beschikbaarheids groep (AG). 

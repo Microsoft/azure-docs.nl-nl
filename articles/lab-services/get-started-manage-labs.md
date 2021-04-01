@@ -4,10 +4,10 @@ description: In dit artikel wordt beschreven hoe u aan de slag gaat met Azure La
 ms.topic: article
 ms.date: 11/18/2020
 ms.openlocfilehash: d260ace7d7819c3ca2db96d6c4984bf834e170da
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98165039"
 ---
 # <a name="get-started-with-lab-services"></a>Aan de slag met Lab-Services 
@@ -98,7 +98,7 @@ Als een student problemen ondervindt bij het maken van verbinding met de virtuel
     > [!NOTE]
     > Het inschakelen van een student-VM heeft geen invloed op het quotum voor de student. Quota voor gebruikers Hiermee geeft u het aantal Lab-uren op dat voor de gebruiker buiten de geplande tijd beschikbaar moet zijn.
 
-### <a name="connect-to-vms"></a>Verbinding maken met Vm's
+### <a name="connect-to-vms"></a>Verbinding maken met VM's
 
 Docenten kunnen verbinding maken met een student-VM zolang deze is ingeschakeld en de student is niet verbonden met de virtuele machine. Door verbinding te maken met de virtuele machine, kunt u toegang krijgen tot lokale bestanden op de VM en kunnen studenten problemen oplossen.
 

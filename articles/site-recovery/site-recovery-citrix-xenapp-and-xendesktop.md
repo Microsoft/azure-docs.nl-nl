@@ -56,9 +56,9 @@ Voor het doel van dit artikel zijn Citrix-implementaties op virtuele VMware-mach
 
 **Scenario** | **Op een secundaire site** | **Naar Azure**
 --- | --- | ---
-**Hyper-V** | Niet binnen het bereik | Ja
-**VMware** | Niet binnen het bereik | Ja
-**Fysieke server** | Niet binnen het bereik | Ja
+**Hyper-V** | Niet binnen het bereik | Yes
+**VMware** | Niet binnen het bereik | Yes
+**Fysieke server** | Niet binnen het bereik | Yes
 
 ### <a name="versions"></a>Versies
 Klanten kunnen XenApp-onderdelen implementeren als Virtual Machines die worden uitgevoerd op Hyper-V of VMware of als fysieke servers. Azure Site Recovery kunt zowel fysieke als virtuele implementaties beveiligen naar Azure.

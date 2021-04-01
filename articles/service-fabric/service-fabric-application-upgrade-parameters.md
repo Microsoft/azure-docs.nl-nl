@@ -4,10 +4,10 @@ description: Beschrijft para meters met betrekking tot het bijwerken van een Ser
 ms.topic: conceptual
 ms.date: 11/08/2018
 ms.openlocfilehash: 6b6116bf1188fcf191b2d672e6c698bb3c050e6c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96018474"
 ---
 # <a name="application-upgrade-parameters"></a>Parameters toepassingsupgrade
@@ -33,7 +33,7 @@ De upgrade parameters voor Visual Studio Service Fabric-toepassing worden ingest
 ### <a name="required-parameters"></a>Vereiste para meters
 (PS = Power shell, VS = Visual Studio)
 
-| Parameter | Van toepassing op | Beschrijving |
+| Parameter | Van toepassing op | Description |
 | --- | --- | --- |
 ApplicationName |PS| De naam van de toepassing die wordt bijgewerkt. Voor beelden: Fabric:/VisualObjects, Fabric:/ClusterMonitor. |
 ApplicationTypeVersion|PS|De versie van het toepassings type dat de upgrade doelen. |
@@ -48,7 +48,7 @@ UnmonitoredManual | PS | Geeft aan dat de upgrade modus niet-bewaakt hand matig 
 De para meters voor de status evaluatie zijn optioneel. Als de criteria voor de status evaluatie niet zijn opgegeven wanneer een upgrade wordt gestart, gebruikt Service Fabric het toepassings status beleid dat is opgegeven in de ApplicationManifest.xml van het toepassings exemplaar.
 
 > [!div class="mx-tdBreakAll"]
-> | Parameter | Van toepassing op | Beschrijving |
+> | Parameter | Van toepassing op | Description |
 > | --- | --- | --- |
 > | ApplicationParameter |PS, VS| Hiermee geeft u de onderdrukkingen voor toepassings parameters op.<br>Power shell-toepassings parameters zijn opgegeven als hash-naam/waarde-paren. Bijvoorbeeld: @ {"VotingData_MinReplicaSetSize" = "3"; "VotingData_PartitionCount" = "1"}.<br>Visual Studio-toepassings parameters kunnen worden opgegeven in het dialoog venster Service Fabric toepassing publiceren in het veld **toepassings parameters bestand** .
 > | Bevestigen |PS| Toegestane waarden zijn **waar** en **Onwaar**. Vraagt om bevestiging voordat de cmdlet wordt uitgevoerd. |

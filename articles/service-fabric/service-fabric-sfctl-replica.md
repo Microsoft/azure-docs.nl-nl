@@ -35,7 +35,7 @@ Hiermee haalt u de details op van de replica die op een Service Fabric knoop pun
 
 ### <a name="arguments"></a>Argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --node-name [required] | De naam van het knoop punt. |
 | --partitie-id [vereist] | De identiteit van de partitie. |
@@ -44,7 +44,7 @@ Hiermee haalt u de details op van de replica die op een Service Fabric knoop pun
 
 ### <a name="global-arguments"></a>Algemene argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --debug | Verg root logboek registratie uitgebreid om alle logboeken voor fout opsporing weer te geven. |
 | --help -h | Dit Help-bericht weer geven en afsluiten. |
@@ -59,7 +59,7 @@ Hiermee wordt de lijst opgehaald met de informatie over replica's die op een Ser
 
 ### <a name="arguments"></a>Argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --toepassings-id [vereist] | De identiteit van de toepassing. Dit is doorgaans de volledige naam van de toepassing zonder het URI- \: schema ' fabric '. Vanaf versie 6,0 worden hiërarchische namen gescheiden met het \~ teken ' '. Als de naam van de toepassing bijvoorbeeld ' Fabric \: /MyApp/app1 ' is, is de toepassings identiteit ' Mijntoep \~ app1 ' in 6.0 + en ' Mijntoep/app1 ' in vorige versies. |
 | --node-name [required] | De naam van het knoop punt. |
@@ -69,7 +69,7 @@ Hiermee wordt de lijst opgehaald met de informatie over replica's die op een Ser
 
 ### <a name="global-arguments"></a>Algemene argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --debug | Verg root logboek registratie uitgebreid om alle logboeken voor fout opsporing weer te geven. |
 | --help -h | Dit Help-bericht weer geven en afsluiten. |
@@ -84,7 +84,7 @@ Hiermee wordt de status van een replica van een Service Fabric opgehaald. Gebrui
 
 ### <a name="arguments"></a>Argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --partitie-id [vereist] | De identiteit van de partitie. |
 | --replica-id [vereist] | De id van de replica. |
@@ -93,7 +93,7 @@ Hiermee wordt de status van een replica van een Service Fabric opgehaald. Gebrui
 
 ### <a name="global-arguments"></a>Algemene argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --debug | Verg root logboek registratie uitgebreid om alle logboeken voor fout opsporing weer te geven. |
 | --help -h | Dit Help-bericht weer geven en afsluiten. |
@@ -108,7 +108,7 @@ Het antwoord bevat de ID, functie, status, de status, de knooppunt naam, de upti
 
 ### <a name="arguments"></a>Argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --partitie-id [vereist] | De identiteit van de partitie. |
 | --replica-id [vereist] | De id van de replica. |
@@ -116,7 +116,7 @@ Het antwoord bevat de ID, functie, status, de status, de knooppunt naam, de upti
 
 ### <a name="global-arguments"></a>Algemene argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --debug | Verg root logboek registratie uitgebreid om alle logboeken voor fout opsporing weer te geven. |
 | --help -h | Dit Help-bericht weer geven en afsluiten. |
@@ -131,7 +131,7 @@ Het GetReplicas-eind punt retourneert informatie over de replica's van de opgege
 
 ### <a name="arguments"></a>Argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --partitie-id [vereist] | De identiteit van de partitie. |
 | --vervolg token | De vervolg token parameter wordt gebruikt om de volgende set resultaten op te halen. Een vervolg token met een niet-lege waarde wordt opgenomen in het antwoord van de API wanneer de resultaten van het systeem niet in één antwoord passen. Wanneer deze waarde wordt door gegeven aan de volgende API-aanroep, retourneert de API de volgende set resultaten. Als er geen verdere resultaten zijn, bevat het vervolg token geen waarde. De waarde van deze para meter mag geen URL-code ring zijn. |
@@ -139,7 +139,7 @@ Het GetReplicas-eind punt retourneert informatie over de replica's van de opgege
 
 ### <a name="global-arguments"></a>Algemene argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --debug | Verg root logboek registratie uitgebreid om alle logboeken voor fout opsporing weer te geven. |
 | --help -h | Dit Help-bericht weer geven en afsluiten. |
@@ -154,7 +154,7 @@ Deze API simuleert een Service Fabric replica fout door een replica te verwijder
 
 ### <a name="arguments"></a>Argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --node-name [required] | De naam van het knoop punt. |
 | --partitie-id [vereist] | De identiteit van de partitie. |
@@ -164,7 +164,7 @@ Deze API simuleert een Service Fabric replica fout door een replica te verwijder
 
 ### <a name="global-arguments"></a>Algemene argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --debug | Verg root logboek registratie uitgebreid om alle logboeken voor fout opsporing weer te geven. |
 | --help -h | Dit Help-bericht weer geven en afsluiten. |
@@ -179,7 +179,7 @@ Hiermee wordt de status van de opgegeven Service Fabric replica gerapporteerd. H
 
 ### <a name="arguments"></a>Argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --status-Property [required] | De eigenschap van de status informatie. <br><br> Een entiteit kan status rapporten voor verschillende eigenschappen hebben. De eigenschap is een teken reeks en geen vaste inventarisatie om de flexibiliteit van de rapporter in te stellen voor het categoriseren van de status voorwaarde waarmee het rapport wordt geactiveerd. Zo kan een rapporter met SourceId "LocalWatchdog" de status van de beschik bare schijf op een knoop punt bewaken, zodat de eigenschap "AvailableDisk" op dat knoop punt kan worden gerapporteerd. Dezelfde rapportage functie kan de verbinding met het knoop punt bewaken, zodat een eigenschap ' connectiviteit ' op hetzelfde knoop punt kan worden gerapporteerd. In de Health Store worden deze rapporten behandeld als afzonderlijke status gebeurtenissen voor het opgegeven knoop punt. Samen met de SourceId wordt met de eigenschap een unieke identificatie van de status informatie aangeduid. |
 | --status (vereist) | Mogelijke waarden zijn ' Unknown \: ', ' OK ', ' warn ', ' error ', ' Unknown '. |
@@ -196,7 +196,7 @@ Hiermee wordt de status van de opgegeven Service Fabric replica gerapporteerd. H
 
 ### <a name="global-arguments"></a>Algemene argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --debug | Verg root logboek registratie uitgebreid om alle logboeken voor fout opsporing weer te geven. |
 | --help -h | Dit Help-bericht weer geven en afsluiten. |
@@ -211,7 +211,7 @@ Hiermee wordt een service replica van een blijvende service die wordt uitgevoerd
 
 ### <a name="arguments"></a>Argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --node-name [required] | De naam van het knoop punt. |
 | --partitie-id [vereist] | De identiteit van de partitie. |
@@ -220,7 +220,7 @@ Hiermee wordt een service replica van een blijvende service die wordt uitgevoerd
 
 ### <a name="global-arguments"></a>Algemene argumenten
 
-|Argument|Beschrijving|
+|Argument|Description|
 | --- | --- |
 | --debug | Verg root logboek registratie uitgebreid om alle logboeken voor fout opsporing weer te geven. |
 | --help -h | Dit Help-bericht weer geven en afsluiten. |

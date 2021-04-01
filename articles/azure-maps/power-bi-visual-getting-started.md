@@ -10,10 +10,10 @@ services: azure-maps
 manager: cpendle
 ms.custom: ''
 ms.openlocfilehash: a563a7776e84289e38743057778e8fe10fd17503
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96904700"
 ---
 # <a name="getting-started-with-the-azure-maps-power-bi-visual"></a>Aan de slag met de Azure Maps Power BI Visual
@@ -92,7 +92,7 @@ Voer de volgende stappen uit om de Azure Maps Visual te laden:
 
 De volgende gegevens verzamelingen zijn beschikbaar in het deel venster **velden** van de Azure Maps Visual.
 
-| Veld     | Beschrijving  |
+| Veld     | Description  |
 |-----------|--------------|
 | Breedtegraad  | Het veld dat wordt gebruikt om de waarde voor de breedte van de gegevens punten op te geven. De Latitude-waarden moeten tussen-90 en 90 in de decimale-graden notatie zijn.  |
 | Lengtegraad | Het veld dat wordt gebruikt om de lengte graad van de gegevens punten op te geven. Lengte waarden moeten tussen-180 en 180 in decimale-graden notatie zijn.  |
@@ -135,7 +135,7 @@ De Azure Maps Visual is beschikbaar in de volgende services en toepassingen:
 | Mobiele Power BI-toepassingen             | Ja          |
 | Power BI publiceren op internet                  | Nee           |
 | Power BI Embedded                        | Nee           |
-| Power BI-service insluiten (PowerBI.com) | Ja          |
+| Power BI-service insluiten (PowerBI.com) | Yes          |
 
 Ondersteuning voor extra Power BI Services/apps wordt toegevoegd aan toekomstige updates.
 

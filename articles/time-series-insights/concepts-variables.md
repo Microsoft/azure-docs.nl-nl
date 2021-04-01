@@ -7,10 +7,10 @@ ms.service: time-series-insights
 ms.topic: conceptual
 ms.date: 01/22/2021
 ms.openlocfilehash: fd08dc98fa47617bbc7c8d1fff895377837a7327
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98736731"
 ---
 # <a name="time-series-model-variables"></a>Variabelen voor time series-model
@@ -29,7 +29,7 @@ In de volgende tabel ziet u welke eigenschappen relevant zijn voor elk type vari
 
 ## <a name="numeric-variables"></a>Numerieke variabelen
 
-| Eigenschap variable | Beschrijving |
+| Eigenschap variable | Description |
 | --- | ---|
 | Variabele filter | Filters zijn optionele voorwaardelijke componenten voor het beperken van het aantal rijen dat wordt overwogen voor berekening. |
 | Waarde van variabele | Telemetrie-waarden die worden gebruikt voor berekeningen die afkomstig zijn van het apparaat of Sens oren of worden getransformeerd met behulp van Time Series-expressies. De variabelen van een numeriek type moeten van het type *Double* zijn.|
@@ -59,7 +59,7 @@ Variabelen voldoen aan het volgende JSON-voor beeld:
 
 ## <a name="categorical-variables"></a>Categorische variabelen
 
-| Eigenschap variable | Beschrijving |
+| Eigenschap variable | Description |
 | --- | ---|
 | Variabele filter | Filters zijn optionele voorwaardelijke componenten voor het beperken van het aantal rijen dat wordt overwogen voor berekening. |
 | Waarde van variabele | Telemetrie-waarden die worden gebruikt voor de berekening die afkomstig zijn van het apparaat of de Sens oren. Categorische-variabelen moeten een *Long-waarde* of een *teken reeks* zijn. |
@@ -99,7 +99,7 @@ Variabelen voldoen aan het volgende JSON-voor beeld:
 
 ## <a name="aggregate-variables"></a>Aggregatie variabelen
 
-| Eigenschap variable | Beschrijving |
+| Eigenschap variable | Description |
 | --- | ---|
 | Variabele filter | Filters zijn optionele voorwaardelijke componenten voor het beperken van het aantal rijen dat wordt overwogen voor berekening. |
 | Variabele aggregatie | Voer berekeningen uit via de ondersteunde [aggregatie functies voor aggregatie typen van variabelen](/rest/api/time-series-insights/reference-time-series-expression-syntax#aggregate-variable-kind). |

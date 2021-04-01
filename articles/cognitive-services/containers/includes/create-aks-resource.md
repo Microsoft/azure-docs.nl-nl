@@ -10,10 +10,10 @@ ms.topic: include
 ms.date: 04/01/2020
 ms.author: aahi
 ms.openlocfilehash: e7f5b6f3685a94b5497784360f8f12b22fb95012
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "96017845"
 ---
 ## <a name="create-an-azure-kubernetes-service-cluster-resource"></a>Een Azure Kubernetes service-cluster resource maken
@@ -39,7 +39,7 @@ ms.locfileid: "96017845"
 
     |Instelling|Waarde|
     |--|--|
-    |Routering van HTTP-toepassing|Nee|
+    |Routering van HTTP-toepassing|No|
     |Netwerkconfiguratie|Basic|
 
 1. Controleer op het tabblad **integraties** of de **container controle** is ingesteld op **ingeschakeld** en laat **log Analytics werk ruimte** staan als de standaard waarde.

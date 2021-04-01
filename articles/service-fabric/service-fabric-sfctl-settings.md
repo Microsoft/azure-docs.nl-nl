@@ -16,7 +16,7 @@ ms.locfileid: "86245582"
 Instellingen lokaal configureren voor dit exemplaar van sfctl.
 
 ## <a name="subgroups"></a>Subgroepen
-|Subgroep|Beschrijving|
+|Subgroep|Description|
 | --- | --- |
 | [telemetrie](service-fabric-sfctl-settings-telemetry.md) | Telemetrie-instellingen configureren die lokaal zijn voor dit exemplaar van sfctl. |
 

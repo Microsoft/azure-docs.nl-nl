@@ -5,15 +5,15 @@ ms.topic: include
 ms.date: 05/04/2020
 ms.author: glenga
 ms.openlocfilehash: 72588ccfd9ad00305cbdeaf8132999731d86b9b1
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92164903"
 ---
 Er wordt een *logboek niveau* toegewezen aan elk logboek. De waarde is een geheel getal dat het relatieve belang aangeeft:
 
-|Logniveau    |Code| Beschrijving |
+|Logniveau    |Code| Description |
 |------------|---|--------------|
 |Tracering       | 0 |Logboeken die de meest gedetailleerde berichten bevatten. Deze berichten kunnen gevoelige toepassings gegevens bevatten. Deze berichten zijn standaard uitgeschakeld en mogen nooit worden ingeschakeld in een productie omgeving.|
 |Fouten opsporen       | 1 | Logboeken die tijdens de ontwikkeling worden gebruikt voor interactief onderzoek. Deze logboeken moeten voornamelijk informatie bevatten die nuttig is voor het opsporen van fouten en die geen lange termijn waarde heeft. |

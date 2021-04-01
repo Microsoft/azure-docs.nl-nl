@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 10/20/2020
 ms.author: alkohli
 ms.openlocfilehash: 15b01f92fe0d39d099c10c7c086790a4dbb91379
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96582106"
 ---
 # <a name="azure-data-box-gateway-limits"></a>Azure Data Box Gateway limieten
@@ -27,7 +27,7 @@ Houd rekening met deze beperkingen wanneer u uw Microsoft Azure Data Box Gateway
 
 In de volgende tabel worden de limieten voor het Data Box Gateway apparaat beschreven.
 
-| Beschrijving | Waarde |
+| Description | Waarde |
 |---|---|
 |Nee. bestanden per apparaat |100.000.000 <br> Voor elke 25.000.000 bestanden die worden toegevoegd (met een maximum limiet van 100.000.000), moet u 2 TB aan schijf ruimte, 8 GB aan RAM-geheugen en 4 kernen CPU toevoegen. |
 |Nee. van shares per apparaat |24 |

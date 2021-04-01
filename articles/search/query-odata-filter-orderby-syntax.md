@@ -70,7 +70,7 @@ Een id kan verwijzen naar de naam van een veld of naar een **bereik variabele** 
 
 Voor beelden van veld paden worden weer gegeven in de volgende tabel:
 
-| Pad naar veld | Beschrijving |
+| Pad naar veld | Description |
 | --- | --- |
 | `HotelName` | Verwijst naar een veld op het hoogste niveau van de index |
 | `Address/City` | Verwijst naar het `City` subveld van een complex veld in de index; `Address` is van het type `Edm.ComplexType` in dit voor beeld |

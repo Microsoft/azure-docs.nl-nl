@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 08/03/2018
 ms.assetid: b80b3a41-87bf-49ca-8ef2-68e43c04c1a3
 ms.openlocfilehash: 9ba22c51c7a6c26a232ed20aec21fc83d2c54b37
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92171450"
 ---
 # <a name="back-up-an-azure-vm-using-azure-backup-via-rest-api"></a>Maak een back-up van een Azure-VM met behulp van Azure Backup via REST API
@@ -41,7 +41,7 @@ De bewerking vernieuwen is een [asynchrone bewerking](../azure-resource-manager/
 
 Er worden twee antwoorden geretourneerd: 202 (geaccepteerd) wanneer een andere bewerking wordt gemaakt en vervolgens 200 (OK) wanneer deze bewerking is voltooid.
 
-|Naam  |Type  |Beschrijving  |
+|Naam  |Type  |Description  |
 |---------|---------|---------|
 |204 geen inhoud     |         |  OK zonder geretourneerde inhoud      |
 |202 geaccepteerd     |         |     Geaccepteerd    |
@@ -104,7 +104,7 @@ De *Get* -URI heeft alle vereiste para meters. Er is geen aanvullende aanvraag t
 
 #### <a name="responses-to-get-operation"></a>Antwoorden op Get-bewerking
 
-|Naam  |Type  |Beschrijving  |
+|Naam  |Type  |Description  |
 |---------|---------|---------|
 |200 OK     | [WorkloadProtectableItemResourceList](/rest/api/backup/backupprotectableitems/list#workloadprotectableitemresourcelist)        |       OK |
 
@@ -180,7 +180,7 @@ PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 Als u een beveiligd item wilt maken, volgt u de onderdelen van de hoofd tekst van de aanvraag.
 
-|Naam  |Type  |Beschrijving  |
+|Naam  |Type  |Description  |
 |---------|---------|---------|
 |properties     | AzureIaaSVMProtectedItem        |ProtectedItem-resource-eigenschappen         |
 
@@ -208,7 +208,7 @@ Het maken van een beveiligd item is een [asynchrone bewerking](../azure-resource
 
 Er worden twee antwoorden geretourneerd: 202 (geaccepteerd) wanneer een andere bewerking wordt gemaakt en vervolgens 200 (OK) wanneer deze bewerking is voltooid.
 
-|Naam  |Type  |Beschrijving  |
+|Naam  |Type  |Description  |
 |---------|---------|---------|
 |200 OK     |    [ProtectedItemResource](/rest/api/backup/protecteditemoperationresults/get#protecteditemresource)     |  OK       |
 |202 geaccepteerd     |         |     Geaccepteerd    |
@@ -323,7 +323,7 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 Als u een back-up op aanvraag wilt activeren, volgt u de onderdelen van de hoofd tekst van de aanvraag.
 
-|Naam  |Type  |Beschrijving  |
+|Naam  |Type  |Description  |
 |---------|---------|---------|
 |properties     | [IaaSVMBackupRequest](/rest/api/backup/backups/trigger#iaasvmbackuprequest)        |BackupRequestResource-eigenschappen         |
 
@@ -348,7 +348,7 @@ Het activeren van een back-up op aanvraag is een [asynchrone bewerking](../azure
 
 Er worden twee antwoorden geretourneerd: 202 (geaccepteerd) wanneer een andere bewerking wordt gemaakt en vervolgens 200 (OK) wanneer deze bewerking is voltooid.
 
-|Naam  |Type  |Beschrijving  |
+|Naam  |Type  |Description  |
 |---------|---------|---------|
 |202 geaccepteerd     |         |     Geaccepteerd    |
 
@@ -477,7 +477,7 @@ Beveiliging *verwijderen* is een [asynchrone bewerking](../azure-resource-manage
 
 Er worden twee antwoorden geretourneerd: 202 (geaccepteerd) wanneer een andere bewerking wordt gemaakt en vervolgens 204 (geen inhoud) wanneer deze bewerking is voltooid.
 
-|Naam  |Type  |Beschrijving  |
+|Naam  |Type  |Description  |
 |---------|---------|---------|
 |204-tekst     |         |  Geen inhoud       |
 |202 geaccepteerd     |         |     Geaccepteerd    |

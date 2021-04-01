@@ -74,7 +74,7 @@ Er zijn twee Overloads van de `search.in` functie:
 
 De para meters worden gedefinieerd in de volgende tabel:
 
-| Parameternaam | Type | Beschrijving |
+| Parameternaam | Type | Description |
 | --- | --- | --- |
 | `variable` | `Edm.String` | Een verwijzing naar een teken reeks veld (of een bereik variabele over een teken reeks verzamelings veld in het geval waarin `search.in` binnen een `any` or `all` -expressie wordt gebruikt). |
 | `valueList` | `Edm.String` | Een teken reeks met een gescheiden lijst met waarden die moet overeenkomen met de `variable` para meter. Als de `delimiters` para meter niet is opgegeven, zijn de standaard scheidings tekens spatie en komma. |

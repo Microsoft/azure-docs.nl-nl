@@ -160,7 +160,7 @@ POST https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48a
 
 Als u een herstel bewerking voor een Azure-bestands share wilt activeren, zijn de volgende onderdelen van de hoofd tekst van de aanvraag:
 
-Naam |  Type   |   Beschrijving
+Naam |  Type   |   Description
 --- | ---- | ----
 Eigenschappen | AzureFileShareRestoreRequest | RestoreRequestResource-eigenschappen
 
@@ -370,7 +370,7 @@ POST https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48a
 
 Als u een herstel bewerking voor een Azure-bestands share wilt activeren, zijn de volgende onderdelen van de hoofd tekst van de aanvraag:
 
-Naam |  Type   |   Beschrijving
+Naam |  Type   |   Description
 --- | ---- | ----
 Eigenschappen | AzureFileShareRestoreRequest | RestoreRequestResource-eigenschappen
 

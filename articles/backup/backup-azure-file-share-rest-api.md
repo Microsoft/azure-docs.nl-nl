@@ -467,7 +467,7 @@ POST https://management.azure.com/subscriptions/00000000-0000-0000-0000-00000000
 
 Als u een back-up op aanvraag wilt activeren, volgt u de onderdelen van de hoofd tekst van de aanvraag.
 
-| Naam       | Type                       | Beschrijving                       |
+| Naam       | Type                       | Description                       |
 | ---------- | -------------------------- | --------------------------------- |
 | Eigenschappen | AzurefilesharebackupReques | BackupRequestResource-eigenschappen |
 

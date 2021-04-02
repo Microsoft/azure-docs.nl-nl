@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 04/20/2020
 ms.author: mahender
 ms.openlocfilehash: 3b282a99bb7f6f107717d9c265a46d285d03b849
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "83649105"
 ---
 Met een beheerde identiteit van Azure Active Directory (Azure AD) kan uw app eenvoudig toegang krijgen tot andere met Azure AD beveiligde resources, zoals Azure Key Vault. De identiteit wordt beheerd door het Azure-platform en u hoeft geen geheimen in te richten of te draaien. Zie [beheerde identiteiten voor Azure-resources](../articles/active-directory/managed-identities-azure-resources/overview.md)voor meer informatie over beheerde identiteiten in azure AD.

@@ -52,11 +52,11 @@ Met Azure Logic Apps en de Simple Mail Transfer Protocol (SMTP)-connector kunt u
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
    | **Verbindingsnaam** | Ja | Een naam voor de verbinding met de SMTP-server | 
-   | **SMTP-server adres** | Ja | Het adres voor de SMTP-server | 
-   | **Gebruikersnaam** | Ja | Uw gebruikers naam voor uw SMTP-account | 
-   | **Wachtwoord** | Ja | Uw wacht woord voor uw SMTP-account | 
-   | **SMTP-server poort** | Nee | Een specifieke poort op de SMTP-server die u wilt gebruiken | 
-   | **SSL inschakelen?** | Nee | Schakel TLS/SSL-versleuteling in of uit. | 
+   | **SMTP-server adres** | Yes | Het adres voor de SMTP-server | 
+   | **Gebruikersnaam** | Yes | Uw gebruikers naam voor uw SMTP-account | 
+   | **Wachtwoord** | Yes | Uw wacht woord voor uw SMTP-account | 
+   | **SMTP-server poort** | No | Een specifieke poort op de SMTP-server die u wilt gebruiken | 
+   | **SSL inschakelen?** | No | Schakel TLS/SSL-versleuteling in of uit. | 
    |||| 
 
 1. Geef de benodigde gegevens op voor de geselecteerde actie. 

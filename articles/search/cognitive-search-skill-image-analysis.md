@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.openlocfilehash: 69b84a3edb606ed99b6aaca7db5ad0e57124f1b9
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "91948932"
 ---
 # <a name="image-analysis-cognitive-skill"></a>Cognitieve vaardigheid van Image Analysis
@@ -40,7 +40,7 @@ Parameters zijn hoofdlettergevoelig.
 
 ## <a name="skill-inputs"></a>Vaardigheids invoer
 
-| Invoer naam      | Beschrijving                                          |
+| Invoer naam      | Description                                          |
 |---------------|------------------------------------------------------|
 | `image`         | Complex type. Momenteel werkt alleen met het veld '/document/normalized_images ', dat door de indexer van Azure Blob ```imageAction``` is geproduceerd wanneer is ingesteld op een andere waarde dan ```none``` . Zie het voor [beeld](#sample-output) voor meer informatie.|
 
@@ -512,7 +512,7 @@ U kunt uitvoer veld toewijzingen definiëren voor eigenschappen op lagere niveau
 ## <a name="error-cases"></a>Fout cases
 In de volgende gevallen worden er geen elementen geëxtraheerd.
 
-| Foutcode | Beschrijving |
+| Foutcode | Description |
 |------------|-------------|
 | `NotSupportedLanguage` | De gegeven taal wordt niet ondersteund. |
 | `InvalidImageUrl` | De afbeeldings-URL heeft een ongeldige indeling of is niet toegankelijk.|

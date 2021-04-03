@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 06/22/2019
 ms.openlocfilehash: 8e3805fae5bf6cc5ad8cf759d3ba75220c6ddbd8
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "91565068"
 ---
 # <a name="add-trading-partners-to-integration-accounts-for-azure-logic-apps"></a>Handelspartners toevoegen aan integratieaccounts voor Azure Logic Apps
@@ -56,8 +56,8 @@ In een overeenkomst geeft u de details op voor het verwerken van binnenkomende e
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
    | **Naam** | Ja | De naam van de partner |
-   | **Kwalificatie** | Ja | De verificatie-tekst die unieke zakelijke identiteiten biedt aan organisaties, bijvoorbeeld **D-U-N-S (Dun & Bradstreet)**. <p>Partners kunnen voor een onderling gedefinieerde zakelijke identiteit kiezen. Voor deze scenario's selecteert u **wederzijds gedefinieerd** voor Edifact of **wederzijds gedefinieerd (X12)** voor X12. <p>Selecteer voor RosettaNet alleen **Duns**. Dit is de standaard. |
-   | **Waarde** | Ja | Een waarde waarmee de documenten worden geïdentificeerd die door uw Logic apps worden ontvangen. <p>Voor RosettaNet moet deze waarde een getal van negen cijfers zijn dat overeenkomt met het DUNS-nummer. |
+   | **Kwalificatie** | Yes | De verificatie-tekst die unieke zakelijke identiteiten biedt aan organisaties, bijvoorbeeld **D-U-N-S (Dun & Bradstreet)**. <p>Partners kunnen voor een onderling gedefinieerde zakelijke identiteit kiezen. Voor deze scenario's selecteert u **wederzijds gedefinieerd** voor Edifact of **wederzijds gedefinieerd (X12)** voor X12. <p>Selecteer voor RosettaNet alleen **Duns**. Dit is de standaard. |
+   | **Waarde** | Yes | Een waarde waarmee de documenten worden geïdentificeerd die door uw Logic apps worden ontvangen. <p>Voor RosettaNet moet deze waarde een getal van negen cijfers zijn dat overeenkomt met het DUNS-nummer. |
    ||||
 
    > [!NOTE]
@@ -86,12 +86,12 @@ Kies de tegel **partners** .
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Partner classificatie** | Nee | Het organisatie type van de partner |
-   | **Toeleverings keten code** | Nee | De code van de toeleverings keten van de partner, bijvoorbeeld ' informatie technologie ' of ' elektronische onderdelen ' |
-   | **Naam van contact persoon** | Nee | De naam van de contact persoon van de partner |
-   | **E-mail** | Nee | Het e-mail adres van de partner |
-   | **Fax** | Nee | Het faxnummer van de partner |
-   | **Telefoon** | Nee | Het telefoon nummer van de partner |
+   | **Partner classificatie** | No | Het organisatie type van de partner |
+   | **Toeleverings keten code** | No | De code van de toeleverings keten van de partner, bijvoorbeeld ' informatie technologie ' of ' elektronische onderdelen ' |
+   | **Naam van contact persoon** | No | De naam van de contact persoon van de partner |
+   | **E-mail** | No | Het e-mail adres van de partner |
+   | **Fax** | No | Het faxnummer van de partner |
+   | **Telefoon** | No | Het telefoon nummer van de partner |
    ||||
 
 1. Wanneer u klaar bent, kiest u **OK** om uw wijzigingen op te slaan.

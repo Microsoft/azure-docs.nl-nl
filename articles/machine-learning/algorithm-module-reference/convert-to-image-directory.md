@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 11/12/2020
 ms.openlocfilehash: 1489ce74da2ecff5212feb5a1a2e3c9151b73424
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "94555580"
 ---
 # <a name="convert-to-image-directory"></a>Converteren naar afbeeldingsmap
@@ -71,13 +71,13 @@ De uitvoer van de modus **converteren naar afbeeldings mappen** is in de indelin
 
 ###  <a name="expected-inputs"></a>Verwachte invoer  
 
-| Naam          | Type                  | Beschrijving   |
+| Naam          | Type                  | Description   |
 | ------------- | --------------------- | ------------- |
 | Invoer gegevensset | AnyDirectory, ZipFile | Invoer gegevensset |
 
 ###  <a name="output"></a>Uitvoer  
 
-| Naam                   | Type           | Beschrijving            |
+| Naam                   | Type           | Description            |
 | ---------------------- | -------------- | ---------------------- |
 | Uitvoer afbeelding map | ImageDirectory | Uitvoer afbeelding map |
 

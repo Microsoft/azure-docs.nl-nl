@@ -8,10 +8,10 @@ ms.subservice: hyperscale-citus
 ms.topic: reference
 ms.date: 08/10/2020
 ms.openlocfilehash: 74403365fe48584fa5d1db0e349c9dfc3772d874
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97652845"
 ---
 # <a name="system-tables-and-views"></a>Systeem tabellen en-weer gaven
@@ -33,7 +33,7 @@ U kunt deze tabellen weer geven en er query's op uitvoeren met SQL nadat u zich 
 
 De \_ tabel PG dist \_ Partition bevat meta gegevens over welke tabellen in de Data Base worden gedistribueerd. Voor elke gedistribueerde tabel wordt ook informatie over de distributie methode en gedetailleerde informatie over de distributie kolom opgeslagen.
 
-| Naam         | Type     | Beschrijving                                                                                                                                                                                                                                           |
+| Naam         | Type     | Description                                                                                                                                                                                                                                           |
 |--------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | logicalrelid | regclass | De gedistribueerde tabel waaraan deze rij overeenkomt. Deze waarde verwijst naar de kolom relfilenode in de tabel pg_class systeem catalogus.                                                                                                                   |
 | partmethod   | char     | De methode die wordt gebruikt voor partitionering/distributie. De waarden van deze kolom die overeenkomen met verschillende distributie methoden worden toegevoegd: ' a ', hash: ' h ', referentie tabel: ' n '                                                                          |
@@ -54,7 +54,7 @@ SELECT * from pg_dist_partition;
 De \_ tabel pag dist \_ Shard bevat meta gegevens over afzonderlijke Shards van een tabel. Pg_dist_shard bevat informatie over de Shards van de gedistribueerde tabel en statistieken over de kolom distributie voor Shards.
 Voor het toevoegen van gedistribueerde tabellen komen deze statistieken overeen met de minimum-en maximum waarden van de distributie kolom. Voor gedistribueerde hash-tabellen zijn dit hash-token bereik dat aan die Shard is toegewezen. Deze statistieken worden gebruikt voor het weggooien van ongerelateerde Shards tijdens SELECT-query's.
 
-| Naam          | Type     | Beschrijving                                                                                                                                                                                  |
+| Naam          | Type     | Description                                                                                                                                                                                  |
 |---------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | logicalrelid  | regclass | De gedistribueerde tabel waaraan deze rij overeenkomt. Deze waarde verwijst naar de kolom relfilenode in de tabel pg_class systeem catalogus.                                                          |
 | shardid       | bigint   | Wereld wijd unieke id die is toegewezen aan deze Shard.                                                                                                                                           |
@@ -77,7 +77,7 @@ SELECT * from pg_dist_shard;
 
 De kolom shardstorage in PG \_ dist \_ Shard geeft het type opslag dat wordt gebruikt voor de Shard. Hieronder vindt u een beknopt overzicht van de verschillende Shard-opslag typen en de bijbehorende representatie.
 
-| Opslagtype | Waarde Shardstorage | Beschrijving                                                                        |
+| Opslagtype | Waarde Shardstorage | Description                                                                        |
 |--------------|--------------------|------------------------------------------------------------------------------------|
 | TABEL        | t                | Geeft aan dat Shard gegevens opslaat die horen bij een normale gedistribueerde tabel.         |
 | KOLOM     | g                | Hiermee wordt aangegeven dat in Shard kolom gegevens worden opgeslagen. (Gebruikt door gedistribueerde cstore_fdw tabellen) |
@@ -87,7 +87,7 @@ De kolom shardstorage in PG \_ dist \_ Shard geeft het type opslag dat wordt geb
 
 De \_ tabel pag dist \_ placement houdt de locatie van Shard-replica's op worker-knoop punten bij. Elke replica van een Shard die is toegewezen aan een specifiek knoop punt, wordt een Shard-plaatsing genoemd. Deze tabel bevat informatie over de status en locatie van elke Shard-plaatsing.
 
-| Naam        | Type   | Beschrijving                                                                                                                               |
+| Naam        | Type   | Description                                                                                                                               |
 |-------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | shardid     | bigint | De Shard-id die is gekoppeld aan deze plaatsing. Deze waarde verwijst naar de kolom shardid in de tabel pg_dist_shard Catalog.             |
 | shardstate  | int    | Hiermee wordt de status van deze plaatsing beschreven. In de volgende sectie worden verschillende Shard-statussen besproken.                                         |
@@ -112,7 +112,7 @@ SELECT * from pg_dist_placement;
 
 Grootschalige (Citus) beheert de status van Shard per locatie. Als een plaatsing het systeem in een inconsistente status plaatst, wordt deze door Citus automatisch gemarkeerd als niet-beschikbaar. De plaatsings status wordt vastgelegd in de tabel pg_dist_shard_placement in de kolom shardstate. Hier volgt een beknopt overzicht van verschillende Shard-plaatsings statussen:
 
-| Status naam | Waarde Shardstate | Beschrijving                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Status naam | Waarde Shardstate | Description                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |------------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | VOLTOOID  | 1                | De status van de nieuwe Shards wordt gemaakt in. Shard-plaatsingen in deze status worden beschouwd als up-to-date en worden gebruikt bij het plannen en uitvoeren van query's.                                                                                                                                                                                                                                                                                 |
 | INACTIEVE   | 3                | Shard-plaatsingen in deze status worden als inactief beschouwd omdat deze niet meer synchroon zijn met andere replica's van dezelfde Shard. De status kan optreden als het toevoegen, wijzigen (invoegen, bijwerken, verwijderen) of een DDL-bewerking mislukt voor deze plaatsing. De query planner negeert plaatsingen in deze status tijdens de planning en uitvoering. Gebruikers kunnen de gegevens in deze Shards synchroniseren met een voltooide replica als een achtergrond activiteit. |
@@ -122,7 +122,7 @@ Grootschalige (Citus) beheert de status van Shard per locatie. Als een plaatsing
 
 De \_ tabel pag dist- \_ knoop punt bevat informatie over de worker-knoop punten in het cluster.
 
-| Naam             | Type    | Beschrijving                                                                                                                                                                                |
+| Naam             | Type    | Description                                                                                                                                                                                |
 |------------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | nodeId           | int     | Automatisch gegenereerde id voor een afzonderlijk knoop punt.                                                                                                                                          |
 | groep          | int     | Id die wordt gebruikt om een groep van één primaire server en nul of meer secundaire servers aan te duiden wanneer het replicatie model voor streaming wordt gebruikt. Dit is standaard hetzelfde als het nodeId.         |
@@ -149,7 +149,7 @@ SELECT * from pg_dist_node;
 
 De \_ tabel Citus.pg dist \_ object bevat een lijst met objecten zoals typen en functies die zijn gemaakt op het coördinator knooppunt en door gegeven aan worker-knoop punten. Wanneer een beheerder nieuwe worker-knoop punten aan het cluster toevoegt, maakt grootschalige (Citus) automatisch kopieën van de gedistribueerde objecten op de nieuwe knoop punten (in de juiste volg orde om aan object afhankelijkheden te voldoen).
 
-| Naam                        | Type    | Beschrijving                                          |
+| Naam                        | Type    | Description                                          |
 |-----------------------------|---------|------------------------------------------------------|
 | ClassID                     | nogmaals     | Klasse van het gedistribueerde object                      |
 | object                       | nogmaals     | Object-ID van het gedistribueerde object                  |
@@ -212,7 +212,7 @@ De \_ tabel pag dist co \_ -locatie bevat informatie over welke tabellen \' Shar
 Wanneer twee tabellen zich in dezelfde groep grootschalige (Citus) bevinden, zorgt u ervoor dat Shards met dezelfde partitie waarden op dezelfde worker-knoop punten wordt geplaatst.
 Met co-locatie kunt u deel nemen aan optimalisaties, bepaalde gedistribueerde rollups en ondersteuning voor refererende sleutels. De Shard-co-locatie wordt afgeleid wanneer het Shard telt, replicatie factoren en partitie kolom typen allemaal overeenkomen tussen twee tabellen; u kunt echter een aangepaste groep voor samen stellen opgeven wanneer u een gedistribueerde tabel wilt maken, indien gewenst.
 
-| Naam                   | Type | Beschrijving                                                                   |
+| Naam                   | Type | Description                                                                   |
 |------------------------|------|-------------------------------------------------------------------------------|
 | colocationid           | int  | De unieke id voor de groep met de co-locatie waarmee deze rij overeenkomt.          |
 | shardcount             | int  | Aantal Shard voor alle tabellen in deze groep met co-locaties                          |
@@ -231,7 +231,7 @@ SELECT * from pg_dist_colocation;
 
 In deze tabel worden strategieën gedefinieerd die [rebalance_table_shards](reference-hyperscale-functions.md#rebalance_table_shards) kunnen gebruiken om te bepalen waar Shards moet worden verplaatst.
 
-| Naam                           | Type    | Beschrijving                                                                                                                                       |
+| Naam                           | Type    | Description                                                                                                                                       |
 |--------------------------------|---------|---------------------------------------------------------------------------------------------------------------------------------------------------|
 | default_strategy               | booleaans | Hiermee wordt aangegeven of rebalance_table_shards standaard deze strategie moet kiezen. Citus_set_default_rebalance_strategy gebruiken om deze kolom bij te werken             |
 | shard_cost_function            | regproc | Id voor een functie van kosten, die een shardid moet hebben als bigint, en het principe van een kosten als type Real te retour neren                                |
@@ -329,7 +329,7 @@ Grootschalige (Citus) biedt `citus_stat_statements` statistieken over hoe query'
 
 Met deze weer gave kunt u query's traceren voor de oorspronkelijke tenants in een toepassing met meerdere tenants, waarmee u kunt bepalen wanneer Tenant isolatie moet worden uitgevoerd.
 
-| Naam          | Type   | Beschrijving                                                                      |
+| Naam          | Type   | Description                                                                      |
 |---------------|--------|----------------------------------------------------------------------------------|
 | queryid       | bigint | id (geschikt voor pg_stat_statements deelname)                                   |
 | userid        | nogmaals    | gebruiker die de query heeft uitgevoerd                                                           |

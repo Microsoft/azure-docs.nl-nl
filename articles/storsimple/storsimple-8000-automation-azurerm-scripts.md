@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 10/03/2017
 ms.author: alkohli
 ms.openlocfilehash: e3339f883d177366a64187e0c090752527802c8d
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "94968771"
 ---
 # <a name="use-azure-resource-manager-sdk-based-scripts-to-manage-storsimple-devices"></a>Azure Resource Manager SDK-scripts gebruiken voor het beheren van StorSimple-apparaten
@@ -25,7 +25,7 @@ De volgende voorbeeld scripts zijn beschikbaar voor het automatiseren van versch
 
 #### <a name="table-of-azure-resource-manager-sdk-based-sample-scripts"></a>Tabel met Azure Resource Manager SDK-voorbeeld scripts
 
-| Azure Resource Manager script                    | Beschrijving                                                                                                                                                                                                       |
+| Azure Resource Manager script                    | Description                                                                                                                                                                                                       |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Authorize-ServiceEncryptionRollover.ps1](https://raw.githubusercontent.com/anoobbacker/storsimpledevicemgmttools/master/Authorize-ServiceEncryptionRollover.ps1)          | Met dit script kunt u uw StorSimple-apparaat toestemming geven om de versleutelings sleutel van de service gegevens te wijzigen.                                                                                                           |
 | [Create-StorSimpleCloudAppliance.ps1](https://raw.githubusercontent.com/anoobbacker/storsimpledevicemgmttools/master/Create-StorSimpleCloudAppliance.ps1)              | Met dit script maakt u een 8010-of 8020-StorSimple Cloud Appliance. Het Cloud apparaat kan vervolgens worden geconfigureerd en geregistreerd bij uw StorSimple Data Manager service.                                                       |

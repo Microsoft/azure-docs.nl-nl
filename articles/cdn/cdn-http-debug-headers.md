@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/12/2018
 ms.author: allensu
 ms.openlocfilehash: 4154c6a1e739f935022271e7a101f39d3ee5c500
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "84343017"
 ---
 # <a name="x-ec-debug-http-headers-for-azure-cdn-rules-engine"></a>X-EC-fouten opsporen in HTTP-headers voor de engine van Azure CDN regels
@@ -54,7 +54,7 @@ Fouten in de cache reactie van debug kunnen worden aangevraagd door de volgende 
 ## <a name="cache-status-code-information"></a>Informatie over cache status code
 De reactie header X-EC-debug kan een server identificeren en hoe deze het antwoord verwerkt via de volgende instructies:
 
-Header | Beschrijving
+Header | Description
 -------|------------
 X-EC-debug: x-EC-cache | Deze header wordt gerapporteerd wanneer de inhoud via het CDN wordt doorgestuurd. Hiermee wordt de POP-server geïdentificeerd die de aanvraag heeft voltooid.
 X-EC-debug: x-EC-cache-Remote | Deze header wordt alleen gerapporteerd wanneer de aangevraagde inhoud in de cache is opgeslagen op een originele schild server of een ADN-Gateway server.

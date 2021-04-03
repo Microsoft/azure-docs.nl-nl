@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 08/08/2017
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 2f393701b97be76acab49a627a195b337018fa29
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92144437"
 ---
 # <a name="create-an-iot-hub-using-the-resource-provider-rest-api-net"></a>Een IoT-hub maken met behulp van de REST API van de resource provider (.NET)

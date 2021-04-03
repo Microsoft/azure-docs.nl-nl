@@ -10,10 +10,10 @@ services: azure-maps
 manager: philmea
 ms.custom: devx-track-js
 ms.openlocfilehash: 133674e6764e12742f5b238946e943d9b5011cd2
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92891326"
 ---
 # <a name="read-and-write-spatial-data"></a>Ruimtelijke gegevens lezen en schrijven
@@ -41,7 +41,7 @@ Bij het lezen van een gecomprimeerd bestand, als een zip-of KMZ, wordt het uitge
 
 Het resultaat van de Lees functie is een `SpatialDataSet` object. Dit object breidt de geojson FeatureCollection-klasse uit. Het kan eenvoudig worden door gegeven `DataSource` aan een as-is om de functies ervan weer te geven op een kaart. Het `SpatialDataSet` bevat niet alleen informatie over de functies, maar kan ook KML-bedekkingen, verwerkings metrieken en andere details bevatten, zoals beschreven in de volgende tabel.
 
-| Naam van eigenschap | Type | Beschrijving | 
+| Naam van eigenschap | Type | Description | 
 |---------------|------|-------------|
 | `bbox` | `BoundingBox` | Selectie kader van alle gegevens in de gegevensset. |
 | `features` | `Feature[]` | Geojson-functies in de gegevensset. |

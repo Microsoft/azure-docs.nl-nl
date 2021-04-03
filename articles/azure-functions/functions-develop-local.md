@@ -4,10 +4,10 @@ description: Meer informatie over het coderen en testen van Azure Functions op u
 ms.topic: conceptual
 ms.date: 09/04/2018
 ms.openlocfilehash: 9c37d51abcc8d612b777b845515cf07666369d4f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96168131"
 ---
 # <a name="code-and-test-azure-functions-locally"></a>Code-en test Azure Functions lokaal
@@ -18,7 +18,7 @@ U kunt Azure Functions in het [Azure Portal]ontwikkelen en testen, maar veel ont
 
 De manier waarop u functies op uw lokale computer ontwikkelt, is afhankelijk van uw [taal](supported-languages.md) en programma voorkeuren. De omgevingen in de volgende tabel ondersteunen lokale ontwikkeling:
 
-|Omgeving                              |Talen         |Beschrijving|
+|Omgeving                              |Talen         |Description|
 |-----------------------------------------|------------|---|
 |[Visual Studio Code](functions-develop-vs-code.md)| [C# (Class-bibliotheek)](functions-dotnet-class-library.md), [C#-script (. CSX)](functions-reference-csharp.md), [Java script](functions-reference-node.md), [Power shell](./create-first-function-vs-code-powershell.md), [python](functions-reference-python.md) | De [uitbrei ding van de Azure functions voor VS code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) voegt functies ondersteuning toe aan VS code. Vereist de kern Hulpprogramma's. Ondersteunt de ontwikkeling van Linux, MacOS en Windows bij gebruik van versie 2. x van de kern Hulpprogramma's. Zie [uw eerste functie maken met Visual Studio code](./create-first-function-vs-code-csharp.md)voor meer informatie. |
 | [Opdracht prompt of Terminal](functions-run-local.md) | [C# (Class-bibliotheek)](functions-dotnet-class-library.md), [C#-script (. CSX)](functions-reference-csharp.md), [Java script](functions-reference-node.md), [Power shell](functions-reference-powershell.md), [python](functions-reference-python.md) | [Azure functions core tools] biedt de kern runtime en sjablonen voor het maken van functies, waarmee lokale ontwikkeling mogelijk wordt. Versie 2. x ondersteunt de ontwikkeling van Linux, MacOS en Windows. Alle omgevingen zijn afhankelijk van de belangrijkste Hulpprogram Ma's voor de runtime van lokale functies. |

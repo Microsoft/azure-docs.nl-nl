@@ -13,10 +13,10 @@ ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 04d5a989fcaf3cef3eea3b782842fb3255d4b317
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98661099"
 ---
 # <a name="accessing-azure-ad-b2c-audit-logs"></a>Toegang tot Azure AD B2C controle logboeken
@@ -32,7 +32,7 @@ Audit logboek gebeurtenissen worden alleen **zeven dagen** bewaard. Plan uw logb
 
 De categorie **B2C** in audit Logboeken bevat de volgende soorten activiteiten:
 
-|Type activiteit |Beschrijving  |
+|Type activiteit |Description  |
 |---------|---------|
 |Autorisatie |Activiteiten met betrekking tot de autorisatie van een gebruiker om toegang te krijgen tot B2C-bronnen (bijvoorbeeld een beheerder die toegang heeft tot een lijst met B2C-beleid).         |
 |Directory |Activiteiten gerelateerd aan adreslijst kenmerken die zijn opgehaald wanneer een beheerder zich aanmeldt met behulp van de Azure Portal. |
@@ -51,7 +51,7 @@ In dit voor beeld van een afbeelding van de Azure Portal worden de gegevens weer
 
 Het deel venster activity Details bevat de volgende relevante informatie:
 
-|Sectie|Veld|Beschrijving|
+|Sectie|Veld|Description|
 |-------|-----|-----------|
 | Activiteit | Name | Welke activiteit heeft plaatsgevonden. *Geef bijvoorbeeld een id_token voor de toepassing op*, waarmee de werkelijke gebruikers aanmelding wordt beëindigd. |
 | Gestart door (actor) | ObjectId | De **object-id** van de B2C-toepassing waarbij de gebruiker zich aanmeldt. Deze id is niet zichtbaar in de Azure Portal, maar is toegankelijk via de Microsoft Graph-API. |

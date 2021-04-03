@@ -4,10 +4,10 @@ description: In dit artikel vindt u een overzicht van Azure Relay, een service d
 ms.topic: conceptual
 ms.date: 06/23/2020
 ms.openlocfilehash: fbf1b2134a4c2dce7a3e6a62668d0852dc08c18a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97955379"
 ---
 # <a name="what-is-azure-relay"></a>Wat is Azure Relay?

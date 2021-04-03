@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 12/16/2020
 ms.author: justinha
 ms.openlocfilehash: d1a3ab5face03754bf84f442ac0fa73768b0fc80
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97615814"
 ---
 # <a name="virtual-network-design-considerations-and-configuration-options-for-azure-active-directory-domain-services"></a>Ontwerp overwegingen voor het virtuele netwerk en configuratie opties voor Azure Active Directory Domain Services
@@ -91,7 +91,7 @@ U kunt naam omzetting inschakelen met behulp van voorwaardelijke DNS-doorstuur s
 
 Een beheerd domein maakt sommige netwerk bronnen tijdens de implementatie. Deze resources zijn nodig voor een geslaagde bewerking en beheer van het beheerde domein, en mogen niet hand matig worden geconfigureerd.
 
-| Azure-resource                          | Beschrijving |
+| Azure-resource                          | Description |
 |:----------------------------------------|:---|
 | Netwerk interface kaart                  | Azure AD DS fungeert als host voor het beheerde domein op twee domein controllers (Dc's) die worden uitgevoerd op Windows Server als Azure-Vm's. Elke VM heeft een virtuele netwerk interface die verbinding maakt met het subnet van het virtuele netwerk. |
 | Dynamisch standaard openbaar IP-adres      | Azure AD DS communiceert met de synchronisatie-en beheer service met een standaard-SKU openbaar IP-adres. Zie [IP-adres typen en toewijzings methoden in azure](../virtual-network/public-ip-addresses.md)voor meer informatie over open bare IP-adressen. |
@@ -110,7 +110,7 @@ De volgende regels voor de netwerk beveiligings groep zijn vereist voor het behe
 
 | Poortnummer | Protocol | Bron                             | Doel | Bewerking | Vereist | Doel |
 |:-----------:|:--------:|:----------------------------------:|:-----------:|:------:|:--------:|:--------|
-| 5986        | TCP      | AzureActiveDirectoryDomainServices | Alle         | Toestaan  | Ja      | Beheer van uw domein. |
+| 5986        | TCP      | AzureActiveDirectoryDomainServices | Alle         | Toestaan  | Yes      | Beheer van uw domein. |
 | 3389        | TCP      | CorpNetSaw                         | Alle         | Toestaan  | Optioneel      | Fout opsporing voor ondersteuning. |
 
 Er wordt een Standard Load Balancer van Azure gemaakt waarvoor deze regels moeten worden uitgevoerd. Deze netwerkbeveiligingsgroep beveiligt Azure AD DS en is vereist voor een juiste werking van het beheerde domein. Verwijder deze netwerk beveiligings groep niet. De load balancer werkt niet zonder problemen.

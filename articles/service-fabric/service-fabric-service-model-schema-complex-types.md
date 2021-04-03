@@ -355,7 +355,7 @@ Hiermee worden het toepassings type en de versie declaratief beschreven. Er word
 ```
 ### <a name="content-element-details"></a>Details van inhouds element
 
-#### <a name="description"></a>Beschrijving
+#### <a name="description"></a>Description
 Tekst waarin deze toepassing wordt beschreven.
 
 |Kenmerk|Waarde|
@@ -1080,12 +1080,12 @@ Door de gebruiker gedefinieerde versie teken reeks voor het cluster manifest doc
 |naam|Versie|
 |gebruiken|vereist|
 
-#### <a name="description"></a>Beschrijving
+#### <a name="description"></a>Description
 Beschrijving van het cluster manifest.
 
 |Kenmerk|Waarde|
 |---|---|
-|naam|Beschrijving|
+|naam|Description|
 
 ### <a name="content-element-details"></a>Details van inhouds element
 
@@ -6609,7 +6609,7 @@ De id van dit service manifest, een ongestructureerde teken reeks.
 
 ### <a name="content-element-details"></a>Details van inhouds element
 
-#### <a name="description"></a>Beschrijving
+#### <a name="description"></a>Description
 Tekst die deze service beschrijft.
 
 |Kenmerk|Waarde|
@@ -6943,7 +6943,7 @@ Controlesom waarde van deze ServicePackage-inhoud.
 
 ### <a name="content-element-details"></a>Details van inhouds element
 
-#### <a name="description"></a>Beschrijving
+#### <a name="description"></a>Description
 
 |Kenmerk|Waarde|
 |---|---|

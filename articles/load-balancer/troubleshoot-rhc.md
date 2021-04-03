@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 08/14/2020
 ms.author: errobin
 ms.openlocfilehash: 3acaaba86c9a546a0bd45b5386287908168d50d0
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97955617"
 ---
 # <a name="troubleshoot-resource-health-and-inbound-availability-issues"></a>Problemen met de resource status en inkomende Beschik baarheid oplossen 
@@ -26,7 +26,7 @@ De Resource Health Check (RHC) voor de Load Balancer wordt gebruikt om de status
 
 In de onderstaande tabel wordt de RHC-logica beschreven die wordt gebruikt om de status van uw load balancer te bepalen.
 
-| Status van resource status | Beschrijving |
+| Status van resource status | Description |
 | --- | --- |
 | Beschikbaar | Uw standaard load balancer resource is in orde en beschikbaar. |
 | Verminderd beschikbaar | Uw standaard load balancer heeft platform of door de gebruiker gestarte gebeurtenissen die invloed hebben op de prestaties. De metriek voor het gegevenspad heeft een beschikbaarheid van minder dan 90% en meer dan 25% gerapporteerd gedurende ten minste twee minuten. U ondervindt aanzienlijke invloed op de prestaties. 

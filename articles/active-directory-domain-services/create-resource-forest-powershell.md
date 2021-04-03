@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 07/27/2020
 ms.author: justinha
 ms.openlocfilehash: ebfc2476b7955b926f86094de03973155386eb8f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96619964"
 ---
 # <a name="create-an-azure-active-directory-domain-services-resource-forest-and-outbound-forest-trust-to-an-on-premises-domain-using-azure-powershell"></a>Een Azure Active Directory Domain Services resource-forest en een uitgaand forest-vertrouwens relatie met een on-premises domein maken met behulp van Azure PowerShell
@@ -112,7 +112,7 @@ Gebruik het script om een resource forest voor een beheerd domein te maken `New-
 
     `New-AzureAaddsForest`Met het script kunt u het virtuele Azure-netwerk en het azure AD DS-subnet maken als deze resources nog niet bestaan. Het script kan eventueel de subnetten van de werk belasting maken, indien opgegeven:
 
-    | Name                              | Script parameter                  | Beschrijving |
+    | Name                              | Script parameter                  | Description |
     |:----------------------------------|:----------------------------------|:------------|
     | Naam van virtueel netwerk              | *-aaddsVnetName*                  | De naam van het virtuele netwerk voor het beheerde domein.|
     | Adresruimte                     | *-aaddsVnetCIDRAddressSpace*      | Het adres bereik van het virtuele netwerk in CIDR-notatie (bij het maken van het virtuele netwerk).|
@@ -193,7 +193,7 @@ Install-Script -Name Add-AaddsResourceForestTrust
 
 Geef het script nu de volgende informatie:
 
-| Name                               | Script parameter     | Beschrijving |
+| Name                               | Script parameter     | Description |
 |:-----------------------------------|:---------------------|:------------|
 | Domein naam van Azure AD DS            | *-ManagedDomainFqdn* | FQDN-namen van het beheerde domein, zoals *aaddscontoso.com* |
 | Domein naam van on-premises AD DS      | *-TrustFqdn*         | De FQDN van het vertrouwde forest, zoals *onprem.contoso.com* |

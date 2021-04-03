@@ -9,10 +9,10 @@ ms.date: 04/24/2018
 ms.author: robinsh
 ms.custom: include file
 ms.openlocfilehash: 234407e6973657ba3ad0d78189e7cb1d363c15e2
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "95561675"
 ---
 De Internet of Things (IoT) vormt unieke beveiligings-, privacy-en nalevings uitdagingen voor bedrijven wereld wijd. In tegens telling tot traditionele Cyber technologie waarbij deze problemen rond software en hoe deze worden geïmplementeerd, is IoT wat er gebeurt wanneer de Cyber en de fysieke werelden convergeren. Het beveiligen van IoT-oplossingen vereist dat beveiligde inrichting van apparaten, beveiligde connectiviteit tussen deze apparaten en de Cloud, en de beveiliging van gegevens in de Cloud wordt gewaarborgd tijdens de verwerking en opslag. Voor het werken met deze functionaliteit zijn echter apparaten die zijn beperkt tot resources, geografische distributie van implementaties en een groot aantal apparaten binnen een oplossing.
@@ -21,7 +21,7 @@ In dit artikel wordt uitgelegd hoe de accelerators van de IoT-oplossing een veil
 
 De oplossings versnellers bieden unieke functies die het inrichten, verbinding maken met en opslaan van gegevens van IoT-apparaten eenvoudig en transparant maken en, vooral veilig. In dit artikel worden de beveiligings functies van de Azure IoT-oplossing en implementatie strategieën onderzocht om te zorgen voor beveiligings-, privacy-en nalevings problemen.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 De Internet of Things (IoT) is de Golf van de toekomst en biedt bedrijven onmiddellijke en praktijk mogelijkheden om de kosten te verlagen, de omzet te verhogen en hun bedrijf te transformeren. Veel bedrijven zijn echter cloudhoster om IoT in hun organisaties te implementeren, omdat er problemen zijn met de veiligheid, privacy en naleving. Een belang rijk punt van bezorgdheid is gebaseerd op de uniekheid van de IoT-infra structuur, die de Cyber-en fysieke werelden samen voegt, waarbij de afzonderlijke Risico's die inherent zijn aan deze twee werelden, worden samengevoegd. De beveiliging van IoT is van toepassing op het garanderen van de integriteit van code die wordt uitgevoerd op apparaten, het verlenen van verificatie van apparaten en gebruikers, het definiëren van duidelijke eigendom van apparaten (evenals de gegevens die door deze apparaten worden gegenereerd), en het is flexibel voor Cyber-en fysieke aanvallen.
 

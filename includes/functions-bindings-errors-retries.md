@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/01/2020
 ms.author: glenga
 ms.openlocfilehash: 2ccff72be66a88b9bf0a5e9eb9c29ade8397804b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96356190"
 ---
 Fouten die zijn opgetreden in een Azure Functions kunnen afkomstig zijn van een van de volgende oorsprongen:
@@ -293,7 +293,7 @@ Dit is het beleid voor opnieuw proberen in het *function.js* bestand:
 ```
 ---
 
-|function.json-eigenschap  |Kenmerk eigenschap | Beschrijving |
+|function.json-eigenschap  |Kenmerk eigenschap | Description |
 |---------|---------|---------| 
 |Pele|n.v.t.|Vereist. De strategie voor opnieuw proberen die moet worden gebruikt. Geldige waarden zijn `fixedDelay` of `exponentialBackoff` .|
 |maxRetryCount|n.v.t.|Vereist. Het maximum aantal nieuwe pogingen dat per functie-uitvoering is toegestaan. `-1` betekent dat u voor onbepaalde tijd opnieuw kunt proberen.|

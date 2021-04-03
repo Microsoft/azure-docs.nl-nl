@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 06/22/2019
 ms.openlocfilehash: f02cbdc7ca8822c5fcc91b106856d7f8f547536b
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "91565102"
 ---
 # <a name="exchange-rosettanet-messages-for-b2b-enterprise-integration-in-azure-logic-apps"></a>Exchange RosettaNet-berichten voor B2B Enter prise integration in Azure Logic Apps
@@ -82,8 +82,8 @@ Voer de volgende stappen uit om een PIP-proces configuratie toe te voegen aan uw
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
    | **Naam** | Ja | Uw PIP-naam |
-   | **PIP-code** | Ja | De PIP-code van drie cijfers. Zie [RosettaNet PIPs](/biztalk/adapters-and-accelerators/accelerator-rosettanet/rosettanet-pips)voor meer informatie. |
-   | **PIP-versie** | Ja | Het PIP-versie nummer, dat beschikbaar is op basis van de geselecteerde PIP-code |
+   | **PIP-code** | Yes | De PIP-code van drie cijfers. Zie [RosettaNet PIPs](/biztalk/adapters-and-accelerators/accelerator-rosettanet/rosettanet-pips)voor meer informatie. |
+   | **PIP-versie** | Yes | Het PIP-versie nummer, dat beschikbaar is op basis van de geselecteerde PIP-code |
    ||||
 
    Ga naar de [website van RosettaNet](https://resources.gs1us.org/RosettaNet-Standards/Standards-Library/PIP-Directory#1043208-pipsreg)voor meer informatie over deze PIP-eigenschappen.
@@ -113,14 +113,14 @@ Voer de volgende stappen uit om een PIP-proces configuratie toe te voegen aan uw
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
    | **Naam** | Ja | De naam van de overeenkomst |
-   | **Type overeenkomst** | Ja | Selecteer **RosettaNet**. |
-   | **Host-partner** | Ja | Een overeenkomst vereist zowel een host-als een gast partner. De host-partner vertegenwoordigt de organisatie die de overeenkomst configureert. |
-   | **Host-id** | Ja | Een id voor de host-partner |
-   | **Gast partner** | Ja | Een overeenkomst vereist zowel een host-als een gast partner. De gast partner vertegenwoordigt de organisatie die zakendoet met de host-partner. |
-   | **Gast identiteit** | Ja | Een id voor de gast partner |
+   | **Type overeenkomst** | Yes | Selecteer **RosettaNet**. |
+   | **Host-partner** | Yes | Een overeenkomst vereist zowel een host-als een gast partner. De host-partner vertegenwoordigt de organisatie die de overeenkomst configureert. |
+   | **Host-id** | Yes | Een id voor de host-partner |
+   | **Gast partner** | Yes | Een overeenkomst vereist zowel een host-als een gast partner. De gast partner vertegenwoordigt de organisatie die zakendoet met de host-partner. |
+   | **Gast identiteit** | Yes | Een id voor de gast partner |
    | **Instellingen voor ontvangen** | Varieert | Deze eigenschappen zijn van toepassing op alle berichten die door de host-partner worden ontvangen |
    | **Instellingen verzenden** | Varieert | Deze eigenschappen zijn van toepassing op alle berichten die worden verzonden door de host-partner |  
-   | **RosettaNet PIP-verwijzingen** | Ja | De PIP-verwijzingen voor de overeenkomst. Alle RosettaNet-berichten vereisen PIP-configuraties. |
+   | **RosettaNet PIP-verwijzingen** | Yes | De PIP-verwijzingen voor de overeenkomst. Alle RosettaNet-berichten vereisen PIP-configuraties. |
    ||||
 
 1. Als u uw overeenkomst wilt instellen voor het ontvangen van inkomende berichten van de gast partner, selecteert u **instellingen voor ontvangen**.
@@ -131,9 +131,9 @@ Voer de volgende stappen uit om een PIP-proces configuratie toe te voegen aan uw
 
       | Eigenschap | Vereist | Beschrijving |
       |----------|----------|-------------|
-      | **Het bericht moet worden ondertekend** | Nee | Registreer inkomende berichten met het geselecteerde certificaat. |
+      | **Het bericht moet worden ondertekend** | No | Registreer inkomende berichten met het geselecteerde certificaat. |
       | **Certificaat** | Ja, als ondertekenen is ingeschakeld | Het certificaat dat moet worden gebruikt voor ondertekening |
-      | **Bericht versleuteling inschakelen** | Nee | Inkomende berichten met het geselecteerde certificaat versleutelen. |
+      | **Bericht versleuteling inschakelen** | No | Inkomende berichten met het geselecteerde certificaat versleutelen. |
       | **Certificaat** | Ja, als versleuteling is ingeschakeld | Het certificaat dat voor versleuteling moet worden gebruikt |
       ||||
 
@@ -147,10 +147,10 @@ Voer de volgende stappen uit om een PIP-proces configuratie toe te voegen aan uw
 
       | Eigenschap | Vereist | Beschrijving |
       |----------|----------|-------------|
-      | **Bericht ondertekening inschakelen** | Nee | Uitgaande berichten ondertekenen met het geselecteerde handtekening algoritme en certificaat. |
+      | **Bericht ondertekening inschakelen** | No | Uitgaande berichten ondertekenen met het geselecteerde handtekening algoritme en certificaat. |
       | **Algoritme voor ondertekening** | Ja, als ondertekenen is ingeschakeld | Het Ondertekeningsalgoritme dat moet worden gebruikt, op basis van het geselecteerde certificaat |
       | **Certificaat** | Ja, als ondertekenen is ingeschakeld | Het certificaat dat moet worden gebruikt voor ondertekening |
-      | **Bericht versleuteling inschakelen** | Nee | Versleutel uitgaande met het geselecteerde versleutelings algoritme en certificaat. |
+      | **Bericht versleuteling inschakelen** | No | Versleutel uitgaande met het geselecteerde versleutelings algoritme en certificaat. |
       | **Versleutelings algoritme** | Ja, als versleuteling is ingeschakeld | Het versleutelings algoritme dat moet worden gebruikt, op basis van het geselecteerde certificaat |
       | **Certificaat** | Ja, als versleuteling is ingeschakeld | Het certificaat dat voor versleuteling moet worden gebruikt |
       ||||
@@ -159,8 +159,8 @@ Voer de volgende stappen uit om een PIP-proces configuratie toe te voegen aan uw
 
       | Eigenschap | Vereist | Beschrijving |
       |----------|----------|-------------|
-      | **Actie-URL** |  Ja | De URL die moet worden gebruikt voor het verzenden van actie berichten. De URL is een verplicht veld voor zowel synchrone als asynchrone berichten. |
-      | **Bevestigings-URL** | Ja | De URL die moet worden gebruikt voor het verzenden van bevestigings berichten. De URL is een verplicht veld voor asynchrone berichten. |
+      | **Actie-URL** |  Yes | De URL die moet worden gebruikt voor het verzenden van actie berichten. De URL is een verplicht veld voor zowel synchrone als asynchrone berichten. |
+      | **Bevestigings-URL** | Yes | De URL die moet worden gebruikt voor het verzenden van bevestigings berichten. De URL is een verplicht veld voor asynchrone berichten. |
       ||||
 
 1. Als u uw overeenkomst met de RosettaNet PIP-verwijzingen voor partners wilt instellen, selecteert u **ROSETTANET PIP-verwijzingen**. Selecteer onder **PIP-naam** de naam voor het eerder gemaakte PIP.
@@ -201,9 +201,9 @@ Voor het versnellen van de ontwikkeling en het aanbevelen van integratie patrone
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Bericht** | Ja | Het RosettaNet-bericht dat moet worden gedecodeerd  |
-   | **Kopteksten** | Ja | De HTTP-headers die de waarden opgeven voor de versie, die de RNIF-versie is, en het antwoord type, waarmee het communicatie type tussen de partners wordt aangegeven en synchroon of asynchroon kan zijn |
-   | **Role** | Ja | De rol van de host-partner in het PIP- |
+   | **Bericht** | Yes | Het RosettaNet-bericht dat moet worden gedecodeerd  |
+   | **Kopteksten** | Yes | De HTTP-headers die de waarden opgeven voor de versie, die de RNIF-versie is, en het antwoord type, waarmee het communicatie type tussen de partners wordt aangegeven en synchroon of asynchroon kan zijn |
+   | **Role** | Yes | De rol van de host-partner in het PIP- |
    ||||
 
    De uitvoer van de RosettaNet decode-actie, samen met andere eigenschappen, omvat het **uitgaande signaal**, dat u kunt coderen en terugsturen naar de partner, of een andere actie op die uitvoer moet uitvoeren.
@@ -230,14 +230,14 @@ Voor het versnellen van de ontwikkeling en het aanbevelen van integratie patrone
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Bericht** | Ja | Het RosettaNet-bericht dat moet worden gecodeerd  |
-   | **Host-partner** | Ja | De naam van de host-partner |
-   | **Gast partner** | Ja | De naam van de gast partner |
-   | **PIP-code** | Ja | De PIP-code |
-   | **PIP-versie** | Ja | De PIP-versie |  
-   | **PIP-exemplaar-id** | Ja | De unieke id voor dit PIP-bericht |  
-   | **Berichttype** | Ja | Het type van het bericht dat moet worden gecodeerd |  
-   | **Role** | Ja | De rol van de host-partner |
+   | **Bericht** | Yes | Het RosettaNet-bericht dat moet worden gecodeerd  |
+   | **Host-partner** | Yes | De naam van de host-partner |
+   | **Gast partner** | Yes | De naam van de gast partner |
+   | **PIP-code** | Yes | De PIP-code |
+   | **PIP-versie** | Yes | De PIP-versie |  
+   | **PIP-exemplaar-id** | Yes | De unieke id voor dit PIP-bericht |  
+   | **Berichttype** | Yes | Het type van het bericht dat moet worden gecodeerd |  
+   | **Role** | Yes | De rol van de host-partner |
    ||||
 
    Het gecodeerde bericht is nu gereed om te verzenden naar de partner.

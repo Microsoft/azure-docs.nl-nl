@@ -11,10 +11,10 @@ ms.author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: ereilebr
 ms.openlocfilehash: 2eda67e377a3b61e696e732b916d788c00a18eae
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "95908775"
 ---
 # <a name="query-acceleration-sql-language-reference"></a>Naslag informatie over SQL-taal voor query versnelling
@@ -122,8 +122,8 @@ De SQL-taal voor de query versnelling ondersteunt de volgende standaard SQL-teke
 |[UPPER](/sql/t-sql/functions/upper-transact-sql)    |Retourneert een teken expressie met kleine teken gegevens die worden omgezet in hoofd letters.|
 |[SUBTEKENREEKS](/sql/t-sql/functions/substring-transact-sql)    |Retourneert een deel van een teken-, binaire-, tekst-of afbeeldings expressie in SQL Server.|
 |[TRIM](/sql/t-sql/functions/trim-transact-sql)    |Hiermee verwijdert u de spatie tekens (32) of andere opgegeven tekens vanaf het begin en het einde van een teken reeks.|
-|WITRUIMTE    |Beschrijving|
-|Volg    |Beschrijving|
+|WITRUIMTE    |Description|
+|Volg    |Description|
 
 Hier volgen enkele voor beelden:
 

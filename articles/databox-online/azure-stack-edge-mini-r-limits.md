@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 10/13/2020
 ms.author: alkohli
 ms.openlocfilehash: 6f01d62d1d11f5ff90661482ffd2db112657eee5
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96466880"
 ---
 # <a name="azure-stack-edge-mini-r-limits"></a>Azure Stack Edge-mini maal R-limieten
@@ -28,7 +28,7 @@ Houd rekening met deze beperkingen tijdens het implementeren en gebruiken van uw
 
 In de volgende tabel worden de limieten beschreven voor het Azure Stack Edge mini-R-apparaat.
 
-| Beschrijving | Limiet|
+| Description | Limiet|
 |---|---:|
 |Nee. bestanden per apparaat | 100.000.000 <!--check with devs-->|
 |Nee. van shares per container | 1|

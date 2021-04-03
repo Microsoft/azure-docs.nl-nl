@@ -12,10 +12,10 @@ ms.author: sstein
 ms.date: 10/15/2020
 ms.reviewer: ''
 ms.openlocfilehash: 19178359d1eeb935499a01828f7c53b123e17571
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92793174"
 ---
 # <a name="service-tiers-in-the-dtu-based-purchase-model"></a>Service-lagen in het op DTU gebaseerde aankoopmodel
@@ -114,7 +114,7 @@ De grootte van de data base is gebaseerd op een ' schaal factor '. De schaal fac
 
 De werk belasting bestaat uit negen transactie typen, zoals wordt weer gegeven in de volgende tabel. Elke trans actie is ontworpen om een bepaalde set systeem kenmerken te markeren in de data base-engine en systeemhardware, met een hoog contrast van de andere trans acties. Deze aanpak maakt het gemakkelijker om de impact van verschillende onderdelen te beoordelen op de algehele prestaties. De trans actie ' read Heavy ' produceert bijvoorbeeld een groot aantal lees bewerkingen van de schijf.
 
-| Transactietype | Beschrijving |
+| Transactietype | Description |
 | --- | --- |
 | Lite lezen |UITGESCHAKELD in-Memory; alleen-lezen |
 | Medium lezen |UITGESCHAKELD voornamelijk in-Memory; alleen-lezen |

@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 06/30/2020
 ms.author: victorh
 ms.openlocfilehash: c0bd2f6a021baae80dafcc3d544e1062d8e022e8
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "94653331"
 ---
 # <a name="fqdn-tags-overview"></a>Overzicht van FQDN-labels
@@ -28,7 +28,7 @@ In de volgende tabel ziet u de huidige FQDN-Tags die u kunt gebruiken. Micro sof
 
 ## <a name="current-fqdn-tags"></a>Huidige FQDN-Tags
 
-|FQDN-label  |Beschrijving  |
+|FQDN-label  |Description  |
 |---------|---------|
 |Windows Update     |Uitgaande toegang tot Microsoft Update toestaan, zoals beschreven in [een firewall configureren voor software-updates](/mem/configmgr/sum/get-started/install-a-software-update-point).|
 |Windows Diagnostische gegevens|Uitgaande toegang tot alle [Windows diagnostische eind punten](/windows/privacy/configure-windows-diagnostic-data-in-your-organization#endpoints)toestaan.|

@@ -10,10 +10,10 @@ ms.topic: how-to
 ms.date: 08/07/2019
 ms.author: ghogen
 ms.openlocfilehash: 9c62534acdbfbff7fd4e718bad1f07a92c641626
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92792392"
 ---
 # <a name="add-key-vault-to-your-web-application-by-using-visual-studio-connected-services"></a>Key Vault toevoegen aan uw web-app met behulp van Visual Studio Connected Services
@@ -148,7 +148,7 @@ In deze sectie worden de exacte wijzigingen in een ASP.NET-project geïdentifice
 
 Van invloed op het project bestand .NET-verwijzingen en NuGet-pakket verwijzingen.
 
-| Type | Naslaginformatie |
+| Type | Referentie |
 | --- | --- |
 | NuGet | Micro soft. AspNetCore. AzureKeyVault. HostingStartup |
 
@@ -184,7 +184,7 @@ In deze sectie worden de exacte wijzigingen in een ASP.NET-project geïdentifice
 
 Heeft betrekking op het project bestand .NET `packages.config` -verwijzingen en (NuGet references).
 
-| Type | Naslaginformatie |
+| Type | Referentie |
 | --- | --- |
 | NET NuGet | Azure. Identity |
 | NET NuGet | Azure. Security. de sleutel kluis. Keys |

@@ -14,10 +14,10 @@ ms.date: 08/25/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, jeedes, luleon
 ms.openlocfilehash: 2d65889a841655fe27994d3855f30f7a7e20e1ed
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "94647593"
 ---
 # <a name="how-to-customize-claims-emitted-in-tokens-for-a-specific-app-in-a-tenant-preview"></a>Procedure: claims aanpassen die worden verzonden in tokens voor een specifieke app in een Tenant (preview-versie)
@@ -44,7 +44,7 @@ Een claim toewijzings beleid is een type **beleids** object dat de claims wijzig
 
 Er zijn bepaalde sets claims die bepalen hoe en wanneer ze worden gebruikt in tokens.
 
-| Claimset | Beschrijving |
+| Claimset | Description |
 |---|---|
 | Kern claim ingesteld | Zijn aanwezig in elke token, ongeacht het beleid. Deze claims worden ook beschouwd als beperkt en kunnen niet worden gewijzigd. |
 | Basis claim instellen | Bevat de claims die standaard worden verzonden voor tokens (naast de kern claim set). U kunt basis claims weglaten of wijzigen met behulp van het beleid voor claim toewijzing. |
@@ -287,7 +287,7 @@ Het ID-element identificeert welke eigenschap van de bron de waarde voor de clai
 
 #### <a name="table-3-valid-id-values-per-source"></a>Tabel 3: geldige ID-waarden per bron
 
-| Bron | Id | Beschrijving |
+| Bron | Id | Description |
 |-----|-----|-----|
 | Gebruiker | surname | Familie naam |
 | Gebruiker | givenname | Voornaam |
@@ -364,7 +364,7 @@ Op basis van de gekozen methode wordt een set invoer en uitvoer verwacht. Defini
 
 #### <a name="table-4-transformation-methods-and-expected-inputs-and-outputs"></a>Tabel 4: transformatie methoden en verwachte invoer en uitvoer
 
-|TransformationMethod|Verwachte invoer|Verwachte uitvoer|Beschrijving|
+|TransformationMethod|Verwachte invoer|Verwachte uitvoer|Description|
 |-----|-----|-----|-----|
 |Deelnemen|tekenreeks1, tekenreeks2, scheidings teken|Output claim|Voegt invoer teken reeksen samen met behulp van een scheidings teken tussen. Bijvoorbeeld: tekenreeks1: " foo@bar.com ", tekenreeks2: "sandbox", scheidings teken: "." resulteert in output claim: " foo@bar.com.sandbox "|
 |ExtractMailPrefix|E-mail of UPN|geëxtraheerde teken reeks|ExtensionAttributes 1-15 of andere schema-uitbrei dingen die een UPN-of e-mailadres waarde voor de gebruiker opslaan, bijvoorbeeld johndoe@contoso.com . Extraheert het lokale deel van een e-mail adres. Bijvoorbeeld: mail: " foo@bar.com " resulteert in output claim: "foo". Als er geen \@ teken aanwezig is, wordt de oorspronkelijke invoer teken reeks geretourneerd als is.|
@@ -390,7 +390,7 @@ Op basis van de gekozen methode wordt een set invoer en uitvoer verwacht. Defini
 
 #### <a name="table-5-attributes-allowed-as-a-data-source-for-saml-nameid"></a>Tabel 5: kenmerken die zijn toegestaan als gegevens bron voor SAML NameID
 
-|Bron|Id|Beschrijving|
+|Bron|Id|Description|
 |-----|-----|-----|
 | Gebruiker | mail|E-mailadres|
 | Gebruiker | userPrincipalName|User Principal Name|

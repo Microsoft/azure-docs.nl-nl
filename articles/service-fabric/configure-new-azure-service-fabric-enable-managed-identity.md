@@ -4,10 +4,10 @@ description: U kunt als volgt ondersteuning voor beheerde identiteiten inschakel
 ms.topic: article
 ms.date: 12/09/2019
 ms.openlocfilehash: ae4fec452a2342a68843d874ba955b594014c46d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96574663"
 ---
 # <a name="configure-managed-identity-support-for-a-new-service-fabric-cluster"></a>Ondersteuning voor beheerde identiteiten configureren voor een nieuw Service Fabric cluster

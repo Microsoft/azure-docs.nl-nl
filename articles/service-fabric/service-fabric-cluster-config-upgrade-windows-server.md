@@ -4,10 +4,10 @@ description: Meer informatie over het bijwerken van de configuratie waarmee een 
 ms.topic: conceptual
 ms.date: 11/09/2018
 ms.openlocfilehash: 3cb1d40f5b32415588d3fd5a108967cfb4c0e534
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "91842611"
 ---
 # <a name="upgrade-the-configuration-of-a-standalone-cluster"></a>De configuratie van een zelfstandig cluster bijwerken 

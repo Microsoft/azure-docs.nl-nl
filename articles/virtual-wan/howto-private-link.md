@@ -10,10 +10,10 @@ ms.date: 09/22/2020
 ms.author: jomore
 ms.custom: fasttrack-new
 ms.openlocfilehash: cc8e7314c941035207ecf809a9d85ef46bd58379
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92913752"
 ---
 # <a name="use-private-link-in-virtual-wan"></a>Privé-koppeling in virtuele WAN gebruiken
@@ -38,7 +38,7 @@ U kunt een persoonlijk eind punt voor een koppeling maken voor veel verschillend
 
 Nadat u de Azure SQL Database hebt gemaakt, kunt u het IP-adres van het privé-eind punt controleren door uw persoonlijke eind punten te doorzoeken:
 
-:::image type="content" source="./media/howto-private-link/endpoints.png" alt-text="privé-eindpunten" lightbox="./media/howto-private-link/endpoints.png":::
+:::image type="content" source="./media/howto-private-link/endpoints.png" alt-text="privé-eind punten" lightbox="./media/howto-private-link/endpoints.png":::
 
 Klik op het persoonlijke eind punt dat we hebben gemaakt, het persoonlijke IP-adres en de FQDN-naam (Fully Qualified Domain Name) moeten worden weer geven. Houd er rekening mee dat het persoonlijke eind punt een IP-adres heeft in het bereik van het VNet waar het is geïmplementeerd (10.1.3.0/24):
 

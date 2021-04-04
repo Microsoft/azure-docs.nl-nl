@@ -10,10 +10,10 @@ ms.date: 09/06/2016
 ms.author: robinsh
 ms.custom: amqp
 ms.openlocfilehash: f52d1d1c5f264550076688d5e25e110de230eff4
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92152231"
 ---
 # <a name="azure-iot-device-sdk-for-c--more-about-serializer"></a>Azure IoT Device SDK voor C: meer informatie over serialisatiefunctie
@@ -65,7 +65,7 @@ Wat niet wordt beschreven in dit voor beeld zijn extra gegevens typen die door d
 
 De volgende gegevens typen worden ondersteund in modellen die zijn gemaakt met de **serialisatiefunctie** -bibliotheek:
 
-| Type | Beschrijving |
+| Type | Description |
 | --- | --- |
 | double |drijvende-komma getal met dubbele precisie |
 | int |32-bits geheel getal |

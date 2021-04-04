@@ -173,8 +173,8 @@ Als u bijvoorbeeld uw service regel matig wilt controleren op nieuwe bestanden, 
 
 | Aanvraag bevat `triggerState` ? | API-reactie | 
 | -------------------------------- | -------------| 
-| Nee | Retour neer een HTTP- `202 ACCEPTED` status plus een `location` header met `triggerState` ingesteld op de huidige tijd en het `retry-after` interval tot 15 seconden. | 
-| Ja | Controleer uw service op bestanden die worden toegevoegd na de `DateTime` for `triggerState` . | 
+| No | Retour neer een HTTP- `202 ACCEPTED` status plus een `location` header met `triggerState` ingesteld op de huidige tijd en het `retry-after` interval tot 15 seconden. | 
+| Yes | Controleer uw service op bestanden die worden toegevoegd na de `DateTime` for `triggerState` . | 
 ||| 
 
 | Aantal gevonden bestanden | API-reactie | 

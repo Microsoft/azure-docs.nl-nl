@@ -12,10 +12,10 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
 ms.openlocfilehash: 6d6b7122963b51619f26b8d02a8be4ad39261afb
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92147691"
 ---
 # <a name="create-and-read-iot-hub-messages"></a>IoT Hub-berichten maken en lezen
@@ -54,27 +54,27 @@ Zie [Azure IOT sdk's](iot-hub-devguide-sdks.md)(Engelstalig) voor meer informati
 
 | Eigenschap | Beschrijving  |Gebruiker instelbaar?|Tref woord voor </br>routerings query|
 | --- | --- | --- | --- |
-| bericht-id |Een door de gebruiker instel bare id voor het bericht dat wordt gebruikt voor de aanvraag/antwoord patronen. Indeling: een hoofdletter gevoelige teken reeks (Maxi maal 128 tekens lang) van ASCII 7-bits alfanumerieke tekens + `{'-', ':', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}` .  | Ja | messageId |
-| iothub-enqueuedtime |De datum en tijd waarop het [apparaat-naar-Cloud-](iot-hub-devguide-d2c-guidance.md) bericht is ontvangen door IOT hub. | Nee | enqueuedTime |
-| user-id |Een ID die wordt gebruikt om de oorsprong van berichten op te geven. Wanneer berichten door IoT Hub worden gegenereerd, wordt deze ingesteld op `{iot hub name}` . | Ja | userId |
-| iothub-verbinding-apparaat-id |Een ID die is ingesteld door IoT Hub op apparaat-naar-Cloud-berichten. Deze bevat de **deviceId** van het apparaat dat het bericht heeft verzonden. | Nee | connectionDeviceId |
-| iothub-verbinding-module-id |Een ID die is ingesteld door IoT Hub op apparaat-naar-Cloud-berichten. Het bevat de **moduleId** van het apparaat dat het bericht heeft verzonden. | Nee | connectionModuleId |
-| iothub-verbinding-generatie-id |Een ID die is ingesteld door IoT Hub op apparaat-naar-Cloud-berichten. Het bevat de **connectionDeviceGenerationId** (per [apparaat-id-eigenschappen](iot-hub-devguide-identity-registry.md#device-identity-properties)) van het apparaat dat het bericht heeft verzonden. | Nee |connectionDeviceGenerationId |
-| iothub-Connection-auth-methode |Een verificatie methode die is ingesteld door IoT Hub op apparaat-naar-Cloud-berichten. Deze eigenschap bevat informatie over de verificatie methode die wordt gebruikt om het apparaat te verifiëren dat het bericht verzendt.| Nee | connectionAuthMethod |
-| DT-dataschema | Deze waarde wordt ingesteld door IoT hub op apparaat-naar-Cloud-berichten. Het bevat de apparaat model-ID die is ingesteld in de apparaat-verbinding. | Nee | N.v.t. |
-| DT-onderwerp | De naam van het onderdeel dat de apparaat-naar-Cloud-berichten verzendt. | Ja | N.v.t. |
+| bericht-id |Een door de gebruiker instel bare id voor het bericht dat wordt gebruikt voor de aanvraag/antwoord patronen. Indeling: een hoofdletter gevoelige teken reeks (Maxi maal 128 tekens lang) van ASCII 7-bits alfanumerieke tekens + `{'-', ':', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}` .  | Yes | messageId |
+| iothub-enqueuedtime |De datum en tijd waarop het [apparaat-naar-Cloud-](iot-hub-devguide-d2c-guidance.md) bericht is ontvangen door IOT hub. | No | enqueuedTime |
+| user-id |Een ID die wordt gebruikt om de oorsprong van berichten op te geven. Wanneer berichten door IoT Hub worden gegenereerd, wordt deze ingesteld op `{iot hub name}` . | Yes | userId |
+| iothub-verbinding-apparaat-id |Een ID die is ingesteld door IoT Hub op apparaat-naar-Cloud-berichten. Deze bevat de **deviceId** van het apparaat dat het bericht heeft verzonden. | No | connectionDeviceId |
+| iothub-verbinding-module-id |Een ID die is ingesteld door IoT Hub op apparaat-naar-Cloud-berichten. Het bevat de **moduleId** van het apparaat dat het bericht heeft verzonden. | No | connectionModuleId |
+| iothub-verbinding-generatie-id |Een ID die is ingesteld door IoT Hub op apparaat-naar-Cloud-berichten. Het bevat de **connectionDeviceGenerationId** (per [apparaat-id-eigenschappen](iot-hub-devguide-identity-registry.md#device-identity-properties)) van het apparaat dat het bericht heeft verzonden. | No |connectionDeviceGenerationId |
+| iothub-Connection-auth-methode |Een verificatie methode die is ingesteld door IoT Hub op apparaat-naar-Cloud-berichten. Deze eigenschap bevat informatie over de verificatie methode die wordt gebruikt om het apparaat te verifiëren dat het bericht verzendt.| No | connectionAuthMethod |
+| DT-dataschema | Deze waarde wordt ingesteld door IoT hub op apparaat-naar-Cloud-berichten. Het bevat de apparaat model-ID die is ingesteld in de apparaat-verbinding. | No | N.v.t. |
+| DT-onderwerp | De naam van het onderdeel dat de apparaat-naar-Cloud-berichten verzendt. | Yes | N.v.t. |
 
 ## <a name="system-properties-of-c2d-iot-hub-messages"></a>Systeem eigenschappen van **C2D** IOT hub berichten
 
 | Eigenschap | Beschrijving  |Gebruiker instelbaar?|
 | --- | --- | --- |
-| bericht-id |Een door de gebruiker instel bare id voor het bericht dat wordt gebruikt voor de aanvraag/antwoord patronen. Indeling: een hoofdletter gevoelige teken reeks (Maxi maal 128 tekens lang) van ASCII 7-bits alfanumerieke tekens + `{'-', ':', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}` .  |Ja|
-| Volg nummer |Een getal (uniek per apparaat wachtrij) toegewezen door IoT Hub aan elk bericht van de Cloud naar het apparaat. |Nee|
-| tot |Een doel dat is opgegeven in [Cloud-naar-apparaat-](iot-hub-devguide-c2d-guidance.md) berichten. |Nee|
-| absoluut-verloop tijd |De datum en tijd waarop het bericht is verlopen. |Nee|   |
-| correlation-id |Een teken reeks eigenschap in een antwoord bericht dat normaal gesp roken de MessageId van de aanvraag bevat, in antwoord patronen voor aanvragen. |Ja|
-| user-id |Een ID die wordt gebruikt om de oorsprong van berichten op te geven. Wanneer berichten door IoT Hub worden gegenereerd, wordt deze ingesteld op `{iot hub name}` . |Ja|
-| iothub-ACK |Een feedback bericht generator. Deze eigenschap wordt gebruikt in Cloud-naar-apparaat-berichten om IoT Hub te vragen om feedback berichten te genereren als gevolg van het verbruik van het bericht door het apparaat. Mogelijke waarden: **geen** (standaard): er wordt geen feedback bericht gegenereerd, **positief**: er wordt een feedback bericht ontvangen als het bericht is voltooid, **negatief**: Ontvang een feedback bericht als het bericht is verlopen (of het maximum aantal leveringen is bereikt) zonder dat het apparaat is voltooid, of **volledig**: zowel positief als negatief. |Ja|
+| bericht-id |Een door de gebruiker instel bare id voor het bericht dat wordt gebruikt voor de aanvraag/antwoord patronen. Indeling: een hoofdletter gevoelige teken reeks (Maxi maal 128 tekens lang) van ASCII 7-bits alfanumerieke tekens + `{'-', ':', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}` .  |Yes|
+| Volg nummer |Een getal (uniek per apparaat wachtrij) toegewezen door IoT Hub aan elk bericht van de Cloud naar het apparaat. |No|
+| tot |Een doel dat is opgegeven in [Cloud-naar-apparaat-](iot-hub-devguide-c2d-guidance.md) berichten. |No|
+| absoluut-verloop tijd |De datum en tijd waarop het bericht is verlopen. |No|   |
+| correlation-id |Een teken reeks eigenschap in een antwoord bericht dat normaal gesp roken de MessageId van de aanvraag bevat, in antwoord patronen voor aanvragen. |Yes|
+| user-id |Een ID die wordt gebruikt om de oorsprong van berichten op te geven. Wanneer berichten door IoT Hub worden gegenereerd, wordt deze ingesteld op `{iot hub name}` . |Yes|
+| iothub-ACK |Een feedback bericht generator. Deze eigenschap wordt gebruikt in Cloud-naar-apparaat-berichten om IoT Hub te vragen om feedback berichten te genereren als gevolg van het verbruik van het bericht door het apparaat. Mogelijke waarden: **geen** (standaard): er wordt geen feedback bericht gegenereerd, **positief**: er wordt een feedback bericht ontvangen als het bericht is voltooid, **negatief**: Ontvang een feedback bericht als het bericht is verlopen (of het maximum aantal leveringen is bereikt) zonder dat het apparaat is voltooid, of **volledig**: zowel positief als negatief. |Yes|
 
 ### <a name="system-property-names"></a>Namen van systeem eigenschappen
 

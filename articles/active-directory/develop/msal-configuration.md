@@ -34,11 +34,11 @@ In dit artikel vindt u meer informatie over de verschillende instellingen in het
 |-----------|------------|-------------|-------|
 | `client_id` | Tekenreeks | Ja | De client-ID van uw app op de [pagina Toepassings registratie](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) |
 | `redirect_uri`   | Tekenreeks | Ja | De omleidings-URI van uw app op de [pagina Toepassings registratie](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) |
-| `broker_redirect_uri_registered` | Booleaans | Nee | Mogelijke waarden: `true` , `false` |
-| `authorities` | Orderverzamellijst\<Authority> | Nee | De lijst met instanties die uw app nodig heeft |
-| `authorization_user_agent` | AuthorizationAgent (enum) | Nee | Mogelijke waarden: `DEFAULT` , `BROWSER` , `WEBVIEW` |
-| `http` | HttpConfiguration | Nee | Configureren `HttpUrlConnection` `connect_timeout` en `read_timeout` |
-| `logging` | LoggingConfiguration | Nee | Hiermee geeft u het detail niveau voor logboek registratie op. Optionele configuraties omvatten: `pii_enabled` , die een Booleaanse waarde en,,, `log_level` `ERROR` , of, accepteert,, `WARNING` `INFO` of `VERBOSE` . |
+| `broker_redirect_uri_registered` | Booleaans | No | Mogelijke waarden: `true` , `false` |
+| `authorities` | Orderverzamellijst\<Authority> | No | De lijst met instanties die uw app nodig heeft |
+| `authorization_user_agent` | AuthorizationAgent (enum) | No | Mogelijke waarden: `DEFAULT` , `BROWSER` , `WEBVIEW` |
+| `http` | HttpConfiguration | No | Configureren `HttpUrlConnection` `connect_timeout` en `read_timeout` |
+| `logging` | LoggingConfiguration | No | Hiermee geeft u het detail niveau voor logboek registratie op. Optionele configuraties omvatten: `pii_enabled` , die een Booleaanse waarde en,,, `log_level` `ERROR` , of, accepteert,, `WARNING` `INFO` of `VERBOSE` . |
 
 ### <a name="client_id"></a>client_id
 
@@ -110,7 +110,7 @@ De lijst met instanties die bekend zijn en worden vertrouwd door u. Naast de ins
 | Eigenschap | Gegevenstype  | Vereist | Notities |
 |-----------|-------------|-----------|--------|
 | `type` | Tekenreeks | Ja | Komt overeen met de doel groep of het account type van uw app-doelen. Mogelijke waarden: `AAD` , `B2C` |
-| `audience` | Object | Nee | Alleen van toepassing als type = `AAD` . Hiermee geeft u de identiteit op van uw app-doelen. De waarde van de app-registratie gebruiken |
+| `audience` | Object | No | Alleen van toepassing als type = `AAD` . Hiermee geeft u de identiteit op van uw app-doelen. De waarde van de app-registratie gebruiken |
 | `authority_url` | Tekenreeks | Ja | Alleen vereist als type = `B2C` . Hiermee geeft u de CA-URL of het beleid dat door uw app moet worden gebruikt  |
 | `default` | booleaans | Ja | Eén `"default":true` is vereist wanneer een of meer instanties zijn opgegeven. |
 
@@ -146,8 +146,8 @@ Algemene instellingen voor HTTP-time-outs configureren, zoals:
 
 | Eigenschap | Gegevenstype | Vereist | Notities |
 | ---------|-----------|------------|--------|
-| `connect_timeout` | int | Nee | Tijd in milliseconden |
-| `read_timeout` | int | Nee | Tijd in milliseconden |
+| `connect_timeout` | int | No | Tijd in milliseconden |
+| `read_timeout` | int | No | Tijd in milliseconden |
 
 ### <a name="logging"></a>logboekregistratie
 
@@ -155,9 +155,9 @@ De volgende algemene instellingen zijn voor logboek registratie:
 
 | Eigenschap | Gegevenstype  | Vereist | Notities |
 | ----------|-------------|-----------|---------|
-| `pii_enabled`  | booleaans | Nee | Of persoons gegevens moeten worden geverzendd |
+| `pii_enabled`  | booleaans | No | Of persoons gegevens moeten worden geverzendd |
 | `log_level`   | tekenreeks | No | De logboek berichten die moeten worden uitgevoerd. De ondersteunde logboek niveaus zijn onder andere `ERROR` , `WARNING` , en `INFO` `VERBOSE` . |
-| `logcat_enabled` | booleaans | Nee | Of er moet worden uitgevoerd naar log kat naast de interface voor logboek registratie |
+| `logcat_enabled` | booleaans | No | Of er moet worden uitgevoerd naar log kat naast de interface voor logboek registratie |
 
 ### <a name="account_mode"></a>account_mode
 

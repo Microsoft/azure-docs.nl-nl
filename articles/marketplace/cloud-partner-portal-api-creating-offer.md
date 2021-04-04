@@ -8,10 +8,10 @@ author: mingshen-ms
 ms.author: mingshen
 ms.date: 07/29/2020
 ms.openlocfilehash: dba47073a6676b17c091af048f583ca3e7712999
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "87420223"
 ---
 # <a name="create-or-modify-an-offer"></a>Een aanbieding toevoegen of veranderen
@@ -289,7 +289,7 @@ Deze categorieën en de bijbehorende sleutels zijn van toepassing op Azure-apps,
 | --- | --- | --- | --- |
 | ***Analyse** _ | _*_analyse_*_ | _*_Analytics-Azure-apps_*_ | _ *_Analytics-amp_** |
 | Gegevens inzichten | gegevens-inzichten | gegevens-inzichten | gegevens-inzichten |
-| Data Analytics | gegevens analyse | gegevens analyse | gegevens analyse |
+| Gegevensanalyse | gegevens analyse | gegevens analyse | gegevens analyse |
 | Big data | Big Data | bigData | Big Data |
 | Predictive analytics | voorspellende analyse | voorspellende analyse | voorspellende analyse |
 | Analyse in realtime/streamen | Realtime-Streaming-analyses | Realtime-Streaming-analyses | Realtime-Streaming-analyses |

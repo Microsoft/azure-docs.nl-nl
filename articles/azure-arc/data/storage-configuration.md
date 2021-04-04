@@ -10,10 +10,10 @@ ms.reviewer: mikeray
 ms.date: 10/12/2020
 ms.topic: conceptual
 ms.openlocfilehash: 7b683029b7fd05078755d4e8cd027f55c805f991
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97107257"
 ---
 # <a name="storage-configuration"></a>Opslagconfiguratie
@@ -175,14 +175,14 @@ Wanneer u een exemplaar maakt met ofwel `azdata arc sql mi create` of `azdata ar
 
 In de volgende tabel worden de paden in de Azure SQL Managed instance-container weer gegeven die zijn toegewezen aan het permanente volume voor gegevens en Logboeken:
 
-|Parameter naam, korte naam|Pad in MSSQL-MIAA-container|Beschrijving|
+|Parameter naam, korte naam|Pad in MSSQL-MIAA-container|Description|
 |---|---|---|
 |`--storage-class-data`, `-scd`|/var/opt|Bevat mappen voor de installatie van MSSQL en andere systeem processen. De map MSSQL bevat standaard gegevens (met inbegrip van transactie Logboeken), fouten logboek & back-upmappen|
 |`--storage-class-logs`, `-scl`|/var/log|Bevat mappen waarin console-uitvoer (stderr, stdout), andere logboek registratie gegevens van processen binnen de container worden opgeslagen|
 
 De volgende tabel bevat de paden in de PostgreSQL-instantie container die is toegewezen aan het permanente volume voor gegevens en Logboeken:
 
-|Parameter naam, korte naam|Pad in post gres-container|Beschrijving|
+|Parameter naam, korte naam|Pad in post gres-container|Description|
 |---|---|---|
 |`--storage-class-data`, `-scd`|/var/opt/postgresql|Bevat gegevens en logboek mappen voor de installatie van post gres|
 |`--storage-class-logs`, `-scl`|/var/log|Bevat mappen waarin console-uitvoer (stderr, stdout), andere logboek registratie gegevens van processen binnen de container worden opgeslagen|

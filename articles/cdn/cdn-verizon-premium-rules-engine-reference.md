@@ -105,7 +105,7 @@ Value | Een enkele aanhaling heeft geen speciale betekenis. Er wordt echter een 
 
 Reguliere expressies definiëren een patroon dat wordt doorzocht in een tekst waarde. De notatie reguliere expressie definieert specifieke betekenissen voor diverse symbolen. In de volgende tabel wordt aangegeven hoe speciale tekens worden behandeld door matching voorwaarden en functies die reguliere expressies ondersteunen.
 
-Speciaal teken | Beschrijving
+Speciaal teken | Description
 ------------------|------------
 \ | Met een back slash wordt het teken dat het volgt, als een letterlijke waarde gezien in plaats van de normale expressie betekenis. De volgende syntaxis verescapet bijvoorbeeld een asterisk: `\*`
 % | De betekenis van een percentage symbool is afhankelijk van het gebruik.<br/><br/> `%{HTTPVariable}`: Met deze syntaxis wordt een HTTP-variabele aangeduid.<br/>`%{HTTPVariable%Pattern}`: In deze syntaxis wordt een percentage symbool gebruikt om een HTTP-variabele en als scheidings teken te identificeren.<br />`\%`: Als u een percentage tekent, kan dit worden gebruikt als letterlijke waarde of om URL-code ring aan te geven (bijvoorbeeld `\%20` ).

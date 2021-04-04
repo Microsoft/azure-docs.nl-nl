@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 09/28/2020
 ms.author: duau
 ms.openlocfilehash: 4cbeea8ad20d41daff3d4ad086a36df5e988991f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "91449242"
 ---
 # <a name="health-probes"></a>Statuscontroles
@@ -41,7 +41,7 @@ De voor deur ondersteunt de volgende HTTP-methoden voor het verzenden van de sta
 
 ## <a name="health-probe-responses"></a>Antwoorden op status testen
 
-| Antwoorden  | Beschrijving | 
+| Antwoorden  | Description | 
 | ------------- | ------------- |
 | Status bepalen  |  Een 200 OK-status code geeft aan dat de back-end in orde is. Alle andere zaken worden beschouwd als een fout. Als er om een of andere reden (inclusief netwerk fout) geen geldig HTTP-antwoord voor een test wordt ontvangen, wordt de test als een fout beschouwd.|
 | Meet latentie  | Latentie is de klok tijd gemeten vanaf het moment onmiddellijk voordat de test aanvraag wordt verzonden naar het moment dat de laatste byte van het antwoord wordt ontvangen. We gebruiken een nieuwe TCP-verbinding voor elke aanvraag, zodat deze meting niet wordt afgestemd op back-ends met bestaande warme verbindingen.  |

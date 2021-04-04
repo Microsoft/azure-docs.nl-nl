@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
 ms.openlocfilehash: 686e342eb68e2e5c97bdbae9cd11bdff5819b5d6
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "98927591"
 ---
 # <a name="continuous-deployment-with-azure-devops"></a>Continue implementatie met Azure DevOps
@@ -110,7 +110,7 @@ De scripts worden gehost op [Cognitive Services Voice Assistant-aangepaste opdra
     ```BASH
     bash/export.sh -r <region> -s <subscriptionkey> -c en-us -a <appid> -f apps/myapp.json
     ```
-    | Argumenten | Beschrijving |
+    | Argumenten | Description |
     | ------- | --------------- | ----------- |
     | regio | de regio van de toepassing, d.w.z. westus2. |
     | subscriptionkey | de abonnements sleutel van uw spraak bron. |

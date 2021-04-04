@@ -16,10 +16,10 @@ ms.date: 03/15/2018
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8637c691f946c02176c441cfcf5ad5abbea10396
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98016878"
 ---
 # <a name="azure-active-directory-connect-health-alert-catalog"></a>Azure Active Directory Connect Health-waarschuwings catalogus 
@@ -30,13 +30,13 @@ Azure AD Connect Health waarschuwingen worden opgelost met een succes voorwaarde
 
 ## <a name="general-alerts"></a>Algemene waarschuwingen
 
-| Naam van waarschuwing | Beschrijving | Herstel |
+| Naam van waarschuwing | Description | Herstel |
 | --- | --- | ----- |
 | De Health Service-gegevens zijn niet actueel | De Health-Agent (s) die op een of meer servers worden uitgevoerd, zijn niet verbonden met de Health Service en de Health Service ontvangt niet de meest recente gegevens van deze server. De laatste gegevens die door de Health Service zijn verwerkt, zijn ouder dan 2 uur. | Zorg ervoor dat de Health-Agents uitgaande verbinding hebben met de vereiste service-eind punten. [Meer informatie](how-to-connect-health-data-freshness.md) |
 
 ## <a name="alerts-for-azure-ad-connect-sync"></a>Waarschuwingen voor Azure AD Connect (synchronisatie)
 
-| Naam van waarschuwing | Beschrijving | Herstel |
+| Naam van waarschuwing | Description | Herstel |
 | --- | --- | ----- |
 | Azure AD Connect Sync-service is niet actief. | De Windows-service Microsoft Azure AD Sync wordt niet uitgevoerd of kan niet worden gestart. Als gevolg hiervan worden objecten niet gesynchroniseerd met Azure Active Directory. | Microsoft Azure Active Directory Sync Services starten</b> <ol> <li>Klik op <b>Start</b>, klik op <b>uitvoeren</b>, typ <b>Services. msc</b>en klik vervolgens op <b>OK</b>.</li> <li>Zoek de <b>Microsoft Azure AD Sync-Service</b>en controleer of de service is gestart. Als de service niet is gestart, klikt u met de rechter muisknop op deze en klikt u vervolgens op <b>starten</b>. | 
 | Het importeren vanuit Azure Active Directory is mislukt | De importbewerking vanuit de Azure Active Directory-connector is mislukt. |  Onderzoek de fouten voor de importbewerking in het gebeurtenislogboek voor meer informatie.  |
@@ -51,7 +51,7 @@ Azure AD Connect Health waarschuwingen worden opgelost met een succes voorwaarde
 | Exporteren naar Azure Active Directory is gestopt. Drempel waarde voor onopzettelijk verwijderen is bereikt | De export bewerking voor Azure Active Directory is mislukt. Er zijn meer objecten die moeten worden verwijderd dan de geconfigureerde drempel waarde. Als gevolg hiervan zijn er geen objecten geëxporteerd. | <li> Het aantal objecten dat is gemarkeerd voor verwijdering, is groter dan de ingestelde drempel waarde. Zorg ervoor dat dit resultaat gewenst is.</li> <li> Voer de volgende stappen uit om de export bewerking te laten door gaan: <ol type="a"> <li>Drempel waarde uitschakelen door Disable-ADSyncExportDeletionThreshold uit te voeren</li> <li>Synchronization Service Manager starten</li> <li>Export uitvoeren op een connector met type = Azure Active Directory</li> <li>Nadat de objecten zijn geëxporteerd, schakelt u de drempel waarde in door uit te voeren: Enable-ADSyncExportDeletionThreshold</li> </ol> </li> |
 
 ## <a name="alerts-for-active-directory-federation-services"></a>Waarschuwingen voor Active Directory Federation Services
-| Naam van waarschuwing | Beschrijving | Herstel |
+| Naam van waarschuwing | Description | Herstel |
 | --- | --- | ----- |
 |Test verificatie aanvraag (synthetische trans actie) kan geen Token ophalen | De test verificatie aanvragen (synthetische trans acties) die vanaf deze server zijn gestart, hebben een token niet kunnen verkrijgen na 5 nieuwe pogingen. Dit kan worden veroorzaakt door tijdelijke netwerk problemen, AD DS Beschik baarheid van de domein controller of een onjuist geconfigureerde AD FS-server.  Als gevolg hiervan kunnen verificatie aanvragen die door de Federation service worden verwerkt, mislukken. De agent gebruikt de context van het lokale computer account om een token van de Federation Service te verkrijgen. | Zorg ervoor dat de volgende stappen worden uitgevoerd om de status van de server te valideren.<ol><li>Controleer of er geen extra onopgeloste waarschuwingen zijn voor deze of andere AD FS servers in uw farm.</li><li>Controleer of deze voor waarde geen tijdelijke fout is door u aan te melden met een test gebruiker vanaf de aanmeldings pagina van AD FS die beschikbaar is op https://{your_adfs_server_name}/adfs/ls/idpinitiatedsignon.aspx</li><li>Ga naar <a href="https://testconnectivity.microsoft.com">https://testconnectivity.microsoft.com</a> en kies het tabblad ' office 365 '. Voer de ' office 365 Single Sign-On test ' uit.</li><li>Controleer of de naam van uw AD FS-service van deze server kan worden omgezet door de volgende opdracht uit te voeren vanaf een opdracht prompt op deze server. nslookup your_adfs_server_name</li></ol><p>Als de service naam niet kan worden omgezet, raadpleegt u de sectie Veelgestelde vragen voor instructies over het toevoegen van een vermelding van een HOSTbestand van uw AD FS-service met het IP-adres van deze server. Hierdoor kan de synthetische trans actie-module die op deze server wordt uitgevoerd, een token aanvragen</p> | 
 | De proxy server kan de Federatie server niet bereiken | Deze AD FS proxy server kan geen verbinding maken met de AD FS-service. Als gevolg hiervan zullen verificatie aanvragen die door deze server worden verwerkt, mislukken. | Voer de volgende stappen uit om de connectiviteit tussen deze server en de AD FS-service te valideren. <ol><li> Zorg ervoor dat de firewall tussen deze server en de AD FS-service correct is geconfigureerd. </li><li> Zorg ervoor dat de DNS-omzetting voor de AD FS-service naam op de juiste wijze verwijst naar de AD FS-service die zich in het bedrijfs netwerk bevindt. Dit kan worden bereikt via een DNS-server die deze server in het perimeter netwerk of via vermeldingen in de HOSTS-bestanden voor de naam van de AD FS-service verzendt. </li><li> De netwerk verbinding valideren door de browser op deze server te openen en toegang te krijgen tot het federatieve meta gegevens eind punt, dat zich op `https://<your-adfs-service-name>/federationmetadata/2007-06/federationmetadata.xml` </li> | 
@@ -78,7 +78,7 @@ Azure AD Connect Health waarschuwingen worden opgelost met een succes voorwaarde
 
 ## <a name="alerts-for-active-directory-domain-services"></a>Waarschuwingen voor Active Directory Domain Services
 
-| Naam van waarschuwing | Beschrijving | Herstel |
+| Naam van waarschuwing | Description | Herstel |
 | --- | --- | ----- |
 | De domein controller kan niet worden bereikt via LDAP ping | De domein controller kan niet worden bereikt via LDAP-ping. Dit kan worden veroorzaakt door netwerk problemen of computer problemen. Als gevolg hiervan zullen LDAP-pings mislukken. |  <li>Bekijk de lijst met waarschuwingen voor gerelateerde waarschuwingen, zoals: domein controller is niet adverteren. </li><li>Zorg ervoor dat de betrokken domein controller voldoende schijf ruimte heeft. Als er bijna geen ruimte meer is, wordt de domein controller niet meer als een LDAP-server geadverteerd. </li><li> Poging tot vinden van de primaire domein controller: uitvoeren <br> <i>netdom query FSMO </i> </br> op de betrokken domein controller. <li> Controleer of het fysieke netwerk correct is geconfigureerd/verbonden. </li> |
 | Active Directory replicatie fout is opgetreden | Deze domein controller ondervindt problemen met de replicatie, die u kunt vinden door naar het dash board replicatie status te gaan. Replicatie fouten kunnen worden veroorzaakt door een onjuiste configuratie of andere gerelateerde problemen. Onbehandelde replicatie fouten kunnen leiden tot inconsistenties in de gegevens. | Zie aanvullende Details voor de namen van de betrokken bron-en doel-Dc's. Navigeer naar het dash board replicatie status en zoek naar de actieve fouten op de betrokken Dc's. Klik op de fout om een Blade te openen met meer informatie over het oplossen van die specifieke fout.| 

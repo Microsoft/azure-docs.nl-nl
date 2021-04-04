@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 01/29/2021
 ms.author: b-juche
 ms.openlocfilehash: c82e834c0af3737c1e5ef19c7aa789b94d87f6d8
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "99095388"
 ---
 # <a name="resource-limits-for-azure-netapp-files"></a>Resourcelimieten voor Azure NetApp Files
@@ -31,22 +31,22 @@ In de volgende tabel worden resource limieten voor Azure NetApp Files beschreven
 
 |  Resource  |  Standaardlimiet  |  Aanpasbaar via ondersteunings aanvraag  |
 |----------------|---------------------|--------------------------------------|
-|  Aantal NetApp-accounts per Azure-regio per abonnement  |  10    |  Ja   |
-|  Aantal capaciteits Pools per NetApp-account   |    25     |   Ja   |
-|  Aantal volumes per abonnement   |    500     |   Ja   |
-|  Aantal volumes per capaciteits pool     |    500   |    Ja     |
-|  Aantal moment opnamen per volume       |    255     |    Nee        |
-|  Aantal subnetten dat wordt gedelegeerd aan Azure NetApp Files (micro soft. NetApp/volumes) per Azure-Virtual Network    |   1   |    Nee    |
-|  Aantal gebruikte Ip's in een VNet (inclusief onmiddellijk gepeerde VNets) met Azure NetApp Files   |    1000   |    Nee   |
-|  Minimum grootte van één capaciteits groep   |  4 TiB     |    Nee  |
-|  Maximale grootte van één capaciteits groep    |  500 TiB   |   Nee   |
+|  Aantal NetApp-accounts per Azure-regio per abonnement  |  10    |  Yes   |
+|  Aantal capaciteits Pools per NetApp-account   |    25     |   Yes   |
+|  Aantal volumes per abonnement   |    500     |   Yes   |
+|  Aantal volumes per capaciteits pool     |    500   |    Yes     |
+|  Aantal moment opnamen per volume       |    255     |    No        |
+|  Aantal subnetten dat wordt gedelegeerd aan Azure NetApp Files (micro soft. NetApp/volumes) per Azure-Virtual Network    |   1   |    No    |
+|  Aantal gebruikte Ip's in een VNet (inclusief onmiddellijk gepeerde VNets) met Azure NetApp Files   |    1000   |    No   |
+|  Minimum grootte van één capaciteits groep   |  4 TiB     |    No  |
+|  Maximale grootte van één capaciteits groep    |  500 TiB   |   No   |
 |  Minimum grootte van één volume    |    100 GiB    |    Nee    |
-|  Maximale grootte van één volume     |    100 TiB    |    Nee    |
-|  Maximale grootte van één bestand     |    16 TiB    |    Nee    |    
-|  Maximale grootte van Directory-meta gegevens in één map      |    320 MB    |    Nee    |    
-|  Maximum aantal bestanden ([maxfiles](#maxfiles)) per volume     |    100.000.000    |    Ja    |    
-|  Minimale toegewezen door Voer voor een hand matig QoS-volume     |    1 MiB/s   |    Nee    |    
-|  Maximale toegewezen door Voer voor een hand matig QoS-volume     |    4.500-MiB/s    |    Nee    |    
+|  Maximale grootte van één volume     |    100 TiB    |    No    |
+|  Maximale grootte van één bestand     |    16 TiB    |    No    |    
+|  Maximale grootte van Directory-meta gegevens in één map      |    320 MB    |    No    |    
+|  Maximum aantal bestanden ([maxfiles](#maxfiles)) per volume     |    100.000.000    |    Yes    |    
+|  Minimale toegewezen door Voer voor een hand matig QoS-volume     |    1 MiB/s   |    No    |    
+|  Maximale toegewezen door Voer voor een hand matig QoS-volume     |    4.500-MiB/s    |    No    |    
 |  Aantal replicatie gegevens beveiliging met meerdere regio's (doel volumes)     |    5    |    Ja    |     
 
 Zie [Hoe kan ik bepalen of een map de limiet grootte nadert](azure-netapp-files-faqs.md#how-do-i-determine-if-a-directory-is-approaching-the-limit-size)om te controleren of een directory de maximale grootte van Directory-meta gegevens (320 MB) nadert.   

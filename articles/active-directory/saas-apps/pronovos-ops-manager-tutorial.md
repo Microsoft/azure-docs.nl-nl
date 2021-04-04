@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 07/18/2019
 ms.author: jeedes
 ms.openlocfilehash: 56e596c940da5ac966d8a94bd3cf639bb76b416a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92516610"
 ---
 # <a name="tutorial-integrate-pronovos-ops-manager-with-azure-active-directory"></a>Zelfstudie: ProNovos Ops Manager integreren met Azure Active Directory

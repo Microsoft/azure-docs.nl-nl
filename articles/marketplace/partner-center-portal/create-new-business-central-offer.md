@@ -8,10 +8,10 @@ author: navits09
 ms.author: navits
 ms.date: 12/02/2020
 ms.openlocfilehash: 99c36354334701dcd4c7c30c5fd5039c13885525
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97358704"
 ---
 # <a name="create-a-dynamics-365-for-business-central-offer"></a>Een Dynamics 365 voor bedrijven Central-aanbieding maken
@@ -132,7 +132,7 @@ Hier volgt een voor beeld van hoe de aanbiedings gegevens worden weer gegeven in
 6. Privacybeleid
 7. Naam van aanbieding
 8. Samenvatting
-9. Beschrijving
+9. Description
 10. Scherm afbeeldingen/Video's
 
 ### <a name="marketplace-details"></a>Marketplace-gegevens

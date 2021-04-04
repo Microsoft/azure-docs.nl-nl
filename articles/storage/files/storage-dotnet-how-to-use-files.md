@@ -10,10 +10,10 @@ ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-csharp
 ms.openlocfilehash: e112060db4a44884d3094a939b03ff106ba72e65
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96492196"
 ---
 # <a name="develop-for-azure-files-with-net"></a>Ontwikkelen voor Azure Files met .NET
@@ -627,7 +627,7 @@ Raadpleeg de volgende bronnen voor meer informatie over Azure Files:
 - [Aan de slag met AzCopy](../common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)
 - [Problemen met Azure Files in Windows oplossen](./storage-troubleshoot-windows-file-connection-problems.md)
 
-### <a name="reference"></a>Naslaginformatie
+### <a name="reference"></a>Referentie
 
 - [Azure Storage-API's voor .NET](/dotnet/api/overview/azure/storage)
 - [Bestandsservice REST API](/rest/api/storageservices/File-Service-REST-API)

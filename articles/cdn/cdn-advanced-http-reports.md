@@ -15,10 +15,10 @@ ms.topic: how-to
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: e2ef1367cbbb1fb71159c4520c3d1481904c1769
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92779319"
 ---
 # <a name="analyze-usage-statistics-with-azure-cdn-advanced-http-reports"></a>Gebruiksstatistieken analyseren met geavanceerde HTTP-rapporten in Azure CDN
@@ -48,7 +48,7 @@ Gedetailleerde verkeer-en bandbreedte gegevens voor elke regio worden direct ond
 
 Hieronder vindt u een korte beschrijving voor elk type geografie rapport op basis van een kaart.
 
-| Rapportnaam | Beschrijving |
+| Rapportnaam | Description |
 | --- | --- |
 | Wereld kaart |Met dit rapport kunt u de wereld wijde vraag naar uw CDN-inhoud weer geven. Elk land/elke regio heeft een kleur code op de wereld kaart om het percentage treffers op te geven dat afkomstig is van die regio. |
 | Verenigde Staten kaart |Met dit rapport kunt u de vraag naar uw CDN-inhoud in het Verenigde Staten weer geven. Elke status wordt in kleur code op deze kaart vermeld om het percentage treffers aan te geven dat afkomstig is van die regio. |
@@ -71,7 +71,7 @@ De gegevens die zijn gebruikt voor het genereren van het staaf diagram kunnen hi
 
 Hieronder vindt u een korte beschrijving van beide typen rapporten.
 
-| Rapportnaam | Beschrijving |
+| Rapportnaam | Description |
 | --- | --- |
 | Populairste steden |In dit rapport worden steden gerangschikt op basis van het aantal treffers dat afkomstig is uit die regio. |
 | Belangrijkste landen |In dit rapport worden landen/regio's gerangschikt op basis van het aantal treffers dat afkomstig is uit dat land/deze regio. |

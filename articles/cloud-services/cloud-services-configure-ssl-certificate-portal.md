@@ -9,10 +9,10 @@ author: tanmaygore
 ms.reviewer: mimckitt
 ms.custom: ''
 ms.openlocfilehash: 33aa088efd7768153d4a17472d82e0826f4ffa6b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98742638"
 ---
 # <a name="configuring-tls-for-an-application-in-azure"></a>TLS configureren voor een toepassing in azure
@@ -79,7 +79,7 @@ Uw toepassing moet worden geconfigureerd voor het gebruik van het certificaat en
 
    Permissions ( `permissionLevel` Attribute) kunnen worden ingesteld op een van de volgende waarden:
 
-   | Machtigings waarde | Beschrijving |
+   | Machtigings waarde | Description |
    | --- | --- |
    | limitedOrElevated |**(Standaard)** Alle rollen processen hebben toegang tot de persoonlijke sleutel. |
    | verhoogde |Alleen verhoogde processen hebben toegang tot de persoonlijke sleutel. |

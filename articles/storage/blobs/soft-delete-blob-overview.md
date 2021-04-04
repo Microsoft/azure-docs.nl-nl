@@ -10,15 +10,15 @@ ms.date: 02/09/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.openlocfilehash: a370a7f04e0e43b96e4a574313c4f24c4990ab6f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100390353"
 ---
 # <a name="soft-delete-for-blobs"></a>Blobs voorlopig verwijderen
 
-Met zacht verwijderen voor blobs wordt voor komen dat uw gegevens per ongeluk of onbedoeld worden gewijzigd of verwijderd. Als zacht verwijderen voor blobs is ingeschakeld voor een opslag account, kunnen blobs, Blob-versies en moment opnamen in dat opslag account worden hersteld nadat ze zijn verwijderd, binnen een Bewaar periode die u opgeeft.
+Met voorlopig verwijderen van blobs wordt voorkomen dat uw gegevens per ongeluk of onbedoeld worden gewijzigd of verwijderd. Als voorlopig verwijderen van blobs is ingeschakeld voor een opslagaccount, kunnen blobs, blobversies en momentopnamen in dat opslagaccount worden hersteld nadat ze zijn verwijderd, maar alleen binnen een bewaarperiode die u opgeeft.
 
 Als er een kans is dat uw gegevens per ongeluk worden gewijzigd of verwijderd door een toepassing of een ander opslag account, raadt micro soft aan om de functie voor voorlopig verwijderen in te scha kelen. Zie voor meer informatie over het inschakelen van zacht verwijderen [voor het inschakelen en beheren van voorlopig verwijderen voor blobs](./soft-delete-blob-enable.md).
 
@@ -87,7 +87,7 @@ Met zacht verwijderen worden uw gegevens niet opgeslagen in gevallen van het ver
 
 De volgende tabel bevat details over het verwachte gedrag wanneer zacht verwijderen is ingeschakeld:
 
-| REST API bewerking | Resourcetype | Beschrijving | Wijziging in gedrag |
+| REST API bewerking | Resourcetype | Description | Wijziging in gedrag |
 |--------------------|---------------|-------------|--------------------|
 | [Verwijderen](/rest/api/storagerp/StorageAccounts/Delete) | Account | Hiermee verwijdert u het opslag account, inclusief alle containers en blobs die het bevat.                           | Geen verandering. Containers en blobs in het verwijderde account kunnen niet worden hersteld. |
 | [Container verwijderen](/rest/api/storageservices/delete-container) | Container | Hiermee verwijdert u de container, inclusief alle blobs die deze bevat. | Geen verandering. Blobs in de verwijderde container kunnen niet worden hersteld. |

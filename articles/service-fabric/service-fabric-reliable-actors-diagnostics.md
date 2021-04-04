@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 10/26/2017
 ms.author: abhisram
 ms.openlocfilehash: ebaedb5369f3b39372262bfde526706e8d069418
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98789613"
 ---
 # <a name="diagnostics-and-performance-monitoring-for-reliable-actors"></a>Diagnose- en prestatiecontrole voor betrouwbare actoren
@@ -23,7 +23,7 @@ Voor beelden van hulpprogram ma's en technologieën die u helpen bij het verzame
 ### <a name="keywords"></a>Trefwoorden
 Alle gebeurtenissen die deel uitmaken van de Reliable Actors Event source zijn gekoppeld aan een of meer tref woorden. Hiermee wordt gefilterd op gebeurtenissen die worden verzameld. De volgende trefwoord bits zijn gedefinieerd.
 
-| Bitmask | Beschrijving |
+| Bitmask | Description |
 | --- | --- |
 | 0x1 |Set van belang rijke gebeurtenissen die de werking van de runtime van de Fabric actors samenvatten. |
 | 0x2 |Set gebeurtenissen die de actor-methode aanroepen beschrijven. Zie het [inleidende onderwerp over actors](service-fabric-reliable-actors-introduction.md)voor meer informatie. |
@@ -83,7 +83,7 @@ In het bovenstaande voor beeld is `ivoicemailboxactor.leavemessageasync` de naam
 ### <a name="actor-method-events-and-performance-counters"></a>Actor-methode gebeurtenissen en prestatie meter items
 De Reliable Actors runtime verzendt de volgende gebeurtenissen met betrekking tot [actor-methoden](service-fabric-reliable-actors-introduction.md).
 
-| Gebeurtenis naam | Gebeurtenis-id | Niveau | Zoek | Beschrijving |
+| Gebeurtenis naam | Gebeurtenis-id | Niveau | Zoek | Description |
 | --- | --- | --- | --- | --- |
 | ActorMethodStart |7 |Uitgebreid |0x2 |Actors-runtime staat op het punt een actor-methode aan te roepen. |
 | ActorMethodStop |8 |Uitgebreid |0x2 |Het uitvoeren van een actor-methode is voltooid. Dat wil zeggen dat de asynchrone aanroep van de runtime naar de actor methode heeft geretourneerd en dat de taak die door de actor-methode is geretourneerd, is voltooid. |
@@ -91,7 +91,7 @@ De Reliable Actors runtime verzendt de volgende gebeurtenissen met betrekking to
 
 De Reliable Actors runtime publiceert de volgende prestatie meter items die betrekking hebben op de uitvoering van actor-methoden.
 
-| Category name | Naam van het meteritem | Beschrijving |
+| Category name | Naam van het meteritem | Description |
 | --- | --- | --- |
 | Service Fabric actor-methode |Aanroepen per seconde |Aantal keren dat de actor-service methode per seconde wordt aangeroepen |
 | Service Fabric actor-methode |Gemiddeld aantal milliseconden per aanroep |Gebruikte tijd in milliseconden voor het uitvoeren van de service methode actor |
@@ -100,13 +100,13 @@ De Reliable Actors runtime publiceert de volgende prestatie meter items die betr
 ### <a name="concurrency-events-and-performance-counters"></a>Gelijktijdigheid van gebeurtenissen en prestatie meter items
 De Reliable Actors runtime verzendt de volgende gebeurtenissen met betrekking tot [gelijktijdigheid](service-fabric-reliable-actors-introduction.md#concurrency).
 
-| Gebeurtenis naam | Gebeurtenis-id | Niveau | Zoek | Beschrijving |
+| Gebeurtenis naam | Gebeurtenis-id | Niveau | Zoek | Description |
 | --- | --- | --- | --- | --- |
 | ActorMethodCallsWaitingForLock |12 |Uitgebreid |0x8 |Deze gebeurtenis is geschreven aan het begin van elke nieuwe functie voor het inschakelen van een actor. Het bevat het aantal in behandeling zijnde actor-aanroepen dat wacht om de vergren deling per actor te verkrijgen waarmee gelijktijdigheid op basis van een bocht wordt afgedwongen. |
 
 De Reliable Actors runtime publiceert de volgende prestatie meters die betrekking hebben op gelijktijdigheid.
 
-| Category name | Naam van het meteritem | Beschrijving |
+| Category name | Naam van het meteritem | Description |
 | --- | --- | --- |
 | Service Fabric actor |aantal actor-aanroepen tijdens het wachten op actor vergrendeling |Het aantal in behandeling zijnde actor-aanroepen dat wacht om de vergren deling per actor te verkrijgen waarmee gelijktijdigheid op basis van een hand gave wordt afgedwongen |
 | Service Fabric actor |Gemiddeld aantal milliseconden per wachten op vergren deling |Gebruikte tijd (in milliseconden) om de vergren deling per actor te verkrijgen waarmee gelijktijdig gebruik op basis van een bocht wordt afgedwongen |
@@ -115,14 +115,14 @@ De Reliable Actors runtime publiceert de volgende prestatie meters die betrekkin
 ### <a name="actor-state-management-events-and-performance-counters"></a>Gebeurtenissen en prestatie meter items voor actor status beheer
 De Reliable Actors runtime verzendt de volgende gebeurtenissen met betrekking tot het [beheer van actor status](service-fabric-reliable-actors-state-management.md).
 
-| Gebeurtenis naam | Gebeurtenis-id | Niveau | Zoek | Beschrijving |
+| Gebeurtenis naam | Gebeurtenis-id | Niveau | Zoek | Description |
 | --- | --- | --- | --- | --- |
 | ActorSaveStateStart |10 |Uitgebreid |0x4 |Actors-runtime staat op het punt de actor status op te slaan. |
 | ActorSaveStateStop |11 |Uitgebreid |0x4 |Actors-runtime heeft het opslaan van de actor status voltooid. |
 
 Met de Reliable Actors runtime worden de volgende prestatie meter items gepubliceerd die betrekking hebben op het beheer van actor status.
 
-| Category name | Naam van het meteritem | Beschrijving |
+| Category name | Naam van het meteritem | Description |
 | --- | --- | --- |
 | Service Fabric actor |Gemiddeld aantal milliseconden per opslag status bewerking |Gebruikte tijd in milliseconden voor het opslaan van de actor status |
 | Service Fabric actor |Gemiddeld aantal milliseconden per bewerking van de laad status |Gebruikte tijd in milliseconden voor het laden van de actor status |
@@ -130,7 +130,7 @@ Met de Reliable Actors runtime worden de volgende prestatie meter items gepublic
 ### <a name="events-related-to-actor-replicas"></a>Gebeurtenissen met betrekking tot actor replica's
 De Reliable Actors runtime verzendt de volgende gebeurtenissen met betrekking tot [actor replica's](service-fabric-reliable-actors-platform.md#service-fabric-partition-concepts-for-actors).
 
-| Gebeurtenis naam | Gebeurtenis-id | Niveau | Zoek | Beschrijving |
+| Gebeurtenis naam | Gebeurtenis-id | Niveau | Zoek | Description |
 | --- | --- | --- | --- | --- |
 | ReplicaChangeRoleToPrimary |1 |Informatief |0x1 |De rol van de actor replica is gewijzigd in Primary. Dit betekent dat de actors voor deze partitie worden gemaakt in deze replica. |
 | ReplicaChangeRoleFromPrimary |2 |Informatief |0x1 |De rol van de actor replica is gewijzigd in niet-primair. Dit betekent dat de actors voor deze partitie niet meer worden gemaakt in deze replica. Er worden geen nieuwe aanvragen bezorgd bij Actors die al zijn gemaakt in deze replica. De actors worden vernietigd nadat alle lopende aanvragen zijn voltooid. |
@@ -138,21 +138,21 @@ De Reliable Actors runtime verzendt de volgende gebeurtenissen met betrekking to
 ### <a name="actor-activation-and-deactivation-events-and-performance-counters"></a>Actor-activering en deactivering van gebeurtenissen en prestatie meter items
 De Reliable Actors runtime verzendt de volgende gebeurtenissen met betrekking tot de [Activering en deactivering van actor](service-fabric-reliable-actors-lifecycle.md).
 
-| Gebeurtenis naam | Gebeurtenis-id | Niveau | Zoek | Beschrijving |
+| Gebeurtenis naam | Gebeurtenis-id | Niveau | Zoek | Description |
 | --- | --- | --- | --- | --- |
 | ActorActivated |5 |Informatief |0x1 |Er is een actor geactiveerd. |
 | ActorDeactivated |6 |Informatief |0x1 |Een actor is gedeactiveerd. |
 
 Met de Reliable Actors runtime worden de volgende prestatie meter items gepubliceerd die betrekking hebben op het activeren en deactiveren van actor.
 
-| Category name | Naam van het meteritem | Beschrijving |
+| Category name | Naam van het meteritem | Description |
 | --- | --- | --- |
 | Service Fabric actor |Gemiddelde OnActivateAsync milliseconden |Gebruikte tijd in milliseconden voor het uitvoeren van de methode OnActivateAsync |
 
 ### <a name="actor-request-processing-performance-counters"></a>Prestatie meter items verwerking actor-aanvraag
 Wanneer een client een methode aanroept via een actor-proxy object, resulteert dit in een aanvraag bericht dat via het netwerk wordt verzonden naar de actor-service. De service verwerkt het aanvraag bericht en stuurt een antwoord terug naar de client. Met de Reliable Actors runtime worden de volgende prestatie meter items gepubliceerd die betrekking hebben op de verwerking van actor-aanvragen.
 
-| Category name | Naam van het meteritem | Beschrijving |
+| Category name | Naam van het meteritem | Description |
 | --- | --- | --- |
 | Service Fabric actor |aantal openstaande aanvragen |Aantal aanvragen dat wordt verwerkt in de service |
 | Service Fabric actor |Gemiddeld aantal milliseconden per aanvraag |Gebruikte tijd (in milliseconden) van de service voor het verwerken van een aanvraag |

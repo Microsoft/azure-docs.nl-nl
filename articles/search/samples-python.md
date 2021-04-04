@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/27/2021
 ms.openlocfilehash: 0d09851cf8e68cead4a67615aaa792512482f351
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98955119"
 ---
 # <a name="python-code-samples-for-azure-cognitive-search"></a>Python-code voorbeelden voor Azure Cognitive Search
@@ -30,7 +30,7 @@ Meer informatie over de python-code voorbeelden die de functionaliteit en werk s
 
 Code voorbeelden uit het ontwikkel team van Azure SDK illustreren het gebruik van de API. U kunt deze voor beelden vinden in [**Azure-SDK-voor python/tree/master/SDK/Search/Azure-Search-documenten/samples**](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/search/azure-search-documents/samples) op github.
 
-| Voorbeelden | Beschrijving |
+| Voorbeelden | Description |
 |---------|-------------|
 | [Verifieer](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/search/azure-search-documents/samples/sample_authentication.py) | Laat zien hoe u een client configureert en verificatie voor de service uitvoert. | 
 | [Index Create-Read-update-delete-bewerkingen](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/search/azure-search-documents/samples/sample_index_crud_operations.py) | Laat zien hoe [zoek indexen](search-what-is-an-index.md)maken, bijwerken, ophalen, weer geven en verwijderen. |

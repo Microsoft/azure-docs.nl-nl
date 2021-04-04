@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 07/30/2019
 ms.author: raynew
 ms.openlocfilehash: d441284b265ab11dd5ece42ec3737e455d662435
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96023564"
 ---
 # <a name="monitor-site-recovery"></a>Site Recovery bewaken
@@ -109,12 +109,12 @@ Bewaak in **infrastructuur weergave** de infrastructuur onderdelen die bij de re
 
     **Scenario** | **Status**  | **Weer gave beschikbaar?**
     --- |--- | ---
-    **Replicatie tussen on-premises sites** | Alle staten | Nee 
-    **Azure-VM-replicatie tussen Azure-regio's**  | Replicatie ingeschakeld/initiële replicatie wordt uitgevoerd | Ja
-    **Azure-VM-replicatie tussen Azure-regio's** | Failover/failback is voltooid | Nee   
-    **Replicatie van VMware naar Azure** | Replicatie ingeschakeld/initiële replicatie wordt uitgevoerd | Ja     
-    **Replicatie van VMware naar Azure** | Failover/fail-back | Nee      
-    **Hyper-V-replicatie naar Azure** | Failover/fail-back | Nee
+    **Replicatie tussen on-premises sites** | Alle staten | No 
+    **Azure-VM-replicatie tussen Azure-regio's**  | Replicatie ingeschakeld/initiële replicatie wordt uitgevoerd | Yes
+    **Azure-VM-replicatie tussen Azure-regio's** | Failover/failback is voltooid | No   
+    **Replicatie van VMware naar Azure** | Replicatie ingeschakeld/initiële replicatie wordt uitgevoerd | Yes     
+    **Replicatie van VMware naar Azure** | Failover/fail-back | No      
+    **Hyper-V-replicatie naar Azure** | Failover/fail-back | No
 
 - Als u de weer gave van de infra structuur voor één replicerende computer wilt zien, klikt u in het menu kluis op **gerepliceerde items** en selecteert u een server.  
 

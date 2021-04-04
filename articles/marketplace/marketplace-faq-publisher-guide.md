@@ -8,10 +8,10 @@ author: trkeya
 ms.author: trkeya
 ms.date: 09/11/2020
 ms.openlocfilehash: 584e1e943f215aa4a69368fb71cb3053b1444a01
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "94660216"
 ---
 # <a name="common-questions-about-the-microsoft-commercial-marketplace"></a>Veelgestelde vragen over de micro soft Commercial Marketplace
@@ -166,7 +166,7 @@ Op de commerciële Marketplace kan geen marge worden opgegeven voor wederverkope
 
 De beschik baarheid van uw aanbiedingen en abonnementen wordt gedefinieerd door de facturerings locaties van de klant. Resellers Selecteer eerst de klanten aan wie ze zijn verkocht en selecteer vervolgens uw aanbieding. Als een klant zich op een niet-ondersteunde locatie bevindt, is uw aanbieding niet beschikbaar voor hen.
 
-## <a name="billing-capabilities"></a>Facturerings mogelijkheden
+## <a name="billing-capabilities"></a>Factureringsmogelijkheden
 
 ### <a name="whats-the-difference-between-transaction-and-monetization"></a>Wat is het verschil tussen trans actie-en verdiensten maximaliseren?
 

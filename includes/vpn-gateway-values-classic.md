@@ -9,10 +9,10 @@ ms.date: 10/08/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 11d2172d085fe9b47587f4084908f99d7b54437e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92103234"
 ---
 Wanneer u een klassiek VNets maakt in de Azure Portal, is de naam die u wilt weer geven niet de volledige naam die u gebruikt voor Power shell. Zo kan een VNet dat **TestVNet1** in de portal heet, een veel langere naam hebben in het netwerk configuratie bestand. Voor een VNet in de naam van de resource groep ' ClassicRG ' kan er ongeveer als volgt uitzien: **Group ClassicRG TestVNet1**. Wanneer u uw verbindingen maakt, is het belang rijk dat u de waarden gebruikt die u in het netwerk configuratie bestand ziet.

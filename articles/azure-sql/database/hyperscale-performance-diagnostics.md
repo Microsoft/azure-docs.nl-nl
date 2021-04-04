@@ -11,10 +11,10 @@ ms.author: denzilr
 ms.reviewer: sstein
 ms.date: 10/18/2019
 ms.openlocfilehash: ed31ff5d77b258d141a77fc174c2d5452adf7d01
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92791712"
 ---
 # <a name="sql-hyperscale-performance-troubleshooting-diagnostics"></a>Diagnostische gegevens voor het oplossen van problemen met SQL grootschalige-prestaties
@@ -28,7 +28,7 @@ Elk Azure SQL Database service niveau heeft limieten voor het genereren van de l
 
 De volgende wacht typen (in [sys.dm_os_wait_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql/)) beschrijven de redenen waarom de logboek frequentie kan worden beperkt op de primaire Compute replica:
 
-|Wacht type    |Beschrijving                         |
+|Wacht type    |Description                         |
 |-------------          |------------------------------------|
 |RBIO_RG_STORAGE        | Treedt op wanneer een grootschalige-data base het genereren van de snelheid van het primaire Compute-knooppunt logboek wordt beperkt vanwege een vertraagd logboek verbruik op pagina-Server (s).         |
 |RBIO_RG_DESTAGE        | Treedt op wanneer de snelheid van het genereren van het logboek van de grootschalige-data base wordt beperkt vanwege een vertraagd logboek gebruik door de lange termijn logboek opslag.         |

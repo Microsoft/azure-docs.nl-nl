@@ -15,17 +15,17 @@ ms.topic: reference
 ms.date: 12/14/2020
 ms.author: phjensen
 ms.openlocfilehash: 03ffa93a71ded40e033f2068ea23fc6b994a5bbb
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97632680"
 ---
 # <a name="test-azure-application-consistent-snapshot-tool-preview"></a>Azure-toepassing consistent momentopname hulpmiddel testen (preview)
 
 In dit artikel wordt uitgelegd hoe u de test opdracht uitvoert van het hulp programma Azure-toepassing consistente moment opname dat u kunt gebruiken met Azure NetApp Files.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Een test van de configuratie wordt uitgevoerd met behulp van de `azacsnap -c test` opdracht.
 

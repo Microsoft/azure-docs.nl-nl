@@ -10,10 +10,10 @@ ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 07/27/2020
 ms.openlocfilehash: 97189fd7a232c2467981b23dc20da51ebef08252
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97656339"
 ---
 # <a name="create-a-data-streaming-job-in-azure-sql-edge"></a>Een taak voor gegevens stromen maken in Azure SQL Edge 
@@ -36,7 +36,7 @@ Als Azure SQL Edge, SQL Server of Azure SQL Database als een uitvoer stroom word
 
 Azure SQL Edge ondersteunt momenteel alleen de volgende gegevens bronnen als invoer en uitvoer van streams.
 
-| Gegevens bron type | Invoer | Uitvoer | Beschrijving |
+| Gegevens bron type | Invoer | Uitvoer | Description |
 |------------------|-------|--------|------------------|
 | Azure IoT Edge hub | J | J | Gegevens bron om streaminggegevens te lezen en schrijven naar een Azure IoT Edge hub. Zie [IOT Edge hub](../iot-edge/iot-edge-runtime.md#iot-edge-hub)voor meer informatie.|
 | SQL Database | N | J | Gegevens bron verbinding om streaminggegevens te schrijven naar SQL Database. De data base kan een lokale Data Base zijn in Azure SQL Edge of een externe data base in SQL Server of Azure SQL Database.|

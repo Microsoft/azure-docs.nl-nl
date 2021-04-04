@@ -9,10 +9,10 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/06/2020
 ms.openlocfilehash: 694f501efc565ed498c1c8d8e2e38326277e8605
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96621413"
 ---
 # <a name="plan-an-azure-managed-application-for-an-azure-application-offer"></a>Een door Azure beheerde toepassing plannen voor een Azure-toepassings aanbieding
@@ -126,11 +126,11 @@ U kunt Maxi maal vijf beleids regels en slechts één exemplaar van elk beleids 
 
 | Beleidstypen | Beleids parameters vereist |
 | ------------ | ------------- |
-| Versleuteling Azure SQL Database | Nee |
-| Controle-instellingen voor Azure SQL Server | Ja |
-| Versleuteling Azure Data Lake Store | Nee |
-| Diagnostische instelling controleren | Ja |
-| Naleving van resource locatie controleren | Nee |
+| Versleuteling Azure SQL Database | No |
+| Controle-instellingen voor Azure SQL Server | Yes |
+| Versleuteling Azure Data Lake Store | No |
+| Diagnostische instelling controleren | Yes |
+| Naleving van resource locatie controleren | No |
 |||
 
 Voor elk beleids type dat u toevoegt, moet u de SKU Standard of gratis beleid koppelen. De standaard-SKU is vereist voor controle beleid. Beleids namen zijn beperkt tot 50 tekens.

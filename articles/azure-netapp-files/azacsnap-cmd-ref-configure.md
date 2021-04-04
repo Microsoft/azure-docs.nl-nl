@@ -15,17 +15,17 @@ ms.topic: reference
 ms.date: 12/14/2020
 ms.author: phjensen
 ms.openlocfilehash: 0875aae8bb9049fc96377c1c98efa7391211d08f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97632758"
 ---
 # <a name="configure-azure-application-consistent-snapshot-tool-preview"></a>Azure-toepassing consistent snap shot tool configureren (preview-versie)
 
 Dit artikel bevat een hand leiding voor het uitvoeren van de opdracht configureren van het hulp programma Azure-toepassing consistente moment opname dat u kunt gebruiken met Azure NetApp Files.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Het configuratie bestand kan worden gemaakt of bewerkt met behulp van de `azacsnap -c configure` opdracht.
 

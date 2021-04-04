@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 02/27/2020
 ms.author: ccompy
 ms.openlocfilehash: cec44bbabdb7d528c30a8d3396b819f2eb3c5386
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "95999427"
 ---
 De functie is eenvoudig in te stellen, maar dit betekent niet dat uw ervaring geen probleem is. Als u problemen ondervindt met het verkrijgen van toegang tot uw gewenste eind punt, kunt u een aantal hulpprogram ma's gebruiken om de connectiviteit vanuit de app-console te testen. Er zijn twee consoles die u kunt gebruiken. De ene is de kudu-console en de andere is de console in de Azure Portal. Als u de kudu-console wilt bereiken vanuit uw app, gaat u naar **hulpprogram ma's**  >  **kudu**. U kunt de Kudo-console ook bereiken op [site naam]. scm. azurewebsites. net. Nadat de website is geladen, gaat u naar het tabblad **debug console** . Als u vanuit uw app naar de door Azure Portal gehoste console wilt gaan, gaat u naar de console **hulpprogram ma's**  >  .

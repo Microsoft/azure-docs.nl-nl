@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 11/02/2017
 ms.custom: devx-track-csharp
 ms.openlocfilehash: cf593f793aabf2a0650684ed8d02fe02d756ec2b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96575734"
 ---
 # <a name="guide-to-converting-web-and-worker-roles-to-service-fabric-stateless-services"></a>Hand leiding voor het converteren van web-en werk rollen naar Service Fabric stateless Services
@@ -31,10 +31,10 @@ Net als bij de rol van werk nemer vertegenwoordigt een webrole ook een staatloze
 
 | **Toepassing** | **Ondersteund** | **Migratie traject** |
 | --- | --- | --- |
-| Webformulieren voor ASP.NET |Nee |Converteren naar ASP.NET Core 1 MVC |
+| Webformulieren voor ASP.NET |No |Converteren naar ASP.NET Core 1 MVC |
 | ASP.NET MVC |Met migratie |Upgrade uitvoeren naar ASP.NET Core 1 MVC |
 | ASP.NET Web-API |Met migratie |Een zelf-hostende server of ASP.NET Core 1 gebruiken |
-| ASP.NET Core 1 |Ja |N.v.t. |
+| ASP.NET Core 1 |Yes |N.v.t. |
 
 ## <a name="entry-point-api-and-lifecycle"></a>Ingangs punt-API en levens cyclus
 De Worker-en Service Fabric service-Api's bieden vergelijk bare ingangs punten: 

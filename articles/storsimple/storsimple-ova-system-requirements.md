@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 07/25/2019
 ms.author: alkohli
 ms.openlocfilehash: 5970e82619667a47ba160c84df2cdeb145b0dab8
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "94966170"
 ---
 # <a name="storsimple-virtual-array-system-requirements"></a>Systeemvereisten voor StorSimple virtuele array
@@ -91,13 +91,13 @@ De volgende tabel geeft een lijst van de poorten die in uw firewall moeten worde
 
 | **Poort nummer <sup>1</sup>** | **In of uit** | **Poort bereik** | **Vereist** | **Opmerkingen** |
 | --- | --- | --- | --- | --- |
-| TCP 80 (HTTP) |Uit |WAN |Nee |De uitgaande poort wordt gebruikt voor toegang tot internet om updates op te halen. <br></br>De uitgaande webproxy kan door de gebruiker worden geconfigureerd. |
-| TCP 443 (HTTPS) |Uit |WAN |Ja |De uitgaande poort wordt gebruikt voor toegang tot gegevens in de Cloud. <br></br>De uitgaande webproxy kan door de gebruiker worden geconfigureerd. |
+| TCP 80 (HTTP) |Uit |WAN |No |De uitgaande poort wordt gebruikt voor toegang tot internet om updates op te halen. <br></br>De uitgaande webproxy kan door de gebruiker worden geconfigureerd. |
+| TCP 443 (HTTPS) |Uit |WAN |Yes |De uitgaande poort wordt gebruikt voor toegang tot gegevens in de Cloud. <br></br>De uitgaande webproxy kan door de gebruiker worden geconfigureerd. |
 | UDP 53 (DNS) |Uit |WAN |In sommige gevallen; Zie opmerkingen. |Deze poort is alleen vereist als u een DNS-server op Internet gebruikt. <br></br> Houd er rekening mee dat bij het implementeren van een bestands server het gebruik van lokale DNS-server wordt aangeraden. |
 | UDP 123 (NTP) |Uit |WAN |In sommige gevallen; Zie opmerkingen. |Deze poort is alleen vereist als u een NTP-server op Internet gebruikt.<br></br> Houd er rekening mee dat bij het implementeren van een bestands server de synchronisatie tijd met uw Active Directory domein controllers wordt aanbevolen. |
-| TCP 80 (HTTP) |In |LAN |Ja |Dit is de binnenkomende poort voor lokale gebruikers interface op het StorSimple-apparaat voor lokaal beheer. <br></br> Houd er rekening mee dat toegang tot de lokale gebruikers interface via HTTP automatisch wordt omgeleid naar HTTPS. |
-| TCP 443 (HTTPS) |In |LAN |Ja |Dit is de binnenkomende poort voor lokale gebruikers interface op het StorSimple-apparaat voor lokaal beheer. |
-| TCP 3260 (iSCSI) |In |LAN |Nee |Deze poort wordt gebruikt om toegang te krijgen tot gegevens via iSCSI. |
+| TCP 80 (HTTP) |In |LAN |Yes |Dit is de binnenkomende poort voor lokale gebruikers interface op het StorSimple-apparaat voor lokaal beheer. <br></br> Houd er rekening mee dat toegang tot de lokale gebruikers interface via HTTP automatisch wordt omgeleid naar HTTPS. |
+| TCP 443 (HTTPS) |In |LAN |Yes |Dit is de binnenkomende poort voor lokale gebruikers interface op het StorSimple-apparaat voor lokaal beheer. |
+| TCP 3260 (iSCSI) |In |LAN |No |Deze poort wordt gebruikt om toegang te krijgen tot gegevens via iSCSI. |
 
 <sup>1</sup> er moeten geen binnenkomende poorten worden geopend op het open bare Internet.
 

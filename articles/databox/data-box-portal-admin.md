@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 12/18/2020
 ms.author: alkohli
 ms.openlocfilehash: 46a18cb2b6e1682427d5674be28b240f35b120fe
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97678646"
 ---
 # <a name="use-the-azure-portal-to-administer-your-azure-data-box-and-azure-data-box-heavy"></a>Gebruik de Azure Portal om uw Azure Data Box en Azure Data Box Heavy te beheren
@@ -206,7 +206,7 @@ Wanneer de apparaatstatus wordt gewijzigd in de portal, ontvangt u een melding v
 
 Dit zijn de statussen voor een import volgorde.
 
-|Orderstatus |Beschrijving |
+|Orderstatus |Description |
 |---------|---------|
 |Besteld     | De order is geplaatst. <br>Als het apparaat beschikbaar is, identificeert Microsoft het apparaat dat moet worden verzonden en bereidt Microsoft het apparaat voor. <br> Als het apparaat niet onmiddellijk beschikbaar is, wordt de volg orde verwerkt wanneer het apparaat weer beschikbaar wordt. Het kan enkele dagen tot een paar maanden duren voordat de order is verwerkt. Als de order niet binnen 90 dagen kan worden afgehandeld, wordt de order geannuleerd en wordt u hiervan op de hoogte gesteld.         |
 |Verwerkt     | De order is verwerkt. In overeenstemming met uw order wordt het apparaat in het datacenter voorbereid voor verzending.         |
@@ -225,7 +225,7 @@ Dit zijn de statussen voor een import volgorde.
 
 Dit zijn de statussen voor een export volgorde.
 
-|Orderstatus |Beschrijving |
+|Orderstatus |Description |
 |---------|---------|
 |Besteld     | Er is een export volgorde geplaatst. <br>Als het apparaat beschikbaar is, identificeert Microsoft het apparaat dat moet worden verzonden en bereidt Microsoft het apparaat voor. <br> Als het apparaat niet onmiddellijk beschikbaar is, wordt de order verwerkt zodra het apparaat beschikbaar is. Het kan enkele dagen tot een paar maanden duren voordat de order is verwerkt. Als de order niet binnen 90 dagen kan worden voltooid, wordt deze geannuleerd en wordt u op de hoogte gesteld.         |
 |Geannuleerd            |De order is geannuleerd. <br> U hebt de volg orde geannuleerd (u kunt alleen annuleren voordat de order wordt verwerkt) of er is een fout opgetreden. de order is geannuleerd door de service. Als de order niet binnen 90 dagen kan worden voltooid, wordt deze ook geannuleerd en wordt u op de hoogte gesteld.     |
@@ -248,7 +248,7 @@ Dit zijn de statussen voor een export volgorde.
 
 Als u gebruikmaakt van zelf-beheerde verzen ding nadat de kopie is voltooid en voordat u het apparaat ontvangt, ziet u de volgende statussen (in plaats van de items die in de voor gaande tabel worden genoemd):
 
-|Orderstatus |Beschrijving |
+|Orderstatus |Description |
 |---------|---------|
 |Gereed voor ophalen in azure Data Center      |Het apparaat kan worden opgenomen in het Azure-Data Center.        |
 |Opgehaald    |U hebt het apparaat geselecteerd.         |

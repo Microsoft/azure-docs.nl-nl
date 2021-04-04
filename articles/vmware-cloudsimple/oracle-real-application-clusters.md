@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 3959aae5f490af10c6747cfa67d9960e0c4a203f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97899266"
 ---
 # <a name="optimize-your-cloudsimple-private-cloud-for-installing-oracle-rac"></a>Optimaliseer uw CloudSimple-Privécloud voor het installeren van Oracle RAC
@@ -46,14 +46,14 @@ In het volgende voor beeld worden de schijven gebruikt die in de onderstaande ta
 
 | Schijf                                      | Doel                                       | Gedeelde schijf |
 |-------------------------------------------|-----------------------------------------------|-------------|
-| Besturingssysteem                                        | Besturingssysteemschijf                         | Nee          |
-| YRASTER                                      | Installatie locatie voor Oracle grid software     | Nee          |
-| ENDDATABASE                                  | Installatie locatie voor Oracle data base-software | Nee          |
-| ORAHOME                                   | Basis locatie voor binaire bestanden van Oracle-data base    | Nee          |
-| BESTAND1, BESTAND2, DATA3, DATA4                | Schijf waarop Oracle-database bestanden worden opgeslagen   | Ja         |
-| REDO1, REDO2, REDO3, REDO4, REDO5, REDO6  | Logboek schijven opnieuw uitvoeren                                | Ja         |
-| OCR1, OCR2, OCR3, OCR4, OCR5              | Stem schijven                                  | Ja         |
-| FRA1, FRA2                                | Schijven voor snel herstel gebied                      | Ja         |
+| Besturingssysteem                                        | Besturingssysteemschijf                         | No          |
+| YRASTER                                      | Installatie locatie voor Oracle grid software     | No          |
+| ENDDATABASE                                  | Installatie locatie voor Oracle data base-software | No          |
+| ORAHOME                                   | Basis locatie voor binaire bestanden van Oracle-data base    | No          |
+| BESTAND1, BESTAND2, DATA3, DATA4                | Schijf waarop Oracle-database bestanden worden opgeslagen   | Yes         |
+| REDO1, REDO2, REDO3, REDO4, REDO5, REDO6  | Logboek schijven opnieuw uitvoeren                                | Yes         |
+| OCR1, OCR2, OCR3, OCR4, OCR5              | Stem schijven                                  | Yes         |
+| FRA1, FRA2                                | Schijven voor snel herstel gebied                      | Yes         |
 
 ![Schijf configuratie van de virtuele Oracle-machine](media/oracle-vmdk.png)
 

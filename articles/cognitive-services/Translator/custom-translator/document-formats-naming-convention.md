@@ -10,10 +10,10 @@ ms.date: 08/17/2020
 ms.author: lajanuar
 ms.topic: conceptual
 ms.openlocfilehash: 9598d3c1d339d1c37b02892cc83164acae447434
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "98895846"
 ---
 # <a name="document-formats-and-naming-convention-guidance"></a>Richt lijnen voor document indelingen en naamgevings regels
@@ -22,7 +22,7 @@ Elk bestand dat wordt gebruikt voor aangepaste vertaling moet ten minste **vier*
 
 Deze tabel bevat alle ondersteunde bestands indelingen die u kunt gebruiken om uw Vertaal systeem te bouwen:
 
-| Indeling            | Uitbreidingen   | Beschrijving                                                                                                                                                                                                                                                                    |
+| Indeling            | Uitbreidingen   | Description                                                                                                                                                                                                                                                                    |
 |-------------------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | XLIFF             | . XLF, . XLIFF | Een parallelle document indeling, export van Vertaal geheugen systemen. De gebruikte talen worden in het bestand gedefinieerd.                                                                                                                                                              |
 | TMX               | . TMX         | Een parallelle document indeling, export van Vertaal geheugen systemen. De gebruikte talen worden in het bestand gedefinieerd.                                                                                                                                                              |

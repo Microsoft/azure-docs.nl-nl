@@ -7,10 +7,10 @@ ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 03/01/2017
 ms.openlocfilehash: 8fb60e62a63bfc4562f19d483dc84c99c37676b0
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92215532"
 ---
 # <a name="run-and-test-u-sql-with-azure-data-lake-u-sql-sdk"></a>U-SQL uitvoeren en testen met Azure Data Lake U-SQL SDK
@@ -172,7 +172,7 @@ LocalRunHelper compile -Script path_to_usql_script.usql [optional_arguments]
 
 Hier volgen enkele optionele argumenten voor **compileren**:
 
-|Argument|Beschrijving|
+|Argument|Description|
 |--------|-----------|
 | -CodeBehind [standaard waarde ' false ']|Het script heeft. cs-code achter|
 | -CppSDK [standaard waarde]|CppSDK Directory|
@@ -330,13 +330,13 @@ LocalRunHelper.exe biedt de programmeer interfaces voor lokale U-SQL-compilatie,
 
 open bare LocalRunHelper ([System. IO. TextWriter messageOutput = NULL])
 
-|Parameter|Type|Beschrijving|
+|Parameter|Type|Description|
 |---------|----|-----------|
 |messageOutput|System. IO. TextWriter|Stel voor uitvoer berichten in op NULL om console te gebruiken|
 
 ### <a name="properties"></a>Eigenschappen
 
-|Eigenschap|Type|Beschrijving|
+|Eigenschap|Type|Description|
 |--------|----|-----------|
 |AlgebraPath|tekenreeks|Het pad naar het algebra-bestand (algebra-bestand is een van de compilatie resultaten)|
 |CodeBehindReferences|tekenreeks|Als het script extra code achter verwijzingen bevat, geeft u de paden op, gescheiden door|

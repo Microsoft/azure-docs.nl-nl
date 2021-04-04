@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 5dd1f157984cdb300cc3b375d71654e5da54d1ae
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97898127"
 ---
 # <a name="set-up-cloudsimple-private-cloud-as-a-disaster-recovery-site-for-on-premises-vmware-workloads"></a>CloudSimple Private Cloud instellen als een nood herstel site voor on-premises VMware-workloads
@@ -93,6 +93,6 @@ Als u virtuele Zerto-replicatie van uw on-premises omgeving naar uw Privécloud 
 6. Pas zo nodig de netwerk instellingen voor afzonderlijke Vm's aan en maak de VPG.
 7. Testfailover wanneer de replicatie is voltooid.
 
-## <a name="reference"></a>Naslaginformatie
+## <a name="reference"></a>Referentie
 
 [Documentatie voor Zerto](https://www.zerto.com/myzerto/technical-documentation/)

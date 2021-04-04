@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 12/05/2018
 ms.author: alkohli
 ms.openlocfilehash: f59d1e297ba4d7607d7abd07a78da4784f55d20f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96023224"
 ---
 # <a name="data-transfer-for-small-datasets-with-low-to-moderate-network-bandwidth"></a>Gegevensoverdracht voor kleine gegevenssets met weinig tot gemiddelde netwerkbandbreedte
@@ -55,9 +55,9 @@ In de volgende tabel worden de verschillen tussen de belangrijkste mogelijkheden
 | Grafische interface | Ja | Ja | Nee | Nee |
 | Ondersteunde platforms | Windows, Mac, Linux | Op internet gebaseerde |Windows, Mac, Linux |Alle platforms |
 | Toegestane bewerkingen voor Blob-opslag<br>voor blobs en mappen | Uploaden<br>Downloaden<br>Beheren | Uploaden<br>Downloaden<br>Beheren |Uploaden<br>Downloaden<br>Beheren | Ja, aanpasbaar |
-| Data Lake gen1-opslag toegestaan<br>bewerkingen voor bestanden en mappen | Uploaden<br>Downloaden<br>Beheren | Nee |Uploaden<br>Downloaden<br>Beheren                   | Nee |
+| Data Lake gen1-opslag toegestaan<br>bewerkingen voor bestanden en mappen | Uploaden<br>Downloaden<br>Beheren | No |Uploaden<br>Downloaden<br>Beheren                   | No |
 | Toegestane bewerkingen voor bestands opslag<br>voor bestanden en mappen | Uploaden<br>Downloaden<br>Beheren | Uploaden<br>Downloaden<br>Beheren   |Uploaden<br>Downloaden<br>Beheren | Ja, aanpasbaar |
-| Toegestane bewerkingen voor tabel opslag<br>voor tabellen |Beheren | Nee |Tabel ondersteuning in AzCopy V7 |Ja, aanpasbaar|
+| Toegestane bewerkingen voor tabel opslag<br>voor tabellen |Beheren | No |Tabel ondersteuning in AzCopy V7 |Ja, aanpasbaar|
 | Toegestane wachtrij opslag | Beheren | Nee  |Nee | Ja, is aanpasbaar|
 
 

@@ -4,16 +4,16 @@ description: Analyseer verschillen en overeenkomsten tussen twee typen wacht rij
 ms.topic: article
 ms.date: 11/04/2020
 ms.openlocfilehash: 31992aa2012009c51cbeae78010ae8ced65fc872
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96928304"
 ---
 # <a name="storage-queues-and-service-bus-queues---compared-and-contrasted"></a>Storage Queues and Service Bus Queues - Compared and Contrasted (Storage-wachtrijen en Service Bus-wachtrijen: overeenkomsten en verschillen)
 In dit artikel worden de verschillen en overeenkomsten geanalyseerd tussen de twee typen wacht rijen die worden aangeboden door Microsoft Azure: opslag wachtrijen en Service Bus wacht rijen. Met behulp van deze informatie kunt u een beter gefundeerde beslissing nemen over welke oplossing het beste aan uw behoeften voldoet.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 Azure ondersteunt twee typen wachtrij mechanismen: **opslag wachtrijen** en **wacht rijen voor service bus**.
 
 **Opslag wachtrijen** maken deel uit van de [Azure Storage](https://azure.microsoft.com/services/storage/) -infra structuur. Ze bieden u de mogelijkheid om grote aantallen berichten op te slaan. U hebt overal ter wereld toegang tot berichten via geverifieerde oproepen met HTTP of HTTPS. Een wachtrijbericht kan maximaal 64 KB groot zijn. Een wachtrij kan miljoenen berichten bevatten, tot aan de totale capaciteitslimiet van een opslagaccount. Wachtrijen worden vaak gebruikt om een voorraad werk te maken dat asynchroon moet worden verwerkt. Zie [Wat zijn Azure Storage wachtrijen](../storage/queues/storage-queues-introduction.md)voor meer informatie.

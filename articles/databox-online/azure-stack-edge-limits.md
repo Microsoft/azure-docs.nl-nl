@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 10/12/2020
 ms.author: alkohli
 ms.openlocfilehash: f1bb5662b48765c08ec58d1f7fa9d341de4937bc
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "91992759"
 ---
 # <a name="azure-stack-edge-pro-limits"></a>Limieten voor Azure Stack Edge Pro R
@@ -29,7 +29,7 @@ In de volgende tabel worden de limieten voor het Azure Stack Edge Pro-apparaat b
 
 In de volgende tabel worden de limieten voor het Azure Stack edge-apparaat beschreven.
 
-| Beschrijving | Waarde |
+| Description | Waarde |
 |---|---|
 |Nee. bestanden per apparaat |100.000.000 |
 |Nee. van shares per container |1 |

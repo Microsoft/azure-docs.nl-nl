@@ -17,10 +17,10 @@ ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4122e645b76751e8944704a6405cf5dee09129f1
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97932432"
 ---
 # <a name="planning-azure-active-directory-access-reviews-deployment"></a>Implementatie van Azure Active Directory Access beoordelingen plannen
@@ -419,7 +419,7 @@ Nadat u een strategie en een plan hebt opgesteld om de toegang te controleren vo
 
 Om het risico van verouderde toegang te verminderen, kunnen beheerders periodieke beoordelingen inschakelen van gebruikers die actieve toewijzingen aan een toegangs pakket hebben. Volg de instructies in de onderstaande koppeling:
 
-| Artikelen met procedures| Beschrijving |
+| Artikelen met procedures| Description |
 | - | - |
 | [Toegangs beoordelingen maken](entitlement-management-access-reviews-create.md)| Evaluatie van het toegangs pakket inschakelen. |
 | [Toegangs beoordelingen uitvoeren](entitlement-management-access-reviews-review-access.md)| Toegangs beoordelingen uitvoeren voor andere gebruikers die zijn toegewezen aan een toegangs pakket. |
@@ -433,7 +433,7 @@ Om het risico van verouderde toegang te verminderen, kunnen beheerders periodiek
 
 De toegang tot groepen en toepassingen voor werk nemers en gasten is waarschijnlijk in de loop van de tijd gewijzigd. Om het risico te verminderen dat is gekoppeld aan verouderde toegangs toewijzingen, kunnen beheerders toegangs Beoordelingen voor groeps leden of toepassings toegang maken. Volg de instructies in de onderstaande koppeling:
 
-| Artikelen met procedures| Beschrijving |
+| Artikelen met procedures| Description |
 | - | - |
 | [Toegangs beoordelingen maken](create-access-review.md)| Maak een of meer toegangs Beoordelingen voor groeps leden of toegang tot toepassingen. |
 | [Toegangs beoordelingen uitvoeren](perform-access-review.md)| Voer een toegangs beoordeling uit voor leden van een groep of gebruikers met toegang tot een toepassing. |
@@ -450,7 +450,7 @@ Om het risico te verminderen dat is gekoppeld aan verouderde roltoewijzingen, mo
 
 Volg de instructies via de onderstaande links:
 
-| Artikelen met procedures | Beschrijving |
+| Artikelen met procedures | Description |
 | - | - |
  [Toegangs beoordelingen maken](../privileged-identity-management/pim-how-to-start-security-review.md?toc=%2fazure%2factive-directory%2fgovernance%2ftoc.json)| Toegangs beoordelingen maken voor beschermde Azure AD-rollen in PIM |
 | [Zelf uw toegang controleren](../privileged-identity-management/pim-how-to-perform-security-review.md?toc=%2fazure%2factive-directory%2fgovernance%2ftoc.json)| Als u bent toegewezen aan een beheerdersrol, de toegang tot uw rol goedkeurt of weigert |
@@ -465,7 +465,7 @@ Om het risico te verminderen dat is gekoppeld aan verouderde roltoewijzingen, mo
 
 Volg de instructies via de onderstaande links:
 
-| Artikelen met procedures| Beschrijving |
+| Artikelen met procedures| Description |
 | - | -|
 | [Toegangs beoordelingen maken](../privileged-identity-management/pim-resource-roles-start-access-review.md?toc=%2fazure%2factive-directory%2fgovernance%2ftoc.json)| Toegangs beoordelingen maken voor beschermde Azure-resource rollen in PIM |
 | [Zelf uw toegang controleren](../privileged-identity-management/pim-resource-roles-perform-access-review.md?toc=%2fazure%2factive-directory%2fgovernance%2ftoc.json)| Als u bent toegewezen aan een beheerdersrol, de toegang tot uw rol goedkeurt of weigert |

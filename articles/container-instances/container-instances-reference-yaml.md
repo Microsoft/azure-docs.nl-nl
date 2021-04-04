@@ -4,10 +4,10 @@ description: Verwijzing voor het YAML-bestand dat wordt ondersteund door Azure C
 ms.topic: article
 ms.date: 07/06/2020
 ms.openlocfilehash: d0ec8d13eebba1c60f5a52f8c43bdd8b90eeb913
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "87084757"
 ---
 # <a name="yaml-reference-azure-container-instances"></a>YAML-verwijzing: Azure Container Instances
@@ -158,12 +158,12 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  naam | tekenreeks | Ja | De naam van de container groep. |
-|  apiVersion | vaste | Ja | 2018-10-01 |
+|  naam | tekenreeks | Yes | De naam van de container groep. |
+|  apiVersion | vaste | Yes | 2018-10-01 |
 |  location | tekenreeks | No | De resource locatie. |
-|  tags | object | Nee | De resource Tags. |
-|  identity | object | Nee | De identiteit van de container groep, indien geconfigureerd. - [ContainerGroupIdentity-object](#containergroupidentity-object) |
-|  properties | object | Ja | [ContainerGroupProperties-object](#containergroupproperties-object) |
+|  tags | object | No | De resource Tags. |
+|  identity | object | No | De identiteit van de container groep, indien geconfigureerd. - [ContainerGroupIdentity-object](#containergroupidentity-object) |
+|  properties | object | Yes | [ContainerGroupProperties-object](#containergroupproperties-object) |
 
 
 
@@ -172,8 +172,8 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  type | vaste | Nee | Het type identiteit dat voor de container groep wordt gebruikt. Het type ' SystemAssigned, UserAssigned ' bevat zowel een impliciet gemaakte identiteit als een set door de gebruiker toegewezen identiteiten. Met het type geen worden identiteiten uit de container groep verwijderd. -SystemAssigned, UserAssigned, SystemAssigned, UserAssigned, geen |
-|  userAssignedIdentities | object | Nee | De lijst met gebruikers-id's die zijn gekoppeld aan de container groep. De sleutel verwijzingen van de gebruikers-id-woorden lijst worden Azure Resource Manager bron-Id's in de vorm: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName} '. |
+|  type | vaste | No | Het type identiteit dat voor de container groep wordt gebruikt. Het type ' SystemAssigned, UserAssigned ' bevat zowel een impliciet gemaakte identiteit als een set door de gebruiker toegewezen identiteiten. Met het type geen worden identiteiten uit de container groep verwijderd. -SystemAssigned, UserAssigned, SystemAssigned, UserAssigned, geen |
+|  userAssignedIdentities | object | No | De lijst met gebruikers-id's die zijn gekoppeld aan de container groep. De sleutel verwijzingen van de gebruikers-id-woorden lijst worden Azure Resource Manager bron-Id's in de vorm: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName} '. |
 
 
 
@@ -182,18 +182,18 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  containers | matrix | Ja | De containers in de container groep. - [Container object](#container-object) |
-|  imageRegistryCredentials | matrix | Nee | De register referenties voor de installatie kopie waarmee de container groep wordt gemaakt. - [ImageRegistryCredential-object](#imageregistrycredential-object) |
-|  restartPolicy | vaste | Nee | Start het beleid voor alle containers binnen de container groep opnieuw. - `Always` Altijd opnieuw opstarten opnieuw opstarten `OnFailure` bij fout- `Never` nooit opnieuw opstarten. -Always, OnFailure, Never |
-|  IPAdres | object | Nee | Het IP-adres type van de container groep. - [IpAddress-object](#ipaddress-object) |
-|  osType | vaste | Ja | Het type besturings systeem dat vereist is voor de containers in de container groep. -Windows of Linux |
-|  volumes | matrix | Nee | De lijst met volumes die kunnen worden gekoppeld door containers in deze container groep. - [Volume object](#volume-object) |
-|  diagnostische gegevens | object | Nee | De diagnostische gegevens voor een container groep. - [ContainerGroupDiagnostics-object](#containergroupdiagnostics-object) |
-|  networkProfile | object | Nee | De netwerk profiel gegevens voor een container groep. - [ContainerGroupNetworkProfile-object](#containergroupnetworkprofile-object) |
-|  dnsConfig | object | Nee | De DNS-configuratie-informatie voor een container groep. - [DnsConfiguration-object](#dnsconfiguration-object) |
-| sku | vaste | Nee | De SKU voor een container groep: Standard of dedicated |
-| encryptionProperties | object | Nee | De versleutelings eigenschappen voor een container groep. - [EncryptionProperties-object](#encryptionproperties-object) | 
-| initContainers | matrix | Nee | De init-containers voor een container groep. - [InitContainerDefinition-object](#initcontainerdefinition-object) |
+|  containers | matrix | Yes | De containers in de container groep. - [Container object](#container-object) |
+|  imageRegistryCredentials | matrix | No | De register referenties voor de installatie kopie waarmee de container groep wordt gemaakt. - [ImageRegistryCredential-object](#imageregistrycredential-object) |
+|  restartPolicy | vaste | No | Start het beleid voor alle containers binnen de container groep opnieuw. - `Always` Altijd opnieuw opstarten opnieuw opstarten `OnFailure` bij fout- `Never` nooit opnieuw opstarten. -Always, OnFailure, Never |
+|  IPAdres | object | No | Het IP-adres type van de container groep. - [IpAddress-object](#ipaddress-object) |
+|  osType | vaste | Yes | Het type besturings systeem dat vereist is voor de containers in de container groep. -Windows of Linux |
+|  volumes | matrix | No | De lijst met volumes die kunnen worden gekoppeld door containers in deze container groep. - [Volume object](#volume-object) |
+|  diagnostische gegevens | object | No | De diagnostische gegevens voor een container groep. - [ContainerGroupDiagnostics-object](#containergroupdiagnostics-object) |
+|  networkProfile | object | No | De netwerk profiel gegevens voor een container groep. - [ContainerGroupNetworkProfile-object](#containergroupnetworkprofile-object) |
+|  dnsConfig | object | No | De DNS-configuratie-informatie voor een container groep. - [DnsConfiguration-object](#dnsconfiguration-object) |
+| sku | vaste | No | De SKU voor een container groep: Standard of dedicated |
+| encryptionProperties | object | No | De versleutelings eigenschappen voor een container groep. - [EncryptionProperties-object](#encryptionproperties-object) | 
+| initContainers | matrix | No | De init-containers voor een container groep. - [InitContainerDefinition-object](#initcontainerdefinition-object) |
 
 
 
@@ -202,8 +202,8 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  naam | tekenreeks | Ja | De door de gebruiker gegeven naam van het container exemplaar. |
-|  properties | object | Ja | De eigenschappen van het container exemplaar. - [ContainerProperties-object](#containerproperties-object) |
+|  naam | tekenreeks | Yes | De door de gebruiker gegeven naam van het container exemplaar. |
+|  properties | object | Yes | De eigenschappen van het container exemplaar. - [ContainerProperties-object](#containerproperties-object) |
 
 
 
@@ -212,8 +212,8 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  server | tekenreeks | Ja | De register server van de docker-installatie kopie zonder een protocol zoals http en HTTPS. |
-|  gebruikersnaam | tekenreeks | Ja | De gebruikers naam voor het persoonlijke REGI ster. |
+|  server | tekenreeks | Yes | De register server van de docker-installatie kopie zonder een protocol zoals http en HTTPS. |
+|  gebruikersnaam | tekenreeks | Yes | De gebruikers naam voor het persoonlijke REGI ster. |
 |  wachtwoord | tekenreeks | No | Het wacht woord voor het persoonlijke REGI ster. |
 
 
@@ -223,8 +223,8 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  ports | matrix | Ja | De lijst met poorten die worden weer gegeven in de container groep. - [Poort object](#port-object) |
-|  type | vaste | Ja | Hiermee geeft u op of het IP-adres beschikbaar is voor het open bare Internet of het persoonlijke VNET. -Openbaar of privé |
+|  ports | matrix | Yes | De lijst met poorten die worden weer gegeven in de container groep. - [Poort object](#port-object) |
+|  type | vaste | Yes | Hiermee geeft u op of het IP-adres beschikbaar is voor het open bare Internet of het persoonlijke VNET. -Openbaar of privé |
 |  IP | tekenreeks | No | Het IP-adres dat toegankelijk is voor het open bare Internet. |
 |  dnsNameLabel | tekenreeks | No | Het DNS-naam label voor het IP-adres. |
 
@@ -235,11 +235,11 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  naam | tekenreeks | Ja | De naam van het volume. |
-|  azureFile | object | Nee | Het Azure-bestands volume. - [AzureFileVolume-object](#azurefilevolume-object) |
-|  emptyDir | object | Nee | Het lege directory volume. |
-|  geheim | object | Nee | Het geheime volume. |
-|  gitRepo | object | Nee | Het git opslag plaats-volume. - [GitRepoVolume-object](#gitrepovolume-object) |
+|  naam | tekenreeks | Yes | De naam van het volume. |
+|  azureFile | object | No | Het Azure-bestands volume. - [AzureFileVolume-object](#azurefilevolume-object) |
+|  emptyDir | object | No | Het lege directory volume. |
+|  geheim | object | No | Het geheime volume. |
+|  gitRepo | object | No | Het git opslag plaats-volume. - [GitRepoVolume-object](#gitrepovolume-object) |
 
 
 
@@ -248,7 +248,7 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  logAnalytics | object | Nee | Informatie over logboek analyse van container groep. - [LogAnalytics-object](#loganalytics-object) |
+|  logAnalytics | object | No | Informatie over logboek analyse van container groep. - [LogAnalytics-object](#loganalytics-object) |
 
 
 
@@ -257,7 +257,7 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  id | tekenreeks | Ja | De id voor een netwerk profiel. |
+|  id | tekenreeks | Yes | De id voor een netwerk profiel. |
 
 
 
@@ -266,7 +266,7 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  Naam servers | matrix | Ja | De DNS-servers voor de container groep. -teken reeks |
+|  Naam servers | matrix | Yes | De DNS-servers voor de container groep. -teken reeks |
 |  searchDomains | tekenreeks | No | De DNS-Zoek domeinen voor het opzoeken van hostnamen in de container groep. |
 |  opties | tekenreeks | No | De DNS-opties voor de container groep. |
 
@@ -275,30 +275,30 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 | Naam  | Type  | Vereist  | Waarde |
 |  ---- | ---- | ---- | ---- |
-| vaultBaseUrl  | tekenreeks    | Ja   | De basis-URL van de sleutel kluis. |
-| keyName   | tekenreeks    | Ja   | De naam van de versleutelings sleutel. |
-| Versie    | tekenreeks    | Ja   | De versie van de versleutelings sleutel. |
+| vaultBaseUrl  | tekenreeks    | Yes   | De basis-URL van de sleutel kluis. |
+| keyName   | tekenreeks    | Yes   | De naam van de versleutelings sleutel. |
+| Versie    | tekenreeks    | Yes   | De versie van de versleutelings sleutel. |
 
 ### <a name="initcontainerdefinition-object"></a>InitContainerDefinition-object
 
 | Naam  | Type  | Vereist  | Waarde |
 |  ---- | ---- | ---- | ---- |
-| naam  | tekenreeks |  Ja | De naam voor de init-container. |
-| properties    | object    | Ja   | De eigenschappen voor de init-container. - [InitContainerPropertiesDefinition-object](#initcontainerpropertiesdefinition-object)
+| naam  | tekenreeks |  Yes | De naam voor de init-container. |
+| properties    | object    | Yes   | De eigenschappen voor de init-container. - [InitContainerPropertiesDefinition-object](#initcontainerpropertiesdefinition-object)
 
 
 ### <a name="containerproperties-object"></a>ContainerProperties-object
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  image | tekenreeks | Ja | De naam van de installatie kopie die wordt gebruikt om het container exemplaar te maken. |
-|  command | matrix | Nee | De opdrachten die moeten worden uitgevoerd binnen het container exemplaar in het formulier exec. -teken reeks |
-|  ports | matrix | Nee | De weer gegeven poorten op het container exemplaar. - [ContainerPort-object](#containerport-object) |
-|  Omgevings variabelen | matrix | Nee | De omgevings variabelen die in het container exemplaar moeten worden ingesteld. - [EnvironmentVariable-object](#environmentvariable-object) |
-|  resources | object | Ja | De resource vereisten van het container exemplaar. - [ResourceRequirements-object](#resourcerequirements-object) |
-|  volumeMounts | matrix | Nee | Het volume koppelt beschikbaar voor het container exemplaar. - [VolumeMount-object](#volumemount-object) |
-|  livenessProbe | object | Nee | De duur van de liveiteit. - [ContainerProbe-object](#containerprobe-object) |
-|  readinessProbe | object | Nee | De gereedheids test. - [ContainerProbe-object](#containerprobe-object) |
+|  image | tekenreeks | Yes | De naam van de installatie kopie die wordt gebruikt om het container exemplaar te maken. |
+|  command | matrix | No | De opdrachten die moeten worden uitgevoerd binnen het container exemplaar in het formulier exec. -teken reeks |
+|  ports | matrix | No | De weer gegeven poorten op het container exemplaar. - [ContainerPort-object](#containerport-object) |
+|  Omgevings variabelen | matrix | No | De omgevings variabelen die in het container exemplaar moeten worden ingesteld. - [EnvironmentVariable-object](#environmentvariable-object) |
+|  resources | object | Yes | De resource vereisten van het container exemplaar. - [ResourceRequirements-object](#resourcerequirements-object) |
+|  volumeMounts | matrix | No | Het volume koppelt beschikbaar voor het container exemplaar. - [VolumeMount-object](#volumemount-object) |
+|  livenessProbe | object | No | De duur van de liveiteit. - [ContainerProbe-object](#containerprobe-object) |
+|  readinessProbe | object | No | De gereedheids test. - [ContainerProbe-object](#containerprobe-object) |
 
 
 
@@ -307,8 +307,8 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  protocol | vaste | Nee | Het protocol dat is gekoppeld aan de poort. -TCP of UDP |
-|  poort | geheel getal | Ja | het poortnummer. |
+|  protocol | vaste | No | Het protocol dat is gekoppeld aan de poort. -TCP of UDP |
+|  poort | geheel getal | Yes | het poortnummer. |
 
 
 
@@ -317,9 +317,9 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  shareName | tekenreeks | Ja | De naam van de Azure-bestands share die moet worden gekoppeld als een volume. |
-|  Kenmerk | booleaans | Nee | De vlag waarmee wordt aangegeven of het Azure-bestand dat als een volume is gedeeld, alleen-lezen is. |
-|  storageAccountName | tekenreeks | Ja | De naam van het opslag account dat de Azure-bestands share bevat. |
+|  shareName | tekenreeks | Yes | De naam van de Azure-bestands share die moet worden gekoppeld als een volume. |
+|  Kenmerk | booleaans | No | De vlag waarmee wordt aangegeven of het Azure-bestand dat als een volume is gedeeld, alleen-lezen is. |
+|  storageAccountName | tekenreeks | Yes | De naam van het opslag account dat de Azure-bestands share bevat. |
 |  storageAccountKey | tekenreeks | No | De toegangs sleutel voor het opslag account die wordt gebruikt om toegang te krijgen tot de Azure-bestands share. |
 
 
@@ -330,7 +330,7 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
 |  map | tekenreeks | No | Naam van de doel directory. Mag niet bevatten of beginnen met...  Als '. ' is opgegeven, wordt de map van het volume de Git-opslag plaats.  Als dat niet het geval is, bevat het volume de Git-opslag plaats in de submap met de opgegeven naam. |
-|  repository | tekenreeks | Ja | URL van opslag plaats |
+|  repository | tekenreeks | Yes | URL van opslag plaats |
 |  revision | tekenreeks | No | Hash voor de opgegeven revisie door voeren. |
 
 
@@ -339,10 +339,10 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  workspaceId | tekenreeks | Ja | De werk ruimte-id voor log Analytics |
-|  workspaceKey | tekenreeks | Ja | De werkruimte sleutel voor log Analytics |
-|  logType | vaste | Nee | Het logboek type dat moet worden gebruikt. -ContainerInsights of ContainerInstanceLogs |
-|  metagegevens | object | Nee | Meta gegevens voor log Analytics. |
+|  workspaceId | tekenreeks | Yes | De werk ruimte-id voor log Analytics |
+|  workspaceKey | tekenreeks | Yes | De werkruimte sleutel voor log Analytics |
+|  logType | vaste | No | Het logboek type dat moet worden gebruikt. -ContainerInsights of ContainerInstanceLogs |
+|  metagegevens | object | No | Meta gegevens voor log Analytics. |
 
 
 ### <a name="initcontainerpropertiesdefinition-object"></a>InitContainerPropertiesDefinition-object
@@ -350,16 +350,16 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 | Naam  | Type  | Vereist  | Waarde |
 |  ---- | ---- | ---- | ---- |
 | image | tekenreeks    | No    | De afbeelding van de init-container. |
-| command   | matrix | Nee    | De opdracht die moet worden uitgevoerd binnen de init-container in het formulier exec. -teken reeks |
-| Omgevings variabelen | matrix  | Nee |De omgevings variabelen die moeten worden ingesteld in de init-container. - [EnvironmentVariable-object](#environmentvariable-object)
-| volumeMounts |matrix   | Nee    | Het volume koppelt beschikbaar voor de init-container. - [VolumeMount-object](#volumemount-object)
+| command   | matrix | No    | De opdracht die moet worden uitgevoerd binnen de init-container in het formulier exec. -teken reeks |
+| Omgevings variabelen | matrix  | No |De omgevings variabelen die moeten worden ingesteld in de init-container. - [EnvironmentVariable-object](#environmentvariable-object)
+| volumeMounts |matrix   | No    | Het volume koppelt beschikbaar voor de init-container. - [VolumeMount-object](#volumemount-object)
 
 ### <a name="containerport-object"></a>ContainerPort-object
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  protocol | vaste | Nee | Het protocol dat is gekoppeld aan de poort. -TCP of UDP |
-|  poort | geheel getal | Ja | Het poort nummer dat wordt weer gegeven in de container groep. |
+|  protocol | vaste | No | Het protocol dat is gekoppeld aan de poort. -TCP of UDP |
+|  poort | geheel getal | Yes | Het poort nummer dat wordt weer gegeven in de container groep. |
 
 
 
@@ -368,7 +368,7 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  naam | tekenreeks | Ja | De naam van de omgevings variabele. |
+|  naam | tekenreeks | Yes | De naam van de omgevings variabele. |
 |  waarde | tekenreeks | No | De waarde van de omgevings variabele. |
 |  Securevalue op | tekenreeks | No | De waarde van de variabele beveiligde omgeving. |
 
@@ -379,8 +379,8 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  requests | object | Ja | De resource aanvragen van dit container exemplaar. - [ResourceRequests-object](#resourcerequests-object) |
-|  limieten | object | Nee | De resource limieten van dit container exemplaar. - [ResourceLimits-object](#resourcelimits-object) |
+|  requests | object | Yes | De resource aanvragen van dit container exemplaar. - [ResourceRequests-object](#resourcerequests-object) |
+|  limieten | object | No | De resource limieten van dit container exemplaar. - [ResourceLimits-object](#resourcelimits-object) |
 
 
 
@@ -389,9 +389,9 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  naam | tekenreeks | Ja | De naam van het volume koppeling. |
-|  mountPath | tekenreeks | Ja | Het pad binnen de container waarin het volume moet worden gekoppeld. Mag geen dubbele punt (:)) bevatten. |
-|  Kenmerk | booleaans | Nee | De vlag waarmee wordt aangegeven of de koppeling van het volume alleen-lezen is. |
+|  naam | tekenreeks | Yes | De naam van het volume koppeling. |
+|  mountPath | tekenreeks | Yes | Het pad binnen de container waarin het volume moet worden gekoppeld. Mag geen dubbele punt (:)) bevatten. |
+|  Kenmerk | booleaans | No | De vlag waarmee wordt aangegeven of de koppeling van het volume alleen-lezen is. |
 
 
 
@@ -400,13 +400,13 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  exec | object | Nee | De opdracht uitvoeren om te testen- [ContainerExec-object](#containerexec-object) |
-|  httpGet | object | Nee | De HTTP Get-instellingen voor het probe- [ContainerHttpGet-object](#containerhttpget-object) |
-|  initialDelaySeconds | geheel getal | Nee | De eerste vertraging in seconden. |
-|  periodSeconds | geheel getal | Nee | De periode seconden. |
-|  failureThreshold | geheel getal | Nee | De drempel waarde voor fouten. |
-|  successThreshold | geheel getal | Nee | De drempel waarde voor geslaagde pogingen. |
-|  timeoutSeconds | geheel getal | Nee | De time-outwaarde seconden. |
+|  exec | object | No | De opdracht uitvoeren om te testen- [ContainerExec-object](#containerexec-object) |
+|  httpGet | object | No | De HTTP Get-instellingen voor het probe- [ContainerHttpGet-object](#containerhttpget-object) |
+|  initialDelaySeconds | geheel getal | No | De eerste vertraging in seconden. |
+|  periodSeconds | geheel getal | No | De periode seconden. |
+|  failureThreshold | geheel getal | No | De drempel waarde voor fouten. |
+|  successThreshold | geheel getal | No | De drempel waarde voor geslaagde pogingen. |
+|  timeoutSeconds | geheel getal | No | De time-outwaarde seconden. |
 
 
 
@@ -415,9 +415,9 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  memoryInGB | getal | Ja | De geheugen aanvraag in GB van dit container exemplaar. |
-|  verbruik | getal | Ja | De CPU-aanvraag van dit container exemplaar. |
-|  GPU | object | Nee | De GPU-aanvraag van dit container exemplaar. - [GpuResource-object](#gpuresource-object) |
+|  memoryInGB | getal | Yes | De geheugen aanvraag in GB van dit container exemplaar. |
+|  verbruik | getal | Yes | De CPU-aanvraag van dit container exemplaar. |
+|  GPU | object | No | De GPU-aanvraag van dit container exemplaar. - [GpuResource-object](#gpuresource-object) |
 
 
 
@@ -426,9 +426,9 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  memoryInGB | getal | Nee | De geheugen limiet in GB van dit container exemplaar. |
-|  verbruik | getal | Nee | De CPU-limiet van dit container exemplaar. |
-|  GPU | object | Nee | De GPU-limiet van dit container exemplaar. - [GpuResource-object](#gpuresource-object) |
+|  memoryInGB | getal | No | De geheugen limiet in GB van dit container exemplaar. |
+|  verbruik | getal | No | De CPU-limiet van dit container exemplaar. |
+|  GPU | object | No | De GPU-limiet van dit container exemplaar. - [GpuResource-object](#gpuresource-object) |
 
 
 
@@ -437,7 +437,7 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  command | matrix | Nee | De opdrachten die moeten worden uitgevoerd in de container. -teken reeks |
+|  command | matrix | No | De opdrachten die moeten worden uitgevoerd in de container. -teken reeks |
 
 
 
@@ -447,8 +447,8 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
 |  leertraject | tekenreeks | No | Het pad dat moet worden getest. |
-|  poort | geheel getal | Ja | Het poort nummer dat moet worden getest. |
-|  niveaus | vaste | Nee | Het schema. -http of https |
+|  poort | geheel getal | Yes | Het poort nummer dat moet worden getest. |
+|  niveaus | vaste | No | Het schema. -http of https |
 
 
 
@@ -457,8 +457,8 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  count | geheel getal | Ja | Het aantal GPU-resources. |
-|  sku | vaste | Ja | De SKU van de GPU-resource. -K80, P100, V100 |
+|  count | geheel getal | Yes | Het aantal GPU-resources. |
+|  sku | vaste | Yes | De SKU van de GPU-resource. -K80, P100, V100 |
 
 
 ## <a name="next-steps"></a>Volgende stappen

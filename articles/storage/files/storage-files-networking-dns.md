@@ -8,10 +8,10 @@ ms.date: 3/19/2020
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 9abe306668a4b20e42e45c498bf85b540dfaaee5
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "94630189"
 ---
 # <a name="configuring-dns-forwarding-for-azure-files"></a>DNS doorsturen configureren voor Azure Files
@@ -110,7 +110,7 @@ New-AzDnsForwarder `
 
 Het kan ook nuttig/nood zakelijk zijn om verschillende extra para meters op te geven:
 
-| Parameternaam | Type | Beschrijving |
+| Parameternaam | Type | Description |
 |----------------|------|-------------|
 | `DnsServerResourceGroupName` | `string` | De DNS-servers worden standaard geïmplementeerd in dezelfde resource groep als het virtuele netwerk. Als dit niet gewenst is, kunt u met deze para meter een alternatieve resource groep kiezen die in moet worden geïmplementeerd. |
 | `DnsForwarderRootName` | `string` | De DNS-servers die in azure zijn geïmplementeerd, hebben standaard de namen `DnsFwder-*` , waarbij het sterretje door een iterator wordt gevuld. Met deze para meter wordt de hoofdmap van die naam (dat wil zeggen `DnsFwder` ) gewijzigd. |

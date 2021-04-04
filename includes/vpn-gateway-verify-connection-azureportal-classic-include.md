@@ -9,10 +9,10 @@ ms.date: 10/19/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: a0694003e2eb5005186f5c7ad450533437955d82
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92217923"
 ---
 U kunt de verbindingsstatus voor een klassieke VNet-VPN-gateway weergeven door in Azure Portal naar de verbinding te navigeren. De volgende stappen tonen één manier om te navigeren naar uw verbinding en deze te controleren.

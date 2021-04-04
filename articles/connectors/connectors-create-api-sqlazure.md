@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/07/2021
 tags: connectors
 ms.openlocfilehash: 75c657236b6e06a7e0f6c717d746bcc8c034d423
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98013444"
 ---
 # <a name="automate-workflows-for-a-sql-database-by-using-azure-logic-apps"></a>Werk stromen automatiseren voor een SQL database met behulp van Azure Logic Apps
@@ -74,7 +74,7 @@ De eerste keer dat u een SQL- [trigger](#add-sql-trigger) of [SQL-actie](#add-sq
 
 1. Selecteer bij **verificatie type** de verificatie die vereist is en is ingeschakeld in uw data base in Azure SQL database of Azure SQL Managed instance:
 
-   | Verificatie | Beschrijving |
+   | Verificatie | Description |
    |----------------|-------------|
    | [**Geïntegreerd met Azure AD**](../azure-sql/database/authentication-aad-overview.md) | -Ondersteunt zowel de niet-ISE als de ISE SQL Server-connector. <p><p>-Vereist een geldige identiteit in Azure Active Directory (Azure AD) die toegang heeft tot uw data base. <p>Raadpleeg de volgende onderwerpen voor meer informatie: <p>- [Overzicht van Azure SQL-beveiliging-verificatie](../azure-sql/database/security-overview.md#authentication) <br>- [Database toegang verlenen aan Azure SQL-verificatie en autorisatie](../azure-sql/database/logins-create-manage.md#authentication-and-authorization) <br>- [Azure SQL-geïntegreerde Azure AD-verificatie](../azure-sql/database/authentication-aad-overview.md) |
    | [**SQL Server-verificatie**](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication) | -Ondersteunt zowel de niet-ISE als de ISE SQL Server-connector. <p><p>-Vereist een geldige gebruikers naam en een sterk wacht woord die zijn gemaakt en opgeslagen in uw data base. <p>Raadpleeg de volgende onderwerpen voor meer informatie: <p>- [Overzicht van Azure SQL-beveiliging-verificatie](../azure-sql/database/security-overview.md#authentication) <br>- [Database toegang verlenen aan Azure SQL-verificatie en autorisatie](../azure-sql/database/logins-create-manage.md#authentication-and-authorization) |
@@ -91,8 +91,8 @@ De eerste keer dat u een SQL- [trigger](#add-sql-trigger) of [SQL-actie](#add-sq
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
    | **Servernaam** | Ja | Het adres voor uw SQL Server, bijvoorbeeld `Fabrikam-Azure-SQL.database.windows.net` |
-   | **Databasenaam** | Ja | De naam voor uw SQL database, bijvoorbeeld `Fabrikam-Azure-SQL-DB` |
-   | **Tabel naam** | Ja | De tabel die u wilt gebruiken, bijvoorbeeld `SalesLT.Customer` |
+   | **Databasenaam** | Yes | De naam voor uw SQL database, bijvoorbeeld `Fabrikam-Azure-SQL-DB` |
+   | **Tabel naam** | Yes | De tabel die u wilt gebruiken, bijvoorbeeld `SalesLT.Customer` |
    ||||
 
    > [!TIP]
@@ -123,7 +123,7 @@ De eerste keer dat u een SQL- [trigger](#add-sql-trigger) of [SQL-actie](#add-sq
 
 1. Selecteer bij **verificatie type** de verificatie die vereist is en is ingeschakeld op uw SQL Server:
 
-   | Verificatie | Beschrijving |
+   | Verificatie | Description |
    |----------------|-------------|
    | [**Windows-verificatie**](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-windows-authentication) | -Ondersteunt alleen de niet-ISE SQL Server-connector, waarvoor een gegevens gateway resource is vereist die eerder in azure voor uw verbinding is gemaakt, ongeacht of u gebruikmaakt van multi tenant Azure of een ISE. <p><p>-Vereist een geldige Windows-gebruikers naam en-wacht woord om uw identiteit te bevestigen via uw Windows-account. <p>Zie [Windows-verificatie](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-windows-authentication) voor meer informatie. |
    | [**SQL Server-verificatie**](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication) | -Ondersteunt zowel de niet-ISE als de ISE SQL Server-connector. <p><p>-Vereist een geldige gebruikers naam en een sterk wacht woord die zijn gemaakt en opgeslagen in uw SQL Server. <p>Zie [SQL Server-verificatie](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication)voor meer informatie. |
@@ -137,10 +137,10 @@ De eerste keer dat u een SQL- [trigger](#add-sql-trigger) of [SQL-actie](#add-sq
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **SQL Server-naam** | Ja | Het adres voor uw SQL Server, bijvoorbeeld `Fabrikam-Azure-SQL.database.windows.net` |
-   | **SQL-databasenaam** | Ja | De naam voor uw SQL Server-Data Base, bijvoorbeeld `Fabrikam-Azure-SQL-DB` |
-   | **Gebruikersnaam** | Ja | Uw gebruikers naam voor de SQL-Server en-data base |
-   | **Wachtwoord** | Ja | Uw wacht woord voor de SQL-Server en-data base |
+   | **SQL Server-naam** | Yes | Het adres voor uw SQL Server, bijvoorbeeld `Fabrikam-Azure-SQL.database.windows.net` |
+   | **SQL-databasenaam** | Yes | De naam voor uw SQL Server-Data Base, bijvoorbeeld `Fabrikam-Azure-SQL-DB` |
+   | **Gebruikersnaam** | Yes | Uw gebruikers naam voor de SQL-Server en-data base |
+   | **Wachtwoord** | Yes | Uw wacht woord voor de SQL-Server en-data base |
    | **Abonnement** |  Ja, voor Windows-verificatie | Het Azure-abonnement voor de gegevens gateway resource die u eerder hebt gemaakt in azure |
    | **Verbindings gateway** | Ja, voor Windows-verificatie | De naam voor de gegevens gateway resource die u eerder hebt gemaakt in azure <p><p>**Tip**: als uw gateway niet in de lijst wordt weer gegeven, controleert u of u [uw gateway](../logic-apps/logic-apps-gateway-connection.md)correct hebt ingesteld. |
    |||

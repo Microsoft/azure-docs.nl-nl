@@ -13,15 +13,15 @@ ms.workload: na
 ms.date: 10/27/2016
 ms.author: duau
 ms.openlocfilehash: eaf50f3bdacaf5680bc5ecb1379faff20133b5ce
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98184370"
 ---
 # <a name="using-load-balancing-services-in-azure"></a>Taakverdelingsservices gebruiken in Azure
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Microsoft Azure biedt meerdere services voor het beheren van hoe netwerk verkeer wordt gedistribueerd en taak verdeling. U kunt deze services afzonderlijk gebruiken of hun methoden combi neren, afhankelijk van uw behoeften, om de optimale oplossing te bouwen.
 

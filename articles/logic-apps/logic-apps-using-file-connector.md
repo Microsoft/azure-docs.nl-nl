@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 10/08/2020
 ms.openlocfilehash: 4715d7173dd959d12350229e457717c908a83756
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "91873231"
 ---
 # <a name="connect-to-on-premises-file-systems-with-azure-logic-apps"></a>Verbinding maken met on-premises bestandssystemen met Azure Logic Apps
@@ -74,11 +74,11 @@ In dit artikel wordt uitgelegd hoe u verbinding kunt maken met een on-premises b
    | Eigenschap | Vereist | Waarde | Beschrijving |
    | -------- | -------- | ----- | ----------- |
    | **Verbindingsnaam** | Ja | <*verbindings naam*> | De naam die u voor de verbinding wilt hebben |
-   | **Hoofdmap** | Ja | <*root-mapnaam*> | De hoofdmap voor uw bestands systeem, bijvoorbeeld als u de on-premises gegevens gateway hebt geïnstalleerd, zoals een lokale map op de computer waarop de on-premises gegevens gateway is geïnstalleerd, of de map voor een netwerk share waartoe de computer toegang heeft. <p>Bijvoorbeeld: `\\PublicShare\\DropboxFiles` <p>De hoofdmap is de bovenliggende map, die wordt gebruikt voor relatieve paden voor alle bestand-gerelateerde acties. |
-   | **Verificatie type** | Nee | <*verificatie-type*> | Het type verificatie dat door het bestands systeem wordt gebruikt: **Windows** |
-   | **Gebruikersnaam** | Ja | < > \\ domein < *gebruikers naam*> <p>-of- <p><*lokale* > \\ computer < *gebruikers naam*> | De gebruikers naam voor de computer waarop u de map van het bestands systeem hebt. <p>Als uw bestandssysteem map zich op dezelfde computer bevindt als de on-premises gegevens gateway, kunt u <gebruikers naam van de *lokale computer* gebruiken > \\ < >. |
-   | **Wachtwoord** | Ja | <*uw-wacht woord*> | Het wacht woord voor de computer waarop u het bestands systeem hebt |
-   | **#b0** | Ja | <*geïnstalleerd-gateway naam*> | De naam voor de eerder geïnstalleerde gateway |
+   | **Hoofdmap** | Yes | <*root-mapnaam*> | De hoofdmap voor uw bestands systeem, bijvoorbeeld als u de on-premises gegevens gateway hebt geïnstalleerd, zoals een lokale map op de computer waarop de on-premises gegevens gateway is geïnstalleerd, of de map voor een netwerk share waartoe de computer toegang heeft. <p>Bijvoorbeeld: `\\PublicShare\\DropboxFiles` <p>De hoofdmap is de bovenliggende map, die wordt gebruikt voor relatieve paden voor alle bestand-gerelateerde acties. |
+   | **Verificatie type** | No | <*verificatie-type*> | Het type verificatie dat door het bestands systeem wordt gebruikt: **Windows** |
+   | **Gebruikersnaam** | Yes | < > \\ domein < *gebruikers naam*> <p>-of- <p><*lokale* > \\ computer < *gebruikers naam*> | De gebruikers naam voor de computer waarop u de map van het bestands systeem hebt. <p>Als uw bestandssysteem map zich op dezelfde computer bevindt als de on-premises gegevens gateway, kunt u <gebruikers naam van de *lokale computer* gebruiken > \\ < >. |
+   | **Wachtwoord** | Yes | <*uw-wacht woord*> | Het wacht woord voor de computer waarop u het bestands systeem hebt |
+   | **#b0** | Yes | <*geïnstalleerd-gateway naam*> | De naam voor de eerder geïnstalleerde gateway |
    |||||
 
 1. Wanneer u klaar bent, kiest u **Maken**.

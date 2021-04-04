@@ -4,10 +4,10 @@ description: Gebruik op rollen gebaseerd toegangs beheer voor Azure (Azure RBAC)
 ms.topic: article
 ms.date: 10/14/2020
 ms.openlocfilehash: 097ccf89caf63d2a504d072cf04c2b534a57a031
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92207951"
 ---
 # <a name="azure-container-registry-roles-and-permissions"></a>Rollen en machtigingen Azure Container Registry

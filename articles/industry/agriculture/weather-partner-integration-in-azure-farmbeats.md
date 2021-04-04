@@ -143,7 +143,7 @@ Als onderdeel van de taak moet het programma een/WeatherDataLocation maken op ba
 WeatherDataModel | Beschrijving |
 --- | ---
 Name  | De naam van het weer gegeven gegevens model. |
-Beschrijving  | Een duidelijke beschrijving van het model. |
+Description  | Een duidelijke beschrijving van het model. |
 Eigenschappen  | Aanvullende eigenschappen die zijn gedefinieerd door de gegevens provider. |
 > naam weatherMeasures  | De naam van de weer maat meting. Bijvoorbeeld humidity_max. |
 weatherMeasures > data type  | Dubbel of Enum. Als Enum, is measureEnumDefinition vereist. |
@@ -165,12 +165,12 @@ pipelineDetails > para meters > beschrijving | Beschrijving van de para meter. |
 Eigenschappen  | Aanvullende eigenschappen van de fabrikant.
 Eigenschappen > programRunCommand | Opdracht docker run. Deze opdracht wordt uitgevoerd wanneer de klant de weer taak uitvoert. |
 
-WeatherDataLocation | Beschrijving |
+WeatherDataLocation | Description |
 --- | ---
 weatherDataModelId  | De ID van de bijbehorende WeatherDataModel die is gemaakt tijdens het Boots trap proces.|
 location  | Breedte graad, lengte graad en uitbrei ding. |
 Name | De naam van het object. |
-Beschrijving | Beschrijving van de weer gegevens locatie. |
+Description | Beschrijving van de weer gegevens locatie. |
 farmId | Beschrijving ID van de farm. De klant levert deze ID als onderdeel van de taak parameter. |
 Eigenschappen  | Aanvullende eigenschappen van de fabrikant.
 

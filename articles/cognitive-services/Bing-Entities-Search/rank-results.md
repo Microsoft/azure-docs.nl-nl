@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: aahi
 ms.openlocfilehash: b63c2e53f34ac86f8ddf5ad300c2465ee2d9f032
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "94365632"
 ---
 # <a name="using-ranking-to-display-entity-search-results"></a>Classificatie gebruiken om de zoek resultaten van entiteiten weer te geven  
@@ -29,7 +29,7 @@ Elk zoek antwoord van de entiteit bevat een [RankingResponse](/rest/api/cognitiv
 Binnen elke groep identificeert de [items](/rest/api/cognitiveservices/bing-web-api-v7-reference#rankinggroup-items) matrix de volg orde waarin de inhoud moet worden weer gegeven. Elk item biedt twee manieren om het resultaat binnen een antwoord te identificeren.  
  
 
-|Veld | Beschrijving  |
+|Veld | Description  |
 |---------|---------|
 |`answerType` en `resultIndex` | `answerType` identificeert het antwoord (ofwel entiteit of plaats) en `resultIndex` identificeert een resultaat binnen dat antwoord (bijvoorbeeld een entiteit). De index begint bij 0.|
 |`value`    | `value` Bevat een ID die overeenkomt met de ID van een antwoord of een resultaat binnen het antwoord. Het antwoord of de resultaten bevatten de ID, maar niet beide. |

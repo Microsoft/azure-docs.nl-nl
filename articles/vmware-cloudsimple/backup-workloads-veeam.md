@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 7be606b3e23a594e67acf3f169d88353403d8577
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97899334"
 ---
 # <a name="back-up-workload-vms-on-cloudsimple-private-cloud-using-veeam-br"></a>Back-ups maken van werkbelasting Vm's op CloudSimple Privécloud met Veeam B&R
@@ -136,7 +136,7 @@ Maak firewall regels tussen het subnet van het beheer en het back-upnetwerk om n
 
 De volgende tabel bevat een lijst met poorten.
 
-| Pictogram | Beschrijving | Pictogram | Beschrijving |
+| Pictogram | Description | Pictogram | Description |
 | ------------ | ------------- | ------------ | ------------- |
 | Back-upserver  | vCenter  | HTTPS/TCP  | 443 |
 | Back-upserver <br> *Vereist voor de implementatie van Veeam backup &-replicatie onderdelen* | Back-upproxy  | TCP/UDP  | 135, 137 tot 139 en 445 |

@@ -75,8 +75,8 @@ Volg deze richt lijnen bij het plannen van de netwerk infrastructuur van uw aver
   |----------|-----------|----------|
   | Resourcegroep | Ja, indien leeg | Moet leeg zijn|
   | Storage-account | **Ja** als er verbinding wordt gemaakt met een bestaande BLOB-container na het maken van het cluster <br/>  **Nee** , als u een nieuwe BLOB-container maakt tijdens het maken van het cluster | Bestaande BLOB-container moet leeg zijn <br/> &nbsp; |
-  | Virtueel netwerk | Ja | Moet een service-eind punt voor opslag bevatten als er een nieuwe Azure Blob-container wordt gemaakt |
-  | Subnet | Ja | Kan geen andere resources bevatten |
+  | Virtueel netwerk | Yes | Moet een service-eind punt voor opslag bevatten als er een nieuwe Azure Blob-container wordt gemaakt |
+  | Subnet | Yes | Kan geen andere resources bevatten |
 
 ## <a name="ip-address-requirements"></a>Vereisten voor IP-adressen
 

@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.openlocfilehash: c0d9b6042ae695caa73d926653f237b756bf4971
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "94366720"
 ---
 # <a name="high-availability-concepts-in-azure-database-for-postgresql---flexible-server"></a>Concepten met hoge Beschik baarheid in Azure Database for PostgreSQL-flexibele server
@@ -97,8 +97,8 @@ Flexibele servers die zijn geconfigureerd met maximale Beschik baarheid, replice
 
 ## <a name="zone-redundant-high-availability---limitations"></a>Zone redundante hoge Beschik baarheid-beperkingen
 
--   Hoge Beschik baarheid wordt niet ondersteund met een burstive Compute-laag.
--   Hoge Beschik baarheid wordt alleen ondersteund in regio's waar meerdere zones beschikbaar zijn.
+-   Hoge beschikbaarheid wordt niet ondersteund voor een rekenlaag met burstmogelijkheden.
+-   Hoge beschikbaarheid wordt alleen ondersteund in regio's waar meerdere zones beschikbaar zijn.
 -   Vanwege synchrone replicatie naar een andere beschikbaarheids zone kunnen toepassingen verhoogde schrijf-en doorvoer latentie ervaren.
 
 -   De stand-by replica kan niet worden gebruikt voor lees query's.

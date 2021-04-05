@@ -16,10 +16,10 @@ ms.date: 06/02/2017
 ms.author: alkohli
 ms.custom: ''
 ms.openlocfilehash: 12ab5a9598cc0222f5a3e64985be2e2ea9e7e2fd
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96014853"
 ---
 # <a name="replace-a-hardware-component-on-your-storsimple-8000-series-device"></a>Een hardware-onderdeel in uw StorSimple 8000 Series-apparaat vervangen
@@ -69,11 +69,11 @@ De belangrijkste hardwareonderdelen op het apparaat worden in de volgende tabell
 
 | Onderdelen | # Aanwezig | Module voor invoeg toepassingen? | Vervangings procedure |
 |:--- |:--- |:--- |:--- |
-| Chassis |1 |Nee |[Het chassis op uw StorSimple-apparaat vervangen](storsimple-8000-chassis-replacement.md) |
-| Primaire controllers |2 |Ja |[Een controller module op uw StorSimple-apparaat vervangen](storsimple-8000-controller-replacement.md) |
-| 764We voeding en koeling modules (PCMs) |2 |Ja |[Stroom- en koelmodule van StorSimple-apparaat vervangen](storsimple-8000-power-cooling-module-replacement.md) |
-| Back-upbatterij |2 |Ja |[Noodaccumodule van StorSimple-apparaat vervangen](storsimple-8000-battery-replacement.md) |
-| Schijfstations |12 |Ja |[Een schijf station op uw StorSimple-apparaat vervangen](storsimple-8000-disk-drive-replacement.md) |
+| Chassis |1 |No |[Het chassis op uw StorSimple-apparaat vervangen](storsimple-8000-chassis-replacement.md) |
+| Primaire controllers |2 |Yes |[Een controller module op uw StorSimple-apparaat vervangen](storsimple-8000-controller-replacement.md) |
+| 764We voeding en koeling modules (PCMs) |2 |Yes |[Stroom- en koelmodule van StorSimple-apparaat vervangen](storsimple-8000-power-cooling-module-replacement.md) |
+| Back-upbatterij |2 |Yes |[Noodaccumodule van StorSimple-apparaat vervangen](storsimple-8000-battery-replacement.md) |
+| Schijfstations |12 |Yes |[Een schijf station op uw StorSimple-apparaat vervangen](storsimple-8000-disk-drive-replacement.md) |
 
 **Tabel 1** Hardwareonderdelen in de primaire behuizing
 
@@ -81,10 +81,10 @@ De primaire behuizing en de EBOD-behuizing verschillen in hun I/O-modules. Daarn
 
 | Onderdelen | # Aanwezig | Module voor invoeg toepassingen? | Vervangings procedure |
 |:--- |:--- |:--- |:--- |
-| Chassis |1 |Nee |[Het chassis op uw StorSimple-apparaat vervangen](storsimple-8000-chassis-replacement.md) |
-| EBOD-controllers |2 |Ja |[Een EBOD-controller op uw StorSimple-apparaat vervangen](storsimple-8000-ebod-controller-replacement.md) |
-| 580We voeding en koeling modules (PCMs) |2 |Ja |[Stroom- en koelmodule van StorSimple-apparaat vervangen](storsimple-8000-power-cooling-module-replacement.md) |
-| Schijfstations |12 |Ja |[Een schijf station op uw StorSimple-apparaat vervangen](storsimple-8000-disk-drive-replacement.md) |
+| Chassis |1 |No |[Het chassis op uw StorSimple-apparaat vervangen](storsimple-8000-chassis-replacement.md) |
+| EBOD-controllers |2 |Yes |[Een EBOD-controller op uw StorSimple-apparaat vervangen](storsimple-8000-ebod-controller-replacement.md) |
+| 580We voeding en koeling modules (PCMs) |2 |Yes |[Stroom- en koelmodule van StorSimple-apparaat vervangen](storsimple-8000-power-cooling-module-replacement.md) |
+| Schijfstations |12 |Yes |[Een schijf station op uw StorSimple-apparaat vervangen](storsimple-8000-disk-drive-replacement.md) |
 
 **Tabel 2** Hardwareonderdelen in de EBOD-behuizing
 
@@ -94,7 +94,7 @@ De invoeg modules op het apparaat zijn gemarkeerd in de volgende voor-en achterz
 
 **Afbeelding 1** Voor zijde van het apparaat
 
-| Label | Beschrijving |
+| Label | Description |
 |:--- |:--- |
 | 0 - 11 |Schijf stations (in totaal 12) |
 

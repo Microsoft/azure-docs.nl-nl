@@ -9,10 +9,10 @@ ms.date: 07/30/2019
 ms.author: tamram
 ms.custom: include file
 ms.openlocfilehash: 84fa97ec964d490eb9571c7e030704562a4a81d0
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "95562014"
 ---
 [Azure files](../articles/storage/files/storage-files-introduction.md) ondersteunt verificatie op basis van identiteiten via Server Message Block (SMB) via [on-premises Active Directory Domain Services (AD DS)](/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) en [Azure Active Directory Domain Services (Azure AD DS)](../articles/active-directory-domain-services/overview.md). In dit artikel wordt uitgelegd hoe Azure-bestands shares Domain Services, on-premises of in azure, kunnen gebruiken ter ondersteuning van op identiteit gebaseerde toegang tot Azure-bestands shares via SMB. Door toegang op basis van een identiteit in te scha kelen voor uw Azure-bestands shares kunt u bestaande bestands servers vervangen door Azure-bestands shares zonder uw bestaande adreslijst service te vervangen, waardoor naadloze gebruikers toegang tot shares wordt gehandhaafd. 

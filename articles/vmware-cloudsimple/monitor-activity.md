@@ -10,10 +10,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: fb597cc71d228a1daaaa4e52d76b301764ff9292
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97899300"
 ---
 # <a name="monitor-vmware-solution-by-cloudsimple-activity"></a>VMware-oplossing op CloudSimple-activiteit bewaken
@@ -54,7 +54,7 @@ De volgende kolommen met informatie zijn beschikbaar voor waarschuwingen. Klik o
 | Resourcenaam | De naam die is toegewezen aan de resource, zoals de naam van de Privécloud. |
 | Resourcetype | Categorie van resource: Privécloud, Cloud rack. |
 | Resource-id | De id van de resource. |
-| Beschrijving | Beschrijving van de trigger van de waarschuwing. |
+| Description | Beschrijving van de trigger van de waarschuwing. |
 | Bevestigd | Indicatie of de waarschuwing wordt bevestigd. |
 
 ## <a name="events"></a>Gebeurtenissen
@@ -70,7 +70,7 @@ De volgende kolommen met informatie zijn beschikbaar voor waarschuwingen. Klik o
 | Severity | Ernst van gebeurtenis.|
 | Resourcenaam | De naam die is toegewezen aan de resource, zoals de naam van de Privécloud. |
 | Resourcetype | Categorie van resource: Privécloud, Cloud rack. |
-| Beschrijving | Beschrijving van de trigger van de waarschuwing. |
+| Description | Beschrijving van de trigger van de waarschuwing. |
 
 ## <a name="tasks"></a>Taken
 
@@ -90,7 +90,7 @@ De volgende kolommen met informatie zijn beschikbaar voor waarschuwingen. Klik o
 | Beëindigen | De eind tijd voor de taak. |
 | Status | Huidige taak status. |
 | Verstreken tijd | De tijd die nodig is om de taak te volt ooien (indien voltooid) of op dit moment (als deze wordt uitgevoerd). |
-| Beschrijving | Taak beschrijving. |
+| Description | Taak beschrijving. |
 
 ## <a name="audit"></a>Controleren
 
@@ -108,7 +108,7 @@ De volgende kolommen met informatie zijn beschikbaar voor waarschuwingen. Klik o
 | Resource-id | De id van de resource. |
 | Resultaat | Resultaat van de activiteit, zoals **geslaagd**. |
 | Gebruikte tijd | Tijd om de taak te volt ooien. |
-| Beschrijving | Beschrijving van de actie. |
+| Description | Beschrijving van de actie. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

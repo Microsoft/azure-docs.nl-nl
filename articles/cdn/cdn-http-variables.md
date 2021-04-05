@@ -92,7 +92,7 @@ Een scheidings teken kan worden opgegeven na een HTTP-variabele om een van de vo
 
 De scheidings tekens worden in de volgende tabel beschreven.
 
-| Scheidingsteken | Beschrijving |
+| Scheidingsteken | Description |
 | --------- | ----------- |
 | := | Geeft aan dat er een standaard waarde wordt toegewezen aan de variabele wanneer het een van de volgende is: <br />-Ontbreekt <br />-Stel in op NULL. |
 | :+ | Geeft aan dat er een standaard waarde wordt toegewezen aan de variabele wanneer hieraan een waarde is toegewezen. |
@@ -187,7 +187,7 @@ In dit voorbeeld scenario wordt de variabele *REQUEST_URI* ingesteld op:
 
 In de volgende tabel ziet u hoe deze syntaxis werkt.
 
-| Voorbeeld syntaxis | Resultaten | Beschrijving |
+| Voorbeeld syntaxis | Resultaten | Description |
 | ------------- | ------- | --- |
 | % {request_uri #/800001}/customerorigin | /customerorigin/myorigin/marketing/product.html? language = nl-nl | Omdat de variabele begint met het patroon, is deze vervangen. |
 | % {request_uri% html} htm | /800001/myorigin/marketing/product.html? language = nl-nl | Omdat de variabele niet eindigt met het patroon, is er geen wijziging.|

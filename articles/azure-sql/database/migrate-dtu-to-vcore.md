@@ -11,10 +11,10 @@ ms.author: sstein
 ms.reviewer: sashan, moslake
 ms.date: 02/09/2021
 ms.openlocfilehash: 332a2273a377268a425619a0cdaa5f4780b46e73
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100361652"
 ---
 # <a name="migrate-azure-sql-database-from-the-dtu-based-model-to-the-vcore-based-model"></a>Azure SQL Database migreren van het DTU-model naar het model op basis van vCore
@@ -178,12 +178,12 @@ De volgende tabel bevat richt lijnen voor specifieke migratie scenario's:
 |---|---|---|---|
 |Standard|Algemeen doel|Zij|Kan in een wille keurige volg orde worden gemigreerd, maar moeten de juiste vCore-grootte worden gegarandeerd zoals hierboven wordt beschreven|
 |Premium|Bedrijfskritiek|Zij|Kan in een wille keurige volg orde worden gemigreerd, maar moeten de juiste vCore-grootte worden gegarandeerd zoals hierboven wordt beschreven|
-|Standard|Bedrijfskritiek|Upgrade uitvoeren|Moet secundair eerst worden gemigreerd|
+|Standard|Bedrijfskritiek|Upgraden|Moet secundair eerst worden gemigreerd|
 |Bedrijfskritiek|Standard|Downgrade|Moet primair eerst worden gemigreerd|
 |Premium|Algemeen doel|Downgrade|Moet primair eerst worden gemigreerd|
-|Algemeen doel|Premium|Upgrade uitvoeren|Moet secundair eerst worden gemigreerd|
+|Algemeen doel|Premium|Upgraden|Moet secundair eerst worden gemigreerd|
 |Bedrijfskritiek|Algemeen doel|Downgrade|Moet primair eerst worden gemigreerd|
-|Algemeen doel|Bedrijfskritiek|Upgrade uitvoeren|Moet secundair eerst worden gemigreerd|
+|Algemeen doel|Bedrijfskritiek|Upgraden|Moet secundair eerst worden gemigreerd|
 ||||
 
 ## <a name="migrate-failover-groups"></a>Failover-groepen migreren

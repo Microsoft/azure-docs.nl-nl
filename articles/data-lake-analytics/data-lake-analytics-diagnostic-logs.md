@@ -125,7 +125,7 @@ Hier volgt een voor beeld van een vermelding in het aanvraag logboek in JSON-ind
 
 #### <a name="request-log-schema"></a>Schema voor aanvraag logboek
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | tijd |Tekenreeks |De tijds tempel (in UTC) van het logboek |
 | resourceId |Tekenreeks |De id van de resource waarop de bewerking plaatsvond |
@@ -139,7 +139,7 @@ Hier volgt een voor beeld van een vermelding in het aanvraag logboek in JSON-ind
 
 #### <a name="request-log-properties-schema"></a>Schema eigenschappen van het aanvraag logboek
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | HttpMethod |Tekenreeks |De HTTP-methode die wordt gebruikt voor de bewerking. Bijvoorbeeld ophalen. |
 | Pad |Tekenreeks |Het pad waarin de bewerking is uitgevoerd |
@@ -175,7 +175,7 @@ Hier volgt een voor beeld van een vermelding in het audit logboek in JSON-indeli
 
 #### <a name="audit-log-schema"></a>Schema van auditlogboek
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | tijd |Tekenreeks |De tijds tempel (in UTC) van het logboek |
 | resourceId |Tekenreeks |De id van de resource waarop de bewerking plaatsvond |
@@ -193,7 +193,7 @@ Hier volgt een voor beeld van een vermelding in het audit logboek in JSON-indeli
 
 #### <a name="audit-log-properties-schema"></a>Schema eigenschappen van controle logboek
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | JobId |Tekenreeks |De ID die aan de taak is toegewezen |
 | JobName |Tekenreeks |De naam die voor de taak is ingesteld |

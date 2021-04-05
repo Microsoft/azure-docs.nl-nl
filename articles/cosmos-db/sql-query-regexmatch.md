@@ -9,10 +9,10 @@ ms.date: 10/13/2020
 ms.author: tisande
 ms.custom: query-reference
 ms.openlocfilehash: 7f5b2831f45e902b312636e4133557a16ee7ec95
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "93341634"
 ---
 # <a name="regexmatch-azure-cosmos-db"></a>REGEXMATCH (Azure Cosmos DB)
@@ -41,7 +41,7 @@ Meer informatie over de [syntaxis voor het maken van reguliere expressies vindt 
 
 Azure Cosmos DB ondersteunt de volgende vier para meters:
 
-| Modifier | Beschrijving |
+| Modifier | Description |
 | ------ | ----------- |
 | `m` | Behandel de teken reeks expressie die moet worden doorzocht als meerdere regels. Zonder deze optie wordt "^" en "$" overeenkomen aan het begin of einde van de teken reeks en niet aan elke afzonderlijke regel. |
 | `s` | '. ' Toestaan om een wille keurig teken, inclusief een nieuwe regel teken, te koppelen. | 

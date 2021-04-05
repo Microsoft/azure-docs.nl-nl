@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: v-erkel
 ms.openlocfilehash: 7f1d8d34d6351fc344fdb101ac8e9a96678df9d5
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "91651425"
 ---
 # <a name="mount-the-azure-hpc-cache"></a>De Azure HPC Cache koppelen
@@ -115,7 +115,7 @@ Voor een robuuste client koppeling geeft u deze instellingen en argumenten door 
 
 > mount-o hard, proto = TCP, mountproto = TCP, retry = 30 $ {CACHE_IP_ADDRESS}:/$ {NAMESPACE_PATH} $ {LOCAL_FILESYSTEM_MOUNT_POINT}
 
-| Aanbevolen opdracht instellingen voor koppelen | Beschrijving |
+| Aanbevolen opdracht instellingen voor koppelen | Description |
 --- | ---
 ``hard`` | Zachte koppelingen naar de Azure HPC-cache zijn gekoppeld aan toepassings fouten en mogelijke gegevens verlies.
 ``proto=tcp`` | Deze optie ondersteunt de juiste verwerking van NFS-netwerkfouten.

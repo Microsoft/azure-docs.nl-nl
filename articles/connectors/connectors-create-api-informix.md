@@ -80,12 +80,12 @@ In dit onderwerp wordt beschreven hoe u de connector in een logische app kunt ge
 
    | Eigenschap | JSON-eigenschap | Vereist | Voorbeeldwaarde | Beschrijving |
    |----------|---------------|----------|---------------|-------------|
-   | Verbindingsnaam | `name` | Ja | `informix-demo-connection` | De naam die moet worden gebruikt voor de verbinding met uw Informix-data base |
-   | Server | `server` | Ja | Cloud `informixdemo.cloudapp.net:9089` <br>-On-premises: `informixdemo:9089` | Het TCP/IP-adres of de alias in de IPv4-of IPv6-indeling, gevolgd door een dubbele punt en een TCP/IP-poort nummer |
-   | Database | `database` | Ja | `nwind` | De DRDA relationele database naam (RDBNAM) of de naam van de Informix-data base (dbname). Informix accepteert een teken reeks van 128 bytes. |
+   | Verbindingsnaam | `name` | Yes | `informix-demo-connection` | De naam die moet worden gebruikt voor de verbinding met uw Informix-data base |
+   | Server | `server` | Yes | Cloud `informixdemo.cloudapp.net:9089` <br>-On-premises: `informixdemo:9089` | Het TCP/IP-adres of de alias in de IPv4-of IPv6-indeling, gevolgd door een dubbele punt en een TCP/IP-poort nummer |
+   | Database | `database` | Yes | `nwind` | De DRDA relationele database naam (RDBNAM) of de naam van de Informix-data base (dbname). Informix accepteert een teken reeks van 128 bytes. |
    | Verificatie | `authentication` | Alleen on-premises | **Basic** of **Windows** (Kerberos) | Het verificatie type dat vereist is voor uw Informix-data base. Deze eigenschap wordt alleen weer gegeven wanneer u **verbinding maken via een on-premises gegevens gateway** selecteert. |
-   | Gebruikersnaam | `username` | Nee | <*data base-gebruikers naam*> | Een gebruikers naam voor de data base |
-   | Wachtwoord | `password` | Nee | <*data base-wacht woord*> | Een wacht woord voor de data base |
+   | Gebruikersnaam | `username` | No | <*data base-gebruikers naam*> | Een gebruikers naam voor de data base |
+   | Wachtwoord | `password` | No | <*data base-wacht woord*> | Een wacht woord voor de data base |
    | Gateway | `gateway` | Alleen on-premises | -<*Azure-abonnement*> <br>-<*Azure-on-premises-gegevens gateway-bron*> | Het Azure-abonnement en de Azure-resource naam voor de on-premises gegevens gateway die u hebt gemaakt in de Azure Portal. De eigenschap **Gateway** en subeigenschappen worden alleen weer gegeven wanneer u **verbinding maken via een on-premises gegevens gateway** selecteert. |
    ||||||
 

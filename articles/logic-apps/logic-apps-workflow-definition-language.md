@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 05/13/2019
 ms.openlocfilehash: 71929cd449f4a00b91cc6c8620b33b0e0c6d506c
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "87078136"
 ---
 # <a name="schema-reference-guide-for-the-workflow-definition-language-in-azure-logic-apps"></a>Naslag Gids voor schema's voor de taal van de werk stroom definitie in Azure Logic Apps
@@ -39,12 +39,12 @@ Dit is de structuur op hoog niveau voor een werk stroom definitie:
 |-----------|----------|-------------|
 | `definition` | Ja | Het begin element voor uw werk stroom definitie |
 | `$schema` | Alleen wanneer extern naar een werk stroom definitie verwijst | De locatie voor het JSON-schema bestand met een beschrijving van de versie van de werk stroom definitie taal, die u hier kunt vinden: <p>`https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json`</p> |
-| `actions` | Nee | De definities voor een of meer acties die tijdens de workflowruntime worden uitgevoerd. Zie [Triggers en acties](#triggers-actions)voor meer informatie. <p><p>Maximum aantal acties: 250 |
-| `contentVersion` | Nee | Het versie nummer voor de werk stroom definitie, die standaard de waarde 1.0.0.0 heeft. Geef een waarde op om te gebruiken voor het identificeren en bevestigen van de juiste definitie bij het implementeren van een werk stroom. |
-| `outputs` | Nee | De definities voor de uitvoer die moeten worden geretourneerd door de uitvoering van een werk stroom. Zie [uitvoer](#outputs)voor meer informatie. <p><p>Maximale uitvoer: 10 |
-| `parameters` | Nee | De definities voor een of meer para meters die de waarden door geven die moeten worden gebruikt tijdens de runtime van de logische app. Zie [para meters](#parameters)voor meer informatie. <p><p>Maximum aantal para meters: 50 |
-| `staticResults` | Nee | De definities voor een of meer statische resultaten die door acties worden geretourneerd als het model van de uitvoer wanneer statische resultaten op deze acties zijn ingeschakeld. In elke actie definitie verwijst het `runtimeConfiguration.staticResult.name` kenmerk naar de bijbehorende definitie in `staticResults` . Zie [static results (statische resultaten](#static-results)) voor meer informatie. |
-| `triggers` | Nee | De definities voor een of meer triggers die uw werk stroom instantiëren. U kunt meer dan één trigger definiëren, maar alleen met de taal van de werk stroom definitie, niet visueel door de Logic Apps Designer. Zie [Triggers en acties](#triggers-actions)voor meer informatie. <p><p>Maximum aantal triggers: 10 |
+| `actions` | No | De definities voor een of meer acties die tijdens de workflowruntime worden uitgevoerd. Zie [Triggers en acties](#triggers-actions)voor meer informatie. <p><p>Maximum aantal acties: 250 |
+| `contentVersion` | No | Het versie nummer voor de werk stroom definitie, die standaard de waarde 1.0.0.0 heeft. Geef een waarde op om te gebruiken voor het identificeren en bevestigen van de juiste definitie bij het implementeren van een werk stroom. |
+| `outputs` | No | De definities voor de uitvoer die moeten worden geretourneerd door de uitvoering van een werk stroom. Zie [uitvoer](#outputs)voor meer informatie. <p><p>Maximale uitvoer: 10 |
+| `parameters` | No | De definities voor een of meer para meters die de waarden door geven die moeten worden gebruikt tijdens de runtime van de logische app. Zie [para meters](#parameters)voor meer informatie. <p><p>Maximum aantal para meters: 50 |
+| `staticResults` | No | De definities voor een of meer statische resultaten die door acties worden geretourneerd als het model van de uitvoer wanneer statische resultaten op deze acties zijn ingeschakeld. In elke actie definitie verwijst het `runtimeConfiguration.staticResult.name` kenmerk naar de bijbehorende definitie in `staticResults` . Zie [static results (statische resultaten](#static-results)) voor meer informatie. |
+| `triggers` | No | De definities voor een of meer triggers die uw werk stroom instantiëren. U kunt meer dan één trigger definiëren, maar alleen met de taal van de werk stroom definitie, niet visueel door de Logic Apps Designer. Zie [Triggers en acties](#triggers-actions)voor meer informatie. <p><p>Maximum aantal triggers: 10 |
 ||||
 
 <a name="triggers-actions"></a>
@@ -74,13 +74,13 @@ Hier volgt de algemene structuur voor een parameter definitie:
 },
 ```
 
-| Kenmerk | Vereist | Type | Beschrijving |
+| Kenmerk | Vereist | Type | Description |
 |-----------|----------|------|-------------|
 | <*para meter-naam*> | Ja | Tekenreeks | De naam voor de para meter die u wilt definiëren |
-| <*parameter type*> | Ja | int, float, String, BOOL, array, object, securestring, secureobject <p><p>**Opmerking**: gebruik de typen of voor alle wacht woorden, sleutels en geheimen, `securestring` `secureobject` omdat de `GET` bewerking deze typen niet retourneert. Zie [beveiligings aanbevelingen voor actie-en invoer parameters](../logic-apps/logic-apps-securing-a-logic-app.md#secure-action-parameters)voor meer informatie over het beveiligen van para meters. | Het type voor de para meter |
-| <*default-para meter-value*> | Ja | Hetzelfde als `type` | De standaard parameter waarde die moet worden gebruikt als er geen waarde wordt opgegeven bij het instantiëren van de werk stroom. Het `defaultValue` kenmerk is vereist zodat de Logic app Designer de para meter correct kan weer geven, maar u kunt een lege waarde opgeven. |
-| <*matrix-met-toegestane-para meter-waarden*> | Nee | Matrix | Een matrix met waarden die door de para meter kunnen worden geaccepteerd |
-| <*para meter-beschrijving*> | Nee | JSON-object | Eventuele andere parameter Details, zoals een beschrijving van de para meter |
+| <*parameter type*> | Yes | int, float, String, BOOL, array, object, securestring, secureobject <p><p>**Opmerking**: gebruik de typen of voor alle wacht woorden, sleutels en geheimen, `securestring` `secureobject` omdat de `GET` bewerking deze typen niet retourneert. Zie [beveiligings aanbevelingen voor actie-en invoer parameters](../logic-apps/logic-apps-securing-a-logic-app.md#secure-action-parameters)voor meer informatie over het beveiligen van para meters. | Het type voor de para meter |
+| <*default-para meter-value*> | Yes | Hetzelfde als `type` | De standaard parameter waarde die moet worden gebruikt als er geen waarde wordt opgegeven bij het instantiëren van de werk stroom. Het `defaultValue` kenmerk is vereist zodat de Logic app Designer de para meter correct kan weer geven, maar u kunt een lege waarde opgeven. |
+| <*matrix-met-toegestane-para meter-waarden*> | No | Matrix | Een matrix met waarden die door de para meter kunnen worden geaccepteerd |
+| <*para meter-beschrijving*> | No | JSON-object | Eventuele andere parameter Details, zoals een beschrijving van de para meter |
 ||||
 
 Maak vervolgens een [Azure Resource Manager sjabloon](../azure-resource-manager/templates/overview.md) voor de definitie van uw werk stroom, definieer sjabloon parameters die de waarden accepteren die u tijdens de implementatie wilt gebruiken, vervang hardcoded-waarden door verwijzingen naar sjabloon-of werk stroom definitie parameters en sla de waarden op die moeten worden gebruikt bij de implementatie in een afzonderlijk [parameter bestand](../azure-resource-manager/templates/parameter-files.md). Op die manier kunt u deze waarden gemakkelijker wijzigen via het parameter bestand zonder dat u uw logische app hoeft bij te werken en opnieuw te implementeren. Voor informatie die gevoelig is of die moet worden beveiligd, zoals gebruikers namen, wacht woorden en geheimen, kunt u deze waarden opslaan in Azure Key Vault en uw parameter bestand de waarden laten ophalen uit uw sleutel kluis. Zie [overzicht: implementatie voor Logic apps automatiseren met Azure Resource Manager sjablonen](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md)voor meer informatie en voor beelden over het definiëren van para meters in de sjabloon en de definities van werk stromen.
@@ -112,10 +112,10 @@ Definieer in het `staticResults` -kenmerk een actie model `outputs` en `status` 
 }
 ```
 
-| Kenmerk | Vereist | Type | Beschrijving |
+| Kenmerk | Vereist | Type | Description |
 |-----------|----------|------|-------------|
 | <*statisch resultaten-definitie naam*> | Ja | Tekenreeks | De naam voor een statische resultaat definitie waarmee een actie definitie kan verwijzen naar een `runtimeConfiguration.staticResult` object. Zie runtime-configuratie- [instellingen](../logic-apps/logic-apps-workflow-actions-triggers.md#runtime-config-options)voor meer informatie. <p>U kunt elke gewenste unieke naam gebruiken. Deze unieke naam wordt standaard toegevoegd met een nummer, dat zo nodig wordt verhoogd. |
-| <*uitvoer kenmerken-en-waarden-geretourneerd*> | Ja | Varieert | De vereisten voor deze kenmerken variëren op basis van verschillende voor waarden. Bijvoorbeeld, wanneer het `status` is `Succeeded` , bevat het `outputs` kenmerk kenmerken en waarden die worden geretourneerd als de uitvoer van de bewerking. Als dat het geval `status` is `Failed` , `outputs` bevat het kenmerk het `errors` kenmerk, een matrix met een of meer fout `message` objecten met fout gegevens. |
+| <*uitvoer kenmerken-en-waarden-geretourneerd*> | Yes | Varieert | De vereisten voor deze kenmerken variëren op basis van verschillende voor waarden. Bijvoorbeeld, wanneer het `status` is `Succeeded` , bevat het `outputs` kenmerk kenmerken en waarden die worden geretourneerd als de uitvoer van de bewerking. Als dat het geval `status` is `Failed` , `outputs` bevat het kenmerk het `errors` kenmerk, een matrix met een of meer fout `message` objecten met fout gegevens. |
 | <*header-waarden*> | Nee | JSON | Eventuele header waarden die zijn geretourneerd door de actie |
 | <*status-code-geretourneerd*> | Ja | Tekenreeks | De status code die wordt geretourneerd door de actie |
 | <*actie-status*> | Ja | Tekenreeks | De status van de actie, bijvoorbeeld `Succeeded` of `Failed` |
@@ -275,11 +275,11 @@ Hier volgt de algemene structuur voor een uitvoer definitie:
 }
 ```
 
-| Kenmerk | Vereist | Type | Beschrijving |
+| Kenmerk | Vereist | Type | Description |
 |-----------|----------|------|-------------|
 | <*sleutel naam*> | Ja | Tekenreeks | De naam van de sleutel voor de retour waarde van de uitvoer |
-| <*sleutel type*> | Ja | int, float, String, securestring, BOOL, array, JSON-object | Het type voor de uitvoer retour waarde |
-| <*sleutel waarde*> | Ja | Hetzelfde als <*sleutel type*> | De resultaat waarde van de uitvoer |
+| <*sleutel type*> | Yes | int, float, String, securestring, BOOL, array, JSON-object | Het type voor de uitvoer retour waarde |
+| <*sleutel waarde*> | Yes | Hetzelfde als <*sleutel type*> | De resultaat waarde van de uitvoer |
 |||||
 
 Als u de uitvoer van een werk stroom wilt uitvoeren, controleert u de uitvoerings geschiedenis van de logische app en de details in de Azure Portal of gebruikt u de [werk stroom rest API](/rest/api/logic/workflows). U kunt ook de uitvoer door geven aan externe systemen, bijvoorbeeld Power BI, zodat u Dash boards kunt maken.

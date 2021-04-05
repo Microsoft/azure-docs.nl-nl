@@ -11,10 +11,10 @@ ms.date: 12/11/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 8f037d4283b4b05081ef47e7223495f6e19d460e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97386864"
 ---
 # <a name="sub-journeys"></a>Subtrajecten
@@ -116,7 +116,7 @@ Als u de subtrajecten wilt definiëren die door het beleid worden ondersteund, v
 
 Het element **Subtrajecten** bevat het volgende element:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | Subtraject | 1: n | Een subtraject waarmee alle benodigde constructies voor een volledige gebruikers stroom worden gedefinieerd. |
 
@@ -124,12 +124,12 @@ Het element **Subtrajecten** bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Id | Ja | De subtraject-id die door de gebruiker kan worden gebruikt om te verwijzen naar de subtraject in het beleid. Het **SubJourneyReferenceId** -element van het element [kandidaat](userjourneys.md#journeylist) wijst naar dit kenmerk. |
-| Type | Ja | Mogelijke waarden: `Call` , of `Transfer` . Zie voor meer informatie [gebruikers reis vertakking](#user-journey-branching)|
+| Id | Yes | De subtraject-id die door de gebruiker kan worden gebruikt om te verwijzen naar de subtraject in het beleid. Het **SubJourneyReferenceId** -element van het element [kandidaat](userjourneys.md#journeylist) wijst naar dit kenmerk. |
+| Type | Yes | Mogelijke waarden: `Call` , of `Transfer` . Zie voor meer informatie [gebruikers reis vertakking](#user-journey-branching)|
 
 Het element **subtraject** bevat het volgende element:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | OrchestrationSteps | 1: n | Een indelings reeks die moet worden gevolgd voor een geslaagde trans actie. Elke gebruikers traject bestaat uit een geordende lijst met Orchestration-stappen die in volg orde worden uitgevoerd. Als er een stap mislukt, mislukt de trans actie. |
 

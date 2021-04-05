@@ -4,10 +4,10 @@ description: In dit artikel wordt de interactie aan de client zijde beschreven m
 ms.topic: article
 ms.date: 06/23/2020
 ms.openlocfilehash: 36321f88de173a37c9aa6615c4c0f2b29aec9f20
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97976959"
 ---
 # <a name="azure-relay-hybrid-connections-protocol"></a>Azure Relay Hybride verbindingen-Protocol
@@ -136,9 +136,9 @@ U hebt de volgende opties voor de query reeks parameter.
 | Parameter        | Vereist | Beschrijving
 | ---------------- | -------- | -------------------------------------------
 | `sb-hc-action`   | Ja      | Voor de listener-functie moet de para meter **SB-HC-Action = listen**
-| `{path}`         | Ja      | Het pad naar de URL-code ring van de vooraf geconfigureerde hybride verbinding om deze listener te registreren. Deze expressie wordt toegevoegd aan het gedeelte vast `$hc/` pad.
-| `sb-hc-token`    | Ja\*    | De listener moet een geldig, URL-gecodeerd Service Bus token voor gedeelde toegang opgeven voor de naam ruimte of hybride verbinding die het **Geluisterde** recht verleent.
-| `sb-hc-id`       | Nee       | Met deze door de client verstrekte optionele ID kan end-to-end diagnostische tracering worden ingeschakeld.
+| `{path}`         | Yes      | Het pad naar de URL-code ring van de vooraf geconfigureerde hybride verbinding om deze listener te registreren. Deze expressie wordt toegevoegd aan het gedeelte vast `$hc/` pad.
+| `sb-hc-token`    | Yes\*    | De listener moet een geldig, URL-gecodeerd Service Bus token voor gedeelde toegang opgeven voor de naam ruimte of hybride verbinding die het **Geluisterde** recht verleent.
+| `sb-hc-id`       | No       | Met deze door de client verstrekte optionele ID kan end-to-end diagnostische tracering worden ingeschakeld.
 
 Als de WebSocket-verbinding mislukt omdat het Hybrid Connection-pad niet is geregistreerd, of een ongeldig of ontbrekend token of een andere fout, wordt de fout feedback weer gegeven met het reguliere HTTP 1,1-status feedback model. De status beschrijving bevat een fout tracering-id die kan worden gecommuniceerd naar ondersteunings personeel van Azure:
 
@@ -151,7 +151,7 @@ Als de WebSocket-verbinding mislukt omdat het Hybrid Connection-pad niet is gere
 
 Als de WebSocket-verbinding opzettelijk wordt afgesloten door de service nadat deze voor het eerst is ingesteld, wordt de reden hiervoor gecommuniceerd met behulp van de juiste WebSocket protocol-fout code en een beschrijving van het fout bericht dat ook een tracerings-ID bevat. De service sluit het besturings kanaal niet af zonder dat er een fout optreedt. Een schone afsluiting wordt door de client beheerd.
 
-| WS-status | Beschrijving
+| WS-status | Description
 | --------- | -------------------------------------------------------------------------------
 | 1001      | Het hybride verbindings traject is verwijderd of uitgeschakeld.
 | 1008      | Het beveiligings token is verlopen, daarom wordt het autorisatie beleid geschonden.
@@ -196,8 +196,8 @@ De URL moet worden gebruikt als-is voor het instellen van de Accept-socket, maar
 | Parameter      | Vereist | Beschrijving
 | -------------- | -------- | -------------------------------------------------------------------
 | `sb-hc-action` | Ja      | Voor het accepteren van een socket moet de para meter `sb-hc-action=accept`
-| `{path}`       | Ja      | (Zie de volgende alinea)
-| `sb-hc-id`     | Nee       | Zie de vorige beschrijving van de **id**.
+| `{path}`       | Yes      | (Zie de volgende alinea)
+| `sb-hc-id`     | No       | Zie de vorige beschrijving van de **id**.
 
 `{path}` is het URL-gecodeerde pad naar de naam ruimte van de vooraf geconfigureerde hybride verbinding waarop deze listener moet worden geregistreerd. Deze expressie wordt toegevoegd aan het gedeelte vast `$hc/` pad.
 
@@ -215,7 +215,7 @@ Als er een fout optreedt, kan de service als volgt reageren:
 
  Nadat de verbinding tot stand is gebracht, wordt de WebSocket door de server uitgeschakeld wanneer de WebSocket van de afzender wordt uitgeschakeld of met de volgende status:
 
-| WS-status | Beschrijving                                                                     |
+| WS-status | Description                                                                     |
 | --------- | ------------------------------------------------------------------------------- |
 | 1001      | De Sender client sluit de verbinding.                                    |
 | 1001      | Het hybride verbindings traject is verwijderd of uitgeschakeld.                        |
@@ -232,8 +232,8 @@ Als er een fout optreedt, kan de service als volgt reageren:
 
 | Param                   | Vereist | Beschrijving                              |
 | ----------------------- | -------- | ---------------------------------------- |
-| SB-HC-status code        | Ja      | Numerieke HTTP-status code.                |
-| SB-HC-statusDescription | Ja      | Door de mens lees bare reden voor de afwijzing. |
+| SB-HC-status code        | Yes      | Numerieke HTTP-status code.                |
+| SB-HC-statusDescription | Yes      | Door de mens lees bare reden voor de afwijzing. |
 
 De resulterende URI wordt vervolgens gebruikt om een WebSocket-verbinding tot stand te brengen.
 
@@ -379,7 +379,7 @@ Als er een fout optreedt, kan de service als volgt reageren:
 
  Nadat de verbinding tot stand is gebracht, wordt de WebSocket door de server uitgeschakeld wanneer de HTTP-socket van de client wordt uitgeschakeld of met de volgende status:
 
-| WS-status | Beschrijving                                                                     |
+| WS-status | Description                                                                     |
 | --------- | ------------------------------------------------------------------------------- |
 | 1001      | De Sender client sluit de verbinding.                                    |
 | 1001      | Het hybride verbindings traject is verwijderd of uitgeschakeld.                        |
@@ -404,7 +404,7 @@ Wanneer het listener-token bijna is verlopen, kan het worden vervangen door een 
 
 Als de token validatie mislukt, wordt de toegang geweigerd en sluit de Cloud service de WebSocket van het besturings kanaal met een fout. Anders is er geen antwoord.
 
-| WS-status | Beschrijving                                                                     |
+| WS-status | Description                                                                     |
 | --------- | ------------------------------------------------------------------------------- |
 | 1008      | Het beveiligings token is verlopen, daarom wordt het autorisatie beleid geschonden. |
 
@@ -426,9 +426,9 @@ U hebt de volgende opties voor de query teken reeks parameter:
 | Param          | Vereist? | Beschrijving
 | -------------- | --------- | -------------------------- |
 | `sb-hc-action` | Ja       | Voor de rol afzender moet de para meter zijn `sb-hc-action=connect` .
-| `{path}`       | Ja       | (Zie de volgende alinea)
-| `sb-hc-token`  | Ja\*     | De listener moet een geldig, URL-gecodeerd Service Bus token voor gedeelde toegang opgeven voor de naam ruimte of hybride verbinding die het **Verzend** recht verleent.
-| `sb-hc-id`     | Nee        | Een optionele ID waarmee end-to-end diagnostische tracering is ingeschakeld en beschikbaar wordt gesteld aan de listener tijdens het accepteren van de handshake.
+| `{path}`       | Yes       | (Zie de volgende alinea)
+| `sb-hc-token`  | Yes\*     | De listener moet een geldig, URL-gecodeerd Service Bus token voor gedeelde toegang opgeven voor de naam ruimte of hybride verbinding die het **Verzend** recht verleent.
+| `sb-hc-id`     | No        | Een optionele ID waarmee end-to-end diagnostische tracering is ingeschakeld en beschikbaar wordt gesteld aan de listener tijdens het accepteren van de handshake.
 
  Het `{path}` is het pad naar de URL-code naam ruimte van de vooraf geconfigureerde hybride verbinding waarop u deze listener wilt registreren. De `path` expressie kan worden uitgebreid met een achtervoegsel en een query reeks expressie om verder te communiceren. Als de hybride verbinding onder het pad is geregistreerd `hyco` , `path` kan de expressie worden `hyco/suffix?param=value&...` gevolgd door de query teken reeks parameters die hier zijn gedefinieerd. Een volledige expressie kan er dan als volgt uitzien:
 
@@ -449,7 +449,7 @@ Als de WebSocket-verbinding mislukt omdat het Hybrid Connection-pad niet is gere
 
 Als de WebSocket-verbinding opzettelijk wordt afgesloten door de service nadat deze voor het eerst is ingesteld, wordt de reden hiervoor gecommuniceerd met behulp van de juiste WebSocket protocol-fout code en een beschrijving van het fout bericht dat ook een tracerings-ID bevat.
 
-| WS-status | Beschrijving
+| WS-status | Description
 | --------- | ------------------------------------------------------------------------------- 
 | 1000      | De listener heeft de socket afgesloten.
 | 1001      | Het hybride verbindings traject is verwijderd of uitgeschakeld.

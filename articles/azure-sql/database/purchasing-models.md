@@ -13,10 +13,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/28/2020
 ms.openlocfilehash: 8883263d6ddb2fb8ddc809f464288fcd282531bd
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92788822"
 ---
 # <a name="choose-between-the-vcore-and-dtu-purchasing-models---azure-sql-database-and-sql-managed-instance"></a>Kiezen tussen de vCore-en DTU-aankoop modellen-Azure SQL Database en SQL Managed instance
@@ -37,7 +37,7 @@ In de volgende tabel en grafiek worden de vCore en de op DTU gebaseerde inkoop m
 |**Aankoopmodel**|**Beschrijving**|**Ideaal voor**|
 |---|---|---|
 |Op basis van DTU|Dit model is gebaseerd op een gebundelde meting van compute-, opslag-en I/O-resources. Rekengrootten worden uitgedrukt in DTU's voor afzonderlijke databases, en in EDTU's (Elastische Data Transaction Unit) voor elastische pools. Zie [Wat zijn DTU's en EDTU's](purchasing-models.md#dtu-based-purchasing-model) voor meer informatie over DTU's en EDTU's.|Klanten die eenvoudige, vooraf geconfigureerde resource opties willen|
-|op basis van vCore|Met dit model kunt u afzonderlijke reken-en opslag Resources kiezen. Met het op vCore gebaseerde aankoopmodel kunt u ook [Azure Hybrid Benefit](https://azure.microsoft.com/pricing/hybrid-benefit/) gebruiken voor SQL Server, om kosten te besparen.|Klanten die flexibiliteit, controle en transparantie|
+|Op vCore gebaseerd|Met dit model kunt u afzonderlijke reken-en opslag Resources kiezen. Met het op vCore gebaseerde aankoopmodel kunt u ook [Azure Hybrid Benefit](https://azure.microsoft.com/pricing/hybrid-benefit/) gebruiken voor SQL Server, om kosten te besparen.|Klanten die flexibiliteit, controle en transparantie|
 ||||  
 
 ![Prijs model vergelijking](./media/purchasing-models/pricing-model.png)

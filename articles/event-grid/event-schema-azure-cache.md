@@ -6,10 +6,10 @@ ms.date: 02/11/2021
 author: curib
 ms.author: cauribeg
 ms.openlocfilehash: 1a2995bc9ef40cd4eab320ce1bb4c5faf61e0e6e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100371274"
 ---
 # <a name="azure-cache-for-redis-as-an-event-grid-source"></a>Azure cache voor redis als een Event Grid bron
@@ -19,7 +19,7 @@ In dit artikel vindt u de eigenschappen en het schema voor Azure cache voor redi
 ## <a name="available-event-types"></a>Beschik bare gebeurtenis typen
 Deze gebeurtenissen worden geactiveerd wanneer een client een Azure-cache exporteert, importeert of schaalt voor redis REST-Api's. De patch gebeurtenis wordt geactiveerd door de redis-update.
 
- |Gebeurtenis naam |Beschrijving|
+ |Gebeurtenis naam |Description|
  |----------|-----------|
  |**Micro soft. cache. ExportRDBCompleted** |Wordt geactiveerd wanneer de cache gegevens worden geëxporteerd. |
  |**Micro soft. cache. ImportRDBCompleted** |Wordt geactiveerd wanneer de cache gegevens worden geïmporteerd. |

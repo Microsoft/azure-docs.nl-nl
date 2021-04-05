@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/12/2019
 ms.author: aahi
 ms.openlocfilehash: 72b4755c6f01a10851e79cf274842f1599bc2c55
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "96349534"
 ---
 # <a name="what-are-the-bing-search-apis"></a>Wat zijn de Bing Zoeken-API's?
@@ -36,7 +36,7 @@ Overweeg het gebruik van de Bing Webzoekopdrachten-API in toepassingen die mogel
 
 De volgende Bing Search-Api's retour neren specifieke inhoud van het web zoals afbeeldingen, nieuws, lokale bedrijven en Video's.
 
-| Bing-API | Beschrijving |
+| Bing-API | Description |
 | -- | -- |
 | [Entiteiten zoeken](../Bing-Entities-Search/overview.md) | Het Bing Entiteiten zoeken-API retourneert Zoek resultaten met entiteiten, die mensen, plaatsen of dingen kunnen zijn. Afhankelijk van de query retourneert de API een of meer entiteiten die voldoen aan de zoek query. De zoek query kan bestaan uit verhalende individuen, lokale bedrijven, bezienswaardigheden, doelen en meer. |
 | [Afbeeldingen zoeken](../Bing-Image-Search/overview.md) | Met de Bing Afbeeldingen zoeken-API kunt u zoeken naar en zoeken naar statische en bewegende afbeeldingen van hoge kwaliteit, vergelijkbaar met [Bing.com/images](https://www.Bing.com/images). U kunt Zoek opdrachten verfijnen om afbeeldingen op te nemen of uit te sluiten op basis van het kenmerk, inclusief grootte, kleur, licentie en versheid. U kunt ook zoeken naar trend afbeeldingen, afbeeldingen uploaden om inzicht te krijgen in en miniatuur weergaven weer geven. |

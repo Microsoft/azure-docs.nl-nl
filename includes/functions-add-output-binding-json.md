@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 09/23/2019
 ms.author: glenga
 ms.openlocfilehash: 9b3859d854b3900cc30eda6a95b8425da6763e59
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "94341026"
 ---
 Bindingskenmerken worden rechtstreeks in het bestand function.json gedefinieerd. Afhankelijk van het type binding zijn er aanvullende eigenschappen vereist. In de [configuratie van de wachtrij uitvoer](../articles/azure-functions/functions-bindings-storage-queue-output.md#configuration) worden de vereiste velden beschreven voor een Azure Storage-wachtrijbinding. De extensie maakt het eenvoudig om bindingen toe te voegen aan het bestand function.json. 

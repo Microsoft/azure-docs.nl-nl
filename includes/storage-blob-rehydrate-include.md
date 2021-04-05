@@ -11,10 +11,10 @@ ms.topic: include
 ms.reviewer: hux
 ms.custom: include file
 ms.openlocfilehash: a369eb7000fb8622a69f4205ffcc232ae9c9d242
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "95545925"
 ---
 Als u gegevens wilt lezen die aanwezig zijn in Archive Storage, moet u de laag van de blob eerst wijzigen in Hot of Cool. Dit proces wordt ook wel rehydratatie genoemd en kan uren duren om te volt ooien. We raden grote BLOB-grootten aan voor optimale rehydratatie-prestaties. Enkele kleine blobs tegelijk reactiveren kan extra tijd toevoegen. Er zijn momenteel twee herhydrate prioriteiten, hoog en standaard, die kunnen worden ingesteld via de optionele *x-MS-autohydrat-Priority-* eigenschap op een [set BLOB-laag](/rest/api/storageservices/set-blob-tier) of een BLOB-bewerking [kopiëren](/rest/api/storageservices/copy-blob) .

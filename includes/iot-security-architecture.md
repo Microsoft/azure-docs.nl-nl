@@ -9,10 +9,10 @@ ms.date: 08/07/2018
 ms.author: robinsh
 ms.custom: include file
 ms.openlocfilehash: 28609ad27330ae4ea5ea7c0d02d5a61181fbe0df
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "95557836"
 ---
 Bij het ontwerpen van een systeem is het belang rijk om inzicht te krijgen in de mogelijke dreigingen van dat systeem en de juiste verdedigingen dienovereenkomstig, aangezien het systeem is ontworpen en gearchitectd. Het is belang rijk dat u het product ontwerpt van het begin met beveiliging in het gedrang, omdat u kunt zien hoe een aanvaller een systeem kan misbruiken om ervoor te zorgen dat de juiste oplossingen van het begin worden uitgevoerd.

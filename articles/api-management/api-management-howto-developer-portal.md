@@ -196,7 +196,7 @@ De aanroep fout kan ook worden veroorzaakt door een TLS/SSL-certificaat, dat wor
 | Apple Safari                | Ja<sup>1</sup> |
 | Google Chrome               | Ja<sup>1</sup> |
 | Microsoft Edge              | Ja<sup>1</sup> |
-| Microsoft Internet Explorer | Nee              |
+| Microsoft Internet Explorer | No              |
 | Mozilla Firefox             | Ja<sup>1</sup> |
 
  <small><sup>1</sup> wordt ondersteund in de twee nieuwste productie versies.</small>

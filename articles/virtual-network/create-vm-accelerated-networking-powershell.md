@@ -15,10 +15,10 @@ ms.workload: infrastructure
 ms.date: 04/15/2020
 ms.author: gsilva
 ms.openlocfilehash: b0ebb75530858a589c3166e21261e2f737fff50d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98919966"
 ---
 # <a name="create-a-windows-vm-with-accelerated-networking-using-azure-powershell"></a>Een Windows-VM met versneld netwerken maken met behulp van Azure PowerShell
@@ -28,7 +28,7 @@ In deze zelf studie leert u hoe u een virtuele Windows-machine (VM) kunt maken m
 > [!NOTE]
 > Zie een virtuele Linux-machine [met versneld netwerken maken](create-vm-accelerated-networking-cli.md)voor het gebruik van versneld netwerken met een Linux-VM.
 
-Versneld netwerken maken gebruik van I/O-virtualisatie met één hoofdmap (SR-IOV) naar een virtuele machine, waardoor de netwerk prestaties aanzienlijk worden verbeterd. Dit pad met hoge prestaties omzeilt de host van het gegevenspad, waardoor latentie, jitter en CPU-gebruik worden verminderd voor de meest veeleisende netwerk workloads op ondersteunde VM-typen. In het volgende diagram ziet u hoe twee Vm's communiceren met en zonder versneld netwerk:
+Met Versnelde netwerken wordt I/O-virtualisatie met één hoofdmap (SR-IOV) mogelijk voor een VM, waarmee de netwerkprestaties van de VM aanzienlijk worden verbeterd. Dit pad met hoge prestaties omzeilt de host van het gegevenspad, waardoor latentie, jitter en CPU-gebruik worden verminderd voor de meest veeleisende netwerkworkloads op ondersteunde VM-typen. In het volgende diagram ziet u hoe twee Vm's communiceren met en zonder versneld netwerk:
 
 ![Communicatie tussen virtuele machines van Azure met en zonder versnelde netwerken](./media/create-vm-accelerated-networking/accelerated-networking.png)
 
@@ -57,7 +57,7 @@ De volgende distributies worden direct ondersteund vanuit de Azure-galerie:
 - **Windows Server 2016 Datacenter** 
 - **Windows Server 2012 R2 Datacenter**
 
-## <a name="limitations-and-constraints"></a>Beperkingen en beperkingen
+## <a name="limitations-and-constraints"></a>Beperkingen
 
 ### <a name="supported-vm-instances"></a>Ondersteunde VM-exemplaren
 

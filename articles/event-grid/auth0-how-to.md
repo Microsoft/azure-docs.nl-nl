@@ -4,10 +4,10 @@ description: Gebeurtenissen van Auth0 naar Azure-Services beëindigen met Azure 
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.openlocfilehash: a66a60cb926b933a6b0628a67506d0d52ab7a905
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "93077860"
 ---
 # <a name="integrate-azure-event-grid-with-auth0"></a>Azure Event Grid integreren met Auth0

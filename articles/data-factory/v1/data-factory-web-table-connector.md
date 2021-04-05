@@ -8,10 +8,10 @@ ms.date: 01/05/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 7663848bd06244de7efb169a576e11a5c78204c1
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100392898"
 ---
 # <a name="move-data-from-a-web-table-source-using-azure-data-factory"></a>Gegevens verplaatsen van een bron van een webtabel met behulp van Azure Data Factory
@@ -67,9 +67,9 @@ In de volgende tabel vindt u een beschrijving van de JSON-elementen die specifie
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| type |De eigenschap type moet worden ingesteld op: **Web** |Ja |
-| URL |URL naar de webbron |Ja |
-| authenticationType |Anoniem. |Ja |
+| type |De eigenschap type moet worden ingesteld op: **Web** |Yes |
+| URL |URL naar de webbron |Yes |
+| authenticationType |Anoniem. |Yes |
 
 ### <a name="using-anonymous-authentication"></a>Anonieme verificatie gebruiken
 
@@ -95,7 +95,7 @@ De sectie **typeProperties** verschilt voor elk type gegevensset en bevat inform
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type |het type van de gegevensset. moet worden ingesteld op **Webtable** |Ja |
+| type |het type van de gegevensset. moet worden ingesteld op **Webtable** |Yes |
 | leertraject |Een relatieve URL naar de resource die de tabel bevat. |Nee. Wanneer pad niet is opgegeven, wordt alleen de URL gebruikt die is opgegeven in de definitie van de gekoppelde service. |
 | index |De index van de tabel in de resource. Zie [index ophalen van een tabel in een sectie met een HTML-pagina](#get-index-of-a-table-in-an-html-page) voor de stappen voor het ophalen van index van een tabel in een HTML-pagina. |Ja |
 

@@ -4,10 +4,10 @@ description: Hierin worden de functies beschreven die beschikbaar zijn voor gebr
 ms.date: 01/27/2021
 ms.topic: reference
 ms.openlocfilehash: 92cb906e87179073b7a69aa0bd4eab22c77087f9
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98919271"
 ---
 # <a name="functions-for-use-with-azure-blueprints"></a>Functies voor gebruik met Azure-blauw drukken
@@ -34,9 +34,9 @@ Retourneert een object met eigenschappen die zijn ingevuld met de uitvoer van de
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| artefactnaam |Ja |tekenreeks |De naam van een blauw druk artefact. |
+| artefactnaam |Yes |tekenreeks |De naam van een blauw druk artefact. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -123,10 +123,10 @@ Combineert meerdere teken reeks waarden en retourneert de aaneengeschakelde teke
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| tekenreeks1 |Ja |tekenreeks |De eerste waarde voor samen voegen. |
-| aanvullende argumenten |Nee |tekenreeks |Aanvullende waarden in sequentiële volg orde voor samen voeging |
+| tekenreeks1 |Yes |tekenreeks |De eerste waarde voor samen voegen. |
+| aanvullende argumenten |No |tekenreeks |Aanvullende waarden in sequentiële volg orde voor samen voeging |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -148,9 +148,9 @@ Retourneert een waarde voor de para meter blauw druk. De opgegeven parameter naa
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| parameterName |Ja |tekenreeks |De naam van de para meter die moet worden geretourneerd. |
+| parameterName |Yes |tekenreeks |De naam van de para meter die moet worden geretourneerd. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -269,9 +269,9 @@ Retourneert een object dat het opgegeven bron groeps artefact vertegenwoordigt. 
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| tijdelijke aanduiding |Ja |tekenreeks |De naam van de tijdelijke aanduiding van het bron groeps artefact dat moet worden geretourneerd. |
+| tijdelijke aanduiding |Yes |tekenreeks |De naam van de tijdelijke aanduiding van het bron groeps artefact dat moet worden geretourneerd. |
 
 ### <a name="return-value"></a>Retourwaarde
 

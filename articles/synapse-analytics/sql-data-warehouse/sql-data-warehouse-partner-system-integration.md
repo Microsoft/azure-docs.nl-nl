@@ -10,10 +10,10 @@ ms.date: 11/24/2020
 ms.author: procha
 ms.reviewer: jrasnick
 ms.openlocfilehash: 19941963b5200b3ffdb9f2360301d30fe9df4823
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96121855"
 ---
 # <a name="azure-synapse-analytics-system-integration-partners"></a>Azure Synapse Analytics-systeem integratie partners
@@ -21,7 +21,7 @@ ms.locfileid: "96121855"
 In dit artikel wordt uitgelegd hoe micro soft System Integration partner-bedrijven oplossingen bouwen met Azure Synapse.
 
 ## <a name="system-integration-partners"></a>Systeem integratie partners
-| Partner | Beschrijving | Website/product koppeling |
+| Partner | Description | Website/product koppeling |
 | ------- | ----------- | -------------------- |
 | ![Accenture](./media/sql-data-warehouse-partner-public-preview/accenture-logo.png) |**Accenture**<br>Met 45000 + gespecialiseerde professionals, de Accenture micro soft-bedrijfs groep, aangedreven door Avanade, kunnen ondernemingen profiteren van het grote aantal digitale onderbrekingen.|[Partner pagina](https://www.accenture.com/us-en/services/microsoft-index)<br>|
 | ![Adatis](./media/sql-data-warehouse-partner-public-preview/adatis-logo.png) |**Adatis**<br>Adatis biedt services die zijn gespecialiseerd in geavanceerde gegevens analyse, van gegevens strategie en advisering tot wereld klasse Delivery en beheerde services. |[Partner pagina](https://adatis.co.uk/)<br> |

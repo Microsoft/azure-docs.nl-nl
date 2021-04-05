@@ -8,10 +8,10 @@ ms.date: 02/22/2021
 ms.topic: quickstart
 ms.service: azure-object-anchors
 ms.openlocfilehash: 69d23b9d02eb176a2e42985ef5c3673e83d9bb7e
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102607897"
 ---
 # <a name="quickstart-create-an-object-anchors-model-from-a-3d-model"></a>Quick Start: een object ankers model maken op basis van een 3D-model
@@ -92,7 +92,7 @@ U kunt nu door gaan en uw 3D-model converteren.
 
 2. Open het `Configuration.cs` bestand dat zich in de hoofdmap van het project bevindt en vervang de `set-me` waarden in de volgende velden:
 
-   | Veld         | Beschrijving                                                         |
+   | Veld         | Description                                                         |
    |---------------|---------------------------------------------------------------------|
    | AccountDomain | Het **account domein** van het account voor object ankers dat hierboven is gemaakt. |
    | AccountId     | De **account-id** van het object ankers account dat hierboven is gemaakt.     |
@@ -100,7 +100,7 @@ U kunt nu door gaan en uw 3D-model converteren.
 
    Er zijn vier aanvullende velden die moeten worden gecontroleerd:
 
-    | Veld                    | Beschrijving                       |
+    | Veld                    | Description                       |
     | ---                      | ---                               |
     | InputAssetPath           | Het absolute pad naar een 3D-model op de lokale computer. Ondersteunde bestands indelingen zijn `fbx` , `ply` , `obj` , en `glb` `gltf` . |
     | AssetDimensionUnit       | De meet eenheid van uw 3D-model. Alle ondersteunde meet eenheden kunnen worden geopend met behulp van de `Azure.MixedReality.ObjectAnchors.Conversion.AssetLengthUnit` inventarisatie. |

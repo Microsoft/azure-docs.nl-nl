@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: eeede88bfbe024a66e40270240d32488e581dd77
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102517698"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on"></a>Naadloze eenmalige aanmelding met Azure Active Directory
@@ -69,9 +69,9 @@ SSO via PRT werkt wanneer apparaten zijn geregistreerd bij Azure AD voor hybride
 | OS\Browser |Internet Explorer|Microsoft Edge|Google Chrome|Mozilla Firefox|Safari|
 | --- | --- |--- | --- | --- | -- 
 |Windows 10|Ja\*|Ja|Ja|Ja\*\*\*|N.v.t.
-|Windows 8.1|Ja\*|Klikt\*\*\*|Ja|Ja\*\*\*|N.v.t.
-|Windows 8|Ja\*|N.v.t.|Ja|Ja\*\*\*|N.v.t.
-|Windows 7|Ja\*|N.v.t.|Ja|Ja\*\*\*|N.v.t.
+|Windows 8.1|Yes\*|Klikt\*\*\*|Yes|Ja\*\*\*|N.v.t.
+|Windows 8|Yes\*|N.v.t.|Ja|Ja\*\*\*|N.v.t.
+|Windows 7|Yes\*|N.v.t.|Ja|Ja\*\*\*|N.v.t.
 |Windows Server 2012 R2 of hoger|Klikt\*\*|N.v.t.|Ja|Ja\*\*\*|N.v.t.
 |Mac OS X|N.v.t.|N.v.t.|Ja\*\*\*|Ja\*\*\*|Ja\*\*\*
 

@@ -11,10 +11,10 @@ ms.date: 07/30/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 1c05ff1bf1956943230bf523584025787495d57f
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102517851"
 ---
 # <a name="user-flow-versions-in-azure-active-directory-b2c"></a>Versies van de gebruikers stroom in Azure Active Directory B2C
@@ -33,7 +33,7 @@ Gebruikers stromen in Azure Active Directory B2C (Azure AD B2C) helpen u bij het
 
 Aanbevolen gebruikers stromen zijn Preview-versies die nieuwe functies combi neren met verouderde v2-en V 1.1-mogelijkheden. Doorlopend, aanbevolen gebruikers stromen worden behouden en bijgewerkt.
 
-| Gebruikersstroom | Beschrijving |
+| Gebruikersstroom | Description |
 | --------- | ----------- |
 | Wacht woord opnieuw instellen (preview-versie) | Hiermee kan een gebruiker een nieuw wacht woord kiezen na het verifiëren van het e-mail adres. Met deze gebruikers stroom kunt u het volgende configureren: <ul><li>[Meervoudige verificatie](multi-factor-authentication.md)</li><li>Compatibiliteits instellingen voor tokens</li><li>[Leeftijdsbeperking](age-gating.md)</li><li>[vereisten voor wachtwoord complexiteit](password-complexity.md)</li></ul> |
 | Profiel bewerken (preview-versie) | Hiermee kan een gebruiker hun gebruikers kenmerken configureren. Met deze gebruikers stroom kunt u het volgende configureren: <ul><li>[Levens duur van token](tokens-overview.md)</li><li>Compatibiliteits instellingen voor tokens</li><li>Gedrag van sessie</li></ul> |
@@ -45,7 +45,7 @@ Aanbevolen gebruikers stromen zijn Preview-versies die nieuwe functies combi ner
 
 Standaard gebruikers stromen (eerder aangeduid als v1) zijn algemeen beschikbaar, productie-kant-en-klare gebruikers stromen. Standaard gebruikers stromen worden niet bijgewerkt.
 
-| Gebruikersstroom | Beschrijving |
+| Gebruikersstroom | Description |
 | --------- | ----------- | ----------- |
 | Wachtwoord opnieuw instellen | Hiermee kan een gebruiker een nieuw wacht woord kiezen na het verifiëren van het e-mail adres. Met deze gebruikers stroom kunt u het volgende configureren: <ul><li>[Meervoudige verificatie](multi-factor-authentication.md)</li><li>Compatibiliteits instellingen voor tokens</li><li>[Vereisten voor wachtwoord complexiteit](password-complexity.md)</li></ul> |
 | Profiel bewerken | Hiermee kan een gebruiker hun gebruikers kenmerken configureren. Met deze gebruikers stroom kunt u het volgende configureren: <ul><li>[Levens duur van token](tokens-overview.md)</li><li>Compatibiliteits instellingen voor tokens</li><li>Gedrag van sessie</li></ul> |

@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 09/14/2018
 ms.custom: devx-track-java, devx-track-azurecli
 ms.openlocfilehash: 1ffbd760ae75605d75652b29d379420d6946aa8f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96326451"
 ---
 # <a name="azure-functions-java-developer-guide"></a>Java-ontwikkelaarshandleiding voor Azure Functions
@@ -165,7 +165,7 @@ U kunt de versie van Java beheren die is gericht op de Maven-archetype met behul
 
 De Maven archetype genereert een pom.xml dat de opgegeven Java-versie als doel heeft. De volgende elementen in pom.xml geven aan welke Java-versie moet worden gebruikt:
 
-| Element |  Java 8-waarde | Java 11-waarde | Beschrijving |
+| Element |  Java 8-waarde | Java 11-waarde | Description |
 | ---- | ---- | ---- | --- |
 | **`Java.version`** | 1.8 | 11 | De versie van Java die wordt gebruikt door de maven-compiler-invoeg toepassing. |
 | **`JavaVersion`** | 8 | 11 | Java-versie die door de functie-app in azure wordt gehost. |

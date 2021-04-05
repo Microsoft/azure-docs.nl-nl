@@ -14,10 +14,10 @@ author: jaredmoo
 ms.reviewer: sstein
 ms.date: 02/01/2021
 ms.openlocfilehash: 11b94ba5bcedf56f0115b8730dc58f808aff5c58
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100371597"
 ---
 # <a name="use-transact-sql-t-sql-to-create-and-manage-elastic-database-jobs-preview"></a>Transact-SQL (T-SQL) gebruiken om Elastic Database taken te maken en te beheren (preview-versie)
@@ -393,7 +393,7 @@ EXEC jobs.sp_delete_job @job_name='ResultsPoolsJob';
 
 De volgende opgeslagen procedures bevinden zich in de [Jobs-data base](job-automation-overview.md#elastic-job-database).
 
-|Opgeslagen procedure  |Beschrijving  |
+|Opgeslagen procedure  |Description  |
 |---------|---------|
 |[sp_add_job](#sp_add_job)     |     Hiermee wordt een nieuwe taak toegevoegd.    |
 |[sp_update_job](#sp_update_job)    |      Hiermee wordt een bestaande taak bijgewerkt.   |
@@ -1208,7 +1208,7 @@ GO
 
 De volgende weer gaven zijn beschikbaar in de [Jobs-data base](job-automation-overview.md#elastic-job-database).
 
-|Weergave  |Beschrijving  |
+|Weergave  |Description  |
 |---------|---------|
 |[job_executions](#job_executions-view)     |  Taak uitvoerings geschiedenis weer geven.      |
 |[functies](#jobs-view)     |   Hiermee worden alle taken weer gegeven.      |

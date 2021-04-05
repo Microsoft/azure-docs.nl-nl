@@ -7,10 +7,10 @@ ms.service: stream-analytics
 ms.topic: troubleshooting
 ms.date: 08/07/2020
 ms.openlocfilehash: 2ca289cd52b9a406e486ee9c186be683e71f02d0
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98020108"
 ---
 # <a name="azure-stream-analytics-data-errors"></a>Azure Stream Analytics gegevens fouten
@@ -48,7 +48,7 @@ Zie [problemen met Azure stream Analytics oplossen met behulp van Diagnostische 
 * Logboek Details
    * Invoer bericht-id. Voor Event hub is de id het PartitionId-, offset-en sequence-nummer.
 
-**Foutbericht**
+**Fout bericht**
 
 ```json
 "BriefMessage": "Unable to decompress events from resource 'https:\\/\\/exampleBlob.blob.core.windows.net\\/inputfolder\\/csv.txt'. Please ensure compression setting fits the data being processed."
@@ -64,7 +64,7 @@ Zie [problemen met Azure stream Analytics oplossen met behulp van Diagnostische 
    * Invoer bericht-id. 
    * De werkelijke Payload tot slechts enkele kilo bytes.
 
-**Foutbericht**
+**Fout bericht**
 
 ```json
 "BriefMessage": "Invalid CSV Header for resource 'https:\\/\\/exampleBlob.blob.core.windows.net\\/inputfolder\\/csv.txt'. Please make sure there are no duplicate field names."
@@ -142,7 +142,7 @@ Zie [problemen met Azure stream Analytics oplossen met behulp van Diagnostische 
    * Fout bericht. 
    * De werkelijke Payload tot slechts enkele kilo bytes.
 
-**Foutbericht**
+**Fout bericht**
 
 ```json
 "BriefMessage": "Unable to get timestamp for resource 'https:\\/\\/exampleBlob.blob.core.windows.net\\/inputfolder\\/csv.txt ' due to error 'Cannot convert string to datetime'"
@@ -157,7 +157,7 @@ Zie [problemen met Azure stream Analytics oplossen met behulp van Diagnostische 
 * Logboek Details
    * De werkelijke Payload tot slechts enkele kilo bytes.
 
-**Foutbericht**
+**Fout bericht**
 
 ```json
 "BriefMessage": "Unable to get value of TIMESTAMP BY OVER COLUMN"
@@ -173,7 +173,7 @@ Zie [problemen met Azure stream Analytics oplossen met behulp van Diagnostische 
    * Tijd van de toepassing en aankomst tijd. 
    * De werkelijke Payload tot slechts enkele kilo bytes.
 
-**Foutbericht**
+**Fout bericht**
 
 ```json
 "BriefMessage": "Input event with application timestamp '2019-01-01' and arrival time '2019-01-02' was sent later than configured tolerance."
@@ -189,7 +189,7 @@ Zie [problemen met Azure stream Analytics oplossen met behulp van Diagnostische 
    * Tijd van de toepassing en aankomst tijd. 
    * De werkelijke Payload tot slechts enkele kilo bytes.
 
-**Foutbericht**
+**Fout bericht**
 
 ```json
 "BriefMessage": "Input event arrival time '2019-01-01' is earlier than input event application timestamp '2019-01-02' by more than 5 minutes."
@@ -204,7 +204,7 @@ Zie [problemen met Azure stream Analytics oplossen met behulp van Diagnostische 
 * Logboek Details
    * De werkelijke Payload tot slechts enkele kilo bytes.
 
-**Foutbericht**
+**Fout bericht**
 
 ```json
 "Message": "Out of order event(s) received."
@@ -225,7 +225,7 @@ Er zijn verschillende gegevens fouten die alleen kunnen worden gedetecteerd na h
 * Logboek Details
    * De naam van de kolom en de record-id of een deel van de record.
 
-**Foutbericht**
+**Fout bericht**
 
 ```json
 "Message": "The output record does not contain primary key property: [deviceId] Ensure the query output contains the column [deviceId] with a unique non-empty string less than '255' characters."
@@ -240,7 +240,7 @@ Er zijn verschillende gegevens fouten die alleen kunnen worden gedetecteerd na h
 * Logboek Details
    * De naam van de kolom en ofwel de record-id of het deel van de record.
 
-**Foutbericht**
+**Fout bericht**
 
 ```json
 "Message": "Invalid property name #deviceIdValue. Please refer MSDN for Azure table property naming convention."
@@ -256,7 +256,7 @@ Er zijn verschillende gegevens fouten die alleen kunnen worden gedetecteerd na h
    * De naam van de kolom.
    * De record-id of een deel van de record.
 
-**Foutbericht**
+**Fout bericht**
 
 ```json
 "Message": "The column [id] value null or its type is invalid. Ensure to provide a unique non-empty string less than '255' characters."
@@ -271,7 +271,7 @@ Er zijn verschillende gegevens fouten die alleen kunnen worden gedetecteerd na h
 * Logboek Details
    * De record-id of een deel van de record.
 
-**Foutbericht**
+**Fout bericht**
 
 ```json
 "BriefMessage": "Single output event exceeds the maximum message size limit allowed (262144 bytes) by Event Hub."

@@ -13,10 +13,10 @@ ms.author: urmilano
 ms.reviewer: sstein, bonova, MashaMSFT
 ms.date: 09/03/2020
 ms.openlocfilehash: 342491178d55dacbdc68e6c9042623d381dff898
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96861541"
 ---
 # <a name="canceling-azure-sql-managed-instance-management-operations"></a>De Azure SQL Managed instance Management-bewerkingen worden geannuleerd
@@ -38,14 +38,14 @@ De volgende tabel bevat een overzicht van de beheer bewerkingen, ongeacht of u d
 
 Categorie  |Bewerking  |Geannuleerd  |Geschatte annulerings duur  |
 |---------|---------|---------|---------|
-|Implementatie |Instantie maken |Ja |90% van de bewerkingen is binnen 5 minuten voltooid. |
-|Bijwerken |Opslag van exemplaren omhoog/omlaag schalen (Algemeen) |Nee |  |
-|Bijwerken |Opslag van exemplaren omhoog/omlaag schalen (Bedrijfskritiek) |Ja |90% van de bewerkingen is binnen 5 minuten voltooid. |
-|Bijwerken |Rekenkracht van instantie (vCores) omhoog en omlaag schalen (Algemeen) |Ja |90% van de bewerkingen is binnen 5 minuten voltooid. |
-|Bijwerken |Rekenkracht van instantie (vCores) omhoog en omlaag schalen (Bedrijfskritiek) |Ja |90% van de bewerkingen is binnen 5 minuten voltooid. |
-|Bijwerken |Wijziging van de servicelaag van de instantie (van Algemeen naar Bedrijfskritiek en omgekeerd) |Ja |90% van de bewerkingen is binnen 5 minuten voltooid. |
-|Verwijderen |Verwijdering van exemplaar |Nee |  |
-|Verwijderen |Verwijderen van virtueel cluster (als een door de gebruiker geïnitieerde bewerking) |Nee |  |
+|Implementatie |Instantie maken |Yes |90% van de bewerkingen is binnen 5 minuten voltooid. |
+|Bijwerken |Opslag van exemplaren omhoog/omlaag schalen (Algemeen) |No |  |
+|Bijwerken |Opslag van exemplaren omhoog/omlaag schalen (Bedrijfskritiek) |Yes |90% van de bewerkingen is binnen 5 minuten voltooid. |
+|Bijwerken |Rekenkracht van instantie (vCores) omhoog en omlaag schalen (Algemeen) |Yes |90% van de bewerkingen is binnen 5 minuten voltooid. |
+|Bijwerken |Rekenkracht van instantie (vCores) omhoog en omlaag schalen (Bedrijfskritiek) |Yes |90% van de bewerkingen is binnen 5 minuten voltooid. |
+|Bijwerken |Wijziging van de servicelaag van de instantie (van Algemeen naar Bedrijfskritiek en omgekeerd) |Yes |90% van de bewerkingen is binnen 5 minuten voltooid. |
+|Verwijderen |Verwijdering van exemplaar |No |  |
+|Verwijderen |Verwijderen van virtueel cluster (als een door de gebruiker geïnitieerde bewerking) |No |  |
 
 ## <a name="cancel-management-operation"></a>Beheer bewerking annuleren
 

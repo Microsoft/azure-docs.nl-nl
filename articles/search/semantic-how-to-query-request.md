@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/18/2021
 ms.openlocfilehash: c33739124092a17acf0590f00b2f9c3c09bf894e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104654659"
 ---
 # <a name="create-a-query-for-semantic-captions-in-cognitive-search"></a>Een query maken voor semantische bijschriften in Cognitive Search
@@ -98,7 +98,7 @@ POST https://[service name].search.windows.net/indexes/hotels-sample-index/docs/
 
 De volgende tabel bevat een overzicht van de query parameters die in een semantische query worden gebruikt, zodat u ze op een holistische manier kunt zien. Zie [zoeken naar documenten (rest preview)](/rest/api/searchservice/preview-api/search-documents) voor een lijst met alle para meters.
 
-| Parameter | Type | Beschrijving |
+| Parameter | Type | Description |
 |-----------|-------|-------------|
 | Type | Tekenreeks | Geldige waarden zijn simple, Full en semantisch. De waarde ' semantisch ' is vereist voor semantische query's. |
 | queryLanguage | Tekenreeks | Vereist voor semantische query's. Momenteel wordt alleen "en-US" geïmplementeerd. |

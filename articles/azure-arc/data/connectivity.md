@@ -10,10 +10,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: conceptual
 ms.openlocfilehash: d148509af45b93dce8dbd99b9afc674276b149b6
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "99493969"
 ---
 # <a name="connectivity-modes-and-requirements"></a>Connectiviteitsmodi en -vereisten
@@ -68,15 +68,15 @@ Sommige services die zijn gekoppeld aan Azure, zijn alleen beschikbaar wanneer z
 
 |**Type gegevens**|**Richting**|**Vereist/optioneel**|**Aanvullende kosten**|**Modus vereist**|**Opmerkingen**|
 |---|---|---|---|---|---|
-|**Containerinstallatiekopieën**|Micro soft-Container Registry-> klant|Vereist|Nee|Indirect of direct|Container installatie kopieën zijn de methode voor het distribueren van de software.  In een omgeving die verbinding kan maken met de micro soft Container Registry (MCR) via internet, kunnen de container installatie kopieën rechtstreeks vanuit MCR worden opgehaald.  In het geval dat de implementatie omgeving geen directe connectiviteit heeft, kunt u de installatie kopieën ophalen van MCR en deze pushen naar een persoonlijk container register in de implementatie omgeving.  Tijdens het maken kunt u het aanmaak proces configureren om uit het persoonlijke container register te halen in plaats van MCR. Dit geldt ook voor automatische updates.|
-|**Resource-inventaris**|Klant omgeving-> Azure|Vereist|Nee|Indirect of direct|Een inventaris van gegevens controllers, data base-exemplaren (PostgreSQL en SQL) wordt in azure bewaard voor facturerings doeleinden en ook voor het maken van een inventaris van alle gegevens controllers en data base-exemplaren op één locatie. Dit is vooral nuttig als u meer dan één omgeving met Azure Arc Data Services hebt.  Als instanties worden ingericht, ingericht, uitgeschaald/in, omhoog/omlaag geschaald, wordt de inventarisatie in azure bijgewerkt.|
-|**Telemetriegegevens factureren**|Klant omgeving-> Azure|Vereist|Nee|Indirect of direct|Het gebruik van data base-exemplaren moet naar Azure worden verzonden voor facturerings doeleinden.  Er zijn geen kosten voor Azure Arc ingeschakelde gegevens Services tijdens de preview-periode.|
+|**Containerinstallatiekopieën**|Micro soft-Container Registry-> klant|Vereist|No|Indirect of direct|Container installatie kopieën zijn de methode voor het distribueren van de software.  In een omgeving die verbinding kan maken met de micro soft Container Registry (MCR) via internet, kunnen de container installatie kopieën rechtstreeks vanuit MCR worden opgehaald.  In het geval dat de implementatie omgeving geen directe connectiviteit heeft, kunt u de installatie kopieën ophalen van MCR en deze pushen naar een persoonlijk container register in de implementatie omgeving.  Tijdens het maken kunt u het aanmaak proces configureren om uit het persoonlijke container register te halen in plaats van MCR. Dit geldt ook voor automatische updates.|
+|**Resource-inventaris**|Klant omgeving-> Azure|Vereist|No|Indirect of direct|Een inventaris van gegevens controllers, data base-exemplaren (PostgreSQL en SQL) wordt in azure bewaard voor facturerings doeleinden en ook voor het maken van een inventaris van alle gegevens controllers en data base-exemplaren op één locatie. Dit is vooral nuttig als u meer dan één omgeving met Azure Arc Data Services hebt.  Als instanties worden ingericht, ingericht, uitgeschaald/in, omhoog/omlaag geschaald, wordt de inventarisatie in azure bijgewerkt.|
+|**Telemetriegegevens factureren**|Klant omgeving-> Azure|Vereist|No|Indirect of direct|Het gebruik van data base-exemplaren moet naar Azure worden verzonden voor facturerings doeleinden.  Er zijn geen kosten voor Azure Arc ingeschakelde gegevens Services tijdens de preview-periode.|
 |**Gegevens en logboeken bewaken**|Klant omgeving-> Azure|Optioneel|Mogelijk afhankelijk van het gegevens volume (Zie de [Azure monitor prijzen](https://azure.microsoft.com/en-us/pricing/details/monitor/))|Indirect of direct|Het is raadzaam om de lokaal verzamelde bewakings gegevens en logboeken te verzenden naar Azure Monitor voor het samen voegen van gegevens in meerdere omgevingen op één plek en ook om Azure Monitor Services, zoals waarschuwingen, te gebruiken met behulp van de gegevens in Azure Machine Learning, enzovoort.|
 |**Access Control op basis van rollen (Azure RBAC) van Azure**|Klant omgeving-> Azure->-gebruikers omgeving|Optioneel|Nee|Alleen direct|Als u Azure RBAC wilt gebruiken, moet de verbinding te allen tijde met Azure tot stand worden gebracht.  Als u geen gebruik wilt maken van Azure RBAC, kunt u lokale Kubernetes RBAC gebruiken.  **Beschik baarheid van de rechtstreeks verbonden modus in behandeling**|
 |**Azure Active Directory (AD)**|Klant omgeving-> Azure->-gebruikers omgeving|Optioneel|Misschien, maar u betaalt mogelijk al voor Azure AD|Alleen direct|Als u Azure AD wilt gebruiken voor verificatie, moet u te allen tijde verbinding maken met Azure. Als u Azure AD niet wilt gebruiken voor authenticatie, kunt u ons Active Directory Federation Services (ADFS) via Active Directory. **Beschik baarheid van de rechtstreeks verbonden modus in behandeling**|
-|**Back-up en herstel**|Klant omgeving->-gebruikers omgeving|Vereist|Nee|Direct of indirect|De service voor back-up en herstel kan worden geconfigureerd om naar lokale opslag klassen te verwijzen. |
+|**Back-up en herstel**|Klant omgeving->-gebruikers omgeving|Vereist|No|Direct of indirect|De service voor back-up en herstel kan worden geconfigureerd om naar lokale opslag klassen te verwijzen. |
 |**Azure backup-lange termijn retentie**| Klant omgeving-> Azure | Optioneel| Ja voor Azure Storage | Alleen direct |U kunt back-ups die lokaal naar Azure Backup worden genomen voor lange termijn retentie van back-ups verzenden en terugbrengen naar de lokale omgeving voor herstel. **Beschik baarheid van de rechtstreeks verbonden modus in behandeling**|
-|**Azure Defender-beveiligings Services**|Klant omgeving-> Azure->-gebruikers omgeving|Optioneel|Ja|Alleen direct|**Beschik baarheid van de rechtstreeks verbonden modus in behandeling**|
+|**Azure Defender-beveiligings Services**|Klant omgeving-> Azure->-gebruikers omgeving|Optioneel|Yes|Alleen direct|**Beschik baarheid van de rechtstreeks verbonden modus in behandeling**|
 |**Wijzigingen van de inrichting en configuratie van Azure Portal**|Klant omgeving-> Azure->-gebruikers omgeving|Optioneel|Nee|Alleen direct|Wijzigingen in de inrichting en configuratie kunnen lokaal worden uitgevoerd met behulp van Azure Data Studio of [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)] .  In de direct verbonden modus kunt u ook configuratie wijzigingen inrichten en maken van de Azure Portal. **Beschik baarheid van de rechtstreeks verbonden modus in behandeling**|
 
 
@@ -114,7 +114,7 @@ HTTPS
 
 #### <a name="can-use-proxy"></a>Kan proxy gebruiken
 
-Ja
+Yes
 
 #### <a name="authentication"></a>Verificatie
 
@@ -154,7 +154,7 @@ HTTPS
 
 #### <a name="can-use-proxy"></a>Kan proxy gebruiken
 
-Ja
+Yes
 
 #### <a name="authentication"></a>Verificatie 
 
@@ -186,7 +186,7 @@ HTTPS
 
 #### <a name="can-use-proxy"></a>Kan proxy gebruiken
 
-Ja
+Yes
 
 #### <a name="authentication"></a>Verificatie 
 

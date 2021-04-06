@@ -11,15 +11,15 @@ ms.author: tamram
 ms.subservice: blobs
 ms.custom: references_regions
 ms.openlocfilehash: 54e703b096ea4e3572a6fc00aa6b7b2b99c4bcad
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104800741"
 ---
 # <a name="soft-delete-for-containers-preview"></a>Voorlopig verwijderen voor containers (preview-versie)
 
-Met voorlopig verwijderen voor containers (preview) wordt voor komen dat uw gegevens per ongeluk of opzettelijk worden verwijderd. Wanneer de container soft delete is ingeschakeld voor een opslag account, worden verwijderde containers en de inhoud ervan bewaard in Azure Storage voor de periode die u opgeeft. Tijdens de retentie periode kunt u eerder verwijderde containers herstellen. Als u een container herstelt, worden de blobs in die container hersteld wanneer deze is verwijderd.
+Met voorlopig verwijderen voor containers (preview) wordt voor komen dat uw gegevens per ongeluk of opzettelijk worden verwijderd. Wanneer Voorlopig verwijderen van containers is ingeschakeld voor een opslagaccount, worden verwijderde containers en hun inhoud bewaard in Azure Storage voor de periode die u opgeeft. Tijdens de bewaarperiode kunt u eerder verwijderde containers herstellen. Als u een container herstelt, worden ook de blobs hersteld die op het moment van verwijderen aanwezig waren in de container.
 
 Micro soft raadt u aan de volgende functies voor gegevens beveiliging in te scha kelen voor end-to-end-beveiliging voor uw BLOB-gegevens:
 

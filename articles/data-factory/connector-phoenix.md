@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: jingwang
 ms.openlocfilehash: b0919e1da93f0cf0a5d27e541493b724d2fa5f0a
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100374317"
 ---
 # <a name="copy-data-from-phoenix-using-azure-data-factory"></a>Gegevens kopiëren van Phoenix met Azure Data Factory 
@@ -45,19 +45,19 @@ De volgende eigenschappen worden ondersteund voor gekoppelde services van Breda:
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op: **Phoenix** | Ja |
-| host | Het IP-adres of de hostnaam van de Bredase server. (dat wil zeggen, 192.168.222.160)  | Ja |
-| poort | De TCP-poort die de Phoenix-server gebruikt om te Luis teren naar client verbindingen. De standaard waarde is 8765. Als u verbinding maakt met Azure HDInsights, geeft u poort op als 443. | Nee |
-| httpPath | De gedeeltelijke URL die overeenkomt met de Phoenix-server. (dat wil zeggen,/gateway/sandbox/Phoenix/Version). Geef op `/hbasephoenix0` of HDInsights-cluster wordt gebruikt.  | Nee |
-| authenticationType | Het verificatie mechanisme dat wordt gebruikt om verbinding te maken met de Phoenix-server. <br/>Toegestane waarden zijn: **Anonymous**, **UsernameAndPassword**, **WindowsAzureHDInsightService** | Ja |
-| gebruikersnaam | De gebruikers naam die wordt gebruikt om verbinding te maken met de Bredase server.  | Nee |
-| wachtwoord | Het wacht woord dat overeenkomt met de gebruikers naam. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Nee |
-| enableSsl | Hiermee geeft u op of de verbindingen met de server met behulp van TLS worden versleuteld. De standaardwaarde is false.  | Nee |
-| trustedCertPath | Het volledige pad van het. pem-bestand met vertrouwde CA-certificaten voor het verifiëren van de server bij het maken van verbinding via TLS. Deze eigenschap kan alleen worden ingesteld wanneer TLS op zelf-hostende IR wordt gebruikt. De standaard waarde is het cacerts. pem-bestand dat met de IR is geïnstalleerd.  | Nee |
-| useSystemTrustStore | Hiermee geeft u op of u een CA-certificaat wilt gebruiken uit de systeem vertrouwens archief of vanuit een opgegeven PEM-bestand. De standaardwaarde is false.  | Nee |
-| allowHostNameCNMismatch | Hiermee geeft u op of een door de certificerings instantie uitgegeven TLS/SSL-certificaat naam moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is false.  | Nee |
-| allowSelfSignedServerCert | Hiermee geeft u op of zelfondertekende certificaten van de server mogen worden toegestaan. De standaardwaarde is false.  | Nee |
-| connectVia | Het [Integration runtime](concepts-integration-runtime.md) dat moet worden gebruikt om verbinding te maken met het gegevens archief. Meer informatie vindt u in de sectie [vereisten](#prerequisites) . Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |Nee |
+| type | De eigenschap type moet worden ingesteld op: **Phoenix** | Yes |
+| host | Het IP-adres of de hostnaam van de Bredase server. (dat wil zeggen, 192.168.222.160)  | Yes |
+| poort | De TCP-poort die de Phoenix-server gebruikt om te Luis teren naar client verbindingen. De standaard waarde is 8765. Als u verbinding maakt met Azure HDInsights, geeft u poort op als 443. | No |
+| httpPath | De gedeeltelijke URL die overeenkomt met de Phoenix-server. (dat wil zeggen,/gateway/sandbox/Phoenix/Version). Geef op `/hbasephoenix0` of HDInsights-cluster wordt gebruikt.  | No |
+| authenticationType | Het verificatie mechanisme dat wordt gebruikt om verbinding te maken met de Phoenix-server. <br/>Toegestane waarden zijn: **Anonymous**, **UsernameAndPassword**, **WindowsAzureHDInsightService** | Yes |
+| gebruikersnaam | De gebruikers naam die wordt gebruikt om verbinding te maken met de Bredase server.  | No |
+| wachtwoord | Het wacht woord dat overeenkomt met de gebruikers naam. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | No |
+| enableSsl | Hiermee geeft u op of de verbindingen met de server met behulp van TLS worden versleuteld. De standaardwaarde is false.  | No |
+| trustedCertPath | Het volledige pad van het. pem-bestand met vertrouwde CA-certificaten voor het verifiëren van de server bij het maken van verbinding via TLS. Deze eigenschap kan alleen worden ingesteld wanneer TLS op zelf-hostende IR wordt gebruikt. De standaard waarde is het cacerts. pem-bestand dat met de IR is geïnstalleerd.  | No |
+| useSystemTrustStore | Hiermee geeft u op of u een CA-certificaat wilt gebruiken uit de systeem vertrouwens archief of vanuit een opgegeven PEM-bestand. De standaardwaarde is false.  | No |
+| allowHostNameCNMismatch | Hiermee geeft u op of een door de certificerings instantie uitgegeven TLS/SSL-certificaat naam moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is false.  | No |
+| allowSelfSignedServerCert | Hiermee geeft u op of zelfondertekende certificaten van de server mogen worden toegestaan. De standaardwaarde is false.  | No |
+| connectVia | Het [Integration runtime](concepts-integration-runtime.md) dat moet worden gebruikt om verbinding te maken met het gegevens archief. Meer informatie vindt u in de sectie [vereisten](#prerequisites) . Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |No |
 
 >[!NOTE]
 >Als uw cluster geen plak sessie ondersteunt, bijvoorbeeld HDInsight, voegt u de knooppunt index expliciet toe aan het einde van de instelling van het HTTP-pad, bijvoorbeeld `/hbasephoenix0` in plaats van `/hbasephoenix` .
@@ -92,7 +92,7 @@ Als u gegevens wilt kopiëren van Breda, stelt u de eigenschap type van de gegev
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op: **PhoenixObject** | Ja |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op: **PhoenixObject** | Yes |
 | schema | De naam van het schema. |Nee (als "query" in activiteit bron is opgegeven)  |
 | tabel | De naam van de tabel. |Nee (als "query" in activiteit bron is opgegeven)  |
 | tableName | De naam van de tabel met schema. Deze eigenschap wordt ondersteund voor achterwaartse compatibiliteit. Gebruik `schema` en `table` voor nieuwe werk belasting. | Nee (als "query" in activiteit bron is opgegeven) |
@@ -124,7 +124,7 @@ Als u gegevens wilt kopiëren van Breda, stelt u het bron type in de Kopieer act
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **PhoenixSource** | Ja |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **PhoenixSource** | Yes |
 | query | Gebruik de aangepaste SQL-query om gegevens te lezen. Bijvoorbeeld: `"SELECT * FROM MyTable"`. | Nee (als ' Tablename ' in gegevensset is opgegeven) |
 
 **Voorbeeld:**

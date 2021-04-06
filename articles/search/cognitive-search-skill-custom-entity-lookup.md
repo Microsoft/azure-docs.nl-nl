@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.openlocfilehash: 704763e8e6e7c5336d0ed3e1c28791fb96c77aba
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97844925"
 ---
 #     <a name="custom-entity-lookup-cognitive-skill-preview"></a>Aangepaste entiteit opzoeken cognitieve vaardigheid (preview-versie)
@@ -47,7 +47,7 @@ Parameters zijn hoofdlettergevoelig.
 
 ## <a name="skill-inputs"></a>Vaardigheids invoer
 
-| Invoer naam      | Beschrijving                   |
+| Invoer naam      | Description                   |
 |---------------|-------------------------------|
 | `text`          | De tekst die moet worden geanalyseerd.          |
 | `languageCode`    | Optioneel. De standaardinstelling is `"en"`.  |
@@ -56,7 +56,7 @@ Parameters zijn hoofdlettergevoelig.
 ## <a name="skill-outputs"></a>Vaardigheids uitvoer
 
 
-| Uitvoer naam      | Beschrijving                   |
+| Uitvoer naam      | Description                   |
 |---------------|-------------------------------|
 | `entities` | Een matrix met objecten die informatie bevatten over de gevonden overeenkomsten en gerelateerde meta gegevens. Elk van de geïdentificeerde entiteiten bevat mogelijk de volgende velden:  <ul> <li> *naam*: de entiteit op het hoogste niveau dat is geïdentificeerd. De entiteit vertegenwoordigt het ' genormaliseerde ' formulier. </li> <li> *id*: een unieke id voor de entiteit zoals gedefinieerd door de gebruiker in de aangepaste entiteits definitie-indeling.</li> <li> *Beschrijving*: beschrijving van de entiteit zoals gedefinieerd door de gebruiker in de definitie-indeling aangepaste entiteit. </li> <li> *type:* Entiteits type zoals gedefinieerd door de gebruiker in de aangepaste entiteits definitie-indeling.</li> <li> *subtype:* Subtype van entiteit zoals gedefinieerd door de gebruiker in de definitie-indeling aangepaste entiteit.</li>  <li> *matchs*: verzameling waarmee de overeenkomsten voor die entiteit worden beschreven op de bron tekst. Elke overeenkomst heeft de volgende leden: </li> <ul> <li> *tekst*: de onbewerkte tekst komt overeen met het bron document. </li> <li> *Offset*: de locatie waar de overeenkomst is gevonden in de tekst. </li> <li> *Length*: de lengte van de overeenkomende tekst. </li> <li> *matchDistance*: het aantal tekens dat anders is dan dit komt overeen met de oorspronkelijke entiteits naam of-alias.  </li> </ul> </ul>
   |
@@ -160,7 +160,7 @@ De onderstaande tabellen bevatten meer informatie over de verschillende configur
 | `defaultFuzzyEditDistance` | Beschrijving Wijzigt de standaard waarde voor het bewerken van fuzzy voor deze entiteit. Het kan worden gebruikt om de standaard waarde van alle aliassen fuzzyEditDistance waarden te wijzigen. |
 | `aliases` | Beschrijving Een matrix met complexe objecten die kunnen worden gebruikt om alternatieve spellingen of synoniemen op te geven voor de naam van de hoofd entiteit. |
 
-| Alias eigenschappen | Beschrijving |
+| Alias eigenschappen | Description |
 |------------------|-------------|
 | `text`  | De alternatieve spelling of weer gave van de naam van een doel entiteit.  |
 | `caseSensitive` | Beschrijving Fungeert hetzelfde als de hoofd entiteit ' caseSensitive-para meter hierboven, maar is alleen van toepassing op deze ene alias. |

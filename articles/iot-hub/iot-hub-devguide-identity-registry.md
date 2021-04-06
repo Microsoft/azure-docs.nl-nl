@@ -14,10 +14,10 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
 ms.openlocfilehash: 2d9b0d97fa1823314f5109a1c7fc79054806c148
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "93146923"
 ---
 # <a name="understand-the-identity-registry-in-your-iot-hub"></a>Inzicht in het identiteits register in uw IoT-hub
@@ -188,7 +188,7 @@ Hoofd tekst: deze sectie bevindt zich in JSON-indeling en vertegenwoordigt de du
 
 Apparaat-id's worden weer gegeven als JSON-documenten met de volgende eigenschappen:
 
-| Eigenschap | Opties | Beschrijving |
+| Eigenschap | Opties | Description |
 | --- | --- | --- |
 | deviceId |vereist, alleen-lezen voor updates |Een hoofdletter gevoelige teken reeks (Maxi maal 128 tekens lang) van ASCII 7-bits alfanumerieke tekens plus bepaalde speciale tekens: `- . + % _ # * ? ! ( ) , : = @ $ '` . |
 | generationId |vereist, alleen-lezen |Een met IoT-hub gegenereerde, hoofdletter gevoelige teken reeks tot 128 tekens lang. Deze waarde wordt gebruikt om apparaten met dezelfde **deviceId** te onderscheiden, wanneer ze zijn verwijderd en opnieuw gemaakt. |
@@ -212,7 +212,7 @@ Apparaat-id's worden weer gegeven als JSON-documenten met de volgende eigenschap
 
 Module-identiteiten worden weer gegeven als JSON-documenten met de volgende eigenschappen:
 
-| Eigenschap | Opties | Beschrijving |
+| Eigenschap | Opties | Description |
 | --- | --- | --- |
 | deviceId |vereist, alleen-lezen voor updates |Een hoofdletter gevoelige teken reeks (Maxi maal 128 tekens lang) van ASCII 7-bits alfanumerieke tekens plus bepaalde speciale tekens: `- . + % _ # * ? ! ( ) , : = @ $ '` . |
 | moduleId |vereist, alleen-lezen voor updates |Een hoofdletter gevoelige teken reeks (Maxi maal 128 tekens lang) van ASCII 7-bits alfanumerieke tekens plus bepaalde speciale tekens: `- . + % _ # * ? ! ( ) , : = @ $ '` . |

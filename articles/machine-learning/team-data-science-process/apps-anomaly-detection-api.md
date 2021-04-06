@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=alokkirpal, previous-ms.author=alok
 ms.openlocfilehash: e210c1683d5f14181bc0549e73a892eb91d2e746
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "93305692"
 ---
 # <a name="machine-learning-anomaly-detection-api"></a>Machine Learning anomalie detectie-API
@@ -115,7 +115,7 @@ In de afbeelding hieronder ziet u een voor beeld van afwijkingen die de Score-AP
 ### <a name="detectors"></a>Detectoren
 De anomalie detectie-API ondersteunt detectoren in drie algemene categorieën. Meer informatie over specifieke invoer parameters en uitvoer voor elke detector vindt u in de volgende tabel.
 
-| Detector categorie | Detectie | Beschrijving | Invoerparameters | Uitvoerwaarden |
+| Detector categorie | Detectie | Description | Invoerparameters | Uitvoerwaarden |
 | --- | --- | --- | --- | --- |
 | Piek detectoren |TSpike detector |Spoor pieken en spannings dips op basis van de waarden uit het eerste en derde kwartiel |*tspikedetector. sensitivity:* Hiermee wordt een geheel getal in het bereik 1-10, standaard waarde: 3, gebruikt. Bij hogere waarden worden er meer extreme waarden onderschept waardoor deze minder gevoelig zijn |TSpike: binaire waarden – ' 1 ' als een Prikker/DIP wordt gedetecteerd, ' 0 ' anders |
 | Piek detectoren | ZSpike detector |Pieken en spannings dips detecteren op basis van de betekenis van de data Points |*zspikedetector. sensitivity:* waarde voor geheel getal in het bereik 1-10 opgeven, standaard: 3; Bij hogere waarden worden er meer extreme waarden onderschept waardoor deze minder gevoelig zijn |ZSpike: binaire waarden – ' 1 ' als een Prikker/DIP wordt gedetecteerd, ' 0 ' anders |
@@ -125,7 +125,7 @@ De anomalie detectie-API ondersteunt detectoren in drie algemene categorieën. M
 ### <a name="parameters"></a>Parameters
 Meer gedetailleerde informatie over deze invoer parameters vindt u in de volgende tabel:
 
-| Invoerparameters | Beschrijving | Standaard instelling | Type | Geldig bereik | Voorgesteld bereik |
+| Invoerparameters | Description | Standaard instelling | Type | Geldig bereik | Voorgesteld bereik |
 | --- | --- | --- | --- | --- | --- |
 | detectors. historywindow |Geschiedenis (in aantal gegevens punten) die wordt gebruikt voor de berekening van de afwijkings Score |500 |geheel getal |10-2000 |Time-Series afhankelijk |
 | detectors. spikesdips | Hiermee wordt aangegeven of alleen pieken, alleen spannings dips of beide moeten worden gedetecteerd |Beide |geïnventariseerd |Beide, pieken, spannings dips |Beide |
@@ -138,7 +138,7 @@ Meer gedetailleerde informatie over deze invoer parameters vindt u in de volgend
 ### <a name="output"></a>Uitvoer
 De API voert alle detectoren uit op uw tijdreeks gegevens en retourneert afwijkende scores en binaire piek indicatoren voor elk tijdstip. De volgende tabel bevat de uitvoer van de API.
 
-| Uitvoerwaarden | Beschrijving |
+| Uitvoerwaarden | Description |
 | --- | --- |
 | Tijd |Tijds tempels van onbewerkte gegevens, of geaggregeerd (en/of) toegerekende gegevens als aggregatie (en/of) ontbrekende gegevens toerekening is toegepast |
 | Gegevens |Waarden van onbewerkte gegevens, of geaggregeerd (en/of) toegerekende gegevens als aggregatie (en/of) ontbrekende gegevens toerekening is toegepast |
@@ -161,7 +161,7 @@ De detectoren in het eind punt van de seizoensgebondenheid zijn vergelijkbaar me
 
 Meer gedetailleerde informatie over deze invoer parameters vindt u in de volgende tabel:
 
-| Invoerparameters | Beschrijving | Standaard instelling | Type | Geldig bereik | Voorgesteld bereik |
+| Invoerparameters | Description | Standaard instelling | Type | Geldig bereik | Voorgesteld bereik |
 | --- | --- | --- | --- | --- | --- |
 | preproces. aggregationInterval |Aggregatie interval in seconden voor het samen voegen van de invoer tijd reeks |0 (er is geen aggregatie uitgevoerd) |geheel getal |0: aggregatie overs Laan, > 0 anders |5 minuten tot 1 dag, afhankelijk van de tijd reeks |
 | preproces. aggregationFunc |De functie die wordt gebruikt voor het samen voegen van gegevens in de opgegeven AggregationInterval |gemiddeld |geïnventariseerd |gemiddelde, Sum, length |N.v.t. |
@@ -181,7 +181,7 @@ Meer gedetailleerde informatie over deze invoer parameters vindt u in de volgend
 ### <a name="output"></a>Uitvoer
 De API voert alle detectoren uit op uw tijdreeks gegevens en retourneert afwijkende scores en binaire piek indicatoren voor elk tijdstip. De volgende tabel bevat de uitvoer van de API.
 
-| Uitvoerwaarden | Beschrijving |
+| Uitvoerwaarden | Description |
 | --- | --- |
 | Tijd |Tijds tempels van onbewerkte gegevens, of geaggregeerd (en/of) toegerekende gegevens als aggregatie (en/of) ontbrekende gegevens toerekening is toegepast |
 | OriginalData |Waarden van onbewerkte gegevens, of geaggregeerd (en/of) toegerekende gegevens als aggregatie (en/of) ontbrekende gegevens toerekening is toegepast |

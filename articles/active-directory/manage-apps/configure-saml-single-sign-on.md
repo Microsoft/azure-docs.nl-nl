@@ -12,10 +12,10 @@ ms.date: 07/28/2020
 ms.author: kenwith
 ms.reviewer: arvinh,luleon
 ms.openlocfilehash: f6422c3f751a7aaa430b93ee68ca1a3520ac915f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "99257689"
 ---
 # <a name="understand-saml-based-single-sign-on"></a>Informatie over eenmalige aanmelding op basis van SAML
@@ -44,7 +44,7 @@ U moet de waarden van de leverancier van de toepassing ophalen. U kunt de waarde
 > [!TIP]
 > Veel apps zijn al vooraf geconfigureerd voor gebruik met Azure AD. Deze apps worden weer gegeven in de galerie met apps die u kunt bezoeken wanneer u een app toevoegt aan uw Azure AD-Tenant. In de Quick Start- [serie](add-application-portal-setup-sso.md) wordt u begeleid bij het proces. Voor de apps in de galerie vindt u gedetailleerde, stapsgewijze instructies. Als u de stappen wilt openen, klikt u op de koppeling op de configuratie pagina van SAML voor de app, zoals beschreven in de Quick Start-serie of kunt u een lijst met alle zelf studies over app-configuratie bekijken in [zelf studies voor SaaS-app-configuratie](../saas-apps/tutorial-list.md).
 
-| Basis configuratie-instelling voor SAML | SP-geïnitieerd | idP-geïnitieerd | Beschrijving |
+| Basis configuratie-instelling voor SAML | SP-geïnitieerd | idP-geïnitieerd | Description |
 |:--|:--|:--|:--|
 | **Id (Entiteits-id)** | Vereist voor sommige apps | Vereist voor sommige apps | Unieke identificatie van de toepassing. Azure Active Directory stuurt de id naar de toepassing als parameter van de doelgroep van het SAML-token. Er wordt verwacht dat de toepassing deze valideert. Deze waarde wordt ook weergegeven als de entiteit-ID in SAML-metagegevens die worden geleverd door de toepassing. Voer een URL in die gebruikmaakt van het volgende patroon: ' https:// <subdomain> . contoso.com ' *u kunt deze waarde vinden als het element van de **Uitgever** in de **AuthnRequest** (SAML-aanvraag) die door de toepassing is verzonden.* |
 | **Antwoord-URL** | Vereist | Vereist | Hiermee geeft u op waar de toepassing verwacht het SAML-token te ontvangen. De antwoord-URL wordt ook de ACS-URL (Assertion Consumer Service) genoemd. U kunt de extra antwoord-URL velden gebruiken om meerdere antwoord-Url's op te geven. Stel dat u aanvullende antwoord-Url's nodig hebt voor meerdere subdomeinen. Voor test doeleinden kunt u meerdere antwoord-Url's (lokale host en open bare Url's) tegelijk opgeven. |

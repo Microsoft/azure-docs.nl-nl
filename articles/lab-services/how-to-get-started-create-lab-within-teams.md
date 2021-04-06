@@ -4,10 +4,10 @@ description: Meer informatie over hoe u aan de slag kunt gaan en een Azure Lab S
 ms.topic: article
 ms.date: 10/08/2020
 ms.openlocfilehash: cc4ad604bdf250cc6e4ba2c50c2f7143c921e906
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96433968"
 ---
 # <a name="get-started-and-create-a-lab-services-lab-within-teams"></a>Aan de slag en een Lab-service Lab maken in teams

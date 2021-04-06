@@ -12,10 +12,10 @@ ms.author: ryanwi
 ms.reviewer: stsoneff
 ms.custom: azureday1
 ms.openlocfilehash: 17931ee92072059d94cd950e9ce8ef6588f7e891
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96905499"
 ---
 # <a name="tutorial-enable-authentication-in-app-service-and-access-storage-and-microsoft-graph"></a>Zelfstudie: Verificatie inschakelen in App Service en toegang tot opslag en Microsoft Graph krijgen

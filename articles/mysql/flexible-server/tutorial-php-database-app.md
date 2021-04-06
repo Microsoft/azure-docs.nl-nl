@@ -9,10 +9,10 @@ ms.devlang: php
 ms.date: 9/21/2020
 ms.custom: mvc, devx-track-azurecli
 ms.openlocfilehash: 93e605cb20d593750100ec8e340a7ad74c4dd385
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97587890"
 ---
 # <a name="tutorial-build-a-php-laravel-and-mysql-flexible-server-preview-app-in-azure-app-service"></a>Zelfstudie: Een PHP-app (Laravel) en een MySQL Flexible Server-app (preview) bouwen in Azure App Service

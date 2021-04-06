@@ -14,10 +14,10 @@ ms.author: marsma
 ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: ee3837b75d586238e7ca6ac85434cc56f592929d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98763401"
 ---
 # <a name="logging-in-msal-for-iosmacos"></a>Logboekregistratie in MSAL voor iOS/macOS
@@ -78,7 +78,7 @@ MSALGlobalConfig.loggerConfig.piiEnabled = NO;
 
 Gebruik een van de volgende waarden om het logboek registratie niveau in te stellen wanneer u zich aanmeldt met behulp van MSAL voor iOS en macOS:
 
-|Niveau  |Beschrijving |
+|Niveau  |Description |
 |---------|---------|
 | `MSALLogLevelNothing`| Alle logboek registratie uitschakelen |
 | `MSALLogLevelError` | Standaard niveau, alleen informatie afdrukken wanneer er fouten optreden |
@@ -155,7 +155,7 @@ MSALGlobalConfig.loggerConfig.piiEnabled = false
 
 Gebruik een van de volgende waarden om het logboek registratie niveau in te stellen wanneer u zich aanmeldt met behulp van MSAL voor iOS en macOS:
 
-|Niveau  |Beschrijving |
+|Niveau  |Description |
 |---------|---------|
 | `MSALLogLevelNothing`| Alle logboek registratie uitschakelen |
 | `MSALLogLevelError` | Standaard niveau, alleen informatie afdrukken wanneer er fouten optreden |

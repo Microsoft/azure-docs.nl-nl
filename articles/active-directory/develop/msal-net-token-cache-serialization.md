@@ -14,10 +14,10 @@ ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
 ms.openlocfilehash: 60ce3d32ffa20fc9117890528eac053d1af9fdf2
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "99583905"
 ---
 # <a name="token-cache-serialization-in-msalnet"></a>Serialisatie van token cache in MSAL.NET
@@ -281,7 +281,7 @@ MSAL.NET biedt aangepaste token cache-serialisatie in .NET Framework en .NET cor
 
 De [micro soft. Identity. Web](https://github.com/AzureAD/microsoft-identity-web) -bibliotheek biedt een preview NuGet-pakket [micro soft. Identity. Web](https://www.nuget.org/packages/Microsoft.Identity.Web) met de token cache-serialisatie:
 
-| Extensie methode | Micro soft. Identity. Web-sub-naam ruimte | Beschrijving  |
+| Extensie methode | Micro soft. Identity. Web-sub-naam ruimte | Description  |
 | ---------------- | --------- | ------------ |
 | `AddInMemoryTokenCaches` | `TokenCacheProviders.InMemory` | In geheugen token cache-serialisatie. Deze implementatie is geweldig in voor beelden. Het is ook handig in productie toepassingen die u niet bedenkt als de token cache verloren gaat wanneer de web-app opnieuw wordt gestart. `AddInMemoryTokenCaches` neemt een optionele para meter van `MsalMemoryTokenCacheOptions` het type waarmee u de duur kunt opgeven waarna de cache vermelding verloopt, tenzij deze wordt gebruikt.
 | `AddSessionTokenCaches` | `TokenCacheProviders.Session` | De token cache is gebonden aan de gebruikers sessie. Deze optie is niet ideaal als het ID-token veel claims bevat omdat de cookie te groot wordt.

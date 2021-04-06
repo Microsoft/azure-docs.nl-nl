@@ -10,10 +10,10 @@ ms.topic: include
 ms.date: 05/13/2020
 ms.author: aahi
 ms.openlocfilehash: 2cfef9626983ed0fa120e11bbfebdc2a38d91096
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "97506362"
 ---
 Als u de nieuwste versie van de Text Analytics v3-client bibliotheek wilt gebruiken, moet u het meest recente software pakket downloaden in de `Azure.AI.TextAnalytics` naam ruimte. De sectie **instellen** in het [artikel Quick](../quickstarts/client-libraries-rest-api.md) Start bevat een lijst met de opdrachten die u kunt gebruiken voor uw voorkeurs taal, met voorbeeld code.

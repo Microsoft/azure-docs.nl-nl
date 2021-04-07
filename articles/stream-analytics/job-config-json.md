@@ -7,10 +7,10 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 02/14/2020
 ms.openlocfilehash: 0eebd0b62e973572a40b7b141ae908046700ba3c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98020482"
 ---
 # <a name="azure-stream-analytics-jobconfigjson-fields"></a>Azure Stream Analytics JobConfig.jsop velden
@@ -41,17 +41,17 @@ De volgende velden worden ondersteund in de *JobConfig.jsvoor* het bestand dat w
 |----|----|--------|-----|
 |DataLocale|tekenreeks|No|De gegevens land instelling van de stream Analytics-taak. De waarde moet de naam van een ondersteund zijn. Wordt standaard ingesteld op ' nl-nl ' als er geen is opgegeven.|
 |OutputErrorPolicy|tekenreeks|No|Hiermee wordt het beleid aangegeven dat moet worden toegepast op gebeurtenissen die bij de uitvoer arriveren en niet naar de externe opslag kunnen worden geschreven vanwege een onjuiste indeling (ontbrekende kolom waarden, kolom waarden van het verkeerde type of de grootte). -Stoppen of neerzetten|
-|EventsLateArrivalMaxDelayInSeconds|geheel getal|Nee|De Maxi maal toegestane vertraging in seconden voor gebeurtenissen die te laat arriveren. Het ondersteunde bereik is-1 tot 1814399 (20.23:59:59 dagen) en-1 wordt gebruikt om een wacht tijd voor onbepaalde tijd op te geven. Als de eigenschap ontbreekt, wordt geïnterpreteerd als een waarde van-1.|
-|EventsOutOfOrderMaxDelayInSeconds|geheel getal|Nee|De Maxi maal toegestane vertraging in seconden waarbij out-of-order-gebeurtenissen kunnen worden aangepast zodat ze weer in de juiste volg orde staan.|
+|EventsLateArrivalMaxDelayInSeconds|geheel getal|No|De Maxi maal toegestane vertraging in seconden voor gebeurtenissen die te laat arriveren. Het ondersteunde bereik is-1 tot 1814399 (20.23:59:59 dagen) en-1 wordt gebruikt om een wacht tijd voor onbepaalde tijd op te geven. Als de eigenschap ontbreekt, wordt geïnterpreteerd als een waarde van-1.|
+|EventsOutOfOrderMaxDelayInSeconds|geheel getal|No|De Maxi maal toegestane vertraging in seconden waarbij out-of-order-gebeurtenissen kunnen worden aangepast zodat ze weer in de juiste volg orde staan.|
 |EventsOutOfOrderPolicy|tekenreeks|No|Hiermee wordt het beleid aangegeven dat moet worden toegepast op gebeurtenissen die niet in de juiste volg orde in de invoer gebeurtenis stroom arriveren. -Aanpassen of verwijderen|
-|StreamingUnits|geheel getal|Ja|Hiermee geeft u het aantal streaming-eenheden op dat door de streaming-taak wordt gebruikt.|
+|StreamingUnits|geheel getal|Yes|Hiermee geeft u het aantal streaming-eenheden op dat door de streaming-taak wordt gebruikt.|
 |Compatibiliteits niveau|tekenreeks|No|Hiermee wordt bepaald runtime-gedrag van de streaming-taak bepaald. -Acceptabele waarden zijn ' 1,0 ', ' 1,1 ', ' 1,2 '|
-|UseSystemAssignedIdentity|booleaans|Nee|Stel waar in om deze taak in te scha kelen voor communicatie met andere Azure-Services, met behulp van een beheerde Azure Active Directory identiteit.|
+|UseSystemAssignedIdentity|booleaans|No|Stel waar in om deze taak in te scha kelen voor communicatie met andere Azure-Services, met behulp van een beheerde Azure Active Directory identiteit.|
 |GlobalStorage. AccountName|tekenreeks|No|Globaal opslag account wordt gebruikt voor het opslaan van inhoud die betrekking heeft op uw stream Analytics-taak, zoals moment opnamen van SQL-referentie gegevens.|
 |GlobalStorage. AccountKey|tekenreeks|No|Bijbehorende sleutel voor globaal opslag account.|
 |DataSourceCredentialDomain|tekenreeks|No|Gereserveerde eigenschap voor lokale opslag van referenties.|
-|ScriptType|tekenreeks|Ja|Gereserveerde eigenschap waarmee het type van dit bron bestand wordt aangegeven. De acceptabele waarde is JobConfig voor JobConfig.jsop.|
-|Tags|JSON-sleutel-waardeparen|Nee|Tags zijn naam/waarde-paren waarmee u resources kunt categoriseren en een geconsolideerde factuur kunt weer geven door hetzelfde label op meerdere resources en resource groepen toe te passen. Namen van tags zijn hoofdletter gevoelig en label waarden zijn hoofdletter gevoelig.|
+|ScriptType|tekenreeks|Yes|Gereserveerde eigenschap waarmee het type van dit bron bestand wordt aangegeven. De acceptabele waarde is JobConfig voor JobConfig.jsop.|
+|Tags|JSON-sleutel-waardeparen|No|Tags zijn naam/waarde-paren waarmee u resources kunt categoriseren en een geconsolideerde factuur kunt weer geven door hetzelfde label op meerdere resources en resource groepen toe te passen. Namen van tags zijn hoofdletter gevoelig en label waarden zijn hoofdletter gevoelig.|
 
 ## <a name="next-steps"></a>Volgende stappen
 

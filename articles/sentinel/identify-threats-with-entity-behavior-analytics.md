@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 02/10/2021
 ms.author: yelevin
 ms.openlocfilehash: bf7a17d96d31fd4214d5465a5739acc9ce9a9d53
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "102455498"
 ---
 # <a name="identify-advanced-threats-with-user-and-entity-behavior-analytics-ueba-in-azure-sentinel"></a>Geavanceerde bedreigingen met UEBA (User and entity Behavior Analytics) identificeren in azure Sentinel
@@ -121,7 +121,7 @@ Entiteits pagina's zijn ontworpen om deel uit te maken van meerdere gebruiks sce
 
 ### <a name="behavior-analytics-table"></a>Tabel met gedrags analyse
 
-| Veld                     | Beschrijving                                                         |
+| Veld                     | Description                                                         |
 |---------------------------|---------------------------------------------------------------------|
 | TenantId                  | uniek ID-nummer van de Tenant                                      |
 | SourceRecordId            | het unieke ID-nummer van de EBA-gebeurtenis                                   |

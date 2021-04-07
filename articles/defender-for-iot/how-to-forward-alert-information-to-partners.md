@@ -4,10 +4,10 @@ description: U kunt waarschuwings gegevens verzenden naar partner systemen door 
 ms.date: 12/02/2020
 ms.topic: how-to
 ms.openlocfilehash: bc405f7d4837bf81d9cfcd859d562b7152cfc54b
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104778794"
 ---
 # <a name="forward-alert-information"></a>Waarschuwingsinformatie doorsturen
@@ -108,7 +108,7 @@ Voer de volgende parameters in:
     
 :::image type="content" source="media/how-to-work-with-alerts-sensor/configure-encryption.png" alt-text="Configureer uw versleuteling voor uw doorstuur regel.":::
 
-| Uitvoer velden van syslog-tekst berichten | Beschrijving |
+| Uitvoer velden van syslog-tekst berichten | Description |
 |--|--|
 | Datum en tijd | De datum en tijd waarop de syslog-server computer de informatie heeft ontvangen. |
 | Prioriteit | Gebruiker. waarschuwing |
@@ -117,7 +117,7 @@ Voer de volgende parameters in:
 | Bericht | Sensor: de naam van de sensor.<br /> Waarschuwing: de titel van de waarschuwing.<br /> Type: het type van de waarschuwing. Kan schending van het **protocol**, schending van het **beleid**, **malware**, **afwijkend** of **operationeel** zijn.<br /> Ernst: de ernst van de waarschuwing. Kan **waarschuwing**, **secundair**, **primair** of **kritiek** zijn.<br /> Bron: de naam van het bron apparaat.<br /> Bron-IP: het IP-adres van het bron apparaat.<br /> Doel: de naam van het doel apparaat.<br /> Doel-IP: het IP-adres van het doel apparaat.<br /> Bericht: het bericht van de waarschuwing.<br /> Waarschuwings groep: de waarschuwings groep die is gekoppeld aan de waarschuwing. |
 
 
-| Uitvoer van syslog-object | Beschrijving |
+| Uitvoer van syslog-object | Description |
 |--|--|
 | Datum en tijd |   De datum en tijd waarop de syslog-server computer de informatie heeft ontvangen. |  
 | Prioriteit |    Gebruiker. waarschuwing | 
@@ -125,14 +125,14 @@ Voer de volgende parameters in:
 | Bericht | Sensor naam: de naam van het apparaat. <br /> Waarschuwings tijd: de tijd waarop de waarschuwing is gedetecteerd: kan variëren van de tijd van de syslog-server machine en is afhankelijk van de tijd zone configuratie van de doorstuur regel. <br /> Titel van waarschuwing: de titel van de waarschuwing. <br /> Waarschuwings bericht: het bericht van de waarschuwing. <br /> Ernst van waarschuwing: de ernst van de waarschuwing: **waarschuwing**, **secundair**, **primair** of **kritiek**. <br /> Waarschuwings type: **schending** van het Protocol, **schending van beleid**, **malware**, **afwijkend** of **operationeel**. <br /> Protocol: het Protocol van de waarschuwing.  <br /> **Source_MAC**: IP-adres, naam, leverancier of besturings systeem van het bron apparaat. <br /> Destination_MAC: IP-adres, naam, leverancier of besturings systeem van de bestemming. Als er gegevens ontbreken, is de waarde **N/A**. <br /> alert_group: de waarschuwings groep die aan de waarschuwing is gekoppeld. |
 
 
-| Uitvoer indeling syslog CEF | Beschrijving |
+| Uitvoer indeling syslog CEF | Description |
 |--|--|
 | Datum en tijd | De datum en tijd waarop de syslog-server computer de informatie heeft ontvangen. |
 | Prioriteit | Gebruiker. waarschuwing | 
 | Hostnaam | IP-adres van sensor |
 | Bericht | CEF: 0 <br />Azure Defender voor IoT <br />Sensor naam: de naam van het sensor toestel. <br />Sensor versie <br />Titel van waarschuwing: de titel van de waarschuwing. <br />msg: het bericht van de waarschuwing. <br />Protocol: het Protocol van de waarschuwing. <br />Ernst: **waarschuwing**, **secundair**, **primair** of **kritiek**. <br />type: **schending** van het Protocol, **schending van beleid**, **malware**, **afwijkend** of **operationeel**. <br /> starten: het tijdstip waarop de waarschuwing is gedetecteerd. <br />Kan variëren van de tijd van de syslog-server machine en is afhankelijk van de tijd zone configuratie van de doorstuur regel. <br />src_ip: IP-adres van het bron apparaat.  <br />dst_ip: IP-adres van het doel apparaat.<br />Kat: de waarschuwings groep die is gekoppeld aan de waarschuwing.  |
 
-| Uitvoer indeling syslog LEEF | Beschrijving |
+| Uitvoer indeling syslog LEEF | Description |
 |--|--|
 | Datum en tijd |   De datum en tijd waarop de syslog-server computer de informatie heeft ontvangen. |  
 | Prioriteit |    Gebruiker. waarschuwing | 

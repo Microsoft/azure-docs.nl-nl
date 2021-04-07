@@ -4,10 +4,10 @@ description: Meer informatie over het configureren en aanpassen van uw Defender-
 ms.topic: how-to
 ms.date: 03/07/2021
 ms.openlocfilehash: afab823b6bb187c9a7b7529f52efc37b20e8c66f
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104778981"
 ---
 # <a name="configure-and-customize-defender-iot-micro-agent-for-azure-rtos-preview"></a>Defender-IoT-micro agent voor Azure RTO'S (preview) configureren en aanpassen

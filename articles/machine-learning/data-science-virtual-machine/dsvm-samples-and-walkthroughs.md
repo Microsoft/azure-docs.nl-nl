@@ -10,10 +10,10 @@ ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.openlocfilehash: cda5dfd936243602775e1f4f965032b9d746b0b7
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "100519759"
 ---
 # <a name="samples-on-azure-data-science-virtual-machines"></a>Voor beelden van Azure data Science Virtual Machines
@@ -27,7 +27,7 @@ Azure data Science Virtual Machines (Dsvm) bevat een uitgebreide set voorbeeld c
 Als u deze voor beelden wilt uitvoeren, moet u een Ubuntu- [Data Science virtual machine](./dsvm-ubuntu-intro.md)hebben ingericht.
 
 ## <a name="available-samples"></a>Beschikbare voorbeelden
-| Categorie voor beelden | Beschrijving | Locaties |
+| Categorie voor beelden | Description | Locaties |
 | ------------- | ------------- | ------------- |
 | R-taal  | Voor beelden illustreren scenario's zoals het maken van verbinding met gegevens archieven op basis van Azure en het vergelijken van open source R en Microsoft Machine Learning Server. Er wordt ook uitgelegd hoe u operationeel maken modellen op Microsoft Machine Learning Server en SQL Server. <br/> [R-taal](#r-language) | <br/>`~notebooks` <br/> <br/> `~samples/MicrosoftR` <br/> <br/> `~samples/RSqlDemo` <br/> <br/> `~samples/SQLRServices`<br/> <br/>|
 | Python-taal  | Voor beelden van scenario's zoals het maken van verbinding met gegevens archieven op basis van Azure en het werken met Azure Machine Learning.  <br/> [Python-taal](#python-language) | <br/>`~notebooks` <br/><br/>|

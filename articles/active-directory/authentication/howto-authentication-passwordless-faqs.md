@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: aakapo
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ca4943293f9474d4089267d05460d6d8766b79e6
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101646381"
 ---
 # <a name="deployment-frequently-asked-questions-faqs-for-hybrid-fido2-security-keys-in-azure-ad"></a>Veelgestelde vragen over de implementatie van hybride FIDO2-beveiligings sleutels in azure AD 
@@ -231,7 +231,7 @@ De HTTP-aanvraag is een standaard aanvraag voor het primaire vernieuwings token 
 
 In azure AD worden de versleutelde client sleutel en de bericht buffer als aanvullende eigenschappen gecombineerd in het PRT-antwoord. De nettolading wordt versleuteld met de sessie sleutel van het Azure AD-apparaat.
 
-| Veld              | Type   | Beschrijving  |
+| Veld              | Type   | Description  |
 |--------------------|--------|--------------|
 | tgt_client_key     | tekenreeks | Met base64 gecodeerde client sleutel (geheim). Deze sleutel is het client geheim dat wordt gebruikt om de TGT te beveiligen. In dit scenario zonder wacht woord wordt het client geheim gegenereerd door de server als onderdeel van elke TGT-aanvraag en vervolgens naar de client geretourneerd in het antwoord. |
 | tgt_key_type       | int    | Het sleutel type on-premises AD DS gebruikt voor zowel de client sleutel als de Kerberos-sessie sleutel die is opgenomen in de KERB_MESSAGE_BUFFER. |

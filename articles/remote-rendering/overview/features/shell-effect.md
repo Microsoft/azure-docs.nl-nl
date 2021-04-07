@@ -7,10 +7,10 @@ ms.date: 10/23/2020
 ms.topic: article
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 7af95cba807cea340438a7de30f096758d0369ad
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "99594160"
 ---
 # <a name="shell-rendering"></a>Shell-weergave
@@ -23,7 +23,7 @@ U kunt de weer gave van door Shell gerenderde objecten configureren via de `Shel
 
 Class `ShellRenderingSettings` bevat de instellingen met betrekking tot de globale shell-rendering-eigenschappen:
 
-| Parameter      | Type    | Beschrijving                                             |
+| Parameter      | Type    | Description                                             |
 |----------------|---------|---------------------------------------------------------|
 | `Desaturation` | float   | De hoeveelheid verzadiging die moet worden toegepast op de gebruikelijke uiteindelijke object kleur, in het bereik 0 (geen verzadiging) op 1 (volledige verzadiging) |
 | `Opacity`      | float   | De dekking van de door de shell gerenderde objecten, in bereik 0 (onzichtbaar) op 1 (volledig ondoorzichtig) |

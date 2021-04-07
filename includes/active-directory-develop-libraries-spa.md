@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: a393cf978318c39081805cae7e38c3386ff156f5
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103010695"
 ---
 | Taal/Framework | Project op<br/>GitHub                                                                                                    | Pakket                                                                      | Slaag<br/>helpen                             | Gebruikers aanmelden                                         | Toegang tot Web-Api's                                                 | Algemeen beschikbaar (GA) *of*<br/>Open bare preview<sup>1</sup> |

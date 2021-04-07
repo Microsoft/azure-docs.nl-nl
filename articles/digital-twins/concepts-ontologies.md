@@ -8,10 +8,10 @@ ms.date: 2/12/2021
 ms.topic: conceptual
 ms.service: digital-twins
 ms.openlocfilehash: 3393856b25040cff603ea2ef51e8adbcba78dc26
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102034690"
 ---
 # <a name="what-is-an-ontology"></a>Wat is een Ontology? 
@@ -40,7 +40,7 @@ Omdat modellen in azure Digital Apparaatdubbels worden weer gegeven in de [Digit
 
 Er zijn drie mogelijke strategieën voor het integreren van industrie-standaard Ontologies met DTDL. U kunt de naam kiezen die voor u het beste werkt, afhankelijk van uw behoeften:
 
-| Strategie | Beschrijving | Resources |
+| Strategie | Description | Resources |
 | --- | --- | --- |
 | **Adopteren** | U kunt uw oplossing starten met een open-source DTDL-Ontology dat is gebouwd op veel aangenomen industrie normen. U kunt deze model sets out-of-the-box gebruiken of ze uitbreiden met uw eigen toevoegingen voor een aangepaste oplossing. | [*Concepten: &nbsp; Ontologies van de &nbsp; industrie &nbsp; standaard aannemen*](concepts-ontologies-adopt.md)<br><br>[*Concepten: &nbsp; uitbrei ding van &nbsp; Ontologies*](concepts-ontologies-extend.md) |
 | **Noten** | Als u al bestaande modellen in een andere standaard indeling hebt weer gegeven, kunt u deze converteren naar DTDL om ze te gebruiken met Azure Digital Apparaatdubbels. | [*Concepten: &nbsp; &nbsp; Ontologies converteren*](concepts-ontologies-convert.md)<br><br>[*Concepten: &nbsp; uitbrei ding van &nbsp; Ontologies*](concepts-ontologies-extend.md) |

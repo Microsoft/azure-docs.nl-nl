@@ -7,10 +7,10 @@ ms.author: abnarain
 author: nabhishek
 ms.date: 02/10/2021
 ms.openlocfilehash: ccfe8fbf330e1c7f6f415b64a1f18d93a084a0ba
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100374011"
 ---
 # <a name="transform-data-by-running-a-jar-activity-in-azure-databricks"></a>Gegevens transformeren door een jar-activiteit uit te voeren in Azure Databricks
@@ -54,12 +54,12 @@ In de volgende tabel worden de JSON-eigenschappen beschreven die in de JSON-defi
 
 |Eigenschap|Beschrijving|Vereist|
 |:--|---|:-:|
-|naam|De naam van de activiteit in de pijp lijn.|Ja|
-|beschrijving|Tekst die beschrijft wat de activiteit doet.|Nee|
-|type|Voor Databricks jar-activiteit is het type activiteit DatabricksSparkJar.|Ja|
-|linkedServiceName|De naam van de gekoppelde Databricks-service waarop de jar-activiteit wordt uitgevoerd. Zie het artikel [Compute linked Services](compute-linked-services.md) (Engelstalig) voor meer informatie over deze gekoppelde service.|Ja|
-|mainClassName|De volledige naam van de klasse die de hoofd methode bevat die moet worden uitgevoerd. Deze klasse moet zich bevinden in een JAR die als bibliotheek is opgenomen. Een JAR-bestand kan meerdere klassen bevatten. Elk van de klassen kan een hoofd methode bevatten.|Ja|
-|parameters|Para meters die worden door gegeven aan de methode Main. Deze eigenschap is een matrix met teken reeksen.|Nee|
+|naam|De naam van de activiteit in de pijp lijn.|Yes|
+|beschrijving|Tekst die beschrijft wat de activiteit doet.|No|
+|type|Voor Databricks jar-activiteit is het type activiteit DatabricksSparkJar.|Yes|
+|linkedServiceName|De naam van de gekoppelde Databricks-service waarop de jar-activiteit wordt uitgevoerd. Zie het artikel [Compute linked Services](compute-linked-services.md) (Engelstalig) voor meer informatie over deze gekoppelde service.|Yes|
+|mainClassName|De volledige naam van de klasse die de hoofd methode bevat die moet worden uitgevoerd. Deze klasse moet zich bevinden in een JAR die als bibliotheek is opgenomen. Een JAR-bestand kan meerdere klassen bevatten. Elk van de klassen kan een hoofd methode bevatten.|Yes|
+|parameters|Para meters die worden door gegeven aan de methode Main. Deze eigenschap is een matrix met teken reeksen.|No|
 |bibliotheken|Een lijst met bibliotheken die op het cluster moeten worden geïnstalleerd waarmee de taak wordt uitgevoerd. Dit kan een matrix zijn met <teken reeks, object>|Ja (ten minste één met de methode mainClassName)|
 
 > [!NOTE]

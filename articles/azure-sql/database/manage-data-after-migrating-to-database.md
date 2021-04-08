@@ -13,10 +13,10 @@ ms.author: josack
 ms.reviewer: sstein
 ms.date: 02/13/2019
 ms.openlocfilehash: b34ac24cb26bf5db4a49a5ad5b531deb252f4695
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96446119"
 ---
 # <a name="new-dba-in-the-cloud--managing-azure-sql-database-after-migration"></a>Nieuwe DBA in de Cloud: Azure SQL Database na migratie beheren
@@ -172,7 +172,7 @@ Voor het beveiligen van uw gevoelige gegevens in-Flight en op rest, SQL Database
 |**Kenmerken**|**Altijd versleuteld**|**Transparante gegevensversleuteling**|
 |---|---|---|
 |**Versleutelings bereik**|End-to-end|At-rest-gegevens|
-|**De server kan toegang krijgen tot gevoelige gegevens**|Nee|Ja, omdat versleuteling voor de Data-at-rest is|
+|**De server kan toegang krijgen tot gevoelige gegevens**|No|Ja, omdat versleuteling voor de Data-at-rest is|
 |**Toegestane T-SQL-bewerkingen**|Gelijkheids vergelijking|Alle T-SQL-surface area is beschikbaar|
 |**App-wijzigingen die zijn vereist voor het gebruik van de functie**|Minimaal|Zeer mini maal|
 |**Granulatie van versleuteling**|Kolom niveau|databaseniveau|

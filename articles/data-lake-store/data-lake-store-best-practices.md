@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 06/27/2018
 ms.author: sachins
 ms.openlocfilehash: 9a5c5f9a4033b70a664071d6077a69f38c905093
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96452221"
 ---
 # <a name="best-practices-for-using-azure-data-lake-storage-gen1"></a>Aanbevolen procedures voor het gebruik van Azure Data Lake Storage Gen1
@@ -102,7 +102,7 @@ Hieronder ziet u de belangrijkste drie aanbevolen opties voor het indelen van re
 |---------|---------|---------|---------|
 |**Schaal limieten**     | Begrensd door worker-knoop punten        | Beperkt door Max. eenheden voor gegevens verplaatsing in de Cloud        | Gebonden aan Analytics units        |
 |**Ondersteunt het kopiëren van verschillen**     |   Ja      | Nee         | Nee         |
-|**Ingebouwde indeling**     |  Nee (gebruik Oozie lucht flow of cron-taken)       | Ja        | Nee (gebruik Azure Automation of Windows Task Scheduler)         |
+|**Ingebouwde indeling**     |  Nee (gebruik Oozie lucht flow of cron-taken)       | Yes        | Nee (gebruik Azure Automation of Windows Task Scheduler)         |
 |**Ondersteunde bestands systemen**     | ADL, HDFS, WASB, S3, GS, CFS        |Talloze, Zie [connectors](../data-factory/connector-azure-blob-storage.md).         | ADL naar ADL, WASB op ADL (alleen voor dezelfde regio)        |
 |**Ondersteuning voor besturings systeem**     |Elk besturings systeem dat Hadoop uitvoert         | N.v.t.          | Windows 10         |
 

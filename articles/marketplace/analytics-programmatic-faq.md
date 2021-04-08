@@ -1,5 +1,5 @@
 ---
-title: Programmatische toegang tot veelgestelde vragen over analyse gegevens
+title: Veelgestelde vragen over programmatische toegang tot analysegegevens
 description: Veelgestelde vragen over programmatisch toegang tot Analytics-gegevens in het partner centrum voor uw commerciële Marketplace-aanbiedingen.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
@@ -8,13 +8,13 @@ author: sayantanroy83
 ms.author: sroy
 ms.date: 3/08/2021
 ms.openlocfilehash: 393a718632138f4ffcf26e4875eea9ba3d886897
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102583811"
 ---
-# <a name="programmatic-access-of-analytics-data-common-questions"></a>Programmatische toegang tot veelgestelde vragen over analyse gegevens
+# <a name="programmatic-access-of-analytics-data-common-questions"></a>Veelgestelde vragen over programmatische toegang tot analysegegevens
 
 In dit artikel worden veelgestelde vragen behandeld over hoe u via een programma toegang hebt tot Analytics-gegevens in het partner centrum voor uw commerciële Marketplace-aanbiedingen.
 

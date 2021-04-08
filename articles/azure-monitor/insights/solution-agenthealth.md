@@ -6,10 +6,10 @@ author: bwren
 ms.author: bwren
 ms.date: 02/06/2020
 ms.openlocfilehash: 171230dc2ce6189e36c601c6c7d3b3612fce160c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101711056"
 ---
 #  <a name="agent-health-solution-in-azure-monitor"></a>Status van agent oplossing in Azure Monitor
@@ -37,10 +37,10 @@ Voeg de Status van agent oplossing toe aan uw Log Analytics-werk ruimte met behu
 ### <a name="supported-agents"></a>Ondersteunde agents
 De volgende tabel beschrijft de verbonden bronnen die worden ondersteund door deze oplossing.
 
-| Verbonden bron | Ondersteund | Beschrijving |
+| Verbonden bron | Ondersteund | Description |
 | --- | --- | --- |
-| Windows-agents | Ja | Er worden heartbeat-gebeurtenissen verzameld van direct verbonden Windows-agents.|
-| Beheergroep System Center Operations Manager | Ja | Heartbeat-gebeurtenissen worden elke 60 seconden verzameld van agents die rapporteren aan de beheer groep en vervolgens doorgestuurd naar Azure Monitor. Een directe verbinding van Operations Manager agents naar Azure Monitor is niet vereist. Heartbeat-gebeurtenis gegevens worden doorgestuurd van de beheer groep naar de Log Analytics-werk ruimte.|
+| Windows-agents | Yes | Er worden heartbeat-gebeurtenissen verzameld van direct verbonden Windows-agents.|
+| Beheergroep System Center Operations Manager | Yes | Heartbeat-gebeurtenissen worden elke 60 seconden verzameld van agents die rapporteren aan de beheer groep en vervolgens doorgestuurd naar Azure Monitor. Een directe verbinding van Operations Manager agents naar Azure Monitor is niet vereist. Heartbeat-gebeurtenis gegevens worden doorgestuurd van de beheer groep naar de Log Analytics-werk ruimte.|
 
 ## <a name="using-the-solution"></a>De oplossing gebruiken
 Wanneer u de oplossing toevoegt aan uw Log Analytics-werk ruimte, wordt de tegel **status van agent** toegevoegd aan het dash board. Op deze tegel ziet u het totale aantal agents en het aantal agents dat de afgelopen 24 uur niet heeft gereageerd.<br><br> ![De tegel Status van agent in het dashboard](./media/solution-agenthealth/agenthealth-solution-tile-homepage.png)
@@ -89,7 +89,7 @@ Elke agent die aan een Operations Manager-beheer Server rapporteert, verzendt tw
 ## <a name="sample-log-searches"></a>Voorbeeldzoekopdrachten in logboeken
 De volgende tabel bevat voorbeelden van zoekopdrachten in logboeken voor records die zijn verzameld met deze oplossing.
 
-| Query | Beschrijving |
+| Query | Description |
 |:---|:---|
 | Heartbeat &#124; distinct Computer |Het totale aantal agents |
 | Heartbeat &#124; summarize LastCall = max(TimeGenerated) by Computer &#124; where LastCall < ago(24h) |Het aantal agents dat de afgelopen 24 uur niet heeft gereageerd |

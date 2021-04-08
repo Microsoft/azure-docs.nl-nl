@@ -155,17 +155,17 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding via Azure te 
 
     f. Klik op de knop **Save**.
 
-### <a name="create-boomi-test-user"></a>Een testgebruiker maken voor Boomi
+### <a name="create-boomi-test-user&quot;></a>Een testgebruiker maken voor Boomi
 
 Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Boomi, moeten ze worden ingericht voor Boomi. In het geval van Boomi is dat een handmatige taak.
 
-### <a name="to-provision-a-user-account-perform-the-following-steps"></a>Voer de volgende stappen uit als u een gebruikersaccount wilt inrichten:
+### <a name=&quot;to-provision-a-user-account-perform-the-following-steps&quot;></a>Voer de volgende stappen uit als u een gebruikersaccount wilt inrichten:
 
 1. Meld u als beheerder aan bij de bedrijfssite van Boomi.
 
 1. Ga na het aanmelden naar **User Management** en **Users**.
 
-    ![Schermopname van de pagina Gebruikersbeheer; Gebruikers is geselecteerd.](./media/boomi-tutorial/user.png "Gebruikers")
+    ![Schermopname van de pagina Gebruikersbeheer; Gebruikers is geselecteerd.](./media/boomi-tutorial/user.png &quot;Gebruikers")
 
 1. Klik op het pictogram **+** om het dialoogvenster **Add / Maintain User Roles** te openen.
 

@@ -7,17 +7,17 @@ ms.service: data-catalog
 ms.topic: how-to
 ms.date: 08/01/2019
 ms.openlocfilehash: 3e898542c25f6ed1a9e6c811ada47220733abb12
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "104674662"
 ---
 # <a name="how-to-catalog-big-data-in-azure-data-catalog"></a>big data catalogiseren in Azure Data Catalog
 
 [!INCLUDE [Azure Purview redirect](../../includes/data-catalog-use-purview.md)]
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 **Microsoft Azure Data Catalog** is een volledig beheerde Cloud service die fungeert als registratie systeem en detectie systeem voor zakelijke gegevens bronnen. Het helpt mensen bij het detecteren, begrijpen en gebruiken van gegevens bronnen, en helpt organisaties bij het verkrijgen van meer waarde dan hun bestaande gegevens bronnen, waaronder big data.
 

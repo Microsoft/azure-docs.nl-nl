@@ -4,10 +4,10 @@ description: Diagnostische functionaliteit voor stateful Reliable Services in az
 ms.topic: conceptual
 ms.date: 8/24/2018
 ms.openlocfilehash: 774a771d0c9701076a5d6c070963bf6224a571dd
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98789327"
 ---
 # <a name="diagnostic-functionality-for-stateful-reliable-services"></a>Diagnosefunctionaliteit voor Stateful Reliable Services
@@ -93,7 +93,7 @@ In het vorige voor beeld `00d0126d-3e36-4d68-98da-cc4f7195d85e` is de teken reek
 
 De Reliable Services runtime verzendt de volgende gebeurtenissen onder de `Service Fabric Transactional Replicator` categorie
 
- Naam van het meteritem | Beschrijving |
+ Naam van het meteritem | Description |
 | --- | --- |
 | Begin trans actie bewerkingen per seconde | Het aantal nieuwe schrijf transacties dat per seconde wordt gemaakt.|
 | Trans actie bewerkingen per seconde | Het aantal bewerkingen voor toevoegen/bijwerken/verwijderen dat is uitgevoerd op betrouw bare verzamelingen per seconde.|
@@ -106,7 +106,7 @@ De Reliable Services runtime verzendt de volgende gebeurtenissen onder de `Servi
 
 De Reliable Services runtime verzendt de volgende gebeurtenissen onder de `Service Fabric TStore` categorie
 
- Naam van het meteritem | Beschrijving |
+ Naam van het meteritem | Description |
 | --- | --- |
 | Aantal items | Het aantal items in de Store.|
 | Schijfgrootte | De totale schijf grootte, in bytes, van controlepunt bestanden voor de Store.|

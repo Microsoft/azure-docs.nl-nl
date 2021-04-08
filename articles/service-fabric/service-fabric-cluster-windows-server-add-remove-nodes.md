@@ -4,10 +4,10 @@ description: Meer informatie over het toevoegen of verwijderen van knoop punten 
 ms.topic: conceptual
 ms.date: 11/02/2017
 ms.openlocfilehash: 26945b4785a0591d997139f2427b0ae6b59fa742
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98790593"
 ---
 # <a name="add-or-remove-nodes-to-a-standalone-service-fabric-cluster-running-on-windows-server"></a>Knooppunten toevoegen aan of verwijderen uit een zelfstandig Service Fabric-cluster dat wordt uitgevoerd op Windows Server

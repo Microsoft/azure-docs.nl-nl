@@ -9,10 +9,10 @@ ms.date: 11/24/2020
 ms.author: clemensv
 ms.custom: include file
 ms.openlocfilehash: ca483d0b71bde945a7e46da785dd6a76b3a8f177
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98693393"
 ---
 De optie AMQP-over-websockets wordt via poort TCP 443 uitgevoerd, net als de HTTP/REST API, maar is in andere gevallen hetzelfde als gewone AMQP. Deze optie heeft een iets hogere latentie van de eerste verbinding vanwege extra Handshake-retour wegen en iets meer naarmate er meer overhead is voor het delen van de HTTPS-poort. Als deze modus is ingeschakeld, is de TCP-poort 443 voldoende voor communicatie. Met de volgende opties kunt u de modus voor de AMQP of AMQP-websockets inschakelen:

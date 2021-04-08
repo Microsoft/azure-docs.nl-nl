@@ -14,10 +14,10 @@ ms.date: 3/2/2020
 ms.author: rohink
 ms.custom: fasttrack-edit
 ms.openlocfilehash: bbaf2fb99f1268a752fab4322078b0566a054d30
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98222850"
 ---
 # <a name="name-resolution-for-resources-in-azure-virtual-networks"></a>Naamomzetting voor resources in virtuele Azure-netwerken

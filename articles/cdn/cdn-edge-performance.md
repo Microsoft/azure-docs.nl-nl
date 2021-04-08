@@ -15,10 +15,10 @@ ms.topic: how-to
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: d8119c56c26ed32db136064d93775d21a71f238f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92778658"
 ---
 # <a name="analyze-edge-node-performance-in-microsoft-azure-cdn"></a>Prestaties van edge nod analyseren in Microsoft Azure CDN
@@ -84,7 +84,7 @@ Het doel van deze metrische gegevens is om te zien of de efficiëntie van de cac
   * Lagere operationele kosten.
 * Verbeterde verzorgings versnelling van gegevens omdat meer aanvragen rechtstreeks vanuit het CDN worden bediend.
 
-| Veld | Beschrijving |
+| Veld | Description |
 | --- | --- |
 | Cache-efficiëntie |Hiermee wordt het percentage verzonden gegevens aangegeven dat uit de cache wordt uitgevoerd. Deze metrische gegevens worden gemeten wanneer een in cache opgeslagen versie van de aangevraagde inhoud rechtstreeks vanuit het CDN (Edge-servers) naar aanvragers (bijvoorbeeld webbrowser) wordt bediend |
 | Frequentie van treffers |Hiermee wordt het percentage van aanvragen aangegeven dat vanuit de cache wordt verwerkt. Deze metrische gegevens worden gemeten wanneer een in cache opgeslagen versie van de aangevraagde inhoud rechtstreeks vanuit het CDN (Edge-servers) naar aanvragers (bijvoorbeeld webbrowser) werd geleverd. |
@@ -102,7 +102,7 @@ Het doel van deze metrische gegevens is om inzicht te krijgen in de volgende kos
 > 
 > 
 
-| Veld | Beschrijving |
+| Veld | Description |
 | --- | --- |
 | Ave bytes uit |Hiermee wordt het gemiddelde aantal overgedragen bytes aangegeven voor elke aanvraag die van het CDN (Edge-servers) naar de aanvrager (bijvoorbeeld webbrowser) wordt verzonden. |
 | Geen frequentie van cache configuratie bytes |Hiermee wordt het percentage verkeer aangegeven dat vanuit het CDN (Edge-servers) wordt uitgevoerd naar de aanvrager (bijvoorbeeld webbrowser) die niet in de cache wordt geplaatst als gevolg van de bypass-cache functie. |
@@ -114,7 +114,7 @@ Het doel van deze metrische gegevens is om inzicht te krijgen in de volgende kos
 #### <a name="performance-metrics"></a>Metrische gegevens voor prestaties
 Het doel van deze metrische gegevens is om de algemene CDN-prestaties voor uw verkeer bij te houden.
 
-| Veld | Beschrijving |
+| Veld | Description |
 | --- | --- |
 | Overdrachts frequentie |Hiermee wordt het gemiddelde tempo aangegeven waarmee inhoud van het CDN naar een aanvrager is overgedragen. |
 | Duur |Hiermee wordt de gemiddelde tijd in milliseconden aangegeven die nodig is om een Asset te leveren aan een aanvrager (bijvoorbeeld webbrowser). |
@@ -126,7 +126,7 @@ Het doel van deze metrische gegevens is om de algemene CDN-prestaties voor uw ve
 #### <a name="secure-traffic-metrics"></a>Metrische gegevens van beveiligd verkeer
 Het doel van deze metrische gegevens is om de CDN-prestaties voor HTTPS-verkeer bij te houden.
 
-| Veld | Beschrijving |
+| Veld | Description |
 | --- | --- |
 | Efficiëntie van de cache beveiligen |Hiermee wordt het percentage verzonden gegevens aangegeven voor HTTPS-aanvragen die vanuit de cache zijn bediend. Deze metrische gegevens worden gemeten wanneer een in cache opgeslagen versie van de aangevraagde inhoud rechtstreeks vanuit het CDN (Edge-servers) naar aanvragers (bijvoorbeeld webbrowser) via HTTPS wordt verzonden. |
 | Beveiligde overdrachts frequentie |Hiermee wordt de gemiddelde snelheid aangegeven waarmee inhoud van het CDN (Edge-servers) naar aanvragers (bijvoorbeeld webservers) via HTTPS is overgedragen. |

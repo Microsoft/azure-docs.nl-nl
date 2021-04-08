@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 12/10/2019
 ms.author: jeedes
 ms.openlocfilehash: 849236b9ac33cec92cc145bb32b4271b73476057
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97608813"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-timeoffmanager"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met TimeOffManager
@@ -140,13 +140,13 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-## <a name="configure-timeoffmanager-sso"></a>Eenmalige aanmelding voor TimeOffManager configureren
+## <a name="configure-timeoffmanager-sso&quot;></a>Eenmalige aanmelding voor TimeOffManager configureren
 
 1. Meld u in een andere browser als beheerder aan bij uw bedrijfssite in TimeOffManager.
 
 2. Ga naar **Account \> Accountopties \> Instellingen voor eenmalige aanmelding**.
    
-    ![Schermopname met Single Sign-On Settings geselecteerd in Account Options.](./media/timeoffmanager-tutorial/ic795917.png "Instellingen voor eenmalige aanmelding")
+    ![Schermopname met Single Sign-On Settings geselecteerd in Account Options.](./media/timeoffmanager-tutorial/ic795917.png &quot;Instellingen voor eenmalige aanmelding")
 
 3. Voer de volgende stappen uit in het gedeelte **Instellingen voor eenmalige aanmelding**:
    

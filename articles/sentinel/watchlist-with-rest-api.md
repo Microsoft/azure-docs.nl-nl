@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 01/11/2021
 ms.author: yelevin
 ms.openlocfilehash: ea571f9b033ba82709a13c6d32649f3228ee04b1
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98798405"
 ---
 # <a name="manage-watchlists-in-azure-sentinel-using-rest-api"></a>Watchlists in azure-Sentinel beheren met REST API
@@ -33,7 +33,7 @@ Met Azure Sentinel, die deel uitmaakt van Azure Monitor Log Analytics, kunt u Lo
 
 Hieronder vindt u de algemene URI-para meters voor alle watch list-API-opdrachten:
 
-| Name | In | Vereist | Type | Beschrijving |
+| Name | In | Vereist | Type | Description |
 |-|-|-|-|-|
 | **Abonnements** | leertraject | ja | GUID | de ID van het Azure-abonnement |
 | **ResourceGroupName** | leertraject | ja | tekenreeks | de naam van de resource groep binnen het abonnement |
@@ -58,7 +58,7 @@ Met deze opdracht worden alle Watchlists opgehaald die zijn gekoppeld aan een we
 
 ### <a name="responses"></a>Antwoorden
 
-| Statuscode | Hoofdtekst van de reactie | Beschrijving |
+| Statuscode | Hoofdtekst van de reactie | Description |
 |-|-|-|
 | 200/OK | Lijst met bestaande Watchlists of leeg als er geen watch list gevonden |  |
 | 400/ongeldige aanvraag |  | Syntaxis van onjuiste aanvraag, ongeldige aanvraag parameter... |
@@ -78,7 +78,7 @@ Met deze opdracht wordt een specifiek watch list opgehaald dat is gekoppeld aan 
 
 ### <a name="responses"></a>Antwoorden
 
-| Statuscode | Hoofdtekst van de reactie | Beschrijving |
+| Statuscode | Hoofdtekst van de reactie | Description |
 |-|-|-|
 | 200/OK | De aangevraagde watch list |  |
 | 400/ongeldige aanvraag |  | Syntaxis van onjuiste aanvraag, ongeldige aanvraag parameter... |
@@ -116,7 +116,7 @@ Hier volgt een voor beeld van de aanvraag tekst van een aanvraag voor het maken 
 
 ### <a name="responses"></a>Antwoorden
 
-| Statuscode | Hoofdtekst van de reactie | Beschrijving |
+| Statuscode | Hoofdtekst van de reactie | Description |
 |-|-|-|
 | 200/OK | De watch list die door de aanvraag is gemaakt, zonder items |  |
 | 400/ongeldige aanvraag |  | Syntaxis van onjuiste aanvraag, ongeldige aanvraag parameter... |
@@ -137,7 +137,7 @@ Met deze opdracht worden een watch list en de bijbehorende items verwijderd.
 
 ### <a name="responses"></a>Antwoorden
 
-| Statuscode | Hoofdtekst van de reactie | Beschrijving |
+| Statuscode | Hoofdtekst van de reactie | Description |
 |-|-|-|
 | 200/OK | Lege antwoord tekst |  |
 | 204/geen inhoud | Lege antwoord tekst | Niets verwijderd |
@@ -176,7 +176,7 @@ Hier volgt een voor beeld van de aanvraag tekst van een watch list-item voor het
 
 ### <a name="responses"></a>Antwoorden
 
-| Statuscode | Hoofdtekst van de reactie | Beschrijving |
+| Statuscode | Hoofdtekst van de reactie | Description |
 |-|-|-|
 | 200/OK | Het watch list-item dat door de aanvraag is gemaakt of bijgewerkt |  |
 | 400/ongeldige aanvraag |  | Syntaxis van onjuiste aanvraag, ongeldige aanvraag parameter... |
@@ -197,7 +197,7 @@ Met deze opdracht wordt een bestaand watch list-item verwijderd.
 
 ### <a name="responses"></a>Antwoorden
 
-| Statuscode | Hoofdtekst van de reactie | Beschrijving |
+| Statuscode | Hoofdtekst van de reactie | Description |
 |-|-|-|
 | 200/OK | Lege antwoord tekst |  |
 | 204/geen inhoud | Lege antwoord tekst | Niets verwijderd |

@@ -7,10 +7,10 @@ ms.reviewer: mijos, rarayudu, logicappspm
 ms.topic: conceptual
 ms.date: 01/20/2021
 ms.openlocfilehash: d31fbd813f0c5d63ee9eddbff5b299209618626b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98629671"
 ---
 # <a name="set-up-customer-managed-keys-to-encrypt-data-at-rest-for-integration-service-environments-ises-in-azure-logic-apps"></a>Door de klant beheerde sleutels instellen om gegevens in rust te versleutelen voor integratie service omgevingen (ISEs) in Azure Logic Apps
@@ -51,7 +51,7 @@ In dit onderwerp wordt beschreven hoe u uw eigen versleutelings sleutel instelt 
   |----------|-------|
   | **Sleutel type** | RSA |
   | **RSA-sleutel grootte** | 2048 |
-  | **Ingeschakeld** | Ja |
+  | **Ingeschakeld** | Yes |
   |||
 
   ![Uw door de klant beheerde versleutelings sleutel maken](./media/customer-managed-keys-integration-service-environment/create-customer-managed-key-for-encryption.png)

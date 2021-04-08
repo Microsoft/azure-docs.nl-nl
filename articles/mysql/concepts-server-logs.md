@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 11/6/2020
 ms.openlocfilehash: efabb3de69e96ec1a8955b2691af20a36fbabfe4
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100595936"
 ---
 # <a name="slow-query-logs-in-azure-database-for-mysql"></a>Logboekregistratie voor trage query's in Azure Database for MySQL

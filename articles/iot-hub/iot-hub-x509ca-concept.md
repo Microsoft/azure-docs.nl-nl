@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 09/18/2017
 ms.author: eustacea
 ms.openlocfilehash: 877200cbafbe68fa6161025572abfddad651e172
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96490717"
 ---
 # <a name="conceptual-understanding-of-x509-ca-certificates-in-the-iot-industry"></a>Conceptuele uitleg van X. 509 CA-certificaten in de IoT-industrie
@@ -43,7 +43,7 @@ Dit artikel biedt een end-to-end-weer gave van het gebruik van de X. 509 CA-veri
 
 U kunt ook inschrijvings groepen gebruiken met Azure IoT Hub Device Provisioning Service (DPS) voor het afhandelen van het inrichten van apparaten naar hubs. Zie [zelf studie: meerdere X. 509-apparaten inrichten met registratie groepen](../iot-dps/tutorial-custom-hsm-enrollment-group-x509.md)voor meer informatie over het gebruik van DPS om X. 509-certificaat apparaten in te richten.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Het X. 509 CA-certificaat is een digitaal certificaat waarvan de houder andere certificaten mag ondertekenen. Dit digitale certificaat is X. 509 omdat het voldoet aan een standaard voor de certificaat opmaak die is voorgeschreven door de RFC 5280-standaard van de IETF en een certificerings instantie (CA) is, omdat de houder andere certificaten kan ondertekenen.
 

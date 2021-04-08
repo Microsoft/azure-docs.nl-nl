@@ -9,10 +9,10 @@ ms.author: owend
 ms.reviewer: minewiskan
 ms.custom: references_regions
 ms.openlocfilehash: e9fd20fd42e9fe1eb0e98766798e5c759c974c97
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92013896"
 ---
 # <a name="asynchronous-refresh-with-the-rest-api"></a>Asynchroon vernieuwen met de REST API
@@ -98,7 +98,7 @@ De hoofd tekst kan er als volgt uitzien:
 
 Het opgeven van para meters is niet vereist. De standaard waarde wordt toegepast.
 
-| Naam             | Type  | Beschrijving  |Standaard  |
+| Naam             | Type  | Description  |Standaard  |
 |------------------|-------|--------------|---------|
 | `Type`           | Enum  | Het type verwerking dat moet worden uitgevoerd. De typen zijn afgestemd op de TMSL- [vernieuwings opdracht](/analysis-services/tmsl/refresh-command-tmsl) typen: Full, clearValues, Calculate, dataOnly, Automatic en defragmenteren. Het type toevoegen wordt niet ondersteund.      |   automatisch      |
 | `CommitMode`     | Enum  | Bepaalt of objecten worden doorgevoerd in batches of alleen wanneer dit is voltooid. Voor beelden zijn: standaard, transactioneel, partialBatch.  |  transactionele       |
@@ -113,7 +113,7 @@ CommitMode is gelijk aan partialBatch. Dit wordt gebruikt bij het uitvoeren van 
 
 ### <a name="status-values"></a>Status waarden
 
-|Statuswaarde  |Beschrijving  |
+|Statuswaarde  |Description  |
 |---------|---------|
 |`notStarted`    |   De bewerking is nog niet gestart.      |
 |`inProgress`     |   De bewerking wordt uitgevoerd.      |

@@ -4,10 +4,10 @@ description: Meer informatie over het gebruik van de Azure Portal om een claim b
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 1fe949d7104fe6437087e77c403cc0d921ebd025
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "88270975"
 ---
 # <a name="create-and-manage-claimable-vms-in-azure-devtest-labs"></a>Bewering bare Vm's maken en beheren in Azure DevTest Labs

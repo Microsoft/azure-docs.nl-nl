@@ -9,10 +9,10 @@ ms.date: 02/14/2019
 ms.author: robinsh
 ms.custom: include file
 ms.openlocfilehash: c8bf7f3a423b97f6cd84f0b575d00d60776c598c
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "75911909"
 ---
 Ga als volgt te werk om aan de slag te gaan met Azure IoT Hub en alle uitgebreide IoT-scenario's te verkennen:

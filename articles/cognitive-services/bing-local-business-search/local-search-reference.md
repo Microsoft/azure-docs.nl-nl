@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: rosh
 ms.openlocfilehash: 9791d99598fe3d043c42a37e2f4993edd6c5b3ba
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "96487130"
 ---
 # <a name="bing-local-business-search-api-v7-reference"></a>Naslag informatie Bing Local Business Search API V7
@@ -55,7 +55,7 @@ Voor de aanvraag moet het HTTPS-protocol worden gebruikt.
 ## <a name="headers"></a>Kopteksten  
 Hieronder ziet u de kopteksten die een aanvraag en antwoord kan bevatten.  
   
-|Header|Beschrijving|  
+|Header|Description|  
 |------------|-----------------|  
 |Accepteren|Optionele aanvraagheader.<br /><br /> Het standaard media type is Application/JSON. Als u wilt opgeven dat het antwoord [JSON-LD](https://json-ld.org/)gebruikt, stelt u de Accept-header in op Application/LD + JSON.|  
 |<a name="acceptlanguage"></a>Accept-Language|Optionele aanvraagheader.<br /><br /> Een door komma's gescheiden lijst met talen die moet worden gebruikt voor gebruikersinterfacetekenreeksen. De lijst is in aflopende volgorde van voorkeur. Zie [RFC2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html) voor meer informatie, waaronder de verwachte indeling.<br /><br /> Deze header en de queryparameter [setLang](#setlang) sluiten elkaar uit&mdash;geef ze niet beide op.<br /><br /> Als u deze header instelt, moet u ook de queryparameter cc opgeven. Om de markt te bepalen waarvoor resultaten moeten worden geretourneerd, gebruikt Bing de eerste ondersteunde taal die wordt gevonden in de lijst en combineert deze met de parameterwaarde `cc`. Als de lijst geen ondersteunde taal bevat, vindt Bing de dichtstbijzijnde taal en markt die de aanvraag ondersteunen, of gebruikt een geaggregeerde of standaardmarkt voor de resultaten. Zie de header BingAPIs-Market om de markt te bepalen die Bing heeft gebruikt.<br /><br /> Gebruik deze header en de queryparameter `cc` alleen als u meerdere talen opgeeft. Gebruik anders de queryparameters [mkt](#mkt) en [setLang](#setlang).<br /><br /> Een gebruikersinterfacetekenreeks is een tekenreeks die wordt gebruikt als label in een gebruikersinterface. Er zijn maar weinig gebruikersinterfacetekenreeksen in de JSON-antwoordobjecten. De opgegeven taal wordt toegepast op koppelingen naar Bing.com-eigenschappen in de antwoordobjecten.|  
@@ -78,21 +78,21 @@ De aanvraag kan de volgende query parameters bevatten. Zie de vereiste kolom voo
   
 |Name|Waarde|Type|Vereist|  
 |----------|-----------|----------|--------------|
-|<a name="count"></a>count|Het aantal resultaten dat moet worden geretourneerd, te beginnen met de index die is opgegeven door de `offset` para meter.|Tekenreeks|Nee|   
-|<a name="localCategories"></a>localCategories|Lijst met opties waarmee zoek acties op bedrijfs categorie worden gedefinieerd.  Zie [lokale bedrijfs categorieën zoeken](local-categories.md)|Tekenreeks|Nee|  
+|<a name="count"></a>count|Het aantal resultaten dat moet worden geretourneerd, te beginnen met de index die is opgegeven door de `offset` para meter.|Tekenreeks|No|   
+|<a name="localCategories"></a>localCategories|Lijst met opties waarmee zoek acties op bedrijfs categorie worden gedefinieerd.  Zie [lokale bedrijfs categorieën zoeken](local-categories.md)|Tekenreeks|No|  
 |<a name="mkt"></a>mkt|De markt waaruit de resultaten afkomstig zijn. <br /><br />Zie markt codes voor een lijst met mogelijke markt waarden.<br /><br /> **Opmerking:** De lokale Business Search-API ondersteunt momenteel alleen de markt en taal van de VS.<br /><br />|Tekenreeks|Ja|
-|<a name="offset"></a>offset|De index voor het starten van de resultaten die zijn opgegeven met de `count` para meter.|Geheel getal|Nee|  
-|<a name="query"></a>Nils|De zoek term van de gebruiker.|Tekenreeks|Nee|  
-|<a name="responseformat"></a>responseFormat|Het media type dat voor het antwoord moet worden gebruikt. Hier volgen de mogelijke niet-hoofdletter gevoelige waarden.<br /><ul><li>JSON</li><li>JSONLD</li></ul><br /> De standaard waarde is JSON. Zie [Response Objects](#response-objects)(Engelstalig) voor informatie over de JSON-objecten die het antwoord bevat.<br /><br />  Als u JsonLd opgeeft, bevat de antwoord tekst JSON-LD objecten die de zoek resultaten bevatten. Zie [JSON-LD](https://json-ld.org/)voor meer informatie over de JSON-ld.|Tekenreeks|Nee|  
-|<a name="safesearch"></a>safeSearch|Een filter dat wordt gebruikt voor het filteren van inhoud voor volwassenen. Hier volgen de mogelijke niet-hoofdlettergevoelige filterwaarden.<br /><ul><li>Off &mdash; webpagina's retour neren met tekst, afbeeldingen of Video's voor volwassenen.<br /><br/></li><li>Gemiddeld &mdash; webpaginas retour neren met volwassene tekst, maar geen installatie kopieën of Video's voor volwassenen.<br /><br/></li><li>&mdash;Geen webpagina's retour neren met tekst, afbeeldingen of Video's voor volwassenen.</li></ul><br /> De standaardwaarde is Moderate.<br /><br /> **Opmerking:** Als de aanvraag afkomstig is van een markt waarvoor het volwassen beleid van Bing is `safeSearch` ingesteld op strikt, negeert Bing de `safeSearch` waarde en wordt strikt gebruikt.<br/><br/>**OPMERKING:** Als u de zoekoperator `site:` gebruikt, is het mogelijk dat het antwoord inhoud voor volwassenen bevat, ongeacht de instelling van de queryparameter `safeSearch`. Gebruik `site:` alleen als u zich bewust bent van de inhoud op de site en uw scenario de mogelijkheid van inhoud voor volwassenen ondersteunt. |Tekenreeks|Nee|  
-|<a name="setlang"></a>setLang|De taal die moet worden gebruikt voor gebruikersinterfacetekenreeksen. Geef de taal op met behulp van de tweeletterige ISO 639-1 taalcode. De taalcode voor Nederlands is bijvoorbeeld NL. De standaardwaarde is EN (Engels).<br /><br /> Hoewel dit optioneel is, moet u altijd de taal opgeven. Doorgaans stelt u `setLang` in op dezelfde taal die is opgegeven door `mkt`, tenzij de gebruiker wil dat gebruikersinterfacetekenreeksen in een andere taal worden weergegeven.<br /><br /> Deze parameter en de header [Accept-Language](#acceptlanguage) sluiten elkaar uit&mdash;geef ze niet beide op.<br /><br /> Een gebruikersinterfacetekenreeks is een tekenreeks die wordt gebruikt als label in een gebruikersinterface. Er zijn maar weinig gebruikersinterfacetekenreeksen in de JSON-antwoordobjecten. De opgegeven taal wordt ook toegepast op koppelingen naar Bing.com-eigenschappen in de antwoordobjecten.|Tekenreeks|Nee| 
+|<a name="offset"></a>offset|De index voor het starten van de resultaten die zijn opgegeven met de `count` para meter.|Geheel getal|No|  
+|<a name="query"></a>Nils|De zoek term van de gebruiker.|Tekenreeks|No|  
+|<a name="responseformat"></a>responseFormat|Het media type dat voor het antwoord moet worden gebruikt. Hier volgen de mogelijke niet-hoofdletter gevoelige waarden.<br /><ul><li>JSON</li><li>JSONLD</li></ul><br /> De standaard waarde is JSON. Zie [Response Objects](#response-objects)(Engelstalig) voor informatie over de JSON-objecten die het antwoord bevat.<br /><br />  Als u JsonLd opgeeft, bevat de antwoord tekst JSON-LD objecten die de zoek resultaten bevatten. Zie [JSON-LD](https://json-ld.org/)voor meer informatie over de JSON-ld.|Tekenreeks|No|  
+|<a name="safesearch"></a>safeSearch|Een filter dat wordt gebruikt voor het filteren van inhoud voor volwassenen. Hier volgen de mogelijke niet-hoofdlettergevoelige filterwaarden.<br /><ul><li>Off &mdash; webpagina's retour neren met tekst, afbeeldingen of Video's voor volwassenen.<br /><br/></li><li>Gemiddeld &mdash; webpaginas retour neren met volwassene tekst, maar geen installatie kopieën of Video's voor volwassenen.<br /><br/></li><li>&mdash;Geen webpagina's retour neren met tekst, afbeeldingen of Video's voor volwassenen.</li></ul><br /> De standaardwaarde is Moderate.<br /><br /> **Opmerking:** Als de aanvraag afkomstig is van een markt waarvoor het volwassen beleid van Bing is `safeSearch` ingesteld op strikt, negeert Bing de `safeSearch` waarde en wordt strikt gebruikt.<br/><br/>**OPMERKING:** Als u de zoekoperator `site:` gebruikt, is het mogelijk dat het antwoord inhoud voor volwassenen bevat, ongeacht de instelling van de queryparameter `safeSearch`. Gebruik `site:` alleen als u zich bewust bent van de inhoud op de site en uw scenario de mogelijkheid van inhoud voor volwassenen ondersteunt. |Tekenreeks|No|  
+|<a name="setlang"></a>setLang|De taal die moet worden gebruikt voor gebruikersinterfacetekenreeksen. Geef de taal op met behulp van de tweeletterige ISO 639-1 taalcode. De taalcode voor Nederlands is bijvoorbeeld NL. De standaardwaarde is EN (Engels).<br /><br /> Hoewel dit optioneel is, moet u altijd de taal opgeven. Doorgaans stelt u `setLang` in op dezelfde taal die is opgegeven door `mkt`, tenzij de gebruiker wil dat gebruikersinterfacetekenreeksen in een andere taal worden weergegeven.<br /><br /> Deze parameter en de header [Accept-Language](#acceptlanguage) sluiten elkaar uit&mdash;geef ze niet beide op.<br /><br /> Een gebruikersinterfacetekenreeks is een tekenreeks die wordt gebruikt als label in een gebruikersinterface. Er zijn maar weinig gebruikersinterfacetekenreeksen in de JSON-antwoordobjecten. De opgegeven taal wordt ook toegepast op koppelingen naar Bing.com-eigenschappen in de antwoordobjecten.|Tekenreeks|No| 
 
 
 ## <a name="response-objects"></a>Antwoord objecten  
 Hieronder ziet u de JSON-antwoord objecten die het antwoord kan bevatten. Als de aanvraag is voltooid, is het object op het hoogste niveau in het antwoord het [SearchResponse](#searchresponse) -object. Als de aanvraag mislukt, is het object op het hoogste niveau het [ErrorResponse](#errorresponse) -object.
 
 
-|Object|Beschrijving|  
+|Object|Description|  
 |------------|-----------------|  
 |[Brengen](#place)|Definieert informatie over een lokale onderneming, zoals een restaurant of Hotel.|  
 
@@ -266,7 +266,7 @@ Als de aanvraag mislukt, bevat het antwoord een [ErrorResponse](#errorresponse) 
 
 Hier volgen de mogelijke fout code en waarden voor de subfout code.
 
-|Code|SubCode|Beschrijving
+|Code|SubCode|Description
 |-|-|-
 |Server Error|UnexpectedError<br/>ResourceError<br/>Niet geïmplementeerd|HTTP-status code is 500.
 |InvalidRequest|ParameterMissing<br/>ParameterInvalidValue<br/>HttpNotAllowed<br/>Geblokkeerd|Bing retourneert InvalidRequest wanneer een deel van de aanvraag ongeldig is. Een vereiste para meter ontbreekt bijvoorbeeld of een parameter waarde is niet geldig.<br/><br/>Als de fout ParameterMissing of ParameterInvalidValue is, is de HTTP-status code 400.<br/><br/>Als u het HTTP-protocol gebruikt in plaats van HTTPS, retourneert Bing HttpNotAllowed en de HTTP-status code is 410.

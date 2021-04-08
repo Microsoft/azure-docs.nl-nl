@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 06/20/2019
 ms.author: rohogue
 ms.openlocfilehash: 86e1d74d5e4ab9f6e799c73bcf0d807d0d874f21
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92219714"
 ---
 # <a name="monitor-azure-fxt-edge-filer-hardware-status"></a>Hardware-status van Azure FXT Edge-bestanden bewaken
@@ -60,7 +60,7 @@ De status indicatoren geven een effen, geel licht weer als er een fout is opgetr
 
 [Neem contact op met de ondersteuning](fxt-support-ticket.md) voor hulp als u de fout nog steeds hebt na het uitvoeren van deze oplossingen.
 
-| Pictogram | Beschrijving | Foutvoorwaarde | Mogelijke oplossingen |
+| Pictogram | Description | Foutvoorwaarde | Mogelijke oplossingen |
 |----------------|---------------|--------------------|----------------------|
 | ![pictogram station](media/fxt-monitor/fxt-hd-icon.jpg) | Status van station | Fout met station | Controleer het systeem gebeurtenis logboek om te bepalen of het station een fout heeft of <br>Voer de juiste test voor online diagnostische gegevens uit. Start het systeem opnieuw op en voer Inge sloten diagnostische gegevens uit (ePSA) of <br>Als de stations zijn geconfigureerd in een RAID-matrix, start u het systeem opnieuw en voert u het hulp programma voor configuratie van de hostadapter in |
 |![pictogram temperatuur](media/fxt-monitor/fxt-temp-icon.jpg) | Temperatuur status | Thermische fout: een ventilator is bijvoorbeeld mislukt of de omgevings temperatuur ligt buiten het bereik | Controleer op de volgende adresseer bare voor waarden: <br>Een ventilator ontbreekt of is mislukt <br>De cover van het systeem, de lucht Shroud, de geheugen module leeg of het haakje voor de achtergrond vullen worden verwijderd <br>De omgevings temperatuur is te hoog <br>Externe lucht stroom is belemmerd |

@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: v-erkel
 ms.openlocfilehash: 9159807f55ae52393b8fccec339fcc94c3e4ebb0
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "87061375"
 ---
 # <a name="use-multiple-caches-for-regional-failover-recovery"></a>Meerdere caches gebruiken voor regionale failover-herstel
@@ -55,6 +55,6 @@ Als de oorspronkelijke clients worden beïnvloed, maakt u nieuwe clients in de r
 
 Alle clients moeten de nieuwe cache koppelen, zelfs als de clients geen last hebben van de onderbreking van de regio. De nieuwe cache heeft andere koppel adressen dan de oude.
 
-## <a name="learn-more"></a>Meer informatie
+## <a name="learn-more"></a>Lees meer
 
 De hand leiding voor de Azure-toepassings architectuur bevat meer informatie over het [herstellen van een service onderbreking voor de hele regio](<https://docs.microsoft.com/azure/architecture/resiliency/recovery-loss-azure-region>).

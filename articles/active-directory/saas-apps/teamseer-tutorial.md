@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 6085ba5091b2b9973354280175aeb01f93ad7e28
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92521166"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-teamseer"></a>Zelfstudie: Azure Active Directory-integratie met TeamSeer
@@ -120,13 +120,13 @@ Voer de volgende stappen uit als u eenmalige aanmelding via Azure AD wilt config
 
     c. Afmeldings-URL
 
-### <a name="configure-teamseer-single-sign-on"></a>Eenmalige aanmelding bij TeamSeer configureren
+### <a name="configure-teamseer-single-sign-on&quot;></a>Eenmalige aanmelding bij TeamSeer configureren
 
 1. Meld u in een ander browservenster als beheerder aan bij uw TeamSeer-bedrijfssite.
 
 1. Ga naar **HR-beheerder**.
 
-    ![Schermopname met H R Admin geselecteerd in het TeamSeer-venster.](./media/teamseer-tutorial/ic789634.png "HR-beheerder")
+    ![Schermopname met H R Admin geselecteerd in het TeamSeer-venster.](./media/teamseer-tutorial/ic789634.png &quot;HR-beheerder")
 
 1. Klik op **Installatie**.
 
@@ -205,7 +205,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-### <a name="create-teamseer-test-user"></a>Een testgebruiker maken in TeamSeer
+### <a name="create-teamseer-test-user&quot;></a>Een testgebruiker maken in TeamSeer
 
 Om Azure AD-gebruikers zich te laten aanmelden bij TeamSeer, moeten ze worden ingericht in TeamSeer. In het geval van TeamSeer moet dit handmatig gebeuren.
 
@@ -215,7 +215,7 @@ Om Azure AD-gebruikers zich te laten aanmelden bij TeamSeer, moeten ze worden in
 
 1. Ga naar **HR-beheerder \> Gebruikers** en klik vervolgens op **de wizard Nieuwe gebruiker uitvoeren**.
 
-    ![Schermopname met het tabblad H R Admin, waar u een wizard kunt selecteren om uit te voeren.](./media/teamseer-tutorial/ic789640.png "HR-beheerder")
+    ![Schermopname met het tabblad H R Admin, waar u een wizard kunt selecteren om uit te voeren.](./media/teamseer-tutorial/ic789640.png &quot;HR-beheerder")
 
 1. Voer in de sectie **Gebruikersdetails** de volgende stappen uit:
 

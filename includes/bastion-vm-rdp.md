@@ -9,10 +9,10 @@ ms.date: 10/21/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 083ab61d5a20bfb8e38747ae0694b1176c0a0fd1
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92521527"
 ---
 1. Open [Azure Portal](https://portal.azure.com). Navigeer naar de virtuele machine waarmee u verbinding wilt maken en selecteer vervolgens **Verbinding maken**. Selecteer **Bastion** in de vervolgkeuzelijst.

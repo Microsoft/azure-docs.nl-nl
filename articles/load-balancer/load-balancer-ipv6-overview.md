@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 08/24/2018
 ms.author: allensu
 ms.openlocfilehash: 4061a3dbf4dc92d6d412528115d46edc36d20d5e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "94700679"
 ---
 # <a name="overview-of-ipv6-for-azure-load-balancer"></a>Overzicht van IPv6 voor Azure Load Balancer
@@ -40,12 +40,12 @@ In de volgende afbeelding ziet u de IPv6-functionaliteit voor Azure Load Balance
 
 Na de implementatie kan een IPv4-of IPv6-Internet-client communiceren met de open bare IPv4-of IPv6-adressen (of hostnamen) van de Azure Internet gerichte Load Balancer. De load balancer stuurt de IPv6-pakketten naar de privé-IPv6-adressen van de virtuele machines met behulp van Network Address Translation (NAT). De IPv6-Internet-client kan niet rechtstreeks communiceren met het IPv6-adres van de Vm's.
 
-## <a name="features"></a>Functies
+## <a name="features&quot;></a>Functies
 
 Systeem eigen IPv6-ondersteuning voor virtuele machines die via Azure Resource Manager worden geïmplementeerd biedt het volgende:
 
 1. IPv6-Services met gelijke taak verdeling voor IPv6-clients op het Internet
-2. Systeem eigen IPv6-en IPv4-eind punten op Vm's ("dubbele gestapeld")
+2. Systeem eigen IPv6-en IPv4-eind punten op Vm's (&quot;dubbele gestapeld")
 3. Binnenkomende en uitgaande systeem eigen IPv6-verbindingen
 4. Ondersteunde protocollen, zoals TCP, UDP en HTTP (S), bieden een volledige reeks service architecturen
 

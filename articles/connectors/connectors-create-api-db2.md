@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/19/2020
 tags: connectors
 ms.openlocfilehash: 765bb66b572f0c046222cfb617fe4caa80925256
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "94967398"
 ---
 # <a name="access-and-manage-ibm-db2-resources-by-using-azure-logic-apps"></a>Toegang tot en beheer van IBM DB2-resources met behulp van Azure Logic Apps
@@ -82,12 +82,12 @@ Als u de verbinding wilt instellen, geeft u deze verbindings Details op wanneer 
 
 | Eigenschap | Vereist | Beschrijving |
 |----------|----------|-------------|
-| **Verbinding maken via on-premises gateway** | Nee | Geldt alleen voor on-premises verbindingen. |
+| **Verbinding maken via on-premises gateway** | No | Geldt alleen voor on-premises verbindingen. |
 | **Verbindingsnaam** | Ja | De naam voor de verbinding, bijvoorbeeld ' MyLogicApp-DB2-Connection ' |
-| **Server** | Ja | Het adres of de alias dubbele poort nummer voor uw DB2-Server, bijvoorbeeld ' myDB2server.cloudapp.net:50000 ' <p><p>**Opmerking**: deze waarde is een teken reeks die een TCP/IP-adres of alias vertegenwoordigt, hetzij in IPv4-of IPv6-notatie, gevolgd door een dubbele punt en een TCP/IP-poort nummer. |
-| **Database** | Ja | De naam voor uw data base <p><p>**Opmerking**: deze waarde is een teken reeks die een DRDA relationele database naam vertegenwoordigt (RDBNAM): <p>-DB2 voor z/O'S accepteert een 16-byte teken reeks waarbij de data base de locatie ' IBM DB2 for z/OS ' wordt genoemd. <br>-DB2 voor ik accepteert een teken reeks van 18 bytes waarbij de data base de relationele data base ' IBM DB2 for i ' wordt genoemd. <br>-DB2 voor LUW accepteert een 8-byte teken reeks. |
-| **Gebruikersnaam** | Ja | Uw gebruikers naam voor de data base <p><p>**Opmerking**: deze waarde is een teken reeks waarvan de lengte is gebaseerd op de specifieke Data Base: <p><p>-DB2 voor z/O'S accepteert een 8-byte teken reeks. <br>-DB2 voor ik accepteert een teken reeks van 10 bytes. <br>-DB2 voor Linux of UNIX accepteert een 8-byte teken reeks. <br>-DB2 voor Windows accepteert een teken reeks van 30 bytes. |
-| **Wachtwoord** | Ja | Uw wacht woord voor de data base |
+| **Server** | Yes | Het adres of de alias dubbele poort nummer voor uw DB2-Server, bijvoorbeeld ' myDB2server.cloudapp.net:50000 ' <p><p>**Opmerking**: deze waarde is een teken reeks die een TCP/IP-adres of alias vertegenwoordigt, hetzij in IPv4-of IPv6-notatie, gevolgd door een dubbele punt en een TCP/IP-poort nummer. |
+| **Database** | Yes | De naam voor uw data base <p><p>**Opmerking**: deze waarde is een teken reeks die een DRDA relationele database naam vertegenwoordigt (RDBNAM): <p>-DB2 voor z/O'S accepteert een 16-byte teken reeks waarbij de data base de locatie ' IBM DB2 for z/OS ' wordt genoemd. <br>-DB2 voor ik accepteert een teken reeks van 18 bytes waarbij de data base de relationele data base ' IBM DB2 for i ' wordt genoemd. <br>-DB2 voor LUW accepteert een 8-byte teken reeks. |
+| **Gebruikersnaam** | Yes | Uw gebruikers naam voor de data base <p><p>**Opmerking**: deze waarde is een teken reeks waarvan de lengte is gebaseerd op de specifieke Data Base: <p><p>-DB2 voor z/O'S accepteert een 8-byte teken reeks. <br>-DB2 voor ik accepteert een teken reeks van 10 bytes. <br>-DB2 voor Linux of UNIX accepteert een 8-byte teken reeks. <br>-DB2 voor Windows accepteert een teken reeks van 30 bytes. |
+| **Wachtwoord** | Yes | Uw wacht woord voor de data base |
 ||||
 
 Bijvoorbeeld:
@@ -102,14 +102,14 @@ Voordat u een verbinding maakt, moet uw on-premises gegevens gateway al zijn ge�
 
 | Eigenschap | Vereist | Beschrijving |
 |----------|----------|-------------|
-| **Verbinding maken via on-premises gateway** | Ja | Is van toepassing wanneer u een on-premises verbinding wilt en de on-premises verbindings eigenschappen wilt weer geven. |
+| **Verbinding maken via on-premises gateway** | Yes | Is van toepassing wanneer u een on-premises verbinding wilt en de on-premises verbindings eigenschappen wilt weer geven. |
 | **Verbindingsnaam** | Ja | De naam voor de verbinding, bijvoorbeeld ' MyLogicApp-DB2-Connection ' | 
-| **Server** | Ja | Het adres of de alias dubbele poort nummer voor uw DB2-Server, bijvoorbeeld "myDB2server: 50.000" <p><p>**Opmerking**: deze waarde is een teken reeks die een TCP/IP-adres of alias vertegenwoordigt, hetzij in IPv4-of IPv6-notatie, gevolgd door een dubbele punt en een TCP/IP-poort nummer. |
-| **Database** | Ja | De naam voor uw data base <p><p>**Opmerking**: deze waarde is een teken reeks die een DRDA relationele database naam vertegenwoordigt (RDBNAM): <p>-DB2 voor z/O'S accepteert een 16-byte teken reeks waarbij de data base de locatie ' IBM DB2 for z/OS ' wordt genoemd. <br>-DB2 voor ik accepteert een teken reeks van 18 bytes waarbij de data base de relationele data base ' IBM DB2 for i ' wordt genoemd. <br>-DB2 voor LUW accepteert een 8-byte teken reeks. |
-| **Verificatie** | Ja | Het verificatie type voor de verbinding, bijvoorbeeld ' Basic ' <p><p>**Opmerking**: Selecteer deze waarde in de lijst, die basis of Windows (Kerberos) omvat. |
-| **Gebruikersnaam** | Ja | Uw gebruikers naam voor de data base <p><p>**Opmerking**: deze waarde is een teken reeks waarvan de lengte is gebaseerd op de specifieke Data Base: <p><p>-DB2 voor z/O'S accepteert een 8-byte teken reeks. <br>-DB2 voor ik accepteert een teken reeks van 10 bytes. <br>-DB2 voor Linux of UNIX accepteert een 8-byte teken reeks. <br>-DB2 voor Windows accepteert een teken reeks van 30 bytes. |
-| **Wachtwoord** | Ja | Uw wacht woord voor de data base |
-| **Gateway** | Ja | De naam voor de geïnstalleerde on-premises gegevens gateway <p><p>**Opmerking**: Selecteer deze waarde uit de lijst, die alle geïnstalleerde gegevens gateways binnen uw Azure-abonnement en resource groep bevat. |
+| **Server** | Yes | Het adres of de alias dubbele poort nummer voor uw DB2-Server, bijvoorbeeld "myDB2server: 50.000" <p><p>**Opmerking**: deze waarde is een teken reeks die een TCP/IP-adres of alias vertegenwoordigt, hetzij in IPv4-of IPv6-notatie, gevolgd door een dubbele punt en een TCP/IP-poort nummer. |
+| **Database** | Yes | De naam voor uw data base <p><p>**Opmerking**: deze waarde is een teken reeks die een DRDA relationele database naam vertegenwoordigt (RDBNAM): <p>-DB2 voor z/O'S accepteert een 16-byte teken reeks waarbij de data base de locatie ' IBM DB2 for z/OS ' wordt genoemd. <br>-DB2 voor ik accepteert een teken reeks van 18 bytes waarbij de data base de relationele data base ' IBM DB2 for i ' wordt genoemd. <br>-DB2 voor LUW accepteert een 8-byte teken reeks. |
+| **Verificatie** | Yes | Het verificatie type voor de verbinding, bijvoorbeeld ' Basic ' <p><p>**Opmerking**: Selecteer deze waarde in de lijst, die basis of Windows (Kerberos) omvat. |
+| **Gebruikersnaam** | Yes | Uw gebruikers naam voor de data base <p><p>**Opmerking**: deze waarde is een teken reeks waarvan de lengte is gebaseerd op de specifieke Data Base: <p><p>-DB2 voor z/O'S accepteert een 8-byte teken reeks. <br>-DB2 voor ik accepteert een teken reeks van 10 bytes. <br>-DB2 voor Linux of UNIX accepteert een 8-byte teken reeks. <br>-DB2 voor Windows accepteert een teken reeks van 30 bytes. |
+| **Wachtwoord** | Yes | Uw wacht woord voor de data base |
+| **Gateway** | Yes | De naam voor de geïnstalleerde on-premises gegevens gateway <p><p>**Opmerking**: Selecteer deze waarde uit de lijst, die alle geïnstalleerde gegevens gateways binnen uw Azure-abonnement en resource groep bevat. |
 ||||
 
 Bijvoorbeeld:
@@ -153,8 +153,8 @@ Als u één record in een DB2-database tabel wilt ophalen, gebruikt u de actie *
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Tabel naam** | Ja | De tabel met de gewenste record, zoals ' gebied ' in dit voor beeld |
-   | **Gebieds-ID** | Ja | De ID voor de record die u wilt, zoals ' 99999 ' in dit voor beeld |
+   | **Tabel naam** | Yes | De tabel met de gewenste record, zoals ' gebied ' in dit voor beeld |
+   | **Gebieds-ID** | Yes | De ID voor de record die u wilt, zoals ' 99999 ' in dit voor beeld |
    ||||
 
    ![Scherm afbeelding met de actie ' Get Row (preview) ' met de geopende lijst ' tabel naam ' en de waarde ' gebied ' geselecteerd.](./media/connectors-create-api-db2/db2-get-row-action-select-table.png)
@@ -233,10 +233,10 @@ Als u één record wilt toevoegen aan een tabel met een DB2-Data Base, gebruikt 
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Tabel naam** | Ja | De tabel waar de record moet worden toegevoegd, zoals ' gebied ' |
-   | **Gebieds-ID** | Ja | De ID voor het gebied dat moet worden toegevoegd, zoals "99999" |
-   | **Beschrijving van gebied** | Ja | De beschrijving voor het gebied dat moet worden toegevoegd, zoals ' gebied 99999 ' |
-   | **Regio-ID** | Ja | De ID voor de toe te voegen regio, bijvoorbeeld "102" |
+   | **Tabel naam** | Yes | De tabel waar de record moet worden toegevoegd, zoals ' gebied ' |
+   | **Gebieds-ID** | Yes | De ID voor het gebied dat moet worden toegevoegd, zoals "99999" |
+   | **Beschrijving van gebied** | Yes | De beschrijving voor het gebied dat moet worden toegevoegd, zoals ' gebied 99999 ' |
+   | **Regio-ID** | Yes | De ID voor de toe te voegen regio, bijvoorbeeld "102" |
    |||| 
 
    Bijvoorbeeld:
@@ -280,11 +280,11 @@ Als u één record in een DB2-database tabel wilt bijwerken, gebruikt u de actie
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Tabel naam** | Ja | De tabel waar de record moet worden bijgewerkt, bijvoorbeeld ' gebied ' |
-   | **Rij-ID** | Ja | De ID voor de record die moet worden bijgewerkt, bijvoorbeeld "99999" |
-   | **Gebieds-ID** | Ja | De nieuwe gebieds-ID, zoals ' 99999 ' |
-   | **Beschrijving van gebied** | Ja | De beschrijving van het nieuwe gebied, zoals "bijgewerkt 99999" |
-   | **Regio-ID** | Ja | De nieuwe regio-ID, bijvoorbeeld "102" |
+   | **Tabel naam** | Yes | De tabel waar de record moet worden bijgewerkt, bijvoorbeeld ' gebied ' |
+   | **Rij-ID** | Yes | De ID voor de record die moet worden bijgewerkt, bijvoorbeeld "99999" |
+   | **Gebieds-ID** | Yes | De nieuwe gebieds-ID, zoals ' 99999 ' |
+   | **Beschrijving van gebied** | Yes | De beschrijving van het nieuwe gebied, zoals "bijgewerkt 99999" |
+   | **Regio-ID** | Yes | De nieuwe regio-ID, bijvoorbeeld "102" |
    ||||
 
    Bijvoorbeeld:
@@ -328,8 +328,8 @@ Als u één record uit een DB2-database tabel wilt verwijderen, gebruikt u de ac
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Tabel naam** | Ja | De tabel waar de record moet worden verwijderd, zoals ' gebied ' |
-   | **Rij-ID** | Ja | De ID voor de record die moet worden verwijderd, bijvoorbeeld "99999" |
+   | **Tabel naam** | Yes | De tabel waar de record moet worden verwijderd, zoals ' gebied ' |
+   | **Rij-ID** | Yes | De ID voor de record die moet worden verwijderd, bijvoorbeeld "99999" |
    ||||
 
    Bijvoorbeeld:

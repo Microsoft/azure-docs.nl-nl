@@ -8,10 +8,10 @@ ms.date: 06/13/2017
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: 15cd0979fdc2468ab50451042cd99a8442470139
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92148172"
 ---
 # <a name="create-an-ase-by-using-an-azure-resource-manager-template"></a>Een ASE maken met behulp van een Azure Resource Manager sjabloon
@@ -83,7 +83,7 @@ Gebruik het volgende Power shell-code fragment om:
 Deze Power shell-code voor Base64 code ring is aangepast op de [blog Power shell-scripts][examplebase64encoding]:
 
 ```powershell
-$certificate = New-SelfSignedCertificate -certstorelocation cert:\localmachine\my -dnsname "*.internal-contoso.com","*.scm.internal-contoso.com"
+$certificate = New-SelfSignedCertificate -certstorelocation cert:\localmachine\my -dnsname "*.internal-contoso.com&quot;,&quot;*.scm.internal-contoso.com"
 
 $certThumbprint = "cert:\localMachine\my\" + $certificate.Thumbprint
 $password = ConvertTo-SecureString -String "CHANGETHISPASSWORD" -Force -AsPlainText

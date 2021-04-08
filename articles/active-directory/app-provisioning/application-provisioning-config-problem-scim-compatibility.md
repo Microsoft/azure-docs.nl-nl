@@ -12,10 +12,10 @@ ms.date: 08/05/2020
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.openlocfilehash: d13629b4cb05995b9652e862f769a0ffcae30a8c
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "99256895"
 ---
 # <a name="known-issues-and-resolutions-with-scim-20-protocol-compliance-of-the-azure-ad-user-provisioning-service"></a>Bekende problemen en oplossingen met SCIM 2,0-protocol compatibiliteit van de Azure AD User Provisioning Service
@@ -39,11 +39,11 @@ In de onderstaande tabel staat een item dat is gemarkeerd als vast, dat het juis
 
 | **Compatibiliteits probleem met SCIM 2,0** |  **Vaste?** | **Datum herstellen**  |  **Achterwaartse compatibiliteit** |
 |---|---|---|
-| Voor Azure AD moet '/scim ' zich in de hoofdmap van de SCIM-eind punt-URL van de toepassing bevindt  | Ja  |  18 december 2018 | downgrade naar customappSSO |
-| Extensie kenmerken gebruiken de notatie dot '. ' vóór kenmerk namen in plaats van dubbele punt notatie ': ' |  Ja  | 18 december 2018  | downgrade naar customappSSO |
-| Patch aanvragen voor kenmerken met meerdere waarden bevatten ongeldige syntaxis van het filter | Ja  |  18 december 2018  | downgrade naar customappSSO |
-| Aanvragen voor het maken van groepen bevatten een ongeldige schema-URI | Ja  |  18 december 2018  |  downgrade naar customappSSO |
-| Update van PATCH-gedrag om te zorgen voor naleving (bijvoorbeeld actief als Booleaanse en de juiste verwijdering van groepslid maatschappen) | Nee | NOG TE BEPALEN| Preview-vlag gebruiken |
+| Voor Azure AD moet '/scim ' zich in de hoofdmap van de SCIM-eind punt-URL van de toepassing bevindt  | Yes  |  18 december 2018 | downgrade naar customappSSO |
+| Extensie kenmerken gebruiken de notatie dot '. ' vóór kenmerk namen in plaats van dubbele punt notatie ': ' |  Yes  | 18 december 2018  | downgrade naar customappSSO |
+| Patch aanvragen voor kenmerken met meerdere waarden bevatten ongeldige syntaxis van het filter | Yes  |  18 december 2018  | downgrade naar customappSSO |
+| Aanvragen voor het maken van groepen bevatten een ongeldige schema-URI | Yes  |  18 december 2018  |  downgrade naar customappSSO |
+| Update van PATCH-gedrag om te zorgen voor naleving (bijvoorbeeld actief als Booleaanse en de juiste verwijdering van groepslid maatschappen) | No | NOG TE BEPALEN| Preview-vlag gebruiken |
 
 ## <a name="flags-to-alter-the-scim-behavior"></a>Vlaggen voor het wijzigen van het SCIM-gedrag
 Gebruik de onderstaande vlaggen in de Tenant-URL van uw toepassing om het standaard gedrag van de SCIM-client te wijzigen.

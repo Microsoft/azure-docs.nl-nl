@@ -8,10 +8,10 @@ ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 03/24/2021
 ms.openlocfilehash: c9f2a21a1183637ec4648868cccd6f343b003f0c
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105026620"
 ---
 # <a name="how-to-connect-azure-data-factory-and-azure-purview"></a>Verbinding maken met Azure Data Factory en Azure controle sfeer liggen
@@ -110,26 +110,26 @@ De integratie tussen Data Factory en controle sfeer liggen ondersteunt alleen ee
 | Gegevensarchief | Ondersteund | 
 | ------------------- | ------------------- | 
 | Azure Blob Storage | Ja |
-| Azure Cognitive Search | Ja | 
-| Azure Cosmos DB (SQL-API) \* | Ja | 
-| API van Azure Cosmos DB voor MongoDB \* | Ja |
+| Azure Cognitive Search | Yes | 
+| Azure Cosmos DB (SQL-API) \* | Yes | 
+| API van Azure Cosmos DB voor MongoDB \* | Yes |
 | Azure Data Explorer \* | Ja | 
 | Azure Data Lake Storage Gen1 | Ja | 
 | Azure Data Lake Storage Gen2 | Ja | 
-| Azure data base for Maria DB \* | Ja | 
-| Azure Database for MySQL \* | Ja | 
-| Azure Database for PostgreSQL \* | Ja |
-| Azure File Storage | Ja | 
-| Azure SQL Database \* | Ja | 
-| Met Azure SQL beheerd exemplaar \* | Ja | 
+| Azure data base for Maria DB \* | Yes | 
+| Azure Database for MySQL \* | Yes | 
+| Azure Database for PostgreSQL \* | Yes |
+| Azure File Storage | Yes | 
+| Azure SQL Database \* | Yes | 
+| Met Azure SQL beheerd exemplaar \* | Yes | 
 | Azure Synapse Analytics \* | Ja | 
 | Azure Table Storage | Ja |
-| Amazon S3 | Ja | 
-| Onderdelen \* | Ja | 
-| SAP ECC \* | Ja |
-| SAP-tabel | Ja |
-| SQL Server \* | Ja | 
-| Teradata \* | Ja |
+| Amazon S3 | Yes | 
+| Onderdelen \* | Yes | 
+| SAP ECC \* | Yes |
+| SAP-tabel | Yes |
+| SQL Server \* | Yes | 
+| Teradata \* | Yes |
 
 *\* Azure controle sfeer liggen biedt momenteel geen ondersteuning voor een query of opgeslagen procedure voor afkomst of scans. Afkomst is beperkt tot tabel-en weergave bronnen.*
 
@@ -160,8 +160,8 @@ In aanvulling op afkomst wordt het schema voor gegevensassets (weer gegeven in h
 | Azure Blob Storage | Ja |
 | Azure Data Lake Storage Gen1 | Ja |
 | Azure Data Lake Storage Gen2 | Ja |
-| Azure SQL Database \* | Ja |
-| Azure Synapse Analytics \* | Ja |
+| Azure SQL Database \* | Yes |
+| Azure Synapse Analytics \* | Yes |
 
 *\* Azure controle sfeer liggen biedt momenteel geen ondersteuning voor een query of opgeslagen procedure voor afkomst of scans. Afkomst is beperkt tot tabel-en weergave bronnen.*
 
@@ -172,11 +172,11 @@ In aanvulling op afkomst wordt het schema voor gegevensassets (weer gegeven in h
 | Azure Blob Storage | Ja |
 | Azure Data Lake Storage Gen1 | Ja |
 | Azure Data Lake Storage Gen2 | Ja |
-| Azure File Storage | Ja |
-| Azure SQL Database \* | Ja |
-| Met Azure SQL beheerd exemplaar \*| Ja |
-| Azure Synapse Analytics \* | Ja |
-| SQL Server \* | Ja |
+| Azure File Storage | Yes |
+| Azure SQL Database \* | Yes |
+| Met Azure SQL beheerd exemplaar \*| Yes |
+| Azure Synapse Analytics \* | Yes |
+| SQL Server \* | Yes |
 
 *\* Azure controle sfeer liggen biedt momenteel geen ondersteuning voor een query of opgeslagen procedure voor afkomst of scans. Afkomst is beperkt tot tabel-en weergave bronnen.*
 

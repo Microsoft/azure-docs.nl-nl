@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 02/28/2020
 ms.openlocfilehash: 4e8c6b25055dfc38d56509e1744b8c7fcac40700
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98944296"
 ---
 # <a name="what-is-apache-hive-and-hiveql-on-azure-hdinsight"></a>Wat is Apache Hive en HiveQL in azure HDInsight?
@@ -20,7 +20,7 @@ Met hive kunt u de structuur projecteren op grotendeels ongestructureerde gegeve
 
 HDInsight biedt verschillende cluster typen, die zijn afgestemd op specifieke werk belastingen. De volgende cluster typen worden meestal gebruikt voor Hive-query's:
 
-|Clustertype |Beschrijving|
+|Clustertype |Description|
 |---|---|
 |Interactive Query|Een Hadoop-cluster dat [LLAP-functionaliteit (Low latentie Analytical Processing)](https://cwiki.apache.org/confluence/display/Hive/LLAP) biedt om de reactie tijden voor interactieve query's te verbeteren. Zie het document [Start with Interactive query in HDInsight](../interactive-query/apache-interactive-query-get-started.md) voor meer informatie.|
 |Hadoop|Een Hadoop-cluster dat is afgestemd op werk belastingen voor batch verwerking. Zie het document [beginnen met Apache Hadoop in HDInsight](../hadoop/apache-hadoop-linux-tutorial-get-started.md) voor meer informatie.|

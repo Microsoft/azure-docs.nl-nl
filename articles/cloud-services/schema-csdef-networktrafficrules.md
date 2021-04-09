@@ -9,10 +9,10 @@ author: tanmaygore
 ms.reviewer: mimckitt
 ms.custom: ''
 ms.openlocfilehash: 2c8ab53068b71652d03d03bf79a224fe5e34dff3
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98739765"
 ---
 # <a name="azure-cloud-services-classic-definition-networktrafficrules-schema"></a>NetworkTrafficRules-schema voor Azure Cloud Services (klassiek)
@@ -75,7 +75,7 @@ Het `Destinations` element beschrijft een verzameling RoleEndpoints dan kan word
 ##  <a name="roleendpoint-element"></a><a name="RoleEndpoint"></a> RoleEndpoint-element
 Het `RoleEndpoint` element beschrijft een eind punt voor een rol om communicatie toe te staan. U kunt meerdere `RoleEndpoint` elementen opgeven als er meer dan één eind punt voor de rol is.
 
-| Kenmerk      | Type     | Beschrijving |
+| Kenmerk      | Type     | Description |
 | -------------- | -------- | ----------- |
 | `endpointName` | `string` | Vereist. De naam van het eind punt waarnaar verkeer moet worden toegestaan.|
 | `roleName`     | `string` | Vereist. De naam van de webrole waarmee communicatie moet worden toegestaan.|
@@ -86,14 +86,14 @@ Het `AllowAllTraffic` element is een regel waarmee alle rollen kunnen communicer
 ##  <a name="whensource-element"></a><a name="WhenSource"></a> WhenSource-element
 Het `WhenSource` element beschrijft een verzameling functies die kunnen communiceren met de eind punten die in het `Destinations` knoop punt zijn gedefinieerd.
 
-| Kenmerk | Type     | Beschrijving |
+| Kenmerk | Type     | Description |
 | --------- | -------- | ----------- |
 | `matches` | `string` | Vereist. Hiermee geeft u de regel op die moet worden toegepast bij het toestaan van communicaties. De enige geldige waarde is momenteel `AnyRule` .|
   
 ##  <a name="fromrole-element"></a><a name="FromRole"></a> FromRole-element
 `FromRole`Met het element worden de rollen opgegeven die kunnen communiceren met de eind punten die in het `Destinations` knoop punt zijn gedefinieerd. U kunt meerdere `FromRole` elementen opgeven als er meer dan één rol met de eind punten kan communiceren.
 
-| Kenmerk  | Type     | Beschrijving |
+| Kenmerk  | Type     | Description |
 | ---------- | -------- | ----------- |
 | `roleName` | `string` | Vereist. De naam van de rol waarmee communicatie moet worden toegestaan.|
 

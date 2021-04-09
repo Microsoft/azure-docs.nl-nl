@@ -10,10 +10,10 @@ ms.custom: contperf-fy21q1
 ms.date: 10/13/2020
 ms.author: allensu
 ms.openlocfilehash: 99f15afdab917fe28e22df8cb0e372b6c30c8526
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105027326"
 ---
 # <a name="using-source-network-address-translation-snat-for-outbound-connections"></a>Bron netwerk adres omzetting (SNAT) gebruiken voor uitgaande verbindingen
@@ -70,7 +70,7 @@ Om unieke stromen te behouden, schrijft de host de bron poort van elk uitgaand p
  | ---------- | ------ | ------------ |
  | Openbaar load balancer of zelfstandig | [SNAT (bron netwerk adres omzetting)](#snat) </br> niet gebruikt. | TCP (Transmission Control Protocol) </br> UDP (User Data gram Protocol) </br> ICMP (Internet Control Message Protocol) </br> ESP (Encapsulating Security Payload) |
 
- #### <a name="description"></a>Beschrijving
+ #### <a name="description"></a>Description
 
  Azure gebruikt het open bare IP-adres dat is toegewezen aan de IP-configuratie van de NIC van het exemplaar voor alle uitgaande stromen. Alle tijdelijke poorten zijn beschikbaar voor het exemplaar. Het maakt niet uit of de virtuele machine gelijkmatig is verdeeld of niet. Dit scenario heeft voor rang op de andere. 
 
@@ -82,7 +82,7 @@ Om unieke stromen te behouden, schrijft de host de bron poort van elk uitgaand p
  | ------------ | ------ | ------------ |
  | Standaard open bare load balancer | Het gebruik van load balancer frontend-IP-adressen voor [SNAT](#snat).| TCP </br> UDP |
 
- #### <a name="description"></a>Beschrijving
+ #### <a name="description"></a>Description
 
  De load balancer resource is geconfigureerd met een regel voor uitgaande verbindingen of een taakverdelings regel die SNAT mogelijk maakt. Deze regel wordt gebruikt om een koppeling tussen de open bare IP-frontend te maken met de back-end-pool. 
 
@@ -105,7 +105,7 @@ Om unieke stromen te behouden, schrijft de host de bron poort van elk uitgaand p
  | ------------ | ------ | ------------ |
  | Standaard interne load balancer | Geen Internet verbinding.| Geen |
 
- #### <a name="description"></a>Beschrijving
+ #### <a name="description"></a>Description
  
 Wanneer u een standaard interne load balancer gebruikt, is er geen tijdelijke IP-adressen voor SNAT. Deze functie biedt standaard ondersteuning voor beveiliging. Deze functie zorgt ervoor dat alle IP-adressen die door bronnen worden gebruikt, kunnen worden geconfigureerd en kan worden gereserveerd. 
 
@@ -122,7 +122,7 @@ Een andere mogelijkheid is om de back-end-instanties toe te voegen aan een open 
  | ------------ | ------ | ------------ |
  |Geen </br> Basis load balancer | [SNAT](#snat) met dynamisch IP-adres op exemplaar niveau| TCP </br> UDP | 
 
- #### <a name="description"></a>Beschrijving
+ #### <a name="description"></a>Description
 
  Wanneer de virtuele machine een uitgaande stroom maakt, vertaalt Azure het bron-IP-adres naar een dynamisch opgegeven IP-adres voor de open bare bron. Dit open bare IP-adres kan **niet worden geconfigureerd** en kan niet worden gereserveerd. Dit adres telt niet op basis van de open bare IP-resource limiet van het abonnement. 
 

@@ -4,10 +4,10 @@ description: Veelgestelde vragen in Application Insights.
 ms.topic: conceptual
 ms.date: 04/04/2017
 ms.openlocfilehash: 74a4d7ee65dccead132cfcebd9bf8c0de9b761a5
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100584155"
 ---
 # <a name="how-do-i--in-application-insights"></a>Hoe kan ik ... in Application Insights?
@@ -65,7 +65,7 @@ U ontvangt e-mail berichten wanneer de metriek boven en onder de drempel waarde 
 
 Enkele punten om in overweging te nemen:
 
-* Een waarschuwing heeft twee statussen ("waarschuwing" en "in orde"). De status wordt alleen geëvalueerd wanneer een metriek wordt ontvangen.
+* Een waarschuwing heeft twee statussen ("waarschuwing&quot; en &quot;in orde"). De status wordt alleen geëvalueerd wanneer een metriek wordt ontvangen.
 * Er wordt alleen een e-mail bericht verzonden wanneer de status wordt gewijzigd. Daarom moet u zowel hoge als lage waarde-metrische gegevens verzenden.
 * Als u de waarschuwing wilt evalueren, wordt het gemiddelde van de ontvangen waarden in de voor gaande periode genomen. Dit gebeurt elke keer dat er een metriek wordt ontvangen, zodat e-mail berichten vaker kunnen worden verzonden dan de periode die u hebt ingesteld.
 * Omdat e-mail berichten beide op ' alert ' en ' in orde ' worden verzonden, kunt u de eenmalige gebeurtenis beschouwen als een voor waarde met twee status waarden. Een voor beeld: in plaats van de gebeurtenis ' taak voltooid ', een ' taak wordt uitgevoerd ', waarbij u e-mail berichten ontvangt aan het begin en einde van een taak.

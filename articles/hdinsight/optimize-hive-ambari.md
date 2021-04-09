@@ -5,10 +5,10 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 05/04/2020
 ms.openlocfilehash: 69a4e769677b6f0200f4157305a3a125f82ee76d
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104864814"
 ---
 # <a name="optimize-apache-hive-with-apache-ambari-in-azure-hdinsight"></a>Apache Hive optimaliseren met Apache Ambari in azure HDInsight
@@ -131,10 +131,10 @@ De beschik bare compressie typen zijn:
 
 | Indeling | Hulpprogramma | Algoritme | Bestands extensie | Splitsbaar? |
 | --- | --- | --- | --- | --- |
-| Gzip | Gzip | DEFLATE | `.gz` | Nee |
-| Bzip2 | Bzip2 | Bzip2 |`.bz2` | Ja |
+| Gzip | Gzip | DEFLATE | `.gz` | No |
+| Bzip2 | Bzip2 | Bzip2 |`.bz2` | Yes |
 | LZO | `Lzop` | LZO | `.lzo` | Ja, indien geïndexeerd |
-| Snappy | N.v.t. | Snappy | Snappy | Nee |
+| Snappy | N.v.t. | Snappy | Snappy | No |
 
 Een algemene regel is dat de compressie methode splitsbaar belang rijk is, anders worden enkele toewijzingen gemaakt. Als de invoer gegevens tekst is, `bzip2` is de beste optie. Voor de indeling ORC is Snappy de snelste compressie optie.
 

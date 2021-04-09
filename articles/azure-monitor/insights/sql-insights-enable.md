@@ -6,10 +6,10 @@ author: bwren
 ms.author: bwren
 ms.date: 03/15/2021
 ms.openlocfilehash: e8dd887d151eb553131048f232940555dbef324b
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105025030"
 ---
 # <a name="enable-sql-insights-preview"></a>SQL Insights inschakelen (preview-versie)

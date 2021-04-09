@@ -4,10 +4,10 @@ description: Meer informatie over het concept van beveiligings aanbevelingen en 
 ms.topic: conceptual
 ms.date: 02/16/2021
 ms.openlocfilehash: a9e33248354aab659694e39df605cc070fdaaf73
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104779338"
 ---
 # <a name="security-recommendations-for-iot-hub"></a>Beveiligings aanbevelingen voor IoT Hub
@@ -21,7 +21,7 @@ In dit artikel vindt u een lijst met aanbevelingen die kunnen worden geactiveerd
 
 Aanbevelings waarschuwingen bieden inzicht en suggesties voor acties om de beveiliging postuur van uw omgeving te verbeteren.
 
-| Severity | Name | Gegevensbron | Beschrijving |
+| Severity | Name | Gegevensbron | Description |
 |--|--|--|--|
 | Hoog | Identieke verificatie referenties die worden gebruikt door meerdere apparaten | IoT Hub | IoT Hub authenticatie referenties worden gebruikt door meerdere apparaten. Dit proces duidt mogelijk op een illegitimate-apparaat dat een legitiem apparaat imiteert. Dubbel referentie gebruik verhoogt het risico van imitatie van apparaten door een schadelijke actor. |
 | Normaal | Het standaard IP-filter beleid moet worden geweigerd | IoT Hub | Voor de configuratie van de IP-filter moeten regels worden gedefinieerd voor het toegestane verkeer, en standaard moeten alle andere verkeer standaard worden geweigerd. |

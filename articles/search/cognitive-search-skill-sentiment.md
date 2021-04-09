@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.openlocfilehash: 6519cd952bd1265b4daad3b77b29aabd47ea4cc5
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102547472"
 ---
 # <a name="sentiment-cognitive-skill"></a>Sentiment cognitieve vaardigheid
@@ -36,20 +36,20 @@ De maximale grootte van een record moet 5000 tekens zijn, zoals gemeten door [`S
 
 Parameters zijn hoofdlettergevoelig.
 
-| Parameternaam | Beschrijving |
+| Parameternaam | Description |
 |----------------|----------------------|
 | `defaultLanguageCode` | Beschrijving De taal code die moet worden toegepast op documenten die geen taal expliciet opgeven. <br/> [Volledige lijst met ondersteunde talen](../cognitive-services/text-analytics/language-support.md) weer geven |
 
 ## <a name="skill-inputs"></a>Vaardigheids invoer 
 
-| Invoer naam | Beschrijving |
+| Invoer naam | Description |
 |--------------------|-------------|
 | `text` | De tekst die moet worden geanalyseerd.|
 | `languageCode`    |  Beschrijving Een teken reeks die de taal van de records aangeeft. Als deze para meter niet wordt opgegeven, is de standaard waarde "en". <br/>Bekijk de [volledige lijst met ondersteunde talen](../cognitive-services/text-analytics/language-support.md).|
 
 ## <a name="skill-outputs"></a>Vaardigheids uitvoer
 
-| Uitvoer naam | Beschrijving |
+| Uitvoer naam | Description |
 |--------------------|-------------|
 | `score` | Een waarde tussen 0 en 1 die de sentiment van de geanalyseerde tekst aangeeft. Waarden die dicht bij 0 liggen, hebben een negatieve sentiment, dicht bij 0,5 hebben neutrale sentiment en waarden die dicht bij 1 staan, hebben een positieve sentiment.|
 

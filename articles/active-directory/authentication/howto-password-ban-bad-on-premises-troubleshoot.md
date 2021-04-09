@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f2bbc1c555824d4c632c5bf85a9cd0aa83087fc8
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101648722"
 ---
 # <a name="troubleshoot-on-premises-azure-ad-password-protection"></a>Problemen oplossen: on-premises Azure AD-wachtwoord beveiliging
@@ -328,7 +328,7 @@ De cmdlet Test-AzureADPasswordProtectionDCAgentHealth ondersteunt diverse status
 
 De volgende tests kunnen allemaal afzonderlijk worden uitgevoerd en worden niet geaccepteerd. Een korte beschrijving
 
-|Status test DC-agent|Beschrijving|
+|Status test DC-agent|Description|
 | --- | :---: |
 |-VerifyPasswordFilterDll|Verifieert of de wachtwoord filter-dll momenteel is geladen en kan de DC-Agent service aanroepen|
 |-VerifyForestRegistration|Hiermee wordt gecontroleerd of het forest momenteel is geregistreerd|

@@ -13,10 +13,10 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 435a0b85d205328d10f8762498c7a981d7ee45f5
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102611824"
 ---
 # <a name="collect-azure-active-directory-b2c-logs-with-application-insights"></a>Azure Active Directory B2C-logboeken met Application Insights verzamelen
@@ -94,7 +94,7 @@ Er is een korte vertraging, meestal minder dan vijf minuten, voordat u nieuwe lo
 
 Hier volgt een lijst met query's die u kunt gebruiken om de logboeken weer te geven:
 
-| Query | Beschrijving |
+| Query | Description |
 |---------------------|--------------------|
 `traces` | Alle logboeken weer geven die zijn gegenereerd door Azure AD B2C |
 `traces | where timestamp > ago(1d)` | Alle logboeken weer geven die zijn gegenereerd door Azure AD B2C voor de afgelopen dag

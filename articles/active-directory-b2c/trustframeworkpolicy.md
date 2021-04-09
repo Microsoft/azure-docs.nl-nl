@@ -11,10 +11,10 @@ ms.date: 03/15/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 9bf1cc197a7d6977ccb6ef69e157d9f8a76a58d5
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103470720"
 ---
 # <a name="trustframeworkpolicy"></a>TrustFrameworkPolicy
@@ -40,13 +40,13 @@ Het **TrustFrameworkPolicy** -element bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 |---------- | -------- | ----------- |
-| PolicySchemaVersion | Ja | De schema versie die moet worden gebruikt om het beleid uit te voeren. De waarde moet `0.3.0.0` |
-| TenantObjectId | Nee | De unieke object-id van de Azure Active Directory B2C (Azure AD B2C)-Tenant. |
-| TenantId | Ja | De unieke id van de Tenant waartoe dit beleid behoort. |
-| PolicyId | Ja | De unieke id voor het beleid. Deze id moet worden voorafgegaan door *B2C_1A_* |
-| PublicPolicyUri | Ja | De URI voor het beleid, dat een combi natie is van de Tenant-ID en de beleids-ID. |
-| Als Deployment mode | Nee | Mogelijke waarden: `Production` , of `Development` . `Production` is de standaardwaarde. Gebruik deze eigenschap om fouten in uw beleid op te sporen. Zie [Logboeken verzamelen](troubleshoot-with-application-insights.md)voor meer informatie. |
-| UserJourneyRecorderEndpoint | Nee | Het eind punt dat wordt gebruikt voor logboek registratie. De waarde moet worden ingesteld op `urn:journeyrecorder:applicationinsights` als het kenmerk bestaat. Zie [Logboeken verzamelen](troubleshoot-with-application-insights.md)voor meer informatie. |
+| PolicySchemaVersion | Yes | De schema versie die moet worden gebruikt om het beleid uit te voeren. De waarde moet `0.3.0.0` |
+| TenantObjectId | No | De unieke object-id van de Azure Active Directory B2C (Azure AD B2C)-Tenant. |
+| TenantId | Yes | De unieke id van de Tenant waartoe dit beleid behoort. |
+| PolicyId | Yes | De unieke id voor het beleid. Deze id moet worden voorafgegaan door *B2C_1A_* |
+| PublicPolicyUri | Yes | De URI voor het beleid, dat een combi natie is van de Tenant-ID en de beleids-ID. |
+| Als Deployment mode | No | Mogelijke waarden: `Production` , of `Development` . `Production` is de standaardwaarde. Gebruik deze eigenschap om fouten in uw beleid op te sporen. Zie [Logboeken verzamelen](troubleshoot-with-application-insights.md)voor meer informatie. |
+| UserJourneyRecorderEndpoint | No | Het eind punt dat wordt gebruikt voor logboek registratie. De waarde moet worden ingesteld op `urn:journeyrecorder:applicationinsights` als het kenmerk bestaat. Zie [Logboeken verzamelen](troubleshoot-with-application-insights.md)voor meer informatie. |
 
 
 In het volgende voor beeld ziet u hoe u het **TrustFrameworkPolicy** -element opgeeft:
@@ -64,7 +64,7 @@ In het volgende voor beeld ziet u hoe u het **TrustFrameworkPolicy** -element op
 
 Het **TrustFrameworkPolicy** -element bevat de volgende elementen:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | BasePolicy| 0:1| De id van een basis beleid. |
 | [BuildingBlocks](buildingblocks.md) | 0:1 | De bouw stenen van uw beleid. |
@@ -76,7 +76,7 @@ Als u een beleid van een ander beleid wilt overnemen, moet u een **BasePolicy** 
 
 Het **BasePolicy** -element bevat de volgende elementen:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | --------|
 | TenantId | 1:1 | De id van uw Azure AD B2C-Tenant. |
 | PolicyId | 1:1 | De id van het bovenliggende beleid. |

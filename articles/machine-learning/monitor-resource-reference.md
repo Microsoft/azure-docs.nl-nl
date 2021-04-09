@@ -11,10 +11,10 @@ author: aashishb
 ms.custom: subject-monitoring
 ms.date: 10/02/2020
 ms.openlocfilehash: f130fc0c65c49c33c838812fc2758619e0d1bca0
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102521336"
 ---
 # <a name="monitoring-azure-machine-learning-data-reference"></a>Naslag informatie over Azure machine learning-gegevens bewaken
@@ -27,7 +27,7 @@ In deze sectie vindt u alle automatisch verzamelde platform gegevens die zijn ve
 
 **Model**
 
-| Metrisch | Eenheid | Beschrijving |
+| Metrisch | Eenheid | Description |
 | ----- | ----- | ----- |
 | Model implementeren is mislukt | Count | Het aantal model implementaties dat is mislukt. |
 | Model implementeren gestart | Count | Het aantal model implementaties is gestart. |
@@ -39,7 +39,7 @@ In deze sectie vindt u alle automatisch verzamelde platform gegevens die zijn ve
 
 Quota gegevens zijn alleen voor het berekenen van Azure Machine Learning.
 
-| Metrisch | Eenheid | Beschrijving |
+| Metrisch | Eenheid | Description |
 | ----- | ----- | ----- |
 | Actieve kernen | Count | Het aantal actieve reken kernen. |
 | Actieve knoop punten | Count | Het aantal actieve knoop punten. |
@@ -57,7 +57,7 @@ Quota gegevens zijn alleen voor het berekenen van Azure Machine Learning.
 
 **Resource**
 
-| Metrisch | Eenheid | Beschrijving |
+| Metrisch | Eenheid | Description |
 | ----- | ----- | ----- |
 | CpuUtilization | Percentage | Hoeveel procent van de CPU voor een bepaald knoop punt is gebruikt tijdens een uitvoering/taak. Deze metrische gegevens worden alleen gepubliceerd wanneer een taak wordt uitgevoerd op een knoop punt. Eén taak kan gebruikmaken van een of meer knoop punten. Deze metriek wordt per knoop punt gepubliceerd. |
 | GpuUtilization | Percentage | Hoeveel percentage van de GPU voor een bepaald knoop punt is gebruikt tijdens een uitvoering/taak. Eén knoop punt kan een of meer Gpu's hebben. Deze metrische gegevens worden per GPU per knoop punt gepubliceerd. |
@@ -66,7 +66,7 @@ Quota gegevens zijn alleen voor het berekenen van Azure Machine Learning.
 
 Informatie over trainings uitvoeringen.
 
-| Metrisch | Eenheid | Beschrijving |
+| Metrisch | Eenheid | Description |
 | ----- | ----- | ----- |
 | Voltooide uitvoeringen | Count | Het aantal voltooide uitvoeringen. |
 | Mislukte uitvoeringen | Count | Het aantal mislukte uitvoeringen. |
@@ -78,7 +78,7 @@ Zie [multidimensionale metrische](../azure-monitor/essentials/data-platform-metr
 
 Azure Machine Learning heeft de volgende dimensies die zijn gekoppeld aan de metrische gegevens.
 
-| Dimensie | Beschrijving |
+| Dimensie | Description |
 | ---- | ---- |
 | Clusternaam | De naam van de bron van het berekenings cluster. Beschikbaar voor alle quota-metrische gegevens. |
 | Naam van VM-familie | De naam van de VM-familie die door het cluster wordt gebruikt. Beschikbaar voor percentage quotum gebruik. |

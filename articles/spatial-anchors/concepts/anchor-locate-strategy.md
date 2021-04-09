@@ -9,10 +9,10 @@ ms.date: 02/11/2021
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
 ms.openlocfilehash: 13aa12be5a336363bbe3bcbf3e3fb354a8fa3074
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105048473"
 ---
 # <a name="understanding-the-anchorlocatecriteria-class"></a>Informatie over de klasse AnchorLocateCriteria
@@ -62,7 +62,7 @@ Ruimtelijk| Ruimtelijke informatie over een anker wordt geretourneerd.
 
 Strategie bepaalt hoe ankers moeten worden gevonden. De strategie-eigenschap kan worden opgegeven met behulp van een LocateStrategy Enum.
 
-LocateStrategy Enum-waarde | Beschrijving
+LocateStrategy Enum-waarde | Description
 ---------------|------------
 AnyStrategy | Met deze strategie kan het systeem combi Naties van VisualInformation-en relatie strategieën gebruiken om ankers te vinden. 
 VisualInformation|Deze strategie probeert ankers te vinden door de visuele informatie van de huidige omgeving te vergelijken met die van de visuele footprint van het anker. De visuele footprint van een anker verwijst naar de visuele informatie die momenteel aan het anker is gekoppeld. Deze visuele informatie wordt doorgaans niet alleen verzameld tijdens het maken van het anker. Deze strategie is op dit moment alleen toegestaan in combi natie met de eigenschappen NearDevice of identifiers.

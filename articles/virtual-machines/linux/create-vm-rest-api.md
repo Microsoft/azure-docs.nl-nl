@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 06/05/2018
 ms.author: cynthn
 ms.openlocfilehash: 519939445e67f0f993662e2faf506eb186686156
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102554561"
 ---
 # <a name="create-a-linux-virtual-machine-that-uses-ssh-authentication-with-the-rest-api"></a>Maak een virtuele Linux-machine die gebruikmaakt van SSH-verificatie met de REST API
@@ -55,7 +55,7 @@ Voor algemene informatie over het werken met REST API-aanvragen raadpleegt u [on
 
 De volgende algemene definities worden gebruikt voor het bouwen van een aanvraag tekst:
 
-| Name                       | Vereist | Type                                                                                | Beschrijving  |
+| Name                       | Vereist | Type                                                                                | Description  |
 |----------------------------|----------|-------------------------------------------------------------------------------------|--------------|
 | location                   | True     | tekenreeks                                                                              | Resource locatie. |
 | naam                       |          | tekenreeks                                                                              | Naam voor de virtuele machine. |
@@ -129,7 +129,7 @@ U kunt de client van uw voor keur gebruiken voor het verzenden van deze HTTP-aan
 
 Er zijn twee geslaagde reacties voor de bewerking om een virtuele machine te maken of bij te werken:
 
-| Naam        | Type                                                                              | Beschrijving |
+| Naam        | Type                                                                              | Description |
 |-------------|-----------------------------------------------------------------------------------|-------------|
 | 200 OK      | [VirtualMachine](/rest/api/compute/virtualmachines/createorupdate#virtualmachine) | OK          |
 | 201 gemaakt | [VirtualMachine](/rest/api/compute/virtualmachines/createorupdate#virtualmachine) | Gemaakt     |

@@ -9,10 +9,10 @@ ms.date: 01/06/2021
 ms.author: sngun
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 019ca26143a4879efafa973299703f0abcb21162
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "102488083"
 ---
 # <a name="tuning-query-performance-with-azure-cosmos-db"></a>Query prestaties afstemmen met Azure Cosmos DB
@@ -238,7 +238,7 @@ IReadOnlyDictionary<string, QueryMetrics> metrics = result.QueryMetrics;
 
 ```
 
-| Metrisch | Eenheid | Beschrijving | 
+| Metrisch | Eenheid | Description | 
 | ------ | -----| ----------- |
 | `totalExecutionTimeInMs` | milliseconden | Uitvoerings tijd van query | 
 | `queryCompileTimeInMs` | milliseconden | Compilatie tijd van de query  | 
@@ -260,7 +260,7 @@ De client-Sdk's kunnen intern meerdere query bewerkingen uitvoeren om de query b
 
 Hier volgen enkele voor beelden van query's en het interpreteren van enkele metrische gegevens die worden geretourneerd door de uitvoering van query's: 
 
-| Query | Voorbeeld metriek | Beschrijving | 
+| Query | Voorbeeld metriek | Description | 
 | ------ | -----| ----------- |
 | `SELECT TOP 100 * FROM c` | `"RetrievedDocumentCount": 101` | Het aantal opgehaalde documenten is 100 + 1 om overeen te komen met de component TOP. De query tijd wordt meestal gebruikt in `WriteOutputTime` en `DocumentLoadTime` omdat het een scan is. | 
 | `SELECT TOP 500 * FROM c` | `"RetrievedDocumentCount": 501` | RetrievedDocumentCount is nu hoger (500 + 1 zodat dit overeenkomt met de TOP-component). | 

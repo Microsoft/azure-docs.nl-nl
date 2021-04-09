@@ -7,10 +7,10 @@ ms.date: 03/02/2021
 ms.reviewer: yutlin
 ms.custom: seodec18
 ms.openlocfilehash: 99dc8cb2acf06faae16df6d3a48c4d38b1be46d8
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104577781"
 ---
 # <a name="add-a-tlsssl-certificate-in-azure-app-service"></a>Een TLS/SSL-certificaat toevoegen in Azure App Service
@@ -377,11 +377,11 @@ Zoek de vergrendeling van het certificaat met het vergrendelingstype **Verwijder
 
 U kunt nu het App Service-certificaat verwijderen. Selecteer **Overzicht** > **Verwijderen** in de navigatie links. Typ in het bevestigingsvenster de naam van het certificaat en selecteer **OK**.
 
-## <a name="automate-with-scripts"></a>Automatiseren met scripts
+## <a name="automate-with-scripts&quot;></a>Automatiseren met scripts
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name=&quot;azure-cli&quot;></a>Azure CLI
 
-[!code-azurecli[main](../../cli_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.sh?highlight=3-5 "Bind a custom TLS/SSL certificate to a web app")] 
+[!code-azurecli[main](../../cli_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.sh?highlight=3-5 &quot;Bind a custom TLS/SSL certificate to a web app")] 
 
 ### <a name="powershell"></a>PowerShell
 

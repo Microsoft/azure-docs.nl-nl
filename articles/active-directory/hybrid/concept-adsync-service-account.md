@@ -16,10 +16,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fb23d79caa6964c3f61fbb84c8b8f229f475b8ab
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104722154"
 ---
 # <a name="adsync-service-account"></a>ADSync-serviceaccount
@@ -30,7 +30,7 @@ Het kiezen van het ADSync-service account is een belang rijke plannings beslissi
 De synchronisatie service kan worden uitgevoerd onder verschillende accounts. Het kan worden uitgevoerd onder een virtueel service account (LEVERANCIERSPECIFIEKE naam), een beheerd service account (gMSA/sMSA) of een gewoon gebruikers account. De ondersteunde opties zijn gewijzigd met de release van 2017 april en 2021 maart van Azure AD Connect wanneer u een nieuwe installatie maakt. Als u een upgrade uitvoert van een eerdere versie van Azure AD Connect, zijn deze extra opties niet beschikbaar. 
 
 
-|Type account|Installatie optie|Beschrijving| 
+|Type account|Installatie optie|Description| 
 |-----|------|-----|
 |Virtueel service-account|Express en aangepast, 2017 april en hoger| Een virtueel service account wordt gebruikt voor alle snelle installaties, met uitzonde ring van installaties op een domein controller. Wanneer u aangepaste installatie gebruikt, is dit de standaard optie, tenzij een andere optie wordt gebruikt.| 
 |Beheerd serviceaccount|Aangepast, 2017 april en hoger|Als u een externe SQL Server gebruikt, raden we u aan een beheerd service account voor een groep te gebruiken. |

@@ -7,10 +7,10 @@ ms.date: 02/03/2020
 ms.topic: article
 ms.custom: references_regions
 ms.openlocfilehash: 789233ce1ede751276f965143716694c6feca3ca
-ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105032785"
 ---
 # <a name="system-requirements"></a>Systeemvereisten
@@ -90,7 +90,7 @@ Zorg ervoor dat de firewalls (op apparaat, binnen routers, enzovoort) deze IP-be
 
 Zorg ervoor dat de firewalls (op het apparaat, binnen routers, enzovoort) niet de volgende poorten blok keren:
 
-| Poort              | Protocol | Toestaan    | Beschrijving |
+| Poort              | Protocol | Toestaan    | Description |
 |-------------------|----------|----------|-------------|
 | 50051             | TCP      | Verzendt | Eerste verbinding (HTTP-Handshake) |
 | 8266              | UDP      | Verzendt | Gegevensoverdracht |

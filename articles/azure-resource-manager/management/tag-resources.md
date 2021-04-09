@@ -4,12 +4,12 @@ description: Laat zien hoe u Tags toepast om Azure-resources te organiseren voor
 ms.topic: conceptual
 ms.date: 01/04/2021
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: fb93673b643fd13efe9ffea148c5fb1d072f9e05
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 1e755a378fd71ea2763cc3e43477876fa3e8c5d5
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98896220"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105934186"
 ---
 # <a name="use-tags-to-organize-your-azure-resources-and-management-hierarchy"></a>Tags gebruiken om uw Azure-resources en beheerhiërarchie te organiseren
 
@@ -684,10 +684,10 @@ De volgende sjabloon voegt de tags van een object toe aan een resource groep of 
 
 Als u wilt werken met tags via de Azure REST API, gebruikt u:
 
-* [Tags-maken of bijwerken bij bereik](/rest/api/resources/tags/createorupdateatscope) (put-bewerking)
-* [Tags-bijwerken bij bereik](/rest/api/resources/tags/updateatscope) (patch bewerking)
-* [Tags: ophalen bij bereik](/rest/api/resources/tags/getatscope) (Get-bewerking)
-* [Tags-verwijderen bij bereik](/rest/api/resources/tags/deleteatscope) (Verwijder bewerking)
+* [Tags-maken of bijwerken bij bereik](/rest/api/resources/resources/tags/createorupdateatscope) (put-bewerking)
+* [Tags-bijwerken bij bereik](/rest/api/resources/resources/tags/updateatscope) (patch bewerking)
+* [Tags: ophalen bij bereik](/rest/api/resources/resources/tags/getatscope) (Get-bewerking)
+* [Tags-verwijderen bij bereik](/rest/api/resources/resources/tags/deleteatscope) (Verwijder bewerking)
 
 ## <a name="inherit-tags"></a>Tags overnemen
 

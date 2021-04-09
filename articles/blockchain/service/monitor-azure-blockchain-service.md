@@ -5,10 +5,10 @@ ms.date: 01/08/2020
 ms.topic: how-to
 ms.reviewer: v-umha
 ms.openlocfilehash: 05147f48c4cde4cc97bf6cc9cae5c8220a389ebd
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100594914"
 ---
 # <a name="monitor-azure-blockchain-service-through-azure-monitor"></a>De Azure Block Chain-Service bewaken via Azure Monitor  
@@ -79,7 +79,7 @@ Alle bron logboeken delen een gemeen schappelijk schema op het hoogste niveau me
 De volgende tabel geeft een lijst van de eigenschappen voor Azure Block Chain-proxy Logboeken wanneer deze worden verzameld in Azure Monitor Logboeken of Azure Storage.  
 
 
-| Naam van eigenschap  | Beschrijving |
+| Naam van eigenschap  | Description |
 |:---|:---|
 | tijd | De datum en tijd (UTC) waarop de bewerking plaatsvond. |
 | resourceID  | De Azure Block Chain-Service resource waarvoor logboeken zijn ingeschakeld.  |
@@ -105,7 +105,7 @@ De volgende tabel geeft een lijst van de eigenschappen voor Azure Block Chain-pr
 De volgende tabel bevat de eigenschappen voor Azure Block Chain-toepassings Logboeken.
 
 
-| Naam van eigenschap  | Beschrijving |
+| Naam van eigenschap  | Description |
 |:---|:---|
 | tijd | De datum en tijd (UTC) waarop de bewerking plaatsvond. |
 | resourceID  | De Azure Block Chain-Service resource waarvoor logboeken zijn ingeschakeld.|
@@ -131,7 +131,7 @@ Zie [Azure monitor ondersteunde metrische gegevens](../../azure-monitor/essentia
 De volgende tabel bevat de lijst met block Chain-metrische gegevens die worden verzameld voor de resource van de Azure Block Chain service-lid.
 
 
-| Naam van metrische gegevens | Eenheid  |  Type aggregatie| Beschrijving   |
+| Naam van metrische gegevens | Eenheid  |  Type aggregatie| Description   |
 |---|---|---|---|
 | Trans acties in behandeling   | Count  |  Gemiddeld | Het aantal trans acties dat wacht om te worden ook niet gebruikt.   |
 | Verwerkte blokken   | Count  | Sum  |  Het aantal blokken dat in elk tijds interval wordt verwerkt. Op dit moment is de blok grootte 5 seconden. in een minuut worden 12 blokken en 60 blokken in vijf minuten in elk knoop punt verwerkt.   |
@@ -143,7 +143,7 @@ De volgende tabel bevat de lijst met block Chain-metrische gegevens die worden v
 De volgende tabel geeft een lijst van de verschillende metrische verbindings gegevens die worden verzameld voor de resource van de Azure Block Chain service-lid. Dit zijn de metrische gegevens van de NGINX-proxy.
 
 
-| Naam van metrische gegevens | Eenheid  |  Type aggregatie| Beschrijving |
+| Naam van metrische gegevens | Eenheid  |  Type aggregatie| Description |
 |---|---|---|---|
 | Geaccepteerde verbindingen   | Count  |  Sum | Het totale aantal geaccepteerde client verbindingen.   |
 | Actieve verbindingen  | Count  | Gemiddeld  |  Het huidige aantal actieve client verbindingen, inclusief wachtende verbindingen.    |
@@ -156,7 +156,7 @@ De volgende tabel geeft een lijst van de verschillende metrische verbindings geg
 De volgende tabel bevat de prestatie gegevens die worden verzameld voor elk van de knoop punten van de Azure Block Chain-lid-resource.  
 
 
-| Naam van metrische gegevens | Eenheid  |  Type aggregatie| Beschrijving   |
+| Naam van metrische gegevens | Eenheid  |  Type aggregatie| Description   |
 |---|---|---|---|
 | Percentage CPU-gebruik   | Percentage  |  Max | Het percentage van het CPU-gebruik.     |
 | I/o gelezen bytes   | Kilo bytes   | Sum  |  De som van i/o-Lees bewerkingen op alle knoop punten van de Block chain.      |

@@ -9,17 +9,14 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: ad88a7a6c91128bb863eeb51cc7f26c8d71b9eed
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: cf4f427c76709022feed37c7a21f1ab4d594acd0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105107904"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105728161"
 ---
 # <a name="pricing-scenarios"></a>Prijsscenario's
-
-[!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
-
 
 Prijzen voor Azure Communication Services zijn doorgaans gebaseerd op een model voor betalen per gebruik. De prijzen in de volgende voor beelden zijn bedoeld ter illustratie en komen mogelijk niet overeen met de nieuwste prijzen voor Azure.
 

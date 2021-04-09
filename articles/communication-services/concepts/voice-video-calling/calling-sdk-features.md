@@ -9,17 +9,14 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 1475b8aaa4e925facb989e1c6977c4f4dacc6418
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.openlocfilehash: 8b9de4ffe3011bbb8345a6a8c4a92ef5bd1d4559
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105625208"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105728416"
 ---
 # <a name="calling-sdk-overview"></a>Overzicht van de SDK
-
-[!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
-
 
 Er zijn twee afzonderlijke families van het aanroepen van Sdk's, voor- *clients* en- *Services.* Momenteel beschik bare Sdk's zijn bedoeld voor ervaringen van eind gebruikers: websites en systeem eigen apps.
 

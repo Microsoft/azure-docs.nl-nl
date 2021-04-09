@@ -7,17 +7,17 @@ ms.service: data-catalog
 ms.topic: how-to
 ms.date: 08/01/2019
 ms.openlocfilehash: 52a8d8fcd0b9b9ee1ff918ead250c88b83f86cb7
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "104674832"
 ---
 # <a name="save-searches-and-pin-data-assets-in-azure-data-catalog"></a>Zoek opdrachten opslaan en gegevensassets vastmaken in Azure Data Catalog
 
 [!INCLUDE [Azure Purview redirect](../../includes/data-catalog-use-purview.md)]
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 Azure Data Catalog biedt mogelijkheden voor het detecteren van gegevens bronnen. U kunt de catalogus snel doorzoeken en filteren om gegevens bronnen te zoeken en inzicht te krijgen in de beoogde doel einden, zodat u gemakkelijker de juiste gegevens kunt vinden voor de taak bij de hand.
 
 Maar wat als u regel matig moet werken met dezelfde gegevens? En wat gebeurt er als u en andere gebruikers regel matig uw kennis bijdragen aan dezelfde gegevens bronnen in de catalogus? In deze situaties is het mogelijk om dezelfde Zoek opdrachten herhaaldelijk uit te voeren. Dit is waar opgeslagen Zoek opdrachten en vastgemaakte gegevensassets u kunnen helpen.

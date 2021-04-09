@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 05/13/2020
 ms.custom: devx-track-python
 ms.openlocfilehash: de3d9aa60322cc3e6e189f6f16c35d6f42c0cf61
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102500407"
 ---
 # <a name="train-models-with-azure-machine-learning"></a>Modellen trainen met Azure Machine Learning
@@ -23,7 +23,7 @@ Azure Machine Learning biedt verschillende manieren om uw modellen te trainen, v
 
 + [Azure machine learning SDK voor python](#python-sdk): de PYTHON-SDK biedt verschillende manieren om modellen te trainen, elk met verschillende mogelijkheden.
 
-    | Trainings methode | Beschrijving |
+    | Trainings methode | Description |
     | ----- | ----- |
     | [Configuratie uitvoeren](#run-configuration) | Een **typische manier om modellen te trainen** is door een trainings script te gebruiken en de configuratie uit te voeren. De uitvoerings configuratie bevat de informatie die nodig is voor het configureren van de trainings omgeving die wordt gebruikt voor het trainen van uw model. U kunt uw trainings script, reken doel en Azure ML-omgeving opgeven in uw uitvoerings configuratie en een trainings taak uitvoeren. |
     | [Geautomatiseerde Machine Learning](#automated-machine-learning) | Met geautomatiseerde machine learning kunt u **modellen trainen zonder uitgebreide data Wetenschappen of programmeer kennis**. Voor mensen met een gegevens wetenschap en-programmeer achtergrond biedt het een manier om tijd en resources te besparen door het automatiseren van algoritme selectie en afstemming-afstemming. U hoeft zich geen zorgen te maken over het definiëren van een configuratie voor het uitvoeren van automatische machine learning. |

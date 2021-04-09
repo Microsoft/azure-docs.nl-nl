@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 08/26/2020
 ms.author: v-tcassi
 ms.openlocfilehash: b5450e4846c3c49c89830ae65c50a95ee0c8d6eb
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104803260"
 ---
 ## <a name="verify-iot-edge-cicd-with-the-build-and-release-pipelines"></a>IoT Edge CI/CD controleren met pijp lijnen voor Build en release

@@ -8,10 +8,10 @@ ms.date: 03/02/2021
 author: gahl-levy
 ms.author: gahllevy
 ms.openlocfilehash: 9eebc77c5b3d9402c766320fddfdaf05d50b574f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "102485398"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb-40-server-version-supported-features-and-syntax"></a>Azure Cosmos DB-API voor MongoDB (4,0-Server versie): ondersteunde functies en syntaxis
@@ -40,16 +40,16 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 
 | Opdracht | Ondersteund |
 |---------|---------|
-| [stroom wijzigen](mongodb-change-streams.md) | Ja |
+| [stroom wijzigen](mongodb-change-streams.md) | Yes |
 | delete | Ja |
-| eval | Nee |
+| eval | No |
 | find | Ja |
 | findAndModify | Ja |
 | getLastError | Ja |
 | getMore | Ja |
 | getPrevError | Nee |
 | insert | Ja |
-| parallelCollectionScan | Nee |
+| parallelCollectionScan | No |
 | resetError | Nee |
 | update | Ja |
 
@@ -57,7 +57,7 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 
 | Opdracht | Ondersteund |
 |---------|---------|
-| abortTransaction | Ja |
+| abortTransaction | Yes |
 | commitTransaction | Ja |
 
 ### <a name="authentication-commands"></a>Verificatieopdrachten
@@ -128,16 +128,16 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 
 | Opdracht | Ondersteund |
 |---------|---------|
-| $addFields | Ja |
+| $addFields | Yes |
 | $bucket | Nee |
 | $bucketAuto | Nee |
-| $changeStream | Ja |
+| $changeStream | Yes |
 | $collStats | Nee |
 | $count | Ja |
 | $currentOp | Nee |
-| $facet | Ja |
-| $geoNear | Ja |
-| $graphLookup | Ja |
+| $facet | Yes |
+| $geoNear | Yes |
+| $graphLookup | Yes |
 | $group | Ja |
 | $indexStats | Nee |
 | $limit | Ja |
@@ -149,12 +149,12 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 | $project | Ja |
 | $redact | Ja |
 | $replaceRoot | Ja |
-| $replaceWith | Nee |
+| $replaceWith | No |
 | $sample | Ja |
 | $skip | Ja |
 | $sort | Ja |
 | $sortByCount | Ja |
-| $unwind | Ja |
+| $unwind | Yes |
 
 ### <a name="boolean-expressions"></a>Booleaanse expressies
 
@@ -168,14 +168,14 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 
 | Opdracht | Ondersteund |
 |---------|---------|
-| $convert | Ja |
-| $toBool | Ja |
-| $toDate | Ja |
-| $toDecimal | Ja |
-| $toDouble | Ja |
-| $toInt | Ja |
-| $toLong | Ja |
-| $toObjectId | Ja |
+| $convert | Yes |
+| $toBool | Yes |
+| $toDate | Yes |
+| $toDecimal | Yes |
+| $toDouble | Yes |
+| $toInt | Yes |
+| $toLong | Yes |
+| $toObjectId | Yes |
 | $toString | Ja |
 
 ### <a name="set-expressions"></a>Expressies voor instellen
@@ -231,8 +231,8 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 | $concat | Ja |
 | $indexOfBytes | Ja |
 | $indexOfCP | Ja |
-| $ltrim | Ja |
-| $rtrim | Ja |
+| $ltrim | Yes |
+| $rtrim | Yes |
 | $trim | Ja |
 | $split | Ja |
 | $strLenBytes | Ja |
@@ -273,7 +273,7 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 
 | Opdracht | Ondersteund |
 |---------|---------|
-| $map | Ja |
+| $map | Yes |
 | $let | Ja |
 
 ### <a name="system-variables"></a>Systeemvariabelen
@@ -341,8 +341,8 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 | $min | Ja |
 | $push | Ja |
 | $addToSet | Ja |
-| $stdDevPop | Ja |
-| $stdDevSamp | Ja |
+| $stdDevPop | Yes |
+| $stdDevSamp | Yes |
 
 ### <a name="merge-operator"></a>Operator voor samenvoegen
 

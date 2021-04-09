@@ -15,10 +15,10 @@ ms.workload: iaas-sql-server
 ms.date: 05/31/2017
 ms.author: mathoma
 ms.openlocfilehash: e877f775c6a7bc83ce6c4a559c9f74b606c952fc
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97359486"
 ---
 # <a name="application-patterns-and-development-strategies-for-sql-server-on-azure-virtual-machines"></a>Toepassings patronen en ontwikkelings strategieën voor het SQL Server op Azure Virtual Machines
@@ -37,7 +37,7 @@ Voor elk toepassings patroon vindt u een on-premises scenario, de respectieve Cl
 
 **Technische revisoren:** Corey Sanders, getekend McDaniel, Narayan Annamalai, NIR Mashkowski, Sanjay Mishra, Silvano Coriani, Stefan Schackow, Tim Hickey, Tim Wieman, Xin Jin
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 U kunt veel typen n-tier-toepassingen ontwikkelen door de onderdelen van de verschillende toepassings lagen op verschillende computers en in afzonderlijke onderdelen te scheiden. U kunt bijvoorbeeld de onderdelen van de client toepassing en de bedrijfs regels op de ene computer, de front-end-weblaag en de onderdelen van de Data Access-laag op een andere computer en een back-enddatabase op een andere computer plaatsen. Dit type structurering helpt bij het isoleren van elke laag van elkaar. Als u wijzigt waar gegevens vandaan komen, hoeft u de client of de webtoepassing niet te wijzigen, maar alleen de onderdelen van de Data Access-laag.
 
 Een typische toepassing met *n-tier* omvat de presentatielaag, de zakelijke laag en de gegevenslaag:

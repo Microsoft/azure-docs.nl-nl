@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 ms.openlocfilehash: 36329987e510372ff286a10584a115ea259afc60
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98119081"
 ---
 # <a name="use-properties-in-an-azure-iot-central-solution"></a>Eigenschappen in een Azure IoT Central-oplossing gebruiken
@@ -45,7 +45,7 @@ De volgende tabel bevat de configuratie-instellingen voor een eigenschaps mogeli
 | Eenheid            | Een eenheid voor de waarde van de eigenschap, zoals **mph**, **%** of **&deg; C**.                                                                                                                                                              |
 | Eenheid weer geven    | Een weergave-eenheid voor gebruik in dash boards en formulieren.                                                                                                                                                                                    |
 | Opmerking         | Eventuele opmerkingen over de eigenschaps mogelijkheid.                                                                                                                                                                                        |
-| Beschrijving     | Een beschrijving van de eigenschaps mogelijkheid.                                                                                                                                                                                          |
+| Description     | Een beschrijving van de eigenschaps mogelijkheid.                                                                                                                                                                                          |
 
 De eigenschappen kunnen ook worden gedefinieerd in een interface in een sjabloon, zoals hier wordt weer gegeven:
 
@@ -210,7 +210,7 @@ Het antwoord bericht moet de `ac` velden en bevatten `av` . Het veld `ad` is opt
 * `av` is het versie nummer dat naar het apparaat wordt verzonden.
 * `ad` is een beschrijving van een optie teken reeks.
 
-| Waarde | Label | Beschrijving |
+| Waarde | Label | Description |
 | ----- | ----- | ----------- |
 | `'ac': 200` | Voltooid | De bewerking voor het wijzigen van de eigenschap is voltooid. |
 | `'ac': 202` of `'ac': 201` | In behandeling | De bewerking voor het wijzigen van de eigenschap is in behandeling of wordt uitgevoerd. |

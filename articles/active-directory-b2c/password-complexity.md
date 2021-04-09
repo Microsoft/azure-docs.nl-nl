@@ -14,10 +14,10 @@ ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
 ms.openlocfilehash: 81c6e58e34f30d5736c40c77a308321dee28ae34
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103224262"
 ---
 # <a name="configure-complexity-requirements-for-passwords-in-azure-active-directory-b2c"></a>Complexiteits vereisten configureren voor wacht woorden in Azure Active Directory B2C
@@ -56,7 +56,7 @@ Als u aangepast beleid gebruikt, kunt u[de complexiteit van het wacht woord conf
 
 ### <a name="comparison-chart"></a>Vergelijkings grafiek
 
-| Complexiteit | Beschrijving |
+| Complexiteit | Description |
 | --- | --- |
 | Eenvoudig | Een wacht woord van ten minste 8 tot 64 tekens. |
 | Sterk | Een wacht woord van ten minste 8 tot 64 tekens. Hiervoor zijn 3 van de 4 van kleine letters, hoofd letters, cijfers of symbolen vereist. |

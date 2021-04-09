@@ -8,10 +8,10 @@ ms.service: cloud-services
 ms.topic: troubleshooting
 ms.date: 02/22/2021
 ms.openlocfilehash: 0a4111f569b751ace80a2a886ed2ce7e4968ce16
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101745727"
 ---
 # <a name="troubleshoot-fabricinternalservererror-or-serviceallocationfailure-when-deploying-a-cloud-service-classic-to-azure"></a>Problemen met FabricInternalServerError of ServiceAllocationFailure oplossen bij het implementeren van een Cloud service (klassiek) naar Azure

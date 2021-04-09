@@ -12,10 +12,10 @@ manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: references_regions
 ms.openlocfilehash: 058873df989c444ebe06fc20a2f8a40fd2d3c594
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104594543"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Services die beheerde identiteiten voor Azure-resources ondersteunen
@@ -365,7 +365,7 @@ Raadpleeg de volgende lijst om de beheerde identiteit voor Azure Virtual Machine
 | Door de gebruiker toegewezen | [Beschikbaar in ondersteunde regio's](../../virtual-machines/image-builder-overview.md#regions) | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar |
 
 Voor meer informatie over het configureren van een beheerde identiteit voor de opbouw functie voor installatie kopieën van Azure VM (in regio's waar beschikbaar), raadpleegt u het [overzicht van Image Builder](../../virtual-machines/image-builder-overview.md#permissions).
-### <a name="azure-signalr-service"></a>Azure SignalR-service
+### <a name="azure-signalr-service"></a>Azure SignalR Service
 
 Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |

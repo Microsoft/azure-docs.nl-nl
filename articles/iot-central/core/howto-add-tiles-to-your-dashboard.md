@@ -7,10 +7,10 @@ ms.date: 12/19/2020
 ms.topic: how-to
 ms.service: iot-central
 ms.openlocfilehash: 73c78f514f974b97eb178177f12dc4ceff7ede63
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97797006"
 ---
 # <a name="configure-the-application-dashboard"></a>Het toepassings dashboard configureren
@@ -53,7 +53,7 @@ Als u een tegel wilt bewerken, moet u zich in de bewerkings modus bevindt.  De b
 
 In de volgende tabel worden de verschillende typen tegels beschreven die u aan een dash board kunt toevoegen:
 
-| Tegel             | Beschrijving |
+| Tegel             | Description |
 | ---------------- | ----------- |
 | Markdown         | Geprijsde tegels kunnen worden weer gegeven op tegels met een kop en beschrijving tekst die is opgemaakt met prijs verlaging. De URL kan een relatieve koppeling zijn naar een andere pagina in de toepassing of een absolute koppeling naar een externe site.|
 | Installatiekopie            | Afbeeldings tegels geven een aangepaste afbeelding weer en kunnen worden geklikt. De URL kan een relatieve koppeling zijn naar een andere pagina in de toepassing of een absolute koppeling naar een externe site.|

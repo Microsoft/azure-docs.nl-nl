@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 05/02/2019
 ms.author: jeedes
 ms.openlocfilehash: 3688dc2db67c0c1343a74be4652cb52466ef762e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92520435"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-topdesk---public"></a>Zelfstudie: Azure Active Directory-integratie met TOPdesk - Public
@@ -137,13 +137,13 @@ Voer de volgende stappen uit om Azure AD-eenmalige aanmelding te configureren vo
 
     c. Afmeldings-URL
 
-### <a name="configure-topdesk---public-single-sign-on"></a>Eenmalige aanmelding voor TOPdesk - Public configureren
+### <a name="configure-topdesk---public-single-sign-on&quot;></a>Eenmalige aanmelding voor TOPdesk - Public configureren
 
 1. Meld u aan bij de bedrijfssite van **TOPdesk - Public** als een beheerder.
 
 2. Klik in het menu van **TOPdesk** op **Settings**.
    
-    ![Instellingen](./media/topdesk-public-tutorial/ic790598.png "Instellingen")
+    ![Instellingen](./media/topdesk-public-tutorial/ic790598.png &quot;Instellingen")
 
 3. Klik op **Login Settings**.
    
@@ -247,17 +247,17 @@ In deze sectie geeft u Britta Simon toestemming om eenmalige aanmelding van Azur
 
 7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-### <a name="create-topdesk---public-test-user"></a>Testgebruiker voor TOPdesk - Public maken
+### <a name="create-topdesk---public-test-user&quot;></a>Testgebruiker voor TOPdesk - Public maken
 
 Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij TOPdesk - Public, moet ze worden ingericht in TOPdesk - Public. Het inrichten moet handmatig worden uitgevoerd in TOPdesk - Public.
 
-### <a name="to-configure-user-provisioning-perform-the-following-steps"></a>Voer de volgende stappen uit om de inrichting van gebruikers te configureren:
+### <a name=&quot;to-configure-user-provisioning-perform-the-following-steps&quot;></a>Voer de volgende stappen uit om de inrichting van gebruikers te configureren:
 
 1. Meld u als beheerder aan bij de bedrijfssite van **TOPdesk - Public**.
 
 2. Klik in het menu aan de bovenkant op **TOPdesk \> New \> Support Files \> Person**.
    
-    ![Person](./media/topdesk-public-tutorial/ic790628.png "Person")
+    ![Person](./media/topdesk-public-tutorial/ic790628.png &quot;Person")
 
 3. Voer de volgende stappen uit in het dialoogvenster New Person:
    

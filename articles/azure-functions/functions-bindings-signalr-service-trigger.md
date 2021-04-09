@@ -7,10 +7,10 @@ ms.custom: devx-track-csharp
 ms.date: 05/11/2020
 ms.author: chenyl
 ms.openlocfilehash: 2482a26987ec142880acc51bf470d844655b6e3f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97763507"
 ---
 # <a name="signalr-service-trigger-binding-for-azure-functions"></a>Binding van de signaal service-trigger voor Azure Functions
@@ -190,7 +190,7 @@ Het invoer type van de trigger wordt gedeclareerd als ofwel `InvocationContext` 
 
 InvocationContext bevat alle inhoud in het bericht verzenden van de signalerings service.
 
-|Eigenschap in InvocationContext | Beschrijving|
+|Eigenschap in InvocationContext | Description|
 |------------------------------|------------|
 |Argumenten| Beschikbaar voor *berichten* categorie. Bevat *argumenten* in het [aanroep bericht](https://github.com/dotnet/aspnetcore/blob/master/src/SignalR/docs/specs/HubProtocol.md#invocation-message-encoding)|
 |Fout| Beschikbaar voor gebeurtenis waarbij de *verbinding is verbroken* . Het kan leeg zijn als de verbinding is gesloten zonder fout of de fout berichten bevat.|

@@ -1,5 +1,5 @@
 ---
-title: Veelgestelde vragen over VM in azure Marketplace
+title: Veelgestelde vragen over VM in Azure Marketplace
 description: Er zijn algemene vragen aangetroffen bij het maken van een virtuele machine in azure Marketplace.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
@@ -8,13 +8,13 @@ author: kriti-ms
 ms.author: krsh
 ms.date: 03/10/2021
 ms.openlocfilehash: 2975d1f1558bc7f9e4a12c18882e43a163b97982
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104593421"
 ---
-# <a name="common-questions-about-vm-in-azure-marketplace"></a>Veelgestelde vragen over VM in azure Marketplace
+# <a name="common-questions-about-vm-in-azure-marketplace"></a>Veelgestelde vragen over VM in Azure Marketplace
 
 Deze veelgestelde vragen zijn van belang voor veelvoorkomende problemen die kunnen optreden bij het maken van een virtuele machine (VM)-aanbieding in azure Marketplace.
 

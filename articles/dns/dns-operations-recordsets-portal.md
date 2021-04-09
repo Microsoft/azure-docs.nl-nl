@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 10/6/2018
 ms.author: rohink
 ms.openlocfilehash: 22ceba69ecf865d906021068a39a9d273b842ca2
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "94965728"
 ---
 # <a name="manage-dns-records-and-record-sets-by-using-the-azure-portal"></a>DNS-records en-record sets beheren met behulp van de Azure Portal
@@ -87,13 +87,13 @@ U kunt de Azure Portal gebruiken om records uit een recordset te verwijderen. Ho
 3. Controleer of de naam overeenkomt met de recordset die u wilt verwijderen en klik vervolgens op **Ja**.
 4. Controleer op de Blade **DNS-zone** of de recordset niet meer zichtbaar is.
 
-## <a name="work-with-ns-and-soa-records"></a>Werken met NS-en SOA-records
+## <a name="work-with-ns-and-soa-records&quot;></a>Werken met NS-en SOA-records
 
 NS-en SOA-records die automatisch worden gemaakt, worden anders beheerd dan andere record typen.
 
-### <a name="modify-soa-records"></a>SOA-records wijzigen
+### <a name=&quot;modify-soa-records&quot;></a>SOA-records wijzigen
 
-U kunt geen records toevoegen aan of verwijderen uit de automatisch gemaakte SOA-record die is ingesteld op de zone Apex (naam = " \@ "). U kunt echter elk van de para meters in de SOA-record (met uitzonde ring van ' host ') en de set-TTL van de record wijzigen.
+U kunt geen records toevoegen aan of verwijderen uit de automatisch gemaakte SOA-record die is ingesteld op de zone Apex (naam = &quot; \@ "). U kunt echter elk van de para meters in de SOA-record (met uitzonde ring van ' host ') en de set-TTL van de record wijzigen.
 
 ### <a name="modify-ns-records-at-the-zone-apex"></a>NS-records in de zone wijzigen Apex
 

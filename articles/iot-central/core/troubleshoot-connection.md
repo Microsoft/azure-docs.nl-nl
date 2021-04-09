@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.service: iot-central
 ms.custom: device-developer, devx-track-azurecli
 ms.openlocfilehash: d1a7c94152b611ea0dbea249156add617178d7ca
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98673231"
 ---
 # <a name="troubleshoot-why-data-from-your-devices-isnt-showing-up-in-azure-iot-central"></a>Probleem oplossen waarbij gegevens van uw apparaten niet worden weergegeven in Azure IoT Central
@@ -130,7 +130,7 @@ https://aka.ms/iotcentral-docs-dps-SAS",
 }
 ```
 
-| Inrichtings status van apparaten | Beschrijving | Mogelijke beperking |
+| Inrichtings status van apparaten | Description | Mogelijke beperking |
 | - | - | - |
 | Ingericht | Er is geen onmiddellijk herkenbaar probleem. | N.v.t. |
 | Geregistreerd | Het apparaat is nog niet verbonden met IoT Central. | Controleer de logboeken van uw apparaten op verbindings problemen. |

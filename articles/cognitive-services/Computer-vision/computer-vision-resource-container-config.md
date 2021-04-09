@@ -12,10 +12,10 @@ ms.date: 11/23/2020
 ms.author: aahi
 ms.custom: seodec18
 ms.openlocfilehash: ee2e4fca697c086b95e83feb9d40ce8e07dc344c
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102611892"
 ---
 # <a name="configure-read-ocr-docker-containers"></a>Lees de OCR docker-containers configureren
@@ -33,14 +33,14 @@ De container heeft ook de volgende container-specifieke configuratie-instellinge
 
 |Vereist|Instelling|Doel|
 |--|--|--|
-|Nee|ReadEngineConfig:ResultExpirationPeriod| v 2.0-containers. Verloop tijd van resultaat in uren. De standaard waarde is 48 uur. De instelling geeft aan wanneer het systeem herkennings resultaten moet wissen. Als `resultExpirationPeriod=1` het systeem bijvoorbeeld het herkennings resultaat 1 uur na het proces wist. Als het `resultExpirationPeriod=0` systeem het herkennings resultaat verwijdert nadat het resultaat is opgehaald.|
-|Nee|Cache: redis| v 2.0-containers. Hiermee wordt redis-opslag voor het opslaan van resultaten ingeschakeld. Een cache is *vereist* als meerdere Lees containers achter een Load Balancer worden geplaatst.|
-|Nee|Wachtrij: RabbitMQ|v 2.0-containers. Hiermee schakelt u RabbitMQ in voor het verzenden van taken. De instelling is handig wanneer meerdere Lees containers achter een load balancer worden geplaatst.|
-|Nee|Wachtrij: Azure: QueueVisibilityTimeoutInMilliseconds | alleen containers voor v3. x. De tijd dat een bericht onzichtbaar moet zijn wanneer een andere werk nemer het verwerkt. |
-|Nee|Opslag::D ocumentStore:: MongoDB|v 2.0-containers. Hiermee wordt MongoDB ingeschakeld voor permanente resultaat opslag. |
-|Nee|Opslag: ObjectStore: AzureBlob: Connections Tring| alleen containers voor v3. x. Azure Blob-opslag connection string. |
-|Nee|Opslag: TimeToLiveInDays| alleen containers voor v3. x. Verloop periode van resultaat in dagen. De instelling geeft aan wanneer het systeem herkennings resultaten moet wissen. De standaard waarde is 2 dagen (48 uur), wat betekent dat een resultaat dat langer gedurende langere tijd actief is dan die periode niet kan worden opgehaald. |
-|Nee|Taak: MaxRunningTimeSpanInMinutes| alleen containers voor v3. x. Maximale uitvoerings tijd voor een enkele aanvraag. De standaard waarde is 60 minuten. |
+|No|ReadEngineConfig:ResultExpirationPeriod| v 2.0-containers. Verloop tijd van resultaat in uren. De standaard waarde is 48 uur. De instelling geeft aan wanneer het systeem herkennings resultaten moet wissen. Als `resultExpirationPeriod=1` het systeem bijvoorbeeld het herkennings resultaat 1 uur na het proces wist. Als het `resultExpirationPeriod=0` systeem het herkennings resultaat verwijdert nadat het resultaat is opgehaald.|
+|No|Cache: redis| v 2.0-containers. Hiermee wordt redis-opslag voor het opslaan van resultaten ingeschakeld. Een cache is *vereist* als meerdere Lees containers achter een Load Balancer worden geplaatst.|
+|No|Wachtrij: RabbitMQ|v 2.0-containers. Hiermee schakelt u RabbitMQ in voor het verzenden van taken. De instelling is handig wanneer meerdere Lees containers achter een load balancer worden geplaatst.|
+|No|Wachtrij: Azure: QueueVisibilityTimeoutInMilliseconds | alleen containers voor v3. x. De tijd dat een bericht onzichtbaar moet zijn wanneer een andere werk nemer het verwerkt. |
+|No|Opslag::D ocumentStore:: MongoDB|v 2.0-containers. Hiermee wordt MongoDB ingeschakeld voor permanente resultaat opslag. |
+|No|Opslag: ObjectStore: AzureBlob: Connections Tring| alleen containers voor v3. x. Azure Blob-opslag connection string. |
+|No|Opslag: TimeToLiveInDays| alleen containers voor v3. x. Verloop periode van resultaat in dagen. De instelling geeft aan wanneer het systeem herkennings resultaten moet wissen. De standaard waarde is 2 dagen (48 uur), wat betekent dat een resultaat dat langer gedurende langere tijd actief is dan die periode niet kan worden opgehaald. |
+|No|Taak: MaxRunningTimeSpanInMinutes| alleen containers voor v3. x. Maximale uitvoerings tijd voor een enkele aanvraag. De standaard waarde is 60 minuten. |
 
 ## <a name="apikey-configuration-setting"></a>Configuratie-instelling ApiKey
 

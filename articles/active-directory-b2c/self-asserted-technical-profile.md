@@ -12,10 +12,10 @@ ms.date: 03/10/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 8d3343838216522abfc11ec3f202ae2da1c0e38f
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102611875"
 ---
 # <a name="define-a-self-asserted-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Een zelf-bevestigd technisch profiel definiëren in een Azure Active Directory B2C aangepast beleid
@@ -199,20 +199,20 @@ U kunt ook een REST API technisch profiel aanroepen met uw bedrijfs logica, invo
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| setting. operatingMode <sup>1</sup>| Nee | Voor een aanmeldings pagina bepaalt deze eigenschap het gedrag van het veld gebruikers naam, zoals invoer validatie en fout berichten. Verwachte waarden: `Username` of `Email` .  |
-| AllowGenerationOfClaimsWithNullValues| Nee| Er kan een claim met een null-waarde worden gegenereerd. Zo wordt in een case-gebruiker geen selectie vakje geselecteerd.|
-| ContentDefinitionReferenceId | Ja | De id van de [inhouds definitie](contentdefinitions.md) die aan dit technische profiel is gekoppeld. |
-| EnforceEmailVerification | Nee | Voor de registratie of het profiel bewerken, wordt een e-mail verificatie afgedwongen. Mogelijke waarden: `true` (standaard) of `false` . |
-| setting. retryLimit | Nee | Hiermee bepaalt u het aantal keren dat een gebruiker de gegevens kan opgeven die worden gecontroleerd op basis van het technische profiel voor validatie. Bijvoorbeeld: een gebruiker probeert zich aan te melden met een account dat al bestaat en het probeert tot de limiet is bereikt.
-| SignUpTarget <sup>1</sup>| Nee | De Exchange-doel-id voor de aanmelding. Wanneer de gebruiker op de knop registratie klikt, wordt Azure AD B2C de opgegeven Exchange-id uitgevoerd. |
-| setting. showCancelButton | Nee | Hiermee wordt de knop Annuleren weer gegeven. Mogelijke waarden: `true` (standaard) of `false` |
-| setting. showContinueButton | Nee | Hiermee wordt de knop door gaan weer gegeven. Mogelijke waarden: `true` (standaard) of `false` |
-| setting. showSignupLink <sup>2</sup>| Nee | Hiermee wordt de knop registratie weer gegeven. Mogelijke waarden: `true` (standaard) of `false` |
-| setting. forgotPasswordLinkLocation <sup>2</sup>| Nee| Hiermee wordt de verg eten wachtwoord koppeling weer gegeven. Mogelijke waarden: `AfterLabel` (standaard) Hiermee wordt de koppeling direct na het label of na het invoer veld voor het wacht woord weer gegeven wanneer er geen label wordt  `AfterInput` weer gegeven, wordt de koppeling in het veld wacht woord invoeren weer gegeven, `AfterButtons` de koppeling onderaan in het formulier na de knoppen of `None` de verg eten wachtwoord koppeling verwijderd.|
-| setting. enableRememberMe <sup>2</sup>| Nee| Hiermee wordt het selectie vakje [aangemeld blijven](session-behavior.md?pivots=b2c-custom-policy#enable-keep-me-signed-in-kmsi) weer gegeven. Mogelijke waarden: `true` , of `false` (standaard). |
-| setting. inputVerificationDelayTimeInMilliseconds <sup>3</sup>| Nee| Verbetert de gebruikers ervaring door te wachten tot de gebruiker stopt met typen en vervolgens de waarde te valideren. Standaard waarde 2000 milliseconden. |
-| IncludeClaimResolvingInClaimsHandling  | Nee | Voor invoer-en uitvoer claims geeft u op of [claim omzetting](claim-resolver-overview.md) in het technische profiel is opgenomen. Mogelijke waarden: `true` , of `false` (standaard). Als u een claim conflict Oplosser wilt gebruiken in het technische profiel, stelt u dit in op `true` . |
-|forgotPasswordLinkOverride <sup>4</sup>| Nee | Er moet een claim uitwisseling voor wacht woord opnieuw instellen worden uitgevoerd. Zie [selfservice voor wacht woord opnieuw instellen](add-password-reset-policy.md)voor meer informatie. |
+| setting. operatingMode <sup>1</sup>| No | Voor een aanmeldings pagina bepaalt deze eigenschap het gedrag van het veld gebruikers naam, zoals invoer validatie en fout berichten. Verwachte waarden: `Username` of `Email` .  |
+| AllowGenerationOfClaimsWithNullValues| No| Er kan een claim met een null-waarde worden gegenereerd. Zo wordt in een case-gebruiker geen selectie vakje geselecteerd.|
+| ContentDefinitionReferenceId | Yes | De id van de [inhouds definitie](contentdefinitions.md) die aan dit technische profiel is gekoppeld. |
+| EnforceEmailVerification | No | Voor de registratie of het profiel bewerken, wordt een e-mail verificatie afgedwongen. Mogelijke waarden: `true` (standaard) of `false` . |
+| setting. retryLimit | No | Hiermee bepaalt u het aantal keren dat een gebruiker de gegevens kan opgeven die worden gecontroleerd op basis van het technische profiel voor validatie. Bijvoorbeeld: een gebruiker probeert zich aan te melden met een account dat al bestaat en het probeert tot de limiet is bereikt.
+| SignUpTarget <sup>1</sup>| No | De Exchange-doel-id voor de aanmelding. Wanneer de gebruiker op de knop registratie klikt, wordt Azure AD B2C de opgegeven Exchange-id uitgevoerd. |
+| setting. showCancelButton | No | Hiermee wordt de knop Annuleren weer gegeven. Mogelijke waarden: `true` (standaard) of `false` |
+| setting. showContinueButton | No | Hiermee wordt de knop door gaan weer gegeven. Mogelijke waarden: `true` (standaard) of `false` |
+| setting. showSignupLink <sup>2</sup>| No | Hiermee wordt de knop registratie weer gegeven. Mogelijke waarden: `true` (standaard) of `false` |
+| setting. forgotPasswordLinkLocation <sup>2</sup>| No| Hiermee wordt de verg eten wachtwoord koppeling weer gegeven. Mogelijke waarden: `AfterLabel` (standaard) Hiermee wordt de koppeling direct na het label of na het invoer veld voor het wacht woord weer gegeven wanneer er geen label wordt  `AfterInput` weer gegeven, wordt de koppeling in het veld wacht woord invoeren weer gegeven, `AfterButtons` de koppeling onderaan in het formulier na de knoppen of `None` de verg eten wachtwoord koppeling verwijderd.|
+| setting. enableRememberMe <sup>2</sup>| No| Hiermee wordt het selectie vakje [aangemeld blijven](session-behavior.md?pivots=b2c-custom-policy#enable-keep-me-signed-in-kmsi) weer gegeven. Mogelijke waarden: `true` , of `false` (standaard). |
+| setting. inputVerificationDelayTimeInMilliseconds <sup>3</sup>| No| Verbetert de gebruikers ervaring door te wachten tot de gebruiker stopt met typen en vervolgens de waarde te valideren. Standaard waarde 2000 milliseconden. |
+| IncludeClaimResolvingInClaimsHandling  | No | Voor invoer-en uitvoer claims geeft u op of [claim omzetting](claim-resolver-overview.md) in het technische profiel is opgenomen. Mogelijke waarden: `true` , of `false` (standaard). Als u een claim conflict Oplosser wilt gebruiken in het technische profiel, stelt u dit in op `true` . |
+|forgotPasswordLinkOverride <sup>4</sup>| No | Er moet een claim uitwisseling voor wacht woord opnieuw instellen worden uitgevoerd. Zie [selfservice voor wacht woord opnieuw instellen](add-password-reset-policy.md)voor meer informatie. |
 
 Opmerkingen:
 1. Beschikbaar voor inhouds definitie [DataUri](contentdefinitions.md#datauri) type van `unifiedssp` of `unifiedssd` .

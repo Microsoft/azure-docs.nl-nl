@@ -6,10 +6,10 @@ ms.subservice: qna-maker
 ms.topic: reference
 ms.date: 03/19/2020
 ms.openlocfilehash: f49e05578f55a38845acbd4010f928fb17c51606
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "96352266"
 ---
 # <a name="markdown-format-supported-in-qna-maker-answer-text"></a>De indeling voor prijs verlaging wordt ondersteund in QnA Maker antwoord tekst
@@ -51,8 +51,8 @@ Als u inhoud wilt toevoegen met behulp van de Knowledge Base-Api's update/replac
 
 | HTML behouden  | Vertegenwoordiging in de API-aanvraag  | Representatie in KB |
 |-----------|---------|-------------------------|
-| Ja | \&lt; br \& gt; | &lt;br&gt; |
-| Ja | \&lt; h3 \& gt; koptekst \& lt;/h3 \& gt; | &lt;H3 &gt; header &lt; /H3&gt; |
+| Yes | \&lt; br \& gt; | &lt;br&gt; |
+| Yes | \&lt; h3 \& gt; koptekst \& lt;/h3 \& gt; | &lt;H3 &gt; header &lt; /H3&gt; |
 
 CR LF (\r\n) wordt ook geconverteerd naar \n in de KB. LF (\n) wordt bewaard. Als u een escape reeks als een \t of \n wilt escapepen, kunt u back slash gebruiken, bijvoorbeeld: ' \\ \\ r \\ \\ n ' en ' \\ \\ t '
 

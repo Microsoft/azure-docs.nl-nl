@@ -147,7 +147,7 @@ Gegevens sets die zijn opgeslagen in de ontwerp functie worden automatisch gecon
 1. Typ of plak een geldig R-script in het tekstvak **R-script** .
 
     > [!NOTE]
-    > Wees voorzichtig met het schrijven van uw script. Zorg ervoor dat er geen syntaxis fouten zijn, zoals het gebruik van niet-gedeclareerde variabelen of niet-geïmporteerde modules of functies. Betaal extra aandacht aan de lijst met vooraf geïnstalleerde pakketten aan het einde van dit artikel. Als u pakketten wilt gebruiken die niet worden weer gegeven, installeert u ze in uw script. Een voorbeeld is `install.packages("zoo",repos = "http://cran.us.r-project.org")`.
+    > Wees voorzichtig met het schrijven van uw script. Zorg ervoor dat er geen syntaxis fouten zijn, zoals het gebruik van niet-gedeclareerde variabelen of niet-geïmporteerde modules of functies. Betaal extra aandacht aan de lijst met vooraf geïnstalleerde pakketten aan het einde van dit artikel. Als u pakketten wilt gebruiken die niet worden weer gegeven, installeert u ze in uw script. Een voorbeeld is `install.packages("zoo&quot;,repos = &quot;http://cran.us.r-project.org")`.
     
     Om u te helpen aan de slag te gaan, wordt het tekstvak **R-script** vooraf gevuld met voorbeeld code, die u kunt bewerken of vervangen.
     

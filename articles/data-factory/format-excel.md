@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 12/08/2020
 ms.author: jingwang
 ms.openlocfilehash: bef29bc958253be0498442f842dda67105ce799b
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100386523"
 ---
 # <a name="excel-format-in-azure-data-factory"></a>Excel-indeling in Azure Data Factory
@@ -28,16 +28,16 @@ Zie het artikel [gegevens sets](concepts-datasets-linked-services.md) voor een v
 
 | Eigenschap         | Beschrijving                                                  | Vereist |
 | ---------------- | ------------------------------------------------------------ | -------- |
-| type             | De eigenschap type van de gegevensset moet worden ingesteld op **Excel**.   | Ja      |
-| location         | Locatie-instellingen van bestand (en). Elke connector op basis van bestanden heeft een eigen locatie type en ondersteunde eigenschappen onder `location` . | Ja      |
+| type             | De eigenschap type van de gegevensset moet worden ingesteld op **Excel**.   | Yes      |
+| location         | Locatie-instellingen van bestand (en). Elke connector op basis van bestanden heeft een eigen locatie type en ondersteunde eigenschappen onder `location` . | Yes      |
 | Ingestelde SheetName        | De naam van het Excel-werk blad om gegevens te lezen.                       | Opgeven `sheetName` of `sheetIndex` |
 | sheetIndex | De index van het Excel-werk blad om gegevens te lezen, beginnend bij 0. | Opgeven `sheetName` of `sheetIndex` |
-| bereik            | Het celbereik in het opgegeven werk blad om de selectieve gegevens te zoeken, bijvoorbeeld:<br>-Niet opgegeven: Hiermee wordt het hele werk blad gelezen als een tabel van de eerste niet-lege rij en kolom<br>- `A3`: leest een tabel die begint met de opgegeven cel, detecteert dynamisch alle rijen hieronder en alle kolommen aan de rechter kant.<br>- `A3:H5`: Hiermee wordt dit vaste bereik gelezen als een tabel<br>- `A3:A3`: Hiermee wordt deze enkele cel gelezen | Nee       |
-| firstRowAsHeader | Hiermee wordt aangegeven of de eerste rij in het opgegeven werk blad of bereik moet worden behandeld als een header regel met de namen van kolommen.<br>Toegestane waarden zijn **True** en **False** (standaard). | Nee       |
-| nullValue        | Hiermee wordt de teken reeks representatie van een null-waarde opgegeven. <br>De standaard waarde is een **lege teken reeks**. | Nee       |
-| compressie | Groep eigenschappen voor het configureren van bestands compressie. Configureer deze sectie als u compressie/decompressie wilt uitvoeren tijdens de uitvoering van de activiteit. | Nee |
+| bereik            | Het celbereik in het opgegeven werk blad om de selectieve gegevens te zoeken, bijvoorbeeld:<br>-Niet opgegeven: Hiermee wordt het hele werk blad gelezen als een tabel van de eerste niet-lege rij en kolom<br>- `A3`: leest een tabel die begint met de opgegeven cel, detecteert dynamisch alle rijen hieronder en alle kolommen aan de rechter kant.<br>- `A3:H5`: Hiermee wordt dit vaste bereik gelezen als een tabel<br>- `A3:A3`: Hiermee wordt deze enkele cel gelezen | No       |
+| firstRowAsHeader | Hiermee wordt aangegeven of de eerste rij in het opgegeven werk blad of bereik moet worden behandeld als een header regel met de namen van kolommen.<br>Toegestane waarden zijn **True** en **False** (standaard). | No       |
+| nullValue        | Hiermee wordt de teken reeks representatie van een null-waarde opgegeven. <br>De standaard waarde is een **lege teken reeks**. | No       |
+| compressie | Groep eigenschappen voor het configureren van bestands compressie. Configureer deze sectie als u compressie/decompressie wilt uitvoeren tijdens de uitvoering van de activiteit. | No |
 | type<br/>(*onder `compression`*) | De compressie-codec die wordt gebruikt voor het lezen/schrijven van JSON-bestanden. <br>Toegestane waarden zijn **bzip2**, **gzip**, **Deflate**, **ZipDeflate**, **TarGzip**, **tar**, **Snappy** of **LZ4**. De standaard waarde is niet gecomprimeerd.<br>**Houd er rekening mee** dat de Kopieer activiteit geen ondersteuning biedt voor "snappy" & "LZ4" en de toewijzing van gegevens stroom geen ondersteuning biedt voor "ZipDeflate", "TarGzip" en "tar".<br>**Opmerking** wanneer u Kopieer activiteit gebruikt om **ZipDeflate** -bestand (en) te decomprimeren en te schrijven naar Sink-gegevens archief op basis van een bestand, worden bestanden uitgepakt naar de map: `<path specified in dataset>/<folder named as source zip file>/` . | Nee.  |
-| niveau<br/>(*onder `compression`*) | De compressie ratio. <br>Toegestane waarden zijn **optimaal** of **snelst**.<br>- **Snelst:** De compressie bewerking moet zo snel mogelijk worden voltooid, zelfs als het resulterende bestand niet optimaal is gecomprimeerd.<br>- **Optimaal**: de compressie bewerking moet optimaal worden gecomprimeerd, zelfs als het volt ooien van de bewerking langer duurt. Zie het onderwerp [compressie niveau](/dotnet/api/system.io.compression.compressionlevel) voor meer informatie. | Nee       |
+| niveau<br/>(*onder `compression`*) | De compressie ratio. <br>Toegestane waarden zijn **optimaal** of **snelst**.<br>- **Snelst:** De compressie bewerking moet zo snel mogelijk worden voltooid, zelfs als het resulterende bestand niet optimaal is gecomprimeerd.<br>- **Optimaal**: de compressie bewerking moet optimaal worden gecomprimeerd, zelfs als het volt ooien van de bewerking langer duurt. Zie het onderwerp [compressie niveau](/dotnet/api/system.io.compression.compressionlevel) voor meer informatie. | No       |
 
 Hieronder ziet u een voor beeld van een Excel-gegevensset op Azure Blob Storage:
 
@@ -75,8 +75,8 @@ De volgende eigenschappen worden ondersteund in de sectie ***\* bron \**** van d
 
 | Eigenschap      | Beschrijving                                                  | Vereist |
 | ------------- | ------------------------------------------------------------ | -------- |
-| type          | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **ExcelSource**. | Ja      |
-| storeSettings | Een groep eigenschappen voor het lezen van gegevens uit een gegevens archief. Elke connector op basis van een bestand heeft zijn eigen ondersteunde Lees instellingen onder `storeSettings` . | Nee       |
+| type          | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **ExcelSource**. | Yes      |
+| storeSettings | Een groep eigenschappen voor het lezen van gegevens uit een gegevens archief. Elke connector op basis van een bestand heeft zijn eigen ondersteunde Lees instellingen onder `storeSettings` . | No       |
 
 ```json
 "activities": [

@@ -11,10 +11,10 @@ author: justinha
 manager: daveba
 ms.reviewer: calui
 ms.openlocfilehash: 4e39d7f15e3ca3c6e241c767a5f881d7170c6379
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "99255964"
 ---
 # <a name="sign-in-to-azure-active-directory-using-email-as-an-alternate-login-id-preview"></a>Meld u aan Azure Active Directory gebruik te maken van een e-mail adres als een alternatieve aanmeldings-ID (preview-versie)
@@ -250,7 +250,7 @@ U hebt *Tenant beheerders* machtigingen nodig om de volgende stappen uit te voer
 6. Voeg de groep toe aan het beleid voor gefaseerde implementatie, zoals wordt weer gegeven in het volgende voor beeld. Vervang de waarde in de para meter *-id* door de waarde die voor de beleids-id is geretourneerd in stap 4 en vervang de waarde in de para meter *-RefObjectId* door de *id* die u in stap 5 hebt opgegeven. Het kan Maxi maal één uur duren voordat gebruikers in de groep hun proxy adressen kunnen gebruiken om zich aan te melden.
 
    ```powershell
-   Add-AzureADMSFeatureRolloutPolicyDirectoryObject -Id "ROLLOUT_POLICY_ID" -RefObjectId "GROUP_OBJECT_ID"
+   Add-AzureADMSFeatureRolloutPolicyDirectoryObject -Id "ROLLOUT_POLICY_ID&quot; -RefObjectId &quot;GROUP_OBJECT_ID"
    ```
    
 Voor nieuwe leden die aan de groep zijn toegevoegd, kan het tot 24 uur duren voordat ze hun proxy adressen kunnen gebruiken om zich aan te melden.
@@ -260,7 +260,7 @@ Voor nieuwe leden die aan de groep zijn toegevoegd, kan het tot 24 uur duren voo
 Als u een groep wilt verwijderen uit een gefaseerde implementatie beleid, voert u de volgende opdracht uit:
 
 ```powershell
-Remove-AzureADMSFeatureRolloutPolicyDirectoryObject -Id "ROLLOUT_POLICY_ID" -ObjectId "GROUP_OBJECT_ID" 
+Remove-AzureADMSFeatureRolloutPolicyDirectoryObject -Id "ROLLOUT_POLICY_ID&quot; -ObjectId &quot;GROUP_OBJECT_ID" 
 ```
 
 ### <a name="removing-policies"></a>Beleid verwijderen

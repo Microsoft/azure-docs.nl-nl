@@ -12,10 +12,10 @@ ms.date: 07/09/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, responsible-ml
 ms.openlocfilehash: fda1bc2ef0a112a8a32ba7c4caebf29028c8cdd7
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "98222748"
 ---
 # <a name="use-the-interpretability-package-to-explain-ml-models--predictions-in-python-preview"></a>Gebruik het vertolkings pakket om ML-modellen & voor spellingen in python uit te leggen (preview)
@@ -340,7 +340,7 @@ Bekijk de belangrijkste belang rijke functies die van invloed zijn op de voor sp
 
 Op het vierde tabblad van het tabblad uitleg kunt u inzoomen op een afzonderlijk data Point en de afzonderlijke functie belangen. U kunt het urgentie diagram van de afzonderlijke functie voor elk gegevens punt laden door te klikken op een van de afzonderlijke gegevens punten in het hoofd verstrooiings teken of door een specifieke data Point te selecteren in de wizard van het deel venster aan de rechter kant.
 
-|Plotten|Beschrijving|
+|Plotten|Description|
 |----|-----------|
 |Urgentie van afzonderlijke functie|Hier worden de belangrijkste belang rijke functies voor een afzonderlijke voor spelling weer gegeven. Helpt het lokale gedrag van het onderliggende model op een specifiek gegevens punt te illustreren.|
 |What-If analyse|Hiermee kunt u de functie waarden van het geselecteerde werkelijke gegevens punt wijzigen en de resulterende wijzigingen in de Voorspellings waarde observeren door een hypothetisch data Point te genereren met de nieuwe functie waarden.|

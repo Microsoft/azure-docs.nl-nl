@@ -2,15 +2,15 @@
 author: memildin
 ms.service: security-center
 ms.topic: include
-ms.date: 03/14/2021
+ms.date: 03/29/2021
 ms.author: memildin
 ms.custom: generated
-ms.openlocfilehash: 14655abc403248e0ce22d22aeca342032b930fb4
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 635ce116509204726762127210923a408b62ea78
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103467986"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105958047"
 ---
 <table class="tg">
 <thead>
@@ -99,7 +99,7 @@ ms.locfileid: "103467986"
   <tr>
     <td class="tg-lboi"><strong><p style="font-size: 16px">0,3</p></strong></td>
     <td class="tg-lboi"><strong><p style="font-size: 16px">Advanced Threat Protection inschakelen</p></strong>De optionele Azure Defender Threat Protection-abonnementen van Azure Security Center bieden uitgebreide beveiligingen voor uw omgeving. Wanneer Security Center een bedreiging in een wille keurig gebied van uw omgeving detecteert, wordt er een waarschuwing gegenereerd. Deze waarschuwingen bevatten details over de relevante bronnen, voorgestelde stappen voor herstel en soms ook de optie om een logische app te activeren.<br>Elk Azure Defender-abonnement is een afzonderlijke, optionele aanbieding die u kunt inschakelen met behulp van de relevante aanbeveling in dit beveiligings beheer.<br>Meer <a href="/azure/security-center/threat-protection">informatie over beveiliging tegen bedreigingen vindt u in Security Center</a>.</td>
-    <td class="tg-lboi"; width=55%>- Azure Defender voor App Service moet zijn ingeschakeld<br />- Azure Defender voor Azure SQL Database-servers moet zijn ingeschakeld<br />- Azure Defender voor container registers moet zijn ingeschakeld<br />- Azure Defender voor Key Vault moet zijn ingeschakeld<br />- Azure Defender voor Kubernetes moet zijn ingeschakeld<br />- Azure Defender voor servers moet zijn ingeschakeld<br />- Azure Defender voor SQL-servers op computers moet zijn ingeschakeld<br />- Azure Defender voor opslag moet zijn ingeschakeld</td>
+    <td class="tg-lboi"; width=55%>- Voor Azure Arc enabled Kubernetes-clusters moet de extensie van Azure Defender zijn geïnstalleerd<br />- Azure Defender voor App Service moet zijn ingeschakeld<br />- Azure Defender voor Azure SQL Database-servers moet zijn ingeschakeld<br />- Azure Defender voor container registers moet zijn ingeschakeld<br />- Azure Defender voor Key Vault moet zijn ingeschakeld<br />- Azure Defender voor Kubernetes moet zijn ingeschakeld<br />- Azure Defender voor servers moet zijn ingeschakeld<br />- Azure Defender voor SQL-servers op computers moet zijn ingeschakeld<br />- Azure Defender voor opslag moet zijn ingeschakeld</td>
   </tr>
 </tbody>
 </table>

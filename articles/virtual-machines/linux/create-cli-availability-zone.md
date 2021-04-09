@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 04/05/2018
 ms.author: cynthn
 ms.openlocfilehash: 3405468c64a7130bb0d71543403dd4ce5ef9c241
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102558369"
 ---
 # <a name="create-a-virtual-machine-in-an-availability-zone-using-azure-cli"></a>Een virtuele machine maken in een beschikbaarheids zone met behulp van Azure CLI

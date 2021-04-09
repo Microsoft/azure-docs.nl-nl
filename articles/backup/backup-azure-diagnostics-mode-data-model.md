@@ -4,10 +4,10 @@ description: In dit artikel vindt u informatie over de Azure Monitor Log Analyti
 ms.topic: conceptual
 ms.date: 02/26/2019
 ms.openlocfilehash: 004c5a6c0c2c4dcfcf13134bd5a5143ba647048f
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "102500985"
 ---
 # <a name="log-analytics-data-model-for-azure-backup-data"></a>Log Analytics gegevens model voor Azure Backup gegevens
@@ -173,7 +173,7 @@ Deze tabel bevat details over projectgerelateerde velden.
 
 Deze tabel bevat details over velden die betrekking hebben op het beleid.
 
-| Veld | Gegevenstype | Versies van toepassing | Beschrijving |
+| Veld | Gegevenstype | Versies van toepassing | Description |
 | --- | --- | --- | --- |
 | EventName_s |Tekst ||Dit veld vertegenwoordigt de naam van deze gebeurtenis. Het is altijd AzureBackupCentralReport |
 | SchemaVersion_s |Tekst ||Dit veld geeft de huidige versie van het schema aan. Het is **v2** |
@@ -221,7 +221,7 @@ Deze tabel bevat details over velden die betrekking hebben op het beleid.
 
 Deze tabel bevat details over beleids koppelingen met verschillende entiteiten.
 
-| Veld | Gegevenstype | Versies van toepassing | Beschrijving |
+| Veld | Gegevenstype | Versies van toepassing | Description |
 | --- | --- | --- | --- |
 | EventName_s |Tekst ||Dit veld vertegenwoordigt de naam van deze gebeurtenis. Het is altijd AzureBackupCentralReport |
 | SchemaVersion_s |Tekst ||Dit veld geeft de huidige versie van het schema aan. Het is **v2** |
@@ -350,7 +350,7 @@ In deze tabel worden de werk belasting (s) aangegeven waaraan een volume is geko
 
 Deze tabel bevat basis velden die betrekking hebben op een beveiligd exemplaar.
 
-| Veld | Gegevenstype |Versies van toepassing | Beschrijving |
+| Veld | Gegevenstype |Versies van toepassing | Description |
 | --- | --- | --- | --- |
 | BackupItemUniqueId_s |Tekst |v2|Unieke ID die wordt gebruikt voor het identificeren van het back-upitem voor Vm's waarvan een back-up is gemaakt met DPM, MABS|
 | ProtectedContainerUniqueId_s |Tekst |v2|Unieke ID die wordt gebruikt om de beveiligde container te identificeren voor alles behalve Vm's waarvoor een back-up is gemaakt met behulp van DPM, MABS|

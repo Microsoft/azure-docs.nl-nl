@@ -12,10 +12,10 @@ ms.author: gaursa
 ms.reviewer: igorstan
 ms.custom: azure-synapse
 ms.openlocfilehash: 698c14d23e8e64c777260410c625129cd87d49b3
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104585703"
 ---
 # <a name="azure-advisor-recommendations-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Aanbevelingen voor Azure Advisor voor toegewezen SQL-groep in azure Synapse Analytics

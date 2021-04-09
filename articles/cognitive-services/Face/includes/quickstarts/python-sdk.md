@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: include
 ms.date: 11/10/2020
 ms.author: pafarley
-ms.openlocfilehash: 7fc1822c219c6c881e3d788f6b0e56675cecc466
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 0939216e1d96e898d7c45b9e7a3ec72453b263d6
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102445485"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105958301"
 ---
 Ga aan de slag met gezichtsherkenning met behulp van de Face-clientbibliotheek voor Python. Volg deze stappen om het pakket te installeren en de voorbeeldcode voor basistaken uit te proberen. De Face-service biedt u toegang tot geavanceerde algoritmen voor het detecteren en herkennen van menselijke gezichten in afbeeldingen.
 
@@ -22,7 +22,7 @@ Gebruik de Face-clientbibliotheek voor Python voor het volgende:
 
 * [Gezichten in een afbeelding detecteren](#detect-faces-in-an-image)
 * [Vergelijkbare gezichten zoeken](#find-similar-faces)
-* [Een persoonsgroep maken en trainen](#create-and-train-a-person-group)
+* [Een PersonGroup maken en trainen](#create-and-train-a-persongroup)
 * [Een gezicht identificeren](#identify-a-face)
 * [Gezichten verifiëren](#verify-faces)
 
@@ -86,7 +86,7 @@ Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de Fac
 * [De client verifiëren](#authenticate-the-client)
 * [Gezichten in een afbeelding detecteren](#detect-faces-in-an-image)
 * [Vergelijkbare gezichten zoeken](#find-similar-faces)
-* [Een persoonsgroep maken en trainen](#create-and-train-a-person-group)
+* [Een PersonGroup maken en trainen](#create-and-train-a-persongroup)
 * [Een gezicht identificeren](#identify-a-face)
 * [Gezichten verifiëren](#verify-faces)
 
@@ -133,7 +133,7 @@ Met de volgende code worden de overeenkomende resultaten op de console weergegev
 
 [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_findsimilar_print)]
 
-## <a name="create-and-train-a-person-group"></a>Een persoonsgroep maken en trainen
+## <a name="create-and-train-a-persongroup"></a>Een PersonGroup maken en trainen
 
 Met de volgende code wordt een **PersonGroup** gemaakt met drie verschillende **Person**-objecten. Het koppelt elke **persoon** aan een reeks voorbeeldafbeeldingen en traint vervolgens om elke persoon te herkennen. 
 
@@ -174,7 +174,7 @@ Zodra u gezichten hebt toegewezen, moet u de **PersonGroup** trainen zodat deze 
 Bij de bewerking Identificeren wordt op basis van een afbeelding van een persoon (of meerdere personen) gezocht naar de identiteit van elk gezicht in de afbeelding (zoeken met gezichtsherkenning). Elk gedetecteerd gezicht wordt vergeleken met een **PersonGroup**, een database van verschillende **Person**-objecten waarvan de gezichtskenmerken bekend zijn.
 
 > [!IMPORTANT]
-> Als u dit voorbeeld wilt uitvoeren, moet u eerst de code uitvoeren in [Een persoonsgroep maken en trainen](#create-and-train-a-person-group).
+> Als u dit voor beeld wilt uitvoeren, moet u eerst de code uitvoeren in [Create and train a PersonGroup](#create-and-train-a-persongroup).
 
 ### <a name="get-a-test-image"></a>Een testafbeelding ophalen
 

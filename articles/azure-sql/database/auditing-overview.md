@@ -11,10 +11,10 @@ ms.reviewer: vanto
 ms.date: 03/17/2021
 ms.custom: azure-synapse, sqldbrb=1
 ms.openlocfilehash: 8513127f4a79c9c94323140462ad2d2648a0130d
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104577639"
 ---
 # <a name="auditing-for-azure-sql-database-and-azure-synapse-analytics"></a>Controleren op Azure SQL Database en Azure Synapse Analytics
@@ -60,7 +60,7 @@ Er kan een controle beleid worden gedefinieerd voor een specifieke data base of 
 
 - Wanneer het controle beleid op database niveau is gedefinieerd voor een Log Analytics-werk ruimte of een event hub-doel, blijft het controle beleid op database niveau voor de volgende bewerkingen:
     - [Database-kopie](database-copy.md)
-    - [Herstel naar een bepaald tijdstip](recovery-using-backups.md)
+    - [Terugzetten naar eerder tijdstip](recovery-using-backups.md)
     - [Geo-replicatie](active-geo-replication-overview.md) (secundaire data base heeft geen controle op database niveau)
 
 - Als u controle inschakelt voor de data base en deze op de server inschakelt, worden de instellingen van de server controle *niet* overschreven of gewijzigd. Beide controles bestaan naast elkaar. Met andere woorden, de data base wordt twee keer parallel gecontroleerd. eenmaal door het Server beleid en eenmaal door het database beleid.

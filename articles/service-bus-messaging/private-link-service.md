@@ -3,32 +3,30 @@ title: Azure Service Bus integreren met Azure Private Link service
 description: Meer informatie over het integreren van Azure Service Bus met Azure Private Link service
 author: spelluru
 ms.author: spelluru
-ms.date: 10/07/2020
+ms.date: 03/29/2021
 ms.topic: article
-ms.openlocfilehash: 66de9a4ff65c73264257cb6f7f215fc15820c95f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 833d7e9fb4d517b71aab5039ae9081407eed84cd
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94427144"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105960534"
 ---
 # <a name="allow-access-to-azure-service-bus-namespaces-via-private-endpoints"></a>Toegang tot Azure Service Bus naam ruimten toestaan via persoonlijke eind punten
 Met Azure Private Link service kunt u toegang krijgen tot Azure-Services (bijvoorbeeld Azure Service Bus, Azure Storage en Azure Cosmos DB) en Azure hostende klanten/partner services via een **persoonlijk eind punt** in uw virtuele netwerk.
-
-> [!IMPORTANT]
-> Deze functie wordt ondersteund met de **Premium** -laag van Azure service bus. Zie het artikel [service Buss voor Premium en Standard Messa ging](service-bus-premium-messaging.md) voor meer informatie over de Premium-laag.
 
 Een persoonlijk eind punt is een netwerk interface waarmee u privé en veilig kunt verbinden met een service die wordt aangestuurd door een persoonlijke Azure-koppeling. Het privé-eindpunt maakt gebruik van een privé-IP-adres van uw VNet, waardoor de service feitelijk in uw VNet wordt geplaatst. Al het verkeer naar de service kan worden gerouteerd via het privé-eindpunt, zodat er geen gateways, NAT-apparaten, ExpressRoute of VPN-verbindingen of openbare IP-adressen nodig zijn. Verkeer tussen uw virtuele netwerk en de services wordt via het backbonenetwerk van Microsoft geleid, waarmee de risico's van het openbare internet worden vermeden. U kunt verbinding maken met een exemplaar van een Azure-resource, zodat u het hoogste granulariteit krijgt in toegangsbeheer.
 
 Zie [Wat is een Azure Private Link?](../private-link/private-link-overview.md) voor meer informatie.
 
->[!WARNING]
-> Het implementeren van persoonlijke eind punten kan verhinderen dat andere Azure-Services communiceren met Service Bus. Als uitzonde ring kunt u toegang verlenen tot Service Bus resources van bepaalde vertrouwde services, zelfs wanneer persoonlijke eind punten zijn ingeschakeld. Zie [Trusted Services](#trusted-microsoft-services)(Engelstalig) voor een lijst met vertrouwde services.
->
-> De volgende micro soft-services moeten zich in een virtueel netwerk bevinden
-> - Azure App Service
-> - Azure Functions
+## <a name="important-points"></a>Belang rijke punten
+- Deze functie wordt ondersteund met de **Premium** -laag van Azure service bus. Zie het artikel [service Buss voor Premium en Standard Messa ging](service-bus-premium-messaging.md) voor meer informatie over de Premium-laag.
+- Het implementeren van persoonlijke eind punten kan verhinderen dat andere Azure-Services communiceren met Service Bus. Als uitzonde ring kunt u toegang verlenen tot Service Bus resources van bepaalde **vertrouwde services** , zelfs wanneer persoonlijke eind punten zijn ingeschakeld. Zie [Trusted Services](#trusted-microsoft-services)(Engelstalig) voor een lijst met vertrouwde services.
 
+    De volgende micro soft-services moeten zich in een virtueel netwerk bevinden
+    - Azure App Service
+    - Azure Functions
+- Geef **ten minste één IP-regel of virtuele netwerk regel** voor de naam ruimte op om alleen verkeer toe te staan vanaf de opgegeven IP-adressen of het subnet van een virtueel netwerk. Als er geen regels voor IP-en virtueel netwerk zijn, is de naam ruimte toegankelijk via het open bare Internet (met behulp van de toegangs sleutel). 
 
 
 ## <a name="add-a-private-endpoint-using-azure-portal"></a>Een persoonlijk eind punt toevoegen met Azure Portal
@@ -51,15 +49,16 @@ Als u al een bestaande naam ruimte hebt, kunt u een persoonlijk eind punt maken 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
 2. Typ **Service Bus** in de zoek balk.
 3. Selecteer de **naam ruimte** in de lijst waaraan u een persoonlijk eind punt wilt toevoegen.
-2. Selecteer in het menu links de optie **netwerk** opties onder **instellingen**. 
-
+2. Selecteer in het menu links de optie **netwerk** opties onder **instellingen**.     Standaard is de optie **geselecteerde netwerken** geselecteerd.
+ 
     > [!NOTE]
     > U ziet het tabblad **netwerken** alleen voor **Premium** -naam ruimten.  
-    
-    Standaard is de optie **geselecteerde netwerken** geselecteerd. Als u niet ten minste één IP-firewall regel of een virtueel netwerk op deze pagina toevoegt, is de naam ruimte toegankelijk via het open bare Internet (met behulp van de toegangs sleutel).
-
+   
     :::image type="content" source="./media/service-bus-ip-filtering/default-networking-page.png" alt-text="Pagina netwerk-standaard" lightbox="./media/service-bus-ip-filtering/default-networking-page.png":::
-    
+
+    > [!WARNING]
+    > Als u niet ten minste één IP-firewall regel of een virtueel netwerk op deze pagina toevoegt, is de naam ruimte toegankelijk via het open bare Internet (met behulp van de toegangs sleutel).
+   
     Als u de optie **alle netwerken** selecteert, accepteert uw service bus-naam ruimte verbindingen van elk IP-adres (met behulp van de toegangs sleutel). Deze standaardinstelling komt overeen met een regel die het IP-adresbereik 0.0.0.0/0 accepteert. 
 
     ![Optie Firewall: alle netwerken geselecteerd](./media/service-bus-ip-filtering/firewall-all-networks-selected.png)

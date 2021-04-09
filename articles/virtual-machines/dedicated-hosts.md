@@ -10,10 +10,10 @@ ms.date: 12/07/2020
 ms.author: cynthn
 ms.reviewer: zivr
 ms.openlocfilehash: 46de182c7acfaf75b2e65fa318717348dd1c4b73
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101667350"
 ---
 # <a name="azure-dedicated-hosts"></a>Met Azure toegewezen hosts
@@ -164,7 +164,7 @@ De grootten en typen hardware variëren per regio. Raadpleeg de pagina met [prij
 
 Azure bewaakt en beheert de integriteits status van uw hosts. De volgende statussen worden geretourneerd wanneer u een query op uw host uitvoert:
 
-| Status   | Beschrijving       |
+| Status   | Description       |
 |----------|----------------|
 | Host beschikbaar     | Er zijn geen bekende problemen met de host.   |
 | Host wordt onderzocht  | Er zijn enkele problemen met de host die we op zoek zijn. Dit is een overgangs status die vereist is voor Azure om het bereik en de hoofd oorzaak voor het geïdentificeerde probleem te identificeren. Voor virtuele machines die op de host worden uitgevoerd, kan dit gevolgen hebben. |

@@ -8,16 +8,14 @@ ms.author: chpalm
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: a52931b69187d18984b9b6938832dafe64111ffe
-ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
+ms.openlocfilehash: beb8b81710cf4728259a8eb1df920cd74efce3ce
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/28/2021
-ms.locfileid: "105641056"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105728127"
 ---
 # <a name="region-availability-and-data-residency"></a>Regiobeschikbaarheid en gegevenslocatie
-
-[!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
 Azure Communication Services is toegewijd aan het helpen van onze klanten bij het voldoen aan hun vereisten voor privacy en persoonlijke gegevens. Als ontwikkelaar die gebruikmaakt van Communication Services met een directe relatie met mensen die de toepassing gebruiken, bent u mogelijk een controller van hun gegevens. Omdat Azure Communication Services deze gegevens namens u opslaat en versleutelt, is er waarschijnlijk een processor van deze gegevens. Deze pagina geeft een overzicht van de manier waarop de service gegevens bewaart en hoe u deze gegevens kunt identificeren, exporteren en verwijderen.
 

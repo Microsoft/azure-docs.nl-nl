@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 07/06/2020
+ms.date: 03/26/2021
 ms.author: justinha
-ms.openlocfilehash: 41ba337765b4a0a93be52f08ae6656707cf7aa73
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 779fd9bbfdd35061867fecc8d4be62b8768f43f9
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96618804"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105933301"
 ---
 # <a name="how-objects-and-credentials-are-synchronized-in-an-azure-active-directory-domain-services-managed-domain"></a>Hoe objecten en referenties worden gesynchroniseerd in een Azure Active Directory Domain Services beheerd domein
 
@@ -63,10 +63,11 @@ In de volgende tabel ziet u hoe specifieke kenmerken voor gebruikers objecten in
 |:--- |:--- |
 | accountEnabled |userAccountControl (Hiermee wordt de ACCOUNT_DISABLED bit ingesteld of gewist) |
 | city |l |
+| bedrijf |companyName |
 | country |co |
 | department |department |
 | displayName |displayName |
-| employeedId |employeeId |
+| employeeId |employeeId |
 | facsimileTelephoneNumber |facsimileTelephoneNumber |
 | givenName |givenName |
 | jobTitle |titel |

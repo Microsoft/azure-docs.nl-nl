@@ -3,12 +3,12 @@ title: Azure Service Bus geo-nood herstel | Microsoft Docs
 description: Over het gebruik van geografische regio's voor failover en herstel na nood gevallen in Azure Service Bus
 ms.topic: article
 ms.date: 02/10/2021
-ms.openlocfilehash: 3e8050cdaaae7e16a0f5125292df4b89b3690ed3
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 2aa7ed118d0ba179ffff4f72a4d4df787edc9d88
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102035391"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105933752"
 ---
 # <a name="azure-service-bus-geo-disaster-recovery"></a>Azure Service Bus geo-nood herstel
 
@@ -156,7 +156,7 @@ Let op de volgende punten als u rekening moet houden met deze release:
 
 4. Het synchroniseren van entiteiten kan enige tijd duren, ongeveer 50-100 entiteiten per minuut. Abonnementen en regels tellen ook als entiteiten.
 
-### <a name="availability-zones"></a>Beschikbaarheidszones
+## <a name="availability-zones"></a>Beschikbaarheidszones
 
 De Service Bus Premium SKU ondersteunt [Beschikbaarheidszones](../availability-zones/az-overview.md), waardoor er in dezelfde Azure-regio fout geïsoleerde locaties worden geboden. Service Bus beheert drie kopieën van het berichten archief (1 primaire en 2 secundaire). Service Bus houdt alle drie kopieën synchroon voor gegevens-en beheer bewerkingen. Als de primaire kopie mislukt, wordt een van de secundaire kopieën gepromoveerd tot primair zonder waargenomen uitval tijd. Als de toepassingen tijdelijke verbreken van Service Bus zien, wordt met de logica voor opnieuw proberen in de SDK automatisch opnieuw verbinding gemaakt met Service Bus. 
 

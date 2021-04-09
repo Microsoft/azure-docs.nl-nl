@@ -4,10 +4,10 @@ description: Krijg persoonlijke meldingen over service status gebeurtenissen aan
 ms.topic: conceptual
 ms.date: 06/10/2019
 ms.openlocfilehash: d8867d442d0c7fe563f6429fc1ff4edb212737c5
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100594596"
 ---
 # <a name="send-azure-service-health-alerts-with-opsgenie-using-webhooks"></a>Azure service Health-waarschuwingen verzenden met OpsGenie met behulp van webhooks

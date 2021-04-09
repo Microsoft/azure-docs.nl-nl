@@ -7,12 +7,12 @@ ms.service: azure-app-configuration
 ms.topic: how-to
 ms.date: 11/17/2020
 ms.author: drewbat
-ms.openlocfilehash: 7bd163781203a277f4c9d6866a156c11e4d5d520
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1c01984f6a359c0fd1f5d06d26d97d4a84973f57
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99979569"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106056742"
 ---
 # <a name="pull-settings-to-app-configuration-with-azure-pipelines"></a>Instellingen voor app-configuratie ophalen met Azure-pijp lijnen
 
@@ -33,7 +33,10 @@ Met een [service verbinding](/azure/devops/pipelines/library/service-endpoints) 
 1. Onder **pijp lijnen** selecteert u **service verbindingen**.
 1. Als u geen bestaande service verbindingen hebt, klikt u op de knop **service verbinding maken** in het midden van het scherm. Anders klikt u in de rechter bovenhoek van de pagina op **nieuwe service verbinding** .
 1. Selecteer **Azure Resource Manager**.
-1. Selecteer **Service-Principal (automatisch)**.
+![Scherm afbeelding toont het selecteren van Azure Resource Manager in de vervolg keuzelijst nieuwe service verbinding.](./media/new-service-connection.png)
+1. Selecteer in het dialoog venster **verificatie methode** **Service-Principal (automatisch)**.
+    > [!NOTE]
+    > **Beheerde identiteits** verificatie wordt momenteel niet ondersteund voor de app-configuratie taak.
 1. Vul uw abonnement en resource in. Geef een naam op voor uw service verbinding.
 
 Nu uw service verbinding is gemaakt, zoekt u de naam van de service-principal die hieraan is toegewezen. In de volgende stap voegt u een nieuwe roltoewijzing aan deze service-principal toe.
@@ -49,9 +52,11 @@ Wijs de juiste app-configuratie functie toe aan de service verbinding die wordt 
 
 1. Navigeer naar de configuratie Store van uw doel-app. Voor een overzicht van het instellen van een app-configuratie archief raadpleegt u [een app-configuratie archief maken](./quickstart-dotnet-core-app.md#create-an-app-configuration-store) in een van de Quick starts voor de configuratie van Azure-app.
 1. Selecteer aan de linkerkant **toegangs beheer (IAM)**.
-1. Selecteer aan de bovenkant **+** **roltoewijzing** toevoegen en kiezen.
+1. Klik aan de rechter kant op de knop roltoewijzingen **toevoegen** .
+![Scherm afbeelding toont de knop roltoewijzingen toevoegen. ](./media/add-role-assignment-button.png) ..
 1. Onder **rol** selecteert u **app Configuration Data Reader**. Met deze rol kan de taak uit het configuratie archief van de app worden gelezen. 
 1. Selecteer de service-principal die is gekoppeld aan de service verbinding die u hebt gemaakt in de vorige sectie.
+![Scherm afbeelding toont het dialoog venster functie toewijzing toevoegen.](./media/add-role-assignment-reader.png)
 
 > [!NOTE]
 > Om Azure Key Vault verwijzingen in de app-configuratie op te lossen, moet aan de service verbinding ook machtigingen worden verleend om geheimen te lezen in de Azure-sleutel kluizen waarnaar wordt verwezen.
@@ -61,12 +66,17 @@ Wijs de juiste app-configuratie functie toe aan de service verbinding die wordt 
 Deze sectie bevat informatie over het gebruik van de Azure-app configuratie taak in een Azure DevOps build-pijp lijn.
 
 1. Ga naar de pagina voor het bouwen van de pijp lijn door te klikken op **pijp** lijnen  >  **pijp lijnen**. Zie  [uw eerste pijp lijn maken](/azure/devops/pipelines/create-first-pipeline?tabs=net%2Ctfs-2018-2%2Cbrowser)voor informatie over het bouwen van pijp lijnen.
-      - Als u een nieuwe build-pijp lijn maakt, klikt u op **nieuwe pijp lijn** en selecteert u de opslag plaats voor de pijp lijn. Selecteer de optie **assistent weer geven** aan de rechter kant van de pijp lijn en zoek naar de **Azure-app configuratie** taak.
-      - Als u een bestaande build-pijp lijn gebruikt, selecteert u **bewerken** om de pijp lijn te bewerken. Op het tabblad **taken** zoekt u naar de **Azure-app configuratie** taak.
+      - Als u een nieuwe build-pijp lijn maakt, selecteert u in de laatste stap van het proces op het tabblad **controle** de optie **assistent weer geven** aan de rechter kant van de pijp lijn.
+      ![Scherm afbeelding toont de knop assistent weer geven voor een nieuwe pijp lijn.](./media/new-pipeline-show-assistant.png)
+      - Als u een bestaande build-pijp lijn gebruikt, klikt u op de knop **bewerken** in de rechter bovenhoek.
+      ![Scherm afbeelding toont de knop bewerken voor een bestaande pijp lijn.](./media/existing-pipeline-show-assistant.png)
+1. Zoek naar de **Azure-app configuratie** taak.
+![Scherm afbeelding toont het dialoog venster taak toevoegen met Azure-app configuratie in het zoekvak.](./media/add-azure-app-configuration-task.png)
 1. Configureer de vereiste para meters voor de taak om de sleutel waarden uit het app-configuratie archief op te halen. Beschrijvingen van de para meters zijn beschikbaar in de sectie **para meters** hieronder en in knop info naast elke para meter.
       - Stel de para meter van het **Azure-abonnement** in op de naam van de service verbinding die u in een vorige stap hebt gemaakt.
       - Stel de **naam** van de app-configuratie in op de resource naam van de app-configuratie opslag.
       - Behoud de standaard waarden voor de overige para meters.
+![Scherm afbeelding toont de para meters van de app-configuratie taak.](./media/azure-app-configuration-parameters.png)
 1. Een build opslaan en in de wachtrij plaatsen. In het build-logboek worden de fouten weer gegeven die zijn opgetreden tijdens de uitvoering van de taak.
 
 ## <a name="use-in-releases"></a>In releases gebruiken
@@ -76,8 +86,12 @@ Deze sectie bevat informatie over het gebruik van de Azure-app configuratie taak
 1. Navigeer naar de pagina release pijplijn door **pijp lijnen** te selecteren  >  . Zie [release pipelines](/azure/devops/pipelines/release)(Engelstalig) voor informatie over de release pijplijn.
 1. Kies een bestaande release pijplijn. Als u er nog geen hebt, klikt u op **nieuwe pijp lijn** om een nieuwe te maken.
 1. Selecteer de knop **bewerken** in de rechter bovenhoek om de release pijplijn te bewerken.
-1. Kies het **stadium** om de taak toe te voegen. Zie voor meer informatie over stadia [fasen, afhankelijkheden en & voor waarden toevoegen](/azure/devops/pipelines/release/environments).
-1. Klik op **+** voor "uitvoeren op agent" en voeg vervolgens de taak **configuratie van Azure-app** toe op het tabblad **taken toevoegen** .
+1. Kies in de vervolg keuzelijst **taken** het **stadium** waaraan u de taak wilt toevoegen. Meer informatie over de stadia vindt u [hier](/azure/devops/pipelines/release/environments).
+![Scherm afbeelding toont de geselecteerde fase in de vervolg keuzelijst taken.](./media/pipeline-stage-tasks.png)
+1. Klik op **+** volgende bij de taak waaraan u een nieuwe taak wilt toevoegen.
+![In de scherm afbeelding wordt de plus knop naast de taak weer gegeven.](./media/add-task-to-job.png)
+1. Zoek naar de **Azure-app configuratie** taak.
+![Scherm afbeelding toont het dialoog venster taak toevoegen met Azure-app configuratie in het zoekvak.](./media/add-azure-app-configuration-task.png)
 1. Configureer de vereiste para meters in de taak om uw sleutel waarden uit uw app-configuratie archief op te halen. Beschrijvingen van de para meters zijn beschikbaar in de sectie **para meters** hieronder en in knop info naast elke para meter.
       - Stel de para meter van het **Azure-abonnement** in op de naam van de service verbinding die u in een vorige stap hebt gemaakt.
       - Stel de **naam** van de app-configuratie in op de resource naam van de app-configuratie opslag.

@@ -6,13 +6,13 @@ author: kromerm
 ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 03/18/2021
-ms.openlocfilehash: 7678d0fde21cefc950e0ac64a58563425c606298
-ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
+ms.date: 03/25/2021
+ms.openlocfilehash: 72ab685b58f7d940fe4d682cacba6212fe80ced8
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/28/2021
-ms.locfileid: "105640228"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105933080"
 ---
 # <a name="troubleshoot-mapping-data-flows-in-azure-data-factory"></a>Problemen met toewijzing van gegevens stromen in Azure Data Factory oplossen
 
@@ -341,6 +341,110 @@ In dit artikel worden algemene probleemoplossings methoden besproken voor het to
 1. Controleer de status van uw gegevensset-verbindingen. Ga in elke bron-en Sink-trans formatie naar de gekoppelde service voor elke gegevensset die u gebruikt en test de verbindingen.
 2. Controleer de status van uw bestands-en tabel verbindingen in de ontwerp functie voor gegevens stromen. Selecteer in de foutopsporingsmodus de optie **gegevens voorbeeld** op de bron transformaties om ervoor te zorgen dat u toegang hebt tot uw gegevens.
 3. Als alles goed in de voorbeeld weergave van gegevens voor komt, gaat u naar de ontwerp functie voor pijp lijnen en plaatst u uw gegevens stroom in een pijplijn activiteit. Fout opsporing voor de pijp lijn voor een end-to-end-test.
+
+### <a name="improvement-on-csvcdm-format-in-data-flow"></a>Verbetering van de CSV/CDM-indeling in de gegevens stroom 
+
+Als u de **scheidings tekst of de indeling voor het toewijzen van gegevens in azure Data Factory v2** gebruikt, kunt u de gedrags wijzigingen in uw bestaande pijp lijnen omwille van de verbetering van de gescheiden tekst/CDM in de gegevens stroom vanaf **1 mei 2021**. 
+
+U kunt de volgende problemen voor de verbetering ondervinden, maar na de verbetering zijn de problemen opgelost. Lees de volgende inhoud om te bepalen of deze verbetering van invloed is op u. 
+
+#### <a name="scenario-1-encounter-the-unexpected-row-delimiter-issue"></a>Scenario 1: er is een onverwacht probleem met een scheidings teken in de rij
+
+ U ondervindt problemen als u zich in de volgende situaties voordoet:
+ - Gebruik de tekst met scheidings tekens waarbij de instelling voor meerdere regels is ingesteld op True of CDM als de bron.
+ - De eerste rij heeft meer dan 128 tekens. 
+ - Het scheidings teken voor de rij in gegevens bestanden is niet `\n` .
+
+ Vóór de verbetering kan het standaard scheidings teken voor rijen `\n` onverwacht worden gebruikt voor het parseren van tekst bestanden met scheidings tekens, omdat wanneer de instelling voor meerdere regels is ingesteld op True, de instelling voor het scheidings teken voor het rij ongeldig wordt gemaakt en het scheidings teken van de rij automatisch wordt gedetecteerd op basis van de eerste 128 tekens. Als u het werkelijke scheidings teken van de rij niet detecteert, zou deze terugvallen op `\n` .  
+
+ Na de verbetering moeten een van de drie rij-scheidings tekens: `\r` , `\n` `\r\n` worden gewerkt.
+ 
+ In het volgende voor beeld ziet u dat het ene pijplijn gedrag wordt gewijzigd na de verbetering:
+
+ **Voorbeeld**:<br/>
+   Voor de volgende kolom:<br/>
+    `C1, C2, {long first row}, C128\r\n `<br/>
+    `V1, V2, {values………………….}, V128\r\n `<br/>
+ 
+   Vóór de verbetering `\r` wordt de kolom waarde bewaard. Het resultaat van de geparseerde kolom is:<br/>
+   `C1 C2 {long first row} C128`**`\r`**<br/>
+   `V1 V2 {values………………….} V128`**`\r`**<br/> 
+
+   Na de verbetering moet het resultaat van de geparseerde kolom:<br/>
+   `C1 C2 {long first row} C128`<br/>
+   `V1 V2 {values………………….} V128`<br/>
+  
+#### <a name="scenario-2-encounter-an-issue-of-incorrectly-reading-column-values-containing-rn"></a>Scenario 2: er is een probleem opgetreden bij het onjuist lezen van kolom waarden met ' \r\n '
+
+ U ondervindt problemen als u zich in de volgende situaties voordoet:
+ - Gebruik de tekst met scheidings tekens waarbij de instelling voor meerdere regels is ingesteld op True of CDM als bron. 
+ - Het scheidings teken voor de rij `\r\n` .
+
+ Voor de verbetering, bij het lezen van de waarde van de kolom, `\r\n` kan de in het bestand mogelijk onjuist worden vervangen door `\n` . 
+
+ Na de verbetering `\r\n` wordt de waarde van de kolom niet vervangen door `\n` .
+
+ In het volgende voor beeld ziet u dat het ene pijplijn gedrag wordt gewijzigd na de verbetering:
+ 
+ **Voorbeeld**:<br/>
+  
+ Voor de volgende kolom:<br/>
+  **`"A\r\n"`**`, B, C\r\n`<br/>
+
+ Voor de verbetering is het resultaat van de geparseerde kolom:<br/>
+  **`A\n`**` B C`<br/>
+
+ Na de verbetering moet het resultaat van de geparseerde kolom:<br/>
+  **`A\r\n`**` B C`<br/>  
+
+#### <a name="scenario-3-encounter-an-issue-of-incorrectly-writing-column-values-containing-n"></a>Scenario 3: er treedt een probleem op bij het onterecht schrijven van kolom waarden met ' \n '
+
+ U ondervindt problemen als u zich in de volgende situaties voordoet:
+ - De tekst met scheidings tekens als een Sink gebruiken.
+ - De kolom waarde bevat `\n` .
+ - Het scheidings teken voor de rij is ingesteld op `\r\n` .
+ 
+ Voor de verbetering is het mogelijk dat bij het schrijven van de kolom waarde de `\n` in dit geval onjuist is vervangen door `\r\n` . 
+
+ Na de verbetering `\n` wordt de waarde van de kolom niet vervangen door `\r\n` .
+ 
+ In het volgende voor beeld ziet u dat het ene pijplijn gedrag wordt gewijzigd na de verbetering:
+
+ **Voorbeeld**:<br/>
+
+ Voor de volgende kolom:<br/>
+ **`A\n`**` B C`<br/>
+
+ Vóór de verbetering is de CSV-Sink:<br/>
+  **`"A\r\n"`**`, B, C\r\n` <br/>
+
+ Na de verbetering moet de CSV-Sink zijn:<br/>
+  **`"A\n"`**`, B, C\r\n`<br/>
+
+#### <a name="scenario-4-encounter-an-issue-of-incorrectly-reading-empty-string-as-null"></a>Scenario 4: er treedt een probleem op bij een onjuiste Lees bewerking van een lege teken reeks als NULL
+ 
+ U ondervindt problemen als u zich in de volgende situaties voordoet:
+ - De scheidings teken tekst als een bron gebruiken. 
+ - NULL-waarde is ingesteld op een niet-lege waarde. 
+ - De kolom waarde is een lege teken reeks en heeft geen aanhalings tekens. 
+ 
+ Vóór de verbetering wordt de kolom waarde van een lege teken reeks zonder aanhalings tekens gelezen als NULL. 
+
+ Na de verbetering wordt lege teken reeks niet geparseerd als een NULL-waarde. 
+ 
+ In het volgende voor beeld ziet u dat het ene pijplijn gedrag wordt gewijzigd na de verbetering:
+
+ **Voorbeeld**:<br/>
+
+ Voor de volgende kolom:<br/>
+  `A, ,B, `<br/>
+
+ Voor de verbetering is het resultaat van de geparseerde kolom:<br/>
+  `A null B null`<br/>
+
+ Na de verbetering moet het resultaat van de geparseerde kolom:<br/>
+  `A "" (empty string) B "" (empty string)`<br/>
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -7,12 +7,12 @@ ms.author: chpalm
 ms.date: 11/16/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 99263695aa0842daf59f23cda115dcb5b27b7add
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.openlocfilehash: e55cfb1a4dff7bfda2323e68777d6f50514b1608
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104804064"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105930231"
 ---
 # <a name="teams-embed"></a>Teams insluiten
 
@@ -21,7 +21,7 @@ ms.locfileid: "104804064"
 
 Teams insluiten is een Azure Communication Services-functie die gericht is op algemene bedrijfs-to-consumer-en Business-to-Business-oproep interacties. De kern van het insluitings systeem van de teams is het [aanroepen van video en spraak](../voice-video-calling/calling-sdk-features.md), maar de teams insluiten systeem builds op basis van de aanroepende primitieven van Azure om een volledige gebruikers ervaring te bieden die is gebaseerd op vergaderingen van micro soft teams.
 
-Teams insluiten client bibliotheken zijn gesloten-bron en maken deze mogelijkheden beschikbaar voor u in een kant-en-klare, samengestelde vorm. U kunt teams in het canvas van uw app neerzetten en de client bibliotheek genereert een volledige gebruikers ervaring. Omdat deze gebruikers ervaring lijkt op vergaderingen van micro soft teams, kunt u profiteren van:
+Teams insluiten Sdk's zijn gesloten-bron en maken deze mogelijkheden beschikbaar voor u in een kant-en-klare, samengestelde vorm. U kunt teams in het canvas van uw app neerzetten en de SDK genereert een complete gebruikers ervaring. Omdat deze gebruikers ervaring lijkt op vergaderingen van micro soft teams, kunt u profiteren van:
 
 - Minder ontwikkelings tijd en technische complexiteit
 - Eindgebruikers ervaring met teams

@@ -6,18 +6,19 @@ author: gundarev
 ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: denisgun
-ms.openlocfilehash: c9ef72241ac62efd8555de59bb52949321364035
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6fe12c985f5d9a519380d1d9b5a7d6c2820630c6
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96325176"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105932332"
 ---
 # <a name="remote-desktop-protocol-rdp-bandwidth-requirements"></a>Bandbreedte vereisten voor Remote Desktop Protocol (RDP)
 
 Remote Desktop Protocol (RDP) is een geavanceerde technologie die gebruikmaakt van verschillende technieken om de levering van de externe grafische server naar het client apparaat te perfectioneren. Afhankelijk van de use-case, Beschik baarheid van computer bronnen en netwerk bandbreedte, worden door RDP verschillende para meters voor de beste gebruikers ervaring dynamisch aangepast.
 
-Remote Desktop Protocol multiplext meerdere dynamische virtuele kanalen (DVCs) in één gegevens kanaal dat via verschillende netwerk transporten wordt verzonden. Er zijn afzonderlijke DVCs voor externe afbeeldingen, invoer, apparaatomleiding, afdrukken en andere. WVD-partners kunnen ook hun uitbrei dingen implementeren die gebruikmaken van DVC-interfaces.
+Remote Desktop Protocol multiplext meerdere dynamische virtuele kanalen (DVCs) in één gegevens kanaal dat via verschillende netwerk transporten wordt verzonden. Er zijn afzonderlijke DVCs voor externe afbeeldingen, invoer, apparaatomleiding, afdrukken en meer. Windows virtueel-bureaublad partners kunnen ook hun extensies gebruiken die gebruikmaken van DVC-interfaces.
+
 De hoeveelheid gegevens die via RDP wordt verzonden, is afhankelijk van de gebruikers activiteit. Een gebruiker kan bijvoorbeeld werken met eenvoudige tekstuele inhoud voor de meeste sessie en minimale band breedte verbruiken, maar vervolgens een afdruk van een 200-pagina document op de lokale printer genereren. Deze afdruk taak maakt gebruik van een aanzienlijke hoeveelheid netwerk bandbreedte.
 
 Wanneer u een externe sessie gebruikt, is de beschik bare band breedte van uw netwerk aanzienlijk van invloed op de kwaliteit van uw ervaring. Voor verschillende toepassingen en weergave resoluties zijn verschillende netwerk configuraties vereist. Daarom is het essentieel om ervoor te zorgen dat uw netwerk configuratie aan uw behoeften voldoet.

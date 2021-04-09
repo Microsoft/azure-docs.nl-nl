@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 1eb4194354a07d5b580f07cfe5962785a4e100bd
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 3fd837a4c547b227147752b03b6a7312c733a5ae
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104578018"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106057011"
 ---
 # <a name="troubleshooting-hybrid-azure-active-directory-joined-devices"></a>Problemen met hybride Azure Active Directory-gekoppelde apparaten oplossen
 
@@ -370,6 +370,12 @@ Gebruik Logboeken Logboeken om de fase en fout code voor het samen voegen van fo
 - **WININET_E_CONNECTION_ABORTED** (0x80072efe/-2147012866)
    - Reden: de verbinding met de server is abnormaal beëindigd.
    - Oplossing: Probeer het over enige tijd opnieuw of probeer te koppelen vanaf een andere stabiele netwerk locatie.
+
+##### <a name="other-errors"></a>Andere fouten
+
+- **DSREG_AUTOJOIN_ADCONFIG_READ_FAILED** (0x801c001d/-2145648611)
+   - Reden: Event code 220 is aanwezig in gebeurtenis logboeken voor registratie van gebruikers apparaten. Windows kan geen toegang krijgen tot het computer object in Active Directory. Een Windows-fout code kan worden opgenomen in de gebeurtenis. Voor fout codes ERROR_NO_SUCH_LOGON_SESSION (1312) en ERROR_NO_SUCH_USER (1317) zijn dit gerelateerd aan replicatie problemen in on-premises AD.
+   - Oplossing: Los problemen met de replicatie op in AD. Replicatie problemen zijn mogelijk tijdelijk en kunnen na een bepaalde tijd worden verholpen.
 
 ##### <a name="federated-join-server-errors"></a>Fouten van federatieve lid server
 

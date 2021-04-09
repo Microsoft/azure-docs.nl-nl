@@ -32,7 +32,7 @@ In Media Services v3 worden de opslag-Api's gebruikt voor het uploaden van besta
 
 Ter bescherming van uw assets op rest moeten de activa worden versleuteld door de versleuteling van de opslag side. In de volgende tabel ziet u hoe de opslag side-versleuteling werkt in Media Services V3:
 
-|Versleutelings optie|Beschrijving|Media Services v3|
+|Versleutelings optie|Description|Media Services v3|
 |---|---|---|
 |Opslag versleuteling Media Services| AES-256-versleuteling, sleutel beheerd door Media Services. |Niet ondersteund. <sup>1</sup>|
 |[Versleuteling van de opslag service voor Data-at-rest](../../storage/common/storage-service-encryption.md)|Versleuteling aan de server zijde die wordt aangeboden door Azure Storage, sleutel die wordt beheerd door Azure of door de klant.|Ondersteund.|

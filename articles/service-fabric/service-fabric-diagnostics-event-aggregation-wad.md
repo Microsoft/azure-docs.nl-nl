@@ -4,10 +4,10 @@ description: Meer informatie over het samen voegen en verzamelen van gebeurtenis
 ms.topic: conceptual
 ms.date: 04/03/2018
 ms.openlocfilehash: bbc8efcb2600e1832ad8a37560ab231a4a7f3185
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105626725"
 ---
 # <a name="event-aggregation-and-collection-using-windows-azure-diagnostics"></a>Gebeurtenis aggregatie en verzameling met behulp van Windows Azure Diagnostics

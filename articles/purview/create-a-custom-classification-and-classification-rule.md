@@ -8,10 +8,10 @@ ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 2/5/2021
 ms.openlocfilehash: 2966618619aa40ed60c2f3d0fb2c8e080d34a016
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102617043"
 ---
 # <a name="custom-classifications-in-azure-purview"></a>Aangepaste classificaties in azure controle sfeer liggen
@@ -113,7 +113,7 @@ Een aangepaste classificatie regel maken:
 
    :::image type="content" source="media/create-a-custom-classification-and-classification-rule/suggested-regex.png" alt-text="Voorgestelde regex genereren" border="true":::
 
-   |Veld     |Beschrijving  |
+   |Veld     |Description  |
    |---------|---------|
    |Gegevens patroon    |Optioneel. Een reguliere expressie die de gegevens vertegenwoordigt die zijn opgeslagen in het gegevens veld. De limiet is zeer groot. In het vorige voor beeld testen de gegevens patronen voor een werk nemer-ID die letterlijk het woord is `Employee{GUID}` .  |
    |Kolom patroon    |Optioneel. Een reguliere expressie die de kolom namen vertegenwoordigt die u wilt zoeken. De limiet is zeer groot. |

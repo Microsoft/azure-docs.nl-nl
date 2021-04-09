@@ -6,13 +6,13 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 03/10/2021
-ms.openlocfilehash: 0e60ac6da55c11d45e8b691b4883b0f5f93a2498
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.date: 03/26/2021
+ms.openlocfilehash: 313cca7a0db81502ac68a2cb7e9981f712a82548
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103563926"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105933108"
 ---
 # <a name="data-transformation-expressions-in-mapping-data-flow"></a>Gegevens transformatie expressies in gegevens stroom toewijzen
 
@@ -143,13 +143,6 @@ Retourneert de eerste not null-waarde uit een set invoer waarden. Alle invoer wa
 * ``coalesce(10, 20) -> 10``  
 * ``coalesce(toString(null), toString(null), 'dumbo', 'bo', 'go') -> 'dumbo'``  
 ___
-### <code>collect</code>
-<code><b>collect(<i>&lt;value1&gt;</i> : any) => array</b></code><br/><br/>
-Verzamelt alle waarden van de expressie in de geaggregeerde groep in een matrix. Structuren kunnen tijdens dit proces worden verzameld en getransformeerd naar alternatieve structuren. Het aantal items is gelijk aan het aantal rijen in die groep en kan Null-waarden bevatten. Het aantal verzamelde items moet klein zijn.  
-* ``collect(salesPerson)``
-* ``collect(firstName + lastName))``
-* ``collect(@(name = salesPerson, sales = salesAmount) )``
-___
 ### <code>columnNames</code>
 <code><b>columnNames(<i>&lt;value1&gt;</i> : string) => array</b></code><br/><br/>
 Hiermee haalt u de namen van alle uitvoer kolommen voor een stroom op. U kunt een optionele naam van een stream door geven als het tweede argument.  
@@ -277,6 +270,10 @@ ___
 <code><b>escape(<i>&lt;string_to_escape&gt;</i> : string, <i>&lt;format&gt;</i> : string) => string</b></code><br/><br/>
 Maakt een teken reeks op basis van een notatie. Letterlijke waarden voor de acceptabele indeling zijn ' JSON ', ' XML ', ' ECMAScript ', ' HTML ', ' Java '.
 ___
+### <code>expr</code>
+<code><b>expr(<i>&lt;expr&gt;</i> : string) => any</b></code><br/><br/>
+Resulteert in een expressie uit een teken reeks. Dit is hetzelfde als het schrijven van deze expressie in een niet-letterlijk formulier. Dit kan worden gebruikt om para meters door te geven als representaties van reeksen.
+*   expr (' prijs * korting ') => any ___
 ### <code>factorial</code>
 <code><b>factorial(<i>&lt;value1&gt;</i> : number) => long</b></code><br/><br/>
 Berekent de faculteit van een getal.  
@@ -856,6 +853,13 @@ ___
 Op basis van een criterium wordt het gemiddelde van de waarden van een kolom opgehaald.  
 * ``avgIf(region == 'West', sales)``  
 ___
+### <code>collect</code>
+<code><b>collect(<i>&lt;value1&gt;</i> : any) => array</b></code><br/><br/>
+Verzamelt alle waarden van de expressie in de geaggregeerde groep in een matrix. Structuren kunnen tijdens dit proces worden verzameld en getransformeerd naar alternatieve structuren. Het aantal items is gelijk aan het aantal rijen in die groep en kan Null-waarden bevatten. Het aantal verzamelde items moet klein zijn.  
+* ``collect(salesPerson)``
+* ``collect(firstName + lastName))``
+* ``collect(@(name = salesPerson, sales = salesAmount) )``
+___
 ### <code>count</code>
 <code><b>count([<i>&lt;value1&gt;</i> : any]) => long</b></code><br/><br/>
 Hiermee wordt het totale aantal waarden opgehaald. Als de optionele kolom (men) is opgegeven, worden NULL-waarden in de telling genegeerd.  
@@ -900,6 +904,10 @@ Hiermee wordt de eerste waarde van een kolom groep opgehaald. Als de tweede para
 * ``first(sales)``  
 * ``first(sales, false)``  
 ___
+### <code>isDistinct</code>
+<code><b>isDistinct(<i>&lt;value1&gt;</i> : any , <i>&lt;value1&gt;</i> : any) => boolean</b></code><br/><br/>
+Hiermee wordt gezocht of een kolom of set kolommen verschillend is. Er wordt geen null als afzonderlijke waarde geteld *   ``isDistinct(custId, custName) => boolean``
+*   ___
 ### <code>kurtosis</code>
 <code><b>kurtosis(<i>&lt;value1&gt;</i> : number) => double</b></code><br/><br/>
 Hiermee wordt de kurtosis van een kolom opgehaald.  
@@ -1217,6 +1225,14 @@ ___
 
 Conversie functies worden gebruikt om gegevens te converteren en te testen op gegevens typen
 
+### <code>isBitSet</code>
+<code><b>isBitSet (<value1> : array, <value2>:integer ) => boolean</b></code><br/><br/>
+Hiermee wordt gecontroleerd of een bit-positie is ingesteld in deze bitset * ``isBitSet(toBitSet([10, 32, 98]), 10) => true``
+___
+### <code>setBitSet</code>
+<code><b>setBitSet (<value1> : array, <value2>:array) => array</b></code><br/><br/>
+Hiermee worden bitplaatsen ingesteld in deze bitset * ``setBitSet(toBitSet([10, 32]), [98]) => [4294968320L, 17179869184L]``
+___  
 ### <code>isBoolean</code>
 <code><b>isBoolean(<value1> : string) => boolean</b></code><br/><br/>
 Hiermee wordt gecontroleerd of de teken reeks waarde een Booleaanse waarde is op basis van de regels van ``toBoolean()``
@@ -1431,6 +1447,11 @@ Selecteer een matrix met kolommen op naam in de stroom. U kunt een optionele naa
 * ``toString(byNames(['a Column'], 'DeriveStream'))``
 * ``byNames(['orderItem']) ? (itemName as string, itemQty as integer)``
 ___
+### <code>byPath</code>
+<code><b>byPath(<i>&lt;value1&gt;</i> : string, [<i>&lt;streamName&gt;</i> : string]) => any</b></code><br/><br/>
+Hiermee wordt in de stroom een hiërarchisch pad gevonden op naam. U kunt een optionele naam van een stream door geven als het tweede argument. Als dit pad niet wordt gevonden, wordt Null geretourneerd. Kolom namen/-paden die bekend zijn tijdens de ontwerp fase, moeten worden geadresseerd op basis van de naam of punt notatie pad. Berekende invoer waarden worden niet ondersteund, maar u kunt parameter vervangingen gebruiken.  
+* ``byPath('grandpa.parent.child') => column`` 
+___
 ### <code>byPosition</code>
 <code><b>byPosition(<i>&lt;position&gt;</i> : integer) => any</b></code><br/><br/>
 Selecteert een kolom waarde op basis van de relatieve positie (1 gebaseerd) in de stroom. Als de positie buiten het bereik valt, wordt een NULL-waarde geretourneerd. De geretourneerde waarde moet van het type worden geconverteerd door een van de Type Conversion Functions (TO_DATE, TO_STRING...) Berekende invoer waarden worden niet ondersteund, maar u kunt parameter vervangingen gebruiken.  
@@ -1439,6 +1460,11 @@ Selecteert een kolom waarde op basis van de relatieve positie (1 gebaseerd) in d
 * ``toBoolean(byName(4))``  
 * ``toString(byName($colName))``  
 * ``toString(byPosition(1234))``  
+___
+### <code>hasPath</code>
+<code><b>hasPath(<i>&lt;value1&gt;</i> : string, [<i>&lt;streamName&gt;</i> : string]) => boolean</b></code><br/><br/>
+Hiermee wordt gecontroleerd of een bepaald hiërarchisch pad bestaat door de naam in de stroom. U kunt een optionele naam van een stream door geven als het tweede argument. Kolom namen/-paden die bekend zijn tijdens de ontwerp fase, moeten worden geadresseerd op basis van de naam of punt notatie pad. Berekende invoer waarden worden niet ondersteund, maar u kunt parameter vervangingen gebruiken.  
+* ``hasPath('grandpa.parent.child') => boolean``
 ___
 ### <code>hex</code>
 <code><b>hex(<value1>: binary) => string</b></code><br/><br/>

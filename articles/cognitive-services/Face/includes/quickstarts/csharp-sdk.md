@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
-ms.openlocfilehash: b06a35274082e09ec0973c5123b39935a93e354d
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: ab99d574588989c84783e532fcf801dcaffdd54d
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102444137"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105958142"
 ---
 Ga aan de slag met gezichtsherkenning met behulp van de Face-clientbibliotheek voor .NET. Volg deze stappen om het pakket te installeren en de voorbeeldcode voor basistaken uit te proberen. De Face-service biedt u toegang tot geavanceerde algoritmen voor het detecteren en herkennen van menselijke gezichten in afbeeldingen.
 
@@ -22,7 +22,7 @@ Gebruik de Face-clientbibliotheek voor .NET voor het volgende:
 
 * [Gezichten in een afbeelding detecteren](#detect-faces-in-an-image)
 * [Vergelijkbare gezichten zoeken](#find-similar-faces)
-* [Een groep personen (PersonGroup) maken](#create-a-person-group)
+* [Een PersonGroup maken](#create-a-persongroup)
 * [Een gezicht identificeren](#identify-a-face)
 
 [Referentiedocumentatie](/dotnet/api/overview/azure/cognitiveservices/client/faceapi) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Vision.Face) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.Face/2.6.0-preview.1) | [Voorbeelden](/samples/browse/?products=azure&term=face)
@@ -124,7 +124,7 @@ De onderstaande codefragmenten laten zien hoe u de volgende taken kunt uitvoeren
 * [De client verifiëren](#authenticate-the-client)
 * [Gezichten in een afbeelding detecteren](#detect-faces-in-an-image)
 * [Vergelijkbare gezichten zoeken](#find-similar-faces)
-* [Een groep personen (PersonGroup) maken](#create-a-person-group)
+* [Een PersonGroup maken](#create-a-persongroup)
 * [Een gezicht identificeren](#identify-a-face)
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
@@ -186,7 +186,7 @@ Met de volgende code worden de overeenkomende resultaten op de console weergegev
 
 Bij de bewerking Identificeren wordt op basis van een afbeelding van een persoon (of meerdere personen) gezocht naar de identiteit van elk gezicht in de afbeelding (zoeken met gezichtsherkenning). Elk gedetecteerd gezicht wordt vergeleken met een **PersonGroup**, een database van verschillende **Person**-objecten waarvan de gezichtskenmerken bekend zijn. Als u de bewerking Identificeren wilt uitvoeren, moet u eerst een **PersonGroup** maken en trainen
 
-### <a name="create-a-person-group"></a>Een groep personen (PersonGroup) maken
+### <a name="create-a-persongroup"></a>Een PersonGroup maken
 
 Met de volgende code wordt een **PersonGroup** gemaakt met zes verschillende **Person**-objecten. Het koppelt elke **persoon** aan een reeks voorbeeldafbeeldingen en wordt vervolgens getraind om elke persoon te herkennen aan de gezichtskenmerken. **Person**- en **PersonGroup**-objecten worden gebruikt bij de bewerkingen Verifiëren, Identificeren of Groeperen.
 

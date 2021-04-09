@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 04/14/2019
 ms.author: glenga
-ms.openlocfilehash: d944d1d3e9c72471fab2435430a7d13e1770e807
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 190524251d139e1421c1aac93d5a4dd523068a7a
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96010454"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105958154"
 ---
 ## <a name="local-settings-file"></a>Lokale instellingsbestand
 
@@ -43,7 +43,7 @@ Deze instellingen worden ondersteund wanneer u projecten lokaal uitvoert:
 | **`IsEncrypted`** | Wanneer deze instelling is ingesteld op `true`, worden alle waarden versleuteld met een lokale machinesleutel. Gebruikt met `func settings`-opdrachten. De standaardwaarde is `false`. Mogelijk wilt u het bestand local.settings.json versleutelen op uw lokale computer wanneer het geheimen bevat, zoals serviceverbindingsreeksen. De host ontsleutelt de instellingen automatisch wanneer deze wordt uitgevoerd. Gebruik de opdracht `func settings decrypt` voordat u lokaal versleutelde instellingen probeert te lezen. |
 | **`Values`** | Matrix van toepassingsinstellingen en verbindingsreeksen die worden gebruikt wanneer een project lokaal wordt uitgevoerd. De sleutelwaardeparen (tekenreeks-tekenreeks) corresponderen met toepassingsinstellingen in uw functie-app in Azure, zoals [`AzureWebJobsStorage`]. Veel triggers en bindingen hebben een eigenschap die verwijst naar een app-instelling voor verbindingsreeksen, bijvoorbeeld `Connection` voor [Blob-opslagtrigger](../articles/azure-functions/functions-bindings-storage-blob-trigger.md#configuration). Voor deze eigenschappen hebt u een toepassingsinstelling nodig die is gedefinieerd in de matrix `Values`. Bekijk de onderliggende tabel voor een lijst met veelgebruikte instellingen. <br/>Waarden moeten tekenreeksen zijn en geen JSON-objecten of matrices. Instellingsnamen kunnen geen dubbele punt (`:`) bevatten of een dubbel onderstrepingsteken (`__`). Dubbele onderstrepingstekens worden gereserveerd tijdens de runtime en de dubbele punt is gereserveerd voor [afhankelijkheidsinjectie](../articles/azure-functions/functions-dotnet-dependency-injection.md#working-with-options-and-settings). |
 | **`Host`** | Met de instellingen in dit gedeelte wordt het Functions-hostproces aangepast wanneer u projecten lokaal uitvoert. Deze instellingen staan los van de host.json-instellingen, die ook van toepassing zijn wanneer u projecten uitvoert in Azure. |
-| **`LocalHttpPort`** | Hiermee stelt u de standaardpoort in die wordt gebruikt wanneer de lokale Functions-host wordt uitgevoerd (`func host start` en `func run`). De opdrachtregeloptie `--port` heeft voorrang op deze instelling. |
+| **`LocalHttpPort`** | Hiermee stelt u de standaardpoort in die wordt gebruikt wanneer de lokale Functions-host wordt uitgevoerd (`func host start` en `func run`). De opdrachtregeloptie `--port` heeft voorrang op deze instelling. Wanneer u bijvoorbeeld in Visual Studio IDE uitvoert, kunt u het poort nummer wijzigen door te navigeren naar het venster Project eigenschappen-> debug en expliciet het poort nummer op te geven in een `host start --port <your-port-number>` opdracht die in het veld toepassings argumenten kan worden opgegeven. |
 | **`CORS`** | Definieert de oorsprong die is toegestaan voor [CORS (Cross-origin-resource delen)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing). Oorsprongen worden aangeleverd als een door komma's gescheiden lijst zonder spaties. De jokertekenwaarde (\*) wordt ondersteund, waarmee verzoeken van elke oorsprong toegestaan zijn. |
 | **`CORSCredentials`** |  Als deze instelling is ingesteld op `true`, zijn `withCredentials`-verzoeken toegestaan. |
 | **`ConnectionStrings`** | Een verzameling. Gebruik deze verzameling niet voor de verbindingsreeksen die worden gebruikt door uw functiebindingen. Deze verzameling wordt alleen gebruikt door frameworks die doorgaans een verbindingsreeks krijgen van het gedeelte `ConnectionStrings` van een configuratiebestand, bijvoorbeeld [Entity Framework](/ef/ef6/). Verbindingsreeksen in dit object zijn toegevoegd aan de omgeving met het providertype van [System.Data.SqlClient](/dotnet/api/system.data.sqlclient). Items in deze verzameling worden niet gepubliceerd naar Azure met andere app-instellingen. U moet deze waarden expliciet toevoegen aan de verzameling `Connection strings` van de instellingen van uw functie-app. Als u een [`SqlConnection`](/dotnet/api/system.data.sqlclient.sqlconnection) maakt in uw functiecode, moet u de verbindingsreekswaarde bewaren met uw andere verbindingen in **Toepassingsinstellingen** in de portal. |

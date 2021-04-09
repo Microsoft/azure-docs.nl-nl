@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 08/19/2020
 ms.author: dech
 ms.openlocfilehash: d8a6471d53ad4b2428504f9c53cbec6bc1967c49
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "93089635"
 ---
 # <a name="how-to-choose-between-standard-manual-and-autoscale-provisioned-throughput"></a>Kiezen tussen standaard (hand matig) en ingerichte door Voer voor automatisch schalen 
@@ -27,7 +27,7 @@ Wanneer u de ingerichte door Voer gebruikt, stelt u de door Voer in, gemeten in 
 
 In de volgende tabel ziet u een vergelijking op hoog niveau tussen standaard (hand matig) en automatisch schalen.
 
-|Beschrijving|Standaard (hand matig)|Automatisch schalen|
+|Description|Standaard (hand matig)|Automatisch schalen|
 |-------------|------|-------|
 |Geschikt voor|Workloads met constant of voorspelbaar verkeer|Werk belastingen met variabele of onvoorspelbaar verkeer. Zie [use cases of automatisch schalen](provision-throughput-autoscale.md#use-cases-of-autoscale).|
 |Uitleg|U voorziet in een vaste hoeveelheid RU/s `T` die gedurende een bepaalde periode statisch is, tenzij u deze hand matig wijzigt. Elke seconde kunt u de `T` door Voer tot ru/s gebruiken. <br/><br/>Als u bijvoorbeeld standaard (hand matig) 400 RU/s instelt, blijft de door Voer op 400 RU/s.|U stelt het hoogste of maximum aantal RU/s `Tmax` in dat u niet meer wilt voor het systeem. Het systeem schaalt de door Voer `T` zo automatisch `0.1* Tmax <= T <= Tmax` . <br/><br/>Als u bijvoorbeeld automatisch schalen instelt voor het maximum aantal RU/s 4000 RU/s, wordt het systeem geschaald tussen 400-4000 RU/s.|

@@ -9,10 +9,10 @@ ms.subservice: cosmosdb-cassandra
 ms.topic: how-to
 ms.date: 09/01/2019
 ms.openlocfilehash: d25e168e342e22af9dc41d31dd7e18530aaa22b8
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "93090508"
 ---
 # <a name="connect-to-azure-cosmos-db-cassandra-api-from-spark"></a>Verbinding maken met de Azure Cosmos DB Cassandra-API vanuit Spark
@@ -54,7 +54,7 @@ De volgende tabel geeft een lijst van Azure Cosmos DB Cassandra-API specifieke d
 
 Pas de door Voer en de mate van parallelle uitvoering van deze para meters aan op basis van de werk belasting die u verwacht voor uw Spark-taken en de door Voer die u hebt ingericht voor uw Cosmos DB-account.
 
-## <a name="connecting-to-azure-cosmos-db-cassandra-api-from-spark"></a>Verbinding maken met Azure Cosmos DB Cassandra-API vanuit Spark
+## <a name="connecting-to-azure-cosmos-db-cassandra-api-from-spark"></a>Verbinding maken met de Azure Cosmos DB Cassandra-API vanuit Spark
 
 ### <a name="cqlsh"></a>cqlsh
 De volgende opdrachten beschrijven hoe u verbinding maakt met Azure CosmosDB Cassandra-API van cqlsh.  Dit is handig voor validatie tijdens het uitvoeren van de voor beelden in Spark.<br>

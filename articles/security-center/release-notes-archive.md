@@ -7,12 +7,12 @@ ms.service: security-center
 ms.topic: reference
 ms.date: 03/04/2021
 ms.author: memildin
-ms.openlocfilehash: a00c11924d2c0f6860c297ab7e58da21da5e1975
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 5b3dd9ae4113c3c9fe4b0547f990dc7e912b99f5
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102634699"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105726410"
 ---
 # <a name="archive-for-whats-new-in-azure-security-center"></a>Wilt u archiveren wat er nieuw is in Azure Security Center?
 
@@ -268,7 +268,7 @@ Meer informatie over [assetinventarisatie](asset-inventory.md).
 
 ### <a name="added-support-for-azure-active-directory-security-defaults-for-multi-factor-authentication"></a>Ondersteuning toegevoegd voor standaardinstellingen voor beveiliging van Azure Active Directory (voor meervoudige verificatie)
 
-Security Center heeft volledige ondersteuning toegevoegd voor [standaardinstellingen voor de beveiliging](../active-directory/fundamentals/concept-fundamentals-security-defaults.md), de gratis identiteitsbeveiliging van Microsoft.
+Security Center heeft volledige ondersteuning toegevoegd voor de [standaard instellingen](../active-directory/fundamentals/concept-fundamentals-security-defaults.md)van de beveiliging, de gratis identiteits beveiliging van micro soft.
 
 Standaardwaarden voor beveiliging bieden vooraf geconfigureerde instellingen voor identiteitsbeveiliging om uw organisatie te beschermen tegen algemene identiteitsgerelateerde aanvallen. Standaardinstellingen voor beveiliging beschermen al meer dan 5 miljoen tenants in totaal; 50.000-tenants worden ook beveiligd door Security Center.
 
@@ -298,8 +298,8 @@ Om ervoor te zorgen dat alle gebruikers een consistente ervaring hebben, ongeach
 
 |Uniforme aanbeveling|Beschrijving wijziging|
 |----|:----|
-|**A vulnerability assessment solution should be enabled on your virtual machines** (Er moet een oplossing voor de evaluatie van beveiligingsproblemen op uw virtuele machines worden ingeschakeld)|Vervangt de volgende twee aanbevelingen:<br> **•** De ingebouwde oplossing voor evaluatie van beveiligingsproblemen inschakelen op virtuele machines (mogelijk gemaakt door Qualys) (nu afgeschaft) (opgenomen in Standaard-prijscategorie)<br> **•** Er moet een oplossing voor de evaluatie van beveiligingsproblemen op uw virtuele machines moeten worden geïnstalleerd (nu afgeschaft) (opgenomen in Standaard- en gratis prijscategorie)|
-|**Beveiligingsproblemen op uw virtuele machines moeten worden hersteld**|Vervangt de volgende twee aanbevelingen:<br>**•** Beveiligingsproblemen op uw virtuele machines herstellen (mogelijk gemaakt door Qualys) (nu afgeschaft)<br>**•** Beveiligingsproblemen moeten worden opgelost met een oplossing voor evaluatie van beveiligingsproblemen (nu afgeschaft)|
+|**A vulnerability assessment solution should be enabled on your virtual machines** (Er moet een oplossing voor de evaluatie van beveiligingsproblemen op uw virtuele machines worden ingeschakeld)|Vervangt de volgende twee aanbevelingen:<br> De ingebouwde oplossing voor de evaluatie van beveiligings problemen inschakelen op virtuele machines (mogelijk gemaakt door Qualys (nu afgeschaft) (inbegrepen bij de laag standaard)<br> De oplossing voor de evaluatie van beveiligings problemen moet worden geïnstalleerd op uw virtuele machines (nu afgeschaft) (standaard en gratis lagen)|
+|**Beveiligingsproblemen op uw virtuele machines moeten worden hersteld**|Vervangt de volgende twee aanbevelingen:<br>Beveiligings problemen op uw virtuele machines herstellen (mogelijk gemaakt door Qualys) (nu afgeschaft)<br>Beveiligings problemen moeten worden opgelost door een oplossing voor beveiligings evaluatie (nu afgeschaft)|
 |||
 
 U gebruikt nu dezelfde aanbeveling om de uitbreiding voor de evaluatie van beveiligingsproblemen van Security Center of een oplossing met een eigen licentie ("BYOL") van een partner, zoals Qualys of Rapid7, te implementeren.
@@ -312,20 +312,20 @@ Als u scripts, query's of automatiseringen hebt die verwijzen naar de vorige aan
 
 ##### <a name="before-august-2020"></a>Vóór augustus 2020
 
-|Aanbeveling|Bereik|
+| Aanbeveling|Bereik|
 |----|:----|
 |**De ingebouwde oplossing voor evaluatie van beveiligingsproblemen inschakelen op virtuele machines (mogelijk gemaakt door Qualys)**<br>Sleutel: 550e890b-e652-4d22-8274-60b3bdb24c63|Ingebouwd|
 |**Beveiligingsproblemen op uw virtuele machines herstellen (mogelijk gemaakt door Qualys)**<br>Sleutel: 1195afff-c881-495e-9bc5-1486211ae03f|Ingebouwd|
 |**Er moet een oplossing voor de evaluatie van beveiligingsproblemen op uw virtuele machines moeten worden geïnstalleerd**<br>Sleutel: 01b1ed4c-b733-4fee-b145-f23236e70cf3|BYOL (Bring Your Own License)|
 |**Beveiligingsproblemen moeten worden opgelost met een oplossing voor evaluatie van beveiligingsproblemen**<br>Sleutel: 71992a2a-d168-42e0-b10e-6b45fa2ecddb|BYOL (Bring Your Own License)|
-||||
+|||
 
 
 |Beleid|Bereik|
 |----|:----|
 |**Evaluatie van beveiligingsproblemen moet zijn ingeschakeld op virtuele machines**<br>Beleids-id: 501541f7-f7e7-4cd6-868c-4190fdad3ac9|Ingebouwd|
 |**Beveiligingsproblemen moeten worden opgelost met een oplossing voor evaluatie van beveiligingsproblemen**<br>Beleids-id: 760a85ff-6162-42b3-8d70-698e268f648c|BYOL (Bring Your Own License)|
-||||
+|||
 
 
 ##### <a name="from-august-2020"></a>Vanaf augustus 2020
@@ -334,12 +334,12 @@ Als u scripts, query's of automatiseringen hebt die verwijzen naar de vorige aan
 |----|:----|
 |**A vulnerability assessment solution should be enabled on your virtual machines** (Er moet een oplossing voor de evaluatie van beveiligingsproblemen op uw virtuele machines worden ingeschakeld)<br>Sleutel: ffff0522-1e88-47fc-8382-2a80ba848f5d|Ingebouwd en BYOL|
 |**Beveiligingsproblemen op uw virtuele machines moeten worden hersteld**<br>Sleutel: 1195afff-c881-495e-9bc5-1486211ae03f|Ingebouwd en BYOL|
-||||
+|||
 
 |Beleid|Bereik|
 |----|:----|
 |[**Evaluatie van beveiligingsproblemen moet zijn ingeschakeld op virtuele machines**](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f501541f7-f7e7-4cd6-868c-4190fdad3ac9)<br>Beleids-id: 501541f7-f7e7-4cd6-868c-4190fdad3ac9 |Ingebouwd en BYOL|
-||||
+|||
 
 
 ### <a name="new-aks-security-policies-added-to-asc_default-initiative--for-use-by-private-preview-customers-only"></a>Nieuw beveiligingsbeleid voor AKS toegevoegd aan ASC-standaardinitiatief: alleen voor gebruik door klanten van beperkte preview
@@ -350,7 +350,7 @@ De vroege fase van dit project bevat een beperkte preview en het toevoegen van n
 
 U kunt dit beleid veilig negeren en dit heeft geen invloed op uw omgeving. Als u het wilt inschakelen, meldt u zich voor de preview-versie aan op https://aka.ms/SecurityPrP en selecteert u een van de volgende opties:
 
-1. **Enkele preview-** : alleen deelnemen aan deze beperkte preview. Vermeld expliciet 'ASC doorlopend scannen' als de preview waaraan u wilt deelnemen.
+1. **Enkele preview-** : alleen deelnemen aan deze beperkte preview. Vermeld expliciet ' ASC doorlopende scan ' als het voor beeld dat u wilt toevoegen.
 1. **Doorlopend programma**: om deel te nemen aan deze en toekomstige beperkte previews. U moet een profiel en een privacyverklaring volt ooien.
 
 
@@ -899,7 +899,7 @@ Bedreigings beveiliging voor Azure Storage biedt nieuwe detecties met micro soft
 
 Organisaties met centraal beheerde beveiliging en IT/bewerkingen implementeren interne werk stroom processen om de vereiste actie binnen de organisatie te testen wanneer er discrepanties worden gedetecteerd in hun omgevingen. In veel gevallen kunnen deze werk stromen Herhaal bare processen en automatisering de processen binnen de organisatie aanzienlijk stroom lijnen.
 
-Vandaag introduceren we een nieuwe mogelijkheid in Security Center waarmee klanten automatiserings configuraties kunnen maken met behulp van Azure Logic Apps en om beleids regels te maken waarmee ze automatisch worden geactiveerd op basis van specifieke ASC-bevindingen zoals aanbevelingen of waarschuwingen. De Azure Logic-app kan worden geconfigureerd voor het uitvoeren van aangepaste acties die worden ondersteund door de enorme community van Logic app-connectors, of om een van de sjablonen te gebruiken die worden geboden door Security Center, zoals het verzenden van een e-mail bericht of het openen van een ServiceNow™-ticket.
+Vandaag introduceren we een nieuwe mogelijkheid in Security Center waarmee klanten automatiserings configuraties kunnen maken met behulp van Azure Logic Apps en om beleids regels te maken waarmee ze automatisch worden geactiveerd op basis van specifieke ASC-bevindingen zoals aanbevelingen of waarschuwingen. De Azure Logic-app kan worden geconfigureerd voor het uitvoeren van aangepaste acties die worden ondersteund door de enorme community van Logic app-connectors, of een van de sjablonen gebruiken die worden geboden door Security Center, zoals het verzenden van een e-mail bericht of het openen van een ServiceNow- &trade; ticket.
 
 Zie [werk stroom automatisering](workflow-automation.md)voor meer informatie over de mogelijkheden voor automatische en hand matige Security Center voor het uitvoeren van uw werk stromen.
 

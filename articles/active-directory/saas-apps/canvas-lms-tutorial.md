@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 01/20/2021
 ms.author: jeedes
 ms.openlocfilehash: a71dac55c860348f31ce8da27ab050a6c71a5c68
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101653023"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-canvas"></a>Zelfstudie: Azure Active Directory-integratie met Canvas
@@ -96,7 +96,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
-### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
+### <a name="create-an-azure-ad-test-user&quot;></a>Een Azure AD-testgebruiker maken
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
@@ -108,7 +108,7 @@ In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Porta
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
    1. Klik op **Create**.
 
-### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
+### <a name=&quot;assign-the-azure-ad-test-user&quot;></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie schakelt u B. Simon in om de eenmalige aanmelding van Azure te gebruiken door toegang te verlenen aan het canvas.
 
@@ -120,13 +120,13 @@ In deze sectie schakelt u B. Simon in om de eenmalige aanmelding van Azure te ge
 1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-### <a name="configure-canvas-sso"></a>Canvas-SSO configureren
+### <a name=&quot;configure-canvas-sso&quot;></a>Canvas-SSO configureren
 
 1. Meld u in een ander browservenster aan bij de bedrijfssite van Canvas als een beheerder.
 
 2. Ga naar **Courses \> Managed Accounts \> Microsoft**.
 
-    ![Canvas](./media/canvas-lms-tutorial/ic775990.png "Canvas")
+    ![Canvas](./media/canvas-lms-tutorial/ic775990.png &quot;Canvas")
 
 3. Selecteer in het navigatiedeelvenster aan de linkerkant **Authentication** en klik vervolgens op **Add New SAML Config**.
 

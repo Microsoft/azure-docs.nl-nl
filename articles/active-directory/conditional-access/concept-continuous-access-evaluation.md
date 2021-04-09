@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jlu
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a2c83fc0f4776e1ded2c8c12cb990ab227f048b
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: 44091cda479f2c0ccbe77bb9989ee2eda4c40f9d
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105109009"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105727090"
 ---
 # <a name="continuous-access-evaluation"></a>Continue toegangsevaluatie
 
@@ -167,7 +167,7 @@ Zie [overzicht van update kanalen voor Microsoft 365-apps](/deployoffice/overvie
 
 Beleids wijzigingen die door beheerders zijn aangebracht, kunnen tot een dag duren. Er is een aantal optimalisaties uitgevoerd om de vertraging tot twee uur te verminderen. Dit geldt echter niet voor alle scenario's. 
 
-Als er een nood geval is en u ervoor wilt zorgen dat uw bijgewerkte beleids regels direct worden toegepast op bepaalde gebruikers, moet u deze [Power shell-opdracht](/powershell/module/azuread/revoke-azureaduserallrefreshtoken?view=azureadps-2.0) gebruiken of de sessie intrekken in de gebruikers profiel pagina om de sessie van de gebruiker in te trekken, zodat de bijgewerkte beleids regels onmiddellijk worden toegepast.
+Als er een nood geval is en u ervoor wilt zorgen dat uw bijgewerkte beleids regels direct worden toegepast op bepaalde gebruikers, moet u deze [Power shell-opdracht](/powershell/module/azuread/revoke-azureaduserallrefreshtoken) gebruiken of de sessie intrekken in de gebruikers profiel pagina om de sessie van de gebruiker in te trekken, zodat de bijgewerkte beleids regels onmiddellijk worden toegepast.
 
 ### <a name="coauthoring-in-office-apps"></a>Cocreatie in Office-apps
 

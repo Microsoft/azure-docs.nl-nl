@@ -10,10 +10,10 @@ ms.author: normesta
 ms.subservice: logs
 ms.custom: subject-monitoring
 ms.openlocfilehash: b37586f66106e33b2a8dad034a6e7c131484be73
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100571626"
 ---
 # <a name="azure-blob-storage-monitoring-data-reference"></a>Naslag informatie voor Azure Blob Storage-bewakings gegevens
@@ -64,7 +64,7 @@ Azure Storage ondersteunt de volgende dimensies voor metrische gegevens in Azure
 
 ### <a name="dimensions-specific-to-blob-storage"></a>Dimensies die specifiek zijn voor Blob Storage
 
-| Dimensie naam | Beschrijving |
+| Dimensie naam | Description |
 | ------------------- | ----------------- |
 | **BlobType** | Het type BLOB voor alleen metrische gegevens van blobs. De ondersteunde waarden zijn **BlockBlob**, **PageBlob** en **Azure data Lake Storage**. Toevoeg-blobs zijn opgenomen in **BlockBlob**. |
 | **BlobTier** | Azure Storage biedt verschillende toegangs lagen, waarmee u gegevens van blob-objecten op de meest rendabele manier kunt opslaan. Meer weer geven in [Azure Storage BLOB-laag](../blobs/storage-blob-storage-tiers.md). De ondersteunde waarden zijn onder andere: <br/> <li>**Warm**: warme laag</li> <li>**Cool**: cool-laag</li> <li>**Archief**: laag van archief</li> <li>**Premium**: Premium-laag voor blok-BLOB</li> <li>**P4/P6/P10/P15/P20/P30/P40/P50/P60**: laag typen voor Premium-pagina-BLOB</li> <li>**Standaard**: laag type voor de standaard pagina-BLOB</li> <li>**Ongetierd**: laag type voor algemeen gebruik v1-opslag account</li> |

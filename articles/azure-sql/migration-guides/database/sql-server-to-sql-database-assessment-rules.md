@@ -11,10 +11,10 @@ ms.author: mathoma
 ms.reviewer: MashaMSFT
 ms.date: 12/15/2020
 ms.openlocfilehash: c407b62b5f0308fbb6d9ff7223a3554ca09592db
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105027207"
 ---
 # <a name="assessment-rules-for-sql-server-to-azure-sql-database-migration"></a>Beoordelings regels voor het SQL Server van Azure SQL Database migratie
@@ -25,7 +25,7 @@ Migratie hulpprogramma's valideren uw bron SQL Server-exemplaar door een aantal 
 In dit artikel vindt u een lijst met de regels die worden gebruikt om de uitvoer baarheid van het migreren van uw SQL Server-Data Base naar Azure SQL Database te evalueren. 
 
 
-## <a name="bulk-insert"></a>Bulksgewijs invoeren<a id="BulkInsert"></a>
+## <a name="bulk-insert"></a>Bulksgewijs invoegen<a id="BulkInsert"></a>
 
 **Titel: BULK INSERT met niet-Azure Blob-gegevens bron wordt niet ondersteund in Azure SQL Database.**   
 **Categorie**: probleem   
@@ -137,7 +137,7 @@ Het database compatibiliteits niveau is een waardevol hulp middel om de data bas
 **Advies**   
 Evalueren of de functionaliteit van de toepassing intact is wanneer het database compatibiliteits niveau is bijgewerkt naar 100 op Azure SQL Managed instance. U kunt ook naar SQL Server migreren op de virtuele machine van Azure
 
-## <a name="database-mail"></a>Data base mail<a id="DatabaseMail"></a>
+## <a name="database-mail"></a>Database-e-mail<a id="DatabaseMail"></a>
 
 **Titel: Database Mail wordt niet ondersteund in Azure SQL Database.**   
 **Categorie**: waarschuwing   

@@ -4,12 +4,12 @@ description: Uitzonde ringen vastleggen vanuit ASP.NET-Apps, samen met aanvraag-
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 07/11/2019
-ms.openlocfilehash: 36e916eabfca8e997fc3d46ff10f6201203457cd
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 926516075c7d43e6e800403a69ff3ab8f1233fcd
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "88936500"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105726988"
 ---
 # <a name="diagnose-exceptions-in-your-web-apps-with-application-insights"></a>Uitzonderingen in web-apps diagnosticeren met Application Insights
 Uitzonde ringen in uw Live Web-app worden gerapporteerd door [Application Insights](./app-insights-overview.md). U kunt mislukte aanvragen correleren met uitzonde ringen en andere gebeurtenissen op de client en de server, zodat u snel de oorzaken kunt vaststellen.
@@ -215,7 +215,7 @@ Niet-verwerkte uitzonde ringen die afkomstig zijn van controllers, hebben doorga
 ### <a name="prior-versions-support"></a>Ondersteuning voor eerdere versies
 Raadpleeg de volgende voor beelden om uitzonde ringen bij te houden als u MVC 4 (en eerder) van Application Insights Web SDK 2,5 (en eerder) gebruikt.
 
-Als de [customErrors](/previous-versions/dotnet/netframework-4.0/h0hfz6fc(v=vs.100)) -configuratie is `Off` , zijn uitzonde ringen beschikbaar voor het verzamelen van de [HTTP-module](/previous-versions/dotnet/netframework-3.0/ms178468(v=vs.85)) . Als dit echter is `RemoteOnly` (standaard) of `On` , wordt de uitzonde ring gewist en niet beschikbaar voor Application Insights om automatisch te verzamelen. U kunt dit oplossen door de [klasse System. Web. MVC. HandleErrorAttribute](/dotnet/api/system.web.mvc.handleerrorattribute?view=aspnet-mvc-5.2)te overschrijven en de overschreven klasse toe te passen, zoals wordt weer gegeven voor de verschillende MVC-versies hieronder ([github-bron](https://github.com/AppInsightsSamples/Mvc2UnhandledExceptions/blob/master/MVC2App/Controllers/AiHandleErrorAttribute.cs)):
+Als de [customErrors](/previous-versions/dotnet/netframework-4.0/h0hfz6fc(v=vs.100)) -configuratie is `Off` , zijn uitzonde ringen beschikbaar voor het verzamelen van de [HTTP-module](/previous-versions/dotnet/netframework-3.0/ms178468(v=vs.85)) . Als dit echter is `RemoteOnly` (standaard) of `On` , wordt de uitzonde ring gewist en niet beschikbaar voor Application Insights om automatisch te verzamelen. U kunt dit oplossen door de [klasse System. Web. MVC. HandleErrorAttribute](/dotnet/api/system.web.mvc.handleerrorattribute)te overschrijven en de overschreven klasse toe te passen, zoals wordt weer gegeven voor de verschillende MVC-versies hieronder ([github-bron](https://github.com/AppInsightsSamples/Mvc2UnhandledExceptions/blob/master/MVC2App/Controllers/AiHandleErrorAttribute.cs)):
 
 ```csharp
     using System;

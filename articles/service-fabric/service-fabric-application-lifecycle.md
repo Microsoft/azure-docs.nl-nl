@@ -4,10 +4,10 @@ description: Hierin wordt beschreven hoe u Service Fabric toepassingen ontwikkel
 ms.topic: conceptual
 ms.date: 1/19/2018
 ms.openlocfilehash: ae0c79cdaafc8fc016d463a01046f0a02121330a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98785732"
 ---
 # <a name="service-fabric-application-lifecycle"></a>Service Fabric-toepassingslevenscyclus
@@ -48,7 +48,7 @@ Zie [een toepassing implementeren](service-fabric-deploy-remove-applications.md)
 
 Zie [Inleiding tot de fout analyse service](service-fabric-testability-overview.md) voor meer informatie.
 
-## <a name="upgrade"></a>Upgrade uitvoeren
+## <a name="upgrade"></a>Upgraden
 1. Een *service ontwikkelaar* werkt de onderdeel Services van de geïnstantieerd toepassing bij en/of herstelt bugs en biedt een nieuwe versie van het service manifest.
 2. Een *toepassings ontwikkelaar* overschrijft en parameterizes de configuratie-en implementatie-instellingen van de consistente Services en biedt een nieuwe versie van het toepassings manifest. De ontwikkelaar van de toepassing neemt vervolgens de nieuwe versies van de service manifesten in de toepassing op en biedt een nieuwe versie van het toepassings type in een bijgewerkt toepassings pakket.
 3. Een *toepassings beheerder* neemt de nieuwe versie van het toepassings type op in de doel toepassing door de juiste para meters bij te werken.

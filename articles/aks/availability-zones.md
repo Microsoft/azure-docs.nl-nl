@@ -6,10 +6,10 @@ ms.custom: fasttrack-edit, references_regions, devx-track-azurecli
 ms.topic: article
 ms.date: 03/16/2021
 ms.openlocfilehash: 4c5b0ceb3f8e0b96f18a67ed0c7dbf1b56ac30da
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104583544"
 ---
 # <a name="create-an-azure-kubernetes-service-aks-cluster-that-uses-availability-zones"></a>Een AKS-cluster (Azure Kubernetes service) maken dat gebruikmaakt van beschikbaarheids zones
@@ -108,7 +108,7 @@ az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 Gebruik vervolgens de opdracht [kubectl beschrijven][kubectl-describe] om de knoop punten in het cluster weer te geven en te filteren op de waarde *failure-Domain.beta.kubernetes.io/zone* . Het volgende voor beeld is voor een bash-shell.
 
 ```console
-kubectl describe nodes | grep -e "Name:" -e "failure-domain.beta.kubernetes.io/zone"
+kubectl describe nodes | grep -e "Name:&quot; -e &quot;failure-domain.beta.kubernetes.io/zone"
 ```
 
 In de volgende voorbeeld uitvoer ziet u de drie knoop punten verdeeld over de opgegeven regio en beschikbaarheids zones, zoals *eastus2-1* voor de eerste beschikbaarheids zone en *eastus2-2* voor de tweede beschikbaarheids zone:

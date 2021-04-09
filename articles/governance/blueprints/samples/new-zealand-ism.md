@@ -4,10 +4,10 @@ description: Overzicht van het voor beeld van het Nieuw-Zeeland met beperkte bla
 ms.date: 03/22/2021
 ms.topic: sample
 ms.openlocfilehash: a52470ea45e6358007dc49122599e87091fbf8f7
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104803927"
 ---
 # <a name="new-zealand-ism-restricted-blueprint-sample"></a>Voor beeld van Nieuw-Zeeland met beperkte blauw druk

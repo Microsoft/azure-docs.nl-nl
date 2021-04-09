@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 03/09/2021
 ms.author: ambapat
 ms.openlocfilehash: c2548b1669366564809ed2fde725cb3399922a29
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104803338"
 ---
 Azure Key Vault-service ondersteunt twee resource typen: kluizen en beheerde Hsm's. In de volgende twee secties worden de service limieten voor elk van beide beschreven.

@@ -7,10 +7,10 @@ ms.date: 02/05/2021
 ms.author: mahender
 ms.custom: seodec18
 ms.openlocfilehash: 69fc0d6f3c4e18b34555a099f4e28e278ca3bdad
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100635384"
 ---
 # <a name="use-key-vault-references-for-app-service-and-azure-functions"></a>Gebruik Key Vault verwijzingen voor App Service en Azure Functions
@@ -38,7 +38,7 @@ Als u geheimen van Key Vault wilt lezen, moet er een kluis zijn gemaakt en moet 
 Een Key Vault verwijzing is van het formulier `@Microsoft.KeyVault({referenceString})` , waarbij `{referenceString}` wordt vervangen door een van de volgende opties:
 
 > [!div class="mx-tdBreakAll"]
-> | Verwijzings reeks                                                            | Beschrijving                                                                                                                                                                                 |
+> | Verwijzings reeks                                                            | Description                                                                                                                                                                                 |
 > |-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > | SecretUri =_SecretUri_                                                       | De **SecretUri** moet de volledige gegevenslaag URI zijn van een geheim in Key Vault, eventueel met inbegrip van een versie, bijvoorbeeld, `https://myvault.vault.azure.net/secrets/mysecret/` of `https://myvault.vault.azure.net/secrets/mysecret/ec96f02080254f109c51a1f14cdb1931`  |
 > | Kluisnaam =_kluis_; Geheim =_geheim_; SecretVersion =_SecretVersion_ | De **kluisnaam** is vereist en moet de naam van uw Key Vault bron zijn. De naam van het **geheim** is vereist en moet het doel geheim zijn. De **SecretVersion** is optioneel, maar als deze aanwezig is, is dit de versie van het geheim dat moet worden gebruikt. |

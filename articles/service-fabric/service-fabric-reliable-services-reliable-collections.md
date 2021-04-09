@@ -4,10 +4,10 @@ description: Service Fabric stateful services bieden betrouw bare verzamelingen 
 ms.topic: conceptual
 ms.date: 3/10/2020
 ms.openlocfilehash: 7d705f81b4ad31559886e43226febcd4cf1d345d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98784373"
 ---
 # <a name="introduction-to-reliable-collections-in-azure-service-fabric-stateful-services"></a>Inleiding tot betrouw bare verzamelingen in azure Service Fabric stateful Services
@@ -50,7 +50,7 @@ Vandaag, **micro soft. ServiceFabric. data. Collections** bevat drie verzameling
 * [Werken met betrouwbare verzamelingen](service-fabric-work-with-reliable-collections.md)
 * [Trans acties en vergren delingen](service-fabric-reliable-services-reliable-collections-transactions-locks.md)
 * Gegevens beheren
-  * [Back-ups maken en herstellen](service-fabric-reliable-services-backup-restore.md)
+  * [Back-up en herstel](service-fabric-reliable-services-backup-restore.md)
   * [Meldingen](service-fabric-reliable-services-notifications.md)
   * [Betrouwbare verzamelingserialisatie](service-fabric-reliable-services-reliable-collections-serialization.md)
   * [Serialisatie en upgrade](service-fabric-application-upgrade-data-serialization.md)

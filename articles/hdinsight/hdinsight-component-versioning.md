@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: deshriva
 ms.author: deshriva
 ms.date: 02/08/2021
-ms.openlocfilehash: 53ca2ac73fdec9d3b39ffc04cbb24aca707a72eb
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: dbd5b507fd4a7b2434158dbdc80584a7fd348732
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103490446"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105726580"
 ---
 # <a name="azure-hdinsight-versions"></a>Azure HDInsight-versies
 
@@ -21,12 +21,12 @@ HDInsight bundelt Apache Hadoop omgevings onderdelen en HDInsight-platform in ee
 
 Deze tabel geeft een lijst van de versies van HDInsight die beschikbaar zijn in de Azure Portal en andere implementatie methoden, zoals Power shell, CLI en de .NET SDK.
 
-| HDInsight-versie | VM-besturingssysteem | Releasedatum | Verval datum ondersteuning | Buitengebruikstellings datum | Hoge beschikbaarheid |
-| --- | --- | --- | --- | --- | --- |
-| [HDInsight 4.0](hdinsight-40-component-versioning.md) |Ubuntu 16.0.4 LTS |September 24, 2018 | | |Ja |
-| [HDInsight 3,6](hdinsight-36-component-versioning.md) |Ubuntu 16.0.4 LTS |4 april 2017      | * 30 juni 2021 |30 juni 2021 |Ja |
+| HDInsight-versie | VM-besturingssysteem | Releasedatum| Ondersteunings type | Verval datum ondersteuning | Buitengebruikstellings datum | Hoge beschikbaarheid |
+| --- | --- | --- | --- | --- | --- | ---|
+| [HDInsight 4.0](hdinsight-40-component-versioning.md) |Ubuntu 16.0.4 LTS |September 24, 2018 | [Standard](hdinsight-component-versioning.md#support-options-for-hdinsight-versions) | | |Yes |
+| [HDInsight 3,6](hdinsight-36-component-versioning.md) |Ubuntu 16.0.4 LTS |4 april 2017      | [Basic](hdinsight-component-versioning.md#support-options-for-hdinsight-versions) | Verval datum van de standaard ondersteuning van 30 juni 2021 <br> Basic Support verloop: 3 april 2022 |4 april 2022 |Yes |
 
-* We verlengen de ondersteunings periode voor bepaalde cluster typen van HDInsight 3,6. Zie [versies van HDInsight 3,6-onderdelen](hdinsight-36-component-versioning.md).
+* Vanaf 1 juli 2021 micro soft biedt Basic Support voor bepaalde cluster typen van HDI 3,6. Zie [versies van HDInsight 3,6-onderdelen](hdinsight-36-component-versioning.md).
 
 ## <a name="release-notes"></a>Opmerkingen bij de release
 
@@ -34,9 +34,13 @@ Zie [release opmerkingen voor hdinsight](hdinsight-release-notes.md)voor aanvull
 
 ## <a name="support-options-for-hdinsight-versions"></a>Ondersteunings opties voor HDInsight-versies
 
-HDInsight biedt standaard ondersteuning. dit wordt gedefinieerd als een tijds periode waarin een HDInsight-versie wordt ondersteund door de klanten service en ondersteuning van micro soft.
+Ondersteuning wordt gedefinieerd als een tijds periode waarin een HDInsight-versie wordt ondersteund door de klanten service en ondersteuning van micro soft. HDInsight biedt twee soorten ondersteuning: 
+- **Standaard ondersteuning** is een tijds periode waarin micro soft updates en ondersteuning biedt voor HDInsight-clusters.  
+    Het is raadzaam om oplossingen te bouwen met de meest recente volledig ondersteunde versie. 
+- **Basic Support** is een periode waarin micro soft beperkte onderhoud levert aan de HDInsight-resource provider. HDInsight-installatie kopieën en OSS-onderdelen (open-source software) worden niet onderhouden.   Er worden alleen kritieke beveiligings correcties op HDInsight-clusters geïnstalleerd.  
+  Micro soft moedigt het maken van nieuwe clusters niet aan of bouwt geen verse oplossingen op wanneer een versie in Basic Support. Het is raadzaam om bestaande clusters te migreren naar de meest recente volledig ondersteunde versie. 
 
-**Verval** van de ondersteuning houdt in dat micro soft geen ondersteuning meer biedt voor de specifieke HDInsight-versie. En is niet meer beschikbaar via de Azure Portal voor het maken van een cluster.
+**Verval** van de ondersteuning houdt in dat micro soft geen ondersteuning meer biedt voor de specifieke HDInsight-versie. En is mogelijk niet meer beschikbaar via de Azure Portal voor het maken van een cluster.
 
 **Buiten** gebruik stellen wordt aangegeven dat bestaande clusters van een HDInsight-versie als zodanig blijven worden uitgevoerd. Nieuwe clusters van deze versie kunnen niet op een wille keurige manier worden gemaakt, met inbegrip van de CLI en Sdk's. Andere functies van het besturings systeem, zoals hand matig schalen en automatisch schalen, zijn niet gegarandeerd na de pensionerings datum. Ondersteuning is niet beschikbaar voor niet-verouderde versies.
 

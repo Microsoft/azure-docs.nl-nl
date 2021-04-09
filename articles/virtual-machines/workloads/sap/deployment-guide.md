@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 07/16/2020
 ms.author: sedusch
 ms.openlocfilehash: 5d6ea75936383388a57a7822f054e0ea7297471e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101695512"
 ---
 # <a name="azure-virtual-machines-deployment-for-sap-netweaver"></a>Azure Virtual Machines-implementatie voor SAP NetWeaver
@@ -828,7 +828,7 @@ Als u een virtuele machine implementeert vanuit Azure Marketplace, is deze stap 
 
 Er is geen interactie van de gebruiker vereist om de Azure VM-agent bij te werken. De VM-agent wordt automatisch bijgewerkt en het opnieuw opstarten van de VM is niet vereist.
 
-#### <a name="linux"></a><a name="6889ff12-eaaf-4f3c-97e1-7c9edc7f7542"></a>Spreek
+#### <a name="linux"></a><a name="6889ff12-eaaf-4f3c-97e1-7c9edc7f7542"></a>Linux
 
 Gebruik de volgende opdrachten om de VM-agent voor Linux te installeren:
 

@@ -2,16 +2,17 @@
 title: Ondersteuning voor out-of-process-Attestation met Intel SGX quote helper Daemonset op Azure (preview-versie)
 description: DaemonSet voor het genereren van de offerte buiten het SGX-toepassingsproces. In dit artikel wordt uitgelegd hoe de out-of-proc Attestation-faciliteit rovided is voor vertrouwelijke werk belastingen die binnen een container worden uitgevoerd.
 ms.service: container-service
+ms.subservice: confidential-computing
 author: agowdamsft
 ms.topic: overview
 ms.date: 2/12/2021
 ms.author: amgowda
-ms.openlocfilehash: 5d872032ea5b4e08c3f436dd3bfc202786d8514d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 0ebeb96557b7e20d123577c0ab9c8fc392abbfba
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102553252"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105932622"
 ---
 # <a name="platform-software-management-with-sgx-quote-helper-daemon-set-preview"></a>Platform software beheer met SGX quote helper daemon set (preview-versie)
 

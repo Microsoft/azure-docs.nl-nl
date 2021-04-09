@@ -5,21 +5,21 @@ services: front-door
 author: duongau
 ms.service: frontdoor
 ms.topic: conceptual
-ms.date: 02/18/2021
+ms.date: 03/31/2021
 ms.author: yuajia
-ms.openlocfilehash: 8e6ceebc9e92dabe66baeb9aeff0ae9692e2bdad
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e3e5333b339101676582cec03dbb960148d59b56
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101099150"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106067551"
 ---
 # <a name="what-is-a-rule-set-for-azure-front-door-standardpremium-preview"></a>Wat is een regel die is ingesteld voor Azure front deur Standard/Premium (preview)?
 
 > [!Note]
 > Deze documentatie is voor Azure front deur Standard/Premium (preview). Zoekt u informatie over de voor deur van Azure? [Hier](../front-door-overview.md)weer geven.
 
-Een regel reeks is een aangepaste regel engine waarmee een combi natie van regels wordt gegroepeerd in één set die u aan meerdere routes kunt koppelen. Met de regel instellingen kunt u aanpassen hoe aanvragen worden verwerkt aan de rand en hoe de voor deur van Azure deze aanvragen verwerkt.
+Een regel reeks is een aangepaste regel engine waarmee een combi natie van regels in één set wordt gegroepeerd. U kunt een regelset met meerdere routes koppelen. Met de regel instellingen kunt u aanpassen hoe aanvragen worden verwerkt aan de rand en hoe de voor deur van Azure deze aanvragen afhandelt.
 
 > [!IMPORTANT]
 > Azure front deur Standard/Premium (preview) is momenteel beschikbaar als open bare preview.
@@ -32,7 +32,7 @@ Een regel reeks is een aangepaste regel engine waarmee een combi natie van regel
 
 * Router aanvragen naar mobiele of Desktop versies van uw toepassing op basis van het type client apparaat.
 
-* Omleidings mogelijkheden gebruiken om 301, 302, 307 en 308 te retour neren naar de client om deze naar nieuwe hostnamen, paden, query reeksen of protocollen te sturen.
+* Omleidings mogelijkheden gebruiken om 301, 302, 307 en 308 te retour neren naar de client om ze te omleiden naar nieuwe hostnamen, paden, query reeksen of protocollen.
 
 * De cacheconfiguratie van uw route dynamisch aanpassen op basis van de binnenkomende aanvragen.
 
@@ -60,16 +60,19 @@ Met de regel instellingen voor de Azure front-deur kunt u een combi natie van co
 
 Raadpleeg [Azure-abonnement en service limieten, quota's en beperkingen](../../azure-resource-manager/management/azure-subscription-service-limits.md)voor meer quotum limieten.
 
-* *Set* Rules: een set regels die wordt gekoppeld aan een of meer [routes](concept-route.md). Elke configuratie is beperkt tot 25 regels. U kunt maximaal 10 configuraties maken.
+* *Rule set*: een set regels die wordt gekoppeld aan een of meer [routes](concept-route.md).
 
-* *Regel voor regels instellen*: een regel die bestaat uit Maxi maal 10 match voorwaarden en vijf acties. Regels zijn lokaal voor een regelset en kunnen niet worden geëxporteerd voor gebruik in meerdere regel sets. Gebruikers kunnen dezelfde regel in meerdere regel sets maken.
+* *Regel* regelset: een regel die bestaat uit Maxi maal 10 match voorwaarden en vijf acties. Regels zijn lokaal voor een regelset en kunnen niet worden geëxporteerd voor gebruik in meerdere regel sets. Gebruikers kunnen dezelfde regel in meerdere regel sets maken.
 
-* *Voorwaarde voor overeenkomst*: Er zijn talrijke voorwaarden voor overeenkomst die kunnen worden gebruikt voor het parseren van uw binnenkomende aanvragen. Een regel kan uit maximaal 10 voorwaarden voor overeenkomst bestaan. De voorwaarden voor overeenkomst worden geëvalueerd met de operator **EN**. *Reguliere expressie wordt in voor waarden ondersteund*. Een volledige lijst met match voorwaarden vindt u in de [voor waarde Rule set](concept-rule-set-match-conditions.md).
+* *Match-voor waarde*: er zijn veel match voorwaarden die kunnen worden gebruikt voor het parseren van uw binnenkomende aanvragen. Een regel kan uit maximaal 10 voorwaarden voor overeenkomst bestaan. De voorwaarden voor overeenkomst worden geëvalueerd met de operator **EN**. *Reguliere expressie wordt in voor waarden ondersteund*. Een volledige lijst met match-voor waarden vindt u in de [voor waarden van de regel instellingen](concept-rule-set-match-conditions.md).
 
 * *Actie*: acties bepalen hoe afd de inkomende aanvragen verwerkt op basis van de overeenkomende voor waarden. U kunt het gedrag van caches wijzigen, aanvraag headers/reactie headers wijzigen, URL-omleidingen omschrijven en omleiden van URL. *Server variabelen worden ondersteund voor actie*. Een regel kan uit maximaal 10 voorwaarden voor overeenkomst bestaan. Een volledige lijst met acties kan acties van een [regelset](concept-rule-set-actions.md)vinden.
+
+## <a name="arm-template-support"></a>Ondersteuning voor ARM-sjablonen
+
+Regel sets kunnen worden geconfigureerd met behulp van Azure Resource Manager sjablonen. [Bekijk een voorbeeld sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-rule-set). U kunt het gedrag aanpassen door gebruik te maken van de JSON-of Bicep-fragmenten die zijn opgenomen in de voor beelden van de documentatie voor voor waarden en [acties](concept-rule-set-actions.md)voor de [overeenkomst](concept-rule-set-match-conditions.md) .
 
 ## <a name="next-steps"></a>Volgende stappen
 
 * Meer informatie over het [maken van een voor deur standaard/Premium](create-front-door-portal.md).
 * Meer informatie over het configureren van uw eerste [regelset](how-to-configure-rule-set.md).
- 

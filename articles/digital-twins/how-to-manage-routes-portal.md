@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/22/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: df826a682eec15d09b60857e63c363b0f9941c01
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.openlocfilehash: 31f960b39e771e7bfbf67c6e52c5da8e1fc6e0ec
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104779933"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105932451"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-portal"></a>Eind punten en routes beheren in azure Digital Apparaatdubbels (Portal)
 
@@ -153,7 +153,9 @@ Als u een gebeurtenis filter wilt toevoegen tijdens het maken van een gebeurteni
 U kunt een of meer algemene filter opties selecteren of de geavanceerde filter opties gebruiken om uw eigen aangepaste filters te schrijven.
 
 >[!NOTE]
-> Filters zijn **hoofdletter gevoelig** en moeten overeenkomen met de payload-aanvraag (die mogelijk niet noodzakelijkerwijs overeenkomt met het model geval).
+> Filters zijn **hoofdletter gevoelig** en moeten overeenkomen met de payload-aanvraag. 
+>
+> Voor telemetrie-filters betekent dit dat de behuizing moet overeenkomen met het hoofdletter gebruik dat wordt verzonden door het apparaat, niet noodzakelijkerwijs de behuizing die is gedefinieerd in het model van de twee.
 
 #### <a name="use-the-basic-filters"></a>De basis filters gebruiken
 

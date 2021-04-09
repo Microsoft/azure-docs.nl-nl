@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/10/2021
 ms.author: inhenkel
-ms.openlocfilehash: edffa2dddd0ec877a4b825a69a76fb158928c89f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 2922586d586dbbb98ae85fb86f3f76889a75aa6b
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103016760"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106067398"
 ---
 # <a name="content-protection-overview"></a>Overzicht van inhoudsbeveiliging
 
@@ -117,7 +117,7 @@ De volgende overwegingen zijn van toepassing:
 In de volgende artikelen worden de volgende stappen beschreven om aan de slag te gaan met inhouds beveiliging:
 
 * [Beveiligen met opslag versleuteling](media-services-rest-storage-encryption.md)
-* [Beveiligen met AES-versleuteling](media-services-protect-with-aes128.md)
+* [Beveiligen met AES-versleuteling](media-services-playready-license-template-overview.md)
 * [Beveiligen met PlayReady en/of Widevine](media-services-protect-with-playready-widevine.md)
 * [Beveiligen met FairPlay](media-services-protect-hls-with-FairPlay.md)
 

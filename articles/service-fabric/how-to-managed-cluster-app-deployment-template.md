@@ -3,12 +3,12 @@ title: Een Service Fabric Managed cluster (preview)-toepassing implementeren met
 description: Een toepassing implementeren in een Azure Service Fabric Managed cluster (preview) met behulp van een Azure Resource Manager sjabloon.
 ms.topic: how-to
 ms.date: 02/15/2021
-ms.openlocfilehash: b2d73180de61f44850b9c52a7ac24b0c23c36db2
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: e860c77d77e3aabb70f70defdaa25de14e77e0e1
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100642395"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105728008"
 ---
 # <a name="deploy-a-service-fabric-managed-cluster-preview-application-using-arm-template"></a>Een Service Fabric Managed cluster (preview)-toepassing implementeren met ARM-sjabloon
 
@@ -94,7 +94,7 @@ De voorbeeld toepassing bevat [Azure Resource Manager sjablonen](https://github.
 | ---------------------- | ------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | clusterName            | De naam van het cluster waarnaar u wilt implementeren | SF-cluster123                                                |                                                              |
 | toepassing            | De naam van de toepassing                 | Stemmen                                                       |
-| versie    | De resource-ID, het toepassings type en de versie van de app.       | /providers/Microsoft.ServiceFabric/managedClusters/sf-cluster-123/applicationTypes/VotingType/versions/1.0.0                                               | Moet overeenkomen met ApplicationManifest.xml                 |              |
+| versie    | De resource-ID, het toepassings type en de versie van de app.       | /providers/Microsoft.ServiceFabric/managedClusters/sf-cluster-123/applicationTypes/VotingType/versions/1.0.0                                               | Moet overeenkomen met ApplicationManifest.xml                 |
 | serviceName            | De naam van de service         | VotingWeb                                             | Moet de indeling Service type hebben            |
 | serviceTypeName        | De type naam van de service                | VotingWebType                                                    | Moet overeenkomen met ServiceManifest.xml                 |
 | appPackageUrl          | De URL van de Blob-opslag van de toepassing     | https: \/ /servicefabricapps.blob.core.Windows.net/apps/voting.sfpkg | De URL van het toepassings pakket in Blob Storage (de procedure voor het instellen van de URL wordt verderop in het artikel beschreven) |

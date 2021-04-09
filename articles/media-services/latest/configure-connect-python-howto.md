@@ -14,12 +14,12 @@ ms.topic: how-to
 ms.date: 11/18/2020
 ms.author: inhenkel
 ms.custom: devx-track-python
-ms.openlocfilehash: de78008a4645690cfc900f77670204bb892daf51
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 24e2ba4027dc818256dc9572f697fe7ec5a5a56b
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105042965"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105960687"
 ---
 # <a name="connect-to-media-services-v3-api---python"></a>Verbinding maken met Media Services v3 API-python
 
@@ -31,7 +31,7 @@ In dit artikel wordt beschreven hoe u verbinding maakt met de Azure Media Servic
 
 - Python downloaden via [python.org](https://www.python.org/downloads/)
 - Zorg ervoor dat u de `PATH` omgevings variabele instelt
-- [Een Azure Media Services-account maken](./create-account-howto.md). Vergeet niet welke namen u gebruikt voor de resourcegroep en het Media Services-account.
+- [Een Azure Media Services-account maken](./account-create-how-to.md). Vergeet niet welke namen u gebruikt voor de resourcegroep en het Media Services-account.
 - Volg de stappen in het onderwerp [Access api's](./access-api-howto.md) om de Service-Principal-verificatie methode te selecteren. Noteer de abonnements-ID ( `SubscriptionId` ), de client-id van de toepassing () `AadClientId` , de verificatie sleutel ( `AadSecret` ) en de Tenant-id ( `AadTenantId` ) die u nodig hebt in de volgende stappen.
 
 > [!IMPORTANT]

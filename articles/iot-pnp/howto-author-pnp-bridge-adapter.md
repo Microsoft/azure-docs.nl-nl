@@ -7,12 +7,12 @@ ms.date: 1/20/2021
 ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 9a7028dfaeb94e87366de7acfa8cebc4c2f4c767
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ac359e73ae71fd2163fb178caab4a2b5f908a008
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98746823"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106057453"
 ---
 # <a name="extend-the-iot-plug-and-play-bridge"></a>De IoT Plug en Play-brug uitbreiden
 Met de [iot Plug en Play-brug](concepts-iot-pnp-bridge.md#iot-plug-and-play-bridge-architecture) kunt u de bestaande apparaten die zijn gekoppeld aan een gateway, verbinden met uw IOT-hub. U gebruikt de Bridge om IoT Plug en Play-interfaces toe te wijzen aan de gekoppelde apparaten. Een IoT Plug en Play-interface definieert de telemetrie die een apparaat verzendt, de eigenschappen gesynchroniseerd tussen het apparaat en de Cloud en de opdrachten waarop het apparaat reageert. U kunt de open-source Bridge-toepassing installeren en configureren op Windows-of Linux-gateways. Daarnaast kan de Bridge worden uitgevoerd als een Azure IoT Edge runtime-module.

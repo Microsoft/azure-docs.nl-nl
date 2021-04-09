@@ -7,10 +7,10 @@ ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
 ms.openlocfilehash: 536b9a9a0d1a7b48841938eef44d181d22b87bf4
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105609528"
 ---
 In deze Snelstartgids leert u hoe u een gesprek start met behulp van de Azure Communication Services-SDK voor iOS.

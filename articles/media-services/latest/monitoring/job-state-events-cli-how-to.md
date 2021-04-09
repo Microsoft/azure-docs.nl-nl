@@ -12,12 +12,12 @@ ms.topic: how-to
 ms.date: 03/17/2021
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 47d079aa5038a5ef09df30f0561c258bfbf6a9f7
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 967b509ff4832bb8c70c5802699d62f1b209c516
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104609325"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105959650"
 ---
 # <a name="create-and-monitor-media-services-events-with-event-grid-using-the-azure-cli"></a>Media Services gebeurtenissen maken en bewaken met Event Grid met behulp van de Azure CLI
 
@@ -34,7 +34,7 @@ In dit artikel gebruikt u de Azure CLI om u te abonneren op gebeurtenissen voor 
 
     Momenteel werken niet alle [Media Services v3 CLI](/cli/azure/ams)-opdrachten in Azure Cloud Shell. U wordt aangeraden de CLI lokaal te gebruiken.
 
-- [Een Azure Media Services-account maken](../create-account-howto.md).
+- [Een Azure Media Services-account maken](../account-create-how-to.md).
 
     Vergeet niet de waarden die u hebt gebruikt voor de namen van de resourcegroep en het Media Services-account.
 

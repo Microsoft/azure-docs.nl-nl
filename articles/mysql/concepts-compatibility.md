@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
 ms.openlocfilehash: cba9615a8c76387b593109bc2174ab4718f1750a
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105609305"
 ---
 # <a name="mysql-drivers-and-management-tools-compatible-with-azure-database-for-mysql"></a>MySQL-Stuur Programma's en-beheer hulpprogramma's die compatibel zijn met Azure Database for MySQL
@@ -51,7 +51,7 @@ Het compatibiliteits voordeel kan ook worden uitgebreid naar beheer hulpprogramm
 | **SQL-query automatisch aanvullen** | X | X |  | X |
 | **Gegevens importeren en exporteren** | X | X | X | X |
 | **Exporteren naar meerdere indelingen** | X | X | X | X |
-| **Backup (Back-up) en Restore** (Herstel) |  | X |  | X |
+| **Back-up en herstel** |  | X |  | X |
 | **Server parameters weer geven** | X | X | X | X |
 | **Client verbindingen weer geven** | X | X | X | X |
 

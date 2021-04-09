@@ -2,18 +2,18 @@
 title: Een Azure App Configuration-archief maken met behulp van een Azure Resource Manager-sjabloon (ARM-sjabloon)
 titleSuffix: Azure App Configuration
 description: Meer informatie over het maken van een Azure App Configuration-archief met behulp van een Azure Resource Manager-sjabloon (ARM-sjabloon).
-author: ZhijunZhao
-ms.author: zhijzhao
+author: GrantMeStrength
+ms.author: jken
 ms.date: 10/16/2020
-ms.service: azure-resource-manager
+ms.service: azure-app-configuration
 ms.topic: quickstart
 ms.custom: subject-armqs
-ms.openlocfilehash: c35b6d27a5e6d7ffd2a9f76ea201af4a138a77df
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c5976053e32bcc97e57ef8f74b3249df83d322c4
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99219108"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105933233"
 ---
 # <a name="quickstart-create-an-azure-app-configuration-store-by-using-an-arm-template"></a>Quickstart: Een Azure App Configuration-archief maken met behulp van een ARM-sjabloon
 

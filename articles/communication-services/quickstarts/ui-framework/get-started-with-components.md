@@ -7,12 +7,12 @@ ms.author: dademath
 ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 6f4a8e8f26e88a73fc73c309ef336813282589f3
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 336059007cfca40a74ad5a4395c6f9a59215bb58
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103488173"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105825778"
 ---
 # <a name="quickstart-get-started-with-ui-framework-base-components"></a>Snelstartgids: aan de slag met basis onderdelen van UI Framework
 
@@ -52,7 +52,7 @@ Aan het einde van dit proces moet u een volledige toepassing in de map hebben `m
 
 ### <a name="install-the-package"></a>Het pakket installeren
 
-Gebruik de opdracht `npm install` voor het installeren van de clientbibliotheek voor oproepen voor Javascript in Azure Communication Services. Verplaats de meegeleverde tarball (private preview) naar de map My-app.
+Gebruik de `npm install` opdracht om de Azure Communication Services-aanroepende SDK voor Java script te installeren. Verplaats de meegeleverde tarball (private preview) naar de map My-app.
 
 ```console
 
@@ -76,7 +76,7 @@ npm run start
 
 ## <a name="object-model"></a>Objectmodel
 
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de client bibliotheek voor de Azure Communication Services-gebruikers interface:
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de gebruikers interface-SDK van Azure Communication Services:
 
 | Naam                                  | Beschrijving                                                  |
 | ------------------------------------- | ------------------------------------------------------------ |

@@ -8,10 +8,10 @@ ms.date: 04/23/2020
 ms.author: byvinyal
 ms.custom: seodec18
 ms.openlocfilehash: bf230032afe80680dc392c2a74da2a5aef381983
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100586100"
 ---
 # <a name="monitor-apps-in-azure-app-service"></a>Apps in Azure App Service bewaken
@@ -31,7 +31,7 @@ Als de app wordt gehost in een *Basic*-, *Standard*-of *Premium* -abonnement, wo
 
 Quota voor gratis of gedeelde apps zijn:
 
-| Quota | Beschrijving |
+| Quota | Description |
 | --- | --- |
 | **CPU (kort)** | De hoeveelheid CPU die is toegestaan voor deze app in een interval van 5 minuten. Dit quotum wordt om de vijf minuten opnieuw ingesteld. |
 | **CPU (dag)** | De totale hoeveelheid CPU die op een dag is toegestaan voor deze app. Dit quotum wordt om de 24 uur opnieuw ingesteld om middernacht UTC. |

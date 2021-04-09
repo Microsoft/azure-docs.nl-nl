@@ -12,10 +12,10 @@ ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
 ms.openlocfilehash: 702cc1fc8b135b2eb4af9106a81946873918c4fa
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101694390"
 ---
 # <a name="azure-synapse-analytics--workload-management-portal-monitoring"></a>Azure Synapse Analytics-werk belasting Beheerportal bewaking
@@ -26,7 +26,7 @@ Er zijn twee verschillende categorieën met metrische gegevens over werkbelastin
 
 ## <a name="workload-management-metric-definitions"></a>Metrische definities van workload Management
 
-|Naam meetwaarde                    |Beschrijving  |Aggregatietype |
+|Naam meetwaarde                    |Description  |Aggregatietype |
 |-------------------------------|-------------|-----------------|
 |Effectief cap-resource percentage | *Effectief cap resource percent* is een vaste limiet voor het percentage resources dat door de werkbelasting groep toegankelijk is, waarbij rekening wordt gehouden met een *effectief min resource percentage* dat is toegewezen aan andere werkbelasting groepen. De *werkelijke Cap-resource procentwaarde* wordt geconfigureerd met behulp `CAP_PERCENTAGE_RESOURCE` van de para meter in de syntaxis voor het maken van een [werkbelasting groep](/sql/t-sql/statements/create-workload-group-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) .  De geldige waarde wordt hier beschreven.<br><br>Als een werkbelasting groep bijvoorbeeld `DataLoads` is gemaakt met `CAP_PERCENTAGE_RESOURCE` = 100 en een andere werkbelasting groep wordt gemaakt met een effectief min resource percentage van 25%, is het percentage van de *effectief cap-resource* voor de `DataLoads` werkbelasting groep 75%.<br><br>Het *resource percentage van de effectief cap* bepaalt de bovengrens van gelijktijdigheid (en dus mogelijk door Voer) die een werkbelasting groep kan behalen.  Als er nog een extra door Voer is vereist dan wat momenteel wordt gerapporteerd door het *effectiefste Cap-percentage voor resources* , verhoogt u de `CAP_PERCENTAGE_RESOURCE` , verlaagt u de `MIN_PERCENTAGE_RESOURCE` andere werkbelasting groepen of verkleint u het exemplaar om meer resources toe te voegen.  Het verminderen van de `REQUEST_MIN_RESOURCE_GRANT_PERCENT` kan gelijktijdigheid verhogen, maar kan de algemene door Voer niet verhogen.| Min, Gem, Max |
 |Effectief min resource percentage |*Effectief min resource percentage* is het minimale percentage resources dat voor de werkbelasting groep is gereserveerd en geïsoleerd, waarbij rekening wordt gehouden met het minimum service niveau.  De werkelijke minimale resource procentuele waarde wordt geconfigureerd met behulp `MIN_PERCENTAGE_RESOURCE` van de para meter in de syntaxis [groep maken](/sql/t-sql/statements/create-workload-group-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) .  De geldige waarde wordt [hier](/sql/t-sql/statements/create-workload-group-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json?view=azure-sqldw-latest&preserve-view=true#effective-values)beschreven.<br><br>Gebruik het aggregatie type Sum wanneer deze metriek niet is gefilterd en ongesplitst om de totale isolatie van de werk belasting te bewaken die op het systeem is geconfigureerd.<br><br>Het *werkelijke minimale resource percentage* bepaalt de laagste grens van gegarandeerde gelijktijdigheid (en dus gegarandeerde door Voer) die een werkbelasting groep kan belasten.  Als er extra gegarandeerde resources nodig zijn dan wordt gerapporteerd door de *werkelijke minimale resource procentuele* waarde, verhoogt u de `MIN_PERCENTAGE_RESOURCE` para meter die is geconfigureerd voor de werkbelasting groep.  Het verminderen van de `REQUEST_MIN_RESOURCE_GRANT_PERCENT` kan gelijktijdigheid verhogen, maar kan de algemene door Voer niet verhogen. |Min, Gem, Max|

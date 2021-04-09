@@ -15,12 +15,12 @@ ms.date: 01/04/2021
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro;
-ms.openlocfilehash: 24ff39fba5ce4b484f23595a9f7d718b12faae10
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: c4ab8c9f4e1f9dae8c10e155729c639c089fb77a
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102037265"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105727112"
 ---
 # <a name="classic-subscription-administrator-roles-azure-roles-and-azure-ad-roles"></a>Klassieke abonnementsbeheerdersrollen, Azure-rollen en Azure AD-rollen
 
@@ -115,7 +115,7 @@ In algemene zin worden Azure-rollen gebruikt voor het beheren van Azure-resource
 | --- | --- |
 | Toegang tot Azure-resources beheren | Toegang tot Azure Active Directory-resources beheren |
 | Ondersteuning voor aangepaste rollen | Ondersteuning voor aangepaste rollen |
-| Bereik kan worden opgegeven op meerdere niveaus (beheergroep, abonnement, resourcegroep, resource) | Bereik is op tenantniveau |
+| Bereik kan worden opgegeven op meerdere niveaus (beheergroep, abonnement, resourcegroep, resource) | [Bereik](../active-directory/roles/custom-overview.md#scope) kan worden opgegeven op Tenant niveau (organisatiebreed) of op een afzonderlijk object (bijvoorbeeld een specifieke toepassing) |
 | Gegevens van rollen zijn beschikbaar vanuit Azure Portal, Azure CLI, Azure PowerShell, Azure Resource Manager-sjablonen en de REST-API | Gegevens van rollen zijn beschikbaar vanuit de beheerportal van Azure, het beheercentrum van Microsoft 365, Microsoft Graph en AzureAD PowerShell |
 
 ### <a name="do-azure-roles-and-azure-ad-roles-overlap"></a>Overlappen Azure-rollen en Azure AD-rollen elkaar?

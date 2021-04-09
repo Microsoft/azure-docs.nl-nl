@@ -10,12 +10,12 @@ ms.date: 03/10/2021
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: ddc43d9a030b85f8a1becd4be2573303207ad345
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: b7bf924ba8514aa8da1d466ea4852f3f9caaf646
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105107013"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105726647"
 ---
 ## <a name="prerequisites"></a>Vereisten
 Voordat u aan de slag gaat, moet u het volgende doen:
@@ -275,5 +275,4 @@ Vervang door `<USER ID>` de gebruikers-id van de communicatie services van de de
 ## <a name="run-the-code"></a>De code uitvoeren
 
 Klik in Xcode op de knop uitvoeren om het project te bouwen en uit te voeren. In de-console kunt u de uitvoer van de code en de logboek uitvoer van de ChatClient weer geven.
-
 

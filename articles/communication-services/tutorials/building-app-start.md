@@ -8,16 +8,14 @@ ms.author: nmurav
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 7eb44987dca033ecdac9ef2ca63fb1da97dc9678
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: a5a23d6a06c8cdff4deabac5251597b7ffe0c833
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105109179"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105728042"
 ---
 # <a name="tutorial-prepare-a-web-app-for-azure-communication-services-nodejs"></a>Zelf studie: een web-app voorbereiden voor Azure Communication Services (Node.js)
-
-[!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
 U kunt Azure Communication Services gebruiken om realtime communicatie toe te voegen aan uw toepassingen. In deze zelf studie leert u hoe u een webtoepassing kunt instellen die Azure Communication Services ondersteunt. Dit is een inleidende zelf studie voor nieuwe ontwikkel aars die aan de slag willen gaan met realtime-communicatie.
 

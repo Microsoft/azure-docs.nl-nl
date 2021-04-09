@@ -10,12 +10,12 @@ ms.date: 03/10/2021
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 7e4ffb800a65a9a1e436e50921e9c7f76f02b571
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: 4c8bd66dde54ff90ea2191fba58f10c87c45cf68
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105107014"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105958367"
 ---
 ## <a name="prerequisites"></a>Vereisten
 Voordat u aan de slag gaat, moet u het volgende doen:
@@ -46,7 +46,7 @@ dotnet build
 De Azure Communication chat SDK voor .NET installeren
 
 ```PowerShell
-dotnet add package Azure.Communication.Chat --version 1.0.0-beta.5
+dotnet add package Azure.Communication.Chat --version 1.0.0
 ```
 
 ## <a name="object-model"></a>Objectmodel
@@ -135,7 +135,8 @@ Gebruiken `SendMessage` om een bericht naar een thread te verzenden.
 - Gebruik `senderDisplayName` om de weergavenaam van de afzender te geven. Als u niets opgeeft, wordt er een lege teken reeks ingesteld.
 
 ```csharp
-var messageId = await chatThreadClient.SendMessageAsync(content:"hello world", type: ChatMessageType.Text);
+SendChatMessageResult sendChatMessageResult = await chatThreadClient.SendMessageAsync(content:"hello world", type: ChatMessageType.Text);
+string messageId = sendChatMessageResult.Id;
 ```
 
 ## <a name="receive-chat-messages-from-a-chat-thread"></a>Chatberichten ontvangen van een chat-thread

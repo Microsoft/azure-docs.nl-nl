@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/01/2021
 ms.openlocfilehash: 5888a7cc8aa58d1c6edab191e1243ebc60000fd6
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105048864"
 ---
 # <a name="how-to-configure-sharepoint-online-indexing-in-cognitive-search-preview"></a>Indexering van share point online configureren in Cognitive Search (preview)
@@ -263,7 +263,7 @@ Als u de Indexeer functie voor het indexeren van meta gegevens van documenten he
 > [!NOTE]
 > Aangepaste meta gegevens worden niet opgenomen in de huidige versie van de preview.
 
-| Id | Type | Beschrijving | 
+| Id | Type | Description | 
 | ------------- | -------------- | ----------- |
 | metadata_spo_site_library_item_id | Edm.String | De combinatie sleutel van de site-ID, bibliotheek-ID en item-ID waarmee een item in een document bibliotheek voor een site uniek wordt geïdentificeerd. |
 | metadata_spo_site_id | Edm.String | De ID van de share point online-site. |

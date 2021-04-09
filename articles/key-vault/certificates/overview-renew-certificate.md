@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: overview
 ms.date: 07/20/2020
 ms.author: sebansal
-ms.openlocfilehash: c7948230164258aa785f3dd6c1f487c51ece9333
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: ffa130c0598d2405469d272a3ac6852f281ed965
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102487182"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105726359"
 ---
 # <a name="renew-your-azure-key-vault-certificates"></a>Azure Key Vault-certificaten verlengen
 
@@ -29,7 +29,7 @@ In dit artikel wordt beschreven hoe u Azure Key Vault-certificaten kunt verlenge
 Als u een melding wilt ontvangen over levensgebeurtenissen van een certificaat, moet u een contactpersoon voor dit certificaat toevoegen. Certificaatcontactpersonen bevatten contactgegevens om meldingen te verzenden die worden geactiveerd door de levensduurgebeurtenissen van het certificaat. De contactpersoongegevens worden gedeeld door alle certificaten in de sleutelkluis. Alle opgegeven contactpersonen krijgen een melding bij een gebeurtenis met betrekking tot een certificaat in de sleutelkluis.
 
 ### <a name="steps-to-set-certificate-notifications"></a>Stappen voor het instellen van certificaatmeldingen:
-Voeg eerst een contactpersoon voor het certificaat toe aan uw sleutelkluis. U kunt toevoegen met behulp van de Azure-portal of PowerShell-cmdlet [`Add-AzureKeyVaultCertificateContact`](/powershell/module/azurerm.keyvault/add-azurekeyvaultcertificatecontact?view=azurermps-6.13.0).
+Voeg eerst een contactpersoon voor het certificaat toe aan uw sleutelkluis. U kunt toevoegen met behulp van de Azure-portal of PowerShell-cmdlet [`Add-AzureKeyVaultCertificateContact`](/powershell/module/azurerm.keyvault/add-azurekeyvaultcertificatecontact).
 
 Stel vervolgens het tijdstip in wanneer u wilt worden gewaarschuwd over het verlopen van het certificaat. Zie [Automatisch roteren van certificaatconfiguratie in Key Vault](./tutorial-rotate-certificates.md#update-lifecycle-attributes-of-a-stored-certificate) voor informatie over het configureren van de levenscycluskenmerken van het certificaat.
 
@@ -41,9 +41,9 @@ Als het beleid van een certificaat is ingesteld op automatisch verlengen, wordt 
   Wanneer een certificaatbeleid dat is ingesteld om handmatig te worden verlengd (alleen e-mail), wordt er een melding verzonden van het tijdstip waarop het certificaat moet worden verlengd.  
 
 Key Vault kent drie categorieën certificaten:
--   Certificaten die zijn gemaakt met een geïntegreerde certificeringsinstantie (CA), zoals DigiCert of GlobalSign
--   Certificaten die zijn gemaakt met een niet-geïntegreerde CA
--   Zelfondertekende certificaten
+-    Certificaten die zijn gemaakt met een geïntegreerde certificeringsinstantie (CA), zoals DigiCert of GlobalSign
+-    Certificaten die zijn gemaakt met een niet-geïntegreerde CA
+-    Zelfondertekende certificaten
 
 ## <a name="renew-an-integrated-ca-certificate"></a>Een geïntegreerd CA-certificaat verlengen 
 Azure Key Vault verwerkt het end-to-end-onderhoud van certificaten die worden uitgegeven door de vertrouwde Microsoft-certificeringsinstanties DigiCert en GlobalSign. Meer informatie over het [integreren van een vertrouwde CA met Key Vault](./how-to-integrate-certificate-authority.md).
@@ -89,5 +89,5 @@ Maak een certificaat met een geldigheidsduur van **1 maand** en stel vervolgens 
 Ja, de labels worden na het verlengen gerepliceerd.
 
 ## <a name="next-steps"></a>Volgende stappen
-*   [Key Vault integreren met DigiCert-certificeringsinstantie](how-to-integrate-certificate-authority.md)
-*   [Zelfstudie: Automatische rotatie van certificaten in Key Vault configureren](tutorial-rotate-certificates.md)
+*    [Key Vault integreren met DigiCert-certificeringsinstantie](how-to-integrate-certificate-authority.md)
+*    [Zelfstudie: Automatische rotatie van certificaten in Key Vault configureren](tutorial-rotate-certificates.md)

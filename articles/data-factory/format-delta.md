@@ -4,14 +4,14 @@ description: Gegevens transformeren en verplaatsen vanuit een Delta-Lake met de 
 author: djpmsft
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 12/07/2020
+ms.date: 03/26/2020
 ms.author: daperlov
-ms.openlocfilehash: bb5360a678751b37cf36677fca611b39746621f4
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 74df809f2206a105b405ba184949ef887096ebc2
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100386489"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105932502"
 ---
 # <a name="delta-format-in-azure-data-factory"></a>Delta-indeling in Azure Data Factory
 
@@ -75,6 +75,8 @@ De onderstaande tabel geeft een lijst van de eigenschappen die worden ondersteun
 | Compressie niveau | Kies of de compressie zo snel mogelijk wordt voltooid of dat het resulterende bestand optimaal moet worden gecomprimeerd. | vereist als `compressedType` is opgegeven. | `Optimal` of `Fastest` | compressionLevel |
 | Vacuum | Geef de drempel waarde voor bewaren op in uren voor oudere versies van de tabel. Een waarde van 0 of minder standaard ingesteld op 30 dagen | ja | Geheel getal | vacuüm |
 | Update methode | Opgeven welke bijwerk bewerkingen zijn toegestaan op Delta Lake. Voor-methoden die niet worden ingevoegd, is een voor gaande trans formatie van rijen vereist voor het markeren van een rij. | ja | `true` of `false` | verwijderd <br> invoegen <br> bij te werken <br> samenvoegen |
+| Geoptimaliseerde schrijf bewerkingen | Zorg voor een hogere door Voer voor schrijf bewerkingen via het optimaliseren van interne wille keurige volg orde in Spark-uitvoerende bedrijven. Als gevolg hiervan kunt u minder partities en bestanden met een grotere grootte opmerken | nee | `true` of `false` | optimizedWrite: True |
+| Automatisch comprimeren | Nadat een schrijf bewerking is voltooid, voert Spark automatisch de ```OPTIMIZE``` opdracht uit om de gegevens opnieuw in te delen, waardoor er meer partities zijn, indien nodig, voor betere Lees prestaties in de toekomst | nee | `true` of `false` |   autocompact: waar |
 
 ### <a name="delta-sink-script-example"></a>Script voor beeld van Delta-Sink
 

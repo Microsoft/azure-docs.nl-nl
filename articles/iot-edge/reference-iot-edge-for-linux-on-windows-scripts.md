@@ -9,12 +9,12 @@ ms.topic: reference
 ms.service: iot-edge
 services: iot-edge
 monikerRange: =iotedge-2018-06
-ms.openlocfilehash: 41827c5db58f3d4755fb34e46067357cd0255676
-ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
+ms.openlocfilehash: a24b39107d8f78c049afa230fe678ec92852eeb0
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105612769"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105959684"
 ---
 # <a name="powershell-scripts-for-iot-edge-for-linux-on-windows"></a>Power shell-scripts voor IoT Edge voor Linux in Windows
 
@@ -41,7 +41,7 @@ De opdracht **Deploy-Eflow** is de belangrijkste implementatie methode. Met de i
 | Registratie | De registratie-ID van een bestaand IoT Edge apparaat | Registratie-ID voor het inrichten van een IoT Edge apparaat (**x509** of **symmetrisch**). |
 | identityCertLocVm | Mappad; moet zich in een map bevindt die eigendom kan zijn van de `iotedge` service | Het absolute doelpad van het identiteits certificaat op uw virtuele machine voor het inrichten van een IoT Edge apparaat (**x509** of **symmetrisch**). |
 | identityCertLocWin | Mappad | Het absolute bronpad van het identiteits certificaat in Windows voor het inrichten van een IoT Edge apparaat (**x509** of **symmetrisch**). |
-| identityPkLocVm |  | Mappad; moet zich in een map bevindt die eigendom kan zijn van de `iotedge` service | Absoluut doelpad van de identiteits-persoonlijke sleutel op uw virtuele machine voor het inrichten van een IoT Edge apparaat (**x509** of **symmetrisch**). |
+| identityPkLocVm | Mappad; moet zich in een map bevindt die eigendom kan zijn van de `iotedge` service | Absoluut doelpad van de identiteits-persoonlijke sleutel op uw virtuele machine voor het inrichten van een IoT Edge apparaat (**x509** of **symmetrisch**). |
 | identityPkLocWin | Mappad | Het absolute bronpad van de identiteits-persoonlijke sleutel in Windows voor het inrichten van een IoT Edge apparaat (**x509** of **symmetrisch**). |
 | vmSizeDefintion | Maxi maal 30 tekens | Definitie van het aantal kernen en het beschik bare RAM-geheugen voor de virtuele machine. **Standaard waarde**: Standard_K8S_v1. |
 | vmDiskSize | Tussen 8 GB en 256 GB | Maximale schijf grootte van de dynamisch uitbreid bare virtuele harde schijf. **Standaard waarde**: 16 GB. |
@@ -74,7 +74,7 @@ Met de opdracht **inrichten-EflowVm** worden de inrichtings gegevens voor uw IOT
 | Registratie | De registratie-ID van een bestaand IoT Edge apparaat | Registratie-ID voor het inrichten van een IoT Edge apparaat (**DPS**). |
 | identityCertLocVm | Mappad; moet zich in een map bevindt die eigendom kan zijn van de `iotedge` service | Het absolute doelpad van het identiteits certificaat op uw virtuele machine voor het inrichten van een IoT Edge apparaat (**DPS**, **x509**). |
 | identityCertLocWin | Mappad | Het absolute bronpad van het identiteits certificaat in Windows voor het inrichten van een IoT Edge apparaat (**DPS**, **x509**). |
-| identityPkLocVm |  | Mappad; moet zich in een map bevindt die eigendom kan zijn van de `iotedge` service | Absoluut doelpad van de identiteits-persoonlijke sleutel op uw virtuele machine voor het inrichten van een IoT Edge apparaat (**DPS**, **x509**). |
+| identityPkLocVm  | Mappad; moet zich in een map bevindt die eigendom kan zijn van de `iotedge` service | Absoluut doelpad van de identiteits-persoonlijke sleutel op uw virtuele machine voor het inrichten van een IoT Edge apparaat (**DPS**, **x509**). |
 | identityPkLocWin | Mappad | Het absolute bronpad van de identiteits-persoonlijke sleutel in Windows voor het inrichten van een IoT Edge apparaat (**DPS**, **x509**). |
 
 ## <a name="get-eflowvmname"></a>Get-EflowVmName

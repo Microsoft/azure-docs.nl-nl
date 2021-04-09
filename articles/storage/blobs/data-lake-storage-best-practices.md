@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: normesta
 ms.reviewer: sachins
-ms.openlocfilehash: 0efcdfd1b14479edf84dc1892e7e1d9afabd5a81
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 937048ce14b9b05b55cd8d76e7a8c1fd67c63e4d
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "95913552"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105933705"
 ---
 # <a name="best-practices-for-using-azure-data-lake-storage-gen2"></a>Aanbevolen procedures voor het gebruik van Azure Data Lake Storage Gen2
 
-In dit artikel vindt u informatie over de aanbevolen procedures en overwegingen voor het werken met Azure Data Lake Storage Gen2. In dit artikel vindt u informatie over beveiliging, prestaties, tolerantie en bewaking voor Data Lake Storage Gen2. Voordat Data Lake Storage Gen2 werken met echt big data in services zoals Azure HDInsight was complex. U moest gegevens in meerdere Blob Storage-accounts Shard, zodat de PETA byte-opslag en optimale prestaties op die schaal kunnen worden bereikt. Data Lake Storage Gen2 ondersteunt afzonderlijke bestands grootten als hoge 5 TB en de meeste vaste limieten voor prestaties zijn verwijderd. Er zijn echter nog enkele overwegingen die in dit artikel worden behandeld, zodat u de beste prestaties kunt verkrijgen met Data Lake Storage Gen2.
+In dit artikel vindt u informatie over de aanbevolen procedures en overwegingen voor het werken met Azure Data Lake Storage Gen2. In dit artikel vindt u informatie over beveiliging, prestaties, tolerantie en bewaking voor Data Lake Storage Gen2. Voordat Data Lake Storage Gen2 werken met echt big data in services zoals Azure HDInsight was complex. U moest gegevens in meerdere Blob Storage-accounts Shard, zodat de PETA byte-opslag en optimale prestaties op die schaal kunnen worden bereikt. Data Lake Storage Gen2 ondersteunt afzonderlijke bestands grootten als Maxi maal 190,7 TiB en de meeste vaste limieten voor prestaties zijn verwijderd. Er zijn echter nog enkele overwegingen die in dit artikel worden behandeld, zodat u de beste prestaties kunt verkrijgen met Data Lake Storage Gen2.
 
 ## <a name="security-considerations"></a>Beveiligingsoverwegingen
 

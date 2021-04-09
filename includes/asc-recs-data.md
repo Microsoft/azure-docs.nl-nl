@@ -2,17 +2,17 @@
 author: memildin
 ms.service: security-center
 ms.topic: include
-ms.date: 03/14/2021
+ms.date: 03/29/2021
 ms.author: memildin
 ms.custom: generated
-ms.openlocfilehash: fe1b9fc8754ae959abf088526b5d71e0e43c158e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 164c5e199bcb17dfe7a8ce92b169b26ecd389703
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103466188"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105958311"
 ---
-Er zijn **64** aanbevelingen in deze categorie.
+Er zijn **65** aanbevelingen in deze categorie.
 
 |Aanbeveling |Beschrijving |Severity |
 |---|---|---|
@@ -24,6 +24,7 @@ Er zijn **64** aanbevelingen in deze categorie.
 |Retentie voor controle voor SQL-servers moet op ten minste 90 dagen worden ingesteld |Controle van SQL-servers die zijn geconfigureerd met een bewaarperiode voor controleren van minder dan 90 dagen.<br />(Gerelateerd beleid: [SQL-servers moeten worden geconfigureerd met 90 dagen bewakingsretentie of hoger.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f89099bee-89e0-4b26-a5f4-165451757743)) |Beperkt |
 |Controle op SQL-servers moet zijn ingeschakeld |Schakel controle op de SQL-server in om databaseactiviteiten bij te houden in alle databases op de server en de activiteiten in een auditlogboek vast te leggen.<br />(Gerelateerd beleid: [Controle op SQL-servers moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fa6fb4358-5bf4-4ad7-ba82-2cd2f41ce5e9)) |Beperkt |
 |Automatisch inrichten van de Log Analytics-agent moet zijn ingeschakeld voor uw abonnement |Om te controleren op beveiligingsproblemen en bedreigingen verzamelt Azure Security Center gegevens van uw Azure-VM's. De gegevens worden verzameld met behulp van de Log Analytics-agent, voorheen bekend als de Microsoft Monitoring Agent (MMA), die verschillende configuraties en gebeurtenislogboeken met betrekking tot beveiliging van de machine leest en de gegevens kopieert naar uw Log Analytics-werkruimte voor analyse. U wordt aangeraden automatische inrichting in te schakelen om de agent automatisch te implementeren op alle ondersteunde Azure-VM‘s en eventuele nieuwe virtuele machines die worden gemaakt.<br />(Gerelateerd beleid: [het automatisch inrichten van de log Analytics-agent moet zijn ingeschakeld voor uw abonnement](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f475aae12-b88a-4572-8b36-9b712b2b3a17)) |Beperkt |
+|Voor Azure Arc enabled Kubernetes-clusters moet de extensie van Azure Defender zijn geïnstalleerd |De uitbrei ding van Azure Defender voor Azure Arc biedt bedreigings beveiliging voor uw Kubernetes-clusters die zijn ingeschakeld voor uw Arc. De extensie verzamelt gegevens van alle knoop punten van het besturings element (Master) in het cluster en verzendt deze naar de back-end van Azure Defender voor Kubernetes in de Cloud voor verdere analyse. Meer informatie in https://docs.microsoft.com/azure/security-center/defender-for-kubernetes-azure-arc .<br />(Geen gerelateerd beleid) |Hoog |
 |Azure Cache voor Redis moet zich in een virtueel netwerk bevinden |Azure VNet-implementatie (Virtual Network) biedt uitgebreide beveiliging en isolatie voor Azure Cache voor Redis, evenals subnetten, beleid voor toegangsbeheer, en andere functies om de toegang verder te beperken. Wanneer een Azure Cache voor Redis-exemplaar is geconfigureerd met een VNet, is dit niet openbaar adresseerbaar en kan het exemplaar alleen worden bereikt vanaf virtuele machines en toepassingen binnen het VNet.<br />(Gerelateerd beleid: [Azure cache voor redis moet zich in een virtueel netwerk bevinden](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f7d092e0a-7acd-40d2-a975-dca21cae48c4)) |Normaal |
 |Azure Cosmos DB-accounts moeten firewallregels bevatten |Er moeten firewallregels worden gedefinieerd voor uw Azure Cosmos DB-accounts om verkeer van niet-geautoriseerde bronnen te blokkeren. Accounts waarvoor ten minste één IP-regel is gedefinieerd waarvoor het filter voor virtuele netwerken is ingeschakeld, worden als compatibel beschouwd. Accounts die openbare toegang uitschakelen, worden ook beschouwd als compatibel.<br />(Gerelateerd beleid: voor [Azure Cosmos DB accounts moeten firewall regels worden geïnstalleerd](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f862e97cf-49fc-4a5c-9de4-40d4e2e7c8eb)) |Normaal |
 |Voor Azure Cosmos DB-accounts moeten door de klant beheerde sleutels worden gebruikt voor het versleutelen van data-at-rest |Gebruik door de klant beheerde sleutels om de versleuteling van uw inactieve Azure Cosmos DB te beheren. Standaard worden de gegevens in rust versleuteld met door service beheerde sleutels, maar door de klant beheerde sleutels (CMK) zijn doorgaans vereist om te voldoen aan de normen voor naleving van regelgeving. CMK‘s zorgen ervoor dat de gegevens worden versleuteld met een Azure Key Vault-sleutel die u hebt gemaakt en waarvan u eigenaar bent. U hebt de volledige controle en verantwoordelijkheid voor de levenscyclus van de sleutel, met inbegrip van rotatie en beheer. Zie voor meer informatie over CMK-versleuteling: https://aka.ms/cosmosdb-cmk.<br />(Gerelateerd beleid: [Azure Cosmos DB accounts moeten door de klant beheerde sleutels worden gebruikt voor het versleutelen van gegevens op rest](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f1f905d99-2ab7-462c-a6b0-f709acca6c8f)) |Hoog |

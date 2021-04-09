@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 2/01/2019
 ms.author: atsenthi
 ms.openlocfilehash: e51b247f8c1a5a9ed8f6ec8e24363015afb2f7de
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102614408"
 ---
 # <a name="patch-the-windows-operating-system-in-your-service-fabric-cluster"></a>Het Windows-besturings systeem in uw Service Fabric cluster bijwerken
@@ -370,7 +370,7 @@ Ga als volgt te werk om inzicht te krijgen in hoe updates worden uitgevoerd op e
 
    Als er meer problemen moeten worden gevonden, meldt u zich aan bij uw virtuele machine (VM) of Vm's en leert u deze met behulp van Windows-gebeurtenis Logboeken. De eerder genoemde reparatie taak kan alleen voor komen in de volgende Substatussen van de module:
 
-      ExecutorSubState | Beschrijving
+      ExecutorSubState | Description
     -- | -- 
       Geen = 1 |  Betekent dat er geen actieve bewerking op het knoop punt is. De status kan in overgang zijn.
       DownloadCompleted = 2 | Houdt in dat de Download bewerking is voltooid met succes, gedeeltelijk mislukt of mislukt.

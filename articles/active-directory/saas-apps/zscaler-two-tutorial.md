@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 12/18/2020
 ms.author: jeedes
 ms.openlocfilehash: 8c3d76f24cce860538dc3bd5dcf29b59708bdb5d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98726215"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-two"></a>Zelfstudie: Integratie van Azure Active Directory met Zscaler Two
@@ -200,14 +200,14 @@ In deze sectie geeft u Britta Simon toestemming om eenmalige aanmelding van Azur
 
     b. Klik op **Activeren**.
 
-## <a name="configuring-proxy-settings"></a>Proxyinstellingen configureren
-### <a name="to-configure-the-proxy-settings-in-internet-explorer"></a>De proxyinstellingen configureren in Internet Explorer
+## <a name="configuring-proxy-settings&quot;></a>Proxyinstellingen configureren
+### <a name=&quot;to-configure-the-proxy-settings-in-internet-explorer&quot;></a>De proxyinstellingen configureren in Internet Explorer
 
 1. Start **Internet Explorer**.
 
 2. Selecteer **Internetopties** in het menu **Extra** om het dialoogvenster **Internetopties** te openen.   
     
-     ![Internetopties](./media/zscaler-two-tutorial/ic769492.png "Internetopties")
+     ![Internetopties](./media/zscaler-two-tutorial/ic769492.png &quot;Internetopties")
 
 3. Klik op het tabblad **Verbindingen**.   
   

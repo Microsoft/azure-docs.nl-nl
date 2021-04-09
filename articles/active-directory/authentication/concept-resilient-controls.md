@@ -13,10 +13,10 @@ ms.date: 06/08/2020
 ms.author: martinco
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d7e4d0c41990fcc23dd19b5682997f6381bfdb20
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97937090"
 ---
 # <a name="create-a-resilient-access-control-management-strategy-with-azure-active-directory"></a>Maak een flexibele toegangs beheer strategie met Azure Active Directory
@@ -282,7 +282,7 @@ Als uw organisatie verouderd beleid voor MFA per gebruiker gebruikt, kunt u het 
 >[!NOTE]
  > Het configureren van [vertrouwde IP-adressen](./howto-mfa-mfasettings.md) voor Azure AD MFA is alleen beschikbaar met [Azure AD Premium-licenties](./concept-mfa-licensing.md).
 
-## <a name="learn-more"></a>Meer informatie
+## <a name="learn-more"></a>Lees meer
 
 * [Documentatie voor Azure AD-verificatie](./howto-mfaserver-iis.md)
 * [Beheer accounts voor toegang in nood gevallen beheren in azure AD](../roles/security-emergency-access.md)

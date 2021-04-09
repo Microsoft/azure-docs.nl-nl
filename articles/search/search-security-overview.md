@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 02/04/2021
 ms.custom: references_regions
 ms.openlocfilehash: 46f2035e5f8409cd38faeb9c327b88b06fc7d7a0
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100097633"
 ---
 # <a name="security-overview-for-azure-cognitive-search"></a>Beveiligings overzicht voor Azure Cognitive Search
@@ -98,7 +98,7 @@ Conceptueel equivalent van ' beveiliging op rijniveau ', de autorisatie voor inh
 
 Tijdelijke oplossingen voor oplossingen waarvoor beveiliging op rijniveau is vereist: het maken van een veld in de gegevens bron dat een beveiligings groep of gebruikers identiteit vertegenwoordigt, en vervolgens filters in Cognitive Search gebruiken om selectie resultaten van documenten en inhoud op basis van identiteiten te wissen. In de volgende tabel worden twee benaderingen beschreven waarmee Zoek resultaten van niet-geautoriseerde inhoud worden bijgesneden.
 
-| Methode | Beschrijving |
+| Methode | Description |
 |----------|-------------|
 |[Beveiligings beperking op basis van identiteits filters](search-security-trimming-for-azure-search.md)  | Documenteert de basis werk stroom voor het implementeren van toegangs beheer voor gebruikers identiteit. Het onderwerp bevat het toevoegen van beveiligings-id's aan een index en legt vervolgens een overzicht van de filtering uit voor dat veld om de resultaten van verboden inhoud te kunnen knippen. |
 |[Beveiligings beperking op basis van Azure Active Directory-identiteiten](search-security-trimming-for-azure-search-with-aad.md)  | In dit artikel wordt het vorige artikel uitgebreid met stappen voor het ophalen van identiteiten van Azure Active Directory (Azure AD), een van de [gratis services](https://azure.microsoft.com/free/) in het Azure-Cloud platform. |

@@ -9,10 +9,10 @@ ms.date: 02/03/2021
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 36ebe80671c77cc83ddba770e3259f6542472e58
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "99526836"
 ---
 # <a name="system-functions-azure-cosmos-db"></a>Systeem functies (Azure Cosmos DB)
@@ -20,7 +20,7 @@ ms.locfileid: "99526836"
 
  Cosmos DB biedt veel ingebouwde SQL-functies. De categorieën ingebouwde functies worden hieronder weer gegeven.  
   
-|Functiegroep|Beschrijving|Operations|  
+|Functiegroep|Description|Operations|  
 |--------------|-----------------|-----------------| 
 |[Matrixfuncties](sql-query-array-functions.md)|De matrix functies voeren een bewerking uit op een invoer waarde van een matrix en retour neren numerieke, Booleaanse of matrix waarde. | [ARRAY_CONCAT](sql-query-array-concat.md), [ARRAY_CONTAINS](sql-query-array-contains.md), [ARRAY_LENGTH](sql-query-array-length.md), [ARRAY_SLICE](sql-query-array-slice.md) |
 |[Datum-en tijd functies](sql-query-date-time-functions.md)|Met de functies datum en tijd kunt u de huidige UTC-datum en-tijd in twee vormen ophalen. een numerieke tijds tempel waarvan de waarde de UNIX-epoche is in milliseconden of als een teken reeks die voldoet aan de ISO 8601-indeling. | [GetCurrentDateTime](sql-query-getcurrentdatetime.md), [GetCurrentTimestamp](sql-query-getcurrenttimestamp.md), [GetCurrentTicks](sql-query-getcurrentticks.md) |

@@ -12,10 +12,10 @@ ms.author: mabasile
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 ms.openlocfilehash: 96d1a3ed6bfe3fa90cdfa11f1b1081f12e4af990
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "95904342"
 ---
 # <a name="azure-synapse-analytics-business-intelligence-partners"></a>business intelligence partners van Azure Synapse Analytics
@@ -23,7 +23,7 @@ ms.locfileid: "95904342"
 Als u uw data warehouse-oplossing wilt maken, kunt u kiezen uit verschillende soorten toonaangevende hulp middelen. In dit artikel wordt uitgelegd hoe u micro soft-partners met business intelligence-oplossingen (BI) die officieel ondersteuning bieden voor Azure Synapse Analytics.
 
 ## <a name="our-business-intelligence-partners"></a>Onze business intelligence partners
-| Partner | Beschrijving | Website/product koppeling |
+| Partner | Description | Website/product koppeling |
 | ------- | ----------- | -------------------- |
 | ![AtScale](./media/sql-data-warehouse-partner-business-intelligence/atscale-logo.png) |**AtScale**<br>AtScale biedt een enkele, beveiligde en beheerde werk ruimte voor gedistribueerde gegevens. De Cloud-OLAP, autonome gegevens techniek™ en de™ van de universele laag van AtScale business intelligence resultaten voor snellere, nauw keurige zakelijke beslissingen. |[Product pagina](https://www.atscale.com/partners/microsoft/)<br> |
 | ![Birst](./media/sql-data-warehouse-partner-business-intelligence/birst_logo.png) |**Birst**<br>Birst maakt verbinding met de hele organisatie via een netwerk van ingevoerd gevirtualiseerde BI-instanties op het hoogste niveau van een gedeelde, gemeen schappelijke analytische infra structuur|[Product pagina](https://www.birst.com/)<br> |

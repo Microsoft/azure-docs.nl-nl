@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 06/11/2020
 ms.author: chenyl
 ms.openlocfilehash: 6752a9564dc0d9351d1c21f5be14eb626186ac0d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98724053"
 ---
 # <a name="upstream-settings"></a>Upstream-instellingen
@@ -34,7 +34,7 @@ Wanneer de opgegeven gebeurtenis plaatsvindt, worden de regels van een item éé
 
 U kunt de URL voor het ondersteunen van verschillende patronen para meters. Er zijn drie vooraf gedefinieerde para meters:
 
-|Vooraf gedefinieerde para meter|Beschrijving|
+|Vooraf gedefinieerde para meter|Description|
 |---------|---------|
 |hub| Een hub is een concept van de Azure signalerings service. Een hub is een isolatie-eenheid. Het bereik van gebruikers en bericht levering is beperkt tot een hub.|
 |rubriek| Een categorie kan een van de volgende waarden hebben: <ul><li>**verbindingen**: levens duur van de verbinding. Het wordt geactiveerd wanneer een client verbinding is verbonden of verbroken. Het bevat verbonden en niet-verbonden gebeurtenissen.</li><li>**berichten**: wordt geactiveerd wanneer clients een hub-methode aanroepen. Het bevat alle andere gebeurtenissen, behalve die in de categorie **verbindingen** .</li></ul>|
@@ -158,7 +158,7 @@ Content-type: Application/JSON
 
 Inhouds type: `application/json`
 
-|Naam  |Type  |Beschrijving  |
+|Naam  |Type  |Description  |
 |---------|---------|---------|
 |Fout |tekenreeks |Het fout bericht van een gesloten verbinding. Leeg wanneer de verbindingen worden gesloten zonder dat er een fout optreedt.|
 
@@ -166,7 +166,7 @@ Inhouds type: `application/json`
 
 Content-type: `application/json` of `application/x-msgpack`
 
-|Naam  |Type  |Beschrijving  |
+|Naam  |Type  |Description  |
 |---------|---------|---------|
 |InvocationId |tekenreeks | Een optionele teken reeks die een aanroep bericht vertegenwoordigt. Details zoeken in [aanroepen](https://github.com/dotnet/aspnetcore/blob/master/src/SignalR/docs/specs/HubProtocol.md#invocations).|
 |Doel |tekenreeks | Hetzelfde als de gebeurtenis en dezelfde als het doel in een [aanroep bericht](https://github.com/dotnet/aspnetcore/blob/master/src/SignalR/docs/specs/HubProtocol.md#invocation-message-encoding). |

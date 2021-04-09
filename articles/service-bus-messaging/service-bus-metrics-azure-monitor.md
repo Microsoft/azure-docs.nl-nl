@@ -4,10 +4,10 @@ description: In dit artikel wordt uitgelegd hoe u Azure Monitor kunt gebruiken o
 ms.topic: article
 ms.date: 02/12/2021
 ms.openlocfilehash: 1e57def2ee7409ae62cdbe065c36e8a53a140e18
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100570574"
 ---
 # <a name="azure-service-bus-metrics-in-azure-monitor"></a>Azure Service Bus metrische gegevens in Azure Monitor
@@ -54,7 +54,7 @@ Alle waarden voor metrische gegevens worden elke minuut naar Azure Monitor verzo
 
 Telt het aantal gegevens-en beheer bewerkings aanvragen.
 
-| Naam meetwaarde | Beschrijving |
+| Naam meetwaarde | Description |
 | ------------------- | ----------------- |
 | Binnenkomende aanvragen| Het aantal aanvragen voor de Service Bus-service gedurende een opgegeven periode. <br/><br/> Eenheid: aantal <br/> Aggregatie type: totaal <br/> Dimensie: naam van entiteit|
 |Geslaagde aanvragen|Het aantal geslaagde aanvragen voor de Service Bus-service gedurende een opgegeven periode.<br/><br/> Eenheid: aantal <br/> Aggregatie type: totaal <br/> Dimensie: naam van entiteit|
@@ -72,7 +72,7 @@ De volgende twee typen fouten worden geclassificeerd als gebruikers fouten:
 
 ## <a name="message-metrics"></a>Metrische gegevens van bericht
 
-| Naam meetwaarde | Beschrijving |
+| Naam meetwaarde | Description |
 | ------------------- | ----------------- |
 |Binnenkomende berichten|Het aantal gebeurtenissen of berichten dat is verzonden naar Service Bus gedurende een opgegeven periode. Deze metrische gegevens bevatten geen berichten die automatisch worden doorgestuurd.<br/><br/> Eenheid: aantal <br/> Aggregatie type: totaal <br/> Dimensie: naam van entiteit|
 |Uitgaande berichten|Het aantal gebeurtenissen of berichten dat is ontvangen van Service Bus gedurende een opgegeven periode.<br/><br/> Eenheid: aantal <br/> Aggregatie type: totaal <br/> Dimensie: naam van entiteit|
@@ -89,7 +89,7 @@ De volgende twee typen fouten worden geclassificeerd als gebruikers fouten:
 
 ## <a name="connection-metrics"></a>Verbindings gegevens
 
-| Naam meetwaarde | Beschrijving |
+| Naam meetwaarde | Description |
 | ------------------- | ----------------- |
 |Actieve verbindingen|Het aantal actieve verbindingen op een naam ruimte en een entiteit in de naam ruimte. De waarde voor deze metriek is een tijdgebonden waarde. Verbindingen die direct na dat tijdstip zijn geactiveerd, worden mogelijk niet weer spie geld in de metrische gegevens.<br/><br/> Eenheid: aantal <br/> Aggregatie type: totaal <br/> Dimensie: naam van entiteit|
 |Geopende verbindingen |Het aantal geopende verbindingen.<br/><br/> Eenheid: aantal <br/> Aggregatie type: totaal <br/> Dimensie: naam van entiteit|
@@ -104,7 +104,7 @@ De volgende twee typen fouten worden geclassificeerd als gebruikers fouten:
 > 
 > De andere metriek die u kunt bewaken is: **vertraagde aanvragen**. Het is niet mogelijk om een probleem op te lossen, omdat de naam ruimte binnen het geheugen, de CPU en de brokered Connections limieten blijft. Zie [beperking in azure service bus Premium-laag](service-bus-throttling.md#throttling-in-azure-service-bus-premium-tier) voor meer informatie.
 
-| Naam meetwaarde | Beschrijving |
+| Naam meetwaarde | Description |
 | ------------------- | ----------------- |
 |CPU-gebruik per naam ruimte|Het percentage CPU-gebruik van de naam ruimte.<br/><br/> Eenheid: percentage <br/> Aggregatie type: maximum <br/> Dimensie: naam van entiteit|
 |Gebruik van geheugen grootte per naam ruimte|Het percentage geheugen gebruik van de naam ruimte.<br/><br/> Eenheid: percentage <br/> Aggregatie type: maximum <br/> Dimensie: naam van entiteit|
@@ -113,7 +113,7 @@ De volgende twee typen fouten worden geclassificeerd als gebruikers fouten:
 
 Azure Service Bus ondersteunt de volgende dimensies voor metrische gegevens in Azure Monitor. Het toevoegen van dimensies aan uw metrische gegevens is optioneel. Als u geen dimensies toevoegt, worden metrische gegevens opgegeven op het niveau van de naam ruimte. 
 
-|Dimensie naam|Beschrijving|
+|Dimensie naam|Description|
 | ------------------- | ----------------- |
 |Naam van entiteit| Service Bus ondersteunt Messa ging-entiteiten in de naam ruimte.|
 

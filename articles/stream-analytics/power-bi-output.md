@@ -7,10 +7,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/25/2020
 ms.openlocfilehash: a94389a075fd62d80345a21e32f1bc977dfdee87
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98020057"
 ---
 # <a name="power-bi-output-from-azure-stream-analytics"></a>Power BI uitvoer van Azure Stream Analytics
@@ -23,7 +23,7 @@ Power BI uitvoer van Stream Analytics is momenteel niet beschikbaar in de regio'
 
 De volgende tabel geeft een lijst van eigenschaps namen en de bijbehorende beschrijvingen om uw Power BI-uitvoer te configureren.
 
-| Naam van eigenschap | Beschrijving |
+| Naam van eigenschap | Description |
 | --- | --- |
 | Uitvoeralias |Geef een beschrijvende naam op die wordt gebruikt in query's om de uitvoer van de query naar deze Power BI uitvoer te sturen. |
 | Werkruimte Groep |Als u het delen van gegevens met andere Power BI gebruikers wilt inschakelen, kunt u groepen in uw Power BI account selecteren of **mijn werk ruimte** kiezen als u niet naar een groep wilt schrijven. Als u een bestaande groep wilt bijwerken, moet u de Power BI-verificatie vernieuwen. |

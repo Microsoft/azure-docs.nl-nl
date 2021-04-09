@@ -8,15 +8,15 @@ ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
 ms.openlocfilehash: 03abe4e4e098d46060e33ba114872905e54a443f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96317058"
 ---
 # <a name="diagnose-private-links-configuration-issues-on-azure-key-vault"></a>Configuratieproblemen met Private Links diagnosticeren in Azure Key Vault
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Dit artikel helpt gebruikers bij het vaststellen en oplossen van problemen met betrekking tot Key Vault en de functie persoonlijke koppelingen. Deze hand leiding helpt u bij het configureren van configuratie aspecten, zoals het ophalen van persoonlijke koppelingen die voor de eerste keer werken, of voor het oplossen van een situatie waarin privé koppelingen zijn gestopt vanwege een wijziging.
 

@@ -8,10 +8,10 @@ author: vikrambmsft
 ms.author: vikramb
 ms.date: 09/09/2020
 ms.openlocfilehash: 698e65c4b982c5d639ffc666b394765fd04bd202
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98222459"
 ---
 # <a name="commercial-marketplace-policies-and-terms"></a>Beleidsregels en voorwaarden voor de commerciële marketplace

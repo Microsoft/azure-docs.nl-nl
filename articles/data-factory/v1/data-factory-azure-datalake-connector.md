@@ -9,10 +9,10 @@ ms.author: jingwang
 ms.custom: devx-track-csharp
 robots: noindex
 ms.openlocfilehash: 8bdfceff562ae2501a9d95774f7134669e929b7e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100379400"
 ---
 # <a name="copy-data-to-and-from-data-lake-storage-gen1-by-using-data-factory"></a>Gegevens kopiëren van en naar Data Lake Storage Gen1 met behulp van Data Factory
@@ -67,8 +67,8 @@ Een gekoppelde service koppelt een gegevens archief aan een data factory. U maak
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| **type** | De eigenschap type moet worden ingesteld op **AzureDataLakeStore**. | Ja |
-| **dataLakeStoreUri** | Informatie over het Azure Data Lake Store-account. Deze informatie heeft een van de volgende indelingen: `https://[accountname].azuredatalakestore.net/webhdfs/v1` of `adl://[accountname].azuredatalakestore.net/` . | Ja |
+| **type** | De eigenschap type moet worden ingesteld op **AzureDataLakeStore**. | Yes |
+| **dataLakeStoreUri** | Informatie over het Azure Data Lake Store-account. Deze informatie heeft een van de volgende indelingen: `https://[accountname].azuredatalakestore.net/webhdfs/v1` of `adl://[accountname].azuredatalakestore.net/` . | Yes |
 | **subscriptionId** | De Azure-abonnements-ID waartoe het Data Lake Store-account behoort. | Vereist voor Sink |
 | **resourceGroupName** | De naam van de Azure-resource groep waartoe het Data Lake Store-account behoort. | Vereist voor Sink |
 
@@ -88,9 +88,9 @@ Gebruik Service-Principal-verificatie door de volgende eigenschappen op te geven
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| **servicePrincipalId** | Geef de client-ID van de toepassing op. | Ja |
-| **servicePrincipalKey** | Geef de sleutel van de toepassing op. | Ja |
-| **tenant** | Geef de Tenant gegevens op (domein naam of Tenant-ID) waaronder uw toepassing zich bevindt. U kunt deze ophalen door de muis in de rechter bovenhoek van de Azure Portal aan te wijzen. | Ja |
+| **servicePrincipalId** | Geef de client-ID van de toepassing op. | Yes |
+| **servicePrincipalKey** | Geef de sleutel van de toepassing op. | Yes |
+| **tenant** | Geef de Tenant gegevens op (domein naam of Tenant-ID) waaronder uw toepassing zich bevindt. U kunt deze ophalen door de muis in de rechter bovenhoek van de Azure Portal aan te wijzen. | Yes |
 
 **Voor beeld: Service-Principal-verificatie**
 ```json
@@ -115,8 +115,8 @@ U kunt ook verificatie van de gebruikers referenties gebruiken om van of naar Da
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| **autorisatie** | Klik op de knop **machtigen** in de Data Factory editor en voer uw referenties in die de automatisch gegenereerde autorisatie-URL aan deze eigenschap toewijzen. | Ja |
-| **sessionId** | OAuth-sessie-ID van de OAuth-autorisatie sessie. Elke sessie-ID is uniek en kan slechts één keer worden gebruikt. Deze instelling wordt automatisch gegenereerd wanneer u de Data Factory editor gebruikt. | Ja |
+| **autorisatie** | Klik op de knop **machtigen** in de Data Factory editor en voer uw referenties in die de automatisch gegenereerde autorisatie-URL aan deze eigenschap toewijzen. | Yes |
+| **sessionId** | OAuth-sessie-ID van de OAuth-autorisatie sessie. Elke sessie-ID is uniek en kan slechts één keer worden gebruikt. Deze instelling wordt automatisch gegenereerd wanneer u de Data Factory editor gebruikt. | Yes |
 
 > [!IMPORTANT]
 > Zorg ervoor dat u de gebruiker de juiste machtigingen verleent in Azure Data Lake Store:
@@ -234,11 +234,11 @@ De sectie **typeProperties** voor een gegevensset van het type **AzureDataLakeSt
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| **folderPath** |Het pad naar de container en de map in Data Lake Store. |Ja |
-| **fileName** |De naam van het bestand in Azure Data Lake Store. De eigenschap **filename** is optioneel en hoofdletter gevoelig. <br/><br/>Als u **filename** opgeeft, werkt de activiteit (inclusief kopie) voor het specifieke bestand.<br/><br/>Als er geen **Bestands naam** is opgegeven, kopiëren bevat alle bestanden in **FolderPath** in de invoer gegevensset.<br/><br/>Als er geen **Bestands naam** is opgegeven voor een uitvoer-gegevensset en **preserveHierarchy** niet is opgegeven in de activiteit sink, heeft de naam van het gegenereerde bestand in de indeling `Data._Guid_.txt` . Bijvoorbeeld: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt. |Nee |
-| **partitionedBy** |De eigenschap **partitionedBy** is optioneel. U kunt deze gebruiken om een dynamisch pad en een bestands naam op te geven voor gegevens van de tijd reeks. Zo kan **FolderPath** voor elk uur aan gegevens worden para meters. Zie de eigenschap partitionedBy voor meer informatie en voor beelden. |Nee |
-| **Formatteer** | De volgende indelings typen worden ondersteund: **TextFormat**, **JsonFormat**, **Avro Format**, **OrcFormat** en **ParquetFormat**. Stel de eigenschap **type** onder **indeling** in op een van deze waarden. Zie de secties [tekst indeling](data-factory-supported-file-and-compression-formats.md#text-format), [JSON](data-factory-supported-file-and-compression-formats.md#json-format)-indeling, [Avro](data-factory-supported-file-and-compression-formats.md#avro-format)-indeling, [Orc-indeling](data-factory-supported-file-and-compression-formats.md#orc-format)en [Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format) -indeling in de [Bestands-en compressie-indelingen die worden ondersteund door Azure Data Factory](data-factory-supported-file-and-compression-formats.md) artikel voor meer informatie. <br><br> Als u bestanden "as-is" wilt kopiëren tussen archieven op basis van bestanden (binaire kopie), slaat u de `format` sectie in de gegevensset voor invoer en uitvoer. |Nee |
-| **compressie** | Geef het type en compressie niveau voor de gegevens op. Ondersteunde typen zijn **gzip**, **Deflate**, **bzip2** en **ZipDeflate**. Ondersteunde niveaus zijn **optimaal** en **snelst**. Zie [Bestands-en compressie-indelingen die worden ondersteund door Azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support)voor meer informatie. |Nee |
+| **folderPath** |Het pad naar de container en de map in Data Lake Store. |Yes |
+| **fileName** |De naam van het bestand in Azure Data Lake Store. De eigenschap **filename** is optioneel en hoofdletter gevoelig. <br/><br/>Als u **filename** opgeeft, werkt de activiteit (inclusief kopie) voor het specifieke bestand.<br/><br/>Als er geen **Bestands naam** is opgegeven, kopiëren bevat alle bestanden in **FolderPath** in de invoer gegevensset.<br/><br/>Als er geen **Bestands naam** is opgegeven voor een uitvoer-gegevensset en **preserveHierarchy** niet is opgegeven in de activiteit sink, heeft de naam van het gegenereerde bestand in de indeling `Data._Guid_.txt` . Bijvoorbeeld: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt. |No |
+| **partitionedBy** |De eigenschap **partitionedBy** is optioneel. U kunt deze gebruiken om een dynamisch pad en een bestands naam op te geven voor gegevens van de tijd reeks. Zo kan **FolderPath** voor elk uur aan gegevens worden para meters. Zie de eigenschap partitionedBy voor meer informatie en voor beelden. |No |
+| **Formatteer** | De volgende indelings typen worden ondersteund: **TextFormat**, **JsonFormat**, **Avro Format**, **OrcFormat** en **ParquetFormat**. Stel de eigenschap **type** onder **indeling** in op een van deze waarden. Zie de secties [tekst indeling](data-factory-supported-file-and-compression-formats.md#text-format), [JSON](data-factory-supported-file-and-compression-formats.md#json-format)-indeling, [Avro](data-factory-supported-file-and-compression-formats.md#avro-format)-indeling, [Orc-indeling](data-factory-supported-file-and-compression-formats.md#orc-format)en [Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format) -indeling in de [Bestands-en compressie-indelingen die worden ondersteund door Azure Data Factory](data-factory-supported-file-and-compression-formats.md) artikel voor meer informatie. <br><br> Als u bestanden "as-is" wilt kopiëren tussen archieven op basis van bestanden (binaire kopie), slaat u de `format` sectie in de gegevensset voor invoer en uitvoer. |No |
+| **compressie** | Geef het type en compressie niveau voor de gegevens op. Ondersteunde typen zijn **gzip**, **Deflate**, **bzip2** en **ZipDeflate**. Ondersteunde niveaus zijn **optimaal** en **snelst**. Zie [Bestands-en compressie-indelingen die worden ondersteund door Azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support)voor meer informatie. |No |
 
 ### <a name="the-partitionedby-property"></a>De eigenschap partitionedBy
 U kunt dynamische **FolderPath** -en **filename** -eigenschappen opgeven voor gegevens van de tijd reeks met de eigenschap **partitionedBy** , Data Factory functies en systeem variabelen. Zie het artikel [Azure Data Factory-functies en systeem variabelen](data-factory-functions-variables.md) voor meer informatie.
@@ -278,13 +278,13 @@ De eigenschappen die beschikbaar zijn in de sectie **typeProperties** van een ac
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| **recursieve** |Geeft aan of de gegevens recursief worden gelezen uit de submappen of alleen vanuit de opgegeven map. |True (standaard waarde), False |Nee |
+| **recursieve** |Geeft aan of de gegevens recursief worden gelezen uit de submappen of alleen vanuit de opgegeven map. |True (standaard waarde), False |No |
 
 **AzureDataLakeStoreSink** ondersteunt de volgende eigenschappen in de sectie **typeProperties** :
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| **copyBehavior** |Hiermee geeft u het Kopieer gedrag op. |<b>PreserveHierarchy</b>: behoudt de bestands hiërarchie in de doelmap. Het relatieve pad van het bron bestand naar de bronmap is identiek aan het relatieve pad van het doel bestand naar de doelmap.<br/><br/><b>FlattenHierarchy</b>: alle bestanden in de bronmap worden gemaakt op het eerste niveau van de doelmap. De doel bestanden worden gemaakt met automatisch gegenereerde namen.<br/><br/><b>MergeFiles</b>: alle bestanden van de bronmap worden samengevoegd met één bestand. Als de naam van het bestand of de blob is opgegeven, is de naam van het samengevoegde bestand de opgegeven naam. Anders wordt de bestands naam automatisch gegenereerd. |Nee |
+| **copyBehavior** |Hiermee geeft u het Kopieer gedrag op. |<b>PreserveHierarchy</b>: behoudt de bestands hiërarchie in de doelmap. Het relatieve pad van het bron bestand naar de bronmap is identiek aan het relatieve pad van het doel bestand naar de doelmap.<br/><br/><b>FlattenHierarchy</b>: alle bestanden in de bronmap worden gemaakt op het eerste niveau van de doelmap. De doel bestanden worden gemaakt met automatisch gegenereerde namen.<br/><br/><b>MergeFiles</b>: alle bestanden van de bronmap worden samengevoegd met één bestand. Als de naam van het bestand of de blob is opgegeven, is de naam van het samengevoegde bestand de opgegeven naam. Anders wordt de bestands naam automatisch gegenereerd. |No |
 
 ### <a name="recursive-and-copybehavior-examples"></a>recursieve en copyBehavior-voor beelden
 In deze sectie wordt het resulterende gedrag van de Kopieer bewerking voor verschillende combi Naties van recursieve en copyBehavior waarden beschreven.

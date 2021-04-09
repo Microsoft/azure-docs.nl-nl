@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: alkohli
 ms.openlocfilehash: cf0e423648db174433f0717f2e5971ac49697b42
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98704620"
 ---
 # <a name="data-transfer-for-large-datasets-with-moderate-to-high-network-bandwidth"></a>Gegevensoverdracht voor grote gegevenssets met gemiddelde tot grote netwerkbandbreedte
@@ -88,7 +88,7 @@ Als u online gegevens overdracht gebruikt, gebruikt u de tabel in de volgende se
 |    **Gegevenstype**              |    Azure-blobs, Azure Files, Azure-tabellen    |    Azure-blobs, Azure Files, Azure-tabellen    |    Azure-blobs, Azure Files                           |   Ondersteunt 70 en data connectors voor gegevens archieven en-indelingen    |
 |    **Vorm factor**            |    Opdrachtregelprogramma's                        |    Programmatische interface                    |    Micro soft levert een virtueel <br>of fysiek apparaat     |    Service in Azure Portal                                            |
 |    **Eerste eenmalige installatie** |    Probleem               |    Matig                       |    Eenvoudig (<30 minuten) tot gemiddeld (1-2 uur)            |    Dergaan                                                          |
-|    **Vooraf verwerkte gegevens**          |    Nee                                        |    Nee                                        |    Ja (met Edge Compute)                               |    Ja                                                                |
+|    **Vooraf verwerkte gegevens**          |    Nee                                        |    Nee                                        |    Ja (met Edge Compute)                               |    Yes                                                                |
 |    **Overdracht van andere Clouds**   |    Nee                                        |    Nee                                        |    Nee                                                    |    Ja                                                                |
 |    **Gebruikers type**                    |    IT-professionals of dev                                       |    Dev                                       |    IT pro                                                |    IT pro                                                             |
 |    **Prijzen**                      |    Er zijn gratis kosten voor het uitbrengen van gegevens van toepassing         |    Er zijn gratis kosten voor het uitbrengen van gegevens van toepassing         |    [Prijzen](https://azure.microsoft.com/pricing/details/storage/databox/edge/)                                               |    [Prijzen](https://azure.microsoft.com/pricing/details/data-factory/)                                                            |

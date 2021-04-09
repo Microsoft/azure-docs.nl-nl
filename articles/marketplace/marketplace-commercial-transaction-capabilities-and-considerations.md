@@ -8,10 +8,10 @@ ms.date: 11/18/2020
 ms.author: mingshen
 author: mingshen-ms
 ms.openlocfilehash: 59768e4fc04613a5ecac6a76059382499b7aaa86
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98986459"
 ---
 # <a name="commercial-marketplace-transact-capabilities"></a>De Transact-mogelijkheden voor commerciële Marketplace
@@ -46,7 +46,7 @@ De optie voor het publiceren van Transact wordt momenteel ondersteund voor de vo
 
 ### <a name="billing-infrastructure-costs"></a>Kosten van facturerings infrastructuur
 
-Voor **virtuele machines** en **Azure-toepassingen** worden Azure-infrastructuur gebruiks kosten in rekening gebracht voor het Azure-abonnement van de klant. De kosten voor het gebruik van de infra structuur zijn geprijsd en worden afzonderlijk van de licentie kosten van de software provider weer gegeven op de factuur van de klant.
+Voor **virtuele machines** en **Azure-toepassingen** worden Azure-infrastructuur gebruiks kosten in rekening gebracht voor het Azure-abonnement van de klant. De gebruikskosten voor de infrastructuur zijn geprijsd en worden afzonderlijk van de licentiekosten van de softwareprovider weergegeven op de factuur van de klant.
 
 Voor **SaaS-apps** moet u de uitgever de Azure-infrastructuur gebruiks kosten en software licentie kosten account als één kosten item.  Het wordt weer gegeven als een vast bedrag voor de klant. Het gebruik van de Azure-infra structuur wordt rechtstreeks beheerd en gefactureerd met de uitgever. De werkelijke gebruiks kosten voor de infra structuur zijn niet zichtbaar voor de klant. Uitgevers willen doorgaans de gebruiks kosten voor Azure-infra structuur bundelen in hun prijzen voor software licenties. Software licentie kosten worden niet gemeten of gebaseerd op het verbruik van de gebruiker.
 

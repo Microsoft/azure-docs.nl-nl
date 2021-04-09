@@ -7,10 +7,10 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 02/08/2021
 ms.openlocfilehash: d91b62afacad31d78feb7d4743cd4050fcc1bd4e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104581640"
 ---
 # <a name="scale-an-azure-cache-for-redis-instance"></a>Een Azure-cache schalen voor redis-instantie

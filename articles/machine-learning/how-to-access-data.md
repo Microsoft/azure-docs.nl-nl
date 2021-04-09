@@ -12,10 +12,10 @@ ms.reviewer: nibaccam
 ms.date: 11/03/2020
 ms.custom: how-to, contperf-fy21q1, devx-track-python, data4ml
 ms.openlocfilehash: 78b7bab204a08b474ea3c5cf5c2f7735c019a9c3
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102519925"
 ---
 # <a name="connect-to-storage-services-on-azure"></a>Verbinding maken met Storage services in azure
@@ -274,7 +274,7 @@ U kunt ook de standaard gegevens opslag wijzigen met de volgende code. Deze moge
 
 Azure Machine Learning biedt verschillende manieren om uw modellen te gebruiken voor het scoren van punten. Sommige van deze methoden bieden geen toegang tot gegevens opslag. Gebruik de volgende tabel om inzicht te krijgen in de methoden waarmee u toegang hebt tot gegevens opslag in de Score:
 
-| Methode | Toegang tot Data Store | Beschrijving |
+| Methode | Toegang tot Data Store | Description |
 | ----- | :-----: | ----- |
 | [Batchvoorspelling](./tutorial-pipeline-batch-scoring-classification.md) | ✔ | Doe asynchroon voorspellingen op grote hoeveelheden gegevens. |
 | [Webservice](how-to-deploy-and-where.md) | &nbsp; | Implementeer modellen als een webservice. |

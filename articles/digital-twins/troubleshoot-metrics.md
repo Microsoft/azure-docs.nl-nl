@@ -8,10 +8,10 @@ ms.date: 8/4/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.openlocfilehash: 63817c8a65678579ce535a3c2e667e4eb0971a63
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102434063"
 ---
 # <a name="troubleshooting-azure-digital-twins-metrics"></a>Problemen met Azure Digital Apparaatdubbels: metrische gegevens oplossen
@@ -55,7 +55,7 @@ U kunt deze metrische gegevens zo configureren dat ze volgen wanneer u een [gepu
 
 Als u dit wilt instellen, gebruikt u de functie [waarschuwingen](troubleshoot-alerts.md) in azure monitor. U kunt drempels voor deze metrische gegevens definiëren, zodat u een waarschuwing ontvangt wanneer een metriek een bepaald percentage van de gepubliceerde limiet bereikt.
 
-| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Type aggregatie| Beschrijving | Dimensies |
+| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Type aggregatie| Description | Dimensies |
 | --- | --- | --- | --- | --- | --- |
 | TwinCount | Dubbele telling (preview-versie) | Aantal | Totaal | Totaal aantal apparaatdubbels in de Azure Digital Apparaatdubbels-instantie. Gebruik deze metrische gegevens om te bepalen of u de [service limiet](reference-service-limits.md#functional-limits) nadert voor het maximum aantal apparaatdubbels dat per exemplaar is toegestaan. |  Geen |
 | ModelCount | Aantal modellen (preview-versie) | Aantal | Totaal | Totaal aantal modellen in het Azure Digital Apparaatdubbels-exemplaar. Gebruik deze metrische gegevens om te bepalen of u de [service limiet](reference-service-limits.md#functional-limits) nadert voor het maximum aantal modellen dat per exemplaar is toegestaan. | Geen |
@@ -64,7 +64,7 @@ Als u dit wilt instellen, gebruikt u de functie [waarschuwingen](troubleshoot-al
 
 Metrische gegevens met API-aanvragen:
 
-| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Type aggregatie| Beschrijving | Dimensies |
+| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Type aggregatie| Description | Dimensies |
 | --- | --- | --- | --- | --- | --- |
 | ApiRequests | API-aanvragen | Aantal | Totaal | Het aantal API-aanvragen voor digitale-Apparaatdubbels voor lezen, schrijven, verwijderen en query bewerkingen. |  Verificatie <br>Schijf <br>Protocolsubstatus <br>Status code, <br>Klasse status code, <br>Status tekst |
 | ApiRequestsFailureRate | Aantal mislukte API-aanvragen | Percentage | Gemiddeld | Het percentage van de API-aanvragen dat door de service wordt ontvangen voor uw exemplaar en die een interne fout (500) reactie code geven voor digitale Apparaatdubbels-Lees-, schrijf-, verwijder-en query bewerkingen. | Verificatie <br>Schijf <br>Protocolsubstatus <br>Status code, <br>Klasse status code, <br>Status tekst
@@ -74,7 +74,7 @@ Metrische gegevens met API-aanvragen:
 
 Metrische gegevens met facturering:
 
-| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Type aggregatie| Beschrijving | Dimensies |
+| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Type aggregatie| Description | Dimensies |
 | --- | --- | --- | --- | --- | --- |
 | BillingApiOperations | Facturering-API-bewerkingen | Aantal | Totaal | Facturerings metriek voor het aantal API-aanvragen dat is gedaan voor de Azure Digital Apparaatdubbels-service. | Meter ID |
 | BillingMessagesProcessed | Verwerkte facturerings berichten | Aantal | Totaal | Facturerings metriek voor het aantal berichten dat vanuit Azure Digital Apparaatdubbels naar externe eind punten wordt verzonden.<br><br>Een nettolading mag niet groter zijn dan 1 KB om te worden beschouwd als één bericht voor facturerings doeleinden. Nettoladingen die groter zijn dan deze worden geteld als extra berichten in stappen van 1 KB (dus een bericht tussen 1 en 2 KB wordt geteld als 2 berichten, tussen 2 en 3 KB is 3 berichten, enzovoort).<br>Deze beperking geldt ook voor antwoorden, dus een aanroep die 1,5 KB retourneert in de hoofd tekst van de reactie, wordt bijvoorbeeld gefactureerd als twee bewerkingen. | Meter ID |
@@ -86,7 +86,7 @@ Zie [*prijzen voor Azure Digital apparaatdubbels*](https://azure.microsoft.com/p
 
 Metrische gegevens die moeten worden uitgevoerd met inkomend verkeer:
 
-| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Type aggregatie| Beschrijving | Dimensies |
+| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Type aggregatie| Description | Dimensies |
 | --- | --- | --- | --- | --- | --- |
 | IngressEvents | Ingangs gebeurtenissen | Aantal | Totaal | Het aantal inkomende telemetrie-gebeurtenissen in azure Digital Apparaatdubbels. | Resultaat |
 | IngressEventsFailureRate | Aantal mislukte ingangs gebeurtenissen | Percentage | Gemiddeld | Het percentage inkomende telemetrie-gebeurtenissen waarvoor de service een interne fout (500) respons code retourneert. | Resultaat |
@@ -96,7 +96,7 @@ Metrische gegevens die moeten worden uitgevoerd met inkomend verkeer:
 
 Metrische gegevens die moeten worden uitgevoerd met route ring:
 
-| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Type aggregatie| Beschrijving | Dimensies |
+| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Type aggregatie| Description | Dimensies |
 | --- | --- | --- | --- | --- | --- |
 | MessagesRouted | Berichten gerouteerd | Aantal | Totaal | Het aantal berichten dat wordt doorgestuurd naar een Azure-service voor eind punten, zoals Event hub, Service Bus of Event Grid. | Type eind punt, <br>Resultaat |
 | RoutingFailureRate | Aantal mislukte routeringen | Percentage | Gemiddeld | Het percentage gebeurtenissen dat resulteert in een fout wanneer ze worden doorgestuurd van Azure Digital Apparaatdubbels naar een Azure-service voor eind punten, zoals Event hub, Service Bus of Event Grid. | Type eind punt, <br>Resultaat |

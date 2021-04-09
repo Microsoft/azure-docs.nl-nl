@@ -10,10 +10,10 @@ ms.date: 12/18/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
 ms.openlocfilehash: f18458d0c2ce857ba71463a14844414e631a73ad
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104595693"
 ---
 # <a name="azure-cosmos-db-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB Java SDK voor SQL API: release opmerkingen en bronnen
@@ -52,7 +52,7 @@ Dit is de oorspronkelijke Azure Cosmos DB Java SDK v2 voor de SQL-API die synchr
 |**Zelf studie voor web-apps**|[Ontwikkeling van webtoepassingen met Azure Cosmos DB](sql-api-java-application.md)|
 |**Minimale ondersteunde runtime**|[Java Development Kit (JDK) 7 +](/java/azure/jdk/)|
 
-## <a name="release-notes"></a>Releaseopmerkingen
+## <a name="release-notes"></a>Opmerkingen bij de release
 
 ### <a name="261"></a><a name="2.6.1"></a>2.6.1
 * Er is een fout opgelost bij het verwerken van een query via service Interop.

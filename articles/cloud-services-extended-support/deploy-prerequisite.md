@@ -9,10 +9,10 @@ ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
 ms.openlocfilehash: 21433e1a0441ef458dd5f8ea4b968211ef82cd46
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104865601"
 ---
 # <a name="prerequisites-for-deploying-azure-cloud-services-extended-support"></a>Vereisten voor het implementeren van Azure Cloud Services (uitgebreide ondersteuning)

@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.service: iot-edge
 ms.custom: devx-track-js
 ms.openlocfilehash: eae6f1ec8cb6917d0d51deca8c9e88725c9b01a7
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103200637"
 ---
 # <a name="use-visual-studio-code-to-develop-and-debug-modules-for-azure-iot-edge"></a>Visual Studio code gebruiken voor het ontwikkelen en opsporen van fouten in modules voor Azure IoT Edge

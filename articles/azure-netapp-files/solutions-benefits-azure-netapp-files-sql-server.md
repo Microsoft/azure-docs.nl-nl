@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 03/19/2021
 ms.author: b-juche
 ms.openlocfilehash: 46fe7570b7b9ea9446918d407dbe87596b8d0496
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104863901"
 ---
 #  <a name="benefits-of-using-azure-netapp-files-for-sql-server-deployment"></a>Voor delen van het gebruik van Azure NetApp Files voor SQL Server-implementatie

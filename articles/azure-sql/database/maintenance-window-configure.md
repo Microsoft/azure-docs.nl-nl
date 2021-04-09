@@ -10,10 +10,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/23/2021
 ms.openlocfilehash: 8688458d85084f3d3dab4678fa91ed827a337739
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105047348"
 ---
 # <a name="configure-maintenance-window-preview"></a>Onderhouds venster configureren (preview-versie)

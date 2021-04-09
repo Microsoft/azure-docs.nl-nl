@@ -10,10 +10,10 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: mqtt
 ms.openlocfilehash: ffe2f2b7f94d546cdfe393170da2fd2ca6ac0149
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103490990"
 ---
 # <a name="understand-how-azure-iot-edge-uses-certificates"></a>Meer informatie over het gebruik van Azure IoT Edge certificaten
@@ -116,4 +116,4 @@ U kunt de hiërarchie van certificaat diepte zien die wordt weer gegeven in de s
 
 [Informatie over Azure IoT Edge-modules](iot-edge-modules.md)
 
-[Een IoT Edge apparaat configureren om te fungeren als transparante gateway](how-to-create-transparent-gateway.md)
+[Een IoT Edge-apparaat configureren zodat deze werkt als een transparante gateway](how-to-create-transparent-gateway.md)

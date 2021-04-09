@@ -13,13 +13,13 @@ ms.workload: infrastructure-services
 ms.date: 01/04/2021
 ms.author: genli
 ms.openlocfilehash: c28790b2ef423a3d0f996d7c6030b04198756eb1
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102607608"
 ---
-# <a name="troubleshoot-outbound-smtp-connectivity-problems-in-azure"></a>Problemen met uitgaande SMTP-connectiviteit in azure oplossen
+# <a name="troubleshoot-outbound-smtp-connectivity-problems-in-azure"></a>Problemen met uitgaande SMTP-connectiviteit in Azure oplossen
 
 Vanaf 15 november 2017 worden uitgaande e-mail berichten die rechtstreeks naar externe domeinen (zoals outlook.com en gmail.com) worden verzonden vanaf een virtuele machine (VM) alleen beschikbaar gesteld voor bepaalde typen abonnementen in Azure. Uitgaande SMTP-verbindingen die gebruikmaken van TCP-poort 25, zijn geblokkeerd. (Poort 25 wordt hoofd zakelijk gebruikt voor niet-geverifieerde e-mail bezorging.)
 

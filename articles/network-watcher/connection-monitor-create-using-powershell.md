@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 01/07/2021
 ms.author: vinigam
 ms.openlocfilehash: 7f175d82b650871437a506ea4513f0ae28360f68
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "99833028"
 ---
 # <a name="create-a-connection-monitor-by-using-powershell"></a>Een verbindings monitor maken met behulp van Power shell

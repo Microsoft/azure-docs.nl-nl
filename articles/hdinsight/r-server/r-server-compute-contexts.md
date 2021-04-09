@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/02/2020
 ms.openlocfilehash: 71ce0d87faa33bd7d533242edfcf3b131c8f7e47
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98943950"
 ---
 # <a name="compute-context-options-for-ml-services-on-hdinsight"></a>Opties voor compute-context voor ML Services in HDInsight

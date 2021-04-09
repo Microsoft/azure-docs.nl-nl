@@ -10,10 +10,10 @@ ms.reviewer: veyalla
 ms.service: iot-edge
 services: iot-edge
 ms.openlocfilehash: 1a78db821c0fab01ad5d6752216a8f7682fb2c46
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103200500"
 ---
 # <a name="access-built-in-metrics"></a>Ingebouwde metrische gegevens openen
@@ -54,7 +54,7 @@ Kies verschillende en unieke host-poort nummers als u de metrische gegevens van 
 
 Metrische gegevens bevatten Tags waarmee u de aard van de metrische gegevens die worden verzameld, kunt identificeren. Alle metrische gegevens bevatten de volgende Tags:
 
-| Tag | Beschrijving |
+| Tag | Description |
 |-|-|
 | iothub | De hub waarmee het apparaat is praten |
 | edge_device | De ID van het huidige apparaat |

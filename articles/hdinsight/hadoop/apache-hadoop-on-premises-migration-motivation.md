@@ -7,10 +7,10 @@ ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 11/15/2019
 ms.openlocfilehash: 975d72df32027888e217d5da9171dba0ba61f257
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98943251"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---motivation-and-benefits"></a>On-premises Apache Hadoop clusters migreren naar Azure HDInsight-motivatie en voor delen
@@ -99,7 +99,7 @@ Deze sectie bevat sjabloon vragenlijsten waarmee u belang rijke informatie kunt 
 |Configuratie van hoofd knooppunt|m/y, CPU, schijf, etc.|
 |Configuratie van gegevens knooppunten|m/y, CPU, schijf, etc.|
 |Configuratie van Edge-knoop punten|m/y, CPU, schijf, etc.|
-|HDFS-versleuteling?|Ja|
+|HDFS-versleuteling?|Yes|
 |Hoge beschikbaarheid|HDFS HA, meta Store HA|
 |Herstel na nood geval/back-up|Back-upcluster?|  
 |Systemen die afhankelijk zijn van het cluster|SQL Server, Teradata, Power BI, MongoDB|
@@ -165,8 +165,8 @@ Deze sectie bevat sjabloon vragenlijsten waarmee u belang rijke informatie kunt 
 |---|---|---|
 |**Onderwerp**: **infra structuur** |||
 | Voorkeurs regio|US - oost||
-|Voor keur voor VNet?|Ja||
-|HA/DR nodig?|Ja||
+|Voor keur voor VNet?|Yes||
+|HA/DR nodig?|Yes||
 |Integratie met andere Cloud Services?|ADF, CosmosDB||
 |**Onderwerp**:   **gegevens verplaatsing**  |||
 |Initiële laad voorkeur|DistCp, data box, ADF, WANDisco||
@@ -175,25 +175,25 @@ Deze sectie bevat sjabloon vragenlijsten waarmee u belang rijke informatie kunt 
 |**Onderwerp**:   **bewaking & waarschuwingen** |||
 |Azure monitoring &-waarschuwingen gebruiken versus bewaking van derden integreren|Azure monitoring &-waarschuwingen gebruiken||
 |**Onderwerp**:   **beveiligings voorkeuren** |||
-|Persoonlijke en beveiligde gegevens pijplijn?|Ja||
-|Aan het domein toegevoegd cluster (ESP)?|     Ja||
-|On-premises AD Sync naar de Cloud?|     Ja||
+|Persoonlijke en beveiligde gegevens pijplijn?|Yes||
+|Aan het domein toegevoegd cluster (ESP)?|     Yes||
+|On-premises AD Sync naar de Cloud?|     Yes||
 |Aantal AD-gebruikers dat moet worden gesynchroniseerd?|          100||
-|Wilt u wacht woorden synchroniseren met de Cloud?|    Ja||
-|Alleen gebruikers in de Cloud?|                 Ja||
-|MFA vereist?|                       Nee|| 
-|Vereisten voor gegevens autorisatie?|  Ja||
-|Op rollen gebaseerd toegangs beheer?|        Ja||
-|Controle vereist?|                  Ja||
-|Gegevens versleuteling in rust?|          Ja||
-|Gegevens versleuteling in transit?|       Ja||
+|Wilt u wacht woorden synchroniseren met de Cloud?|    Yes||
+|Alleen gebruikers in de Cloud?|                 Yes||
+|MFA vereist?|                       No|| 
+|Vereisten voor gegevens autorisatie?|  Yes||
+|Op rollen gebaseerd toegangs beheer?|        Yes||
+|Controle vereist?|                  Yes||
+|Gegevens versleuteling in rust?|          Yes||
+|Gegevens versleuteling in transit?|       Yes||
 |**Onderwerp**:   **voor keuren voor opnieuw bearchitectuur** |||
 |Eén cluster versus specifieke cluster typen|Specifieke cluster typen||
 |Opgeslagen opslag versus externe opslag?|Externe opslag||
 |Kleinere cluster grootte naarmate gegevens extern worden opgeslagen?|Kleinere cluster grootte||
 |Gebruikt u meerdere kleinere clusters in plaats van één groot cluster?|Meerdere kleinere clusters gebruiken||
-|Een externe meta Store gebruiken?|Ja||
-|Wilt u de meta Stores delen tussen verschillende clusters?|Ja||
+|Een externe meta Store gebruiken?|Yes||
+|Wilt u de meta Stores delen tussen verschillende clusters?|Yes||
 |Werk belastingen ontconstrueren?|Hive-taken vervangen door Spark-taken||
 |ADF gebruiken voor gegevens indeling?|Nee||
 

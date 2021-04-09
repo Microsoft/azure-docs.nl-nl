@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 01/18/2021
 ms.author: jeedes
 ms.openlocfilehash: 5ed23889d8648c65ea0887d2f0f3406b50291f12
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101654291"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-topdesk---secure"></a>Zelfstudie: Azure Active Directory-integratie met TOPdesk - Secure
@@ -97,7 +97,7 @@ Voer de volgende stappen uit om Azure AD-eenmalige aanmelding met TOPdesk - Secu
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
-### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
+### <a name="create-an-azure-ad-test-user&quot;></a>Een Azure AD-testgebruiker maken 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
@@ -109,7 +109,7 @@ In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Porta
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
    1. Klik op **Create**.
 
-### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
+### <a name=&quot;assign-the-azure-ad-test-user&quot;></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen aan TOPdesk-Secure.
 
@@ -121,13 +121,13 @@ In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebru
 1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-### <a name="configure-topdesk---secure-sso"></a>TOPdesk-Secure SSO configureren
+### <a name=&quot;configure-topdesk---secure-sso&quot;></a>TOPdesk-Secure SSO configureren
 
 1. Meld u aan bij de bedrijfssite van **TOPdesk - Secure** als een beheerder.
 
 2. Klik in het menu van **TOPdesk** op **Settings**.
 
-    ![Instellingen](./media/topdesk-secure-tutorial/ic790598.png "Instellingen")
+    ![Instellingen](./media/topdesk-secure-tutorial/ic790598.png &quot;Instellingen")
 
 3. Klik op **Login Settings**.
 

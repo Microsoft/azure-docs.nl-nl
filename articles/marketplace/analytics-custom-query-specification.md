@@ -8,10 +8,10 @@ author: sayantanroy83
 ms.author: sroy
 ms.date: 3/08/2021
 ms.openlocfilehash: 4be063342a6c46d73c86f2d9dff1da5395328389
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102583831"
 ---
 # <a name="custom-query-specification"></a>Aangepaste query specificatie
@@ -58,7 +58,7 @@ Hier volgt een voor beeld van een gegevensset die wordt weer gegeven als een JSO
 
 Dit zijn enkele voor beelden van query's die laten zien hoe verschillende typen gegevens moeten worden geëxtraheerd.
 
-| Query | Beschrijving |
+| Query | Description |
 | ------------ | ------------- |
 | **Selecteer** MarketplaceSubscriptionId, CustomerId **van** ISVUsage **span LAST_MONTH** | Deze query krijgt elke unieke `MarketplaceSubscriptionId` en bijbehorende overeenkomende `CustomerId` in de afgelopen maand. |
 | **Selecteer** MarketplaceSubscriptionId, EstimatedExtendedChargeCC **van** ISVUSAGE **order by** EstimatedExtendedChargeCC **limiet** 10 | Met deze query worden de Top 10-abonnementen in aflopende volg orde opgehaald van het aantal licenties dat is verkocht onder elk abonnement. |

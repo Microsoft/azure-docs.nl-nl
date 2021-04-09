@@ -8,10 +8,10 @@ ms.date: 11/19/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: e847592127d19eba3370255385f5b969b87e886e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100380097"
 ---
 # <a name="move-data-from-odbc-data-stores-using-azure-data-factory"></a>Gegevens van ODBC-gegevens archieven verplaatsen met behulp van Azure Data Factory
@@ -62,12 +62,12 @@ In de volgende tabel vindt u een beschrijving van de JSON-elementen die specifie
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
 | type |De eigenschap type moet worden ingesteld op: **OnPremisesOdbc** |Ja |
-| connectionString |Het referentie deel voor niet-toegang van de connection string en een optionele versleutelde referentie. Zie de voor beelden in de volgende secties. <br/><br/>U kunt de connection string met een patroon opgeven `"Driver={SQL Server};Server=Server.database.windows.net; Database=TestDatabase;"` , of de systeem-DSN (gegevens bron naam) gebruiken die u hebt ingesteld op de gateway computer met `"DSN=<name of the DSN>;"` (u moet nog steeds het referentie deel opgeven in de gekoppelde service). |Ja |
-| referenties |Het deel van de toegangs referentie van de connection string dat is opgegeven in de eigenschaps waarde-indeling van het stuur programma. Bijvoorbeeld: `"Uid=<user ID>;Pwd=<password>;RefreshToken=<secret refresh token>;"`. |Nee |
-| authenticationType |Type verificatie dat wordt gebruikt om verbinding te maken met het ODBC-gegevens archief. Mogelijke waarden zijn: anoniem en basis. |Ja |
-| userName |Geef de gebruikers naam op als u basis verificatie gebruikt. |Nee |
-| wachtwoord |Geef het wacht woord op voor het gebruikers account dat u hebt opgegeven voor de gebruikers naam. |Nee |
-| gatewayName |De naam van de gateway die de Data Factory-service moet gebruiken om verbinding te maken met het ODBC-gegevens archief. |Ja |
+| connectionString |Het referentie deel voor niet-toegang van de connection string en een optionele versleutelde referentie. Zie de voor beelden in de volgende secties. <br/><br/>U kunt de connection string met een patroon opgeven `"Driver={SQL Server};Server=Server.database.windows.net; Database=TestDatabase;"` , of de systeem-DSN (gegevens bron naam) gebruiken die u hebt ingesteld op de gateway computer met `"DSN=<name of the DSN>;"` (u moet nog steeds het referentie deel opgeven in de gekoppelde service). |Yes |
+| referenties |Het deel van de toegangs referentie van de connection string dat is opgegeven in de eigenschaps waarde-indeling van het stuur programma. Bijvoorbeeld: `"Uid=<user ID>;Pwd=<password>;RefreshToken=<secret refresh token>;"`. |No |
+| authenticationType |Type verificatie dat wordt gebruikt om verbinding te maken met het ODBC-gegevens archief. Mogelijke waarden zijn: anoniem en basis. |Yes |
+| userName |Geef de gebruikers naam op als u basis verificatie gebruikt. |No |
+| wachtwoord |Geef het wacht woord op voor het gebruikers account dat u hebt opgegeven voor de gebruikers naam. |No |
+| gatewayName |De naam van de gateway die de Data Factory-service moet gebruiken om verbinding te maken met het ODBC-gegevens archief. |Yes |
 
 ### <a name="using-basic-authentication"></a>Basis verificatie gebruiken
 
@@ -133,7 +133,7 @@ De sectie **typeProperties** verschilt voor elk type gegevensset en bevat inform
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| tableName |De naam van de tabel in het ODBC-gegevens archief. |Ja |
+| tableName |De naam van de tabel in het ODBC-gegevens archief. |Yes |
 
 ## <a name="copy-activity-properties"></a>Eigenschappen van de kopieeractiviteit
 Zie het artikel [pijp lijnen maken](data-factory-create-pipelines.md) voor een volledige lijst met secties & eigenschappen die beschikbaar zijn voor het definiëren van activiteiten. Eigenschappen zoals naam, beschrijving, invoer-en uitvoer tabellen en beleids regels zijn beschikbaar voor alle typen activiteiten.
@@ -144,7 +144,7 @@ Wanneer de bron van het type **RelationalSource** (inclusief ODBC) is in Kopieer
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| query |Gebruik de aangepaste query om gegevens te lezen. |SQL-query teken reeks. Bijvoorbeeld: Select * from MyTable. |Ja |
+| query |Gebruik de aangepaste query om gegevens te lezen. |SQL-query teken reeks. Bijvoorbeeld: Select * from MyTable. |Yes |
 
 
 ## <a name="json-example-copy-data-from-odbc-data-store-to-azure-blob"></a>JSON-voor beeld: gegevens kopiëren van ODBC-gegevens archief naar een Azure-Blob

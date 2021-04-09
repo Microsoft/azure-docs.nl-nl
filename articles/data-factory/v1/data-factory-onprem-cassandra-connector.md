@@ -8,10 +8,10 @@ ms.date: 06/07/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 005fd85a152ee2765facda0d961bd9119d1598e8
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100387407"
 ---
 # <a name="move-data-from-an-on-premises-cassandra-database-using-azure-data-factory"></a>Gegevens verplaatsen van een on-premises Cassandra-data base met behulp van Azure Data Factory
@@ -60,14 +60,14 @@ In de volgende tabel vindt u een beschrijving van de JSON-elementen die specifie
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| type |De eigenschap type moet worden ingesteld op: **OnPremisesCassandra** |Ja |
-| host |Een of meer IP-adressen of hostnamen van Cassandra-servers.<br/><br/>Geef een door komma's gescheiden lijst met IP-adressen of hostnamen op om gelijktijdig verbinding te maken met alle servers. |Ja |
+| type |De eigenschap type moet worden ingesteld op: **OnPremisesCassandra** |Yes |
+| host |Een of meer IP-adressen of hostnamen van Cassandra-servers.<br/><br/>Geef een door komma's gescheiden lijst met IP-adressen of hostnamen op om gelijktijdig verbinding te maken met alle servers. |Yes |
 | poort |De TCP-poort die de Cassandra-server gebruikt om te Luis teren naar client verbindingen. |Nee, standaard waarde: 9042 |
-| authenticationType |Basic of anoniem |Ja |
+| authenticationType |Basic of anoniem |Yes |
 | gebruikersnaam |Geef de gebruikers naam voor het gebruikers account op. |Ja, als authenticationType is ingesteld op Basic. |
 | wachtwoord |Geef het wacht woord voor het gebruikers account op. |Ja, als authenticationType is ingesteld op Basic. |
-| gatewayName |De naam van de gateway die wordt gebruikt om verbinding te maken met de on-premises Cassandra-data base. |Ja |
-| encryptedCredential |Referentie versleuteld door de gateway. |Nee |
+| gatewayName |De naam van de gateway die wordt gebruikt om verbinding te maken met de on-premises Cassandra-data base. |Yes |
+| encryptedCredential |Referentie versleuteld door de gateway. |No |
 
 >[!NOTE]
 >Momenteel wordt geen verbinding met Cassandra met behulp van TLS ondersteund.

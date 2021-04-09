@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 01/19/2021
 ms.author: jeedes
 ms.openlocfilehash: 6372cd9d778210163c461c55119343e6c6911e4d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101649071"
 ---
 # <a name="tutorial-integrate-adaptive-insights-with-azure-active-directory"></a>Zelfstudie: Adaptive Insights integreren met Azure Active Directory
@@ -90,7 +90,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
-### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
+### <a name="create-an-azure-ad-test-user&quot;></a>Een Azure AD-testgebruiker maken
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
@@ -102,7 +102,7 @@ In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Porta
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
    1. Klik op **Create**.
 
-### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
+### <a name=&quot;assign-the-azure-ad-test-user&quot;></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot Adaptive Insights.
 
@@ -114,13 +114,13 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-### <a name="configure-adaptive-insights-sso"></a>Eenmalige aanmelding configureren in Adaptive Insights
+### <a name=&quot;configure-adaptive-insights-sso&quot;></a>Eenmalige aanmelding configureren in Adaptive Insights
 
 1. Meld u in een andere browser als beheerder aan bij de bedrijfssite van Adaptive Insights.
 
 2. Ga naar **Administration**.
 
-    ![Schermopname waarin Administration is gemarkeerd in het navigatiepaneel.](./media/adaptivesuite-tutorial/administration.png "Beheerder")
+    ![Schermopname waarin Administration is gemarkeerd in het navigatiepaneel.](./media/adaptivesuite-tutorial/administration.png &quot;Beheerder")
 
 3. Klik in de sectie **Users and Roles** op **SAML SSO Settings**.
 

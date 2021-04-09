@@ -4,10 +4,10 @@ description: Hoe Application Insights past in de devOps-cyclus
 ms.topic: conceptual
 ms.date: 12/21/2018
 ms.openlocfilehash: bc897cc0259894964e0b6164219b1e5459e824b6
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100579563"
 ---
 # <a name="deep-diagnostics-for-web-apps-and-services-with-application-insights"></a>Diepe diagnostische gegevens voor web-apps en services met Application Insights

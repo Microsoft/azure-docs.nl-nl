@@ -11,10 +11,10 @@ ms.topic: reference
 ms.date: 01/21/2020
 ms.author: lajanuar
 ms.openlocfilehash: 88a76a16de43853a001f5db895d6ad418940de0f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "98895489"
 ---
 # <a name="translator-30-dictionary-lookup"></a>Translator 3,0: opzoeken in woorden lijst
@@ -33,7 +33,7 @@ https://api.cognitive.microsofttranslator.com/dictionary/lookup?api-version=3.0
 
 Aanvraag parameters die zijn door gegeven voor de query reeks zijn:
 
-| Query parameter  | Beschrijving |
+| Query parameter  | Description |
 | ------ | ----------- |
 | api-versie <img width=200/>   | **Vereiste para meter**.<br/>De versie van de API die door de client is aangevraagd. Waarde moet `3.0` |
 | from | **Vereiste para meter**.<br/>Geeft de taal van de invoer tekst aan. De bron taal moet een van de [ondersteunde talen](./v3-0-languages.md) zijn die in het `dictionary` bereik zijn opgenomen. |
@@ -80,7 +80,7 @@ Een geslaagde reactie is een JSON-matrix met één resultaat voor elke teken ree
 
     * `posTag`: Een teken reeks waarmee deze term wordt gekoppeld aan een deel van een spraak label.
 
-        | Label naam | Beschrijving  |
+        | Label naam | Description  |
         |----------|--------------|
         | Corr      | Bijvoeglijke naamwoorden   |
         | ADV      | Beparameters      |

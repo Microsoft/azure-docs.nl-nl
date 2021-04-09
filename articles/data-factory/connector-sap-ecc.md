@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 10/28/2020
 ms.openlocfilehash: a3e701f3d433b5b52d8992035ac4ad75b78cb795
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100386693"
 ---
 # <a name="copy-data-from-sap-ecc-by-using-azure-data-factory"></a>Gegevens van SAP ECC kopiëren met behulp van Azure Data Factory
@@ -75,11 +75,11 @@ De volgende eigenschappen worden ondersteund voor de SAP ECC-gekoppelde service:
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| `type` | De `type` eigenschap moet worden ingesteld op `SapEcc` . | Ja |
-| `url` | De URL van de SAP ECC OData-service. | Ja |
-| `username` | De gebruikers naam die wordt gebruikt om verbinding te maken met SAP ECC. | Nee |
-| `password` | Het Lees bare wacht woord dat wordt gebruikt om verbinding te maken met SAP ECC. | Nee |
-| `connectVia` | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. Meer informatie vindt u in de sectie [vereisten](#prerequisites) . Als u geen runtime opgeeft, wordt de standaard Azure Integration runtime gebruikt. | Nee |
+| `type` | De `type` eigenschap moet worden ingesteld op `SapEcc` . | Yes |
+| `url` | De URL van de SAP ECC OData-service. | Yes |
+| `username` | De gebruikers naam die wordt gebruikt om verbinding te maken met SAP ECC. | No |
+| `password` | Het Lees bare wacht woord dat wordt gebruikt om verbinding te maken met SAP ECC. | No |
+| `connectVia` | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. Meer informatie vindt u in de sectie [vereisten](#prerequisites) . Als u geen runtime opgeeft, wordt de standaard Azure Integration runtime gebruikt. | No |
 
 ### <a name="example"></a>Voorbeeld
 
@@ -114,7 +114,7 @@ De volgende eigenschappen worden ondersteund:
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| `path` | Pad van de SAP ECC OData-entiteit. | Ja |
+| `path` | Pad van de SAP ECC OData-entiteit. | Yes |
 
 ### <a name="example"></a>Voorbeeld
 
@@ -147,10 +147,10 @@ De volgende eigenschappen worden ondersteund in de sectie Kopieer activiteit `so
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| `type` | De `type` eigenschap van de sectie van de Kopieer activiteit `source` moet worden ingesteld op `SapEccSource` . | Ja |
-| `query` | De OData-query opties voor het filteren van de gegevens. Bijvoorbeeld:<br/><br/>`"$select=Name,Description&$top=10"`<br/><br/>De SAP ECC-connector kopieert gegevens van de gecombineerde URL:<br/><br/>`<URL specified in the linked service>/<path specified in the dataset>?<query specified in the copy activity's source section>`<br/><br/>Zie [ODATA URL Components](https://www.odata.org/documentation/odata-version-3-0/url-conventions/)(Engelstalig) voor meer informatie. | Nee |
-| `sapDataColumnDelimiter` | Het enkelvoudige teken dat wordt gebruikt als scheidings tekens dat wordt door gegeven aan SAP RFC om de uitvoer gegevens te splitsen. | Nee |
-| `httpRequestTimeout` | De time-out (de time **span** -waarde) voor de HTTP-aanvraag om een antwoord te krijgen. Deze waarde is de time-out voor het verkrijgen van een reactie, niet de time-out voor het lezen van antwoord gegevens. Als niet wordt opgegeven, is de standaard waarde **00:30:00** (30 minuten). | Nee |
+| `type` | De `type` eigenschap van de sectie van de Kopieer activiteit `source` moet worden ingesteld op `SapEccSource` . | Yes |
+| `query` | De OData-query opties voor het filteren van de gegevens. Bijvoorbeeld:<br/><br/>`"$select=Name,Description&$top=10"`<br/><br/>De SAP ECC-connector kopieert gegevens van de gecombineerde URL:<br/><br/>`<URL specified in the linked service>/<path specified in the dataset>?<query specified in the copy activity's source section>`<br/><br/>Zie [ODATA URL Components](https://www.odata.org/documentation/odata-version-3-0/url-conventions/)(Engelstalig) voor meer informatie. | No |
+| `sapDataColumnDelimiter` | Het enkelvoudige teken dat wordt gebruikt als scheidings tekens dat wordt door gegeven aan SAP RFC om de uitvoer gegevens te splitsen. | No |
+| `httpRequestTimeout` | De time-out (de time **span** -waarde) voor de HTTP-aanvraag om een antwoord te krijgen. Deze waarde is de time-out voor het verkrijgen van een reactie, niet de time-out voor het lezen van antwoord gegevens. Als niet wordt opgegeven, is de standaard waarde **00:30:00** (30 minuten). | No |
 
 ### <a name="example"></a>Voorbeeld
 

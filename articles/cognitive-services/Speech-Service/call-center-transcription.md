@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
 ms.openlocfilehash: 19d4cc388494e149b7f258a8e9f154041a3dd070
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "95021963"
 ---
 # <a name="speech-service-for-telephony-data"></a>Spraak service voor telefoon gegevens
@@ -121,7 +121,7 @@ Een ander scenario is directe integratie met behulp van SIP (Session Initiation 
 
  De speech-service werkt goed met ingebouwde modellen. Het is echter mogelijk dat u de ervaring voor uw product of omgeving verder wilt aanpassen en afstemmen. Aanpassingsopties variëren van het afstemmen van akoestische modellen tot unieke spraakstijlen voor uw merk. Nadat u een aangepast model hebt gemaakt, kunt u het gebruiken met een van de functies van de speech-service in realtime of in batch modus.
 
-| Speech Service | Model | Beschrijving |
+| Speech Service | Model | Description |
 | -------------- | ----- | ----------- |
 | Spraak naar tekst | [Akoestisch model](./how-to-custom-speech-train-model.md) | Maak een aangepast akoestische model voor toepassingen, hulpprogram ma's of apparaten die in bepaalde omgevingen worden gebruikt, zoals in een auto of op een fabriek, elk met specifieke registratie voorwaarden. Voor beelden zijn onder andere geaccentde spraak, specifieke achtergrond geluiden of het gebruik van een specifieke microfoon voor de opname. |
 |                | [Taalmodel](./how-to-custom-speech-train-model.md) | Maak een aangepast taal model om transcriptie te verbeteren van de branchespecifieke woorden lijst en grammatica, zoals medische terminologie of het jargon. |

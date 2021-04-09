@@ -11,10 +11,10 @@ ms.topic: reference
 ms.date: 08/06/2020
 ms.author: lajanuar
 ms.openlocfilehash: 2da614fe829d0aa82bfa57337baf44491993c68f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "98895540"
 ---
 # <a name="translator-30-breaksentence"></a>Translator 3,0: BreakSentence
@@ -33,7 +33,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
 
 Aanvraag parameters die zijn door gegeven voor de query reeks zijn:
 
-| Query parameter | Beschrijving |
+| Query parameter | Description |
 | -------| ----------- |
 | api-versie <img width=200/>   | **Vereiste query parameter**.<br/>De versie van de API die door de client is aangevraagd. Waarde moet zijn `3.0` . |
 | language | **Optionele query parameter**.<br/>Taal code die de taal van de invoer tekst aangeeft. Als er geen code is opgegeven, wordt automatische taal detectie toegepast. |

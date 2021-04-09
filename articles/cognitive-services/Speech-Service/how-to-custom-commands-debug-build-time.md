@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
 ms.openlocfilehash: aeb90e8e064c44f4d17f920261ed58310f0e55f0
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "95025698"
 ---
 # <a name="debug-errors-when-authoring-a-custom-commands-application"></a>Fouten opsporen tijdens het ontwerpen van een toepassing voor aangepaste opdrachten
@@ -53,8 +53,8 @@ LUIS heeft ingebouwde Ja/geen intenties. Als er voorbeeld zinnen met alleen ' ja
 
 | Zoek | Variaties | 
 | ------- | --------- | 
-| Ja | Zeker, OK |
-| Nee | Klopt, niet | 
+| Yes | Zeker, OK |
+| No | Klopt, niet | 
 
 ### <a name="common-sample-sentences"></a>Algemene voorbeeld zinnen
 Aangepaste opdrachten staan geen veelvoorkomende voorbeeld zinnen toe die worden gedeeld tussen verschillende opdrachten. De training van een toepassing kan mislukken als sommige voorbeeld zinnen in één opdracht al zijn gedefinieerd in een andere opdracht. 

@@ -16,10 +16,10 @@ ms.topic: conceptual
 ms.date: 06/28/2020
 ms.author: yelevin
 ms.openlocfilehash: 77a8e208e463b8ab20d563421d447813b1ce84ee
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104772549"
 ---
 # <a name="permissions-in-azure-sentinel"></a>Machtigingen in Azure Sentinel
@@ -36,11 +36,11 @@ Er zijn drie speciale, ingebouwde Azure-Sentinel rollen.
 
 **Alle ingebouwde Azure Sentinel-rollen verlenen Lees toegang tot de gegevens in uw Azure Sentinel-werk ruimte.**
 
-- [Azure Sentinel Reader](../role-based-access-control/built-in-roles.md#azure-sentinel-reader) kan gegevens, incidenten, werkmappen en andere Azure Sentinel-bronnen weer geven.
+- De [Azure Sentinel-lezer](../role-based-access-control/built-in-roles.md#azure-sentinel-reader) kan gegevens, incidenten, werkmappen en andere Azure Sentinel-resources bekijken.
 
-- [Azure Sentinel responder](../role-based-access-control/built-in-roles.md#azure-sentinel-responder) kan naast het bovenstaande ook incidenten beheren (toewijzen, verwijderen, enz.)
+- De [Azure Sentinel-beantwoorder](../role-based-access-control/built-in-roles.md#azure-sentinel-responder) kan, naast het bovenstaande, ook incidenten beheren (toewijzen, verwijderen, enzovoort)
 
-- [Azure Sentinel contributor](../role-based-access-control/built-in-roles.md#azure-sentinel-contributor) kan naast het bovenstaande ook werkmappen, analyse regels en andere Azure-Sentinel-resources maken en bewerken.
+- De [Azure Sentinel-inzender](../role-based-access-control/built-in-roles.md#azure-sentinel-contributor) kan, naast het bovenstaande, werkmappen, analyseregels en overige Azure Sentinel-resources maken en bewerken.
 
 - [Azure Sentinel Automation-bijdrager](../role-based-access-control/built-in-roles.md#azure-sentinel-contributor) maakt Azure Sentinel toe om playbooks toe te voegen aan Automation-regels. Het is niet bedoeld voor gebruikers accounts.
 

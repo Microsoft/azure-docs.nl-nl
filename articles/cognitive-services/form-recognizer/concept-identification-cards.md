@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/15/2021
 ms.author: lajanuar
 ms.openlocfilehash: 01a73e7940f88a3eb6e040f26d255448294cab18
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103467808"
 ---
 # <a name="form-recognizer-prebuilt-identification-card-id-model"></a>Model voor vooraf gebouwde ID-kaart (ID) voor formulier herkenning
@@ -31,7 +31,7 @@ De preconstrueerde ID-service extraheert de sleutel waarden van de wereld wijde 
 
 ### <a name="fields-extracted"></a>Geëxtraheerde velden
 
-|Naam| Type | Beschrijving | Waarde | 
+|Naam| Type | Description | Waarde | 
 |:-----|:----|:----|:----|
 |  Land/regio | country | Land code die voldoet aan ISO 3166-standaard | Verenigde Staten | 
 |  DateOfBirth | date | DOB in de indeling JJJJ-MM-DD | "1980-01-01" | 

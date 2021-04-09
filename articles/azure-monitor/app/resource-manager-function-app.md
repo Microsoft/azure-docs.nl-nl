@@ -7,10 +7,10 @@ author: lgayhardt
 ms.author: lagayhar
 ms.date: 08/06/2020
 ms.openlocfilehash: 85829052f2e9179b0a721efce720763f82d6402c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100627377"
 ---
 # <a name="resource-manager-template-sample-for-creating-azure-function-apps-with-application-insights-monitoring"></a>Voorbeelden van Resource Manager-sjablonen voor het maken van Azure Function-apps en Application Insights-controles.

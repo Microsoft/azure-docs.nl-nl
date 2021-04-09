@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 11/30/2020
 ms.author: cherylmc
 ms.openlocfilehash: 73a7d76de34d29b2d51c54569b234cd8221b08f8
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98872176"
 ---
 # <a name="configure-vpn-gateway-transit-for-virtual-network-peering"></a>VPN-gatewayoverdracht configureren voor peering voor virtuele netwerken
@@ -44,8 +44,8 @@ Controleer voordat u begint of u de volgende virtuele netwerken en machtigingen 
 |VNet|Implementatiemodel| Gateway van een virtueel netwerk|
 |---|---|---|---|
 | Hub-RM| [Resource Manager](./tutorial-site-to-site-portal.md)| [Ja](tutorial-create-gateway-portal.md)|
-| Spoke-RM | [Resource Manager](./tutorial-site-to-site-portal.md)| Nee |
-| Spoke-Classic | [Klassieke](vpn-gateway-howto-site-to-site-classic-portal.md#CreatVNet) | Nee |
+| Spoke-RM | [Resource Manager](./tutorial-site-to-site-portal.md)| No |
+| Spoke-Classic | [Klassieke](vpn-gateway-howto-site-to-site-classic-portal.md#CreatVNet) | No |
 
 ### <a name="permissions"></a><a name="permissions"></a>Machtigingen
 

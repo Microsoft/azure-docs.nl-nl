@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 06/29/2017
 ms.author: pepogors
 ms.openlocfilehash: 9c7d466d6e8fd36b4445966b92ee753becf96c64
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98791758"
 ---
 # <a name="diagnostics-and-performance-monitoring-for-reliable-service-remoting"></a>Diagnose en prestatie bewaking voor betrouw bare service voor externe communicatie
@@ -74,7 +74,7 @@ In het voor gaande voor beeld is `ivoicemailboxservice.leavemessageasync` de naa
 
 De betrouw bare service-runtime publiceert de volgende prestatie meter items die betrekking hebben op de uitvoering van service methoden.
 
-| Category name | Naam van het meteritem | Beschrijving |
+| Category name | Naam van het meteritem | Description |
 | --- | --- | --- |
 | Service Fabric service methode |Aanroepen per seconde |Aantal keren dat de service methode per seconde wordt aangeroepen |
 | Service Fabric service methode |Gemiddeld aantal milliseconden per aanroep |Gebruikte tijd in milliseconden voor het uitvoeren van de service methode |
@@ -83,7 +83,7 @@ De betrouw bare service-runtime publiceert de volgende prestatie meter items die
 ### <a name="service-request-processing-performance-counters"></a>Prestatie meter items voor verwerking van service aanvragen
 Wanneer een client een methode aanroept via een Service proxy-object, resulteert dit in een aanvraag bericht dat via het netwerk naar de externe service wordt verzonden. De service verwerkt het aanvraag bericht en stuurt een antwoord terug naar de client. De betrouw bare ServiceRemoting-runtime publiceert de volgende prestatie meter items die betrekking hebben op de verwerking van service aanvragen.
 
-| Category name | Naam van het meteritem | Beschrijving |
+| Category name | Naam van het meteritem | Description |
 | --- | --- | --- |
 | Service Fabric-service |aantal openstaande aanvragen |Aantal aanvragen dat wordt verwerkt in de service |
 | Service Fabric-service |Gemiddeld aantal milliseconden per aanvraag |Gebruikte tijd (in milliseconden) van de service voor het verwerken van een aanvraag |

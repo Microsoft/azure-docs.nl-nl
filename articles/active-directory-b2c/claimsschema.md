@@ -11,10 +11,10 @@ ms.date: 03/05/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 2ff43408cfa6d95dbd5a235a950269c47d57a416
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "97654027"
 ---
 # <a name="claimsschema"></a>ClaimsSchema
@@ -44,11 +44,11 @@ Het element **claim** type bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Id | Ja | Een id die wordt gebruikt voor het claim type. Andere elementen kunnen deze id in het beleid gebruiken. |
+| Id | Yes | Een id die wordt gebruikt voor het claim type. Andere elementen kunnen deze id in het beleid gebruiken. |
 
 Het element **claim** type bevat de volgende elementen:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | DisplayName | 1:1 | De titel die wordt weer gegeven voor gebruikers op verschillende schermen. De waarde kan worden [gelokaliseerd](localization.md). |
 | DataType | 1:1 | Het type claim. |
@@ -84,7 +84,7 @@ Het **Data type** -element ondersteunt de volgende waarden:
 
 De **DefaultPartnerClaimTypes** kan het volgende element bevatten:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | Protocol | 1: n | Lijst met protocollen met de standaard type naam van de partner claim. |
 
@@ -92,8 +92,8 @@ Het **protocol** element bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Name | Ja | De naam van een geldig protocol dat door Azure AD B2C wordt ondersteund. Mogelijke waarden zijn: OAuth1, OAuth2, SAML2, OpenIdConnect. |
-| PartnerClaimType | Ja | De claim type naam die moet worden gebruikt. |
+| Name | Yes | De naam van een geldig protocol dat door Azure AD B2C wordt ondersteund. Mogelijke waarden zijn: OAuth1, OAuth2, SAML2, OpenIdConnect. |
+| PartnerClaimType | Yes | De claim type naam die moet worden gebruikt. |
 
 In het volgende voor beeld, wanneer het Framework voor identiteits ervaring communiceert met een SAML2-ID-provider of Relying Party toepassing, wordt de claim **Achternaam** toegewezen aan `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname` , met OpenIdConnect en OAuth2, de claim wordt toegewezen aan `family_name` .
 
@@ -128,7 +128,7 @@ Het **masker** element bevat de volgende kenmerken:
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
 | `Type` | Ja | Het type van het claim masker. Mogelijke waarden: `Simple` of `Regex` . De `Simple` waarde geeft aan dat een eenvoudig tekst masker wordt toegepast op het voorste gedeelte van een teken reeks claim. De `Regex` waarde geeft aan dat een reguliere expressie wordt toegepast op de teken reeks claim als geheel.  Als de `Regex` waarde is opgegeven, moet er ook een optioneel kenmerk worden gedefinieerd met de reguliere expressie die moet worden gebruikt. |
-| `Regex` | Nee | Als **`Type`** is ingesteld op `Regex` , geeft u de reguliere expressie op die moet worden gebruikt.
+| `Regex` | No | Als **`Type`** is ingesteld op `Regex` , geeft u de reguliere expressie op die moet worden gebruikt.
 
 In het volgende voor beeld wordt een **phonenumber** -claim met het `Simple` masker geconfigureerd:
 
@@ -167,11 +167,11 @@ Het **beperkings** element kan het volgende kenmerk bevatten:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| MergeBehavior | Nee | De methode die wordt gebruikt voor het samen voegen van opsommings waarden met een claim type in een bovenliggend beleid met dezelfde id. Gebruik dit kenmerk wanneer u een claim overschrijft die is opgegeven in het basis beleid. Mogelijke waarden: `Append` , `Prepend` of `ReplaceAll` . De `Append` waarde is een verzameling gegevens die moet worden toegevoegd aan het einde van de verzameling die in het bovenliggende beleid is opgegeven. De `Prepend` waarde is een verzameling gegevens die moet worden toegevoegd vóór de verzameling die in het bovenliggende beleid is opgegeven. De `ReplaceAll` waarde is een verzameling gegevens die is opgegeven in het bovenliggende beleid en die moet worden genegeerd. |
+| MergeBehavior | No | De methode die wordt gebruikt voor het samen voegen van opsommings waarden met een claim type in een bovenliggend beleid met dezelfde id. Gebruik dit kenmerk wanneer u een claim overschrijft die is opgegeven in het basis beleid. Mogelijke waarden: `Append` , `Prepend` of `ReplaceAll` . De `Append` waarde is een verzameling gegevens die moet worden toegevoegd aan het einde van de verzameling die in het bovenliggende beleid is opgegeven. De `Prepend` waarde is een verzameling gegevens die moet worden toegevoegd vóór de verzameling die in het bovenliggende beleid is opgegeven. De `ReplaceAll` waarde is een verzameling gegevens die is opgegeven in het bovenliggende beleid en die moet worden genegeerd. |
 
 Het **beperkings** element bevat de volgende elementen:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | Inventarisatie | 1: n | De beschik bare opties in de gebruikers interface waarmee de gebruiker een claim kan selecteren, zoals een waarde in een vervolg keuzelijst. |
 | Patroon | 1:1 | De reguliere expressie die moet worden gebruikt. |
@@ -184,9 +184,9 @@ Het **opsommings** element bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Tekst | Ja | De weergave teken reeks die wordt weer gegeven aan de gebruiker in de gebruikers interface voor deze optie. |
-|Waarde | Ja | De claim waarde die is gekoppeld aan het selecteren van deze optie. |
-| SelectByDefault | Nee | Hiermee wordt aangegeven of deze optie standaard moet worden geselecteerd in de gebruikers interface. Mogelijke waarden: True of false. |
+| Tekst | Yes | De weergave teken reeks die wordt weer gegeven aan de gebruiker in de gebruikers interface voor deze optie. |
+|Waarde | Yes | De claim waarde die is gekoppeld aan het selecteren van deze optie. |
+| SelectByDefault | No | Hiermee wordt aangegeven of deze optie standaard moet worden geselecteerd in de gebruikers interface. Mogelijke waarden: True of false. |
 
 In het volgende voor beeld wordt een lijst claim voor een **plaats** keuzelijst geconfigureerd met een standaard waarde ingesteld op `New York` :
 
@@ -213,8 +213,8 @@ Het element **pattern** kan de volgende kenmerken bevatten:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| RegularExpression | Ja | De reguliere expressie die de claims van dit type moet overeenkomen om geldig te zijn. |
-| HelpText | Nee | Een fout bericht voor gebruikers als de reguliere expressie is mislukt. |
+| RegularExpression | Yes | De reguliere expressie die de claims van dit type moet overeenkomen om geldig te zijn. |
+| HelpText | No | Een fout bericht voor gebruikers als de reguliere expressie is mislukt. |
 
 In het volgende voor beeld wordt een **e-mail** claim geconfigureerd met de reguliere expressie invoer validatie en Help-tekst:
 
@@ -243,7 +243,7 @@ Azure AD B2C ondersteunt diverse invoer typen voor gebruikers, zoals een tekstva
 
 Het **UserInputType** -element beschik bare invoer typen voor gebruikers:
 
-| UserInputType | Ondersteunde claim type | Beschrijving |
+| UserInputType | Ondersteunde claim type | Description |
 | --------- | -------- | ----------- |
 |CheckboxMultiSelect| `string` |Vervolg keuzelijst meervoudige selectie. De claim waarde wordt weer gegeven in een komma als scheidings teken reeks van de geselecteerde waarden. |
 |DateTimeDropdown | `date`, `dateTime` |Vervolg keuzelijst om een dag, maand en jaar te selecteren. |

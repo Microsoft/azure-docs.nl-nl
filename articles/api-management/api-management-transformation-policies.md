@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 03/11/2019
 ms.author: apimpm
 ms.openlocfilehash: c0c7a6b25c15be2e521e0985c315baf819650aa5
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "99491753"
 ---
 # <a name="api-management-transformation-policies"></a>Transformatiebeleid API Management
@@ -71,15 +71,15 @@ In dit onderwerp vindt u een verwijzing naar de volgende API Management-beleids 
 
 |Naam|Beschrijving|Vereist|
 |----------|-----------------|--------------|
-|JSON-to-XML|Hoofd element.|Ja|
+|JSON-to-XML|Hoofd element.|Yes|
 
 ### <a name="attributes"></a>Kenmerken
 
 |Naam|Beschrijving|Vereist|Standaard|
 |----------|-----------------|--------------|-------------|
-|toepassen|Het kenmerk moet worden ingesteld op een van de volgende waarden.<br /><br /> -altijd-altijd conversie Toep assen.<br />-content-type-JSON-Convert alleen als de content-type-header van het antwoord duidt op de aanwezigheid van JSON.|Ja|N.v.t.|
-|Overweeg-Accept-header|Het kenmerk moet worden ingesteld op een van de volgende waarden.<br /><br /> -True-de conversie Toep assen als XML is aangevraagd in de header geaccepteerd van aanvraag.<br />-ONWAAR-altijd conversie Toep assen.|Nee|true|
-|parseren datum|Wanneer ingesteld op `false` datum waarden worden eenvoudigweg gekopieerd tijdens de trans formatie|Nee|true|
+|toepassen|Het kenmerk moet worden ingesteld op een van de volgende waarden.<br /><br /> -altijd-altijd conversie Toep assen.<br />-content-type-JSON-Convert alleen als de content-type-header van het antwoord duidt op de aanwezigheid van JSON.|Yes|N.v.t.|
+|Overweeg-Accept-header|Het kenmerk moet worden ingesteld op een van de volgende waarden.<br /><br /> -True-de conversie Toep assen als XML is aangevraagd in de header geaccepteerd van aanvraag.<br />-ONWAAR-altijd conversie Toep assen.|No|true|
+|parseren datum|Wanneer ingesteld op `false` datum waarden worden eenvoudigweg gekopieerd tijdens de trans formatie|No|true|
 
 ### <a name="usage"></a>Gebruik
  Dit beleid kan worden gebruikt in de volgende beleids [secties](./api-management-howto-policies.md#sections) en [bereiken](./api-management-howto-policies.md#scopes).
@@ -115,15 +115,15 @@ In dit onderwerp vindt u een verwijzing naar de volgende API Management-beleids 
 
 |Naam|Beschrijving|Vereist|
 |----------|-----------------|--------------|
-|XML naar JSON|Hoofd element.|Ja|
+|XML naar JSON|Hoofd element.|Yes|
 
 ### <a name="attributes"></a>Kenmerken
 
 |Naam|Beschrijving|Vereist|Standaard|
 |----------|-----------------|--------------|-------------|
-|type|Het kenmerk moet worden ingesteld op een van de volgende waarden.<br /><br /> -Java script-vriendelijk: de geconverteerde JSON heeft een formulier vriendelijk voor Java script-ontwikkel aars.<br />-direct-de geconverteerde JSON weerspiegelt de oorspronkelijke XML-document structuur.|Ja|N.v.t.|
-|toepassen|Het kenmerk moet worden ingesteld op een van de volgende waarden.<br /><br /> -altijd-Convert altijd.<br />-content-type-XML: alleen converteren als de content-type-header van het antwoord de aanwezigheid van XML aangeeft.|Ja|N.v.t.|
-|Overweeg-Accept-header|Het kenmerk moet worden ingesteld op een van de volgende waarden.<br /><br /> -True-conversie Toep assen als JSON is aangevraagd in de koptekst van de Accept-aanvraag.<br />-ONWAAR-altijd conversie Toep assen.|Nee|true|
+|type|Het kenmerk moet worden ingesteld op een van de volgende waarden.<br /><br /> -Java script-vriendelijk: de geconverteerde JSON heeft een formulier vriendelijk voor Java script-ontwikkel aars.<br />-direct-de geconverteerde JSON weerspiegelt de oorspronkelijke XML-document structuur.|Yes|N.v.t.|
+|toepassen|Het kenmerk moet worden ingesteld op een van de volgende waarden.<br /><br /> -altijd-Convert altijd.<br />-content-type-XML: alleen converteren als de content-type-header van het antwoord de aanwezigheid van XML aangeeft.|Yes|N.v.t.|
+|Overweeg-Accept-header|Het kenmerk moet worden ingesteld op een van de volgende waarden.<br /><br /> -True-conversie Toep assen als JSON is aangevraagd in de koptekst van de Accept-aanvraag.<br />-ONWAAR-altijd conversie Toep assen.|No|true|
 
 ### <a name="usage"></a>Gebruik
  Dit beleid kan worden gebruikt in de volgende beleids [secties](./api-management-howto-policies.md#sections) en [bereiken](./api-management-howto-policies.md#scopes).
@@ -151,14 +151,14 @@ In dit onderwerp vindt u een verwijzing naar de volgende API Management-beleids 
 
 |Naam|Beschrijving|Vereist|
 |----------|-----------------|--------------|
-|zoeken en vervangen|Hoofd element.|Ja|
+|zoeken en vervangen|Hoofd element.|Yes|
 
 ### <a name="attributes"></a>Kenmerken
 
 |Naam|Beschrijving|Vereist|Standaard|
 |----------|-----------------|--------------|-------------|
-|from|De tekenreeks waarnaar moet worden gezocht.|Ja|N.v.t.|
-|tot|De vervangende tekenreeks. Een teken reeks met een lengte van nul opgeven om de zoek teken reeks te verwijderen.|Ja|N.v.t.|
+|from|De tekenreeks waarnaar moet worden gezocht.|Yes|N.v.t.|
+|tot|De vervangende tekenreeks. Een teken reeks met een lengte van nul opgeven om de zoek teken reeks te verwijderen.|Yes|N.v.t.|
 
 ### <a name="usage"></a>Gebruik
  Dit beleid kan worden gebruikt in de volgende beleids [secties](./api-management-howto-policies.md#sections) en [bereiken](./api-management-howto-policies.md#scopes).
@@ -189,7 +189,7 @@ In dit onderwerp vindt u een verwijzing naar de volgende API Management-beleids 
 
 |Naam|Beschrijving|Vereist|
 |----------|-----------------|--------------|
-|omleiden-inhoud-url's|Hoofd element.|Ja|
+|omleiden-inhoud-url's|Hoofd element.|Yes|
 
 ### <a name="usage"></a>Gebruik
  Dit beleid kan worden gebruikt in de volgende beleids [secties](./api-management-howto-policies.md#sections) en [bereiken](./api-management-howto-policies.md#scopes).
@@ -262,7 +262,7 @@ In dit voor beeld stuurt het beleid de aanvraag naar een service Fabric-back-end
 
 |Naam|Beschrijving|Vereist|
 |----------|-----------------|--------------|
-|set-back-end-service|Hoofd element.|Ja|
+|set-back-end-service|Hoofd element.|Yes|
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -270,11 +270,11 @@ In dit voor beeld stuurt het beleid de aanvraag naar een service Fabric-back-end
 |----------|-----------------|--------------|-------------|
 |basis-URL|Basis-URL van nieuwe back-end-service.|Een van `base-url` of `backend-id` moet aanwezig zijn.|N.v.t.|
 |back-end-id|De id van de back-end waarnaar moet worden doorgestuurd. (Back-upentiteiten worden beheerd via [Azure Portal](how-to-configure-service-fabric-backend.md), [API](/rest/api/apimanagement)en [Power shell](https://www.powershellgallery.com/packages?q=apimanagement).)|Een van `base-url` of `backend-id` moet aanwezig zijn.|N.v.t.|
-|SF-partitie-Key|Alleen van toepassing wanneer de back-end een Service Fabric-service is en is opgegeven met behulp van back-end-id. Wordt gebruikt voor het omzetten van een specifieke partitie van de service voor naam omzetting.|Nee|N.v.t.|
-|SF-replica-type|Alleen van toepassing wanneer de back-end een Service Fabric-service is en is opgegeven met behulp van back-end-id. Hiermee wordt bepaald of de aanvraag naar de primaire of secundaire replica van een partitie moet gaan. |Nee|N.v.t.|
-|EB-oplossen-voor waarde|Alleen van toepassing wanneer de back-end een Service Fabric-service is. Voor waarde waarmee wordt aangegeven of de aanroep van Service Fabric back-end moet worden herhaald met de nieuwe oplossing.|Nee|N.v.t.|
-|SF-service-instance-name|Alleen van toepassing wanneer de back-end een Service Fabric-service is. Hiermee kunnen service-exemplaren tijdens runtime worden gewijzigd. |Nee|N.v.t.|
-|SF-listener-naam|Alleen van toepassing wanneer de back-end een Service Fabric-service is en is opgegeven met behulp van back-end-id. Met Service Fabric Reliable Services kunt u meerdere listeners in een service maken. Dit kenmerk wordt gebruikt om een specifieke listener te selecteren wanneer een backend-betrouw bare service meer dan één listener heeft. Als dit kenmerk niet is opgegeven, probeert API Management een listener zonder naam te gebruiken. Een listener zonder naam is gebruikelijk voor Reliable Services die slechts één listener hebben. |Nee|N.v.t.|
+|SF-partitie-Key|Alleen van toepassing wanneer de back-end een Service Fabric-service is en is opgegeven met behulp van back-end-id. Wordt gebruikt voor het omzetten van een specifieke partitie van de service voor naam omzetting.|No|N.v.t.|
+|SF-replica-type|Alleen van toepassing wanneer de back-end een Service Fabric-service is en is opgegeven met behulp van back-end-id. Hiermee wordt bepaald of de aanvraag naar de primaire of secundaire replica van een partitie moet gaan. |No|N.v.t.|
+|EB-oplossen-voor waarde|Alleen van toepassing wanneer de back-end een Service Fabric-service is. Voor waarde waarmee wordt aangegeven of de aanroep van Service Fabric back-end moet worden herhaald met de nieuwe oplossing.|No|N.v.t.|
+|SF-service-instance-name|Alleen van toepassing wanneer de back-end een Service Fabric-service is. Hiermee kunnen service-exemplaren tijdens runtime worden gewijzigd. |No|N.v.t.|
+|SF-listener-naam|Alleen van toepassing wanneer de back-end een Service Fabric-service is en is opgegeven met behulp van back-end-id. Met Service Fabric Reliable Services kunt u meerdere listeners in een service maken. Dit kenmerk wordt gebruikt om een specifieke listener te selecteren wanneer een backend-betrouw bare service meer dan één listener heeft. Als dit kenmerk niet is opgegeven, probeert API Management een listener zonder naam te gebruiken. Een listener zonder naam is gebruikelijk voor Reliable Services die slechts één listener hebben. |No|N.v.t.|
 
 ### <a name="usage"></a>Gebruik
  Dit beleid kan worden gebruikt in de volgende beleids [secties](./api-management-howto-policies.md#sections) en [bereiken](./api-management-howto-policies.md#scopes).
@@ -398,13 +398,13 @@ Het `set-body` beleid kan worden geconfigureerd voor het gebruik van de taal [Li
 
 |Naam|Beschrijving|Vereist|
 |----------|-----------------|--------------|
-|set-Body|Hoofd element. Bevat de hoofd tekst of een expressie die een tekst als resultaat retourneert.|Ja|
+|set-Body|Hoofd element. Bevat de hoofd tekst of een expressie die een tekst als resultaat retourneert.|Yes|
 
 ### <a name="properties"></a>Eigenschappen
 
 |Naam|Beschrijving|Vereist|Standaard|
 |----------|-----------------|--------------|-------------|
-|sjabloon|Hiermee wordt de sjabloon-modus voor het instellen van het hoofd beleid voor regels gewijzigd in. Momenteel is de enige ondersteunde waarde:<br /><br />-liquide-het hoofd beleid instellen gebruikt de vloeistof sjabloon-engine |Nee||
+|sjabloon|Hiermee wordt de sjabloon-modus voor het instellen van het hoofd beleid voor regels gewijzigd in. Momenteel is de enige ondersteunde waarde:<br /><br />-liquide-het hoofd beleid instellen gebruikt de vloeistof sjabloon-engine |No||
 
 Voor toegang tot informatie over de aanvraag en het antwoord kan de vloeistof sjabloon worden gebonden aan een context object met de volgende eigenschappen: <br />
 <pre>context.
@@ -512,15 +512,15 @@ OriginalUrl.
 
 |Naam|Beschrijving|Vereist|
 |----------|-----------------|--------------|
-|set-header|Hoofd element.|Ja|
-|waarde|Hiermee geeft u de waarde van de in te stellen header op. Voeg extra elementen toe voor meerdere kopteksten met dezelfde naam `value` .|Nee|
+|set-header|Hoofd element.|Yes|
+|waarde|Hiermee geeft u de waarde van de in te stellen header op. Voeg extra elementen toe voor meerdere kopteksten met dezelfde naam `value` .|No|
 
 ### <a name="properties"></a>Eigenschappen
 
 |Naam|Beschrijving|Vereist|Standaard|
 |----------|-----------------|--------------|-------------|
-|exists-actie|Hiermee geeft u op welke actie moet worden ondernomen wanneer de header al is opgegeven. Dit kenmerk moet een van de volgende waarden hebben.<br /><br /> -Override: vervangt de waarde van de bestaande header.<br />-Skip-vervangt niet de bestaande waarde van de header.<br />-append-de waarde wordt toegevoegd aan de bestaande waarde van de header.<br />-delete: verwijdert de header uit de aanvraag.<br /><br /> Als de instelling is ingesteld op het `override` Aanmelden van meerdere vermeldingen met dezelfde naam, wordt de header ingesteld op basis van alle vermeldingen (die meerdere keren worden vermeld). in het resultaat worden alleen waarden weer gegeven die in de lijst staan.|Nee|overschrijven|
-|naam|Hiermee geeft u de naam op van de header die moet worden ingesteld.|Ja|N.v.t.|
+|exists-actie|Hiermee geeft u op welke actie moet worden ondernomen wanneer de header al is opgegeven. Dit kenmerk moet een van de volgende waarden hebben.<br /><br /> -Override: vervangt de waarde van de bestaande header.<br />-Skip-vervangt niet de bestaande waarde van de header.<br />-append-de waarde wordt toegevoegd aan de bestaande waarde van de header.<br />-delete: verwijdert de header uit de aanvraag.<br /><br /> Als de instelling is ingesteld op het `override` Aanmelden van meerdere vermeldingen met dezelfde naam, wordt de header ingesteld op basis van alle vermeldingen (die meerdere keren worden vermeld). in het resultaat worden alleen waarden weer gegeven die in de lijst staan.|No|overschrijven|
+|naam|Hiermee geeft u de naam op van de header die moet worden ingesteld.|Yes|N.v.t.|
 
 ### <a name="usage"></a>Gebruik
  Dit beleid kan worden gebruikt in de volgende beleids [secties](./api-management-howto-policies.md#sections) en [bereiken](./api-management-howto-policies.md#scopes).
@@ -567,15 +567,15 @@ OriginalUrl.
 
 |Naam|Beschrijving|Vereist|
 |----------|-----------------|--------------|
-|set-query-para meter|Hoofd element.|Ja|
-|waarde|Hiermee geeft u de waarde van de in te stellen queryparameter op. Voeg extra elementen toe voor meerdere query parameters met dezelfde naam `value` .|Ja|
+|set-query-para meter|Hoofd element.|Yes|
+|waarde|Hiermee geeft u de waarde van de in te stellen queryparameter op. Voeg extra elementen toe voor meerdere query parameters met dezelfde naam `value` .|Yes|
 
 ### <a name="properties"></a>Eigenschappen
 
 |Naam|Beschrijving|Vereist|Standaard|
 |----------|-----------------|--------------|-------------|
-|exists-actie|Hiermee geeft u op welke actie moet worden uitgevoerd wanneer de querytekenreeks al is opgegeven. Dit kenmerk moet een van de volgende waarden hebben.<br /><br /> -Override: vervangt de waarde van de bestaande para meter.<br />-Skip-vervangt niet de bestaande waarde van de query parameter.<br />-append-de waarde wordt toegevoegd aan de bestaande waarde van de query parameter.<br />-DELETE-verwijdert de query parameter uit de aanvraag.<br /><br /> Als de instelling is ingesteld op het `override` Aanmelden van meerdere vermeldingen met dezelfde naam, wordt de query parameter ingesteld op basis van alle vermeldingen (die meerdere keren worden vermeld). in het resultaat worden alleen waarden weer gegeven die in de lijst staan.|Nee|overschrijven|
-|naam|Hiermee geeft u de naam op van de query parameter die moet worden ingesteld.|Ja|N.v.t.|
+|exists-actie|Hiermee geeft u op welke actie moet worden uitgevoerd wanneer de querytekenreeks al is opgegeven. Dit kenmerk moet een van de volgende waarden hebben.<br /><br /> -Override: vervangt de waarde van de bestaande para meter.<br />-Skip-vervangt niet de bestaande waarde van de query parameter.<br />-append-de waarde wordt toegevoegd aan de bestaande waarde van de query parameter.<br />-DELETE-verwijdert de query parameter uit de aanvraag.<br /><br /> Als de instelling is ingesteld op het `override` Aanmelden van meerdere vermeldingen met dezelfde naam, wordt de query parameter ingesteld op basis van alle vermeldingen (die meerdere keren worden vermeld). in het resultaat worden alleen waarden weer gegeven die in de lijst staan.|No|overschrijven|
+|naam|Hiermee geeft u de naam op van de query parameter die moet worden ingesteld.|Yes|N.v.t.|
 
 ### <a name="usage"></a>Gebruik
  Dit beleid kan worden gebruikt in de volgende beleids [secties](./api-management-howto-policies.md#sections) en [bereiken](./api-management-howto-policies.md#scopes).
@@ -646,14 +646,14 @@ OriginalUrl.
 
 |Naam|Beschrijving|Vereist|
 |----------|-----------------|--------------|
-|Herschrijf-URI|Hoofd element.|Ja|
+|Herschrijf-URI|Hoofd element.|Yes|
 
 ### <a name="attributes"></a>Kenmerken
 
 |Kenmerk|Beschrijving|Vereist|Standaard|
 |---------------|-----------------|--------------|-------------|
-|sjabloon|De daad werkelijke webservice-URL met alle query teken reeks parameters. Bij het gebruik van expressies moet de gehele waarde een expressie zijn.|Ja|N.v.t.|
-|kopiëren-niet-overeenkomende para meters|Hiermee wordt aangegeven of query parameters in de binnenkomende aanvraag die niet aanwezig zijn in de oorspronkelijke URL-sjabloon, worden toegevoegd aan de URL die is gedefinieerd door de sjabloon voor opnieuw schrijven|Nee|true|
+|sjabloon|De daad werkelijke webservice-URL met alle query teken reeks parameters. Bij het gebruik van expressies moet de gehele waarde een expressie zijn.|Yes|N.v.t.|
+|kopiëren-niet-overeenkomende para meters|Hiermee wordt aangegeven of query parameters in de binnenkomende aanvraag die niet aanwezig zijn in de oorspronkelijke URL-sjabloon, worden toegevoegd aan de URL die is gedefinieerd door de sjabloon voor opnieuw schrijven|No|true|
 
 ### <a name="usage"></a>Gebruik
  Dit beleid kan worden gebruikt in de volgende beleids [secties](./api-management-howto-policies.md#sections) en [bereiken](./api-management-howto-policies.md#scopes).
@@ -715,9 +715,9 @@ OriginalUrl.
 
 |Naam|Beschrijving|Vereist|
 |----------|-----------------|--------------|
-|XSL-trans formatie|Hoofd element.|Ja|
-|parameter|Gebruikt voor het definiëren van variabelen die in de trans formatie worden gebruikt|Nee|
-|XSL: Style Sheet|Hoofd element voor opmaak modellen. Alle elementen en kenmerken die zijn gedefinieerd binnen de standaard [XSLT-specificatie](https://www.w3.org/TR/xslt)|Ja|
+|XSL-trans formatie|Hoofd element.|Yes|
+|parameter|Gebruikt voor het definiëren van variabelen die in de trans formatie worden gebruikt|No|
+|XSL: Style Sheet|Hoofd element voor opmaak modellen. Alle elementen en kenmerken die zijn gedefinieerd binnen de standaard [XSLT-specificatie](https://www.w3.org/TR/xslt)|Yes|
 
 ### <a name="usage"></a>Gebruik
  Dit beleid kan worden gebruikt in de volgende beleids [secties](./api-management-howto-policies.md#sections) en [bereiken](./api-management-howto-policies.md#scopes).

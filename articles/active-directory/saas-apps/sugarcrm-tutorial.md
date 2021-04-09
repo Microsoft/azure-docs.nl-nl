@@ -100,7 +100,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
-### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
+### <a name="create-an-azure-ad-test-user&quot;></a>Een Azure AD-testgebruiker maken
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
@@ -112,7 +112,7 @@ In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Porta
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
    1. Klik op **Create**.
 
-### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
+### <a name=&quot;assign-the-azure-ad-test-user&quot;></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot Sugar CRM.
 
@@ -124,13 +124,13 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-## <a name="configure-sugar-crm-sso"></a>Sugar CRM-SSO configureren
+## <a name=&quot;configure-sugar-crm-sso&quot;></a>Sugar CRM-SSO configureren
 
 1. Meld u in een ander browservenster als beheerder aan bij uw Sugar CRM-bedrijfssite.
 
 1. Ga naar **Beheerder**.
 
-    ![Beheerder](./media/sugarcrm-tutorial/ic795888.png "Beheerder")
+    ![Beheerder](./media/sugarcrm-tutorial/ic795888.png &quot;Beheerder")
 
 1. Klik in de sectie **Beheer** op **Wachtwoordbeheer**.
 

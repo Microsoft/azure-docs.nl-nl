@@ -10,10 +10,10 @@ ms.date: 06/25/2020
 ms.reviewer: jushiman
 ms.custom: mimckitt
 ms.openlocfilehash: 26cfdf05847b01d28a8574483acc89cfeced0ffa
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101717737"
 ---
 # <a name="advanced-autoscale-configuration-using-resource-manager-templates-for-vm-scale-sets"></a>Geavanceerde configuratie voor automatisch schalen met Resource Manager-sjablonen voor VM Scale Sets
@@ -36,7 +36,7 @@ In dit scenario gebruiken we [Azure resource Explorer](https://resources.azure.c
 
 3. U kunt nu meer profielen en regels toevoegen op basis van de planning of specifieke vereisten. We maken een instelling voor automatisch schalen met drie profielen. Zie [Aanbevolen procedures voor automatisch schalen](autoscale-best-practices.md)voor meer informatie over profielen en regels in automatisch schalen.  
 
-    | Profielen & regels | Beschrijving |
+    | Profielen & regels | Description |
     |--- | --- |
     | **Profiel** |**Op basis van prestaties/metriek** |
     | Regel |Service Bus aantal wachtrij berichten > x |

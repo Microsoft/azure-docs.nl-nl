@@ -10,19 +10,19 @@ ms.author: minxia
 ms.date: 02/27/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 56b411a490fe1a0c45ea4dd183d88defd61a2fde
-ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
+ms.openlocfilehash: f8986ef895c5766d363261ef263851ee96d9c0da
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/28/2021
-ms.locfileid: "105640857"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105727668"
 ---
 # <a name="visualize-experiment-runs-and-metrics-with-tensorboard-and-azure-machine-learning"></a>Experimentele uitvoeringen en metrische gegevens visualiseren met TensorBoard en Azure Machine Learning
 
 
 In dit artikel leert u hoe u de uitvoeringen van uw experiment en metrische gegevens in TensorBoard kunt weer geven met behulp van [het `tensorboard` pakket](/python/api/azureml-tensorboard/) in de belangrijkste Azure machine learning-SDK. Wanneer u de experimentele uitvoeringen hebt geïnspecteerd, kunt u uw machine learning modellen beter afstemmen en opnieuw trainen.
 
-[TensorBoard](/python/api/azureml-tensorboard/azureml.tensorboard.tensorboard?view=azure-ml-py) is een suite van webtoepassingen voor het inspecteren en leren van uw experiment structuur en prestaties.
+[TensorBoard](/python/api/azureml-tensorboard/azureml.tensorboard.tensorboard) is een suite van webtoepassingen voor het inspecteren en leren van uw experiment structuur en prestaties.
 
 Hoe u TensorBoard start met Azure Machine Learning experimenten is afhankelijk van het type experiment:
 + Als uw experiment systeem eigen logboek bestanden uitvoert die kunnen worden gebruikt door TensorBoard, zoals PyTorch, Chainer en tensor flow experimenten, kunt u [TensorBoard rechtstreeks](#launch-tensorboard) vanuit de uitvoerings geschiedenis van het experiment starten. 

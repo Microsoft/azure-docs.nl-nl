@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 02/09/2021
 ms.author: bagol
 ms.openlocfilehash: 25f83088bdc55dbafe7ccf0ff06b0c6595c9ea71
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101724350"
 ---
 # <a name="resources-for-creating-azure-sentinel-custom-connectors"></a>Resources voor het maken van aangepaste Azure Sentinel-connectors
@@ -36,12 +36,12 @@ De volgende tabel vergelijkt de essentiële details van elke methode voor het ma
 
 |Beschrijving van methode  |Mogelijkheid | Serverloos    |Complexiteit  |
 |---------|---------|---------|---------|
-|**[Log Analytics-agent](#connect-with-the-log-analytics-agent)** <br>Het beste voor het verzamelen van bestanden van on-premises en IaaS bronnen   | Alleen bestanden verzamelen  |   Nee      |Beperkt         |
+|**[Log Analytics-agent](#connect-with-the-log-analytics-agent)** <br>Het beste voor het verzamelen van bestanden van on-premises en IaaS bronnen   | Alleen bestanden verzamelen  |   No      |Beperkt         |
 |**[Logstash](#connect-with-logstash)** <br>De beste optie voor on-premises en IaaS-bronnen, een bron waarvoor een invoeg toepassing beschikbaar is en organisaties die al bekend zijn met Logstash  | Beschik bare invoeg toepassingen, plus aangepaste invoeg toepassing, bieden een aanzienlijke flexibiliteit.   |   Geen vereist dat een VM of VM-cluster wordt uitgevoerd           |   Gebrek ondersteunt veel scenario's met plugins      |
-|**[Logic Apps](#connect-with-logic-apps)** <br>Hoge kosten; Vermijd gegevens met een hoog volume <br>Geschikt voor Cloud bronnen met weinig volume  | Programmeerloze programmering biedt beperkte flexibiliteit, zonder ondersteuning voor het implementeren van algoritmen.<br><br> Als geen beschik bare actie uw vereisten al ondersteunt, kan het maken van een aangepaste actie leiden tot complexiteit.    |    Ja         |   Gebrek eenvoudige, code ontwikkeling      |
-|**[PowerShell](#connect-with-powershell)** <br>Beste voor het maken van prototypen en periodieke uploads van bestanden | Rechtstreekse ondersteuning voor bestands verzameling. <br><br>Power shell kan worden gebruikt voor het verzamelen van meer bronnen, maar vereist het coderen en configureren van het script als een service.      |Nee               |  Beperkt       |
+|**[Logic Apps](#connect-with-logic-apps)** <br>Hoge kosten; Vermijd gegevens met een hoog volume <br>Geschikt voor Cloud bronnen met weinig volume  | Programmeerloze programmering biedt beperkte flexibiliteit, zonder ondersteuning voor het implementeren van algoritmen.<br><br> Als geen beschik bare actie uw vereisten al ondersteunt, kan het maken van een aangepaste actie leiden tot complexiteit.    |    Yes         |   Gebrek eenvoudige, code ontwikkeling      |
+|**[PowerShell](#connect-with-powershell)** <br>Beste voor het maken van prototypen en periodieke uploads van bestanden | Rechtstreekse ondersteuning voor bestands verzameling. <br><br>Power shell kan worden gebruikt voor het verzamelen van meer bronnen, maar vereist het coderen en configureren van het script als een service.      |No               |  Beperkt       |
 |**[Log Analytics-API](#connect-with-the-log-analytics-api)** <br>Beste voor Isv's die integratie implementeren en voor unieke verzamelings vereisten   | Ondersteunt alle mogelijkheden die beschikbaar zijn met de code.  | Is afhankelijk van de implementatie           |     Hoog    |
-|**[Azure functions](#connect-with-azure-functions)** Geschikt voor Cloud bronnen met een hoog volume en voor unieke verzamelings vereisten  | Ondersteunt alle mogelijkheden die beschikbaar zijn met de code.  |  Ja             |     Hogesnelheidsnet vereist programmeer kennis    |
+|**[Azure functions](#connect-with-azure-functions)** Geschikt voor Cloud bronnen met een hoog volume en voor unieke verzamelings vereisten  | Ondersteunt alle mogelijkheden die beschikbaar zijn met de code.  |  Yes             |     Hogesnelheidsnet vereist programmeer kennis    |
 |     |         |                |
 
 > [!TIP]
@@ -93,7 +93,7 @@ Een [Azure Logic-app](../logic-apps/index.yml) gebruiken om een serverloze, aang
 
 1. **Gebruik een van de volgende triggers om uw Logic apps te starten**:
 
-    |Trigger  |Beschrijving  |
+    |Trigger  |Description  |
     |---------|---------|
     |**Een terugkerende taak**     |   Plan bijvoorbeeld uw logische app om gegevens regel matig op te halen uit specifieke bestanden, data bases of externe Api's. <br>Zie [terugkerende taken en werk stromen maken, plannen en uitvoeren in azure Logic apps](../connectors/connectors-native-recurrence.md)voor meer informatie.      |
     |**Activeren op aanvraag**     | Voer uw logische app op aanvraag uit voor het hand matig verzamelen en testen van gegevens. <br>Zie  [Logic apps aanroepen, activeren of nesten met behulp van HTTPS-eind punten](../logic-apps/logic-apps-http-endpoint.md)voor meer informatie.        |

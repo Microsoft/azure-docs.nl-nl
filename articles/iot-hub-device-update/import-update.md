@@ -6,12 +6,12 @@ ms.author: andbrown
 ms.date: 2/11/2021
 ms.topic: how-to
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 3644f26f989fec05ee76afd9f930c31b25234c7f
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.openlocfilehash: ede0d279b8769f49afcdae1cb9352c1b47fb59b5
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105608524"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105932400"
 ---
 # <a name="import-new-update"></a>Nieuwe update importeren
 Meer informatie over het importeren van een nieuwe update voor het bijwerken van apparaten in IoT Hub. Als u dit nog niet hebt gedaan, moet u vertrouwd zijn met de basis concepten voor het [importeren](import-concepts.md).
@@ -35,7 +35,7 @@ Meer informatie over het importeren van een nieuwe update voor het bijwerken van
 
 2. Maak een tekst bestand met de naam **AduUpdate. psm1** in de map waarin het bestand met de update-installatie kopie of het apt-manifest bestand zich bevindt. Open vervolgens de Power shell-cmdlet [AduUpdate. psm1](https://github.com/Azure/iot-hub-device-update/tree/main/tools/AduCmdlets) , kopieer de inhoud naar het tekst bestand en sla het tekst bestand op.
 
-3. Ga in Power shell naar de map waarin u de Power shell-cmdlet van stap 2 hebt gemaakt. Voer vervolgens
+3. Ga in Power shell naar de map waarin u de Power shell-cmdlet van stap 2 hebt gemaakt. Gebruik de Kopieer optie hieronder en plak vervolgens in Power shell om de opdrachten uit te voeren:
 
     ```powershell
     Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
@@ -63,7 +63,7 @@ Meer informatie over het importeren van een nieuwe update voor het bijwerken van
     | updatenaam | Id voor een klasse van updates. De klasse kan alles zijn wat u kiest. Het is vaak een apparaat-of model naam.
     | updateVersion | Het versie nummer waarmee deze update wordt onderscheiden van anderen die dezelfde provider en naam hebben. Komt niet overeen met een versie van een afzonderlijk software onderdeel op het apparaat (maar kan desgewenst worden gekozen).
     | updateType | <ul><li>Opgeven `microsoft/swupdate:1` voor bijwerken van installatie kopie</li><li>Opgeven `microsoft/apt:1` voor pakket update</li></ul>
-    | installedCriteria | <ul><li>Geef de waarde van SWVersion voor het `microsoft/swupdate:1` Update type op</li><li>Geef de aanbevolen waarde voor het `microsoft/apt:1` Update type op.
+    | installedCriteria | <ul><li>Geef de waarde van SWVersion voor het `microsoft/swupdate:1` Update type op</li><li>Geef de naam **-versie** op, waarbij _naam_ de naam is van het apt-manifest en _versie_ de versie van het apt-manifest. Bijvoorbeeld contoso-IOT-Edge-1.0.0.0.
     | updateFilePath (s) | Pad naar de update bestand (en) op uw computer
 
 

@@ -16,10 +16,10 @@ ms.author: kenwith
 ms.reviewer: paulgarn
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: af5329f33cc4cbaa3309450165e657fc829c828b
-ms.sourcegitcommit: dae6b628a8d57540263a1f2f1cdb10721ed1470d
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105709494"
 ---
 # <a name="how-to-configure-azure-ad-saml-token-encryption"></a>Procedure: Azure AD SAML-token versleuteling configureren

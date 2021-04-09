@@ -5,19 +5,19 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/15/2021
+ms.date: 03/16/2021
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.custom: contperf-fy20q4
-ms.openlocfilehash: 4625b0a750c2b3ff63879bb9ea306bc69b1bb64e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 78972c4db1802b479a698a22c456561170add4bf
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103471642"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105932910"
 ---
 # <a name="configure-azure-ad-multi-factor-authentication-settings"></a>Azure AD Multi-Factor Authentication-instellingen configureren
 
@@ -231,7 +231,7 @@ U kunt toegang krijgen tot de service-instellingen via de Azure portal door te b
 
 ## <a name="trusted-ips"></a>Goedgekeurde IP-adressen
 
-Met de functie voor _vertrouwde ip's_ van Azure AD multi-factor Authentication worden multi-factor Authentication-prompts omzeild voor gebruikers die zich aanmelden vanuit een gedefinieerd IP-adres bereik. U kunt vertrouwde IP-adresbereiken voor uw on-premises omgevingen instellen wanneer gebruikers zich op een van deze locaties bevinden, is er geen Azure AD-Multi-Factor Authentication prompt.
+Met de functie voor _vertrouwde ip's_ van Azure AD multi-factor Authentication worden multi-factor Authentication-prompts omzeild voor gebruikers die zich aanmelden vanuit een gedefinieerd IP-adres bereik. U kunt vertrouwde IP-adresbereiken instellen voor uw on-premises omgevingen, zodat gebruikers zich op een van deze locaties bevinden, is er geen Azure AD-Multi-Factor Authentication prompt. De functie voor _vertrouwde ip's_ van Azure AD Multi-Factor Authentication vereist Azure AD Premium P1 Edition. 
 
 > [!NOTE]
 > De vertrouwde Ip's kunnen alleen particuliere IP-bereiken bevatten wanneer u MFA server gebruikt. Voor Azure AD-Multi-Factor Authentication in de Cloud, kunt u alleen open bare IP-adresbereiken gebruiken.

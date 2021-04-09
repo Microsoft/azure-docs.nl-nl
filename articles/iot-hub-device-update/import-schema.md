@@ -7,10 +7,10 @@ ms.date: 2/25/2021
 ms.topic: conceptual
 ms.service: iot-hub-device-update
 ms.openlocfilehash: 989535d0bd6f514e63c7cea9e5fd71912f8fb08b
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104780154"
 ---
 # <a name="importing-updates-into-device-update-for-iot-hub---schema-and-other-information"></a>Updates voor IoT Hub-schema en andere informatie importeren in de update van het apparaat
@@ -18,7 +18,7 @@ Als u een update wilt importeren in update voor het apparaat voor IoT Hub, moet 
 
 ## <a name="import-manifest-schema"></a>Manifest schema importeren
 
-| Naam | Type | Beschrijving | Beperkingen |
+| Naam | Type | Description | Beperkingen |
 | --------- | --------- | --------- | --------- |
 | UpdateId | `UpdateId` object | Identiteit bijwerken. |
 | UpdateType | tekenreeks | Type update: <br/><br/> * Geef `microsoft/apt:1` op wanneer u een update op basis van een pakket uitvoert met behulp van referentie agent.<br/> * Geef `microsoft/swupdate:1` op wanneer u een op een installatie kopie gebaseerde update uitvoert met behulp van referentie agent.<br/> * Geef op `microsoft/simulator:1` Wanneer u voorbeeld agent Simulator gebruikt.<br/> * Geef een aangepast type op bij het ontwikkelen van een aangepaste agent. | Indeling: <br/> `{provider}/{type}:{typeVersion}`<br/><br/> Maxi maal 32 tekens in totaal |
@@ -30,7 +30,7 @@ Als u een update wilt importeren in update voor het apparaat voor IoT Hub, moet 
 
 ## <a name="updateid-object"></a>UpdateId-object
 
-| Naam | Type | Beschrijving | Beperkingen |
+| Naam | Type | Description | Beperkingen |
 | --------- | --------- | --------- | --------- |
 | Provider | tekenreeks | Provider onderdeel van de update-identiteit. | 1-64 tekens, alfanumeriek, punt en streepje. |
 | Name | tekenreeks | Noem een deel van de update-identiteit. | 1-64 tekens, alfanumeriek, punt en streepje. |
@@ -38,7 +38,7 @@ Als u een update wilt importeren in update voor het apparaat voor IoT Hub, moet 
 
 ## <a name="file-object"></a>Bestands object
 
-| Naam | Type | Beschrijving | Beperkingen |
+| Naam | Type | Description | Beperkingen |
 | --------- | --------- | --------- | --------- |
 | Bestands | tekenreeks | Naam van bestand | Moet uniek zijn binnen een update |
 | SizeInBytes | Int64 | Grootte van het bestand in bytes. | Maxi maal 800 MB per afzonderlijk bestand of 800 MB gezamenlijk per update |
@@ -46,14 +46,14 @@ Als u een update wilt importeren in update voor het apparaat voor IoT Hub, moet 
 
 ## <a name="compatibilityinfo-object"></a>CompatibilityInfo-object
 
-| Naam | Type | Beschrijving | Beperkingen |
+| Naam | Type | Description | Beperkingen |
 | --- | --- | --- | --- |
 | DeviceManufacturer | tekenreeks | Fabrikant van het apparaat waarmee de update compatibel is. | 1-64 tekens, alfanumeriek, punt en streepje. |
 | DeviceModel | tekenreeks | Model van het apparaat waarmee de update compatibel is. | 1-64 tekens, alfanumeriek, punt en streepje. |
 
 ## <a name="hashes-object"></a>Hashes-object
 
-| Name | Vereist | Type | Beschrijving |
+| Name | Vereist | Type | Description |
 | --------- | --------- | --------- | --------- |
 | Sha256 | True | tekenreeks | Met base64 gecodeerde hash van het bestand met behulp van het algoritme SHA-256. |
 

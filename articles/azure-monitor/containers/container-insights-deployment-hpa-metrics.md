@@ -4,10 +4,10 @@ description: In dit artikel wordt beschreven welke implementatie & HPA (POD) met
 ms.topic: conceptual
 ms.date: 08/09/2020
 ms.openlocfilehash: c8bb100b756ea92d73e1c3a698f119b4f8157930
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101717703"
 ---
 # <a name="deployment--hpa-metrics-with-container-insights"></a>Implementatie & HPA-metrische gegevens met container Insights
@@ -18,7 +18,7 @@ Met ingang van agent versie *ciprod08072020* verzamelt de agent voor container I
 
 Container Insights start automatisch bewakings implementaties door de volgende metrische gegevens te verzamelen om 60 sec-intervallen en op te slaan in de tabel **InsightMetrics** :
 
-|Naam van metrische gegevens |Metrische dimensie (Tags) |Beschrijving |
+|Naam van metrische gegevens |Metrische dimensie (Tags) |Description |
 |------------|------------------------|------------|
 |kube_deployment_status_replicas_ready |container.azm.ms/clusterId, container.azm.ms/clusterName, creationTime, Deployment, deploymentStrategy, k8sNamespace, spec_replicas, status_replicas_available, status_replicas_updated (status. updatedReplicas) | Totaal aantal gereede peul dat is gericht op deze implementatie (status. readyReplicas). Hieronder ziet u de afmetingen van deze metrische gegevens. <ul> <li> implementatie-naam van de implementatie </li> <li> k8sNamespace-Kubernetes naam ruimte voor de implementatie </li> <li> deploymentStrategy-implementatie strategie die moet worden gebruikt voor het vervangen van peulen door nieuwe sjablonen (spec. strategie. type)</li><li> creationTime-tijds tempel voor het maken van implementaties </li> <li> spec_replicas-aantal gewenste peulen (spec. replicas) </li> <li>status_replicas_available: het totale aantal beschik bare peulen (gereed voor ten minste minReadySeconds) waarop deze implementatie is gericht (status. availableReplicas)</li><li>status_replicas_updated: het totale aantal niet-beëindigde peulen dat is gericht op deze implementatie en die de gewenste sjabloon specificatie (status. updatedReplicas) hebben. </li></ul>|
 
@@ -26,7 +26,7 @@ Container Insights start automatisch bewakings implementaties door de volgende m
 
 Met container Insights wordt de bewakings HPAs automatisch gestart door de volgende metrische gegevens te verzamelen om 60 sec-intervallen en op te slaan in de tabel **InsightMetrics** :
 
-|Naam van metrische gegevens |Metrische dimensie (Tags) |Beschrijving |
+|Naam van metrische gegevens |Metrische dimensie (Tags) |Description |
 |------------|------------------------|------------|
 |kube_hpa_status_current_replicas |container.azm.ms/clusterId, container.azm.ms/clusterName, creationTime, HPA, k8sNamespace, lastScaleTime, spec_max_replicas, spec_min_replicas, status_desired_replicas, targetKind, TargetName | Huidig aantal replica's van Peul dat wordt beheerd door deze automatische schaal functie (status. currentReplicas). Hieronder ziet u de afmetingen van deze metrische gegevens. <ul> <li> HPA-naam van de HPA </li> <li> k8sNamespace-Kubernetes naam ruimte voor de HPA </li> <li> lastScaleTime-laatste keer dat de HPA het aantal peulen (status. lastScaleTime) heeft geschaald</li><li> creationTime-HPA-tijds tempel maken </li> <li> spec_max_replicas-bovengrens voor het aantal peulen dat kan worden ingesteld door de automatische schaal functie (spec. maxReplicas) </li> <li> spec_min_replicas-ondergrens voor het aantal replica's waarmee de automatisch schalen kan worden geschaald (spec. minReplicas) </li><li>status_desired_replicas gewenst aantal replica's van peulen die worden beheerd door deze automatisch schalen (status. desiredReplicas)</li><li>targetKind-type van het doel van HPA (spec. scaleTargetRef. soort) </li><li>TargetName-naam van het doel van HPA (spec.scaleTargetRef.name) </li></ul>|
 

@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.openlocfilehash: 078a9312a7ee1b3b0eafd000928ed74348a540c3
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102548050"
 ---
 #   <a name="language-detection-cognitive-skill"></a>Herkennings vaardigheid van taal detectie
@@ -39,7 +39,7 @@ De maximale grootte van een record moet 50.000 tekens zijn, zoals gemeten door [
 
 Parameters zijn hoofdlettergevoelig.
 
-| Invoerwaarden | Beschrijving |
+| Invoerwaarden | Description |
 |---------------------|-------------|
 | `defaultCountryHint` | Beschrijving Een ISO 3166-1 alpha-2 2 letter land code kan worden gebruikt als hint voor het taal detectie model als de taal niet kan worden dubbel zinnigheid. Zie [de documentatie over Text Analytics](../cognitive-services/text-analytics/how-tos/text-analytics-how-to-language-detection.md#ambiguous-content) in dit onderwerp voor meer informatie. Met name de `defaultCountryHint` para meter wordt gebruikt met documenten die de `countryHint` invoer niet expliciet opgeven.  |
 | `modelVersion`   | Beschrijving De versie van het model dat moet worden gebruikt bij het aanroepen van de Text Analytics service. Het is standaard de meest recente versie die beschikbaar is wanneer deze niet is opgegeven. We raden u aan deze waarde alleen op te geven als dit absoluut nood zakelijk is. Zie [model versie beheer in de Text Analytics-API](../cognitive-services/text-analytics/concepts/model-versioning.md) voor meer informatie. |
@@ -48,14 +48,14 @@ Parameters zijn hoofdlettergevoelig.
 
 Parameters zijn hoofdlettergevoelig.
 
-| Invoerwaarden     | Beschrijving |
+| Invoerwaarden     | Description |
 |--------------------|-------------|
 | `text` | De tekst die moet worden geanalyseerd.|
 | `countryHint` | Een ISO 3166-1 alpha-2 2 letter land code die als hint voor het taal detectie model moet worden gebruikt als de taal niet kan worden dubbel zinnigheid. Zie [de documentatie over Text Analytics](../cognitive-services/text-analytics/how-tos/text-analytics-how-to-language-detection.md#ambiguous-content) in dit onderwerp voor meer informatie. |
 
 ## <a name="skill-outputs"></a>Vaardigheids uitvoer
 
-| Uitvoer naam    | Beschrijving |
+| Uitvoer naam    | Description |
 |--------------------|-------------|
 | `languageCode` | De ISO 6391-taal code voor de geïdentificeerde taal. Bijvoorbeeld ' en '. |
 | `languageName` | De naam van de taal. Bijvoorbeeld ' Engels '. |

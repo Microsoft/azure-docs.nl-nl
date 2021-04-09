@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 01/22/2020
 ms.author: kumud
 ms.custom: ''
-ms.openlocfilehash: e95441aab6c8ce7de37ba5f6b08d5f7d54e13347
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 71ba82cfd5f0f4166d25983f3f80530da45bdeac
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96017913"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105932944"
 ---
 # <a name="tutorial-connect-virtual-networks-with-virtual-network-peering-using-the-azure-portal"></a>Zelfstudie: virtuele netwerken verbinden met virtueel-netwerkpeering met behulp van Azure Portal
 
@@ -32,7 +32,9 @@ U kunt virtuele netwerken met elkaar verbinden met virtueel-netwerk peering. Dez
 
 U kunt deze zelfstudie desgewenst volgen met behulp van de [Azure CLI](tutorial-connect-virtual-networks-cli.md) of [Azure PowerShell](tutorial-connect-virtual-networks-powershell.md).
 
-Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
+## <a name="prerequisites"></a>Vereisten
+
+Voordat u begint, moet u een Azure-account met een actief abonnement hebben. Als u er nog geen hebt, kunt u [gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
 ## <a name="log-in-to-azure"></a>Meld u aan bij Azure.
 
@@ -171,6 +173,7 @@ Wanneer u deze niet langer nodig hebt, verwijdert u de resourcegroep en alle res
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie hebt u geleerd hoe u twee netwerken in dezelfde Azure-regio kunt verbinden met virtueel-netwerkpeering. U kunt ook virtuele netwerken in verschillende [ondersteunde regio's](virtual-network-manage-peering.md#cross-region) en in [ verschillende Azure-abonnementen ](create-peering-different-subscriptions.md#portal) 'peeren', en peering gebruiken om [netwerkontwerpen met een stertopologie](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke#virtual-network-peering) te maken. Zie voor meer informatie over virtueel-netwerkpeering [Peering op virtueel netwerk](virtual-network-peering-overview.md) en [Virtueel-netwerkpeerings beheren](virtual-network-manage-peering.md).
+> [!div class="nextstepaction"]
+> [Meer informatie over peering van virtuele netwerken](virtual-network-peering-overview.md)
 
-Als u uw eigen computer met een virtueel netwerk wilt verbinden via een VPN-verbinding, en communiceren met resources in een virtueel netwerk of in virtuele netwerken met peering, raadpleegt u [Uw computer verbinden met een virtueel netwerk](../vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+

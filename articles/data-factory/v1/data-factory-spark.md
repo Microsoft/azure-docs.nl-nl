@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: 644a0d645abb186731ddb1f408cd36e5b9ba3c3f
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104780018"
 ---
 # <a name="invoke-spark-programs-from-azure-data-factory-pipelines"></a>Spark-Program ma's aanroepen vanuit Azure Data Factory pijp lijnen
@@ -323,18 +323,18 @@ In de volgende tabel worden de JSON-eigenschappen beschreven die in de JSON-defi
 
 | Eigenschap | Beschrijving | Vereist |
 | -------- | ----------- | -------- |
-| naam | De naam van de activiteit in de pijp lijn. | Ja |
-| beschrijving | Tekst die beschrijft wat de activiteit doet. | Nee |
-| type | Deze eigenschap moet worden ingesteld op HDInsightSpark. | Ja |
-| linkedServiceName | De naam van de gekoppelde HDInsight-service waarop het Spark-programma wordt uitgevoerd. | Ja |
-| rootPath | De BLOB-container en de map waarin het Spark-bestand zich bevindt. De bestands naam is hoofdletter gevoelig. | Ja |
-| entryFilePath | Relatief pad naar de hoofdmap van de Spark-code/-pakket. | Ja |
-| className | De hoofd klasse java/Spark van de toepassing. | Nee |
-| opmerkingen | Een lijst met opdracht regel argumenten voor het Spark-programma. | Nee |
-| proxyUser | Het gebruikers account dat moet worden geïmiteerd voor het uitvoeren van het Spark-programma. | Nee |
-| sparkConfig | Geef waarden op voor de Spark-configuratie-eigenschappen die worden vermeld in [Spark-configuratie: toepassings eigenschappen](https://spark.apache.org/docs/latest/configuration.html#available-properties). | Nee |
-| getDebugInfo | Hiermee geeft u op wanneer de Spark-logboek bestanden worden gekopieerd naar de opslag die wordt gebruikt door het HDInsight-cluster (of) dat is opgegeven door sparkJobLinkedService. Toegestane waarden zijn geen, altijd of mislukt. De standaard waarde is geen. | Nee |
-| sparkJobLinkedService | De gekoppelde opslag service die het Spark-taak bestand, de afhankelijkheden en de logboeken bevat. Als u geen waarde voor deze eigenschap opgeeft, wordt de opslag gebruikt die aan het HDInsight-cluster is gekoppeld. | Nee |
+| naam | De naam van de activiteit in de pijp lijn. | Yes |
+| beschrijving | Tekst die beschrijft wat de activiteit doet. | No |
+| type | Deze eigenschap moet worden ingesteld op HDInsightSpark. | Yes |
+| linkedServiceName | De naam van de gekoppelde HDInsight-service waarop het Spark-programma wordt uitgevoerd. | Yes |
+| rootPath | De BLOB-container en de map waarin het Spark-bestand zich bevindt. De bestands naam is hoofdletter gevoelig. | Yes |
+| entryFilePath | Relatief pad naar de hoofdmap van de Spark-code/-pakket. | Yes |
+| className | De hoofd klasse java/Spark van de toepassing. | No |
+| opmerkingen | Een lijst met opdracht regel argumenten voor het Spark-programma. | No |
+| proxyUser | Het gebruikers account dat moet worden geïmiteerd voor het uitvoeren van het Spark-programma. | No |
+| sparkConfig | Geef waarden op voor de Spark-configuratie-eigenschappen die worden vermeld in [Spark-configuratie: toepassings eigenschappen](https://spark.apache.org/docs/latest/configuration.html#available-properties). | No |
+| getDebugInfo | Hiermee geeft u op wanneer de Spark-logboek bestanden worden gekopieerd naar de opslag die wordt gebruikt door het HDInsight-cluster (of) dat is opgegeven door sparkJobLinkedService. Toegestane waarden zijn geen, altijd of mislukt. De standaard waarde is geen. | No |
+| sparkJobLinkedService | De gekoppelde opslag service die het Spark-taak bestand, de afhankelijkheden en de logboeken bevat. Als u geen waarde voor deze eigenschap opgeeft, wordt de opslag gebruikt die aan het HDInsight-cluster is gekoppeld. | No |
 
 ## <a name="folder-structure"></a>Mapstructuur
 De Spark-activiteit biedt geen ondersteuning voor een inline-script als Pig en Hive-activiteiten. Spark-taken zijn ook uitbreidbaarer dan Pig/Hive-taken. U kunt voor Spark-taken meerdere afhankelijkheden opgeven, zoals jar-pakketten (die in het Java-KLASSENPAD zijn geplaatst), python-bestanden (die zijn geplaatst op de PYTHONPATH) en andere bestanden.
@@ -344,7 +344,7 @@ Maak de volgende mapstructuur in de Blob-opslag waarnaar wordt verwezen door de 
 | Pad | Beschrijving | Vereist | Type |
 | ---- | ----------- | -------- | ---- |
 | . | Het pad naar de hoofdmap van de Spark-taak in de gekoppelde Storage-service. | Ja | Map |
-| &lt;door de gebruiker gedefinieerd &gt; | Het pad dat naar het invoer bestand van de Spark-taak verwijst. | Ja | File |
+| &lt;door de gebruiker gedefinieerd &gt; | Het pad dat naar het invoer bestand van de Spark-taak verwijst. | Yes | File |
 | ./jars | Alle bestanden in deze map worden geüpload en geplaatst op het Java-klassenpad van het cluster. | Nee | Map |
 | ./pyFiles | Alle bestanden in deze map worden geüpload en geplaatst op de PYTHONPATH van het cluster. | Nee | Map |
 | ./files | Alle bestanden in deze map worden geüpload en geplaatst op de werk directory van de uitvoerder. | Nee | Map |

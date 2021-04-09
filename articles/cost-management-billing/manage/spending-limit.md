@@ -7,18 +7,18 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 08/20/2020
+ms.date: 03/29/2021
 ms.author: banders
-ms.openlocfilehash: df5c5ed74a5e0a63727962fa86d261cfb588a384
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
-ms.translationtype: HT
+ms.openlocfilehash: 47f1a1ed182420852682e908c7cd8b5e094bc085
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88690558"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105932553"
 ---
 # <a name="azure-spending-limit"></a>Bestedingslimiet voor Azure
 
-Met de bestedingslimiet in Azure voorkomt u dat u uw tegoed overschrijdt. Voor alle nieuwe klanten die zich aanmelden voor een gratis Azure-account of voor een abonnement met tegoeden verspreid over een aantal maanden, is de bestedingslimiet standaard ingeschakeld. De bestedingslimiet is gelijk aan de hoeveelheid van het tegoed en kan niet worden gewijzigd. Als u zich bijvoorbeeld hebt geregistreerd voor een gratis Azure-account, is uw bestedingslimiet $ 200 en kunt u deze niet wijzigen in $ 500. U kunt de bestedingslimiet echter wel verwijderen. U hebt dus geen limiet of u hebt een limiet die gelijk is aan de hoeveelheid van het tegoed. Hierdoor kunt u de meeste soorten uitgaven niet wijzigen. De bestedingslimiet is niet beschikbaar voor abonnementen met toezeggingsplannen en tarieven voor betalen per gebruik. Zie de [volledige lijst met Azure-abonnementstypen en de beschikbaarheid van de bestedingslimiet](https://azure.microsoft.com/support/legal/offer-details/).
+Met de bestedingslimiet in Azure voorkomt u dat u uw tegoed overschrijdt. Voor alle nieuwe klanten die zich aanmelden voor een gratis Azure-account of voor een abonnement met tegoeden verspreid over een aantal maanden, is de bestedingslimiet standaard ingeschakeld. De bestedings limiet is gelijk aan de hoeveelheid tegoed. U kunt het bedrag van de bestedings limiet niet wijzigen. Als u zich bijvoorbeeld hebt geregistreerd voor een gratis Azure-account, is uw bestedingslimiet $ 200 en kunt u deze niet wijzigen in $ 500. U kunt de bestedingslimiet echter wel verwijderen. U hebt dus geen limiet of u hebt een limiet die gelijk is aan de hoeveelheid van het tegoed. Hierdoor kunt u de meeste soorten uitgaven niet wijzigen. De bestedingslimiet is niet beschikbaar voor abonnementen met toezeggingsplannen en tarieven voor betalen per gebruik. Zie de [volledige lijst met Azure-abonnementstypen en de beschikbaarheid van de bestedingslimiet](https://azure.microsoft.com/support/legal/offer-details/).
 
 ## <a name="reaching-a-spending-limit"></a>Een bestedingslimiet bereiken
 
@@ -40,7 +40,7 @@ Als u een gratis Azure-account hebt, raadpleegt u [Uw Azure-abonnement upgraden]
 
 <a id="remove"></a>
 
-1. Meld u als accountbeheerder aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u als accountbeheerder aan bij [Azure Portal](https://portal.azure.com).
 1. Zoek naar **Cost Management en facturering**.
 
     ![Schermopname van de zoekopdracht naar kostenbeheer en facturering ](./media/spending-limit/search-bar.png)
@@ -84,7 +84,7 @@ De bestedingslimiet kan ervoor zorgen dat u bepaalde Microsoft-services en servi
 Deze functie is alleen beschikbaar wanneer de bestedingslimiet voor onbepaalde tijd is verwijderd voor abonnementstypen met tegoeden die zijn verspreid over meerdere maanden. U kunt deze functie gebruiken om uw bestedingslimiet automatisch aan het begin van de volgende factureringsperiode in te schakelen.
 
 
-1. Meld u als accountbeheerder aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u als accountbeheerder aan bij [Azure Portal](https://portal.azure.com).
 1. Zoek naar **Cost Management en facturering**.
 
     ![Schermopname van de zoekopdracht naar kostenbeheer en facturering ](./media/spending-limit/search-bar.png)

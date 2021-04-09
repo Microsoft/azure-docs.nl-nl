@@ -11,10 +11,10 @@ ms.service: iot-edge
 ms.custom: devx-track-azurecli
 services: iot-edge
 ms.openlocfilehash: f4f2f8522f6d3d1039673803d946323deb485db9
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103200250"
 ---
 # <a name="monitor-iot-edge-deployments"></a>IoT Edge-implementaties bewaken
@@ -27,7 +27,7 @@ Zowel apparaten als modules hebben vergelijk bare gegevens, zoals connectiviteit
 
 De IoT Hub-service verzamelt gegevens die worden gerapporteerd door apparaat-en module apparaatdubbels en biedt een aantal verschillende statussen die apparaten kunnen hebben. Met de IoT Hub-service worden deze gegevens ingedeeld in vier metrische groepen:
 
-| Type | Beschrijving |
+| Type | Description |
 | --- | ---|
 | Gericht | Toont de IoT Edge apparaten die overeenkomen met de voor waarde voor de implementatie doelstelling. |
 | Toegepast | Geeft de doel IoT Edge apparaten weer die niet zijn gericht op een andere implementatie van een hogere prioriteit. |

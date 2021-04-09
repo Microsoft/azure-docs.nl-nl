@@ -11,10 +11,10 @@ ms.workload: identity
 ms.date: 02/09/2021
 ms.author: chmutali
 ms.openlocfilehash: 2b1a43ee6b13d32c0eaed92538cf9c25405e061b
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100104328"
 ---
 # <a name="how-azure-active-directory-provisioning-integrates-with-workday"></a>Hoe Azure Active Directory inrichting integreert met workday
@@ -356,52 +356,52 @@ De volgende tabel bevat richt lijnen voor het configureren van de configuratie o
 
 | \# | Workday-entiteit                       | Standaard opgenomen | XPATH-patroon dat moet worden opgegeven in de toewijzing voor het ophalen van niet-standaard entiteiten             |
 |----|--------------------------------------|---------------------|-------------------------------------------------------------------------------|
-| 1  | Persoons gegevens                        | Ja                 | Word: worker \_ -gegevens/WD: persoons \_ gegevens                                             |
-| 2  | Gegevens van dienst verband                      | Ja                 | Word: worker \_ -gegevens/WD: dienstverband \_ gegevens                                           |
-| 3  | Aanvullende taak gegevens                  | Ja                 | Word: worker \_ -gegevens/WD: dienstverband \_ gegevens/WD: werk \_ taak \_ gegevens \[ @wd:Primary \_ taak = 0\]|
-| 4  | Organisatie gegevens                    | Ja                 | Word: worker \_ -gegevens/WD: organisatie \_ gegevens                                         |
-| 5  | Beheer keten gegevens                | Ja                 | Word: worker \_ -gegevens/WD: beheer \_ keten \_ gegevens                                    |
-| 6  | Toezichthoudende organisatie             | Ja                 | College                                                                 |
-| 7  | Bedrijf                              | Ja                 | BEDRIJFS                                                                     |
-| 8  | Bedrijfsonderdeel                        | Nee                  | BEDRIJFS \_ eenheid                                                              |
-| 9  | Hiërarchie van bedrijfs eenheden              | Nee                  | ' BUSINESS \_ Unit- \_ hiërarchie '                                                   |
-| 10 | Bedrijfs hiërarchie                    | Nee                  | BEDRIJFS \_ hiërarchie                                                          |
+| 1  | Persoons gegevens                        | Yes                 | Word: worker \_ -gegevens/WD: persoons \_ gegevens                                             |
+| 2  | Gegevens van dienst verband                      | Yes                 | Word: worker \_ -gegevens/WD: dienstverband \_ gegevens                                           |
+| 3  | Aanvullende taak gegevens                  | Yes                 | Word: worker \_ -gegevens/WD: dienstverband \_ gegevens/WD: werk \_ taak \_ gegevens \[ @wd:Primary \_ taak = 0\]|
+| 4  | Organisatie gegevens                    | Yes                 | Word: worker \_ -gegevens/WD: organisatie \_ gegevens                                         |
+| 5  | Beheer keten gegevens                | Yes                 | Word: worker \_ -gegevens/WD: beheer \_ keten \_ gegevens                                    |
+| 6  | Toezichthoudende organisatie             | Yes                 | College                                                                 |
+| 7  | Bedrijf                              | Yes                 | BEDRIJFS                                                                     |
+| 8  | Bedrijfsonderdeel                        | No                  | BEDRIJFS \_ eenheid                                                              |
+| 9  | Hiërarchie van bedrijfs eenheden              | No                  | ' BUSINESS \_ Unit- \_ hiërarchie '                                                   |
+| 10 | Bedrijfs hiërarchie                    | No                  | BEDRIJFS \_ hiërarchie                                                          |
 | 11 | Cost Center                          | Nee                  | KOSTEN \_ centrum                                                                |
-| 12 | Kostenplaats hiërarchie                | Nee                  | COST \_ Center- \_ hiërarchie                                                     |
-| 13 | Beta                                 | Nee                  | Beta                                                                        |
-| 14 | Fonds hiërarchie                       | Nee                  | ' fonds \_ hiërarchie '                                                             |
-| 15 | Geschenk bonnen                                 | Nee                  | GESCHENK BONNEN                                                                        |
-| 16 | Cadeau hiërarchie                       | Nee                  | ' cadeau \_ hiërarchie '                                                             |
-| 17 | Verlenen                                | Nee                  | Geef                                                                       |
-| 18 | Toekennings hiërarchie                      | Nee                  | GRANT- \_ hiërarchie                                                            |
-| 19 | Hiërarchie van zakelijke site              | Nee                  | ' \_ hiërarchie bedrijfs site \_ '                                                   |
-| 20 | Matrix organisatie                  | Nee                  | OVERZICHT                                                                      |
-| 21 | Betalings groep                            | Nee                  | ' betaal \_ groep '                                                                  |
-| 22 | Programma's                             | Nee                  | MA'S                                                                    |
-| 23 | Programma hiërarchie                    | Nee                  | ' programma \_ hiërarchie '                                                          |
-| 24 | Region                               | Nee                  | hiërarchie van REGIO'S \_                                                           |
-| 25 | Locatie hiërarchie                   | Nee                  | ' locatie \_ hiërarchie '                                                         |
-| 26 | Account inrichtings gegevens            | Nee                  | Word: worker \_ -gegevens/Word: account \_ inrichtings \_ gegevens                                |
-| 27 | Gegevens op de achtergrond controleren                | Nee                  | Word: worker \_ -gegevens/WD \_ : \_ gegevens controleren op de achtergrond                                    |
-| 28 | Geschiktheids gegevens voor een vergoeding             | Nee                  | Word: worker \_ -gegevens/WD: \_ geschiktheids gegevens voor een voor deel \_                                 |
-| 29 | Inschrijvings gegevens voor vergoedingen              | Nee                  | Word: worker \_ -gegevens/WD: \_ inschrijvings gegevens voor vergoedingen \_                                  |
-| 30 | Carrière gegevens                          | Nee                  | Word: worker \_ -gegevens/WD: carrière \_ gegevens                                               |
-| 31 | Compensatie gegevens                    | Nee                  | Word: worker \_ -gegevens/WD: compensatie \_ gegevens                                         |
-| 32 | Gegevens van de belasting dienst voor voorwaardelijke werk nemer | Nee                  | Word: worker \_ -gegevens/WD \_ : \_ \_ \_ \_ gegevens formulier type \_ voorwaardelijke werk belasting dienst       |
-| 33 | Gegevens van ontwikkelings items                | Nee                  | Word: worker \_ -gegevens/WD: gegevens van ontwikkelings \_ items \_                                    |
-| 34 | Gegevens van werknemers contracten              | Nee                  | Word: worker \_ -gegevens/WD: gegevens van werk nemers- \_ contracten \_                                  |
-| 35 | Beoordelings gegevens werk nemer                 | Nee                  | Word: worker \_ -gegevens/WD: \_ beoordelings gegevens werk nemer \_                                     |
-| 36 | Feedback ontvangen gegevens               | Nee                  | Word: worker \_ -gegevens/WD: feedback \_ ontvangen \_ gegevens                                   |
-| 37 | Gegevens van werknemers doelstellingen                     | Nee                  | Word: worker \_ -gegevens/WD: gegevens van werknemers \_ doelstellingen \_                                         |
-| 38 | Foto gegevens                           | Nee                  | Word: worker \_ -gegevens/WD: foto \_ gegevens                                                |
-| 39 | Kwalificatie gegevens                   | Nee                  | Word: worker \_ -gegevens/WD: kwalificatie \_ gegevens                                        |
-| 40 | Gegevens van gerelateerde persoon                 | Nee                  | Word: worker \_ -gegevens/WD: gerelateerde \_ persoons \_ gegevens                                     |
-| 41 | Functie gegevens                            | Nee                  | Word: worker \_ -gegevens/WD: functie \_ gegevens                                                 |
-| 42 | Vaardigheids gegevens                           | Nee                  | Word: worker \_ -gegevens/WD: vaardigheids \_ gegevens                                                |
-| 43 | Achtereenvolgende profiel gegevens              | Nee                  | Word: worker \_ -gegevens/WD: achter elkaar \_ profiel \_ gegevens                                  |
-| 44 | Gegevens van ontalende evaluatie               | Nee                  | Word: worker \_ -gegevens/WD: talen \_ beoordelings \_ gegevens                                   |
-| 45 | Gegevens van gebruikers account                    | Nee                  | Word: worker \_ -gegevens/WD: gegevens van gebruikers \_ accounts \_                                        |
-| 46 | Document gegevens van werk nemer                 | Nee                  | Word: worker \_ -gegevens/WD: \_ document gegevens van werk nemer \_                                     |
+| 12 | Kostenplaats hiërarchie                | No                  | COST \_ Center- \_ hiërarchie                                                     |
+| 13 | Beta                                 | No                  | Beta                                                                        |
+| 14 | Fonds hiërarchie                       | No                  | ' fonds \_ hiërarchie '                                                             |
+| 15 | Geschenk bonnen                                 | No                  | GESCHENK BONNEN                                                                        |
+| 16 | Cadeau hiërarchie                       | No                  | ' cadeau \_ hiërarchie '                                                             |
+| 17 | Verlenen                                | No                  | Geef                                                                       |
+| 18 | Toekennings hiërarchie                      | No                  | GRANT- \_ hiërarchie                                                            |
+| 19 | Hiërarchie van zakelijke site              | No                  | ' \_ hiërarchie bedrijfs site \_ '                                                   |
+| 20 | Matrix organisatie                  | No                  | OVERZICHT                                                                      |
+| 21 | Betalings groep                            | No                  | ' betaal \_ groep '                                                                  |
+| 22 | Programma's                             | No                  | MA'S                                                                    |
+| 23 | Programma hiërarchie                    | No                  | ' programma \_ hiërarchie '                                                          |
+| 24 | Region                               | No                  | hiërarchie van REGIO'S \_                                                           |
+| 25 | Locatie hiërarchie                   | No                  | ' locatie \_ hiërarchie '                                                         |
+| 26 | Account inrichtings gegevens            | No                  | Word: worker \_ -gegevens/Word: account \_ inrichtings \_ gegevens                                |
+| 27 | Gegevens op de achtergrond controleren                | No                  | Word: worker \_ -gegevens/WD \_ : \_ gegevens controleren op de achtergrond                                    |
+| 28 | Geschiktheids gegevens voor een vergoeding             | No                  | Word: worker \_ -gegevens/WD: \_ geschiktheids gegevens voor een voor deel \_                                 |
+| 29 | Inschrijvings gegevens voor vergoedingen              | No                  | Word: worker \_ -gegevens/WD: \_ inschrijvings gegevens voor vergoedingen \_                                  |
+| 30 | Carrière gegevens                          | No                  | Word: worker \_ -gegevens/WD: carrière \_ gegevens                                               |
+| 31 | Compensatie gegevens                    | No                  | Word: worker \_ -gegevens/WD: compensatie \_ gegevens                                         |
+| 32 | Gegevens van de belasting dienst voor voorwaardelijke werk nemer | No                  | Word: worker \_ -gegevens/WD \_ : \_ \_ \_ \_ gegevens formulier type \_ voorwaardelijke werk belasting dienst       |
+| 33 | Gegevens van ontwikkelings items                | No                  | Word: worker \_ -gegevens/WD: gegevens van ontwikkelings \_ items \_                                    |
+| 34 | Gegevens van werknemers contracten              | No                  | Word: worker \_ -gegevens/WD: gegevens van werk nemers- \_ contracten \_                                  |
+| 35 | Beoordelings gegevens werk nemer                 | No                  | Word: worker \_ -gegevens/WD: \_ beoordelings gegevens werk nemer \_                                     |
+| 36 | Feedback ontvangen gegevens               | No                  | Word: worker \_ -gegevens/WD: feedback \_ ontvangen \_ gegevens                                   |
+| 37 | Gegevens van werknemers doelstellingen                     | No                  | Word: worker \_ -gegevens/WD: gegevens van werknemers \_ doelstellingen \_                                         |
+| 38 | Foto gegevens                           | No                  | Word: worker \_ -gegevens/WD: foto \_ gegevens                                                |
+| 39 | Kwalificatie gegevens                   | No                  | Word: worker \_ -gegevens/WD: kwalificatie \_ gegevens                                        |
+| 40 | Gegevens van gerelateerde persoon                 | No                  | Word: worker \_ -gegevens/WD: gerelateerde \_ persoons \_ gegevens                                     |
+| 41 | Functie gegevens                            | No                  | Word: worker \_ -gegevens/WD: functie \_ gegevens                                                 |
+| 42 | Vaardigheids gegevens                           | No                  | Word: worker \_ -gegevens/WD: vaardigheids \_ gegevens                                                |
+| 43 | Achtereenvolgende profiel gegevens              | No                  | Word: worker \_ -gegevens/WD: achter elkaar \_ profiel \_ gegevens                                  |
+| 44 | Gegevens van ontalende evaluatie               | No                  | Word: worker \_ -gegevens/WD: talen \_ beoordelings \_ gegevens                                   |
+| 45 | Gegevens van gebruikers account                    | No                  | Word: worker \_ -gegevens/WD: gegevens van gebruikers \_ accounts \_                                        |
+| 46 | Document gegevens van werk nemer                 | No                  | Word: worker \_ -gegevens/WD: \_ document gegevens van werk nemer \_                                     |
 
 >[!NOTE]
 >Elke werkdag-entiteit die in de tabel wordt vermeld, wordt beveiligd door een **domein beveiligings beleid** in workday. Als u geen kenmerk kunt ophalen dat is gekoppeld aan de entiteit nadat u het juiste XPATH hebt ingesteld, controleert u of het juiste domein beveiligings beleid is geconfigureerd voor de gebruiker van het integratie systeem dat is gekoppeld aan de inrichtings-app. Als u bijvoorbeeld *vaardigheids gegevens* wilt ophalen, moet u toegang *krijgen* op de domein *werknemers gegevens van het workday: vaardig heden en ervaring*. 

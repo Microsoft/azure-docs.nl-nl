@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2021
 ms.date: 02/09/2021
 ms.openlocfilehash: cb8d44353e826df14ed3baab2c4ca66ffed4a569
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100417285"
 ---
 # <a name="transform-data-in-delta-lake-using-mapping-data-flows"></a>Gegevens transformeren in Delta Lake met toewijzing van gegevens stromen
@@ -68,11 +68,11 @@ In deze stap maakt u een pijp lijn die een gegevens stroom activiteit bevat.
 
     ![Scherm opname van de naam van de gegevens stroom wanneer u een nieuwe gegevens stroom maakt.](media/tutorial-data-flow/activity2.png)
 
-## <a name="build-transformation-logic-in-the-data-flow-canvas"></a>Transformatie logica bouwen in het canvas voor gegevens stromen
+## <a name="build-transformation-logic-in-the-data-flow-canvas&quot;></a>Transformatie logica bouwen in het canvas voor gegevens stromen
 
 In deze zelf studie worden twee gegevens stromen gegenereerd. De eerste gegevens stroom is een eenvoudige bron om te sinken om een nieuwe Delta Lake te genereren op basis van het CSV-bestand van de film. Tot slot maakt u dit stroom ontwerp hieronder om gegevens in Delta Lake bij te werken.
 
-![Laatste stroom](media/data-flow/data-flow-tutorial-6.png "Laatste stroom")
+![Laatste stroom](media/data-flow/data-flow-tutorial-6.png &quot;Laatste stroom")
 
 ### <a name="tutorial-objectives"></a>Zelf studie doelstellingen
 

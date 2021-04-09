@@ -11,10 +11,10 @@ ms.author: mathoma
 ms.reviewer: MashaMSFT
 ms.date: 12/15/2020
 ms.openlocfilehash: fc8959d44fbacd90916a045d23db4bee872c4670
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105026033"
 ---
 # <a name="assessment-rules-for-sql-server-to--azure-sql-managed-instance-migration"></a>Beoordelings regels voor het SQL Server van de migratie van Azure SQL Managed instance
@@ -67,7 +67,7 @@ U moet in plaats daarvan BULK INSERT-instructies converteren die gebruikmaken va
 
 Meer informatie: [CLR-verschillen in Azure SQL Managed instance ](../../managed-instance/transact-sql-tsql-differences-sql-server.md#clr)
 
-## <a name="bulk-insert"></a>Bulksgewijs invoeren<a id="BulkInsert"></a>
+## <a name="bulk-insert"></a>Bulksgewijs invoegen<a id="BulkInsert"></a>
 
 **Titel: BULK INSERT met niet-Azure Blob-gegevens bron wordt niet ondersteund in Azure SQL Managed instance.**   
 **Categorie**: probleem   

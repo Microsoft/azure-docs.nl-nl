@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 02/01/2021
 ms.openlocfilehash: 8156966e9a1c000701a5cc1c68a70c4ee048c738
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "99259047"
 ---
 # <a name="how-to-index-json-blobs-using-a-blob-indexer-in-azure-cognitive-search"></a>JSON-blobs indexeren met behulp van een BLOB-Indexeer functie in azure Cognitive Search
@@ -25,7 +25,7 @@ Dit artikel laat u zien hoe u [een BLOB-Indexeer functie kunt configureren](sear
 
 De BLOB-Indexeer functie biedt een **`parsingMode`** para meter voor het optimaliseren van de uitvoer van het zoek document op basis van de structuur voor het parseren van de modus bestaat uit de volgende opties:
 
-| parsingMode | JSON-document | Beschrijving |
+| parsingMode | JSON-document | Description |
 |--------------|-------------|--------------|
 | **`json`** | Eén per BLOB | prijs JSON-blobs worden als één tekst segment geparseerd. Elke JSON-BLOB wordt één Zoek document. |
 | **`jsonArray`** | Meerdere per BLOB | Parseert een JSON-matrix in de blob, waarbij elk element van de matrix een afzonderlijk Zoek document wordt.  |

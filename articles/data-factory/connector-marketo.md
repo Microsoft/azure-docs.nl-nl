@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 06/04/2020
 ms.author: jingwang
 ms.openlocfilehash: aae25536f0ac1d5d3b43b5173d3e5789cd66a774
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100385639"
 ---
 # <a name="copy-data-from-marketo-using-azure-data-factory-preview"></a>Gegevens kopiëren van Marketo met behulp van Azure Data Factory (preview)
@@ -47,13 +47,13 @@ De volgende eigenschappen worden ondersteund voor de Marketo-gekoppelde service:
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op: **marketo** | Ja |
-| endpoint | Het eind punt van de Marketo-server. (bijvoorbeeld 123-ABC-321.mktorest.com)  | Ja |
-| clientId | De client-id van uw Marketo-service.  | Ja |
-| clientSecret | Het client geheim van uw Marketo-service. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja |
-| useEncryptedEndpoints | Hiermee geeft u op of de eind punten van de gegevens bron moeten worden versleuteld met HTTPS. De standaardwaarde is waar.  | Nee |
-| useHostVerification | Hiermee geeft u op of de hostnaam in het certificaat van de server moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is waar.  | Nee |
-| usePeerVerification | Hiermee wordt aangegeven of de identiteit van de server moet worden gecontroleerd wanneer er verbinding wordt gemaakt via TLS. De standaardwaarde is waar.  | Nee |
+| type | De eigenschap type moet worden ingesteld op: **marketo** | Yes |
+| endpoint | Het eind punt van de Marketo-server. (bijvoorbeeld 123-ABC-321.mktorest.com)  | Yes |
+| clientId | De client-id van uw Marketo-service.  | Yes |
+| clientSecret | Het client geheim van uw Marketo-service. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Yes |
+| useEncryptedEndpoints | Hiermee geeft u op of de eind punten van de gegevens bron moeten worden versleuteld met HTTPS. De standaardwaarde is waar.  | No |
+| useHostVerification | Hiermee geeft u op of de hostnaam in het certificaat van de server moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is waar.  | No |
+| usePeerVerification | Hiermee wordt aangegeven of de identiteit van de server moet worden gecontroleerd wanneer er verbinding wordt gemaakt via TLS. De standaardwaarde is waar.  | No |
 
 **Voorbeeld:**
 
@@ -82,7 +82,7 @@ Als u gegevens wilt kopiëren uit Marketo, stelt u de eigenschap type van de geg
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op: **MarketoObject** | Ja |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op: **MarketoObject** | Yes |
 | tableName | De naam van de tabel. | Nee (als "query" in activiteit bron is opgegeven) |
 
 **Voorbeeld**
@@ -112,7 +112,7 @@ Als u gegevens wilt kopiëren uit Marketo, stelt u het bron type in de Kopieer a
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **MarketoSource** | Ja |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **MarketoSource** | Yes |
 | query | Gebruik de aangepaste SQL-query om gegevens te lezen. Bijvoorbeeld: `"SELECT * FROM Activitiy_Types"`. | Nee (als ' Tablename ' in gegevensset is opgegeven) |
 
 **Voorbeeld:**

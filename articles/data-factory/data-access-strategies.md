@@ -7,10 +7,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 05/28/2020
 ms.openlocfilehash: edc773ec2db078b6c50b55c81ad6570758a3f5f7
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100389243"
 ---
 # <a name="data-access-strategies"></a>Strategieën voor gegevenstoegang
@@ -52,12 +52,12 @@ Zie onder twee tabellen voor meer informatie over ondersteunde netwerk beveiligi
     |                              | Azure Data Lake gen1                                | -                | -                   | Ja             | -            | Ja                  |
     |                              | Azure Database for MariaDB, MySQL, PostgreSQL       | -                | -                   | Ja             | -            | Ja                  |
     |                              | Azure File Storage                                  | Ja              | -                   | Ja             | -            | .                    |
-    |                              | Azure Storage (BLOB, ADLS Gen2)                     | Ja              | Ja (alleen MSI-verificatie) | Ja             | -            | .                    |
+    |                              | Azure Storage (BLOB, ADLS Gen2)                     | Yes              | Ja (alleen MSI-verificatie) | Yes             | -            | .                    |
     |                              | Azure SQL DB, Azure Synapse Analytics), SQL ml  | Ja (alleen Azure SQL DB/DW)        | -                   | Ja             | -            | Ja                  |
     |                              | Azure Key Vault (voor het ophalen van geheimen/connection string) | ja      | Ja                 | Ja             | -            | -                    |
-    | Andere PaaS/SaaS-gegevens archieven | AWS S3, Sales Force, Google Cloud Storage, enzovoort.    | -                | -                   | Ja             | -            | -                    |
+    | Andere PaaS/SaaS-gegevens archieven | AWS S3, Sales Force, Google Cloud Storage, enzovoort.    | -                | -                   | Yes             | -            | -                    |
     | Azure-laaS                   | SQL Server, Oracle, etc.                          | -                | -                   | Ja             | Ja          | -                    |
-    | On-premises laaS              | SQL Server, Oracle, etc.                          | -                | -                   | Ja             | -            | -                    |
+    | On-premises laaS              | SQL Server, Oracle, etc.                          | -                | -                   | Yes             | -            | -                    |
     
     **Alleen van toepassing als Azure Data Explorer virtueel netwerk is geïnjecteerd en IP-bereik kan worden toegepast op NSG/firewall.* 
 
@@ -67,14 +67,14 @@ Zie onder twee tabellen voor meer informatie over ondersteunde netwerk beveiligi
     |--------------------------------|---------------------------------------------------------------|-----------|---------------------|
     | Azure PaaS-gegevens opslag       | Azure Cosmos DB                                               | Ja       | -                   |
     |                                | Azure Data Explorer                                           | -         | -                   |
-    |                                | Azure Data Lake gen1                                          | Ja       | -                   |
-    |                                | Azure Database for MariaDB, MySQL, PostgreSQL               | Ja       | -                   |
-    |                                | Azure File Storage                                            | Ja       | -                   |
-    |                                | Azure Storage (blog, ADLS Gen2)                             | Ja       | Ja (alleen MSI-verificatie) |
-    |                                | Azure SQL DB, Azure Synapse Analytics), SQL ml          | Ja       | -                   |
+    |                                | Azure Data Lake gen1                                          | Yes       | -                   |
+    |                                | Azure Database for MariaDB, MySQL, PostgreSQL               | Yes       | -                   |
+    |                                | Azure File Storage                                            | Yes       | -                   |
+    |                                | Azure Storage (blog, ADLS Gen2)                             | Yes       | Ja (alleen MSI-verificatie) |
+    |                                | Azure SQL DB, Azure Synapse Analytics), SQL ml          | Yes       | -                   |
     |                                | Azure Key Vault (voor het ophalen van geheimen/connection string) | Ja       | Ja                 |
-    | Andere PaaS/SaaS-gegevens archieven | AWS S3, Sales Force, Google Cloud Storage, enzovoort.              | Ja       | -                   |
-    | Azure-laaS                     | SQL Server, Oracle, etc.                                  | Ja       | -                   |
+    | Andere PaaS/SaaS-gegevens archieven | AWS S3, Sales Force, Google Cloud Storage, enzovoort.              | Yes       | -                   |
+    | Azure-laaS                     | SQL Server, Oracle, etc.                                  | Yes       | -                   |
     | On-premises laaS              | SQL Server, Oracle, etc.                                  | Ja       | -                   |    
 
 ## <a name="next-steps"></a>Volgende stappen

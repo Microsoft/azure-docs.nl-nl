@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: besiler
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 185638d683699403c304603d968cfe84e32a55b5
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103574557"
 ---
 # <a name="azure-active-directory-sign-in-activity-reports---preview"></a>Rapporten over Azure Active Directory-aanmeld activiteiten-preview
@@ -102,7 +102,7 @@ Op de Blade rapport voor aanmeldingen kunt u scha kelen tussen:
 
 
 
-## <a name="user-sign-ins"></a>Gebruikers aanmeldingen
+## <a name="user-sign-ins&quot;></a>Gebruikers aanmeldingen
 
 Op elk tabblad van de Blade aanmeldingen worden de onderstaande standaard kolommen weer gegeven. Sommige tabbladen hebben extra kolommen:
 
@@ -120,7 +120,7 @@ Op elk tabblad van de Blade aanmeldingen worden de onderstaande standaard kolomm
 
 
 
-### <a name="interactive-user-sign-ins"></a>Interactieve gebruikers aanmeldingen
+### <a name=&quot;interactive-user-sign-ins&quot;></a>Interactieve gebruikers aanmeldingen
 
 
 Interactieve gebruikers aanmeldingen zijn aanmeldingen wanneer een gebruiker een verificatie factor aan Azure AD biedt of rechtstreeks met Azure AD of een helper-app werkt, zoals de app Microsoft Authenticator. De factoren die gebruikers bevatten, zijn wacht woorden, reacties op MFA-uitdagingen, biometrische factoren of QR-codes die een gebruiker aan Azure AD of een helper-app biedt.
@@ -155,7 +155,7 @@ Naast de standaard velden wordt in het rapport interactieve aanmeldingen ook het
 
 U kunt de lijstweergave aanpassen door te klikken op **Kolommen** op de werkbalk.
 
-![Interactieve aanmeldings kolommen van gebruikers](./media/concept-all-sign-ins/columns-interactive.png "Interactieve aanmeldings kolommen van gebruikers")
+![Interactieve aanmeldings kolommen van gebruikers](./media/concept-all-sign-ins/columns-interactive.png &quot;Interactieve aanmeldings kolommen van gebruikers")
 
 
 

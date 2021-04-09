@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/04/2019
 ms.openlocfilehash: 0a31ed7a8df080c0e1186ed75f325e36aff32920
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100388818"
 ---
 # <a name="copy-data-from-spark-using-azure-data-factory"></a>Gegevens uit Spark kopiëren met behulp van Azure Data Factory 
@@ -46,21 +46,21 @@ De volgende eigenschappen worden ondersteund voor aan Spark gekoppelde service:
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op: **Spark** | Ja |
-| host | IP-adres of hostnaam van de Spark-server  | Ja |
-| poort | De TCP-poort die door de Spark-server wordt gebruikt om te Luis teren naar client verbindingen. Als u verbinding maakt met Azure HDInsights, geeft u poort op als 443. | Ja |
-| Server type | Het type Spark-server. <br/>Toegestane waarden zijn: **SharkServer**, **SharkServer2**, **SparkThriftServer** | Nee |
-| thriftTransportProtocol | Het transport protocol dat in de Thrift-laag moet worden gebruikt. <br/>Toegestane waarden zijn: **binary**, **sasl**, **http** | Nee |
-| authenticationType | De verificatie methode die wordt gebruikt voor toegang tot de Spark-server. <br/>Toegestane waarden zijn: **Anonymous**, **username**, **UsernameAndPassword**, **WindowsAzureHDInsightService** | Ja |
-| gebruikersnaam | De gebruikers naam die u gebruikt voor toegang tot Spark server.  | Nee |
-| wachtwoord | Het wacht woord dat bij de gebruiker hoort. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Nee |
-| httpPath | De gedeeltelijke URL die overeenkomt met de Spark-server.  | Nee |
-| enableSsl | Hiermee geeft u op of de verbindingen met de server met behulp van TLS worden versleuteld. De standaardwaarde is false.  | Nee |
-| trustedCertPath | Het volledige pad van het. pem-bestand met vertrouwde CA-certificaten voor het verifiëren van de server bij het maken van verbinding via TLS. Deze eigenschap kan alleen worden ingesteld wanneer TLS op zelf-hostende IR wordt gebruikt. De standaard waarde is het cacerts. pem-bestand dat met de IR is geïnstalleerd.  | Nee |
-| useSystemTrustStore | Hiermee geeft u op of u een CA-certificaat wilt gebruiken uit de systeem vertrouwens archief of vanuit een opgegeven PEM-bestand. De standaardwaarde is false.  | Nee |
-| allowHostNameCNMismatch | Hiermee geeft u op of een door de certificerings instantie uitgegeven TLS/SSL-certificaat naam moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is false.  | Nee |
-| allowSelfSignedServerCert | Hiermee geeft u op of zelfondertekende certificaten van de server mogen worden toegestaan. De standaardwaarde is false.  | Nee |
-| connectVia | Het [Integration runtime](concepts-integration-runtime.md) dat moet worden gebruikt om verbinding te maken met het gegevens archief. Meer informatie vindt u in de sectie [vereisten](#prerequisites) . Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |Nee |
+| type | De eigenschap type moet worden ingesteld op: **Spark** | Yes |
+| host | IP-adres of hostnaam van de Spark-server  | Yes |
+| poort | De TCP-poort die door de Spark-server wordt gebruikt om te Luis teren naar client verbindingen. Als u verbinding maakt met Azure HDInsights, geeft u poort op als 443. | Yes |
+| Server type | Het type Spark-server. <br/>Toegestane waarden zijn: **SharkServer**, **SharkServer2**, **SparkThriftServer** | No |
+| thriftTransportProtocol | Het transport protocol dat in de Thrift-laag moet worden gebruikt. <br/>Toegestane waarden zijn: **binary**, **sasl**, **http** | No |
+| authenticationType | De verificatie methode die wordt gebruikt voor toegang tot de Spark-server. <br/>Toegestane waarden zijn: **Anonymous**, **username**, **UsernameAndPassword**, **WindowsAzureHDInsightService** | Yes |
+| gebruikersnaam | De gebruikers naam die u gebruikt voor toegang tot Spark server.  | No |
+| wachtwoord | Het wacht woord dat bij de gebruiker hoort. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | No |
+| httpPath | De gedeeltelijke URL die overeenkomt met de Spark-server.  | No |
+| enableSsl | Hiermee geeft u op of de verbindingen met de server met behulp van TLS worden versleuteld. De standaardwaarde is false.  | No |
+| trustedCertPath | Het volledige pad van het. pem-bestand met vertrouwde CA-certificaten voor het verifiëren van de server bij het maken van verbinding via TLS. Deze eigenschap kan alleen worden ingesteld wanneer TLS op zelf-hostende IR wordt gebruikt. De standaard waarde is het cacerts. pem-bestand dat met de IR is geïnstalleerd.  | No |
+| useSystemTrustStore | Hiermee geeft u op of u een CA-certificaat wilt gebruiken uit de systeem vertrouwens archief of vanuit een opgegeven PEM-bestand. De standaardwaarde is false.  | No |
+| allowHostNameCNMismatch | Hiermee geeft u op of een door de certificerings instantie uitgegeven TLS/SSL-certificaat naam moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is false.  | No |
+| allowSelfSignedServerCert | Hiermee geeft u op of zelfondertekende certificaten van de server mogen worden toegestaan. De standaardwaarde is false.  | No |
+| connectVia | Het [Integration runtime](concepts-integration-runtime.md) dat moet worden gebruikt om verbinding te maken met het gegevens archief. Meer informatie vindt u in de sectie [vereisten](#prerequisites) . Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |No |
 
 **Voorbeeld:**
 
@@ -91,7 +91,7 @@ Als u gegevens wilt kopiëren uit Spark, stelt u de eigenschap type van de gegev
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op: **SparkObject** | Ja |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op: **SparkObject** | Yes |
 | schema | De naam van het schema. |Nee (als "query" in activiteit bron is opgegeven)  |
 | tabel | De naam van de tabel. |Nee (als "query" in activiteit bron is opgegeven)  |
 | tableName | De naam van de tabel met schema. Deze eigenschap wordt ondersteund voor achterwaartse compatibiliteit. Gebruik `schema` en `table` voor nieuwe werk belasting. | Nee (als "query" in activiteit bron is opgegeven) |
@@ -123,7 +123,7 @@ Als u gegevens wilt kopiëren uit Spark, stelt u het bron type in de Kopieer act
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **SparkSource** | Ja |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **SparkSource** | Yes |
 | query | Gebruik de aangepaste SQL-query om gegevens te lezen. Bijvoorbeeld: `"SELECT * FROM MyTable"`. | Nee (als ' Tablename ' in gegevensset is opgegeven) |
 
 **Voorbeeld:**

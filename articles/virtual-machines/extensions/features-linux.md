@@ -9,10 +9,10 @@ ms.author: amjads
 ms.collection: linux
 ms.date: 03/30/2018
 ms.openlocfilehash: 8ff7b2940ca9ce3e5dc5913c0e676a32857771e7
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105046875"
 ---
 # <a name="virtual-machine-extensions-and-features-for-linux"></a>Extensies en functies van virtuele machines voor Linux
@@ -397,7 +397,7 @@ U kunt een uitbrei ding ook als volgt verwijderen in de Azure Portal:
 
 ## <a name="common-vm-extension-reference"></a>Naslag informatie over algemene VM-extensies
 
-| Extensie naam | Beschrijving | Meer informatie |
+| Extensie naam | Description | Meer informatie |
 | --- | --- | --- |
 | Aangepaste script extensie voor Linux |Scripts uitvoeren op een virtuele Azure-machine |[Aangepaste script extensie voor Linux](custom-script-linux.md) |
 | VM-extensie voor toegang |Toegang tot een virtuele Azure-machine herstellen |[VM-extensie voor toegang](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess) |

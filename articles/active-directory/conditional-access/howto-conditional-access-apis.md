@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: videor, jeevanb
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6d4dd6e64053af41d66e3accbb7fc9b21d951fc6
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96860210"
 ---
 # <a name="conditional-access-programmatic-access"></a>Voorwaardelijke toegang: programmatische toegang
@@ -70,7 +70,7 @@ Dit voor beeld biedt een mechanisme voor het bewaken van de wijzigingen van het 
 
 ## <a name="manage"></a>Beheren
 
-### <a name="backup-and-restore"></a>Back-up en herstel
+### <a name="backup-and-restore"></a>Back-ups en herstellen
 
 U automatiseert het maken en herstellen van beleids regels voor voorwaardelijke toegang met goed keuringen in teams met behulp van dit voor beeld.
 

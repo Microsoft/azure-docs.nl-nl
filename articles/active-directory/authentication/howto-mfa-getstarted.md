@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c9ee81abd7cd0268a7cbd6b16aa6065ec7b54bef
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96861303"
 ---
 # <a name="plan-an-azure-ad-multi-factor-authentication-deployment"></a>Een Azure AD Multi-Factor Authentication-implementatie plannen
@@ -357,7 +357,7 @@ Rapporten voor Azure AD MFA
 
 Azure AD Multi-Factor Authentication biedt rapporten via de Azure Portal:
 
-| Rapport | Locatie | Beschrijving |
+| Rapport | Locatie | Description |
 | --- | --- | --- |
 | Gebruiks-en fraude waarschuwingen | Aanmeldingen bij Azure AD-> | Bevat informatie over het algehele gebruik, de gebruikers samenvatting en de gebruikers gegevens. en een geschiedenis van fraude waarschuwingen die zijn ingediend tijdens het opgegeven datum bereik. |
 

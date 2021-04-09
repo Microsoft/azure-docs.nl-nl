@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: sunasing
 ms.openlocfilehash: 292374bcce90da042dc6bd672feaad3750759aa9
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92674503"
 ---
 # <a name="azure-farmbeats-apis"></a>Azure FarmBeats-Api's
@@ -29,7 +29,7 @@ De FarmBeats-Api's bevatten technische documentatie voor Swagger. Zie [Swagger](
 
 De volgende tabel bevat een overzicht van alle objecten en resources in FarmBeats Datahub:
 
-| Objecten en bronnen | Beschrijving
+| Objecten en bronnen | Description
 --- | ---|
 Landbouwbedrijf | De farm komt overeen met een fysieke locatie van belang in het FarmBeats-systeem. Elke farm heeft een farm naam en een unieke Farm-ID. |
 Apparaat  | Het apparaat komt overeen met een fysiek apparaat dat aanwezig is op de farm. Elk apparaat heeft een unieke apparaat-ID. Een apparaat wordt doorgaans ingericht in een farm met een farm-ID.
@@ -107,7 +107,7 @@ Als u bijvoorbeeld een query uitvoert op de lijst met apparaten (aanroep ophalen
 
 Azure FarmBeats Datahub Api's retour neren de standaard HTTP-fouten. De meest voorkomende fout codes zijn als volgt:
 
- |Foutcode             | Beschrijving |
+ |Foutcode             | Description |
  |---                    | --- |
  |200                    | Geslaagd |
  |201                    | Maken (post) geslaagd |

@@ -4,10 +4,10 @@ description: In dit artikel wordt uitgelegd hoe u met behulp van sessies gezamen
 ms.topic: article
 ms.date: 01/20/2021
 ms.openlocfilehash: 6d316571d69d2e1e73ddca4ccca53c116ee8fa5f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98680750"
 ---
 # <a name="message-sessions"></a>Berichtsessies
@@ -78,8 +78,8 @@ De definitie van het aantal leveringen per bericht in de context van sessies ver
 
 | Scenario | Is het aantal leveringen van het bericht verhoogd |
 |----------|---------------------------------------------|
-| Sessie wordt geaccepteerd, maar de sessie vergrendeling verloopt (vanwege een time-out) | Ja |
-| Sessie wordt geaccepteerd, de berichten in de sessie worden niet voltooid (zelfs als ze zijn vergrendeld) en de sessie wordt gesloten | Nee |
+| Sessie wordt geaccepteerd, maar de sessie vergrendeling verloopt (vanwege een time-out) | Yes |
+| Sessie wordt geaccepteerd, de berichten in de sessie worden niet voltooid (zelfs als ze zijn vergrendeld) en de sessie wordt gesloten | No |
 | Sessie wordt geaccepteerd, berichten worden voltooid en de sessie wordt vervolgens expliciet gesloten | N.v.t. (het is de standaard stroom). Hier worden berichten uit de sessie verwijderd) |
 
 ## <a name="request-response-pattern"></a>Aanvraag-antwoord patroon

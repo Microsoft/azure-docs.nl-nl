@@ -29,7 +29,7 @@ In dit artikel worden verschillende topologieën voor on-premises en Azure Activ
 
 Hier ziet u de legenda voor afbeeldingen in het artikel:
 
-| Beschrijving | Symbool |
+| Description | Symbool |
 | --- | --- |
 | On-premises Active Directory-forest |![On-premises Active Directory-forest](./media/plan-connect-topologies/legendad1.png) |
 | On-premises Active Directory met gefilterde import |![Active Directory met gefilterde import](./media/plan-connect-topologies/legendad2.png) |

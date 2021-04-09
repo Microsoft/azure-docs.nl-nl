@@ -5,10 +5,10 @@ ms.date: 06/25/2019
 ms.service: cognitive-services
 ms.topic: include
 ms.openlocfilehash: b08516b35a864eae6d15c4c5c928f0550c64c239
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "96001154"
 ---
 Fluent is een open-source gegevens verzamelaar voor Unified logging. `Fluentd`Met de instellingen wordt de verbinding van de container met een [gefluente](https://www.fluentd.org) server beheerd. De container bevat een gefluente logboek registratie provider, zodat uw container logboeken kan schrijven en, eventueel, metrische gegevens naar een gefluente server.

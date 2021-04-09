@@ -4,10 +4,10 @@ description: Inleiding tot de belangrijkste concepten van Azure-container regist
 ms.topic: article
 ms.date: 01/29/2021
 ms.openlocfilehash: 991be79b10b6061f2034eb19e4e139af65aef3cf
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100578098"
 ---
 # <a name="about-registries-repositories-and-artifacts"></a>Over registers, opslag plaatsen en artefacten
@@ -111,21 +111,21 @@ az acr repository show-manifests --name myregistry --repository acr-helloworld
       "latest",
       "v3"
     ],
-    "timestamp": "2018-07-12T15:52:00.2075864Z"
+    "timestamp&quot;: &quot;2018-07-12T15:52:00.2075864Z"
   },
   {
     "digest": "sha256:3168a21b98836dda7eb7a846b3d735286e09a32b0aa2401773da518e7eba3b57",
     "tags": [
       "v2"
     ],
-    "timestamp": "2018-07-12T15:50:53.5372468Z"
+    "timestamp&quot;: &quot;2018-07-12T15:50:53.5372468Z"
   },
   {
     "digest": "sha256:7ca0e0ae50c95155dbb0e380f37d7471e98d2232ed9e31eece9f9fb9078f2728",
     "tags": [
       "v1"
     ],
-    "timestamp": "2018-07-11T21:38:35.9170967Z"
+    "timestamp&quot;: &quot;2018-07-11T21:38:35.9170967Z"
   }
 ]
 ```

@@ -11,10 +11,10 @@ ms.date: 03/10/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: b60b447d8302b89813ca462c3220603ef926eb26
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102631180"
 ---
 # <a name="localization-string-ids"></a>Id's van lokalisatiereeksen
@@ -152,7 +152,7 @@ Hieronder ziet u de Id's voor een inhouds definitie met een ID van `api.localacc
 | **cancel_message** | De gebruiker heeft het invoeren van zelfbevestigende informatie geannuleerd |
 | **preloader_alt** | Een ogenblik geduld |
 | **ver_but_send** | Verificatie code verzenden |
-| **alert_yes** | Ja |
+| **alert_yes** | Yes |
 | **error_fieldIncorrect** | Een of meer velden zijn onjuist ingevuld. Controleer uw vermeldingen en probeer het opnieuw. |
 | **jaareinde** | Year |
 | **verifying_blurb** | De gegevens worden verwerkt. een ogen blik geduld... |
@@ -170,7 +170,7 @@ Hieronder ziet u de Id's voor een inhouds definitie met een ID van `api.localacc
 | **ver_incorrect_format** | Onjuiste indeling. |
 | **ver_but_edit** | E-mail wijzigen |
 | **ver_but_verify** | Code verifiëren |
-| **alert_no** | Nee |
+| **alert_no** | No |
 | **ver_info_msg** | De verificatie code is verzonden naar het postvak in. Kopieer het naar het invoervak hieronder. |
 | **profieldag** | Dag |
 | **ver_fail_throttled** | Er zijn te veel aanvragen om dit e-mail adres te controleren. Wacht even en probeer het opnieuw. |

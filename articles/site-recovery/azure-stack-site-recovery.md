@@ -3,12 +3,12 @@ title: Azure Stack Vm's repliceren naar Azure met behulp van Azure Site Recovery
 description: Meer informatie over het instellen van herstel na nood gevallen voor Azure voor Azure Stack Vm's met de Azure Site Recovery-service.
 ms.topic: conceptual
 ms.date: 08/05/2019
-ms.openlocfilehash: 36e11bfe5354644f9ef6603ffe20cb2e86074323
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 300b239de74c7d21e03eb0c3b059663b5074964c
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96016898"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105728382"
 ---
 # <a name="replicate-azure-stack-vms-to-azure"></a>Virtuele Azure-machines repliceren naar Azure
 
@@ -314,7 +314,7 @@ Voer een failover als volgt uit:
 
 ### <a name="fail-back-to-azure-stack"></a>Failback naar Azure Stack
 
-Als uw primaire site weer actief is, kunt u een failback uitvoeren van Azure naar Azure Stack. Volg hiervoor de stappen die [hier](/azure-stack/operator/site-recovery-failback?view=azs-2005)worden beschreven.
+Als uw primaire site weer actief is, kunt u een failback uitvoeren van Azure naar Azure Stack. Volg hiervoor de stappen die [hier](/azure-stack/operator/site-recovery-failback)worden beschreven.
 
 ## <a name="conclusion"></a>Conclusie
 

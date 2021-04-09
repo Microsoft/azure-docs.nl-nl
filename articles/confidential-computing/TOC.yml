@@ -54,8 +54,8 @@
   items:
     - name: Fortanix vertrouwelijk computing Manager
       href: how-to-fortanix-confidential-computing-manager.md
-    - name: Fortanix Enclave Manager
-      href: how-to-fortanix-enclave-manager.md
+    - name: Fortanix vertrouwelijk computing Manager-knooppunt agent
+      href: how-to-fortanix-confidential-computing-manager-node-agent.md
 - name: Referenties
   items:
     - name: Helper-functie voor SGX-notering

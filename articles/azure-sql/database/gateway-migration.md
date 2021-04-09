@@ -10,12 +10,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto
 ms.date: 07/01/2019
-ms.openlocfilehash: 588c6548afb07fb8ee3de5152c240ddd9ea2293b
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 62e2306abc2d3132651fb40aab8c2f5b4d5043f4
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102430187"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105960874"
 ---
 # <a name="azure-sql-database-traffic-migration-to-newer-gateways"></a>Azure SQL Database verkeer migratie naar nieuwere gateways
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -31,6 +31,9 @@ De meest recente informatie wordt bewaard in de tabel met [IP-adressen van de Az
 # <a name="in-progress"></a>[Actief](#tab/in-progress-ip)
 
 ## <a name="april-2021"></a>April 2021
+Nieuwe SQL-gateways worden toegevoegd aan de volgende regio's:
+- VS-Oost 2:40.70.144.193 deze SQL-gateway gaat het accepteren van klant verkeer op 30 april 2021.
+
 Nieuwe SQL-gateways worden toegevoegd aan de volgende regio's:
 - Noor wegen-Oost: 51.120.96.33
 - Zuid-Azië-oost: 13.67.16.193

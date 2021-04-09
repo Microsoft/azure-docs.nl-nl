@@ -4,16 +4,16 @@ description: Als u Maxi maal beschik bare en flexibele toepassingen in azure wil
 author: prsandhu
 ms.service: azure
 ms.topic: conceptual
-ms.date: 03/16/2021
+ms.date: 03/30/2021
 ms.author: prsandhu
 ms.reviewer: cynthn
 ms.custom: fasttrack-edit, mvc, references_regions
-ms.openlocfilehash: 5152b0ecf6eebe87031a2165d5d8ba11d99209cf
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a81f3a3c51ffd0e1e0937c077a07fcbde16f0513
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/30/2021
-ms.locfileid: "103601182"
+ms.locfileid: "105961299"
 ---
 # <a name="azure-services-that-support-availability-zones"></a>Azure-services die beschikbaarheidszones ondersteunen
 
@@ -50,15 +50,15 @@ Als u een uitgebreide bedrijfs continuïteit wilt bereiken op Azure, bouwt u uw 
 | Noord- en Zuid-Amerika           | Europa               | Afrika              | Azië en Stille Oceaan   |
 |--------------------|----------------------|---------------------|----------------|
 |                    |                      |                     |                |
-| Brazilië - zuid       | Frankrijk - centraal       | Zuid-Afrika-noord * | Japan - oost     |
-| Canada - midden     | Duitsland - west-centraal |                     | Azië - zuidoost |
-| VS - centraal         | Europa - noord         |                     | Australië - oost |
-| VS - oost            | Verenigd Koninkrijk Zuid             |                     |                |
+| Brazilië - zuid       | Frankrijk - centraal       | Zuid-Afrika-noord * | Australië - oost |
+| Canada - midden     | Duitsland - west-centraal |                     | Japan - oost     |
+| VS - centraal         | Europa - noord         |                     | Korea-centraal * |
+| VS - oost            | Verenigd Koninkrijk Zuid             |                     | Azië - zuidoost |
 | VS - oost 2          | Europa -west          |                     |                |
 | VS Zuid-Centraal |                      |                     |                |
-| VS (overheid) - Virginia     |                      |                     |                |
+| VS (overheid) - Virginia    |                      |                     |                |
 | VS-West 2        |                      |                     |                |
-
+| VS-West 3 *       |                      |                     |                |
 
 \* Voor meer informatie over de ondersteuning van Beschikbaarheidszones en beschik bare Services in deze regio's, neemt u contact op met uw micro soft-verkoop-of klant vertegenwoordiger. Zie [Azure-geografi](https://azure.microsoft.com/en-us/global-infrastructure/geographies/)(Engelstalig) voor de aanstaande regio's die Beschikbaarheidszones ondersteunen.
 

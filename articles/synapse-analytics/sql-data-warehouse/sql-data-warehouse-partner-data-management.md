@@ -12,10 +12,10 @@ ms.author: mabasile
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 ms.openlocfilehash: d58deccb124e451106f43ae30c2fe910b3d41b54
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102634108"
 ---
 # <a name="azure-synapse-analytics-data-management-partners"></a>Azure Synapse Analytics-gegevens beheer partners
@@ -23,7 +23,7 @@ ms.locfileid: "102634108"
 In dit artikel worden micro soft-partner bedrijven beschreven met gegevens beheer Programma's en oplossingen die Azure Synapse ondersteunen.
 
 ## <a name="data-management-partners"></a>Gegevens beheer partners
-| Partner | Beschrijving | Website/product koppeling |
+| Partner | Description | Website/product koppeling |
 | ------- | ----------- | -------------------- |
 | ![Aginity](./media/sql-data-warehouse-partner-data-management/aginity-logo.png) |**Aginity**<br>Aginity is een hulp programma voor analyse ontwikkeling. Het biedt de volledige kracht van het Synapse-platform van micro soft in de handen van analisten en technici. Dankzij de uitgebreide en intuïtieve SQL-ontwikkel omgeving kunnen team leden verbinding maken met meer dan tien toonaangevende toonaangevende analyse platforms. Het stelt gebruikers in staat om gegevens op te nemen in verschillende indelingen en snel complexe bedrijfs berekeningen te bouwen om de resultaten te leveren in Business Intelligence en Machine Learning use cases. De volledige toepassing is gebouwd rond een centrale catalogus, waardoor samen werking in het analyse team een werkelijkheid wordt gemaakt, en de geavanceerde beheer mogelijkheden en de verfijnde beveiliging voor een koud belang. |[Product pagina](https://www.aginity.com/databases/microsoft/)<br> |
 | ![Alatie](./media/sql-data-warehouse-partner-data-management/alation-logo.png) |**Alatie**<br>De gegevens catalogus van de alatie verbetert de productiviteit, verhoogt de nauw keurigheid en biedt de vertrouw bare gegevensgestuurde besluit vorming voor analisten. Met de Data Catalog van de toewijzing kunnen iedereen binnen uw organisatie gegevens vinden, begrijpen en beheren. |[Product pagina](https://www.alation.com/product/data-catalog/)<br> |

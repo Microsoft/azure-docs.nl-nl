@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/08/2020
 ms.openlocfilehash: 3a02876234d43df2e98a3a4e60453fc3f1f74ef6
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98724166"
 ---
 # <a name="import-or-export-an-azure-sql-database-without-allowing-azure-services-to-access-the-server"></a>Een Azure SQL Database importeren of exporteren zonder dat Azure-Services toegang hebben tot de server
@@ -132,7 +132,7 @@ De export snelheid verschilt als gevolg van een groot aantal factoren (bijvoorbe
 
 Om de beste prestaties te krijgen, kunt u de volgende strategieën proberen:
 
-1. Zorg ervoor dat er geen andere werk belasting wordt uitgevoerd op de data base. Het maken van een kopie vóór het exporteren is mogelijk de beste oplossing om ervoor te zorgen dat er geen andere werk belastingen worden uitgevoerd.
+1. Zorg ervoor dat er geen andere workload wordt uitgevoerd op de database. Het maken van een kopie vóór het exporteren is mogelijk de beste oplossing om ervoor te zorgen dat er geen andere werk belastingen worden uitgevoerd.
 2. Verhoog de database serviceniveau doelstelling (SLO) voor een betere verwerking van de werk belasting voor exporteren (voornamelijk I/O-lees bewerkingen). Als de data base momenteel wordt GP_Gen5_4, zou een Bedrijfskritiek-laag bij het lezen van de werk belasting kunnen helpen.
 3. Zorg ervoor dat geclusterde indexen met name voor grote tabellen zijn.
 4. Virtuele machines (Vm's) moeten zich in dezelfde regio bevinden als de data base om netwerk beperkingen te helpen voor komen.

@@ -4,10 +4,10 @@ description: In dit artikel wordt Defender beschreven voor IoT CLI-opdrachten vo
 ms.date: 12/12/2020
 ms.topic: article
 ms.openlocfilehash: 9cd3f4325db2bc45ddcd6cc011dd4993e385a43c
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104778675"
 ---
 # <a name="work-with-defender-for-iot-cli-commands"></a>Werken met CLI-opdrachten voor Defender for IoT
@@ -254,7 +254,7 @@ U kunt de volgende kenmerken gebruiken met de `directions` opdracht:
 ## <a name="system-actions"></a>Systeem acties
 De volgende tabel beschrijft de opdrachten die beschikbaar zijn voor het uitvoeren van verschillende systeem acties binnen Defender voor IoT:
 
-|Name|Code|Beschrijving|
+|Name|Code|Description|
 |----|----|-----------|
 |De datum weer geven|`date`|Retourneert de huidige datum op de host in GMT-indeling.|
 |De host opnieuw opstarten|`system reboot`|Het hostapparaat wordt opnieuw opgestart.|

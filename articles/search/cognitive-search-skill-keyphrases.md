@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 8aafb08ff0ccc9391071f796450e69f87de279ba
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102547829"
 ---
 #   <a name="key-phrase-extraction-cognitive-skill"></a>Sleuteltermextractie cognitieve vaardigheid
@@ -37,7 +37,7 @@ De maximale grootte van een record moet 50.000 tekens zijn, zoals gemeten door [
 
 Parameters zijn hoofdlettergevoelig.
 
-| Invoerwaarden | Beschrijving |
+| Invoerwaarden | Description |
 |---------------------|-------------|
 | `defaultLanguageCode` | Beschrijving De taal code die moet worden toegepast op documenten die geen taal expliciet opgeven.  Als de standaard taal code niet wordt opgegeven, wordt Engels (en) gebruikt als de standaard taal code. <br/> Bekijk de [volledige lijst met ondersteunde talen](../cognitive-services/text-analytics/language-support.md). |
 | `maxKeyPhraseCount`   | Beschrijving Het maximum aantal sleutel zinnen dat moet worden geproduceerd. |
@@ -45,14 +45,14 @@ Parameters zijn hoofdlettergevoelig.
 
 ## <a name="skill-inputs"></a>Vaardigheids invoer
 
-| Invoer  | Beschrijving |
+| Invoer  | Description |
 |--------------------|-------------|
 | `text` | De tekst die moet worden geanalyseerd.|
 | `languageCode`    |  Een teken reeks die de taal van de records aangeeft. Als deze para meter niet wordt opgegeven, wordt de standaardtaal code gebruikt voor het analyseren van de records. <br/>[Volledige lijst met ondersteunde talen](../cognitive-services/text-analytics/language-support.md) weer geven|
 
 ## <a name="skill-outputs"></a>Vaardigheids uitvoer
 
-| Uitvoer     | Beschrijving |
+| Uitvoer     | Description |
 |--------------------|-------------|
 | `keyPhrases` | Een lijst met tref woorden die zijn geëxtraheerd uit de invoer tekst. De sleutel zinnen worden geretourneerd op volg orde van belang. |
 

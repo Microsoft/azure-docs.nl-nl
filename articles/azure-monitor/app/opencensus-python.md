@@ -6,10 +6,10 @@ ms.date: 09/24/2020
 ms.reviewer: mbullwin
 ms.custom: devx-track-python
 ms.openlocfilehash: 69472da4f774a1dfae86e1891255907ad711175a
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105047419"
 ---
 # <a name="set-up-azure-monitor-for-your-python-application"></a>Azure Monitor instellen voor uw python-toepassing

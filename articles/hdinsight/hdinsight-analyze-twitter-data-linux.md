@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.custom: H1Hack27Feb2017,hdinsightactive
 ms.date: 12/16/2019
 ms.openlocfilehash: 74a18be37608b2ac0c8a64655fa833753111706a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98942772"
 ---
 # <a name="analyze-twitter-data-using-apache-hive-and-apache-hadoop-on-hdinsight"></a>Twitter-gegevens analyseren met Apache Hive en Apache Hadoop op HDInsight
@@ -34,7 +34,7 @@ Met Twitter kunt u de gegevens voor elke Tweet ophalen als een JavaScript Object
    | Veld | Waarde |
    |--- |--- |
    | Naam |MyHDInsightApp |
-   | Beschrijving |MyHDInsightApp |
+   | Description |MyHDInsightApp |
    | Website |`https://www.myhdinsightapp.com` |
 
 4. Selecteer **Ja, ik ga akkoord** en selecteer vervolgens **uw Twitter-toepassing maken**.

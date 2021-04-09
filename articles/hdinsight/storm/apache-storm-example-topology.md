@@ -6,17 +6,17 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/27/2019
 ms.openlocfilehash: 8dabfec18cb904fa72518428220991b817b53529
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98928926"
 ---
 # <a name="example-apache-storm-topologies-and-components-for-apache-storm-on-hdinsight"></a>Voor beeld Apache Storm topologieën en onderdelen voor Apache Storm in HDInsight
 
 Hier volgt een lijst met voor beelden die door micro soft zijn gemaakt en onderhouden voor gebruik met [Apache Storm](https://storm.apache.org/) op HDInsight. Deze voor beelden hebben betrekking op diverse onderwerpen, van het maken van Basic C#-en Java-topologieën voor het werken met Azure-Services, zoals Event Hubs, Cosmos DB, SQL Database, [Apache HBase](https://hbase.apache.org/) in HDInsight en Azure Storage. Enkele voor beelden laten zien hoe u kunt werken met niet-Azure-of zelfs niet-micro soft-technologieën, zoals signalerings-en Socket.IO.
 
-| Beschrijving | Demonstreert | Taal/Framework |
+| Description | Demonstreert | Taal/Framework |
 |:--- |:--- |:--- |
 | [Schrijven naar Azure Data Lake Storage vanuit Apache Storm](apache-storm-write-data-lake-store.md) |Schrijven naar Azure Data Lake Storage |Java |
 | [Event hub-Spout en-flits bron](https://github.com/apache/storm/tree/master/external/storm-eventhubs) |Bron voor de Event hub-Spout en-flits |Java |

@@ -12,10 +12,10 @@ ms.date: 03/19/2021
 ms.author: kenwith
 ms.reviewer: asteen
 ms.openlocfilehash: de06bb4f97568eaa40b0b09e9bc2b50608424aa8
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104775592"
 ---
 # <a name="integrating-azure-active-directory-with-applications-getting-started-guide"></a>Hand leiding voor het integreren van Azure Active Directory met toepassingen

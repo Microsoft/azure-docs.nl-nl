@@ -11,10 +11,10 @@ author: luisquintanilla
 ms.date: 01/26/2021
 ms.custom: responsible-ml
 ms.openlocfilehash: 276c91ad7fb5b09dbe18d989741f0f54b8b0eb09
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "101659678"
 ---
 # <a name="mitigate-unfairness-in-machine-learning-models-preview"></a>Oneerlijkheid in machine learning modellen beperken (preview-versie)
@@ -100,7 +100,7 @@ Het open-source pakket Fairlearn biedt postprocessing en reductie algoritmen voo
 - Reductie: deze algoritmen hebben een standaard Black-Box machine learning Estimator (bijvoorbeeld een LightGBM-model) en genereren een set met retrainde modellen met behulp van een reeks hergewogen trainings gegevens sets. Aanvragers van een bepaald geslacht kunnen bijvoorbeeld worden verkleind of omlaag worden gereduceerd om modellen opnieuw te trainen en de verschillen in verschillende groepen geslacht te verminderen. Gebruikers kunnen vervolgens een model kiezen dat de beste verhouding biedt tussen nauw keurigheid (of andere prestatie gegevens) en de verschillen, wat doorgaans moet worden gebaseerd op bedrijfs regels en kosten berekeningen.  
 - Na het verwerken: deze algoritmen hebben een bestaande classificatie en de gevoelige functie als invoer. Vervolgens wordt een trans formatie van de voor spelling van de classificatie afgeleid om de opgegeven verdeling-beperkingen af te dwingen. Het grootste voor deel van de drempel optimalisatie is de eenvoud en flexibiliteit, omdat het model niet hoeft te worden getraind. 
 
-| Algoritme | Beschrijving | Machine learning-taak | Gevoelige functies | Ondersteunde pariteits beperkingen | Algoritme type |
+| Algoritme | Description | Machine learning-taak | Gevoelige functies | Ondersteunde pariteits beperkingen | Algoritme type |
 | --- | --- | --- | --- | --- | --- |
 | `ExponentiatedGradient` | Black-Box-benadering voor een billijke classificatie die wordt beschreven in [een verlagings benadering van een billijke classificatie](https://arxiv.org/abs/1803.02453) | Binaire classificatie | Categorische gegevens | [Demografische pariteit](#parity-constraints), [equaled conflicteert](#parity-constraints) | Passen |
 | `GridSearch` | Black-Box-benadering beschreven in [een verlagings benadering van een billijke classificatie](https://arxiv.org/abs/1803.02453)| Binaire classificatie | Binair | [Demografische pariteit](#parity-constraints), [equaled conflicteert](#parity-constraints) | Passen |

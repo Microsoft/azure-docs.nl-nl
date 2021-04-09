@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.custom: seoapr2020
 ms.date: 04/21/2020
 ms.openlocfilehash: b6dd0fd95280a65615d38ab11a2f9814f58586f5
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98945854"
 ---
 # <a name="compare-storage-options-for-use-with-azure-hdinsight-clusters"></a>Opslag opties vergelijken voor gebruik met Azure HDInsight-clusters
@@ -46,16 +46,16 @@ U kunt clusters maken met behulp van combi Naties van services voor primaire en 
 
 | HDInsight-versie | Primaire opslag | Secundaire opslag | Ondersteund |
 |---|---|---|---|
-| 3,6 & 4,0 | Algemeen v1, Algemeen v2 | Algemeen v1, Algemeen v2, BlobStorage (blok-blobs) | Ja |
-| 3,6 & 4,0 | Algemeen v1, Algemeen v2 | Data Lake Storage Gen2 | Nee |
-| 3,6 & 4,0 | Data Lake Storage Gen2 * | Data Lake Storage Gen2 | Ja |
-| 3,6 & 4,0 | Data Lake Storage Gen2 * | Algemeen v1, Algemeen v2, BlobStorage (blok-blobs) | Ja |
-| 3,6 & 4,0 | Data Lake Storage Gen2 | Data Lake Storage Gen1 | Nee |
-| 3,6 | Data Lake Storage Gen1 | Data Lake Storage Gen1 | Ja |
-| 3,6 | Data Lake Storage Gen1 | Algemeen v1, Algemeen v2, BlobStorage (blok-blobs) | Ja |
-| 3,6 | Data Lake Storage Gen1 | Data Lake Storage Gen2 | Nee |
-| 4,0 | Data Lake Storage Gen1 | Alle | Nee |
-| 4,0 | Algemeen v1, Algemeen v2 | Data Lake Storage Gen1 | Nee |
+| 3,6 & 4,0 | Algemeen v1, Algemeen v2 | Algemeen v1, Algemeen v2, BlobStorage (blok-blobs) | Yes |
+| 3,6 & 4,0 | Algemeen v1, Algemeen v2 | Data Lake Storage Gen2 | No |
+| 3,6 & 4,0 | Data Lake Storage Gen2 * | Data Lake Storage Gen2 | Yes |
+| 3,6 & 4,0 | Data Lake Storage Gen2 * | Algemeen v1, Algemeen v2, BlobStorage (blok-blobs) | Yes |
+| 3,6 & 4,0 | Data Lake Storage Gen2 | Data Lake Storage Gen1 | No |
+| 3,6 | Data Lake Storage Gen1 | Data Lake Storage Gen1 | Yes |
+| 3,6 | Data Lake Storage Gen1 | Algemeen v1, Algemeen v2, BlobStorage (blok-blobs) | Yes |
+| 3,6 | Data Lake Storage Gen1 | Data Lake Storage Gen2 | No |
+| 4,0 | Data Lake Storage Gen1 | Alle | No |
+| 4,0 | Algemeen v1, Algemeen v2 | Data Lake Storage Gen1 | No |
 
 * = Dit kan een of meer Data Lake Storage Gen2 zijn, zolang alle instellingen dezelfde beheerde identiteit voor toegang tot het cluster gebruiken.
 

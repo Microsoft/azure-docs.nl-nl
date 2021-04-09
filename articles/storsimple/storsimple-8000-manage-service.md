@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 05/09/2018
 ms.author: alkohli
 ms.openlocfilehash: 66244bd8e24ff62be41df72f7a39c0ce0ed13135
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "93360673"
 ---
 # <a name="deploy-the-storsimple-device-manager-service-for-storsimple-8000-series-devices"></a>De StorSimple Apparaatbeheer-service voor StorSimple 8000 Series-apparaten implementeren
@@ -191,23 +191,23 @@ In de Azure Portal worden alleen de StorSimple-apparaten met Update 5,0 en hoger
 
 | Bewerking                                                                                                                       | Ondersteund      |
 |---------------------------------------------------------------------------------------------------------------------------------|----------------|
-| Een apparaat registreren                                                                                                               | Ja            |
-| Apparaatinstellingen configureren, zoals algemeen, netwerk en beveiliging                                                                | Ja            |
-| Updates scannen, downloaden en installeren                                                                                             | Ja            |
-| Apparaat deactiveren                                                                                                               | Ja            |
-| Apparaat verwijderen                                                                                                                   | Ja            |
-| Een volume container maken, wijzigen en verwijderen                                                                                   | Nee             |
-| Een volume maken, wijzigen en verwijderen                                                                                             | Nee             |
-| Een back-upbeleid maken, wijzigen en verwijderen                                                                                      | Nee             |
-| Een hand matige back-up maken                                                                                                            | Nee             |
+| Een apparaat registreren                                                                                                               | Yes            |
+| Apparaatinstellingen configureren, zoals algemeen, netwerk en beveiliging                                                                | Yes            |
+| Updates scannen, downloaden en installeren                                                                                             | Yes            |
+| Apparaat deactiveren                                                                                                               | Yes            |
+| Apparaat verwijderen                                                                                                                   | Yes            |
+| Een volume container maken, wijzigen en verwijderen                                                                                   | No             |
+| Een volume maken, wijzigen en verwijderen                                                                                             | No             |
+| Een back-upbeleid maken, wijzigen en verwijderen                                                                                      | No             |
+| Een hand matige back-up maken                                                                                                            | No             |
 | Een geplande back-up maken                                                                                                         | Niet van toepassing |
-| Herstellen vanuit een back-upset                                                                                                        | Nee             |
-| Klonen naar een apparaat met update 3,0 en hoger <br> Op het bron apparaat wordt versie uitgevoerd vóór het bijwerken van 3,0.                                | Ja            |
-| Klonen naar een apparaat met versies voorafgaand aan update 3,0                                                                          | Nee             |
-| Failover als bron apparaat <br> (vanaf een apparaat met versie vóór het bijwerken van 3,0 naar een apparaat met update 3,0 of hoger)                                                               | Ja            |
-| Failover als doel apparaat <br> (op een apparaat met software versie vóór update 3,0)                                                                                   | Nee             |
-| Een waarschuwing wissen                                                                                                                  | Ja            |
-| Back-upbeleid, back-upcatalogus, volumes, volume containers, bewakings grafieken, taken en waarschuwingen die zijn gemaakt in de klassieke portal weer geven | Ja            |
+| Herstellen vanuit een back-upset                                                                                                        | No             |
+| Klonen naar een apparaat met update 3,0 en hoger <br> Op het bron apparaat wordt versie uitgevoerd vóór het bijwerken van 3,0.                                | Yes            |
+| Klonen naar een apparaat met versies voorafgaand aan update 3,0                                                                          | No             |
+| Failover als bron apparaat <br> (vanaf een apparaat met versie vóór het bijwerken van 3,0 naar een apparaat met update 3,0 of hoger)                                                               | Yes            |
+| Failover als doel apparaat <br> (op een apparaat met software versie vóór update 3,0)                                                                                   | No             |
+| Een waarschuwing wissen                                                                                                                  | Yes            |
+| Back-upbeleid, back-upcatalogus, volumes, volume containers, bewakings grafieken, taken en waarschuwingen die zijn gemaakt in de klassieke portal weer geven | Yes            |
 | Apparaat-controllers in-of uitschakelen                                                                                              | Ja            |
 
 

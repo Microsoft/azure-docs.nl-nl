@@ -11,17 +11,17 @@ ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 3/4/2021
+ms.date: 3/31/2021
 ms.author: ajburnle
 ms.reviewer: dhanyahk
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 03e783353f65ba2017dda9f6ca21a68ae6cff4de
-ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
+ms.openlocfilehash: d34a6eaa653ad0d2f93db0dcd04eec0f5532a4c7
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105612242"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106107024"
 ---
 # <a name="whats-new-in-azure-active-directory"></a>Wat is er nieuw in Azure Active Directory?
 
@@ -38,6 +38,205 @@ Azure AD ontvangt voortdurend verbeteringen. Om u op de hoogte te houden van de 
 Deze pagina wordt maandelijks bijgewerkt. Ga daarom regel matig opnieuw te werk. Als u op zoek bent naar items die ouder zijn dan zes maanden, kunt u deze vinden in [Archief voor wat er nieuw is in azure Active Directory](whats-new-archive.md).
 
 ---
+
+## <a name="march-2021"></a>2021 maart
+
+### <a name="guidance-on-how-to-enable-support-for-tls-12-in-your-environment-in-preparation-for-upcoming-azure-ad-tls-1011-deprecation"></a>Richt lijnen voor het inschakelen van ondersteuning voor TLS 1,2 in uw omgeving, in voor bereiding op aanstaande Azure AD TLS 1.0/1.1-afschaffing
+
+**Type:** Plan voor wijziging  
+**Service categorie:** n.v.t.  
+**Product mogelijkheden:** Normalisatie
+
+Azure Active Directory worden de volgende protocollen in Azure Active Directory wereld wijde regio's vanaf 30 juni 2021.
+
+
+- TLS 1.0
+- TLS 1.1
+- 3DES-coderings suite (TLS_RSA_WITH_3DES_EDE_CBC_SHA)
+
+Betroffen omgevingen zijn onder andere:
+
+- Azure-commerciële Cloud
+- Office 365 GCC en WW
+
+Zie [ondersteuning voor tls 1,2 inschakelen in uw omgeving voor Azure AD TLS 1,1 en 1,0 afschaffing](https://docs.microsoft.com/troubleshoot/azure/active-directory/enable-support-tls-environment)voor meer informatie.
+
+---
+
+### <a name="public-preview---azure-ad-entitlement-management-now-supports-multi-geo-sharepoint-online"></a>Open bare preview-Azure AD-rechts beheer ondersteunt nu multi-geo share point online
+
+**Type:** Nieuwe functie  
+**Service categorie:** Daarenteg  
+**Product mogelijkheden:** Beheer rechten
+ 
+Voor organisaties die gebruikmaken van multi-geo share point online, kunt u nu sites van specifieke multi-geografische omgevingen toevoegen aan uw rechten voor beheer toegang. [Meer informatie](../governance/entitlement-management-catalog-create.md#add-a-multi-geo-sharepoint-site-preview).
+
+---
+
+### <a name="public-preview---restore-deleted-apps-from-app-registrations"></a>Open bare Preview: verwijderde apps herstellen van App-registraties
+
+**Type:** Nieuwe functie  
+**Service categorie:** Daarenteg  
+**Product mogelijkheden:** Ontwikkelaars ervaring
+ 
+Klanten kunnen nu verwijderde app-registraties weer geven, herstellen en permanent verwijderen uit het Azure Portal. Dit geldt alleen voor toepassingen die zijn gekoppeld aan een map, niet op toepassingen van een persoonlijke Microsoft-account. [Meer informatie](../develop/quickstart-restore-app.md).
+ 
+---
+
+### <a name="public-preview---new-user-action-in-conditional-access-for-registering-or-joining-devices"></a>Open bare preview-nieuwe ' gebruikers actie ' in voorwaardelijke toegang voor het registreren of toevoegen van apparaten
+
+**Type:** Nieuwe functie  
+**Service categorie:** Voorwaardelijke toegang  
+**Product mogelijkheden:** Beveiliging van identiteits beveiliging &
+ 
+ Een nieuwe gebruikers actie met de naam ' registreren of toevoegen aan apparaten ' in voorwaardelijke toegang is beschikbaar. Met deze gebruikers actie kunt u de beleids regels voor multi-factor Authentication (MFA) beheren voor Azure AD-apparaatregistratie. 
+
+Op dit moment kunt u met deze actie MFA alleen inschakelen als een besturings element wanneer gebruikers apparaten bij Azure AD registreren of eraan toevoegen. Andere besturings elementen die afhankelijk zijn van of niet van toepassing zijn op Azure AD-apparaatregistratie, worden uitgeschakeld met deze gebruikers actie. [Meer informatie](../conditional-access/concept-conditional-access-cloud-apps.md#user-actions). 
+ 
+---
+
+### <a name="public-preview---optimize-connector-groups-to-use-the-closest-application-proxy-cloud-service"></a>Open bare preview-connector groepen optimaliseren om de dichtstbijzijnde toepassings proxy-Cloud service te gebruiken
+
+**Type:** Nieuwe functie  
+**Service categorie:** App-proxy  
+**Product mogelijkheden:** Access Control
+ 
+Met deze nieuwe mogelijkheid kunnen connector groepen worden toegewezen aan de dichtstbijzijnde regionale toepassings proxy service waarop een toepassing wordt gehost. Dit kan de prestaties van de app verbeteren in scenario's waarin apps worden gehost in andere regio's dan de regio van de thuis Tenant. [Meer informatie](../manage-apps/application-proxy-network-topology.md#optimize-connector-groups-to-use-closest-application-proxy-cloud-service-preview). 
+ 
+---
+
+### <a name="public-preview---external-identities-self-service-sign-up-in-aad-using-email-one-time-passcode-accounts"></a>Open bare preview-externe identiteiten Self-Service zich aanmelden in AAD met e-mail One-Time wachtwoord code accounts
+
+**Type:** Nieuwe functie  
+**Service categorie:** Business  
+**Product mogelijkheden:** B2B/B2C
+
+Externe gebruikers kunnen nu e-mail One-Time wachtwoord code accounts gebruiken om zich aan te melden bij Azure AD van de eerste partij en LOB-apps. [Meer informatie](../external-identities/one-time-passcode.md).
+
+---
+
+### <a name="public-preview---availability-of-ad-fs-sign-ins-in-azure-ad"></a>Open bare preview-Beschik baarheid van AD FS Sign-Ins in azure AD
+
+**Type:** Nieuwe functie  
+**Service categorie:** Authenticaties (aanmeldingen)  
+**Product mogelijkheden:** & rapportage controleren
+ 
+AD FS-aanmeldings activiteit kan nu worden geïntegreerd met Azure AD-activiteiten rapportage, met een uniforme weer gave van de infra structuur voor hybride identiteiten. Met behulp van het Azure AD Sign-Ins-rapport, Log Analytics en Azure Monitor werkmappen, is het mogelijk om een diep gaande analyse uit te voeren voor zowel AAD als AD FS aanmeld scenario's zoals AD FS account vergrendelingen, ongeldige wachtwoord pogingen en pieken van onverwachte aanmeldings pogingen.
+
+Ga voor meer informatie naar [AD FS aanmeldingen in azure AD met Connect Health](../hybrid/how-to-connect-health-ad-fs-sign-in.md).
+
+---
+
+### <a name="general-availability---staged-rollout-to-cloud-authentication"></a>Algemene Beschik baarheid-gefaseerde implementatie naar Cloud verificatie
+
+**Type:** Nieuwe functie  
+**Service categorie:** AD Connect  
+**Product mogelijkheden:** Gebruikers verificatie
+ 
+Gefaseerde implementatie naar Cloud authenticatie is nu algemeen beschikbaar. Met de functie gefaseerde implementatie kunt u groepen gebruikers selectief testen met Cloud authenticatie methoden, zoals Passthrough-verificatie (PTA) of wachtwoord-hash-synchronisatie (PHS). Ondertussen blijven alle andere gebruikers in de federatieve domeinen Federatie Services gebruiken, zoals AD FS of andere Federation-Services om gebruikers te verifiëren. [Meer informatie](../hybrid/how-to-connect-staged-rollout.md).
+
+---
+
+### <a name="general-availability---user-type-attribute-can-now-be-updated-in-the-azure-admin-portal"></a>Algemene Beschik baarheid-kenmerk gebruikers type kan nu worden bijgewerkt in de Azure-beheer Portal
+
+**Type:** Nieuwe functie  
+**Service categorie:** Gebruikers ervaring en-beheer  
+**Product mogelijkheden:** Gebruikers beheer
+ 
+Klanten kunnen het gebruikers type van Azure AD-gebruikers nu bijwerken wanneer ze hun gebruikers profiel gegevens bijwerken vanuit de Azure-beheer Portal. Het gebruikers type kan ook worden bijgewerkt van Microsoft Graph. Zie [gebruikers profiel informatie toevoegen of bijwerken](active-directory-users-profile-azure-portal.md)voor meer informatie.
+ 
+---
+
+### <a name="general-availability---replica-sets-for-azure-active-directory-domain-services"></a>Algemene Beschik baarheid-replica sets voor Azure Active Directory Domain Services
+
+**Type:** Nieuwe functie  
+**Service categorie:** Azure AD Domain Services  
+**Product mogelijkheden:** Azure AD Domain Services
+ 
+De mogelijkheid van replica sets in azure AD DS is nu algemeen beschikbaar. [Meer informatie](https://docs.microsoft.com/azure/active-directory-domain-services/concepts-replica-sets).
+ 
+---
+
+### <a name="general-availability---collaborate-with-your-partners-using-email-one-time-passcode-in-the-azure-government-cloud"></a>Algemene Beschik baarheid: samen werken met uw partners met behulp van e-mail One-Time wachtwoord code in de Azure Government Cloud
+
+**Type:** Nieuwe functie  
+**Service categorie:** Business  
+**Product mogelijkheden:** B2B/B2C
+ 
+Organisaties in de Microsoft Azure Government Cloud kunnen hun gasten nu in staat stellen om uitnodigingen uit te wisselen met een e-mail One-Time wachtwoord code. Dit zorgt ervoor dat gast gebruikers zonder Azure AD-, micro soft-of Gmail-accounts in de Azure Government Cloud nog steeds kunnen samen werken met hun partners door een tijdelijke code aan te vragen en in te voeren om zich aan te melden bij gedeelde bronnen. [Meer informatie](../external-identities/one-time-passcode.md#note-for-azure-us-government-customers).
+
+---
+
+### <a name="new-federated-apps-available-in-azure-ad-application-gallery---march-2021"></a>Nieuwe federatieve apps die beschikbaar zijn in de Azure AD-toepassings galerie-maart 2021
+
+**Type:** Nieuwe functie  
+**Service categorie:** Zakelijke apps  
+**Product capaciteit:** integratie van derden
+ 
+In maart 2021 zijn de volgende 37 nieuwe toepassingen toegevoegd aan de app-galerie met Federatie ondersteuning:
+
+[Bambuser Live Video-Shop ping](https://lcx.bambuser.com/), [DeepDyve Inc](https://www.deepdyve.com/azure-sso), [Moqups](../saas-apps/moqups-tutorial.md), [Ricoh Spaces Mobile](https://ricohspaces.app/welcome), [Flipgrid](https://auth.flipgrid.com/), [HCaptcha Enter prise](../saas-apps/hcaptcha-enterprise-tutorial.md), [SchoolStream ASA](https://jsd.schoolstreamk12.com/ASA/ASAlogin.aspx), [TransPerfect GlobalLink dash board](../saas-apps/transperfect-globallink-dashboard-tutorial.md), [SimplificaCI](https://app.simplificaci.com.br/) [,, LXP](../saas-apps/thrive-lxp-tutorial.md) [Lexonis,](../saas-apps/lexonis-talentscape-tutorial.md) [TalentScape](../saas-apps/exium-tutorial.md), [Exium](../saas-apps/sapient-tutorial.md), [Sapient](../saas-apps/truechoice-tutorial.md), [Ricoh Spaces](https://ricohspaces.app/welcome), [TrueChoice Cloud](../saas-apps/learning-at-work-tutorial.md), [Saba 360](../saas-apps/acunetix-360-tutorial.md), [Acunetix](../saas-apps/exceed-ai-tutorial.md), [Exceed.ai Enter prise Managed User](../saas-apps/github-enterprise-managed-user-tutorial.md), [Enter prise github for Outlook](https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=id_token&scope=openid%20profile%20User.Read&client_id=7176efe5-e954-4aed-b5c8-f5c85a980d3a&nonce=4b9e1981-1bcb-4938-a283-86f6931dc8cb), [Vault.Cloud](../saas-apps/smartlook-tutorial.md), [Accenture Smartlook](../saas-apps/accenture-academy-tutorial.md), [Academy](../saas-apps/onshape-tutorial.md), [Onshape](../saas-apps/tradeshift-tutorial.md), [Tradeshift](../saas-apps/juriblox-tutorial.md), [JuriBlox](../saas-apps/securitystudio-tutorial.md), [SecurityStudio](https://app.clicdata.com/), [groen](../saas-apps/evergreen-tutorial.md) [, ClicData](https://patchdeck.com/ad_auth/authenticate/) [, PLUS](../saas-apps/fax.plus-tutorial.md), [ValidSign](../saas-apps/validsign-tutorial.md), [AWS eenmalige aanmelding](../saas-apps/aws-single-sign-on-tutorial.md), [Nura ruimte](https://dashboard.nuraspace.com/login), [Broadcom DX SaaS](../saas-apps/broadcom-dx-saas-tutorial.md), [Interplay Learning](https://skilledtrades.interplaylearning.com/#login), [SendPro Enter prise](../saas-apps/sendpro-enterprise-tutorial.md), [FortiSASE SIA](../saas-apps/fortisase-sia-tutorial.md)
+
+U kunt ook de documentatie van alle toepassingen hier vinden: https://aka.ms/AppsTutorial
+
+Lees de volgende informatie voor het weer geven van uw toepassing in de app-galerie van Azure AD: https://aka.ms/AzureADAppRequest
+
+---
+
+### <a name="new-provisioning-connectors-in-the-azure-ad-application-gallery---march-2021"></a>Nieuwe inrichtings connectors in de Azure AD-toepassings galerie-maart 2021
+
+**Type:** Nieuwe functie  
+**Service categorie:** App-inrichting  
+**Product capaciteit:** integratie van derden
+
+U kunt nu het maken, bijwerken en verwijderen van gebruikers accounts automatiseren voor deze nieuwe, geïntegreerde apps:
+
+- [AWS eenmalige aanmelding](../saas-apps/aws-single-sign-on-provisioning-tutorial.md)
+- [Bpanda](../saas-apps/bpanda-provisioning-tutorial.md)
+- [Britive](../saas-apps/britive-provisioning-tutorial.md)
+- [Door GitHub Enter prise beheerde gebruiker](../saas-apps/github-enterprise-managed-user-provisioning-tutorial.md)
+- [Grammarly](../saas-apps/grammarly-provisioning-tutorial.md)
+- [LogicGate](../saas-apps/logicgate-provisioning-tutorial.md)
+- [SecureLogin](../saas-apps/secure-login-provisioning-tutorial.md)
+- [TravelPerk](../saas-apps/travelperk-provisioning-tutorial.md)
+
+Voor meer informatie over hoe u uw organisatie beter kunt beveiligen met behulp van automatische toewijzing van gebruikers accounts, raadpleegt [u de gebruikers inrichting voor SaaS-toepassingen automatiseren met Azure AD](../app-provisioning/user-provisioning.md).
+ 
+---
+
+### <a name="introducing-ms-graph-api-for-company-branding"></a>Introductie van MS Graph API voor bedrijfs huisstijl
+
+**Type:** Gewijzigde functie  
+**Service categorie:** MS Graph  
+**Product mogelijkheden:** B2B/B2C
+
+[MS Graph API voor de huis stijl van het bedrijf](https://docs.microsoft.com/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0)  is beschikbaar voor de Azure AD-of Microsoft 365-aanmeld ervaring om het beheer van de huisstijl parameters programmatisch toe te staan.
+
+---
+
+### <a name="general-availability---header-based-authentication-sso-with-application-proxy"></a>Algemene Beschik baarheid-SSO-verificatie op basis van header met toepassings proxy
+
+**Type:** Gewijzigde functie  
+**Service categorie:** App-proxy  
+**Product mogelijkheden:** Access Control
+ 
+Azure AD-toepassingsproxy systeem eigen ondersteuning voor verificatie op basis van een header is nu algemeen beschikbaar. Met deze functie kunt u de vereiste gebruikers kenmerken configureren als HTTP-headers voor de toepassing zonder extra onderdelen die nodig zijn om te implementeren. [Meer informatie](../manage-apps/application-proxy-configure-single-sign-on-with-headers.md).
+
+---
+
+### <a name="two-way-sms-for-mfa-server-is-no-longer-supported"></a>Twee richtings-SMS voor MFA-server wordt niet meer ondersteund
+
+**Type:** Keur  
+**Service categorie:** MFA  
+**Product mogelijkheden:** Beveiliging van identiteits beveiliging &
+ 
+
+Twee richtings-SMS voor MFA-server is oorspronkelijk afgeschaft in 2018 en wordt na 24 februari 2021 niet meer ondersteund. Beheerders moeten een andere methode inschakelen voor gebruikers die nog steeds twee richtings-SMS gebruiken.
+
+E-mail meldingen en Azure Portal Service Health meldingen zijn verzonden naar betrokken beheerders op 8 december 2020 en 28 januari 2021. De waarschuwingen zijn naar de RBAC-rollen van de eigenaar, mede-eigenaar, beheerder en service beheerder gepaard die zijn gekoppeld aan de abonnementen. [Meer informatie](../authentication/how-to-authentication-two-way-sms-unsupported.md).
+ 
+---
+ 
 ## <a name="february-2021"></a>Februari 2021
 
 ### <a name="email-one-time-passcode-authentication-on-by-default-starting-october-2021"></a>Authenticatie van verificatie met eenmalige wacht woord op de standaard datum van oktober 2021
@@ -557,7 +756,7 @@ Ga voor meer informatie naar [instellingen voor het wijzigen van de goed keuring
 **Service categorie:** Alle Azure AD-toepassingen  
 **Product mogelijkheden:** Normalisatie
 
-Azure Active Directory worden de volgende protocollen in Azure Active Directory wereld wijde regio's op 30 juni 2021.:
+Azure Active Directory worden de volgende protocollen in Azure Active Directory wereld wijde regio's vanaf 30 juni 2021.
 
 - TLS 1.0
 - TLS 1.1
@@ -568,6 +767,8 @@ Betrokken omgevingen zijn:
 - Office 365 GCC en WW
 
 Gerelateerde aankondiging alle combi Naties van client-server-en browser-server moet TLS 1,2-en moderne coderings suites gebruiken om een beveiligde verbinding te onderhouden met Azure Active Directory voor Azure, Office 365 en Microsoft 365 Services. Deze wijziging is gerelateerd aan [Azure Active Directory TLS 1,0 & 1,1 en de afschaffing van 3DES-code pakketten in US gov Cloud](whats-new.md#azure-active-directory-tls-10-tls-11-and-3des-deprecation-in-us-gov-cloud).
+
+Voor hulp bij het verwijderen van afhankelijkheden van afschaffing-protocollen, raadpleegt u [ondersteuning voor TLS 1,2 in uw omgeving inschakelen voor Azure AD TLS 1,1 en 1,0 afschaffing](https://docs.microsoft.com/troubleshoot/azure/active-directory/enable-support-tls-environment).
 
 ---
 
@@ -785,7 +986,7 @@ Als u een omgeving met firewall regels hebt ingesteld zodat alleen uitgaande opr
 **Service categorie:** Alle Azure AD-toepassingen  
 **Product mogelijkheden:** Normalisatie
  
-Azure Active Directory worden de volgende protocollen op 31 maart 2021 afschaft:
+Azure Active Directory worden de volgende protocollen afschaft vanaf 31 maart 2021:
 - TLS 1.0
 - TLS 1.1
 - 3DES-coderings suite (TLS_RSA_WITH_3DES_EDE_CBC_SHA)
@@ -795,10 +996,12 @@ Alle combi Naties van client-server-en browser-server moet TLS 1,2-en moderne co
 Betrokken omgevingen zijn:
 - Azure US Gov
 - [Office 365 GCC High & DoD](/microsoft-365/compliance/tls-1-2-in-office-365-gcc)
+
+Voor hulp bij het verwijderen van afhankelijkheden van afschaffing-protocollen, raadpleegt u [ondersteuning voor TLS 1,2 in uw omgeving inschakelen voor Azure AD TLS 1,1 en 1,0 afschaffing](https://docs.microsoft.com/troubleshoot/azure/active-directory/enable-support-tls-environment).
  
 ---
 
-### <a name="assign-applications-to-roles-on-au-and-object-scope"></a>Toepassingen toewijzen aan rollen op AU en object bereik
+### <a name="assign-applications-to-roles-on-administrative-unit-and-object-scope"></a>Toepassingen toewijzen aan rollen voor administratieve eenheid en object bereik
 
 **Type:** Nieuwe functie  
 **Service categorie:** RBAC  
@@ -993,183 +1196,4 @@ We hebben onlangs de [onthouden multi-factor Authentication (MFA)](../authentica
 
 Voor een optimale gebruikers ervaring kunt u het beste de aanmeldings frequentie voor voorwaardelijke toegang gebruiken om de levens duur van sessies op vertrouwde apparaten, locaties of sessies met een laag risico uit te breiden als alternatief voor de instelling MFA onthouden voor een vertrouwde apparaat. Bekijk onze [meest recente richt lijnen voor het optimaliseren van de herauthenticatie-ervaring](../authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime.md)om aan de slag te gaan.
 
----
-
-## <a name="september-2020"></a>September 2020
-
-### <a name="new-provisioning-connectors-in-the-azure-ad-application-gallery---september-2020"></a>Nieuwe inrichtings connectors in de Azure AD-toepassings galerie-september 2020
-
-**Type:** Nieuwe functie  
-**Service categorie:** App-inrichting  
-**Product capaciteit:** integratie van derden
- 
-U kunt nu het maken, bijwerken en verwijderen van gebruikers accounts automatiseren voor deze nieuwe, geïntegreerde apps:
-
-- [Coda](../saas-apps/coda-provisioning-tutorial.md)
-- [Cofense Recipient Sync](../saas-apps/cofense-provision-tutorial.md)
-- [InVision](../saas-apps/invision-provisioning-tutorial.md)
-- [myday](../saas-apps/myday-provision-tutorial.md)
-- [SAP Analytics Cloud](../saas-apps/sap-analytics-cloud-provisioning-tutorial.md)
-- [Webroot-beveiligings bewustmaking](../saas-apps/webroot-security-awareness-training-provisioning-tutorial.md)
-
-Voor meer informatie over hoe u uw organisatie beter kunt beveiligen met behulp van automatische toewijzing van gebruikers accounts, raadpleegt [u de gebruikers inrichting voor SaaS-toepassingen automatiseren met Azure AD](../app-provisioning/user-provisioning.md).
- 
----
-### <a name="cloud-provisioning-public-preview-refresh"></a>De open bare preview-versie van Cloud inrichting vernieuwen
-
-**Type:** Nieuwe functie  
-**Service categorie:** Azure AD Cloud voor het inrichten van **producten:** Identity Lifecycle Management
- 
-Azure AD Connect Cloud Provisioning open bare preview-functies vernieuwt twee belang rijke verbeteringen die zijn ontwikkeld door feedback van klanten: 
-
-- Ervaring met kenmerk toewijzing via Azure Portal
-
-    Met deze functie kunnen IT-beheerders gebruikers-, groeps-of contact kenmerken van AD toewijzen aan Azure AD met behulp van de verschillende toewijzings typen die vandaag beschikbaar zijn. Kenmerk toewijzing is een functie die wordt gebruikt voor het standaardiseren van de waarden van de kenmerken van Active Directory naar Azure Active Directory. Eén kan bepalen of de kenmerk waarde direct moet worden toegewezen aan de naam van AD naar Azure AD of dat expressies moeten worden gebruikt om de kenmerk waarden bij het inrichten van gebruikers te transformeren. [Meer informatie](../cloud-sync/how-to-attribute-mapping.md)
-
-- Inrichting op aanvraag of gebruikers ervaring testen
-
-    Wanneer u uw configuratie hebt ingesteld, wilt u wellicht testen of de gebruikers transformatie werkt zoals verwacht voordat u deze toepast op alle gebruikers binnen het bereik. Met inrichting op aanvraag kunnen IT-beheerders de DN (Distinguished Name) van een AD-gebruiker invoeren en zien of ze worden gesynchroniseerd zoals verwacht. Inrichting op aanvraag biedt een uitstekende manier om ervoor te zorgen dat de kenmerk toewijzingen die u eerder hebt uitgevoerd zoals verwacht. [Meer informatie](../cloud-sync/how-to-on-demand-provision.md)
- 
----
-
-### <a name="audited-bitlocker-recovery-in-azure-ad---public-preview"></a>Gecontroleerd BitLocker-herstel in azure AD-open bare preview
-
-**Type:** Nieuwe functie  
-**Service categorie:** Toegangs beheer voor apparaten  
-**Product mogelijkheden:** Levenscyclus beheer van apparaten
- 
-Wanneer IT-beheerders of eind gebruikers BitLocker-herstel sleutel (s) hebben gelezen waartoe ze toegang hebben, wordt door Azure Active Directory nu een audit logboek gegenereerd waarin wordt vastgelegd wie de herstel sleutel heeft geopend. Dezelfde controle bevat details van het apparaat waaraan de BitLocker-sleutel is gekoppeld.
-
-Eind gebruikers [hebben via mijn account toegang tot hun herstel sleutels](../user-help/my-account-portal-devices-page.md#view-a-bitlocker-key). IT-beheerders hebben toegang tot herstel sleutels via de [API van de BitLocker-herstel sleutel in bèta](/graph/api/resources/bitlockerrecoverykey?view=graph-rest-beta) of via de Azure AD-Portal. Zie [BitLocker-sleutels weer geven of kopiëren in de Azure AD-Portal](../devices/device-management-azure-portal.md#view-or-copy-bitlocker-keys)voor meer informatie.
-
----
-
-### <a name="teams-devices-administrator-built-in-role"></a>Teams ingebouwde rol van de beheerder van de apparaten
-
-**Type:** Nieuwe functie  
-**Service categorie:** RBAC  
-**Product mogelijkheden:** Access Control
- 
-Gebruikers met de rol [teams van apparaten](../roles/permissions-reference.md#teams-devices-administrator) kunnen [teams, gecertificeerde apparaten](https://www.microsoft.com/microsoft-365/microsoft-teams/across-devices/devices) beheren vanuit het beheer centrum teams. 
-
-Met deze rol kan de gebruiker alle apparaten in één oogopslag weer geven, met de mogelijkheid om apparaten te zoeken en te filteren. De gebruiker kan ook de details van elk apparaat controleren, inclusief het aangemelde account en het merk en model van het apparaat. De gebruiker kan de instellingen op het apparaat wijzigen en de software versies bijwerken. Deze rol verleent geen machtigingen om de activiteit teams te controleren en de kwaliteit van het apparaat aan te roepen.
- 
----
-
-### <a name="advanced-query-capabilities-for-directory-objects"></a>Geavanceerde query mogelijkheden voor Directory-objecten
-
-**Type:** Nieuwe functie  
-**Service categorie:** MS Graph  
-**Product mogelijkheden:** Ontwikkelaars ervaring
- 
-Alle nieuwe query mogelijkheden die zijn geïntroduceerd voor Directory objecten in azure AD Api's zijn nu beschikbaar in het eind punt v 1.0 en productie gereed. Ontwikkel aars kunnen Directory-objecten en gerelateerde koppelingen tellen, zoeken, filteren en sorteren met behulp van de standaard OData-Opera tors.
-
-Raadpleeg de documentatie [hier](https://aka.ms/BlogPostMezzoGA)voor meer informatie. u kunt ook feedback verzenden met deze [korte enquête](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR_yN8EPoGo5OpR1hgmCp1XxUMENJRkNQTk5RQkpWTE44NEk2U0RIV0VZRy4u).
- 
----
-
-### <a name="public-preview-continuous-access-evaluation-for-tenants-who-configured-conditional-access-policies"></a>Open bare Preview: voortdurende toegangs beoordeling voor tenants die beleids regels voor voorwaardelijke toegang hebben geconfigureerd
-
-**Type:** Nieuwe functie  
-**Service categorie:** Authenticaties (aanmeldingen)  
-**Product mogelijkheden:** Beveiliging van identiteits beveiliging &
- 
-De evaluatie van voortdurende toegang (CAE) is nu beschikbaar in de open bare Preview voor Azure AD-tenants met beleid voor voorwaardelijke toegang. Met CAE worden essentiële beveiligings gebeurtenissen en-beleids regels in realtime geëvalueerd. Dit omvat het uitschakelen van accounts, het opnieuw instellen van wacht woorden en het wijzigen van de locatie. Zie [evaluatie van continue toegang](../conditional-access/concept-continuous-access-evaluation.md)voor meer informatie.
-
----
-
-### <a name="public-preview-ask-users-requesting-an-access-package-additional-questions-to-improve-approval-decisions"></a>Open bare Preview: vraag gebruikers om een toegangs pakket aanvullende vragen om goedkeurings beslissingen te verbeteren
-
-**Type:** Nieuwe functie  
-**Service categorie:** Beheer van gebruikers toegang  
-**Product mogelijkheden:** Beheer rechten
- 
-Beheerders kunnen er nu voor zorgen dat gebruikers die een toegangs pakket aanvragen, meer vragen beantwoorden dan alleen de zakelijke reden in de mijn Access-portal van Azure AD-rechten beheer. De antwoorden van de gebruikers worden vervolgens weer gegeven aan de goed keurders, zodat ze een nauw keurigere goed keuring voor toegang kunnen krijgen. Zie [aanvullende gegevens van de aanvrager voor goed keuring verzamelen (preview)](../governance/entitlement-management-access-package-approval-policy.md#collect-additional-requestor-information-for-approval-preview)voor meer informatie.
- 
----
-
-### <a name="public-preview-enhanced-user-management"></a>Open bare Preview: verbeterd gebruikers beheer
-
-**Type:** Nieuwe functie  
-**Service categorie:** Gebruikers beheer  
-**Product mogelijkheden:** Gebruikers beheer
- 
-
-De Azure AD-Portal is bijgewerkt, zodat u gebruikers gemakkelijker kunt vinden op de pagina's alle gebruikers en verwijderde gebruikers. Wijzigingen in de preview zijn onder andere: 
-- Meer zicht bare gebruikers eigenschappen, waaronder de object-ID, de synchronisatie status van de Directory, het aanmaak type en de identiteits verlener.
-- Met zoeken kunt u nu gecombineerde Zoek opdrachten van namen, e-mails en object-Id's.
-- Verbeterd filteren op gebruikers type (lid, gast en geen), adreslijst synchronisatie status, aanmaak type, bedrijfs naam en domein naam.
-- Nieuwe sorteer mogelijkheden voor eigenschappen zoals naam, user principal name en verwijderings datum.
-- Een nieuw totaal aantal gebruikers dat wordt bijgewerkt met Zoek opdrachten of filters.
-
-Zie [verbeteringen voor gebruikers beheer (preview) in azure Active Directory](../enterprise-users/users-search-enhanced.md)voor meer informatie.
-
----
-
-### <a name="new-notes-field-for-enterprise-applications"></a>Nieuw notitie veld voor zakelijke toepassingen
-
-**Type:** Nieuwe functie  
-**Service categorie:** **Product mogelijkheden** van ENTER prise apps: SSO
-
-U kunt gratis tekst notities toevoegen aan zakelijke toepassingen. U kunt alle relevante informatie toevoegen die u helpt bij het beheer van toepassingen onder bedrijfs toepassingen. Zie [Quick Start: eigenschappen configureren voor een toepassing in uw Azure Active Directory-Tenant (Azure AD)](../manage-apps/add-application-portal-configure.md)voor meer informatie. 
-
----
-
-### <a name="new-federated-apps-available-in-azure-ad-application-gallery---september-2020"></a>Nieuwe federatieve apps die beschikbaar zijn in de Azure AD-toepassings galerie-september 2020
-
-**Type:** Nieuwe functie  
-**Service categorie:** Zakelijke apps  
-**Product capaciteit:** integratie van derden
-
-In september 2020 zijn de volgende 34 nieuwe toepassingen toegevoegd aan de app-galerie met Federatie ondersteuning:
-
-[VMware horizon-Unified Access Gateway](), [Pulse Secure pc's](../saas-apps/vmware-horizon-unified-access-gateway-tutorial.md), [Inventory360](../saas-apps/pulse-secure-pcs-tutorial.md), [Frontitude](https://services.enteksystems.de/sso/microsoft/signup), [BookWidgets](https://www.bookwidgets.com/sso/office365), [ZVD_SERVER](https://zaas.zenmutech.com/user/signin), [HashData for Business](https://hashdata.app/login.xhtml), [SecureLogin](https://securelogin.securelogin.nu/sso/azure/login), [CyberSolutions MAILBASEΣ/CMSS](../saas-apps/cybersolutions-mailbase-tutorial.md), [CyberSolutions CYBERMAILΣ](../saas-apps/cybersolutions-cybermail-tutorial.md), [LimbleCMMS](https://auth.limblecmms.com/), [glint Inc](../saas-apps/glint-inc-tutorial.md), [zeroheight](../saas-apps/zeroheight-tutorial.md), [gender geschiktheid](https://app.genderfitness.com/), [Coeo Portal](https://my.coeo.com/), [grammaticaal](../saas-apps/grammarly-tutorial.md), [Fivetran](../saas-apps/fivetran-tutorial.md), [Kumolus](../saas-apps/kumolus-tutorial.md), [RSA Archer Suite](../saas-apps/rsa-archer-suite-tutorial.md), [TeamzSkill](../saas-apps/teamzskill-tutorial.md), [Raumfürraum](../saas-apps/raumfurraum-tutorial.md), [Saviynt](../saas-apps/saviynt-tutorial.md), [BizMerlinHR](https://marketplace.bizmerlin.net/bmone/signup), [mobiele kluis](../saas-apps/mobile-locker-tutorial.md), [Zengine](../saas-apps/zengine-tutorial.md), [CloudCADI](https://app.cloudcadi.com/login), [Simfoni Analytics](https://simfonianalytics.com/accounts/microsoft/login/), [soonlijk Identity & Access Management](https://my.priva.com/), [Nitro Pro](https://www.gonitro.com/nps/product-details/downloads), [Eventfinity](../saas-apps/eventfinity-tutorial.md), [Fexa](../saas-apps/fexa-tutorial.md), [beveiligde ondertekening Enterprise Portal](https://www.securedsigning.com/aad/Auth/ExternalLogin/AdminPortal), [beveiligde ondertekening Enterprise Portal Aad-installatie](https://www.securedsigning.com/aad/Auth/ExternalLogin/AdminPortal), [Wistec online](https://wisteconline.com/auth/oidc), [Oracle people-protected by F5 BIG-IP apm](../saas-apps/oracle-peoplesoft-protected-by-f5-big-ip-apm-tutorial.md)
-
-U kunt hier ook de documentatie van alle toepassingen vinden: https://aka.ms/AppsTutorial .
-
-Lees de volgende informatie voor het weer geven van uw toepassing in de app-galerie van Azure AD: https://aka.ms/AzureADAppRequest .
-
----
-
-### <a name="new-delegation-role-in-azure-ad-entitlement-management-access-package-assignment-manager"></a>Nieuwe delegering functie in azure AD-rechts beheer: Access package Assignment Manager
-
-**Type:** Nieuwe functie  
-**Service categorie:** Beheer van gebruikers toegang  
-**Product mogelijkheden:** Beheer rechten
- 
-Er is een nieuwe rol voor toegangs pakket toewijzings beheer toegevoegd aan Azure AD-rechts beheer om gedetailleerde machtigingen te bieden voor het beheren van toewijzingen. U kunt nu taken overdragen aan een gebruiker met deze rol, die het beheer van toewijzingen van een toegangs pakket kan delegeren aan een zakelijke eigenaar. Een toegangs pakket toewijzings beheer kan echter het toegangs pakket beleid of andere eigenschappen die door de beheerders zijn ingesteld, niet wijzigen. 
-
-Met deze nieuwe rol profiteert u van de mini maal benodigde bevoegdheden voor het delegeren van beheer van toewijzingen en het onderhouden van beheer beheer voor alle andere configuraties van het toegangs pakket. Zie [rechten beheer rollen](../governance/entitlement-management-delegate.md#entitlement-management-roles)voor meer informatie.
- 
----
-
-### <a name="changes-to-privileged-identity-managements-onboarding-flow"></a>Wijzigingen in de onboarding-stroom van Privileged Identity Management
-
-**Type:** Gewijzigde functie  
-**Service categorie:** Privileged Identity Management  
-**Product mogelijkheden:** Privileged Identity Management
- 
-Voorheen heeft het onboarding van Privileged Identity Management (PIM) vereiste gebruikers toestemming en een onboarding-stroom in de Blade PIM opgenomen die de inschrijving in azure AD MFA bijwerkt. Met de recente integratie van PIM-ervaring op de Blade rollen en beheerders van Azure AD, wordt deze ervaring verwijderd. Elke Tenant met een geldige P2-licentie wordt automatisch onboarded naar PIM.
-
-Onboarding naar PIM heeft geen direct schadelijk effect op uw Tenant. U kunt de volgende wijzigingen verwachten:
-- Aanvullende toewijzings opties zoals actief versus. in aanmerking komen als begin-en eind tijd wanneer u een toewijzing maakt in de Blade PIM of Azure AD-rollen en Administrators. 
-- Extra bereik mechanismen, zoals administratieve eenheden en aangepaste rollen, worden direct in de toewijzings ervaring geïntroduceerd. 
-- Als u een globale beheerder of beheerder van een bevoorrechte rol bent, kunt u beginnen met het ophalen van enkele extra e-mail berichten zoals het wekelijks samen vatting van PIM. 
-- U ziet mogelijk ook MS-PIM-Service-Principal in het controle logboek dat betrekking heeft op de roltoewijzing. Deze verwachte wijziging is niet van invloed op uw normale werk stroom.
-
- Zie [beginnen met privileged Identity Management](../privileged-identity-management/pim-getting-started.md)voor meer informatie.
-
----
-
-### <a name="azure-ad-entitlement-management-the-select-pane-of-access-package-resources-now-shows-by-default-the-resources-currently-in-the-selected-catalog"></a>Beheer van rechten van Azure AD: in het deel venster met toegangs pakket resources worden nu standaard de resources weer gegeven die momenteel in de geselecteerde catalogus staan
-
-**Type:** Gewijzigde functie  
-**Service categorie:** Beheer van gebruikers toegang  
-**Product mogelijkheden:** Beheer rechten
- 
-
-In de stroom voor het maken van het toegangs pakket, onder het tabblad Resource rollen, wordt het gedrag van het deel venster selecteren gewijzigd. Op dit moment is het standaard gedrag om alle resources weer te geven die eigendom zijn van de gebruiker en resources die zijn toegevoegd aan de geselecteerde catalogus. 
-
-Deze ervaring wordt zodanig gewijzigd dat er standaard alleen de resources worden weer gegeven die momenteel aan de catalogus zijn toegevoegd, zodat gebruikers eenvoudig resources uit de catalogus kunnen kiezen. De update helpt u bij het detecteren van de resources om deze toe te voegen aan toegangs pakketten, en vermindert het risico van het per ongeluk toevoegen van resources die eigendom zijn van de gebruiker die geen deel uitmaakt van de catalogus. Zie [een nieuw toegangs pakket maken in azure AD-rechts beheer](../governance/entitlement-management-access-package-create.md#resource-roles)voor meer informatie.
- 
 ---

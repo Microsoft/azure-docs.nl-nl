@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: overview
-ms.date: 06/24/2020
+ms.date: 03/27/2021
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: b55ea814214397e12e50e7bc5047988394623940
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6d71fc7931db77f0cf19a4e7ea70731ba19d1f6d
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98703586"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105937308"
 ---
 # <a name="introduction-to-azure-blob-storage"></a>Inleiding tot Azure Blob-opslag
 
@@ -55,7 +55,7 @@ Een container kan een of meer blobs bevatten, net zoals een map een of meer best
 
 Azure Storage ondersteunt drie soorten blobs:
 
-- **Blok-blobs** worden gebruikt voor het opslaan van tekst en binaire gegevens. Blok-blobs bestaan uit blokken met gegevens die afzonderlijk kunnen worden beheerd. Blok-blobs kunnen tot ongeveer 4,75 TiB gegevens opslagen. Grotere blok-blobs zijn beschikbaar in de preview-versie, ze kunnen tot ongeveer 190,7 TiB opslagen
+- **Blok-blobs** worden gebruikt voor het opslaan van tekst en binaire gegevens. Blok-blobs bestaan uit blokken met gegevens die afzonderlijk kunnen worden beheerd. Blok-blobs kunnen Maxi maal ongeveer 190,7 TiB opslaan.
 - **Toevoeg-blobs** bestaan uit blokken zoals blok-blobs, maar zijn geoptimaliseerd voor toevoegbewerkingen. Toevoeg-blobs zijn ideaal voor scenario's zoals het registreren van logboekgegevens van virtuele machines.
 - **Pagina-blobs** worden gebruikt voor het opslaan van bestanden voor willekeurige toegang tot maximaal 8 TiB in grootte. Met pagina-blobs worden bestanden voor de virtuele harde schijf (VHD) opgeslagen en kunnen ze dienen als schijven voor Azure-VM's. Zie [Overzicht van Azure-pagina-blobs](storage-blob-pageblob-overview.md) voor meer informatie over pagina-blobs
 

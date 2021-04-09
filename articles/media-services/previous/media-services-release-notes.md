@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 03/10/2021
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 801d810a82e4e484ca1ab30c5c6d510860dbab6b
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: fe42b98813f1687c78827b355a707b0147d6d2a4
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105566010"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106067279"
 ---
 # <a name="azure-media-services-release-notes"></a>Opmerkingen bij de release Azure Media Services
 
@@ -252,7 +252,7 @@ Het Azure SDK-team heeft een nieuwe release gepubliceerd van het pakket [Azure S
 Zie voor meer informatie:
 
 * De volgende [code voorbeelden](https://github.com/Azure/azure-sdk-for-php/tree/master/examples/MediaServices) helpen u snel aan de slag te gaan:
-  * **vodworkflow_aes. php**: in dit php-bestand ziet u hoe u met aes-128 dynamische versleuteling en de key delivery-service kunt gebruiken. Het is gebaseerd op het .NET-voor beeld dat is uitgelegd in [use AES-128 Dynamic Encryption en de key delivery service](media-services-protect-with-aes128.md).
+  * **vodworkflow_aes. php**: in dit php-bestand ziet u hoe u met aes-128 dynamische versleuteling en de key delivery-service kunt gebruiken. Het is gebaseerd op het .NET-voor beeld dat is uitgelegd in [use AES-128 Dynamic Encryption en de key delivery service](media-services-playready-license-template-overview.md).
   * **vodworkflow_aes. php**: in dit php-bestand ziet u hoe u dynamische versleuteling van PlayReady en de service voor licentie levering kunt gebruiken. Het is gebaseerd op het .NET-voor beeld dat wordt uitgelegd in het [gebruik van PlayReady en/of Widevine Dynamic common Encryption](media-services-protect-with-playready-widevine.md).
   * **scale_encoding_units. php**: in dit php-bestand ziet u hoe u gereserveerde encoding-eenheden kunt schalen.
 

@@ -1,14 +1,14 @@
 ---
 title: Beheerervaring in meerdere tenants
 description: Azure delegated Resource Management maakt een cross-Tenant beheer mogelijk.
-ms.date: 03/23/2021
+ms.date: 03/29/2021
 ms.topic: conceptual
-ms.openlocfilehash: a774eb08989e8fc45a117d83d81a5b510e8202b4
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: 12c4aaa4dda159862344675c802603fcbda2f254
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105559907"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105934322"
 ---
 # <a name="cross-tenant-management-experiences"></a>Beheerervaring in meerdere tenants
 
@@ -77,7 +77,7 @@ De meeste taken en services kunnen worden uitgevoerd op gedelegeerde resources i
 
 [Azure Cost Management en facturering](../../cost-management-billing/index.yml):
 
-- Van de beheer-Tenant kunnen CSP-partners de kosten voor het gebruik van de belasting (niet inclusief aankopen) bekijken, beheren en analyseren voor klanten die zich onder het Azure-abonnement bevinden. De kosten zijn gebaseerd op de retail tarieven en de Azure RBAC-toegang (op rollen gebaseerd toegangs beheer) die de partner heeft voor het abonnement van de klant.
+- Van de beheer-Tenant kunnen CSP-partners de kosten voor het gebruik van de belasting (niet inclusief aankopen) bekijken, beheren en analyseren voor klanten die zich onder het Azure-abonnement bevinden. De kosten zijn gebaseerd op de retail tarieven en de Azure RBAC-toegang (op rollen gebaseerd toegangs beheer) die de partner heeft voor het abonnement van de klant. Op dit moment kunt u de verbruiks kosten voor elk afzonderlijk klant abonnement bekijken op basis van de tarieven voor klanten die zijn gebaseerd op toegang tot Azure RBAC.
 
 [Azure Key Vault](../../key-vault/general/index.yml):
 

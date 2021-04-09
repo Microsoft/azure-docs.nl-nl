@@ -13,10 +13,10 @@ ms.author: vanto
 ms.reviewer: sstein
 ms.date: 06/17/2020
 ms.openlocfilehash: bbad7dcaa1d92df4969c88e4ba86a62987509e39
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98632796"
 ---
 # <a name="azure-sql-database-and-azure-synapse-ip-firewall-rules"></a>Azure SQL Database-en Azure Synapse IP-firewall regels
@@ -157,7 +157,7 @@ De overzichts pagina voor de server wordt geopend. De volledig gekwalificeerde s
 
 ### <a name="use-transact-sql-to-manage-ip-firewall-rules"></a>Transact-SQL gebruiken voor het beheren van IP-firewall regels
 
-| Catalogus weergave of opgeslagen procedure | Niveau | Beschrijving |
+| Catalogus weergave of opgeslagen procedure | Niveau | Description |
 | --- | --- | --- |
 | [sys.firewall_rules](/sql/relational-databases/system-catalog-views/sys-firewall-rules-azure-sql-database) |Server |Hiermee worden de huidige IP-firewall regels op server niveau weer gegeven |
 | [sp_set_firewall_rule](/sql/relational-databases/system-stored-procedures/sp-set-firewall-rule-azure-sql-database) |Server |Hiermee worden IP-firewall regels op server niveau gemaakt of bijgewerkt |
@@ -191,7 +191,7 @@ EXECUTE sp_delete_firewall_rule @name = N'ContosoFirewallRule'
 > [!IMPORTANT]
 > De Power shell-Azure Resource Manager module wordt nog steeds ondersteund door Azure SQL Database, maar alle ontwikkeling is nu voor de module AZ. SQL. Zie [AzureRM.Sql](/powershell/module/AzureRM.Sql/) voor deze cmdlets. De argumenten voor de opdrachten in de modules AZ en AzureRm zijn aanzienlijk identiek.
 
-| Cmdlet | Niveau | Beschrijving |
+| Cmdlet | Niveau | Description |
 | --- | --- | --- |
 | [Get-AzSqlServerFirewallRule](/powershell/module/az.sql/get-azsqlserverfirewallrule) |Server |Retourneert de huidige firewallregels op serverniveau |
 | [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule) |Server |Maakt een nieuwe firewallregel op serverniveau |
@@ -213,7 +213,7 @@ New-AzSqlServerFirewallRule -ResourceGroupName "myResourceGroup" `
 
 ### <a name="use-cli-to-manage-server-level-ip-firewall-rules"></a>CLI gebruiken voor het beheren van IP-firewall regels op server niveau
 
-| Cmdlet | Niveau | Beschrijving |
+| Cmdlet | Niveau | Description |
 | --- | --- | --- |
 |[az sql server firewall-rule create](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-create)|Server|Hiermee maakt u een server-IP-firewall regel|
 |[AZ SQL Server firewall-Rule List](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-list)|Server|Een lijst met de IP-firewall regels op een server|
@@ -235,7 +235,7 @@ az sql server firewall-rule create --resource-group myResourceGroup --server $se
 
 ### <a name="use-a-rest-api-to-manage-server-level-ip-firewall-rules"></a>Een REST API gebruiken om IP-firewall regels op server niveau te beheren
 
-| API | Niveau | Beschrijving |
+| API | Niveau | Description |
 | --- | --- | --- |
 | [Firewall regels weer geven](/rest/api/sql/firewallrules/listbyserver) |Server |Hiermee worden de huidige IP-firewall regels op server niveau weer gegeven |
 | [Firewall regels maken of bijwerken](/rest/api/sql/firewallrules/createorupdate) |Server |Hiermee worden IP-firewall regels op server niveau gemaakt of bijgewerkt |

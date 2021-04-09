@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 11/25/2019
 ms.openlocfilehash: c6645bc605dbd60d331ac0de002c36384b2bbbc4
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104864751"
 ---
 # <a name="use-the-extended-features-of-the-apache-spark-history-server-to-debug-and-diagnose-spark-applications"></a>De uitgebreide functies van de Apache Spark History-server gebruiken om fouten op te sporen en op te sporen in Spark-toepassingen
@@ -94,7 +94,7 @@ Selecteer de taak-ID en selecteer vervolgens **gegevens** in het menu van het hu
    :::image type="content" source="./media/apache-azure-spark-history-server/sparkui-graph-heatmap.png" alt-text="De heatmap op de pagina & taak grafiek van Spark-toepassing." border="true":::
 
 
-    |Kleur |Beschrijving |
+    |Kleur |Description |
     |---|---|
     |Green|De taak is voltooid.|
     |Oranje|De taak is mislukt, maar dit heeft geen invloed op het uiteindelijke resultaat van de taak. Deze taken bevatten dubbele of nieuwe exemplaren die later kunnen worden uitgevoerd.|

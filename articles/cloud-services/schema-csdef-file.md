@@ -3,17 +3,18 @@ title: Definitie schema voor Azure Cloud Services (klassiek) (. csdef-bestand) |
 description: Een bestand met een service definitie (. csdef) definieert een service model voor een toepassing, met beschik bare rollen, eind punten en configuratie waarden voor de service.
 ms.topic: article
 ms.service: cloud-services
+ms.subservice: deployment-files
 ms.date: 10/14/2020
 ms.author: tagore
 author: tanmaygore
 ms.reviewer: mimckitt
 ms.custom: ''
-ms.openlocfilehash: b98534b049698ea95c6738ce3404dd5ef8ff7a28
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: f201bc05795fa6aece256f3d3b4bd650385fef48
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102502261"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105934135"
 ---
 # <a name="azure-cloud-services-classic-definition-schema-csdef-file"></a>Definitie schema voor Azure Cloud Services (klassiek) (. csdef-bestand)
 

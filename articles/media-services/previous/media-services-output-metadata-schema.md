@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/10/2021
 ms.author: inhenkel
 ms.openlocfilehash: 519aa158d60eae97eb4c1b792bcecfc8a6c066e0
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103008274"
 ---
 # <a name="output-metadata"></a>Uitvoer meta gegevens
@@ -97,7 +97,7 @@ Een specifiek video spoor in het bovenliggende AssetFile.
 U kunt een XML-voor beeld [-XML-voor](#xml)beeld vinden.  
 
 ### <a name="attributes"></a>Kenmerken
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **Id**<br/><br/> minInclusive = "0"<br/><br/> Vereist |**XS: int** |Op nul gebaseerde index van deze video track. **Opmerking:**  Deze **id** is niet noodzakelijkerwijs de TrackID die in een MP4-bestand wordt gebruikt. |
 | **FourCC**<br/><br/> Vereist |**XS: teken reeks** |Code van de video-codec FourCC. |
@@ -129,7 +129,7 @@ Een specifiek audio spoor in het bovenliggende AssetFile.
 U kunt een XML-voor beeld [-XML-voor](#xml)beeld vinden.  
 
 ### <a name="attributes"></a>Kenmerken
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **Id**<br/><br/> minInclusive = "0"<br/><br/> Vereist |**XS: int** |Op nul gebaseerde index van dit audio spoor. **Opmerking:**  Dit is niet noodzakelijkerwijs de TrackID die in een MP4-bestand wordt gebruikt. |
 | **Videocodec** |**XS: teken reeks** |Teken reeks van codec audio track. |
@@ -150,7 +150,7 @@ Para meters voor Loudness-meet resultaten.
 U kunt een XML-voor beeld [-XML-voor](#xml)beeld vinden.  
 
 ### <a name="attributes"></a>Kenmerken
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **DPLMVersionInformation** |**XS: teken reeks** |Versie van **Dolby** Professional LOUDNESS meter Development Kit. |
 | **DialogNormalization**<br/><br/> minInclusive = "-31" maxInclusive = "-1"<br/><br/> Vereist |**XS: int** |DialogNormalization gegenereerd via DPLM, vereist wanneer LoudnessMetering is ingesteld |

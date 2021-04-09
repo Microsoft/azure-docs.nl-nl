@@ -14,12 +14,12 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ''
 ms.date: 3/02/2021
-ms.openlocfilehash: 3d64336184450514d52095097343a4588213f111
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: e176c0399b191c7a511ea1d26388219b2cef1df8
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102034894"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106107143"
 ---
 # <a name="understand-and-resolve-azure-sql-database-blocking-problems"></a>Problemen met het Azure SQL Database blok keren begrijpen en oplossen
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -422,10 +422,11 @@ De `wait_type` `open_transaction_count` kolommen, en bevatten `status` informati
 * [Snelstart: Uitgebreide gebeurtenissen in SQL Server](/sql/relational-databases/extended-events/quick-start-extended-events-in-sql-server)
 * [Intelligent Insights met behulp van AI om database prestaties te bewaken en op te lossen](intelligent-insights-overview.md)
 
-## <a name="learn-more"></a>Meer informatie
+## <a name="learn-more"></a>Lees meer
 
 * [Azure SQL Database: prestaties afstemmen verbeteren met automatisch afstemmen](https://channel9.msdn.com/Shows/Data-Exposed/Azure-SQL-Database-Improving-Performance-Tuning-with-Automatic-Tuning)
 * [Verbeter de Azure SQL Database prestaties met automatisch afstemmen](https://channel9.msdn.com/Shows/Azure-Friday/Improve-Azure-SQL-Database-Performance-with-Automatic-Tuning)
 * [Consistente prestaties leveren met Azure SQL](/learn/modules/azure-sql-performance/)
 * [Verbindings problemen en andere fouten oplossen met Azure SQL Database en Azure SQL Managed instance](troubleshoot-common-errors-issues.md)
 * [Tijdelijke fout afhandeling](/aspnet/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling)
+* [De maximale mate van parallellisme (MAXDOP) in Azure SQL Database configureren](configure-max-degree-of-parallelism.md)

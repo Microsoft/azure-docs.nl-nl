@@ -3,12 +3,12 @@ title: Naamgevings beperkingen voor resources
 description: Hier worden de regels en beperkingen voor het benoemen van Azure-resources weer gegeven.
 ms.topic: conceptual
 ms.date: 01/27/2021
-ms.openlocfilehash: 40e17e518baec40d31918d24ab5b61da741f540a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 20f7b6dc6c49b972b873ae3b275451829dec5c14
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101700470"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105934169"
 ---
 # <a name="naming-rules-and-restrictions-for-azure-resources"></a>Naamgevingsregels en -beperkingen voor Azure-resources
 
@@ -599,7 +599,7 @@ In de volgende tabellen verwijst de term alfanumeriek naar:
 > | Entiteit | Bereik | Lengte | Geldige tekens |
 > | --- | --- | --- | --- |
 > | implementaties | resourcegroep | 1-64 | Alfanumeriek, onderstrepings tekens, haakjes, afbreek streepjes en punten. |
-> | ResourceGroups | abonnement | 1-90 | Alfanumeriek, onderstreping, haakjes, afbreek streepjes, punten en Unicode-tekens die overeenkomen met de [regex-documentatie](/rest/api/resources/resourcegroups/createorupdate).<br><br>Kan niet eindigen met een punt. |
+> | ResourceGroups | abonnement | 1-90 | Alfanumeriek, onderstreping, haakjes, afbreek streepjes, punten en Unicode-tekens die overeenkomen met de [regex-documentatie](/rest/api/resources/resources/resourcegroups/createorupdate).<br><br>Kan niet eindigen met een punt. |
 > | tagName | resource | 1-512 | Kan niet gebruiken:<br>`<>%&\?/` |
 > | tagName-tagValues | Label naam | 1-256 | Alle tekens. |
 > | templateSpecs | resourcegroep | 1-90 | Alfanumeriek, onderstrepings tekens, haakjes, afbreek streepjes en punten. |

@@ -1,5 +1,5 @@
 ---
-Titel: include file description: include file services: Event-hubs Author: spelluru MS. service: Event-hubs MS. topic: include MS. date: 02/01/2021 MS. Author: spelluru MS. Custom: "include file", "FastTrack-Edit", "IOT", "Event-hubs"
+Titel: include file description: include file services: Event-hubs Author: spelluru MS. service: Event-hubs MS. topic: include MS. date: 03/31/2021 MS. Author: spelluru MS. Custom: "include file", "FastTrack-Edit", "IOT", "Event-hubs"
 
 ---
 
@@ -13,13 +13,12 @@ De volgende limieten gelden in alle lagen.
 | Aantal Event Hubs-naamruimten per abonnement |- |100 |
 | Aantal event hubs per naamruimte | Volgende aanvragen voor het maken van een nieuwe event hub worden geweigerd. |10 |
 | Grootte van een Event Hub-naam |- | 256 tekens |
-| Groote van de naam van een consumentengroep |- | 256 tekens |
+| Groote van de naam van een consumentengroep | Voor het Kafka-protocol is geen gebruikers groep gemaakt. | <p>Kafka: 256 tekens</p><p>AMQP: 50 tekens |
 | Aantal niet-epoche ontvangers per consumentengroep |- |5 |
 | Aantal autorisatieregels per naamruimte | Volgende aanvragen voor het maken van een autorisatieregel worden geweigerd.|12 |
 | Aantal aanroepen van de methode GetRuntimeInformation |  - | 50 per seconde | 
 | Aantal virtuele netwerken (VNet) | - | 128 | 
 | Aantal IP-configuratie regels | - | 128 | 
-
 
 ### <a name="basic-vs-standard-tiers"></a>Basic- vs. Standard-lagen
 De volgende tabel geeft de limieten weer die mogelijk anders zijn voor basic- en standard-lagen. 

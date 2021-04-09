@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 03/31/2020
 ms.openlocfilehash: 0a36cb468ebcb77c0614bffd0afc392df3655c20
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "89658206"
 ---
 # <a name="business-continuity-and-disaster-recovery-for-azure-logic-apps"></a>Bedrijfs continuïteit en herstel na nood gevallen voor Azure Logic Apps
@@ -100,7 +100,7 @@ De gegevens gateway resource is gekoppeld aan een locatie of Azure-regio, net al
 
 U kunt uw primaire en secundaire locaties instellen, zodat de logische app-exemplaren op deze locaties deze rollen kunnen afspelen:
 
-| Primaire-secundaire rol | Beschrijving |
+| Primaire-secundaire rol | Description |
 |------------------------|-------------|
 | *Actief-actief* | De primaire en secundaire logische app-exemplaren op beide locaties voeren aanvragen actief uit met behulp van de volgende patronen: <p><p>- *Taak verdeling*: u kunt beide exemplaren Luis teren naar een eind punt en zo nodig taak verdeling voor elk exemplaar naar behoefte hebben. <p>- *Concurrerende consumenten*: u kunt beide instanties als concurrerende consumenten fungeren, zodat de instanties concurreren voor berichten uit een wachtrij. Als één exemplaar mislukt, neemt de andere instantie de werk belasting over. |
 | *Actief-passief* | Het primaire exemplaar van de logische app verwerkt de hele werk belasting actief, terwijl het secundaire exemplaar passief is (uitgeschakeld of inactief). De secundaire wacht tijd op een signaal dat de primaire niet beschikbaar is of niet werkt vanwege onderbrekingen of fouten en de werk belasting als het actieve exemplaar neemt. |

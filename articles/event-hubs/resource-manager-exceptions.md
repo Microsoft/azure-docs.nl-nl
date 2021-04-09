@@ -4,10 +4,10 @@ description: Lijst met Azure Event Hubs-uitzonde ringen die door Azure Resource 
 ms.topic: article
 ms.date: 06/23/2020
 ms.openlocfilehash: cec24696d0d49ba408860f6562c34dd14876c311
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "91334205"
 ---
 # <a name="azure-event-hubs---resource-manager-exceptions"></a>Uitzonde ringen voor Azure Event Hubs-Resource Manager

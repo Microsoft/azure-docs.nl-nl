@@ -12,10 +12,10 @@ ms.date: 06/23/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 3e6fcf956639d827a8654c5ee80e7cab8cadf930
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "85383594"
 ---
 # <a name="define-an-azure-ad-sspr-technical-profile-in-an-azure-ad-b2c-custom-policy"></a>Een technisch Azure AD SSPR-profiel definiëren in een Azure AD B2C aangepast beleid
@@ -59,7 +59,7 @@ Het **InputClaims** -element bevat een lijst met claims die moeten worden verzon
 
 | ClaimReferenceId | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| emailAddress | Ja | De id voor de gebruiker die eigenaar is van het e-mail adres. De `PartnerClaimType` eigenschap van de invoer claim moet worden ingesteld op `emailAddress` . |
+| emailAddress | Yes | De id voor de gebruiker die eigenaar is van het e-mail adres. De `PartnerClaimType` eigenschap van de invoer claim moet worden ingesteld op `emailAddress` . |
 
 
 Het **InputClaimsTransformations** -element kan een verzameling **InputClaimsTransformation** -elementen bevatten die worden gebruikt om de invoer claims te wijzigen of nieuwe te genereren voordat deze naar de Azure AD SSPR-service worden verzonden.
@@ -74,7 +74,7 @@ Het **OutputClaimsTransformations** -element kan een verzameling **OutputClaimsT
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Bewerking | Ja | Moet **SendCode** zijn.  |
+| Bewerking | Yes | Moet **SendCode** zijn.  |
 
 #### <a name="ui-elements"></a>UI-elementen
 
@@ -82,8 +82,8 @@ De volgende meta gegevens kunnen worden gebruikt voor het configureren van de fo
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| UserMessageIfInternalError | Nee | Fout bericht van gebruiker als er een interne fout is opgetreden op de server. |
-| UserMessageIfThrottled| Nee | Gebruikers fout bericht als een aanvraag is beperkt.|
+| UserMessageIfInternalError | No | Fout bericht van gebruiker als er een interne fout is opgetreden op de server. |
+| UserMessageIfThrottled| No | Gebruikers fout bericht als een aanvraag is beperkt.|
 
 
 ### <a name="example-send-an-email"></a>Voor beeld: een e-mail verzenden
@@ -113,8 +113,8 @@ Het **InputClaims** -element bevat een lijst met claims die moeten worden verzon
 
 | ClaimReferenceId | Vereist | Beschrijving |
 | --------- | -------- | ----------- | ----------- |
-| emailAddress| Ja | Hetzelfde e-mail adres dat eerder is gebruikt om een code te verzenden. Het wordt ook gebruikt om een e-mail verificatie sessie te vinden. De `PartnerClaimType` eigenschap van de invoer claim moet worden ingesteld op `emailAddress` .|
-| verificationCode  | Ja | De verificatie code van de gebruiker die moet worden geverifieerd. De `PartnerClaimType` eigenschap van de invoer claim moet worden ingesteld op `verificationCode` . |
+| emailAddress| Yes | Hetzelfde e-mail adres dat eerder is gebruikt om een code te verzenden. Het wordt ook gebruikt om een e-mail verificatie sessie te vinden. De `PartnerClaimType` eigenschap van de invoer claim moet worden ingesteld op `emailAddress` .|
+| verificationCode  | Yes | De verificatie code van de gebruiker die moet worden geverifieerd. De `PartnerClaimType` eigenschap van de invoer claim moet worden ingesteld op `verificationCode` . |
 
 Het **InputClaimsTransformations** -element kan een verzameling **InputClaimsTransformation** -elementen bevatten die worden gebruikt om de invoer claims te wijzigen of nieuwe te genereren voordat de Azure AD SSPR-service wordt aangeroepen.
 
@@ -128,7 +128,7 @@ Het **OutputClaimsTransformations** -element kan een verzameling **OutputClaimsT
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Bewerking | Ja | Moet **VerifyCode** zijn |
+| Bewerking | Yes | Moet **VerifyCode** zijn |
 
 #### <a name="ui-elements"></a>UI-elementen
 

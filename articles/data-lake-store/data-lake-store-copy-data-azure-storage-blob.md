@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 84ee65b05af4393f49696875bda41df39e283d5d
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "85980086"
 ---
 # <a name="copy-data-from-azure-storage-blobs-to-azure-data-lake-storage-gen1"></a>Gegevens kopiëren van Azure Storage-blobs naar Azure Data Lake Storage Gen1
@@ -208,7 +208,7 @@ In deze sectie leert u hoe u AdlCopy kunt gebruiken om gegevens uit een bron te 
 
 AdlCopy biedt ondersteuning voor het kopiëren van gegevens met duizenden bestanden en mappen. Als u echter problemen ondervindt met het kopiëren van een grote gegevensset, kunt u de bestanden/mappen naar kleinere submappen distribueren. AdlCopy is gebouwd voor ad-hoc kopieën. Als u gegevens op een terugkerende basis probeert te kopiëren, kunt u overwegen [Azure Data Factory](../data-factory/connector-azure-data-lake-store.md) te gebruiken die volledig beheer over de Kopieer bewerkingen biedt.
 
-## <a name="release-notes"></a>Releaseopmerkingen
+## <a name="release-notes"></a>Opmerkingen bij de release
 
 * 1.0.13: als u gegevens naar hetzelfde Azure Data Lake Storage Gen1-account kopieert over meerdere adlcopy-opdrachten, hoeft u uw referenties niet meer opnieuw in te voeren voor elke uitvoering. Met Adlcopy wordt die informatie nu in een cache opgeslagen over meerdere uitvoeringen.
 

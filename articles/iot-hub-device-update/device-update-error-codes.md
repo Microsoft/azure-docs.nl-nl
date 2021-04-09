@@ -7,10 +7,10 @@ ms.date: 2/18/2021
 ms.topic: reference
 ms.service: iot-hub-device-update
 ms.openlocfilehash: dbdddc7cee0c3664a83501ba619a38e1cc44e1f3
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103200340"
 ---
 # <a name="device-update-for-iot-hub-error-codes"></a>Update van het apparaat voor IoT Hub fout codes
@@ -38,7 +38,7 @@ Waarschijnlijk ziet u het `ExtendedResultCode` als een ondertekend geheel getal 
 
 **Faciliteit codes**
 
-| Faciliteit code     | Beschrijving  |
+| Faciliteit code     | Description  |
 |-------------------|--------------|
 | D                 | Er is een fout opgetreden van de DO-SDK|
 | E                 | Fout code is een errno |
@@ -61,7 +61,7 @@ De volgende tabel bevat de fout codes die betrekking hebben op het onderdeel Del
 
 De fout code ' kan worden verkregen door de uitzonde ringen die worden gegenereerd als reactie op een API-aanroep te controleren. Alle DO-fout codes kunnen worden geïdentificeerd met het voor voegsel 0x80D0.
 
-| Foutcode  | Teken reeks fout                       | Type                 | Beschrijving |
+| Foutcode  | Teken reeks fout                       | Type                 | Description |
 |-------------|------------------------------------|----------------------|-------------|
 | 0x80D01001L | DO_E_NO_SERVICE                    | n.v.t.                  | De service kan niet worden geleverd met de leverings optimalisatie |
 | 0x80D02002L | DO_E_DOWNLOAD_NO_PROGRESS          | Download taak         | Het downloaden van een bestand zag geen voortgang binnen de gedefinieerde periode |

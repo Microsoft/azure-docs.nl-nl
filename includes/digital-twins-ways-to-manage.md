@@ -6,10 +6,10 @@ ms.topic: include
 ms.date: 11/11/2020
 ms.author: baanders
 ms.openlocfilehash: 02f6c59a76a3fdb7bd4360570b29d7b40a1aff8d
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102473651"
 ---
 In dit artikel wordt uitgelegd hoe u verschillende beheer bewerkingen kunt uitvoeren met behulp van de [Azure Digital apparaatdubbels .net (C#) **SDK**](/dotnet/api/overview/azure/digitaltwins/management). U kunt dezelfde beheer aanroepen ook maken met behulp van de andere taal-Sdk's die worden beschreven in [*How-to: gebruik de Azure Digital Apparaatdubbels api's en sdk's*](../articles/digital-twins/how-to-use-apis-sdks.md).

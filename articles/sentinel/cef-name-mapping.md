@@ -9,10 +9,10 @@ ms.subservice: azure-sentinel
 ms.topic: reference
 ms.date: 03/16/2021
 ms.openlocfilehash: 6c23fe86af030d371e12914062bb9558e8db3484
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104776209"
 ---
 # <a name="cef-and-commonsecuritylog-field-mapping"></a>CEF en CommonSecurityLog veld toewijzing
@@ -23,7 +23,7 @@ Zie [verbinding maken met uw externe oplossing met de algemene gebeurtenis indel
 
 ## <a name="a---c"></a>A-C
 
-|CEF-sleutel naam  |CommonSecurityLog veld naam  |Beschrijving  |
+|CEF-sleutel naam  |CommonSecurityLog veld naam  |Description  |
 |---------|---------|---------|
 | regelen    |    <a name="deviceaction"></a> DeviceAction     |  De actie die wordt vermeld in de gebeurtenis.       |
 |   app  |    ApplicationProtocol     |  Het protocol dat wordt gebruikt in de toepassing, zoals HTTP, HTTPS, SSHv2, Telnet, POP, IMPA, IMAPs, enzovoort.   |
@@ -32,7 +32,7 @@ Zie [verbinding maken met uw externe oplossing met de algemene gebeurtenis indel
 
 ## <a name="d"></a>D
 
-|CEF-sleutel naam  |CommonSecurityLog-naam  |Beschrijving  |
+|CEF-sleutel naam  |CommonSecurityLog-naam  |Description  |
 |---------|---------|---------|
 |Leverancier van apparaat     |  DeviceVendor       | Een teken reeks die samen met de product-en versie definities van het apparaat een unieke identificatie vormt van het type verzendende apparaat.       |
 |Product apparaat     |   DeviceProduct      |   Een teken reeks die samen met de leveranciers-en versie definities van het apparaat een unieke identificatie vormt van het type verzendende apparaat.        |
@@ -70,7 +70,7 @@ Zie [verbinding maken met uw externe oplossing met de algemene gebeurtenis indel
 
 ## <a name="e---i"></a>E-I
 
-|CEF-sleutel naam  |CommonSecurityLog-naam  |Beschrijving  |
+|CEF-sleutel naam  |CommonSecurityLog-naam  |Description  |
 |---------|---------|---------|
 |beëindigen     |  EndTime       | Het tijdstip waarop de activiteit met betrekking tot de gebeurtenis is beëindigd.        |
 |externalId    |   ExternalID      | Een ID die wordt gebruikt door het oorspronkelijke apparaat. Deze waarden bevatten doorgaans waarden die elk aan een gebeurtenis zijn gekoppeld.        |
@@ -89,7 +89,7 @@ Zie [verbinding maken met uw externe oplossing met de algemene gebeurtenis indel
 
 ## <a name="m---p"></a>M-P
 
-|CEF-sleutel naam  |CommonSecurityLog-naam  |Beschrijving  |
+|CEF-sleutel naam  |CommonSecurityLog-naam  |Description  |
 |---------|---------|---------|
 |msg   |  Bericht       | Een bericht met meer informatie over de gebeurtenis.        |
 |Name     |  Activiteit       |   Een teken reeks die een door de mens lees bare en begrijpelijke beschrijving van de gebeurtenis vertegenwoordigt.     |
@@ -109,7 +109,7 @@ Zie [verbinding maken met uw externe oplossing met de algemene gebeurtenis indel
 
 ## <a name="r---t"></a>R-T
 
-|CEF-sleutel naam  |CommonSecurityLog-naam  |Beschrijving  |
+|CEF-sleutel naam  |CommonSecurityLog-naam  |Description  |
 |---------|---------|---------|
 |Reden     |  Reden      |De reden waarom een controle gebeurtenis is gegenereerd. <br><br>Bijvoorbeeld `Bad password` of `Unknown user`.         |
 |Aanvraag     |   RequestURL      | De URL die wordt gebruikt voor een HTTP-aanvraag, met inbegrip van het protocol. Bijvoorbeeld: `http://www/secure.com`        |
@@ -141,7 +141,7 @@ Zie [verbinding maken met uw externe oplossing met de algemene gebeurtenis indel
 De volgende **CommonSecurityLog** -veld namen hebben geen toewijzingen in CEF-sleutels:
 
 
-|CommonSecurityLog veld naam  |Beschrijving  |
+|CommonSecurityLog veld naam  |Description  |
 |---------|---------|
 |**OriginalLogSeverity**     |  Altijd leeg, ondersteund voor integratie met CiscoASA. <br>Zie het veld [LogSeverity](#logseverity) voor meer informatie over de ernst waarden van het logboek.       |
 |**RemoteIP**     |     Het externe IP-adres. <br>Deze waarde is, indien mogelijk, gebaseerd op het veld [CommunicationDirection](#communicationdirection) .     |

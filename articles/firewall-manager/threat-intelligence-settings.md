@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 06/30/2020
 ms.author: victorh
 ms.openlocfilehash: 7ede1c917bb44dd31aa59855a0b7c83eb478700a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100651715"
 ---
 # <a name="azure-firewall-threat-intelligence-configuration"></a>Configuratie van Azure Firewall Threat Intelligence
@@ -26,7 +26,7 @@ Als u op bedreigingen gebaseerd filteren hebt geconfigureerd, worden de bijbehor
 
 U kunt Threat Intelligence configureren in een van de drie modi die in de volgende tabel worden beschreven. Op bedreigingen gebaseerd filteren is standaard ingeschakeld in de waarschuwings modus.
 
-|Modus |Beschrijving  |
+|Modus |Description  |
 |---------|---------|
 |`Off`     | De functie voor bedreigings informatie is niet ingeschakeld voor uw firewall. |
 |`Alert only`     | U ontvangt waarschuwingen met hoge betrouw baarheid voor verkeer dat via uw firewall wordt verzonden naar of van bekende schadelijke IP-adressen en domeinen. |

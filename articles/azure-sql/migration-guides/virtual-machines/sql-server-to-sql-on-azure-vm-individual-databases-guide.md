@@ -11,10 +11,10 @@ ms.author: markjon
 ms.reviewer: mathoma
 ms.date: 03/19/2021
 ms.openlocfilehash: 7ef942404158768f4249b5bcd0640632b6475f63
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105023704"
 ---
 # <a name="migration-guide-sql-server-to-sql-server-on-azure-vms"></a>Migratie handleiding: SQL Server SQL Server op virtuele machines van Azure 

@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 02/11/2021
 ms.author: jeedes
 ms.openlocfilehash: 6dcd5612bd2c5957ae0a397c3463dbb42445a754
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104956040"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-solarwinds-service-desk-previously-samanage"></a>Zelfstudie: Azure Active Directory-integratie met SolarWinds Service Desk (voorheen Samanage)
@@ -90,7 +90,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
-### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
+### <a name="create-an-azure-ad-test-user&quot;></a>Een Azure AD-testgebruiker maken 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
@@ -102,7 +102,7 @@ In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Porta
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
    1. Klik op **Create**.
 
-### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
+### <a name=&quot;assign-the-azure-ad-test-user&quot;></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen aan SolarWinds.
 
@@ -114,15 +114,15 @@ In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebru
 1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-<a name="configure-solarwinds-single-sign-on"></a>
+<a name=&quot;configure-solarwinds-single-sign-on&quot;></a>
 
-## <a name="configure-solarwinds-sso"></a>SolarWinds SSO configureren
+## <a name=&quot;configure-solarwinds-sso&quot;></a>SolarWinds SSO configureren
 
 1. Meld u in een ander browservenster aan bij uw SolarWinds-bedrijfssite als beheerder.
 
 2. Klik op **Dashboard** en selecteer **Setup** in het linker navigatievenster.
    
-    ![Dashboard](./media/samanage-tutorial/tutorial-samanage-1.png "Dashboard")
+    ![Dashboard](./media/samanage-tutorial/tutorial-samanage-1.png &quot;Dashboard")
 
 3. Klik op **Single Sign-On**.
    

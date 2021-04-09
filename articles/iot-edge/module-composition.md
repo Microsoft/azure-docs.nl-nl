@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.openlocfilehash: 2e3f1891a786751365a0bea58097e03bd41f85bb
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103489911"
 ---
 # <a name="learn-how-to-deploy-modules-and-establish-routes-in-iot-edge"></a>Meer informatie over het implementeren van modules en het vaststellen van routes naar IoT Edge
@@ -258,7 +258,7 @@ De Sink definieert waar de berichten worden verzonden. Alleen modules en IoT Hub
 
 De eigenschap Sink kan een van de volgende waarden hebben:
 
-| Sink | Beschrijving |
+| Sink | Description |
 | ---- | ----------- |
 | `$upstream` | Het bericht naar de IoT Hub verzenden |
 | `BrokeredEndpoint("/modules/<moduleId>/inputs/<input>")` | Het bericht naar een specifieke invoer van een specifieke module verzenden |

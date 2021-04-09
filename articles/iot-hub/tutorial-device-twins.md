@@ -16,10 +16,10 @@ ms.custom:
 - devx-track-js
 - devx-track-azurecli
 ms.openlocfilehash: 7dbc0404679927bcef1647dfdf46ce3360216a79
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98733297"
 ---
 <!-- **TODO** Update publish config with repo paths before publishing! -->
@@ -196,15 +196,15 @@ De volgende schermafbeelding laat de uitvoer van de back-endtoepassing zien en a
 
 ![Schermopname die de uitvoer van de back-endtoepassing laat zien, met het verzenden van een update gemarkeerd.](./media/tutorial-device-twins/BackEnd1.png)
 
-## <a name="receive-state-information"></a>Statusinformatie ontvangen
+## <a name="receive-state-information&quot;></a>Statusinformatie ontvangen
 
 Uw back-endtoepassing ontvangt statusgegevens van een apparaat als gerapporteerde eigenschappen. Een apparaat stelt de gerapporteerde eigenschappen in en zendt die terug naar uw hub. Een back-endtoepassing kan de huidige waarden van de gerapporteerde eigenschappen lezen van de apparaatdubbel die in uw hub is opgeslagen.
 
-### <a name="send-reported-properties-from-a-device"></a>Gerapporteerde eigenschappen vanaf een apparaat verzenden
+### <a name=&quot;send-reported-properties-from-a-device&quot;></a>Gerapporteerde eigenschappen vanaf een apparaat verzenden
 
 U kunt updates voor gerapporteerde eigenschappen verzenden als patch. Het volgende fragment toont een sjabloon voor de patch die het gesimuleerd apparaat verzendt. Het gesimuleerd apparaat updatet de velden in de patch voordat ze naar de hub worden verzonden:
 
-[!code-javascript[Reported properties patches](~/iot-samples-node/iot-hub/Tutorials/DeviceTwins/SimulatedDevice.js?name=reportedpatch&highlight=2 "Reported properties patches")]
+[!code-javascript[Reported properties patches](~/iot-samples-node/iot-hub/Tutorials/DeviceTwins/SimulatedDevice.js?name=reportedpatch&highlight=2 &quot;Reported properties patches")]
 
 Het gesimuleerd apparaat gebruikt de volgende functie om de patch die de gerapporteerde eigenschappen bevat naar de hub te zenden:
 

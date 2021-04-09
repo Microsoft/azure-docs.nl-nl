@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 11/25/2020
 ms.author: jeedes
 ms.openlocfilehash: 77f72d6c63231f0854b58470f86c65ffc81c9775
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98731917"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-greenhouse"></a>Zelfstudie: Azure Active Directory-integratie met Greenhouse
@@ -146,7 +146,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
     >[!NOTE]
     >U kunt ook het **XML-bestand met federatieve metagegevens** uploaden door op de optie **Choose File** te klikken.
 
-### <a name="create-greenhouse-test-user"></a>Greenhouse-testgebruiker maken
+### <a name="create-greenhouse-test-user&quot;></a>Greenhouse-testgebruiker maken
 
 Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Greenhouse, moeten ze worden ingericht bij Greenhouse. In het geval van Greenhouse is het inrichten een handmatige taak.
 
@@ -159,7 +159,7 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Greenhouse, moeten 
 
 2. Ga naar de **Configureren > Gebruikers > Nieuwe gebruikers**
    
-    ![Gebruikers](./media/greenhouse-tutorial/create-user-1.png "Gebruikers")
+    ![Gebruikers](./media/greenhouse-tutorial/create-user-1.png &quot;Gebruikers")
 
 4. Voer in het gedeelte **Nieuwe gebruikers toevoegen** de volgende stappen uit:
    

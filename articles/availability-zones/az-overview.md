@@ -9,10 +9,10 @@ ms.author: prsandhu
 ms.reviewer: cynthn
 ms.custom: fasttrack-edit, mvc
 ms.openlocfilehash: dad8661de55fc90c9f3d3782c402deb519d16536
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104596005"
 ---
 # <a name="regions-and-availability-zones-in-azure"></a>Regio's en Beschikbaarheidszones in azure
@@ -169,14 +169,14 @@ Zoals eerder vermeld, classificeert Azure Services in drie categorieën: basis, 
 > | Azure Cognitive Services: persoonlijkere               |
 > | Azure-Cognitive Services: QnA Maker                  |
 > | Azure Database for MariaDB                           |
-> | Azure Database Migration Service                     |
+> | Azure Database Migration-service                     |
 > | Azure toegewezen HSM                                  |
 > | Azure Digital Twins                                  |
 > | Azure Health Bot                                     |
 > | Azure HPC Cache                                      |
 > | Azure Lab-Services                                   |
 > | Azure NetApp Files                                   |
-> | Azure SignalR-service                                |
+> | Azure SignalR Service                                |
 > | Azure lente-Cloud service                           |
 > | Azure Time Series Insights                           |
 > | Azure VMware Solution                                |

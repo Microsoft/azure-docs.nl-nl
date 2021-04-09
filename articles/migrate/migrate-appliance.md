@@ -7,10 +7,10 @@ ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 03/18/2021
 ms.openlocfilehash: dadca1fadef9d2967f20cae13e40d01de73d39e4
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104778335"
 ---
 # <a name="azure-migrate-appliance"></a>Azure Migrate-apparaat
@@ -189,7 +189,7 @@ Details van host per server | ((HostSystem) container). VM
 
 Dit zijn de prestatie gegevens die een apparaat verzamelt voor een server die wordt uitgevoerd op VMware en die wordt verzonden naar Azure.
 
-**Gegevens** | **Item** | **Beoordelings impact**
+**Gegevens** | **Prestatiemeteritem** | **Beoordelings impact**
 --- | --- | ---
 CPU-gebruik | CPU. usage. Average | Aanbevolen server grootte/kosten
 Geheugen gebruik | mem. usage. Average | Aanbevolen server grootte/kosten
@@ -419,7 +419,7 @@ MAC-ID van NIC (verouderde Nic's) | MsvmEmulatedEthernetPortSetting-gegevens | A
 
 Dit zijn de prestatie gegevens van de server die door het apparaat worden verzameld en naar Azure worden verzonden.
 
-**Klasse prestatie meter** | **Item** | **Beoordelings impact**
+**Klasse prestatie meter** | **Prestatiemeteritem** | **Beoordelings impact**
 --- | --- | ---
 Virtuele processor van Hyper-V Hyper Visor | % Gast-uitvoerings tijd | Aanbevolen server grootte/kosten
 Hyper-V-dynamisch geheugen server | Huidige belasting (%)<br/> Zichtbaar fysiek geheugen voor gast (MB) | Aanbevolen server grootte/kosten

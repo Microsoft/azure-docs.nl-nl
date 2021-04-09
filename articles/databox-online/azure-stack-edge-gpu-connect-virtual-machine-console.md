@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 03/22/2021
 ms.author: alkohli
 ms.openlocfilehash: 68cf157a512e9b1f6caee4734869c5bb4b836e2f
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104962568"
 ---
 # <a name="connect-to-a-virtual-machine-console-on-an-azure-stack-edge-pro-gpu-device"></a>Verbinding maken met een virtuele-machine console op een Azure Stack Edge Pro GPU-apparaat

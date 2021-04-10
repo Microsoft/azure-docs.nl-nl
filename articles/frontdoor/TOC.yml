@@ -4,7 +4,7 @@
   items:
     - name: Wat is Azure Front Door?
       href: front-door-overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Een Front Door maken - Portal
@@ -49,7 +49,7 @@
     - name: DDoS-bescherming
       href: front-door-ddos.md
     - name: Veelgestelde vragen over Front Door
-      href: front-door-faq.md
+      href: front-door-faq.yml
     - name: Geo-filteren
       href: front-door-geo-filtering.md
     - name: Statuscontroles

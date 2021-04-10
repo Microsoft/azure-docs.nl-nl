@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: roles
 ms.topic: reference
-ms.date: 03/13/2021
+ms.date: 03/29/2021
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64f74f3aff1153118c54c83bf526c036a775da40
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.openlocfilehash: f467fc739b3120fd43bec4e21e1e336c1cdf186f
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "104955231"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105935410"
 ---
 # <a name="azure-ad-built-in-roles"></a>Ingebouwde Azure AD-rollen
 
@@ -241,7 +241,7 @@ De rol [authenticatie beleids beheerder](#authentication-policy-administrator) h
 >* Niet-beheerders als leidinggevenden, juridisch adviseur en Human Resources-werk nemers die mogelijk toegang tot gevoelige of persoonlijke informatie hebben.
 
 > [!IMPORTANT]
-> Deze rol is momenteel niet in staat om MFA per gebruiker te beheren in de verouderde MFA-beheer Portal. Dezelfde functies kunnen worden bereikt met de module [set-MsolUser](/powershell/module/msonline/set-msoluser) COMMANDLET Azure AD Power shell.
+> Deze rol kan geen MFA-instellingen beheren in de verouderde MFA-beheer portal of hardware OATH-tokens. Dezelfde functies kunnen worden bereikt met de module [set-MsolUser](/powershell/module/msonline/set-msoluser) COMMANDLET Azure AD Power shell.
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -267,7 +267,7 @@ De rollen [verificatie beheerder](#authentication-administrator) en [bevoegde au
 | Verificatie beleids beheerder | Nee | Nee | Ja | Ja | Ja |
 
 > [!IMPORTANT]
-> Deze rol is momenteel niet geschikt voor het beheren van MFA-instellingen in de verouderde MFA-beheer Portal.
+> Deze rol kan geen MFA-instellingen beheren in de verouderde MFA-beheer portal of hardware OATH-tokens. 
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |

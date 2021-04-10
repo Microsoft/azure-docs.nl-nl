@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: how-to
 ms.date: 03/15/2021
 ms.custom: seodec18
-ms.openlocfilehash: ed185413cff155610b2b088b1791169e33f6ce7a
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 150bf38ebb248f15bf1ed82186c16b6b3f7ac40b
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103464432"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105728722"
 ---
 # <a name="create-an-azure-time-series-insights-gen2-environment-using-the-azure-cli"></a>Een Azure Time Series Insights Gen2-omgeving maken met behulp van de Azure CLI
 
@@ -62,13 +62,13 @@ az tsi environment gen2 create --name "my-tsi-env" --location eastus2 --resource
 
 U kunt de Azure CLI gebruiken om een afzonderlijke resource te verwijderen, zoals een Time Series Insights omgeving, of om een resource groep en alle bijbehorende resources te verwijderen, inclusief eventuele Time Series Insights omgevingen.
 
-Als u [een time series Insights omgevingen wilt verwijderen](/cli/azure/ext/timeseriesinsights/tsi/environment?view=azure-cli-latest#ext_timeseriesinsights_az_tsi_environment_delete), voert u de volgende opdracht uit:
+Als u [een time series Insights omgevingen wilt verwijderen](/cli/azure/ext/timeseriesinsights/tsi/environment#ext_timeseriesinsights_az_tsi_environment_delete), voert u de volgende opdracht uit:
 
 ```azurecli-interactive
 az tsi environment delete --name "my-tsi-env" --resource-group $rg
 ```
 
-Als u [het opslag account wilt verwijderen](/cli/azure/storage/account?view=azure-cli-latest#az_storage_account_delete), voert u de volgende opdracht uit:
+Als u [het opslag account wilt verwijderen](/cli/azure/storage/account#az_storage_account_delete), voert u de volgende opdracht uit:
 
 ```azurecli-interactive
 az storage account delete --name $storage --resource-group $rg

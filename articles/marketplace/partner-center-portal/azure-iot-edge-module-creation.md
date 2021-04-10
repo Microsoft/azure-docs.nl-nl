@@ -7,12 +7,12 @@ ms.topic: how-to
 author: keferna
 ms.author: keferna
 ms.date: 08/07/2020
-ms.openlocfilehash: 23af7b3f7cfd5ec0531c5cac73cf8a334ef4aa62
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9f07a6376e3fdde46e9e0cb161acc97c5771d905
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99096437"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106166748"
 ---
 # <a name="create-an-iot-edge-module-offer"></a>Aanbieding voor IoT Edge-module maken
 
@@ -172,7 +172,7 @@ Bied aanvullende online documenten over uw aanbieding. U kunt Maxi maal 25 koppe
 - **Titel** : klanten zien de titel op de pagina met details van de aanbieding.
 - **Koppeling (URL)** : Voer een koppeling voor klanten in om uw online document weer te geven. De koppeling moet beginnen met `http://` of `https://` .
 
-Zorg ervoor dat u ten minste één koppeling naar uw documentatie en een koppeling naar de compatibele IoT Edge apparaten toevoegt vanuit de [Azure IOT-apparaatinstantie](https://catalog.azureiotsolutions.com/).
+Zorg ervoor dat u ten minste één koppeling naar uw documentatie en een koppeling naar de compatibele IoT Edge apparaten toevoegt vanuit de [Azure IOT-apparaatinstantie](https://devicecatalog.azure.com/).
 
 ### <a name="contact-information"></a>Contactgegevens
 

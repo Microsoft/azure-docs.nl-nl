@@ -4,10 +4,10 @@ description: Meer informatie over prestatie meter items voor bewaking en diagnos
 ms.topic: conceptual
 ms.date: 11/21/2018
 ms.openlocfilehash: abe1b67bee863f287f148fdd9af13198b67db0f0
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105628863"
 ---
 # <a name="performance-metrics"></a>Metrische gegevens voor prestaties

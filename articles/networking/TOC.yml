@@ -1,7 +1,7 @@
 - name: Overzicht
   items:
     - name: Over Azure-netwerken
-      href: networking-overview.md
+      href: fundamentals/networking-overview.md
     - name: Architectuur
       items:
         - name: Azure voor netwerktechnici

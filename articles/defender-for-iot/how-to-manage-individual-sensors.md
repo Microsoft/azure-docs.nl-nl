@@ -4,10 +4,10 @@ description: Meer informatie over het beheren van afzonderlijke Sens oren, waaro
 ms.date: 02/02/2021
 ms.topic: how-to
 ms.openlocfilehash: df1d1dd6ca2085fb3ab12c104723c63e32249403
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104781956"
 ---
 # <a name="manage-individual-sensors"></a>Afzonderlijke sensoren beheren
@@ -278,7 +278,7 @@ Wanneer u de CLI-opdracht gebruikt:
 
 Beheer uw certificaten met de volgende opdrachten:
 
-| Beschrijving | CLI-opdracht |
+| Description | CLI-opdracht |
 |--|--|
 | Een nieuwe aanvraag voor een persoonlijke sleutel en certificaat ondertekening genereren | `openssl req -out CSR.csr -new -newkey rsa:2048 -nodes -keyout privateKey.key` |
 | Een zelfondertekend certificaat maken | `openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.key -out certificate.crt` |
@@ -288,7 +288,7 @@ Beheer uw certificaten met de volgende opdrachten:
 
 Als u de gegevens in een certificaat, CSR of persoonlijke sleutel wilt controleren, gebruikt u deze opdrachten.
 
-| Beschrijving | CLI-opdracht |
+| Description | CLI-opdracht |
 |--|--|
 | Een aanvraag voor certificaat ondertekening controleren (CSR) | `openssl req -text -noout -verify -in CSR.csr` |
 | Een persoonlijke sleutel controleren | `openssl rsa -in privateKey.key -check` |
@@ -296,13 +296,13 @@ Als u de gegevens in een certificaat, CSR of persoonlijke sleutel wilt controler
 
 Als er een fout bericht wordt weer gegeven dat de persoonlijke sleutel niet overeenkomt met het certificaat, of dat een certificaat dat u hebt geïnstalleerd op een site niet wordt vertrouwd, gebruikt u deze opdrachten om de fout op te lossen.
 
-| Beschrijving | CLI-opdracht |
+| Description | CLI-opdracht |
 |--|--|
 | Een MD5-hash van de open bare sleutel controleren om ervoor te zorgen dat deze overeenkomt met wat er in een CSR of persoonlijke sleutel staat | i. `openssl x509 -noout -modulus -in certificate.crt | openssl md5` <br /> twee. `openssl rsa -noout -modulus -in privateKey.key | openssl md5` <br /> 3. `openssl req -noout -modulus -in CSR.csr | openssl md5 ` |
 
 Als u certificaten en sleutels naar verschillende indelingen wilt converteren om ze compatibel te maken met specifieke typen servers of software, gebruikt u deze opdrachten.
 
-| Beschrijving | CLI-opdracht |
+| Description | CLI-opdracht |
 |--|--|
 | Een DER-bestand (. CRT. cer. der) converteren naar PEM  | `openssl x509 -inform der -in certificate.cer -out certificate.pem`  |
 | Een PEM-bestand converteren naar DER | `openssl x509 -outform der -in certificate.pem -out certificate.der`  |

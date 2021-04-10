@@ -3,22 +3,22 @@ title: Containerinstallatiekopieën importeren
 description: Container installatie kopieën importeren in een Azure container Registry met behulp van Azure Api's, zonder dat u docker-opdrachten hoeft uit te voeren.
 ms.topic: article
 ms.date: 01/15/2021
-ms.openlocfilehash: e6976f854b449f68faedd51878c2f3a7fe75cb0f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: b481a2b4f0a08f0ccbfd33f7059e5d8e0c04f5f0
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99988239"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106221497"
 ---
 # <a name="import-container-images-to-a-container-registry"></a>Container installatie kopieën importeren in een container register
 
 U kunt container installatie kopieën eenvoudig importeren (kopiëren) naar een Azure container Registry zonder gebruik te maken van docker-opdrachten. Importeer bijvoorbeeld installatie kopieën van een ontwikkelings register naar een productie register of kopieer basis installatie kopieën uit een openbaar REGI ster.
 
-Azure Container Registry verwerkt een aantal algemene scenario's voor het kopiëren van installatie kopieën uit een bestaand REGI ster:
+Azure Container Registry verwerkt een aantal algemene scenario's voor het kopiëren van installatie kopieën en andere artefacten uit een bestaand REGI ster:
 
-* Importeren uit een openbaar REGI ster
+* Installatie kopieën uit een openbaar REGI ster importeren
 
-* Importeren uit een ander Azure container Registry, in hetzelfde of een ander Azure-abonnement of een andere Tenant
+* Afbeeldingen of OCI-artefacten importeren, met inbegrip van helm 3-grafieken vanuit een ander Azure container Registry, in hetzelfde of een ander Azure-abonnement of een andere Tenant
 
 * Importeren uit een persoonlijk niet-Azure-container register
 

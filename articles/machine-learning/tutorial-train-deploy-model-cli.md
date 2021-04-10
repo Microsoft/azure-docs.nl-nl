@@ -8,13 +8,13 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
-ms.date: 03/26/2020
-ms.openlocfilehash: 77df97eaecc59bc9160bcf63ae5d3904cd79ec79
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.date: 04/02/2021
+ms.openlocfilehash: e518ea83608472753d3463a980aae169b291d4de
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102215184"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106221293"
 ---
 # <a name="tutorial-train-and-deploy-a-model-from-the-cli"></a>Zelfstudie: Een model trainen en implementeren vanuit de CLI
 
@@ -84,20 +84,6 @@ az login
 Als de CLI uw standaardbrowser kan openen, gebeurt dat ook en wordt er een aanmeldingspagina gedownload. Anders moet u een browser openen en de aanwijzingen op de opdrachtregel volgen. Dit omvat het bladeren naar [https://aka.ms/devicelogin](https://aka.ms/devicelogin) en het invoeren van een autorisatiecode.
 
 [!INCLUDE [select-subscription](../../includes/machine-learning-cli-subscription.md)] 
-
-## <a name="install-the-machine-learning-extension"></a>De machine learning-extensie installeren
-
-Installeer de machine learning-extensie met de volgende opdracht:
-
-```azurecli-interactive
-az extension add -n azure-cli-ml
-```
-
-Als er een bericht wordt weergegeven dat de extensie al is geïnstalleerd, moet u deze bijwerken naar nieuwste versie met de volgende opdracht:
-
-```azurecli-interactive
-az extension update -n azure-cli-ml
-```
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 

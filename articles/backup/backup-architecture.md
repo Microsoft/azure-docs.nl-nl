@@ -4,10 +4,10 @@ description: Hierin wordt een overzicht gegeven van de architectuur, onderdelen 
 ms.topic: conceptual
 ms.date: 02/19/2019
 ms.openlocfilehash: 1e5a61bd4e3287c1100ff1f54fda797c1add438b
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103466408"
 ---
 # <a name="azure-backup-architecture-and-components"></a>Architectuur en onderdelen van Azure Backup
@@ -99,8 +99,8 @@ De volgende tabel bevat een overzicht van de ondersteunde functies voor de versc
 **Functie** | **Directe back-ups van bestanden en mappen (met behulp van de MARS-agent)** | **Back-up van Azure VM** | **Computers of apps met DPM/MABS**
 --- | --- | --- | ---
 Back-up naar kluis maken | ![Ja][green] | ![Ja][green] | ![Ja][green]
-Back-up naar DPM/MABS-schijf en vervolgens naar Azure | | | ![Ja][green]
-Gegevens comprimeren die voor back-up zijn verzonden | ![Ja][green] | Er wordt geen compressie gebruikt bij de overdracht van gegevens. De opslag is enigszins geflateerd, maar het herstellen gaat sneller.  | ![Ja][green]
+Back-up naar DPM/MABS-schijf en vervolgens naar Azure | | | ![Yes][green]
+Gegevens comprimeren die voor back-up zijn verzonden | ![Yes][green] | Er wordt geen compressie gebruikt bij de overdracht van gegevens. De opslag is enigszins geflateerd, maar het herstellen gaat sneller.  | ![Yes][green]
 Incrementele back-up uitvoeren |![Ja][green] |![Ja][green] |![Ja][green]
 Back-ups maken van ontdubbelde schijven | | | ![Gedeeltelijk][yellow]<br/><br/> Voor DPM-MABS-servers die alleen on-premises worden geïmplementeerd.
 

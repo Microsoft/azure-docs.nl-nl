@@ -9,26 +9,14 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: conceptual
 ms.service: azure-communication-services
-ms.openlocfilehash: f52d907c36c7900d5f5eada3ca4a7328e42f9729
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: 5ee33c032293329a6af69a0b2be691092c2a8da4
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105110845"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105729640"
 ---
 # <a name="client-and-server-architecture"></a>Client-en server architectuur
-
-[!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
-
-
-<!--
-> [!WARNING]
-> This document is under construction and needs the following items to be addressed:
-> - Need to add security best practices for token management here
-> - Reference docs:
-> - https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/create-a-token-object
-> - https://docs.microsoft.com/azure/aks/operator-best-practices-identity
-> - https://docs.microsoft.com/cloud-app-security/api-tokens?view=gestures-1.0-->
 
 Elke Azure Communication Services-toepassing heeft **client toepassingen** die gebruikmaken van **Services** voor het vergemakkelijken van de connectiviteit van personen naar personen. Op deze pagina ziet u algemene architecturale elementen in verschillende scenario's.
 

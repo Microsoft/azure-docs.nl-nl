@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/23/2019
 tags: connectors
 ms.openlocfilehash: 65da8e07c01561577fe7eff449bfc10348c7f277
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101716598"
 ---
 # <a name="monitor-receive-and-send-events-with-azure-event-hubs-and-azure-logic-apps"></a>Gebeurtenissen bewaken, ontvangen en verzenden met Azure Event Hubs en Azure Logic Apps
@@ -79,10 +79,10 @@ In dit voor beeld ziet u hoe u een werk stroom van een logische app kunt starten
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Naam van de Event Hub** | Ja | De naam van de Event hub die u wilt bewaken |
-   | **Inhoudstype** | Nee | Het inhouds type van de gebeurtenis. De standaardwaarde is `application/octet-stream`. |
-   | **Naam van consumentengroep** | Nee | De [naam van de Event hub-consumenten groep](../event-hubs/event-hubs-features.md#consumer-groups) die moet worden gebruikt voor het lezen van gebeurtenissen. Als niet wordt opgegeven, wordt de standaard Consumer groep gebruikt. |
-   | **Maximum aantal gebeurtenissen** | Nee | Het maximum aantal gebeurtenissen. De trigger retourneert tussen één en het aantal gebeurtenissen dat door deze eigenschap is opgegeven. |
+   | **Naam van de Event Hub** | Yes | De naam van de Event hub die u wilt bewaken |
+   | **Inhoudstype** | No | Het inhouds type van de gebeurtenis. De standaardwaarde is `application/octet-stream`. |
+   | **Naam van consumentengroep** | No | De [naam van de Event hub-consumenten groep](../event-hubs/event-hubs-features.md#consumer-groups) die moet worden gebruikt voor het lezen van gebeurtenissen. Als niet wordt opgegeven, wordt de standaard Consumer groep gebruikt. |
+   | **Maximum aantal gebeurtenissen** | No | Het maximum aantal gebeurtenissen. De trigger retourneert tussen één en het aantal gebeurtenissen dat door deze eigenschap is opgegeven. |
    | **Interval** | Ja | Een positief geheel getal dat aangeeft hoe vaak de werk stroom wordt uitgevoerd op basis van de frequentie |
    | **Frequentie** | Ja | De tijds eenheid voor het terugkeer patroon |
    ||||
@@ -91,11 +91,11 @@ In dit voor beeld ziet u hoe u een werk stroom van een logische app kunt starten
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Inhouds schema** | Nee | Het JSON-inhouds schema voor de gebeurtenissen die moeten worden gelezen vanuit de Event hub. Als u bijvoorbeeld het inhouds schema opgeeft, kunt u de logische app alleen activeren voor de gebeurtenissen die overeenkomen met het schema. |
-   | **Minimale partitie sleutel** | Nee | Voer de minimale [partitie](../event-hubs/event-hubs-features.md#partitions) -id in die u wilt lezen. Standaard worden alle partities gelezen. |
-   | **Maximum partitie sleutel** | Nee | Voer de maximale [partitie](../event-hubs/event-hubs-features.md#partitions) -id in die u wilt lezen. Standaard worden alle partities gelezen. |
-   | **Tijdzone** | Nee | Is alleen van toepassing wanneer u een start tijd opgeeft, omdat deze trigger geen UTC-offset accepteert. Selecteer de tijd zone die u wilt Toep assen. <p>Zie [terugkerende taken en werk stromen maken en uitvoeren met Azure Logic apps](../connectors/connectors-native-recurrence.md)voor meer informatie. |
-   | **Begin tijd** | Nee | Geef een begin tijd op in deze notatie: <p>JJJJ-MM-DDTuu: mm: SS als u een tijd zone selecteert<p>-of-<p>JJJJ-MM-DDTuu: mm: ssZ als u geen tijd zone selecteert<p>Zie [terugkerende taken en werk stromen maken en uitvoeren met Azure Logic apps](../connectors/connectors-native-recurrence.md)voor meer informatie. |
+   | **Inhouds schema** | No | Het JSON-inhouds schema voor de gebeurtenissen die moeten worden gelezen vanuit de Event hub. Als u bijvoorbeeld het inhouds schema opgeeft, kunt u de logische app alleen activeren voor de gebeurtenissen die overeenkomen met het schema. |
+   | **Minimale partitie sleutel** | No | Voer de minimale [partitie](../event-hubs/event-hubs-features.md#partitions) -id in die u wilt lezen. Standaard worden alle partities gelezen. |
+   | **Maximum partitie sleutel** | No | Voer de maximale [partitie](../event-hubs/event-hubs-features.md#partitions) -id in die u wilt lezen. Standaard worden alle partities gelezen. |
+   | **Tijdzone** | No | Is alleen van toepassing wanneer u een start tijd opgeeft, omdat deze trigger geen UTC-offset accepteert. Selecteer de tijd zone die u wilt Toep assen. <p>Zie [terugkerende taken en werk stromen maken en uitvoeren met Azure Logic apps](../connectors/connectors-native-recurrence.md)voor meer informatie. |
+   | **Begin tijd** | No | Geef een begin tijd op in deze notatie: <p>JJJJ-MM-DDTuu: mm: SS als u een tijd zone selecteert<p>-of-<p>JJJJ-MM-DDTuu: mm: ssZ als u geen tijd zone selecteert<p>Zie [terugkerende taken en werk stromen maken en uitvoeren met Azure Logic apps](../connectors/connectors-native-recurrence.md)voor meer informatie. |
    ||||
 
 1. Wanneer u klaar bent, kiest u **Opslaan** op de werk balk van de ontwerp functie.
@@ -130,10 +130,10 @@ Selecteer in de lijst acties deze actie: **gebeurtenis verzenden-Event hubs**
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Naam van de Event Hub** | Ja | De Event hub waarnaar u de gebeurtenis wilt verzenden |
-   | **Inhoud** | Nee | De inhoud voor de gebeurtenis die u wilt verzenden |
-   | **Eigenschappen** | Nee | De app-eigenschappen en-waarden die moeten worden verzonden |
-   | **Partitiesleutel** | Nee | De [partitie](../event-hubs/event-hubs-features.md#partitions) -id voor het verzenden van de gebeurtenis |
+   | **Naam van de Event Hub** | Yes | De Event hub waarnaar u de gebeurtenis wilt verzenden |
+   | **Inhoud** | No | De inhoud voor de gebeurtenis die u wilt verzenden |
+   | **Eigenschappen** | No | De app-eigenschappen en-waarden die moeten worden verzonden |
+   | **Partitiesleutel** | No | De [partitie](../event-hubs/event-hubs-features.md#partitions) -id voor het verzenden van de gebeurtenis |
    ||||
 
    U kunt bijvoorbeeld de uitvoer van uw Event Hubs trigger naar een andere Event hub verzenden:
@@ -153,7 +153,7 @@ Selecteer in de lijst acties deze actie: **gebeurtenis verzenden-Event hubs**
    | Eigenschap | Vereist | Waarde | Beschrijving |
    |----------|----------|-------|-------------|
    | **Verbindingsnaam** | Ja | <*verbindings naam*> | De naam die voor uw verbinding moet worden gemaakt |
-   | **Event Hubs naam ruimte** | Ja | <*gebeurtenis-hubs-naam ruimte*> | Selecteer de Event Hubs naam ruimte die u wilt gebruiken. |
+   | **Event Hubs naam ruimte** | Yes | <*gebeurtenis-hubs-naam ruimte*> | Selecteer de Event Hubs naam ruimte die u wilt gebruiken. |
    |||||  
 
    Bijvoorbeeld:

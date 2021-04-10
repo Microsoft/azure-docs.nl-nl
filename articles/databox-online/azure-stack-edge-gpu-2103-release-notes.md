@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: article
 ms.date: 03/23/2021
 ms.author: alkohli
-ms.openlocfilehash: 846d4a259f0fcd204bcad6c898efc999c3765fd3
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.openlocfilehash: 4d2a345ed49fae2e1d77b3c5da44b305d069874e
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "104962562"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105729453"
 ---
 # <a name="azure-stack-edge-2103-release-notes"></a>Release opmerkingen bij Azure Stack Edge 2103
 
@@ -98,7 +98,7 @@ In de volgende tabel vindt u een overzicht van de bekende problemen die in de vo
 |**19.**|Kubernetes + update |Eerdere software versies, zoals 2008 releases, hebben een update probleem voor de race situatie waardoor de update mislukt met ClusterConnectionException. |Het gebruik van de nieuwere builds helpt dit probleem te voor komen. Als dit probleem zich blijft voordoen, kunt u de tijdelijke oplossing het beste opnieuw proberen.|
 |**20**|Internet Explorer|Als Verbeterde beveiligings functies zijn ingeschakeld, hebt u mogelijk geen toegang tot de lokale web-UI-pagina's. | Schakel de verbeterde beveiliging uit en start de browser opnieuw.|
 |**20.**|Kubernetes-dash board | Het *https* -eind punt voor het Kubernetes-dash board met een SSL-certificaat wordt niet ondersteund. | |
-|**21.**|Kubernetes |Kubernetes biedt geen ondersteuning voor ': ' in namen van omgevings variabelen die worden gebruikt door .NET-toepassingen. Dit is ook vereist voor het functioneren van de module Event grid IoT Edge op Azure Stack edge-apparaat en andere toepassingen. Zie [ASP.net core-documentatie](/aspnet/core/fundamentals/configuration/?tabs=basicconfiguration&view=aspnetcore-3.1&preserve-view=true#environment-variables)voor meer informatie.|Vervang ":" door dubbel onderstrepen. Zie [Kubernetes issue](https://github.com/kubernetes/kubernetes/issues/53201) (Engelstalig) voor meer informatie.|
+|**21.**|Kubernetes |Kubernetes biedt geen ondersteuning voor ': ' in namen van omgevings variabelen die worden gebruikt door .NET-toepassingen. Dit is ook vereist voor het functioneren van de module Event grid IoT Edge op Azure Stack edge-apparaat en andere toepassingen. Zie [ASP.net core-documentatie](/aspnet/core/fundamentals/configuration/?tabs=basicconfiguration#environment-variables)voor meer informatie.|Vervang ":" door dubbel onderstrepen. Zie [Kubernetes issue](https://github.com/kubernetes/kubernetes/issues/53201) (Engelstalig) voor meer informatie.|
 |**22.** |Azure Arc + Kubernetes-cluster |Wanneer `yamls` een resource wordt verwijderd uit de Git-opslag plaats, worden de bijbehorende resources standaard niet verwijderd uit het Kubernetes-cluster.  |Als u het verwijderen van resources wilt toestaan wanneer deze uit de Git-opslag plaats worden verwijderd, stelt u `--sync-garbage-collection` in Arc OperatorParams in. Zie [een configuratie verwijderen](../azure-arc/kubernetes/use-gitops-connected-cluster.md#additional-parameters)voor meer informatie. |
 |**uur.**|NFS |Toepassingen die gebruikmaken van NFS-shares op uw apparaat om gegevens te schrijven, moeten exclusieve schrijf bewerkingen gebruiken. Zo zorgt u ervoor dat de schrijf bewerkingen naar de schijf worden geschreven.| |
 |**1,25.**|Compute-configuratie |De reken configuratie mislukt in netwerk configuraties waarbij gateways of switches of routers reageren op ARP-aanvragen (Address Resolution Protocol) voor systemen die niet bestaan in het netwerk.| |

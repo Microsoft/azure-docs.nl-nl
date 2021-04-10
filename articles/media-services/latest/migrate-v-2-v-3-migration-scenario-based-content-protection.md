@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: media
 ms.date: 03/26/2021
 ms.author: inhenkel
-ms.openlocfilehash: 7ef41b76f343d8997feebc4a366deda7ce6a2afa
-ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
+ms.openlocfilehash: 9141fb025cb2c7976f88d894768972b10ea3a3d3
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/28/2021
-ms.locfileid: "105644067"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105729402"
 ---
 # <a name="content-protection-scenario-based-migration-guidance"></a>Richt lijnen voor migratie op basis van inhouds beveiligings scenario's
 
@@ -38,11 +38,11 @@ Tijdens de migratie naar de V3 API zult u zien dat u bepaalde eigenschappen of i
 
 Als u bijvoorbeeld eerder een v2-activum met de ID **' NB: Cid: uuid: 8cb39104-122c-496e-9ac5-7f9e2c2547b8 '** had, dan vindt u de oude v2-assets via de V3 API. de naam is nu het GUID-deel aan het einde (in dit geval **' 8cb39104-122c-496e-9ac5-7f9e2c2547b8 '**.)
 
-U kunt een query uitvoeren voor de **StreamingLocators** die zijn gekoppeld aan de assets die zijn gemaakt in de v2 API met behulp van de nieuwe v3-methode [ListStreamingLocators](https://docs.microsoft.com/rest/api/media/assets/liststreaminglocators) op de Asset-entiteit.  Raadpleeg ook de .NET client SDK-versie van [ListStreamingLocatorsAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.assetsoperationsextensions.liststreaminglocatorsasync?view=azure-dotnet)
+U kunt een query uitvoeren voor de **StreamingLocators** die zijn gekoppeld aan de assets die zijn gemaakt in de v2 API met behulp van de nieuwe v3-methode [ListStreamingLocators](https://docs.microsoft.com/rest/api/media/assets/liststreaminglocators) op de Asset-entiteit.  Raadpleeg ook de .NET client SDK-versie van [ListStreamingLocatorsAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.assetsoperationsextensions.liststreaminglocatorsasync?view=azure-dotnet&preserve-view=true)
 
 De resultaten van de **ListStreamingLocators** -methode geven u de **naam** en **StreamingLocatorId** van de Locator samen met de **StreamingPolicyName**.
 
-Als u de **ContentKeys** wilt vinden die wordt gebruikt in uw **StreamingLocators** voor inhouds beveiliging, kunt u de methode [StreamingLocator. ListContentKeysAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.streaminglocatorsoperationsextensions.listcontentkeysasync?view=azure-dotnet) aanroepen.  
+Als u de **ContentKeys** wilt vinden die wordt gebruikt in uw **StreamingLocators** voor inhouds beveiliging, kunt u de methode [StreamingLocator. ListContentKeysAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.streaminglocatorsoperationsextensions.listcontentkeysasync?view=azure-dotnet&preserve-view=true) aanroepen.  
 
 **Activa** die zijn gemaakt en gepubliceerd met behulp van de v2 API, hebben zowel een beleid voor de [inhouds sleutel](https://docs.microsoft.com/azure/media-services/latest/content-key-policy-concept) als een inhouds sleutel die is gedefinieerd in de V3 API, in plaats van een standaard beleid voor de inhouds sleutel in het [streaming-beleid](https://docs.microsoft.com/azure/media-services/latest/streaming-policy-concept)te gebruiken.
 

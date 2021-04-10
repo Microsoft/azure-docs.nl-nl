@@ -5,16 +5,15 @@ author: ju-shim
 ms.author: jushiman
 ms.topic: quickstart
 ms.service: virtual-machine-scale-sets
-ms.subservice: ''
 ms.date: 06/30/2020
 ms.reviewer: mimckitt
 ms.custom: mimckitt
-ms.openlocfilehash: 0408341eff483de71d76a24a933ece4cbdc2b947
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4ed0932e82751a5ded4bfc9d234bfcd16fa5b9e0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100535277"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105935444"
 ---
 # <a name="quickstart-create-a-virtual-machine-scale-set-in-the-azure-portal"></a>Quickstart: Een schaalset voor virtuele machines maken in Azure Portal
 

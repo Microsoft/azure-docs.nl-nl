@@ -7,10 +7,10 @@ ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 10/22/2019
 ms.openlocfilehash: bfb4db5d3ebf69f9c7f552c175d33a8b817d1562
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100595143"
 ---
 # <a name="delete-an-azure-migrate-project"></a>Een Azure Migrate-project verwijderen

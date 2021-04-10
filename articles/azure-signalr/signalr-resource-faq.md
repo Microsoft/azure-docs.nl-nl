@@ -7,12 +7,12 @@ ms.topic: overview
 ms.custom: devx-track-dotnet
 ms.date: 11/13/2019
 ms.author: zhshang
-ms.openlocfilehash: c65bc7e92d925f819a48fd8ab9a8160bc3eb72e3
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: d3b84756f390930be5124c6bda54d07078d29053
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100579308"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106166918"
 ---
 # <a name="azure-signalr-service-faq"></a>Veelgestelde vragen over Azure SignalR Service
 
@@ -62,13 +62,13 @@ Voor nieuwe toepassingen moeten alleen de standaardmodus en serverloze modus wor
 
 De klassieke modus is ontworpen voor achterwaartse compatibiliteit met bestaande toepassingen en mag niet worden gebruikt voor nieuwe toepassingen.
 
-Meer informatie over de servicemodus is te vinden in [dit document](concept-service-mode.md).
+Zie [Service modus in azure signalerings service](concept-service-mode.md)voor meer informatie over de service modus.
 
 ## <a name="can-i-send-message-from-client-in-serverless-mode"></a>Kan ik een bericht van de client verzenden in de serverloze modus?
 
 U kunt een bericht van de client verzenden als u upstream configureert in uw SignalR-exemplaar. Upstream is een set eindpunten die berichten en verbindingsgebeurtenissen van de SignalR-service ontvangen. Als er geen upstream is geconfigureerd, worden berichten van de client genegeerd.
 
-Raadpleeg [dit document](concept-upstream.md) voor meer informatie over upstream.
+Zie [upstream-instellingen](concept-upstream.md)voor meer informatie over upstream.
 
 Upstream is momenteel in openbare preview.
 

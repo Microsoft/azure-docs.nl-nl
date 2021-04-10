@@ -12,10 +12,10 @@ ms.date: 12/20/2020
 ms.topic: conceptual
 ms.custom: how-to, automl
 ms.openlocfilehash: 2e06375441d6540d6630cfe9d4d8c3beec558879
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103562719"
 ---
 # <a name="create-review-and-deploy-automated-machine-learning-models-with-azure-machine-learning"></a>Automatische machine learning modellen maken, controleren en implementeren met Azure Machine Learning
@@ -72,7 +72,7 @@ Als dat niet het geval is, ziet u een lijst met uw recente geautomatiseerde mach
 
     1. Controleer de **instellingen en het voorbeeld** formulier op nauw keurigheid. Het formulier wordt op intelligente wijze ingevuld op basis van het bestands type. 
 
-        Veld| Beschrijving
+        Veld| Description
         ----|----
         Bestandsindeling| Definieert de indeling en het type gegevens dat is opgeslagen in een bestand.
         Scheidingsteken| Een of meer tekens die de grens aangeven tussen  afzonderlijke, onafhankelijke regio's in tekst zonder opmaak of andere gegevensstromen.
@@ -99,7 +99,7 @@ Als dat niet het geval is, ziet u een lijst met uw recente geautomatiseerde mach
 
 1. Selecteer **een nieuwe Compute maken** om uw berekenings context voor dit experiment te configureren.
 
-    Veld|Beschrijving
+    Veld|Description
     ---|---
     Naam berekening| Voer een unieke naam in die uw berekenings context identificeert.
     Prioriteit van virtuele machine| Virtuele machines met lage prioriteit zijn goed koper, maar garanderen niet de reken knooppunten. 
@@ -132,7 +132,7 @@ Als dat niet het geval is, ziet u een lijst met uw recente geautomatiseerde mach
 
 1. Beschrijving Aanvullende configuratie-instellingen weer geven: extra instellingen die u kunt gebruiken om de trainings taak beter te beheren. Anders worden de standaardinstellingen toegepast op basis van de selectie en gegevens van het experiment. 
 
-    Aanvullende configuraties|Beschrijving
+    Aanvullende configuraties|Description
     ------|------
     Primaire metrische gegevens| De belangrijkste waarde die wordt gebruikt voor het scoren van uw model. Meer [informatie over de metrische gegevens van modellen](how-to-configure-auto-train.md#primary-metric).
     Uitleg geven over het beste model | Selecteer deze optie om in of uit te scha kelen om uitleg voor het aanbevolen model weer te geven. <br> Deze functionaliteit is momenteel niet beschikbaar voor [bepaalde prognose algoritmen](how-to-machine-learning-interpretability-automl.md#interpretability-during-training-for-the-best-model). 
@@ -222,7 +222,7 @@ Geautomatiseerde ML helpt u bij het implementeren van het model zonder code te s
     Veld| Waarde
     ----|----
     Naam| Voer een unieke naam in voor uw implementatie.
-    Beschrijving| Voer een beschrijving in om beter te kunnen identificeren waarvoor deze implementatie is.
+    Description| Voer een beschrijving in om beter te kunnen identificeren waarvoor deze implementatie is.
     Rekentype| Selecteer het type eind punt dat u wilt implementeren: *Azure Kubernetes service (AKS)* of *Azure container instance (ACI)*.
     Naam berekening| *Is alleen van toepassing op AKS:* Selecteer de naam van het AKS-cluster waarnaar u wilt implementeren.
     Verificatie inschakelen | Selecteer deze optie om verificatie op basis van tokens of sleutel toe te staan.

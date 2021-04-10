@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: b63f42ccc0a9d8d138e38a262db528fd36ea701a
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: d36bae57a9e1609e053326cf7288b5b1bc470cef
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102123034"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106166884"
 ---
 # <a name="deploy-cloud-services-extended-support-by-using-the-azure-sdk"></a>Cloud Services implementeren (uitgebreide ondersteuning) met behulp van de Azure SDK
 
@@ -156,7 +156,8 @@ Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud 
     m_NrpClient.VirtualNetworks.CreateOrUpdate(resourceGroupName, “ContosoVNet”, vnet);
     ```
 
-7. Maak een openbaar IP-adres en (optioneel) Stel de DNS-label eigenschap van het open bare IP-adres in. Als u een statisch IP-adres gebruikt, moet er in het service configuratie bestand naar worden verwezen als een gereserveerd IP-adres.
+7. Maak een openbaar IP-adres en stel de DNS-label eigenschap van het open bare IP-adres in. Cloud Services (uitgebreide ondersteuning) ondersteunt alleen [Basic] ( https://docs.microsoft.com/azure/virtual-network/public-ip-addresses#basic) open bare IP-adressen van SKU. Open bare Ip's van standaard-SKU werken niet met Cloud Services.
+Als u een statisch IP-adres gebruikt, moet u ernaar verwijzen als een Gereserveerd IP in het bestand met de service configuratie (. cscfg)
 
     ```csharp
     PublicIPAddress publicIPAddressParams = new PublicIPAddress(name: “ContosIp”) 
@@ -171,7 +172,7 @@ Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud 
     PublicIPAddress publicIpAddress = m_NrpClient.PublicIPAddresses.CreateOrUpdate(resourceGroupName, publicIPAddressName, publicIPAddressParams);
     ```
 
-8. Maak een object voor een netwerk profiel en koppel een openbaar IP-adres aan de front-end van de door het platform gemaakte load balancer.
+8. Maak een object voor een netwerk profiel en koppel het open bare IP-adres aan de front-end van de load balancer. Het Azure-platform maakt automatisch een ' klassieke ' SKU load balancer resource in hetzelfde abonnement als de Cloud service resource. De load balancer resource is een alleen-lezen resource in ARM. Updates voor de resource worden alleen ondersteund via de implementatie bestanden voor Cloud Services (. cscfg &. csdef)
 
     ```csharp
     LoadBalancerFrontendIPConfiguration feipConfiguration = new LoadBalancerFrontendIPConfiguration() 

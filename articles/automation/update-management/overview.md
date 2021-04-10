@@ -3,18 +3,20 @@ title: Overzicht van Azure Automation Updatebeheer
 description: Dit artikel bevat een overzicht van de functie Updatebeheer die updates implementeert voor uw Windows-en Linux-computers.
 services: automation
 ms.subservice: update-management
-ms.date: 03/19/2021
+ms.date: 04/01/2021
 ms.topic: conceptual
-ms.openlocfilehash: e5deefabd6a37dbfece9f32abdce5d5144681238
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.openlocfilehash: 62ae2eab33063416fdd6265b14dd8c30da55e174
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "104950056"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106166697"
 ---
 # <a name="update-management-overview"></a>Overzicht van Updatebeheer
 
 U kunt Updatebeheer in Azure Automation gebruiken om updates van besturings systemen te beheren voor uw virtuele Windows-en Linux-machines in azure, in on-premises omgevingen en in andere Cloud omgevingen. U kunt snel de status van beschik bare updates op alle agent computers beoordelen en het proces voor het installeren van vereiste updates voor servers beheren.
+
+Als service provider hebt u mogelijk meerdere tenants voor klanten in [Azure Lighthouse](../../lighthouse/overview.md). Met Azure Lighthouse kunt u in één keer bewerkingen uitvoeren op verschillende Azure Active Directory (Azure AD)-tenants, waardoor beheer taken zoals Updatebeheer efficiënter zijn voor de tenants die u wilt.
 
 > [!NOTE]
 > U kunt een computer die is geconfigureerd met Updatebeheer niet gebruiken om aangepaste scripts uit Azure Automation uit te voeren. Op deze computer kan alleen het door micro soft ondertekende update script worden uitgevoerd.
@@ -24,7 +26,7 @@ U kunt Updatebeheer in Azure Automation gebruiken om updates van besturings syst
 
 Als u de beschik bare *essentiële* en *beveiligings* patches automatisch op uw Azure-VM wilt downloaden en installeren, controleert u [automatische VM-gast patches](../../virtual-machines/automatic-vm-guest-patching.md) voor Windows-vm's.
 
-Voordat u Updatebeheer implementeert en uw machines voor beheer inschakelt, moet u de informatie in de volgende secties begrijpen.  
+Voordat u Updatebeheer implementeert en uw machines voor beheer inschakelt, moet u de informatie in de volgende secties begrijpen.
 
 ## <a name="about-update-management"></a>Over Updatebeheer
 
@@ -40,7 +42,7 @@ In het volgende diagram ziet u hoe Updatebeheer beveiligings updates evalueert e
 
 ![Updatebeheer werk stroom](./media/overview/update-mgmt-updateworkflow.png)
 
-Updatebeheer kan worden gebruikt om systeem eigen te implementeren op computers in meerdere abonnementen in dezelfde Tenant.
+Updatebeheer kan worden gebruikt om systeem eigen te implementeren op computers in meerdere abonnementen in dezelfde Tenant of tussen tenants met behulp van het [beheer van gedelegeerde resources van Azure](../../lighthouse/concepts/azure-delegated-resource-management.md).
 
 Nadat een pakket is vrijgegeven, duurt het 2 tot 3 uur voordat de patch wordt weer gegeven voor Linux-machines voor evaluatie. Voor Windows-computers duurt het 12 tot 15 uur voordat de patch wordt weer gegeven voor evaluatie nadat deze is uitgebracht. Wanneer een computer een scan voor de compatibiliteit van updates voltooit, stuurt de agent de gegevens bulksgewijs door naar Azure Monitor Logboeken. Op een Windows-computer wordt de compatibiliteits scan standaard elke 12 uur uitgevoerd. Voor een Linux-computer wordt standaard elk uur de compatibiliteits scan uitgevoerd. Als de Log Analytics-agent opnieuw is opgestart, wordt een nalevings scan binnen vijf tien minuten gestart.
 
@@ -131,7 +133,7 @@ Vm's die zijn gemaakt op basis van de installatie kopieën op Red Hat Enterprise
 
 ## <a name="permissions"></a>Machtigingen
 
-U hebt specifieke machtigingen nodig om update-implementaties te maken en te beheren. Zie op [rollen gebaseerde toegang – updatebeheer](../automation-role-based-access-control.md#update-management-permissions)voor meer informatie over deze machtigingen.
+U hebt specifieke machtigingen nodig om update-implementaties te maken en te beheren. Zie op [rollen gebaseerde toegang updatebeheer](../automation-role-based-access-control.md#update-management-permissions)voor meer informatie over deze machtigingen.
 
 ## <a name="update-management-components"></a>Updatebeheer onderdelen
 
@@ -167,11 +169,11 @@ Zie [Connect Operations Manager to Azure monitor logs](../../azure-monitor/agent
 
 De volgende tabel beschrijft de verbonden bronnen die Updatebeheer ondersteunt:
 
-| Verbonden bron | Ondersteund | Beschrijving |
+| Verbonden bron | Ondersteund | Description |
 | --- | --- | --- |
-| Windows-agents |Ja |Updatebeheer verzamelt informatie over systeem updates van Windows-agents en start de installatie van de vereiste updates. |
-| Linux-agents |Ja |Updatebeheer verzamelt informatie over systeem updates van Linux-agents en start de installatie van vereiste updates op ondersteunde distributies. |
-| Beheergroep Operations Manager |Ja |Updatebeheer verzamelt informatie over systeem updates van agents in een verbonden beheer groep.<br/><br/>Een directe verbinding van de Operations Manager agent naar Azure Monitor-Logboeken is niet vereist. Gegevens worden doorgestuurd van de beheer groep naar de Log Analytics-werk ruimte. |
+| Windows-agents |Yes |Updatebeheer verzamelt informatie over systeem updates van Windows-agents en start de installatie van de vereiste updates. |
+| Linux-agents |Yes |Updatebeheer verzamelt informatie over systeem updates van Linux-agents en start de installatie van vereiste updates op ondersteunde distributies. |
+| Beheergroep Operations Manager |Yes |Updatebeheer verzamelt informatie over systeem updates van agents in een verbonden beheer groep.<br/><br/>Een directe verbinding van de Operations Manager agent naar Azure Monitor-Logboeken is niet vereist. Gegevens worden doorgestuurd van de beheer groep naar de Log Analytics-werk ruimte. |
 
 ### <a name="collection-frequency"></a>Verzamelingsfrequentie
 

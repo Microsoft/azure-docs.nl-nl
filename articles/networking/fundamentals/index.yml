@@ -1,0 +1,133 @@
+### YamlMime:Landing
+title: Documentatie voor Azure Networking fundamentals
+summary: Met Azure-netwerk services kunt u toegang krijgen tot Azure-resources en on-premises resources, uw toepassingen in het Azure-netwerk beveiligen, leveren en bewaken.
+metadata:
+  title: Documentatie voor Azure Networking fundamentals
+  description: Meer informatie over netwerk services in azure die connectiviteit bieden tussen Azure-resources, connectiviteit van een on-premises netwerk tot Azure-resources, uw netwerk bronnen helpen beveiligen, het bezorgen van toepassingen schalen en uw netwerk helpen bewaken.
+  ms.service: networking
+  ms.topic: landing-page
+  ms.collection: collection
+  author: KumudD
+  ms.author: kumud
+  ms.date: 03/30/2021
+  ms.openlocfilehash: 69017e082491b784ada194a0d0bab7ac6ed50274
+  ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+  ms.translationtype: MT
+  ms.contentlocale: nl-NL
+  ms.lasthandoff: 04/01/2021
+  ms.locfileid: "106166578"
+landingContent:
+- title: Over Azure-netwerken
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Wat is Azure-netwerken?
+      url: networking-overview.md
+  - linkListType: concept
+    links:
+    - text: Wat is het wereld wijde netwerk van micro soft?
+      url: ../microsoft-global-network.md
+  - linkListType: learn
+    links:
+    - text: Uw netwerk infrastructuur bouwen in azure
+      url: /learn/paths/architect-network-infrastructure/
+- title: Aan de slag
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Wat is Azure Virtual Network?
+      url: ../../virtual-network/virtual-networks-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Een virtueel netwerk maken
+      url: ../../virtual-network/quick-create-portal.md
+- title: Communiceren met Internet
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Wat is een openbaar IP-adres?
+      url: ../../virtual-network/virtual-networks-overview.md
+    - text: Wat is een virtueel netwerk NAT gateway?
+      url: ../../virtual-network/nat-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: Een openbaar IP-adres maken
+      url: ../../virtual-network/create-public-ip-portal.md
+    - text: Een NAT-gateway maken
+      url: ../../virtual-network/tutorial-create-nat-gateway-portal.md
+- title: Virtuele netwerken verbinden
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Peering op virtueel netwerk
+      url: ../../virtual-network/virtual-network-peering-overview.md
+  - linkListType: tutorial
+    links:
+    - text: Virtuele netwerken verbinden met peering op virtueel netwerk
+      url: ../../virtual-network/tutorial-connect-virtual-networks-portal.md
+- title: Persoonlijke toegang tot netwerk bronnen
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Wat is een privé-eindpunt van Azure?
+      url: ../../private-link/private-endpoint-overview.md
+  - linkListType: tutorial
+    links:
+    - text: Een privé-eindpunt maken
+      url: ../../private-link/create-private-endpoint-portal.md
+- title: Taak verdeling voor uw toepassingen
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Netwerktaakverdeling
+      url: ../../load-balancer/load-balancer-overview.md
+    - text: Veilige Cloud-CDN en wereld wijde load balancer
+      url: ../../frontdoor/front-door-overview.md
+    - text: Load balancer van webtoepassingen
+      url: ../../application-gateway/overview.md
+    - text: load balancer op basis van DNS
+      url: ../../traffic-manager/traffic-manager-overview.md
+  - linkListType: tutorial
+    links:
+    - text: Een netwerk load balancer maken
+      url: ../../load-balancer/quickstart-load-balancer-standard-public-portal.md
+    - text: Een veilige Cloud-CDN en globale load balancer implementeren
+      url: ../../frontdoor/quickstart-create-front-door.md
+    - text: Een webtoepassing maken load balancer
+      url: ../../application-gateway/quick-create-portal.md
+    - text: Een op DNS gebaseerde load balancer maken
+      url: ../../traffic-manager/quickstart-create-traffic-manager-profile.md
+- title: Uw virtuele netwerk beveiligen
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Netwerkbeveiligingsgroepen
+      url: ../../virtual-network/network-security-groups-overview.md
+    - text: Azure DDoS Protection Standard
+      url: ../../ddos-protection/ddos-protection-overview.md
+    - text: Azure Firewall
+      url: ../../firewall/overview.md
+  - linkListType: tutorial
+    links:
+    - text: Netwerktoegang tot PaaS-resources beperken
+      url: ../../virtual-network/tutorial-restrict-network-access-to-resources.md
+    - text: Azure DDoS Protection Standard maken en configureren
+      url: ../../ddos-protection/manage-ddos-protection.md
+    - text: Azure Firewall implementeren en configureren
+      url: ../../firewall/tutorial-firewall-deploy-portal.md
+- title: On-premises netwerken verbinden met virtuele netwerken
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: VPN-verbindingen-VPN Gateway
+      url: ../../vpn-gateway/vpn-gateway-about-vpngateways.md
+    - text: Speciale particuliere verbindingen-ExpressRoute
+      url: ../../expressroute/expressroute-introduction.md
+    - text: VPN-en speciale particuliere verbindingen-virtueel WAN
+      url: ../../virtual-wan/virtual-wan-about.md
+  - linkListType: tutorial
+    links:
+    - text: On-premises netwerk verbinden met een virtueel netwerk-VPN-versleuteling
+      url: ../../vpn-gateway/tutorial-site-to-site-portal.md
+    - text: On-premises netwerk uitbreiden naar Azure met behulp van ExpressRoute
+      url: ../../expressroute/expressroute-howto-circuit-portal-resource-manager.md

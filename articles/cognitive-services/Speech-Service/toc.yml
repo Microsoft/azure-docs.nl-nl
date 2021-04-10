@@ -456,7 +456,84 @@
                   href: windows-voice-assistants-best-practices.md
                 - name: Voorbeelden en veelgestelde vragen
                   href: windows-voice-assistants-faq.md
-- name: Hulpprogramma's
+- name: Instructiegidsen
+  items:
+    - name: Logboekregistratie inschakelen
+      href: how-to-use-logging.md
+    - name: Geheugenverbruik bijhouden
+      href: how-to-track-speech-sdk-memory-usage.md
+    - name: Privé-eindpunt inschakelen
+      href: speech-services-private-link.md
+    - name: OpenSSL voor Linux configureren
+      displayName: 'memory usage, memory consumption, object logging, object tracking, memory, openssl'
+      href: how-to-configure-openssl-linux.md
+    - name: RHEL/CentOS 7 configureren
+      href: how-to-configure-rhel-centos-7.md
+      displayName: 'RHEL, CentOS 7, CentOS, Configure RHEL, Configure CentO'
+    - name: Containers
+      items:
+        - name: Spraakcontainers installeren en uitvoeren
+          displayName: 'containers,install container,run container'
+          href: speech-container-howto.md
+        - name: Spraakcontainers configureren
+          displayName: 'containers,configure containers,container config,configuration'
+          href: speech-container-configuration.md
+        - name: Batchverwerking met spraakcontianers
+          href: speech-container-batch-processing.md
+        - name: Spraakcontainers met Kubernetes en Helm
+          displayName: 'containers,kubernetes,k8s,helm,orchestration,on-prem,on-premises'
+          href: speech-container-howto-on-premises.md
+        - name: Spraakcontainers in Azure-containerinstanties
+          displayName: 'ACI,azure container instances,container instances,containers'
+          maintainContext: true
+          href: ../containers/azure-container-instance-recipe.md
+        - name: Veelgestelde vragen over containers
+          href: speech-container-faq.md
+        - name: Documentatie voor Cognitive Services-containers
+          href: ../containers/index.yml
+    - name: Migratie
+      items:
+        - name: Vanuit Bing Speech
+          href: how-to-migrate-from-bing-speech.md
+        - name: Vanuit de Translator Speech-API
+          href: how-to-migrate-from-translator-speech-api.md
+- name: Apparaten
+  items:
+    - name: Documentatie over Speech Devices
+      href: index-devices.yml
+    - name: Overzicht
+      items:
+        - name: Wat is de Speech Devices SDK?
+          href: speech-devices-sdk.md
+        - name: De Speech Devices SDK ophalen
+          href: get-speech-devices-sdk.md
+        - name: Voorbeelden van de Speech Devices SDK (GitHub)
+          href: 'https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK'
+    - name: Hardware
+      items:
+        - name: Aanbeveling voor microfoonmatrix
+          href: speech-devices-sdk-microphone.md
+        - name: Details Roobo v1
+          href: speech-devices-sdk-roobo-v1.md
+        - name: Details Roobo v2
+          href: speech-devices-sdk-roobo-v2.md
+    - name: Instructiegidsen
+      items:
+        - name: Een microfoonmatrix configureren
+          href: how-to-devices-microphone-array-configuration.md
+    - name: Snelstartgids
+      items:
+        - name: De Speech Devices SDK gebruiken
+          href: speech-devices-sdk-quickstart.md
+    - name: Resources
+      items:
+        - name: Probleem met de Speech Devices SDK oplossen
+          href: speech-devices-sdk-troubleshooting.md
+    - name: Naslaginformatie
+      items:
+        - name: Releaseopmerkingen bij de Speech Devices SDK
+          href: devices-sdk-release-notes.md
+- name: Resources
   items:
     - name: Speech-SDK
       items:
@@ -505,85 +582,6 @@
           href: 'https://speech.microsoft.com'
         - name: Een app voor aangepaste opdrachten maken met Speech Studio
           href: ./quickstart-custom-commands-application.md
-- name: Implementeren
-  items:
-    - name: Logboekregistratie inschakelen
-      href: how-to-use-logging.md
-    - name: Geheugenverbruik bijhouden
-      href: how-to-track-speech-sdk-memory-usage.md
-    - name: Privé-eindpunt inschakelen
-      href: speech-services-private-link.md
-    - name: OpenSSL voor Linux configureren
-      displayName: 'memory usage, memory consumption, object logging, object tracking, memory, openssl'
-      href: how-to-configure-openssl-linux.md
-    - name: RHEL/CentOS 7 configureren
-      href: how-to-configure-rhel-centos-7.md
-      displayName: 'RHEL, CentOS 7, CentOS, Configure RHEL, Configure CentO'
-    - name: Containers
-      items:
-        - name: Spraakcontainers installeren en uitvoeren
-          displayName: 'containers,install container,run container'
-          href: speech-container-howto.md
-        - name: Spraakcontainers configureren
-          displayName: 'containers,configure containers,container config,configuration'
-          href: speech-container-configuration.md
-        - name: Batchverwerking met spraakcontianers
-          href: speech-container-batch-processing.md
-        - name: Spraakcontainers met Kubernetes en Helm
-          displayName: 'containers,kubernetes,k8s,helm,orchestration,on-prem,on-premises'
-          href: speech-container-howto-on-premises.md
-        - name: Spraakcontainers in Azure-containerinstanties
-          displayName: 'ACI,azure container instances,container instances,containers'
-          maintainContext: true
-          href: ../containers/azure-container-instance-recipe.md
-        - name: Veelgestelde vragen over containers
-          href: speech-container-faq.md
-        - name: Documentatie voor Cognitive Services-containers
-          href: ../containers/index.yml
-- name: Apparaten
-  items:
-    - name: Documentatie over Speech Devices
-      href: index-devices.yml
-    - name: Overzicht
-      items:
-        - name: Wat is de Speech Devices SDK?
-          href: speech-devices-sdk.md
-        - name: De Speech Devices SDK ophalen
-          href: get-speech-devices-sdk.md
-        - name: Voorbeelden van de Speech Devices SDK (GitHub)
-          href: 'https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK'
-    - name: Hardware
-      items:
-        - name: Aanbeveling voor microfoonmatrix
-          href: speech-devices-sdk-microphone.md
-        - name: Details Roobo v1
-          href: speech-devices-sdk-roobo-v1.md
-        - name: Details Roobo v2
-          href: speech-devices-sdk-roobo-v2.md
-    - name: Instructiegidsen
-      items:
-        - name: Een microfoonmatrix configureren
-          href: how-to-devices-microphone-array-configuration.md
-    - name: Snelstartgids
-      items:
-        - name: De Speech Devices SDK gebruiken
-          href: speech-devices-sdk-quickstart.md
-    - name: Resources
-      items:
-        - name: Probleem met de Speech Devices SDK oplossen
-          href: speech-devices-sdk-troubleshooting.md
-    - name: Naslaginformatie
-      items:
-        - name: Releaseopmerkingen bij de Speech Devices SDK
-          href: devices-sdk-release-notes.md
-- name: Migratie
-  items:
-    - name: Vanuit Bing Speech
-      href: how-to-migrate-from-bing-speech.md
-    - name: Vanuit de Translator Speech-API
-      href: how-to-migrate-from-translator-speech-api.md
-- name: Resources
-  items:
     - name: Opties voor ondersteuning en hulp
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/speech-service/context/context
     - name: Documentatie voor Swagger

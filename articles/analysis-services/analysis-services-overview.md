@@ -4,16 +4,16 @@ description: Meer informatie over Azure Analysis Services, een volledig beheerd 
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: overview
-ms.date: 01/20/2021
+ms.date: 03/29/2021
 ms.author: owend
 ms.reviewer: minewiskan
 ms.custom: references_regions
-ms.openlocfilehash: 9f8de6ed4f0312a342526fb2ba5d100dfd9ec91f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c3b95b92f2b76e669b4e207163f76f8cec2d3244
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100582611"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105731680"
 ---
 # <a name="what-is-azure-analysis-services"></a>Wat is Azure Analysis Services?
 
@@ -85,6 +85,7 @@ Azure Analysis Services wordt ondersteund in regio's in de hele wereld. Onderste
 |Canada - midden    |     B1, B2, S0, S1, S2, S4, D1    |     1    |
 |Canada - midden     |     S8v2, S9v2   |    1    |
 |VS - oost     |     B1, B2, S0, S1, S2, S4, D1    |    1     |
+|VS - oost     |     S8v2, S9v2   |    1    |
 |VS - oost 2     |     B1, B2, S0, S1, S2, S4, D1   |    7    |
 |VS - oost 2     |     S8v2, S9v2   |    1    |
 |VS - noord-centraal     |     B1, B2, S0, S1, S2, S4, D1     |    1     |

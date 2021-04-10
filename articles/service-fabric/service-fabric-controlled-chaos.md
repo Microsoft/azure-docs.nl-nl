@@ -2,21 +2,21 @@
 title: Chaos in Service Fabric clusters induceren
 description: Fout injectie en cluster analyse service-Api's gebruiken voor het beheren van chaos in het cluster.
 ms.topic: conceptual
-ms.date: 02/05/2018
+ms.date: 03/26/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 72b8f7e9e4934b516f843ae8bc9bb7adc1c349ec
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 759e2d1c8d2a326583625fbbbcadb4f4fa950510
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101720503"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105732428"
 ---
 # <a name="induce-controlled-chaos-in-service-fabric-clusters"></a>Beheerde chaos in Service Fabric clusters induceren
 Grootschalige gedistribueerde systemen zoals Cloud infrastructuren zijn inherent onbetrouwbaar. Met Azure Service Fabric kunnen ontwikkel aars betrouw bare gedistribueerde services bovenop een onbetrouwbare infra structuur schrijven. Ontwikkel aars moeten de stabiliteit van hun services kunnen testen om robuuste gedistribueerde services boven op een onbetrouwbare infra structuur te schrijven, terwijl de onderliggende onbetrouwbare infra structuur in gecompliceerde status overgangen door problemen gaat.
 
 De [fout injectie en de cluster analyse service](./service-fabric-testability-overview.md) (ook wel bekend als de fout analyse service) biedt ontwikkel aars de mogelijkheid fouten te ontzeggen om hun services te testen. Deze gesimuleerde fouten, zoals het [opnieuw starten van een partitie](/powershell/module/servicefabric/start-servicefabricpartitionrestart), kunnen helpen bij het uitoefenen van de meest voorkomende status overgangen. Doel gesimuleerde fouten worden echter bepaald door definitie en kunnen fouten veroorzaken die alleen worden weer gegeven in een moeilijk te voors pellen, lange en ingewikkelde volg orde van status overgangen. Voor een onzuivere test kunt u chaos gebruiken.
 
-Chaos simuleert periodieke, Interleaved fouten (zowel gefeliciteerd als zonder enige uitstel) in het hele cluster gedurende een langere periode. Een correcte fout bestaat uit een set Service Fabric-API-aanroepen, bijvoorbeeld een fout bij het opnieuw starten van de replica, omdat dit een sluiten is, gevolgd door een open op een replica. Verwijder de replica, verplaats de primaire replica en verplaats de secundaire replica naar een andere probleemloze fout die wordt veroorzaakt door chaos. Niet-verwerkings fouten zijn proces afsluiten, zoals het opnieuw starten van het knoop punt en het opnieuw starten van code pakket. 
+Chaos simuleert periodieke, Interleaved fouten (zowel gefeliciteerd als zonder enige uitstel) in het hele cluster gedurende een langere periode. Een correcte fout bestaat uit een set Service Fabric-API-aanroepen, bijvoorbeeld een fout bij het opnieuw starten van de replica, omdat dit een sluiten is, gevolgd door een open op een replica. Verwijder de replica, verplaats de primaire replica, verplaats de secundaire replica en verplaats het exemplaar naar een andere probleemloze fout die wordt veroorzaakt door chaos. Niet-verwerkings fouten zijn proces afsluiten, zoals het opnieuw starten van het knoop punt en het opnieuw starten van code pakket.
 
 Wanneer u chaos hebt geconfigureerd met het aantal en het soort fouten, kunt u chaos starten via C#, Power shell of REST API om te beginnen met het genereren van fouten in het cluster en in uw services. U kunt chaos configureren om te worden uitgevoerd gedurende een opgegeven periode (bijvoorbeeld gedurende één uur), waarna chaos automatisch stopt, of u kunt StopChaos-API (C#, Power shell of REST) aanroepen om deze op elk gewenst moment te stoppen.
 
@@ -37,6 +37,7 @@ Chaos veroorzaakt fouten uit de volgende categorieën:
 * Een replica opnieuw opstarten
 * Een primaire replica verplaatsen (configureerbaar)
 * Een secundaire replica verplaatsen (configureerbaar)
+* Een exemplaar verplaatsen
 
 Chaos wordt uitgevoerd in meerdere herhalingen. Elke herhaling bestaat uit fouten en cluster validatie voor de opgegeven periode. U kunt de tijd configureren die wordt besteed aan het cluster om te stabiliseren en om validatie te volt ooien. Als er een fout wordt gevonden in de cluster validatie, genereert chaos een ValidationFailedEvent met de UTC-tijds tempel en de fout Details. Denk bijvoorbeeld aan een exemplaar van chaos dat is ingesteld om een uur te worden uitgevoerd met een maximum van drie gelijktijdige fouten. Chaos induceert drie fouten en valideert vervolgens de cluster status. De vorige stap wordt doorlopend totdat deze expliciet wordt gestopt via de StopChaosAsync-API of door gang van één uur. Als het cluster in een wille keurige herhaling wordt beschadigd (dat wil zeggen dat het niet stabiel is of niet in orde is binnen de door gegeven MaxClusterStabilizationTimeout), genereert chaos een ValidationFailedEvent. Deze gebeurtenis geeft aan dat er een fout is opgetreden en dat er een ander onderzoek nodig is.
 
@@ -56,14 +57,14 @@ U kunt de GetChaosReport-API (Power shell, C# of REST) gebruiken om te bepalen w
 > Ongeacht hoe hoog een waarde *MaxConcurrentFaults* heeft, chaos garanties-bij afwezigheid van externe fouten-er is geen quorum verlies of gegevens verlies.
 >
 
-* **EnableMoveReplicaFaults**: Hiermee worden de fouten die ervoor zorgen dat de primaire of secundaire replica's worden verplaatst, in-of uitgeschakeld. Deze fouten zijn standaard ingeschakeld.
+* **EnableMoveReplicaFaults**: Hiermee worden de fouten die ervoor zorgen dat de primaire, secundaire replica's of instanties worden verplaatst, in-of uitgeschakeld. Deze fouten zijn standaard ingeschakeld.
 * **WaitTimeBetweenIterations**: de hoeveelheid tijd die moet worden gewacht tussen iteraties. Dat wil zeggen dat de hoeveelheid tijd chaos pauzeert na het uitvoeren van een afronding van fouten en de bijbehorende validatie van de status van het cluster heeft voltooid. Hoe hoger de waarde, hoe lager, het gemiddelde aantal mislukte fout injecties.
 * **WaitTimeBetweenFaults**: de hoeveelheid tijd die moet worden gewacht tussen twee opeenvolgende fouten in één iteratie. Hoe hoger de waarde, hoe lager de gelijktijdigheid van (of de overlappende) fouten.
 * **ClusterHealthPolicy**: het cluster status beleid wordt gebruikt voor het valideren van de status van het cluster in tussen chaos-iteraties. Als de status van het cluster beschadigd is of als er een onverwachte uitzonde ring optreedt tijdens de uitvoering van de fout, wacht chaos gedurende 30 minuten vóór de volgende status controle: het cluster wordt enige tijd op recuperate geleverd.
 * **Context**: een verzameling van (teken reeks, teken reeks) type sleutel-waardeparen. De kaart kan worden gebruikt om informatie vast te leggen over de uitvoering van de chaos. Er kunnen niet meer dan 100 dergelijke paren bestaan en elke teken reeks (sleutel of waarde) mag Maxi maal 4095 tekens lang zijn. Deze kaart wordt ingesteld door de start van de chaos-uitvoering, zodat de context van de specifieke uitvoering optioneel kan worden opgeslagen.
 * **ChaosTargetFilter**: dit filter kan worden gebruikt om chaos-fouten alleen te richten op bepaalde knooppunt typen of alleen op bepaalde toepassings exemplaren. Als ChaosTargetFilter niet wordt gebruikt, heeft chaos fouten met alle cluster entiteiten. Als ChaosTargetFilter wordt gebruikt, veroorzaakt chaos alleen de entiteiten die voldoen aan de ChaosTargetFilter-specificatie. NodeTypeInclusionList en ApplicationInclusionList geven alleen de semantiek van de vereniging toe. Met andere woorden, het is niet mogelijk om een snij punt op te geven voor NodeTypeInclusionList en ApplicationInclusionList. Het is bijvoorbeeld niet mogelijk om ' fout deze toepassing alleen op te geven wanneer deze zich op het knooppunt type bevindt '. Wanneer een entiteit is opgenomen in NodeTypeInclusionList of ApplicationInclusionList, kan die entiteit niet worden uitgesloten met ChaosTargetFilter. Zelfs als applicationx niet wordt weer gegeven in ApplicationInclusionList, kan in sommige chaos iteratie applicationx een fout optreden, omdat deze zich in een knoop punt van nodeTypeY bevindt dat is opgenomen in NodeTypeInclusionList. Als zowel NodeTypeInclusionList als ApplicationInclusionList null of leeg zijn, wordt er een ArgumentException gegenereerd.
-    * **NodeTypeInclusionList**: een lijst met knooppunt typen die in chaos-fouten moeten worden meegenomen. Alle typen fouten (knoop punt opnieuw starten, code package opnieuw starten, replica verwijderen, replica opnieuw starten en secundaire verplaatsen) zijn ingeschakeld voor de knoop punten van deze knooppunt typen. Als een NodeType (bijvoorbeeld NodeTypeX) niet wordt weer gegeven in de NodeTypeInclusionList, worden er op knooppunt niveau fouten (zoals NodeRestart) nooit ingeschakeld voor de knoop punten van NodeTypeX, maar kan het code pakket en de replica fouten nog steeds worden ingeschakeld voor NodeTypeX als een toepassing in de ApplicationInclusionList zich op een knoop punt van NodeTypeX bevindt. Er kunnen Maxi maal 100 knooppunt type namen worden opgenomen in deze lijst, om dit aantal te verhogen, is een configuratie-upgrade vereist voor de configuratie van MaxNumberOfNodeTypesInChaosTargetFilter.
-    * **ApplicationInclusionList**: een lijst met toepassings-uri's die in chaos-fouten moeten worden meegenomen. Alle replica's die deel uitmaken van services van deze toepassingen, zijn geschikter naar replica fouten (start replica, verwijder replica, Move Primary en Move secundair) door chaos. Chaos kan een code pakket alleen opnieuw starten als het code pakket alleen replica's van deze toepassingen host. Als een toepassing niet in deze lijst wordt weer gegeven, kan deze in sommige chaos-iteraties nog steeds worden gestopt als de toepassing wordt beëindigd op een knoop punt van een knooppunt type dat is opgenomen in NodeTypeInclusionList. Als applicationx echter is gekoppeld aan nodeTypeY via plaatsings beperkingen en applicationx niet aanwezig is in ApplicationInclusionList en nodeTypeY niet aanwezig is in NodeTypeInclusionList, wordt applicationx nooit gefoutd. Er kunnen Maxi maal 1000 toepassings namen in deze lijst worden opgenomen, om dit aantal te verhogen, is een configuratie-upgrade vereist voor de configuratie van MaxNumberOfApplicationsInChaosTargetFilter.
+    * **NodeTypeInclusionList**: een lijst met knooppunt typen die in chaos-fouten moeten worden meegenomen. Alle typen fouten (knoop punt opnieuw starten, code package opnieuw starten, replica verwijderen, replica opnieuw starten, verwijderen van primaire, secundaire verplaatsen en verplaatsen) zijn ingeschakeld voor de knoop punten van deze knooppunt typen. Als een NodeType (bijvoorbeeld NodeTypeX) niet wordt weer gegeven in de NodeTypeInclusionList, worden er op knooppunt niveau fouten (zoals NodeRestart) nooit ingeschakeld voor de knoop punten van NodeTypeX, maar kan het code pakket en de replica fouten nog steeds worden ingeschakeld voor NodeTypeX als een toepassing in de ApplicationInclusionList zich op een knoop punt van NodeTypeX bevindt. Er kunnen Maxi maal 100 knooppunt type namen worden opgenomen in deze lijst, om dit aantal te verhogen, is een configuratie-upgrade vereist voor de configuratie van MaxNumberOfNodeTypesInChaosTargetFilter.
+    * **ApplicationInclusionList**: een lijst met toepassings-uri's die in chaos-fouten moeten worden meegenomen. Alle replica's die deel uitmaken van services van deze toepassingen, zijn geschikter naar replica fouten (de replica opnieuw starten, de replica verwijderen, de primaire verplaatsen, het secundaire item verplaatsen en het exemplaar verplaatsen) door chaos. Chaos kan een code pakket alleen opnieuw starten als het code pakket alleen replica's van deze toepassingen host. Als een toepassing niet in deze lijst wordt weer gegeven, kan deze in sommige chaos-iteraties nog steeds worden gestopt als de toepassing wordt beëindigd op een knoop punt van een knooppunt type dat is opgenomen in NodeTypeInclusionList. Als applicationx echter is gekoppeld aan nodeTypeY via plaatsings beperkingen en applicationx niet aanwezig is in ApplicationInclusionList en nodeTypeY niet aanwezig is in NodeTypeInclusionList, wordt applicationx nooit gefoutd. Er kunnen Maxi maal 1000 toepassings namen in deze lijst worden opgenomen, om dit aantal te verhogen, is een configuratie-upgrade vereist voor de configuratie van MaxNumberOfApplicationsInChaosTargetFilter.
 
 ## <a name="how-to-run-chaos"></a>Chaos uitvoeren
 
@@ -137,14 +138,15 @@ class Program
                 MaxPercentUnhealthyNodes = 100
             };
 
-            // All types of faults, restart node, restart code package, restart replica, move primary replica,
-            // and move secondary replica will happen for nodes of type 'FrontEndType'
+            // All types of faults, restart node, restart code package, restart replica, move primary
+            // replica, move secondary replica, and move instance will happen for nodes of type 'FrontEndType'
             var nodetypeInclusionList = new List<string> { "FrontEndType"};
 
             // In addition to the faults included by nodetypeInclusionList,
-            // restart code package, restart replica, move primary replica, move secondary replica faults will
-            // happen for 'fabric:/TestApp2' even if a replica or code package from 'fabric:/TestApp2' is residing
-            // on a node which is not of type included in nodeypeInclusionList.
+            // restart code package, restart replica, move primary replica, move secondary replica,
+            //  and move instance faults will happen for 'fabric:/TestApp2' even if a replica or code
+            // package from 'fabric:/TestApp2' is residing on a node which is not of type included
+            // in nodeypeInclusionList.
             var applicationInclusionList = new List<string> { "fabric:/TestApp2" };
 
             // List of cluster entities to target for Chaos faults.

@@ -26,8 +26,10 @@
           href: quickstarts/chat/meeting-interop.md
     - name: Telefonie en sms
       items:
-        - name: Telefoon nummers beheren
+        - name: Een telefoonnummer ophalen
           href: quickstarts/telephony-sms/get-phone-number.md
+        - name: Poort een telefoon nummer in azure
+          href: quickstarts/telephony-sms/port-phone-number.md
         - name: Spraakoproepen toevoegen aan uw app
           href: quickstarts/voice-video-calling/pstn-call.md
         - name: Een sms-bericht verzenden
@@ -92,6 +94,8 @@
           href: concepts/telephony-sms/messaging-policy.md
     - name: Audio- en videobellen
       items:
+        - name: Bekende problemen
+          href: concepts/known-issues.md
         - name: Overzicht van de SDK
           href: concepts/voice-video-calling/calling-sdk-features.md
         - name: Voice- en videoconcepten
@@ -135,8 +139,6 @@
       href: concepts/notifications.md
     - name: Interoperabiliteit met Teams
       href: concepts/teams-interop.md
-    - name: Bekende problemen
-      href: concepts/known-issues.md
 - name: Voorbeelden
   items:
     - name: Overzicht
@@ -151,6 +153,8 @@
   items:
     - name: Overzicht van referentiedocumentatie
       href: concepts/reference.md
+    - name: Azure CLI
+      href: /cli/azure/ext/communication/communication
     - name: REST API-documentatie
       href: /rest/api/communication/
     - name: Bibliotheken aanroepen
@@ -158,7 +162,7 @@
         - name: Aanroepen (JavaScript)
           href: /javascript/api/azure-communication-services/@azure/communication-calling/
         - name: Aanroepen (Android/Java)
-          href: /java/api/com.azure.communication.calling
+          href: /java/api/com.azure.android.communication.calling?view=communication-services-java-android
         - name: Aanroepen (iOS)
           href: /objectivec/communication-services/calling/
     - name: Chatbibliotheken

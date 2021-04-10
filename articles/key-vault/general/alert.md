@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 04/06/2020
 ms.author: sudbalas
 Customer intent: As a key vault administrator, I want to learn the options available to monitor the health of my vaults
-ms.openlocfilehash: 523f24a7d8131dda67244e4d48510d9e1cb7cdb4
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 9162d9c7b3aa75096e03b3177fb6da3f3bfeceb0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104582626"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105732717"
 ---
 # <a name="monitoring-and-alerting-for-azure-key-vault"></a>Bewaking en waarschuwingen voor Azure Key Vault
 
@@ -28,7 +28,7 @@ Zodra u de sleutel kluis hebt gestart om uw productie geheimen op te slaan, is h
 + Metrische gegevens configureren en een dash board maken
 + Waarschuwingen maken met de opgegeven drempel waarden
 
-Azure Monitor voor Key Vault worden logboeken en metrische gegevens gecombineerd om een algemene bewakings oplossing te bieden. [Meer informatie over Azure Monitor voor Key Vualt vindt u hier](https://docs.microsoft.com/azure/azure-monitor/insights/key-vault-insights-overview#introduction-to-azure-monitor-for-key-vault)
+Azure Monitor voor Key Vault worden logboeken en metrische gegevens gecombineerd om een algemene bewakings oplossing te bieden. [Meer informatie over Azure Monitor voor Key Vault vindt u hier](https://docs.microsoft.com/azure/azure-monitor/insights/key-vault-insights-overview#introduction-to-azure-monitor-for-key-vault)
 
 ## <a name="basic-key-vault-metrics-to-monitor"></a>Basis Key Vault metrische gegevens die moeten worden bewaakt
 

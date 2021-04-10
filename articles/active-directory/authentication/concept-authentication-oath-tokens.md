@@ -5,17 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/26/2021
+ms.date: 03/31/2021
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 45b3d5155befe005a6af68355426883b63a8c410
-ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
+ms.openlocfilehash: 44016d81b18e8df7b6e2ed7c14559cf19ac0c07d
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105611783"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106106633"
 ---
 # <a name="authentication-methods-in-azure-active-directory---oath-tokens"></a>Verificatie methoden in Azure Active Directory OATH-tokens 
 
@@ -57,7 +57,7 @@ Afhankelijk van de grootte van het CSV-bestand kan het enkele minuten duren voor
 
 Zodra er fouten zijn opgelost, kan de beheerder elke sleutel activeren door **Activate** voor het token te selecteren en de otp op te geven die op het token wordt weer gegeven. U kunt Maxi maal 200 OATH-tokens activeren om de vijf minuten. 
 
-Gebruikers kunnen een combi natie hebben van Maxi maal vijf OATH-hardware-tokens of verificator-toepassingen, zoals de app Microsoft Authenticator, die op elk gewenst moment worden geconfigureerd voor gebruik.
+Gebruikers kunnen een combi natie hebben van Maxi maal vijf OATH-hardware-tokens of verificator-toepassingen, zoals de app Microsoft Authenticator, die op elk gewenst moment worden geconfigureerd voor gebruik. OATH-tokens voor hardware kunnen niet worden toegewezen aan gast gebruikers in de resource-Tenant.
 
 ## <a name="next-steps"></a>Volgende stappen
 

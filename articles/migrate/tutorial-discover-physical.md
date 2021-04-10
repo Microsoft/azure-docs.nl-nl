@@ -7,12 +7,12 @@ ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 03/11/2021
 ms.custom: mvc
-ms.openlocfilehash: 4f6dc61b0e05fcb16a03a1183518069b98aa575f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 17740763777372a5eaed6941974c120860839279
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104771410"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106382706"
 ---
 # <a name="tutorial-discover-physical-servers-with-azure-migrate-discovery-and-assessment"></a>Zelf studie: fysieke servers detecteren met Azure Migrate: detectie en evaluatie
 
@@ -80,6 +80,9 @@ Als u net pas een gratis Azure-account hebt gemaakt, bent u de eigenaar van uw a
 Stel een account in dat het apparaat kan gebruiken om toegang te krijgen tot de fysieke servers.
 
 - Voor **Windows-servers** gebruikt u een domein account voor servers die lid zijn van een domein en een lokaal account voor een server die geen lid is van een domein. Het gebruikersaccount moet worden toegevoegd aan deze groepen: Gebruikers van extern beheer, prestatiemetergebruikers en gebruikers van prestatielogboeken.
+    > [!Note]
+    > Voor Windows Server 2008 en 2008 R2 moet u controleren of WMF 3,0 is geïnstalleerd op de servers en het domein/lokale account dat wordt gebruikt voor toegang tot de servers wordt toegevoegd aan deze groepen: prestatie meter gebruikers, prestatie logboek gebruikers en WinRMRemoteWMIUsers.
+
 - Voor **Linux-servers** hebt u een hoofd account nodig op de Linux-servers die u wilt detecteren. U kunt ook een zich niet in de hoofdmap bevindend account met de vereiste mogelijkheden instellen met behulp van de volgende opdrachten:
 
 **Opdracht** | **Doel**

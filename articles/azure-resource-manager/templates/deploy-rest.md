@@ -3,12 +3,12 @@ title: Resources implementeren met REST API en sjabloon
 description: Gebruik Azure Resource Manager en Resource Manager-REST API om resources te implementeren in Azure. De resources zijn gedefinieerd in een Resource Manager-sjabloon.
 ms.topic: conceptual
 ms.date: 10/22/2020
-ms.openlocfilehash: e688d7abfaca442c3de395d25961b4e81e6c7b24
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.openlocfilehash: 90e50598176ddc0327a81df105740f58afd930bc
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104889192"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105732564"
 ---
 # <a name="deploy-resources-with-arm-templates-and-azure-resource-manager-rest-api"></a>Resources implementeren met ARM-sjablonen en Azure Resource Manager REST API
 
@@ -20,13 +20,13 @@ U kunt uw sjabloon insluiten in de hoofd tekst van de aanvraag of een koppeling 
 
 U kunt uw implementatie richten op een resource groep, een Azure-abonnement, een beheer groep of een Tenant. Afhankelijk van het bereik van de implementatie, gebruikt u verschillende opdrachten.
 
-- Gebruik [implementaties-maken](/rest/api/resources/deployments/createorupdate)om te implementeren in een **resource groep**. De aanvraag wordt verzonden naar:
+- Gebruik [implementaties-maken](/rest/api/resources/resources/deployments/createorupdate)om te implementeren in een **resource groep**. De aanvraag wordt verzonden naar:
 
   ```HTTP
   PUT https://management.azure.com/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}?api-version=2020-10-01
   ```
 
-- Als u wilt implementeren in een **abonnement**, gebruikt u [implementaties-maken bij abonnements bereik](/rest/api/resources/deployments/createorupdateatsubscriptionscope). De aanvraag wordt verzonden naar:
+- Als u wilt implementeren in een **abonnement**, gebruikt u [implementaties-maken bij abonnements bereik](/rest/api/resources/resources/deployments/createorupdateatsubscriptionscope). De aanvraag wordt verzonden naar:
 
   ```HTTP
   PUT https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}?api-version=2020-10-01
@@ -34,7 +34,7 @@ U kunt uw implementatie richten op een resource groep, een Azure-abonnement, een
 
   Zie [resource groepen en-resources op abonnements niveau maken](deploy-to-subscription.md)voor meer informatie over implementaties op abonnements niveau.
 
-- Als u wilt implementeren in een **beheer groep**, gebruikt u [implementaties-maken voor het bereik van de beheer groep](/rest/api/resources/deployments/createorupdateatmanagementgroupscope). De aanvraag wordt verzonden naar:
+- Als u wilt implementeren in een **beheer groep**, gebruikt u [implementaties-maken voor het bereik van de beheer groep](/rest/api/resources/resources/deployments/createorupdateatmanagementgroupscope). De aanvraag wordt verzonden naar:
 
   ```HTTP
   PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}?api-version=2020-10-01
@@ -42,7 +42,7 @@ U kunt uw implementatie richten op een resource groep, een Azure-abonnement, een
 
   Zie [resources maken op het niveau van de beheer groep](deploy-to-management-group.md)voor meer informatie over implementaties op het niveau van beheer groepen.
 
-- Als u wilt implementeren in een **Tenant**, gebruikt u [implementaties-maken of bijwerken in het Tenant bereik](/rest/api/resources/deployments/createorupdateattenantscope). De aanvraag wordt verzonden naar:
+- Als u wilt implementeren in een **Tenant**, gebruikt u [implementaties-maken of bijwerken in het Tenant bereik](/rest/api/resources/resources/deployments/createorupdateattenantscope). De aanvraag wordt verzonden naar:
 
   ```HTTP
   PUT https://management.azure.com/providers/Microsoft.Resources/deployments/{deploymentName}?api-version=2020-10-01
@@ -56,7 +56,7 @@ In de voor beelden in dit artikel worden de implementaties van resource groepen 
 
 1. [Algemene para meters en kopteksten](/rest/api/azure/)instellen, inclusief verificatie tokens.
 
-1. Als u implementeert in een resource groep die niet bestaat, maakt u de resource groep. Geef uw abonnements-ID, de naam van de nieuwe resource groep en de locatie op die u nodig hebt voor uw oplossing. Zie [een resource groep maken](/rest/api/resources/resourcegroups/createorupdate)voor meer informatie.
+1. Als u implementeert in een resource groep die niet bestaat, maakt u de resource groep. Geef uw abonnements-ID, de naam van de nieuwe resource groep en de locatie op die u nodig hebt voor uw oplossing. Zie [een resource groep maken](/rest/api/resources/resources/resourcegroups/createorupdate)voor meer informatie.
 
    ```HTTP
    PUT https://management.azure.com/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>?api-version=2020-06-01
@@ -189,7 +189,7 @@ In de voor beelden in dit artikel worden de implementaties van resource groepen 
    }
    ```
 
-1. Gebruik [implementaties-ophalen](/rest/api/resources/deployments/get)om de status van de sjabloon implementatie te verkrijgen.
+1. Gebruik [implementaties-ophalen](/rest/api/resources/resources/deployments/get)om de status van de sjabloon implementatie te verkrijgen.
 
    ```HTTP
    GET https://management.azure.com/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}?api-version=2020-10-01

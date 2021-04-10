@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 8c6d26de62364b6aca671d1e4283a01c1b78c397
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1695e7aa0a202a5946f9038049b51c6a8fd45ad5
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "95014829"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105934662"
 ---
 # <a name="tenant-and-host-pool-creation-in-windows-virtual-desktop-classic"></a>Tenant en hostgroep maken in Windows virtueel bureau blad (klassiek)
 
@@ -31,11 +31,11 @@ Als u de Windows 10 Enter prise-installatie kopie voor meerdere sessies wilt geb
 > [!div class="mx-imgBorder"]
 > ![Een scherm opname van het selecteren van Windows 10 Enter prise voor virtuele Bureau bladen, versie 1809.](../media/AzureMarketPlace.png)
 
-## <a name="creating-windows-virtual-desktop-tenant"></a>Tenant voor Windows virtueel bureau blad maken
+## <a name="creating-windows-virtual-desktop-tenant&quot;></a>Tenant voor Windows virtueel bureau blad maken
 
 In deze sectie worden mogelijke problemen beschreven bij het maken van de virtuele bureau blad-Tenant van Windows.
 
-### <a name="error-aadsts650052-the-app-needs-access-to-a-service"></a>Fout: de app heeft toegang tot een service nodig voor de AADSTS650052.
+### <a name=&quot;error-aadsts650052-the-app-needs-access-to-a-service&quot;></a>Fout: de app heeft toegang tot een service nodig voor de AADSTS650052.
 
 Voor beeld van onbewerkte fout:
 
@@ -406,7 +406,7 @@ Als u de GitHub-Azure Resource Manager sjabloon uitvoert, geeft u waarden op voo
 
 ### <a name="error-vmsubnet-not-available-when-configuring-virtual-networks"></a>Fout: het VM-subnet is niet beschikbaar bij het configureren van virtuele netwerken
 
-**Oorzaak:** In de sjabloon WVD Marketplace worden alleen subnetten weer gegeven met ten minste zoveel IP-adressen als het totale aantal virtuele machines dat is opgegeven in de sjabloon. Het werkelijke aantal beschik bare IP-adressen in het subnet hoeft alleen gelijk te zijn aan het aantal nieuwe Vm's dat wordt geïmplementeerd, maar dit kan niet worden berekend door de huidige gebruikers interface.
+**Oorzaak:** In de Windows-sjabloon voor virtueel bureau blad Marketplace worden alleen subnetten weer gegeven met ten minste zoveel IP-adressen als het totale aantal virtuele machines dat is opgegeven in de sjabloon. Het werkelijke aantal beschik bare IP-adressen in het subnet hoeft alleen gelijk te zijn aan het aantal nieuwe Vm's dat wordt geïmplementeerd, maar dit kan niet worden berekend door de huidige gebruikers interface.
 
 **Oplossen:** U kunt een subnet opgeven met ten minste zoveel IP-adressen als het aantal Vm's dat wordt toegevoegd door niet gebruik te maken van de Marketplace-gebruikers interface. Dit kan worden gedaan door de naam van het subnet op te geven in de para meter "**existingSubnetName**" wanneer u [een bestaande implementatie opnieuw implementeert](expand-existing-host-pool-2019.md#redeploy-from-azure) of [implementeert met BEhulp van de onderliggende arm-sjabloon van github](create-host-pools-arm-template.md#run-the-azure-resource-manager-template-for-provisioning-a-new-host-pool).
 

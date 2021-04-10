@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/28/2020
 ms.author: duau
-ms.openlocfilehash: 4cbeea8ad20d41daff3d4ad086a36df5e988991f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: dd56740b7153cdbafdfa847a22d34b57f862cdf3
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "91449242"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106550737"
 ---
 # <a name="health-probes"></a>Statuscontroles
 
@@ -24,6 +24,9 @@ Om de status en nabijheid van elke back-end voor een bepaalde front-deur omgevin
 
 > [!WARNING]
 > Omdat de voor deur veel van de meeste Edge-omgevingen heeft, kan het status controlevolume voor uw back-ends voor elke minuut een hoge mate van 25 aanvragen tot Maxi maal 1200 aanvragen per minuut hebben, afhankelijk van de geconfigureerde Health probe-frequentie. Met de standaard test frequentie van 30 seconden moet het test volume op uw back-end ongeveer 200 aanvragen per minuut bedragen.
+
+> [!NOTE]
+> HTTP/HTTPS-tests voor de voor deur worden verzonden met een `User-Agent` headerset met de waarde: `Edge Health Probes` . 
 
 ## <a name="supported-protocols"></a>Ondersteunde protocollen
 
@@ -41,7 +44,7 @@ De voor deur ondersteunt de volgende HTTP-methoden voor het verzenden van de sta
 
 ## <a name="health-probe-responses"></a>Antwoorden op status testen
 
-| Antwoorden  | Description | 
+| Antwoorden  | Beschrijving | 
 | ------------- | ------------- |
 | Status bepalen  |  Een 200 OK-status code geeft aan dat de back-end in orde is. Alle andere zaken worden beschouwd als een fout. Als er om een of andere reden (inclusief netwerk fout) geen geldig HTTP-antwoord voor een test wordt ontvangen, wordt de test als een fout beschouwd.|
 | Meet latentie  | Latentie is de klok tijd gemeten vanaf het moment onmiddellijk voordat de test aanvraag wordt verzonden naar het moment dat de laatste byte van het antwoord wordt ontvangen. We gebruiken een nieuwe TCP-verbinding voor elke aanvraag, zodat deze meting niet wordt afgestemd op back-ends met bestaande warme verbindingen.  |

@@ -5,14 +5,14 @@ author: vhorne
 ms.service: firewall-manager
 services: firewall-manager
 ms.topic: conceptual
-ms.date: 12/01/2020
+ms.date: 03/29/2021
 ms.author: victorh
-ms.openlocfilehash: 923c6b685d20ff68788e7d9cfcb45ebaecb535e3
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: e955c6b760c06ce802dfae0193d34954eab99892
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96490105"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105731085"
 ---
 # <a name="what-are-security-partner-providers"></a>Wat zijn beveiligingspartnerproviders?
 
@@ -30,17 +30,22 @@ De ondersteunde beveiligings partners zijn **Zscaler**, **[Check Point](check-po
 
 U kunt de beveiligings partners gebruiken voor het filteren van Internet verkeer in de volgende scenario's:
 
-- Virtual Network (VNet) naar Internet
+- Virtual Network (VNet)-naar-Internet
 
-   Maak gebruik van geavanceerde op de gebruiker gerichte internetbeveiliging voor uw cloudworkloads die in Azure worden uitgevoerd.
+   Gebruik geavanceerde gebruikers bewuste Internet bescherming voor uw Cloud werkbelastingen die worden uitgevoerd op Azure.
 
-- Vertakking op Internet
+- Vertakking-naar-Internet
 
-   Maak gebruik van uw Azure-connectiviteit en wereld wijde distributie om eenvoudig NSaaS-filters van derden voor branch toe te voegen aan Internet scenario's. U kunt uw wereld wijde doorvoer netwerk en beveiligings rand maken met behulp van Azure Virtual WAN.
+   Gebruik uw Azure-connectiviteit en wereld wijde distributie om eenvoudig NSaaS-filters van derden toe te voegen voor branches aan Internet scenario's. U kunt uw wereld wijde doorvoer netwerk en beveiligings rand maken met behulp van Azure Virtual WAN.
 
 De volgende scenario's worden ondersteund:
-- VNet/vertakking met Internet via een beveiligings partner provider en het andere verkeer (spoke to spoke, spoke to Branch, Branch to spoke) via Azure Firewall.
-- VNet/vertakking naar Internet via de provider van de beveiligings partner
+- Twee beveiligings providers in de hub
+
+   VNet/vertakking-naar-Internet via een beveiligings partner provider en het andere verkeer (spoke-to-spoke, spoke-to-Branch, vertakking-naar-spoke) via Azure Firewall.
+- Eén provider in de hub
+
+   - Al het verkeer (spoke-to-spoke, spoke-to-Branch, vertakking-naar-spoke, VNet/vertakking-naar-Internet) dat wordt beveiligd door Azure Firewall
+   - VNet/vertakking-naar-Internet via security partner provider
 
 ## <a name="best-practices-for-internet-traffic-filtering-in-secured-virtual-hubs"></a>Aanbevolen procedures voor het filteren van Internet verkeer in beveiligde virtuele hubs
 

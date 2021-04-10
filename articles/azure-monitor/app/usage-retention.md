@@ -7,10 +7,10 @@ ms.author: daviste
 ms.date: 05/03/2017
 ms.reviewer: mbullwin
 ms.openlocfilehash: 45f3a7152add8d64d961feb055413760df01eb94
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105025608"
 ---
 # <a name="user-retention-analysis-for-web-applications-with-application-insights"></a>Analyse van gebruikers retentie voor webtoepassingen met Application Insights
@@ -36,7 +36,7 @@ Als u de gegevens in het hulp programma voor retentie nog niet ziet in de Applic
 
 Gebruikers kunnen met de muis aanwijzer over cellen op het retentie hulpprogramma klikken om toegang te krijgen tot de analyse knop en tool tips waarin wordt uitgelegd wat de cel betekent. De analyse knop neemt gebruikers in het analyse hulpprogramma met een vooraf gevulde query om gebruikers uit de cel te genereren. 
 
-## <a name="use-business-events-to-track-retention"></a>Zakelijke gebeurtenissen gebruiken om Bewaar perioden bij te houden
+## <a name="use-business-events-to-track-retention&quot;></a>Zakelijke gebeurtenissen gebruiken om Bewaar perioden bij te houden
 
 Meet gebeurtenissen die belang rijke bedrijfs activiteiten vertegenwoordigen om de meest nuttige analyse van de Bewaar periode te verkrijgen. 
 
@@ -45,7 +45,7 @@ Veel gebruikers kunnen bijvoorbeeld een pagina in uw app openen zonder het spel 
 Het is een goed idee om aangepaste gebeurtenissen te coderen die belang rijke zakelijke acties vertegenwoordigen en deze te gebruiken voor de retentie analyse. Als u het resultaat van het spel wilt vastleggen, moet u een regel code schrijven om een aangepaste gebeurtenis naar Application Insights te verzenden. Als u het bestand in de webpagina code of in Node.JS schrijft, ziet het er als volgt uit:
 
 ```JavaScript
-    appinsights.trackEvent("won game");
+    appinsights.trackEvent(&quot;won game");
 ```
 
 Of in ASP.NET-Server code:

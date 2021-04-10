@@ -10,10 +10,10 @@ ms.author: rolyon
 ms.date: 03/15/2021
 ms.custom: generated
 ms.openlocfilehash: ba5340fdc12bf3141c5e3f24b6b9d178a5db600d
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104602516"
 ---
 # <a name="azure-built-in-roles"></a>Ingebouwde Azure-rollen
@@ -140,7 +140,7 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Cognitive Services QnA Maker editor](#cognitive-services-qna-maker-editor) | U kunt een KB maken, bewerken, importeren en exporteren. U kunt geen KB publiceren of verwijderen. | f4cc2bf9-21be-47a1-bdf1-5c5804381025 |
 > | [QnA Maker lezer Cognitive Services](#cognitive-services-qna-maker-reader) | Laten we alleen een KB lezen en testen. | 466ccd10-b268-4a11-b098-b4849f024126 |
 > | [Cognitive Services gebruiker](#cognitive-services-user) | Hiermee kunt u de sleutels van Cognitive Services lezen en weer geven. | a97b65f3-24c7-4388-baec-2e87135dc908 |
-> | **Internet of things** |  |  |
+> | **Internet der dingen** |  |  |
 > | [Beheerder apparaat bijwerken](#device-update-administrator) | Biedt volledige toegang tot beheer-en inhouds bewerkingen | 02ca0879-e8e4-47a5-a61e-5c618b76e64a |
 > | [Beheerder van de inhoud van het apparaat bijwerken](#device-update-content-administrator) | Biedt volledige toegang tot inhouds bewerkingen | 0378884a-3af5-44ab-8323-f5b22f9f3c98 |
 > | [Lezer inhoud apparaat bijwerken](#device-update-content-reader) | Hiermee krijgt u lees toegang tot inhouds bewerkingen, maar kunt u geen wijzigingen aanbrengen | d1ee9a80-8b14-47f0-bdc2-f4a351625a7b |

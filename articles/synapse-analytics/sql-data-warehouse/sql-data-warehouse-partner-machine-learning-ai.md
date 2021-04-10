@@ -12,10 +12,10 @@ ms.author: procha
 ms.reviewer: charlesf
 ms.custom: seo-lt-2019
 ms.openlocfilehash: 80b01eb78d6dfb0d1629eb73bf86c76e3dc4e32f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98249143"
 ---
 # <a name="azure-synapse-analytics-machine-learning-and-ai-partners"></a>machine learning-en AI-partners voor Azure Synapse Analytics
@@ -23,7 +23,7 @@ ms.locfileid: "98249143"
 In dit artikel worden micro soft-partners beschreven met machine learning en kunst matige intelligentie tools en oplossingen die Azure Synapse Analytics ondersteunen.
 
 ## <a name="machine-learning-and-ai-partners"></a>Machine learning-en AI-partners
-| Partner | Beschrijving | Website/product koppeling |
+| Partner | Description | Website/product koppeling |
 | ------- | ----------- | -------------------- |
 | ![Dataiku](./media/sql-data-warehouse-partner-machine-learning-and-ai/dataiku-logo.png) |**Dataiku**<br>Dataiku is het gecentraliseerde gegevens platform waarmee bedrijven worden verplaatst naar hun gegevens vanuit Analytics op schaal naar Enter prise AI, self-service analyses en de uitoefening van machine learning modellen in productie. |[Product pagina](https://www.dataiku.com/partners/microsoft/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/dataiku.dataiku-data-science-studio)<br> |
 | ![MATLAB](./media/sql-data-warehouse-partner-machine-learning-and-ai/mathworks-logo.png) |**MATLAB**<br>MATLAB® is een programmeer platform dat is ontworpen voor technici en wetenschappers. De oplossing combineert een bureaublad omgeving die is afgestemd op iteratieve analyse en ontwerp processen met een programmeer taal waarin de wiskunde van de matrix en de array direct worden uitgedrukt. Miljoenen wereld wijd gebruik MATLAB voor diverse toepassingen, waaronder machine learning, diep leren, het verwerken van signalen, besturings systemen en reken Financiën. |[Product pagina](https://www.mathworks.com/products/database.html)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mathworks-inc.matlab-byol?tab=Overview)<br> |

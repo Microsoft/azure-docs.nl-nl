@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 05/25/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: a24b8b18dd109f1d8ed5acaa7de55ce5a3cc1eb9
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 261dceb70a6059c76dbe3bd1d7636eee5d9d77bc
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102201104"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936288"
 ---
 # <a name="use-the-azure-digital-twins-cli"></a>De Azure Digital Twins-CLI gebruiken
 
@@ -50,9 +50,13 @@ Zie [*de Azure cli installeren*](/cli/azure/install-azure-cli)voor instructies o
 
 ### <a name="get-the-extension"></a>De uitbrei ding ophalen
 
-Met deze stappen kunt u ervoor zorgen dat u de meest recente versie van de `azure-iot` uitbrei ding hebt. U kunt deze opdrachten uitvoeren in de [Azure Cloud shell](../cloud-shell/overview.md) of een [lokale Azure cli](/cli/azure/install-azure-cli).
+De Azure CLI vraagt u automatisch om de uitbrei ding te installeren op het eerste gebruik van een opdracht waarvoor deze is vereist.
 
-[!INCLUDE [digital-twins-cloud-shell-extensions.md](../../includes/digital-twins-cloud-shell-extensions.md)]
+U kunt ook de volgende opdracht gebruiken om de uitbrei ding op elk gewenst moment te installeren (of de extensie bij te werken als deze al een oudere versie heeft). De opdracht kan worden uitgevoerd in de [Azure Cloud shell](../cloud-shell/overview.md) of op een [lokale Azure cli](/cli/azure/install-azure-cli).
+
+```azurecli-interactive
+az extension add --upgrade -n azure-iot
+```
 
 ## <a name="next-steps"></a>Volgende stappen
 

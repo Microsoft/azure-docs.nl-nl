@@ -3,17 +3,18 @@ title: Een Cloud service (klassiek) configureren-Portal | Microsoft Docs
 description: Meer informatie over het configureren van Cloud Services in Azure. Meer informatie over het bijwerken van de configuratie van de Cloud service en het configureren van externe toegang tot rolinstanties. In deze voor beelden wordt gebruikgemaakt van de Azure Portal.
 ms.topic: article
 ms.service: cloud-services
+ms.subservice: deployment-files
 ms.date: 10/14/2020
 ms.author: tagore
 author: tanmaygore
 ms.reviewer: mimckitt
 ms.custom: ''
-ms.openlocfilehash: f16fcfe227663958279281659b09929a4cd2d386
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: adb2066b12a57630a7615d1bc2a8989f022b0de7
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98743420"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105935956"
 ---
 # <a name="how-to-configure-and-azure-cloud-service-classic"></a>De configuratie en Azure-Cloud service (klassiek)
 

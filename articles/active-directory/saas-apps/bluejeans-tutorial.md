@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 06/09/2020
 ms.author: jeedes
 ms.openlocfilehash: a920abacb0df030f7d38aed11e04a693cfa352a6
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101686570"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-bluejeans-for-azure-ad"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met BlueJeans voor Azure AD
@@ -144,13 +144,13 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-## <a name="configure-bluejeans-for-azure-ad-sso"></a>Eenmalige aanmelding voor BlueJeans voor Azure AD configureren
+## <a name="configure-bluejeans-for-azure-ad-sso&quot;></a>Eenmalige aanmelding voor BlueJeans voor Azure AD configureren
 
 1. Meld u in een ander webbrowservenster bij uw **BlueJeans voor Azure AD**-bedrijfssite aan als beheerder.
 
 2. Ga naar **ADMIN \> GROEPSINSTELLINGEN \> BEVEILIGING**.
 
-    ![Schermopname die een deel van een browservenster toont waarin het tabblad Admin is geselecteerd en Groepsinstellingen en Beveiliging zijn geselecteerd.](./media/bluejeans-tutorial/ic785868.png "Beheerder")
+    ![Schermopname die een deel van een browservenster toont waarin het tabblad Admin is geselecteerd en Groepsinstellingen en Beveiliging zijn geselecteerd.](./media/bluejeans-tutorial/ic785868.png &quot;Beheerder")
 
 3. Voer in het gedeelte **BEVEILIGING** de volgende stappen uit:
 

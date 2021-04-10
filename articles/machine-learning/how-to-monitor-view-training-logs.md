@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 47531da9c1e508281a57074df7aa10ffffe78810
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: c258ac62617cb6ac954e0b8c59928225c7f477b1
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102518735"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105935567"
 ---
 # <a name="monitor-and-view-ml-run-logs-and-metrics"></a>MILLILITERs logboeken en-metrische gegevens bewaken en weer geven
 
@@ -110,15 +110,16 @@ U kunt ook de tabel uitvoerings lijst bewerken om meerdere uitvoeringen te selec
 
 ![Details uitvoeren in de Azure Machine Learning Studio](media/how-to-track-experiments/experimentation-tab.gif)
 
-### <a name="view-log-files-for-a-run"></a>Logboek bestanden weer geven voor een uitvoering 
+### <a name="view-and-download-log-files-for-a-run"></a>Logboek bestanden voor een uitvoering bekijken en downloaden 
 
 Logboek bestanden zijn een essentiële bron voor het opsporen van fouten in de Azure ML-workloads. Inzoomen op een specifieke uitvoering om de logboeken en uitvoer weer te geven:  
 
 1. Navigeer naar het tabblad **experimenten** .
 1. Selecteer de runID voor een specifieke uitvoering.
 1. Selecteer **uitvoer en logboeken** boven aan de pagina.
+2. Selecteer **alles downloaden** om al uw logboeken te downloaden naar een zip-map.
 
-:::image type="content" source="media/how-to-monitor-view-training-logs/view-logs.png" alt-text="Scherm afbeelding van de sectie uitvoer en logboeken van een uitvoering":::
+:::image type="content" source="media/how-to-monitor-view-training-logs/download-logs.png" alt-text="Scherm afbeelding van de sectie uitvoer en logboeken van een uitvoering.":::
 
 In de volgende tabellen ziet u de inhoud van de logboek bestanden in de mappen die in deze sectie worden weer gegeven.
 

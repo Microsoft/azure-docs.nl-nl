@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 03/02/2020
 ms.author: alkohli
 ms.openlocfilehash: 8b36bb34f4c9081d807998cb8287797443625a6b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96460300"
 ---
 # <a name="azure-stack-edge-pro-technical-specifications"></a>Technische specificaties van Azure Stack Edge Pro
@@ -45,7 +45,7 @@ Het Azure Stack Edge Pro-apparaat heeft twee 100-240 V-energievoedings eenheden 
 | Maximale uitvoer kracht    | 750 W                     |
 | Frequentie               | 50/60 Hz                   |
 | Selectie van voltage bereik | Automatisch variërend: 100-240 V AC |
-| Hot pluggable           | Ja                        |
+| Hot pluggable           | Yes                        |
 
 ### <a name="azure-stack-edge-pro-power-cord-specifications-by-region"></a>Specificaties van Azure Stack Edge Pro-stroom kabel per regio
 
@@ -60,13 +60,13 @@ The following table lists the typical power consumption data (actual values may 
 
 Uw Azure Stack Edge Pro-apparaat heeft zes netwerk interfaces, PORT1-PORT6.
 
-| Specificatie           | Beschrijving                 |
+| Specificatie           | Description                 |
 |-------------------------|----------------------------|
 |  Netwerkinterfaces    | 2 X 1 GbE-interfaces: Eén beheerinterface, niet configureerbaar door gebruikers, gebruikt voor eerste installatie. De andere gegevensinterface kan door gebruikers worden geconfigureerd, kan worden gebruikt voor gegevensoverdracht en is standaard DHCP. <br>2 X 25 GbE-interfaces: Deze kunnen ook als 10 GbE-interfaces werken. Deze gegevensinterfaces kunnen door gebruikers worden geconfigureerd als DHCP (standaard) of statisch. <br> 2 X 25 GbE-interfaces: Deze gegevensinterfaces kunnen door gebruikers worden geconfigureerd als DHCP (standaard) of statisch.                  |
 
 De gebruikte netwerk adapters zijn: 
 
-| Specificatie           | Beschrijving                 |
+| Specificatie           | Description                 |
 |-------------------------|----------------------------|
 |Kaart voor netwerk dochter (rNDC) |QLogic FastLinQ 41264 Dual Port 25GbE SFP +, Dual Port 1GbE, rNDC|
 |PCI-netwerk adapter |QLogic FastLinQ 41262 zwei poorten 25Gbit/s SFP28-adapter|

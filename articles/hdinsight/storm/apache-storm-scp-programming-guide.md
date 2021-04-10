@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive, devx-track-csharp
 ms.date: 01/13/2020
 ms.openlocfilehash: c993b3f70f609fb79c51ba9be08fa3d5dc7e8317
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104864105"
 ---
 # <a name="scp-programming-guide-for-apache-storm-in-azure-hdinsight"></a>SCP-programmeer gids voor Apache Storm in azure HDInsight
@@ -431,7 +431,7 @@ U kunt topologie specificaties rechtstreeks bij een storm-cluster indienen voor 
 
 SCP.NET heeft de volgende functies toegevoegd voor het definiëren van transactionele topologieën:
 
-| Nieuwe functie | Parameters | Beschrijving |
+| Nieuwe functie | Parameters | Description |
 | --- | --- | --- |
 | **TX-topolopy** |*topologie-naam*<br />*Spout-kaart*<br />*bout-kaart* |Hiermee wordt een transactionele topologie gedefinieerd met de naam van de topologie, de spouts-definitie en de definitie toewijzing van de schicht. |
 | **SCP-TX-Spout** |*exec-naam*<br />*argumenten*<br />*bedragvelden* |Hiermee wordt een transactionele Spout gedefinieerd. De functie voert de toepassing uit die is opgegeven door *exec-name* en gebruikt *argumenten*.<br /><br />Met de para meter *Fields* geeft u de uitvoer velden voor de Spout op. |
@@ -443,7 +443,7 @@ SCP.NET heeft de volgende functies toegevoegd voor het definiëren van transacti
 
 SCP.NET definieert de volgende sleutel woorden:
 
-| Zoek | Beschrijving |
+| Zoek | Description |
 | --- | --- |
 | **: naam** |De naam van de topologie |
 | **: topologie** |De topologie met behulp van de functies in de vorige tabel en ingebouwde functies |

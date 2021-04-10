@@ -4,10 +4,10 @@ description: Meer informatie over hoe u een NSX-T-netwerksegment kunt maken om v
 ms.topic: tutorial
 ms.date: 03/13/2021
 ms.openlocfilehash: 9125e552f9641a2d26b9584b66a4447f9c152161
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103462117"
 ---
 # <a name="tutorial-add-a-network-segment-in-azure-vmware-solution"></a>Zelfstudie: Een netwerksegment toevoegen in Azure VMware Solution 

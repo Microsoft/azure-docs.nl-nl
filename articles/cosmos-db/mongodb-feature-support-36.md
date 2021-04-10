@@ -8,10 +8,10 @@ ms.date: 03/02/2021
 author: sivethe
 ms.author: sivethe
 ms.openlocfilehash: 0b6f85a675dc98928309870ea177629203db39e7
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102557332"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb-36-version-supported-features-and-syntax"></a>De API van Azure Cosmos DB voor MongoDB (versie 3.6): ondersteunde functies en syntaxis
@@ -43,16 +43,16 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 
 | Opdracht | Ondersteund |
 |---------|---------|
-| [stroom wijzigen](mongodb-change-streams.md) | Ja |
+| [stroom wijzigen](mongodb-change-streams.md) | Yes |
 | delete | Ja |
-| eval | Nee |
+| eval | No |
 | find | Ja |
 | findAndModify | Ja |
 | getLastError | Ja |
 | getMore | Ja |
 | getPrevError | Nee |
 | insert | Ja |
-| parallelCollectionScan | Nee |
+| parallelCollectionScan | No |
 | resetError | Nee |
 | update | Ja |
 
@@ -127,16 +127,16 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 
 | Opdracht | Ondersteund |
 |---------|---------|
-| $addFields | Ja |
+| $addFields | Yes |
 | $bucket | Nee |
 | $bucketAuto | Nee |
-| $changeStream | Ja |
+| $changeStream | Yes |
 | $collStats | Nee |
 | $count | Ja |
 | $currentOp | Nee |
-| $facet | Ja |
-| $geoNear | Ja |
-| $graphLookup | Ja |
+| $facet | Yes |
+| $geoNear | Yes |
+| $graphLookup | Yes |
 | $group | Ja |
 | $indexStats | Nee |
 | $limit | Ja |
@@ -148,7 +148,7 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 | $project | Ja |
 | $redact | Ja |
 | $replaceRoot | Ja |
-| $replaceWith | Nee |
+| $replaceWith | No |
 | $sample | Ja |
 | $skip | Ja |
 | $sort | Ja |
@@ -258,7 +258,7 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 
 | Opdracht | Ondersteund |
 |---------|---------|
-| $map | Ja |
+| $map | Yes |
 | $let | Ja |
 
 ### <a name="system-variables"></a>Systeemvariabelen
@@ -326,8 +326,8 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 | $min | Ja |
 | $push | Ja |
 | $addToSet | Ja |
-| $stdDevPop | Ja |
-| $stdDevSamp | Ja |
+| $stdDevPop | Yes |
+| $stdDevSamp | Yes |
 
 ### <a name="merge-operator"></a>Operator voor samenvoegen
 

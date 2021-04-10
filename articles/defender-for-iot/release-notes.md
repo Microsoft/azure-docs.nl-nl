@@ -4,10 +4,10 @@ description: In dit artikel kunt u zien wat er nieuw is in de meest recente vers
 ms.topic: how-to
 ms.date: 03/14/2021
 ms.openlocfilehash: 970d46a76f125dcaf82491fdea877e6874e2384f
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104778692"
 ---
 # <a name="whats-new-in-azure-defender-for-iot"></a>Wat is er nieuw in azure Defender voor IoT?

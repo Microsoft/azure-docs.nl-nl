@@ -7,10 +7,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/12/2018
 ms.openlocfilehash: 9271723e68e5edd6805f0197bca9cdefc3c5e921
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100388325"
 ---
 # <a name="execute-wait-activity-in-azure-data-factory"></a>Wacht activiteit uitvoeren in Azure Data Factory
@@ -38,7 +38,7 @@ Eigenschap | Beschrijving | Toegestane waarden | Vereist
 -------- | ----------- | -------------- | --------
 naam | De naam van de `Wait` activiteit. | Tekenreeks | Ja
 type | Moet worden ingesteld op **wait**. | Tekenreeks | Ja
-waitTimeInSeconds | Het aantal seconden dat de pijp lijn wacht voordat de verwerking doorgaat. | Geheel getal | Ja
+waitTimeInSeconds | Het aantal seconden dat de pijp lijn wacht voordat de verwerking doorgaat. | Geheel getal | Yes
 
 ## <a name="example"></a>Voorbeeld
 

@@ -9,10 +9,10 @@ ms.date: 11/16/2020
 ms.author: chez
 ms.custom: include file
 ms.openlocfilehash: 10aa9b06af439fe701c53ef736ec691167560f95
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "102109345"
 ---
 Azure Data Factory is een service met meerdere tenants met de volgende standaardlimieten om ervoor te zorgen dat klantabonnementen worden beschermd tegen elkaars werkbelastingen. Neem contact op met de ondersteuning als u de limieten wilt verhogen tot de maximumwaarde voor uw abonnement.

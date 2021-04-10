@@ -8,10 +8,10 @@ ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
 ms.openlocfilehash: 33b1ad381b3f7865768f9e39295a2985f8aa5234
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100375099"
 ---
 # <a name="azure-data-factory---security-considerations-for-data-movement"></a>Azure Data Factory-beveiligings overwegingen voor gegevens verplaatsing
@@ -19,7 +19,7 @@ ms.locfileid: "100375099"
 > [!NOTE]
 > Dit artikel is van toepassing op versie 1 van Data Factory. Als u de huidige versie van de Data Factory-service gebruikt, raadpleegt u [beveiligings overwegingen voor gegevens verplaatsing voor Data Factory](../data-movement-security-considerations.md).
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 In dit artikel wordt een basis beveiligings infrastructuur beschreven die services voor gegevens verplaatsing in Azure Data Factory gebruiken om uw gegevens te beveiligen. Azure Data Factory beheer bronnen zijn gebaseerd op de Azure-beveiligings infrastructuur en gebruiken alle mogelijke beveiligings maatregelen die door Azure worden geboden.
 
 In een Data Factory-oplossing maakt u een of meer gegevens[pijplijnen](data-factory-create-pipelines.md). Een pijplijn is een logische groep activiteiten die samen een taak uitvoeren. Deze pijp lijnen bevinden zich in de regio waar de data factory is gemaakt. 
@@ -158,7 +158,7 @@ De volgende tabel bevat de **uitgaande poort** -en domein vereisten voor de **be
 
 De volgende tabel bevat de **Binnenkomende poort** vereisten voor de **Windows Firewall**.
 
-| Poorten voor inkomend verkeer | Beschrijving | 
+| Poorten voor inkomend verkeer | Description | 
 | ------------- | ----------- | 
 | 8050 (TCP) | Vereist door de Credential Manager-toepassing om veilig referenties in te stellen voor on-premises gegevens archieven op de gateway. | 
 

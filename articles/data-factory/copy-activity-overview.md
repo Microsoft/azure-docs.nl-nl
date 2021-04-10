@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 10/12/2020
 ms.author: jingwang
 ms.openlocfilehash: d52a0bba5fddaa865b8fad74b778ba7a3838b2a4
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100387900"
 ---
 # <a name="copy-activity-in-azure-data-factory"></a>Kopieer activiteit in Azure Data Factory
@@ -124,18 +124,18 @@ De volgende sjabloon van een Kopieer activiteit bevat een volledige lijst met on
 
 | Eigenschap | Beschrijving | Vereist? |
 |:--- |:--- |:--- |
-| type | Stel voor een Kopieer activiteit in op `Copy` | Ja |
-| invoer | Geef de gegevensset op die u hebt gemaakt die verwijst naar de bron gegevens. De Kopieer activiteit ondersteunt slechts één invoer. | Ja |
-| uitvoer | Geef de gegevensset op die u hebt gemaakt die verwijst naar de Sink-gegevens. De Kopieer activiteit ondersteunt slechts één uitvoer. | Ja |
-| typeProperties | Geef eigenschappen op voor het configureren van de Kopieer activiteit. | Ja |
-| source | Geef het type Kopieer bron en de bijbehorende eigenschappen op om gegevens op te halen.<br/>Zie voor meer informatie de sectie ' eigenschappen van de Kopieer activiteit ' in het connector artikel dat wordt vermeld in [ondersteunde gegevens archieven en-indelingen](#supported-data-stores-and-formats). | Ja |
-| tenen | Geef het sink-type voor het kopiëren en de bijbehorende eigenschappen op voor het schrijven van gegevens.<br/>Zie voor meer informatie de sectie ' eigenschappen van de Kopieer activiteit ' in het connector artikel dat wordt vermeld in [ondersteunde gegevens archieven en-indelingen](#supported-data-stores-and-formats). | Ja |
-| vertalen | Geef expliciete kolom toewijzingen op van de bron naar de sink. Deze eigenschap is van toepassing wanneer het standaard gedrag voor kopiëren niet aan uw behoeften voldoet.<br/>Zie [schema toewijzing in de Kopieer activiteit](copy-activity-schema-and-type-mapping.md)voor meer informatie. | Nee |
-| dataIntegrationUnits | Geef een meting op die staat voor de hoeveelheid kracht die de [Azure Integration runtime](concepts-integration-runtime.md) gebruikt voor het kopiëren van gegevens. Deze eenheden waren voorheen bekend als DMU (Cloud data units). <br/>Zie [gegevens integratie-eenheden](copy-activity-performance-features.md#data-integration-units)voor meer informatie. | Nee |
-| parallelCopies | Geef de parallelle factor op die de Kopieer activiteit moet gebruiken bij het lezen van gegevens van de bron en het schrijven van gegevens naar de sink.<br/>Zie [parallelle kopie](copy-activity-performance-features.md#parallel-copy)voor meer informatie. | Nee |
-| doordat | Opgeven of meta gegevens/Acl's tijdens het kopiëren van de gegevens moeten worden bewaard. <br/>Zie [meta gegevens behouden](copy-activity-preserve-metadata.md)voor meer informatie. |Nee |
-| enableStaging<br/>stagingSettings | Geef op of de tussenliggende gegevens in Blob Storage moeten worden gestage in plaats van gegevens rechtstreeks van bron naar sink te kopiëren.<br/>Zie voor meer informatie over nuttige scenario's en configuratie Details [gefaseerde kopie](copy-activity-performance-features.md#staged-copy). | Nee |
-| enableSkipIncompatibleRow<br/>redirectIncompatibleRowSettings| Kies hoe u incompatibele rijen wilt verwerken wanneer u gegevens kopieert van bron naar sink.<br/>Zie [fout tolerantie](copy-activity-fault-tolerance.md)voor meer informatie. | Nee |
+| type | Stel voor een Kopieer activiteit in op `Copy` | Yes |
+| invoer | Geef de gegevensset op die u hebt gemaakt die verwijst naar de bron gegevens. De Kopieer activiteit ondersteunt slechts één invoer. | Yes |
+| uitvoer | Geef de gegevensset op die u hebt gemaakt die verwijst naar de Sink-gegevens. De Kopieer activiteit ondersteunt slechts één uitvoer. | Yes |
+| typeProperties | Geef eigenschappen op voor het configureren van de Kopieer activiteit. | Yes |
+| source | Geef het type Kopieer bron en de bijbehorende eigenschappen op om gegevens op te halen.<br/>Zie voor meer informatie de sectie ' eigenschappen van de Kopieer activiteit ' in het connector artikel dat wordt vermeld in [ondersteunde gegevens archieven en-indelingen](#supported-data-stores-and-formats). | Yes |
+| tenen | Geef het sink-type voor het kopiëren en de bijbehorende eigenschappen op voor het schrijven van gegevens.<br/>Zie voor meer informatie de sectie ' eigenschappen van de Kopieer activiteit ' in het connector artikel dat wordt vermeld in [ondersteunde gegevens archieven en-indelingen](#supported-data-stores-and-formats). | Yes |
+| vertalen | Geef expliciete kolom toewijzingen op van de bron naar de sink. Deze eigenschap is van toepassing wanneer het standaard gedrag voor kopiëren niet aan uw behoeften voldoet.<br/>Zie [schema toewijzing in de Kopieer activiteit](copy-activity-schema-and-type-mapping.md)voor meer informatie. | No |
+| dataIntegrationUnits | Geef een meting op die staat voor de hoeveelheid kracht die de [Azure Integration runtime](concepts-integration-runtime.md) gebruikt voor het kopiëren van gegevens. Deze eenheden waren voorheen bekend als DMU (Cloud data units). <br/>Zie [gegevens integratie-eenheden](copy-activity-performance-features.md#data-integration-units)voor meer informatie. | No |
+| parallelCopies | Geef de parallelle factor op die de Kopieer activiteit moet gebruiken bij het lezen van gegevens van de bron en het schrijven van gegevens naar de sink.<br/>Zie [parallelle kopie](copy-activity-performance-features.md#parallel-copy)voor meer informatie. | No |
+| doordat | Opgeven of meta gegevens/Acl's tijdens het kopiëren van de gegevens moeten worden bewaard. <br/>Zie [meta gegevens behouden](copy-activity-preserve-metadata.md)voor meer informatie. |No |
+| enableStaging<br/>stagingSettings | Geef op of de tussenliggende gegevens in Blob Storage moeten worden gestage in plaats van gegevens rechtstreeks van bron naar sink te kopiëren.<br/>Zie voor meer informatie over nuttige scenario's en configuratie Details [gefaseerde kopie](copy-activity-performance-features.md#staged-copy). | No |
+| enableSkipIncompatibleRow<br/>redirectIncompatibleRowSettings| Kies hoe u incompatibele rijen wilt verwerken wanneer u gegevens kopieert van bron naar sink.<br/>Zie [fout tolerantie](copy-activity-fault-tolerance.md)voor meer informatie. | No |
 
 ## <a name="monitoring"></a>Bewaking
 
@@ -196,7 +196,7 @@ Als u het programma wilt configureren, voegt u de eigenschap toe aan de `additio
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| additionalColumns | Voeg aanvullende gegevens kolommen toe om te kopiëren naar sink.<br><br>Elk object onder de `additionalColumns` matrix vertegenwoordigt een extra kolom. `name`Hiermee wordt de naam van de kolom gedefinieerd en `value` wordt de waarde van de gegevens van die kolom aangegeven.<br><br>Toegestane gegevens waarden zijn:<br>- **`$$FILEPATH`** -een gereserveerde variabele geeft aan dat het relatieve pad van de bron bestanden moet worden opgeslagen in het mappad dat is opgegeven in de gegevensset. Toep assen op de bron op basis van een bestand.<br>- **`$$COLUMN:<source_column_name>`** -een gereserveerde variabelen patroon geeft aan dat de opgegeven bron kolom moet worden gedupliceerd als een andere kolom<br>- **Expressie**<br>- **Statische waarde** | Nee |
+| additionalColumns | Voeg aanvullende gegevens kolommen toe om te kopiëren naar sink.<br><br>Elk object onder de `additionalColumns` matrix vertegenwoordigt een extra kolom. `name`Hiermee wordt de naam van de kolom gedefinieerd en `value` wordt de waarde van de gegevens van die kolom aangegeven.<br><br>Toegestane gegevens waarden zijn:<br>- **`$$FILEPATH`** -een gereserveerde variabele geeft aan dat het relatieve pad van de bron bestanden moet worden opgeslagen in het mappad dat is opgegeven in de gegevensset. Toep assen op de bron op basis van een bestand.<br>- **`$$COLUMN:<source_column_name>`** -een gereserveerde variabelen patroon geeft aan dat de opgegeven bron kolom moet worden gedupliceerd als een andere kolom<br>- **Expressie**<br>- **Statische waarde** | No |
 
 **Voorbeeld:**
 

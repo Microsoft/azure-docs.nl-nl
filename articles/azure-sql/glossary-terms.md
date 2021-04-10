@@ -13,10 +13,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/09/2020
 ms.openlocfilehash: 8bd1e312463cf89ae30d54bc4a32a497fc7a9a78
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98249649"
 ---
 # <a name="azure-sql-database-glossary-of-terms"></a>Woorden lijst met termen Azure SQL Database
@@ -29,7 +29,7 @@ ms.locfileid: "98249649"
 |Azure-service|Azure SQL Database of SQL Database|[Azure SQL Database](database/sql-database-paas-overview.md)|
 |Aankoopmodel|Op DTU gebaseerd inkoop model|[Op DTU gebaseerd inkoop model](database/service-tiers-dtu.md)|
 ||Aankoopmodel op basis van vCore|[Aankoopmodel op basis van vCore](database/service-tiers-vcore.md)|
-|Implementatie optie |Individuele database|[Individuele databases](database/single-database-overview.md)|
+|Implementatieoptie |Individuele database|[Individuele databases](database/single-database-overview.md)|
 ||Elastische pool|[Elastische pool](database/elastic-pool-overview.md)|
 |Servicelaag|Basic, Standard, Premium, Algemeen, grootschalige, Bedrijfskritiek|Zie [SQL database service](database/service-tiers-vcore.md#service-tiers)lagen voor service lagen in het vCore-model. Zie [DTU-model](database/service-tiers-dtu.md#compare-the-dtu-based-service-tiers)voor service lagen in het DTU-model.|
 |Compute-laag|Serverloze compute|[Serverloze compute](database/service-tiers-vcore.md#compute-tiers)
@@ -45,7 +45,7 @@ ms.locfileid: "98249649"
 |:---|:---|:---|
 |Azure-service|Azure SQL Managed Instance|[SQL Managed Instance](managed-instance/sql-managed-instance-paas-overview.md)|
 |Aankoopmodel|Aankoopmodel op basis van vCore|[Aankoopmodel op basis van vCore](database/service-tiers-vcore.md)|
-|Implementatie optie |Eén exemplaar|[Eén exemplaar](managed-instance/sql-managed-instance-paas-overview.md)|
+|Implementatieoptie |Eén exemplaar|[Eén exemplaar](managed-instance/sql-managed-instance-paas-overview.md)|
 ||Exemplaar groep (preview-versie)|[Exemplaargroepen](managed-instance/instance-pools-overview.md)|
 |Servicelaag|Algemeen, Bedrijfskritiek|[Service lagen van SQL Managed instance](managed-instance/sql-managed-instance-paas-overview.md#service-tiers)|
 |Compute-laag|Ingerichte compute|[Ingerichte compute](database/service-tiers-vcore.md#compute-tiers)|

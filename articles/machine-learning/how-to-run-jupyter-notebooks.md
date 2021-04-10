@@ -11,18 +11,21 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 01/19/2021
-ms.openlocfilehash: 257fc6544061c2ef9c3fdbfb8c33bc06ed2db6e3
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: fec4eb55f43bd17db5935ab32e5429927c74f5b9
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105566332"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106066203"
 ---
 # <a name="run-jupyter-notebooks-in-your-workspace"></a>Jupyter-notebooks uitvoeren in uw werk ruimte
 
 Meer informatie over het rechtstreeks uitvoeren van uw Jupyter-notebook in uw werk ruimte in Azure Machine Learning Studio. Hoewel u [Jupyter](https://jupyter.org/) of [jjupyterlab](https://jupyterlab.readthedocs.io)kunt starten, kunt u uw notitie blokken ook bewerken en uitvoeren zonder de werk ruimte te verlaten.
 
 Zie [bestanden in uw werk ruimte maken en beheren](how-to-manage-files.md)voor meer informatie over het maken en beheren van bestanden, met inbegrip van notitie blokken.
+
+> [!IMPORTANT]
+> Functies die zijn gemarkeerd als (preview) worden gegeven zonder service level agreement en worden niet aanbevolen voor productie werkbelastingen. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -48,17 +51,27 @@ Gebruik de focus modus om uw huidige weer gave uit te breiden zodat u zich kunt 
 
     :::image type="content" source="media/how-to-run-jupyter-notebooks/focusmode.gif" alt-text="Focus modus/standaard weergave in-/uitschakelen":::
 
-## <a name="use-intellisense"></a>IntelliSense gebruiken
+## <a name="code-completion-intellisense"></a>Code voltooiing (IntelliSense)
 
 [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense) is een hulp programma voor het volt ooien van de code die een aantal functies omvat: lijst leden, parameter info, snelle informatie en volledig woord. Deze functies helpen u meer te weten te komen over de code die u gebruikt, het bijhouden van de para meters die u typt en het toevoegen van aanroepen aan eigenschappen en methoden met slechts enkele toetsaanslagen.  
 
-Wanneer u code typt, gebruikt u Ctrl + spatie om IntelliSense te activeren.
+### <a name="use-code-snippets-preview"></a>Code fragmenten gebruiken (preview-versie)
+
+Gebruik **Ctrl + spatie balk** om IntelliSense-code fragmenten te activeren.  Blader door de suggesties of begin te typen om te zoeken naar de code die u wilt invoegen.  Wanneer u de code hebt ingevoegd, kunt u door de argumenten bladeren om de code aan te passen aan uw eigen gebruik.
+
+:::image type="content" source="media/how-to-run-jupyter-notebooks/insert-snippet.gif" alt-text="Een code fragment invoegen":::
+
+Deze zelfde fragmenten zijn beschikbaar wanneer u uw notitie blok opent in VS code. Zie [Azure machine learning VS code-fragmenten](https://github.com/Azure/azureml-snippets/blob/main/snippets/snippets.md)voor een volledige lijst met beschik bare fragmenten.
+
+U kunt bladeren en zoeken in de lijst met fragmenten door de werk balk van het notitie blok te gebruiken om het deel venster fragmenten te openen.
+
+:::image type="content" source="media/how-to-run-jupyter-notebooks/open-snippet-panel.png" alt-text="Hulp programma voor het paneel fragment openen op de werk balk van notitie blok":::
+
+Vanuit het paneel fragmenten kunt u ook een aanvraag indienen om nieuwe fragmenten toe te voegen.
+
+:::image type="content" source="media/how-to-run-jupyter-notebooks/propose-new-snippet.png" alt-text="In het deel venster fragment kunt u een nieuw fragment Voorst Ellen":::
 
 ## <a name="clean-your-notebook-preview"></a>Uw notitie blok opschonen (preview-versie)
-
-> [!IMPORTANT]
-> De functie verzamelen is momenteel beschikbaar als open bare preview.
-> De preview-versie wordt aangeboden zonder Service Level Agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 Tijdens het maken van een notitie blok gaat u meestal naar cellen die u hebt gebruikt voor het verkennen van gegevens of het opsporen van fouten. De functie *verzamelen* helpt u bij het produceren van een schone notebook zonder deze vreemde cellen.
 
@@ -158,7 +171,7 @@ Met deze acties wordt de status van het notitie blok opnieuw ingesteld en worden
 
 ## <a name="add-new-kernels"></a>Nieuwe kernels toevoegen
 
-[Gebruik de Terminal ](how-to-access-terminal.md#add-new-kernels) om nieuwe kernels te maken en toe te voegen aan uw reken exemplaar. Het notitie blok vindt automatisch alle Jupyter-kernels die zijn geïnstalleerd op het verbonden Compute-exemplaar.
+[Gebruik de Terminal](how-to-access-terminal.md#add-new-kernels) om nieuwe kernels te maken en toe te voegen aan uw reken exemplaar. Het notitie blok vindt automatisch alle Jupyter-kernels die zijn geïnstalleerd op het verbonden Compute-exemplaar.
 
 Gebruik de vervolg keuzelijst kernel aan de rechter kant om een van de geïnstalleerde kernels te wijzigen.  
 

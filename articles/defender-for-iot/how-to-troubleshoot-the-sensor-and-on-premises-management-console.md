@@ -4,10 +4,10 @@ description: Los problemen met uw sensor en on-premises beheer console op om eve
 ms.date: 03/14/2021
 ms.topic: article
 ms.openlocfilehash: 83ffec959a5b38e9f4fd4d7d0dcfd3b1b9faa096
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104785441"
 ---
 # <a name="troubleshoot-the-sensor-and-on-premises-management-console"></a>Problemen met de sensor en on-premises beheerconsole oplossen
@@ -254,7 +254,7 @@ Logboeken exporteren:
 
 1. Selecteer de gegevens categorieën om te definiëren welke gegevens u wilt exporteren:  
 
-    | Categorie exporteren | Beschrijving |
+    | Categorie exporteren | Description |
     |--|--|
     | **Logboeken van het besturings systeem** | Selecteer deze optie om informatie over de status van het besturings systeem op te halen. |
     | **Installatie/upgrade-logboeken** | Selecteer deze optie voor het onderzoeken van de configuratie parameters voor de installatie en de upgrade. |

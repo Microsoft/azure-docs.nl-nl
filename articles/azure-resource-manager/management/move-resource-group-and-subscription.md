@@ -4,12 +4,12 @@ description: Gebruik Azure Resource Manager om resources te verplaatsen naar een
 ms.topic: conceptual
 ms.date: 03/23/2021
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 31710354d39c5c74fcbd3ce1bfb2917d79dfd670
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: 4f6ecb9ec8269ab8e06a241a395887de77691499
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105108635"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105934220"
 ---
 # <a name="move-resources-to-a-new-resource-group-or-subscription"></a>Resources verplaatsen naar een nieuwe resourcegroep of een nieuw abonnement
 
@@ -124,7 +124,7 @@ Voor illustratie doeleinden hebben we slechts één afhankelijke resource.
 
 ## <a name="validate-move"></a>Verplaatsing valideren
 
-Met de [bewerking verplaatsing valideren](/rest/api/resources/resources/validatemoveresources) kunt u het verplaatsings scenario testen zonder de resources daad werkelijk te verplaatsen. Gebruik deze bewerking om te controleren of de verplaatsing slaagt. Validatie wordt automatisch aangeroepen wanneer u een verplaatsings aanvraag verzendt. Gebruik deze bewerking alleen als u de resultaten vooraf moet bepalen. Als u deze bewerking wilt uitvoeren, hebt u het volgende nodig:
+Met de [bewerking verplaatsing valideren](/rest/api/resources/resources/resources/moveresources) kunt u het verplaatsings scenario testen zonder de resources daad werkelijk te verplaatsen. Gebruik deze bewerking om te controleren of de verplaatsing slaagt. Validatie wordt automatisch aangeroepen wanneer u een verplaatsings aanvraag verzendt. Gebruik deze bewerking alleen als u de resultaten vooraf moet bepalen. Als u deze bewerking wilt uitvoeren, hebt u het volgende nodig:
 
 * naam van de bron resource groep
 * Resource-ID van de doel resource groep
@@ -241,7 +241,7 @@ Als er een fout optreedt, raadpleegt u [problemen met het verplaatsen van Azure-
 
 ## <a name="use-rest-api"></a>REST API gebruiken
 
-Als u bestaande resources wilt verplaatsen naar een andere resource groep of een ander abonnement, gebruikt u de bewerking [resources verplaatsen](/rest/api/resources/Resources/MoveResources) .
+Als u bestaande resources wilt verplaatsen naar een andere resource groep of een ander abonnement, gebruikt u de bewerking [resources verplaatsen](/rest/api/resources/resources/resources/moveresources) .
 
 ```HTTP
 POST https://management.azure.com/subscriptions/{source-subscription-id}/resourcegroups/{source-resource-group-name}/moveResources?api-version={api-version}

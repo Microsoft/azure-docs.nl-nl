@@ -4,10 +4,10 @@ description: Meer informatie over gebeurtenissen en logboeken voor toepassings-e
 ms.topic: conceptual
 ms.date: 11/21/2018
 ms.openlocfilehash: a60eef008afae4185acc266c74c4fb0ce694d560
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105627486"
 ---
 # <a name="application-logging"></a>Toepassingslogboeken

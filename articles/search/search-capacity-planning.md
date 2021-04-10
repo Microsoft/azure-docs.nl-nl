@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 01/15/2021
-ms.openlocfilehash: d848c1ed1ab9d4cb24dec9423d93ec62ab45633b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/06/2021
+ms.openlocfilehash: b1f742c1de259f6c1c06d9b31a8788699f0b8426
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99537218"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106580040"
 ---
 # <a name="estimate-and-manage-capacity-of-an-azure-cognitive-search-service"></a>De capaciteit van een Azure Cognitive Search-service schatten en beheren
 
@@ -48,17 +48,19 @@ In Cognitive Search is het Shard-beheer een implementatie detail en niet-configu
 
 + Afwijkingen van AutoAanvullen: automatisch aangevulde query's, waarbij overeenkomsten worden gemaakt voor de eerste verschillende tekens van een gedeeltelijk ingevoerde term, accepteren een fuzzy para meter waarmee kleine afwijkingen in de spelling worden verduidelijkt. Voor automatisch aanvullen wordt het vergelijken van de voor waarden in de huidige Shard beperkt. Als een Shard bijvoorbeeld ' micro soft ' bevat en een gedeeltelijke term ' Micor ' is opgegeven, komt de zoek machine overeen met ' micro soft ' in die Shard, maar niet in een andere Shards die de resterende onderdelen van de index bevatten.
 
-## <a name="how-to-evaluate-capacity-requirements"></a>Capaciteits vereisten evalueren
+## <a name="approaching-estimation"></a>Schatting nadert
 
-De capaciteit en de kosten voor het uitvoeren van de service hand matig. Lagen leggen limieten op twee niveaus vast: opslag en inhoud (een telling van indexen voor een service, bijvoorbeeld). Het is belang rijk om rekening te houden met beide omdat u eerst de daad werkelijke limiet bereikt.
+De capaciteit en de kosten voor het uitvoeren van de service hand matig. Lagen leggen limieten op twee niveaus vast: inhoud (een aantal indexen voor een service, bijvoorbeeld) en opslag. Het is belang rijk om rekening te houden met beide omdat u eerst de daad werkelijke limiet bereikt.
 
-Hoeveel heden indexen en andere objecten worden doorgaans bepaald door bedrijfs-en technische vereisten. U kunt bijvoorbeeld meerdere versies van dezelfde index hebben voor actieve ontwikkeling, testen en productie.
+Het aantal indexen en andere objecten wordt doorgaans bepaald door bedrijfs-en technische vereisten. U kunt bijvoorbeeld meerdere versies van dezelfde index hebben voor actieve ontwikkeling, testen en productie.
 
 Opslag behoeften worden bepaald door de grootte van de indexen die u verwacht te bouwen. Er zijn geen vaste heuristische of algemene methodieken die helpen bij schattingen. De enige manier om de grootte van een index te bepalen, is [een bouwen](search-what-is-an-index.md). De grootte is gebaseerd op geïmporteerde gegevens, tekst analyse en index configuratie, zoals of u suggesties, filteren en sorteren inschakelt.
 
 Voor zoeken in volledige tekst is de primaire gegevens structuur een [omgekeerde index](https://en.wikipedia.org/wiki/Inverted_index) structuur, die andere kenmerken heeft dan de bron gegevens. Voor een omgekeerde index worden de grootte en complexiteit bepaald door de inhoud, niet noodzakelijkerwijs door de hoeveelheid gegevens die u in de feed invoert. Een grote gegevens bron met hoge redundantie kan resulteren in een kleinere index dan een kleinere gegevensset die zeer variabele inhoud bevat. Het is dus zelden mogelijk de index grootte af te leiden op basis van de grootte van de oorspronkelijke gegevensset.
 
-> [!NOTE] 
+Kenmerken van de index, zoals het inschakelen van filters en sorteren, zijn van invloed op de opslag vereisten. Het gebruik van Voorst Ellen heeft ook invloed op de opslag. Zie [kenmerken en index grootte](search-what-is-an-index.md#index-size)voor meer informatie.
+
+> [!NOTE]
 > Hoewel de toekomstige behoeften voor indices en opslag in de toekomst kunnen worden geschat, is het een goed idee om te doen. Als de capaciteit van een laag te laag wordt, moet u een nieuwe service inrichten op een hogere laag en vervolgens [uw indexen opnieuw laden](search-howto-reindex.md). Er is geen in-place upgrade van een service van de ene laag naar de andere.
 >
 
@@ -87,7 +89,7 @@ Toegewezen resources kunnen grotere sampling-en verwerkings tijden bieden voor r
     + Start hoog, op S2 of zelfs S3, als de tests grootschalige indexeringen en query belasting bevatten.
     + Begin met opslag die is geoptimaliseerd, bij L1 of L2, als u een grote hoeveelheid gegevens wilt indexeren en de belasting van query's relatief laag is, net als bij een interne zakelijke toepassing.
 
-1. [Bouw een initiële index](search-what-is-an-index.md) om te bepalen hoe bron gegevens worden omgezet in een index. Dit is de enige manier om de index grootte te schatten.
+1. [Bouw een initiële index](search-what-is-an-index.md) om te bepalen hoe bron gegevens worden omgezet in een index. Dit is de enige manier om de index grootte te schatten. 
 
 1. [Bewaak opslag, service limieten, query volume en latentie](search-monitor-usage.md) in de portal. In de portal worden query's per seconde, vertraagde query's en zoek latentie weer gegeven. Al deze waarden kunnen u helpen bij het bepalen of u de juiste laag hebt geselecteerd.
 
@@ -111,7 +113,7 @@ De geoptimaliseerde opslag lagen zijn handig voor grote gegevens workloads, zoda
 
 **Service Level-overeenkomsten**
 
-De functies gratis en preview bieden geen [Service Level Agreements (sla's)](https://azure.microsoft.com/support/legal/sla/search/v1_0/). Voor alle factureer bare lagen gelden de Sla's wanneer u voldoende redundantie voor uw service inricht. U moet twee of meer replica's hebben voor de opdracht query (lezen). U moet drie of meer replica's hebben voor het uitvoeren van query's en indexen (lezen/schrijven). Het aantal partities heeft geen invloed op Sla's.
+De gratis laag en preview-functies worden niet gedekt door [service overeenkomsten (sla's)](https://azure.microsoft.com/support/legal/sla/search/v1_0/). Voor alle factureer bare lagen gelden de Sla's wanneer u voldoende redundantie voor uw service inricht. U moet twee of meer replica's hebben voor de opdracht query (lezen). U moet drie of meer replica's hebben voor het uitvoeren van query's en indexen (lezen/schrijven). Het aantal partities heeft geen invloed op Sla's.
 
 ## <a name="tips-for-capacity-planning"></a>Tips voor capaciteits planning
 
@@ -119,24 +121,30 @@ De functies gratis en preview bieden geen [Service Level Agreements (sla's)](htt
 
 + Houd er rekening mee dat het enige nadeel van onder inrichting is dat u een service mogelijk moet afbreken als de werkelijke vereisten groter zijn dan uw voor spellingen. Om service onderbrekingen te voor komen, maakt u een nieuwe service in een hogere laag en voert u deze naast elkaar uit totdat alle apps en aanvragen gericht zijn op het nieuwe eind punt.
 
-## <a name="when-to-add-partitions-and-replicas"></a>Wanneer u partities en replica's toevoegen
+## <a name="when-to-add-capacity"></a>Wanneer capaciteit moet worden toegevoegd
 
-In eerste instantie wordt een mini maal niveau aan resources toegewezen dat bestaat uit één partitie en één replica.
+In eerste instantie wordt een mini maal niveau aan resources toegewezen dat bestaat uit één partitie en één replica. De [laag die u kiest](search-sku-tier.md) , bepaalt de grootte en snelheid van de partitie en elke laag is geoptimaliseerd rond een reeks kenmerken die in verschillende scenario's passen. Als u een hogere laag kiest, hebt u mogelijk minder partities nodig dan wanneer u met S1 gaat. Een van de vragen die u moet beantwoorden via zelf gerichte tests is of een grotere en dure partitie betere prestaties levert dan twee goedkopere partities op een service die op een lagere laag is ingericht.
 
 Eén service moet voldoende resources hebben om alle werk belastingen (indexering en query's) af te handelen. Er wordt geen werk belasting uitgevoerd op de achtergrond. U kunt het indexeren plannen voor tijden wanneer query aanvragen niet vaak op een andere manier worden uitgevoerd, maar de service heeft geen andere prioriteit boven een taak. Daarnaast kan een bepaalde hoeveelheid redundantie de query prestaties versoepelen wanneer Services of knoop punten intern worden bijgewerkt.
 
-In het algemeen moeten Zoek toepassingen meestal meer replica's dan partities nodig hebben, met name wanneer de service bewerkingen worden uitgevoerd op query werkbelastingen. In het gedeelte over [hoge Beschik baarheid](#HA) wordt uitgelegd waarom.
+Hieronder vindt u enkele richt lijnen voor het bepalen van de capaciteit:
 
-De [laag die u kiest](search-sku-tier.md) , bepaalt de grootte en snelheid van de partitie en elke laag is geoptimaliseerd rond een reeks kenmerken die in verschillende scenario's passen. Als u een hogere laag kiest, hebt u mogelijk minder partities nodig dan wanneer u met S1 gaat. Een van de vragen die u moet beantwoorden via zelf gerichte tests is of een grotere en dure partitie betere prestaties levert dan twee goedkopere partities op een service die op een lagere laag is ingericht.
++ Voldoen aan de criteria voor hoge Beschik baarheid voor service level agreement
++ De frequentie van HTTP 503-fouten neemt toe
++ Er worden grote query volumes verwacht
+
+In het algemeen moeten Zoek toepassingen meestal meer replica's dan partities nodig hebben, met name wanneer de service bewerkingen worden uitgevoerd op query werkbelastingen. Elke replica is een kopie van uw index, waardoor de service aanvragen voor meerdere exemplaren kan verdelen. Alle taak verdeling en replicatie van een index worden beheerd door Azure Cognitive Search en u kunt op elk gewenst moment het aantal replica's aanpassen dat voor uw service wordt toegewezen. U kunt Maxi maal 12 replica's toewijzen in een Standard-zoek service en 3 replica's in een Basic Search-service. Replica toewijzing kan worden gemaakt op basis van de [Azure Portal](search-create-service-portal.md) of een van de programmatische opties.
 
 Voor het zoeken naar toepassingen waarvoor bijna realtime gegevens moeten worden vernieuwd, moeten proportioneel meer partities dan replica's nodig zijn. Door partities toe te voegen worden lees-en schrijf bewerkingen verdeeld over een groter aantal reken resources. Daarnaast hebt u meer schijf ruimte voor het opslaan van aanvullende indexen en documenten.
 
-Het duurt langer voor grotere indexen om query's uit te voeren. Als zodanig is het mogelijk dat elke incrementele toename in partities een kleinere, maar proportionele toename van replica's vereist. De complexiteit van uw query's en query volume wordt gemeten in hoe snel query's kunnen worden uitgevoerd.
+Ten slotte nemen grotere indexen meer tijd in beslag. Als zodanig is het mogelijk dat elke incrementele toename in partities een kleinere, maar proportionele toename van replica's vereist. De complexiteit van uw query's en query volume wordt gemeten in hoe snel query's kunnen worden uitgevoerd.
 
 > [!NOTE]
 > Wanneer u meer replica's of partities toevoegt, worden de kosten voor het uitvoeren van de service verhoogd en kunnen er kleine afwijkingen worden geïntroduceerd in de volg orde waarin de resultaten worden besteld. Controleer de [prijs calculator](https://azure.microsoft.com/pricing/calculator/) om inzicht te krijgen in de facturerings implicaties van het toevoegen van meer knoop punten. In de [onderstaande grafiek](#chart) kunt u het aantal Zoek eenheden dat is vereist voor een specifieke configuratie, kruis verwijzingen. Zie de [rang schikking van resultaten](search-pagination-page-layout.md#ordering-results)voor meer informatie over hoe extra replica's van invloed zijn op de verwerking van query's.
 
-## <a name="how-to-allocate-replicas-and-partitions"></a>Replica's en partities toewijzen
+<a name="adjust-capacity"></a>
+
+## <a name="add-or-reduce-replicas-and-partitions"></a>Replica's en partities toevoegen of beperken
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com/) en selecteer de zoek service.
 
@@ -158,7 +166,7 @@ Het duurt langer voor grotere indexen om query's uit te voeren. Als zodanig is h
 
    :::image type="content" source="media/search-capacity-planning/3-save-confirm.png" alt-text="Wijzigingen opslaan" border="true":::
 
-   Het kan enkele uren duren voordat wijzigingen in de capaciteit zijn voltooid. U kunt niet annuleren nadat het proces is gestart en er is geen realtime-bewaking voor replica-en partitie aanpassingen. Het volgende bericht blijft echter zichtbaar wanneer er wijzigingen worden aangebracht.
+   Wijzigingen in capaciteit kunnen vijf tien minuten tot enkele uren duren. U kunt niet annuleren nadat het proces is gestart en er is geen realtime-bewaking voor replica-en partitie aanpassingen. Het volgende bericht blijft echter zichtbaar wanneer er wijzigingen worden aangebracht.
 
    :::image type="content" source="media/search-capacity-planning/4-updating.png" alt-text="Status bericht in de portal" border="true":::
 
@@ -192,31 +200,7 @@ SUs, prijzen en capaciteit worden gedetailleerd beschreven op de Azure-website. 
 > Het aantal replica's en partities worden gelijkmatig verdeeld in 12 (met name 1, 2, 3, 4, 6, 12). Dit komt doordat Azure Cognitive Search elke index vooraf opsplitst in 12 Shards, zodat deze in gelijke delen kan worden verdeeld over alle partities. Als uw service bijvoorbeeld drie partities heeft en u een index maakt, dan bevat elke partitie vier Shards van de index. Hoe Azure Cognitive Search Shards een index is een implementatie detail, die kan worden gewijzigd in toekomstige releases. Hoewel het nummer 12 vandaag is, mag u niet verwachten dat aantal in de toekomst altijd 12 is.
 >
 
-<a id="HA"></a>
-
-## <a name="high-availability"></a>Hoge beschikbaarheid
-
-Omdat het eenvoudig en relatief snel omhoog kan worden geschaald, raden we u aan om te beginnen met één partitie en een of twee replica's, en vervolgens omhoog te schalen als query volumes bouwen. Query werkbelastingen worden voornamelijk uitgevoerd op replica's. Als u meer door Voer of hoge Beschik baarheid nodig hebt, hebt u waarschijnlijk extra replica's nodig.
-
-Algemene aanbevelingen voor hoge Beschik baarheid zijn:
-
-+ Twee replica's voor hoge Beschik baarheid van alleen-lezen workloads (query's)
-
-+ Drie of meer replica's voor hoge Beschik baarheid van werk belastingen voor lezen/schrijven (query's plus indexering als afzonderlijke documenten worden toegevoegd, bijgewerkt of verwijderd)
-
-Service Level Agreements (SLA) voor Azure Cognitive Search zijn gericht op query bewerkingen en bij index updates die bestaan uit het toevoegen, bijwerken of verwijderen van documenten.
-
-Basic-laag oplopend op één partitie en drie replica's. Als u wilt dat de flexibiliteit onmiddellijk reageert op schommelingen in de vraag naar het indexeren en door Voer van query's, overweeg dan een van de standaard lagen.  Als u vindt dat uw opslag vereisten veel sneller groeien dan de door Voer van query's, overweeg dan een van de geoptimaliseerde opslag lagen.
-
-## <a name="about-queries-per-second-qps"></a>Over query's per seconde (QPS)
-
-Vanwege het grote aantal factoren dat de query prestaties verbiedt, publiceert micro soft verwachte QPS-aantallen niet. QPS-schattingen moeten onafhankelijk van elke klant worden ontwikkeld met behulp van de servicelaag, configuratie, index en query constructies die geldig zijn voor uw toepassing. De grootte en complexiteit van de index, de grootte en complexiteit van query's en de hoeveelheid verkeer zijn primaire determinanten van QPS. Er is geen manier om zinvolle schattingen te bieden wanneer dergelijke factoren onbekend zijn.
-
-Schattingen zijn meer voorspelbaar wanneer ze worden berekend op Services die worden uitgevoerd op speciale resources (Basic-en Standard-lagen). U kunt de QPS nauw keuriger schatten omdat u meer controle hebt over de para meters. Zie [Azure Cognitive Search prestaties en optimalisatie](search-performance-optimization.md)voor meer informatie over het aanpaken van de schatting.
-
-Voor de lagen geoptimaliseerd voor opslag (L1 en L2) moet u een lagere query door Voer en een hogere latentie dan de standaard lagen.
-
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Kosten ramen en beheren](search-sku-manage-costs.md)
+> [Kosten beheren](search-sku-manage-costs.md)

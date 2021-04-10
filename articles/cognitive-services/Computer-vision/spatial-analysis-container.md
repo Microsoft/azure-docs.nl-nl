@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: 1a107f812ceb46649126bdbefcf3b828e1938ff3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 87076febd4597556fd2b28245f47442308cd6e6c
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102612895"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106108354"
 ---
 # <a name="install-and-run-the-spatial-analysis-container-preview"></a>De container voor ruimtelijke analyse installeren en uitvoeren (preview-versie)
 
@@ -311,7 +311,7 @@ Registreer vervolgens de hostcomputer als IoT Edge apparaat in uw IoT Hub-exempl
 U moet het IoT Edge apparaat verbinden met uw Azure-IoT Hub. U moet de connection string kopiëren van het IoT Edge apparaat dat u eerder hebt gemaakt. U kunt ook de onderstaande opdracht uitvoeren in de Azure CLI.
 
 ```bash
-sudo az iot hub device-identity show-connection-string --device-id my-edge-device --hub-name test-iot-hub-123
+sudo az iot hub device-identity connection-string show --device-id my-edge-device --hub-name test-iot-hub-123
 ```
 
 Open op de hostcomputer  `/etc/iotedge/config.yaml` om te bewerken. Vervang door `ADD DEVICE CONNECTION STRING HERE` de Connection String. Sla het bestand op en sluit het. Voer deze opdracht uit om de IoT Edge-service op de hostcomputer opnieuw op te starten.
@@ -334,7 +334,7 @@ Open de wizard [een virtuele machine maken](https://ms.portal.azure.com/#create/
 
 Geef uw virtuele machine een naam en selecteer de regio die moet worden (VS) West 2. Zorg ervoor dat u instelt `Availability Options` op geen infra structuur-redundantie vereist. Raadpleeg de onderstaande afbeelding voor de volledige configuratie en de volgende stap om de juiste VM-grootte te vinden. 
 
-:::image type="content" source="media/spatial-analysis/virtual-machine-instance-details.png" alt-text="Details van de virtuele-machine configuratie." lightbox="media/spatial-analysis/virtual-machine-instance-details.png":::
+:::image type="content" source="media/spatial-analysis/virtual-machine-instance-details.jpg" alt-text="Details van de virtuele-machine configuratie." lightbox="media/spatial-analysis/virtual-machine-instance-details.jpg":::
 
 Als u de VM-grootte wilt vinden, selecteert u ' alle grootten weer geven ' en bekijkt u de lijst voor ' niet-Premium-opslag-VM-grootten ', zoals hieronder wordt weer gegeven.
 
@@ -473,7 +473,7 @@ Registreer vervolgens de virtuele machine als IoT Edge apparaat in uw IoT Hub-ex
 U moet het IoT Edge apparaat verbinden met uw Azure-IoT Hub. U moet de connection string kopiëren van het IoT Edge apparaat dat u eerder hebt gemaakt. U kunt ook de onderstaande opdracht uitvoeren in de Azure CLI.
 
 ```bash
-sudo az iot hub device-identity show-connection-string --device-id my-edge-device --hub-name test-iot-hub-123
+sudo az iot hub device-identity connection-string show --device-id my-edge-device --hub-name test-iot-hub-123
 ```
 
 Open voor bewerking op de VM  `/etc/iotedge/config.yaml` . Vervang door `ADD DEVICE CONNECTION STRING HERE` de Connection String. Sla het bestand op en sluit het. Voer deze opdracht uit om de IoT Edge-service op de VM opnieuw op te starten.
@@ -542,10 +542,6 @@ Zodra de implementatie is voltooid en de container actief is, begint de **hostco
 ## <a name="configure-the-operations-performed-by-spatial-analysis"></a>De bewerkingen configureren die worden uitgevoerd door ruimtelijke analyse
 
 U moet [ruimtelijke analyse bewerkingen](spatial-analysis-operations.md) gebruiken om de container te configureren voor het gebruik van verbonden camera's, het configureren van de bewerkingen en nog veel meer. Voor elk camera apparaat dat u configureert, wordt met de bewerkingen voor ruimtelijke analyse een uitvoer stroom van JSON-berichten gegenereerd, verzonden naar uw exemplaar van Azure IoT Hub.
-
-## <a name="redeploy-or-delete-the-deployment"></a>Implementatie opnieuw implementeren of verwijderen
-
-Als u de implementatie wilt bijwerken, moet u ervoor zorgen dat uw vorige implementaties zijn geïmplementeerd, of moet u IoT Edge-apparaten verwijderen die niet zijn voltooid. Anders wordt deze implementaties voortgezet, waardoor het systeem een slechte status heeft. U kunt de Azure Portal of de [Azure cli](../cognitive-services-apis-create-account-cli.md?tabs=windows)gebruiken.
 
 ## <a name="use-the-output-generated-by-the-container"></a>De uitvoer gebruiken die door de container is gegenereerd
 

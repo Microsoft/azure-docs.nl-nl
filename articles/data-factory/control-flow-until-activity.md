@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: 2ac5474f1b20e409da01c531ef13060e72fd548c
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104786121"
 ---
 # <a name="until-activity-in-azure-data-factory"></a>Until-activiteit in Azure Data Factory
@@ -53,9 +53,9 @@ Eigenschap | Beschrijving | Toegestane waarden | Vereist
 -------- | ----------- | -------------- | --------
 naam | De naam van de `Until` activiteit. | Tekenreeks | Ja
 type | Moet worden ingesteld op **until**. | Tekenreeks | Ja
-expressie | Expressie die moet worden geëvalueerd als waar of onwaar | Expressie.  | Ja
-timeout | De lus-until loopt na de opgegeven tijd hier. | Tekenreeks. `d.hh:mm:ss` (of) `hh:mm:ss` . De standaardwaarde is 7 dagen. De maximum waarde is: 90 dagen. | Nee
-Activiteiten | Set activiteiten die worden uitgevoerd tot de expressie wordt geëvalueerd `true` . | Matrix van activiteiten. |  Ja
+expressie | Expressie die moet worden geëvalueerd als waar of onwaar | Expressie.  | Yes
+timeout | De lus-until loopt na de opgegeven tijd hier. | Tekenreeks. `d.hh:mm:ss` (of) `hh:mm:ss` . De standaardwaarde is 7 dagen. De maximum waarde is: 90 dagen. | No
+Activiteiten | Set activiteiten die worden uitgevoerd tot de expressie wordt geëvalueerd `true` . | Matrix van activiteiten. |  Yes
 
 ## <a name="example-1"></a>Voorbeeld 1
 

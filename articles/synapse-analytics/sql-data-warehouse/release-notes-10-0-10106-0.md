@@ -13,10 +13,10 @@ manager: craigg
 ms.custom: seo-lt-2019
 tags: azure-synapse
 ms.openlocfilehash: 4f333c4bb66195e6c99bd45dcc7c29a0b9a2eaa9
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100591416"
 ---
 # <a name="dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-release-notes"></a>Exclusieve SQL-groep (voorheen SQL DW) in azure Synapse Analytics-release opmerkingen

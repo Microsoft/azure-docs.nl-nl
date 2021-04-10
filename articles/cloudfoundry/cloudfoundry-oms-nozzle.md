@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 07/22/2017
 ms.author: ningk
 ms.openlocfilehash: 54001c47d03b686a8e7c1f59f1e53d405e3bc506
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102557383"
 ---
 # <a name="deploy-azure-log-analytics-nozzle-for-cloud-foundry-system-monitoring"></a>Azure Log Analytics-spuit voor Cloud Foundry systeem bewaking implementeren
@@ -193,7 +193,7 @@ De *' Cloud Foundry. omsview '* is een preview-versie van de Cloud Foundry OMS-w
 
 U kunt [de waarschuwingen maken](../azure-monitor/alerts/alerts-overview.md)en zo nodig de query's en drempel waarden aanpassen. De volgende waarschuwingen worden aanbevolen:
 
-| Zoekquery                                                                  | Waarschuwing genereren op basis van | Beschrijving                                                                       |
+| Zoekquery                                                                  | Waarschuwing genereren op basis van | Description                                                                       |
 | ----------------------------------------------------------------------------- | ----------------------- | --------------------------------------------------------------------------------- |
 | Type = CF_ValueMetric_CL Origin_s = BBS Name_s = "domein. CF-apps"                   | Aantal resultaten < 1   | **BBS. Domain.cf: apps** geeft aan of het CF-Apps-domein up-to-date is. Dit betekent dat CF-app-aanvragen van de Cloud controller zijn gesynchroniseerd met BBS. LRPsDesired (Diego-gewenste AIs) voor uitvoering. Geen gegevens ontvangen betekent dat het CF-Apps-domein niet up-to-date is in het opgegeven tijd venster. |
 | Type = CF_ValueMetric_CL Origin_s = rep Name_s = UnhealthyCell Value_d>1            | Aantal resultaten > 0   | Voor Diego-cellen betekent 0 dat ze in orde zijn, en 1 betekent een slechte status. Stel de waarschuwing in als er meerdere beschadigde Diego-cellen worden gedetecteerd in het opgegeven tijd venster. |

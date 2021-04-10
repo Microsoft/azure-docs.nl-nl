@@ -11,10 +11,10 @@ ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
 ms.openlocfilehash: cb6a20d91458d2e4a6a60ced519531bd3c4356c5
-ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/28/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105642397"
 ---
 # <a name="migration-guide-db2-to-azure-sql-managed-instance"></a>Migratie handleiding: Db2 naar Azure SQL Managed instance

@@ -4,15 +4,15 @@ description: Ontdek de aanbevolen procedures en richt lijnen voor het maken van 
 ms.topic: conceptual
 ms.date: 07/22/2020
 ms.openlocfilehash: 0b3f70061be4d158ae717a97779d6ab0445f5858
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100593335"
 ---
 # <a name="backup-cloud-and-on-premises-workloads-to-cloud"></a>Back-ups in de Cloud en on-premises naar de Cloud
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Azure Backup beveiligt uw gegevensassets in azure met behulp van een eenvoudige, veilige en kosteneffectieve oplossing waarvoor geen infra structuur nodig is. Het is een Azure's ingebouwde oplossing voor gegevens bescherming voor een breed scala aan werk belastingen. Het helpt u bij het beveiligen van uw bedrijfskritische workloads die worden uitgevoerd in de Cloud, en zorgt ervoor dat uw back-ups altijd beschikbaar zijn en op schaal worden beheerd in het hele back-ups.
 

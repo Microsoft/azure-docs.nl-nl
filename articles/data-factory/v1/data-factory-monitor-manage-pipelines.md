@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 04/30/2018
 ms.openlocfilehash: 0744a7d915d6bee868b160abc29964d58947dd28
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104779627"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-azure-portal-and-powershell"></a>Azure Data Factory pijp lijnen bewaken en beheren met behulp van de Azure Portal en Power shell
@@ -83,7 +83,7 @@ De segmenten van de gegevensset in de data factory kunnen een van de volgende st
 
 <table>
 <tr>
-    <th align="left">Staat</th><th align="left">Substatus</th><th align="left">Beschrijving</th>
+    <th align="left">Staat</th><th align="left">Substatus</th><th align="left">Description</th>
 </tr>
 <tr>
     <td rowspan="8">Wachten</td><td>ScheduleTime</td><td>De tijd voor het uitvoeren van het segment is niet beschikbaar.</td>

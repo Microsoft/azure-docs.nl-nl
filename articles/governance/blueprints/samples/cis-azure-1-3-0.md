@@ -4,10 +4,10 @@ description: Overzicht van het CIS-voor beeld van het DIS Microsoft Azure fundam
 ms.date: 03/11/2021
 ms.topic: sample
 ms.openlocfilehash: 7030b4e9e9ddd3d5bbf1a5a7deaf1e1aa241b38e
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105565993"
 ---
 # <a name="cis-microsoft-azure-foundations-benchmark-v130-blueprint-sample"></a>Voor beeld van CIS Microsoft Azure basis Bench Mark v 1.3.0 blauw druk

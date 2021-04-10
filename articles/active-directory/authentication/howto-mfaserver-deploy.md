@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d7bd9913cccbe077a4deed9a7c5bfdc601f3dd5e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96742337"
 ---
 # <a name="getting-started-with-the-azure-multi-factor-authentication-server"></a>Aan de slag met de Azure Multi-Factor Authentication-server
@@ -55,7 +55,7 @@ Wanneer een master Azure MFA-server offline gaat, kunnen de ondergeschikte serve
 
 Zorg ervoor dat de server die u voor Azure Multi-Factor Authentication gebruikt, voldoet aan de volgende vereisten:
 
-| Vereisten voor Azure Multi-Factor Authentication-server | Beschrijving |
+| Vereisten voor Azure Multi-Factor Authentication-server | Description |
 |:--- |:--- |
 | Hardware |<li>200 MB aan vasteschijfruimte</li><li>Voor x32 of x64 geschikte processor</li><li>1 GB of meer RAM-geheugen</li> |
 | Software |<li>Windows Server 2016</li><li>Windows Server 2012 R2</li><li>Windows Server 2012</li><li>Windows Server 2008/R2 (alleen met [ESU](/lifecycle/faq/extended-security-updates) )</li><li>Windows 10</li><li>Windows 8.1, alle edities</li><li>Windows 8, alle edities</li><li>Windows 7, alle edities (alleen met [ESU](/lifecycle/faq/extended-security-updates) )</li><li>Microsoft .NET 4.0 Framework</li><li>IIS 7.0 of een recentere versie als de installatie wordt uitgevoerd vanuit de gebruikersportal of de webservice-SDK</li> |

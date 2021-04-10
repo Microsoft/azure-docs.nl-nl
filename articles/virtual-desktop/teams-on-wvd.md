@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 11/10/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 052d11fe0125de7970fb7d02931edfc7f3c2e4d9
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 46796573e14dfc33d02d4faddd5504f3e8b7ee7b
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98743114"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105935717"
 ---
 # <a name="use-microsoft-teams-on-windows-virtual-desktop"></a>Micro soft teams gebruiken op het virtuele bureau blad van Windows
 
@@ -120,7 +120,7 @@ Na de installatie van de WebSocket-service en de bureau blad-app teams, voert u 
 
 3. Selecteer **versie**.
 
-      Als media optimalisaties zijn geladen, wordt in de banner weer gegeven dat u de **WVD-media hebt geoptimaliseerd**. Als in het vaandel wordt weer gegeven dat u **WVD media niet hebt verbonden**, sluit u de app teams en probeert u het opnieuw.
+      Als media optimalisaties zijn geladen, wordt in de banner weer gegeven dat **Windows Virtual Desktop-media zijn geoptimaliseerd**. Als het vaandel laat zien dat er **geen verbinding is met het virtuele bureau blad van Windows**, sluit u de teams-app en probeert u het opnieuw.
 
 4. Selecteer de installatie kopie van uw gebruikers profiel en selecteer vervolgens **instellingen**.
 

@@ -10,16 +10,14 @@ ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
 zone_pivot_groups: acs-plat-azp-azcli-net-ps
-ms.openlocfilehash: bdfd4dfef57721a24b4c6981ae653ab4f17562fa
-ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
+ms.openlocfilehash: aabb8bdf4105702aa623c45bc291770b05b8279e
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/28/2021
-ms.locfileid: "105644722"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105726768"
 ---
 # <a name="quickstart-create-and-manage-communication-services-resources"></a>Quickstart: Communication Services-resources maken en beheren
-
-[!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
 Ga aan de slag met Azure Communication Services door uw eerste Communication Services-resource te provisioneren. Communicatie services-resources kunnen worden ingericht via de [Azure Portal](https://portal.azure.com) of met de .net Management SDK. Met de Management SDK en de Azure Portal kunt u uw resources en interface maken, configureren, bijwerken en verwijderen met [Azure Resource Manager](../../azure-resource-manager/management/overview.md), de implementatie-en beheer service van Azure. Alle beschik bare functies in de Sdk's zijn beschikbaar in de Azure Portal. 
 

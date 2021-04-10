@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
 ms.workload: identity
-ms.date: 09/09/2020
+ms.date: 03/29/2021
 ms.author: kenwith
 ms.reviewer: paulgarn
 ms.custom: aaddev
-ms.openlocfilehash: 9c3132985866a4c245984ef632107c05ca1b3350
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f636b8ec04d151c855112102421dd2df0ccb6ff8
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96348379"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105932876"
 ---
 # <a name="saml-token-claims-reference"></a>Naslag informatie over SAML-token claims
 
@@ -34,7 +34,7 @@ Het micro soft-identiteits platform verzendt verschillende typen beveiligings to
 > |Verificatiemethode | `amr` |Hiermee wordt aangegeven hoe het onderwerp van het token is geverifieerd. | `<AuthnContextClassRef>`<br>`http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod/password`<br>`</AuthnContextClassRef>` |
 > |Voornaam | `given_name` |Hiermee wordt de eerste of de naam van de gebruiker opgegeven, zoals ingesteld in het Azure AD-gebruikers object. | `<Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname">`<br>`<AttributeValue>Frank<AttributeValue>`  |
 > |Groepen | `groups` |Bevat object-Id's die de groepslid maatschappen van het onderwerp vertegenwoordigen. Deze waarden zijn uniek (zie object-ID) en kunnen veilig worden gebruikt voor het beheren van toegang, zoals het afdwingen van autorisatie voor toegang tot een bron. De groepen die zijn opgenomen in de claim groepen, worden per toepassing geconfigureerd, via de eigenschap groupMembershipClaims van het toepassings manifest. Een waarde van Null sluit alle groepen uit, de waarde ' beveiligings groep ' bevat alleen Active Directory beveiligings groepslid maatschappen en de waarde ' all ' bevat zowel beveiligings groepen als Microsoft 365 distributie lijsten. <br><br> **Opmerkingen**: <br> Als het aantal groepen waartoe de gebruiker zich bevindt, een limiet heeft (150 voor SAML, 200 voor JWT), wordt er een overschrijding-claim toegevoegd, die verwijst naar het eind punt van de grafiek met de lijst met groepen voor de gebruiker. | `<Attribute Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/groups">`<br>`<AttributeValue>07dd8a60-bf6d-4e17-8844-230b77145381</AttributeValue>` |
-> | Overschrijding indicator voor groepen | `groups:src1` | Voor token aanvragen die geen beperkte lengte hebben maar nog steeds te groot zijn voor het token, wordt een koppeling naar de lijst met volledige groepen voor de gebruiker opgenomen. Voor SAML wordt deze toegevoegd als een nieuwe claim in plaats van de `groups` claim. | `<Attribute Name=" http://schemas.microsoft.com/claims/groups.link">`<br>`<AttributeValue>https://graph.windows.net/{tenantID}/users/{userID}/getMemberObjects<AttributeValue>` |
+> | Overschrijding indicator voor groepen | `groups:src1` | Voor token aanvragen die geen beperkte lengte hebben maar nog steeds te groot zijn voor het token, wordt een koppeling naar de lijst met volledige groepen voor de gebruiker opgenomen. Voor SAML wordt deze toegevoegd als een nieuwe claim in plaats van de `groups` claim. <br><br> **Opmerkingen**: <br> De Azure AD-Graph API wordt vervangen door de Microsoft Graph-API. Zie [gebruiker: getMemberObjects](https://docs.microsoft.com/graph/api/user-getmemberobjects)voor meer informatie over het equivalente eind punt. | `<Attribute Name=" http://schemas.microsoft.com/claims/groups.link">`<br>`<AttributeValue>https://graph.windows.net/{tenantID}/users/{userID}/getMemberObjects<AttributeValue>` |
 > |Identiteitsprovider | `idp` |Registreert de identiteitsprovider waarmee het onderwerp van het token is geverifieerd. Deze waarde is gelijk aan de waarde van de verlener-claim, tenzij de gebruikers account zich in een andere Tenant bevindt dan de verlener. | `<Attribute Name=" http://schemas.microsoft.com/identity/claims/identityprovider">`<br>`<AttributeValue>https://sts.windows.net/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/<AttributeValue>` |
 > |IssuedAt | `iat` |Hiermee slaat u de tijd op waarop het token is uitgegeven. Dit wordt vaak gebruikt om de versheid van het token te meten. | `<Assertion ID="_d5ec7a9b-8d8f-4b44-8c94-9812612142be" IssueInstant="2014-01-06T20:20:23.085Z" Version="2.0" xmlns="urn:oasis:names:tc:SAML:2.0:assertion">` |
 > |Verlener | `iss` |Identificeert de Security Token Service (STS) die het token bouwt en retourneert. In de tokens die Azure AD retourneert, is de uitgever sts.windows.net. De GUID in de claim waarde van de verlener is de Tenant-ID van de Azure AD-adres lijst. De Tenant-ID is een onveranderbare en betrouw bare id van de Directory. | `<Issuer>https://sts.windows.net/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/</Issuer>` |

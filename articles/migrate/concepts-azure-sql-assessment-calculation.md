@@ -6,10 +6,10 @@ ms.author: rajosh
 ms.topic: conceptual
 ms.date: 02/07/2021
 ms.openlocfilehash: c2e739a45c7915c957ca89e5b01b98afa945d03e
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105557187"
 ---
 # <a name="assessment-overview-migrate-to-azure-sql"></a>Overzicht van evaluatie (migreren naar Azure SQL)

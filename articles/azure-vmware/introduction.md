@@ -4,10 +4,10 @@ description: Meer informatie over de functies en voordelen van Azure VMware Solu
 ms.topic: overview
 ms.date: 03/24/2021
 ms.openlocfilehash: a75c04cf6b51068ef9867e3f9438b2820da703fe
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105048813"
 ---
 # <a name="what-is-azure-vmware-solution"></a>Wat is Azure VMware Solution?

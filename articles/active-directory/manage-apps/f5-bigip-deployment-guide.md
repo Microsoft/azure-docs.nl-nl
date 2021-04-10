@@ -12,10 +12,10 @@ ms.date: 10/12/2020
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f962bf131b87f17712186145b8c8b8e6090f7002
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98730653"
 ---
 # <a name="tutorial-to-deploy-f5-big-ip-virtual-edition-vm-in-azure-iaas-for-secure-hybrid-access"></a>Zelf studie voor het implementeren van een VM met een virtuele editie van F5 in azure IaaS voor beveiligde hybride toegang
@@ -107,7 +107,7 @@ Voer de volgende taken uit om BIG-IP VE te implementeren vanuit [Azure Marketpla
  |NIC-netwerk beveiligings groep| Selecteer geen als het Azure-subnet dat u in de vorige stappen hebt geselecteerd, al is gekoppeld aan een netwerk beveiligings groep (NSG); anders selecteert u basis|
  |Netwerken versnellen| Aan |
  |**Taakverdeling**|     |
- |Taak verdeling van virtuele machine| Nee|
+ |Taak verdeling van virtuele machine| No|
 
 10. Selecteer **volgende: beheer** en Voltooi deze instellingen.
 

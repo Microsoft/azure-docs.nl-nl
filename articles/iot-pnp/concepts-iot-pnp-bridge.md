@@ -9,10 +9,10 @@ ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
 ms.openlocfilehash: a45efd90043ecb4d457db7ed39651f1a9b5bbd4d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98890604"
 ---
 # <a name="iot-plug-and-play-bridge"></a>IoT Plug and Play-brug
@@ -34,7 +34,7 @@ IoT Plug en Play Bridge ondersteunt standaard de volgende typen rand apparatuur,
 |[Modbus adapter](https://github.com/Azure/iot-plug-and-play-bridge/blob/master/pnpbridge/docs/modbus_adapters.md) verbindt Sens oren op een Modbus-apparaat.              |Ja|Ja|
 |[MQTT-adapter](https://github.com/Azure/iot-plug-and-play-bridge/blob/master/pnpbridge/docs/mqtt_adapter.md) verbindt apparaten die gebruikmaken van een MQTT-Broker.                  |Ja|Ja|
 |De [SerialPnP-adapter](https://github.com/Azure/iot-plug-and-play-bridge/blob/master/serialpnp/Readme.md) verbindt apparaten die communiceren via een seriële verbinding.               |Ja|Ja|
-|[Windows USB-rand apparatuur](https://github.com/Azure/iot-plug-and-play-bridge/blob/master/pnpbridge/docs/coredevicehealth_adapter.md) maakt gebruik van een lijst met adapters die worden ondersteund door de adapter, om apparaten te verbinden die een specifieke hardware-id hebben.  |Ja|Niet van toepassing|
+|[Windows USB-rand apparatuur](https://github.com/Azure/iot-plug-and-play-bridge/blob/master/pnpbridge/docs/coredevicehealth_adapter.md) maakt gebruik van een lijst met adapters die worden ondersteund door de adapter, om apparaten te verbinden die een specifieke hardware-id hebben.  |Yes|Niet van toepassing|
 
 Zie voor meer informatie over het uitbreiden van de IoT Plug en Play-brug voor het ondersteunen van extra apparaten protocollen [de iot Plug en Play-brug uitbreiden](howto-author-pnp-bridge-adapter.md). Zie voor meer informatie over het bouwen en implementeren van de IoT Plug en Play-brug [de iot Plug en Play-brug bouwen en implementeren](howto-build-deploy-extend-pnp-bridge.md).
 

@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/10/2019
 ms.openlocfilehash: 89a2a659e195afcae336c930a101ed0c0b470cb4
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101715408"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight"></a>On-premises Apache Hadoop clusters migreren naar Azure HDInsight
@@ -31,7 +31,7 @@ Azure Storage kunnen geo-replicatie zijn. Hoewel geo-replicatie geografisch hers
 
 Een van de volgende indelingen kan worden gebruikt om toegang te krijgen tot gegevens die zijn opgeslagen in Azure Storage:
 
-|Data Access-indeling |Beschrijving |
+|Data Access-indeling |Description |
 |---|---|
 |`wasb:///`|Toegang tot standaard opslag met niet-versleutelde communicatie.|
 |`wasbs:///`|Toegang tot de standaard opslag met behulp van gecodeerde communicatie.|
@@ -153,7 +153,7 @@ HDInsight heeft standaard volledige toegang tot de gegevens in de Azure Storage 
 
 1. Open het  [SASToken.py](https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature/blob/master/Python/SASToken.py) -bestand en wijzig de volgende waarden:
 
-    |Token eigenschap|Beschrijving|
+    |Token eigenschap|Description|
     |---|---|
     |policy_name|De naam die moet worden gebruikt om het opgeslagen beleid te maken.|
     |storage_account_name|De naam van uw opslagaccount.|

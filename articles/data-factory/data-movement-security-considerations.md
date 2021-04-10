@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 05/26/2020
 ms.openlocfilehash: 1a99fbd3d3163808a364e8b26e770563a901dc18
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100371325"
 ---
 # <a name="security-considerations-for-data-movement-in-azure-data-factory"></a>Beveiligings overwegingen voor het verplaatsen van gegevens in Azure Data Factory
@@ -182,7 +182,7 @@ De volgende tabel bevat uitgaande poort-en domein vereisten voor zakelijke firew
 
 De volgende tabel bevat de binnenkomende poort vereisten voor Windows Firewall:
 
-| Poorten voor inkomend verkeer | Beschrijving                              |
+| Poorten voor inkomend verkeer | Description                              |
 | ------------- | ---------------------------------------- |
 | 8060 (TCP)    | Vereist door de Power shell-versleutelings-cmdlet, zoals beschreven in [referenties versleutelen voor on-premises gegevens archieven in azure Data Factory](encrypt-credentials-self-hosted-integration-runtime.md), en door de toepassing voor referentie beheer om veilig referenties in te stellen voor on-premises gegevens archieven op de zelf-hostende Integration runtime. |
 

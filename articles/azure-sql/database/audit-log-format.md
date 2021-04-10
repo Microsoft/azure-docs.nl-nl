@@ -11,10 +11,10 @@ ms.reviewer: vanto
 ms.custom: sqldbrb=1
 ms.date: 06/03/2020
 ms.openlocfilehash: f5c176db4f679c79bb42c6ceb46b3588e9440874
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100572215"
 ---
 # <a name="sql-database-audit-log-format"></a>Indeling van SQL Database audit logboek
@@ -46,7 +46,7 @@ Controlegebeurtenissen worden geschreven naar de `AzureDiagnostics` tabel met de
 
 ## <a name="audit-log-fields"></a><a id="subheading-1"></a>Controle logboek velden
 
-| Naam (BLOB) | Naam (Event Hubs/Log Analytics) | Beschrijving | Blob-type | Type Event Hubs/Log Analytics |
+| Naam (BLOB) | Naam (Event Hubs/Log Analytics) | Description | Blob-type | Type Event Hubs/Log Analytics |
 |-------------|---------------------------------|-------------|-----------|-------------------------------|
 | action_id | action_id_s | ID van de actie | varchar (4) | tekenreeks |
 | action_name | action_name_s | De naam van de actie | N.v.t. | tekenreeks |

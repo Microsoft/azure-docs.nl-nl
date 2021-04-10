@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 03/04/2021
 ms.author: alkohli
 ms.openlocfilehash: 38ba5679731b5e52eb06751a625aea9df69c76ca
-ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/28/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105643215"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-using-azure-cli-and-python"></a>VM's implementeren op uw GPU-apparaat voor Azure Stack Edge Pro met behulp van Azure CLI en Python

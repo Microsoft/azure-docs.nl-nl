@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 11/14/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 2432cc49d770471979e089a496b9d0351eec26fd
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 799a7ea6d76df06cea9d3960f43fc78de9bdf5b6
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102550328"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106067789"
 ---
 # <a name="windows-virtual-machines-in-azure"></a>Virtuele Windows-machines in Azure
 
@@ -50,7 +50,7 @@ In deze tabel staan enkele manieren om een lijst met beschikbare locaties te ver
 | --- | --- |
 | Azure Portal |Selecteer een locatie in de lijst bij het maken van een VM. |
 | Azure PowerShell |Gebruik de opdracht [Get-AzLocation](/powershell/module/az.resources/get-azlocation). |
-| REST-API |Gebruik de bewerking [Locaties vermelden](/rest/api/resources/subscriptions). |
+| REST-API |Gebruik de bewerking [Locaties vermelden](/rest/api/resources/subscriptions/subscriptions/listlocations). |
 | Azure CLI |Gebruik de bewerking [az account list-locations](/cli/azure/account). |
 
 ## <a name="availability"></a>Beschikbaarheid

@@ -6,10 +6,10 @@ ms.author: lazinnat
 author: lazinnat
 ms.date: 06/12/2019
 ms.openlocfilehash: 55263d3c742d18cf03303f96f08fb9aa370c7af8
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100592060"
 ---
 # <a name="view-definition-artifact-in-azure-managed-applications"></a>Definitie artefact in Azure Managed Applications weer geven
@@ -127,9 +127,9 @@ Wanneer u deze weer gave in **viewDefinition.js** opgeeft, wordt de standaard ov
 
 |Eigenschap|Vereist|Beschrijving|
 |---------|---------|---------|
-|koptekst|Nee|De koptekst van de pagina overzicht.|
-|beschrijving|Nee|De beschrijving van de beheerde toepassing.|
-|opdrachten|Nee|De matrix met aanvullende werkbalk knoppen van de overzichts pagina, Zie [opdrachten](#commands).|
+|koptekst|No|De koptekst van de pagina overzicht.|
+|beschrijving|No|De beschrijving van de beheerde toepassing.|
+|opdrachten|No|De matrix met aanvullende werkbalk knoppen van de overzichts pagina, Zie [opdrachten](#commands).|
 
 ![Scherm afbeelding toont het overzicht voor een beheerde toepassing met een besturings element test actie voor het uitvoeren van een demo-toepassing.](./media/view-definition/overview.png)
 
@@ -166,27 +166,27 @@ Met de weer gave metrieken kunt u gegevens verzamelen en samen voegen uit uw beh
 
 |Eigenschap|Vereist|Beschrijving|
 |---------|---------|---------|
-|displayName|Nee|De weer gegeven titel van de weer gave.|
-|versie|Nee|De versie van het platform waarmee de weer gave wordt weer gegeven.|
-|grafieken|Ja|De matrix van grafieken van de pagina metrische gegevens.|
+|displayName|No|De weer gegeven titel van de weer gave.|
+|versie|No|De versie van het platform waarmee de weer gave wordt weer gegeven.|
+|grafieken|Yes|De matrix van grafieken van de pagina metrische gegevens.|
 
 ### <a name="chart"></a>Grafiek
 
 |Eigenschap|Vereist|Beschrijving|
 |---------|---------|---------|
-|displayName|Ja|De weer gegeven titel van de grafiek.|
-|chartType|Nee|De visualisatie die moet worden gebruikt voor deze grafiek. Standaard wordt een lijn diagram gebruikt. Ondersteunde grafiek typen: `Bar, Line, Area, Scatter` .|
-|metrics|Ja|De matrix met metrische gegevens die in deze grafiek moeten worden getekend. Zie [ondersteunde metrische gegevens met Azure monitor](../../azure-monitor/essentials/metrics-supported.md) voor meer informatie over metrische gegevens die worden ondersteund in azure Portal.|
+|displayName|Yes|De weer gegeven titel van de grafiek.|
+|chartType|No|De visualisatie die moet worden gebruikt voor deze grafiek. Standaard wordt een lijn diagram gebruikt. Ondersteunde grafiek typen: `Bar, Line, Area, Scatter` .|
+|metrics|Yes|De matrix met metrische gegevens die in deze grafiek moeten worden getekend. Zie [ondersteunde metrische gegevens met Azure monitor](../../azure-monitor/essentials/metrics-supported.md) voor meer informatie over metrische gegevens die worden ondersteund in azure Portal.|
 
 ### <a name="metric"></a>Metrisch
 
 |Eigenschap|Vereist|Beschrijving|
 |---------|---------|---------|
-|naam|Ja|De naam van de metriek.|
-|aggregationType|Ja|Het aggregatie type dat moet worden gebruikt voor deze metriek. Ondersteunde aggregatie typen: `none, sum, min, max, avg, unique, percentile, count`|
-|naamruimte|Nee|Aanvullende informatie die moet worden gebruikt bij het bepalen van de juiste metrics-provider.|
-|resourceTagFilter|Nee|De matrix van de bron Tags (wordt gescheiden met `or` Word) waarvoor metrische gegevens worden weer gegeven. Is boven op het resource type filter.|
-|resourceType|Ja|Het resource type waarvoor metrische gegevens worden weer gegeven.|
+|naam|Yes|De naam van de metriek.|
+|aggregationType|Yes|Het aggregatie type dat moet worden gebruikt voor deze metriek. Ondersteunde aggregatie typen: `none, sum, min, max, avg, unique, percentile, count`|
+|naamruimte|No|Aanvullende informatie die moet worden gebruikt bij het bepalen van de juiste metrics-provider.|
+|resourceTagFilter|No|De matrix van de bron Tags (wordt gescheiden met `or` Word) waarvoor metrische gegevens worden weer gegeven. Is boven op het resource type filter.|
+|resourceType|Yes|Het resource type waarvoor metrische gegevens worden weer gegeven.|
 
 ![Scherm afbeelding toont een bewakings pagina met de naam dit is mijn metrische weer gave voor een beheerde toepassing.](./media/view-definition/metrics.png)
 
@@ -226,13 +226,13 @@ In deze weer gave kunt u GET-, PUT-, DELETE-en POST-bewerkingen uitvoeren voor u
 
 |Eigenschap|Vereist|Beschrijving|
 |---------|---------|---------|
-|displayName|Ja|De weer gegeven titel van de weer gave. De titel moet **uniek** zijn voor elke CustomResources-weer gave in uw **viewDefinition.jsop**.|
-|versie|Nee|De versie van het platform waarmee de weer gave wordt weer gegeven.|
-|resourceType|Ja|Het aangepaste resource type. Moet een **uniek** aangepast resource type van uw aangepaste provider zijn.|
-|diapictogram|Nee|Het pictogram van de weer gave. Lijst met voorbeeld pictogrammen wordt gedefinieerd in het [JSON-schema](https://schema.management.azure.com/schemas/viewdefinition/0.0.1-preview/ViewDefinition.json#).|
-|createUIDefinition|Nee|Maak een UI-definitie schema voor het maken van een aangepaste resource opdracht. Zie aan de slag [met CreateUiDefinition](create-uidefinition-overview.md) voor een inleiding tot het maken van UI-definities.|
-|opdrachten|Nee|De matrix met aanvullende werkbalk knoppen van de weer gave CustomResources Zie [Commands](#commands).|
-|kolommen|Nee|De matrix van kolommen van de aangepaste resource. Indien niet gedefinieerd `name` , wordt de kolom standaard weer gegeven. De kolom moet `"key"` en bevatten `"displayName"` . Geef bij sleutel de sleutel van de eigenschap op die in een weer gave moet worden weer gegeven. Als genest, gebruikt u punt als scheidings teken, bijvoorbeeld `"key": "name"` of `"key": "properties.property1"` . Geef bij weergave naam de weergave naam op van de eigenschap die in een weer gave moet worden weer gegeven. U kunt ook een `"optional"` eigenschap opgeven. Als deze eigenschap is ingesteld op True, wordt de kolom standaard verborgen in een weer gave.|
+|displayName|Yes|De weer gegeven titel van de weer gave. De titel moet **uniek** zijn voor elke CustomResources-weer gave in uw **viewDefinition.jsop**.|
+|versie|No|De versie van het platform waarmee de weer gave wordt weer gegeven.|
+|resourceType|Yes|Het aangepaste resource type. Moet een **uniek** aangepast resource type van uw aangepaste provider zijn.|
+|diapictogram|No|Het pictogram van de weer gave. Lijst met voorbeeld pictogrammen wordt gedefinieerd in het [JSON-schema](https://schema.management.azure.com/schemas/viewdefinition/0.0.1-preview/ViewDefinition.json#).|
+|createUIDefinition|No|Maak een UI-definitie schema voor het maken van een aangepaste resource opdracht. Zie aan de slag [met CreateUiDefinition](create-uidefinition-overview.md) voor een inleiding tot het maken van UI-definities.|
+|opdrachten|No|De matrix met aanvullende werkbalk knoppen van de weer gave CustomResources Zie [Commands](#commands).|
+|kolommen|No|De matrix van kolommen van de aangepaste resource. Indien niet gedefinieerd `name` , wordt de kolom standaard weer gegeven. De kolom moet `"key"` en bevatten `"displayName"` . Geef bij sleutel de sleutel van de eigenschap op die in een weer gave moet worden weer gegeven. Als genest, gebruikt u punt als scheidings teken, bijvoorbeeld `"key": "name"` of `"key": "properties.property1"` . Geef bij weergave naam de weergave naam op van de eigenschap die in een weer gave moet worden weer gegeven. U kunt ook een `"optional"` eigenschap opgeven. Als deze eigenschap is ingesteld op True, wordt de kolom standaard verborgen in een weer gave.|
 
 ![Scherm afbeelding toont een pagina Resources met de naam aangepast resource type testen en de actie aangepaste context besturings element.](./media/view-definition/customresources.png)
 
@@ -255,10 +255,10 @@ Opdrachten is een matrix met aanvullende werkbalk knoppen die op de pagina worde
 
 |Eigenschap|Vereist|Beschrijving|
 |---------|---------|---------|
-|displayName|Ja|De weer gegeven naam van de opdracht knop.|
-|leertraject|Ja|De actie naam van de aangepaste provider. De actie moet worden gedefinieerd in **mainTemplate.jsop**.|
-|diapictogram|Nee|Het pictogram van de opdracht knop. Lijst met voorbeeld pictogrammen wordt gedefinieerd in het [JSON-schema](https://schema.management.azure.com/schemas/viewdefinition/0.0.1-preview/ViewDefinition.json#).|
-|createUIDefinition|Nee|Het definitie schema voor de gebruikers interface maken voor de opdracht. Zie aan de slag [met CreateUiDefinition](create-uidefinition-overview.md)voor een inleiding tot het maken van UI-definities.|
+|displayName|Yes|De weer gegeven naam van de opdracht knop.|
+|leertraject|Yes|De actie naam van de aangepaste provider. De actie moet worden gedefinieerd in **mainTemplate.jsop**.|
+|diapictogram|No|Het pictogram van de opdracht knop. Lijst met voorbeeld pictogrammen wordt gedefinieerd in het [JSON-schema](https://schema.management.azure.com/schemas/viewdefinition/0.0.1-preview/ViewDefinition.json#).|
+|createUIDefinition|No|Het definitie schema voor de gebruikers interface maken voor de opdracht. Zie aan de slag [met CreateUiDefinition](create-uidefinition-overview.md)voor een inleiding tot het maken van UI-definities.|
 
 ## <a name="associations"></a>Lidkoppelingen
 
@@ -282,10 +282,10 @@ In deze weer gave kunt u bestaande Azure-resources uitbreiden op basis van de `t
 
 |Eigenschap|Vereist|Beschrijving|
 |---------|---------|---------|
-|displayName|Ja|De weer gegeven titel van de weer gave. De titel moet **uniek** zijn voor elke weer gave van koppelingen in uw **viewDefinition.jsop**.|
-|versie|Nee|De versie van het platform waarmee de weer gave wordt weer gegeven.|
-|targetResourceType|Ja|Het doel bron type. Dit is het resource type dat wordt weer gegeven voor de onboarding van resources.|
-|createUIDefinition|Nee|Maak een UI-definitie schema voor het maken van de koppelings bron opdracht. Zie aan de slag [met CreateUiDefinition](create-uidefinition-overview.md) voor een inleiding tot het maken van UI-definities.|
+|displayName|Yes|De weer gegeven titel van de weer gave. De titel moet **uniek** zijn voor elke weer gave van koppelingen in uw **viewDefinition.jsop**.|
+|versie|No|De versie van het platform waarmee de weer gave wordt weer gegeven.|
+|targetResourceType|Yes|Het doel bron type. Dit is het resource type dat wordt weer gegeven voor de onboarding van resources.|
+|createUIDefinition|No|Maak een UI-definitie schema voor het maken van de koppelings bron opdracht. Zie aan de slag [met CreateUiDefinition](create-uidefinition-overview.md) voor een inleiding tot het maken van UI-definities.|
 
 ## <a name="looking-for-help"></a>Hulp nodig?
 

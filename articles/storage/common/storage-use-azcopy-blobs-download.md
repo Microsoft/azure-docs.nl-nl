@@ -8,12 +8,12 @@ ms.date: 12/11/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: dineshm
-ms.openlocfilehash: 20da05399eed4cb9c5a4b69a82b0b1e799997751
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: aa9a415e7bf33409e804fb5503d7b608430098fb
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98880115"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105728909"
 ---
 # <a name="download-blobs-from-azure-blob-storage-by-using-azcopy-v10"></a>Blobs downloaden van Azure Blob-opslag met behulp van AzCopy V10 toevoegen
 
@@ -37,7 +37,7 @@ Down load een blob met behulp van de [Kopieer opdracht azcopy](storage-ref-azcop
 > [!TIP]
 > In dit voor beeld worden padvariabelen met enkele aanhalings tekens (' ') Inge sloten. Gebruik enkele aanhalings tekens in alle opdracht shells, met uitzonde ring van de Windows-opdracht shell (cmd.exe). Als u een Windows-opdracht shell (cmd.exe) gebruikt, plaatst u path-argumenten met dubbele aanhalings tekens ("") in plaats van enkele aanhalings tekens (' ').
 
-|    |     |
+| Syntaxis/voor beeld  |  Code |
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>/<blob-path>' '<local-file-path>'` |
 | **Voorbeeld** | `azcopy copy 'https://mystorageaccount.blob.core.windows.net/mycontainer/myTextFile.txt' 'C:\myDirectory\myTextFile.txt'` |
@@ -53,7 +53,7 @@ Down load een map met behulp van de [Kopieer opdracht azcopy](storage-ref-azcopy
 > [!TIP]
 > In dit voor beeld worden padvariabelen met enkele aanhalings tekens (' ') Inge sloten. Gebruik enkele aanhalings tekens in alle opdracht shells, met uitzonde ring van de Windows-opdracht shell (cmd.exe). Als u een Windows-opdracht shell (cmd.exe) gebruikt, plaatst u path-argumenten met dubbele aanhalings tekens ("") in plaats van enkele aanhalings tekens (' ').
 
-|    |     |
+| Syntaxis/voor beeld  |  Code |
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>/<directory-path>' '<local-directory-path>' --recursive` |
 | **Voorbeeld** | `azcopy copy 'https://mystorageaccount.blob.core.windows.net/mycontainer/myBlobDirectory' 'C:\myDirectory'  --recursive` |
@@ -71,7 +71,7 @@ U kunt de inhoud van een map downloaden zonder de map waar de inhoud in zit te k
 > [!NOTE]
 > Dit scenario wordt momenteel alleen ondersteund voor accounts die geen hiërarchische naam ruimte hebben.
 
-|    |     |
+| Syntaxis/voor beeld  |  Code |
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://<storage-account-name>.blob.core.windows.net/<container-name>/*' '<local-directory-path>/'` |
 | **Voorbeeld** | `azcopy copy 'https://mystorageaccount.blob.core.windows.net/mycontainer/myBlobDirectory/*' 'C:\myDirectory'` |
@@ -89,7 +89,7 @@ U kunt specifieke blobs downloaden met behulp van volledige bestands namen, gede
 
 Gebruik de [azcopy](storage-ref-azcopy-copy.md) -opdracht copy met de `--include-path` optie. Scheid afzonderlijke BLOB-namen met behulp van een semicolin ( `;` ).
 
-|    |     |
+| Syntaxis/voor beeld  |  Code |
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-or-directory-name>' '<local-directory-path>'  --include-path <semicolon-separated-file-list>` |
 | **Voorbeeld** | `azcopy copy 'https://mystorageaccount.blob.core.windows.net/mycontainer/FileDirectory' 'C:\myDirectory'  --include-path 'photos;documents\myFile.txt' --recursive` |
@@ -103,7 +103,7 @@ U kunt ook blobs uitsluiten met behulp van de `--exclude-path` optie. Zie voor m
 
 Gebruik de [azcopy](storage-ref-azcopy-copy.md) -opdracht copy met de `--include-pattern` optie. Geef gedeeltelijke namen op die de joker tekens bevatten. Scheid namen met behulp van een semicolin ( `;` ).
 
-|    |     |
+| Syntaxis/voor beeld  |  Code |
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-or-directory-name>' '<local-directory-path>' --include-pattern <semicolon-separated-file-list-with-wildcard-characters>` |
 | **Voorbeeld** | `azcopy copy 'https://mystorageaccount.blob.core.windows.net/mycontainer/FileDirectory' 'C:\myDirectory'  --include-pattern 'myFile*.txt;*.pdf*'` |
@@ -119,7 +119,7 @@ Gebruik de [azcopy](storage-ref-azcopy-copy.md) -opdracht copy met `--include-be
 
 De volgende voor beelden downloaden bestanden die zijn gewijzigd op of na de opgegeven datum.
 
-|    |     |
+| Syntaxis/voor beeld  |  Code |
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-or-directory-name>/*' '<local-directory-path>' --include-after <Date-Time-in-ISO-8601-format>` |
 | **Voorbeeld** | `azcopy copy 'https://mystorageaccount.blob.core.windows.net/mycontainer/FileDirectory/*' 'C:\myDirectory'  --include-after '2020-08-19T15:04:00Z'` |
@@ -145,7 +145,7 @@ Gebruik vervolgens de azcopy-opdracht [copy](storage-ref-azcopy-copy.md) met de 
 
 U kunt een [BLOB-moment opname](../blobs/snapshots-overview.md) downloaden door te verwijzen naar de waarde **DateTime** van een BLOB-moment opname. 
 
-|    |     |
+| Syntaxis/voor beeld  |  Code |
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>/<blob-path>?sharesnapshot=<DateTime-of-snapshot>' '<local-file-path>'` |
 | **Voorbeeld** | `azcopy copy 'https://mystorageaccount.blob.core.windows.net/mycontainer/myTextFile.txt?sharesnapshot=2020-09-23T08:21:07.0000000Z' 'C:\myDirectory\myTextFile.txt'` |

@@ -6,12 +6,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: vitalyg
-ms.openlocfilehash: bc1978f6ed0aa3e38f25fa03fc54ddc7d4efb9c3
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 6acab9618566766b12b4b236c75aa58386100513
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102033330"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105961061"
 ---
 # <a name="troubleshooting-metrics-charts"></a>Problemen met grafieken met metrische gegevens oplossen
 
@@ -43,7 +43,7 @@ Sommige resources verzenden niet voortdurend hun metrische gegevens. Azure verza
 
 De [meeste metrische gegevens in Azure worden gedurende 93 dagen bewaard](../essentials/data-platform-metrics.md#retention-of-metrics). U kunt voor een grafiek echter niet meer dan 30 dagen aan gegevens opvragen. Deze beperking geldt niet voor [metrische gegevens op basis van een logboek](../app/pre-aggregated-metrics-log-metrics.md#log-based-metrics).
 
-**Oplossing:** Als u een lege grafiek ziet of uw grafiek alleen een deel van metrische gegevens weergeeft, controleert u of het verschil tussen begin-en eind datums in de tijd kiezer niet groter is dan het interval van 30 dagen.
+**Oplossing:** Als u een lege grafiek ziet of uw grafiek alleen een deel van metrische gegevens weergeeft, controleert u of het verschil tussen begin-en eind datums in de tijd kiezer niet groter is dan het interval van 30 dagen. Als u een interval van 30 dagen hebt geselecteerd, kunt u de grafiek [pannen](metrics-charts.md#pan) om het volledige Bewaar venster weer te geven.
 
 ### <a name="all-metric-values-were-outside-of-the-locked-y-axis-range"></a>Alle metrische waarden bevinden zich buiten het bereik van de vergrendelde y-as
 

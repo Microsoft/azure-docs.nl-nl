@@ -3,12 +3,12 @@ title: 'Concepten: identiteit en toegang'
 description: Meer informatie over de identiteits-en toegangs concepten van de Azure VMware-oplossing
 ms.topic: conceptual
 ms.date: 03/22/2021
-ms.openlocfilehash: 7b1880ccdee1d4c3ce25e264c004b1a949134a96
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 1d49ce27ee74621874281a555651c09a73048928
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105026901"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106109812"
 ---
 # <a name="azure-vmware-solution-identity-concepts"></a>Concepten van Azure VMware-oplossings identiteiten
 
@@ -93,6 +93,9 @@ Om te voor komen dat er rollen worden gemaakt die niet kunnen worden toegewezen 
    De toegevoegde machtiging wordt weer gegeven in de sectie **machtigingen** voor het object.
 
 ## <a name="nsx-t-manager-access-and-identity"></a>Toegangs-en identiteits beheer NSX-T
+
+>[!NOTE]
+>NSX-T 2,5 wordt momenteel ondersteund.
 
 Gebruik het *beheerders* account om toegang te krijgen tot NSX-T-beheer. Het heeft volledige bevoegdheden en stelt u in staat om laag 1 (T1)-gateways, segmenten (logische switches) en alle services te maken en te beheren. De bevoegdheden bieden u toegang tot de gateway NSX-T-laag-0 (T0). Een wijziging in de T0-gateway kan leiden tot gedegradeerde netwerk prestaties of geen toegang tot de privécloud. Open een ondersteunings aanvraag in de Azure Portal om eventuele wijzigingen aan uw NSX-T T0-gateway aan te vragen.
 

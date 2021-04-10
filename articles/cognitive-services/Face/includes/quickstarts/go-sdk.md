@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
-ms.openlocfilehash: 2c693c9e972cdfc66cce0d52323c113b6006bd97
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: ab3fdd24446448e9c21a1e4867c26c960f814c7a
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102444937"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105958072"
 ---
 Ga aan de slag met gezichtsherkenning met behulp van de Face-clientbibliotheek voor Go. Volg deze stappen om het pakket te installeren en de voorbeeldcode voor basistaken uit te proberen. De Face-service biedt u toegang tot geavanceerde algoritmen voor het detecteren en herkennen van menselijke gezichten in afbeeldingen.
 
@@ -22,7 +22,7 @@ Gebruik de clientbibliotheek van de Face-service voor Go voor het volgende:
 
 * [Gezichten in een afbeelding detecteren](#detect-faces-in-an-image)
 * [Vergelijkbare gezichten zoeken](#find-similar-faces)
-* [Een persoonsgroep maken en trainen](#create-and-train-a-person-group)
+* [Een PersonGroup maken en trainen](#create-and-train-a-persongroup)
 * [Een gezicht identificeren](#identify-a-face)
 
 [Referentiedocumentatie](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/face) | [Broncode bibliotheek](https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices/v1.0/face) | [SDK download](https://github.com/Azure/azure-sdk-for-go)
@@ -106,7 +106,7 @@ Deze codevoorbeelden laten zien hoe u basistaken kunt uitvoeren met de Face-serv
 * [De client verifiëren](#authenticate-the-client)
 * [Gezichten in een afbeelding detecteren](#detect-faces-in-an-image)
 * [Vergelijkbare gezichten zoeken](#find-similar-faces)
-* [Een persoonsgroep maken en trainen](#create-and-train-a-person-group)
+* [Een PersonGroup maken en trainen](#create-and-train-a-persongroup)
 * [Een gezicht identificeren](#identify-a-face)
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
@@ -161,7 +161,7 @@ Met de volgende code worden de overeenkomende resultaten op de console weergegev
 [!code-go[](~/cognitive-services-quickstart-code/go/Face/FaceQuickstart.go?name=snippet_similar_print)]
 
 
-## <a name="create-and-train-a-person-group"></a>Een persoonsgroep maken en trainen
+## <a name="create-and-train-a-persongroup"></a>Een PersonGroup maken en trainen
 
 Als u dit scenario wilt doorlopen, moet u de volgende afbeeldingen opslaan in de hoofdmap van uw project: https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/Face/images.
 
@@ -202,11 +202,11 @@ Zodra u gezichten hebt toegewezen, moet u de **PersonGroup** trainen zodat deze 
 Bij de bewerking Identificeren wordt op basis van een afbeelding van een persoon (of meerdere personen) gezocht naar de identiteit van elk gezicht in de afbeelding (zoeken met gezichtsherkenning). Elk gedetecteerd gezicht wordt vergeleken met een **PersonGroup**, een database van verschillende **Person**-objecten waarvan de gezichtskenmerken bekend zijn.
 
 > [!IMPORTANT]
-> Als u dit voorbeeld wilt uitvoeren, moet u eerst de code uitvoeren in [Een persoonsgroep maken en trainen](#create-and-train-a-person-group).
+> Als u dit voor beeld wilt uitvoeren, moet u eerst de code uitvoeren in [Create and train a PersonGroup](#create-and-train-a-persongroup).
 
 ### <a name="get-a-test-image"></a>Een testafbeelding ophalen
 
-De volgende code zoekt in de hoofdmap van uw project naar een afbeelding _test-image-person-group. jpg_ en laadt deze in het programmageheugen. U vindt deze afbeelding in dezelfde opslagplaats als de afbeeldingen die worden gebruikt in [Een persoonsgroep maken en trainen](#create-and-train-a-person-group): https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/Face/images.
+De volgende code zoekt in de hoofdmap van uw project naar een afbeelding _test-image-person-group. jpg_ en laadt deze in het programmageheugen. U kunt deze installatie kopie vinden in dezelfde opslag plaats als de installatie kopieën die worden gebruikt bij het [maken en trainen van een PersonGroup](#create-and-train-a-persongroup): https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/Face/images .
 
 [!code-go[](~/cognitive-services-quickstart-code/go/Face/FaceQuickstart.go?name=snippet_id_source_get)]
 

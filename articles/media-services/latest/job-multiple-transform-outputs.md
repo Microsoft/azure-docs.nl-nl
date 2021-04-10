@@ -12,18 +12,18 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: fc3ab64a35c24df2af9d90a5ad348f840610d188
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5ada86e0ce44977789eaa5d6327c0aad2883b47d
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102635838"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106108843"
 ---
 # <a name="create-a-job-with-multiple-transform-outputs"></a>Een taak met meerdere trans formatie-uitvoer maken
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
-In dit onderwerp wordt beschreven hoe u een trans formatie maakt met twee trans formatie-uitvoer. De eerste keer dat de invoer wordt gecodeerd voor Adaptive Bitrate Streaming met een ingebouwde [AdaptiveStreaming](encoding-concept.md#builtinstandardencoderpreset) -voor instelling. De tweede roept het audio signaal in de invoer video op dat met de [AudioAnalyzerPreset](analyzing-video-audio-files-concept.md#built-in-presets)moet worden verwerkt. Nadat de trans formatie is gemaakt, kunt u een taak verzenden waarmee uw video op de juiste wijze wordt verwerkt. Omdat in dit voor beeld twee trans formatie-uitvoer worden opgegeven, moeten we twee taak uitvoer opgeven. U kunt ervoor kiezen om beide taak uitvoer naar dezelfde activa te sturen (zoals hieronder wordt weer gegeven), of u kunt de resultaten naar afzonderlijke assets schrijven.
+In dit onderwerp wordt beschreven hoe u een trans formatie maakt met twee trans formatie-uitvoer. De eerste keer dat de invoer wordt gecodeerd voor Adaptive Bitrate Streaming met een ingebouwde [AdaptiveStreaming](encode-concept.md#builtinstandardencoderpreset) -voor instelling. De tweede roept het audio signaal in de invoer video op dat met de [AudioAnalyzerPreset](analyze-video-audio-files-concept.md#built-in-presets)moet worden verwerkt. Nadat de trans formatie is gemaakt, kunt u een taak verzenden waarmee uw video op de juiste wijze wordt verwerkt. Omdat in dit voor beeld twee trans formatie-uitvoer worden opgegeven, moeten we twee taak uitvoer opgeven. U kunt ervoor kiezen om beide taak uitvoer naar dezelfde activa te sturen (zoals hieronder wordt weer gegeven), of u kunt de resultaten naar afzonderlijke assets schrijven.
 
 > [!TIP]
 > Controleer voordat u begint met het ontwikkelen [met behulp van Media Services v3 api's](media-services-apis-overview.md) (bevat informatie over het openen van api's, naam conventies, enzovoort).

@@ -8,20 +8,16 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 0c1b67e42e7988a836ec58ac022b11d736210bca
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: bcf6b2f6b964a056b9d90f08c0586fcbdec5b260
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104865618"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106167273"
 ---
 # <a name="deploy-a-cloud-service-extended-support-using-azure-powershell"></a>Een Cloud service (uitgebreide ondersteuning) implementeren met behulp van Azure PowerShell
 
 In dit artikel wordt beschreven hoe u de `Az.CloudService` Power shell-module gebruikt om Cloud Services (uitgebreide ondersteuning) te implementeren in azure met meerdere rollen (webrole en WorkerRole) en de extensie extern bureau blad. 
-
-> [!IMPORTANT]
-> Cloud Services (uitgebreide ondersteuning) is momenteel beschikbaar als open bare preview.
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
@@ -73,13 +69,14 @@ Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud 
     $virtualNetwork = New-AzVirtualNetwork -Name “ContosoVNet” -Location “East US” -ResourceGroupName “ContosOrg” -AddressPrefix "10.0.0.0/24" -Subnet $subnet 
     ```
  
-7. Maak een openbaar IP-adres en (optioneel) Stel de DNS-label eigenschap van het open bare IP-adres in. Als u een statisch IP-adres gebruikt, moet er naar worden verwezen als een Gereserveerd IP in het service configuratie bestand.  
+7. Maak een openbaar IP-adres en stel de DNS-label eigenschap van het open bare IP-adres in. Cloud Services (uitgebreide ondersteuning) ondersteunt alleen [Basic] ( https://docs.microsoft.com/azure/virtual-network/public-ip-addresses#basic) open bare IP-adressen van SKU. Open bare Ip's van standaard-SKU werken niet met Cloud Services.
+Als u een statisch IP-adres gebruikt, moet u ernaar verwijzen als een Gereserveerd IP in het bestand met de service configuratie (. cscfg) 
 
     ```powershell
     $publicIp = New-AzPublicIpAddress -Name “ContosIp” -ResourceGroupName “ContosOrg” -Location “East US” -AllocationMethod Dynamic -IpAddressVersion IPv4 -DomainNameLabel “contosoappdns” -Sku Basic 
     ```
 
-8. Maak een netwerk profiel object en koppel het open bare IP-adres aan de front-end van het platform dat is gemaakt load balancer.  
+8. Maak een object voor een netwerk profiel en koppel het open bare IP-adres aan de front-end van de load balancer. Het Azure-platform maakt automatisch een ' klassieke ' SKU load balancer resource in hetzelfde abonnement als de Cloud service resource. De load balancer resource is een alleen-lezen resource in ARM. Updates voor de resource worden alleen ondersteund via de implementatie bestanden voor Cloud Services (. cscfg &. csdef)
 
     ```powershell
     $publicIP = Get-AzPublicIpAddress -ResourceGroupName ContosOrg -Name ContosIp  

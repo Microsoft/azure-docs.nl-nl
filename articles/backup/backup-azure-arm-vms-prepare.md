@@ -4,10 +4,10 @@ description: Hierin wordt beschreven hoe u back-ups maakt van virtuele Azure-mac
 ms.topic: conceptual
 ms.date: 07/28/2020
 ms.openlocfilehash: 5c3bc66c2111c347f8ed0e32c9e597a52ed404ed
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104670423"
 ---
 # <a name="back-up-azure-vms-in-a-recovery-services-vault"></a>Back-ups maken van virtuele Azure-machines in een Recovery Services kluis

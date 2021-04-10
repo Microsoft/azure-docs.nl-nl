@@ -2,24 +2,24 @@
 title: URL en query reeks opnieuw schrijven met Azure-toepassing gateway-Azure Portal
 description: Meer informatie over het gebruik van de Azure Portal om een Azure-toepassing gateway te configureren voor het herschrijven van de URL en de query reeks
 services: application-gateway
-author: surajmb
+author: azhar2005
 ms.service: application-gateway
 ms.topic: how-to
-ms.date: 7/16/2020
-ms.author: surmb
-ms.openlocfilehash: ec58c6f97efdbcb91071bcea98bbbc614833246d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 4/05/2021
+ms.author: azhussai
+ms.openlocfilehash: b8ddc5e57b9ce56d6bce7e220bc840ba0fa43ae2
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92215770"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106384754"
 ---
-# <a name="rewrite-url-with-azure-application-gateway---azure-portal-preview"></a>URL opnieuw schrijven met Azure-toepassing gateway-Azure Portal (preview-versie)
+# <a name="rewrite-url-with-azure-application-gateway---azure-portal"></a>URL opnieuw schrijven met Azure-toepassing gateway-Azure Portal
 
 In dit artikel wordt beschreven hoe u met behulp van de Azure Portal een SKU-exemplaar van [Application Gateway v2](application-gateway-autoscaling-zone-redundant.md) kunt configureren om de URL opnieuw te schrijven.
 
 >[!NOTE]
-> De functie voor het herschrijven van URL'S is in Preview en is alleen beschikbaar voor Standard_v2 en WAF_v2 SKU van Application Gateway. Het wordt niet aanbevolen voor gebruik in een productie omgeving. Zie hier voor meer informatie over het [gebruik van voor](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)beelden.
+> De functie voor het herschrijven van URL'S is alleen beschikbaar voor Standard_v2 en WAF_v2 SKU van Application Gateway. Wanneer het herschrijven van de URL is geconfigureerd op een WAF ingeschakelde gateway, vindt de WAF-evaluatie plaats op de herschreven aanvraag headers en de URL. [Meer informatie](rewrite-http-headers-url.md#using-url-rewrite-or-host-header-rewrite-with-web-application-firewall-waf_v2-sku).
 
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 

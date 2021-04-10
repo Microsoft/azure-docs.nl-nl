@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/24/2020
 ms.author: juliako
-ms.openlocfilehash: 0961aa3e573e511a6941bc59ddc335f64799abb4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ceb105409ff218cd633eb36d793e8fc16c7d135c
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "87047342"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105961537"
 ---
 # <a name="compare-azure-media-services-v3-presets-and-video-indexer"></a>Azure Media Services voorinstellingen voor v3 en Video Indexer vergelijken 
 
@@ -31,7 +31,7 @@ Er is momenteel een overlap ping tussen de functies die worden geboden door de [
 
 |Functie|Video Indexer-Api's |Video-en audio analyse-voor instellingen<br/>in Media Services v3-Api's|
 |---|---|---|
-|Media Insights|[Verbeterd](video-indexer-output-json-v2.md) |[Basisprincipes](../latest/analyzing-video-audio-files-concept.md)|
+|Media Insights|[Verbeterd](video-indexer-output-json-v2.md) |[Basisprincipes](../latest/analyze-video-audio-files-concept.md)|
 |Bewerkingen|Bekijk de volledige lijst met ondersteunde functies: <br/> [Overzicht](video-indexer-overview.md)|Retourneert alleen video inzichten|
 |Billing|[Media Services prijzen](https://azure.microsoft.com/pricing/details/media-services/#analytics)|[Media Services prijzen](https://azure.microsoft.com/pricing/details/media-services/#analytics)|
 |Naleving|Ga voor de meest recente nalevings updates naar [Azure compliance Offerings.pdf](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942/file/178110/23/Microsoft%20Azure%20Compliance%20Offerings.pdf) en zoek naar "video indexer" om te controleren of het voldoet aan een certificaat van belang.|Ga voor de meest recente nalevings updates naar [Azure compliance Offerings.pdf](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942/file/178110/23/Microsoft%20Azure%20Compliance%20Offerings.pdf) en zoek naar "Media Services" om te controleren of het voldoet aan een certificaat van belang.|

@@ -4,10 +4,10 @@ description: Hierin wordt beschreven hoe Azure Event Grid gebeurtenissen levert 
 ms.topic: conceptual
 ms.date: 10/29/2020
 ms.openlocfilehash: e7fa627464ddb85ebded3ae99229b7fe8dd3fde3
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105629271"
 ---
 # <a name="event-grid-message-delivery-and-retry"></a>Bericht bezorging Event Grid en probeer het opnieuw

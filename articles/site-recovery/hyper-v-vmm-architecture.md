@@ -1,18 +1,15 @@
 ---
 title: Architectuur-herstel na nood geval voor Hyper-V naar een secundaire site met Azure Site Recovery
 description: Dit artikel bevat een overzicht van de architectuur voor herstel na nood gevallen van on-premises virtuele Hyper-V-machines naar een secundaire System Center VMM-site met Azure Site Recovery.
-author: rayne-wiselman
-manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/12/2019
-ms.author: raynew
-ms.openlocfilehash: 703a6afdc12c8a9863ff0f480ec7a577ec31ef77
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b33e60036108eb92b7b64b4b3ec3bcc47ad1ade1
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "87495995"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106580212"
 ---
 # <a name="architecture---hyper-v-replication-to-a-secondary-site"></a>Architectuur-Hyper-V-replicatie naar een secundaire site
 

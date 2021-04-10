@@ -3,12 +3,12 @@ title: Veelgestelde vragen over live video Analytics op IoT Edge-Azure
 description: In dit artikel vindt u antwoorden op veelgestelde vragen over live video Analytics op IoT Edge.
 ms.topic: conceptual
 ms.date: 12/01/2020
-ms.openlocfilehash: 661b6155ce2d95e2111a1fa338fd5df438e61e7d
-ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
+ms.openlocfilehash: 2e5ec6e3a303bb8d655e666a820cfe67943b4eb6
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105032789"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106275954"
 ---
 # <a name="live-video-analytics-on-iot-edge-faq"></a>Veelgestelde vragen over live video Analytics op IoT Edge
 
@@ -57,7 +57,7 @@ Nee, er wordt geen ondersteuning geboden voor Open Network Video Interface Forum
 
 **Kan ik assets die zijn geregistreerd op Azure Media Services van de Edge, afspelen met streaming-technologieën zoals HLS of DASH?**
 
-Ja. U kunt vastgelegde assets streamen zoals andere activa in Azure Media Services. Als u de inhoud wilt streamen, moet u een streaming-eind punt hebben gemaakt en de status wordt uitgevoerd. Als u het standaard proces voor het maken van streaming-locators gebruikt, hebt u toegang tot een Apple HTTP Live Streaming (HLS) of dynamisch adaptief streamen via HTTP (DASH, ook wel MPEG-DASH)-manifest voor streamen naar elk mogelijk Player-Framework. Zie [dynamische verpakking](../latest/dynamic-packaging-overview.md)voor meer informatie over het maken en publiceren van HLS-of Dash-manifesten.
+Ja. U kunt vastgelegde assets streamen zoals andere activa in Azure Media Services. Als u de inhoud wilt streamen, moet u een streaming-eind punt hebben gemaakt en de status wordt uitgevoerd. Als u het standaard proces voor het maken van streaming-locators gebruikt, hebt u toegang tot een Apple HTTP Live Streaming (HLS) of dynamisch adaptief streamen via HTTP (DASH, ook wel MPEG-DASH)-manifest voor streamen naar elk mogelijk Player-Framework. Zie [dynamische verpakking](../latest/encode-dynamic-packaging-concept.md)voor meer informatie over het maken en publiceren van HLS-of Dash-manifesten.
 
 **Kan ik de standaard functies voor beveiliging van inhoud en DRM van Media Services op een gearchiveerde Asset gebruiken?**
 
@@ -69,7 +69,7 @@ Alle standaard spelers die ondersteuning bieden voor compatibele HLS versie 3 of
 
 De aanbevolen spelers voor testen zijn onder andere:
 
-* [Azure Media Player](../latest/use-azure-media-player.md)
+* [Azure Media Player](../latest/player-use-azure-media-player-how-to.md)
 * [HLS.js](https://hls-js.netlify.app/demo/)
 * [Video.js](https://videojs.com/)
 * [Dash.js](https://github.com/Dash-Industry-Forum/dash.js/wiki)

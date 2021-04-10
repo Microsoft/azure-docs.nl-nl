@@ -5,13 +5,13 @@ author: Heidilohr
 ms.topic: how-to
 ms.date: 03/25/2020
 ms.author: helohr
-manager: lizross
-ms.openlocfilehash: ebf91f68e45148d9a609ff671ffa4683bd74c82c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+manager: femila
+ms.openlocfilehash: 07e0754cc9fb940218999e2012a9cb87341557cb
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "89226111"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106448080"
 ---
 # <a name="connect-to-windows-virtual-desktop-with-the-android-client"></a>Verbinding maken met een virtueel bureau blad van Windows met de Android-client
 

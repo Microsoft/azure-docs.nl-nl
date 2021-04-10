@@ -11,16 +11,16 @@ author: nibaccam
 ms.reviewer: nibaccam
 ms.date: 03/02/2021
 ms.custom: how-to, devx-track-python, data4ml, synapse-azureml
-ms.openlocfilehash: 9ced4da7f71a0499e538e499644d89240611f1ea
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 96917b805640f0cfe38f28ba263e2e7ce55bce7f
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104956210"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106066157"
 ---
 # <a name="attach-apache-spark-pools-powered-by-azure-synapse-analytics-for-data-wrangling-preview"></a>Apache Spark Pools koppelen (aangedreven door Azure Synapse Analytics) voor data wrangling (preview)
 
-In dit artikel leert u hoe u een Apache Spark pool kunt koppelen en starten die is gemaakt door [Azure Synapse Analytics](/synapse-analytics/overview-what-is.md) voor data wrangling op schaal. 
+In dit artikel leert u hoe u een Apache Spark pool kunt koppelen en starten die is gemaakt door [Azure Synapse Analytics](../synapse-analytics/overview-what-is.md) voor data wrangling op schaal. 
 
 Dit artikel bevat richt lijnen voor het interactief uitvoeren van gegevens wrangling binnen een speciale Synapse-sessie in een Jupyter-notebook. Als u liever Azure Machine Learning pijp lijnen gebruikt, raadpleegt u [Apache Spark gebruiken (mogelijk gemaakt door Azure Synapse Analytics) in uw machine learning pijplijn (preview)](how-to-use-synapsesparkstep.md).
 
@@ -310,7 +310,7 @@ input1 = train_ds.as_mount()
 
 ## <a name="example-notebook"></a>Voorbeeld van notebook
 
-Zie dit [end-to-end-notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/azure-synapse/spark_job_on_synapse_spark_pool.ipynb) voor een gedetailleerde voorbeeld code voor het uitvoeren van gegevens voorbereiding en het model leren van een enkele notebook met Azure Synapse Analytics en Azure machine learning.
+Zie dit [end-to-end-notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/azure-synapse/spark_session_on_synapse_spark_pool.ipynb) voor een gedetailleerde voorbeeld code voor het uitvoeren van gegevens voorbereiding en het model leren van een enkele notebook met Azure Synapse Analytics en Azure machine learning.
 
 ## <a name="next-steps"></a>Volgende stappen
 

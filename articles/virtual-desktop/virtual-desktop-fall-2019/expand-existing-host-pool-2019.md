@@ -3,15 +3,15 @@ title: Bestaande Windows Virtual Desktop (klassieke) hostgroep uitbreiden met ni
 description: Een bestaande hostgroep uitbreiden met nieuwe sessie-hosts in virtueel bureau blad (klassiek) van Windows.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 03/30/2020
+ms.date: 03/31/2021
 ms.author: helohr
-manager: lizross
-ms.openlocfilehash: 61cf28b0f1ebee6a0312ec3f23f22b01c6c4919e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+manager: femila
+ms.openlocfilehash: f82b831d887f0ebdd659167935f2134583b3bb87
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "88009168"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106551948"
 ---
 # <a name="expand-an-existing-host-pool-with-new-session-hosts-in-windows-virtual-desktop-classic"></a>Een bestaande hostgroep uitbreiden met nieuwe sessie-hosts in virtueel bureau blad van Windows (klassiek)
 
@@ -39,7 +39,7 @@ U hebt ook de volgende informatie nodig bij het maken van de hostgroep en de Vm'
 De volgende drie secties zijn drie methoden die u kunt gebruiken om de hostgroep uit te breiden. U kunt dit doen met het implementatie programma waarmee u vertrouwd bent.
 
 >[!NOTE]
->Tijdens de implementatie fase worden fout berichten weer geven voor de vorige VM-bronnen van de sessiehost als deze momenteel worden afgesloten. Deze fouten doen zich voor omdat Azure de Power shell DSC-uitbrei ding niet kan uitvoeren om te valideren dat de host-Vm's op de juiste manier zijn geregistreerd bij uw bestaande hostgroep. U kunt deze fouten negeren, of u kunt de fouten voor komen door alle virtuele machines van de host in de bestaande hostgroep te starten voordat u het implementatie proces start.
+>Tijdens de implementatie fase worden fout berichten weer geven voor de vorige VM-bronnen van de sessiehost als deze momenteel worden afgesloten. Deze fouten doen zich voor omdat Azure de Power shell DSC-uitbrei ding niet kan uitvoeren om te valideren dat de host-Vm's op de juiste manier zijn geregistreerd bij uw bestaande hostgroep. De sessiehost waarvan de naam eindigt op '-0 ' moet worden uitgevoerd. u kunt deze fouten echter negeren voor andere sessie-hosts, of u kunt de fouten voor komen door alle virtuele machines van de host in de bestaande hostgroep te starten voordat u het implementatie proces start.
 
 ## <a name="redeploy-from-azure"></a>Opnieuw implementeren vanuit Azure
 
@@ -96,7 +96,7 @@ Alle parameter waarden in deze sectie moeten overeenkomen met wat u hebt opgegev
 1. Selecteer de VM-grootte die overeenkomt met de bestaande Vm's van de host.
 
     >[!NOTE]
-    >Als de specifieke VM-grootte die u zoekt niet wordt weer gegeven in de VM-grootte kiezer, dat is omdat we deze nog niet hebben uitgevoerd op het Azure Marketplace-hulp programma. Als u een VM-grootte wilt aanvragen, moet u een aanvraag maken of een bestaande aanvraag bijstemmen in het [Windows-UserVoice-forum van Virtual Desktop](https://windowsvirtualdesktop.uservoice.com/forums/921118-general).
+    >Als de specifieke VM-grootte die u zoekt niet wordt weer gegeven in de VM-grootte kiezer, dat is omdat we deze nog niet hebben uitgevoerd op het Azure Marketplace-hulp programma.
 
 2. Pas het *gebruiks profiel*, de *totale gebruikers* en het *aantal virtuele-machine* parameters aan om het totale aantal sessie-hosts te selecteren dat u wilt gebruiken in uw hostgroep. Als u uw hostgroep bijvoorbeeld uitbreidt van vijf sessie-hosts tot acht, configureert u deze opties voor het ophalen van 8 virtuele machines.
 3. Voer een voorvoegsel in voor de namen van de virtuele machines. Als u bijvoorbeeld de naam "voor voegsel" opgeeft, worden de virtuele machines "voor voegsel-0," "voor voegsel-1," genoemd.

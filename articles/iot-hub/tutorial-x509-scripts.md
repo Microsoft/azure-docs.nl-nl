@@ -13,16 +13,16 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: Data Analytics'
 - devx-track-azurecli
-ms.openlocfilehash: f11aec770818cd4ceeeda1ae7decf30acb9ca92b
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.openlocfilehash: fc3717436619468e2db0bf4b408059112dae24cc
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105630677"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106384150"
 ---
 # <a name="tutorial-using-microsoft-supplied-scripts-to-create-test-certificates"></a>Zelf studie: door micro soft geleverde scripts gebruiken voor het maken van test certificaten
 
-Micro soft biedt Power shell-en bash-scripts waarmee u leert hoe u uw eigen X. 509-certificaten maakt en deze verifieert bij een IoT Hub. De scripts bevinden zich in [github](https://github.com/Azure/azure-iot-sdk-c/tree/master/tools/CACertificates). Ze zijn alleen bedoeld voor demonstratie doeleinden. De door hen gemaakte certificaten mogen niet worden gebruikt voor productie. De certificaten bevatten hardcoded wacht woorden ("1234") en verlopen na 30 dagen. Voor een productie omgeving moet u uw eigen aanbevolen procedures gebruiken voor het maken van certificaten en het beheer van de levens duur.
+Micro soft biedt Power shell-en bash-scripts waarmee u leert hoe u uw eigen X. 509-certificaten maakt en deze verifieert bij een IoT Hub. De scripts bevinden zich in een GitHub- [opslag plaats](https://github.com/Azure/azure-iot-sdk-c/tree/master/tools/CACertificates). Ze zijn alleen bedoeld voor demonstratie doeleinden. De door hen gemaakte certificaten mogen niet worden gebruikt voor productie. De certificaten bevatten hardcoded wacht woorden ("1234") en verlopen na 30 dagen. Voor een productie omgeving moet u uw eigen aanbevolen procedures gebruiken voor het maken van certificaten en het beheer van de levens duur.
 
 ## <a name="powershell-scripts"></a>PowerShell-scripts
 
@@ -30,7 +30,7 @@ Micro soft biedt Power shell-en bash-scripts waarmee u leert hoe u uw eigen X. 5
 
 OpenSSL voor Windows ophalen. Zie <https://www.openssl.org/docs/faq.html#MISC4> voor plaatsen om het te downloaden of <https://www.openssl.org/source/> om te bouwen vanuit de bron. Voer vervolgens de volgende voorbereidende scripts uit:
 
-1. Kopieer de scripts van [github](https://github.com/Azure/azure-iot-sdk-c/tree/master/tools/CACertificates) naar de lokale map waarin u wilt werken. Alle bestanden worden gemaakt als onderliggende items van deze map.
+1. Kopieer de scripts van deze GitHub- [opslag plaats](https://github.com/Azure/azure-iot-sdk-c/tree/master/tools/CACertificates) naar de lokale map waarin u wilt werken. Alle bestanden worden gemaakt als onderliggende items van deze map.
 
 1. Start Power shell als beheerder.
 

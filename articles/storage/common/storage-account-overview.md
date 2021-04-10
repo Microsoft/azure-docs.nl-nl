@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 03/09/2021
+ms.date: 04/02/2021
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 24d955b0d1c53f57f5927f9e893b6ecd75fb3ca8
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: d7eca7d8f3cd40f4a3961f0ac478fba290be3041
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102561888"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106279660"
 ---
 # <a name="storage-account-overview"></a>Overzicht van opslagaccounts
 
@@ -175,10 +175,6 @@ In de volgende tabel ziet u welke toegangs lagen er beschikbaar zijn voor blobs 
 > [!IMPORTANT]
 > Als u de toegangs laag voor een bestaand opslag account of BLOB wijzigt, kunnen er extra kosten in rekening worden gebracht. Zie [facturering van opslag accounts](#storage-account-billing)voor meer informatie.
 
-## <a name="encryption"></a>Versleuteling
-
-Alle gegevens in uw opslag account worden versleuteld aan de kant van de service. Zie [Azure Storage-service versleuteling voor Data-at-rest](storage-service-encryption.md)voor meer informatie over versleuteling.
-
 ## <a name="storage-account-endpoints"></a>Eindpunten van opslagaccount
 
 Een opslagaccount biedt een unieke naamruimte in Azure voor uw gegevens. Elk object dat u in Azure Storage opslaat, heeft een adres dat uw unieke accountnaam bevat. De combinatie van de accountnaam en het service-eindpunt voor Azure Storage vormen de eindpunten voor uw opslagaccount.
@@ -200,22 +196,17 @@ Maak de URL voor toegang tot een object in een opslag account door de locatie va
 
 U kunt uw opslag account ook configureren voor het gebruik van een aangepast domein voor blobs. Zie [een aangepaste domein naam configureren voor uw Azure Storage-account](../blobs/storage-custom-domain-name.md)voor meer informatie.  
 
-## <a name="control-access-to-account-data"></a>Toegang tot account gegevens beheren
+## <a name="migrating-a-storage-account"></a>Een opslag account migreren
 
-De gegevens in uw account zijn standaard alleen beschikbaar voor u, de eigenaar van het account. U bepaalt wie toegang heeft tot uw gegevens en welke machtigingen ze hebben.
+In de volgende tabel vindt u een overzicht van de richt lijnen voor het verplaatsen, upgraden of migreren van een opslag account:
 
-Elke aanvraag die aan uw opslag account wordt gedaan, moet worden geautoriseerd. Op het niveau van de service moet de aanvraag een geldige *autorisatie* -header bevatten. Deze header bevat met name alle informatie die nodig is voor de service om de aanvraag te valideren voordat deze wordt uitgevoerd.
-
-U kunt met behulp van de volgende benaderingen toegang tot de gegevens in uw opslag account verlenen:
-
-- **Azure Active Directory:** Gebruik de referenties van Azure Active Directory (Azure AD) om een gebruiker, groep of een andere identiteit te verifiëren voor toegang tot Blob-en wachtrij gegevens. Als de verificatie van een identiteit is geslaagd, retourneert Azure AD een token dat wordt gebruikt voor het autoriseren van de aanvraag bij Azure Blob-opslag of-wachtrij opslag. Zie [toegang tot Azure Storage verifiëren met behulp van Azure Active Directory](storage-auth-aad.md)voor meer informatie.
-- **Gedeelde sleutel autorisatie:** Gebruik de toegangs sleutel voor uw opslag account om een connection string te maken dat uw toepassing tijdens runtime gebruikt om toegang te krijgen tot Azure Storage. De waarden in de connection string worden gebruikt om de *autorisatie* -header te maken die wordt door gegeven aan Azure Storage. Zie [Azure Storage-verbindings reeksen configureren](storage-configure-connection-string.md)voor meer informatie.
-- **Shared Access Signature:** Een Shared Access Signature (SAS) is een token dat gedelegeerde toegang tot resources in uw opslag account toestaat. Het SAS-token Kapselt alle benodigde informatie in om een aanvraag voor het Azure Storage van de URL te autoriseren. Wanneer u een SAS maakt, kunt u opgeven welke machtigingen de SAS verleent aan een bron en het interval waarover de machtigingen geldig zijn. Een SAS-token kan worden ondertekend met Azure AD-referenties of met een gedeelde sleutel. Zie [beperkte toegang verlenen tot Azure storage-resources met behulp van Shared Access signatures (SAS)](storage-sas-overview.md)voor meer informatie.
-
-> [!NOTE]
-> Het verifiëren van gebruikers of toepassingen die gebruikmaken van Azure AD-referenties biedt een superieure beveiliging en gebruiks gemak ten opzichte van andere autorisatie methoden. U kunt de verificatie van de gedeelde sleutel blijven gebruiken met uw toepassingen, maar met Azure AD wordt de nood zaak om uw account toegangs sleutel op te slaan met uw code. U kunt ook door gaan met het gebruik van Shared Access signatures (SAS) om nauw keurige toegang tot resources in uw opslag account te verlenen, maar Azure AD biedt soort gelijke mogelijkheden zonder de behoefte aan het beheer van SAS-tokens of een probleem bij het intrekken van een aangetaste SAS.
->
-> Micro soft raadt u aan gebruik te maken van Azure AD-autorisatie voor uw Azure Storage Blob-en wachtrij toepassingen wanneer dat mogelijk is.
+| Migratiescenario | Details |
+|--|--|
+| Een opslag account verplaatsen naar een ander abonnement | Azure Resource Manager biedt opties om een resource te verplaatsen naar een ander abonnement. Zie [resources verplaatsen naar een nieuwe resource groep of een nieuw abonnement](../../azure-resource-manager/management/move-resource-group-and-subscription.md)voor meer informatie. |
+| Een opslag account verplaatsen naar een andere resource groep | Azure Resource Manager biedt opties om een resource te verplaatsen naar een andere resource groep. Zie [resources verplaatsen naar een nieuwe resource groep of een nieuw abonnement](../../azure-resource-manager/management/move-resource-group-and-subscription.md)voor meer informatie. |
+| Een opslag account verplaatsen naar een andere regio | Als u een opslagaccount wilt verplaatsen, maak dan een kopie van uw opslagaccount in een andere regio. Verplaats uw gegevens vervolgens naar het account met behulp van AzCopy of een ander hulp programma van uw keuze. Zie [een Azure Storage-account naar een andere regio verplaatsen](storage-account-move.md)voor meer informatie. |
+| Upgraden naar een V2-opslagaccount voor algemeen gebruik | U kunt een upgrade uitvoeren voor een algemeen v1-opslag account of een Blob-opslag account naar een v2-account voor algemeen gebruik. Houd er rekening mee dat deze actie niet ongedaan kan worden gemaakt. Zie [Upgraden naar een algemeen v2-opslagaccount](storage-account-upgrade.md) voor meer informatie. |
+| Een klassiek opslag account migreren naar Azure Resource Manager | Het implementatie model van Azure Resource Manager is in het oogpunt van functionaliteit, schaal baarheid en beveiliging het hoofd van het klassieke implementatie model. Zie [migratie van opslag accounts](../../virtual-machines/migration-classic-resource-manager-overview.md#migration-of-storage-accounts) in **door het platform ondersteunde migratie van IaaS-resources van klassiek naar Azure Resource Manager** voor meer informatie over het migreren van een klassiek opslag account naar Azure Resource Manager. |
 
 ## <a name="copying-data-into-a-storage-account"></a>Gegevens kopiëren naar een opslag account
 
@@ -239,6 +230,10 @@ Zie [Azure Storage Services rest API Reference](/rest/api/storageservices/)(Enge
 
 > [!IMPORTANT]
 > Blobs die aan de clientzijde zijn versleuteld, bevatten versleutelingsgerelateerde metagegevens die samen met de blob zijn opgeslagen. Als u een blob met versleuteling aan de clientzijde kopieert, zorg er dan voor dat bij het kopiëren de blobmetagegevens behouden blijven, en dan met name de versleutelingsgerelateerde metagegevens. Als u een blob kopieert zonder versleutelingsgerelateerde metagegevens, kan de inhoud van de blob niet meer worden opgehaald. Zie [Azure Storage-versleuteling aan de clientzijde](../common/storage-client-side-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) voor meer informatie over versleutelingsgerelateerde metagegevens.
+
+## <a name="encryption"></a>Versleuteling
+
+Alle gegevens in uw opslag account worden versleuteld aan de kant van de service. Zie [Azure Storage-service versleuteling voor Data-at-rest](storage-service-encryption.md)voor meer informatie over versleuteling.
 
 ## <a name="storage-account-billing"></a>Facturering voor opslagaccounts
 

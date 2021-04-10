@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 12e8222ad59aae31baa7a549519c97550b711703
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 60a846d72c1760c7f9dddac891f36e834b8364f3
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104579940"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107028159"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-microsoft-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Microsoft-account met behulp van Azure Active Directory B2C
 
@@ -196,7 +196,7 @@ U hebt nu uw beleid geconfigureerd zodat Azure AD B2C weet hoe u kunt communicer
 ## <a name="test-your-custom-policy"></a>Uw aangepaste beleid testen
 
 1. Selecteer uw Relying Party beleid, bijvoorbeeld `B2C_1A_signup_signin` .
-1. Selecteer voor **toepassing** een webtoepassing die u [eerder hebt geregistreerd](troubleshoot-custom-policies.md#troubleshoot-the-runtime). De **antwoord-URL** moet `https://jwt.ms` weergeven.
+1. Selecteer voor **toepassing** een webtoepassing die u [eerder hebt geregistreerd](tutorial-register-applications.md). De **antwoord-URL** moet `https://jwt.ms` weergeven.
 1. Selecteer de knop **nu uitvoeren** .
 1. Selecteer op de pagina aanmelden of aanmelden de optie **micro soft** om u aan te melden met Microsoft-account.
 

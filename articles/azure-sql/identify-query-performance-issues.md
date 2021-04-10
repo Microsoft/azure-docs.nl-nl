@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: wiassaf, sstein
 ms.date: 1/14/2021
-ms.openlocfilehash: 4d0f5404a64eae99ced0dd797954ba042b50060f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 039332a8728e5d7e5b605f51f4bb53e6dcbb6381
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98217223"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106109166"
 ---
 # <a name="detectable-types-of-query-performance-bottlenecks-in-azure-sql-database"></a>Detecteerbare typen queryprestatieknelpunten in Azure SQL Database
 [!INCLUDE[appliesto-sqldb-sqlmi](includes/appliesto-sqldb-sqlmi.md)]
@@ -139,7 +139,7 @@ Een hercompilatie (of nieuwe compilatie na verwijdering van de cache) kan nog st
 
 - **Gewijzigd fysiek ontwerp**: nieuwe indexen maken bijvoorbeeld effectiever de vereisten van een query. De nieuwe indexen kunnen worden gebruikt voor een nieuwe compilatie als de query optimalisatie besluit dat het gebruik van die nieuwe index betrouwbaarder is dan het gebruik van de gegevens structuur die oorspronkelijk was geselecteerd voor de eerste versie van de uitvoering van de query. Eventuele fysieke wijzigingen in de objecten waarnaar wordt verwezen, kunnen leiden tot een nieuwe plannings optie tijdens het compileren.
 
-- **Verschillen in Server bronnen**: wanneer een plan in het ene systeem verschilt van het plan in een ander systeem, kan de beschik baarheid van resources, zoals het aantal beschik bare processors, invloed hebben op welk plan wordt gegenereerd. Als een systeem bijvoorbeeld meer processors heeft, kan een parallelle planning worden gekozen.
+- **Verschillen in Server bronnen**: wanneer een plan in het ene systeem verschilt van het plan in een ander systeem, kan de beschik baarheid van resources, zoals het aantal beschik bare processors, invloed hebben op welk plan wordt gegenereerd. Als een systeem bijvoorbeeld meer processors heeft, kan een parallelle planning worden gekozen. Zie [de maximale mate van parallellisme (MAXDOP) in Azure SQL database configureren](database/configure-max-degree-of-parallelism.md)voor meer informatie over parallellisme in Azure SQL database.
 
 - **Andere statistieken**: de statistieken die zijn gekoppeld aan de objecten waarnaar wordt verwezen, zijn mogelijk gewijzigd of kunnen afwijken van de statistieken van het oorspronkelijke systeem. Als de statistieken veranderen en een hercompilatie plaatsvindt, gebruikt de query Optimizer de statistieken die beginnen wanneer ze zijn gewijzigd. De gegevens distributies en-frequenties van de herziene statistieken kunnen verschillen van die van de oorspronkelijke compilatie. Deze wijzigingen worden gebruikt voor het maken van kardinaliteit. (*Schattingen van kardinaliteit* zijn het aantal rijen dat naar verwachting door de logische query structuur loopt.) Wijzigingen in de kardinaliteit kunnen ertoe leiden dat u verschillende fysieke Opera tors en gekoppelde orders van bewerkingen kunt kiezen. Zelfs kleine wijzigingen in statistieken kunnen leiden tot een gewijzigd query-uitvoerings plan.
 
@@ -181,6 +181,8 @@ Het is niet altijd gemakkelijk om een wijziging van het werkbelasting volume te 
 
 Gebruik Intelligent Insights om de [werk belasting te verhogen](database/intelligent-insights-troubleshoot-performance.md#workload-increase) en [regressies te plannen](database/intelligent-insights-troubleshoot-performance.md#plan-regression).
 
+- **Parallellisme**: overmatige parallellisme kan leiden tot andere gelijktijdige prestaties van de werk belasting door Starving van andere query's van de resources van de CPU-en worker-thread. Zie [de maximale mate van parallellisme (MAXDOP) in Azure SQL database configureren](database/configure-max-degree-of-parallelism.md)voor meer informatie over parallellisme in Azure SQL database.
+
 ## <a name="waiting-related-problems"></a>Problemen die te maken hebben met wachten
 
 Wanneer u een suboptimaal plan hebt geëlimineerd en te *wachten* op problemen die betrekking hebben op uitvoerings problemen, is het prestatie probleem in het algemeen de query's die waarschijnlijk wachten op een bepaalde resource. Er kunnen problemen met de wacht worden veroorzaakt door:
@@ -220,6 +222,11 @@ Dmv's die query Store bijhouden en wachten op statistieken tonen alleen resultat
 > - [TigerToolbox-wacht tijden en latches](https://github.com/Microsoft/tigertoolbox/tree/master/Waits-and-Latches)
 > - [TigerToolbox usp_whatsup](https://github.com/Microsoft/tigertoolbox/tree/master/usp_WhatsUp)
 
+## <a name="see-also"></a>Zie ook
+
+* [De maximale mate van parallellisme (MAXDOP) in Azure SQL Database configureren](database/configure-max-degree-of-parallelism.md)
+* [Azure SQL Database het blok keren van problemen in Azure SQL Database begrijpen en oplossen](database/understand-resolve-blocking.md)
+
 ## <a name="next-steps"></a>Volgende stappen
 
-[Overzicht van SQL Database bewaking en afstemming](database/monitor-tune-overview.md)
+* [Overzicht van SQL Database bewaking en afstemming](database/monitor-tune-overview.md)

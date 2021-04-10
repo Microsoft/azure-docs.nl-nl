@@ -5,13 +5,13 @@ author: Heidilohr
 ms.topic: how-to
 ms.date: 12/14/2020
 ms.author: helohr
-manager: lizross
-ms.openlocfilehash: 5e45c51735e0b7ab4b263d3f3047b5848c82439d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+manager: femila
+ms.openlocfilehash: 224f2e773ecd42dcbdd356531d9ce94636de002f
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98185764"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106448267"
 ---
 # <a name="create-powershell-scripts-for-msix-app-attach-preview"></a>Power shell-scripts voor MSIX app attach maken (preview)
 
@@ -27,7 +27,7 @@ In dit onderwerp vindt u instructies voor het instellen van Power shell-scripts 
 
 ## <a name="install-certificates"></a>Certificaten installeren
 
-U moet certificaten installeren op alle sessie-hosts in de hostgroep die de APS host van uw MSIX-app voor het koppelen van pakketten.
+U moet certificaten installeren op alle sessie-hosts in de hostgroep die de apps hosten vanuit uw MSIX-app attach-pakketten.
 
 Als uw app gebruikmaakt van een certificaat dat niet openbaar of zelfondertekend is, kunt u dit als volgt installeren:
 

@@ -4,7 +4,7 @@
   items:
     - name: Wat is IoT Hub Device Provisioning Service?
       href: about-iot-dps.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Een DPS instellen
@@ -215,7 +215,7 @@
         - name: iOS-platform
           href: 'https://azure.microsoft.com/resources/samples/azure-iot-samples-ios/'
     - name: Azure Certified voor IoT-apparaatcatalogus
-      href: 'https://catalog.azureiotsolutions.com/'
+      href: 'https://devicecatalog.azure.com/'
     - name: Azure IoT-ontwikkelaarscentrum
       href: 'https://azure.microsoft.com/develop/iot/'
     - name: Aanvragen van klantgegevens

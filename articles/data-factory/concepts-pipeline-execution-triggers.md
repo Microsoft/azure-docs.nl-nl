@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 07/05/2018
 ms.openlocfilehash: 271dbd87950018cebbd23841d32324afa42511e7
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104785798"
 ---
 # <a name="pipeline-execution-and-triggers-in-azure-data-factory"></a>Pijplijnen uitvoeren en triggers in Azure Data Factory
@@ -231,7 +231,7 @@ Als u wilt dat de schematrigger een pijplijnuitvoering activeert, moet u een ver
 ### <a name="schema-overview"></a>Schema-overzicht
 De volgende tabel bevat een overzicht van de belangrijkste schema-elementen die betrekking hebben op het terugkeerpatroon en het schema van een trigger:
 
-| JSON-eigenschap | Beschrijving |
+| JSON-eigenschap | Description |
 | --- | --- |
 | **startTime** | Een datum/tijdwaarde. Voor eenvoudige schema's is de waarde **startTime** van toepassing op de eerste gebeurtenis. In complexe schema's begint de trigger niet eerder dan de opgegeven waarde voor **startTime**. |
 | **Tijd** | De einddatum en -tijd voor de trigger. De trigger wordt na de opgegeven einddatum en -tijd niet uitgevoerd. De waarde voor de eigenschap kan niet in het verleden liggen. <!-- This property is optional. --> |
@@ -279,11 +279,11 @@ De volgende tabel bevat een overzicht van de belangrijkste schema-elementen die 
 
 | JSON-eigenschap | Type | Vereist | Standaardwaarde | Geldige waarden | Voorbeeld |
 | --- | --- | --- | --- | --- | --- |
-| **startTime** | tekenreeks | Ja | Geen | Datums en tijden volgens ISO 8601 | `"startTime" : "2013-01-09T09:30:00-08:00"` |
-| **optreden** | object | Ja | Geen | Een recurrence-object | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
-| **bereik** | getal | Nee | 1 | 1 tot 1000 | `"interval":10` |
-| **Tijd** | tekenreeks | Ja | Geen | Een datum/tijdwaarde die een toekomstig tijdstip aangeeft | `"endTime" : "2013-02-09T09:30:00-08:00"` |
-| **planning** | object | Nee | Geen | Een schedule-object | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
+| **startTime** | tekenreeks | Yes | Geen | Datums en tijden volgens ISO 8601 | `"startTime" : "2013-01-09T09:30:00-08:00"` |
+| **optreden** | object | Yes | Geen | Een recurrence-object | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
+| **bereik** | getal | No | 1 | 1 tot 1000 | `"interval":10` |
+| **Tijd** | tekenreeks | Yes | Geen | Een datum/tijdwaarde die een toekomstig tijdstip aangeeft | `"endTime" : "2013-02-09T09:30:00-08:00"` |
+| **planning** | object | No | Geen | Een schedule-object | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
 
 ### <a name="starttime-property"></a>Eigenschap startTime
 In de volgende tabel ziet u hoe de eigenschap **startTime** de uitvoering van een trigger bepaalt:
@@ -310,7 +310,7 @@ Als er meerdere **plannings** elementen worden opgegeven, is de volg orde van de
 
 In de volgende tabel worden de **schedule**-elementen in detail beschreven:
 
-| JSON-element | Beschrijving | Geldige waarden |
+| JSON-element | Description | Geldige waarden |
 | --- | --- | --- |
 | **wachten** | Minuten van het uur waarop de trigger wordt uitgevoerd. |- Geheel getal<br />- Matrix van gehele getallen |
 | **loopt** | Uren van de dag waarop de trigger wordt uitgevoerd. |- Geheel getal<br />- Matrix van gehele getallen |

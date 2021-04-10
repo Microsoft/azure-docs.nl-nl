@@ -5,14 +5,14 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/17/2020
-ms.openlocfilehash: 297c1d4afca5a1d605a046d69b086a05a9322bc7
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: 06990a5bd1d6619f07952e84870a01f5cd5068df
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104872078"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106384422"
 ---
-# <a name="configure-outbound-network-traffic-for-azure-hdinsight-clusters-using-firewall"></a>Uitgaand netwerk verkeer voor Azure HDInsight-clusters configureren met behulp van Firewall
+# <a name="configure-outbound-network-traffic-for-azure-hdinsight-clusters-using-firewall"></a>Uitgaand netwerkverkeer configureren voor Azure HDInsight-clusters met Firewall
 
 In dit artikel worden de stappen beschreven voor het beveiligen van uitgaand verkeer van uw HDInsight-cluster met behulp van Azure Firewall. In de onderstaande stappen wordt ervan uitgegaan dat u een Azure Firewall configureert voor een bestaand cluster. Als u een nieuw cluster achter een firewall implementeert, maakt u eerst uw HDInsight-cluster en subnet. Volg de stappen in deze hand leiding.
 
@@ -32,7 +32,7 @@ Een samen vatting van de stappen voor het vergren delen van uitgaand verkeer van
 
 1. Maak een subnet.
 1. Maak een firewall.
-1. Toepassings regels toevoegen aan de firewall
+1. Voeg toepassings regels toe aan de firewall.
 1. Voeg netwerk regels toe aan de firewall.
 1. Een routerings tabel maken.
 
@@ -76,7 +76,7 @@ Maak een toepassings regel verzameling waarmee het cluster belang rijke communic
     | --- | --- | --- | --- | --- |
     | Rule_2 | * | https:443 | login.windows.net | Windows-aanmeldings activiteit toestaan |
     | Rule_3 | * | https:443 | login.microsoftonline.com | Windows-aanmeldings activiteit toestaan |
-    | Rule_4 | * | https: 443, http: 80 | storage_account_name. blob. core. Windows. net | Vervang door `storage_account_name` de werkelijke naam van het opslag account. Als u alleen HTTPS-verbindingen wilt gebruiken, moet u ervoor zorgen dat ["beveiligde overdracht vereist"](../storage/common/storage-require-secure-transfer.md) is ingeschakeld op het opslag account. Als u een privé-eind punt gebruikt voor toegang tot opslag accounts, is deze stap niet nodig en wordt het opslag verkeer niet doorgestuurd naar de firewall.|
+    | Rule_4 | * | https:443 | storage_account_name. blob. core. Windows. net | Vervang door `storage_account_name` de werkelijke naam van het opslag account. Zorg ervoor dat ["beveiligde overdracht vereist"](../storage/common/storage-require-secure-transfer.md) is ingeschakeld op het opslag account. Als u een privé-eind punt gebruikt voor toegang tot opslag accounts, is deze stap niet nodig en wordt het opslag verkeer niet doorgestuurd naar de firewall.|
 
    :::image type="content" source="./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-app-rule-collection-details.png" alt-text="Titel: Details van toepassings regel verzameling invoeren":::
 
@@ -84,7 +84,7 @@ Maak een toepassings regel verzameling waarmee het cluster belang rijke communic
 
 ### <a name="configure-the-firewall-with-network-rules"></a>De firewall met netwerk regels configureren
 
-Maak de netwerk regels om uw HDInsight-cluster correct te configureren.
+Maak de netwerk regels om uw HDInsight-cluster correct te configureren. 
 
 1. Ga verder met de vorige stap, navigeer naar **netwerk regel verzameling**  >  **+ verzameling netwerk regels toevoegen**.
 
@@ -102,14 +102,14 @@ Maak de netwerk regels om uw HDInsight-cluster correct te configureren.
 
     | Name | Protocol | Bron adressen | Servicetags | Doel poorten | Notities |
     | --- | --- | --- | --- | --- | --- |
-    | Rule_5 | TCP | * | SQL | 1433 | Als u de standaard SQL-servers gebruikt die door HDInsight worden meegeleverd, configureert u een netwerk regel in het gedeelte service tags voor SQL waarmee u SQL-verkeer kunt registreren en controleren. Tenzij u service-eind punten voor SQL Server op het HDInsight-subnet hebt geconfigureerd, waardoor de firewall wordt overgeslagen. Als u een aangepaste SQL Server gebruikt voor Ambari, Oozie, zwerver en Hive-meta Stores, hoeft u alleen het verkeer naar uw eigen aangepaste SQL-servers toe te staan.|
+    | Rule_5 | TCP | * | SQL | 1433, 11000-11999 | Als u de standaard SQL-servers gebruikt die door HDInsight worden meegeleverd, configureert u een netwerk regel in het gedeelte service tags voor SQL waarmee u SQL-verkeer kunt registreren en controleren. Tenzij u service-eind punten voor SQL Server op het HDInsight-subnet hebt geconfigureerd, waardoor de firewall wordt overgeslagen. Als u een aangepaste SQL Server gebruikt voor Ambari, Oozie, zwerver en Hive-meta Stores, hoeft u alleen het verkeer naar uw eigen aangepaste SQL-servers toe te staan. Raadpleeg [Azure SQL database en de connectiviteits architectuur van Azure Synapse](../azure-sql/database/connectivity-architecture.md) voor meer informatie over waarom het poort bereik van 11000-11999 ook nodig is naast 1433. |
     | Rule_6 | TCP | * | Azure Monitor | * | Beschrijving Klanten die de functie voor automatisch schalen willen gebruiken, moeten deze regel toevoegen. |
     
    :::image type="content" source="./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-network-rule-collection.png" alt-text="Titel: toepassings regel verzameling invoeren":::
 
 1. Selecteer **Toevoegen**.
 
-### <a name="create-and-configure-a-route-table"></a>Een route tabel maken en configureren
+### <a name="create-and-configure-a-route-table"></a>Een route tabel maken en configureren 
 
 Maak een route tabel met de volgende vermeldingen:
 

@@ -1,18 +1,17 @@
 ---
 title: Log Analytics werkruimte gegevens exporteren in Azure Monitor (preview-versie)
 description: Met Log Analytics gegevens export kunt u voortdurend gegevens van geselecteerde tabellen uit uw Log Analytics-werk ruimte exporteren naar een Azure-opslag account of Azure Event Hubs wanneer het wordt verzameld.
-ms.subservice: logs
 ms.topic: conceptual
 ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 02/07/2021
-ms.openlocfilehash: ea33eff30e712c1597c3606d74cb6d56683211ae
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 981ebbecd4783ae529c5b0d97c82ea052511f77f
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102615581"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106384184"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics werkruimte gegevens exporteren in Azure Monitor (preview-versie)
 Met Log Analytics werkruimte gegevens exporteren in Azure Monitor kunt u voortdurend gegevens exporteren uit geselecteerde tabellen in uw Log Analytics-werk ruimte naar een Azure Storage-account of Azure-Event Hubs wanneer het wordt verzameld. Dit artikel bevat informatie over deze functie en de stappen voor het configureren van gegevens export in uw werk ruimten.

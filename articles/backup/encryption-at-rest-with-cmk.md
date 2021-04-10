@@ -2,13 +2,13 @@
 title: Versleuteling van back-upgegevens met door de klant beheerde sleutels
 description: Meer informatie over hoe u met Azure Backup uw back-upgegevens kunt versleutelen met behulp van door de klant beheerde sleutels (CMK).
 ms.topic: conceptual
-ms.date: 07/08/2020
-ms.openlocfilehash: 474f4238276f460abde3d600422e309171875a0c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 04/01/2021
+ms.openlocfilehash: b6cb1a288d0052b39bbeb52ed9fd20e68a6427ed
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101716734"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106167887"
 ---
 # <a name="encryption-of-backup-data-using-customer-managed-keys"></a>Versleuteling van back-upgegevens met door de klant beheerde sleutels
 
@@ -33,7 +33,7 @@ In dit artikel komen de volgende onderwerpen aan bod:
 
 - Deze functie is niet gerelateerd aan [Azure Disk Encryption](../security/fundamentals/azure-disk-encryption-vms-vmss.md), die gebruikmaakt van versleuteling op basis van een gast van de schijven van een virtuele machine met behulp van BitLocker (voor Windows) en DM-Crypt (voor Linux)
 
-- De Recovery Services kluis kan alleen worden versleuteld met sleutels die zijn opgeslagen in een Azure Key Vault, die zich in **dezelfde regio** bevinden. Daarnaast moeten sleutels alleen **RSA 2048-sleutels** zijn en de status **ingeschakeld** hebben.
+- De Recovery Services kluis kan alleen worden versleuteld met sleutels die zijn opgeslagen in een Azure Key Vault, die zich in **dezelfde regio** bevinden. Daarnaast moeten sleutels alleen **RSA-sleutels** zijn en de status **ingeschakeld** hebben.
 
 - Het verplaatsen van CMK versleutelde Recovery Services kluis over resource groepen en abonnementen wordt momenteel niet ondersteund.
 - Wanneer u een Recovery Services kluis verplaatst die al is versleuteld met door de klant beheerde sleutels naar een nieuwe Tenant, moet u de Recovery Services kluis bijwerken om de beheerde identiteit en CMK van de kluis opnieuw te maken en opnieuw te configureren (deze moet zich in de nieuwe Tenant bevinden). Als dat niet het geval is, mislukken de back-up-en herstel bewerkingen. Daarnaast moeten alle RBAC-machtigingen (op rollen gebaseerd toegangs beheer) die in het abonnement zijn ingesteld, opnieuw worden geconfigureerd.
@@ -42,6 +42,9 @@ In dit artikel komen de volgende onderwerpen aan bod:
 
     >[!NOTE]
     >Gebruik AZ module 5.3.0 of hoger voor het gebruik van door de klant beheerde sleutels voor back-ups in de Recovery Services kluis.
+    
+    >[!Warning]
+    >Als u Power shell gebruikt voor het beheren van versleutelings sleutels voor back-up, raden we u aan om de sleutels niet bij te werken vanuit de portal.<br></br>Als u de sleutel bijwerkt vanuit de portal, kunt u Power shell niet gebruiken om de versleutelings sleutel verder bij te werken, maar een Power shell-update ter ondersteuning van het nieuwe model is beschikbaar. U kunt echter door gaan met het bijwerken van de sleutel van de Azure Portal.
 
 Als u uw Recovery Services kluis nog niet hebt gemaakt en geconfigureerd, kunt u [hier lezen hoe](backup-create-rs-vault.md)u dit doet.
 
@@ -59,22 +62,32 @@ Deze sectie omvat de volgende stappen:
 
 Het is nood zakelijk dat al deze stappen in de bovenstaande volg orde worden gevolgd om de beoogde resultaten te behaalt. Elke stap wordt hieronder uitvoerig besproken.
 
-### <a name="enable-managed-identity-for-your-recovery-services-vault"></a>Beheerde identiteit inschakelen voor uw Recovery Services kluis
+## <a name="enable-managed-identity-for-your-recovery-services-vault"></a>Beheerde identiteit inschakelen voor uw Recovery Services kluis
 
-Azure Backup maakt gebruik van door het systeem toegewezen beheerde identiteit om de Recovery Services kluis te verifiëren voor toegang tot versleutelings sleutels die zijn opgeslagen in de Azure Key Vault. Volg de onderstaande stappen om de beheerde identiteit voor uw Recovery Services kluis in te scha kelen.
+Azure Backup maakt gebruik van door het systeem toegewezen beheerde identiteiten en door de gebruiker toegewezen beheerde identiteiten om de Recovery Services kluis te verifiëren voor toegang tot versleutelings sleutels die zijn opgeslagen in de Azure Key Vault. Volg de onderstaande stappen om de beheerde identiteit voor uw Recovery Services kluis in te scha kelen.
 
 >[!NOTE]
 >Wanneer de beheerde identiteit is ingeschakeld, mag deze **niet** worden uitgeschakeld (zelfs tijdelijk). Het uitschakelen van de beheerde identiteit kan leiden tot inconsistent gedrag.
+
+### <a name="enable-system-assigned-managed-identity-for-the-vault"></a>Door het systeem toegewezen beheerde identiteit inschakelen voor de kluis
 
 **In de portal:**
 
 1. Ga naar uw Recovery Services kluis-> **identiteit**
 
-    ![Identiteits instellingen](./media/encryption-at-rest-with-cmk/managed-identity.png)
+    ![Identiteits instellingen](media/encryption-at-rest-with-cmk/enable-system-assigned-managed-identity-for-vault.png)
 
-1. Wijzig de **status** in **op aan** en selecteer **Opslaan**.
+1. Navigeer naar het tabblad **systeem toegewezen** .
 
-1. Er wordt een object-ID gegenereerd. Dit is de door het systeem toegewezen beheerde identiteit van de kluis.
+1. Wijzig de **status** in **on**.
+
+1. Klik op **Opslaan** om de identiteit voor de kluis in te scha kelen.
+
+Er wordt een object-ID gegenereerd. Dit is de door het systeem toegewezen beheerde identiteit van de kluis.
+
+>[!NOTE]
+>Wanneer de beheerde identiteit is ingeschakeld, mag deze niet worden uitgeschakeld (zelfs tijdelijk). Het uitschakelen van de beheerde identiteit kan leiden tot inconsistent gedrag.
+
 
 **Met Power shell:**
 
@@ -98,7 +111,28 @@ TenantId    : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 Type        : SystemAssigned
 ```
 
-### <a name="assign-permissions-to-the-recovery-services-vault-to-access-the-encryption-key-in-the-azure-key-vault"></a>Wijs machtigingen toe aan de Recovery Services kluis om toegang te krijgen tot de versleutelings sleutel in de Azure Key Vault
+### <a name="assign-user-assigned-managed-identity-to-the-vault"></a>Door de gebruiker toegewezen beheerde identiteit toewijzen aan de kluis
+
+Als u de door de gebruiker toegewezen beheerde identiteit voor uw Recovery Services kluis wilt toewijzen, voert u de volgende stappen uit:
+
+1.  Ga naar uw Recovery Services kluis-> **identiteit**
+
+    ![Door de gebruiker toegewezen beheerde identiteit toewijzen aan de kluis](media/encryption-at-rest-with-cmk/assign-user-assigned-managed-identity-to-vault.png)
+
+1.  Ga naar het tabblad **aan de gebruiker toegewezen** .
+
+1.  Klik op **+ toevoegen** om een door de gebruiker toegewezen beheerde identiteit toe te voegen.
+
+1.  Selecteer op de Blade door de **gebruiker toegewezen beheerde identiteit toevoegen** die wordt geopend, het abonnement voor uw identiteit.
+
+1.  Selecteer de identiteit in de lijst. U kunt ook filteren op de naam van de identiteit of de resource groep.
+
+1.  Als u klaar bent, klikt u op **toevoegen** om de identiteit toe te wijzen.
+
+## <a name="assign-permissions-to-the-recovery-services-vault-to-access-the-encryption-key-in-the-azure-key-vault"></a>Wijs machtigingen toe aan de Recovery Services kluis om toegang te krijgen tot de versleutelings sleutel in de Azure Key Vault
+
+>[!Note]
+>Als u door de gebruiker toegewezen identiteiten gebruikt, moeten dezelfde machtigingen worden toegewezen aan de door de gebruiker toegewezen identiteit.
 
 U moet nu toestaan dat de Recovery Services kluis toegang heeft tot de Azure Key Vault die de versleutelings sleutel bevat. Dit wordt gedaan door de beheerde identiteit van de Recovery Services kluis toegang te geven tot de Key Vault.
 
@@ -120,7 +154,7 @@ U moet nu toestaan dat de Recovery Services kluis toegang heeft tot de Azure Key
 
 1. Selecteer **Opslaan** om de wijzigingen op te slaan in het toegangs beleid van de Azure Key Vault.
 
-### <a name="enable-soft-delete-and-purge-protection-on-the-azure-key-vault"></a>Zacht verwijderen inschakelen en beveiliging opschonen op de Azure Key Vault
+## <a name="enable-soft-delete-and-purge-protection-on-the-azure-key-vault"></a>Zacht verwijderen inschakelen en beveiliging opschonen op de Azure Key Vault
 
 U moet **voorlopig verwijderen en beveiliging opschonen inschakelen** op uw Azure Key Vault waarin uw versleutelings sleutel wordt opgeslagen. U kunt dit doen vanuit de Azure Key Vault-gebruikers interface, zoals hieronder wordt weer gegeven. (U kunt deze eigenschappen ook instellen tijdens het maken van de Key Vault). Meer informatie over deze Key Vault eigenschappen [vindt u hier](../key-vault/general/soft-delete-overview.md).
 
@@ -160,7 +194,7 @@ U kunt met behulp van de volgende stappen ook de beveiliging van zacht verwijder
     Set-AzResource -resourceid $resource.ResourceId -Properties $resource.Properties
     ```
 
-### <a name="assign-encryption-key-to-the-rs-vault"></a>Versleutelings sleutel toewijzen aan de RS-kluis
+## <a name="assign-encryption-key-to-the-rs-vault"></a>Versleutelings sleutel toewijzen aan de RS-kluis
 
 >[!NOTE]
 > Voordat u verder gaat, controleert u het volgende:
@@ -172,7 +206,7 @@ U kunt met behulp van de volgende stappen ook de beveiliging van zacht verwijder
 
 Zodra het bovenstaande is gewaarborgd, gaat u door met het selecteren van de versleutelings sleutel voor uw kluis.
 
-#### <a name="to-assign-the-key-in-the-portal"></a>De sleutel in de portal toewijzen
+### <a name="to-assign-the-key-in-the-portal"></a>De sleutel in de portal toewijzen
 
 1. Ga naar uw Recovery Services kluis-> **Eigenschappen**
 
@@ -192,7 +226,7 @@ Zodra het bovenstaande is gewaarborgd, gaat u door met het selecteren van de ver
     1. Blader en selecteer de sleutel in de Key Vault in het deel venster sleutel kiezer.
 
         >[!NOTE]
-        >Wanneer u de versleutelings sleutel opgeeft met het deel venster sleutel kiezer, wordt de sleutel automatisch gedraaid wanneer een nieuwe versie van de sleutel is ingeschakeld.
+        >Wanneer u de versleutelings sleutel opgeeft met het deel venster sleutel kiezer, wordt de sleutel automatisch gedraaid wanneer een nieuwe versie van de sleutel is ingeschakeld. Meer [informatie](#enabling-auto-rotation-of-encryption-keys) over het inschakelen van automatische rotatie van versleutelings sleutels.
 
         ![Selecteer een sleutel in de sleutel kluis](./media/encryption-at-rest-with-cmk/key-vault.png)
 
@@ -206,7 +240,7 @@ Zodra het bovenstaande is gewaarborgd, gaat u door met het selecteren van de ver
 
     ![Activiteitenlogboek](./media/encryption-at-rest-with-cmk/activity-log.png)
 
-#### <a name="to-assign-the-key-with-powershell"></a>De sleutel toewijzen met Power shell
+### <a name="to-assign-the-key-with-powershell"></a>De sleutel toewijzen met Power shell
 
 Gebruik de opdracht [set-AzRecoveryServicesVaultProperty](/powershell/module/az.recoveryservices/set-azrecoveryservicesvaultproperty) om versleuteling in te scha kelen met door de klant beheerde sleutels en om de versleutelings sleutel die moet worden gebruikt, toe te wijzen of bij te werken.
 
@@ -249,8 +283,8 @@ Voordat u kunt door gaan met het configureren van de beveiliging, wordt u aanger
 > Voordat u kunt door gaan met het configureren van de beveiliging, moet u de volgende **stappen hebben voltooid** :
 >
 >1. Uw back-upkluis gemaakt
->1. De door het systeem toegewezen beheerde identiteit van de back-upkluis is ingeschakeld
->1. De machtigingen voor de back-upkluis zijn toegewezen voor toegang tot de versleutelings sleutels van uw Key Vault
+>1. De door het systeem toegewezen beheerde identiteit van Recovery Services kluis ingeschakeld of een door de gebruiker toegewezen beheerde identiteit toegewezen aan de kluis
+>1. Er zijn machtigingen toegewezen aan uw back-upkluis (of de door de gebruiker toegewezen beheerde identiteit) voor toegang tot de versleutelings sleutels van uw Key Vault
 >1. Zacht verwijderen ingeschakeld en de beveiliging opschonen voor uw Key Vault
 >1. Er is een geldige versleutelings sleutel toegewezen aan de back-upkluis
 >
@@ -311,6 +345,44 @@ Wanneer u een bestand herstelt, worden de herstelde gegevens versleuteld met de 
 ### <a name="restoring-sap-hanasql-databases-in-azure-vms"></a>SAP HANA/SQL-data bases herstellen in azure Vm's
 
 Bij het herstellen van een back-up SAP HANA/SQL database die wordt uitgevoerd in een Azure-VM, worden de herstelde gegevens versleuteld met behulp van de versleutelings sleutel die wordt gebruikt op de doel opslag locatie. Dit kan een door de klant beheerde sleutel zijn of een door een platform beheerde sleutel die wordt gebruikt voor het versleutelen van de schijven van de virtuele machine.
+
+## <a name="additional-topics"></a>Extra onderwerpen
+
+### <a name="enable-encryption-using-customer-managed-keys-at-vault-creation-in-preview"></a>Versleuteling inschakelen met door de klant beheerde sleutels bij het maken van een kluis (in preview-versie)
+
+>[!NOTE]
+>Het inschakelen van versleuteling bij het maken van een kluis met door de klant beheerde sleutels heeft een beperkte open bare preview en vereist toestaan: lijst met abonnementen. Als u zich wilt aanmelden voor de preview, vult u het [formulier](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR0H3_nezt2RNkpBCUTbWEapURDNTVVhGOUxXSVBZMEwxUU5FNDkyQkU4Ny4u) in en schrijft u naar ons [AskAzureBackupTeam@microsoft.com](mailto:AskAzureBackupTeam@microsoft.com) .
+
+Wanneer uw abonnement is toegestaan, wordt het tabblad **back-upcodering** weer gegeven. Hierdoor kunt u versleuteling inschakelen voor de back-up met door de klant beheerde sleutels tijdens het maken van een nieuwe Recovery Services kluis. Voer de volgende stappen uit om de versleuteling in te scha kelen:
+
+1. Op het tabblad **basis beginselen** , op het tabblad **back-upcodering** , geeft u de versleutelings sleutel en de identiteit op die moet worden gebruikt voor versleuteling.
+
+   ![Versleuteling op kluis niveau inschakelen](media/encryption-at-rest-with-cmk/enable-encryption-using-cmk-at-vault.png)
+
+
+   >[!NOTE]
+   >De instellingen zijn alleen van toepassing op back-up en zijn optioneel.
+
+1. Selecteer door de **klant beheerde sleutel gebruiken** als het versleutelings type.
+
+1. Selecteer de gewenste optie om de sleutel op te geven die moet worden gebruikt voor versleuteling.
+
+   U kunt de URI voor de versleutelings sleutel opgeven, of bladeren en de sleutel selecteren. Wanneer u de sleutel opgeeft met de optie **Key Vault selecteren** , wordt automatische rotatie van de versleutelings sleutel automatisch ingeschakeld. Meer [informatie over automatisch door draaien](#enabling-auto-rotation-of-encryption-keys). 
+
+1. Geef de door de gebruiker toegewezen beheerde identiteit op voor het beheren van versleuteling met door de klant beheerde sleutels. Klik op **selecteren** om te bladeren en de vereiste identiteit te selecteren.
+
+1. Als u klaar bent, gaat u verder met het toevoegen van tags (optioneel) en gaat u verder met het maken van de kluis.
+
+### <a name="enabling-auto-rotation-of-encryption-keys"></a>Automatische rotatie van versleutelings sleutels inschakelen
+
+Wanneer u de door de klant beheerde sleutel opgeeft die moet worden gebruikt om back-ups te versleutelen, gebruikt u de volgende methoden om deze op te geven:
+
+- De sleutel-URI invoeren
+- Selecteren uit Key Vault
+
+Met de optie **selecteren uit Key Vault** kunt u automatisch draaien inschakelen voor de geselecteerde sleutel. Dit elimineert de hand matige inspanningen om bij te werken naar de volgende versie. Met deze optie:
+- Het kan een uur duren voordat de sleutel versie-update van kracht wordt.
+- Wanneer een nieuwe versie van de sleutel van kracht wordt, moet de oude versie ook beschikbaar zijn (in status ingeschakeld) voor ten minste één volgende back-uptaak nadat de sleutel update van kracht is geworden.
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
 

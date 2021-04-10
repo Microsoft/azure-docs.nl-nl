@@ -5,7 +5,6 @@ description: In deze zelfstudie leert u hoe u de VPN-diagnosefunctie van Network
 services: network-watcher
 documentationcenter: na
 author: damendo
-Customer intent: I need to determine why resources in a virtual network can't communicate with resources in a different network.
 ms.service: network-watcher
 ms.devlang: na
 ms.topic: tutorial
@@ -14,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 01/07/2021
 ms.author: damendo
 ms.custom: mvc
-ms.openlocfilehash: 1a556ea66bb54f994349ce9ba4d12fb486827edf
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e9122a323556bebd4ed08ab99f2183313d04eaca
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98013291"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106066021"
 ---
 # <a name="tutorial-diagnose-a-communication-problem-between-networks-using-the-azure-portal"></a>Zelfstudie: Communicatieproblemen tussen netwerken onderzoeken met Azure Portal
 

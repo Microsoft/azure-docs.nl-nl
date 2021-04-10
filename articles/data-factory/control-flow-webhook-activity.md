@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.openlocfilehash: 4c3ff5d7139f4167769f78aa858c7d7a693539a3
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104785934"
 ---
 # <a name="webhook-activity-in-azure-data-factory"></a>Webhook-activiteit in Azure Data Factory
@@ -57,13 +57,13 @@ Eigenschap | Beschrijving | Toegestane waarden | Vereist
 -------- | ----------- | -------------- | --------
 **name** | De naam van de webhook-activiteit. | Tekenreeks | Ja |
 **type** | Moet worden ingesteld op webhook. | Tekenreeks | Ja |
-**methode** | De REST API methode voor het doel eindpunt. | Tekenreeks. Het ondersteunde type is ' POST '. | Ja |
-**URL** | Het doel eindpunt en-pad. | Een teken reeks of expressie met de waarde van het **resultType** van een teken reeks. | Ja |
+**methode** | De REST API methode voor het doel eindpunt. | Tekenreeks. Het ondersteunde type is ' POST '. | Yes |
+**URL** | Het doel eindpunt en-pad. | Een teken reeks of expressie met de waarde van het **resultType** van een teken reeks. | Yes |
 **koppen** | Kopteksten die naar de aanvraag worden verzonden. Hier volgt een voor beeld waarin de taal en het type van een aanvraag worden ingesteld: `"headers" : { "Accept-Language": "en-us", "Content-Type": "application/json" }` . | Een teken reeks of expressie met de waarde van het **resultType** van een teken reeks. | Ja. Een `Content-Type` koptekst zoals `"headers":{ "Content-Type":"application/json"}` is vereist. |
-**organen** | Vertegenwoordigt de nettolading die naar het eind punt wordt verzonden. | Een geldige JSON of een expressie met de waarde van het **resultType** van JSON. Zie [Payload-schema aanvragen](./control-flow-web-activity.md#request-payload-schema) voor het schema van de aanvraag lading. | Ja |
-**verificatie** | De verificatie methode die wordt gebruikt om het eind punt aan te roepen. De ondersteunde typen zijn "Basic" en "ClientCertificate". Zie [Verificatie](./control-flow-web-activity.md#authentication) voor meer informatie. Als verificatie niet is vereist, sluit u deze eigenschap. | Een teken reeks of expressie met de waarde van het **resultType** van een teken reeks. | Nee |
-**timeout** | Hoe lang de activiteit wacht op de call back die is opgegeven door **callBackUri** , om te worden aangeroepen. De standaard waarde is 10 minuten ("00:10:00"). De waarden hebben de time span-indeling *d*. *uu*:*mm*:*SS*. | Tekenreeks | Nee |
-**Rapport status bij terugbellen** | Hiermee kan een gebruiker de mislukte status van een webhook-activiteit rapporteren. | Booleaans | Nee |
+**organen** | Vertegenwoordigt de nettolading die naar het eind punt wordt verzonden. | Een geldige JSON of een expressie met de waarde van het **resultType** van JSON. Zie [Payload-schema aanvragen](./control-flow-web-activity.md#request-payload-schema) voor het schema van de aanvraag lading. | Yes |
+**verificatie** | De verificatie methode die wordt gebruikt om het eind punt aan te roepen. De ondersteunde typen zijn "Basic" en "ClientCertificate". Zie [Verificatie](./control-flow-web-activity.md#authentication) voor meer informatie. Als verificatie niet is vereist, sluit u deze eigenschap. | Een teken reeks of expressie met de waarde van het **resultType** van een teken reeks. | No |
+**timeout** | Hoe lang de activiteit wacht op de call back die is opgegeven door **callBackUri** , om te worden aangeroepen. De standaard waarde is 10 minuten ("00:10:00"). De waarden hebben de time span-indeling *d*. *uu*:*mm*:*SS*. | Tekenreeks | No |
+**Rapport status bij terugbellen** | Hiermee kan een gebruiker de mislukte status van een webhook-activiteit rapporteren. | Booleaans | No |
 
 ## <a name="authentication"></a>Verificatie
 

@@ -4,15 +4,15 @@ titleSuffix: Azure Digital Twins
 description: Zie logboek registratie met Diagnostische instellingen inschakelen en de logboeken doorzoeken op direct weer geven.
 author: baanders
 ms.author: baanders
-ms.date: 11/9/2020
+ms.date: 2/24/2021
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: c600ced8896a3847b80d854c9e230310cca4c98d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 08db4d92da5213b1ce1b79867650da9df8c38ee4
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "100588592"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106385076"
 ---
 # <a name="troubleshooting-azure-digital-twins-diagnostics-logging"></a>Problemen oplossen met Azure Digital Apparaatdubbels: logboek registratie van diagnostische gegevens
 
@@ -63,12 +63,12 @@ Ga voor meer informatie over diagnostische instellingen en de bijbehorende insta
 
 Hier vindt u meer informatie over de logboeken die door Azure Digital Apparaatdubbels worden verzameld.
 
-| Logboekcategorie | Description |
+| Logboekcategorie | Beschrijving |
 | --- | --- |
 | ADTModelsOperation | Alle API-aanroepen voor modellen vastleggen |
 | ADTQueryOperation | Alle API-aanroepen met betrekking tot Query's vastleggen |
 | ADTEventRoutesOperation | Registreer alle API-aanroepen die betrekking hebben op gebeurtenis routes en voor het uitvoeren van gebeurtenissen van Azure Digital Apparaatdubbels naar een eindpunt service, zoals Event Grid, Event Hubs en Service Bus |
-| ADTDigitalTwinsOperation | Alle API-aanroepen vastleggen die betrekking hebben op Azure Digital Apparaatdubbels |
+| ADTDigitalTwinsOperation | Alle API-aanroepen vastleggen die betrekking hebben op afzonderlijke apparaatdubbels |
 
 Elke logboek categorie bestaat uit bewerkingen van schrijven, lezen, verwijderen en actie.  Deze toewijzing REST API aanroepen als volgt:
 
@@ -104,18 +104,20 @@ Hier volgt een uitgebreide lijst met de bewerkingen en bijbehorende [Azure Digit
 
 Elke logboek categorie heeft een schema dat definieert hoe gebeurtenissen in die categorie worden gerapporteerd. Elke afzonderlijke logboek vermelding wordt als tekst opgeslagen en opgemaakt als een JSON-blob. De velden in de logboeken en voor beeld-JSON-instanties worden aangegeven voor elk logboek type hieronder. 
 
-`ADTDigitalTwinsOperation`, `ADTModelsOperation` en `ADTQueryOperation` gebruik een consistent API-logboek schema; `ADTEventRoutesOperation` heeft een eigen afzonderlijk schema.
+`ADTDigitalTwinsOperation`, `ADTModelsOperation` en `ADTQueryOperation` gebruik een consistent API-logboek schema. `ADTEventRoutesOperation` Hiermee wordt het schema uitgebreid met een `endpointName` veld in eigenschappen.
 
 ### <a name="api-log-schemas"></a>API-logboek schema's
 
-Dit logboek schema is consistent voor `ADTDigitalTwinsOperation` , `ADTModelsOperation` en `ADTQueryOperation` . Het bevat informatie die betrekking heeft op API-aanroepen naar een Azure Digital Apparaatdubbels-exemplaar.
+Dit logboek schema is consistent voor `ADTDigitalTwinsOperation` , `ADTModelsOperation` ,, `ADTQueryOperation` . Er wordt ook hetzelfde schema gebruikt voor `ADTEventRoutesOperation` , met **uitzonde ring** van de naam van de `Microsoft.DigitalTwins/eventroutes/action` bewerking (Zie de volgende sectie, [*Logboeken*](#egress-log-schemas)van de uitgevende logaritmen) voor meer informatie over dat schema.
+
+Het schema bevat informatie die betrekking heeft op API-aanroepen naar een Azure Digital Apparaatdubbels-exemplaar.
 
 Dit zijn de omschrijvingen van velden en eigenschappen voor API-Logboeken.
 
 | Veldnaam | Gegevenstype | Beschrijving |
 |-----|------|-------------|
 | `Time` | DateTime | De datum en tijd waarop deze gebeurtenis is opgetreden, in UTC |
-| `ResourceID` | Tekenreeks | De Azure Resource Manager Resource-ID voor de resource waar het evenement plaatsvond |
+| `ResourceId` | Tekenreeks | De Azure Resource Manager Resource-ID voor de resource waar het evenement plaatsvond |
 | `OperationName` | Tekenreeks  | Het type actie dat wordt uitgevoerd tijdens de gebeurtenis |
 | `OperationVersion` | Tekenreeks | De API-versie die wordt gebruikt tijdens de gebeurtenis |
 | `Category` | Tekenreeks | Het type bron dat wordt verzonden |
@@ -125,9 +127,15 @@ Dit zijn de omschrijvingen van velden en eigenschappen voor API-Logboeken.
 | `DurationMs` | Tekenreeks | Hoe lang het duurt om de gebeurtenis in milliseconden uit te voeren |
 | `CallerIpAddress` | Tekenreeks | Een gemaskeerde IP-adres van de bron voor de gebeurtenis |
 | `CorrelationId` | Guid | Door de klant ingevoerde unieke id voor de gebeurtenis |
-| `Level` | Tekenreeks | De ernst van de logboek registratie van de gebeurtenis |
+| `ApplicationId` | Guid | Toepassings-ID gebruikt in Bearer-autorisatie |
+| `Level` | Int | De ernst van de logboek registratie van de gebeurtenis |
 | `Location` | Tekenreeks | De regio waar het evenement plaatsvond |
 | `RequestUri` | URI | Het eind punt dat wordt gebruikt tijdens de gebeurtenis |
+| `TraceId` | Tekenreeks | `TraceId`Als onderdeel van de [W3C's-tracerings context](https://www.w3.org/TR/trace-context/). De ID van de volledige tracering die wordt gebruikt om een gedistribueerde tracering over systemen op unieke wijze te identificeren. |
+| `SpanId` | Tekenreeks | `SpanId` Als onderdeel van de [W3C's-tracerings context](https://www.w3.org/TR/trace-context/). De ID van deze aanvraag in de tracering. |
+| `ParentId` | Tekenreeks | `ParentId` Als onderdeel van de [W3C's-tracerings context](https://www.w3.org/TR/trace-context/). Een aanvraag zonder een bovenliggende ID is de hoofdmap van de tracering. |
+| `TraceFlags` | Tekenreeks | `TraceFlags` Als onderdeel van de [W3C's-tracerings context](https://www.w3.org/TR/trace-context/). Hiermee beheert u tracerings vlaggen zoals steek proeven, traceer niveau, enzovoort. |
+| `TraceState` | Tekenreeks | `TraceState` Als onderdeel van de [W3C's-tracerings context](https://www.w3.org/TR/trace-context/). Aanvullende leverancierspecifieke traceer identificatie gegevens die moeten worden verdeeld over verschillende gedistribueerde tracerings systemen. |
 
 Hieronder ziet u voor beelden van JSON-instanties voor deze typen logboeken.
 
@@ -143,12 +151,25 @@ Hieronder ziet u voor beelden van JSON-instanties voor deze typen logboeken.
   "resultType": "Success",
   "resultSignature": "200",
   "resultDescription": "",
-  "durationMs": "314",
+  "durationMs": 8,
   "callerIpAddress": "13.68.244.*",
   "correlationId": "2f6a8e64-94aa-492a-bc31-16b9f0b16ab3",
+  "identity": {
+    "claims": {
+      "appId": "872cd9fa-d31f-45e0-9eab-6e460a02d1f1"
+    }
+  },
   "level": "4",
   "location": "southcentralus",
-  "uri": "https://myinstancename.api.scus.digitaltwins.azure.net/digitaltwins/factory-58d81613-2e54-4faa-a930-d980e6e2a884?api-version=2020-10-31"
+  "uri": "https://myinstancename.api.scus.digitaltwins.azure.net/digitaltwins/factory-58d81613-2e54-4faa-a930-d980e6e2a884?api-version=2020-10-31",
+  "properties": {},
+  "traceContext": {
+    "traceId": "95ff77cfb300b04f80d83e64d13831e7",
+    "spanId": "b630da57026dd046",
+    "parentId": "9f0de6dadae85945",
+    "traceFlags": "01",
+    "tracestate": "k1=v1,k2=v2"
+  }
 }
 ```
 
@@ -164,12 +185,25 @@ Hieronder ziet u voor beelden van JSON-instanties voor deze typen logboeken.
   "resultType": "Success",
   "resultSignature": "201",
   "resultDescription": "",
-  "durationMs": "935",
+  "durationMs": "80",
   "callerIpAddress": "13.68.244.*",
   "correlationId": "9dcb71ea-bb6f-46f2-ab70-78b80db76882",
+  "identity": {
+    "claims": {
+      "appId": "872cd9fa-d31f-45e0-9eab-6e460a02d1f1"
+    }
+  },
   "level": "4",
   "location": "southcentralus",
   "uri": "https://myinstancename.api.scus.digitaltwins.azure.net/Models?api-version=2020-10-31",
+  "properties": {},
+  "traceContext": {
+    "traceId": "95ff77cfb300b04f80d83e64d13831e7",
+    "spanId": "b630da57026dd046",
+    "parentId": "9f0de6dadae85945",
+    "traceFlags": "01",
+    "tracestate": "k1=v1,k2=v2"
+  }
 }
 ```
 
@@ -185,18 +219,67 @@ Hieronder ziet u voor beelden van JSON-instanties voor deze typen logboeken.
   "resultType": "Success",
   "resultSignature": "200",
   "resultDescription": "",
-  "durationMs": "255",
+  "durationMs": "314",
   "callerIpAddress": "13.68.244.*",
   "correlationId": "1ee2b6e9-3af4-4873-8c7c-1a698b9ac334",
+  "identity": {
+    "claims": {
+      "appId": "872cd9fa-d31f-45e0-9eab-6e460a02d1f1"
+    }
+  },
   "level": "4",
   "location": "southcentralus",
   "uri": "https://myinstancename.api.scus.digitaltwins.azure.net/query?api-version=2020-10-31",
+  "properties": {},
+  "traceContext": {
+    "traceId": "95ff77cfb300b04f80d83e64d13831e7",
+    "spanId": "b630da57026dd046",
+    "parentId": "9f0de6dadae85945",
+    "traceFlags": "01",
+    "tracestate": "k1=v1,k2=v2"
+  }
 }
+```
+
+#### <a name="adteventroutesoperation"></a>ADTEventRoutesOperation
+
+Hier volgt een voor beeld van een JSON-hoofd tekst voor een `ADTEventRoutesOperation` die **niet** van het `Microsoft.DigitalTwins/eventroutes/action` type is (Zie de volgende sectie, [*logaritmische logboek schema's*](#egress-log-schemas)) voor meer informatie over dat schema.
+
+```json
+  {
+    "time": "2020-10-30T22:18:38.0708705Z",
+    "resourceId": "/SUBSCRIPTIONS/BBED119E-28B8-454D-B25E-C990C9430C8F/RESOURCEGROUPS/MYRESOURCEGROUP/PROVIDERS/MICROSOFT.DIGITALTWINS/DIGITALTWINSINSTANCES/MYINSTANCENAME",
+    "operationName": "Microsoft.DigitalTwins/eventroutes/write",
+    "operationVersion": "2020-10-31",
+    "category": "EventRoutesOperation",
+    "resultType": "Success",
+    "resultSignature": "204",
+    "resultDescription": "",
+    "durationMs": 42,
+    "callerIpAddress": "212.100.32.*",
+    "correlationId": "7f73ab45-14c0-491f-a834-0827dbbf7f8e",
+    "identity": {
+      "claims": {
+        "appId": "872cd9fa-d31f-45e0-9eab-6e460a02d1f1"
+      }
+    },
+    "level": "4",
+    "location": "southcentralus",
+    "uri": "https://myinstancename.api.scus.digitaltwins.azure.net/EventRoutes/egressRouteForEventHub?api-version=2020-10-31",
+    "properties": {},
+    "traceContext": {
+      "traceId": "95ff77cfb300b04f80d83e64d13831e7",
+      "spanId": "b630da57026dd046",
+      "parentId": "9f0de6dadae85945",
+      "traceFlags": "01",
+      "tracestate": "k1=v1,k2=v2"
+    }
+  },
 ```
 
 ### <a name="egress-log-schemas"></a>Uitgangs logboek schema's
 
-Dit is het schema voor `ADTEventRoutesOperation` Logboeken. Deze bevatten informatie over uitzonde ringen en de API-bewerkingen rond eind punten die zijn verbonden met een Azure Digital Apparaatdubbels-exemplaar.
+Dit is het schema voor `ADTEventRoutesOperation` logboeken die specifiek zijn voor de `Microsoft.DigitalTwins/eventroutes/action` bewerkings naam. Deze bevatten informatie over uitzonde ringen en de API-bewerkingen rond eind punten die zijn verbonden met een Azure Digital Apparaatdubbels-exemplaar.
 
 |Veldnaam | Gegevenstype | Beschrijving |
 |-----|------|-------------|
@@ -205,28 +288,55 @@ Dit is het schema voor `ADTEventRoutesOperation` Logboeken. Deze bevatten inform
 | `OperationName` | Tekenreeks  | Het type actie dat wordt uitgevoerd tijdens de gebeurtenis |
 | `Category` | Tekenreeks | Het type bron dat wordt verzonden |
 | `ResultDescription` | Tekenreeks | Aanvullende informatie over de gebeurtenis |
-| `Level` | Tekenreeks | De ernst van de logboek registratie van de gebeurtenis |
+| `CorrelationId` | Guid | Door de klant ingevoerde unieke id voor de gebeurtenis |
+| `ApplicationId` | Guid | Toepassings-ID gebruikt in Bearer-autorisatie |
+| `Level` | Int | De ernst van de logboek registratie van de gebeurtenis |
 | `Location` | Tekenreeks | De regio waar het evenement plaatsvond |
+| `TraceId` | Tekenreeks | `TraceId`Als onderdeel van de [W3C's-tracerings context](https://www.w3.org/TR/trace-context/). De ID van de volledige tracering die wordt gebruikt om een gedistribueerde tracering over systemen op unieke wijze te identificeren. |
+| `SpanId` | Tekenreeks | `SpanId` Als onderdeel van de [W3C's-tracerings context](https://www.w3.org/TR/trace-context/). De ID van deze aanvraag in de tracering. |
+| `ParentId` | Tekenreeks | `ParentId` Als onderdeel van de [W3C's-tracerings context](https://www.w3.org/TR/trace-context/). Een aanvraag zonder een bovenliggende ID is de hoofdmap van de tracering. |
+| `TraceFlags` | Tekenreeks | `TraceFlags` Als onderdeel van de [W3C's-tracerings context](https://www.w3.org/TR/trace-context/). Hiermee beheert u tracerings vlaggen zoals steek proeven, traceer niveau, enzovoort. |
+| `TraceState` | Tekenreeks | `TraceState` Als onderdeel van de [W3C's-tracerings context](https://www.w3.org/TR/trace-context/). Aanvullende leverancierspecifieke traceer identificatie gegevens die moeten worden verdeeld over verschillende gedistribueerde tracerings systemen. |
 | `EndpointName` | Tekenreeks | De naam van het uitgangs eindpunt dat is gemaakt in azure Digital Apparaatdubbels |
 
 Hieronder ziet u voor beelden van JSON-instanties voor deze typen logboeken.
 
-#### <a name="adteventroutesoperation"></a>ADTEventRoutesOperation
+#### <a name="adteventroutesoperation-for-microsoftdigitaltwinseventroutesaction"></a>ADTEventRoutesOperation voor micro soft. DigitalTwins/eventroutes/Action
+
+Hier volgt een voor beeld van een JSON-hoofd tekst voor een `ADTEventRoutesOperation` `Microsoft.DigitalTwins/eventroutes/action` type.
 
 ```json
 {
   "time": "2020-11-05T22:18:38.0708705Z",
   "resourceId": "/SUBSCRIPTIONS/BBED119E-28B8-454D-B25E-C990C9430C8F/RESOURCEGROUPS/MYRESOURCEGROUP/PROVIDERS/MICROSOFT.DIGITALTWINS/DIGITALTWINSINSTANCES/MYINSTANCENAME",
   "operationName": "Microsoft.DigitalTwins/eventroutes/action",
+  "operationVersion": "",
   "category": "EventRoutesOperation",
-  "resultDescription": "Unable to send EventGrid message to [my-event-grid.westus-1.eventgrid.azure.net] for event Id [f6f45831-55d0-408b-8366-058e81ca6089].",
+  "resultType": "",
+  "resultSignature": "",
+  "resultDescription": "Unable to send EventHub message to [myPath] for event Id [f6f45831-55d0-408b-8366-058e81ca6089].",
+  "durationMs": -1,
+  "callerIpAddress": "",
   "correlationId": "7f73ab45-14c0-491f-a834-0827dbbf7f8e",
-  "level": "3",
+  "identity": {
+    "claims": {
+      "appId": "872cd9fa-d31f-45e0-9eab-6e460a02d1f1"
+    }
+  },
+  "level": "4",
   "location": "southcentralus",
+  "uri": "",
   "properties": {
-    "endpointName": "endpointEventGridInvalidKey"
+    "endpointName": "myEventHub"
+  },
+  "traceContext": {
+    "traceId": "95ff77cfb300b04f80d83e64d13831e7",
+    "spanId": "b630da57026dd046",
+    "parentId": "9f0de6dadae85945",
+    "traceFlags": "01",
+    "tracestate": "k1=v1,k2=v2"
   }
-}
+},
 ```
 
 ## <a name="view-and-query-logs"></a>Logboeken weer geven en opvragen

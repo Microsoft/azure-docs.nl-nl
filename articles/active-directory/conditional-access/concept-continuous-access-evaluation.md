@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jlu
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 44091cda479f2c0ccbe77bb9989ee2eda4c40f9d
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 80ee161944a48135778d12942964a88455ab756e
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105727090"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106055770"
 ---
 # <a name="continuous-access-evaluation"></a>Continue toegangsevaluatie
 
@@ -163,11 +163,11 @@ Als dit scenario in uw omgeving bestaat om oneindige lussen te voor komen, geeft
 
 Zie [overzicht van update kanalen voor Microsoft 365-apps](/deployoffice/overview-update-channels)voor een uitleg van de Office Update-kanalen. Het wordt aanbevolen dat organisaties web account manager (WAM) niet uitschakelen.
 
-### <a name="policy-change-timing"></a>Timing van beleids wijzigingen
+### <a name="group-membership-and-policy-update-effective-time"></a>Ingangs tijd groepslid maatschap en beleids update
 
-Beleids wijzigingen die door beheerders zijn aangebracht, kunnen tot een dag duren. Er is een aantal optimalisaties uitgevoerd om de vertraging tot twee uur te verminderen. Dit geldt echter niet voor alle scenario's. 
+Groepslid maatschap en beleids updates die door beheerders zijn gemaakt, kunnen tot een dag duren. Er is een optimalisatie uitgevoerd voor beleids updates die de vertraging tot twee uur verminderen. Dit geldt echter niet voor alle scenario's. 
 
-Als er een nood geval is en u ervoor wilt zorgen dat uw bijgewerkte beleids regels direct worden toegepast op bepaalde gebruikers, moet u deze [Power shell-opdracht](/powershell/module/azuread/revoke-azureaduserallrefreshtoken) gebruiken of de sessie intrekken in de gebruikers profiel pagina om de sessie van de gebruiker in te trekken, zodat de bijgewerkte beleids regels onmiddellijk worden toegepast.
+Als er een nood geval is en u wilt dat uw beleid wordt bijgewerkt of de wijziging van het groepslid maatschap moet worden toegepast op bepaalde gebruikers, moet u deze [Power shell-opdracht](/powershell/module/azuread/revoke-azureaduserallrefreshtoken) of de intrek sessie in de pagina gebruikers profiel gebruiken om de sessie van de gebruiker in te trekken, zodat de bijgewerkte beleids regels onmiddellijk worden toegepast.
 
 ### <a name="coauthoring-in-office-apps"></a>Cocreatie in Office-apps
 

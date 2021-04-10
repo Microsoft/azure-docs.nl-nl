@@ -11,12 +11,12 @@ author: nibaccam
 ms.reviewer: nibaccam
 ms.date: 09/22/2020
 ms.custom: how-to, data4ml
-ms.openlocfilehash: 0e2230bdcf2b2f4358db4a0d600506b711f39c45
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: a0265984c4ae83b8869071017e2fb571a7ff548c
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102508228"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107027649"
 ---
 # <a name="connect-to-data-with-the-azure-machine-learning-studio"></a>Verbinding maken met gegevens met behulp van de Azure Machine Learning Studio
 
@@ -24,7 +24,7 @@ In dit artikel leert u hoe u toegang krijgt tot uw gegevens met behulp van de [A
 
 In de volgende tabel worden de voor delen van data stores en gegevens sets gedefinieerd en samenvatten. 
 
-|Object|Beschrijving| Voordelen|   
+|Object|Description| Voordelen|   
 |---|---|---|
 |Gegevensarchieven| U kunt veilig verbinding maken met uw opslag service op Azure door uw verbindings gegevens op te slaan, zoals uw abonnements-ID en Token autorisatie in uw [Key Vault](https://azure.microsoft.com/services/key-vault/) die aan de werk ruimte zijn gekoppeld. | Omdat uw gegevens veilig worden opgeslagen, kunt u <br><br> <li> &nbsp;Plaats geen &nbsp; &nbsp; risico voor verificatie referenties &nbsp; of &nbsp; oorspronkelijke &nbsp; gegevens bronnen. <li> U hoeft deze niet meer vast te coderen in uw scripts.
 |Gegevenssets| Als u een gegevensset maakt, maakt u ook een verwijzing naar de locatie van de gegevensbron, samen met een kopie van de bijbehorende metagegevens. Met gegevens sets kunt u <br><br><li> Toegang tot gegevens tijdens model training.<li> Gegevens delen en samen werken met andere gebruikers.<li> Maak gebruik van open-source bibliotheken, zoals Pandas, voor het verkennen van gegevens. | Omdat gegevens sets worden geëvalueerd als vertraagd, en de huidige locatie blijft bestaan, kunt u <br><br><li>Bewaar één kopie van de gegevens in uw opslag.<li> Geen extra opslag kosten in rekening brengen <li> Geen risico dat u onbedoeld uw oorspronkelijke gegevens bronnen wijzigt.<li>Verbeter de prestaties van de werk stroom snelheid. 
@@ -69,7 +69,7 @@ In het volgende voor beeld ziet u hoe het formulier eruitziet wanneer u een **Az
 Nadat u een gegevens opslag hebt gemaakt, maakt u een gegevensset om te communiceren met uw gegevens. Met gegevens sets kunt u in een vertraagd geëvalueerd voor machine learning-taken, zoals training. [Meer informatie over gegevenssets](how-to-create-register-datasets.md).
 
 Er zijn twee typen gegevens sets: FileDataset en TabularDataset. 
-[FileDatasets](how-to-create-register-datasets.md#filedataset) maakt verwijzingen naar één of meer bestanden of open bare url's. Dat [TabularDatasets](how-to-create-register-datasets.md#tabulardataset) uw gegevens in tabel vorm weer geven. 
+[FileDatasets](how-to-create-register-datasets.md#filedataset) maakt verwijzingen naar één of meer bestanden of open bare url's. Dat [TabularDatasets](how-to-create-register-datasets.md#tabulardataset) uw gegevens in tabel vorm weer geven. U kunt TabularDatasets maken op basis van. CSV-,. tsv-,. Parquet-,. json-bestanden en uit SQL-query resultaten.
 
 In de volgende stappen en animatie ziet u hoe u een gegevensset maakt in [Azure machine learning Studio](https://ml.azure.com).
 
@@ -111,7 +111,7 @@ Het gegevens Profiel van Azure Machine Learning gegevensset bevat met name het v
 >[!NOTE]
 > Lege vermeldingen worden weer gegeven voor functies met irrelevante typen.
 
-|Statistic|Beschrijving
+|Statistic|Description
 |------|------
 |Functie| De naam van de kolom die wordt samenvatten.
 |Profiel| In-line visualisatie op basis van het type dat is afgeleid. Teken reeksen, Booleaanse waarden en datums hebben bijvoorbeeld een aantal aantallen, terwijl decimalen (cijfers) geschatte histogrammen hebben. Zo kunt u een goed inzicht krijgen in de distributie van de gegevens.

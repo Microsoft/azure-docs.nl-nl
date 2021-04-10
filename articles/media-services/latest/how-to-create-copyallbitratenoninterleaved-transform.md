@@ -14,12 +14,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 10/23/2020
 ms.author: inhenkel
-ms.openlocfilehash: f977585a16e1ad3f8eba0a589c603f0125d46fd5
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f30ab33714e2be62a5465b433adbcc44a23e735a
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101721103"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105962387"
 ---
 # <a name="create-a-copyallbitratenoninterleaved-transform"></a>Een CopyAllBitrateNonInterleaved-trans formatie maken
 
@@ -29,7 +29,7 @@ In dit artikel wordt beschreven hoe u een `CopyAllBitrateNonInterleaved` trans f
 
 ## <a name="prerequisites"></a>Vereisten
 
-Volg de stappen in [Een Media Services-account maken](./create-account-howto.md) om het vereiste Media Services-account en de resourcegroep te maken om een asset te maken.
+Volg de stappen in [Een Media Services-account maken](./account-create-how-to.md) om het vereiste Media Services-account en de resourcegroep te maken om een asset te maken.
 
 ## <a name="methods"></a>Methoden
 

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: b0a521ddeee6d93ce809e5e6e85eefa1f01a3f12
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1266e10f6d8bf69c6e72a236ecde27623ad1cf12
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98953968"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105961724"
 ---
 # <a name="configure-postman-for-media-services-v3-rest-api-calls"></a>Postman configureren voor Media Services v3-REST API-aanroepen
 
@@ -30,7 +30,7 @@ Controleer voordat u begint met het ontwikkelen [met behulp van Media Services v
 
 ## <a name="prerequisites"></a>Vereisten
 
-- [Een Azure Media Services-account maken](./create-account-howto.md). Zorg ervoor dat u de naam van de resource groep en de naam van het Media Services account vergeet. 
+- [Een Azure Media Services-account maken](./account-create-how-to.md). Zorg ervoor dat u de naam van de resource groep en de naam van het Media Services account vergeet. 
 - Gegevens ophalen die nodig zijn voor [toegang tot api's](./access-api-howto.md)
 - Installeer de [Postman](https://www.getpostman.com/) REST-client als u de REST-API's wilt uitvoeren die in een aantal AMS REST-zelfstudies worden weergegeven. 
 

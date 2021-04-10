@@ -2,13 +2,13 @@
 title: Een Azure VMware Solution-privécloud maken
 description: Stappen voor het maken van een privécloud van Azure VMware-oplossing met behulp van de Azure Portal.
 ms.topic: include
-ms.date: 02/17/2021
-ms.openlocfilehash: da79881e609f982960468a8f26c98178f972ad43
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/07/2021
+ms.openlocfilehash: 6b4e5631d1a4b6c5bf56b01aba12752595ef63b8
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101725395"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107073437"
 ---
 <!-- Used in deploy-azure-vmware-solution.md and tutorial-create-private-cloud.md -->
 
@@ -34,7 +34,7 @@ ms.locfileid: "101725395"
 1. Als dit gereed is, selecteert u **Controleren + maken**. Controleer de ingevoerde gegevens in het volgende scherm. Als de gegevens juist zijn, selecteert u **Maken**.
 
    > [!NOTE]
-   > Deze stap duurt ongeveer twee uur. 
+   > Deze stap neemt ongeveer 3-4 uur in beslag. Het toevoegen van één knoop punt in het bestaande/hetzelfde cluster duurt tussen 30-45 minuten.
 
 1. Controleer of de implementatie is gelukt. Ga naar de resourcegroep die u hebt gemaakt en selecteer uw privécloud.  U ziet de status **Geslaagd** wanneer de implementatie is voltooid. 
 

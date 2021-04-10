@@ -4,10 +4,10 @@ description: De Defender voor IoT ICS-beheer toepassing voor ServiceNow biedt SO
 ms.date: 1/17/2021
 ms.topic: article
 ms.openlocfilehash: 6e39c3d018003983f6dc5b5e16a9791de84d6005
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104786002"
 ---
 # <a name="the-defender-for-iot-ics-management-application-for-servicenow"></a>De Defender voor IoT ICS-beheer toepassing voor ServiceNow
@@ -324,7 +324,7 @@ In dit artikel worden de waarschuwings gegevens van het apparaat beschreven die 
 | Gemaakt | De datum en tijd waarop de waarschuwing is gegenereerd. |
 | Engine | De engine die de gebeurtenis heeft gedetecteerd. |
 | Titel | De titel van de waarschuwing. |
-| Beschrijving | De beschrijving van de waarschuwing. |
+| Description | De beschrijving van de waarschuwing. |
 | Protocol | Het protocol dat in het verkeer is gedetecteerd. |
 | Severity | De ernst van de waarschuwing die is gedefinieerd door Defender voor IoT. |
 | Apparaat | De naam van de sensor die het verkeer heeft gedetecteerd. |
@@ -344,7 +344,7 @@ Selecteer de vermelding in de kolom gemaakt om waarschuwings gegevens in een for
 
 In dit artikel wordt het soort waarschuwingen beschreven dat elke engine activeert.
 
-| Waarschuwingstype | Beschrijving |
+| Waarschuwingstype | Description |
 |--|--|
 | Waarschuwingen voor beleids schendingen | Wordt geactiveerd wanneer de engine voor beleids overtreding een afwijking detecteert van het eerder geleerde verkeer. Bijvoorbeeld: <br /><br />-Er is een nieuw apparaat gedetecteerd. <br /><br />-Er wordt een nieuwe configuratie op een apparaat gedetecteerd. <br /><br />-Een apparaat dat niet als een programmeer apparaat is gedefinieerd, voert een wijziging in het programma uit. <br /><br />-Er is een firmware versie gewijzigd. |
 | Waarschuwingen over Protocol schendingen | Wordt geactiveerd wanneer de engine van de protocol overtreding een pakket structuren of veld waarden detecteert die niet voldoen aan de protocol specificatie. |

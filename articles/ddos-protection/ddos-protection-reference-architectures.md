@@ -3,7 +3,7 @@ title: Azure DDoS Protection referentie architecturen
 description: Meer informatie over Azure DDoS Protection-referentie architecturen.
 services: ddos-protection
 documentationcenter: na
-author: yitoh
+author: aletheatoh
 ms.service: ddos-protection
 ms.devlang: na
 ms.topic: article
@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: e5472620fe9b07d152a5325b0654044cb1505fd7
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b74ebf332790fd9a08840c8c76d99e2b014dac43
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94992434"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107103076"
 ---
 # <a name="ddos-protection-reference-architectures"></a>DDoS Protection referentie architecturen
 
@@ -59,6 +59,20 @@ Al het verkeer van Internet dat bestemd is voor de webtoepassing, wordt via Traf
 We raden u aan de Application Gateway WAF-SKU (modus voor komen) te configureren om te helpen beschermen tegen laag 7-aanvallen (HTTP/HTTPS/websockets). Daarnaast worden Web-Apps zodanig geconfigureerd dat [alleen verkeer van het Application Gateway](https://azure.microsoft.com/blog/ip-and-domain-restrictions-for-windows-azure-web-sites/) IP-adres wordt geaccepteerd.
 
 Zie [dit artikel](/azure/architecture/reference-architectures/app-service-web-app/multi-region)voor meer informatie over deze referentie architectuur.
+
+## <a name="protecting-on-premises-resources"></a>On-premises resources beveiligen
+
+U kunt gebruikmaken van de schaal, de capaciteit en de efficiëntie van Azure DDoS Protection Standard om uw on-premises resources te beschermen door een openbaar IP-adres in azure te hosten en het verkeer naar de back-end te omleiden naar uw on-premises omgeving.
+
+![On-premises resources beveiligen](./media/reference-architectures/ddos-on-prem.png)
+
+Als u een webtoepassing hebt die verkeer van het internet ontvangt, kunt u de webtoepassing achter Application Gateway hosten, en deze vervolgens beveiligen met WAF tegen webaanvalen op laag 7, zoals SQL-injectie en Slowloris. De back-Origin-oorsprong van uw toepassing bevindt zich in uw on-premises omgeving, die is verbonden via de VPN-verbinding. 
+
+De backend-bronnen in de on-premises omgeving worden niet blootgesteld aan het open bare Internet. Alleen het open bare IP-adres van AppGW/WAF wordt weer gegeven op internet en de DNS-naam van uw toepassing is gekoppeld aan dat open bare IP-adressen. 
+
+Als DDoS Protection standaard is ingeschakeld op het virtuele netwerk dat de AppGW/WAF bevat, beschermt DDoS Protection standaard uw toepassing door te voor komen dat het verkeer wordt verkleind en wordt verondersteld dat het verkeer naar uw toepassing wordt gereinigd. 
+
+In dit [artikel](https://docs.microsoft.com/azure/azure-vmware/protect-azure-vmware-solution-with-application-gateway) wordt beschreven hoe u DDoS Protection Standard naast Application Gateway kunt gebruiken om een web-app te beveiligen die wordt uitgevoerd op de Azure VMware-oplossing.
 
 ## <a name="mitigation-for-non-web-paas-services"></a>Risico beperking voor niet-PaaS Services
 

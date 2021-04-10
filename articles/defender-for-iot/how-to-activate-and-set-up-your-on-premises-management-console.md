@@ -3,12 +3,12 @@ title: Uw on-premises beheerconsole activeren en instellen
 description: Als u de beheer console activeert, zorgt u ervoor dat Sens oren zijn geregistreerd bij Azure en informatie verzenden naar de on-premises beheer console, en dat de on-premises beheer console Beheer taken uitvoert op verbonden Sens oren.
 ms.date: 3/18/2021
 ms.topic: how-to
-ms.openlocfilehash: 89ce6da3521248ff7373e23ae8831106cbee74de
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.openlocfilehash: 86bbebb54753145e087865acd8c0d4690a53aa99
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104784625"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106383852"
 ---
 # <a name="activate-and-set-up-your-on-premises-management-console"></a>Uw on-premises beheerconsole activeren en instellen 
 
@@ -33,29 +33,37 @@ Aanmelden bij de beheer console:
 
 Als u uw wacht woord bent verg eten, selecteert u de optie **wacht woord herstellen**  en raadpleegt u [wachtwoord herstel](how-to-manage-the-on-premises-management-console.md#password-recovery) voor instructies over het herstellen van uw wacht woord.
 
-## <a name="get-and-upload-an-activation-file"></a>Een activerings bestand ophalen en uploaden
+## <a name="activate-the-on-premises-management-console"></a>De on-premises beheer console activeren
 
 Nadat u zich voor de eerste keer aanmeldt, moet u de on-premises beheer console activeren door een activerings bestand op te halen en te uploaden. 
 
-Een activerings bestand ophalen:
+De on-premises beheer console activeren:
 
-1. Navigeer naar de pagina met **prijzen** van de Azure Defender voor IOT-Portal. 
-1. Selecteer het abonnement waaraan u de on-premises beheer console wilt koppelen.
-1. Selecteer de **down load het activerings bestand voor het tabblad beheer console** . Het activerings bestand wordt gedownload.
+1. Meld u aan bij de on-premises beheer console.
+
+1. Selecteer in het waarschuwings bericht aan de bovenkant van het scherm de **actie koppeling uitvoeren** .
+
+   :::image type="content" source="media/how-to-manage-sensors-from-the-on-premises-management-console/take-action.png" alt-text="Selecteer de koppeling actie ondernemen in de waarschuwing boven aan het scherm.":::
+
+1. Selecteer in het pop-upvenster voor activering de **Azure Portal** koppeling.
+
+   :::image type="content" source="media/how-to-manage-sensors-from-the-on-premises-management-console/azure-portal.png" alt-text="Selecteer in het pop-upbericht de Azure Portal koppeling.":::
+ 
+1. Selecteer een abonnement om de on-premises beheer console te koppelen aan, en selecteer vervolgens de knop **activerings bestand van on-premises beheer console downloaden** . Het activerings bestand wordt gedownload.
 
    :::image type="content" source="media/how-to-manage-sensors-from-the-on-premises-management-console/cloud_download_opm_activation_file.png" alt-text="Down load het activerings bestand.":::
 
-Een activerings bestand uploaden:
+   Als u nog niet bent geabonneerd op een abonnement, voert u [een abonnement](how-to-manage-subscriptions.md#onboard-a-subscription)uit.
 
-1. Ga naar de pagina **systeem instellingen** op de on-premises beheer console.
-1. Selecteer het **activerings** pictogram :::image type="icon" source="media/how-to-manage-sensors-from-the-on-premises-management-console/activation-icon.png" border="false"::: .
-1. Selecteer **een bestand kiezen** en selecteer het bestand dat u hebt gedownload.
+1. Ga terug naar het pop-upvenster **Activering** en selecteer **bestand kiezen**.
+
+1. Selecteer het gedownloade bestand.
 
 Na de eerste activering kan het aantal bewaakte apparaten groter zijn dan het aantal toegewezen apparaten dat tijdens de onboarding is gedefinieerd. Dit gebeurt als u meer Sens oren verbindt met de beheer console. Als er een verschil is tussen het aantal bewaakte apparaten en het aantal toegewezen apparaten, wordt er een waarschuwing weer gegeven in de beheer console. Als dit het geval is, uploadt u een nieuw activerings bestand.
 
 ## <a name="set-up-a-certificate"></a>Een certificaat instellen
 
-Na de installatie van de-beheer console wordt een lokaal zelfondertekend certificaat gegenereerd dat wordt gebruikt om toegang te krijgen tot de console. Wanneer een beheerder zich voor de eerste keer aanmeldt bij de beheer console, wordt de gebruiker gevraagd een SSL/TLS-certificaat in te voegen. 
+Nadat u de beheer console hebt geïnstalleerd, wordt er een lokaal zelfondertekend certificaat gegenereerd. Dit certificaat wordt gebruikt om toegang te krijgen tot de-console. Wanneer een beheerder zich voor de eerste keer aanmeldt bij de beheer console, wordt de gebruiker gevraagd een SSL/TLS-certificaat in te voegen. 
 
 Er zijn twee beveiligings niveaus beschikbaar:
 
@@ -76,7 +84,9 @@ De-console ondersteunt de volgende typen certificaten:
 Een certificaat uploaden:
 
 1. Wanneer u wordt gevraagd na het aanmelden, definieert u een certificaat naam.
+
 1. Upload de CRT-en Key-bestanden.
+
 1. Voer een wachtwoordzin in en upload indien nodig een PEM-bestand.
 
 Mogelijk moet u het scherm vernieuwen nadat u het door de certificerings instantie ondertekende certificaat hebt geüpload.
@@ -84,6 +94,7 @@ Mogelijk moet u het scherm vernieuwen nadat u het door de certificerings instant
 Validatie tussen de beheer console en verbonden Sens oren uitschakelen:
 
 1. Selecteer **Next**.
+
 1. Schakel de optie voor het inschakelen van validatie op het **hele systeem** uit.
 
 Zie [Manage the on-premises Management Console](how-to-manage-the-on-premises-management-console.md)voor meer informatie over het uploaden van een nieuw certificaat, ondersteunde certificaat bestanden en verwante items.
@@ -100,21 +111,23 @@ Er zijn twee opties beschikbaar om verbinding te maken tussen Azure Defender voo
 
 Nadat u verbinding hebt gemaakt, moet u een site instellen met deze Sens oren.
 
-### <a name="connect-sensors-from-the-sensor-console"></a>Sens oren verbinden via de sensor console
+### <a name="connect-sensors-to-the-on-premises-management-console-from-the-sensor-console"></a>Sens oren verbinden met de on-premises beheer console vanuit de sensor console
 
-Voor het verbinden van specifieke Sens oren met de on-premises beheer console van de sensor console:
+U kunt Sens oren verbinden met de on-premises beheer console vanuit de sensor console:
 
-1. Selecteer in het linkerdeel venster van de sensor console de optie **systeem instellingen**.
+1. Selecteer op de on-premises beheer console de optie **systeem instellingen**.
 
-2. Selecteer **verbinding met beheer**.
+1. Kopieer de **verbindings reeks voor kopiëren**.
 
-   :::image type="content" source="media/how-to-activate-and-set-up-your-on-premises-management-console/connection-status-window-not-connected.png" alt-text="Scherm opname van het status venster van een on-premises beheer console, waarin niet-verbonden wordt weer gegeven.":::
+   :::image type="content" source="media/how-to-manage-sensors-from-the-on-premises-management-console/connection-string.png" alt-text="Kopieer de connection string voor de sensor.":::
 
-3. Voer in het tekstvak **adres** het IP-adres in van de on-premises beheer console waarmee u verbinding wilt maken.
+1. Ga op de sensor naar **systeem instellingen** en selecteer **verbinding met beheer console**:::image type="icon" source="media/how-to-manage-sensors-from-the-on-premises-management-console/connection-to-management-console.png" border="false":::
 
-4. Selecteer **Verbinding maken**. De status wordt gewijzigd:
+1. Plak de gekopieerde connection string van de on-premises beheer console in het veld **verbindings reeks** .
 
-   :::image type="content" source="media/how-to-activate-and-set-up-your-on-premises-management-console/connection-status-window-connected.png" alt-text="Scherm opname van het status venster van een on-premises beheer console, met verbonden.":::
+   :::image type="content" source="media/how-to-manage-sensors-from-the-on-premises-management-console/paste-connection-string.png" alt-text="Plak de gekopieerde connection string in het veld connection string.":::
+
+1. Selecteer **Verbinding maken**.
 
 ### <a name="connect-sensors-by-using-tunneling"></a>Sens oren verbinden met tunneling
 
@@ -161,61 +174,55 @@ Met toegangs groepen kunt u beter bepalen waar gebruikers apparaten beheren en a
 
 ### <a name="how-it-works"></a>Uitleg
 
-Voor elke site kunt u een bedrijfs eenheid en een regio definiëren. Vervolgens kunt u zones toevoegen. Dit zijn logische entiteiten in uw netwerk. 
+U kunt een bedrijfs eenheid en een regio definiëren voor elke site in uw organisatie. U kunt vervolgens zones toevoegen. Dit zijn logische entiteiten die in uw netwerk aanwezig zijn. 
 
-Voor elke zone moet u ten minste één sensor toewijzen. Het model met vijf niveaus biedt de flexibiliteit en granulatie die vereist zijn voor het leveren van het beveiligings systeem dat de structuur van uw organisatie weerspiegelt.
-
-U kunt uw sites rechtstreeks bewerken vanuit een van de kaart weergaven. Wanneer u een site opent vanuit een kaart weergave, wordt het aantal openstaande waarschuwingen weer gegeven naast elke zone.
-
-:::image type="content" source="media/how-to-activate-and-set-up-your-on-premises-management-console/console-map-with-data-overlay-v2.png" alt-text="Scherm opname van een on-premises beheer console kaart met Berlijn data overlay.":::
+U moet ten minste één sensor per zone toewijzen. Het model met vijf niveaus biedt de flexibiliteit en granulatie die vereist zijn voor het leveren van het beveiligings systeem dat de structuur van uw organisatie weerspiegelt.
 
 :::image type="content" source="media/how-to-activate-and-set-up-your-on-premises-management-console/diagram-of-sensor-showing-relationships.png" alt-text="Diagram met Sens oren en regionale relatie.":::
+
+Met de Enter prise-weer gave kunt u uw sites rechtstreeks bewerken. Wanneer u een site in de Enter prise-weer gave selecteert, wordt het aantal openstaande waarschuwingen weer gegeven naast elke zone.
+
+:::image type="content" source="media/how-to-activate-and-set-up-your-on-premises-management-console/console-map-with-data-overlay-v2.png" alt-text="Scherm opname van een on-premises beheer console kaart met Berlijn data overlay.":::
 
 Een site instellen:
 
 1. Voeg nieuwe bedrijfs eenheden toe om de logische structuur van uw organisatie weer te geven.
 
-2. Nieuwe regio's toevoegen aan de regio's van uw organisatie.
+   1. Selecteer in de Enter prise-weer gave **alle sites**  >  **beheer business units**.
 
-3. Een site toevoegen.
+      :::image type="content" source="media/how-to-manage-sensors-from-the-on-premises-management-console/manage-business-unit.png" alt-text="Selecteer Business Unit beheren in de vervolg keuzelijst alle sites in het scherm voor de Enter prise weergave.":::
 
-4. Zones toevoegen aan een site.
+   1. Voer de naam van de nieuwe bedrijfs eenheid in en selecteer **toevoegen**.
 
-5. Verbind de Sens oren.
+1. Voeg een nieuwe regio toe om de regio's van uw organisatie weer te geven.
 
-6. Wijs sensor toe aan site zones.
+   1. Selecteer in de Enter prise-weer gave **alle regio's**  >  **beheer regio's**.
 
-Business Units toevoegen:
+   :::image type="content" source="media/how-to-manage-sensors-from-the-on-premises-management-console/manage-regions.png" alt-text="Selecteer alle regio's en beheer vervolgens regio's om de regio's in uw onderneming te beheren.":::
 
-1. Selecteer in de Enter prise-weer gave **alle sites**  >  **beheer business units**.
+   1. Voer de naam van de nieuwe regio in en selecteer **toevoegen**.
 
-   :::image type="content" source="media/how-to-activate-and-set-up-your-on-premises-management-console/manage-business-unit-screen.png" alt-text="Scherm opname van de weer gave bedrijfs eenheden beheren.":::
+1. Een site toevoegen.
 
-2. Voer de naam van de nieuwe bedrijfs eenheid in en selecteer **toevoegen**.
+   1. Selecteer in de weer gave onderneming :::image type="icon" source="media/how-to-activate-and-set-up-your-on-premises-management-console/new-site-icon.png" border="false"::: op de bovenste balk. De cursor wordt weer gegeven als een plus teken ( **+** ).
 
-Een nieuwe regio toevoegen:
+   1. Plaats de **+** op de locatie van de nieuwe site en selecteer deze. Het dialoog venster **nieuwe site maken** wordt geopend.
 
-1. Selecteer in de Enter prise-weer gave **alle regio's**  >  **beheer regio's**.
+      :::image type="content" source="media/how-to-activate-and-set-up-your-on-premises-management-console/create-new-site-screen.png" alt-text="Scherm opname van de weer gave nieuwe site maken.":::
 
-   :::image type="content" source="media/how-to-activate-and-set-up-your-on-premises-management-console/manage-regions-screen.png" alt-text="Scherm opname van de weer gave regio's beheren.":::
+   1. Definieer de naam en het fysieke adres voor de nieuwe site en selecteer **Opslaan**. De nieuwe site wordt weer gegeven op de site kaart.
 
-2. Voer de naam van de nieuwe regio in en selecteer **toevoegen**.
+4. [Zones toevoegen aan een site](#create-enterprise-zones).
 
-Een nieuwe site toevoegen:
+5. [Verbind de Sens oren](how-to-manage-individual-sensors.md#connect-a-sensor-to-the-management-console).
 
-1. Selecteer in de weer gave onderneming :::image type="icon" source="media/how-to-activate-and-set-up-your-on-premises-management-console/new-site-icon.png" border="false"::: op de bovenste balk. De cursor wordt weer gegeven als een plus teken ( **+** ).
-
-2. Plaats de **+** op de locatie van de nieuwe site en selecteer deze. Het dialoog venster **nieuwe site maken** wordt geopend.
-
-   :::image type="content" source="media/how-to-activate-and-set-up-your-on-premises-management-console/create-new-site-screen.png" alt-text="Scherm opname van de weer gave nieuwe site maken.":::
-
-3. Definieer de naam en het fysieke adres voor de nieuwe site en selecteer **Opslaan**. De nieuwe site wordt weer gegeven op de site kaart.
+6. [Wijs sensor toe aan site zones](#assign-sensors-to-zones).
 
 Een site verwijderen:
 
 1. Selecteer in het venster **site beheer** een :::image type="icon" source="media/how-to-activate-and-set-up-your-on-premises-management-console/expand-view-icon.png" border="false"::: van de balken die de site naam bevat en selecteer vervolgens **site verwijderen**. Het bevestigings venster wordt weer gegeven en u kunt controleren of u de site wilt verwijderen.
 
-2. Selecteer **Ja** in het bevestigings venster. De bevestiging wordt gesloten en het venster **site beheer** wordt weer gegeven zonder de site die u hebt verwijderd.
+2. Selecteer **bevestigen** in het bevestigings venster.
 
 ## <a name="create-enterprise-zones"></a>Ondernemings zones maken
 
@@ -250,11 +257,11 @@ Een zone toevoegen aan een site:
 
     :::image type="content" source="media/how-to-activate-and-set-up-your-on-premises-management-console/create-new-zone-screen.png" alt-text="Scherm opname van de weer gave nieuwe zone maken.":::
 
-2. Voer de zone naam in.
+1. Voer de zone naam in.
 
-3. Voer een beschrijving in voor de nieuwe zone waarmee duidelijk de kenmerken worden aangegeven die u hebt gebruikt om de site te verdelen in zones.
+1. Voer een beschrijving in voor de nieuwe zone waarmee duidelijk de kenmerken worden aangegeven die u hebt gebruikt om de site te verdelen in zones.
 
-4. Selecteer **SAVE** (Opslaan). De nieuwe zone wordt weer gegeven in het venster **site beheer** onder de site waartoe deze zone behoort.
+1. Selecteer **SAVE** (Opslaan). De nieuwe zone wordt weer gegeven in het venster **site beheer** onder de site waartoe deze zone behoort.
 
 Een zone bewerken:
 
@@ -262,13 +269,13 @@ Een zone bewerken:
 
    :::image type="content" source="media/how-to-activate-and-set-up-your-on-premises-management-console/zone-edit-screen.png" alt-text="Scherm afbeelding die het dialoog venster zone bewerken weergeeft.":::
 
-2. Bewerk de zone parameters en selecteer **Opslaan**.
+1. Bewerk de zone parameters en selecteer **Opslaan**.
 
 Een zone verwijderen:
 
 1. In het venster **site beheer** selecteert u in :::image type="icon" source="media/how-to-activate-and-set-up-your-on-premises-management-console/expand-view-icon.png" border="false"::: de balk die de zone naam bevat en selecteert u **zone verwijderen**.
 
-2. Selecteer **Ja** in het bevestigings venster.
+1. Selecteer **Ja** in het bevestigings venster.
 
 Filteren op basis van de connectiviteits status:
 
@@ -302,23 +309,23 @@ Een sensor toewijzen:
 
    :::image type="content" source="media/how-to-activate-and-set-up-your-on-premises-management-console/unassigned-sensors-view.png" alt-text="Scherm opname van de weer gave niet-toegewezen Sens oren.":::
 
-2. Controleer of de **connectiviteits** status is verbonden. Als dat niet het geval is, raadpleegt [u Sens oren koppelen aan de on-premises beheer console](#connect-sensors-to-the-on-premises-management-console) voor meer informatie over verbinding maken. 
+1. Controleer of de **connectiviteits** status is verbonden. Als dat niet het geval is, raadpleegt [u Sens oren koppelen aan de on-premises beheer console](#connect-sensors-to-the-on-premises-management-console) voor meer informatie over verbinding maken. 
 
-3. Selecteer :::image type="icon" source="media/how-to-activate-and-set-up-your-on-premises-management-console/assign-icon.png" border="false"::: voor de sensor die u wilt toewijzen.
+1. Selecteer :::image type="icon" source="media/how-to-activate-and-set-up-your-on-premises-management-console/assign-icon.png" border="false"::: voor de sensor die u wilt toewijzen.
 
-4. Selecteer in het dialoog venster **sensor toewijzen** de bedrijfs eenheid, de regio, de site en de zone die u wilt toewijzen.
+1. Selecteer in het dialoog venster **sensor toewijzen** de bedrijfs eenheid, de regio, de site en de zone die u wilt toewijzen.
 
    :::image type="content" source="media/how-to-activate-and-set-up-your-on-premises-management-console/assign-sensor-screen.png" alt-text="Scherm opname van de weer gave sensor toewijzen.":::
 
-5. Selecteer **toewijzen**.
+1. Selecteer **toewijzen**.
 
 De toewijzing van een sensor opheffen en verwijderen:
 
 1. Koppel de sensor los van de on-premises beheer console. Zie [Sens oren verbinden met de on-premises beheer console](#connect-sensors-to-the-on-premises-management-console) voor meer informatie.
 
-2. Selecteer de sensor in het venster **site beheer** en selecteer deze :::image type="icon" source="media/how-to-activate-and-set-up-your-on-premises-management-console/unassign-sensor-icon.png" border="false"::: . De sensor wordt na enkele ogen blikken weer gegeven in de lijst met niet-toegewezen Sens oren.
+1. Selecteer de sensor in het venster **site beheer** en selecteer deze :::image type="icon" source="media/how-to-activate-and-set-up-your-on-premises-management-console/unassign-sensor-icon.png" border="false"::: . De sensor wordt na enkele ogen blikken weer gegeven in de lijst met niet-toegewezen Sens oren.
 
-3. Als u de niet-toegewezen sensor van de site wilt verwijderen, selecteert u de sensor in de lijst met niet-toegewezen Sens oren en selecteert u :::image type="icon" source="media/how-to-activate-and-set-up-your-on-premises-management-console/delete-icon.png" border="false"::: .
+1. Als u de niet-toegewezen sensor van de site wilt verwijderen, selecteert u de sensor in de lijst met niet-toegewezen Sens oren en selecteert u :::image type="icon" source="media/how-to-activate-and-set-up-your-on-premises-management-console/delete-icon.png" border="false"::: .
 
 ## <a name="see-also"></a>Zie ook
 

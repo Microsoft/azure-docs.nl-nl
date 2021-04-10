@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 03/22/2021
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: e0bb8ccf3be6038c228034a55cd15cadcebddbb7
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 389ad34bb856675dfabd761507ed07cc722c032a
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/30/2021
-ms.locfileid: "105572403"
+ms.locfileid: "105961673"
 ---
 # <a name="develop-azure-functions-with-media-services-v3"></a>Azure Functions ontwikkelen met Media Services v3
 
@@ -29,7 +29,7 @@ Als u bestaande Azure Functions wilt verkennen en implementeren die gebruikmaken
 ## <a name="prerequisites"></a>Vereisten
 
 - Voordat u uw eerste functie kunt maken, moet u een actief Azure-account hebben. Als u nog geen Azure-account hebt, zijn er [gratis accounts beschikbaar](https://azure.microsoft.com/free/).
-- Als u Azure Functions wilt maken die acties uitvoeren op uw Azure Media Services-account (AMS) of als u wilt Luis teren naar gebeurtenissen die door Media Services worden verzonden, moet u een AMS-account maken, zoals [hier](create-account-howto.md)wordt beschreven.
+- Als u Azure Functions wilt maken die acties uitvoeren op uw Azure Media Services-account (AMS) of als u wilt Luis teren naar gebeurtenissen die door Media Services worden verzonden, moet u een AMS-account maken, zoals [hier](account-create-how-to.md)wordt beschreven.
 
 ## <a name="create-a-function-app"></a>Een functie-app maken
 

@@ -4,10 +4,10 @@ description: Meer informatie over actie regels in Azure Monitor zijn en hoe u de
 ms.topic: conceptual
 ms.date: 03/15/2021
 ms.openlocfilehash: 12e7cf8e72c5423b4a2edd6ea2a0f4537e328b08
-ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105036778"
 ---
 # <a name="action-rules-preview"></a>Actie regels (preview-versie)
@@ -118,7 +118,7 @@ Als u in de wissel knop **actie groep** selecteert, moet u een bestaande actie g
 Configureer als laatste de volgende Details voor de actie regel:
 * Name
 * De resource groep waarin deze is opgeslagen
-* Beschrijving
+* Description
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 

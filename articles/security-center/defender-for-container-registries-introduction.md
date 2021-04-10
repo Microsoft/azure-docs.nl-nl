@@ -3,16 +3,16 @@ title: 'Azure Defender voor containerregister: de voordelen en functies'
 description: Meer informatie over de voordelen en functies van Azure Defender voor containerregisters.
 author: memildin
 ms.author: memildin
-ms.date: 9/22/2020
+ms.date: 04/07/2021
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: ab2ad15da9b1676924197d28e734f6baf59a02ef
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 4840fc27133b1d92cb8aaad80921f9d21901569d
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102176634"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107010689"
 ---
 # <a name="introduction-to-azure-defender-for-container-registries"></a>Inleiding tot Azure Defender voor containerregisters
 
@@ -47,7 +47,7 @@ Er zijn drie triggers voor het scannen van installatiekopieën:
 
 - **Bij push**: wanneer een installatiekopie naar het register wordt gepusht, wordt deze automatisch door Security Center gescand. U kunt het scannen van een installatiekopie activeren door deze naar uw opslagplaats te pushen.
 
-- **Recent opgehaald**: aangezien er elke dag nieuwe beveiligingsproblemen worden ontdekt, scant **Azure Defender voor containerregisters** ook alle installatiekopieën die de afgelopen 30 dagen zijn opgehaald. Er zijn geen extra kosten verbonden aan het opnieuw scannen. Zoals hierboven gezegd, wordt u één keer per installatiekopie gefactureerd.
+- **Recent getrokken** : aangezien er elke dag nieuwe beveiligings problemen worden ontdekt, scant **Azure Defender voor container registers** ook elke afbeelding die in de afgelopen 30 dagen is opgehaald. Er worden geen extra kosten in rekening gebracht voor deze herscans. zoals hierboven vermeld, wordt u één keer per afbeelding gefactureerd.
 
 - **Bij import**: Azure Container Registry heeft functies voor het importeren van installatiekopieën in uw register vanuit Docker Hub, Microsoft-containerregister of een ander Azure-containerregister. **Azure Defender voor containerregisters** scant alle ondersteunde installatiekopieën die u importeert. Zie [Containerinstallatiekopieën importeren in een containerregister](../container-registry/container-registry-import-images.md) voor meer informatie.
  

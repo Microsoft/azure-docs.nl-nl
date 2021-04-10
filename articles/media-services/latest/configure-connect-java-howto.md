@@ -14,12 +14,12 @@ ms.topic: quickstart
 ms.date: 11/17/2020
 ms.custom: devx-track-java
 ms.author: inhenkel
-ms.openlocfilehash: 769b4bc431040ee4d872fa60270196db96978ed2
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 06923d7c198edc324d85b726cf91694d8cf7e1ca
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94748162"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105961350"
 ---
 # <a name="connect-to-media-services-v3-api---java"></a>Verbinding maken met de Media Services v3-API - Java
 
@@ -37,7 +37,7 @@ In dit artikel wordt Visual Studio Code gebruikt om de voorbeeld-app te ontwikke
    - Apache Maven
    - Java-uitbreidingspakket
 - Vergeet niet de omgevingsvariabelen `JAVA_HOME` en `PATH` in te stellen.
-- [Een Azure Media Services-account maken](./create-account-howto.md). Vergeet niet welke namen u gebruikt voor de resourcegroep en het Media Services-account.
+- [Een Azure Media Services-account maken](./account-create-how-to.md). Vergeet niet welke namen u gebruikt voor de resourcegroep en het Media Services-account.
 - Volg de stappen in het onderwerp [Toegangs-API's](./access-api-howto.md). Leg de abonnements-id, de toepassings-id (client-id), en de verificatiesleutel (geheim) en de tenant-id vast die u in een latere stap nodig hebt.
 
 Bekijk ook het volgende:

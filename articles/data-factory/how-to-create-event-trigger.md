@@ -7,12 +7,12 @@ ms.author: chez
 ms.reviewer: jburchel
 ms.topic: conceptual
 ms.date: 03/11/2021
-ms.openlocfilehash: ae8b1eab81e3c898c25a613f552a49c8de64f49d
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.openlocfilehash: d9012c2bb56b7936b627063be2e9c5b7aa33541e
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104889124"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105962727"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-in-response-to-a-storage-event"></a>Een trigger maken waarmee een pijp lijn wordt uitgevoerd als reactie op een opslag gebeurtenis
 
@@ -71,9 +71,12 @@ In deze sectie wordt beschreven hoe u een opslag gebeurtenis trigger maakt in de
 
 1. Als uw pijp lijn para meters heeft, kunt u deze opgeven op de activerings parameter zijde navigatie. De opslag gebeurtenis trigger legt het mappad en de bestands naam van de BLOB vast in de eigenschappen `@triggerBody().folderPath` en `@triggerBody().fileName` . Als u de waarden van deze eigenschappen in een pijp lijn wilt gebruiken, moet u de eigenschappen toewijzen aan pijplijn parameters. Nadat u de eigenschappen hebt toegewezen aan para meters, kunt u toegang krijgen tot de waarden die zijn vastgelegd door de trigger via de `@pipeline().parameters.parameterName` expressie in de pijp lijn. Zie [Naslag informatie over het activeren van meta gegevens in pijp lijnen](how-to-use-trigger-parameterization.md) voor gedetailleerde uitleg
 
-    :::image type="content" source="media/how-to-create-event-trigger/event-based-trigger-image4.png" alt-text="Scherm afbeelding van de toewijzing van eigenschappen van opslag gebeurtenis trigger voor pijplijn parameters.":::
+   :::image type="content" source="media/how-to-create-event-trigger/event-based-trigger-image4.png" alt-text="Scherm afbeelding van de toewijzing van eigenschappen van opslag gebeurtenis trigger voor pijplijn parameters.":::
 
-    In het vorige voor beeld wordt de trigger zo geconfigureerd dat deze wordt geactiveerd wanneer een BLOB-pad dat eindigt op. csv wordt gemaakt in de map _Event-test_ in de _voorbeeld gegevens_ van de container. Met de eigenschappen **FolderPath** en **filename** wordt de locatie van de nieuwe BLOB vastgelegd. Als MoviesDB.csv bijvoorbeeld wordt toegevoegd aan het pad voor beeld/gebeurtenis-testen, `@triggerBody().folderPath` heeft de waarde `sample-data/event-testing` en `@triggerBody().fileName` een waarde van `moviesDB.csv` . Deze waarden worden in het voor beeld toegewezen aan de pijplijn parameters `sourceFolder` en `sourceFile` , die in de pijp lijn kunnen worden gebruikt als `@pipeline().parameters.sourceFolder` `@pipeline().parameters.sourceFile` respectievelijk.
+   In het vorige voor beeld wordt de trigger zo geconfigureerd dat deze wordt geactiveerd wanneer een BLOB-pad dat eindigt op. csv wordt gemaakt in de map _Event-test_ in de _voorbeeld gegevens_ van de container. Met de eigenschappen **FolderPath** en **filename** wordt de locatie van de nieuwe BLOB vastgelegd. Als MoviesDB.csv bijvoorbeeld wordt toegevoegd aan het pad voor beeld/gebeurtenis-testen, `@triggerBody().folderPath` heeft de waarde `sample-data/event-testing` en `@triggerBody().fileName` een waarde van `moviesDB.csv` . Deze waarden worden in het voor beeld toegewezen aan de pijplijn parameters `sourceFolder` en `sourceFile` , die in de pijp lijn kunnen worden gebruikt als `@pipeline().parameters.sourceFolder` `@pipeline().parameters.sourceFile` respectievelijk.
+
+   > [!NOTE]
+   > Als u de pijp lijn en de trigger in [Azure Synapse Analytics](/synapse-analytics)maakt, moet u `@trigger().outputs.body.fileName` en `@trigger().outputs.body.folderPath` als para meters gebruiken. Deze twee eigenschappen Capture BLOB-gegevens vastleggen. Gebruik deze eigenschappen in plaats van met `@triggerBody().fileName` en `@triggerBody().folderPath` .
 
 1. Klik op **volt ooien** wanneer u klaar bent.
 
@@ -83,11 +86,11 @@ De volgende tabel bevat een overzicht van de schema-elementen die betrekking heb
 
 | **JSON-element** | **Beschrijving** | **Type** | **Toegestane waarden** | **Vereist** |
 | ---------------- | --------------- | -------- | ------------------ | ------------ |
-| **ligt** | De Azure Resource Manager Resource-ID van het opslag account. | Tekenreeks | Azure Resource Manager-ID | Ja |
+| **ligt** | De Azure Resource Manager Resource-ID van het opslag account. | Tekenreeks | Azure Resource Manager-ID | Yes |
 | **evenementen** | Het type gebeurtenissen dat ervoor zorgt dat deze trigger wordt gestart. | Matrix    | Micro soft. storage. BlobCreated, micro soft. storage. BlobDeleted | Ja, een wille keurige combi natie van deze waarden. |
 | **blobPathBeginsWith** | Het BLOB-pad moet beginnen met het patroon dat is ingesteld voor de trigger om te starten. `/records/blobs/december/`De trigger wordt bijvoorbeeld alleen geactiveerd voor blobs in de `december` map onder de `records` container. | Tekenreeks   | | Geef een waarde op voor ten minste één van deze eigenschappen: `blobPathBeginsWith` of `blobPathEndsWith` . |
 | **blobPathEndsWith** | Het BLOB-pad moet eindigen met het patroon dat is ingesteld voor de trigger om te starten. `december/boxes.csv`De trigger wordt bijvoorbeeld alleen geactiveerd voor blobs `boxes` met de naam in een `december` map. | Tekenreeks   | | U moet een waarde opgeven voor ten minste een van deze eigenschappen: `blobPathBeginsWith` of `blobPathEndsWith` . |
-| **ignoreEmptyBlobs** | Hiermee wordt aangegeven of nul-byte-Blobs een pijplijn uitvoering activeren. Deze instelling is standaard ingesteld op waar. | Booleaans | waar of onwaar | Nee |
+| **ignoreEmptyBlobs** | Hiermee wordt aangegeven of nul-byte-Blobs een pijplijn uitvoering activeren. Deze instelling is standaard ingesteld op waar. | Booleaans | waar of onwaar | No |
 
 ## <a name="examples-of-storage-event-triggers"></a>Voor beelden van opslag gebeurtenis triggers
 

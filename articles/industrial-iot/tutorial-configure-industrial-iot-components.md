@@ -7,10 +7,10 @@ ms.service: industrial-iot
 ms.topic: tutorial
 ms.date: 3/22/2021
 ms.openlocfilehash: 348276a71b2227063374da6455445118fcb00fcf
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104787685"
 ---
 # <a name="tutorial-configure-the-industrial-iot-components"></a>Zelf studie: de industriële IoT-onderdelen configureren
@@ -49,7 +49,7 @@ Hier volgen enkele van de meest relevante aanpassings instellingen voor de onder
 
 ## <a name="configuration-options"></a>Configuratie-opties
 
-|Configuratie optie (Steno/volledige naam)    |    Beschrijving   |
+|Configuratie optie (Steno/volledige naam)    |    Description   |
 |----------------------------------------------|------------------|
 PF/publishfile |De bestands naam voor het configureren van de knoop punten die moeten worden gepubliceerd. Als deze optie is opgegeven, wordt de OPC-uitgever in de zelfstandige modus geplaatst.
 LF/logboek |De bestands naam van het logboek bestand dat moet worden gebruikt.

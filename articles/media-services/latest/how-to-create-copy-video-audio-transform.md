@@ -14,12 +14,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 11/19/2020
 ms.author: inhenkel
-ms.openlocfilehash: 24dcd64ba14303c4e205ba3da610d04d4ef277d9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9a3d9ff9947a97182964f805d0b8da7e3abcad69
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101724571"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105962357"
 ---
 # <a name="create-a-copyvideo-copyaudio-transform"></a>Een CopyVideo CopyAudio-trans formatie maken
 
@@ -29,7 +29,7 @@ In dit artikel wordt beschreven hoe u een `CopyVideo/CopyAudio` trans formatie m
 
 ## <a name="prerequisites"></a>Vereisten
 
-Volg de stappen in [Een Media Services-account maken](./create-account-howto.md) om het vereiste Media Services-account en de resourcegroep te maken om een asset te maken.
+Volg de stappen in [Een Media Services-account maken](./account-create-how-to.md) om het vereiste Media Services-account en de resourcegroep te maken om een asset te maken.
 
 ## <a name="methods"></a>Methoden
 

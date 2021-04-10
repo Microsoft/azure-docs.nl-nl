@@ -8,15 +8,15 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: troubleshooting
 ms.service: azure-communication-services
-ms.openlocfilehash: 7be40ac5f6cda7a81d68ca0b17f377891dd58480
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.openlocfilehash: b9ed71a8fc9346ecd454eba98dcbb3b13186eba2
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105606042"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106276039"
 ---
-# <a name="known-issues-azure-communication-services-sdks"></a>Bekende problemen: Sdk's van Azure Communication Services
-Dit artikel bevat informatie over beperkingen en bekende problemen met betrekking tot de Sdk's van Azure Communication Services.
+# <a name="known-issues-azure-communication-services-calling-sdks"></a>Bekende problemen: Azure Communication Services die Sdk's aanroepen
+Dit artikel bevat informatie over beperkingen en bekende problemen met betrekking tot de Azure Communication Services die Sdk's aanroepen.
 
 > [!IMPORTANT]
 > Er zijn meerdere factoren die van invloed kunnen zijn op de kwaliteit van uw gespreks ervaring. Raadpleeg de documentatie over **[netwerk vereisten](https://docs.microsoft.com/azure/communication-services/concepts/voice-video-calling/network-requirements)** voor meer informatie over communicatie Services netwerk configuratie en aanbevolen procedures testen.
@@ -47,7 +47,10 @@ Toepassingen kunnen Mic/speaker-apparaten (zoals Bluetooth) op Safari iOS/iPad n
 Als u Safari in macOS gebruikt, kan uw app de luid sprekers niet opsommen/selecteren via de communicatie Services Apparaatbeheer. In dit scenario moeten apparaten worden geselecteerd via het besturings systeem. Als u Chrome op macOS gebruikt, kan de app apparaten opsommen/selecteren via de communicatie Services-Apparaatbeheer.
 
 ### <a name="audio-connectivity-is-lost-when-receiving-sms-messages-or-calls-during-an-ongoing-voip-call"></a>Er is geen audio verbinding meer bij het ontvangen van SMS-berichten of-aanroepen tijdens een voortdurende VoIP-oproep
-Mobiele browsers behouden geen connectiviteit in de achtergrond status. Dit kan leiden tot een gedegradeerde oproep ervaring als de VoIP-oproep is onderbroken door een gebeurtenis die uw toepassing naar de achtergrond pusht.
+Dit probleem kan om verschillende redenen optreden:
+
+- Sommige mobiele browsers behouden geen connectiviteit in de achtergrond status. Dit kan leiden tot een gedegradeerde oproep ervaring als de VoIP-oproep is onderbroken door een gebeurtenis die uw toepassing naar de achtergrond pusht. 
+- Soms wordt in een SMS-of PSTN-gesprek het audio geluid vastgelegd en wordt audio niet weer vrijgegeven naar de VoIP-oproep. Apple heeft dit probleem opgelost in iOS-versies 14.4.1 +. 
 
 <br/>Client bibliotheek: aanroepen (Java script)
 <br/>Browsers: Safari, Chrome
@@ -95,9 +98,16 @@ Als gebruikers ervoor kiezen om de video aan/uit te scha kelen terwijl de aanroe
  - Als de gebruiker begint met geluid en vervolgens video start en stopt terwijl de aanroep de `Connecting` status actief heeft.
  - Als de gebruiker begint met geluid en vervolgens video start en stopt terwijl de aanroep de `Lobby` status actief heeft.
 
-
 #### <a name="possible-causes"></a>Mogelijke oorzaken
 Wordt onderzocht.
+
+### <a name="enumeratingaccessing-devices-for-safari-on-macos-and-ios"></a>Apparaten voor Safari inventariseren/openen in MacOS en iOS 
+Als toegang tot apparaten wordt verleend, worden de machtigingen van het apparaat na enige tijd opnieuw ingesteld. Safari in MacOS en op iOS houdt geen machtigingen voor zeer lange tijd, tenzij er een stroom is verkregen. De eenvoudigste manier om dit te omzeilen is door de API van DeviceManager. askDevicePermission () aan te roepen voordat u de Api's van Device Manager-inventarisatie aanroept (DeviceManager. getCameras (), DeviceManager. getSpeakers () en DeviceManager. getMicrophones ()). Als de machtigingen zich daar bevinden, wordt er niets weer gegeven als de gebruiker niet meer wordt gevraagd.
+
+<br/>Betrokken apparaten: iPhone
+<br/>Client bibliotheek: aanroepen (Java script)
+<br/>Browsers: Safari
+<br/>Besturings systeem: iOS
 
 ###  <a name="sometimes-it-takes-a-long-time-to-render-remote-participant-videos"></a>Soms duurt het lang om Video's van de externe deel nemers weer te geven
 Tijdens een doorlopende groeps aanroep verzendt _gebruiker A_ video en vervolgens wordt _gebruiker B_ lid van de aanroep. Soms wordt de video van gebruiker A niet weer gegeven, of de video van de gebruiker A wordt na een lange vertraging gerenderd. Dit probleem kan worden veroorzaakt door een netwerk omgeving waarvoor verdere configuratie is vereist. Raadpleeg de documentatie over [netwerk vereisten](https://docs.microsoft.com/azure/communication-services/concepts/voice-video-calling/network-requirements) voor netwerk configuratie richtlijnen.

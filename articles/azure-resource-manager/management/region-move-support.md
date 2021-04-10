@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: reference
 ms.date: 08/25/2020
 ms.author: raynew
-ms.openlocfilehash: 18d4d84462d528b718d784ff6a16ecf990ed0d20
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9229fca9f98aac4ca628c0bb25c13c9ba1989626
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100094012"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105962591"
 ---
 # <a name="support-for-moving-azure-resources-across-regions"></a>Ondersteuning voor het verplaatsen van Azure-resources in verschillende regio's
 
@@ -503,7 +503,7 @@ Ga naar de naam ruimte van een resource provider:
 > | Resourcetype | Regio verplaatsen | 
 > | ------------- | ----------- |
 > | mogelijkheden | No | 
-> | domein naam | Ja | Nee |
+> | domein naam | No |
 > | quotas | No | 
 > | resourcetypes | No |
 > | validatesubscriptionmoveavailability | No | 
@@ -1061,7 +1061,7 @@ Ga naar de naam ruimte van een resource provider:
 > [!div class="mx-tableFixed"]
 > | Resourcetype | Regio verplaatsen | 
 > | ------------- | ----------- |
-> | accounts | Nee. [Meer informatie](../../azure-monitor/faq.md#how-do-i-move-an-application-insights-resource-to-a-new-region).
+> | accounts | Nee. [Meer informatie](../../azure-monitor/faq.md#how-do-i-move-an-application-insights-resource-to-a-new-region). |
 > | actiongroups |  No | 
 > | activitylogalerts | No | 
 > | alertrules |  No | 
@@ -1073,12 +1073,12 @@ Ga naar de naam ruimte van een resource provider:
 > | diagnosticsettingscategories | No | 
 > | eventcategories | No | 
 > | eventtypes | No | 
-> | extendeddiagnosticsettings | No | |
+> | extendeddiagnosticsettings | No |
 > | guestdiagnosticsettings | No | 
 > | listmigrationdate | No | 
 > | logdefinitions | No | 
 > | logprofiles | No | 
-> | logboeken | Nee | Nee |
+> | logboeken | No |
 > | metricalerts | No | 
 > | metricbaselines | No | 
 > | metricbatch | No | 
@@ -1399,7 +1399,8 @@ Ga naar de naam ruimte van een resource provider:
 > | networkwatchers / pingmeshes |  No | 
 > | p2svpngateways | No | 
 > | privatednszones |  No |  
-> | privatednszones / virtualnetworklinks | No |> | privatednszonesinternal | No |
+> | privatednszones / virtualnetworklinks | No |
+> | privatednszonesinternal | No |
 > | privateendpointredirectmaps | No |
 > | privateendpoints | No | 
 > | privatelinkservices | No | 

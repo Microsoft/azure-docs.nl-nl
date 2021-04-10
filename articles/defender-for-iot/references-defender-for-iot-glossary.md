@@ -4,10 +4,10 @@ description: Deze verklarende woorden lijst bevat een korte beschrijving van bel
 ms.date: 12/09/2020
 ms.topic: article
 ms.openlocfilehash: 191b94ca37118ed6413149dd6047f94c5ee568cd
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104786818"
 ---
 # <a name="defender-for-iot-glossary"></a>Defender for IoT-woordenlijst

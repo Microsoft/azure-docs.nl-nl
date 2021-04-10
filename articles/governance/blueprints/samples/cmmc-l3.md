@@ -4,10 +4,10 @@ description: Overzicht van het CMMC Level 3-blauw druk-voor beeld. Met dit blauw
 ms.date: 03/24/2021
 ms.topic: sample
 ms.openlocfilehash: 950c6064ce8b3d9973ac08e5895a4b6f48e37d6a
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105572623"
 ---
 # <a name="cmmc-level-3-blueprint-sample"></a>CMMC Level 3-blauw druk-voor beeld

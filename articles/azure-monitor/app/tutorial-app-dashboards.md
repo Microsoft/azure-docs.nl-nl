@@ -1,18 +1,17 @@
 ---
 title: Aangepaste dashboards maken in Azure Application Insights | Microsoft Docs
 description: Zelfstudie over het maken van aangepaste KPI-dashboards met behulp van Azure Application Insights.
-ms.subservice: application-insights
 ms.topic: tutorial
 author: lgayhardt
 ms.author: lagayhar
 ms.date: 09/30/2020
 ms.custom: mvc, contperf-fy21q1
-ms.openlocfilehash: 701480300101b019830c57d9aa000534fa63bb6a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7bad0b17bb2fed9d9f54cdd44042ec88708f35fd
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100627239"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107103722"
 ---
 # <a name="create-custom-kpi-dashboards-using-azure-application-insights"></a>Aangepaste KPI-dashboards maken met behulp van Azure Application Insights
 
@@ -60,7 +59,7 @@ Een dashboard kan resources uit meerdere toepassingen, resourcegroepen en abonne
 5. Zoek de tegel **Markdown** en sleep deze naar uw dashboard.  Met deze tegel kunt u tekst opmaken in Markdown, wat ideaal is om beschrijvende tekst toe te voegen aan uw dashboard. Zie [Een markdown-tegel in Azure-dashboards gebruiken om aangepaste inhoud weer te geven](../../azure-portal/azure-portal-markdown-tile.md) voor meer informatie.
 6. Voeg tekst toe aan de tegeleigenschappen en wijzig het formaat van de tegel op het canvas van het dashboard.
 
-    [![Tegel Markdown bewerken](media/tutorial-app-dashboards/markdown.png)](media/tutorial-app-dashboards/dashboard-edit-mode.png#lightbox)
+    [![Tegel Markdown bewerken](media/tutorial-app-dashboards/markdown.png)](media/tutorial-app-dashboards/markdown.png#lightbox)
 
 7. Selecteer **Aanpassen voltooid** boven aan het scherm om de modus voor het aanpassen van tegels af te sluiten.
 

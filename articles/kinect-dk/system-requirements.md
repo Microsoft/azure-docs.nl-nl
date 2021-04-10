@@ -12,10 +12,10 @@ ms.date: 03/05/2021
 ms.topic: article
 keywords: Azure, kinect, systeem vereisten, CPU, GPU, USB, installeren, instellen, minimum, vereisten
 ms.openlocfilehash: 558c1b9ca264874fa808aeba5f1e8a809a8f722d
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104656971"
 ---
 # <a name="azure-kinect-sensor-sdk-system-requirements"></a>Azure Kinect sensor SDK-systeem vereisten

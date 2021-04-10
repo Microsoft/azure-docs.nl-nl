@@ -7,12 +7,12 @@ ms.topic: article
 author: parthpandyaMSFT
 ms.author: parthp
 ms.date: 11/19/2020
-ms.openlocfilehash: ce9927a66da64d64e83f10e3dfd906005635e5ed
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e4cd22418c4f8a2f9504baf665c67a4a57f7f6f5
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99507533"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107103382"
 ---
 # <a name="microsoft-business-applications-independent-software-vendor-isv-connect-program-onboarding-guide"></a>Gids voor onboarding bij Microsoft Business Applications ISV Connect-programma
 
@@ -25,7 +25,7 @@ Voltooi de volgende secties in dit artikel om u te registreren en te profiteren 
 
 ## <a name="set-up-your-microsoft-partner-center-account"></a>Uw micro soft Partner Center-account instellen
 
-Voor het instellen en beheren van uw account voor het ISV Connect-programma voert u de stappen uit van het artikel: [een commercieel Marketplace-account maken in het partner centrum](./partner-center-portal/create-account.md). Dit artikel bevat alle stappen voor het maken van een nieuw account en informatie over het toevoegen van nieuwe uitgevers aan het programma voor commerciële Marketplace.
+Voor het instellen en beheren van uw account voor het ISV Connect-programma voert u de stappen uit van het artikel: [een commercieel Marketplace-account maken in het partner centrum](create-account.md). Dit artikel bevat alle stappen voor het maken van een nieuw account en informatie over het toevoegen van nieuwe uitgevers aan het programma voor commerciële Marketplace.
 
 > [!NOTE]
 > Voor deze stap is een *eigenaar* of *Manager* -rol vereist in het partner centrum.

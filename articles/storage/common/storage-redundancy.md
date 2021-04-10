@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 03/05/2021
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: d01e125ef3e905191d76c9f4888e790958211dff
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.openlocfilehash: 37e508a0f4af940773a92271075239c204e52834
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105607317"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107010710"
 ---
 # <a name="azure-storage-redundancy"></a>Azure Storage-redundantie
 
@@ -74,8 +74,8 @@ In de volgende tabel ziet u welke typen opslag accounts ZRS ondersteunen in welk
 | Type opslagaccount | Ondersteunde regio’s | Ondersteunde services |
 |--|--|--|
 | Algemeen gebruik v2<sup>1</sup> | Africa Zuid-Afrika - noord<br /> (Azië en Stille Oceaan) Azië - oost<br /> (Azië en Stille Oceaan) Zuidoost-Azië<br /> (Azië en Stille Oceaan) Australië - oost<br /> (Azië en Stille Oceaan) Centraal-India<br /> (Azië en Stille Oceaan) Japan - oost<br /> (Azië en Stille Oceaan) Korea - centraal<br /> Benelux Canada - centraal<br /> Europa Europa - noord<br /> Europa Europa - west<br /> Europa Frankrijk - centraal<br /> Europa Duitsland - west-centraal<br /> Europa Noor wegen-Oost<br /> Europa Zwitserland - noord<br /> Europa UK - zuid<br /> (Midden-Oosten) UAE - noord<br /> (Zuid-Amerika) Brazilië - zuid<br /> VS VS-Centraal<br /> (US) US - oost<br /> VS VS-Oost 2<br /> (VS) VS - noord-centraal<br />VS VS Zuid-Centraal<br /> VS VS-West<br /> VS VS-West 2 | Blok-blobs<br /> Pagina-blobs<sup>2</sup><br /> Bestands shares (standaard)<br /> Tables<br /> Wachtrijen<br /> |
-| BlockBlobStorage<sup>1</sup> | Africa Zuid-Afrika - noord<br /> (Azië en Stille Oceaan) Azië - oost<br /> (Azië en Stille Oceaan) Zuidoost-Azië<br /> (Azië en Stille Oceaan) Australië - oost<br /> (Azië en Stille Oceaan) Centraal-India<br /> (Azië en Stille Oceaan) Japan - oost<br /> (Azië en Stille Oceaan) Korea - centraal<br /> Benelux Canada - centraal<br /> Europa Europa - noord<br /> Europa Europa - west<br /> Europa Frankrijk - centraal<br /> Europa Duitsland - west-centraal<br /> Europa Noor wegen-Oost<br /> Europa Zwitserland - noord<br /> Europa UK - zuid<br /> (Midden-Oosten) UAE - noord<br /> (Zuid-Amerika) Brazilië - zuid<br /> VS VS-Centraal<br /> (US) US - oost<br /> VS VS-Oost 2<br /> (VS) VS - noord-centraal<br />VS VS Zuid-Centraal<br /> VS VS-West<br /> VS VS-West 2 | Alleen Premium-blok-blobs |
-| FileStorage | Africa Zuid-Afrika - noord<br /> (Azië en Stille Oceaan) Azië - oost<br /> (Azië en Stille Oceaan) Zuidoost-Azië<br /> (Azië en Stille Oceaan) Australië - oost<br /> (Azië en Stille Oceaan) Centraal-India<br /> (Azië en Stille Oceaan) Japan - oost<br /> (Azië en Stille Oceaan) Korea - centraal<br /> Benelux Canada - centraal<br /> Europa Europa - noord<br /> Europa Europa - west<br /> Europa Frankrijk - centraal<br /> Europa Duitsland - west-centraal<br /> Europa Noor wegen-Oost<br /> Europa Zwitserland - noord<br /> Europa UK - zuid<br /> (Midden-Oosten) UAE - noord<br /> (Zuid-Amerika) Brazilië - zuid<br /> VS VS-Centraal<br /> (US) US - oost<br /> VS VS-Oost 2<br /> (VS) VS - noord-centraal<br />VS VS Zuid-Centraal<br /> VS VS-West<br /> VS VS-West 2 | Premium-bestanden alleen shares |
+| BlockBlobStorage<sup>1</sup> | Azië - zuidoost<br /> Australië - oost<br /> Europa - noord<br /> Europa - west<br /> Frankrijk - centraal <br /> Japan East<br /> Verenigd Koninkrijk Zuid <br /> US - oost <br /> US - oost 2 <br /> US - west 2| Alleen Premium-blok-blobs |
+| FileStorage | Azië - zuidoost<br /> Australië - oost<br /> Europa - noord<br /> Europa - west<br /> Frankrijk - centraal <br /> Japan East<br /> Verenigd Koninkrijk Zuid <br /> US - oost <br /> US - oost 2 <br /> US - west 2 | Premium-bestanden alleen shares |
 
 <sup>1</sup> de Archive-laag wordt momenteel niet ondersteund voor ZRS-accounts.<br />
 <sup>2</sup> opslag accounts die Azure Managed disks voor virtuele machines bevatten, gebruiken altijd LRS. Onbeheerde schijven van Azure moeten ook LRS gebruiken. Het is mogelijk om een opslag account te maken voor Azure unmanaged disks die gebruikmaken van GRS, maar dit wordt niet aanbevolen vanwege mogelijke problemen met de consistentie van de asynchrone geo-replicatie. Geen van de beheerde schijven of niet-Managed disks ondersteunen ZRS of GZRS. Zie [prijzen voor Azure Managed disks](https://azure.microsoft.com/pricing/details/managed-disks/)(Engelstalig) voor meer informatie over Managed disks.

@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 03/03/2021
-ms.openlocfilehash: d5d694820c2ffd09868d81693d4f98f839a139d7
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 1c85a07a3d61c80f3871f04c399263a8e210254e
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104591874"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107010788"
 ---
 # <a name="connect-to-azure-database-for-mysql-using-dbforge-studio-for-mysql"></a>Verbinding maken met Azure Database for MySQL met behulp van dbForge Studio voor MySQL
 
@@ -78,9 +78,7 @@ Als gevolg van onze data base-migratie, is de *world_x* -data base gepubliceerd 
 dbForge Studio voor MySQL bevat een aantal hulpprogram ma's waarmee MySQL-data bases kunnen worden gemigreerd, MySQL-schema's en/of-gegevens naar Azure. De keuze van de functionaliteit is afhankelijk van uw behoeften en de vereisten van uw project. Als u een Data Base selectief wilt verplaatsen, dat wil zeggen dat u bepaalde MySQL-tabellen naar Azure migreert, kunt u het beste gebruikmaken van de functionaliteit schema en gegevens vergelijking.
 In dit voor beeld migreren we de *wereld wijde* data base die zich op mysql-server bevindt, naar Azure database for MySQL. De logica achter het migratie proces met behulp van schema-en gegevens vergelijkings functionaliteit van dbForge Studio voor MySQL is het maken van een lege data base in Azure Database for MySQL, synchroniseer deze met de vereiste MySQL-data base eerst met behulp van schema vergelijken en vervolgens met behulp van data Compare. Op deze manier worden MySQL-schema's en-gegevens nauw keurig naar Azure verplaatst.
 
-### <a name="connect-to-azure-database-for-mysql-and-create-an-empty-database"></a>Verbinden met Azure Database for MySQL en een lege data base maken
-
-Verbinding maken met een Azure Database for MySQL en een lege data base maken.
+### <a name="step-1-connect-to-azure-database-for-mysql-and-create-an-empty-database"></a>Stap 1. Verbinden met Azure Database for MySQL en een lege data base maken
 
 ### <a name="step-2-schema-synchronization"></a>Stap 2. Schema synchronisatie
 

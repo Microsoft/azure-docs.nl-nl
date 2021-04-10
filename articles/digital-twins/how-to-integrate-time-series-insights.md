@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 1/19/2021
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 608f883304dbc8e1ea8b0127668125ae50ca0b11
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: 3bc821f31e0463000c9089e48818249f2c046ede
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105564939"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107102992"
 ---
 # <a name="integrate-azure-digital-twins-with-azure-time-series-insights"></a>Azure Digital Apparaatdubbels integreren met Azure Time Series Insights
 
@@ -173,7 +173,7 @@ Vervolgens stelt u een Time Series Insights-exemplaar in om de gegevens van uw t
 
 ## <a name="begin-sending-iot-data-to-azure-digital-twins"></a>Beginnen met het verzenden van IoT-gegevens naar Azure Digital Apparaatdubbels
 
-Als u wilt beginnen met het verzenden van gegevens naar Time Series Insights, moet u beginnen met het bijwerken van de digitale twee eigenschappen in azure Digital Apparaatdubbels met het wijzigen van gegevens waarden. Gebruik de opdracht [AZ DT dubbele update](/cli/azure/ext/azure-iot/dt/twin#ext-azure-iot-az-dt-twin-update) .
+Als u wilt beginnen met het verzenden van gegevens naar Time Series Insights, moet u beginnen met het bijwerken van de digitale twee eigenschappen in azure Digital Apparaatdubbels met het wijzigen van gegevens waarden. Gebruik de opdracht [AZ DT dubbele update](/cli/azure/dt/twin#az_dt_twin_update) .
 
 Als u de end-to-end zelf studie gebruikt ([*zelf studie: een end-to-end oplossing verbinden*](tutorial-end-to-end.md)) om u te helpen bij het instellen van de omgeving, kunt u gesimuleerde IOT-gegevens gaan verzenden door het *DeviceSimulator* -project uit te voeren vanuit het voor beeld. De instructies zijn te vinden in de sectie [*simulatie configureren en uitvoeren*](tutorial-end-to-end.md#configure-and-run-the-simulation) van de zelf studie.
 

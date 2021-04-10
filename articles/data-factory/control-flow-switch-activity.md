@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 10/08/2019
 ms.openlocfilehash: 08d93bd3d49dc345b35a942d4d5db4eef937d3de
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104786138"
 ---
 # <a name="switch-activity-in-azure-data-factory"></a>Activiteit in Azure Data Factory scha kelen
@@ -69,9 +69,9 @@ Eigenschap | Beschrijving | Toegestane waarden | Vereist
 -------- | ----------- | -------------- | --------
 naam | De naam van de switch activiteit. | Tekenreeks | Ja
 type | Moet worden ingesteld op *Switch** | Tekenreeks | Ja
-expressie | Expressie die moet worden geëvalueerd als teken reeks waarde | Expressie met teken reeks resultaat type | Ja
-meldingen | Set cases die een waarde en een set activiteiten bevatten die moeten worden uitgevoerd wanneer de waarde overeenkomt met de evaluatie van de expressie. U moet ten minste één geval opgeven. Er is een maximum limiet van 25 gevallen. | Reeks Case-objecten | Ja
-defaultActivities | Een set activiteiten die worden uitgevoerd wanneer aan de evaluatie van de expressie niet wordt voldaan. | Matrix van activiteiten | Ja
+expressie | Expressie die moet worden geëvalueerd als teken reeks waarde | Expressie met teken reeks resultaat type | Yes
+meldingen | Set cases die een waarde en een set activiteiten bevatten die moeten worden uitgevoerd wanneer de waarde overeenkomt met de evaluatie van de expressie. U moet ten minste één geval opgeven. Er is een maximum limiet van 25 gevallen. | Reeks Case-objecten | Yes
+defaultActivities | Een set activiteiten die worden uitgevoerd wanneer aan de evaluatie van de expressie niet wordt voldaan. | Matrix van activiteiten | Yes
 
 ## <a name="example"></a>Voorbeeld
 

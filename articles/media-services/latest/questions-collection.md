@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 03/25/2021
 ms.author: inhenkel
-ms.openlocfilehash: 9c4ffee437e3049f8e480375f0b1373fce09fe77
-ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
+ms.openlocfilehash: dc8f8f7ced1c5915c2ea54390685806cfcdd257f
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/28/2021
-ms.locfileid: "105646072"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106280306"
 ---
 <!-- NOTE this file is temporary and a placeholder until the FAQ file update is completed. -->
 
@@ -34,7 +34,7 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over Azure Media Servic
 - Aanvullende gegevens die zijn gekoppeld aan het Media Services account (inclusief coderings sleutels voor inhoud, sleutels voor token verificatie, JobInputHttp url's en andere entiteits meta gegevens) worden opgeslagen in micro soft-opslag in eigendom binnen de regio die is geselecteerd voor het Media Services-account.
     - Vanwege de [vereisten voor gegevens locatie](https://azure.microsoft.com/global-infrastructure/data-residency/#more-information) in Brazilië-Zuid en Zuidoost-Azië, worden de extra account gegevens opgeslagen op een zone-redundante manier en bevinden zich in één regio. Voor Zuidoost-Azië worden alle extra account gegevens opgeslagen in Singapore en voor Brazilië-zuid worden de gegevens opgeslagen in Brazilië.
     - In andere regio's dan Brazilië-zuid en Zuidoost-Azië kunnen de extra account gegevens ook worden opgeslagen in de opslag van micro soft in de [gekoppelde regio](../../best-practices-availability-paired-regions.md).
-- Azure Media Services is een regionale service en biedt geen [hoge Beschik baarheid](media-services-high-availability-encoding.md) of gegevens replicatie. Klanten die deze functies nodig hebben, worden nadrukkelijk aangemoedigd om een oplossing te bouwen met behulp van Media Services accounts in meerdere regio's.  Een voor beeld waarin wordt getoond hoe u een oplossing bouwt voor hoge Beschik baarheid met Media Services video op aanvraag is beschikbaar als hand leiding.
+- Azure Media Services is een regionale service en biedt geen [hoge Beschik baarheid](architecture-high-availability-encoding-concept.md) of gegevens replicatie. Klanten die deze functies nodig hebben, worden nadrukkelijk aangemoedigd om een oplossing te bouwen met behulp van Media Services accounts in meerdere regio's.  Een voor beeld waarin wordt getoond hoe u een oplossing bouwt voor hoge Beschik baarheid met Media Services video op aanvraag is beschikbaar als hand leiding.
 
 ### <a name="what-are-the-azure-portal-limitations-for-media-services-v3"></a>Wat zijn de Azure Portal beperkingen voor Media Services v3?
 
@@ -44,15 +44,15 @@ Als uw video eerder is geüpload naar het Media Services-account met behulp van 
 
 ### <a name="what-azure-roles-can-perform-actions-on-azure-media-services-resources"></a>Wat Azure-rollen kunnen acties uitvoeren op Azure Media Services resources? 
 
-Zie [op rollen gebaseerd toegangs beheer voor Azure (Azure RBAC) voor Media Services accounts](rbac-overview.md).
+Zie [op rollen gebaseerd toegangs beheer voor Azure (Azure RBAC) voor Media Services accounts](security-rbac-concept.md).
 
 ### <a name="how-do-i-stream-to-apple-ios-devices"></a>Hoe kan ik streamen naar Apple iOS-apparaten?
 
-Zorg ervoor dat u **(Format = M3U8-AAPL)** aan het einde van uw pad (na het gedeelte **/manifest** van de URL) hebt om de streaming-bron server te laten weten http live streaming (HLS)-inhoud te retour neren voor het gebruik van Apple IOS systeem eigen apparaten. Zie [inhoud leveren](dynamic-packaging-overview.md)voor meer informatie.
+Zorg ervoor dat u **(Format = M3U8-AAPL)** aan het einde van uw pad (na het gedeelte **/manifest** van de URL) hebt om de streaming-bron server te laten weten http live streaming (HLS)-inhoud te retour neren voor het gebruik van Apple IOS systeem eigen apparaten. Zie [inhoud leveren](encode-dynamic-packaging-concept.md)voor meer informatie.
 
 ### <a name="what-is-the-recommended-method-to-process-videos"></a>Wat is de aanbevolen methode om Video's te verwerken?
 
-[Trans formaties](/rest/api/media/transforms) gebruiken om algemene taken te configureren voor het coderen of analyseren van Video's. Elke trans formatie beschrijft een recept of een werk stroom van taken voor het verwerken van uw video-of audio bestanden. Een [taak](/rest/api/media/jobs) is de daad werkelijke aanvraag om Media Services om de trans formatie toe te passen op een invoer video of audio-inhoud. Nadat de trans formatie is gemaakt, kunt u taken verzenden met behulp van Media Services Api's of een van de gepubliceerde Sdk's. Zie [Transformaties en taken](transforms-jobs-concept.md) voor meer informatie.
+[Trans formaties](/rest/api/media/transforms) gebruiken om algemene taken te configureren voor het coderen of analyseren van Video's. Elke trans formatie beschrijft een recept of een werk stroom van taken voor het verwerken van uw video-of audio bestanden. Een [taak](/rest/api/media/jobs) is de daad werkelijke aanvraag om Media Services om de trans formatie toe te passen op een invoer video of audio-inhoud. Nadat de trans formatie is gemaakt, kunt u taken verzenden met behulp van Media Services Api's of een van de gepubliceerde Sdk's. Zie [Transformaties en taken](transform-jobs-concept.md) voor meer informatie.
 
 ### <a name="i-uploaded-encoded-and-published-a-video-why-wont-the-video-play-when-i-try-to-stream-it"></a>Ik heb een video geüpload, gecodeerd en gepubliceerd. Waarom wordt de video niet afgespeeld wanneer ik deze probeer te streamen?
 
@@ -60,7 +60,7 @@ Een van de meest voorkomende oorzaken is dat u het streaming-eind punt niet hebt
 
 ### <a name="how-does-pagination-work"></a>Hoe werkt de paginering?
 
-Wanneer u paginering gebruikt, moet u altijd de volgende koppeling gebruiken om de verzameling op te sommen en niet afhankelijk van een bepaalde pagina grootte. Zie [filteren, ordenen, paginering](entities-overview.md)voor meer informatie en voor beelden.
+Wanneer u paginering gebruikt, moet u altijd de volgende koppeling gebruiken om de verzameling op te sommen en niet afhankelijk van een bepaalde pagina grootte. Zie [filteren, ordenen, paginering](filter-order-page-entitites-how-to.md)voor meer informatie en voor beelden.
 
 ### <a name="what-features-are-not-yet-available-in-azure-media-services-v3"></a>Welke functies zijn nog niet beschikbaar in Azure Media Services v3?
 
@@ -68,7 +68,7 @@ Zie [de migratie handleiding](migrate-v-2-v-3-migration-introduction.md)voor mee
 
 ### <a name="what-is-the-process-of-moving-a-media-services-account-between-subscriptions"></a>Wat is het proces van het verplaatsen van een Media Services account tussen abonnementen?  
 
-Zie [een Media Services account verplaatsen tussen abonnementen](media-services-account-concept.md)voor meer informatie.
+Zie [een Media Services account verplaatsen tussen abonnementen](account-move-account-how-to.md)voor meer informatie.
 
 ## <a name="live-streaming"></a>Live streamen 
 
@@ -93,7 +93,7 @@ U hebt de volgende mogelijkheden:
 
 Media Services v3 Live encoding biedt nog geen ondersteuning voor het invoegen van video-of afbeeldings pastels tijdens live stream. 
 
-U kunt een [Live on-premises encoder](recommended-on-premises-live-encoders.md) gebruiken om de bron video te scha kelen. Veel apps bieden de mogelijkheid om bronnen te wisselen, waaronder Telestream Wirecast, Switch Studio (op iOS) en IB Studio (gratis app).
+U kunt een [Live on-premises encoder](encode-recommended-on-premises-live-encoders.md) gebruiken om de bron video te scha kelen. Veel apps bieden de mogelijkheid om bronnen te wisselen, waaronder Telestream Wirecast, Switch Studio (op iOS) en IB Studio (gratis app).
 
 ## <a name="content-protection"></a>Inhoudsbeveiliging
 
@@ -109,7 +109,7 @@ U hoeft geen specifieke token provider te gebruiken, zoals Azure Active Director
 
 Zorg ervoor dat de verlener, de doel groep en de claims exact overeenkomen met de inhoud van de JWT en de `ContentKeyPolicyRestriction` waarde die wordt gebruikt in `ContentKeyPolicy` .
 
-Zie [uw inhoud beveiligen met Media Services Dynamic Encryption](content-protection-overview.md)(Engelstalig) voor meer informatie.
+Zie [uw inhoud beveiligen met Media Services Dynamic Encryption](drm-content-protection-concept.md)(Engelstalig) voor meer informatie.
 
 ### <a name="how-and-where-did-i-get-a-jwt-token-before-using-it-to-request-a-license-or-key"></a>Hoe en wanneer krijg ik een JWT-token voordat ik dit gebruik om een licentie of sleutel aan te vragen?
 
@@ -127,8 +127,8 @@ Gebruik Azure Media Services Api's voor het configureren van de levering van lic
 
 Zie voor meer informatie:
 
-- [Overzicht van inhoudsbeveiliging](content-protection-overview.md)
-- [Ontwerp van een inhoudsbeveiligingssysteem van een multi-DRM met toegangsbeheer](design-multi-drm-system-with-access-control.md)
+- [Overzicht van inhoudsbeveiliging](drm-content-protection-concept.md)
+- [Ontwerp van een inhoudsbeveiligingssysteem van een multi-DRM met toegangsbeheer](architecture-design-multi-drm-system.md)
 
 ### <a name="should-i-use-http-or-https"></a>Moet ik HTTP of HTTPS gebruiken?
 De ASP.NET MVC Player-toepassing moet het volgende ondersteunen:
@@ -163,11 +163,11 @@ Klanten hebben vaak geïnvesteerd in een licentie server farm in hun eigen Data 
 
 Op dit moment kunt u het [Azure Portal](https://portal.azure.com/) gebruiken voor het volgende:
 
-* [Live Events](live-events-outputs-concept.md) beheren in Media Services v3. 
+* [Live Events](live-event-outputs-concept.md) beheren in Media Services v3. 
 * V3- [assets](assets-concept.md)weer geven (niet beheren). 
 * [Krijg informatie over het openen van api's](./access-api-howto.md). 
 
-Gebruik voor alle andere beheer taken (bijvoorbeeld [trans formaties en taken](transforms-jobs-concept.md) en [inhouds beveiliging](content-protection-overview.md)) de [rest API](/rest/api/media/), de [Azure cli](/cli/azure/ams)of een van de ondersteunde [sdk's](media-services-apis-overview.md#sdks).
+Gebruik voor alle andere beheer taken (bijvoorbeeld [trans formaties en taken](transform-jobs-concept.md) en [inhouds beveiliging](drm-content-protection-concept.md)) de [rest API](/rest/api/media/), de [Azure cli](/cli/azure/ams)of een van de ondersteunde [sdk's](media-services-apis-overview.md#sdks).
 
 ### <a name="is-there-an-assetfile-concept-in-v3"></a>Is er een AssetFile-concept in v3?
 
@@ -207,7 +207,7 @@ De gedownloade bestands structuur op een iOS-apparaat ziet eruit als in de volge
 
 De eerste map met een naam die eindigt op een streepje gevolgd door een getal bevat video-inhoud. De numerieke waarde is de piek bandbreedte van de video weergaven. De tweede map met een naam die eindigt op een streepje gevolgd door 0, bevat audio-inhoud. De derde map met de naam `Data` bevat de hoofd-afspeel lijst van de fps-inhoud. Ten slotte biedt boot.xml een volledige beschrijving van de `.movpkg` inhoud van de map. 
 
-![Structuur van offline bestanden voor de FairPlay iOS-voor beeld-app](media/offline-fairplay-for-ios/offline-fairplay-file-structure.png)
+![Structuur van offline bestanden voor de FairPlay iOS-voor beeld-app](media/drm-offline-fairplay-for-ios-concept/offline-fairplay-file-structure.png)
 
 Hier volgt een voor beeld van een boot.xml bestand:
 
@@ -253,7 +253,7 @@ Afhankelijk van de bedrijfs logica van een aangepaste STS, worden er verschillen
 
 #### <a name="what-is-the-mapping-between-the-widevine-and-media-services-drm-security-levels"></a>Wat is de toewijzing tussen de Widevine en Media Services DRM-beveiligings niveaus?
 
-In het Widevine DRM-architectuur overzicht van Google worden drie beveiligings niveaus gedefinieerd. De Azure Media Services- [documentatie op de Widevine-licentie sjabloon](widevine-license-template-overview.md) bevat echter een overzicht van vijf beveiligings niveaus (vereisten voor client robuustheid voor afspelen). In deze sectie wordt uitgelegd hoe de beveiligings niveaus worden toegewezen.
+In het Widevine DRM-architectuur overzicht van Google worden drie beveiligings niveaus gedefinieerd. De Azure Media Services- [documentatie op de Widevine-licentie sjabloon](drm-widevine-license-template-concept.md) bevat echter een overzicht van vijf beveiligings niveaus (vereisten voor client robuustheid voor afspelen). In deze sectie wordt uitgelegd hoe de beveiligings niveaus worden toegewezen.
 
 Beide sets beveiligings niveaus worden gedefinieerd door Google Widevine. Het verschil bevindt zich in het gebruiks niveau: architectuur of API. De vijf beveiligings niveaus worden gebruikt in de Widevine-API. Het `content_key_specs` object, dat bevat `security_level` , wordt gedeserialiseerd en door gegeven aan de Widevine Global Delivery Service van de Azure Media Services Widevine-licentie service. In de volgende tabel ziet u de toewijzing tussen de twee sets beveiligings niveaus.
 

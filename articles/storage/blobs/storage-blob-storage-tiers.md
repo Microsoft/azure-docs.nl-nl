@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
 ms.reviewer: klaasl
-ms.openlocfilehash: 1a1cb8e1676405cbfbb3f4f61c86d8136b688b88
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 0e2f3296eb6d4286bb4ef7081c1459109c40915f
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104656835"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105962302"
 ---
 # <a name="access-tiers-for-azure-blob-storage---hot-cool-and-archive"></a>Toegangs lagen voor Azure Blob Storage-hot, cool en Archive
 
@@ -86,7 +86,7 @@ Voor beelden van gebruiks scenario's voor de Access-laag voor archiveren zijn:
 - Compatibiliteits-en archiverings gegevens die gedurende lange tijd moeten worden opgeslagen en die nauwelijks worden gebruikt
 
 > [!NOTE]
-> De opslaglaag wordt niet ondersteund voor ZRS-, GZRS-of RA-GZRS-accounts. Het migreren van LRS naar GRS wordt niet ondersteund als het opslag account blobs in de laag Archive bevat.
+> De opslaglaag wordt niet ondersteund voor ZRS-, GZRS-of RA-GZRS-accounts. Migratie van LRS naar GRS wordt ondersteund zolang er geen blobs zijn verplaatst naar de laag archief terwijl het account is ingesteld op LRS. Een account kan worden verplaatst naar GRS als de update minder dan 30 dagen na het tijdstip waarop het account is LRS, is teruggestuurd en er geen blobs zijn verplaatst naar de laag van het archief terwijl het account is ingesteld op LRS.
 
 ## <a name="account-level-tiering"></a>Lagen op account niveau
 

@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.openlocfilehash: 2c5208f754e66f92cf5019fdad3026decac88284
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104785951"
 ---
 # <a name="validation-activity-in-azure-data-factory"></a>Validatie activiteit in Azure Data Factory
@@ -60,10 +60,10 @@ Eigenschap | Beschrijving | Toegestane waarden | Vereist
 -------- | ----------- | -------------- | --------
 naam | Naam van de activiteit validatie | Tekenreeks | Ja |
 type | Moet worden ingesteld op  **validatie**. | Tekenreeks | Ja |
-sets | De uitvoering van de activiteit wordt geblokkeerd totdat deze de gegevensset bevat die aan de opgegeven criteria voldoet, of er is een time-out opgetreden. De gegeven gegevensset moet de eigenschap MinimumSize of ChildItems ondersteunen. | Verwijzing naar gegevensset | Ja |
-timeout | Hiermee geeft u de time-out op voor de activiteit die moet worden uitgevoerd. Als er geen waarde is opgegeven, is de standaard waarde 7 dagen ("7.00:00:00"). De notatie is d. uu: mm: SS | Tekenreeks | Nee |
-dwars | Een vertraging in seconden tussen de validatie pogingen. Als er geen waarde is opgegeven, is de standaard waarde 10 seconden. | Geheel getal | Nee |
-childItems | Hiermee wordt gecontroleerd of de map onderliggende items heeft. Kan worden ingesteld op-True: Controleer of de map bestaat en of deze items bevat. Blokken tot ten minste één item aanwezig is in de map of de time-outwaarde is bereikt.-onwaar: Controleer of de map bestaat en of deze leeg is. Blokken totdat de map leeg is of totdat de time-outwaarde is bereikt. Als er geen waarde is opgegeven, wordt de activiteit geblokkeerd totdat de map bestaat of totdat de time-out is bereikt. | Booleaans | Nee |
+sets | De uitvoering van de activiteit wordt geblokkeerd totdat deze de gegevensset bevat die aan de opgegeven criteria voldoet, of er is een time-out opgetreden. De gegeven gegevensset moet de eigenschap MinimumSize of ChildItems ondersteunen. | Verwijzing naar gegevensset | Yes |
+timeout | Hiermee geeft u de time-out op voor de activiteit die moet worden uitgevoerd. Als er geen waarde is opgegeven, is de standaard waarde 7 dagen ("7.00:00:00"). De notatie is d. uu: mm: SS | Tekenreeks | No |
+dwars | Een vertraging in seconden tussen de validatie pogingen. Als er geen waarde is opgegeven, is de standaard waarde 10 seconden. | Geheel getal | No |
+childItems | Hiermee wordt gecontroleerd of de map onderliggende items heeft. Kan worden ingesteld op-True: Controleer of de map bestaat en of deze items bevat. Blokken tot ten minste één item aanwezig is in de map of de time-outwaarde is bereikt.-onwaar: Controleer of de map bestaat en of deze leeg is. Blokken totdat de map leeg is of totdat de time-outwaarde is bereikt. Als er geen waarde is opgegeven, wordt de activiteit geblokkeerd totdat de map bestaat of totdat de time-out is bereikt. | Booleaans | No |
 minimumSize | Minimale grootte van een bestand in bytes. Als er geen waarde is opgegeven, is de standaard waarde 0 bytes | Geheel getal | Nee |
 
 

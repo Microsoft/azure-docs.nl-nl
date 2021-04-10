@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/05/2021
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 9ba0e7173c41e26a698596fa18bf1fc1453f3fb3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b58040917ed3d3345a35b7acbe31b6b500f05562
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99628905"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107073650"
 ---
 ### <a name="do-i-need-a-public-ip-on-my-virtual-machine-to-connect-via-azure-bastion"></a><a name="publicip"></a>Heb ik een openbare IP nodig in mijn virtuele machine om verbinding te maken met Azure Bastion?
 
@@ -22,6 +22,10 @@ Nee. Wanneer u verbinding maakt met een VM met behulp van Azure Bastion, hebt u 
 ### <a name="is-ipv6-supported"></a>Wordt IPv6 ondersteund?
 
 Op dit moment wordt IPv6 niet ondersteund. Azure Bastion ondersteunt alleen IPv4.
+
+### <a name="can-i-use-azure-bastion-with-azure-private-dns-zones"></a>Kan ik Azure Bastion met Azure-Privé-DNS zones gebruiken?
+
+Het gebruik van Azure Bastion met Azure Privé-DNS zones wordt momenteel niet ondersteund. Voordat u uw Azure Bastion-resource implementeert, moet u ervoor zorgen dat het virtuele netwerk van de host niet is gekoppeld aan een privé-DNS-zone.
 
 ### <a name="do-i-need-an-rdp-or-ssh-client"></a><a name="rdpssh"></a>Heb ik een RDP- of SSH-client nodig?
 

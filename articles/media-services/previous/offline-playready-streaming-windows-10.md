@@ -15,19 +15,19 @@ ms.topic: article
 ms.date: 3/10/2021
 ms.author: willzhan
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 828895894464eafc53f74e7c8b5798db4db03533
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 58222b3d188cd9db4f092956c88dece7e5cf2696
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103016131"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106055940"
 ---
 # <a name="offline-playready-streaming-for-windows-10"></a>Offline PlayReady-streaming voor Windows 10
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!div class="op_single_selector" title1="Selecteer de versie van Media Services die u gebruikt:"]
-> * [Versie 3](../latest/offline-plaready-streaming-for-windows-10.md)
+> * [Versie 3](../latest/drm-offline-playready-streaming-for-windows-10.md)
 > * [Versie 2](offline-playready-streaming-windows-10.md)
 
 > [!NOTE]

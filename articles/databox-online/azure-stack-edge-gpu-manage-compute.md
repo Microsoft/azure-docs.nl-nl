@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 03/08/2021
 ms.author: alkohli
 ms.openlocfilehash: 057f80049b13a265925f2d6f24a008d1e1e04c96
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102638070"
 ---
 # <a name="manage-compute-on-your-azure-stack-edge-pro-gpu"></a>Reken kracht beheren op uw Azure Stack Edge Pro GPU
@@ -51,7 +51,7 @@ Voer de volgende stappen uit in de Azure Portal om een trigger te maken.
 
     - **Geplande trigger** : Geef de begin datum/-tijd en het herhalings interval in uren, minuten of seconden op. Voer ook de naam in voor een onderwerp. Een onderwerp biedt u de flexibiliteit om de trigger te routeren naar een module die op het apparaat is geïmplementeerd.
 
-        Een voor beeld van een route teken reeks is: `"route3": "FROM /* WHERE topic = 'topicname' INTO BrokeredEndpoint("modules/modulename/inputs/input1")"` .
+        Een voor beeld van een route teken reeks is: `"route3&quot;: &quot;FROM /* WHERE topic = 'topicname' INTO BrokeredEndpoint(&quot;modules/modulename/inputs/input1")"` .
 
         ![NFS-share toevoegen](media/azure-stack-edge-gpu-manage-compute/add-scheduled-trigger.png)
 

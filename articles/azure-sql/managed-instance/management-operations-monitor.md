@@ -13,10 +13,10 @@ ms.author: urmilano
 ms.reviewer: sstein, bonova, MashaMSFT
 ms.date: 09/03/2020
 ms.openlocfilehash: 6cdd3137798e221974dadda78dd55b6ae944bc78
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100589350"
 ---
 # <a name="monitoring-azure-sql-managed-instance-management-operations"></a>Azure SQL Managed instance Management-bewerkingen bewaken
@@ -46,7 +46,7 @@ De volgende tabel vergelijkt de bewakings opties voor beheer bewerkingen:
 | Optie | Bewaartermijn | Ondersteunt annuleren | Maken | Bijwerken | Verwijderen | Annuleren | Stappen |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Implementaties van resource groepen | Oneindig<sup>1</sup> | Geen<sup>2</sup> | Zichtbaar | Zichtbaar | Niet zichtbaar | Zichtbaar | Niet zichtbaar |
-| Activiteitenlogboek | 90 dagen | Nee | Zichtbaar | Zichtbaar | Zichtbaar | Zichtbaar |  Niet zichtbaar |
+| Activiteitenlogboek | 90 dagen | No | Zichtbaar | Zichtbaar | Zichtbaar | Zichtbaar |  Niet zichtbaar |
 | Managed instance Operations API | 24 uur | [Ja](management-operations-cancel.md) | Zichtbaar | Zichtbaar | Zichtbaar | Zichtbaar | Zichtbaar |
 |  |  |  |  |  |  |  | |
 

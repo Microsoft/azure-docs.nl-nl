@@ -9,10 +9,10 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 12/23/2020
 ms.openlocfilehash: 9b5526af03bdbefeb54633c49bbd43743555f60b
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100383225"
 ---
 # <a name="how-to-create-plans-for-your-managed-service-offer"></a>Plannen maken voor uw beheerde service-aanbieding
@@ -79,12 +79,12 @@ Om Maxi maal 10.000 abonnement-Id's toe te voegen aan een. CSV-bestand:
 
 ## <a name="technical-configuration"></a>Technische configuratie
 
-In deze sectie wordt een manifest gemaakt met autorisatie-informatie voor het beheren van klant resources. Deze informatie is vereist om [Azure delegated resource management](../lighthouse/concepts/azure-delegated-resource-management.md)in te scha kelen.
+In deze sectie wordt een manifest gemaakt met autorisatie-informatie voor het beheren van klant resources. Deze informatie is vereist om [gedelegeerd resourcebeheer in Azure](../lighthouse/concepts/azure-delegated-resource-management.md) in te schakelen.
 
 Bekijk [tenants, rollen en gebruikers in azure Lighthouse-scenario's](../lighthouse/concepts/tenants-users-roles.md#best-practices-for-defining-users-and-roles) om te begrijpen welke rollen worden ondersteund en wat de aanbevolen procedures zijn voor het definiëren van uw autorisaties.
 
 > [!NOTE]
-> De gebruikers en rollen in uw autorisatie vermeldingen worden toegepast op elke klant die het plan activeert. Als u de toegang tot een specifieke klant wilt beperken, moet u een privé-abonnement publiceren voor hun exclusieve gebruik.
+> De gebruikers en rollen in uw autorisatievermeldingen gelden voor elke klant die het plan activeert. Als u de toegang tot een specifieke klant wilt beperken, moet u voor hun exclusieve gebruik een privéplan publiceren.
 
 ### <a name="manifest"></a>Manifest
 

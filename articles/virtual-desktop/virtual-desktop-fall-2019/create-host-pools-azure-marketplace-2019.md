@@ -3,15 +3,15 @@ title: Windows Virtual Desktop (classic)-hostgroep Azure Marketplace - Azure
 description: Een Windows Virtual Desktop (classic)-hostgroep maken met behulp van Azure Marketplace.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 03/30/2020
+ms.date: 03/31/2021
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 04184a658ae1efd03afd3e920818eb5317bc7553
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d7e0862bd7519f59602f1e769301614895bd6e09
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "88008590"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106121877"
 ---
 # <a name="tutorial-create-a-host-pool-in-windows-virtual-desktop-classic"></a>Zelfstudie: Een hostgroep maken in Windows Virtual Desktop (classic)
 
@@ -80,10 +80,10 @@ Voor het tabblad **Virtuele machines configureren**:
 1. Accepteer de standaardwaarden of pas het aantal en de grootte van de virtuele machines aan.
 
     >[!NOTE]
-    >Als de specifieke grootte van de virtuele machine die u zoekt, niet wordt weergegeven in de groottekiezer, komt dit omdat deze grootte nog niet is geïntroduceerd in het Azure Marketplace-hulpprogramma. Als u een grootte wilt aanvragen, dient u een aanvraag in of brengt u een stem uit voor een bestaande aanvraag in het [Windows Virtual Desktop UserVoice-forum](https://windowsvirtualdesktop.uservoice.com/forums/921118-general).
+    >Als de specifieke grootte van de virtuele machine die u zoekt, niet wordt weergegeven in de groottekiezer, komt dit omdat deze grootte nog niet is geïntroduceerd in het Azure Marketplace-hulpprogramma.
 
-1. Voer een voorvoegsel in voor de namen van de virtuele machines. Voorbeeld: als u *voorvoegsel* invoert, heten de virtuele machines **voorvoegsel-0**, **voorvoegsel-1**, enzovoort.
-1. Selecteer **Volgende: Instellingen voor virtuele machines**.
+2. Voer een voorvoegsel in voor de namen van de virtuele machines. Voorbeeld: als u *voorvoegsel* invoert, heten de virtuele machines **voorvoegsel-0**, **voorvoegsel-1**, enzovoort.
+3. Selecteer **Volgende: Instellingen voor virtuele machines**.
 
 ### <a name="virtual-machine-settings"></a>Instellingen voor virtuele machines
 

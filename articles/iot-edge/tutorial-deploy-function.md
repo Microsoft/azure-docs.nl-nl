@@ -10,10 +10,10 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, devx-track-csharp
 ms.openlocfilehash: 85bc54402237ff8e9c82c43ab9cdbe2dc6658af1
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103464102"
 ---
 # <a name="tutorial-deploy-azure-functions-as-iot-edge-modules"></a>Zelfstudie: Azure-functies implementeren als IoT Edge-modules
@@ -77,7 +77,7 @@ Maak een C#-oplossingssjabloon voor een C#-functie die u met uw eigen code kunt 
 
    ![Opslagplaats voor Docker-installatiekopieën opgeven](./media/tutorial-deploy-function/repository.png)
 
-### <a name="add-your-registry-credentials"></a>Uw registerreferenties toevoegen
+### <a name="add-your-registry-credentials&quot;></a>Uw registerreferenties toevoegen
 
 In het omgevingsbestand worden de referenties voor het containerregister opgeslagen. Deze referenties worden gedeeld met de IoT Edge-runtime. De runtime heeft deze referenties nodig om uw persoonlijke installatiekopieën naar het IoT Edge-apparaat te halen.
 
@@ -87,7 +87,7 @@ De IoT Edge-extensie probeert uw containerregisterreferenties van Azure op te ha
 2. Werk de velden **gebruikersnaam** en **wachtwoord** bij met de waarden die u hebt gekopieerd uit het Azure-containerregister.
 3. Sla dit bestand op.
 
-### <a name="select-your-target-architecture"></a>Uw doelarchitectuur selecteren
+### <a name=&quot;select-your-target-architecture&quot;></a>Uw doelarchitectuur selecteren
 
 Momenteel kunt u met Visual Studio Code C-modules ontwikkelen voor Linux AMD64- en Linux ARM32v7-apparaten. U moet voor elke oplossing selecteren op welke architectuur u zich richt, omdat de container voor elk type architectuur anders wordt opgebouwd en anders wordt uitgevoerd. De standaardinstelling is Linux AMD64.
 
@@ -95,7 +95,7 @@ Momenteel kunt u met Visual Studio Code C-modules ontwikkelen voor Linux AMD64- 
 
 2. Selecteer in het opdrachtpalet de doelarchitectuur in de lijst met opties. In deze zelfstudie gebruiken we een virtuele Ubuntu-machine als het IoT Edge-apparaat, dus laten we de standaardinstelling **amd64** staan.
 
-### <a name="update-the-module-with-custom-code"></a>De module bijwerken met aangepaste code
+### <a name=&quot;update-the-module-with-custom-code&quot;></a>De module bijwerken met aangepaste code
 
 We gaan extra code toevoegen, zodat de module de berichten aan de rand verwerkt voordat deze naar IoT Hub worden doorgestuurd.
 
@@ -120,7 +120,7 @@ We gaan extra code toevoegen, zodat de module de berichten aan de rand verwerkt 
    {
        public static class CSharpFunction
        {
-           [FunctionName("CSharpFunction")]
+           [FunctionName(&quot;CSharpFunction")]
            public static async Task FilterMessageAndSendMessage(
                [EdgeHubTrigger("input1")] Message messageReceived,
                [EdgeHub(OutputName = "output1")] IAsyncCollector<Message> output,

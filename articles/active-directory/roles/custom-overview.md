@@ -13,12 +13,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3fad2c683890776908afbfbf15ee91d46d564783
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 0bddb03094b73dbd6d3b8d44c76ab242caa515dc
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103466759"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105727855"
 ---
 # <a name="overview-of-role-based-access-control-in-azure-active-directory"></a>Overzicht van op rollen gebaseerd toegangsbeheer in Azure Active Directory
 
@@ -30,15 +30,13 @@ In dit artikel wordt uitleg gegeven over Azure AD-rollen (Azure Active Directory
 Beide systemen maken op een soortgelijke manier gebruik van roldefinities en roltoewijzingen. Machtigingen voor Azure AD-rollen kunnen echter niet worden gebruikt in aangepaste Azure-rollen en omgekeerd.
 
 ## <a name="understand-azure-ad-role-based-access-control"></a>Uitleg over op rollen gebaseerd toegangsbeheer van Azure AD
-Azure AD biedt ondersteuning voor 2 typen roldefinities - 
+Azure AD ondersteunt twee typen rollen definities:
 * [Ingebouwde rollen](./permissions-reference.md)
 * [Aangepaste rollen](./custom-create.md)
 
 Ingebouwde rollen zijn kant-en-klare-rollen met een vaste set machtigingen. Deze roldefinities kunnen niet worden gewijzigd. Azure AD biedt ondersteuning voor veel [ingebouwde rollen](./permissions-reference.md), en de lijst wordt alleen maar langer. Azure biedt ook ondersteuning voor [aangepaste rollen](./custom-create.md), voor meer verfijning en om te voldoen aan uw meer geavanceerde vereisten. Het verlenen van machtigingen met behulp van aangepaste Azure AD-rollen is een proces in twee stappen: het maken van een aangepaste roldefinitie en vervolgens het toewijzen ervan met behulp van een roltoewijzing. Een aangepaste roldefinitie is een verzameling machtigingen die u toevoegt uit een vooraf ingestelde lijst. Deze machtigingen zijn dezelfde machtigingen die worden gebruikt in de ingebouwde rollen.  
 
 Zodra u de aangepaste roldefinitie hebt gemaakt (of als u een ingebouwde rol gebruikt), kunt u deze toewijzen aan een gebruiker door een roltoewijzing te maken. Met een roltoewijzing worden machtigingen in een roldefinitie aan de gebruiker verleend voor een opgegeven bereik. Met dit proces in twee stappen kunt u één roldefinitie maken en deze meerdere keren toewijzen voor verschillende bereiken. Met een bereik wordt de set Azure AD-resources gedefinieerd waartoe het rollid toegang heeft. Het meest voorkomende bereik is het bereik voor de hele organisatie (organisatiebreed). Een aangepaste rol kan worden toegewezen voor het organisatiebrede bereik. Dit betekent dat de rolmachtigingen van het rollid gelden voor alle resources in de organisatie. Een aangepaste rol kan ook worden toegewezen voor een objectbereik. Een voorbeeld van een objectbereik is één toepassing. Dezelfde rol kan aan de ene gebruiker worden toegewezen voor alle toepassingen in de organisatie, en vervolgens aan een andere gebruiker met een bereik van alleen de Contoso Expense Reports-app.  
-
-De werking van ingebouwde Azure AD-rollen en aangepaste rollen is vergelijkbaar met [Azure RBAC (op rollen gebaseerd toegangsbeheer)](../develop/access-tokens.md#payload-claims). Het [verschil tussen deze twee systemen voor op rollen gebaseerd toegangsbeheer](../../role-based-access-control/rbac-and-directory-admin-roles.md) is dat met Azure RBAC de toegang tot Azure-resources, zoals virtuele machines of opslag, wordt beheerd met Azure Resource Management, en dat met aangepaste Azure AD-rollen de toegang tot Azure AD-resources wordt beheerd met behulp van Graph API. Beide systemen maken gebruik van het concept van roldefinities en roltoewijzingen. U kunt geen Azure AD RBAC-machtigingen opnemen in Azure-rollen en vice versa.
 
 ### <a name="how-azure-ad-determines-if-a-user-has-access-to-a-resource"></a>Hoe Azure AD bepaalt of een gebruiker toegang tot een resource heeft
 

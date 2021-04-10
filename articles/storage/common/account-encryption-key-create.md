@@ -6,123 +6,23 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 02/05/2020
+ms.date: 03/31/2021
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 8150375eff98374e21d200d98c04158b07f1c243
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f2bc71100a92d1811d69af31a7a3085af36f60a8
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92789689"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106121928"
 ---
 # <a name="create-an-account-that-supports-customer-managed-keys-for-tables-and-queues"></a>Een account maken dat door de klant beheerde sleutels voor tabellen en wacht rijen ondersteunt
 
 Azure Storage versleutelt alle gegevens in een opslag account in rust. Wachtrij opslag en tabel opslag gebruiken standaard een sleutel die is toegewezen aan de service en die wordt beheerd door micro soft. U kunt er ook voor kiezen om door de klant beheerde sleutels te gebruiken om wachtrij-of tabel gegevens te versleutelen. Als u door de klant beheerde sleutels met wacht rijen en tabellen wilt gebruiken, moet u eerst een opslag account maken dat gebruikmaakt van een versleutelings sleutel die is afgestemd op het account, in plaats van naar de service. Nadat u een account hebt gemaakt dat gebruikmaakt van de account versleutelings sleutel voor wachtrij-en tabel gegevens, kunt u door de klant beheerde sleutels configureren voor dat opslag account.
 
 In dit artikel wordt beschreven hoe u een opslag account maakt dat afhankelijk is van een sleutel die is afgestemd op het account. Wanneer het account voor het eerst wordt gemaakt, gebruikt micro soft de account sleutel voor het versleutelen van de gegevens in het account en wordt de sleutel door micro soft beheerd. U kunt vervolgens door de klant beheerde sleutels voor het account configureren om gebruik te maken van deze voor delen, waaronder de mogelijkheid om uw eigen sleutels op te geven, de sleutel versie bij te werken, de sleutels te draaien en toegangs beheer in te trekken.
-
-## <a name="about-the-feature"></a>Over de functie
-
-Als u een opslag account wilt maken dat afhankelijk is van de account versleutelings sleutel voor wachtrij-en tabel opslag, moet u zich eerst registreren voor het gebruik van deze functie met Azure. Vanwege beperkte capaciteit moet u er rekening mee houden dat het enkele maanden kan duren voordat aanvragen voor toegang zijn goedgekeurd.
-
-U kunt een opslag account maken dat afhankelijk is van de account versleutelings sleutel voor wachtrij-en tabel opslag in de volgende regio's:
-
-- VS - oost
-- VS - zuid-centraal
-- VS - west 2  
-
-### <a name="register-to-use-the-account-encryption-key"></a>Registreren voor het gebruik van de account versleutelings sleutel
-
-Als u zich wilt registreren voor het gebruik van de account versleutelings sleutel met wachtrij-of tabel opslag, gebruikt u Power shell of Azure CLI.
-
-# <a name="powershell"></a>[PowerShell](#tab/powershell)
-
-Als u zich wilt registreren bij Power shell, roept u de opdracht [REGI ster-AzProviderFeature](/powershell/module/az.resources/register-azproviderfeature) aan.
-
-```powershell
-Register-AzProviderFeature -ProviderNamespace Microsoft.Storage `
-    -FeatureName AllowAccountEncryptionKeyForQueues
-Register-AzProviderFeature -ProviderNamespace Microsoft.Storage `
-    -FeatureName AllowAccountEncryptionKeyForTables
-```
-
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
-
-Als u zich wilt registreren bij Azure CLI, roept u de opdracht [AZ feature REGI ster](/cli/azure/feature#az-feature-register) aan.
-
-```azurecli
-az feature register --namespace Microsoft.Storage \
-    --name AllowAccountEncryptionKeyForQueues
-az feature register --namespace Microsoft.Storage \
-    --name AllowAccountEncryptionKeyForTables
-```
-
-# <a name="template"></a>[Sjabloon](#tab/template)
-
-N.v.t.
-
----
-
-### <a name="check-the-status-of-your-registration"></a>Controleer de status van uw registratie
-
-Gebruik Power shell of Azure CLI om de status van uw registratie voor wachtrij-of tabel opslag te controleren.
-
-# <a name="powershell"></a>[PowerShell](#tab/powershell)
-
-Als u de status van uw registratie met Power shell wilt controleren, roept u de opdracht [Get-AzProviderFeature](/powershell/module/az.resources/get-azproviderfeature) aan.
-
-```powershell
-Get-AzProviderFeature -ProviderNamespace Microsoft.Storage `
-    -FeatureName AllowAccountEncryptionKeyForQueues
-Get-AzProviderFeature -ProviderNamespace Microsoft.Storage `
-    -FeatureName AllowAccountEncryptionKeyForTables
-```
-
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
-
-Als u de status van uw registratie met Azure CLI wilt controleren, roept u de opdracht [AZ functie](/cli/azure/feature#az-feature-show) aan.
-
-```azurecli
-az feature show --namespace Microsoft.Storage \
-    --name AllowAccountEncryptionKeyForQueues
-az feature show --namespace Microsoft.Storage \
-    --name AllowAccountEncryptionKeyForTables
-```
-
-# <a name="template"></a>[Sjabloon](#tab/template)
-
-N.v.t.
-
----
-
-### <a name="re-register-the-azure-storage-resource-provider"></a>De Azure Storage Resource provider opnieuw registreren
-
-Nadat de registratie is goedgekeurd, moet u de Azure Storage Resource provider opnieuw registreren. Gebruik Power shell of Azure CLI om de resource provider opnieuw te registreren.
-
-# <a name="powershell"></a>[PowerShell](#tab/powershell)
-
-Als u de resource provider opnieuw wilt registreren bij Power shell, roept u de opdracht [REGI ster-AzResourceProvider](/powershell/module/az.resources/register-azresourceprovider) aan.
-
-```powershell
-Register-AzResourceProvider -ProviderNamespace 'Microsoft.Storage'
-```
-
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
-
-Als u de resource provider opnieuw wilt registreren bij Azure CLI, roept u de opdracht [AZ provider REGI ster](/cli/azure/provider#az-provider-register) aan.
-
-```azurecli
-az provider register --namespace 'Microsoft.Storage'
-```
-
-# <a name="template"></a>[Sjabloon](#tab/template)
-
-N.v.t.
-
----
 
 ## <a name="create-an-account-that-uses-the-account-encryption-key"></a>Een account maken dat gebruikmaakt van de versleutelings sleutel van het account
 
@@ -247,6 +147,10 @@ az storage account show /
 N.v.t.
 
 ---
+
+## <a name="pricing-and-billing"></a>Prijzen en facturering
+
+Een opslag account dat is gemaakt voor het gebruik van een versleutelings sleutel binnen het bereik van het account, wordt gefactureerd voor de opslag capaciteit van de tabel en trans acties met een ander aantal dan een account dat gebruikmaakt van de standaard sleutel voor service bereik. Zie [prijzen van Azure Table Storage](https://azure.microsoft.com/pricing/details/storage/tables/)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

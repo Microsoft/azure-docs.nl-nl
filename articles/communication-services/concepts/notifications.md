@@ -9,17 +9,14 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 9bf3067737ee1f4e15deaf31677513e5ac99cbd1
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: 9a878dc5cdbbe336e7279d0cd919bd17cd42d0e8
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105108125"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105728212"
 ---
 # <a name="communication-services-notifications"></a>Communication Services-meldingen
-
-[!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
-
 
 De Azure Communication Services-chat-en aanroepende Sdk's maken een realtime berichten kanaal waarmee het mogelijk is om op een efficiënte, betrouw bare manier signalerings berichten naar verbonden clients te pushen. Zo kunt u uitgebreide, realtime communicatiefuncties in uw toepassingen inbouwen zonder dat u complexe logica voor HTTP-polling moet implementeren. In mobiele apps blijft dit kanaal echter slechts verbonden zolang uw app actief is op de voorgrond. Als u wilt dat uw gebruikers inkomende oproepen of chatberichten ontvangen wanneer uw app op de achtergrond staat, moet u pushmeldingen gebruiken.
 

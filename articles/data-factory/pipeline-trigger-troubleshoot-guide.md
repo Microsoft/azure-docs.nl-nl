@@ -8,10 +8,10 @@ ms.topic: troubleshooting
 ms.author: susabat
 ms.reviewer: susabat
 ms.openlocfilehash: 72f2a5eec25b9acc2aedd7b006fe3380141781c8
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105563409"
 ---
 # <a name="troubleshoot-pipeline-orchestration-and-triggers-in-azure-data-factory"></a>Problemen met het indelen van pijp lijnen en triggers in Azure Data Factory oplossen
@@ -66,7 +66,7 @@ Selecteer de optie voor **binaire kopieën** tijdens het maken van de Kopieer ac
 
 ### <a name="a-pipeline-run-fails-when-you-reach-the-capacity-limit-of-the-integration-runtime-for-data-flow"></a>Een pijplijn uitvoering mislukt wanneer u de capaciteits limiet van de Integration runtime voor de gegevens stroom bereikt
 
-**Name**
+**Probleem**
 
 Foutbericht:
 
@@ -135,7 +135,7 @@ Bekende feiten over *foreach*
  **Oplossing**
  
 * Gelijktijdigheids limiet: als uw pijp lijn een gelijktijdigheids beleid heeft, controleert u of er geen oude pijplijn uitvoeringen worden uitgevoerd. De Maxi maal toegestane pijplijn gelijktijdigheid in Azure Data Factory is 10 pijp lijnen. 
-* Bewakings limieten: Ga naar het ADF-schrijf doek, selecteer uw pijp lijn en bepaal of er een gelijktijdigheids eigenschap aan is toegewezen. Als dat het geval is, gaat u naar de weer gave bewaking en controleert u of er niets is in de afgelopen 45 dagen die worden uitgevoerd. Als er een bewerking wordt uitgevoerd, kunt u deze annuleren en de nieuwe uitvoering van de pijp lijn starten.
+* Bewakings limieten: Ga naar het ADF-schrijf doek, selecteer uw pijp lijn en bepaal of er een gelijktijdigheids eigenschap aan is toegewezen. Als dit het geval is, gaat u naar de weergave Bewaken, en controleert u de afgelopen 45 dagen op andere uitvoeringen. Als er een bewerking wordt uitgevoerd, kunt u deze annuleren en de nieuwe uitvoering van de pijp lijn starten.
 * Tijdelijke problemen: het is mogelijk dat de uitvoering werd beïnvloed door een tijdelijk netwerk probleem, referentie fouten, storingen van de services, enzovoort.  Als dit het geval is, heeft Azure Data Factory een intern herstel proces dat alle uitvoeringen bewaakt en worden gestart wanneer er iets verkeerd is gegaan. Dit proces gebeurt elk één uur, dus als de uitvoering langer dan een uur duurt, kunt u een ondersteunings aanvraag maken.
  
 ### <a name="longer-start-up-times-for-activities-in-adf-copy-and-data-flow"></a>Langere start tijden voor activiteiten in ADF-kopie en gegevens stroom

@@ -4,10 +4,10 @@ description: Fout codes en mogelijke oplossingen voor problemen die worden gevon
 ms.topic: article
 ms.date: 01/25/2021
 ms.openlocfilehash: 05ae5a7ac19bb7748d5313ccb4974b639ab52d9c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "99061865"
 ---
 # <a name="health-check-error-reference"></a>Naslag informatie voor status controle fout

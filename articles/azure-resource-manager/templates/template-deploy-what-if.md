@@ -5,12 +5,12 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 03/09/2021
 ms.author: tomfitz
-ms.openlocfilehash: 3f35f00e5fcd26c7aa4bb685dc80f48eabb88b6d
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: 76469f8b74b119c07374232899302fe1d18fe463
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102547931"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105731459"
 ---
 # <a name="arm-template-deployment-what-if-operation"></a>ARM template deployment what-if operation (Wat-als-bewerking bij het implementeren van ARM-sjablonen)
 
@@ -117,10 +117,10 @@ Als u de resultaten zonder kleuren wilt retour neren, opent u het configuratie b
 
 Voor REST API gebruikt u:
 
-* [Implementaties-What if](/rest/api/resources/deployments/whatif) voor implementaties van resource groepen
-* [Implementaties-What if op abonnements bereik](/rest/api/resources/deployments/whatifatsubscriptionscope) voor implementaties van abonnementen
-* [Implementaties-What if in het bereik van de beheer groep](/rest/api/resources/deployments/whatifatmanagementgroupscope) voor implementaties van beheer groepen
-* [Implementaties-What if op Tenant bereik](/rest/api/resources/deployments/whatifattenantscope) voor Tenant implementaties.
+* [Implementaties-What if](/rest/api/resources/resources/deployments/whatif) voor implementaties van resource groepen
+* [Implementaties-What if op abonnements bereik](/rest/api/resources/resources/deployments/whatifatsubscriptionscope) voor implementaties van abonnementen
+* [Implementaties-What if in het bereik van de beheer groep](/rest/api/resources/resources/deployments/whatifatmanagementgroupscope) voor implementaties van beheer groepen
+* [Implementaties-What if op Tenant bereik](/rest/api/resources/resources/deployments/whatifattenantscope) voor Tenant implementaties.
 
 ## <a name="change-types"></a>Wijzigingstypen
 
@@ -364,17 +364,17 @@ Scope: /subscriptions/./resourceGroups/ExampleGroup
 
       id:
 "/subscriptions/./resourceGroups/ExampleGroup/providers/Microsoft.Network/virtualNet
-works/vnet-001"
-      location:        "centralus"
-      name:            "vnet-001"
-      tags.CostCenter: "12345"
-      tags.Owner:      "Team A"
-      type:            "Microsoft.Network/virtualNetworks"
+works/vnet-001&quot;
+      location:        &quot;centralus&quot;
+      name:            &quot;vnet-001&quot;
+      tags.CostCenter: &quot;12345&quot;
+      tags.Owner:      &quot;Team A&quot;
+      type:            &quot;Microsoft.Network/virtualNetworks&quot;
 
 Resource changes: 1 to delete.
 
 Are you sure you want to execute the deployment?
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is &quot;Y"):
 ```
 
 U ziet de verwachte wijzigingen en u kunt bevestigen dat u de implementatie wilt uitvoeren.

@@ -2,7 +2,6 @@
 title: Problemen met Azure RBAC oplossen
 description: Problemen oplossen met toegangs beheer op basis van rollen (Azure RBAC) van Azure.
 services: azure-portal
-documentationcenter: na
 author: rolyon
 manager: mtillman
 ms.assetid: df42cca2-02d6-4f3c-9d56-260e1eb7dc44
@@ -11,16 +10,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 11/10/2020
+ms.date: 04/06/2021
 ms.author: rolyon
-ms.reviewer: bagovind
 ms.custom: seohack1, devx-track-azurecli
-ms.openlocfilehash: d77468619fcd67887273b2fbd452b37add1e19b0
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b4a3f7f613f75f2f285437b7ae6f816adf56d999
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100555879"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106580100"
 ---
 # <a name="troubleshoot-azure-rbac"></a>Problemen met Azure RBAC oplossen
 
@@ -68,11 +66,16 @@ $ras.Count
     ```azurecli
     az role assignment create --assignee-object-id 11111111-1111-1111-1111-111111111111  --role "Contributor" --scope "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}"
     ```
+
+- Als u een nieuwe Service-Principal maakt en een rol onmiddellijk probeert toe te wijzen aan die Service-Principal, kan die roltoewijzing in sommige gevallen mislukken.
+
+    Als u dit scenario wilt aanpakken, moet u de `principalType` eigenschap instellen op `ServicePrincipal` bij het maken van de roltoewijzing. U moet ook de `apiVersion` toewijzing van de roltoewijzing instellen op `2018-09-01-preview` of hoger. Zie [Azure-rollen toewijzen aan een nieuwe service-principal met behulp van de rest API](role-assignments-rest.md#new-service-principal) of [Azure-rollen toewijzen aan een nieuwe service-principal met behulp van Azure Resource Manager-sjablonen](role-assignments-template.md#new-service-principal) voor meer informatie.
+
 - Als u probeert de toewijzing van de laatste eigenaar voor een abonnement te verwijderen, ziet u mogelijk de fout "kan de laatste RBAC-beheer toewijzing niet verwijderen." Het verwijderen van de roltoewijzing voor de laatste eigenaar voor een abonnement wordt niet ondersteund om zwevende het abonnement te voor komen. Als u uw abonnement wilt annuleren, raadpleegt u [uw Azure-abonnement annuleren](../cost-management-billing/manage/cancel-azure-subscription.md).
 
 ## <a name="problems-with-custom-roles"></a>Problemen met aangepaste rollen
 
-- Als u stappen nodig hebt voor het maken van een aangepaste rol, raadpleegt u de zelf studies voor aangepaste rollen met behulp van de [Azure Portal](custom-roles-portal.md) (momenteel in Preview), [Azure POWERSHELL](tutorial-custom-role-powershell.md)of [Azure cli](tutorial-custom-role-cli.md).
+- Als u stappen nodig hebt voor het maken van een aangepaste rol, raadpleegt u de zelf studies voor aangepaste rollen met behulp van de [Azure Portal](custom-roles-portal.md), [Azure POWERSHELL](tutorial-custom-role-powershell.md)of [Azure cli](tutorial-custom-role-cli.md).
 - Als u een bestaande aangepaste rol niet kunt bijwerken, controleert u of u momenteel bent aangemeld met een gebruiker aan wie een rol is toegewezen die de `Microsoft.Authorization/roleDefinition/write` machtiging heeft, zoals [eigenaar](built-in-roles.md#owner) of [beheerder van gebruikers toegang](built-in-roles.md#user-access-administrator).
 - Als het u niet lukt om een aangepaste rol te verwijderen en het foutbericht 'There are existing role assignments referencing role (code: RoleDefinitionHasAssignments)' (Er zijn bestaande roltoewijzingen die aan een rol refereren (code: RoleDefinitionHasAssignments)) verschijnt, dan zijn er roltoewijzingen die nog altijd de aangepaste rol gebruiken. Verwijder deze roltoewijzingen en probeer de aangepaste rol opnieuw te verwijderen.
 - Als tijdens het maken van een nieuwe aangepaste rol het foutbericht 'Role definition limit exceeded. No more role definitions can be created (RoleDefinitionLimitExceeded)' Er kunnen geen roldefinities meer worden gemaakt (code: RoleDefinitionLimitExceeded) "wanneer u probeert een nieuwe aangepaste rol te maken, verwijdert u alle aangepaste rollen die niet worden gebruikt. Azure biedt ondersteuning voor Maxi maal **5000** aangepaste rollen in een directory. (Voor Azure Duitsland en Azure China 21Vianet is de limiet 2000 aangepaste rollen.)

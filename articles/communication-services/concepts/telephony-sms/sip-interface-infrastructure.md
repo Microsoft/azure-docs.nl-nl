@@ -9,10 +9,10 @@ ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
 ms.openlocfilehash: ede650ae072ef53ed40a9372a292ab69fe8cc1af
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103492724"
 ---
 # <a name="sip-interface-infrastructure-requirements"></a>Vereisten voor de infra structuur van de SIP-interface 
@@ -47,8 +47,8 @@ De volgende tabel bevat voor beelden van DNS-namen die zijn geregistreerd voor d
 
 |DNS-naam|Kan worden gebruikt voor SBC FQDN|Voor beelden van FQDN-namen|
 |:--- |:--- |:--- |
-contoso.com|Ja|**Geldige namen:**<br/>sbc1.contoso.com<br/>ssbcs15.contoso.com<br/>europe.contoso.com|
-|contoso.onmicrosoft.com|Nee|Het gebruik van *. onmicrosoft.com-domeinen wordt niet ondersteund voor SBC-namen
+contoso.com|Yes|**Geldige namen:**<br/>sbc1.contoso.com<br/>ssbcs15.contoso.com<br/>europe.contoso.com|
+|contoso.onmicrosoft.com|No|Het gebruik van *. onmicrosoft.com-domeinen wordt niet ondersteund voor SBC-namen
 
 Als u een Office 365-klant bent, mag de SBC-domein naam niet overeenkomen met de geregistreerde domeinen van de Office 365-Tenant. Hieronder ziet u een voor beeld van een samen werking tussen Office 365 en Azure communication service:
 

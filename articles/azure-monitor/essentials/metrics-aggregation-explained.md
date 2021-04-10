@@ -5,13 +5,14 @@ author: rboucher
 ms.author: robb
 services: azure-monitor
 ms.topic: conceptual
-ms.date: 01/12/2020
-ms.openlocfilehash: b7e9318ee34836f8fbd2ae7a330134d8174e6a60
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 03/10/2021
+ms.subservice: metrics
+ms.openlocfilehash: 93d30663034c7560550160960af20f0a465d93c6
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102031392"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936169"
 ---
 # <a name="azure-monitor-metrics-metrics-aggregation-and-display-explained"></a>Azure Monitor metrische gegevens aggregatie en weer gave wordt uitgelegd
 
@@ -26,6 +27,7 @@ Wanneer u een metriek toevoegt aan een grafiek, selecteert Metrics Explorer auto
 Laten we eerst enkele voor waarden definiëren:
 
 - **Metrische waarde** : één meet waarde die is verzameld voor een specifieke resource.
+- **Time-Series-Data Base** : een Data Base die is geoptimaliseerd voor het opslaan en ophalen van gegevens punten die alle een waarde bevatten en een bijbehorende tijds tempel. 
 - **Tijds periode** : een algemene periode.
 - **Tijds interval** : de periode tussen het verzamelen van twee metrische waarden. 
 - **Tijds bereik** : de tijds periode die in een grafiek wordt weer gegeven. Typische standaard waarde is 24 uur. Alleen specifieke bereiken zijn beschikbaar. 
@@ -33,7 +35,9 @@ Laten we eerst enkele voor waarden definiëren:
 - **Aggregatie type** : een statistiek type dat wordt berekend op basis van meerdere meet waarden.  
 - **Aggregatie** : het proces waarbij meerdere invoer waarden worden gemaakt en vervolgens worden gebruikt voor het produceren van één uitvoer waarde via de regels die zijn gedefinieerd door het aggregatie type. U kunt bijvoorbeeld een gemiddelde van meerdere waarden maken.  
 
-Metrische gegevens zijn een reeks metrische waarden die volgens een regel matig tijds interval worden vastgelegd. Wanneer u een grafiek uitzet, worden de waarden van de geselecteerde metriek afzonderlijk geaggregeerd over de tijd granulatie (ook wel bekend als tijd korrel). U selecteert de grootte van de tijd granulatie met het [deel venster Metrics Explorer tijd kiezer](../essentials/metrics-getting-started.md#select-a-time-range). Als u geen expliciete selectie maakt, wordt de tijd granulatie automatisch geselecteerd op basis van het momenteel geselecteerde tijds bereik. Als dit eenmaal is geselecteerd, worden de metrische waarden die zijn vastgelegd tijdens elke granulatie interval geaggregeerd en op de grafiek geplaatst: één data Point per interval.
+## <a name="summary-of-process"></a>Samen vatting van proces
+
+Metrische gegevens zijn een reeks waarden die zijn opgeslagen met een tijds tempel. In Azure worden de meeste metrische gegevens opgeslagen in de data base van de time-series van Azure Metrics. Wanneer u een grafiek uitzet, worden de waarden van de geselecteerde metrische gegevens opgehaald uit de data base en vervolgens afzonderlijk geaggregeerd op basis van de gekozen tijd granulariteit (ook wel bekend als tijd korrel). U selecteert de grootte van de tijd granulatie met het [deel venster Metrics Explorer tijd kiezer](../essentials/metrics-getting-started.md#select-a-time-range). Als u geen expliciete selectie maakt, wordt de tijd granulatie automatisch geselecteerd op basis van het momenteel geselecteerde tijds bereik. Als dit eenmaal is geselecteerd, worden de metrische waarden die zijn vastgelegd tijdens elke granulatie interval geaggregeerd en op de grafiek geplaatst: één data Point per interval.
 
 ## <a name="aggregation-types"></a>Aggregatie typen 
 
@@ -82,9 +86,11 @@ Het is belang rijk om te bepalen wat ' normaal ' is voor uw werk belasting om te
 
 ## <a name="how-the-system-collects-metrics"></a>Hoe de gegevens worden verzameld door het systeem
 
-Gegevens verzameling varieert per metriek. Er zijn twee typen verzamelings perioden.
+Gegevens verzameling varieert per metriek. 
 
 ### <a name="measurement-collection-frequency"></a>Frequentie van meting verzameling 
+
+Er zijn twee typen verzamelings perioden.
 
 - **Regel matig** : de metrische gegevens worden verzameld met een consistent tijds interval dat niet varieert.
 

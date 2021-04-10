@@ -62,9 +62,9 @@
           href: how-to-view-telemetry.md
     - name: Ontwikkeling van spraak oplossingen met Azure percept DK
       items:
-        - name: Uw Voice Assistant configureren in azure percept Studio
-          href: how-to-configure-voice-assistant.md
         - name: Uw Voice Assistant configureren in IoT Hub
+          href: how-to-configure-voice-assistant.md
+        - name: Uw Voice Assistant configureren in azure percept Studio
           href: how-to-manage-voice-assistant.md
     - name: Uw Azure percept-apparaten bijwerken
       items:
@@ -82,7 +82,7 @@
           href: how-to-connect-to-percept-dk-over-serial.md
     - name: Hulpprogramma's
       items:
-        - name: Installatie programma voor het devtools-pakket
+        - name: Installatie programma voor dev tools pack
           href: dev-tools-installer.md
     - name: Problemen oplossen
       items:

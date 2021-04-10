@@ -1,19 +1,19 @@
 ---
 title: Voorbeelden van Azure CLI voor Blob-opslag | Microsoft Docs
 description: Zie koppelingen naar Azure CLI-voorbeelden voor het werken met Azure Blob Storage, zoals het maken van een opslagaccount, het verwijderen van containers met een specifiek voorvoegsel enzovoort.
-author: mhopkins-msft
-ms.author: mhopkins
+author: twooley
+ms.author: twooley
 ms.date: 06/13/2017
 ms.service: storage
 ms.subservice: blobs
 ms.topic: sample
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 79ff7b3d174407da929f201bdce691cecf9b9a89
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4b18d332132bcaa8b3297179c7992eb9cc2f88d8
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "88035039"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106279643"
 ---
 # <a name="azure-cli-samples-for-azure-blob-storage"></a>Voorbeelden van Azure CLI voor Azure Blob-opslag
 

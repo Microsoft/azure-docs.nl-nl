@@ -4,12 +4,12 @@ description: In dit artikel vindt u informatie over het herstellen van bestanden
 ms.topic: conceptual
 ms.date: 03/12/2020
 ms.custom: references_regions
-ms.openlocfilehash: ed231a4870af7489d48ff54548be380c2cf0799c
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: c2af279ec7e846316a94e58977e7079305ab9b03
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104864887"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106579368"
 ---
 # <a name="recover-files-from-azure-virtual-machine-backup"></a>Bestanden herstellen vanuit de back-up van Azure-virtuele machine
 
@@ -133,12 +133,12 @@ Zorg er ook voor dat u de [juiste computer hebt om het ILR-script uit te voeren]
 
 Als u het script uitvoert op een computer met beperkte toegang, moet u toegang hebben tot:
 
-- `download.microsoft.com`
+- `download.microsoft.com` of servicetag `AzureFrontDoor.FirstParty` in NSG
 - Url's van de Recovery service (GEO-naam verwijst naar de regio waarin de Recovery Services kluis zich bevindt)
-  - `https://pod01-rec2.GEO-NAME.backup.windowsazure.com` (Voor open bare Azure-regio's)
-  - `https://pod01-rec2.GEO-NAME.backup.windowsazure.cn` (Voor Azure China 21Vianet)
-  - `https://pod01-rec2.GEO-NAME.backup.windowsazure.us` (Voor Azure Amerikaanse overheid)
-  - `https://pod01-rec2.GEO-NAME.backup.windowsazure.de` (Voor Azure Duitsland)
+  - `https://pod01-rec2.GEO-NAME.backup.windowsazure.com` (Voor open bare Azure-regio's) of een servicetag `AzureBackup` in NSG
+  - `https://pod01-rec2.GEO-NAME.backup.windowsazure.cn` (Voor Azure China 21Vianet) of een servicetag `AzureBackup` in NSG
+  - `https://pod01-rec2.GEO-NAME.backup.windowsazure.us` (Voor Azure US Government) of servicetag `AzureBackup` in NSG
+  - `https://pod01-rec2.GEO-NAME.backup.windowsazure.de` (Voor Azure Duitsland) of een servicetag `AzureBackup` in NSG
 - Uitgaande poorten 53 (DNS), 443, 3260
 
 > [!NOTE]

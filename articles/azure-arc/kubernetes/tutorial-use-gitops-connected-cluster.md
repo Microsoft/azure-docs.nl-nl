@@ -7,12 +7,12 @@ ms.service: azure-arc
 ms.topic: tutorial
 ms.date: 03/02/2021
 ms.custom: template-tutorial
-ms.openlocfilehash: 1459d4a0f15595c6f658d73fcb9cb533023f0eb8
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: 987fb5745b6528eb96b4237f698b3ae371d69287
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105025714"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105731816"
 ---
 # <a name="tutorial-deploy-configurations-using-gitops-on-an-azure-arc-enabled-kubernetes-cluster"></a>Zelf studie: configuraties implementeren met behulp van GitOps op een Azure Arc enabled Kubernetes-cluster 
 
@@ -21,7 +21,7 @@ In deze zelf studie past u configuraties toe met behulp van GitOps op een Azure 
 > [!div class="checklist"]
 > * Een configuratie maken op een Azure Arc enabled Kubernetes-cluster met behulp van een voor beeld van een Git-opslag plaats.
 > * Controleer of de configuratie is gemaakt.
-> * Configuratie formulier Toep assen een persoonlijke Git-opslag plaats.
+> * Configuratie Toep assen vanuit een persoonlijke Git-opslag plaats.
 > * Valideer de Kubernetes-configuratie.
 
 ## <a name="prerequisites"></a>Vereisten
@@ -235,7 +235,7 @@ Wanneer een configuratie wordt gemaakt of bijgewerkt, gebeurt er een aantal ding
 
 Tijdens het inrichtings proces wordt de configuratie bron door een paar status wijzigingen verplaatst. Bewaak de voortgang met de `az k8s-configuration show ...` bovenstaande opdracht:
 
-| Wijziging fase | Beschrijving |
+| Wijziging fase | Description |
 | ------------- | ------------- |
 | `complianceStatus`-> `Pending` | Hiermee worden de initiële en in uitvoering zijnde statussen aangegeven. |
 | `complianceStatus` -> `Installed`  | `config-agent` het cluster is geconfigureerd en `flux` zonder fouten geïmplementeerd. |

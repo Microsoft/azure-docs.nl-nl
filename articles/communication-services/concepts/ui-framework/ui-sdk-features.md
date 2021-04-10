@@ -8,10 +8,10 @@ ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
 ms.openlocfilehash: 5b1aab8b38614249d6b502044b5c4c8170f46b3c
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103492214"
 ---
 # <a name="ui-framework-capabilities"></a>Mogelijkheden van UI-Framework
@@ -22,7 +22,7 @@ Met het gebruikers interface-Framework van Azure Communication Services kunt u c
 
 ## <a name="ui-framework-composite-components"></a>Samengestelde onderdelen UI Framework
 
-| Composite               | Beschrijving                                               | Web   | Android | iOS   |
+| Composite               | Description                                               | Web   | Android | iOS   |
 |-------------------------|-----------------------------------------------------------|-------|---------|-------|
 | Groep die samen stelling aanroept | Licht gewicht: spraak-en video-uitgaande oproep ervaring voor Azure Communication Services die wordt aangeroepen met behulp van Fluent-ontwerp assets van de gebruikers interface. Ondersteunt groeps aanroepen met de groeps-ID van Azure Communication Services. De samengestelde functie maakt het mogelijk een-op-een-aanroep te gebruiken door te verwijzen naar een Azure Communication Services-identiteit of een telefoon nummer voor PSTN met behulp van een telefoon nummer dat is aangeschaft via Azure.                                    | React |  |  |
 | Groeps-chat samen stelling    | Beleving van licht gewicht voor Azure Communication Services met behulp van Fluent-ontwerp assets van de gebruikers interface. Deze ervaring is gericht op het leveren van een eenvoudige chat-client die verbinding kan maken met Azure Communication Services-threads. Hiermee kunnen gebruikers berichten verzenden en ontvangen berichten met type-indica toren en lees bevestigingen bekijken. Er wordt geschaald van 1:1 om chat scenario's te groeperen. Ondersteunt één chat thread.                         | React |  |  |

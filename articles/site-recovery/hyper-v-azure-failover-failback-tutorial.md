@@ -1,19 +1,16 @@
 ---
 title: In Azure Site Recovery failover van virtuele Hyper-V-machines naar Azure instellen
 description: Meer informatie over het uitvoeren van een failover van virtuele Hyper-V-machines naar Azure in Azure Site Recovery.
-author: rayne-wiselman
-manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
 ms.date: 12/16/2019
-ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: b46a2ea12a697afde8223cc3595365c1286512c7
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: bb012f7cc5faa5e286b617785512ffa463c213bb
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "86132464"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106579547"
 ---
 # <a name="fail-over-hyper-v-vms-to-azure"></a>Een failover van Virtuele Hyper-V-machines naar Azure uitvoeren
 

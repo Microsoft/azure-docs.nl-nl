@@ -4,7 +4,7 @@
   items:
     - name: Over Lab-Services
       href: lab-services-overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: Aan de slag
       href: get-started-manage-labs.md
@@ -137,6 +137,8 @@
           href: how-to-setup-lab-gpu.md
         - name: Een VM met Windows-sjabloon voorbereiden
           href: how-to-prepare-windows-template.md
+        - name: Externe bestands opslag gebruiken
+          href: how-to-attach-external-storage.md
         - name: Het gedrag van Windows afsluiten bepalen
           href: how-to-windows-shutdown.md
         - name: Ondersteuningsinformatie weergeven (onderwijzer)

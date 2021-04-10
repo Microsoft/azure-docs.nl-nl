@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/27/2021
 ms.author: alexeyo
-ms.openlocfilehash: 7fe2942250e165606175392d7749becda0cff23b
-ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
+ms.openlocfilehash: 7ef6ed5293ec9ecf49c16f8dfb0b6604942408f0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/28/2021
-ms.locfileid: "105645123"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105937053"
 ---
 # <a name="speech-services-quotas-and-limits"></a>Quota en limieten voor Speech Services
 
@@ -63,19 +63,19 @@ de prijs categorie <sup>1</sup> voor **gratis (F0)** Zie ook maandelijkse vergoe
 ### <a name="text-to-speech-quotas-and-limits-per-speech-resource"></a>Quota voor tekst naar spraak en limieten per spraak resource
 In de onderstaande tabel zijn para meters zonder ' aanpas bare ' rij **niet** aanpasbaar voor alle prijs categorieën.
 
-| Quota | Gratis (F0)<sup>3</sup> | Standard (S0) |
-|--|--|--|
-| **Maximum aantal trans acties per seconde (TPS) voor standaard-en Neural stemmen** | 200<sup>4</sup> | 200<sup>4</sup> |  |
-| **Limiet voor gelijktijdige aanvragen voor aangepaste spraak** |  |  |
-| Standaardwaarde | 10 | 10 |
-| Aanpasbaar | Geen<sup>5</sup> | Ja<sup>5</sup> |
-| **HTTP-specifieke quota's** |  |
-| Maximale audio duur die per aanvraag wordt geproduceerd | 10 minuten | 10 minuten |
-| Maximum aantal afzonderlijke `<voice>` Tags in SSML | 50 | 50 |
-| **WebSocket-specifieke quota's** |  |  |
-|Maximale audio duur per beurt | 10 minuten | 10 minuten |
-|Maximale SSML bericht grootte per draaiing |64 kB |64 kB |
-| **REST API limiet** | 20 aanvragen per minuut | 300 aanvragen per minuut |
+| Quota                                                                          | Gratis (F0)<sup>3</sup>  | Standard (S0)   |
+|--------------------------------------------------------------------------------|------------------------|-----------------|
+| **Maximum aantal trans acties per seconde (TPS) voor standaard-en Neural stemmen** | 200<sup>4</sup>        | 200<sup>4</sup> |
+| **Limiet voor gelijktijdige aanvragen voor aangepaste spraak**                                  |                        |                 |
+| Standaardwaarde                                                                  | 10                     | 10              |
+| Aanpasbaar                                                                     | Geen<sup>5</sup>         | Ja<sup>5</sup> |
+| **HTTP-specifieke quota's**                                                       |                        |                 |
+| Maximale audio duur die per aanvraag wordt geproduceerd                                          | 10 minuten                 | 10 minuten          |
+| Maximum aantal afzonderlijke `<voice>` Tags in SSML                                  | 50                     | 50              |
+| **WebSocket-specifieke quota's**                                                  |                        |                 |
+| Maximale audio duur per beurt                                             | 10 minuten                 | 10 minuten          |
+| Maximale SSML bericht grootte per draaiing                                                 | 64 kB                  | 64 kB           |
+| **REST API limiet**                                                             | 20 aanvragen per minuut | 300 aanvragen per minuut |
 
 
 de prijs categorie <sup>3</sup> voor **gratis (F0)** Zie ook maandelijkse vergoedingen op de [pagina met prijzen](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/).<br/>

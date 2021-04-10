@@ -5,12 +5,12 @@ ms.topic: overview
 author: bwren
 ms.author: bwren
 ms.date: 11/17/2019
-ms.openlocfilehash: fe8714f38c6a04b311a748f3eb081be82eb86635
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: afe6e82c3cc9773fbf0c17992fd6894d199d177f
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105024129"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105937240"
 ---
 # <a name="azure-monitor-overview"></a>Overzicht van Azure Monitor
 
@@ -60,7 +60,7 @@ Met Azure Monitor kunt u gegevens verzamelen van [verschillende bronnen](monitor
 - Gegevens over de werking en het beheer van een Azure-abonnement en gegevens over de status en werking van Azure zelf. 
 - **Bewakingsgegevens van Azure-tenants**: Gegevens over de werking van Azure-services op tenantniveau, zoals Azure Active Directory.
 
-Zodra u een Azure-abonnement maakt en resources zoals virtuele machines en web-apps toevoegt, begint Azure Monitor met het verzamelen van gegevens.  [Activiteitenlogboeken](essentials/platform-logs-overview.md) registreren wanneer resources worden gemaakt of gewijzigd. [Metrische gegevens](data-platform.md) vertellen u hoe de resource presteert en welke resources worden gebruikt. 
+Zodra u een Azure-abonnement maakt en resources zoals virtuele machines en web-apps toevoegt, begint Azure Monitor met het verzamelen van gegevens.  [Activiteitenlogboeken](essentials/platform-logs-overview.md) registreren wanneer resources worden gemaakt of gewijzigd. [Metrische gegevens](essentials/data-platform-metrics.md) vertellen u hoe de resource presteert en welke resources worden gebruikt. 
 
 [Diagnostische gegevens inschakelen](essentials/platform-logs-overview.md) om de gegevens die u verzamelt, uit te breiden naar de interne bewerking van de resources.  [Een agent toevoegen](agents/agents-overview.md) om resources te berekenen voor het verzamelen van telemetriegegevens van hun gastbesturingssystemen. 
 

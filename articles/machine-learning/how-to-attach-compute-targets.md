@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 10/02/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperf-fy21q1
-ms.openlocfilehash: 9fa6a1758bc2e2a76291efc3bb239c5249a6e21e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a3a70ac5d5603cad98c199cbd8e3b98bb095d131
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103149338"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106167665"
 ---
 # <a name="set-up-compute-targets-for-model-training-and-deployment"></a>Reken doelen instellen voor model training en implementatie
 
@@ -53,7 +53,7 @@ Als u Compute-doelen wilt gebruiken die worden beheerd door Azure Machine Learni
 
 ## <a name="whats-a-compute-target"></a>Wat is een reken doel?
 
-Met Azure Machine Learning kunt u uw model trainen op diverse resources of omgevingen, die gezamenlijk worden aangeduid als [__Compute-doelen__](concept-azure-machine-learning-architecture.md#compute-targets). Een compute-doel kan een lokale machine of een Cloud resource zijn, zoals een Azure Machine Learning compute, Azure HDInsight of een externe virtuele machine.  U kunt ook Compute-doelen voor model implementatie gebruiken, zoals beschreven in [' waar en hoe u uw modellen implementeert '](how-to-deploy-and-where.md).
+Met Azure Machine Learning kunt u uw model trainen op verschillende resources of omgevingen, die gezamenlijk worden aangeduid als [__Compute-doelen__](concept-azure-machine-learning-architecture.md#compute-targets). Een compute-doel kan een lokale machine of een Cloud resource zijn, zoals een Azure Machine Learning compute, Azure HDInsight of een externe virtuele machine.  U kunt ook Compute-doelen voor model implementatie gebruiken, zoals beschreven in [' waar en hoe u uw modellen implementeert '](how-to-deploy-and-where.md).
 
 
 ## <a name="local-computer"></a><a id="local"></a>Lokale computer
@@ -64,9 +64,12 @@ Wanneer u uw lokale computer **gebruikt voor** demijnen, moet docker zijn geïns
 
 ## <a name="remote-virtual-machines"></a><a id="vm"></a>Externe virtuele machines
 
-Azure Machine Learning biedt ook ondersteuning voor het koppelen van een virtuele machine van Azure. De virtuele machine moet een Azure-Data Science Virtual Machine (DSVM) zijn. Deze VM is een vooraf geconfigureerde data Science-en AI-ontwikkel omgeving in Azure. De virtuele machine biedt een geruime keuze aan hulpprogram ma's en frameworks voor een volledige levenscyclus machine learning ontwikkeling. Zie [Configure a Development Environment](./how-to-configure-environment.md#dsvm)(Engelstalig) voor meer informatie over het gebruik van de DSVM met Azure machine learning.
+Azure Machine Learning biedt ook ondersteuning voor het koppelen van een virtuele machine van Azure. De virtuele machine moet een Azure-Data Science Virtual Machine (DSVM) zijn. De virtuele machine biedt een geruime keuze aan hulpprogram ma's en frameworks voor een volledige levenscyclus machine learning ontwikkeling. Zie [Configure a Development Environment](./how-to-configure-environment.md#dsvm)(Engelstalig) voor meer informatie over het gebruik van de DSVM met Azure machine learning.
 
-1. **Maken**: Maak een DSVM voordat u het gebruikt om het model te trainen. Zie [de data Science virtual machine inrichten voor Linux (Ubuntu)](./data-science-virtual-machine/dsvm-ubuntu-intro.md)als u deze resource wilt maken.
+> [!TIP]
+> In plaats van een externe virtuele machine kunt u het beste het [Azure machine learning Compute-exemplaar](concept-compute-instance.md)gebruiken. Het is een volledig beheerde, op de cloud gebaseerde reken oplossing die specifiek is voor Azure Machine Learning. Zie [Azure machine learning Compute-instantie maken en beheren](how-to-create-manage-compute-instance.md)voor meer informatie.
+
+1. **Maken**: Azure machine learning kunt geen externe virtuele machine voor u maken. In plaats daarvan moet u de virtuele machine maken en deze vervolgens koppelen aan uw Azure Machine Learning-werk ruimte. Zie [de data Science virtual machine inrichten voor Linux (Ubuntu)](./data-science-virtual-machine/dsvm-ubuntu-intro.md)voor meer informatie over het maken van een DSVM.
 
     > [!WARNING]
     > Azure Machine Learning ondersteunt alleen virtuele machines waarop **Ubuntu** wordt uitgevoerd. Wanneer u een virtuele machine maakt of een bestaande virtuele machine kiest, moet u een virtuele machine selecteren die gebruikmaakt van Ubuntu.
@@ -120,11 +123,16 @@ Azure Machine Learning biedt ook ondersteuning voor het koppelen van een virtuel
    src = ScriptRunConfig(source_directory=".", script="train.py", compute_target=compute, environment=myenv) 
    ```
 
+> [!TIP]
+> Als u een virtuele machine uit uw werk ruimte wilt __verwijderen__ (ontkoppelen), gebruikt u de methode [RemoteCompute. Detach ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.remotecompute#detach--) .
+>
+> Azure Machine Learning verwijdert de virtuele machine niet voor u. U moet de virtuele machine hand matig verwijderen met de Azure Portal, CLI of de SDK voor Azure VM.
+
 ## <a name="azure-hdinsight"></a><a id="hdinsight"></a>Azure HDInsight 
 
 Azure HDInsight is een populair platform voor Big data-analyses. Het platform biedt Apache Spark, dat kan worden gebruikt voor het trainen van uw model.
 
-1. **Maken**: Maak het HDInsight-cluster voordat u het gebruikt om het model te trainen. Zie [een Spark-cluster maken in hdinsight](../hdinsight/spark/apache-spark-jupyter-spark-sql.md)voor informatie over het maken van een Spark in hdinsight-cluster. 
+1. **Maken**: Azure machine learning kunt geen HDInsight-cluster maken voor u. In plaats daarvan moet u het cluster maken en het vervolgens koppelen aan uw Azure Machine Learning-werk ruimte. Zie [een Spark-cluster maken in HDInsight](../hdinsight/spark/apache-spark-jupyter-spark-sql.md)voor meer informatie. 
 
     > [!WARNING]
     > Voor Azure Machine Learning moet het HDInsight-cluster een __openbaar IP-adres__ hebben.
@@ -165,8 +173,10 @@ Azure HDInsight is een populair platform voor Big data-analyses. Het platform bi
 
    [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/hdi.py?name=run_hdi)]
 
-
-Nu u de reken kracht hebt gekoppeld en de uitvoering hebt geconfigureerd, is de volgende stap [het verzenden van de trainings uitvoering](how-to-set-up-training-targets.md).
+> [!TIP]
+> Als u een HDInsight-cluster uit de werk ruimte wilt __verwijderen__ (ontkoppelen), gebruikt u de methode [HDInsightCompute. Detach ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.hdinsight.hdinsightcompute#detach--) .
+>
+> Azure Machine Learning verwijdert het HDInsight-cluster niet voor u. U moet deze hand matig verwijderen met de Azure Portal, CLI of de SDK voor Azure HDInsight.
 
 ## <a name="azure-batch"></a><a id="azbatch"></a>Azure Batch 
 
@@ -215,7 +225,7 @@ print("Using Batch compute:{}".format(batch_compute.cluster_resource_id))
 
 Azure Databricks is een op Apache Spark gebaseerde omgeving in de Azure-Cloud. Het kan worden gebruikt als een reken doel met een Azure Machine Learning-pijp lijn.
 
-Maak een Azure Databricks-werk ruimte voordat u deze gebruikt. Als u een werkruimte resource wilt maken, raadpleegt u de [taak een Spark uitvoeren op Azure Databricks](/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal) document.
+> [! BELANG rijk} Azure Machine Learning kan geen Azure Databricks Compute-doel maken. In plaats daarvan moet u een Azure Databricks-werk ruimte maken en deze vervolgens koppelen aan uw Azure Machine Learning-werk ruimte. Als u een werkruimte resource wilt maken, raadpleegt u de [taak een Spark uitvoeren op Azure Databricks](/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal) document.
 
 Als u Azure Databricks als een reken doel wilt koppelen, geeft u de volgende informatie op:
 
@@ -329,8 +339,7 @@ Azure Container Instances (ACI) worden dynamisch gemaakt wanneer u een model imp
 
 ## <a name="azure-kubernetes-service"></a>Azure Kubernetes Service
 
-Azure Kubernetes service (AKS) biedt diverse configuratie opties voor het gebruik van Azure Machine Learning. Zie de [Azure Kubernetes-service maken en koppelen](how-to-create-attach-kubernetes.md)voor meer informatie.
-
+Met Azure Kubernetes service (AKS) kunnen diverse configuratie opties worden gebruikt in combi natie met Azure Machine Learning. Zie de [Azure Kubernetes-service maken en koppelen](how-to-create-attach-kubernetes.md)voor meer informatie.
 
 ## <a name="notebook-examples"></a>Voor beelden van notebooks
 

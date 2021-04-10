@@ -1,17 +1,22 @@
 ---
-title: Systeemvereisten
-description: Verkrijg de systeemvereisten die nodig zijn om Azure Defender voor IoT uit te voeren.
+title: 'Snelstartgids: systeem vereisten'
+description: In deze Snelstartgids kunt u de systeem vereisten ophalen die nodig zijn om Azure Defender voor IoT uit te voeren.
 ms.date: 11/30/2020
 ms.topic: quickstart
-ms.openlocfilehash: 78d5948554ae531c4b2f77d67bb916d5290db943
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 2aae849b6ee772c2aa29c680f3b107af3ed600b0
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104780936"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106382943"
 ---
-# <a name="system-prerequisites"></a>Systeemvereisten
+# <a name="quickstart-system-prerequisites"></a>Snelstartgids: systeem vereisten
+
 In dit artikel worden de systeemvereisten vermeld voor het uitvoeren van Azure Defender voor IoT.
+
+## <a name="prerequisites"></a>Vereisten
+
+- Geen
 
 ## <a name="minimum-requirements"></a>Minimale vereisten
 
@@ -27,7 +32,7 @@ Defender for IoT routeert al het verkeer uit alle Europese regio's naar het regi
 
 Zie [Ondersteunde regio's voor IoT Hub](https://azure.microsoft.com/global-infrastructure/services/?products=iot-hub) voor meer informatie.
 
-## <a name="see-also"></a>Zie tevens
+## <a name="next-steps"></a>Volgende stappen
 
-- [Vereiste apparaten identificeren](how-to-identify-required-appliances.md)
-- [Over de installatie van het Azure Defender for IoT-netwerk](how-to-set-up-your-network.md)
+> [!div class="nextstepaction"]
+> [Vereiste apparaten identificeren](how-to-identify-required-appliances.md)

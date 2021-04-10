@@ -4,15 +4,15 @@ description: Meer informatie over het instellen van een persoonlijke Azure-koppe
 author: ThomasWeiss
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 03/02/2021
+ms.date: 03/26/2021
 ms.author: thweiss
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: d21943c90e1f77bd4a43cdfd27b183df018f6cc7
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 034eb35eeef975be23cc318aa797282008d71728
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101690665"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936900"
 ---
 # <a name="configure-azure-private-link-for-an-azure-cosmos-account"></a>Een persoonlijke Azure-koppeling configureren voor een Azure Cosmos-account
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -70,7 +70,7 @@ Gebruik de volgende stappen om een persoonlijk eind punt te maken voor een besta
     | Virtueel netwerk| Selecteer uw virtuele netwerk. |
     | Subnet | Selecteer uw subnet. |
     |**Integratie van Privé-DNS**||
-    |Integreren met privé-DNS-zone |Selecteer **Ja**. <br><br/> Als u privé wilt verbinden met uw persoonlijke eind punt, moet u een DNS-record hebben. We raden u aan uw persoonlijke eind punt te integreren met een privé-DNS-zone. U kunt ook uw eigen DNS-servers gebruiken of DNS-records maken met behulp van de host-bestanden op uw virtuele machines. |
+    |Integreren met privé-DNS-zone |Selecteer **Ja**. <br><br/> Als u privé wilt verbinden met uw persoonlijke eind punt, moet u een DNS-record hebben. We raden u aan uw persoonlijke eind punt te integreren met een privé-DNS-zone. U kunt ook uw eigen DNS-servers gebruiken of DNS-records maken met behulp van de host-bestanden op uw virtuele machines. <br><br/> Wanneer u Ja voor deze optie selecteert, wordt er ook een privé-DNS-zone groep gemaakt. De DNS-zone groep is een koppeling tussen de privé-DNS-zone en het persoonlijke eind punt. Met deze koppeling kunt u de privé-DNS-zone automatisch bijwerken wanneer er een update voor het persoonlijke eind punt is. Wanneer u bijvoorbeeld regio's toevoegt of verwijdert, wordt de privé-DNS-zone automatisch bijgewerkt. |
     |Privé-DNS-zone |Selecteer **privatelink.documents.Azure.com**. <br><br/> De privé-DNS-zone wordt automatisch bepaald. U kunt deze niet wijzigen met behulp van de Azure Portal.|
     |||
 
@@ -78,6 +78,8 @@ Gebruik de volgende stappen om een persoonlijk eind punt te maken voor een besta
 1. Als u het bericht **Validatie geslaagd** ziet, selecteert u **Maken**.
 
 Wanneer u een persoonlijke koppeling hebt goedgekeurd voor een Azure Cosmos-account, is de optie **alle netwerken** in het deel venster **firewall en virtuele netwerken** niet beschikbaar in de Azure Portal.
+
+## <a name="api-types-and-private-zone-names"></a><a id="private-zone-name-mapping"></a>API-typen en namen van particuliere zones
 
 In de volgende tabel ziet u de toewijzing tussen de verschillende Azure Cosmos-account-API-typen, ondersteunde subresources en de bijbehorende namen van de persoonlijke zones. U kunt ook toegang krijgen tot de Gremlin-en Table-API-accounts via de SQL-API, zodat er twee vermeldingen voor deze Api's zijn.
 
@@ -145,6 +147,8 @@ Nadat u het persoonlijke eind punt hebt gemaakt, kunt u het integreren met een p
 
 ```azurepowershell-interactive
 Import-Module Az.PrivateDns
+
+# Zone name differs based on the API type and group ID you are using. 
 $zoneName = "privatelink.documents.azure.com"
 $zone = New-AzPrivateDnsZone -ResourceGroupName $ResourceGroupName `
   -Name $zoneName
@@ -159,19 +163,19 @@ $pe = Get-AzPrivateEndpoint -Name $PrivateEndpointName `
 
 $networkInterface = Get-AzResource -ResourceId $pe.NetworkInterfaces[0].Id `
   -ApiVersion "2019-04-01"
- 
-foreach ($ipconfig in $networkInterface.properties.ipConfigurations) { 
-foreach ($fqdn in $ipconfig.properties.privateLinkConnectionProperties.fqdns) { 
-Write-Host "$($ipconfig.properties.privateIPAddress) $($fqdn)"  
-$recordName = $fqdn.split('.',2)[0] 
-$dnsZone = $fqdn.split('.',2)[1] 
-New-AzPrivateDnsRecordSet -Name $recordName `
-  -RecordType A -ZoneName $zoneName  `
-  -ResourceGroupName $ResourceGroupName -Ttl 600 `
-  -PrivateDnsRecords (New-AzPrivateDnsRecordConfig `
-  -IPv4Address $ipconfig.properties.privateIPAddress)  
-}
-}
+
+# Create DNS configuration
+
+$PrivateDnsZoneId = $zone.ResourceId
+
+$config = New-AzPrivateDnsZoneConfig -Name $zoneName`
+ -PrivateDnsZoneId $PrivateDnsZoneId
+
+## Create a DNS zone group
+New-AzPrivateDnsZoneGroup -ResourceGroupName $ResourceGroupName`
+ -PrivateEndpointName $PrivateEndpointName`
+ -Name "MyPrivateZoneGroup"`
+ -PrivateDnsZoneConfig $config
 ```
 
 ### <a name="fetch-the-private-ip-addresses"></a>De privé-IP-adressen ophalen
@@ -242,6 +246,7 @@ az network private-endpoint create \
 Nadat u het persoonlijke eind punt hebt gemaakt, kunt u het integreren met een privé-DNS-zone met behulp van het volgende Azure CLI-script:
 
 ```azurecli-interactive
+#Zone name differs based on the API type and group ID you are using. 
 zoneName="privatelink.documents.azure.com"
 
 az network private-dns zone create --resource-group $ResourceGroupName \
@@ -253,15 +258,13 @@ az network private-dns link vnet create --resource-group $ResourceGroupName \
    --virtual-network $VNetName \
    --registration-enabled false 
 
-#Query for the network interface ID  
-networkInterfaceId=$(az network private-endpoint show --name $PrivateEndpointName --resource-group $ResourceGroupName --query 'networkInterfaces[0].id' -o tsv)
- 
-# Copy the content for privateIPAddress and FQDN matching the Azure Cosmos account 
-az resource show --ids $networkInterfaceId --api-version 2019-04-01 -o json 
- 
-#Create DNS records 
-az network private-dns record-set a create --name recordSet1 --zone-name privatelink.documents.azure.com --resource-group $ResourceGroupName
-az network private-dns record-set a add-record --record-set-name recordSet2 --zone-name privatelink.documents.azure.com --resource-group $ResourceGroupName -a <Private IP Address>
+#Create a DNS zone group
+az network private-endpoint dns-zone-group create \
+   --resource-group $ResourceGroupName \
+   --endpoint-name $PrivateEndpointName \
+   --name "MyPrivateZoneGroup" \
+   --private-dns-zone $zoneName \
+   --zone-name "myzone"
 ```
 
 ## <a name="create-a-private-endpoint-by-using-a-resource-manager-template"></a>Een persoonlijk eind punt maken met behulp van een resource manager-sjabloon
@@ -460,38 +463,6 @@ Gebruik de volgende code om een resource manager-sjabloon met de naam ' PrivateZ
 }
 ```
 
-Gebruik de volgende code om een resource manager-sjabloon met de naam ' PrivateZoneRecords_template.jsop ' te maken.
-
-```json
-{
-    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "DNSRecordName": {
-            "type": "string"
-        },
-        "IPAddress": {
-            "type":"string"
-        }        
-    },
-    "resources": [
-         {
-            "type": "Microsoft.Network/privateDnsZones/A",
-            "apiVersion": "2018-09-01",
-            "name": "[parameters('DNSRecordName')]",
-            "properties": {
-                "ttl": 300,
-                "aRecords": [
-                    {
-                        "ipv4Address": "[parameters('IPAddress')]"
-                    }
-                ]
-            }
-        }    
-    ]
-}
-```
-
 **Definieer het parameter bestand voor de sjabloon**
 
 Maak het volgende twee parameter bestand voor de sjabloon. Maak de PrivateZone_parameters.jsop. met de volgende code:
@@ -511,18 +482,65 @@ Maak het volgende twee parameter bestand voor de sjabloon. Maak de PrivateZone_p
 }
 ```
 
-Maak de PrivateZoneRecords_parameters.jsop. met de volgende code:
+Gebruik de volgende code om een resource manager-sjabloon met de naam ' PrivateZoneGroup_template.jsop ' te maken. Met deze sjabloon maakt u een privé-DNS-zone groep voor een bestaand Azure Cosmos SQL API-account in een bestaand virtueel netwerk.
+
+```json
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "privateZoneName": {
+            "type": "string"
+        },
+        "PrivateEndpointDnsGroupName": {
+            "value": "string"
+        },
+        "privateEndpointName":{
+            "value": "string"
+        }        
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Network/privateEndpoints/privateDnsZoneGroups",
+            "apiVersion": "2020-06-01",
+            "name": "[parameters('PrivateEndpointDnsGroupName')]",
+            "location": "global",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/privateDnsZones', parameters('privateZoneName'))]",
+                "[variables('privateEndpointName')]"
+            ],
+          "properties": {
+            "privateDnsZoneConfigs": [
+              {
+                "name": "config1",
+                "properties": {
+                  "privateDnsZoneId": "[resourceId('Microsoft.Network/privateDnsZones', parameters('privateZoneName'))]"
+                }
+              }
+            ]
+          }
+        }
+    ]
+}
+```
+
+**Definieer het parameter bestand voor de sjabloon**
+
+Maak het volgende twee parameter bestand voor de sjabloon. Maak de PrivateZoneGroup_parameters.jsop. met de volgende code:
 
 ```json
 {
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "DNSRecordName": {
+        "privateZoneName": {
             "value": ""
         },
-        "IPAddress": {
-            "type":"object"
+        "PrivateEndpointDnsGroupName": {
+            "value": ""
+        },
+        "privateEndpointName":{
+            "value": ""
         }
     }
 }
@@ -555,15 +573,18 @@ $PrivateZoneName = "myPrivateZone.documents.azure.com"
 # Name of the private endpoint to create
 $PrivateEndpointName = "myPrivateEndpoint"
 
+# Name of the DNS zone group to create
+$PrivateEndpointDnsGroupName = "myPrivateDNSZoneGroup"
+
 $cosmosDbResourceId = "/subscriptions/$($SubscriptionId)/resourceGroups/$($ResourceGroupName)/providers/Microsoft.DocumentDB/databaseAccounts/$($CosmosDbAccountName)"
 $VNetResourceId = "/subscriptions/$($SubscriptionId)/resourceGroups/$($ResourceGroupName)/providers/Microsoft.Network/virtualNetworks/$($VNetName)"
 $SubnetResourceId = "$($VNetResourceId)/subnets/$($SubnetName)"
 $PrivateZoneTemplateFilePath = "PrivateZone_template.json"
 $PrivateZoneParametersFilePath = "PrivateZone_parameters.json"
-$PrivateZoneRecordsTemplateFilePath = "PrivateZoneRecords_template.json"
-$PrivateZoneRecordsParametersFilePath = "PrivateZoneRecords_parameters.json"
 $PrivateEndpointTemplateFilePath = "PrivateEndpoint_template.json"
 $PrivateEndpointParametersFilePath = "PrivateEndpoint_parameters.json"
+$PrivateZoneGroupTemplateFilePath = "PrivateZoneGroup_template.json"
+$PrivateZoneGroupParametersFilePath = "PrivateZoneGroup_parameters.json"
 
 ## Step 2: Login your Azure account and select the target subscription
 Login-AzAccount 
@@ -594,21 +615,15 @@ $deploymentOutput = New-AzResourceGroupDeployment -Name "PrivateCosmosDbEndpoint
     -PrivateEndpointName $PrivateEndpointName
 $deploymentOutput
 
-## Step 6: Map the private endpoint to the private zone
-$networkInterface = Get-AzResource -ResourceId $deploymentOutput.Outputs.privateEndpointNetworkInterface.Value -ApiVersion "2019-04-01"
-foreach ($ipconfig in $networkInterface.properties.ipConfigurations) {
-    foreach ($fqdn in $ipconfig.properties.privateLinkConnectionProperties.fqdns) {
-        $recordName = $fqdn.split('.',2)[0]
-        $dnsZone = $fqdn.split('.',2)[1]
-        Write-Output "Deploying PrivateEndpoint DNS Record $($PrivateZoneName)/$($recordName) Template on $($resourceGroupName)"
-        New-AzResourceGroupDeployment -Name "PrivateEndpointDNSDeployment" `
-            -ResourceGroupName $ResourceGroupName `
-            -TemplateFile $PrivateZoneRecordsTemplateFilePath `
-            -TemplateParameterFile $PrivateZoneRecordsParametersFilePath `
-            -DNSRecordName "$($PrivateZoneName)/$($RecordName)" `
-            -IPAddress $ipconfig.properties.privateIPAddress
-    }
-}
+## Step 6: Create the private zone
+New-AzResourceGroupDeployment -Name "PrivateZoneGroupDeployment" `
+    -ResourceGroupName $ResourceGroupName `
+    -TemplateFile $PrivateZoneGroupTemplateFilePath `
+    -TemplateParameterFile $PrivateZoneGroupParametersFilePath `
+    -PrivateZoneName $PrivateZoneName `
+    -PrivateEndpointName $PrivateEndpointName`
+    -PrivateEndpointDnsGroupName $PrivateEndpointDnsGroupName
+
 ```
 
 ## <a name="configure-custom-dns"></a>Aangepaste DNS configureren
@@ -653,13 +668,17 @@ Wanneer u een persoonlijke koppeling met een Azure Cosmos-account via een direct
 
 ## <a name="update-a-private-endpoint-when-you-add-or-remove-a-region"></a>Een persoonlijk eind punt bijwerken wanneer u een regio toevoegt of verwijdert
 
-Tenzij u een privé-DNS-zone groep gebruikt, voegt u voor het toevoegen of verwijderen van regio's een Azure Cosmos-account toe om DNS-vermeldingen toe te voegen aan of te verwijderen uit dat account. Nadat er regio's zijn toegevoegd of verwijderd, kunt u de privé-DNS-zone van het subnet bijwerken om de toegevoegde of verwijderde DNS-vermeldingen en de bijbehorende privé-IP-adressen weer te geven.
+Als u bijvoorbeeld een Azure Cosmos-account in drie regio's implementeert: "VS-West," "centraal VS" en "Europa-west." Wanneer u een persoonlijk eind punt voor uw account maakt, worden vier privé Ip's gereserveerd in het subnet. Er is één IP-adres voor elk van de drie regio's en er is één IP-adres voor het neutraal-eind punt globaal/regio. U kunt later een nieuwe regio (bijvoorbeeld ' vs Oost ') toevoegen aan het Azure Cosmos-account. De privé-DNS-zone wordt als volgt bijgewerkt:
 
-Stel bijvoorbeeld dat u een Azure Cosmos-account in drie regio's implementeert: "VS-West," "centraal VS" en "Europa-west". Wanneer u een persoonlijk eind punt voor uw account maakt, worden vier privé Ip's gereserveerd in het subnet. Er is één IP-adres voor elk van de drie regio's en er is één IP-adres voor het neutraal-eind punt globaal/regio.
+* **Als de privé-DNS-zone groep wordt gebruikt:**
 
-U kunt later een nieuwe regio (bijvoorbeeld ' vs Oost ') toevoegen aan het Azure Cosmos-account. Nadat u de nieuwe regio hebt toegevoegd, moet u een bijbehorende DNS-record toevoegen aan uw privé-DNS-zone of uw aangepaste DNS.
+  Als u een privé-DNS-zone groep gebruikt, wordt de privé-DNS-zone automatisch bijgewerkt wanneer het persoonlijke eind punt wordt bijgewerkt. In het vorige voor beeld, na het toevoegen van een nieuwe regio, wordt de privé-DNS-zone automatisch bijgewerkt.
 
-U kunt dezelfde stappen gebruiken wanneer u een regio verwijdert. Nadat u de regio hebt verwijderd, moet u de bijbehorende DNS-record verwijderen uit uw privé-DNS-zone of uw aangepaste DNS.
+* **Als de privé-DNS-zone groep niet wordt gebruikt:**
+
+  Als u geen privé-DNS-zone groep gebruikt, moet u voor het toevoegen of verwijderen van regio's een Azure Cosmos-account gebruiken om DNS-vermeldingen voor dat account toe te voegen. Nadat er regio's zijn toegevoegd of verwijderd, kunt u de privé-DNS-zone van het subnet bijwerken om de toegevoegde of verwijderde DNS-vermeldingen en de bijbehorende privé-IP-adressen weer te geven.
+
+  In het vorige voor beeld, nadat u de nieuwe regio hebt toegevoegd, moet u een bijbehorende DNS-record toevoegen aan uw privé-DNS-zone of uw aangepaste DNS. U kunt dezelfde stappen gebruiken wanneer u een regio verwijdert. Nadat u de regio hebt verwijderd, moet u de bijbehorende DNS-record verwijderen uit uw privé-DNS-zone of uw aangepaste DNS.
 
 ## <a name="current-limitations"></a>Huidige beperkingen
 

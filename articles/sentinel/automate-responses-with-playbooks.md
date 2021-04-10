@@ -16,10 +16,10 @@ ms.topic: conceptual
 ms.date: 03/17/2021
 ms.author: yelevin
 ms.openlocfilehash: 0158c9f5b9debf0c47978e816951e25634621645
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104609361"
 ---
 # <a name="automate-threat-response-with-playbooks-in-azure-sentinel"></a>Bedreigings reacties automatiseren met playbooks in azure Sentinel
@@ -81,7 +81,7 @@ Azure Logic Apps communiceert met andere systemen en services met behulp van con
 - Met de rol **Azure Sentinel responder** kunt u hand matig een Playbook uitvoeren.
 - Met de **rol Inzender van Azure Sentinel Automation** kunt u playbooks uitvoeren. De puntkomma wordt niet gebruikt voor andere doeleinden.
 
-#### <a name="learn-more"></a>Meer informatie
+#### <a name="learn-more"></a>Lees meer
 
 - Meer [informatie over Azure-rollen in azure Logic apps](../logic-apps/logic-apps-securing-a-logic-app.md#access-to-logic-app-operations).
 - Meer [informatie over Azure-rollen in azure Sentinel](roles.md).

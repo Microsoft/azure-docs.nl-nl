@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c2f3d1d47bd26167253296f06af5470818760850
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a532ae9485efa9571137130d32ba0827728e8094
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99257977"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106166867"
 ---
 # <a name="wildcard-applications-in-the-azure-active-directory-application-proxy"></a>Joker tekens voor toepassingen in de Azure Active Directory toepassings proxy
 
@@ -68,11 +68,23 @@ Uit veiligheids overwegingen is dit een hard vereiste en worden geen joker teken
 
 ### <a name="dns-updates"></a>DNS-updates
 
-Wanneer u aangepaste domeinen gebruikt, moet u een DNS-vermelding maken met een CNAME-record voor de externe URL (bijvoorbeeld  `*.adventure-works.com` ) die verwijst naar de externe URL van het eind punt van de toepassings proxy. Voor Joker teken toepassingen moet de CNAME-record verwijzen naar de relevante externe Url's:
+Wanneer u aangepaste domeinen gebruikt, moet u een DNS-vermelding maken met een CNAME-record voor de externe URL (bijvoorbeeld  `*.adventure-works.com` ) die verwijst naar de externe URL van het eind punt van de toepassings proxy. Voor Joker teken toepassingen moet de CNAME-record verwijzen naar de relevante externe URL:
 
 > `<yourAADTenantId>.tenant.runtime.msappproxy.net`
 
 Als u wilt controleren of u de CNAME juist hebt geconfigureerd, kunt u [nslookup](/windows-server/administration/windows-commands/nslookup) gebruiken op een van de doel eindpunten, bijvoorbeeld `expenses.adventure-works.com` .  Uw antwoord moet de reeds vermelde alias ( `<yourAADTenantId>.tenant.runtime.msappproxy.net` ) bevatten.
+
+### <a name="using-connector-groups-assigned-to-an-app-proxy-cloud-service-region-other-than-the-default-region"></a>Connector groepen gebruiken die zijn toegewezen aan de Cloud service regio van een app-proxy, behalve de standaard regio
+Als u connectors hebt geïnstalleerd in regio's die verschillen van de standaard-Tenant regio, kan het nuttig zijn om te wijzigen in welke regio uw connector groep is geoptimaliseerd voor het verbeteren van de prestaties die toegang hebben tot deze toepassingen. Zie voor meer informatie [connector groepen optimaliseren voor het gebruik van de dichtstbijzijnde Cloud service van de toepassings proxy](application-proxy-network-topology.md#optimize-connector-groups-to-use-closest-application-proxy-cloud-service-preview).
+ 
+Als de connector groep die is toegewezen aan de toepassing voor joker tekens een **andere regio dan uw standaard regio** gebruikt, moet u de CNAME-record bijwerken zodat deze verwijst naar een regionale specifieke externe URL. Gebruik de volgende tabel om de relevante URL te bepalen:
+
+| Toegewezen regio connector | Externe URL |
+| ---   | ---         |
+| Azië | `<yourAADTenantId>.asia.tenant.runtime.msappproxy.net`|
+| Australië  | `<yourAADTenantId>.aus.tenant.runtime.msappproxy.net` |
+| Europa  | `<yourAADTenantId>.eur.tenant.runtime.msappproxy.net`|
+| Noord-Amerika  | `<yourAADTenantId>.nam.tenant.runtime.msappproxy.net` |
 
 ## <a name="considerations"></a>Overwegingen
 

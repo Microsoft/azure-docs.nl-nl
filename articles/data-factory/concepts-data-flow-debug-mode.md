@@ -37,17 +37,17 @@ In de meeste gevallen is het een goed idee om uw gegevens stromen te bouwen in d
 > [!NOTE]
 > Elke debug-sessie die een gebruiker start vanuit de gebruikers interface van de ADF-browser, is een nieuwe sessie met een eigen Spark-cluster. U kunt de weer gave controle voor debug-sessies hierboven gebruiken voor het weer geven en beheren van debug-sessies per Factory. Er worden kosten in rekening gebracht voor elk uur dat elke foutopsporingssessie wordt uitgevoerd, inclusief de TTL-tijd.
 
-## <a name="cluster-status"></a>De clusterstatus
+## <a name="cluster-status&quot;></a>De clusterstatus
 
 De cluster status indicator boven aan het ontwerp oppervlak wordt groen wanneer het cluster gereed is voor fout opsporing. Als uw cluster al warm is, wordt de groene indicator bijna onmiddellijk weer gegeven. Als uw cluster niet al wordt uitgevoerd op het moment dat u de foutopsporingsmodus hebt geactiveerd, wordt het in het Spark-cluster koud opgestart. De indicator wordt gedraaid tot de omgeving gereed is voor interactieve fout opsporing.
 
 Wanneer u klaar bent met de fout opsporing, schakelt u de schakel optie voor fout opsporing uit zodat uw Spark-cluster kan worden beëindigd en worden er geen kosten in rekening gebracht voor debug-activiteiten.
 
-## <a name="debug-settings"></a>Instellingen voor fout opsporing
+## <a name=&quot;debug-settings&quot;></a>Instellingen voor fout opsporing
 
 Wanneer u de foutopsporingsmodus inschakelt, kunt u de weer gave van gegevens in een gegevens stroom bewerken. Instellingen voor fout opsporing kunnen worden bewerkt door te klikken op instellingen voor fout opsporing op de werk balk gegevensstroom canvas. U kunt de rijlimiet of de bestands bron selecteren die u voor elk van uw bron transformaties wilt gebruiken. De limieten voor rijen in deze instelling gelden alleen voor de huidige foutopsporingssessie. U kunt ook de gekoppelde staging-service selecteren die moet worden gebruikt voor een Azure Synapse Analytics-bron. 
 
-![Instellingen voor fout opsporing](media/data-flow/debug-settings.png "Instellingen voor fout opsporing")
+![Instellingen voor fout opsporing](media/data-flow/debug-settings.png &quot;Instellingen voor fout opsporing")
 
 Als u para meters hebt in uw gegevens stroom of een van de data sets waarnaar wordt verwezen, kunt u opgeven welke waarden moeten worden gebruikt tijdens de fout opsporing door het tabblad **para meters** te selecteren.
 

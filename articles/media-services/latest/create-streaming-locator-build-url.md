@@ -12,12 +12,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d2ecfb5a58641938062166bcd7c61a7d91764a3f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 480b8ef401387863693bc88c3d508ce296636c93
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101093477"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106107584"
 ---
 # <a name="create-a-streaming-locator-and-build-urls"></a>Een streaming-locator maken en URL's bouwen
 
@@ -29,7 +29,7 @@ In dit artikel wordt beschreven hoe u een streaming-Locator maakt en een streami
 
 ## <a name="prerequisite"></a>Vereiste
 
-Voor beeld van [dynamische verpakking](dynamic-packaging-overview.md)
+Voor beeld van [dynamische verpakking](encode-dynamic-packaging-concept.md)
 
 ## <a name="java"></a>Java
 
@@ -165,10 +165,10 @@ Bekijk het volledige code voorbeeld: [EncodingWithMESPredefinedPreset](https://g
 
 ## <a name="see-also"></a>Zie ook
 
-* [Filters maken met .NET](filters-dynamic-manifest-dotnet-howto.md)
+* [Filters maken met .NET](filters-dynamic-manifest-dotnet-how-to.md)
 * [Filters maken met REST](filters-dynamic-manifest-rest-howto.md)
-* [Filters maken met CLI](filters-dynamic-manifest-cli-howto.md)
+* [Filters maken met CLI](filters-dynamic-manifest-cli-how-to.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Bescherm uw inhoud met DRM](protect-with-drm.md).
+[Bescherm uw inhoud met DRM](drm-protect-with-drm-tutorial.md).

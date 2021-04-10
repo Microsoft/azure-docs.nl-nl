@@ -11,12 +11,12 @@ services: iot-edge
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: cc6d7491d9c38f1ddf4aba2adecad4aaee3c344b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0d36a51865f3ed4a093998b16aaa174432c5308a
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103489559"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106275648"
 ---
 # <a name="common-issues-and-resolutions-for-azure-iot-edge"></a>Veelvoorkomende problemen en oplossingen voor Azure IoT Edge
 
@@ -87,6 +87,8 @@ Geef de DNS-server voor uw omgeving op in de instellingen van de container-engin
 
 In het bovenstaande voor beeld wordt de DNS-server ingesteld op een openbaar toegankelijke DNS-service. Als het edge-apparaat geen toegang kan krijgen tot dit IP-adres in de omgeving, vervangt u het door de DNS-server die toegankelijk is.
 
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
 Plaats `daemon.json` op de juiste locatie voor uw platform:
 
 | Platform | Locatie |
@@ -102,6 +104,24 @@ Start de container-engine opnieuw op om de updates van kracht te laten worden.
 | --------- | -------- |
 | Linux | `sudo systemctl restart docker` |
 | Windows (admin Power shell) | `Restart-Service iotedge-moby -Force` |
+
+:::moniker-end
+<!-- end 1.1 -->
+
+<!-- 1.2 -->
+:::moniker range=">=iotedge-2020-11"
+Plaats `daemon.json` in de `/etc/docker` map op het apparaat.
+
+Als de locatie al een `daemon.json` bestand bevat, voegt u de **DNS-** sleutel hieraan toe en slaat u het bestand op.
+
+Start de container-engine opnieuw op om de updates van kracht te laten worden.
+
+```bash
+sudo systemctl restart docker
+```
+
+:::moniker-end
+<!-- end 1.2 -->
 
 **Optie 2: DNS-server instellen in IoT Edge-implementatie per module**
 
@@ -275,6 +295,9 @@ Wanneer u deze fout ziet, kunt u deze oplossen door de DNS-naam van de virtuele 
 :::moniker-end
 <!-- end 1.2 -->
 
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
+
 ## <a name="cant-get-the-iot-edge-daemon-logs-on-windows"></a>Kan de IoT Edge daemon-logboeken niet ophalen in Windows
 
 **Waargenomen gedrag:**
@@ -297,6 +320,9 @@ Windows Registry Editor Version 5.00
 "EventMessageFile"="C:\\ProgramData\\iotedge\\iotedged.exe"
 "TypesSupported"=dword:00000007
 ```
+
+:::moniker-end
+<!-- end 1.1 -->
 
 ## <a name="stability-issues-on-smaller-devices"></a>Stabiliteits problemen op kleinere apparaten
 
@@ -388,6 +414,7 @@ IoT Edge apparaten achter een gateway halen hun module-installatie kopieën van 
 Zorg ervoor dat het bovenliggende IoT Edge apparaat binnenkomende aanvragen kan ontvangen van het onderliggende IoT Edge-apparaat. Open netwerk verkeer op de poorten 443 en 6617 voor aanvragen die afkomstig zijn van het onderliggende apparaat.
 
 :::moniker-end
+<!-- end 1.2 -->
 
 ## <a name="next-steps"></a>Volgende stappen
 

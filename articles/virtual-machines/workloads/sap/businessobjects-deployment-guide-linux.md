@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 10/05/2020
 ms.author: depadia
 ms.openlocfilehash: b94e1f82409da3329eb6d978fa2ae0222928cd97
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102505933"
 ---
 # <a name="sap-businessobjects-bi-platform-deployment-guide-for-linux-on-azure"></a>Handleiding voor SAP BusinessObjects BI-platformimplementatie voor Linux in Azure
@@ -36,7 +36,7 @@ In dit voor beeld wordt onder de product versie en de indeling van het bestands 
 - Azure Database for MySQL (versie: 8.0.15)
 - MySQL C API-connector-libmysqlclient (versie: 6.1.11)
 
-| Bestandssysteem        | Beschrijving                                                                                                               | Grootte (GB)             | Eigenaar  | Groep  | Storage                    |
+| Bestandssysteem        | Description                                                                                                               | Grootte (GB)             | Eigenaar  | Groep  | Storage                    |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------|-----------------------|--------|--------|----------------------------|
 | /usr/sap           | Het bestands systeem voor de installatie van het SAP BOBI-exemplaar, de standaard Tomcat-webtoepassing en database Stuur programma's (indien nodig) | SAP-formaat richtlijnen | bl1adm | sapsys | Beheerde Premium-schijf-SSD |
 | /usr/sap/frsinput  | De koppelings Directory is voor de gedeelde bestanden op alle BOBI-hosts die worden gebruikt als opslag plaats Directory voor invoer bestanden  | Bedrijfs behoeften         | bl1adm | sapsys | Azure NetApp Files         |

@@ -10,12 +10,12 @@ ms.date: 07/15/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: a74860b7adf4dade5aedc71a4960595cbe55eaf0
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: c89e42736f5b8de65ed93ccb57f8d034d4240bc8
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "95995298"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105729079"
 ---
 # <a name="enable-and-manage-soft-delete-for-blobs"></a>Zacht verwijderen voor blobs inschakelen en beheren
 
@@ -146,7 +146,7 @@ Als u blobs wilt herstellen die per ongeluk zijn verwijderd, roept u verwijderen
 
 Als u wilt herstellen naar een specifieke BLOB-versie, roept u eerst undelete aan voor een BLOB en kopieert u vervolgens de gewenste moment opname over de blob. In het volgende voor beeld wordt een blok-BLOB hersteld naar de meest recent gegenereerde moment opname:
 
-:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/DataProtection.cs" id="Snippet_RecoverSpecificBlobVersion":::
+:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/DataProtection.cs" id="Snippet_RecoverSpecificBlobSnapshot":::
 
 # <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
 

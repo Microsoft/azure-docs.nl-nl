@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/17/2020
-ms.openlocfilehash: b2f91f0036a86151588c8c138dac5421ad54e18e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: db9ad08f9a939a22e1e0e1cfba0537e6356394ed
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104586417"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105731532"
 ---
 # <a name="install-the-azure-monitor-agent-preview"></a>De Azure Monitor-agent installeren (preview-versie)
 In dit artikel vindt u de verschillende opties die momenteel beschikbaar zijn voor het installeren van de [Azure monitor-agent](azure-monitor-agent-overview.md) op virtuele machines van Azure en Azure Arc-servers en de opties voor het maken [van koppelingen met regels voor gegevens verzameling](data-collection-rule-azure-monitor-agent.md) waarmee wordt gedefinieerd welke gegevens de agent moet verzamelen.
@@ -20,6 +20,9 @@ De volgende vereisten zijn vereist voordat u de Azure Monitor-Agent installeert.
 
 - De [beheerde systeem identiteit](../../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md) moet zijn ingeschakeld op virtuele machines van Azure. Dit is niet vereist voor servers met Azure Arc ingeschakeld. De systeem identiteit wordt automatisch ingeschakeld als de agent wordt geïnstalleerd als onderdeel van het proces voor het [maken en toewijzen van een regel voor het verzamelen van gegevens met behulp van de Azure Portal](#install-with-azure-portal).
 - Het [AzureResourceManager-service label](../../virtual-network/service-tags-overview.md) moet zijn ingeschakeld in het virtuele netwerk van de virtuele machine.
+
+> [!IMPORTANT]
+> De Azure Monitor-agent biedt momenteel geen ondersteuning voor netwerk proxy's.
 
 ## <a name="virtual-machine-extension-details"></a>Details van extensie van virtuele machine
 De Azure Monitor-agent wordt geïmplementeerd als een [Azure VM-extensie](../../virtual-machines/extensions/overview.md) met de details in de volgende tabel. Het kan worden geïnstalleerd met behulp van een van de methoden voor het installeren van extensies voor virtuele machines, waaronder de modules die in dit artikel worden beschreven.

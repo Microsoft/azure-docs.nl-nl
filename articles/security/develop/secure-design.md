@@ -10,15 +10,12 @@ ms.service: security
 ms.subservice: security-develop
 services: azure
 ms.assetid: 521180dc-2cc9-43f1-ae87-2701de7ca6b8
-ms.devlang: na
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.openlocfilehash: 743412b7602e5781911cdf190e41a5ee15bfddd4
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 9e5246edd2d6490e823bacbdfff0f60ef553878b
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96487674"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105729130"
 ---
 # <a name="design-secure-applications-on-azure"></a>Veilige toepassingen ontwerpen in azure
 In dit artikel bieden we beveiligings activiteiten en-controles waarmee u rekening moet houden bij het ontwerpen van toepassingen voor de Cloud. Trainings bronnen samen met beveiligings vragen en concepten die u kunt overwegen tijdens de vereisten en ontwerp fasen van micro soft [Security Development Lifecycle (SDL)](/previous-versions/windows/desktop/cc307891(v=msdn.10)) , worden gedekt. Het doel is om u te helpen bij het definiëren van activiteiten en Azure-Services die u kunt gebruiken om een veiligere toepassing te ontwerpen.
@@ -153,7 +150,7 @@ Het ontwerpen van het ontwerp van de toepassing en het opsommen van [STRIDE](htt
 
 | Bedreiging | Beveiligings eigenschap | Potentieel beperking van het Azure-platform |
 | ---------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Adresvervalsing (spoofing)               | Verificatie        | [HTTPS-verbindingen vereisen](/aspnet/core/security/enforcing-ssl?tabs=visual-studio&view=aspnetcore-2.1). |
+| Adresvervalsing (spoofing)               | Verificatie        | [HTTPS-verbindingen vereisen](/aspnet/core/security/enforcing-ssl?tabs=visual-studio). |
 | Manipulatie              | Integriteit             | SSL/TLS-certificaten valideren. Toepassingen die gebruikmaken van SSL/TLS moeten de X. 509-certificaten van de entiteiten waarmee ze verbinding maken, volledig controleren. Gebruik Azure Key Vault certificaten om [uw x509-certificaten te beheren](../../key-vault/general/about-keys-secrets-certificates.md). |
 | Weerlegbaarheid            | Niet-weerlegbaarheid       | [Bewaking en diagnose](/azure/architecture/best-practices/monitoring)van Azure inschakelen.|
 | Openbaarmaking van informatie | Vertrouwelijkheid       | Versleutel gevoelige gegevens in [rust](../fundamentals/encryption-atrest.md) en [onderweg](../fundamentals/data-encryption-best-practices.md#protect-data-in-transit). |
@@ -233,7 +230,7 @@ Implementeer just *-in-time* -toegang (JIT) om de belichtings tijd van bevoegdhe
 
 ### <a name="require-re-authentication-for-important-transactions"></a>Nieuwe verificatie vereisen voor belang rijke trans acties
 
-[Cross-site-aanvraag vervalsing](/aspnet/core/security/anti-request-forgery?view=aspnetcore-2.1) (ook wel bekend als *XSRF* of *CSRF*) is een aanval voor webhostende apps waarin een schadelijke Web-App de interactie beïnvloedt tussen een client browser en een web-app die die browser vertrouwt. Aanvallen op aanvraag vervalsing op meerdere sites zijn mogelijk omdat webbrowsers sommige typen verificatie tokens automatisch laten verzenden met elke aanvraag naar een website.
+[Cross-site-aanvraag vervalsing](/aspnet/core/security/anti-request-forgery) (ook wel bekend als *XSRF* of *CSRF*) is een aanval voor webhostende apps waarin een schadelijke Web-App de interactie beïnvloedt tussen een client browser en een web-app die die browser vertrouwt. Aanvallen op aanvraag vervalsing op meerdere sites zijn mogelijk omdat webbrowsers sommige typen verificatie tokens automatisch laten verzenden met elke aanvraag naar een website.
 Deze vorm van exploitatie is ook bekend als een aanval of *sessie* met *één klik* , omdat de aanval de eerder geauthenticeerde sessie van de gebruiker benut.
 
 De beste manier om dit soort aanvallen te tegen komen, is door de gebruiker te vragen om iets dat alleen de gebruiker kan opgeven vóór elke belang rijke trans actie, zoals een aankoop, het deactiveren van accounts of het wijzigen van een wacht woord. U kunt de gebruiker vragen om het wacht woord opnieuw in te voeren, een CAPTCHA te volt ooien of een geheim token in te dienen dat alleen de gebruiker zou hebben. De meest voorkomende benadering is het geheime token.
@@ -303,7 +300,7 @@ Zorg ervoor dat:
 
 ### <a name="use-logging-and-alerting"></a>Logboek registratie en waarschuwingen gebruiken
 
-[Registreer](/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1) uw beveiligings problemen voor beveiligings onderzoeken en activeer waarschuwingen over problemen om ervoor te zorgen dat mensen tijdig op de hoogte zijn van problemen. Schakel controle en logboek registratie in voor alle onderdelen. In controle logboeken moet de gebruikers context worden vastgelegd en alle belang rijke gebeurtenissen worden geïdentificeerd.
+[Registreer](/aspnet/core/fundamentals/logging/) uw beveiligings problemen voor beveiligings onderzoeken en activeer waarschuwingen over problemen om ervoor te zorgen dat mensen tijdig op de hoogte zijn van problemen. Schakel controle en logboek registratie in voor alle onderdelen. In controle logboeken moet de gebruikers context worden vastgelegd en alle belang rijke gebeurtenissen worden geïdentificeerd.
 
 Controleer of u geen gevoelige gegevens in het logboek registreert die een gebruiker naar uw site verzendt. Voor beelden van gevoelige gegevens zijn:
 

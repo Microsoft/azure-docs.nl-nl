@@ -10,10 +10,10 @@ ms.topic: include
 ms.date: 12/06/2020
 ms.author: pafarley
 ms.openlocfilehash: 1a360a19da8006a8ab6d918560f1b1d566fdd66d
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105105361"
 ---
 Aan de slag met gezichtsherkenning met behulp van de Face-REST API. De Face-service biedt u toegang tot geavanceerde algoritmen voor het detecteren en herkennen van menselijke gezichten in afbeeldingen.

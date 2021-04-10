@@ -4,10 +4,10 @@ description: Sens oren voeren automatisch grondige pakket detectie uit voor IT e
 ms.date: 12/07/2020
 ms.topic: how-to
 ms.openlocfilehash: b80ef4a4a1fca7383da80fda6fdf42831913f2bd
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104784438"
 ---
 # <a name="control-what-traffic-is-monitored"></a>Controleren welk verkeer wordt bewaakt

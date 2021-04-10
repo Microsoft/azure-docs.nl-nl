@@ -7,10 +7,10 @@ ms.service: media-services
 ms.topic: error-reference
 ms.date: 04/20/2020
 ms.openlocfilehash: 89f063ab50cfd880552e80a77ba798e4d06de5b3
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101709577"
 ---
 # <a name="error-codes"></a>Foutcodes #
@@ -44,7 +44,7 @@ Beschrijf het gebied van de fout.
 Geef een beschrijving van de fout, bits 27-20 biedt een hoog niveau, bits 19-0 meer details, indien beschikbaar.
 
 
-| amp. error code. naam | Codes, bits [27-0] (28 bits) | Beschrijving |
+| amp. error code. naam | Codes, bits [27-0] (28 bits) | Description |
 |---|---:|---|
 | **MEDIA_ERR_ABORTED-fouten bereik (0x0100000-0x01FFFFF)** | | |
 | abortedErrUnknown | 0x0100000 | Algemene Afbrekings fout |

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 03/08/2021
 ms.topic: conceptual
-ms.openlocfilehash: ce60c773626d951062de3cc830b898e3b875f3cb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 676e5f03c8d0085a4d041662a80c63d385071919
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102485534"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106166714"
 ---
 # <a name="manage-pre-scripts-and-post-scripts"></a>Scripts voorafgaand aan de back-up en scripts die erop volgen, beheren
 
@@ -147,7 +147,7 @@ Pre-tasks en post-tasks worden uitgevoerd als runbooks en worden niet systeem ei
 * Een uitvoeren als-account
 * Een runbook dat u wilt uitvoeren
 
-Als u wilt communiceren met Azure-machines, moet u de cmdlet [invoke-AzVMRunCommand](/powershell/module/az.compute/invoke-azvmruncommand) gebruiken om te communiceren met uw Azure-vm's. Zie voor een voor beeld van hoe u dit doet, het runbook [-voor beeld updatebeheer: script uitvoeren met de opdracht Run](https://github.com/azureautomation/update-management-run-script-with-run-command).
+Als u wilt communiceren met Azure-machines, moet u de cmdlet [invoke-AzVMRunCommand](/powershell/module/az.compute/invoke-azvmruncommand) gebruiken om te communiceren met uw Azure-vm's. Zie voor een voor beeld van hoe u dit doet, het runbook [-voor beeld updatebeheer script uitvoeren met de opdracht Run](https://github.com/azureautomation/update-management-run-script-with-run-command).
 
 ### <a name="interact-with-non-azure-machines"></a>Communiceren met niet-Azure-machines
 
@@ -158,7 +158,7 @@ Taken en taken die na uitvoering worden uitgevoerd in de Azure-context en die ge
 * Een runbook dat u lokaal wilt uitvoeren
 * Een bovenliggend runbook
 
-Een bovenliggend runbook wordt uitgevoerd in de Azure-context om te communiceren met niet-Azure-machines. Met dit runbook wordt een onderliggend runbook aangeroepen met de cmdlet [Start-AzAutomationRunbook](/powershell/module/Az.Automation/Start-AzAutomationRunbook) . U moet de `RunOn` para meter opgeven en de naam opgeven van de Hybrid Runbook worker waarmee het script moet worden uitgevoerd. Zie het runbook-voor beeld [updatebeheer: script lokaal uitvoeren](https://github.com/azureautomation/update-management-run-script-locally).
+Een bovenliggend runbook wordt uitgevoerd in de Azure-context om te communiceren met niet-Azure-machines. Met dit runbook wordt een onderliggend runbook aangeroepen met de cmdlet [Start-AzAutomationRunbook](/powershell/module/Az.Automation/Start-AzAutomationRunbook) . U moet de `RunOn` para meter opgeven en de naam opgeven van de Hybrid Runbook worker waarmee het script moet worden uitgevoerd. Zie het runbook-voor beeld [updatebeheer script lokaal uitvoeren](https://github.com/azureautomation/update-management-run-script-locally).
 
 ## <a name="abort-patch-deployment"></a>Patch implementatie afbreken
 
@@ -238,9 +238,9 @@ Write-Output $context
 #Example: How to create and write to a variable using the pre-script:
 <#
 #Create variable named after this run so it can be retrieved
-New-AzAutomationVariable -ResourceGroupName $ResourceGroup –AutomationAccountName $AutomationAccount –Name $runId -Value "" –Encrypted $false
+New-AzAutomationVariable -ResourceGroupName $ResourceGroup -AutomationAccountName $AutomationAccount -Name $runId -Value "" -Encrypted $false
 #Set value of variable
-Set-AutomationVariable –Name $runId -Value $vmIds
+Set-AutomationVariable -Name $runId -Value $vmIds
 #>
 
 #Example: How to retrieve information from a variable set during the pre-script

@@ -4,10 +4,10 @@ description: Antwoorden vinden op veelgestelde vragen over Azure Disk Backup
 ms.topic: conceptual
 ms.date: 01/07/2021
 ms.openlocfilehash: 7729bc1120fc0e2f4361739a8e05f3a82ccb4268
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105107309"
 ---
 # <a name="frequently-asked-questions-about-azure-disk-backup"></a>Veelgestelde vragen over back-ups van Azure-schijven

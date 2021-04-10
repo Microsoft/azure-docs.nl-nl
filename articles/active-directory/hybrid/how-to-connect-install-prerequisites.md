@@ -16,12 +16,12 @@ ms.date: 02/16/2021
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e758933b80efbf36dc263b7bd7d2d3c45a59a9f8
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 108f81be678eb666b6f79ebbecc93f7bc88dc1d6
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102426787"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106107908"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Vereisten voor Azure AD Connect
 In dit artikel worden de vereisten en de hardwarevereisten voor Azure Active Directory (Azure AD)-verbinding beschreven.
@@ -37,7 +37,7 @@ Voordat u Azure AD Connect installeert, zijn er enkele dingen die u nodig hebt.
 * Een Azure AD-Tenant staat standaard 50.000-objecten toe. Wanneer u uw domein verifieert, neemt de limiet toe tot 300.000 objecten. Als u nog meer objecten in azure AD nodig hebt, kunt u een ondersteunings aanvraag openen om de limiet nog verder te verg root. Als u meer dan 500.000 objecten nodig hebt, hebt u een licentie nodig, zoals Microsoft 365, Azure AD Premium of Enterprise Mobility + Security.
 
 ### <a name="prepare-your-on-premises-data"></a>Uw on-premises gegevens voorbereiden
-* Gebruik [IdFix](https://support.office.com/article/Install-and-run-the-Office-365-IdFix-tool-f4bd2439-3e41-4169-99f6-3fabdfa326ac) om fouten te identificeren, zoals duplicaten en opmaak problemen in uw Directory voordat u synchroniseert met Azure AD en Microsoft 365.
+* Gebruik [IdFix](https://github.com/Microsoft/idfix) om fouten te identificeren, zoals duplicaten en opmaak problemen in uw Directory voordat u [synchroniseert met Azure AD en Microsoft 365](https://support.office.com/article/Install-and-run-the-Office-365-IdFix-tool-f4bd2439-3e41-4169-99f6-3fabdfa326ac).
 * Bekijk de [optionele synchronisatie functies die u in azure AD kunt inschakelen](how-to-connect-syncservice-features.md)en bepaal welke functies u moet inschakelen.
 
 ### <a name="on-premises-active-directory"></a>On-premises Active Directory

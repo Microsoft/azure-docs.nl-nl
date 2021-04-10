@@ -3,12 +3,12 @@ title: Persoonsgegevens
 description: Meer informatie over het beheren van persoonlijke gegevens die zijn gekoppeld aan Azure Resource Manager bewerkingen.
 ms.topic: conceptual
 ms.date: 05/14/2018
-ms.openlocfilehash: 1e531f7cd9992536bcc191637111761c5bbdefa2
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 2f616fa58c53a7f666978bd1db60d10a9266e342
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97693697"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105934203"
 ---
 # <a name="manage-personal-data-associated-with-azure-resource-manager"></a>Persoonlijke gegevens beheren die zijn gekoppeld aan Azure Resource Manager
 
@@ -24,13 +24,13 @@ Voor implementaties worden in Resource Manager parameter waarden en status beric
 
 Als u **implementaties** in de geschiedenis wilt weer geven, gebruikt u:
 
-* [Lijst op resource groep](/rest/api/resources/deployments/listbyresourcegroup)
+* [Lijst op resource groep](/rest/api/resources/resources/deployments/listbyresourcegroup)
 * [Get-AzResourceGroupDeployment](/powershell/module/az.resources/Get-AzResourceGroupDeployment)
 * [AZ-implementatie groeps lijst](/cli/azure/deployment/group#az_deployment_group_list)
 
 Als u **implementaties** uit de geschiedenis wilt verwijderen, gebruikt u:
 
-* [Verwijderen](/rest/api/resources/deployments/delete)
+* [Verwijderen](/rest/api/resources/resources/deployments/delete)
 * [Remove-AzResourceGroupDeployment](/powershell/module/az.resources/Remove-AzResourceGroupDeployment)
 * [AZ-implementatie groep verwijderen](/cli/azure/deployment/group#az_deployment_group_delete)
 
@@ -40,13 +40,13 @@ De naam van de resource groep blijft behouden totdat u de resource groep verwijd
 
 Als u **resource groepen** wilt weer geven, gebruikt u:
 
-* [List](/rest/api/resources/resourcegroups/list)
+* [List](/rest/api/resources/resources/resourcegroups/list)
 * [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup)
 * [AZ Group List](/cli/azure/group#az-group-list)
 
 Als u **resource groepen** wilt verwijderen, gebruikt u:
 
-* [Verwijderen](/rest/api/resources/resourcegroups/delete)
+* [Verwijderen](/rest/api/resources/resources/resourcegroups/delete)
 * [Remove-AzResourceGroup](/powershell/module/az.resources/Remove-AzResourceGroup)
 * [az group delete](/cli/azure/group#az-group-delete)
 
@@ -56,13 +56,13 @@ Tags namen en waarden blijven behouden totdat u de tag verwijdert of wijzigt. Al
 
 Als u **Tags** wilt weer geven, gebruikt u:
 
-* [List](/rest/api/resources/tags/list)
+* [List](/rest/api/resources/resources/tags/list)
 * [Get-AzTag](/powershell/module/az.resources/Get-AzTag)
 * [AZ-label lijst](/cli/azure/tag#az-tag-list)
 
 Als u **Tags** wilt verwijderen, gebruikt u:
 
-* [Verwijderen](/rest/api/resources/tags/delete)
+* [Verwijderen](/rest/api/resources/resources/tags/delete)
 * [Remove-AzTag](/powershell/module/az.resources/Remove-AzTag)
 * [AZ tag Delete](/cli/azure/tag#az-tag-delete)
 

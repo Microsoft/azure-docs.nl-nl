@@ -4,12 +4,12 @@ description: Knooppunt typen, duurzaamheid, betrouw baarheid en andere zaken waa
 ms.topic: conceptual
 ms.date: 05/21/2020
 ms.author: pepogors
-ms.openlocfilehash: b3361337bb0cf60e47efe198aad7aa8cc20ae7b3
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 9268dfef15d8302eb31cc1b649c7fd713aab6721
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101714932"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105732581"
 ---
 # <a name="service-fabric-cluster-capacity-planning-considerations"></a>Overwegingen bij het plannen van Service Fabric cluster capaciteit
 
@@ -111,7 +111,7 @@ Volg deze aanbevelingen voor het beheren van knooppunt typen met Silver of Gold 
 * Behoud een minimum aantal van vijf knoop punten voor een schaalset voor virtuele machines met duurzaamheids niveau goud of zilver ingeschakeld. In uw cluster wordt de fout status ingevoerd als u onder deze drempel waarde schaalt en u moet de status () hand matig opschonen `Remove-ServiceFabricNodeState` voor de verwijderde knoop punten.
 * Elke schaalset voor virtuele machines met duurzaamheids niveau zilver of goud moet worden toegewezen aan het eigen knooppunt type in het Service Fabric cluster. Als u meerdere virtuele-machine schaal sets aan één knooppunt type toewijst, kan de coördinatie tussen het Service Fabric cluster en de Azure-infra structuur niet goed werken.
 * Verwijder geen wille keurige VM-exemplaren, gebruik altijd schaal sets voor virtuele machines in functie. Als u wille keurige VM-exemplaren verwijdert, is het mogelijk dat er onbalansen in de VM-instantie worden gemaakt over [upgrade domeinen](service-fabric-cluster-resource-manager-cluster-description.md#upgrade-domains) en [fout domeinen](service-fabric-cluster-resource-manager-cluster-description.md#fault-domains). Dit onevenwichtige kan een nadelige invloed hebben op de systeem capaciteit van de service-exemplaren/service-replica's.
-* Als u automatisch schalen gebruikt, stelt u de regels zodanig in dat er slechts één knoop punt tegelijk wordt geschaald (verwijderen van VM-exemplaren). Het omlaag schalen van meer dan één exemplaar op een keer is niet veilig.
+* Als u automatisch schalen gebruikt, stelt u de regels zodanig in dat er slechts één knoop punt tegelijk wordt geschaald (verwijderen van VM-exemplaren). Het is niet veilig om in meer dan één instantie tegelijk te schalen.
 * Als u Vm's verwijdert of ongedaan maakt voor het primaire knooppunt type, verlaagt u nooit het aantal toegewezen Vm's hieronder wat de betrouwbaarheids categorie nodig heeft. Deze bewerkingen worden voor onbepaalde tijd geblokkeerd in een schaalset met een duurzaamheids niveau van zilver of goud.
 
 ### <a name="changing-durability-levels"></a>Duurzaamheids niveaus wijzigen

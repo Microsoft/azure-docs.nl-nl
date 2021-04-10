@@ -211,6 +211,8 @@
               href: database/monitoring-with-dmvs.md
             - name: Inzicht in blokkeren en blokkeren oplossen
               href: database/understand-resolve-blocking.md
+            - name: De maximale mate van parallellisme configureren (MAXDOP)
+              href: database/configure-max-degree-of-parallelism.md
             - name: Diagnostische logboektelemetrie
               href: database/metrics-diagnostic-telemetry-logging-streaming-export-configure.md
             - name: OLTP in het geheugen

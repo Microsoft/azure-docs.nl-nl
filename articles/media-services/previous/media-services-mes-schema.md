@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 03/10/2021
 ms.author: inhenkel
 ms.openlocfilehash: f82e0c3f76dba05c3404b11e07c7130119ce0b9d
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103015655"
 ---
 # <a name="media-encoder-standard-schema"></a>Media Encoder Standard-schema
@@ -31,7 +31,7 @@ Hiermee wordt een vooraf ingestelde code ring gedefinieerd.
 
 ### <a name="elements"></a>Elementen
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **Codering** |[Codering](media-services-mes-schema.md#Encoding) |Hoofd element, geeft aan dat de invoer bronnen moeten worden gecodeerd. |
 | **Uitvoerwaarden** |[Uitvoerwaarden](media-services-mes-schema.md#Output) |Verzameling gewenste uitvoer bestanden. |
@@ -48,7 +48,7 @@ Bevat een reeks van de volgende elementen:
 
 ### <a name="elements"></a>Elementen
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **H264Video** |[H264Video](media-services-mes-schema.md#H264Video) |Instellingen voor de H. 264-code ring van de video. |
 | **AACAudio** |[AACAudio](media-services-mes-schema.md#AACAudio) |Instellingen voor AAC-code ring van audio. |
@@ -59,7 +59,7 @@ Bevat een reeks van de volgende elementen:
 ## <a name="h264video"></a><a name="H264Video"></a> H264Video
 ### <a name="elements"></a>Elementen
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **TwoPass**<br/><br/> minOccurs = "0" |**XS: Boolean** |Op dit moment wordt slechts één pass-code ring ondersteund. |
 | **KeyFrameInterval**<br/><br/> minOccurs = "0"<br/><br/> **standaard instelling = "00:00:02"** |**XS: tijd** |Bepaalt de vaste afstand tussen IDR frames in eenheden van seconden. Wordt ook wel de GOP terug-duur genoemd. Zie **SceneChangeDetection** om te bepalen of het coderings programma kan afwijken van deze waarde. |
@@ -70,7 +70,7 @@ Bevat een reeks van de volgende elementen:
 
 ### <a name="attributes"></a>Kenmerken
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **Condition** |**XS: teken reeks** | Wanneer de invoer geen video bevat, wilt u mogelijk het coderings programma dwingen om een monochroom video spoor in te voegen. Gebruik hiervoor voor waarde = "InsertBlackIfNoVideoBottomLayerOnly" (om een video te plaatsen bij alleen de laagste bitrate) of voor waarde = "InsertBlackIfNoVideo" (om een video in te voegen bij alle uitvoer bitrates). Zie [Dit](media-services-advanced-encoding-with-mes.md#no_video) artikel voor meer informatie.|
 
@@ -80,7 +80,7 @@ Standaard, als u een invoer verzendt naar het coderings programma dat alleen aud
               
 ### <a name="elements"></a>Elementen
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **H264Layer**<br/><br/> minOccurs = "0" maxOccurs = "onbegrensd" |[H264Layer](media-services-mes-schema.md#H264Layer) |Een verzameling H264-lagen. |
 
@@ -92,7 +92,7 @@ Standaard, als u een invoer verzendt naar het coderings programma dat alleen aud
 
 ### <a name="elements"></a>Elementen
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **Profiel**<br/><br/> minOccurs = "0"<br/><br/> standaard = ' auto ' |**XS: teken reeks** |Dit kan een van de volgende **XS: teken reeks** waarden zijn **: auto**, **baseline**, **Main**, **High**. |
 | **Afvlakking**<br/><br/> minOccurs = "0"<br/><br/> standaard = ' auto ' |**XS: teken reeks** | |
@@ -115,19 +115,19 @@ Standaard, als u een invoer verzendt naar het coderings programma dat alleen aud
 
 ### <a name="elements"></a>Elementen
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **Profiel**<br/><br/> minOccurs = "0"<br/><br/> standaard instelling = "AACLC" |**XS: teken reeks** |Dit kan een van de volgende waarden zijn: **AACLC**, **HEAACV1** of **HEAACV2**. |
 
 ### <a name="attributes"></a>Kenmerken
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **Condition** |**XS: teken reeks** |Geef de ' InsertSilenceIfNoAudio-waarde op als u wilt afdwingen dat het coderings programma een Asset produceert die een Silent audio-track bevat wanneer de invoer geen audio heeft.<br/><br/> Standaard, als u een invoer verzendt naar het coderings programma dat alleen video bevat en geen audio, bevat het uitvoer element alleen bestanden die alleen video gegevens bevatten. Sommige spelers kunnen dergelijke uitvoer stromen mogelijk niet verwerken. U kunt deze instelling gebruiken om ervoor te zorgen dat het coderings programma een Silent audio-track toevoegt aan de uitvoer in dat scenario. |
 
 ### <a name="groups"></a>Groepen
 
-| Naslaginformatie | Beschrijving |
+| Referentie | Description |
 | --- | --- |
 | [AudioGroup](media-services-mes-schema.md#AudioGroup)<br/><br/> minOccurs = "0" |Zie beschrijving van [AudioGroup](media-services-mes-schema.md#AudioGroup) om het juiste aantal kanalen, de sampling frequentie en de bitsnelheid te weten die voor elk profiel kunnen worden ingesteld. |
 
@@ -136,7 +136,7 @@ Zie de tabel ' Details van audiocodec ' verderop voor meer informatie over welke
 
 ### <a name="elements"></a>Elementen
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **Kanalen**<br/><br/> minOccurs = "0" |**XS: int** |Het aantal gecodeerde audio kanalen. Hier volgen geldige opties: 1, 2, 5, 6, 8.<br/><br/> Standaard waarde: 2. |
 | **SamplingRate**<br/><br/> minOccurs = "0" |**XS: int** |De steekproef frequentie van de audio, opgegeven in Hz. |
@@ -153,7 +153,7 @@ Audiocodec|Details
 ## <a name="clip"></a><a name="Clip"></a> Clip
 ### <a name="attributes"></a>Kenmerken
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **StartTime** |**XS: duration** |Hiermee geeft u de begin tijd van een presentatie op. De waarde van StartTime moet overeenkomen met de absolute tijds tempels van de invoer video. Als bijvoorbeeld het eerste frame van de invoer video een tijds tempel van 12:00:10.000 heeft, moet StartTime ten minste 12:00:10.000 of hoger zijn. |
 | **Duur** |**XS: duration** |Hiermee geeft u de duur van een presentatie op (bijvoorbeeld de weer gave van een overlay in de video). |
@@ -161,13 +161,13 @@ Audiocodec|Details
 ## <a name="output"></a><a name="Output"></a> Uitvoer
 ### <a name="attributes"></a>Kenmerken
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **Bestands** |**XS: teken reeks** |De naam van het uitvoer bestand.<br/><br/> U kunt de macro's die in de volgende tabel worden beschreven, gebruiken om de namen van de uitvoer bestanden te maken. Bijvoorbeeld:<br/><br/> **"Uitvoer": [{"FileName": "{Basenaam}*{Resolution}*{bitrate}. mp4", "Format": {"type": "MP4Format"}}]** |
 
 ### <a name="macros"></a>Schrijft
 
-| Macro | Beschrijving |
+| Macro | Description |
 | --- | --- |
 | **{Basispad}** |Als u VoD-code ring uitvoert, is {basispad} de eerste 32 tekens van de eigenschap AssetFile.Name van het primaire bestand in de invoer Asset.<br/><br/> Als het invoer element een live archief is, wordt {basispad} afgeleid van de kenmerken voor naam bijhouden in het server manifest. Als u een subclip verzendt met behulp van de TopBitrate, zoals in: "<VideoStream \> TopBitrate</VideoStream \> " en het uitvoer bestand bevat video, is {basispad} de eerste 32 tekens van de naam van de laag met de hoogste bitsnelheid.<br/><br/> Als u in plaats daarvan een subfragment verzendt met behulp van alle invoer bitrates, zoals "<VideoStream \> * </VideoStream \> " en het uitvoer bestand bevat een video, is {basispad} de eerste 32 tekens van de naam van de tracering van de bijbehorende videolaag. |
 | **Videocodec** |Wordt toegewezen aan ' H264 ' voor video en ' AAC ' voor audio. |
@@ -181,7 +181,7 @@ Audiocodec|Details
 ## <a name="video-complex-type-inherits-from-codec"></a><a name="Video"></a> Video (complex type neemt van codec over)
 ### <a name="attributes"></a>Kenmerken
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **Begin** |**XS: teken reeks** | |
 | **Stap** |**XS: teken reeks** | |
@@ -206,7 +206,7 @@ U kunt ook het gebruik van de vlag **PreserveResolutionAfterRotation** maken en 
 ## <a name="formatgroup-group"></a><a name="FormatGroup"></a> FormatGroup (groep)
 ### <a name="elements"></a>Elementen
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **BmpFormat** |**BmpFormat** | |
 | **PngFormat** |**PngFormat** | |
@@ -215,35 +215,35 @@ U kunt ook het gebruik van de vlag **PreserveResolutionAfterRotation** maken en 
 ## <a name="bmplayer"></a><a name="BmpLayer"></a> BmpLayer
 ### <a name="element"></a>Element
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **Breedte**<br/><br/> minOccurs = "0" |**XS: int** | |
 | **Hoogte**<br/><br/> minOccurs = "0" |**XS: int** | |
 
 ### <a name="attributes"></a>Kenmerken
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **Condition** |**XS: teken reeks** | |
 
 ## <a name="pnglayer"></a><a name="PngLayer"></a> PngLayer
 ### <a name="element"></a>Element
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **Breedte**<br/><br/> minOccurs = "0" |**XS: int** | |
 | **Hoogte**<br/><br/> minOccurs = "0" |**XS: int** | |
 
 ### <a name="attributes"></a>Kenmerken
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **Condition** |**XS: teken reeks** | |
 
 ## <a name="jpglayer"></a><a name="JpgLayer"></a> JpgLayer
 ### <a name="element"></a>Element
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **Breedte**<br/><br/> minOccurs = "0" |**XS: int** | |
 | **Hoogte**<br/><br/> minOccurs = "0" |**XS: int** | |
@@ -251,49 +251,49 @@ U kunt ook het gebruik van de vlag **PreserveResolutionAfterRotation** maken en 
 
 ### <a name="attributes"></a>Kenmerken
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **Condition** |**XS: teken reeks** | |
 
 ## <a name="pnglayers"></a><a name="PngLayers"></a> PngLayers
 ### <a name="elements"></a>Elementen
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **PngLayer**<br/><br/> minOccurs = "0" maxOccurs = "onbegrensd" |[PngLayer](media-services-mes-schema.md#PngLayer) | |
 
 ## <a name="bmplayers"></a><a name="BmpLayers"></a> BmpLayers
 ### <a name="elements"></a>Elementen
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **BmpLayer**<br/><br/> minOccurs = "0" maxOccurs = "onbegrensd" |[BmpLayer](media-services-mes-schema.md#BmpLayer) | |
 
 ## <a name="jpglayers"></a><a name="JpgLayers"></a> JpgLayers
 ### <a name="elements"></a>Elementen
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **JpgLayer**<br/><br/> minOccurs = "0" maxOccurs = "onbegrensd" |[JpgLayer](media-services-mes-schema.md#JpgLayer) | |
 
 ## <a name="bmpimage-complex-type-inherits-from-video"></a><a name="BmpImage"></a> BmpImage (complex type neemt uit video over)
 ### <a name="elements"></a>Elementen
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **PngLayers**<br/><br/> minOccurs = "0" |[PngLayers](media-services-mes-schema.md#PngLayers) |PNG-lagen |
 
 ## <a name="jpgimage-complex-type-inherits-from-video"></a><a name="JpgImage"></a> JpgImage (complex type neemt uit video over)
 ### <a name="elements"></a>Elementen
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **PngLayers**<br/><br/> minOccurs = "0" |[PngLayers](media-services-mes-schema.md#PngLayers) |PNG-lagen |
 
 ## <a name="pngimage-complex-type-inherits-from-video"></a><a name="PngImage"></a> PngImage (complex type neemt uit video over)
 ### <a name="elements"></a>Elementen
 
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | **PngLayers**<br/><br/> minOccurs = "0" |[PngLayers](media-services-mes-schema.md#PngLayers) |PNG-lagen |
 

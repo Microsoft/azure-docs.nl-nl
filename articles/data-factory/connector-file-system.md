@@ -4,14 +4,14 @@ description: Informatie over het kopiëren van gegevens van bestands systeem naa
 author: linda33wj
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 03/17/2021
+ms.date: 03/29/2021
 ms.author: jingwang
-ms.openlocfilehash: a7cfcd77c4aeb12e2fca98a3564f34683b41ee21
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: c49b543b13dddf4c4ba7e36196795c6a0d638ae2
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104588996"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105731952"
 ---
 # <a name="copy-data-to-or-from-a-file-system-by-using-azure-data-factory"></a>Gegevens kopiëren van of naar een bestands systeem met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -35,6 +35,9 @@ Met name de volgende File System connector ondersteunt:
 - Bestanden kopiëren van/naar een lokale computer of een netwerk bestands share. Als u een Linux-bestands share wilt gebruiken, installeert u [samba](https://www.samba.org/) op uw Linux-server.
 - Bestanden kopiëren met behulp van **Windows** -verificatie.
 - Kopiëren van bestanden als-is of parseren/genereren van bestanden met de [ondersteunde bestands indelingen en compressie-codecs](supported-file-formats-and-compression-codecs.md).
+
+> [!NOTE]
+> Toegewezen netwerk station wordt niet ondersteund bij het laden van gegevens van een netwerk bestands share. Gebruik in plaats daarvan het daad werkelijke pad, ` \\server\share` bijvoorbeeld.
 
 ## <a name="prerequisites"></a>Vereisten
 

@@ -6,14 +6,14 @@ ms.subservice: reservations
 author: bandersmsft
 ms.reviewer: yashesvi
 ms.topic: how-to
-ms.date: 02/09/2021
+ms.date: 03/29/2021
 ms.author: banders
-ms.openlocfilehash: 717cf5acb63ee04852ccbb9aae2f7aed2b3c179a
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 1523ca77b06281b84ed57fbc0e2e49ffede85fb4
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100392269"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105934339"
 ---
 # <a name="manage-reservations-for-azure-resources"></a>Reserveringen voor Azure-resources beheren
 
@@ -57,8 +57,8 @@ Het bereik is alleen van toepassing op afzonderlijke abonnementen met tarieven v
 
 De volgende gebruikers kunnen standaard reserveringen weergeven en beheren:
 
-- De persoon die een reservering koopt, en de accountbeheerder van het factureringsabonnement dat is gebruikt om de reservering te kopen, worden toegevoegd aan de reserveringsorder.
-- Factureringsbeheerders van een Enterprise Agreement en Microsoft-klantovereenkomst.
+- De persoon die de reserve ring heeft gekocht en de account eigenaar voor het facturerings abonnement krijgen Azure RBAC-toegang tot de reserverings order.
+-  Enterprise Overeenkomst-en micro soft-klanten overeenkomst facturerings inzenders kunnen alle reserve ringen beheren van Cost Management + facturering > reserverings transacties > Selecteer de blauwe banner.
 
 U hebt twee opties om toe te staan dat andere personen reserveringen beheren:
 

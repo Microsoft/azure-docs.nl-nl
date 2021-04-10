@@ -4,10 +4,10 @@ description: Meldingen bevatten informatie over netwerk activiteit die mogelijk 
 ms.date: 12/12/2020
 ms.topic: how-to
 ms.openlocfilehash: c0c2fc5a4c01a8a31512cd43c340bf3fadc259b1
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104781327"
 ---
 # <a name="work-with-device-notifications"></a>Werken met apparaatmeldingen
@@ -40,7 +40,7 @@ Meldingen weer geven:
 
 Gebruik Zoek filters om meldingen weer te geven die voor u van belang zijn.
 
-| Filteren op | Beschrijving |
+| Filteren op | Description |
 |--|--|
 | Filteren op type | Meldingen weer geven die betrekking hebben op een specifiek interesse gebied. Bekijk bijvoorbeeld alleen meldingen voor inactieve apparaten. |
 | Filteren op datum bereik | Meldingen weer geven die betrekking hebben op een bepaald tijds bereik. Bekijk bijvoorbeeld meldingen die alleen in de afgelopen week zijn verzonden. |
@@ -50,7 +50,7 @@ Gebruik Zoek filters om meldingen weer te geven die voor u van belang zijn.
 
 In de volgende tabel worden de meldings gebeurtenis typen beschreven die u kunt ontvangen, samen met de opties voor het afhandelen van deze gebeurtenissen. U kunt de apparaatgegevens bijwerken met een aanbevolen waarde of de melding negeren. Wanneer u een melding negeert, worden de gegevens van het apparaat niet bijgewerkt met de aanbevolen informatie. Als het verkeer opnieuw wordt gedetecteerd, wordt de melding opnieuw verzonden.
 
-| Meldings gebeurtenis typen | Beschrijving | Antwoorden |
+| Meldings gebeurtenis typen | Description | Antwoorden |
 |--|--|--|
 | Nieuw IP-adres gedetecteerd | Er is een nieuw IP-adres gekoppeld aan het apparaat. Er kunnen vijf scenario's worden gedetecteerd: <br /><br /> Er is een extra IP-adres aan een apparaat gekoppeld. Dit apparaat is ook gekoppeld aan een bestaand MAC-adres.<br /><br /> Er is een nieuw IP-adres gedetecteerd voor een apparaat dat gebruikmaakt van een bestaand MAC-adres. Het apparaat communiceert momenteel niet met behulp van een IP-adres.<br /> <br /> Er is een nieuw IP-adres gedetecteerd voor een apparaat dat gebruikmaakt van een NetBIOS-naam. <br /><br /> Er is een IP-adres gedetecteerd als de beheer interface voor een apparaat dat is gekoppeld aan een MAC-adres. <br /><br /> Er is een nieuw IP-adres gedetecteerd voor een apparaat dat gebruikmaakt van een virtueel IP-adres. | **Extra IP-adres op apparaat instellen** (apparaten samen voegen) <br /> <br />**Bestaande IP vervangen** <br /> <br /> **Negeren**<br /> Verwijder de melding. |
 | Inactieve apparaten | Verkeer is langer dan 60 dagen niet op een apparaat gedetecteerd. | **Verwijderen** <br /> Als dit apparaat geen deel uitmaakt van uw netwerk, kunt u het verwijderen. <br /><br />**Negeren** <br /> Verwijder de melding als het apparaat deel uitmaakt van uw netwerk. Als het apparaat inactief is (bijvoorbeeld omdat het niet per ongeluk is losgekoppeld van het netwerk), sluit u de melding en maakt u opnieuw verbinding met het apparaat. |

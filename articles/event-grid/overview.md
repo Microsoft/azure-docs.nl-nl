@@ -3,12 +3,12 @@ title: Wat is Azure Event Grid?
 description: Gebeurtenisgegevens vanaf een bron naar handlers verzenden met Azure Event Grid. Op gebeurtenissen gebaseerde toepassingen ontwikkelen en integreren met Azure-services.
 ms.topic: overview
 ms.date: 01/28/2021
-ms.openlocfilehash: e53665c88c3860d37b3512c6498ab626b02a6400
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: a410f56da9e28403fb98d92332e6d67c064bac4d
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99055128"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105934857"
 ---
 # <a name="what-is-azure-event-grid"></a>Wat is Azure Event Grid?
 
@@ -22,7 +22,8 @@ In dit artikel vindt u een overzicht van Azure Event Grid. Zie [Aangepaste gebeu
 
 :::image type="content" source="./media/overview/functional-model.png" alt-text="Event Grid-model van bronnen en handlers" lightbox="./media/overview/functional-model-big.png":::
 
-Deze afbeelding toont hoe Event Grid bronnen en handlers verbindt, maar biedt geen uitgebreide lijst met ondersteunde integraties.
+> [!NOTE]
+> Deze afbeelding toont hoe Event Grid bronnen en handlers verbindt, maar biedt geen uitgebreide lijst met ondersteunde integraties. Zie de volgende sectie voor een lijst met alle ondersteunde gebeurtenis bronnen. 
 
 ## <a name="event-sources"></a>Gebeurtenisbronnen
 
@@ -38,6 +39,7 @@ Op dit moment ondersteunen de volgende Azure-services het verzenden van gebeurte
 - [Azure Machine Learning](event-schema-machine-learning.md)
 - [Azure Maps](event-schema-azure-maps.md)
 - [Azure Media Services](event-schema-media-services.md)
+- [Azure Policy](./event-schema-policy.md)
 - [Azure-resourcegroepen](event-schema-resource-groups.md)
 - [Azure Service Bus](event-schema-service-bus.md)
 - [Azure SignalR](event-schema-azure-signalr.md)

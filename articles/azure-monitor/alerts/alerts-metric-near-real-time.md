@@ -7,10 +7,10 @@ services: monitoring
 ms.topic: conceptual
 ms.date: 03/11/2021
 ms.openlocfilehash: efc1438fdc539af278ebff1f292c5fa0a91b7b91
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103016097"
 ---
 # <a name="supported-resources-for-metric-alerts-in-azure-monitor"></a>Ondersteunde resources voor metrische waarschuwingen in Azure Monitor
@@ -48,7 +48,7 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 |Micro soft. CognitiveServices/accounts | Ja | Nee | [Cognitive Services](../essentials/metrics-supported.md#microsoftcognitiveservicesaccounts) |
 |Micro soft. Compute/cloudServices | Ja | Nee |  [Cloudservices](../essentials/metrics-supported.md#microsoftcomputecloudservices) |
 |Micro soft. Compute/cloudServices/roles | Ja | Nee |  [Cloud service rollen](../essentials/metrics-supported.md#microsoftcomputecloudservicesroles) |
-|Microsoft.Compute/virtualMachines | Ja | Ja<sup>1</sup> | [Virtual Machines](../essentials/metrics-supported.md#microsoftcomputevirtualmachines) |
+|Microsoft.Compute/virtualMachines | Yes | Ja<sup>1</sup> | [Virtual Machines](../essentials/metrics-supported.md#microsoftcomputevirtualmachines) |
 |Microsoft.Compute/virtualMachineScaleSets | Ja | Nee |[Schaal sets voor virtuele machines](../essentials/metrics-supported.md#microsoftcomputevirtualmachinescalesets) |
 |Micro soft. ContainerInstance/containerGroups | Ja| Nee | [Containergroepen](../essentials/metrics-supported.md#microsoftcontainerinstancecontainergroups) |
 |Micro soft. ContainerRegistry/registers | Nee | Nee | [Container registers](../essentials/metrics-supported.md#microsoftcontainerregistryregistries) |

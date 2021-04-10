@@ -12,10 +12,10 @@ ms.workload: na
 ms.date: 03/19/2020
 ms.author: memildin
 ms.openlocfilehash: 55f8d37d435aa8adeb4d97246ce7b2c7811140be
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102557995"
 ---
 # <a name="security-alerts-schemas"></a>Schema's voor beveiligings waarschuwingen
@@ -140,7 +140,7 @@ U kunt de gebeurtenissen voor beveiligings waarschuwingen in het activiteiten lo
 
 ### <a name="the-data-model-of-the-schema"></a>Het gegevens model van het schema
 
-|Veld|Beschrijving|
+|Veld|Description|
 |----|----|
 |**detailhandelkanalen**|Constante, ' bewerking '|
 |**correlationId**|De meldings-ID Azure Security Center|

@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/10/2021
 ms.author: inhenkel
 ms.openlocfilehash: 195333f5f06145a1dfa84f0de2c5984190e3d7ca
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103014822"
 ---
 # <a name="overview-of-live-streaming-using-media-services"></a>Overzicht van live streamen met Media Services
@@ -84,9 +84,9 @@ De volgende tabel bevat een hand leiding voor het vergelijken van de twee typen 
 | Ondersteuning voor het invoegen van pastels |Nee |Ja |
 | Ondersteuning voor AD-Signa lering |Nee |Ja |
 | Pass-Through CEA 608/708-bijschriften |Ja |Ja |
-| Ondersteuning voor niet-uniforme invoer GOPs |Ja |Nee – invoer moet worden vastgesteld 2sec GOPs |
-| Ondersteuning voor variabele frame-rate invoer |Ja |Nee – invoer moet een vaste frame frequentie zijn.<br/>Kleine variaties zijn toegestaan, bijvoorbeeld tijdens hoge bewegende scènes. Code ring kan echter niet worden verwijderd uit 10 frames per seconde. |
-| Automatische shutoff van kanalen wanneer invoer toevoer verloren gaat |Nee |Na 12 uur, als er geen programma wordt uitgevoerd |
+| Ondersteuning voor niet-uniforme invoer GOPs |Yes |Nee – invoer moet worden vastgesteld 2sec GOPs |
+| Ondersteuning voor variabele frame-rate invoer |Yes |Nee – invoer moet een vaste frame frequentie zijn.<br/>Kleine variaties zijn toegestaan, bijvoorbeeld tijdens hoge bewegende scènes. Code ring kan echter niet worden verwijderd uit 10 frames per seconde. |
+| Automatische shutoff van kanalen wanneer invoer toevoer verloren gaat |No |Na 12 uur, als er geen programma wordt uitgevoerd |
 
 ## <a name="working-with-channels-that-receive-multi-bitrate-live-stream-from-on-premises-encoders-pass-through"></a>Werken met kanalen die een multi-bitrate livestream van on-premises encoders ontvangen (pass-through)
 
@@ -155,7 +155,7 @@ In de volgende tabel ziet u hoe kanaal statussen worden toegewezen aan de factur
 | Starten |Starten |Nee (tijdelijke status) |
 | Wordt uitgevoerd |Gereed (geen actieve Program ma's)<br/>of<br/>Streaming (ten minste één programma dat wordt uitgevoerd) |JA |
 | Stoppen |Stoppen |Nee (tijdelijke status) |
-| Gestopt |Gestopt |Nee |
+| Gestopt |Gestopt |No |
 
 ## <a name="media-services-learning-paths"></a>Media Services-leertrajecten
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

@@ -64,8 +64,8 @@ In de zelfstudies vindt u op scenario's gebaseerde procedures voor een aantal ve
 * [Externe bestanden coderen en video streamen - REST](stream-files-tutorial-with-rest.md)
 * [Geüploade bestanden coderen en video streamen - .NET](stream-files-tutorial-with-api.md)
 * [Live streamen - .NET](stream-live-tutorial-with-api.md)
-* [Uw video analyseren - .NET](analyze-videos-tutorial-with-api.md)
-* [Dynamische AES-128-versleuteling - .NET](protect-with-aes128.md)
+* [Uw video analyseren - .NET](analyze-videos-tutorial.md)
+* [Dynamische AES-128-versleuteling - .NET](drm-playready-license-template-concept.md)
 
 ### <a name="samples"></a>Voorbeelden
 
@@ -75,12 +75,12 @@ Gebruik [deze voorbeeldbrowser](/samples/browse/?products=azure-media-services) 
 
 Instructiegidsen bevatten codevoorbeelden die laten zien hoe u taken moet uitvoeren. In deze sectie vindt u veel voorbeelden. Dit zijn er een paar:
 
-* [Een account maken - CLI](./create-account-howto.md)
+* [Een account maken - CLI](./account-create-how-to.md)
 * [Toegang tot API's - CLI](./access-api-howto.md)
 * [Coderen met HTTPS als taakinvoer - .NET](job-input-from-http-how-to.md)  
 * [Gebeurtenissen bewaken - Portal](monitoring/monitor-events-portal-how-to.md)
-* [Dynamisch versleutelen met multi-DRM - .NET](protect-with-drm.md) 
-* [Coderen met een aangepaste transformatie - CLI](custom-preset-cli-howto.md)
+* [Dynamisch versleutelen met multi-DRM - .NET](drm-protect-with-drm-tutorial.md) 
+* [Coderen met een aangepaste transformatie - CLI](encode-custom-preset-cli-how-to.md)
 
 ## <a name="ask-questions-give-feedback-get-updates"></a>Vragen stellen, feedback geven, updates ophalen
 

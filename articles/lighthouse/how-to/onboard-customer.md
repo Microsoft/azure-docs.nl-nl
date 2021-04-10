@@ -1,14 +1,14 @@
 ---
 title: Een klant onboarden in Azure Lighthouse
 description: Meer informatie over hoe u een klant kunt opsturen naar Azure Lighthouse, zodat de resources toegankelijk zijn en kunnen worden beheerd via uw eigen Tenant met behulp van Azure delegated resource management.
-ms.date: 02/16/2021
+ms.date: 03/29/2021
 ms.topic: how-to
-ms.openlocfilehash: 4487dd82b30e14f9db2001dc10f7437a53e745f3
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: c02bbb789ffac262521c2f76c62081a21cd6602c
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100556106"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105934305"
 ---
 # <a name="onboard-a-customer-to-azure-lighthouse"></a>Een klant onboarden in Azure Lighthouse
 
@@ -143,7 +143,7 @@ De sjabloon die u kiest, is afhankelijk van het feit of u een volledig abonnemen
 |Abonnement (wanneer u een aanbieding gebruikt die is gepubliceerd op Azure Marketplace)   |[marketplaceDelegatedResourceManagement.jsop](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/marketplace-delegated-resource-management/marketplaceDelegatedResourceManagement.json)  |[marketplaceDelegatedResourceManagement.parameters.jsop](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/marketplace-delegated-resource-management/marketplaceDelegatedResourceManagement.parameters.json)    |
 
 > [!TIP]
-> Hoewel u een volledige beheer groep niet in één implementatie kunt vrijgeven, is [het mogelijk om een beleid te implementeren op het niveau van de beheer groep](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/policy-delegate-management-groups). Met het beleid wordt gecontroleerd of elk abonnement binnen de beheer groep is overgedragen aan de opgegeven Tenant voor beheer, en als dat niet het geval is, wordt de toewijzing gemaakt op basis van de waarden die u opgeeft.
+> Hoewel u een volledige beheer groep niet in één implementatie kunt vrijgeven, is [het mogelijk om een beleid te implementeren op het niveau van de beheer groep](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/policy-delegate-management-groups). Het beleid maakt gebruik van het [deployIfNotExists-effect](../../governance/policy/concepts/effects.md#deployifnotexists) om te controleren of elk abonnement binnen de beheer groep is gedelegeerd aan de opgegeven beheer Tenant. als dat niet het geval is, wordt de toewijzing gemaakt op basis van de waarden die u opgeeft. U hebt dan toegang tot alle abonnementen in de beheer groep, maar u moet ze ook als afzonderlijke abonnementen gebruiken (in plaats van dat u acties voor de beheer groep als geheel moet ondernemen).
 
 In het volgende voor beeld ziet u een gewijzigde **delegatedResourceManagement.parameters.jsvoor** een bestand dat kan worden gebruikt om een abonnement te maken. De parameter bestanden van de resource groep (in de map [RG-delegated-resource-management](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/rg-delegated-resource-management) ) zijn vergelijkbaar, maar bevatten ook een **rgName** -para meter om de specifieke resource groep (en) te identificeren die onboarding moet worden uitgevoerd.
 

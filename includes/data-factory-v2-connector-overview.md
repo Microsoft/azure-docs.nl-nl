@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 03/10/2021
 ms.author: jingwang
 ms.openlocfilehash: e5c1d72dd0b1be2d439260c2d32280911733de1b
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103015915"
 ---
 | Categorie              | Gegevensarchief                                                   | [Kopieer activiteit](../articles/data-factory/copy-activity-overview.md)  (bron/Sink) | [Gegevens stroom toewijzen](../articles/data-factory/concepts-data-flow-overview.md) (bron/Sink) | [Opzoekactiviteit](../articles/data-factory/control-flow-lookup-activity.md) | Activiteit meta gegevens [ophalen](../articles/data-factory/control-flow-get-metadata-activity.md) / [Validatie activiteit](../articles/data-factory/control-flow-validation-activity.md) | [Activiteit verwijderen](../articles/data-factory/delete-activity.md) |

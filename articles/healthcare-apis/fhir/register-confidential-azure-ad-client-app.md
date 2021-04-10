@@ -6,43 +6,46 @@ author: matjazl
 ms.service: healthcare-apis
 ms.subservice: fhir
 ms.topic: conceptual
-ms.date: 02/07/2019
+ms.date: 03/16/2021
 ms.author: matjazl
-ms.openlocfilehash: 8021fb3fa9f11ef895569f48a2ae21b3f7adcd36
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.openlocfilehash: fbc683c98eb0124e8d879eada276593ca9bf7042
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "103018211"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105934707"
 ---
 # <a name="register-a-confidential-client-application-in-azure-active-directory"></a>Een vertrouwelijke client toepassing registreren in Azure Active Directory
 
-In deze zelf studie leert u hoe u een vertrouwelijke client toepassing in Azure Active Directory kunt registreren. 
+In deze zelf studie leert u hoe u een vertrouwelijke client toepassing kunt registreren in Azure Active Directory (Azure AD).  
 
-Registratie van een client toepassing is een Azure Active Directory representatie van een toepassing die kan worden gebruikt om namens een gebruiker te verifiëren en om toegang tot [bron toepassingen](register-resource-azure-ad-client-app.md)aan te vragen. Een vertrouwelijke client toepassing is een toepassing die kan worden vertrouwd voor het bewaren van een geheim en die geheim presenteert bij het aanvragen van toegangs tokens. Voor beelden van vertrouwelijke toepassingen zijn toepassingen aan de server zijde.
+Een registratie van een client toepassing is een Azure AD-weer gave van een toepassing die kan worden gebruikt om namens een gebruiker te verifiëren en om toegang tot [bron toepassingen](register-resource-azure-ad-client-app.md)aan te vragen. Een vertrouwelijke client toepassing is een toepassing die kan worden vertrouwd voor het bewaren van een geheim en die geheim presenteert bij het aanvragen van toegangs tokens. Voor beelden van vertrouwelijke toepassingen zijn toepassingen aan de server zijde. 
 
-Voer de volgende stappen uit om een nieuwe vertrouwelijke toepassing te registreren in de portal.
+Raadpleeg de volgende stappen om een nieuwe vertrouwelijke client toepassing te registreren. 
 
 ## <a name="register-a-new-application"></a>Een nieuwe toepassing registreren
 
-1. Ga in het [Azure Portal](https://portal.azure.com)naar **Azure Active Directory**.
+1. Selecteer **Azure Active Directory** in de [Azure-portal](https://portal.azure.com).
 
-1. Selecteer **App-registraties**.
+1. Selecteer **App-registraties**. 
 
     ![Azure Portal. Nieuwe app-registratie.](media/how-to-aad/portal-aad-new-app-registration.png)
 
 1. Selecteer **Nieuwe registratie**.
 
-1. Geef de toepassing een weergave naam.
+1. Geef de toepassing een door de gebruiker gerichte weergave naam.
 
-1. Geef een antwoord-URL op. Deze gegevens kunnen later worden gewijzigd, maar als u de antwoord-URL van uw toepassing weet, voert u deze nu in.
+1. Selecteer voor **ondersteunde account typen** wie de toepassing kan gebruiken of toegang kan krijgen tot de API.
+
+1. Beschrijving Geef een **omleidings-URI** op. Deze gegevens kunnen later worden gewijzigd, maar als u de antwoord-URL van uw toepassing weet, voert u deze nu in.
 
     ![Nieuwe registratie van vertrouwelijke client-app.](media/how-to-aad/portal-aad-register-new-app-registration-CONF-CLIENT.png)
+
 1. Selecteer **Registreren**.
 
 ## <a name="api-permissions"></a>API-machtigingen
 
-Nu u uw toepassing hebt geregistreerd, moet u selecteren welke API-machtigingen deze toepassing moet kunnen aanvragen namens gebruikers:
+Nu u uw toepassing hebt geregistreerd, moet u selecteren welke API-machtigingen deze toepassing moet aanvragen namens gebruikers.
 
 1. Selecteer **API-machtigingen**.
 
@@ -50,7 +53,7 @@ Nu u uw toepassing hebt geregistreerd, moet u selecteren welke API-machtigingen 
 
 1. Selecteer **een machtiging toevoegen**.
 
-    Als u de Azure API voor FHIR gebruikt, voegt u een machtiging toe aan de Azure-gezondheids zorg Api's door te zoeken naar **Azure-gezondheids zorg api's** onder **api's mijn organisatie gebruikt**. U kunt dit alleen vinden als u [de Azure-API voor FHIR](fhir-paas-powershell-quickstart.md)al hebt geïmplementeerd.
+    Als u de Azure API voor FHIR gebruikt, voegt u een machtiging toe aan de Azure-gezondheids zorg Api's door te zoeken naar de **Azure-gezondheids zorg** in **api's mijn organisatie gebruikt**. Het Zoek resultaat voor de Azure-gezondheids-API wordt alleen geretourneerd als u [de Azure-API voor FHIR](fhir-paas-powershell-quickstart.md)al hebt geïmplementeerd.
 
     Als u naar een andere bron toepassing verwijst, selecteert u de [registratie van de FHIR API-resource toepassing](register-resource-azure-ad-client-app.md) die u eerder hebt gemaakt onder **mijn api's**.
 
@@ -58,24 +61,31 @@ Nu u uw toepassing hebt geregistreerd, moet u selecteren welke API-machtigingen 
     :::image type="content" source="media/conf-client-app/confidential-client-org-api.png" alt-text="Vertrouwelijke client. Mijn organisatie-Api's" lightbox="media/conf-client-app/confidential-app-org-api-expanded.png":::
     
 
-3. Selecteer bereiken (machtigingen) die de vertrouwelijke toepassing moet kunnen vragen namens een gebruiker:
+1. Selecteer bereiken (machtigingen) die de vertrouwelijke client toepassing vraagt voor namens een gebruiker. Selecteer **user_impersonation** en selecteer vervolgens **machtigingen toevoegen**.
 
     :::image type="content" source="media/conf-client-app/confidential-client-add-permission.png" alt-text="Vertrouwelijke client. Gedelegeerde machtigingen":::
 
+
 ## <a name="application-secret"></a>Toepassingsgeheim
 
-1. Selecteer **Certificaten en geheimen**.
-1. Selecteer **Nieuw clientgeheim**. 
+1. Selecteer **certificaten & geheimen** en selecteer vervolgens **Nieuw client geheim**. 
 
     ![Vertrouwelijke client. Toepassings geheim](media/how-to-aad/portal-aad-register-new-app-registration-CONF-CLIENT-SECRET.png)
 
-2. Geef een beschrijving en duur van het geheim op (ofwel 1 jaar, 2 jaar of nooit).
+1. Voer een **beschrijving** voor het clientgeheim in. Selecteer het verloopt (in 1 jaar, in twee jaar of nooit) en klik vervolgens op **toevoegen**.
 
-3. Zodra de app is gegenereerd, wordt deze weer gegeven in de portal. Noteer deze versie en bewaar deze veilig.
+   ![Een clientgeheim toevoegen](media/how-to-aad/add-a-client-secret.png)
 
+1. Nadat de client Secret string is gemaakt, kopieert u de **waarde** en **id** en slaat u deze op een veilige locatie van uw keuze op.
+
+   :::image type="content" source="media/how-to-aad/client-secret-string-password.png" alt-text="Geheim teken reeks van client."::: 
+
+> [!NOTE]
+>De geheim teken reeks van de client is slechts eenmaal zichtbaar in de Azure Portal. Wanneer u de webpagina certificaten & geheimen gaat verlaten en vervolgens weer terugkeert naar de pagina, wordt de waarde teken reeks gemaskeerd. Het is belang rijk dat u de geheime teken reeks van de client kopieert direct nadat deze is gegenereerd. Als u geen back-up van uw client geheim hebt, moet u de bovenstaande stappen herhalen om deze opnieuw te genereren.
+ 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u geleerd hoe u een vertrouwelijke client toepassing in Azure Active Directory kunt registreren. Vervolgens krijgt u toegang tot uw FHIR-server met behulp van postman
+In dit artikel hebt u geleid door de stappen voor het registreren van een vertrouwelijke client toepassing in azure AD. U bent ook begeleid bij de stappen voor het toevoegen van API-machtigingen aan de Azure-gezondheids zorg-API. U hebt tot slot geleerd hoe u een toepassings geheim maakt. Daarnaast kunt u zien hoe u met behulp van Postman toegang krijgt tot uw FHIR-server.
  
 >[!div class="nextstepaction"]
 >[Azure API for FHIR openen met Postman](access-fhir-postman-tutorial.md)

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 6/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: a0f2b971eae5d37e8fb0771e213075289af6c519
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 1901104aa05b4e7ea3a318ee8e886c745f2a6eb4
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98045254"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936041"
 ---
 # <a name="understand-event-data"></a>Informatie over gebeurtenis gegevens
 
@@ -23,6 +23,8 @@ Er zijn verschillende typen meldingen die kunnen worden gegenereerd en meldings 
 Dit diagram toont de verschillende meldings typen:
 
 [!INCLUDE [digital-twins-notifications.md](../../includes/digital-twins-notifications.md)]
+
+## <a name="notification-structure"></a>Meldings structuur
 
 Over het algemeen bestaan er meldingen uit twee delen: de koptekst en de hoofd tekst. 
 
@@ -65,7 +67,7 @@ Telemetrie-bericht:
 }
 ```
 
-Bericht over levens cyclus melding:
+Bericht levens cyclus melding:
 
 ```json
 {
@@ -87,21 +89,68 @@ Bericht over levens cyclus melding:
 }
 ```
 
-## <a name="message-format-detail-for-different-event-types"></a>Details over het bericht formaat voor verschillende gebeurtenis typen
+In de volgende secties vindt u meer informatie over de verschillende typen meldingen die worden verzonden door IoT Hub en Azure Digital Apparaatdubbels (of andere Azure IoT-Services). U leest informatie over de dingen die elk meldings type activeren en de set velden die zijn opgenomen in elk type meldings hoofdtekst.
 
-In deze sectie vindt u meer informatie over de verschillende typen meldingen die worden verzonden door IoT Hub en Azure Digital Apparaatdubbels (of andere Azure IoT-Services). U leest informatie over de dingen die elk meldings type activeren en de set velden die zijn opgenomen in elk type meldings hoofdtekst.
+## <a name="digital-twin-change-notifications"></a>Digitale dubbele wijzigings meldingen
 
-### <a name="digital-twin-life-cycle-notifications"></a>Digitale dubbele levens cyclus meldingen
+Er worden **digitale dubbele wijzigings meldingen** geactiveerd wanneer er een digitale twee worden bijgewerkt, zoals:
+* Wanneer eigenschaps waarden of meta gegevens worden gewijzigd.
+* Wanneer meta gegevens van een digitaal element of onderdeel worden gewijzigd. Een voor beeld van dit scenario is het wijzigen van het model van een digitale dubbele.
 
-Alle [digitale apparaatdubbels](concepts-twins-graph.md) verzenden meldingen, ongeacht of ze [IOT Hub apparaten vertegenwoordigen in azure Digital apparaatdubbels](how-to-ingest-iot-hub-data.md) of niet. Dit komt door meldingen over de **levens cyclus**, die betrekking hebben op de digitale twee berichten.
+### <a name="properties"></a>Eigenschappen
 
-Meldingen over de levens cyclus worden geactiveerd wanneer:
+Dit zijn de velden in de hoofd tekst van een digitale, dubbele wijzigings melding.
+
+| Name    | Waarde |
+| --- | --- |
+| `id` | Id van de melding, zoals een UUID of een item dat door de service wordt onderhouden. `source` + `id` is uniek voor elke afzonderlijke gebeurtenis |
+| `source` | Naam van het IoT hub-of Azure Digital Apparaatdubbels-exemplaar, zoals *myhub.Azure-devices.net* of *mydigitaltwins.westus2.azuredigitaltwins.net*
+| `specversion` | *1,0*<br>Het bericht voldoet aan deze versie van de [CloudEvents-specificatie](https://github.com/cloudevents/spec). |
+| `type` | `Microsoft.DigitalTwins.Twin.Update` |
+| `datacontenttype` | `application/json` |
+| `subject` | ID van de digitale dubbele |
+| `time` | Tijds tempel voor wanneer de bewerking is opgetreden op de digitale twee |
+| `traceparent` | Een W3C-tracerings context voor de gebeurtenis |
+
+### <a name="body-details"></a>Details van hoofd tekst
+
+De hoofd tekst van de `Twin.Update` melding is een JSON-patch document met de update voor de digitale twee.
+
+Stel bijvoorbeeld dat een digitaal is bijgewerkt met behulp van de volgende patch.
+
+:::code language="json" source="~/digital-twins-docs-samples/models/patch-component-2.json":::
+
+De bijbehorende melding (als synchroon door de service wordt uitgevoerd, zoals Azure Digital Apparaatdubbels het bijwerken van een digitale dubbele) zou een hoofd tekst hebben als:
+
+```json
+{
+    "modelId": "dtmi:example:com:floor4;2",
+    "patch": [
+      {
+        "value": 40,
+        "path": "/Temperature",
+        "op": "replace"
+      },
+      {
+        "value": 30,
+        "path": "/comp1/prop1",
+        "op": "add"
+      }
+    ]
+  }
+```
+
+## <a name="digital-twin-lifecycle-notifications"></a>Digitale dubbele levenscyclus meldingen
+
+Alle [digitale apparaatdubbels](concepts-twins-graph.md) verzenden meldingen, ongeacht of ze [IOT Hub apparaten vertegenwoordigen in azure Digital apparaatdubbels](how-to-ingest-iot-hub-data.md) of niet. Dit wordt veroorzaakt door **levenscyclus meldingen**, die betrekking hebben op het digitale dubbele zelf.
+
+Levenscyclus meldingen worden geactiveerd wanneer:
 * Er is een digitaal, twee, gemaakt
 * Er is een digitale-dubbele verdubbeling verwijderd
 
-#### <a name="properties"></a>Eigenschappen
+### <a name="properties"></a>Eigenschappen
 
-Dit zijn de velden in de hoofd tekst van een melding voor levens cyclus.
+Dit zijn de velden in de hoofd tekst van een levenscyclus melding.
 
 | Name | Waarde |
 | --- | --- |
@@ -114,7 +163,7 @@ Dit zijn de velden in de hoofd tekst van een melding voor levens cyclus.
 | `time` | Tijds tempel voor wanneer de bewerking is opgetreden op de dubbele |
 | `traceparent` | Een W3C-tracerings context voor de gebeurtenis |
 
-#### <a name="body-details"></a>Details van hoofd tekst
+### <a name="body-details"></a>Details van hoofd tekst
 
 De hoofd tekst is de betrokken digitale dubbele, weer gegeven in JSON-indeling. Het schema hiervoor is *Digital Apparaatdubbels Resource 7,1*.
 
@@ -181,11 +230,11 @@ Hier volgt nog een voor beeld van een digitale dubbele. Deze is gebaseerd op een
 }
 ```
 
-### <a name="digital-twin-relationship-change-notifications"></a>Meldingen over wijziging van digitale dubbele relatie
+## <a name="digital-twin-relationship-change-notifications"></a>Meldingen over wijziging van digitale dubbele relatie
 
 **Relatie wijzigings meldingen** worden geactiveerd wanneer een relatie van een digitale-dubbele verbinding wordt gemaakt, bijgewerkt of verwijderd. 
 
-#### <a name="properties"></a>Eigenschappen
+### <a name="properties"></a>Eigenschappen
 
 Dit zijn de velden in de hoofd tekst van een melding voor een wijziging van de rand.
 
@@ -200,7 +249,7 @@ Dit zijn de velden in de hoofd tekst van een melding voor een wijziging van de r
 | `time` | Tijds tempel voor wanneer de bewerking is opgetreden op de relatie |
 | `traceparent` | Een W3C-tracerings context voor de gebeurtenis |
 
-#### <a name="body-details"></a>Details van hoofd tekst
+### <a name="body-details"></a>Details van hoofd tekst
 
 De hoofd tekst is de payload van een relatie, ook in JSON-indeling. Er wordt gebruikgemaakt van dezelfde indeling als een `GET` aanvraag voor een relatie via de [DIGITALTWINS-API](/rest/api/digital-twins/dataplane/twins). 
 
@@ -233,55 +282,6 @@ Hier volgt een voor beeld van een melding voor het maken of verwijderen van een 
     "$targetId": "device2",
     "connectionType": "WIFI"
 }
-```
-
-### <a name="digital-twin-change-notifications"></a>Digitale dubbele wijzigings meldingen
-
-Er worden **digitale dubbele wijzigings meldingen** geactiveerd wanneer er een digitale twee worden bijgewerkt, zoals:
-* Wanneer eigenschaps waarden of meta gegevens worden gewijzigd.
-* Wanneer meta gegevens van een digitaal element of onderdeel worden gewijzigd. Een voor beeld van dit scenario is het wijzigen van het model van een digitale dubbele.
-
-#### <a name="properties"></a>Eigenschappen
-
-Dit zijn de velden in de hoofd tekst van een digitale, dubbele wijzigings melding.
-
-| Name    | Waarde |
-| --- | --- |
-| `id` | Id van de melding, zoals een UUID of een item dat door de service wordt onderhouden. `source` + `id` is uniek voor elke afzonderlijke gebeurtenis |
-| `source` | Naam van het IoT hub-of Azure Digital Apparaatdubbels-exemplaar, zoals *myhub.Azure-devices.net* of *mydigitaltwins.westus2.azuredigitaltwins.net*
-| `specversion` | *1,0*<br>Het bericht voldoet aan deze versie van de [CloudEvents-specificatie](https://github.com/cloudevents/spec). |
-| `type` | `Microsoft.DigitalTwins.Twin.Update` |
-| `datacontenttype` | `application/json` |
-| `subject` | ID van de digitale dubbele |
-| `time` | Tijds tempel voor wanneer de bewerking is opgetreden op de digitale twee |
-| `traceparent` | Een W3C-tracerings context voor de gebeurtenis |
-
-#### <a name="body-details"></a>Details van hoofd tekst
-
-De hoofd tekst van de `Twin.Update` melding is een JSON-patch document met de update voor de digitale twee.
-
-Stel bijvoorbeeld dat een digitaal is bijgewerkt met behulp van de volgende patch.
-
-:::code language="json" source="~/digital-twins-docs-samples/models/patch-component-2.json":::
-
-De bijbehorende melding (als synchroon door de service wordt uitgevoerd, zoals Azure Digital Apparaatdubbels het bijwerken van een digitale dubbele) zou een hoofd tekst hebben als:
-
-```json
-{
-    "modelId": "dtmi:example:com:floor4;2",
-    "patch": [
-      {
-        "value": 40,
-        "path": "/Temperature",
-        "op": "replace"
-      },
-      {
-        "value": 30,
-        "path": "/comp1/prop1",
-        "op": "add"
-      }
-    ]
-  }
 ```
 
 ## <a name="next-steps"></a>Volgende stappen

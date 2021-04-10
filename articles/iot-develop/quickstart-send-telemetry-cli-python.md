@@ -8,10 +8,10 @@ ms.devlang: python
 ms.topic: quickstart
 ms.date: 03/24/2021
 ms.openlocfilehash: f28ad8f93769bc95c87095a545f608827c319dd3
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105106816"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-azure-iot-hub-python"></a>Quick Start: telemetrie verzenden van een apparaat naar een Azure IoT hub (python)

@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 9cac6cdd8e68af77b611c89e8b62e6f8d8845fd0
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: 33bafac9247f007978fef568469d643f1a1098df
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105107513"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106383583"
 ---
 # <a name="frequently-asked-questions-for-azure-cloud-services-extended-support"></a>Veelgestelde vragen over Azure Cloud Services (uitgebreide ondersteuning)
 In dit artikel vindt u informatie over veelgestelde vragen met betrekking tot Azure Cloud Services (uitgebreide ondersteuning).
@@ -57,6 +57,9 @@ De implementatie van Cloud Services (uitgebreide ondersteuning) ondersteunt alle
 
 ### <a name="do-cloud-services-extended-support-deployments-support-scaling-across-clusters-availability-zones-and-regions"></a>De implementaties van Cloud Services (uitgebreide ondersteuning) ondersteunen schalen in clusters, beschikbaarheids zones en regio's?
 Implementaties van Cloud Services (uitgebreide ondersteuning) kunnen niet worden geschaald over meerdere clusters, beschikbaarheids zones en regio's. 
+
+### <a name="how-can-i-get-the-deployment-id-for-my-cloud-service-extended-support"></a>Hoe kan ik de implementatie-ID voor mijn Cloud service krijgen (uitgebreide ondersteuning)
+U kunt toegang krijgen tot de ook wel-ID van de implementatie met behulp van de [CLOUDSERVICEINSTANCEVIEW](https://docs.microsoft.com/rest/api/compute/cloudservices/getinstanceview#cloudserviceinstanceview) -API. Het is ook beschikbaar op het Azure Portal op de Blade rol en instanties van de Cloud service (uitgebreide ondersteuning)
 
 ### <a name="are-there-any-pricing-differences-between-cloud-services-classic-and-cloud-services-extended-support"></a>Zijn er prijs verschillen tussen Cloud Services (klassiek) en Cloud Services (uitgebreide ondersteuning)?
 Cloud Services (uitgebreide ondersteuning) maakt gebruik van de open bare IP-adressen Azure Key Vault en Basic (ARM).Klanten die certificaten vereisen, moeten Azure Key Vault gebruiken voor certificaat beheer ([meer informatie](https://azure.microsoft.com/pricing/details/key-vault/) over Azure Key Vault prijzen.)   Elk openbaar IP-adres voor Cloud Services (uitgebreide ondersteuning) wordt afzonderlijk in rekening gebracht (meer[informatie](https://azure.microsoft.com/pricing/details/ip-addresses/) over open bare IP-adres prijzen.) 

@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1a12cc3299fbb5916afba48d2608024f28999634
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 2d792c1eb0a85f2a898d1dc5c63047a4553f13b0
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98724624"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106106769"
 ---
 # <a name="build-resilience-by-using-continuous-access-evaluation"></a>Een tolerantie bouwen met behulp van evaluatie van continue toegang
 
@@ -47,6 +47,8 @@ Als u CAE wilt gebruiken, moeten zowel de service als de client CAE-functionalit
 Micro soft werkt samen met de industrie om [standaarden](https://openid.net/wg/sse/) te bouwen waarmee toepassingen van derden deze mogelijkheid kunnen gebruiken. U kunt ook toepassingen ontwikkelen die geschikt zijn voor CAE. Zie flexibiliteit in uw toepassing maken voor meer informatie.
 
 ## <a name="how-do-i-implement-cae"></a>Hoe kan ik CAE implementeren?
+
+* [Werk uw code bij voor het gebruik van CAE-api's](../develop/app-resilience-continuous-access-evaluation.md).
 
 * [Activeer CAE](../conditional-access/concept-continuous-access-evaluation.md) in de Azure AD-beveiligings configuratie.
 

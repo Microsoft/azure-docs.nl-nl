@@ -7,14 +7,14 @@ ms.reviewer: mikeray
 services: azure-arc
 ms.service: azure-arc
 ms.subservice: azure-arc-data
-ms.date: 03/02/2021
+ms.date: 04/06/2021
 ms.topic: conceptual
-ms.openlocfilehash: 6b4d5c1372a8351f1fe5a6608aff38bf232aabd8
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 2f41034331ed21e194fc2b86c2902c5957333313
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102121946"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107010595"
 ---
 # <a name="release-notes---azure-arc-enabled-data-services-preview"></a>Release opmerkingen-Azure Arc ingeschakelde Data Services (preview-versie)
 
@@ -22,11 +22,48 @@ In dit artikel worden mogelijkheden, functies en verbeteringen besproken die rec
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
+## <a name="march-2021"></a>2021 maart
+
+De release van maart 2021 is geïntroduceerd op 6 april 2021.
+
+Lees de beperkingen van deze release in [bekende problemen-Azure Arc enabled Data Services (preview)](known-issues.md).
+
+Azure data CLI ( `azdata` )-versie nummer: 20.3.2. U kunt installeren `azdata` vanuit [Azure data cli ( `azdata` ) installeren](/sql/azdata/install/deploy-install-azdata).
+
+### <a name="data-controller"></a>Gegevens controller
+
+- Implementeer de gegevens controller Azure Arc enabled Data Services in de modus Direct Connect vanuit de portal. Begin van de [Implementation data controller-direct connect-modus-vereisten](deploy-data-controller-direct-mode-prerequisites.md).
+
+### <a name="azure-arc-enabled-postgresql-hyperscale"></a>Azure Arc enabled PostgreSQL grootschalige
+
+Zowel de aangepaste resource definities (CRD) voor PostgreSQL zijn samengevoegd in één CRD. Zie de volgende tabel.
+
+|Release |CRD |
+|-----|-----|
+|Februari 2021 en eerder| postgresql-11s.arcdata.microsoft.com<br/>postgresql-12s.arcdata.microsoft.com |
+|Vanaf maart 2021 | postgresqls.arcdata.microsoft.com
+
+U verwijdert de vorige CRDs tijdens het opschonen van eerdere installaties. Zie [opschonen uit eerdere installaties](create-data-controller-using-kubernetes-native-tools.md#cleanup-from-past-installations).
+
+### <a name="azure-arc-enabled-managed-instance"></a>Beheerd exemplaar waarvoor Azure Arc is ingeschakeld
+
+- U kunt nu een Data Base herstellen naar een SQL-beheerd exemplaar met drie replica's en deze wordt automatisch toegevoegd aan de beschikbaarheids groep. 
+
+- U kunt nu verbinding maken met een secundair alleen-lezen-eind punt in SQL Managed instances die zijn geïmplementeerd met drie replica's. Gebruik `azdata arc sql endpoint list` om het secundaire eind punt voor alleen-lezen verbindingen weer te geven.
+
+### <a name="known-issues"></a>Bekende problemen
+
+- In direct verbonden modus wordt het uploaden van gebruik, metrische gegevens en logboeken op `azdata arc dc upload` dit moment geblokkeerd. Het gebruik wordt automatisch geüpload. Upload voor gegevens controller die is gemaakt in de modus indirect verbonden moet blijven werken.
+- De implementatie van de gegevens controller in de directe modus kan alleen worden uitgevoerd vanuit de Azure Portal en niet beschikbaar via client hulpprogramma's zoals azdata, Azure Data Studio of kubectl.
+- Implementatie van Azure Arc enabled SQL Managed instance in de directe modus kan alleen worden uitgevoerd vanuit de Azure Portal en niet beschikbaar via hulpprogram ma's zoals azdata, Azure Data Studio of kubectl.
+- De implementatie van Azure Arc enabled PostgeSQL grootschalige in de directe modus is momenteel niet beschikbaar.
+- Automatisch uploaden van gebruiks gegevens in de modus directe connectiviteit mislukt als u proxy gebruikt via `–proxy-cert <path-t-cert-file>` .
+
 ## <a name="february-2021"></a>Februari 2021
 
 ### <a name="new-capabilities-and-features"></a>Nieuwe mogelijkheden en functies
 
-Azure data CLI ( `azdata` )-versie nummer: 20.3.1. Downloaden op [https://aka.ms/azdata](https://aka.ms/azdata) . U kunt installeren `azdata` vanuit [Azure data cli ( `azdata` ) installeren](/sql/azdata/install/deploy-install-azdata).
+Azure data CLI ( `azdata` )-versie nummer: 20.3.1. U kunt installeren `azdata` vanuit [Azure data cli ( `azdata` ) installeren](/sql/azdata/install/deploy-install-azdata).
 
 Aanvullende updates zijn onder andere:
 
@@ -44,7 +81,7 @@ Zie voor problemen met betrekking tot deze release [bekende problemen-Azure Arc 
 
 ### <a name="new-capabilities-and-features"></a>Nieuwe mogelijkheden en functies
 
-Azure data CLI ( `azdata` )-versie nummer: 20.3.0. Downloaden op [https://aka.ms/azdata](https://aka.ms/azdata) . U kunt installeren `azdata` vanuit [Azure data cli ( `azdata` ) installeren](/sql/azdata/install/deploy-install-azdata).
+Azure data CLI ( `azdata` )-versie nummer: 20.3.0. U kunt installeren `azdata` vanuit [Azure data cli ( `azdata` ) installeren](/sql/azdata/install/deploy-install-azdata).
 
 Aanvullende updates zijn onder andere:
 - Gelokaliseerde portal beschikbaar voor 17 nieuwe talen
@@ -70,7 +107,7 @@ Aanvullende updates zijn onder andere:
 
 ### <a name="new-capabilities--features"></a>Nieuwe mogelijkheden & functies
 
-Azure data CLI ( `azdata` )-versie nummer: 20.2.5. Downloaden op [https://aka.ms/azdata](https://aka.ms/azdata) .
+Azure data CLI ( `azdata` )-versie nummer: 20.2.5. U kunt installeren `azdata` vanuit [Azure data cli ( `azdata` ) installeren](/sql/azdata/install/deploy-install-azdata).
 
 Bekijk eind punten voor SQL Managed instance en PostgreSQL grootschalige met behulp van de Azure data CLI ( `azdata` ) met `azdata arc sql endpoint list` en `azdata arc postgres endpoint list` opdrachten.
 
@@ -127,16 +164,9 @@ azdata arc dc create --profile-name azure-arc-aks-hci --namespace arc --name arc
 
    :::image type="content" source="media/release-notes/aks-zone-selector.png" alt-text="Schakel de selectie vakjes voor elke zone uit om geen op te geven.":::
 
-#### <a name="postgresql"></a>PostgreSQL
-
-- Azure Arc enabled PostgreSQL grootschalige retourneert een onjuist fout bericht wanneer het niet kan worden teruggezet naar het relatieve punt in de tijd dat u opgeeft. Als u bijvoorbeeld een punt in de tijd hebt opgegeven om te herstellen dat ouder is dan uw back-ups bevatten, mislukt de herstel bewerking met een fout bericht als: fout: (404). Reden: niet gevonden. Hoofd tekst van HTTP-antwoord: {"code": 404, "internalStatus": "NOT_FOUND", "reden": "kan de back-up niet herstellen voor de server...}
-Wanneer dit het geval is, start u de opdracht opnieuw op nadat u een tijdstip hebt aangegeven dat binnen het bereik van de datums valt waarvoor u back-ups hebt. U kunt dit bereik bepalen door uw back-ups weer te geven en te kijken naar de datums waarop deze zijn gemaakt.
-- Herstel naar een bepaald tijdstip wordt alleen ondersteund in verschillende Server groepen. De doel server van een herstel bewerking naar een bepaald tijdstip kan geen server zijn van waaruit u de back-up hebt gemaakt. Dit moet een andere server groep zijn. Volledige herstel bewerking wordt echter wel ondersteund voor dezelfde server groep.
-- U moet een back-up-id opgeven wanneer u een volledige herstel bewerking uitvoert. Als u geen back-upid aangeeft, wordt standaard de meest recente back-up gebruikt. Dit werkt niet in deze release.
-
 ## <a name="october-2020"></a>Oktober 2020 
 
-Azure data CLI ( `azdata` )-versie nummer: 20.2.3. Downloaden op [https://aka.ms/azdata](https://aka.ms/azdata) .
+Azure data CLI ( `azdata` )-versie nummer: 20.2.3. U kunt installeren `azdata` vanuit [Azure data cli ( `azdata` ) installeren](/sql/azdata/install/deploy-install-azdata).
 
 ### <a name="breaking-changes"></a>Wijzigingen die fouten veroorzaken
 

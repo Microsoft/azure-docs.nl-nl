@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 12/17/2020
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 4b85397eeda651678fe66c6e78199dd25630dcc4
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.openlocfilehash: 420dade645d1a4ee32bb888aecb76b033d5756e1
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104889881"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105731293"
 ---
 # <a name="set-up-azure-app-service-access-restrictions"></a>Toegangs beperkingen voor Azure App Service instellen
 
@@ -178,7 +178,7 @@ Naast het beheren van de toegang tot uw app, kunt u de toegang beperken tot de S
 ### <a name="restrict-access-to-a-specific-azure-front-door-instance"></a>Toegang tot een specifiek exemplaar van de Azure-front-deur beperken
 Verkeer van de voor deur van Azure naar uw toepassing is afkomstig uit een bekende set IP-bereiken die zijn gedefinieerd in het label AzureFrontDoor. back-service. Met een beperkings regel voor service tags kunt u het verkeer beperken tot alleen de herkomst van de voor deur van Azure. Om ervoor te zorgen dat verkeer alleen afkomstig is uit uw specifieke exemplaar, moet u de binnenkomende aanvragen verder filteren op basis van de unieke http-header die door Azure front-deur wordt verzonden.
 
-:::image type="content" source="media/app-service-ip-restrictions/access-restrictions-frontdoor.png" alt-text="Scherm afbeelding van de pagina toegangs beperkingen in het Azure Portal, waarin wordt weer gegeven hoe u de Azure front-deur kunt toevoegen.":::
+:::image type="content" source="media/app-service-ip-restrictions/access-restrictions-frontdoor.png?v2" alt-text="Scherm afbeelding van de pagina toegangs beperkingen in het Azure Portal, waarin wordt weer gegeven hoe u de Azure front-deur kunt toevoegen.":::
 
 Power shell-voor beeld:
 

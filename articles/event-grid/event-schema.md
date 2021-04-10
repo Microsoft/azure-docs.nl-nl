@@ -3,12 +3,12 @@ title: Azure Event Grid-gebeurtenis schema
 description: Hierin worden de eigenschappen en schema's beschreven die voor alle gebeurtenissen aanwezig zijn. Gebeurtenissen bestaan uit een set van vijf vereiste teken reeks eigenschappen en een vereist gegevens object.
 ms.topic: reference
 ms.date: 07/07/2020
-ms.openlocfilehash: 7ddc7c78c5a9e5ba2a57b21c45fb9fab65056ee9
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 5ff7b41a45cf467074e18a50be398b2a3c9866a4
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "86105877"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105732156"
 ---
 # <a name="azure-event-grid-event-schema"></a>Azure Event Grid-gebeurtenis schema
 
@@ -78,16 +78,17 @@ Alle gebeurtenissen hebben dezelfde gegevens op het hoogste niveau:
 | Eigenschap | Type | Vereist | Beschrijving |
 | -------- | ---- | -------- | ----------- |
 | onderwerp | tekenreeks | Nee, maar indien opgenomen, moet overeenkomen met het Event Grid onderwerp Azure Resource Manager ID precies. Als dat niet het geval is, ontvangt Event Grid een stempel op het evenement. | Volledige bronpad naar de bron van de gebeurtenis. Dit veld is niet beschrijfbaar. Event Grid biedt deze waarde. |
-| onderwerp | tekenreeks | Ja | Het door de uitgever gedefinieerde pad naar het gebeurtenisonderwerp. |
-| Type | tekenreeks | Ja | Een van de geregistreerde gebeurtenistypen voor deze gebeurtenisbron. |
-| eventTime | tekenreeks | Ja | Het tijdstip waarop de gebeurtenis is gegenereerd op basis van de UTC-tijd van de provider. |
-| id | tekenreeks | Ja | De unieke id voor de gebeurtenis. |
-| gegevens | object | Nee | Gebeurtenis gegevens die specifiek zijn voor de resource provider. |
+| onderwerp | tekenreeks | Yes | Het door de uitgever gedefinieerde pad naar het gebeurtenisonderwerp. |
+| Type | tekenreeks | Yes | Een van de geregistreerde gebeurtenistypen voor deze gebeurtenisbron. |
+| eventTime | tekenreeks | Yes | Het tijdstip waarop de gebeurtenis is gegenereerd op basis van de UTC-tijd van de provider. |
+| id | tekenreeks | Yes | De unieke id voor de gebeurtenis. |
+| gegevens | object | No | Gebeurtenis gegevens die specifiek zijn voor de resource provider. |
 | dataVersion | tekenreeks | Nee, maar wordt voorzien van een lege waarde. | De schemaversie van het gegevensobject. De uitgever definieert de schemaversie. |
 | metadataVersion | tekenreeks | Niet vereist, maar indien opgenomen, moet exact overeenkomen met het Event Grid schema, `metadataVersion` op dit moment `1` . Als dat niet het geval is, ontvangt Event Grid een stempel op het evenement. | De schemaversie van de metagegevens van de gebeurtenis. Event Grid definieert het schema voor de eigenschappen op het hoogste niveau. Event Grid biedt deze waarde. |
 
 Zie de gebeurtenis bron voor meer informatie over de eigenschappen in het gegevens object:
 
+* [Azure Policy](./event-schema-policy.md)
 * [Azure-abonnementen (beheer bewerkingen)](event-schema-subscriptions.md)
 * [Container Registry](event-schema-container-registry.md)
 * [Blob Storage](event-schema-blob-storage.md)

@@ -9,15 +9,15 @@ ms.custom: seodec18, cog-serv-seo-aug-2020
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 03/02/2021
+ms.date: 03/25/2021
 ms.author: aahi
 keywords: on-premises, docker, container, sentiment analyse, natuurlijke taal verwerking
-ms.openlocfilehash: ac82781ed4a05fbbca7f5b16edb0b5349dfc400a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: cc5406cec54defd118ba350ba59b8d7311cff563
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102432057"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106089702"
 ---
 # <a name="install-and-run-text-analytics-containers"></a>De Text Analytics-containers installeren en uitvoeren
 
@@ -49,6 +49,8 @@ U moet voldoen aan de volgende vereisten voordat u Text Analytics containers geb
 |Text Analytics resource |Als u de container wilt gebruiken, hebt u het volgende nodig:<br><br>Een Azure [Text Analytics-resource](../../cognitive-services-apis-create-account.md) met de gratis (F0) of Standard (S) [prijs categorie](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/). U moet de bijbehorende API-sleutel en eind punt-URI ophalen door te navigeren naar de **sleutel en de eindpunt** pagina van uw resource in de Azure Portal. <br><br>**{API_KEY}**: een van de twee beschik bare resource sleutels. <br><br>**{ENDPOINT_URI}**: het eind punt voor uw resource. |
 
 [!INCLUDE [Gathering required parameters](../../containers/includes/container-gathering-required-parameters.md)]
+
+Als u de Text Analytics gebruikt voor de status container, moet de bevestigingen van de [verantwoordelijke AI](https://docs.microsoft.com/legal/cognitive-services/text-analytics/transparency-note-health)  (Rai) ook aanwezig zijn met een waarde van `accept` .
 
 ## <a name="the-host-computer"></a>De hostcomputer
 

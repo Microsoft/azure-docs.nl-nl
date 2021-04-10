@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 12/03/2020
 ms.author: msangapu
 ms.openlocfilehash: e9d92c60e74ac9106246ccd445afaca926065e5f
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104871194"
 ---
 # <a name="monitor-app-service-instances-using-health-check"></a>App Service instanties controleren met status controle
@@ -48,7 +48,7 @@ In dit artikel wordt gebruikgemaakt van de status controle in de Azure Portal om
 
 Naast het configureren van de opties voor de status controle kunt u ook de volgende [app-instellingen](configure-common.md)configureren:
 
-| Naam van app-instelling | Toegestane waarden | Beschrijving |
+| Naam van app-instelling | Toegestane waarden | Description |
 |-|-|-|
 |`WEBSITE_HEALTHCHECK_MAXPINGFAILURES` | 2 - 10 | Het maximum aantal ping-fouten. Wanneer bijvoorbeeld is ingesteld op `2` , worden uw instanties verwijderd na `2` mislukte pings. Bovendien, wanneer u omhoog of omlaag schaalt, App Service pingt het Health Check-pad om ervoor te zorgen dat er nieuwe exemplaren gereed zijn. |
 |`WEBSITE_HEALTHCHECK_MAXUNHEALTYWORKERPERCENT` | 0 - 100 | Om te voor komen dat er overweldigende instanties zijn, worden niet meer dan de helft van de instanties uitgesloten. Als bijvoorbeeld een App Service plan wordt geschaald naar vier instanties en drie de status niet in orde hebben, worden er Maxi maal twee uitgesloten. De andere twee instanties (een gezonde en een slechte status) blijven aanvragen ontvangen. In het slechtste scenario waarbij alle instanties een slechte status hebben, wordt geen uitgesloten. Als u dit gedrag wilt overschrijven, stelt u de app-instelling in op een waarde tussen `0` en `100` . Een hogere waarde betekent dat er meer beschadigde instanties worden verwijderd (standaard is 50). |

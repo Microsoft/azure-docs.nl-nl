@@ -10,10 +10,10 @@ ms.topic: tutorial
 ms.date: 03/02/2021
 ms.custom: template-tutorial
 ms.openlocfilehash: 82b5892b027627871e5492e3c6cd3776a923632b
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102553439"
 ---
 # <a name="tutorial-create-a-nat-gateway-using-the-azure-portal"></a>Zelfstudie: Een NAT-gateway maken met de Azure-portal

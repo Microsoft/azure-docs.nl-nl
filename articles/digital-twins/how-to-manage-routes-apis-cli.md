@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 11/18/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 97fad1b984ad34722a952a31d8245eb68417a2ab
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.openlocfilehash: e6b35031d976a11bdac6f38d74f9e02a0fc83302
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104779967"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936305"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-apis-and-cli"></a>Eind punten en routes beheren in azure Digital Apparaatdubbels (Api's en CLI)
 
@@ -158,7 +158,7 @@ Zodra het eind punt met onbestelbare berichten is ingesteld, worden niet-gestuur
 
 Onbestelbare berichten komen overeen met het schema van de oorspronkelijke gebeurtenis die is bedoeld om aan uw oorspronkelijke eind punt te worden geleverd.
 
-Hier volgt een voor beeld van een bericht met een onbestelbare melding voor een dubbele taak voor het maken van een [waarschuwing](how-to-interpret-event-data.md#digital-twin-life-cycle-notifications):
+Hier volgt een voor beeld van een bericht met een onbestelbare melding voor een dubbele taak voor het maken van een [waarschuwing](how-to-interpret-event-data.md#digital-twin-lifecycle-notifications):
 
 ```json
 {
@@ -234,12 +234,14 @@ Zie [*How-to: use the Azure Digital APPARAATDUBBELS cli*](how-to-use-cli.md)(Eng
 Als u geen filtert, ontvangen eind punten diverse gebeurtenissen van Azure Digital Apparaatdubbels:
 * Telemetrie die wordt geactiveerd door [Digital apparaatdubbels](concepts-twins-graph.md) met de Azure Digital APPARAATDUBBELS Service API
 * Dubbele eigenschaps wijzigings meldingen, die worden geactiveerd bij wijzigingen in de eigenschappen voor elke dubbele in het Azure Digital Apparaatdubbels-exemplaar
-* Levenscyclus gebeurtenissen, die worden geactiveerd wanneer apparaatdubbels of relaties worden gemaakt of verwijderd
+* Levenscyclus gebeurtenissen die worden geactiveerd wanneer apparaatdubbels of relaties worden gemaakt of verwijderd
 
 U kunt de verzonden gebeurtenissen beperken door een **filter** voor een eind punt toe te voegen aan de route van uw gebeurtenis.
 
 >[!NOTE]
-> Filters zijn **hoofdletter gevoelig** en moeten overeenkomen met de payload-aanvraag (die mogelijk niet noodzakelijkerwijs overeenkomt met het model geval).
+> Filters zijn **hoofdletter gevoelig** en moeten overeenkomen met de payload-aanvraag. 
+>
+> Voor telemetrie-filters betekent dit dat de behuizing moet overeenkomen met het hoofdletter gebruik dat wordt verzonden door het apparaat, niet noodzakelijkerwijs de behuizing die is gedefinieerd in het model van de twee. 
 
 Als u een filter wilt toevoegen, kunt u een PUT-aanvraag gebruiken voor *https://{uw-Azure-Digital-apparaatdubbels-hostname}/eventRoutes/{Event-route-name}? API-Version = 2020-10-31* met de volgende hoofd tekst:
 

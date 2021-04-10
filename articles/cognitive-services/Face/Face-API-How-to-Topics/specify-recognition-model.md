@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/05/2021
 ms.author: longl
 ms.custom: devx-track-csharp
-ms.openlocfilehash: cd4ed992557a3c333919b63cc36757beb2f70454
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 3d22f2fb0bb550d966cbc5e181882552514513b2
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102433553"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936577"
 ---
 # <a name="specify-a-face-recognition-model"></a>Een model voor gezichtsherkenning opgeven
 
@@ -87,7 +87,7 @@ Er is geen wijziging in de [Face-identify-] API. u hoeft alleen de model versie 
 
 ## <a name="find-similar-faces-with-specified-model"></a>Vergelijk bare gezichten zoeken met het opgegeven model
 
-U kunt ook een herkennings model opgeven voor zoek acties op vergelijk bare functies. U kunt de model versie toewijzen bij `recognitionModel` het maken van de lijst face met [FaceList-Create] API of [LargeFaceList-Create]. Als u deze para meter niet opgeeft, `recognition_01` wordt standaard het model gebruikt. In een gezichts lijst wordt altijd het herkennings model gebruikt dat is gemaakt met en er worden nieuwe gezichten gekoppeld aan dit model wanneer ze worden toegevoegd aan de lijst. u kunt dit niet wijzigen nadat het is gemaakt. Als u wilt zien in welk model een gezichts lijst is geconfigureerd, gebruikt u de [FaceList-Get-] API waarbij de para meter _returnRecognitionModel_ is ingesteld op **True**.
+U kunt ook een herkennings model opgeven voor zoek acties op vergelijk bare functies. U kunt de model versie toewijzen bij `recognitionModel` het maken van de **FaceList** met [FaceList-Create] API of [LargeFaceList-Create]. Als u deze para meter niet opgeeft, `recognition_01` wordt standaard het model gebruikt. Een **FaceList** maakt altijd gebruik van het herkennings model waarmee het is gemaakt, en nieuwe gezichten worden gekoppeld aan dit model wanneer ze worden toegevoegd aan de lijst. u kunt dit niet wijzigen nadat het is gemaakt. Als u wilt zien welk model a **FaceList** is geconfigureerd met, gebruikt u de [FaceList-Get-] API met de para meter _returnRecognitionModel_ ingesteld op **True**.
 
 Zie het volgende code voorbeeld voor de .NET-client bibliotheek.
 
@@ -95,7 +95,7 @@ Zie het volgende code voorbeeld voor de .NET-client bibliotheek.
 await faceClient.FaceList.CreateAsync(faceListId, "My face collection", recognitionModel: "recognition_04");
 ```
 
-Deze code maakt een lijst met gezichten `My face collection` met de naam, met behulp van het _recognition_04_ model voor het uitpakken van onderdelen. Wanneer u deze gezichts lijst zoekt naar een nieuw gedetecteerd gezicht, moet dat gezicht zijn gedetecteerd ([gezichts detectie]) met behulp van het _recognition_04_ model. Net als in de vorige sectie moet het model consistent zijn.
+Deze code maakt een **FaceList** `My face collection` met de naam, met behulp van het _recognition_04_ model voor het uitpakken van onderdelen. Wanneer u deze **FaceList** op gelijksoortige gezichten doorzoekt naar een nieuw gedetecteerd gezicht, moet dat gezicht zijn gedetecteerd ([gezichts detectie]) met behulp van het _recognition_04_ model. Net als in de vorige sectie moet het model consistent zijn.
 
 Er is geen wijziging in het [gezicht-zoek vergelijk bare] API. u geeft alleen de model versie op in detectie.
 

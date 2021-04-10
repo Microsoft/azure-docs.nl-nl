@@ -9,12 +9,12 @@ ms.reviewer: estfan, daviburg, logicappspm
 ms.topic: article
 ms.date: 03/24/2021
 tags: connectors
-ms.openlocfilehash: c81e40f769ab9eefdd919f3336591dc065d6cfc9
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: b2f7ae79cf43e257c3e13d2da7fec5c83dd3fab0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105564110"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105937274"
 ---
 # <a name="connect-to-sap-systems-from-azure-logic-apps"></a>Verbinding maken met SAP-systemen in Azure Logic Apps
 
@@ -33,6 +33,8 @@ In dit artikel wordt uitgelegd hoe u vanaf Logic Apps toegang kunt krijgen tot u
     * Als u uw logische app uitvoert in een ISE (Premium-Level [Integration service Environment)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md), raadpleegt u de [ISE-vereisten](#ise-prerequisites).
 
 * Een [SAP-toepassings server](https://wiki.scn.sap.com/wiki/display/ABAP/ABAP+Application+Server) of [SAP-bericht server](https://help.sap.com/saphelp_nw70/helpdata/en/40/c235c15ab7468bb31599cc759179ef/frameset.htm) waartoe u toegang wilt krijgen via Logic apps. Zie [SAP-compatibiliteit](#sap-compatibility)voor meer informatie over welke SAP-servers en SAP-acties u met de connector kunt gebruiken.
+
+    * U moet uw SAP-server configureren om het gebruik van RFC toe te staan. Zie voor meer informatie de volgende SAP Opmerking: [460089-mini maal autorisatie profielen voor externe RFC-Program ma's](https://launchpad.support.sap.com/#/notes/460089). 
 
 * Bericht inhoud die naar uw SAP-server moet worden verzonden, zoals een voor beeld van een IDoc-bestand. Deze inhoud moet de XML-indeling hebben en de naam ruimte bevatten van de SAP-actie die u wilt gebruiken. U kunt [IDocs verzenden met een plat bestands schema door ze in een XML-envelop te laten teruglopen](#send-flat-file-idocs).
 

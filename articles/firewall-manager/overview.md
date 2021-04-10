@@ -5,14 +5,14 @@ author: vhorne
 ms.service: firewall-manager
 services: firewall-manager
 ms.topic: overview
-ms.date: 03/16/2021
+ms.date: 03/29/2021
 ms.author: victorh
-ms.openlocfilehash: 506799f94676be007cf94320e3958bd305ce85f0
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 6725bea562d3e7841b5ab82acc0a54f91f0488b4
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103573452"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105732921"
 ---
 # <a name="what-is-azure-firewall-manager"></a>Wat is Azure Firewall Manager?
 
@@ -66,7 +66,7 @@ Stuur verkeer eenvoudig door naar uw beveiligde hub om te worden gefilterd en in
 
 Deze functie is alleen beschikbaar voor implementaties van beveiligde virtuele hubs.
 
-U kunt externe providers gebruiken voor het filteren van het verkeer van vertakkingen naar internet (B2I), tegelijk met Azure Firewall voor verkeer van aftakkingen naar VNet (B2V), verkeer van VNet naar VNet (V2V) en verkeer van VNet naar internet (V2I). U kunt ook externe providers voor het filteren van V2I-verkeer gebruiken, zolang Azure Firewall maar niet is vereist voor B2V of V2V. 
+U kunt externe providers gebruiken voor het filteren van het verkeer van vertakkingen naar internet (B2I), tegelijk met Azure Firewall voor verkeer van aftakkingen naar VNet (B2V), verkeer van VNet naar VNet (V2V) en verkeer van VNet naar internet (V2I). 
 
 ## <a name="region-availability"></a>Beschikbaarheid in regio’s
 

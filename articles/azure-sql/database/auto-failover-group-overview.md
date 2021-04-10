@@ -11,13 +11,13 @@ ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
-ms.date: 12/26/2020
-ms.openlocfilehash: e0b9eea7be97b9b67e75c314c4a1d9e69322e5b5
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.date: 03/26/2021
+ms.openlocfilehash: 4d497adf5229819527608157a7a840d514f4292c
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104594254"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105732343"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Gebruik groepen voor automatische failover om transparante en gecoördineerde failover van meerdere data bases mogelijk te maken
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -178,6 +178,12 @@ Bij het uitvoeren van OLTP-bewerkingen gebruikt u `<fog-name>.database.windows.n
 
 Als u een logisch geïsoleerde alleen-lezen werk belasting hebt die tolerant is voor bepaalde verouderde gegevens, kunt u de secundaire data base in de toepassing gebruiken. Gebruik voor alleen-lezen-sessies `<fog-name>.secondary.database.windows.net` als de server-URL en de verbinding wordt automatisch naar de secundaire omgeleid. Het wordt ook aanbevolen om in de connection string Lees intentie aan te geven met behulp van `ApplicationIntent=ReadOnly` .
 
+> [!NOTE]
+> In de service lagen Premium, Bedrijfskritiek en grootschalige ondersteunt SQL Database het gebruik van alleen- [lezen replica's](read-scale-out.md) om werk belastingen met alleen-lezen query's te offloaden met behulp van de `ApplicationIntent=ReadOnly` para meter in de Connection String. Wanneer u een secundaire geo-replicatie hebt geconfigureerd, kunt u deze mogelijkheid gebruiken om verbinding te maken met een alleen-lezen-replica op de primaire locatie of op de geo-gerepliceerde locatie.
+>
+> - Gebruik en om verbinding te maken met een alleen-lezen replica op de primaire locatie `ApplicationIntent=ReadOnly` `<fog-name>.database.windows.net` .
+> - Gebruik en om verbinding te maken met een alleen-lezen replica op de secundaire locatie `ApplicationIntent=ReadOnly` `<fog-name>.secondary.database.windows.net` .
+
 ### <a name="preparing-for-performance-degradation"></a>Prestatie vermindering voorbereiden
 
 Een typische Azure-toepassing maakt gebruik van meerdere Azure-Services en bestaat uit meerdere onderdelen. De automatische failover van de failovergroep wordt geactiveerd op basis van de status van de Azure SQL-onderdelen. Andere Azure-Services in de primaire regio worden mogelijk niet beïnvloed door de storing en hun onderdelen zijn mogelijk nog steeds beschikbaar in die regio. Zodra de primaire data bases overschakelen naar de DR-regio, kan de latentie tussen de afhankelijke onderdelen toenemen. Om te voor komen dat de gevolgen van een hogere latentie van de prestaties van de toepassing worden beïnvloed, moet u ervoor zorgen dat alle onderdelen van de toepassing in de DR-regio worden redundantie en deze [richt lijnen voor netwerk beveiliging](#failover-groups-and-network-security)volgen.
@@ -267,7 +273,7 @@ Bij het uitvoeren van OLTP-bewerkingen gebruikt u `<fog-name>.zone_id.database.w
 Als u een logisch geïsoleerde alleen-lezen werk belasting hebt die tolerant is voor bepaalde verouderde gegevens, kunt u de secundaire data base in de toepassing gebruiken. Als u rechtstreeks verbinding wilt maken met het geo-gerepliceerde secundair, gebruikt u `<fog-name>.secondary.<zone_id>.database.windows.net` als de server-URL en wordt de verbinding direct tot stand gebracht met het geo-gerepliceerde secundaire.
 
 > [!NOTE]
-> In de service lagen Premium, Bedrijfskritiek en grootschalige ondersteunt SQL Database het gebruik van alleen- [lezen replica's](read-scale-out.md) voor het uitvoeren van alleen-lezen query's met behulp van de capaciteit van een of meer alleen-lezen replica's, met behulp van de `ApplicationIntent=ReadOnly` para meter in de Connection String. Wanneer u een secundaire geo-replicatie hebt geconfigureerd, kunt u deze mogelijkheid gebruiken om verbinding te maken met een alleen-lezen-replica op de primaire locatie of op de geo-gerepliceerde locatie.
+> In Bedrijfskritiek laag ondersteunt SQL Managed instance het gebruik van [alleen-lezen replica's](read-scale-out.md) voor het offloaden van alleen-lezen query's met behulp van de `ApplicationIntent=ReadOnly` para meter in de Connection String. Wanneer u een secundaire geo-replicatie hebt geconfigureerd, kunt u deze mogelijkheid gebruiken om verbinding te maken met een alleen-lezen-replica op de primaire locatie of op de geo-gerepliceerde locatie.
 >
 > - Gebruik en om verbinding te maken met een alleen-lezen replica op de primaire locatie `ApplicationIntent=ReadOnly` `<fog-name>.<zone_id>.database.windows.net` .
 > - Gebruik en om verbinding te maken met een alleen-lezen replica op de secundaire locatie `ApplicationIntent=ReadOnly` `<fog-name>.secondary.<zone_id>.database.windows.net` .

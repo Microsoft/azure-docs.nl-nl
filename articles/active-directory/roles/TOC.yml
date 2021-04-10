@@ -4,7 +4,7 @@
   items:
     - name: Wat is Azure AD RBAC?
       href: custom-overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: Rollen toewijzen aan gebruikers
       href: ../fundamentals/active-directory-users-assign-role-azure-portal.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
@@ -22,6 +22,8 @@
       href: groups-concept.md
     - name: Beheereenheden
       href: administrative-units.md
+    - name: Aanbevolen procedures
+      href: best-practices.md
     - name: Beveiliging
       items:
         - name: Rolbeveiliging plannen

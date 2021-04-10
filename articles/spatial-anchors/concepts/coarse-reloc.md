@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.service: azure-spatial-anchors
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 3f0b04183c4df469d4f723486103790c4f97671b
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104656172"
 ---
 # <a name="coarse-relocalization"></a>Coarse-relokalisatie
@@ -62,7 +62,7 @@ Deze tabel bevat een overzicht van de beschik baarheid van de sensor gegevens op
 |                 | HoloLens | Android | iOS |
 |-----------------|----------|---------|-----|
 | **GPS**         | Geen<sup>1</sup>  | Ja<sup>2</sup> | Ja<sup>3</sup> |
-| **Wi-Fi**        | Ja<sup>4</sup> | Ja<sup>5</sup> | Nee  |
+| **Wi-Fi**        | Ja<sup>4</sup> | Ja<sup>5</sup> | No  |
 | **Conbakeners** | Ja<sup>6</sup> | Ja<sup>6</sup> | Ja<sup>6</sup>|
 
 

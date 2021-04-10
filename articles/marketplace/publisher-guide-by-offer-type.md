@@ -6,19 +6,22 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: trkeya
 ms.author: trkeya
-ms.date: 10/06/2020
-ms.openlocfilehash: 3be967b611f6b75705a60bfa14523832b0652931
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/06/2021
+ms.openlocfilehash: 381ee45bd678ef22222483675ddf001e16970628
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98879221"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106552050"
 ---
 # <a name="publishing-guide-by-offer-type"></a>Publicatiehandleiding op type aanbieding
 
 In dit artikel worden de soorten aanbiedingen beschreven die beschikbaar zijn in de commerciële Marketplace. Met het *aanbiedings type* wordt de aanbod structuur gedefinieerd, waaronder de meta gegevens, artefacten en andere inhoud die wordt weer gegeven in de commerciële Marketplace.
 
 Nadat u [een publicatie optie](determine-your-listing-type.md)hebt gekozen, moet u een aanbiedings type kiezen voordat u begint met het maken van uw aanbieding in partner centrum. Het type aanbieding komt overeen met het type van de oplossing, de app of het service aanbod dat u wilt publiceren, evenals de uitlijning van micro soft-producten en-services.
+
+> [!NOTE]
+> Nadat u een aanbiedings type hebt geselecteerd, kunt u de aanbieding niet wijzigen in een ander type. Als u een ander type aanbieding wilt maken, moet u een nieuwe aanbieding maken.
 
 U kunt één type aanbieding op verschillende manieren configureren om verschillende publicatie opties, een aanbiedings optie, inrichting of prijzen in te scha kelen. De publicatie optie en configuratie van het aanbiedings type worden ook afgestemd op de beschik baarheid van de aanbieding en technische vereisten.
 

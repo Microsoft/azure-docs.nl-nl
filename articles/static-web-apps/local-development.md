@@ -2,207 +2,152 @@
 title: Lokale ontwikkeling voor Azure static-Web Apps instellen
 description: Meer informatie over het instellen van uw lokale ontwikkel omgeving voor Azure static Web Apps
 services: static-web-apps
-author: burkeholland
+author: craigshoemaker
 ms.service: static-web-apps
 ms.topic: how-to
-ms.date: 05/08/2020
-ms.author: buhollan
+ms.date: 04/02/2021
+ms.author: cshoe
 ms.custom: devx-track-js
-ms.openlocfilehash: 4d6dae8a4f4ed83af3103e95e711bacdb62cf522
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8a45d490d060febc18d77c8487c9f562fd2a914a
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "91326164"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106275498"
 ---
 # <a name="set-up-local-development-for-azure-static-web-apps-preview"></a>Lokale ontwikkeling voor Azure static Web Apps-Preview instellen
 
-Een statisch Web Apps exemplaar van Azure bestaat uit twee verschillende soorten toepassingen. De eerste is een web-app voor uw statische inhoud. Web-apps worden vaak gemaakt met front-end frameworks en bibliotheken of met statische site generatoren. Het tweede aspect is de API. Dit is een Azure Functions-app die een uitgebreide ontwikkel omgeving voor de back-end biedt.
+Wanneer een Azure static Web Apps-site naar de Cloud wordt gepubliceerd, heeft er een groot aantal services die samen werken alsof ze dezelfde toepassing zijn. Deze services omvatten:
 
-Bij uitvoering in de Cloud wijst Azure static Web Apps naadloos aanvragen toe aan de `api` route van de web-app naar de Azure functions-app zonder CORS-configuratie. U moet uw toepassing lokaal configureren om dit gedrag te simuleren.
+- De statische web-app
+- Azure Functions-API
+- Verificatie-en autorisatie Services
+- Routerings-en configuratie Services
 
-In dit artikel worden de aanbevolen procedures voor lokale ontwikkeling beschreven, met inbegrip van de volgende concepten:
+Deze services moeten met elkaar communiceren en Azure static Web Apps verwerkt deze integratie in de Cloud.
 
-- De web-app instellen voor statische inhoud
-- De Azure Functions-app configureren voor de API van uw toepassing
-- Fout opsporing en uitvoering van de toepassing
-- Best practices voor de bestands-en mapstructuur van uw app
+Als u lokaal uitvoert, worden deze services echter niet automatisch aan elkaar gekoppeld.
+
+Om een vergelijk bare ervaring te bieden als voor wat u in azure krijgt, biedt de [statische web apps CLI van Azure](https://github.com/Azure/static-web-apps-cli) de volgende services:
+
+- Een lokale statische site server
+- Een proxy voor de front-end Framework-ontwikkelings server
+- Een proxy voor uw API-eind punten-beschikbaar via Azure Functions Core Tools
+- Een model verificatie-en autorisatie server
+- Lokale routes en configuratie-instellingen afdwingen
+
+## <a name="how-it-works"></a>Uitleg
+
+In het volgende diagram ziet u hoe aanvragen lokaal worden verwerkt.
+
+:::image type="content" source="media/local-development/cli-conceptual.png" alt-text="IP-adres van de statische web-app voor Azure en de respons stroom":::
+
+> [!IMPORTANT]
+> Ga naar [http://localhost:4280](http://localhost:4280) om toegang te krijgen tot de toepassing die wordt geleverd door de cli.
+
+- **Aanvragen** naar de poort `4280` worden doorgestuurd naar de juiste server, afhankelijk van het type aanvraag.
+
+- Aanvragen voor **statische inhoud** , zoals HTML of CSS, worden verwerkt door de interne cli-server voor statische inhoud of door de front-end Framework-server voor fout opsporing.
+
+- **Verificatie-en autorisatie** aanvragen worden verwerkt door een emulator, waarmee een echt identiteits profiel aan uw app wordt verstrekt.
+
+- **Functions core tools runtime** verwerkt aanvragen voor de API van de site.
+
+- **Antwoorden** van alle services worden teruggestuurd naar de browser alsof het allemaal één toepassing was.
 
 ## <a name="prerequisites"></a>Vereisten
 
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Azure functions-extensie](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) voor Visual Studio code
-- [Live server-extensie](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) voor Visual Studio code
-  - Alleen vereist als u geen front-end Java script-Framework of de CLI van een statische site generator gebruikt
+- **Bestaande Azure Static web apps-site**: als u er geen hebt, kunt u beginnen met de [vanille-API starter-](https://github.com/staticwebdev/vanilla-api/generate?return_to=/staticwebdev/vanilla-api/generate) app.
+- **[Node.js](https://nodejs.org) met NPM**: Voer de [Node.js LTS](https://nodejs.org) -versie uit, waaronder toegang tot [NPM](https://www.npmjs.com/).
+- **[Visual Studio code](https://code.visualstudio.com/)**: wordt gebruikt voor het opsporen van fouten in de API-toepassing, maar niet vereist voor de cli.
 
-## <a name="run-projects-locally"></a>Projecten lokaal uitvoeren
+## <a name="get-started"></a>Aan de slag
 
-Het lokaal uitvoeren van een statische Azure-web-app omvat drie processen, afhankelijk van het feit of uw project een API bevat.
+Open een terminal naar de hoofdmap van uw bestaande Azure static Web Apps-site.
 
-- Een lokale webserver uitvoeren
-- De API uitvoeren
-- Het webproject verbinden met de API
+1. Installeer de CLI.
 
-Afhankelijk van hoe een website is gebouwd, is het mogelijk dat een lokale webserver of niet vereist is om de toepassing uit te voeren in de browser. Bij het gebruik van front-end Java script frameworks en statische site generators is deze functionaliteit ingebouwd in hun respectieve Cli's (opdracht regel interfaces). De volgende koppelingen verwijzen naar de CLI-verwijzing voor een selectie van frameworks, Bibliotheken en genera tors.
+    `npm install -g @azure/static-web-apps-cli`
 
-### <a name="javascript-frameworks-and-libraries"></a>Java script-frameworks en-bibliotheken
+1. Bouw uw app als dat nodig is voor uw toepassing.
 
-- [Angular CLI](https://angular.io/cli)
-- [Vue CLI](https://cli.vuejs.org/guide/creating-a-project.html)
-- [CLI-reageren](https://create-react-app.dev/)
+    Voer uit `npm run build` of de overeenkomende opdracht voor uw project.
 
-### <a name="static-site-generators"></a>Statische site generatoren
+1. Ga naar de uitvoermap voor uw app. Uitvoer mappen hebben vaak de naam _Build_ of iets dergelijks.
 
-- [Gatsby CLI](https://www.gatsbyjs.org/docs/gatsby-cli/)
-- [Hugo](https://gohugo.io/getting-started/quick-start/)
-- [Jekyll](https://jekyllrb.com/docs/usage/)
+1. Start de CLI.
 
-Als u een CLI-hulp programma gebruikt voor uw site, kunt u door gaan naar de sectie [het uitvoeren van de API](#run-api-locally) .
+    `swa start`
 
-### <a name="running-a-local-web-server-with-live-server"></a>Een lokale webserver met live server uitvoeren
+1. Navigeer naar [http://localhost:4280](http://localhost:4280) om de app in de browser weer te geven.
 
-De live server-extensie voor Visual Studio code biedt een lokale ontwikkel webserver die statische inhoud verzendt.
+### <a name="other-ways-to-start-the-cli"></a>Andere manieren om de CLI te starten
 
-#### <a name="create-a-repository"></a>Een opslagplaats maken
+| Beschrijving | Opdracht |
+|--- | --- |
+| Een specifieke map gebruiken | `swa start ./output-folder` |
+| Een actieve Framework-ontwikkelings server gebruiken | `swa start http://localhost:3000` |
+| Een functions-app in een map starten | `swa start ./output-folder --api ./api` |
+| Een actieve functions-app gebruiken | `swa start ./output-folder --api http://localhost:7071` |
 
-1. Zorg ervoor dat u bent aangemeld bij GitHub en ga naar [https://github.com/staticwebdev/vanilla-api/generate](https://github.com/staticwebdev/vanilla-api/generate) en maak een nieuw github-project met de naam **vanille-API**, met behulp van deze sjabloon.
+## <a name="authorization-and-authentication-emulation"></a>Verificatie-en verificatie-emulatie
 
-    :::image type="content" source="media/local-development/vanilla-api.png" alt-text="GitHub nieuw opslag plaats-venster":::
+De statische Web Apps CLI emuleert de [beveiligings stroom](./authentication-authorization.md) die in Azure is geïmplementeerd. Wanneer een gebruiker zich aanmeldt, kunt u een valse identiteits profiel definiëren dat naar de app wordt geretourneerd.
 
-1. Open Visual Studio Code.
+Wanneer u bijvoorbeeld probeert te navigeren naar `/.auth/login/github` , wordt er een pagina geretourneerd waarmee u een identiteits profiel kunt definiëren.
 
-1. Druk op **F1** om het opdrachtenpalet te openen.
+> [!NOTE]
+> De emulator werkt met elke beveiligings provider, niet alleen GitHub.
 
-1. Typ **Clone** in het zoekvak en selecteer **git: Clone**.
+:::image type="content" source="media/local-development/auth-emulator.png" alt-text="Lokale verificatie en autorisatie-emulator":::
 
-    :::image type="content" source="media/local-development/command-palette-git-clone.png" alt-text="Git-kloon optie in Visual Studio code":::
+De emulator biedt een pagina waarmee u de volgende principal-waarden van de [client](./user-information.md#client-principal-data) kunt opgeven:
 
-1. Voer de volgende waarde in voor de URL van de **opslag plaats**.
+| Waarde | Beschrijving |
+| --- | --- |
+| **Gebruikersnaam** | De account naam die aan de beveiligings provider is gekoppeld. Deze waarde wordt weer gegeven als de `userDetails` eigenschap in de client-Principal en wordt automatisch gegenereerd als u geen waarde opgeeft. |
+| **Gebruikers-id** | De waarde die automatisch wordt gegenereerd door de CLI.  |
+| **Rollen** | Een lijst met namen van rollen, waarbij elke naam op een nieuwe regel staat.  |
 
-   ```http
-   git@github.com:<YOUR_GITHUB_ACCOUNT>/vanilla-api.git
-   ```
+Zodra u bent aangemeld:
 
-1. Selecteer een maplocatie voor het nieuwe project.
+- U kunt het `/.auth/me` eind punt of een functie-eind punt gebruiken om de [client-Principal](./user-information.md)van de gebruiker op te halen.
 
-1. Wanneer u wordt gevraagd de gekloonde opslagplaats te openen, selecteert u **Openen**.
+- Als u navigeert `./auth/logout` , wordt de client-Principal gewist en wordt de gebruiker afgemeld.
 
-    :::image type="content" source="media/local-development/open-new-window.png" alt-text="In nieuw venster openen":::
+## <a name="debugging"></a>Foutopsporing
 
-Visual Studio code opent het gekloonde project in de editor.
+Er zijn twee fout opsporingsgegevens in een statische web-app. De eerste is voor de site van de statische inhoud en de tweede is voor API-functies. Lokale fout opsporing is mogelijk door de statische Web Apps CLI toe te staan ontwikkel servers te gebruiken voor een of beide van deze contexten.
 
-### <a name="run-the-website-locally-with-live-server"></a>De website lokaal uitvoeren met live server
+In de volgende stappen ziet u een algemeen scenario waarin ontwikkel servers worden gebruikt voor zowel fout opsporing als contexten.
 
-1. Druk op **F1** om het opdrachtenpalet te openen.
+1. Start de server voor de ontwikkeling van statische sites. Deze opdracht is specifiek voor het front-end-Framework dat u gebruikt, maar wordt vaak gebruikt in de vorm van opdrachten als `npm run build` , `npm start` of `npm run dev` .
 
-1. Typ **Live server** in het zoekvak en selecteer **Live server: openen met live server**
+1. Open de map API-toepassing in Visual Studio code en start een foutopsporingssessie.
 
-    Er wordt een browser tabblad geopend om de toepassing weer te geven.
+1. Geef de adressen voor de statische server en API-server door aan de `swa start` opdracht door ze in de aangegeven volg orde weer te geven.
 
-    :::image type="content" source="media/local-development/vanilla-api-site.png" alt-text="Eenvoudige statische site die in de browser wordt uitgevoerd":::
+    `swa start http://localhost:<DEV-SERVER-PORT-NUMBER> --api=http://localhost:7071`
 
-    Met deze toepassing wordt een HTTP-aanvraag voor het `api/message` eind punt. De aanvraag is nu mislukt omdat het API-gedeelte van deze toepassing moet worden gestart.
+De volgende scherm afbeeldingen tonen de terminals voor een typisch fout opsporingsprogramma:
 
-### <a name="run-api-locally"></a>API lokaal uitvoeren
+De statische inhouds site wordt uitgevoerd via `npm run dev` .
 
-Azure static Web Apps-Api's worden aangedreven door Azure Functions. Zie [een API toevoegen aan statische Azure-web apps met Azure functions](add-api.md) voor meer informatie over het toevoegen van een API aan een statisch web apps project van Azure.
+:::image type="content" source="media/local-development/run-dev-static-server.png" alt-text="Ontwikkel server voor statische site":::
 
-Als onderdeel van het proces voor het maken van de API wordt een start configuratie gemaakt voor Visual Studio code. Deze configuratie bevindt zich in de map _. vscode_ . Deze map bevat alle vereiste instellingen voor het lokaal bouwen en uitvoeren van de API.
+De Azure Functions API-toepassing voert een foutopsporingssessie uit in Visual Studio code.
 
-1. Druk in Visual Studio code op **F5** om de API te starten.
+:::image type="content" source="media/local-development/visual-studio-code-debugging.png" alt-text="Visual Studio code API-fout opsporing":::
 
-1. Er wordt een nieuw terminal exemplaar geopend waarin de uitvoer van het API-buildproces wordt weer gegeven.
+De statische Web Apps CLI wordt gestart met behulp van beide ontwikkel servers.
 
-    :::image type="content" source="media/local-development/terminal-api-debug.png" alt-text="API die wordt uitgevoerd in Visual Studio code Terminal":::
+:::image type="content" source="media/local-development/static-web-apps-cli-terminal.png" alt-text="Azure static Web Apps CLI-Terminal":::
 
-   De status balk in Visual Studio code is nu oranje. Deze kleur geeft aan dat de API nu wordt uitgevoerd en dat het fout opsporingsprogramma is gekoppeld.
+Aanvragen die via poort gaan `4280` worden doorgestuurd naar de statische content development server of de API-fout opsporings sessie.
 
-1. Druk vervolgens op **Ctrl/Cmd** en klik op de URL in de terminal om een browser venster te openen dat de API aanroept.
-
-    :::image type="content" source="media/local-development/hello-from-api-endpoint.png" alt-text="Browser weergave resultaat van API-aanroep":::
-
-### <a name="debugging-the-api"></a>Fout opsporing van de API
-
-1. Open het bestand _API/GetMessage/index.js_ in Visual Studio code.
-
-1. Klik in de linkermarge op regel 2 om een onderbrekings punt in te stellen. Er wordt een rode stip weer gegeven die aangeeft dat het onderbrekings punt is ingesteld.
-
-    :::image type="content" source="media/local-development/breakpoint-set.png" alt-text="Onderbrekings punt in Visual Studio code":::
-
-1. Vernieuw de pagina die wordt uitgevoerd in de browser <http://127.0.0.1:7071/api/message> .
-
-1. Het onderbrekings punt wordt in Visual Studio code en de uitvoering van Program ma's gepauzeerd.
-
-   :::image type="content" source="media/local-development/breakpoint-hit.png" alt-text="Onderbrekings punt in Visual Studio code":::
-
-   [In Visual Studio code](https://code.visualstudio.com/Docs/editor/debugging) voor uw API is een complete ervaring voor het opsporen van fouten beschikbaar.
-
-1. Druk op de knop **door gaan** in de fout balk om de uitvoering voort te zetten.
-
-    :::image type="content" source="media/local-development/continue-button.png" alt-text="Knop door gaan in Visual Studio code":::
-
-### <a name="calling-the-api-from-the-application"></a>De API aanroepen vanuit de toepassing
-
-Tijdens de implementatie worden deze aanvragen door Azure static Web Apps automatisch toegewezen aan de eind punten in de _API_ -map. Deze toewijzing zorgt ervoor dat aanvragen van de toepassing naar de API eruitzien zoals in het volgende voor beeld.
-
-```javascript
-let response = await fetch("/api/message");
-```
-
-Afhankelijk van het feit of uw toepassing is gebouwd met een Java script-Framework CLI, zijn er twee manieren om het pad naar de `api` route te configureren wanneer uw toepassing lokaal wordt uitgevoerd.
-
-- Omgevings configuratie bestanden (aanbevolen voor Java script-frameworks en-bibliotheken)
-- Lokale proxy
-
-### <a name="environment-configuration-files"></a>Omgevings configuratie bestanden
-
-Als u uw app bouwt met front-end Frameworks met een CLI, moet u omgevings configuratie bestanden gebruiken. Elk Framework of bibliotheek heeft een andere manier om deze omgevings configuratie bestanden te verwerken. Het is gebruikelijk om een configuratie bestand te hebben voor ontwikkeling dat wordt gebruikt wanneer uw toepassing lokaal wordt uitgevoerd en één voor productie die wordt gebruikt wanneer uw toepassing wordt uitgevoerd in de productie omgeving. De CLI voor het Java script-Framework of de statische-site generator die u gebruikt, wordt automatisch vertrouwd om het ontwikkel bestand lokaal en het productie bestand te gebruiken wanneer uw app wordt gebouwd door Azure static Web Apps.
-
-In het ontwikkel configuratie bestand kunt u het pad naar de API opgeven, die verwijst naar de lokale locatie `http:127.0.0.1:7071` waar de API voor uw site lokaal wordt uitgevoerd.
-
-```
-API=http:127.0.0.1:7071/api
-```
-
-Geef in het productie configuratie bestand het pad op naar de API als `api` . Op deze manier roept uw toepassing de API aan via "yoursite.com/api" wanneer deze wordt uitgevoerd in de productie omgeving.
-
-```
-API=api
-```
-
-Naar deze configuratie waarden kan worden verwezen als omgevings variabelen voor knoop punten in de Java script van de web-app.
-
-```js
-let response = await fetch(`${process.env.API}/message`);
-```
-
-Wanneer de CLI wordt gebruikt voor het uitvoeren van uw site in de ontwikkelings modus of voor het bouwen van de site voor productie, `process.env.API` wordt de waarde vervangen door de waarde uit het juiste configuratie bestand.
-
-Zie de volgende artikelen voor meer informatie over het configureren van omgevings bestanden voor front-end Java script-frameworks en-bibliotheken:
-
-- [Hoek omgevings variabelen](https://angular.io/guide/build#configuring-application-environments)
-- [Reageren-aangepaste omgevings variabelen toevoegen](https://create-react-app.dev/docs/adding-custom-environment-variables/)
-- [Vue-modi en omgevings variabelen](https://cli.vuejs.org/guide/mode-and-env.html)
-
-[!INCLUDE [static-web-apps-local-proxy](../../includes/static-web-apps-local-proxy.md)]
-
-##### <a name="restart-live-server"></a>Live server opnieuw opstarten
-
-1. Druk op **F1** om het opdracht palet te openen in Visual Studio code.
-
-1. Typ **Live server** en selecteer **Live server: stop Live server**.
-
-    :::image type="content" source="media/local-development/stop-live-server.png" alt-text="De live server-opdracht stoppen in het Visual Studio-opdracht palet":::
-
-1. Druk op **F1** om het opdrachtenpalet te openen.
-
-1. Typ **Live server** en selecteer **Live server: openen met live server**.
-
-1. Vernieuw de toepassing die wordt uitgevoerd op `http://locahost:3000` . Het bericht dat wordt geretourneerd door de API wordt nu weer gegeven in de browser.
-
-    :::image type="content" source="media/local-development/hello-from-api.png" alt-text="Hello van de API die in de browser wordt weer gegeven":::
+Zie de [Azure Static web apps cli-opslag plaats](https://github.com/Azure/static-web-apps-cli)voor meer informatie over verschillende scenario's voor fout opsporing, met richt lijnen voor het aanpassen van poorten en server adressen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [App-instellingen configureren](application-settings.md)
+> [Uw toepassing configureren](configuration.md)

@@ -13,12 +13,12 @@ ms.date: 10/30/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 55cecc658b11b7a09665af7128df25fbbff800ef
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 90e81e30e26846bf05032dddf1441e8428bc7158
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100559530"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106550979"
 ---
 # <a name="overview-of-the-microsoft-authentication-library-msal"></a>Overzicht van MSAL (Microsoft Authentication Library)
 Met de micro soft Authentication Library (MSAL) kunnen ontwikkel aars [tokens](developer-glossary.md#security-token) verkrijgen van het micro soft Identity-platform om gebruikers te verifiëren en beveiligde web-api's te gebruiken. Het kan worden gebruikt om veilige toegang te bieden tot Microsoft Graph, andere micro soft-Api's, Web-Api's van derden of uw eigen web-API. MSAL ondersteunt veel verschillende toepassings architecturen en platformen, waaronder .NET, java script, Java, Python, Android en iOS.
@@ -53,6 +53,7 @@ MSAL kan worden gebruikt in veel toepassings scenario's, waaronder de volgende:
 | [MSAL voor Android](https://github.com/AzureAD/microsoft-authentication-library-for-android)|Android|
 | [MSAL hoek](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-angular)| Apps met één pagina met hoek-en Angular.js Frameworks|
 | [MSAL voor iOS en macOS](https://github.com/AzureAD/microsoft-authentication-library-for-objc)|iOS en macOS|
+| [MSAL Go (preview-versie)](https://github.com/AzureAD/microsoft-authentication-library-for-go)|Windows, macOS, Linux|
 | [MSAL Java](https://github.com/AzureAD/microsoft-authentication-library-for-java)|Windows, macOS, Linux|
 | [MSAL.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser)| Java script-type script frameworks zoals Vue.js, Ember.js of Durandal.js|
 | [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)| .NET Framework, .NET core, Xamarin Android, Xamarin iOS, Universeel Windows-platform|

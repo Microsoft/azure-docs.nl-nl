@@ -188,8 +188,6 @@
           href: rest-text-to-speech.md
     - name: Resources
       items:
-        - name: Standaardspraakondersteuning
-          href: language-support.md#standard-voices
         - name: Ondersteuning voor neurale stem
           href: language-support.md#neural-voices
         - name: Ondersteuning voor regio
@@ -249,7 +247,7 @@
     - name: Overzicht van intentieherkenning
       href: intent-recognition.md
     - name: Quickstart voor intentieherkenning
-      href: quickstarts/intent-recognition.md
+      href: get-started-intent-recognition.md
     - name: Instructiegidsen
       items:
         - name: 'Spraakintenties herkennen met LUIS, C#'
@@ -464,6 +462,8 @@
       href: how-to-track-speech-sdk-memory-usage.md
     - name: Privé-eindpunt inschakelen
       href: speech-services-private-link.md
+    - name: VNet-service-eind punt inschakelen
+      href: speech-service-vnet-service-endpoint.md
     - name: OpenSSL voor Linux configureren
       displayName: 'memory usage, memory consumption, object logging, object tracking, memory, openssl'
       href: how-to-configure-openssl-linux.md

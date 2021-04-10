@@ -4,10 +4,10 @@ description: Meer informatie over het concept van beveiligings aanbevelingen en 
 ms.topic: conceptual
 ms.date: 02/16/2021
 ms.openlocfilehash: a29957f459edad8b768daea7bc4567d77c80b165
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104784982"
 ---
 # <a name="security-recommendations-for-iot-devices"></a>Beveiligings aanbevelingen voor IoT-apparaten
@@ -21,7 +21,7 @@ In dit artikel vindt u een lijst met aanbevelingen die kunnen worden geactiveerd
 
 Aanbevelingen voor apparaten bieden inzichten en suggesties voor het verbeteren van de beveiliging van postuur.
 
-| Severity | Name | Gegevensbron | Beschrijving |
+| Severity | Name | Gegevensbron | Description |
 |--|--|--|--|
 | Normaal | Poorten op het apparaat openen | Klassieke Defender-IoT-micro-agent| Er is een luisterend eind punt gevonden op het apparaat. |
 | Normaal | Permissief firewall beleid gevonden in een van de ketens. | Klassieke Defender-IoT-micro-agent| Toegestaan firewall beleid gevonden (invoer/uitvoer). Het firewall beleid moet standaard al het verkeer weigeren en regels definiëren om de benodigde communicatie met/van het apparaat mogelijk te maken. |
@@ -33,7 +33,7 @@ Aanbevelingen voor apparaten bieden inzichten en suggesties voor het verbeteren 
 
 Operationele aanbevelingen bieden inzichten en suggesties voor het verbeteren van de configuratie van de beveiligings agent.
 
-| Severity | Name | Gegevensbron | Beschrijving |
+| Severity | Name | Gegevensbron | Description |
 |--|--|--|--|
 | Beperkt | Agent verzendt ongebruikte berichten | Klassieke Defender-IoT-micro-agent | 10% of meer beveiligings berichten zijn in de afgelopen 24 uur kleiner dan 4 KB. |
 | Beperkt | Dubbele configuratie voor beveiliging niet optimaal | Klassieke Defender-IoT-micro-agent | De dubbele configuratie van beveiliging is niet optimaal. |

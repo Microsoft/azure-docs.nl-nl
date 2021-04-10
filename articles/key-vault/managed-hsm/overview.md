@@ -7,15 +7,15 @@ ms.service: key-vault
 ms.subservice: managed-hsm
 ms.topic: overview
 ms.custom: mvc
-ms.date: 09/15/2020
+ms.date: 04/01/2021
 ms.author: mbaldwin
 author: msmbaldwin
-ms.openlocfilehash: 95feeebf009cae22cf3952df80596c12e75cbe4b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 605e3f0451cc2029ecc98e42741f30a2d3ef190b
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94357569"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106167954"
 ---
 # <a name="what-is-azure-key-vault-managed-hsm-preview"></a>Wat is Azure Key Vault Managed HSM (preview)?
 
@@ -36,6 +36,7 @@ Azure Key Vault Managed HSM is een cloudservice van hoge beschikbaarheid en éé
 - **Geïsoleerd toegangsbeheer**: Met toegangsbeheer op basis van lokale RBAC van beheerde HSM kunnen toegewezen HSM-clusterbeheerders volledige controle hebben over de HSM's, die zelfs beheerders van beheergroepen, abonnementen of resourcegroepen niet kunnen overschrijven.
 - **Met FIPS 140-2 Level 3 gevalideerde HSM's**: Uw gegevens worden beschermd en er wordt voldaan aan de nalevingsvereisten met HSM's die zijn gevalideerd met FIPS (Federal Information Protection Standard) 140-2 Level 3. Beheerde HSM's maken gebruik van de Marvell LiquidSecurity HSM-adapters.
 - **Bewaken en controleren**: volledig geïntegreerd met Azure Monitor. U kunt volledige logboeken van alle activiteiten ophalen via Azure Monitor. Gebruik Azure Log Analytics voor analyse en waarschuwingen.
+- **Data locatie**: door beheerde HSM worden geen klant gegevens opgeslagen en verwerkt buiten de regio waarin de klant het HSM-exemplaar implementeert in.
 
 ### <a name="integrated-with-azure-and-microsoft-paassaas-services"></a>Geïntegreerd met PaaS-/SaaS-services van Azure en Microsoft 
 

@@ -1,19 +1,15 @@
 ---
 title: VMware nood herstel-vereisten voor de configuratie server in Azure Site Recovery
 description: In dit artikel worden de ondersteuning en vereisten beschreven voor het implementeren van de configuratie server voor VMware nood herstel op Azure met Azure Site Recovery
-author: rayne-wiselman
-manager: carmonm
 ms.service: site-recovery
-services: site-recovery
 ms.topic: article
 ms.date: 09/09/2019
-ms.author: raynew
-ms.openlocfilehash: 0b0942b517c8dc83c048bd1203a58d9861515dfb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: aec08aa4f18c69195be91b7544b74fee100f6f6b
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "95997802"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106580189"
 ---
 # <a name="configuration-server-requirements-for-vmware-disaster-recovery-to-azure"></a>Vereisten voor de configuratieserver voor herstel na noodgeval van VMware naar Azure
 

@@ -1,6 +1,6 @@
 ---
-title: 'Quickstart: Computer Vision-clientbibliotheek voor Node.js'
-description: Ga met deze quickstart aan de slag met de Computer Vision-clientbibliotheek voor Node.js
+title: 'Quick Start: client bibliotheek voor optische teken herkenning voor Node.js'
+description: Aan de slag met de client bibliotheek voor optische teken herkenning voor Node.js met deze Snelstartgids
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -10,19 +10,16 @@ ms.topic: include
 ms.date: 12/15/2020
 ms.author: pafarley
 ms.custom: devx-track-js
-ms.openlocfilehash: be583fd530424262e8119295d2ff3df303acbfac
-ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.openlocfilehash: cb4679152740b73d6bb9cf7288fcaa811b6d6141
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103621996"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107073358"
 ---
 <a name="HOLTop"></a>
 
-Gebruik de Computer Vision-clientbibliotheek voor het volgende:
-
-* Een afbeelding analyseren op tags, tekstbeschrijvingen, gezichten, inhoud voor volwassenen, en meer.
-* Afgedrukte en handgeschreven tekst lezen met de Read-API.
+Gebruik de client bibliotheek voor optische teken herkenning om gedrukte en handgeschreven tekst te lezen met de Lees-API.
 
 [Referentiedocumentatie](/javascript/api/@azure/cognitiveservices-computervision/) | [Bibliotheekbroncode](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-computervision) | [Pakket (npm)](https://www.npmjs.com/package/@azure/cognitiveservices-computervision) | [Voorbeelden](https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=vision&sort=0)
 
@@ -87,19 +84,17 @@ Maak variabelen voor de sleutel en het eind punt van uw Computer Vision-abonneme
 
 ## <a name="object-model"></a>Objectmodel
 
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Computer Vision-SDK voor Node.js.
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de OCR-Node.js-SDK.
 
 |Naam|Beschrijving|
 |---|---|
 | [ComputerVisionClient](/javascript/api/@azure/cognitiveservices-computervision/computervisionclient) | Deze klasse is nodig voor alle Computer Vision-functionaliteit. U instantieert deze klasse met uw abonnementsgegevens en gebruikt deze om de meeste afbeeldingsbewerkingen uit te voeren.|
-|[VisualFeatureTypes](/javascript/api/@azure/cognitiveservices-computervision/visualfeaturetypes)| Deze opsomming definieert de verschillende typen afbeeldingsanalyse die kunnen worden uitgevoerd in een standaard analysebewerking. U geeft een set **VisualFeatureTypes**-waarden op, afhankelijk van uw behoeften. |
 
 ## <a name="code-examples"></a>Codevoorbeelden
 
-Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de Computer Vision-clientbibliotheek voor Node.js:
+Deze code fragmenten laten zien hoe u de volgende taken kunt uitvoeren met de OCR-client bibliotheek voor Node.js:
 
 * [De client verifiëren](#authenticate-the-client)
-* [Een afbeelding analyseren](#analyze-an-image)
 * [Afgedrukte en handgeschreven tekst lezen](#read-printed-and-handwritten-text)
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
@@ -116,127 +111,13 @@ Definieer vervolgens een functie `computerVision` en declareer een asynchrone se
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_functiondef_end)]
 
 > [!div class="nextstepaction"]
-> [Ik heb de client geverifieerd](?success=authenticate-client#analyze-an-image) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Javascript&Section=authenticate-client)
+> [Ik heb de client geverifieerd](?success=authenticate-client#read-printed-and-handwritten-text) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Javascript&Section=authenticate-client)
 
-## <a name="analyze-an-image"></a>Een afbeelding analyseren
 
-De code in deze sectie wordt gebruikt om externe afbeeldingen te analyseren om verschillende visuele functies te extraheren. U kunt deze bewerkingen uitvoeren als onderdeel van de **analyzeImage**-methode van het clientobject, of u kunt ze aanroepen met behulp van afzonderlijke methoden. Raadpleeg de [referentiedocumentatie](/javascript/api/@azure/cognitiveservices-computervision/) voor meer informatie.
-
-> [!NOTE]
-> U kunt ook een lokale afbeelding analyseren. Zie de [ComputerVisionClient](/javascript/api/@azure/cognitiveservices-computervision/computervisionclient)-methoden, bijvoorbeeld **analyzeImageInStream**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/ComputerVision/ComputerVisionQuickstart.js) voor scenario's met betrekking tot lokale afbeeldingen.
-
-### <a name="get-image-description"></a>Beschrijving van afbeelding ophalen
-
-Met de volgende code wordt de lijst met gegenereerde bijschriften voor de afbeelding opgehaald. Zie [Afbeeldingen beschrijven](../../concept-describing-images.md) voor meer informatie.
-
-Definieer eerst de URL van de afbeelding die u wilt analyseren:
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_describe_image)]
-
-Voeg daarna de volgende code toe om de afbeeldingsbeschrijving op te halen en deze via de console af te drukken.
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_describe)]
-
-### <a name="get-image-category"></a>Categorie van de afbeelding ophalen
-
-Met de volgende code wordt de gedetecteerde categorie van de afbeelding opgehaald. Zie [Afbeeldingen categoriseren](../../concept-categorizing-images.md) voor meer informatie.
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_categories)]
-
-Definieer de hulpfunctie `formatCategories`:
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_categories_format)]
-
-### <a name="get-image-tags"></a>Afbeeldingstags ophalen
-
-Met de volgende code wordt de set met gedetecteerde tags in de afbeelding opgehaald. Zie [Inhoudstags](../../concept-tagging-images.md) voor meer informatie.
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_tags)]
-
-Definieer de hulpfunctie `formatTags`:
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_tagsformat)]
-
-### <a name="detect-objects"></a>Objecten detecteren
-
-Met de volgende code worden algemene objecten in de afbeelding gedetecteerd en worden deze in de console afgedrukt. Zie [Objectdetectie](../../concept-object-detection.md) voor meer informatie.
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_objects)]
-
-Definieer de helperfunctie `formatRectObjects` om de boven-, linker-, onder- en rechtercoördinaten op te halen, samen met de breedte en de hoogte.
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_objectformat)]
-
-### <a name="detect-brands"></a>Merken detecteren
-
-Met de volgende code worden bedrijfsmerken en -logo's in de afbeelding gedetecteerd en worden deze in de console afgedrukt. Zie [Merkdetectie](../../concept-brand-detection.md) voor meer informatie.
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_brands)]
-
-### <a name="detect-faces"></a>Gezichten detecteren
-
-Met de volgende code worden de gedetecteerde gezichten in de afbeelding met hun rechthoekcoördinaten als resultaat gegeven en worden gezichtskenmerken geselecteerd. Zie [Gezichtsdetectie](../../concept-detecting-faces.md) voor meer informatie.
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_faces)]
-
-Definieer de hulpfunctie `formatRectFaces`:
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_formatfaces)]
-
-### <a name="detect-adult-racy-or-gory-content"></a>Inhoud voor volwassenen, of ongepaste of bloederige inhoud detecteren
-
-Met de volgende code wordt de gedetecteerde aanwezigheid van inhoud voor volwassenen afgedrukt in de afbeelding. Zie [Inhoud voor volwassenen, of ongepaste, bloederige inhoud](../../concept-detecting-adult-content.md) voor meer informatie.
-
-Definieer de URL van de afbeelding die u wilt gebruiken:
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_adult_image)]
-
-Voeg vervolgens de volgende code toe om inhoud voor volwassenen te detecteren en de resultaten af te drukken via de console.
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_adult)]
-
-### <a name="get-image-color-scheme"></a>Kleurenschema van de afbeelding ophalen
-
-Met de volgende code worden de gedetecteerde kleurkenmerken in de afbeelding afgedrukt, zoals de dominante kleuren en accentkleur. Zie [Kleurenschema's](../../concept-detecting-color-schemes.md) voor meer informatie.
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_colors)]
-
-Definieer de hulpfunctie `printColorScheme` om de details van het kleurenschema via de console af te drukken.
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_colors_print)]
-
-### <a name="get-domain-specific-content"></a>Domeinspecifieke inhoud ophalen
-
-Computer Vision kan een speciaal model gebruiken om verdere analyse van afbeeldingen uit te voeren. Zie [Domeinspecifieke inhoud](../../concept-detecting-domain-content.md) voor meer informatie.
-
-Definieer eerst de URL van de afbeelding die u wilt analyseren:
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_domain_image)]
-
-Met de volgende code worden gegevens over gedetecteerde bezienswaardigheden in de afbeelding geparseerd.
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_landmarks)]
-
-Definieer de hulpfunctie `formatRectDomain` om de locatiegegevens over gedetecteerde bezienswaardigheden te parseren.
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_landmarks_rect)]
-
-### <a name="get-the-image-type"></a>Het afbeeldingstype ophalen
-
-Met de volgende code wordt informatie over het type afbeelding afgedrukt&mdash;, of het een illustratie of lijntekening is.
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_imagetype)]
-
-Definieer de hulpfunctie `describeType`:
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_imagetype_describe)]
-
-> [!div class="nextstepaction"]
-> [Ik heb een afbeelding geanalyseerd](?success=analyze-image#read-printed-and-handwritten-text) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Javascript&Section=analyze-image)
 
 ## <a name="read-printed-and-handwritten-text"></a>Afgedrukte en handgeschreven tekst lezen
 
-Computer Vision kan de zichtbare tekst in een afbeelding extraheren en deze converteren naar een tekenstroom. In dit voorbeeld worden de leesbewerkingen gebruikt.
+De OCR-service kan de zicht bare tekst in een afbeelding extra heren en converteren naar een teken stroom. In dit voorbeeld worden de leesbewerkingen gebruikt.
 
 ### <a name="set-up-test-images"></a>Testafbeeldingen instellen
 
@@ -291,9 +172,10 @@ Als u een Cognitive Services-abonnement wilt opschonen en verwijderen, kunt u de
 
 ## <a name="next-steps"></a>Volgende stappen
 
+In deze Quick Start hebt u geleerd hoe u de OCR-client bibliotheek installeert en de Lees-API gebruikt. Vervolgens leest u meer over de API-functies voor lezen.
+
 > [!div class="nextstepaction"]
->[Referentie voor de Computer Vision-API (Node.js)](/javascript/api/@azure/cognitiveservices-computervision/)
+>[De Read-API aanroepen](../../Vision-API-How-to-Topics/call-read-api.md)
 
-
-* [Wat is Computer Vision?](../../overview.md)
+* [Overzicht van OCR](../../overview-ocr.md)
 * De broncode voor dit voorbeeld is te vinden op [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/ComputerVision/ComputerVisionQuickstart.js).

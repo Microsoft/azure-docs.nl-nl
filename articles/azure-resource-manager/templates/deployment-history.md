@@ -4,12 +4,12 @@ description: Hierin wordt beschreven hoe u Azure Resource Manager implementatie 
 tags: top-support-issue
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: 00e0c51244d5c191d4c9f05f689b90ece81ec5a4
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 898af2365dfbb0f61b6b87e7532c9256269d799a
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "91284615"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105732768"
 ---
 # <a name="view-deployment-history-with-azure-resource-manager"></a>Implementatie geschiedenis met Azure Resource Manager weer geven
 
@@ -81,13 +81,13 @@ az deployment group show --resource-group ExampleGroup --name ExampleDeployment 
 
 # <a name="http"></a>[HTTP](#tab/http)
 
-Als u de implementaties voor een resource groep wilt weer geven, gebruikt u de volgende bewerking. Zie  [implementaties-lijst op resource groep](/rest/api/resources/deployments/listbyresourcegroup)voor het meest recente API-versie nummer voor gebruik in de aanvraag.
+Als u de implementaties voor een resource groep wilt weer geven, gebruikt u de volgende bewerking. Zie  [implementaties-lijst op resource groep](/rest/api/resources/resources/deployments/listbyresourcegroup)voor het meest recente API-versie nummer voor gebruik in de aanvraag.
 
 ```
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/?api-version={api-version}
 ```
 
-Om een specifieke implementatie te verkrijgen. Gebruik de volgende bewerking. Zie [implementaties-ophalen](/rest/api/resources/deployments/get)voor het meest recente API-versie nummer voor gebruik in de aanvraag.
+Om een specifieke implementatie te verkrijgen. Gebruik de volgende bewerking. Zie [implementaties-ophalen](/rest/api/resources/resources/deployments/get)voor het meest recente API-versie nummer voor gebruik in de aanvraag.
 
 ```
 GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.resources/deployments/{deployment-name}?api-version={api-version}
@@ -167,7 +167,7 @@ az deployment operation group list --resource-group ExampleGroup --name ExampleD
 
 # <a name="http"></a>[HTTP](#tab/http)
 
-Gebruik de volgende bewerking om implementatie bewerkingen te verkrijgen. Zie [implementatie bewerkingen-lijst](/rest/api/resources/deploymentoperations/list)voor het meest recente API-versie nummer voor gebruik in de aanvraag.
+Gebruik de volgende bewerking om implementatie bewerkingen te verkrijgen. Zie [implementatie bewerkingen-lijst](/rest/api/resources/resources/deploymentoperations/list)voor het meest recente API-versie nummer voor gebruik in de aanvraag.
 
 ```
 GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.resources/deployments/{deployment-name}/operations?$skiptoken={skiptoken}&api-version={api-version}

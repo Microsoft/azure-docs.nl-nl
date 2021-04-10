@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: storage
 ms.subservice: partner
 ms.openlocfilehash: 82ba49beb74fbc7b6f9d976d123fd9465d585d88
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103561614"
 ---
 # <a name="azure-storage-data-governance-management-and-migration-partners"></a>Azure Storage Data Governance-, beheer-en migratie partners
@@ -21,7 +21,7 @@ In dit artikel worden micro soft-partner bedrijven uitgelegd die zijn geïntegre
 
 ## <a name="verified-partners"></a>Geverifieerde partners
 
-| Partner | Beschrijving | Website/product koppeling |
+| Partner | Description | Website/product koppeling |
 | ------- | ----------- | -------------------- |
 |![CommVault-bedrijfs logo](./media/commvault-logo.jpg) |***CommVault**<br>Optimaliseer, Beveilig, migreer en Indexeer uw gegevens met behulp van micro soft-infra structuur met CommVault. Neem de controle over uw gegevens met CommVault volledige gegevens beveiliging, de door micro soft gecentreerde en, Azure gerichte oplossing voor gegevens beheer. CommVault biedt de hulp middelen die u nodig hebt om uw gegevens te beheren, te migreren, te openen en te herstellen, ongeacht waar deze zich bevinden, en vermindert de kosten en het risico.|[Partner pagina](https://www.commvault.com/complete-data-protection)<br>[Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/commvault.commvault)|
 |![Data Dynamics-bedrijfs logo](./media/datadyn-logo.png) |**Data Dynamics**<br>Data Dynamics biedt bedrijfs oplossingen voor het beheren van ongestructureerde gegevens voor omgevingen met hybride en meerdere clouds. Hun uniforme ongestructureerde Gegevensbeheer platform gebruikt analyse en automatisering om u te helpen bij het intelligent en efficiënt verplaatsen van gegevens van heterogene-opslag omgevingen (SMB, NFS of S3-object) naar Azure. Het platform biedt naadloze integratie, schaal baarheid van ondernemingen en prestaties die het efficiënt beheer van gegevens voor hybride en omgevingen met meerdere clouds mogelijk maken. Voor beelden van use cases zijn: intelligente migratie van de Cloud, herstel na nood gevallen, archivering, back-up en infrastructuur optimalisatie en gegevens beheer. |[Partner pagina](https://www.datadynamicsinc.com/ms-azure-partner/)<br>[Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/datadynamicsinc1581991927942.vm_2-preview?tab=Overview&flightCodes=18994ad6-20dc-4bdb-ae27-e7ef3263fa9e)|

@@ -4,10 +4,10 @@ description: In dit artikel wordt beschreven hoe u de beheerde service-identitei
 ms.topic: how-to
 ms.date: 03/25/2021
 ms.openlocfilehash: 76f10b4627dc9578b1e616a868eab03431b59b69
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105625269"
 ---
 # <a name="event-delivery-with-a-managed-identity"></a>Gebeurtenis levering met een beheerde identiteit

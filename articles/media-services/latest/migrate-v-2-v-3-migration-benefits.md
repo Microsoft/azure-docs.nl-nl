@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: media
 ms.date: 03/25/2021
 ms.author: inhenkel
-ms.openlocfilehash: 114635722a0a131fc146eb2ab69984effb211a88
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: 9dd3525f4efec3c49950839306ee5419c7850c69
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105559754"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106275410"
 ---
 # <a name="step-1---understand-the-benefits-of-migrating-to-media-services-api-v3"></a>Stap 1: inzicht krijgen in de voor delen van migreren naar Media Services API v3
 
@@ -44,21 +44,21 @@ Er zijn belang rijke verbeteringen aangebracht in Media Services met v3.
 | Ondersteuning voor persoonlijke koppelingen | Klanten hebben toegang tot Media Services-eind punten voor key delivery, LiveEvents en StreamingEndpoints via een PrivateEndpoint op het VNet. |
 | [Klant-beheerd sleutels](concept-use-customer-managed-keys-byok.md) of uw eigen Key (BYOK)-ondersteuning | Klanten kunnen de gegevens in hun Media Services account versleutelen met behulp van een sleutel in hun Azure Key Vault. |
 | **Assets** | |
-| Een Asset kan meerdere [Stream-Locators](streaming-locators-concept.md) hebben elk met verschillende [dynamische pakketten](dynamic-packaging-overview.md) en dynamische versleutelings instellingen. | Er is een limiet van 100 streaming-Locators toegestaan op elke Asset. Klanten kunnen één exemplaar van de media-inhoud opslaan in de Asset, maar verschillende streaming-Url's delen met verschillende streaming-beleids regels of beveiligings beleid voor inhoud die is gebaseerd op een doel groep.
+| Een Asset kan meerdere [Stream-Locators](stream-streaming-locators-concept.md) hebben elk met verschillende [dynamische pakketten](encode-dynamic-packaging-concept.md) en dynamische versleutelings instellingen. | Er is een limiet van 100 streaming-Locators toegestaan op elke Asset. Klanten kunnen één exemplaar van de media-inhoud opslaan in de Asset, maar verschillende streaming-Url's delen met verschillende streaming-beleids regels of beveiligings beleid voor inhoud die is gebaseerd op een doel groep.
 | **Taak verwerking** ||
-| V3 introduceert het concept van [trans formaties](transforms-jobs-concept.md)   voor taak verwerking op basis van bestanden. | Een trans formatie kan worden gebruikt om herbruikbare configuraties te bouwen, Azure Resource Manager-sjablonen te maken en verwerkings instellingen te isoleren tussen meerdere klanten of tenants. |
+| V3 introduceert het concept van [trans formaties](transform-jobs-concept.md)   voor taak verwerking op basis van bestanden. | Een trans formatie kan worden gebruikt om herbruikbare configuraties te bouwen, Azure Resource Manager-sjablonen te maken en verwerkings instellingen te isoleren tussen meerdere klanten of tenants. |
 | Voor taak verwerking op basis van een bestand kunt u een HTTP/S-URL gebruiken als invoer. | U hoeft inhoud niet al in azure te hebben opgeslagen en u hoeft geen invoer assets te maken. |
 | **Live-gebeurtenissen** ||
 | Premium 1080p Live-gebeurtenissen | Met de nieuwe SKU voor Live Event kunnen klanten Cloud codering ontvangen met de uitvoer naar 1080p in oplossing. |
-| Nieuwe ondersteuning voor live streaming met [lage latentie](live-event-latency.md) voor Live-gebeurtenissen. | Hiermee kunnen gebruikers live gebeurtenissen dichter in realtime bekijken dan als deze instelling niet is ingeschakeld. |
-| Preview van Live Event ondersteunt [dynamische pakketten](dynamic-packaging-overview.md)   en dynamische versleuteling. | Hiermee wordt Content Protection ingeschakeld voor preview-en DASH-en HLS-pakketten. |
+| Nieuwe ondersteuning voor live streaming met [lage latentie](live-event-latency-reference.md) voor Live-gebeurtenissen. | Hiermee kunnen gebruikers live gebeurtenissen dichter in realtime bekijken dan als deze instelling niet is ingeschakeld. |
+| Preview van Live Event ondersteunt [dynamische pakketten](encode-dynamic-packaging-concept.md)   en dynamische versleuteling. | Hiermee wordt Content Protection ingeschakeld voor preview-en DASH-en HLS-pakketten. |
 | Live-uitvoer, Program Ma's vervangen | Live output is eenvoudiger te gebruiken dan de entiteit van het programma in de v2-Api's. |
 | RTMP-opname voor Live-gebeurtenissen is verbeterd, met ondersteuning voor meer encoders | Verbetert de stabiliteit en biedt de flexibiliteit van de bron encoder. |
 | Live-gebeurtenissen kunnen 24x7 streamen | U kunt een live gebeurtenis hosten en uw publiek gedurende langere Peri Oden laten presen. |
 | Live transcriptie op live evenementen | Met Live transcriptie kunnen klanten automatisch gesp roken taal in realtime naar tekst overzetten tijdens het verzenden van Live-gebeurtenissen. Dit verbetert de toegankelijkheid van Live-gebeurtenissen aanzienlijk. |
-| [Stand-by-modus](live-events-outputs-concept.md#standby-mode) voor Live gebeurtenissen | Live-gebeurtenissen met de status stand-by zijn minder kostbaar dan het uitvoeren van Live-gebeurtenissen. Hierdoor kunnen klanten een set Live-gebeurtenissen onderhouden die klaar zijn om binnen enkele seconden aan de slag te gaan met lagere kosten dan het onderhouden van een set actieve Live-gebeurtenissen. Voor de meeste regio's geldt een gereduceerde prijs voor Live-gebeurtenissen in februari 2021, met de rest om te volgen in april 2021.
+| [Stand-by-modus](live-event-outputs-concept.md#standby-mode) voor Live gebeurtenissen | Live-gebeurtenissen met de status stand-by zijn minder kostbaar dan het uitvoeren van Live-gebeurtenissen. Hierdoor kunnen klanten een set Live-gebeurtenissen onderhouden die klaar zijn om binnen enkele seconden aan de slag te gaan met lagere kosten dan het onderhouden van een set actieve Live-gebeurtenissen. Voor de meeste regio's geldt een gereduceerde prijs voor Live-gebeurtenissen in februari 2021, met de rest om te volgen in april 2021.
 |**Inhouds beveiliging** ||
-| [Inhouds beveiliging](content-key-policy-concept.md)   ondersteunt functies met meerdere sleutels. | Klanten kunnen nu meerdere inhouds versleutelings sleutels gebruiken op hun streaming-Locators. |
+| [Inhouds beveiliging](drm-content-key-policy-concept.md)   ondersteunt functies met meerdere sleutels. | Klanten kunnen nu meerdere inhouds versleutelings sleutels gebruiken op hun streaming-Locators. |
 | **Controle** | |
 | Ondersteuning voor [Azure EventGrid](monitoring/reacting-to-media-services-events.md) -meldingen | EventGrid-meldingen zijn uitgebreidere functies. Er zijn meer typen meldingen, bredere SDK-ondersteuning voor het ontvangen van meldingen in uw eigen toepassing en meer bestaande Azure-Services die als gebeurtenis-handlers kunnen fungeren. |
 | [Azure Monitor ondersteuning en integratie in het Azure Portal](monitoring/monitor-events-portal-how-to.md) | Hierdoor kunnen klanten Media Services account quotum gebruik, realtime statistieken van streaming-eind punten en opname-en archief statistieken voor Live-gebeurtenissen visualiseren. Klanten kunnen nu waarschuwingen instellen en de benodigde acties uitvoeren op basis van real-time metrische gegevens. |

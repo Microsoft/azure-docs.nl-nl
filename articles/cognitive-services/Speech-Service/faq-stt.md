@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/01/2021
 ms.author: panosper
-ms.openlocfilehash: bcb4408df08f3854b067c8b805b78433a3d5075c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f71fd01d45604dff843ad6eba62561937366a125
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103491245"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106382331"
 ---
 # <a name="speech-to-text-frequently-asked-questions"></a>Veelgestelde vragen over spraak naar tekst
 

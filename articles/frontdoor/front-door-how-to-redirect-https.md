@@ -7,12 +7,12 @@ ms.service: frontdoor
 ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: duau
-ms.openlocfilehash: 19908b3cba63bc76a205097ef8d16e612d58503b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: edc1ebe53969ceac0452818bee016e35de1e9322
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "91626627"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106167835"
 ---
 # <a name="create-a-front-door-with-http-to-https-redirection-using-the-azure-portal"></a>Maak een voor deur met HTTP-naar-HTTPS-omleiding met behulp van de Azure Portal
 
@@ -29,7 +29,7 @@ U kunt de Azure Portal gebruiken om [een voor deur te maken](quickstart-create-f
 1. Kies een *abonnement* en gebruik vervolgens een bestaande resource groep of maak een nieuwe. Selecteer **volgende** om het tabblad Configuratie in te voeren.
 
     > [!NOTE]
-    > De locatie die in de gebruikers interface wordt gevraagd, is alleen voor de resource groep. De configuratie van uw front-deur wordt geïmplementeerd op alle POP-locaties van de [Azure front deur](front-door-faq.md#what-are-the-pop-locations-for-azure-front-door).
+    > De locatie die in de gebruikers interface wordt gevraagd, is alleen voor de resource groep. De configuratie van uw front-deur wordt geïmplementeerd op alle POP-locaties van de [Azure front deur](front-door-faq.yml#what-are-the-pop-locations-for-azure-front-door-).
 
     :::image type="content" source="./media/front-door-url-redirect/front-door-create-basics.png" alt-text="Basis principes configureren voor nieuwe front-deur":::
 

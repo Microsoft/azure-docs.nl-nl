@@ -12,10 +12,10 @@ ms.date: 01/08/2021
 ms.author: trbye
 ms.custom: references_regions
 ms.openlocfilehash: 9da83746cdaf693922b88841cd9c0fac432611c9
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104870837"
 ---
 # <a name="text-to-speech-rest-api"></a>REST API voor tekst-naar-spraak
@@ -76,7 +76,7 @@ Voordat u deze API gebruikt, moet u het volgende weten:
 
 In deze tabel vindt u de vereiste en optionele kopteksten voor tekst-naar-spraak-aanvragen.
 
-| Header | Beschrijving | Vereist/optioneel |
+| Header | Description | Vereist/optioneel |
 |--------|-------------|---------------------|
 | `Ocp-Apim-Subscription-Key` | De abonnementssleutel voor de Speech-service. | Deze header of `Authorization` is vereist. |
 | `Authorization` | Een autorisatie token dat wordt voorafgegaan door het woord `Bearer` . Zie [Verificatie](#authentication) voor meer informatie. | Deze header of `Ocp-Apim-Subscription-Key` is vereist. |
@@ -213,7 +213,7 @@ Deze regio's worden ondersteund voor tekst naar spraak met behulp van de REST AP
 
 In deze tabel vindt u de vereiste en optionele kopteksten voor tekst-naar-spraak-aanvragen.
 
-| Header | Beschrijving | Vereist/optioneel |
+| Header | Description | Vereist/optioneel |
 |--------|-------------|---------------------|
 | `Authorization` | Een autorisatie token dat wordt voorafgegaan door het woord `Bearer` . Zie [Verificatie](#authentication) voor meer informatie. | Vereist |
 | `Content-Type` | Hiermee geeft u het type inhoud op voor de opgegeven tekst. Geaccepteerde waarde: `application/ssml+xml` . | Vereist |

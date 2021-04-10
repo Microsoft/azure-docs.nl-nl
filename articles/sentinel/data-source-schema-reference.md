@@ -10,12 +10,12 @@ ms.subservice: azure-sentinel
 ms.topic: reference
 ms.custom: ''
 ms.date: 01/14/2021
-ms.openlocfilehash: 84d5f1e4035fb730d33b7bc8dd375273610f0bfb
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.openlocfilehash: 4601f2d6eddbbe8809dfd46a7e0cc5aa3c40c722
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104771937"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107209567"
 ---
 # <a name="data-source-schema-reference"></a>Verwijzing naar gegevens bron schema
 
@@ -51,7 +51,7 @@ De volgende tabel bevat een lijst met ondersteunde externe leveranciers en hun s
 | **Netwerk** | FortiGate   | ALL   | CommonSecurityLog | [Schema structuur van logboek](https://docs.fortinet.com/document/fortigate/6.2.3/fortios-log-message-reference/738142/log-schema-structure)         |
 | **Netwerk** | Barracuda | Web Application Firewall |  CommonSecurityLog   | [Syslog en andere logboeken configureren](https://campus.barracuda.com/product/webapplicationfirewall/doc/4259935/how-to-configure-syslog-and-other-logs/)  |
 | **Netwerk** | Cisco | ASA | CommonSecurityLog | [Berichten van de Cisco ASA-serie syslog](https://www.cisco.com/c/en/us/td/docs/security/asa/syslog/b_syslog/about.html)    |
-| **Netwerk** | Cisco | Firepower   | CommonSecurityLog | [Cisco Firepower Threat verdediging syslog-berichten](https://www.cisco.com/c/en/us/td/docs/security/firepower/Syslogs/b_fptd_syslog_guide.pdf)    |
+| **Netwerk** | Cisco | Firepower   | CommonSecurityLog | [Cisco Firepower Threat verdediging syslog-berichten](https://www.cisco.com/c/en/us/td/docs/security/firepower/Syslogs/b_fptd_syslog_guide.html)    |
 | **Netwerk** | Cisco   | Paraplu  | Tabel met aangepaste logboeken  | [Logboek indelingen en versie beheer](https://docs.umbrella.com/deployment-umbrella/docs/log-formats-and-versioning)   |
 | **Netwerk**   | Cisco | Meraki    | CommonSecurityLog |   [Gebeurtenis typen en logboek voorbeelden van syslog](https://documentation.meraki.com/zGeneral_Administration/Monitoring_and_Reporting/Syslog_Event_Types_and_Log_Samples)    |
 | **Netwerk**   | Zscaler | Nano streaming-service (NSS)|   CommonSecurityLog | [Nss-feeds Format teren](https://help.zscaler.com/zia/documentation-knowledgebase/analytics/nss/nss-feeds/formatting-nss-feeds) (alleen web-, firewall-, DNS-en tunnel Logboeken) |

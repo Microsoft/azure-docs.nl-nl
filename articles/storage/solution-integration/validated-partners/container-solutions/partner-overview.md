@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: storage
 ms.subservice: partner
 ms.openlocfilehash: 8b46ad7a34be99aefeb067591fa1b029dba2361e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103561886"
 ---
 # <a name="azure-storage-container-management-partners"></a>Azure Storage container beheer partners
@@ -21,7 +21,7 @@ In dit artikel worden micro soft-partner oplossingen beschreven waarmee automati
 
 ## <a name="verified-partners"></a>Geverifieerde partners
 
-| Partner | Beschrijving | Website/product koppeling |
+| Partner | Description | Website/product koppeling |
 | ------- | ----------- | -------------------- |
 | ![Kasten-bedrijfs logo](./media/kasten-logo.png) |**Kasten**<br>Kasten by Veeam biedt een oplossing voor Kubernetes-back-ups en herstel na nood gevallen. Kasten helpt bedrijven bij het oplossen van problemen met het beheer van dagelijkse gegevens om toepassingen op Kubernetes te kunnen uitvoeren.<br><br>Het kasten K10-software platform biedt bedrijfs activiteiten een schaalbaar en beveiligd systeem voor BCDR en mobiliteit van Kubernetes-toepassingen.|[Partner pagina](https://docs.kasten.io/latest/install/azure/azure.html)|
 | ![Portworx-bedrijfs logo](./media/portworx-logo.png) |**Portworx**<br>Portworx door zuivere opslag biedt een oplossing voor permanente opslag, BCDR, gegevens beveiliging, cross-Cloud en gegevens migraties voor toepassingen die worden uitgevoerd op Kubernetes.|[Partner pagina](https://portworx.com/azure/)|

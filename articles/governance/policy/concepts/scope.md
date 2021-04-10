@@ -1,20 +1,19 @@
 ---
 title: Bereik in Azure Policy begrijpen
 description: Hierin wordt het concept van bereik in Azure Resource Manager beschreven en wordt uitgelegd hoe dit wordt toegepast op Azure Policy om te bepalen welke resources Azure Policy evalueren.
-ms.date: 09/22/2020
+ms.date: 03/31/2021
 ms.topic: conceptual
-ms.openlocfilehash: 83eda330a35b007abfa37046a202b14728726849
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c198d2d2961b6d9e10a3b78481183cba7f7197ca
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "90984438"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106167733"
 ---
 # <a name="understand-scope-in-azure-policy"></a>Bereik in Azure Policy begrijpen
 
-Er zijn een aantal instellingen die bepalen welke resources kunnen worden geëvalueerd en welke resources door Azure Policy worden geëvalueerd. Het primaire concept voor deze besturings elementen is _bereik_.
-Zie [bereik in azure Resource Manager](../../../azure-resource-manager/management/overview.md#understand-scope)voor een overzicht op hoog niveau.
-In dit artikel wordt uitgelegd wat de gevolgen van het _bereik_ in azure Policy zijn en welke objecten en eigenschappen hieraan zijn gerelateerd.
+Er zijn veel instellingen die bepalen welke resources kunnen worden geëvalueerd en welke resources door Azure Policy worden geëvalueerd. Het primaire concept voor deze besturings elementen is _bereik_. Het bereik in Azure Policy is gebaseerd op hoe bereik werkt in Azure Resource Manager. Zie [bereik in azure Resource Manager](../../../azure-resource-manager/management/overview.md#understand-scope)voor een overzicht op hoog niveau.
+In dit artikel wordt het belang van _bereik_ in azure Policy uitgelegd en zijn gerelateerde objecten en eigenschappen.
 
 ## <a name="definition-location"></a>Locatie van definitie
 

@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 01/12/2021
 ms.author: jeedes
 ms.openlocfilehash: 48ba2810c0aaf304042580cdf6579df54fd9ccd6
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101645666"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-netdocuments"></a>Zelfstudie: Eenmalige aanmelding (SSO) van Azure Active Directory integreren met NetDocuments
@@ -120,7 +120,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
-### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
+### <a name="create-an-azure-ad-test-user&quot;></a>Een Azure AD-testgebruiker maken
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
@@ -132,7 +132,7 @@ In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Porta
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
    1. Klik op **Create**.
 
-### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
+### <a name=&quot;assign-the-azure-ad-test-user&quot;></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot NetDocuments.
 
@@ -144,7 +144,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-## <a name="configure-netdocuments-sso"></a>Eenmalige aanmelding van NetDocuments configureren
+## <a name=&quot;configure-netdocuments-sso&quot;></a>Eenmalige aanmelding van NetDocuments configureren
 
 1. Meld u in een ander browservenster als beheerder aan bij uw NetDocuments-bedrijfssite.
 
@@ -152,7 +152,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 3. Selecteer **Beveiligingscentrum**.
    
-    ![Opslagplaats](./media/netdocuments-tutorial/security-center.png "Beveiligingscentrum")
+    ![Opslagplaats](./media/netdocuments-tutorial/security-center.png &quot;Beveiligingscentrum")
 
 4. Selecteer **Geavanceerde verificatie**.
     

@@ -9,10 +9,10 @@ ms.topic: reference
 ms.date: 08/12/2020
 ms.author: anfeldma
 ms.openlocfilehash: 23c0787b45a6e3f52dae58c24a33e00437f1e09c
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104577186"
 ---
 # <a name="net-bulk-executor-library-download-information"></a>.NET-bibliotheek voor bulksgewijs laden: informatie downloaden 
@@ -49,7 +49,7 @@ ms.locfileid: "104577186"
 > [!NOTE]
 > Als u een bulk-uitvoerder gebruikt, raadpleegt u de meest recente versie 3. x van de [.NET SDK](tutorial-sql-api-dotnet-bulk-import.md), die in de SDK is ingebouwd. 
 
-## <a name="release-notes"></a>Releaseopmerkingen
+## <a name="release-notes"></a>Opmerkingen bij de release
 
 ### <a name="241-preview"></a><a name="2.4.1-preview"></a>2.4.1-Preview
 

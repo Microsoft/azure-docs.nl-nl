@@ -10,10 +10,10 @@ ms.author: cherylmc
 ms.custom: references_regions
 Customer intent: As someone with a networking background, I want to find a Virtual WAN partner
 ms.openlocfilehash: 4a02a02eeb40c1a61df88c49bf967b2ca57befc3
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "102489324"
 ---
 # <a name="virtual-wan-partners-and-virtual-hub-locations"></a>Virtuele WAN-partners en virtuele-hub-locaties

@@ -6,10 +6,10 @@ ms.subservice: change-inventory-management
 ms.date: 12/10/2020
 ms.topic: conceptual
 ms.openlocfilehash: dff314f3c9fb72c565a7c2d522694d533c487895
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100572643"
 ---
 # <a name="manage-change-tracking-and-inventory"></a>Wijzigingen bijhouden en inventaris beheren
@@ -159,7 +159,7 @@ Gebruik de volgende stappen om het bijhouden van register sleutels op Windows-co
 
 U kunt verschillende zoek acties uitvoeren op de Azure Monitor logboeken voor wijzigings records. Open de pagina wijzigingen bijhouden en klik op **log Analytics** om de pagina logboeken te openen. De volgende tabel bevat voor beelden van zoek opdrachten in Logboeken voor wijzigings records.
 
-|Query  |Beschrijving  |
+|Query  |Description  |
 |---------|---------|
 |`ConfigurationData`<br>&#124; `where ConfigDataType == "WindowsServices" and SvcStartupType == "Auto"`<br>&#124; `where SvcState == "Stopped"`<br>&#124; `summarize arg_max(TimeGenerated, *) by SoftwareName, Computer`         | Toont de meest recente inventaris records voor micro soft-services die zijn ingesteld op auto, maar die zijn gerapporteerd als gestopt. De resultaten zijn beperkt tot de meest recente record voor de opgegeven software naam en computer.    |
 |`ConfigurationChange`<br>&#124; `where ConfigChangeType == "Software" and ChangeCategory == "Removed"`<br>&#124; `order by TimeGenerated desc`|Geeft wijzigings records weer voor verwijderde software.|

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 04/22/2020
 ms.openlocfilehash: ce3c1e22dd030c0730bf4d9859591c00860908a7
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100382273"
 ---
 # <a name="copy-data-from-sap-hana-using-azure-data-factory"></a>Gegevens kopiëren van SAP HANA met behulp van Azure Data Factory
@@ -64,10 +64,10 @@ De volgende eigenschappen worden ondersteund voor SAP HANA gekoppelde service:
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
 | type | De eigenschap type moet worden ingesteld op: **SapHana** | Ja |
-| connectionString | Geef de gegevens op die nodig zijn om verbinding te maken met de SAP HANA met behulp van **basis verificatie** of **Windows-verificatie**. Raadpleeg de volgende voor beelden.<br>In connection string is server/poort verplicht (de standaard poort is 30015), en de gebruikers naam en het wacht woord zijn verplicht wanneer basis verificatie wordt gebruikt. Raadpleeg [SAP Hana ODBC-verbindings eigenschappen](<https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/2.0.02/en-US/7cab593774474f2f8db335710b2f5c50.html>) voor aanvullende geavanceerde instellingen<br/>U kunt ook wacht woord in Azure Key Vault plaatsen en de wachtwoord configuratie uit de connection string halen. Raadpleeg de [referenties voor opslaan in azure Key Vault](store-credentials-in-key-vault.md) artikel met meer informatie. | Ja |
-| userName | Geef een gebruikers naam op bij het gebruik van Windows-verificatie. Voorbeeld: `user@domain.com` | Nee |
-| wachtwoord | Geef het wacht woord voor het gebruikers account op. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Nee |
-| connectVia | Het [Integration runtime](concepts-integration-runtime.md) dat moet worden gebruikt om verbinding te maken met het gegevens archief. Een zelf-hostende Integration Runtime is vereist zoals vermeld in de [vereisten](#prerequisites). |Ja |
+| connectionString | Geef de gegevens op die nodig zijn om verbinding te maken met de SAP HANA met behulp van **basis verificatie** of **Windows-verificatie**. Raadpleeg de volgende voor beelden.<br>In connection string is server/poort verplicht (de standaard poort is 30015), en de gebruikers naam en het wacht woord zijn verplicht wanneer basis verificatie wordt gebruikt. Raadpleeg [SAP Hana ODBC-verbindings eigenschappen](<https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/2.0.02/en-US/7cab593774474f2f8db335710b2f5c50.html>) voor aanvullende geavanceerde instellingen<br/>U kunt ook wacht woord in Azure Key Vault plaatsen en de wachtwoord configuratie uit de connection string halen. Raadpleeg de [referenties voor opslaan in azure Key Vault](store-credentials-in-key-vault.md) artikel met meer informatie. | Yes |
+| userName | Geef een gebruikers naam op bij het gebruik van Windows-verificatie. Voorbeeld: `user@domain.com` | No |
+| wachtwoord | Geef het wacht woord voor het gebruikers account op. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | No |
+| connectVia | Het [Integration runtime](concepts-integration-runtime.md) dat moet worden gebruikt om verbinding te maken met het gegevens archief. Een zelf-hostende Integration Runtime is vereist zoals vermeld in de [vereisten](#prerequisites). |Yes |
 
 **Voor beeld: basis verificatie gebruiken**
 
@@ -144,7 +144,7 @@ De volgende eigenschappen worden ondersteund voor het kopiëren van gegevens uit
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op: **SapHanaTable** | Ja |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op: **SapHanaTable** | Yes |
 | schema | De naam van het schema in de SAP HANA-data base. | Nee (als "query" in activiteit bron is opgegeven) |
 | tabel | De naam van de tabel in de SAP HANA-data base. | Nee (als "query" in activiteit bron is opgegeven) |
 
@@ -183,8 +183,8 @@ Als u gegevens wilt kopiëren uit SAP HANA, worden de volgende eigenschappen ond
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **SapHanaSource** | Ja |
-| query | Hiermee geeft u de SQL-query voor het lezen van gegevens uit het SAP HANA-exemplaar. | Ja |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **SapHanaSource** | Yes |
+| query | Hiermee geeft u de SQL-query voor het lezen van gegevens uit het SAP HANA-exemplaar. | Yes |
 | partitionOptions | Hiermee geeft u de opties voor gegevenspartitionering op waarmee gegevens van SAP HANA worden opgenomen. Meer informatie over de  [parallelle kopie van de SAP Hana](#parallel-copy-from-sap-hana) sectie.<br>Toegestane waarden zijn: **geen**   (standaard), **PhysicalPartitionsOfTable**, **SapHanaDynamicRange**. Meer informatie over de  [parallelle kopie van de SAP Hana](#parallel-copy-from-sap-hana) sectie. `PhysicalPartitionsOfTable` kan alleen worden gebruikt bij het kopiëren van gegevens uit een tabel, maar niet voor query's. <br>Wanneer een partitie optie is ingeschakeld (dat wil zeggen niet `None` ), is de mate van parallelle uitvoering om gegevens van SAP Hana gelijktijdig te laden, bepaald door de [`parallelCopies`](copy-activity-performance-features.md#parallel-copy) instelling van de Kopieer activiteit. | Niet waar |
 | partitionSettings | Geef de groep van de instellingen voor het partitioneren van gegevens op.<br>Toep assen wanneer partitie optie is `SapHanaDynamicRange` . | Niet waar |
 | partitionColumnName | Geef de naam op van de bron kolom die wordt gebruikt voor de partitie voor parallelle kopieën. Als u niets opgeeft, wordt de index of de primaire sleutel van de tabel automatisch gedetecteerd en gebruikt als de partitie kolom.<br>Toep assen wanneer de partitie optie is  `SapHanaDynamicRange` . Als u een query gebruikt om de bron gegevens op te halen, koppelt u de  `?AdfHanaDynamicRangePartitionCondition` component WHERE. Zie voor beeld in [parallelle kopie van SAP Hana](#parallel-copy-from-sap-hana) sectie. | Ja wanneer de `SapHanaDynamicRange` partitie wordt gebruikt. |

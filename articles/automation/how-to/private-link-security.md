@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 12/11/2020
 ms.subservice: ''
 ms.openlocfilehash: f3c9197faaae89e0ffb238f987ee66dafea8abdd
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100579806"
 ---
 # <a name="use-azure-private-link-to-securely-connect-networks-to-azure-automation"></a>Persoonlijke Azure-koppeling gebruiken om netwerken veilig te verbinden met Azure Automation
@@ -190,7 +190,7 @@ U kunt de volgende opties gebruiken om uw DNS-instellingen voor privé-eind punt
 
 * Gebruik uw DNS-doorstuur server (optioneel). U kunt de DNS-doorstuur server gebruiken om de DNS-omzetting voor een bepaalde persoonlijke koppelings bron te negeren. Als uw [DNS-server](../../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server) wordt gehost op een virtueel netwerk, kunt u een DNS-doorstuur regel maken voor het gebruik van een privé-DNS-zone om de configuratie voor alle persoonlijke koppelings bronnen te vereenvoudigen.
 
-Zie voor meer informatie [Azure private endpoint DNS-configuratie](../../private-link/private-endpoint-dns.md).
+Raadpleeg [DNS-configuratie voor Azure-privé-eindpunt](../../private-link/private-endpoint-dns.md) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

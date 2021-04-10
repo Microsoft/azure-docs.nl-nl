@@ -15,10 +15,10 @@ ms.workload: infrastructure
 ms.date: 10/16/2020
 ms.author: juergent
 ms.openlocfilehash: 979de230655b4804fa65a4bddb678e21b59c4ea2
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101674456"
 ---
 # <a name="high-availability-of-ibm-db2-luw-on-azure-vms-on-red-hat-enterprise-linux-server"></a>Hoge beschikbaarheid van IBM Db2 LUW in Azure-VM's in Red Hat Enterprise Linux Server
@@ -36,7 +36,7 @@ De ondersteunde IBM Db2-versies zijn 10,5 en hoger, zoals beschreven in SAP Note
 
 Raadpleeg de volgende SAP-opmerkingen en-documentatie voordat u met de installatie begint:
 
-| SAP-Opmerking | Beschrijving |
+| SAP-Opmerking | Description |
 | --- | --- |
 | [1928533] | SAP-toepassingen op Azure: ondersteunde producten en Azure VM-typen |
 | [2015553] | SAP on Azure: vereisten voor ondersteuning |

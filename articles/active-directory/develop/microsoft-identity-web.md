@@ -14,10 +14,10 @@ ms.author: jmprieur
 ms.reviewer: marsma
 ms.custom: devx-track-csharp, aaddev
 ms.openlocfilehash: 8bc9773fa7e1b3db2e249e803f4d2a3cf39edb48
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100102543"
 ---
 # <a name="microsoft-identity-web-authentication-library"></a>Micro soft Identity Web authentication-bibliotheek
@@ -82,11 +82,11 @@ Micro soft Identity web bevat verschillende functies die niet worden gegeven als
 |------------------------------------------------------------------------------------------|----------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | [Gebruikers aanmelden](scenario-web-app-sign-user-app-configuration.md) in web-apps             | <li>Werk- of schoolaccounts<li>Sociale identiteiten (met Azure AD B2C) | <li>Werk- of schoolaccounts<li>Persoonlijk Microsoft-account<li>Sociale identiteiten (met Azure AD B2C)     |
 | [Web-Api's beveiligen](scenario-protected-web-api-app-configuration.md#microsoftidentityweb) | <li>Werk- of schoolaccounts<li>Sociale identiteiten (met Azure AD B2C) | <li>Werk- of schoolaccounts<li>Persoonlijk Microsoft-account<li>Sociale identiteiten (met Azure AD B2C)     |
-| Validatie van de verlener in apps met meerdere tenants                                                   | Nee                                                                   | Ja, voor [alle Clouds](authentication-national-cloud.md) en [Azure AD B2C](../../active-directory-b2c/index.yml) |
+| Validatie van de verlener in apps met meerdere tenants                                                   | No                                                                   | Ja, voor [alle Clouds](authentication-national-cloud.md) en [Azure AD B2C](../../active-directory-b2c/index.yml) |
 | Web-app/API [aanroepen van micro soft Graph] [scenario-API-aanroep-Graph]                             | Nee                                                                   | Ja                                                                                                     |
 | Web-app/API [aanroepen van Web-API] [scenario-API-aanroep-API]                                       | Nee                                                                   | Ja                                                                                                     |
-| Ondersteunt certificaat referenties                                                         | Nee                                                                   | Ja, met inbegrip van Azure Key Vault                                                                          |
-| Ondersteuning voor incrementele toestemming en voorwaardelijke toegang in web-apps                           | Nee                                                                   | Ja, in MVC, haar pagina's en ultra meer                                                                    |
+| Ondersteunt certificaat referenties                                                         | No                                                                   | Ja, met inbegrip van Azure Key Vault                                                                          |
+| Ondersteuning voor incrementele toestemming en voorwaardelijke toegang in web-apps                           | No                                                                   | Ja, in MVC, haar pagina's en ultra meer                                                                    |
 | Token versleutelings certificaten in Web-Api's                                                | Nee                                                                   | Ja                                                                                                     |
 | [Bereiken/validatie van app-rollen] [scenario-API-validatie] in Web-Api's                        | Nee                                                                   | Ja                                                                                                     |
 | `WWW-Authenticate` genereren van header in Web-Api's                                         | Nee                                                                   | Ja                                                                                                     |

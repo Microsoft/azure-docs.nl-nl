@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 02/23/2021
 ms.custom: seodec18, has-adal-ref
 ms.openlocfilehash: 88fd575d40cc31f12f052158bda0aed9a5335555
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103009263"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Verificatie en autorisatie voor Azure Time Series Insights-API
@@ -148,7 +148,7 @@ In deze sectie worden algemene HTTP-aanvraag headers en-para meters beschreven d
 
 De vereiste aanvraag headers worden hieronder beschreven.
 
-| Header vereiste aanvraag | Beschrijving |
+| Header vereiste aanvraag | Description |
 | --- | --- |
 | Autorisatie | Als u wilt verifiëren met Azure Time Series Insights, moet een geldig OAuth 2,0 Bearer-token worden door gegeven in de [autorisatie-header](/rest/api/apimanagement/2019-12-01/authorizationserver/createorupdate). |
 
@@ -157,7 +157,7 @@ De vereiste aanvraag headers worden hieronder beschreven.
 
 De optionele aanvraag headers worden hieronder beschreven.
 
-| Optionele aanvraagheader | Beschrijving |
+| Optionele aanvraagheader | Description |
 | --- | --- |
 | Inhouds type | alleen `application/json` wordt ondersteund. |
 | x-MS-Client-Request-id | Een client aanvraag-ID. Deze waarde wordt vastgelegd door de service. Hiermee kan de service bewerkingen volgen tussen services. |
@@ -166,7 +166,7 @@ De optionele aanvraag headers worden hieronder beschreven.
 
 Optioneel, maar aanbevolen antwoord headers worden hieronder beschreven.
 
-| Reactie header | Beschrijving |
+| Reactie header | Description |
 | --- | --- |
 | Inhouds type | Alleen `application/json` wordt ondersteund. |
 | x-MS-Request-id | Door de server gegenereerde aanvraag-ID. Kan worden gebruikt om contact op te nemen met micro soft om een aanvraag te onderzoeken. |

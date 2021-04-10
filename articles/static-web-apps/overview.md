@@ -5,24 +5,24 @@ services: static-web-apps
 author: craigshoemaker
 ms.service: static-web-apps
 ms.topic: overview
-ms.date: 05/08/2020
+ms.date: 04/01/2021
 ms.author: cshoe
-ms.openlocfilehash: f4e900c8bcdcb5febec39421e098b19ad10b8b00
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: e81f0a9e4fc50cf0d80f2905b9328af3c721865c
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105558887"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106166395"
 ---
 # <a name="what-is-azure-static-web-apps-preview"></a>Wat is Azure Static Web Apps Preview?
 
-Azure Static Web Apps is een service waarmee automatisch volledige stack-web-apps worden gebouwd en geïmplementeerd in Azure vanuit een GitHub-opslagplaats.
+Azure static Web Apps is een service die automatisch volledige stack-web-apps bouwt en implementeert in azure vanuit een code opslagplaats.
 
-:::image type="content" source="media/overview/static-apps-overview.png" alt-text="Overzicht van Static Web Apps":::
+:::image type="content" source="media/overview/azure-static-web-apps-overview.png" alt-text="Overzichts diagram van statische Azure-Web Apps":::
 
-De werkstroom van Azure Static Web Apps wordt aangepast aan de dagelijkse werkstroom van een ontwikkelaar. Apps worden gebouwd en geïmplementeerd op basis van GitHub-interacties.
+De werkstroom van Azure Static Web Apps wordt aangepast aan de dagelijkse werkstroom van een ontwikkelaar. Apps worden gebouwd en geïmplementeerd op basis van code wijzigingen.
 
-Wanneer u een Azure Static Web Apps-resource maakt, wordt in Azure een werkstroom voor GitHub-acties ingesteld in de opslagplaats voor broncode van de app. Met deze werkstroom wordt een vertakking van uw keuze bewaakt. Elke keer dat u doorvoeringen pusht of pull-aanvragen accepteert in de bewaakte vertakking, worden met de GitHub-actie automatisch uw app en de bijbehorende API gebouwd en geïmplementeerd in Azure.
+Wanneer u een statische Azure Web Apps-resource maakt, communiceert Azure rechtstreeks met GitHub of Azure DevOps om een vertakking van uw keuze te bewaken. Elke keer dat u pusht of pull-aanvragen in de gevolgde vertakking accepteert, wordt automatisch een build uitgevoerd en wordt uw app en API geïmplementeerd in Azure.
 
 Statische web-apps zijn doorgaans gebouwd met behulp van bibliotheken en frameworks, zoals hoek, reageren, svelte, vue of razendsnelle, waarbij server side rendering niet is vereist. Deze apps zijn onder andere HTML-, CSS-, JavaScript- en afbeeldingsactiva waaruit de toepassing bestaat. Met een traditionele webserver worden deze activa geleverd vanaf één server naast eventuele vereiste API-eindpunten.
 
@@ -32,7 +32,7 @@ Met Static Web Apps worden statische activa gescheiden van een traditionele webs
 
 - **Webhosting** voor statische inhoud zoals HTML, CSS, JavaScript en afbeeldingen.
 - Ondersteuning voor **Geïntegreerde API** geboden in Azure Functions.
-- **Eersteklas GitHub-integratie** waarbij wijzigingen in de opslagplaats builds en implementaties activeren.
+- **Eersteklas github-en Azure DevOps-integratie** waarbij de opslag plaats trigger-builds en implementaties wijzigt.
 - **Wereldwijd gedistribueerde** statische inhoud, waardoor inhoud zich dichter bij de gebruikers bevindt.
 - **Gratis SSL-certificaten** die automatisch worden verlengd.
 - **Aangepaste domeinen** om uw app merkaanpassingen te bieden.

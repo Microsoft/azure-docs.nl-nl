@@ -6,12 +6,12 @@ author: gundarev
 ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: denisgun
-ms.openlocfilehash: e4149864e16196b695d38a8c46ab5af835453412
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 378d341ee867b69fac22f5eb15952d104a7bf19d
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99221207"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106167325"
 ---
 # <a name="understanding-windows-virtual-desktop-network-connectivity"></a>Meer informatie over Windows Virtual Desktop-netwerk connectiviteit
 
@@ -50,7 +50,7 @@ Hieronder beschreven client verbindings volgorde:
 
 ## <a name="connection-security"></a>Verbindingsbeveiliging
 
-TLS 1,2 wordt gebruikt voor alle verbindingen die worden geïnitieerd vanaf de clients en de sessies van de host naar de onderdelen van de virtuele bureau blad-infra structuur van Windows. Windows virtueel bureau blad maakt gebruik van dezelfde TLS 1,2-code ringen als [Azure front-deur](../frontdoor/front-door-faq.md#what-are-the-current-cipher-suites-supported-by-azure-front-door). Het is belang rijk om ervoor te zorgen dat zowel client computers als sessie-hosts deze versleuteling kunnen gebruiken.
+TLS 1,2 wordt gebruikt voor alle verbindingen die worden geïnitieerd vanaf de clients en de sessies van de host naar de onderdelen van de virtuele bureau blad-infra structuur van Windows. Windows virtueel bureau blad maakt gebruik van dezelfde TLS 1,2-code ringen als [Azure front-deur](../frontdoor/front-door-faq.yml#what-are-the-current-cipher-suites-supported-by-azure-front-door-). Het is belang rijk om ervoor te zorgen dat zowel client computers als sessie-hosts deze versleuteling kunnen gebruiken.
 Voor reverse Connect Trans Port maakt zowel de client als de sessiehost verbinding met de virtuele bureau blad-gateway van Windows. Nadat de TCP-verbinding tot stand is gebracht, valideert de client of de sessiehost het certificaat van de virtuele bureau blad-gateway van Windows.
 Na het tot stand brengen van het basis transportt RDP een geneste TLS-verbinding tussen de client en sessie-host met behulp van de certificaten van de sessiehost. Het certificaat dat wordt gebruikt voor RDP-versleuteling wordt standaard automatisch gegenereerd door het besturings systeem tijdens de implementatie. Zo nodig kunnen klanten centraal beheerde certificaten implementeren die zijn uitgegeven door de certificerings instantie van de onderneming. Zie [Windows Server-documentatie](/troubleshoot/windows-server/remote/remote-desktop-listener-certificate-configurations)voor meer informatie over het configureren van certificaten.
 

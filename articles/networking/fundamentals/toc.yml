@@ -1,0 +1,144 @@
+- name: Documentatie over netwerk fundamentals
+  href: index.yml
+- name: Overzicht
+  items:
+    - name: Over Azure-netwerken
+      href: networking-overview.md
+- name: Snelstartgidsen
+  items:
+    - name: Een virtueel netwerk maken
+      href: ../../virtual-network/quick-create-portal.md?toc=/azure/networking/fundamentals/toc.json
+- name: Zelfstudies
+  items:
+    - name: Netwerktoegang beperken
+      href: ../../virtual-network/tutorial-restrict-network-access-to-resources.md?toc=/azure/networking/fundamentals/toc.json
+- name: Concepten
+  expanded: true
+  items:
+    - name: Architectuur
+      href: architecture-guides.md
+    - name: Plannen en ontwerpen
+      items:
+        - name: Azure voor netwerktechnici
+          href: ../azure-for-network-engineers.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Op afstand werken
+          href: ../working-remotely-support.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Virtuele netwerken
+          href: ../../virtual-network/virtual-network-vnet-plan-design-arm.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Cross-premises-connectiviteit - VPN
+          href: ../../vpn-gateway/design.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Cross-premises-connectiviteit - exclusieve privéverbinding
+          href: ../../expressroute/expressroute-workflows.md?toc=/azure/networking/fundamentals/toc.json
+    - name: Wereldwijd Microsoft-netwerk
+      items:
+        - name: Overzicht
+          href: ../microsoft-global-network.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Azure-netwerklatentie
+          href: ../azure-network-latency.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Interne routeringsvoorkeur in Azure
+          href: ../../virtual-network/routing-preference-overview.md?toc=/azure/networking/fundamentals/toc.json
+    - name: Verbinding met Cloud netwerk
+      items:
+        - name: Virtueel netwerk
+          href: ../../virtual-network/virtual-networks-overview.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Openbaar IP-adres
+          href: ../../virtual-network/public-ip-addresses.md?toc=/azure/networking/fundamentals/toc.json
+        - name: DNS
+          href: ../../dns/dns-overview.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Netwerkverkeer routeren
+          href: ../../virtual-network/virtual-networks-udr-overview.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Virtuele netwerken verbinden
+          href: ../../virtual-network/virtual-network-peering-overview.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Persoonlijke toegang tot resources
+          href: ../../private-link/private-endpoint-overview.md?toc=/azure/networking/fundamentals/toc.json
+        - name: On-premises verbinden met Azure - VPN-versleuteling
+          href: ../../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=/azure/networking/fundamentals/toc.json
+        - name: On-premises uitbreiden naar Azure - privéverbinding
+          href: ../../expressroute/expressroute-connect-azure-to-public-cloud.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Uitgaande internet connectiviteit
+          href: ../../virtual-network/nat-overview.md?toc=/azure/networking/fundamentals/toc.json
+    - name: Netwerkbeveiliging
+      items:
+        - name: Netwerkbeveiligingsgroepen
+          href: ../../virtual-network/network-security-groups-overview.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Privé-eindpunt
+          href: ../../private-link/private-endpoint-overview.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Netwerkfirewall
+          href: ../../firewall/overview.md?toc=/azure/networking/fundamentals/toc.json
+        - name: DDoS-bescherming
+          href: ../../ddos-protection/ddos-protection-overview.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Web Application Firewall
+          href: ../../web-application-firewall/overview.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Besturingselementen voor beveiliging van Azure Policy
+          displayName: 'regulatory, compliance, standards, domains'
+          href: ../security-controls-policy.md
+    - name: Schaal bare toepassing levering
+      items:
+        - name: Opties voor taak verdeling in azure
+          href: /azure/architecture/guide/technology-choices/load-balancing-overview?toc=/azure/networking/fundamentals/toc.json
+        - name: Netwerktaakverdeling
+          href: ../../load-balancer/load-balancer-overview.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Veilige Cloud-CDN en wereld wijde load balancer
+          href: ../../frontdoor/front-door-overview.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Load balancer van webtoepassingen
+          href: ../../application-gateway/overview.md?toc=/azure/networking/fundamentals/toc.json
+        - name: load balancer op basis van DNS
+          href: ../../traffic-manager/traffic-manager-overview.md?toc=/azure/networking/fundamentals/toc.json
+    - name: Netwerkbewaking
+      items:
+        - name: Uw netwerk controleren met Azure Monitor
+          href: ../../azure-monitor/insights/network-insights-overview.md?toc=/azure/networking/fundamentals/toc.json
+        - name: De netwerk status controleren en herstellen
+          href: ../../network-watcher/network-watcher-monitoring-overview.md?toc=/azure/networking/fundamentals/toc.json
+- name: Instructiegidsen
+  items:
+    - name: Cloud netwerken maken en verbinden
+      items:
+        - name: Een virtueel netwerk maken
+          href: ../../virtual-network/quick-create-portal.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Een openbaar IP-adres maken
+          href: ../../virtual-network/create-public-ip-portal.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Routerings kosten optimaliseren
+          href: ../../virtual-network/routing-preference-portal.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Een NAT-gateway maken voor uitgaande verbindingen
+          href: ../../virtual-network/tutorial-create-nat-gateway-portal.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Een Azure DNS-zone en -record maken
+          href: ../../dns/dns-getstarted-portal.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Verkeer routeren met behulp van route tabellen
+          href: ../../virtual-network/tutorial-create-route-table-portal.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Virtuele netwerken verbinden
+          href: ../../virtual-network/tutorial-connect-virtual-networks-portal.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Persoonlijke toegang tot resources
+          href: ../../private-link/create-private-endpoint-portal.md?toc=/azure/networking/fundamentals/toc.json
+        - name: On-premises netwerk verbinden met een virtueel netwerk-VPN-versleuteling
+          href: ../../vpn-gateway/tutorial-site-to-site-portal.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Cross-premises-connectiviteit-toegewezen
+          href: ../../expressroute/expressroute-howto-circuit-portal-resource-manager.md?toc=/azure/networking/fundamentals/toc.json
+    - name: Uw netwerk beveiligen
+      items:
+        - name: Netwerktoegang beperken
+          href: ../../virtual-network/tutorial-restrict-network-access-to-resources.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Netwerkverkeer filteren
+          href: ../../virtual-network/tutorial-filter-network-traffic.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Een netwerk firewall implementeren
+          href: ../../firewall/tutorial-firewall-deploy-portal.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Uw netwerk beschermen tegen DDoS-aanvallen
+          href: ../../ddos-protection/manage-ddos-protection.md?toc=/azure/networking/fundamentals/toc.json
+    - name: De levering van uw toepassing schalen
+      items:
+        - name: Een netwerk load balancer maken
+          href: ../../load-balancer/quickstart-load-balancer-standard-public-portal.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Een veilige Cloud-CDN en globale load balancer implementeren
+          href: ../../frontdoor/quickstart-create-front-door.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Een webtoepassing maken load balancer
+          href: ../../application-gateway/quick-create-portal.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Een op DNS gebaseerde load balancer maken
+          href: ../../traffic-manager/quickstart-create-traffic-manager-profile.md?toc=/azure/networking/fundamentals/toc.json
+    - name: Uw netwerk controleren
+      items:
+        - name: Netwerkstatus bewaken
+          href: ../../network-watcher/network-watcher-monitoring-overview.md?toc=/azure/networking/fundamentals/toc.json
+        - name: De communicatie tussen Azure-resources bewaken
+          href: ../../network-watcher/connection-monitor-create-using-portal.md?toc=/azure/networking/fundamentals/toc.json
+        - name: Azure Monitor netwerk inzichten
+          href: ../../azure-monitor/insights/network-insights-overview.md?toc=/azure/networking/fundamentals/toc.json

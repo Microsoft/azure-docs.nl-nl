@@ -6,12 +6,12 @@ ms.author: sunila
 ms.service: mysql
 ms.topic: how-to
 ms.date: 07/23/2020
-ms.openlocfilehash: 808c3589ba5b51b035ccc8165489c4d11203dd66
-ms.sourcegitcommit: c94e282a08fcaa36c4e498771b6004f0bfe8fb70
+ms.openlocfilehash: 492e56e09129f9d47b863624cd72cd508801c143
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105612225"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105728263"
 ---
 # <a name="use-azure-active-directory-for-authentication-with-mysql"></a>Azure Active Directory gebruiken voor verificatie met MySQL
 
@@ -78,7 +78,6 @@ Voor beeld (voor open bare Cloud):
 ```azurecli-interactive
 az account get-access-token --resource https://ossrdbms-aad.database.windows.net
 ```
-
 De bovenstaande resource waarde moet exact worden opgegeven zoals wordt weer gegeven. Voor andere Clouds kan de resource waarde worden opgezocht met:
 
 ```azurecli-interactive
@@ -90,6 +89,13 @@ Voor Azure CLI versie 2.0.71 en hoger kan de opdracht worden opgegeven in de vol
 ```azurecli-interactive
 az account get-access-token --resource-type oss-rdbms
 ```
+Met behulp van Power shell kunt u de volgende opdracht gebruiken om het toegangs token op te halen:
+
+```azurepowershell-interactive
+$accessToken = Get-AzAccessToken -ResourceUrl https://ossrdbms-aad.database.windows.net
+$accessToken.Token | out-file C:\temp\MySQLAccessToken.txt
+```
+
 
 Nadat de verificatie is geslaagd, wordt een toegangs token door Azure AD geretourneerd:
 
@@ -105,13 +111,17 @@ Nadat de verificatie is geslaagd, wordt een toegangs token door Azure AD geretou
 
 Het token is een basis teken reeks van 64 waarmee alle informatie over de geverifieerde gebruiker wordt gecodeerd en die is gericht op de Azure Database for MySQL-service.
 
-> [!NOTE]
-> De geldigheid van het toegangs token is een wille keurige periode van 5 minuten tot 60 minuten. We raden u aan het toegangs token op te halen voordat u de aanmelding initieert naar Azure Database for MySQL.
+De geldigheid van het toegangs token is een wille keurige periode van ***5 minuten tot 60 minuten***. We raden u aan het toegangs token op te halen voordat u de aanmelding initieert naar Azure Database for MySQL. U kunt de volgende Power shell-opdracht gebruiken om de geldigheid van het token te bekijken. 
+
+```azurepowershell-interactive
+$accessToken.ExpiresOn.DateTime
+```
 
 ### <a name="step-3-use-token-as-password-for-logging-in-with-mysql"></a>Stap 3: token als wacht woord gebruiken voor aanmelding met MySQL
 
-Wanneer u verbinding maakt, moet u het toegangs token gebruiken als het MySQL-gebruikers wachtwoord. Wanneer u GUI-clients gebruikt, zoals MySQLWorkbench, kunt u de bovenstaande methode gebruiken om het token op te halen. 
+Wanneer u verbinding maakt, moet u het toegangs token gebruiken als het MySQL-gebruikers wachtwoord. Wanneer u GUI-clients gebruikt, zoals MySQLWorkbench, kunt u de hierboven beschreven methode gebruiken om het token op te halen. 
 
+#### <a name="using-mysql-cli"></a>MySQL CLI gebruiken
 Wanneer u de CLI gebruikt, kunt u deze korte hand gebruiken om verbinding te maken: 
 
 **Voor beeld (Linux/macOS):**
@@ -121,8 +131,15 @@ mysql -h mydb.mysql.database.azure.com \
   --enable-cleartext-plugin \ 
   --password=`az account get-access-token --resource-type oss-rdbms --output tsv --query accessToken`
 ```
+#### <a name="using-mysql-workbench"></a>MySQL Workbench gebruiken
+* Start MySQL Workbench en klik op de optie Data Base en klik vervolgens op verbinding maken met data base.
+* Voer in het veld Hostnaam de MySQL-FQDN in, bijvoorbeeld. mydb.mysql.database.azure.com
+* Voer in het veld gebruikers naam de naam van de MySQL-Azure Active Directory beheerder in en voeg deze toe met de naam van de MySQL-server, niet de FQDN, bijvoorbeeld user@tenant.onmicrosoft.com@mydb
+* Klik in het veld wacht woord op opslaan in kluis en plak het toegangs token in het bestand, bijvoorbeeld C:\temp\MySQLAccessToken.txt
+* Klik op het tabblad Geavanceerd en controleer of de invoeg toepassing voor lees bare verificatie inschakelen is ingeschakeld.
+* Klik op OK om verbinding te maken met de data base
 
-Belang rijke overwegingen bij het maken van verbinding:
+#### <a name="important-considerations-when-connecting"></a>Belang rijke overwegingen bij het maken van verbinding:
 
 * `user@tenant.onmicrosoft.com` is de naam van de Azure AD-gebruiker of-groep waarmee u verbinding probeert te maken
 * De server naam altijd toevoegen na de gebruikers-of groeps naam van Azure AD (bijvoorbeeld `@mydb` )

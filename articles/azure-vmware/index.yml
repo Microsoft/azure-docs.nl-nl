@@ -8,13 +8,13 @@ metadata:
   ms.topic: landing-page
   author: shortpatti
   ms.author: v-patsho
-  ms.date: 03/22/2021
-  ms.openlocfilehash: 4ee35ada4e72e9a7c896514cb6616a0f9f5e27a4
-  ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+  ms.date: 03/30/2021
+  ms.openlocfilehash: 874f0636042c592cefce5a4d3fa15b7839fbac5e
+  ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/29/2021
-  ms.locfileid: "105731833"
+  ms.lasthandoff: 04/01/2021
+  ms.locfileid: "106108061"
 landingContent:
 - title: Over Azure VMware Solution
   linkLists:
@@ -24,8 +24,6 @@ landingContent:
       url: introduction.md
     - text: Platform updates
       url: azure-vmware-solution-platform-updates.md
-    - text: Veelgestelde vragen
-      url: faq.yml
   - linkListType: concept
     links:
     - text: Privécloud en clusters
@@ -40,6 +38,26 @@ landingContent:
       url: concepts-monitor-repair-private-cloud.md
     - text: Upgrades voor privéclouds
       url: concepts-upgrades.md
+- title: Veelgestelde vragen
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Algemeen
+      url: /azure/azure-vmware/faq#general
+    - text: Berekenings-, netwerk-, opslag-en back-ups
+      url: /azure/azure-vmware/faq#compute,-network,-storage,-and-backup
+    - text: Hosts, clusters en privéclouds
+      url: /azure/azure-vmware/faq#hosts,-clusters,-and-private-clouds
+    - text: Azure VMware-oplossing en VMware-software
+      url: /azure/azure-vmware/faq#azure-vmware-solution-and-vmware-software
+    - text: Connectiviteit
+      url: /azure/azure-vmware/faq#connectivity
+    - text: Accounts en bevoegdheden
+      url: /azure/azure-vmware/faq#accounts-and-privileges
+    - text: Facturering en ondersteuning
+      url: /azure/azure-vmware/faq#billing-and-support
+    - text: Communicatie van klanten
+      url: /azure/azure-vmware/faq#customer-communication
 - title: Aan de slag
   linkLists:
   - linkListType: deploy
@@ -72,22 +90,6 @@ landingContent:
       url: tutorial-delete-private-cloud.md
 - title: Azure VMware Solution uitbreiden
   linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: DHCP beheren
-      url: manage-dhcp.md
-    - text: NSX-netwerk onderdelen configureren
-      url: configure-nsx-network-components-azure-portal.md
-    - text: Herstel na noodgevallen implementeren voor VM's
-      url: disaster-recovery-for-virtual-machines.md
-    - text: VM implementeren via inhoudsbibliotheek
-      url: ./deploy-vm-content-library.md
-    - text: GitHub Enterprise Server instellen
-      url: github-enterprise-server.md
-    - text: Openbaar IP-gebruik
-      url: public-ip-usage.md
-    - text: IPSec-tunnel maken
-      url: create-ipsec-tunnel.md
   - linkListType: reference
     links:
     - text: Host-quota aanvragen Azure VMware-oplossing
@@ -97,7 +99,21 @@ landingContent:
     - text: Kosten besparen met een gereserveerde instantie
       url: reserved-instance.md
     - text: Migratie-evaluatie
-      url: ../migrate/how-to-create-azure-vmware-solution-assessment.md?context=%2fazure%2fazure-vmware%2fcontext%2fcontext
+      url: /azure/migrate/how-to-create-azure-vmware-solution-assessment?context=/azure/azure-vmware/context/context
+  - linkListType: how-to-guide
+    links:
+    - text: DHCP beheren
+      url: manage-dhcp.md
+    - text: NSX-netwerk onderdelen configureren
+      url: configure-nsx-network-components-azure-portal.md
+    - text: Herstel na noodgevallen implementeren voor VM's
+      url: disaster-recovery-for-virtual-machines.md
+    - text: GitHub Enterprise Server instellen
+      url: github-enterprise-server.md
+    - text: Openbaar IP-gebruik
+      url: public-ip-usage.md
+    - text: IPSec-tunnel maken
+      url: create-ipsec-tunnel.md
 - title: Systeemeigen Azure-integratie
   linkLists:
   - linkListType: how-to-guide
@@ -116,6 +132,8 @@ landingContent:
       url: protect-azure-vmware-solution-with-application-gateway.md
     - text: Traffic Manager
       url: deploy-traffic-manager-balance-workloads.md
+    - text: Waarschuwingen configureren en werken met metrische gegevens
+      url: configure-alerts-for-azure-vmware-solution.md
 - title: VMware-oplossingen
   linkLists:
   - linkListType: how-to-guide
@@ -124,6 +142,8 @@ landingContent:
       url: vrealize-operations-for-azure-vmware-solution.md
     - text: VMware Horizon implementeren
       url: azure-vmware-solution-horizon.md
+    - text: Vm's implementeren vanuit de inhouds bibliotheek
+      url: ./deploy-vm-content-library.md
 - title: VMware-ecosysteem
   linkLists:
   - linkListType: reference
@@ -154,6 +174,8 @@ landingContent:
       url: https://youtu.be/BoQYvqzb6Y8
     - text: Migratie en capaciteits planning
       url: https://youtu.be/NoNG-hkksrA
+    - text: VCenter & NSX-T-wacht woorden draaien met Azure Logic app
+      url: https://youtu.be/cK1qY3knj88
 - title: Problemen oplossen
   linkLists:
   - linkListType: reference

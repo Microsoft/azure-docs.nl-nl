@@ -8,10 +8,10 @@ ms.subservice: migration-guide
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.openlocfilehash: 16166183b56b371fe8338894f83dbacf2e659c53
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103563552"
 ---
 # <a name="migrate-your-postgresql-database-using-dump-and-restore"></a>Uw PostgreSQL-database migreren met dumpen en herstel

@@ -10,18 +10,16 @@ ms.date: 03/10/2021
 ms.topic: overview
 ms.custom: references_regions
 ms.service: azure-communication-services
-ms.openlocfilehash: 7b295c6dabfce6a624d93d75991163f464cfd46e
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.openlocfilehash: 66edf35f292f5b681578d49b8be784de66e4d904
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105625225"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936526"
 ---
 # <a name="phone-number-types-in-azure-communication-services"></a>Typen telefoonnummers in Azure Communication Services
 
-
-
-[!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
+[!INCLUDE [Public Preview Notice](../../includes/public-preview-include-phone-numbers.md)]
 
 > [!IMPORTANT]
 > De beschik baarheid van telefoon nummers is momenteel beperkt tot betaalde Azure-abonnementen die een factuur adres hebben in de Verenigde Staten-en communicatie services-resources die een Amerikaanse gegevens locatie hebben. Telefoon nummers kunnen niet worden aangeschaft bij proef accounts of Azure-gratis tegoeden gebruiken. Ga voor meer informatie naar de sectie [abonnements geschiktheid](#azure-subscriptions-eligibility) van dit document.

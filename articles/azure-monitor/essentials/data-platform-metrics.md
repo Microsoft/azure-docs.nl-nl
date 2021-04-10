@@ -7,14 +7,14 @@ manager: carmonm
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 03/26/2019
+ms.date: 02/20/2021
 ms.author: bwren
-ms.openlocfilehash: 68e947a6e13ba5195815fe966ec69ec6a2f4b8e1
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: 3c99002a4f8613ff40a116eeceded4b3bada1c15
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105562967"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936152"
 ---
 # <a name="azure-monitor-metrics-overview"></a>Overzicht van Azure Monitor metrische gegevens
 Azure Monitor metrieken is een functie van Azure Monitor die numerieke gegevens uit [bewaakte bronnen](../monitor-reference.md) in een time series-data base verzamelt. Metrische gegevens zijn numerieke waarden die met regel matige tussen pozen worden verzameld en een aspect van een systeem op een bepaald moment beschrijven. Metrische gegevens in Azure Monitor zijn licht gewicht en kunnen bijna realtime-scenario's ondersteunen, waardoor ze vooral nuttig zijn voor waarschuwingen en snelle detectie van problemen. U kunt ze interactief met metrische gegevens Verkenner analyseren, proactief een melding ontvangen wanneer een waarde een drempel overschrijdt of deze visualiseren in een werkmap of dash board.
@@ -33,7 +33,7 @@ De volgende tabel geeft een lijst van de verschillende manieren waarop u metrisc
 | **Waarschuwing** | Configureer een [waarschuwings regel voor metrische gegevens](../alerts/alerts-metric.md) die een melding verzendt of [geautomatiseerd actie](../alerts/action-groups.md) onderneemt wanneer de metrische waarde een drempel overschrijdt. |
 | **Visualiseren** | Een grafiek vastmaken aan een [Azure-dash board](../app/tutorial-app-dashboards.md)vanuit de metrics Explorer.<br>Een [werkmap](../visualize/workbooks-overview.md) maken om te combi neren met meerdere gegevens sets in een interactief rapport. De resultaten van een query exporteren naar [Grafana](../visualize/grafana-plugin.md) om gebruik te maken van Dash boards en combi neren met andere gegevens bronnen. |
 | **Automatiseren** |  Gebruik [automatisch schalen](../autoscale/autoscale-overview.md) om resources te verg Roten of te verkleinen op basis van een metrische waarde die een drempel overschrijdt. |
-| **Ophalen** | Toegang krijgen tot metrische waarden van een opdracht regel met behulp van  [Power shell-cmdlets](/powershell/module/az.applicationinsights)<br>Toegang krijgen tot meet waarden van aangepaste toepassing met behulp van [rest API](./rest-api-walkthrough.md).<br>Toegang krijgen tot meet waarden van een opdracht regel met behulp van  [cli](/cli/azure/monitor/metrics). |
+| **Ophalen** | Toegang krijgen tot metrische waarden van een opdracht regel met behulp van  [Power shell-cmdlets](/powershell/module/az.monitor)<br>Toegang krijgen tot meet waarden van aangepaste toepassing met behulp van [rest API](./rest-api-walkthrough.md).<br>Toegang krijgen tot meet waarden van een opdracht regel met behulp van  [cli](/cli/azure/monitor/metrics). |
 | **Exporteren** | U [kunt metrische gegevens naar Logboeken routeren](./resource-logs.md#send-to-azure-storage) voor het analyseren van informatie in azure monitor metrieken samen met gegevens in azure monitor-logboeken en om meet waarden langer dan 93 dagen op te slaan.<br>Meet gegevens streamen naar een [Event hub](./stream-monitoring-data-event-hubs.md) om ze naar externe systemen te routeren. |
 | **Archiveren** | [Archiveer](./platform-logs-overview.md) de prestaties of de status geschiedenis van uw resource voor naleving, controle of offline rapportage. |
 
@@ -104,7 +104,7 @@ Met deze metriek kunt u vragen beantwoorden zoals ' wat is de netwerk doorvoer v
 Voor de meeste resources in Azure worden metrische gegevens 93 dagen bewaard. Er zijn enkele uitzonde ringen:
 
 **Metrische gegevens van het gast besturingssysteem**
--   **Klassieke waarden voor het besturings systeem** van de gast. Dit zijn prestatie meter items die worden verzameld door de [Windows diagnostische extensie (WAD)](../agents/diagnostics-extension-overview.md) of de [Linux Diagnostic extension (LAD)](../../virtual-machines/extensions/diagnostics-linux.md) en worden doorgestuurd naar een Azure-opslag account. Bewaar termijn voor deze metrische gegevens is 14 dagen.
+-   **Klassieke waarden voor het besturings systeem** van de gast. Dit zijn prestatie meter items die worden verzameld door de [Windows diagnostische extensie (WAD)](../agents/diagnostics-extension-overview.md) of de [Linux Diagnostic extension (LAD)](../../virtual-machines/extensions/diagnostics-linux.md) en worden doorgestuurd naar een Azure-opslag account. Het bewaren van deze metrische gegevens is gegarandeerd ten minste 14 dagen, hoewel er geen werkelijke verval datum naar het opslag account wordt geschreven. Om prestatie redenen beperkt de portal hoeveel gegevens er op basis van het volume worden weer gegeven. Het werkelijke aantal dagen dat door de portal wordt opgehaald, kan daarom langer zijn dan 14 dagen als het volume van de gegevens dat wordt geschreven niet erg groot is.  
 -   De **metrische gegevens van het gast besturingssysteem worden verzonden naar Azure monitor metrische gegevens**. Dit zijn prestatie meter items die worden verzameld door de [Windows diagnostische extensie (WAD)](../agents/diagnostics-extension-overview.md) en worden verzonden naar de [gegevens Sink van Azure monitor](../agents/diagnostics-extension-overview.md#data-destinations), of via de [InfluxData-telegrafie-agent](https://www.influxdata.com/time-series-platform/telegraf/) op Linux-machines. De Bewaar periode voor deze metrische gegevens is 93 dagen.
 -   De **metrische gegevens van het gast besturingssysteem die door log Analytics agent zijn verzameld**. Dit zijn prestatie meter items die worden verzameld door de Log Analytics-agent en worden verzonden naar een Log Analytics-werk ruimte. Het bewaren van deze metrische gegevens is 31 dagen en kan Maxi maal twee jaar worden verlengd.
 

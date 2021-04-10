@@ -4,10 +4,10 @@ description: Het gegevens pakket voor bedreigings informatie wordt geleverd met 
 ms.date: 12/14/2020
 ms.topic: how-to
 ms.openlocfilehash: 386d59d33c4f9695b8fc5243dab345321cff4a5f
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104784047"
 ---
 # <a name="threat-intelligence-research-and-packages"></a>Onderzoek en pakketten voor bedreigings informatie

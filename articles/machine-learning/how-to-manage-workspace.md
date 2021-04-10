@@ -11,10 +11,10 @@ ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to, fasttrack-edit
 ms.openlocfilehash: 472bc66c75881d622e8ecfe23031f58db773a919
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102518922"
 ---
 # <a name="create-and-manage-azure-machine-learning-workspaces"></a>Azure Machine Learning-werk ruimten maken en beheren 
@@ -195,7 +195,7 @@ Wanneer u een persoonlijk eind punt maakt, wordt er een nieuwe Privé-DNS zone g
 2. Selecteer in de __instellingen__ __virtuele netwerk koppelingen__.
 3. Selecteer __Toevoegen__. Geef op de pagina __virtuele netwerk koppeling toevoegen__ een unieke naam op voor de __koppeling__ en selecteer vervolgens het __virtuele netwerk__ dat u wilt toevoegen. Selecteer __OK__ om de netwerk koppeling toe te voegen.
 
-Zie voor meer informatie [Azure private endpoint DNS-configuratie](../private-link/private-endpoint-dns.md).
+Raadpleeg [DNS-configuratie voor Azure-privé-eindpunt](../private-link/private-endpoint-dns.md) voor meer informatie.
 
 ### <a name="vulnerability-scanning"></a>Scannen op beveiligingsproblemen
 

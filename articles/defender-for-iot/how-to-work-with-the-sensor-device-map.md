@@ -4,10 +4,10 @@ description: De apparaattoewijzing biedt een grafische weer gave van de gedetect
 ms.date: 1/7/2021
 ms.topic: how-to
 ms.openlocfilehash: f7579cbca618baef404236556993c9831dd84bdf
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104784591"
 ---
 # <a name="investigate-sensor-detections-in-the-device-map"></a>Detectie van sensors in de apparaattoewijzing onderzoeken
@@ -32,7 +32,7 @@ De volgende hulpprogram ma's worden gebruikt om te werken in de kaart.
 
 De gebruikersrol bepaalt welke hulpprogram ma's beschikbaar zijn in het venster met het kaart apparaat. Zie [gebruikers maken en beheren](how-to-create-and-manage-users.md) voor meer informatie over gebruikers rollen.
 
-| Symbool | Beschrijving |
+| Symbool | Description |
 |---|---|
 | :::image type="icon" source="media/how-to-work-with-maps/search-bar-icon-v2.png" border="false":::| Zoeken op IP-adres of MAC-adres voor een specifiek apparaat. Voer het IP-adres of MAC-adres in het tekstvak in. De kaart geeft het apparaat weer dat u hebt gezocht met apparaten die zijn verbonden. |
 | Groeps markeringen en filters <br /> :::image type="content" source="media/how-to-work-with-maps/group-highlight-and-filters-v2.png" alt-text="Scherm opname van de groeps markeringen en filters."::: | Filter of markeer de kaart op basis van standaard groepen en aangepaste apparaatgroepen. |
@@ -114,7 +114,7 @@ Groepen weer geven op:
 
 De volgende vooraf gedefinieerde groepen zijn beschikbaar:
 
-| Groepsnaam | Beschrijving |
+| Groepsnaam | Description |
 |--|--|
 | **Bekende toepassingen** | Apparaten die gebruikmaken van gereserveerde poorten, zoals TCP.  |
 | **niet-standaard poorten (standaard)** | Apparaten die gebruikmaken van niet-standaard poorten of poorten waaraan geen alias is toegewezen. |
@@ -263,7 +263,7 @@ Er zijn tal van hulpprogram ma's beschikbaar voor meer informatie over apparaten
 
 De volgende labels en indica toren kunnen worden weer gegeven op apparaten op de kaart:
 
-| Label apparaat | Beschrijving |
+| Label apparaat | Description |
 |--|--|
 | :::image type="content" source="media/how-to-work-with-maps/host-v2.png" alt-text="IP-hostnaam"::: | Hostnaam en IP-adres van IP-adres, of subnet adressen |
 | :::image type="content" source="media/how-to-work-with-maps/amount-alerts-v2.png" alt-text="Aantal waarschuwingen"::: | Aantal waarschuwingen dat is gekoppeld aan het apparaat |
@@ -309,7 +309,7 @@ De volgende informatie kan hand matig worden bijgewerkt. Gegevens die hand matig
 
   - Purdue-laag
 
-  - Beschrijving
+  - Description
 
 | Item | Beschrijving |
 |--|--|
@@ -319,14 +319,14 @@ De volgende informatie kan hand matig worden bijgewerkt. Gegevens die hand matig
 | Leverancier | De leverancier van het apparaat. Dit wordt bepaald door de voorloop tekens van het MAC-adres van het apparaat. Dit veld is alleen-lezen. |
 | Besturingssysteem | Het besturings systeem van het apparaat is gedetecteerd door de sensor. |
 | Purdue-laag | De Purdue-laag geïdentificeerd door de sensor voor dit apparaat, met inbegrip van: <br /> -Automatische <br /> -Proces beheer <br /> -Toezicht <br /> - Enterprise |
-| Beschrijving | Een gratis tekst veld. <br /> Meer informatie over het apparaat toevoegen. |
+| Description | Een gratis tekst veld. <br /> Meer informatie over het apparaat toevoegen. |
 | Kenmerken | Aanvullende informatie die tijdens de leer periode op het apparaat is gedetecteerd en niet tot andere categorieën behoort, wordt weer gegeven in de sectie kenmerken. <br /> De informatie is RO. |
 | Instellingen | U kunt de apparaatinstellingen hand matig wijzigen om valse positieven te voor komen: <br /> - **Geautoriseerd apparaat**: tijdens de leer periode worden alle apparaten die in het netwerk worden gedetecteerd geïdentificeerd als geautoriseerde apparaten. Wanneer een apparaat na de leer periode wordt gedetecteerd, wordt het standaard weer gegeven als een niet-geautoriseerd apparaat. U kunt deze definitie hand matig wijzigen. <br /> - **Bekend als scanner**: Schakel deze optie in als u weet dat dit apparaat wordt aangeduid als scanner en er geen waarschuwing moet worden gesteld. <br /> - **Programmerings apparaat**: Schakel deze optie in als u weet dat dit apparaat een programma wordt genoemd en wordt gebruikt om programma wijzigingen door te voeren. Als u deze identificeert als een programmeer apparaat, voor komt u waarschuwingen voor het Program meren van wijzigingen die afkomstig zijn van deze asset. |
 | Aangepaste groepen | De aangepaste groepen in de apparaattoewijzing waarvan dit apparaat deel uitmaakt. |
 | Staat | De beveiliging en de autorisatie status van het apparaat: <br /> -De status is `Secured` wanneer er geen waarschuwingen zijn <br /> -Wanneer er waarschuwingen over het apparaat zijn, wordt het aantal waarschuwingen weer gegeven <br /> -De status `Unauthorized` wordt weer gegeven voor apparaten die na de leer periode zijn toegevoegd aan het netwerk. U kunt het apparaat hand matig definiëren, zoals `Authorized Device` in de instellingen <br /> -In het geval het adres van dit apparaat is gedefinieerd als een dynamisch adres, `DHCP` wordt het toegevoegd aan de status. |
 
 
-| Netwerk | Beschrijving |
+| Netwerk | Description |
 |--|--|
 | Interfaces | De apparaatfuncties. Een RO-veld. |
 | Protocollen | De protocollen die door het apparaat worden gebruikt. Een RO-veld. |
@@ -485,7 +485,7 @@ In deze sectie wordt beschreven hoe u programmeer bestanden weergeeft en versies
 
 :::image type="content" source="media/how-to-work-with-maps/timeline-view.png" alt-text="venster tijd lijn Program meren":::
 
-|Type programmeer tijdlijn | Beschrijving |
+|Type programmeer tijdlijn | Description |
 |--|--|
 | Geprogrammeerd apparaat | Geeft details over het apparaat dat is geprogrammeerd, met inbegrip van de hostnaam en het bestand. |
 | Recente gebeurtenissen | Hiermee worden de 50 meest recente gebeurtenissen weer gegeven die zijn gedetecteerd door de sensor. <br />Als u een gebeurtenis wilt markeren, plaatst u de muis aanwijzer erop en klikt u op de ster. :::image type="icon" source="media/how-to-work-with-maps/star.png" border="false"::: <br /> De laatste 50 gebeurtenissen kunnen worden weer gegeven. |
@@ -540,7 +540,7 @@ Vergelijken:
 
 Naast het controleren van de details in de programmeer tijdlijn, hebt u toegang tot programmeer informatie op het apparaat venster Eigenschappen en de inventaris van het apparaat.
 
-| Apparaattype | Beschrijving |
+| Apparaattype | Description |
 |--|--|
 | Apparaateigenschappen | Het venster Apparaateigenschappen bevat informatie over de laatste programmeer gebeurtenis die is gedetecteerd op de device\. :::image type="content" source="media/how-to-work-with-maps/information-from-device-v2.png" alt-text="De eigenschappen van uw apparaat"::: |
 | De inventaris van het apparaat | De inventaris van het apparaat geeft aan of het apparaat een programmeer device\. is :::image type="content" source="media/how-to-work-with-maps/inventory-v2.png" alt-text="De inventaris van apparaten"::: |

@@ -10,12 +10,12 @@ metadata:
   author: mimcco
   ms.author: mimcco
   ms.date: 03/25/2021
-  ms.openlocfilehash: 61e9d784d899cb8f0741f27aee0bdb7031bb37d1
-  ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+  ms.openlocfilehash: 0cf9e95897554cb51ff6837dec72700124471025
+  ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/26/2021
-  ms.locfileid: "105562542"
+  ms.lasthandoff: 04/01/2021
+  ms.locfileid: "106107724"
 landingContent:
 - title: Wat is Azure percept?
   linkLists:
@@ -33,13 +33,15 @@ landingContent:
       url: overview-percept-security.md
     - text: 80/20-integratie
       url: overview-8020-integration.md
+    - text: Azure percept AI-modellen
+      url: overview-ai-models.md
 - title: Aan de slag met Azure percept DK
   linkLists:
   - linkListType: quickstart
     links:
     - text: Unbox en uw Azure percept DK verzamelen
       url: quickstart-percept-dk-unboxing.md
-    - text: Verbinding maken tussen Azure percept DK en Azure en een Vision AI-model implementeren
+    - text: Uw Azure percept DK verbinden met Azure
       url: quickstart-percept-dk-set-up.md
   - linkListType: reference
     links:
@@ -47,8 +49,10 @@ landingContent:
       url: azure-percept-dk-datasheet.md
     - text: Azure percept Vision-gegevens blad
       url: azure-percept-vision-datasheet.md
-    - text: Problemen oplossen
+    - text: Problemen oplossen met algemeen Azure percept DK
       url: troubleshoot-dev-kit.md
+    - text: Problemen met Setup oplossen
+      url: how-to-troubleshoot-setup.md
 - title: Aan de slag met Azure percept-audio
   linkLists:
   - linkListType: quickstart
@@ -61,9 +65,9 @@ landingContent:
       url: azure-percept-audio-datasheet.md
     - text: Problemen met Azure percept-audio oplossen
       url: troubleshoot-audio-accessory-speech-module.md
-    - text: LED en knop voor Azure percept-audio
+    - text: Gedrag van de audio-LED en het knop patroon van Azure percept
       url: audio-button-led-behavior.md
-- title: Een visueel prototype zonder code maken
+- title: Een oplossing voor No-code Vision bouwen
   linkLists:
   - linkListType: tutorial
     links:
@@ -79,11 +83,11 @@ landingContent:
       url: how-to-capture-images.md
     - text: De telemetrie van uw Devkit weer geven
       url: how-to-view-telemetry.md
-  - linkListType: concept
+  - linkListType: reference
     links:
-    - text: Werken met AI-oplossingen
-      url: overview-ai-models.md
-- title: Een oplossing voor een no-code Voice Assistant bouwen
+    - text: Problemen met Vision-oplossingen oplossen
+      url: vision-solution-troubleshooting.md
+- title: Een spraak oplossing zonder code bouwen
   linkLists:
   - linkListType: tutorial
     links:
@@ -91,9 +95,9 @@ landingContent:
       url: tutorial-no-code-speech.md
   - linkListType: how-to-guide
     links:
-    - text: Uw Voice Assistant beheren
+    - text: Uw Voice Assistant configureren in azure percept Studio
       url: how-to-manage-voice-assistant.md
-    - text: Uw Voice Assistant configureren met behulp van IoT Hub
+    - text: Uw Voice Assistant configureren in IoT Hub
       url: how-to-configure-voice-assistant.md
 - title: Geavanceerde ontwikkeling met Azure percept
   linkLists:
@@ -113,9 +117,9 @@ landingContent:
       url: overview-update-experience.md
   - linkListType: how-to-guide
     links:
-    - text: Over-the-Air-updates instellen
+    - text: OTA-updates (over-the-Air) instellen
       url: how-to-set-up-over-the-air-updates.md
-    - text: Over-the-Air-updates
+    - text: Uw apparaat bijwerken over-the-Air (OTA)
       url: how-to-update-over-the-air.md
-    - text: Bijwerken via USB
+    - text: Uw apparaat bijwerken via USB
       url: how-to-update-via-usb.md

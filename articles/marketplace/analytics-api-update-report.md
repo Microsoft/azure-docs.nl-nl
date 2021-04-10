@@ -8,10 +8,10 @@ author: sayantanroy83
 ms.author: sroy
 ms.date: 3/08/2021
 ms.openlocfilehash: 38680eb291417ded4c2f93539e8d1ae091b1d560
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102583793"
 ---
 # <a name="update-report-api"></a>Rapport-API bijwerken
@@ -27,7 +27,7 @@ Met deze API kunt u een rapport parameter wijzigen.
 
 **Aanvraag header**
 
-| Header | Type | Beschrijving |
+| Header | Type | Description |
 | ------------ | ------------- | ------------- |
 | Autorisatie | tekenreeks | Vereist. Het toegangs token Azure Active Directory (Azure AD) in de vorm `Bearer <token>` |
 | Content-Type | tekenreeks | `Application/JSON` |
@@ -64,13 +64,13 @@ Deze tabel bevat de belangrijkste definities van elementen in de aanvraag lading
 
 | Parameter | Vereist | Beschrijving | Toegestane waarden |
 | ------------ | ------------- | ------------- | ------------- |
-| `ReportName` | Ja | Naam die aan het rapport moet worden toegewezen | tekenreeks |
+| `ReportName` | Yes | Naam die aan het rapport moet worden toegewezen | tekenreeks |
 | `Description` | No | Beschrijving van het gemaakte rapport | tekenreeks |
-| `StartTime` | Ja | Tijds tempel waarna het genereren van het rapport wordt gestart | tekenreeks |
+| `StartTime` | Yes | Tijds tempel waarna het genereren van het rapport wordt gestart | tekenreeks |
 | `RecurrenceInterval` | No | De frequentie waarmee het rapport moet worden gegenereerd in uren. De minimum waarde is 4 | geheel getal |
-| `RecurrenceCount` | Nee | Aantal rapporten dat moet worden gegenereerd. Standaard waarde is oneindig | geheel getal |
-| `Format` | Ja | Bestands indeling van het geëxporteerde bestand. De standaard waarde is CSV. | CSV/TSV |
-| `CallbackUrl` | Ja | https call back-URL die moet worden aangeroepen bij het genereren van rapporten | tekenreeks |
+| `RecurrenceCount` | No | Aantal rapporten dat moet worden gegenereerd. Standaard waarde is oneindig | geheel getal |
+| `Format` | Yes | Bestands indeling van het geëxporteerde bestand. De standaard waarde is CSV. | CSV/TSV |
+| `CallbackUrl` | Yes | https call back-URL die moet worden aangeroepen bij het genereren van rapporten | tekenreeks |
 |||||
 
 **Woordenlijst**

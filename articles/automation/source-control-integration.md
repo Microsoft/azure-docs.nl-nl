@@ -6,10 +6,10 @@ ms.subservice: process-automation
 ms.date: 03/10/2021
 ms.topic: conceptual
 ms.openlocfilehash: 281da27ce95649e85dae5d0795bb743f21fdb578
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102631741"
 ---
 # <a name="use-source-control-integration"></a>Integratie van bronbeheer gebruiken
@@ -62,7 +62,7 @@ Gebruik deze procedure voor het configureren van broncode beheer met behulp van 
     |Mappad     | De map die de runbooks bevat die moeten worden gesynchroniseerd, bijvoorbeeld **/Runbooks**. Alleen runbooks in de opgegeven map worden gesynchroniseerd. Recursie wordt niet ondersteund.        |
     |Automatische synchronisatie<sup>1</sup>     | Instelling waarmee automatische synchronisatie wordt in-of uitgeschakeld wanneer een door Voer in de bron beheer opslagplaats wordt gemaakt.        |
     |Runbook publiceren     | Instelling van op als runbooks automatisch worden gepubliceerd na synchronisatie vanuit broncode beheer, en anders uit.           |
-    |Beschrijving     | Tekst waarin aanvullende details over het broncode beheer worden opgegeven.        |
+    |Description     | Tekst waarin aanvullende details over het broncode beheer worden opgegeven.        |
 
     <sup>1</sup> als u automatische synchronisatie wilt inschakelen bij het configureren van de integratie van broncode beheer met Azure opslag plaatsen, moet u een project beheerder zijn.
 

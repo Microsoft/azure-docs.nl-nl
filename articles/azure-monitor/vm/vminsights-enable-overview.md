@@ -7,10 +7,10 @@ ms.author: bwren
 ms.date: 12/22/2020
 ms.custom: references_regions
 ms.openlocfilehash: bb2e12082b80c397eec27409b1177379a92fdd7d
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102634155"
 ---
 # <a name="enable-vm-insights-overview"></a>Overzicht van VM Insights inschakelen
@@ -41,11 +41,11 @@ VM Insights ondersteunt de volgende machines:
 ## <a name="supported-azure-arc-machines"></a>Ondersteunde Azure-Arc-machines
 VM Insights is beschikbaar voor Azure Arc-servers in regio's waar de Arc extension-service beschikbaar is. U moet versie 0,9 of hoger van de Arc-agent uitvoeren.
 
-| Verbonden bron | Ondersteund | Beschrijving |
+| Verbonden bron | Ondersteund | Description |
 |:--|:--|:--|
-| Windows-agents | Ja | Naast de [log Analytics-agent voor Windows](../agents/log-analytics-agent.md), hebben Windows-agents de afhankelijkheids agent nodig. Zie [ondersteunde besturings systemen](../agents/agents-overview.md#supported-operating-systems)voor meer informatie. |
-| Linux-agents | Ja | Naast de [log Analytics-agent voor Linux](../agents/log-analytics-agent.md)hebben Linux-agents de afhankelijkheids agent nodig. Zie [ondersteunde besturings systemen](#supported-operating-systems)voor meer informatie. |
-| Beheergroep System Center Operations Manager | Nee | |
+| Windows-agents | Yes | Naast de [log Analytics-agent voor Windows](../agents/log-analytics-agent.md), hebben Windows-agents de afhankelijkheids agent nodig. Zie [ondersteunde besturings systemen](../agents/agents-overview.md#supported-operating-systems)voor meer informatie. |
+| Linux-agents | Yes | Naast de [log Analytics-agent voor Linux](../agents/log-analytics-agent.md)hebben Linux-agents de afhankelijkheids agent nodig. Zie [ondersteunde besturings systemen](#supported-operating-systems)voor meer informatie. |
+| Beheergroep System Center Operations Manager | No | |
 
 ## <a name="supported-operating-systems"></a>Ondersteunde besturingssystemen
 

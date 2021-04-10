@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 05/13/2019
 ms.author: allensu
 ms.openlocfilehash: 2e32faad698fbf316d51123cc8b7845a3b262c7f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98938659"
 ---
 # <a name="create-change-or-delete-a-public-ip-address-prefix"></a>Een voorvoegsel van een openbaar IP-adres maken, wijzigen of verwijderen
@@ -48,11 +48,11 @@ Voor voegsels voor open bare IP-adressen gelden kosten. Zie [prijzen](https://az
 
    |Instelling|Vereist?|Details|
    |---|---|---|
-   |Abonnement|Ja|Moet zich in hetzelfde [abonnement](../azure-glossary-cloud-terminology.md?toc=%2fazure%2fvirtual-network%2ftoc.json#subscription) bevinden als de resource waaraan u het open bare IP-adres wilt koppelen.|
-   |Resourcegroep|Ja|Kan zich in dezelfde of verschillende [resource groepen](../azure-glossary-cloud-terminology.md?toc=%2fazure%2fvirtual-network%2ftoc.json#resource-group) bevinden als de resource waaraan u het open bare IP-adres wilt koppelen.|
-   |Name|Ja|De naam moet uniek zijn binnen de resource groep die u selecteert.|
-   |Region|Ja|Moet zich in dezelfde [regio](https://azure.microsoft.com/regions)bevinden als de open bare IP-adressen waaraan u adressen uit het bereik toewijst.|
-   |Voorvoegsel grootte|Ja| De grootte van het voor voegsel dat u nodig hebt. A/28 of 16 IP-adressen is de standaard waarde.
+   |Abonnement|Yes|Moet zich in hetzelfde [abonnement](../azure-glossary-cloud-terminology.md?toc=%2fazure%2fvirtual-network%2ftoc.json#subscription) bevinden als de resource waaraan u het open bare IP-adres wilt koppelen.|
+   |Resourcegroep|Yes|Kan zich in dezelfde of verschillende [resource groepen](../azure-glossary-cloud-terminology.md?toc=%2fazure%2fvirtual-network%2ftoc.json#resource-group) bevinden als de resource waaraan u het open bare IP-adres wilt koppelen.|
+   |Name|Yes|De naam moet uniek zijn binnen de resource groep die u selecteert.|
+   |Region|Yes|Moet zich in dezelfde [regio](https://azure.microsoft.com/regions)bevinden als de open bare IP-adressen waaraan u adressen uit het bereik toewijst.|
+   |Voorvoegsel grootte|Yes| De grootte van het voor voegsel dat u nodig hebt. A/28 of 16 IP-adressen is de standaard waarde.
 
 **Opdrachten**
 
@@ -74,9 +74,9 @@ Wanneer u een voor voegsel maakt, moet u vaste IP-adressen maken op basis van he
 
    |Instelling|Vereist?|Details|
    |---|---|---|
-   |Name|Ja|De naam van het open bare IP-adres moet uniek zijn binnen de resource groep die u selecteert.|
-   |Time-out voor inactiviteit (minuten)|Nee|Hoe lang duurt het voordat een TCP-of HTTP-verbinding is geopend, zonder dat er wordt gebruikgemaakt van clients om Keep-Alive-berichten te verzenden. |
-   |DNS-naamlabel|Nee|Moet uniek zijn binnen de Azure-regio waarin u de naam hebt gemaakt (in alle abonnementen en alle klanten). Azure registreert automatisch de naam en het IP-adres in DNS zodat u verbinding kunt maken met een resource met de naam. Azure voegt een standaard-subnet, zoals *location.cloudapp.Azure.com* (waarbij locatie de locatie is die u hebt geselecteerd), toe aan de naam die u opgeeft, om de volledig gekwalificeerde DNS-naam te maken. Zie [Azure DNS gebruiken met een openbaar IP-adres van Azure](../dns/dns-custom-domain.md?toc=%2fazure%2fvirtual-network%2ftoc.json#public-ip-address)voor meer informatie.|
+   |Name|Yes|De naam van het open bare IP-adres moet uniek zijn binnen de resource groep die u selecteert.|
+   |Time-out voor inactiviteit (minuten)|No|Hoe lang duurt het voordat een TCP-of HTTP-verbinding is geopend, zonder dat er wordt gebruikgemaakt van clients om Keep-Alive-berichten te verzenden. |
+   |DNS-naamlabel|No|Moet uniek zijn binnen de Azure-regio waarin u de naam hebt gemaakt (in alle abonnementen en alle klanten). Azure registreert automatisch de naam en het IP-adres in DNS zodat u verbinding kunt maken met een resource met de naam. Azure voegt een standaard-subnet, zoals *location.cloudapp.Azure.com* (waarbij locatie de locatie is die u hebt geselecteerd), toe aan de naam die u opgeeft, om de volledig gekwalificeerde DNS-naam te maken. Zie [Azure DNS gebruiken met een openbaar IP-adres van Azure](../dns/dns-custom-domain.md?toc=%2fazure%2fvirtual-network%2ftoc.json#public-ip-address)voor meer informatie.|
 
 U kunt ook de CLI-en PS-opdrachten hieronder met de para meters---Public-IP-prefix (CLI) en-PublicIpPrefix (PS) gebruiken om een open bare IP-adres bron te maken. 
 

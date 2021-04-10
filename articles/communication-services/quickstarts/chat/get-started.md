@@ -10,17 +10,14 @@ ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
 zone_pivot_groups: acs-js-csharp-java-python-swift-android
-ms.openlocfilehash: 362c8c875ab878b23cffae45f4c653255f489c81
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: 6d3f9f7fd30d2c6b1cbc3882a41546593ee1c156
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105107010"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105726648"
 ---
 # <a name="quickstart-add-chat-to-your-app"></a>Quickstart: Chat toevoegen aan uw app
-
-[!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
-
 
 Ga aan de slag met Azure Communication Services met de SDK voor chat services om realtime chatten toe te voegen aan uw toepassing. In deze Snelstartgids gebruiken we de chat-SDK voor het maken van chat-threads waarmee gebruikers gesp rekken met elkaar kunnen voeren. Raadpleeg [Conceptuele documentatie voor chat](../../concepts/chat/concepts.md) voor meer informatie over Chatconcepten.
 

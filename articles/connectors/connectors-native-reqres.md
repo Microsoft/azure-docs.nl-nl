@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/19/2020
 tags: connectors
 ms.openlocfilehash: 83ffccb7bae4fabc10796c36e782e72c661bd346
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "99063009"
 ---
 # <a name="receive-and-respond-to-inbound-https-requests-in-azure-logic-apps"></a>Inkomende HTTPS-aanvragen ontvangen en erop reageren in Azure Logic Apps
@@ -56,8 +56,8 @@ Uw logische app houdt een binnenkomende aanvraag alleen gedurende een [beperkte 
 
    | Naam van eigenschap | JSON-eigenschaps naam | Vereist | Beschrijving |
    |---------------|--------------------|----------|-------------|
-   | **HTTP POST-URL** | geen | Ja | De eind punt-URL die wordt gegenereerd na het opslaan van de logische app en wordt gebruikt voor het aanroepen van uw logische app |
-   | **JSON-schema van aanvraag tekst** | `schema` | Nee | Het JSON-schema dat de eigenschappen en waarden in de hoofd tekst van de binnenkomende aanvraag beschrijft |
+   | **HTTP POST-URL** | geen | Yes | De eind punt-URL die wordt gegenereerd na het opslaan van de logische app en wordt gebruikt voor het aanroepen van uw logische app |
+   | **JSON-schema van aanvraag tekst** | `schema` | No | Het JSON-schema dat de eigenschappen en waarden in de hoofd tekst van de binnenkomende aanvraag beschrijft |
    |||||
 
 1. Voer desgewenst in het vak **JSON-schema van aanvraag tekst** een JSON-schema in dat de hoofd tekst in de binnenkomende aanvraag beschrijft, bijvoorbeeld:
@@ -163,8 +163,8 @@ Uw logische app houdt een binnenkomende aanvraag alleen gedurende een [beperkte 
 
    | Naam van eigenschap | JSON-eigenschaps naam | Vereist | Beschrijving |
    |---------------|--------------------|----------|-------------|
-   | **Methode** | `method` | Nee | De methode die de inkomende aanvraag moet gebruiken om de logische app aan te roepen |
-   | **Relatief pad** | `relativePath` | Nee | Het relatieve pad voor de para meter die door de eind punt-URL van de logische app kan worden geaccepteerd |
+   | **Methode** | `method` | No | De methode die de inkomende aanvraag moet gebruiken om de logische app aan te roepen |
+   | **Relatief pad** | `relativePath` | No | Het relatieve pad voor de para meter die door de eind punt-URL van de logische app kan worden geaccepteerd |
    |||||
 
    In dit voor beeld wordt de eigenschap **Method** toegevoegd:
@@ -255,9 +255,9 @@ Wanneer u de aanvraag trigger gebruikt voor het verwerken van inkomende aanvrage
 
    | Naam van eigenschap | JSON-eigenschaps naam | Vereist | Beschrijving |
    |---------------|--------------------|----------|-------------|
-   | **Status code** | `statusCode` | Ja | De status code die in het antwoord moet worden geretourneerd |
-   | **Kopteksten** | `headers` | Nee | Een JSON-object dat een of meer headers beschrijft die in het antwoord moeten worden meegenomen |
-   | **Hoofdtekst** | `body` | Nee | De antwoord tekst |
+   | **Status code** | `statusCode` | Yes | De status code die in het antwoord moet worden geretourneerd |
+   | **Kopteksten** | `headers` | No | Een JSON-object dat een of meer headers beschrijft die in het antwoord moeten worden meegenomen |
+   | **Hoofdtekst** | `body` | No | De antwoord tekst |
    |||||
 
 1. Als u aanvullende eigenschappen, zoals een JSON-schema voor de antwoord tekst, wilt opgeven, opent u de lijst **nieuwe para meter toevoegen** en selecteert u de para meters die u wilt toevoegen.

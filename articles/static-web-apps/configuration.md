@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 02/18/2021
 ms.author: cshoe
-ms.openlocfilehash: 324a8e75488d74fc6aa52e499b8dde616cd9beb5
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: b6779de0203246a60bdfa60ea110a0f0d5f26ff3
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102034044"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106106446"
 ---
 # <a name="configure-azure-static-web-apps"></a>Statische Azure-Web Apps configureren
 
@@ -54,13 +54,13 @@ Elke regel bestaat uit een route patroon, samen met een of meer van de optionele
 
 | Regel eigenschap  | Vereist | Standaardwaarde | Opmerking                                                      |
 | -------------- | -------- | ------------- | ------------------------------------------------------------ |
-| `route`        | Ja      | n.v.t.          | Het route patroon dat is aangevraagd door de aanroeper.<ul><li>[Joker tekens](#wildcards) worden aan het einde van route paden ondersteund.<ul><li>De routerings _beheerder/ \*_ komt bijvoorbeeld overeen met een wille keurige route onder het pad van de _beheerder_ .</ul></ul>|
-| `rewrite`        | Nee       | n.v.t.          | Hiermee wordt het bestand of het pad gedefinieerd dat door de aanvraag wordt geretourneerd.<ul><li>Sluiten elkaar wederzijds uit voor een `redirect` regel<li>Herschrijf regels hebben geen invloed op de locatie van de browser.<li>De waarden moeten relatief zijn ten opzichte van de hoofdmap van de app</ul>  |
-| `redirect`        | Nee       | n.v.t.          | Hiermee wordt het bestand of pad voor het omleiden van paden voor een aanvraag gedefinieerd.<ul><li>Sluiten elkaar wederzijds uit voor een `rewrite` regel.<li>Omleidings regels wijzigen de locatie van de browser.<li>Standaard respons code is een [`302`](https://developer.mozilla.org/docs/Web/HTTP/Status/302) (tijdelijke omleiding), maar u kunt overschrijven met een [`301`](https://developer.mozilla.org/docs/Web/HTTP/Status/301) (permanente omleiding).</ul> |
-| `allowedRoles` | Nee       | toegang     | Hiermee wordt een lijst met namen van rollen gedefinieerd die zijn vereist voor toegang tot een route. <ul><li>Geldige tekens zijn `a-z`, `A-Z`, `0-9` en `_`.<li>De ingebouwde rol, [`anonymous`](./authentication-authorization.md) , is van toepassing op alle niet-geverifieerde gebruikers<li>De ingebouwde rol, [`authenticated`](./authentication-authorization.md) , is van toepassing op elke aangemelde gebruiker.<li>Gebruikers moeten deel uitmaken van ten minste één rol.<li>Rollen worden _op basis van_ elkaar vergeleken.<ul><li>Als een gebruiker zich in een van de vermelde rollen bevindt, wordt de toegang verleend.</ul><li>Afzonderlijke gebruikers zijn gekoppeld aan rollen via [uitnodigingen](authentication-authorization.md).</ul> |
-| `headers`<a id="route-headers"></a> | Nee | n.v.t. | De set [http-headers](https://developer.mozilla.org/docs/Web/HTTP/Headers) die aan het antwoord worden toegevoegd. <ul><li>Routenet teksten worden overschreven [`globalHeaders`](#global-headers) wanneer de route-specifieke header hetzelfde is als de algemene header in het antwoord.<li>Als u een koptekst wilt verwijderen, stelt u de waarde in op een lege teken reeks.</ul> |
-| `statusCode`   | Nee       | `200`, `301` , of `302` voor omleidingen | De [HTTP-status code](https://developer.mozilla.org/docs/Web/HTTP/Status) van het antwoord. |
-| `methods` | Nee | Alle methoden | Lijst met aanvraag methoden die overeenkomen met een route. Beschik bare methoden zijn: `GET` ,, `HEAD` ,,,, `POST` `PUT` `DELETE` `CONNECT` `OPTIONS` , `TRACE` en `PATCH` . |
+| `route`        | Yes      | n.v.t.          | Het route patroon dat is aangevraagd door de aanroeper.<ul><li>[Joker tekens](#wildcards) worden aan het einde van route paden ondersteund.<ul><li>De routerings _beheerder/ \*_ komt bijvoorbeeld overeen met een wille keurige route onder het pad van de _beheerder_ .</ul></ul>|
+| `rewrite`        | No       | n.v.t.          | Hiermee wordt het bestand of het pad gedefinieerd dat door de aanvraag wordt geretourneerd.<ul><li>Sluiten elkaar wederzijds uit voor een `redirect` regel<li>Herschrijf regels hebben geen invloed op de locatie van de browser.<li>De waarden moeten relatief zijn ten opzichte van de hoofdmap van de app</ul>  |
+| `redirect`        | No       | n.v.t.          | Hiermee wordt het bestand of pad voor het omleiden van paden voor een aanvraag gedefinieerd.<ul><li>Sluiten elkaar wederzijds uit voor een `rewrite` regel.<li>Omleidings regels wijzigen de locatie van de browser.<li>Standaard respons code is een [`302`](https://developer.mozilla.org/docs/Web/HTTP/Status/302) (tijdelijke omleiding), maar u kunt overschrijven met een [`301`](https://developer.mozilla.org/docs/Web/HTTP/Status/301) (permanente omleiding).</ul> |
+| `allowedRoles` | No       | toegang     | Hiermee wordt een lijst met namen van rollen gedefinieerd die zijn vereist voor toegang tot een route. <ul><li>Geldige tekens zijn `a-z`, `A-Z`, `0-9` en `_`.<li>De ingebouwde rol, [`anonymous`](./authentication-authorization.md) , is van toepassing op alle niet-geverifieerde gebruikers<li>De ingebouwde rol, [`authenticated`](./authentication-authorization.md) , is van toepassing op elke aangemelde gebruiker.<li>Gebruikers moeten deel uitmaken van ten minste één rol.<li>Rollen worden _op basis van_ elkaar vergeleken.<ul><li>Als een gebruiker zich in een van de vermelde rollen bevindt, wordt de toegang verleend.</ul><li>Afzonderlijke gebruikers zijn gekoppeld aan rollen via [uitnodigingen](authentication-authorization.md).</ul> |
+| `headers`<a id="route-headers"></a> | No | n.v.t. | De set [http-headers](https://developer.mozilla.org/docs/Web/HTTP/Headers) die aan het antwoord worden toegevoegd. <ul><li>Routenet teksten worden overschreven [`globalHeaders`](#global-headers) wanneer de route-specifieke header hetzelfde is als de algemene header in het antwoord.<li>Als u een koptekst wilt verwijderen, stelt u de waarde in op een lege teken reeks.</ul> |
+| `statusCode`   | No       | `200`, `301` , of `302` voor omleidingen | De [HTTP-status code](https://developer.mozilla.org/docs/Web/HTTP/Status) van het antwoord. |
+| `methods` | No | Alle methoden | Lijst met aanvraag methoden die overeenkomen met een route. Beschik bare methoden zijn: `GET` ,, `HEAD` ,,,, `POST` `PUT` `DELETE` `CONNECT` `OPTIONS` , `TRACE` en `PATCH` . |
 
 Elke eigenschap heeft een specifiek doel in de aanvraag/antwoord pijplijn.
 
@@ -275,7 +275,7 @@ In de volgende voorbeeld configuratie ziet u hoe u een fout code kunt overschrij
         },
         {
             "route": "/.auth/login/twitter",
-            "statusCode": 404,
+            "statusCode": 404
         },
         {
             "route": "/logout",
@@ -315,7 +315,7 @@ In de volgende voorbeeld configuratie ziet u hoe u een fout code kunt overschrij
     },
     "mimeTypes": {
         ".json": "text/json"
-    },
+    }
 }
 ```
 

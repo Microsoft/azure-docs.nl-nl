@@ -16,10 +16,10 @@ ms.date: 07/12/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: e15b592aaa780ea80b6931c6d44fbf99e2f3a730
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101673058"
 ---
 # <a name="sap-maxdb-livecache-and-content-server-deployment-on-azure-vms"></a>Implementatie van SAP MaxDB, liveCache en Content Server op virtuele machines van Azure
@@ -348,7 +348,7 @@ Kortom, u hebt het volgende nodig:
 ![Referentie configuratie van Azure IaaS VM voor SAP MaxDB DBMS](./media/dbms_maxdb_deployment_guide/Simple_disk_structure_maxdb.PNG)
 
 
-#### <a name="backup-and-restore"></a><a name="23c78d3b-ca5a-4e72-8a24-645d141a3f5d"></a>Back-ups maken en herstellen
+#### <a name="backup-and-restore"></a><a name="23c78d3b-ca5a-4e72-8a24-645d141a3f5d"></a>Back-up en herstel
 Wanneer u SAP MaxDB in azure implementeert, moet u uw back-upmethodologie controleren. Zelfs als het systeem geen productief systeem is, moet u regel matig een back-up maken van de SAP-data base die wordt gehost door SAP MaxDB. Omdat Azure Storage drie installatie kopieën houdt, is een back-up nu minder belang rijk voor de bescherming van uw systeem tegen opslag storingen en belang rijke operationele of administratieve storingen. De belangrijkste reden voor het onderhouden van een juiste back-up-en herstel planning is dat u logische of hand matige fouten kunt compenseren door herstel mogelijkheden op basis van een bepaald tijdstip te bieden. Het doel is dus om back-ups te maken om de data base te herstellen naar een bepaald tijdstip of om de back-ups in azure te gebruiken voor het seeden van een ander systeem door de bestaande Data Base te kopiëren. 
 
 Het maken van een back-up en het herstellen van een data base in azure werkt op dezelfde manier als voor on-premises systemen, zodat u Standard SAP MaxDB-hulpprogram ma's voor back-up/herstel kunt gebruiken, die worden beschreven in een van de SAP MaxDB-documentatie documenten die worden vermeld in SAP Note [767598]. 

@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.date: 04/28/2020
 ms.custom: cc996988-fb4f-47
 ms.openlocfilehash: 621773a84db99dbacfaa163f77189974ba102163
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98034812"
 ---
 # <a name="create-a-function-triggered-by-azure-cosmos-db"></a>Een door Azure Cosmos DB geactiveerde functie maken
@@ -63,7 +63,7 @@ Vervolgens maakt u een functie in de nieuwe functie-app.
     | **Databasenaam** | Taken | De naam van de data base die de verzameling bevat die moet worden bewaakt. |
     | **Naam van verzameling** | Items | De naam van de verzameling die moet worden bewaakt. |
     | **Naam van de verzameling voor leases** | leases | De naam van de verzameling waarin de leases moeten worden opgeslagen. |
-    | **Een lease verzameling maken als deze nog niet bestaat** | Ja | Controleert op de aanwezigheid van de lease verzameling en maakt deze automatisch. |
+    | **Een lease verzameling maken als deze nog niet bestaat** | Yes | Controleert op de aanwezigheid van de lease verzameling en maakt deze automatisch. |
 
     :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/functions-cosmosdb-trigger-settings.png" alt-text="Maak de door Azure Cosmos DB geactiveerde functie":::
 

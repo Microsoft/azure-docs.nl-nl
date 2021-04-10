@@ -5,14 +5,14 @@ services: route-server
 author: duongau
 ms.service: route-server
 ms.topic: article
-ms.date: 03/08/2021
+ms.date: 03/29/2021
 ms.author: duau
-ms.openlocfilehash: 6eed0ed3e936b0e9a534c82a3105c2ed37cab3d5
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: c4c36013f100d2fc5265024432cc01a6622a4024
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102485416"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105932366"
 ---
 # <a name="azure-route-server-preview-faq"></a>Veelgestelde vragen over Azure route server (preview)
 
@@ -36,6 +36,9 @@ Azure route server ondersteunt alleen Border Gateway Protocol (BGP). Uw NVA moet
 ### <a name="does-azure-route-server-route-data-traffic-between-my-nva-and-my-vms"></a>Routeert Azure route Server gegevens verkeer tussen mijn NVA en mijn Vm's?
 
 Nee. Azure route Server Exchange de BGP-routes alleen met uw NVA. Het gegevens verkeer gaat rechtstreeks van de NVA naar de gekozen virtuele machine en rechtstreeks van de virtuele machine naar de NVA.
+
+### <a name="does-azure-route-server-store-customer-data"></a>Slaat Azure route server klant gegevens op?
+Nee. Met Azure route server worden BGP-routes alleen met uw NVA uitgewisseld en vervolgens door gegeven aan uw virtuele netwerk.
 
 ### <a name="if-azure-route-server-receives-the-same-route-from-more-than-one-nva-will-it-program-all-copies-of-the-route-but-each-with-a-different-next-hop-to-the-vms-in-the-virtual-network"></a>Als Azure route server dezelfde route van meer dan één NVA ontvangt, worden alle kopieën van de route (maar elk met een andere volgende hop) naar de Vm's in het virtuele netwerk geprogrammeerd?
 

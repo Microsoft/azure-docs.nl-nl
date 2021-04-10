@@ -3,14 +3,14 @@ title: Variabelen in Azure Automation beheren
 description: In dit artikel leest u hoe u kunt werken met variabelen in runbooks en DSC-configuraties.
 services: automation
 ms.subservice: shared-capabilities
-ms.date: 12/01/2020
+ms.date: 03/28/2021
 ms.topic: conceptual
-ms.openlocfilehash: 6db0c82c034aab97deee1be4aa8bdc54368521bc
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 961dd40f7b0c17b554ff3a5d3e8e2cb5692b96fb
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98131522"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105729385"
 ---
 # <a name="manage-variables-in-azure-automation"></a>Variabelen in Azure Automation beheren
 
@@ -41,7 +41,7 @@ Wanneer u een variabele met de Azure Portal maakt, moet u een gegevens type in d
 * Booleaans
 * Null
 
-De variabele is niet beperkt tot het opgegeven gegevens type. U moet de variabele instellen met behulp van Windows Power shell als u een waarde van een ander type wilt opgeven. Als u opgeeft `Not defined` , wordt de waarde van de variabele ingesteld op null. U moet de waarde instellen met de cmdlet [set-AzAutomationVariable](/powershell/module/az.automation/set-azautomationvariable) of de interne `Set-AutomationVariable` cmdlet.
+De variabele is niet beperkt tot het opgegeven gegevens type. U moet de variabele instellen met behulp van Windows Power shell als u een waarde van een ander type wilt opgeven. Als u opgeeft `Not defined` , wordt de waarde van de variabele ingesteld op null. U moet de waarde instellen met de cmdlet [set-AzAutomationVariable](/powershell/module/az.automation/set-azautomationvariable) of de interne `Set-AutomationVariable` cmdlet. U gebruikt de `Set-AutomationVariable` in uw runbooks die zijn bedoeld om te worden uitgevoerd in de Azure-sandbox-omgeving of op een Windows-Hybrid Runbook Worker.
 
 U kunt de Azure Portal niet gebruiken om de waarde voor een complex type variabele te maken of te wijzigen. U kunt echter een waarde van elk type opgeven met behulp van Windows Power shell. Complexe typen worden opgehaald als [Newtonsoft.Jsop. LINQ. JProperty](https://www.newtonsoft.com/json/help/html/N_Newtonsoft_Json_Linq.htm) voor een complex object type in plaats van een PSObject type [PSCustomObject](/dotnet/api/system.management.automation.pscustomobject).
 
@@ -56,35 +56,35 @@ Met de cmdlets in de volgende tabel worden Automation-variabelen met Power shell
 
 | Cmdlet | Beschrijving |
 |:---|:---|
-|[Get-AzAutomationVariable](/powershell/module/az.automation/get-azautomationvariable) | Hiermee haalt u de waarde van een bestaande variabele op. Als de waarde een eenvoudig type is, wordt hetzelfde type opgehaald. Als het een complex type is, wordt er een `PSCustomObject` type opgehaald. <br>**Opmerking:** U kunt deze cmdlet niet gebruiken om de waarde van een versleutelde variabele op te halen. De enige manier om dit te doen is met behulp van de interne `Get-AutomationVariable` cmdlet in een runbook of DSC-configuratie. Zie [interne cmdlets voor toegang tot variabelen](#internal-cmdlets-to-access-variables). |
+|[Get-AzAutomationVariable](/powershell/module/az.automation/get-azautomationvariable) | Hiermee haalt u de waarde van een bestaande variabele op. Als de waarde een eenvoudig type is, wordt hetzelfde type opgehaald. Als het een complex type is, wordt er een `PSCustomObject` type opgehaald. <sup>1</sup>|
 |[New-AzAutomationVariable](/powershell/module/az.automation/new-azautomationvariable) | Hiermee maakt u een nieuwe variabele en stelt u de waarde ervan in.|
 |[Remove-AzAutomationVariable](/powershell/module/az.automation/remove-azautomationvariable)| Hiermee verwijdert u een bestaande variabele.|
 |[Set-AzAutomationVariable](/powershell/module/az.automation/set-azautomationvariable)| Hiermee stelt u de waarde voor een bestaande variabele in. |
+
+<sup>1</sup> u kunt deze cmdlet niet gebruiken om de waarde van een versleutelde variabele op te halen. De enige manier om dit te doen is met behulp van de interne `Get-AutomationVariable` cmdlet in een runbook of DSC-configuratie. Als u bijvoorbeeld de waarde van een versleutelde variabele wilt zien, kunt u een runbook maken om de variabele op te halen en deze vervolgens naar de uitvoer stroom te schrijven:
+
+```powershell
+$encryptvar = Get-AutomationVariable -Name TestVariable
+Write-output "The encrypted value of the variable is: $encryptvar"
+```
 
 ## <a name="internal-cmdlets-to-access-variables"></a>Interne cmdlets voor toegang tot variabelen
 
 De interne cmdlets in de volgende tabel worden gebruikt voor toegang tot variabelen in uw runbooks en DSC-configuraties. Deze cmdlets worden geleverd met de globale module `Orchestrator.AssetManagement.Cmdlets` . Zie [interne cmdlets](modules.md#internal-cmdlets)voor meer informatie.
 
-| Interne cmdlet | Beschrijving |
+| Interne cmdlet | Description |
 |:---|:---|
 |`Get-AutomationVariable`|Hiermee haalt u de waarde van een bestaande variabele op.|
 |`Set-AutomationVariable`|Hiermee stelt u de waarde voor een bestaande variabele in.|
 
 > [!NOTE]
-> Vermijd het gebruik van variabelen in de `Name` para meter van `Get-AutomationVariable` in een RUNBOOK of DSC-configuratie. Het gebruik van de variabelen kan de detectie van afhankelijkheden tussen runbooks en Automation-variabelen tijdens ontwerp tijd bemoeilijken.
-
-`Get-AutomationVariable` werkt niet in Power shell, maar alleen in een runbook-of DSC-configuratie. Als u bijvoorbeeld de waarde van een versleutelde variabele wilt zien, kunt u een runbook maken om de variabele op te halen en deze vervolgens naar de uitvoer stroom te schrijven:
-
-```powershell
-$mytestencryptvar = Get-AutomationVariable -Name TestVariable
-Write-output "The encrypted value of the variable is: $mytestencryptvar"
-```
+> Vermijd het gebruik van variabelen in de `Name` para meter van de `Get-AutomationVariable` cmdlet in een RUNBOOK of DSC-configuratie. Het gebruik van een variabele kan de detectie van afhankelijkheden tussen runbooks en Automation-variabelen tijdens ontwerp tijd bemoeilijken.
 
 ## <a name="python-functions-to-access-variables"></a>Python-functies voor toegang tot variabelen
 
 De functies in de volgende tabel worden gebruikt voor toegang tot variabelen in een python 2-en 3-runbook. Python 3-runbooks zijn momenteel beschikbaar als preview-versie.
 
-|Python-functies|Beschrijving|
+|Python-functies|Description|
 |:---|:---|
 |`automationassets.get_automation_variable`|Hiermee haalt u de waarde van een bestaande variabele op. |
 |`automationassets.set_automation_variable`|Hiermee stelt u de waarde voor een bestaande variabele in. |
@@ -116,43 +116,49 @@ Uw runbook-of DSC-configuratie maakt gebruik van de `New-AzAutomationVariable` c
 In het volgende voor beeld ziet u hoe u een teken reeks variabele maakt en vervolgens de waarde ervan als resultaat geeft.
 
 ```powershell
-New-AzAutomationVariable -ResourceGroupName "ResourceGroup01" 
-–AutomationAccountName "MyAutomationAccount" –Name 'MyStringVariable' `
-–Encrypted $false –Value 'My String'
-$string = (Get-AzAutomationVariable -ResourceGroupName "ResourceGroup01" `
-–AutomationAccountName "MyAutomationAccount" –Name 'MyStringVariable').Value
+$rgName = "ResourceGroup01"
+$accountName = "MyAutomationAccount"
+$variableValue = "My String"
+
+New-AzAutomationVariable -ResourceGroupName $rgName –AutomationAccountName $accountName –Name "MyStringVariable" –Encrypted $false –Value $variableValue
+$string = (Get-AzAutomationVariable -ResourceGroupName $rgName -AutomationAccountName $accountName –Name "MyStringVariable").Value
 ```
 
 In het volgende voor beeld ziet u hoe u een variabele met een complex type maakt en vervolgens de eigenschappen ervan ophaalt. In dit geval wordt een object van de virtuele machine uit [Get-AzVM gebruikt om](/powershell/module/Az.Compute/Get-AzVM) een subset van de eigenschappen op te geven.
 
 ```powershell
-$vm = Get-AzVM -ResourceGroupName "ResourceGroup01" –Name "VM01" | Select Name, Location, Extensions
-New-AzAutomationVariable -ResourceGroupName "ResourceGroup01" –AutomationAccountName "MyAutomationAccount" –Name "MyComplexVariable" –Encrypted $false –Value $vm
+$rgName = "ResourceGroup01"
+$accountName = "MyAutomationAccount"
 
-$vmValue = Get-AzAutomationVariable -ResourceGroupName "ResourceGroup01" `
-–AutomationAccountName "MyAutomationAccount" –Name "MyComplexVariable"
+$vm = Get-AzVM -ResourceGroupName $rgName –Name "VM01" | Select Name, Location, Tags
+New-AzAutomationVariable -ResourceGroupName $rgName –AutomationAccountName $accountName –Name "MyComplexVariable" –Encrypted $false –Value $vm
 
-$vmName = $vmValue.Name
-$vmExtensions = $vmValue.Extensions
+$vmValue = Get-AzAutomationVariable -ResourceGroupName $rgName –AutomationAccountName $accountName –Name "MyComplexVariable"
+
+$vmName = $vmValue.Value.Name
+$vmTags = $vmValue.Value.Tags
 ```
 
 ## <a name="textual-runbook-examples"></a>Voor beelden van tekst-runbook
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-In het volgende voor beeld ziet u hoe u een variabele kunt instellen en ophalen in een tekst runbook. In dit voor beeld wordt ervan uitgegaan dat de `NumberOfIterations` variabele integer een naam en `NumberOfRunnings` een teken reeks met de naam heeft gemaakt `SampleMessage` .
+In het volgende voor beeld ziet u hoe u een variabele kunt instellen en ophalen in een tekst runbook. In dit voor beeld wordt ervan uitgegaan dat het maken van geheeltallige variabelen met de naam **numberOfIterations** en **numberOfRunnings** en een teken reeks variabele met de naam **sampleMessage**.
 
 ```powershell
-$NumberOfIterations = Get-AzAutomationVariable -ResourceGroupName "ResourceGroup01" –AutomationAccountName "MyAutomationAccount" -Name 'NumberOfIterations'
-$NumberOfRunnings = Get-AzAutomationVariable -ResourceGroupName "ResourceGroup01" –AutomationAccountName "MyAutomationAccount" -Name 'NumberOfRunnings'
-$SampleMessage = Get-AutomationVariable -Name 'SampleMessage'
+$rgName = "ResourceGroup01"
+$accountName = "MyAutomationAccount"
 
-Write-Output "Runbook has been run $NumberOfRunnings times."
+$numberOfIterations = Get-AutomationVariable -Name "numberOfIterations"
+$numberOfRunnings = Get-AutomationVariable -Name "numberOfRunnings"
+$sampleMessage = Get-AutomationVariable -Name "sampleMessage"
 
-for ($i = 1; $i -le $NumberOfIterations; $i++) {
-    Write-Output "$i`: $SampleMessage"
+Write-Output "Runbook has been run $numberOfRunnings times."
+
+for ($i = 1; $i -le $numberOfIterations; $i++) {
+    Write-Output "$i`: $sampleMessage"
 }
-Set-AzAutomationVariable -ResourceGroupName "ResourceGroup01" –AutomationAccountName "MyAutomationAccount" –Name NumberOfRunnings –Value ($NumberOfRunnings += 1)
+Set-AutomationVariable –Name numberOfRunnings –Value ($numberOfRunnings += 1)
 ```
 
 # <a name="python-2"></a>[Python 2](#tab/python2)
@@ -207,16 +213,18 @@ except AutomationAssetNotFound:
 
 ## <a name="graphical-runbook-examples"></a>Voor beelden van grafische runbook
 
-In een grafisch runbook kunt u activiteiten voor de interne cmdlets of toevoegen `Get-AutomationVariable` `Set-AutomationVariable` . Klik met de rechter muisknop op elke variabele in het deel venster Bibliotheek van de grafische editor en selecteer de gewenste activiteit.
+In een grafisch runbook kunt u activiteiten toevoegen voor de interne cmdlets **Get-AutomationVariable** of **set-AutomationVariable**. Klik met de rechter muisknop op elke variabele in het deel venster Bibliotheek van de grafische editor en selecteer de gewenste activiteit.
 
 ![Variabele toevoegen aan canvas](../media/variables/runbook-variable-add-canvas.png)
 
-De volgende afbeelding toont voorbeeld activiteiten om een variabele met een eenvoudige waarde in een grafisch runbook bij te werken. In dit voor beeld wordt met de activiteit voor het `Get-AzVM`  ophalen van één virtuele Azure-machine en de computer naam opgeslagen op een bestaande automatiserings reeks variabele. Het maakt niet uit of de [koppeling een pijp lijn of sequencer is](../automation-graphical-authoring-intro.md#use-links-for-workflow) , omdat de code slechts één object in de uitvoer verwacht.
+De volgende afbeelding toont voorbeeld activiteiten om een variabele met een eenvoudige waarde in een grafisch runbook bij te werken. In dit voor beeld wordt met de activiteit voor het `Get-AzVM` ophalen van één virtuele Azure-machine en de computer naam opgeslagen op een bestaande automatiserings reeks variabele. Het maakt niet uit of de [koppeling een pijp lijn of sequencer is](../automation-graphical-authoring-intro.md#use-links-for-workflow) , omdat de code slechts één object in de uitvoer verwacht.
 
 ![Eenvoudige variabele instellen](../media/variables/runbook-set-simple-variable.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [modules beheren in azure Automation](modules.md)voor meer informatie over de cmdlets die worden gebruikt voor toegang tot variabelen.
-* Zie voor algemene informatie over runbooks [Runbook-uitvoering in azure Automation](../automation-runbook-execution.md).
-* Zie [Azure Automation status configuratie Overview](../automation-dsc-overview.md)(Engelstalig) voor meer informatie over DSC-configuraties.
+- Zie [modules beheren in azure Automation](modules.md)voor meer informatie over de cmdlets die worden gebruikt voor toegang tot variabelen.
+
+- Zie voor algemene informatie over runbooks [Runbook-uitvoering in azure Automation](../automation-runbook-execution.md).
+
+- Zie [Azure Automation status configuratie Overview](../automation-dsc-overview.md)(Engelstalig) voor meer informatie over DSC-configuraties.

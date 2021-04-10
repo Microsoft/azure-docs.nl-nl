@@ -8,19 +8,20 @@ ms.author: bobazile
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: d5e4920dcc422e848266f35c8a59175b5149b924
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 7aebb10fb3855936d930685f1a8eef2588140ad1
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103492740"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105930452"
 ---
 # <a name="telephony-concepts"></a>Telefonie concepten
 
-[!INCLUDE [Private Preview Notice](../../includes/private-preview-include.md)]
+[!INCLUDE [Public Preview Notice](../../includes/public-preview-include-phone-numbers.md)]
+
 [!INCLUDE [Regional Availability Notice](../../includes/regional-availability-include.md)]
 
-Azure Communication Services die client bibliotheken aanroepen, kunnen worden gebruikt om telefonie en PSTN toe te voegen aan uw toepassingen. Op deze pagina vindt u een overzicht van de belangrijkste concepten en mogelijkheden van telefonie. Zie de [aanroep bibliotheek](../../quickstarts/voice-video-calling/calling-client-samples.md) voor meer informatie over specifieke talen en mogelijkheden voor de client bibliotheek.
+Azure Communication Services die Sdk's aanroept, kunnen worden gebruikt om telefonie en PSTN toe te voegen aan uw toepassingen. Op deze pagina vindt u een overzicht van de belangrijkste concepten en mogelijkheden van telefonie. Raadpleeg de [aanroep bibliotheek](../../quickstarts/voice-video-calling/calling-client-samples.md) voor meer informatie over specifieke SDK-talen en-mogelijkheden.
 
 ## <a name="overview-of-telephony"></a>Overzicht van telefonie
 Wanneer uw gebruikers met een traditioneel telefoon nummer communiceren, worden de aanroepen van het PSTN (open bare telefoon netwerk) vergemakkelijkt. Als u PSTN-oproepen wilt doen en ontvangen, moet u telefoniemogelijkheden toevoegen aan uw Azure Communication Services-resource. In dit geval gebruiken signalering en media een combinatie van IP-gebaseerde en PSTN-gebaseerde technologieën om uw gebruikers met elkaar in contact te brengen. Communicatie Services biedt twee aparte manieren om het PSTN-netwerk te bereiken: Azure-Cloud aanroepen en SIP-interface.

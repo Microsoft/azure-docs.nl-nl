@@ -10,10 +10,10 @@ ms.date: 10/15/2020
 ms.author: euang
 ms.reviewer: euang
 ms.openlocfilehash: 4471fed7b423fe05147db30afe57f6c845fe640e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101670704"
 ---
 # <a name="use-extended-apache-spark-history-server-to-debug-and-diagnose-apache-spark-applications"></a>Uitgebreide Apache Spark geschiedenis server gebruiken om fouten op te sporen en op te sporen Apache Spark toepassingen
@@ -42,11 +42,11 @@ Apache Spark geschiedenis server is de webgebruikersinterface voor voltooide en 
 
     ![Open Spark-geschiedenis server.](./media/apache-spark-history-server/open-spark-history-server.png)
 
-### <a name="open-the-spark-history-server-web-ui-from-data-node"></a>De Web-UI van de Spark-geschiedenis server van het gegevens knooppunt openen
+### <a name="open-the-spark-history-server-web-ui-from-data-node&quot;></a>De Web-UI van de Spark-geschiedenis server van het gegevens knooppunt openen
 
 1. Selecteer vanuit uw Azure Synapse Studio-notebook **Spark-geschiedenis server** in de uitvoer-cel van de taak of in het deel venster status aan de onderkant van het notebook document. Selecteer **Sessiegegevens**.
 
-   ![Spark-geschiedenis server 1 starten](./media/apache-spark-history-server/launch-history-server2.png "Spark-geschiedenis server starten")
+   ![Spark-geschiedenis server 1 starten](./media/apache-spark-history-server/launch-history-server2.png &quot;Spark-geschiedenis server starten")
 
 2. Selecteer **Spark-geschiedenis server** in het deel venster schuiven.
 
@@ -157,7 +157,7 @@ Beweeg de muis aanwijzer op het grafiek knooppunt om de knop Info weer te geven 
 
 Op het tabblad taak grafiek worden de knop Info en een klein pictogram weer gegeven als er taken zijn die voldoen aan de volgende voor waarden:
 
-|Voorwaarde|Beschrijving|
+|Voorwaarde|Description|
 |-|-|
 |Ongelijkheid in gegevens|gegevens lezen grootte > gemiddelde grootte van het lezen van gegevens van alle taken in deze fase * 2 en grootte van gegevens lezen > 10 MB|
 |Tijd verschil|uitvoerings tijd > gemiddelde uitvoerings tijd van alle taken in deze fase * 2 en uitvoerings tijd > 2 minuten|

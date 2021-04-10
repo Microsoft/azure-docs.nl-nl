@@ -8,10 +8,10 @@ ms.reviewer: jburchel
 ms.topic: conceptual
 ms.date: 03/16/2021
 ms.openlocfilehash: 21ab661dd19d76526cd97b75660b9749e1342e09
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104783231"
 ---
 # <a name="azure-powershell-samples-for-azure-data-factory"></a>Voor beelden Azure PowerShell voor Azure Data Factory

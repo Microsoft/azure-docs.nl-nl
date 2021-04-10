@@ -5,14 +5,14 @@ services: vpn-gateway
 author: yushwang
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 03/22/2021
+ms.date: 03/29/2021
 ms.author: yushwang
-ms.openlocfilehash: 8ca50ae77d9d9e200db3318b8e087b72697c343a
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.openlocfilehash: 3d29e99f3b539fdbea2a19df7ffc25d4e41a5376
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "104953449"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105731255"
 ---
 # <a name="vpn-gateway-faq"></a>Veelgestelde vragen VPN-gateways
 
@@ -195,6 +195,10 @@ Deze sectie is van toepassing op het Resource Manager-implementatiemodel.
 ## <a name="vnet-to-vnet-and-multi-site-connections"></a><a name="V2VMulti"></a>VNet-naar-VNET- en multi-site-verbindingen
 
 [!INCLUDE [vpn-gateway-vnet-vnet-faq-include](../../includes/vpn-gateway-faq-vnet-vnet-include.md)]
+
+### <a name="how-do-i-enable-routing-between-my-site-to-site-vpn-connection-and-my-expressroute"></a>Hoe kan ik route ring tussen mijn site-naar-site VPN-verbinding en mijn ExpressRoute inschakelen?
+
+Als u route ring wilt inschakelen tussen uw vertakking die is verbonden met ExpressRoute en uw vertakking is verbonden met een site-naar-site-VPN-verbinding, moet u [Azure route server](../route-server/expressroute-vpn-support.md)instellen.
 
 ### <a name="can-i-use-azure-vpn-gateway-to-transit-traffic-between-my-on-premises-sites-or-to-another-virtual-network"></a>Kan ik Azure VPN-gateway gebruiken om verkeer tussen mijn on-premises sites of naar een ander virtueel netwerk over te brengen?
 

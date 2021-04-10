@@ -9,10 +9,10 @@ ms.topic: overview
 ms.date: 03/24/2021
 ms.author: inhenkel
 ms.openlocfilehash: bfe39020da0be245f47d0c954de7598914d6534d
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105051335"
 ---
 # <a name="media-services-v3-samples"></a>Voorbeelden van Media Services v3
@@ -31,7 +31,7 @@ U vindt hier een beschrijving en koppelingen naar de voor beelden die u op elk v
 
 ## <a name="net"></a>[.NET](#tab/net/)
 
-| Map | Beschrijving |
+| Map | Description |
 |-------------|-------------|
 | [VideoEncoding/EncodingWithMESPredefinedPreset](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/main/VideoEncoding/EncodingWithMESPredefinedPreset)|Een taak verzenden met behulp van een ingebouwde voor instelling en een HTTP-URL-invoer, een uitvoer activum voor streaming publiceren en resultaten voor verificatie downloaden.|
 | [VideoEncoding/EncodingWithMESCustomPreset_H264](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/main/VideoEncoding/EncodingWithMESCustomPreset_H264)|Een taak verzenden met een aangepaste voor instelling van H. 264-code ring en een HTTP-URL-invoer, een uitvoer activum publiceren voor streaming en de resultaten voor verificatie downloaden.|
@@ -51,7 +51,7 @@ U vindt hier een beschrijving en koppelingen naar de voor beelden die u op elk v
 
 ## <a name="nodejs"></a>[Node.JS](#tab/node/)
 
-|Map|Beschrijving|
+|Map|Description|
 |---|---|
 |[HelloWorld-ListAssets](https://github.com/Azure-Samples/media-services-v3-node-tutorials/tree/main/AMSv3Samples/HelloWorld-ListAssets) |Verbinding maken en assets opnemen |
 |[Live](https://github.com/Azure-Samples/media-services-v3-node-tutorials/tree/main/AMSv3Samples/Live)| Eenvoudige live streamen. **Waarschuwing**, Controleer of alle resources zijn opgeruimd en dat deze niet meer worden gefactureerd in de Portal wanneer u gebruikmaakt van Live.|
@@ -65,7 +65,7 @@ Op dit moment is er één python- [voor beeld met een basis codering met python]
 
 ## <a name="java"></a>[Java](#tab/java)
 
-|Map|Beschrijving|
+|Map|Description|
 |---|---|
 |[AudioAnalytics/AudioAnalyzer/](https://github.com/Azure-Samples/media-services-v3-java/tree/master/AudioAnalytics/AudioAnalyzer)|Het analyseren van audio in een media bestand. |
 |Inhoudsbeveiliging|

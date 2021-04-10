@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 03/10/2021
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 15aab28b7dfbaf305412f1080346b54cc6827437
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 870b567d5917c405a3eef70a27b1a19c021d7a80
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103009637"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106055141"
 ---
 # <a name="protect-your-hls-content-with-apple-fairplay-or-microsoft-playready"></a>Uw HLS-inhoud beschermen met Apple FairPlay of micro soft PlayReady
 
@@ -33,7 +33,7 @@ Met Azure Media Services kunt u uw HTTP Live Streaming-inhoud (HLS) dynamisch ve
 
 * **AES-128-envelop lege sleutel**
 
-    De volledige chunk wordt versleuteld met behulp van de modus **AES-128 CBC** . De ontsleuteling van de stroom wordt ondersteund door iOS en OS X Player systeem eigen. Zie [using AES-128 Dynamic Encryption and key delivery service](media-services-protect-with-aes128.md)(Engelstalig) voor meer informatie.
+    De volledige chunk wordt versleuteld met behulp van de modus **AES-128 CBC** . De ontsleuteling van de stroom wordt ondersteund door iOS en OS X Player systeem eigen. Zie [using AES-128 Dynamic Encryption and key delivery service](media-services-playready-license-template-overview.md)(Engelstalig) voor meer informatie.
 * **Apple FairPlay**
 
     De afzonderlijke video-en audio voorbeelden worden versleuteld met behulp van de modus **AES-128 CBC** . **Fairplay streaming** (fps) is geïntegreerd in de besturings systemen van het apparaat, met systeem eigen ondersteuning voor IOS en Apple TV. Safari op OS X maakt FPS mogelijk met behulp van de EME-interface ondersteuning (Encrypted media Extensions).

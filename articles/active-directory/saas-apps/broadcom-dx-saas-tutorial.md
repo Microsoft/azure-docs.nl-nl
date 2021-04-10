@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 02/19/2021
 ms.author: jeedes
 ms.openlocfilehash: 35ab4d335560689a7e55bf1a8dff9fcb0bcc7d7f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104601513"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-broadcom-dx-saas"></a>Zelf studie: Azure Active Directory-integratie met eenmalige aanmelding (SSO) met Broadcom DX SaaS
@@ -106,7 +106,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
-### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
+### <a name="create-an-azure-ad-test-user&quot;></a>Een Azure AD-testgebruiker maken
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
@@ -118,7 +118,7 @@ In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Porta
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
    1. Klik op **Create**.
 
-### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
+### <a name=&quot;assign-the-azure-ad-test-user&quot;></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie schakelt u B. Simon in om de eenmalige aanmelding van Azure te gebruiken door toegang te verlenen aan Broadcom DX SaaS.
 
@@ -130,13 +130,13 @@ In deze sectie schakelt u B. Simon in om de eenmalige aanmelding van Azure te ge
 1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-## <a name="configure-broadcom-dx-saas-sso"></a>Broadcom DX SaaS SSO configureren
+## <a name=&quot;configure-broadcom-dx-saas-sso&quot;></a>Broadcom DX SaaS SSO configureren
 
 1. Meld u aan bij uw site met uw Broadcom DX SaaS-bedrijfs netwerk als beheerder.
 
 2. Ga naar de **instellingen** en klik op het tabblad **gebruikers** .
 
-    ![Gebruikers](./media/broadcom-dx-saas-tutorial/settings.png "Gebruikers")
+    ![Gebruikers](./media/broadcom-dx-saas-tutorial/settings.png &quot;Gebruikers")
 
 3. Klik in de sectie **gebruikers beheer** op weglatings tekens en selecteer **SAML**.
 

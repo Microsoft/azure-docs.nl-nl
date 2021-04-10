@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.author: mimart
 ms.subservice: B2C
 ms.date: 01/29/2021
-ms.openlocfilehash: bc1dea8121d7986b8394adf6545a0b2c30afb133
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0231f7f3882218ef88d6151488da6aa23e4cb8e4
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104580178"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106106684"
 ---
 # <a name="monitor-azure-ad-b2c-with-azure-monitor"></a>Azure AD B2C met Azure Monitor bewaken
 
@@ -46,7 +46,7 @@ In het volgende diagram ziet u de onderdelen die u configureert in uw Azure AD-e
 
 ![Projectie van resource groep](./media/azure-monitor/resource-group-projection.png)
 
-Tijdens deze implementatie configureert u uw Azure AD B2C Tenant en Azure AD-Tenant waar de Log Analytics-werk ruimte wordt gehost. Aan het Azure AD B2C-account moet de rol van [globale beheerder](../active-directory/roles/permissions-reference.md#limit-use-of-global-administrator) zijn toegewezen op de Azure AD B2C Tenant. Aan het Azure AD-account dat wordt gebruikt om de implementatie uit te voeren, moet de rol [eigenaar](../role-based-access-control/built-in-roles.md#owner) worden toegewezen in het Azure AD-abonnement. Het is ook belang rijk om ervoor te zorgen dat u bent aangemeld bij de juiste directory bij het volt ooien van elke stap zoals beschreven.
+Tijdens deze implementatie configureert u uw Azure AD B2C Tenant en Azure AD-Tenant waar de Log Analytics-werk ruimte wordt gehost. Aan het Azure AD B2C-account moet de rol van [globale beheerder](../active-directory/roles/permissions-reference.md#global-administrator) zijn toegewezen op de Azure AD B2C Tenant. Aan het Azure AD-account dat wordt gebruikt om de implementatie uit te voeren, moet de rol [eigenaar](../role-based-access-control/built-in-roles.md#owner) worden toegewezen in het Azure AD-abonnement. Het is ook belang rijk om ervoor te zorgen dat u bent aangemeld bij de juiste directory bij het volt ooien van elke stap zoals beschreven.
 
 ## <a name="1-create-or-choose-resource-group"></a>1. Maak of kies een resource groep
 

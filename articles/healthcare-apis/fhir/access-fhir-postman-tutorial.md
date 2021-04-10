@@ -8,13 +8,13 @@ ms.topic: tutorial
 ms.reviewer: dseven
 ms.author: matjazl
 author: matjazl
-ms.date: 03/16/2021
-ms.openlocfilehash: e9031dc77054a2bbac8015bbbdd7b9ed2a35e84f
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.date: 03/26/2021
+ms.openlocfilehash: 59847f745037acec47415489cdf61d119a7807af
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105043339"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936271"
 ---
 # <a name="access-azure-api-for-fhir-with-postman"></a>Azure API for FHIR openen met Postman
 
@@ -24,12 +24,13 @@ Een client toepassing kan toegang krijgen tot de Azure API voor FHIR via een [re
 
 - Een FHIR-eindpunt in Azure. 
 
-   Als u de Azure API voor FHIR (een beheerde service) wilt implementeren, kunt u de [Azure Portal](fhir-paas-portal-quickstart.md), [Power shell](fhir-paas-powershell-quickstart.md)of [Azure cli](fhir-paas-cli-quickstart.md)gebruiken.
+  Als u de Azure API voor FHIR (een beheerde service) wilt implementeren, kunt u de [Azure Portal](fhir-paas-portal-quickstart.md), [Power shell](fhir-paas-powershell-quickstart.md)of [Azure cli](fhir-paas-cli-quickstart.md)gebruiken.
+
 - Een geregistreerde [vertrouwelijke client toepassing](register-confidential-azure-ad-client-app.md) voor toegang tot de FHIR-service.
 - U hebt machtigingen verleend aan de vertrouwelijke client toepassing, bijvoorbeeld ' FHIR data contributor ', om toegang te krijgen tot de FHIR-service. Zie [Azure RBAC configureren voor FHIR](./configure-azure-rbac.md)voor meer informatie.
 - Postman is geïnstalleerd. 
     
-    Zie [aan de slag met postman](https://www.getpostman.com)voor meer informatie over postman.
+  Zie [aan de slag met postman](https://www.getpostman.com)voor meer informatie over postman.
 
 ## <a name="fhir-server-and-authentication-details"></a>Details van FHIR-server en verificatie
 
@@ -62,6 +63,8 @@ Als u toegang probeert te krijgen tot beperkte bronnen, wordt het antwoord ' ver
 ![De verificatie is mislukt](media/tutorial-postman/postman-authentication-failed.png)
 
 ## <a name="obtaining-an-access-token"></a>Een toegangstoken verkrijgen
+Selecteer **Nieuw toegangstoken ophalen**.
+
 Als u een geldig toegangs token wilt verkrijgen, selecteert u **autorisatie** en selecteert u **OAuth 2,0** in de vervolg keuzelijst **type** .
 
 ![OAuth 2.0 instellen](media/tutorial-postman/postman-select-oauth2.png)
@@ -76,13 +79,13 @@ Voer in het dialoog venster **nieuw toegangs Token ophalen** de volgende gegeven
 |-----------------------|-----------------------------------------------------------------------------------------------------------------|----------------------------|
 | Tokennaam            | MYTOKEN                                                                                                         | Een door u gekozen naam          |
 | Toekenningstype            | Autorisatiecode                                                                                              |                            |
-| URL voor aanroep          | `https://www.getpostman.com/oauth2/callback`                                                                      |                            |
+| URL voor aanroep          | `https://www.getpostman.com/oauth2/callback`                                                                    |                            |
 | URL van autorisatie              | `https://login.microsoftonline.com/{TENANT-ID}/oauth2/authorize?resource=<audience>` | `audience` is `https://MYACCOUNT.azurehealthcareapis.com` voor Azure API for FHIR |
-| URL van toegangstoken      | `https://login.microsoftonline.com/{TENANT ID}/oauth2/token`                                                      |                            |
-| Client-id             | `XXXXXXXX-XXX-XXXX-XXXX-XXXXXXXXXXXX`                                                                            | Toepassings-id             |
-| Clientgeheim         | `XXXXXXXX`                                                                                                        | Geheime clientsleutel          |
-| Bereik | `<Leave Blank>` |
-| Status                |  `1234`                                                                                                           |                            |
+| URL van toegangstoken      | `https://login.microsoftonline.com/{TENANT ID}/oauth2/token`                                                    |                            |
+| Client-id             | `XXXXXXXX-XXX-XXXX-XXXX-XXXXXXXXXXXX`                                                                           | Toepassings-id             |
+| Clientgeheim         | `XXXXXXXX`                                                                                                      | Geheime clientsleutel          |
+| Bereik | `<Leave Blank>` | Het bereik wordt niet gebruikt. Daarom kan deze leeg blijven.  
+| Staat                 | `1234`     | [Status](https://learning.postman.com/docs/sending-requests/authorization/) is een ondoorzichtige waarde om te voor komen dat aanvragen voor cross-site vervalsing vervalsen. Het is optioneel en kan een wille keurige waarde hebben, zoals ' 1234 '.                           |
 | Clientauthenticatie | Clientreferenties in hoofdtekst verzenden                                                                                 |                 
 
 Selecteer een **aanvraag token** om door de Azure Active Directory verificatie stroom te worden geleid en een token wordt geretourneerd naar de Postman. Als er een verificatie fout optreedt, raadpleegt u de Postman-console voor meer informatie. **Opmerking**: Selecteer in het lint **weer gave** en selecteer vervolgens de optie **postman console weer geven**. De sneltoets voor de Postman-console is **ALT + C**.
@@ -133,7 +136,7 @@ Selecteer **verzenden** om te bepalen of de patiënt is gemaakt.
 
 ![Schermopname waarop te zien is dat het maken van de patiënt is geslaagd.](media/tutorial-postman/postman-patient-created.png)
 
-Als u de zoekopdracht voor de patiënt herhaalt, ziet u nu de patiëntrecord:
+Als u de zoek opdracht van de patiënt herhaalt, ziet u nu de patiënt record.
 
 ![De patiënt is gemaakt](media/tutorial-postman/postman-patient-found.png)
 

@@ -4,10 +4,10 @@ description: Waarschuwings gebeurtenissen beheren die in uw netwerk zijn gedetec
 ms.date: 12/07/2020
 ms.topic: how-to
 ms.openlocfilehash: 2995ff0d2246929efb534bc21d888bad3a2cf24a
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104781786"
 ---
 # <a name="manage-alert-events"></a>Waarschuwings gebeurtenissen beheren

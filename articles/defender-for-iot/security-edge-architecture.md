@@ -4,10 +4,10 @@ description: Meer informatie over de architectuur en mogelijkheden van Azure Def
 ms.topic: conceptual
 ms.date: 09/09/2020
 ms.openlocfilehash: 81eb8816e1bcf74a9e27e34d14465102599c7d5d
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104782653"
 ---
 # <a name="azure-defender-for-iot-edge-defender-iot-micro-agent"></a>Azure Defender voor IoT Edge Defender-IoT-micro-agent

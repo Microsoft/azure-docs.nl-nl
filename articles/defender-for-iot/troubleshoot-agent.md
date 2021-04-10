@@ -4,10 +4,10 @@ description: Problemen met het werken met Azure Defender voor IoT-beveiligings a
 ms.topic: conceptual
 ms.date: 09/09/2020
 ms.openlocfilehash: 9c9c36b822ab6acb9f9a48d4ba809ad32f6f4695
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104782585"
 ---
 # <a name="security-agent-troubleshoot-guide-linux"></a>Handleiding voor probleemoplossing voor beveiligingsagenten (Linux)

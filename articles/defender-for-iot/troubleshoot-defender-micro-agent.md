@@ -4,10 +4,10 @@ description: Meer informatie over het afhandelen van onverwachte of niet-verklar
 ms.date: 1/24/2021
 ms.topic: reference
 ms.openlocfilehash: 51550a4d3e5042fed7cadc4eac10a0074e954f19
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104782449"
 ---
 # <a name="defender-iot-micro-agent-troubleshooting-preview"></a>Oplossen van problemen met micro agent voor Defender IoT (preview-versie)

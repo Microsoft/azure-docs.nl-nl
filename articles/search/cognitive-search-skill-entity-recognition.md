@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.openlocfilehash: 3300d68c6356cb7cdd56a9ad79eb0ac011942eb2
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102547897"
 ---
 #    <a name="entity-recognition-cognitive-skill"></a>Herkennings vaardigheid van entity erkennen
@@ -55,7 +55,7 @@ Para meters zijn hoofdletter gevoelig en zijn allemaal optioneel.
 > [!NOTE]
 > Niet alle entiteits categorieën worden ondersteund voor alle talen. De `"Person"` `"Location"` categorie typen,, en `"Organization"` entiteit worden ondersteund voor de volledige lijst met talen hierboven. Alleen _de_ modules _, en,_ _es_, _fr_ en _zh-Hans_ ondersteunen extra heren,,, `"Quantity"` `"Datetime"` `"URL"` en `"Email"` typen. Zie [taal-en regio ondersteuning voor de Text Analytics-API](../cognitive-services/text-analytics/language-support.md)voor meer informatie.  
 
-| Uitvoer naam      | Beschrijving                   |
+| Uitvoer naam      | Description                   |
 |---------------|-------------------------------|
 | `persons`       | Een matrix met teken reeksen waarbij elke teken reeks de naam van een persoon vertegenwoordigt. |
 | `locations`  | Een matrix met teken reeksen waarbij elke teken reeks een locatie vertegenwoordigt. |

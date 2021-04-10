@@ -9,10 +9,10 @@ ms.author: mlearned
 description: Veelvoorkomende problemen met Kubernetes-clusters met Arc-functionaliteit oplossen.
 keywords: Kubernetes, Arc, Azure, containers
 ms.openlocfilehash: 992ea75c48b2630032e1314610986fbc610eec7b
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105025778"
 ---
 # <a name="azure-arc-enabled-kubernetes-troubleshooting"></a>Problemen met Azure Arc enabled Kubernetes oplossen

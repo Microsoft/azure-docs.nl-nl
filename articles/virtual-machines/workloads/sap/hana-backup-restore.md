@@ -14,10 +14,10 @@ ms.date: 10/16/2020
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 3244cbca3df717d3432670a366147408cf2b2c0e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101669120"
 ---
 # <a name="backup-and-restore-of-sap-hana-on-hana-large-instances"></a>Back-up en herstel van SAP HANA in HANA grote instanties

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 10/30/2020
 ms.custom: devx-track-python
 ms.openlocfilehash: 4bf5e9e1e890b2f91377075c4c8b7c8ff6c50fa0
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104779848"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-on-a-schedule"></a>Een trigger maken voor het uitvoeren van een pijplijn volgens een planning
@@ -350,7 +350,7 @@ De volgende JSON-definitie laat zien hoe u een plannings trigger maakt met plann
 
 De volgende tabel bevat een overzicht van de belangrijkste schema-elementen die betrekking hebben op het terugkeerpatroon en het schema van een trigger:
 
-| JSON-eigenschap | Beschrijving |
+| JSON-eigenschap | Description |
 |:--- |:--- |
 | **startTime** | Een datum/tijdwaarde. Voor eenvoudige schema's is de waarde **startTime** van toepassing op de eerste gebeurtenis. In complexe schema's begint de trigger niet eerder dan de opgegeven waarde voor **startTime**. <br> De notatie voor UTC-tijd zone is `'yyyy-MM-ddTHH:mm:ssZ'` voor een andere tijd zone `'yyyy-MM-ddTHH:mm:ss'` . |
 | **Tijd** | De einddatum en -tijd voor de trigger. De trigger wordt na de opgegeven einddatum en -tijd niet uitgevoerd. De waarde voor de eigenschap kan niet in het verleden liggen. Deze eigenschap is optioneel.  <br> De notatie voor UTC-tijd zone is `'yyyy-MM-ddTHH:mm:ssZ'` voor een andere tijd zone `'yyyy-MM-ddTHH:mm:ss'` . |
@@ -372,9 +372,9 @@ De volgende tabel bevat een overzicht van de belangrijkste schema-elementen die 
 | **startTime** | Tekenreeks | Ja | Geen | Datums en tijden volgens ISO 8601 | voor UTC-tijd zone `"startTime" : "2013-01-09T09:30:00-08:00Z"` <br> voor een andere tijd zone `"2013-01-09T09:30:00-08:00"` |
 | **Tijd zone** | Tekenreeks | Ja | Geen | [Waarden van tijd zone](#time-zone-option)  | `"UTC"` |
 | **optreden** | Object | Ja | Geen | Recurrence-object | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
-| **bereik** | Aantal | Nee | 1 | 1 tot 1000 | `"interval":10` |
+| **bereik** | Aantal | No | 1 | 1 tot 1000 | `"interval":10` |
 | **Tijd** | Tekenreeks | Ja | Geen | Een datum/tijdwaarde die een toekomstig tijdstip voorstelt. | voor UTC-tijd zone `"endTime" : "2013-02-09T09:30:00-08:00Z"` <br> voor een andere tijd zone `"endTime" : "2013-02-09T09:30:00-08:00"`|
-| **planning** | Object | Nee | Geen | Schedule-object | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
+| **planning** | Object | No | Geen | Schedule-object | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
 
 ### <a name="time-zone-option"></a>Optie tijd zone
 
@@ -382,14 +382,14 @@ Hier volgen enkele tijd zones die worden ondersteund voor scheduler-triggers:
 
 | Tijdzone | UTC-afwijking (niet-zomer-en winter tijd) | Waarde van tijd zone | Observeren met zomer-en winter tijd | Notatie van tijds tempel |
 | :--- | :--- | :--- | :--- | :--- |
-| UTC (Coordinated Universal Time) | 0 | `UTC` | Nee | `'yyyy-MM-ddTHH:mm:ssZ'`|
-| Pacific Time (PT) | -8 | `Pacific Standard Time` | Ja | `'yyyy-MM-ddTHH:mm:ss'` |
-| Central Time (CT) | -6 | `Central Standard Time` | Ja | `'yyyy-MM-ddTHH:mm:ss'` |
-| Eastern Time (ET) | 5 | `Eastern Standard Time` | Ja | `'yyyy-MM-ddTHH:mm:ss'` |
-| Greenwich Mean Time (GMT) | 0 | `GMT Standard Time` | Ja | `'yyyy-MM-ddTHH:mm:ss'` |
-| Centraal-Europa (standaard tijd) | +1 | `W. Europe Standard Time` | Ja | `'yyyy-MM-ddTHH:mm:ss'` |
-| India (standaard tijd) (IST) | + 5:30 | `India Standard Time` | Nee | `'yyyy-MM-ddTHH:mm:ss'` |
-| China (standaard tijd) | + 8 | `China Standard Time` | Nee | `'yyyy-MM-ddTHH:mm:ss'` |
+| UTC (Coordinated Universal Time) | 0 | `UTC` | No | `'yyyy-MM-ddTHH:mm:ssZ'`|
+| Pacific Time (PT) | -8 | `Pacific Standard Time` | Yes | `'yyyy-MM-ddTHH:mm:ss'` |
+| Central Time (CT) | -6 | `Central Standard Time` | Yes | `'yyyy-MM-ddTHH:mm:ss'` |
+| Eastern Time (ET) | 5 | `Eastern Standard Time` | Yes | `'yyyy-MM-ddTHH:mm:ss'` |
+| Greenwich Mean Time (GMT) | 0 | `GMT Standard Time` | Yes | `'yyyy-MM-ddTHH:mm:ss'` |
+| Centraal-Europa (standaard tijd) | +1 | `W. Europe Standard Time` | Yes | `'yyyy-MM-ddTHH:mm:ss'` |
+| India (standaard tijd) (IST) | + 5:30 | `India Standard Time` | No | `'yyyy-MM-ddTHH:mm:ss'` |
+| China (standaard tijd) | + 8 | `China Standard Time` | No | `'yyyy-MM-ddTHH:mm:ss'` |
 
 Deze lijst is niet volledig. Voor een volledige lijst met opties voor de tijd zone bekijkt u in Data Factory Portal [activeren pagina maken](#data-factory-ui)
 
@@ -419,7 +419,7 @@ Als meerdere **schedule**-elementen worden opgegeven, is de volgorde voor de eva
 
 In de volgende tabel worden de **schedule**-elementen in detail beschreven:
 
-| JSON-element | Beschrijving | Geldige waarden |
+| JSON-element | Description | Geldige waarden |
 |:--- |:--- |:--- |
 | **wachten** | Minuten van het uur waarop de trigger wordt uitgevoerd. | <ul><li>Geheel getal</li><li>Matrix van gehele getallen</li></ul>
 | **loopt** | Uren van de dag waarop de trigger wordt uitgevoerd. | <ul><li>Geheel getal</li><li>Matrix van gehele getallen</li></ul> |

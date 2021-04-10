@@ -9,10 +9,10 @@ author: xiaoharper
 ms.author: zhanxia
 ms.date: 03/08/2021
 ms.openlocfilehash: 5e467d22cc3230bd9945fb276dc16cf1fa765bb6
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103565005"
 ---
 # <a name="rebuild-a-studio-classic-web-service-in-azure-machine-learning"></a>Een studio-webservice (klassiek) opnieuw bouwen in Azure Machine Learning
@@ -66,7 +66,7 @@ Er zijn meerdere manieren voor het implementeren van een model in Azure Machine 
 
     In de volgende tabel worden de berekenings opties voor de implementatie in de ontwerp functie beschreven:
 
-    | Rekendoel | Gebruikt voor | Beschrijving | Maken |
+    | Rekendoel | Gebruikt voor | Description | Maken |
     | ----- |  ----- | ----- | -----  |
     |[Azure Kubernetes Service (AKS)](../how-to-deploy-azure-kubernetes-service.md) |Realtime deductie|Grootschalige productie-implementaties. Snelle reactie tijd en automatisch schalen van services.| Gebruiker gemaakt. Zie [Compute-doelen maken](../how-to-create-attach-compute-studio.md#inference-clusters)voor meer informatie. |
     |[Azure Container Instances ](../how-to-deploy-azure-container-instance.md)|Testen of ontwikkelen | Kleinschalige, op CPU gebaseerde workloads die minder dan 48 GB aan RAM-geheugen vereisen.| Automatisch gemaakt door Azure Machine Learning.

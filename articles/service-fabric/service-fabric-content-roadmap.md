@@ -3,12 +3,12 @@ title: Meer informatie over Azure Service Fabric
 description: Meer informatie over de belangrijkste concepten en belang rijke gebieden van Azure Service Fabric. Biedt een uitgebreid overzicht van Service Fabric en hoe u micro Services maakt.
 ms.topic: conceptual
 ms.date: 12/08/2017
-ms.openlocfilehash: c709abe1087a9cc69c9e6e23cd1ff344a3dbebd2
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 6e5a7445706a6e7842822ec784a64555d9226923
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100589031"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105727651"
 ---
 # <a name="so-you-want-to-learn-about-service-fabric"></a>Wilt u meer informatie over Service Fabric?
 Azure Service Fabric is een gedistribueerde systemen platform waarmee u gemakkelijk pakket, implementeren en beheren van schaalbare en betrouwbare microservices.  Service Fabric heeft echter een grote surface area, maar er is veel te leren.  In dit artikel vindt u een samen vatting van Service Fabric en worden de belangrijkste concepten, programmeer modellen, toepassings levenscyclus, testen, clusters en status controle beschreven. Lees het [overzicht](service-fabric-overview.md) en [Wat zijn micro Services?](service-fabric-overview-microservices.md) voor een inleiding en hoe service Fabric kan worden gebruikt om micro services te maken. Dit artikel bevat geen uitgebreide inhouds lijst, maar bevat een koppeling naar overzicht en aan de slag-artikelen voor elk gebied van Service Fabric. 
@@ -87,7 +87,7 @@ Een [uitvoerbaar gast bestand](service-fabric-guest-executables-introduction.md)
 ## <a name="application-lifecycle"></a>Toepassingslevenscyclus
 Net als bij andere platforms gaat een toepassing op Service Fabric doorgaans door de volgende fasen: ontwerpen, ontwikkelen, testen, implementeren, bijwerken, onderhoud en verwijderen. Service Fabric biedt eersteklas ondersteuning voor de volledige levens cyclus van toepassingen van Cloud toepassingen, van ontwikkeling tot implementatie tot en met het dagelijks beheer en het onderhoud om te voor komen dat ze buiten gebruik worden gesteld. Het service model maakt het mogelijk dat verschillende rollen onafhankelijk deel nemen in de levens cyclus van de toepassing. [Service Fabric levens cyclus van toepassingen](service-fabric-application-lifecycle.md) biedt een overzicht van de api's en hoe deze worden gebruikt door de verschillende rollen in de fasen van de levens cyclus van de service Fabric-toepassing. 
 
-De volledige levens cyclus van de app kan worden beheerd met behulp van [Power shell-cmdlets](/powershell/module/servicefabric/?view=azureservicefabricps), [cli-opdrachten](service-fabric-sfctl.md), [C#-api's](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient), [Java-api's](/java/api/overview/azure/servicefabric)en [rest api's](/rest/api/servicefabric/). U kunt ook doorlopende integratie/doorlopende implementatie pijplijnen instellen met behulp van hulpprogram ma's als [Azure-pijp lijnen](./service-fabric-tutorial-deploy-app-with-cicd-vsts.md) of [Jenkins](/azure/developer/jenkins/deploy-to-service-fabric-cluster).
+De volledige levens cyclus van de app kan worden beheerd met behulp van [Power shell-cmdlets](/powershell/module/servicefabric/?preserve-view=true&view=azureservicefabricps), [cli-opdrachten](service-fabric-sfctl.md), [C#-api's](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient), [Java-api's](/java/api/overview/azure/servicefabric)en [rest api's](/rest/api/servicefabric/). U kunt ook doorlopende integratie/doorlopende implementatie pijplijnen instellen met behulp van hulpprogram ma's als [Azure-pijp lijnen](./service-fabric-tutorial-deploy-app-with-cicd-vsts.md) of [Jenkins](/azure/developer/jenkins/deploy-to-service-fabric-cluster).
 
 ## <a name="test-applications-and-services"></a>Testtoepassingen en -services
 Om echt Services voor de Cloud schaal te maken, is het belang rijk om te controleren of uw toepassingen en services zich in de praktijk kunnen voordoen. De fout analyse service is ontworpen voor het testen van services die zijn gebouwd op Service Fabric. Met de [Fout analyse service](service-fabric-testability-overview.md)kunt u zinvolle fouten tegen komen en volledige test scenario's uitvoeren voor uw toepassingen. Deze fouten en scenario's oefenen en valideren de talrijke statussen en overgangen die gedurende de levens duur van een service worden ervaren, op een gecontroleerde, veilige en consistente manier.
@@ -160,7 +160,7 @@ Service Fabric onderdelen rapporteren de status van alle entiteiten in het clust
 
 Service Fabric biedt meerdere manieren om [status rapporten weer te geven](service-fabric-view-entities-aggregated-health.md) die zijn samengevoegd in de Health Store:
 * [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) of andere hulpprogram ma's voor visualisaties.
-* Status query's (via [Power shell](/powershell/module/servicefabric/?view=azureservicefabricps), [cli](service-fabric-sfctl.md), de [C# FabricClient Api's](/dotnet/api/system.fabric.fabricclient.healthclient) en [Java FabricClient-api's](/java/api/system.fabric)of [rest-api's](/rest/api/servicefabric)).
+* Status query's (via [Power shell](/powershell/module/servicefabric/?preserve-view=true&view=azureservicefabricps), [cli](service-fabric-sfctl.md), de [C# FabricClient Api's](/dotnet/api/system.fabric.fabricclient.healthclient) en [Java FabricClient-api's](/java/api/system.fabric)of [rest-api's](/rest/api/servicefabric)).
 * Algemene query's die een lijst met entiteiten retour neren die een status hebben als een van de eigenschappen (via Power shell, CLI, de Api's of REST).
 
 ## <a name="monitoring-and-diagnostics"></a>Controle en diagnose

@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 07/27/2020
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: 34f54bb30e959ecc2fa27fba5ab7392b9eddc68e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 01c3296569d03a7fcc13c004d42d64a86a48a0bc
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103494509"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105728790"
 ---
 # <a name="copy-data-from-amazon-s3-to-azure-storage-by-using-azcopy"></a>Gegevens van Amazon S3 naar Azure Storage kopiëren met behulp van AzCopy
 
@@ -59,7 +59,7 @@ AzCopy maakt gebruik [van de API put van URL](/rest/api/storageservices/put-bloc
 
 Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een hiërarchische naam ruimte hebben.
 
-|    |     |
+| Syntaxis/voor beeld  |  Code |
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://s3.amazonaws.com/<bucket-name>/<object-name>' 'https://<storage-account-name>.blob.core.windows.net/<container-name>/<blob-name>'` |
 | **Voorbeeld** | `azcopy copy 'https://s3.amazonaws.com/mybucket/myobject' 'https://mystorageaccount.blob.core.windows.net/mycontainer/myblob'` |
@@ -76,7 +76,7 @@ Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een 
 
 Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een hiërarchische naam ruimte hebben.
 
-|    |     |
+| Syntaxis/voor beeld  |  Code |
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://s3.amazonaws.com/<bucket-name>/<directory-name>' 'https://<storage-account-name>.blob.core.windows.net/<container-name>/<directory-name>' --recursive=true` |
 | **Voorbeeld** | `azcopy copy 'https://s3.amazonaws.com/mybucket/mydirectory' 'https://mystorageaccount.blob.core.windows.net/mycontainer/mydirectory' --recursive=true` |
@@ -89,7 +89,7 @@ Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een 
 
 U kunt de inhoud van een map kopiëren zonder de bovenliggende map zelf te kopiëren met behulp van het Joker teken (*).
 
-|    |     |
+| Syntaxis/voor beeld  |  Code |
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://s3.amazonaws.com/<bucket-name>/<directory-name>/*' 'https://<storage-account-name>.blob.core.windows.net/<container-name>/<directory-name>' --recursive=true` |
 | **Voorbeeld** | `azcopy copy 'https://s3.amazonaws.com/mybucket/mydirectory/*' 'https://mystorageaccount.blob.core.windows.net/mycontainer/mydirectory' --recursive=true` |
@@ -99,7 +99,7 @@ U kunt de inhoud van een map kopiëren zonder de bovenliggende map zelf te kopi�
 
 Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een hiërarchische naam ruimte hebben.
 
-|    |     |
+| Syntaxis/voor beeld  |  Code |
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://s3.amazonaws.com/<bucket-name>' 'https://<storage-account-name>.blob.core.windows.net/<container-name>' --recursive=true` |
 | **Voorbeeld** | `azcopy copy 'https://s3.amazonaws.com/mybucket' 'https://mystorageaccount.blob.core.windows.net/mycontainer' --recursive=true` |
@@ -109,7 +109,7 @@ Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een 
 
 Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een hiërarchische naam ruimte hebben.
 
-|    |     |
+| Syntaxis/voor beeld  |  Code |
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://s3.amazonaws.com/' 'https://<storage-account-name>.blob.core.windows.net' --recursive=true` |
 | **Voorbeeld** | `azcopy copy 'https://s3.amazonaws.com' 'https://mystorageaccount.blob.core.windows.net' --recursive=true` |
@@ -119,7 +119,7 @@ Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een 
 
 Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een hiërarchische naam ruimte hebben.
 
-|    |     |
+| Syntaxis/voor beeld  |  Code |
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://s3-<region-name>.amazonaws.com/' 'https://<storage-account-name>.blob.core.windows.net' --recursive=true` |
 | **Voorbeeld** | `azcopy copy 'https://s3-rds.eu-north-1.amazonaws.com' 'https://mystorageaccount.blob.core.windows.net' --recursive=true` |
@@ -139,7 +139,7 @@ AWS S3 en Azure staan verschillende sets tekens toe aan de namen van object sleu
 
 Als onderdeel van een AzCopy `copy` -opdracht kunt u een waarde opgeven voor de optionele `s2s-handle-invalid-metadata` vlag waarmee wordt aangegeven hoe u bestanden wilt afhandelen waarin de meta gegevens van het bestand incompatibele sleutel namen bevatten. De volgende tabel beschrijft de waarde van elke vlag.
 
-| Vlag waarde | Beschrijving  |
+| Vlag waarde | Description  |
 |--------|-----------|
 | **ExcludeIfInvalid** | (Standaard optie) De meta gegevens zijn niet opgenomen in het overgezette object. AzCopy registreert een waarschuwing. |
 | **FailIfInvalid** | Objecten worden niet gekopieerd. AzCopy registreert een fout en bevat een fout in het aantal mislukte overzichten dat wordt weer gegeven in het overzicht van de overdracht.  |

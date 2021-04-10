@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 03/09/2021
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: c0f030683954ede013f769bf8584e6cf82bab69f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: c6a53acd63b6aa882674f6aa29e1f7152f5b0a30
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103555420"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105728807"
 ---
 # <a name="copy-data-from-google-cloud-storage-to-azure-storage-by-using-azcopy-preview"></a>Gegevens kopiëren van Google Cloud Storage naar Azure Storage met behulp van AzCopy (preview)
 
@@ -63,7 +63,7 @@ AzCopy maakt gebruik [van de API put van URL](/rest/api/storageservices/put-bloc
 
 Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een hiërarchische naam ruimte hebben.
 
-|    |     |
+| Syntaxis/voor beeld  |  Code |
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://storage.cloud.google.com/<bucket-name>/<object-name>' 'https://<storage-account-name>.blob.core.windows.net/<container-name>/<blob-name>'` |
 | **Voorbeeld** | `azcopy copy 'https://storage.cloud.google.com/mybucket/myobject' 'https://mystorageaccount.blob.core.windows.net/mycontainer/myblob'` |
@@ -74,7 +74,7 @@ Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een 
 
 Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een hiërarchische naam ruimte hebben.
 
-|    |     |
+| Syntaxis/voor beeld  |  Code |
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://storage.cloud.google.com/<bucket-name>/<directory-name>' 'https://<storage-account-name>.blob.core.windows.net/<container-name>/<directory-name>' --recursive=true` |
 | **Voorbeeld** | `azcopy copy 'https://storage.cloud.google.com/mybucket/mydirectory' 'https://mystorageaccount.blob.core.windows.net/mycontainer/mydirectory' --recursive=true` |
@@ -87,7 +87,7 @@ Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een 
 
 U kunt de inhoud van een map kopiëren zonder de bovenliggende map zelf te kopiëren met behulp van het Joker teken (*).
 
-|    |     |
+| Syntaxis/voor beeld  |  Code |
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://storage.cloud.google.com/<bucket-name>/<directory-name>/*' 'https://<storage-account-name>.blob.core.windows.net/<container-name>/<directory-name>' --recursive=true` |
 | **Voorbeeld** | `azcopy copy 'https://storage.cloud.google.com/mybucket/mydirectory/*' 'https://mystorageaccount.blob.core.windows.net/mycontainer/mydirectory' --recursive=true` |
@@ -97,7 +97,7 @@ U kunt de inhoud van een map kopiëren zonder de bovenliggende map zelf te kopi�
 
 Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een hiërarchische naam ruimte hebben.
 
-|    |     |
+| Syntaxis/voor beeld  |  Code |
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://storage.cloud.google.com/<bucket-name>' 'https://<storage-account-name>.blob.core.windows.net' --recursive=true` |
 | **Voorbeeld** | `azcopy copy 'https://storage.cloud.google.com/mybucket' 'https://mystorageaccount.blob.core.windows.net' --recursive=true` |
@@ -109,7 +109,7 @@ Stel eerst de `GOOGLE_CLOUD_PROJECT` project-id in van Google Cloud project.
 
 Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een hiërarchische naam ruimte hebben.
 
-|    |     |
+| Syntaxis/voor beeld  |  Code |
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://storage.cloud.google.com/' 'https://<storage-account-name>.blob.core.windows.net' --recursive=true` |
 | **Voorbeeld** | `azcopy copy 'https://storage.cloud.google.com/' 'https://mystorageaccount.blob.core.windows.net' --recursive=true` |
@@ -121,7 +121,7 @@ Stel eerst de `GOOGLE_CLOUD_PROJECT` project-id in van Google Cloud project.
 
 Kopieer een subset van buckets met behulp van een Joker teken (*) in de Bucket naam. Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een hiërarchische naam ruimte hebben.
 
-|    |     |
+| Syntaxis/voor beeld  |  Code |
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://storage.cloud.google.com/<bucket*name>' 'https://<storage-account-name>.blob.core.windows.net' --recursive=true` |
 | **Voorbeeld** | `azcopy copy 'https://storage.cloud.google.com/my*bucket' 'https://mystorageaccount.blob.core.windows.net' --recursive=true` |
@@ -145,7 +145,7 @@ Google Cloud Storage en Azure staan verschillende sets tekens toe aan de namen v
 
 Als onderdeel van een AzCopy `copy` -opdracht kunt u een waarde opgeven voor de optionele `s2s-handle-invalid-metadata` vlag waarmee wordt aangegeven hoe u bestanden wilt afhandelen waarin de meta gegevens van het bestand incompatibele sleutel namen bevatten. De volgende tabel beschrijft de waarde van elke vlag.
 
-| Vlag waarde | Beschrijving  |
+| Vlag waarde | Description  |
 |--------|-----------|
 | **ExcludeIfInvalid** | (Standaard optie) De meta gegevens zijn niet opgenomen in het overgezette object. AzCopy registreert een waarschuwing. |
 | **FailIfInvalid** | Objecten worden niet gekopieerd. AzCopy registreert een fout en bevat een fout in het aantal mislukte overzichten dat wordt weer gegeven in het overzicht van de overdracht.  |

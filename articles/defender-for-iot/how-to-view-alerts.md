@@ -7,10 +7,10 @@ ms.author: shhazam
 ms.date: 3/22/2021
 ms.topic: how-to
 ms.openlocfilehash: 391d1872124c7332bdaa6008a244490b47df4bf7
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104781582"
 ---
 # <a name="filter-and-manage-alerts-from-the-alerts-page"></a>Waarschuwingen filteren en beheren via de pagina waarschuwingen 
@@ -31,7 +31,7 @@ Ga als volgt te werk als u waarschuwingen wilt weergeven:
 
 U kunt waarschuwingen weer geven op basis van verschillende categorieën in de hoofd weergave van **waarschuwingen** . Selecteer een waarschuwing om de details te bekijken en de gebeurtenis te beheren.
 
-| Sorteren op type | Beschrijving |
+| Sorteren op type | Description |
 |--|--|
 | **Belang rijke waarschuwingen** | Waarschuwingen die op urgentie zijn gesorteerd. |
 | **Vastgemaakte waarschuwingen** | Waarschuwingen die de gebruiker heeft vastgemaakt voor nader onderzoek. Vastgemaakte waarschuwingen worden niet gearchiveerd en worden 14 dagen opgeslagen in de vastgemaakte map. |

@@ -8,10 +8,10 @@ ms.author: spelluru
 ms.service: event-hubs
 ms.custom: subject-policy-compliancecontrols
 ms.openlocfilehash: db0a1996cc7d54f9d3d937666096e1746d00c58a
-ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105031257"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-event-hubs"></a>Besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Event Hubs

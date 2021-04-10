@@ -9,10 +9,10 @@ author: tanmaygore
 ms.reviewer: mimckitt
 ms.custom: ''
 ms.openlocfilehash: 37294e681066eb27ace69bcacee3a813b750b8eb
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98743505"
 ---
 # <a name="resource-health-check-rhc-support-for-azure-cloud-services-classic"></a>Resource Health Check-ondersteuning (RHC) voor Azure Cloud Services (klassiek)
@@ -50,7 +50,7 @@ Onbekend betekent dat de geaggregeerde status van de Cloud service-implementatie
 Aangezien Rolinstanties voornamelijk Vm's zijn en de status controle voor Vm's opnieuw wordt gebruikt voor Rolinstanties, wordt de VM-term gebruikt om Rolinstanties te vertegenwoordigen. 
 
 ## <a name="cloud-services-deployment-level-annotations--their-meanings"></a>Cloud Services (implementatie niveau) aantekeningen & hun betekenis
-| Aantekening | Beschrijving | 
+| Aantekening | Description | 
 | --- | --- | 
 | Beschikbaar| Er zijn geen bekende problemen met het Azure-platform die van invloed zijn op deze Cloud service-implementatie |
 | Onbekend | Het is momenteel niet mogelijk de status van deze Cloud service-implementatie te bepalen | 
@@ -63,7 +63,7 @@ Aangezien Rolinstanties voornamelijk Vm's zijn en de status controle voor Vm's o
 | Onbekend en mogelijk van invloed | Het is momenteel niet mogelijk de status van deze Cloud service-implementatie te bepalen. Dit kan worden veroorzaakt door een voortdurende onderbreking van de Azure-service die van invloed kan zijn op deze virtuele machine, die automatisch wordt hersteld wanneer de storing is opgelost |
 
 ## <a name="cloud-services-role-instance-level-annotations--their-meanings"></a>Cloud Services (niveau van Rolinstantie) aantekeningen & hun betekenis
-| Aantekening | Beschrijving | 
+| Aantekening | Description | 
 | --- | --- | 
 | Beschikbaar | Er zijn geen bekende problemen met het Azure-platform die van invloed zijn op deze virtuele machine | 
 | Onbekend | Het is momenteel niet mogelijk de status van deze virtuele machine te bepalen |

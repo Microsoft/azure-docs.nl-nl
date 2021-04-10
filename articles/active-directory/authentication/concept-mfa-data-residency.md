@@ -5,18 +5,18 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/14/2021
+ms.date: 03/16/2021
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: inbarc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7381ab62eb39c555c6b4eb34f150fc71bea1f10f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 26c8df67a8cfed92e478caacca1171b7a48fa9ca
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103561461"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105932893"
 ---
 # <a name="data-residency-and-customer-data-for-azure-ad-multifactor-authentication"></a>Gegevens locatie en klant gegevens voor Azure AD multi-factor Authentication
 
@@ -37,7 +37,7 @@ Persoonlijke gegevens zijn gegevens op gebruikers niveau die zijn gekoppeld aan 
 * Geblokkeerde gebruikers
 * Overgeslagen gebruikers
 * Wijzigings aanvragen voor het apparaat-token Microsoft Authenticator
-* Rapporten voor multi-factor Authentication-activiteiten
+* Multi-factor Authentication-activiteiten rapporten: Sla multi-factor Authentication-activiteit op uit de on-premises onderdelen van multi-factor Authentication, de NPS-extensie, de AD FS adapter en de MFA-server.
 * Microsoft Authenticator activeringen
 
 Deze informatie wordt 90 dagen bewaard.

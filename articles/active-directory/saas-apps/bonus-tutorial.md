@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 04/14/2019
 ms.author: jeedes
 ms.openlocfilehash: e93d03ac9ec404a18b480a0cd1bfe289944b60d8
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101689093"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bonusly"></a>Zelfstudie: Azure Active Directory-integratie met Bonusly
@@ -124,13 +124,13 @@ Voer de volgende stappen uit om eenmalige aanmelding met Azure AD bij Bonusly te
 
     c. Afmeldings-URL
 
-### <a name="configure-bonusly-single-sign-on"></a>Eenmalige aanmelding bij Bonusly configureren
+### <a name="configure-bonusly-single-sign-on&quot;></a>Eenmalige aanmelding bij Bonusly configureren
 
 1. Meld u in een ander browservenster aan bij uw **Bonusly**-tenant.
 
 1. Klik in de werkbalk bovenaan op **Instellingen** en klik op **Integraties en apps**.
 
-    ![Sociale sectie Bonusly](./media/bonus-tutorial/ic773686.png "Bonusly")
+    ![Sociale sectie Bonusly](./media/bonus-tutorial/ic773686.png &quot;Bonusly")
 1. Selecteer **SAML** onder **Eenmalige aanmelding**.
 
 1. Voer in het dialoogvenster **SAML** de volgende stappen uit:
@@ -197,7 +197,7 @@ In deze sectie stelt u in dat Britta Simon eenmalige aanmelding van Azure kan ge
 
 7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-### <a name="create-bonusly-test-user"></a>Een testgebruiker voor Bonusly maken
+### <a name="create-bonusly-test-user&quot;></a>Een testgebruiker voor Bonusly maken
 
 Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Bonusly, moeten ze worden ingericht in Bonusly. In het geval van Bonusly is dat een handmatige taak.
 
@@ -210,7 +210,7 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Bonusly, moeten ze 
 
 1. Klik op **Instellingen**.
 
-    ![Instellingen](./media/bonus-tutorial/ic781041.png "Instellingen")
+    ![Instellingen](./media/bonus-tutorial/ic781041.png &quot;Instellingen")
 
 1. Klik op het tabblad **Gebruikers en bonussen**.
 

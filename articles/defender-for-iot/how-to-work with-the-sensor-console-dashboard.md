@@ -4,10 +4,10 @@ description: Met het dash board kunt u snel de beveiligings status van uw netwer
 ms.date: 11/03/2020
 ms.topic: article
 ms.openlocfilehash: e9bc650e9c306d12ef63994852816c96e1bdf40a
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104781531"
 ---
 # <a name="the-dashboard"></a>Het dash board
@@ -42,7 +42,7 @@ De UA-meter (niet-bevestigde waarschuwingen) in het midden van de pagina geeft h
 
 In deze sectie wordt elk status venster beschreven.
 
-| Status en meters | Beschrijving |
+| Status en meters | Description |
 | -------------- | -------------- |
 | :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/critical-alert-status-box-v2.png" alt-text="Kritieke waarschuwingen"::: | **Kritieke waarschuwingen** : in het vak aan de bovenkant van de pagina wordt het aantal kritieke waarschuwingen aangegeven. Schakel dit selectie vakje in om beschrijvingen van de waarschuwingen weer te geven op de tijd lijn en op de lijst onder de meters, indien van toepassing.                              |
 | :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/major-alert-status-box-v2.png" alt-text="Grote waarschuwingen"::: | **Grote waarschuwingen** : het vak in de rechter bovenhoek van de pagina geeft het aantal grote waarschuwingen aan. Schakel dit selectie vakje in om beschrijvingen van de waarschuwingen weer te geven op de tijd lijn en op de lijst onder de meters, indien van toepassing.                                     |

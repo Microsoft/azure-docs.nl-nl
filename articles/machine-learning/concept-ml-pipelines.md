@@ -11,10 +11,10 @@ author: lobrien
 ms.date: 02/26/2021
 ms.custom: devx-track-python
 ms.openlocfilehash: 584e421b6beac0e4ecfab5b3e3cb735b8465e1b4
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102503518"
 ---
 # <a name="what-are-azure-machine-learning-pipelines"></a>Wat zijn Azure Machine Learning pijp lijnen?
@@ -145,7 +145,7 @@ Wanneer u pijp lijnen visueel ontwerpt, worden de invoer en uitvoer van een stap
 
 De belangrijkste voor delen van het gebruik van pijp lijnen voor uw machine learning-werk stromen zijn:
 
-|Belangrijkste voor deel|Beschrijving|
+|Belangrijkste voor deel|Description|
 |:-------:|-----------|
 |**&nbsp;Uitvoeringen zonder toezicht**|Stappen plannen om parallel of op een betrouw bare en zonder toezicht te worden uitgevoerd. De voor bereiding en het model leren van gegevens kunnen de afgelopen dagen of weken zijn en met pijp lijnen kunt u zich richten op andere taken terwijl het proces wordt uitgevoerd. |
 |**Heterogene compute**|Gebruik meerdere pijp lijnen die betrouwbaar zijn afgestemd op heterogene en schaal bare reken resources en opslag locaties. Maak efficiënt gebruik van beschik bare reken resources door afzonderlijke pijplijn stappen uit te voeren op verschillende reken doelen, zoals HDInsight, GPU data Science Vm's en Databricks.|

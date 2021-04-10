@@ -14,10 +14,10 @@ ms.date: 02/11/2020
 ms.author: bentrin
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: cd1cfb0cc8e1868e78b4d284d1b1f4e7e85aa318
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101677031"
 ---
 # <a name="sap-hana-on-azure-large-instance-migration-to-azure-virtual-machines"></a>SAP HANA voor migratie van grote Azure-instanties naar Azure Virtual Machines
@@ -49,21 +49,21 @@ Algemene implementatie modellen met HLI-klanten worden in de volgende tabel same
 
 | Scenario-ID | HLI-scenario | Migreren naar VM-Verbatim? | Opmerkingen |
 | --- | --- | --- | --- |
-| 1 | [Eén knoop punt met één SID](./hana-supported-scenario.md#single-node-with-one-sid) | Ja | - |
-| 2 | [Eén knoop punt met MCOS](./hana-supported-scenario.md#single-node-mcos) | Ja | - |
-| 3 | [Eén knoop punt met behulp van opslag replicatie met DR](./hana-supported-scenario.md#single-node-with-dr-using-storage-replication) | Nee | Opslag replicatie is niet beschikbaar met Azure Virtual platform, wijzig de huidige oplossing voor nood herstel naar HSR of Backup/Restore |
-| 4 | [Eén knoop punt met DR (Multipurpose) met behulp van storage-replicatie](./hana-supported-scenario.md#single-node-with-dr-multipurpose-using-storage-replication) | Nee | Opslag replicatie is niet beschikbaar met Azure Virtual platform, wijzig de huidige oplossing voor nood herstel naar HSR of Backup/Restore |
-| 5 | [HSR met STONITH voor hoge Beschik baarheid](./hana-supported-scenario.md#hsr-with-stonith-for-high-availability) | Ja | Geen vooraf geconfigureerde SBD voor doel-Vm's.  Selecteer en implementeer een STONITH-oplossing.  Mogelijke opties: Azure omheinings agent (ondersteund voor zowel [RHEL](./high-availability-guide-rhel-pacemaker.md), [SLES](./high-availability-guide-suse-pacemaker.md)), SBD |
-| 6 | [HA met HSR, DR met opslag replicatie](./hana-supported-scenario.md#high-availability-with-hsr-and-dr-with-storage-replication) | Nee | Opslag replicatie voor nood gevallen vervangen door HSR of Backup/Restore |
-| 7 | [Automatische failover van host (1 + 1)](./hana-supported-scenario.md#host-auto-failover-11) | Ja | ANF gebruiken voor gedeelde opslag met Azure-Vm's |
-| 8 | [Uitschalen met stand-by](./hana-supported-scenario.md#scale-out-with-standby) | Ja | BW/4HANA met M128s, M416s, M416ms Vm's met behulp van ANF alleen voor opslag |
-| 9 | [Uitschalen zonder stand-by](./hana-supported-scenario.md#scale-out-without-standby) | Ja | BW/4HANA met M128s-, M416s-, M416ms-Vm's (met of zonder gebruik van ANF voor opslag) |
-| 10 | [Uitschalen met behulp van de opslag replicatie met DR](./hana-supported-scenario.md#scale-out-with-dr-using-storage-replication) | Nee | Opslag replicatie voor nood gevallen vervangen door HSR of Backup/Restore |
-| 11 | [Eén knoop punt met DR met behulp van HSR](./hana-supported-scenario.md#single-node-with-dr-using-hsr) | Ja | - |
-| 12 | [HSR van één knoop punt naar DR (kosten geoptimaliseerd)](./hana-supported-scenario.md#single-node-hsr-to-dr-cost-optimized) | Ja | - |
-| 13 | [HA en DR met HSR](./hana-supported-scenario.md#high-availability-and-disaster-recovery-with-hsr) | Ja | - |
-| 14 | [HA en DR met HSR (kosten geoptimaliseerd)](./hana-supported-scenario.md#high-availability-and-disaster-recovery-with-hsr-cost-optimized) | Ja | - |
-| 15 | [Uitschalen met DR met behulp van HSR](./hana-supported-scenario.md#scale-out-with-dr-using-hsr) | Ja | BW/4HANA met M128s. M416s, M416ms Vm's (met of zonder gebruik van ANF voor opslag) |
+| 1 | [Eén knoop punt met één SID](./hana-supported-scenario.md#single-node-with-one-sid) | Yes | - |
+| 2 | [Eén knoop punt met MCOS](./hana-supported-scenario.md#single-node-mcos) | Yes | - |
+| 3 | [Eén knoop punt met behulp van opslag replicatie met DR](./hana-supported-scenario.md#single-node-with-dr-using-storage-replication) | No | Opslag replicatie is niet beschikbaar met Azure Virtual platform, wijzig de huidige oplossing voor nood herstel naar HSR of Backup/Restore |
+| 4 | [Eén knoop punt met DR (Multipurpose) met behulp van storage-replicatie](./hana-supported-scenario.md#single-node-with-dr-multipurpose-using-storage-replication) | No | Opslag replicatie is niet beschikbaar met Azure Virtual platform, wijzig de huidige oplossing voor nood herstel naar HSR of Backup/Restore |
+| 5 | [HSR met STONITH voor hoge Beschik baarheid](./hana-supported-scenario.md#hsr-with-stonith-for-high-availability) | Yes | Geen vooraf geconfigureerde SBD voor doel-Vm's.  Selecteer en implementeer een STONITH-oplossing.  Mogelijke opties: Azure omheinings agent (ondersteund voor zowel [RHEL](./high-availability-guide-rhel-pacemaker.md), [SLES](./high-availability-guide-suse-pacemaker.md)), SBD |
+| 6 | [HA met HSR, DR met opslag replicatie](./hana-supported-scenario.md#high-availability-with-hsr-and-dr-with-storage-replication) | No | Opslag replicatie voor nood gevallen vervangen door HSR of Backup/Restore |
+| 7 | [Automatische failover van host (1 + 1)](./hana-supported-scenario.md#host-auto-failover-11) | Yes | ANF gebruiken voor gedeelde opslag met Azure-Vm's |
+| 8 | [Uitschalen met stand-by](./hana-supported-scenario.md#scale-out-with-standby) | Yes | BW/4HANA met M128s, M416s, M416ms Vm's met behulp van ANF alleen voor opslag |
+| 9 | [Uitschalen zonder stand-by](./hana-supported-scenario.md#scale-out-without-standby) | Yes | BW/4HANA met M128s-, M416s-, M416ms-Vm's (met of zonder gebruik van ANF voor opslag) |
+| 10 | [Uitschalen met behulp van de opslag replicatie met DR](./hana-supported-scenario.md#scale-out-with-dr-using-storage-replication) | No | Opslag replicatie voor nood gevallen vervangen door HSR of Backup/Restore |
+| 11 | [Eén knoop punt met DR met behulp van HSR](./hana-supported-scenario.md#single-node-with-dr-using-hsr) | Yes | - |
+| 12 | [HSR van één knoop punt naar DR (kosten geoptimaliseerd)](./hana-supported-scenario.md#single-node-hsr-to-dr-cost-optimized) | Yes | - |
+| 13 | [HA en DR met HSR](./hana-supported-scenario.md#high-availability-and-disaster-recovery-with-hsr) | Yes | - |
+| 14 | [HA en DR met HSR (kosten geoptimaliseerd)](./hana-supported-scenario.md#high-availability-and-disaster-recovery-with-hsr-cost-optimized) | Yes | - |
+| 15 | [Uitschalen met DR met behulp van HSR](./hana-supported-scenario.md#scale-out-with-dr-using-hsr) | Yes | BW/4HANA met M128s. M416s, M416ms Vm's (met of zonder gebruik van ANF voor opslag) |
 
 
 ## <a name="source-hli-planning"></a>Bron (HLI) planning

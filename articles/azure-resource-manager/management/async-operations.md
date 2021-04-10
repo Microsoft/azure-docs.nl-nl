@@ -4,12 +4,12 @@ description: Hierin wordt beschreven hoe u asynchrone bewerkingen in azure kunt 
 ms.topic: conceptual
 ms.date: 08/21/2020
 ms.custom: seodec18
-ms.openlocfilehash: e2c5ba137d5277466cf1b382d2b0b1bc02259f00
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f5823bc8f6c0d5b334a638d4ad350eb2f9ef2b28
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "88723449"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105932740"
 ---
 # <a name="track-asynchronous-azure-operations"></a>Asynchrone Azure-bewerkingen bijhouden
 
@@ -123,7 +123,7 @@ De antwoord tekst bevat de status van de bewerking:
 
 ### <a name="deploy-resources-201-with-azure-asyncoperation"></a>Resources implementeren (201 met Azure-AsyncOperation)
 
-In dit voor beeld ziet u hoe u de status van [implementaties](/rest/api/resources/deployments/createorupdate) kunt bepalen voor het implementeren van resources in Azure. De eerste aanvraag heeft de volgende indeling:
+In dit voor beeld ziet u hoe u de status van [implementaties](/rest/api/resources/resources/deployments/createorupdate) kunt bepalen voor het implementeren van resources in Azure. De eerste aanvraag heeft de volgende indeling:
 
 ```HTTP
 PUT

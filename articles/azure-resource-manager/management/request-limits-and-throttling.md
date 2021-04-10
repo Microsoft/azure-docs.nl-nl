@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 12/15/2020
 ms.custom: seodec18
 ms.openlocfilehash: c1fd707bf9f13ed88bf9acb5d2ad70d56c453a90
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105024622"
 ---
 # <a name="throttling-resource-manager-requests"></a>Resource Manager-aanvragen beperken
@@ -87,7 +87,7 @@ Sommige resource providers retour neren 429 om een tijdelijk probleem te melden.
 
 U kunt het aantal resterende aanvragen bepalen door de antwoord headers te controleren. Lees aanvragen retour neren een waarde in de koptekst voor het aantal resterende Lees aanvragen. Schrijf aanvragen bevatten een waarde voor het aantal resterende schrijf aanvragen. In de volgende tabel worden de antwoord headers beschreven die u kunt controleren op deze waarden:
 
-| Reactie header | Beschrijving |
+| Reactie header | Description |
 | --- | --- |
 | x-MS-ratelimit-resterend abonnement-Lees bewerkingen |Resterende Lees bewerkingen voor het abonnement. Deze waarde wordt geretourneerd bij Lees bewerkingen. |
 | x-MS-ratelimit-resterend-abonnement-schrijf bewerkingen |Resterend aantal schrijf bewerkingen in het abonnement. Deze waarde wordt geretourneerd voor schrijf bewerkingen. |

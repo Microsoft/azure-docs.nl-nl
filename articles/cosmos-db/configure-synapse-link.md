@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 11/30/2020
 ms.author: rosouz
 ms.custom: references_regions, synapse-cosmos-db
-ms.openlocfilehash: 60b720f3f5d91570e32ecf3d03aa7065f93990c5
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: 24886ff3e01e9d9b4c01eabc917ced433599c0fa
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104868202"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105727108"
 ---
 # <a name="configure-and-use-azure-synapse-link-for-azure-cosmos-db"></a>Azure Synapse Link voor Azure Cosmos DB configureren en gebruiken
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -56,13 +56,13 @@ De koppeling Azure Synapse is beschikbaar voor Azure Cosmos DB SQL API-container
 
 De volgende koppelingen tonen hoe u de Synapse-koppeling kunt inschakelen met behulp van Azure CLI:
 
-* [Een nieuw Azure Cosmos DB-account maken met de Synapse-koppeling ingeschakeld](https://docs.microsoft.com/cli/azure/cosmosdb?view=azure-cli-latest#az_cosmosdb_create-optional-parameters&preserve-view=true)
-* [Een bestaand Azure Cosmos DB account bijwerken om de Synapse-koppeling in te scha kelen](https://docs.microsoft.com/cli/azure/cosmosdb?view=azure-cli-latest#az_cosmosdb_update-optional-parameters&preserve-view=true)
+* [Een nieuw Azure Cosmos DB-account maken met de Synapse-koppeling ingeschakeld](/cli/azure/cosmosdb#az_cosmosdb_create-optional-parameters)
+* [Een bestaand Azure Cosmos DB account bijwerken om de Synapse-koppeling in te scha kelen](/cli/azure/cosmosdb#az_cosmosdb_update-optional-parameters)
 
 ### <a name="powershell"></a>PowerShell
 
-* [Een nieuw Azure Cosmos DB-account maken met de Synapse-koppeling ingeschakeld](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbaccount?view=azps-5.5.0#description&preserve-view=true)
-* [Een bestaand Azure Cosmos DB account bijwerken om de Synapse-koppeling in te scha kelen](https://docs.microsoft.com/powershell/module/az.cosmosdb/update-azcosmosdbaccount?view=azps-5.5.0&preserve-view=true)
+* [Een nieuw Azure Cosmos DB-account maken met de Synapse-koppeling ingeschakeld](/powershell/module/az.cosmosdb/new-azcosmosdbaccount#description)
+* [Een bestaand Azure Cosmos DB account bijwerken om de Synapse-koppeling in te scha kelen](/powershell/module/az.cosmosdb/update-azcosmosdbaccount)
 
 
 De volgende koppelingen tonen hoe u de Synapse-koppeling kunt inschakelen met behulp van Power shell:
@@ -179,15 +179,15 @@ except exceptions.CosmosResourceExistsError:
 
 De volgende koppelingen laten zien hoe u een containers met een analytische opslag maakt met behulp van Azure CLI:
 
-* [Azure Cosmos DB-API voor Mongo DB](https://docs.microsoft.com/cli/azure/cosmosdb/mongodb/collection?view=azure-cli-latest#az_cosmosdb_mongodb_collection_create-examples&preserve-view=true)
-* [SQL-API voor Azure Cosmos DB](https://docs.microsoft.com/cli/azure/cosmosdb/sql/container?view=azure-cli-latest#az_cosmosdb_sql_container_create&preserve-view=true)
+* [Azure Cosmos DB-API voor Mongo DB](/cli/azure/cosmosdb/mongodb/collection#az_cosmosdb_mongodb_collection_create-examples)
+* [SQL-API voor Azure Cosmos DB](/cli/azure/cosmosdb/sql/container#az_cosmosdb_sql_container_create)
 
 ### <a name="powershell"></a>PowerShell
 
 De volgende koppelingen laten zien hoe u een containers met een analytische opslag maakt met behulp van Power shell:
 
-* [Azure Cosmos DB-API voor Mongo DB](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbmongodbcollection?view=azps-5.5.0#description&preserve-view=true)
-* [SQL-API voor Azure Cosmos DB](https://docs.microsoft.com/cli/azure/cosmosdb/sql/container?view=azure-cli-latest#az_cosmosdb_sql_container_create&preserve-view=true)
+* [Azure Cosmos DB-API voor Mongo DB](/powershell/module/az.cosmosdb/new-azcosmosdbmongodbcollection#description)
+* [SQL-API voor Azure Cosmos DB](/cli/azure/cosmosdb/sql/container#az_cosmosdb_sql_container_create)
 
 
 ## <a name="optional---update-the-analytical-store-time-to-live"></a><a id="update-analytical-ttl"></a> Optioneel: de time-outwaarde voor het analytische archief bijwerken naar Live
@@ -245,15 +245,15 @@ Momenteel niet ondersteund.
 
 De volgende koppelingen tonen hoe u de analyse-TTL van containers kunt bijwerken met behulp van Azure CLI:
 
-* [Azure Cosmos DB-API voor Mongo DB](https://docs.microsoft.com/cli/azure/cosmosdb/mongodb/collection?view=azure-cli-latest#az_cosmosdb_mongodb_collection_update&preserve-view=true)
-* [SQL-API voor Azure Cosmos DB](https://docs.microsoft.com/cli/azure/cosmosdb/sql/container?view=azure-cli-latest#az_cosmosdb_sql_container_update&preserve-view=true)
+* [Azure Cosmos DB-API voor Mongo DB](/cli/azure/cosmosdb/mongodb/collection#az_cosmosdb_mongodb_collection_update)
+* [SQL-API voor Azure Cosmos DB](/cli/azure/cosmosdb/sql/container#az_cosmosdb_sql_container_update)
 
 ### <a name="powershell"></a>PowerShell
 
 De volgende koppelingen laten zien hoe u de levens duur van containers kunt bijwerken met behulp van Power shell:
 
-* [Azure Cosmos DB-API voor Mongo DB](https://docs.microsoft.com/powershell/module/az.cosmosdb/update-azcosmosdbmongodbcollection?view=azps-5.5.0&preserve-view=true)
-* [SQL-API voor Azure Cosmos DB](https://docs.microsoft.com/powershell/module/az.cosmosdb/update-azcosmosdbsqlcontainer?view=azps-5.5.0&preserve-view=true)
+* [Azure Cosmos DB-API voor Mongo DB](/powershell/module/az.cosmosdb/update-azcosmosdbmongodbcollection)
+* [SQL-API voor Azure Cosmos DB](/powershell/module/az.cosmosdb/update-azcosmosdbsqlcontainer)
 
 
 ## <a name="connect-to-a-synapse-workspace"></a><a id="connect-to-cosmos-database"></a> Verbinding maken met een Synapse-werk ruimte

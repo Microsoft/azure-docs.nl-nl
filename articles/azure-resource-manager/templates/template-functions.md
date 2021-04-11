@@ -3,12 +3,12 @@ title: Sjabloonfuncties
 description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon (ARM-sjabloon) om waarden op te halen, te werken met teken reeksen en cijfers en implementatie gegevens op te halen.
 ms.topic: conceptual
 ms.date: 10/12/2020
-ms.openlocfilehash: dbda5c635a5189158424363c341b269d331a5fdc
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a9ea21a57404f7de832fb307bdabeb47f8cf3f58
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101707316"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106220178"
 ---
 # <a name="arm-template-functions"></a>ARM-sjabloon functies
 
@@ -176,7 +176,6 @@ Resource Manager biedt de volgende functies voor het ophalen van resource waarde
 * [listSecrets](template-functions-resource.md#list)
 * [orderverzamellijst](template-functions-resource.md#list)
 * [pickZones](template-functions-resource.md#pickzones)
-* [hardwareproviders](template-functions-resource.md#providers)
 * [referentielaag](template-functions-resource.md#reference)
 * [resourceGroup](template-functions-resource.md#resourcegroup) -kan alleen worden gebruikt in implementaties van een resource groep.
 * [resourceId](template-functions-resource.md#resourceid) -kan in elk bereik worden gebruikt, maar de geldige para meters veranderen afhankelijk van het bereik.

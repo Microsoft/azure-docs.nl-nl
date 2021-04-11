@@ -4,10 +4,10 @@ description: In dit artikel wordt beschreven hoe u bewakings Kubernetes-clusters
 ms.topic: conceptual
 ms.date: 03/03/2021
 ms.openlocfilehash: 7c6ddd62bf06d313987289e444962378cea43fc8
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105627894"
 ---
 # <a name="configure-pv-monitoring-with-container-insights"></a>HW-bewaking met container Insights configureren

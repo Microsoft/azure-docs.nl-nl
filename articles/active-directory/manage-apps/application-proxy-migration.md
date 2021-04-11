@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a7d089d8f57bf8ef1278d262129cc8ddfc81d581
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 52cb4480e8b7820d656b8ab66f12486c2062dca5
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99257740"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106443488"
 ---
 # <a name="compare-remote-access-solutions"></a>Oplossingen voor externe toegang vergelijken
 
@@ -38,17 +38,17 @@ Gebruik deze tabel om te begrijpen hoe Threat Management Gateway (TMG), Unified 
 | Browser-apps selectief publiceren | Ja | Ja | Ja | Ja |
 | Vooraf-verificatie en eenmalige aanmelding | Ja | Ja | Ja | Ja | 
 | Layer 2/3-firewall | Ja | Ja | - | - |
-| Proxy mogelijkheden door sturen | Yes | - | - | - |
+| Proxy mogelijkheden door sturen | Ja | - | - | - |
 | VPN-mogelijkheden | Ja | Ja | - | - |
-| Uitgebreide protocol ondersteuning | - | Yes | Ja, als er wordt uitgevoerd over HTTP | Ja, als er wordt uitgevoerd over HTTP of via Extern bureaublad-gateway |
+| Uitgebreide protocol ondersteuning | - | Ja | Ja, als er wordt uitgevoerd over HTTP | Ja, als er wordt uitgevoerd over HTTP of via Extern bureaublad-gateway |
 | Fungeert als ADFS-proxy server | - | Ja | Ja | - |
 | Eén portal voor toegang tot toepassingen | - | Ja | - | Ja |
 | Vertaling antwoord tekst koppeling | Ja | Ja | - | Ja | 
-| Verificatie met headers | - | Yes | - | Ja, met PingAccess | 
-| Beveiliging in de Cloud schalen | - | - | - | Yes | 
+| Verificatie met headers | - | Ja | - | Ja, met PingAccess | 
+| Beveiliging in de Cloud schalen | - | - | - | Ja | 
 | Voorwaardelijke toegang | - | Ja | - | Ja |
-| Er zijn geen onderdelen in de zone gedemilitariseerde (DMZ) | - | - | - | Yes |
-| Geen binnenkomende verbindingen | - | - | - | Yes |
+| Er zijn geen onderdelen in de zone gedemilitariseerde (DMZ) | - | - | - | Ja |
+| Geen binnenkomende verbindingen | - | - | - | Ja |
 
 Voor de meeste scenario's wordt Azure AD-toepassingsproxy aangeraden als de moderne oplossing. Web Application proxy heeft alleen de voor keur in scenario's waarvoor een proxy server voor AD FS is vereist en u kunt geen aangepaste domeinen gebruiken in Azure Active Directory. 
 
@@ -64,4 +64,4 @@ Azure AD-toepassingsproxy biedt unieke voor delen ten opzichte van soort gelijke
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Azure AD-toepassing gebruiken om veilige externe toegang tot on-premises toepassingen te bieden](application-proxy.md)
+- [Azure AD-toepassingsproxy gebruiken om veilige externe toegang tot on-premises toepassingen te bieden](application-proxy.md)

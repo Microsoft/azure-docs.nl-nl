@@ -9,12 +9,12 @@ ms.author: vinsonyu
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 9c42acb69e13cc1eb0fbba3fcafaec1451bc4d77
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9c3f973da688a20fa60f2fb649b2c8d689bc2a98
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97589216"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106076646"
 ---
 # <a name="features-and-capabilities-of-azure-arc-enabled-sql-managed-instance"></a>Functies en mogelijkheden van Azure Arc enabled SQL Managed instance
 
@@ -117,19 +117,19 @@ Azure Arc enabled SQL Managed instance deelt een algemene code basis met de nieu
 | Functie | SQL Managed Instance met Azure Arc |
 |--|--|
 | JSON | Ja |
-| Query Store | Yes |  |
-| Tijdelijke | Yes |  |
-| Systeem eigen XML-ondersteuning | Yes |  |
-| XML-indexering | Yes |  |
-| & UPSERT-mogelijkheden samen VOEGen | Yes |  |
-| Gegevens typen voor datum en tijd | Yes |  |
-| Ondersteuning voor meerdere talen | Yes |  |
+| Query Store | Yes | 
+| Tijdelijke | Yes | 
+| Systeem eigen XML-ondersteuning | Yes | 
+| XML-indexering | Yes | 
+| & UPSERT-mogelijkheden samen VOEGen | Yes | 
+| Gegevens typen voor datum en tijd | Yes | 
+| Ondersteuning voor meerdere talen | Yes | 
 | Volledige tekst en semantische zoek opdracht | No |
-| Specificatie van taal in query | Yes |  |
-| Service Broker (berichten) | Yes |  |
-| Transact-SQL-eind punten | Yes |  |
-| Graph | Yes |  |
-| Machine Learning Services | No |  |
+| Specificatie van taal in query | Yes | 
+| Service Broker (berichten) | Yes | 
+| Transact-SQL-eind punten | Yes | 
+| Graph | Yes | 
+| Machine Learning Services | No |
 | PolyBase | No |
 
 

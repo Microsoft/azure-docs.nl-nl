@@ -2,21 +2,22 @@
 title: Problemen met verbindingen oplossen-Azure Database for PostgreSQL-één server
 description: Meer informatie over het oplossen van verbindings problemen met Azure Database for PostgreSQL-één server.
 keywords: postgresql-verbinding, connection string, connectiviteits problemen, tijdelijke fout, verbindings fout
-author: niklarin
-ms.author: nlarin
+author: sunilagarwal
+ms.author: sunila
+ms.reviewer: ''
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 5/6/2019
-ms.openlocfilehash: bff930153dc8941fbfe561edf963d5b1c1e7811f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7fe8c4b751be174a91a0e2e94991bc63b4b1e5c7
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96014615"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106504240"
 ---
 # <a name="troubleshoot-connection-issues-to-azure-database-for-postgresql---single-server"></a>Verbindings problemen met Azure Database for PostgreSQL-één server oplossen
 
-Verbindings problemen kunnen worden veroorzaakt door diverse dingen, waaronder:
+Verbindings problemen kunnen worden veroorzaakt door verschillende zaken, waaronder:
 
 * Firewallinstellingen
 * Time-out van verbinding
@@ -47,7 +48,7 @@ Er treden tijdelijke fouten op wanneer onderhoud wordt uitgevoerd. het systeem d
 Als de toepassing permanent geen verbinding kan maken met Azure Database for PostgreSQL, duidt dit meestal op een probleem met een van de volgende:
 
 * Server firewall configuratie: Zorg ervoor dat de firewall van de Azure Database for PostgreSQL-server zo is geconfigureerd dat verbindingen van uw client worden toegestaan, inclusief proxy servers en gateways.
-* Firewall configuratie van de client: de firewall op uw client moet verbindingen met uw database server toestaan. IP-adressen en poorten van de server die u niet wilt toestaan en toepassings namen als PostgreSQL in sommige firewalls.
+* Firewall configuratie van de client: de firewall op uw client moet verbindingen met uw database server toestaan. IP-adressen en poorten van de server waarmee u geen verbinding kunt maken, moeten zijn toegestaan en de toepassings namen als PostgreSQL in sommige firewalls.
 * Gebruikers fout: mogelijk hebt u een type verbindings parameter, zoals de server naam in de connection string of een ontbrekend *\@ Server* achtervoegsel in de gebruikers naam.
 * Als de fout _server niet is geconfigureerd voor het toestaan van IPv6-verbindingen_, ziet u dat de laag basis geen ondersteuning biedt voor VNet-service-eind punten. U moet het micro soft. SQL-eind punt verwijderen uit het subnet dat probeert verbinding te maken met de basis server.
 * Als de verbindings fout _sslmode waarde "* * *" ongeldig is wanneer SSL-ondersteuning niet is gecompileerd_ , betekent dit dat uw postgresql-client geen ondersteuning biedt voor SSL. Waarschijnlijk is de libpq aan de client zijde niet gecompileerd met de vlag---with-openssl. Probeer verbinding te maken met een PostgreSQL-client met SSL-ondersteuning. 

@@ -3,12 +3,12 @@ title: Aanbevolen procedures voor sjablonen
 description: Hierin worden aanbevolen benaderingen beschreven voor het ontwerpen van Azure Resource Manager sjablonen (ARM-sjablonen). Biedt suggesties om veelvoorkomende problemen te voor komen bij het gebruik van sjablonen.
 ms.topic: conceptual
 ms.date: 12/01/2020
-ms.openlocfilehash: 583a113df9cdb1951daf1002dd69531f050cfb54
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ff2b9ecf0e4004aa6689294867f5ff93006211ec
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99257994"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106219940"
 ---
 # <a name="arm-template-best-practices"></a>Aanbevolen procedures voor ARM-sjablonen
 
@@ -160,7 +160,7 @@ Als uw sjabloon werkt zoals verwacht, kunt u het beste dezelfde API-versie gebru
 
 Gebruik geen para meter voor de API-versie. De resource-eigenschappen en-waarden kunnen variëren per API-versie. IntelliSense in een code-editor kan het juiste schema niet bepalen wanneer de API-versie is ingesteld op een para meter. Als u een API-versie doorgeeft die niet overeenkomt met de eigenschappen in uw sjabloon, mislukt de implementatie.
 
-Gebruik geen variabelen voor de API-versie. Gebruik met name niet de [functie providers](template-functions-resource.md#providers) voor het dynamisch ophalen van API-versies tijdens de implementatie. De dynamisch opgehaalde API-versie komt mogelijk niet overeen met de eigenschappen in uw sjabloon.
+Gebruik geen variabelen voor de API-versie. 
 
 ## <a name="resource-dependencies"></a>Bronafhankelijkheden
 

@@ -3,12 +3,12 @@ title: De container Insights-agent beheren | Microsoft Docs
 description: In dit artikel wordt beschreven hoe u de meest voorkomende onderhouds taken beheert met de container Log Analytics agent die wordt gebruikt door container Insights.
 ms.topic: conceptual
 ms.date: 07/21/2020
-ms.openlocfilehash: 2a0c32ef797a953eca794e16fe0ace5e967f339f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6b485f4d49f0dd80f712d96779098c26be3f6de1
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101713793"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106442572"
 ---
 # <a name="how-to-manage-the-container-insights-agent"></a>De container Insights-agent beheren
 
@@ -79,21 +79,6 @@ curl -o upgrade-monitoring.sh -L https://aka.ms/upgrade-monitoring-bash-script
 export azureAroV4ClusterResourceId="/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.RedHatOpenShift/OpenShiftClusters/<clusterName>"
 bash upgrade-monitoring.sh --resource-id $ azureAroV4ClusterResourceId
 ```
-
-Zie **Service-Principal gebruiken** in [bewaking inschakelen van Azure Arc enabled Kubernetes-cluster](container-insights-enable-arc-enabled-clusters.md#enable-using-bash-script) voor meer informatie over het gebruik van een service-principal met deze opdracht.
-
-### <a name="upgrade-agent-on-azure-arc-enabled-kubernetes"></a>Upgrade agent op Azure Arc enabled Kubernetes
-
-Voer de volgende opdracht uit om de agent bij te werken op een Azure Arc enabled Kubernetes-cluster.
-
-```console
-curl -o upgrade-monitoring.sh -L https://aka.ms/upgrade-monitoring-bash-script
-export azureArcClusterResourceId="/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Kubernetes/connectedClusters/<clusterName>"
-bash upgrade-monitoring.sh --resource-id $azureArcClusterResourceId
-```
-
-Zie **Service-Principal gebruiken** in [bewaking inschakelen van Azure Arc enabled Kubernetes-cluster](container-insights-enable-arc-enabled-clusters.md#enable-using-bash-script) voor meer informatie over het gebruik van een service-principal met deze opdracht.
-
 
 ## <a name="how-to-disable-environment-variable-collection-on-a-container"></a>De verzameling van omgevings variabelen op een container uitschakelen
 

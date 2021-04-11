@@ -2,26 +2,27 @@
 title: Problemen met het netwerk oplossen met het REGI ster
 description: Symptomen, oorzaken en oplossingen voor veelvoorkomende problemen bij het openen van een Azure container registry in een virtueel netwerk of achter een firewall
 ms.topic: article
-ms.date: 10/01/2020
-ms.openlocfilehash: 75c94d40663a7058dab7ed691183dd578964edcc
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 03/30/2021
+ms.openlocfilehash: ae75959028e19ec61e6dcf41308e54df38139d59
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101699603"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106220110"
 ---
 # <a name="troubleshoot-network-issues-with-registry"></a>Problemen met het netwerk oplossen met het REGI ster
 
-Dit artikel helpt u bij het oplossen van problemen die zich kunnen voordoen bij het openen van een Azure container registry in een virtueel netwerk of achter een firewall. 
+Dit artikel helpt u bij het oplossen van problemen die zich kunnen voordoen bij het openen van een Azure container registry in een virtueel netwerk of achter een firewall of proxy server. 
 
 ## <a name="symptoms"></a>Symptomen
 
 Dit kan een of meer van de volgende zijn:
 
 * Er kunnen geen installatie kopieën worden gepusht of opgehaald en er wordt een fout bericht weer gegeven `dial tcp: lookup myregistry.azurecr.io`
+* Er kunnen geen installatie kopieën worden gepusht of opgehaald en er wordt een fout bericht weer gegeven `Client.Timeout exceeded while awaiting headers`
 * Kan geen installatie kopieën pushen of ophalen en u ontvangt een Azure CLI-fout `Could not connect to the registry login server`
 * Kan geen installatie kopieën van het REGI ster ophalen naar een Azure Kubernetes-service of een andere Azure-service
-* Geen toegang tot een REGI ster achter een HTTPS-proxy en er wordt een fout bericht weer gegeven `Error response from daemon: login attempt failed with status: 403 Forbidden`
+* Geen toegang tot een REGI ster achter een HTTPS-proxy en u ontvangt een fout melding `Error response from daemon: login attempt failed with status: 403 Forbidden` of `Error response from daemon: Get <registry>: proxyconnect tcp: EOF Login failed`
 * De instellingen van het virtuele netwerk kunnen niet worden geconfigureerd en er wordt een fout bericht weer gegeven `Failed to save firewall and virtual network settings for container registry`
 * Kan geen toegang krijgen tot of register instellingen weer geven in Azure Portal of het REGI ster niet beheren met de Azure CLI
 * Kan de instellingen van het virtuele netwerk of de regels voor open bare toegang niet toevoegen of wijzigen
@@ -41,7 +42,7 @@ Voer de opdracht [AZ ACR check-Health](/cli/azure/acr#az-acr-check-health) uit v
 
 Zie [de status van een Azure container Registry controleren](container-registry-check-health.md) op opdracht voorbeelden. Als er fouten worden gerapporteerd, raadpleegt u de [fout referentie](container-registry-health-error-reference.md) en de volgende secties voor de aanbevolen oplossingen.
 
-Als u problemen ondervindt met het gebruik van de register wih Azure Kubernetes-service, voert u de opdracht [AZ AKS check-ACR](/cli/azure/aks#az_aks_check_acr) uit om te controleren of het REGI ster toegankelijk is vanuit het AKS-cluster.
+Als u problemen ondervindt met het gebruik van een Azure Kubernetes-service met een geïntegreerd REGI ster, voert u de opdracht [AZ AKS check-ACR](/cli/azure/aks#az_aks_check_acr) uit om te controleren of het AKS-cluster het REGI ster kan bereiken.
 
 > [!NOTE]
 > Sommige problemen met de netwerk verbinding kunnen zich ook voordoen als er problemen zijn met de register verificatie of autorisatie. Zie [problemen met het REGI ster oplossen](container-registry-troubleshoot-login.md).
@@ -57,7 +58,7 @@ Als u toegang wilt krijgen tot een REGI ster van achter een firewall of proxy se
 
 Voor een geo-gerepliceerd REGI ster configureert u de toegang tot het gegevens eindpunt voor elke regionale replica.
 
-Controleer achter een HTTPS-proxy of uw docker-client en docker-daemon zijn geconfigureerd voor proxy gedrag.
+Controleer achter een HTTPS-proxy of uw docker-client en docker-daemon zijn geconfigureerd voor proxy gedrag. Als u de proxy-instellingen voor de docker-daemon wijzigt, moet u de daemon opnieuw starten. 
 
 Register bron Logboeken in de tabel ContainerRegistryLoginEvents kunnen helpen bij het vaststellen van een verbindings poging die is geblokkeerd.
 

@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 04/16/2020
 ms.author: sebansal
-ms.openlocfilehash: 78cdc0b59fd178049e755cca5e1e909ac24483f2
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: ec648f02918717dad6b739aa6ae99206bcec1d6e
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102204045"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106581811"
 ---
 # <a name="tutorial-configure-certificate-auto-rotation-in-key-vault"></a>Zelfstudie: Automatische rotatie van certificaten in Key Vault configureren
 
@@ -51,7 +51,7 @@ Maak een certificaat of importeer een certificaat in de sleutelkluis (raadpleeg 
 
 ## <a name="update-certificate-lifecycle-attributes"></a>De levenscycluskenmerken van een certificaat bijwerken
 
-In Azure Key Vault kunt u de levenscycluskenmerken van een certificaat zowel voor als tijdens het maken van het certificaat bijwerken.
+In Azure Key Vault kunt u de levens cyclus kenmerken van een certificaat bijwerken op het moment dat het certificaat wordt gemaakt of na.
 
 Een certificaat dat wordt gemaakt in Key Vault kan de volgende vorm aannemen:
 
@@ -83,7 +83,7 @@ Key Vault roteert automatisch certificaten via gevestigde partnerschappen met CA
         |  Automatische verlenging op een bepaald moment| Alle contactpersonen e-mailen op een bepaald moment |
         |-----------|------|
         |Als u deze optie selecteert, wordt automatische rotatie *ingeschakeld*. | Als u deze optie selecteert, wordt automatische rotatie *niet ingeschakeld*, maar worden alleen contactpersonen gewaarschuwd.|
-
+         You can learn about [setting up Email contact here](https://docs.microsoft.com/azure/key-vault/certificates/overview-renew-certificate#get-notified-about-certificate-expiration)
 1. Selecteer **Maken**.
 
 ![Levenscyclus van een certificaat](../media/certificates/tutorial-rotate-cert/create-cert-lifecycle.png)

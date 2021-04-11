@@ -8,12 +8,12 @@ ms.service: bastion
 ms.topic: quickstart
 ms.date: 02/18/2021
 ms.author: cherylmc
-ms.openlocfilehash: 8aeba13954283ca35c3eb0060a0e588ba6a7adbe
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 53f09eed89f9667611ed4d5e0268c889609d560a
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101707137"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106553563"
 ---
 # <a name="quickstart-connect-to-a-vm-securely-through-a-browser-via-private-ip-address"></a>Quickstart: veilig verbinding maken met een VM via een browser door middel van een privé IP-adres
 
@@ -36,6 +36,10 @@ U kunt in een browser verbinding maken met een virtuele machine (VM) met behulp 
   
 * Vereiste VM-poorten:
   * Poorten voor inkomend verkeer: RDP (3389)
+
+ >[!NOTE]
+ >Het gebruik van Azure Bastion met Azure Privé-DNS zones wordt momenteel niet ondersteund. Voordat u begint, moet u ervoor zorgen dat het virtuele netwerk waar u de Bastion-resource wilt implementeren, niet is gekoppeld aan een privé-DNS-zone.
+ >
 
 ### <a name="example-values"></a><a name="values"></a>Voorbeeldwaarden
 

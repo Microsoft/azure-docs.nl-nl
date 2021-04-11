@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 03/10/2021
 ms.author: mikben
-ms.openlocfilehash: ab30b19160294b334c8c5abdfbcc1dc0da370f48
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b602cbfde22cc87b42a32b007c19b626814d1660
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103495871"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106554573"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -25,9 +25,9 @@ Voer **Communicatie** in **Zoek in de Marketplace** invoer of in de zoekbalk bov
 
 :::image type="content" source="../media/create-a-communication-resource/searchbar-communication-portal.png" alt-text="Schermopname van een zoekopdracht naar Communication Services in de zoekbalk.":::
 
-Selecteer **Communication Services** in de resultaten en selecteer vervolgens **Toevoegen**.
+Selecteer **communicatie Services** in de resultaten en selecteer vervolgens **maken**.
 
-:::image type="content" source="../media/create-a-communication-resource/add-communication-portal.png" alt-text="Schermopname van het Azure-deelvenster, waarbij u de knop toevoegen markeert.":::
+:::image type="content" source="../media/create-a-communication-resource/create-communication-portal.png" alt-text="Scherm opname van het deel venster communicatie Services, waarbij u de knop maken markeert.":::
 
 U kunt nu uw Communication Services-resource configureren. Op de eerste pagina van het proces maken, wordt u gevraagd het volgende op te geven:
 

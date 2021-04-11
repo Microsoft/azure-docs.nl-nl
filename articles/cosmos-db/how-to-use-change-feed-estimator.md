@@ -5,15 +5,15 @@ author: ealsur
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: how-to
-ms.date: 08/15/2019
+ms.date: 04/01/2021
 ms.author: maquaran
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a44557d15f437317c2b5fa659ab8d4ca3c208edf
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5d4e461b25a25ecdf0d4d89ee7f1c82b9d4a0737
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "93339832"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106220161"
 ---
 # <a name="use-the-change-feed-estimator"></a>De Estimator van de wijzigings feed gebruiken
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -22,7 +22,7 @@ In dit artikel wordt beschreven hoe u de voortgang van uw [feeds voor wijzigings
 
 ## <a name="why-is-monitoring-progress-important"></a>Waarom is de bewakings voortgang belang rijk?
 
-De wijzigings verwerkings processor fungeert als een pointer die door uw [wijzigings feed](./change-feed.md) doorloopt en de wijzigingen voor de implementatie van een gemachtigde bezorgt. 
+De wijzigings verwerkings processor fungeert als een pointer die door uw [wijzigings feed](./change-feed.md) doorloopt en de wijzigingen voor de implementatie van een gemachtigde bezorgt.
 
 De implementatie van de wijzigings feed-processor kan wijzigingen verwerken met een bepaald percentage op basis van de beschik bare resources zoals CPU, geheugen, netwerk, enzovoort.
 
@@ -32,7 +32,9 @@ Door dit scenario te identificeren, kunt u beter begrijpen of we de implementati
 
 ## <a name="implement-the-change-feed-estimator"></a>De Estimator voor de wijzigings feed implementeren
 
-Net als bij de [Change feed-processor](./change-feed-processor.md)werkt de Estimator van de wijzigings feed als een push model. In het Estimator wordt het verschil gemeten tussen het laatst verwerkte item (gedefinieerd door de status van de leases-container) en de laatste wijziging in de container, en deze waarde naar een gemachtigde pushen. Het interval waarmee de meting wordt uitgevoerd, kan ook worden aangepast met een standaard waarde van 5 seconden.
+### <a name="as-a-push-model-for-automatic-notifications"></a>Als push model voor automatische meldingen
+
+Net als de [Change feed-processor](./change-feed-processor.md)kan de wijzigings Estimator als een push model werken. In het Estimator wordt het verschil gemeten tussen het laatst verwerkte item (gedefinieerd door de status van de leases-container) en de laatste wijziging in de container, en deze waarde naar een gemachtigde pushen. Het interval waarmee de meting wordt uitgevoerd, kan ook worden aangepast met een standaard waarde van 5 seconden.
 
 Als u bijvoorbeeld de processor voor de wijzigings feed als volgt definieert:
 
@@ -52,8 +54,29 @@ Een voor beeld van een gemachtigde die de schatting ontvangt, is:
 
 U kunt deze schatting verzenden naar uw bewakings oplossing en deze gebruiken om te begrijpen hoe de voortgang in de loop van de tijd gedraagt.
 
+### <a name="as-an-on-demand-detailed-estimation"></a>Als een gedetailleerde schatting op aanvraag
+
+In tegens telling tot het push model is er een alternatief waarmee u de schatting op aanvraag kunt verkrijgen. Dit model bevat ook meer gedetailleerde informatie:
+
+* De geschatte vertraging per lease.
+* Het exemplaar dat eigenaar is van elke lease en de verwerking ervan, zodat u kunt vaststellen of er een probleem is met een exemplaar.
+
+Als de processor voor de wijzigings feed als volgt is gedefinieerd:
+
+[!code-csharp[Main](~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed/Program.cs?name=StartProcessorEstimatorDetailed)]
+
+U kunt de Estimator maken met dezelfde lease configuratie:
+
+[!code-csharp[Main](~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed/Program.cs?name=StartEstimatorDetailed)]
+
+En wanneer u dat wilt, met de frequentie die u nodig hebt, kunt u de gedetailleerde schatting verkrijgen:
+
+[!code-csharp[Main](~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed/Program.cs?name=GetIteratorEstimatorDetailed)]
+
+Elk `ChangeFeedProcessorState` bevat de informatie over de lease en de vertraging en ook van wie de huidige instantie eigenaar is. 
+
 > [!NOTE]
-> De Estimator van de wijzigings feed hoeft niet te worden geïmplementeerd als onderdeel van de processor voor wijzigings invoer en niet deel uitmaken van hetzelfde project. Het kan onafhankelijk zijn en in een volledig ander exemplaar worden uitgevoerd. U hoeft alleen dezelfde naam en lease configuratie te gebruiken.
+> De Estimator van de wijzigings feed hoeft niet te worden geïmplementeerd als onderdeel van de processor voor wijzigings invoer en niet deel uitmaken van hetzelfde project. Het kan onafhankelijk zijn en worden uitgevoerd in een volledig ander exemplaar, dat wordt aanbevolen. U hoeft alleen dezelfde naam en lease configuratie te gebruiken.
 
 ## <a name="additional-resources"></a>Aanvullende bronnen
 

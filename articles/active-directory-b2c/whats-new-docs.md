@@ -1,7 +1,7 @@
 ---
 title: Wat is er nieuw in Azure Active Directory Business-to-Customer (B2C)
 description: Nieuwe en bijgewerkte documentatie voor de Azure Active Directory Business-to-Customer (B2C).
-ms.date: 03/08/2021
+ms.date: 04/05/2021
 ms.service: active-directory
 ms.subservice: B2C
 ms.topic: reference
@@ -9,16 +9,37 @@ ms.workload: identity
 ms.author: mimart
 author: msmimart
 manager: CelesteDG
-ms.openlocfilehash: 3fcc4f01d926f5c624adabd51e6215e0106af1fa
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 7a2384a451d851d1bede24fc2dd73a386c019430
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105557867"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106443709"
 ---
 # <a name="azure-active-directory-b2c-whats-new"></a>Azure Active Directory B2C: wat is er nieuw
 
 Welkom bij wat is er nieuw in Azure Active Directory B2C documentatie. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden. Zie [what's New in azure Active Directory](../active-directory/fundamentals/whats-new.md)voor meer informatie over wat er nieuw is in de B2C-service.
+
+## <a name="march-2021"></a>2021 maart
+
+### <a name="new-articles"></a>Nieuwe artikelen
+
+- [Aangepaste domeinen inschakelen voor Azure Active Directory B2C](custom-domain.md)
+- [Het risico met betrekking tot identiteits beveiliging in Azure AD B2C onderzoeken](identity-protection-investigate-risk.md)
+- [Registratie instellen en aanmelden met een Apple-ID met behulp van Azure Active Directory B2C (preview-versie)](identity-provider-apple-id.md)
+- [Een wacht woord voor geforceerde wachtwoord herstel instellen in Azure Active Directory B2C](force-password-reset.md)
+- [Inge sloten aanmeldings ervaring](embedded-login.md)
+
+### <a name="updated-articles"></a>Bijgewerkte artikelen
+
+- [Registratie instellen en aanmelden met een Amazon-account met Azure Active Directory B2C](identity-provider-amazon.md)
+- [Aanmelden met een Sales Force SAML-provider instellen met behulp van het SAML-protocol in Azure Active Directory B2C](identity-provider-salesforce-saml.md)
+- [Een op OWIN gebaseerde web-API migreren naar b2clogin.com of een aangepast domein](multiple-token-endpoints.md)
+- [Technische profielen](technicalprofiles.md)
+- [Voorwaardelijke toegang toevoegen aan gebruikersstromen in Azure Active Directory B2C](conditional-access-user-flow.md)
+- [Een wachtwoord herstel stroom instellen in Azure Active Directory B2C](add-password-reset-policy.md)
+- [RelyingParty](relyingparty.md)
+
 
 ## <a name="february-2021"></a>Februari 2021
 

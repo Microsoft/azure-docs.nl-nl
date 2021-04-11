@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/04/2020
 ms.author: jiajzhan
-ms.openlocfilehash: 580de0112c99eef4ba22ba946f6a2b81bc326001
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8e5480b7412291c427c5eaea94a63343f12c62cf
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102432040"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106077513"
 ---
 # <a name="speech-service-phonetic-sets"></a>Fonetische sets van spraak service
 
@@ -234,30 +234,30 @@ De telefoonset van de spraak service plaatst stress na de klinker van de benadru
 
 | `sapi` | `ipa` | Voorbeeld 1 | Voorbeeld 2 | Voorbeeld 3 |
 |--|--|--|--|--|
-| b | `b` | **B** Ank |  | [<sup>1</sup>](#de-c-1) PU **b** |  |
+| b | `b` | **B** Ank | | [<sup>1</sup>](#de-c-1) PU **b** | 
 | c | `ç` | **CH** emie | mögli **CH** St | [<sup>2</sup>](#de-c-2)i/**CH** |
-| d | `d` | **d** anken | [<sup>3</sup>](#de-c-3) Len **d** l | [<sup>4</sup>](#de-c-4) Clau **d** e |  |
+| d | `d` | **d** anken | [<sup>3</sup>](#de-c-3) Len **d** l | [<sup>4</sup>](#de-c-4) Clau **d** e | 
 | jh | `ʤ` | **J** eff | gemana **g** t | [<sup>5</sup>](#de-c-5) Kanaal **g** e |
-| f | `f` | **F** ahrtdauer | Angri **ff** slustig | abbruchrei **f** |  |
-| g | `g` | **g** UT |  | [<sup>6</sup>](#de-c-6) GRE **g** |  |
-| h | `h` | **H** ausanbau |  |  |  |
-| y | `j` | **J** od | Reakt | hu |  |
-| k | `k` | **K** oma | Aspe **k** t | FLEC **k** |  |
-| l | `l` | **l** au | ähne **l** n | zuvie **l** |  |
-| m | `m` | **M** UT | A **m** t | Leh **m** |  |
-| n | `n` | **n** niet verwijderen | u **n** d | Toch **n** |  |
-| lopen | `ŋ` | [<sup>7</sup>](#de-c-7)**ng** Uyen | **Lege** van schwa | R **ING** |  |
-| p | `p` | **P** artner | abru **p** t | TI **p** |  |
-| PF | `pf` | **PF**-nood herstel | Dam **PF** t | Naar **PF** |  |
-| r | `ʀ`, `r`, `ʁ` | **R** Eise | knu **RR** t | Haa **r** |  |
-| s | `s` | [<sup>8</sup>](#de-c-8)**S** taccato | bi **s** t | Mie **s** |  |
-| & | `ʃ` | **Sch** regel | Mi **sch** t | Lappi **sch** |  |
-| t | `t` | **T** Raum | S **t** raße | MU **t** |  |
-| Terminal | `ts` | **Z** mg | AR **z** t | Wit **z** |  |
-| ch | `tʃ` | **Tsch** echien | aufgepu **tsch** t | bundesdeu **tsch** |  |
-| v | `v` | **w** inken | Q **u** alle | [<sup>9</sup>](#de-c-9) Go **OO** ve |  |
+| f | `f` | **F** ahrtdauer | Angri **ff** slustig | abbruchrei **f** |  
+| g | `g` | **g** UT |  [<sup>6</sup>](#de-c-6) GRE **g** |  |
+| h | `h` | **H** ausanbau |  |  | 
+| y | `j` | **J** od | Reakt | hu | 
+| k | `k` | **K** oma | Aspe **k** t | FLEC **k** | 
+| l | `l` | **l** au | ähne **l** n | zuvie **l** | 
+| m | `m` | **M** UT | A **m** t | Leh **m** | 
+| n | `n` | **n** niet verwijderen | u **n** d | Toch **n** | 
+| lopen | `ŋ` | [<sup>7</sup>](#de-c-7)**ng** Uyen | **Lege** van schwa | R **ING** | 
+| p | `p` | **P** artner | abru **p** t | TI **p** | 
+| PF | `pf` | **PF**-nood herstel | Dam **PF** t | Naar **PF** |
+| r | `ʀ`, `r`, `ʁ` | **R** Eise | knu **RR** t | Haa **r** | 
+| s | `s` | [<sup>8</sup>](#de-c-8)**S** taccato | bi **s** t | Mie **s** | 
+| & | `ʃ` | **Sch** regel | Mi **sch** t | Lappi **sch** | 
+| t | `t` | **T** Raum | S **t** raße | MU **t** | 
+| Terminal | `ts` | **Z** mg | AR **z** t | Wit **z** | 
+| ch | `tʃ` | **Tsch** echien | aufgepu **tsch** t | bundesdeu **tsch** | 
+| v | `v` | **w** inken | Q **u** alle | [<sup>9</sup>](#de-c-9) Go **OO** ve | 
 | x | [<sup>10</sup>](#de-c-10) `x` ,[<sup>11</sup>](#de-c-11)`ç` | [<sup>12</sup>](#de-c-12) BA **CH** erach | Ma **CH** t mögli **CH**& St | Schma **CH** ' i **CH** |
-| z | `z` | **s** Super |  |  |  |
+| z | `z` | **s** Super |  |  | 
 | zh | `ʒ` | **G** Enre | B ezinski **opnieuw** | Edvi **g** |
 
 <a id="de-c-1"></a>

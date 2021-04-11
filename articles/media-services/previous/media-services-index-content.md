@@ -16,19 +16,19 @@ ms.date: 03/10/2021
 ms.author: inhenkel
 ms.reviewer: johndeu
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c575904d994232726cf8d0d9152b02130fd29cea
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 68b72cca319772fa52829c6b95237e15f083a2e7
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103013249"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105962659"
 ---
 # <a name="indexing-media-files-with-azure-media-indexer"></a>Media bestanden indexeren met Azure Media Indexer
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!IMPORTANT]
-> Het wordt aanbevolen dat klanten migreren vanuit Indexeer functie v1 en Indexeer functie v2 naar het gebruik van de [Media Services v3 AudioAnalyzerPreset Basic-modus](../latest/analyzing-video-audio-files-concept.md). De media processor van [Azure media indexer](media-services-index-content.md) media en [Azure media indexer 2 Preview](./legacy-components.md) worden buiten gebruik gesteld. Voor de pensioen datums raadpleegt u dit onderwerp over [oudere onderdelen](legacy-components.md) .
+> Het wordt aanbevolen dat klanten migreren vanuit Indexeer functie v1 en Indexeer functie v2 naar het gebruik van de [Media Services v3 AudioAnalyzerPreset Basic-modus](../latest/analyze-video-audio-files-concept.md). De media processor van [Azure media indexer](media-services-index-content.md) media en [Azure media indexer 2 Preview](./legacy-components.md) worden buiten gebruik gesteld. Voor de pensioen datums raadpleegt u dit onderwerp over [oudere onderdelen](legacy-components.md) .
 
 Met Azure Media Indexer kunt u inhoud van uw media bestanden doorzoekbaar maken en een transcriptie van volledige tekst genereren voor ondertiteling en tref woorden. U kunt één media bestand of meerdere media bestanden in een batch verwerken.  
 
@@ -150,7 +150,7 @@ Standaard genereert een indexerings taak de volgende uitvoer bestanden. De besta
 
 Wanneer er meer dan één invoer Media bestand is, genereert de Indexeer functie een manifest bestand voor de taak uitvoer, met de naam JobResult.txt. Voor elk invoer Media bestand zijn de resulterende TTML-, WebVTT-en trefwoord bestanden opeenvolgend genummerd en benoemd met behulp van de alias.
 
-| Bestandsnaam | Beschrijving |
+| Bestandsnaam | Description |
 | --- | --- |
 | **InputFileName. ttml**<br/>**InputFileName. VTT** |Ondertitelings bestanden (CC) in TTML en WebVTT-indelingen.<br/><br/>Ze kunnen worden gebruikt om audio-en video bestanden toegankelijk te maken voor mensen met een gehoor handicap.<br/><br/>Ondertitelings bestanden bevatten een tag met de naam <b>herkenning</b> waarmee een indexerings taak wordt gescoord op basis van de manier waarop de spraak in de bron video herkenbaar is.  U kunt de waarde van <b>herkenning</b> voor scherm uitvoer bestanden gebruiken voor bruikbaarheid. Een lage score zou een slechte indexerings resultaat hebben als gevolg van de audio kwaliteit. |
 | **InputFileName.kw.xml<br/> InputFileName.info** |Trefwoord-en info bestanden. <br/><br/>Trefwoord bestand is een XML-bestand dat tref woorden bevat die zijn geëxtraheerd uit de spraak inhoud, met frequentie en verschuivings gegevens. <br/><br/>Info bestand is een bestand met onbewerkte tekst dat gedetailleerde informatie bevat over elke herkende term. De eerste regel is speciaal en bevat de herken bare Score. Elke volgende regel is een door tabs gescheiden lijst met de volgende gegevens: begin tijd, eind tijd, woord/zin, betrouw baarheid. De tijden worden in seconden gegeven en het vertrouwen wordt gegeven als een getal van 0-1. <br/><br/>Voorbeeld regel: "1,20 1,45 Word 0,67" <br/><br/>Deze bestanden kunnen worden gebruikt voor een aantal doel einden, zoals, voor het uitvoeren van een spraak analyse of voor het weer geven van zoek machines zoals Bing, Google of micro soft share point, om de media bestanden meer detecteerbaar te maken of zelfs te gebruiken voor het leveren van meer relevante advertenties. |
@@ -246,7 +246,7 @@ Dezelfde uitvoer (als geslaagde taken) worden gegenereerd. U kunt naar het uitvo
 ### <a name="task-preset-for-azure-media-indexer"></a><a id="preset"></a> Taak voorinstelling voor Azure Media Indexer
 De verwerking van Azure Media Indexer kan worden aangepast door naast de taak een optionele vooraf ingestelde taak te geven.  Hieronder wordt de indeling van deze XML-configuratie beschreven.
 
-| Name | Vereist | Beschrijving |
+| Name | Vereist | Description |
 | --- | --- | --- |
 | **ingevoerd** |onjuist |Activa bestand (en) die u wilt indexeren.</p><p>Azure Media Indexer ondersteunt de volgende indelingen voor media bestanden: MP4, WMV, MP3, M4A, WMA, AAC, WAV.</p><p>U kunt de bestands namen opgeven in het kenmerk **name** of **List** van het **input** -element (zoals hieronder weer gegeven). Als u niet opgeeft welk item bestand moet worden geïndexeerd, wordt het primaire bestand gekozen. Als er geen primair activa bestand is ingesteld, wordt het eerste bestand in de invoer Asset geïndexeerd.</p><p>Ga als volgt te werk om de naam van het activa bestand expliciet op te geven:<br/>`<input name="TestFile.wmv">`<br/><br/>U kunt ook meerdere Asset-bestanden tegelijk indexeren (Maxi maal 10 bestanden). Om dit te doen:<br/><br/><ol class="ordered"><li><p>Maak een tekst bestand (manifest bestand) en geef het de extensie. lst. </p></li><li><p>Voeg een lijst met alle bestands namen van assets in uw invoer Asset toe aan dit manifest bestand. </p></li><li><p>Voeg het manifest bestand toe (upload) naar de Asset.  </p></li><li><p>Geef de naam op van het manifest bestand in het lijst kenmerk van de invoer.<br/>`<input list="input.lst">`</li></ol><br/><br/>Opmerking: als u meer dan 10 bestanden aan het manifest bestand toevoegt, mislukt de indexerings taak met de fout code 2006. |
 | **metagegevensarchiefmethode** |onjuist |Meta gegevens voor het opgegeven item bestand (en) die worden gebruikt voor het aanpassen van de woorden lijst.  Het is handig om de Indexeer functie voor te bereiden om niet-standaard woordenlijst woorden, zoals de juiste naam woorden, te herkennen.<br/>`<metadata key="..." value="..."/>` <br/><br/>U kunt **waarden** voor vooraf gedefinieerde **sleutels** opgeven. Momenteel worden de volgende sleutels ondersteund:<br/><br/>"title" en "Description": wordt gebruikt voor het aanpassen van de terminologie van het taal model voor uw taak en het verbeteren van de nauw keurigheid van spraak herkenning.  De waarden Seed internet zoekt naar context afhankelijke relevante tekst documenten, waarbij de inhoud wordt gebruikt om de interne woorden lijst voor de duur van uw indexerings taak te verg Roten.<br/>`<metadata key="title" value="[Title of the media file]" />`<br/>`<metadata key="description" value="[Description of the media file] />"` |

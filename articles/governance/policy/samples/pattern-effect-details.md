@@ -1,18 +1,18 @@
 ---
 title: 'Patroon: Effecten van een beleidsdefinitie'
 description: Dit Azure Policy-patroon biedt een voorbeeld van het gebruik van de verschillende effecten van een beleidsdefinitie.
-ms.date: 10/14/2020
+ms.date: 03/31/2021
 ms.topic: sample
-ms.openlocfilehash: f1da9bd153707db35c07ed3c176542797a694d7a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9fa95fdc793e7762c39525a83f38ae952f532a60
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92073033"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106092837"
 ---
 # <a name="azure-policy-pattern-effects"></a>Azure Policy-patroon: effecten
 
-In Azure Policy zijn een aantal [effecten](../concepts/effects.md) beschikbaar waarmee u kunt bepalen hoe de service om niet-compatibele resources reageert. Een aantal effecten is eenvoudig; hiervoor zijn geen aanvullende eigenschappen in de beleidsdefinitie vereist. Voor andere effecten zijn verschillende eigenschappen vereist.
+Azure Policy heeft veel [effecten](../concepts/effects.md) die bepalen hoe de service reageert op niet-compatibele resources. Een aantal effecten is eenvoudig; hiervoor zijn geen aanvullende eigenschappen in de beleidsdefinitie vereist. Voor andere effecten zijn verschillende eigenschappen vereist.
 
 ## <a name="sample-1-simple-effect"></a>Voorbeeld 1: Eenvoudig effect
 

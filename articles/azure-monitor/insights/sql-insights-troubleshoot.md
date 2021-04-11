@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/04/2021
-ms.openlocfilehash: 85a3505dd347b96036c28c85c089afa04e3e3bd5
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4d4a801d0cf0a2355334272053ff86dd846b6bbf
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104609374"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107030301"
 ---
 # <a name="troubleshooting-sql-insights-preview"></a>Problemen met SQL Insights oplossen (preview-versie)
 Als u problemen met het verzamelen van gegevens in SQL Insights wilt oplossen, controleert u de status van de bewakings machine op het tabblad **profiel beheren** . Dit heeft een van de volgende statussen:
@@ -171,10 +171,13 @@ InsightsMetrics
 ```
 
 ```
-Operation 
- | where OperationCategory == "WorkloadInsights" 
- | summarize Errors = countif(OperationStatus == 'Error') 
+WorkloadDiagnosticLogs
+| summarize Errors = countif(Status == 'Error')
 ```
+
+> [!NOTE]
+> Als u geen gegevens ziet in het gegevens type ' WorkloadDiagnosticLogs ', moet u mogelijk uw bewakings profiel bijwerken om deze gegevens op te slaan.  Selecteer in de SQL Insights UX ' profiel beheren ', selecteer ' profiel bewerken ' en selecteer vervolgens bewakings profiel bijwerken.
+
 
 Voor veelvoorkomende gevallen bieden we de kennis van het oplossen van problemen in de logboeken weergave: 
 

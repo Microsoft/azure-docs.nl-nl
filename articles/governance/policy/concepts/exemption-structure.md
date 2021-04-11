@@ -1,14 +1,14 @@
 ---
 title: Details van de structuur van de beleids uitsluiting
 description: Beschrijft de beleids uitsluiting definitie die wordt gebruikt door Azure Policy om resources uit te sluiten van de evaluatie van initiatieven of definities.
-ms.date: 09/22/2020
+ms.date: 03/31/2021
 ms.topic: conceptual
-ms.openlocfilehash: e6ced56c1dc65ca68998c5c58d3e985b63873e0b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ecf956d7507dfa2168e4f2591e4b661423801365
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "91950173"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106091732"
 ---
 # <a name="azure-policy-exemption-structure"></a>Structuur van Azure Policy-uitzonde ring
 

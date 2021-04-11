@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 02/05/2021
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: 69fc0d6f3c4e18b34555a099f4e28e278ca3bdad
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e0bba85cc99e1751f39172ac320fe721d6f02e87
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100635384"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106076782"
 ---
 # <a name="use-key-vault-references-for-app-service-and-azure-functions"></a>Gebruik Key Vault verwijzingen voor App Service en Azure Functions
 
@@ -30,8 +30,19 @@ Als u geheimen van Key Vault wilt lezen, moet er een kluis zijn gemaakt en moet 
 
 1. Maak een [toegangs beleid in Key Vault](../key-vault/general/secure-your-key-vault.md#key-vault-access-policies) voor de toepassings-id die u eerder hebt gemaakt. Schakel de geheime machtiging ' Get ' in voor dit beleid. Configureer de "geautoriseerde toepassing" of `applicationId` instellingen niet, omdat deze niet compatibel is met een beheerde identiteit.
 
-   > [!IMPORTANT]
-   > Key Vault verwijzingen zijn niet in staat om geheimen op te lossen die zijn opgeslagen in een sleutel kluis met [netwerk beperkingen](../key-vault/general/overview-vnet-service-endpoints.md) , tenzij de app wordt gehost in een [app service Environment](./environment/intro.md).
+### <a name="access-network-restricted-vaults"></a>Toegang tot netwerk met beperkte kluizen
+
+> [!NOTE]
+> Op Linux gebaseerde toepassingen kunnen geen geheimen van een sleutel kluis met een beperkt netwerk oplossen tenzij de app wordt gehost in een [app service Environment](./environment/intro.md).
+
+Als uw kluis is geconfigureerd met [netwerk beperkingen](../key-vault/general/overview-vnet-service-endpoints.md), moet u er ook voor zorgen dat de toepassing toegang heeft tot het netwerk.
+
+1. Zorg ervoor dat de toepassing uitgaande netwerk mogelijkheden heeft geconfigureerd, zoals wordt beschreven in [app service-netwerk functies](./networking-features.md) en [Azure functions-netwerk opties](../azure-functions/functions-networking-options.md).
+
+2. Zorg ervoor dat de configuratie accounts van de kluis voor het netwerk of subnet waarlangs uw app toegang heeft.
+
+> [!IMPORTANT]
+> Het openen van een kluis via de integratie van het virtuele netwerk is momenteel niet compatibel met [Automatische updates voor geheimen zonder een opgegeven versie](#rotation).
 
 ## <a name="reference-syntax"></a>Verwijzings syntaxis
 
@@ -56,6 +67,9 @@ U kunt ook het volgende doen:
 ```
 
 ## <a name="rotation"></a>Rotatie
+
+> [!IMPORTANT]
+> [Het openen van een kluis via de integratie van het virtuele netwerk](#access-network-restricted-vaults) is momenteel niet compatibel met automatische updates voor geheimen zonder een opgegeven versie.
 
 Als er in de verwijzing geen versie is opgegeven, gebruikt de app de nieuwste versie die in Key Vault aanwezig is. Als nieuwere versies beschikbaar komen, zoals bij een rotatie gebeurtenis, wordt de app automatisch bijgewerkt en wordt de nieuwste versie binnen één dag gebruikt. Wijzigingen in de configuratie van de app zorgen ervoor dat de meest recente versies van alle geheimen waarnaar wordt verwezen direct worden bijgewerkt.
 

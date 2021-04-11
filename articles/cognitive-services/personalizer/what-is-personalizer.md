@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 08/27/2020
 ms.custom: cog-serv-seo-aug-2020
 keywords: personalizer, Azure personalizer, machine learning
-ms.openlocfilehash: 913b4d989865a50b23d58c5493368997248f8db8
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: b2577502907b69e134651c93ab7a98fc51e9aaa6
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98928546"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106169246"
 ---
 # <a name="what-is-personalizer"></a>Wat is Personalizer?
 
@@ -21,11 +21,14 @@ Azure Personalizer is een cloudservice waarmee u voor uw toepassingen het beste 
 > [!TIP]
 > Inhoud bestaat uit verschillende informatie-eenheden, zoals tekst, afbeeldingen, URL's, e-mailadressen of andere items die u wilt selecteren van en wilt weergeven aan uw gebruikers.
 
-Voordat u aan de slag gaat, kunt u [Personalizer proberen met deze interactieve demo](https://personalizationdemo.azurewebsites.net/).
+Deze documentatie bevat de volgende artikel typen:  
 
-<!--
-![What is personalizer animation](./media/what-is-personalizer.gif)
--->
+* [**Quick**](quickstart-personalizer-sdk.md) starts zijn aan de slag-instructies die u helpen bij het maken van aanvragen voor de service.  
+* [**Hand leidingen**](how-to-settings.md) bevatten instructies voor het gebruik van de service op meer specifieke of aangepaste manieren.  
+* [**Concepten**](how-personalizer-works.md) geven uitgebreide uitleg over de service functionaliteit en-functies.  
+* [**Zelf studies**](tutorial-use-personalizer-web-app.md) zijn meer gidsen die laten zien hoe u de service kunt gebruiken als onderdeel in bredere zakelijke oplossingen.  
+
+Voordat u aan de slag gaat, kunt u [personaler proberen met deze interactieve demo](https://personalizationdemo.azurewebsites.net/).
 
 ## <a name="how-does-personalizer-select-the-best-content-item"></a>Hoe selecteert Personalizer het beste inhoudsitem?
 
@@ -100,18 +103,6 @@ Omdat voor Personalizer collectieve gegevens in bijna realtime worden gebruikt o
         * Direct na weergave van uw inhoud
         * Of op een later moment in een offlinesysteem
     1. [Evalueer uw lus](concepts-offline-evaluation.md) met een offline-evaluatie na een bepaalde gebruiksperiode. Met een offline-evaluatie kunt u de effectiviteit van de Personalizer-service testen en beoordelen zonder uw code te hoeven wijzigen of de gebruikerservaring aan te tasten.
-
-## <a name="complete-a-quickstart"></a>Een quickstart volgen
-
-We bieden quickstarts over C#, JavaScript en Python. Elke quickstart is ontworpen om u de basisontwerppatronen te leren en waarmee u in minder dan tien minuten code kunt uitvoeren. 
-
-* [Snelstart: De Personalizer-clientbibliotheek gebruiken](./quickstart-personalizer-sdk.md)
-
-Nu u de kans hebt gehad om met de Personalizer-service aan de slag te gaan, kunt u onze zelfstudies proberen en leren hoe u Personalizer in webtoepassingen, chatbots of een Azure Notebook gebruikt.
-
-* [Zelfstudie: Personalizer gebruiken in een .NET-web-app](tutorial-use-personalizer-web-app.md)
-* [Zelfstudie: Personalizer gebruiken in een .NET-chatbot](tutorial-use-personalizer-chat-bot.md)
-* [Zelfstudie: Personalizer gebruiken in een Azure Notebook](tutorial-use-azure-notebook-generate-loop-data.md)
 
 ## <a name="reference"></a>Naslaginformatie 
 

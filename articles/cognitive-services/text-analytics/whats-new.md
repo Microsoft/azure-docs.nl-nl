@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 03/18/2021
+ms.date: 03/25/2021
 ms.author: aahi
 ms.custom: references_regions
-ms.openlocfilehash: a2b001d34d265c8e7246b03875c32168f2c5c962
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0ed3a11381285a9422380eb14ff301a2b9ea816a
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104598895"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106093551"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Wat is er nieuw in de Text Analytics-API?
 
@@ -51,11 +51,12 @@ De Text Analytics-API wordt doorlopend bijgewerkt. In dit artikel vindt u inform
     * Een nieuw `Date` entiteits type.
     * Detectie van verklaringen die de detectie van negatie vervangen (alleen beschikbaar in API v 3.1-Preview. 4).
     * Een nieuwe voorkeurs `name` eigenschap voor gekoppelde entiteiten die worden genormaliseerd vanuit verschillende Ontologies-en coderings systemen (alleen beschikbaar in API v 3.1-Preview. 4). 
-* Er is een nieuwe container installatie kopie met tag `3.0.015370001-onprem-amd64` en de nieuwe model versie `2021-03-01` vrijgegeven aan de container preview-opslag plaats. 
-* De Text Analytics voor de status container installatie kopie wordt de volgende maand verplaatst naar een nieuwe opslag plaats.  Bekijk een e-mail communicatie op de locatie van het nieuwe huis.
+* Er is een nieuwe container installatie kopie met tag `3.0.015490002-onprem-amd64` en de nieuwe model versie `2021-03-01` vrijgegeven aan de container preview-opslag plaats. 
+    * Deze container installatie kopie kan niet meer worden gedownload vanaf `containerpreview.azurecr.io` 26 April 2021.
+* Er is nu een nieuwe Text Analytics voor de status container installatie kopie met dezelfde model versie beschikbaar op `mcr.microsoft.com/azure-cognitive-services/textanalytics/healthcare` . Vanaf 26 april kunt u de container alleen downloaden uit deze opslag plaats.
+
 > [!div class="nextstepaction"]
 > [Meer informatie over Text Analytics status](how-tos/text-analytics-for-health.md)
->
 
 ### <a name="text-analytics-resource-portal-update"></a>Update van Text Analytics resource Portal
 * **Verwerkte tekst records** is nu beschikbaar als een metrische waarde in het gedeelte **bewaking** voor uw Text Analytics-resource in de Azure Portal.  

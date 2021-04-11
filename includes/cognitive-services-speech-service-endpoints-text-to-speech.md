@@ -4,18 +4,18 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/06/2019
 ms.author: wolfma
-ms.openlocfilehash: 1eefb7097f672552956e90a19e0a7b411cae8a24
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 832cc1d4f9ec3cec4ada6e964e3ab2f6f023dd41
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102455680"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106554833"
 ---
-### <a name="standard-and-neural-voices"></a>Standaard en Neural stemmen
+### <a name="neural-and-standard-voices"></a>Neural en standaard stemmen
 
-Gebruik deze tabel om de **Beschik baarheid van standaard stemmen** per regio/eind punt te bepalen:
+Gebruik deze tabel om de **Beschik baarheid van Neural en standaard stemmen** per regio/eind punt te bepalen:
 
-| Region | Eindpunt |
+| Regio | Eindpunt |
 |--------|----------|
 | Australië - oost | `https://australiaeast.tts.speech.microsoft.com/cognitiveservices/v1` |
 | Brazilië - zuid | `https://brazilsouth.tts.speech.microsoft.com/cognitiveservices/v1` |
@@ -34,6 +34,7 @@ Gebruik deze tabel om de **Beschik baarheid van standaard stemmen** per regio/ei
 | VS - zuid-centraal | `https://southcentralus.tts.speech.microsoft.com/cognitiveservices/v1` |
 | Azië - zuidoost | `https://southeastasia.tts.speech.microsoft.com/cognitiveservices/v1` |
 | Verenigd Koninkrijk Zuid | `https://uksouth.tts.speech.microsoft.com/cognitiveservices/v1` |
+| VS - west-centraal | `https://westcentralus.tts.speech.microsoft.com/cognitiveservices/v1` |
 | Europa -west | `https://westeurope.tts.speech.microsoft.com/cognitiveservices/v1` |
 | VS - west | `https://westus.tts.speech.microsoft.com/cognitiveservices/v1` |
 | VS - west 2 | `https://westus2.tts.speech.microsoft.com/cognitiveservices/v1` |
@@ -41,25 +42,11 @@ Gebruik deze tabel om de **Beschik baarheid van standaard stemmen** per regio/ei
 > [!TIP]
 > [Stemmen in Preview](../articles/cognitive-services/Speech-Service/language-support.md#neural-voices-in-preview) zijn alleen beschikbaar in de volgende drie REGIO'S: VS-oost, Europa-West en Zuidoost-Azië.
 
-Gebruik deze tabel om de **Beschik baarheid van Neural stemmen** per regio/eind punt te bepalen:
-
-| Region | Eindpunt |
-|--------|----------|
-| Australië - oost | `https://australiaeast.tts.speech.microsoft.com/cognitiveservices/v1` | 
-| Canada - midden | `https://canadacentral.tts.speech.microsoft.com/cognitiveservices/v1` |
-| VS - oost | `https://eastus.tts.speech.microsoft.com/cognitiveservices/v1` |
-| India - centraal | `https://centralindia.tts.speech.microsoft.com/cognitiveservices/v1` |
-| VS - zuid-centraal | `https://southcentralus.tts.speech.microsoft.com/cognitiveservices/v1` |
-| Azië - zuidoost | `https://southeastasia.tts.speech.microsoft.com/cognitiveservices/v1` |
-| Verenigd Koninkrijk Zuid | `https://uksouth.tts.speech.microsoft.com/cognitiveservices/v1` |
-| Europa -west | `https://westeurope.tts.speech.microsoft.com/cognitiveservices/v1` |
-| VS - west 2 | `https://westus2.tts.speech.microsoft.com/cognitiveservices/v1` |
-
 ### <a name="custom-voices"></a>Aangepaste stemmen
 
 Als u een aangepast spraak lettertype hebt gemaakt, gebruikt u het eind punt dat u hebt gemaakt. U kunt ook de onderstaande eind punten gebruiken `{deploymentId}` om de implementatie-id voor uw spraak model te vervangen.
 
-| Region | Eindpunt |
+| Regio | Eindpunt |
 |--------|----------|
 | Australië - oost | `https://australiaeast.voice.speech.microsoft.com/cognitiveservices/v1?deploymentId={deploymentId}` |
 | Brazilië - zuid | `https://brazilsouth.voice.speech.microsoft.com/cognitiveservices/v1?deploymentId={deploymentId}` |
@@ -97,7 +84,7 @@ De volgende tabel bevat informatie over regionale ondersteuning voor aangepaste 
 
 De lange audio-API is beschikbaar in meerdere regio's met unieke eind punten.
 
-| Region | Eindpunt |
+| Regio | Eindpunt |
 |--------|----------|
 | VS - oost | `https://eastus.customvoice.api.speech.microsoft.com` |
 | India - centraal | `https://centralindia.customvoice.api.speech.microsoft.com` |

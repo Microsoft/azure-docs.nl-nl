@@ -14,12 +14,12 @@ ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev
 ROBOTS: NOINDEX
-ms.openlocfilehash: 662a0f53a5d5e8e02ef3b29640009fd07bf4f1d0
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4d2b1a60856877c24d61379a688ea630e506a848
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97652141"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106075233"
 ---
 # <a name="azure-active-directory-code-samples-v10-endpoint"></a>Codevoorbeelden voor Azure Active Directory (v1.0-eindpunt)
 
@@ -63,8 +63,8 @@ De volgende voorbeelden illustreren webtoepassingen waarmee gebruikers worden aa
 
 De volgende voorbeelden laten zien hoe u op rollen gebaseerd toegangsbeheer (RBAC) implementeert. RBAC wordt gebruikt om de machtigingen van bepaalde functies in een webtoepassing te beperken tot bepaalde gebruikers. De gebruikers zijn gemachtigd, als ze behoren tot een **Azure AD-groep** of een bepaalde **toepassingsrol** hebben.
 
-| Platform | Voorbeeld |
-|--|--|
+| Platform | Voorbeeld | Beschrijving |
+|--|--|--|
 | ![In deze afbeelding ziet u het ASP.NET Framework-logo](media/sample-v2-code/logo-netframework.png)</p> ASP.NET 4.5 | [dotnet-webapp-groupclaims](https://github.com/Azure-Samples/active-directory-dotnet-webapp-groupclaims) </p>  [dotnet-webapp-roleclaims](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims) | Een .NET 4.5 MVC-web-app die gebruikmaakt van Azure AD-**rollen** voor autorisatie |
 
 ## <a name="desktop-and-mobile-public-client-applications-calling-microsoft-graph-or-a-web-api"></a>Openbare bureaublad- en mobiele clienttoepassingen die Microsoft Graph of een web-API aanroepen

@@ -13,12 +13,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-js
-ms.openlocfilehash: a0b357705de04ed4c2be3223f9dd07f61f75d970
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 406390b34e1450e532205dc903df1933749d210f
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98954577"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106061958"
 ---
 # <a name="how-to-use-the-videojs-player-with-azure-media-services"></a>De Video.js Player gebruiken met Azure Media Services
 
@@ -164,4 +164,4 @@ keySystems: {...
 ## <a name="next-steps"></a>Volgende stappen
 
 - [De Azure Media Player gebruiken](../azure-media-player/azure-media-player-overview.md)  
-- [Snelstart: Inhoud versleutelen](encrypt-content-quickstart.md)
+- [Snelstart: Inhoud versleutelen](drm-encrypt-content-how-to.md)

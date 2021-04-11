@@ -3,16 +3,16 @@ title: NSX-netwerk onderdelen configureren in azure VMware-oplossing
 description: Meer informatie over het gebruik van de Azure VMware-oplossings console voor het configureren van NSX-T-netwerk segmenten.
 ms.topic: how-to
 ms.date: 02/16/2021
-ms.openlocfilehash: 0478582a9bc4fb77a1784c27ec4f5c302d6b89fc
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: a4702efe8ea26234d074f421d2e6eab871eba5f5
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101716918"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105733094"
 ---
 # <a name="configure-nsx-network-components-in-azure-vmware-solution"></a>NSX-netwerk onderdelen configureren in azure VMware-oplossing
 
-Een persoonlijke cloud van Azure VMware-oplossing wordt standaard geleverd met NSX-T als een door software gedefinieerde netwerk (SDDC). Het wordt vooraf ingericht met een NSX-T-laag-0-gateway in de modus actief/actief en een standaard NSX-T-laag in de modus actief/stand-by.  Met deze gateways kunt u de segmenten (logische switches) verbinden en East-West en North-South connectiviteit bieden. 
+Een persoonlijke cloud van Azure VMware-oplossing wordt standaard geleverd met NSX-T als een door software gedefinieerde netwerk (SDDC). Het wordt vooraf ingericht met een NSX-T-laag-0-gateway in de modus **actief/actief** en een standaard NSX-t-laag in de modus actief/stand-by.  Met deze gateways kunt u de segmenten (logische switches) verbinden en East-West en North-South connectiviteit bieden. 
 
 Nadat de privécloud van de Azure VMware-oplossing is geïmplementeerd, kunt u de benodigde NSX-T-objecten configureren via de Azure VMware-oplossings console onder **werkbelasting netwerken**.  De-console biedt de vereenvoudigde weer gave van NSX-T-bewerkingen die dagelijks door een VMware-beheerder moeten worden uitgevoerd en die zijn gericht op gebruikers die niet bekend zijn met NSX-T.  
 

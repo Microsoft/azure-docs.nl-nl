@@ -9,12 +9,12 @@ ms.author: mlearned
 description: In dit artikel vindt u een overzicht van Kubernetes met Azure Arc.
 keywords: Kubernetes, Arc, Azure, containers
 ms.custom: references_regions
-ms.openlocfilehash: b3296aa1c1d5d463cc7f4cb932b44ad76632e19e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 69e9886f214d0076c8e66231fd6ad15bb060828f
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102121589"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106449644"
 ---
 # <a name="what-is-azure-arc-enabled-kubernetes"></a>Wat is Kubernetes met Azure Arc?
 
@@ -43,9 +43,11 @@ Kubernetes met Azure Arc biedt ondersteuning voor de volgende scenario’s:
 
 * Implementeer toepassingen en pas configuratie toe met behulp van GitOps-configuratie beheer. 
 
-* Uw clusters weer geven en bewaken met behulp van Azure Monitor voor containers. 
+* Uw clusters weer geven en bewaken met behulp van Azure Monitor voor containers.
 
-* Beleid Toep assen met behulp van Azure Policy voor Kubernetes. 
+* Beveiliging tegen bedreigingen afdwingen met behulp van Azure Defender voor Kubernetes.
+
+* Beleid Toep assen met behulp van Azure Policy voor Kubernetes.
 
 [!INCLUDE [azure-lighthouse-supported-service](../../../includes/azure-lighthouse-supported-service.md)]
 

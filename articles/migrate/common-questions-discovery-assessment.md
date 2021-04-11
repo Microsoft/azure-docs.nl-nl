@@ -6,12 +6,12 @@ ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 06/09/2020
-ms.openlocfilehash: 629459d22b18b326307b45bb512d16622808b533
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: c10963d28e0d2ecee73150e8b5af89cee96d28b2
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105562627"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106077003"
 ---
 # <a name="discovery-assessment-and-dependency-analysis---common-questions"></a>Detectie, beoordeling en afhankelijkheids analyse-Veelgestelde vragen
 
@@ -85,6 +85,10 @@ De betrouwbaarheidsclassificatie wordt berekend voor evaluaties Op basis van pre
 - Voor Azure VM-en AVS-evaluaties zijn er weinig servers gemaakt nadat de detectie is gestart. Als u bijvoorbeeld een evaluatie maakt voor de prestatie geschiedenis van de laatste maand, maar weinig servers in de omgeving is slechts een week geleden gemaakt. In dit geval zijn de prestatie gegevens voor de nieuwe servers niet beschikbaar voor de hele duur en is de betrouwbaarheids classificatie laag. [Meer informatie](./concepts-assessment-calculation.md#confidence-ratings-performance-based)
 
 - Voor Azure SQL-evaluaties zijn enkele SQL-exemplaren of -databases gemaakt nadat de detectie is gestart. Als u bijvoorbeeld een evaluatie maakt voor de prestatie geschiedenis van de laatste maand, maar weinig SQL-exemplaren of data bases zijn in de omgeving slechts een week geleden gemaakt. In dit geval zijn de prestatie gegevens voor de nieuwe servers niet beschikbaar voor de hele duur en is de betrouwbaarheids classificatie laag. [Meer informatie](./concepts-azure-sql-assessment-calculation.md#confidence-ratings)
+
+## <a name="-the-number-of-azure-vm-or-avs-assessments-on-the-discovery-and-assessment-tool-are-incorrect"></a>> het aantal Azure VM-of AVS-evaluaties op het hulp programma detectie en evaluatie onjuist is
+ Als u dit wilt oplossen, klikt u op het totale aantal evaluaties om naar alle evaluaties te gaan en de evaluatie van Azure VM of AVS opnieuw te berekenen. In het hulp programma detectie en evaluatie wordt vervolgens het juiste aantal voor dat evaluatie type weer gegeven.
+
 
 ## <a name="i-want-to-try-out-the-new-azure-sql-assessment"></a>Ik wil de nieuwe Azure SQL-evaluatie uitproberen
 Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Ga aan de slag met [deze zelfstudie](tutorial-discover-vmware.md). Als u deze functie in een bestaand project wilt uitproberen, moet u ervoor zorgen dat u de [vereisten](how-to-discover-sql-existing-project.md) in dit artikel hebt voltooid.

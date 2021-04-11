@@ -12,18 +12,25 @@ ms.date: 09/01/2020
 ms.author: erhopf
 ms.custom: devx-track-csharp, cog-serv-seo-aug-2020
 keywords: spraak omzetting
-ms.openlocfilehash: 94ddd06068513261b5b73b313877e273c7251d62
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 99541d7fe9eaa867860af93bc1423d476ce8bf4a
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104954957"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106449933"
 ---
 # <a name="what-is-speech-translation"></a>Wat is spraakomzetting?
 
 [!INCLUDE [TLS 1.2 enforcement](../../../includes/cognitive-services-tls-announcement.md)]
 
 In dit overzicht vindt u meer informatie over de voor delen en mogelijkheden van de service voor spraak omzetting, waarmee u audio gegevensstromen in realtime, [meertalige spraak naar spraak](language-support.md#speech-translation) en spraak naar tekst kunt omzetten. Met de spraak-SDK hebben uw toepassingen, hulpprogram ma's en apparaten toegang tot de bron-transcripties en de Vertaal uitvoer voor de audio. Tussenliggende transcriptie-en vertaal resultaten worden geretourneerd als spraak wordt gedetecteerd en de uiteindelijke resultaten kunnen worden omgezet in gesynthesizerde spraak.
+
+Deze documentatie bevat de volgende artikel typen:
+
+* **Quick** starts zijn aan de slag-instructies die u helpen bij het maken van aanvragen voor de service.
+* **Hand leidingen** bevatten instructies voor het gebruik van de service op meer specifieke of aangepaste manieren.
+* **Concepten** geven uitgebreide uitleg over de service functionaliteit en-functies.
+* **Zelf studies** zijn meer gidsen die laten zien hoe u de service kunt gebruiken als onderdeel in bredere zakelijke oplossingen.
 
 ## <a name="core-features"></a>Kern functies
 

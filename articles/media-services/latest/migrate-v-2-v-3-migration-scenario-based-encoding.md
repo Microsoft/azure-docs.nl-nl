@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: media
 ms.date: 03/25/2021
 ms.author: inhenkel
-ms.openlocfilehash: bf66723f878f8b277d71577c068afdad56708ad6
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: a01571f4a1f852deb84b7f20d61b8048e8000790
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105563268"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106490094"
 ---
 # <a name="encoding-scenario-based-migration-guidance"></a>Richt lijnen voor migratie op basis van een code ring
 
@@ -91,7 +91,7 @@ In v2 worden XML-invoer-en uitvoer-meta gegevensbestanden gegenereerd als result
 
 ## <a name="premium-encoder-to-v3-standard-encoder-or-partner-based-solutions"></a>Premium encoder naar v3 Standard Encoder of oplossingen op basis van een partner
 
-De v2 API biedt geen ondersteuning meer voor Premium encoder. Als u eerder de op werk stroom gebaseerde Premium Encoder voor HEVC-code ring hebt gebruikt, moet u migreren naar de nieuwe v3- [standaard encoder](media-encoder-standard-formats.md) met HEVC-coderings ondersteuning.
+De v2 API biedt geen ondersteuning meer voor Premium encoder. Als u eerder de op werk stroom gebaseerde Premium Encoder voor HEVC-code ring hebt gebruikt, moet u migreren naar de nieuwe v3- [standaard encoder](encode-media-encoder-standard-formats-reference.md) met HEVC-coderings ondersteuning.
 
 Als u de geavanceerde werk stroom functies van de Premium encoder nodig hebt, raden we u aan om aan de slag te gaan met het gebruik van een oplossing voor een geavanceerde coderings partner van Azure, zoals [communicatie](https://imaginecommunications.com), [Telestream](https://www.telestream.net)of [Bitmovin](https://bitmovin.com).
 
@@ -103,20 +103,20 @@ Als u eerder werk stromen hebt gebruikt voor het kopiëren van bestanden van Azu
 
 ## <a name="indexer-v1-audio-transcription-to-the-new-audioanalyzer-basic-mode"></a>Indexeer functie v1-audio-Transcriptie naar de nieuwe AudioAnalyzer ' Basic-modus '
 
-Voor klanten die de indexer v1-processor in de v2 API gebruiken, moet u een trans formatie maken die de nieuwe `AudioAnalyzer` in de [basis modus](how-to-create-basic-audio-transform.md) aanroept voordat een taak wordt verzonden.
+Voor klanten die de indexer v1-processor in de v2 API gebruiken, moet u een trans formatie maken die de nieuwe `AudioAnalyzer` in de [basis modus](transform-create-basic-audio-how-to.md) aanroept voordat een taak wordt verzonden.
 
 ## <a name="encoding-transforms-and-jobs-concepts-tutorials-and-how-to-guides"></a>De concepten van code ring, trans formaties en taken, zelf studies en hand leidingen
 
 ### <a name="concepts"></a>Concepten
 
-- [Video en audio coderen met Media Services](encoding-concept.md)
-- [Standaard indelingen en-codecs voor encoders](media-encoder-standard-formats.md)
-- [Versleutelen met een automatisch gegenereerde bitrate-ladder](autogen-bitrate-ladder.md)
-- [De vooraf ingestelde coderings voorinstelling gebruiken om de optimale bitrate waarde voor een bepaalde oplossing te vinden](content-aware-encoding.md)
+- [Video en audio coderen met Media Services](encode-concept.md)
+- [Standaard indelingen en-codecs voor encoders](encode-media-encoder-standard-formats-reference.md)
+- [Versleutelen met een automatisch gegenereerde bitrate-ladder](encode-autogen-bitrate-ladder.md)
+- [De vooraf ingestelde coderings voorinstelling gebruiken om de optimale bitrate waarde voor een bepaalde oplossing te vinden](encode-content-aware-concept.md)
 - [Gereserveerde media-eenheden](concept-media-reserved-units.md)
 - [Invoermetagegevens](input-metadata-schema.md)
 - [Uitvoermetagegevens](output-metadata-schema.md)
-- [Dynamische verpakking in Media Services V3: audiocodecs](dynamic-packaging-overview.md#audio-codecs-supported-by-dynamic-packaging)
+- [Dynamische verpakking in Media Services V3: audiocodecs](encode-dynamic-packaging-concept.md#audio-codecs-supported-by-dynamic-packaging)
 
 ### <a name="tutorials"></a>Zelfstudies
 
@@ -127,18 +127,18 @@ Voor klanten die de indexer v1-processor in de v2 API gebruiken, moet u een tran
 
 - [Een taak invoer maken op basis van een HTTPS-URL](job-input-from-http-how-to.md)
 - [Een taak invoer maken op basis van een lokaal bestand](job-input-from-local-file-how-to.md)
-- [Een eenvoudige audio transformatie maken](how-to-create-basic-audio-transform.md)
+- [Een eenvoudige audio transformatie maken](transform-create-basic-audio-how-to.md)
 - Met .NET
-  - [Coderen met een aangepaste trans formatie-.NET](customize-encoder-presets-how-to.md)
-  - [Een overlay met Media Encoder Standard maken](how-to-create-overlay.md)
-  - [Miniaturen genereren met behulp van encoder Standard met .NET](media-services-generate-thumbnails-dotnet.md)
+  - [Coderen met een aangepaste trans formatie-.NET](transform-custom-presets-how-to.md)
+  - [Een overlay met Media Encoder Standard maken](transform-create-overlay-how-to.md)
+  - [Miniaturen genereren met behulp van encoder Standard met .NET](transform-generate-thumbnails-dotnet-how-to.md)
 - Met Azure CLI
-  - [Coderen met een aangepaste trans formatie-Azure CLI](custom-preset-cli-howto.md)
+  - [Coderen met een aangepaste trans formatie-Azure CLI](transform-custom-preset-cli-how-to.md)
 - Met REST
-  - [Coderen met een aangepaste transform-REST](custom-preset-rest-howto.md)
-  - [Miniaturen genereren met behulp van coderings standaard met REST](media-services-generate-thumbnails-rest.md)
-- [Een video afspelen tijdens het coderen met Media Services-.NET](subclip-video-dotnet-howto.md)
-- [Een video bijsnijden bij het coderen met Media Services-REST](subclip-video-rest-howto.md)
+  - [Coderen met een aangepaste transform-REST](transform-custom-preset-rest-how-to.md)
+  - [Miniaturen genereren met behulp van coderings standaard met REST](transform-generate-thumbnails-rest-how-to.md)
+- [Een video afspelen tijdens het coderen met Media Services-.NET](transform-subclip-video-dotnet-how-to.md)
+- [Een video bijsnijden bij het coderen met Media Services-REST](transform-subclip-video-rest-how-to.md)
 
 ## <a name="samples"></a>Voorbeelden
 

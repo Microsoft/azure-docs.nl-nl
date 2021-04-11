@@ -3,12 +3,12 @@ title: Zelfstudie - On-premises omgevingen peeren met een privécloud
 description: Meer informatie over hoe u ExpressRoute Global Reach-peering maakt met een privécloud in een Azure VMware Solution.
 ms.topic: tutorial
 ms.date: 03/17/2021
-ms.openlocfilehash: 59ddc2dd4aed850328807a4543d2fabd6f5a99f1
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 798b822989127ccbb00e971de2cc4147ac234259
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105564497"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106449559"
 ---
 # <a name="tutorial-peer-on-premises-environments-to-a-private-cloud"></a>Zelfstudie: On-premises omgevingen peeren met een privécloud
 
@@ -55,7 +55,7 @@ U beschikt nu over een autorisatiesleutel voor het ExpressRoute-circuit van de p
 1. Een on-premises Cloud verbinding maken. Voer een van de volgende handelingen uit en selecteer **maken**:
 
    - Selecteer het **ExpressRoute-circuit** in de lijst of
-   - Als u de circuit-ID hebt, plakt u deze in het veld en geeft u de autorisatie sleutel op.
+   - Als u de circuit-ID hebt, plakt u deze in het veld en geeft u de autorisatie sleutel op die u zojuist hebt gemaakt.
 
    :::image type="content" source="./media/expressroute-global-reach/on-premises-cloud-connections.png" alt-text="Voer de ExpressRoute-ID en de autorisatie sleutel in en selecteer vervolgens maken.":::   
    

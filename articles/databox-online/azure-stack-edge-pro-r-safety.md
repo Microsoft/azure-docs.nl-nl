@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: conceptual
 ms.date: 02/12/2021
 ms.author: alkohli
-ms.openlocfilehash: dacc9ecc28ffa482b60d1e48735fe3620b5b7558
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7b3589349feed2e20711aa756d8be8ebc433ac0b
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100363063"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106077598"
 ---
 # <a name="azure-stack-edge-pro-r-safety-instructions"></a>Beveiligings instructies voor de Azure Stack Edge Pro R
 
@@ -37,7 +37,8 @@ De volgende gevaren pictogrammen moeten worden waargenomen bij het instellen en 
 | Pictogram | Description |
 |:--- |:--- |
 | ![Lees eerst alle instructies](./media/azure-stack-edge-pro-r-safety/icon-safety-read-all-instructions.png) | Lees eerst alle instructies |
-| ![Meldings pictogram ](./media/azure-stack-edge-mini-r-safety/icon-safety-notice.png) **:** | Geeft aan dat de informatie die belang rijk is, maar niet met een risico is betrokken. || ![Waarschuwings symbool](./media/azure-stack-edge-pro-r-safety/icon-safety-warning.png) | Waarschuwings symbool |
+| ![Meldings pictogram ](./media/azure-stack-edge-mini-r-safety/icon-safety-notice.png) **:** | Geeft aan dat de informatie die belang rijk is, maar niet met een risico is betrokken. |
+| ![Waarschuwings symbool](./media/azure-stack-edge-pro-r-safety/icon-safety-warning.png) | Waarschuwings symbool |
 | ![Pictogram Tip-risico](./media/azure-stack-edge-pro-r-safety/icon-safety-tip-hazard.png)  | Tip-risico|
 | ![Pictogram met een dik gewicht](./media/azure-stack-edge-pro-r-safety/icon-safety-heavy-weight.png)  | Zwaar gewichts risico|
 | ![Pictogram elektrische schok](./media/azure-stack-edge-pro-r-safety/icon-safety-electric-shock.png) | Elektrisch schok gevaar |
@@ -45,7 +46,7 @@ De volgende gevaren pictogrammen moeten worden waargenomen bij het instellen en 
 | ![Pictogram voor meerdere energie bronnen](./media/azure-stack-edge-pro-r-safety/icon-safety-disconnect-all-power.png)  | Meerdere energie bronnen. Ontkoppel alle stroom snoeren om alle energie van de apparatuur te verwijderen. |
 | ![Pictogram kneep punten](./media/azure-stack-edge-pro-r-safety/icon-pinching-points.png)  | Er zijn kneep punten aanwezig. |
 | ![Pictogram Hot Components of Opper vlakken](./media/azure-stack-edge-pro-r-safety/icon-hot-component-surface.png)  | Geeft Hot onderdelen of Opper vlakken aan. |
-|
+
 
 ## <a name="handling-precautions-and-site-selection"></a>Voorzorgsmaatregelen en site selectie verwerken
 

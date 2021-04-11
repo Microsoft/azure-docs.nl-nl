@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/05/2021
+ms.date: 04/06/2021
 ms.author: b-juche
-ms.openlocfilehash: 318b7e8b35fa7cc56a86033a08e316257a488b6f
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.openlocfilehash: d63587eec1f7e6d24ae1638e8365b85fd1ec2c94
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/06/2021
-ms.locfileid: "106442691"
+ms.locfileid: "106504988"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Veelgestelde vragen over Azure NetApp Files
 
@@ -91,10 +91,6 @@ Zie Azure resource provider-bewerkingen voor voor de volledige lijst met Azure N
 Azure NetApp Files is een systeem eigen Azure-service. Alle PUT-, POST-en DELETE-Api's voor Azure NetApp Files worden vastgelegd. De logboeken tonen bijvoorbeeld activiteiten zoals wie de moment opname heeft gemaakt, wie het volume heeft gewijzigd, enzovoort.
 
 Zie [Azure NetApp Files rest API](/rest/api/netapp/)voor de volledige lijst met API-bewerkingen.
-
-### <a name="how-do-i-audit-file-access-on-azure-netapp-files-nfs-v3-and-v41-volumes"></a>Hoe kan ik het controleren van bestands toegang op Azure NetApp Files NFS-volumes (v3 en v 4.1)?
-
-U kunt audit logboeken configureren aan de client zijde. Alle wijzigingen voor lezen, schrijven en kenmerk worden vastgelegd. 
 
 ### <a name="can-i-use-azure-policies-with-azure-netapp-files"></a>Kan ik Azure-beleid gebruiken met Azure NetApp Files?
 

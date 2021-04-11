@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 6ff057d99e29c7c6fe30e77f38a0bff265dbe7bf
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3cc9ad0c694be8f95ddcffbc3d952d59b83f89f3
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "86998885"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106077207"
 ---
 # <a name="accessing-your-cloudsimple-private-cloud-environment-and-applications-from-on-premises"></a>Toegang tot uw persoonlijke cloud omgeving en-toepassingen van CloudSimple vanuit on-premises
 
@@ -43,7 +43,7 @@ Als u een on-premises Active Directory als een identiteits bron wilt configurere
 | 389 (TCP/UDP) | Netwerk voor privécloudbeheer | On-premises Active Directory-domein controllers     | Vereist voor LDAP-communicatie van particuliere cloud vCenter-Server naar Active Directory-domein controllers voor gebruikers verificatie.                |
 | 636 (TCP)     | Netwerk voor privécloudbeheer | On-premises Active Directory-domein controllers     | Vereist voor secure LDAP-communicatie (LDAPS) van de Privécloud-server naar Active Directory-domein controllers voor gebruikers verificatie. |
 | 3268 (TCP)    | Netwerk voor privécloudbeheer | On-premises Active Directory Global Catalog-servers | Vereist voor LDAP-communicatie in een implementatie van meerdere domein controllers.                                                                        |
-| 3269 (TCP)    | Netwerk voor privécloudbeheer | On-premises Active Directory Global Catalog-servers | Vereist voor LDAPS-communicatie in een implementatie van meerdere domein controllers.                                                                       |                                           |
+| 3269 (TCP)    | Netwerk voor privécloudbeheer | On-premises Active Directory Global Catalog-servers | Vereist voor LDAPS-communicatie in een implementatie van meerdere domein controllers.                                                                       |
 
 ## <a name="common-ports-required-for-accessing-workload-virtual-machines"></a>Algemene poorten die vereist zijn voor toegang tot virtuele workload-machines
 

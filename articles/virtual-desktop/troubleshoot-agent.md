@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 12/16/2020
 ms.author: sefriend
 manager: clarkn
-ms.openlocfilehash: b47a205cac1717dfc66594f856fd9370a01a9ae3
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: 2f321413a275676d0abb1a075ba958885ffcd821
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106168209"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106505022"
 ---
 # <a name="troubleshoot-common-windows-virtual-desktop-agent-issues"></a>Veelvoorkomende problemen met Windows Virtual Desktop agent oplossen
 
@@ -216,7 +216,7 @@ Ga als volgt te werk om het probleem op te lossen:
 
 ## <a name="error-heartbeat-issue-where-users-keep-getting-disconnected-from-session-hosts"></a>Fout: heartbeat-probleem waarbij gebruikers de verbinding met de sessie-hosts blijven verbreken
 
-Als uw server geen heartbeat van de virtueel bureau blad-service van Windows ophaalt, moet u de drempel waarde voor heartbeats wijzigen. Volg de instructies in deze sectie als er een of meer van de volgende scenario's van toepassing zijn:
+Als uw server geen heartbeat van de virtueel bureau blad-service van Windows ophaalt, moet u de drempel waarde voor heartbeats wijzigen. Hiermee worden de problemen met het probleem tijdelijk verholpen, maar wordt het onderliggende netwerk probleem niet opgelost. Volg de instructies in deze sectie als er een of meer van de volgende scenario's van toepassing zijn:
 
 - U ontvangt een **CheckSessionHostDomainIsReachableAsync** -fout
 - U ontvangt een **ConnectionBrokenMissedHeartbeatThresholdExceeded** -fout
@@ -316,7 +316,7 @@ Ga als volgt te werk om het probleem op te lossen:
 
 Als u het probleem niet kunt vinden in dit artikel of als u de instructies niet hebt gevonden, raden wij u aan Windows Virtual Desktop Agent te verwijderen, opnieuw te installeren en opnieuw te registreren. In de instructies in deze sectie wordt uitgelegd hoe u uw virtuele machine opnieuw registreert bij de virtueel-bureaublad service van Windows door alle agents, opstart lader en stack onderdelen te verwijderen, de sessiehost uit de hostgroep te wissen, een nieuwe registratie sleutel te genereren voor de virtuele machine en de agent en het laad programma opnieuw te installeren. Als een of meer van de volgende scenario's van toepassing zijn op u, volgt u deze instructies:
 - De VM is vastgelopen in de **upgrade** of is **niet beschikbaar**
-- De stack-listener werkt niet en u werkt met Windows 10 1809, 1903 of 1904
+- De stack-listener werkt niet en u werkt met Windows 10 1809, 1903 of 1909
 - U ontvangt een **EXPIRED_REGISTRATION_TOKEN** fout
 - Uw Vm's worden niet weer gegeven in de lijst sessie hosts
 - De **extern bureaublad agent loader** wordt niet weer geven in het venster Services

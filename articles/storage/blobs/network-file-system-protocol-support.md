@@ -9,19 +9,19 @@ ms.date: 02/19/2021
 ms.author: normesta
 ms.reviewer: yzheng
 ms.custom: references_regions
-ms.openlocfilehash: b00956a6fb5a79b09602ca1752cc547595f32db6
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 57dec4187ea42476ff1c0a993b751a7389da5639
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103224591"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106490349"
 ---
 # <a name="network-file-system-nfs-30-protocol-support-in-azure-blob-storage-preview"></a>Ondersteuning voor het protocol Network File System (NFS) 3,0 in Azure Blob-opslag (preview-versie)
 
 Blob-opslag ondersteunt nu het NFS-protocol (Network File System) 3,0. Deze ondersteuning biedt Linux-bestandssysteem compatibiliteit op het niveau van de opslag en prijzen van objecten en stelt Linux-clients in staat om een container in Blob Storage te koppelen vanaf een virtuele Azure-machine (VM) of een computer on-premises. 
 
 > [!NOTE]
-> Ondersteuning voor NFS 3,0-protocol in Azure Blob-opslag is in open bare preview. Het biedt ondersteuning voor GPV2-opslag accounts met de prestaties van de Standard-laag in de volgende regio's: Australië-oost, Korea-centraal en Zuid-Centraal vs. De preview biedt ook ondersteuning voor blok-blobs met een Premium-prestatie niveau in alle open bare regio's.
+> Ondersteuning voor NFS 3,0-protocol in Azure Blob-opslag is in open bare preview. Het biedt ondersteuning voor GPV2-opslag accounts met de prestaties van de Standard-laag in de volgende regio's: Australië-oost, Korea-centraal, VS-Oost en Zuid-Centraal vs. De preview biedt ook ondersteuning voor blok-blobs met een Premium-prestatie niveau in alle open bare regio's.
 
 Het is altijd een uitdaging om grootschalige verouderde werk belastingen uit te voeren, zoals High Performance Computing (HPC) in de Cloud. Een reden hiervoor is dat toepassingen vaak gebruikmaken van traditionele bestands protocollen, zoals NFS of Server Message Block (SMB) om toegang te krijgen tot gegevens. Daarnaast zijn systeem eigen Cloud Storage-services gericht op object opslag met een platte naam ruimte en uitgebreide meta gegevens in plaats van bestands systemen die een hiërarchische naam ruimte en efficiënte meta gegevens bewerkingen bieden. 
 

@@ -12,12 +12,12 @@ author: urosmil
 ms.author: urmilano
 ms.reviewer: sstein, MashaMSFT
 ms.date: 07/10/2020
-ms.openlocfilehash: 2da7311e61aa39be69a6a0a29eff686baaad7ebf
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: bd66c10bb1d6316bbe90e7ba4092d79c6a43a75d
+ms.sourcegitcommit: c6a2d9a44a5a2c13abddab932d16c295a7207d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "91323189"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107285272"
 ---
 # <a name="overview-of-azure-sql-managed-instance-management-operations"></a>Overzicht van beheerbewerkingen van Azure SQL Managed Instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -70,12 +70,14 @@ In de volgende tabellen vindt u een overzicht van de bewerkingen en de gebruikel
 |Bewerking  |Langlopend segment  |Geschatte duur  |
 |---------|---------|---------|
 |Wijziging van instantie-eigenschap (beheerderswachtwoord, Azure AD-aanmelding, Azure Hybrid Benefit-vlag)|N.v.t.|Maximaal 1 minuut.|
-|Opslag van instanties omhoog/omlaag schalen (servicelaag Algemeen)|Databasebestanden koppelen|90% van de bewerkingen is binnen 5 minuten voltooid.|
+|Opslag van instanties omhoog/omlaag schalen (servicelaag Algemeen)|Geen langlopend segment<sup>1</sup>|99% van de bewerkingen zijn voltooid over vijf minuten.|
 |Opslag van instanties omhoog/omlaag schalen (servicelaag Bedrijfskritiek)|- Grootte van virtuele clusters wijzigen<br>- Seeding van AlwaysOn-beschikbaarheidsgroepen|90% van de bewerkingen is binnen 2,5 uur voltooid, plus de tijd om alle databases te seeden (220 GB/uur).|
 |Rekenkracht van instantie (vCores) omhoog en omlaag schalen (Algemeen)|- Grootte van virtuele clusters wijzigen<br>- Databasebestanden koppelen|90% van de bewerkingen is binnen 2,5 uur voltooid.|
 |Rekenkracht van instantie (vCores) omhoog en omlaag schalen (Bedrijfskritiek)|- Grootte van virtuele clusters wijzigen<br>- Seeding van AlwaysOn-beschikbaarheidsgroepen|90% van de bewerkingen is binnen 2,5 uur voltooid, plus de tijd om alle databases te seeden (220 GB/uur).|
 |Wijziging van de servicelaag van de instantie (van Algemeen naar Bedrijfskritiek en omgekeerd)|- Grootte van virtuele clusters wijzigen<br>- Seeding van AlwaysOn-beschikbaarheidsgroepen|90% van de bewerkingen is binnen 2,5 uur voltooid, plus de tijd om alle databases te seeden (220 GB/uur).|
 | | | 
+
+<sup>1</sup> het schalen van algemeen Managed instance-opslag leidt niet tot een failover aan het einde van de bewerking. In dit geval bestaat de bewerking uit het bijwerken van meta gegevens en het door geven van antwoorden voor verzonden aanvragen.
 
 **Categorie: verwijderen**
 
@@ -90,6 +92,9 @@ In de volgende tabellen vindt u een overzicht van de bewerkingen en de gebruikel
 ## <a name="instance-availability"></a>Beschikbaarheid van instanties
 
 SQL Managed Instance **is beschikbaar tijdens updatebewerkingen**, met uitzondering van een korte downtime die wordt veroorzaakt door de failover die aan het einde van de update plaatsvindt. Deze duurt meestal maximaal 10 seconden, zelfs in het geval van onderbroken, langlopende transacties, dankzij het [versnelde databaseherstel](../accelerated-database-recovery.md).
+
+> [!NOTE]
+> Het schalen van Algemeen beheerde exemplaar opslag veroorzaakt geen failover aan het einde van de update.
 
 Tijdens implementaties en verwijderingen zijn SQL Managed Instances niet beschikbaar voor clienttoepassingen.
 

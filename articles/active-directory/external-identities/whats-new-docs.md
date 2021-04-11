@@ -1,7 +1,7 @@
 ---
 title: Wat is er nieuw in Azure Active Directory externe identiteiten
 description: Nieuwe en bijgewerkte documentatie voor de Azure Active Directory externe identiteiten.
-ms.date: 03/08/2021
+ms.date: 04/05/2021
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: reference
@@ -9,16 +9,39 @@ ms.workload: identity
 ms.author: mimart
 author: msmimart
 manager: CelesteDG
-ms.openlocfilehash: dda3f7c8f4a9a21e16ebab7d243a004c01a40eed
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b0654992831dcda65c3d5f53cc22aef0afd4d277
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102453662"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106449746"
 ---
 # <a name="azure-active-directory-external-identities-whats-new"></a>Externe identiteiten Azure Active Directory: wat is er nieuw
 
 Welkom bij wat er nieuw is in Azure Active Directory documentatie voor externe identiteiten. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden. Zie [what's New in azure Active Directory](../fundamentals/whats-new.md)voor meer informatie over wat er nieuw is in de externe identiteits service.
+
+## <a name="march-2021"></a>2021 maart
+
+### <a name="new-articles"></a>Nieuwe artikelen
+
+- [Micro soft-account (MSA)-ID-provider voor externe identiteiten (preview-versie)](microsoft-account.md)
+
+### <a name="updated-articles"></a>Bijgewerkte artikelen
+
+- [Een API-connector toevoegen aan een gebruikers stroom](self-service-sign-up-add-api-connector.md)
+- [Wat is toegang van gastgebruikers in Azure Active Directory B2B?](what-is-b2b.md)
+- [Eigenschappen van een Azure Active Directory B2B-samenwerkings gebruiker](user-properties.md)
+- [Zelfstudie: Bulksgewijs gebruikers uitnodigen voor Azure AD B2B-samenwerking](tutorial-bulk-invite.md)
+- [Een aangepaste goedkeurings werk stroom toevoegen aan self-service registratie](self-service-sign-up-add-approvals.md)
+- [De status van de terugbetaling voor een gast gebruiker opnieuw instellen](reset-redemption-status.md)
+- [API-connectors gebruiken om de Self-Service-aanmelding aan te passen en uit te breiden](api-connectors-overview.md)
+- [Veelgestelde vragen over Azure Active Directory B2B-samen werking](faq.md)
+- [Uitnodigingsinwisseling voor Azure Active Directory B2B-samenwerking](redemption-experience.md)
+- [Id-providers voor externe identiteiten](identity-providers.md)
+- [Een self-service-aanmeldings stroom voor gebruikers toevoegen aan een app (preview)](self-service-sign-up-user-flow.md)
+- [Verificatie met eenmalige e-mail wachtwoord code](one-time-passcode.md)
+- [Azure Active Directory B2B-samenwerkings gebruikers toevoegen aan de Azure Portal](add-users-administrator.md)
+
 
 ## <a name="february-2021"></a>Februari 2021
 

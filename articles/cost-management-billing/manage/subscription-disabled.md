@@ -10,12 +10,12 @@ ms.subservice: billing
 ms.topic: how-to
 ms.date: 03/30/2021
 ms.author: banders
-ms.openlocfilehash: 1c40102f8815cf7299a99d290b7f57b386ede401
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: 37093900bf49e8a7613e2e3f4311548675791ceb
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106055124"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106220880"
 ---
 # <a name="reactivate-a-disabled-azure-subscription"></a>Een uitgeschakeld Azure-abonnement opnieuw activeren
 
@@ -23,7 +23,7 @@ Uw Azure-abonnementen kunnen worden gedeactiveerd omdat uw tegoed op is, uw best
 
 ## <a name="your-credit-is-expired"></a>Uw tegoed is verlopen
 
-Wanneer u zich aanmeldt voor een gratis Azure-account, krijgt u een gratis proef abonnement. Dit biedt u 200 USD Azure-tegoed in uw facturerings valuta gedurende 30 dagen en 12 maanden gratis services. Aan het einde van 30 dagen schakelt Azure uw abonnement uit. Uw abonnement wordt uitgeschakeld om te voorkomen dat er kosten in rekening worden gebracht voor gebruik buiten het tegoed en de gratis services die bij uw abonnement horen. Als u gebruik wilt blijven maken van Azure-services, moet u [uw abonnement upgraden](upgrade-azure-subscription.md). Na uw upgrade hebt u met uw abonnement nog steeds 12 maanden toegang tot gratis services. Er worden alleen kosten in rekening gebracht voor gebruik buiten de limieten voor gratis service hoeveelheden.
+Wanneer u zich aanmeldt voor een gratis Azure-account, krijgt u een gratis proef abonnement, waarmee u gedurende 30 dagen en 12 maanden gratis services 200 USD Azure-tegoed in uw facturerings valuta ontvangt. Aan het einde van 30 dagen schakelt Azure uw abonnement uit. Uw abonnement wordt uitgeschakeld om te voorkomen dat er kosten in rekening worden gebracht voor gebruik buiten het tegoed en de gratis services die bij uw abonnement horen. Als u gebruik wilt blijven maken van Azure-services, moet u [uw abonnement upgraden](upgrade-azure-subscription.md). Na uw upgrade hebt u met uw abonnement nog steeds 12 maanden toegang tot gratis services. Er worden alleen kosten in rekening gebracht voor gebruik buiten de limieten voor gratis service hoeveelheden.
 
 ## <a name="you-reached-your-spending-limit"></a>Uw bestedingslimiet is bereikt
 

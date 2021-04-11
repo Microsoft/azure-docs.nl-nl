@@ -12,12 +12,12 @@ ms.date: 03/17/2021
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 56ffa8c33c409e274318407a70f33edaabb5073d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 75d838e8ce785a4f59b056bf0dec736b982ea716
+ms.sourcegitcommit: c6a2d9a44a5a2c13abddab932d16c295a7207d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104578495"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107283810"
 ---
 # <a name="azure-ad-authentication-and-authorization-error-codes"></a>Verificatie- en autorisatiefoutcodes in Azure AD
 
@@ -123,7 +123,7 @@ Als u bijvoorbeeld de fout code ' AADSTS50058 ' hebt ontvangen, voert u een zoek
 | AADSTS50055 | InvalidPasswordExpiredPassword-het wacht woord is verlopen. |
 | AADSTS50056 | Ongeldig of leeg wacht woord: het wacht woord bestaat niet in het Archief voor deze gebruiker. |
 | AADSTS50057 | UserDisabled-het gebruikers account is uitgeschakeld. Het account is uitgeschakeld door een gebruiker met beheerdersrechten. |
-| AADSTS50058 | UserInformationNotProvided: Dit betekent dat een gebruiker niet is aangemeld. Dit is een veelvoorkomende fout die wordt verwacht wanneer een gebruiker niet is geverifieerd en nog niet is aangemeld.</br>Als deze fout wordt aangemoedigd in een SSO-context waarin de gebruiker zich eerder heeft aangemeld, betekent dit dat de SSO-sessie niet is gevonden of ongeldig is.</br>Deze fout kan worden geretourneerd naar de toepassing als prompt = none is opgegeven. |
+| AADSTS50058 | UserInformationNotProvided: Dit betekent dat een gebruiker niet is aangemeld. Dit is een veelvoorkomende fout die wordt verwacht wanneer een gebruiker niet is geverifieerd en nog niet is aangemeld.</br>Als deze fout is opgetreden in een SSO-context waarin de gebruiker zich eerder heeft aangemeld, betekent dit dat de SSO-sessie niet is gevonden of ongeldig is.</br>Deze fout kan worden geretourneerd naar de toepassing als prompt = none is opgegeven. |
 | AADSTS50059 | MissingTenantRealmAndNoUserInformationProvided: door Tenant geïdentificeerde gegevens zijn niet gevonden in de aanvraag of geïmpliceerd door de verstrekte referenties. De gebruiker kan contact opnemen met de Tenant beheerder om het probleem op te lossen. |
 | AADSTS50061 | SignoutInvalidRequest-de afmeldings aanvraag is ongeldig. |
 | AADSTS50064 | CredentialAuthenticationError: referentie validatie voor gebruikers naam of wacht woord is mislukt. |

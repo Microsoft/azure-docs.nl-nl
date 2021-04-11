@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 1/5/2021
 ms.author: v-jawe
-ms.openlocfilehash: 2c771509de5ac246bac0d8e006a5d0b884a410b0
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 412105e3262a3baf8780bd3bd1082508967ea486
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "101706806"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107012581"
 ---
 # <a name="how-to-mitigate-latency-when-using-the-face-service"></a>Procedure: latentie beperken bij het gebruik van de face-service
 
@@ -86,6 +86,7 @@ Als uw computer een trage verbinding heeft met de face-service, is dit van invlo
 Oplossingen
 - Wanneer u uw gezichts abonnement maakt, moet u ervoor zorgen dat u de regio kiest die het dichtst bij de host ligt waar uw toepassing wordt gehost.
 - Als u meerdere service methoden moet aanroepen, kunt u overwegen deze parallel aan te roepen als uw toepassings ontwerp dit toestaat. Zie de vorige sectie voor een voor beeld.
+- Als langere latenties van invloed zijn op de gebruikers ervaring, kiest u een drempel waarde voor time-out (bijvoorbeeld maximum 5s) voordat u de API-aanroep opnieuw probeert uit te voeren.
 
 ## <a name="next-steps"></a>Volgende stappen
 

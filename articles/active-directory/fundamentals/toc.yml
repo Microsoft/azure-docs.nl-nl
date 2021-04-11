@@ -25,6 +25,8 @@
   items:
     - name: Beveiliging
       items:
+        - name: Beveiligingsbasislijn
+          href: security-baseline.md
         - name: Microsoft 365 beveiligen tegen on-premisesaanvallen
           href: protect-m365-from-on-premises-attacks.md
         - name: Veilige externe samenwerking

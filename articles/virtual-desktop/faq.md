@@ -5,13 +5,13 @@ author: Heidilohr
 ms.topic: conceptual
 ms.date: 03/09/2021
 ms.author: helohr
-manager: lizross
-ms.openlocfilehash: ffea2d84f1a5149670976beef3b9af847ae31a35
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+manager: femila
+ms.openlocfilehash: 1f5e4cb0d2db30c6b07370be137506f3fe26837f
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104582133"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106505294"
 ---
 # <a name="windows-virtual-desktop-faq"></a>Veelgestelde vragen over Windows Virtual Desktop
 
@@ -139,7 +139,7 @@ Ten slotte, als u de resource provider van het CSP-eigenaars account hebt ingesc
 
 ## <a name="how-often-should-i-turn-my-vms-on-to-prevent-registration-issues"></a>Hoe vaak moet ik mijn Vm's inschakelen om registratie problemen te voor komen?
 
-Nadat u een virtuele machine hebt geregistreerd bij een hostgroep in de virtueel-bureaublad service van Windows, vernieuwt de agent regel matig het token van de virtuele machine wanneer de VM actief is. Het certificaat voor het registratie token is 90 dagen geldig. Als gevolg van deze limiet van 90 dagen raden we u aan om elke 90 dagen uw Vm's te starten. Als uw virtuele machine binnen deze tijds limiet wordt ingesteld, kan het registratie token verlopen of ongeldig worden. Als u de virtuele machine na 90 dagen hebt gestart en registratie problemen ondervindt, volgt u de instructies in de [Windows-hand leiding voor het oplossen van problemen met Virtual Desktop agent](troubleshoot-agent.md#your-issue-isnt-listed-here-or-wasnt-resolved) om de virtuele machine uit de hostgroep te verwijderen, installeert u de agent opnieuw en registreert u deze opnieuw in de groep.
+Nadat u een virtuele machine hebt geregistreerd bij een hostgroep in de virtueel-bureaublad service van Windows, vernieuwt de agent regel matig het token van de virtuele machine wanneer de VM actief is. Het certificaat voor het registratie token is 90 dagen geldig. Als gevolg van deze limiet van 90 dagen raden we aan dat Vm's gedurende 20 minuten elke 90 dagen online zijn, zodat de machine de tokens kan vernieuwen en de agent-en side-by-side stack onderdelen kan bijwerken. Als uw virtuele machine binnen deze tijds limiet wordt ingesteld, kan het registratie token verlopen of ongeldig worden. Als u de virtuele machine na 90 dagen hebt gestart en registratie problemen ondervindt, volgt u de instructies in de [Windows-hand leiding voor het oplossen van problemen met Virtual Desktop agent](troubleshoot-agent.md#your-issue-isnt-listed-here-or-wasnt-resolved) om de virtuele machine uit de hostgroep te verwijderen, installeert u de agent opnieuw en registreert u deze opnieuw in de groep.
 
 ## <a name="can-i-set-availability-options-when-creating-host-pools"></a>Kan ik beschikbaarheids opties instellen bij het maken van hostgroepen?
 

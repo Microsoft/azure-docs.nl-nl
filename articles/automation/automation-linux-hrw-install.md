@@ -3,14 +3,14 @@ title: Een Linux-Hybrid Runbook Worker implementeren in Azure Automation
 description: In dit artikel wordt uitgelegd hoe u een Azure Automation Hybrid Runbook Worker installeert voor het uitvoeren van runbooks op Linux-computers in uw lokale Data Center of cloud omgeving.
 services: automation
 ms.subservice: process-automation
-ms.date: 02/26/2021
+ms.date: 04/06/2021
 ms.topic: conceptual
-ms.openlocfilehash: d4d9bcd16e36e76808f19f7fbd43dd0d3e7550c3
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 21bb3a353874e401d86741584d102b5c217e69cc
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102182329"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107030046"
 ---
 # <a name="deploy-a-linux-hybrid-runbook-worker"></a>Een Linux-Hybrid Runbook Worker implementeren
 
@@ -93,9 +93,9 @@ Hybrid Runbook Workers van Linux ondersteunen een beperkt aantal typen Runbook i
 |Python 3 (preview-versie)|Ja, alleen vereist voor deze distributies: SUSE LES 15, RHEL 8 en CentOS 8|
 |Python 2 |Ja, voor distributie waarvoor python niet nodig is 3<sup>1</sup> |
 |PowerShell |Ja<sup>2</sup> |
-|PowerShell-werkstroom |Nee |
-|Grafisch |Nee |
-|Grafische power shell-werk stroom |Nee |
+|PowerShell-werkstroom |No |
+|Grafisch |No |
+|Grafische power shell-werk stroom |No |
 
 <sup>1</sup> Zie [ondersteunde Linux-besturings systemen](#supported-linux-operating-systems).
 
@@ -106,6 +106,31 @@ Hybrid Runbook Workers van Linux ondersteunen een beperkt aantal typen Runbook i
 Zie [uw netwerk configureren](automation-hybrid-runbook-worker.md#network-planning)voor de netwerk vereisten voor de Hybrid Runbook Worker.
 
 ## <a name="install-a-linux-hybrid-runbook-worker"></a>Een Linux-Hybrid Runbook Worker installeren
+
+Er zijn twee methoden voor het implementeren van een Hybrid Runbook Worker. U kunt een runbook importeren en uitvoeren vanuit de Runbook Gallery in de Azure Portal, of u kunt een reeks Power shell-opdrachten hand matig uitvoeren om dezelfde taak uit te voeren.
+
+### <a name="importing-a-runbook-from-the-runbook-gallery"></a>Een runbook importeren vanuit de Runbook Gallery
+
+De import procedure wordt gedetailleerd beschreven in [Runbooks importeren uit github met de Azure Portal](automation-runbook-gallery.md#import-runbooks-from-github-with-the-azure-portal). De naam van het runbook dat u wilt importeren, is **Automation Linux-HybridWorker maken**.
+
+In het runbook worden de volgende para meters gebruikt.
+
+| Parameter | Status | Beschrijving |
+| ------- | ----- | ----------- |
+| `Location` | Verplicht | De locatie voor de Log Analytics-werk ruimte. |
+| `ResourceGroupName` | Verplicht | De resource groep voor uw Automation-account. |
+| `AccountName` | Verplicht | De naam van het Automation-account waarin de Hybrid run worker wordt geregistreerd. |
+| `CreateLA` | Verplicht | Indien waar, wordt de waarde van gebruikt `WorkspaceName` om een log Analytics-werk ruimte te maken. Indien onwaar, de waarde van `WorkspaceName` moet verwijzen naar een bestaande werk ruimte. |
+| `LAlocation` | Optioneel | De locatie waar de Log Analytics-werk ruimte wordt gemaakt of waar deze al bestaat. |
+| `WorkspaceName` | Optioneel | De naam van de Log Analytics werk ruimte die moet worden gemaakt of gebruikt. |
+| `CreateVM` | Verplicht | Indien waar, gebruikt u de waarde van `VMName` als de naam van een nieuwe virtuele machine. Indien onwaar, gebruikt `VMName` u om een bestaande virtuele machine te zoeken en te registreren. |
+| `VMName` | Optioneel | De naam van de virtuele machine die is gemaakt of geregistreerd, afhankelijk van de waarde van `CreateVM` . |
+| `VMImage` | Optioneel | De naam van de VM-installatie kopie die moet worden gemaakt. |
+| `VMlocation` | Optioneel | Locatie van de virtuele machine die is gemaakt of geregistreerd. Als deze locatie niet is opgegeven, wordt de waarde van `LAlocation` gebruikt. |
+| `RegisterHW` | Verplicht | Indien waar, registreert u de virtuele machine als een Hybrid Worker. |
+| `WorkerGroupName` | Verplicht | De naam van de Hybrid Worker groep. |
+
+### <a name="manually-run-powershell-commands"></a>Power shell-opdrachten hand matig uitvoeren
 
 Als u een Linux-Hybrid Runbook Worker wilt installeren en configureren, voert u de volgende stappen uit.
 

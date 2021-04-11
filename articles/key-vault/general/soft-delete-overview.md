@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: ShaneBala-keyvault
 ms.author: sudbalas
 ms.date: 12/15/2020
-ms.openlocfilehash: 7aeca89ed09182b7947b10f24c65b0cb58ed67ea
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 6d691c4c510f5ff00c34d03b7b8d7a7bcaa53c3f
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102452132"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106554090"
 ---
 # <a name="azure-key-vault-soft-delete-overview"></a>Azure Key Vault: overzicht van voorlopig verwijderen
 
@@ -20,7 +20,7 @@ ms.locfileid: "102452132"
 > U moet voorlopig verwijderen direct inschakelen voor uw sleutel kluizen. De mogelijkheid om te voor komen dat de Soft-software wordt verwijderd, zal binnenkort worden afgeschaft. Bekijk [hier](soft-delete-change.md) de volledige Details
 
 > [!IMPORTANT]
-> Tijdelijke verwijderde kluis triggers verwijderen instellingen voor geïntegreerd met Key Vault Services, dat wil zeggen Azure RBAC-rollen toewijzingen, Event Grid-abonnementen, Azure Monitor Diagnostische instellingen. Nadat het herstel van zacht verwijderde Key Vault instellingen voor geïntegreerde services hand matig opnieuw moet worden gemaakt. 
+> Met Soft verwijderde kluis triggers kunt u instellingen voor geïntegreerd met Key Vault Services, d.w.z. Azure RBAC-rollen toewijzingen, Event Grid-abonnementen verwijderen. Nadat het herstel van zacht verwijderde Key Vault instellingen voor geïntegreerde services hand matig opnieuw moet worden gemaakt. 
 
 Met de functie voor het tijdelijk verwijderen van Key Vault kunt u de verwijderde kluizen en verwijderde sleutel kluis objecten (bijvoorbeeld sleutels, geheimen, certificaten), ook wel zacht verwijderen genoemd. We behandelen de volgende scenario's: deze beveiliging biedt de volgende beveiligings problemen:
 

@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 04/28/2020
-ms.openlocfilehash: 9656e6ab608665e325ac5f772e06df9ac296c521
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 90b2a39b9a5f3b4d011ff1a1ef3651dff75a1cf6
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92485372"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105968302"
 ---
 # <a name="backup-and-restore-in-azure-database-for-postgresql---hyperscale-citus"></a>Back-ups maken en herstellen in Azure Database for PostgreSQL-grootschalige (Citus)
 
@@ -58,7 +58,7 @@ Firewall instellingen en PostgreSQL-server parameters blijven niet behouden van 
 Na een herstel na een van beide herstel mechanismen moet u het volgende doen om uw gebruikers en toepassingen back-ups te maken en uit te voeren:
 
 * Als de nieuwe server de oorspronkelijke server moet vervangen, kunt u clients en client toepassingen omleiden naar de nieuwe server
-* Zorg ervoor dat de juiste firewall-en VNet-regels op server niveau aanwezig zijn voor gebruikers om verbinding te maken. Deze regels worden niet gekopieerd van de oorspronkelijke server groep.
+* Zorg ervoor dat de juiste firewall op server niveau is ingesteld voor gebruikers om verbinding te maken. Deze regels worden niet gekopieerd van de oorspronkelijke server groep.
 * Pas de para meters van de PostgreSQL-server zo nodig aan. De para meters worden niet gekopieerd van de oorspronkelijke server groep.
 * Zorg ervoor dat de juiste aanmeldingen en machtigingen op database niveau aanwezig zijn
 * Waarschuwingen configureren, indien van toepassing

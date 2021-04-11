@@ -181,6 +181,8 @@
           href: active-directory-data-storage-eu.md
         - name: Opslag van identiteitsgegevens voor Australië en Nieuw-Zeeland
           href: active-directory-data-storage-australia-newzealand.md
+    - name: Frontline worker-beheer
+      href: frontline-worker-management.md
     - name: Naslaginformatie over Azure AD-bewerkingen
       items:
         - name: Inleiding

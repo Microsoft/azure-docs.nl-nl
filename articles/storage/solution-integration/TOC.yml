@@ -23,6 +23,8 @@
   items:
     - name: Overzicht van gevalideerde partners
       href: .\validated-partners\data-management\partner-overview.md
+    - name: Vergelijking van migratie hulpprogramma's
+      href: ./validated-partners/data-management/migration-tools-comparison.md
   expanded: false
 - name: Primaire en secundaire opslag partners
   items:

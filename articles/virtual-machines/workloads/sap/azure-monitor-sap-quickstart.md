@@ -6,12 +6,12 @@ ms.author: sakhare
 ms.topic: how-to
 ms.service: virtual-machines-sap
 ms.date: 08/17/2020
-ms.openlocfilehash: d9febb4efba85d47abe1cc11a3cb52dc0393c036
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 02c0801aa0425db96a1e6f71f248c795e81b5ddf
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101671999"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106554056"
 ---
 # <a name="deploy-azure-monitor-for-sap-solutions-with-azure-portal"></a>Azure Monitor implementeren voor SAP-oplossingen met Azure Portal
 
@@ -81,12 +81,23 @@ Meld u aan bij Azure Portal op https://portal.azure.com
 
 1. Selecteer OS (Linux) in de vervolg keuzelijst 
 
-> [!IMPORTANT]
-> Als u de provider van het besturings systeem (Linux) wilt configureren, moet u ervoor zorgen dat Node_Exporter is geïnstalleerd in elk BareMetal-exemplaar. Zie [Node_Exporter](https://github.com/prometheus/node_exporter) voor meer informatie.
+>[!IMPORTANT]
+> Als u de provider van het besturings systeem (Linux) wilt configureren, moet u ervoor zorgen dat de meest recente versie van Node_Exporter is geïnstalleerd op elke host (BareMetal of virtuele machine) die u wilt bewaken. Gebruik deze [link] ( https://prometheus.io/download/#node_exporter) om de meest recente versie te vinden. Zie [Node_Exporter](https://github.com/prometheus/node_exporter) voor meer informatie.
 
 2. Voer een naam in die de id voor het BareMetal-exemplaar is.
 3. Voer het eind punt van het knoop punt in de vorm van in http://IP:9100/metrics .
-4. Wanneer u klaar bent, selecteert u **provider toevoegen**. Ga verder met het toevoegen van meer providers of selecteer **controleren + maken**   om de implementatie te volt ooien. 
+
+>[!IMPORTANT]
+> Gebruik een privé-IP-adres van de Linux-host. Zorg ervoor dat de host-en AMS-bron zich in hetzelfde VNET bevinden. 
+
+>[!Note]
+> Firewall poort "9100" moet worden geopend op de Linux-host.
+>Als u Firewall-cmd: Firewall-cmd--permanent--add-Port = 9100/TCP firewall-cmd--opnieuw laadt als u ufw: ufw toestaan 9100/TCP ufw opnieuw laden
+
+>[!Tip]
+> Als Linux-host een virtuele machine van Azure is, moet u ervoor zorgen dat alle toepasselijke Nsg's binnenkomend verkeer op poort 9100 van VirtualNetwork als bron toestaan.
+ 
+5. Wanneer u klaar bent, selecteert u **provider toevoegen**. Ga verder met het toevoegen van meer providers of selecteer **controleren + maken**   om de implementatie te volt ooien. 
 
 
 ### <a name="microsoft-sql-server-provider"></a>Microsoft SQL Server provider

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/28/2021
 ms.author: bwren
-ms.openlocfilehash: 64b794f4a749816af71f9c5f14dddf2bbcbc6512
-ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
+ms.openlocfilehash: 975a3ea250307e445e9bf48abdc669f2b035038a
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106279609"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106554039"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Gebruik en kosten beheren met Azure Monitor-logboeken    
 
@@ -494,7 +494,7 @@ Hieronder vindt u enkele suggesties voor het verkleinen van het aantal logboeken
 | Syslog                     | Wijzig de [syslog-configuratie](../agents/data-sources-syslog.md) in: <br> - Aantal verzamelde installaties beperken <br> - Alleen vereiste gebeurtenisniveaus verzamelen. Bijvoorbeeld, gebeurtenissen op *informatie*- en *foutopsporings* niveau niet verzamelen |
 | AzureDiagnostics           | Wijzig de [resource logboek verzameling](../essentials/diagnostic-settings.md#create-in-azure-portal) in: <br> - Het aantal resources dat logboeken naar Log Analytics verzendt te verkleinen <br> - Alleen vereiste logboeken te verzamelen |
 | Oplossingsgegevens van computers die de oplossing niet nodig hebben | Gebruik een [oplossing als doel](../insights/solution-targeting.md) voor het verzamelen van gegevens van alleen vereiste groepen computers. |
-| Application Insights | Beoordelings opties voor [https://docs.microsoft.com/azure/azure-monitor/app/pricing#managing-your-data-volume](managing Application Insights data volume) |
+| Application Insights | Beoordelings opties voor het [beheren van Application Insights gegevens volume](../app/pricing.md#managing-your-data-volume) |
 | [SQL-analyse](../insights/azure-sql.md) | Gebruik [set-AzSqlServerAudit](/powershell/module/az.sql/set-azsqlserveraudit) om de controle-instellingen af te stemmen. |
 | Azure Sentinel | Bekijk alle [Sentinel-gegevens bronnen](../../sentinel/connect-data-sources.md) die u onlangs hebt ingeschakeld als bronnen van extra gegevens volume. |
 

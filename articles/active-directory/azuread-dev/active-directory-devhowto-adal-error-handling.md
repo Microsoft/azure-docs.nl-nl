@@ -12,12 +12,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 02/27/2017
 ROBOTS: NOINDEX
-ms.openlocfilehash: ad5595f7eebc8feca2f00a6f95e10c547ded9529
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: da47893839322f06cebfbee40902414040bb87d8
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "85383731"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106075199"
 ---
 # <a name="error-handling-best-practices-for-azure-active-directory-authentication-library-adal-clients"></a>Aanbevolen procedures voor het afhandelen van de Azure Active Directory Authentication Library (ADAL)-clients
 
@@ -197,7 +197,7 @@ Als er een fout optreedt, kan de gebruikers interface door een toepassing worden
 
 Fout afhandeling in systeem eigen toepassingen kan in twee gevallen worden gedefinieerd:
 
-|  |  |
+| Case | Description  |
 |------|-------------|
 | Voor **Beeld 1**:<br>Niet-herstel bare fout (de meeste gevallen) | 1. Probeer niet direct opnieuw te proberen. Presenteer de gebruikers interface van de eind gebruiker op basis van de specifieke fout die een nieuwe poging aanroept (bijvoorbeeld ' Probeer u opnieuw aan te melden ' of ' Azure AD Broker-toepassing downloaden '). |
 | Voor **Beeld 2**:<br>Herstel bare fout | 1. Voer een enkele nieuwe poging uit als de eind gebruiker een status heeft ingevoerd die het resultaat van een geslaagde bewerking is.<br><br>2. als de nieuwe poging mislukt, presenteert u de gebruikers interface van de eind gebruiker op basis van de specifieke fout die een nieuwe poging aanroept (' Probeer u opnieuw aan te melden ', ' Azure AD Broker-app downloaden ', etc.). |
@@ -371,7 +371,7 @@ Als u een toepassing met één pagina bouwt met behulp van adal.js met AcquireTo
 
 Een mislukte AcquireToken heeft de volgende gevallen:
 
-|  |  |
+| Case | Description  |
 |------|-------------|
 | Voor **Beeld 1**:<br>Kan worden omgezet met een interactieve aanvraag | 1. als het aanmelden () mislukt, moet u niet onmiddellijk een nieuwe poging uitvoeren. Alleen opnieuw proberen na een gebruikers actie vraagt een nieuwe poging.|
 | Voor **Beeld 2**:<br>Kan niet worden omgezet met een interactieve aanvraag. Fout is een nieuwe poging. | 1. Voer een enkele nieuwe poging uit als de primaire gebruiker een status heeft die een geslaagd resultaat heeft.<br><br>2. als het opnieuw proberen mislukt, presenteert u de eind gebruiker een actie op basis van de specifieke fout die een nieuwe poging kan doen ("Meld u opnieuw aan"). |

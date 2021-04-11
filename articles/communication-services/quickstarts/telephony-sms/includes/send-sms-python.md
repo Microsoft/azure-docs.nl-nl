@@ -11,10 +11,10 @@ ms.topic: include
 ms.custom: include file
 ms.author: lakshmans
 ms.openlocfilehash: aba9b71ec2fbfedecf08577c7bd2eae7a28a5588
-ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/28/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105644373"
 ---
 Ga aan de slag met Azure Communication Services met behulp van de SMS-SDK voor SMS Services voor het verzenden van berichten.

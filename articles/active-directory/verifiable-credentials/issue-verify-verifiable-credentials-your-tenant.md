@@ -1,5 +1,5 @@
 ---
-title: 'Zelf studie: een probleem en controleer verifieer bare referenties met behulp van uw Tenant (preview-versie)'
+title: 'Zelf studie: een probleem en controleer geverifieerde referenties met behulp van uw Azure-Tenant (preview-versie)'
 description: Het voor beeld van een verifieer bare referentie code wijzigen om samen te werken met uw Azure-Tenant
 documentationCenter: ''
 author: barclayn
@@ -10,14 +10,14 @@ ms.subservice: verifiable-credentials
 ms.date: 04/01/2021
 ms.author: barclayn
 ms.reviewer: ''
-ms.openlocfilehash: 95d3ab19565ed04d9bf7d59ba7262d40b4971d34
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: e4772b6701065a44416d849faa9a501bd7895f27
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106169996"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106553376"
 ---
-# <a name="tutorial-issue-and-verify-verifiable-credentials-using-your-tenant-preview"></a>Zelf studie: controleren op geverifieerde referenties met behulp van uw Tenant (preview-versie)
+# <a name="tutorial---issue-and-verify-verifiable-credentials-using-your-tenant-preview"></a>Zelf studie: een probleem en controleer verifieer bare referenties met behulp van uw Tenant (preview-versie)
 
 > [!IMPORTANT]
 > Azure Active Directory Controleer bare referenties bevindt zich momenteel in de publieke preview.
@@ -66,7 +66,7 @@ Registreer een toepassing met de naam ' VC Wallet app ' in azure AD en haal een 
 
    ![eind punten van de verlener](media/issue-verify-verifable-credentials-your-tenant/application-endpoints.png)
 
-## <a name="set-up-your-node-app-with-access-to-key-vault"></a>De node-app instellen met toegang tot Key Vault
+## <a name="set-up-your-node-app-with-access-to-azure-key-vault"></a>De node-app instellen met toegang tot Azure Key Vault
 
 Voor de verificatie van de aanvraag voor de uitgifte van referenties van een gebruiker worden uw cryptografische sleutels gebruikt in Azure Key Vault. Voor toegang tot Azure Key Vault heeft uw website een client-ID en client geheim nodig dat kan worden gebruikt voor verificatie bij Azure Key Vault.
 
@@ -183,7 +183,7 @@ Er zijn enkele andere waarden die we nodig hebben om de wijzigingen in de voor b
 
    ![aanmeldings sleutel-id](media/issue-verify-verifable-credentials-your-tenant/issuer-signing-key-ion.png)
 
-### <a name="did-document"></a>Document 
+### <a name="did-document"></a>Document
 
 1. Open de [DIF-Ion-netwerk Verkenner](https://identity.foundation/ion/explorer/)
 
@@ -308,7 +308,7 @@ Nu we de verifieer bare referentie van onze eigen Tenant met claims van uw Azure
     
    ![nieuwe machtigings aanvraag](media/enable-your-tenant-verifiable-credentials/new-permission-request.png)
 
-8. U hebt uw referentie niet geverifieerd en de website moet uw voor-en achternaam van uw Azure AD-gebruikers account weer geven. 
+8. U hebt nu de referentie geverifieerd en de website moet uw voor-en achternaam van uw Azure AD-gebruikers account weer geven. 
 
 U kunt de zelf studie nu volt ooien en officieel een geverifieerde referentie expert zijn. Uw voor beeld-app gebruikt uw voor het verlenen en verifiëren van de voor beelden, terwijl u claims schrijft naar een verifieer bare referentie van uw Azure AD. 
 

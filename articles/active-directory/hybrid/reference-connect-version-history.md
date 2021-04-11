@@ -12,12 +12,12 @@ ms.date: 03/16/2021
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7269a2435715834a2c1e6723de3fdc6e72eaad5f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c26c56940e95fe32b709aa01fbaa9e567e797197
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104955445"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106074536"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect: release geschiedenis van versie
 Het Azure Active Directory (Azure AD)-team werkt Azure AD Connect regel matig bij met nieuwe functies en functionaliteit. Niet alle toevoegingen zijn van toepassing op alle doel groepen.
@@ -57,8 +57,18 @@ Volg deze link voor meer informatie over [automatische upgrade](how-to-connect-i
 >
 >Zie [Azure AD Connect versie geschiedenis archief](reference-connect-version-history-archive.md) voor informatie over de versie geschiedenis van de buiten gebruik gestelde versies
 
+## <a name="1640"></a>1.6.4.0
+
+### <a name="release-status"></a>Status van de release
+3/31/2021: alleen uitgegeven voor downloaden, niet beschikbaar voor automatische upgrade
+
+### <a name="bug-fixes"></a>Opgeloste fouten
+- Met deze versie wordt een fout in versie 1.6.2.4 opgelost waarbij de functie Azure AD Connect Health na een upgrade naar die release niet juist is geregistreerd en niet werkt. Klanten die build 1.6.2.4 hebben geïmplementeerd, worden gevraagd hun Azure AD Connect server bij te werken met deze build, waardoor de status functie correct wordt geregistreerd. 
 
 ## <a name="1624"></a>1.6.2.4
+>[!IMPORTANT]
+> Update per 30 maart 2021: er is een probleem in deze build gedetecteerd. Na de installatie van deze build zijn de Health-Services niet geregistreerd. Het is raadzaam deze build niet te installeren. Er wordt binnenkort een hotfix uitgebracht.
+> Als u deze build al hebt geïnstalleerd, kunt u de Health-Services hand matig registreren door de cmdlet te gebruiken, zoals wordt weer gegeven in [dit artikel](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-agent-install#manually-register-azure-ad-connect-health-for-sync)
 
 >[!NOTE]
 > - Deze versie wordt alleen beschikbaar gesteld voor downloaden.
@@ -66,7 +76,7 @@ Volg deze link voor meer informatie over [automatische upgrade](how-to-connect-i
 > - Deze versie wordt standaard ingesteld op de AADConnect-server voor het nieuwe v2-eind punt. Houd er rekening mee dat dit eind punt niet wordt ondersteund in de Duitse nationale Cloud, de Chinese nationale Cloud en de Amerikaanse overheids Cloud. Als u deze versie in deze Clouds moet implementeren, moet u [deze instructies](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sync-endpoint-api-v2#rollback) volgen om terug te gaan naar het v1-eind punt. Als u dit niet doet, zijn er fouten opgetreden in de synchronisatie.
 
 ### <a name="release-status"></a>Status van de release
-3/19/2021: uitgebracht voor downloaden
+3/19/2021: uitgebracht voor downloaden, niet beschikbaar voor automatische upgrade
 
 ### <a name="functional-changes"></a>Functionele wijzigingen
 

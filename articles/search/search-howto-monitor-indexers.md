@@ -8,14 +8,14 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/28/2021
-ms.openlocfilehash: a94720e6b84821d53a3bfdcbdce249390078940f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ed79831559802efdf7e3813f48b74c2fd3c63e87
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99063240"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106581868"
 ---
-# <a name="how-to-monitor-azure-cognitive-search-indexer-status-and-results"></a>Azure Cognitive Search Indexeer functie-status en-resultaten controleren
+# <a name="monitor-indexer-status-and-results-in-azure-cognitive-search"></a>De status en resultaten van de Indexeer functie bewaken in azure Cognitive Search
 
 U kunt de verwerking van indexeren in het Azure Portal bewaken, of programmatisch via REST-aanroepen of een Azure-SDK. Naast de status van de Indexeer functie zelf, kunt u de begin-en eind tijden en gedetailleerde fouten en waarschuwingen van een bepaalde uitvoering bekijken.
 

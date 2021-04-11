@@ -7,18 +7,18 @@ ms.author: baanders
 ms.date: 7/22/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 31f960b39e771e7bfbf67c6e52c5da8e1fc6e0ec
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 8a8cc6563d8e3cae942c4dfb43afa3d05f6f2b75
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105932451"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107257297"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-portal"></a>Eind punten en routes beheren in azure Digital Apparaatdubbels (Portal)
 
 [!INCLUDE [digital-twins-route-selector.md](../../includes/digital-twins-route-selector.md)]
 
-In azure Digital Apparaatdubbels kunt u [gebeurtenis meldingen](how-to-interpret-event-data.md) naar downstream-Services of verbonden reken bronnen sturen. Dit doet u door eerst **eindpunten** in te stellen die de gebeurtenissen kunnen ontvangen. U kunt vervolgens [**gebeurtenis routes**](concepts-route-events.md) maken om op te geven welke gebeurtenissen worden gegenereerd door Azure Digital apparaatdubbels naar welke eind punten worden verzonden.
+In azure Digital Apparaatdubbels kunt u [gebeurtenis meldingen](concepts-event-notifications.md) naar downstream-Services of verbonden reken bronnen sturen. Dit doet u door eerst **eindpunten** in te stellen die de gebeurtenissen kunnen ontvangen. U kunt vervolgens [**gebeurtenis routes**](concepts-route-events.md) maken om op te geven welke gebeurtenissen worden gegenereerd door Azure Digital apparaatdubbels naar welke eind punten worden verzonden.
 
 Dit artikel begeleidt u bij het maken van eind punten en routes met behulp van de [Azure Portal](https://portal.azure.com).
 
@@ -202,4 +202,4 @@ Dit zijn de ondersteunde route filters. Het detail in de kolom *filter tekst sch
 ## <a name="next-steps"></a>Volgende stappen
 
 Meer informatie over de verschillende typen gebeurtenis berichten die u kunt ontvangen:
-* [*Instructies: gebeurtenis gegevens interpreteren*](how-to-interpret-event-data.md)
+* [*Concepten: gebeurtenis meldingen*](concepts-event-notifications.md)

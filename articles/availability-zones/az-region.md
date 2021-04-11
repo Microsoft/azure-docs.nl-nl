@@ -4,16 +4,16 @@ description: Als u Maxi maal beschik bare en flexibele toepassingen in azure wil
 author: prsandhu
 ms.service: azure
 ms.topic: conceptual
-ms.date: 03/30/2021
+ms.date: 04/06/2021
 ms.author: prsandhu
 ms.reviewer: cynthn
 ms.custom: fasttrack-edit, mvc, references_regions
-ms.openlocfilehash: a81f3a3c51ffd0e1e0937c077a07fcbde16f0513
-ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
+ms.openlocfilehash: 782e632f8707b4cafb6d33438f6c8da7e8b08c30
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105961299"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106491387"
 ---
 # <a name="azure-services-that-support-availability-zones"></a>Azure-services die beschikbaarheidszones ondersteunen
 
@@ -45,16 +45,16 @@ Als u een uitgebreide bedrijfs continuïteit wilt bereiken op Azure, bouwt u uw 
 
 
 ## <a name="azure-regions-with-availability-zones"></a>Azure-regio's met Beschikbaarheidszones
-
+ 
 
 | Noord- en Zuid-Amerika           | Europa               | Afrika              | Azië en Stille Oceaan   |
 |--------------------|----------------------|---------------------|----------------|
 |                    |                      |                     |                |
 | Brazilië - zuid       | Frankrijk - centraal       | Zuid-Afrika-noord * | Australië - oost |
-| Canada - midden     | Duitsland - west-centraal |                     | Japan - oost     |
-| VS - centraal         | Europa - noord         |                     | Korea-centraal * |
-| VS - oost            | Verenigd Koninkrijk Zuid             |                     | Azië - zuidoost |
-| VS - oost 2          | Europa -west          |                     |                |
+| Canada - midden     | Duitsland - west-centraal |                     | Centraal-India * |
+| VS - centraal         | Europa - noord         |                     | Japan - oost     |
+| VS - oost            | Verenigd Koninkrijk Zuid             |                     | Korea-centraal * |
+| VS - oost 2          | Europa -west          |                     | Azië - zuidoost |
 | VS Zuid-Centraal |                      |                     |                |
 | VS (overheid) - Virginia    |                      |                     |                |
 | VS-West 2        |                      |                     |                |
@@ -115,89 +115,100 @@ Als u een uitgebreide bedrijfs continuïteit wilt bereiken op Azure, bouwt u uw 
 
 **Mainstream Services**
 
-| Producten                                        | Flexibiliteit |
-|-------------------------------------------------|:------------:|
-| App Service-omgevingen                        |      : large_blue_diamond:  |
-| Azure Active Directory Domain Services          |      : large_blue_diamond:  |
-| Azure Bastion                                   |      : large_blue_diamond:  |
-| Azure Cache voor Redis                           |      : large_blue_diamond:  |
-| Azure Cognitive Services: Text Analytics        |      : large_blue_diamond:  |
-| Azure Data Explorer                             |      : large_blue_diamond:  |
-| Azure Database for MySQL: flexibele server      |      : large_blue_diamond:  |
-| Azure Database for PostgreSQL: flexibele server |      : large_blue_diamond:  |
-| Azure DDoS Protection                           |      : large_blue_diamond:  |
-| Azure Disk Encryption                           |      : large_blue_diamond:  |
-| Azure Firewall                                  |      : large_blue_diamond:  |
-| Azure Firewall Manager                          |      : large_blue_diamond:  |
-| Azure Kubernetes Service (AKS)                  |      : large_blue_diamond:  |
-| Azure Private Link                              |      : large_blue_diamond:  |
-| Azure Red Hat OpenShift                         |      : large_blue_diamond:  |
-| Azure Site Recovery                             |      : large_blue_diamond:  |
-| Azure SQL: virtuele machine                      |      : large_blue_diamond:  |
-| Azure Search                                    |      : large_blue_diamond:  |
-| Azure Web Application Firewall                  |      : large_blue_diamond:  |
-| Container Registry                              |      : large_blue_diamond:  |
-| Event Grid                                      |      : large_blue_diamond:  |
-| Network Watcher                                 |      : large_blue_diamond:  |
-| Network Watcher: Traffic Analytics              |      : large_blue_diamond:  |
-| Power BI Embedded                               |      : large_blue_diamond:  |
-| Premium-Blob Storage                            |      : large_blue_diamond:  |
-| Opslag: Azure Premium-bestanden                    |      : large_blue_diamond:  |
-| Virtual Machines: toegewezen Azure-host          |      : large_blue_diamond:  |
-| Virtual Machines: Ddsv4-Series                  |      : large_blue_diamond:  |
-| Virtual Machines: Ddv4-Series                   |      : large_blue_diamond:  |
-| Virtual Machines: Dsv4-Series                   |      : large_blue_diamond:  |
-| Virtual Machines: Dv4-Series                    |      : large_blue_diamond:  |
-| Virtual Machines: Edsv4-Series                  |      : large_blue_diamond:  |
-| Virtual Machines: Edv4-Series                   |      : large_blue_diamond:  |
-| Virtual Machines: Esv4-Series                   |      : large_blue_diamond:  |
-| Virtual Machines: Ev4-Series                    |      : large_blue_diamond:  |
-| Virtual Machines: Fsv2-Series                   |      : large_blue_diamond:  |
-| Virtual Machines: M-serie                      |      : large_blue_diamond:  |
-| Virtuele WAN                                     |      : large_blue_diamond:  |
-| Virtueel WAN: ExpressRoute                       |      : large_blue_diamond:  |
-| Virtueel WAN: punt-naar-site-VPN Gateway          |      : large_blue_diamond:  |
-| Virtueel WAN: VPN Gateway site-naar-site           |      : large_blue_diamond:  |
+
+|     Producten                                                    | Flexibiliteit             |
+|-----------------------------------------------------------------|:----------------------------:|
+|     App Service-omgevingen                                    | : large_blue_diamond:  |
+|     Azure Active Directory Domain Services                      | : large_blue_diamond:  |
+|     Azure Bastion                                               | : large_blue_diamond:  |
+|     Azure Cache voor Redis                                       | : large_blue_diamond:  |
+|     Azure Cognitive Search                                      | : large_blue_diamond:  |
+|     Azure Cognitive Services: Text Analytics                    | : large_blue_diamond:  |
+|     Azure Data Explorer                                         | : large_blue_diamond:  |
+|     Azure Database for MySQL: flexibele server                  | : large_blue_diamond:  |
+|     Azure Database for PostgreSQL: flexibele server             | : large_blue_diamond:  |
+|     Azure DDoS Protection                                       | : large_blue_diamond:  |
+|     Azure Disk Encryption                                       | : large_blue_diamond:  |
+|     Azure Firewall                                              | : large_blue_diamond:  |
+|     Azure Firewall Manager                                      | : large_blue_diamond:  |
+|     Azure Kubernetes Service (AKS)                              | : large_blue_diamond:  |
+|     Azure Private Link                                          | : large_blue_diamond:  |
+|     Azure Site Recovery                                         | : large_blue_diamond:  |
+|     Azure SQL: virtuele machine                                  | : large_blue_diamond:  |
+|     Azure Web Application Firewall                              | : large_blue_diamond:  |
+|     Container Registry                                          | : large_blue_diamond:  |
+|     Event Grid                                                  | : large_blue_diamond:  |
+|     Network Watcher                                             | : large_blue_diamond:  |
+|     Network Watcher: Traffic Analytics                          | : large_blue_diamond:  |
+|     Power BI Embedded                                           | : large_blue_diamond:  |
+|     Premium-Blob Storage                                        | : large_blue_diamond:  |
+|     Opslag: Azure Premium-bestanden                                | : large_blue_diamond:  |
+|     Virtual Machines: toegewezen Azure-host                      | : large_blue_diamond:  |
+|     Virtual Machines: Ddsv4-Series                              | : large_blue_diamond:  |
+|     Virtual Machines: Ddv4-Series                               | : large_blue_diamond:  |
+|     Virtual Machines: Dsv4-Series                               | : large_blue_diamond:  |
+|     Virtual Machines: Dv4-Series                                | : large_blue_diamond:  |
+|     Virtual Machines: Edsv4-Series                              | : large_blue_diamond:  |
+|     Virtual Machines: Edv4-Series                               | : large_blue_diamond:  |
+|     Virtual Machines: Esv4-Series                               | : large_blue_diamond:  |
+|     Virtual Machines: Ev4-Series                                | : large_blue_diamond:  |
+|     Virtual Machines: Fsv2-Series                               | : large_blue_diamond:  |
+|     Virtual Machines: M-serie                                  | : large_blue_diamond:  |
+|     Virtuele WAN                                                 | : large_blue_diamond:  |
+|     Virtueel WAN: ExpressRoute                                   | : large_blue_diamond:  |
+|     Virtueel WAN: punt-naar-site-VPN Gateway                      | : large_blue_diamond:  |
+|     Virtueel WAN: VPN Gateway site-naar-site                       | : large_blue_diamond:  |
+
+
+**Gespecialiseerde services**
+
+|     Producten                                                    | Flexibiliteit             |
+|-----------------------------------------------------------------|:----------------------------:|
+|     Azure Red Hat OpenShift                                     | : large_blue_diamond:  |
+|     Cognitive Services: anomalie detectie                        | : large_blue_diamond:  |
+|     Cognitive Services: formulier herkenning                         | : large_blue_diamond:  |
+|     Opslag: Ultra Disk                                         | : large_blue_diamond:  |
 
 
 **Niet-regionale**
 
-|     Producten                                  |     Flexibiliteit    |
-|-----------------------------------------------|:-------------------:|
-|     Azure DNS                                 |     : globe_with_meridians:             |
-|     Azure Active Directory                  |     : globe_with_meridians:             |
-|     Azure Advanced Threat Protection          |     : globe_with_meridians:             |
-|     Azure Advisor                             |     : globe_with_meridians:             |
-|     Azure Blueprints                          |     : globe_with_meridians:             |
-|     Azure Bot Service                        |     : globe_with_meridians:             |
-|     Azure Front Door                          |     : globe_with_meridians:             |
-|     Azure Defender voor IoT                  |     : globe_with_meridians:             |
-|     Azure Front Door                           |     : globe_with_meridians:             |
-|     Azure Information Protection            |     : globe_with_meridians:             |
-|     Azure-Lighthouse                        |     : globe_with_meridians:             |
-|     Azure Managed Applications              |     : globe_with_meridians:             |
-|     Azure Maps                                |     : globe_with_meridians:             |
-|     Azure Policy                              |     : globe_with_meridians:             |
-|     Azure-resource grafiek                    |     : globe_with_meridians:             |
-|     Azure Sentinel                            |     : globe_with_meridians:             |
-|     Azure Stack                               |     : globe_with_meridians:             |
-|     Azure Stack rand                        |     : globe_with_meridians:             |
-|     Cloud Shell                               |     : globe_with_meridians:             |
-|     Content Delivery Network                  |     : globe_with_meridians:             |
-|     Cost Management                           |     : globe_with_meridians:             |
-|     Klanten-lockbox voor Microsoft Azure    |     : globe_with_meridians:             |
-|     Intune                                    |     : globe_with_meridians:             |
-|     Microsoft Azure peering-service         |     : globe_with_meridians:             |
-|     Microsoft Azure-portal                  |     : globe_with_meridians:             |
-|     Microsoft Cloud App Security              |     : globe_with_meridians:             |
-|     Microsoft Graph                           |     : globe_with_meridians:             |
-|     Security Center                         |     : globe_with_meridians:             |
-|     Traffic Manager                         |     : globe_with_meridians:             |
+|     Producten                                                    | Flexibiliteit             |
+|-----------------------------------------------------------------|:----------------------------:|
+|     Azure DNS                                                   | : globe_with_meridians: |
+|     Azure Active Directory                                    | : globe_with_meridians: |
+|     Azure Advanced Threat Protection                            | : globe_with_meridians: |
+|     Azure Advisor                                               | : globe_with_meridians: |
+|     Azure Blueprints                                            | : globe_with_meridians: |
+|     Azure Bot Service                                          | : globe_with_meridians: |
+|     Azure Front Door                                            | : globe_with_meridians: |
+|     Azure Defender voor IoT                                    | : globe_with_meridians: |
+|     Azure Front Door                                            | : globe_with_meridians: |
+|     Azure Information Protection                              | : globe_with_meridians: |
+|     Azure-Lighthouse                                          | : globe_with_meridians: |
+|     Azure Managed Applications                                | : globe_with_meridians: |
+|     Azure Maps                                                  | : globe_with_meridians: |
+|     Diagnostische gegevens over Azure-prestaties                               | : globe_with_meridians: |
+|     Azure Policy                                                | : globe_with_meridians: |
+|     Azure-resource grafiek                                      | : globe_with_meridians: |
+|     Azure Sentinel                                              | : globe_with_meridians: |
+|     Azure Stack                                                 | : globe_with_meridians: |
+|     Azure Stack rand                                          | : globe_with_meridians: |
+|     Cloud Shell                                                 | : globe_with_meridians: |
+|     Content Delivery Network                                    | : globe_with_meridians: |
+|     Cost Management                                             | : globe_with_meridians: |
+|     Klanten-lockbox voor Microsoft Azure                      | : globe_with_meridians: |
+|     Intune                                                      | : globe_with_meridians: |
+|     Microsoft Azure peering-service                           | : globe_with_meridians: |
+|     Microsoft Azure-portal                                    | : globe_with_meridians: |
+|     Microsoft Cloud App Security                                | : globe_with_meridians: |
+|     Microsoft Graph                                             | : globe_with_meridians: |
+|     Security Center                                           | : globe_with_meridians: |
+|     Traffic Manager                                           | : globe_with_meridians: |
 
 
 ## <a name="pricing-for-vms-in-availability-zones"></a>Prijzen voor Vm's in Beschikbaarheidszones
 
-Er zijn geen extra kosten verbonden aan het implementeren van virtuele machines in een beschikbaarheids zone. Bekijk de [pagina met bandbreedte prijzen](https://azure.microsoft.com/pricing/details/bandwidth/)voor meer informatie.
+Azure-beschikbaarheidszones zijn beschikbaar in uw Azure-abonnement. Meer informatie- [pagina met prijzen voor band breedte](https://azure.microsoft.com/pricing/details/bandwidth/).
 
 
 ## <a name="get-started-with-availability-zones"></a>Aan de slag met Beschikbaarheidszones

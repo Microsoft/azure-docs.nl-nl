@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 03/17/2021
 ms.author: inhenkel
-ms.openlocfilehash: 9fe49f44e157708c3083e2c73757988877fbfcb5
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: b7d99e3de8a796dea19f3a2ad7a03b98239981e2
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105563460"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106121095"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Release opmerkingen bij Azure Media Services v3
 
@@ -54,7 +54,7 @@ Aanvullende talen voor video transcriptie en Subtitling zijn nu beschikbaar in d
 * Thais, th-do
 * Turks, tr-TR
 
-Zie de meest recente beschik bare talen in het [concept artikel video-en audio bestanden analyseren.](analyzing-video-audio-files-concept.md)
+Zie de meest recente beschik bare talen in het [concept artikel video-en audio bestanden analyseren.](analyze-video-audio-files-concept.md)
 
 ## <a name="february-2021"></a>Februari 2021
 
@@ -134,7 +134,7 @@ Zie de meest recente voor beelden in de **[Media-Services-v3-node-zelf studies](
 
 Live-gebeurtenissen bieden nu ondersteuning voor een goedkope facturerings modus voor "stand-by". Hierdoor kunnen klanten live-gebeurtenissen vooraf toewijzen tegen lagere kosten voor het maken van ' hot Pools '. Klanten kunnen vervolgens de stand-by-Live-gebeurtenissen gebruiken om sneller over te stappen op de actieve status dan bij het maken van koud.  Dit vermindert de tijd om het kanaal aanzienlijk te starten en maakt snelle toewijzing van dynamische groepen mogelijk van machines die in een lagere prijs modus worden uitgevoerd.
 Bekijk [hier](https://azure.microsoft.com/pricing/details/media-services)de meest recente prijs informatie.
-Zie het artikel- [live gebeurtenis Staten en facturering](./live-event-states-billing.md) voor meer informatie over de stand-by status en de andere statussen van Live Events.
+Zie het artikel- [live gebeurtenis Staten en facturering](./live-event-states-billing-concept.md) voor meer informatie over de stand-by status en de andere statussen van Live Events.
 
 ## <a name="december-2020"></a>December 2020
 
@@ -146,17 +146,17 @@ Azure Media Services is nu beschikbaar in de regio Noor wegen Oost in de Azure P
 
 ### <a name="basic-audio-analysis"></a>Basis analyse van audio
 
-De vooraf ingestelde audio analyse bevat nu een prijs categorie voor de Basic-modus. De nieuwe Basic Audio Analyzer-modus biedt een goedkope optie voor het extra heren van spraak-transcriptie en het opmaken van uitvoer bijschriften en ondertiteling. Deze modus voert spraak-naar-tekst transcriptie en genereert een ondertitelings bestand van VTT. De uitvoer van deze modus bevat een Insights-JSON-bestand met alleen de tref woorden, transcriptie en timing gegevens. Automatische taal detectie en diarization van de spreker zijn niet opgenomen in deze modus. Zie de lijst met [ondersteunde talen.](analyzing-video-audio-files-concept.md#built-in-presets)
+De vooraf ingestelde audio analyse bevat nu een prijs categorie voor de Basic-modus. De nieuwe Basic Audio Analyzer-modus biedt een goedkope optie voor het extra heren van spraak-transcriptie en het opmaken van uitvoer bijschriften en ondertiteling. Deze modus voert spraak-naar-tekst transcriptie en genereert een ondertitelings bestand van VTT. De uitvoer van deze modus bevat een Insights-JSON-bestand met alleen de tref woorden, transcriptie en timing gegevens. Automatische taal detectie en diarization van de spreker zijn niet opgenomen in deze modus. Zie de lijst met [ondersteunde talen.](analyze-video-audio-files-concept.md#built-in-presets)
 
 Klanten die Indexeer functie v1 en Indexeer functie v2 gebruiken, moeten worden gemigreerd naar de standaard instelling voor de analyse van audio.
 
-Zie [video-en audio bestanden analyseren](analyzing-video-audio-files-concept.md)voor meer informatie over de Basic Audio Analyzer-modus.  Zie [een eenvoudige audio transformatie maken](how-to-create-basic-audio-transform.md)voor meer informatie over het gebruik van de Basic Audio Analyzer-modus met de rest API.
+Zie [video-en audio bestanden analyseren](analyze-video-audio-files-concept.md)voor meer informatie over de Basic Audio Analyzer-modus.  Zie [een eenvoudige audio transformatie maken](how-to-create-basic-audio-transform.md)voor meer informatie over het gebruik van de Basic Audio Analyzer-modus met de rest API.
 
 ### <a name="live-events"></a>Livegebeurtenissen
 
 Updates van de meeste eigenschappen zijn nu toegestaan wanneer Live-gebeurtenissen worden gestopt. Daarnaast mogen gebruikers een voor voegsel opgeven voor de statische hostnaam voor de invoer en preview-Url's van de live-gebeurtenis. VanityUrl wordt nu aangeroepen `useStaticHostName` om het doel van de eigenschap beter weer te geven.
 
-Live-gebeurtenissen hebben nu de status stand-by.  Bekijk [Live Events en live outputs in Media Services](./live-events-outputs-concept.md).
+Live-gebeurtenissen hebben nu de status stand-by.  Bekijk [Live Events en live outputs in Media Services](./live-event-outputs-concept.md).
 
 Een live-gebeurtenis ondersteunt het ontvangen van verschillende invoer hoogte-breedte verhoudingen. Met de stretch-modus kunnen klanten het stretch gedrag voor de uitvoer opgeven.
 
@@ -173,7 +173,7 @@ Met Live Encoding wordt nu de mogelijkheid toegevoegd voor het uitvoeren van vas
 
 Ondersteuning voor de verouderde (PIFF 1,1) versleuteling van de oudere PlayReady-bestands indeling is nu beschikbaar in de dynamische Pakketset. Dit biedt ondersteuning voor verouderde slimme TV-sets van Samsung en LG waarmee de vroege concepten van de Common Encryption Standard (CENC) die door micro soft zijn gepubliceerd, zijn geïmplementeerd.  De PIFF 1,1-indeling wordt ook wel bekend als de versleutelings indeling die eerder werd ondersteund door de Silverlight-client bibliotheek. Het enige use-case scenario voor deze versleutelings indeling is het doel van de verouderde Smart TV-markt als er een niet-gelastig aantal Smart Tv's in sommige regio's wordt ondersteund dat alleen ondersteuning biedt voor Smooth Streaming met PIFF 1,1-versleuteling.
 
-Als u de nieuwe ondersteuning voor PIFF 1,1-versleuteling wilt gebruiken, wijzigt u de versleutelings waarde in ' piff ' in het URL-pad van de streaming-Locator. Zie [Content Protection-overzicht](content-protection-overview.md) voor meer informatie.
+Als u de nieuwe ondersteuning voor PIFF 1,1-versleuteling wilt gebruiken, wijzigt u de versleutelings waarde in ' piff ' in het URL-pad van de streaming-Locator. Zie [Content Protection-overzicht](drm-content-protection-concept.md) voor meer informatie.
 Bijvoorbeeld: `https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(encryption=piff)`|
 
 > [!NOTE]
@@ -187,11 +187,11 @@ Live transcripties ondersteunt nu 19 talen en 8 regio's.
 
 ### <a name="protecting-your-content-with-media-services-and-azure-ad"></a>Uw inhoud beveiligen met Media Services en Azure AD
 
-We hebben een zelf studie gepubliceerd met de naam [end-to-end inhouds beveiliging met behulp van Azure AD](./azure-ad-content-protection.md).
+We hebben een zelf studie gepubliceerd met de naam [end-to-end inhouds beveiliging met behulp van Azure AD](./architecture-azure-ad-content-protection.md).
 
 ### <a name="high-availability"></a>Hoge beschikbaarheid
 
-We hebben een hoge Beschik baarheid gepubliceerd met het [overzicht](./media-services-high-availability-encoding.md) van Media Services en video on demand (VOD) en voor [beeld](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/HighAvailabilityEncodingStreaming).
+We hebben een hoge Beschik baarheid gepubliceerd met het [overzicht](./architecture-high-availability-encoding-concept.md) van Media Services en video on demand (VOD) en voor [beeld](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/HighAvailabilityEncodingStreaming).
 
 ## <a name="june-2020"></a>Juni 2020
 
@@ -243,7 +243,7 @@ Als u een deel van de koptekst uitwisseling in actie wilt zien, kunt u de volgen
 
 Live transcriptie is nu beschikbaar in de open bare preview-versie en kan worden gebruikt in de regio vs-West 2.
 
-Live transcriptie is ontworpen om samen te werken met Live-gebeurtenissen als een invoeg toepassing.  Het wordt ondersteund op zowel Pass-through-als standaard-of Premium-code ring van Live-gebeurtenissen.  Als deze functie is ingeschakeld, gebruikt de service de functie voor [spraak-naar-tekst](../../cognitive-services/speech-service/speech-to-text.md) van Cognitive Services om de gesp roken woorden in de binnenkomende audio naar tekst te transcriberen. Deze tekst wordt vervolgens beschikbaar gesteld voor levering en video en audio in MPEG-DASH-en HLS-protocollen. De facturering is gebaseerd op een nieuwe add-on meter die extra kosten voor de live-gebeurtenis is wanneer de status wordt uitgevoerd.  Zie [Live transcriptie](live-transcription.md) voor meer informatie over Live transcriptie en facturering
+Live transcriptie is ontworpen om samen te werken met Live-gebeurtenissen als een invoeg toepassing.  Het wordt ondersteund op zowel Pass-through-als standaard-of Premium-code ring van Live-gebeurtenissen.  Als deze functie is ingeschakeld, gebruikt de service de functie voor [spraak-naar-tekst](../../cognitive-services/speech-service/speech-to-text.md) van Cognitive Services om de gesp roken woorden in de binnenkomende audio naar tekst te transcriberen. Deze tekst wordt vervolgens beschikbaar gesteld voor levering en video en audio in MPEG-DASH-en HLS-protocollen. De facturering is gebaseerd op een nieuwe add-on meter die extra kosten voor de live-gebeurtenis is wanneer de status wordt uitgevoerd.  Zie [Live transcriptie](live-event-live-transcription-how-to.md) voor meer informatie over Live transcriptie en facturering
 
 > [!NOTE]
 > Live transcriptie is momenteel alleen beschikbaar als preview-functie in de regio vs-West 2. Het biedt alleen ondersteuning voor transcriptie van gesp roken woorden in het Engels (en-US).
@@ -251,7 +251,7 @@ Live transcriptie is ontworpen om samen te werken met Live-gebeurtenissen als ee
 ### <a name="content-protection"></a>Inhoudsbeveiliging
 
 De functie voor het voor *komen van tokens* voor het opnieuw afspelen in een beperkt aantal regio's in september is nu beschikbaar in alle regio's.
-Media Services klanten kunnen nu een limiet instellen voor het aantal keren dat hetzelfde token kan worden gebruikt om een sleutel of licentie aan te vragen. Zie [token replay voor komen](content-protection-overview.md#token-replay-prevention)voor meer informatie.
+Media Services klanten kunnen nu een limiet instellen voor het aantal keren dat hetzelfde token kan worden gebruikt om een sleutel of licentie aan te vragen. Zie [token replay voor komen](drm-content-protection-concept.md#token-replay-prevention)voor meer informatie.
 
 ### <a name="new-recommended-live-encoder-partners"></a>Nieuwe aanbevolen partners voor Live encoders
 
@@ -310,7 +310,7 @@ Zie [WAME migreren naar Media Encoder Standard](../previous/migrate-windows-azur
 
 ### <a name="content-protection"></a>Inhoudsbeveiliging
 
-Wanneer inhoud die wordt beveiligd met token beperking wordt gestreamd, moeten eind gebruikers een token verkrijgen dat wordt verzonden als onderdeel van de aanvraag voor de sleutel levering. Met de functie voor het voor *komen van tokens* kunnen Media Services klanten een limiet instellen voor het aantal keren dat hetzelfde token kan worden gebruikt om een sleutel of licentie aan te vragen. Zie [token replay voor komen](content-protection-overview.md#token-replay-prevention)voor meer informatie.
+Wanneer inhoud die wordt beveiligd met token beperking wordt gestreamd, moeten eind gebruikers een token verkrijgen dat wordt verzonden als onderdeel van de aanvraag voor de sleutel levering. Met de functie voor het voor *komen van tokens* kunnen Media Services klanten een limiet instellen voor het aantal keren dat hetzelfde token kan worden gebruikt om een sleutel of licentie aan te vragen. Zie [token replay voor komen](drm-content-protection-concept.md#token-replay-prevention)voor meer informatie.
 
 Vanaf juli was de preview-functie alleen beschikbaar in VS Centraal en VS-West-centraal.
 
@@ -340,7 +340,7 @@ Zie [Media Services metrische gegevens en Diagnostische logboeken bewaken](monit
 
 ### <a name="multi-audio-tracks-support-in-dynamic-packaging"></a>Ondersteuning voor meerdere audio-tracks in dynamische pakketten 
 
-Bij het streamen van assets met meerdere audio sporen met meerdere codecs en talen, ondersteunt [dynamische verpakking](dynamic-packaging-overview.md) nu meerdere audio sporen voor de HLS-uitvoer (versie 4 of hoger).
+Bij het streamen van assets met meerdere audio sporen met meerdere codecs en talen, ondersteunt [dynamische verpakking](encode-dynamic-packaging-concept.md) nu meerdere audio sporen voor de HLS-uitvoer (versie 4 of hoger).
 
 ### <a name="korea-regional-pair-is-open-for-media-services"></a>Het regionale paar van Korea is geopend voor Media Services 
 
@@ -352,7 +352,7 @@ Zie [Clouds en regio's waarin Media Services v3 bestaat](azure-clouds-regions.md
 
 Er zijn updates toegevoegd die Media Services prestatie verbeteringen bevatten.
 
-* De maximale bestands grootte die wordt ondersteund voor de verwerking, is bijgewerkt. Zie, [quota en limieten](limits-quotas-constraints.md).
+* De maximale bestands grootte die wordt ondersteund voor de verwerking, is bijgewerkt. Zie, [quota en limieten](limits-quotas-constraints-reference.md).
 * De [versleutelings snelheid wordt verbeterd](concept-media-reserved-units.md).
 
 ## <a name="april-2019"></a>April 2019
@@ -360,11 +360,11 @@ Er zijn updates toegevoegd die Media Services prestatie verbeteringen bevatten.
 ### <a name="new-presets"></a>Nieuwe voor instellingen
 
 * [FaceDetectorPreset](/rest/api/media/transforms/createorupdate#facedetectorpreset) is toegevoegd aan de ingebouwde analyse-voor instellingen.
-* [ContentAwareEncodingExperimental](/rest/api/media/transforms/createorupdate#encodernamedpreset) is toegevoegd aan de ingebouwde coderings definities. Zie voor meer informatie [code ring met inhoud](content-aware-encoding.md). 
+* [ContentAwareEncodingExperimental](/rest/api/media/transforms/createorupdate#encodernamedpreset) is toegevoegd aan de ingebouwde coderings definities. Zie voor meer informatie [code ring met inhoud](encode-content-aware-concept.md). 
 
 ## <a name="march-2019"></a>Maart 2019
 
-Dynamische verpakking ondersteunt nu Dolby Atmos. Zie [Audio codecs die worden ondersteund door dynamische pakketten](dynamic-packaging-overview.md#audio-codecs-supported-by-dynamic-packaging)voor meer informatie.
+Dynamische verpakking ondersteunt nu Dolby Atmos. Zie [Audio codecs die worden ondersteund door dynamische pakketten](encode-dynamic-packaging-concept.md#audio-codecs-supported-by-dynamic-packaging)voor meer informatie.
 
 U kunt nu een lijst met Asset-of account filters opgeven die van toepassing zijn op uw streaming-Locator. Zie [filters koppelen aan streaming-Locator](filters-concept.md#associating-filters-with-streaming-locator)voor meer informatie.
 
@@ -378,7 +378,7 @@ De gebeurtenis [micro soft. media. JobOutputProgress](monitoring/media-services-
 
 ### <a name="media-encoder-standard-and-mpi-files"></a>Media Encoder Standard-en MPI-bestanden 
 
-Bij het coderen met Media Encoder Standard voor het maken van MP4-bestand (en), wordt er een nieuw. mpi-bestand gegenereerd en toegevoegd aan de uitvoer Asset. Dit MPI-bestand is bedoeld om de prestaties te verbeteren voor [dynamische pakket](dynamic-packaging-overview.md) -en streaming-scenario's.
+Bij het coderen met Media Encoder Standard voor het maken van MP4-bestand (en), wordt er een nieuw. mpi-bestand gegenereerd en toegevoegd aan de uitvoer Asset. Dit MPI-bestand is bedoeld om de prestaties te verbeteren voor [dynamische pakket](encode-dynamic-packaging-concept.md) -en streaming-scenario's.
 
 U moet het MPI-bestand niet wijzigen of verwijderen of afhankelijk van de aanwezigheid (of niet) van een dergelijk bestand afnemen in uw service.
 
@@ -518,7 +518,7 @@ Als u activa of account filters hebt gemaakt tussen 09/28 en 10/12 met Media Ser
 
 De volgende functies zijn aanwezig in de .NET SDK:
 
-* **Trans formaties** en **taken** voor het coderen of analyseren van media-inhoud. Zie voor voor beelden [stroom bestanden](stream-files-tutorial-with-api.md) en [analyseren](analyze-videos-tutorial-with-api.md).
+* **Trans formaties** en **taken** voor het coderen of analyseren van media-inhoud. Zie voor voor beelden [stroom bestanden](stream-files-tutorial-with-api.md) en [analyseren](analyze-videos-tutorial.md).
 * **Streaming-Locators** voor het publiceren en streamen van inhoud op apparaten van eind gebruikers
 * **Stroomsgewijze beleids regels** en **beleids regels voor inhouds sleutels** voor het configureren van key delivery and Content Protection (DRM) bij het leveren van inhoud.
 * **Live Events** en **Live outputs** voor het configureren van de opname en het archiveren van inhoud voor live streamen.

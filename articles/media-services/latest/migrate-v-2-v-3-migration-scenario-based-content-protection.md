@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: media
 ms.date: 03/26/2021
 ms.author: inhenkel
-ms.openlocfilehash: 9141fb025cb2c7976f88d894768972b10ea3a3d3
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 74f15fc302a8499e41a1413dd8915e6442d4bbe7
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105729402"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106064491"
 ---
 # <a name="content-protection-scenario-based-migration-guidance"></a>Richt lijnen voor migratie op basis van inhouds beveiligings scenario's
 
@@ -28,7 +28,7 @@ In dit artikel vindt u informatie en richt lijnen over de migratie van gebruiks 
 
 ## <a name="protect-content-in-v3-api"></a>Inhoud in v3 API beveiligen
 
-Gebruik de ondersteuning voor functies met [meerdere sleutels](design-multi-drm-system-with-access-control.md) in de nieuwe v3 API.
+Gebruik de ondersteuning voor functies met [meerdere sleutels](architecture-design-multi-drm-system.md) in de nieuwe v3 API.
 
 Zie concepten voor inhouds beveiliging, zelf studies en hand leidingen hieronder voor specifieke stappen.
 
@@ -44,9 +44,9 @@ De resultaten van de **ListStreamingLocators** -methode geven u de **naam** en *
 
 Als u de **ContentKeys** wilt vinden die wordt gebruikt in uw **StreamingLocators** voor inhouds beveiliging, kunt u de methode [StreamingLocator. ListContentKeysAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.streaminglocatorsoperationsextensions.listcontentkeysasync?view=azure-dotnet&preserve-view=true) aanroepen.  
 
-**Activa** die zijn gemaakt en gepubliceerd met behulp van de v2 API, hebben zowel een beleid voor de [inhouds sleutel](https://docs.microsoft.com/azure/media-services/latest/content-key-policy-concept) als een inhouds sleutel die is gedefinieerd in de V3 API, in plaats van een standaard beleid voor de inhouds sleutel in het [streaming-beleid](https://docs.microsoft.com/azure/media-services/latest/streaming-policy-concept)te gebruiken.
+**Activa** die zijn gemaakt en gepubliceerd met behulp van de v2 API, hebben zowel een beleid voor de [inhouds sleutel](https://docs.microsoft.com/azure/media-services/latest/drm-content-key-policy-concept) als een inhouds sleutel die is gedefinieerd in de V3 API, in plaats van een standaard beleid voor de inhouds sleutel in het [streaming-beleid](https://docs.microsoft.com/azure/media-services/latest/streaming-policy-concept)te gebruiken.
 
-Voor meer informatie over de beveiliging van inhoud in de V3 API raadpleegt [u het artikel Beveilig uw inhoud met Media Services dynamische versleuteling.](https://docs.microsoft.com/azure/media-services/latest/content-protection-overview)
+Voor meer informatie over de beveiliging van inhoud in de V3 API raadpleegt [u het artikel Beveilig uw inhoud met Media Services dynamische versleuteling.](https://docs.microsoft.com/azure/media-services/latest/drm-content-protection-concept)
 
 ## <a name="how-to-list-your-v2-assets-and-content-protection-settings-using-the-v3-api"></a>Uw v2-assets en instellingen voor inhouds beveiliging vermelden met behulp van de V3 API
 
@@ -60,7 +60,7 @@ Als u inhoud die is opgeslagen op v2-entiteiten moet bijwerken, wijzigen of wijz
 
 ## <a name="how-do-i-change-the-contentkeypolicy-used-for-a-v2-asset-that-is-published-and-keep-the-same-content-key"></a>Hoe kan ik Wijzig de ContentKeyPolicy die wordt gebruikt voor een v2-Asset die wordt gepubliceerd en behoud dezelfde inhouds sleutel?
 
-In dit geval moet u eerst de publicatie ongedaan maken (alle stream-Locators verwijderen) op het activum via de v2 SDK (de Locator verwijderen, het autorisatie beleid voor de inhouds sleutel ontkoppelen, het beleid voor de levering van assets ontkoppelen, de inhouds sleutel verwijderen, de inhouds sleutel ontkoppelen) en vervolgens een nieuwe **[StreamingLocator](https://docs.microsoft.com/azure/media-services/latest/streaming-locators-concept)** in v3 maken met behulp van een v3 [StreamingPolicy](https://docs.microsoft.com/azure/media-services/latest/streaming-policy-concept) en [ContentKeyPolicy](https://docs.microsoft.com/azure/media-services/latest/content-key-policy-concept)
+In dit geval moet u eerst de publicatie ongedaan maken (alle stream-Locators verwijderen) op het activum via de v2 SDK (de Locator verwijderen, het autorisatie beleid voor de inhouds sleutel ontkoppelen, het beleid voor de levering van assets ontkoppelen, de inhouds sleutel verwijderen, de inhouds sleutel ontkoppelen) en vervolgens een nieuwe **[StreamingLocator](https://docs.microsoft.com/azure/media-services/latest/streaming-locators-concept)** in v3 maken met behulp van een v3 [StreamingPolicy](https://docs.microsoft.com/azure/media-services/latest/streaming-policy-concept) en [ContentKeyPolicy](https://docs.microsoft.com/azure/media-services/latest/drm-content-key-policy-concept)
 
 U moet de specifieke inhouds sleutel-id en sleutel waarde opgeven die nodig zijn wanneer u de **[StreamingLocator](https://docs.microsoft.com/azure/media-services/latest/streaming-locators-concept)** maakt.
 
@@ -75,24 +75,24 @@ Wanneer u inhoud migreert van v2 naar v3, wordt u geadviseerd om het [v2 Azure M
 
 ### <a name="concepts"></a>Concepten
 
-- [Uw inhoud beveiligen met Media Services dynamische versleuteling](content-protection-overview.md)
-- [Ontwerp van een inhoudsbeveiligingssysteem van een multi-DRM met toegangsbeheer](design-multi-drm-system-with-access-control.md)
-- [Media Services V3 met PlayReady-licentie sjabloon](playready-license-template-overview.md)
-- [Overzicht van Media Services V3 met Widevine-licentie sjabloon](widevine-license-template-overview.md)
-- [Vereisten voor en configuratie van Apple FairPlay-licenties](fairplay-license-overview.md)
+- [Uw inhoud beveiligen met Media Services dynamische versleuteling](drm-content-protection-concept.md)
+- [Ontwerp van een inhoudsbeveiligingssysteem van een multi-DRM met toegangsbeheer](architecture-design-multi-drm-system.md)
+- [Media Services V3 met PlayReady-licentie sjabloon](drm-playready-license-template-concept.md)
+- [Overzicht van Media Services V3 met Widevine-licentie sjabloon](drm-widevine-license-template-concept.md)
+- [Vereisten voor en configuratie van Apple FairPlay-licenties](drm-fairplay-license-overview.md)
 - [Streaming-beleid](streaming-policy-concept.md)
-- [Beleid voor inhouds sleutels](content-key-policy-concept.md)
+- [Beleid voor inhouds sleutels](drm-content-key-policy-concept.md)
 
 ### <a name="tutorials"></a>Zelfstudies
 
-[Quickstart: De portal gebruiken om inhoud te versleutelen](encrypt-content-quickstart.md)
+[Quickstart: De portal gebruiken om inhoud te versleutelen](drm-encrypt-content-how-to.md)
 
 ### <a name="how-to-guides"></a>Handleidingen
 
-- [Een ondertekeningssleutel ophalen uit het bestaand beleid](get-content-key-policy-dotnet-howto.md)
-- [Offline FairPlay streaming voor iOS met Media Services v3](offline-fairplay-for-ios.md)
-- [Offline Widevine streaming voor Android met Media Services v3](offline-widevine-for-android.md)
-- [Offline PlayReady streaming voor Windows 10 met Media Services v3](offline-plaready-streaming-for-windows-10.md)
+- [Een ondertekeningssleutel ophalen uit het bestaand beleid](drm-get-content-key-policy-dotnet-how-to.md)
+- [Offline FairPlay streaming voor iOS met Media Services v3](drm-offline-fairplay-for-ios-concept.md)
+- [Offline Widevine streaming voor Android met Media Services v3](drm-offline-widevine-for-android.md)
+- [Offline PlayReady streaming voor Windows 10 met Media Services v3](drm-offline-playready-streaming-for-windows-10.md)
 
 ## <a name="samples"></a>Voorbeelden
 

@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: 87076febd4597556fd2b28245f47442308cd6e6c
-ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
+ms.openlocfilehash: d257a77940b460bf8be64e3f8376353a859365f7
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106108354"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106284716"
 ---
 # <a name="install-and-run-the-spatial-analysis-container-preview"></a>De container voor ruimtelijke analyse installeren en uitvoeren (preview-versie)
 
@@ -547,8 +547,8 @@ U moet [ruimtelijke analyse bewerkingen](spatial-analysis-operations.md) gebruik
 
 Als u de uitvoer wilt gaan gebruiken die door de container is gegenereerd, raadpleegt u de volgende artikelen:
 
-*   Gebruik de Azure Event hub SDK voor de gekozen programmeer taal om verbinding te maken met het Azure IoT Hub-eind punt en de gebeurtenissen te ontvangen. Zie [apparaat-naar-Cloud-berichten lezen van het ingebouwde eind punt](../../iot-hub/iot-hub-devguide-messages-read-builtin.md) voor meer informatie. 
-*   Stel bericht routering in op uw Azure-IoT Hub om de gebeurtenissen naar andere eind punten te verzenden of de gebeurtenissen op te slaan in Azure Blob Storage, enzovoort. Zie [IOT hub Message Routing](../../iot-hub/iot-hub-devguide-messages-d2c.md) voor meer informatie. 
+*    Gebruik de Azure Event hub SDK voor de gekozen programmeer taal om verbinding te maken met het Azure IoT Hub-eind punt en de gebeurtenissen te ontvangen. Zie [apparaat-naar-Cloud-berichten lezen van het ingebouwde eind punt](../../iot-hub/iot-hub-devguide-messages-read-builtin.md) voor meer informatie. 
+*    Stel bericht routering in op uw Azure-IoT Hub om de gebeurtenissen naar andere eind punten te verzenden of de gebeurtenissen op te slaan in Azure Blob Storage, enzovoort. Zie [IOT hub Message Routing](../../iot-hub/iot-hub-devguide-messages-d2c.md) voor meer informatie. 
 
 ## <a name="running-spatial-analysis-with-a-recorded-video-file"></a>Ruimtelijke analyse uitvoeren met een opgenomen video bestand
 

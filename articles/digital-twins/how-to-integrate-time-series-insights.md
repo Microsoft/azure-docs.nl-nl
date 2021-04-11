@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 1/19/2021
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 3bc821f31e0463000c9089e48818249f2c046ede
-ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
+ms.openlocfilehash: 5ac8c5bb68430a1e886a89709d5e256beb8819c8
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2021
-ms.locfileid: "107102992"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107257276"
 ---
 # <a name="integrate-azure-digital-twins-with-azure-time-series-insights"></a>Azure Digital Apparaatdubbels integreren met Azure Time Series Insights
 
@@ -40,7 +40,7 @@ U gaat Time Series Insights toevoegen aan Azure Digital Apparaatdubbels via het 
 
 ## <a name="create-a-route-and-filter-to-twin-update-notifications"></a>Een route en filter maken voor updatemeldingen van de dubbel
 
-Azure Digital Apparaatdubbels-instanties kunnen [dubbele update gebeurtenissen](how-to-interpret-event-data.md) verzenden wanneer de status van een twee is bijgewerkt. In deze sectie gaat u een Azure Digital Apparaatdubbels- [**gebeurtenis route**](concepts-route-events.md) maken die deze update gebeurtenissen naar Azure [Event hubs](../event-hubs/event-hubs-about.md) stuurt voor verdere verwerking.
+Azure Digital Apparaatdubbels-instanties kunnen [twee wijzigings gebeurtenissen](concepts-event-notifications.md#digital-twin-change-notifications) verzenden wanneer de status van een twee is bijgewerkt. In deze sectie gaat u een Azure Digital Apparaatdubbels- [**gebeurtenis route**](concepts-route-events.md) maken die deze update gebeurtenissen naar Azure [Event hubs](../event-hubs/event-hubs-about.md) stuurt voor verdere verwerking.
 
 De zelf studie over Azure Digital Apparaatdubbels [*: verbinding maken met een end-to-end-oplossing*](./tutorial-end-to-end.md) door een scenario waarin een thermo meter wordt gebruikt om een temperatuur kenmerk bij te werken op een digitale dubbele locatie die een ruimte vertegenwoordigt. Dit patroon is afhankelijk van de dubbele updates, in plaats van het door sturen van telemetrie van een IoT-apparaat, die u de flexibiliteit geeft om de onderliggende gegevens bron te wijzigen zonder dat u uw Time Series Insights logica hoeft bij te werken.
 

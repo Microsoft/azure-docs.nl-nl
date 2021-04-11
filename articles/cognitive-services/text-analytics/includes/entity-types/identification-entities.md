@@ -9,12 +9,12 @@ ms.subservice: text-analytics
 ms.topic: include
 ms.date: 03/11/2021
 ms.author: aahi
-ms.openlocfilehash: 352b81bf2dfeca1d7413e7cac131264d06c7b92e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a74c0cad971389168d643c9504f5bb809438a1ea
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104599298"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106098058"
 ---
 ### <a name="financial-account-identification"></a>Id van financiële rekening
 
@@ -34,7 +34,7 @@ Deze categorie bevat de volgende entiteit:
     :::column span="2":::
         **Details**
 
-        Transit routerings nummers van de Amerikaanse Bank (ABA).
+        Transit routerings nummers van de Amerikaanse Bank (ABA). Ook geretourneerd met `domain=phi` .
 
         Als u deze entiteits categorie wilt ophalen, `ABARoutingNumber` moet u deze toevoegen aan de `pii-categories` para meter. `ABARoutingNumber` wordt ook geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
@@ -62,7 +62,7 @@ Deze categorie bevat de volgende entiteit:
     :::column span="2":::
         **Details**
 
-        SWIFT-codes voor informatie over de betalings instructie.
+        SWIFT-codes voor informatie over de betalings instructie. Ook geretourneerd met `domain=phi` .
 
         Als u deze entiteits categorie wilt ophalen, `SWIFTCode` moet u deze toevoegen aan de `pii-categories` para meter. `SWIFTCode` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
@@ -89,7 +89,7 @@ Deze categorie bevat de volgende entiteit:
     :::column span="2":::
         **Details**
 
-        Creditcard nummers. 
+        Creditcard nummers. Ook geretourneerd met `domain=phi` .
 
         Als u deze entiteits categorie wilt ophalen, `CreditCardNumber` moet u deze toevoegen aan de `pii-categories` para meter. `CreditCardNumber` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
 
@@ -116,7 +116,7 @@ Deze categorie bevat de volgende entiteit:
     :::column span="2":::
         **Details**
 
-        IBAN-codes voor informatie over de betalings instructie.
+        IBAN-codes voor informatie over de betalings instructie. Ook geretourneerd met `domain=phi` .
 
         Als u deze entiteits categorie wilt ophalen, `InternationlBankingAccountNumber` moet u deze toevoegen aan de `pii-categories` para meter. `InternationlBankingAccountNumber` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
@@ -144,12 +144,12 @@ De volgende entiteiten worden gegroepeerd en weer gegeven op land:
     :::column span="":::
         **Entiteit**
 
-        Sofi-nummer (Argentinië National Identity)
+        Sofi-nummer (Argentinië National Identity) 
 
     :::column-end:::
     :::column span="2":::
-        **Details**
-
+        **Details** Ook geretourneerd met `domain=phi` .
+        
         Als u deze entiteits categorie wilt ophalen, `ARNationalIdentityNumber` moet u deze toevoegen aan de `pii-categories` para meter. `ARNationalIdentityNumber` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
     :::column-end:::

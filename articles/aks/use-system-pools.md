@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 06/18/2020
 ms.author: mlearned
 ms.custom: fasttrack-edit, devx-track-azurecli
-ms.openlocfilehash: 9c53cb53517c4696a1bb47c2cb72335979d58d3a
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: c3c65d3a7316d431c57d9fb75775e271bf9f34ca
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102178827"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106223265"
 ---
 # <a name="manage-system-node-pools-in-azure-kubernetes-service-aks"></a>Systeem knooppunt groepen beheren in azure Kubernetes service (AKS)
 
@@ -43,7 +43,8 @@ Systeem knooppunt groepen hebben de volgende beperkingen:
 * Systeem groepen osType moet Linux zijn.
 * OsType van gebruikers knooppunten kunnen Linux of Windows zijn.
 * Systeem groepen moeten ten minste één knoop punt bevatten en gebruikers knooppunt groepen kunnen nul of meer knoop punten bevatten.
-* Systeem knooppunt groepen vereisen een VM-SKU van ten minste 2 Vcpu's en 4 GB geheugen.
+* Systeem knooppunt groepen vereisen een VM-SKU van ten minste 2 Vcpu's en 4 GB geheugen. Maar bebreekbaar-VM (B-serie) wordt niet aanbevolen.
+* Ten minste twee knoop punten 4 Vcpu's wordt aanbevolen (bijvoorbeeld Standard_DS4_v2), met name voor grote clusters (meerdere CoreDNS pod-replica's, 3-4 +-invoeg toepassingen, enzovoort).
 * Systeem knooppunt groepen moeten ten minste 30 peul ondersteunen, zoals wordt beschreven door de [formule minimale en maximale waarde voor peulen][maximum-pods].
 * Voor spot knooppunt Pools zijn gebruikers knooppunt Pools vereist.
 * Het toevoegen van een extra groep van het systeem knooppunt of het wijzigen van de groep van knoop punten is een systeem knooppunt groep zal *niet* automatisch het systeem van de peul verplaatsen. Systeem-peul kan worden uitgevoerd op dezelfde knooppunt groep, zelfs als u het wijzigt in een groep van gebruikers knooppunten. Als u een groep knoop punten verwijdert of uitschaalt die ouder is dan een systeem knooppunt groep, worden deze systemen van het gehele systeem opnieuw geïmplementeerd met de voorkeurs planning naar de nieuwe groep systeem knooppunten.

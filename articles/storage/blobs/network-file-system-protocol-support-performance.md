@@ -9,19 +9,19 @@ ms.date: 02/23/2021
 ms.author: normesta
 ms.reviewer: yzheng
 ms.custom: references_regions
-ms.openlocfilehash: 28fb5ffc0ce9c554294eaca9e460694856cb95a0
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: de511fa30caa608c2dc87b6c0ba166ed56ff9499
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104589868"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106490179"
 ---
 # <a name="network-file-system-nfs-30-performance-considerations-in-azure-blob-storage-preview"></a>Prestatie overwegingen voor NFS (Network File System) 3,0 in Azure Blob-opslag (preview-versie)
 
 Blob-opslag ondersteunt nu het NFS-protocol (Network File System) 3,0. Dit artikel bevat aanbevelingen waarmee u de prestaties van uw opslag aanvragen kunt optimaliseren. Zie [Network File System (NFS) 3,0-protocol ondersteuning in Azure Blob-opslag (preview)](network-file-system-protocol-support.md)voor meer informatie over de ondersteuning van NFS 3,0 in Azure Blob Storage.
 
 > [!NOTE]
-> Ondersteuning voor NFS 3,0-protocol in Azure Blob-opslag is in open bare preview. Het biedt ondersteuning voor GPV2-opslag accounts met de prestaties van de Standard-laag in de volgende regio's: Australië-oost, Korea-centraal en Zuid-Centraal vs. De preview biedt ook ondersteuning voor blok-blobs met een Premium-prestatie niveau in alle open bare regio's.
+> Ondersteuning voor NFS 3,0-protocol in Azure Blob-opslag is in open bare preview. Het biedt ondersteuning voor GPV2-opslag accounts met de prestaties van de Standard-laag in de volgende regio's: Australië-oost, Korea-centraal, VS-Oost en Zuid-Centraal vs. De preview biedt ook ondersteuning voor blok-blobs met een Premium-prestatie niveau in alle open bare regio's.
 
 ## <a name="add-clients-to-increase-throughput"></a>Clients toevoegen om de door voer te verhogen 
 

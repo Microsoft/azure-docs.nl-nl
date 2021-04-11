@@ -1,14 +1,14 @@
 ---
 title: 'Patroon: Logische operators in een beleidsdefinitie'
 description: Dit Azure Policy-patroon biedt voorbeelden van het gebruik van logische operators in een beleidsdefinitie.
-ms.date: 08/17/2020
+ms.date: 03/31/2021
 ms.topic: sample
-ms.openlocfilehash: 3f644cdbfc45b06d1ad5db8e7727c0fa69742f00
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: feb9e50b0c73c19027b747cf0f95fa1cb6fbd47c
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "88545587"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106093347"
 ---
 # <a name="azure-policy-pattern-logical-operators"></a>Azure Policy-patroon: logische operators
 
@@ -16,7 +16,7 @@ Een beleidsdefinitie kan verschillende voorwaardelijke instructies bevatten. Mog
 
 ## <a name="sample-1-one-logical-operator"></a>Voorbeeld 1: Eén logische operator
 
-Met deze beleidsdefinitie worden CosmosDB-accounts geëvalueerd om te zien of automatische failover en meerdere schrijflocaties zijn geconfigureerd. Wanneer dit niet het geval is, wordt de [audit](../concepts/effects.md#audit) geactiveerd en wordt er een logboekvermelding gemaakt wanneer de niet-compatibele resource wordt gemaakt of bijgewerkt.
+Met deze beleids definitie worden [Azure Cosmos DB](../../../cosmos-db/introduction.md) -accounts geëvalueerd om te zien of automatische failovers en meerdere schrijf locaties zijn geconfigureerd. Wanneer dit niet het geval is, wordt de [audit](../concepts/effects.md#audit) geactiveerd en wordt er een logboekvermelding gemaakt wanneer de niet-compatibele resource wordt gemaakt of bijgewerkt.
 
 :::code language="json" source="~/policy-templates/patterns/pattern-logical-operators-1.json":::
 
@@ -41,7 +41,7 @@ Het blok **policyRule.if** bevat ook één **allOf**, maar elke voorwaarde bevat
 
 ## <a name="sample-3-combining-logical-operators"></a>Voorbeeld 3: Logische operators combineren
 
-Deze beleidsdefinitie evalueert Java Spring-accounts om te controleren of tracering niet is ingeschakeld of dat tracering de status geslaagd heeft.
+Met deze beleids definitie wordt een [lente van Azure](/azure/developer/java/spring-framework) -accounts geëvalueerd om te zien of tracering niet is ingeschakeld of dat tracering niet is geslaagd.
 
 :::code language="json" source="~/policy-templates/patterns/pattern-logical-operators-3.json":::
 

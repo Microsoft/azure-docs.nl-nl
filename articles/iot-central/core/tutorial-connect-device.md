@@ -11,18 +11,18 @@ ms.custom:
 - mqtt
 - device-developer
 zone_pivot_groups: programming-languages-set-twenty-six
-ms.openlocfilehash: 8f1b5eabe235d107b48dc7b2db5b6d4b1188a3fa
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: bbf94b6e000d5c082debd6a0d41a8d62b8b3f26e
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99833963"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106491068"
 ---
 # <a name="tutorial-create-and-connect-a-client-application-to-your-azure-iot-central-application"></a>Zelfstudie: Een clienttoepassing maken en verbinden met uw Azure IoT Central-toepassing
 
 *Dit artikel is van toepassing op oplossingenbouwers en apparaatontwikkelaars.*
 
-In deze zelfstudie wordt uitgelegd hoe u, als apparaatontwikkelaar, een clienttoepassing verbindt met uw Azure IoT Central-toepassing. Deze toepassing simuleert het gedrag van een thermostaatapparaat. Wanneer de toepassing verbinding maakt met IoT Central wordt de model-id van het thermostaatmodel verzonden. IoT Central gebruikt de model-id om het apparaatmodel op te halen en een sjabloon voor u te maken. U voegt aanpassing en weergaven toe aan de apparaatsjabloon zodat een operator met een apparaat kan communiceren.
+In deze zelfstudie wordt uitgelegd hoe u, als apparaatontwikkelaar, een clienttoepassing verbindt met uw Azure IoT Central-toepassing. Met de toepassing wordt het gedrag van een temperatuur controller apparaat gesimuleerd. Wanneer de toepassing verbinding maakt met IoT Central, wordt de model-ID van het apparaat model van de temperatuur controller verzonden. IoT Central gebruikt de model-id om het apparaatmodel op te halen en een sjabloon voor u te maken. U voegt aanpassing en weergaven toe aan de apparaatsjabloon zodat een operator met een apparaat kan communiceren.
 
 In deze zelfstudie leert u het volgende:
 
@@ -70,7 +70,7 @@ Als apparaatontwikkelaar kunt u de weergave **Onbewerkte gegevens** gebruiken om
 
 :::image type="content" source="media/tutorial-connect-device/raw-data.png" alt-text="De weergave Onbewerkte gegevens":::
 
-In deze weergave kunt u de kolommen selecteren die u wilt weergeven en een tijdsbereik instellen. In de kolom **Niet-gemodelleerde gegevens** ziet u gegevens van het apparaat die niet overeenkomen met een van de eigenschaps- of telemetriedefinities in de apparaatsjabloon.
+In deze weergave kunt u de kolommen selecteren die u wilt weergeven en een tijdsbereik instellen. In de kolom niet- **gemodelleerde gegevens** worden apparaatgegevens weer gegeven die niet overeenkomen met een eigenschap of telemetrie in de sjabloon voor het apparaat.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

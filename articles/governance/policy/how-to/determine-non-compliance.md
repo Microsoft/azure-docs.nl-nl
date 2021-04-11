@@ -1,14 +1,14 @@
 ---
 title: Oorzaken van niet-naleving bepalen
 description: Wanneer een resource niet-compatibel is, zijn er veel mogelijke redenen. Meer informatie over de oorzaak van de niet-naleving.
-ms.date: 09/30/2020
+ms.date: 03/31/2021
 ms.topic: how-to
-ms.openlocfilehash: a8168bf22aceaf5cbdec4b1346801aa62b7aa4ee
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 66b0c6d7d0575e7361d04d16e6ba6fb06e36801b
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102439830"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106094112"
 ---
 # <a name="determine-causes-of-non-compliance"></a>Oorzaken van niet-naleving bepalen
 

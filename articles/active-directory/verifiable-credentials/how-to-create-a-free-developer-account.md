@@ -9,12 +9,12 @@ ms.subservice: verifiable-credentials
 ms.topic: how-to
 ms.date: 04/01/2021
 ms.author: barclayn
-ms.openlocfilehash: 1894ffb7ca75a283e3a74d17c3e73de51fc46d8d
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: 1e8bb59c09622a39dad680940ff34e643ee0cc3b
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106170031"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106222738"
 ---
 # <a name="how-to-create-a-free-azure-active-directory-developer-tenant"></a>Een gratis Azure Active Directory Developer-Tenant maken
 
@@ -32,15 +32,15 @@ Er zijn twee eenvoudige manieren om een gratis Azure Active Directory te maken m
 
 Als u zich wilt aanmelden voor het gratis Microsoft 365 ontwikkelaars programma, moet u een paar eenvoudige stappen volgen:
 
-1. Klik op de knop nu lid worden van het scherm
+1. Klik op de knop **nu lid worden** van het scherm.
 
 2. Meld u aan met een nieuw micro soft-account of gebruik een bestaand (werk) account dat u al hebt.
 
-3. Op de registratie pagina selecteert u de regio, voert u een bedrijfs naam in en accepteert u de voor waarden van het programma voordat u op Volgende klikt
+3. Op de registratie pagina selecteert u de regio, voert u een bedrijfs naam in en accepteert u de voor waarden van het programma voordat u op **volgende** klikt.
 
-4. Klik op abonnement instellen. Geef de regio op waar u de nieuwe Tenant wilt maken, maak een gebruikers naam, domein en voer een wacht woord in. Hiermee maakt u een nieuwe Tenant en de eerste beheerder van de Tenant
+4. Klik op **abonnement instellen**. Geef de regio op waar u de nieuwe Tenant wilt maken, maak een gebruikers naam, domein en voer een wacht woord in. Hiermee maakt u een nieuwe Tenant en de eerste beheerder van de Tenant.
 
-5. Geef de beveiligings gegevens op die nodig zijn om het beheerders account van de nieuwe Tenant te beveiligen. Hiermee wordt MFA-verificatie voor het account ingesteld
+5. Geef de beveiligings gegevens op die nodig zijn om het beheerders account van de nieuwe Tenant te beveiligen. Hiermee wordt MFA-verificatie voor het account ingesteld.
 
 
 U hebt op dit moment een Tenant met 25 E5 gebruikers licenties gemaakt. De E5-licenties zijn Azure AD P2-licenties. U kunt eventueel voorbeeld gegevens pakketten toevoegen aan gebruikers, groepen, e-mail en share point om u te helpen testen in uw ontwikkel omgeving. Voor de verifieer bare referentie verleners zijn ze niet vereist.

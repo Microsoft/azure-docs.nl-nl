@@ -10,16 +10,16 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 03/15/2021
 ms.author: lajanuar
-ms.openlocfilehash: 46cf34bd40832488985008a645f1da25eb87b9d9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a47c4c5bdc90e148916900b1e72bc2a392d2e473
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103467383"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106285328"
 ---
 # <a name="form-recognizer-prebuilt-invoice-model"></a>Vooraf gebouwd factuur model voor formulier herkenning
 
-De Azure-formulier herkenner kan gegevens uit verkoop facturen analyseren en extra heren met behulp van de vooraf gemaakte factuur modellen. Met de factuur-API kunnen klanten facturen in verschillende indelingen nemen en gestructureerde gegevens retour neren om de factuur verwerking te automatiseren. Het combineert onze krachtige functies voor [optische teken herkenning (OCR)](../computer-vision/concept-recognizing-text.md) met factuur uitgebreide leer modellen voor het extra heren van belang rijke informatie uit facturen in het Engels. Hiermee worden de tekst, tabellen en gegevens, zoals klant, leverancier, factuur-ID, verval datum van factuur, totaal, factuur bedrag, belasting bedrag, verzen ding, factuur en regel items geëxtraheerd. De vooraf gemaakte factuur-API is openbaar beschikbaar in de preview-versie van de formulier Recognizer v 2.1.
+De Azure-formulier herkenner kan gegevens uit verkoop facturen analyseren en extra heren met behulp van de vooraf gemaakte factuur modellen. Met de factuur-API kunnen klanten facturen in verschillende indelingen nemen en gestructureerde gegevens retour neren om de factuur verwerking te automatiseren. Het combineert onze krachtige functies voor [optische teken herkenning (OCR)](../computer-vision/overview-ocr.md) met factuur uitgebreide leer modellen voor het extra heren van belang rijke informatie uit facturen in het Engels. Hiermee worden de tekst, tabellen en gegevens, zoals klant, leverancier, factuur-ID, verval datum van factuur, totaal, factuur bedrag, belasting bedrag, verzen ding, factuur en regel items geëxtraheerd. De vooraf gemaakte factuur-API is openbaar beschikbaar in de preview-versie van de formulier Recognizer v 2.1.
 
 ## <a name="what-does-the-invoice-service-do"></a>Wat doet de factuur service?
 
@@ -73,7 +73,7 @@ De JSON-uitvoer heeft drie delen:
 
 Met de factuur service worden de velden tekst, tabellen en 26 factuur geëxtraheerd. Hieronder vindt u de velden die zijn geëxtraheerd uit een factuur in het JSON-uitvoer antwoord (de onderstaande uitvoer gebruikt deze [voorbeeld factuur](media/sample-invoice.jpg)).
 
-|Naam| Type | Description | Tekst | Waarde (gestandaardiseerde uitvoer) |
+|Naam| Type | Beschrijving | Tekst | Waarde (gestandaardiseerde uitvoer) |
 |:-----|:----|:----|:----| :----|
 | CustomerName | tekenreeks | Klant wordt gefactureerd | Micro soft Corp |  |
 | CustomerId | tekenreeks | Referentie-ID voor de klant | CID-12345 |  |
@@ -104,7 +104,7 @@ Met de factuur service worden de velden tekst, tabellen en 26 factuur geëxtrahe
 
 Hieronder ziet u de regel items die worden geëxtraheerd uit een factuur in het JSON-uitvoer antwoord (de onderstaande uitvoer gebruikt deze [voorbeeld factuur](./media/sample-invoice.jpg))  
 
-|Naam| Type | Description | Tekst (#1 van regel items) | Waarde (gestandaardiseerde uitvoer) |
+|Naam| Type | Beschrijving | Tekst (#1 van regel items) | Waarde (gestandaardiseerde uitvoer) |
 |:-----|:----|:----|:----| :----|
 | Items | tekenreeks | Volledige tekst regel van het regel item | 3/4/2021 A123 Consulting Services 2 uur $30,00 10% $60,00 | |
 | Bedrag | getal | De hoeveelheid van het regel item | $60,00 | 100 |

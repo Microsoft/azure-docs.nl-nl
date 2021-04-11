@@ -4,19 +4,19 @@ description: Informatie over de algemene schema definities voor waarschuwingen v
 author: ofirmanor
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: 02092f5a241824d2a9aef242b544f8900af7ebec
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 709ec2dee1be6930ca7c09de334aede8a76e95f4
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102045391"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106491709"
 ---
 # <a name="common-alert-schema-definitions"></a>Definities van algemeen waarschuwingsschema
 
 In dit artikel worden de [algemene schema definities voor waarschuwingen](./alerts-common-schema.md) voor Azure monitor beschreven, met inbegrip van de schema's voor webhooks, Azure Logic Apps, Azure Functions en Azure Automation runbooks. 
 
 Elk waarschuwings exemplaar beschrijft de bron die is beïnvloed en de oorzaak van de waarschuwing. Deze exemplaren worden beschreven in het gemeen schappelijke schema in de volgende secties:
-* **Essentials**: een set gestandaardiseerde velden, gemeen schappelijk voor alle waarschuwings typen, waarmee wordt beschreven op welke resource de waarschuwing zich bevindt, samen met aanvullende veelvoorkomende meta gegevens van waarschuwingen (bijvoorbeeld Ernst of beschrijving). 
+* **Essentials**: een set gestandaardiseerde velden, gemeen schappelijk voor alle waarschuwings typen, waarmee wordt beschreven op welke resource de waarschuwing zich bevindt, samen met aanvullende veelvoorkomende meta gegevens van waarschuwingen (bijvoorbeeld Ernst of beschrijving). De definities van ernst kunnen worden gevonden in het [overzicht van waarschuwingen](alerts-overview.md#overview). 
 * **Waarschuwings context**: een set velden die de oorzaak van de waarschuwing beschrijft, met velden die variëren op basis van het waarschuwings type. Een metrische waarschuwing bevat bijvoorbeeld velden zoals de metrische naam en metrische waarde in de context van de waarschuwing, terwijl een waarschuwing voor een activiteiten logboek informatie bevat over de gebeurtenis die de waarschuwing heeft gegenereerd. 
 
 **Voorbeeld waarschuwing Payload**

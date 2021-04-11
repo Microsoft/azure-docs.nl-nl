@@ -6,14 +6,14 @@ author: matjazl
 ms.service: healthcare-apis
 ms.subservice: fhir
 ms.topic: conceptual
-ms.date: 03/16/2021
+ms.date: 04/08/2021
 ms.author: matjazl
-ms.openlocfilehash: fbc683c98eb0124e8d879eada276593ca9bf7042
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: c10b27d375e2bfb8c64130eceb416a633241cf68
+ms.sourcegitcommit: c6a2d9a44a5a2c13abddab932d16c295a7207d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105934707"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107284427"
 ---
 # <a name="register-a-confidential-client-application-in-azure-active-directory"></a>Een vertrouwelijke client toepassing registreren in Azure Active Directory
 
@@ -29,7 +29,7 @@ Raadpleeg de volgende stappen om een nieuwe vertrouwelijke client toepassing te 
 
 1. Selecteer **App-registraties**. 
 
-    ![Azure Portal. Nieuwe app-registratie.](media/how-to-aad/portal-aad-new-app-registration.png)
+    :::image type="content" source="media/how-to-aad/portal-aad-new-app-registration.png" alt-text="Azure Portal. Nieuwe app-registratie.":::
 
 1. Selecteer **Nieuwe registratie**.
 
@@ -39,7 +39,7 @@ Raadpleeg de volgende stappen om een nieuwe vertrouwelijke client toepassing te 
 
 1. Beschrijving Geef een **omleidings-URI** op. Deze gegevens kunnen later worden gewijzigd, maar als u de antwoord-URL van uw toepassing weet, voert u deze nu in.
 
-    ![Nieuwe registratie van vertrouwelijke client-app.](media/how-to-aad/portal-aad-register-new-app-registration-CONF-CLIENT.png)
+    :::image type="content" source="media/how-to-aad/portal-aad-register-new-app-registration-CONF-CLIENT.png" alt-text="Nieuwe registratie van vertrouwelijke client-app.":::
 
 1. Selecteer **Registreren**.
 
@@ -49,7 +49,7 @@ Nu u uw toepassing hebt geregistreerd, moet u selecteren welke API-machtigingen 
 
 1. Selecteer **API-machtigingen**.
 
-    ![Vertrouwelijke client. API-machtigingen](media/how-to-aad/portal-aad-register-new-app-registration-CONF-CLIENT-API-Permissions.png)
+    :::image type="content" source="media/how-to-aad/portal-aad-register-new-app-registration-CONF-CLIENT-API-Permissions.png" alt-text="Vertrouwelijke client. API-machtigingen.":::
 
 1. Selecteer **een machtiging toevoegen**.
 
@@ -70,11 +70,11 @@ Nu u uw toepassing hebt geregistreerd, moet u selecteren welke API-machtigingen 
 
 1. Selecteer **certificaten & geheimen** en selecteer vervolgens **Nieuw client geheim**. 
 
-    ![Vertrouwelijke client. Toepassings geheim](media/how-to-aad/portal-aad-register-new-app-registration-CONF-CLIENT-SECRET.png)
+    :::image type="content" source="media/how-to-aad/portal-aad-register-new-app-registration-CONF-CLIENT-SECRET.png" alt-text="Vertrouwelijke client. Toepassings geheim.":::
 
-1. Voer een **beschrijving** voor het clientgeheim in. Selecteer het verloopt (in 1 jaar, in twee jaar of nooit) en klik vervolgens op **toevoegen**.
+1. Voer een **beschrijving** voor het clientgeheim in. Selecteer de vervolg keuzelijst **Expires** om een verloop tijd frame te kiezen en klik vervolgens op **toevoegen**.
 
-   ![Een clientgeheim toevoegen](media/how-to-aad/add-a-client-secret.png)
+   :::image type="content" source="media/how-to-aad/add-a-client-secret.png" alt-text="Voeg een client geheim toe.":::
 
 1. Nadat de client Secret string is gemaakt, kopieert u de **waarde** en **id** en slaat u deze op een veilige locatie van uw keuze op.
 

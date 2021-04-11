@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 10/16/2018
 ms.title: include
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 5687fb99c27b8b2141e0a2a817327cfbb124951a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 40e9e2b0e7437566a132f2402d3bed01b284d11a
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102109368"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106081074"
 ---
 ## <a name="create-a-manually-triggered-webjob"></a><a name="CreateOnDemand"></a> Een hand matig geactiveerde Webtaak maken
 
@@ -33,7 +33,7 @@ ms.locfileid: "102109368"
    | <abbr title="Een naam die uniek is binnen een App Service-app. Moet beginnen met een letter of een cijfer en mag geen speciale tekens bevatten `-` , behalve en `_` .">Name</abbr> | myTriggeredWebJob | 
     | <abbr title="Een *zip* -bestand dat uw uitvoer bare bestand of script bestanden bevat, evenals alle ondersteunende bestanden die nodig zijn om het programma of script uit te voeren.">Bestand uploaden</abbr> | ConsoleApp.zip |
     | <abbr title="Typen bevatten doorlopend, geactiveerd.">Type</abbr> | Geactiveerd | 
-    | <abbr title="Typen bevatten gepland of hand matig">Triggers</a> | Handmatig | |
+    | <abbr title="Typen bevatten gepland of hand matig">Triggers</a> | Handmatig | 
 
 4. Klik op **OK**. 
 

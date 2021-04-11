@@ -8,12 +8,12 @@ ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: conceptual
 ms.date: 03/31/2021
-ms.openlocfilehash: e882ae89da2fd081d6b41d3d42e998d3600f0e18
-ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
+ms.openlocfilehash: 74cd5ce5912e5a656342a43b7c2b165fdf3c32d4
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106120742"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106490289"
 ---
 # <a name="whats-new-in-azure-sentinel"></a>Wat is er nieuw in azure Sentinel
 
@@ -32,6 +32,7 @@ Genoteerde functies zijn momenteel beschikbaar als PREVIEW-versie. De [Aanvullen
 
 ## <a name="march-2021"></a>2021 maart
 
+- [Werkmappen zo instellen dat deze automatisch worden vernieuwd in de weergave modus](#set-workbooks-to-automatically-refresh-while-in-view-mode)
 - [Nieuwe detecties voor Azure Firewall](#new-detections-for-azure-firewall)
 - [Automatiserings regels en door incidenten geactiveerde playbooks](#automation-rules-and-incident-triggered-playbooks) (inclusief alle-nieuwe Playbook-documentatie)
 - [Nieuwe waarschuwings verrijkingen: uitgebreide entiteits toewijzing en aangepaste Details](#new-alert-enrichments-enhanced-entity-mapping-and-custom-details)
@@ -39,6 +40,20 @@ Genoteerde functies zijn momenteel beschikbaar als PREVIEW-versie. De [Aanvullen
 - [Incident filters en sorteer voorkeuren die nu zijn opgeslagen in uw sessie (open bare preview)](#incident-filters-and-sort-preferences-now-saved-in-your-session-public-preview)
 - [Microsoft 365 Defender-incident integratie (open bare preview)](#microsoft-365-defender-incident-integration-public-preview)
 - [Nieuwe micro soft-service connectors met behulp van Azure Policy](#new-microsoft-service-connectors-using-azure-policy)
+
+### <a name="set-workbooks-to-automatically-refresh-while-in-view-mode"></a>Werkmappen zo instellen dat deze automatisch worden vernieuwd in de weergave modus
+
+Azure Sentinel-gebruikers kunnen nu de nieuwe [Azure monitor mogelijkheid](https://techcommunity.microsoft.com/t5/azure-monitor/azure-workbooks-set-it-to-auto-refresh/ba-p/2228555) gebruiken om werkmap gegevens automatisch te vernieuwen tijdens een weergave sessie.
+
+Selecteer in elke werkmap of werkmap sjabloon :::image type="icon" source="media/whats-new/auto-refresh-workbook.png" border="false"::: **automatisch vernieuwen** om uw interval opties weer te geven. Selecteer de optie die u wilt gebruiken voor de huidige weergave sessie en selecteer **Toep assen**.
+
+- Ondersteunde vernieuwings intervallen variëren van **5 minuten** tot **1 dag**.
+- Automatisch vernieuwen is standaard uitgeschakeld. Om de prestaties te optimaliseren, wordt automatisch vernieuwen ook uitgeschakeld wanneer u een werkmap sluit en wordt niet op de achtergrond uitgevoerd. Schakel automatisch vernieuwen als dat nodig is de volgende keer dat u de werkmap opent, weer in.
+- Automatisch vernieuwen is onderbroken tijdens het bewerken van een werkmap en automatisch vernieuwings intervals worden opnieuw gestart telkens wanneer u terugschakelt naar de weer gave modus vanuit de bewerkings modus.
+
+    Intervallen worden ook opnieuw gestart als u de werkmap hand matig vernieuwt door de :::image type="icon" source="media/whats-new/manual-refresh-button.png" border="false"::: knop **vernieuwen** te selecteren.
+
+Zie voor meer informatie [zelf studie: visualiseren en bewaken van uw gegevens](tutorial-monitor-your-data.md) en de [Azure monitor documentatie](../azure-monitor/visualize/workbooks-overview.md).
 
 ### <a name="new-detections-for-azure-firewall"></a>Nieuwe detecties voor Azure Firewall
 

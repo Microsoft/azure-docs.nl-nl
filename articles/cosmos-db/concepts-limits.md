@@ -5,13 +5,13 @@ author: abhijitpai
 ms.author: abpai
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 03/22/2021
-ms.openlocfilehash: f33490e273104105502ecc8f4f255c354a2d2f3b
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.date: 04/07/2021
+ms.openlocfilehash: f6416a688c7f1c94d7d8a90b0531b1ccd684ee29
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104800020"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107031100"
 ---
 # <a name="azure-cosmos-db-service-quotas"></a>Service quota's Azure Cosmos DB
 
@@ -31,7 +31,7 @@ U kunt de door Voer inrichten op container niveau of op database niveau in terme
 | --- | --- |
 | Maximum RUs per container ([ingerichte modus toegewezen door Voer](account-databases-containers-items.md#azure-cosmos-containers)) | standaard 1.000.000. U kunt deze verhogen door [een ondersteunings ticket voor Azure te archiveren](create-support-request-quota-increase.md) |
 | Maximum RUs per data base ([ingerichte modus voor gedeelde door Voer](account-databases-containers-items.md#azure-cosmos-containers)) | standaard 1.000.000. U kunt deze verhogen door [een ondersteunings ticket voor Azure te archiveren](create-support-request-quota-increase.md) |
-| Maximum RUs per (logische) partitie | 10.000 |
+| Maximum RUs per partitie (logische & fysiek) | 10.000 |
 | Maximale opslag ruimte in alle items per (logische) partitie | 20 GB |
 | Maximum aantal afzonderlijke (logische) partitie sleutels | Onbeperkt |
 | Maximale opslag per container | Onbeperkt |

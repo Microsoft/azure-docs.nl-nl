@@ -2,7 +2,7 @@
 title: 'Quickstart: SDK-clientbibliotheken en REST API van Language Understanding (LUIS)'
 description: Maak en doorzoek een LUIS-app met de SDK-clientbibliotheken en REST API van LUIS.
 ms.topic: quickstart
-ms.date: 12/09/2020
+ms.date: 03/29/2021
 ms.service: cognitive-services
 ms.author: aahi
 manager: nitinme
@@ -11,12 +11,12 @@ author: aahill
 keywords: Azure, kunstmatige intelligentie, ai, natuurlijke taalverwerking, nlp, LUIS, azure luis, natuurlijk taalbegrip, ai-chatbot, chatbot-maker, begrip van natuurlijke taal
 ms.custom: devx-track-python, devx-track-js, devx-track-csharp, cog-serv-seo-aug-2020
 zone_pivot_groups: programming-languages-set-luis
-ms.openlocfilehash: 7ff5844cf9f1bce45df438fc00e24da28c438b05
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
-ms.translationtype: HT
+ms.openlocfilehash: ca45266ce4b8ca784c3d54aafb80a66efaf2a1da
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96941516"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106278912"
 ---
 # <a name="quickstart-language-understanding-luis-client-libraries-and-rest-api"></a>Quickstart: clientbibliotheken en REST API van Language Understanding (LUIS)
 
@@ -61,9 +61,5 @@ Andere fouten: als er een fout optreedt die hierboven niet wordt behandeld, laat
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Wat is de Language Understanding (LUIS)-API?](what-is-luis.md)
-* [Nieuwe functies](whats-new.md)
-* [Intenties](luis-concept-intent.md), [entiteiten](luis-concept-entity-types.md) en [voorbeelduitingen](luis-concept-utterance.md), en [vooraf samengestelde entiteiten](luis-reference-prebuilt-entities.md)
-* De broncode voor dit voorbeeld is te vinden op [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code).
-* Informatie over natuurlijke taal: [natuurlijk taalbegrip (NLU) en natuurlijke taalverwerking (NLP)](artificial-intelligence.md)
-* Bots: [AI-chatbots](luis-csharp-tutorial-bf-v4.md "zelfstudie om een chatbot te maken")
+> [!div class="nextstepaction"]
+> [Terugkerende app-ontwikkeling voor LUIS](./luis-concept-app-iteration.md)

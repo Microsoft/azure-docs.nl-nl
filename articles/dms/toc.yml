@@ -37,7 +37,7 @@
   items:
     - name: SQL-server migreren
       items:
-        - name: Azure SQL Database
+        - name: naar Azure SQL Database
           href: tutorial-sql-server-to-azure-sql.md
         - name: naar Azure SQL Managed Instance (offline)
           href: tutorial-sql-server-to-managed-instance.md
@@ -93,6 +93,10 @@
           href: how-to-migrate-ssis-packages.md
         - name: Azure SQL Managed Instance
           href: how-to-migrate-ssis-packages-managed-instance.md
+- name: Naslaginformatie
+  items:
+    - name: Azure CLI
+      href: /cli/azure/dms
 - name: Resources
   items:
     - name: Veelgestelde vragen

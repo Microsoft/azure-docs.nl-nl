@@ -7,18 +7,18 @@ ms.author: alkarche
 ms.date: 11/18/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: e6b35031d976a11bdac6f38d74f9e02a0fc83302
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: c7efebaf23bd8e897243f6ee12b23d3821a4c033
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105936305"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107257327"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-apis-and-cli"></a>Eind punten en routes beheren in azure Digital Apparaatdubbels (Api's en CLI)
 
 [!INCLUDE [digital-twins-route-selector.md](../../includes/digital-twins-route-selector.md)]
 
-In azure Digital Apparaatdubbels kunt u [gebeurtenis meldingen](how-to-interpret-event-data.md) naar downstream-Services of verbonden reken bronnen sturen. Dit doet u door eerst **eindpunten** in te stellen die de gebeurtenissen kunnen ontvangen. U kunt vervolgens  [**gebeurtenis routes**](concepts-route-events.md) maken om op te geven welke gebeurtenissen worden gegenereerd door Azure Digital apparaatdubbels naar welke eind punten worden verzonden.
+In azure Digital Apparaatdubbels kunt u [gebeurtenis meldingen](concepts-event-notifications.md) naar downstream-Services of verbonden reken bronnen sturen. Dit doet u door eerst **eindpunten** in te stellen die de gebeurtenissen kunnen ontvangen. U kunt vervolgens  [**gebeurtenis routes**](concepts-route-events.md) maken om op te geven welke gebeurtenissen worden gegenereerd door Azure Digital apparaatdubbels naar welke eind punten worden verzonden.
 
 Dit artikel begeleidt u bij het proces van het maken van eind punten en routes met de [rest api's](/rest/api/azure-digitaltwins/), de [.net (C#) SDK](/dotnet/api/overview/azure/digitaltwins/client)en de [Azure Digital apparaatdubbels cli](how-to-use-cli.md).
 
@@ -48,7 +48,7 @@ In deze sectie wordt uitgelegd hoe u deze eind punten maakt met behulp van de Az
 
 ### <a name="create-the-endpoint"></a>Het eind punt maken
 
-Zodra u de eindpunt resources hebt gemaakt, kunt u deze gebruiken voor een Azure Digital Apparaatdubbels-eind punt. In de volgende voor beelden ziet u hoe u eind punten maakt met behulp van de opdracht [AZ DT endpoint Create](/cli/azure/ext/azure-iot/dt/endpoint/create) voor de [Azure Digital apparaatdubbels cli](how-to-use-cli.md). Vervang de tijdelijke aanduidingen in de opdrachten door de gegevens van uw eigen resources.
+Zodra u de eindpunt resources hebt gemaakt, kunt u deze gebruiken voor een Azure Digital Apparaatdubbels-eind punt. In de volgende voor beelden ziet u hoe u eind punten maakt met behulp van de opdracht [AZ DT endpoint Create](/cli/azure/dt/endpoint/create) voor de [Azure Digital apparaatdubbels cli](how-to-use-cli.md). Vervang de tijdelijke aanduidingen in de opdrachten door de gegevens van uw eigen resources.
 
 Een Event Grid-eind punt maken:
 
@@ -119,7 +119,7 @@ Volg de onderstaande stappen om deze opslag resources in uw Azure-account in te 
     
 #### <a name="create-the-dead-letter-endpoint"></a>Het eind punt voor onbestelbare berichten maken
 
-Als u een eind punt wilt maken waarvoor onbestelbare berichten zijn ingeschakeld, voegt u de volgende para meter voor onbestelbare berichten toe aan de opdracht [AZ DT-eind punt maken](/cli/azure/ext/azure-iot/dt/endpoint/create) voor de [Azure Digital apparaatdubbels cli](how-to-use-cli.md).
+Als u een eind punt wilt maken waarvoor onbestelbare berichten zijn ingeschakeld, voegt u de volgende para meter voor onbestelbare berichten toe aan de opdracht [AZ DT-eind punt maken](/cli/azure/dt/endpoint/create) voor de [Azure Digital apparaatdubbels cli](how-to-use-cli.md).
 
 De waarde voor de para meter is de **SAS-URI met onbestelbare tekens** die bestaat uit de naam van het opslag account, de container naam en het SAS-token dat u in de [vorige sectie](#set-up-storage-resources)hebt verzameld. Met deze para meter wordt het eind punt gemaakt met verificatie op basis van een sleutel.
 
@@ -158,7 +158,7 @@ Zodra het eind punt met onbestelbare berichten is ingesteld, worden niet-gestuur
 
 Onbestelbare berichten komen overeen met het schema van de oorspronkelijke gebeurtenis die is bedoeld om aan uw oorspronkelijke eind punt te worden geleverd.
 
-Hier volgt een voor beeld van een bericht met een onbestelbare melding voor een dubbele taak voor het maken van een [waarschuwing](how-to-interpret-event-data.md#digital-twin-lifecycle-notifications):
+Hier volgt een voor beeld van een bericht met een onbestelbare melding voor een dubbele taak voor het maken van een [waarschuwing](concepts-event-notifications.md#digital-twin-lifecycle-notifications):
 
 ```json
 {
@@ -204,7 +204,7 @@ Als er geen route naam is, worden er geen berichten meer doorgestuurd buiten Azu
 
 Voor één route moeten meerdere meldingen en gebeurtenis typen worden geselecteerd. 
 
-Gebeurtenis routes kunnen worden gemaakt met de Azure Digital Apparaatdubbels [ **EventRoutes** -gegevens vlak-api's](/rest/api/digital-twins/dataplane/eventroutes) of [ **AZ DT-route** -cli-opdrachten](/cli/azure/ext/azure-iot/dt/route). In de rest van deze sectie wordt het aanmaak proces door lopen.
+Gebeurtenis routes kunnen worden gemaakt met de Azure Digital Apparaatdubbels [ **EventRoutes** -gegevens vlak-api's](/rest/api/digital-twins/dataplane/eventroutes) of [ **AZ DT-route** -cli-opdrachten](/cli/azure/dt/route). In de rest van deze sectie wordt het aanmaak proces door lopen.
 
 ### <a name="create-routes-with-the-apis-and-c-sdk"></a>Routes maken met de Api's en C# SDK
 
@@ -225,7 +225,7 @@ De volgende voorbeeld methode laat zien hoe u een gebeurtenis route kunt maken, 
 
 ### <a name="create-routes-with-the-cli"></a>Routes maken met de CLI
 
-Routes kunnen ook worden beheerd met behulp van de [route opdrachten AZ DT](/cli/azure/ext/azure-iot/dt/route) voor de Azure Digital apparaatdubbels cli. 
+Routes kunnen ook worden beheerd met behulp van de [route opdrachten AZ DT](/cli/azure/dt/route) voor de Azure Digital apparaatdubbels cli. 
 
 Zie [*How-to: use the Azure Digital APPARAATDUBBELS cli*](how-to-use-cli.md)(Engelstalig) voor meer informatie over het gebruik van de CLI en de opdrachten die beschikbaar zijn.
 
@@ -256,4 +256,4 @@ Dit zijn de ondersteunde route filters. Gebruik de details in de kolom *filter t
 ## <a name="next-steps"></a>Volgende stappen
 
 Meer informatie over de verschillende typen gebeurtenis berichten die u kunt ontvangen:
-* [*Instructies: gebeurtenis gegevens interpreteren*](how-to-interpret-event-data.md)
+* [*Concepten: gebeurtenis meldingen*](concepts-event-notifications.md)

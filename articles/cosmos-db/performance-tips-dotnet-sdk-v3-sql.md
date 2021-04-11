@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 10/13/2020
 ms.author: jawilley
 ms.custom: devx-track-dotnet, contperf-fy21q2
-ms.openlocfilehash: 8eafd36c82b09575514afade6b848a7f9186895f
-ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
+ms.openlocfilehash: 1a6439cfa64257e80d113f01f4ed31d56d850ea3
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105960041"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107226053"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-net"></a>Tips voor betere prestaties van Azure Cosmos DB en .NET
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -215,7 +215,7 @@ De door Voer is ingericht op basis van het aantal ingestelde [aanvraag eenheden]
 
 De complexiteit van een query is van invloed op het aantal aanvraageenheden dat voor een bewerking wordt verbruikt. Het aantal predikaten, de aard van de predikaten, het aantal UDF-bestanden en de grootte van de bron-gegevensset beïnvloeden de kosten van de query bewerkingen.
 
-Als u de overhead van een bewerking (maken, bijwerken of verwijderen) wilt meten, inspecteert u de [x-MS-Request-](/rest/api/cosmos-db/common-cosmosdb-rest-response-headers) factuurkop tekst (of de equivalente `RequestCharge` eigenschap in `ResourceResponse\<T>` of `FeedResponse\<T>` in de .NET SDK) om het aantal aanvraag eenheden te meten dat door de bewerkingen wordt verbruikt:
+Als u de overhead van een bewerking (maken, bijwerken of verwijderen) wilt meten, inspecteert u de [x-MS-Request-](/rest/api/cosmos-db/common-cosmosdb-rest-response-headers) factuurkop tekst (of de equivalente `RequestCharge` eigenschap in `ResourceResponse<T>` of `FeedResponse<T>` in de .NET SDK) om het aantal aanvraag eenheden te meten dat door de bewerkingen wordt verbruikt:
 
 ```csharp
 // Measure the performance (Request Units) of writes

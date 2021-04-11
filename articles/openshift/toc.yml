@@ -107,6 +107,8 @@
       href: /cli/azure/aro
     - name: REST API's voor Azure Red Hat OpenShift
       href: /rest/api/openshift
+    - name: Azure CLI
+      href: /cli/azure/openshift
 - name: Resources
   items:
     - name: Veelgestelde vragen

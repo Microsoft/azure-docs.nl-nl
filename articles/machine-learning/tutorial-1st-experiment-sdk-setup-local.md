@@ -1,7 +1,7 @@
 ---
 title: 'Zelfstudie: Aan de slag met machine learning - Python'
 titleSuffix: Azure Machine Learning
-description: In deze zelfstudie gaat u aan de slag met de Azure Machine Learning SDK voor Python die wordt uitgevoerd op uw persoonlijke ontwikkelsomgeving.
+description: Ga aan de slag met de Azure Machine Learning SDK voor python die in uw persoonlijke ontwikkel omgeving wordt uitgevoerd.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -12,12 +12,12 @@ ms.reviewer: sgilley
 ms.date: 02/11/2021
 ms.custom: devx-track-python, contperf-fy21q3
 adobe-target: true
-ms.openlocfilehash: 81b9b5d53e1b61322d25d5dead85429474c1272c
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 69340245cdebda570b526afd4f11ac8314384b43
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105935546"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107210615"
 ---
 # <a name="tutorial-get-started-with-azure-machine-learning-in-your-development-environment-part-1-of-4"></a>Zelfstudie: Aan de slag met Azure Machine Learning in uw ontwikkelomgeving (deel 1 van 4)
 
@@ -30,16 +30,18 @@ In deel 1 van deze zelfstudiereeks doet u het volgende:
 > * De mapstructuur voor code instellen
 > * Een Azure Machine Learning-werkruimte maken.
 > * Uw lokale ontwikkelomgeving configureren.
-> * Een rekencluster instellen.
+> * Stel een berekenings cluster in, een op de cloud gebaseerde resource voor het trainen van uw modellen.
 
-> [!NOTE]
-> Deze zelfstudie is gericht op de Azure Machine Learning-concepten die vereist zijn voor het indienen van **batch taken**: dit is de locatie waar de code wordt verzonden naar de cloud om te worden uitgevoerd op de achtergrond zonder tussenkomst van de gebruiker. Dit is handig voor voltooide scripts of code die u herhaaldelijk wilt uitvoeren, of voor rekenintensieve machine learning-taken. Als u meer geïnteresseerd bent in een verkennende werkstroom, kunt u in plaats daarvan [Jupyter of RStudio gebruiken op een Azure Machine Learning-rekenproces](tutorial-1st-experiment-sdk-setup.md).
+Deze zelfstudie is gericht op de Azure Machine Learning-concepten die vereist zijn voor het indienen van **batch taken**: dit is de locatie waar de code wordt verzonden naar de cloud om te worden uitgevoerd op de achtergrond zonder tussenkomst van de gebruiker. Dit is handig voor voltooide scripts of code die u herhaaldelijk wilt uitvoeren, of voor rekenintensieve machine learning-taken.
+
+Een andere fantastische manier om Azure Machine Learning te gebruiken is met een Jupyter-notebook.  Zie [zelf studie: aan de slag met Azure machine learning in Jupyter-notebooks](tutorial-1st-experiment-sdk-setup.md).
 
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-abonnement. Als u geen Azure-abonnement hebt, maakt u een gratis account voordat u begint. Probeer [Azure Machine Learning](https://aka.ms/AMLFree) uit.
 - [Anaconda](https://www.anaconda.com/download/) of [Miniconda](https://www.anaconda.com/download/) voor het beheren van virtuele Python-omgevingen en het installeren van pakketten.  
 - Als u niet bekend bent met het gebruik van Conda, raadpleegt u aan de slag [met Conda](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html).
+- Een IDE-of tekst editor voor het maken van uw python-scripts.
 
 ## <a name="install-the-azure-machine-learning-sdk"></a>De Azure Machine Learning-SDK installeren
 

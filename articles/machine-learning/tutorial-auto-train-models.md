@@ -1,7 +1,7 @@
 ---
-title: 'Regressiezelfstudie: Geautomatiseerde machine learning'
+title: 'Zelf studie: regressie met automatische machine learning'
 titleSuffix: Azure Machine Learning
-description: Maak een geautomatiseerd machine learning-experiment waarmee een regressiemodel wordt gegenereerd op basis van de trainingsgegevens en configuratie-instellingen die u opgeeft.
+description: Schrijf code met de python-SDK om een geautomatiseerd machine learning experiment te maken waarmee een regressie model voor u wordt gegenereerd.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,30 +11,34 @@ ms.author: anumamah
 ms.reviewer: nibaccam
 ms.date: 08/14/2020
 ms.custom: devx-track-python, automl
-ms.openlocfilehash: 7f3052905d7594d64be9455c16239ebabd219849
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: 85129cf282e39b4f4932cc5e9f7cfd72d1e445b0
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105565075"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107210632"
 ---
 # <a name="tutorial-use-automated-machine-learning-to-predict-taxi-fares"></a>Zelfstudie: Geautomatiseerde machine learning gebruiken om taxitarieven te voorspellen
 
-
-In deze zelfstudie gebruikt u geautomatiseerde machine learning in Azure Machine Learning om een regressiemodel te maken om de taxikosten van een NYC taxi te voorspellen. Dit proces gebruikt trainingsgegevens en configuratie-instellingen en doorloopt automatisch combinaties van verschillende methoden voor het normaliseren/standaardiseren van functies, modellen en instellingen van hyperparameters om het beste model te bepalen.
+In deze zelf studie gebruikt u geautomatiseerde machine learning in de Azure Machine Learning SDK voor het maken van een [regressie model](concept-automated-ml.md#regression) om NYC te voors pellen. Dit proces gebruikt trainingsgegevens en configuratie-instellingen en doorloopt automatisch combinaties van verschillende methoden voor het normaliseren/standaardiseren van functies, modellen en instellingen van hyperparameters om het beste model te bepalen.
 
 ![Stroomdiagram](./media/tutorial-auto-train-models/flow2.png)
 
-In deze zelfstudie leert u het volgende:
+In deze zelf studie schrijft u code met behulp van de python-SDK.  U leert de volgende taken:
 
 > [!div class="checklist"]
 > * Gegevens downloaden, transformeren en opschonen met behulp van Azure Open Datasets
 > * Een regressiemodel trainen met geautomatiseerde machine learning
 > * De nauwkeurigheid van een model berekenen
 
-Als u nog geen Azure-abonnement hebt, maakt u een gratis account voordat u begint. Probeer vandaag nog de [gratis of betaalde versie van Azure Machine Learning](https://aka.ms/AMLFree).
+Probeer ook geautomatiseerde machine learning voor deze andere model typen: 
+
+* [Zelf studie: een classificatie model maken met geautomatiseerd ml in azure machine learning](tutorial-first-experiment-automated-ml.md) -a no-code-voor beeld.
+* [Zelf studie: een prognose van de vraag met automatische machine learning](tutorial-automated-ml-forecast.md) -een no-code-voor beeld.
 
 ## <a name="prerequisites"></a>Vereisten
+
+Als u nog geen Azure-abonnement hebt, maakt u een gratis account voordat u begint. Probeer vandaag nog de [gratis of betaalde versie van Azure Machine Learning](https://aka.ms/AMLFree).
 
 * Doorloop de [installatiezelfstudie](tutorial-1st-experiment-sdk-setup.md) als u nog geen Azure Machine Learning-werkruimte of virtuele notebook-machine hebt.
 * Wanneer u de installatiezelfstudie hebt voltooid, opent u de notebook *tutorials/regression-automl-nyc-taxi-data/regression-automated-ml.ipynb* met dezelfde notebookserver.

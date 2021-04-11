@@ -7,12 +7,12 @@ ms.devlang: rest-api
 ms.topic: quickstart
 ms.date: 01/18/2021
 ms.author: jingwang
-ms.openlocfilehash: adcefc21ac4fc8a00d97d5ac4352bad1287b60de
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b1950fa5269460bd3daeb671a37a072dc4f5f050
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102517630"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106385255"
 ---
 # <a name="quickstart-create-an-azure-data-factory-and-pipeline-by-using-the-rest-api"></a>Quickstart: Een Azure data factory en pijplijn maken door de REST-API te gebruiken
 
@@ -37,7 +37,9 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
 * Maak een **blob-container** in Blob Storage, maak een **invoermap** in de container en upload een aantal bestanden naar de map. U kunt hulpprogramma's zoals [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/) gebruiken om verbinding te maken met Azure Blob Storage, een blob-container te maken, een invoerbestand te uploaden en het uitvoerbestand te verifiëren.
 * Installeer **Azure PowerShell**. Volg de instructies in [How to install and configure Azure PowerShell](/powershell/azure/install-Az-ps) (Azure PowerShell installeren en configureren). Deze snelstartgids maakt gebruik van PowerShell om REST-API-aanroepen aan te roepen.
 * **Maak een toepassing in Azure Active Directory** aan de hand van [deze instructie](../active-directory/develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal). Noteer de volgende waarden voor gebruik in latere stappen: **toepassings-id**, **clientSecrets** en **tenant-id**. Wijs de toepassing toe aan de rol '**Inzender**'.
-
+>[!NOTE]
+>   Voor onafhankelijke Clouds moet u de juiste Cloud-specifieke eind punten voor ActiveDirectoryAuthority en ResourceManagerUrl (BaseUri) gebruiken. U kunt Power shell gebruiken om de eind punt-Url's voor verschillende Clouds eenvoudig op te halen door ' Get-AzEnvironment | Format-List, waarmee een lijst met eind punten voor elke cloud omgeving wordt geretourneerd.  
+>    
 ## <a name="set-global-variables"></a>Globale variabelen instellen
 
 1. Start **PowerShell**. Houd Azure PowerShell geopend tot het einde van deze snelstartgids. Als u het programma sluit en opnieuw opent, moet u de opdrachten opnieuw uitvoeren.

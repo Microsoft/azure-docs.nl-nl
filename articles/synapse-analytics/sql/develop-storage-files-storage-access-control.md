@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 06/11/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 254f424694df72a290a07369fe910587fadf58d4
-ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
+ms.openlocfilehash: 726395e9f004130699dab061cfa752a2e516c834
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106385544"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106552951"
 ---
 # <a name="control-storage-account-access-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Toegang tot opslagaccounts beheren voor serverloze SQL-pools in Azure Synapse Analytics
 
@@ -104,6 +104,15 @@ Wanneer u toegang wilt tot opslag die wordt beveiligd met de firewall, kunt u **
 #### <a name="user-identity"></a>Gebruikersidentiteit
 
 Als u via Gebruikersidentiteit toegang wilt tot opslag die wordt beveiligd met de firewall, kunt u de PowerShell-module Az.Storage gebruiken.
+#### <a name="configuration-via-azure-portal"></a>Configuratie via Azure Portal
+
+1. Zoek uw opslag account in Azure Portal.
+1. Ga naar netwerken onder instellingen van de sectie.
+1. Voeg in sectie ' resource-instanties ' een uitzonde ring toe voor uw Synapse-werk ruimte.
+1. Selecteer micro soft. Synapse/werk ruimten als een resource type.
+1. Selecteer de naam van uw werk ruimte als een exemplaar naam.
+1. Klik op Opslaan.
+
 #### <a name="configuration-via-powershell"></a>Configuratie via PowerShell
 
 Volg deze stappen om de firewall voor uw opslagaccount te configureren en een uitzondering toe te voegen voor Synapse-werkruimte.

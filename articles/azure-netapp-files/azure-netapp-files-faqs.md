@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/29/2021
+ms.date: 04/05/2021
 ms.author: b-juche
-ms.openlocfilehash: 81c28a3c64c81da8f6939d821c2bd61ba8617a7b
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 318b7e8b35fa7cc56a86033a08e316257a488b6f
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105935240"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106442691"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Veelgestelde vragen over Azure NetApp Files
 
@@ -82,7 +82,25 @@ Nee, op dit moment kunt u geen netwerk beveiligings groepen Toep assen op het ge
 
 ### <a name="can-i-use-azure-rbac-with-azure-netapp-files"></a>Kan ik Azure RBAC gebruiken met Azure NetApp Files?
 
-Ja, Azure NetApp Files ondersteunt de functies van Azure RBAC.
+Ja, Azure NetApp Files ondersteunt de functies van Azure RBAC. Naast de ingebouwde Azure-functies kunt u [aangepaste rollen maken](../role-based-access-control/custom-roles.md) voor Azure NetApp files. 
+
+Zie Azure resource provider-bewerkingen voor voor de volledige lijst met Azure NetApp Files machtigingen [`Microsoft.NetApp`](../role-based-access-control/resource-provider-operations.md#microsoftnetapp) .
+
+### <a name="are-azure-activity-logs-supported-on-azure-netapp-files"></a>Worden Azure-activiteiten logboeken ondersteund op Azure NetApp Files?
+
+Azure NetApp Files is een systeem eigen Azure-service. Alle PUT-, POST-en DELETE-Api's voor Azure NetApp Files worden vastgelegd. De logboeken tonen bijvoorbeeld activiteiten zoals wie de moment opname heeft gemaakt, wie het volume heeft gewijzigd, enzovoort.
+
+Zie [Azure NetApp Files rest API](/rest/api/netapp/)voor de volledige lijst met API-bewerkingen.
+
+### <a name="how-do-i-audit-file-access-on-azure-netapp-files-nfs-v3-and-v41-volumes"></a>Hoe kan ik het controleren van bestands toegang op Azure NetApp Files NFS-volumes (v3 en v 4.1)?
+
+U kunt audit logboeken configureren aan de client zijde. Alle wijzigingen voor lezen, schrijven en kenmerk worden vastgelegd. 
+
+### <a name="can-i-use-azure-policies-with-azure-netapp-files"></a>Kan ik Azure-beleid gebruiken met Azure NetApp Files?
+
+Ja, u kunt [aangepaste Azure-beleids regels](../governance/policy/tutorials/create-custom-policy-definition.md)maken. 
+
+U kunt echter geen Azure-beleid (aangepaste naamgevings beleid) maken op de Azure NetApp Files-interface. Zie de [richt lijnen voor het plannen van Azure NetApp files-netwerken](azure-netapp-files-network-topologies.md#considerations).
 
 ## <a name="performance-faqs"></a>Veelgestelde vragen over prestaties
 

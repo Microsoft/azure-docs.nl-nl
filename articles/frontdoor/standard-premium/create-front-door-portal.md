@@ -4,20 +4,19 @@ description: Deze Quick Start laat zien hoe u de Azure front deur Standard/Premi
 services: frontdoor
 author: duongau
 manager: KumudD
-Customer intent: As an IT admin, I want to direct user traffic to ensure high availability of web applications.
 ms.service: frontdoor
 ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/18/2021
+ms.date: 04/16/2021
 ms.author: duau
-ms.openlocfilehash: 175fb82a5fdf300915f89c3d8cdc238638a742e1
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 8c6fe355621b4f096814268dea8fd2fc8e1166a7
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105565126"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106552866"
 ---
 # <a name="quickstart-create-an-azure-front-door-standardpremium-profile---azure-portal"></a>Snelstartgids: een Azure front deur Standard/Premium-profiel maken-Azure Portal
 
@@ -148,7 +147,7 @@ Configureer Azure front deur Standard/Premium (preview) om gebruikers verkeer te
     
     :::image type="content" source="../media/create-front-door-portal/front-door-custom-create-add-endpoint.png" alt-text="Scherm opname van een eind punt toevoegen.":::
 
-1. Voeg vervolgens een originele groep toe die uw twee web-apps bevat. Selecteer **+ toevoegen**   om **een originele groep pagina toevoegen** te openen. Voer bij naam *myOrignGroup* in en selecteer **+ een oorsprong toevoegen**.
+1. Voeg vervolgens een originele groep toe die uw twee web-apps bevat. Selecteer **+ toevoegen**   om **een originele groep pagina toevoegen** te openen. Voer bij naam *myOriginGroup* in en selecteer **+ een oorsprong toevoegen**.
  
      :::image type="content" source="../media/create-front-door-portal/front-door-custom-create-add-origin-group.png" alt-text="Scherm opname van een oorspronkelijke groep toevoegen.":::
 

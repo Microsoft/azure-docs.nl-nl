@@ -3,16 +3,16 @@ title: Problemen met het indelen van pijp lijnen en triggers in Azure Data Facto
 description: Gebruik verschillende methoden voor het oplossen van problemen met pijp lijn triggers in Azure Data Factory.
 author: ssabat
 ms.service: data-factory
-ms.date: 03/13/2021
+ms.date: 04/01/2021
 ms.topic: troubleshooting
 ms.author: susabat
 ms.reviewer: susabat
-ms.openlocfilehash: 72f2a5eec25b9acc2aedd7b006fe3380141781c8
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 49205025e26f7c0eb609638e70a58c9c0c14748e
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105563409"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106385408"
 ---
 # <a name="troubleshoot-pipeline-orchestration-and-triggers-in-azure-data-factory"></a>Problemen met het indelen van pijp lijnen en triggers in Azure Data Factory oplossen
 
@@ -83,7 +83,26 @@ U hebt de capaciteits limiet van de Integration runtime bereikt. U kunt een grot
 - Voer uw pijp lijnen uit op verschillende tijdstippen van de trigger.
 - Maak een nieuwe Integration runtime en Splits uw pijp lijnen op meerdere integratie-Runtimes.
 
-### <a name="how-to-perform-activity-level-errors-and-failures-in-pipelines"></a>Fouten en storingen op activiteit niveau uitvoeren in pijp lijnen
+### <a name="a-pipeline-run-error-while-invoking-rest-api-in-a-web-activity"></a>Fout bij het uitvoeren van een pijp lijn tijdens het aanroepen van de REST-API in een webactiviteit
+
+**Probleem**
+
+Foutbericht:
+
+`
+Operation on target Cancel failed: {“error”:{“code”:”AuthorizationFailed”,”message”:”The client ‘<client>’ with object id ‘<object>’ does not have authorization to perform action ‘Microsoft.DataFactory/factories/pipelineruns/cancel/action’ over scope ‘/subscriptions/<subscription>/resourceGroups/<resource group>/providers/Microsoft.DataFactory/factories/<data factory name>/pipelineruns/<pipeline run id>’ or the scope is invalid. If access was recently granted, please refresh your credentials.”}}
+`
+
+**Oorzaak**
+
+Pijp lijnen kunnen gebruikmaken van de webactiviteit voor het aanroepen van ADF REST API-methoden als en alleen als aan de Azure Data Factory-lid de rol Inzender is toegewezen. U moet eerst de Azure Data Factory beheerde identiteit toevoegen aan de beveiligingsrol Inzender configureren. 
+
+**Oplossing**
+
+Voordat u het REST API van de Azure Data Factory gebruikt op het tabblad instellingen van een webactiviteit, moet u de beveiliging configureren. Azure Data Factory pijp lijnen kunnen gebruikmaken van de webactiviteit voor het aanroepen van ADF REST API methoden als en alleen als aan de Azure Data Factory beheerde identiteit de rol *Inzender*  is toegewezen. Begin met het openen van de Azure Portal en klik op de koppeling **alle resources** in het menu links. Selecteer **Azure Data Factory**  voor het toevoegen van een ADF-beheerde identiteit met de rol Inzender door te klikken op de knop **toevoegen** in het vak *een roltoewijzing toevoegen* .
+
+
+### <a name="how-to-check-and-branch-on-activity-level-success-and-failure-in-pipelines"></a>Controleren en vertakking op activiteit niveau en storingen in pijp lijnen
 
 **Oorzaak**
 
@@ -115,7 +134,7 @@ De mate van parallelle uitvoering in *foreach* is in feite de maximale mate van 
 
 Bekende feiten over *foreach*
  * Foreach heeft een eigenschap met de naam batch Count (n), waarbij de standaard waarde 20 is en het maximum 50 is.
- * Het aantal batches, n, wordt gebruikt om n wacht rijen samen te stellen. Later bespreken we enkele details over hoe deze wacht rijen worden samengesteld.
+ * Het aantal batches, n, wordt gebruikt om n wacht rijen samen te stellen. 
  * Elke wachtrij wordt opeenvolgend uitgevoerd, maar u kunt meerdere wacht rijen tegelijk uitvoeren.
  * De wacht rijen worden vooraf gemaakt. Dit betekent dat er tijdens de runtime geen herverdeling van de wacht rijen is.
  * U hebt op elk moment Maxi maal één item per wachtrij verwerken. Dit betekent dat de meeste n items op een bepaald moment worden verwerkt.
@@ -124,7 +143,8 @@ Bekende feiten over *foreach*
 **Oplossing**
 
  * Gebruik geen *SetVariable* -activiteit in *voor elke* die parallel wordt uitgevoerd.
- * Rekening houdend met de manier waarop de wacht rijen zijn gebouwd, kan de klant de foreach-prestaties verbeteren door meerdere *foreachs* in te stellen waarbij elke foreach items met een vergelijk bare verwerkings tijd bevat. Zo zorgt u ervoor dat lange uitvoeringen parallel op een opeenvolgende volg orde worden verwerkt.
+ * Rekening houdend met de manier waarop de wacht rijen zijn gebouwd, kan de klant de foreach-prestaties verbeteren door meerdere *foreach* in te stellen, waarbij elke *foreach* items met een vergelijk bare verwerkings tijd heeft. 
+ * Zo zorgt u ervoor dat lange uitvoeringen parallel op een opeenvolgende volg orde worden verwerkt.
 
  ### <a name="pipeline-status-is-queued-or-stuck-for-a-long-time"></a>Pijplijn status wordt gedurende lange tijd in de wachtrij geplaatst of vastgelopen
  

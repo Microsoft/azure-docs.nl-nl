@@ -12,12 +12,12 @@ ms.custom:
 - mqtt
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
-ms.openlocfilehash: 3286b464051b8fea88d2797d4f82b20fe432b4b8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d106021d90304a06ea7c08494d626511bb903df0
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "90019526"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106553036"
 ---
 # <a name="upload-files-with-iot-hub"></a>Bestanden uploaden met IoT Hub
 
@@ -44,7 +44,13 @@ Als u de functie voor het uploaden van bestanden wilt gebruiken, moet u eerst ee
 De [Upload bestanden van uw apparaat naar de Cloud met IOT hub](iot-hub-csharp-csharp-file-upload.md) hand leidingen bieden een volledig overzicht van het uploaden van het bestand. In deze hand leidingen wordt uitgelegd hoe u de Azure Portal kunt gebruiken om een opslag account te koppelen aan een IoT-hub.
 
 > [!NOTE]
-> De [Azure IOT sdk's](iot-hub-devguide-sdks.md) verwerken automatisch het ophalen van de SAS-URI, het uploaden van het bestand en het melden van IOT hub van een voltooide upload.
+> De [Azure IOT sdk's](iot-hub-devguide-sdks.md) verwerken automatisch het ophalen van de URI van de Shared Access-hand tekening, het uploaden van het bestand en het melden van IOT hub van een voltooide upload. Als een firewall de toegang tot het Blob Storage-eind punt blokkeert, maar wel toegang verleent tot het IoT Hub-eind punt, mislukt het uploaden van het bestand en wordt de volgende fout weer gegeven voor de SDK van het IoT C#-apparaat:
+>
+> `---> System.Net.Http.HttpRequestException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond`
+>
+> Als u de functie voor het uploaden van bestanden wilt gebruiken, moet u toegang tot zowel het IoT Hub-eind punt als het Blob Storage eind punt beschikbaar zijn voor het apparaat.
+> 
+
 
 ## <a name="initialize-a-file-upload"></a>Het uploaden van een bestand initialiseren
 IoT Hub heeft een eind punt dat specifiek is voor apparaten om een SAS-URI voor opslag aan te vragen voor het uploaden van een bestand. Om het proces voor het uploaden van bestanden te starten, verzendt het apparaat een POST-aanvraag naar `{iot hub}.azure-devices.net/devices/{deviceId}/files` met de volgende JSON-hoofd tekst:

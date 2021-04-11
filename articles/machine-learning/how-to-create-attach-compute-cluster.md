@@ -11,12 +11,12 @@ ms.author: sgilley
 author: sdgilley
 ms.reviewer: sgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: c11176f0c7760e76b755406bda96b72b302f8857
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 1e3549a6f5f4f9d7f6a6da574378c90c20e42dcf
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102506936"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106169569"
 ---
 # <a name="create-an-azure-machine-learning-compute-cluster"></a>Een Azure Machine Learning-rekencluster maken
 
@@ -44,11 +44,9 @@ Reken clusters kunnen taken veilig uitvoeren in een [virtuele netwerk omgeving](
 
 ## <a name="limitations"></a>Beperkingen
 
-* **Maak niet meerdere gelijktijdige bijlagen met dezelfde reken kracht** vanuit uw werk ruimte. U kunt bijvoorbeeld één reken cluster koppelen aan een werk ruimte met behulp van twee verschillende namen. Elke nieuwe bijlage verbreekt de vorige bestaande bijlage (n).
-
-    Als u een compute-doel opnieuw wilt koppelen, bijvoorbeeld om de cluster configuratie-instellingen te wijzigen, moet u eerst de bestaande bijlage verwijderen.
-
 * Enkele van de scenario's die in dit document worden vermeld, zijn gemarkeerd als __Preview__. De Preview-functionaliteit wordt zonder service level agreement gegeven en wordt niet aanbevolen voor productie werkbelastingen. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+* Momenteel wordt er alleen ondersteuning geboden voor het maken van clusters via ARM-sjablonen [ https://docs.microsoft.com/azure/templates/microsoft.machinelearningservices/workspaces/computes?tabs=json ]. Voor het bijwerken van Compute raden wij u aan de SDK, CLI of UX nu te gebruiken.
 
 * Azure Machine Learning Compute heeft standaard limieten, zoals het aantal kernen dat kan worden toegewezen. Zie voor meer informatie [beheer en aanvragen van quota's voor Azure-resources](how-to-manage-quotas.md).
 

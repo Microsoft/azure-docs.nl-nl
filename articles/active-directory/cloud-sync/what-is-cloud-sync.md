@@ -11,12 +11,12 @@ ms.date: 12/11/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3b880d70baf7c160f8235bd01a5000f83825c36
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: fc81e0b5a2b7e9e2e5ab12094950f71ad51c6871
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98614489"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107225968"
 ---
 # <a name="what-is-azure-ad-connect-cloud-sync"></a>Wat is Azure AD Connect-cloudsynchronisatie?
 Azure AD Connect-cloudsynchronisatie is een nieuwe aanbieding van Microsoft, ontworpen om te voldoen aan uw hybride identiteitsdoelen voor synchronisatie van gebruikers, groepen en contactpersonen met Azure AD.  Dit wordt bereikt door gebruik te maken van de Azure AD-inrichtingsagent in plaats van de Azure AD Connect-toepassing.  De agent kan echter naast Azure AD Connect-synchronisatie worden gebruikt en biedt de volgende voordelen:
@@ -63,7 +63,7 @@ In de volgende tabel worden Azure AD Connect en Azure AD Connect-cloudsynchronis
 | Ondersteuning voor federatie |●|●|
 | Naadloze eenmalige aanmelding|● |●|
 | Biedt ondersteuning voor installatie op een domeincontroller |● |● |
-| Ondersteuning voor Windows Server 2012 en Windows Server 2012 R2 |● |● |
+| Ondersteuning voor Windows Server 2016|● |● |
 | Filteren op domeinen/OE's/groepen |● |● |
 | Filteren op kenmerkwaarden van objecten |● | |
 | Toestaan dat minimale set kenmerken worden gesynchroniseerd (MinSync) |● |● |

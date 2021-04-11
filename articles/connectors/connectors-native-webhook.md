@@ -7,12 +7,12 @@ ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 08/27/2020
 tags: connectors
-ms.openlocfilehash: 7c6f3c4e3e4a2a29fe6a02c03043e3dfb81a2010
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: cdbf853a96f319cb27c10136004a1398014e602f
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "89227896"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106109149"
 ---
 # <a name="create-and-run-automated-event-based-workflows-by-using-http-webhooks-in-azure-logic-apps"></a>Geautomatiseerde op gebeurtenis gebaseerde werk stromen maken en uitvoeren met behulp van HTTP-webhooks in Azure Logic Apps
 
@@ -74,12 +74,12 @@ Deze ingebouwde trigger roept het eind punt van het abonnement op de doel servic
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Abonnement-methode** | Ja | De methode die moet worden gebruikt bij het abonneren op het doel eindpunt |
-   | **Abonneren: URI** | Ja | De URL die moet worden gebruikt voor het abonneren op het doel eindpunt |
-   | **Abonneren: hoofd tekst** | Nee | Een bericht tekst die moet worden meegenomen in de abonnements aanvraag. Dit voor beeld bevat de call back-URL waarmee de abonnee op unieke wijze wordt geïdentificeerd: de logische app, door gebruik te maken van de `@listCallbackUrl()` expressie voor het ophalen van de call back-URL van de logische app. |
-   | **Afmelden-methode** | Nee | De methode die moet worden gebruikt bij het afmelden van het doel eindpunt |
-   | **Opzeg ging van de URI** | Nee | De URL die moet worden gebruikt voor het afmelden van het doel eindpunt |
-   | **Afmelden: hoofd tekst** | Nee | Een optionele bericht tekst die moet worden meegenomen in de afmeldings aanvraag <p><p>**Opmerking**: deze eigenschap biedt geen ondersteuning voor het gebruik van de `listCallbackUrl()` functie. De trigger neemt echter automatisch de headers op en verzendt deze `x-ms-client-tracking-id` en `x-ms-workflow-operation-name` , die de doel service kan gebruiken om de abonnee uniek te identificeren. |
+   | **Abonnement-methode** | Yes | De methode die moet worden gebruikt bij het abonneren op het doel eindpunt |
+   | **Abonneren: URI** | Yes | De URL die moet worden gebruikt voor het abonneren op het doel eindpunt |
+   | **Abonneren: hoofd tekst** | No | Een bericht tekst die moet worden meegenomen in de abonnements aanvraag. Dit voor beeld bevat de call back-URL waarmee de abonnee op unieke wijze wordt geïdentificeerd: de logische app, door gebruik te maken van de `@listCallbackUrl()` expressie voor het ophalen van de call back-URL van de logische app. |
+   | **Afmelden-methode** | No | De methode die moet worden gebruikt bij het afmelden van het doel eindpunt |
+   | **Opzeg ging van de URI** | No | De URL die moet worden gebruikt voor het afmelden van het doel eindpunt |
+   | **Afmelden: hoofd tekst** | No | Een optionele bericht tekst die moet worden meegenomen in de afmeldings aanvraag <p><p>**Opmerking**: deze eigenschap biedt geen ondersteuning voor het gebruik van de `listCallbackUrl()` functie. De trigger neemt echter automatisch de headers op en verzendt deze `x-ms-client-tracking-id` en `x-ms-workflow-operation-name` , die de doel service kan gebruiken om de abonnee uniek te identificeren. |
    ||||
 
 1. Open de lijst **nieuwe para meters toevoegen** om andere trigger eigenschappen toe te voegen.
@@ -120,12 +120,12 @@ Met deze ingebouwde actie wordt het eind punt voor abonneren op de doel service 
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Abonnement-methode** | Ja | De methode die moet worden gebruikt bij het abonneren op het doel eindpunt |
-   | **Abonneren: URI** | Ja | De URL die moet worden gebruikt voor het abonneren op het doel eindpunt |
-   | **Abonneren: hoofd tekst** | Nee | Een bericht tekst die moet worden meegenomen in de abonnements aanvraag. Dit voor beeld bevat de call back-URL waarmee de abonnee op unieke wijze wordt geïdentificeerd: de logische app, door gebruik te maken van de `@listCallbackUrl()` expressie voor het ophalen van de call back-URL van de logische app. |
-   | **Afmelden-methode** | Nee | De methode die moet worden gebruikt bij het afmelden van het doel eindpunt |
-   | **Opzeg ging van de URI** | Nee | De URL die moet worden gebruikt voor het afmelden van het doel eindpunt |
-   | **Afmelden: hoofd tekst** | Nee | Een optionele bericht tekst die moet worden meegenomen in de afmeldings aanvraag <p><p>**Opmerking**: deze eigenschap biedt geen ondersteuning voor het gebruik van de `listCallbackUrl()` functie. De actie bevat echter automatisch de headers en verzendt deze `x-ms-client-tracking-id` en `x-ms-workflow-operation-name` , die de doel service kan gebruiken om de abonnee uniek te identificeren. |
+   | **Abonnement-methode** | Yes | De methode die moet worden gebruikt bij het abonneren op het doel eindpunt |
+   | **Abonneren: URI** | Yes | De URL die moet worden gebruikt voor het abonneren op het doel eindpunt |
+   | **Abonneren: hoofd tekst** | No | Een bericht tekst die moet worden meegenomen in de abonnements aanvraag. Dit voor beeld bevat de call back-URL waarmee de abonnee op unieke wijze wordt geïdentificeerd: de logische app, door gebruik te maken van de `@listCallbackUrl()` expressie voor het ophalen van de call back-URL van de logische app. |
+   | **Afmelden-methode** | No | De methode die moet worden gebruikt bij het afmelden van het doel eindpunt |
+   | **Opzeg ging van de URI** | No | De URL die moet worden gebruikt voor het afmelden van het doel eindpunt |
+   | **Afmelden: hoofd tekst** | No | Een optionele bericht tekst die moet worden meegenomen in de afmeldings aanvraag <p><p>**Opmerking**: deze eigenschap biedt geen ondersteuning voor het gebruik van de `listCallbackUrl()` functie. De actie bevat echter automatisch de headers en verzendt deze `x-ms-client-tracking-id` en `x-ms-workflow-operation-name` , die de doel service kan gebruiken om de abonnee uniek te identificeren. |
    ||||
 
 1. Open de lijst **nieuwe para meters** toevoegen om andere actie-eigenschappen toe te voegen.
@@ -142,12 +142,12 @@ Met deze ingebouwde actie wordt het eind punt voor abonneren op de doel service 
 
 Hier vindt u meer informatie over de uitvoer van een HTTP-webhook-trigger of-actie, waarmee deze gegevens worden geretourneerd:
 
-| Naam van eigenschap | Type | Beschrijving |
+| Naam van eigenschap | Type | Description |
 |---------------|------|-------------|
 | koppen | object | De headers van de aanvraag |
-| body | object | JSON-object | Het object met de inhoud van de hoofd tekst van de aanvraag |
+| body | object | Het object met de inhoud van de hoofd tekst van de aanvraag |
 | statuscode | int | De status code van de aanvraag |
-|||
+||||
 
 | Statuscode | Description |
 |-------------|-------------|

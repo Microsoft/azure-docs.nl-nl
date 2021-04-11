@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 03/25/2021
 ms.author: lajanuar
-ms.openlocfilehash: 8a29bc0d98c1286dcf09da59dc21ac2b2e09f478
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 9d339d02310fddc3e5fd463f7d37e253614dba17
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105935614"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106067585"
 ---
 # <a name="form-recognizer-custom-models"></a>Aangepaste modellen voor formulier herkenning
 
@@ -34,30 +34,27 @@ Met de formulier herkenning kunt u een model trainen waarmee informatie wordt op
 Op hoog niveau zijn de stappen voor het maken, trainen en gebruiken van uw aangepaste model als volgt:
 
 > [!div class="nextstepaction"]
->Uw trainings gegevensset samen stellen] (build-training-data-set. MD # Custom-model-input-requirements)
+>[&#120783;. Uw trainings gegevensset samen stellen](build-training-data-set.md#custom-model-input-requirements)
 
 Het bouwen van een aangepast model begint met het tot stand brengen van uw trainings gegevensset. U hebt mini maal vijf voltooide formulieren van hetzelfde type nodig voor uw voorbeeld gegevensset. Ze kunnen uit verschillende bestands typen bestaan en zowel tekst als hand Schrift bevatten. Uw formulieren moeten van hetzelfde type document zijn en de [invoer vereisten](build-training-data-set.md#custom-model-input-requirements) voor de formulier herkenning volgen.  
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&#129155;
 
 > [!div class="nextstepaction"]
-> [Uw trainings gegevensset uploaden](build-training-data-set.md#upload-your-training-data)
+> [&#120784;. Uw trainings gegevensset uploaden](build-training-data-set.md#upload-your-training-data)
 
 U moet uw trainings gegevens uploaden naar een Azure Blob Storage-container. *Zie* [Azure Storage Snelstartgids voor Azure Portal](../../storage/blobs/storage-quickstart-blobs-portal.md)als u niet weet hoe u een Azure-opslag account maakt met een container. Gebruik de gratis prijs categorie (F0) om de service te proberen en pas later bij te werken naar een betaalde laag voor productie.  
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&#129155;
+
 > [!div class="nextstepaction"]
->[Uw aangepaste model trainen](quickstarts/client-library.md#train-a-custom-model)
+>[&#120785;. Uw aangepaste model trainen](quickstarts/client-library.md#train-a-custom-model)
 
 U kunt uw model trainen [zonder](quickstarts/client-library.md#train-a-model-without-labels) of [met](quickstarts/client-library.md#train-a-model-with-labels) gelabelde gegevens sets. Niet-gelabelde gegevens sets zijn alleen afhankelijk van de indelings-API voor het detecteren en identificeren van belang rijke informatie zonder dat menselijke invoer is toegevoegd. Gegevens sets met een label zijn ook gebaseerd op de lay-Outapi, maar aanvullende menselijke invoer is opgenomen, zoals uw specifieke labels en veld locaties. Als u zowel gelabelde als niet-gelabelde gegevens wilt gebruiken, begint u met ten minste vijf voltooide formulieren van hetzelfde type voor de gelabelde trainings gegevens en voegt u niet-gelabelde gegevens toe aan de vereiste gegevensset.  
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&#129155;  
 
 >[!div class="nextstepaction"]
->[Documenten analyseren met uw aangepaste model](quickstarts/client-library.md#analyze-forms-with-a-custom-model)
+>[&#120786;. Documenten analyseren met uw aangepaste model](quickstarts/client-library.md#analyze-forms-with-a-custom-model)
 
 Test uw pas getrainde model met behulp van een formulier dat geen deel uitmaakt van de trainings gegevensset. U kunt verder gaan met verdere training om de prestaties van uw aangepaste model te verbeteren.  
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&#129155;
 
 > [!div class="nextstepaction"]
->[Uw aangepaste modellen beheren](quickstarts/client-library.md#manage-custom-models)
+>[&#120787;. Uw aangepaste modellen beheren](quickstarts/client-library.md#manage-custom-models)
 
 U kunt op elk gewenst moment een lijst weer geven met alle aangepaste modellen onder uw abonnement, informatie over een specifiek aangepast model ophalen of een aangepast model verwijderen uit uw account.
 

@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 12/09/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: dbeb3cd4fccf80f434e6c7ac08c658632f64b135
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 9cd193eb6ff2858440f1cd9a62bdd53d58d6047d
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102096850"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107256290"
 ---
 # <a name="tutorial-configure-zscaler-private-access-with-azure-active-directory-b2c"></a>Zelf studie: Zscaler persoonlijke toegang configureren met Azure Active Directory B2C
 
@@ -96,7 +96,7 @@ Nadat u Azure AD B2C hebt geconfigureerd, wordt de rest van de IdP-configuratie 
 >[!Note]
 >Deze stap is alleen vereist als u nog geen aangepaste beleids regels hebt geconfigureerd. Als u al een of meer aangepaste beleids regels hebt, kunt u deze stap overs Laan.
 
-Zie aan de [slag met aangepaste beleids regels in azure Active Directory B2C](./custom-policy-get-started.md)om aangepast beleid te configureren voor uw Azure AD B2C Tenant.
+Zie aan de [slag met aangepaste beleids regels in azure Active Directory B2C](./tutorial-create-user-flows.md?pivots=b2c-custom-policy)om aangepast beleid te configureren voor uw Azure AD B2C Tenant.
 
 ### <a name="step-3-register-zpa-as-a-saml-application-in-azure-ad-b2c"></a>Stap 3: ZPA registreren als een SAML-toepassing in Azure AD B2C
 
@@ -149,7 +149,7 @@ Ga naar een ZPA-gebruikers portal of een toepassing voor browser toegang en test
 
 Raadpleeg de volgende artikelen voor meer informatie:
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md)
+- [Aan de slag met aangepast beleid in Azure AD B2C](./tutorial-create-user-flows.md?pivots=b2c-custom-policy)
 - [Een SAML-toepassing registreren in Azure AD B2C](./saml-service-provider.md)
 - [Stapsgewijze configuratie handleiding voor ZPA](https://help.zscaler.com/zpa/step-step-configuration-guide-zpa)
 - [Een IdP configureren voor eenmalige aanmelding](https://help.zscaler.com/zpa/configuring-idp-single-sign)

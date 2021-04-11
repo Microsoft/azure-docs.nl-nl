@@ -11,12 +11,12 @@ ms.workload: media
 ms.topic: tutorial
 ms.date: 02/17/2021
 ms.author: inhenkel
-ms.openlocfilehash: a431060be380952940bdb99c65abc7a9740091de
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 5bb061af37f6f6d7e6e27cf25f0faa63bca7353c
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105038155"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106109183"
 ---
 # <a name="how-to-encode-and-stream-video-files-with-nodejs"></a>Video bestanden coderen en streamen met Node.JS
 
@@ -58,7 +58,7 @@ Open [index. TS](https://github.com/Azure-Samples/media-services-v3-node-tutoria
 
 In het voorbeeld worden de volgende acties uitgevoerd:
 
-1. Hiermee maakt u een **trans formatie** met een [vooraf ingestelde code ring voor inhoud](./content-aware-encoding.md). Eerst wordt gecontroleerd of de opgegeven trans formatie bestaat.
+1. Hiermee maakt u een **trans formatie** met een [vooraf ingestelde code ring voor inhoud](./encode-content-aware-concept.md). Eerst wordt gecontroleerd of de opgegeven trans formatie bestaat.
 1. Hiermee maakt u een uitvoer **activum** dat door de coderings **taak** wordt gebruikt om de uitvoer te bevatten
 1. Hiermee wordt een lokaal bestand optioneel geüpload met de opslag-BLOB SDK
 1. Hiermee wordt de **taak** invoer gemaakt die is gebaseerd op een HTTPS-URL of een geüpload bestand

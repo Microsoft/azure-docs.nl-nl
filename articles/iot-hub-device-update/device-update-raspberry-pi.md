@@ -7,10 +7,10 @@ ms.date: 2/11/2021
 ms.topic: tutorial
 ms.service: iot-hub-device-update
 ms.openlocfilehash: b6a9fa3ac85460a46653c171198a2dfea8580f3a
-ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/28/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105644486"
 ---
 # <a name="device-update-for-azure-iot-hub-tutorial-using-the-raspberry-pi-3-b-reference-image"></a>Zelf studie over het bijwerken van apparaten voor Azure IoT Hub met behulp van de Raspberry Pi 3 B +-referentie-afbeelding

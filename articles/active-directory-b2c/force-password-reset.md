@@ -8,32 +8,34 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/03/2021
+ms.date: 04/08/2021
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: b6aae76b0b35f8195fb52b7fb11de43d8fa511ba
-ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
+ms.openlocfilehash: 7fac7df0978b23e535d8761b436b14e2f41e5f91
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107028431"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107209499"
 ---
 # <a name="set-up-a-force-password-reset-flow-in-azure-active-directory-b2c"></a>Een wacht woord voor geforceerde wachtwoord herstel instellen in Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-choose-user-flow-or-custom-policy](../../includes/active-directory-b2c-choose-user-flow-or-custom-policy.md)]
 
-Als beheerder kunt u het [wacht woord van een gebruiker opnieuw instellen](manage-users-portal.md#reset-a-users-password) als de gebruiker het wacht woord vergeet. Of u wilt hen dwingen om het wacht woord opnieuw in te stellen. In dit artikel leert u hoe u het opnieuw instellen van wacht woorden in deze scenario's afdwingt.
+> [!IMPORTANT]
+> Geforceerde wacht woord opnieuw instellen is een open bare preview-functie van Azure AD B2C. Zie [Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 ## <a name="overview"></a>Overzicht
+Als beheerder kunt u het [wacht woord van een gebruiker opnieuw instellen](manage-users-portal.md#reset-a-users-password) als de gebruiker het wacht woord vergeet. Of u wilt hen dwingen om het wacht woord opnieuw in te stellen. In dit artikel leert u hoe u het opnieuw instellen van wacht woorden in deze scenario's afdwingt.
 
-Wanneer een beheerder het wacht woord van een gebruiker opnieuw instelt via de Azure Portal, wordt de waarde van het kenmerk [forceChangePasswordNextSignIn](user-profile-attributes.md#password-profile-property) ingesteld op `true` .
-
-Met de [traject voor aanmelden en registreren](add-sign-up-and-sign-in-policy.md) wordt de waarde van dit kenmerk gecontroleerd. Nadat de gebruiker de aanmelding heeft voltooid, `true` moet de gebruiker het wacht woord opnieuw instellen als het kenmerk is ingesteld op. Vervolgens wordt de waarde van het kenmerk ingesteld op terug `false` .
+Wanneer een beheerder het wacht woord van een gebruiker opnieuw instelt via de Azure Portal, wordt de waarde van het kenmerk [forceChangePasswordNextSignIn](user-profile-attributes.md#password-profile-property) ingesteld op `true` . Met de [traject voor aanmelden en registreren](add-sign-up-and-sign-in-policy.md) wordt de waarde van dit kenmerk gecontroleerd. Nadat de gebruiker de aanmelding heeft voltooid, `true` moet de gebruiker het wacht woord opnieuw instellen als het kenmerk is ingesteld op. Vervolgens wordt de waarde van het kenmerk ingesteld op terug `false` .
 
 ![Stroom voor het opnieuw instellen van wacht woorden forceren](./media/force-password-reset/force-password-reset-flow.png)
 
 De stroom voor het opnieuw instellen van wacht woorden is van toepassing op lokale accounts in Azure AD B2C die gebruikmaken van een [e-mail adres](identity-provider-local.md#email-sign-in) of [gebruikers naam](identity-provider-local.md#username-sign-in) met een wacht woord voor aanmelden.
+
+::: zone pivot="b2c-user-flow"
 
 ### <a name="force-a-password-reset-after-90-days"></a>Het opnieuw instellen van een wacht woord forceren na 90 dagen
 
@@ -46,8 +48,6 @@ Wanneer het beleid voor het verlopen van het wacht woord is ingesteld, moet u oo
 [!INCLUDE [active-directory-b2c-customization-prerequisites](../../includes/active-directory-b2c-customization-prerequisites.md)]
 
 ## <a name="configure-your-policy"></a>Uw beleid configureren
-
-::: zone pivot="b2c-user-flow"
 
 De instelling **geforceerde wacht woord opnieuw instellen** inschakelen in de stroom registratie of aanmeldings gebruiker:
 
@@ -79,23 +79,7 @@ De instelling **geforceerde wacht woord opnieuw instellen** inschakelen in de st
 
 ::: zone pivot="b2c-custom-policy"
 
-1. Bekijk het voor beeld van een geforceerde wachtwoord herstel op [github](https://github.com/azure-ad-b2c/samples/tree/master/policies/force-password-reset).
-1. Vervang in elk bestand de teken reeks door `yourtenant` de naam van uw Azure AD B2C-Tenant. Als de naam van uw B2C-Tenant bijvoorbeeld *contosob2c* is, worden alle exemplaren van `yourtenant.onmicrosoft.com` `contosob2c.onmicrosoft.com` .
-1. Upload de beleids bestanden in de volgende volg orde: het extensie beleid `TrustFrameworkExtensionsCustomForcePasswordReset.xml` en vervolgens het Relying Party beleid `SignUpOrSigninCustomForcePasswordReset.xml` .
-
-### <a name="test-the-policy"></a>Het beleid testen
-
-1. Meld u aan bij de [Azure Portal](https://portal.azure.com) als een gebruikers beheerder of een wachtwoord beheerder. Zie [beheerders rollen toewijzen in azure Active Directory](../active-directory/roles/permissions-reference.md#all-roles)voor meer informatie over de beschik bare rollen.
-1. Selecteer het pictogram **Map + Abonnement** in de werkbalk van de portal en selecteer vervolgens de map die uw Azure AD B2C-tenant bevat.
-1. Zoek en selecteer **Azure AD B2C** in de Azure-portal.
-1. Selecteer **Gebruikers**. Zoek en selecteer de gebruiker die u wilt gebruiken om het wacht woord opnieuw in te stellen en selecteer vervolgens **wacht woord opnieuw instellen**.
-1. Zoek en selecteer **Azure AD B2C** in de Azure-portal.
-1. Onder **beleids regels** selecteert u **identiteits ervaring-Framework**.
-1. Selecteer het `B2C_1A_signup_signin_Custom_ForcePasswordReset` beleid om het te openen. 
-1. Selecteer voor **toepassing** een webtoepassing die u [eerder hebt geregistreerd](tutorial-register-applications.md). De **antwoord-URL** moet `https://jwt.ms` weergeven.
-1. Selecteer de knop **nu uitvoeren** .
-1. Meld u aan met het gebruikers account waarvoor u het wacht woord opnieuw hebt ingesteld.
-1. U moet nu het wacht woord voor de gebruiker wijzigen. Wijzig het wachtwoord en selecteer **Doorgaan**. Het token wordt geretourneerd aan `https://jwt.ms` en moet worden weergegeven.
+Deze functie is momenteel alleen beschikbaar voor Gebruikersstromen. Kies voor de installatie stappen bovenstaande **gebruikers stroom** .
 
 ::: zone-end
 

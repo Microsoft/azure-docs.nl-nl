@@ -8,14 +8,14 @@ ms.service: role-based-access-control
 ms.devlang: na
 ms.topic: how-to
 ms.workload: identity
-ms.date: 12/10/2020
+ms.date: 04/06/2021
 ms.author: rolyon
-ms.openlocfilehash: 5a4be6052e72c27ad83b5af64f1acb3ad8d4e3be
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5baf5f503542f31b26c4c210741f1ce986f6a549
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100555902"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106580116"
 ---
 # <a name="transfer-an-azure-subscription-to-a-different-azure-ad-directory"></a>Een Azure-abonnement overdragen naar een andere Azure AD-adres lijst
 
@@ -74,15 +74,15 @@ Verschillende Azure-resources hebben een afhankelijkheid van een abonnement of e
 | Door het systeem toegewezen beheerde identiteiten | Ja | Ja | [Beheerde identiteiten weer geven](#list-role-assignments-for-managed-identities) | U moet de beheerde identiteiten uitschakelen en opnieuw inschakelen. U moet de roltoewijzingen opnieuw maken. |
 | Door de gebruiker toegewezen beheerde identiteiten | Ja | Ja | [Beheerde identiteiten weer geven](#list-role-assignments-for-managed-identities) | U moet de beheerde identiteiten verwijderen, opnieuw maken en koppelen aan de juiste resource. U moet de roltoewijzingen opnieuw maken. |
 | Azure Key Vault | Ja | Ja | [Key Vault toegangs beleid weer geven](#list-key-vaults) | U moet de Tenant-ID die is gekoppeld aan de sleutel kluizen bijwerken. U moet een nieuw toegangs beleid verwijderen en toevoegen. |
-| Azure SQL-data bases met Azure AD-verificatie integratie ingeschakeld | Ja | Nee | [Azure SQL-data bases controleren met Azure AD-verificatie](#list-azure-sql-databases-with-azure-ad-authentication) |  |  |
+| Azure SQL-data bases met Azure AD-verificatie integratie ingeschakeld | Ja | Nee | [Azure SQL-data bases controleren met Azure AD-verificatie](#list-azure-sql-databases-with-azure-ad-authentication) | U kunt geen Azure-SQL database overdragen met Azure AD-verificatie die is ingeschakeld voor een andere map. Zie [Azure Active Directory-verificatie gebruiken](../azure-sql/database/authentication-aad-overview.md)voor meer informatie. | 
 | Azure Storage en Azure Data Lake Storage Gen2 | Ja | Ja |  | U moet alle Acl's opnieuw maken. |
 | Azure Data Lake Storage Gen1 | Ja | Ja |  | U moet alle Acl's opnieuw maken. |
 | Azure Files | Ja | Ja |  | U moet alle Acl's opnieuw maken. |
-| Azure File Sync | Ja | Ja |  |  |
+| Azure File Sync | Ja | Ja |  | De opslag synchronisatie service en/of het opslag account kunnen worden verplaatst naar een andere map. Zie [Veelgestelde vragen over Azure files](../storage/files/storage-files-faq.md#azure-file-sync) voor meer informatie. |
 | Azure Managed Disks | Ja | Ja |  |  Als u schijf versleutelings sets gebruikt om Managed Disks te versleutelen met door de klant beheerde sleutels, moet u de door het systeem toegewezen identiteiten die zijn gekoppeld aan de schijf versleutelings sets, uitschakelen en opnieuw inschakelen. En u moet de roltoewijzingen opnieuw maken, dus ken de vereiste machtigingen voor de schijf versleutelings sets in de sleutel kluizen opnieuw. |
-| Azure Kubernetes Service | Ja | Ja |  |  |
+| Azure Kubernetes Service | Ja | Nee |  | U kunt uw AKS-cluster en de bijbehorende resources niet overzetten naar een andere map. Zie [Veelgestelde vragen over Azure Kubernetes service (AKS)](../aks/faq.md) voor meer informatie. |
 | Azure Policy | Ja | Nee | Alle Azure Policy-objecten, inclusief aangepaste definities, toewijzingen, uitzonde ringen en compatibiliteits gegevens. | U moet definities [exporteren](../governance/policy/how-to/export-resources.md), importeren en opnieuw toewijzen. Maak vervolgens nieuwe beleids toewijzingen en alle benodigde [uitzonde ringen](../governance/policy/concepts/exemption-structure.md)voor het beleid. |
-| Azure Active Directory Domain Services | Ja | Nee |  |  |
+| Azure Active Directory Domain Services | Ja | Nee |  | U kunt een Azure AD Domain Services beheerd domein niet overdragen naar een andere map. Zie [Veelgestelde vragen (FAQ) over Azure Active Directory (AD) Domain Services (](../active-directory-domain-services/faqs.md) Engelstalig) voor meer informatie. |
 | App-registraties | Ja | Ja |  |  |
 
 > [!WARNING]

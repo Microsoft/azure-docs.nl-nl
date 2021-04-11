@@ -11,12 +11,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: genemi, jrasnick, vanto
 ms.date: 06/26/2019
-ms.openlocfilehash: 25c2157a8de237d0ec66caa72d59c810d419ac76
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 128a57f02ebd85e4fece3c1417b8afc5c845514a
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "94989119"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105732224"
 ---
 # <a name="dns-alias-for-azure-sql-database"></a>DNS-alias voor Azure SQL Database
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -98,7 +98,7 @@ De cmdlets die in het code voorbeeld worden gebruikt, zijn de volgende:
 - [Set-AzSqlServerDNSAlias](/powershell/module/az.Sql/Set-azSqlServerDnsAlias): wijzigt de server naam waarmee de alias is geconfigureerd, van Server 1 naar Server 2.
 - [Remove-AzSqlServerDNSAlias](/powershell/module/az.Sql/Remove-azSqlServerDnsAlias): Verwijder de DNS-alias van Server 2 door de naam van de alias te gebruiken.
 
-## <a name="limitations-during-preview"></a>Beperkingen tijdens de preview
+## <a name="limitations"></a>Beperkingen
 
 Momenteel heeft een DNS-alias de volgende beperkingen:
 

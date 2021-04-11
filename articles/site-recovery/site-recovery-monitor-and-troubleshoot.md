@@ -1,18 +1,15 @@
 ---
 title: Azure Site Recovery bewaken | Microsoft Docs
 description: Azure Site Recovery replicatie problemen en-bewerkingen controleren en problemen oplossen met behulp van de portal
-author: raynew
-manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 07/30/2019
-ms.author: raynew
-ms.openlocfilehash: d441284b265ab11dd5ece42ec3737e455d662435
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a80f68c230bfed5caad4fd5ce474d8d06fd3d093
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96023564"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106579311"
 ---
 # <a name="monitor-site-recovery"></a>Site Recovery bewaken
 
@@ -152,7 +149,7 @@ Haal in **gerepliceerde items** een lijst met gerepliceerde computers op.
 3. Klik op **kolommen** om aanvullende kolommen weer te geven, bijvoorbeeld om RPO, doel configuratie problemen en replicatie fouten weer te geven.
 4. Klik op **filter** om informatie weer te geven op basis van specifieke para meters, zoals replicatie status, of een bepaald replicatie beleid.
 5. Klik met de rechter muisknop op een machine om bewerkingen zoals een testfailover te initiëren of om specifieke fout gegevens weer te geven die eraan zijn gekoppeld.
-6. Klik op een machine om in te zoomen op meer informatie. Details zijn onder andere:
+6. Klik op een machine om in te zoomen op meer informatie. Details omvatten:
    - **Replicatie-informatie**: huidige status en status van de computer.
    - **RPO** (Recovery Point Objective): huidige RPO voor de virtuele machine en het tijdstip waarop de RPO het laatst is berekend.
    - **Herstel punten**: meest recente beschik bare herstel punten voor de machine.

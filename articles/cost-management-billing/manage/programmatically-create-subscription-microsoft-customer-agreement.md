@@ -5,16 +5,16 @@ author: bandersmsft
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 03/12/2021
+ms.date: 03/29/2021
 ms.reviewer: andalmia
 ms.author: banders
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 779a1410641f945dc8dbf38aecf65b97d64971b1
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 5409c30020db2c8d7acf3c23df5a7d709d872341
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104593956"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105963271"
 ---
 # <a name="programmatically-create-azure-subscriptions-for-a-microsoft-customer-agreement-with-the-latest-apis"></a>Programmatisch Azure-abonnementen voor een Microsoft-klantovereenkomst maken met de nieuwste API's
 
@@ -28,7 +28,9 @@ Wanneer u programmatisch een Azure-abonnement maakt, wordt dat abonnement beheer
 
 ## <a name="prerequisites"></a>Vereisten
 
-U moet de rol van eigenaar, bijdrager of Azure-abonnementsmaker op een factuursectie of die van eigenaar of bijdrager op een factureringsprofiel of factureringsrekening hebben om abonnementen te maken. Voor meer informatie, zie [Rollen en taken voor abonnementsfacturering](understand-mca-roles.md#subscription-billing-roles-and-tasks).
+U moet de rol van eigenaar, bijdrager of Azure-abonnementsmaker op een factuursectie of die van eigenaar of bijdrager op een factureringsprofiel of factureringsrekening hebben om abonnementen te maken. U kunt ook dezelfde rol geven aan een Service Principal Name (SPN). Zie [facturerings rollen en taken voor abonnementen](understand-mca-roles.md#subscription-billing-roles-and-tasks)voor meer informatie over rollen en het toewijzen van machtigingen aan hen.
+
+Als u een SPN gebruikt om abonnementen te maken, gebruikt u het ObjectId van de Azure AD-toepassings registratie als Service-Principal ObjectId met [Azure Active Directory Power shell](/powershell/module/azuread/get-azureadserviceprincipal?view=azureadps-2.0) of [Azure cli](/cli/azure/ad/sp?view=azure-cli-latest#az_ad_sp_list). 
 
 Raadpleeg [Toegang tot een Microsoft-klantovereenkomst controleren](../understand/mca-overview.md#check-access-to-a-microsoft-customer-agreement) als u niet weet of u toegang hebt tot een Microsoft-klantovereenkomstaccount.
 

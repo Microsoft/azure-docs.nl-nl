@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/17/2021
 ms.openlocfilehash: 831e57a68c79c245b96baec0fc3d062c4c9112c5
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104604437"
 ---
 # <a name="add-custom-analyzers-to-string-fields-in-an-azure-cognitive-search-index"></a>Aangepaste analyse functies toevoegen aan teken reeks velden in een Azure Cognitive Search-index
@@ -273,7 +273,7 @@ In de onderstaande tabel zijn de token filters die zijn geïmplementeerd met Apa
 |[keyword_repeat](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/miscellaneous/KeywordRepeatFilter.html)|(type is alleen van toepassing wanneer opties beschikbaar zijn)  |Elk binnenkomend token wordt twee maal per keer verzonden als sleutel woord en eenmaal als niet-sleutel woord. |  
 |[kstem](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/en/KStemFilter.html)|(type is alleen van toepassing wanneer opties beschikbaar zijn)  |Een kstem-filter met hoge prestaties voor Engels. |  
 |[length](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/miscellaneous/LengthFilter.html)|LengthTokenFilter|Hiermee verwijdert u woorden die te lang of te kort zijn.<br /><br /> **Opties**<br /><br /> min (type: int): het minimum aantal. Standaard: 0, maximum: 300.<br /><br /> Max (type: int): het maximum aantal. Standaard: 300, maximum: 300.|  
-|[ondergrens](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/miscellaneous/LimitTokenCountFilter.html)|Micro soft. Azure. Search. LimitTokenFilter|Hiermee beperkt u het aantal tokens tijdens het indexeren.<br /><br /> **Opties**<br /><br /> maxTokenCount (type: int)-maximum aantal te produceren tokens. De standaardwaarde is 1.<br /><br /> consumeAllTokens (type: BOOL)-of alle tokens uit de invoer moeten worden verbruikt, zelfs als maxTokenCount is bereikt. De standaardwaarde is false.|  
+|[limiet](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/miscellaneous/LimitTokenCountFilter.html)|Micro soft. Azure. Search. LimitTokenFilter|Hiermee beperkt u het aantal tokens tijdens het indexeren.<br /><br /> **Opties**<br /><br /> maxTokenCount (type: int)-maximum aantal te produceren tokens. De standaardwaarde is 1.<br /><br /> consumeAllTokens (type: BOOL)-of alle tokens uit de invoer moeten worden verbruikt, zelfs als maxTokenCount is bereikt. De standaardwaarde is false.|  
 |[kleine](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/LowerCaseFilter.html)|(type is alleen van toepassing wanneer opties beschikbaar zijn)  |Normaliseert token tekst naar kleine letters. |  
 |[nGram_v2](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/ngram/NGramTokenFilter.html)|NGramTokenFilterV2|Genereert een n-g van de opgegeven grootte (n).<br /><br /> **Opties**<br /><br /> minGram (type: int)-standaard: 1, maximum: 300.<br /><br /> maxGram (type: int)-standaard: 2, maximum 300. Moet groter zijn dan minGram.|  
 |[pattern_capture](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/pattern/PatternCaptureGroupTokenFilter.html)|PatternCaptureTokenFilter|Maakt gebruik van Java regexs om meerdere tokens te verzenden, één voor elke opname groep in een of meer patronen.<br /><br /> **Opties**<br /><br /> patronen (type: teken reeks matrix): een lijst met patronen die moeten worden vergeleken met elk token. Vereist.<br /><br /> preserveOriginal (type: BOOL): Stel deze waarde in op True om het oorspronkelijke token te retour neren, zelfs als een van de patronen overeenkomt met de standaard waarde: True |  

@@ -3,12 +3,12 @@ title: Meer informatie over het controleren van de inhoud van virtuele machines
 description: Meer informatie over hoe Azure Policy de gast configuratie-client gebruikt om instellingen in virtuele machines te controleren.
 ms.date: 01/14/2021
 ms.topic: conceptual
-ms.openlocfilehash: a18f230c1b7b1eb2c953542e276127f4f47cbb39
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.openlocfilehash: 6fb3ed3644ccdb5de8f03bedf56943a91570322b
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104802519"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105733023"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Gastconfiguratie van Azure Policy begrijpen
 
@@ -176,7 +176,10 @@ De gast configuratie-extensie schrijft logboek bestanden naar de volgende locati
 
 Windows: `C:\ProgramData\GuestConfig\gc_agent_logs\gc_agent.log`
 
-Linux: `/var/lib/GuestConfig/gc_agent_logs/gc_agent.log`
+Linux
+
+- Azure VM: `/var/lib/GuestConfig/gc_agent_logs/gc_agent.log`
+- Azure VM: `/var/lib/GuestConfig/arc_policy_logs/gc_agent.log`
 
 ### <a name="collecting-logs-remotely"></a>Logboeken extern verzamelen
 
@@ -210,9 +213,9 @@ egrep -B $linesToIncludeBeforeMatch -A $linesToIncludeAfterMatch 'DSCEngine|DSCM
 De gast configuratie-client downloadt inhouds pakketten naar een machine en extraheert de inhoud.
 Als u wilt controleren welke inhoud is gedownload en opgeslagen, bekijkt u de hieronder vermelde locaties.
 
-Windows: `c:\programdata\guestconfig\configurations`
+Windows: `c:\programdata\guestconfig\configuration`
 
-Linux: `/var/lib/guestconfig/configurations`
+Linux: `/var/lib/GuestConfig/Configuration`
 
 ## <a name="guest-configuration-samples"></a>Voor beelden van gast configuraties
 

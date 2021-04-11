@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 10/05/2020
 ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: c2fa1441f5b7d8af4d610c5341f60009e57173af
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 120bfe2eefae3c1721073060231c6c2a1962b7c8
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105560944"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106110271"
 ---
 # <a name="tutorial-configure-a-virtual-network-gateway-for-expressroute-using-powershell"></a>Zelfstudie: Een virtuele netwerkgateway configureren voor ExpressRoute met behulp van PowerShell
 > [!div class="op_single_selector"]
@@ -77,7 +77,7 @@ In de stappen voor deze taak gebruiken we een VNet dat is gebaseerd op de waarde
    ```azurepowershell-interactive
    $vnet = Get-AzVirtualNetwork -Name $VNetName -ResourceGroupName $RG
    ```
-1. Voeg een gatewaysubnet toe aan het virtuele netwerk. Het gatewaysubnet moet de naam "GatewaySubnet" hebben. Het gatewaysubnet moet een bereik van /27 of groter hebben (/26, /25, enzovoort).
+1. Voeg een gatewaysubnet toe aan het virtuele netwerk. Het gatewaysubnet moet de naam "GatewaySubnet" hebben. Het gatewaysubnet moet een bereik van /27 of groter hebben (/26, /25, enzovoort). Als u van plan bent om 16 ExpressRoute-circuits te verbinden met uw gateway, **moet** u een gateway-subnet van/26 of groter maken.
 
    ```azurepowershell-interactive
    Add-AzVirtualNetworkSubnetConfig -Name GatewaySubnet -VirtualNetwork $vnet -AddressPrefix 192.168.200.0/26

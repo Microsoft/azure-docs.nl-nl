@@ -2,26 +2,29 @@
 title: bestand opnemen
 description: bestand opnemen
 services: azure-communication-services
-author: mikben
-manager: mikben
+author: ddematheu2
+manager: chpalm
 ms.service: azure-communication-services
 ms.subservice: azure-communication-services
 ms.date: 9/1/2020
 ms.topic: include
 ms.custom: include file
-ms.author: mikben
-ms.openlocfilehash: e8ef354480c69fa9b0b5407c88209b368485127d
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
-ms.translationtype: HT
+ms.author: dademath
+ms.openlocfilehash: c6e8be5462e0caffec7a1c88dae54f3f818ec323
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105729793"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106498827"
 ---
+[!INCLUDE [Public Preview Notice](../../includes/public-preview-include-android-ios.md)]
+
+
 De Azure Communication Services- **groep voor het aanroepen van een voor beeld van een feed voor Android** laat zien hoe de communicatie services die Android SDK aanroept, kunnen worden gebruikt voor het bouwen van een groep waarmee u de ervaring met spraak en video kunt opbouwen. In dit voor beeld Quick Start leert u hoe u het voor beeld kunt instellen en uitvoeren. Er wordt een overzicht van het voor beeld gegeven voor context.
 
 ## <a name="download-code"></a>Code downloaden
 
-Zoek de voltooide code voor deze Quick Start op [github](https://github.com/Azure-Samples/communication-services-android-calling-hero).
+Zoek het project voor dit voor beeld op [github](https://github.com/Azure-Samples/communication-services-android-calling-hero). Een versie van het voor beeld met [teams Interop](../../concepts/teams-interop.md) vindt u in een afzonderlijke [vertakking](https://github.com/Azure-Samples/communication-services-android-calling-hero/tree/feature/teams_interop).
 
 ## <a name="overview"></a>Overzicht
 

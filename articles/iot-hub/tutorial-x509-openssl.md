@@ -13,12 +13,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: Data Analytics'
 - devx-track-azurecli
-ms.openlocfilehash: 0d083d856138d7895a6e03f4d290ef3c4ddebd05
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 4379c8f43bbfa539179b821bf6b18a01518afad6
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105630679"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106384303"
 ---
 # <a name="tutorial-using-openssl-to-create-test-certificates"></a>Zelf studie: OpenSSL gebruiken om test certificaten te maken
 
@@ -101,6 +101,13 @@ authorityKeyIdentifier   = keyid:always
 basicConstraints         = critical,CA:true,pathlen:0
 extendedKeyUsage         = clientAuth,serverAuth
 keyUsage                 = critical,keyCertSign,cRLSign
+subjectKeyIdentifier     = hash
+
+[client_ext]
+authorityKeyIdentifier   = keyid:always
+basicConstraints         = critical,CA:false
+extendedKeyUsage         = clientAuth
+keyUsage                 = critical,digitalSignature
 subjectKeyIdentifier     = hash
 
 ```
@@ -244,13 +251,19 @@ U hebt nu zowel een basis-CA-certificaat als een onderliggend CA-certificaat. U 
 
 1. Selecteer **verificatie code genereren**. Zie [bewijzen over een CA-certificaat](tutorial-x509-prove-possession.md)voor meer informatie.
 
-1. Kopieer de verificatiecode naar het klembord. U moet de verificatie code instellen als het certificaat onderwerp. Als de verificatie code bijvoorbeeld BB0C656E69AF75E3FB3C8D922C1760C58C1DA5B05AAA9D0A is, voegt u deze toe als het onderwerp van het certificaat, zoals in de volgende stap wordt weer gegeven.
+1. Kopieer de verificatiecode naar het klembord. U moet de verificatie code instellen als het certificaat onderwerp. Als de verificatie code bijvoorbeeld BB0C656E69AF75E3FB3C8D922C1760C58C1DA5B05AAA9D0A is, voegt u deze toe als het onderwerp van het certificaat, zoals wordt weer gegeven in stap 9.
 
 1. Genereer een persoonlijke sleutel.
 
   ```bash
-    $ openssl req -new -key pop.key -out pop.csr
+    $ openssl genpkey -out pop.key -algorithm RSA -pkeyopt rsa_keygen_bits:2048
+  ```
 
+9. Genereer een aanvraag voor certificaat ondertekening (CSR) van de persoonlijke sleutel. Voeg de verificatie code toe als onderwerp van het certificaat.
+
+  ```bash
+  openssl req -new -key pop.key -out pop.csr
+  
     -----
     Country Name (2 letter code) [XX]:.
     State or Province Name (full name) []:.
@@ -267,16 +280,16 @@ U hebt nu zowel een basis-CA-certificaat als een onderliggend CA-certificaat. U 
  
   ```
 
-9. Maak een certificaat met behulp van het configuratie bestand van de basis-CA en de CSR.
+10. Maak een certificaat met behulp van het basis-CA-configuratie bestand en de CSR voor het certificaat bewijs van eigendom.
 
   ```bash
     openssl ca -config rootca.conf -in pop.csr -out pop.crt -extensions client_ext
 
   ```
 
-10. Selecteer het nieuwe certificaat in de weer gave **certificaat Details**
+11. Selecteer in de weer gave **certificaat Details** het nieuwe certificaat. Ga naar de map certs om het PEM-bestand te vinden.
 
-11. Nadat het certificaat is geüpload, selecteert u **verifiëren**. De status van het CA-certificaat moet worden gewijzigd in **gecontroleerd**.
+12. Nadat het certificaat is geüpload, selecteert u **verifiëren**. De status van het CA-certificaat moet worden gewijzigd in **gecontroleerd**.
 
 ## <a name="step-8---create-a-device-in-your-iot-hub"></a>Stap 8: een apparaat maken in uw IoT Hub
 

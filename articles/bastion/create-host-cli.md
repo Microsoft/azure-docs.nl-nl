@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: how-to
 ms.date: 10/14/2020
 ms.author: cherylmc
-ms.openlocfilehash: e4f0a3ea85fa479826fe9e666df2b18f8dba7ce3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8654b557de8242910c665596ca8bfd29fe86d1ff
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92079119"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106578825"
 ---
 # <a name="create-an-azure-bastion-host-using-azure-cli"></a>Een Azure Bastion-host maken met behulp van Azure CLI
 
@@ -25,6 +25,10 @@ U kunt desgewenst een Azure bastion-host maken met behulp van de [Azure Portal](
 Controleer of u een Azure-abonnement hebt. Als u nog geen Azure-abonnement hebt, kunt u [uw voordelen als MSDN-abonnee activeren](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details) of [u aanmelden voor een gratis account](https://azure.microsoft.com/pricing/free-trial).
 
 [!INCLUDE [Cloud Shell CLI](../../includes/vpn-gateway-cloud-shell-cli.md)]
+
+ >[!NOTE]
+ >Het gebruik van Azure Bastion met Azure Privé-DNS zones wordt momenteel niet ondersteund. Voordat u begint, moet u ervoor zorgen dat het virtuele netwerk waar u de Bastion-resource wilt implementeren, niet is gekoppeld aan een privé-DNS-zone.
+ >
 
 ## <a name="create-a-bastion-host"></a><a name="createhost"></a>Een Bastion-host maken
 

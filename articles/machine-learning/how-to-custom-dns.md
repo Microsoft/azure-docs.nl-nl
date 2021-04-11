@@ -8,19 +8,19 @@ ms.subservice: core
 ms.reviewer: larryfr
 ms.author: jhirono
 author: jhirono
-ms.date: 03/12/2021
+ms.date: 04/01/2021
 ms.topic: conceptual
 ms.custom: how-to, contperf-fy21q3
-ms.openlocfilehash: c3f21471e486f88daf8d79b74633c076d27ac8e2
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 9021c3f70c9fc053998d1b31271a1ca3b0124b4d
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105557578"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106169535"
 ---
 # <a name="how-to-use-your-workspace-with-a-custom-dns-server"></a>Werkruimte gebruiken met een aangepaste DNS-server
 
-Wanneer u een Azure Machine Learning-werk ruimte met een persoonlijk eind punt gebruikt, zijn er [verschillende manieren om DNS-naam omzetting te verwerken](../private-link/private-endpoint-dns.md). Standaard verwerkt Azure automatisch naam omzetting voor uw werk ruimte en persoonlijk eind punt. Als u in plaats daarvan _uw eigen aangepaste DNS-server gebruikt_, moet u hand matig DNS-vermeldingen maken of voorwaardelijke doorstuur servers gebruiken voor de werk ruimte.
+Wanneer u een Azure Machine Learning-werk ruimte met een persoonlijk eind punt gebruikt, zijn er [verschillende manieren om DNS-naam omzetting te verwerken](../private-link/private-endpoint-dns.md). Standaard verwerkt Azure automatisch naam omzetting voor uw werk ruimte en persoonlijk eind punt. Als u in plaats daarvan __uw eigen aangepaste DNS-server gebruikt__, moet u hand matig DNS-vermeldingen maken of voorwaardelijke doorstuur servers gebruiken voor de werk ruimte.
 
 > [!IMPORTANT]
 > In dit artikel wordt alleen beschreven hoe u de Fully Qualified Domain Name (FQDN) en IP-adressen voor deze vermeldingen kunt vinden. Deze bevat geen informatie over het configureren van de DNS-records voor deze items. Raadpleeg de documentatie bij uw DNS-software voor informatie over het toevoegen van records.
@@ -46,11 +46,12 @@ De volgende lijst bevat de volledig gekwalificeerde domein namen (FQDN) die word
 * `ml-<workspace-name, truncated>-<region>-<workspace-guid>.notebooks.azure.net`
 
     > [!NOTE]
-    > De naam van de werk ruimte voor deze FQDN kan worden afgekapt. De afkap ping wordt uitgevoerd om de FQDN-waarde kleiner dan of gelijk aan 63 tekens te hebben.
+    > De naam van de werk ruimte voor deze FQDN kan worden afgekapt. Afkap ping wordt uitgevoerd om 63 tekens te blijven gebruiken `ml-<workspace-name, truncated>-<region>-<workspace-guid>` .
 * `<instance-name>.<region>.instances.azureml.ms`
 
     > [!NOTE]
-    > Reken instanties kunnen alleen worden geopend vanuit het virtuele netwerk.
+    > * Reken instanties kunnen alleen worden geopend vanuit het virtuele netwerk.
+    > * Het IP-adres voor deze FQDN-naam is **niet** de IP van het reken exemplaar. Gebruik in plaats daarvan het privé-IP-adres van het persoonlijke eind punt van de werk ruimte (de IP van de `*.api.azureml.ms` vermeldingen).
 
 ## <a name="azure-china-21vianet-regions"></a>Azure China 21Vianet-regio's
 
@@ -61,7 +62,7 @@ De volgende FQDN-gebieden zijn voor Azure China 21Vianet-regio's:
 * `ml-<workspace-name, truncated>-<region>-<workspace-guid>.notebooks.chinacloudapi.cn`
 
     > [!NOTE]
-    > De naam van de werk ruimte voor deze FQDN kan worden afgekapt. De afkap ping wordt uitgevoerd om de FQDN-waarde kleiner dan of gelijk aan 63 tekens te hebben.
+    > De naam van de werk ruimte voor deze FQDN kan worden afgekapt. Afkap ping wordt uitgevoerd om 63 tekens te blijven gebruiken `ml-<workspace-name, truncated>-<region>-<workspace-guid>` .
 * `<instance-name>.<region>.instances.ml.azure.cn`
 ## <a name="find-the-ip-addresses"></a>De IP-adressen zoeken
 
@@ -108,7 +109,7 @@ De informatie die door alle methoden wordt geretourneerd, is hetzelfde. een lijs
 > * `<workspace-GUID>.workspace.<region>.experiments.azureml.net`
 > * `<workspace-GUID>.workspace.<region>.modelmanagement.azureml.net`
 > * `<workspace-GUID>.workspace.<region>.aether.ms`
-> * Als u een reken instantie hebt, gebruikt u `<instance-name>.<region>.instances.azureml.ms` , waarbij `<instance-name>` de naam van uw reken instantie is. Gebruik een privé-IP-adres van het persoonlijke eind punt van de werk ruimte. Houd er rekening mee dat Compute instance alleen kan worden geopend vanuit het virtuele netwerk.
+> * Als u een reken instantie hebt, gebruikt u `<instance-name>.<region>.instances.azureml.ms` , waarbij `<instance-name>` de naam van uw reken instantie is. Gebruik het privé-IP-adres van het persoonlijke eind punt van de werk ruimte. Het reken exemplaar kan alleen worden geopend vanuit het virtuele netwerk.
 >
 > Voor al deze IP-adressen gebruikt u hetzelfde adres als de `*.api.azureml.ms` vermeldingen die in de vorige stappen zijn geretourneerd.
 

@@ -12,12 +12,12 @@ ms.date: 03/15/2021
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 3c5df0c4112f07a465d38e789b1401132ed25931
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 72fe52ad1da1941f09ad9f3264f3a2d1789c3e2f
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103488802"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107028958"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-idme-account-using-azure-active-directory-b2c"></a>Stel registratie in en meld u aan met een ID.me-account met behulp van Azure Active Directory B2C
 
@@ -166,7 +166,7 @@ Vervolgens hebt u een claim transformatie nodig om de displayName-claim te maken
 ## <a name="test-your-custom-policy"></a>Uw aangepaste beleid testen
 
 1. Selecteer uw Relying Party beleid, bijvoorbeeld `B2C_1A_signup_signin` .
-1. Selecteer voor **toepassing** een webtoepassing die u [eerder hebt geregistreerd](troubleshoot-custom-policies.md#troubleshoot-the-runtime). De **antwoord-URL** moet `https://jwt.ms` weergeven.
+1. Selecteer voor **toepassing** een webtoepassing die u [eerder hebt geregistreerd](tutorial-register-applications.md). De **antwoord-URL** moet `https://jwt.ms` weergeven.
 1. Selecteer de knop **nu uitvoeren** .
 1. Selecteer op de pagina aanmelden of aanmelden de optie **id.me** om u aan te melden met het id.me-account.
 

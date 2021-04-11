@@ -8,10 +8,10 @@ ms.date: 2/16/2021
 ms.topic: tutorial
 ms.service: iot-hub-device-update
 ms.openlocfilehash: 7facb74cd407c576b2a7b119f19427dcd185f04e
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105568814"
 ---
 # <a name="microsoft-connected-cache-preview-deployment-scenario-sample-two-level-nested-azure-iot-edge-gateway-with-outbound-unauthenticated-proxy"></a>Voor beeld van micro soft Connected cache preview Deployment scenario: geneste Azure IoT Edge gateway op twee niveaus met uitgaande niet-geverifieerde proxy

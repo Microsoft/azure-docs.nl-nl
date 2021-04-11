@@ -13,12 +13,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5df7088551e7e7f616077342b762baca179f8640
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: a71a53cd2aff16102a54f5a24063615e02d11872
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102123357"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106169518"
 ---
 # <a name="use-cloud-groups-to-manage-role-assignments-in-azure-active-directory-preview"></a>Cloud groepen gebruiken voor het beheren van roltoewijzingen in Azure Active Directory (preview-versie)
 
@@ -63,6 +63,7 @@ De volgende scenario's worden momenteel niet ondersteund:
 - *Alleen klanten met een licentie voor Azure AD P2* Zelfs na het verwijderen van de groep wordt er nog steeds een in aanmerking komend lid van de rol weer gegeven in PIM-gebruikers interface. Er is functioneel geen probleem. het is slechts een cache probleem in de Azure Portal.  
 - Gebruik het nieuwe [Exchange-beheer centrum](https://admin.exchange.microsoft.com/) voor roltoewijzingen via groepslid maatschap. Het oude Exchange-beheer centrum biedt nog geen ondersteuning voor deze functie. Exchange Power shell-cmdlets werken zoals verwacht.
 - Azure Information Protection-Portal (de klassieke Portal) herkent het lidmaatschap van de rol nog niet via groep. U kunt [migreren naar het Unified sensitivive labeling platform](/azure/information-protection/configure-policy-migrate-labels) en vervolgens het Office 365 Security & compliance gebruiken om groeps toewijzingen te gebruiken voor het beheren van rollen.
+- Het [apps-beheer centrum](https://config.office.com/) biedt nog geen ondersteuning voor deze functie. Gebruikers rechtstreeks toewijzen aan de beheerders functie van Office-apps.
 
 Deze problemen worden opgelost.
 

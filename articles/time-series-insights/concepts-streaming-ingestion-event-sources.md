@@ -1,20 +1,20 @@
 ---
 title: Gebeurtenis bronnen voor streaming-opname-Azure Time Series Insights Gen2 | Microsoft Docs
 description: Meer informatie over het streamen van gegevens naar Azure Time Series Insights Gen2.
-author: lyrana
-ms.author: lyhughes
-manager: deepakpalled
+author: deepakpalled
+ms.author: dpalled
+manager: diviso
 ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
 ms.date: 03/18/2021
-ms.openlocfilehash: ec41f7503ec179cb1fa6172e94e613933f719c93
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.openlocfilehash: 4e22d93d3037c190193f53b7cfdbc87cff2da6ed
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "104953608"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106504393"
 ---
 # <a name="azure-time-series-insights-gen2-event-sources"></a>Azure Time Series Insights Gen2-gebeurtenis bronnen
 
@@ -75,7 +75,7 @@ Wanneer u een gebeurtenis bron maakt, hebt u de optie om op te geven welke voora
 
 - Volg het principe van minimale bevoegdheden bij het leveren van verbindings reeksen voor gebeurtenis bronnen. Configureer voor Event Hubs een gedeeld toegangs beleid met alleen de claim *verzenden* en voor IOT hub de *service Connect* -machtiging alleen te gebruiken.
 
-> [!CAUTION] 
+> [!CAUTION]
 > Als u uw IoT Hub of event hub verwijdert en een nieuwe resource met dezelfde naam opnieuw maakt, moet u een nieuwe gebeurtenis bron maken en de nieuwe IoT Hub of event hub koppelen. Er worden pas gegevens opgenomen wanneer u deze stap hebt voltooid.
 
 ## <a name="production-workloads"></a>Productieworkloads

@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 03/25/2021
 ms.author: keithp
 ms.openlocfilehash: fa1c01c2d9da19ec1f60878de83a509b7cf561e8
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105606824"
 ---
 # <a name="tutorial-deploying-hsms-into-an-existing-virtual-network-using-the-azure-cli"></a>Zelfstudie: HSM's implementeren in een bestaand virtueel netwerk met behulp van Azure CLI

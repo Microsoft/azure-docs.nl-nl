@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: dfddc024255d90e8a89f49454e42eb5e94df083a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 51a9635d42b07eb27b05312d292ca890c7963b4f
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104579974"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107028227"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-linkedin-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een LinkedIn-account met behulp van Azure Active Directory B2C
 
@@ -221,7 +221,7 @@ Voeg het element **BuildingBlocks** toe aan de bovenkant van het *TrustFramework
 ## <a name="test-your-custom-policy"></a>Uw aangepaste beleid testen
 
 1. Selecteer uw Relying Party beleid, bijvoorbeeld `B2C_1A_signup_signin` .
-1. Selecteer voor **toepassing** een webtoepassing die u [eerder hebt geregistreerd](troubleshoot-custom-policies.md#troubleshoot-the-runtime). De **antwoord-URL** moet `https://jwt.ms` weergeven.
+1. Selecteer voor **toepassing** een webtoepassing die u [eerder hebt geregistreerd](tutorial-register-applications.md). De **antwoord-URL** moet `https://jwt.ms` weergeven.
 1. Selecteer de knop **nu uitvoeren** .
 1. Selecteer op de pagina aanmelden of aanmelden de optie **LinkedIn** om u aan te melden met het LinkedIn-account.
 

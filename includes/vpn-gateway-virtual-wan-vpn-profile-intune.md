@@ -5,17 +5,21 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 02/04/2021
+ms.date: 04/01/2021
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: f64bb0dd0841e89d05a4399db4373a9eaaec48a2
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: c9568c51fe3a59dba83a66fc35c8d9112ade167f
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101751061"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106178545"
 ---
 U kunt profielen voor Azure VPN-clients (Windows 10) implementeren met behulp van Microsoft Intune. Dit artikel helpt u bij het maken van een intune-profiel met aangepaste instellingen.
+
+> [!NOTE]
+>* Dit artikel is van toepassing op het implementeren van profielen die alleen Azure Active Directory voor verificatie gebruiken.
+
 
 ## <a name="prerequisites"></a>Vereisten
 

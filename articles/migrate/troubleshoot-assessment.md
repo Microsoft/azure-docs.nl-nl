@@ -7,10 +7,10 @@ ms.manager: abhemraj
 ms.topic: troubleshooting
 ms.date: 01/02/2020
 ms.openlocfilehash: 78e54543c94cd6e8434023b61516242c2491f353
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104863595"
 ---
 # <a name="troubleshoot-assessmentdependency-visualization"></a>Problemen met de evaluatie/afhankelijkheid oplossen
@@ -22,7 +22,7 @@ Dit artikel helpt u bij het oplossen van problemen met de visualisatie van evalu
 
 Los problemen met de voorbereidings voorbereiding op als volgt:
 
-**Name** | **Herstellen**
+**Probleem** | **Herstellen**
 --- | ---
 Niet-ondersteund opstart type | Azure biedt geen ondersteuning voor Vm's met een EFI-opstart type. U wordt aangeraden het opstart type te converteren naar BIOS voordat u een migratie uitvoert. <br/><br/>U kunt Azure Migrate server migratie gebruiken om de migratie van dergelijke Vm's te verwerken. Tijdens de migratie wordt het opstart type van de VM naar het BIOS geconverteerd.
 Voorwaardelijk ondersteund Windows-besturings systeem | Het besturings systeem heeft de eind datum van de ondersteuning door gegeven en heeft een aangepaste ondersteunings overeenkomst (CSA) nodig voor [ondersteuning in azure](/troubleshoot/azure/virtual-machines/server-software-support). Overweeg om te upgraden voordat u naar Azure migreert. Lees de informatie over het [voorbereiden van servers met Windows Server 2003](prepare-windows-server-2003-migration.md) voor migratie naar Azure.

@@ -7,17 +7,17 @@ ms.service: data-catalog
 ms.topic: how-to
 ms.date: 08/01/2019
 ms.openlocfilehash: fe132c5f80e138ef47db758ad42c04b8e854ca00
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "104674798"
 ---
 # <a name="register-data-sources-in-azure-data-catalog"></a>Gegevensbronnen registreren in Azure Data Catalog
 
 [!INCLUDE [Azure Purview redirect](../../includes/data-catalog-use-purview.md)]
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 Azure Data Catalog is een volledig beheerde Cloud service die fungeert als een systeem van registratie en detectie voor zakelijke gegevens bronnen. Met andere woorden, Data Catalog helpt mensen bij het ontdekken, begrijpen en gebruiken van gegevens bronnen, en het helpt organisaties meer waarde te krijgen van hun bestaande gegevens. De eerste stap voor het toegankelijk maken van een gegevens bron via Data Catalog is het registreren van die gegevens bron.
 
 ## <a name="register-data-sources"></a>Gegevensbronnen registreren

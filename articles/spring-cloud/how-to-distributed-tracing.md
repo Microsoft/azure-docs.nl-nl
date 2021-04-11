@@ -8,12 +8,12 @@ ms.date: 10/06/2019
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: f55a82eeddc8d4515b0f1333b615244976975097
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 6bcb020b14952541c673592c1040fca211ed4edf
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104877978"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107011848"
 ---
 # <a name="use-distributed-tracing-with-azure-spring-cloud"></a>Gedistribueerde tracering gebruiken met Azure Spring Cloud
 
@@ -82,7 +82,7 @@ Voeg de volgende instellingen toe aan de configuratie bron die wordt gebruikt wa
 2. Als u tracerings reeksen wilt zien die worden verzonden tussen de Eureka-server, de configuratie server en de gebruikers-apps: ingesteld `management.tracing.egressIgnorePattern` op '/API/v2/spans |/v2/apps/.*/permissions |/Eureka/.*| /oauth/.*".
 
 *appsettings.jsop* zou bijvoorbeeld de volgende eigenschappen bevatten:
- 
+
 ```json
 "management": {
     "tracing": {
@@ -119,25 +119,58 @@ Voor het volgen van deze procedures hebt u een Azure Spring Cloud-service nodig 
 
 1. Sla deze stap over als u onze [gids voor het voorbereiden van een Azure Spring Cloud-toepassing](how-to-prepare-app-deployment.md) hebt gevolgd. Als dat niet het geval is, gaat u naar uw lokale ontwikkelomgeving en bewerkt u het bestand pom.xml om de volgende Spring Cloud Sleuth-afhankelijkheid toe te voegen:
 
-    ```xml
-    <dependencyManagement>
-        <dependencies>
+    * Spring boot-versie < 2.4. x.
+
+      ```xml
+      <dependencyManagement>
+          <dependencies>
+              <dependency>
+                  <groupId>org.springframework.cloud</groupId>
+                  <artifactId>spring-cloud-sleuth</artifactId>
+                  <version>${spring-cloud-sleuth.version}</version>
+                  <type>pom</type>
+                  <scope>import</scope>
+              </dependency>
+          </dependencies>
+      </dependencyManagement>
+      <dependencies>
+          <dependency>
+              <groupId>org.springframework.cloud</groupId>
+              <artifactId>spring-cloud-starter-sleuth</artifactId>
+          </dependency>
+          <dependency>
+              <groupId>org.springframework.cloud</groupId>
+              <artifactId>spring-cloud-starter-zipkin</artifactId>
+          </dependency>
+      </dependencies>
+      ```
+
+    * Spring boot-versie >= 2.4. x.
+
+      ```xml
+      <dependencyManagement>
+          <dependencies>
             <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-sleuth</artifactId>
-                <version>${spring-cloud-sleuth.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-sleuth</artifactId>
-        </dependency>
-    </dependencies>
-    ```
+                  <groupId>org.springframework.cloud</groupId>
+                  <artifactId>spring-cloud-sleuth</artifactId>
+                  <version>${spring-cloud-sleuth.version}</version>
+                  <type>pom</type>
+                  <scope>import</scope>
+              </dependency>
+          </dependencies>
+      </dependencyManagement>
+      <dependencies>
+          <dependency>
+              <groupId>org.springframework.cloud</groupId>
+              <artifactId>spring-cloud-starter-sleuth</artifactId>
+          </dependency>
+          <dependency>
+              <groupId>org.springframework.cloud</groupId>
+              <artifactId>spring-cloud-sleuth-zipkin</artifactId>
+           </dependency>
+      </dependencies>
+      ```
+
 
 1. Bouw en implementeer opnieuw voor de Azure Spring Cloud-service om deze wijzigingen weer te geven.
 

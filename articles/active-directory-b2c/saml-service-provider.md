@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/03/2021
+ms.date: 04/05/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 1035f43642f3884e7cc0f6ab47e9c9afd1f29170
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 97718fef0aecd07dd364677ce1b72eb5bba78475
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102107386"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106384269"
 ---
 # <a name="register-a-saml-application-in-azure-ad-b2c"></a>Een SAML-toepassing registreren in Azure AD B2C
 
@@ -78,15 +78,35 @@ Om een vertrouwens relatie tussen uw toepassing en Azure AD B2C te maken, moeten
 
 | Gebruik | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| SAML-antwoord ondertekenen | Ja | Een certificaat met een persoonlijke sleutel die is opgeslagen in Azure AD B2C. Dit certificaat wordt door Azure AD B2C gebruikt voor het ondertekenen van het SAML-antwoord dat naar uw toepassing is verzonden. Uw toepassing leest de open bare sleutel van de Azure AD B2C meta gegevens om de hand tekening van het SAML-antwoord te valideren. |
+| SAML-antwoord ondertekenen | Ja  | Een certificaat met een persoonlijke sleutel die is opgeslagen in Azure AD B2C. Dit certificaat wordt door Azure AD B2C gebruikt voor het ondertekenen van het SAML-antwoord dat naar uw toepassing is verzonden. Uw toepassing leest de open bare sleutel van de Azure AD B2C meta gegevens om de hand tekening van het SAML-antwoord te valideren. |
+| Ondertekenen van SAML-bevestiging | Ja | Een certificaat met een persoonlijke sleutel die is opgeslagen in Azure AD B2C. Dit certificaat wordt door Azure AD B2C gebruikt voor het ondertekenen van de bevestiging van het SAML-antwoord. Het `<saml:Assertion>` deel van het SAML-antwoord.  |
 
 In een productie omgeving kunt u het beste certificaten gebruiken die zijn uitgegeven door een open bare certificerings instantie. U kunt deze procedure echter ook volt ooien met zelfondertekende certificaten.
 
-### <a name="prepare-a-self-signed-certificate-for-saml-response-signing"></a>Een zelfondertekend certificaat voorbereiden voor het ondertekenen van SAML-antwoorden
+### <a name="create-a-policy-key"></a>Een beleids sleutel maken
 
-U moet een certificaat voor het ondertekenen van SAML-antwoorden maken zodat uw toepassing de bewering kan vertrouwen van Azure AD B2C.
+Als u een vertrouwens relatie tussen uw toepassing en Azure AD B2C wilt, maakt u een SAML-antwoord handtekening certificaat. Azure AD B2C gebruikt dit certificaat om het SAML-antwoord te ondertekenen dat naar uw toepassing is verzonden. Uw toepassing leest de open bare sleutel van de Azure AD B2C meta gegevens om de hand tekening van het SAML-antwoord te valideren. 
+
+> [!TIP]
+> U kunt de beleids sleutel die u in deze sectie maakt, gebruiken voor andere doel einden, zoals aanmelden bij de [SAML-bevestiging](saml-service-provider-options.md#saml-assertions-signature). 
+
+### <a name="obtain-a-certificate"></a>Een certificaat verkrijgen
 
 [!INCLUDE [active-directory-b2c-create-self-signed-certificate](../../includes/active-directory-b2c-create-self-signed-certificate.md)]
+
+### <a name="upload-the-certificate"></a>Het certificaat uploaden
+
+U moet uw certificaat opslaan in uw Azure AD B2C-Tenant.
+
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+1. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C-Tenant bevat. Selecteer het filter **Directory + abonnement** in het bovenste menu en kies de map die uw Tenant bevat.
+1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
+1. Selecteer op de pagina overzicht **identiteits ervaring-Framework**.
+1. Selecteer **beleids sleutels** en selecteer vervolgens **toevoegen**.
+1. Kies voor **Opties** `Upload` .
+1. Voer een **naam** in voor de beleids sleutel. Bijvoorbeeld `SamlIdpCert`. Het voor voegsel `B2C_1A_` wordt automatisch toegevoegd aan de naam van uw sleutel.
+1. Blader naar en selecteer het pfx-bestand van het certificaat met de persoonlijke sleutel.
+1. Klik op **Create**.
 
 ## <a name="enable-your-policy-to-connect-with-a-saml-application"></a>Uw beleid inschakelen om verbinding te maken met een SAML-toepassing
 
@@ -111,6 +131,7 @@ Zoek de `<ClaimsProviders>` sectie en voeg het volgende XML-fragment toe om uw S
       </Metadata>
       <CryptographicKeys>
         <Key Id="SamlAssertionSigning" StorageReferenceId="B2C_1A_SamlIdpCert"/>
+        <Key Id="SamlMessageSigning" StorageReferenceId="B2C_1A_SamlIdpCert"/>
       </CryptographicKeys>
       <InputClaims/>
       <OutputClaims/>
@@ -147,51 +168,6 @@ U kunt de waarde van het `IssuerUri` meta gegevens item wijzigen in het SAML-tok
     </TechnicalProfile>
 ```
 
-#### <a name="sign-the-azure-ad-b2c-idp-saml-metadata-optional"></a>De Azure AD B2C IdP SAML-meta gegevens ondertekenen (optioneel)
-
-U kunt Azure AD B2C het document van de SAML IdP-meta gegevens te ondertekenen, indien dit door de toepassing wordt vereist. Als u dit wilt doen, genereert en uploadt u een SAML IdP-beleid sleutel voor het ondertekenen van meta gegevens, zoals wordt weer gegeven in [voor bereiding van een zelfondertekend certificaat voor SAML-reactie ondertekening](#prepare-a-self-signed-certificate-for-saml-response-signing). Configureer vervolgens het `MetadataSigning` meta gegevens item in het SAML-token Uitgever technisch profiel. De `StorageReferenceId` moet verwijzen naar de naam van de beleids sleutel.
-
-```xml
-<ClaimsProvider>
-  <DisplayName>Token Issuer</DisplayName>
-  <TechnicalProfiles>
-    <!-- SAML Token Issuer technical profile -->
-    <TechnicalProfile Id="Saml2AssertionIssuer">
-      <DisplayName>Token Issuer</DisplayName>
-      <Protocol Name="SAML2"/>
-      <OutputTokenFormat>SAML2</OutputTokenFormat>
-        ...
-      <CryptographicKeys>
-        <Key Id="MetadataSigning" StorageReferenceId="B2C_1A_SamlMetadataCert"/>
-        ...
-      </CryptographicKeys>
-    ...
-    </TechnicalProfile>
-```
-
-#### <a name="sign-the-azure-ad-b2c-idp-saml-response-element-optional"></a>Het Azure AD B2C SAML-antwoord element IdP ondertekenen (optioneel)
-
-U kunt een certificaat opgeven dat moet worden gebruikt voor het ondertekenen van de SAML-berichten. Het bericht is het `<samlp:Response>` element binnen het SAML-antwoord dat naar de toepassing wordt verzonden.
-
-Als u een certificaat wilt opgeven, genereert en uploadt u een beleids sleutel, zoals wordt weer gegeven in [voor bereiding van een zelfondertekend certificaat voor SAML-reactie ondertekening](#prepare-a-self-signed-certificate-for-saml-response-signing). Configureer vervolgens het `SamlMessageSigning` meta gegevens item in het SAML-token Uitgever technisch profiel. De `StorageReferenceId` moet verwijzen naar de naam van de beleids sleutel.
-
-```xml
-<ClaimsProvider>
-  <DisplayName>Token Issuer</DisplayName>
-  <TechnicalProfiles>
-    <!-- SAML Token Issuer technical profile -->
-    <TechnicalProfile Id="Saml2AssertionIssuer">
-      <DisplayName>Token Issuer</DisplayName>
-      <Protocol Name="SAML2"/>
-      <OutputTokenFormat>SAML2</OutputTokenFormat>
-        ...
-      <CryptographicKeys>
-        <Key Id="SamlMessageSigning" StorageReferenceId="B2C_1A_SamlMessageCert"/>
-        ...
-      </CryptographicKeys>
-    ...
-    </TechnicalProfile>
-```
 ## <a name="configure-your-policy-to-issue-a-saml-response"></a>Configureer uw beleid voor het uitgeven van een SAML-reactie
 
 Nu uw beleid SAML-reacties kan maken, moet u het beleid configureren om een SAML-reactie uit te geven in plaats van de standaard JWT-respons voor uw toepassing.

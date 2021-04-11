@@ -6,12 +6,12 @@ ms.author: sngun
 ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 09/01/2020
-ms.openlocfilehash: 8721c0eb728f568521e86baecb658dc9c869a7f6
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3325960793a5a0d7bc48ca8030c675d7ebf0c026
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "93097580"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106442589"
 ---
 # <a name="options-to-migrate-your-on-premises-or-cloud-data-to-azure-cosmos-db"></a>Opties voor het migreren van uw on-premises of Cloud gegevens naar Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -64,8 +64,8 @@ De volgende factoren bepalen de keuze van het migratiehulpprogramma:
 
 |Type migratie|Oplossing|Ondersteunde bronnen|Ondersteunde doelen|Overwegingen|
 |---------|---------|---------|---------|---------|
-|Offline|[cqlsh kopiëren opdracht](cassandra-import-data.md#migrate-data-using-cqlsh-copy-command)|CSV-bestanden | Azure Cosmos DB Cassandra-API| &bull; Eenvoudig in te stellen. <br/>&bull; Niet geschikt voor grote gegevens sets. <br/>&bull; Werkt alleen wanneer de bron een Cassandra-tabel is.|
-|Offline|[Tabel kopiëren met Spark](cassandra-import-data.md#migrate-data-using-spark) | &bull;Apache Cassandra<br/>&bull;Azure Cosmos DB Cassandra-API| Azure Cosmos DB Cassandra-API | &bull; Kan gebruik maken van Spark-mogelijkheden voor het parallelliseren van trans formatie en opname. <br/>&bull; Moet worden geconfigureerd met een aangepast beleid voor opnieuw proberen om beperkingen te verwerken.|
+|Offline|[cqlsh kopiëren opdracht](cassandra-import-data.md#migrate-data-by-using-the-cqlsh-copy-command)|CSV-bestanden | Azure Cosmos DB Cassandra-API| &bull; Eenvoudig in te stellen. <br/>&bull; Niet geschikt voor grote gegevens sets. <br/>&bull; Werkt alleen wanneer de bron een Cassandra-tabel is.|
+|Offline|[Tabel kopiëren met Spark](cassandra-import-data.md#migrate-data-by-using-spark) | &bull;Apache Cassandra<br/>&bull;Azure Cosmos DB Cassandra-API| Azure Cosmos DB Cassandra-API | &bull; Kan gebruik maken van Spark-mogelijkheden voor het parallelliseren van trans formatie en opname. <br/>&bull; Moet worden geconfigureerd met een aangepast beleid voor opnieuw proberen om beperkingen te verwerken.|
 |Online|[Realtimeplatform (uit Oracle DB/Apache Cassandra)](cosmosdb-cassandra-api-migrate-data-striim.md)| &bull;Oracle<br/>&bull;Apache Cassandra<br/><br/> Zie de [realtimeplatform-website](https://www.striim.com/sources-and-targets/) voor andere ondersteunde bronnen.|&bull;SQL-API voor Azure Cosmos DB<br/>&bull;Azure Cosmos DB Cassandra-API <br/><br/> Zie de [realtimeplatform-website](https://www.striim.com/sources-and-targets/) voor andere ondersteunde doelen.| &bull; Werkt met een groot aantal verschillende bronnen, zoals Oracle, DB2, SQL Server. <br/>&bull; Maak eenvoudig ETL-pijp lijnen en biedt een dash board voor bewaking. <br/>&bull; Biedt ondersteuning voor grotere gegevens sets. <br/>&bull; Aangezien dit een hulp programma van derden is, moet het worden aangeschaft via Marketplace en worden geïnstalleerd in de omgeving van de gebruiker.|
 |Online|[Blitzz (uit Oracle DB/Apache Cassandra)](oracle-migrate-cosmos-db-blitzz.md)|&bull;Oracle<br/>&bull;Apache Cassandra<br/><br/>Zie de [Blitzz-website](https://www.blitzz.io/) voor andere ondersteunde bronnen. |Azure Cosmos DB Cassandra-API. <br/><br/>Zie de [Blitzz-website](https://www.blitzz.io/) voor andere ondersteunde doelen. | &bull; Biedt ondersteuning voor grotere gegevens sets. <br/>&bull; Aangezien dit een hulp programma van derden is, moet het worden aangeschaft via Marketplace en worden geïnstalleerd in de omgeving van de gebruiker.|
 

@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 03/03/2021
 ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: e70b41dfba03b7439313350746724c6f8e90bc34
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: f81446111ab87b280d50caceb93beefc7aedef3b
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105564769"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106110322"
 ---
 # <a name="tutorial-configure-a-virtual-network-gateway-for-expressroute-using-the-azure-portal"></a>Zelfstudie: Een virtuele-netwerkgateway configureren voor ExpressRoute met behulp van de Azure-portal
 > [!div class="op_single_selector"]
@@ -63,7 +63,7 @@ U kunt een [video](https://azure.microsoft.com/documentation/videos/azure-expres
    
     :::image type="content" source="./media/expressroute-howto-add-gateway-portal-resource-manager/add-gateway-subnet.png" alt-text="Het gatewaysubnet toevoegen":::
 
-1. Als **naam** voor het subnet wordt automatisch de waarde GatewaySubnet ingevuld. Deze waarde is vereist. Zonder deze waarde wordt het subnet niet in Azure als het gatewaysubnet herkend. Pas de automatisch ingevulde waarden voor **Adresbereik** aan overeenkomstig uw configuratievereisten. We raden u aan een gatewaysubnet te maken met een adresbereik van /27 of groter (/26, /25, enzovoort).
+1. Als **naam** voor het subnet wordt automatisch de waarde GatewaySubnet ingevuld. Deze waarde is vereist. Zonder deze waarde wordt het subnet niet in Azure als het gatewaysubnet herkend. Pas de automatisch ingevulde waarden voor **Adresbereik** aan overeenkomstig uw configuratievereisten. We raden u aan een gatewaysubnet te maken met een adresbereik van /27 of groter (/26, /25, enzovoort). Als u van plan bent om 16 ExpressRoute-circuits te verbinden met uw gateway, **moet** u een gateway-subnet van/26 of groter maken.
 
     Als u een virtueel netwerk met dubbele stack gebruikt en op IPv6 gebaseerde privé-peering via ExpressRoute wilt gebruiken, klikt u op **ip6 adres ruimte toevoegen** en waarden voor het **IPv6-adres bereik** invoeren.
 

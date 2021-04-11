@@ -4,10 +4,10 @@ description: Richt lijnen voor de omgevings variabele van de taak runtime en nas
 ms.topic: conceptual
 ms.date: 12/30/2020
 ms.openlocfilehash: dbdc13e28a3a0c772480d2602f147e0d3354ff48
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104669981"
 ---
 # <a name="azure-batch-runtime-environment-variables"></a>Omgevings variabelen Azure Batch-runtime

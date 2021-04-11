@@ -2,14 +2,14 @@
 title: Back-up maken van Azure Database for PostgreSQL
 description: Meer informatie over Azure Database for PostgreSQL back-up met lange termijn retentie (preview-versie)
 ms.topic: conceptual
-ms.date: 09/08/2020
+ms.date: 04/06/2021
 ms.custom: references_regions
-ms.openlocfilehash: 1e2d83d4a5e21ed747ec9d4dcf2fa03d1e3935cc
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5eba9d78dda45197c0d1e92195980f3d731734a8
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98737569"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107011703"
 ---
 # <a name="azure-database-for-postgresql-backup-with-long-term-retention-preview"></a>Azure Database for PostgreSQL back-up met lange termijn retentie (preview-versie)
 
@@ -135,10 +135,9 @@ De volgende instructies zijn een stapsgewijze hand leiding voor het configureren
 
 1. Instellingen voor **retentie** definiëren. U kunt een of meer Bewaar regels toevoegen. Bij elke Bewaar regel wordt uitgegaan van invoer voor specifieke back-ups, en voor de gegevens opslag en de Bewaar periode voor deze back-ups.
 
-1. U kunt ervoor kiezen om uw back-ups op te slaan in een van de twee gegevens archieven (of-lagen): **back-upgegevens archief** (Standard-laag) of **Archief gegevens archief** (in preview-versie). U kunt kiezen uit **twee laag opties** om te definiëren wanneer de back-ups trapsgewijs worden verdeeld over de twee gegevens sets:
+1. U kunt ervoor kiezen om uw back-ups op te slaan in een van de twee gegevens archieven (of-lagen): **back-upgegevens archief** (Standard-laag) of **Archief gegevens archief** (in preview-versie).
 
-    - Kies **onmiddellijk** kopiëren als u liever een back-up in zowel back-ups maken en Archief gegevens archieven hebt.
-    - Klik **op verlopen** als u de back-up wilt verplaatsen om de gegevens opslag te archiveren tijdens het verlopen van het back-upgegevens archief.
+   U kunt **op verlopen** kiezen om de back-up te verplaatsen naar de archief gegevens in de back-upgegevens opslag.
 
 1. De **standaard Bewaar regel** wordt toegepast wanneer er geen andere Bewaar regel is en heeft een standaard waarde van drie maanden.
 
@@ -197,7 +196,21 @@ Volg deze stapsgewijze hand leiding voor het activeren van een herstel bewerking
 
     ![Herstellen als bestanden](./media/backup-azure-database-postgresql/restore-as-files.png)
 
+1. Als het herstel punt zich in de laag Archive bevindt, moet u het herstel punt vóór het herstellen opnieuw hebben gehydrateerd.
+   
+   ![Rehydratatie-instellingen](./media/backup-azure-database-postgresql/rehydration-settings.png)
+   
+   Geef de volgende aanvullende para meters op die vereist zijn voor rehydratatie:
+   - **Rehydratatie prioriteit:** **Standaard is standaard**.
+   - **Rehydratatie duur:** De maximale rehydratatie-duur is 30 dagen en de minimale rehydratatie duur is 10 dagen. De standaard waarde is **15**.
+   
+   Het herstel punt wordt opgeslagen in het **back-upgegevens archief** voor de opgegeven rehydratatie-duur.
+
+
 1. Controleer de informatie en selecteer **herstellen**. Hiermee wordt een bijbehorende herstel taak geactiveerd die kan worden gevolgd onder **back-uptaken**.
+
+>[!NOTE]
+>Archief ondersteuning voor Azure Database for PostgreSQL is beperkt open bare preview-versie.
 
 ## <a name="prerequisite-permissions-for-configure-backup-and-restore"></a>Vereiste machtigingen voor het configureren van back-up en herstel
 
@@ -220,7 +233,7 @@ Kies uit de lijst met Bewaar regels die in het bijbehorende back-upbeleid zijn g
 
 ### <a name="stop-protection"></a>Beveiliging stoppen
 
-U kunt de beveiliging van een back-upitem stoppen. Hierdoor worden ook de bijbehorende herstel punten voor dat back-upitem verwijderd. We bieden nog niet de mogelijkheid om de beveiliging te stoppen terwijl de bestaande herstel punten behouden blijven.
+U kunt de beveiliging van een back-upitem stoppen. Hierdoor worden ook de bijbehorende herstel punten voor dat back-upitem verwijderd. Als herstel punten zich ten minste zes maanden niet in de laag archief bevinden, worden de kosten voor vroegtijdige verwijdering voor het verwijderen van deze herstel punten in rekening gebracht. We bieden nog niet de mogelijkheid om de beveiliging te stoppen terwijl de bestaande herstel punten behouden blijven.
 
 ![Beveiliging stoppen](./media/backup-azure-database-postgresql/stop-protection.png)
 

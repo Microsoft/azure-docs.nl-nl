@@ -9,20 +9,51 @@ ms.service: azure-arc
 ms.subservice: azure-arc-data
 ms.date: 03/02/2021
 ms.topic: conceptual
-ms.openlocfilehash: 8100d9e12f107e0c4598876c46453b46c6ee4d0e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: ee652047a33d73ece2d7648905fa590d90b1fb2f
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102121997"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107029502"
 ---
 # <a name="known-issues---azure-arc-enabled-data-services-preview"></a>Bekende problemen: Azure Arc enabled Data Services (preview-versie)
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
+## <a name="march-2021"></a>2021 maart
+
+### <a name="data-controller"></a>Gegevens controller
+
+- U kunt een gegevens controller maken in de modus Direct Connect met de Azure Portal. Implementatie met andere hulpprogram ma's van Azure Arc ingeschakelde gegevens services worden niet ondersteund. U kunt met name geen gegevens controller implementeren in de modus Direct Connect met een van de volgende hulpprogram ma's tijdens deze release.
+   - Azure Data Studio
+   - Azure Data CLI (`azdata`)
+   - Kubernetes systeem eigen hulpprogram ma's
+
+   [Azure Arc data controller implementeren | In de modus direct verbinden](deploy-data-controller-direct-mode.md) wordt uitgelegd hoe u de gegevens controller maakt in de portal. 
+
+### <a name="azure-arc-enabled-postgresql-hyperscale"></a>Azure Arc enabled PostgreSQL grootschalige
+
+- Het is niet mogelijk om een post gres grootschalige-Server groep voor Azure-Arc te implementeren in een Arc-gegevens controller ingeschakeld voor de modus direct verbinden.
+- Door een ongeldige waarde door te geven aan de `--extensions` para meter bij het bewerken van de configuratie van een server groep om extra extensies in te scha kelen, wordt de lijst met ingeschakelde uitbrei dingen onjuist teruggezet op de manier waarop de Server groep is gemaakt en wordt voor komen dat gebruikers extra uitbrei dingen kunnen maken. De enige tijdelijke oplossing die beschikbaar is wanneer dat gebeurt, is om de Server groep te verwijderen en opnieuw te implementeren.
+
 ## <a name="february-2021"></a>Februari 2021
 
-- De modus verbonden cluster is uitgeschakeld
+### <a name="data-controller"></a>Gegevens controller
+
+- De cluster modus Direct Connect is uitgeschakeld
+
+### <a name="azure-arc-enabled-postgresql-hyperscale"></a>Azure Arc enabled PostgreSQL grootschalige
+
+- Herstellen naar een bepaald tijdstip wordt niet ondersteund voor nu op NFS-opslag.
+- Het is niet mogelijk om de pg_cron-extensie tegelijkertijd in te scha kelen en te configureren. U moet hiervoor twee opdrachten gebruiken. Eén opdracht om deze in te scha kelen en één opdracht om deze te configureren. 
+
+   Bijvoorbeeld:
+   ```console
+   § azdata arc postgres server edit -n myservergroup --extensions pg_cron 
+   § azdata arc postgres server edit -n myservergroup --engine-settings cron.database_name='postgres'
+   ```
+
+   Voor de eerste opdracht moet de Server groep opnieuw worden opgestart. Voordat u de tweede opdracht uitvoert, moet u ervoor zorgen dat de status van de Server groep is overgezet van bijwerken naar gereed. Als u de tweede opdracht uitvoert voordat de computer opnieuw wordt opgestart, mislukt de bewerking. Als dat het geval is, wacht u gewoon even en voert u de tweede opdracht opnieuw uit.
 
 ## <a name="introduced-prior-to-february-2021"></a>Vóór februari 2021
 
@@ -43,12 +74,6 @@ ms.locfileid: "102121997"
 
    :::image type="content" source="media/release-notes/aks-zone-selector.png" alt-text="Schakel de selectie vakjes voor elke zone uit om geen op te geven.":::
 
-### <a name="postgresql"></a>PostgreSQL
-
-- Azure Arc enabled PostgreSQL grootschalige retourneert een onjuist fout bericht wanneer het niet kan worden teruggezet naar het relatieve punt in de tijd dat u opgeeft. Als u bijvoorbeeld een punt in de tijd hebt opgegeven om te herstellen dat ouder is dan uw back-ups bevatten, mislukt de herstel bewerking met een fout bericht als: `ERROR: (404). Reason: Not found. HTTP response body: {"code":404, "internalStatus":"NOT_FOUND", "reason":"Failed to restore backup for server...}`
-Wanneer dit het geval is, start u de opdracht opnieuw op nadat u een tijdstip hebt aangegeven dat binnen het bereik van de datums valt waarvoor u back-ups hebt. U kunt dit bereik bepalen door uw back-ups weer te geven en te kijken naar de datums waarop deze zijn gemaakt.
-- Herstel naar een bepaald tijdstip wordt alleen ondersteund in verschillende Server groepen. De doel server van een herstel bewerking naar een bepaald tijdstip kan geen server zijn van waaruit u de back-up hebt gemaakt. Dit moet een andere server groep zijn. Volledige herstel bewerking wordt echter wel ondersteund voor dezelfde server groep.
-- U moet een back-up-id opgeven wanneer u een volledige herstel bewerking uitvoert. Als u geen back-upid aangeeft, wordt standaard de meest recente back-up gebruikt. Dit werkt niet in deze release.
 
 ## <a name="next-steps"></a>Volgende stappen
 

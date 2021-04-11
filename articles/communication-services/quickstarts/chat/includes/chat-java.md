@@ -10,12 +10,12 @@ ms.date: 03/10/2021
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 800acddcb3527b9ca16d7fc664c2a3c27b528c25
-ms.sourcegitcommit: 91361cbe8fff7c866ddc4835251dcbbe2621c055
+ms.openlocfilehash: afb8a6f7d18a36503253da3666a1325eef228651
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "105726650"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105958364"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -56,7 +56,7 @@ In uw POM-bestand verwijzen we naar het pakket `azure-communication-chat` met de
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-communication-chat</artifactId>
-    <version>1.0.0-beta.7</version> 
+    <version>1.0.0</version>
 </dependency>
 ```
 
@@ -66,7 +66,7 @@ Voor verificatie moet uw client het pakket `azure-communication-common` verwijze
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-communication-common</artifactId>
-    <version>1.0.0</version> 
+    <version>1.0.0</version>
 </dependency>
 ```
 
@@ -82,7 +82,7 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 | ChatThreadAsyncClient | Deze klasse is vereist voor de functionaliteit van de asynchrone chat-thread. U verkrijgt een instantie via de ChatAsyncClient en gebruikt deze om berichten te verzenden/ontvangen/bijwerken/verwijderen, gebruikers toe te voegen/te verwijderen of te verzenden, getypte meldingen te verzenden en bevestigingen te lezen. |
 
 ## <a name="create-a-chat-client"></a>Een chat-client maken
-Als u een chat-client wilt maken, gebruikt u het Communications Service-eindpunt en het toegangstoken dat is gegenereerd als onderdeel van de vereiste stappen. Met toegangstokens voor gebruikers kunt u clienttoepassingen maken die zich rechtstreeks verifiëren bij Azure Communication Services. Zodra u deze tokens op uw server hebt gegenereerd, geeft u ze terug op een clientapparaat. U moet de CommunicationTokenCredential-klasse van de gemeen schappelijke SDK gebruiken om het token door te geven aan uw chat-client. 
+Als u een chat-client wilt maken, gebruikt u het Communications Service-eindpunt en het toegangstoken dat is gegenereerd als onderdeel van de vereiste stappen. Met toegangstokens voor gebruikers kunt u clienttoepassingen maken die zich rechtstreeks verifiëren bij Azure Communication Services. Zodra u deze tokens op uw server hebt gegenereerd, geeft u ze terug op een clientapparaat. U moet de CommunicationTokenCredential-klasse van de gemeen schappelijke SDK gebruiken om het token door te geven aan uw chat-client.
 
 Meer informatie over de [architectuur van chatten](../../../concepts/chat/concepts.md)
 
@@ -106,7 +106,7 @@ public class App
     public static void main( String[] args ) throws IOException
     {
         System.out.println("Azure Communication Services - Chat Quickstart");
-        
+
         // Your unique Azure Communication service endpoint
         String endpoint = "https://<RESOURCE_NAME>.communication.azure.com";
 
@@ -139,7 +139,8 @@ De methode `createChatThread` gebruiken om een chat-thread te maken.
 - Gebruik de `topic` para meter van de constructor om een onderwerp voor deze chat te geven. Het onderwerp kan worden bijgewerkt nadat de chat thread is gemaakt met behulp van de `UpdateThread` functie.
 - Gebruik `participants` om de thread deelnemers weer te geven die moeten worden toegevoegd aan de thread. `ChatParticipant` neemt u de gebruiker die u hebt gemaakt in de Snelstart [Toegangstoken voor gebruikers](../../access-tokens.md).
 
-`CreateChatThreadResult` is het antwoord dat wordt geretourneerd door het maken van een chat thread. Het bevat een `getChatThread()` methode die het `ChatThread` object retourneert dat kan worden gebruikt voor het ophalen van de thread-client van waaruit u de `ChatThreadClient` bewerkingen voor het uitvoeren van de gemaakte thread kunt verkrijgen: deel nemers toevoegen, bericht verzenden enzovoort. Het `ChatThread` object bevat ook de `getId()` methode waarmee de unieke id van de thread wordt opgehaald.
+`CreateChatThreadResult` is het antwoord dat wordt geretourneerd door het maken van een chat thread.
+Het bevat een `getChatThread()` methode die het `ChatThread` object retourneert dat kan worden gebruikt voor het ophalen van de thread-client van waaruit u de `ChatThreadClient` bewerkingen voor het uitvoeren van de gemaakte thread kunt verkrijgen: deel nemers toevoegen, bericht verzenden enzovoort. Het `ChatThread` object bevat ook de `getId()` methode waarmee de unieke id van de thread wordt opgehaald.
 
 ```Java
 ChatParticipant firstThreadParticipant = new ChatParticipant()

@@ -10,17 +10,17 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 03/19/2021
-ms.openlocfilehash: e2de694a153276dcace1070d35af44dec1056e03
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 9f7df4889d1d54605ab2b5cd79f3039f06fab197
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105564922"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107027870"
 ---
 # <a name="migration-guide-sql-server-to-azure-sql-database"></a>Migratie handleiding: SQL Server naar Azure SQL Database
 [!INCLUDE[appliesto--sqldb](../../includes/appliesto-sqldb.md)]
 
-Deze hand leiding helpt u bij het migreren van uw SQL Server-exemplaar naar Azure SQL Database. 
+In deze hand leiding vindt u informatie [over het migreren](https://azure.microsoft.com/migration/migration-journey) van uw SQL Server-exemplaar naar Azure SQL database. 
 
 U kunt SQL Server die on-premises of op worden uitgevoerd, migreren: 
 
@@ -36,7 +36,7 @@ Zie het [migratie overzicht](sql-server-to-sql-database-overview.md)voor meer in
 
 ## <a name="prerequisites"></a>Vereisten 
 
-Als u uw SQL Server naar Azure SQL Database wilt migreren, controleert u of u de volgende vereisten hebt: 
+Zorg ervoor dat u over de volgende vereisten beschikt voor de [SQL Server migratie](https://azure.microsoft.com/migration/migration-journey) naar Azure SQL database: 
 
 - Een gekozen [migratie methode](sql-server-to-sql-database-overview.md#compare-migration-options) en overeenkomende hulpprogram ma's.
 - [Data Migration Assistant (DMA)](https://www.microsoft.com/download/details.aspx?id=53595) geïnstalleerd op een computer die verbinding kan maken met uw bron SQL Server.
@@ -47,7 +47,7 @@ Als u uw SQL Server naar Azure SQL Database wilt migreren, controleert u of u de
 
 ## <a name="pre-migration"></a>Premigratie
 
-Nadat u hebt gecontroleerd of uw bron omgeving wordt ondersteund, begint u met de fase voorafgaand aan de migratie. Ontdek alle bestaande gegevens bronnen, beoordeel de haal baarheid van de migratie en Identificeer eventuele belemmeringen voor het blok keren van de migratie. 
+Nadat u hebt gecontroleerd of uw bron omgeving wordt ondersteund, begint u met de fase voorafgaand aan de migratie. Ontdek alle bestaande gegevens bronnen, beoordeel de haal baarheid van de migratie en Identificeer eventuele belemmeringen die de migratie van uw [Azure-Cloud](https://azure.microsoft.com/migration)kunnen verhinderen.
 
 ### <a name="discover"></a>Ontdekken
 
@@ -200,6 +200,10 @@ Zie [Azure SQL database na migratie beheren](../../database/manage-data-after-mi
 
 - Zie [service en hulpprogram ma's voor gegevens migratie](../../../dms/dms-tools-matrix.md)voor een matrix van de services en hulpprogram Ma's van micro soft en van derden die beschikbaar zijn om u te helpen bij verschillende scenario's voor data base-en gegevens migratie, en voor speciale taken.
 
+
+- Voor meer informatie over [Azure migrate](https://azure.microsoft.com/services/azure-migrate) raadpleegt u
+   - [Azure Migrate](../../../migrate/migrate-services-overview.md)
+
 - Voor meer informatie over SQL Database raadpleegt u:
     - [Een overzicht van Azure SQL Database](../../database/sql-database-paas-overview.md)
    - [Reken machine totale eigendoms kosten Azure](https://azure.microsoft.com/pricing/tco/calculator/) 
@@ -207,7 +211,8 @@ Zie [Azure SQL database na migratie beheren](../../database/manage-data-after-mi
 
 - Zie voor meer informatie over het Framework en de acceptatie cyclus voor Cloud migraties.
    -  [Cloud Adoption Framework voor Azure](/azure/cloud-adoption-framework/migrate/azure-best-practices/contoso-migration-scale)
-   -  [Aanbevolen procedures voor het migreren en aanpassen van werk belastingen naar Azure](/azure/cloud-adoption-framework/migrate/azure-best-practices/migrate-best-practices-costs) 
+   -  [Aanbevolen procedures voor het berekenen en aanpassen van werk belastingen voor migratie naar Azure](/azure/cloud-adoption-framework/migrate/azure-best-practices/migrate-best-practices-costs) 
+   -  [Cloudmigratie resources](https://azure.microsoft.com/migration/resources)
 
 - Zie [Data Access Migration Toolkit (preview) voor informatie](https://marketplace.visualstudio.com/items?itemName=ms-databasemigration.data-access-migration-toolkit) over het beoordelen van de toegangs laag van de toepassing.
 - Zie [database Experimentation Assistant](/sql/dea/database-experimentation-assistant-overview)voor meer informatie over het uitvoeren van een test voor de toegang tot een Data Access Layer A/B.

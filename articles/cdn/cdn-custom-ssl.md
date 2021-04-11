@@ -5,15 +5,15 @@ services: cdn
 author: asudbring
 ms.service: azure-cdn
 ms.topic: tutorial
-ms.date: 01/27/2021
+ms.date: 03/26/2021
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 275afc504a5e7b92ae3274c02372eee6b488c782
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 6f77bac93b7bb5e3319409c01e328c73cd08a9a0
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102616397"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106058949"
 ---
 # <a name="tutorial-configure-https-on-an-azure-cdn-custom-domain"></a>Zelfstudie: HTTPS op een aangepast Azure CDN-domein configureren
 
@@ -172,15 +172,18 @@ Geef Azure CDN toegang tot de certificaten (geheimen) in uw Azure Key Vault-acco
 
 3. Kies onder Certificaatbeheertype **Mijn eigen certificaat gebruiken**. 
 
-    ![Uw certificaat configureren](./media/cdn-custom-ssl/cdn-configure-your-certificate.png)
+    :::image type="content" source="./media/cdn-custom-ssl/cdn-configure-your-certificate.png" alt-text="Scherm afbeelding van het configureren van het certificaat voor het CDN-eind punt.":::
 
-4. Selecteer een sleutelkluis, certificaat (geheim) en certificaatversie.
+4. Selecteer een sleutel kluis, certificaat/geheim en certificaat/geheime versie.
 
     Azure CDN noemt de volgende informatie: 
     - De sleutelkluis-accounts voor uw abonnement-ID. 
-    - De certificaten (geheimen) onder de geselecteerde sleutelkluis. 
-    - De beschikbare certificaatversies. 
+    - De certificaten/geheimen onder de geselecteerde sleutel kluis. 
+    - De beschik bare certificaat-en geheime versies.
  
+    > [!NOTE]
+    > Als u het certificaat automatisch naar de nieuwste versie wilt draaien als er een nieuwere versie van het certificaat beschikbaar is in uw Key Vault, stelt u de versie van het certificaat/geheim in op ' meest recente '. Als er een specifieke versie is geselecteerd, moet u de nieuwe versie hand matig opnieuw selecteren voor het draaien van certificaten. Het duurt Maxi maal 24 uur voordat de nieuwe versie van het certificaat/geheim wordt geïmplementeerd. 
+   
 5. Selecteer **Aan** om HTTPS in te schakelen.
   
 6. Wanneer u uw certificaat gebruikt, is domein validatie niet vereist. Blijf [wachten op doorgifte](#wait-for-propagation).
@@ -234,7 +237,7 @@ Via DigiCert wordt ook een verificatie-e-mail verzonden naar de volgende e-maila
 * **hostmaster@your-domain-name.com**  
 * **postmaster@your-domain-name.com**  
 
-U ontvangt binnen een paar minuten een e-mail om de aanvraag goed te keuren. Als u een spam filter gebruikt, voegt u toe verification@digicert.com aan de acceptatie lijst. Als u na 24 uur nog geen e-mailbericht hebt ontvangen, neemt u contact op met Microsoft Ondersteuning.
+U ontvangt binnen een paar minuten een e-mail om de aanvraag goed te keuren. Als u een spam filter gebruikt, voegt u toe verification@digicert.com aan de allowlist. Als u na 24 uur nog geen e-mailbericht hebt ontvangen, neemt u contact op met Microsoft Ondersteuning.
     
 ![E-mailbericht voor domeinvalidatie](./media/cdn-custom-ssl/domain-validation-email.png)
 

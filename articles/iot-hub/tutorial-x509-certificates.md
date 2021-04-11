@@ -13,12 +13,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: Data Analytics'
 - devx-track-azurecli
-ms.openlocfilehash: cdc5b261abe91c31d31827aeab03c9e8838b2a91
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.openlocfilehash: fada68ba395b959e557542eb8c230561aad84214
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105630701"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106384320"
 ---
 # <a name="tutorial-understanding-x509-public-key-certificates"></a>Zelf studie: informatie over de open bare-sleutel certificaten van X. 509
 
@@ -106,6 +106,13 @@ De indeling voor een persoonlijk sleutel archief dat is gedefinieerd door [RFC 5
 ### <a name="pkcs12-key-and-certificate"></a>PKCS # 12-sleutel en-certificaat
 
 Een complexe indeling die een sleutel en de volledige certificaat keten kan opslaan en beveiligen. Dit wordt vaak gebruikt met de extensie. pfx. PKCS # 12 is synoniem met de PFX-indeling.
+
+## <a name="for-more-information"></a>Voor meer informatie
+
+Zie de volgende onderwerpen voor meer informatie:
+
+* [De Layman-hand leiding voor X. 509 certificaat jargon](https://techcommunity.microsoft.com/t5/internet-of-things/the-layman-s-guide-to-x-509-certificate-jargon/ba-p/2203540)
+* [Conceptuele uitleg van X. 509 CA-certificaten in de IoT-industrie](https://docs.microsoft.com/azure/iot-hub/iot-hub-x509ca-concept)
 
 ## <a name="next-steps"></a>Volgende stappen
 

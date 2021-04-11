@@ -1,16 +1,16 @@
 ---
-title: De Defender micro agent bouwen op basis van de bron code (preview-versie)
-description: Micro agent bevat een infra structuur, die kan worden gebruikt om uw distributie aan te passen.
+title: 'Snelstartgids: de Defender micro agent bouwen op basis van de bron code (preview)'
+description: In deze Quick Start vindt u informatie over de micro agent die een infra structuur bevat die kan worden gebruikt om uw distributie aan te passen.
 ms.date: 1/18/2021
 ms.topic: quickstart
-ms.openlocfilehash: aac9bf224064dd8393acfeb2928f5ed2d1f84381
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a3a8f82989d6abbaf2657e4b45638c77b3b2f704
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104781106"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106384594"
 ---
-# <a name="build-the-defender-micro-agent-from-source-code-preview"></a>De Defender micro agent bouwen op basis van de bron code (preview-versie)
+# <a name="quickstart-build-the-defender-micro-agent-from-source-code-preview"></a>Snelstartgids: de Defender micro agent bouwen op basis van de bron code (preview)
 
 De micro agent bevat een infra structuur, die kan worden gebruikt om uw distributie aan te passen. Als u een lijst met beschik bare configuratie parameters wilt zien, bekijkt u het `configs/LINUX_BASE.conf` bestand.
 
@@ -32,17 +32,7 @@ De waarden overschrijven:
 
     `cmake -DCMAKE_BUILD_TYPE=Debug -Dlog_level=DEBUG -Dlog_level_cmdline:BOOL=ON -DIOT_SECURITY_MODULE_DIST_TARGET=UBUNTU1804 ..` 
 
-## <a name="baseline-configuration-signing"></a>Basis configuratie hand tekening 
-
-De agent verifieert standaard de authenticiteit van configuratie bestanden die op de schijf worden geplaatst om te voor komen dat onrecht matig wordt geknoeid.
-
-U kunt dit proces beëindigen door de preprocessor-vlag te definiëren `ASC_BASELINE_CONF_SIGN_CHECK_DISABLE` .
-
-Het wordt niet aanbevolen om de handtekening controle voor productie omgevingen uit te scha kelen. 
-
-Als u een andere configuratie voor productie scenario's nodig hebt, neemt u contact op met het team van Defender voor IoT. 
-
-## <a name="prerequisites"></a>Vereisten 
+## <a name="prerequisites"></a>Vereisten
 
 1. Neem contact op met uw account manager om te vragen om toegang te krijgen tot Defender voor IoT-bron code.
  
@@ -77,7 +67,17 @@ Als u een andere configuratie voor productie scenario's nodig hebt, neemt u cont
 
 1. Beschrijving [VSCode](https://code.visualstudio.com/download ) downloaden en installeren 
 
-1. Beschrijving Installeer de [C/C++-extensie](https://code.visualstudio.com/docs/languages/cpp ) voor VSCode.
+1. Beschrijving Installeer de [C/C++-extensie](https://code.visualstudio.com/docs/languages/cpp ) voor VSCode.-none
+
+## <a name="baseline-configuration-signing"></a>Basis configuratie hand tekening 
+
+De agent verifieert standaard de authenticiteit van configuratie bestanden die op de schijf worden geplaatst om te voor komen dat onrecht matig wordt geknoeid.
+
+U kunt dit proces beëindigen door de preprocessor-vlag te definiëren `ASC_BASELINE_CONF_SIGN_CHECK_DISABLE` .
+
+Het wordt niet aanbevolen om de handtekening controle voor productie omgevingen uit te scha kelen. 
+
+Als u een andere configuratie voor productie scenario's nodig hebt, neemt u contact op met het team van Defender voor IoT. 
 
 ## <a name="building-the-defender-iot-micro-agent"></a>De Defender IoT micro agent bouwen 
 

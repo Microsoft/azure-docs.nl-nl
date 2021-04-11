@@ -1,18 +1,18 @@
 ---
 title: Veelgestelde vragen-Azure ExpressRoute | Microsoft Docs
-description: De veelgestelde vragen over ExpressRoute bevatten informatie over ondersteunde Azure-Services, kosten, gegevens en verbindingen, SLA, providers en locaties, band breedte en aanvullende technische details.
+description: De veelgestelde vragen over ExpressRoute bevatten informatie over ondersteunde Azure-Services, kosten, gegevens en verbindingen, SLA, providers en locaties, band breedte en andere technische informatie.
 services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: conceptual
 ms.date: 03/29/2021
 ms.author: duau
-ms.openlocfilehash: 579a7114a06386fe48fcc074cc1095e980837ba0
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: efa5c3192ca6f51c219cc308a776e6db7212103c
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105732173"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106552237"
 ---
 # <a name="expressroute-faq"></a>Veelgestelde vragen ExpressRoute
 
@@ -108,7 +108,7 @@ Als uw ExpressRoute-circuit is ingeschakeld voor Azure micro soft-peering, kunt 
 
 ### <a name="public-peering"></a>Openbare peering
 
-Open bare peering is uitgeschakeld op nieuwe ExpressRoute-circuits. Azure-Services zijn nu beschikbaar op micro soft-peering. Als u een circuit hebt gemaakt dat vóór open bare peering werd afgeschaft, kunt u kiezen voor het gebruik van micro soft-peering of open bare peering, afhankelijk van de gewenste services.
+Open bare peering is uitgeschakeld op nieuwe ExpressRoute-circuits. Azure-Services zijn nu beschikbaar op micro soft-peering. Als u een circuit hebt gemaakt voordat open bare peering werd afgeschaft, kunt u kiezen voor het gebruik van micro soft-peering of open bare peering, afhankelijk van de services die u wilt gebruiken.
 
 Zie [ExpressRoute Public peering](about-public-peering.md)(Engelstalig) voor meer informatie over en configuratie stappen voor open bare peering.
 
@@ -171,7 +171,7 @@ Bekijk [hier](./designing-for-high-availability-with-expressroute.md) wat u kunt
 
 ### <a name="how-do-i-ensure-high-availability-on-a-virtual-network-connected-to-expressroute"></a>Hoe kan ik zorgen voor hoge Beschik baarheid in een virtueel netwerk dat is verbonden met ExpressRoute?
 
-U kunt hoge Beschik baarheid bezorgen door Maxi maal vier ExpressRoute-circuits op dezelfde peering-locatie aan uw virtuele netwerk te koppelen, of door ExpressRoute-circuits op verschillende peering locaties (bijvoorbeeld Singapore, Singapore2) te verbinden met uw virtuele netwerk. Als een ExpressRoute-circuit wordt uitgeschakeld, wordt er een failover voor de connectiviteit uitgevoerd naar een ander ExpressRoute-circuit. Standaard wordt het verkeer dat uw virtuele netwerk verlaat, doorgestuurd op basis van een gelijke prijs routering met meerdere paden (ECMP). U kunt het verbindings gewicht gebruiken om de voor keur aan een circuit te geven. Zie optimalisatie van ExpressRoute- [route ring](expressroute-optimize-routing.md)voor meer informatie.
+U kunt hoge Beschik baarheid bezorgen door Maxi maal 16 ExpressRoute-circuits op dezelfde peering-locatie aan uw virtuele netwerk te koppelen, of door ExpressRoute-circuits op verschillende peering locaties (bijvoorbeeld Singapore, Singapore2) te verbinden met het virtuele netwerk. Als een ExpressRoute-circuit wordt uitgeschakeld, wordt er een failover voor de connectiviteit uitgevoerd naar een ander ExpressRoute-circuit. Standaard wordt het verkeer dat uw virtuele netwerk verlaat, doorgestuurd op basis van een gelijke prijs routering met meerdere paden (ECMP). U kunt het verbindings gewicht gebruiken om de voor keur aan een circuit te geven. Zie optimalisatie van ExpressRoute- [route ring](expressroute-optimize-routing.md)voor meer informatie.
 
 ### <a name="how-do-i-ensure-that-my-traffic-destined-for-azure-public-services-like-azure-storage-and-azure-sql-on-microsoft-peering-or-public-peering-is-preferred-on-the-expressroute-path"></a>Hoe kan ik ervoor te zorgen dat mijn verkeer dat is bestemd voor open bare Azure-Services, zoals Azure Storage en Azure SQL op micro soft-peering of open bare peering, de voor keur heeft op het ExpressRoute-pad?
 
@@ -351,13 +351,17 @@ Raadpleeg de [prijs informatie](https://azure.microsoft.com/pricing/details/expr
 Ja. ExpressRoute Premium-kosten zijn van toepassing op ExpressRoute-circuit kosten en kosten die zijn vereist voor de connectiviteits provider.
 
 ## <a name="expressroute-local"></a>Lokale ExpressRoute
+
 ### <a name="what-is-expressroute-local"></a>Wat is ExpressRoute lokaal?
-ExpressRoute local is een SKU van ExpressRoute-circuit, naast de standaard-SKU en de Premium-SKU. Een belang rijke functie van Local is dat een lokaal circuit op een ExpressRoute-peering-locatie u alleen toegang biedt tot een of twee Azure-regio's in of in de buurt van dezelfde metro. Met een standaard circuit hebt u daarentegen toegang tot alle Azure-regio's in een geopolitieke regio en een Premium-circuit naar alle Azure-regio's. 
+
+ExpressRoute local is een SKU van ExpressRoute-circuit, naast de standaard-SKU en de Premium-SKU. Een belang rijke functie van Local is dat een lokaal circuit op een ExpressRoute-peering-locatie u alleen toegang biedt tot een of twee Azure-regio's in of in de buurt van dezelfde metro. Met een standaard circuit hebt u daarentegen toegang tot alle Azure-regio's in een geopolitieke regio en een Premium-circuit naar alle Azure-regio's. U kunt met een lokale SKU alleen routes adverteren (via micro soft en privé-peering) vanuit de bijbehorende lokale regio van het ExpressRoute-circuit. U kunt geen routes voor andere regio's ontvangen die afwijken van de gedefinieerde lokale regio.
 
 ### <a name="what-are-the-benefits-of-expressroute-local"></a>Wat zijn de voor delen van ExpressRoute lokale?
+
 Wanneer u een uitgangs gegevens overdracht moet betalen voor uw Standard-of Premium ExpressRoute-circuit, betaalt u geen uitgaande gegevens overdracht afzonderlijk voor uw lokale circuit van ExpressRoute. Met andere woorden, de prijs van de lokale ExpressRoute omvat ook kosten voor gegevens overdracht. ExpressRoute local is een rendabelere oplossing als u grote hoeveel heden gegevens wilt overdragen en u uw gegevens via een particuliere verbinding met een ExpressRoute-peering-locatie in de buurt van uw gewenste Azure-regio's kunt brengen. 
 
 ### <a name="what-features-are-available-and-what-are-not-on-expressroute-local"></a>Welke functies zijn er beschikbaar en wat bevinden zich niet op ExpressRoute lokale locatie?
+
 Vergeleken met een standaard ExpressRoute-circuit heeft een lokaal circuit dezelfde set functies, behalve:
 * Bereik van toegang tot Azure-regio's zoals hierboven wordt beschreven
 * ExpressRoute Global Reach is niet beschikbaar op de lokale locatie
@@ -365,6 +369,7 @@ Vergeleken met een standaard ExpressRoute-circuit heeft een lokaal circuit dezel
 ExpressRoute Local heeft ook dezelfde limieten voor bronnen (bijvoorbeeld het aantal VNets per circuit) als standaard. 
 
 ### <a name="where-is-expressroute-local-available-and-which-azure-regions-is-each-peering-location-mapped-to"></a>Waar is ExpressRoute lokaal beschikbaar en welke Azure-regio's wordt elke peering-locatie toegewezen aan?
+
 ExpressRoute local is beschikbaar op de peering locaties waar een of twee Azure-regio's sluitend zijn. Het is niet beschikbaar op een peering-locatie waar zich geen Azure-regio bevindt in die staat of provincie of land/regio. Zie de exacte toewijzingen op [de pagina locaties](expressroute-locations-providers.md).  
 
 ## <a name="expressroute-for-microsoft-365"></a>ExpressRoute voor Microsoft 365

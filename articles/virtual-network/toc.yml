@@ -453,7 +453,7 @@
 - name: Naslaginformatie
   items:
     - name: Azure CLI
-      href: /cli/azure/network
+      href: /cli/azure/azure-cli-reference-for-network
     - name: Azure PowerShell
       href: /powershell/module/az.network
     - name: .NET

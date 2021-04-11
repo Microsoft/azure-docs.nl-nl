@@ -8,16 +8,16 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 03/26/2021
-ms.openlocfilehash: 7d421cf20aa054fb3e1e4877ee610a284eeff7c9
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.openlocfilehash: 6f08fa0b2126112fa17fd61be6f44bb5cc6d5396
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105627048"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106552152"
 ---
 # <a name="how-to-plan-a-saas-offer-for-the-commercial-marketplace"></a>Een SaaS-aanbieding plannen voor de commerciële Marketplace
 
-In dit artikel worden de verschillende opties en vereisten voor het publiceren van SaaS-aanbiedingen (Software as a Service) in de micro soft Commercial Marketplace beschreven. Met SaaS-aanbiedingen kunt u software oplossingen aan uw klanten leveren en er licenties op geven via online abonnementen. Als SaaS-Uitgever beheert en betaalt u voor de infra structuur die nodig is om het gebruik van uw klanten van uw aanbieding te ondersteunen. Dit artikel helpt u bij het voorbereiden van uw aanbieding voor het publiceren naar de commerciële Marketplace met het partner centrum.
+In dit artikel worden de verschillende opties en vereisten voor het publiceren van SaaS-aanbiedingen (Software as a Service) in de micro soft Commercial Marketplace beschreven. SaaS biedt u de mogelijkheid om software oplossingen te leveren aan uw klanten via online abonnementen. Als SaaS-Uitgever beheert en betaalt u voor de infra structuur die nodig is om het gebruik van uw klanten van uw aanbieding te ondersteunen. Dit artikel helpt u bij het voorbereiden van uw aanbieding voor het publiceren naar de commerciële Marketplace met het partner centrum.
 
 ## <a name="listing-options"></a>Aanbiedingsopties
 
@@ -134,6 +134,28 @@ Als u kiest voor het gebruik van het standaard contract, hebt u de mogelijkheid 
 > [!NOTE]
 > Nadat u een aanbieding hebt gepubliceerd met het standaard contract voor de commerciële Marketplace, kunt u uw eigen aangepaste voor waarden niet gebruiken. Het is een ' or '-scenario. U kunt uw oplossing aanbieden onder het standaard contract of uw eigen voor waarden. Als u de voor waarden van het standaard contract wilt wijzigen, kunt u dit doen via de standaard wijzigingen in contracten.
 
+
+## <a name="microsoft-365-integration"></a>Integratie van Microsoft 365
+
+Dankzij integratie met Microsoft 365 kan uw SaaS-aanbod verbonden ervaring bieden voor meerdere Microsoft 365 app-Opper vlakken via gerelateerde gratis invoeg toepassingen, zoals teams-apps, Office-invoeg toepassingen en share point-Framework oplossingen. U kunt uw klanten helpen om eenvoudig alle facetten van uw E2E-oplossing (web service + gerelateerde invoeg toepassingen) te detecteren en ze binnen één proces te implementeren door de volgende informatie op te geven. 
+  - Als uw SaaS-aanbieding is geïntegreerd met Microsoft Graph, geeft u de ID van de Azure Active Directory (AAD) op die wordt gebruikt door uw SaaS-aanbieding voor de integratie. Beheerders kunnen toegangs machtigingen controleren die vereist zijn voor de juiste werking van uw SaaS-aanbieding zoals deze is ingesteld op de AAD-App-ID en toegang verlenen als er een geavanceerde beheerders rechten nodig zijn tijdens de implementatie. 
+    
+     Als u ervoor kiest om uw aanbieding via micro soft te verkopen, is dit dezelfde AAD-App-ID die u hebt geregistreerd voor gebruik op uw landings pagina om basis gebruikers gegevens op te halen die nodig zijn om de activering van het klanten abonnement te volt ooien. Zie voor gedetailleerde richt lijnen [de landings pagina voor uw voor transactable SaaS-aanbieding bouwen in de commerciële Marketplace](azure-ad-transactable-saas-landing-page.md). 
+    
+   -    Geef een lijst met verwante invoeg toepassingen op die samen werken met uw SaaS-aanbieding die u wilt koppelen. Klanten kunnen uw E2E-oplossing vinden op AppSource en beheerders kunnen zowel de SaaS als alle gerelateerde invoeg toepassingen implementeren die u in hetzelfde proces hebt gekoppeld via Microsoft 365 beheer centrum.
+    
+        Als u gerelateerde invoeg toepassingen wilt koppelen, moet u de AppSource-koppeling van de invoeg toepassing opgeven. Dit betekent dat de invoeg toepassing eerst moet worden gepubliceerd op AppSource. Ondersteunde typen invoeg toepassingen zijn: teams-apps, Office-invoeg toepassingen en share point Framework (SPFx)-oplossingen. Elke gekoppelde invoeg toepassing moet uniek zijn voor een SaaS-aanbieding. 
+
+Voor gekoppelde producten wordt met een zoek opdracht op AppSource een resultaat geretourneerd dat zowel SaaS als alle gekoppelde invoeg toepassingen bevat. De klant kan navigeren tussen de product detail pagina's van de SaaS-aanbieding en gekoppelde invoeg toepassingen. IT-beheerders kunnen zowel de SaaS-als gekoppelde invoeg toepassingen binnen hetzelfde proces bekijken en implementeren via een geïntegreerde en verbonden ervaring binnen het Microsoft 365-beheer centrum. Zie voor meer informatie [Microsoft 365-Apps testen en implementeren-Microsoft 365-beheerder](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps).
+
+### <a name="microsoft-365-integration-support-limitations"></a>Beperkingen voor de ondersteuning van Microsoft 365-integratie
+Detectie als één E2E-oplossing wordt voor alle gevallen ondersteund op AppSource. een vereenvoudigde implementatie van de E2E-oplossing zoals hierboven beschreven in het Microsoft 365-beheer centrum wordt echter niet ondersteund voor de volgende scenario's:
+
+   - Dezelfde invoeg toepassing is gekoppeld aan meer dan één SaaS-aanbieding.
+   - De SaaS-aanbieding is gekoppeld aan invoeg toepassingen, maar is niet geïntegreerd met Microsoft Graph en er is geen AAD-App-ID beschikbaar.
+  - De SaaS-aanbieding is gekoppeld aan invoeg toepassingen, maar de AAD-App-ID die is geleverd voor Microsoft Graph integratie wordt gedeeld in meerdere SaaS-aanbiedingen.
+
+ 
 ## <a name="offer-listing-details"></a>Details aanbiedings vermelding
 
 Wanneer u [een nieuwe SaaS-aanbieding](create-new-saas-offer.md) in het partner centrum maakt, voert u tekst, afbeeldingen, optionele Video's en andere informatie in op **de pagina aanbieding.** Dit is de informatie die klanten te zien krijgen wanneer ze uw aanbieding in de commerciële Marketplace detecteren, zoals wordt weer gegeven in het volgende voor beeld.
@@ -150,7 +172,7 @@ Wanneer u [een nieuwe SaaS-aanbieding](create-new-saas-offer.md) in het partner 
 6. Privacybeleid
 7. Naam van aanbieding
 8. Samenvatting
-9. Description
+9. Beschrijving
 10. Scherm afbeeldingen/Video's
 11. Documenten
 

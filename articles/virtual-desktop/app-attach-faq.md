@@ -7,13 +7,13 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 08/17/2020
 ms.author: helohr
-manager: lizross
-ms.openlocfilehash: 395c274630131c2ae5f451443913e1e69c7c422a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+manager: femila
+ms.openlocfilehash: a1a2464735ff8039bb31c43d6956cbf03e694c63
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101738698"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106448403"
 ---
 # <a name="msix-app-attach-faq"></a>Veelgestelde vragen over het koppelen van MSIX-apps
 

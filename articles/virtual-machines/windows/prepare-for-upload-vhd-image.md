@@ -10,12 +10,12 @@ ms.workload: infrastructure-services
 ms.topic: troubleshooting
 ms.date: 09/02/2020
 ms.author: genli
-ms.openlocfilehash: a177fc7e17dc91a0d57fa6dee87b80921d7fd8f5
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 573f97c7f592186173b13ea592d151ee291b8249
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/30/2021
-ms.locfileid: "105043577"
+ms.locfileid: "105967962"
 ---
 # <a name="prepare-a-windows-vhd-or-vhdx-to-upload-to-azure"></a>Een Windows VHD of VHDX voorbereiden om te uploaden naar Azure
 
@@ -113,6 +113,10 @@ Nadat de SFC-scan is voltooid, installeert u Windows-updates en start u de compu
    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' -Name TEMP -Value "%SystemRoot%\TEMP" -Type ExpandString -Force
    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' -Name TMP -Value "%SystemRoot%\TEMP" -Type ExpandString -Force
    ```
+1. Voor Vm's met oudere besturings systemen (Windows Server 2012 R2 of Windows 8,1 en lager), moet u ervoor zorgen dat de nieuwste Hyper-V-integratie Component Services zijn geïnstalleerd. Zie voor meer informatie [Update van Hyper-V-integratie onderdelen voor Windows VM](https://support.microsoft.com/topic/hyper-v-integration-components-update-for-windows-virtual-machines-8a74ffad-576e-d5a0-5a2f-d6fb2594f990).
+
+> [!NOTE]
+> In een scenario waarin Vm's moeten worden ingesteld met een nood herstel oplossing tussen de on-premises VMware-Server en Azure, kan de Hyper-V-integratie Component Services niet worden gebruikt. Als dat het geval is, neemt u contact op met de VMware-ondersteuning om de virtuele machine te migreren naar Azure en deze te maken op de VMware-Server.
 
 ## <a name="check-the-windows-services"></a>De Windows-services controleren
 
@@ -266,6 +270,8 @@ Zorg ervoor dat de VM in orde, veilig en RDP toegankelijk is:
 1. Stel de instellingen voor de Boot Configuration Data (BCD) in.
 
    ```powershell
+   cmd
+
    bcdedit.exe /set "{bootmgr}" integrityservices enable
    bcdedit.exe /set "{default}" device partition=C:
    bcdedit.exe /set "{default}" integrityservices enable
@@ -279,6 +285,8 @@ Zorg ervoor dat de VM in orde, veilig en RDP toegankelijk is:
    bcdedit.exe /set "{bootmgr}" bootems yes
    bcdedit.exe /ems "{current}" ON
    bcdedit.exe /emssettings EMSPORT:1 EMSBAUDRATE:115200
+
+   exit
    ```
 
 1. Het dump logboek kan nuttig zijn bij het oplossen van problemen met Windows-crashes. De logboek verzameling dump inschakelen:
@@ -351,6 +359,10 @@ Zorg ervoor dat de VM in orde, veilig en RDP toegankelijk is:
 1. Verwijder alle software of stuur Programma's van derden die betrekking hebben op fysieke onderdelen of andere virtualisatiesoftware.
 
 ### <a name="install-windows-updates"></a>Windows-updates installeren
+
+> [!NOTE]
+> Om te voor komen dat een onbedoeld opnieuw wordt opgestart tijdens het inrichten van de virtuele machine, wordt u aangeraden alle Windows update-installaties uit te voeren en ervoor te zorgen dat de computer niet opnieuw moet worden opgestart. Eén manier om dit te doen is door alle Windows-updates te installeren en de virtuele machine opnieuw op te starten voordat u de migratie naar Azure uitvoert. </br><br>
+>Als u ook een generalisatie van het besturings systeem (Sysprep) nodig hebt, moet u Windows bijwerken en de VM opnieuw opstarten voordat u de Sysprep-opdracht uitvoert.
 
 In het ideale geval moet u de computer bijwerken naar het *patch niveau*, als dit niet mogelijk is, controleert u of de volgende updates zijn geïnstalleerd. Als u de meest recente updates wilt downloaden, gaat u naar de pagina Windows Update History: [Windows 10, Windows server 2019](https://support.microsoft.com/help/4000825), [Windows 8,1, Windows Server 2012 R2](https://support.microsoft.com/help/4009470) en [Windows 7 SP1 en Windows Server 2008 R2 SP1](https://support.microsoft.com/help/4009469).
 

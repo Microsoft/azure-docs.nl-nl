@@ -6,12 +6,12 @@ ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 11/19/2019
-ms.openlocfilehash: 1bf844dafe450e90213db2e447bb5392064eb245
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: fac488ba1881b6b79139eaf2468237e546737177
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104786767"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106077327"
 ---
 # <a name="best-practices-for-creating-assessments"></a>Aanbevolen procedures voor het maken van evaluaties
 
@@ -27,6 +27,8 @@ Evaluaties die u maakt met Azure Migrate: het hulp programma detectie en evaluat
 **Azure SQL** | Beoordelingen voor het migreren van uw on-premises SQL-servers vanuit uw VMware-omgeving naar Azure SQL Database of Azure SQL Managed instance. [Meer informatie](concepts-azure-sql-assessment-calculation.md)
 **Azure VMware Solution (AVS)** | Evaluaties om uw on-premises servers te migreren naar [Azure VMware Solution (AVS)](../azure-vmware/introduction.md). <br/><br/> U kunt uw on-premises [VMware-VM’s](how-to-set-up-appliance-vmware.md) evalueren voor migratie naar Azure VMware Solution (AVS) met dit evaluatietype. [Meer informatie](concepts-azure-vmware-solution-assessment-calculation.md)
 
+> [!NOTE]
+> Als het aantal Azure VM-of AVS-evaluaties onjuist is in het hulp programma detectie en evaluatie, klikt u op het totale aantal evaluaties om naar alle evaluaties te gaan en de Azure VM-of AVS-evaluaties opnieuw te berekenen. In het hulp programma detectie en evaluatie wordt vervolgens het juiste aantal voor dat evaluatie type weer gegeven. 
 
 ### <a name="sizing-criteria"></a>Criteria voor het aanpassen van de grootte
 Opties voor het aanpassen van de grootte in Azure Migrate-evaluaties:

@@ -6,17 +6,17 @@ ms.date: 03/22/2021
 author: trask
 ms.custom: devx-track-java
 ms.author: trstalna
-ms.openlocfilehash: 17979bd548ca0d7b704ebdeb4d060bf35973b319
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7602392b78f53e5b896e92058836fca60de39d64
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105024143"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106448879"
 ---
 # <a name="sampling-overrides-preview---azure-monitor-application-insights-for-java"></a>Steek proeven van onderdrukkingen (preview)-Azure Monitor Application Insights voor Java
 
 > [!NOTE]
-> De functie voor het controleren van de steek proeven is in preview, vanaf 3.0.3-BETA. 2.
+> De functie voor het controleren van de steek proeven is in preview, beginnend bij 3.0.3.
 
 Met bemonsterings onderdrukkingen kunt u het [standaard sampling percentage](./java-standalone-config.md#sampling)overschrijven, bijvoorbeeld:
  * Stel het steekproef percentage in op 0 (of een kleine waarde) voor slechte status controles.
@@ -81,7 +81,7 @@ Als er geen steek proeven worden gevonden:
 * Als dit de eerste reeks in de tracering is, wordt het [standaard sampling-percentage](./java-standalone-config.md#sampling) gebruikt.
 * Als dit niet de eerste reeks in de tracering is, wordt de bovenliggende steekproef beslissing gebruikt.
 
-> [!IMPORTANT]
+> [!WARNING]
 > Als er een beslissing is genomen om geen bereik te verzamelen, worden ook alle downstream-reeksen niet verzameld, zelfs niet als er steek proeven worden overschreven die overeenkomen met de downstream-reeks.
 > Dit gedrag is nood zakelijk omdat andere verbroken traceringen resulteren in het verzamelen van downstream-reeksen, maar die worden geparenteerd tot niet-verzamelde reeksen.
 

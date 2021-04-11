@@ -10,18 +10,27 @@ ms.subservice: sql
 ms.date: 05/01/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: a47982012dcaa2eabda93c93508b23f30525812d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: dcd48354372a196ea903c335e5e22caf20e25996
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104720386"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106219651"
 ---
 # <a name="best-practices-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Aanbevolen procedures voor serverloze SQL-groepen in azure Synapse Analytics
 
 In dit artikel vindt u een verzameling aanbevolen procedures voor het gebruik van serverloze SQL-groepen. Een serverloze SQL-groep is een resource in azure Synapse Analytics.
 
 Met serverloze SQL-pool kunt u een query uitvoeren op bestanden in uw Azure-opslag accounts. Het bevat geen lokale opslag-of opname mogelijkheden. Alle bestanden waarvan de query doelen zijn, zijn dus extern naar een serverloze SQL-groep. Alles wat verband houdt met het lezen van bestanden uit de opslag kan gevolgen hebben voor de prestaties van query's.
+
+Enkele algemene richt lijnen zijn:
+- Zorg ervoor dat uw client toepassingen zijn co met de serverloze SQL-groep.
+  - Als u client toepassingen gebruikt buiten Azure (bijvoorbeeld Power BI Desktop, SSMS, ADS), moet u ervoor zorgen dat u gebruikmaakt van de serverloze pool in een bepaalde regio die dicht bij uw client computer staat.
+- Zorg ervoor dat de opslag (Azure Data Lake, Cosmos DB) en de serverloze SQL-groep zich in dezelfde regio bevinden.
+- Probeer de [opslag indeling te optimaliseren](#prepare-files-for-querying) met partitionering en bewaar uw bestanden in het bereik tussen 100 MB en 10 GB.
+- Als u een groot aantal resultaten retourneert, moet u ervoor zorgen dat u SSMS of ADS gebruikt en niet Synapse Studio. Synapse Studio is een hulp programma dat niet is ontworpen voor grote resultaten sets. 
+- Als u resultaten filtert op teken reeks kolom, probeer dan een `BIN2_UTF8` sortering te gebruiken.
+- Probeer de resultaten op te slaan in de cache van de client door gebruik te maken van Power BI import modus of Azure Analysis Services en vernieuw deze regel matig. De serverloze SQL-groepen kunnen geen interactieve ervaring bieden in Power BI directe query modus als u complexe query's gebruikt of een grote hoeveelheid gegevens verwerkt.
 
 ## <a name="client-applications-and-network-connections"></a>Client toepassingen en netwerk verbindingen
 
@@ -66,7 +75,11 @@ Als dat mogelijk is, kunt u bestanden voorbereiden voor betere prestaties:
 
 ### <a name="colocate-your-cosmosdb-analytical-storage-and-serverless-sql-pool"></a>Uw CosmosDB-analytische opslag en serverloze SQL-groep meevinden
 
-Zorg ervoor dat uw CosmosDB-analytische opslag zich in dezelfde regio bevindt als de Synapse-werk ruimte. Query's in meerdere regio's kunnen grote latenties veroorzaken.
+Zorg ervoor dat uw CosmosDB-analytische opslag zich in dezelfde regio bevindt als de Synapse-werk ruimte. Query's in meerdere regio's kunnen grote latenties veroorzaken. Gebruik de eigenschap Region in de connection string om expliciet de regio op te geven waar de analytische opslag is geplaatst (Zie [query CosmosDb met een serverloze SQL-groep](query-cosmos-db-analytical-store.md#overview)):
+
+```
+'account=<database account name>;database=<database name>;region=<region name>'
+```
 
 ## <a name="csv-optimizations"></a>CSV-optimalisaties
 

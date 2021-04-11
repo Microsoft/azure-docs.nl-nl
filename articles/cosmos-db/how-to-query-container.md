@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 3/18/2019
 ms.author: mjbrown
-ms.openlocfilehash: 0f08ca84597b08b9a236b7bfb0fc9c849423a752
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5cd90e994e620960e0d974ef7609a67f8a5eb58b
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "93335888"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106448539"
 ---
 # <a name="query-an-azure-cosmos-container"></a>Query’s uitvoeren op een Azure Cosmos-container
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -26,19 +26,19 @@ Wanneer u gegevens opvraagt uit containers en de query een partitie sleutel filt
 Denk bijvoorbeeld aan de onderstaande query met een gelijkheids filter op `DeviceId` . Als deze query wordt uitgevoerd op een container die is gepartitioneerd op `DeviceId` , wordt met deze query gefilterd op één fysieke partitie.
 
 ```sql
-    SELECT * FROM c WHERE c.DeviceId = 'XMS-0001'
+SELECT * FROM c WHERE c.DeviceId = 'XMS-0001'
 ```
 
 Net als bij het vorige voor beeld wordt deze query ook gefilterd op één partitie. Het toevoegen van het extra filter op `Location` heeft deze wijziging niet:
 
 ```sql
-    SELECT * FROM c WHERE c.DeviceId = 'XMS-0001' AND c.Location = 'Seattle'
+SELECT * FROM c WHERE c.DeviceId = 'XMS-0001' AND c.Location = 'Seattle'
 ```
 
 Hier volgt een query met een bereik filter op de partitie sleutel en wordt het bereik niet toegepast op één fysieke partitie. Als u een query in de partitie wilt maken, moet de query een gelijkheids filter hebben dat de partitie sleutel bevat:
 
 ```sql
-    SELECT * FROM c WHERE c.DeviceId > 'XMS-0001'
+SELECT * FROM c WHERE c.DeviceId > 'XMS-0001'
 ```
 
 ## <a name="cross-partition-query"></a>Partitieoverkoepelende query
@@ -46,7 +46,7 @@ Hier volgt een query met een bereik filter op de partitie sleutel en wordt het b
 De volgende query heeft geen filter op de partitie sleutel ( `DeviceId` ). Daarom moet het uitwaaieren naar alle fysieke partities waar het wordt uitgevoerd op de index van elke partitie:
 
 ```sql
-    SELECT * FROM c WHERE c.Location = 'Seattle`
+SELECT * FROM c WHERE c.Location = 'Seattle`
 ```
 
 Elke fysieke partitie heeft een eigen index. Wanneer u een query op meerdere partities uitvoert op een container, voert u daarom een query uit *per* fysieke partitie. Azure Cosmos DB worden automatisch resultaten verzameld over verschillende fysieke partities.

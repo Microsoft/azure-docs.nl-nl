@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/07/2020
 ms.author: allensu
-ms.openlocfilehash: 0d02b46345af13770f77a7dac452127a665e01fd
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9b555d7972e88df85e08dbcb1737231755c21361
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94696741"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106448845"
 ---
 # <a name="load-balancer-tcp-reset-and-idle-timeout"></a>Load Balancer TCP Reset en time-out voor inactiviteit
 
@@ -58,7 +58,6 @@ TCP Keep-Alive werkt voor scenario's waarbij de levens duur van de accu geen bep
 ## <a name="limitations"></a>Beperkingen
 
 - TCP Reset wordt alleen verzonden tijdens de TCP-verbinding in de INGESTELDe status.
-- TCP Reset wordt niet verzonden voor interne load balancers waarvoor HA-poorten zijn geconfigureerd.
 - De time-out voor inactiviteit van TCP heeft geen invloed op de taakverdelings regels op het UDP-protocol.
 
 ## <a name="next-steps"></a>Volgende stappen

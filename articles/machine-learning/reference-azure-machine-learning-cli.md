@@ -7,14 +7,14 @@ ms.subservice: core
 ms.topic: reference
 ms.author: jordane
 author: jpe316
-ms.date: 06/22/2020
+ms.date: 04/02/2021
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: 3e073310d62bfb772ea1120bd379cdc277137da0
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9a22700782c584015add2c83ecc96ccc610b8509
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102519109"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106219617"
 ---
 # <a name="install--use-the-cli-extension-for-azure-machine-learning"></a>Installeer & gebruik de CLI-extensie voor Azure Machine Learning
 
@@ -60,22 +60,7 @@ Zie [Aanmelden met Azure cli](/cli/azure/authenticate-azure-cli)voor andere veri
 
 ## <a name="install-the-extension"></a>De extensie installeren
 
-Als u de Machine Learning CLI-extensie wilt installeren, gebruikt u de volgende opdracht:
-
-```azurecli-interactive
-az extension add -n azure-cli-ml
-```
-
-> [!TIP]
-> Voorbeeld bestanden die u kunt gebruiken met de onderstaande opdrachten, vindt u [hier](https://aka.ms/azml-deploy-cloud).
-
-Wanneer u hierom wordt gevraagd, selecteert `y` u om de uitbrei ding te installeren.
-
-Als u wilt controleren of de extensie is geïnstalleerd, gebruikt u de volgende opdracht om een lijst met ML-specifieke subopdrachten weer te geven:
-
-```azurecli-interactive
-az ml -h
-```
+De extensie wordt automatisch geïnstalleerd wanneer u voor het eerst een opdracht probeert te gebruiken die begint met `az ml` .
 
 ## <a name="update-the-extension"></a>De extensie bijwerken
 
@@ -84,7 +69,6 @@ Als u de Machine Learning CLI-extensie wilt bijwerken, gebruikt u de volgende op
 ```azurecli-interactive
 az extension update -n azure-cli-ml
 ```
-
 
 ## <a name="remove-the-extension"></a>De extensie verwijderen
 
@@ -408,7 +392,7 @@ Als u de opdracht hebt gebruikt, wordt er `az ml environment scaffold` een sjabl
 
 De volgende tabel bevat informatie over elk veld op het hoogste niveau in het JSON-bestand, het type en een beschrijving. Als een object type is gekoppeld aan een klasse uit de python-SDK, is er een losse 1:1 overeenkomst tussen elk JSON-veld en de naam van de open bare variabele in de python-klasse. In sommige gevallen kan het veld worden toegewezen aan een constructor-argument in plaats van een klassen variabele. Het veld wordt bijvoorbeeld `environmentVariables` toegewezen aan de `environment_variables` variabele in de- [`Environment`](/python/api/azureml-core/azureml.core.environment%28class%29) klasse.
 
-| JSON-veld | Type | Description |
+| JSON-veld | Type | Beschrijving |
 |---|---|---|
 | `name` | `string` | De naam van de omgeving. Start de naam niet met **micro soft** of **AzureML**. |
 | `version` | `string` | De versie van de omgeving. |

@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: tutorial
 ms.date: 02/12/2021
 ms.author: cherylmc
-ms.openlocfilehash: 60b49e5b6e103a85d79cf8495f2743b22e434c96
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3b365e347802824e855797afb8c68e5249bf0adb
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100586791"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106579629"
 ---
 # <a name="tutorial-configure-bastion-and-connect-to-a-windows-vm-through-a-browser"></a>Zelfstudie: Een Azure Bastion configureren en verbinding maken met een Windows-VM via een browser
 
@@ -37,6 +37,10 @@ Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://az
 
 * Poorten: Als u verbinding wilt maken met de Windows-VM, moeten de volgende poorten zijn geopend op uw Windows-VM:
   * Poorten voor inkomend verkeer: RDP (3389)
+
+ >[!NOTE]
+ >Het gebruik van Azure Bastion met Azure Privé-DNS zones wordt momenteel niet ondersteund. Voordat u begint, moet u ervoor zorgen dat het virtuele netwerk waar u de Bastion-resource wilt implementeren, niet is gekoppeld aan een privé-DNS-zone.
+ >
 
 ## <a name="sign-in-to-the-azure-portal"></a>Aanmelden bij Azure Portal
 

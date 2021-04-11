@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 1bc1df4582c83b093b6ed25d03cc73aef9a81483
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 5423c26b15c5ba9fa84e5d823f75f3c82a8cb8b4
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/30/2021
-ms.locfileid: "105563936"
+ms.locfileid: "105968115"
 ---
 # <a name="azure-security-baseline-for-event-grid"></a>Azure-beveiligings basislijn voor Event Grid
 
@@ -48,9 +48,7 @@ Azure Event Grid biedt ook ondersteuning voor open bare IP-toegangs beheer voor 
 
 ### <a name="12-monitor-and-log-the-configuration-and-traffic-of-virtual-networks-subnets-and-nics"></a>1,2: de configuratie en het verkeer van virtuele netwerken, subnetten en Nic's bewaken en vastleggen
 
-**Hulp**: gebruik Azure Security Center en volg aanbevelingen voor netwerk beveiliging om uw event grid resources in azure te beveiligen. Als u
-
-Azure virtual machines om toegang te krijgen tot uw Event Grid-resources, schakel logboeken voor netwerk beveiligings groepen (NSG) in en verzend logboeken naar een opslag account voor verkeers controle.
+**Hulp**: gebruik Azure Security Center en volg aanbevelingen voor netwerk beveiliging om uw event grid resources in azure te beveiligen. Als u virtuele Azure-machines gebruikt om toegang te krijgen tot uw Event Grid-bronnen, schakelt u de stroom logboeken voor netwerk beveiligings groepen (NSG) in en verzendt u logboeken naar een opslag account voor verkeers controle.
 
 - [NSG-stroom logboeken inschakelen](../network-watcher/network-watcher-nsg-flow-logging-portal.md)
 

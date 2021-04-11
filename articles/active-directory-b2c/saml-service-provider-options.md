@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/15/2021
+ms.date: 04/05/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 09cfdd026105a34db976118f38b011e2c4578a24
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: fea39388b6b4387dfc4fe95d1cdfb3e523a8089c
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103470775"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106382433"
 ---
 # <a name="options-for-registering-a-saml-application-in-azure-ad-b2c"></a>Opties voor het registreren van een SAML-toepassing in Azure AD B2C
 
@@ -34,7 +34,86 @@ In dit artikel worden de configuratie opties beschreven die beschikbaar zijn bij
 
 ::: zone pivot="b2c-custom-policy"
 
-## <a name="encrypted-saml-assertions"></a>Versleutelde SAML-bevestigingen
+
+## <a name="saml-response-signature"></a>SAML-antwoord handtekening
+
+U kunt een certificaat opgeven dat moet worden gebruikt voor het ondertekenen van de SAML-berichten. Het bericht is het `<samlp:Response>` element binnen het SAML-antwoord dat naar de toepassing wordt verzonden.
+
+Als u nog geen beleids sleutel hebt, [maakt u er een](saml-service-provider.md#create-a-policy-key). Configureer vervolgens het `SamlMessageSigning` meta gegevens item in het SAML-token Uitgever technisch profiel. De `StorageReferenceId` moet verwijzen naar de naam van de beleids sleutel.
+
+```xml
+<ClaimsProvider>
+  <DisplayName>Token Issuer</DisplayName>
+  <TechnicalProfiles>
+    <!-- SAML Token Issuer technical profile -->
+    <TechnicalProfile Id="Saml2AssertionIssuer">
+      <DisplayName>Token Issuer</DisplayName>
+      <Protocol Name="SAML2"/>
+      <OutputTokenFormat>SAML2</OutputTokenFormat>
+        ...
+      <CryptographicKeys>
+        <Key Id="SamlMessageSigning" StorageReferenceId="B2C_1A_SamlMessageCert"/>
+        ...
+      </CryptographicKeys>
+    ...
+    </TechnicalProfile>
+```
+
+### <a name="saml-response-signature-algorithm"></a>Algoritme voor SAML-respons handtekeningen
+
+U kunt de handtekening algoritme configureren die wordt gebruikt om de SAML-bewering te ondertekenen. Mogelijke waarden zijn `Sha256` , `Sha384` , `Sha512` , of `Sha1` . Zorg ervoor dat het technische profiel en de toepassing gebruikmaken van hetzelfde handtekening algoritme. Gebruik alleen de algoritme die door uw certificaat wordt ondersteund.
+
+Configureer het handtekening algoritme met behulp van de `XmlSignatureAlgorithm` meta gegevens sleutel binnen het meta gegevenselement Relying Party.
+
+```xml
+<RelyingParty>
+  <DefaultUserJourney ReferenceId="SignUpOrSignIn" />
+  <TechnicalProfile Id="PolicyProfile">
+    <DisplayName>PolicyProfile</DisplayName>
+    <Protocol Name="SAML2"/>
+    <Metadata>
+      <Item Key="XmlSignatureAlgorithm">Sha256</Item>
+    </Metadata>
+   ..
+  </TechnicalProfile>
+</RelyingParty>
+```
+
+## <a name="saml-assertions-signature"></a>Hand tekening van SAML-bevestigingen
+
+Wanneer uw toepassing verwacht dat de sectie SAML-verklaring is ondertekend, moet u ervoor zorgen dat de SAML-service provider de aan heeft ingesteld `WantAssertionsSigned` `true` . Als deze eigenschap `false` is ingesteld op of niet bestaat, wordt het bevestigings gedeelte niet ondertekend. In het volgende voor beeld ziet u de meta gegevens van een SAML-service provider waarvan is `WantAssertionsSigned` ingesteld op `true` .
+
+```xml
+<EntityDescriptor ID="id123456789" entityID="https://samltestapp2.azurewebsites.net" validUntil="2099-12-31T23:59:59Z" xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
+  <SPSSODescriptor  WantAssertionsSigned="true" AuthnRequestsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+  ...
+  </SPSSODescriptor>
+</EntityDescriptor>
+```  
+
+### <a name="saml-assertions-signature-certificate"></a>Handtekening certificaat voor SAML-bevestigingen
+
+In het beleid moet een certificaat worden opgegeven dat moet worden gebruikt voor het ondertekenen van de sectie met SAML-bevestigingen van het SAML-antwoord. Als u nog geen beleids sleutel hebt, [maakt u er een](saml-service-provider.md#create-a-policy-key). Configureer vervolgens het `SamlAssertionSigning` meta gegevens item in het SAML-token Uitgever technisch profiel. De `StorageReferenceId` moet verwijzen naar de naam van de beleids sleutel.
+
+```xml
+<ClaimsProvider>
+  <DisplayName>Token Issuer</DisplayName>
+  <TechnicalProfiles>
+    <!-- SAML Token Issuer technical profile -->
+    <TechnicalProfile Id="Saml2AssertionIssuer">
+      <DisplayName>Token Issuer</DisplayName>
+      <Protocol Name="SAML2"/>
+      <OutputTokenFormat>SAML2</OutputTokenFormat>
+        ...
+      <CryptographicKeys>
+        <Key Id="SamlAssertionSigning" StorageReferenceId="B2C_1A_SamlMessageCert"/>
+        ...
+      </CryptographicKeys>
+    ...
+    </TechnicalProfile>
+```
+
+## <a name="saml-assertions-encryption"></a>Versleuteling van SAML-verklaringen
 
 Als uw toepassing verwacht dat de SAML-bevestigingen in een versleutelde indeling zijn, moet u ervoor zorgen dat versleuteling is ingeschakeld in het Azure AD B2C beleid.
 
@@ -158,26 +237,6 @@ We bieden een volledig voor beeld van een beleid dat u kunt gebruiken voor het t
 1. Werk `TenantId` bij met de naam van uw Tenant, bijvoorbeeld *contoso.b2clogin.com*.
 1. Behoud de beleids naam *B2C_1A_signup_signin_saml*.
 
-## <a name="saml-response-signature-algorithm"></a>Algoritme voor SAML-respons handtekeningen
-
-U kunt de handtekening algoritme configureren die wordt gebruikt om de SAML-bewering te ondertekenen. Mogelijke waarden zijn `Sha256` , `Sha384` , `Sha512` , of `Sha1` . Zorg ervoor dat het technische profiel en de toepassing gebruikmaken van hetzelfde handtekening algoritme. Gebruik alleen de algoritme die door uw certificaat wordt ondersteund.
-
-Configureer het handtekening algoritme met behulp van de `XmlSignatureAlgorithm` meta gegevens sleutel binnen het meta gegevenselement Relying Party.
-
-```xml
-<RelyingParty>
-  <DefaultUserJourney ReferenceId="SignUpOrSignIn" />
-  <TechnicalProfile Id="PolicyProfile">
-    <DisplayName>PolicyProfile</DisplayName>
-    <Protocol Name="SAML2"/>
-    <Metadata>
-      <Item Key="XmlSignatureAlgorithm">Sha256</Item>
-    </Metadata>
-   ..
-  </TechnicalProfile>
-</RelyingParty>
-```
-
 ## <a name="saml-response-lifetime"></a>Levens duur van SAML-antwoorden
 
 U kunt configureren hoe lang het SAML-antwoord geldig blijft. Stel de levens duur in met behulp van het `TokenLifeTimeInSeconds` meta gegevens item in het SAML-token voor de uitgever van het technische profiel. Deze waarde is het aantal seconden dat kan verstrijken vanaf de `NotBefore` tijds tempel die wordt berekend op basis van de token uitgifte tijd. De standaard levensduur is 300 seconden (5 minuten).
@@ -279,9 +338,9 @@ Voorbeeld:
 
 U kunt de sessie tussen Azure AD B2C en de SAML-Relying Party toepassing beheren met het `UseTechnicalProfileForSessionManagement` element en de [SamlSSOSessionProvider](custom-policy-reference-sso.md#samlssosessionprovider).
 
-## <a name="force-users-to-re-authenticate"></a>Gebruikers dwingen om zich opnieuw te verifiëren 
+## <a name="force-users-to-reauthenticate"></a>Gebruikers dwingen om opnieuw te verifiëren 
 
-Om gebruikers te dwingen om zich opnieuw te verifiëren, kan de toepassing het `ForceAuthn` kenmerk in de SAML-verificatie aanvraag opnemen. Het `ForceAuthn` kenmerk is een Booleaanse waarde. Als deze eigenschap is ingesteld op True, wordt de sessie van de gebruiker bij Azure AD B2C ongeldig en wordt de gebruiker opnieuw geverifieerd. De volgende SAML-verificatie aanvraag laat zien hoe u het `ForceAuthn` kenmerk instelt op True. 
+Om gebruikers te dwingen om opnieuw te verifiëren, kan de toepassing het `ForceAuthn` kenmerk in de SAML-verificatie aanvraag opnemen. Het `ForceAuthn` kenmerk is een Booleaanse waarde. Als deze eigenschap is ingesteld op True, wordt de sessie van de gebruiker ongeldig bij Azure AD B2C en wordt de gebruiker gedwongen opnieuw te verifiëren. De volgende SAML-verificatie aanvraag laat zien hoe u het `ForceAuthn` kenmerk instelt op True. 
 
 
 ```xml
@@ -290,6 +349,28 @@ Om gebruikers te dwingen om zich opnieuw te verifiëren, kan de toepassing het `
        ForceAuthn="true" ...>
     ...
 </samlp:AuthnRequest>
+```
+
+## <a name="sign-the-azure-ad-b2c-idp-saml-metadata"></a>De Azure AD B2C IdP SAML-meta gegevens ondertekenen
+
+U kunt Azure AD B2C het document van de SAML IdP-meta gegevens te ondertekenen, indien dit door de toepassing wordt vereist. Als u nog geen beleids sleutel hebt, [maakt u er een](saml-service-provider.md#create-a-policy-key). Configureer vervolgens het `MetadataSigning` meta gegevens item in het SAML-token Uitgever technisch profiel. De `StorageReferenceId` moet verwijzen naar de naam van de beleids sleutel.
+
+```xml
+<ClaimsProvider>
+  <DisplayName>Token Issuer</DisplayName>
+  <TechnicalProfiles>
+    <!-- SAML Token Issuer technical profile -->
+    <TechnicalProfile Id="Saml2AssertionIssuer">
+      <DisplayName>Token Issuer</DisplayName>
+      <Protocol Name="SAML2"/>
+      <OutputTokenFormat>SAML2</OutputTokenFormat>
+        ...
+      <CryptographicKeys>
+        <Key Id="MetadataSigning" StorageReferenceId="B2C_1A_SamlMetadataCert"/>
+        ...
+      </CryptographicKeys>
+    ...
+    </TechnicalProfile>
 ```
 
 ## <a name="debug-the-saml-protocol"></a>Fout opsporing voor het SAML-Protocol

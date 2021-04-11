@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 2/01/2019
 ms.author: atsenthi
-ms.openlocfilehash: e51b247f8c1a5a9ed8f6ec8e24363015afb2f7de
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e94b809513bda8edc7a51baf79ec05a2c9c77489
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102614408"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106448551"
 ---
 # <a name="patch-the-windows-operating-system-in-your-service-fabric-cluster"></a>Het Windows-besturings systeem in uw Service Fabric cluster bijwerken
 
@@ -222,7 +222,7 @@ U kunt POA-gedrag configureren om te voldoen aan uw behoeften. De standaard waar
 | WUOperationTimeOutInMinutes | Int <br>(Standaard: *90*)                   | Hiermee geeft u de time-out voor een Windows Update bewerking (zoeken of downloaden of installeren). Als de bewerking niet binnen de opgegeven time-out wordt voltooid, wordt deze afgebroken.       |
 | WURescheduleCount     | Int <br> (Standaard: *5*)                  | Het maximum aantal keren dat de service de Windows-Update opnieuw plant als een bewerking permanent mislukt.          |
 | WURescheduleTimeInMinutes | Int <br>(Standaard: *30*) | Het interval waarmee de Windows-updates opnieuw worden gepland als de fout zich blijft voordoen. |
-| WUFrequency           | Door komma's gescheiden teken reeks (standaard: *wekelijks, woensdag, 7:00:00*)     | De frequentie voor het installeren van Windows-updates. De notatie en mogelijke waarden zijn: <br>-Maandelijks, DD, uu: MM: SS (voor beeld: *Monthly, 5, 12:22:32*). Toegestane waarden voor het veld _dd_ (dag) zijn getallen van 1 tot en met 28 en _laatste_. <br>-Wekelijks, dag, uu: MM: SS (voor beeld: *wekelijks, dinsdag, 12:22:32*)  <br>-Dagelijks, uu: MM: SS (voor beeld: *dagelijks, 12:22:32*)  <br>-Week, dag, uu: MM: SS (voor beeld: *2, vrijdag, 21:00:00* geeft 9:00 uur UTC op vrijdag van de 2e week van elke maand) <br>- *Geen* geeft aan dat Windows-updates niet mogen worden uitgevoerd.  <br><br> Tijden zijn UTC.|
+| WUFrequency           | Door komma's gescheiden teken reeks (standaard: *wekelijks, woensdag, 7:00:00*)     | De frequentie voor het installeren van Windows-updates. De notatie en mogelijke waarden zijn: <br>-Maandelijks, DD, uu: MM: SS (voor beeld: *Monthly, 5, 12:22:32*). Toegestane waarden voor het veld _dd_ (dag) zijn getallen van 1 tot en met 28 en _laatste_. <br>-Wekelijks, dag, uu: MM: SS (voor beeld: *wekelijks, dinsdag, 12:22:32*)  <br>-Dagelijks, uu: MM: SS (voor beeld: *dagelijks, 12:22:32*)  <br>-MonthlyByWeekAndDay, week, dag, uu: MM: SS (voor beeld: *MonthlyByWeekAndDay, 2, vrijdag, 21:00:00* geeft 9:00 uur UTC aan op vrijdag van de 2e week van elke maand) <br>- *Geen* geeft aan dat Windows-updates niet mogen worden uitgevoerd.  <br><br> Tijden zijn UTC.|
 | AcceptWindowsUpdateEula | Booleaans <br>(Standaard: *True*) | Door deze vlag in te stellen, accepteert de toepassing de End-User gebruiksrecht overeenkomst voor Windows Update namens de eigenaar van de computer.              |
 
 > [!TIP]
@@ -370,7 +370,7 @@ Ga als volgt te werk om inzicht te krijgen in hoe updates worden uitgevoerd op e
 
    Als er meer problemen moeten worden gevonden, meldt u zich aan bij uw virtuele machine (VM) of Vm's en leert u deze met behulp van Windows-gebeurtenis Logboeken. De eerder genoemde reparatie taak kan alleen voor komen in de volgende Substatussen van de module:
 
-      ExecutorSubState | Description
+      ExecutorSubState | Beschrijving
     -- | -- 
       Geen = 1 |  Betekent dat er geen actieve bewerking op het knoop punt is. De status kan in overgang zijn.
       DownloadCompleted = 2 | Houdt in dat de Download bewerking is voltooid met succes, gedeeltelijk mislukt of mislukt.

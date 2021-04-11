@@ -7,10 +7,10 @@ ms.service: industrial-iot
 ms.topic: conceptual
 ms.date: 3/22/2021
 ms.openlocfilehash: 3a44bdbadfe6ecd86a1b98fb7002f2d75c23bb6a
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104800530"
 ---
 # <a name="what-is-the-opc-publisher"></a>Wat is de OPC-Uitgever?

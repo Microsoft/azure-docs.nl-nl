@@ -7,13 +7,13 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 03/29/2021
 ms.author: helohr
-manager: lizross
-ms.openlocfilehash: 38f34324a0cda518645f8b9231e08bafbd75cca0
-ms.sourcegitcommit: dae6b628a8d57540263a1f2f1cdb10721ed1470d
+manager: femila
+ms.openlocfilehash: 8ed4c2cffffca79ea545358b8ad639118e87e013
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "105709528"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106448199"
 ---
 # <a name="azure-monitor-for-windows-virtual-desktop-glossary"></a>Azure Monitor voor Windows-woorden lijst voor virtueel bureau blad
 
@@ -182,10 +182,10 @@ Zie [Eigenschappen van Windows-gebeurtenis records](../azure-monitor/agents/data
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Bekijk de volgende artikelen om aan de slag te gaan met Azure Monitor voor virtueel bureau blad van Windows:
+- Als u aan de slag wilt gaan, raadpleegt u [Azure monitor voor Windows Virtual Desktop gebruiken om uw implementatie te controleren](azure-monitor.md).
+- Zie [schatting van Azure monitor kosten](azure-monitor-costs.md)voor het schatten, meten en beheren van uw kosten voor gegevens opslag.
+- Als er een probleem optreedt, raadpleegt u de [gids voor probleem oplossing](troubleshoot-azure-monitor.md) voor hulp en bekende problemen.
 
-- [Gebruik Azure Monitor voor virtuele Windows-Bureau bladen om uw implementatie te bewaken](azure-monitor.md)
-- [Azure Monitor voor het oplossen van problemen met virtueel bureau blad van Windows](troubleshoot-azure-monitor.md)
 
 U kunt Azure Advisor ook instellen om te helpen bepalen hoe u veelvoorkomende problemen oplost of voor komt. Meer informatie over het [gebruik van Azure Advisor met Windows virtueel bureau blad](azure-advisor.md).
 

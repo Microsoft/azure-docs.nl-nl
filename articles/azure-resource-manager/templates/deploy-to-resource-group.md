@@ -4,10 +4,10 @@ description: Hierin wordt beschreven hoe u resources in een Azure Resource Manag
 ms.topic: conceptual
 ms.date: 01/13/2021
 ms.openlocfilehash: 1d636be9ffab5a4398e3e12867e601ce6df382bf
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104889787"
 ---
 # <a name="resource-group-deployments-with-arm-templates"></a>Implementaties van resource groepen met ARM-sjablonen

@@ -3,14 +3,14 @@ author: msmimart
 ms.service: active-directory-b2c
 ms.subservice: B2C
 ms.topic: include
-ms.date: 02/12/2020
+ms.date: 04/05/2021
 ms.author: mimart
-ms.openlocfilehash: f8c972bdb9195008c2983d3993e8d9369749b284
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5a2382146cd8b85b8eef54b924a206dda7107b0f
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "85200164"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106382454"
 ---
 #### <a name="app-registrations"></a>[App-registraties](#tab/app-reg-ga/) 
 
@@ -19,8 +19,9 @@ ms.locfileid: "85200164"
 1. Selecteer het tabblad **micro soft api's** en selecteer vervolgens **Microsoft Graph**.
 1. Selecteer **Toepassingsmachtigingen**.
 1. Vouw de juiste machtigings groep uit en schakel het selectie vakje in van de machtiging om aan uw beheer toepassing toe te kennen. Bijvoorbeeld:
+    * **Gebruiker**  >  **User. readwrite. all**: voor gebruikers migratie of gebruikers beheer scenario's.
+    * **Groep**  >  **Group. readwrite. all**: voor het maken van groepen, het lezen en bijwerken van groepslid maatschappen en het verwijderen van groepen.
     * **AuditLog**  >  **AuditLog. Read. all**: voor het lezen van de controle logboeken van de map.
-    * **Map**  >  **Map. readwrite. all**: voor gebruikers migratie of gebruikers beheer scenario's.
     * **Beleid**  >  **Policy. readwrite. TrustFramework**: voor continue integratie/continue levering (CI/cd)-scenario's. Bijvoorbeeld aangepaste beleids implementatie met Azure-pijp lijnen.
 1. Selecteer **Machtigingen toevoegen**. Wacht, zoals aangegeven, een paar minuten voordat u verdergaat met de volgende stap.
 1. Selecteer **Beheerderstoestemming verlenen voor (naam van uw tenant)** .

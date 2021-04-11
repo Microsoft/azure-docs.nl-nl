@@ -3,12 +3,12 @@ title: Resource providers door Azure-Services
 description: Een lijst met alle naam ruimten van de resource provider voor Azure Resource Manager en toont de Azure-service voor die naam ruimte.
 ms.topic: conceptual
 ms.date: 03/16/2021
-ms.openlocfilehash: d8239a9305560eb77ac2c714b993373f0d5b16fb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f33017713d8154fb56472ad5f53b97b22d32e0e3
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105023007"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106167869"
 ---
 # <a name="resource-providers-for-azure-services"></a>Resource providers for Azure services (Resourceproviders voor Azure-services)
 
@@ -103,7 +103,7 @@ De resource providers die zijn gemarkeerd met **-geregistreerd** , worden standa
 | Micro soft. HybridData | [StorSimple](../../storsimple/index.yml) |
 | Micro soft. HybridNetwork  | [Zones met persoonlijke randen](../../networking/edge-zones-overview.md) |
 | Microsoft.ImportExport | [Azure Import/Export](../../import-export/storage-import-export-service.md) |
-| micro soft. Insights | [Azure Monitor](../../azure-monitor/index.yml) |
+| Microsoft.Insights | [Azure Monitor](../../azure-monitor/index.yml) |
 | Micro soft. IoTCentral | [Azure IoT Central](../../iot-central/index.yml) |
 | Micro soft. IoTSpaces | [Azure Digital Twins](../../digital-twins/index.yml) |
 | Microsoft.Intune | [Azure Monitor](../../azure-monitor/index.yml) |

@@ -4,10 +4,10 @@ description: Hierin worden de functies beschreven die u kunt gebruiken in een Az
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.openlocfilehash: abff5b86ad1e10042596b11f613cdb594e307209
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104889923"
 ---
 # <a name="date-functions-for-arm-templates"></a>Datum functies voor ARM-sjablonen
@@ -27,11 +27,11 @@ Voegt een tijds duur toe aan een basis waarde. ISO 8601-indeling wordt verwacht.
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| base | Ja | tekenreeks | De begin datum/tijd-waarde voor de toevoeging. [ISO 8601-time stamp notatie](https://en.wikipedia.org/wiki/ISO_8601)gebruiken. |
-| duur | Ja | tekenreeks | De tijd waarde die aan de basis moet worden toegevoegd. Dit kan een negatieve waarde zijn. Gebruik de [ISO 8601-duur notatie](https://en.wikipedia.org/wiki/ISO_8601#Durations). |
-| indeling | Nee | tekenreeks | De uitvoer indeling voor het resultaat van de datum en tijd. Als u dit niet opgeeft, wordt de indeling van de basis waarde gebruikt. Gebruik [standaard notatie teken reeksen](/dotnet/standard/base-types/standard-date-and-time-format-strings) of [teken reeksen met aangepaste notaties](/dotnet/standard/base-types/custom-date-and-time-format-strings). |
+| base | Yes | tekenreeks | De begin datum/tijd-waarde voor de toevoeging. [ISO 8601-time stamp notatie](https://en.wikipedia.org/wiki/ISO_8601)gebruiken. |
+| duur | Yes | tekenreeks | De tijd waarde die aan de basis moet worden toegevoegd. Dit kan een negatieve waarde zijn. Gebruik de [ISO 8601-duur notatie](https://en.wikipedia.org/wiki/ISO_8601#Durations). |
+| indeling | No | tekenreeks | De uitvoer indeling voor het resultaat van de datum en tijd. Als u dit niet opgeeft, wordt de indeling van de basis waarde gebruikt. Gebruik [standaard notatie teken reeksen](/dotnet/standard/base-types/standard-date-and-time-format-strings) of [teken reeksen met aangepaste notaties](/dotnet/standard/base-types/custom-date-and-time-format-strings). |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -186,9 +186,9 @@ Retourneert de huidige (UTC) datum/tijd-waarde in de opgegeven notatie. Als er g
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| indeling |Nee |tekenreeks |De gecodeerde URI-waarde die moet worden geconverteerd naar een teken reeks. Gebruik [standaard notatie teken reeksen](/dotnet/standard/base-types/standard-date-and-time-format-strings) of [teken reeksen met aangepaste notaties](/dotnet/standard/base-types/custom-date-and-time-format-strings). |
+| indeling |No |tekenreeks |De gecodeerde URI-waarde die moet worden geconverteerd naar een teken reeks. Gebruik [standaard notatie teken reeksen](/dotnet/standard/base-types/standard-date-and-time-format-strings) of [teken reeksen met aangepaste notaties](/dotnet/standard/base-types/custom-date-and-time-format-strings). |
 
 ### <a name="remarks"></a>Opmerkingen
 

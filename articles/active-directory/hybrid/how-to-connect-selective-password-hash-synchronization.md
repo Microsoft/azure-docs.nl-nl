@@ -12,12 +12,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 248d5e163eb046edd130d69307a1c553d434b92d
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 5a73f4eba9581965470b95111e6dda1d8014e4cb
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105604665"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106167495"
 ---
 # <a name="selective-password-hash-synchronization-configuration-for-azure-ad-connect"></a>Configuratie van de synchronisatie van selectieve wachtwoord hash voor Azure AD Connect
 
@@ -95,7 +95,7 @@ Als dit kenmerk niet is ingevuld of als de waarde iets anders is dan **PHSFilter
      ![Regel selecteren](media/how-to-connect-selective-password-hash-synchronization/exclude-2.png)
  3. Met de eerste regel wordt de wachtwoord-hash-synchronisatie uitgeschakeld. Geef de nieuwe aangepaste regel de volgende naam: **in vanuit AD-User AccountEnabled-filter gebruikers from PHS**.
  Wijzig de prioriteits waarde in een getal lager dan 100 (bijvoorbeeld **90** of afhankelijk van de laagste waarde die beschikbaar is in uw omgeving).
- Zorg ervoor dat de selectie vakjes **wachtwoord synchronisatie** en **uitgeschakeld** inschakelen niet is ingeschakeld en c.
+ Zorg ervoor dat de selectie vakjes **wachtwoord synchronisatie** en **uitgeschakeld** inschakelen niet is ingeschakeld.
  Klik op **Volgende**.
   ![Inkomend bewerken](media/how-to-connect-selective-password-hash-synchronization/exclude-3.png)
  4. Klik in het **bereik filter** op **component toevoegen**.

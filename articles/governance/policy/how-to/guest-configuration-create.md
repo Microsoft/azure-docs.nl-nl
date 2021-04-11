@@ -4,10 +4,10 @@ description: Meer informatie over het maken van een Azure Policy-gast configurat
 ms.date: 08/17/2020
 ms.topic: how-to
 ms.openlocfilehash: 72772743eba23ea7c2a93f5037ac84b671256a66
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104887696"
 ---
 # <a name="how-to-create-guest-configuration-policies-for-windows"></a>Beleidsregels voor gastconfiguratie voor Windows maken

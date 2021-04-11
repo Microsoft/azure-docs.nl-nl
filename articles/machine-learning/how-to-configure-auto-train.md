@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/29/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python,contperf-fy21q1, automl
-ms.openlocfilehash: 24c0d57490ecd039039992310f93ca3e21c47b3b
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 12a6761ac2cd305e6ff949ffa59ee3bbdff1934d
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103563484"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105732887"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Geautomatiseerde ML-experimenten configureren in Python
 
@@ -217,7 +217,7 @@ Meer informatie over de specifieke definities van deze metrische gegevens in [in
 
 ### <a name="primary-metrics-for-classification-scenarios"></a>Primaire metrische gegevens voor classificatie scenario's 
 
-Het boeken van een drempel waarde, zoals `accuracy` ,, `average_precision_score_weighted` `norm_macro_recall` , en `precision_score_weighted` kan mogelijk niet worden geoptimaliseerd voor gegevens sets die zeer klein zijn, hebben een zeer grote klasse scheefheid (klasse onevenwicht), of wanneer de verwachte metriekwaarde dicht bij 0,0 of 1,0 ligt. In dergelijke gevallen `AUC_weighted` kan de primaire metriek een betere keuze zijn. Nadat automatische machine learning is voltooid, kunt u het winnende model kiezen op basis van de metrische gegevens die het meest geschikt zijn voor uw bedrijfs behoeften.
+Het boeken van een drempel waarde die is beperkt, zoals `accuracy` ,, `average_precision_score_weighted` `norm_macro_recall` , en `precision_score_weighted` die mogelijk niet kan worden geoptimaliseerd voor gegevens sets die klein zijn, hebben een zeer grote klasse scheefheid (klasse onevenwicht) of wanneer de verwachte metriekwaarde erg dicht bij 0,0 of 1,0 ligt. In dergelijke gevallen `AUC_weighted` kan de primaire metriek een betere keuze zijn. Nadat automatische machine learning is voltooid, kunt u het winnende model kiezen op basis van de metrische gegevens die het meest geschikt zijn voor uw bedrijfs behoeften.
 
 | Metrisch | Voor beeld van use case (s) |
 | ------ | ------- |
@@ -257,7 +257,7 @@ In elk automatisch machine learning experiment worden uw gegevens automatisch ge
 
 Wanneer u uw experimenten in uw `AutoMLConfig` object configureert, kunt u de instelling in-of uitschakelen `featurization` . De volgende tabel bevat de geaccepteerde instellingen voor parametrisatie in het [AutoMLConfig-object](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig). 
 
-|Parametrisatie-configuratie | Beschrijving |
+|Parametrisatie-configuratie | Description |
 | ------------- | ------------- |
 |`"featurization": 'auto'`| Geeft aan dat als onderdeel van de voor verwerking, [gegevens Guardrails en parametrisatie-stappen](how-to-configure-auto-features.md#featurization) automatisch worden uitgevoerd. **Standaard instelling**.|
 |`"featurization": 'off'`| Hiermee wordt aangegeven dat de parametrisatie-stap niet automatisch moet worden uitgevoerd.|
@@ -386,16 +386,113 @@ Voor het beheren van onderliggende uitvoeringen en wanneer ze kunnen worden uitg
 
 ## <a name="explore-models-and-metrics"></a>Modellen en metrische gegevens verkennen
 
-U kunt uw trainings resultaten weer geven in een widget of inline als u zich in een notebook bevindt. Zie [modellen volgen en evalueren](how-to-monitor-view-training-logs.md#monitor-automated-machine-learning-runs) voor meer informatie.
+Automatische ML biedt opties waarmee u uw trainings resultaten kunt bewaken en evalueren. 
 
-Bekijk de [resultaten van automatische machine learning experimenten evalueren](how-to-understand-automated-ml.md) voor definities en voor beelden van de prestatie diagrammen en metrische gegevens die voor elke uitvoering worden geleverd. 
+* U kunt uw trainings resultaten weer geven in een widget of inline als u zich in een notebook bevindt. Zie [automatische ml-uitvoeringen bewaken](how-to-monitor-view-training-logs.md#monitor-automated-machine-learning-runs) voor meer informatie.
 
-Zie [parametrisatie transparantie](how-to-configure-auto-features.md#featurization-transparency)voor een parametrisatie samen vatting en inzicht in de functies die zijn toegevoegd aan een bepaald model. 
+* Zie voor definities en voor beelden van de prestatie grafieken en metrische gegevens die voor elke uitvoering worden geleverd, de [resultaten van automatische machine learning experimenten evalueren](how-to-understand-automated-ml.md) . 
 
+* Zie [parametrisatie transparantie](how-to-configure-auto-features.md#featurization-transparency)voor een parametrisatie samen vatting en inzicht in de functies die zijn toegevoegd aan een bepaald model. 
+
+U kunt de Hyper parameters, de technieken voor schaal baarheid en normalisatie, en het algoritme dat wordt toegepast op een specifieke geautomatiseerde ML uitvoeren met de volgende oplossing voor aangepaste code. 
+
+Hieronder wordt de aangepaste methode gedefinieerd, `print_model()` , die de Hyper parameters van elke stap van de automatische ml trainings pijplijn afdrukt.
+ 
+```python
+from pprint import pprint
+
+def print_model(model, prefix=""):
+    for step in model.steps:
+        print(prefix + step[0])
+        if hasattr(step[1], 'estimators') and hasattr(step[1], 'weights'):
+            pprint({'estimators': list(e[0] for e in step[1].estimators), 'weights': step[1].weights})
+            print()
+            for estimator in step[1].estimators:
+                print_model(estimator[1], estimator[0]+ ' - ')
+        elif hasattr(step[1], '_base_learners') and hasattr(step[1], '_meta_learner'):
+            print("\nMeta Learner")
+            pprint(step[1]._meta_learner)
+            print()
+            for estimator in step[1]._base_learners:
+                print_model(estimator[1], estimator[0]+ ' - ')
+        else:
+            pprint(step[1].get_params())
+            print()   
+```
+
+Voor een lokale of externe uitvoering die zojuist is ingediend en getraind binnen dezelfde experiment notebook, kunt u het beste model door geven met de- `get_output()` methode. 
+
+```python
+best_run, fitted_model = run.get_output()
+print(best_run)
+         
+print_model(fitted_model)
+```
+
+De volgende uitvoer geeft aan dat:
+ 
+* De StandardScalerWrapper-techniek werd gebruikt om de gegevens te schalen en te normaliseren voordat ze worden getraind.
+
+* Het XGBoostClassifier-algoritme is geïdentificeerd als de beste uitvoering en toont ook de afstemming-waarden. 
+
+```python
+StandardScalerWrapper
+{'class_name': 'StandardScaler',
+ 'copy': True,
+ 'module_name': 'sklearn.preprocessing.data',
+ 'with_mean': False,
+ 'with_std': False}
+
+XGBoostClassifier
+{'base_score': 0.5,
+ 'booster': 'gbtree',
+ 'colsample_bylevel': 1,
+ 'colsample_bynode': 1,
+ 'colsample_bytree': 0.6,
+ 'eta': 0.4,
+ 'gamma': 0,
+ 'learning_rate': 0.1,
+ 'max_delta_step': 0,
+ 'max_depth': 8,
+ 'max_leaves': 0,
+ 'min_child_weight': 1,
+ 'missing': nan,
+ 'n_estimators': 400,
+ 'n_jobs': 1,
+ 'nthread': None,
+ 'objective': 'multi:softprob',
+ 'random_state': 0,
+ 'reg_alpha': 0,
+ 'reg_lambda': 1.6666666666666667,
+ 'scale_pos_weight': 1,
+ 'seed': None,
+ 'silent': None,
+ 'subsample': 0.8,
+ 'tree_method': 'auto',
+ 'verbose': -10,
+ 'verbosity': 1}
+```
+
+Voor een bestaande uitvoering van een ander experiment in uw werk ruimte, moet u de specifieke uitvoerings-ID ophalen die u wilt verkennen en deze door geven aan de- `print_model()` methode. 
+
+```python
+from azureml.train.automl.run import AutoMLRun
+
+ws = Workspace.from_config()
+experiment = ws.experiments['automl-classification']
+automl_run = AutoMLRun(experiment, run_id = 'AutoML_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')
+
+automl_run
+best_run, model_from_aml = automl_run.get_output()
+
+print_model(model_from_aml)
+
+```
 > [!NOTE]
 > De algoritmen die automatisch worden geautomatiseerd, hebben een inherente wille keurigheid waardoor kleine afwijkingen in de Score van de uiteindelijke metrische gegevens van een aanbevolen model, zoals nauw keurigheid, kunnen ontstaan. Automatische ML voert ook bewerkingen uit op gegevens zoals de splitsing van Train-test, gesplitste validatie of Kruis validatie wanneer dat nodig is. Als u dus een experiment met dezelfde configuratie-instellingen en primaire gegevens meerdere keren uitvoert, zult u waarschijnlijk de variatie van elke eindmetrieke meet waarde van elke experimenten zien als gevolg van deze factoren. 
 
 ## <a name="register-and-deploy-models"></a>Modellen registreren en implementeren
+
 U kunt een model registreren, zodat u ernaar kunt terugkeren voor later gebruik. 
 
 Als u een model van een automatische ML-uitvoering wilt registreren, gebruikt u de- [`register_model()`](/python/api/azureml-train-automl-client/azureml.train.automl.run.automlrun#register-model-model-name-none--description-none--tags-none--iteration-none--metric-none-) methode. 

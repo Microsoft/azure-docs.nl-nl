@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 07/23/2020
 ms.custom: devx-track-java
 ms.openlocfilehash: 5473daedc8a7ad5a3b6ddffc65234160d4b3019d
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104878148"
 ---
 # <a name="app-and-deployment-in-azure-spring-cloud"></a>App en implementatie in azure lente Cloud
@@ -29,7 +29,7 @@ In de Cloud Standard-laag van Azure lente kan één app één productie-implemen
 ## <a name="app"></a>App
 De volgende functies/eigenschappen worden gedefinieerd op app-niveau.
 
-| Functies | Beschrijving |
+| Functies | Description |
 |:--|:----------------|
 | Openbaar</br>Eindpunt | De URL voor toegang tot de app |
 | Aangepast</br>Domain | CNAME-record dat het aangepaste domein beveiligt |

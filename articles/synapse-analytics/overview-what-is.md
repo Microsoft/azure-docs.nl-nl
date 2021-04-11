@@ -9,12 +9,12 @@ ms.subservice: overview
 ms.date: 03/24/2021
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: 78b31cb32e3df9b0d8e198d8c2122e492e609283
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: bb09a25d7ea242dfafd7d853015ae8e127b13883
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105625807"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106383402"
 ---
 # <a name="what-is-azure-synapse-analytics"></a>Wat is Azure Synapse Analytics?
 
@@ -43,9 +43,9 @@ ms.locfileid: "105625807"
 
 Azure Synapse verwijdert de traditionele technologische barrières tussen het gebruik van SQL en Spark. U kunt naadloos combineren en vergelijken op basis van uw behoeften en expertise.
 
-* Met een gedeeld metagegevenssysteem dat compatibel is met de Hive, kunnen tabellen die zijn gedefinieerd op bestanden in de data lake naadloos worden gebruikt door Spark of Hive.
+* Tabellen die zijn gedefinieerd voor bestanden in de data Lake, worden naadloos gebruikt door Spark of Hive.
 * SQL en Spark kunnen Parquet-, CSV-, TSV- en JSON-bestanden die zijn opgeslagen in de data lake rechtstreeks verkennen en analyseren.
-* Snel schaalbare belasting en verwijderen van belasting voor gegevens die worden verzonden tussen SQL-en Spark-databases
+* Snelle, schaal bare gegevens belasting tussen SQL-en Spark-data bases
 
 ## <a name="built-in-data-integration"></a>Ingebouwde gegevens integratie
 
@@ -53,7 +53,7 @@ Azure Synapse bevat dezelfde gegevens integratie-engine en ervaringen als Azure 
 
 * Gegevens opnemen uit meer dan 90 gegevensbronnen
 * Code-Free ETL met gegevensstroomactiviteiten
-* Notebooks, Spark-taken, opgeslagen procedures, SQL-scripts en meer indelen
+* U kunt notitie blokken, Spark-taken, opgeslagen procedures, SQL-scripts en meer indelen
 
 ## <a name="unified-management-monitoring-and-security"></a>Uniform beheer, bewaking en beveiliging
 
@@ -71,10 +71,10 @@ Azure Synapse biedt ondernemingen één manier om analyse-resources te beheren, 
 * Toonaangevende productiviteit voor het schrijven van SQL-of Spark-code: ontwerpen, fout opsporing en optimalisatie van prestaties
 * Integreren met Enter prise CI/CD-proces
 
-## <a name="engage-with-the-synapse-engineering-team"></a>Contact met het technische team van Synapse
+## <a name="engage-with-the-synapse-community"></a>Neem contact op met de Synapse-Community
 
+- [Micro soft Q&A](/answers/topics/azure-synapse-analytics.html): Stel technische vragen.
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-synapse): Voor ontwikkelingsvragen.
-- [Microsoft Q&A-vragenpagina](/answers/topics/azure-synapse-analytics.html): Voor technische vragen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

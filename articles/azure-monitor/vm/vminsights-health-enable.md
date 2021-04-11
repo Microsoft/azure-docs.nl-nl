@@ -6,12 +6,12 @@ author: bwren
 ms.author: bwren
 ms.date: 11/16/2020
 ms.custom: references_regions
-ms.openlocfilehash: 5d4ff622f69445880c0de8cb74dc1aeee422c89b
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 540f0725427ace4aec76de373556cd6699a1b229
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102052157"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105732751"
 ---
 # <a name="enable-vm-insights-guest-health-preview"></a>VM Insights-gast status inschakelen (preview)
 Met de VM Insights-gast status kunt u de status van een virtuele machine bekijken, zoals gedefinieerd door een set prestatie metingen die regel matig worden steek proeven. In dit artikel wordt beschreven hoe u deze functie inschakelt in uw abonnement en hoe u gast bewaking voor elke virtuele machine inschakelt.
@@ -20,6 +20,7 @@ Met de VM Insights-gast status kunt u de status van een virtuele machine bekijke
 De status van de VM Insights-gast heeft de volgende beperkingen in de open bare Preview:
 
 - Er worden momenteel alleen virtuele Azure-machines ondersteund. Azure Arc voor servers wordt momenteel niet ondersteund.
+- Netwerkproxys worden momenteel niet ondersteund.
 
 
 ## <a name="supported-operating-systems"></a>Ondersteunde besturingssystemen

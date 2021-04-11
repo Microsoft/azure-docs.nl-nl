@@ -1,17 +1,16 @@
 ---
 title: Voorbeelden van Resource Manager-sjablonen voor Application Insights-resources
 description: Azure Resource Manager-voorbeeldsjablonen voor het implementeren van Application Insights-resources in Azure Monitor.
-ms.subservice: application-insights
 ms.topic: sample
 author: lgayhardt
 ms.author: lagayhar
 ms.date: 07/08/2020
-ms.openlocfilehash: 6c23e59a8845ee4bc77d0fe05df8b97e656a102a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6a64ed1d0d7a133930bf48e7d764c8d170d9824a
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100627380"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106383352"
 ---
 # <a name="resource-manager-template-samples-for-creating-application-insights-resources"></a>Voorbeelden van Resource Manager-sjablonen voor het maken van Application Insights-resources
 

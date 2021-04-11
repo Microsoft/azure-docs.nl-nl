@@ -5,14 +5,14 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: reference
-ms.date: 03/22/2021
+ms.date: 04/06/2021
 ms.author: memildin
-ms.openlocfilehash: f6ec14c577d1203b92085b791f89e4873a97c41a
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 81f741fd9b0e3d40eb0027a5cbe0ba4b7113bbea
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104786080"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107027615"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -24,6 +24,93 @@ Zie [Belangrijke aanstaande wijzigingen aan Azure Security Center](upcoming-chan
 
 > [!TIP]
 > Als u op zoek bent naar items die ouder zijn dan zes maanden, vindt u deze in het [Archief voor nieuwe functies in Azure AD in Azure Security Center](release-notes-archive.md).
+
+## <a name="april-2021"></a>April 2021
+
+De updates in april zijn onder meer:
+- [Vier nieuwe aanbevelingen met betrekking tot gast configuratie (preview-versie)](#four-new-recommendations-related-to-guest-configuration-preview)
+- [Azure Defender voor Kubernetes gebruiken voor het beveiligen van hybride en implementaties met meerdere Cloud Kubernetes (preview-versie)](#use-azure-defender-for-kubernetes-to-protect-hybrid-and-multi-cloud-kubernetes-deployments-preview)
+- [11 Azure Defender-waarschuwingen afgeschaft](#11-azure-defender-alerts-deprecated)
+- [Er zijn twee aanbevelingen van het beveiligings beheer ' systeem updates Toep assen ' afgeschaft](#two-recommendations-from-apply-system-updates-security-control-were-deprecated)
+
+### <a name="four-new-recommendations-related-to-guest-configuration-preview"></a>Vier nieuwe aanbevelingen met betrekking tot gast configuratie (preview-versie)
+
+De extensie rapporten van de [gast configuratie](../governance/policy/concepts/guest-configuration.md) van Azure worden Security Center om ervoor te zorgen dat de gast instellingen van uw virtuele machines worden gehard. De uitbrei ding is niet vereist voor servers waarop de Arc is ingeschakeld, omdat deze is opgenomen in de Arc Connected machine agent. Voor de uitbrei ding is een door het systeem beheerde identiteit op de computer vereist.
+
+Er zijn vier nieuwe aanbevelingen toegevoegd aan Security Center om optimaal van deze uitbrei ding te maken.
+
+- U wordt gevraagd om de uitbrei ding en de vereiste door het systeem beheerde identiteit te installeren:
+    - **De gast configuratie-extensie moet op uw computers zijn geïnstalleerd**
+    - **De gast configuratie-extensie voor virtuele machines moet worden geïmplementeerd met door het systeem toegewezen beheerde identiteit**
+
+- Wanneer de uitbrei ding is geïnstalleerd en wordt uitgevoerd, wordt het controleren van uw computers gestart en wordt u gevraagd om de beveiligings instellingen op te vragen, zoals de configuratie van het besturings systeem en de instellingen van de omgeving. Met deze twee aanbevelingen wordt u gevraagd om uw Windows-en Linux-computers te beveiligen, zoals wordt beschreven:
+    - **Windows Defender exploit Guard moet zijn ingeschakeld op uw computers**
+    - **Voor verificatie op Linux-machines moeten SSH-sleutels zijn vereist**
+
+Meer informatie over [de gast configuratie van Azure Policy](../governance/policy/concepts/guest-configuration.md).
+
+
+### <a name="use-azure-defender-for-kubernetes-to-protect-hybrid-and-multi-cloud-kubernetes-deployments-preview"></a>Azure Defender voor Kubernetes gebruiken voor het beveiligen van hybride en implementaties met meerdere Cloud Kubernetes (preview-versie)
+
+Azure Defender voor Kubernetes breidt de beveiligings mogelijkheden van bedreigingen uit om uw clusters overal te beschermen waar ze worden geïmplementeerd. Dit is ingeschakeld door te integreren met [Azure Arc enabled Kubernetes](../azure-arc/kubernetes/overview.md) en de nieuwe [uitbreidings mogelijkheden](../azure-arc/kubernetes/extensions.md). 
+
+Wanneer u Azure-boog hebt ingeschakeld op uw niet-Azure Kubernetes-clusters, is een nieuwe aanbeveling van Azure Security Center aanbiedingen voor het implementeren van de Azure Defender-extensie met slechts enkele muis klikken.
+
+Gebruik de aanbeveling (voor **Azure Arc enabled Kubernetes-clusters moet de uitbrei ding van Azure Defender zijn geïnstalleerd**) en de uitbrei ding voor het beveiligen van Kubernetes-clusters die zijn geïmplementeerd in andere cloud providers, maar niet op hun beheerde Kubernetes-Services.
+
+Deze integratie tussen Azure Security Center, Azure Defender en Azure Arc enabled Kubernetes biedt:
+
+- Eenvoudig inrichten van de Azure Defender-extensie aan niet-beveiligde Kubernetes-clusters van Azure (hand matig en op schaal)
+- Bewaking van de Azure Defender-extensie en de inrichtings status van de Azure Arc-Portal
+- Beveiligings aanbevelingen van Security Center worden gerapporteerd op de pagina nieuwe beveiliging van de Azure-Arc-Portal
+- Geïdentificeerde beveiligings Risico's van Azure Defender worden gerapporteerd op de pagina nieuwe beveiliging van de Azure-Arc-Portal
+- Azure Arc enabled Kubernetes-clusters zijn geïntegreerd in het Azure Security Center-platform en-ervaring
+
+Meer informatie over [het gebruik van Azure Defender voor Kubernetes met uw on-premises en multi-Cloud Kubernetes-clusters](defender-for-kubernetes-azure-arc.md).
+
+:::image type="content" source="media/defender-for-kubernetes-azure-arc/extension-recommendation.png" alt-text="De aanbeveling van Azure Security Center voor het implementeren van de Azure Defender-extensie voor Azure Arc enabled Kubernetes-clusters." lightbox="media/defender-for-kubernetes-azure-arc/extension-recommendation.png":::
+
+
+### <a name="11-azure-defender-alerts-deprecated"></a>11 Azure Defender-waarschuwingen afgeschaft
+
+De elf Azure Defender-waarschuwingen die hieronder worden weer gegeven, zijn afgeschaft.
+
+- Nieuwe waarschuwingen vervangen deze twee waarschuwingen en bieden een betere dekking:
+
+    | AlertType                | AlertDisplayName                                                         |
+    |--------------------------|--------------------------------------------------------------------------|
+    | ARM_MicroBurstDomainInfo | VOOR beeld-microburst Toolkit ' Get-AzureDomainInfo ' uitgevoerde functie gedetecteerd |
+    | ARM_MicroBurstRunbook    | VOOR beeld-microburst Toolkit ' Get-AzurePasswords ' uitgevoerde functie gedetecteerd  |
+    |                          |                                                                          |
+
+- Deze negen waarschuwingen hebben betrekking op een Azure Active Directory Identity Protection-connector (IPC) die al is afgeschaft:
+
+    | AlertType           | AlertDisplayName              |
+    |---------------------|-------------------------------|
+    | UnfamiliarLocation  | Onbekende aanmeldingseigenschappen |
+    | AnonymousLogin      | Anoniem IP-adres          |
+    | InfectedDeviceLogin | Aan malware gekoppeld IP-adres     |
+    | ImpossibleTravel    | Ongewoon traject               |
+    | MaliciousIP         | Schadelijk IP-adres          |
+    | LeakedCredentials   | Gelekte referenties            |
+    | PasswordSpray       | Wachtwoord spuit                |
+    | LeakedCredentials   | Azure AD-bedreigingsinformatie  |
+    | AADAI               | Azure AD AI                   |
+    |                     |                               |
+ 
+    > [!TIP]
+    > Deze negen IPC-waarschuwingen werden nooit Security Center-waarschuwingen. Ze maken deel uit van de Azure Active Directory (AAD) Identity Protection connector (IPC) die ze naar Security Center heeft verzonden. De afgelopen twee jaar zijn de enige klanten die deze waarschuwingen hebben gezien, organisaties die de export hebben geconfigureerd (van de connector naar ASC) in 2019 of eerder. AAD IPC heeft ze nog steeds weer gegeven in zijn eigen waarschuwings systemen en ze zijn nog steeds beschikbaar in azure Sentinel. De enige wijziging is dat deze niet meer wordt weer gegeven in Security Center.
+
+### <a name="two-recommendations-from-apply-system-updates-security-control-were-deprecated"></a>Er zijn twee aanbevelingen van het beveiligings beheer ' systeem updates Toep assen ' afgeschaft 
+
+De volgende twee aanbevelingen zijn afgeschaft en de wijzigingen kunnen leiden tot een geringe invloed op uw beveiligde Score:
+
+- **Uw machines moeten opnieuw worden opgestart om systeemupdates toe te passen**
+- **Bewakings agent moet op uw computers zijn geïnstalleerd**. Deze aanbeveling is gekoppeld aan on-premises machines en sommige logica wordt overgezet naar een andere aanbeveling, **log Analytics problemen met de agent status moeten worden opgelost op uw computers**
+
+We raden u aan om uw continue export-en werk stroom Automation-configuraties te controleren om te zien of deze aanbevelingen in hen zijn opgenomen. Daarnaast moeten alle Dash boards of andere bewakings hulpprogramma's die deze kunnen gebruiken, dienovereenkomstig worden bijgewerkt.
+
+Meer informatie over deze aanbevelingen vindt u op de [overzichts pagina met aanbevelingen voor beveiliging](recommendations-reference.md).
 
 
 ## <a name="march-2021"></a>2021 maart
@@ -489,7 +576,7 @@ Updates in december omvatten:
 Azure Security Center biedt twee Azure Defender-abonnementen voor SQL-servers:
 
 - **Azure Defender voor Azure SQL-databaseservers**: hiermee beveiligt u uw systeemeigen SQL-servers in Azure 
-- **Azure Defender voor SQL-servers op computers**: hiermee breidt u dezelfde beveiliging uit naar SQL-servers in hybride, multicloud- en on-premises omgevingen
+- **Azure Defender voor SQL-servers op computers** : breidt dezelfde beveiligingen uit op uw SQL-servers in hybride, multi-Cloud en on-premises omgevingen
 
 Voortaan beveiligt **Azure Defender voor SQL** uw databases en de bijbehorende gegevens, waar ze zich ook bevinden.
 
@@ -753,154 +840,3 @@ De aanbeveling **Er moeten systeemupdates worden geïnstalleerd op uw computers*
 U kunt nu zien of het standaard Security Center-beleid is toegewezen aan uw abonnementen op de pagina **Beveiligingsbeleid** van het Security Center in de Azure-portal.
 
 :::image type="content" source="media/release-notes/policy-assignment-info-per-subscription.png" alt-text="De pagina Beleidsbeheer van Azure Security Center met de standaardbeleidstoewijzingen":::
-
-## <a name="october-2020"></a>Oktober 2020
-
-De updates in oktober omvatten:
-- [Evaluatie van beveiligingsproblemen voor on-premises en multi-cloudmachines (preview)](#vulnerability-assessment-for-on-premise-and-multi-cloud-machines-preview)
-- [Azure Firewall-aanbeveling toegevoegd (preview)](#azure-firewall-recommendation-added-preview)
-- [Aanbeveling Geautoriseerde IP-bereiken moeten worden gedefinieerd voor Kubernetes Services is bijgewerkt met een snelle oplossing](#authorized-ip-ranges-should-be-defined-on-kubernetes-services-recommendation-updated-with-quick-fix)
-- [Het dashboard Naleving van regelgeving bevat nu een optie voor het verwijderen van standaarden](#regulatory-compliance-dashboard-now-includes-option-to-remove-standards)
-- [Tabel Microsoft.Security/securityStatuses is verwijderd uit Azure Resource Graph (ARG)](#microsoftsecuritysecuritystatuses-table-removed-from-azure-resource-graph-arg)
-
-### <a name="vulnerability-assessment-for-on-premise-and-multi-cloud-machines-preview"></a>Evaluatie van beveiligingsproblemen voor on-premises en multi-cloudmachines (preview)
-
-Met [Azure Defender voor servers](defender-for-servers-introduction.md) geïntegreerde evaluatie van beveiligingsproblemen (mogelijk gemaakt door Qualys) worden nu servers met Azure Arc gescand.
-
-Wanneer u Azure Arc op uw niet-Azure-machines hebt ingeschakeld, kan de geïntegreerde scanner voor beveiligingsproblemen handmatig en op schaal worden geïmplementeerd.
-
-Met deze update kunt u de mogelijkheden van **Azure Defender voor servers** gebruiken om uw beheerprogramma voor beveiligingsproblemen te consolideren voor al uw Azure- en niet-Azure-assets.
-
-Belangrijkste functies:
-
-- Bewaken van de inrichtingsstatus van de scanner voor de evaluatie van beveiligingsproblemen van Azure Arc-machines
-- Inrichten van de geïntegreerde agent voor de evaluatie van beveiligingsproblemen op niet-beveiligde Azure Arc-machines onder Windows en Linux (handmatig en op schaal)
-- Ontvangen en analyseren van gedetecteerde beveiligingsproblemen afkomstig van geïmplementeerde agents (handmatig en op schaal)
-- Geïntegreerde ervaring voor Azure-VM's en Azure Arc-machines
-
-[Meer informatie over het implementeren van de geïntegreerde scanner voor beveiligings problemen op uw hybride machines](deploy-vulnerability-assessment-vm.md#deploy-the-integrated-scanner-to-your-azure-and-hybrid-machines).
-
-[Meer informatie over servers met Azure Arc](../azure-arc/servers/index.yml).
-
-
-### <a name="azure-firewall-recommendation-added-preview"></a>Azure Firewall-aanbeveling toegevoegd (preview)
-
-Er is een nieuwe aanbeveling toegevoegd om al uw virtuele netwerken met Azure Firewall te beveiligen.
-
-De aanbeveling, **Virtuele netwerken moeten worden beveiligd met Azure Firewall**, adviseert u om de toegang tot uw virtuele netwerken te beperken en mogelijke dreigingen te voorkomen door gebruik te maken van Azure Firewall.
-
-Meer informatie over [Azure Firewall](https://azure.microsoft.com/services/azure-firewall/).
-
-
-### <a name="authorized-ip-ranges-should-be-defined-on-kubernetes-services-recommendation-updated-with-quick-fix"></a>De aanbeveling Geautoriseerde IP-bereiken moeten worden gedefinieerd voor Kubernetes Services is bijgewerkt met een snelle oplossing
-
-De aanbeveling **Geautoriseerde IP-bereiken moeten worden gedefinieerd voor Kubernetes Services** bevat nu een snelle oplossing.
-
-Raadpleeg [Aanbevelingen voor beveiliging: een naslaggids](recommendations-reference.md) voor meer informatie over deze aanbeveling en alle andere aanbevelingen van Security Center.
-
-:::image type="content" source="./media/release-notes/authorized-ip-ranges-recommendation.png" alt-text="Aanbeveling Geautoriseerde IP-bereiken moeten worden gedefinieerd voor Kubernetes Services met de snelle oplossing":::
-
-
-### <a name="regulatory-compliance-dashboard-now-includes-option-to-remove-standards"></a>Het dashboard Naleving van regelgeving bevat nu een optie voor het verwijderen van standaarden
-
-Het Dashboard Naleving van regelgeving van Security Center biedt inzicht in uw nalevingsstatus op basis van in hoeverre u aan specifieke nalevingsmechanismen en -vereisten voldoet.
-
-Het dashboard bevat een vaste set reglementaire standaarden. Als een van de opgegeven standaarden niet relevant is voor uw organisatie, is het nu een eenvoudig proces om ze te verwijderen uit de gebruikers interface voor een abonnement. Standaarden kunnen alleen worden verwijderd op het niveau van het *abonnement*, niet in het bereik van de beheergroep.
-
-Meer informatie vindt [u in een standaard verwijderen van uw dash board](update-regulatory-compliance-packages.md#remove-a-standard-from-your-dashboard).
-
-
-### <a name="microsoftsecuritysecuritystatuses-table-removed-from-azure-resource-graph-arg"></a>Tabel Microsoft.Security/securityStatuses is verwijderd uit Azure Resource Graph (ARG)
-
-Azure Resource Graph is een service in Azure. Het is ontworpen voor een efficiënte resourceverkenning en biedt de mogelijkheid query's op schaal uit te voeren binnen een bepaalde groep abonnementen, zodat u uw omgeving effectief kunt beheren. 
-
-Voor Azure Security Center kunt u gebruikmaken van ARG en de [Kusto Query Language (KQL)](/azure/data-explorer/kusto/query/) om query's uit te voeren op een breed scala aan postuurgegevens. Bijvoorbeeld:
-
-- De assetvoorraad maakt gebruik van ARG
-- Er is een voorbeeld van een ARG-query gedocumenteerd voor het [identificeren van accounts zonder dat MFA (meervoudige verificatie) is ingeschakeld](security-center-identity-access.md#identify-accounts-without-multi-factor-authentication-mfa-enabled)
-
-Binnen ARG zijn er tabellen met gegevens die u in uw query's kunt gebruiken.
-
-:::image type="content" source="./media/release-notes/azure-resource-graph-tables.png" alt-text="Azure Resource Graph Explorer en de beschikbare tabellen":::
-
-> [!TIP]
-> In de ARG-documentatie vindt u een overzicht van alle beschikbare tabellen in de [Azure Resource Graph-tabel en de resourcetypeverwijzing](../governance/resource-graph/reference/supported-tables-resources.md).
-
-Uit deze update is de tabel **Microsoft.Security/securityStatuses** verwijderd. De securityStatuses-API is nog steeds beschikbaar.
-
-De tabel Microsoft.Security/Assessments kan gebruikmaken van gegevensvervanging.
-
-Het belangrijkste verschil tussen Microsoft.Security/securityStatuses en Microsoft.Security/Assessments is dat de eerste een aggregatie van evaluaties toont en de tweede één record voor elke evaluatie bevat.
-
-Zo retourneert bijvoorbeeld Microsoft.Security/securityStatuses een resultaat met een matrix met twee policyAssessments:
-
-```
-{
-id: "/subscriptions/449bcidd-3470-4804-ab56-2752595 felab/resourceGroups/mico-rg/providers/Microsoft.Network/virtualNetworks/mico-rg-vnet/providers/Microsoft.Security/securityStatuses/mico-rg-vnet",
-name: "mico-rg-vnet",
-type: "Microsoft.Security/securityStatuses",
-properties:  {
-    policyAssessments: [
-        {assessmentKey: "e3deicce-f4dd-3b34-e496-8b5381bazd7e", category: "Networking", policyName: "Azure DDOS Protection Standard should be enabled",...},
-        {assessmentKey: "sefac66a-1ec5-b063-a824-eb28671dc527", category: "Compute", policyName: "",...}
-    ],
-    securitystateByCategory: [{category: "Networking", securityState: "None" }, {category: "Compute",...],
-    name: "GenericResourceHealthProperties",
-    type: "VirtualNetwork",
-    securitystate: "High"
-}
-```
-Microsoft.Security/Assessments daarentegen bevat een record voor elk van een dergelijke beleidsevaluatie. Dit werkt als volgt:
-
-```
-{
-type: "Microsoft.Security/assessments",
-id:  "/subscriptions/449bc1dd-3470-4804-ab56-2752595f01ab/resourceGroups/mico-rg/providers/Microsoft. Network/virtualNetworks/mico-rg-vnet/providers/Microsoft.Security/assessments/e3delcce-f4dd-3b34-e496-8b5381ba2d70",
-name: "e3deicce-f4dd-3b34-e496-8b5381ba2d70",
-properties:  {
-    resourceDetails: {Source: "Azure", Id: "/subscriptions/449bc1dd-3470-4804-ab56-2752595f01ab/resourceGroups/mico-rg/providers/Microsoft.Network/virtualNetworks/mico-rg-vnet"...},
-    displayName: "Azure DDOS Protection Standard should be enabled",
-    status: (code: "NotApplicable", cause: "VnetHasNOAppGateways", description: "There are no Application Gateway resources attached to this Virtual Network"...}
-}
-
-{
-type: "Microsoft.Security/assessments",
-id:  "/subscriptions/449bc1dd-3470-4804-ab56-2752595f01ab/resourcegroups/mico-rg/providers/microsoft.network/virtualnetworks/mico-rg-vnet/providers/Microsoft.Security/assessments/80fac66a-1ec5-be63-a824-eb28671dc527",
-name: "8efac66a-1ec5-be63-a824-eb28671dc527",
-properties: {
-    resourceDetails: (Source: "Azure", Id: "/subscriptions/449bc1dd-3470-4804-ab56-2752595f01ab/resourcegroups/mico-rg/providers/microsoft.network/virtualnetworks/mico-rg-vnet"...),
-    displayName: "Audit diagnostic setting",
-    status:  {code: "Unhealthy"}
-}
-```
-
-**Voorbeeld van het converteren van een bestaande ARG-query met behulp van securityStatuses om nu de tabel met evaluaties te kunnen gebruiken:**
-
-Query die verwijst naar SecurityStatuses:
-
-```kusto
-SecurityResources 
-| where type == 'microsoft.security/securitystatuses' and properties.type == 'virtualMachine'
-| where name in ({vmnames}) 
-| project name, resourceGroup, policyAssesments = properties.policyAssessments, resourceRegion = location, id, resourceDetails = properties.resourceDetails
-```
-
-Vervangingsquery voor de tabel met evaluaties:
-
-```kusto
-securityresources
-| where type == "microsoft.security/assessments" and id contains "virtualMachine"
-| extend resourceName = extract(@"(?i)/([^/]*)/providers/Microsoft.Security/assessments", 1, id)
-| extend source = tostring(properties.resourceDetails.Source)
-| extend resourceId = trim(" ", tolower(tostring(case(source =~ "azure", properties.resourceDetails.Id,
-source =~ "aws", properties.additionalData.AzureResourceId,
-source =~ "gcp", properties.additionalData.AzureResourceId,
-extract("^(.+)/providers/Microsoft.Security/assessments/.+$",1,id)))))
-| extend resourceGroup = tolower(tostring(split(resourceId, "/")[4]))
-| where resourceName in ({vmnames}) 
-| project resourceName, resourceGroup, resourceRegion = location, id, resourceDetails = properties.additionalData
-```
-
-Meer informatie vindt u via de volgende koppelingen:
-- [Query's maken met Azure Resource Graph Explorer](../governance/resource-graph/first-query-portal.md)
-- [Kusto-querytaal (KQL)](/azure/data-explorer/kusto/query/)

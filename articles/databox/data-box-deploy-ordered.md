@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 03/08/2021
 ms.author: alkohli
-ms.openlocfilehash: 281b22db692087f2876b4011563fee8c56bd476e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: aa3614aa3c4fbaec3611806406e5129379999bc3
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102522390"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106067138"
 ---
 # <a name="tutorial-order-azure-data-box"></a>Zelfstudie: Azure Data Box bestellen
 
@@ -790,7 +790,7 @@ Als u een Azure Data Box order wilt annuleren, voert u uit [`az databox job canc
    |resource-group [vereist]| De naam van de resourcegroep die is gekoppeld aan de bestelling die moet worden verwijderd. Een resourcegroep is een logische container voor resources die samen kunnen worden beheerd of geïmplementeerd. | "myresourcegroup"|
    |name [vereist]| De naam van de bestelling die moet worden verwijderd. | "mydataboxorder"|
    |reason [vereist]| De reden voor het annuleren van de bestelling. | "Ik heb onjuiste informatie ingevoerd en wil de bestelling annuleren." |
-   |ja| Niet vragen om bevestiging. | --yes (-y)| --yes -y |
+   |ja| Niet vragen om bevestiging. | --yes (-y)| 
    |debug| Informatie over foutopsporing opnemen in uitgebreide logboekregistratie | --debug |
    |help| Help-informatie weergeven voor deze opdracht. | --help -h |
    |only-show-errors| Alleen fouten weergeven, waarschuwingen onderdrukken. | --only-show-errors |
@@ -827,7 +827,7 @@ Als u een Azure Data Box order hebt geannuleerd, kunt u uitvoeren [`az databox j
    |resource-group [vereist]| De naam van de resourcegroep die is gekoppeld aan de bestelling die moet worden verwijderd. Een resourcegroep is een logische container voor resources die samen kunnen worden beheerd of geïmplementeerd. | "myresourcegroup"|
    |name [vereist]| De naam van de bestelling die moet worden verwijderd. | "mydataboxorder"|
    |abonnement| De naam of ID (GUID) van uw Azure-abonnement. | "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" |
-   |ja| Niet vragen om bevestiging. | --yes (-y)| --yes -y |
+   |ja| Niet vragen om bevestiging. | --yes (-y)|
    |debug| Informatie over foutopsporing opnemen in uitgebreide logboekregistratie | --debug |
    |help| Help-informatie weergeven voor deze opdracht. | --help -h |
    |only-show-errors| Alleen fouten weergeven, waarschuwingen onderdrukken. | --only-show-errors |

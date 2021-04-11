@@ -5,14 +5,14 @@ author: deborahc
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: how-to
-ms.date: 07/30/2019
+ms.date: 03/29/2021
 ms.author: dech
-ms.openlocfilehash: 829fb28577fbb89c031a3b972d3ee5e04c935e9f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 6041b58d5834afe3356778207083627d7bbe10d9
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102434998"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936978"
 ---
 # <a name="estimate-rus-using-the-azure-cosmos-db-capacity-planner"></a>Een raming van RU/s met behulp van de Azure Cosmos DB capaciteit planner
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -25,31 +25,34 @@ De capaciteits planner kan in twee modi worden gebruikt.
 
 |**Modus**  |**Beschrijving**  |
 |---------|---------|
-|Basic|Geeft een snelle en geschatte kosten van RU/s. In deze modus wordt uitgegaan van de standaard Azure Cosmos DB instellingen voor het indexerings beleid, de consistentie en andere para meters. <br/><br/>Gebruik de basis modus voor een snelle schatting op hoog niveau wanneer u een mogelijke werk belasting evalueert om op Azure Cosmos DB uit te voeren.|
-|Geavanceerd|Biedt een gedetailleerdere versie van RU/s en kosten, met de mogelijkheid om extra instellingen af te stemmen: indexerings beleid, consistentie niveau en andere para meters die van invloed zijn op de kosten en door voer. <br/><br/>Gebruik de geavanceerde modus wanneer u een schatting van RU/s voor een nieuw project hebt of een gedetailleerdere schatting wilt maken. |
+|Basic|Geeft een snelle en geschatte kosten van RU/s. In deze modus wordt uitgegaan van de standaard Azure Cosmos DB instellingen voor het indexerings beleid, de consistentie en andere para meters. <br/><br/>Gebruik de basis modus voor een snelle schatting op hoog niveau wanneer u een mogelijke werk belasting evalueert om op Azure Cosmos DB uit te voeren. Zie voor meer informatie hoe u [kosten kunt ramen met de basis modus](#basic-mode).|
+|Geavanceerd|Biedt een gedetailleerdere versie van RU/s en kosten, met de mogelijkheid om extra instellingen af te stemmen: indexerings beleid, consistentie niveau en andere para meters die van invloed zijn op de kosten en door voer. <br/><br/>Gebruik de geavanceerde modus wanneer u een schatting van RU/s voor een nieuw project hebt of een gedetailleerdere schatting wilt maken. Zie voor meer informatie hoe u [kosten kunt ramen met de geavanceerde modus](#advanced-mode).|
 
-
-## <a name="estimate-provisioned-throughput-and-cost-using-basic-mode"></a>Ingerichte door Voer en kosten ramen met de basis modus
-Als u een snelle schatting wilt maken voor uw werk belasting met behulp van de basis modus, gaat u naar de [capaciteits planner](https://cosmos.azure.com/capacitycalculator/). Voer de volgende para meters in op basis van uw workload: 
+## <a name="estimate-provisioned-throughput-and-cost-using-basic-mode"></a><a id="basic-mode"></a>Ingerichte door Voer en kosten ramen met de basis modus
+Als u een snelle schatting wilt maken voor uw werk belasting met behulp van de basis modus, gaat u naar de [capaciteits planner](https://cosmos.azure.com/capacitycalculator/). Voer de volgende para meters in op basis van uw workload:
 
 |**Invoer**  |**Beschrijving**  |
 |---------|---------|
+| API |Kies het API-type van uw account. |
 |Aantal regio's|Azure Cosmos DB is beschikbaar in alle Azure-regio's. Selecteer het aantal regio's dat vereist is voor uw werk belasting. U kunt elk gewenst aantal regio's koppelen aan uw Cosmos-account. Zie [globale distributie](distribute-data-globally.md) in azure Cosmos DB voor meer informatie.|
 |Schrijfbewerkingen in meerdere regio's|Als u [schrijf bewerkingen met meerdere regio's](distribute-data-globally.md#key-benefits-of-global-distribution)inschakelt, kan uw toepassing lezen en schrijven naar elke Azure-regio. Als u het schrijven van meerdere regio's uitschakelt, kan uw toepassing gegevens naar één regio schrijven. <br/><br/> Schakel schrijf bewerkingen in meerdere regio's in als u verwacht dat u een actieve werk belasting hebt waarbij schrijf bewerkingen met een lage latentie in verschillende regio's vereist zijn. Bijvoorbeeld een IOT-workload waarmee gegevens naar de Data Base worden geschreven op grote volumes in verschillende regio's. <br/><br/> Met meerdere regio's schrijft u gegarandeerd 99,999% Beschik baarheid voor lezen en schrijven. Voor schrijf bewerkingen met meerdere regio's is meer door Voer vereist in vergelijking met de enkele schrijf regio's. Zie [How RUs verschilt voor een artikel met enkele en meerdere schrijf bewerkingen voor](optimize-cost-regions.md) meer informatie.|
-|Totaal aantal opgeslagen gegevens (per regio)|Het totale aantal geschatte gegevens dat is opgeslagen in GB in één regio.|
+|Totale hoeveelheid gegevens die zijn opgeslagen in transactionele Store |Totale geschatte opgeslagen gegevens (GB) in het transactionele archief in één regio.|
+|Totaal aantal gegevens opgeslagen in de analytische opslag | Deze optie **wordt weer gegeven** als u de optie **analyse archief gebruiken** inschakelt. Dit vertegenwoordigt de totale geschatte opgeslagen gegevens (GB) in het analytische archief in één regio.  |
 |Itemgrootte|De geschatte grootte van het gegevens item (bijvoorbeeld document), variërend van 1 KB tot 2 MB. |
-|Lees bewerkingen per regio|Aantal verwachte Lees bewerkingen per seconde. |
-|Schrijf bewerkingen/sec per regio|Aantal schrijf bewerkingen dat wordt verwacht per seconde. |
+|Lees bewerkingen per regio|Het aantal lees bewerkingen dat per seconde wordt verwacht. |
+|Gemaakte/sec per regio|Aantal gemaakte bewerkingen dat per seconde wordt verwacht. |
+|Updates per regio|Aantal bijwerk bewerkingen verwacht per seconde. |
+|Verwijderde/sec. per regio|Het aantal verwijderings bewerkingen dat wordt verwacht per seconde. |
 
-Nadat u de vereiste gegevens hebt ingevuld, selecteert u **berekenen**. Op het tabblad **kosten raming** worden de totale kosten voor opslag en ingerichte door Voer weer gegeven. U kunt de koppeling **Details weer geven** op dit tabblad uitsplitsing van de door Voer die is vereist voor lees-en schrijf aanvragen. Telkens wanneer u de waarde van een veld wijzigt, selecteert u **berekenen** om de geschatte kosten opnieuw te berekenen. 
+Nadat u de vereiste gegevens hebt ingevuld, selecteert u **berekenen**. Op het tabblad **kosten raming** worden de totale kosten voor opslag en ingerichte door Voer weer gegeven. U kunt de koppeling **Details weer geven** op dit tabblad uitsplitsing van de door Voer die vereist is voor verschillende ruwe aanvragen uitsplitsen. Telkens wanneer u de waarde van een veld wijzigt, selecteert u **berekenen** om de geschatte kosten opnieuw te berekenen.
 
-:::image type="content" source="./media/estimate-ru-with-capacity-planner/basic-mode.png" alt-text="Basis modus voor capaciteits planner":::
+:::image type="content" source="./media/estimate-ru-with-capacity-planner/basic-mode.png" alt-text="Basis modus voor capaciteits planner" border="true":::
 
-## <a name="estimate-provisioned-throughput-and-cost-using-advanced-mode"></a>Ingerichte door Voer en kosten ramen met geavanceerde modus
+## <a name="estimate-provisioned-throughput-and-cost-using-advanced-mode"></a><a id="advanced-mode"></a>Ingerichte door Voer en kosten ramen met geavanceerde modus
 
-In de geavanceerde modus kunt u meer instellingen opgeven die van invloed zijn op de RU/s-schatting. Als u deze optie wilt gebruiken, navigeert u naar de [capaciteits planner](https://cosmos.azure.com/capacitycalculator/) en meldt u zich aan bij het hulp programma met een account dat u gebruikt voor Azure. De aanmeldings optie is beschikbaar in de rechter bovenhoek. 
+In de geavanceerde modus kunt u meer instellingen opgeven die van invloed zijn op de RU/s-schatting. Als u deze optie wilt gebruiken, navigeert u naar de [capaciteits planner](https://cosmos.azure.com/capacitycalculator/) en **meldt u zich** aan bij het hulp programma met een account dat u gebruikt voor Azure. De aanmeldings optie is beschikbaar in de rechter bovenhoek.
 
-Nadat u zich hebt aangemeld, ziet u aanvullende velden vergeleken met de velden in de standaard modus. Voer de aanvullende para meters in op basis van uw workload. 
+Nadat u zich hebt aangemeld, ziet u aanvullende velden vergeleken met de velden in de standaard modus. Voer de aanvullende para meters in op basis van uw workload.
 
 |**Invoer**  |**Beschrijving**  |
 |---------|---------|
@@ -58,13 +61,18 @@ Nadat u zich hebt aangemeld, ziet u aanvullende velden vergeleken met de velden 
 |Schrijfbewerkingen in meerdere regio's|Als u [schrijf bewerkingen met meerdere regio's](distribute-data-globally.md#key-benefits-of-global-distribution)inschakelt, kan uw toepassing lezen en schrijven naar elke Azure-regio. Als u het schrijven van meerdere regio's uitschakelt, kan uw toepassing gegevens naar één regio schrijven. <br/><br/> Schakel schrijf bewerkingen in meerdere regio's in als u verwacht dat u een actieve werk belasting hebt waarbij schrijf bewerkingen met een lage latentie in verschillende regio's vereist zijn. Bijvoorbeeld een IOT-workload waarmee gegevens naar de Data Base worden geschreven op grote volumes in verschillende regio's. <br/><br/> Met meerdere regio's schrijft u gegarandeerd 99,999% Beschik baarheid voor lezen en schrijven. Voor schrijf bewerkingen met meerdere regio's is meer door Voer vereist in vergelijking met de enkele schrijf regio's. Zie [How RUs verschilt voor een artikel met enkele en meerdere schrijf bewerkingen voor](optimize-cost-regions.md) meer informatie.|
 |Standaard consistentie|Azure Cosmos DB ondersteunt vijf consistentie niveaus om ontwikkel aars in staat te stellen de verhouding tussen consistentie, Beschik baarheid en latentie-afwegingen te verdelen. Zie het artikel [consistentie niveaus](consistency-levels.md) voor meer informatie. <br/><br/> Azure Cosmos DB maakt standaard gebruik van sessie consistentie, waardoor u de mogelijkheid biedt om uw eigen schrijf bewerkingen in een sessie te lezen. <br/><br/> Als u een sterke of gebonden verouderd wilt kiezen, moeten dubbele de vereiste RU/s voor lees bewerkingen worden uitgevoerd, vergeleken met sessie, consistent voor voegsel en uiteindelijke consistentie. Sterke consistentie met meerdere regio's schrijven wordt niet ondersteund en wordt automatisch standaard ingesteld op enkelvoudige schrijf bewerkingen met sterke consistentie. |
 |Indexeringsbeleid|Azure Cosmos DB [indexeert standaard alle eigenschappen](index-policy.md) in alle items voor flexibele en efficiënte query's (wijst toe aan het beleid voor **automatische** indexering). <br/><br/> Als u op **uit** klikt, worden geen van de eigenschappen geïndexeerd. Dit resulteert in de laagste RU-kosten voor schrijf bewerkingen. Selecteer beleid **uitschakelen** als u verwacht dat alleen [Lees bewerkingen](/dotnet/api/microsoft.azure.cosmos.container.readitemasync) (sleutel waarde opzoeken) en/of schrijf bewerkingen, en geen query's. <br/><br/> Met het aangepaste indexerings beleid kunt u specifieke eigenschappen uit de index opnemen of uitsluiten voor een lagere schrijf doorvoer en opslag. Zie het [Indexing-beleid](index-overview.md) en de voor [beelden van beleids regels](how-to-manage-indexing-policy.md#indexing-policy-examples) voor het indexeren van beleid voor meer informatie.|
-|Totaal aantal opgeslagen gegevens (per regio)|Het totale aantal geschatte gegevens dat is opgeslagen in GB in één regio.|
+|Totale hoeveelheid gegevens die zijn opgeslagen in transactionele Store |Totale geschatte opgeslagen gegevens (GB) in het transactionele archief in één regio.|
+|Totaal aantal gegevens opgeslagen in de analytische opslag | Deze optie **wordt weer gegeven** als u de optie **analyse archief gebruiken** inschakelt. Dit vertegenwoordigt de totale geschatte opgeslagen gegevens (GB) in het analytische archief in één regio.  |
 |Werkbelasting modus|Selecteer **constant** als uw workload-volume een constante is. <br/><br/> Selecteer **variabele** als uw werkbelasting volume na verloop van tijd verandert.  Bijvoorbeeld gedurende een specifieke dag of maand. <br/><br/> De volgende instellingen zijn beschikbaar als u de optie variabele workload kiest:<ul><li>Percentage tijd bij piek: percentage van de tijd in een maand waarin de werk belasting piek (hoogste) door Voer vereist. <br/><br/> Als u bijvoorbeeld een werk belasting hebt met een hoge activiteit tijdens de 9:00-18:00 uur voor werk dagen, is het percentage van de tijd bij piek: 45 uur bij piek/730 uur/maand = ~ 6%.<br/><br/></li><li>Lees bewerkingen per seconde op basis van piek waarde-aantal lees bewerkingen verwacht per seconde bij piek.</li><li>Schrijf bewerkingen/sec per regio op piek: aantal schrijf bewerkingen verwacht per seconde bij piek.</li><li>Lees bewerkingen per seconde voor minder piek: aantal lees bewerkingen dat per seconde wordt verwacht tijdens de piek.</li><li>Schrijf bewerkingen per seconde op piek waarde-aantal schrijf bewerkingen die per seconde worden verwacht tijdens de piek.</li></ul>Met piek-en rustige intervallen kunt u uw kosten optimaliseren door [uw ingerichte door Voer op een programmatische manier](set-throughput.md#update-throughput-on-a-database-or-a-container) omhoog en omlaag te schalen.|
 |Itemgrootte|De grootte van het gegevens item (bijvoorbeeld document), variërend van 1 KB tot 2 MB. <br/><br/>U kunt ook een voor beeld van een **JSON-document uploaden** voor een nauw keuriger schatting.<br/><br/>Als uw werk belasting meerdere typen items bevat (met verschillende JSON-inhoud) in dezelfde container, kunt u meerdere JSON-documenten uploaden en de schatting ophalen. Gebruik de knop **Nieuw item toevoegen** om meerdere voor beeld-JSON-documenten toe te voegen.|
+|Lees bewerkingen per regio|Het aantal lees bewerkingen dat per seconde wordt verwacht. |
+|Gemaakte/sec per regio|Aantal gemaakte bewerkingen dat per seconde wordt verwacht. |
+|Updates per regio|Aantal bijwerk bewerkingen verwacht per seconde. |
+|Verwijderde/sec. per regio|Het aantal verwijderings bewerkingen dat wordt verwacht per seconde. |
 
-U kunt ook de knop **schatting opslaan** gebruiken om een CSV-bestand met de huidige schatting te downloaden. 
+U kunt ook de knop **schatting opslaan** gebruiken om een CSV-bestand met de huidige schatting te downloaden.
 
-:::image type="content" source="./media/estimate-ru-with-capacity-planner/advanced-mode.png" alt-text="Geavanceerde modus voor capaciteits planner":::
+:::image type="content" source="./media/estimate-ru-with-capacity-planner/advanced-mode.png" alt-text="Geavanceerde modus voor capaciteits planner" border="true":::
 
 De prijzen die in de Azure Cosmos DB capaciteits planner worden weer gegeven, zijn schattingen op basis van de open bare prijs tarieven voor door Voer en opslag. Alle prijzen worden weer gegeven in Amerikaanse dollars. Raadpleeg de [pagina met prijzen voor Azure Cosmos DB](https://azure.microsoft.com/pricing/details/cosmos-db/) om alle tarieven per regio weer te geven.  
 

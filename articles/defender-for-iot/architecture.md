@@ -1,15 +1,15 @@
 ---
-title: Architectuur van oplossing zonder agent
+title: Wat is architectuur zonder agents
 description: Meer informatie over Azure Defender voor IoT-architectuur zonder agents en informatie stroom.
 ms.topic: overview
 ms.date: 1/25/2021
 ms.author: shhazam
-ms.openlocfilehash: 99ccd0597fddaa86a2452160fc2cbfdadab87a1b
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: bd639ca2656b901bd87fccf36fb4a5d90d3bf918
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104784863"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106383538"
 ---
 # <a name="azure-defender-for-iot-architecture"></a>Azure Defender voor IoT-architectuur
 
@@ -107,7 +107,7 @@ De Defender voor IoT-Portal in azure wordt gebruikt om u te helpen:
 
 - Update van Threat Intelligence-pakketten
 
-## <a name="see-also"></a>Zie ook
+## <a name="next-steps"></a>Volgende stappen
 
 [Veelgestelde vragen over Defender voor IoT](resources-frequently-asked-questions.md)
 

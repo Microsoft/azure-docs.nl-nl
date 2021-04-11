@@ -8,12 +8,12 @@ ms.service: media-services
 ms.topic: conceptual
 ms.date: 03/25/2021
 ms.author: inhenkel
-ms.openlocfilehash: c82c646e4befef9d409bb8e59a442642913ada22
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: f207cefaf333fc21eb56dc15b1e4d191bf8e5fae
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105641510"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106108299"
 ---
 # <a name="live-streaming-with-azure-media-services-v3"></a>Live streamen met Azure Media Services v3
 
@@ -36,18 +36,18 @@ In dit artikel vindt u een overzicht en richt lijnen voor live streamen met Medi
 
 ## <a name="dynamic-packaging-and-delivery"></a>Dynamische verpakking en levering
 
-Met Media Services kunt u gebruikmaken van [dynamische pakketten](dynamic-packaging-overview.md), waarmee u uw live streams kunt bekijken en uitzenden in [MPEG Dash-, HLS-en Smooth streaming-indelingen](https://en.wikipedia.org/wiki/Adaptive_bitrate_streaming) van de contributie feed die naar de service wordt verzonden. Uw viewers kunnen de Live Stream afspelen met een HLS, DASH of Smooth Streaming compatibele spelers. U kunt [Azure Media Player](https://amp.azure.net/libs/amp/latest/docs/index.html) in uw web-of mobiele toepassingen gebruiken om uw stream in een van deze protocollen te leveren.
+Met Media Services kunt u gebruikmaken van [dynamische pakketten](encode-dynamic-packaging-concept.md), waarmee u uw live streams kunt bekijken en uitzenden in [MPEG Dash-, HLS-en Smooth streaming-indelingen](https://en.wikipedia.org/wiki/Adaptive_bitrate_streaming) van de contributie feed die naar de service wordt verzonden. Uw viewers kunnen de Live Stream afspelen met een HLS, DASH of Smooth Streaming compatibele spelers. U kunt [Azure Media Player](https://amp.azure.net/libs/amp/latest/docs/index.html) in uw web-of mobiele toepassingen gebruiken om uw stream in een van deze protocollen te leveren.
 
 ## <a name="dynamic-encryption"></a>Dynamische versleuteling
 
-Dynamische versleuteling biedt u de mogelijkheid om uw Live of on-demand inhoud dynamisch te versleutelen met AES-128 of een van de drie belangrijkste digital rights management (DRM)-systemen: micro soft PlayReady, Google Widevine en Apple FairPlay. Media Services biedt ook een service voor het leveren van AES-sleutels en DRM-licenties (PlayReady, Widevine en FairPlay) aan geautoriseerde klanten. Zie [dynamische versleuteling](content-protection-overview.md) voor meer informatie.
+Dynamische versleuteling biedt u de mogelijkheid om uw Live of on-demand inhoud dynamisch te versleutelen met AES-128 of een van de drie belangrijkste digital rights management (DRM)-systemen: micro soft PlayReady, Google Widevine en Apple FairPlay. Media Services biedt ook een service voor het leveren van AES-sleutels en DRM-licenties (PlayReady, Widevine en FairPlay) aan geautoriseerde klanten. Zie [dynamische versleuteling](drm-content-protection-concept.md) voor meer informatie.
 
 > [!NOTE]
 > Widevine is een service van Google Inc. en is onderworpen aan de servicevoorwaarden en het privacybeleid van Google Inc.
 
 ## <a name="dynamic-filtering"></a>Dynamisch filteren
 
-Dynamische filtering wordt gebruikt voor het beheren van het aantal sporen, indelingen, bitrates en presentatie tijd Vensters die worden verzonden naar de spelers. Zie [filters en dynamische manifesten](filters-dynamic-manifest-overview.md)voor meer informatie.
+Dynamische filtering wordt gebruikt voor het beheren van het aantal sporen, indelingen, bitrates en presentatie tijd Vensters die worden verzonden naar de spelers. Zie [filters en dynamische manifesten](filters-dynamic-manifest-concept.md)voor meer informatie.
 
 ## <a name="live-event-types"></a>Live gebeurtenis typen
 

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 11/05/2020
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: e9f44ea2af832729a47bf4b719b90f9b14e401b9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: fd5d8c3e2c6e4ee5556568ebd23ac99b48300e9d
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102555853"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106382008"
 ---
 # <a name="tutorial-enable-disaster-recovery-for-windows-vms"></a>Zelfstudie: Herstel na noodgeval inschakelen voor virtuele Windows-machines
 
@@ -22,10 +22,10 @@ In deze zelfstudie ziet u hoe u herstel na noodgevallen kunt instellen voor virt
 
 > [!div class="checklist"]
 > * Herstel na noodgevallen inschakelen voor een virtuele Windows-machine
-> * Noodherstelanalyse uitvoeren
+> * Een nood herstel analyse uitvoeren om te controleren of deze werkt zoals verwacht
 > * De virtuele machine niet meer repliceren na de analyse
 
-Wanneer u replicatie voor een virtuele machine inschakelt, wordt de Site Recovery Mobility-service-extensie geïnstalleerd op de virtuele machine en wordt deze geregistreerd bij [Azure Site Recovery](../../site-recovery/site-recovery-overview.md). Tijdens de replicatie worden schrijfbewerkingen van de VM-schijf verzonden naar een cache-opslagaccount in de bronregio. Er worden gegevens naar de doelregio verzonden en er worden herstelpunten gegenereerd op basis van de gegevens.  Wanneer u een virtuele machine overbrengt tijdens herstel na noodgeval, wordt een herstelpunt gebruikt om de virtuele machine in de doelregio te herstellen.
+Wanneer u replicatie voor een virtuele machine inschakelt, wordt de Site Recovery Mobility-service-extensie geïnstalleerd op de virtuele machine en wordt deze geregistreerd bij [Azure Site Recovery](../../site-recovery/site-recovery-overview.md). Tijdens de replicatie worden schrijfbewerkingen van de VM-schijf verzonden naar een cache-opslagaccount in de bronregio. Er worden gegevens naar de doelregio verzonden en er worden herstelpunten gegenereerd op basis van de gegevens.  Wanneer u een virtuele machine tijdens nood herstel failover, wordt een herstel punt gebruikt voor het maken van een virtuele machine in de doel regio.
 
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/pricing/free-trial/) aan voordat u begint.
 
@@ -58,27 +58,69 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
     AzureSiteRecovery-tag | Hiermee hebt u toegang tot de Site Recovery-service in een willekeurige regio.
     GuestAndHybridManagement | Gebruik deze optie als u de Site Recovery Mobility-agent automatisch wilt upgraden die wordt uitgevoerd op virtuele machines die zijn ingeschakeld voor replicatie.
 5.  Installeer de nieuwste Windows-updates op virtuele Windows-machines om er zeker van te zijn dat virtuele machines over de meest recente basiscertificaten beschikken.
- 
-## <a name="enable-disaster-recovery"></a>Herstel na noodgevallen inschakelen
+
+## <a name="create-a-vm-and-enable-disaster-recovery"></a>Een virtuele machine maken en nood herstel inschakelen
+
+U kunt eventueel herstel na nood gevallen inschakelen wanneer u een VM maakt.
+
+1. [Maak een virtuele machine](quick-create-portal.md).
+2. Selecteer **nood herstel inschakelen** op het tabblad **beheer** .
+3. Selecteer in **secundaire regio** de doel regio waarnaar u een virtuele machine voor herstel na nood geval wilt repliceren.
+4. Selecteer bij **secundair abonnement** het doel abonnement waarin de doel-VM wordt gemaakt. De doel-VM wordt gemaakt wanneer u een failover van de bron-VM van de bron regio naar de doel regio maakt.
+5. Selecteer in **Recovery Services kluis** de kluis die u wilt gebruiken voor de replicatie. Als u geen kluis hebt, selecteert u **nieuwe maken**. Selecteer een resource groep waarin de kluis moet worden geplaatst en geef een kluis naam op.
+6. In **site Recovery beleid**, behoud het standaard beleid of selecteer **nieuwe maken** om aangepaste waarden in te stellen.
+
+    - Herstel punten worden gemaakt op basis van moment opnamen van VM-schijven die op een bepaald moment worden uitgevoerd. Wanneer u een failover voor een virtuele machine doorvoert, gebruikt u een herstel punt om de virtuele machine in de doel regio te herstellen. 
+    - Er wordt om de vijf minuten een crash consistent herstel punt gemaakt. Deze instelling kan niet worden gewijzigd. Een crash consistente moment opname legt gegevens vast die zich op de schijf bevonden toen de moment opname werd gemaakt. Het bevat niets in het geheugen. 
+    - Standaard Site Recovery blijven crash consistente herstel punten gedurende 24 uur. U kunt een aangepaste waarde tussen 0 en 72 uur instellen.
+    - Er wordt om de vier uur een app-consistente moment opname gemaakt. Een app-consistente moment opname 
+    - Standaard worden herstel punten gedurende 24 uur door Site Recovery opgeslagen.
+
+7. Geef in **beschikbaarheids opties** op of de VM als zelfstandig, in een beschikbaarheids zone of in een beschikbaarheidsset wordt geïmplementeerd.
+
+    ::: Image Type = "content" source = "./media/tutorial-Disaster-Recovery/create-vm.png" ALT-tekst = "replicatie inschakelen op de pagina eigenschappen van de VM-beheer."
+
+8. De virtuele machine is gemaakt.
+
+## <a name="enable-disaster-recovery-for-an-existing-vm"></a>Herstel na nood geval voor een bestaande virtuele machine inschakelen
+
+Als u herstel na nood gevallen wilt inschakelen op een bestaande virtuele machine in plaats van voor een nieuwe virtuele machine, gebruikt u deze procedure.
 
 1. Open de pagina VM-eigenschappen in Azure Portal.
 2. Selecteer in **Bewerkingen** de optie **Herstel na noodgeval**.
-3. Selecteer in **Basis** > **Doelregio** de regio waarnaar u de VM wilt repliceren. De bron- en doelregio's moeten zich in dezelfde Azure Active Directory-tenant bevinden.
-4. Klik op **Replicatie beoordelen en starten**.
 
-    :::image type="content" source="./media/tutorial-disaster-recovery/disaster-recovery.png" alt-text="Schakel replicatie in op de pagina voor herstel na noodgevallen van VM-eigenschappen.":::
+    :::image type="content" source="./media/tutorial-disaster-recovery/existing-vm.png" alt-text="Open opties voor nood herstel voor een bestaande virtuele machine.":::
 
-5. Controleer de instellingen in **Replicatie beoordelen en starten**:
+3. Als de virtuele machine in een beschikbaarheids zone is geïmplementeerd, kunt u in **basis beginselen** het herstel na nood gevallen tussen beschikbaarheids zones selecteren.
+4. Selecteer in **doel regio** de regio waarnaar u de virtuele machine wilt repliceren. De bron- en doelregio's moeten zich in dezelfde Azure Active Directory-tenant bevinden.
 
-    - **Doelinstellingen**. Site Recovery komt standaard overeen met de broninstellingen om doelresources te maken.
-    - **Opslaginstellingen - cache-opslagaccount**. Recovery maakt gebruik van een opslagaccount in de bronregio. Wijzigingen in de bron-VM worden in de cache van dit account opgeslagen voordat ze worden gerepliceerd naar de doellocatie.
-    - **Opslaginstellingen - replica-schijf**. Met Site Recovery worden standaard replicaschijven in de doelregio gemaakt om de beheerde schijven van de bron-VM's met hetzelfde opslagtype (Standard of Premium) te spiegelen.
-    - **Replicatie-instellingen**. Toont de kluisdetails en geeft aan dat herstelpunten die door Site Recovery zijn gemaakt 24 uur worden bewaard.
-    - **Extensie-instellingen**. Geeft aan dat Site Recovery updates beheert voor de Site Recovery Mobility Service-extensie die is geïnstalleerd op VM's die u repliceert. Het updateproces wordt beheerd door aangegeven Azure Automation-account.
+    :::image type="content" source="./media/tutorial-disaster-recovery/basics.png" alt-text="Stel de basis opties voor herstel na nood gevallen in voor een virtuele machine.":::
+
+5. Selecteer **Volgende: Geavanceerde instellingen**.
+6. In **Geavanceerde instellingen** kunt u instellingen bekijken en waarden wijzigen in aangepaste instellingen. Site Recovery komt standaard overeen met de broninstellingen om doelresources te maken.
+
+    - **Doel abonnement**. Het abonnement waarin de doel-VM is gemaakt na een failover.
+    - **Doel-VM-resource groep**. De resource groep waarin de doel-VM is gemaakt na een failover.
+    - **Virtueel netwerk van doel**. Het virtuele Azure-netwerk waarin de doel-VM zich bevindt als deze wordt gemaakt na een failover.
+    - **Beschik baarheid doel**. Wanneer de doel-VM wordt gemaakt als één instantie, in een beschikbaarheidsset of een beschikbaarheids zone.
+    - **Proximity-plaatsing**. Selecteer, indien van toepassing, de plaatsings groep waarin de doel-VM zich bevindt na een failover.
+    - **Opslaginstellingen - cache-opslagaccount**. Herstel maakt gebruik van een opslag account in de bron regio als tijdelijke gegevens opslag. Wijzigingen in de bron-VM worden in de cache van dit account opgeslagen voordat ze worden gerepliceerd naar de doellocatie.
+        - Er wordt standaard één cache opslag account gemaakt per kluis en opnieuw gebruikt.
+        - U kunt een ander opslag account selecteren als u het cache-account voor de virtuele machine wilt aanpassen.
+    - **Opslag instellingen-door de replica beheerde schijf**. Standaard maakt Site Recovery replica beheerde schijven in de doel regio.
+        -  De doel-beheerde schijf spiegelt standaard de door de virtuele machine beheerde schijven met hetzelfde opslag type (standaard HDD/SSD of Premium SSD).
+        - U kunt het opslag type naar wens aanpassen.
+    - **Replicatie-instellingen**. Toont de kluis waarin de virtuele machine zich bevindt en het replicatie beleid dat wordt gebruikt voor de virtuele machine. Standaard worden de herstel punten die zijn gemaakt door Site Recovery voor de virtuele machine 24 uur bewaard.
+    - **Extensie-instellingen**. Geeft aan dat Site Recovery updates beheert voor de Site Recovery Mobility Service-extensie die is geïnstalleerd op VM's die u repliceert.
+        - Het updateproces wordt beheerd door aangegeven Azure Automation-account.
+        - U kunt het Automation-account aanpassen.
 
     :::image type="content" source="./media/tutorial-disaster-recovery/settings-summary.png" alt-text="Pagina met een samenvatting van de doel- en replicatie-instellingen.":::
 
-2. Selecteer **Replicatie starten**. De implementatie wordt gestart en Site Recovery begint met het maken van doelresources. U kunt de replicatievoortgang bewaken via Meldingen.
+
+6. Selecteer **evalueren en replicatie starten**.
+
+7. Selecteer **Replicatie starten**. De implementatie wordt gestart en Site Recovery begint met het maken van doelresources. U kunt de replicatievoortgang bewaken via Meldingen.
 
     :::image type="content" source="./media/tutorial-disaster-recovery/notifications.png" alt-text="Melding voor voortgang van replicatie.":::
 

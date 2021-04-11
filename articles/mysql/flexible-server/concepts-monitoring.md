@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 9/21/2020
 ms.openlocfilehash: 660e87e0c09d1bf052b20f60276a30e572ab825b
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105110471"
 ---
 # <a name="monitor-azure-database-for-mysql-flexible-servers-with-built-in-metrics"></a>Azure Database for MySQL flexibele servers bewaken met ingebouwde metrische gegevens
@@ -31,7 +31,7 @@ Alle metrische gegevens van Azure hebben een frequentie van één minuut, en elk
 ### <a name="list-of-metrics"></a>Lijst met metrische gegevens
 Deze metrische gegevens zijn beschikbaar voor Azure Database for MySQL:
 
-|Weergave naam voor metrische gegevens|Metrisch|Eenheid|Beschrijving|
+|Weergave naam voor metrische gegevens|Metrisch|Eenheid|Description|
 |---|---|---|---|
 |CPU-percentage van host|cpu_percent|Percentage|Het percentage CPU-gebruik op de server, inclusief het CPU-gebruik van zowel de werk belasting van de klant als de Azure MySQL-processen|
 |Host-netwerk in |network_bytes_ingress|Bytes|Binnenkomend netwerk verkeer op de server, inclusief verkeer van zowel de klanten database als Azure MySQL-functies, zoals replicatie, bewaking, logboeken, enzovoort.|

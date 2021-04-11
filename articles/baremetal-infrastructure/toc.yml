@@ -6,13 +6,11 @@
       href: concepts-baremetal-infrastructure-overview.md
     - name: Inzicht in de voorwaarden
       href: know-baremetal-terms.md
-    - name: BareMetal instantie-eenheden verbinden in azure
+    - name: BareMetal-instanties in azure verbinden
       displayName: 'Azure CLI, az baremetalinstance, az baremetalinstance restart'
       href: connect-baremetal-infrastructure.md
 - name: Workloads
   items:
-    - name: BareMetal-workloadtypen
-      href: /azure/virtual-machines/workloads/sap/get-started?context=/azure/baremetal-infrastructure/workloads/sap/context/context
     - name: SAP HANA op Azure (grote exemplaren)
       items:
         - name: Certificering

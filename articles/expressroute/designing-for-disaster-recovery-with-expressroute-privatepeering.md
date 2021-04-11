@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: article
 ms.date: 03/22/2021
 ms.author: duau
-ms.openlocfilehash: 3da044057784763df8d071af6c101f7baffbefc6
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: d0aa9e8bfd565eeb7599d52adc0ac5b854e750bb
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105562304"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105937223"
 ---
 # <a name="designing-for-disaster-recovery-with-expressroute-private-peering"></a>Ontwerpen voor herstel na nood gevallen met persoonlijke ExpressRoute-peering
 
@@ -47,7 +47,7 @@ Als u echter taak verdeling van verkeer via Geo-redundante parallelle paden hebt
 
 ### <a name="different-metros"></a>Verschillende metro lijnen
 
-Wanneer u verschillende metro lijnen gebruikt voor redundantie, moet de secundaire locatie zich in dezelfde [geo-politieke regio](expressroute-locations-providers.md#locations)bevinden. Als u een locatie buiten de geo-politieke regio wilt kiezen, moet u Premium SKU voor beide circuits in de parallelle paden gebruiken. Het voor deel van deze configuratie is de kans op een natuur ramp waardoor beide koppelingen veel lager zijn, maar de kosten voor end-to-end van de latentie verhogen.
+Wanneer u verschillende metro lijnen voor redundantie gebruikt, moet u de secundaire locatie in dezelfde [geo-politieke regio](expressroute-locations-providers.md#locations)selecteren. Als u een locatie buiten de geo-politieke regio wilt kiezen, moet u Premium SKU voor beide circuits in de parallelle paden gebruiken. Het voor deel van deze configuratie is de kans op een natuur ramp waardoor beide koppelingen veel lager zijn, maar de kosten van verhoogde latentie end-to-end.
 
 In dit artikel wordt beschreven hoe u problemen kunt aanpakken bij het configureren van geo-redundante paden.
 

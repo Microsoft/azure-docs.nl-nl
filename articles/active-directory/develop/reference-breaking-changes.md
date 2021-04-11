@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: reference
-ms.date: 2/22/2021
+ms.date: 3/30/2021
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: c5e7f556f37a1d6d53e0a938490f1099a7be776a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: eb75450527fc31d6ea4a9f9d60d676718ad79bda
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101647418"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106167580"
 ---
 # <a name="whats-new-for-authentication"></a>Wat is er nieuw voor verificatie?
 
@@ -35,9 +35,21 @@ Het verificatie systeem wijzigt en voegt voortdurend functies toe om de naleving
 
 ## <a name="upcoming-changes"></a>Aanstaande wijzigingen
 
+### <a name="bug-fix-azure-ad-will-no-longer-url-encode-the-state-parameter-twice"></a>Fout oplossing: de URL wordt niet meer door Azure AD gecodeerd met de para meter State.
+
+**Ingangs datum**: mei 2021
+
+**Beïnvloede eind punten**: v 1.0 en v 2.0 
+
+**Beïnvloede protocol**: alle stromen die het `/authorize` eind punt bezoeken (impliciete stroom en autorisatie code stroom)
+
+Er is een fout gevonden en opgelost in het Azure AD-autorisatie antwoord. Tijdens het `/authorize` poot goed van de verificatie `state` wordt de para meter van de aanvraag opgenomen in het antwoord om de status van de app te behouden en CSRF-aanvallen te voor komen. De URL van Azure AD heeft de para meter onjuist gedecodeerd `state` voordat deze in het antwoord wordt ingevoegd, waar u nog een keer hebt gecodeerd.  Dit zou ertoe leiden dat toepassingen het antwoord van Azure AD onjuist afwijzen. 
+
+Deze para meter wordt niet meer door Azure AD versleuteld, zodat apps het resultaat correct kunnen parseren. Deze wijziging wordt doorgevoerd voor alle toepassingen. 
+
 ### <a name="conditional-access-will-only-trigger-for-explicitly-requested-scopes"></a>Voorwaardelijke toegang wordt alleen geactiveerd voor expliciet aangevraagde bereiken
 
-**Ingangs datum**: maart 2021
+**Ingangs datum**: mei 2021, met een geleidelijke implementatie vanaf april. 
 
 **Beïnvloede eind punten**: v 2.0
 
@@ -48,6 +60,8 @@ Toepassingen die momenteel gebruikmaken van dynamische toestemming, krijgen alle
 Azure AD wijzigt de manier waarop niet-aangevraagde scopes worden geleverd aan toepassingen, zodat alleen expliciete aangevraagde scopes voorwaardelijke toegang activeren, om het aantal onnodige voorwaardelijke toegangs prompts te verminderen. Deze wijziging kan ertoe leiden dat apps die afhankelijk zijn van het vorige gedrag van Azure AD (met andere woorden, zelfs wanneer ze niet werden aangevraagd), kunnen worden onderbroken, aangezien de tokens die ze aanvragen, ontbrekende machtigingen hebben.
 
 Apps ontvangen nu toegangs tokens met een combi natie van machtigingen in dit-verzoek en de gebruikers die toestemming hebben voor waarvoor geen prompts voor voorwaardelijke toegang zijn vereist.  De bereiken van het toegangs token worden weer gegeven in de para meter van de token reactie `scope` . 
+
+Deze wijziging wordt doorgevoerd voor alle apps, met uitzonde ring van die met een waargenomen afhankelijkheid van dit gedrag.  Ontwikkel aars ontvangen toestemming als ze worden uitgesloten van deze wijziging, omdat ze mogelijk afhankelijk zijn van de extra prompts voor voorwaardelijke toegang. 
 
 **Voorbeelden**
 

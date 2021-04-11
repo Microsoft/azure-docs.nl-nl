@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3acaf4929158b24ff50655aa18c05b41aeec4b53
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 745cc7be37120cda27fe4d4077b9bda0fa07badf
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96435447"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106550775"
 ---
 # <a name="how-to-plan-your-azure-ad-join-implementation"></a>Procedure: uw Azure AD-koppelings implementatie plannen
 
@@ -168,13 +168,11 @@ Gebruikers ontvangen SSO van apparaten die lid zijn van Azure AD als het apparaa
 
 ### <a name="on-premises-network-shares"></a>On-premises netwerk shares
 
-Uw gebruikers hebben SSO van aan Azure AD gekoppelde apparaten wanneer een apparaat toegang heeft tot een on-premises domein controller.
+Uw gebruikers hebben SSO van aan Azure AD gekoppelde apparaten wanneer een apparaat toegang heeft tot een on-premises domein controller. [Meer informatie over hoe dit werkt](azuread-join-sso.md)
 
 ### <a name="printers"></a>Printers
 
-Voor printers moet u [hybride Cloud afdrukken](/windows-server/administration/hybrid-cloud-print/hybrid-cloud-print-deploy) implementeren voor het detecteren van printers op apparaten die zijn toegevoegd aan Azure AD. 
-
-Hoewel printers niet automatisch kunnen worden gedetecteerd in een omgeving in de Cloud, kunnen uw gebruikers ook het UNC-pad van de printer gebruiken om ze rechtstreeks toe te voegen. 
+U wordt aangeraden [universele afdrukken](/universal-print/fundamentals/universal-print-whatis) te implementeren om een cloud-gebaseerde oplossing voor afdruk beheer te hebben zonder lokale afhankelijkheden. 
 
 ### <a name="on-premises-applications-relying-on-machine-authentication"></a>On-premises toepassingen die afhankelijk zijn van computer verificatie
 
@@ -221,7 +219,7 @@ Kies uw implementatie benadering of benaderingen door de bovenstaande tabel te c
 
 ## <a name="configure-your-device-settings"></a>Apparaatinstellingen configureren
 
-Met de Azure Portal kunt u de implementatie van aan Azure AD gekoppelde apparaten in uw organisatie beheren. Als u de gerelateerde instellingen wilt configureren, selecteert u op de **pagina Azure Active Directory** `Devices > Device settings` .
+Met de Azure Portal kunt u de implementatie van aan Azure AD gekoppelde apparaten in uw organisatie beheren. Als u de gerelateerde instellingen wilt configureren, selecteert u op de **pagina Azure Active Directory** `Devices > Device settings` . [Meer informatie](device-management-azure-portal.md)
 
 ### <a name="users-may-join-devices-to-azure-ad"></a>Gebruikers mogen apparaten aan Azure AD toevoegen
 
@@ -235,11 +233,13 @@ Kies **geselecteerd** en selecteer de gebruikers die u wilt toevoegen aan de lok
 
 ![Extra lokale beheerders voor apparaten die zijn toegevoegd aan Azure AD](./media/azureadjoin-plan/02.png)
 
-### <a name="require-multi-factor-auth-to-join-devices"></a>Multi-factor Authentication vereisen voor het toevoegen van apparaten
+### <a name="require-multi-factor-authentication-mfa-to-join-devices"></a>Multi-factor Authentication (MFA) vereisen voor het toevoegen van apparaten
 
 Selecteer **Ja** als u gebruikers wilt verplichten MFA uit te voeren bij het toevoegen van apparaten aan Azure AD. Voor de gebruikers die apparaten toevoegen aan Azure AD via MFA, wordt het apparaat zelf een 2e factor.
 
 ![Multi-factor Authentication vereisen voor het toevoegen van apparaten](./media/azureadjoin-plan/03.png)
+
+**Aanbeveling:** Gebruik de gebruikers actie om [apparaten te registreren of toe te voegen](/conditional-access/concept-conditional-access-cloud-apps#user-actions) in voorwaardelijke toegang voor het afdwingen van MFA voor lidmaatschap van apparaten.
 
 ## <a name="configure-your-mobility-settings"></a>Uw mobiliteits instellingen configureren
 

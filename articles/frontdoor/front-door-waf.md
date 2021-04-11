@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/01/2020
 ms.author: duau
-ms.openlocfilehash: f894fd5ca7bb98c48b106c13b8fe6130b2c76c6e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: fa5d34d195cfed2d5dbfa6954d83b28487bf0bba
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102201053"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106167750"
 ---
 # <a name="tutorial-quickly-scale-and-protect-a-web-application-by-using-azure-front-door-and-azure-web-application-firewall-waf"></a>Zelfstudie: een webtoepassing snel schalen en beveiligen met Azure Front Door en Azure Web Application Firewall (WAF)
 
@@ -140,7 +140,7 @@ Ten slotte, als u een aangepast domein gebruikt om uw webtoepassing te bereiken,
 
 ## <a name="lock-down-your-web-application"></a>Uw webtoepassing vergrendelen
 
-We adviseren u ervoor te zorgen dat alleen apparaten in de periferie van Azure Front Door kunnen communiceren met uw webtoepassing. U weet dan zeker dat niemand de beveiliging van Azure Front Door kan omzeilen en rechtstreeks toegang heeft tot uw toepassing. Als u deze vergrendeling wilt instellen, raadpleegt u [How do I lock down the access to my backend to only Azure Front Door?](./front-door-faq.md#how-do-i-lock-down-the-access-to-my-backend-to-only-azure-front-door) (Hoe kan ik de toegang tot mijn back-end beperken tot alleen Azure Front Door?).
+We adviseren u ervoor te zorgen dat alleen apparaten in de periferie van Azure Front Door kunnen communiceren met uw webtoepassing. U weet dan zeker dat niemand de beveiliging van Azure Front Door kan omzeilen en rechtstreeks toegang heeft tot uw toepassing. Als u deze vergrendeling wilt instellen, raadpleegt u [How do I lock down the access to my backend to only Azure Front Door?](./front-door-faq.yml#how-do-i-lock-down-the-access-to-my-backend-to-only-azure-front-door-) (Hoe kan ik de toegang tot mijn back-end beperken tot alleen Azure Front Door?).
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

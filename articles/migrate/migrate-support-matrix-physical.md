@@ -6,12 +6,12 @@ ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 03/18/2021
-ms.openlocfilehash: b62160861f686c6ea5a8ebfd03d904da2ad5d80a
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 09110bb15f853f20b0be9d8c4c6f5088e7a55d8b
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104869443"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106382977"
 ---
 # <a name="support-matrix-for-physical-server-discovery-and-assessment"></a>Ondersteunings matrix voor detectie en evaluatie van fysieke servers 
 
@@ -39,6 +39,8 @@ Meer [informatie](concepts-assessment-calculation.md) over evaluaties.
 **Machtigingen:**
 
 - Voor Windows-servers gebruikt u een domein account voor servers die lid zijn van een domein en een lokaal account voor servers die geen lid zijn van een domein. Het gebruikersaccount moet worden toegevoegd aan deze groepen: Gebruikers van extern beheer, prestatiemetergebruikers en gebruikers van prestatielogboeken.
+    > [!Note]
+    > Voor Windows Server 2008 en 2008 R2 moet u controleren of WMF 3,0 is geïnstalleerd op de servers en het domein/lokale account dat wordt gebruikt voor toegang tot de servers wordt toegevoegd aan deze groepen: prestatie meter gebruikers, prestatie logboek gebruikers en WinRMRemoteWMIUsers.
 - Voor Linux-servers hebt u een hoofdaccount nodig op de Linux-servers die u wilt detecteren. U kunt ook een zich niet in de hoofdmap bevindend account met de vereiste mogelijkheden instellen met behulp van de volgende opdrachten:
 
 **Opdracht** | **Doel**

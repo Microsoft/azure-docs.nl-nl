@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 03/24/2021
+ms.date: 03/29/2021
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 711d4bdf2be2ad3158c12e4690a70fb83fe7a846
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 38ddd825321a3cb7947eb76c4f5f6cdbc6cb3414
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105559499"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106055702"
 ---
 # <a name="conditional-access-securing-security-info-registration"></a>Voorwaardelijke toegang: Veilige registratie van beveiligingsinformatie
 
@@ -52,7 +52,7 @@ Het volgende beleid is van toepassing op de geselecteerde gebruikers die zich wi
 1. Stel **Beleid inschakelen** in op **Aan**.
 1. Selecteer vervolgens **Maken**.
 
-Beheerders moeten nu referenties voor het door geven van de tijdelijke toegang verlenen aan nieuwe gebruikers, zodat ze kunnen voldoen aan de vereisten voor multi-factor Authentication om ze te registreren. De stappen voor het uitvoeren van deze taak vindt u in de sectie [tijdelijke toegang maken in de Azure AD-Portal](../authentication/howto-authentication-temporary-access-pass.md#create-a-temporary-access-pass-in-the-azure-ad-portal).
+Beheerders moeten nu referenties voor het door geven van de tijdelijke toegang verlenen aan nieuwe gebruikers, zodat ze kunnen voldoen aan de vereisten voor multi-factor Authentication om ze te registreren. De stappen voor het uitvoeren van deze taak vindt u in de sectie [tijdelijke toegang maken in de Azure AD-Portal](../authentication/howto-authentication-temporary-access-pass.md#create-a-temporary-access-pass).
 
 Organisaties kunnen ervoor kiezen om naast of in plaats van **multi-factor Authentication** bij stap 6b andere toekennings controles te vereisen. Wanneer u meerdere besturings elementen selecteert, selecteert u het juiste keuze rondje om **alle** of **een** van de geselecteerde besturings elementen in te stellen wanneer u deze wijziging aanbrengt.
 

@@ -10,12 +10,12 @@ ms.author: dobett
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: d2afd88500801f1e2b1e4da5a1e267bddfa69fc7
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f1053062302c9a00cf49cee1cd8de5ca6652b745
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96453014"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106167699"
 ---
 # <a name="what-is-azure-internet-of-things-iot"></a>Wat is Azure Internet of Things (IoT)?
 
@@ -30,7 +30,7 @@ Een IoT-apparaat bestaat meestal uit een printplaat met daaraan gekoppelde senso
 * Een versnellingsmeter in een lift.
 * Aanwezigheidssensoren in een ruimte.
 
-Er is een groot aantal apparaten beschikbaar van verschillende fabrikanten om uw oplossing te bouwen. Voor een lijst met apparaten die zijn gecertificeerd voor gebruik met Azure IoT Hub, raadpleegt u de [Azure Certified for IoT-apparaatcatalogus](https://catalog.azureiotsolutions.com/alldevices). Voor het prototype kunt u apparaten gebruiken zoals een [MXChip IoT DevKit](https://microsoft.github.io/azure-iot-developer-kit/) of een [Raspberry Pi](https://www.raspberrypi.org/). De Devkit heeft ingebouwde sensoren voor de temperatuur, druk, vochtigheid en een gyroscoop, acceleratiemeter en magnetometer. Met de Raspberry Pi kunt u veel verschillende typen sensoren aansluiten. 
+Er is een groot aantal apparaten beschikbaar van verschillende fabrikanten om uw oplossing te bouwen. Voor een lijst met apparaten die zijn gecertificeerd voor gebruik met Azure IoT Hub, raadpleegt u de [Azure Certified for IoT-apparaatcatalogus](https://devicecatalog.azure.com). Voor het prototype kunt u apparaten gebruiken zoals een [MXChip IoT DevKit](https://microsoft.github.io/azure-iot-developer-kit/) of een [Raspberry Pi](https://www.raspberrypi.org/). De Devkit heeft ingebouwde sensoren voor de temperatuur, druk, vochtigheid en een gyroscoop, acceleratiemeter en magnetometer. Met de Raspberry Pi kunt u veel verschillende typen sensoren aansluiten. 
 
 Microsoft biedt open-source [apparaat-SDK's](../iot-hub/iot-hub-devguide-sdks.md) die u kunt gebruiken om de apps te bouwen die op uw apparaten worden uitgevoerd. Deze [SDK's vereenvoudigen en versnellen](https://azure.microsoft.com/blog/benefits-of-using-the-azure-iot-sdks-in-your-azure-iot-solution/) de ontwikkeling van uw IoT-oplossingen.
 

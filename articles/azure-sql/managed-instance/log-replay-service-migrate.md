@@ -8,13 +8,13 @@ ms.topic: how-to
 author: danimir
 ms.author: danil
 ms.reviewer: sstein
-ms.date: 03/01/2021
-ms.openlocfilehash: 1b2a3f018b16258622b817648cb00e230313bf49
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.date: 03/29/2021
+ms.openlocfilehash: 186f1e085cecdc92e345231d50d06195bba55504
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105564514"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105732955"
 ---
 # <a name="migrate-databases-from-sql-server-to-sql-managed-instance-by-using-log-replay-service-preview"></a>Data bases migreren van SQL Server naar een door SQL beheerd exemplaar met behulp van de replay-service voor logboeken (preview)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -70,7 +70,7 @@ Nadat LRS is gestopt, kunt u automatisch aanvullen of hand matig volt ooien via 
 | **2. Start LRS in de Cloud**. | U kunt de service opnieuw starten met een keuze uit de volgende cmdlets: Power shell ([Start-azsqlinstancedatabaselogreplay](/powershell/module/az.sql/start-azsqlinstancedatabaselogreplay)) of Azure CLI ([az_sql_midb_log_replay_start-cmdlets](/cli/azure/sql/midb/log-replay#az_sql_midb_log_replay_start)). <br /><br /> Start LRS afzonderlijk voor elke Data Base die naar een map met back-ups op Blob Storage wijst. <br /><br /> Nadat u de service hebt gestart, worden er back-ups gemaakt van de Blob Storage-container en worden ze teruggezet op een SQL-beheerd exemplaar.<br /><br /> Als u de LRS in de continue modus hebt gestart, worden alle nieuwe bestanden die naar de map worden geüpload, door de service gecontroleerd. De service past voortdurend Logboeken toe op basis van de LSN-keten (log Sequence Number) totdat deze wordt gestopt. |
 | **2,1. Controleer de voortgang van de bewerking**. | U kunt de voortgang van de herstel bewerking bewaken met een keuze uit cmdlets: Power shell ([Get-azsqlinstancedatabaselogreplay](/powershell/module/az.sql/get-azsqlinstancedatabaselogreplay)) of Azure CLI ([az_sql_midb_log_replay_show-cmdlets](/cli/azure/sql/midb/log-replay#az_sql_midb_log_replay_show)). |
 | **2,2. Stop de bewerking indien nodig**. | Als u het migratie proces wilt stoppen, kunt u kiezen uit de volgende cmdlets: Power shell ([Stop-azsqlinstancedatabaselogreplay](/powershell/module/az.sql/stop-azsqlinstancedatabaselogreplay)) of Azure CLI ([az_sql_midb_log_replay_stop](/cli/azure/sql/midb/log-replay#az_sql_midb_log_replay_stop)). <br /><br /> Als u de bewerking stopt, wordt de data base die u herstelt, verwijderd uit het SQL-beheerde exemplaar. Nadat u een bewerking hebt gestopt, kunt u LRS voor een Data Base niet meer hervatten. U moet het migratie proces helemaal opnieuw starten. |
-| **3. Als u klaar bent, gaat u naar de Cloud**. | Stop de toepassing en de werk belasting. Haal de laatste back-up voor het einde van het logboek op en upload deze naar Azure Blob Storage.<br /><br /> Voltooi de cutover door een LRS-bewerking te initiëren `complete` met een keuze uit cmdlets: Power shell ([complete-azsqlinstancedatabaselogreplay](/powershell/module/az.sql/complete-azsqlinstancedatabaselogreplay)) of Azure cli [az_sql_midb_log_replay_complete](/cli/azure/sql/midb/log-replay#az_sql_midb_log_replay_complete). Met deze bewerking wordt LRS gestopt en wordt de data base online gezet voor lees-en schrijf bewerkingen op een SQL-beheerd exemplaar.<br /><br /> De toepassing connection string opnieuw laten verwijzen van SQL Server naar een door SQL beheerd exemplaar. |
+| **3. Als u klaar bent, gaat u naar de Cloud**. | Stop de toepassing en de werk belasting. Haal de laatste back-up voor het einde van het logboek op en upload deze naar Azure Blob Storage.<br /><br /> Voltooi de cutover door een LRS-bewerking te initiëren `complete` met een keuze uit cmdlets: Power shell ([complete-azsqlinstancedatabaselogreplay](/powershell/module/az.sql/complete-azsqlinstancedatabaselogreplay)) of Azure cli [az_sql_midb_log_replay_complete](/cli/azure/sql/midb/log-replay#az_sql_midb_log_replay_complete). Met deze bewerking wordt LRS gestopt en wordt de data base online gezet voor lees-en schrijf bewerkingen op een SQL-beheerd exemplaar.<br /><br /> De toepassing connection string opnieuw laten verwijzen van SQL Server naar een door SQL beheerd exemplaar. U moet deze stap zelf indelen, hetzij door een hand matige connection string wijziging in uw toepassing, of automatisch (bijvoorbeeld als uw toepassing bijvoorbeeld de connection string van een eigenschap of een Data Base kan lezen. |
 
 ## <a name="requirements-for-getting-started"></a>Vereisten voor aan de slag
 

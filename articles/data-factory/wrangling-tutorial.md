@@ -6,12 +6,12 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/19/2021
-ms.openlocfilehash: 3d43a532f57feab361c6a3de79269991f46fc55d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: cf15d6f669718cca8b99d67a7912d3959d9c191f
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98684019"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105732502"
 ---
 # <a name="prepare-data-with-data-wrangling"></a>Gegevens voorbereiden met data wrangling
 
@@ -20,7 +20,7 @@ ms.locfileid: "98684019"
 Met data wrangling in data factory kunt u interactieve Power Query mix verder-UPS systeem eigen maken in ADF en vervolgens deze op schaal uitvoeren binnen een ADF-pijp lijn.
 
 > [!NOTE]
-> Power Query acitivty in ADF is momenteel beschik bare in open bare preview
+> Power Query activiteit in ADF is momenteel beschikbaar als open bare preview
 
 ## <a name="create-a-power-query-activity"></a>Een Power Query activiteit maken
 

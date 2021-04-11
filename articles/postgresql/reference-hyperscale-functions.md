@@ -6,17 +6,17 @@ ms.author: jonels
 ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: reference
-ms.date: 08/10/2020
-ms.openlocfilehash: f324ef44d002f50bf27c08072e904c1d92b5512f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/07/2021
+ms.openlocfilehash: b0aa9d5dec25d8d600ecbcde59a57e67917c6411
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "95026230"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107011145"
 ---
 # <a name="functions-in-the-hyperscale-citus-sql-api"></a>Functies in de grootschalige (Citus) SQL-API
 
-Deze sectie bevat referentie-informatie voor de door de gebruiker gedefinieerde functies van grootschalige (Citus). Met deze functies kunt u extra gedistribueerde functionaliteit bieden aan grootschalige (Citus) dan de standaard-SQL-opdrachten.
+Deze sectie bevat referentie-informatie voor de door de gebruiker gedefinieerde functies van grootschalige (Citus). Deze functies helpen bij het bieden van gedistribueerde functionaliteit aan grootschalige (Citus).
 
 > [!NOTE]
 >
@@ -178,6 +178,48 @@ SELECT create_distributed_function(
 );
 ```
 
+### <a name="alter_columnar_table_set"></a>alter_columnar_table_set
+
+De functie alter_columnar_table_set () wijzigt de instellingen van een [tabel kolom](concepts-hyperscale-columnar.md). Het aanroepen van deze functie in een niet-kolom tabel geeft een fout. Alle argumenten behalve de tabel naam zijn optioneel.
+
+Raadpleeg de volgende tabel om de huidige opties voor alle kolom tabellen weer te geven:
+
+```postgresql
+SELECT * FROM columnar.options;
+```
+
+De standaard waarden voor kolom instellingen voor nieuw gemaakte tabellen kunnen worden overschreven door deze GUCs:
+
+* in kolom vorm. compressie
+* columnar.compression_level
+* columnar.stripe_row_count
+* columnar.chunk_row_count
+
+#### <a name="arguments"></a>Argumenten
+
+**table_name:** De naam van de tabel kolom.
+
+**chunk_row_count:** (optioneel) het maximum aantal rijen per segment voor nieuw ingevoegde gegevens. Bestaande gegevens segmenten worden niet gewijzigd en bevatten mogelijk meer rijen dan deze maximum waarde. De standaard waarde is 10000.
+
+**stripe_row_count:** (optioneel) het maximum aantal rijen per stripe voor nieuw ingevoegde gegevens. Bestaande gegevens stroken worden niet gewijzigd en bevatten mogelijk meer rijen dan deze maximum waarde. De standaard waarde is 150000.
+
+**compressie:** (optioneel) `[none|pglz|zstd|lz4|lz4hc]` het compressie type voor nieuw ingevoegde gegevens. Bestaande gegevens worden niet opnieuw gecomprimeerd of gedecomprimeerd. De standaard en voorgestelde waarde is zstd (als ondersteuning is gecompileerd in).
+
+**compression_level:** (optioneel) geldige instellingen zijn 1 tot en met 19. Als de compressie methode het gekozen niveau niet ondersteunt, wordt het dichtstbijzijnde niveau geselecteerd.
+
+#### <a name="return-value"></a>Retourwaarde
+
+N.v.t.
+
+#### <a name="example"></a>Voorbeeld
+
+```postgresql
+SELECT alter_columnar_table_set(
+  'my_columnar_table',
+  compression => 'none',
+  stripe_row_count => 10000);
+```
+
 ## <a name="metadata--configuration-information"></a>Meta gegevens/configuratie-informatie
 
 ### <a name="master_get_table_metadata"></a>\_ \_ meta gegevens van hoofd tabel ophalen \_
@@ -220,7 +262,7 @@ SELECT * from master_get_table_metadata('github_events');
 
 ### <a name="get_shard_id_for_distribution_column"></a>\_Shard \_ -id \_ voor \_ distributie \_ kolom ophalen
 
-Grootschalige (Citus) wijst elke rij van een gedistribueerde tabel toe aan een Shard op basis van de waarde van de kolom verdeling en de distributie methode van de tabel. In de meeste gevallen is de precieze toewijzing een Details op laag niveau die de beheerder van de data base kan negeren. Het kan echter nuttig zijn om de Shard van een rij te bepalen, ofwel voor hand matige onderhouds taken voor de data base of alleen om te voldoen aan Curiosity. De `get_shard_id_for_distribution_column` functie levert deze informatie voor zowel hash-als bereik-gedistribueerde tabellen en naslag tabellen. Het werkt niet voor de toevoeg distributie.
+Grootschalige (Citus) wijst elke rij van een gedistribueerde tabel toe aan een Shard op basis van de waarde van de kolom verdeling en de distributie methode van de tabel. In de meeste gevallen is de precieze toewijzing een Details op laag niveau die de beheerder van de data base kan negeren. Het kan echter nuttig zijn om de Shard van een rij te bepalen, ofwel voor hand matige onderhouds taken voor de data base of alleen om te voldoen aan Curiosity. De `get_shard_id_for_distribution_column` functie levert deze informatie voor hash-gedistribueerde, bereik-gedistribueerde en referentie tabellen. Het werkt niet voor de toevoeg distributie.
 
 #### <a name="arguments"></a>Argumenten
 

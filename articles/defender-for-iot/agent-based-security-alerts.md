@@ -4,10 +4,10 @@ description: Meer informatie over beveiligings waarschuwingen en aanbevolen hers
 ms.topic: conceptual
 ms.date: 2/16/2021
 ms.openlocfilehash: b586eb4bebfc584e6cec4c27df859dbebb817e2d
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104784931"
 ---
 # <a name="defender-for-iot-devices-security-alerts"></a>Beveiligings waarschuwingen voor Defender voor IoT-apparaten
@@ -22,7 +22,7 @@ Zie [aanpas bare waarschuwingen](concept-customizable-security-alerts.md)voor me
 
 ## <a name="agent-based-security-alerts"></a>Beveiligings waarschuwingen op basis van een agent
 
-| Name | Severity | Gegevensbron | Beschrijving | Voorgestelde herstels tappen |
+| Name | Severity | Gegevensbron | Description | Voorgestelde herstels tappen |
 |--|--|--|--|--|
 | **Hoge** urgentie |  |  |  |
 | Binaire opdracht regel | Hoog | Klassieke Defender-IoT-micro-agent | Het binaire bestand van de LA Linux-module wordt aangeroepen/uitgevoerd vanaf de opdracht regel. Dit proces kan legitieme activiteiten zijn, of een indicatie dat het apparaat is aangetast. | Controleer de opdracht met de gebruiker die het heeft uitgevoerd en controleer of dit iets goed is verwacht om te worden uitgevoerd op het apparaat. Als dat niet het geval is, kunt u de waarschuwing escaleren naar uw gegevens beveiligings team. |

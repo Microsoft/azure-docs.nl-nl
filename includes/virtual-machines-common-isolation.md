@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/05/2020
 ms.author: risverma
 ms.custom: include file
-ms.openlocfilehash: fc61c111291f9862f71f9a81828fa0fa828ab2ad
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 83a19dea56693a1caff2c982b9f772543fe1cf2e
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102510774"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107073663"
 ---
 Azure Compute biedt virtuele machine grootten die zijn geïsoleerd voor een specifiek hardwaretype en die zijn toegewezen aan één klant. De geïsoleerde grootten Live en worden gebruikt voor het genereren van specifieke hardware en worden afgeschaft wanneer het genereren van de hardware buiten gebruik wordt gesteld.
 
@@ -31,6 +31,7 @@ De huidige, geïsoleerde virtuele-machine-aanbiedingen omvatten:
 * Standard_M128ms
 * Standard_GS5
 * Standard_G5
+* Standard_DC8_v2
 
 
 > [!NOTE]
@@ -48,6 +49,7 @@ Geïsoleerde VM-grootten hebben een beperkte levens duur van de hardware. Azure 
 | Standard_GS5  | 15 februari 2022 |
 | Standard_E64i_v3  | 15 februari 2022 |
 | Standard_E64is_v3  | 15 februari 2022 |
+| Standard_DC8_v2 | 15 februari 2022 |
 
 
 ## <a name="faq"></a>Veelgestelde vragen
@@ -82,7 +84,7 @@ Geïsoleerde VM-grootten hebben een beperkte levens duur van de hardware. Azure 
 | Datum | Bewerking |
 |---|---|
 | 15 februari 2021<sup>1</sup> | G5/GS5/E64i_v3/E64is_v3 isolatie buiten gebruik stellen |
-| 15 februari 2022 | G5/GS5/E64i_v3/E64is_v3-isolatie garantie verwijderd |
+| 28 februari 2022 | G5/GS5/E64i_v3/E64is_v3-isolatie garantie verwijderd |
 
 <sup>1</sup> bestaande klant die deze grootten gebruikt, ontvangt een aankondigings-e-mail met gedetailleerde instructies voor de volgende stappen.  
 

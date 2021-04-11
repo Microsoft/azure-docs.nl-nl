@@ -4,10 +4,10 @@ description: Meer informatie over aanpas bare beveiligings waarschuwingen en aan
 ms.topic: conceptual
 ms.date: 2/16/2021
 ms.openlocfilehash: 2fb1385c12cbd9d0479d8528f54aad8816393ad1
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104784914"
 ---
 # <a name="defender-for-iot-devices-custom-security-alerts"></a>Aangepaste beveiligings waarschuwingen voor Defender voor IoT-apparaten
@@ -20,7 +20,7 @@ De volgende lijsten van de Defender voor IoT-waarschuwingen kunt u bepalen op ba
 
 ## <a name="agent-based-security-custom-alerts"></a>Aangepaste waarschuwingen op basis van agent beveiliging
 
-| Severity | Naam waarschuwing | Gegevensbron | Beschrijving | Voorgestelde herstel |
+| Severity | Naam waarschuwing | Gegevensbron | Description | Voorgestelde herstel |
 |--|--|--|--|--|
 | Beperkt | Aangepaste waarschuwing: het aantal actieve verbindingen valt buiten het toegestane bereik | Klassiek Defender-IoT-micro-agent, Azure RTO'S | Het aantal actieve verbindingen binnen een bepaald tijd venster ligt buiten het huidige geconfigureerde en toegestane bereik. | De logboeken van het apparaat onderzoeken. Ontdek waar de verbinding vandaan komt en bepaal of het goed is of kwaad aardig is. Als dat schadelijk is, verwijdert u mogelijke malware en begrijpt u de bron. Voeg, indien goed aardig, de bron toe aan de lijst met toegestane verbindingen. |
 | Beperkt | Aangepaste waarschuwing: de uitgaande verbinding die is gemaakt met een IP-adres dat niet is toegestaan | Klassiek Defender-IoT-micro-agent, Azure RTO'S | Er is een uitgaande verbinding gemaakt met een IP-adres buiten de lijst met toegestane IP-adressen. | De logboeken van het apparaat onderzoeken. Ontdek waar de verbinding vandaan komt en bepaal of het goed is of kwaad aardig is. Als dat schadelijk is, verwijdert u mogelijke malware en begrijpt u de bron. Voeg, indien goed aardig, de bron toe aan de lijst met toegestane IP-adressen. |

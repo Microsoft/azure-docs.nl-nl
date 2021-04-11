@@ -190,7 +190,7 @@
           href: delivery-and-retry.md
         - name: Gebeurtenisverzending voor de webhook
           href: webhook-event-delivery.md
-        - name: Bezorgings eigenschappen
+        - name: Aangepaste leverings eigenschappen
           href: delivery-properties.md
     - name: Herstel na noodgeval
       items:
@@ -280,9 +280,9 @@
               href: enable-identity-custom-topics-domains.md
             - name: Beheerde identiteit inschakelen voor een systeem onderwerp
               href: enable-identity-system-topics.md
-            - name: Identiteit toevoegen aan Azure-rollen op bestemmingen
+            - name: De toegang tot Event Grid bestemming verlenen aan de beheerde identiteit
               href: add-identity-roles.md
-            - name: Gebeurtenis abonnementen maken die gebruikmaken van een identiteit
+            - name: Een gebeurtenis abonnement maken dat gebruikmaakt van de beheerde identiteit
               href: managed-service-identity.md
         - name: Gebeurtenissen veilig afleveren via een persoonlijke koppeling
           href: consume-private-endpoints.md

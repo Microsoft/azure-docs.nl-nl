@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/15/2020
-ms.openlocfilehash: 0db6ed7566c53429f8b9798ac8cdafe76ca7bd5a
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 889a04d68de45a6270ae0c38615d841a526ad86a
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102052140"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106490689"
 ---
 # <a name="configure-monitoring-in-vm-insights-guest-health-using-data-collection-rules-preview"></a>Bewaking configureren in VM Insights-gast status met behulp van regels voor gegevens verzameling (preview)
 Met de [VM Insights-gast status](vminsights-health-overview.md) kunt u de status van een virtuele machine bekijken, zoals gedefinieerd door een set prestatie metingen die regel matig worden steek proeven. In dit artikel wordt beschreven hoe u de standaard bewaking op meerdere virtuele machines kunt wijzigen met behulp van regels voor het verzamelen van gegevens.
@@ -175,17 +175,17 @@ Lijst met een of meer teken reeksen die definiëren welke monitors in de status 
 De volgende tabel geeft een lijst van de huidige beschik bare monitor namen.
 
 | Type naam | Naam | Beschrijving |
-|:---|:---|:---|
-| basis | basis | Monitor op het hoogste niveau die de status van de virtuele machine weergeeft. | |
-| CPU-gebruik | CPU-gebruik | Monitor voor CPU-gebruik. | |
-| logische schijven | logische schijven | Aggregaatmonitor voor het controleren van de status van alle bewaakte schijven op virtuele Windows-machines. | |
-| logische schijven\|* | logische schijven \| C:<br>logische schijven \| D: | Aggregaatmonitor voor het bijhouden van de status van een bepaalde schijf op een virtuele Windows-machine. | 
-| logische schijven \| * \| vrije ruimte | logische schijven \| C: \| vrije ruimte<br>logische schijven \| D: \| vrije ruimte | Monitor voor beschik bare schijf ruimte op virtuele Windows-machines. |
+|:----------|:-----|:------------|
+| basis | basis | Monitor op het hoogste niveau die de status van de virtuele machine weergeeft. |
+| CPU-gebruik | CPU-gebruik | Monitor voor CPU-gebruik. |
+| logische schijven | logische schijven | Aggregaatmonitor voor het controleren van de status van alle bewaakte schijven op virtuele Windows-machines. |
+| logische schijven\|\* | logische schijven \| C:<br>logische schijven \| D: | Aggregaatmonitor voor het bijhouden van de status van een bepaalde schijf op een virtuele Windows-machine. |
+| logische schijven \| \* \| vrije ruimte | logische schijven \| C: \| vrije ruimte<br>logische schijven \| D: \| vrije ruimte | Monitor voor beschik bare schijf ruimte op virtuele Windows-machines. |
 | bestands systemen | bestands systemen | Aggregaatmonitor voor het controleren van de status van alle bestands systemen op virtuele Linux-machines. |
-| bestands systemen\|* | bestands systemen\|/<br>bestandssysteem \| /mnt | Aggregaatmonitor voor het bijhouden van de status van een bestands systeem van een virtuele Linux-machine. | bestands systemen|/var/log |
-| bestandssysteem \| * \| vrije ruimte | bestandssysteem \| / \| vrije ruimte<br>bestands systemen \| /mnt \| vrije ruimte | Monitor voor beschik bare schijf ruimte op het bestands systeem van de virtuele Linux-machine. | 
-| geheugen | geheugen | Aggregaatmonitor voor het controleren van de status van het geheugen van de virtuele machine. | |
-| \|beschikbaar geheugen| \|beschikbaar geheugen | Beschik bare geheugen tracering bewaken op de virtuele machine. | |
+| bestands systemen\|\* | bestands systemen\|/<br>bestandssysteem \| /mnt | Aggregaatmonitor voor het bijhouden van de status van een bestands systeem van een virtuele Linux-machine. |
+| bestandssysteem \| \* \| vrije ruimte | bestandssysteem \| / \| vrije ruimte<br>bestands systemen \| /mnt \| vrije ruimte | Monitor voor beschik bare schijf ruimte op het bestands systeem van de virtuele Linux-machine. |
+| geheugen | geheugen | Aggregaatmonitor voor het controleren van de status van het geheugen van de virtuele machine. |
+| \|beschikbaar geheugen | \|beschikbaar geheugen | Beschik bare geheugen tracering bewaken op de virtuele machine. |
 
 
 ## <a name="alertconfiguration-element"></a>alertConfiguration-element

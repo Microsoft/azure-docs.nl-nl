@@ -3,12 +3,12 @@ title: Beheerde identiteit op Azure Event Grid aangepaste onderwerpen en domeine
 description: In dit artikel wordt beschreven hoe u de beheerde service-identiteit voor een Azure Event Grid aangepast onderwerp of domein inschakelt.
 ms.topic: how-to
 ms.date: 03/25/2021
-ms.openlocfilehash: 06fd4d6e472b33496e773596b0f3afc8e70be948
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: b93fd44282d9e19e7111dd52c73d8d4c01c67a10
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105630423"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106278215"
 ---
 # <a name="assign-a-system-managed-identity-to-an-event-grid-custom-topic-or-domain"></a>Een door een systeem beheerde identiteit toewijzen aan een Event Grid aangepast onderwerp of domein 
 Dit artikel laat u zien hoe u een door een systeem beheerde identiteit inschakelt voor een Event Grid aangepast onderwerp of een domein. Zie [Wat zijn beheerde identiteiten voor Azure-resources](../active-directory/managed-identities-azure-resources/overview.md)voor meer informatie over beheerde identiteiten.
@@ -59,4 +59,4 @@ De opdracht voor het bijwerken van een bestaand domein is vergelijkbaar ( `az ev
 
 
 ## <a name="next-steps"></a>Volgende stappen
-Voeg de identiteit toe aan een geschikte rol (bijvoorbeeld Service Bus verzender van gegevens) op de bestemming (bijvoorbeeld een Service Bus wachtrij). Zie [identiteit toevoegen aan Azure-rollen op bestemmingen](add-identity-roles.md)voor gedetailleerde stappen. 
+Voeg de identiteit toe aan een geschikte rol (bijvoorbeeld Service Bus verzender van gegevens) op de bestemming (bijvoorbeeld een Service Bus wachtrij). Zie voor gedetailleerde stappen [beheerde identiteit verlenen de toegang tot Event grid bestemming](add-identity-roles.md). 

@@ -6,14 +6,14 @@ ms.reviewer: amberbhargava
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: conceptual
-ms.date: 01/11/2021
+ms.date: 03/31/2021
 ms.author: banders
-ms.openlocfilehash: 887b7013eb3060020a39d2df0082768b8185bdde
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 4f7179a5ad35b4d3ca9a92119fb7b492e2aff779
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99575463"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106122511"
 ---
 # <a name="get-started-with-your-updated-azure-billing-account"></a>Aan de slag met uw bijgewerkte Azure-factureringsaccount
 
@@ -26,11 +26,11 @@ Het beheren van kosten en facturen is een van de belangrijkste onderdelen van uw
 
 In het volgende diagram worden uw oude en nieuwe factureringsaccount met elkaar vergeleken:
 
-![Diagram waarin de factureringshiërarchie van het oude en nieuwe account wordt vergeleken](./media/mosp-new-customer-experience/comparison-old-new-account.png)
+:::image type="content" source="./media/mosp-new-customer-experience/comparison-old-new-account.png" alt-text="Diagram van de vergelijking van de facturerings hiërarchie in het oude en het nieuwe account." border="false" lightbox="./media/mosp-new-customer-experience/comparison-old-new-account.png":::
 
 Uw nieuwe factureringsaccount bevat een of meer factureringsprofielen waarmee u uw facturen en betalingsmethoden kunt beheren. Elk factureringsprofiel bevat een of meer factuursecties waarmee u kosten op de factuur van het factureringsprofiel kunt organiseren.
 
-![Diagram dat de nieuwe factureringshiërarchie weergeeft](./media/mosp-new-customer-experience/new-billing-account-hierarchy.png)
+:::image type="content" source="./media/mosp-new-customer-experience/new-billing-account-hierarchy.png" alt-text="Diagram waarin de nieuwe facturerings hiërarchie wordt weer gegeven." border="false" lightbox="./media/mosp-new-customer-experience/new-billing-account-hierarchy.png":::
 
 Rollen op het factureringsaccount hebben het hoogste machtigingsniveau. Deze rollen moeten worden toegewezen aan gebruikers die facturen moeten bekijken en de kosten voor uw hele account moeten bijhouden, zoals financiële medewerkers of IT-beheerders in een organisatie of het individu dat zich heeft geregistreerd voor een account. Zie [Rollen en taken van een factureringsaccount](../manage/understand-mca-roles.md#billing-account-roles-and-tasks) voor meer informatie. Wanneer uw account wordt bijgewerkt, krijgt de gebruiker die een beheerdersrol voor het oude factureringsaccount heeft, een eigenaarsrol voor het nieuwe account.
 
@@ -60,7 +60,21 @@ Uw nieuwe ervaring omvat de volgende kostenbeheer- en factureringsmogelijkheden 
 
 **Beter voorspelbare maandelijkse factureringsperiode** - In uw nieuwe account loopt de factureringsperiode vanaf de eerste dag van de maand tot de laatste dag van de maand, ongeacht wanneer u zich registreert om Azure te gebruiken. Aan het begin van elke maand wordt een factuur gegenereerd, die alle kosten van de vorige maand bevat.
 
-**Ontvang één maandelijkse factuur voor meerdere abonnementen** - U hebt de flexibiliteit om één maandelijkse factuur voor elk van uw abonnementen te ontvangen of één factuur voor meerdere abonnementen.
+**Eén maandelijkse factuur voor meerdere abonnementen ophalen** : in uw bestaande account krijgt u een factuur voor elk Azure-abonnement. Wanneer uw account wordt bijgewerkt, wordt het bestaande gedrag gehandhaafd, maar hebt u de flexibiliteit om de kosten van uw abonnementen op één factuur te consolideren. Nadat u het account hebt bijgewerkt, volgt u de onderstaande stappen om uw kosten op één factuur te consolideren:
+
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+2. Zoek naar **Kostenbeheer en facturering**.  
+   ![Schermopname van de zoekopdracht naar kostenbeheer en facturering in Azure Portal.](./media/mosp-new-customer-experience/billing-search-cost-management-billing.png)
+3. Selecteer **Azure-abonnementen** aan de linkerkant van het scherm. 
+4. De tabel geeft een lijst van de Azure-abonnementen waarvoor u betaalt. In de kolom facturerings profiel vindt u het facturerings profiel dat voor het abonnement wordt gefactureerd. De abonnements kosten worden weer gegeven op de factuur voor het facturerings profiel. Als u de kosten voor al uw abonnementen op één factuur wilt consolideren, moet u al uw abonnementen aan één facturerings profiel koppelen.  
+    :::image type="content" source="./media/mosp-new-customer-experience/list-azure-subscriptions.png" alt-text="Scherm opname van de lijst met Azure-abonnementen." lightbox="./media/mosp-new-customer-experience/list-azure-subscriptions.png" :::
+5. Kies een facturerings profiel dat u wilt gebruiken. 
+6. Selecteer een abonnement dat niet is gekoppeld aan het facturerings profiel dat u in stap 5 hebt gekozen. Klik op het weglatings teken (drie punten) voor het abonnement. Selecteer **Factuursectie wijzigen**.  
+    :::image type="content" source="./media/mosp-new-customer-experience/select-change-invoice-section.png" alt-text="Scherm afbeelding waarin de optie voor het wijzigen van de factuur wordt weer gegeven." lightbox="./media/mosp-new-customer-experience/select-change-invoice-section-zoomed-in.png" :::
+7. Selecteer het facturerings profiel dat u in stap #5 hebt gekozen.  
+    :::image type="content" source="./media/mosp-new-customer-experience/change-invoice-section.png" alt-text="Scherm afbeelding die laat zien hoe u de sectie factuur wijzigt." lightbox="./media/mosp-new-customer-experience/change-invoice-section-zoomed-in.png" :::
+8. Selecteer **wijzigen**.
+9. Herhaal stap 6-8 voor alle andere abonnementen. 
 
 **Ontvang één maandelijkse factuur voor Azure-abonnementen, ondersteuningsplannen en Azure Marketplace-producten** - U ontvangt één maandelijkse factuur voor alle kosten, waaronder gebruikskosten voor Azure-abonnementen en kosten voor ondersteuningsplannen en Azure Marketplace-aankopen.
 
@@ -98,6 +112,12 @@ We raden het volgende aan om u voor te bereiden op uw nieuwe ervaring:
 
 In de nieuwe ervaring wordt uw factuur rond de negende dag van elke maand gegenereerd en bevat deze alle kosten van de vorige maand. Deze datum is mogelijk anders dan de datum waarop uw factuur in het oude account wordt gegenereerd. Als u uw facturen met anderen deelt, stel hen dan op de hoogte van de datumwijziging.
 
+
+**Facturen in de eerste maand na de migratie**
+
+De dag waarop uw account is bijgewerkt, uw bestaande niet-gefactureerde kosten worden voltooid en u ontvangt de facturen voor deze kosten op de dag waarop u uw facturen doorgaans ontvangt. John heeft bijvoorbeeld twee Azure-abonnementen: Azure-sub 01 met facturerings cyclus van de vijfde dag van de maand tot de vierde dag van de volgende maand en Azure-sub 02 met facturerings cyclus van de tiende dag van een maand tot de negende dag van de volgende maand. John haalt facturen voor beide Azure-abonnementen doorgaans op de vijfde van de maand. Als het account van John wordt bijgewerkt op 4e april, worden de kosten voor Azure-sub 01 van 5 maart tot en met 4 april en de kosten voor Azure-sub 02 van 10 maart tot en met 4 april voltooid. John ontvangt twee facturen, één voor elke sub april. Nadat het account is bijgewerkt, wordt de facturerings cyclus van John gebaseerd op de kalender maand en worden alle kosten in rekening gebracht vanaf het begin van een kalender maand tot het einde van deze kalender maand.  De factuur voor de kosten van de vorige kalender maand is beschikbaar op het negende van elke maand. In het bovenstaande voor beeld ontvangt John een andere factuur op 5 mei voor de facturerings periode van 5 april tot en met 30 april. 
+
+
 **Nieuwe API’s voor facturering en kostenbeheer**
 
 Als u API's voor kostenbeheer of facturering gebruikt voor het uitvoeren van query’s op en het bijwerken van uw facturerings- of kostengegevens, moet u nieuwe API's gebruiken. In de onderstaande tabel staan de API’s die niet zullen werken met het nieuwe factureringsaccount, en de wijzigingen die u moet aanbrengen in uw nieuwe factureringsaccount.
@@ -106,6 +126,7 @@ Als u API's voor kostenbeheer of facturering gebruikt voor het uitvoeren van que
 |---------|---------|
 |[Factureringsaccounts - Weergeven](/rest/api/billing/2019-10-01-preview/billingaccounts/list) | In de API ‘Factureringsaccounts - Weergeven’ heeft uw oude factureringsaccount **MicrosoftOnlineServiceProgram** als agreementType. Uw nieuwe factureringsaccount heeft **MicrosoftCustomerAgreement** als agreementType. Als u een afhankelijkheid van agreementType opneemt, werk deze dan bij. |
 |[Facturen - Weergeven per factureringsabonnement](/rest/api/billing/2019-10-01-preview/invoices/listbybillingsubscription)     | Deze API retourneert alleen facturen die waren gegenereerd voordat uw account werd bijgewerkt. U moet de API [Facturen - Weergeven per factureringsaccount](/rest/api/billing/2019-10-01-preview/invoices/listbybillingaccount) gebruiken om facturen op te halen die in uw nieuwe factureringsaccount worden gegenereerd. |
+
 
 ## <a name="cost-management-updates-after-account-update"></a>Cost Management wordt bijgewerkt nadat het account is bijgewerkt
 
@@ -141,7 +162,7 @@ Met uw bijgewerkte account ontvangt u één factuur voor alle Azure-kosten. U he
 
 Als voor uw oude account uw factureringsperiode bijvoorbeeld van 24 november tot en met 23 december was, loopt de periode na de upgrade van 1 november tot en met 30 november, van 1 december tot en met 31 december, enzovoort.
 
-:::image type="content" source="./media/mosp-new-customer-experience/billing-periods.png" alt-text="Afbeelding van een vergelijking tussen oude en nieuwe factureringsperioden " lightbox="./media/mosp-new-customer-experience/billing-periods.png" :::
+:::image type="content" source="./media/mosp-new-customer-experience/billing-periods.png" alt-text="Scherm opname met een vergelijking tussen oude en nieuwe facturerings perioden." lightbox="./media/mosp-new-customer-experience/billing-periods.png" :::
 
 #### <a name="budgets"></a>Budgetten
 
@@ -156,7 +177,7 @@ Uw nieuwe factureringsrekening biedt een verbeterde exportfunctionaliteit. U kun
 
 Bijvoorbeeld: voor een factureringsperiode van 23 december tot en met 22 januari bevat het geëxporteerde CSV-bestand kosten- en verbruiksgegevens voor die periode. Na de update bevat de export gegevens voor de kalendermaand. Bijvoorbeeld 1 januari tot en met 31 januari, enzovoort.
 
-:::image type="content" source="./media/mosp-new-customer-experience/export-amortized-costs.png" alt-text="Afbeelding van een vergelijking tussen oude en nieuwe exportgegevens" lightbox="./media/mosp-new-customer-experience/export-amortized-costs.png" :::
+:::image type="content" source="./media/mosp-new-customer-experience/export-amortized-costs.png" alt-text="Scherm afbeeldingen met een vergelijking tussen oude en nieuwe export Details." lightbox="./media/mosp-new-customer-experience/export-amortized-costs.png" :::
 
 ## <a name="additional-information"></a>Aanvullende informatie
 

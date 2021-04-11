@@ -6,13 +6,13 @@ ms.author: anmuk
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
-ms.date: 2/5/2021
-ms.openlocfilehash: 2966618619aa40ed60c2f3d0fb2c8e080d34a016
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 3/24/2021
+ms.openlocfilehash: 7d6baee49250509e50cdeeea8cf8ca6cec5b362d
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102617043"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106222147"
 ---
 # <a name="custom-classifications-in-azure-purview"></a>Aangepaste classificaties in azure controle sfeer liggen
 
@@ -28,7 +28,7 @@ U kunt ook aangepaste classificaties maken als een van de standaard classificati
 
 ## <a name="steps-to-create-a-custom-classification"></a>Stappen voor het maken van een aangepaste classificatie
 
-Als u een aangepaste classificatie wilt maken, gaat u als volgt te werk:
+Als u een aangepaste classificatie wilt maken, voert u de volgende stappen uit:
 
 1. Selecteer in uw catalogus **beheer centrum** in het menu links.
 
@@ -68,7 +68,7 @@ Deze informatie omvat het aantal exemplaren dat er is, de formele naam, de bijbe
 
 ## <a name="custom-classification-rules"></a>Aangepaste classificatie regels
 
-De catalogus service biedt een aantal standaard classificatie regels die door de scanner worden gebruikt voor het automatisch detecteren van bepaalde gegevens typen. U kunt ook uw eigen aangepaste classificatie regels toevoegen om andere typen gegevens te detecteren die u mogelijk wilt zoeken in uw gegevens. Deze mogelijkheid kan zeer krachtig zijn wanneer u \' gegevens in uw gegevens onroerend goed wilt vinden.
+De catalogus service biedt een aantal standaard classificatie regels die door de scanner worden gebruikt voor het automatisch detecteren van bepaalde gegevens typen. U kunt ook uw eigen aangepaste classificatie regels toevoegen om andere typen gegevens te detecteren die u mogelijk wilt zoeken in uw gegevens. Deze mogelijkheid kan krachtig zijn wanneer u gegevens in uw gegevens onroerend goed wilt vinden.
 
 \'Stel dat een bedrijf met de naam contoso werk nemer-id's heeft die zijn gestandaardiseerd in het hele bedrijf met het woord \" werk nemer \" gevolgd door een GUID voor het maken van werk nemer {GUID}. Bijvoorbeeld, een exemplaar van een werk nemer-ID ziet er als volgt uit `EMPLOYEE9c55c474-9996-420c-a285-0d0fc23f1f55` .
 
@@ -109,11 +109,11 @@ Een aangepaste classificatie regel maken:
 
    :::image type="content" source="media/create-a-custom-classification-and-classification-rule/create-new-regex-rule.png" alt-text="Nieuwe regex-regel maken" border="true":::
 
-1. Als u besluit een voorgesteld patroon voor regex te genereren, selecteert u na het uploaden van een bestand een van de voorgestelde patronen en klikt u op **toevoegen aan patronen** om de voorgestelde gegevens en kolom patronen te gebruiken. U kunt de voorgestelde patronen aanpassen of ook uw eigen patronen typen zonder een bestand te uploaden.
+1. Als u besluit een voorgesteld patroon voor regex te genereren, selecteert u na het uploaden van een bestand een van de voorgestelde patronen en selecteert u **toevoegen aan patronen** om de voorgestelde gegevens en kolom patronen te gebruiken. U kunt de voorgestelde patronen aanpassen of ook uw eigen patronen typen zonder een bestand te uploaden.
 
    :::image type="content" source="media/create-a-custom-classification-and-classification-rule/suggested-regex.png" alt-text="Voorgestelde regex genereren" border="true":::
 
-   |Veld     |Description  |
+   |Veld     |Beschrijving  |
    |---------|---------|
    |Gegevens patroon    |Optioneel. Een reguliere expressie die de gegevens vertegenwoordigt die zijn opgeslagen in het gegevens veld. De limiet is zeer groot. In het vorige voor beeld testen de gegevens patronen voor een werk nemer-ID die letterlijk het woord is `Employee{GUID}` .  |
    |Kolom patroon    |Optioneel. Een reguliere expressie die de kolom namen vertegenwoordigt die u wilt zoeken. De limiet is zeer groot. |
@@ -128,6 +128,14 @@ Een aangepaste classificatie regel maken:
 
    :::image type="content" source="media/create-a-custom-classification-and-classification-rule/verify-rule.png" alt-text="Controleer de regel voordat u deze maakt" border="true":::
 
+1. Test de classificatie regel voordat u het aanmaak proces voltooit om te valideren of tags worden toegepast op uw activa. De classificaties in de regel worden toegepast op de voorbeeld gegevens die zijn geüpload, net zoals bij een scan. Dit betekent dat alle systeem classificaties en uw aangepaste classificatie overeenkomen met de gegevens in uw bestand.
+
+   Invoer bestanden kunnen bestanden met scheidings tekens (CSV, PSV, SSV, TSV), JSON of XML bevatten. De inhoud wordt geparseerd op basis van de bestands extensie van het invoer bestand. Gescheiden gegevens hebben mogelijk een bestands extensie die overeenkomt met een van de genoemde typen. Zo kunnen TSV-gegevens zich bevinden in een bestand met de naam MySampleData.csv. Inhoud met scheidings tekens moet ook mini maal drie kolommen bevatten.
+
+   :::image type="content" source="media/create-a-custom-classification-and-classification-rule/test-rule-screen.png" alt-text="Test regel voor het maken van" border="true":::
+
+   :::image type="content" source="media/create-a-custom-classification-and-classification-rule/test-rule-uploaded-file-result-screen.png" alt-text="Toegepaste classificaties weer geven na het uploaden van een test bestand" border="true":::
+
 ### <a name="creating-a-dictionary-rule"></a>Een woordenlijst regel maken
 
 1. Als u een woordenlijst regel maakt, wordt het volgende scherm weer gegeven. Upload een bestand dat alle mogelijke waarden bevat voor de classificatie die u in één kolom maakt.
@@ -136,9 +144,9 @@ Een aangepaste classificatie regel maken:
 
 1. Nadat de woorden lijst is gegenereerd, kunt u de drempel waarden voor DISTINCT match en minimum match aanpassen en de regel verzenden.
 
-   :::image type="content" source="media/create-a-custom-classification-and-classification-rule/dictionary-generated.png" alt-text="Controle sfeer liggen-woordenlijst regel: de drempel waarde voor de afzonderlijke overeenkomst en de minimale overeenkomst aanpassen" border="true":::
+- **Drempel waarde voor DISTINCT**: het totale aantal afzonderlijke gegevens waarden dat in een kolom moet worden gevonden voordat de scanner het gegevens patroon erop uitvoert. De drempel waarde voor DISTINCT matching heeft niets te maken met patroon vergelijking, maar het is een vereiste voor patroon vergelijking. De voorgestelde waarde is 8. Deze waarde kan hand matig worden aangepast in een bereik van 2 tot en met 32. Het systeem vereist deze waarde om ervoor te zorgen dat de kolom voldoende gegevens bevat voor de scanner om deze nauw keurig te classificeren. Een kolom die bijvoorbeeld meerdere rijen bevat die alle de waarde 1 bevatten, wordt niet geclassificeerd. Kolommen die één rij met een waarde bevatten en de rest van de rijen hebben null-waarden, worden ook niet geclassificeerd. Als u meerdere patronen opgeeft, geldt deze waarde voor elk patroon.
 
-   :::image type="content" source="media/create-a-custom-classification-and-classification-rule/dictionary-generated.png" alt-text="Een woordenlijst regel maken, met een woorden lijst gegenereerd vinkje." border="true":::
+   :::image type="content" source="media/create-a-custom-classification-and-classification-rule/dictionary-generated.png" alt-text="Maak een woordenlijst regel, met Dictionary-Generated vinkje." border="true":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

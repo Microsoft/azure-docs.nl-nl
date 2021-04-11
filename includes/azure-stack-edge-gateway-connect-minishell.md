@@ -2,14 +2,14 @@
 author: alkohli
 ms.service: databox
 ms.topic: include
-ms.date: 03/08/2021
+ms.date: 03/30/2021
 ms.author: alkohli
-ms.openlocfilehash: 0ad760caedffa97599548b8dd1b59a887b5690af
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 89e648099a5ac6d905f475319cc108dd0d05a6e9
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105104157"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106081135"
 ---
 Afhankelijk van het besturings systeem van de client zijn de procedures om een externe verbinding met het apparaat te maken verschillend.
 
@@ -58,8 +58,15 @@ Volg deze stappen om vanaf een Windows-client extern verbinding te maken.
 
     Als er een fout met betrekking tot de vertrouwens relatie wordt weer geven, controleert u of de ondertekening keten van het knooppunt certificaat dat is geüpload naar uw apparaat ook is geïnstalleerd op de client die toegang heeft tot uw apparaat.
 
+    Als u de certificaten niet gebruikt (we raden u aan de certificaten uit te voeren), kunt u deze controle overs laan met behulp van de sessie-opties: `-SkipCACheck -SkipCNCheck -SkipRevocationCheck` .
+
+    ```powershell
+    $sessOptions = New-PSSessionOption -SkipCACheck -SkipCNCheck -SkipRevocationCheck 
+    Enter-PSSession -ComputerName $ip -Credential $ip\EdgeUser -ConfigurationName Minishell -UseSSL -SessionOption $sessOptions    
+    ```
+
     > [!NOTE] 
-    > Wanneer u de `-UseSSL` optie gebruikt, hebt u externe toegang via Power shell via *https*. U kunt het beste altijd *https* gebruiken om extern verbinding te maken via Power shell. Hoewel een *http-* sessie niet de veiligste verbindings methode is, is deze acceptabel in vertrouwde netwerken.
+    > Wanneer u de `-UseSSL` optie gebruikt, hebt u externe toegang via Power shell via *https*. U kunt het beste altijd *https* gebruiken om extern verbinding te maken via Power shell. 
 
 6. Geef het wacht woord op wanneer u hierom wordt gevraagd. Gebruik hetzelfde wacht woord dat wordt gebruikt om u aan te melden bij de lokale webgebruikersinterface. Het standaard wacht woord voor de lokale web-UI is *Wachtwoord1*. Wanneer u verbinding met het apparaat met behulp van externe Power shell hebt gemaakt, ziet u de volgende voorbeeld uitvoer:  
 
@@ -77,27 +84,30 @@ Volg deze stappen om vanaf een Windows-client extern verbinding te maken.
     [10.100.10.10]: PS>
     ```
 
-### <a name="remotely-connect-from-a-linux-client"></a>Extern verbinding maken vanaf een Linux-client
+> [!IMPORTANT]
+> In de huidige versie kunt u via een Windows-client verbinding maken met de Power shell-interface van het apparaat. De `-UseSSL` optie werkt niet met de Linux-clients.
 
-Op de Linux-client die u gebruikt om verbinding te maken:
+<!--### Remotely connect from a Linux client-->
 
-- [Installeer de meest recente Power shell-kern voor Linux](/powershell/scripting/install/installing-powershell-core-on-linux) van github om de functie SSH Remoting op te halen. 
-- [Alleen het `gss-ntlmssp` pakket installeren vanuit de NTLM-module](https://github.com/Microsoft/omi/blob/master/Unix/doc/setup-ntlm-omi.md). Gebruik de volgende opdracht voor Ubuntu-clients:
+<!--On the Linux client that you'll use to connect:
+
+- [Install the latest PowerShell Core for Linux](/powershell/scripting/install/installing-powershell-core-on-linux) from GitHub to get the SSH remoting feature. 
+- [Install only the `gss-ntlmssp` package from the NTLM module](https://github.com/Microsoft/omi/blob/master/Unix/doc/setup-ntlm-omi.md). For Ubuntu clients, use the following command:
     - `sudo apt-get install gss-ntlmssp`
 
-Ga voor meer informatie naar [externe toegang tot Power shell via SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
+For more information, go to [PowerShell remoting over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
-Volg deze stappen om vanaf een NFS-client extern verbinding te maken.
+Follow these steps to remotely connect from an NFS client.
 
-1. Als u Power shell-sessie wilt openen, typt u:
+1. To open PowerShell session, type:
 
     `pwsh`
  
-2. Als u verbinding wilt maken via de externe client, typt u:
+2. For connecting using the remote client, type:
 
     `Enter-PSSession -ComputerName $ip -Authentication Negotiate -ConfigurationName Minishell -Credential ~\EdgeUser`
 
-    Wanneer u hierom wordt gevraagd, geeft u het wacht woord op waarmee u zich aanmeldt bij uw apparaat.
+    When prompted, provide the password used to sign into your device.
  
 > [!NOTE]
-> Deze procedure werkt niet op Mac OS.
+> This procedure does not work on Mac OS.-->

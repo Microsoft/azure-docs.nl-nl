@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: conceptual
-ms.date: 03/10/2021
+ms.date: 04/02/2021
 ms.author: victorh
-ms.openlocfilehash: 21bb1856409b7fbea1eeffb8b3769dd63119da50
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 8dbfb23d4314f8ceb13ad36ca9733e446e176090
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102612844"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106278178"
 ---
 # <a name="azure-firewall-features"></a>Azure Firewall-functies
 
@@ -55,7 +55,7 @@ Azure Firewall-beschikbaarheidszones zijn beschikbaar in regio's die ondersteuni
 > [!NOTE]
 > Beschikbaarheidszones kunnen alleen worden geconfigureerd tijdens de implementatie. U kunt een bestaande firewall niet configureren om Beschikbaarheidszones te bevatten.
 
-Zie [Regio's en beschikbaarheidszones in Azure](../availability-zones/az-overview.md) voor meer informatie over beschikbaarheidszones
+Zie [regio's en Beschikbaarheidszones in azure](../availability-zones/az-overview.md)voor meer informatie over Beschikbaarheidszones.
 
 ## <a name="unrestricted-cloud-scalability"></a>Onbeperkte cloudschaalbaarheid
 
@@ -86,6 +86,8 @@ Filteren op basis van [bedreigingsinformatie](threat-intel.md) kan worden ingesc
 Alle uitgaande IP-adressen van virtueel netwerkverkeer worden geconverteerd naar de openbare IP van Azure Firewall (Source Network Address Translation). U kunt verkeer dat afkomstig is uit uw virtuele netwerk naar externe internetbestemmingen identificeren en toestaan. Op basis van IANA RFC 1918 biedt Azure Firewall geen SNAT wanneer het doel-IP een privé-IP-bereik is volgens [IANA RFC 1918](https://tools.ietf.org/html/rfc1918). 
 
 Als uw organisatie gebruikmaakt van een openbaar IP-adresbereik voor particuliere netwerken, stuurt Azure Firewall het verkeer met SNAT naar een van de privé-IP-adressen van de firewall in AzureFirewallSubnet. U kunt Azure Firewall configureren om SNAT **niet** in te schakelen voor uw openbare IP-adresbereik. Raadpleeg [Azure Firewall SNAT voor privé-IP-adresbereiken](snat-private-range.md) voor meer informatie.
+
+U kunt het SNAT-poort gebruik bewaken in Azure Firewall metrische gegevens. Zie de documentatie over de [firewall logboeken en metrische gegevens](logs-and-metrics.md#metrics)voor meer informatie en Bekijk onze aanbevelingen voor het gebruik van de SNAT-poort.
 
 ## <a name="inbound-dnat-support"></a>Ondersteuning voor inkomende DNAT
 

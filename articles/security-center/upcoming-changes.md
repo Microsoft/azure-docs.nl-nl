@@ -5,14 +5,14 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: overview
-ms.date: 03/18/2021
+ms.date: 04/08/2021
 ms.author: memildin
-ms.openlocfilehash: b9a93286b6a546160b6c621d084437f671eab4d3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f9e1b5d19acbc9bcee86c374a3f843530b8adc61
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104773569"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107103756"
 ---
 # <a name="important-upcoming-changes-to-azure-security-center"></a>Belangrijke aanstaande wijzigingen aan Azure Security Center
 
@@ -28,59 +28,11 @@ Als u op zoek bent naar de nieuwste opmerkingen bij de release, vindt u deze in 
 
 | Geplande wijziging                                                                                                                                                        | Geschatte datum voor wijziging |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------|
-| [Twee aanbevelingen van het beveiligings beheer ' systeem updates Toep assen ' worden afgeschaft](#two-recommendations-from-apply-system-updates-security-control-being-deprecated) | 2021 maart                |
-| [Afschaffing van 11 Azure Defender-waarschuwingen](#deprecation-of-11-azure-defender-alerts)                                                                                   | 2021 maart                |
 | [21 aanbevelingen die tussen beveiligings controles worden verplaatst](#21-recommendations-moving-between-security-controls)                                                           | April 2021                |
-| [Twee andere aanbevelingen van het beveiligings beheer ' systeem updates Toep assen ' worden afgeschaft](#two-further-recommendations-from-apply-system-updates-security-control-being-deprecated)                                                                                         | April 2021                |
-| [Aanbevelingen van AWS worden uitgebracht voor algemene Beschik baarheid (GA)](#recommendations-from-aws-will-be-released-for-general-availability-ga)                     | April 2021                |
+| [Twee aanbevelingen van het beveiligings beheer ' systeem updates Toep assen ' worden afgeschaft](#two-recommendations-from-apply-system-updates-security-control-being-deprecated) | April 2021                |
+| [Aanbevelingen van AWS worden uitgebracht voor algemene Beschik baarheid (GA)](#recommendations-from-aws-will-be-released-for-general-availability-ga)                     | 2021 **augustus**             |
 | [Verbeteringen in aanbeveling voor SQL-gegevens classificatie](#enhancements-to-sql-data-classification-recommendation)                                                     | Q2 2021                   |
 |                                                                                                                                                                       |                           |
-
-
-### <a name="two-recommendations-from-apply-system-updates-security-control-being-deprecated"></a>Twee aanbevelingen van het beveiligings beheer ' systeem updates Toep assen ' worden afgeschaft 
-
-**Geschatte datum voor wijziging:** 2021 maart
-
-De volgende twee aanbevelingen zijn gepland om te worden afgeschaft in februari 2021:
-
-- **Uw computers moeten opnieuw worden opgestart om systeem updates toe te passen**. Dit kan een geringe invloed op uw beveiligde Score opleveren.
-- **Bewakings agent moet op uw computers zijn geïnstalleerd**. Deze aanbeveling is gekoppeld aan on-premises machines en sommige logica wordt overgezet naar een andere aanbeveling, **log Analytics problemen met de agent status moeten worden opgelost op uw computers**. Dit kan een geringe invloed op uw beveiligde Score opleveren.
-
-We raden u aan om uw continue export-en werk stroom Automation-configuraties te controleren om te zien of deze aanbevelingen in hen zijn opgenomen. Daarnaast moeten alle Dash boards of andere bewakings hulpprogramma's die deze kunnen gebruiken, dienovereenkomstig worden bijgewerkt.
-
-Meer informatie over deze aanbevelingen vindt u op de [overzichts pagina met aanbevelingen voor beveiliging](recommendations-reference.md).
-
-### <a name="deprecation-of-11-azure-defender-alerts"></a>Afschaffing van 11 Azure Defender-waarschuwingen
-
-**Geschatte datum voor wijziging:** 2021 maart
-
-De volgende maand worden de elf Azure Defender-waarschuwingen die hieronder worden weer gegeven, afgeschaft.
-
-- Nieuwe waarschuwingen vervangen deze twee waarschuwingen en bieden een betere dekking:
-
-    | AlertType                | AlertDisplayName                                                         |
-    |--------------------------|--------------------------------------------------------------------------|
-    | ARM_MicroBurstDomainInfo | VOOR beeld-microburst Toolkit ' Get-AzureDomainInfo ' uitgevoerde functie gedetecteerd |
-    | ARM_MicroBurstRunbook    | VOOR beeld-microburst Toolkit ' Get-AzurePasswords ' uitgevoerde functie gedetecteerd  |
-    |                          |                                                                          |
-
-- Deze negen waarschuwingen hebben betrekking op een Azure Active Directory Identity Protection connector die al is afgeschaft:
-
-    | AlertType           | AlertDisplayName              |
-    |---------------------|-------------------------------|
-    | UnfamiliarLocation  | Onbekende aanmeldingseigenschappen |
-    | AnonymousLogin      | Anoniem IP-adres          |
-    | InfectedDeviceLogin | Aan malware gekoppeld IP-adres     |
-    | ImpossibleTravel    | Ongewoon traject               |
-    | MaliciousIP         | Schadelijk IP-adres          |
-    | LeakedCredentials   | Gelekte referenties            |
-    | PasswordSpray       | Wachtwoord spuit                |
-    | LeakedCredentials   | Azure AD-bedreigingsinformatie  |
-    | AADAI               | Azure AD AI                   |
-    |                     |                               |
- 
-
-
 
 
 ### <a name="21-recommendations-moving-between-security-controls"></a>21 aanbevelingen die tussen beveiligings controles worden verplaatst 
@@ -98,7 +50,7 @@ Voor meer informatie over welke aanbevelingen zich in elk beveiligingsbeheer bev
 |||
 
 
-### <a name="two-further-recommendations-from-apply-system-updates-security-control-being-deprecated"></a>Twee andere aanbevelingen van het beveiligings beheer ' systeem updates Toep assen ' worden afgeschaft
+### <a name="two-recommendations-from-apply-system-updates-security-control-being-deprecated"></a>Twee aanbevelingen van het beveiligings beheer ' systeem updates Toep assen ' worden afgeschaft
 
 **Geschatte datum voor wijziging:** April 2021
 
@@ -110,7 +62,7 @@ De volgende twee aanbevelingen worden afgeschaft:
 
 ### <a name="recommendations-from-aws-will-be-released-for-general-availability-ga"></a>Aanbevelingen van AWS worden uitgebracht voor algemene Beschik baarheid (GA)
 
-**Geschatte datum voor wijziging:** April 2021
+**Geschatte datum voor wijziging:** 2021 augustus
 
 Azure Security Center biedt bescherming voor workloads in Azure, Amazon Web Services (AWS) en Google Cloud Platform (GCP).
 
@@ -121,7 +73,7 @@ Met deze wijziging worden twee sets van AWS-aanbevelingen verplaatst naar GA:
 - [PCI DSS besturings elementen van de Security hub](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-pci-controls.html)
 - [Security hub CIS AWS Stichtings benchmarks Controls](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-cis-controls.html)
 
-Wanneer dit GA en de evaluaties worden uitgevoerd op uw AWS-resources, zijn de resultaten van invloed op uw gecombineerde beveiligde score voor al uw multi-en hybride cloud resources. 
+Wanneer dit GA en de evaluaties worden uitgevoerd op uw AWS-resources, zijn de resultaten van invloed op uw gecombineerde beveiligde score voor al uw multi-en hybride cloud resources.
 
 
 

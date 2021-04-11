@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.reviewer: boalcsva
-ms.openlocfilehash: 072377f98939d996547cb6ee9f9a535b4b32a3dc
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 6303a94cec9efc01815b6dc6c697abdfe0f84227
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98597951"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106220897"
 ---
 # <a name="azure-ea-vm-reserved-instances"></a>Gereserveerde exemplaren Azure EA-VM
 
@@ -96,7 +96,7 @@ Wanneer Azure EA-klanten alle Azure-vooruitbetaling hebben gebruikt, kunnen er n
 
 ### <a name="reserved-instance-expiration"></a>Verloop van gereserveerde instanties
 
-Voordat een instantie verloopt, ontvangt u 30 dagen en op het moment zelf een e-mailmelding. Wanneer de reservering verloopt, blijven geïmplementeerde VM's actief en worden deze in rekening gebracht tegen het tarief voor betalen per gebruik. Raadpleeg [Aanbieding van gereserveerde instanties van virtuele machines](https://azure.microsoft.com/pricing/reserved-vm-instances/) voor meer informatie.
+U ontvangt e-mail meldingen, de eerste 1 30 dagen vóór de verval datum van de reserve ring en de andere een verval datum. Wanneer de reservering verloopt, blijven geïmplementeerde VM's actief en worden deze in rekening gebracht tegen het tarief voor betalen per gebruik. Raadpleeg [Aanbieding van gereserveerde instanties van virtuele machines](https://azure.microsoft.com/pricing/reserved-vm-instances/) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

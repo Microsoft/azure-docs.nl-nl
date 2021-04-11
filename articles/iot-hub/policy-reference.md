@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure IoT Hub
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor Azure IoT Hub. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 03/24/2021
+ms.date: 03/31/2021
 ms.topic: reference
 author: robinsh
 ms.author: robinsh
 ms.service: iot-hub
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 8e89d715e29daef3817eb742023510367efe4b2e
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 5b59516f938ca6467e57a7b70050b9ef7c2a08d5
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105031733"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106093250"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-iot-hub"></a>Ingebouwde Azure Policy-definities voor Azure IoT Hub
 

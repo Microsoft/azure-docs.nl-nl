@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.custom: ''
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: a87525248273db38e4e7bc8d1b59bbd9f99bb4c6
-ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
+ms.openlocfilehash: c334888f5b85b0d2211225282680d5f791b50793
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106106973"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106277875"
 ---
 # <a name="high-availability-with-media-services-and-video-on-demand-vod"></a>Hoge Beschik baarheid met Media Services en video on demand (VOD)
 
@@ -61,7 +61,7 @@ Dit diagram op hoog niveau toont de architectuur van het voor beeld om u op weg 
 
 * [Maak](./account-create-how-to.md) twee (of meer) Azure Media Services-accounts. De twee accounts moeten zich in verschillende regio's behoeven. Zie [regio's waarin de Azure Media Services-service is geïmplementeerd](https://azure.microsoft.com/global-infrastructure/services/?products=media-services)voor meer informatie.
 * Upload uw media naar de regio van waaruit u de taak wilt indienen. Zie [een taak invoer maken op basis van een HTTPS-URL](./job-input-from-http-how-to.md) of [een taak invoer maken op basis van een lokaal bestand](./job-input-from-local-file-how-to.md)voor meer informatie over het starten van code ring.
-* Als u de [taak](./transforms-jobs-concept.md) vervolgens opnieuw moet verzenden naar een andere regio, kunt u gebruiken `JobInputHttp` of gebruiken `Copy-Blob` om de gegevens van de bron-Asset-container te kopiëren naar een activa container in de alternatieve regio.
+* Als u de [taak](./transform-jobs-concept.md) vervolgens opnieuw moet verzenden naar een andere regio, kunt u gebruiken `JobInputHttp` of gebruiken `Copy-Blob` om de gegevens van de bron-Asset-container te kopiëren naar een activa container in de alternatieve regio.
 
 ### <a name="monitoring"></a>Bewaking
 
@@ -72,10 +72,10 @@ Dit diagram op hoog niveau toont de architectuur van het voor beeld om u op weg 
 
     Voor meer informatie:
 
-    * Zie het [Audio Analytics](./transforms-jobs-concept.md) -voor beeld waarin wordt getoond hoe u een job bewaakt met Azure Event grid, inclusief het toevoegen van een terugval als de Azure Event grid berichten om een of andere reden worden vertraagd.
+    * Zie het [Audio Analytics](./transform-jobs-concept.md) -voor beeld waarin wordt getoond hoe u een job bewaakt met Azure Event grid, inclusief het toevoegen van een terugval als de Azure Event grid berichten om een of andere reden worden vertraagd.
     * Bekijk de [Azure Event grid schema's voor Media Services-gebeurtenissen](./media-services-event-schemas.md).
 
-* Wanneer u een [taak](./transforms-jobs-concept.md)maakt:
+* Wanneer u een [taak](./transform-jobs-concept.md)maakt:
     * Selecteer een wille keurig account in de lijst met momenteel gebruikte accounts (deze lijst bevat normaal gesp roken beide accounts, maar als er problemen zijn gedetecteerd, kan het slechts één account bevatten). Als de lijst leeg is, moet u een waarschuwing genereren zodat een operator kan onderzoeken.
     * Maak een record voor het bijhouden van elke invlucht-taak en de regio/het account dat wordt gebruikt.
 * Wanneer uw `JobStateChange` handler een melding krijgt dat een taak de geplande status heeft bereikt, noteert u de tijd die wordt ingevoerd in de geplande status en de regio/het account dat wordt gebruikt.

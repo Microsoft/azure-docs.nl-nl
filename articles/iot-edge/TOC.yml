@@ -24,23 +24,21 @@
     - name: Aangepaste codemodules ontwikkelen
       items:
         - name: C
-          items:
-            - name: C-modules voor Linux-apparaten
-              href: tutorial-c-module.md
-            - name: C-modules voor Windows-apparaten
-              href: tutorial-c-module-windows.md
+          href: tutorial-c-module.md
         - name: C#
-          items:
-            - name: C#-modules voor Linux-apparaten
-              href: tutorial-csharp-module.md
-            - name: C#-modules voor Windows-apparaten
-              href: tutorial-csharp-module-windows.md
+          href: tutorial-csharp-module.md
         - name: Java
           href: tutorial-java-module.md
         - name: Node.js
           href: tutorial-node-module.md
         - name: Python
           href: tutorial-python-module.md
+        - name: Windows-containers gebruiken
+          items:
+            - name: C
+              href: tutorial-c-module-windows.md
+            - name: C#
+              href: tutorial-csharp-module-windows.md
     - name: Azure-services implementeren als modules
       items:
         - name: Gegevens filteren met Azure Functions

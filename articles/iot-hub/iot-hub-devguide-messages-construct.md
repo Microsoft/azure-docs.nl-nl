@@ -11,12 +11,12 @@ ms.author: asrastog
 ms.custom:
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
-ms.openlocfilehash: 6d6b7122963b51619f26b8d02a8be4ad39261afb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 21f22f9aa31210b1690d0be562643d94901ce58a
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92147691"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106079043"
 ---
 # <a name="create-and-read-iot-hub-messages"></a>IoT Hub-berichten maken en lezen
 
@@ -71,7 +71,7 @@ Zie [Azure IOT sdk's](iot-hub-devguide-sdks.md)(Engelstalig) voor meer informati
 | bericht-id |Een door de gebruiker instel bare id voor het bericht dat wordt gebruikt voor de aanvraag/antwoord patronen. Indeling: een hoofdletter gevoelige teken reeks (Maxi maal 128 tekens lang) van ASCII 7-bits alfanumerieke tekens + `{'-', ':', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}` .  |Yes|
 | Volg nummer |Een getal (uniek per apparaat wachtrij) toegewezen door IoT Hub aan elk bericht van de Cloud naar het apparaat. |No|
 | tot |Een doel dat is opgegeven in [Cloud-naar-apparaat-](iot-hub-devguide-c2d-guidance.md) berichten. |No|
-| absoluut-verloop tijd |De datum en tijd waarop het bericht is verlopen. |No|   |
+| absoluut-verloop tijd |De datum en tijd waarop het bericht is verlopen. |No| 
 | correlation-id |Een teken reeks eigenschap in een antwoord bericht dat normaal gesp roken de MessageId van de aanvraag bevat, in antwoord patronen voor aanvragen. |Yes|
 | user-id |Een ID die wordt gebruikt om de oorsprong van berichten op te geven. Wanneer berichten door IoT Hub worden gegenereerd, wordt deze ingesteld op `{iot hub name}` . |Yes|
 | iothub-ACK |Een feedback bericht generator. Deze eigenschap wordt gebruikt in Cloud-naar-apparaat-berichten om IoT Hub te vragen om feedback berichten te genereren als gevolg van het verbruik van het bericht door het apparaat. Mogelijke waarden: **geen** (standaard): er wordt geen feedback bericht gegenereerd, **positief**: er wordt een feedback bericht ontvangen als het bericht is voltooid, **negatief**: Ontvang een feedback bericht als het bericht is verlopen (of het maximum aantal leveringen is bereikt) zonder dat het apparaat is voltooid, of **volledig**: zowel positief als negatief. |Yes|

@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 01/04/2021
 ms.author: vinigam
 ms.custom: mvc
-ms.openlocfilehash: 7abaae033d2dbdb329a1f99d8f9845e5965d806c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 24c181c17e49fe5b7c3001c1cb2839bc957ef463
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101712314"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106490485"
 ---
 # <a name="network-connectivity-monitoring-with-connection-monitor"></a>Netwerk connectiviteit controleren met verbindings monitor
 
@@ -291,8 +291,8 @@ Wanneer u metrische gegevens gebruikt, stelt u het resource type in als micro so
 | --- | --- | --- | --- | --- | --- |
 | ProbesFailedPercent (klassiek) | % Tests mislukt (klassiek) | Percentage | Gemiddeld | Het percentage van de connectiviteits controle tests is mislukt. | Geen dimensies |
 | AverageRoundtripMs (klassiek) | Gem. retour tijd (MS) (klassiek) | Milliseconden | Gemiddeld | Gemiddelde netwerk-RTT voor connectiviteits controle tests die zijn verzonden tussen de bron en de bestemming. |             Geen dimensies |
-| ChecksFailedPercent | % Controles mislukt | Percentage | Gemiddeld | Percentage mislukte controles voor een test. | ConnectionMonitorResourceId <br>SourceAddress <br>SourceName <br>SourceResourceId <br>SourceType <br>Protocol <br>DestinationAddress <br>Doel locatie <br>DestinationResourceId <br>DestinationType <br>DestinationPort <br>TestGroupName <br>TestConfigurationName <br>Region |
-| RoundTripTimeMs | Retour tijd (MS) | Milliseconden | Gemiddeld | RTT voor controles die worden verzonden tussen de bron en de bestemming. Deze waarde is niet van het gemiddelde. | ConnectionMonitorResourceId <br>SourceAddress <br>SourceName <br>SourceResourceId <br>SourceType <br>Protocol <br>DestinationAddress <br>Doel locatie <br>DestinationResourceId <br>DestinationType <br>DestinationPort <br>TestGroupName <br>TestConfigurationName <br>Region |
+| ChecksFailedPercent | % Controles mislukt | Percentage | Gemiddeld | Percentage mislukte controles voor een test. | ConnectionMonitorResourceId <br>SourceAddress <br>SourceName <br>SourceResourceId <br>SourceType <br>Protocol <br>DestinationAddress <br>Doel locatie <br>DestinationResourceId <br>DestinationType <br>DestinationPort <br>TestGroupName <br>TestConfigurationName <br>Regio |
+| RoundTripTimeMs | Retour tijd (MS) | Milliseconden | Gemiddeld | RTT voor controles die worden verzonden tussen de bron en de bestemming. Deze waarde is niet van het gemiddelde. | ConnectionMonitorResourceId <br>SourceAddress <br>SourceName <br>SourceResourceId <br>SourceType <br>Protocol <br>DestinationAddress <br>Doel locatie <br>DestinationResourceId <br>DestinationType <br>DestinationPort <br>TestGroupName <br>TestConfigurationName <br>Regio |
 | TestResult | Test resultaat | Count | Gemiddeld | Test resultaat verbindings monitor | SourceAddress <br>SourceName <br>SourceResourceId <br>SourceType <br>Protocol <br>DestinationAddress <br>Doel locatie <br>DestinationResourceId <br>DestinationType <br>DestinationPort <br>TestGroupName <br>TestConfigurationName <br>SourceIP <br>DestinationIP <br>SourceSubnet <br>DestinationSubnet |
 
 #### <a name="metric-based-alerts-for-connection-monitor"></a>Waarschuwingen op basis van metrische gegevens voor verbindings monitor
@@ -358,6 +358,8 @@ Voor netwerken waarvan de bronnen virtuele Azure-machines zijn, kunnen de volgen
     * De tunnel tussen twee gateways is losgekoppeld of ontbreekt.
     * De tweede gateway is niet gevonden door de tunnel.
     * Er zijn geen peering-gegevens gevonden.
+> [!NOTE]
+> Als er 2 verbonden gateways zijn en een daarvan zich niet in dezelfde regio bevindt als het bron eindpunt, wordt deze door CM aangeduid als ' geen geleerde route ' voor de topologie weergave. De connectiviteit wordt niet beïnvloed. Dit is een bekend probleem en de oplossing wordt uitgevoerd. 
 * De route ontbreekt in micro soft Edge.
 * Verkeer is gestopt vanwege systeem routes of UDR.
 * BGP is niet ingeschakeld op de gateway verbinding.

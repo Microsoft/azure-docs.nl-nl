@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 10/16/2018
 ms.title: include
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: ef0aa8ba1983ca30fd44c27fe570b6b5f51733a5
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5105df5793d37b166b017585a62c962933a0b019
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101745671"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106081156"
 ---
 ## <a name="create-a-scheduled-webjob"></a><a name="CreateScheduledCRON"></a> Een geplande Webtaak maken
 
@@ -31,7 +31,7 @@ ms.locfileid: "101745671"
     
     | Instelling      | Voorbeeldwaarde   |
     | ------------ | ----------------- | 
-    | <abbr title="Een naam die uniek is binnen een App Service-app. Moet beginnen met een letter of een cijfer en mag geen speciale tekens bevatten `-` , behalve en `_` .">Name</a> | myScheduledWebJob |  |
+    | <abbr title="Een naam die uniek is binnen een App Service-app. Moet beginnen met een letter of een cijfer en mag geen speciale tekens bevatten `-` , behalve en `_` .">Name</a> | myScheduledWebJob | 
     | <abbr title="Een *zip* -bestand dat uw uitvoer bare bestand of script bestanden bevat, evenals alle ondersteunende bestanden die nodig zijn om het programma of script uit te voeren.">Bestand uploaden</abbr> | ConsoleApp.zip |
     | <abbr title="Typen bevatten doorlopend, geactiveerd.">Type</abbr> | Geactiveerd |
     | <abbr title="Schakel de functie altijd on in om de planning betrouwbaar te laten werken. Always on is alleen beschikbaar in de prijs categorieën Basic, Standard en Premium.">Triggers</a> | Gepland |

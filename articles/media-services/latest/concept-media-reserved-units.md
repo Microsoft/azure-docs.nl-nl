@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/30/2020
 ms.author: inhenkel
-ms.openlocfilehash: e0cfc47b546c31e6b93d224e64de20b79baacfd9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4b3a06d2d441c918c4c109d9dc624ebfa1cd4c97
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98891292"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106120806"
 ---
 # <a name="media-reserved-units"></a>Gereserveerde media-eenheden
 
@@ -52,8 +52,8 @@ Er worden kosten in rekening gebracht op basis van het aantal minuten dat de ger
 
 ## <a name="next-step"></a>Volgende stap
 [Gereserveerde media-eenheden schalen met CLI](media-reserved-units-cli-how-to.md) 
- [Video's analyseren](analyze-videos-tutorial-with-api.md)
+ [Video's analyseren](analyze-videos-tutorial.md)
 
 ## <a name="see-also"></a>Zie ook
 
-* [Quota en limieten](limits-quotas-constraints.md)
+* [Quota en limieten](limits-quotas-constraints-reference.md)

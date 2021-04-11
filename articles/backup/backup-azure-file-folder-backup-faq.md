@@ -2,13 +2,13 @@
 title: Microsoft Azure Recovery Services-agent (MARS) – Veelgestelde vragen
 description: Behandelt Veelgestelde vragen over het maken van back-ups van bestanden en mappen met Azure Backup.
 ms.topic: conceptual
-ms.date: 07/29/2019
-ms.openlocfilehash: 1edfaed99e60409774496c5ae75df8be99a8fe1f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/05/2021
+ms.openlocfilehash: 09c54d7f24ba4bea1bf9081333f345b1a246a4d6
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94917355"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106505464"
 ---
 # <a name="frequently-asked-questions---microsoft-azure-recovery-services-mars-agent"></a>Veelgestelde vragen-agent voor Microsoft Azure Recovery Services (MARS)
 
@@ -100,6 +100,10 @@ Deze waarschuwing kan worden weer gegeven ondanks dat u een back-upbeleid hebt g
 
 * Wanneer de server of de instellingen zijn hersteld naar een bekende goede staat, kunnen back-upscheman niet meer worden gesynchroniseerd.
 * Als deze waarschuwing wordt weer gegeven, [configureert](backup-azure-manage-windows-server.md) u het back-upbeleid opnieuw en voert u een back-up op aanvraag uit om de lokale server opnieuw te synchroniseren met Azure.
+
+### <a name="i-see-a-few-jobs-are-stuck-in-the-in-progress-state-for-a-long-time-under-backup-jobs-in-the-azure-portal-how-can-i-resolve-these"></a>Ik zie een aantal taken in de status in uitvoering gedurende lange tijd vastlopen onder back-uptaken in de Azure Portal. Hoe kan ik deze oplossingen oplossen?
+
+Dit kan gebeuren als een taak niet kan worden voltooid vanwege redenen, zoals problemen met de netwerk verbinding, het afsluiten van de computer of het beëindigen van het proces. Hier is geen gebruikers actie vereist. Deze taken worden na 30 dagen automatisch gemarkeerd als **mislukt** . [Meer informatie over](backup-windows-with-mars-agent.md#run-an-on-demand-backup) het uitvoeren van een back-uptaak op aanvraag met behulp van de Mars-agent.
 
 ## <a name="manage-the-backup-cache-folder"></a>De map voor de back-upcache beheren
 
@@ -209,7 +213,7 @@ In het geval van een veiligheids maatregel behoudt Azure Backup het meest recent
 
 Als een actieve herstel taak wordt geannuleerd, wordt het herstel proces gestopt. Alle bestanden die vóór de annulering worden teruggezet, blijven geconfigureerd op de ingestelde bestemming (oorspronkelijke of alternatieve locatie), zonder terugdraai bewerkingen.
 
-### <a name="does-the-mars-agent-back-up-and-restore-acls-set-on-files-folders-and-volumes"></a>Maakt de MARS-agent een back-up en herstelt u de Acl's die zijn ingesteld voor bestanden, mappen en volumes?
+### <a name="does-the-mars-agent-backup-and-restore-acls-set-on-files-folders-and-volumes"></a>Wordt de back-up-en herstel-Acl's voor de MARS-agent ingesteld voor bestanden, mappen en volumes?
 
 * De MARS-agent maakt een back-up van de Acl's die zijn ingesteld voor bestanden, mappen en volumes
 * Voor de herstel optie voor volume herstel biedt de MARS agent een optie voor het overs laan van het terugzetten van ACL-machtigingen naar het bestand of de map die wordt hersteld

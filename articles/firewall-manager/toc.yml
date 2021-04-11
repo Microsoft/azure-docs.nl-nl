@@ -51,6 +51,8 @@
   items:
     - name: Beveiligingspartnerproviders implementeren
       href: deploy-trusted-security-partner.md
+    - name: Privé-eind punten beveiligen
+      href: private-link-inspection-secure-virtual-hub.md
     - name: Migreren naar firewallbeleid - PowerShell
       href: migrate-to-policy.md
     - name: DNS-instellingen

@@ -9,12 +9,13 @@ ms.date: 05/28/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 8f019c8f3c560fdfdc0c8e5992389c253c9b0d74
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+monikerRange: =iotedge-2018-06
+ms.openlocfilehash: a67bf92dbee9bf3d444add3be32544e4c3eba4f3
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103463371"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106221599"
 ---
 # <a name="tutorial-develop-c-iot-edge-modules-using-windows-containers"></a>Zelf studie: C IoT Edge-modules ontwikkelen met behulp van Windows-containers
 

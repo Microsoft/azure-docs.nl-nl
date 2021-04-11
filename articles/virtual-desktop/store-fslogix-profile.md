@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 10/14/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 2ec166c1df9727052d4980f5d5758ece8c499880
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1f8a82eddfdc7a2a4899c4ee836687df26101bdc
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99526599"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106221888"
 ---
 # <a name="storage-options-for-fslogix-profile-containers-in-windows-virtual-desktop"></a>Opslag opties voor FSLogix-profiel containers in virtueel bureau blad van Windows
 
@@ -44,6 +44,26 @@ De volgende tabel bevat een vergelijking van de opslag oplossingen Azure Storage
 |Integratie van Azure Active Directory|[Systeem eigen Active Directory en Azure Active Directory Domain Services](../storage/files/storage-files-active-directory-overview.md)|[Azure Active Directory Domain Services en systeem eigen Active Directory](../azure-netapp-files/azure-netapp-files-faqs.md#does-azure-netapp-files-support-azure-active-directory)|Alleen systeem eigen Active Directory-of Azure Active Directory Domain Services-ondersteuning|
 
 Als u uw opslag methode hebt gekozen, raadpleegt u de [prijzen voor Windows virtueel bureau blad](https://azure.microsoft.com/pricing/details/virtual-desktop/) voor informatie over onze prijs plannen.
+
+## <a name="azure-files-tiers"></a>Azure Files lagen
+
+Azure Files biedt twee verschillende opslag lagen: Premium en Standard. Met deze lagen kunt u de prestaties en kosten van uw bestands shares aanpassen om te voldoen aan de vereisten van uw scenario.
+
+- Premium-bestands shares worden ondersteund door Ssd's (Solid-state drives) en worden geïmplementeerd in het type opslag account van FileStorage. Premium-bestands shares bieden consistente hoge prestaties en lage latentie voor intensieve i/o-werk belastingen op invoer en uitvoer. 
+
+- Standaard bestands shares worden ondersteund door harde schijven (Hdd's) en worden geïmplementeerd in het type opslag account voor algemeen gebruik (versie 2) (GPv2). Standaard bestands shares bieden betrouw bare prestaties voor i/o-workloads die minder gevoelig zijn voor prestatie variaties, zoals bestands shares voor algemene doel einden en ontwikkel-en test omgevingen. Standaard bestands shares zijn alleen beschikbaar in een facturerings model met betalen per gebruik.
+
+De volgende tabel geeft een overzicht van onze aanbevelingen voor de prestatie tier die moet worden gebruikt op basis van uw werk belasting. Deze aanbevelingen helpen u bij het selecteren van de prestatie-laag die voldoet aan uw prestatie doelen, budget en regionale overwegingen. We hebben deze aanbevelingen gebaseerd op de voorbeeld scenario's van [extern bureaublad typen werk belastingen](/windows-server/remote/remote-desktop-services/remote-desktop-workloads). 
+
+| Type werk belasting | Aanbevolen bestands niveau |
+|--------|-----------|
+| Light (minder dan 200 gebruikers) | Standaardbestandsshares |
+| Licht (meer dan 200 gebruikers) | Premium-bestands shares of standaard met meerdere bestands shares |
+|Normaal|Premiumbestandsshares|
+|Zwaar|Premiumbestandsshares|
+|Stroom|Premiumbestandsshares|
+
+Zie [Bestands share en bestands schaal doelen](../storage/files/storage-files-scale-targets.md#azure-files-scale-targets)voor meer informatie over de prestaties van Azure files. Zie [Azure files prijzen](https://azure.microsoft.com/pricing/details/storage/files/)voor meer informatie over prijzen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

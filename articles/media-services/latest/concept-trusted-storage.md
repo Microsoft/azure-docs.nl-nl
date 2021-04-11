@@ -9,12 +9,12 @@ ms.service: media-services
 ms.topic: conceptual
 ms.date: 1/29/2020
 ms.author: inhenkel
-ms.openlocfilehash: fd92eed127ec50a3d3a86f667d9aa764b79c190a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 87f52bef07644370c268168c984a452d5ae3f9bd
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100585404"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106279456"
 ---
 # <a name="trusted-storage-for-media-services"></a>Vertrouwde opslag voor Media Services
 
@@ -29,7 +29,7 @@ Als u echter een firewall wilt gebruiken om uw opslag account te beveiligen en v
 
 ## <a name="tutorial"></a>Zelfstudie
 
-Meer informatie over het inschakelen van vertrouwde opslag vindt u in de zelf studie voor [vertrouwde opslag Media Services](tutorial-trusted-storage-rest.md) .
+Meer informatie over het inschakelen van vertrouwde opslag vindt u in de zelf studie voor [vertrouwde opslag Media Services](security-trusted-storage-rest-tutorial.md) .
 
 > [!NOTE]
 > U moet de AMS Managed Identity opslag BLOB data contributor-toegang verlenen om Media Services in staat te zijn om het opslag account te lezen en te schrijven.  Het verlenen van de rol algemene Inzender werkt niet omdat de juiste machtigingen niet worden ingeschakeld op het gegevens vlak.

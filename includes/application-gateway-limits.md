@@ -4,12 +4,12 @@ ms.service: application-gateway
 ms.topic: include
 ms.date: 03/04/2020
 ms.author: victorh
-ms.openlocfilehash: 4c7c68bf690097004f2f3310a8d89ce954d7f87f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c98d88d66e89df3efe186212d8c004ec2a65158d
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98612896"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106450211"
 ---
 | Resource | Limiet | Opmerking |
 | --- | --- | --- |
@@ -35,7 +35,7 @@ ms.locfileid: "98612896"
 | Aantal herschrijfregelsets |400| |
 | Aantal header- of URL-configuraties per herschrijfregelset|40| |
 | Aantal voorwaarden per herschrijfregelset|40| |
-| Gelijktijdige WebSocket-verbindingen |Gemiddelde gateways 20.000<br> Grote gateways 50.000| |
+| Gelijktijdige WebSocket-verbindingen |Gemiddelde gateways 20.000<sup>2</sup><br> Grote gateways 50.000<sup>2</sup>| |
 | Maximale URL-lengte|32 KB| |
 | Maximale header-grootte voor HTTP/2 |4 KB| |
 | Maximumgrootte voor bestandsupload, Standard |2 GB | |
@@ -45,3 +45,5 @@ ms.locfileid: "98612896"
 | Maximale WAF-uitsluitingen per Application Gateway|40||
 
 <sup>1</sup> In het geval van SKU's met WAF ingeschakeld moet u het aantal resources beperken tot 40.
+
+<sup>2</sup> de limiet is per Application Gateway exemplaar, niet per Application Gateway resource.

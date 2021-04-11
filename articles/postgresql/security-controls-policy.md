@@ -1,18 +1,18 @@
 ---
 title: Controles voor naleving van Azure Policy-regelgeving voor Azure Database for PostgreSQL
 description: Een overzicht van de beschikbare controles voor naleving van Azure Policy-regelgeving voor Azure Database for PostgreSQL. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 03/24/2021
+ms.date: 03/31/2021
 ms.topic: sample
 author: sunilagarwal
 ms.author: sunila
 ms.service: postgresql
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 86117bd5528bcb0f50a9add19fda5136990a2c47
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: e8c89856d7fdb3d71643d5119b850338029cc4d6
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105033757"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106093147"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-database-for-postgresql"></a>Controles voor naleving van Azure Policy-regelgeving voor Azure Database for PostgreSQL
 

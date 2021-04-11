@@ -6,12 +6,12 @@ ms.author: valls
 ms.date: 2/11/2021
 ms.topic: tutorial
 ms.service: iot-hub-device-update
-ms.openlocfilehash: b6a9fa3ac85460a46653c171198a2dfea8580f3a
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 143a7c411bea6a451645c860b7b5d12d2aa8d9f5
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105644486"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106121333"
 ---
 # <a name="device-update-for-azure-iot-hub-tutorial-using-the-raspberry-pi-3-b-reference-image"></a>Zelf studie over het bijwerken van apparaten voor Azure IoT Hub met behulp van de Raspberry Pi 3 B +-referentie-afbeelding
 
@@ -81,7 +81,7 @@ Lees de licentie voorwaarden voordat u de agent gebruikt. Uw installatie en gebr
 
 Het apparaat moet nu worden toegevoegd aan de Azure-IoT Hub.  In azure IoT Hub wordt een connection string gegenereerd voor het apparaat.
 
-1. Start de update voor het apparaat vanuit het Azure Portal IoT Hub.
+1. Open de Azure-IoT Hub vanuit het Azure Portal.
 2. Maak een nieuw apparaat.
 3. Navigeer aan de linkerkant van de pagina naar ' Explorers ' > IoT-apparaten > Selecteer ' nieuw '.
 4. Geef een naam op voor het apparaat onder apparaat-ID--zorg ervoor dat het selectie vakje sleutels automatisch genereren is geselecteerd.
@@ -103,9 +103,9 @@ Het apparaat moet nu worden toegevoegd aan de Azure-IoT Hub.  In azure IoT Hub w
  
 Vervangen `<device connection string>` door uw Connection String
  ```markdown
-    echo "connection_string=<device connection string>" > adu-conf.txt  
-    echo "aduc_manufacturer=ADUTeam" >> adu-conf.txt
-    echo "aduc_model=RefDevice" >> adu-conf.txt
+    echo "connection_string=<device connection string>" > /adu/adu-conf.txt  
+    echo "aduc_manufacturer=ADUTeam" >> /adu/adu-conf.txt
+    echo "aduc_model=RefDevice" >> /adu/adu-conf.txt
    ```
 
 ## <a name="connect-the-device-in-device-update-iot-hub"></a>Het apparaat verbinden in IoT Hub voor het bijwerken van apparaten
@@ -127,9 +127,9 @@ Gebruik dat versie nummer in de stap voor het importeren van de update.
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com) en navigeer naar de IOT hub.
 
-2. Zoek in het navigatie deel venster van IoT-apparaten of IoT Edge in het linkernavigatievenster uw IoT-apparaat op en navigeer naar het dubbele apparaat.
+2. Van ' IoT-apparaten ' of ' IoT Edge ' in het navigatie deel venster aan de linkerkant vindt u uw IoT-apparaat en navigeert u naar het dubbele apparaat of de module dubbele.
 
-3. Verwijder in het dubbele apparaat alle bestaande waarde voor het bijwerken van het apparaat door ze in te stellen op null.
+3. Verwijder in de module met de Update Agent-module van het apparaat alle bestaande waarde voor het bijwerken van het apparaat door ze in te stellen op null. Als u apparaat-id gebruikt met apparaat Update Agent, worden deze wijzigingen aangebracht op het apparaat dubbele.
 
 4. Voeg een nieuwe waarde voor het update label van het apparaat toe, zoals hieronder wordt weer gegeven.
 

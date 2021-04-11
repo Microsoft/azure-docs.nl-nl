@@ -6,13 +6,13 @@ ms.author: sngun
 ms.custom: subject-cost-optimization
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 11/19/2020
-ms.openlocfilehash: 2bea2324817986654de6689a2be15d0cbf999b38
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/05/2021
+ms.openlocfilehash: 98e849791acd71ea8bf3ac9cb1949da9f562e749
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98602147"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106490825"
 ---
 # <a name="plan-and-manage-costs-for-azure-cosmos-db"></a>Kosten plannen en beheren voor Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -31,7 +31,11 @@ Azure Cosmos DB ondersteunt twee typen capaciteits modi: [ingerichte door Voer](
 
 Kosten analyse in Cost Management ondersteunt de meeste typen Azure-accounts, maar niet alle. Zie voor de volledige lijst met ondersteunde accounttypen [Gegevens van Azure Cost Management begrijpen](../cost-management-billing/costs/understand-cost-mgt-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn). Voor het weer geven van kosten gegevens hebt u ten minste lees toegang voor een Azure-account nodig. Zie [Toegang tot gegevens toewijzen](../cost-management-billing/costs/assign-access-acm-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) voor meer informatie over het toewijzen van toegang tot de gegevens in Azure Cost Management.
 
-## <a name="estimating-provisioned-throughput-costs-before-using-azure-cosmos-db"></a>De ingerichte doorvoer kosten schatten voordat u Azure Cosmos DB gebruikt
+## <a name="estimate-costs-before-using-azure-cosmos-db"></a>Kosten schatten vóór het gebruik van Azure Cosmos DB
+
+Azure Cosmos DB is beschikbaar in twee verschillende capaciteits modi: ingerichte door Voer en serverloos. U kunt exact dezelfde database bewerkingen uitvoeren in beide modi, maar de manier waarop deze bewerkingen worden gefactureerd, verschilt.
+
+### <a name="estimate-provisioned-throughput-costs"></a>Schatting van ingerichte doorvoer kosten
 
 Als u van plan bent Azure Cosmos DB te gebruiken in de ingerichte doorvoer modus, gebruikt u de [Azure Cosmos DB capaciteit Calculator](https://cosmos.azure.com/capacitycalculator/) voor het schatten van de kosten voordat u de resources maakt in een Azure Cosmos-account. De capaciteits calculator wordt gebruikt om een schatting te krijgen van de vereiste door Voer en kosten van uw workload. Het configureren van uw Azure Cosmos-data bases en containers met de juiste hoeveelheid ingerichte door Voer of [aanvraag eenheden (ru/s)](request-units.md)voor uw werk belasting is essentieel om de kosten en prestaties te optimaliseren. U moet gegevens invoeren, zoals het API-type, het aantal regio's, de item grootte, lees/schrijf aanvragen per seconde, de totale hoeveelheid gegevens die is opgeslagen om een kosten raming op te halen. Zie het artikel [estimate](estimate-ru-with-capacity-planner.md) voor meer informatie over de capaciteits Calculator.
 
@@ -39,7 +43,7 @@ In de volgende scherm afbeelding ziet u de schatting van de door Voer en de kost
 
 :::image type="content" source="./media/plan-manage-costs/capacity-calculator-cost-estimate.png" alt-text="Kosten raming in Azure Cosmos DB capaciteits Calculator":::
 
-## <a name="estimating-serverless-costs-before-using-azure-cosmos-db"></a><a id="estimating-serverless-costs"></a> Serverloze kosten schatten voordat u Azure Cosmos DB gebruikt
+### <a name="estimate-serverless-costs"></a><a id="estimating-serverless-costs"></a> Serverloze kosten schatten
 
 Als u van plan bent Azure Cosmos DB te gebruiken in de serverloze modus, moet u een schatting maken van het aantal [aanvraag eenheden](request-units.md) en GB aan opslag dat u per maand kunt gebruiken. U kunt de vereiste hoeveelheid aanvraag eenheden schatten door het aantal database bewerkingen te evalueren dat in een maand zou worden uitgegeven en de hoeveelheid te vermenigvuldigen met de bijbehorende RU-kosten. De volgende tabel geeft een overzicht van de geschatte RU-kosten voor veelvoorkomende database bewerkingen:
 
@@ -58,6 +62,26 @@ Zodra u het totale aantal aanvraag eenheden en GB aan opslag ruimte hebt bereken
 
 > [!NOTE]
 > De kosten die in het vorige voor beeld worden weer gegeven, zijn alleen bedoeld voor demonstratie doeleinden. Zie de [pagina met prijzen](https://azure.microsoft.com/pricing/details/cosmos-db/) voor de meest recente prijs informatie.
+
+## <a name="understand-the-full-billing-model"></a>Het volledige facturerings model begrijpen
+
+Azure Cosmos DB wordt uitgevoerd op een Azure-infra structuur die de kosten toeneemt wanneer u nieuwe resources implementeert. Het is belang rijk om te begrijpen dat er andere bijkomende infrastructuur kosten kunnen zijn die kunnen worden samengevoegd.
+
+### <a name="how-youre-charged-for-azure-cosmos-db"></a>Hoe worden er kosten in rekening gebracht voor Azure Cosmos DB
+
+Wanneer u Azure Cosmos DB-resources maakt of gebruikt, worden er mogelijk kosten in rekening gebracht voor de volgende meters:
+
+* **Database bewerkingen** : er worden kosten in rekening gebracht op basis van de ingerichte aanvraag eenheden (ru/s) die zijn ingericht of verbruikt:
+  * Standaard (hand matig) ingerichte door Voer: er wordt een uurtarief in rekening gebracht voor de RU/s die zijn ingericht in uw container of Data Base.
+  * Ingerichte door Voer voor automatisch schalen: u wordt gefactureerd op basis van het maximum aantal RU/s waarmee het systeem in elk uur omhoog is geschaald.
+
+* **Verbruikte opslag** : er worden kosten in rekening gebracht op basis van de totale hoeveelheid opslag ruimte (in GB) die door uw gegevens en indexen voor een bepaald uur wordt verbruikt.
+
+Er worden extra kosten in rekening gebracht voor het geval u de Azure Cosmos DB functies zoals back-upopslag, analytische opslag, beschikbaarheids zones, meerdere regio's schrijft. Aan het einde van de facturerings cyclus worden de kosten voor elke meter opgeteld. Uw factuur bevat een sectie voor alle Azure Cosmos DB kosten. Er is een afzonderlijk regel item voor elke meter. Zie het artikel [prijs model](how-pricing-works.md) voor meer informatie.
+
+### <a name="using-azure-prepayment"></a>Azure-voor uitbetaling gebruiken
+
+U kunt betalen voor Azure Cosmos DB kosten met uw Azure-vooruitbetalings tegoed. U kunt het tegoed van Azure-betaling echter niet gebruiken om te betalen voor de kosten van producten en services van derden, waaronder die van de Azure Marketplace.
 
 ## <a name="review-estimated-costs-in-the-azure-portal"></a>Geschatte kosten controleren in Azure Portal
 
@@ -79,7 +103,7 @@ U kunt betalen voor Azure Cosmos DB kosten met uw Azure-voor uitbetaling (voorhe
 
 Als u resources met Azure Cosmos DB gebruikt, worden er kosten in rekening gebracht. De kosten voor de resource gebruiks eenheid variëren per tijds interval (seconden, minuten, uren en dagen) of per aanvraag eenheids gebruik. Zodra het gebruik van Azure Cosmos DB gestart, worden de kosten in rekening gebracht en kunt u ze zien in het deel venster [kosten analyse](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) in de Azure Portal.
 
-Wanneer u kosten analyse gebruikt, kunt u de kosten voor de Azure Cosmos DB in grafieken en tabellen weer geven voor verschillende tijds intervallen. Enkele voor beelden zijn dag, actueel, voor gaande maand en jaar. U kunt ook kosten weer geven op basis van budgetten en geraamde kosten. Door over te scha kelen naar langere weer gaven kunt u uitgaven trends helpen identificeren en zien waar overuitgave mogelijk is gebeurd. Als u budgetten hebt gemaakt, kunt u ook eenvoudig zien waar ze zijn overschreden. 
+Wanneer u kosten analyse gebruikt, kunt u de kosten voor de Azure Cosmos DB in grafieken en tabellen weer geven voor verschillende tijds intervallen. Enkele voor beelden zijn dag, actueel, voor gaande maand en jaar. U kunt ook kosten weer geven op basis van budgetten en geraamde kosten. Door over te scha kelen naar langere weer gaven kunt u uitgaven trends helpen identificeren en zien waar overuitgave mogelijk is gebeurd. Als u budgetten hebt gemaakt, kunt u ook eenvoudig zien waar ze zijn overschreden.
 
 Azure Cosmos DB kosten voor de kosten analyse weer geven:
 
@@ -90,7 +114,7 @@ Azure Cosmos DB kosten voor de kosten analyse weer geven:
 1. Kosten voor alle services worden standaard weer gegeven in de eerste cirkel diagram. Selecteer het gebied in de grafiek met het label Azure Cosmos DB.
 
 1. Als u de kosten voor één service, zoals Azure Cosmos DB, wilt beperken, selecteert u **filter toevoegen** en selecteert u vervolgens **service naam**. Kies vervolgens **Azure Cosmos DB** in de lijst. Hier volgt een voor beeld van de kosten voor alleen Azure Cosmos DB:
- 
+
    :::image type="content" source="./media/plan-manage-costs/cost-analysis-pane.png" alt-text="Het deel venster kosten bewaken met kosten analyse":::
 
 In het vorige voor beeld ziet u de huidige kosten voor Azure Cosmos DB voor de maand feb. De grafieken bevatten ook Azure Cosmos DB kosten per locatie en per resource groep.
@@ -105,14 +129,27 @@ Budgetten kunnen worden gemaakt met filters voor specifieke resources of service
 
 U kunt ook [uw kosten gegevens exporteren](../cost-management-billing/costs/tutorial-export-acm-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) naar een opslag account. Dit is handig wanneer u of anderen extra gegevens analyse voor kosten moeten uitvoeren. Een financiële teams kunnen de gegevens bijvoorbeeld analyseren met Excel of Power BI. U kunt uw kosten per dag, wekelijks of maandelijks exporteren en een aangepast datum bereik instellen. Het exporteren van kosten gegevens is de aanbevolen manier om kosten sets op te halen.
 
+## <a name="other-ways-to-manage-and-reduce-costs"></a>Andere manieren om kosten te beheren en te verlagen
+
+Hier volgen enkele aanbevolen procedures waarmee u de kosten kunt verlagen:
+
+* [Ingerichte doorvoer kosten optimaliseren](optimize-cost-throughput.md) : in dit artikel worden de aanbevolen procedures beschreven voor het optimaliseren van uw doorvoer kosten. Hierin wordt beschreven wanneer u de door Voer op container niveau versus op database niveau inricht op basis van het type werk belasting.
+
+* [Aanvraag kosten optimaliseren](optimize-cost-reads-writes.md) : in dit artikel wordt beschreven hoe lees-en schrijf aanvragen worden omgezet in aanvraag eenheden en hoe de kosten van deze aanvragen kunnen worden geoptimaliseerd.
+
+* [Opslag kosten optimaliseren](optimize-cost-storage.md) : de opslag kosten worden in rekening gebracht op basis van verbruik. Meer informatie over het optimaliseren van uw opslag kosten met de item grootte, het indexerings beleid, door gebruik te maken van functies zoals feed en time to Live.
+
+* [Kosten voor meerdere regio's optimaliseren](optimize-cost-regions.md) : als u een of meer ondergeschikte Lees regio's hebt, kunt u stappen ondernemen om het maximum gebruik van het RUs in Lees regio's te maken met behulp van wijzigings invoer van de Lees regio of door deze naar een andere secundaire te verplaatsen als deze functie wordt gebruikt.
+
+* [Optimaliseer de kosten voor ontwikkeling/testen](optimize-dev-test.md) : Ontdek hoe u uw ontwikkelings kosten kunt optimaliseren door gebruik te maken van de lokale emulator, de Azure Cosmos DB gratis laag, het gratis Azure-account en enkele andere opties.
+
+* [Optimaliseer kosten met gereserveerde capaciteit](cosmos-db-reserved-capacity.md) : meer informatie over het gebruik van gereserveerde capaciteit voor het besparen van geld door het door voeren van een reserve ring voor Azure Cosmos DB resources gedurende één jaar of drie jaar.
+
 ## <a name="next-steps"></a>Volgende stappen
 
 Raadpleeg de volgende artikelen voor meer informatie over de werking van prijzen in Azure Cosmos DB:
 
 * [Prijsmodel in Azure Cosmos DB](how-pricing-works.md)
-* [Kosten voor ingerichte doorvoer optimaliseren in Azure Cosmos DB](optimize-cost-throughput.md)
-* [Kosten van query's optimaliseren in Azure Cosmos DB](./optimize-cost-reads-writes.md)
-* [Opslagkosten optimaliseren in Azure Cosmos DB](optimize-cost-storage.md)
 * Meer informatie [over hoe u uw investering in de Cloud optimaliseert met Azure Cost Management](../cost-management-billing/costs/cost-mgt-best-practices.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
 * Meer informatie over het beheren van kosten met [kosten analyse](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
 * Meer informatie over hoe u [onverwachte kosten kunt voor komen](../cost-management-billing/cost-management-billing-overview.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).

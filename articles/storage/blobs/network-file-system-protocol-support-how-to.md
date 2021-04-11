@@ -9,12 +9,12 @@ ms.date: 08/04/2020
 ms.author: normesta
 ms.reviewer: yzheng
 ms.custom: references_regions
-ms.openlocfilehash: 8ed63a508447104f9073c986debfae73ba7de89f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 2a37d206955e3372b9ecf97be8d27142bd417192
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102428640"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106490451"
 ---
 # <a name="mount-blob-storage-by-using-the-network-file-system-nfs-30-protocol-preview"></a>Blob Storage koppelen met behulp van het NFS-protocol (Network File System) 3,0 (preview)
 
@@ -82,7 +82,7 @@ Kies bij het configureren van het account deze waarden:
 
 |Instelling | Premium-prestaties | Standaard prestaties  
 |----|---|---|
-|Locatie|Alle beschik bare regio's |Een van de volgende regio's: Australië-oost, Korea-centraal en Zuid-Centraal VS   
+|Locatie|Alle beschik bare regio's |Een van de volgende regio's: Australië-oost, Korea-centraal, VS-Oost en Zuid-Centraal VS   
 |Prestaties|Premium| Standard
 |Soort account|BlockBlobStorage| Algemeen v2
 |Replicatie|Lokaal redundante opslag (LRS)| Lokaal redundante opslag (LRS)

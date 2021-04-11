@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 03/10/2021
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 1636e49099851337d82494ebe168b8ec5194fa20
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ef4eb3eb55ec1f062efb0f8215a3619f526b1ad2
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103011932"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106063981"
 ---
 # <a name="implement-failover-streaming-with-media-services-v2"></a>Het streamen van failover met Media Services versie 2 implementeren
 
@@ -753,7 +753,7 @@ In deze sectie maakt u de mogelijkheid om redundantie te verwerken.
 
 In het voor beeld in dit onderwerp wordt duidelijk streaming weer gegeven. Als u beveiligde streaming wilt uitvoeren, zijn er enkele andere zaken die u moet instellen. u moet dezelfde **AssetDeliveryPolicy**, dezelfde **CONTENTKEYAUTHORIZATIONPOLICY** of de URL van de externe sleutel Server gebruiken en u moet de inhouds sleutels met dezelfde id dupliceren.
 
-Zie [AES-128 Dynamic Encryption en de key delivery-service gebruiken](media-services-protect-with-aes128.md)voor meer informatie over de beveiliging van inhoud.
+Zie [AES-128 Dynamic Encryption en de key delivery-service gebruiken](media-services-playready-license-template-overview.md)voor meer informatie over de beveiliging van inhoud.
 
 ## <a name="see-also"></a>Zie ook
 

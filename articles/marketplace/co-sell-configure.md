@@ -8,12 +8,12 @@ author: palanis-MSFT
 ms.author: palanis
 ms.reviewer: stmummer
 ms.date: 3/17/2021
-ms.openlocfilehash: db502f4652a6ae541a504249475898e3e771f90d
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: ab7a0c3fa947fdf62672013b5a557d0447eb67c5
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105563392"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107106850"
 ---
 # <a name="configure-co-sell-for-a-commercial-marketplace-offer"></a>Co-sell configureren voor een commerciële Marketplace-aanbieding
 
@@ -38,7 +38,7 @@ De optie co-Sell is beschikbaar voor de volgende aanbiedings typen.
 1. Meld u aan bij [Partner Center](https://partner.microsoft.com/dashboard/home).
 1. Selecteer in het navigatie menu de optie **commerciële Marketplace**-  >  **overzicht**.
     > [!TIP]
-    > Als uw **commerciële Marketplace** niet in de linkernavigatiebalk wordt weer gegeven, [maakt u een commercieel Marketplace-account in partner centrum](./partner-center-portal/create-account.md) en zorgt u ervoor dat uw account is inge schreven in het programma voor commerciële Marketplace.
+    > Als uw **commerciële Marketplace** niet in de linkernavigatiebalk wordt weer gegeven, [maakt u een commercieel Marketplace-account in partner centrum](create-account.md) en zorgt u ervoor dat uw account is inge schreven in het programma voor commerciële Marketplace.
 1. Selecteer op het tabblad **overzicht** de aanbieding die u gezamenlijk wilt verkopen.
     > [!NOTE]
     > U kunt co-sell configureren voor een nieuwe aanbieding die nog niet is gepubliceerd of met een aanbieding die al is gepubliceerd.

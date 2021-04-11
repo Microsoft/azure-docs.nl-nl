@@ -1,18 +1,18 @@
 ---
 title: Azure Storage-voorbeelden met behulp van C++ | Microsoft Docs
 description: Lees hier hoe u voorbeeldcode en -toepassingen voor Azure Storage kunt weergeven, downloaden en uitvoeren. Ga aan de slag met voorbeelden voor blobs, wachtrijen, tabellen en bestanden, met behulp van de clientbibliotheken van Storage voor C++.
-author: mhopkins-msft
-ms.author: mhopkins
+author: twooley
+ms.author: twooley
 ms.date: 10/01/2020
 ms.service: storage
 ms.subservice: common
 ms.topic: sample
-ms.openlocfilehash: 158f908dfd52a3365d19f65eb00faf1787893af5
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d82b31cde0e8df5db2d073abcec8ea44f13bd0f0
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92372885"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106276668"
 ---
 # <a name="azure-storage-samples-using-v12-c-client-libraries"></a>Azure Storage-voorbeelden met behulp van C++ v12-clientbibliotheken
 

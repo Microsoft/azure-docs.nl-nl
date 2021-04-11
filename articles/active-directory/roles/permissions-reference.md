@@ -14,24 +14,18 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f467fc739b3120fd43bec4e21e1e336c1cdf186f
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: ad8466dca6634b0e72ef4a65acb537006dba3bda
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105935410"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106108537"
 ---
 # <a name="azure-ad-built-in-roles"></a>Ingebouwde Azure AD-rollen
 
 Als een andere beheerder of een niet-beheerder Azure AD-resources moet beheren in Azure Active Directory (Azure AD), wijst u deze toe aan een Azure AD-rol die de benodigde machtigingen biedt. U kunt bijvoorbeeld rollen toewijzen om gebruikers toe te staan om toe te voegen of te wijzigen, gebruikers wachtwoorden opnieuw in te stellen, gebruikers licenties te beheren of domein namen te beheren.
 
 Dit artikel bevat een overzicht van de ingebouwde Azure AD-rollen die u kunt toewijzen om beheer van Azure AD-resources toe te staan. Zie [Azure AD-rollen toewijzen aan gebruikers](manage-roles-portal.md)voor meer informatie over het toewijzen van rollen.
-
-## <a name="limit-use-of-global-administrator"></a>Het gebruik van een globale beheerder beperken
-
-Gebruikers die zijn toegewezen aan de rol van globale beheerder kunnen elke beheer instelling in uw Azure AD-organisatie lezen en wijzigen. Wanneer een gebruiker zich aanmeldt voor een micro soft-Cloud service, wordt standaard een Azure AD-Tenant gemaakt en wordt de gebruiker lid van de rol globale beheerder gemaakt. Wanneer u een abonnement toevoegt aan een bestaande Tenant, bent u niet toegewezen aan de rol van globale beheerder. Alleen globale beheerders en bevoegde beheerdersrol kunnen beheerders rollen delegeren. Om het risico voor uw bedrijf te verminderen, wordt u aangeraden deze rol toe te wijzen aan de minste mogelijke personen in uw organisatie.
-
-Als best practice wordt u aangeraden deze rol toe te wijzen aan minder dan vijf personen in uw organisatie. Als er meer dan vijf beheerders zijn toegewezen aan de rol van globale beheerder in uw organisatie, zijn dit een aantal manieren om het gebruik te verminderen.
 
 ## <a name="all-roles"></a>Alle rollen
 
@@ -771,6 +765,9 @@ Deze beheerder beheert Federatie tussen Azure AD-organisaties en externe ID-prov
 ## <a name="global-administrator"></a>Hoofdbeheerder
 
 Gebruikers met deze rol hebben toegang tot alle beheer functies in Azure Active Directory en services die gebruikmaken van Azure Active Directory identiteiten, zoals Microsoft 365 Security Center, Microsoft 365 compliance Center, Exchange Online, share point online en Skype voor bedrijven online. Daarnaast kunnen globale beheerders [hun toegang verhogen](../../role-based-access-control/elevate-access-global-admin.md) om alle Azure-abonnementen en-beheer groepen te beheren. Hierdoor kunnen globale beheerders volledige toegang krijgen tot alle Azure-resources met behulp van de respectieve Azure AD-Tenant. De persoon die zich aanmeldt voor de Azure AD-organisatie, wordt een globale beheerder. Uw bedrijf kan meer dan één globale beheerder zijn. Globale beheerders kunnen het wacht woord voor elke gebruiker en alle andere beheerders opnieuw instellen.
+
+> [!NOTE]
+> Als best practice, raadt micro soft u aan de rol van globale beheerder toe te wijzen aan minder dan vijf personen in uw organisatie. Zie [Aanbevolen procedures voor Azure AD-rollen](best-practices.md)voor meer informatie.
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -1841,6 +1838,23 @@ Gebruikers met deze rol kunnen gebruikers maken en alle aspecten van gebruikers 
 > | micro soft. office365. serviceHealth/cons/allTasks | Service Health in het Microsoft 365 beheer centrum lezen en configureren |
 > | micro soft. office365. supportTickets/cons/allTasks | Microsoft 365 service aanvragen maken en beheren |
 > | micro soft. office365. webportal/de beleen baarheid/standaard/lezen | Lees de basis eigenschappen van alle resources in het Microsoft 365-beheer centrum |
+
+## <a name="how-to-understand-role-permissions"></a>Machtigingen voor rollen begrijpen
+
+Het schema voor machtigingen volgt uit de REST-indeling van Microsoft Graph:
+
+`<namespace>/<entity>/<propertySet>/<action>`
+
+Bijvoorbeeld:
+
+`microsoft.directory/applications/credentials/update`
+
+| Machtigings element | Description |
+| --- | --- |
+| naamruimte | Het product of de service die de taak beschikbaar maakt en is voor het voor voegsel `microsoft` . Alle taken in azure AD gebruiken bijvoorbeeld de `microsoft.directory` naam ruimte. |
+| vennootschap | De logische functie of het onderdeel dat wordt weer gegeven door de service in Microsoft Graph. Azure AD maakt bijvoorbeeld gebruik van gebruikers en groepen, OneNote bevat notities en Exchange maakt post vakken en Agenda's beschikbaar. Er is een speciaal `allEntities` tref woord voor het opgeven van alle entiteiten in een naam ruimte. Dit wordt vaak gebruikt in rollen die toegang verlenen tot een volledig product. |
+| eigenschappenset | Specifieke eigenschappen of aspecten van de entiteit waarvoor toegang wordt verleend. `microsoft.directory/applications/authentication/read`Geeft bijvoorbeeld de mogelijkheid om de antwoord-URL, de afmeldings-URL en de eigenschap impliciete stroom te lezen voor het toepassings object in azure AD.<ul><li>`allProperties` Hiermee worden alle eigenschappen van de entiteit aangegeven, inclusief bevoorrechte eigenschappen.</li><li>`standard` Hiermee worden algemene eigenschappen aangegeven, maar geen privileges gerelateerd aan de `read` actie. U kunt bijvoorbeeld `microsoft.directory/user/standard/read` de mogelijkheid bieden om standaard eigenschappen te lezen, zoals het open bare telefoon nummer en e-mail adres, maar niet het privé-telefoon nummer of het e-mail adres dat wordt gebruikt voor multi-factor Authentication.</li><li>`basic` Hiermee worden algemene eigenschappen toegewezen, maar worden er geen privileges met betrekking tot de `update` actie uitgesloten. De set eigenschappen die u kunt lezen, kan afwijken van wat u kunt bijwerken. Daarom zijn er `standard` en `basic` tref woorden die hier worden weer gegeven.</li></ul> |
+| actie | Er wordt een bewerking verleend, die meestal maken, lezen, bijwerken of verwijderen (ruw) is. Er is een speciaal `allTasks` tref woord voor het opgeven van alle bovenstaande mogelijkheden (maken, lezen, bijwerken en verwijderen). |
 
 ## <a name="deprecated-roles"></a>Afgeschafte functies
 

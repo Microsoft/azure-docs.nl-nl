@@ -11,12 +11,12 @@ ms.date: 07/13/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d67460c654c854c5a855560dde1d67732fa818c7
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0e2bdaa2c7a7648124fbe0be60e5a0af2f83238f
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98681952"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107226510"
 ---
 # <a name="import-and-export-azure-ad-connect-configuration-settings"></a>Azure AD Connect configuratie-instellingen importeren en exporteren 
 
@@ -42,7 +42,7 @@ Eerder geëxporteerde instellingen importeren:
 1. Selecteer **synchronisatie-instellingen importeren**. Blader naar het eerder geëxporteerde bestand met JSON-instellingen.
 1. Selecteer **Installeren**.
 
-   ![Scherm opname van het venster vereiste onderdelen installeren](media/how-to-connect-import-export-config/import1.png)
+   ![Scherm opname van het venster vereiste onderdelen installeren](media/how-to-connect-import-export-config/import-1.png)
 
 > [!NOTE]
 > Instellingen op deze pagina negeren zoals het gebruik van SQL Server in plaats van LocalDB of het gebruik van een bestaand service account in plaats van een standaard LEVERANCIERSPECIFIEKE waarde. Deze instellingen worden niet geïmporteerd uit het bestand met configuratie-instellingen. Ze zijn er voor informatie en vergelijkings doeleinden.
@@ -57,7 +57,7 @@ Dit zijn de enige wijzigingen die tijdens de installatie-ervaring kunnen worden 
 - **On-premises Directory referenties**: voor elke on-premises Directory die is opgenomen in uw synchronisatie-instellingen, moet u referenties opgeven voor het maken van een synchronisatie account of een vooraf gemaakte, aangepaste synchronisatie account opgeven. Deze procedure is identiek aan de ervaring met schone installatie met de uitzonde ring dat u geen directory's kunt toevoegen of verwijderen.
 - **Configuratie opties**: net als bij een schone installatie kunt u de initiële instellingen configureren om te bepalen of u automatische synchronisatie wilt starten of de faserings modus wilt inschakelen. Het belangrijkste verschil is dat de Faserings modus opzettelijk standaard is ingeschakeld, zodat de configuratie-en synchronisatie resultaten kunnen worden vergeleken voordat actief de resultaten naar Azure worden geëxporteerd.
 
-![Scherm opname van het scherm verbinding maken met uw adres lijsten](media/how-to-connect-import-export-config/import2.png)
+![Scherm opname van het scherm verbinding maken met uw adres lijsten](media/how-to-connect-import-export-config/import-2.png)
 
 > [!NOTE]
 > Er kan slechts één synchronisatie server zich in de primaire rol bevindt en de configuratie wijzigingen voor het actief naar Azure exporteert. Alle andere servers moeten in de Faserings modus worden geplaatst.
@@ -71,21 +71,27 @@ Voor de migratie moet een Power shell-script worden uitgevoerd waarmee de bestaa
 ### <a name="migration-process"></a>Migratieproces 
 De instellingen migreren:
 
-1. Start **AzureADConnect.msi** op de nieuwe staging-server en stop op de **welkomst** pagina van Azure AD Connect.
+ 1. Start **AzureADConnect.msi** op de nieuwe staging-server en stop op de **welkomst** pagina van Azure AD Connect.
 
-1. Kopieer **MigrateSettings.ps1** van de map Microsoft Azure AD Connect\Tools naar een locatie op de bestaande server. Een voor beeld is C:\setup, waarbij Setup een map is die is gemaakt op de bestaande server.
+ 2. Kopieer **MigrateSettings.ps1** van de map Microsoft Azure AD Connect\Tools naar een locatie op de bestaande server. Een voor beeld is C:\setup, waarbij Setup een map is die is gemaakt op de bestaande server.</br>
+     ![Scherm opname van Azure AD Connect directory's.](media/how-to-connect-import-export-config/migrate-1.png)
 
-   ![Scherm opname van Azure AD Connect directory's.](media/how-to-connect-import-export-config/migrate1.png)
+     >[!NOTE]
+     > Als er een bericht wordt weer gegeven: ' er is geen positionele para meter gevonden die argument **True** accepteert. ', zoals hieronder:
+     >
+     >
+     >![Scherm opname van fout ](media/how-to-connect-import-export-config/migrate-5.png) vervolgens bewerkt u het MigrateSettings.ps1 bestand en verwijdert u **$True** en voert u het script: ![ scherm opname voor het bewerken van de configuratie uit](media/how-to-connect-import-export-config/migrate-6.png)
+ 
 
-1. Voer het script uit zoals hier wordt weer gegeven en sla de volledige server configuratie directory op. Kopieer deze map naar de nieuwe staging-server. U moet de volledige **geëxporteerde-ServerConfiguration-*-** map naar de nieuwe server kopiëren.
 
-   ![Scherm opname van het script in Windows Power shell. ](media/how-to-connect-import-export-config/migrate2.png)
-    ![ Scherm opname van het kopiëren van de geëxporteerde-ServerConfiguration-*-map.](media/how-to-connect-import-export-config/migrate3.png)
 
-1. Start **Azure AD Connect** door te dubbel klikken op het pictogram op het bureau blad. Ga akkoord met de licentie voorwaarden voor micro soft-software en selecteer op de volgende pagina **aanpassen**.
-1. Schakel het selectie vakje **synchronisatie-instellingen importeren** in. Selecteer **Bladeren** om door de gekopieerde-over geëxporteerde-ServerConfiguration-*-map te bladeren. Selecteer de MigratedPolicy.jsin om de gemigreerde instellingen te importeren.
+ 3. Voer het script uit zoals hier wordt weer gegeven en sla de volledige server configuratie directory op. Kopieer deze map naar de nieuwe staging-server. U moet de volledige **geëxporteerde-ServerConfiguration-*-** map naar de nieuwe server kopiëren.
+     ![Scherm opname van het script in Windows Power shell. ](media/how-to-connect-import-export-config/migrate-2.png)![ Scherm opname van het kopiëren van de geëxporteerde-ServerConfiguration-*-map.](media/how-to-connect-import-export-config/migrate-3.png)
 
-   ![Scherm afbeelding met de optie synchronisatie-instellingen importeren.](media/how-to-connect-import-export-config/migrate4.png)
+ 4. Start **Azure AD Connect** door te dubbel klikken op het pictogram op het bureau blad. Ga akkoord met de licentie voorwaarden voor micro soft-software en selecteer op de volgende pagina **aanpassen**.
+ 5. Schakel het selectie vakje **synchronisatie-instellingen importeren** in. Selecteer **Bladeren** om door de gekopieerde-over geëxporteerde-ServerConfiguration-*-map te bladeren. Selecteer de MigratedPolicy.jsin om de gemigreerde instellingen te importeren.
+
+     ![Scherm afbeelding met de optie synchronisatie-instellingen importeren.](media/how-to-connect-import-export-config/migrate-4.png)
 
 ## <a name="post-installation-verification"></a>Verificatie na de installatie 
 

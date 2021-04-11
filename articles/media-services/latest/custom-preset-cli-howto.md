@@ -12,12 +12,12 @@ ms.topic: how-to
 ms.custom: devx-track-azurecli
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: a91123b22eaef4cbaf2e96c93200777c8a85abab
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d3977b02bffd49762bdcb69fa4940052518c9d25
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101092392"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105963475"
 ---
 # <a name="how-to-encode-with-a-custom-transform---azure-cli"></a>Coderen met een aangepaste trans formatie-Azure CLI
 
@@ -34,7 +34,7 @@ Bij het maken van aangepaste voor instellingen gelden de volgende overwegingen:
 
 ## <a name="prerequisites"></a>Vereisten
 
-[Een Azure Media Services-account maken](./create-account-howto.md).
+[Een Azure Media Services-account maken](./account-create-how-to.md).
 
 Zorg ervoor dat u de naam van de resource groep en de naam van het Media Services account vergeet.
 

@@ -1,22 +1,25 @@
 ---
-title: Azure Synapse Analytics scannen
-description: Hier vindt u informatie over het scannen van Azure Synapse Analytics.
+title: Specifieke SQL-groepen scannen
+description: Hier vindt u informatie over het scannen van specifieke SQL-groepen.
 author: viseshag
 ms.author: viseshag
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 10/22/2020
-ms.openlocfilehash: d287f5dc239339f79d2d8237e7739de7793920c4
-ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
+ms.openlocfilehash: 7d6a0b04306c2ed6ae4887c79962cbb5528643fc
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106108605"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107106969"
 ---
-# <a name="register-and-scan-azure-synapse-analytics"></a>Azure Synapse Analytics registreren en controleren
+# <a name="register-and-scan-dedicated-sql-pools-formerly-sql-dw"></a>Specifieke SQL-groepen registreren en scannen (voorheen SQL DW)
 
-In dit artikel wordt beschreven hoe u een exemplaar van Azure Synapse Analytics (voorheen SQL DW) in controle sfeer liggen registreert en scant.
+> [!NOTE]
+> Als u een speciaal SQL database wilt registreren en scannen binnen een Synapse-werk ruimte, moet u [hier](register-scan-synapse-workspace.md)de instructies volgen.
+
+In dit artikel wordt beschreven hoe u een exemplaar van een toegewezen SQL-groep (voorheen SQL DW) kunt registreren en scannen in controle sfeer liggen.
 
 ## <a name="supported-capabilities"></a>Ondersteunde mogelijkheden
 
@@ -24,7 +27,8 @@ Azure Synapse Analytics (voorheen SQL DW) biedt ondersteuning voor volledige en 
 
 ### <a name="known-limitations"></a>Bekende beperkingen
 
-Azure controle sfeer liggen biedt geen ondersteuning voor het scannen van [weer gaven](/sql/relational-databases/views/views?view=azure-sqldw-latest&preserve-view=true) in azure Synapse Analytics
+> * Azure controle sfeer liggen biedt geen ondersteuning voor het scannen van [weer gaven](/sql/relational-databases/views/views?view=azure-sqldw-latest&preserve-view=true) in azure Synapse Analytics.
+> * Azure controle sfeer liggen biedt geen ondersteuning voor meer dan 300 kolommen op het tabblad schema, waarna ' extra kolommen-afgekapt ' worden weer gegeven. 
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -114,14 +118,14 @@ Wanneer de geselecteerde verificatie methode is ingesteld op **SQL-verificatie**
 1. Als uw sleutelkluis nog niet is verbonden met Purview, moet u [een nieuwe sleutelkluisverbinding maken](manage-credentials.md#create-azure-key-vaults-connections-in-your-azure-purview-account)
 1. Maak ten slotte [een nieuwe referentie](manage-credentials.md#create-a-new-credential) met behulp van de sleutel voor het instellen van de scan
 
-## <a name="register-an-azure-synapse-analytics-instance-formerly-sql-dw"></a>Een Azure Synapse Analytics-exemplaar (voorheen SQL DW) registreren
+## <a name="register-a-sql-dedicated-pool-formerly-sql-dw"></a>Een toegewezen SQL-pool registreren (voorheen SQL DW)
 
 Ga als volgt te werk om een nieuwe Azure Synapse Analytics-server te registreren in uw Data Catalog:
 
 1. Ga naar uw Purview-account
 1. Selecteer **Bronnen** in het linkernavigatievenster
 1. Selecteer **Registreren**
-1. Selecteer **Azure Synapse Analytics (voorheen SQL DW)** bij **bronnen registreren**.
+1. Voor **register bronnen** selecteert u de **SQL-toegewezen pool (voorheen SQL DW)**
 1. Selecteer **Doorgaan**
 
 Ga als volgt te werk op het scherm **bronnen registreren (Azure Synapse Analytics)** :

@@ -5,13 +5,13 @@ author: IngridAtMicrosoft
 ms.author: inhenkel
 ms.service: media-services
 ms.topic: quickstart
-ms.date: 04/20/2020
-ms.openlocfilehash: 0d0fa88fdf182ae2214da40ee3fe8b20ced025e4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/05/2021
+ms.openlocfilehash: a6fd603318a25e15d1d4dcc1e3eaf75f96fc5ade
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104956057"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106448624"
 ---
 # <a name="azure-media-player-quickstart"></a>Quickstart voor Azure Media Player
 Azure Media Player is eenvoudig in te stellen. Het duurt slechts enkele minuten om media-inhoud via uw Azure Media Services-account te kunnen afspelen. In deze sectie worden de basisstappen beschreven zonder op de details in te gaan. In de volgende secties wordt dieper ingegaan op het instellen en configureren van Azure Media Player.  Voeg de volgende bijlagen toe aan de `<head>` van uw document:
@@ -22,7 +22,7 @@ Azure Media Player is eenvoudig in te stellen. Het duurt slechts enkele minuten 
 ```
 
 > [!IMPORTANT]
-> Gebruik **NIET** de `latest` versie in een productieomgeving, omdat deze op verzoek kan worden aangepast. Vervang `latest` door een versie van Azure Media Player, vervang bijvoorbeeld `latest` door `1.0.0`. Op Azure Media Player-versies kunt u [hier](azure-media-player-changelog.md) een query uitvoeren.
+> Gebruik **NIET** de `latest` versie in een productieomgeving, omdat deze op verzoek kan worden aangepast. Vervang `latest` door een versie van Azure Media Player, vervang bijvoorbeeld `latest` door `1.0.0`. Op Azure Media Player-versies kunt u [hier](https://amp.azure.net/libs/amp/latest/docs/changelog.html) een query uitvoeren.
 
 ## <a name="use-the-video-element"></a>Het video-element gebruiken
 

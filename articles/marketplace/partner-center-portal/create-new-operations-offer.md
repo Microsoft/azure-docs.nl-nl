@@ -7,18 +7,18 @@ ms.topic: how-to
 author: navits09
 ms.author: navits
 ms.date: 12/02/2020
-ms.openlocfilehash: bcb7f2d008c54981223b4839f9a750e6ee9ac5cc
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: dc3566634948df3ce8ecb747148eb10f48bfc582
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97355139"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107106884"
 ---
 # <a name="create-a-dynamics-365-for-operations-offer"></a>Een Dynamics 365 for Operations-aanbieding maken
 
 In dit artikel wordt beschreven hoe u een nieuwe Dynamics 365 voor de bewerkings aanbieding maakt. [Micro soft Dynamics 365 voor financiering en bewerkingen](https://dynamics.microsoft.com/finance-and-operations) is een ERP-service (Enter prise resource planning) die ondersteuning biedt voor Geavanceerd financieren, bedrijfs activiteiten, productie en supply chain management. Alle aanbiedingen voor Dynamics 365 voor bewerkingen moeten via ons certificerings proces door lopen.
 
-Voordat u begint, moet u [een commercieel Marketplace-account maken in Partner Center](create-account.md) als u dit nog niet hebt gedaan. Zorg ervoor dat uw account is inge schreven in het Commercial Marketplace-programma.
+Voordat u begint, moet u [een commercieel Marketplace-account maken in Partner Center](../create-account.md) als u dit nog niet hebt gedaan. Zorg ervoor dat uw account is inge schreven in het Commercial Marketplace-programma.
 
 >[!NOTE]
 > Zodra een aanbieding is gepubliceerd, worden wijzigingen in de aanbieding alleen bijgewerkt in partner centrum en de online winkel nadat u de aanbieding voor publicatie opnieuw hebt ingediend.

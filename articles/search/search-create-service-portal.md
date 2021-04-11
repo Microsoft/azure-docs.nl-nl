@@ -1,21 +1,21 @@
 ---
 title: Een zoekservice maken in de portal
 titleSuffix: Azure Cognitive Search
-description: In deze portal-quickstart leert u hoe u een Azure Cognitive Search-resource kunt instellen in de Azure-portal. Resourcegroepen, regio's en de SKU of prijscategorie kiezen.
+description: Meer informatie over het instellen van een Azure Cognitive Search-resource in de Azure Portal. Kies resource groepen, regio's en de SKU-of prijs categorie.
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
-ms.topic: quickstart
+ms.topic: conceptual
 ms.date: 02/15/2021
-ms.openlocfilehash: e183d81355d4db81e677f34b02330ddb9b631957
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 83e206a5fd7b34da0b0ac8590d5271a554855d3e
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100651983"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106580749"
 ---
-# <a name="quickstart-create-an-azure-cognitive-search-service-in-the-portal"></a>Quickstart: Een Azure Cognitive Search-service maken in de portal
+# <a name="create-an-azure-cognitive-search-service-in-the-portal"></a>Een Azure Cognitive Search-service maken in de portal
 
 [Azure Cognitive Search](search-what-is-azure-search.md) is een Azure-resource die wordt gebruikt voor het toevoegen van een zoek ervaring in volledige tekst voor aangepaste apps. U kunt het eenvoudig integreren met andere Azure-Services die gegevens of aanvullende verwerking bieden, met apps op netwerk servers of met software die wordt uitgevoerd op andere Cloud platforms.
 

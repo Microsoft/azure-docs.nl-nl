@@ -68,10 +68,24 @@
       items:
         - name: Problemen met updates van apparaten oplossen
           href: troubleshoot-device-update.md
-- name: Referentie
-  items:
-    - name: Fout codes voor het bijwerken van het apparaat
+        - name: Fout codes voor het bijwerken van het apparaat
       href: device-update-error-codes.md
+- name: Naslaginformatie
+  items:
+    - name: REST-API
+      href: 'https://docs.microsoft.com/en-us/rest/api/deviceupdate/'
+    - name: Control vlak-SDK
+      items:
+        - name: .NET
+          href: 'https://docs.microsoft.com/en-us/dotnet/api/overview/azure/iot/management?view=azure-dotnet'
+    - name: Data vlak SDK
+      items:
+        - name: Javascript
+          href: 'https://docs.microsoft.com/en-us/javascript/api/@azure/iot-device-update/?view=azure-node-preview'
+        - name: Java
+          href: 'https://docs.microsoft.com/en-us/java/api/com.azure.iot.deviceupdate?view=azure-java-preview'
+        - name: Python
+          href: 'https://docs.microsoft.com/en-us/python/api/azure-mgmt-deviceupdate/azure.mgmt.deviceupdate?view=azure-python-preview'
 - name: Resources
   items:
     - name: Opties voor ondersteuning en hulp

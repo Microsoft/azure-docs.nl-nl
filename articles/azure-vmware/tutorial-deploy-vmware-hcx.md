@@ -3,12 +3,12 @@ title: 'Zelfstudie: VMware HCX implementeren en configureren'
 description: Meer informatie over het implementeren en configureren van een VMware HCX-oplossing voor de privécloud van uw Azure VMware Solution.
 ms.topic: tutorial
 ms.date: 03/13/2021
-ms.openlocfilehash: ab59b4a29f8ba372c1892613d5e0461bf3fdc512
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 9ee451ce4be59c51299d66e4042ed344026100cf
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104869086"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107010997"
 ---
 # <a name="deploy-and-configure-vmware-hcx"></a>VMware HCX implementeren en configureren
 
@@ -20,7 +20,7 @@ VMware HCX Advanced Connector is vooraf geïmplementeerd in Azure VMware Solutio
 >Hoewel het maximum aantal site paren van het hulp programma VMware-configuratie een beschrijving heeft van 25 tussen de on-premises connector en Cloud Manager, wordt dit door de licentie limiet beperkt tot drie voor HCX Advanced en 10 voor HCX Enter prise Edition.
 
 >[!NOTE]
->VMware HCX Enterprise is beschikbaar bij Azure VMware Solution als een preview-service. Het is gratis en de voorwaarden voor een preview-service zijn van toepassing. Nadat de VMware HCX Enterprise-service algemeen beschikbaar is, krijgt u een melding dat de facturering over 30 dagen wordt omgeschakeld. U hebt ook de mogelijkheid om de service uit te schakelen of op te zeggen. Er is geen eenvoudig pad om van VMware HCX Enterprise naar VMware HCX Advanced te downgraden. Als u besluit om te downgraden, moet u de implementatie opnieuw uitvoeren. Dit brengt downtime met zich mee.
+>VMware HCX Enterprise is beschikbaar bij Azure VMware Solution als een preview-service. Het is gratis en de voorwaarden voor een preview-service zijn van toepassing. Nadat de VMware HCX Enterprise-service algemeen beschikbaar is, krijgt u een melding dat de facturering over 30 dagen wordt omgeschakeld. U hebt ook de mogelijkheid om de service uit te schakelen of op te zeggen. Downgrade van HCx Enter prise naar HCX Advanced is mogelijk zonder opnieuw te implementeren, maar u moet wel een ondersteunings ticket registreren voor die actie om te worden uitgevoerd. Als u een downgrade wilt plannen, moet u ervoor zorgen dat er geen migraties zijn gepland en of functies zoals RAV, MON niet in gebruik zijn.
 
 Neem eerst [Voordat u begint](#before-you-begin), [Vereisten voor de softwareversie](https://docs.vmware.com/en/VMware-HCX/services/user-guide/GUID-54E5293B-8707-4D29-BFE8-EE63539CC49B.html) en [Vereisten](#prerequisites) door. 
 

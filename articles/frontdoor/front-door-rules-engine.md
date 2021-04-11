@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 9/29/2020
 ms.author: duau
-ms.openlocfilehash: 8e478cebcf8c5c9365100ade23c3d610c24930ba
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 110d0a347020e2bf2c1e957ed6dab65ffe13e2f0
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "91569755"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106056508"
 ---
 # <a name="what-is-rules-engine-for-azure-front-door"></a>Wat is de Azure Front Door-regelengine? 
 

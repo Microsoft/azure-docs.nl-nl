@@ -5,16 +5,16 @@ author: avirishuv
 ms.author: avverma
 ms.topic: conceptual
 ms.service: virtual-machine-scale-sets
-ms.subservice: management
+ms.subservice: automatic-os-upgrade
 ms.date: 06/26/2020
 ms.reviewer: jushiman
 ms.custom: avverma, devx-track-azurecli
-ms.openlocfilehash: ff1a29577c0778d6ef88d3523c726f7a48739cdc
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 9194ab70e37c0659e77cbe9c10ffca10e1a76de8
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98684607"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107011865"
 ---
 # <a name="azure-virtual-machine-scale-set-automatic-os-image-upgrades"></a>Upgrade van Azure virtual machine-schaalsets automatische installatiekopieën van besturingssystemen
 
@@ -79,7 +79,7 @@ De volgende platform-Sku's worden momenteel ondersteund (en worden regel matig t
 ### <a name="service-fabric-requirements"></a>Service Fabric vereisten
 
 Als u Service Fabric gebruikt, moet u ervoor zorgen dat aan de volgende voor waarden wordt voldaan:
--   Service Fabric [duurzaamheids niveau](../service-fabric/service-fabric-cluster-capacity.md#durability-characteristics-of-the-cluster) is zilver of goud en niet bronzen.
+-   Service Fabric [duurzaamheids niveau](../service-fabric/service-fabric-cluster-capacity.md#durability-characteristics-of-the-cluster) is zilver of goud en is niet bronzen (behalve stateless nodetypes, die ondersteuning bieden voor automatische upgrades van besturings systemen).
 -   De Service Fabric-extensie voor de model definitie van de schaalset moet TypeHandlerVersion 1,1 of hoger hebben.
 -   Duurzaamheids niveau moet hetzelfde zijn op het Service Fabric cluster en Service Fabric extensie in de model definitie van de schaalset.
 - Een extra status test of het gebruik van de uitbrei ding van de toepassings status is niet vereist.
@@ -163,7 +163,7 @@ Naar de Load Balancer-test kan worden verwezen in de *networkProfile* van de sch
 ```
 
 > [!NOTE]
-> Wanneer u automatische besturingssysteem upgrades met Service Fabric gebruikt, wordt de nieuwe installatie kopie van het besturings systeem bijgewerkt op basis van het update domein om hoge Beschik baarheid te behouden van de services die worden uitgevoerd in Service Fabric. Als u automatische besturingssysteem upgrades wilt gebruiken in Service Fabric moet uw cluster zijn geconfigureerd voor het gebruik van de Silver duurzaamheid-laag of hoger. Raadpleeg [deze documentatie](../service-fabric/service-fabric-cluster-capacity.md#durability-characteristics-of-the-cluster)voor meer informatie over de duurzaamheids kenmerken van service Fabric clusters.
+> Wanneer u automatische besturingssysteem upgrades met Service Fabric gebruikt, wordt de nieuwe installatie kopie van het besturings systeem bijgewerkt op basis van het update domein om hoge Beschik baarheid te behouden van de services die worden uitgevoerd in Service Fabric. Als u automatische besturingssysteem upgrades wilt gebruiken in Service Fabric moet uw cluster NodeType worden geconfigureerd voor het gebruik van de Silver-duurzaamheids categorie of hoger. Voor de duurzaamheids categorie bronzen wordt automatische upgrade van het besturings systeem alleen ondersteund voor stateless nodetypes. Raadpleeg [deze documentatie](../service-fabric/service-fabric-cluster-capacity.md#durability-characteristics-of-the-cluster)voor meer informatie over de duurzaamheids kenmerken van service Fabric clusters.
 
 ### <a name="keep-credentials-up-to-date"></a>Referenties up-to-date houden
 Als uw schaalset referenties gebruikt voor toegang tot externe bronnen, zoals een VM-extensie die is geconfigureerd voor het gebruik van een SAS-token voor opslag account, moet u ervoor zorgen dat de referenties worden bijgewerkt. Als er referenties, inclusief certificaten en tokens, zijn verlopen, mislukt de upgrade en wordt de eerste batch van Vm's in een mislukte status gelaten.

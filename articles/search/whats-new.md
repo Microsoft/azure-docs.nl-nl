@@ -8,12 +8,12 @@ ms.service: cognitive-search
 ms.topic: overview
 ms.date: 03/12/2021
 ms.custom: references_regions
-ms.openlocfilehash: 99a7f08b6d366f2f928b99caba2424c2fae0d625
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: b9ae576a2d0ab8aee00be5b755c348806b412bef
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105559516"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106108486"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Nieuwe functies in Azure Cognitive Search
 
@@ -27,6 +27,8 @@ Meer informatie over nieuwe functies in de service. Voeg een bladwijzer toe aan 
 | [Spelling controle van query termen](speller-how-to-add.md) | Voordat de query termen de zoek machine bereiken, kunt u ze controleren op spel fouten. De `speller` optie werkt met elk query type (eenvoudig, volledig of semantisch). |  Open bare preview, alleen REST, API-Version = 2020-06 -30-preview|
 | [Indexer van share point online](search-howto-index-sharepoint-online.md) | Met deze indexer maakt u verbinding met een share point online-site, zodat u inhoud kunt indexeren vanuit een document bibliotheek. | Open bare preview, alleen REST, API-Version = 2020-06 -30-preview |
 | [Normalisatie](search-normalizers.md) | Norma Lise ring van tekst, zoals hoofdletter gebruik, accenten verwijderen, asciifolding, enzovoort zonder de hele analyse keten te door lopen.| Open bare preview, alleen REST, API-Version = 2020-06 -30-preview |
+[**Zoek vaardigheid aangepaste entiteit**](cognitive-search-skill-custom-entity-lookup.md ) |  Een cognitieve vaardigheid die zoekt naar tekst van een aangepaste, door de gebruiker gedefinieerde lijst met woorden en zinsdelen. Aan de hand van deze lijst worden alle documenten met overeenkomende entiteiten gelabeld. De vaardigheid ondersteunt ook het zoeken naar fuzzy overeenkomsten, waarmee overeenkomsten worden gevonden die vergelijkbaar zijn, maar niet helemaal exact. | Algemeen verkrijgbaar. |
+|
 
 ## <a name="february-2021"></a>Februari 2021
 

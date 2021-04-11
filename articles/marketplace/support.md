@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: navits09
 ms.author: navits
 ms.date: 01/19/2020
-ms.openlocfilehash: a1726b29c153bf680d29fe821ac34aa958064335
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: cfe365af868f01b868e737a409724e92f1d57f81
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98879238"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107106986"
 ---
 # <a name="support-for-the-commercial-marketplace-program-in-partner-center"></a>Ondersteuning voor het Commercial Marketplace-programma in Partner Center
 
@@ -24,7 +24,7 @@ Micro soft biedt ondersteuning voor een groot aantal producten en services. Het 
 
 ## <a name="get-help-or-open-a-support-ticket"></a>Hulp krijgen of een ondersteunings ticket openen
 
-1. Meld u aan met uw werk account. Als u dit nog niet hebt gedaan, moet u [een partner centrum-account maken](partner-center-portal/create-account.md).
+1. Meld u aan met uw werk account. Als u dit nog niet hebt gedaan, moet u [een partner centrum-account maken](create-account.md).
 
 1. Selecteer in het menu in de rechter bovenhoek van de pagina het **ondersteunings** pictogram. Het deel venster **Help en ondersteuning** wordt weer gegeven aan de rechter kant van de pagina.
 

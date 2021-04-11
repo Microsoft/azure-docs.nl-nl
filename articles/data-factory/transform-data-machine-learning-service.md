@@ -3,15 +3,15 @@ title: Azure Machine Learning pijp lijnen uitvoeren
 description: Meer informatie over het uitvoeren van uw Azure Machine Learning-pijp lijnen in uw Azure Data Factory pijp lijnen.
 ms.service: data-factory
 ms.topic: conceptual
-ms.author: daperlov
-author: djpmsft
+ms.author: weetok
+author: dcstwh
 ms.date: 07/16/2020
-ms.openlocfilehash: db1816baf0ebc476a132b344d8db3cdbdd170e50
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d0b941325d6bbabcb083b5f71a40c145d3ef48d0
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100373926"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107103467"
 ---
 # <a name="execute-azure-machine-learning-pipelines-in-azure-data-factory"></a>Azure Machine Learning pijp lijnen uitvoeren in Azure Data Factory
 
@@ -55,6 +55,7 @@ mlPipelineId | ID van de gepubliceerde Azure Machine Learning pijp lijn | Teken 
 experimentnaam | Naam van het experiment met de uitvoerings geschiedenis van de Machine Learning pijplijn uitvoering | Teken reeks (of expressie met het resultType van de teken reeks) | No
 mlPipelineParameters | Sleutel-, waardeparen die moeten worden door gegeven aan het gepubliceerde eind punt van Azure Machine Learning pijplijn. Sleutels moeten overeenkomen met de namen van de pijplijn parameters die in de gepubliceerde Machine Learning pijp lijn zijn gedefinieerd | Object met sleutel waarde-paren (of expressie met het resultType-object) | No
 mlParentRunId | De ID van de bovenliggende Azure Machine Learning pijplijn uitvoering | Teken reeks (of expressie met het resultType van de teken reeks) | No
+dataPathAssignments | Woorden lijst die wordt gebruikt voor het wijzigen van datapaths in azure machine learning. Schakelt het overschakelen van datapaths in | Object met sleutel-waardeparen | No
 continueOnStepFailure | Of de uitvoering van andere stappen in de Machine Learning pijplijn uitvoering moet worden voortgezet als een stap is mislukt | booleaans | No
 
 > [!NOTE]

@@ -3,12 +3,12 @@ title: Beheerde identiteit inschakelen op Azure Event Grid systeem onderwerp
 description: In dit artikel wordt beschreven hoe u de beheerde service-identiteit voor een Azure Event Grid systeem onderwerp inschakelt.
 ms.topic: how-to
 ms.date: 03/25/2021
-ms.openlocfilehash: 66b418787e5570dc5da06a5332dd834ccbfd4aef
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: d8219cf9cba4ce0a4fb5ddbcf695f1ec72de36fe
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105630416"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106280510"
 ---
 # <a name="assign-a-system-managed-identity-to-an-event-grid-system-topic"></a>Een door een systeem beheerde identiteit toewijzen aan een Event Grid systeem onderwerp
 In dit artikel leert u hoe u door het systeem beheerde identiteit kunt inschakelen voor een bestaand Event Grid systeem onderwerp. Zie [Wat zijn beheerde identiteiten voor Azure-resources](../active-directory/managed-identities-azure-resources/overview.md)voor meer informatie over beheerde identiteiten.  
@@ -43,4 +43,4 @@ U kunt door het systeem beheerde identiteit alleen inschakelen voor de regionale
 
 
 ## <a name="next-steps"></a>Volgende stappen
-Voeg de identiteit toe aan een geschikte rol (bijvoorbeeld Service Bus verzender van gegevens) op de bestemming (bijvoorbeeld een Service Bus wachtrij). Zie [identiteit toevoegen aan Azure-rollen op bestemmingen](add-identity-roles.md)voor gedetailleerde stappen. 
+Voeg de identiteit toe aan een geschikte rol (bijvoorbeeld Service Bus verzender van gegevens) op de bestemming (bijvoorbeeld een Service Bus wachtrij). Zie voor gedetailleerde stappen [beheerde identiteit verlenen de toegang tot Event grid bestemming](add-identity-roles.md). 

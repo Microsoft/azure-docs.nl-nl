@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 03/17/2021
+ms.date: 04/07/2021
 ms.author: alkohli
 ms.custom: contperf-fy21q3
-ms.openlocfilehash: 67de5cce3bd5a4ca2b383e2809eb237a6e753bf5
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b6984f27ae0ae81c3bf8d98efcce5fb23909c36d
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104577088"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107226087"
 ---
 # <a name="system-requirements-for-azure-stack-edge-pro-with-gpu"></a>Systeem vereisten voor Azure Stack Edge Pro met GPU 
 
@@ -108,6 +108,18 @@ We raden u aan de firewall regels voor uitgaand verkeer in te stellen, op basis 
 | https:// \* . azurecr.io                     | Persoonlijke en container registers van derden (optioneel) | 
 | https:// \* . Azure-devices.net              | IoT Hub toegang (vereist)                             | 
 
+### <a name="url-patterns-for-monitoring"></a>URL-patronen voor bewaking
+
+Voeg de volgende URL-patronen toe voor Azure Monitor als u gebruikmaakt van de container versie van de Log Analytics-agent voor Linux.
+
+| URL-patroon | Poort | Onderdeel of functionaliteit |
+|-------------|-------------|----------------------------|
+| http:// \* ODS.opinsights.Azure.com | 443 | Gegevensopname |
+| http:// \* . OMS.opinsights.Azure.com | 443 | Onboarding van operations management suite (OMS) |
+| http:// \* . DC.Services.VisualStudio.com | 443 | Telemetrie van agent die gebruikmaakt van open bare Azure-Cloud Application Insights |
+
+Zie [netwerk firewall vereisten voor het bewaken van container Insights](../azure-monitor/containers/container-insights-onboard.md#network-firewall-requirements)voor meer informatie.
+
 ### <a name="url-patterns-for-gateway-for-azure-government"></a>URL-patronen voor de gateway voor Azure Government
 
 [!INCLUDE [Azure Government URL patterns for firewall](../../includes/azure-stack-edge-gateway-gov-url-patterns-firewall.md)]
@@ -119,6 +131,17 @@ We raden u aan de firewall regels voor uitgaand verkeer in te stellen, op basis 
 | https: \/ /MCR.Microsoft.com<br></br>https:// \* . CDN.mscr.com | Micro soft container Registry (vereist)               |
 | https:// \* . Azure-devices.us              | IoT Hub toegang (vereist)           |
 | https:// \* . azurecr.us                    | Persoonlijke en container registers van derden (optioneel) | 
+
+### <a name="url-patterns-for-monitoring-for-azure-government"></a>URL-patronen voor het bewaken van Azure Government
+
+Voeg de volgende URL-patronen toe voor Azure Monitor als u gebruikmaakt van de container versie van de Log Analytics-agent voor Linux.
+
+| URL-patroon | Poort | Onderdeel of functionaliteit |
+|-------------|-------------|----------------------------|
+| http:// \* ODS.opinsights.Azure.us | 443 | Gegevensopname |
+| http:// \* . OMS.opinsights.Azure.us | 443 | Onboarding van operations management suite (OMS) |
+| http:// \* . DC.Services.VisualStudio.com | 443 | Telemetrie van agent die gebruikmaakt van open bare Azure-Cloud Application Insights |
+
 
 ## <a name="internet-bandwidth"></a>Internet bandbreedte
 

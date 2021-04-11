@@ -7,10 +7,10 @@ ms.reviewer: logicappspm
 ms.topic: article
 ms.date: 11/06/2020
 ms.openlocfilehash: ec72431d927fd59677075e7adfdf7df171574882
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104772940"
 ---
 # <a name="overview-automate-deployment-for-azure-logic-apps-by-using-azure-resource-manager-templates"></a>Overzicht: de implementatie voor Azure Logic Apps automatiseren met behulp van Azure Resource Manager sjablonen
@@ -331,11 +331,11 @@ Dit zijn de kenmerken die specifiek zijn voor de resource definitie van de logis
 | Kenmerk | Vereist | Type | Beschrijving |
 |-----------|----------|------|-------------|
 | `state` | Ja | Tekenreeks | De status van uw logische app bij implementatie waarbij `Enabled` uw logische app Live is en `Disabled` betekent dat uw logische app niet actief is. Als u bijvoorbeeld niet klaar bent voor uw logische app om live te gaan, maar een concept versie wilt implementeren, kunt u de optie gebruiken `Disabled` . |
-| `integrationAccount` | Nee | Object | Als uw logische app een integratie account gebruikt dat artefacten voor Business-to-Business-scenario's (B2B) opslaat, bevat dit object het `id` kenmerk, waarmee de id voor het integratie account wordt opgegeven. |
+| `integrationAccount` | No | Object | Als uw logische app een integratie account gebruikt dat artefacten voor Business-to-Business-scenario's (B2B) opslaat, bevat dit object het `id` kenmerk, waarmee de id voor het integratie account wordt opgegeven. |
 | `definition` | Ja | Object | De onderliggende werk stroom definitie van uw logische app, die hetzelfde is als het object dat wordt weer gegeven in de code weergave, en dat volledig wordt beschreven in het onderwerp [schema verwijzing voor werk stroom definitie taal](../logic-apps/logic-apps-workflow-definition-language.md) . In deze werk stroom definitie `parameters` declareert het object para meters voor de waarden die moeten worden gebruikt in de runtime van de logische app. Zie [werk stroom definitie en-para meters](#workflow-definition-parameters)voor meer informatie. <p><p>Als u de kenmerken in de werk stroom definitie van de logische app wilt weer geven, schakelt u over naar de code weergave in de Azure Portal of Visual Studio of gebruikt u een hulp programma zoals [Azure resource Explorer](https://resources.azure.com). |
-| `parameters` | Nee | Object | De [waarden van de werk stroom definitie parameter](#workflow-definition-parameters) die moeten worden gebruikt tijdens de runtime van de logische app. De parameter definities voor deze waarden worden weer gegeven in het [Parameter object van uw werk stroom definitie](#workflow-definition-parameters). Als uw logische app [beheerde connectors](../connectors/apis-list.md) gebruikt voor toegang tot andere services en systemen, bevat dit object ook een `$connections` object waarmee de verbindings waarden worden ingesteld die tijdens runtime worden gebruikt. |
-| `accessControl` | Nee | Object | Voor het opgeven van beveiligings kenmerken voor uw logische app, zoals het beperken van IP-toegang tot het aanvragen van triggers of het uitvoeren van de invoer en uitvoer van de geschiedenis. Zie [veilige toegang tot Logic apps](../logic-apps/logic-apps-securing-a-logic-app.md)voor meer informatie. |
-| `runtimeConfiguration` | Nee | Object | Voor het opgeven van `operationOptions` eigenschappen die bepalen hoe uw logische app zich tijdens runtime bevindt. U kunt bijvoorbeeld uw logische app uitvoeren in de [modus voor hoge door Voer](../logic-apps/logic-apps-limits-and-config.md#run-high-throughput-mode). |
+| `parameters` | No | Object | De [waarden van de werk stroom definitie parameter](#workflow-definition-parameters) die moeten worden gebruikt tijdens de runtime van de logische app. De parameter definities voor deze waarden worden weer gegeven in het [Parameter object van uw werk stroom definitie](#workflow-definition-parameters). Als uw logische app [beheerde connectors](../connectors/apis-list.md) gebruikt voor toegang tot andere services en systemen, bevat dit object ook een `$connections` object waarmee de verbindings waarden worden ingesteld die tijdens runtime worden gebruikt. |
+| `accessControl` | No | Object | Voor het opgeven van beveiligings kenmerken voor uw logische app, zoals het beperken van IP-toegang tot het aanvragen van triggers of het uitvoeren van de invoer en uitvoer van de geschiedenis. Zie [veilige toegang tot Logic apps](../logic-apps/logic-apps-securing-a-logic-app.md)voor meer informatie. |
+| `runtimeConfiguration` | No | Object | Voor het opgeven van `operationOptions` eigenschappen die bepalen hoe uw logische app zich tijdens runtime bevindt. U kunt bijvoorbeeld uw logische app uitvoeren in de [modus voor hoge door Voer](../logic-apps/logic-apps-limits-and-config.md#run-high-throughput-mode). |
 |||||
 
 Zie [resource typen micro soft. Logic](/azure/templates/microsoft.logic/allversions)voor meer informatie over resource definities voor deze Logic apps-objecten:

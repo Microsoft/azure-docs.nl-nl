@@ -2,17 +2,17 @@
 title: HTTP-headers en URL opnieuw schrijven met Azure-toepassing gateway | Microsoft Docs
 description: Dit artikel bevat een overzicht van het herschrijven van HTTP-headers en URL in Azure-toepassing gateway
 services: application-gateway
-author: surajmb
+author: azhar2005
 ms.service: application-gateway
 ms.topic: conceptual
-ms.date: 07/16/2020
-ms.author: surmb
-ms.openlocfilehash: 81eaf95a4918590c6eaa2c17a45e6925a1a67992
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/05/2021
+ms.author: azhussai
+ms.openlocfilehash: 7662ef5c2c3f5ed20069f64781d222ae44e52168
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101726509"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106384836"
 ---
 # <a name="rewrite-http-headers-and-url-with-application-gateway"></a>HTTP-headers en URL opnieuw schrijven met Application Gateway
 
@@ -38,7 +38,7 @@ Zie [hier](rewrite-url-portal.md)voor meer informatie over het opnieuw schrijven
 
 U kunt alle headers in aanvragen en antwoorden opnieuw schrijven, met uitzonde ring van de verbinding en kopteksten bijwerken. U kunt ook de Application gateway gebruiken om aangepaste kopteksten te maken en deze toe te voegen aan de aanvragen en antwoorden die via deze service worden doorgestuurd.
 
-### <a name="url-path-and-query-string-preview"></a>URL-pad en query reeks (preview-versie)
+### <a name="url-path-and-query-string"></a>URL-pad en query reeks
 
 Met de mogelijkheid tot het herschrijven van URL'S in Application Gateway kunt u het volgende doen:
 
@@ -51,9 +51,6 @@ Met de mogelijkheid tot het herschrijven van URL'S in Application Gateway kunt u
 Zie [hier](rewrite-url-portal.md)voor meer informatie over het herschrijven van een URL met Application Gateway met behulp van Azure Portal.
 
 ![Diagram met een beschrijving van het proces voor het herschrijven van een URL met Application Gateway.](./media/rewrite-http-headers-url/url-rewrite-overview.png)
-
->[!NOTE]
-> De functie voor het herschrijven van URL'S is in Preview en is alleen beschikbaar voor Standard_v2 en WAF_v2 SKU van Application Gateway. Het wordt niet aanbevolen voor gebruik in een productie omgeving. Zie hier voor meer informatie over het [gebruik van voor](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)beelden.
 
 ## <a name="rewrite-actions"></a>Acties opnieuw schrijven
 
@@ -129,7 +126,20 @@ Application Gateway biedt ondersteuning voor de volgende server variabelen:
 | ssl_enabled               | Aan als de verbinding in de TLS-modus werkt. Zoniet, een lege teken reeks. |
 | uri_path                  | Identificeert de specifieke resource in de host waartoe de webclient toegang wil. Dit is het deel van de aanvraag-URI zonder de argumenten. Voor beeld: in de aanvraag is `http://contoso.com:8080/article.aspx?id=123&title=fabrikam` uri_path waarde `/article.aspx` |
 
- 
+### <a name="mutual-authentication-server-variables-preview"></a>Server variabelen voor wederzijdse verificatie (preview-versie)
+
+Application Gateway ondersteunt de volgende server variabelen voor scenario's voor wederzijdse verificatie. Gebruik deze server variabelen op dezelfde manier als hierboven met de andere server variabelen. 
+
+|   Naam van de variabele    |                   Beschrijving                                           |
+| ------------------------- | ------------------------------------------------------------ |
+| client_certificate        | Het client certificaat in PEM-indeling voor een bestaande SSL-verbinding. |
+| client_certificate_end_date| De eind datum van het client certificaat. |
+| client_certificate_fingerprint| De SHA1-vinger afdruk van het client certificaat voor een bestaande SSL-verbinding. |
+| client_certificate_issuer | De teken reeks ' uitgever-DN ' van het client certificaat voor een bestaande SSL-verbinding. |
+| client_certificate_serial | Het serie nummer van het client certificaat voor een bestaande SSL-verbinding.  |
+| client_certificate_start_date| De begin datum van het client certificaat. |
+| client_certificate_subject| De teken reeks ' onderwerp-DN ' van het client certificaat voor een tot stand gebrachte SSL-verbinding. |
+| client_certificate_verification| Het resultaat van de verificatie van het client certificaat: *geslaagd*, *mislukt: <reason>* of *geen* als er geen certificaat aanwezig is. | 
 
 ## <a name="rewrite-configuration"></a>Configuratie opnieuw schrijven
 
@@ -148,6 +158,17 @@ Een regel reeks voor herschrijven bevat:
       * **URL-pad**: de waarde waarnaar het pad moet worden geschreven. 
       * **URL-query teken reeks**: de waarde waarnaar de query teken reeks moet worden geschreven. 
       * **Pad-map opnieuw evalueren**: wordt gebruikt om te bepalen of de URL-pad toewijzing opnieuw moet worden geëvalueerd of niet. Als u dit selectie vakje uitschakelt, wordt het oorspronkelijke URL-pad gebruikt om het pad-patroon in de URL-pad toewijzing overeen te laten komen. Als deze optie is ingesteld op True, wordt de toewijzing van het URL-pad opnieuw geëvalueerd om de overeenkomst met het herschreven pad te controleren. Als u deze schakel optie inschakelt, kan de aanvraag worden doorgestuurd naar een andere back-end-groep na herschrijven.
+
+### <a name="using-url-rewrite-or-host-header-rewrite-with-web-application-firewall-waf_v2-sku"></a>Herschrijven van URL'S of hostheadernamen met Web Application firewall (WAF_v2 SKU) gebruiken
+
+Wanneer u het herschrijven van URL'S of het opnieuw schrijven van de host-header configureert, wordt de WAF-evaluatie uitgevoerd na de wijziging in de aanvraag header of de URL-para meters (na herschrijven). En wanneer u de configuratie van de herschrijf bewerking van de URL of host-header op uw Application Gateway verwijdert, wordt de WAF-evaluatie uitgevoerd voordat de header opnieuw wordt geschreven (vóór herschrijf bewerking). Deze volg orde zorgt ervoor dat WAF-regels worden toegepast op de laatste aanvraag die wordt ontvangen door de back-end-pool.
+
+Stel dat u de volgende regel voor het herschrijven van kopteksten hebt voor de header `"Accept" : "text/html"` : als de waarde van header `"Accept"` gelijk is aan, moet u `"text/html"` de waarde vervolgens opnieuw schrijven naar `"image/png"` .
+
+Hier wordt alleen de WAF-evaluatie uitgevoerd met alleen herschrijf bewerkingen in de koptekst `"Accept" : "text/html"` . Maar wanneer u de herschrijf bewerking van een URL of host-header opnieuw configureert, wordt de evaluatie van de WAF uitgevoerd op `"Accept" : "image/png"` .
+
+>[!NOTE]
+> URL-herschrijf bewerkingen worden verwacht een kleine toename van het CPU-gebruik van uw WAF-Application Gateway te veroorzaken. Het is raadzaam om de [metrische gegevens](high-traffic-support.md) van het CPU-gebruik gedurende korte tijd te controleren nadat u de regels voor het herschrijven van de URL op uw WAF-Application Gateway hebt ingeschakeld.
 
 ### <a name="common-scenarios-for-header-rewrite"></a>Algemene scenario's voor herschrijven van koptekst
 

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/08/2021
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 76b4a749bff94cbf218d3cd3c7d132eef119b7ef
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0c041d64b3dbd0c38979f4d8d0fa563a72f6a4b1
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104606902"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106168192"
 ---
 # <a name="speech-to-text-rest-api"></a>REST API voor spraak-naar-tekst
 
@@ -153,7 +153,7 @@ var pronAssessmentHeader = Convert.ToBase64String(pronAssessmentParamsBytes);
 Het is raadzaam streaming (gesegmenteerd) te uploaden tijdens het boeken van de audio gegevens, waardoor de latentie aanzienlijk kan worden verminderd. Zie [voorbeeld code in verschillende programmeer talen](https://github.com/Azure-Samples/Cognitive-Speech-TTS/tree/master/PronunciationAssessment) voor het inschakelen van streaming.
 
 >[!NOTE]
->De functie voor het beoordelen van uitspraak is momenteel alleen beschikbaar in de `en-US` taal.
+> De functie voor het beoordelen van uitspraak biedt momenteel ondersteuning `en-US` voor de taal, die beschikbaar is voor alle [spraak-naar-tekst-gebieden](regions.md#speech-to-text). De ondersteuning voor `en-GB` en `zh-CN` talen is onder preview, beschikbaar in `westus` `eastasia` en `centralindia` regio's.
 
 ### <a name="sample-request"></a>Voorbeeld aanvraag
 

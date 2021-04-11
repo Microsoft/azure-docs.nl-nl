@@ -9,12 +9,12 @@ ms.reviewer: ''
 ms.date: 03/08/2021
 author: ruixinxu
 ms.author: ruxu
-ms.openlocfilehash: 928e2ef8b373626a91a291b1798f3ebb7ef290e8
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.openlocfilehash: 5258d8f16e288e7df7e1286eb1902cc6ba6d10f7
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105608830"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107227718"
 ---
 # <a name="tutorial-build-machine-learning-applications-using-microsoft-machine-learning-for-apache-spark-preview"></a>Zelf studie: machine learning-toepassingen maken met micro Soft Machine Learning voor Apache Spark (preview)
 
@@ -23,7 +23,7 @@ Synapse Spark biedt ingebouwde MMLSpark-Bibliotheken, waaronder:
 
 - [Vowpal Wabbit](https://github.com/Azure/mmlspark/blob/master/docs/vw.md) : bibliotheek Services voor machine learning om tekst analyse zoals sentiment analyse in tweets in te scha kelen.
 - [Cognitive Services op Spark](https://github.com/Azure/mmlspark/blob/master/docs/cogsvc.md) : als u de functie van Azure Cognitive Services in SparkML-pijp lijnen wilt combi neren om oplossings ontwerp af te leiden voor cognitieve gegevens modellerings services zoals afwijkings detectie.
-- [LightBGM](https://github.com/Azure/mmlspark/blob/master/docs/lightgbm.md) : LightGBM is een versterkings raamwerk dat gebruikmaakt van structuur algoritmen. Het is ontworpen om te worden gedistribueerd en de efficiëntie te verhogen.
+- [LightGBM](https://github.com/Azure/mmlspark/blob/master/docs/lightgbm.md) : LightGBM is een versterkings raamwerk dat gebruikmaakt van structuur algoritmen. Het is ontworpen om te worden gedistribueerd en de efficiëntie te verhogen.
 - Voorwaardelijke KNN: schaal bare KNN-modellen met voorwaardelijke Query's.
 - [Http op Spark](https://github.com/Azure/mmlspark/blob/master/docs/http.md) : maakt gedistribueerde micro Services-indeling mogelijk in integratie van Spark en op http-protocol.
 

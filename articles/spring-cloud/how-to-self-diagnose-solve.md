@@ -7,21 +7,21 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 05/29/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: c262ba87698c04da69728f7a370040c0679ec44e
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 03b29e6ddd16731073b33fef14d5aafb54df2abe
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104878093"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107227854"
 ---
-# <a name="how-to-self-diagnose-and-solve-problems-in-azure-spring-cloud"></a>Zelf diagnose en probleem oplossing in azure lente Cloud
+# <a name="self-diagnose-and-solve-problems-in-azure-spring-cloud"></a>Problemen in de Azure lente-Cloud zelf diagnosticeren en oplossen
 
 **Dit artikel is van toepassing op:** ✔️ Java ✔️ C#
 
 Azure veer Cloud diagnostiek is een interactieve ervaring bij het oplossen van problemen met uw app zonder configuratie. Azure lente-Cloud diagnose identificeert problemen en helpt u bij het oplossen van problemen die u helpen bij de probleem oplossing.
 
 ## <a name="prerequisites"></a>Vereisten
-Voor deze zelfstudie hebt u het volgende nodig:
+Voor het volt ooien van deze exericise hebt u het volgende nodig:
 
 * Een Azure-abonnement. Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 * Een geïmplementeerd Azure Spring Cloud-service-exemplaar. Volg onze [quickstart voor het implementeren van een app via Azure CLI](spring-cloud-quickstart.md) om aan de slag te gaan.

@@ -1,18 +1,15 @@
 ---
 title: Herstel na nood gevallen instellen van fysieke on-premises servers met Azure Site Recovery
 description: Meer informatie over het instellen van herstel na nood gevallen voor Azure voor on-premises Windows-en Linux-servers, met de Azure Site Recovery-service.
-author: rayne-wiselman
-manager: carmonm
 ms.service: site-recovery
 ms.topic: article
 ms.date: 11/12/2019
-ms.author: raynew
-ms.openlocfilehash: 9b05d9952628e550beae5cedc49e051936a9d633
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5775f8ed9b657502f4865f3c4f311ea0dcd269ea
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "87927280"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106581540"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-on-premises-physical-servers"></a>Herstel na nood gevallen naar Azure instellen voor on-premises fysieke servers
 

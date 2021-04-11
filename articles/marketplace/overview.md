@@ -6,12 +6,12 @@ ms.author: mingshen
 ms.service: marketplace
 ms.topic: overview
 ms.date: 10/15/2020
-ms.openlocfilehash: 099515eb1160b131f2d56fd02f300999d5ddfd16
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: de8e9060f8e7ccdcf38b9f0908dfb05063811817
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96780311"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107103401"
 ---
 # <a name="what-is-the-microsoft-commercial-marketplace"></a>Wat is de commerciële marketplace van Microsoft?
 
@@ -82,5 +82,5 @@ Zie [Uw commerciële-marketplacevoordelen](gtm-your-marketplace-benefits.md) voo
 ## <a name="next-steps"></a>Volgende stappen
 
 - Volg de [Inleiding tot de commerciële marketplace van Microsoft](/learn/modules/intro-commercial-marketplace/) op Microsoft Learn.
-- Zie [Een commerciële-marketplace-account maken in Partner Center](partner-center-portal/create-account.md) als u een nieuwe Microsoft-partner bent die geïnteresseerd is in publiceren op de commerciële marketplace.
+- Zie [Een commerciële-marketplace-account maken in Partner Center](create-account.md) als u een nieuwe Microsoft-partner bent die geïnteresseerd is in publiceren op de commerciële marketplace.
 - Als u meer wilt weten over recente en toekomstige releases, kunt u deelnemen aan de conversatie in de [Microsoft-partnercommunity](https://www.microsoftpartnercommunity.com/).

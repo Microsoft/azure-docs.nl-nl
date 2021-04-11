@@ -4,10 +4,10 @@ description: Meer informatie over controle en diagnostische gegevens voor Azure 
 ms.topic: conceptual
 ms.date: 1/17/2019
 ms.openlocfilehash: 71ec86f26de1e94b4e17e0990d2eafd1fff954e2
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105627741"
 ---
 # <a name="monitoring-and-diagnostics-for-azure-service-fabric"></a>Bewaking en diagnostische gegevens voor Azure Service Fabric

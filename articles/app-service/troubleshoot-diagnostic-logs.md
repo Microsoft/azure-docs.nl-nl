@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 09/17/2019
 ms.custom: devx-track-csharp, seodec18
 ms.openlocfilehash: 03ef2110af2d9e642019c2b07b53fae3e32b1ea6
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104950175"
 ---
 # <a name="enable-diagnostics-logging-for-apps-in-azure-app-service"></a>Diagnostische logboek registratie inschakelen voor apps in Azure App Service
@@ -23,7 +23,7 @@ In dit artikel wordt gebruikgemaakt van de [Azure Portal](https://portal.azure.c
 >
 >
 
-|Type|Platform|Locatie|Beschrijving|
+|Type|Platform|Locatie|Description|
 |-|-|-|-|
 | Toepassingslogboeken | Windows, Linux | App Service bestands systeem en/of Azure Storage-blobs | Registreert berichten die zijn gegenereerd door de toepassings code. De berichten kunnen worden gegenereerd door het webframework dat u kiest, of vanuit de code van uw toepassing rechtstreeks met het standaard logboek registratie patroon van uw taal. Aan elk bericht wordt een van de volgende categorieën toegewezen: **kritiek**, **fout**, **waarschuwing**, **info**, **fout opsporing** en **tracering**. U kunt selecteren hoe uitgebreid u de logboek registratie wilt maken door het Ernst niveau in te stellen wanneer u logboek registratie van toepassingen inschakelt.|
 | Logboek registratie van webserver| Windows | App Service bestands systeem of Azure Storage-blobs| Onbewerkte HTTP-aanvraag gegevens in de [uitgebreide W3C-indeling van logboek bestand](/windows/desktop/Http/w3c-logging). Elk logboek bericht bevat gegevens zoals de HTTP-methode, bron-URI, client-IP, client poort, gebruikers agent, respons code, enzovoort. |
@@ -164,7 +164,7 @@ Voor Linux/container-apps bevat het ZIP-bestand console-uitvoer logboeken voor d
 
 Voor Windows-apps bevat het ZIP-bestand de inhoud van de *D:\Home\LogFiles* -map in het app service-Bestands systeem. Het heeft de volgende structuur:
 
-| Logboek type | Directory | Beschrijving |
+| Logboek type | Directory | Description |
 |-|-|-|
 | **Toepassings logboeken** |*/LogFiles/Application/* | Bevat een of meer tekst bestanden. De indeling van de logboek berichten is afhankelijk van de logboek registratie provider die u gebruikt. |
 | **Traceringen van mislukte aanvragen** | */LogFiles/W3SVC#########/* | Bevat XML-bestanden en een XSL-bestand. U kunt de opgemaakte XML-bestanden weer geven in de browser. |
@@ -183,11 +183,11 @@ Met de nieuwe [integratie van Azure monitor](https://aka.ms/appsvcblog-azmon)kun
 
 De volgende tabel bevat de ondersteunde logboek typen en beschrijvingen: 
 
-| Logboek type | Windows | Windows-container | Linux | Linux-container | Beschrijving |
+| Logboek type | Windows | Windows-container | Linux | Linux-container | Description |
 |-|-|-|-|-|-|
 | AppServiceConsoleLogs | Java SE & Tomcat | Ja | Ja | Ja | Standaard uitvoer en standaard fout |
 | AppServiceHTTPLogs | Ja | Ja | Ja | Ja | Webserver logboeken |
-| AppServiceEnvironmentPlatformLogs | Ja | N.v.t. | Ja | Ja | App Service Environment: schalen, configuratie wijzigingen en status logboeken|
+| AppServiceEnvironmentPlatformLogs | Yes | N.v.t. | Ja | Ja | App Service Environment: schalen, configuratie wijzigingen en status logboeken|
 | AppServiceAuditLogs | Ja | Ja | Ja | Ja | Aanmeldings activiteiten via FTP en kudu |
 | AppServiceFileAuditLogs | Ja | Ja | TBA | TBA | Bestands wijzigingen in de site-inhoud; **alleen beschikbaar voor de Premium-laag en hoger** |
 | AppServiceAppLogs | ASP.NET | ASP.NET | Java SE & Tomcat verwerkt installatie kopieën <sup>1</sup> | Java SE & Tomcat verwerkt installatie kopieën <sup>1</sup> | Toepassings logboeken |

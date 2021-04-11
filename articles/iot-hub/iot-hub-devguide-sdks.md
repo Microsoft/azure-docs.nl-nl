@@ -12,12 +12,12 @@ ms.custom:
 - mqtt
 - 'Role: IoT Device'
 - 'Role: Cloud Development'
-ms.openlocfilehash: d35535c87ca20bfc573995bf15f79bc149619776
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1a94bdfd03d4e48495601b5c494204ac1ad50378
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102611586"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106168328"
 ---
 # <a name="understand-and-use-azure-iot-hub-sdks"></a>Azure IoT Hub SDK's leren kennen en gebruiken
 
@@ -41,7 +41,7 @@ Meer informatie over de [voor delen van het ontwikkelen met Azure IOT sdk's](htt
 
 Ondersteunde platforms voor de Sdk's vindt u in [Azure IOT sdk's-platform ondersteuning](iot-hub-device-sdk-platform-support.md).
 
-Voor meer informatie over SDK-compatibiliteit met specifieke hardwareapparaten raadpleegt u de [Azure Certified voor IOT-Apparaatbeheer](https://catalog.azureiotsolutions.com/) of een afzonderlijke opslag plaats.
+Voor meer informatie over SDK-compatibiliteit met specifieke hardwareapparaten raadpleegt u de [Azure Certified voor IOT-Apparaatbeheer](https://devicecatalog.azure.com/) of een afzonderlijke opslag plaats.
 
 ## <a name="azure-iot-hub-device-sdks"></a>Sdk's van Azure IoT Hub apparaat
 

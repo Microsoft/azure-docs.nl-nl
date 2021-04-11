@@ -1,18 +1,15 @@
 ---
 title: Ondersteuning voor nood herstel van virtuele Hyper-V-machines naar Azure met Azure Site Recovery
 description: Een overzicht van de ondersteunde onderdelen en vereisten voor herstel na nood gevallen voor Hyper-V-VM'S naar Azure met Azure Site Recovery
-author: rayne-wiselman
-manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 7/14/2020
-ms.author: raynew
-ms.openlocfilehash: 8d748f93337a770e0d565bab79fdfb3625bda70d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 936950ef5dd2c1c7343e30536ab8836fcd198bd0
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101735519"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106580826"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Ondersteunings matrix voor herstel na nood gevallen van on-premises virtuele Hyper-V-machines naar Azure
 
@@ -142,7 +139,7 @@ Premium Storage | Ja | Ja
 Standard Storage | Ja | Ja
 Import/export-service | Nee | Nee
 Azure Storage accounts waarvoor Firewall is ingeschakeld | Ja. Voor doel opslag en cache. | Ja. Voor doel opslag en cache.
-Opslag account wijzigen | Nee. Het doel Azure Storage account kan niet worden gewijzigd nadat de replicatie is ingeschakeld. Als u herstel na nood gevallen wilt wijzigen, uitschakelen en opnieuw inschakelen. | Nee
+Opslag account wijzigen | Nee. Het doel Azure Storage account kan niet worden gewijzigd nadat de replicatie is ingeschakeld. Als u herstel na nood gevallen wilt wijzigen, uitschakelen en opnieuw inschakelen. | No
 Optie voor beveiligde overdracht | Ja | Ja
 
 

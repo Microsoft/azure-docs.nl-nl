@@ -8,10 +8,10 @@ ms.author: rolyon
 ms.service: role-based-access-control
 ms.custom: subject-policy-reference
 ms.openlocfilehash: 2bc414bf66b8622462d364f4fccae60817fe7815
-ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105038126"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-rbac"></a>Ingebouwde Azure Policy-definities voor Azure RBAC

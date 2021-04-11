@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 10/2/2020
+ms.date: 4/1/2021
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 96f7d7c94ce908d953a6941bfa237fe8da1dc482
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8b3e27f266551eb7425d4801d14261a5e428e4c2
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98752666"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106168107"
 ---
 # <a name="microsoft-identity-platform-and-the-oauth-20-client-credentials-flow"></a>Micro soft Identity platform en de OAuth 2,0-client referenties stroom
 
@@ -25,7 +25,7 @@ U kunt de [OAuth 2,0-client referenties toekenning](https://tools.ietf.org/html/
 
 In dit artikel wordt beschreven hoe u direct kunt Program meren met het protocol in uw toepassing. Als dat mogelijk is, kunt u het beste de ondersteunde micro soft-verificatie bibliotheken (MSAL) gebruiken in plaats van [tokens te verkrijgen en beveiligde web-api's](authentication-flows-app-scenarios.md#scenarios-and-supported-authentication-flows)aan te roepen.  Bekijk ook de voor beeld- [apps die gebruikmaken van MSAL](sample-v2-code.md).
 
-Met de OAuth 2,0-client referenties toewijzen stroom kan een webservice (vertrouwelijke client) eigen referenties gebruiken, in plaats van een gebruiker te imiteren, om te verifiëren bij het aanroepen van een andere webservice. In dit scenario is de client doorgaans een middelste laag, een daemon-service of een website. Voor een hoger garantie niveau kan het micro soft Identity-platform ook een certificaat (in plaats van een gedeeld geheim) als referentie gebruiken.
+Met de OAuth 2,0-client referenties toewijzen stroom kan een webservice (vertrouwelijke client) eigen referenties gebruiken, in plaats van een gebruiker te imiteren, om te verifiëren bij het aanroepen van een andere webservice. Voor een hoger garantie niveau kan het micro soft Identity-platform ook een certificaat (in plaats van een gedeeld geheim) als referentie gebruiken.  Omdat de eigen referenties van de toepassing worden gebruikt, moeten deze referenties veilig blijven. _Publiceer die_ referentie niet in uw bron code, sluit deze in op webpagina's of gebruik deze in een algemeen gedistribueerde systeem eigen toepassing. 
 
 In de client referenties stroom worden machtigingen rechtstreeks verleend aan de toepassing zelf door een beheerder. Wanneer de app een token aan een resource presenteert, dwingt de resource af dat de app zelf een actie heeft geautoriseerd, omdat er geen gebruiker is betrokken bij de verificatie.  In dit artikel worden de stappen besproken die nodig zijn om een [toepassing te machtigen voor het aanroepen van een API](#application-permissions), en het [verkrijgen van de tokens die nodig zijn om die API aan te roepen](#get-a-token).
 

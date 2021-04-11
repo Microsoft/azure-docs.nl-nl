@@ -1,18 +1,15 @@
 ---
 title: Failback tijdens nood herstel met Azure Site Recovery | Microsoft Docs
 description: In dit artikel vindt u een overzicht van de verschillende soorten failback en voor behoud die moeten worden overwogen tijdens het uitvoeren van een failover naar on-premises tijdens nood herstel met de Azure Site Recovery-service.
-author: rayne-wiselman
-manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 08/07/2019
-ms.author: raynew
-ms.openlocfilehash: c0eaf28f9aeb4050fd35a6036a53e3e91d00f3eb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6f386b34222825b60748b4ca27dcc5c0c2487316
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "84691081"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106580852"
 ---
 # <a name="failback-of-vmware-vms-after-disaster-recovery-to-azure"></a>Failback van virtuele VMware-machines na herstel na noodgeval naar Azure
 

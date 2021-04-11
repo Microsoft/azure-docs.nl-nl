@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 11/09/2020
 author: sayantanroy83
 ms.author: sroy
-ms.openlocfilehash: c5c50787ef3e287d164e051ece26da4e83199d47
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3a26f7c63b639f9aeb6a8f526e77dacb37fb4d87
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102555632"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106068061"
 ---
 # <a name="customers-dashboard-in-commercial-marketplace-analytics"></a>Dash board klanten in commerciële Marketplace-analyse
 
@@ -163,6 +163,7 @@ _**Tabel 1: woorden lijst met gegevens termen**_
 | CommerceRootCustomer | Commerce root-klant | Een facturerings account-ID kan worden gekoppeld aan meerdere klant-Id's.<br>Een combi natie van een facturerings account-ID en een klant-ID kan worden gekoppeld aan meerdere commerciële Marketplace-abonnementen.<br>De commerce root-klant geeft de naam aan van de klant van het abonnement. | CommerceRootCustomer |
 | Klant-ID | Klant-ID | De unieke id die aan een klant is toegewezen. Een klant heeft mogelijk geen of meer Azure Marketplace-abonnementen. | CustomerId |
 | Facturerings account-ID | Facturerings account-ID | De id van het account waarop de facturering wordt gegenereerd. Wijs de **facturerings account-id** toe aan **CustomerID** om uw rapport met de uitbetalings transacties te koppelen aan de klant-, order-en gebruiks rapporten. | BillingAccountId |
+| Type klant | Type klant | De waarde van dit veld is het type van de klant. De mogelijke waarden zijn:<ul><li>aparte</li> <li>organisatie</li></ul> | CustomerType |
 |||||
 
 ### <a name="customers-page-filters"></a>Pagina filters voor klanten

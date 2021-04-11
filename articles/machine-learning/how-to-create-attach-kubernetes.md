@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 03/11/2021
-ms.openlocfilehash: bc8f7aa6827ce251799acd0673d43344c0833c3a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 28a647949fdb3ff4d8527268919dbd7e49b27ea4
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103149321"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106276651"
 ---
 # <a name="create-and-attach-an-azure-kubernetes-service-cluster"></a>Een Azure Kubernetes service-cluster maken en koppelen
 
@@ -48,12 +48,8 @@ Azure Machine Learning kunt getrainde machine learning modellen implementeren in
 
 - Als u een persoonlijk AKS-cluster wilt gebruiken (met behulp van een persoonlijke Azure-koppeling), moet u eerst het cluster maken en het vervolgens **koppelen** aan de werk ruimte. Zie [een persoonlijk Azure Kubernetes service-cluster maken](../aks/private-clusters.md)voor meer informatie.
 
-- De naam van de compute voor het AKS-cluster moet uniek zijn binnen uw Azure ML-werk ruimte.
-    - De naam is vereist en moet tussen de 3 en 24 tekens lang zijn.
-    - Geldige tekens zijn onder andere hoofd letters, cijfers en het teken.
-    - De naam moet beginnen met een letter.
-    - De naam moet uniek zijn voor alle bestaande berekeningen binnen een Azure-regio. U ziet een waarschuwing als de naam die u kiest, niet uniek is.
-   
+- De naam van de compute voor het AKS-cluster moet uniek zijn binnen uw Azure ML-werk ruimte. De naam kan letters, cijfers en streepjes bevatten. De naam moet beginnen met een letter, eindigen met een letter of cijfer en moet tussen de 3 en 24 tekens lang zijn.
+ 
  - Als u modellen wilt implementeren op **GPU** -knoop punten of **FPGA** -knoop punten (of een specifieke SKU), moet u een cluster maken met de specifieke SKU. Er is geen ondersteuning voor het maken van een secundaire knooppunt groep in een bestaand cluster en het implementeren van modellen in de secundaire knooppunt groep.
  
 - Wanneer u een cluster maakt of koppelt, kunt u selecteren of u het cluster wilt maken voor __dev-test__ of __productie__. Als u een AKS-cluster wilt maken voor __ontwikkeling__, __validatie__ en __testen__ in plaats van productie, stelt u het __cluster doel__ in op __dev-test__. Als u het cluster doel niet opgeeft, wordt er een __productie__ cluster gemaakt. 

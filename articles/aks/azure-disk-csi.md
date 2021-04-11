@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 08/27/2020
 author: palma21
-ms.openlocfilehash: 2b4079b6d4eb39b65a7a60cd4d149c7748ab39ce
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 5f9e28ac568f70801b2bd955c201712cfcb80084
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102178878"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105963323"
 ---
 # <a name="use-the-azure-disk-container-storage-interface-csi-drivers-in-azure-kubernetes-service-aks-preview"></a>Gebruik de Azure Disk container Storage interface (CSI)-Stuur Programma's in azure Kubernetes service (AKS) (preview)
 Het stuur programma voor de Azure Disk container Storage interface (CSI) is een stuur programma voor [CSI-specificatie](https://github.com/container-storage-interface/spec/blob/master/spec.md)dat door Azure Kubernetes service (AKS) wordt gebruikt voor het beheren van de levens cyclus van Azure-schijven.
@@ -71,9 +71,9 @@ test.txt
 
 De standaard-opslag klassen zijn de meest voorkomende scenario's, maar niet alle. In sommige gevallen wilt u misschien uw eigen opslag klasse aanpassen met uw eigen para meters. We hebben bijvoorbeeld een scenario waarin u de klasse wellicht wilt wijzigen `volumeBindingMode` .
 
-De standaard-opslag klassen gebruiken een `volumeBindingMode: Immediate` klasse die garandeert dat deze onmiddellijk plaatsvindt zodra het PVC is gemaakt. Als uw knooppunt groepen zijn voorzien van een topologie, bijvoorbeeld met behulp van beschikbaarheids zones, wordt PVs gebonden of ingericht zonder kennis van de plannings vereisten van de Pod (in dit geval voor een specifieke zone).
+U kunt een `volumeBindingMode: Immediate` klasse gebruiken die garandeert dat deze onmiddellijk optreedt zodra de PVC is gemaakt. Als uw knooppunt groepen zijn voorzien van een topologie, bijvoorbeeld met behulp van beschikbaarheids zones, wordt PVs gebonden of ingericht zonder kennis van de plannings vereisten van de Pod (in dit geval voor een specifieke zone).
 
-Als u dit scenario wilt aanpakken, kunt u gebruiken `volumeBindingMode: WaitForFirstConsumer` , dat de binding en inrichting van een HW vertraagt tot een pod die gebruikmaakt van het PVC wordt gemaakt. Op deze manier wordt de HW conform en ingericht in de beschikbaarheids zone (of een andere topologie) die is opgegeven door de plannings beperkingen van de pod.
+Als u dit scenario wilt aanpakken, kunt u gebruiken `volumeBindingMode: WaitForFirstConsumer` , dat de binding en inrichting van een HW vertraagt tot een pod die gebruikmaakt van het PVC wordt gemaakt. Op deze manier wordt de HW conform en ingericht in de beschikbaarheids zone (of een andere topologie) die is opgegeven door de plannings beperkingen van de pod. De standaard klasse voor opslag klassen gebruikt `volumeBindingMode: WaitForFirstConsumer` .
 
 Maak een bestand `sc-azuredisk-csi-waitforfirstconsumer.yaml` met de naam en plak het volgende manifest.
 De opslag klasse is hetzelfde als onze `managed-csi` opslag klasse, maar met een andere `volumeBindingMode` klasse.

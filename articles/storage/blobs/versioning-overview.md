@@ -1,60 +1,64 @@
 ---
 title: BLOB-versie beheer
 titleSuffix: Azure Storage
-description: Versie beheer van Blob-opslag houdt automatisch eerdere versies van een object bij en identificeert deze met tijds tempels. U kunt eerdere versies van een BLOB herstellen om uw gegevens te herstellen als deze ten onrechte zijn gewijzigd of verwijderd.
+description: Met versie beheer van Blob-opslag blijven eerdere versies van een object automatisch behouden en worden ze geïdentificeerd met tijds tempels. U kunt een vorige versie van een BLOB herstellen om uw gegevens te herstellen als deze ten onrechte zijn gewijzigd of verwijderd.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 02/09/2021
+ms.date: 04/07/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 692a820bea69071485a973a988ae91bd70b74f35
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 82216abd13b6128be68e22a4ce2a0f6de9a6ce2f
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100380811"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107227536"
 ---
 # <a name="blob-versioning"></a>BLOB-versie beheer
 
 U kunt versie beheer van Blob Storage inschakelen om automatisch eerdere versies van een object te onderhouden.  Wanneer BLOB-versie beheer is ingeschakeld, kunt u een eerdere versie van een BLOB herstellen om uw gegevens te herstellen als deze ten onrechte zijn gewijzigd of verwijderd.
 
-BLOB-versie beheer is ingeschakeld voor het opslag account en is van toepassing op alle blobs in het opslag account. Nadat u BLOB-versie beheer voor een opslag account hebt ingeschakeld, onderhoudt Azure Storage automatisch versies voor elke Blob in het opslag account.
-
-Micro soft raadt aan om BLOB-versie beheer te gebruiken om eerdere versies van een BLOB voor superieure gegevens beveiliging te behouden. Gebruik, indien mogelijk, Blob-versie beheer in plaats van BLOB-moment opnamen om vorige versies te behouden. BLOB-moment opnamen bieden vergelijk bare functionaliteit als ze eerdere versies van een BLOB behouden, maar moment opnamen moeten hand matig worden bewaard door uw toepassing.
-
-Zie [BLOB-versie beheer inschakelen en beheren](versioning-enable.md)voor meer informatie over het inschakelen van BLOB-versies.
-
-> [!IMPORTANT]
-> BLOB-versie beheer kan u niet helpen bij het herstellen van een onbedoelde verwijdering van een opslag account of container. Als u onbedoeld verwijderen van het opslag account wilt voor komen, configureert u een vergren deling van de bron van het opslag account. Zie [resources vergren delen om onverwachte wijzigingen](../../azure-resource-manager/management/lock-resources.md)te voor komen voor meer informatie over het vergren delen van Azure-resources. Als u containers wilt beveiligen tegen onbedoeld verwijderen, configureert u de tijdelijke verwijdering van de container voor het opslag account. Zie [voorlopig verwijderen voor containers (preview)](soft-delete-container-overview.md)voor meer informatie.
-
 [!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
+
+## <a name="recommended-data-protection-configuration"></a>Aanbevolen configuratie voor gegevens beveiliging
+
+BLOB-versie beheer maakt deel uit van een uitgebreide strategie voor gegevens beveiliging voor BLOB-gegevens. Micro soft raadt aan om de volgende functies voor gegevens bescherming in te scha kelen voor optimale beveiliging van uw BLOB-gegevens:
+
+- BLOB-versie beheer om eerdere versies van een blob automatisch te onderhouden. Wanneer BLOB-versie beheer is ingeschakeld, kunt u een eerdere versie van een BLOB herstellen om uw gegevens te herstellen als deze ten onrechte zijn gewijzigd of verwijderd. Zie [BLOB-versie beheer inschakelen en beheren](versioning-enable.md)voor meer informatie over het inschakelen van BLOB-versies.
+- Container soft delete, om een verwijderde container te herstellen. Zie voor meer informatie over het inschakelen van de container Soft soft delete [voor containers, voorlopig verwijderen inschakelen en beheren](soft-delete-container-enable.md).
+- Zacht verwijderen van BLOB, voor het herstellen van een blob, moment opname of versie die is verwijderd. Zie voor het inschakelen van het voorlopig verwijderen van blobs de optie [voorlopig verwijderen inschakelen en beheren voor blobs](soft-delete-blob-enable.md).
+
+Zie [overzicht van gegevens beveiliging](data-protection-overview.md)voor meer informatie over de aanbevelingen van micro soft voor gegevens bescherming.
 
 ## <a name="how-blob-versioning-works"></a>Hoe BLOB versie beheer werkt
 
-Een versie legt de status van een BLOB op een bepaald moment vast. Wanneer BLOB-versie beheer is ingeschakeld voor een opslag account, maakt Azure Storage automatisch een nieuwe versie van een BLOB wanneer die BLOB wordt gewijzigd of verwijderd.
+Een versie legt de status van een BLOB op een bepaald moment vast. Wanneer BLOB-versie beheer is ingeschakeld voor een opslag account, maakt Azure Storage automatisch een nieuwe versie van een BLOB wanneer die BLOB wordt gewijzigd.
 
 Wanneer u een BLOB maakt waarvoor versie beheer is ingeschakeld, is de nieuwe BLOB de huidige versie van de BLOB (of de basis-blob). Als u deze BLOB vervolgens wijzigt, maakt Azure Storage een versie die de status van de BLOB vastlegt voordat deze is gewijzigd. De gewijzigde BLOB wordt de nieuwe huidige versie. Telkens wanneer u de BLOB wijzigt, wordt een nieuwe versie gemaakt.
 
-In het volgende diagram ziet u hoe versies worden gemaakt voor schrijf-en verwijderings bewerkingen en hoe een eerdere versie kan worden gepromoveerd tot de huidige versie:
+In het volgende diagram ziet u hoe versies worden gemaakt voor schrijf bewerkingen en hoe een eerdere versie kan worden gepromoveerd tot de huidige versie:
 
 :::image type="content" source="media/versioning-overview/blob-versioning-diagram.png" alt-text="Diagram waarin wordt weer gegeven hoe BLOB versie beheer werkt":::
 
-Een groot aantal versies per Blob kan de latentie verhogen voor bewerkingen in BLOB-vermeldingen. Micro soft raadt aan om minder dan 1000 versies per BLOB te onderhouden. U kunt levenscyclus beheer gebruiken om oude versies automatisch te verwijderen. Zie [kosten optimaliseren door Azure Blob Storage Access-lagen te automatiseren](storage-lifecycle-management-concepts.md)voor meer informatie over levenscyclus beheer.
-
-Wanneer u een BLOB verwijdert waarvoor versie beheer is ingeschakeld, wordt door Azure Storage een versie gemaakt die de status van de BLOB vastlegt voordat deze werd verwijderd. De huidige versie van de BLOB wordt vervolgens verwijderd, maar de versies van de BLOB blijven behouden, zodat deze indien nodig opnieuw kunnen worden gemaakt. 
+Wanneer u een BLOB verwijdert waarvoor versie beheer is ingeschakeld, wordt de huidige versie van de BLOB verwijderd. Eerdere versies van de BLOB blijven behouden.
 
 BLOB-versies zijn onveranderbaar. U kunt de inhoud of meta gegevens van een bestaande BLOB-versie niet wijzigen.
+
+Een groot aantal versies per Blob kan de latentie verhogen voor bewerkingen in BLOB-vermeldingen. Micro soft raadt aan om minder dan 1000 versies per BLOB te onderhouden. U kunt levenscyclus beheer gebruiken om oude versies automatisch te verwijderen. Zie [kosten optimaliseren door Azure Blob Storage Access-lagen te automatiseren](storage-lifecycle-management-concepts.md)voor meer informatie over levenscyclus beheer.
 
 BLOB-versie beheer is beschikbaar voor algemeen gebruik v2-, blok-Blob-en Blob Storage-accounts. Opslag accounts met een hiërarchische naam ruimte die is ingeschakeld voor gebruik met Azure Data Lake Storage Gen2 worden momenteel niet ondersteund.
 
 Versie 2019-10-10 en hoger van de Azure Storage REST API ondersteunt BLOB-versie beheer.
 
+> [!IMPORTANT]
+> BLOB-versie beheer kan u niet helpen bij het herstellen van een onbedoelde verwijdering van een opslag account of container. Als u onbedoeld verwijderen van het opslag account wilt voor komen, configureert u een vergren deling van de bron van het opslag account. Zie een [Azure Resource Manager Lock Toep assen op een opslag account](../common/lock-account-resource.md)voor meer informatie over het vergren delen van een opslag account.
+
 ### <a name="version-id"></a>Versie-ID
 
-Elke BLOB-versie wordt geïdentificeerd met een versie-ID. De waarde van de versie-ID is het tijds tempel waarop de blob is geschreven of bijgewerkt. De versie-ID wordt toegewezen op het moment dat de versie wordt gemaakt.
+Elke BLOB-versie wordt geïdentificeerd met een versie-ID. De waarde van de versie-ID is het tijds tempel waarop de blob is bijgewerkt. De versie-ID wordt toegewezen op het moment dat de versie wordt gemaakt.
 
 U kunt een lees-of verwijder bewerking uitvoeren op een specifieke versie van een BLOB door de versie-ID op te geven. Als u de versie-ID weglaat, wordt de bewerking uitgevoerd op basis van de huidige versie (de basis-blob).
 
@@ -77,29 +81,12 @@ In het volgende diagram ziet u hoe schrijf bewerkingen van invloed zijn op BLOB-
 > [!NOTE]
 > Een blob die is gemaakt vóór het inschakelen van versie beheer voor het opslag account heeft geen versie-ID. Wanneer die BLOB wordt gewijzigd, wordt de gewijzigde BLOB de huidige versie en wordt er een versie gemaakt om de status van de BLOB op te slaan vóór de update. Aan de versie wordt een versie-ID toegewezen die de aanmaak tijd heeft.
 
-### <a name="versioning-on-delete-operations"></a>Versie beheer voor Delete-bewerkingen
+Wanneer BLOB-versie beheer is ingeschakeld voor een opslag account, activeren alle schrijf bewerkingen op blok-blobs het maken van een nieuwe versie, met uitzonde ring van de [put-blok](/rest/api/storageservices/put-block) bewerking.
 
-Wanneer u een BLOB verwijdert, wordt de huidige versie van de BLOB een vorige versie en wordt de basis-BLOB verwijderd. Alle bestaande vorige versies van de BLOB blijven behouden wanneer de BLOB wordt verwijderd.
-
-Als u de bewerking [Delete BLOB](/rest/api/storageservices/delete-blob) aanroept zonder een versie-id, wordt de basis-BLOB verwijderd. Als u een specifieke versie wilt verwijderen, geeft u de ID voor die versie op in de Verwijder bewerking.
-
-In het volgende diagram ziet u het effect van een Verwijder bewerking op een blob met een versie:
-
-:::image type="content" source="media/versioning-overview/delete-versioned-base-blob.png" alt-text="Diagram waarin de verwijdering van de versie van de BLOB wordt verwijderd.":::
-
-Door nieuwe gegevens naar de BLOB te schrijven, maakt u een nieuwe versie van de blob. Eventuele bestaande versies worden niet beïnvloed, zoals wordt weer gegeven in het volgende diagram.
-
-:::image type="content" source="media/versioning-overview/recreate-deleted-base-blob.png" alt-text="Diagram van het opnieuw maken van de versie-BLOB na verwijdering.":::
-
-### <a name="blob-types"></a>Blob-typen
-
-Wanneer BLOB-versie beheer is ingeschakeld voor een opslag account, activeren alle schrijf-en verwijder bewerkingen op blok-blobs het maken van een nieuwe versie, met uitzonde ring van de [put-blok](/rest/api/storageservices/put-block) bewerking.
-
-Voor pagina-blobs en toevoeg-blobs wordt alleen een subset van schrijf-en verwijder bewerkingen geactiveerd waarmee een versie wordt gemaakt. Deze bewerkingen zijn onder andere:
+Voor pagina-blobs en toevoeg-blobs wordt alleen een subset van schrijf bewerkingen geactiveerd waarbij een versie wordt gemaakt. Deze bewerkingen zijn onder andere:
 
 - [Blob plaatsen](/rest/api/storageservices/put-blob)
 - [Blokkerings lijst plaatsen](/rest/api/storageservices/put-block-list)
-- [Blob verwijderen](/rest/api/storageservices/delete-blob)
 - [BLOB-meta gegevens instellen](/rest/api/storageservices/set-blob-metadata)
 - [Blob kopiëren](/rest/api/storageservices/copy-blob)
 
@@ -109,6 +96,20 @@ Met de volgende bewerkingen wordt het maken van een nieuwe versie niet geactivee
 - [Blok toevoegen](/rest/api/storageservices/append-block) (toevoeg-blob)
 
 Alle versies van een BLOB moeten van hetzelfde type BLOB zijn. Als een BLOB vorige versies heeft, kunt u een BLOB van een type niet overschrijven met een ander type, tenzij u eerst de BLOB en alle versies ervan verwijdert.
+
+### <a name="versioning-on-delete-operations"></a>Versie beheer voor Delete-bewerkingen
+
+Wanneer u de bewerking [BLOB verwijderen](/rest/api/storageservices/delete-blob) aanroept zonder een versie-id op te geven, wordt de huidige versie een eerdere versie en is er geen actuele versie meer. Alle bestaande vorige versies van de BLOB blijven behouden.
+
+In het volgende diagram ziet u het effect van een Verwijder bewerking op een blob met een versie:
+
+:::image type="content" source="media/versioning-overview/delete-versioned-base-blob.png" alt-text="Diagram waarin de verwijdering van de versie van de BLOB wordt verwijderd.":::
+
+Als u een specifieke versie van een BLOB wilt verwijderen, geeft u de ID voor die versie op in de Verwijder bewerking. Als de functie voor het voorlopig verwijderen van blobs ook is ingeschakeld voor het opslag account, wordt de versie in het systeem bewaard totdat de tijdelijke Bewaar periode voor verwijderen is verstreken.
+
+Door nieuwe gegevens naar de BLOB te schrijven, maakt u een nieuwe huidige versie van de blob. Eventuele bestaande versies worden niet beïnvloed, zoals wordt weer gegeven in het volgende diagram.
+
+:::image type="content" source="media/versioning-overview/recreate-deleted-base-blob.png" alt-text="Diagram van het opnieuw maken van de versie-BLOB na verwijdering.":::
 
 ### <a name="access-tiers"></a>Toegangslagen
 
@@ -132,27 +133,29 @@ In het volgende diagram ziet u hoe het wijzigen van een BLOB nadat versie beheer
 
 ## <a name="blob-versioning-and-soft-delete"></a>BLOB-versie en zacht verwijderen
 
-BLOB-versie beheer en dynamische BLOB-verwijdering werken samen om u te voorzien van optimale gegevens beveiliging. Wanneer u zacht verwijderen inschakelt, geeft u op hoe lang Azure Storage een voorlopig verwijderde BLOB moet bewaren. Een met Soft verwijderde BLOB-versie blijft in het systeem en kan worden verwijderd binnen de tijdelijke verwijderings periode. Zie voor meer informatie over het verwijderen van blobs [voorlopig verwijderen voor Azure Storage-blobs](./soft-delete-blob-overview.md).
+Micro soft raadt u aan om de functie voor het voorlopig verwijderen van versies en blobs voor uw opslag accounts in te scha kelen voor optimale gegevens bescherming. Met zacht verwijderen worden de blobs, versies en moment opnamen beschermd tegen onbedoeld verwijderen. Zie voor meer informatie over het verwijderen van blobs [voorlopig verwijderen voor Azure Storage-blobs](./soft-delete-blob-overview.md).
+
+### <a name="overwriting-a-blob"></a>Een BLOB overschrijven
+
+Als blob-versie beheer en dynamisch verwijderen van BLOB zijn ingeschakeld voor een opslag account, wordt door het overschrijven van een blob automatisch een nieuwe versie gemaakt. De nieuwe versie wordt niet zacht verwijderd en wordt niet verwijderd wanneer de tijdelijke Bewaar periode voor het verwijderen is verlopen. Er zijn geen voorlopig verwijderde moment opnamen gemaakt.
 
 ### <a name="deleting-a-blob-or-version"></a>Een BLOB of versie verwijderen
 
-Zacht verwijderen biedt extra beveiliging voor het verwijderen van BLOB-versies. Als versie beheer en voorlopig verwijderen zijn ingeschakeld op het opslag account, maakt Azure Storage een nieuwe versie wanneer u een BLOB verwijdert om de status van de BLOB direct vóór het verwijderen op te slaan en wordt de huidige versie verwijderd. De nieuwe versie wordt niet zacht verwijderd en wordt niet verwijderd wanneer de tijdelijke Bewaar periode voor het verwijderen is verlopen.
+Als versie beheer en voorlopig verwijderen zijn ingeschakeld op het opslag account, wordt de huidige versie van de BLOB een vorige versie en wordt de huidige versie verwijderd wanneer u een BLOB verwijdert. Er wordt geen nieuwe versie gemaakt en er worden geen tijdelijke verwijderde moment opnamen gemaakt. De tijdelijke Bewaar periode voor verwijderen is niet van toepassing op de verwijderde blob.
 
-Wanneer u een vorige versie van de BLOB verwijdert, wordt de versie zacht verwijderd. De zachte verwijderde versie wordt behouden gedurende de Bewaar periode die is opgegeven in de instellingen voor voorlopig verwijderen voor het opslag account en wordt permanent verwijderd wanneer de tijdelijke verwijderings periode voor verwijderen is verlopen.
+Zacht verwijderen biedt extra beveiliging voor het verwijderen van BLOB-versies. Wanneer u een vorige versie van de BLOB verwijdert, wordt deze versie zacht verwijderd. De zachte verwijderde versie wordt bewaard tot de tijdelijke verwijderings periode is verstreken, waardoor deze permanent wordt verwijderd.
 
-Als u een vorige versie van een BLOB wilt verwijderen, verwijdert u deze expliciet door de versie-ID op te geven.
+Als u een vorige versie van een BLOB wilt verwijderen, roept u de bewerking **BLOB verwijderen** aan en geeft u de versie-id op.
 
 In het volgende diagram ziet u wat er gebeurt wanneer u een BLOB of een BLOB-versie verwijdert.
 
 :::image type="content" source="media/versioning-overview/soft-delete-historical-version.png" alt-text="Diagram van het verwijderen van een versie waarvoor zacht verwijderen is ingeschakeld.":::
 
-Als versie beheer en voorlopig verwijderen zijn ingeschakeld voor een opslag account, wordt er geen voorlopig verwijderde moment opname gemaakt wanneer een BLOB of BLOB-versie wordt gewijzigd of verwijderd.
-
 ### <a name="restoring-a-soft-deleted-version"></a>Een voorlopig verwijderde versie herstellen
 
-U kunt een voorlopig verwijderde BLOB-versie herstellen door de bewerking voor het [ongedaan](/rest/api/storageservices/undelete-blob) maken van de BLOB op de versie aan te roepen terwijl de Bewaar periode voor de tijdelijke verwijdering van kracht is. Met de bewerking **BLOB verwijderen** worden alle voorlopig verwijderde versies van de BLOB hersteld.
+U kunt de bewerking [BLOB verwijderen](/rest/api/storageservices/undelete-blob) gebruiken om met zachte verwijderde versies te herstellen tijdens de tijdelijke verwijderings periode. Met de bewerking **BLOB verwijderen** worden altijd alle voorlopig verwijderde versies van de BLOB hersteld. Het is niet mogelijk om slechts één zacht verwijderde versie te herstellen.
 
-Als u de voorlopig verwijderde versies herstelt met de bewerking voor het **ongedaan** maken van de blob, wordt een versie niet gepromoveerd tot de huidige versie. Als u de huidige versie wilt herstellen, moet u eerst alle voorlopig verwijderde versies herstellen en vervolgens de bewerking [BLOB kopiëren](/rest/api/storageservices/copy-blob) gebruiken om een vorige versie te kopiëren om de BLOB te herstellen.
+Als u de voorlopig verwijderde versies herstelt met de bewerking voor het **ongedaan** maken van de blob, wordt een versie niet gepromoveerd tot de huidige versie. Als u de huidige versie wilt herstellen, moet u eerst alle voorlopig verwijderde versies herstellen en vervolgens de bewerking [BLOB kopiëren](/rest/api/storageservices/copy-blob) gebruiken om een vorige versie naar een nieuwe huidige versie te kopiëren.
 
 In het volgende diagram ziet u hoe u de Soft verwijderde BLOB-versies herstelt met de bewerking **BLOB verwijderen** en hoe u de huidige versie van de BLOB herstelt met de bewerking **BLOB kopiëren** .
 
@@ -193,8 +196,8 @@ In de volgende tabel ziet u welke Azure RBAC-acties ondersteuning bieden voor he
 
 | Description | Blob service bewerking | Azure RBAC-gegevens actie vereist | Ondersteuning voor ingebouwde rollen van Azure |
 |----------------------------------------------|------------------------|---------------------------------------------------------------------------------------|-------------------------------|
-| De huidige versie van de BLOB verwijderen | Blob verwijderen | **Micro soft. Storage/Storage accounts/blobServices/containers/blobs/verwijderen** | Inzender voor Storage Blob-gegevens |
-| Een versie verwijderen | Blob verwijderen | **Micro soft. Storage/Storage accounts/blobServices/containers/blobs/deleteBlobVersion/Action** | Eigenaar van opslagblobgegevens |
+| De huidige versie verwijderen | Blob verwijderen | **Micro soft. Storage/Storage accounts/blobServices/containers/blobs/verwijderen** | Inzender voor Storage Blob-gegevens |
+| Een vorige versie verwijderen | Blob verwijderen | **Micro soft. Storage/Storage accounts/blobServices/containers/blobs/deleteBlobVersion/Action** | Eigenaar van opslagblobgegevens |
 
 ### <a name="shared-access-signature-sas-parameters"></a>Para meters voor Shared Access Signature (SAS)
 

@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: jordane
 author: jpe316
-ms.date: 11/16/2020
-ms.openlocfilehash: cc844cbd2518bb131f6902d1da3e7653951224b5
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.date: 04/08/2021
+ms.openlocfilehash: 2dc50702113f591075b790878347c4ca47beec4e
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102547846"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107027802"
 ---
 # <a name="git-integration-for-azure-machine-learning"></a>Git-integratie voor Azure Machine Learning
 
@@ -25,6 +25,11 @@ Azure Machine Learning volledig ondersteunt Git-opslag plaatsen voor het bijhoud
 Bij het verzenden van een taak naar Azure Machine Learning, als bron bestanden worden opgeslagen in een lokale Git-opslag plaats, wordt informatie over de opslag plaats bijgehouden als onderdeel van het trainings proces.
 
 Omdat Azure Machine Learning gegevens van een lokale Git-opslag plaats registreert, is deze niet gekoppeld aan een specifieke centrale opslag plaats. Uw opslag plaats kan worden gekloond van GitHub, GitLab, bitbucket, Azure DevOps of een andere Git-compatibele service.
+
+> [!TIP]
+> Gebruik Visual Studio code om met Git te communiceren via een Graphical User Interface. Zie [verbinding maken met een Azure machine learning Compute-instantie in Visual Studio code (preview)](how-to-set-up-vs-code-remote.md) om verbinding te maken met een Azure machine learning extern Compute-exemplaar met behulp van Visual Studio code
+>
+> Zie [versie beheer gebruiken in VS code](https://code.visualstudio.com/docs/editor/versioncontrol) en [werken met github in VS code](https://code.visualstudio.com/docs/editor/github)voor meer informatie over functies van Visual Studio code-versie beheer.
 
 ## <a name="clone-git-repositories-into-your-workspace-file-system"></a>Git-opslagplaatsen klonen in het bestandssysteem van de werkruimte
 Azure Machine Learning biedt een gedeeld bestands systeem voor alle gebruikers in de werk ruimte.
@@ -123,7 +128,7 @@ SSH geeft deze vinger afdruk weer wanneer deze verbinding maakt met een onbekend
 
 Wanneer u een training verzendt die wordt uitgevoerd vanuit de python-SDK of Machine Learning CLI, worden de bestanden die nodig zijn om het model te trainen, geüpload naar uw werk ruimte. Als de `git` opdracht beschikbaar is in uw ontwikkelings omgeving, gebruikt het upload proces om te controleren of de bestanden zijn opgeslagen in een Git-opslag plaats. Als dat het geval is, worden de gegevens uit uw Git-opslag plaats ook geüpload als onderdeel van de trainings uitvoering. Deze informatie wordt opgeslagen in de volgende eigenschappen voor het uitvoeren van de training:
 
-| Eigenschap | Git-opdracht die wordt gebruikt om de waarde op te halen | Beschrijving |
+| Eigenschap | Git-opdracht die wordt gebruikt om de waarde op te halen | Description |
 | ----- | ----- | ----- |
 | `azureml.git.repository_uri` | `git ls-remote --get-url` | De URI waaruit uw opslag plaats is gekloond. |
 | `mlflow.source.git.repoURL` | `git ls-remote --get-url` | De URI waaruit uw opslag plaats is gekloond. |

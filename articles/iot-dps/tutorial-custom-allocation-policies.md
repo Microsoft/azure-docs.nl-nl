@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
-ms.openlocfilehash: 42098786bb92e98b89b1dbfba01a2e071398f460
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f19f43b89cd2527a67827d7434f2e054ee40001e
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99258538"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107227378"
 ---
 # <a name="tutorial-use-custom-allocation-policies-with-device-provisioning-service-dps"></a>Zelfstudie: Aangepast toewijzingsbeleid gebruiken met Device Provisioning Service (DPS)
 
@@ -483,6 +483,17 @@ U verwijdert als volgt de resourcegroep op naam:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [Aangepast toewijzingsbeleid gebruiken](how-to-use-custom-allocation-policies.md) voor een gedetailleerder voorbeeld van aangepast toewijzingsbeleid.
-* Zie [Concepten voor het opnieuw inrichten van IoT Hub-apparaten](concepts-device-reprovision.md) voor meer informatie over het opnieuw inrichten.
-* Zie [Inrichting ongedaan maken van apparaten die eerder zijn ingericht](how-to-unprovision-devices.md) voor meer informatie over het ongedaan maken van de inrichting.
+Voor een uitgebreidere voor beeld van een aangepast toewijzings beleid raadpleegt u 
+
+> [!div class="nextstepaction"]
+> [Aangepast toewijzingsbeleid gebruiken](how-to-use-custom-allocation-policies.md)
+
+* Zie voor meer informatie over het opnieuw inrichten
+
+> [!div class="nextstepaction"]
+> [Concepten IoT Hub apparaten opnieuw inrichten](concepts-device-reprovision.md)
+
+* Zie voor meer informatie over het ongedaan maken van de inrichting.
+
+> [!div class="nextstepaction"]
+> [De inrichting van apparaten die eerder zijn ingericht, ongedaan maken](how-to-unprovision-devices.md)

@@ -8,16 +8,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 03/10/2021
+ms.date: 04/05/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 435a0b85d205328d10f8762498c7a981d7ee45f5
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 074bffb8614be1f71ba1956fd5a238bc19354c58
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102611824"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107028732"
 ---
 # <a name="collect-azure-active-directory-b2c-logs-with-application-insights"></a>Azure Active Directory B2C-logboeken met Application Insights verzamelen
 
@@ -31,6 +31,18 @@ De gedetailleerde activiteiten logboeken die hier worden beschreven, moeten **al
 ## <a name="set-up-application-insights"></a>Application Insights instellen
 
 Als u er nog geen hebt, maakt u een instantie van Application Insights in uw abonnement.
+
+> [!TIP]
+> Eén exemplaar van Application Insights kan worden gebruikt voor meerdere Azure AD B2C-tenants. In uw query kunt u vervolgens filteren op de Tenant of de naam van het beleid. [Zie de logboeken in Application Insights](#see-the-logs-in-application-insights) voor beelden voor meer informatie.
+
+Voer de volgende stappen uit om een exemplaar van Application Insights in uw abonnement te verlaten:
+
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Selecteer het filter **Directory + abonnement** in het bovenste menu en selecteer vervolgens de map die uw Azure-abonnement bevat (niet uw Azure AD B2C Directory).
+1. Open de Application Insights resource die u eerder hebt gemaakt.
+1. Op de pagina **overzicht** en noteer de **instrumentatie sleutel**
+
+Voer de volgende stappen uit om een exemplaar van Application Insights in uw abonnement te maken:
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Selecteer het filter **Directory + abonnement** in het bovenste menu en selecteer vervolgens de map die uw Azure-abonnement bevat (niet uw Azure AD B2C Directory).
@@ -96,12 +108,59 @@ Hier volgt een lijst met query's die u kunt gebruiken om de logboeken weer te ge
 
 | Query | Description |
 |---------------------|--------------------|
-`traces` | Alle logboeken weer geven die zijn gegenereerd door Azure AD B2C |
-`traces | where timestamp > ago(1d)` | Alle logboeken weer geven die zijn gegenereerd door Azure AD B2C voor de afgelopen dag
+| `traces` | Alle logboeken ophalen die zijn gegenereerd door Azure AD B2C |
+| `traces | where timestamp > ago(1d)` | Alle logboeken die zijn gegenereerd door Azure AD B2C, ophalen voor de afgelopen dag.|
+| `traces | where message contains "exception" | where timestamp > ago(2h)`|  Alle logboeken ophalen met fouten in de afgelopen twee uur.|
+| `traces | where customDimensions.Tenant == "contoso.onmicrosoft.com" and customDimensions.UserJourney  == "b2c_1a_signinandup"` | Alle logboeken ophalen die zijn gegenereerd door Azure AD B2C *contoso.onmicrosoft.com* -Tenant en gebruikers traject is *b2c_1a_signinandup*. |
+| `traces | where customDimensions.CorrelationId == "00000000-0000-0000-0000-000000000000"`| Alle door Azure AD B2C gegenereerde logboeken ophalen voor een correlatie-ID. Vervang de correlatie-ID door uw correlatie-ID. | 
 
 De invoer kan lang zijn. Exporteren naar CSV voor een betere blik.
 
 Zie [overzicht van logboek query's in azure monitor](../azure-monitor/logs/log-query-overview.md)voor meer informatie over het uitvoeren van query's.
+
+## <a name="see-the-logs-in-vs-code-extension"></a>Raadpleeg de logboeken in VS code extension
+
+U wordt aangeraden de [Azure AD B2C-uitbrei ding](https://marketplace.visualstudio.com/items?itemName=AzureADB2CTools.aadb2c) voor [VS code](https://code.visualstudio.com/)te installeren. Met de uitbrei ding Azure AD B2C worden de logboeken voor u geordend op basis van de naam van het beleid, correlatie-ID (de Application Insights geeft het eerste cijfer van de correlatie-ID) en het logboek tijds tempel. Deze functie helpt u bij het zoeken naar het relevante logboek op basis van het lokale tijds tempel en de gebruikers traject te zien zoals uitgevoerd door Azure AD B2C.
+
+> [!NOTE]
+> De community heeft de VS code-extensie voor Azure AD B2C ontwikkeld om identiteits ontwikkelaars te helpen. De extensie wordt niet ondersteund door micro soft en wordt strikt beschikbaar gesteld.
+
+### <a name="set-application-insights-api-access"></a>Application Insights API-toegang instellen
+
+Nadat u de Application Insights hebt ingesteld en het aangepaste beleid hebt geconfigureerd, moet u uw Application Insights **API-id** ophalen en de **API-sleutel** maken. Zowel de API-id als de API-sleutel worden gebruikt door Azure AD B2C extensie om de Application Insights-gebeurtenissen (webelementen) te lezen. Uw API-sleutels moeten worden beheerd zoals wacht woorden. Bewaar het geheim.
+
+> [!NOTE]
+> Application Insights instrumentatie sleutel die u eerder maakt, wordt gebruikt door Azure AD B2C om er webelementen naar Application Insights te sturen. U gebruikt de instrumentatie sleutel alleen in uw Azure AD B2C beleid, niet in de VS code-uitbrei ding.
+
+Application Insights-ID en-sleutel ophalen:
+
+1. Open in Azure Portal de Application Insights resource voor uw toepassing.
+1. Selecteer **instellingen** en selecteer vervolgens **API-toegang**.
+1. De **toepassings-id** kopiëren
+1. Selecteer **API-sleutel maken**
+1. Schakel het selectie vakje **telemetrie lezen** in.
+1. Kopieer de **sleutel** voordat u de BLADe API-sleutel maken sluit en sla deze op een veilige plek op. Als u de sleutel kwijtraakt, moet u een nieuwe maken.
+
+    ![Scherm afbeelding die laat zien hoe u API-toegangs sleutel maakt.](./media/troubleshoot-with-application-insights/application-insights-api-access.png)
+
+### <a name="set-up-azure-ad-b2c-vs-code-extension"></a>Azure AD B2C VS-code-uitbrei ding instellen
+
+Nu u Azure-toepassing Insights-API-ID en-sleutel hebt, kunt u de VS code-extensie configureren om de logboeken te lezen. Azure AD B2C VS code-extensie biedt twee bereiken voor instellingen:
+
+- **Globale instellingen van gebruiker** -instellingen die wereld wijd van toepassing zijn op alle instanties van VS code die u opent.
+- **Werkruimte instellingen** : instellingen die zijn opgeslagen in uw werk ruimte en die alleen van toepassing zijn wanneer de werk ruimte wordt geopend (met behulp van de **open map** VS code).
+
+1. Klik in de **Azure AD B2C Trace** Explorer op het pictogram **instellingen** .
+
+    ![Scherm afbeelding die laat zien hoe u de Application Insights-instellingen selecteert.](./media/troubleshoot-with-application-insights/app-insights-settings.png)
+
+1. Geef de Azure-toepassing Insights **-id en-** **sleutel** op.
+1. Klik op **Opslaan**.
+
+Nadat u de instellingen hebt opgeslagen, worden de Application Insights-logboeken weer gegeven in het venster **Azure AD B2C tracering (app Insights)** .
+
+![Scherm opname van Azure AD B2C extensie voor vscode, die de Azure-toepassing Insights-tracering presenteert.](./media/troubleshoot-with-application-insights/vscode-extension-application-insights-trace.png)
+
 
 ## <a name="configure-application-insights-in-production"></a>Application Insights in productie configureren
 
@@ -128,12 +187,8 @@ Als u de prestaties van uw productie omgeving en betere gebruikers ervaring wilt
    
 1. Upload en test uw beleid.
 
+
+
 ## <a name="next-steps"></a>Volgende stappen
 
-De community heeft een viewer voor gebruikersbeleving ontwikkeld om identiteitsontwikkelaars te helpen. Deze leest van uw exemplaar van AppInsights en biedt een goed gestructureerde weergave van de gebeurtenissen van de gebruikersbeleving. U verkrijgt de broncode en implementeert deze in uw eigen oplossing.
-
-De gebruikers reis speler wordt niet ondersteund door micro soft en wordt strikt beschikbaar gesteld.
-
-U kunt de versie van de viewer vinden die gebeurtenissen van Application Insights op GitHub leest:
-
-[Azure-samples/Active-Directory-B2C-Advanced-policies](https://github.com/Azure-Samples/active-directory-b2c-advanced-policies/tree/master/wingtipgamesb2c/src/WingTipUserJourneyPlayerWebApplication)
+- Meer informatie over het [oplossen van Azure AD B2C aangepaste beleids regels](troubleshoot-custom-policies.md)

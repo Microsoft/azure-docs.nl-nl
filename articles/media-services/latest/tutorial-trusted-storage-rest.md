@@ -6,12 +6,12 @@ ms.author: inhenkel
 ms.service: media-services
 ms.topic: tutorial
 ms.date: 2/8/2021
-ms.openlocfilehash: 18cb4e3ada94822c2f4cb1ca7675310a37e44e84
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ee57a743d28dcb80eeff5e2060ec9fff436e888c
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100590656"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105963305"
 ---
 # <a name="tutorial-media-services-trusted-storage"></a>Zelf studie: vertrouwde opslag Media Services
 
@@ -343,4 +343,4 @@ Authorization: Bearer {{getArmToken.response.body.access_token}}
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Een Asset maken](how-to-create-asset.md)
+[Een Asset maken](asset-create-asset-how-to.md)

@@ -11,12 +11,12 @@ author: sdgilley
 ms.reviewer: ranku
 ms.date: 04/09/2020
 ms.custom: data4ml
-ms.openlocfilehash: 238801171d19191bcac505f0c95395320f96d75c
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
-ms.translationtype: HT
+ms.openlocfilehash: 3a86f0eb88ba0a56f0887d71f649cf9b9d5ec7a3
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97882463"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107227259"
 ---
 # <a name="tutorial-create-a-labeling-project-for-multi-class-image-classification"></a>Zelfstudie: Een labelproject maken voor een afbeeldingsclassificatie met meerdere klassen 
 
@@ -209,7 +209,5 @@ Labels van afbeeldingen kunnen worden geëxporteerd in [COCO-indeling](http://co
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie hebt u afbeeldingen gelabeld.  Gebruik nu uw gelabelde gegevens:
-
 > [!div class="nextstepaction"]
-> [Train een machine learning-model voor het herkennen van afbeeldingen](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/labeled-datasets/labeled-datasets.ipynb).
+> [Maak een gegevens label project en exporteer labels](how-to-create-labeling-projects.md).

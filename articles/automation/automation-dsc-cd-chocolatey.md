@@ -6,12 +6,12 @@ ms.subservice: dsc
 ms.date: 08/08/2018
 ms.topic: conceptual
 ms.custom: references_regions
-ms.openlocfilehash: bb5f7b5e8214bd3b04bd7b9544ab4bc589f6c4bf
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 955e6b22c22d9cbe5891bcd0109806cb9270a456
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98896322"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106168651"
 ---
 # <a name="set-up-continuous-deployment-with-chocolatey"></a>Doorlopende implementatie instellen met Chocolatey
 
@@ -47,7 +47,7 @@ Een belang rijke functie van een resource manager-sjabloon is de mogelijkheid om
 
 ## <a name="quick-trip-around-the-diagram"></a>Snelle reis rond het diagram
 
-Vanaf de bovenkant schrijft u uw code, bouwt u deze, test u deze en maakt u een installatie pakket. Choco lade kan verschillende typen installatie pakketten verwerken, zoals MSI, MSU, ZIP. En u beschikt over de volledige kracht van Power shell om de daad werkelijke installatie uit te voeren als de systeem eigen mogelijkheden van Choco lade niet zijn. Plaats het pakket op een plek die bereikbaar is, een package-opslag plaats. In dit voor beeld wordt een open bare map in een Azure Blob-opslag account gebruikt, maar deze kan zich overal bevinden. Chocolade werkt standaard met NuGet-servers en enkele andere voor het beheer van de meta gegevens van pakketten. In [dit artikel](https://github.com/chocolatey/choco/wiki/How-To-Host-Feed) worden de opties beschreven. In het gebruiks voorbeeld wordt NuGet gebruikt. Een Nuspec is meta gegevens over uw pakketten. De Nuspec-gegevens worden gecompileerd in een NuPkg en opgeslagen op een NuGet-server. Als uw configuratie een pakket met de naam opvraagt en naar een NuGet-server verwijst, wordt het pakket door de chocolade DSC-resource op de VM gepakt en geïnstalleerd. U kunt ook een specifieke versie van een pakket aanvragen.
+Vanaf de bovenkant schrijft u uw code, bouwt u deze, test u deze en maakt u een installatie pakket. Choco lade kan verschillende typen installatie pakketten verwerken, zoals MSI, MSU, ZIP. En u beschikt over de volledige kracht van Power shell om de daad werkelijke installatie uit te voeren als de systeem eigen mogelijkheden van Choco lade niet zijn. Plaats het pakket op een plek die bereikbaar is voor een pakket opslagplaats. In dit voor beeld wordt een open bare map in een Azure Blob-opslag account gebruikt, maar deze kan zich overal bevinden. Chocolade werkt standaard met NuGet-servers en enkele andere voor het beheer van de meta gegevens van pakketten. In [dit artikel](https://github.com/chocolatey/choco/wiki/How-To-Host-Feed) worden de opties beschreven. In het gebruiks voorbeeld wordt NuGet gebruikt. Een Nuspec is meta gegevens over uw pakketten. De Nuspec-gegevens worden gecompileerd in een NuPkg en opgeslagen op een NuGet-server. Als uw configuratie een pakket met de naam opvraagt en naar een NuGet-server verwijst, wordt het pakket door de chocolade DSC-resource op de VM gepakt en geïnstalleerd. U kunt ook een specifieke versie van een pakket aanvragen.
 
 In de linkerbenedenhoek van de afbeelding bevindt zich een Azure Resource Manager sjabloon. In dit voor beeld registreert de VM-extensie de VM met de Azure Automation status configuratie pull-server als een knoop punt. De configuratie wordt twee keer opgeslagen op de pull-server: eenmaal als tekst zonder opmaak en eenmaal gecompileerd als MOF-bestand. In de Azure Portal vertegenwoordigt de MOF een knooppunt configuratie, in tegens telling tot een eenvoudige configuratie. Het is het artefact dat is gekoppeld aan een knoop punt zodat het knoop punt de configuratie kent. In de onderstaande details ziet u hoe u de knooppunt configuratie aan het knoop punt toewijst.
 
@@ -73,8 +73,8 @@ De volledige bron voor dit gebruiks voorbeeld bevindt zich in [dit Visual Studio
 Op een geverifieerde ( `Connect-AzAccount` ) Power shell-opdracht regel: (kan enkele minuten duren terwijl de pull-server is ingesteld)
 
 ```azurepowershell-interactive
-New-AzResourceGroup –Name MY-AUTOMATION-RG –Location MY-RG-LOCATION-IN-QUOTES
-New-AzAutomationAccount –ResourceGroupName MY-AUTOMATION-RG –Location MY-RG-LOCATION-IN-QUOTES –Name MY-AUTOMATION-ACCOUNT
+New-AzResourceGroup -Name MY-AUTOMATION-RG -Location MY-RG-LOCATION-IN-QUOTES
+New-AzAutomationAccount -ResourceGroupName MY-AUTOMATION-RG -Location MY-RG-LOCATION-IN-QUOTES -Name MY-AUTOMATION-ACCOUNT
 ```
 
 U kunt uw Automation-account in een van de volgende regio's plaatsen (ook wel locaties genoemd): VS-Oost 2, Zuid-Centraal VS, US Gov-Virginia, Europa-west, Zuidoost-Azië, Japan-Oost, Centraal-India en Australië-zuidoost, Canada-centraal Europa-noord.
@@ -103,7 +103,7 @@ Er is ook een hand matige aanpak die slechts één keer per resource wordt gebru
 2. Installeer de integratie module.
 
     ```azurepowershell-interactive
-    Install-Module –Name MODULE-NAME`    <—grabs the module from the PowerShell Gallery
+    Install-Module -Name MODULE-NAME`    <—grabs the module from the PowerShell Gallery
     ```
 
 3. Kopieer de map module van **C:\Program Files\WindowsPowerShell\Modules\MODULE-name** naar een tijdelijke map.
@@ -119,7 +119,7 @@ Er is ook een hand matige aanpak die slechts één keer per resource wordt gebru
     ```azurepowershell-interactive
     New-AzAutomationModule `
       -ResourceGroupName MY-AUTOMATION-RG -AutomationAccountName MY-AUTOMATION-ACCOUNT `
-      -Name MODULE-NAME –ContentLinkUri 'https://STORAGE-URI/CONTAINERNAME/MODULE-NAME.zip'
+      -Name MODULE-NAME -ContentLinkUri 'https://STORAGE-URI/CONTAINERNAME/MODULE-NAME.zip'
     ```
 
 Het opgenomen voor beeld implementeert deze stappen voor cChoco en xNetworking. 
@@ -175,18 +175,18 @@ Hier is het **New-ConfigurationScript.ps1** script (gewijzigd voor het gebruik v
 
 ```powershell
 Import-AzAutomationDscConfiguration `
-    -ResourceGroupName MY-AUTOMATION-RG –AutomationAccountName MY-AUTOMATION-ACCOUNT `
+    -ResourceGroupName MY-AUTOMATION-RG -AutomationAccountName MY-AUTOMATION-ACCOUNT `
     -SourcePath C:\temp\AzureAutomationDsc\ISVBoxConfig.ps1 `
-    -Published –Force
+    -Published -Force
 
 $jobData = Start-AzAutomationDscCompilationJob `
-    -ResourceGroupName MY-AUTOMATION-RG –AutomationAccountName MY-AUTOMATION-ACCOUNT `
+    -ResourceGroupName MY-AUTOMATION-RG -AutomationAccountName MY-AUTOMATION-ACCOUNT `
     -ConfigurationName ISVBoxConfig
 
 $compilationJobId = $jobData.Id
 
 Get-AzAutomationDscCompilationJob `
-    -ResourceGroupName MY-AUTOMATION-RG –AutomationAccountName MY-AUTOMATION-ACCOUNT `
+    -ResourceGroupName MY-AUTOMATION-RG -AutomationAccountName MY-AUTOMATION-ACCOUNT `
     -Id $compilationJobId
 ```
 

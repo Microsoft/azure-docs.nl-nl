@@ -10,17 +10,27 @@ author: VasiyaKrishnan
 ms.author: vakrishn
 ms.reviewer: sstein
 ms.date: 11/24/2020
-ms.openlocfilehash: e078fb91b3279b6f4321cd51dfb094f82bbe5f14
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6218715878ec40fecee79f1c93bf2ca1820af007
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98696376"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106277008"
 ---
 # <a name="azure-sql-edge-release-notes"></a>Release opmerkingen bij Azure SQL Edge 
 
 In dit artikel wordt beschreven wat er nieuw is en wat er is gewijzigd bij elke nieuwe build van Azure SQL Edge.
 
+## <a name="azure-sql-edge-103"></a>Azure SQL Edge-1.0.3
+
+SQL engine build 15.0.2000.1554
+
+### <a name="fixes"></a>Oplossingen
+
+- Upgrade ONNX runtime naar 1.5.3
+- Bijwerken naar micro soft. SqlServer. DACFx versie 150.5084.2
+- Diverse oplossingen voor fouten  
+   
 ## <a name="azure-sql-edge-102"></a>Azure SQL Edge-1.0.2
 
 SQL engine build 15.0.2000.1554

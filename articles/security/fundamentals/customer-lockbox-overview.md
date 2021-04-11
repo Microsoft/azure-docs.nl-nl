@@ -7,27 +7,28 @@ ms.subservice: security-fundamentals
 ms.topic: article
 ms.author: terrylan
 manager: rkarlin
-ms.date: 02/19/2021
-ms.openlocfilehash: 0146e4fcaf70d37975dc587a266c47bf4b3f4601
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/05/2021
+ms.openlocfilehash: 80d1e4f39d69f761b801ccec834c0228057e4847
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103461671"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106448522"
 ---
 # <a name="customer-lockbox-for-microsoft-azure"></a>Klanten-lockbox voor Microsoft Azure
 
 > [!NOTE]
 > Als u deze functie wilt gebruiken, moet uw organisatie een [ondersteunings abonnement voor Azure](https://azure.microsoft.com/support/plans/) hebben met een mini maal **ontwikkel** niveau.
 
-Klanten-lockbox voor Microsoft Azure biedt klanten een interface om aanvragen voor toegang tot klantgegevens te controleren en goed te keuren of af te wijzen. Dit wordt gebruikt in gevallen waarin een Microsoft-engineer toegang heeft tot klant gegevens tijdens een ondersteuningsaanvraag.
+De meeste bewerkingen, ondersteuning en probleem oplossing die worden uitgevoerd door micro soft-personeel en subprocessoren, hebben geen toegang tot klant gegevens nodig. In zeldzame gevallen waar deze toegang is vereist, Klanten-lockbox voor Microsoft Azure een interface voor klanten om klant gegevens toegangs aanvragen te controleren en goed te keuren of af te wijzen. Dit wordt gebruikt in gevallen waarin een micro soft-Engineer toegang nodig heeft tot klant gegevens, hetzij als reactie op een door de klant geïnitieerd ondersteunings ticket of een probleem dat door micro soft wordt geïdentificeerd.
 
 In dit artikel wordt beschreven hoe u Klanten-lockbox inschakelt en hoe lockbox-aanvragen worden gestart, bijgehouden en opgeslagen voor latere beoordelingen en controles.
 
 <a name='supported-services-and-scenarios-in-general-availability'></a><a name='supported-services-and-scenarios-in-preview'></a>
-## <a name="supported-services-and-scenarios-general-availability"></a>Ondersteunde services en scenario's (algemene Beschik baarheid)
+## <a name="supported-services-and-scenarios"></a>Ondersteunde services en scenario's
 
-De volgende services zijn nu algemeen beschikbaar voor Klanten-lockbox:
+### <a name="general-availability"></a>Algemene Beschik baarheid
+De volgende services zijn algemeen beschikbaar voor Klanten-lockbox:
 
 - Azure API Management
 - Azure App Service
@@ -49,6 +50,12 @@ De volgende services zijn nu algemeen beschikbaar voor Klanten-lockbox:
 - Azure Synapse Analytics
 - Virtuele machines in azure (voor toegang tot extern bureau blad, toegang tot geheugen dumps en beheerde schijven)
 
+### <a name="public-preview"></a>Openbare preview
+De volgende services zijn momenteel beschikbaar als preview-versie voor Klanten-lockbox:
+
+- Azure Machine Learning
+- Azure Batch
+
 ## <a name="enable-customer-lockbox"></a>Klanten-lockbox inschakelen
 
 U kunt Klanten-lockbox nu inschakelen vanuit de [beheer module](https://aka.ms/customerlockbox/administration) op de blade klanten-lockbox.  
@@ -66,7 +73,7 @@ De volgende stappen beschrijven een typische werk stroom voor een Klanten-lockbo
 
 3. Een ondersteunings technicus van Azure controleert de service aanvraag en bepaalt de volgende stappen om het probleem op te lossen.
 
-4. Als de ondersteunings technicus het probleem niet kan oplossen met behulp van standaard hulpprogramma's en telemetrie, is de volgende stap het aanvragen van verhoogde machtigingen met behulp van een just-in-time-toegangs service (JIT). Deze aanvraag kan afkomstig zijn van de oorspronkelijke ondersteunings technicus of van een andere Engineer, omdat het probleem wordt geëscaleerd naar het Azure DevOps-team.
+4. Als de ondersteunings technicus het probleem niet kan oplossen met behulp van standaard hulpprogramma's en door de service gegenereerde gegevens, is de volgende stap het aanvragen van verhoogde machtigingen met behulp van een just-in-time-toegangs service. Deze aanvraag kan afkomstig zijn van de oorspronkelijke ondersteunings technicus of van een andere Engineer, omdat het probleem wordt geëscaleerd naar het Azure DevOps-team.
 
 5. Nadat de toegangs aanvraag is ingediend door de Azure-Engineer, evalueert just-in-Time-service de aanvraag, waarbij rekening wordt gehouden met de volgende factoren:
     - Het bereik van de resource
@@ -129,8 +136,10 @@ We hebben een nieuw basislijn besturings element ([3,13](../benchmarks/security-
 
 Klanten-lockbox aanvragen worden niet geactiveerd in de volgende technische ondersteunings scenario's:
 
-- Een Microsoft-engineer moet een activiteit uitvoeren die buiten de standaard werkprocedures valt. U kunt bijvoorbeeld services herstellen of terugzetten in onverwachte of onvoorspelbare scenario's.
-- Een Microsoft-engineer heeft toegang tot het Azure-platform als onderdeel van het oplossen van problemen en daardoor per ongeluk toegang tot klantgegevens. Als voorbeeld, het team van het Azure-netwerk voert probleemoplossing uit, wat resulteert in het vastleggen van pakketten op een netwerkapparaat. Als de klant in dit scenario de gegevens versleutelt tijdens de overdracht, kan de engineer de gegevens niet lezen.
+- Nood scenario's die buiten de standaardwerk procedures vallen. Een grote service storing vereist bijvoorbeeld onmiddellijke aandacht voor het herstellen of herstellen van services in een onverwacht of onvoorspelbaar scenario. Deze gebeurtenissen van het afbreek glas zijn zeldzaam en in de meeste gevallen is geen toegang tot klant gegevens vereist voor het oplossen van problemen.
+- Een micro soft-Engineer heeft toegang tot het Azure-platform als onderdeel van het oplossen van problemen en wordt per ongeluk blootgesteld aan klant gegevens. Als voorbeeld, het team van het Azure-netwerk voert probleemoplossing uit, wat resulteert in het vastleggen van pakketten op een netwerkapparaat. Het is vaak dat dergelijke scenario's leiden tot zinvolle hoeveel heden klant gegevens. Klanten kunnen hun gegevens verder beschermen door middel van het gebruik van onderweg en bij rest versleuteling.
+
+Klanten-lockbox aanvragen worden ook niet geactiveerd door externe wettelijke vereisten voor gegevens. Zie de bespreking van [overheids aanvragen voor gegevens](https://www.microsoft.com/trust-center/) in het micro soft vertrouwens centrum voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

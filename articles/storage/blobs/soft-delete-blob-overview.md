@@ -9,16 +9,18 @@ ms.topic: conceptual
 ms.date: 03/27/2021
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 29d9dd7757319e59fc12b42d89c2ce16dec71b8b
-ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
+ms.openlocfilehash: c0cc29e6cbc9be1e7683b1b4412fa47f71c0538d
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106551064"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107227021"
 ---
 # <a name="soft-delete-for-blobs"></a>Blobs voorlopig verwijderen
 
 Met de opdracht zacht verwijderen wordt een afzonderlijke blob, moment opname of versie van onopzettelijke verwijderingen of overschrijvingen beschermd door de verwijderde gegevens in het systeem gedurende een bepaalde periode te behouden. Tijdens de retentie periode kunt u een voorlopig verwijderd object herstellen naar de status op het moment dat het werd verwijderd. Wanneer de Bewaar periode is verlopen, wordt het object definitief verwijderd.
+
+[!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
 
 ## <a name="recommended-data-protection-configuration"></a>Aanbevolen configuratie voor gegevens beveiliging
 
@@ -29,8 +31,6 @@ Het dynamisch verwijderen van blobs maakt deel uit van een uitgebreide strategie
 - Zacht verwijderen van BLOB, voor het herstellen van een blob, moment opname of versie die is verwijderd. Zie voor het inschakelen van het voorlopig verwijderen van blobs de optie [voorlopig verwijderen inschakelen en beheren voor blobs](soft-delete-blob-enable.md).
 
 Zie [overzicht van gegevens beveiliging](data-protection-overview.md)voor meer informatie over de aanbevelingen van micro soft voor gegevens bescherming.
-
-[!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
 
 ## <a name="how-blob-soft-delete-works"></a>Hoe BLOB zacht verwijderen werkt
 

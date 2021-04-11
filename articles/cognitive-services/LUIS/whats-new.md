@@ -4,19 +4,23 @@ description: Dit artikel wordt regelmatig bijgewerkt met nieuws over de Azure Co
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: overview
-ms.date: 02/16/2021
-ms.openlocfilehash: bd70bb1a031b61e77fa84ff5567d95dc6d1e8788
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 04/07/2021
+ms.openlocfilehash: f6c6f2ba20a67cd39d4142ffadddc803927c936c
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101706738"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107227055"
 ---
 # <a name="whats-new-in-language-understanding"></a>Nieuwe functies in Language Understanding
 
 Meer informatie over nieuwe functies in de service. Dit kunnen releaseopmerkingen, video's, blogposts en andere soorten informatie zijn. Voeg een bladwijzer toe aan deze pagina om up-to-date te blijven over de service.
 
 ## <a name="release-notes"></a>Releaseopmerkingen
+
+### <a name="april-2021"></a>April 2021
+
+* Zwitserland-noord [ontwerp gebied](luis-reference-regions.md#publishing-to-europe).
 
 ### <a name="january-2021"></a>Januari 2021
 

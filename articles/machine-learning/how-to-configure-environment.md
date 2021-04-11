@@ -8,15 +8,15 @@ ms.author: roastala
 ms.service: machine-learning
 ms.subservice: core
 ms.reviewer: larryfr
-ms.date: 11/16/2020
+ms.date: 03/22/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperf-fy21q1, devx-track-azurecli
-ms.openlocfilehash: 7e493404e7a36b60e8f9e62cd4ac2f2b32845bb9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 686274bc90f516f597a397a6b0270fb638e30c95
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102501614"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107027707"
 ---
 # <a name="set-up-a-python-development-environment-for-azure-machine-learning"></a>Stel een python-ontwikkel omgeving in voor Azure Machine Learning
 
@@ -134,7 +134,12 @@ Visual Studio code gebruiken voor ontwikkeling:
 1. Installeer [Visual Studio Code](https://code.visualstudio.com/Download).
 1. Installeer de [Azure machine learning Visual Studio code extension](tutorial-setup-vscode-extension.md) (preview).
 
-Zodra de Visual Studio code-extensie is geïnstalleerd, kunt u uw [Azure machine learning-resources](how-to-manage-resources-vscode.md)beheren, [experimenten uitvoeren en fouten opsporen](how-to-debug-visual-studio-code.md)en [getrainde modellen implementeren](tutorial-train-deploy-image-classification-model-vscode.md).
+Als u de Visual Studio code-extensie hebt geïnstalleerd, gebruikt u deze voor het volgende:
+
+* [Uw Azure Machine Learning-resources beheren](how-to-manage-resources-vscode.md)
+* [Verbinding maken met een Azure Machine Learning Reken instantie](how-to-set-up-vs-code-remote.md)
+* [Experimenten uitvoeren en fouten opsporen](how-to-debug-visual-studio-code.md)
+* [Implementeer getrainde modellen](tutorial-train-deploy-image-classification-model-vscode.md).
 
 ## <a name="azure-machine-learning-compute-instance"></a><a id="compute-instance"></a>Reken instantie Azure Machine Learning
 
@@ -151,7 +156,7 @@ Zie [een Azure machine learning Compute-instantie maken en beheren](how-to-creat
 
 Naast een Jupyter Notebook-server en-Jjupyterlab kunt u reken instanties gebruiken in de [functie voor geïntegreerde notebooks in azure machine learning Studio](how-to-run-jupyter-notebooks.md).
 
-U kunt ook de Azure Machine Learning Visual Studio code-extensie gebruiken om [een Azure machine learning reken exemplaar te configureren als een externe Jupyter notebook server](how-to-set-up-vs-code-remote.md#configure-compute-instance-as-remote-notebook-server).
+U kunt ook de Azure Machine Learning Visual Studio code-extensie gebruiken om [verbinding te maken met een extern Compute-exemplaar met behulp van VS code](how-to-set-up-vs-code-remote.md).
 
 ## <a name="data-science-virtual-machine"></a><a id="dsvm"></a>Data Science Virtual Machine
 

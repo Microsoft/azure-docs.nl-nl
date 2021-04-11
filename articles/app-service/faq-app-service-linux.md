@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 6faec27bf368b3eb45e05a91307df6027bda93b1
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: fb5203629915914ab9af22d89e5f2865078a8e44
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100093995"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107012604"
 ---
 # <a name="azure-app-service-on-linux-faq"></a>Veelgestelde vragen over Azure App Service on Linux
 
@@ -144,6 +144,20 @@ Er is automatische poort detectie. U kunt ook een app-instelling met de naam *WE
 
 Nee, het platform verwerkt de HTTPS-beëindiging bij de gedeelde front-ends.
 
+**Moet ik poort variabele gebruiken in code voor ingebouwde containers?**
+
+Nee, poort variabele is niet nodig vanwege automatische poort detectie. Als er geen poort wordt gedetecteerd, wordt standaard 80.
+Als u een aangepaste poort hand matig wilt configureren, gebruikt u de instructie beschikbaar maken in de Dockerfile en de app-instelling WEBSITES_PORT, met een poort waarde die moet worden gebonden aan de container.
+
+**Moet ik WEBSITES_PORT gebruiken voor aangepaste containers?**
+
+Ja, dit is vereist voor aangepaste containers. Als u een aangepaste poort hand matig wilt configureren, gebruikt u de instructie beschikbaar maken in de Dockerfile en de app-instelling WEBSITES_PORT, met een poort waarde die moet worden gebonden aan de container.
+
+**Kan ik ASPNETCORE_URLS gebruiken in de docker-installatie kopie?**
+
+Ja, de omgevings variabele overschrijven voordat de .NET core-app wordt gestart.
+Bijvoorbeeld In het script init.sh: export ASPNETCORE_URLS = {Your Value}
+
 ## <a name="multi-container-with-docker-compose"></a>Meerdere containers met docker opstellen
 
 **Hoe kan ik Azure Container Registry (ACR) configureren voor gebruik met meerdere containers?**
@@ -206,3 +220,4 @@ U kunt uw idee verzenden via het [Feedback forum van web apps](https://aka.ms/we
 - [Wat is Azure App Service op Linux?](overview.md#app-service-on-linux)
 - [Faseringsomgevingen in Azure App Service instellen](deploy-staging-slots.md)
 - [Doorlopende implementatie met Web App for Containers](./deploy-ci-cd-custom-container.md)
+- [Wat u moet weten: Web Apps en Linux](https://techcommunity.microsoft.com/t5/apps-on-azure/things-you-should-know-web-apps-and-linux/ba-p/392472)

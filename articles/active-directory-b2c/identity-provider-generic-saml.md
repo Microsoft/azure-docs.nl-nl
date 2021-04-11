@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: a66486d791968f5752b96ed00374f8662b9c30fc
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 944eff6e76f4e5759f70105fe9d09aa61093917f
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104580042"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107028295"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-saml-identity-provider-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met SAML-ID-provider met behulp van Azure Active Directory B2C
 
@@ -227,7 +227,7 @@ Open een browser en navigeer naar de URL. Zorg ervoor dat u de juiste URL typt e
 1. Zoek en selecteer **Azure AD B2C** in de Azure-portal.
 1. Onder **beleids regels** selecteert u **identiteits ervaring-Framework**
 1. Selecteer uw Relying Party beleid, bijvoorbeeld `B2C_1A_signup_signin` .
-1. Selecteer voor **toepassing** een webtoepassing die u [eerder hebt geregistreerd](troubleshoot-custom-policies.md#troubleshoot-the-runtime). De **antwoord-URL** moet `https://jwt.ms` weergeven.
+1. Selecteer voor **toepassing** een webtoepassing die u [eerder hebt geregistreerd](tutorial-register-applications.md). De **antwoord-URL** moet `https://jwt.ms` weergeven.
 1. Selecteer de knop **nu uitvoeren** .
 1. Selecteer op de pagina aanmelden of aanmelden **Contoso** om u aan te melden met Contoso-account.
 

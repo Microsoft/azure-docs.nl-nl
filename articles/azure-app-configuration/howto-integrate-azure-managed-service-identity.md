@@ -7,13 +7,13 @@ ms.author: alkemper
 ms.service: azure-app-configuration
 ms.custom: devx-track-csharp, fasttrack-edit
 ms.topic: conceptual
-ms.date: 2/25/2020
-ms.openlocfilehash: 386a0e27c0f73f5bcd42397ed515f7561d5097fd
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/08/2021
+ms.openlocfilehash: b4b67a6bf4eea72b3a81bd01398cc60cc33c0d0a
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104955054"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107227038"
 ---
 # <a name="use-managed-identities-to-access-app-configuration"></a>Beheerde identiteiten gebruiken om App Configuration te openen
 
@@ -145,7 +145,7 @@ Als u een beheerde identiteit in de portal wilt instellen, maakt u eerst een toe
     >config.AddAzureAppConfiguration(options =>
     >   options.Connect(new Uri(settings["AppConfig:Endpoint"]), new ManagedIdentityCredential(<your_clientId>)));
     >```
-    >Zoals uitgelegd in de [Veelgestelde vragen over beheerde identiteiten voor Azure-resources](../active-directory/managed-identities-azure-resources/known-issues.md#what-identity-will-imds-default-to-if-dont-specify-the-identity-in-the-request), is er een standaard manier om de beheerde identiteit op te lossen. In dit geval wordt u afgedwongen om de gewenste identiteit op te geven om aantal-runtime problemen in de toekomst te voor komen (bijvoorbeeld als een nieuwe door de gebruiker toegewezen beheerde identiteit wordt toegevoegd of als de door het systeem toegewezen beheerde identiteit is ingeschakeld). Daarom moet u de clientId opgeven, zelfs als er slechts één door de gebruiker toegewezen beheerde identiteit is gedefinieerd, en er geen door het systeem toegewezen beheerde identiteit is.
+    >Zoals uitgelegd in de [Veelgestelde vragen over beheerde identiteiten voor Azure-resources](../active-directory/managed-identities-azure-resources/managed-identities-faq.md#what-identity-will-imds-default-to-if-dont-specify-the-identity-in-the-request), is er een standaard manier om de beheerde identiteit op te lossen. In dit geval wordt u afgedwongen om de gewenste identiteit op te geven om aantal-runtime problemen in de toekomst te voor komen (bijvoorbeeld als een nieuwe door de gebruiker toegewezen beheerde identiteit wordt toegevoegd of als de door het systeem toegewezen beheerde identiteit is ingeschakeld). Daarom moet u de clientId opgeven, zelfs als er slechts één door de gebruiker toegewezen beheerde identiteit is gedefinieerd, en er geen door het systeem toegewezen beheerde identiteit is.
 
 
 1. Als u zowel app-configuratie waarden als Key Vault referenties wilt gebruiken, moet u *programma. cs* bijwerken zoals hieronder wordt weer gegeven. Deze code roept `SetCredential` als onderdeel van `ConfigureKeyVault` de configuratie provider aan welke referentie moet worden gebruikt bij het verifiëren van Key Vault.

@@ -7,12 +7,12 @@ services: iot-fundamentals
 ms.topic: conceptual
 ms.date: 01/15/2020
 ms.author: dobett
-ms.openlocfilehash: 0cd98705d2d6947ff766f528e4e92f1e51bcc42d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 311f8164803dd12664aa193f08c8a1095ee07e31
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96852809"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106168702"
 ---
 # <a name="what-azure-technologies-and-services-can-you-use-to-create-iot-solutions"></a>Welke Azure-technologieën en -services kunt u gebruiken om IoT-oplossingen te maken?
 
@@ -29,7 +29,7 @@ Het [IoT Central toepassingsplatform](https://apps.azureiotcentral.com) verlaagt
 
 Azure IoT Central is een volledig beheerd toepassingsplatform dat u kunt gebruiken om aangepaste IoT-oplossingen te maken. IoT Central gebruikt toepassingssjablonen om oplossingen te maken. Er zijn sjablonen voor algemene oplossingen en voor specifieke branches, zoals energie, gezondheidszorg, overheid en detailhandel. Met toepassingssjablonen van IoT Central kunt u in slechts enkele minuten een IoT Central-toepassing implementeren die u vervolgens met behulp van thema's, dashboards en weergaven kunt aanpassen.
 
-Kies apparaten in de [Catalogus voor Azure Certified for IoT-apparaten](https://catalog.azureiotsolutions.com) om snel verbinding te maken met uw oplossing. Gebruik de gebruikersinterface van IoT Central om uw apparaten te controleren en beheren om deze gezond en verbonden te houden. Gebruik connectors en API's om uw IoT Central-toepassing te integreren met andere zakelijke toepassingen.
+Kies apparaten in de [Catalogus voor Azure Certified for IoT-apparaten](https://devicecatalog.azure.com) om snel verbinding te maken met uw oplossing. Gebruik de gebruikersinterface van IoT Central om uw apparaten te controleren en beheren om deze gezond en verbonden te houden. Gebruik connectors en API's om uw IoT Central-toepassing te integreren met andere zakelijke toepassingen.
 
 Als volledig beheerd toepassingsplatform heeft IoT Central een eenvoudig, voorspelbaar prijsmodel.
 
@@ -52,7 +52,7 @@ Gebruik een of meer van de volgende Azure IoT-technologieën en -services om een
 
 ### <a name="devices"></a>Apparaten
 
-Ontwikkel uw IoT-apparaten met behulp van een van de [Azure IoT Starter Kits](https://catalog.azureiotsolutions.com/kits) of kies een apparaat dat u wilt gebruiken vanuit de [Azure Certified voor IoT-apparaatcatalogus](https://catalog.azureiotsolutions.com). Implementeer uw invoegcode met behulp van de opensource-[apparaat-SDK’s](../iot-hub/iot-hub-devguide-sdks.md). De SDK's van het apparaat ondersteunen meerdere besturingssystemen, zoals Linux, Windows en real-time besturingssystemen. Er zijn SDK's voor meerdere programmeertalen, zoals [C](https://github.com/Azure/azure-iot-sdk-c), [Node.js](https://github.com/Azure/azure-iot-sdk-node), [Java](https://github.com/Azure/azure-iot-sdk-java), [.NET](https://github.com/Azure/azure-iot-sdk-csharp)en [Python](https://github.com/Azure/azure-iot-sdk-python).
+Ontwikkel uw IoT-apparaten met behulp van een van de [Azure IoT Starter Kits](https://devicecatalog.azure.com/kits) of kies een apparaat dat u wilt gebruiken vanuit de [Azure Certified voor IoT-apparaatcatalogus](https://devicecatalog.azure.com). Implementeer uw invoegcode met behulp van de opensource-[apparaat-SDK’s](../iot-hub/iot-hub-devguide-sdks.md). De SDK's van het apparaat ondersteunen meerdere besturingssystemen, zoals Linux, Windows en real-time besturingssystemen. Er zijn SDK's voor meerdere programmeertalen, zoals [C](https://github.com/Azure/azure-iot-sdk-c), [Node.js](https://github.com/Azure/azure-iot-sdk-node), [Java](https://github.com/Azure/azure-iot-sdk-java), [.NET](https://github.com/Azure/azure-iot-sdk-csharp)en [Python](https://github.com/Azure/azure-iot-sdk-python).
 
 U kunt de manier waarop u de invoegcode voor uw apparaten maakt verder vereenvoudigen door de [IoT Plug en Play](../iot-pnp/overview-iot-plug-and-play.md)-service te gebruiken. Met IoT Plug en Play kunnen ontwikkelaars van oplossingen apparaten met hun oplossingen integreren zonder invoegcode te hoeven schrijven. De kern van IoT Plug en Play is een schema voor het _apparaatondersteuningsmodel_ dat de mogelijkheden van het apparaat beschrijft. Gebruik het apparaatondersteuningsmodel om uw ingesloten apparaatcode te genereren en een cloudoplossing te configureren, zoals een IoT Central-toepassing.
 

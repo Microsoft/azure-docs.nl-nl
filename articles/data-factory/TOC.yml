@@ -15,6 +15,8 @@
       href: quickstart-create-data-factory-portal.md
     - name: Hulp programma voor data factory kopiëren maken
       href: quickstart-create-data-factory-copy-data-tool.md
+    - name: Data factory maken-Azure CLI
+      href: quickstart-create-data-factory-azure-cli.md
     - name: Een data factory maken - Azure PowerShell
       href: quickstart-create-data-factory-powershell.md
     - name: Een data factory maken - .NET
@@ -105,6 +107,8 @@
       items:
         - name: Gegevens transformeren met toewijzingsgegevensstromen
           items:
+            - name: Aanbevolen procedures voor het aanwijzen van gegevens in het Lake with ADLS Gen2
+              href: tutorial-data-flow-write-to-lake.md
             - name: Gegevens transformeren in het Lake with Delta Lake
               href: tutorial-data-flow-delta-lake.md
             - name: Gegevens transformeren met toewijzingsgegevensstromen
@@ -789,9 +793,7 @@
         - name: Pijplijntriggers
           href: pipeline-trigger-troubleshoot-guide.md
         - name: Gegevensstromen
-          items:
-            - name: Overzicht van gegevens stromen
-              href: data-flow-troubleshoot-guide.md
+          href: data-flow-troubleshoot-guide.md
         - name: Continue integratie en implementatie
           href: ci-cd-github-troubleshoot-guide.md
         - name: Beveiligings- en toegangsbeheer
@@ -820,6 +822,8 @@
       href: /python/api/overview/azure/datafactory
     - name: Ingebouwde modules voor Azure Policy
       href: policy-reference.md
+    - name: Azure CLI
+      href: /cli/azure/ext/datafactory/datafactory
 - name: Resources
   items:
     - name: Whitepapers

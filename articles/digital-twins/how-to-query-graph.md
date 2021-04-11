@@ -8,12 +8,12 @@ ms.date: 11/19/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 3fd504ec36abae3f00cd2a7eb4e1f7b639be0cea
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6d15e2b8bfcddfd1f554ab2a27083fe5256e9e2b
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103462674"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107226325"
 ---
 # <a name="query-the-azure-digital-twins-twin-graph"></a>Query's uitvoeren op de Azure Digital Apparaatdubbels dubbele grafiek
 
@@ -94,19 +94,14 @@ Hier volgt een query voorbeeld waarin een waarde voor alle drie de para meters w
 
 Bij het uitvoeren van query's op basis van de **relaties** van Digital apparaatdubbels heeft de Azure Digital apparaatdubbels-query taal een speciale syntaxis.
 
-Relaties worden in het querybereik gehaald in de `FROM`-component. Een belang rijk verschil van ' klassiek ' SQL-type talen is dat elke expressie in deze `FROM` component geen tabel is. in plaats daarvan wordt in de `FROM` component een kruis entiteits relatie door lopen en is deze geschreven met een Azure Digital apparaatdubbels-versie van `JOIN` .
+Relaties worden in het querybereik gehaald in de `FROM`-component. In tegens telling tot ' klassieke ' SQL-type talen is elke expressie in deze `FROM` component geen tabel; in plaats daarvan wordt in de `FROM` component een kruis entiteits relatie gepasseerd. Azure Digital Apparaatdubbels maakt gebruik van een aangepaste versie van om meerdere relaties te passeren `JOIN` .
 
-Voor de mogelijkheden van het Azure Digital Apparaatdubbels [model](concepts-models.md) zijn relaties niet onafhankelijk van apparaatdubbels. Dit betekent dat de `JOIN` van de Azure Digital Twins-querytaal iets verschilt van de algemene SQL-`JOIN`, omdat de relaties hier niet onafhankelijk van elkaar kunnen worden opgevraagd en aan een dubbel moeten worden gekoppeld.
-Voor het inbouwen van dit verschil wordt het trefwoord `RELATED` gebruikt in de `JOIN`-component om te verwijzen naar een reeks relaties van een dubbel.
+Voor de mogelijkheden van het Azure Digital Apparaatdubbels [model](concepts-models.md) zijn relaties niet onafhankelijk van apparaatdubbels. Dit betekent dat de relaties hier niet onafhankelijk van query's kunnen worden uitgevoerd en moeten zijn gekoppeld aan een dubbele.
+Als u dit wilt afhandelen, wordt het sleutel woord `RELATED` in de- `JOIN` component gebruikt om de set van een bepaald type relatie op te halen uit de dubbele verzameling. De query moet vervolgens worden gefilterd in de `WHERE` component die een of meer specifieke twee (en) moet gebruiken in de relatie query (met behulp van de apparaatdubbels `$dtId` -waarden).
 
-In de volgende sectie vindt u enkele voor beelden van hoe dit eruitziet.
+In de volgende secties ziet u voor beelden van hoe dit eruitziet.
 
-> [!TIP]
-> Deze functie imiteert de document gerichte functionaliteit van CosmosDB, waar deze `JOIN` kan worden uitgevoerd op onderliggende objecten in een document. CosmosDB maakt gebruik `IN` van het sleutel woord om aan te geven `JOIN` dat het is bedoeld om matrix elementen in het huidige context document te herhalen.
-
-### <a name="relationship-based-query-examples"></a>Voor beelden van query's op basis van een relatie
-
-Als u een gegevensset wilt ophalen die relaties bevat, gebruikt u één `FROM` instructie gevolgd door N `JOIN` -instructies, waarbij de `JOIN` instructies Express-relaties hebben met betrekking tot het resultaat van een voor gaande `FROM` of- `JOIN` instructie.
+### <a name="basic-relationship-query"></a>Basis relatie query
 
 Hier volgt een voor beeld van een op relaties gebaseerde query. Dit code fragment selecteert alle digitale-apparaatdubbels met de *id-* eigenschap ' ABC ' en alle digitale apparaatdubbels met betrekking tot deze digitale apparaatdubbels via een *contains* -relatie.
 
@@ -114,6 +109,18 @@ Hier volgt een voor beeld van een op relaties gebaseerde query. Dit code fragmen
 
 > [!NOTE]
 > De ontwikkelaar hoeft dit niet te correleren `JOIN` met een sleutel waarde in de `WHERE` -component (of geef een sleutel waarde op in de `JOIN` definitie). Deze correlatie wordt automatisch berekend door het systeem, omdat de relatie-eigenschappen zelf de doelentiteit aanduiden.
+
+### <a name="query-by-the-source-or-target-of-a-relationship"></a>Query's uitvoeren op de bron of het doel van een relatie
+
+U kunt de relatie query structuur gebruiken om een digitale dubbele bron of het doel van een relatie te identificeren.
+
+U kunt bijvoorbeeld beginnen met een bron dubbele en de bijbehorende relaties volgen om de doel-apparaatdubbels van de relaties te vinden. Hier volgt een voor beeld van een query waarmee wordt gezocht naar de doel-apparaatdubbels van de *feeds* -relaties die afkomstig zijn van de dubbele *bron-twee*.
+
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryByRelationshipSource":::
+
+U kunt ook beginnen met het doel van de relatie en de relatie weer traceren om de bron te vinden. Hier volgt een voor beeld van een query waarmee de bron wordt gezocht naar een soort *feeds* -relatie met de dubbele *doel-twee*.
+
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryByRelationshipTarget":::
 
 ### <a name="query-the-properties-of-a-relationship"></a>Een query uitvoeren op de eigenschappen van een relatie
 
@@ -128,7 +135,9 @@ In het bovenstaande voor beeld ziet u hoe *reportedCondition* een eigenschap is 
 
 ### <a name="query-with-multiple-joins"></a>Query met meerdere samen voegingen
 
-Maxi maal vijf `JOIN` s worden ondersteund in één query. Zo kunt u meerdere niveaus van relaties tegelijk door lopen.
+Maxi maal vijf `JOIN` s worden ondersteund in één query. Zo kunt u meerdere niveaus van relaties tegelijk door lopen. 
+
+Als u een query wilt uitvoeren op meerdere niveaus van relaties, gebruikt u een enkele `FROM` instructie gevolgd door N `JOIN` -instructies, waarbij de `JOIN` instructies expliciet verband houden met het resultaat van een voor gaande `FROM` of- `JOIN` instructie.
 
 Hier volgt een voor beeld van een meervoudige samenvoeg query, waarmee alle gloei lampen in de licht panelen in de ruimten 1 en 2 worden opgehaald.
 

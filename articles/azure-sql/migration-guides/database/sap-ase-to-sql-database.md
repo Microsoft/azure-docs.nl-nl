@@ -9,18 +9,18 @@ ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
 ms.date: 03/19/2021
-ms.openlocfilehash: 138a23b610ab96194424bb0f88cf94f516c2d223
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.openlocfilehash: f4648c216a0b6d06309c0166aba501d4f3f02a10
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105626449"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107027513"
 ---
 # <a name="migration-guide-sap-ase-to-azure-sql-database"></a>Migratie handleiding: SAP ASE naar Azure SQL Database
 
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqldb.md)]
 
-In deze hand leiding leert u hoe u uw ASE-data bases (SAP adapter server Enter prise) kunt migreren naar een Azure-SQL database met behulp van SQL Server Migration Assistant voor SAP adapter server Enter prise.
+In deze hand leiding leert u [hoe](https://azure.microsoft.com/migration/migration-journey) u uw ASE-data bases (SAP adapter server Enter prise) kunt migreren naar een Azure-SQL database met behulp van [SQL Server-migratie](https://azure.microsoft.com/migration/migration-journey) -assistent voor SAP adapter server Enter prise.
 
 Zie voor andere migratie [handleidingen de Azure data base Migration Guide (Engelstalig](https://docs.microsoft.com/data-migration)). 
 
@@ -34,7 +34,7 @@ Ga als volgt te werk voordat u begint met het migreren van uw SAP SE-Data Base n
 
 ## <a name="pre-migration"></a>Premigratie
 
-Nadat u aan de vereisten hebt voldaan, bent u klaar om de topologie van uw omgeving te ontdekken en de uitvoer baarheid van uw migratie te beoordelen.
+Nadat u aan de vereisten hebt voldaan, bent u klaar om de topologie van uw omgeving te ontdekken en de haal baarheid van uw [Azure-Cloud migratie](https://azure.microsoft.com/migration)te beoordelen.
 
 ### <a name="assess"></a>Evalueren
 
@@ -123,6 +123,7 @@ Zie voor meer informatie over deze problemen en de stappen om deze te beperken d
 - Zie voor meer informatie over het Framework en de acceptatie cyclus voor Cloud migraties:
    -  [Cloud Adoption Framework voor Azure](/azure/cloud-adoption-framework/migrate/azure-best-practices/contoso-migration-scale)
    -  [Aanbevolen procedures voor het berekenen en aanpassen van werk belastingen voor migratie naar Azure](/azure/cloud-adoption-framework/migrate/azure-best-practices/migrate-best-practices-costs) 
+   -  [Cloudmigratie resources](https://azure.microsoft.com/migration/resources)
 
 - Zie [Data Access Migration Toolkit (preview) voor informatie](https://marketplace.visualstudio.com/items?itemName=ms-databasemigration.data-access-migration-toolkit)over het beoordelen van de Application Access-laag.
 - Zie [database Experimentation Assistant](/sql/dea/database-experimentation-assistant-overview)voor meer informatie over het uitvoeren van een test voor de toegang tot een Data Access Layer A/B.

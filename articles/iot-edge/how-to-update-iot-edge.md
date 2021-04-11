@@ -9,12 +9,12 @@ ms.date: 03/01/2021
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: b24276974eba76aa841cdd7f02145210713474eb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1ed9aef66e9e1a672274b814abbc4e83600761f5
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104872282"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107028703"
 ---
 # <a name="update-the-iot-edge-security-daemon-and-runtime"></a>De IoT Edge-beveiligingsdaemon en -runtime bijwerken
 
@@ -87,17 +87,17 @@ Als u wilt bijwerken naar de meest recente versie van de beveiligings-daemon, ge
    sudo apt-get install iotedge
    ```
 
-Als u wilt bijwerken naar een specifieke versie van de beveiligings-daemon, geeft u de versie op uit de apt-lijst uitvoer. Wanneer **iotedge** wordt bijgewerkt, wordt automatisch geprobeerd het **libiothsm-standaard** pakket bij te werken naar de meest recente versie, wat een conflict met de afhankelijkheid kan veroorzaken. Als u niet naar de meest recente versie gaat, moet u ervoor zorgen dat beide pakketten voor dezelfde versie worden doel. Met de volgende opdracht wordt bijvoorbeeld een specifieke versie van de 1.0.9-release geïnstalleerd:
+Als u wilt bijwerken naar een specifieke versie van de beveiligings-daemon, geeft u de versie op uit de apt-lijst uitvoer. Wanneer **iotedge** wordt bijgewerkt, wordt automatisch geprobeerd het **libiothsm-standaard** pakket bij te werken naar de meest recente versie, wat een conflict met de afhankelijkheid kan veroorzaken. Als u niet naar de meest recente versie gaat, moet u ervoor zorgen dat beide pakketten voor dezelfde versie worden doel. Met de volgende opdracht wordt bijvoorbeeld een specifieke versie van de 1,1-release geïnstalleerd:
 
    ```bash
-   sudo apt-get install iotedge=1.0.9-1 libiothsm-std=1.0.9-1
+   sudo apt-get install iotedge=1.1.1 libiothsm-std=1.1.1
    ```
 
 Als de versie die u wilt installeren niet beschikbaar is via apt-get, kunt u krul gebruiken om een wille keurige versie te richten op basis van de opslag plaats [IOT Edge releases](https://github.com/Azure/azure-iotedge/releases) . Voor de versie die u wilt installeren, zoekt u de juiste **libiothsm-STD-** en **iotedge** -bestanden voor uw apparaat. Voor elk bestand klikt u met de rechter muisknop op de bestands koppeling en kopieert u het koppelings adres. Gebruik het koppelings adres om de specifieke versies van die onderdelen te installeren:
 
 ```bash
-curl -L <libiothsm-std link> -o libiothsm-std.deb && sudo dpkg -i ./libiothsm-std.deb
-curl -L <iotedge link> -o iotedge.deb && sudo dpkg -i ./iotedge.deb
+curl -L <libiothsm-std link> -o libiothsm-std.deb && sudo apt-get install ./libiothsm-std.deb
+curl -L <iotedge link> -o iotedge.deb && sudo apt-get install ./iotedge.deb
 ```
 <!-- end 1.1 -->
 :::moniker-end
@@ -140,7 +140,7 @@ Op dit moment wordt er geen ondersteuning geboden voor IoT Edge versie 1,2 die w
 
 ## <a name="update-the-runtime-containers"></a>De runtime-containers bijwerken
 
-De manier waarop u de IoT Edge agent-en IoT Edge hub-containers bijwerkt, is afhankelijk van of u rollende Tags (zoals 1,0) of specifieke tags (zoals 1.0.7) gebruikt in uw implementatie.
+De manier waarop u de IoT Edge agent-en IoT Edge hub-containers bijwerkt, is afhankelijk van het feit of u rollende Tags (zoals 1,1) of specifieke tags (zoals 1.1.1) gebruikt in uw implementatie.
 
 Controleer de versie van de IoT Edge agent en IoT Edge hub-modules op uw apparaat met behulp van de opdrachten `iotedge logs edgeAgent` of `iotedge logs edgeHub` .
 
@@ -156,13 +156,13 @@ De installatie kopieën van IoT Edge agent en IoT Edge hub worden gelabeld met d
 
 ### <a name="update-a-rolling-tag-image"></a>Een afbeelding van een roulerende tag bijwerken
 
-Als u roulerende Tags in uw implementatie gebruikt (bijvoorbeeld mcr.microsoft.com/azureiotedge-hub:**1,0**), moet u de container runtime op het apparaat afdwingen om de nieuwste versie van de installatie kopie te halen.
+Als u roulerende Tags in uw implementatie gebruikt (bijvoorbeeld mcr.microsoft.com/azureiotedge-hub:**1,1**), moet u de container runtime op het apparaat afdwingen om de nieuwste versie van de installatie kopie te halen.
 
 De lokale versie van de installatie kopie verwijderen van uw IoT Edge-apparaat. Op Windows-computers verwijdert het verwijderen van de Security daemon ook de runtime-installatie kopieën. u hoeft deze stap dus niet opnieuw uit te voeren.
 
 ```bash
-docker rmi mcr.microsoft.com/azureiotedge-hub:1.0
-docker rmi mcr.microsoft.com/azureiotedge-agent:1.0
+docker rmi mcr.microsoft.com/azureiotedge-hub:1.1
+docker rmi mcr.microsoft.com/azureiotedge-agent:1.1
 ```
 
 Mogelijk moet u de vlag Force gebruiken `-f` om de installatie kopieën te verwijderen.
@@ -171,7 +171,7 @@ De IoT Edge-service haalt de nieuwste versies van de runtime-installatie kopieë
 
 ### <a name="update-a-specific-tag-image"></a>Een specifieke tag-afbeelding bijwerken
 
-Als u specifieke tags in uw implementatie gebruikt (bijvoorbeeld mcr.microsoft.com/azureiotedge-hub:**1.0.8**), hoeft u alleen de tag in het implementatie manifest bij te werken en de wijzigingen toe te passen op uw apparaat.
+Als u specifieke tags in uw implementatie gebruikt (bijvoorbeeld mcr.microsoft.com/azureiotedge-hub:**1.1.1**), hoeft u alleen de tag in het implementatie manifest bij te werken en de wijzigingen toe te passen op uw apparaat.
 
 1. Selecteer uw IoT Edge apparaat in de IoT Hub in het Azure Portal en selecteer **modules instellen**.
 
@@ -267,9 +267,9 @@ Nu de IoT Edge-service die op uw apparaten wordt uitgevoerd, is bijgewerkt, volg
 
 Azure IoT Edge brengt regel matig nieuwe versies van de IoT Edge service uit. Voor elke stabiele versie zijn er een of meer release Candi date (RC)-versies. RC-versies bevatten alle geplande functies voor de release, maar zijn nog steeds bezig met testen en valideren. Als u een nieuwe functie vroegtijdig wilt testen, kunt u een RC-versie installeren en feedback geven via GitHub.
 
-Release Candi date-versies volgen dezelfde Nummerings Conventie voor releases, maar hebben wel **-RC** plus een incrementeel nummer toegevoegd aan het einde. U kunt de release kandidaten in dezelfde lijst met [Azure IOT Edge releases](https://github.com/Azure/azure-iotedge/releases) zien als de stabiele versies. Zoek bijvoorbeeld naar **1.0.9-RC5** en **1.0.9-RC6**, twee van de release kandidaten die werden ontvangen vóór **1.0.9**. U kunt ook zien dat RC-versies zijn gemarkeerd met **voorlopige** labels.
+Release Candi date-versies volgen dezelfde Nummerings Conventie voor releases, maar hebben wel **-RC** plus een incrementeel nummer toegevoegd aan het einde. U kunt de release kandidaten in dezelfde lijst met [Azure IOT Edge releases](https://github.com/Azure/azure-iotedge/releases) zien als de stabiele versies. Zoek bijvoorbeeld naar **1.2.0-RC4**, een van de release kandidaten die zijn uitgebracht vóór **1.2.0**. U kunt ook zien dat RC-versies zijn gemarkeerd met **voorlopige** labels.
 
-De IoT Edge-agent-en-hub-modules hebben RC-versies die zijn gelabeld met dezelfde Conventie. Bijvoorbeeld **MCR.Microsoft.com/azureiotedge-hub:1.0.9-RC6**.
+De IoT Edge-agent-en-hub-modules hebben RC-versies die zijn gelabeld met dezelfde Conventie. Bijvoorbeeld **MCR.Microsoft.com/azureiotedge-hub:1.2.0-RC4**.
 
 Als previews worden versies van release Candi date niet opgenomen als de meest recente versie die de reguliere installatie Programma's doel. In plaats daarvan moet u hand matig de assets richten voor de RC-versie die u wilt testen. Het installeren of bijwerken van een RC-versie is in het algemeen hetzelfde als het richten op een andere specifieke versie van IoT Edge.
 

@@ -14,18 +14,18 @@ ms.topic: how-to
 ms.date: 03/17/2021
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: cedadf6b6026c74e25e9c81feb7f8291058b6f69
-ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
+ms.openlocfilehash: 7f8aa7e8cd38de37f5d3757804f7836612ad64cb
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105961656"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107227752"
 ---
 # <a name="monitor-media-services-metrics"></a>Metrische gegevens voor Media Services controleren
 
 [!INCLUDE [media services api v3 logo](../includes/v3-hr.md)]
 
-Met [Azure monitor](https://docs.microsoft.com/azure/azure-monitor/overview.md) kunt u metrische gegevens en Diagnostische logboeken bewaken die u helpen begrijpen hoe uw toepassingen worden uitgevoerd. Zie [Media Services metrische gegevens en Diagnostische logboeken controleren](monitor-media-services-data-reference.md)voor een gedetailleerde beschrijving van deze functie en om te begrijpen waarom u Azure Media Services metrische gegevens en Diagnostische logboeken moet gebruiken.
+Met [Azure monitor](/azure/azure-monitor/overview) kunt u metrische gegevens en Diagnostische logboeken bewaken die u helpen begrijpen hoe uw toepassingen worden uitgevoerd. Zie [Media Services metrische gegevens en Diagnostische logboeken controleren](monitor-media-services-data-reference.md)voor een gedetailleerde beschrijving van deze functie en om te begrijpen waarom u Azure Media Services metrische gegevens en Diagnostische logboeken moet gebruiken.
 
 Azure Monitor biedt verschillende manieren om te communiceren met metrische gegevens, zoals het maken van grafieken in de portal, het openen ervan via de REST API of het opvragen van query's met behulp van Azure CLI. In dit artikel wordt uitgelegd hoe u metrische gegevens kunt controleren met behulp van de Azure Portal grafieken en Azure CLI.
 
@@ -69,8 +69,8 @@ Als u andere metrische gegevens wilt ophalen, vervangt u ' uitgang ' door de naa
 
 ## <a name="see-also"></a>Zie ook
 
-- [Metrische gegevens van Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/data-platform.md)
-- [Metrische waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](https://docs.microsoft.com/azure/azure-monitor/alerts/alerts-metric.md).
+- [Metrische gegevens van Azure Monitor](/azure/azure-monitor/data-platform)
+- [Metrische waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](/azure/azure-monitor/alerts/alerts-metric).
 
 ## <a name="next-steps"></a>Volgende stappen
 

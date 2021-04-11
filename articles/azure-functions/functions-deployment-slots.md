@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: cshoe
-ms.openlocfilehash: 2dbf7c31e6b0b40fa9dc2d59e86c0ecc731657e1
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 73282145abd8bfe804b47fda3bf5f12dc691ff3a
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102172406"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106551353"
 ---
 # <a name="azure-functions-deployment-slots"></a>Implementatie sleuven Azure Functions
 
@@ -20,9 +20,6 @@ Hieronder ziet u hoe de functies worden beïnvloed door de wisselende sleuven:
 
 - Het omleiden van verkeer is naadloos; Er worden geen aanvragen verwijderd vanwege een wissel.
 - Als tijdens een swap een functie wordt uitgevoerd, wordt de uitvoering voortgezet en worden de volgende triggers doorgestuurd naar het geswapde app-exemplaar.
-
-> [!NOTE]
-> Er zijn momenteel geen sleuven beschikbaar voor het verbruiks abonnement voor Linux.
 
 ## <a name="why-use-slots"></a>Waarom sleuven gebruiken?
 
@@ -229,7 +226,7 @@ Er zijn twee ondersteunings niveaus voor implementatie sites:
 | Windows-verbruik       | Algemene beschikbaarheid |
 | Windows Premium           | Algemene beschikbaarheid  |
 | Windows toegewezen         | Algemene beschikbaarheid |
-| Linux-verbruik         | Niet ondersteund          |
+| Linux-verbruik         | Preview          |
 | Linux Premium             | Algemene beschikbaarheid  |
 | Speciaal voor Linux           | Algemene beschikbaarheid |
 

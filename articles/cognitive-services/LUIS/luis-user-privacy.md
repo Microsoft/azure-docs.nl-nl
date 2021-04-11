@@ -8,13 +8,13 @@ ms.custom: seodec18, references_regions
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
-ms.date: 12/10/2020
-ms.openlocfilehash: 0a2d0ce683261ca3460c7aeaa0d7a42152b81a1e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/08/2020
+ms.openlocfilehash: a7a7bbb8b911f86b81cdeafe3fe57e1fdf820681
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "98680173"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107228279"
 ---
 # <a name="export-and-delete-your-customer-data-in-language-understanding-luis-in-cognitive-services"></a>Uw klant gegevens in Language Understanding (LUIS) in Cognitive Services exporteren en verwijderen
 
@@ -85,7 +85,15 @@ Verenigde Staten-ontwerpen (ook wel programmeer-Api's genoemd) worden gehost in 
 
 * Azure-geografi niet ondersteund door de ontwerp regio's Europa of Australië
 
-Wanneer u implementeert in deze Azure-grafieken, wordt de uitingen die door het eind punt van de eind gebruikers van uw app worden ontvangen, opgeslagen in de Verenigde Staten Geografie van Azure voor actief onderwijs. 
+Wanneer u implementeert in deze Azure-grafieken, wordt de uitingen die door het eind punt van de eind gebruikers van uw app worden ontvangen, opgeslagen in de Verenigde Staten Geografie van Azure voor actief onderwijs.
+
+### <a name="switzerland-north"></a>Zwitserland - noord
+
+Zwitserland-noord-ontwerpen (ook wel programmeer-Api's genoemd) worden gehost in de Geografie van Azure in Zwitser land en ondersteunen de implementatie van eind punten naar de volgende Azure-geografi:
+
+* Zwitserland 
+
+Wanneer u implementeert in deze Azure-grafieken, wordt de uitingen die door het eind punt van de eind gebruikers van uw app worden ontvangen, opgeslagen in de Geografie van Azure in Zwitser land voor actief onderwijs.
 
 ## <a name="disable-active-learning"></a>Actief leren uitschakelen
 

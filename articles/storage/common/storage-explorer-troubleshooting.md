@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: troubleshooting
 ms.date: 07/28/2020
 ms.author: delhan
-ms.openlocfilehash: 15df9b38abe35fe3eefad2fa160e1c1f16fe7aa7
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 593ccac7326a0a04884fe433cac85cb8eaf79319
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102439456"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107228228"
 ---
 # <a name="azure-storage-explorer-troubleshooting-guide"></a>Gids voor probleemoplossing voor Azure Storage Explorer
 
@@ -289,20 +289,20 @@ Als u de niet-beschadigde verbindingen wilt behouden, kunt u de volgende stappen
 
 Nadat u alle verbindingen hebt door lopen, moet u voor alle verbindings namen die niet meer worden toegevoegd, de beschadigde gegevens wissen (indien aanwezig) en deze opnieuw toevoegen met behulp van de standaard stappen in Storage Explorer:
 
-# <a name="windows"></a>[Windows](#tab/Windows)
+### <a name="windows"></a>[Windows](#tab/Windows)
 
 1. Zoek in het menu **Start** naar **referentie beheer** en open het.
 2. Ga naar **Windows-referenties**.
 3. Onder **algemene referenties** zoekt u naar vermeldingen die de `<connection_type_key>/<corrupted_connection_name>` sleutel hebben (bijvoorbeeld `StorageExplorer_CustomConnections_Accounts_v1/account1` ).
 4. Verwijder deze vermeldingen en voeg de verbindingen opnieuw toe.
 
-# <a name="macos"></a>[MacOS](#tab/macOS)
+### <a name="macos"></a>[MacOS](#tab/macOS)
 
 1. Open Spotlight (Command + spatie balk) en zoek naar **sleutel hanger toegang**.
 2. Zoek naar vermeldingen die de `<connection_type_key>/<corrupted_connection_name>` sleutel hebben (bijvoorbeeld `StorageExplorer_CustomConnections_Accounts_v1/account1` ).
 3. Verwijder deze vermeldingen en voeg de verbindingen opnieuw toe.
 
-# <a name="linux"></a>[Linux](#tab/Linux)
+### <a name="linux"></a>[Linux](#tab/Linux)
 
 Het lokale referentie beheer varieert afhankelijk van de Linux-distributie. Als uw Linux-distributie geen ingebouwd GUI-hulp programma biedt voor lokaal referentie beheer, kunt u een hulp programma van derden installeren om uw lokale referenties te beheren. U kunt bijvoorbeeld [seahorse](https://wiki.gnome.org/Apps/Seahorse/)gebruiken, een open-source GUI-hulp programma voor het beheren van lokale referenties voor Linux.
 
@@ -356,7 +356,7 @@ Voor Storage Explorer moet .NET Core zijn geïnstalleerd op uw systeem. U wordt 
 > [!NOTE]
 > Voor Storage Explorer versie 1.7.0 en eerder is .NET Core 2,0 vereist. Als u een nieuwere versie van .NET core hebt geïnstalleerd, moet u een [patch Storage Explorer](#patching-storage-explorer-for-newer-versions-of-net-core). Als u Storage Explorer 1.8.0 of hoger gebruikt, hebt u ten minste .NET Core 2,1 nodig.
 
-# <a name="ubuntu-2004"></a>[Ubuntu 20.04](#tab/2004)
+### <a name="ubuntu-2004"></a>[Ubuntu 20.04](#tab/2004)
 
 1. Down load het bestand Storage Explorer. tar. gz.
 2. Installeer de [.net core runtime](/dotnet/core/install/linux):
@@ -369,7 +369,7 @@ Voor Storage Explorer moet .NET Core zijn geïnstalleerd op uw systeem. U wordt 
      sudo apt-get install -y dotnet-runtime-2.1
    ```
 
-# <a name="ubuntu-1804"></a>[Ubuntu 18.04](#tab/1804)
+### <a name="ubuntu-1804"></a>[Ubuntu 18.04](#tab/1804)
 
 1. Down load het bestand Storage Explorer. tar. gz.
 2. Installeer de [.net core runtime](/dotnet/core/install/linux):
@@ -382,7 +382,7 @@ Voor Storage Explorer moet .NET Core zijn geïnstalleerd op uw systeem. U wordt 
      sudo apt-get install -y dotnet-runtime-2.1
    ```
 
-# <a name="ubuntu-1604"></a>[Ubuntu 16.04](#tab/1604)
+### <a name="ubuntu-1604"></a>[Ubuntu 16.04](#tab/1604)
 
 1. Down load het bestand Storage Explorer. tar. gz.
 2. Installeer de [.net core runtime](/dotnet/core/install/linux):
@@ -431,6 +431,98 @@ Als de knop **openen in Verkenner** op de Azure Portal niet werkt, moet u ervoor
 * Mozilla Firefox
 * Google Chrome
 * Microsoft Internet Explorer
+
+## <a name="gathering-logs"></a>Logboeken verzamelen
+
+Wanneer u een probleem aan GitHub meldt, wordt u mogelijk gevraagd om bepaalde logboeken te verzamelen om uw probleem te diagnosticeren.
+
+### <a name="storage-explorer-logs"></a>Storage Explorer logboeken
+
+Vanaf versie Storage Explorer 1.16.0 worden verschillende dingen geregistreerd in de logboeken van de toepassing. U kunt deze logboeken eenvoudig openen door te klikken op Help > map logs. Storage Explorer logboeken worden standaard op een laag niveau uitgebreid. Als u het uitbreidings niveau wilt wijzigen, voegt u een omgevings variabele toe met de naam `STG_EX_LOG_LEVEL` en een van de volgende waarden:
+- `silent`
+- `critical`
+- `error`
+- `warning`
+- `info` (standaard niveau)
+- `verbose`
+- `debug`
+
+Logboeken worden in mappen gesplitst voor elke sessie van Storage Explorer die u uitvoert. Voor de logboek bestanden die u moet delen, wordt aangeraden deze in een zip-archief te plaatsen, met bestanden van verschillende sessies in verschillende mappen.
+
+### <a name="authentication-logs"></a>Verificatie logboeken
+
+Voor problemen met betrekking tot het aanmelden of de verificatie bibliotheek van Storage Explorer moet u waarschijnlijk verificatie logboeken verzamelen. Verificatie logboeken worden opgeslagen op:
+- Windows: `C:\Users\<your username>\AppData\Local\Temp\servicehub\logs`
+- macOS en Linux `~/.ServiceHub/logs`
+
+Over het algemeen kunt u deze stappen volgen om de logboeken te verzamelen:
+
+1. Ga naar instellingen > aanmelden > uitgebreide verificatie registratie controleren. Als Storage Explorer niet kan worden gestart vanwege een probleem met de verificatie bibliotheek, wordt dit voor u gedaan.
+2. Storage Explorer sluiten.
+1. Optioneel/aanbevolen: Verwijder bestaande logboeken uit de `logs` map. Als u dit doet, wordt de hoeveelheid gegevens die u hebt verzonden, beperkt.
+4. Open Storage Explorer en reproduceer het probleem
+5. Storage Explorer sluiten
+6. De inhoud van de `log` map.
+
+### <a name="azcopy-logs"></a>AzCopy-logboeken
+
+Als u problemen ondervindt bij het overdragen van gegevens, moet u mogelijk de AzCopy-logboeken ophalen. AzCopy-logboeken kunnen eenvoudig worden gevonden via twee verschillende methoden:
+- Klik voor mislukte overdrachten nog steeds in het activiteiten logboek op ' Ga naar AzCopy-logboek bestand '
+- Ga naar de map AzCopy logs voor overdrachten die in het verleden zijn mislukt. U kunt deze map vinden op:
+  - Windows: `C:\Users\<your username>\.azcopy`
+  - macOS en Linux ~/.azcopy
+
+### <a name="network-logs"></a>Netwerk logboeken
+
+Voor sommige problemen moet u Logboeken opgeven van de netwerk aanroepen die door Storage Explorer worden gemaakt. In Windows kunt u dit doen met behulp van Fiddler.
+
+> [!NOTE]
+> Fiddler traceringen kunnen wacht woorden bevatten die u tijdens het verzamelen van de tracering in uw browser hebt ingevoerd of verzonden. Lees de instructies voor het opschonen van een Fiddler-tracering. Upload geen Fiddler-traceringen naar GitHub. U wordt geadviseerd om uw Fiddler-tracering veilig te verzenden.
+
+Deel 1: Fiddler installeren en configureren
+
+1. Fiddler installeren
+2. Fiddler starten
+3. Ga naar Hulpprogram Ma's > opties
+4. Klik op het tabblad HTTPS
+5. Zorg ervoor dat vastleggen verbinding maakt en HTTPS-verkeer ontsleutelen is ingeschakeld
+6. Klik op de knop acties
+7. Kies "basis certificaat vertrouwen" en klik vervolgens op Ja in het volgende dialoog venster
+8. Klik opnieuw op de knop acties
+9. Kies het basis certificaat exporteren naar het bureau blad.
+10. Ga naar het bureau blad
+11. Het bestand FiddlerRoot. CER zoeken
+12. Dubbel klik om te openen
+13. Ga naar het tabblad Details
+14. Klik op kopiëren naar bestand...
+15. Kies de volgende opties in de wizard exporteren
+    - Base-64 Encoded X. 509
+    - Blader voor de bestands naam... naar C:\Users \<your user dir> \AppData\Roaming\StorageExplorer\certs, en u kunt deze opslaan als een bestands naam
+16. Het certificaat venster sluiten
+17. Storage Explorer starten
+18. Ga naar bewerken > proxy configureren
+19. Kies in het dialoog venster de optie app-proxy-instellingen gebruiken en stel de URL http://localhost en de poort in op 8888
+20. Klik op OK
+21. Opnieuw opstarten Storage Explorer
+22. U moet beginnen met het bekijken van netwerk aanroepen vanuit een proces dat wordt `storageexplorer:` weer gegeven in Fiddler
+
+Deel 2: het probleem reproduceren
+1. Alle andere apps dan Fiddler sluiten
+2. Wis het Fiddler-logboek (X in de linkerbovenhoek, in de buurt van het menu weer gave)
+3. Optioneel/aanbevolen: laat Fiddler gedurende enkele minuten worden ingesteld als er netwerk aanroepen worden weer gegeven, klik er met de rechter muisknop op en kies nu filteren > <process name> verbergen
+4. Storage Explorer starten
+5. Reproduceer het probleem
+6. Klik op bestand > > alle sessies op te slaan..., behalve wanneer u niet vergeet
+7. Fiddler en Storage Explorer sluiten
+
+Deel 3: de Fiddler-tracering opschonen
+1. Dubbel klik op het Fiddler trace (. Saz-bestand)
+2. Drukken `ctrl`+`f`
+3. Controleer in het dialoog venster dat wordt weer gegeven, of de volgende opties zijn ingesteld: zoeken = aanvragen en antwoorden, onderzoeken = kopteksten en instanties
+4. Zoek naar wacht woorden die u hebt gebruikt tijdens het verzamelen van de Fiddler Trace, alle vermeldingen die zijn gemarkeerd, klik met de rechter muisknop en kies > geselecteerde sessies verwijderen
+5. Als u in uw browser zeker wacht woorden hebt opgegeven tijdens het verzamelen van de tracering, maar u geen vermeldingen vindt wanneer u Ctrl + f gebruikt en u uw wacht woorden niet wilt wijzigen/de wacht woorden die u hebt gebruikt voor andere accounts, kunt u gewoon de verzen ding van het. Saz-bestand overs Laan. Beter te beveiligen dan onze excuses. :)
+6. De tracering opnieuw opslaan met een nieuwe naam
+7. Optioneel: de oorspronkelijke tracering verwijderen
 
 ## <a name="next-steps"></a>Volgende stappen
 

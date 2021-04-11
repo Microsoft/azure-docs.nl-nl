@@ -13,12 +13,12 @@ ms.reviewer: ''
 ms.date: 11/30/2020
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b47a4a79fd423806693e86aef1edd132d844069e
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: cf49b1a2b7178800966342a3d52ed49450f3d97c
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105557901"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107226681"
 ---
 # <a name="resilient-end-user-experience"></a>Flexibele ervaring voor eind gebruikers
 
@@ -42,7 +42,7 @@ Kies ingebouwde gebruikers stromen als aan uw bedrijfs vereisten kan worden vold
 
 Als u [aangepaste beleids regels wilt kiezen](../../active-directory-b2c/custom-policy-get-started.md) vanwege uw bedrijfs vereisten, moet u ervoor zorgen dat u een test op beleids niveau uitvoert voor functionele, prestatie of schaal baarheid naast het testen op toepassings niveau.
 
-Zie het artikel waarin de [gebruikers stromen en aangepaste beleids](../../active-directory-b2c/custom-policy-overview.md#comparing-user-flows-and-custom-policies) regels worden vergeleken om u te helpen beslissen.
+Zie het artikel waarin de [gebruikers stromen en aangepaste beleids](../../active-directory-b2c/user-flow-overview.md#comparing-user-flows-and-custom-policies) regels worden vergeleken om u te helpen beslissen.
 
 ## <a name="choose-multiple-idps"></a>Meerdere id kiezen
 

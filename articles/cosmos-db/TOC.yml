@@ -126,6 +126,8 @@
       items:
         - name: Naleving
           href: compliance.md
+        - name: Gegevenslocatie
+          href: data-residency.md
     - name: Automatische aanbevelingen
       href: automated-recommendations.md
 - name: SQL/Core API
@@ -755,6 +757,8 @@
                   href: troubleshoot-unauthorized.md
                 - name: Problemen oplossen verboden
                   href: troubleshoot-forbidden.md
+                - name: Problemen met ongeldige aanvraag oplossen
+                  href: troubleshoot-bad-request.md
                 - name: Beschikbaarheidsproblemen oplossen in omgevingen in meerdere regio's
                   href: troubleshoot-sdk-availability.md
             - name: .NET
@@ -915,6 +919,8 @@
               href: sql-api-sdk-java-spark.md
             - name: Bibliotheek v2 voor Java-bulkuitvoering
               href: sql-api-sdk-bulk-executor-java.md
+        - name: Azure CLI
+          href: /cli/azure/cosmosdb
         - name: Node.js
           href: sql-api-sdk-node.md
         - name: Python
@@ -1411,6 +1417,8 @@
           href: how-to-restrict-user-data.md
         - name: Door klant beheerde sleutels configureren
           href: how-to-setup-cmk.md
+        - name: Een beheerde identiteit gebruiken
+          href: how-to-setup-managed-identity.md
     - name: Gereedheid voor bedrijven
       items:
         - name: Verhoging van quotum aanvragen

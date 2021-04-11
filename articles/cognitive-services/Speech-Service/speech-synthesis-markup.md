@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: trbye
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: c4e70c7f74c202b7de44a259b8a680f57aeaa041
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: e5a3459c0264d087759572bffc497430cdb69ac9
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/30/2021
-ms.locfileid: "105645036"
+ms.locfileid: "105966942"
 ---
 # <a name="improve-synthesis-with-speech-synthesis-markup-language-ssml"></a>De synthese verbeteren met Markup Language voor spraak synthese (SSML)
 
@@ -213,14 +213,9 @@ Op dit moment worden de volgende Neural stemmen ondersteund:
 * `zh-CN-XiaoxuanNeural` Evaluatie
 * `zh-CN-XiaoruiNeural` Evaluatie
 
-De intensiteit van de stijl van de spraak kan verder worden gewijzigd om beter te voldoen aan uw use-case. U kunt een sterker of zachtere stijl opgeven `styledegree` om de spraak herkenning duidelijker of gematigd te maken.
+De intensiteit van de stijl van de spraak kan verder worden gewijzigd om beter te voldoen aan uw use-case. U kunt een sterker of zachtere stijl opgeven `styledegree` om de spraak herkenning duidelijker of gematigd te maken. Op dit moment worden de stijl aanpassingen voor Chinees (Mandarijn, vereenvoudigd) Neural stemmen ondersteund.
 
-Op dit moment worden de volgende Neural stemmen ondersteund:
-* `zh-CN-XiaoxiaoNeural`
-
-Naast het aanpassen van de spraak stijlen en de stijl graad kunt u ook de `role` para meter aanpassen zodat de stem een andere leeftijd en geslacht krijgt. Een mannelijk stem kan bijvoorbeeld de Toon hoogte verhogen en de intonation wijzigen om een vrouwelijke stem te imiteren.
-
-Momenteel worden aanpassingen voor rollen afspelen ondersteund voor deze Neural stemmen:
+Naast het aanpassen van de spraak stijlen en de stijl graad kunt u ook de `role` para meter aanpassen zodat de stem een andere leeftijd en geslacht krijgt. Een mannelijk stem kan bijvoorbeeld de Toon hoogte verhogen en de intonation wijzigen om een vrouwelijke stem te imiteren, maar de naam van de spraak wordt niet gewijzigd. Momenteel worden aanpassingen voor rollen afspelen ondersteund voor deze Chinese (Mandarijn, vereenvoudigd) Neural stemmen:
 * `zh-CN-XiaomoNeural`
 * `zh-CN-XiaoxuanNeural`
 
@@ -238,15 +233,15 @@ De bovenstaande wijzigingen worden toegepast op het niveau van de zin, en stijle
 <mstts:express-as role="string" style="string"></mstts:express-as>
 ```
 > [!NOTE]
-> Op het moment `styledegree` ondersteunt alleen zh-cn-XiaoxiaoNeural. `role` ondersteunt alleen zh-CN-XiaomoNeural en zh-CN-XiaoxuanNeural.
+> Op het moment `styledegree` ondersteunt alleen Chinees (Mandarijn, vereenvoudigd) Neural stemmen. `role` ondersteunt alleen zh-CN-XiaomoNeural en zh-CN-XiaoxuanNeural.
 
 **Kenmerken**
 
 | Kenmerk | Beschrijving | Vereist/optioneel |
 |-----------|-------------|---------------------|
 | `style` | Geeft de spreek stijl aan. Op dit moment zijn gesp roken stijlen specifiek voor spraak. | Vereist bij het aanpassen van de spreek stijl voor een Neural-stem. Als u gebruikt `mstts:express-as` , moet de stijl worden gegeven. Als er een ongeldige waarde wordt gegeven, wordt dit element genegeerd. |
-| `styledegree` | Geeft de intensiteit van de stijl van de spraak aan. **Geaccepteerde waarden**: 0,01 tot en met 2. De standaard waarde is 1, wat de vooraf gedefinieerde stijl intensiteit aangeeft. De minimale eenheid is 0,01, wat leidt tot een enigszins tendens van de doel stijl. Een waarde van 2 resulteert in een verdubbeling van de standaard stijl intensiteit.  | Optioneel (op het moment `styledegree` ondersteunt alleen zh-cn-XiaoxiaoNeural.)|
-| `role` | Hiermee geeft u de functie voor spreken-afspelen op. De stem zal fungeren als een andere leeftijd en geslacht.  | Optioneel (op het moment `role` ondersteunt alleen zh-cn-XiaomoNeural en zh-cn-XiaoxuanNeural.)|
+| `styledegree` | Geeft de intensiteit van de stijl van de spraak aan. **Geaccepteerde waarden**: 0,01 tot en met 2. De standaard waarde is 1, wat de vooraf gedefinieerde stijl intensiteit aangeeft. De minimale eenheid is 0,01, wat leidt tot een enigszins tendens van de doel stijl. Een waarde van 2 resulteert in een verdubbeling van de standaard stijl intensiteit.  | Optioneel (op het moment `styledegree` ondersteunt alleen Chinees (Mandarijn, vereenvoudigd) Neural stemmen.)|
+| `role` | Hiermee geeft u de functie voor spreken-afspelen op. De stem zal fungeren als een andere leeftijd en geslacht, maar de naam van de spraak wordt niet gewijzigd.  | Optioneel (op het moment `role` ondersteunt alleen zh-cn-XiaomoNeural en zh-cn-XiaoxuanNeural.)|
 
 Gebruik deze tabel om te bepalen welke spraak stijlen worden ondersteund voor elke Neural-stem.
 
@@ -322,17 +317,19 @@ Gebruik deze tabel om te bepalen welke spraak stijlen worden ondersteund voor el
 |                         | `style="angry"`           | Hiermee wordt een boos en geergerte Toon, met een lagere hoogte, hogere intensiteit en hogere stem-energie. De spreker heeft de status Irate, gereageerd en is niet in orde.       |
 |                         | `style="fearful"`         | Een Scared-en zenuw Toon, met een hogere hoogte, hogere vocaal-energie en een snellere snelheid. De spreker heeft de status tenseness en Uneasiness.                          |
 
-Gebruik deze tabel om te bepalen welke rollen worden ondersteund voor elke Neural-stem.
+Gebruik deze tabel om de ondersteunde rollen en hun definities te controleren.
 
-| Spraak                   | Rol                       | Beschrijving                                                 |
-|-------------------------|----------------------------|-------------------------------------------------------------|
-| `zh-CN-XiaomoNeural`    | `role="YoungAdultFemale"`  | De stem heeft een jonge volwassene vrouw.                 |
-|                         | `role="OlderAdultMale"`    | De stem heeft een ouder volwassen mannelijk.                   |
-|                         | `role="Girl"`              | De stem heeft een meisje.                               |
-|                         | `role="Boy"`               | De stem die wordt nagebootst naar een jongen.                                |
-| `zh-CN-XiaoxuanNeural`  | `role="YoungAdultFemale"`  | De stem heeft een jonge volwassene vrouw.                 |
-|                         | `role="OlderAdultFemale"`  | De stem heeft een oudere volwassene vrouw.                 |
-|                         | `role="OlderAdultMale"`    | De stem heeft een ouder volwassen mannelijk.                   |
+|Rol                     | Beschrijving                |
+|-------------------------|----------------------------|
+|`role="Girl"`            | De stem heeft een meisje. |
+|`role="Boy"`             | De stem die wordt nagebootst naar een jongen. |
+|`role="YoungAdultFemale"`| De stem heeft een jonge volwassene vrouw.|
+|`role="YoungAdultMale"`  | De stem kan worden geïmiteerd voor een jonge volwassen mannelijk.|
+|`role="OlderAdultFemale"`| De stem heeft een oudere volwassene vrouw.|
+|`role="OlderAdultMale"`  | De stem heeft een ouder volwassen mannelijk.|
+|`role="SeniorFemale"`    | De stem heeft een senior vrouwelijk.|
+|`role="SeniorMale"`      | De stem heeft een senior mannelijk.|
+
 
 **Voorbeeld**
 

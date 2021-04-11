@@ -9,16 +9,16 @@ ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
 ms.date: 03/19/2021
-ms.openlocfilehash: f9fa2426e371ab9fd99e88979cbcbbb34adb00d6
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: e0380cf432a1e0de2a8ac274fef7802bee13c58f
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105643585"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107030352"
 ---
 # <a name="migration-guide-access-to-azure-sql-database"></a>Migratie handleiding: toegang tot Azure SQL Database
 
-In deze hand leiding leert u hoe u uw micro soft Access-Data Base kunt migreren naar een Azure-SQL database met behulp van SQL Server Migration Assistant voor toegang (SSMA voor toegang).
+In deze hand leiding leert u [hoe](https://azure.microsoft.com/migration/migration-journey) u uw micro soft Access-Data Base kunt migreren naar een Azure-SQL database met behulp van [SQL Server-migratie](https://azure.microsoft.com/migration/migration-journey) -assistent voor toegang (SSMA voor toegang).
 
 Zie voor andere migratie [handleidingen de Azure data base Migration Guide (Engelstalig](https://docs.microsoft.com/data-migration)). 
 
@@ -32,7 +32,7 @@ Voordat u begint met het migreren van uw Access-Data Base naar een SQL database,
 
 ## <a name="pre-migration"></a>Premigratie
 
-Nadat u aan de vereisten hebt voldaan, bent u klaar om de topologie van uw omgeving te ontdekken en de uitvoer baarheid van uw migratie te beoordelen.
+Nadat u aan de vereisten hebt voldaan, bent u klaar om de topologie van uw omgeving te ontdekken en de haal baarheid van uw [Azure-Cloud migratie](https://azure.microsoft.com/migration)te beoordelen.
 
 
 ### <a name="assess"></a>Evalueren 
@@ -185,6 +185,8 @@ Het IT-team van data SQL heeft deze resources ontwikkeld. Het kern Handvest van 
 - Zie voor meer informatie over het Framework en de acceptatie cyclus voor Cloud migraties:
    -  [Cloud Adoption Framework voor Azure](/azure/cloud-adoption-framework/migrate/azure-best-practices/contoso-migration-scale)
    -  [Aanbevolen procedures voor het berekenen en aanpassen van werk belastingen voor migratie naar Azure](/azure/cloud-adoption-framework/migrate/azure-best-practices/migrate-best-practices-costs) 
+   -  [Cloudmigratie resources](https://azure.microsoft.com/migration/resources)
+
 
 - Zie [Data Access Migration Toolkit (preview) voor informatie](https://marketplace.visualstudio.com/items?itemName=ms-databasemigration.data-access-migration-toolkit)over het beoordelen van de Application Access-laag.
 - Zie [overzicht van database Experimentation Assistant](/sql/dea/database-experimentation-assistant-overview)voor meer informatie over het uitvoeren van een test op het niveau van de toegang tot data-layer A/B.

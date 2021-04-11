@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: ecf115b7ce902fcd8b50f0eca32ffda6ef47e068
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: cc470d12377f50f9f9ae4b362bcabf3a5ce34e8f
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102618471"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106169280"
 ---
 # <a name="about-azure-cloud-services-extended-support"></a>Over Azure Cloud Services (uitgebreide ondersteuning)
 
@@ -48,12 +48,9 @@ De belangrijkste verschillen tussen Cloud Services (klassiek) en Cloud Services 
 - Alle resources die via de [Azure Resource Manager](../azure-resource-manager/templates/overview.md) zijn geïmplementeerd, moeten zich in een virtueel netwerk bevindt. Virtuele netwerken en subnetten worden in Azure Resource Manager gemaakt met behulp van bestaande Azure Resource Manager-Api's en er moet naar worden verwezen in de sectie NetworkConfiguration van het. cscfg bij het implementeren van Cloud Services (uitgebreide ondersteuning).   
 
 - Elke Cloud service (uitgebreide ondersteuning) is een single-onafhankelijke implementatie. Cloud Services (uitgebreide ondersteuning) biedt geen ondersteuning voor meerdere sleuven binnen één Cloud service.  
-    - Wissel <sup>*</sup> mogelijkheid voor VIP kan worden gebruikt om te wisselen tussen twee Cloud Services (uitgebreide ondersteuning). Als u een nieuwe release van een Cloud service wilt testen en faseren, implementeert u een Cloud service (uitgebreide ondersteuning) en kunt u deze als VIP-verwisselbaar labelen met een andere Cloud service (uitgebreide ondersteuning)  
+    - Wissel mogelijkheid voor VIP kan worden gebruikt om te wisselen tussen twee Cloud Services (uitgebreide ondersteuning). Als u een nieuwe release van een Cloud service wilt testen en faseren, implementeert u een Cloud service (uitgebreide ondersteuning) en kunt u deze als VIP-verwisselbaar labelen met een andere Cloud service (uitgebreide ondersteuning)  
 
 - Domain Name Service-label (DNS) is optioneel voor een Cloud service (uitgebreide ondersteuning). In Azure Resource Manager is het DNS-label een eigenschap van de open bare IP-resource die aan de Cloud service is gekoppeld. 
-
-
-<sup>*</sup> VIP swap voor Cloud Services (uitgebreide ondersteuning) is niet beschikbaar tijdens de open bare preview.  
 
 ## <a name="migration-to-azure-resource-manager"></a>Migratie naar Azure Resource Manager
 

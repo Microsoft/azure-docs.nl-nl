@@ -8,10 +8,10 @@ ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 10/02/2020
 ms.openlocfilehash: 74a8bc4209696682c294bccab450d25ae86e3645
-ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/28/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105643929"
 ---
 # <a name="register-and-scan-an-azure-sql-database"></a>Een Azure SQL Database registeren en scannen

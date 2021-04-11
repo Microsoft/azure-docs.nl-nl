@@ -5,12 +5,12 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 03/09/2021
 ms.author: tomfitz
-ms.openlocfilehash: 76469f8b74b119c07374232899302fe1d18fe463
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: ff024ff97baa8a80ae6b1fcdafba010e482afd98
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105731459"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106074619"
 ---
 # <a name="arm-template-deployment-what-if-operation"></a>ARM template deployment what-if operation (Wat-als-bewerking bij het implementeren van ARM-sjablonen)
 
@@ -32,7 +32,7 @@ Zie [Install Azure PowerShell](/powershell/azure/install-az-ps)(Engelstalig) voo
 
 ## <a name="install-azure-cli-module"></a>Azure CLI-module installeren
 
-Als u 'wat-als' wilt gebruiken in Azure CLI, moet u over Azure CLI 2.5.0 of hoger beschikken. Installeer indien nodig [de meest recente versie van Azure CLI](/cli/azure/install-azure-cli).
+Als u wilt gebruiken wat-als in azure CLI, moet u over Azure CLI 2.14.0 of hoger beschikken. Installeer indien nodig [de meest recente versie van Azure CLI](/cli/azure/install-azure-cli).
 
 ## <a name="see-results"></a>Resultaten weer geven
 
@@ -117,10 +117,10 @@ Als u de resultaten zonder kleuren wilt retour neren, opent u het configuratie b
 
 Voor REST API gebruikt u:
 
-* [Implementaties-What if](/rest/api/resources/resources/deployments/whatif) voor implementaties van resource groepen
-* [Implementaties-What if op abonnements bereik](/rest/api/resources/resources/deployments/whatifatsubscriptionscope) voor implementaties van abonnementen
-* [Implementaties-What if in het bereik van de beheer groep](/rest/api/resources/resources/deployments/whatifatmanagementgroupscope) voor implementaties van beheer groepen
-* [Implementaties-What if op Tenant bereik](/rest/api/resources/resources/deployments/whatifattenantscope) voor Tenant implementaties.
+* [Implementaties-What if](/rest/api/resources/deployments/whatif) voor implementaties van resource groepen
+* [Implementaties-What if op abonnements bereik](/rest/api/resources/deployments/whatifatsubscriptionscope) voor implementaties van abonnementen
+* [Implementaties-What if in het bereik van de beheer groep](/rest/api/resources/deployments/whatifatmanagementgroupscope) voor implementaties van beheer groepen
+* [Implementaties-What if op Tenant bereik](/rest/api/resources/deployments/whatifattenantscope) voor Tenant implementaties.
 
 ## <a name="change-types"></a>Wijzigingstypen
 

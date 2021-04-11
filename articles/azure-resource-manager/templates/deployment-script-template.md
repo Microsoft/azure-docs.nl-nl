@@ -5,14 +5,14 @@ services: azure-resource-manager
 author: mumian
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 03/23/2021
+ms.date: 03/30/2021
 ms.author: jgao
-ms.openlocfilehash: 9f4c21a4b7e58c4eed3a62ea844eb11ccf4ecb49
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: fb5fc0b6b673f8a754d0d6bb6ff962697cd5f38b
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/30/2021
-ms.locfileid: "104889379"
+ms.locfileid: "105967333"
 ---
 # <a name="use-deployment-scripts-in-arm-templates"></a>Implementatie scripts gebruiken in ARM-sjablonen
 
@@ -139,8 +139,8 @@ Details van eigenschaps waarde:
 - `identity`: Voor de API-versie 2020-10-01 of hoger van het implementatie script is een door de gebruiker toegewezen beheerde identiteit optioneel, tenzij u in het script specifieke acties van Azure moet uitvoeren.  Voor de API-versie 2019-10-01-preview is een beheerde identiteit vereist als de implementatie script service deze gebruikt voor het uitvoeren van de scripts. Op dit moment wordt alleen door de gebruiker toegewezen beheerde identiteit ondersteund.
 - `kind`: Geef het type script op. Momenteel worden Azure PowerShell-en Azure CLI-scripts ondersteund. De waarden zijn **AzurePowerShell** en **AzureCLI**.
 - `forceUpdateTag`: Als u deze waarde tussen de sjabloon implementaties wijzigt, wordt het implementatie script opnieuw uitgevoerd. Als u de `newGuid()` functies of gebruikt `utcNow()` , kunnen beide functies alleen worden gebruikt in de standaard waarde voor een para meter. Zie [Script meerdere keren uitvoeren](#run-script-more-than-once) voor meer informatie.
-- `containerSettings`: Geef de instellingen op om Azure container instance aan te passen.  `containerGroupName` is voor het opgeven van de naam van de container groep. Als u niets opgeeft, wordt de groeps naam automatisch gegenereerd.
-- `storageAccountSettings`: Geef de instellingen op voor het gebruik van een bestaand opslag account. Als u niets opgeeft, wordt er automatisch een opslag account gemaakt. Zie [een bestaand opslag account gebruiken](#use-existing-storage-account).
+- `containerSettings`: Geef de instellingen op om Azure container instance aan te passen. Het implementatie script vereist een nieuw Azure container-exemplaar. U kunt geen bestaand exemplaar van Azure container opgeven. U kunt de naam van de container groep echter aanpassen met behulp van `containerGroupName` . Als u niets opgeeft, wordt de groeps naam automatisch gegenereerd.
+- `storageAccountSettings`: Geef de instellingen op voor het gebruik van een bestaand opslag account. Als `containerGroupName` niet wordt opgegeven, wordt er automatisch een opslag account gemaakt. Zie [een bestaand opslag account gebruiken](#use-existing-storage-account).
 - `azPowerShellVersion`/`azCliVersion`: Geef de module versie op die moet worden gebruikt. Een lijst met [ondersteunde versies van Azure PowerShell](https://mcr.microsoft.com/v2/azuredeploymentscripts-powershell/tags/list)weer geven. Een lijst met [ondersteunde Azure cli-versies](https://mcr.microsoft.com/v2/azure-cli/tags/list)weer geven.
 
   >[!IMPORTANT]

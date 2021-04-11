@@ -8,20 +8,20 @@ manager: dongli
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 03/10/2021
+ms.date: 04/2/2021
 ms.author: heikora
-ms.openlocfilehash: b8e02071eca139cde02a8bad1b0e0e443db6ab86
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b82a732533c3d069b519b07c3209d4b96c472900
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103555331"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106385022"
 ---
 # <a name="model-and-endpoint-lifecycle"></a>Levens cyclus van modellen en eind punten
 
-Custom Speech maakt gebruik van *basis modellen* en *aangepaste modellen*. Elke taal heeft een of meer basis modellen. Wanneer een nieuw spraak model wordt vrijgegeven aan de normale spraak service, wordt dit doorgaans ook als een nieuw basis model geïmporteerd in de Custom Speech-Service. Ze worden elke 6 tot 12 maanden bijgewerkt. Oudere modellen worden doorgaans minder nuttig in de loop van de tijd, omdat het meest recente model meestal een hogere nauw keurigheid heeft.
-
-Aangepaste modellen worden daarentegen gemaakt door het aanpassen van een gekozen basis model met gegevens uit uw specifieke klant scenario. U kunt een bepaald aangepast model gedurende lange tijd blijven gebruiken nadat u er een hebt dat aan uw behoeften voldoet. We raden u echter aan regel matig bij te werken naar het nieuwste basis model en het opnieuw te trainen in een periode met aanvullende gegevens. 
+Onze standaard spraak (niet aangepast) is gebaseerd op AI-modellen die we baseren op basis modellen. In de meeste gevallen trainen we een ander basis model voor elke gesp roken taal die we ondersteunen.  De spraak service wordt om de paar maanden bijgewerkt met nieuwe basis modellen om de nauw keurigheid en kwaliteit te verbeteren.  
+Met Custom Speech worden aangepaste modellen gemaakt door het aanpassen van een gekozen basis model met gegevens uit uw specifieke klant scenario. Wanneer u een aangepast model hebt gemaakt, wordt dat model niet bijgewerkt of gewijzigd, zelfs niet als het bijbehorende basis model van waaruit het is aangepast, wordt bijgewerkt in de standaard spraak service.  
+Met dit beleid kunt u een bepaald aangepast model gedurende lange tijd blijven gebruiken nadat u een aangepast model hebt dat aan uw behoeften voldoet.  We raden u echter aan uw aangepaste model regel matig opnieuw te maken, zodat u kunt aanpassen uit het meest recente basis model om te profiteren van de verbeterde nauw keurigheid en kwaliteit.
 
 Andere belang rijke termen met betrekking tot de levens cyclus van het model zijn:
 
@@ -59,7 +59,7 @@ Hier volgt een voor beeld van het model trainings overzicht:
 
 U kunt de verval datums ook controleren via de [`GetModel`](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/GetModel) en [`GetBaseModel`](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/GetBaseModel) aangepaste spraak-api's onder de `deprecationDates` eigenschap in het JSON-antwoord.
 
-Hier volgt een voor beeld van de verval gegevens van de API-aanroep van GetModel. De ' DEPRECATIONDATES ' tonen het volgende: 
+Hier volgt een voor beeld van de verval gegevens van de API-aanroep van GetModel. De **DEPRECATIONDATES** tonen wanneer het model verloopt: 
 ```json
 {
     "SELF": "HTTPS://WESTUS2.API.COGNITIVE.MICROSOFT.COM/SPEECHTOTEXT/V3.0/MODELS/{id}",
@@ -80,7 +80,7 @@ Hier volgt een voor beeld van de verval gegevens van de API-aanroep van GetModel
     },
     "PROPERTIES": {
     "DEPRECATIONDATES": {
-        "ADAPTATIONDATETIME": "2022-01-15T00:00:00Z",     // last date this model can be used for adaptation
+        "ADAPTATIONDATETIME": "2022-01-15T00:00:00Z",     // last date the base model can be used for adaptation
         "TRANSCRIPTIONDATETIME": "2023-03-01T21:27:29Z"   // last date this model can be used for decoding
     }
     },
@@ -96,6 +96,13 @@ Hier volgt een voor beeld van de verval gegevens van de API-aanroep van GetModel
 }
 ```
 Houd er rekening mee dat u het model op een aangepast spraak eindpunt zonder downtime kunt bijwerken door het model dat door het eind punt wordt gebruikt, te wijzigen in de sectie implementatie van de speech Studio of via de aangepaste spraak-API.
+
+## <a name="what-happens-when-models-expire-and-how-to-update-them"></a>Wat gebeurt er wanneer modellen verlopen en hoe ze kunnen worden bijgewerkt
+Wat er gebeurt wanneer een model verloopt en hoe het model moet worden bijgewerkt, is afhankelijk van hoe het wordt gebruikt.
+### <a name="batch-transcription"></a>Batchtranscriptie
+Als een model verloopt dat wordt gebruikt met [batch transcriptie](batch-transcription.md) transcriptie-aanvragen, mislukt de fout 4xx. Als u wilt voor komen dat deze de `model` para meter in de JSON die is verzonden in de hoofd tekst van de **transcriptie maken** , naar een meer recent basis model of een meer recent aangepast model bijwerken. U kunt ook de `model` vermelding uit de JSON verwijderen om altijd het meest recente basis model te gebruiken.
+### <a name="custom-speech-endpoint"></a>Aangepast spraak eindpunt
+Als een model verloopt dat wordt gebruikt door een [aangepast spraak eindpunt](how-to-custom-speech-train-model.md), wordt de service automatisch terugvallen op het gebruik van het meest recente basis model voor de taal die u gebruikt. kunt u in het menu **Custom speech** boven aan de pagina de optie **implementatie** selecteren en vervolgens op de naam van het eind punt klikken om de details ervan weer te geven. Boven aan de pagina Details ziet u een knop **Update model** waarmee u het model dat door dit eind punt wordt gebruikt zonder uitval tijd probleemloos kunt bijwerken. U kunt deze wijziging ook programmatisch aanbrengen met behulp van de rest API van het [**Update model**](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/UpdateModel) .
 
 ## <a name="next-steps"></a>Volgende stappen
 

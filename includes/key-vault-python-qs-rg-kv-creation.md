@@ -4,12 +4,12 @@ ms.service: key-vault
 ms.topic: include
 ms.date: 09/03/2020
 ms.author: msmbaldwin
-ms.openlocfilehash: 5e912b76c2ef68aa01dae57d1b42abc386a8e67b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 59359d37fe347c8568c7944f75accdbc04cddb93
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "89482120"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105967116"
 ---
 1. Gebruik de opdracht `az group create` om een resourcegroep te maken:
 
@@ -29,16 +29,6 @@ ms.locfileid: "89482120"
 
 1. Maak een omgevingsvariabele aan die de naam van de Key Vault levert aan de code:
 
-    # <a name="cmd"></a>[cmd](#tab/cmd)
-
-    ```cmd
-    set KEY_VAULT_NAME=<your-unique-keyvault-name>
-    ```
-
-    # <a name="bash"></a>[bash](#tab/bash)
-
     ```bash
     export KEY_VAULT_NAME=<your-unique-keyvault-name>
     ```
-
-    ---

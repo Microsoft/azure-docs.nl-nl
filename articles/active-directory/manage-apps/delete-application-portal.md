@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 1/5/2021
 ms.author: kenwith
-ms.openlocfilehash: 187f4a1d524e0343130808aa4b4c18222fa982c3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 59d6044cf42109501941b3f4ff54375aed7fab7c
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99259267"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106504869"
 ---
 # <a name="quickstart-delete-an-application-from-your-azure-active-directory-azure-ad-tenant"></a>Quickstart: Een toepassing verwijderen uit uw Azure Active Directory-tenant (Azure AD)
 
@@ -51,7 +51,7 @@ Een toepassing verwijderen uit uw Azure AD-tenant:
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u de quickstart-reeks hebt voltooid, kunt u de app verwijderen om uw testtenant op te schonen. Hoe u de app verwijdert, is behandeld in deze quickstart.
+Wanneer u klaar bent met deze Quick Start reeks, kunt u de app verwijderen om de test Tenant op te schonen. Hoe u de app verwijdert, is behandeld in deze quickstart.
 
 ## <a name="next-steps"></a>Volgende stappen
 

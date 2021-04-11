@@ -126,6 +126,8 @@
       items:
         - name: Privé-DNS-zones en -records beschermen
           href: dns-protect-private-zones-recordsets.md
+        - name: Een DNS-zonebestand importeren en exporteren
+          href: private-dns-import-export.md
     - name: Problemen oplossen
       items:
         - name: Handleiding voor het oplossen van problemen

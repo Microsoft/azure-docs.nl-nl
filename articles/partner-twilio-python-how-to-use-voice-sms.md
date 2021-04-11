@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 02/19/2015
 ms.author: gwallace
 ms.custom: devx-track-python
-ms.openlocfilehash: b4b9cd0db2a3a99aca80f42b6d69485a542bbadb
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: a9d6ec6aa5f30af04bf64e238f4a25ec6aef4f5d
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104580945"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106504750"
 ---
 # <a name="how-to-use-twilio-for-voice-and-sms-capabilities-in-python"></a>Twilio gebruiken voor spraak-en SMS-mogelijkheden in python
 In deze hand leiding wordt gedemonstreerd hoe u veelvoorkomende programmeer taken uitvoert met de Twilio API-service in Azure. De besproken scenario's zijn onder andere het maken van een telefoon oproep en het verzenden van een SMS-bericht (Short Message Service). Zie de sectie [volgende stappen](#NextSteps) voor meer informatie over Twilio en het gebruik van spraak en SMS in uw toepassingen.
@@ -81,15 +81,15 @@ Wanneer u zich aanmeldt voor een Twilio-account, ontvangt u een account-SID en e
 ## <a name="create-a-python-application"></a><a id="create_app"></a>Een python-toepassing maken
 Een python-toepassing die gebruikmaakt van de Twilio-service en wordt uitgevoerd in azure, is niet anders dan andere python-toepassingen die gebruikmaken van de Twilio-service. Hoewel Twilio Services op verschillende manieren kunnen worden aangeroepen vanuit Python, wordt in dit artikel de nadruk gelegd op het gebruik van Twilio-Services met [Twilio-bibliotheek voor python van github][twilio_python]. Zie voor meer informatie over het gebruik van de Twilio-bibliotheek voor python [https://www.twilio.com/docs/libraries/python][twilio_lib_docs] .
 
-Eerst [Stel een nieuwe Azure Linux-VM] [azure_vm_setup] in als host voor uw nieuwe python-webtoepassing. Wanneer de virtuele machine wordt uitgevoerd, moet u uw toepassing zichtbaar maken op een open bare poort, zoals hieronder wordt beschreven.
+Stel eerst [een nieuwe Azure Linux-VM][azure_vm_setup] in die als host fungeert voor uw nieuwe python-webtoepassing. Wanneer de virtuele machine wordt uitgevoerd, moet u uw toepassing zichtbaar maken op een open bare poort, zoals hieronder wordt beschreven.
 
 ### <a name="add-an-incoming-rule"></a>Een binnenkomende regel toevoegen
-  1. Ga naar de pagina [netwerk beveiligings groep] [azure_nsg].
+  1. Ga naar de pagina [netwerk beveiligings groep][azure_nsg] .
   2. Selecteer de netwerk beveiligings groep die overeenkomt met uw virtuele machine.
   3. Voeg een **regel voor uitgaande** verbindingen toe voor **poort 80**. Zorg ervoor dat u inkomende berichten vanaf elk adres toelaat.
 
 ### <a name="set-the-dns-name-label"></a>Het DNS-naam label instellen
-  1. Ga naar de pagina [Openbare IP-adressen] [azure_ips].
+  1. Ga naar de pagina [openbare IP-adressen][azure_ips] .
   2. Selecteer het open bare IP-adres dat overeenkomt met uw virtuele machine.
   3. Stel het **DNS-naam label** in het gedeelte **configuratie** in. In het geval van dit voor beeld ziet het er ongeveer als volgt uit: *uw domein label*. centralus.cloudapp.Azure.com
 
@@ -272,3 +272,6 @@ Nu u de basis principes van de Twilio-service hebt geleerd, volgt u deze koppeli
 [twilio_on_github]: https://github.com/twilio
 [twilio_support]: https://www.twilio.com/help/contact
 [twilio_quickstarts]: https://www.twilio.com/docs/quickstart
+[azure_ips]: https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address
+[azure_vm_setup]: https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-portal
+[azure_nsg]: https://docs.microsoft.com/azure/virtual-network/manage-network-security-group

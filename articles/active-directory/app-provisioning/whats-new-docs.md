@@ -1,7 +1,7 @@
 ---
 title: Wat is er nieuw in Azure Active Directory toepassing inrichten
 description: Nieuwe en bijgewerkte documentatie voor het inrichten van de Azure Active Directory-toepassing.
-ms.date: 03/08/2021
+ms.date: 04/05/2021
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: reference
@@ -9,16 +9,27 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: daveba
-ms.openlocfilehash: abee58607a5492548e4d64f44c15fd365876f3f5
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8bb8dfbaf7ee1758811016dd3ddf08367a44bfae
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102453678"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106443505"
 ---
 # <a name="azure-active-directory-application-provisioning-whats-new"></a>Azure Active Directory toepassing inrichten: wat is er nieuw
 
 Welkom bij wat er nieuw is in Azure Active Directory documentatie over het inrichten van toepassingen. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden. Zie [what's New in azure Active Directory](../fundamentals/whats-new.md)voor meer informatie over wat er nieuw is in de inrichtings service.
+
+## <a name="march-2021"></a>2021 maart
+
+### <a name="updated-articles"></a>Bijgewerkte artikelen
+
+- [Extensie kenmerken voor het inrichten van apps synchroniseren](user-provisioning-sync-attributes-for-mapping.md)
+- [Toepassing inrichten in quarantaine status](application-provisioning-quarantine-status.md)
+- [Het inrichten van gebruikers accounts voor zakelijke apps beheren in de Azure Portal](configure-automatic-user-provisioning-portal.md)
+- [Naslag informatie voor het schrijven van expressies voor kenmerk toewijzingen in azure AD](functions-for-customizing-application-data.md)
+- [Zelf studie: een voor beeld van een SCIM-eind punt ontwikkelen](use-scim-to-build-users-and-groups-endpoints.md)
+
 
 ## <a name="february-2021"></a>Februari 2021
 

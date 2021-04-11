@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/08/2021
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: f3eb2d9469ab3a3d2c1d09e4adc3ee2cb1f86e6e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a5ae81cde28efbf57965beda2f82915854579e43
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99979063"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106073111"
 ---
 ## <a name="extract-the-zip-file"></a>Het zip-bestand uitpakken
 

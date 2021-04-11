@@ -7,12 +7,12 @@ ms.service: security-center
 ms.topic: reference
 ms.date: 03/04/2021
 ms.author: memildin
-ms.openlocfilehash: 0c14b9a0c927ef9ed96853ddeed64b161df0d277
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: c0ae5ae4a66ce55da40eae3959945c96013af3ea
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102176702"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106075641"
 ---
 # <a name="security-alerts---a-reference-guide"></a>Referentiegids met beveiligingswaarschuwingen
 
@@ -510,7 +510,7 @@ De in Security Center ondersteunde intenties van killchains zijn gebaseerd op [v
 | **Exfiltration** (Exfiltratie)        | Exfiltratie verwijst naar technieken en kenmerken die leiden tot of helpen bij het verwijderen door de indringer van bestanden en informatie vanuit een doelnetwerk. Deze categorie heeft ook betrekking op locaties op een systeem of netwerk waar de indringer kan zoeken naar gegevens om te exfiltreren.                                                                                                                                                                                                                                                                                                                                  |
 | **Command and Control**   | De Command and Control-tactiek laat zien hoe indringers communiceren met systemen in hun beheer in een doelnetwerk.                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | **Impact**              | Gebeurtenissen uit deze categorie proberen hoofdzakelijk de beschikbaarheid of integriteit van een systeem, service of netwerk te verminderen, waaronder de manipulatie van gegevens om een bedrijfs- of operationeel proces te beïnvloeden. Dit gebeurt vaak met technieken zoals ransomware, beschadiging en gegevensmanipulatie.                                                                                                                                                                                                                                                                                                     |
-|                         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |  |
+|                         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | 
 
 > [!NOTE]
 > Voor waarschuwingen die in preview zijn: [!INCLUDE [Legalese](../../includes/security-center-preview-legal-text.md)]

@@ -5,14 +5,14 @@ author: vhorne
 ms.service: firewall-manager
 services: firewall-manager
 ms.topic: conceptual
-ms.date: 03/29/2021
+ms.date: 03/30/2021
 ms.author: victorh
-ms.openlocfilehash: e955c6b760c06ce802dfae0193d34954eab99892
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 622fde49a31105b2f66a678d3e55d48fabea9487
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/30/2021
-ms.locfileid: "105731085"
+ms.locfileid: "105966908"
 ---
 # <a name="what-are-security-partner-providers"></a>Wat zijn beveiligingspartnerproviders?
 
@@ -44,7 +44,8 @@ De volgende scenario's worden ondersteund:
    VNet/vertakking-naar-Internet via een beveiligings partner provider en het andere verkeer (spoke-to-spoke, spoke-to-Branch, vertakking-naar-spoke) via Azure Firewall.
 - Eén provider in de hub
 
-   - Al het verkeer (spoke-to-spoke, spoke-to-Branch, vertakking-naar-spoke, VNet/vertakking-naar-Internet) dat wordt beveiligd door Azure Firewall
+   - Al het verkeer (spoke-to-spoke, spoke-to-Branch, vertakking-naar-spoke, VNet/vertakking-naar-Internet) dat wordt beveiligd door Azure Firewall<br>
+      of
    - VNet/vertakking-naar-Internet via security partner provider
 
 ## <a name="best-practices-for-internet-traffic-filtering-in-secured-virtual-hubs"></a>Aanbevolen procedures voor het filteren van Internet verkeer in beveiligde virtuele hubs

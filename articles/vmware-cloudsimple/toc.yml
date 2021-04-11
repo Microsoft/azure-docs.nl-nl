@@ -178,6 +178,10 @@
               href: on-premises-connection.md
             - name: Azure-netwerkverbinding met ExpressRoute
               href: azure-expressroute-connection.md
+    - name: Naslaginformatie
+      items:
+        - name: Azure CLI
+          href: /cli/azure/csvmware
     - name: Releaseopmerkingen
       items:
         - name: CloudSimple September 2020 Update

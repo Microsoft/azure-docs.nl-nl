@@ -5,15 +5,15 @@ services: storage
 author: wmgries
 ms.service: storage
 ms.topic: conceptual
-ms.date: 3/26/2021
+ms.date: 4/7/2021
 ms.author: wgries
 ms.subservice: files
-ms.openlocfilehash: a794274248a12af97174dcc4e86bd4231e9d9dda
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 4c046129293fcfbcea8ecaf98da72b9126dd540a
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105727481"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107030335"
 ---
 # <a name="release-notes-for-the-azure-file-sync-agent"></a>Releaseopmerkingen voor de Azure File Sync-agent
 Met Azure File Sync kunt u bestandsshares van uw organisatie in Azure Files centraliseren zonder in te leveren op de flexibiliteit, prestaties en compatibiliteit van een on-premises bestandsserver. Uw installaties van Windows Server worden getransformeerd in een snelle cache van uw Azure-bestandsshare. U kunt elk protocol dat beschikbaar is in Windows Server gebruiken voor lokale toegang tot uw gegevens (inclusief SMB, NFS en FTPS) en u kunt zoveel caches hebben als u waar ook ter wereld nodig hebt.
@@ -26,6 +26,7 @@ De volgende Azure File Sync agent versies worden ondersteund:
 | Mijlpalen | Versienummer agent | Releasedatum | Status |
 |----|----------------------|--------------|------------------|
 | V12 release- [KB4568585](https://support.microsoft.com/topic/b9605f04-b4af-4ad8-86b0-2c490c535cfd)| 12.0.0.0 | 26 maart 2021 | Ondersteund-Flighting |
+| V 11.3 release- [KB4539953](https://support.microsoft.com/topic/f68974f6-bfdd-44f4-9659-bf2d8a696c26)| 11.3.0.0 | 7 april 2021 | Ondersteund |
 | V 11.2 release- [KB4539952](https://support.microsoft.com/topic/azure-file-sync-agent-v11-2-release-february-2021-c956eaf0-cd8e-4511-98c0-e5a1f2c84048)| 11.2.0.0 | 2 februari 2021 | Ondersteund |
 | V. w release- [KB4539951](https://support.microsoft.com/help/4539951)| 11.1.0.0 | 4 november 2020 | Ondersteund |
 | V 10.1 release- [KB4522411](https://support.microsoft.com/help/4522411)| 10.1.0.0 | 5 juni 2020 | Ondersteund: de versie van de agent verloopt op 7 juni 2021 |
@@ -76,8 +77,9 @@ De volgende release opmerkingen zijn voor versie 12.0.0.0 van de Azure File Sync
     - Verbeterde detectie prestaties voor wijzigingen om bestanden te detecteren die zijn gewijzigd in de Azure-bestands share.
     - Prestatie verbeteringen voor het afstemmen van synchronisatie sessies. 
     - Synchroniseer verbeteringen om ECS_E_SYNC_METADATA_KNOWLEDGE_SOFT_LIMIT_REACHED en ECS_E_SYNC_METADATA_KNOWLEDGE_LIMIT_REACHED fouten te verminderen.
-    - Bestanden kunnen niet op server 2019 worden getierd als Gegevensontdubbeling is ingeschakeld op het volume.
-    - AFSDiag kan bestanden niet comprimeren als een bestand groter is dan 2GiB.
+    - Er is een fout opgelost waardoor gegevens beschadigd raken als Cloud lagen zijn ingeschakeld en gelaagde bestanden worden gekopieerd met behulp van Robocopy met de/B-para meter.
+    - Er is een fout opgelost waardoor bestanden niet kunnen worden getierd op server 2019 als Gegevensontdubbeling is ingeschakeld op het volume.
+    - Er is een fout opgelost waardoor AFSDiag bestanden niet kan comprimeren als een bestand groter is dan 2GiB.
 
 ### <a name="evaluation-tool"></a>Evaluatie programma
 Voordat u Azure File Sync implementeert, moet u evalueren of het compatibel is met uw systeem met behulp van het Azure File Sync-evaluatie programma. Dit hulp programma is een Azure PowerShell-cmdlet waarmee wordt gecontroleerd op mogelijke problemen met uw bestands systeem en gegevensset, zoals niet-ondersteunde tekens of een niet-ondersteunde versie van het besturings systeem. Zie het gedeelte [evaluatie hulpprogramma's](./storage-sync-files-planning.md#evaluation-cmdlet) in de plannings handleiding voor instructies voor de installatie en het gebruik. 
@@ -131,8 +133,12 @@ De volgende items worden niet gesynchroniseerd, maar de rest van het systeem bli
 ### <a name="cloud-tiering"></a>Cloudopslaglagen
 - Als een gelaagd bestand met behulp van Robocopy naar een andere locatie wordt gekopieerd, wordt het resulterende bestand niet in een laag geplaatst. Het kenmerk 'offline' kan zijn ingesteld omdat Robocopy dat kenmerk onterecht opneemt in kopieerbewerkingen.
 - Wanneer u bestanden met behulp van Robocopy kopieert, gebruikt u de optie/MIR om de tijds tempels van het bestand te behouden. Dit zorgt ervoor dat oudere bestanden eerder zijn gelaagd dan recent geopende bestanden.
-    > [!Warning]  
-    > Robocopy/switch wordt niet ondersteund met Azure File Sync. Met behulp van de Robocopy/B-switch met een Azure File Sync server-eind punt, omdat de bron kan leiden tot beschadiging van het bestand.
+
+## <a name="agent-version-11300"></a>11.3.0.0 van agent versie
+De volgende release opmerkingen zijn voor versie 11.3.0.0 van de Azure File Sync agent uitgebracht op 7 april 2021. Deze opmerkingen zijn opgenomen in aanvulling op de release opmerkingen van versie 11.1.0.0.
+
+### <a name="improvements-and-issues-that-are-fixed"></a>Verbeteringen en problemen die zijn opgelost 
+Er is een fout opgelost waardoor gegevens beschadigd raken als Cloud lagen zijn ingeschakeld en gelaagde bestanden worden gekopieerd met behulp van Robocopy met de/B-para meter.
 
 ## <a name="agent-version-11200"></a>11.2.0.0 van agent versie
 De volgende release opmerkingen zijn voor versie 11.2.0.0 van de Azure File Sync agent die is uitgebracht op 2 februari 2021. Deze opmerkingen zijn opgenomen in aanvulling op de release opmerkingen van versie 11.1.0.0.

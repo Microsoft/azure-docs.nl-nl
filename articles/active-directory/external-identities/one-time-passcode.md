@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 03/02/2021
+ms.date: 04/06/2021
 ms.author: mimart
 author: msmimart
 manager: CelesteDG
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7961997c6a6736c154b6217ee3f21682d0c4c3fc
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 30f22282b00a7ead2e19805f32d78338126e8087
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101688464"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106552747"
 ---
 # <a name="email-one-time-passcode-authentication"></a>Verificatie met eenmalige e-mail wachtwoord code
 
@@ -64,7 +64,7 @@ U kunt zien of een gast gebruiker zich verifieert met een eenmalige wachtwoord c
 ![Scherm afbeelding met een eenmalige wachtwoord code gebruiker met bron waarde van OTP](media/one-time-passcode/guest-user-properties.png)
 
 > [!NOTE]
-> Wanneer een gebruiker een eenmalige wachtwoord code inwisselt en later een MSA-, Azure AD-account of een ander federatief account ontvangt, worden ze nog steeds geverifieerd met een eenmalige wachtwoord code. Als u de verificatie methode wilt bijwerken, kunt u het gebruikers account van de gast verwijderen en opnieuw uitnodigen.
+> Wanneer een gebruiker een eenmalige wachtwoord code inwisselt en later een MSA-, Azure AD-account of een ander federatief account ontvangt, worden ze nog steeds geverifieerd met een eenmalige wachtwoord code. Als u de verificatie methode van de gebruiker wilt bijwerken, kunt u de status van de [aflossingen opnieuw instellen](reset-redemption-status.md).
 
 ### <a name="example"></a>Voorbeeld
 
@@ -76,7 +76,7 @@ Vanaf 2021 oktober wordt de functie voor eenmalige e-mail wachtwoord code ingesc
 
 > [!NOTE]
 >
-> Als de functie voor eenmalige e-mail wachtwoord code is ingeschakeld in uw Tenant en u deze uitschakelt, kunnen gast gebruikers die een eenmalige wachtwoord code hebben ingewisseld, zich niet aanmelden. U kunt de gast gebruiker verwijderen en opnieuw uitnodigen om zich opnieuw aan te melden met een andere verificatie methode.
+> Als de functie voor eenmalige e-mail wachtwoord code is ingeschakeld in uw Tenant en u deze uitschakelt, kunnen gast gebruikers die een eenmalige wachtwoord code hebben ingewisseld, zich niet aanmelden. U kunt [de status van de inzending opnieuw instellen](reset-redemption-status.md) zodat deze zich opnieuw kan aanmelden met een andere verificatie methode.
 
 ### <a name="to-disable-the-email-one-time-passcode-feature"></a>De functie voor eenmalige e-mail wachtwoord code uitschakelen
 

@@ -10,12 +10,13 @@ ms.subservice: secrets
 ms.topic: tutorial
 ms.date: 06/22/2020
 ms.author: jalichwa
-ms.openlocfilehash: e7e63ea56edc2b76383ee4c034fd39dd8b8259c1
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: d75ba091ff634bf613722e3a194407beeeda68fb
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98786002"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105967231"
 ---
 # <a name="automate-the-rotation-of-a-secret-for-resources-that-have-two-sets-of-authentication-credentials"></a>Het roteren van een geheim automatiseren voor resources met twee sets verificatiereferenties
 
@@ -53,11 +54,17 @@ U kunt deze implementatiekoppeling gebruiken als u geen bestaande sleutelkluis e
 
     ![Schermopname van het maken van een resourcegroep.](../media/secrets/rotation-dual/dual-rotation-1.png)
 
-U hebt nu een sleutelkluis en twee opslagaccounts. U kunt deze configuratie controleren in Azure CLI door deze opdracht uit te voeren:
-
+U hebt nu een sleutelkluis en twee opslagaccounts. U kunt deze installatie controleren in de Azure CLI of Azure PowerShell door deze opdracht uit te voeren:
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli
 az resource list -o table -g vaultrotation
 ```
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+
+```azurepowershell
+Get-AzResource -Name 'vaultrotation*' | Format-Table
+```
+---
 
 De resultaten zien er ongeveer uit zoals deze uitvoer:
 
@@ -111,49 +118,97 @@ In [Azure-voorbeelden](https://github.com/Azure-Samples/KeyVault-Rotation-Storag
 ## <a name="add-the-storage-account-access-keys-to-key-vault"></a>De toegangssleutels voor een opslagaccount toevoegen aan Key Vault
 
 Stel eerst uw toegangsbeleid in om machtigingen voor het **beheren van geheimen** te verlenen aan uw user principal:
-
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli
 az keyvault set-policy --upn <email-address-of-user> --name vaultrotation-kv --secret-permissions set delete get list
 ```
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+
+```azurepowershell
+Set-AzKeyVaultAccessPolicy -UserPrincipalName <email-address-of-user> --name vaultrotation-kv -PermissionsToSecrets set,delete,get,list
+```
+---
 
 U kunt nu een nieuw geheim maken met een toegangssleutel voor het opslagaccount als bijbehorende waarde. U moet ook de resource-id van het opslagaccount, de geldigheidsperiode van het geheim, en de sleutel-id toevoegen aan het geheim, zodat de rotatiefunctie de sleutel in het opslagaccount opnieuw kan genereren.
 
 Achterhaal de resource-id voor het opslagaccount. U vindt deze waarde in de eigenschap `id`.
 
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli
 az storage account show -n vaultrotationstorage
 ```
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+
+```azurepowershell
+Get-AzStorageAccount -Name vaultrotationstorage -ResourceGroupName vaultrotation | Select-Object -Property *
+```
+---
 
 Vermeld de toegangssleutels van het opslagaccount zodat u de sleutelwaarden kunt ophalen:
-
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli
-az storage account keys list -n vaultrotationstorage 
+az storage account keys list -n vaultrotationstorage
 ```
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+
+```azurepowershell
+Get-AzStorageAccountKey -Name vaultrotationstorage -ResourceGroupName vaultrotation
+```
+---
 
 Voeg een geheim toe aan de sleutelkluis waarvan de vervaldatum is ingesteld op morgen, stel de geldigheidsperiode in op 60 dagen en voeg de resource-id van het opslagaccount toe. Voer deze opdracht uit met behulp van de opgehaalde waarden voor `key1Value` en `storageAccountResourceId`:
 
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli
 $tomorrowDate = (get-date).AddDays(+1).ToString("yyy-MM-ddTHH:mm:ssZ")
 az keyvault secret set --name storageKey --vault-name vaultrotation-kv --value <key1Value> --tags "CredentialId=key1" "ProviderAddress=<storageAccountResourceId>" "ValidityPeriodDays=60" --expires $tomorrowDate
 ```
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+
+```azurepowershell
+$tomorrowDate = (Get-Date).AddDays(+1).ToString('yyy-MM-ddTHH:mm:ssZ')
+$secretVaule = ConvertTo-SecureString -String '<key1Value>' -AsPlainText -Force
+$tags = @{
+    CredentialId='key1'
+    ProviderAddress='<storageAccountResourceId>'
+    ValidityPeriodDays='60'
+}
+Set-AzKeyVaultSecret -Name storageKey -VaultName vaultrotation-kv -SecretValue $secretVaule -Tag $tags -Expires $tomorrowDate
+```
+---
 
 In het bovenstaande geheim wordt gebeurtenis `SecretNearExpiry` binnen enkele minuten geactiveerd. Deze gebeurtenis activeert vervolgens de functie voor het roteren van het geheim waarvoor de vervaldatum van 60 dagen is ingesteld. In die configuratie wordt de gebeurtenis 'SecretNearExpiry' elke 30 dagen geactiveerd (30 dagen vóór de vervaldatum) en zal de rotatiefunctie om en om tussen sleutel1 en sleutel2 roteren.
 
 U kunt controleren of de toegangssleutels opnieuw zijn gegenereerd door de opslagaccountsleutel en het Key Vault-geheim op te halen en te vergelijken.
 
 Gebruik deze opdracht om de informatie over het geheim op te halen:
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli
 az keyvault secret show --vault-name vaultrotation-kv --name storageKey
 ```
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+
+```azurepowershell
+Get-AzKeyVaultSecret -VaultName vaultrotation-kv -Name storageKey -AsPlainText
+```
+---
 
 U ziet dat `CredentialId` is bijgewerkt naar de andere `keyName`, en dat `value` opnieuw is gegenereerd:
 
 ![Schermopname van de uitvoer van de opdracht a z keyvault secret show voor het eerste opslagaccount.](../media/secrets/rotation-dual/dual-rotation-4.png)
 
 Haal de toegangssleutels op om de waarden te vergelijken:
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli
 az storage account keys list -n vaultrotationstorage 
 ```
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+
+```azurepowershell
+Get-AzStorageAccountKey -Name vaultrotationstorage -ResourceGroupName vaultrotation
+```
+---
+
 U ziet dat `value` van de sleutel gelijk is aan het geheim in de sleutelkluis:
 
 ![Schermopname van de uitvoer van de opdracht a z storage account keys list voor het eerste opslagaccount.](../media/secrets/rotation-dual/dual-rotation-5.png)
@@ -185,36 +240,77 @@ Als u opslagaccountsleutels wilt toevoegen aan een bestaande functie voor rotati
 ### <a name="add-another-storage-account-access-key-to-key-vault"></a>Nog een toegangssleutel voor het opslagaccount toevoegen aan Key Vault
 
 Achterhaal de resource-id voor het opslagaccount. U vindt deze waarde in de eigenschap `id`.
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli
 az storage account show -n vaultrotationstorage2
 ```
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+
+```azurepowershell
+Get-AzStorageAccount -Name vaultrotationstorage -ResourceGroupName vaultrotation | Select-Object -Property *
+```
+---
 
 Vermeld de toegangssleutels van het opslagaccount zodat u de waarde van sleutel 2 kunt ophalen:
-
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli
-az storage account keys list -n vaultrotationstorage2 
+az storage account keys list -n vaultrotationstorage2
 ```
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+
+```azurepowershell
+Get-AzStorageAccountKey -Name vaultrotationstorage2 -ResourceGroupName vaultrotation
+```
+---
 
 Voeg een geheim toe aan de sleutelkluis waarvan de vervaldatum is ingesteld op morgen, stel de geldigheidsperiode in op 60 dagen en voeg de resource-id van het opslagaccount toe. Voer deze opdracht uit met behulp van de opgehaalde waarden voor `key2Value` en `storageAccountResourceId`:
 
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli
-$tomorrowDate = (get-date).AddDays(+1).ToString("yyy-MM-ddTHH:mm:ssZ")
+$tomorrowDate = (Get-Date).AddDays(+1).ToString('yyy-MM-ddTHH:mm:ssZ')
 az keyvault secret set --name storageKey2 --vault-name vaultrotation-kv --value <key2Value> --tags "CredentialId=key2" "ProviderAddress=<storageAccountResourceId>" "ValidityPeriodDays=60" --expires $tomorrowDate
 ```
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+
+```azurepowershell
+$tomorrowDate = (get-date).AddDays(+1).ToString("yyy-MM-ddTHH:mm:ssZ")
+$secretVaule = ConvertTo-SecureString -String '<key1Value>' -AsPlainText -Force
+$tags = @{
+    CredentialId='key2';
+    ProviderAddress='<storageAccountResourceId>';
+    ValidityPeriodDays='60'
+}
+Set-AzKeyVaultSecret -Name storageKey2 -VaultName vaultrotation-kv -SecretValue $secretVaule -Tag $tags -Expires $tomorrowDate
+```
+---
 
 Gebruik deze opdracht om de informatie over het geheim op te halen:
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli
 az keyvault secret show --vault-name vaultrotation-kv --name storageKey2
 ```
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+
+```azurepowershell
+Get-AzKeyVaultSecret -VaultName vaultrotation-kv -Name storageKey2 -AsPlainText
+```
+---
 
 U ziet dat `CredentialId` is bijgewerkt naar de andere `keyName`, en dat `value` opnieuw is gegenereerd:
 
 ![Schermopname van de uitvoer van de opdracht a z keyvault secret show voor het tweede opslagaccount.](../media/secrets/rotation-dual/dual-rotation-8.png)
 
 Haal de toegangssleutels op om de waarden te vergelijken:
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli
 az storage account keys list -n vaultrotationstorage 
 ```
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+
+```azurepowershell
+Get-AzStorageAccountKey -Name vaultrotationstorage -ResourceGroupName vaultrotation
+```
+---
 
 U ziet dat `value` van de sleutel gelijk is aan het geheim in de sleutelkluis:
 

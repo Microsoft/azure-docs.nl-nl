@@ -10,16 +10,19 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/21/2020
 ms.author: Zhchia
-ms.openlocfilehash: f1600dfc5705ca97f16e8966a796b54fc556d216
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9d9699c564476e116654f700c32dd47b7f6d5b81
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94359259"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106504563"
 ---
 # <a name="tutorial-configure-github-for-automatic-user-provisioning"></a>Zelfstudie: GitHub configureren voor automatische gebruikersinrichting
 
 Het doel van deze zelfstudie is om u te laten zien welke stappen u moet uitvoeren in GitHub en Azure AD om automatisch gebruikersaccounts van Azure AD in te richten in GitHub, of de inrichting van gebruikersaccounts ongedaan te maken.
+
+> [!NOTE]
+> De integratie van Azure AD-inrichting is afhankelijk van de [GitHub SCIM-API](https://developer.github.com/v3/scim/) die beschikbaar is voor klanten van [GitHub Enterprise Cloud](https://help.github.com/articles/github-s-products/#github-enterprise) in het [GitHub Enterprise-abonnement](https://help.github.com/articles/github-s-billing-plans/#billing-plans-for-organizations).
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -33,7 +36,7 @@ In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan d
 * SCIM inrichten voor één organisatie wordt alleen ondersteund wanneer eenmalige aanmelding is ingeschakeld op organisatieniveau
 
 > [!NOTE]
-> De integratie van Azure AD-inrichting is afhankelijk van de [GitHub SCIM-API](https://developer.github.com/v3/scim/) die beschikbaar is voor klanten van [GitHub Enterprise Cloud](https://help.github.com/articles/github-s-products/#github-enterprise) in het [GitHub Enterprise-abonnement](https://help.github.com/articles/github-s-billing-plans/#billing-plans-for-organizations).
+> Deze integratie is ook beschikbaar voor gebruik vanuit de Azure AD US Government Cloud-omgeving. U kunt deze toepassing vinden in de toepassingsgalerie van Azure AD US Government Cloud en deze op dezelfde manier configureren als vanuit een openbare cloud.
 
 ## <a name="assigning-users-to-github"></a>Gebruikers toewijzen aan GitHub
 

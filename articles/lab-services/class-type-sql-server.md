@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 06/26/2020
 ms.author: enewman
 ms.openlocfilehash: fb1b9e3458d08b8387c7f3978ff83c097fad2375
-ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/28/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105644029"
 ---
 # <a name="set-up-a-lab-to-manage-and-develop-with-sql-server"></a>Een Lab instellen om te beheren en te ontwikkelen met SQL Server

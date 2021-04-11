@@ -5,25 +5,28 @@ description: U kunt uw eigen versleutelings sleutel gebruiken om de gegevens in 
 services: storage
 author: tamram
 ms.service: storage
-ms.date: 03/23/2021
+ms.date: 03/30/2021
 ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 72f7130aad12ee2b5d463195b0b5c7847022bdfd
-ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
+ms.openlocfilehash: 07f8faf503bdea6be8263afa6240594956b61391
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/28/2021
-ms.locfileid: "105645167"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106059442"
 ---
 # <a name="customer-managed-keys-for-azure-storage-encryption"></a>Door de klant beheerde sleutels voor Azure Storage versleuteling
 
 U kunt uw eigen versleutelings sleutel gebruiken om de gegevens in uw opslag account te beveiligen. Wanneer u een door klant beheerde sleutel opgeeft, wordt die sleutel gebruikt voor het beveiligen en beheren van de toegang tot de sleutel waarmee uw gegevens worden versleuteld. Door de klant beheerde sleutels bieden meer flexibiliteit om toegangsbeheer te beheren.
 
-U moet Azure Key Vault of Azure Key Vault beheerde Hardware Security module (HSM) (preview) gebruiken om uw door de klant beheerde sleutels op te slaan. U kunt een eigen sleutel maken en deze opslaan in de sleutel kluis of beheerde HSM, of u kunt de Azure Key Vault-Api's gebruiken om sleutels te genereren. Het opslag account en de sleutel kluis of beheerde HSM moeten zich in dezelfde regio bevinden en in dezelfde Azure Active Directory (Azure AD)-Tenant, maar ze kunnen zich in verschillende abonnementen bevinden.
+U moet een van de volgende Azure-sleutel archieven gebruiken om uw door de klant beheerde sleutels op te slaan:
 
-Zie [Wat is Azure Key Vault?](../../key-vault/general/overview.md)voor meer informatie over Azure Key Vault.
+- [Azure Key Vault](../../key-vault/general/overview.md)
+- [Azure Key Vault beheerde Hardware Security module (HSM) (preview-versie)](../../key-vault/managed-hsm/overview.md)
+
+U kunt een eigen sleutel maken en deze opslaan in de sleutel kluis of beheerde HSM, of u kunt de Azure Key Vault-Api's gebruiken om sleutels te genereren. Het opslag account en de sleutel kluis of beheerde HSM moeten zich in dezelfde regio bevinden en in dezelfde Azure Active Directory (Azure AD)-Tenant, maar ze kunnen zich in verschillende abonnementen bevinden.
 
 > [!IMPORTANT]
 >

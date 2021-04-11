@@ -5,13 +5,13 @@ author: deborahc
 ms.author: dech
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 03/19/2021
-ms.openlocfilehash: ab1b7028ce5f1afef861e696c98f25b56e78ef36
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/07/2021
+ms.openlocfilehash: 099c65143f29f4fdf341b52e5d80731f1bdb0808
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104772464"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107030982"
 ---
 # <a name="partitioning-and-horizontal-scaling-in-azure-cosmos-db"></a>Partitionering en horizontaal schalen in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -26,9 +26,9 @@ In dit artikel wordt de relatie tussen logische en fysieke partities uitgelegd. 
 
 ## <a name="logical-partitions"></a>Logische partities
 
-Een logische partitie bestaat uit een set items die dezelfde partitie sleutel hebben. In een container die bijvoorbeeld gegevens bevat over voedsel voeding, bevatten alle items een `foodGroup` eigenschap. U kunt gebruiken `foodGroup` als de partitie sleutel voor de container. Groepen van items waarvoor specifieke waarden zijn opgegeven voor `foodGroup` , zoals `Beef Products` , `Baked Products` en `Sausages and Luncheon Meats` , vormen afzonderlijke logische partities. U hoeft zich geen zorgen te maken over het verwijderen van een logische partitie wanneer de onderliggende gegevens worden verwijderd.
+Een logische partitie bestaat uit een set items die dezelfde partitie sleutel hebben. In een container die bijvoorbeeld gegevens bevat over voedsel voeding, bevatten alle items een `foodGroup` eigenschap. U kunt gebruiken `foodGroup` als de partitie sleutel voor de container. Groepen van items waarvoor specifieke waarden zijn opgegeven voor `foodGroup` , zoals `Beef Products` , `Baked Products` en `Sausages and Luncheon Meats` , vormen afzonderlijke logische partities.
 
-Een logische partitie definieert ook het bereik van database transacties. U kunt items binnen een logische partitie bijwerken met behulp van een [trans actie met snap shot-isolatie](database-transactions-optimistic-concurrency.md). Wanneer nieuwe items worden toegevoegd aan een container, worden nieuwe logische partities transparant gemaakt door het systeem.
+Een logische partitie definieert ook het bereik van database transacties. U kunt items binnen een logische partitie bijwerken met behulp van een [trans actie met snap shot-isolatie](database-transactions-optimistic-concurrency.md). Wanneer nieuwe items worden toegevoegd aan een container, worden nieuwe logische partities transparant gemaakt door het systeem. U hoeft zich geen zorgen te maken over het verwijderen van een logische partitie wanneer de onderliggende gegevens worden verwijderd.
 
 Er is geen limiet voor het aantal logische partities in de container. Elke logische partitie kan Maxi maal 20 GB aan gegevens bevatten. Goede opties voor de partitie sleutel hebben een breed scala aan mogelijke waarden. Bijvoorbeeld, in een container waarin alle items een eigenschap bevatten `foodGroup` , kunnen de gegevens in de `Beef Products` logische partitie Maxi maal 20 GB groot zijn. Als [u een partitie sleutel selecteert](#choose-partitionkey) met een breed scala aan mogelijke waarden, zorgt u ervoor dat de container kan worden geschaald.
 
@@ -38,7 +38,8 @@ Een container wordt geschaald door gegevens en door voer te distribueren over fy
 
 Het aantal fysieke partities in de container is afhankelijk van het volgende:
 
-* Het aantal ingerichte door Voer (elke afzonderlijke fysieke partitie kan een doorvoer snelheid hebben van Maxi maal 10.000 aanvraag eenheden per seconde).
+* Het aantal ingerichte door Voer (elke afzonderlijke fysieke partitie kan een doorvoer snelheid hebben van Maxi maal 10.000 aanvraag eenheden per seconde). De limiet van 10.000 RU/s voor fysieke partities houdt in dat logische partities ook een limiet van 10.000 RU/s hebben, aangezien elke logische partitie alleen is toegewezen aan één fysieke partitie.
+
 * De totale gegevens opslag (elke afzonderlijke fysieke partitie kan Maxi maal 50 GB gegevens bevatten).
 
 > [!NOTE]

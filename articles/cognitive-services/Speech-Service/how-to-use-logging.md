@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: amishu
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: f044596cf084e68b6c9ca10e3da4fbdf4c8c2062
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 32715ad1a01366d7d56e6fa8129151b15c315e1d
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "95026519"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106504172"
 ---
 # <a name="enable-logging-in-the-speech-sdk"></a>Logboek registratie inschakelen in de Speech SDK
 
-Logboek registratie in bestand is een optionele functie voor de spraak-SDK. Tijdens het vastleggen van de ontwikkeling biedt aanvullende informatie en diagnostische gegevens van de kern onderdelen van de Speech SDK. U kunt deze inschakelen door de eigenschap `Speech_LogFilename` in te stellen voor een spraak configuratie object op de locatie en de naam van het logboek bestand. Logboek registratie wordt globaal geactiveerd zodra een herkenner is gemaakt op basis van die configuratie en kan later niet worden uitgeschakeld. U kunt de naam van een logboek bestand niet wijzigen tijdens een actieve logboek registratie sessie.
+Logboek registratie in bestand is een optionele functie voor de spraak-SDK. Tijdens het vastleggen van de ontwikkeling biedt aanvullende informatie en diagnostische gegevens van de kern onderdelen van de Speech SDK. U kunt deze inschakelen door de eigenschap `Speech_LogFilename` in te stellen voor een spraak configuratie object op de locatie en de naam van het logboek bestand. Logboek registratie wordt verwerkt door een statische klasse in de systeem eigen bibliotheek van Speech SDK. U kunt logboek registratie inschakelen voor een Speech SDK-Recognizer of synthesizer exemplaar. Alle exemplaren in hetzelfde proces schrijven logboek vermeldingen naar hetzelfde logboek bestand.
 
 > [!NOTE]
 > Logboek registratie is beschikbaar sinds Speech SDK versie 1.4.0 in alle ondersteunde spraak SDK-programmeer talen, met uitzonde ring van Java script.

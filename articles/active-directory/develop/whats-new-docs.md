@@ -11,16 +11,45 @@ ms.subservice: develop
 ms.topic: reference
 ms.workload: identity
 ms.author: marsma
-ms.openlocfilehash: 56e6d859293b91a56252372574f59c8dcc2cd80e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 68136cc259e0be4a2f9449aa9ec15f4a14a63890
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101687325"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106074978"
 ---
 # <a name="microsoft-identity-platform-docs-whats-new"></a>Micro soft Identity platform docs: What's New
 
 Welkom bij wat er nieuw is in de documentatie voor micro soft Identity platform. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden.
+
+## <a name="march-2021"></a>2021 maart
+
+### <a name="new-articles"></a>Nieuwe artikelen
+
+- [Een onlangs verwijderde toepassing herstellen of verwijderen met het micro soft Identity-platform](quickstart-restore-app.md)
+
+### <a name="updated-articles"></a>Bijgewerkte artikelen
+
+- [Toestemming van de beheerder op het micro soft Identity-platform](v2-admin-consent.md)
+- [Configuratie vereisten en tips voor probleem oplossing voor Xamarin Android met MSAL.NET](msal-net-xamarin-android-considerations.md)
+- [Daemon-app die web-Api's aanroept-een Token ophalen](scenario-daemon-acquire-token.md)
+- [Daemon-app die web-Api's aanroept-code configuratie](scenario-daemon-app-configuration.md)
+- [Daemon-app die web-Api's aanroept-een web-API van de app aanroepen](scenario-daemon-call-api.md)
+- [Daemon-app voor het aanroepen van web-Api's-verplaatsen naar productie](scenario-daemon-production.md)
+- [Bureau blad-app voor het aanroepen van web-Api's: een Token ophalen](scenario-desktop-acquire-token.md)
+- [Bureau blad-app voor het aanroepen van web-Api's: code configuratie](scenario-desktop-app-configuration.md)
+- [Bureau blad-app die web-Api's aanroept: een web-API aanroepen](scenario-desktop-call-api.md)
+- [Procedure: claims aanpassen die worden verzonden in tokens voor een specifieke app in een Tenant (preview-versie)](active-directory-claims-mapping.md)
+- [Logboekregistratie in MSAL voor Python](msal-logging-python.md)
+- [Micro soft Enter prise SSO-invoeg toepassing voor Apple-apparaten (preview-versie)](apple-sso-plugin.md)
+- [Quickstart: Aanmelding voor Microsoft Identity Platform toevoegen aan een ASP.NET-web-app](quickstart-v2-aspnet-webapp.md)
+- [Quickstart: aanmelding met Microsoft toevoegen aan een ASP.NET Core-web-app](quickstart-v2-aspnet-core-webapp.md)
+- [Snelstartgids: een Token ophalen en de Microsoft Graph-API aanroepen met behulp van de identiteit van een console-app](quickstart-v2-netcore-daemon.md)
+- [Snelstartgids: een ASP.NET Core Web-API beveiligen met het micro soft Identity-platform](quickstart-v2-aspnet-core-web-api.md)
+- [Quickstart: Gebruikers aanmelden en een toegangstoken verkrijgen in een Angular-toepassing met één pagina](quickstart-v2-angular.md)
+- [Ondersteunings- en Help-opties voor ontwikkelaars](developer-support-help-options.md)
+- [Web-app die gebruikers aanmeldt: code configuratie](scenario-web-app-sign-user-app-configuration.md)
+- [Web-app die gebruikers aanmeldt: aanmelden en afmelden](scenario-web-app-sign-user-sign-in.md)
 
 ## <a name="february-2021"></a>Februari 2021
 
@@ -65,25 +94,3 @@ Welkom bij wat er nieuw is in de documentatie voor micro soft Identity platform.
 - [Levens duur van token beleid configureren (preview-versie)](configure-token-lifetimes.md)
 - [Micro soft Identity platform-verificatie bibliotheken](reference-v2-libraries.md)
 - [Micro soft Identity platform en OAuth 2,0-autorisatie code stroom](v2-oauth2-auth-code-flow.md)
-
-## <a name="december-2020"></a>December 2020
-
-### <a name="new-articles"></a>Nieuwe artikelen
-
-- [Quickstart: ASP.NET Core-web-app om gebruikers aan te melden en namens hen Microsoft Graph aan te roepen](quickstart-v2-aspnet-core-webapp-calls-graph.md)
-- [Fouten en uitzonderingen verwerken in MSAL.NET](msal-error-handling-dotnet.md)
-- [Fouten en uitzonderingen verwerken in MSAL voor iOS/macOS](msal-error-handling-ios.md)
-- [Fouten en uitzonderingen verwerken in MSAL voor Java](msal-error-handling-java.md)
-- [Fouten en uitzonderingen verwerken in MSAL.js](msal-error-handling-js.md)
-- [Fouten en uitzonderingen verwerken in MSAL voor Python](msal-error-handling-python.md)
-- [Scenario's voor uitwisseling van micro soft Identity platform-tokens met SAML en OIDC/OAuth](scenario-token-exchange-saml-oauth.md)
-
-### <a name="updated-articles"></a>Bijgewerkte artikelen
-
-- [Quickstart: Aanmelden met Microsoft toevoegen aan een Java-webapp](quickstart-v2-java-webapp.md)
-- [Zelfstudie: Een multitenant-daemon bouwen die het Microsoft-identiteitsplatform gebruikt](tutorial-v2-aspnet-daemon-web-app.md)
-- [Web-app die zich aanmeldt bij gebruikers: app-registratie](scenario-web-app-sign-user-app-registration.md)
-- [Micro soft Identity-platform en impliciete toekennings stroom](v2-oauth2-implicit-grant-flow.md)
-- [Toegangs tokens van micro soft Identity platform](access-tokens.md)
-- [Een web-API die web-Api's aanroept: een Token ophalen voor de app](scenario-web-api-call-api-acquire-token.md)
-

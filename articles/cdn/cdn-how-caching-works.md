@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: allensu
-ms.openlocfilehash: a226682c2580a871e1b2fc4db71f369f3bcc3abb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7a4688c196551f3ab6b5713d8939f53af161d1e3
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96010160"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106505005"
 ---
 # <a name="how-caching-works"></a>Hoe caching werkt
 
@@ -75,6 +75,7 @@ Azure CDN ondersteunt de volgende HTTP-cache-instructie headers, waarmee de cach
 - Bij gebruik in een HTTP-aanvraag van de client naar de CDN-POP, `Cache-Control` wordt standaard door alle Azure CDN profielen genegeerd.
 - Bij gebruik in een HTTP-antwoord van de client naar de CDN-POP:
      - **Azure CDN Standard/Premium van Verizon** en **Azure CDN Standard van micro soft** ondersteunen alle `Cache-Control` richt lijnen.
+     - **Azure CDN Standard/Premium van Verizon** en **Azure CDN Standard van micro soft** voldoet aan het cache gedrag voor Cache-Control-instructies in [RFC 7234-Hypertext Transfer Protocol (http/1.1): caching (IETF.org)](https://tools.ietf.org/html/rfc7234#section-5.2.2.8).
      - **Azure CDN standaard van Akamai** ondersteunt alleen de volgende `Cache-Control` richt lijnen. alle andere worden genegeerd:
          - `max-age`: Een cache kan de inhoud voor het opgegeven aantal seconden opslaan. Bijvoorbeeld `Cache-Control: max-age=5`. Deze richt lijn geeft de maximale hoeveelheid tijd aan die de inhoud als vernieuwd wordt beschouwd.
          - `no-cache`: De inhoud in de cache opslaan, maar de inhoud elke keer valideren voordat deze vanuit de cache wordt afgeleverd. Gelijk aan `Cache-Control: max-age=0` .

@@ -8,12 +8,12 @@ ms.topic: troubleshooting
 ms.date: 10/31/2019
 ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: af4ef156cccded6afe2db09628446a6ffe1ad53a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6213e17f1232bd505ba1edf185a851bf669b9809
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92204636"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106553427"
 ---
 # <a name="verifying-expressroute-connectivity"></a>Connectiviteit ExpressRoute controleren
 Dit artikel helpt u bij het controleren en oplossen van problemen met ExpressRoute-connectiviteit. Met ExpressRoute wordt een on-premises netwerk uitgebreid naar de micro soft-Cloud via een particuliere verbinding die meestal wordt vereenvoudigd door een connectiviteits provider. Voor ExpressRoute-connectiviteit is traditioneel drie afzonderlijke netwerk zones vereist:
@@ -88,7 +88,7 @@ In de ExpressRoute Essentials geeft de status van het *circuit* de status aan va
 Voor een ExpressRoute-circuit moet de status van *het circuit* zijn *ingeschakeld* en moet de *status* van de provider worden *ingericht*.
 
 > [!NOTE]
-> Nadat u een ExpressRoute-circuit hebt geconfigureerd, neemt u contact op met [Microsoft ondersteuning][Support]als de status van het *circuit* niet is ingeschakeld. Als de status van de *provider* echter niet is ingericht, neemt u contact op met uw service provider.
+> Nadat u een ExpressRoute-circuit hebt geconfigureerd, neemt u contact op met [Microsoft ondersteuning][Support]als de status van het *circuit* is vastgelopen in niet ingeschakeld. Als de status van de *provider* daarentegen niet beschikbaar is, neemt u contact op met uw service provider.
 >
 >
 
@@ -145,7 +145,7 @@ ServiceProviderProvisioningState : Provisioned
 ```
 
 > [!NOTE]
-> Nadat u een ExpressRoute-circuit hebt geconfigureerd, neemt u contact op met [Microsoft ondersteuning][Support]als de status van het *circuit* niet is ingeschakeld. Als de status van de *provider* echter niet is ingericht, neemt u contact op met uw service provider.
+> Nadat u een ExpressRoute-circuit hebt geconfigureerd, neemt u contact op met [Microsoft ondersteuning][Support]als de status van het *circuit* is vastgelopen in niet ingeschakeld. Als de status van de *provider* daarentegen niet beschikbaar is, neemt u contact op met uw service provider.
 >
 >
 

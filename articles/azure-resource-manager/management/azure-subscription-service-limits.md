@@ -2,15 +2,15 @@
 title: Limieten en quota voor Azure-abonnementen
 description: Biedt een lijst met algemene Azure-abonnementen en service limieten, quota's en beperkingen. Dit artikel bevat informatie over het verhogen van de limieten en maximum waarden.
 ms.topic: conceptual
-ms.date: 03/15/2021
-ms.openlocfilehash: 4dd62c926cce765ebc2b21378308650e313716ff
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/07/2021
+ms.openlocfilehash: 3ef3e6f3b67e8c92e0137f36e19c62cba79e1c14
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103471002"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107030815"
 ---
-# <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Azure-abonnements-en service limieten, quota's en beperkingen
+# <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Limieten, quota's en beperkingen voor het Azure-abonnement en de Azure-service
 
 Dit document bevat enkele van de meest voorkomende Microsoft Azure limieten, ook wel quota's genoemd.
 
@@ -34,9 +34,9 @@ Zie [overzicht van Azure-prijzen](https://azure.microsoft.com/pricing/)voor meer
 
 Sommige limieten worden beheerd op een regionaal niveau.
 
-We gebruiken vCPU quota's als voor beeld. Als u een quotum toename wilt aanvragen met ondersteuning voor Vcpu's, moet u bepalen hoeveel Vcpu's u wilt gebruiken in welke regio's. Vervolgens maakt u een specifieke aanvraag voor de vCPU quota's voor Azure-resource groepen voor de hoeveel heden en regio's die u wilt. Als u in Europa-west 30 Vcpu's moet gebruiken om uw toepassing daar uit te voeren, vraagt u in Europa-west specifiek 30 Vcpu's aan. Uw vCPU-quotum wordt niet verhoogd in een andere regio: alleen Europa-west heeft het vCPU-quotum van 30.
+We gebruiken vCPU quota's als voor beeld. Als u een quotum toename wilt aanvragen met ondersteuning voor Vcpu's, moet u bepalen hoeveel Vcpu's u wilt gebruiken in welke regio's. Vervolgens vraagt u een toename van de vCPU quota aan voor de hoeveel heden en regio's die u wilt. Als u in Europa-west 30 Vcpu's moet gebruiken om uw toepassing daar uit te voeren, vraagt u in Europa-west specifiek 30 Vcpu's aan. Uw vCPU-quotum wordt niet verhoogd in een andere regio: alleen Europa-west heeft het vCPU-quotum van 30.
 
-Daarom moet u bepalen wat uw Azure-resource groep-quota's voor uw werk belasting in een bepaalde regio moeten zijn. Vraag vervolgens die hoeveelheid aan in elke regio waarin u wilt implementeren. Voor hulp bij het bepalen van de huidige quota's voor specifieke regio's raadpleegt u [fouten voor resource quota oplossen](../templates/error-resource-quota.md).
+Als gevolg hiervan bepaalt u wat uw quota voor uw werk belasting in een bepaalde regio moeten zijn. Vraag vervolgens die hoeveelheid aan in elke regio waarin u wilt implementeren. Voor hulp bij het bepalen van de huidige quota's voor specifieke regio's raadpleegt u [fouten voor resource quota oplossen](../templates/error-resource-quota.md).
 
 ## <a name="general-limits"></a>Algemene limieten
 

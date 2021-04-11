@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
 ms.subservice: pim
-ms.date: 08/06/2020
+ms.date: 04/05/2021
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74c9cd1c55f1b0dde173a7ffbeac92e5518db81e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0d0428f73c4df3d97002def03823ff8cced1d647
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "88005799"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106552628"
 ---
 # <a name="license-requirements-to-use-privileged-identity-management"></a>Licentievereisten voor het gebruik van Privileged Identity Management
 
@@ -30,7 +30,7 @@ Als u Azure Active Directory (Azure AD) Privileged Identity Management (PIM) wil
 
 ## <a name="valid-licenses"></a>Geldige licenties
 
-[!INCLUDE [Azure AD Premium P2 license](../../../includes/active-directory-p2-license.md)]
+U moet [!INCLUDE [Azure AD Premium P2 license](../../../includes/active-directory-p2-license.md)] PIM en alle instellingen ervan gebruiken. Op dit moment kunt u een toegangs beoordeling voor service-principals met toegang tot Azure AD en Azure-resource rollen (preview) bereiken met een Azure Active Directory Premium P2-editie actief is in uw Tenant. Het licentie model voor service-principals wordt voltooid voor algemene Beschik baarheid van deze functie. mogelijk zijn er extra licenties nodig.
 
 ## <a name="licenses-you-must-have"></a>Licenties die u nodig hebt
 
@@ -73,3 +73,5 @@ Als een Azure AD Premium P2, EMS E5 of een proef licentie verloopt, zijn Privile
 - [Privileged Identity Management implementeren](pim-deployment-plan.md)
 - [Aan de slag met Privileged Identity Management](pim-getting-started.md)
 - [Rollen die u niet kunt beheren in Privileged Identity Management](pim-roles.md)
+- [Een toegangs beoordeling van Azure-resource rollen maken in PIM](pim-resource-roles-start-access-review.md)
+- [Een toegangs beoordeling van Azure AD-rollen maken in PIM](pim-how-to-start-security-review.md)

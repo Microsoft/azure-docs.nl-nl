@@ -1,14 +1,14 @@
 ---
 title: 'Zelfstudie: Een aangepaste beleidsdefinitie maken'
 description: In deze zelfstudie maakt u een aangepaste beleidsdefinitie voor Azure Policy om aangepaste bedrijfsregels af te dwingen voor uw Azure-resources.
-ms.date: 10/05/2020
+ms.date: 03/31/2021
 ms.topic: tutorial
-ms.openlocfilehash: 817e6f494b024b9a789f39a4101236f64d8fa0cd
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c6c4fbe05b6df8a6f8521a0551fe276c893bb6be
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97882888"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106092790"
 ---
 # <a name="tutorial-create-a-custom-policy-definition"></a>Zelfstudie: Een aangepaste beleidsdefinitie maken
 

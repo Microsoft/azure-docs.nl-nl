@@ -3,12 +3,12 @@ title: 'Snelstartgids: aan de slag'
 description: In deze Quick Start leert u hoe u aan de slag kunt met het inzicht in de basis werk stroom voor de implementatie van Defender voor IoT.
 ms.topic: quickstart
 ms.date: 2/18/2021
-ms.openlocfilehash: c6136d734570714b691a4ba3c2a72305c4c85590
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: aa26ea26a3fb0a08d931657cb7ad236c68972e2f
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104784489"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106384950"
 ---
 # <a name="quickstart-get-started-with-defender-for-iot"></a>Snelstartgids: aan de slag met Defender voor IoT
 
@@ -20,7 +20,7 @@ Dit artikel bevat een overzicht van de stappen die u moet nemen om Azure Defende
 
 ## <a name="prerequisites"></a>Vereisten
 
-Geen
+- Geen
 
 ## <a name="permission-requirements"></a>Machtigings vereisten
 
@@ -60,11 +60,14 @@ Registratie omvat:
 Aanmelden:
 
 1. Ga naar de portal van Azure Defender voor IoT.
+
 1. Selecteer **abonnement voor onboarding**.
+
 1. Selecteer op de pagina met **prijzen** een abonnement of maak een nieuwe, en voeg het aantal toegewezen apparaten toe.
+
 1. Selecteer het tabblad **de on-premises beheer console downloaden** en sla het gedownloade activerings bestand op. Dit bestand bevat de geaggregeerde vastgelegde apparaten die u hebt gedefinieerd. Het bestand wordt na de eerste aanmelding geüpload naar de beheer console.
 
-Zie [niet meer vrijgeven a subscription](how-to-manage-sensors-on-the-cloud.md#offboard-a-subscription)(Engelstalig) voor meer informatie over het niet meer vrijgeven van een abonnement.
+Zie [niet meer vrijgeven a subscription](how-to-manage-subscriptions.md#offboard-a-subscription)(Engelstalig) voor meer informatie over het niet meer vrijgeven van een abonnement.
 
 ## <a name="install-and-set-up-the-on-premises-management-console"></a>De on-premises beheer console installeren en instellen
 
@@ -87,6 +90,7 @@ Installeren en instellen van:
 Een sensor onboarden door deze te registreren bij Azure Defender voor IoT en een sensor activerings bestand te downloaden:
 
 1. Definieer de naam van een sensor en koppel deze aan een abonnement.
+
 1. Kies een sensor beheer modus:
 
    - **Met de Cloud verbonden Sens oren**: informatie die Sens oren detecteert wordt weer gegeven in de sensor console. Daarnaast worden waarschuwings gegevens geleverd via een IoT-hub en kunnen ze worden gedeeld met andere Azure-Services, zoals Azure Sentinel.
@@ -102,9 +106,13 @@ Zie voor meer informatie [Sens oren voor onboarding en beheren in de Defender vo
 Down load het ISO-pakket vanuit de Azure Defender voor IoT-Portal, installeer de software en stel de sensor in.
 
 1. Selecteer **aan de slag** vanuit de Defender voor IOT-Portal.
+
 1. Selecteer **sensor instellen**.
+
 1. Kies een versie en selecteer **downloaden**.
+
 1. Installeer de sensor software. Zie voor meer informatie [Defender voor IOT-installatie](how-to-install-software.md).
+
 1. Uw sensor activeren en instellen. Zie [Aanmelden en een sensor activeren](how-to-activate-and-set-up-your-sensor.md)voor meer informatie.
 
 ## <a name="connect-sensors-to-an-on-premises-management-console"></a>Sens oren verbinden met een on-premises beheer console

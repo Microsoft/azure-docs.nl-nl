@@ -1,18 +1,19 @@
 ---
 title: 'Zelf studie: Azure Time Series Insights gebruiken voor het opslaan en analyseren van uw Azure IoT-Plug en Play apparaat-telemetrie'
 description: 'Zelf studie: een Time Series Insights omgeving instellen en uw IoT-hub verbinden om telemetrie te bekijken en te analyseren op uw IoT Plug en Play-apparaten.'
-author: lyrana
-ms.author: lyhughes
+author: deepakpalled
+ms.author: dpalled
+manager: diviso
 ms.date: 10/14/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 588d680acc8c21c7f4dcf6569e23110f3c33c482
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: 28cda9fb6997500f6cd7c4c4349635e7b7a36398
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106057368"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106504274"
 ---
 # <a name="tutorial-create-and-configure-a-time-series-insights-gen2-environment"></a>Zelf studie: een Time Series Insights Gen2-omgeving maken en configureren
 
@@ -26,7 +27,7 @@ In deze zelfstudie hebt u
 > * Gebruik de [DTDL-voorbeeld model bestanden (Digital Apparaatdubbels Definition Language)](https://github.com/Azure/opendigitaltwins-dtdl) die u hebt gebruikt voor de temperatuur regelaar en de Thermo staat-apparaten.
 
 > [!NOTE]
-> Deze integratie tussen Time Series Insights en IoT-Plug en Play is in preview. De manier waarop DTDL-apparaatmodellen worden toegewezen aan het Time Series-model van Time Series Insights, kan wijzigen. 
+> Deze integratie tussen Time Series Insights en IoT-Plug en Play is in preview. De manier waarop DTDL-apparaatmodellen worden toegewezen aan het Time Series-model van Time Series Insights, kan wijzigen.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -123,7 +124,7 @@ Vervolgens gaat u het DTDL-apparaatmodel vertalen naar het assetmodel in Azure T
 
 ### <a name="define-your-types"></a>Uw typen definiëren
 
-U kunt beginnen met het opnemen van gegevens in Azure Time Series Insights Gen2 zonder vooraf een model te hebben gedefinieerd. Wanneer telemetrie aankomt, probeert Time Series Insights automatisch tijdreeksexemplaren op te lossen, op basis van de waarden van de eigenschap Tijdreeks-id. Aan alle exemplaren wordt het *standaardtype* toegewezen. U moet handmatig een nieuw type maken om uw exemplaren juist te categoriseren. 
+U kunt beginnen met het opnemen van gegevens in Azure Time Series Insights Gen2 zonder vooraf een model te hebben gedefinieerd. Wanneer telemetrie aankomt, probeert Time Series Insights automatisch tijdreeksexemplaren op te lossen, op basis van de waarden van de eigenschap Tijdreeks-id. Aan alle exemplaren wordt het *standaardtype* toegewezen. U moet handmatig een nieuw type maken om uw exemplaren juist te categoriseren.
 
 De volgende details bieden een overzicht van de eenvoudigste methode om uw DTDL-apparaatmodellen te synchroniseren met de Time Series-modeltypen:
 
@@ -139,7 +140,7 @@ De volgende details bieden een overzicht van de eenvoudigste methode om uw DTDL-
 |-----------|------------------|-------------|
 | `@id` | `id` | `dtmi:com:example:TemperatureController;1` |
 | `displayName`    | `name`   |   `Temperature Controller`  |
-| `description`  |  `description`  |  `Device with two thermostats and remote reboot.` |  
+| `description`  |  `description`  |  `Device with two thermostats and remote reboot.` |
 |`contents` (matrix)| `variables` (object)  | Zie het volgende voorbeeld
 
 ![Schermopname met D T D L naar Time Series-modeltype.](./media/tutorial-configure-tsi/DTDL-to-TSM-Type.png)
@@ -161,7 +162,7 @@ Open een teksteditor en sla de volgende JSON op uw lokale station op.
           "kind": "numeric",
           "value": {
             "tsx": "coalesce($event.workingSet.Long, toLong($event.workingSet.Double))"
-          }, 
+          },
           "aggregation": {
             "tsx": "avg($value)"
           }

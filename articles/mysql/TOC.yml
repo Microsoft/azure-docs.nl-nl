@@ -7,8 +7,6 @@
       href: overview.md
     - name: Welke MySQL-optie moet ik kiezen?
       href: select-right-deployment-type.md
-    - name: Ondersteunde versies
-      href: concepts-supported-versions.md
     - name: Beleid voor versie ondersteuning
       href: concepts-version-policy.md
       displayName: version policy
@@ -21,6 +19,8 @@
       items:
         - name: Wat is Enkele server?
           href: single-server-overview.md
+        - name: Ondersteunde versies
+          href: concepts-supported-versions.md
         - name: Prijscategorieën
           items:
             - name: Prijscategorieën
@@ -395,8 +395,6 @@
       items:
         - name: Wat is Flexible Server?
           href: flexible-server/overview.md
-        - name: Ondersteunde versies
-          href: concepts-supported-versions.md
         - name: Berekeningen en opslag
           href: flexible-server/concepts-compute-storage.md
     - name: Snelstartgidsen

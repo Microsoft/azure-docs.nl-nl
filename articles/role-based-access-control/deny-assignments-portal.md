@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 06/10/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 92046b3a944a747ce76d2426855eec7b6bc2cd70
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1e644d81c2a47ec07833010ae93f4dbb0c57474b
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "84790243"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106077836"
 ---
 # <a name="list-azure-deny-assignments-using-the-azure-portal"></a>Azure deny-toewijzingen weer geven met behulp van de Azure Portal
 
@@ -54,7 +54,7 @@ Volg deze stappen om toewijzingen weigeren te vermelden in het bereik van het ab
 
     ![Toewijzingen weigeren-kolommen](./media/deny-assignments-portal/deny-assignments-columns.png)
 
-    |  |  |
+    | Kolom | Beschrijving  |
     | --- | --- |
     | **Naam** | De naam van de weigerings toewijzing. |
     | **Type principal** | Gebruiker, groep, door het systeem gedefinieerde groep of Service-Principal. |
@@ -79,7 +79,7 @@ Volg deze stappen om aanvullende informatie over een weiger toewijzing weer te g
 
     De Blade **gebruikers** bevatten de volgende twee secties.
 
-    |  |  |
+    | Instelling weigeren  | Description |
     | --- | --- |
     | **Toewijzing weigeren is van toepassing op**  | Beveiligings-principals waarop de weigerings toewijzing van toepassing is. |
     | **Uitsluitingen van toewijzingen weigeren** | Beveiligings-principals die zijn uitgesloten van de weigerings toewijzing. |
@@ -90,7 +90,7 @@ Volg deze stappen om aanvullende informatie over een weiger toewijzing weer te g
 
     ![Machtigingen voor geweigerde toewijzing weigeren](./media/deny-assignments-portal/deny-assignment-denied-permissions.png)
 
-    | Actietype | Beschrijving |
+    | Actietype | Description |
     | --- | --- |
     | **Acties**  | Beheer bewerkingen geweigerd. |
     | **NotActions** | Beheer bewerkingen die zijn uitgesloten van een geweigerde beheer bewerking. |

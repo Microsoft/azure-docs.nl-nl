@@ -4,12 +4,12 @@ description: Leer snel hoe u een privé-Docker-register in Azure Container Regis
 ms.topic: quickstart
 ms.date: 01/22/2019
 ms.custom: seodec18, mvc, devx-track-azurepowershell
-ms.openlocfilehash: 91d4209ccf558bf7c8038d8a753ec038428bc484
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b6928f1c45cdac93b70797daf41205b4c5db27e0
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96019997"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106283815"
 ---
 # <a name="quickstart-create-a-private-container-registry-using-azure-powershell"></a>Quickstart: Een privé-containerregister maken met Azure PowerShell
 
@@ -55,7 +55,7 @@ In deze quickstart maakt u een *Basic*-register. Dit is een voor kosten geoptima
 
 ## <a name="log-in-to-registry"></a>Aanmelden bij register
 
-Voordat u installatiekopieën van containers gaat pushen en ophalen, moet u zich aanmelden bij uw register. In productiescenario's moet u een afzonderlijke identiteit of service-principal gebruiken voor toegang tot het containerregister, maar om deze quickstart niet onnodig lang te maken, gebruikt u de opdracht [Get-AzContainerRegistryCredential][Get-AzContainerRegistryCredential] om de gebruiker met beheerdersrechten in te schakelen voor het register:
+Voordat u installatiekopieën van containers gaat pushen en ophalen, moet u zich aanmelden bij uw register. Als u deze Quick Start wilt blijven gebruiken, schakelt u de gebruiker met beheerders rechten in uw REGI ster in met de opdracht [Get-AzContainerRegistryCredential][Get-AzContainerRegistryCredential] . In productie scenario's moet u een alternatieve [verificatie methode](container-registry-authentication.md) gebruiken voor toegang tot het REGI ster, zoals een service-principal. 
 
 ```powershell
 $creds = Get-AzContainerRegistryCredential -Registry $registry
@@ -68,6 +68,10 @@ $creds.Password | docker login $registry.LoginServer -u $creds.Username --passwo
 ```
 
 De opdracht retourneert `Login Succeeded` nadat deze is voltooid.
+
+> [!TIP]
+> De Azure CLI biedt de `az acr login` opdracht, een handige manier om u aan te melden bij een container register met uw [individuele identiteit](container-registry-authentication.md#individual-login-with-azure-ad), zonder docker-referenties door te geven.
+
 
 [!INCLUDE [container-registry-quickstart-docker-push](../../includes/container-registry-quickstart-docker-push.md)]
 

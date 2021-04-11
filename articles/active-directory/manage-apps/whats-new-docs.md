@@ -1,7 +1,7 @@
 ---
 title: Wat is er nieuw in Azure Active Directory toepassings beheer
 description: Nieuwe en bijgewerkte documentatie voor het Azure Active Directory toepassings beheer.
-ms.date: 03/08/2021
+ms.date: 04/04/2021
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: reference
@@ -9,16 +9,45 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: daveba
-ms.openlocfilehash: 5b645efe2bbaadeca31b4a0a3b957ff53f5ed3aa
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 81898875af85becf1766f02a5b7e077cb388a173
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104775507"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106450035"
 ---
 # <a name="azure-active-directory-application-management-whats-new"></a>Azure Active Directory toepassings beheer: wat is er nieuw
 
 Welkom bij wat er nieuw is in Azure Active Directory documentatie voor toepassings beheer. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden. Zie [Wat is er nieuw in azure Active Directory](../fundamentals/whats-new.md)voor meer informatie over wat er nieuw is in de Application Management-service.
+
+## <a name="march-2021"></a>2021 maart
+
+### <a name="new-articles"></a>Nieuwe artikelen
+
+- [Veelgestelde vragen over Azure Active Directory (Azure AD)-toepassings beheer certificaten](application-management-certs-faq.md)
+- [Azure Active Directory Power shell-voor beelden voor toepassings beheer](app-management-powershell-samples.md)
+- [Automatische versnelling naar een federatieve IDP uitschakelen tijdens het aanmelden van de gebruiker met het beleid voor het detecteren van een thuis domein](prevent-domain-hints-with-home-realm-discovery.md)
+
+### <a name="updated-articles"></a>Bijgewerkte artikelen
+
+- [Azure Active Directory mijn apps-configuratie plannen](my-apps-deployment-plan.md)
+- [Hand leiding voor het integreren van Azure Active Directory met toepassingen](plan-an-application-integration.md)
+- [Integreren met share point (SAML)](application-proxy-integrate-with-sharepoint-server-saml.md)
+- [Toepassings verificatie migreren naar Azure Active Directory](migrate-application-authentication-to-azure-active-directory.md)
+- [Het rapport AD FS toepassings activiteit gebruiken om toepassingen te migreren naar Azure AD](migrate-adfs-application-activity.md)
+- [Een implementatie van eenmalige aanmelding plannen](plan-sso-deployment.md)
+- [Azure Active Directory Power shell-voor beelden voor toepassings beheer](app-management-powershell-samples.md)
+- [Problemen oplossen met Kerberos-beperkte overdrachtsconfiguraties voor toepassingsproxy](application-proxy-back-end-kerberos-constrained-delegation-how-to.md)
+- [Snelstart: Eenmalige aanmelding (SSO) op basis van SAML instellen voor een toepassing in uw Azure Active Directory-tenant (Azure AD)](add-application-portal-setup-sso.md)
+- [Azure Active Directory toepassings beheer: wat is er nieuw](whats-new-docs.md)
+- [Veelgestelde vragen over de toepassings proxy van Active Directory (Azure AD)](application-proxy-faq.md)
+- [Problemen oplossen bij het aanmelden bij een toepassing vanuit Azure AD mijn apps](application-sign-in-other-problem-access-panel.md)
+- [Zelfstudie: Een on-premises toepassing voor externe toegang toevoegen via Application Proxy in Azure Active Directory](application-proxy-add-on-premises-application.md)
+- [De verkeers stroom optimaliseren met Azure Active Directory-toepassingsproxy](application-proxy-network-topology.md)
+- [Azure AD-toepassingsproxy: release geschiedenis van versie](application-proxy-release-version-history.md)
+- [Azure Active Directory aanmeldings gedrag configureren voor een toepassing met behulp van een beleid voor het detecteren van een thuis domein](configure-authentication-for-federated-users-portal.md)
+- [Toepassingsverificatie verplaatsen van Active Directory Federation Services naar Azure Active Directory](migrate-adfs-apps-to-azure.md)
+
 
 ## <a name="february-2021"></a>Februari 2021
 

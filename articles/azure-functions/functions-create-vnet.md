@@ -3,12 +3,12 @@ title: Privé-eind punten gebruiken om Azure Functions te integreren met een vir
 description: Deze zelf studie laat zien hoe u een functie verbindt met een virtueel Azure-netwerk en deze kunt vergren delen met behulp van privé-eind punten.
 ms.topic: article
 ms.date: 2/22/2021
-ms.openlocfilehash: e8ca853908b366b99e150f04ced404f42acc7d21
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: e1ed944250f05f52860c47f6cb61130f50b08e7c
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105027411"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106078771"
 ---
 # <a name="tutorial-integrate-azure-functions-with-an-azure-virtual-network-by-using-private-endpoints"></a>Zelf studie: Azure Functions integreren met een virtueel Azure-netwerk met behulp van privé-eind punten
 
@@ -160,7 +160,7 @@ Maak de privé-eind punten voor Azure Files opslag en Azure Blob Storage met beh
     | Instelling      | Voorgestelde waarde  | Beschrijving      |
     | ------------ | ---------------- | ---------------- |
     | **Abonnement** | Uw abonnement | Het abonnement waarmee deze nieuwe resources zijn gemaakt. | 
-    | **[Resourcegroep](../azure-resource-manager/management/overview.md)**  | myResourceGroup | Kies de resource groep die u hebt gemaakt met uw functie-app. | |
+    | **[Resourcegroep](../azure-resource-manager/management/overview.md)**  | myResourceGroup | Kies de resource groep die u hebt gemaakt met uw functie-app. |
     | **Naam** | bestand-eind punt | De naam van het persoonlijke eind punt voor bestanden uit uw opslag account. |
     | **[Regio](https://azure.microsoft.com/regions/)** | myFunctionRegion | Kies de regio waar u uw opslag account hebt gemaakt. |
 

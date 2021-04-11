@@ -1,14 +1,14 @@
 ---
 title: Besturingselementen in het voorbeeld van het ISM-BEVEILIGING-blauwdrukvoorbeeld voor de Australische overheid
 description: Toewijzing van beheeropties van het blauwdrukvoorbeeld van de ISM-BEVEILIGING van de Australische overheid. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 01/21/2021
+ms.date: 04/02/2021
 ms.topic: sample
-ms.openlocfilehash: df143a871db3d871fe6354eab23b7ca6dc012b78
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ecb6a912d0b1f319022f6b7deff68e1495dccbca
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98679994"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106386446"
 ---
 # <a name="control-mapping-of-the-australian-government-ism-protected-blueprint-sample"></a>Toewijzing van beheeropties van het blauwdrukvoorbeeld van de ISM-BEVEILIGING van de Australische overheid
 

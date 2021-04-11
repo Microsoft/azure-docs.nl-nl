@@ -1,14 +1,14 @@
 ---
 title: Beleidsregels voor gastconfiguratie voor Windows maken
 description: Meer informatie over het maken van een Azure Policy-gast configuratie beleid voor Windows.
-ms.date: 08/17/2020
+ms.date: 03/31/2021
 ms.topic: how-to
-ms.openlocfilehash: 72772743eba23ea7c2a93f5037ac84b671256a66
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6eaefdbc28b8efc53dc7c4d46eb5d8a56d5be141
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104887696"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106096594"
 ---
 # <a name="how-to-create-guest-configuration-policies-for-windows"></a>Beleidsregels voor gastconfiguratie voor Windows maken
 
@@ -25,8 +25,7 @@ Gebruik de volgende acties om uw eigen configuratie te maken voor het valideren 
 > [!IMPORTANT]
 > Aangepaste beleids definities met gast configuratie in de Azure Government-en Azure China-omgevingen is een preview-functie.
 >
-> De gastconfiguratie-extensie is vereist voor het uitvoeren van controles op virtuele machines van Azure.
-> Als u de uitbrei ding op schaal op alle Windows-computers wilt implementeren, wijst u de volgende beleids definities toe: `Deploy prerequisites to enable Guest Configuration Policy on Windows VMs`
+> De gastconfiguratie-extensie is vereist voor het uitvoeren van controles op virtuele machines van Azure. Als u de uitbrei ding op schaal op alle Windows-computers wilt implementeren, wijst u de volgende beleids definities toe: `Deploy prerequisites to enable Guest Configuration Policy on Windows VMs`
 > 
 > Gebruik geen geheimen of vertrouwelijke informatie in aangepaste inhouds pakketten.
 
@@ -138,7 +137,7 @@ class ResourceName : OMI_BaseResource
 };
 ```
 
-Als de resource vereiste eigenschappen heeft, moeten deze ook `Get-TargetResource` parallel met de klasse worden geretourneerd `reasons` . Als `reasons` dit niet het geval is, omvat de service het gedrag ' catch-all ' waarmee de waarden worden vergeleken met `Get-TargetResource` en de waarden die worden geretourneerd door en `Get-TargetResource` die een gedetailleerde vergelijking biedt als `reasons` .
+Als de resource vereiste eigenschappen heeft, moeten deze eigenschappen ook worden geretourneerd door `Get-TargetResource` parallel met de- `reasons` klasse. Als `reasons` dit niet het geval is, omvat de service het gedrag ' catch-all ' waarmee de waarden worden vergeleken met `Get-TargetResource` en de waarden die worden geretourneerd door en `Get-TargetResource` die een gedetailleerde vergelijking biedt als `reasons` .
 
 ### <a name="configuration-requirements"></a>Configuratievereisten
 
@@ -181,9 +180,7 @@ Het voltooide pakket wordt gebruikt door de gast configuratie om de Azure Policy
   - DscNativeResources-module
   - Windows DSC-resource modules die zijn vereist voor de MOF
 
-Power shell-cmdlets helpen bij het maken van het pakket.
-Er is geen map op het hoofd niveau of de versie van de map vereist.
-De pakket indeling moet een zip-bestand zijn en mag niet groter zijn dan de totale grootte van 100 MB bij niet-gecomprimeerde bestanden.
+Power shell-cmdlets helpen bij het maken van het pakket. Er is geen map op het hoofd niveau of de versie van de map vereist. De pakket indeling moet een zip-bestand zijn en mag niet groter zijn dan de totale grootte van 100 MB wanneer deze niet is gecomprimeerd.
 
 ### <a name="storing-guest-configuration-artifacts"></a>Gast configuratie artefacten opslaan
 
@@ -217,8 +214,7 @@ Configuration AuditBitLocker
 AuditBitLocker
 ```
 
-Voer dit script uit in een Power shell-terminal of sla dit bestand `config.ps1` op met de naam in de projectmap.
-Voer deze uit in Power shell door `./config.ps1` uit te voeren in de Terminal. Er wordt een nieuw MOF-bestand gemaakt.
+Voer dit script uit in een Power shell-terminal of sla dit bestand `config.ps1` op met de naam in de projectmap. Voer deze uit in Power shell door `./config.ps1` uit te voeren in de Terminal. Er wordt een nieuw MOF-bestand gemaakt.
 
 De `Node AuditBitlocker` opdracht is niet technisch vereist, maar er wordt een bestand gemaakt met de naam `AuditBitlocker.mof` in plaats van de standaard waarde `localhost.mof` . Als u de bestands naam. MOF volgt, is het eenvoudig om veel bestanden te organiseren wanneer deze op schaal worden uitgevoerd.
 
@@ -274,7 +270,7 @@ Para meters van de `Publish-GuestConfigurationPackage` cmdlet:
 - **Pad**: locatie van het pakket dat moet worden gepubliceerd
 - **ResourceGroupName**: de naam van de resource groep waar het opslag account zich bevindt
 - **StorageAccountName**: naam van het opslag account waarin het pakket moet worden gepubliceerd
-- **StorageContainerName**: (standaard: *guestconfiguration*) naam van de opslag container in het opslag account
+- **StorageContainerName**: (standaard: _guestconfiguration_) naam van de opslag container in het opslag account
 - **Geforceerd**: bestaand pakket overschrijven in het opslag account met dezelfde naam
 
 In het volgende voor beeld wordt het pakket gepubliceerd naar een opslag container naam ' guestconfiguration '.
@@ -367,7 +363,7 @@ Hieronder vindt u een voorbeeld fragment van een beleids definitie waarmee filte
 
 ### <a name="using-parameters-in-custom-guest-configuration-policy-definitions"></a>Para meters gebruiken in de aangepaste gast configuratie beleids definities
 
-Gast configuratie ondersteunt het overschrijven van eigenschappen van een configuratie tijdens runtime. Deze functie betekent dat de waarden in het MOF-bestand in het pakket niet als statisch moeten worden beschouwd. De onderdrukkings waarden worden geleverd via Azure Policy en hebben geen invloed op de manier waarop de configuraties worden gemaakt of gecompileerd.
+Gast configuratie ondersteunt het overschrijven van eigenschappen van een configuratie tijdens runtime. Deze functie betekent dat de waarden in het MOF-bestand in het pakket niet als statisch moeten worden beschouwd. De onderdrukkings waarden worden geleverd via Azure Policy en wijzigen niet hoe de configuraties worden gemaakt of gecompileerd.
 
 De cmdlets `New-GuestConfigurationPolicy` en `Test-GuestConfigurationPolicyPackage` bevatten een para meter met de naam **para meter**. Deze para meter gebruikt de definitie van de hash-tabel, inclusief alle details over elke para meter en maakt de vereiste secties van elk bestand dat wordt gebruikt voor de Azure Policy definitie.
 
@@ -389,7 +385,7 @@ $PolicyParameterInfo = @(
         DisplayName = 'windows service name.'                           # Policy parameter display name (mandatory)
         Description = "Name of the windows service to be audited."      # Policy parameter description (optional)
         ResourceType = "Service"                                        # DSC configuration resource type (mandatory)
-        ResourceId = 'UserSelectedNameExample'                                   # DSC configuration resource id (mandatory)
+        ResourceId = 'UserSelectedNameExample'                          # DSC configuration resource id (mandatory)
         ResourcePropertyName = "Name"                                   # DSC configuration resource property name (mandatory)
         DefaultValue = 'winrm'                                          # Policy parameter default value (optional)
         AllowedValues = @('BDESVC','TermService','wuauserv','winrm')    # Policy parameter allowed values (optional)
@@ -431,8 +427,7 @@ Als u een update wilt vrijgeven voor het beleid, brengt u de wijziging aan voor 
 > [!NOTE]
 > De `version` eigenschap van de toewijzing van de gast configuratie heeft alleen invloed op pakketten die door micro soft worden gehost. De best practice voor het versie beheer van aangepaste inhoud is het insluiten van de versie in de bestands naam.
 
-Geef bij uitvoering `New-GuestConfigurationPackage` een naam op voor het pakket dat deze uniek maakt ten opzichte van vorige versies. U kunt een versie nummer gebruiken in de naam zoals `PackageName_1.0.0` .
-Het nummer in dit voor beeld wordt alleen gebruikt om het pakket uniek te maken, niet om op te geven dat het pakket moet worden beschouwd als een nieuwe of oudere versie dan andere pakketten.
+Geef bij uitvoering `New-GuestConfigurationPackage` een naam op voor het pakket dat deze uniek maakt ten opzichte van vorige versies. U kunt een versie nummer gebruiken in de naam zoals `PackageName_1.0.0` . Het nummer in dit voor beeld wordt alleen gebruikt om het pakket uniek te maken, niet om op te geven dat het pakket moet worden beschouwd als een nieuwe of oudere versie dan andere pakketten.
 
 Werk vervolgens de para meters die worden gebruikt met de `New-GuestConfigurationPolicy` cmdlet uit die hieronder worden beschreven.
 

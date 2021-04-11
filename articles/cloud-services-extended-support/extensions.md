@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: f9029a36dc3b778e139b4553524e8e2ca6b4bbad
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6db43acda679c6c1c1edd6336f693cc4757b6d45
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98757166"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106220914"
 ---
 # <a name="extensions-for-cloud-services-extended-support"></a>Uitbrei dingen voor Cloud Services (uitgebreide ondersteuning)
 
@@ -36,6 +36,14 @@ Met de basis controle worden gegevens van de prestatie meter items uit rolinstan
 Met geavanceerde controle worden extra metrische gegevens bemonsterd en verzameld met intervallen van vijf minuten, 1 uur en 12 uur. De geaggregeerde gegevens worden opgeslagen in een opslag account, in tabellen, en worden na 10 dagen verwijderd. Het gebruikte opslag account wordt geconfigureerd door de rol; u kunt verschillende opslag accounts voor verschillende rollen gebruiken. 
 
 Zie [de Windows Azure Diagnostics-extensie Toep assen in Cloud Services (uitgebreide ondersteuning)](enable-wad.md) voor meer informatie
+
+## <a name="anti-malware-extension"></a>Anti-malware-extensie
+Een Azure-toepassing of-service kan micro soft antimalware voor Azure Cloud Services inschakelen en configureren met behulp van Power shell-cmdlets. Houd er rekening mee dat micro soft antimalware is geïnstalleerd met een uitgeschakelde status in het Cloud Services-platform met Windows Server 2012 R2 en ouder waarvoor een actie moet worden uitgevoerd door een Azure-toepassing om deze functie in te scha kelen. Voor Windows Server 2016 en hoger is Windows Defender standaard ingeschakeld, daarom kunnen deze cmdlets worden gebruikt voor het configureren van antimalware.
+
+Zie voor meer informatie [micro soft antimalware toevoegen aan Azure-Cloud service met behulp van uitgebreide ondersteuning (CS-es)](https://docs.microsoft.com/azure/security/fundamentals/antimalware-code-samples#add-microsoft-antimalware-to-azure-cloud-service-using-extended-support)
+
+Als u meer wilt weten over Azure antimalware, kunt u [hier](https://docs.microsoft.com/azure/security/fundamentals/antimalware) terecht
+
 
 
 ## <a name="next-steps"></a>Volgende stappen 

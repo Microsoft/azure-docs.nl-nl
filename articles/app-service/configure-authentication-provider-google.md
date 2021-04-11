@@ -3,16 +3,16 @@ title: Google-verificatie configureren
 description: Meer informatie over het configureren van Google-verificatie als een id-provider voor uw App Service-of Azure Functions-app.
 ms.assetid: 2b2f9abf-9120-4aac-ac5b-4a268d9b6e2b
 ms.topic: article
-ms.date: 09/02/2019
+ms.date: 03/29/2021
 ms.custom:
 - seodec18
 - fasttrack-edit
-ms.openlocfilehash: e8a9fbe6072f3628d755ad3ad5aa5a623fc3ab23
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f6bec32fa928e840569ed95c35a056db91ea9737
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "80519949"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106077989"
 ---
 # <a name="configure-your-app-service-or-azure-functions-app-to-use-google-login"></a>Uw App Service-of Azure Functions-app configureren voor het gebruik van Google-aanmelding
 
@@ -34,21 +34,20 @@ Als u de procedure in dit onderwerp wilt volt ooien, moet u een Google-account h
 
 ## <a name="add-google-information-to-your-application"></a><a name="secrets"> </a>Google-gegevens toevoegen aan uw toepassing
 
-1. Ga in het [Azure Portal]naar uw app service-app.
-1. Selecteer **instellingen**  >  **verificatie/autorisatie** en zorg ervoor dat **app service-verificatie** is **ingeschakeld**.
-1. Selecteer **Google** en plak de waarden van de App-ID en het app-geheim die u eerder hebt verkregen. Schakel de scopes in die nodig zijn voor uw toepassing.
-1. Selecteer **OK**.
+1. Meld u aan bij de [Azure Portal] en navigeer naar uw app.
+1. Selecteer **verificatie** in het menu aan de linkerkant. Klik op **ID-provider toevoegen**.
+1. Selecteer **Google** in de vervolg keuzelijst ID-provider. Plak de App-ID en de geheime waarden van de app die u eerder hebt verkregen.
 
-   App Service biedt verificatie, maar beperkt geen geautoriseerde toegang tot uw site-inhoud en Api's. Zie [gebruikers machtigen of weigeren](app-service-authentication-how-to.md#authorize-or-deny-users)voor meer informatie.
+    Het geheim wordt opgeslagen als een sleuf-plak [toepassings instelling](./configure-common.md#configure-app-settings) met de naam `GOOGLE_PROVIDER_AUTHENTICATION_SECRET` . U kunt deze instelling later bijwerken om [Key Vault verwijzingen](./app-service-key-vault-references.md) te gebruiken als u het geheim in azure Key Vault wilt beheren.
 
-1. Beschrijving Als u de toegang tot de site alleen wilt beperken voor gebruikers die zijn geverifieerd door Google, stelt **u een actie in die moet worden uitgevoerd wanneer de aanvraag niet is geverifieerd** bij **Google**. Wanneer u deze functionaliteit instelt, vereist uw app dat alle aanvragen worden geverifieerd. Ook worden alle niet-geverifieerde aanvragen voor verificatie doorgestuurd naar Google.
+1. Als dit de eerste ID-provider is die voor de toepassing is geconfigureerd, wordt u ook gevraagd om een App Service de sectie **verificatie-instellingen** . Als dat niet het geval is, kunt u door gaan met de volgende stap.
+    
+    Deze opties bepalen hoe uw toepassing reageert op niet-geverifieerde aanvragen en de standaard selecties omleiden alle aanvragen om u aan te melden bij deze nieuwe provider. U kunt dit gedrag nu aanpassen of deze instellingen later aanpassen via het hoofd scherm voor **verificatie** door **bewerken** naast verificatie- **instellingen** te kiezen. Zie voor meer informatie over deze opties [verificatie stroom](overview-authentication-authorization.md#authentication-flow).
 
-    > [!CAUTION]
-    > Het beperken van de toegang op deze manier is van toepassing op alle aanroepen naar uw app. Dit is mogelijk niet wenselijk voor apps met een openbaar beschik bare start pagina, zoals in veel toepassingen met één pagina. Voor dergelijke toepassingen kunt u **anonieme aanvragen (geen actie) toestaan** , zodat de verificatie zelf door de app hand matig wordt gestart. Zie voor meer informatie [verificatie stroom](overview-authentication-authorization.md#authentication-flow).
+1. Beschrijving Klik op **volgende: bereiken** en voeg de scopes toe die nodig zijn voor de toepassing. Deze worden tijdens de aanmeldings tijd aangevraagd voor op de browser gebaseerde stromen.
+1. Klik op **Add**.
 
-1. Selecteer **Opslaan**.
-
-U bent nu klaar om Google te gebruiken voor verificatie in uw app.
+U bent nu klaar om Google te gebruiken voor verificatie in uw app. De provider wordt weer gegeven in het scherm **verificatie** . Hier kunt u deze provider configuratie bewerken of verwijderen.
 
 ## <a name="next-steps"></a><a name="related-content"> </a>Volgende stappen
 

@@ -5,12 +5,12 @@ author: rashi-ms
 ms.author: rajosh
 ms.topic: conceptual
 ms.date: 02/07/2021
-ms.openlocfilehash: c2e739a45c7915c957ca89e5b01b98afa945d03e
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: a22fa184f91cb409f7a4d7795a4bc34bdd83e598
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105557187"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106077802"
 ---
 # <a name="assessment-overview-migrate-to-azure-sql"></a>Overzicht van evaluatie (migreren naar Azure SQL)
 
@@ -28,6 +28,9 @@ Er zijn drie soorten evaluaties die u kunt maken met behulp van de Azure Migrate
 **Azure VM** | Evaluaties om uw on-premises servers te migreren naar virtuele Azure-machine. <br/><br/> U kunt uw on-premises servers in [VMware](how-to-set-up-appliance-vmware.md) en [Hyper-V-](how-to-set-up-appliance-hyper-v.md) omgeving, en [fysieke servers](how-to-set-up-appliance-physical.md) voor migratie naar virtuele Azure-machines evalueren met dit beoordelings type.
 **Azure SQL** | Beoordelingen voor het migreren van uw on-premises SQL-servers vanuit uw VMware-omgeving naar Azure SQL Database of Azure SQL Managed instance.
 **Azure VMware Solution (AVS)** | Evaluaties om uw on-premises servers te migreren naar [Azure VMware Solution (AVS)](../azure-vmware/introduction.md). <br/><br/> U kunt uw on-premises [VMware-VM’s](how-to-set-up-appliance-vmware.md) evalueren voor migratie naar Azure VMware Solution (AVS) met dit evaluatietype. [Meer informatie](concepts-azure-vmware-solution-assessment-calculation.md)
+
+> [!NOTE]
+> Als het aantal Azure VM-of AVS-evaluaties onjuist is in het hulp programma detectie en evaluatie, klikt u op het totale aantal evaluaties om naar alle evaluaties te gaan en de Azure VM-of AVS-evaluaties opnieuw te berekenen. In het hulp programma detectie en evaluatie wordt vervolgens het juiste aantal voor dat evaluatie type weer gegeven. 
 
 Een Azure SQL-evaluatie biedt één formaat criterium:
 

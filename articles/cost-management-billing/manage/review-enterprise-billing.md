@@ -1,5 +1,5 @@
 ---
-title: Factureringsgegevens voor de Azure Enterprise-enrollment controleren met REST API
+title: Facturerings gegevens voor Azure Enter prise-inschrijving door nemen met REST API
 description: Meer informatie over het gebruik van Azure REST API's om de factureringsgegevens voor Enterprise-enrollment te controleren.
 author: lleonard-msft
 ms.service: cost-management-billing
@@ -7,12 +7,12 @@ ms.subservice: enterprise
 ms.topic: article
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 777c8549d79f820c1847e711969919df128cebd3
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
-ms.translationtype: HT
+ms.openlocfilehash: 4ac9c38c3f86c1226edf3b448324205cf5f98568
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132411"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106058864"
 ---
 # <a name="review-enterprise-enrollment-billing-using-rest-apis"></a>Facturering van Enterprise-enrollment controleren met behulp van REST API's
 

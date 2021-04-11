@@ -5,15 +5,15 @@ author: martinekuan
 manager: martinekuan
 ms.service: multiple
 ms.topic: conceptual
-ms.date: 03/03/2020
+ms.date: 03/30/2021
 ms.author: martinek
 ms.custom: references_regions
-ms.openlocfilehash: 3310d4a7d86db9dee7d5f71fc9410545817886f3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9fda6f913fcb5325c811671cd6476dcbf2413766
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97511226"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106058014"
 ---
 # <a name="business-continuity-and-disaster-recovery-bcdr-azure-paired-regions"></a>Bedrijfscontinuïteit en herstel na noodgeval (BCDR): gekoppelde Azure-regio's
 
@@ -29,7 +29,7 @@ Een regionaal paar bestaat uit twee regio's binnen dezelfde geografie. Azure ser
 
 Sommige Azure-Services hebben meer voor deel van gekoppelde regio's om de bedrijfs continuïteit te waarborgen en om te voor komen dat gegevens verloren gaan.  Azure biedt verschillende [opslag oplossingen](./storage/common/storage-redundancy.md#redundancy-in-a-secondary-region) die gebruikmaken van gekoppelde regio's om de beschik baarheid van gegevens te garanderen. Zo repliceren [Azure geo-redundante opslag](./storage/common/storage-redundancy.md#geo-redundant-storage) (GRS) automatisch gegevens naar een secundaire regio, zodat de gegevens duurzaam zijn, zelfs in het geval dat de primaire regio niet kan worden hersteld. 
 
-Houd er rekening mee dat niet alle Azure-Services gegevens automatisch repliceren, en dat alle Azure-Services automatisch van een defecte regio naar het bijbehorende paar vallen.  In dergelijke gevallen moet het herstel en de replicatie worden geconfigureerd door de klant.
+Houd er rekening mee dat niet alle Azure-Services gegevens automatisch repliceren, en dat alle Azure-Services niet automatisch worden teruggevallen van een defecte regio naar het bijbehorende paar.  In dergelijke gevallen moet het herstel en de replicatie worden geconfigureerd door de klant.
 
 ## <a name="can-i-select-my-regional-pairs"></a>Kan ik mijn regionale paren selecteren?
 
@@ -51,14 +51,15 @@ Nee. Klanten kunnen Azure-Services gebruiken voor het ontwikkelen van een flexib
 |:--- |:--- |:--- |
 | Asia-Pacific |Azië-oost (Hongkong) | Zuidoost-Azië (Singapore) |
 | Australië |Australië - oost |Australië - zuidoost |
-| Australië |Australië - centraal |Australië - centraal 2 |
+| Australië |Australië - centraal |Australië-centraal 2 * |
 | Brazilië |Brazilië - zuid |VS - zuid-centraal |
+| Brazilië |Brazilië-Zuidoost * |Brazilië - zuid |
 | Canada |Canada - midden |Canada - oost |
 | China |China - noord |China East|
 | China |China - noord 2 |China - oost 2|
 | Europa |Europa - noord (Ierland) |Europa - west (Nederland) |
-| Frankrijk |Frankrijk - centraal|Frankrijk - zuid|
-| Duitsland |Duitsland - centraal |Duitsland - noordoost |
+| Frankrijk |Frankrijk - centraal|Frankrijk-zuid *|
+| Duitsland |Duitsland - west-centraal |Duitsland-noord * |
 | India |India - centraal |India - zuid |
 | India |India - west |India - zuid |
 | Japan |Japan - oost |Japan - west |
@@ -67,15 +68,17 @@ Nee. Klanten kunnen Azure-Services gebruiken voor het ontwikkelen van een flexib
 | Noord-Amerika |VS - oost 2 |VS - centraal |
 | Noord-Amerika |VS - noord-centraal |VS - zuid-centraal |
 | Noord-Amerika |VS - west 2 |VS - west-centraal |
-| Noorwegen | Noorwegen - oost | Noorwegen - west |
-| Zuid-Afrika | Zuid-Afrika - noord |Zuid-Afrika - west |
-| Zwitserland | Zwitserland - noord |Zwitserland - west |
+| Noorwegen | Noorwegen - oost | Noor wegen West * |
+| Zuid-Afrika | Zuid-Afrika - noord |Zuid-Afrika-west * |
+| Zwitserland | Zwitserland - noord |Zwitserland-west * |
 | VK |Verenigd Koninkrijk West |Verenigd Koninkrijk Zuid |
-| Verenigde Arabische Emiraten | VAE - noord | UAE - centraal
-| US Department of Defense |US DoD East |US DoD Central |
-| Amerikaanse overheid |VS (overheid) - Arizona |VS (overheid) - Texas |
-| Amerikaanse overheid |US Gov - Iowa |VS (overheid) - Virginia |
-| Amerikaanse overheid |VS (overheid) - Virginia |VS (overheid) - Texas |
+| Verenigde Arabische Emiraten | VAE - noord | UAE-centraal * |
+| US Department of Defense |US DoD-oost * |US DoD-centraal * |
+| Amerikaanse overheid |US Gov-Arizona * |US Gov-Texas * |
+| Amerikaanse overheid |US Gov-Iowa * |US Gov-Virginia * |
+| Amerikaanse overheid |US Gov-Virginia * |US Gov-Texas * |
+
+(*) Bepaalde regio's zijn beperkt tot ondersteuning van specifieke klant scenario's, bijvoorbeeld in het geval van nood herstel. Deze regio's zijn alleen op aanvraag beschikbaar door [een nieuwe ondersteunings aanvraag te maken in het Azure Portal](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
 > [!Important]
 > - West-India is in één richting gekoppeld. De secundaire regio van West-India is India-zuid, maar India-zuid secundaire regio is centraal India.

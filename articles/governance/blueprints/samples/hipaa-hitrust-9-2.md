@@ -1,14 +1,14 @@
 ---
 title: Overzicht van het HIPAA HITRUST 9.2-blauwdrukvoorbeeld
 description: Overzicht van het HIPAA HITRUST 9.2-blauwdrukvoorbeeld. Met dit blauwdrukvoorbeeld kunnen klanten specifieke HIPAA HITRUST 9.2- beheeropties evalueren.
-ms.date: 01/27/2021
+ms.date: 04/02/2021
 ms.topic: sample
-ms.openlocfilehash: bd65b6113f291457096bacc02bdbcfd92d6e0f84
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 168946319c11f31ee41594d82d9ff186dea232cd
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98915540"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106386581"
 ---
 # <a name="hipaa-hitrust-92-blueprint-sample"></a>HIPAA HITRUST 9.2-blauwdrukvoorbeeld
 

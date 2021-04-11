@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 06/22/2019
-ms.openlocfilehash: c8cbfb619c9eed325161503f705bf5c4c0746265
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: dc084da6ef7f26b9e434acf8985c7077f5eaffe2
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "95992933"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106078363"
 ---
 # <a name="create-and-manage-trading-partner-agreements-in-azure-logic-apps"></a>Handelspartner-overeenkomsten maken en beheren in Azure Logic Apps
 
@@ -60,14 +60,13 @@ Selecteer in het hoofd menu van Azure **alle services**. Voer in het zoekvak ' I
    | Eigenschap | Vereist | Waarde | Beschrijving |
    |----------|----------|-------|-------------|
    | **Naam** | Ja | <*overeenkomst-naam*> | De naam voor uw overeenkomst |
-   | **Type overeenkomst** | Yes | **AS2**, **X12** of **EDIFACT** | Het protocol type voor uw overeenkomst. Wanneer u een overeenkomst bestand maakt, moet de inhoud in dat bestand overeenkomen met het overeenkomst type. | |  
+   | **Type overeenkomst** | Yes | **AS2**, **X12** of **EDIFACT** | Het protocol type voor uw overeenkomst. Wanneer u een overeenkomst bestand maakt, moet de inhoud in dat bestand overeenkomen met het overeenkomst type. |
    | **Host-partner** | Yes | <*host-partner naam*> | De host-partner vertegenwoordigt de organisatie die de overeenkomst specificeert |
    | **Host-id** | Yes | <*host-partner-id*> | De id van de host-partner |
    | **Gast partner** | Yes | <*gast-partner naam*> | De gast partner vertegenwoordigt de organisatie die zakendoet met de host-partner |
    | **Gast identiteit** | Yes | <*gast-partner-id*> | De id van de gast partner |
    | **Instellingen voor ontvangen** | Varieert | Varieert | Met deze eigenschappen geeft u op hoe de host-partner alle inkomende berichten van de gast partner in de overeenkomst ontvangt. Zie voor meer informatie het betreffende type overeenkomst: <p>- [AS2-bericht instellingen](../logic-apps/logic-apps-enterprise-integration-as2-message-settings.md) <br>- [EDIFACT-bericht instellingen](logic-apps-enterprise-integration-edifact.md) <br>- [X12-bericht instellingen](logic-apps-enterprise-integration-x12.md) |
    | **Instellingen verzenden** | Varieert | Varieert | Met deze eigenschappen geeft u op hoe de host-partner alle uitgaande berichten naar de gast partner in de overeenkomst verzendt. Zie voor meer informatie het betreffende type overeenkomst: <p>- [AS2-bericht instellingen](../logic-apps/logic-apps-enterprise-integration-as2-message-settings.md) <br>- [EDIFACT-bericht instellingen](logic-apps-enterprise-integration-edifact.md) <br>- [X12-bericht instellingen](logic-apps-enterprise-integration-x12.md) |
-   |||||
 
    > [!IMPORTANT]
    > De oplossing voor een overeenkomst is afhankelijk van de items die zijn gedefinieerd in de partner en het inkomende bericht:

@@ -9,12 +9,12 @@ ms.subservice: monitoring
 ms.date: 11/30/2020
 ms.author: mahi
 ms.reviewer: mahi
-ms.openlocfilehash: 6861fd7a92c26fad883f14fb430a03b237c90122
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: ba730adaa1e3b111586012ba1849c6dc84d6db00
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105609255"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106553988"
 ---
 # <a name="use-azure-monitor-with-your-azure-synapse-analytics-workspace"></a>Azure Monitor gebruiken met uw Azure Synapse Analytics-werk ruimte
 
@@ -103,16 +103,20 @@ Meld u aan bij de Azure Portal en selecteer **monitor**  >  **waarschuwingen** o
 
 Dit zijn de logboeken die worden gegenereerd door Azure Synapse Analytics-werk ruimten:
 
-| Naam van Log Analytics tabel | Naam van logboek categorie                 | Description |
-|-------------------------------|-------------------------------------------------|-------------|
-| SynapseGatewayApiRequests     | GatewayApiRequests             | API-aanvragen van Azure Synapse gateway. |
-| SynapseRbacOperations         | SynapseRbacOperations          | Azure Synapse (SRBAC)-bewerkingen op basis van op rollen gebaseerde toegangs beheer. |
+| Naam van Log Analytics tabel       | Naam van logboek categorie              | Beschrijving          |
+|--------------------------------|--------------------------------|----------------------|
+| SynapseGatewayApiRequests      | GatewayApiRequests             | API-aanvragen van Azure Synapse gateway. |
+| SynapseRbacOperations          | SynapseRbacOperations          | Azure Synapse (SRBAC)-bewerkingen op basis van op rollen gebaseerde toegangs beheer. |
+| SynapseBuiltinSqlReqsEnded     | BuiltinSqlReqsEnded            | Azure Synapse-ingebouwde SQL-pool met serverloze aanvragen beëindigd. |
+| SynapseIntegrationPipelineRuns | IntegrationPipelineRuns        | Azure Synapse Integration-pijplijn uitvoeringen. |
+| SynapseIntegrationActivityRuns | IntegrationActivityRuns        | Azure Synapse-integratie activiteit wordt uitgevoerd. |
+| SynapseIntegrationTriggerRuns  | IntegrationTriggerRuns         | Azure Synapse-integratie trigger wordt uitgevoerd. |
 
 ### <a name="dedicated-sql-pool-logs"></a>Exclusieve logboeken van de SQL-groep
 
 Dit zijn de logboeken die worden gegenereerd door toegewezen SQL-groepen:
 
-| Naam van Log Analytics tabel        | Naam van logboek categorie             | Description |
+| Naam van Log Analytics tabel        | Naam van logboek categorie             | Beschrijving |
 |----------------------|--------------------------------------|-------------|
 | SynapseSqlPoolExecRequests  | ExecRequests | Informatie over SQL-aanvragen/-query's in een door Azure Synapse toegewezen SQL-groep.
 | SynapseSqlPoolDmsWorkers    | DmsWorkers   | Informatie over werk nemers die de DMS-stappen in een door Azure Synapse toegewezen SQL-pool volt ooien.
@@ -131,7 +135,7 @@ Raadpleeg de volgende informatie voor meer informatie over deze logboeken:
 
 Hier volgt het logboek dat wordt verzonden door Apache Spark Pools:
 
-| Naam van Log Analytics tabel               | Naam van logboek categorie              | Description                 |
+| Naam van Log Analytics tabel               | Naam van logboek categorie              | Beschrijving                 |
 |-----------------------------|---------------------------------------|-----------------------------|
 | SynapseBigDataPoolApplicationsEnded | BigDataPoolAppsEnded | Informatie over beëindigde Apache Spark-toepassingen |
 

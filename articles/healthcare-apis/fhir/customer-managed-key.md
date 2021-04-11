@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: overview
 ms.date: 09/28/2020
 ms.author: ginle
-ms.openlocfilehash: 08b5f63f1fffc2369eff620ca1937f298c2d9ca5
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.openlocfilehash: daa71a6df0ad412823736b3ee094cfd3945af492
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "103018305"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106220846"
 ---
 # <a name="configure-customer-managed-keys-at-rest"></a>Door de klant beheerde sleutels op rest configureren
 
@@ -23,7 +23,7 @@ In azure wordt dit doorgaans gerealiseerd met behulp van een versleutelings sleu
 
 - [De Azure Cosmos DB-resourceprovider registreren voor uw Azure-abonnement](../../cosmos-db/how-to-setup-cmk.md#register-resource-provider) 
 - [Uw Azure Key Vault-exemplaar configureren](../../cosmos-db/how-to-setup-cmk.md#configure-your-azure-key-vault-instance)
-- [Een toegangs beleid toevoegen aan uw Azure Key Vault-exemplaar](../../cosmos-db/how-to-setup-cmk.md#add-an-access-policy-to-your-azure-key-vault-instance)
+- [Een toegangs beleid toevoegen aan uw Azure Key Vault-exemplaar](../../cosmos-db/how-to-setup-cmk.md#add-access-policy)
 - [Een sleutel in Azure Key Vault genereren](../../cosmos-db/how-to-setup-cmk.md#generate-a-key-in-azure-key-vault)
 
 ## <a name="using-azure-portal"></a>Azure Portal gebruiken

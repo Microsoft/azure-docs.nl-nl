@@ -11,18 +11,18 @@ ms.topic: conceptual
 ms.date: 03/11/2021
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 432330ae06b2e1c19401456dc05f87d0dd908f2d
-ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
+ms.openlocfilehash: 6066b5efc9bb004aab6b651f15d24b19672c3497
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103574123"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106220603"
 ---
 # <a name="upgrade-your-azure-free-account-or-azure-for-students-starter-account"></a>Een upgrade uitvoeren voor uw gratis Azure-account of Microsoft Azure for Students Starter-account
 
 U kunt uw [gratis Azure-account](https://azure.microsoft.com/free/) upgraden naar [tarieven voor betalen per gebruik](https://azure.microsoft.com/offers/ms-azr-0003p/) in de Azure Portal.
 
-Als u een [Azure for students starter-account](https://azure.microsoft.com/offers/ms-azr-0144p/) hebt en in aanmerking komt voor een [gratis Azure-account](https://azure.microsoft.com/free/), kunt u upgraden naar een [gratis Azure-account](https://azure.microsoft.com/free/). U krijgt $ 200 aan Azure-tegoed en 12 maanden aan gratis services bij de upgrade. Als u niet in aanmerking komt voor een gratis account, kunt u een upgrade uitvoeren naar betalen naar gebruik- [tarieven](https://azure.microsoft.com/offers/ms-azr-0003p/) met een [ondersteunings aanvraag](https://go.microsoft.com/fwlink/?linkid=2083458).
+Als u een [Azure for students starter-account](https://azure.microsoft.com/offers/ms-azr-0144p/) hebt en in aanmerking komt voor een [gratis Azure-account](https://azure.microsoft.com/free/), kunt u upgraden naar een [gratis Azure-account](https://azure.microsoft.com/free/). U ontvangt 200 USD Azure-tegoed in uw facturerings valuta en 12 maanden aan gratis services tijdens de upgrade. Als u niet in aanmerking komt voor een gratis account, kunt u een upgrade uitvoeren naar betalen naar gebruik- [tarieven](https://azure.microsoft.com/offers/ms-azr-0003p/) met een [ondersteunings aanvraag](https://go.microsoft.com/fwlink/?linkid=2083458).
 
 Als u een [Azure for students](https://azure.microsoft.com/offers/ms-azr-0170p/) -account hebt, kunt u een upgrade uitvoeren naar betalen naar gebruik- [tarieven](https://azure.microsoft.com/offers/ms-azr-0003p/) met een [ondersteunings aanvraag](https://go.microsoft.com/fwlink/?linkid=2083458)
 

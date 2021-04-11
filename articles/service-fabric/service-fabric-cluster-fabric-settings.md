@@ -3,12 +3,12 @@ title: Instellingen van Azure Service Fabric cluster wijzigen
 description: In dit artikel worden de infrastructuur instellingen en het Fabric-upgrade beleid beschreven dat u kunt aanpassen.
 ms.topic: reference
 ms.date: 08/30/2019
-ms.openlocfilehash: 78d83faea802862d3cd6d1b1a9cf9f1016245065
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 65ae2337ac7dbe4370411a154463a6ddc37f83b2
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103232049"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107255968"
 ---
 # <a name="customize-service-fabric-cluster-settings"></a>Instellingen voor Service Fabric-cluster aanpassen
 In dit artikel worden de verschillende infrastructuur instellingen voor uw Service Fabric cluster beschreven die u kunt aanpassen. Voor clusters die worden gehost in azure, kunt u instellingen aanpassen via de [Azure Portal](https://portal.azure.com) of met behulp van een Azure Resource Manager sjabloon. Zie [de configuratie van een Azure-cluster upgraden](service-fabric-cluster-config-upgrade-azure.md)voor meer informatie. Voor zelfstandige clusters past u de instellingen aan door de *ClusterConfig.jsin* het bestand bij te werken en een configuratie-upgrade uit te voeren op uw cluster. Zie [de configuratie van een zelfstandig cluster upgraden](service-fabric-cluster-config-upgrade-windows-server.md)voor meer informatie.
@@ -60,6 +60,12 @@ Hier volgt een lijst met infrastructuur instellingen die u kunt aanpassen, geord
 |SecretEncryptionCertX509StoreName|De aanbevolen waarde voor de teken reeks is ' My ' (geen standaard instelling) |    Dynamisch|    Dit geeft het certificaat aan dat moet worden gebruikt voor het versleutelen en ontsleutelen van de cred-naam van het X. 509-certificaat archief dat wordt gebruikt voor het versleutelen van de opslag referenties die worden gebruikt door de back-upherstel service |
 |TargetReplicaSetSize|int, standaard is 0|Statisch| De TargetReplicaSetSize voor BackupRestoreService |
 
+## <a name="centralsecretservice"></a>CentralSecretService
+
+| **Parameter** | **Toegestane waarden** | **Upgrade beleid** | **Uitleg of korte beschrijving** |
+| --- | --- | --- | --- |
+|DeployedState |wstring, standaard is L "uitgeschakeld" |Statisch |2-faseel verwijderen van CSS. |
+
 ## <a name="clustermanager"></a>ClusterManager
 
 | **Parameter** | **Toegestane waarden** | **Upgrade beleid** | **Uitleg of korte beschrijving** |
@@ -95,6 +101,7 @@ Hier volgt een lijst met infrastructuur instellingen die u kunt aanpassen, geord
 
 | **Parameter** | **Toegestane waarden** | **Upgrade beleid** | **Uitleg of korte beschrijving** |
 | --- | --- | --- | --- |
+|AllowCreateUpdateMultiInstancePerNodeServices |BOOL, default is False |Dynamisch|Maakt het mogelijk meerdere stateless instanties van een service per knoop punt te maken. Deze functie is momenteel beschikbaar als preview-product. |
 |PerfMonitorInterval |Tijd in seconden, standaard waarde is 1 |Dynamisch|Geef een tijds duur in seconden op. Interval voor prestatie bewaking. Als u instelt op 0 of een negatieve waarde, wordt de bewaking uitgeschakeld. |
 
 ## <a name="defragmentationemptynodedistributionpolicy"></a>DefragmentationEmptyNodeDistributionPolicy
@@ -304,6 +311,7 @@ Hier volgt een lijst met infrastructuur instellingen die u kunt aanpassen, geord
 | **Parameter** | **Toegestane waarden** | **Upgrade beleid** | **Uitleg of korte beschrijving** |
 | --- | --- | --- | --- |
 |EnableApplicationTypeHealthEvaluation |BOOL, default is False |Statisch|Cluster status evaluatie beleid: status evaluatie per toepassings type inschakelen. |
+|EnableNodeTypeHealthEvaluation |BOOL, default is False |Statisch|Cluster status evaluatie beleid: de status evaluatie per knooppunt type inschakelen. |
 |MaxSuggestedNumberOfEntityHealthReports|Int, standaard waarde is 100 |Dynamisch|Het maximum aantal status rapporten dat een entiteit kan hebben voordat de problemen met de status rapportage logica van de watchdog worden verhoogd. Elke status entiteit moet een relatief klein aantal status rapporten hebben. Als het aantal rapporten boven dit nummer komt; Er zijn mogelijk problemen met de implementatie van de watchdog. Een entiteit met te veel rapporten wordt via een waarschuwings status rapport gemarkeerd wanneer de entiteit wordt geëvalueerd. |
 
 ## <a name="healthmanagerclusterhealthpolicy"></a>HealthManager/ClusterHealthPolicy
@@ -349,7 +357,7 @@ Hier volgt een lijst met infrastructuur instellingen die u kunt aanpassen, geord
 |DisableContainers|BOOL, default is FALSE|Statisch|Configuratie voor het uitschakelen van containers: wordt gebruikt in plaats van DisableContainerServiceStartOnContainerActivatorOpen. deze configuratie is afgeschaft |
 |DisableDockerRequestRetry|BOOL, default is FALSE |Dynamisch| SF communiceert standaard met DD (docker dameon) met een time-out van ' DockerRequestTimeout ' voor elke HTTP-aanvraag die ernaar wordt verzonden. Als DD niet binnen deze tijds periode reageert; EB verzendt de aanvraag opnieuw als de bewerking op het hoogste niveau nog steeds resterende tijd heeft.  Met Hyper-v-container; DD neemt soms veel tijd in beslag om de container te openen of te deactiveren. In dergelijke gevallen is de aanvraag een time-out van SF-perspectief en voert SF de bewerking opnieuw uit. Soms lijkt het alsof er meer belasting wordt toegevoegd aan DD. Met deze configuratie kunt u deze nieuwe poging uitschakelen en wachten op DD om te reageren. |
 |DnsServerListTwoIps | BOOL, default is FALSE | Statisch | Met deze vlaggen wordt de lokale DNS-server twee keer toegevoegd om tijdelijke problemen op te lossen. |
-| DockerTerminateOnLastHandleClosed | BOOL, default is FALSE | Statisch | Standaard als FabricHost de dockerd beheert (op basis van: SkipDockerProcessManagement = = false), wordt met deze instelling bepaald wat er gebeurt wanneer FabricHost of dockerd vastloopt. Als deze optie is ingesteld op `true` , worden alle actieve containers geforceerd beëindigd door de HCS. Als `false` het is ingesteld op de containers blijven actief. Opmerking: vorige tot en met 8,0 is dit gedrag per ongeluk het equivalent van `false` . De standaard instelling van `true` Dit is wat er wordt verwacht door te gaan met de standaard waarde voor de opschoon logica om de herstart van deze processen effectief te maken. |
+| DockerTerminateOnLastHandleClosed | BOOL, default is TRUE | Statisch | Standaard als FabricHost de dockerd beheert (op basis van: SkipDockerProcessManagement = = false), wordt met deze instelling bepaald wat er gebeurt wanneer FabricHost of dockerd vastloopt. Als deze optie is ingesteld op `true` , worden alle actieve containers geforceerd beëindigd door de HCS. Als `false` het is ingesteld op de containers blijven actief. Opmerking: vorige tot en met 8,0 is dit gedrag per ongeluk het equivalent van `false` . De standaard instelling van `true` Dit is wat er wordt verwacht door te gaan met de standaard waarde voor de opschoon logica om de herstart van deze processen effectief te maken. |
 | DoNotInjectLocalDnsServer | BOOL, default is FALSE | Statisch | Hiermee wordt voor komen dat de runtime het lokale IP-adres als DNS-server voor containers injecteert. |
 |EnableActivateNoWindow| BOOL, default is FALSE|Dynamisch| Het geactiveerde proces wordt zonder console op de achtergrond gemaakt. |
 |EnableContainerServiceDebugMode|BOOL, default is TRUE|Statisch|Logboek registratie voor docker-containers in-of uitschakelen.  Alleen Windows.|
@@ -552,6 +560,8 @@ Hier volgt een lijst met infrastructuur instellingen die u kunt aanpassen, geord
 |MovementPerPartitionThrottleCountingInterval | Tijd in seconden, standaard waarde is 600 |Statisch| Geef een tijds duur in seconden op. Geef de lengte van het voorbije interval voor het bijhouden van replica bewegingen voor elke partitie (gebruikt samen met MovementPerPartitionThrottleThreshold). |
 |MovementPerPartitionThrottleThreshold | Uint, standaard waarde is 50 |Dynamisch| Er wordt geen taak verdeling gerelateerd voor een partitie als het aantal aan de taak verdeling gerelateerde verplaatsingen voor replica's van die partitie is bereikt of overschreden MovementPerFailoverUnitThrottleThreshold in het vorige interval dat wordt aangegeven door MovementPerPartitionThrottleCountingInterval. |
 |MoveParentToFixAffinityViolation | BOOL, default is False |Dynamisch| Instelling die bepaalt of bovenliggende replica's kunnen worden verplaatst om de affiniteits beperkingen op te lossen.|
+|NodeTaggingEnabled | BOOL, default is False |Dynamisch| Indien waar, De functie NodeTagging wordt ingeschakeld. |
+|NodeTaggingConstraintPriority | Int, standaard is 0 |Dynamisch| Configureer bare prioriteit van de tagging van knoop punten. |
 |PartiallyPlaceServices | BOOL, default is True |Dynamisch| Hiermee wordt bepaald of alle service replica's in het cluster "alle of niets" worden geplaatst op basis van een beperkt aantal geschikte knoop punten.|
 |PlaceChildWithoutParent | BOOL, default is True | Dynamisch|Instelling die bepaalt of de onderliggende service replica kan worden geplaatst als er geen bovenliggende replica actief is. |
 |PlacementConstraintPriority | Int, standaard is 0 | Dynamisch|Bepaalt de prioriteit van de plaatsings beperking: 0: hard; 1: zacht; negatief: negeren. |
@@ -572,7 +582,7 @@ Hier volgt een lijst met infrastructuur instellingen die u kunt aanpassen, geord
 |UpgradeDomainConstraintPriority | Int, standaard waarde is 1| Dynamisch|Bepaalt de prioriteit van de beperking van het upgrade domein: 0: hard; 1: zacht; negatief: negeren. |
 |UseMoveCostReports | BOOL, default is False | Dynamisch|Hiermee geeft u op dat de LB het kosten element van de functie score moet negeren. Als gevolg van een potentieel groot aantal verplaatsingen voor een betere evenwichtige plaatsing. |
 |UseSeparateSecondaryLoad | BOOL, default is True | Dynamisch|Instelling die bepaalt of afzonderlijke belasting moet worden gebruikt voor secundaire replica's. |
-|UseSeparateSecondaryMoveCost | BOOL, default is False | Dynamisch|Instelling die bepaalt of afzonderlijke verplaatsings kosten moeten worden gebruikt voor secundaire replica's. |
+|UseSeparateSecondaryMoveCost | BOOL, default is True | Dynamisch|Een instelling waarmee wordt bepaald of PLB andere transport kosten moeten gebruiken voor secundaire op elk knoop punt. Als UseSeparateSecondaryMoveCost is uitgeschakeld:-gerapporteerde verplaatsings kosten voor secundair op één knoop punt leiden ertoe dat de kosten voor overwritting worden verplaatst voor elke secundaire (op alle andere knoop punten) als UseSeparateSecondaryMoveCost is ingeschakeld:-de gerapporteerde verplaatsings kosten voor secundair op één knoop punt worden alleen van kracht op die secundaire (niet van invloed op secundaire zones op andere knoop punten). als replica vastloopt, wordt er een nieuwe replica gemaakt met de standaard verplaatsings kosten die zijn opgegeven op service niveau. als PLB de bestaande replica verplaatst, worden er kosten in rekening gebracht. |
 |ValidatePlacementConstraint | BOOL, default is True |Dynamisch| Hiermee wordt aangegeven of de PlacementConstraint-expressie voor een service wordt gevalideerd wanneer de ServiceDescription van een service wordt bijgewerkt. |
 |ValidatePrimaryPlacementConstraintOnPromote| BOOL, default is TRUE |Dynamisch|Hiermee wordt aangegeven of de PlacementConstraint-expressie voor een service wordt geëvalueerd voor de primaire voor keur bij een failover. |
 |VerboseHealthReportLimit | Int, standaard waarde is 20 | Dynamisch|Hiermee definieert u het aantal keren dat een replica moet worden uitgevoerd voordat er een status waarschuwing wordt gerapporteerd (als uitgebreide status rapportage is ingeschakeld). |
@@ -767,6 +777,7 @@ Hier volgt een lijst met infrastructuur instellingen die u kunt aanpassen, geord
 |RecoverServicePartitions |teken reeks, standaard instelling is "beheerder" |Dynamisch| Beveiligings configuratie voor het herstellen van service partities. |
 |RecoverSystemPartitions |teken reeks, standaard instelling is "beheerder" |Dynamisch| Beveiligings configuratie voor het herstellen van systeem service partities. |
 |RemoveNodeDeactivations |teken reeks, standaard instelling is "beheerder" |Dynamisch| Beveiligings configuratie voor het terugdraaien van de activering op meerdere knoop punten. |
+|ReportCompletion |wstring, standaard is L "beheerder" |Dynamisch| Beveiligings configuratie voor het volt ooien van het rapport. |
 |ReportFabricUpgradeHealth |teken reeks, standaard instelling is "beheerder" |Dynamisch| Beveiligings configuratie voor het hervatten van cluster upgrades met de huidige voortgang van de upgrade. |
 |ReportFault |teken reeks, standaard instelling is "beheerder" |Dynamisch| Beveiligings configuratie voor rapportage fout. |
 |ReportHealth |teken reeks, standaard instelling is "beheerder" |Dynamisch| Beveiligings configuratie voor rapportage status. |

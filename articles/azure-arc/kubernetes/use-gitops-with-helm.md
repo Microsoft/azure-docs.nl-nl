@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: GitOps gebruiken met helm voor een Azure Arc-cluster configuratie
 keywords: GitOps, Kubernetes, K8s, azure, helm, Arc, AKS, Azure Kubernetes service, containers
-ms.openlocfilehash: 75e2fcb25680817fc3e2bddabbbdd9c52b7dd059
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: df9b40764ec463553659803749f282bbc4587bde
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102121402"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106449540"
 ---
 # <a name="deploy-helm-charts-using-gitops-on-an-arc-enabled-kubernetes-cluster"></a>Helm-grafieken implementeren met behulp van GitOps op een Kubernetes-cluster dat is ingeschakeld voor Arc
 
@@ -21,9 +21,17 @@ Helm is een opensource-inpakprogramma waarmee u Kubernetes-toepassingen kunt ins
 
 In dit artikel wordt beschreven hoe u helm configureert en gebruikt met Azure Arc enabled Kubernetes.
 
-## <a name="before-you-begin"></a>Voordat u begint
+## <a name="prerequisites"></a>Vereisten
 
-Controleer of er een bestaand Kubernetes-verbonden Azure-Arc-cluster is ingeschakeld. Als u een verbonden cluster nodig hebt, gaat u naar de [Snelstartgids een Azure-Kubernetes-cluster verbinden](./quickstart-connect-cluster.md).
+- Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
+- Er is een bestaand Kubernetes-verbonden Azure-Arc-cluster ingeschakeld.
+    - Als u nog geen cluster hebt verbonden, doorloopt u [de Snelstartgids een Azure Arc enabled Kubernetes-cluster maken](quickstart-connect-cluster.md).
+- Een goed idee van de voor delen en architectuur van deze functie. Meer informatie vindt u in [configuraties en GitOps-Azure Arc enabled Kubernetes-artikel](conceptual-configurations.md).
+- Installeer de `k8s-configuration` Azure cli-extensie van versie >= 1.0.0:
+  
+  ```azurecli
+  az extension add --name k8s-configuration
+  ```
 
 ## <a name="overview-of-using-gitops-and-helm-with-azure-arc-enabled-kubernetes"></a>Overzicht van het gebruik van GitOps en helm met Azure Arc enabled Kubernetes
 

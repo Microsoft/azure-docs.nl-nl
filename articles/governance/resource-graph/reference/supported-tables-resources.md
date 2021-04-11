@@ -1,15 +1,15 @@
 ---
 title: Ondersteunde Azure Resource Manager resource typen
 description: Geef een lijst op met de Azure Resource Manager resource typen die worden ondersteund door de Azure-resource grafiek en de wijzigings geschiedenis.
-ms.date: 03/24/2021
+ms.date: 04/06/2021
 ms.topic: reference
 ms.custom: generated
-ms.openlocfilehash: 482c261586d5d077a61781eff28698fa9994f332
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 6161c2f53690140e2cd1140deaa8a22b3388dd2b
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105544142"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106505260"
 ---
 # <a name="azure-resource-graph-table-and-resource-type-reference"></a>Naslag informatie over de tabel en het resource type van Azure resource Graph
 
@@ -84,7 +84,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - Citrix. Services/XenDesktopEssentials (Citrix Virtual Bureau bladen Essentials)
 - Conexlink. MyCloudIt/accounts (MyCloudIT-Azure Desktop hosting)
 - Crypteron. DataSecurity/apps (Crypteron)
-- github. Enter prise/accounts
+- GitHub. Enter prise/accounts (GitHub AE)
 - gridpro. evops/accounts
 - gridpro. evops/accounts/eventrules
 - gridpro. evops/accounts/requesttemplates
@@ -97,7 +97,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - micro soft. aadiam/azureadmetrics
 - micro soft. aadiam/privateLinkForAzureAD (privé-koppeling voor Azure AD)
 - micro soft. aadiam/tenants
-- micro soft. agfoodplatform/farmbeats
+- Micro soft. AgFoodPlatform/farmBeats (Azure FarmBeats PaaS)
 - micro soft. aisupercomputer/accounts
 - micro soft. aisupercomputer/accounts/jobgroups
 - micro soft. aisupercomputer/accounts/jobgroups/Jobs
@@ -188,7 +188,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - Micro soft. cognition/syntheticsAccounts (Synthetischs-accounts)
 - Micro soft. CognitiveServices/accounts (Cognitive Services)
 - Micro soft. Compute/Availability sets (beschikbaarheids sets)
-- micro soft. Compute/capacityreservationgroups
+- Micro soft. Compute/capacityReservationGroups (capaciteits reserverings groepen)
 - micro soft. Compute/capacityreservationgroups/capacityreservations
 - micro soft. Compute/capacityreservations
 - Micro soft. Compute/cloudServices (Cloud Services (uitgebreide ondersteuning))
@@ -220,7 +220,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - Micro soft. ConnectedCache/cacheNodes (verbonden cache resources)
 - micro soft. connectedvehicle/platformaccounts
 - micro soft. connectedvmwarevsphere/resourcepools
-- micro soft. connectedvmwarevsphere/vCenter
+- Micro soft. connectedVMwareVSphere/vCenter (VMware vCenter)
 - Micro soft. ConnectedVMwarevSphere/informatie (virtuele machines met VMware + AVS)
 - micro soft. connectedvmwarevsphere/informatie/Extensions
 - micro soft. connectedvmwarevsphere/virtualmachinetemplates
@@ -233,7 +233,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - micro soft. containerregistry/registers/taskruns
 - micro soft. containerregistry/registers/taken
 - Micro soft. ContainerRegistry/registers/webhooks (container register webhooks)
-- Micro soft. container service/containerServices (container Services (afgeschaft))
+- micro soft. container service/containerservices
 - Micro soft. container service/managedClusters (Kubernetes Services)
 - micro soft. container service/openshiftmanagedclusters
 - micro soft. contoso/clusters
@@ -259,6 +259,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - micro soft. datamigration/-sleuven
 - micro soft. datamigration/sqlmigrationservices
 - Micro soft. DataProtection/BackupVaults (back-upkluizen)
+- micro soft. dataprotection/resourceguards
 - micro soft. dataprotection/resourceoperationgatekeepers
 - Micro soft. DataShare/accounts (gegevens shares)
 - Micro soft. DBforMariaDB/servers (Azure Database for MariaDB servers)
@@ -302,7 +303,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - Micro soft. DomainRegistration/domeinen (App Service domeinen)
 - micro soft. edgeorder/adressen
 - micro soft. edgeorder/ordercollections
-- micro soft. edgeorder/orders
+- Micro soft. EdgeOrder/orders (Azure Edge)
 - Micro soft. elastisch/monitors (Elasticsearch)
 - micro soft. enterpriseknowledgegraph/Services
 - Micro soft. EventGrid/domeinen (Event Grid domeinen)
@@ -323,6 +324,8 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - Micro soft. HanaOnAzure/hanaInstances (SAP HANA op Azure)
 - Micro soft. HanaOnAzure/sapMonitors (Azure monitors voor SAP-oplossingen)
 - micro soft. hardwaresecuritymodules/dedicatedhsms
+- micro soft. hdinsight/clusterpools
+- micro soft. hdinsight/clusterpools/clusters
 - Micro soft. HDInsight/clusters (HDInsight-clusters)
 - Micro soft. HealthBot/healthBots (Azure Health bot)
 - Micro soft. HealthcareApis/Services (Azure API voor FHIR)
@@ -395,8 +398,8 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - micro soft. machinelearningservices/werk ruimten/batchendpoints/implementaties
 - micro soft. machinelearningservices/werk ruimten/inferenceendpoints
 - micro soft. machinelearningservices/werk ruimten/inferenceendpoints/implementaties
-- Micro soft. MachineLearningServices/werk ruimten/onlineEndpoints (ML-apps)
-- Micro soft. MachineLearningServices/werk ruimten/onlineEndpoints/implementaties (ML app-implementaties)
+- Micro soft. MachineLearningServices/werk ruimten/onlineEndpoints (Machine Learning Online-eind punten)
+- Micro soft. MachineLearningServices/werk ruimten/onlineEndpoints/implementaties (Machine Learning Online-implementaties)
 - Micro soft. Maintenance/maintenanceConfigurations (onderhouds configuraties)
 - micro soft. Maintenance/maintenancepolicies
 - micro soft. managedidentity/groepen
@@ -414,7 +417,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - micro soft. Media/Media Services/liveevents (Live-gebeurtenissen)
 - micro soft. Media/Media Services/streamingEndpoints (streaming-eind punten)
 - micro soft. Media/Media Services/trans formaties
-- micro soft. Media/videoanalyzers
+- micro soft. Media/videoanalyzers (video-analyse functies)
 - micro soft. microservices4spring/appclusters
 - micro soft. migrate/assessmentprojects
 - micro soft. migrate/migrateprojects
@@ -513,8 +516,8 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - Micro soft. OperationalInsights/werk ruimten (Log Analytics werk ruimten)
 - Micro soft. OperationsManagement/Solutions (oplossingen)
 - micro soft. operationsmanagement/views
-- micro soft. Orbital/contactprofiles
-- micro soft. Orbital/ruimte vaartuigen
+- Micro soft. Orbital/contactProfiles (ContactProfiles)
+- Micro soft. Orbital/ruimte vaartuigen (ruimte vaartuigen)
 - Micro soft. peering/peercachingen (peerings)
 - Micro soft. peering/peeringServices (peering Services)
 - Micro soft. Portal/Dash boards (gedeelde Dash boards)
@@ -525,7 +528,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - micro soft. powerbidedicated/autoscalevcores
 - Micro soft. PowerBIDedicated/capaciteiten (Power BI Embedded)
 - micro soft. powerplatform/enterprisepolicies
-- Micro soft. ProjectBabylon/accounts (Babylon-accounts)
+- micro soft. projectbabylon/accounts
 - Micro soft. controle sfeer liggen/accounts (controle sfeer liggen-accounts)
 - Micro soft. Quantum/werk ruimten (Quantum-werk ruimten)
 - Micro soft. Recovery Services/kluizen (Recovery Services kluizen)
@@ -596,6 +599,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - Micro soft. Synapse/privateLinkHubs (Azure Synapse Analytics (persoonlijke koppelings hubs))
 - Micro soft. Synapse/werk ruimten (Azure Synapse Analytics)
 - Micro soft. Synapse/werk ruimten/bigDataPools (Apache Spark groepen)
+- micro soft. Synapse/werk ruimten/kustopools
 - micro soft. Synapse/werk ruimten/sqldatabases
 - Micro soft. Synapse/werk ruimten/sqlPools (toegewezen SQL-groepen)
 - micro soft. terraformoss/providerregistrations

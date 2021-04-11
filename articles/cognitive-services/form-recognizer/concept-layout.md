@@ -10,16 +10,16 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 03/15/2021
 ms.author: lajanuar
-ms.openlocfilehash: 73bef21f430bde1c6c2c95d7c3f685cccbbd9179
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: cc19d5652f416657cbcd339de61379265587b4e7
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103467014"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106505379"
 ---
 # <a name="form-recognizer-layout-service"></a>Indelings service voor formulier herkenning
 
-Azure Form Recognizer kan tekst, tabellen, selectie markeringen en structuur gegevens uit documenten ophalen met behulp van de lay-outservice. Met de indelings-API kunnen klanten documenten maken in verschillende indelingen en gestructureerde gegevens representaties van de documenten retour neren. Het combineert onze krachtige functies voor [optische teken herkenning (OCR)](../computer-vision/concept-recognizing-text.md) met diepe leer modellen voor het extra heren van tekst, tabellen, selectie markeringen en document structuur. 
+Azure Form Recognizer kan tekst, tabellen, selectie markeringen en structuur gegevens uit documenten ophalen met behulp van de lay-outservice. Met de indelings-API kunnen klanten documenten maken in verschillende indelingen en gestructureerde gegevens representaties van de documenten retour neren. Het combineert onze krachtige functies voor [optische teken herkenning (OCR)](../computer-vision/overview-ocr.md) met diepe leer modellen voor het extra heren van tekst, tabellen, selectie markeringen en document structuur. 
 
 ## <a name="what-does-the-layout-service-do"></a>Wat doet de lay-outservice?
 
@@ -32,7 +32,7 @@ De indelings-API extraheert tekst, tabellen, selectie markeringen en structuur g
 Als u de indelings service voor formulier herkenning wilt uitproberen, gaat u naar het hulp programma online voor beeld-UI:
 
 > [!div class="nextstepaction"]
-> [Formulier OCR testen (FOTT)](https://fott-preview.azurewebsites.net)
+> [Form Recognizer proberen](https://fott-preview.azurewebsites.net)
 
 U hebt een Azure-abonnement nodig ([Maak er een gratis](https://azure.microsoft.com/free/cognitive-services)) en een resource-eind punt en-sleutel van een [formulier herkenning](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesFormRecognizer) om de indelings-API voor formulier herkenning uit te proberen. 
 
@@ -48,7 +48,7 @@ Roep eerst de bewerking voor het analyseren van de [indeling](https://westcentra
 
 |Reactie header| Resultaten-URL |
 |:-----|:----|
-|Operation-Location | `https://cognitiveservice/formrecognizer/v2.1-preview.3/prebuilt/layout/analyzeResults/44a436324-fc4b-4387-aa06-090cfbf0064f` |
+|Operation-Location | `https://cognitiveservice/formrecognizer/v2.1-preview.3/layout/analyzeResults/44a436324-fc4b-4387-aa06-090cfbf0064f` |
 
 ### <a name="natural-reading-order-output-latin-only"></a>Uitvoer van natuurlijke Lees volgorde (alleen Latijn)
 

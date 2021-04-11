@@ -1,18 +1,18 @@
 ---
 title: 'Quickstart: Azure Blob Storage-clientbibliotheek - Ruby'
 description: Maak een opslagaccount en een container in Azure Blob Storage. Gebruik de opslagclientbibliotheek voor Ruby om een blob te maken, een blob te downloaden en de blobs in een container te vermelden.
-author: mhopkins-msft
-ms.author: mhopkins
+author: twooley
+ms.author: twooley
 ms.date: 12/04/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: ec3fc490466f5fce36b67b2f3744e4ee5cc0ae79
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 96b47afb11a0105e8f6d6b58e8862994493389f4
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96781093"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106277973"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-for-ruby"></a>Quickstart: Azure Blob Storage-clientbibliotheek voor Ruby
 

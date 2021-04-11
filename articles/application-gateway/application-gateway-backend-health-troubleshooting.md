@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: troubleshooting
 ms.date: 06/09/2020
 ms.author: surmb
-ms.openlocfilehash: 95b74e5fc6c5d2c09ff04b3f14e920ae675ab6e1
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1373e0eeead805dcd3a439878c9737c46d75bf3b
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99592752"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106078499"
 ---
 <a name="troubleshoot-backend-health-issues-in-application-gateway"></a>Problemen met back-endservers oplossen in Application Gateway
 ==================================================
@@ -176,12 +176,12 @@ Controleer ook of NSG/UDR/firewall de toegang tot het IP-adres en de poort van d
 
 | **Fout** | **Acties** |
 | --- | --- |
-| Status code van test komt niet overeen: ontvangen 401 | Controleer of verificatie is vereist voor de back-endserver. Application Gateway tests kunnen geen referenties door geven voor authenticatie. Sta toe dat \" HTTP 401 \" in een test status code overeenkomt of test naar een pad waarvoor geen verificatie is vereist voor de server. | |
-| Status code van test komt niet overeen: ontvangen 403 | Toegang verboden. Controleer of toegang tot het pad is toegestaan op de back-endserver. | |
-| Status code van test komt niet overeen: ontvangen 404 | Pagina is niet gevonden. Controleer of het pad naar de hostnaam toegankelijk is op de back-endserver. Wijzig de hostnaam of het pad para meter in een toegankelijke waarde. | |
-| Status code van test komt niet overeen: ontvangen 405 | De test aanvragen voor Application Gateway gebruiken de HTTP GET-methode. Controleer of deze methode is toegestaan op uw server. | |
-| Status code van test komt niet overeen: ontvangen 500 | Interne serverfout. Controleer de status van de back-endserver en of de services worden uitgevoerd. | |
-| Status code van test komt niet overeen: ontvangen 503 | Service niet beschikbaar. Controleer de status van de back-endserver en of de services worden uitgevoerd. | |
+| Status code van test komt niet overeen: ontvangen 401 | Controleer of verificatie is vereist voor de back-endserver. Application Gateway tests kunnen geen referenties door geven voor authenticatie. Sta toe dat \" HTTP 401 \" in een test status code overeenkomt of test naar een pad waarvoor geen verificatie is vereist voor de server. |
+| Status code van test komt niet overeen: ontvangen 403 | Toegang verboden. Controleer of toegang tot het pad is toegestaan op de back-endserver. |
+| Status code van test komt niet overeen: ontvangen 404 | Pagina is niet gevonden. Controleer of het pad naar de hostnaam toegankelijk is op de back-endserver. Wijzig de hostnaam of het pad para meter in een toegankelijke waarde. |
+| Status code van test komt niet overeen: ontvangen 405 | De test aanvragen voor Application Gateway gebruiken de HTTP GET-methode. Controleer of deze methode is toegestaan op uw server. |
+| Status code van test komt niet overeen: ontvangen 500 | Interne serverfout. Controleer de status van de back-endserver en of de services worden uitgevoerd. |
+| Status code van test komt niet overeen: ontvangen 503 | Service niet beschikbaar. Controleer de status van de back-endserver en of de services worden uitgevoerd. |
 
 Of als u denkt dat het antwoord legitiem is en u Application Gateway andere status codes als in orde wilt accepteren, kunt u een aangepaste test maken. Deze aanpak is nuttig in situaties waarin de back-end-website verificatie nodig heeft. Omdat de test aanvragen geen gebruikers referenties afdragen, zullen ze mislukken en wordt een HTTP 401-status code geretourneerd door de back-endserver.
 

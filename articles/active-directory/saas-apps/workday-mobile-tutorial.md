@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/31/2020
 ms.author: jeedes
-ms.openlocfilehash: ef1ca41f54a15554a04fa3edf608bb13f5fb3398
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 94ab61a5c6335d43842ada48f17572c186af773c
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96182016"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106077190"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workday-mobile-application"></a>Zelfstudie: Integratie van eenmalige aanmelding (SSO) van Azure Active Directory met mobiele apps van Workday
 
@@ -132,13 +132,11 @@ Als u ervoor wilt zorgen dat iOS-apparaten alleen kunnen worden aangemeld via Wo
 
 | Scenario | Sleutel-waardeparen |
 |----------------------------------------------------------------------------------------   |-----------|
-| Automatisch de velden Tenant en Webadres invullen voor:<br>● Workday op Android wanneer u Android inschakelt voor werkprofielen.<br>● Workday op iPad en iPhone.     | Gebruik deze waarden om uw tenant te configureren: <br>● Configuratiesleutel = `UserGroupCode`<br>● Waardetype = Tekenreeks <br>●   Configuratiewaarde = Naam van uw tenant. Voorbeeld: `gms`<br>Gebruik deze waarden om uw webadres te configureren:<br>● Configuratiesleutel = `AppServiceHost`<br>●   Waardetype = Tekenreeks<br>●    Configuratiewaarde = De basis-URL voor uw tenant. Voorbeeld: `https://www.myworkday.com`                                |   |
+| Automatisch de velden Tenant en Webadres invullen voor:<br>● Workday op Android wanneer u Android inschakelt voor werkprofielen.<br>● Workday op iPad en iPhone.     | Gebruik deze waarden om uw tenant te configureren: <br>● Configuratiesleutel = `UserGroupCode`<br>● Waardetype = Tekenreeks <br>●   Configuratiewaarde = Naam van uw tenant. Voorbeeld: `gms`<br>Gebruik deze waarden om uw webadres te configureren:<br>● Configuratiesleutel = `AppServiceHost`<br>●   Waardetype = Tekenreeks<br>●    Configuratiewaarde = De basis-URL voor uw tenant. Voorbeeld: `https://www.myworkday.com`                                | 
 | Deze acties uitschakelen voor Workday op iPad en iPhone:<br>●    Knippen, kopiëren en plakken<br>●   Afdrukken                       | Stel de waarde (Booleaans) in op `False` voor deze sleutels om de functionaliteit uit te schakelen:<br>●   `AllowCutCopyPaste`<br>●    `AllowPrint`    |
 | Schermopnamen uitschakelen voor Workday op Android. |Stel de waarde (Booleaans) in op `False` voor de sleutel `AllowScreenshots` om de functionaliteit uit te schakelen.|
 | Voorgestelde updates uitschakelen voor uw gebruikers.|Stel de waarde (Booleaans) in op `False` voor de sleutel `AllowSuggestedUpdates` om de functionaliteit uit te schakelen.|
 |De URL van de App Store aanpassen om mobiele gebruikers naar de App Store van uw keuze te leiden.|Gebruik deze waarden om de URL van de App Store te wijzigen:<br>● Configuratiesleutel = `AppUpdateURL`<br>● Waardetype = Tekenreeks<br> ●   Configuratiewaarde = URL van App Store|
-|       |
-
 
 ## <a name="ios-configuration-policies"></a>Configuratiebeleid voor iOS
 

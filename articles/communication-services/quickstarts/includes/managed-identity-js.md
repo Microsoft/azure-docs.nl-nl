@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ce250b19478c70109fe28d199ac771a77c42c7dc
-ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
+ms.openlocfilehash: a3771a21914831f249696fc3d733c5ea935c2c7e
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106113314"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107251390"
 ---
 ## <a name="add-managed-identity-to-your-communication-services-solution-js"></a>Beheerde identiteit toevoegen aan uw oplossing voor communicatie Services (JS)
 
@@ -29,7 +29,9 @@ import { SmsClient, SmsSendRequest } from "@azure/communication-sms";
 
 In de onderstaande voor beelden wordt gebruikgemaakt van de [DefaultAzureCredential](/javascript/api/@azure/identity/defaultazurecredential). Deze referentie is geschikt voor productie-en ontwikkelings omgevingen.
 
-Als u de toepassing wilt registreren in de ontwikkel omgeving en omgevings variabelen wilt instellen, raadpleegt u [toegang verlenen met beheerde identiteit](../managed-identity-from-cli.md)
+Zie [toegang verlenen met beheerde identiteit](../managed-identity-from-cli.md) voor een eenvoudige manier om met beheerde identiteits verificatie in te springen
+
+Zie de [Azure Identity client-bibliotheek voor Java script](https://docs.microsoft.com/javascript/api/overview/azure/identity-readme) voor een uitgebreidere bespreking van de werking van het DefaultAzureCredential-object en hoe u dit kunt gebruiken op manieren die niet zijn opgegeven in deze Snelstartgids.
 
 ### <a name="create-an-identity-and-issue-a-token-with-managed-identity"></a>Een identiteit maken en een token uitgeven met een beheerde identiteit
 

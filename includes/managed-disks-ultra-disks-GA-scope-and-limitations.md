@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/28/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: aafeb7ebd939805ae18e29670f359660db12e2e1
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: c8f817ad06742e6f84c3cb87dda0c36866540267
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103555944"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106450397"
 ---
 Voor nu hebben Ultra disks de volgende beperkingen:
 
@@ -31,6 +31,7 @@ De volgende tabel geeft een overzicht van de regio's Ultra disks zijn beschikbaa
 |Azië - oost     |Alleen enkele Vm's (beschikbaarheids sets en virtuele-machine schaal sets worden niet ondersteund)|
 |Duitsland - west-centraal     |Alleen enkele Vm's (beschikbaarheids sets en virtuele-machine schaal sets worden niet ondersteund)|
 |Korea - centraal     |Alleen enkele Vm's (beschikbaarheids sets en virtuele-machine schaal sets worden niet ondersteund)|
+|VS - noord-centraal    |Alleen enkele Vm's (beschikbaarheids sets en virtuele-machine schaal sets worden niet ondersteund)|
 |VS - zuid-centraal    |Alleen enkele Vm's (beschikbaarheids sets en virtuele-machine schaal sets worden niet ondersteund)|
 |VS (overheid) - Arizona     |Alleen enkele Vm's (beschikbaarheids sets en virtuele-machine schaal sets worden niet ondersteund)|
 |VS (overheid) - Virginia     |Alleen enkele Vm's (beschikbaarheids sets en virtuele-machine schaal sets worden niet ondersteund)|
@@ -44,7 +45,7 @@ De volgende tabel geeft een overzicht van de regio's Ultra disks zijn beschikbaa
 |VS - oost     |Drie beschikbaarheids zones          |
 |VS - oost 2     |Drie beschikbaarheids zones         |
 |Frankrijk - centraal    |Twee beschikbaarheids zones        |
-|Japan - oost    |Drie beschikbaarheids zones        |
+|Japan East    |Drie beschikbaarheids zones        |
 |Europa - noord    |Drie beschikbaarheids zones        |
 |Verenigd Koninkrijk Zuid    |Drie beschikbaarheids zones        |
 |Europa -west    | Drie beschikbaarheids zones|

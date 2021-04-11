@@ -8,16 +8,16 @@ ms.topic: how-to
 ms.date: 11/14/2019
 ms.author: victorh
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 24dafd63de1a37140c6a56547c4701729df1c8fb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9ae15503e8f12f7ba70aa5a9d306306fa79745f9
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94566551"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106220382"
 ---
 # <a name="create-an-application-gateway-with-tls-termination-using-the-azure-cli"></a>Een toepassingsgateway maken met TLS-beëindiging met behulp van de Azure CLI
 
-U kunt de Azure CLI gebruiken om een [toepassings gateway](overview.md) met een certificaat voor het [beëindigen van TLS](ssl-overview.md)te maken. Voor back-endservers kunt u een [schaalset voor virtuele machines](../virtual-machine-scale-sets/overview.md) gebruiken. In dit voorbeeld bevat de schaalset twee virtuele-machine-instanties die zijn toegevoegd aan de standaard back-endgroep van de toepassingsgateway.
+U kunt de Azure CLI gebruiken om een [toepassings gateway](overview.md) met een certificaat voor het [beëindigen van TLS](ssl-overview.md)te maken. Voor back-endservers kunt u een [schaalset voor virtuele machines](../virtual-machine-scale-sets/overview.md)gebruiken. In dit voorbeeld bevat de schaalset twee virtuele-machine-instanties die zijn toegevoegd aan de standaard back-endgroep van de toepassingsgateway.
 
 In dit artikel leert u het volgende:
 

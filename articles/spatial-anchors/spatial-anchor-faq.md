@@ -8,12 +8,12 @@ ms.author: parkerra
 ms.date: 11/20/2020
 ms.topic: overview
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: b67dcf038dbe13b8c040f317bb117f3b7a7afdde
-ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
+ms.openlocfilehash: fc92543f5954cda9db42e53cab18db1d8f3366c3
+ms.sourcegitcommit: c6a2d9a44a5a2c13abddab932d16c295a7207d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106384235"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107284201"
 ---
 # <a name="frequently-asked-questions-about-azure-spatial-anchors"></a>Veelgestelde vragen over Azure Spatial Anchors
 
@@ -52,6 +52,10 @@ Zie het [overzicht van Azure Spatial Anchors](overview.md) voor meer informatie.
 **V: Hoe worden gegevens opgeslagen in Azure Spatial Anchors?**
 
 **A:** Alle gegevens worden versleuteld opgeslagen met een door Microsoft beheerde versleutelingssleutel en alle gegevens worden regionaal opgeslagen voor elk van de resources.
+
+**V: waar worden gegevens in azure spatiale ankers opgeslagen?**
+
+**A:** Met de Azure spatiale-anker accounts kunt u de regio opgeven waar uw gegevens worden opgeslagen. Micro soft kan gegevens naar andere regio's voor tolerantie repliceren, maar micro soft repliceert of verplaatst geen gegevens buiten de geografie. Deze gegevens worden opgeslagen in de regio waar het Azure spatiale-anker account is geconfigureerd. Als het account bijvoorbeeld is geregistreerd in de regio VS-Oost, worden deze gegevens opgeslagen in de regio VS-Oost, maar kunnen ze worden gerepliceerd naar een andere regio in de Noord-Amerika Geografie om tolerantie te garanderen.
 
 **V: Welke informatie over een omgeving wordt verzonden en opgeslagen in de service bij het gebruik van Azure Spatial Anchors? Worden foto's van de omgeving verzonden en opgeslagen?**
 

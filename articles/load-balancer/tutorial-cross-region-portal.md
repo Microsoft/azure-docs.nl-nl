@@ -7,12 +7,12 @@ ms.author: allensu
 ms.service: load-balancer
 ms.topic: tutorial
 ms.date: 02/24/2021
-ms.openlocfilehash: c16123fae63b89eff57b5c91864d9a947e01b386
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 65d85f51afef36aa618868e2fda1d2bbf583ea21
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104576914"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106221123"
 ---
 # <a name="tutorial-create-a-cross-region-azure-load-balancer-using-the-azure-portal"></a>Zelfstudie: Een Azure Load Balancer voor meerdere regio's maken met behulp van Azure Portal
 
@@ -105,34 +105,6 @@ Maak de back-endadrespool **myBackendPool-CR** om de regionale standaard load ba
 8. Selecteer **Toevoegen**.
 
     :::image type="content" source="./media/tutorial-cross-region-portal/add-to-backendpool.png" alt-text="Regionale load balancers toevoegen aan back-end-pool" border="true":::
-
-## <a name="create-a-health-probe"></a>Een statustest maken
-
-In deze sectie maakt u een statustest om de taakverdelingsregel te maken:
-
-* Met de naam **myHealthProbe**.
-* Protocol: **TCP**.
-* Interval van **5 seconden**.
-* Drempelwaarde voor beschadigde status van **twee** storingen.
-
-1. Selecteer **Alle services** in het linkermenu en selecteer **Alle resources**. Selecteer vervolgens **myLoadBalancer-CR** in de lijst met resources.
-
-2. Selecteer onder **Instellingen** de optie **Statustesten**.
-
-3. Gebruik deze waarden om de statustest te configureren:
-
-    | Instelling | Waarde |
-    | ------- | ----- |
-    | Naam | Voer **myHealthProbe** in. |
-    | Protocol | selecteer **TCP**. |
-    | Poort | Voer **80** in. |
-    | Interval | Voer **5** in. |
-    | Drempelwaarde voor beschadigde status | Voer **2** in. |
-
-4. Selecteer **OK**.
-
-    > [!NOTE]
-    > De load balancer voor meerdere regio's heeft een ingebouwde statustest. Deze test is een tijdelijke vervanging totdat de taakverdelingsregel werkt.  Zie **[Beperkingen van de load balancer voor meerdere regio's](cross-region-overview.md#limitations)** voor meer informatie.
 
 ## <a name="create-a-load-balancer-rule"></a>Een load balancer-regel maken
 

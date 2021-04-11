@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c25504e3313234ac6b6f80a6e00c77fce28b1400
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 41bdf5251881fa9307a3cd4d214081845e967900
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102174526"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107209516"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Dynamische lidmaatschapsregels voor groepen in Azure Active Directory
 
@@ -52,19 +52,19 @@ Zie [Een dynamische groep maken of bijwerken](groups-create-rule.md) voor meer s
 
 ![Lidmaatschapsregel voor een dynamische groep toevoegen](./media/groups-dynamic-membership/update-dynamic-group-rule.png)
 
-### <a name="rule-syntax-for-a-single-expression"></a>Regelsyntaxis voor één expressie
+### <a name="rule-syntax-for-a-single-expression&quot;></a>Regelsyntaxis voor één expressie
 
 Eén expressie is de eenvoudigste vorm van een lidmaatschapsregel en heeft alleen de drie onderdelen die hierboven worden genoemd. Een regel met één expressie ziet er ongeveer als volgt uit: `Property Operator Value`, waarbij de syntaxis van de eigenschap de naam van object.property is.
 
 Hier volgt een voorbeeld van een goed opgebouwde lidmaatschapsregel met één expressie:
 
 ```
-user.department -eq "Sales"
+user.department -eq &quot;Sales&quot;
 ```
 
-Haakjes zijn optioneel voor één expressie. De totale lengte van de hoofdtekst van de lidmaatschapsregel mag niet langer zijn dan 2048 tekens.
+Haakjes zijn optioneel voor één expressie. De totale lengte van de hoofd tekst van de lidmaatschaps regel mag niet langer zijn dan 3072 tekens.
 
-## <a name="constructing-the-body-of-a-membership-rule"></a>De hoofdtekst van een lidmaatschapsregel samenstellen
+## <a name=&quot;constructing-the-body-of-a-membership-rule&quot;></a>De hoofdtekst van een lidmaatschapsregel samenstellen
 
 Een lidmaatschapsregel die automatisch een groep met gebruikers of apparaten invult, is een binaire expressie die resulteert in het resultaat True of False. De drie delen van een eenvoudige regel zijn:
 
@@ -74,7 +74,7 @@ Een lidmaatschapsregel die automatisch een groep met gebruikers of apparaten inv
 
 De volgorde van de onderdelen binnen een expressie is belangrijk om syntaxisfouten te voorkomen.
 
-## <a name="supported-properties"></a>Ondersteunde eigenschappen
+## <a name=&quot;supported-properties&quot;></a>Ondersteunde eigenschappen
 
 Er zijn drie soorten eigenschappen die kunnen worden gebruikt om een lidmaatschapsregel samen te stellen.
 
@@ -84,18 +84,18 @@ Er zijn drie soorten eigenschappen die kunnen worden gebruikt om een lidmaatscha
 
 Hier volgen de gebruikerseigenschappen die u kunt gebruiken om één expressie te maken.
 
-### <a name="properties-of-type-boolean"></a>Eigenschappen van het type Booleaans
+### <a name=&quot;properties-of-type-boolean&quot;></a>Eigenschappen van het type Booleaans
 
 | Eigenschappen | Toegestane waarden | Gebruik |
 | --- | --- | --- |
 | accountEnabled |true false |user.accountEnabled -eq true |
 | dirSyncEnabled |true false |user.dirSyncEnabled -eq true |
 
-### <a name="properties-of-type-string"></a>Eigenschappen van het type tekenreeks
+### <a name=&quot;properties-of-type-string&quot;></a>Eigenschappen van het type tekenreeks
 
 | Eigenschappen | Toegestane waarden | Gebruik |
 | --- | --- | --- |
-| city |Elke tekenreekswaarde of *null* |(user.city -eq "value") |
+| city |Elke tekenreekswaarde of *null* |(user.city -eq &quot;value") |
 | country |Elke tekenreekswaarde of *null* |(user.country -eq "value") |
 | companyName | Elke tekenreekswaarde of *null* | (user.companyName -eq "value") |
 | department |Elke tekenreekswaarde of *null* |(user.department -eq "value") |

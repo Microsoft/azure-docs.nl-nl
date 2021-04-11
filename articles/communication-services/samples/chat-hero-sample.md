@@ -9,17 +9,19 @@ ms.author: dademath
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 59bfac3df1a1ba8a466b9cdc5197ede7332ed758
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 5547e49cd7ea7f6c0cc97b5559564b64e0deda7c
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105728552"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106168838"
 ---
 # <a name="get-started-with-the-group-chat-hero-sample"></a>Aan de slag met het hero-voorbeeld van groeps-chat
 
+[!INCLUDE [Public Preview Notice](../includes/public-preview-include-chat.md)]
+
 > [!IMPORTANT]
-> [Dit voorbeeld is beschikbaar op GitHub.](https://github.com/Azure-Samples/communication-services-web-chat-hero)
+> [Dit voor beeld is beschikbaar **op github**.](https://github.com/Azure-Samples/communication-services-web-chat-hero)
 
 
 In het voor beeld van de Azure Communication Services- **groep chatten** ziet u hoe de websdk voor communicatie Services kan worden gebruikt voor het bouwen van een groeps ervaring.

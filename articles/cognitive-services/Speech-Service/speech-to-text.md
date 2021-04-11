@@ -12,12 +12,12 @@ ms.date: 09/01/2020
 ms.author: trbye
 ms.custom: cog-serv-seo-aug-2020
 keywords: spraak naar tekst, spraak naar tekst software
-ms.openlocfilehash: 5e593202a8cd68dfc4a92f991d573b4b06051b36
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3450d39729096bfc3077f51e2069f8f102e571a5
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102434306"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106449389"
 ---
 # <a name="what-is-speech-to-text"></a>Wat is spraak-naar-tekst?
 
@@ -26,7 +26,12 @@ Spraak-naar-tekst, ook wel spraak herkenning genoemd, biedt realtime transcripti
 
 De spraak-naar-tekst-service is standaard ingesteld op het gebruik van het universele-taal model. Dit model is getraind met gegevens van micro soft en wordt geïmplementeerd in de Cloud. Het is optimaal voor gespreks-en dicteer scenario's. Wanneer u spraak naar tekst gebruikt voor herkenning en transcriptie in een unieke omgeving, kunt u aangepaste akoestische, taal-en uitspraak modellen maken en trainen. Aanpassing is handig voor het adresseren van omgevings lawaai of branchespecifieke woorden lijsten.
 
-Met aanvullende referentie tekst als invoer, biedt spraak-naar-tekst-service ook de mogelijkheid om de uitspraak [te beoordelen en](rest-speech-to-text.md#pronunciation-assessment-parameters) feedback te geven over de nauw keurigheid en fluency van gesp roken audio. Met het beoordelen van uitspraak kunnen taal kennisers oefenen, direct feedback krijgen en de uitspraak verbeteren zodat ze kunnen praten en presen teren. Docenten kunnen de mogelijkheid gebruiken om de uitspraak van meerdere sprekers in realtime te evalueren. De functie ondersteunt momenteel de Engelse versie en vertrouwt samen met spraak beoordelingen die door experts worden uitgevoerd.
+Deze documentatie bevat de volgende artikel typen:
+
+* **Quick** starts zijn aan de slag-instructies die u helpen bij het maken van aanvragen voor de service.
+* **Hand leidingen** bevatten instructies voor het gebruik van de service op meer specifieke of aangepaste manieren.
+* **Concepten** geven uitgebreide uitleg over de service functionaliteit en-functies.
+* **Zelf studies** zijn meer gidsen die laten zien hoe u de service kunt gebruiken als onderdeel in bredere zakelijke oplossingen.
 
 > [!NOTE]
 > Bing Speech is uit bedrijf genomen op 15 oktober 2019. Als uw toepassingen, hulpprogram ma's of producten gebruikmaken van de Bing Speech Api's, hebben we gidsen gemaakt om u te helpen migreren naar de spraak service.

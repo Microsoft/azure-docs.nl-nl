@@ -3,12 +3,12 @@ title: Lijst met Azure Service Fabric-gebeurtenissen
 description: Uitgebreide lijst met gebeurtenissen die door Azure Service Fabric worden verschaft om clusters te bewaken.
 ms.topic: reference
 ms.date: 2/25/2019
-ms.openlocfilehash: 3f65d7c3ddec8263ff6f115df9616b48814afc93
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: a1ba21aaac831abb07544944420f2b77e1753955
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105628880"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106279779"
 ---
 # <a name="list-of-service-fabric-events"></a>Lijst met Service Fabric gebeurtenissen 
 
@@ -36,6 +36,12 @@ Meer informatie over cluster upgrades vindt u [hier](service-fabric-cluster-upgr
 | 29629 | ClusterUpgradeRollbackStarted | Upgraden | Een upgrade van een cluster is gestart om terug te draaien  | CM | Waarschuwing | 
 | 29630 | ClusterUpgradeRollbackCompleted | Upgraden | Het terugdraaien van een cluster upgrade is voltooid | CM | Waarschuwing | 
 | 29631 | ClusterUpgradeDomainCompleted | Upgraden | Een upgrade domein is bijgewerkt tijdens een cluster upgrade | CM | Informatief | 
+
+**Plaatsings gebeurtenissen**
+| Gebeurtenis | Name | Categorie | Beschrijving |Bron (taak) | Niveau |
+| --- | --- | ---| --- | --- | --- |
+| 17616 | Besluit |StateTransition | De plaatsings bewerking is gepland om te beslissen over de plaatsing van nieuwe replica's. | VERPLAATST | Informatief |
+
 
 ## <a name="node-events"></a>Knooppunt gebeurtenissen
 

@@ -12,12 +12,12 @@ ms.subservice: sql-dw
 ms.date: 05/11/2020
 ms.author: gaursa
 ms.reviewer: igorstan
-ms.openlocfilehash: ab70ec4f7f2c313c2ae4efcc6d1ad994fbec8b03
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6891176ff648e0f07b0f4921c3558df51f55388e
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104585567"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106279745"
 ---
 # <a name="getting-started-with-visual-studio-2019"></a>Aan de slag met Visual Studio 2019
 
@@ -43,7 +43,6 @@ Er zijn momenten waarop functie releases voor Synapse SQL mogelijk geen onderste
 - [Beveiliging op rijniveau](/sql/relational-databases/security/row-level-security?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (met inbegrip van functies voor tabel waarden)
   - Dien een [ondersteunings ticket of stem](https://feedback.azure.com/forums/307516-sql-data-warehouse/suggestions/39040057-ssdt-row-level-security) in om de functie te kunnen ondersteunen.
   - Dien een [ondersteunings ticket of stem](https://feedback.azure.com/forums/307516-sql-data-warehouse/suggestions/39040048-ssdt-support-dynamic-data-masking) in om de functie te kunnen ondersteunen.
-- Tabellen met een [identiteits kolom](/sql/t-sql/statements/create-table-transact-sql-identity-property?view=azure-sqldw-latest&preserve-view=true)
 - Bepaalde T-SQL-functies, zoals:
    - In de component *Group* in de functie String [STRING_AGG](/sql/t-sql/functions/string-agg-transact-sql) .
 

@@ -5,10 +5,10 @@ ms.date: 11/30/2020
 ms.topic: tutorial
 ms.reviewer: caleteet
 ms.openlocfilehash: 4c2df952480d2c30de10838c3d0f7714fc7e6126
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105628642"
 ---
 # <a name="tutorial-create-build-and-deploy-smart-contracts-on-azure-blockchain-service"></a>Zelfstudie: Slimme contracten maken, bouwen en implementeren in Azure Blockchain Service
@@ -81,13 +81,13 @@ Azure Block Chain Development Kit maakt gebruik van Truffle om het migratiescrip
 
 ![Geïmplementeerd contract](./media/send-transaction/deploy-contract.png)
 
-## <a name="call-a-contract-function"></a>Een contractfunctie aanroepen
+## <a name="call-a-contract-function&quot;></a>Een contractfunctie aanroepen
 Met de functie **SendRequest** van het **HelloBlockchain**-contract wordt de **RequestMessage**-statusvariabele gewijzigd. Het wijzigen van de status van een blockchainnetwerk vindt plaats via een transactie. U kunt een script maken om de functie **SendRequest** uit te voeren via een trans actie.
 
 1. Maak een nieuw bestand in de hoofdmap van uw Truffle-project en noem het `sendrequest.js` . Voeg de volgende Web3 java script-code toe aan het bestand.
 
     ```javascript
-    var HelloBlockchain = artifacts.require("HelloBlockchain");
+    var HelloBlockchain = artifacts.require(&quot;HelloBlockchain");
         
     module.exports = function(done) {
       console.log("Getting the deployed version of the HelloBlockchain smart contract")

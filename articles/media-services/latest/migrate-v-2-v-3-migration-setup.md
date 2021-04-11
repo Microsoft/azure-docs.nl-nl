@@ -14,12 +14,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 03/25/2021
 ms.author: inhenkel
-ms.openlocfilehash: 62723f5c833ca89618a6d9e0781539a13efba4f3
-ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
+ms.openlocfilehash: 9d61e9ff753c37268be19e95db9450e2cd923d96
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105959667"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106279677"
 ---
 # <a name="step-3---set-up-to-migrate-to-the-v3-rest-api-or-client-sdk"></a>Stap 3: instellen om te migreren naar de V3-REST API of client-SDK
 
@@ -43,7 +43,7 @@ Klanten die voorheen de 2015-10-01-versie van de ARM-beheer-API voor het beheer 
 
 ## <a name="create-a-new-media-services-account-for-testing"></a>Een nieuw Media Services-account maken voor test doeleinden
 
-Volg de Quick Start-stappen voor het [instellen van uw omgeving](how-to-set-azure-subscription.md?tabs=portal) met behulp van de Azure Portal. Selecteer API-toegang en Service-Principal-verificatie om een nieuwe Azure AD-toepassings-ID en geheimen te genereren voor gebruik met dit test account.
+Volg de Quick Start-stappen voor het [instellen van uw omgeving](setup-azure-subscription-how-to.md?tabs=portal) met behulp van de Azure Portal. Selecteer API-toegang en Service-Principal-verificatie om een nieuwe Azure AD-toepassings-ID en geheimen te genereren voor gebruik met dit test account.
 
 [Maak een Media Services-account](account-create-how-to.md?tabs=portal).
 [Referenties voor toegang tot Media Services-API ophalen](access-api-howto.md?tabs=portal).
@@ -66,7 +66,7 @@ Volg de Quick Start-stappen voor het [instellen van uw omgeving](how-to-set-azur
 
 ## <a name="rest"></a>[REST](#tab/rest)
 
-Gebruik [postman](./media-rest-apis-with-postman.md) voor Media Services v3-rest API-aanroepen.
+Gebruik [postman](./setup-postman-rest-how-to.md) voor Media Services v3-rest API-aanroepen.
 Lees de [rest API-referentie pagina's](/rest/api/media/).
 
 U moet de teken reeks 2020-05-01 versie in de Postman-verzameling gebruiken.

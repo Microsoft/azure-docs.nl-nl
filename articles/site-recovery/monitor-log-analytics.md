@@ -1,18 +1,15 @@
 ---
 title: Azure Site Recovery controleren met Azure Monitor-logboeken
 description: Meer informatie over het bewaken van Azure Site Recovery met Azure Monitor-Logboeken (Log Analytics)
-author: rayne-wiselman
-manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/15/2019
-ms.author: raynew
-ms.openlocfilehash: 308e1bcf042feb15179d32844d8c569af6166619
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: eb38f7c2df6a8ad00009a0b7fc9c03638c33034c
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100571672"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106581755"
 ---
 # <a name="monitor-site-recovery-with-azure-monitor-logs"></a>Site Recovery bewaken met Azure Monitor-logboeken
 

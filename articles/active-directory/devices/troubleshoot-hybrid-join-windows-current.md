@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 3fd837a4c547b227147752b03b6a7312c733a5ae
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: 63415037b9f91936e04fa715405bfb86bf022cdd
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106057011"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106551761"
 ---
 # <a name="troubleshooting-hybrid-azure-active-directory-joined-devices"></a>Problemen met hybride Azure Active Directory-gekoppelde apparaten oplossen
 
@@ -29,7 +29,7 @@ In dit artikel wordt ervan uitgegaan dat u [hybride Azure Active Directory gekop
 
 - Voorwaardelijke toegang op basis van het apparaat
 - [Zwervende instellingen voor ondernemingen](./enterprise-state-roaming-overview.md)
-- [Windows hello voor bedrijven](/windows/security/identity-protection/hello-for-business/hello-identity-verification)
+- [Windows Hello voor Bedrijven](/windows/security/identity-protection/hello-for-business/hello-identity-verification)
 
 Dit document bevat richt lijnen voor probleem oplossing om mogelijke problemen op te lossen.
 
@@ -423,4 +423,4 @@ Als de waarden **Nee** zijn, kan dit worden veroorzaakt door:
 
 Door gaan met [het oplossen van problemen met de dsregcmd-opdracht](troubleshoot-device-dsregcmd.md)
 
-Zie [Veelgestelde vragen over Apparaatbeheer](faq.md) voor meer informatie.
+Zie [Veelgestelde vragen over Apparaatbeheer](faq.yml) voor meer informatie.

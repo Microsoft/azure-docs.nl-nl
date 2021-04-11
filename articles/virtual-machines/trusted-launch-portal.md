@@ -7,14 +7,14 @@ ms.reviewer: cynthn
 ms.service: virtual-machines
 ms.subservice: trusted-launch
 ms.topic: how-to
-ms.date: 03/03/2021
+ms.date: 04/06/2021
 ms.custom: template-how-to
-ms.openlocfilehash: 6499e4b3404a255025f88488e73da1efb6449296
-ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
+ms.openlocfilehash: 50ecf6e394d5d19d09033554272023bd6796851b
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106075948"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106581207"
 ---
 # <a name="deploy-a-vm-with-trusted-launch-enabled-preview"></a>Een VM implementeren met behulp van vertrouwde start ingeschakeld (preview-versie)
 
@@ -41,10 +41,13 @@ Een virtuele machine maken waarvoor vertrouwde start is ingeschakeld.
 5. Controleer onder **Project Details** of het juiste abonnement is geselecteerd.
 6. Selecteer onder **resource groep** de optie **nieuwe maken** en typ een naam voor de resource groep of selecteer een bestaande resource groep in de vervolg keuzelijst.
 7. Typ onder **Details van exemplaar** een naam voor de naam van de virtuele machine en kies een regio die ondersteuning biedt voor [vertrouwde start](trusted-launch.md#public-preview-limitations).
-8. Selecteer onder **afbeelding** een [installatie kopie die ondersteuning biedt voor vertrouwde start](trusted-launch.md#public-preview-limitations). Mogelijk ziet u alleen de versie 1 van de installatie kopie, die u in orde hebt, gaat u verder met de volgende stap.
-9. Schakel over naar het tabblad **Geavanceerd** door het boven aan de pagina te selecteren.
-10. Schuif omlaag naar de sectie voor het genereren van de **virtuele machine** en selecteer vervolgens **gen 2**.
-11. Terwijl u nog steeds op het tabblad **Geavanceerd** , schuift u omlaag naar **vertrouwd starten** en selecteert u vervolgens het selectie vakje **vertrouwd starten** . Zo worden er nog twee opties weer gegeven: beveiligd opstarten en vTPM. Selecteer de juiste opties voor uw implementatie.
+8. Selecteer onder **afbeelding** een installatie kopie van generatie 1 [die ondersteuning biedt voor vertrouwde start](trusted-launch.md#public-preview-limitations). 
+   > [!TIP]
+   > Als de versie van de installatie kopie die u in de vervolg keuzelijst wilt weer geven, niet wordt weer gegeven, selecteert u **alle afbeeldingen bekijken** en wijzigt u vervolgens de filter voor het **genereren van Vm's** zodat alleen generatie 1-installatie kopieën worden getoond. Zoek de installatie kopie in de lijst en selecteer vervolgens de vervolg keuzelijst **selecteren** om de versie van de gen 2 te selecteren.
+ 
+1. Schakel over naar het tabblad **Geavanceerd** door het boven aan de pagina te selecteren.
+1. Schuif omlaag naar de sectie **VM-generatie** . Zorg ervoor dat **gen 2** is geselecteerd.
+1. Terwijl u nog steeds op het tabblad **Geavanceerd** , schuift u omlaag naar **vertrouwd starten** en selecteert u vervolgens het selectie vakje **vertrouwd starten** . Zo worden er nog twee opties weer gegeven: beveiligd opstarten en vTPM. Selecteer de juiste opties voor uw implementatie.
 
     :::image type="content" source="media/trusted-launch/trusted-launch-portal.png" alt-text="Scherm afbeelding met de opties voor vertrouwde start.":::
 
@@ -67,10 +70,10 @@ Het duurt een paar minuten voor uw virtuele machine is geïmplementeerd.
 U kunt vertrouwde Launch Vm's implementeren met behulp van een Quick Start-sjabloon:
 
 **Linux**:    
-[![Implementeren in Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fprash200%2Fazure-quickstart-templates%2Fmaster%2F101-vm-trustedlaunch-linux%2Fazuredeploy.json/createUIDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2Fprash200%2Fazure-quickstart-templates%2Fmaster%2F101-vm-trustedlaunch-linux%2FcreateUiDefinition.json)
+[![Implementeren in Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-vm-trustedlaunch-linux%2Fazuredeploy.json/createUIDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-vm-trustedlaunch-linux%2FcreateUiDefinition.json)
 
 **Windows**:    
-[![Implementeren in Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fprash200%2Fazure-quickstart-templates%2Fmaster%2F101-vm-trustedlaunch-windows%2Fazuredeploy.json/createUIDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2Fprash200%2Fazure-quickstart-templates%2Fmaster%2F101-vm-trustedlaunch-windows%2FcreateUiDefinition.json)
+[![Implementeren in Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-vm-trustedlaunch-windows%2Fazuredeploy.json/createUIDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-vm-trustedlaunch-windows%2FcreateUiDefinition.json)
 
 ## <a name="view-and-update"></a>Weer geven en bijwerken
 

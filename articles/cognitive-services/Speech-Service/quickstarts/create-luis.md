@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: tutorial
 ms.date: 06/25/2020
 ms.author: trbye
-ms.openlocfilehash: f547b353091cc81816f0974fced8d4dc836d22b2
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
-ms.translationtype: HT
+ms.openlocfilehash: 45c509ea2391c370aa0a399b2f0c621238fabc55
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023817"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107209677"
 ---
 # <a name="quickstart-getting-a-luis-endpoint-key"></a>Quickstart: een LUIS-eindpuntsleutel ophalen
 
@@ -64,4 +64,4 @@ Ga als volgt te werk op de pagina **Keys and Endpoints settings**:
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Intenties herkennen](~/articles/cognitive-services/Speech-Service/quickstarts/intent-recognition.md)
+> [Intenties herkennen](~/articles/cognitive-services/Speech-Service/get-started-intent-recognition.md)

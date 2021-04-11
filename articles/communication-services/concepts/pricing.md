@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: cf4f427c76709022feed37c7a21f1ab4d594acd0
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 5f7b1e6d600f5d3652ce6a66a72cbfbf33b336c4
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105728161"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106091868"
 ---
 # <a name="pricing-scenarios"></a>Prijsscenario's
 
@@ -44,6 +44,41 @@ Alice heeft een groepsoproep gemaakt met haar collega's, Bob en Charlie. Alice e
 - 1 deelnemers x 43 minuten x $0,004 per deelnemer per minuut = $0,172 [voor video en audio geldt hetzelfde tarief]
 
 **Totale kosten voor de groepsoproep**: $0,48 + $0,172 = $0,652
+
+
+### <a name="pricing-example-outbound-call-from-app-using-js-sdk-to-a-pstn-number"></a>Prijs voorbeeld: uitgaande oproep van de app met JS SDK naar een PSTN-nummer
+
+Anja maakt een PSTN-oproep van een app naar Bob op het telefoon nummer van de VS, te beginnen met `+1-425` .
+
+- Anja heeft de JS-SDK gebruikt om de app te bouwen.
+- De aanroep duurt in totaal 5 minuten.
+
+**Kostenberekeningen**
+
+- 1 deel nemer op het VoIP-poot (Alice) van de app tot communicatie Services-servers x 10 minuten x $0,004 per deel nemer per minuut = $0,04
+- 1 deel nemer op de PSTN uitgaand (Charlie) van communicatie Services-servers naar een VS-telefoon nummer x 10 minuten x $0,013 per deel nemer per minuut = $0,13.
+
+Opmerking: de gemengde tarieven van de Verenigde Staten tot `+1-425` $0,013. Raadpleeg de volgende koppeling voor meer informatie: https://github.com/Azure/Communication/blob/master/pricing/communication-services-pstn-rates.csv)
+
+**Totale kosten voor de groeps aanroep**: $0,04 + $0,13 = $0,17
+
+
+### <a name="pricing-example-group-audio-call-using-js-sdk-and-1-pstn-leg"></a>Prijs voorbeeld: audio oproep groeperen met de JS-SDK en 1 PSTN-poot
+
+Anne en Robert bevinden zich op een VOIP-oproep. Bob heeft de oproep doorgestuurd naar Charlie op het PSTN-nummer van Charlie, een telefoon nummer dat begint met `+1-425` .
+
+- Anja heeft de JS-SDK gebruikt om de app te bouwen. Ze zijn 10 minuten voor het aanroepen van Charlie op het PSTN-nummer.
+- Zodra Bob de aanroep naar Charlie op zijn PSTN-nummer heeft geëscaleerd, zijn er drie van deze twee minuten lang.
+
+**Kostenberekeningen**
+
+- 2 deel nemers aan het VoIP-gedeelte (Alice en Bob) van de app tot communicatie Services-servers x 20 minuten x $0,004 per deel nemer per minuut = $0,16
+- 1 deel nemer aan de PSTN-uitgaand (Charlie) van de communicatie Services-servers naar het VS-telefoon nummer x 10 minuten x $0,013 per deel nemer per minuut = $0,13
+
+Opmerking: de gemengde tarieven van de Verenigde Staten tot `+1-425` $0,013. Raadpleeg de volgende koppeling voor meer informatie: https://github.com/Azure/Communication/blob/master/pricing/communication-services-pstn-rates.csv)
+
+**Totale kosten voor het VoIP + escalatie gesprek**: $0,16 + $0,13 = $. 29
+
 
 ### <a name="pricing-example-a-user-of-the-communication-services-javascript-sdk-joins-a-scheduled-microsoft-teams-meeting"></a>Prijs voorbeeld: een gebruiker van de Java script SDK van Communication Services neemt een geplande micro soft teams-vergadering samen
 

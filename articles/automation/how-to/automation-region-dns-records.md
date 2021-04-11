@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 11/25/2020
 ms.topic: conceptual
-ms.openlocfilehash: 8630afa7410aad81a7a3c61540fc74702fc6481c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d41d825c7bc33e05815c7528b436c85873859928
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100575993"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106168923"
 ---
 # <a name="dns-records-for-azure-regions-used-by-azure-automation"></a>DNS-records voor Azure-regio's die worden gebruikt door Azure Automation
 
@@ -98,7 +98,7 @@ U wordt aangeraden de adressen te gebruiken die worden weer gegeven bij het defi
 * [IP-adresbereiken en service tags van Azure-open bare Azure](https://www.microsoft.com/download/details.aspx?id=56519)
 * [Azure IP-bereiken en-service Tags-Azure Government](https://www.microsoft.com/download/details.aspx?id=57063)
 * [IP-adresbereiken en service tags van Azure-Azure Duitsland](https://www.microsoft.com/download/details.aspx?id=57064)
-* [Azure IP-bereiken en-service Tags – Azure China ViaNet 21](https://www.microsoft.com/download/details.aspx?id=57062)
+* [IP-adresbereiken en service tags van Azure-Azure China ViaNet 21](https://www.microsoft.com/download/details.aspx?id=57062)
 
 Het IP-adres bestand bevat de IP-adresbereiken die worden gebruikt in de Microsoft Azure data centers. Het omvat compute-, SQL-en opslag bereiken en weerspiegelt de huidige geïmplementeerde bereiken en eventuele toekomstige wijzigingen in de IP-bereiken. Nieuwe bereiken die in het bestand worden weer gegeven, worden gedurende ten minste één week niet gebruikt in de data centers.
 

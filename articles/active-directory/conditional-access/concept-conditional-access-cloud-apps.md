@@ -11,19 +11,21 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c8024a2083d09fcbd53a37f0d391c4589748eea
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 80ec5133ad12dda4a6883c663007b8b7fec2e81a
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105605073"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106551931"
 ---
 # <a name="conditional-access-cloud-apps-or-actions"></a>Voorwaardelijke toegang: Cloud-apps of-acties
 
 Cloud-apps of-acties zijn een belang rijk signaal in een beleid voor voorwaardelijke toegang. Met beleid voor voorwaardelijke toegang kunnen beheerders besturings elementen aan specifieke toepassingen of acties toewijzen.
 
 - Beheerders kunnen kiezen uit de lijst met toepassingen met ingebouwde micro soft-toepassingen en [Azure AD Integrated-toepassingen](../manage-apps/what-is-application-management.md) , waaronder galerie, niet-galerie en toepassingen die zijn gepubliceerd via [toepassings proxy](../manage-apps/what-is-application-proxy.md).
-- Beheerders kunnen ervoor kiezen om beleid te definiëren dat niet is gebaseerd op een Cloud toepassing maar bij een gebruikers actie. De enige ondersteunde actie is het registreren van beveiligings gegevens (preview), waardoor voorwaardelijke toegang kan leiden tot het afdwingen van besturings elementen voor de [registratie van gecombineerde beveiligings gegevens](../authentication/howto-registration-mfa-sspr-combined.md).
+- Beheerders kunnen ervoor kiezen om beleid te definiëren dat niet is gebaseerd op een Cloud toepassing maar bij een gebruikers actie. We ondersteunen twee gebruikers acties
+   - Beveiligings gegevens registreren (preview) om besturings elementen af te dwingen voor de [registratie van gecombineerde beveiligings gegevens](../authentication/howto-registration-mfa-sspr-combined.md) 
+   - Apparaten registreren of toevoegen (preview) om besturings elementen af te dwingen wanneer gebruikers apparaten bij Azure AD [registreren](../devices/concept-azure-ad-register.md) of eraan [toevoegen](../devices/concept-azure-ad-join.md) . 
 
 ![Beleid voor voorwaardelijke toegang definiëren en Cloud-apps opgeven](./media/concept-conditional-access-cloud-apps/conditional-access-cloud-apps-or-actions.png)
 
@@ -131,9 +133,10 @@ Gebruikers acties zijn taken die door een gebruiker kunnen worden uitgevoerd. Vo
 
 - **Beveiligings gegevens registreren**: met deze gebruikers actie kan beleid voor voorwaardelijke toegang worden afgedwongen wanneer gebruikers die zijn ingeschakeld voor de gecombineerde registratie poging hun beveiligings gegevens te registreren. Meer informatie vindt u in het artikel, [registratie van gecombineerde beveiligings gegevens](../authentication/concept-registration-mfa-sspr-combined.md).
 
-- **Apparaten registreren of toevoegen (preview)**: met deze gebruikers actie kunnen beheerders beleid voor voorwaardelijke toegang afdwingen wanneer gebruikers apparaten bij Azure AD [registreren](../devices/concept-azure-ad-register.md) of eraan [toevoegen](../devices/concept-azure-ad-join.md) . Er zijn twee belang rijke aandachtspunten met deze gebruikers actie: 
+- **Apparaten registreren of toevoegen (preview)**: met deze gebruikers actie kunnen beheerders beleid voor voorwaardelijke toegang afdwingen wanneer gebruikers apparaten bij Azure AD [registreren](../devices/concept-azure-ad-register.md) of eraan [toevoegen](../devices/concept-azure-ad-join.md) . Het biedt granulairheid bij het configureren van multi-factor Authentication voor het registreren of toevoegen van apparaten in plaats van een beleid op forestniveau dat momenteel bestaat. Er zijn drie belang rijke aandachtspunten met deze gebruikers actie: 
    - `Require multi-factor authentication` is het enige toegangs beheer dat beschikbaar is voor deze gebruikers actie en alle andere zijn uitgeschakeld. Deze beperking voor komt conflicten met toegangs controles die afhankelijk zijn van de registratie van Azure AD-apparaten of niet van toepassing zijn op Azure AD-apparaatregistratie. 
-   - Wanneer een beleid voor voorwaardelijke toegang is ingeschakeld met deze gebruikers actie, moet u de apparaatinstellingen van **Azure Active Directory**  >  **apparaten** instellen  >    -  `Devices to be Azure AD joined or Azure AD registered require Multi-Factor Authentication` op **Nee**. Anders wordt het beleid voor voorwaardelijke toegang met deze gebruikers actie niet op de juiste wijze afgedwongen. Meer informatie over deze Apparaatinstellingen vindt [u in Apparaatinstellingen configureren](../devices/device-management-azure-portal.md#configure-device-settings). Deze gebruikers actie biedt flexibiliteit om multi-factor Authentication te vereisen voor het registreren of samen voegen van apparaten voor specifieke gebruikers en groepen of voor waarden in plaats van een beleid op Tenant niveau te hebben in Apparaatinstellingen. 
+   - `Client apps` en `Device state` voor waarden zijn niet beschikbaar voor deze gebruikers actie, omdat ze afhankelijk zijn van Azure AD-apparaatregistratie voor het afdwingen van beleid voor voorwaardelijke toegang.
+   - Wanneer een beleid voor voorwaardelijke toegang is ingeschakeld met deze gebruikers actie, moet u de apparaatinstellingen van **Azure Active Directory**  >  **apparaten** instellen  >    -  `Devices to be Azure AD joined or Azure AD registered require Multi-Factor Authentication` op **Nee**. Anders wordt het beleid voor voorwaardelijke toegang met deze gebruikers actie niet op de juiste wijze afgedwongen. Meer informatie over deze Apparaatinstellingen vindt [u in Apparaatinstellingen configureren](../devices/device-management-azure-portal.md#configure-device-settings). 
    
 ## <a name="next-steps"></a>Volgende stappen
 

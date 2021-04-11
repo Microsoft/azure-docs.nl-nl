@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: logicappspm
 ms.topic: article
 ms.date: 11/06/2020
-ms.openlocfilehash: ec72431d927fd59677075e7adfdf7df171574882
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 44131ecf6fd3d8d2f07f0fe567fb924ac8621682
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104772940"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106109999"
 ---
 # <a name="overview-automate-deployment-for-azure-logic-apps-by-using-azure-resource-manager-templates"></a>Overzicht: de implementatie voor Azure Logic Apps automatiseren met behulp van Azure Resource Manager sjablonen
 
@@ -67,7 +67,7 @@ Voor een sjabloon voor een logische app werkt u voornamelijk met deze sjabloon o
 |-----------|-------------|
 | `parameters` | Declareert de [sjabloon parameters](../azure-resource-manager/templates/template-syntax.md#parameters) voor het accepteren van de waarden die moeten worden gebruikt bij het maken en aanpassen van resources voor implementatie in Azure. Deze para meters accepteren bijvoorbeeld de waarden voor de naam en locatie, verbindingen en andere resources die nodig zijn voor de implementatie van uw logische app. U kunt deze parameter waarden opslaan in een [parameter bestand](#template-parameter-files), dat later in dit onderwerp wordt beschreven. Zie [para meters-Resource Manager-sjabloon structuur en syntaxis](../azure-resource-manager/templates/template-syntax.md#parameters)voor algemene informatie. |
 | `resources` | Definieert de [resources](../azure-resource-manager/templates/template-syntax.md#resources) voor het maken of bijwerken en implementeren van een Azure-resource groep, zoals uw logische app, verbindingen, Azure Storage-accounts, enzovoort. Zie voor algemene informatie [bronnen-Resource Manager-sjabloon structuur en-syntaxis](../azure-resource-manager/templates/template-syntax.md#resources). |
-||||
+|||
 
 De logische app-sjabloon maakt gebruik van de volgende bestands indeling:
 

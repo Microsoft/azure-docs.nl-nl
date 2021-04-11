@@ -1,25 +1,25 @@
 ---
-title: Azure Cognitive Search-logboeken en-metrische gegevens visualiseren met Power BI
-description: Azure Cognitive Search-logboeken en-metrische gegevens visualiseren met Power BI
-manager: eladz
+title: Logboeken en metrische gegevens visualiseren met Power BI
+description: Visualiseren van Azure Cognitive Search-logboeken en-metrische gegevens met Power BI.
 author: MarkHeff
 ms.author: maheff
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 09/25/2020
-ms.openlocfilehash: 4056e892855c06ce6c412ec4a592ebcd97fc11a6
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/07/2021
+ms.openlocfilehash: fbbeb861e50abfd393b416ddc46ff147fffb7b8e
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96325380"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106581635"
 ---
 # <a name="visualize-azure-cognitive-search-logs-and-metrics-with-power-bi"></a>Azure Cognitive Search-logboeken en-metrische gegevens visualiseren met Power BI
-Met [Azure Cognitive Search](./search-what-is-azure-search.md) kunt u bewerkings logboeken en metrische service gegevens over uw zoek service opslaan in een Azure Storage-account. Op deze pagina vindt u instructies voor het visualiseren van deze informatie met behulp van een app Power BI-sjabloon. De app biedt gedetailleerde inzichten over uw zoek service, inclusief informatie over zoeken, indexeren, bewerkingen en metrische service gegevens.
+
+[Azure Cognitive Search](./search-what-is-azure-search.md) kunt bewerkings logboeken en metrische service gegevens verzenden naar een Azure Storage-account, dat u vervolgens kunt visualiseren in Power bi. In dit artikel worden de stappen beschreven en wordt uitgelegd hoe u een app Power BI sjabloon gebruikt om de gegevens te visualiseren. De sjabloon kan u helpen om gedetailleerde inzichten te krijgen over uw zoek service, inclusief informatie over query's, indexering, bewerkingen en metrische service gegevens.
 
 U vindt de Power BI sjabloon app **Azure Cognitive Search: Analyseer logboeken en metrische gegevens** in de [Power bi apps Marketplace](https://appsource.microsoft.com/marketplace/apps).
 
-## <a name="how-to-get-started-with-the-app"></a>Aan de slag met de app
+## <a name="set-up-the-app"></a>De app instellen
 
 1. Metrische gegevens en bron logboek registratie inschakelen voor uw zoek service:
 
@@ -67,7 +67,8 @@ U vindt de Power BI sjabloon app **Azure Cognitive Search: Analyseer logboeken e
 
     :::image type="content" source="media/search-monitor-logs-powerbi/powerbi-search.png" alt-text="Scherm opname van het rapport Cognitive Search Power BI van Azure.":::
 
-## <a name="how-to-change-the-app-parameters"></a>De app-para meters wijzigen
+## <a name="modify-app-parameters"></a>App-para meters wijzigen
+
 Als u gegevens uit een ander opslag account wilt visualiseren of het aantal dagen aan gegevens wilt wijzigen, volgt u de onderstaande stappen om de **dagen** en **Storage account** para meters te wijzigen.
 
 1. Ga naar uw Power BI-apps, Zoek uw Azure Cognitive Search-app en selecteer de knop **app bewerken** om de werk ruimte weer te geven.
@@ -86,7 +87,8 @@ Als u gegevens uit een ander opslag account wilt visualiseren of het aantal dage
 
 1. Open het rapport om de bijgewerkte gegevens weer te geven. Mogelijk moet u het rapport ook vernieuwen om de meest recente gegevens weer te geven.
 
-## <a name="troubleshooting"></a>Problemen oplossen
+## <a name="troubleshooting-report-issues"></a>Problemen met rapporten oplossen
+
 Als u vindt dat uw gegevens niet kunnen worden weer gegeven, volgt u deze stappen voor probleem oplossing:
 
 1. Open het rapport en vernieuw de pagina om er zeker van te zijn dat u de meest recente gegevens bekijkt. Er is een optie in het rapport om de gegevens te vernieuwen. Selecteer deze optie om de meest recente gegevens op te halen.
@@ -98,8 +100,7 @@ Als u vindt dat uw gegevens niet kunnen worden weer gegeven, volgt u deze stappe
 1. Controleer of de gegevensset nog steeds wordt vernieuwd. De status indicator voor vernieuwen wordt weer gegeven in stap 8 hierboven. Als de service nog steeds wordt vernieuwd, wacht u totdat het vernieuwen is voltooid om het rapport te openen en te vernieuwen.
 
 ## <a name="next-steps"></a>Volgende stappen
-[Meer informatie over Azure Cognitive Search](./index.yml)
 
-[Wat is Power BI?](/power-bi/fundamentals/power-bi-overview)
-
-[Basisconcepten voor ontwerpers in de Power BI-service](/power-bi/service-basic-concepts)
++ [Zoek bewerkingen en activiteiten bewaken](search-monitor-usage.md)
++ [Wat is Power BI?](/power-bi/fundamentals/power-bi-overview)
++ [Basisconcepten voor ontwerpers in de Power BI-service](/power-bi/service-basic-concepts)

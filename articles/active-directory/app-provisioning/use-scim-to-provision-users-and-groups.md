@@ -12,12 +12,12 @@ ms.date: 03/22/2021
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 8d517aaa6121120399e09bfef8aa6dd36e745563
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e8192c5c6734009f69e3f741531251dd85675b47
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105022939"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106449446"
 ---
 # <a name="tutorial-develop-and-plan-provisioning-for-a-scim-endpoint"></a>Zelf studie: inrichten opstellen en plannen voor een SCIM-eind punt
 
@@ -168,10 +168,10 @@ Er zijn verschillende eindpunten gedefinieerd in de SCIM RFC. U kunt beginnen me
 |--|--|
 |/User|Hiermee voert u CRUD-bewerkingen op een gebruikersobject uit.|
 |/Group|Hiermee voert u CRUD-bewerkingen op een groepsobject uit.|
-|/ServiceProviderConfig|Bevat informatie over de functies van de SCIM-standaard die worden ondersteund, bijvoorbeeld de resources die worden ondersteund en de verificatiemethode.|
-|/ResourceTypes|Hiermee geeft u de metagegevens van elke resource op|
 |/Schemas|De set kenmerken die door elke client en serviceprovider wordt ondersteund, kan variëren. De ene serviceprovider kan `name`, `title` en `emails` gebruiken, terwijl een andere service provider `name`, `title` en `phoneNumbers` gebruikt. Het eindpunt voor schema's maakt het mogelijk om de kenmerken te detecteren die worden ondersteund.|
 |/Bulk|Met bulkbewerkingen kunt u met één bewerking verschillende bewerkingen uitvoeren op een grote verzameling Resource-objecten (zoals lidmaatschappen bijwerken voor een grote groep).|
+|/ServiceProviderConfig|Bevat informatie over de functies van de SCIM-standaard die worden ondersteund, bijvoorbeeld de resources die worden ondersteund en de verificatiemethode.|
+|/ResourceTypes|Hiermee geeft u meta gegevens voor elke resource op.|
 
 **Voor beeld van een lijst met eind punten**
 
@@ -1329,9 +1329,9 @@ Gebruik de controle lijst om uw toepassing snel vrij te maken en klanten een soe
 > * 3 niet-verlopende test-aanmeldingsgegevens voor uw toepassing (vereist)
 > * Ondersteuning voor het verlenen van de OAuth-autorisatiecode of een token met lange levensduur zoals hieronder wordt beschreven (vereist)
 > * Technische hulp en ondersteuning om klanten te ondersteunen na onboarding in de galerie (vereist)
+> * [Ondersteuning voor schema detectie (vereist)](https://tools.ietf.org/html/rfc7643#section-6)
 > * Ondersteuning voor het bijwerken van meerdere groepslid maatschappen met één PATCH
 > * Uw SCIM-eind punt openbaar documenteren
-> * [Ondersteuning voor schema detectie](https://tools.ietf.org/html/rfc7643#section-6)
 
 ### <a name="authorization-to-provisioning-connectors-in-the-application-gallery"></a>Autorisatie voor het inrichten van connectors in de toepassings galerie
 De SCIM spec definieert geen SCIM-specifiek schema voor verificatie en autorisatie, en is afhankelijk van het gebruik van bestaande industrie normen.

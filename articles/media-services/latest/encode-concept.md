@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 22f4c5bba3ea6836a8c9b016315f3cfae36cb52d
-ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
+ms.openlocfilehash: 225f1d311739bdafbe39971a2b4ac74917e770e9
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106111701"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106279490"
 ---
 # <a name="encoding-video-and-audio-with-media-services"></a>Video en audio coderen met Media Services
 
@@ -31,7 +31,7 @@ Video's worden meestal geleverd aan apparaten en apps door [progressief te downl
 > Media Services worden geen geannuleerde of fout taken gefactureerd. Een taak die bijvoorbeeld een voortgang van 50% heeft bereikt en wordt geannuleerd, wordt niet in rekening gebracht tegen 50% van de taak minuten. Er worden alleen kosten in rekening gebracht voor voltooide taken.
 
 * Voor het leveren van een progressieve down load kunt u Azure Media Services gebruiken om een digitaal media bestand (mezzanine) te converteren naar een [MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14) -bestand, dat Video's bevat die zijn gecodeerd met de [H. 264](https://en.wikipedia.org/wiki/H.264/MPEG-4_AVC) -codec en de audio die is gecodeerd met de [AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding) -codec. Dit MP4-bestand wordt naar een asset in uw opslag account geschreven. U kunt de Azure Storage Api's of Sdk's (bijvoorbeeld [Storage rest API](../../storage/common/storage-rest-api-auth.md) of [.NET SDK](../../storage/blobs/storage-quickstart-blobs-dotnet.md)) gebruiken om het bestand rechtstreeks te downloaden. Als u het uitvoer activum hebt gemaakt met een specifieke container naam in Storage, gebruikt u die locatie. Als dat niet het geval is, kunt u Media Services gebruiken om [de url's van de Asset-container weer te geven](/rest/api/media/assets/listcontainersas). 
-* Om inhoud voor te bereiden voor levering door Adaptive Bitrate Streaming, moet het mezzanine-bestand worden gecodeerd op meerdere bitsnelheden (hoog naar laag). Om te zorgen voor een correcte overgang van kwaliteit, wordt de resolutie van de video verlaagd naarmate de bitsnelheid wordt verlaagd. Dit resulteert in een zogenaamde coderings ladder, een tabel met resoluties en bitrates (zie een [automatisch gegenereerde, Adaptive bitrate ladder](encode-autogen-bitrate-ladder.md)). U kunt Media Services gebruiken om uw mezzanine-bestanden op meerdere bitsnelheden te coderen. In dat geval krijgt u een set van MP4-bestanden en bijbehorende streaming-configuratie bestanden die worden geschreven naar een asset in uw opslag account. U kunt vervolgens de [dynamische verpakkings](encode-dynamic-packaging-concept.md) functie in Media Services gebruiken om de video via streaming protocollen zoals [MPEG-Dash](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP) en [HLS](https://en.wikipedia.org/wiki/HTTP_Live_Streaming)te leveren. Hiervoor moet u een streaming- [Locator](streaming-locators-concept.md) maken en streaming-url's bouwen die overeenkomen met de ondersteunde protocollen. deze kunnen vervolgens worden door gegeven aan apparaten/apps op basis van hun mogelijkheden.
+* Om inhoud voor te bereiden voor levering door Adaptive Bitrate Streaming, moet het mezzanine-bestand worden gecodeerd op meerdere bitsnelheden (hoog naar laag). Om te zorgen voor een correcte overgang van kwaliteit, wordt de resolutie van de video verlaagd naarmate de bitsnelheid wordt verlaagd. Dit resulteert in een zogenaamde coderings ladder, een tabel met resoluties en bitrates (zie een [automatisch gegenereerde, Adaptive bitrate ladder](encode-autogen-bitrate-ladder.md)). U kunt Media Services gebruiken om uw mezzanine-bestanden op meerdere bitsnelheden te coderen. In dat geval krijgt u een set van MP4-bestanden en bijbehorende streaming-configuratie bestanden die worden geschreven naar een asset in uw opslag account. U kunt vervolgens de [dynamische verpakkings](encode-dynamic-packaging-concept.md) functie in Media Services gebruiken om de video via streaming protocollen zoals [MPEG-Dash](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP) en [HLS](https://en.wikipedia.org/wiki/HTTP_Live_Streaming)te leveren. Hiervoor moet u een streaming- [Locator](stream-streaming-locators-concept.md) maken en streaming-url's bouwen die overeenkomen met de ondersteunde protocollen. deze kunnen vervolgens worden door gegeven aan apparaten/apps op basis van hun mogelijkheden.
 
 In het volgende diagram ziet u de werk stroom voor code ring op aanvraag met dynamische verpakking.
 
@@ -41,7 +41,7 @@ In dit onderwerp vindt u richt lijnen voor het coderen van inhoud met Media Serv
 
 ## <a name="transforms-and-jobs"></a>Transformaties en taken
 
-Als u wilt coderen met Media Services v3, moet u een [trans formatie](/rest/api/media/transforms) en een [taak](/rest/api/media/jobs)maken. De trans formatie definieert een recept voor uw coderings instellingen en-uitvoer. de taak is een exemplaar van het recept. Zie [Transformaties en taken](transforms-jobs-concept.md) voor meer informatie.
+Als u wilt coderen met Media Services v3, moet u een [trans formatie](/rest/api/media/transforms) en een [taak](/rest/api/media/jobs)maken. De trans formatie definieert een recept voor uw coderings instellingen en-uitvoer. de taak is een exemplaar van het recept. Zie [Transformaties en taken](transform-jobs-concept.md) voor meer informatie.
 
 Wanneer u code ring met Media Services, gebruikt u voor instellingen om de encoder te vertellen hoe de invoer media bestanden moeten worden verwerkt. In Media Services V3 gebruikt u de standaard encoder om uw bestanden te coderen. U kunt bijvoorbeeld de video resolutie en/of het aantal audio kanalen opgeven dat u in de gecodeerde inhoud wilt opnemen.
 
@@ -84,8 +84,8 @@ U kunt opgeven om een [taak](/rest/api/media/jobs/create) te maken met één cli
 
 Zie voor beelden:
 
-* [Een video met .NET knippen](subclip-video-dotnet-howto.md)
-* [Een video met REST samenknippen](subclip-video-rest-howto.md)
+* [Een video met .NET knippen](transform-subclip-video-dotnet-how-to.md)
+* [Een video met REST samenknippen](transform-subclip-video-rest-how-to.md)
 
 ## <a name="built-in-presets"></a>Ingebouwde voor instellingen
 

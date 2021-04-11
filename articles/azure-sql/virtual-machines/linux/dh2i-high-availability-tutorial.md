@@ -2,17 +2,17 @@
 title: Altijd on-beschikbaarheids groep instellen met DH2i DxEnterprise die wordt uitgevoerd op op Linux gebaseerde Azure Virtual Machines
 description: Gebruik DH2i DxEnterprise als cluster beheer voor hoge Beschik baarheid met een beschikbaarheids groep op SQL Server on Linux Azure Virtual Machines
 ms.date: 03/04/2021
-ms.service: virtual-machines-linux
+ms.service: virtual-machines-sql
 ms.topic: tutorial
 author: amvin87
 ms.author: amitkh
 ms.reviewer: vanto
-ms.openlocfilehash: 07752eb5c7f18a8952c43e77afed78b06432aca6
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 56002aaa977b94b0fabee4f17343f483706eb77d
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105568529"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106449423"
 ---
 # <a name="tutorial---setup-a-three-node-always-on-availability-group-with-dh2i-dxenterprise-running-on-linux-based-azure-virtual-machines"></a>Zelf studie: een drie knoop punt altijd on-beschikbaarheids groep instellen met DH2i DxEnterprise die wordt uitgevoerd op op Linux gebaseerde Azure Virtual Machines
 

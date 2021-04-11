@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/29/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python,contperf-fy21q1, automl
-ms.openlocfilehash: 12a6761ac2cd305e6ff949ffa59ee3bbdff1934d
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 755386bfa36b18796eccec0020efe9136e0215cd
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105732887"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106068146"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Geautomatiseerde ML-experimenten configureren in Python
 
@@ -47,6 +47,9 @@ Voor dit artikel hebt u het volgende nodig:
     * Maak een reken instantie, waarmee de SDK automatisch wordt geïnstalleerd en vooraf is geconfigureerd voor ML-werk stromen. Zie [een Azure machine learning Compute-exemplaar maken en beheren](how-to-create-manage-compute-instance.md) voor meer informatie. 
 
     * [Installeer het `automl` pakket zelf](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/README.md#setup-using-a-local-conda-environment), dat de [standaard installatie](/python/api/overview/azure/ml/install#default-install) van de SDK bevat.
+    
+    > [!WARNING]
+    > Python 3,8 is niet compatibel met `automl` . 
 
 ## <a name="select-your-experiment-type"></a>Het type experimenten selecteren
 

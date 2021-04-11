@@ -1,15 +1,15 @@
 ---
 title: Details van de naleving van de regelgeving voor CIS Microsoft Azure Stichtings benchmark 1.1.0
 description: Details van de CIS-Microsoft Azure basis Bench Mark 1.1.0 reglementaire naleving ingebouwde initiatief. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 03/24/2021
+ms.date: 03/31/2021
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 7d26825e3e401984b52216c6827b8a3baf44ad62
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 1d21d04fe4347a2ff7735045e786520c106309c7
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105032511"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106091749"
 ---
 # <a name="details-of-the-cis-microsoft-azure-foundations-benchmark-110-regulatory-compliance-built-in-initiative"></a>Details van de CIS-Microsoft Azure basis Bench Mark 1.1.0e naleving ingebouwde initiatief
 
@@ -17,7 +17,7 @@ Het volgende artikel bevat informatie over de wijze waarop de Azure Policy regel
 Zie [CIS Microsoft Azure Stichting-benchmark 1.1.0](https://www.cisecurity.org/benchmark/azure/)voor meer informatie over deze nalevings standaard. Zie [Azure Policy-beleidsdefinitie](../concepts/definition-structure.md#type) en [Gedeelde verantwoordelijkheid in de Cloud](../../../security/fundamentals/shared-responsibility.md) om _Eigendom_ te begrijpen.
 
 De volgende toewijzingen bevinden zich in de CIS-1.1.0-besturings elementen voor de **Microsoft Azure Stichting** . Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifiek **nalevingsdomein** te gaan. Veel van de beheeropties worden geïmplementeerd met een [Azure Policy](../overview.md)-initiatiefdefinitie. Als u de complete initiatiefdefinitie wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities**.
-Zoek en selecteer vervolgens de ingebouwde definitie van het initiatief voor naleving van regelgeving in **CIS Microsoft Azure Benchmark 1.1.0**.
+Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis Bench Mark-benchmark v 1.1.0** -naleving.
 
 Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het CIS-voor beeld van het [dis Microsoft Azure stichtings 1.1.0e blauw](../../blueprints/samples/cis-azure-1-1-0.md)drukken.
 
@@ -70,7 +70,14 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het CIS-voor 
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[De prijscategorie Standard voor Security Center moet zijn geselecteerd](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa1181c5f-672a-477a-979a-7d58aa086233) |De prijscategorie Standard voorziet in detectie van bedreigingen voor netwerken en virtuele machines en biedt bedreigingsinformatie, anomaliedetectie en gedragsanalyse in Azure Security Center |Controle, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_Standard_pricing_tier.json) |
+|[Azure Defender voor App Service moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F2913021d-f2fd-4f3d-b958-22354e2bdbcb) |Azure Defender voor App Service maakt gebruik van de schaal van de cloud en de zichtbaarheid die Azure als cloudprovider heeft om te controleren op veelvoorkomende aanvallen op web-apps. |AuditIfNotExists, uitgeschakeld |[1.0.3](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableAdvancedThreatProtectionOnAppServices_Audit.json) |
+|[Azure Defender voor Azure SQL-databaseservers moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F7fe3b40f-802b-4cdd-8bd4-fd799c948cc2) |Azure Defender voor SQL biedt functionaliteit voor het opsporen en verhelpen van mogelijke databasebeveiligingsproblemen, het detecteren van afwijkende activiteiten die kunnen duiden op een bedreiging voor uw SQL-database en het detecteren en classificeren van gevoelige gegevens. |AuditIfNotExists, uitgeschakeld |[1.0.2](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableAdvancedDataSecurityOnSqlServers_Audit.json) |
+|[Azure Defender voor containerregisters moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc25d9a16-bc35-4e15-a7e5-9db606bf9ed4) |Azure Defender voor containerregisters biedt een functie voor het scannen op beveiligingsproblemen met installatiekopieën die in de afgelopen 30 dagen zijn opgehaald, naar uw register zijn gepusht of geïmporteerd, en geeft gedetailleerde resultaten per installatiekopie weer. |AuditIfNotExists, uitgeschakeld |[1.0.3](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableAdvancedThreatProtectionOnContainerRegistry_Audit.json) |
+|[Azure Defender voor Key Vault moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0e6763cc-5078-4e64-889d-ff4d9a839047) |Azure Defender voor Key Vault biedt een extra beschermlaag en beveiligingsinformatie die ongebruikelijke en mogelijk schadelijke pogingen detecteren voor toegang tot of het aanvallen van Key Vault-accounts. |AuditIfNotExists, uitgeschakeld |[1.0.3](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableAdvancedThreatProtectionOnKeyVaults_Audit.json) |
+|[Azure Defender voor Kubernetes moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F523b5cd1-3e23-492f-a539-13118b6d1e3a) |Azure Defender voor Kubernetes biedt realtime-beveiliging tegen bedreigingen voor in containers geplaatste omgevingen. Ook worden waarschuwingen voor verdachte activiteiten gegenereerd. |AuditIfNotExists, uitgeschakeld |[1.0.3](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableAdvancedThreatProtectionOnKubernetesService_Audit.json) |
+|[Azure Defender voor servers moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F4da35fc9-c9e7-4960-aec9-797fe7d9051d) |Azure Defender voor servers biedt realtime beveiliging tegen bedreigingen voor serverworkloads. Ook worden aanbevelingen voor bescherming en waarschuwingen over verdachte activiteiten gegenereerd. |AuditIfNotExists, uitgeschakeld |[1.0.3](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableAdvancedThreatProtectionOnVM_Audit.json) |
+|[Azure Defender voor SQL-servers moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F6581d072-105e-4418-827f-bd446d56421b) |Azure Defender voor SQL biedt functionaliteit voor het opsporen en verhelpen van mogelijke databasebeveiligingsproblemen, het detecteren van afwijkende activiteiten die kunnen duiden op een bedreiging voor uw SQL-database en het detecteren en classificeren van gevoelige gegevens. |AuditIfNotExists, uitgeschakeld |[1.0.2](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableAdvancedDataSecurityOnSqlServerVirtualMachines_Audit.json) |
+|[Azure Defender voor opslag moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F308fbb08-4ab8-4e67-9b29-592e93fb94fa) |Azure Defender voor opslag biedt functionaliteit voor het detecteren van ongebruikelijke en mogelijk schadelijke pogingen om toegang te verkrijgen tot of aanvallen op opslagaccounts. |AuditIfNotExists, uitgeschakeld |[1.0.3](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableAdvancedThreatProtectionOnStorageAccounts_Audit.json) |
 
 ### <a name="ensure-that-automatic-provisioning-of-monitoring-agent-is-set-to-on"></a>Zorg dat 'Automatische inrichting van bewakingsagent' is ingesteld op 'ingeschakeld'
 

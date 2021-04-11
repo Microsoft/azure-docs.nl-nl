@@ -5,14 +5,14 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: conceptual
-ms.date: 02/25/2021
+ms.date: 04/07/2021
 ms.author: memildin
-ms.openlocfilehash: 9d917b3682d3b503743e706e8c952854e86fbc5e
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: cdf46a5f0185e33e1e877e3682ab418a00725de2
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105727039"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107012543"
 ---
 # <a name="security-alerts-and-incidents-in-azure-security-center"></a>Beveiligings waarschuwingen en incidenten in Azure Security Center
 
@@ -78,7 +78,7 @@ Security Center wijst een Ernst toe aan waarschuwingen, zodat u de volg orde kun
 | **Hoog**          | Er is een hoge waarschijnlijkheid dat uw resource is aangetast. U ziet het meteen. Security Center heeft hoge betrouw baarheid in zowel de schadelijke intentie als de bevindingen die worden gebruikt voor het uitgeven van de waarschuwing. Een waarschuwing waarmee de uitvoering van een bekend schadelijk hulp programma, zoals Mimikatz, wordt gedetecteerd, is een algemeen hulp programma dat wordt gebruikt voor referentie diefstal.                                                                                                               |
 | **Gemiddeld**        | Dit is waarschijnlijk een verdachte activiteit kan erop wijzen dat een bron is aangetast. Het vertrouwen van Security Center in het analyse programma of het zoeken is gemiddeld en het vertrouwen van de schadelijke intentie is gemiddeld voor hoog. Deze worden doorgaans machine learning en detecties op basis van anomalieën. Bijvoorbeeld een aanmeldings poging vanaf een afwijkende locatie.                                                                                                                |
 | **Laag**           | Dit kan een goed aardige positieve of een geblokkeerde aanval zijn. Security Center niet zeker weet dat de intentie schadelijk is en de activiteit mogelijk onschuld is. Logboek wissen is bijvoorbeeld een actie die zich kan voordoen wanneer een aanvaller hun tracks probeert te verbergen, maar in veel gevallen is een routine bewerking door beheerders uitgevoerd. Security Center vertelt u doorgaans niet wanneer er aanvallen zijn geblokkeerd, tenzij dit een interessant geval is. |
-| **Informatief** | Er worden alleen informatieve waarschuwingen weer geven wanneer u inzoomt op een beveiligings incident of als u de REST API met een specifieke waarschuwings-ID gebruikt. Een incident bestaat doorgaans uit een aantal waarschuwingen, wat soms alleen ter informatie zou worden weer gegeven, maar in de context van de andere waarschuwingen kan betrouw bare een nauwere blik zijn.                                                                                                                         |
+| **Informatief** | Een incident bestaat doorgaans uit een aantal waarschuwingen, wat soms alleen ter informatie zou worden weer gegeven, maar in de context van de andere waarschuwingen kan betrouw bare een nauwere blik zijn.                                                                                                                         |
 
 ## <a name="export-alerts"></a>Waarschuwingen exporteren
 

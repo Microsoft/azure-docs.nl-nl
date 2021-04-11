@@ -4,10 +4,10 @@ description: Meer informatie over het herstellen van Azure Managed Disks met beh
 ms.topic: conceptual
 ms.date: 03/26/2021
 ms.openlocfilehash: 0ddf552947c39692ea01d0dea7e67f147d754fcc
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105630379"
 ---
 # <a name="restore-azure-managed-disks-using-azure-powershell"></a>Azure Managed Disks herstellen met behulp van Azure PowerShell

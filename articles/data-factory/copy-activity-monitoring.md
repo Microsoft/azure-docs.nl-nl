@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 03/22/2021
 ms.author: jingwang
 ms.openlocfilehash: 4aefeea33e61b6ee2541e929dbeb3fc36343cac5
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104771376"
 ---
 # <a name="monitor-copy-activity"></a>Kopieeractiviteit bewaken
@@ -45,7 +45,7 @@ In de **Details van de onderste uitvoering en de duur** worden de belangrijkste 
 
 De details van de gegevens van de Kopieer activiteit en prestatie kenmerken worden ook weer gegeven in de sectie uitvoer resultaat van de **Kopieer activiteit**  >   , die wordt gebruikt om de weer gave van de UI-bewaking te genereren. Hieronder vindt u een volledige lijst met eigenschappen die kunnen worden geretourneerd. U ziet alleen de eigenschappen die van toepassing zijn op uw Kopieer scenario. Zie [programmatisch een Azure-Data Factory bewaken](monitor-programmatically.md)voor meer informatie over het uitvoeren van een programma voor het bewaken van activiteiten in het algemeen.
 
-| Naam van eigenschap  | Beschrijving | Eenheid in uitvoer |
+| Naam van eigenschap  | Description | Eenheid in uitvoer |
 |:--- |:--- |:--- |
 | dataRead | De werkelijke hoeveelheid gegevens die uit de bron is gelezen. | Int64-waarde, in bytes |
 | dataWritten | De werkelijke koppeling van gegevens die zijn geschreven/doorgevoerd in de sink. De grootte kan afwijken van de `dataRead` grootte, omdat in elk gegevens archief de gegevens worden opgeslagen. | Int64-waarde, in bytes |

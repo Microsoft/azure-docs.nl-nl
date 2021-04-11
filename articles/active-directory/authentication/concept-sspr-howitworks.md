@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 496a8dba9b9ea7fb82ad9016479154d6a61cb767
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8c2d4181a80f48f5f6dd5775e6eb3bd172a65df8
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98703272"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107209626"
 ---
 # <a name="how-it-works-azure-ad-self-service-password-reset"></a>How it works: Azure AD self-service password reset (Hoe het werkt: selfservice voor wachtwoordherstel in Azure AD)
 
@@ -72,7 +72,7 @@ Voltooi de volgende zelf studie om aan de slag te gaan met SSPR:
 
 ## <a name="require-users-to-register-when-they-sign-in"></a>Vereisen dat gebruikers zich registreren wanneer ze zich aanmelden
 
-U kunt de optie inschakelen om een gebruiker verplicht te maken de SSPR-registratie te volt ooien als deze zich aanmeldt bij alle toepassingen die gebruikmaken van Azure AD. Deze werk stroom omvat de volgende toepassingen:
+U kunt de optie inschakelen om een gebruiker verplicht te maken de registratie van de SSPR te volt ooien als ze moderne verificatie of webbrowser gebruiken om zich aan te melden bij toepassingen die gebruikmaken van Azure AD. Deze werk stroom omvat de volgende toepassingen:
 
 * Microsoft 365
 * Azure Portal

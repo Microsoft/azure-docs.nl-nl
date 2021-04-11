@@ -566,6 +566,16 @@
           href: template-functions-resource.md
         - name: Tekenreeksfuncties
           href: template-functions-string.md
+    - name: Bicep-Opera tors
+      items:
+        - name: Alle operators
+          href: bicep-operators.md
+        - name: Vergelijkingsoperatoren
+          href: bicep-operators-comparison.md
+        - name: Logische operators
+          href: bicep-operators-logical.md
+        - name: Numerieke Opera tors
+          href: bicep-operators-numeric.md
     - name: REST
       href: /rest/api/resources/
     - name: Azure PowerShell

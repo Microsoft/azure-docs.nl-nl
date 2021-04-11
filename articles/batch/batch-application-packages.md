@@ -7,12 +7,12 @@ ms.custom:
 - H1Hack27Feb2017
 - devx-track-csharp
 - contperf-fy21q1
-ms.openlocfilehash: d0ed5cc47694d6576e6aea46b62dfab8ecb73459
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 17729b2b6a2c4faba0554339a382cad559e9894a
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105045787"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107210496"
 ---
 # <a name="deploy-applications-to-compute-nodes-with-batch-application-packages"></a>Toepassingen implementeren op reken knooppunten met batch-toepassings pakketten
 
@@ -61,7 +61,7 @@ Met toepassings pakketten hoeft de begin taak van de pool geen lange lijst op te
 U kunt de [Azure Portal](https://portal.azure.com) -of de batch beheer-api's gebruiken om de toepassings pakketten in uw batch-account te beheren. In de volgende secties wordt uitgelegd hoe u een opslag account koppelt en hoe u toepassingen en toepassings pakketten kunt toevoegen en beheren in de Azure Portal.
 
 > [!NOTE]
-> Hoewel u toepassings waarden kunt definiëren in de [Microsoft.BatCH/batchAccounts](/templates/microsoft.batch/batchaccounts) resource van een [arm-sjabloon](quick-create-template.md), is het momenteel niet mogelijk om een arm-sjabloon te gebruiken om toepassings pakketten te uploaden voor gebruik in uw batch-account. U moet deze uploaden naar uw gekoppelde opslag account, zoals [hieronder](#add-a-new-application)wordt beschreven.
+> Hoewel u toepassings waarden kunt definiëren in de [Microsoft.BatCH/batchAccounts](/azure/templates/microsoft.batch/batchaccounts) resource van een [arm-sjabloon](quick-create-template.md), is het momenteel niet mogelijk om een arm-sjabloon te gebruiken om toepassings pakketten te uploaden voor gebruik in uw batch-account. U moet deze uploaden naar uw gekoppelde opslag account, zoals [hieronder](#add-a-new-application)wordt beschreven.
 
 ### <a name="link-a-storage-account"></a>Een opslag account koppelen
 

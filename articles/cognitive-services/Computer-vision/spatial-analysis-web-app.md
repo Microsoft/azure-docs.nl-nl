@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: de011fb0f827ea90efe33e237bbf1c5100dc76a7
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: cf99d02a0968fb1073a02425ecb8b0d5ba7f5ac6
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "98183469"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106109693"
 ---
 # <a name="how-to-deploy-a-people-counting-web-application"></a>Procedure: een web-app voor het tellen van een persoon implementeren
 
@@ -172,7 +172,7 @@ docker tag rtvsofficial.azurecr.io/acceleratorapp.personcount:1.0 [desired local
 docker push [desired local image name]
 ```
 
-Als u de container wilt installeren, maakt u een nieuwe Azure Web App for Containers en vult u de vereiste para meters in. Ga vervolgens naar het tabblad **docker** en selecteer **Eén Container** en vervolgens **Azure container Registry**. Gebruik uw exemplaar van Azure Container Registry waar u de bovenstaande afbeelding hebt gepusht.
+Als u de container wilt installeren, maakt u een nieuwe Azure App Service en vult u de vereiste para meters in. Ga vervolgens naar het tabblad **docker** en selecteer **Eén Container** en vervolgens **Azure container Registry**. Gebruik uw exemplaar van Azure Container Registry waar u de bovenstaande afbeelding hebt gepusht.
 
 ![Details van de installatie kopie opgeven](./media/spatial-analysis/solution-app-create-screen.png)
 
@@ -189,7 +189,7 @@ Zodra deze twee instellingen zijn toegevoegd, klikt u op **Opslaan**. Klik vervo
 
 ### <a name="test-the-app"></a>De app testen
 
-Ga naar de Azure-web-app en controleer of de implementatie is gelukt en of de web-app wordt uitgevoerd. Ga naar de geconfigureerde URL: `<yourapp>.azurewebsites.net` om de actieve app weer te geven.
+Ga naar de Azure-service en controleer of de implementatie is gelukt en of de web-app wordt uitgevoerd. Ga naar de geconfigureerde URL: `<yourapp>.azurewebsites.net` om de actieve app weer te geven.
 
 ![De implementatie testen](./media/spatial-analysis/solution-app-output.png)
 

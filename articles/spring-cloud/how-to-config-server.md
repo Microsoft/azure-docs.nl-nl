@@ -7,12 +7,12 @@ ms.author: brendm
 author: bmitchell287
 ms.date: 10/18/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: de113e3c005e11bd2bcd13ec6c1554664ba8fbaf
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: 52b3d902b2cbfdacfe92117dcf0057dab1fe9a83
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104877984"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107012206"
 ---
 # <a name="set-up-a-spring-cloud-config-server-instance-for-your-service"></a>Een instantie van een Spring Cloud Config Server instellen voor uw service
 
@@ -242,9 +242,9 @@ Azure Spring Cloud heeft toegang tot Git-opslagplaatsen die openbaar zijn, worde
 
    ![Spring Cloud-configuratieserver](media/spring-cloud-tutorial-config-server/config-server-azure-repos.png)
 
-## <a name="delete-your-app-configuration"></a>Uw app-configuratie verwijderen
+## <a name="delete-your-configuration"></a>Uw configuratie verwijderen
 
-Nadat u een configuratiebestand hebt opgeslagen verschijnt de knop **App-configuratie verwijderen** bij het tabblad **Configuratie**. Wanneer u deze knop selecteert wist u uw bestaande instellingen volledig. Gebruik deze om uw instantie van een Config Server te verbinden met een andere bron, bijvoorbeeld wanneer u overstapt van Github naar Azure DevOps.
+U kunt de knop **Reset** selecteren die wordt weer gegeven op het tabblad **config server** om de bestaande instellingen volledig te wissen. Verwijder de instellingen van de configuratie server als u uw Config Server-exemplaar wilt verbinden met een andere bron, zoals het verplaatsen van GitHub naar Azure DevOps.
 
 
 

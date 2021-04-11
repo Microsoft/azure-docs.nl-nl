@@ -1,19 +1,16 @@
 ---
 title: De capaciteit plannen voor herstel na nood geval met Azure Site Recovery
 description: Gebruik dit artikel voor het schatten van de capaciteit bij het instellen van herstel na nood gevallen met de Azure Site Recovery-service.
-author: rayne-wiselman
-manager: carmonm
 services: site-recovery
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/12/2019
-ms.author: raynew
-ms.openlocfilehash: aa96845a2bd2f4659da1155c4f75281268dce76d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 0bdc66b46e83a1592d1ea74c1080d6f8080f4635
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101737712"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106580657"
 ---
 # <a name="plan-capacity-for-hyper-v-vm-disaster-recovery"></a>Capaciteit plannen voor herstel na noodgevallen van Hyper-V-VM's 
 

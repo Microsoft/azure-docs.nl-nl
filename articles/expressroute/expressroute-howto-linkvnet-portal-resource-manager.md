@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 10/15/2020
 ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: 0ffc9c2ee17862497d3fd986da8e003f7a497056
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a9bfb4beea2c2bec1b819d228215cfff65e37fe4
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "95998767"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106110254"
 ---
 # <a name="tutorial-connect-a-virtual-network-to-an-expressroute-circuit-using-the-portal"></a>Zelfstudie: Een virtueel netwerk verbinden met een ExpressRoute-circuit met behulp van de portal
 
@@ -45,7 +45,7 @@ In deze zelfstudie leert u het volgende:
 
 * U kunt tot 10 virtuele netwerken koppelen aan een standaard ExpressRoute-circuit. Alle virtuele netwerken moeten zich in dezelfde geopolitieke regio bevinden wanneer een standaard ExpressRoute-circuit wordt gebruikt.
 
-* Eén VNet kan aan maximaal vier ExpressRoute-circuits worden gekoppeld. Gebruik de volgende procedure om een nieuw verbindingsobject te maken voor elk ExpressRoute-circuit waarmee u verbinding maakt. De ExpressRoute-circuits kunnen zich in hetzelfde abonnement, in verschillende abonnementen of in een combinatie van beide bevinden.
+* Eén VNet kan worden gekoppeld aan Maxi maal 16 ExpressRoute-circuits. Gebruik de volgende procedure om een nieuw verbindingsobject te maken voor elk ExpressRoute-circuit waarmee u verbinding maakt. De ExpressRoute-circuits kunnen zich in hetzelfde abonnement, in verschillende abonnementen of in een combinatie van beide bevinden.
 
 * Als u de ExpressRoute Premium-invoegtoepassing inschakelt, kunt u virtuele netwerken koppelen die zich buiten de geopolitieke regio van het ExpressRoute-circuit bevinden. De Premium-invoegtoepassing biedt u ook de mogelijkheid om meer dan 10 virtuele netwerken te verbinden met uw ExpressRoute-circuit, afhankelijk van de gekozen bandbreedte. Raadpleeg de [Veelgestelde vragen](expressroute-faqs.md) voor meer informatie over de Premium-invoegtoepassing.
 

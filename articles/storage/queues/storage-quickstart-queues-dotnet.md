@@ -1,19 +1,19 @@
 ---
 title: 'Quickstart: Azure Queue Storage-clientbibliotheek v12 - .NET'
 description: Leer hoe u de Azure Queue Storage-clientbibliotheek v12 voor .NET kunt gebruiken om een wachtrij te maken en berichten aan de wachtrij toe te voegen. Vervolgens leert u hoe u berichten uit de wachtrij kunt lezen en verwijderen. U leert ook hoe u een wachtrij kunt verwijderen.
-author: mhopkins-msft
-ms.author: mhopkins
+author: twooley
+ms.author: twooley
 ms.date: 07/24/2020
 ms.topic: quickstart
 ms.service: storage
 ms.subservice: queues
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 22038e4145acabc067083177fcf297464972ad58
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 2c4af7afd96f6c503f35cdb4896c3b49d4ef6ed3
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97589522"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106276226"
 ---
 # <a name="quickstart-azure-queue-storage-client-library-v12-for-net"></a>Quickstart: Azure Queue Storage-clientbibliotheek v12 voor .NET
 

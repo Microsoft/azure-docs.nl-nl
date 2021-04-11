@@ -234,6 +234,8 @@
               href: sizes-field-programmable-gate-arrays.md?context=/azure/virtual-machines/context/context
             - name: NP-serie
               href: np-series.md
+            - name: FPGA Attestation-service
+              href: field-programmable-gate-arrays-attestation.md
         - name: Krachtig rekenvermogen
           items:
             - name: Overzicht
@@ -1303,6 +1305,8 @@
           href: ./windows/nsg-quickstart-portal.md
     - name: Een openbaar IP-adres toewijzen
       href: ../virtual-network/virtual-network-deploy-static-pip-arm-cli.md?context=/azure/virtual-machines/context/context
+    - name: Een aangepaste domein naam gebruiken
+      href: custom-domain.md
     - name: Meerdere NIC's gebruiken
       items:
         - name: Linux met CLI

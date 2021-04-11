@@ -11,12 +11,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 03/25/2021
 ms.author: inhenkel
-ms.openlocfilehash: 07e43bdb0969c26120231013cc0c0354e6968ceb
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 564f3127fc6901695890daa520152a7aa1a2337f
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/30/2021
-ms.locfileid: "105567947"
+ms.locfileid: "105962965"
 ---
 # <a name="feature-gaps-between-azure-media-services-v2-and-v3"></a>Hiaten tussen onderdelen tussen Azure Media Services v2 en v3
 
@@ -42,7 +42,7 @@ De V3 API heeft de volgende functie hiaten met de v2 API. Een aantal geavanceerd
     - Er is ondersteuning toegevoegd voor audio kanaal toewijzing aan de standaard encoder.  Zie [Audio in de Media Services code ring Swagger-documentatie](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2020-05-01/Encoding.json).
     - Als u geavanceerde functies of uitvoer indelingen van het gelicentieerde product van derden gebruikt, zoals MXF of ProRes, gebruikt u de Azure-partner oplossing van Telestream, die transactioneel is op het moment dat de v2 buiten gebruik wordt gesteld. U kunt er ook Voorst Ellen communicatie of [Bitmovin](http://bitmovin.com)gebruiken.
 
-- De eigenschap Availability set van het streaming-eind punt in v2 wordt niet meer ondersteund. Bekijk het voorbeeld project en richt lijnen voor VOD-levering met [hoge Beschik baarheid](./media-services-high-availability-encoding.md) in de V3 API.
+- De eigenschap Availability set van het streaming-eind punt in v2 wordt niet meer ondersteund. Bekijk het voorbeeld project en richt lijnen voor VOD-levering met [hoge Beschik baarheid](./architecture-high-availability-encoding-concept.md) in de V3 API.
 
 - In Media Services v3 kan FairPlay IV niet worden opgegeven. Hoewel dit geen invloed heeft op klanten die Media Services gebruiken voor zowel verpakking als licentie levering, kan het een probleem zijn bij het gebruik van een DRM-systeem van derden voor het leveren van de FairPlay-licenties (hybride modus).
 

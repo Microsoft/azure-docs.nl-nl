@@ -79,13 +79,12 @@
           href: tokens-overview.md
         - name: Toegangstoken aanvragen
           href: access-tokens.md
-    - name: Beleidssleutels
-      href: policy-keys-overview.md
-    - name: Gebruikersstroom en beleid
+    - name: Gebruikerservaring
+      expanded: true
       items:
-        - name: Gebruikersstromen
+        - name: Gebruikers stromen en aangepaste beleids regels
           href: user-flow-overview.md
-        - name: Aangepast beleid
+        - name: Overzicht van aangepast beleid
           href: custom-policy-overview.md
     - name: Gebruikersaccounts
       href: user-overview.md
@@ -93,6 +92,8 @@
       href: user-profile-attributes.md
     - name: Identiteitsbescherming en voorwaardelijke toegang
       href: conditional-access-identity-protection-overview.md
+    - name: Beleidssleutels
+      href: policy-keys-overview.md
 - name: Instructiegidsen
   items:
     - name: App-integratie
@@ -268,8 +269,6 @@
           href: add-api-connector.md
     - name: Aangepast beleid
       items:
-        - name: Overzicht van aangepast beleid
-          href: custom-policy-trust-frameworks.md
         - name: Aan de slag met aangepaste beleidsregels
           href: custom-policy-get-started.md
         - name: Aangepaste e-mailverificatie
@@ -298,9 +297,8 @@
             - name: Logboeken verzamelen met Application Insights
               href: troubleshoot-with-application-insights.md
               displayName: 'troubleshooting, app insights'
-            - name: Beleidsvalidatie
+            - name: Aangepaste beleids regels voor problemen oplossen
               href: troubleshoot-custom-policies.md
-              displayName: troubleshooting
         - name: Naslaginformatie
           items:
             - name: TrustFrameworkPolicy

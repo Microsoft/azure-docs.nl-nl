@@ -1,19 +1,19 @@
 ---
 title: 'Quickstart: Azure Blob Storage-clientbibliotheek voor .NET'
 description: In deze quickstart leert u hoe u de Azure Blob Storage-clientbibliotheek voor .NET kunt gebruiken om een container te maken en een blob-in-blob-opslag (object). Hierna leert u hoe u de blob naar uw lokale computer downloadt en hoe u alle blobs in een container kunt weergeven.
-author: mhopkins-msft
-ms.author: mhopkins
+author: twooley
+ms.author: twooley
 ms.date: 07/24/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: devx-track-csharp
-ms.openlocfilehash: effb193e54be7331c9dc2874a4a34ef55442ed30
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5eacf9c53715bf42c466aaf6a58938bd681630b9
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96021738"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106280646"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v11-for-net"></a>Quickstart: Azure Blob Storage-clientbibliotheek v11 voor .NET
 

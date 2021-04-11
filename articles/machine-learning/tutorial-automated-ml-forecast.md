@@ -1,7 +1,7 @@
 ---
 title: 'Zelfstudie: Vraagprognose en AutoML'
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het trainen en implementeren van een vraagprognosemodel met geautomatiseerde machine learning in Azure Machine Learning Studio.
+description: Train en implementeer een aanvraag prognose model zonder code te schrijven met behulp van de geautomatiseerde machine learning-interface (Automated ML) van Azure Machine Learning.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,21 +11,18 @@ ms.reviewer: nibaccam
 author: cartacioS
 ms.date: 12/21/2020
 ms.custom: automl
-ms.openlocfilehash: 2653161b5828d89858234a9ca98fe432e0eacb5c
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: a5f7c0cf95d62df2d06c91abd99a1827524d5d6b
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879357"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107210547"
 ---
 # <a name="tutorial-forecast-demand-with-automated-machine-learning"></a>Zelfstudie: Vraag voorspellen met automatische machine learning
 
+Meer informatie over het maken van een [prognose model voor time series](concept-automated-ml.md#time-series-forecasting) zonder een regel code te schrijven met behulp van automatische machine learning in azure machine learning Studio. Dit model zal de huur vraag voor een service voor het delen van fietsen voors pellen.  
 
-In deze zelfstudie gebruikt u geautomatiseerde machine learning, of geautomatiseerde ML, in de Azure Machine Learning Studio om een prognosemodel voor tijdreeksen te maken om de huurvraag voor een service voor het delen van fietsen te voorspellen.
-
-Voor een voorbeeld van een classificatiemodel, zie [zelfstudie: Een classificatiemodel maken met geautomatiseerde ML in Azure Machine Learning](tutorial-first-experiment-automated-ml.md).
-
-In deze zelfstudie leert u hoe u de volgende taken uitvoert:
+In deze zelf studie schrijft u geen code. u gebruikt de Studio-interface om training uit te voeren.  U leert hoe u de volgende taken kunt uitvoeren:
 
 > [!div class="checklist"]
 > * Een gegevensset maken en laden.
@@ -34,13 +31,18 @@ In deze zelfstudie leert u hoe u de volgende taken uitvoert:
 > * De resultaten van het experiment verkennen.
 > * Het beste model implementeren.
 
+Probeer ook geautomatiseerde machine learning voor deze andere model typen:
+
+* Zie voor een voor beeld van een classificatie model [zelf studie: een classificatie model maken met automatische ml in azure machine learning](tutorial-first-experiment-automated-ml.md).
+* Voor een voor beeld van een code in eerste instantie van een regressie model raadpleegt [u de zelf studie: automatische machine learning gebruiken om de taxi tarieven te voors pellen](tutorial-auto-train-models.md).
+
 ## <a name="prerequisites"></a>Vereisten
 
 * Een Azure Machine Learning-werkruimte. Raadpleeg [Een Azure Machine Learning-werkruimte maken](how-to-manage-workspace.md). 
 
 * Het gegevensbestand [bike-no.csv](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-bike-share/bike-no.csv) downloaden
 
-## <a name="get-started-in-azure-machine-learning-studio"></a>Aan de slag met Azure Machine Learning Studio
+## <a name="sign-in-to-the-studio"></a>Meld u aan bij de Studio
 
 Voor deze zelfstudie maakt u een geautomatiseerd ML-experiment in Azure Machine Learning Studio, een geconsolideerde webinterface met hulpmiddelen voor machine learning waar gegevenswetenschappers, ongeacht hun vaardigheidsniveaus, scenario's kunnen uitvoeren. De Studio wordt niet ondersteund in Internet Explorer-browsers.
 

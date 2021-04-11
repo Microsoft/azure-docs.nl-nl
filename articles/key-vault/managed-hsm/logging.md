@@ -7,14 +7,14 @@ tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: managed-hsm
 ms.topic: tutorial
-ms.date: 09/15/2020
+ms.date: 03/30/2021
 ms.author: mbaldwin
-ms.openlocfilehash: 7420ffbe5b365c635c1eac2620cfd54ceb649ebf
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 0d5749894fd277ff6a2f77e3db9721e6989d72ac
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102211767"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106109234"
 ---
 # <a name="managed-hsm-logging"></a>Managed HSM-logboekregistratie 
 
@@ -74,9 +74,10 @@ az monitor diagnostic-settings create --name ContosoMHSM-Diagnostics --resource 
 Wat wordt in het logboek vastgelegd?
 
 * Alle geverifieerde REST-API-aanvragen, ook mislukte aanvragen als gevolg van toegangsmachtigingen, systeemfouten of ongeldige aanvragen.
-* Bewerkingen op de Managed HSM zelf, waaronder het maken, verwijderen en bijwerken van kenmerken zoals tags.
+* Beheerde vlak bewerkingen voor de beheerde HSM-resource zelf, inclusief het maken, verwijderen en bijwerken van kenmerken zoals Tags.
 * Beveiligingsdomein-gerelateerde bewerkingen, zoals initialiseren en downloaden, herstel initialiseren en uploaden
 * Volledige HSM-back-ups, herstel en selectieve herstelbewerkingen
+* Rollen beheer bewerkingen, zoals het maken/weer geven/verwijderen van roltoewijzingen en het maken/weer geven/verwijderen van aangepaste roldefinities
 * Bewerkingen op sleutels, waaronder:
   * Het maken, wijzigen of verwijderen van de sleutels.
   * Ondertekenen, controleren, versleutelen, ontsleutelen, inpakken en uitpakken van sleutels, sleutels weergeven.
@@ -121,30 +122,13 @@ Afzonderlijke blobs worden opgeslagen als tekst die is opgemaakt als een JSON. L
 ]
 ```
 
-De volgende tabel bevat de namen en beschrijvingen van velden:
 
-| Veldnaam | Beschrijving |
-| --- | --- |
-| **Tenant-ID** | Azure Active Directory Tenant-ID van het abonnement waarin de beheerde HSM is gemaakt |
-| **time** |Datum en tijd in UTC. |
-| **resourceId** |Azure Resource Manager-resource-id. Voor Managed HSM-logboeken is dit altijd de ID van de Managed HSM-resource. |
-| **operationName** |Naam van de bewerking, zoals beschreven in de volgende tabel. |
-| **operationVersion** |REST-API-versie die door de client is aangevraagd. |
-| **category** |Type resultaat. Voor Managed HSM-logboeken is **AuditEvent** de enige beschikbare waarde. |
-| **resultType** |Resultaat van de REST-API-aanvraag. |
-| **properties** |Gegevens die variëren op basis van de bewerking (**operationName**)|
-| **resultSignature** |HTTP-status. |
-| **resultDescription** |Extra beschrijving van het resultaat, indien beschikbaar. |
-| **durationMs** |De tijd die nodig was om de REST-API-aanvraag af te handelen in milliseconden. Hierbij wordt geen rekening gehouden met de netwerklatentie, zodat de tijd die u aan de clientzijde meet mogelijk niet overeenkomt met de tijd die hier wordt weergegeven. |
-| **callerIpAddress** |IP-adres van de client die de aanvraag heeft ingediend. |
-| **correlationId** |Een optionele GUID die de client kan doorgeven om de logboeken aan de clientzijde te relateren aan logboeken aan de servicezijde. |
-| **identity** |De identiteit van het token dat is opgegeven in de REST-API-aanvraag. Dit is meestal een 'gebruiker', een 'service-principal'. |
-| **requestUri** | De URI-aanvraag van de REST API |
-| **client-info** | 
 
 ## <a name="use-azure-monitor-logs"></a>Azure Monitor-logboeken gebruiken
 
-Met de Key Vault-oplossing in Azure Monitor-logboeken kunt u de **AuditEvent**-logboeken van Managed HSM controleren. In Azure Monitor-logboeken kunt u logboekquery’s gebruiken om gegevens te analyseren en de informatie op te halen die u nodig hebt. 
+Met de Key Vault-oplossing in Azure Monitor-logboeken kunt u de **AuditEvent**-logboeken van Managed HSM controleren. In Azure Monitor-logboeken kunt u logboekquery’s gebruiken om gegevens te analyseren en de informatie op te halen die u nodig hebt.
+
+Zie [Azure Key Vault in Azure Monitor](../../azure-monitor/insights/key-vault-insights-overview.md) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

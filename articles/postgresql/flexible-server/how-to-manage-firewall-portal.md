@@ -1,17 +1,17 @@
 ---
 title: Firewall regels beheren-Azure Portal-Azure Database for PostgreSQL-flexibele server
 description: Maak en beheer firewall regels voor Azure Database for PostgreSQL-flexibele server met behulp van de Azure Portal
-author: rothja
-ms.author: jroth
+author: sunilagarwal
+ms.author: sunila
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
-ms.openlocfilehash: 35f9164634d906fe36d6b0f3d3ec861652f652dd
-ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
+ms.openlocfilehash: 36f282571dc0f3b8f6b9298c23042c955bc59058
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106551136"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107225747"
 ---
 # <a name="create-and-manage-firewall-rules-for-azure-database-for-postgresql---flexible-server-using-the-azure-portal"></a>Maak en beheer firewall regels voor Azure Database for PostgreSQL-flexibele server met behulp van de Azure Portal
 

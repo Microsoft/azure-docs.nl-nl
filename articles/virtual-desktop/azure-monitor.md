@@ -3,15 +3,15 @@ title: Monitor voor Windows virtueel bureau blad gebruiken-Azure
 description: Azure Monitor gebruiken voor virtueel bureau blad van Windows.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 03/29/2021
+ms.date: 03/31/2020
 ms.author: helohr
-manager: lizross
-ms.openlocfilehash: 1b93e0c0d61eaa390eda66da2a583a4f429ddd79
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+manager: femila
+ms.openlocfilehash: 7da35f77dd232e5f523e2bdc3f125c68015ab871
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105709545"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106448182"
 ---
 # <a name="use-azure-monitor-for-windows-virtual-desktop-to-monitor-your-deployment"></a>Gebruik Azure Monitor voor virtuele Windows-Bureau bladen om uw implementatie te bewaken
 
@@ -43,7 +43,7 @@ Iedereen die de controle Azure Monitor voor het virtuele bureau blad van Windows
 
 U kunt Azure Monitor voor Windows virtueel bureau blad openen met een van de volgende methoden:
 
-- Ga naar [aka.MS/azmonwvdi](https://portal.azure.com/#blade/Microsoft_Azure_WVD/WvdManagerMenuBlade/workbooks).
+- Ga naar [aka.MS/azmonwvdi](https://aka.ms/azmonwvdi).
 - Zoek en selecteer **Windows virtueel bureau blad** in het Azure Portal en selecteer vervolgens **inzichten**.
 - Zoek en selecteer **Azure monitor** in de Azure Portal. Selecteer **Insights hub** onder **inzichten** en selecteer vervolgens **Windows virtueel bureau blad**.
 Nadat u de pagina hebt geopend, voert u het **abonnement**, de **resource groep**, de **hostgroep** en het **tijds bereik** in van de omgeving die u wilt bewaken.
@@ -62,7 +62,7 @@ U hebt ten minste één Log Analytics-werk ruimte nodig om Azure Monitor voor Wi
 
 Als dit de eerste keer is dat u Azure Monitor voor Windows virtueel bureau blad opent, moet u Azure Monitor instellen voor uw virtuele Windows-desktop omgeving. Uw resources configureren:
 
-1. Open Azure Monitor voor virtueel bureau blad van Windows in de Azure Portal op [aka.MS/azmonwvdi](https://portal.azure.com/#blade/Microsoft_Azure_WVD/WvdManagerMenuBlade/workbooks)en selecteer vervolgens **configuratie werkmap**.
+1. Open Azure Monitor voor virtueel bureau blad van Windows in de Azure Portal op [aka.MS/azmonwvdi](https://aka.ms/azmonwvdi)en selecteer vervolgens **configuratie werkmap**.
 2. Selecteer een omgeving om te configureren onder **abonnement**, **resource groep** en **hostgroep**.
 
 Met de configuratie werkmap wordt uw bewakings omgeving ingesteld en kunt u de configuratie controleren nadat u het installatie proces hebt voltooid. Het is belang rijk om uw configuratie te controleren als items in het dash board niet correct worden weer gegeven of wanneer de product groep updates publiceert waarvoor nieuwe instellingen zijn vereist.
@@ -193,4 +193,5 @@ Zie de [privacyverklaring voor micro soft Online Services](https://privacy.micro
 Nu u Azure Monitor hebt geconfigureerd voor uw virtuele Windows-bureau blad-omgeving, zijn er enkele resources die u kunnen helpen bij het bewaken van uw omgeving:
 
 - Bekijk onze [verklarende woorden lijst](azure-monitor-glossary.md) voor meer informatie over de termen en concepten die betrekking hebben op Azure monitor voor virtueel bureau blad van Windows.
+- Zie [schatting van Azure monitor kosten](azure-monitor-costs.md)voor het schatten, meten en beheren van uw kosten voor gegevens opslag.
 - Als er een probleem optreedt, raadpleegt u de [gids voor probleem oplossing](troubleshoot-azure-monitor.md) voor hulp en bekende problemen.

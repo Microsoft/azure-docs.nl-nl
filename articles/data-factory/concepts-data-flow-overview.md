@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: references_regions
 ms.date: 12/10/2020
 ms.openlocfilehash: 1529d2d546227880fee71d1823482e040d2e57c1
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103564317"
 ---
 # <a name="mapping-data-flows-in-azure-data-factory"></a>Gegevens stromen toewijzen in Azure Data Factory
@@ -33,11 +33,11 @@ Gegevens stromen worden gemaakt op basis van het deel venster resources, zoals p
 
 Met deze actie gaat u naar het canvas voor gegevens stromen, waar u uw transformatie logica kunt maken. Selecteer **bron toevoegen** om het configureren van de bron transformatie te starten. Zie [bron transformatie](data-flow-source.md)voor meer informatie.
 
-## <a name="authoring-data-flows"></a>Gegevens stromen ontwerpen
+## <a name="authoring-data-flows&quot;></a>Gegevens stromen ontwerpen
 
 De toewijzing van gegevens stroom heeft een uniek ontwerp teken dat is ontworpen om het maken van transformatie logica eenvoudig te maken. Het canvas voor de gegevens stroom is onderverdeeld in drie delen: de bovenste balk, de grafiek en het configuratie paneel. 
 
-![Scherm afbeelding toont het canvas gegevensstroom met de bovenste balk, het diagram en het configuratie venster met het label.](media/data-flow/canvas-1.png "Canvas")
+![Scherm afbeelding toont het canvas gegevensstroom met de bovenste balk, het diagram en het configuratie venster met het label.](media/data-flow/canvas-1.png &quot;Canvas")
 
 ### <a name="graph"></a>Graph
 
@@ -63,11 +63,11 @@ Het tabblad **Optimize** bevat instellingen voor het configureren van partitie s
 
 ![Scherm afbeelding toont het tabblad Optimize, inclusief partitie optie, partitie type en aantal partities.](media/data-flow/optimize.png)
 
-#### <a name="inspect"></a>Inspecteren
+#### <a name="inspect&quot;></a>Inspecteren
 
 Het tabblad **controleren** bevat een weer gave van de meta gegevens van de gegevensstroom die u transformeert. U kunt kolom aantallen zien, de kolommen gewijzigd, de kolommen die zijn toegevoegd, de gegevens typen, de kolom volgorde en kolom verwijzingen. **Inspecteer** is een alleen-lezen weer gave van uw meta gegevens. U hoeft de foutopsporingsmodus niet in te scha kelen om meta gegevens in het deel venster **controleren** weer te geven.
 
-![Inspecteren](media/data-flow/inspect1.png "Inspecteren")
+![Inspecteren](media/data-flow/inspect1.png &quot;Inspecteren")
 
 Wanneer u de vorm van uw gegevens via trans formaties wijzigt, worden de wijzigingen in de meta gegevens in het deel venster **controleren** weer gegeven. Als er geen gedefinieerd schema is in uw bron transformatie, worden de meta gegevens niet weer gegeven in het deel venster **controleren** . Het ontbreken van meta gegevens is gebruikelijk in schema-drift-scenario's.
 

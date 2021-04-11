@@ -9,10 +9,10 @@ ms.subservice: edge
 author: alkohli
 ms.author: alkohli
 ms.openlocfilehash: 43c115163f15d79810c10359a7abeefd12061984
-ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105037815"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-stack-edge"></a>Azure Policy ingebouwde definities voor Azure Stack Edge

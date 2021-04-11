@@ -4,10 +4,10 @@ description: Meer informatie over het maken van een sjabloon spec met gekoppelde
 ms.topic: conceptual
 ms.date: 01/05/2021
 ms.openlocfilehash: 31764b9adb1d0fc28a170fa2e6b5073812533083
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104889838"
 ---
 # <a name="tutorial-create-a-template-spec-with-linked-templates-preview"></a>Zelf studie: een sjabloon specificatie met gekoppelde sjablonen maken (preview)

@@ -3,14 +3,14 @@ title: Beheerde identiteit toevoegen aan een rol op Azure Event Grid bestemming
 description: In dit artikel wordt beschreven hoe u beheerde identiteit kunt toevoegen aan Azure-rollen op doelen zoals Azure Service Bus en Azure Event Hubs.
 ms.topic: how-to
 ms.date: 03/25/2021
-ms.openlocfilehash: 1bcef878c982122d80980dd7194fae2de6fc8762
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.openlocfilehash: 1578e4c24201614ce89351b3c3cee52a09cadc30
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105630383"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106280476"
 ---
-# <a name="add-an-identity-to-azure-roles-on-azure-event-grid-destinations"></a>Een identiteit toevoegen aan Azure-rollen op Azure Event Grid doelen
+# <a name="grant-managed-identity-the-access-to-event-grid-destination"></a>De toegang tot Event Grid bestemming verlenen aan de beheerde identiteit
 In deze sectie wordt beschreven hoe u de identiteit voor uw systeem onderwerp, aangepast onderwerp of domein toevoegt aan een Azure-rol. 
 
 ## <a name="prerequisites"></a>Vereisten
@@ -89,6 +89,6 @@ az role assignment create --role "$role" --assignee "$topic_pid" --scope "$sbust
 ```
 
 ## <a name="next-steps"></a>Volgende stappen
-Nu u een door het systeem toegewezen identiteit aan uw systeem onderwerp, aangepast onderwerp of domein hebt toegewezen en de identiteit aan de juiste rollen op bestemmingen hebt toegevoegd, raadpleegt u [Devlier-gebeurtenissen met behulp](managed-service-identity.md) van de identiteit voor het leveren van gebeurtenissen aan bestemmingen met behulp van de identiteit.
+Nu u een door het systeem toegewezen identiteit aan uw systeem onderwerp, aangepast onderwerp of domein hebt toegewezen en de identiteit aan de juiste rollen op bestemmingen hebt toegevoegd, raadpleegt u [gebeurtenissen afleveren met de beheerde identiteit](managed-service-identity.md) voor het afleveren van gebeurtenissen met behulp van de identiteit.
 
 

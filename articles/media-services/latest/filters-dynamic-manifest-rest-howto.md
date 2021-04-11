@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: c1d7bf933b487c40d571f1912341b5ef771e4e67
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c2d081ded07b1d32ee7525855c1756e13dfd57aa
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "90527323"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106277501"
 ---
 # <a name="creating-filters-with-media-services-rest-api"></a>Filters maken met Media Services REST API
 
@@ -26,7 +26,7 @@ ms.locfileid: "90527323"
 
 Bij het leveren van uw inhoud aan klanten (het streamen van Live-gebeurtenissen of video op aanvraag), heeft uw client mogelijk meer flexibiliteit nodig dan is beschreven in het manifest bestand van het standaard activum. Met Azure Media Services kunt u account filters en activa filters definiëren voor uw inhoud. 
 
-Zie [dynamische manifesten](filters-dynamic-manifest-overview.md) en [filters](filters-concept.md)voor een gedetailleerde beschrijving van deze functie en scenario's waarin deze wordt gebruikt.
+Zie [dynamische manifesten](filters-dynamic-manifest-concept.md) en [filters](filters-concept.md)voor een gedetailleerde beschrijving van deze functie en scenario's waarin deze wordt gebruikt.
 
 In dit onderwerp wordt uitgelegd hoe u een filter definieert voor een video op aanvraag-Asset en REST-Api's gebruikt om [account filters](/rest/api/media/accountfilters) en- [activa filters](/rest/api/media/assetfilters)te maken. 
 
@@ -37,10 +37,10 @@ In dit onderwerp wordt uitgelegd hoe u een filter definieert voor een video op a
 
 Voor het uitvoeren van de stappen die in dit onderwerp worden beschreven, moet u het volgende doen:
 
-- Controleer [filters en dynamische manifesten](filters-dynamic-manifest-overview.md).
-- [Postman configureren voor Azure Media Services rest API-aanroepen](media-rest-apis-with-postman.md).
+- Controleer [filters en dynamische manifesten](filters-dynamic-manifest-concept.md).
+- [Postman configureren voor Azure Media Services rest API-aanroepen](setup-postman-rest-how-to.md).
 
-    Zorg ervoor dat u de laatste stap in het onderwerp [Azure AD-Token ophalen](media-rest-apis-with-postman.md#get-azure-ad-token)volgt. 
+    Zorg ervoor dat u de laatste stap in het onderwerp [Azure AD-Token ophalen](setup-postman-rest-how-to.md#get-azure-ad-token)volgt. 
 
 ## <a name="define-a-filter"></a>Een filter definiëren  
 
@@ -121,7 +121,7 @@ Zie [maken of bijwerken](/rest/api/media/assetfilters/createorupdate)voor meer i
 
 ## <a name="associate-filters-with-streaming-locator"></a>Filters koppelen aan streaming-Locator
 
-U kunt een lijst opgeven met activa of account filters die van toepassing zijn op uw streaming-Locator. Met de [dynamische pakket (streaming-eind punt)](dynamic-packaging-overview.md) wordt deze lijst met filters toegepast, samen met de gegevens die door uw client zijn opgegeven in de URL. Deze combi natie genereert een [dynamisch manifest](filters-dynamic-manifest-overview.md)dat is gebaseerd op filters in de URL + filters die u opgeeft in de streaming-Locator. U wordt aangeraden deze functie te gebruiken als u filters wilt Toep assen, maar niet de filter namen in de URL wilt weer geven.
+U kunt een lijst opgeven met activa of account filters die van toepassing zijn op uw streaming-Locator. Met de [dynamische pakket (streaming-eind punt)](encode-dynamic-packaging-concept.md) wordt deze lijst met filters toegepast, samen met de gegevens die door uw client zijn opgegeven in de URL. Deze combi natie genereert een [dynamisch manifest](filters-dynamic-manifest-concept.md)dat is gebaseerd op filters in de URL + filters die u opgeeft in de streaming-Locator. U wordt aangeraden deze functie te gebruiken als u filters wilt Toep assen, maar niet de filter namen in de URL wilt weer geven.
 
 Als u filters met een streaming-Locator wilt maken en koppelen met behulp van REST, gebruikt u de [streams](/rest/api/media/streaminglocators/create) voor het maken van een API en geeft u `properties.filters` in de [aanvraag tekst](/rest/api/media/streaminglocators/create#request-body)op.
                                 

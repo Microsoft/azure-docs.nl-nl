@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: a825b9e0abc4e33eb0f9033f46bb77c38559f740
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: bd35062ca1a5b3218a9af1fbd28fe8e7d7073c07
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104722698"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106077615"
 ---
 # <a name="telemetry-and-troubleshooting"></a>Telemetrie en probleem oplossing
 
@@ -103,21 +103,21 @@ Zodra de telegrafie module is geïmplementeerd, zijn de gerapporteerde metrische
 
 ### <a name="system-health-events"></a>Systeem status gebeurtenissen
 
-| Gebeurtenisnaam | Description|
-|------|---------|
-|archon_exit     |Verzonden wanneer een gebruiker de status van de ruimtelijke analyse module wijzigt van *actief* in *gestopt*.  |
-|archon_error     |Wordt verzonden wanneer een van de processen in de container vastloopt. Dit is een kritieke fout.  |
-|InputRate     |De snelheid waarmee de video-invoer door de grafiek wordt verwerkt. Elke 5 minuten gerapporteerd. | 
-|OutputRate     |De snelheid waarmee de grafiek AI-inzichten uitvoert. Elke 5 minuten gerapporteerd. |
-|archon_allGraphsStarted | Wordt verzonden wanneer het opstarten van alle grafieken is voltooid. |
-|archon_configchange     | Verzonden wanneer de configuratie van een grafiek is gewijzigd. |
-|archon_graphCreationFailed     |Verzonden wanneer de grafiek met de gemelde `graphId` fout niet kan worden gestart. |
-|archon_graphCreationSuccess     |Verzonden wanneer de grafiek met de gemelde `graphId` Start. |
-|archon_graphCleanup     | Verzonden wanneer de grafiek met de gerapporteerde `graphId` opschoont en afsluit. |
-|archon_graphHeartbeat     |Heartbeat elke minuut verzonden voor elke grafiek van een vaardigheid. |
-|archon_apiKeyAuthFail |Dit bericht wordt verzonden wanneer de container niet langer dan 24 uur door de Computer Vision bron sleutel kan worden geverifieerd vanwege de volgende redenen: buiten het quotum, ongeldig, offline. |
-|VideoIngesterHeartbeat     |Wordt elk uur verzonden om aan te geven dat de video wordt gestreamd vanuit de video bron, met het aantal fouten in dat uur. Gerapporteerd voor elke grafiek. |
-|VideoIngesterState | Rapporten *gestopt* of *gestart* voor video-streaming. Gerapporteerd voor elke grafiek. |
+| Gebeurtenisnaam                  | Description    |
+|-----------------------------|-------------------------------------------------------------------------------------------|
+| archon_exit                 | Verzonden wanneer een gebruiker de status van de ruimtelijke analyse module wijzigt van *actief* in *gestopt*.  |
+| archon_error                | Wordt verzonden wanneer een van de processen in de container vastloopt. Dit is een kritieke fout.      |
+| InputRate                   | De snelheid waarmee de video-invoer door de grafiek wordt verwerkt. Elke 5 minuten gerapporteerd.              |
+| OutputRate                  | De snelheid waarmee de grafiek AI-inzichten uitvoert. Elke 5 minuten gerapporteerd.                |
+| archon_allGraphsStarted     | Wordt verzonden wanneer het opstarten van alle grafieken is voltooid.                                           |
+| archon_configchange         | Verzonden wanneer de configuratie van een grafiek is gewijzigd.                                              |
+| archon_graphCreationFailed  | Verzonden wanneer de grafiek met de gemelde `graphId` fout niet kan worden gestart.                           |
+| archon_graphCreationSuccess | Verzonden wanneer de grafiek met de gemelde `graphId` Start.                      |
+| archon_graphCleanup         | Verzonden wanneer de grafiek met de gerapporteerde `graphId` opschoont en afsluit.                      |
+| archon_graphHeartbeat       | Heartbeat elke minuut verzonden voor elke grafiek van een vaardigheid.                                   |
+| archon_apiKeyAuthFail       | Dit bericht wordt verzonden wanneer de container niet langer dan 24 uur door de Computer Vision bron sleutel kan worden geverifieerd vanwege de volgende redenen: buiten het quotum, ongeldig, offline. |
+| VideoIngesterHeartbeat      | Wordt elk uur verzonden om aan te geven dat de video wordt gestreamd vanuit de video bron, met het aantal fouten in dat uur. Gerapporteerd voor elke grafiek. |
+| VideoIngesterState          | Rapporten *gestopt* of *gestart* voor video-streaming. Gerapporteerd voor elke grafiek.              |
 
 ##  <a name="troubleshooting-an-iot-edge-device"></a>Problemen met een IoT Edge apparaat oplossen
 

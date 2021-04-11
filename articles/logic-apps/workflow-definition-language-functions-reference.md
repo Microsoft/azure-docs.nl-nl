@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla
 ms.topic: reference
-ms.date: 03/12/2021
-ms.openlocfilehash: 1414a7b0f17918caa16ccf854d70ea199fb42a47
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 03/30/2021
+ms.openlocfilehash: 53e96f4057b35fa6c849ec643ac1c9e0c7d5b402
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104870191"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106076544"
 ---
 # <a name="reference-guide-to-using-functions-in-expressions-for-azure-logic-apps-and-power-automate"></a>Naslag Gids voor het gebruik van functies in expressies voor Azure Logic Apps en energie automatisering
 
@@ -145,7 +145,7 @@ Als u met voor waarden wilt werken, vergelijkt u waarden en expressie resultaten
 Als u het type of de indeling van een waarde wilt wijzigen, kunt u deze conversie functies gebruiken. U kunt bijvoorbeeld een waarde wijzigen van een Boolean in een geheel getal. Zie voor meer informatie over Logic Apps het afhandelen van inhouds typen tijdens de conversie [inhouds typen verwerken](../logic-apps/logic-apps-content-type.md). Zie de [Alfabetische lijst](../logic-apps/workflow-definition-language-functions-reference.md#alphabetical-list)voor de volledige naslag informatie over elke functie.
 
 > [!NOTE]
-> Azure Logic Apps converteert automatisch waarden tussen sommige gegevens typen, wat betekent dat u deze conversies niet hand matig hoeft uit te voeren. Als u dit wel doet, kunt u echter onverwachte weergave gedrag ondervinden die niet van invloed is op de daad werkelijke conversies, maar alleen op de manier waarop deze worden weer gegeven. Zie [impliciete gegevens type conversies](#implicit-data-conversions)voor meer informatie.
+> Azure Logic Apps automatisch of impliciet base64-code ring en-decodering uitvoeren, dus u hoeft deze conversies niet hand matig uit te voeren met behulp van de functies voor coderen en decoderen. Als u deze functies echter toch in de ontwerp functie gebruikt, kan dit leiden tot onverwachte rendering-gedragingen in de ontwerp functie. Dit gedrag is alleen van invloed op de zicht baarheid van functies en niet op het effect ervan, tenzij u de parameter waarden van de functies bewerkt, waardoor de functies en hun effecten uit uw code worden verwijderd. Zie [impliciete gegevens type conversies](#implicit-data-conversions)voor meer informatie.
 
 | Conversie functie | Taak |
 | ------------------- | ---- |
@@ -177,7 +177,7 @@ Als u het type of de indeling van een waarde wilt wijzigen, kunt u deze conversi
 
 ## <a name="implicit-data-type-conversions"></a>Impliciete gegevens type conversies
 
-Azure Logic Apps automatisch of impliciet geconverteerd tussen sommige gegevens typen, zodat u deze typen niet hand matig hoeft te converteren. Als u bijvoorbeeld niet-teken reeks waarden gebruikt waarbij teken reeksen worden verwacht als invoer, worden Logic Apps de niet-teken reeks waarden automatisch geconverteerd naar teken reeksen.
+Azure Logic Apps automatisch of impliciet geconverteerd tussen sommige gegevens typen, zodat u deze conversies niet hand matig hoeft uit te voeren. Als u bijvoorbeeld niet-teken reeks waarden gebruikt waarbij teken reeksen worden verwacht als invoer, worden Logic Apps de niet-teken reeks waarden automatisch geconverteerd naar teken reeksen.
 
 Stel bijvoorbeeld dat een trigger een numerieke waarde retourneert als uitvoer:
 
@@ -187,9 +187,11 @@ Als u deze numerieke uitvoer gebruikt en er wordt een teken reeks invoer verwach
 
 `@{triggerBody()?['123']}`
 
+<a name="base64-encoding-decoding"></a>
+
 ### <a name="base64-encoding-and-decoding"></a>Base64 coderen en decoderen
 
-Logic Apps automatisch of impliciet base64-code ring of-decodering uitvoert, zodat u deze bewerkingen niet hand matig hoeft uit te voeren met behulp van de bijbehorende expressies:
+Logic Apps automatisch of impliciet base64-code ring of-decodering uitvoeren, dus u hoeft deze conversies niet hand matig uit te voeren met behulp van de bijbehorende functies:
 
 * `base64(<value>)`
 * `base64ToBinary(<value>)`
@@ -200,7 +202,7 @@ Logic Apps automatisch of impliciet base64-code ring of-decodering uitvoert, zod
 * `decodeDataUri(<value>)`
 
 > [!NOTE]
-> Als u deze expressies hand matig toevoegt aan uw logische app, bijvoorbeeld met behulp van de expressie-editor, navigeert u naar de ontwerp functie voor logische apps en gaat u terug naar de ontwerp functie. de ontwerp functie toont alleen de parameter waarden. De expressies worden alleen in de code weergave bewaard als u de parameter waarden niet bewerkt. Anders verwijdert Logic Apps de expressies uit de code weergave, zodat alleen de parameter waarden worden weer gegeven. Dit gedrag heeft geen invloed op coderen en decoderen, alleen of de expressies worden weer gegeven.
+> Als u een van deze functies hand matig aan uw werk stroom toevoegt met behulp van de ontwerp functie voor logische apps, kunt u bijvoorbeeld met de expressie-editor naar een andere locatie navigeren en terugkeren naar de ontwerper. Dit gedrag treedt ook op als u een trigger of actie selecteert die gebruikmaakt van deze functie zonder de parameter waarden van de functie te bewerken. Dit resultaat is alleen van invloed op de zicht baarheid van de functie en niet op het effect. In de code weergave wordt de functie niet beïnvloed. Als u echter de parameter waarden van de functie bewerkt, worden de functie en het effect ervan verwijderd uit de code weergave, zodat alleen de parameter waarden van de functie worden achtergelaten.
 
 <a name="math-functions"></a>
 
@@ -944,7 +946,7 @@ En retourneert dit resultaat: `["hello"]`
 Retourneert de met base64 gecodeerde versie voor een teken reeks.
 
 > [!NOTE]
-> Azure Logic Apps voert automatisch base64-code ring en-decodering uit, wat betekent dat u deze conversies niet hand matig hoeft uit te voeren. Als u dit wel doet, kunt u echter onverwachte weergave gedrag ondervinden die niet van invloed is op de daad werkelijke conversies, maar alleen op de manier waarop deze worden weer gegeven. Zie [impliciete gegevens type conversies](#implicit-data-conversions)voor meer informatie.
+> Azure Logic Apps automatisch of impliciet base64-code ring en-decodering uitvoeren, dus u hoeft deze conversies niet hand matig uit te voeren met behulp van de functies voor coderen en decoderen. Als u deze functies echter toch gebruikt, kan het zijn dat er onverwachte rendering-gedrag optreden in de ontwerp functie. Dit gedrag is alleen van invloed op de zicht baarheid van functies en niet op het effect ervan, tenzij u de parameter waarden van de functies bewerkt, waardoor de functies en hun effecten uit uw code worden verwijderd. Zie [Base64 coderen en decoderen](#base64-encoding-decoding)voor meer informatie.
 
 ```
 base64('<value>')
@@ -977,7 +979,7 @@ En retourneert dit resultaat: `"aGVsbG8="`
 Retourneert de binaire versie voor een base64-gecodeerde teken reeks.
 
 > [!NOTE]
-> Azure Logic Apps voert automatisch base64-code ring en-decodering uit, wat betekent dat u deze conversies niet hand matig hoeft uit te voeren. Als u dit wel doet, kunt u echter onverwachte weergave gedrag ondervinden die niet van invloed is op de daad werkelijke conversies, maar alleen op de manier waarop deze worden weer gegeven. Zie [impliciete gegevens type conversies](#implicit-data-conversions)voor meer informatie.
+> Azure Logic Apps automatisch of impliciet base64-code ring en-decodering uitvoeren, dus u hoeft deze conversies niet hand matig uit te voeren met behulp van de functies voor coderen en decoderen. Als u deze functies echter toch in de ontwerp functie gebruikt, kan dit leiden tot onverwachte rendering-gedragingen in de ontwerp functie. Dit gedrag is alleen van invloed op de zicht baarheid van functies en niet op het effect ervan, tenzij u de parameter waarden van de functies bewerkt, waardoor de functies en hun effecten uit uw code worden verwijderd. Zie [Base64 coderen en decoderen](#base64-encoding-decoding)voor meer informatie.
 
 ```
 base64ToBinary('<value>')
@@ -1012,7 +1014,7 @@ En retourneert dit resultaat:
 Retourneert de teken reeks versie voor een base64-gecodeerde teken reeks, waardoor de base64-teken reeks effectief wordt gedecodeerd. Gebruik deze functie in plaats van [decodeBase64 ()](#decodeBase64), die is afgeschaft.
 
 > [!NOTE]
-> Azure Logic Apps voert automatisch base64-code ring en-decodering uit, wat betekent dat u deze conversies niet hand matig hoeft uit te voeren. Als u dit wel doet, kunt u echter onverwachte weergave gedrag ondervinden die niet van invloed is op de daad werkelijke conversies, maar alleen op de manier waarop deze worden weer gegeven. Zie [impliciete gegevens type conversies](#implicit-data-conversions)voor meer informatie.
+> Azure Logic Apps automatisch of impliciet base64-code ring en-decodering uitvoeren, dus u hoeft deze conversies niet hand matig uit te voeren met behulp van de functies voor coderen en decoderen. Als u deze functies echter toch in de ontwerp functie gebruikt, kan dit leiden tot onverwachte rendering-gedragingen in de ontwerp functie. Dit gedrag is alleen van invloed op de zicht baarheid van functies en niet op het effect ervan, tenzij u de parameter waarden van de functies bewerkt, waardoor de functies en hun effecten uit uw code worden verwijderd. Zie [Base64 coderen en decoderen](#base64-encoding-decoding)voor meer informatie.
 
 ```
 base64ToString('<value>')
@@ -1074,9 +1076,7 @@ En retourneert dit resultaat:
 
 ### <a name="body"></a>body
 
-De uitvoer van een actie `body` tijdens runtime retour neren.
-Steno voor `actions('<actionName>').outputs.body` .
-Zie [actionBody ()](#actionBody) en [Actions ()](#actions).
+De uitvoer van een actie `body` tijdens runtime retour neren. Steno voor `actions('<actionName>').outputs.body` . Zie [actionBody ()](#actionBody) en [Actions ()](#actions).
 
 ```
 body('<actionName>')
@@ -1194,6 +1194,15 @@ En retourneert deze resultaten:
 
 Combi neer twee of meer teken reeksen en retour neer de gecombineerde teken reeks.
 
+> [!NOTE]
+> Azure Logic Apps automatisch of impliciet base64-code ring en-decodering uitvoert, zodat u deze conversies niet hand matig hoeft uit te voeren wanneer u de `concat()` functie gebruikt met gegevens die moeten worden gedecodeerd of ontsleuteld:
+> 
+> * `concat('data:;base64,',<value>)`
+> * `concat('data:,',encodeUriComponent(<value>))`
+> 
+> Als u deze functie echter toch in de Designer gebruikt, kan het zijn dat er onverwachte rendering-gedrag in de ontwerp functie optreden. Dit gedrag is alleen van invloed op de zicht baarheid van de functie en niet op het effect tenzij u de parameter waarden van de functie bewerkt, waardoor de functie en het effect van uw code worden verwijderd. 
+> Zie [Base64 coderen en decoderen](#base64-encoding-decoding)voor meer informatie.
+
 ```
 concat('<text1>', '<text2>', ...)
 ```
@@ -1222,9 +1231,7 @@ En retourneert dit resultaat: `"HelloWorld"`
 
 ### <a name="contains"></a>bevat
 
-Controleer of een verzameling een specifiek item heeft.
-Retourneert waar wanneer het item is gevonden, of retourneert onwaar als het niet is gevonden.
-Deze functie is hoofdletter gevoelig.
+Controleer of een verzameling een specifiek item heeft. Retourneert waar wanneer het item is gevonden, of retourneert onwaar als het niet is gevonden. Deze functie is hoofdletter gevoelig.
 
 ```
 contains('<collection>', '<value>')
@@ -1622,7 +1629,7 @@ Deze functie is afgeschaft. gebruik in plaats daarvan [base64ToString ()](#base6
 Retourneert de binaire versie voor een gegevens-URI (Uniform Resource Identifier). Overweeg het gebruik van [dataUriToBinary ()](#dataUriToBinary)in plaats van `decodeDataUri()` . Hoewel beide functies op dezelfde manier werken, verdient de `dataUriToBinary()` voor keur.
 
 > [!NOTE]
-> Azure Logic Apps voert automatisch base64-code ring en-decodering uit, wat betekent dat u deze conversies niet hand matig hoeft uit te voeren. Als u dit wel doet, kunt u echter onverwachte weergave gedrag ondervinden die niet van invloed is op de daad werkelijke conversies, maar alleen op de manier waarop deze worden weer gegeven. Zie [impliciete gegevens type conversies](#implicit-data-conversions)voor meer informatie.
+> Azure Logic Apps automatisch of impliciet base64-code ring en-decodering uitvoeren, dus u hoeft deze conversies niet hand matig uit te voeren met behulp van de functies voor coderen en decoderen. Als u deze functies echter toch in de ontwerp functie gebruikt, kan dit leiden tot onverwachte rendering-gedragingen in de ontwerp functie. Dit gedrag is alleen van invloed op de zicht baarheid van functies en niet op het effect ervan, tenzij u de parameter waarden van de functies bewerkt, waardoor de functies en hun effecten uit uw code worden verwijderd. Zie [Base64 coderen en decoderen](#base64-encoding-decoding)voor meer informatie.
 
 ```
 decodeDataUri('<value>')
@@ -1729,7 +1736,7 @@ div(11.0,5)
 Een gecodeerde URI-versie (Uniform Resource Identifier) retour neren voor een teken reeks door onveilige URL-tekens te vervangen door Escape tekens. Overweeg het gebruik van [uriComponent ()](#uriComponent)in plaats van `encodeUriComponent()` . Hoewel beide functies op dezelfde manier werken, verdient de `uriComponent()` voor keur.
 
 > [!NOTE]
-> Azure Logic Apps voert automatisch base64-code ring en-decodering uit, wat betekent dat u deze conversies niet hand matig hoeft uit te voeren. Als u dit wel doet, kunt u echter onverwachte weergave gedrag ondervinden die niet van invloed is op de daad werkelijke conversies, maar alleen op de manier waarop deze worden weer gegeven. Zie [impliciete gegevens type conversies](#implicit-data-conversions)voor meer informatie.
+> Azure Logic Apps automatisch of impliciet base64-code ring en-decodering uitvoeren, dus u hoeft deze conversies niet hand matig uit te voeren met behulp van de functies voor coderen en decoderen. Als u deze functies echter toch in de ontwerp functie gebruikt, kan dit leiden tot onverwachte rendering-gedragingen in de ontwerp functie. Dit gedrag is alleen van invloed op de zicht baarheid van functies en niet op het effect ervan, tenzij u de parameter waarden van de functies bewerkt, waardoor de functies en hun effecten uit uw code worden verwijderd. Zie [Base64 coderen en decoderen](#base64-encoding-decoding)voor meer informatie.
 
 ```
 encodeUriComponent('<value>')

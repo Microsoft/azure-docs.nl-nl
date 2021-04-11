@@ -10,12 +10,12 @@ adobe-target: true
 adobe-target-activity: DocsExp–386541–A/B–Enhanced-Readability-Quickstarts–2.19.2021
 adobe-target-experience: Experience B
 adobe-target-content: ./create-first-function-cli-java-uiex
-ms.openlocfilehash: 0ef52da8400cfadfaaa26664d984d8b898a3b9a3
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 261ba24a360dd49a9759bc70f561810a9e1fd2c8
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101729297"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106277076"
 ---
 # <a name="quickstart-create-a-java-function-in-azure-from-the-command-line"></a>Quickstart: Een Java-functie maken in Azure vanaf de opdrachtregel
 
@@ -152,11 +152,7 @@ Het archetype genereert ook een moduletest voor uw functie. Wanneer u de functie
     > [!NOTE]  
     > Als HttpExample niet verschijnt zoals hierboven weergegeven, hebt u waarschijnlijk de host gestart van buiten de hoofdmap van het project. In dat geval gebruikt u **Ctrl**+**C** om de host te stoppen, gaat u naar de hoofdmap van het project en voert u de vorige opdracht opnieuw uit.
 
-1. Kopieer de URL van uw `HttpExample`-functie van deze uitvoer naar een browser en voeg de query tekenreeks toe `?name=<YOUR_NAME>`, waardoor de volledige URL verschijnt, zoals `http://localhost:7071/api/HttpExample?name=Functions`. In de browser moet een bericht als het volgende weergeven `Hello Functions`:
-
-    ![Resultaat van de functie lokaal uitgevoerd in de browser](./media/functions-create-first-azure-function-azure-cli/function-test-local-browser.png)
-    
-    De terminal waarin u uw project hebt gestart, toont ook de logboek uitvoer wanneer u aanvragen doet.
+1. Kopieer de URL van uw `HttpExample`-functie van deze uitvoer naar een browser en voeg de query tekenreeks toe `?name=<YOUR_NAME>`, waardoor de volledige URL verschijnt, zoals `http://localhost:7071/api/HttpExample?name=Functions`. In de browser wordt een bericht weer gegeven waarin de waarde van de query reeks wordt geretourneerd. De terminal waarin u uw project hebt gestart, toont ook de logboek uitvoer wanneer u aanvragen doet.
 
 1. Wanneer u klaar bent, gebruikt u **Ctrl**+**C** en kiest u `y` om de functiehost te stoppen.
 

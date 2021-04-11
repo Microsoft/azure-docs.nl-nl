@@ -5,16 +5,16 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 03f1f1659d120a2aa1b827063cb2bc84138f3655
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 05c06d368dca03e1cb7f07c064f7899300f05cf7
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98896067"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106169008"
 ---
 # <a name="deploy-an-amazon-web-services-vm-with-a-runbook"></a>Een Amazon Web Services-VM implementeren met een runbook
 
-In dit artikel leert u hoe u Azure Automation kunt gebruiken om een virtuele machine in te richten in uw Amazon Web Service (AWS)-abonnement en om die VM een specifieke naam te geven, waarnaar AWS verwijst als ' tagging ' van de VM.
+In dit artikel leert u hoe u Azure Automation kunt gebruiken om een virtuele machine in te richten in uw AWS-abonnement (Amazon Web Service) en die VM een specifieke naam te geven, waarnaar AWS verwijst als ' tagging ' van de VM.
 
 ## <a name="prerequisites"></a>Vereisten
 

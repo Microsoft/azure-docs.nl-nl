@@ -1,7 +1,7 @@
 ---
 title: 'Snelstart: Een virtuele Linux-machine met SQL Server maken in Azure'
 description: Deze zelfstudie laat zien hoe u een virtuele SQL Server 2017-machine voor Linux in Azure Portal kunt maken.
-services: virtual-machines-linux
+services: virtual-machines-sql
 author: MashaMSFT
 ms.date: 10/22/2019
 tags: azure-service-management
@@ -10,12 +10,12 @@ ms.service: virtual-machines-sql
 ms.workload: iaas-sql-server
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: fd5c289f2b441b5862d863d9a390a1cd054acbfa
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 492d4a799f35d7fee4f500b48cbb31d2a9c5957f
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92790148"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106450001"
 ---
 # <a name="provision-a-linux-virtual-machine-running-sql-server-in-the-azure-portal"></a>Een virtuele Linux-machine waarop SQL Server wordt ingevoerd, inrichten in Azure Portal
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]

@@ -5,14 +5,14 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 10/14/2019
+ms.date: 04/05/2021
 ms.author: duau
-ms.openlocfilehash: 3f8cf5de012999c0f814964fd41042a0caf78b42
-ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
+ms.openlocfilehash: 796e35be12939920f9392e6f3ce4cae660415f80
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106106667"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106504679"
 ---
 # <a name="about-expressroute-virtual-network-gateways"></a>Info over virtuele ExpressRoute-netwerkgateways voor meer informatie over de virtuele ExpressRoute-netwerkgateway
 
@@ -39,8 +39,8 @@ In de volgende tabel ziet u de gateway typen en de geschatte prestaties. Deze ta
 [!INCLUDE [expressroute-table-aggthroughput](../../includes/expressroute-table-aggtput-include.md)]
 
 > [!IMPORTANT]
-> Toepassings prestaties zijn afhankelijk van meerdere factoren, zoals de end-to-end-latentie en het aantal verkeer dat de toepassing opent. De getallen in de tabel vertegenwoordigen de bovengrens die de toepassing kan betreffen in een ideale omgeving.
->
+> * Het aantal Vm's in het virtuele netwerk omvat ook virtuele machines in gekoppelde virtuele netwerken die gebruikmaken van een externe ExpressRoute-gateway.
+> * Toepassings prestaties zijn afhankelijk van meerdere factoren, zoals de end-to-end-latentie en het aantal verkeer dat de toepassing opent. De getallen in de tabel vertegenwoordigen de bovengrens die de toepassing kan betreffen in een ideale omgeving.
 >
 
 ## <a name="gateway-subnet"></a><a name="gwsub"></a>Gatewaysubnet

@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: sample
-ms.date: 12/17/2020
+ms.date: 04/02/2021
 ms.author: aahi
-ms.openlocfilehash: ef40201a13412cc735a5e15bf468e2c934ec81ab
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
-ms.translationtype: HT
+ms.openlocfilehash: e2148f56c216795c5022b86b6a1d90b476a4672e
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97656798"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106277280"
 ---
 # <a name="example-detect-language-with-text-analytics"></a>Voorbeeld: Taal detecteren met Text Analytics
 
@@ -80,7 +80,7 @@ Zie [De Text Analytics-API aanroepen](text-analytics-how-to-call-api.md) voor me
 
 ## <a name="step-2-post-the-request"></a>Stap 2: Plaats de aanvraag
 
-Analyse wordt uitgevoerd na ontvangst van de aanvraag. Zie het gedeelte over [gegevenslimieten](../overview.md#data-limits) in het overzicht voor informatie over de grootte en het aantal aanvragen dat u per minuut en per seconde kunt verzenden.
+Analyse wordt uitgevoerd na ontvangst van de aanvraag. Zie het artikel over de [gegevens limieten](../concepts/data-limits.md) voor meer informatie over de grootte en het aantal aanvragen dat u per minuut en seconde kunt verzenden.
 
 Terughalen als de service staatloos is. Er worden geen gegevens opgeslagen in uw account. Resultaten worden onmiddellijk in het antwoord geretourneerd.
 

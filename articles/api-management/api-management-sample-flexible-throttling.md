@@ -1,5 +1,5 @@
 ---
-title: Geavanceerde aanvraagbeperking met Azure API Management
+title: Geavanceerde aanvraag beperking met Azure API Management
 description: Meer informatie over het maken en Toep assen van beleid voor flexibele quota en frequentie beperking met Azure API Management.
 services: api-management
 documentationcenter: ''
@@ -15,14 +15,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/03/2018
 ms.author: apimpm
-ms.openlocfilehash: 36b21196207f65975dae950f43ec0c7094991dad
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3f91ed2238a7a23b967cd3e3556c8ade88af0044
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100362026"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106449729"
 ---
-# <a name="advanced-request-throttling-with-azure-api-management"></a>Geavanceerde aanvraagbeperking met Azure API Management
+# <a name="advanced-request-throttling-with-azure-api-management"></a>Geavanceerde aanvraag beperking met Azure API Management
 Het beperken van binnenkomende aanvragen is een belang rijke rol van Azure API Management. Door de frequentie van aanvragen of het totale aantal overgedragen aanvragen/gegevens te beheren, kunnen met API Management API-providers hun Api's tegen misbruik beveiligen en waarde maken voor verschillende API-product lagen.
 
 ## <a name="rate-limits-and-quotas"></a>Frequentie limieten en quota
@@ -91,7 +91,7 @@ Wanneer de beperkings sleutel is gedefinieerd met behulp van een [beleids expres
 Hierdoor kan de client toepassing van de ontwikkelaar kiezen hoe ze de frequentie limiet sleutel willen maken. De client ontwikkelaars kunnen hun eigen tarieven lagen maken door sets sleutels aan gebruikers toe te wijzen en het sleutel gebruik te roteren.
 
 ## <a name="summary"></a>Samenvatting
-Azure API Management voorziet in snelheids-en prijs limieten om te beveiligen en waarde toe te voegen aan uw API-service. Met het nieuwe beperkings beleid met aangepaste bereik regels kunt u een nauw keurigere controle over het beleid bieden zodat uw klanten zelfs betere toepassingen kunnen bouwen. In de voor beelden in dit artikel wordt het gebruik van deze nieuwe beleids regels gedemonstreerd door de productie frequentie beperkende sleutels met client-IP-adressen, gebruikers-id en door client gegenereerde waarden. Er zijn echter veel andere delen van het bericht die kunnen worden gebruikt, zoals gebruikers agent, URL-pad fragmenten, bericht grootte.
+Azure API Management biedt limieten voor snelheid en quota voor het beveiligen en toevoegen van waarde aan uw API-service. Met het nieuwe beperkings beleid met aangepaste bereik regels kunt u een nauw keurigere controle over het beleid bieden zodat uw klanten zelfs betere toepassingen kunnen bouwen. In de voor beelden in dit artikel wordt het gebruik van deze nieuwe beleids regels gedemonstreerd door de productie frequentie beperkende sleutels met client-IP-adressen, gebruikers-id en door client gegenereerde waarden. Er zijn echter veel andere delen van het bericht die kunnen worden gebruikt, zoals gebruikers agent, URL-pad fragmenten, bericht grootte.
 
 ## <a name="next-steps"></a>Volgende stappen
 Geef ons uw feedback als een GitHub-probleem voor dit onderwerp. Het is handig om te horen over andere mogelijke sleutel waarden die een logische keuze zijn in uw scenario's.

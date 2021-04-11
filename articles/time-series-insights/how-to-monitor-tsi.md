@@ -2,7 +2,7 @@
 title: Bewakings Time Series Insights | Microsoft Docs
 description: Bewaak Time Series Insights voor Beschik baarheid, prestaties en werking.
 author: deepakpalled
-ms.author: lyhughes
+ms.author: dpalled
 manager: diviso
 ms.workload: big-data
 ms.service: time-series-insights
@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 12/10/2020
 ms.custom: lyrana
-ms.openlocfilehash: a46ddeddfcefcd4d6e7f87747fe36cfc6ec82e35
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 15054cd508ce7a6de51fea86ca02302fba258757
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101737559"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106504920"
 ---
 # <a name="monitoring-time-series-insights"></a>Bewakings Time Series Insights
 
@@ -44,7 +44,7 @@ In de volgende secties vindt u een beschrijving van de specifieke gegevens die z
 
 ## <a name="monitoring-data-from-azure-time-series-insights"></a>Gegevens van Azure Time Series Insights bewaken
 
-Azure Time Series Insights worden dezelfde soorten bewakings gegevens verzameld als andere Azure-resources die worden beschreven in [gegevens van Azure-resources bewaken](../azure-monitor/essentials/monitor-azure-resource.md#monitoring-data). 
+Azure Time Series Insights worden dezelfde soorten bewakings gegevens verzameld als andere Azure-resources die worden beschreven in [gegevens van Azure-resources bewaken](../azure-monitor/essentials/monitor-azure-resource.md#monitoring-data).
 
 Zie [Azure time series Insights bewakings gegevens Naslag informatie](how-to-monitor-tsi-reference.md) voor een gedetailleerde Naslag informatie over de logboeken en metrieken die u kunt verzamelen.
 

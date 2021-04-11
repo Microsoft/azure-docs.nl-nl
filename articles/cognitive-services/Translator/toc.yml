@@ -1,17 +1,19 @@
 - name: Documentatie over Translator-service
   href: index.yml
 - name: Overzicht
+  expanded: true
   items:
-    - name: Wat is Translator?
-      href: translator-info-overview.md
     - name: Taalondersteuning
       href: language-support.md
     - name: Prijzen en beperkingen
       href: 'https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator'
+- name: Tekstomzetting
+  expanded: true
+  items:
+    - name: Wat is Translator?
+      href: translator-info-overview.md
     - name: Veelgestelde vragen over vertalen
       href: 'https://www.microsoft.com/translator/faq.aspx'
-- name: Tekstomzetting
-  items:
     - name: Snelstart
       href: quickstart-translator.md
     - name: Voorbeelden
@@ -84,10 +86,10 @@
   items:
     - name: Wat is Custom Translator?
       href: custom-translator/overview.md
-    - name: Snelstart
-      href: custom-translator/quickstart-build-deploy-custom-model.md
     - name: Veelgestelde vragen
       href: custom-translator/faq.md
+    - name: Snelstart
+      href: custom-translator/quickstart-build-deploy-custom-model.md
     - name: Instructiegidsen
       items:
         - name: Een project maken
@@ -160,7 +162,7 @@
           href: document-translation/reference/get-operations.md
         - name: Bewerking annuleren
           href: document-translation/reference/cancel-operation.md
-- name: Vertaal bronnen
+- name: Resources
   items:
     - name: Opties voor ondersteuning en hulp
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/translator/context/context

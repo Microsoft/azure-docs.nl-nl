@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: trbye
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: e5a3459c0264d087759572bffc497430cdb69ac9
-ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
+ms.openlocfilehash: 2c66a7e3bf9e417b47d08e50e21c08625e9d0549
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105966942"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107210207"
 ---
 # <a name="improve-synthesis-with-speech-synthesis-markup-language-ssml"></a>De synthese verbeteren met Markup Language voor spraak synthese (SSML)
 
@@ -27,11 +27,9 @@ De implementatie van de speech-service van SSML is gebaseerd op de [opmaak taal 
 > [!IMPORTANT]
 > Chinese, Japanse en Koreaanse tekens tellen als twee tekens voor facturering. Zie [prijzen](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/)voor meer informatie.
 
-## <a name="standard-neural-and-custom-voices"></a>Standaard, Neural en aangepaste stemmen
+## <a name="neural-and-custom-voices"></a>Neural en aangepaste stemmen
 
-Kies uit standaard-en Neural stemmen of maak uw eigen aangepaste spraak die uniek is voor uw product of merk. 75 + standaard stemmen zijn verkrijgbaar in meer dan 45 talen en land instellingen en vijf Neural stemmen zijn beschikbaar in vier talen en land instellingen. Zie [taal ondersteuning](language-support.md)voor een volledige lijst met ondersteunde talen, land instellingen en stemmen (Neural en Standard).
-
-Zie [tekst-naar-spraak-overzicht](text-to-speech.md)voor meer informatie over standaard-, Neural-en aangepaste stemmen.
+Gebruik een humane-achtige Neural-stem of maak uw eigen aangepaste spraak die uniek is voor uw product of merk. Zie [taal ondersteuning](language-support.md)voor een volledige lijst met ondersteunde talen, land instellingen en stemmen. Zie [tekst-naar-spraak-overzicht](text-to-speech.md)voor meer informatie over Neural en aangepaste stemmen.
 
 
 > [!NOTE]
@@ -194,12 +192,9 @@ speechConfig!.setPropertyTo(
 
 ## <a name="adjust-speaking-styles"></a>Spreek stijlen aanpassen
 
-> [!IMPORTANT]
-> De aanpassing van gesp roken stijlen werkt alleen met Neural stemmen.
+Standaard wordt tekst door de tekst naar spraak-service gesynthesizerd met behulp van een neutrale spreek stijl voor Neural stemmen. U kunt de spreek stijl aanpassen aan emoties, zoals cheerfulness, empathie en rustig, of de stem optimaliseren voor verschillende scenario's zoals klanten service, newscasting en Voice Assistant, met behulp van het- `mstts:express-as` element. Dit is een optioneel element dat uniek is voor de spraak service.
 
-Standaard wordt tekst door de service tekst naar spraak gesynthesizerd met behulp van een neutrale spreek stijl voor de standaard-en Neural stemmen. Met Neural stemmen kunt u de spreek stijl aanpassen aan een snelle andere emoties, zoals cheerfulness, empathie en rustig, of de stem optimaliseren voor verschillende scenario's zoals klanten service, newscasting en Voice Assistant, met behulp van het- `mstts:express-as` element. Dit is een optioneel element dat uniek is voor de spraak service.
-
-Op dit moment worden de volgende Neural stemmen ondersteund:
+Op dit moment worden de stijl aanpassingen voor de volgende Neural-stemmen ondersteund:
 * `en-US-AriaNeural`
 * `en-US-JennyNeural`
 * `en-US-GuyNeural`
@@ -215,11 +210,11 @@ Op dit moment worden de volgende Neural stemmen ondersteund:
 
 De intensiteit van de stijl van de spraak kan verder worden gewijzigd om beter te voldoen aan uw use-case. U kunt een sterker of zachtere stijl opgeven `styledegree` om de spraak herkenning duidelijker of gematigd te maken. Op dit moment worden de stijl aanpassingen voor Chinees (Mandarijn, vereenvoudigd) Neural stemmen ondersteund.
 
-Naast het aanpassen van de spraak stijlen en de stijl graad kunt u ook de `role` para meter aanpassen zodat de stem een andere leeftijd en geslacht krijgt. Een mannelijk stem kan bijvoorbeeld de Toon hoogte verhogen en de intonation wijzigen om een vrouwelijke stem te imiteren, maar de naam van de spraak wordt niet gewijzigd. Momenteel worden aanpassingen voor rollen afspelen ondersteund voor deze Chinese (Mandarijn, vereenvoudigd) Neural stemmen:
+Naast het aanpassen van de spraak stijlen en de stijl graad kunt u ook de `role` para meter aanpassen zodat de stem een andere leeftijd en geslacht krijgt. Een mannelijk stem kan bijvoorbeeld de Toon hoogte verhogen en de intonation wijzigen om een vrouwelijke stem te imiteren, maar de naam van de spraak wordt niet gewijzigd. Momenteel worden aanpassingen van rollen ondersteund voor deze Chinese (Mandarijn, vereenvoudigd) Neural stemmen:
 * `zh-CN-XiaomoNeural`
 * `zh-CN-XiaoxuanNeural`
 
-De bovenstaande wijzigingen worden toegepast op het niveau van de zin, en stijlen en rollen worden afgespeeld per stem. Als een stijl of rol-afspelen niet wordt ondersteund, retourneert de service spraak op de standaard neutrale manier. U kunt zien welke stijlen en rollen tijdens het afspelen worden ondersteund voor elke stem via de [Voice List API](rest-text-to-speech.md#get-a-list-of-voices) of via het platform voor het maken van de [audio-inhoud](https://aka.ms/audiocontentcreation) zonder code.
+De bovenstaande wijzigingen worden toegepast op het niveau van de zin, en stijlen en rollen worden afgespeeld per stem. Als een stijl of rol-afspelen niet wordt ondersteund, retourneert de service spraak op de standaard neutrale manier. U kunt zien welke stijlen en rollen per stem worden ondersteund via de [spraak lijst-API](rest-text-to-speech.md#get-a-list-of-voices) of via het platform voor het [maken](https://aka.ms/audiocontentcreation) van de audio-inhoud zonder code.
 
 **Syntaxis**
 
@@ -631,7 +626,7 @@ In het bovenstaande voor beeld gebruiken we het internationale fonetische alfabe
 
 Als u overweegt dat de IPA niet eenvoudig te onthouden is, definieert de speech-service een fonetische set voor zeven talen (,,,,, `en-US` `fr-FR` `de-DE` `es-ES` `ja-JP` `zh-CN` en `zh-TW` ).
 
-U kunt de `sapi` as Vale voor het kenmerk gebruiken `alphabet` met aangepaste lexicons, zoals hieronder wordt geïllustreerd:
+U kunt de `sapi` als de waarde voor het `alphabet` kenmerk met aangepaste lexicons gebruiken, zoals hieronder wordt geïllustreerd:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -717,7 +712,7 @@ Wijzigingen in de hoogte kunnen worden toegepast op standaard stemmen op het niv
 
 ```xml
 <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
-    <voice name="en-US-Guy24kRUS">
+    <voice name="en-US-AriaNeural">
         Welcome to <prosody pitch="high">Microsoft Cognitive Services Text-to-Speech API.</prosody>
     </voice>
 </speak>

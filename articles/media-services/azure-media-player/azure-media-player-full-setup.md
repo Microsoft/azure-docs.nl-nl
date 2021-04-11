@@ -5,14 +5,14 @@ author: IngridAtMicrosoft
 ms.author: inhenkel
 ms.service: media-services
 ms.topic: how-to
-ms.date: 04/20/2020
+ms.date: 04/05/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: e6ec59e3cb8d285652935b42493c820a7379eeb8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d7c103a7eba2e5da7ac040b50fcc0009a0b7237b
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104956074"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106449865"
 ---
 # <a name="azure-media-player-full-setup"></a>Volledige installatie van Azure Media Player #
 
@@ -20,7 +20,7 @@ Azure Media Player is eenvoudig in te stellen. Het duurt slechts enkele ogen bli
 
 ## <a name="step-1-include-the-javascript-and-css-files-in-the-head-of-your-page"></a>Stap 1: de Java script-en CSS-bestanden in de kop van uw pagina toevoegen ##
 
-Met Azure Media Player kunt u toegang krijgen tot de scripts van de gehoste CDN-versie. Het wordt vaak aanbevolen om Java script te plaatsen vóór het label voor de eind code `<body>` in plaats van de `<head>` , maar Azure Meia Player bevat een ' HTML5 Shiv ', die in de kop voor oudere versies van Internet Explorer moet zijn om de video code als een geldig element te kunnen respecteren.
+Met Azure Media Player kunt u toegang krijgen tot de scripts van de gehoste CDN-versie. Het wordt vaak aanbevolen om Java script te plaatsen vóór het label voor de eind code `<body>` in plaats van de `<head>` , maar Azure Media Player bevat een ' HTML5-Shiv ', die in de kop moet staan voor oudere IE-versies om de video code als een geldig element te kunnen respecteren.
 
 > [!NOTE]
 > Als u al een HTML5-Shiv gebruikt zoals [modernisering](https://modernizr.com/) , kunt u de Azure Media Player java script overal toevoegen. Zorg echter dat uw versie van de Moderniseringr de Shiv voor video bevat.
@@ -33,7 +33,7 @@ Met Azure Media Player kunt u toegang krijgen tot de scripts van de gehoste CDN-
 ```
 
 > [!IMPORTANT]
-> Gebruik **NIET** de `latest` versie in een productieomgeving, omdat deze op verzoek kan worden aangepast. Vervang door `latest` een versie van Azure Media Player. Vervang bijvoorbeeld `latest` door `2.1.1`. Op Azure Media Player-versies kunt u [hier](azure-media-player-changelog.md) een query uitvoeren.
+> Gebruik **NIET** de `latest` versie in een productieomgeving, omdat deze op verzoek kan worden aangepast. Vervang door `latest` een versie van Azure Media Player. Vervang bijvoorbeeld `latest` door `2.1.1`. Op Azure Media Player-versies kunt u [hier](https://amp.azure.net/libs/amp/latest/docs/changelog.html) een query uitvoeren.
 
 > [!NOTE]
 > Sinds de `1.2.0` release is het niet meer nodig om de locatie op te nemen in de technische terugval (de locatie wordt automatisch opgehaald uit het relatieve pad van het azuremediaplayer.min.js-bestand). U kunt de locatie van de technische terugvals wijzigen door het volgende script toe te voegen aan de `<head>` bovenstaande scripts.

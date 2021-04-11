@@ -105,6 +105,32 @@
               href: cloud-services-role-config-xpath.md
         - name: Certificaten beheren
           items:
+            - name: Azure PowerShell
+              href: cloud-services-diagnostics-powershell.md
+            - name: .NET
+              href: cloud-services-dotnet-diagnostics.md
+            - name: Visual Studio
+              href: /visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines?toc=/azure/cloud-services/toc.json
+        - name: Diagnostische gegevens opslaan en weergeven in Azure Storage
+          href: diagnostics-extension-to-storage.md
+        - name: Een cloudservice volgen met de diagnosefunctie
+          href: cloud-services-dotnet-diagnostics-trace-flow.md
+    - name: Migrate
+      items:
+        - name: Migratieoverzicht
+          href: ../cloud-services-extended-support/in-place-migration-overview.md?toc=/azure/cloud-services/toc.json
+        - name: Technische Details voor migratie
+          href: ../cloud-services-extended-support/in-place-migration-technical-details.md?toc=/azure/cloud-services/toc.json
+        - name: Migreren met behulp van de Azure Portal
+          href: ../cloud-services-extended-support/in-place-migration-portal.md?toc=/azure/cloud-services/toc.json
+        - name: Migreren met PowerShell
+          href: ../cloud-services-extended-support/in-place-migration-powershell.md?toc=/azure/cloud-services/toc.json
+        - name: Veelvoorkomende fouten en bekende problemen
+          href: ../cloud-services-extended-support/in-place-migration-common-errors.md?toc=/azure/cloud-services/toc.json
+    - name: Problemen oplossen
+      items:
+        - name: Fouten opsporen
+          items:
             - name: Cloud Services en beheercertificaten
               href: cloud-services-certs-create.md
             - name: SSL configureren
@@ -172,6 +198,8 @@
                   href: cloud-services-deployment-faq.md
     - name: Naslaginformatie
       items:
+        - name: Azure CLI
+          href: /cli/azure/cloud
         - name: Codevoorbeelden
           href: 'https://azure.microsoft.com/resources/samples/?service=cloud-services'
         - name: .csdef XML-schema
@@ -196,17 +224,25 @@
           href: /rest/api/compute/cloudservices/
     - name: Resources
       items:
-        - name: Azure-roadmap
-          href: 'https://azure.microsoft.com/roadmap/?category=compute'
-        - name: Leertraject
-          href: /learn/paths/azure-fundamentals/
-        - name: Microsoft Q&A-vragenpagina
-          href: /answers/topics/azure-cloud-services.html
-        - name: Prijzen
-          href: 'https://azure.microsoft.com/pricing/details/cloud-services/'
-        - name: Prijscalculator
-          href: 'https://azure.microsoft.com/pricing/calculator/'
-        - name: Service-updates
-          href: 'https://azure.microsoft.com/updates/?product=cloud-services&updatetype=&platform='
-        - name: Video's
-          href: 'https://azure.microsoft.com/documentation/videos/index/?services=cloud-services'
+        - name: Role-schema
+          href: schema-cscfg-role.md
+        - name: NetworkConfiguration-schema
+          href: schema-cscfg-networkconfiguration.md
+    - name: REST
+      href: /rest/api/compute/cloudservices/
+- name: Resources
+  items:
+    - name: Azure-roadmap
+      href: 'https://azure.microsoft.com/roadmap/?category=compute'
+    - name: Leertraject
+      href: /learn/paths/azure-fundamentals/
+    - name: Microsoft Q&A-vragenpagina
+      href: /answers/topics/azure-cloud-services.html
+    - name: Prijzen
+      href: 'https://azure.microsoft.com/pricing/details/cloud-services/'
+    - name: Prijscalculator
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Service-updates
+      href: 'https://azure.microsoft.com/updates/?product=cloud-services&updatetype=&platform='
+    - name: Video's
+      href: 'https://azure.microsoft.com/documentation/videos/index/?services=cloud-services'

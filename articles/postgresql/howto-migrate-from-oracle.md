@@ -8,12 +8,12 @@ ms.service: postgresql
 ms.subservice: migration-guide
 ms.topic: how-to
 ms.date: 03/18/2021
-ms.openlocfilehash: 1a20ffd7150ac75721b2affc2f4375301c4754c8
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 931528ec415cabde8e862db17b9f8f26502f6788
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/30/2021
-ms.locfileid: "105643569"
+ms.locfileid: "105968931"
 ---
 # <a name="migrate-oracle-to-azure-database-for-postgresql"></a>Oracle migreren naar Azure Database for PostgreSQL
 
@@ -27,12 +27,14 @@ Als u uw Oracle-schema naar Azure Database for PostgreSQL wilt migreren, moet u 
 
 - Controleer of uw bron omgeving wordt ondersteund. 
 - Down load de nieuwste versie van [ora2pg](https://ora2pg.darold.net/). 
-- De nieuwste versie van de [DBD-module](https://www.cpan.org/modules/by-module/DBD/). 
+- De nieuwste versie van de [DBD-module](https://www.cpan.org/modules/by-module/DBD/)hebben. 
 
 
 ## <a name="overview"></a>Overzicht
 
-PostgreSQL is een van de meest geavanceerde open source-data bases van de wereld. In dit artikel wordt beschreven hoe u het gratis hulp programma ora2pg kunt gebruiken om een Oracle-Data Base te migreren naar PostgreSQL. U kunt ora2pg, een gratis hulp programma, gebruiken om een Oracle-of MySQL-data base te migreren naar een met PostgreSQL compatibel schema. Het hulp programma verbindt de Oracle-data base, scant deze automatisch en haalt de structuur of gegevens op. Daarna genereert ora2pg SQL-scripts die u in uw PostgreSQL-Data Base kunt laden. ora2pg kan worden gebruikt voor taken van reverse engineering een Oracle-data base, het uitvoeren van een enorme migratie van de bedrijfs database of het repliceren van een aantal Oracle-gegevens naar een PostgreSQL-data base. Het is eenvoudig te gebruiken en vereist geen enkele kennis van Oracle data bases dan de mogelijkheid om de para meters op te geven die nodig zijn om verbinding te maken met de Oracle-data base.
+PostgreSQL is een van de meest geavanceerde open source-data bases van de wereld. In dit artikel wordt beschreven hoe u het gratis hulp programma ora2pg kunt gebruiken om een Oracle-Data Base te migreren naar PostgreSQL. U kunt ora2pg gebruiken om een Oracle-data base of MySQL-data base te migreren naar een PostgreSQL-compatibel schema. 
+
+Het hulp programma ora2pg verbindt uw Oracle-data base, scant deze automatisch en haalt de structuur of gegevens op. Vervolgens genereert ora2pg SQL-scripts die u in uw PostgreSQL-Data Base kunt laden. U kunt ora2pg gebruiken voor taken, zoals reverse engineering, een Oracle-data base, het migreren van een enorme bedrijfs database of het repliceren van een aantal Oracle-gegevens naar een PostgreSQL-data base. Het hulp programma is eenvoudig te gebruiken en vereist geen Oracle data base-kennis naast de mogelijkheid om de para meters op te geven die nodig zijn om verbinding te maken met de Oracle-data base.
 
 > [!NOTE]
 > Zie de [ora2pg-documentatie](https://ora2pg.darold.net/documentation.html)voor meer informatie over het gebruik van de meest recente versie van ora2pg.
@@ -41,15 +43,15 @@ PostgreSQL is een van de meest geavanceerde open source-data bases van de wereld
 
 ![Scherm afbeelding van de ora2pg-migratie architectuur.](media/howto-migrate-from-oracle/ora2pg-migration-architecture.png)
 
-Na het inrichten van de virtuele machine en Azure Database for PostgreSQL zijn er twee configuraties nodig voor het inschakelen van de connectiviteit: **Azure-Services toestaan** en **SSL-verbinding afdwingen**, als volgt weer gegeven:
+Nadat u de virtuele machine en Azure Database for PostgreSQL hebt ingericht, hebt u twee configuraties nodig om de connectiviteit ertussen in te scha kelen: **toegang tot Azure-Services toestaan** en **SSL-verbinding afdwingen**: 
 
-- Blade **verbindings beveiliging** -> **toegang tot Azure-Services toestaan** -> op
+- Blade **verbindings beveiliging** > **toegang tot Azure-Services toestaan**  >  **op**
 
-- Blade **verbindings beveiliging** -> **SSL-instellingen**  ->  **SSL-verbinding afdwingen** -> uitgeschakeld
+- De Blade **verbindings beveiliging** > **SSL-instellingen** SSL-  >  **verbinding afdwingen** is  >  **uitgeschakeld**
 
 ### <a name="recommendations"></a>Aanbevelingen
 
-- Als u de prestaties van de evaluatie-of export bewerkingen op de Oracle-server wilt verbeteren, verzamelt u statistieken als volgt:
+- Voor het verbeteren van de prestaties van de evaluatie-of export bewerkingen op de Oracle-Server, verzamelen statistieken:
 
    ```
    BEGIN
@@ -60,63 +62,71 @@ Na het inrichten van de virtuele machine en Azure Database for PostgreSQL zijn e
      END;
    ```
 
-- Gegevens exporteren met behulp van de Kopieer opdracht in plaats van invoegen.
+- Gegevens exporteren met behulp `COPY` van de opdracht in plaats van `INSERT` .
 
-- Vermijd het exporteren van tabellen met hun FKs, beperkingen en indexen. Dit zorgt ervoor dat de gegevens in PostgreSQL worden geïmporteerd.
+- Vermijd het exporteren van tabellen met hun refererende sleutels (FKs), beperkingen en indexen. Deze elementen vertragen het proces van het importeren van gegevens in PostgreSQL.
 
-- Maak gerealiseerde weer gaven met behulp van de **component no data** en vernieuw deze later.
+- Maak gerealiseerde weer gaven met behulp van de *component no data*. Vernieuw vervolgens de weer gaven later.
 
-- Implementeer, indien mogelijk, unieke indexen in gerealiseerde weer gaven, waardoor het vernieuwen sneller verloopt met de syntaxis `REFRESH MATERIALIZED VIEW CONCURRENTLY` .
+- Gebruik, indien mogelijk, unieke indexen in gerealiseerde weer gaven. Deze indexen kunnen het vernieuwen versnellen wanneer u de syntaxis gebruikt `REFRESH MATERIALIZED VIEW CONCURRENTLY` .
 
 
+## <a name="premigration"></a>Premigratie 
 
-## <a name="pre-migration"></a>Premigratie 
+Nadat u hebt gecontroleerd of uw bron omgeving wordt ondersteund en dat u alle vereiste onderdelen hebt gedistribueerd, bent u klaar om de voorbereidende migratie te starten. U gaat als volgt aan de slag: 
 
-Nadat u hebt gecontroleerd of uw bron omgeving wordt ondersteund en u ervoor hebt gezorgd dat u voldoet aan alle vereisten, bent u klaar om de fase voorafgaand aan de migratie te starten. Dit onderdeel van het proces bestaat uit het uitvoeren van een inventarisatie van de data bases die u moet migreren, het beoordelen van die data bases voor mogelijke migratie problemen of blok keringen en het oplossen van items die u mogelijk hebt gedetecteerd. Voor heterogene-migraties zoals Oracle naar Azure Database for PostgreSQL, moet deze fase ook de schema (s) in de bron database (s) converteren om compatibel te zijn met de doel omgeving.
+1. Inventariseer de data bases die u nodig hebt om te migreren. 
+1. Beoordeel deze data bases op mogelijke migratie problemen of blok keringen.
+1. Los alle items op die u hebt gedetecteerd. 
+ 
+Voor heterogene-migraties zoals Oracle naar Azure Database for PostgreSQL, moet u in deze fase ook de schema's van de bron database maken die compatibel zijn met de doel omgeving.
 
 ### <a name="discover"></a>Ontdekken
 
-Het doel van de Discover-fase is het identificeren van bestaande gegevens bronnen en Details over de functies die worden gebruikt voor een beter inzicht in en het plannen van de migratie. Dit proces omvat het scannen van het netwerk om alle Oracle-exemplaren van uw organisatie samen te stellen met de versie en de functies die in gebruik zijn.
+Het doel van de detectie fase is het identificeren van bestaande gegevens bronnen en Details over de functies die worden gebruikt. Deze fase helpt u om de migratie beter te begrijpen en te plannen. Het proces omvat het scannen van het netwerk om alle Oracle-exemplaren van uw organisatie te identificeren samen met de versie en de functies die in gebruik zijn.
 
-Micro soft Oracle prebeoordeling-scripts worden uitgevoerd op basis van de Oracle-data base. De scripts voorafgaand aan de beoordeling zijn een set query's die de Oracle-meta gegevens opleveren en het volgende biedt:
+Micro soft prebeoordelings scripts voor Oracle worden uitgevoerd op basis van de Oracle-data base. De prebeoordelings scripts doorzoeken de Oracle-meta gegevens. De scripts bieden:
 
-- Data base-inventaris, inclusief aantallen objecten per schema, type en status.
+- Een Data Base-inventaris, met inbegrip van aantallen objecten per schema, type en status.
+- Een ruwe schatting van de onbewerkte gegevens in elk schema, op basis van statistieken.
+- De grootte van de tabellen in elk schema.
+- Het aantal code regels per pakket, functie, procedure, enzovoort.
 
-- Een ruwe schatting van onbewerkte gegevens in elk schema (op basis van statistieken).
-
-- Grootte van de tabellen in elk schema.
-
-- Het aantal regels code per pakket, functie, procedure, enzovoort.
-
-Down load de gerelateerde scripts van de [ora2pg-website](http://ora2pg.darold.net/).
+Down load de gerelateerde scripts van de [ora2pg-website](https://ora2pg.darold.net/).
 
 ### <a name="assess"></a>Evalueren
 
-Na het volt ooien van de inventaris van de Oracle-data base (s) om een idee te krijgen van de omvang van de data base en wat de uitdagingen zijn, is de volgende stap het uitvoeren van de evaluatie.
+Nadat u de Oracle-data bases hebt geïnventariseerd, hebt u een idee van de grootte van de data base en mogelijke uitdagingen. De volgende stap is om de evaluatie uit te voeren.
 
-Het schatten van de kosten van een migratie proces van Oracle naar PostgreSQL is niet eenvoudig. Om een goede evaluatie van deze migratie kosten te verkrijgen, inspecteert ora2pg alle database objecten, alle functies en opgeslagen procedures om te detecteren of er nog objecten en PL/SQL-code zijn die niet automatisch door ora2pg kunnen worden geconverteerd.
+Het schatten van de kosten van een migratie van Oracle naar PostgreSQL is niet eenvoudig. Voor het beoordelen van de migratie kosten, controleert ora2pg alle database objecten, functies en opgeslagen procedures voor objecten en PL/SQL-code die niet automatisch kunnen worden geconverteerd.
 
-ora2pg heeft een inhouds analyse modus die de Oracle-data base inspecteert om een tekst rapport te genereren over wat de Oracle-Data Base bevat en wat niet kan worden geëxporteerd.
+Het hulp programma ora2pg heeft een analyse modus voor inhoud die de Oracle-data base inspecteert om een tekst rapport te genereren. In het rapport wordt beschreven wat de Oracle-Data Base bevat en wat niet kan worden geëxporteerd.
 
-Als u de **analyse-en rapport** modus wilt activeren, gebruikt u het geëxporteerde type `SHOW_REPORT` zoals wordt weer gegeven in de volgende opdracht:
+Als u de *analyse-en rapport* modus wilt activeren, gebruikt u het geëxporteerde type `SHOW_REPORT` zoals wordt weer gegeven in de volgende opdracht:
 
 ```
 ora2pg -t SHOW_REPORT
 ```
 
-Nadat de data base is geanalyseerd, kan ora2pg, met de mogelijkheid om SQL-en PL/SQL-code te converteren van de Oracle-syntaxis naar PostgreSQL, verder gaan door de code problemen te schatten en de tijd die nodig is om een volledige database migratie uit te voeren.
+Het hulp programma ora2pg kan SQL-en PL/SQL-code converteren van de Oracle-syntaxis naar PostgreSQL. Nadat de data base is geanalyseerd, kan ora2pg dus de code problemen en de benodigde tijd voor het migreren van een volledige data base schatten.
 
-Als u de migratie kosten in Manus-dagen wilt schatten, kunt u met ora2pg een configuratie-instructie gebruiken met de naam ESTIMATE_COST, die ook kan worden ingeschakeld op de opdracht regel:
+Voor een schatting van de migratie kosten in Human dagen kunt u met ora2pg een configuratie instructie gebruiken met de naam `ESTIMATE_COST` . U kunt deze instructie ook inschakelen via een opdracht prompt:
 
 ```
 ora2pg -t SHOW_REPORT --estimate_cost
 ```
 
-De standaard migratie-eenheid vertegenwoordigt circa vijf minuten voor een PostgreSQL expert. Als dit uw eerste migratie is, kunt u deze hoger verkrijgen met de configuratie-instructie COST_UNIT_VALUE of de opdracht regel optie--cost_unit_value.
+De standaard migratie-eenheid staat ongeveer vijf minuten voor een PostgreSQL expert. Als deze migratie uw eerste is, kunt u de standaard migratie-eenheid verhogen met behulp van de configuratie-instructie `COST_UNIT_VALUE` of de `--cost_unit_value` opdracht regel optie.
 
-In de laatste regel van het rapport wordt de totale geschatte migratie code in dagen weer gegeven na het aantal migratie-eenheden dat voor elk object is geschat.
+In de laatste regel van het rapport wordt de totale geschatte migratie code in Human dagen weer gegeven. De schatting volgt het aantal geraamde migratie eenheden voor elk object.
 
-Deze migratie-eenheid vertegenwoordigt ongeveer vijf minuten voor een PostgreSQL expert. Als dit de eerste migratie is, kunt u de standaard waarde verhogen met de configuratie-instructie COST_UNIT_VALUE of de opdracht regel optie--cost_unit_value. Bekijk de evaluatie van enkele variaties van de evaluatie a-tabellen; b) column Assessment c) schema bepaling met behulp van standaard cost_unit (5 min) d) schema bepaling met 10 min als kosten eenheid.
+Deze migratie-eenheid vertegenwoordigt ongeveer vijf minuten voor een PostgreSQL expert. Als deze migratie uw eerste is, kunt u de standaard waarde verhogen met behulp van de configuratie-instructie `COST_UNIT_VALUE` of de opdracht regel optie `--cost_unit_value` . 
+
+In het volgende code voorbeeld ziet u enkele evaluatie variaties: 
+* Analyse van tabellen
+* Evaluatie van kolommen
+* Schema-evaluatie waarbij gebruik wordt gemaakt van een standaardkosten eenheid van vijf minuten
+* Schema-evaluatie waarbij een kosten eenheid van 10 minuten wordt gebruikt
 
 ```
 ora2pg -t SHOW_TABLE -c c:\ora2pg\ora2pg_hr.conf > c:\ts303\hr_migration\reports\tables.txt ora2pg -t SHOW_COLUMN -c c:\ora2pg\ora2pg_hr.conf > c:\ts303\hr_migration\reports\columns.txt
@@ -125,186 +135,192 @@ _migration\reports\report.html
 ora2pg -t SHOW_REPORT -c c:\ora2pg\ora2pg_hr.conf –-cost_unit_value 10 --dump_as_html --estimate_cost > c:\ts303\hr_migration\reports\report2.html
 ```
 
-De uitvoer van de schema-evaluatie wordt als volgt geïllustreerd:
+Dit is de uitvoer van het migratie niveau B-5 van de schema-evaluatie:
 
-**Migratie niveau: B-5**
+* Migratie niveaus:
 
-Migratie niveaus:
+  * Een-migratie die automatisch kan worden uitgevoerd
+    
+  * B-migratie met code herschrijven en Human dagen kosten tot vijf dagen
+    
+  * C-migratie met code herschrijven en Human dagen kosten meer dan vijf dagen
+    
+* Technische niveaus:
 
-A-migratie die automatisch kan worden uitgevoerd
+   * 1 = trivial: er zijn geen opgeslagen functies en geen triggers
 
-B-migratie met code herschrijven en Human dagen kosten tot vijf dagen
+   * 2 = eenvoudig: er zijn geen opgeslagen functies, maar triggers; niet hand matig herschrijven
 
-C-migratie met code herschrijven en Human dagen kosten meer dan 5 dagen
+   * 3 = eenvoudige: opgeslagen functies en/of triggers; niet hand matig herschrijven
 
-Technische niveaus:
+   * 4 = hand matig: er zijn geen opgeslagen functies, maar triggers of weer gaven met code herschrijf bewerkingen
 
-1 = trivial: er zijn geen opgeslagen functies en geen triggers
+   * 5 = moeilijk: opgeslagen functies en/of triggers bij het herschrijven van code
 
-2 = eenvoudig: er zijn geen opgeslagen functies maar met triggers zonder hand matig opnieuw schrijven
+De evaluatie bestaat uit: 
+* Een letter (A of B) om op te geven of de migratie hand matig moet worden herschreven.
 
-3 = eenvoudige: opgeslagen functies en/of triggers, niet hand matig herschrijven
+* Een getal tussen 1 en 5 om de technische moeilijkheids graad aan te geven. 
 
-4 = hand matig: er zijn geen opgeslagen functies maar met triggers of weer gaven met code opnieuw schrijven
+Een andere optie, `-human_days_limit` , geeft de limiet van Human dagen aan. Stel hier het migratie niveau in op C om aan te geven dat de migratie een grote hoeveelheid werk, volledig project beheer en migratie ondersteuning nodig heeft. De standaard waarde is 10 Human dagen. U kunt de configuratie-instructie gebruiken `HUMAN_DAYS_LIMIT` om deze standaard waarde permanent te wijzigen.
 
-5 = moeilijk: opgeslagen functies en/of triggers bij het herschrijven van code
-
-De evaluatie bestaat uit een letter (A of B) om op te geven of de migratie hand matig moet worden herschrijfd of niet, en een getal tussen 1 en 5 om het niveau van de technische moeilijkheids graad aan te geven. U hebt een extra optie-human_days_limit om het aantal Human-dagen limiet op te geven waar het migratie niveau moet worden ingesteld op C om aan te geven dat het een enorme hoeveelheid werk en een volledig project beheer met migratie ondersteuning nodig heeft. De standaard waarde is 10 Human dagen. U kunt de configuratie-instructie HUMAN_DAYS_LIMIT gebruiken om deze standaard waarde permanent te wijzigen.
-
-Deze functie is ontwikkeld om te helpen beslissen welke data base het eerst kan worden gemigreerd en wat het team is dat moet worden aangekocht.
+Deze schema-evaluatie is ontwikkeld om gebruikers te helpen beslissen welke data base het eerst moet worden gemigreerd en welke teams ze willen gebruiken.
 
 ### <a name="convert"></a>Converteren
 
-Bij migraties met een minimale uitval tijd blijft de bron die u migreert, veranderen, waarbij het doel in termen van gegevens en schema wordt weer gegeven nadat de eenmalige migratie is uitgevoerd. Tijdens de **Data Sync** -fase moet u ervoor zorgen dat alle wijzigingen in de bron bijna in realtime worden vastgelegd en toegepast op het doel. Nadat u hebt gecontroleerd of alle wijzigingen in de bron zijn toegepast op het doel, kunt u cutover van de bron naar de doel omgeving.
+Bij migraties met een minimale downtime wordt de migratie bron gewijzigd. Na de eenmalige migratie wordt het doel met betrekking tot gegevens en schema Zorg er tijdens de *Data Sync* -fase voor dat alle wijzigingen in de bron bijna in realtime worden vastgelegd en toegepast op het doel. Nadat u hebt gecontroleerd of alle wijzigingen zijn toegepast op het doel *, kunt u* overgaan van de bron naar de doel omgeving.
 
-In deze stap van de migratie vindt de conversie of vertaling van de Oracle-code + DDLS naar PostgreSQL plaats. Het ora2pg-hulp programma exporteert automatisch de Oracle-objecten in een PostgreSQL-indeling. Voor die objecten die worden gegenereerd, wordt niet gecompileerd in de PostgreSQL-data base zonder hand matige wijzigingen.  
-Het proces waarin wordt uitgelegd welke elementen hand matige interventie nodig hebben, bestaat uit het compileren van de bestanden die zijn gegenereerd door ora2pg met de PostgreSQL-data base, het logboek controleren en de benodigde wijzigingen aanbrengen totdat alle schema structuur compatibel is met de PostgreSQL-syntaxis.
+In deze stap van de migratie worden de Oracle-code en DDL-scripts geconverteerd of vertaald naar PostgreSQL. Het ora2pg-hulp programma exporteert automatisch de Oracle-objecten in een PostgreSQL-indeling. Sommige van de gegenereerde objecten kunnen niet worden gecompileerd in de PostgreSQL-data base zonder hand matige wijzigingen.  
+
+Als u wilt weten welke elementen hand matige interventie nodig hebben, compileert u eerst de bestanden die door ora2pg worden gegenereerd op basis van de PostgreSQL-data base. Controleer het logboek en breng de benodigde wijzigingen aan totdat de schema structuur compatibel is met de PostgreSQL-syntaxis.
 
 
-#### <a name="create-migration-template"></a>Migratie sjabloon maken 
+#### <a name="create-a-migration-template"></a>Een migratie sjabloon maken 
 
-Eerst kunt u het beste de migratie sjabloon maken die uit het vak is gemaakt met ora2pg. De twee opties--project_base en-init_project wanneer deze worden gebruikt, geven aan dat ora2pg een project sjabloon moet maken met een werk structuur, een configuratie bestand en een script voor het exporteren van alle objecten uit de Oracle-data base. Zie de [ora2pg-documentatie](https://ora2pg.darold.net/documentation.html)voor meer informatie.
+Het is raadzaam om de migratie sjabloon die ora2pg biedt te gebruiken. Wanneer u de opties gebruikt `--project_base` en `--init_project` , maakt ora2pg een project sjabloon met een werk structuur, een configuratie bestand en een script voor het exporteren van alle objecten uit de Oracle-data base. Zie de [ora2pg-documentatie](https://ora2pg.darold.net/documentation.html)voor meer informatie.
 
-   Gebruik de volgende opdracht: 
+Gebruik de volgende opdracht: 
 
-   ```
-   ora2pg --project_base /app/migration/ --init_project test_project
+```
+ora2pg --project_base /app/migration/ --init_project test_project
+
+ora2pg --project_base /app/migration/ --init_project test_project
+```
+
+Hier volgt een voor beeld van de uitvoer: 
    
-   ora2pg --project_base /app/migration/ --init_project test_project
-   ```
+```
+Creating project test_project. /app/migration/test_project/ schema/ dblinks/ directories/ functions/ grants/ mviews/ packages/ partitions/ procedures/ sequences/ synonyms/    tables/ tablespaces/ triggers/ types/ views/ sources/ functions/ mviews/ packages/ partitions/ procedures/ triggers/ types/ views/ data/ config/ reports/
 
-Voorbeelduitvoer: 
-   
-   ```
-   Creating project test_project. /app/migration/test_project/ schema/ dblinks/ directories/ functions/ grants/ mviews/ packages/ partitions/ procedures/ sequences/ synonyms/    tables/ tablespaces/ triggers/ types/ views/ sources/ functions/ mviews/ packages/ partitions/ procedures/ triggers/ types/ views/ data/ config/ reports/
-   
-   Generating generic configuration file
-   
-   Creating script export_schema.sh to automate all exports.
-   
-   Creating script import_all.sh to automate all imports.
-   ```
+Generating generic configuration file
 
-De bronnen/map bevat de Oracle-code, het schema/de map bevat de code die is geporteerd naar PostgreSQL. De rapporten/map bevat de HTML-rapporten met de evaluatie van de migratie kosten.
+Creating script export_schema.sh to automate all exports.
+
+Creating script import_all.sh to automate all imports.
+```
+
+De `sources/` Directory bevat de Oracle-code. De `schema/` map bevat de code die is geporteerd naar postgresql. En de `reports/` Directory bevat de HTML-rapporten en de evaluatie van de migratie kosten.
 
 
-Nadat de project structuur is gemaakt, wordt er een algemeen configuratie bestand gemaakt. Definieer de Oracle-database verbinding en de relevante configuratie parameters in de configuratie.  Raadpleeg de ora2pg-documentatie voor informatie over wat er kan worden geconfigureerd in het configuratie bestand en hoe.
+Nadat de project structuur is gemaakt, wordt er een algemeen configuratie bestand gemaakt. Definieer de Oracle-database verbinding en de relevante configuratie parameters in het configuratie bestand. Zie de [ora2pg-documentatie](https://ora2pg.darold.net/documentation.html)voor meer informatie over het configuratie bestand.
 
 
 #### <a name="export-oracle-objects"></a>Oracle-objecten exporteren
 
-Vervolgens exporteert u de Oracle-objecten als PostgreSQL-objecten door het bestand export_schema. sh uit te voeren.
+Vervolgens exporteert u de Oracle-objecten als PostgreSQL-objecten door het bestand *export_schema. sh* uit te voeren.
 
-   ```
-   cd /app/migration/mig_project
-   ./export_schema.sh
-   
-   Run the following command manually:
-   
-   SET namespace="/app/migration/mig_project"
-   
-   ora2pg -t DBLINK -p -o dblink.sql -b %namespace%/schema/dblinks -c
-   %namespace%/config/ora2pg.conf
-   ora2pg -t DIRECTORY -p -o directory.sql -b %namespace%/schema/directories -c
-   %namespace%/config/ora2pg.conf
-   ora2pg -p -t FUNCTION -o functions2.sql -b %namespace%/schema/functions -c
-   %namespace%/config/ora2pg.conf ora2pg -t GRANT -o grants.sql -b %namespace%/schema/grants -c %namespace%/config/ora2pg.conf ora2pg -t MVIEW -o mview.sql -b %namespace%/schema/   mviews -c %namespace%/config/ora2pg.conf
-   ora2pg -p -t PACKAGE -o packages.sql
-   %namespace%/config/ora2pg.conf -b %namespace%/schema/packages -c
-   ora2pg -p -t PARTITION -o partitions.sql %namespace%/config/ora2pg.conf -b %namespace%/schema/partitions -c
-   ora2pg -p -t PROCEDURE -o procs.sql
-   %namespace%/config/ora2pg.conf -b %namespace%/schema/procedures -c
-   ora2pg -t SEQUENCE -o sequences.sql
-   %namespace%/config/ora2pg.conf -b %namespace%/schema/sequences -c
-   ora2pg -p -t SYNONYM -o synonym.sql -b %namespace%/schema/synonyms -c
-   %namespace%/config/ora2pg.conf
-   ora2pg -t TABLE -o table.sql -b %namespace%/schema/tables -c %namespace%/config/ora2pg.conf ora2pg -t TABLESPACE -o tablespaces.sql -b %namespace%/schema/tablespaces -c
-   %namespace%/config/ora2pg.conf
-   ora2pg -p -t TRIGGER -o triggers.sql -b %namespace%/schema/triggers -c
-   %namespace%/config/ora2pg.conf ora2pg -p -t TYPE -o types.sql -b %namespace%/schema/types -c %namespace%/config/ora2pg.conf ora2pg -p -t VIEW -o views.sql -b %namespace%/   schema/views -c %namespace%/config/ora2pg.conf
-   ```
+```
+cd /app/migration/mig_project
+./export_schema.sh
+```
 
-   Als u de gegevens wilt extra heren, gebruikt u de volgende opdracht:
+Voer de volgende opdracht hand matig uit.
 
-   ```
-   ora2pg -t COPY -o data.sql -b %namespace/data -c %namespace/config/ora2pg.conf
-   ```
+```
+SET namespace="/app/migration/mig_project"
+
+ora2pg -t DBLINK -p -o dblink.sql -b %namespace%/schema/dblinks -c
+%namespace%/config/ora2pg.conf
+ora2pg -t DIRECTORY -p -o directory.sql -b %namespace%/schema/directories -c
+%namespace%/config/ora2pg.conf
+ora2pg -p -t FUNCTION -o functions2.sql -b %namespace%/schema/functions -c
+%namespace%/config/ora2pg.conf ora2pg -t GRANT -o grants.sql -b %namespace%/schema/grants -c %namespace%/config/ora2pg.conf ora2pg -t MVIEW -o mview.sql -b %namespace%/schema/   mviews -c %namespace%/config/ora2pg.conf
+ora2pg -p -t PACKAGE -o packages.sql
+%namespace%/config/ora2pg.conf -b %namespace%/schema/packages -c
+ora2pg -p -t PARTITION -o partitions.sql %namespace%/config/ora2pg.conf -b %namespace%/schema/partitions -c
+ora2pg -p -t PROCEDURE -o procs.sql
+%namespace%/config/ora2pg.conf -b %namespace%/schema/procedures -c
+ora2pg -t SEQUENCE -o sequences.sql
+%namespace%/config/ora2pg.conf -b %namespace%/schema/sequences -c
+ora2pg -p -t SYNONYM -o synonym.sql -b %namespace%/schema/synonyms -c
+%namespace%/config/ora2pg.conf
+ora2pg -t TABLE -o table.sql -b %namespace%/schema/tables -c %namespace%/config/ora2pg.conf ora2pg -t TABLESPACE -o tablespaces.sql -b %namespace%/schema/tablespaces -c
+%namespace%/config/ora2pg.conf
+ora2pg -p -t TRIGGER -o triggers.sql -b %namespace%/schema/triggers -c
+%namespace%/config/ora2pg.conf ora2pg -p -t TYPE -o types.sql -b %namespace%/schema/types -c %namespace%/config/ora2pg.conf ora2pg -p -t VIEW -o views.sql -b %namespace%/   schema/views -c %namespace%/config/ora2pg.conf
+```
+
+Gebruik de volgende opdracht om de gegevens uit te pakken.
+
+```
+ora2pg -t COPY -o data.sql -b %namespace/data -c %namespace/config/ora2pg.conf
+```
 
 #### <a name="compile-files"></a>Bestanden compileren
 
-Compileer ten slotte alle bestanden op Azure Database for PostgreSQL server. Het is nu mogelijk om de DDL-bestanden die hand matig zijn gegenereerd, te laden of het tweede script import_all. sh te gebruiken om deze bestanden interactief te importeren.
+Compileer tot slot alle bestanden op de Azure Database for PostgreSQL-server. U kunt ervoor kiezen om de hand matig gegenereerde DDL-bestanden te laden of het tweede script *import_all. sh* gebruiken om deze bestanden interactief te importeren.
 
-   ```
-   psql -f %namespace%\schema\sequences\sequence.sql -h server1-
-   
-   server.postgres.database.azure.com -p 5432 -U username@server1-server -d database -l
-   
-   %namespace%\ schema\sequences\create_sequences.log
-   
-   psql -f %namespace%\schema\tables\table.sql -h server1-server.postgres.database.azure.com p 5432 -U username@server1-server -d database -l    %namespace%\schema\tables\create_table.log
-   ```
+```
+psql -f %namespace%\schema\sequences\sequence.sql -h server1-
 
-   De opdracht gegevens importeren:
+server.postgres.database.azure.com -p 5432 -U username@server1-server -d database -l
 
-   ```
-   psql -f %namespace%\data\table1.sql -h server1-server.postgres.database.azure.com -p 5432 -U username@server1-server -d database -l %namespace%\data\table1.log
-   
-   psql -f %namespace%\data\table2.sql -h server1-server.postgres.database.azure.com -p 5432 -U username@server1-server -d database -l %namespace%\data\table2.log
-   ```
+%namespace%\ schema\sequences\create_sequences.log
 
-Controleer tijdens het compileren van bestanden de logboeken en corrigeer de benodigde syntaxis die ora2pg niet kan worden geconverteerd.
+psql -f %namespace%\schema\tables\table.sql -h server1-server.postgres.database.azure.com p 5432 -U username@server1-server -d database -l    %namespace%\schema\tables\create_table.log
+```
 
-Raadpleeg het technische document over [Azure database for PostgreSQL migratie oplossingen](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/Oracle%20to%20Azure%20Database%20for%20PostgreSQL%20Migration%20Workarounds.pdf) voor ondersteuning bij het oplossen van problemen.
+Hier volgt de opdracht voor het importeren van gegevens:
+
+```
+psql -f %namespace%\data\table1.sql -h server1-server.postgres.database.azure.com -p 5432 -U username@server1-server -d database -l %namespace%\data\table1.log
+
+psql -f %namespace%\data\table2.sql -h server1-server.postgres.database.azure.com -p 5432 -U username@server1-server -d database -l %namespace%\data\table2.log
+```
+
+Terwijl de bestanden worden gecompileerd, controleert u de logboeken en corrigeert u de syntaxis die ora2pg niet zelf kan converteren.
+
+Zie [Oracle to Azure database for PostgreSQL Migration omzeiling](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/Oracle%20to%20Azure%20Database%20for%20PostgreSQL%20Migration%20Workarounds.pdf)(Engelstalig) voor meer informatie.
 
 ## <a name="migrate"></a>Migrate 
 
-Nadat u de vereiste onderdelen hebt geïnstalleerd en de taken hebt voltooid die zijn gekoppeld aan de fase **voorafgaand** aan de migratie, bent u klaar om het schema en de gegevens migratie uit te voeren.
+Nadat u de benodigde vereisten hebt gevolgd en u de stappen voor de voorafgaande migratie hebt voltooid, kunt u het schema en de gegevens migratie starten.
 
 ### <a name="migrate-schema-and-data"></a>Schema en gegevens migreren
 
-Nadat de oplossingen zijn geïmplementeerd, is een stabiele versie van de data base gereed voor implementatie.
+Wanneer u de benodigde oplossingen hebt gemaakt, is een stabiele versie van de data base gereed voor de implementatie. Voer de `psql` import opdrachten uit en wijs de bestanden toe die de gewijzigde code bevatten. Met deze taak worden de database objecten gecompileerd op basis van de PostgreSQL-data base en worden de gegevens geïmporteerd.
 
-Op dit moment is het nodig om de *psql* -import opdrachten uit te voeren, wijst u de bestanden met de gewijzigde code aan om de database objecten te compileren op de postgresql-data base en de gegevens te importeren.
+In deze stap kunt u een niveau van parallelle uitvoering implementeren bij het importeren van de gegevens.
 
-In deze stap kan een zekere mate van parallellisme bij het importeren van de gegevens worden geïmplementeerd.
+### <a name="sync-data-and-cut-over"></a>Gegevens synchroniseren en knippen
 
-### <a name="data-sync-and-cutover"></a>Gegevens synchronisatie en Cutover
+In on-line migraties (minimale downtime) blijft de migratie bron wijzigen. Na de eenmalige migratie wordt het doel met betrekking tot gegevens en schema 
 
-Met on-time-migraties (minimale downtime) wordt de bron die u migreert, gewijzigd, waarbij het doel in termen van gegevens en schema wordt weer gegeven nadat de eenmalige migratie is uitgevoerd. Tijdens de **Data Sync** -fase moet u ervoor zorgen dat alle wijzigingen in de bron bijna in realtime worden vastgelegd en toegepast op het doel. Nadat u hebt gecontroleerd of alle wijzigingen in de bron zijn toegepast op het doel, kunt u cutover van de bron naar de doel omgeving.
+Zorg er tijdens de *Data Sync* -fase voor dat alle wijzigingen in de bron bijna in realtime worden vastgelegd en toegepast op het doel. Nadat u hebt gecontroleerd of alle wijzigingen zijn toegepast, kunt u overgaan van de bron naar de doel omgeving.
 
-Als u vanaf maart 2019 een online migratie wilt uitvoeren, kunt u overwegen Attunity repliceren te gebruiken voor micro soft-migraties of Realtimeplatform.
+Neem contact op met de ondersteuning voor een online migratie AskAzureDBforPostgreSQL@service.microsoft.com .
 
-Voor *Delta/incrementele* migratie met behulp van ora2pg, bestaat de techniek uit het Toep assen van elke tabel een query waarbij een filter (knippen) wordt toegepast op datum of tijd, enzovoort, en daarna het volt ooien van de migratie van een tweede query waarmee de rest van de gegevens worden gemigreerd.
+In een *Delta/incrementele* migratie waarbij ora2pg wordt gebruikt, gebruikt u voor elke tabel een query die filtert (*delen*) op datum, tijd of een andere para meter. Voltooi vervolgens de migratie met behulp van een tweede query waarmee de resterende gegevens worden gemigreerd.
 
-Migreer in de bron gegevens tabel eerst alle historische gegevens. Een voor beeld van dat is:
+Migreer in de bron gegevens tabel eerst alle historische gegevens. Hier volgt een voorbeeld:
 
 ```
 select * from table1 where filter_data < 01/01/2019
 ```
 
-U kunt een query uitvoeren op de wijzigingen die zijn aangebracht sinds de eerste migratie door een opdracht uit te voeren die vergelijkbaar is met de volgende:
+U kunt de wijzigingen sinds de eerste migratie opvragen door een opdracht uit te voeren zoals deze:
 
 ```
 select * from table1 where filter_data >= 01/01/2019
 ```
 
-In dit geval is het raadzaam om de validatie te verbeteren door de gegevens pariteit aan beide zijden, bron en doel te controleren.
+In dit geval is het raadzaam om de validatie te verbeteren door de gegevens pariteit aan beide zijden, de bron en het doel te controleren.
 
-## <a name="post-migration"></a>Postmigratie 
+## <a name="postmigration"></a>Postmigration 
 
-Nadat u de **migratie** fase hebt voltooid, moet u een reeks taken na migratie door lopen om ervoor te zorgen dat alles zo soepel en efficiënt mogelijk werkt.
+Na de *migratie* fase voltooit u de postmigration-taken om ervoor te zorgen dat alles zo soepel en efficiënt mogelijk werkt.
 
 ### <a name="remediate-applications"></a>Toepassingen herstellen
 
-Nadat de gegevens zijn gemigreerd naar de doel omgeving, moeten alle toepassingen die de bron voorheen hebben verbruikt, het doel gaan gebruiken. In sommige gevallen moeten wijzigingen in de toepassingen worden uitgevoerd.
+Nadat de gegevens zijn gemigreerd naar de doel omgeving, moeten alle toepassingen die de bron voorheen hebben verbruikt, het doel gaan gebruiken. Het installatie programma vereist soms wijzigingen in de toepassingen.
 
-### <a name="perform-tests"></a>Tests uitvoeren
+### <a name="test"></a>Testen
 
-Nadat de gegevens zijn gemigreerd naar het doel, voert u tests uit op basis van de data bases om te controleren of de toepassingen na de migratie goed worden uitgevoerd op het doel.
+Nadat de gegevens zijn gemigreerd naar het doel, voert u tests uit op de data bases om te controleren of de toepassingen goed werken met het doel. Zorg ervoor dat de bron en het doel juist zijn gemigreerd door de hand matige gegevens validatie scripts uit te voeren op de Oracle-bron-en PostgreSQL-doel databases.
 
-Als u zeker wilt zijn dat de bron en het doel correct worden gemigreerd, voert u de scripts hand matige gegevens validatie uit op basis van de Oracle-bron-en PostgreSQL-doel databases.
+In het ideale geval, als de bron-en doel databases een netwerkpad hebben, moet ora2pg worden gebruikt voor gegevens validatie. U kunt de `TEST` actie gebruiken om ervoor te zorgen dat alle objecten uit de Oracle-Data Base zijn gemaakt in postgresql. 
 
-In het ideale geval, als de bron-en doel databases een netwerkpad hebben, moet ora2pg worden gebruikt voor gegevens validatie. U kunt met behulp van de TEST actie controleren of alle objecten uit de Oracle-Data Base zijn gemaakt onder PostgreSQL. Voer de opdracht uit zoals weer gegeven:
+Voer deze opdracht uit:
 
 ```
 ora2pg -t TEST -c config/ora2pg.conf > migration_diff.txt
@@ -312,34 +328,30 @@ ora2pg -t TEST -c config/ora2pg.conf > migration_diff.txt
 
 ### <a name="optimize"></a>Optimaliseren
 
-De fase na de migratie is van cruciaal belang voor het afstemmen van alle problemen met de nauw keurigheid van gegevens en het controleren van de volledigheid, en het oplossen van prestatie problemen met de werk belasting.
+De postmigration-fase is van cruciaal belang voor het afstemmen van alle problemen met gegevens nauwkeurigheid en het controleren van de volledigheid. In deze fase worden ook prestatie problemen met de workload opgelost.
 
 ## <a name="migration-assets"></a>Migratie-assets 
 
-Voor aanvullende hulp bij het volt ooien van dit migratie scenario raadpleegt u de volgende bronnen, die zijn ontwikkeld ter ondersteuning van een echt toonaangevend migratie project.
+Zie de volgende bronnen voor meer informatie over dit migratie scenario. Ze ondersteunen de betrokkenheid van een migratie project van een echte wereld.
 
-| **Titel koppeling** | **Beschrijving**    |
+| Resource | Beschrijving    |
 | -------------- | ------------------ |
-| [Oracle to Azure PostgreSQL Migration Cookbook](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/Oracle%20to%20Azure%20PostgreSQL%20Migration%20Cookbook.pdf) | Dit document is bedoeld om architecten, consultants, Dba's en gerelateerde rollen te bieden met een hand leiding voor het snel migreren van werk belastingen van Oracle naar Azure Database for PostgreSQL met behulp van ora2pg-hulp programma. |
-| [Tijdelijke oplossingen voor migratie van Oracle naar Azure PostgreSQL](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/Oracle%20to%20Azure%20Database%20for%20PostgreSQL%20Migration%20Workarounds.pdf) | Dit document is bedoeld om architecten, consultants, Dba's en gerelateerde rollen te bieden met een hand leiding voor snelle vaststelling/probleem oplossing bij het migreren van werk belastingen van Oracle naar Azure Database for PostgreSQL. |
-| [Stappen voor het installeren van ora2pg in Windows of Linux](https://github.com/microsoft/DataMigrationTeam/blob/master/Whitepapers/Steps%20to%20Install%20ora2pg%20on%20Windows%20and%20Linux.pdf)                       | Dit document is bedoeld om te worden gebruikt als een snelle installatie handleiding voor het inschakelen van de migratie van schema & gegevens van Oracle naar Azure Database for PostgreSQL met behulp van ora2pg in Windows of Linux. Volledige informatie over het hulp programma vindt u op http://ora2pg.darold.net/documentation.html . |
+| [Migratie Cookbook van Oracle naar Azure PostgreSQL](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/Oracle%20to%20Azure%20PostgreSQL%20Migration%20Cookbook.pdf) | In dit document kunnen architecten, consultants, database beheerders en gerelateerde rollen snel workloads migreren van Oracle naar Azure Database for PostgreSQL met behulp van ora2pg. |
+| [Tijdelijke oplossingen voor migratie van Oracle naar Azure PostgreSQL](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/Oracle%20to%20Azure%20Database%20for%20PostgreSQL%20Migration%20Workarounds.pdf) | Dit document helpt architecten, consultants, database beheerders en gerelateerde rollen om snel problemen op te lossen of te omzeilen tijdens het migreren van werk belastingen van Oracle naar Azure Database for PostgreSQL. |
+| [Stappen voor het installeren van ora2pg in Windows of Linux](https://github.com/microsoft/DataMigrationTeam/blob/master/Whitepapers/Steps%20to%20Install%20ora2pg%20on%20Windows%20and%20Linux.pdf)                       | In dit document vindt u een korte hand leiding voor het migreren van schema en gegevens van Oracle naar Azure Database for PostgreSQL met behulp van ora2pg in Windows of Linux. Zie de [ora2pg-documentatie](http://ora2pg.darold.net/documentation.html)voor meer informatie. |
 
-Het IT-team van data SQL heeft deze resources ontwikkeld. Het kern Handvest van dit team is het deblokkeren en versnellen van complexe modernisering voor data platform migratie projecten naar het Azure-gegevens platform van micro soft.
+Het IT-team van data SQL heeft deze resources ontwikkeld. Het kern Handvest van dit team is het deblokkeren en versnellen van complexe modernisering voor data platform migratie projecten naar het Microsoft Azure-gegevens platform.
 
+## <a name="more-support"></a>Meer ondersteuning
 
-### <a name="contact-support"></a>Contact opnemen met ondersteuning
-
-Als u hulp nodig hebt bij uw migraties buiten het ora2pg-hulp programma, neemt u contact op met de [ @Ask Azure DB voor postgresql](mailto:AskAzureDBforPostgreSQL@service.microsoft.com) -alias voor informatie over andere migratie opties.
+Neem contact op met [ @Ask Azure DB voor postgresql](mailto:AskAzureDBforPostgreSQL@service.microsoft.com)voor meer informatie over de migratie van ora2pg-hulpprogram ma's.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie de artikel [service en hulpprogram ma's voor gegevens migratie](https://docs.microsoft.com/azure/dms/dms-tools-matrix)voor een matrix van de services en hulpprogram Ma's van micro soft en van derden die beschikbaar zijn om u te helpen bij verschillende scenario's voor data base-en gegevens migratie (en speciale taken).
+Zie [Services en hulpprogram ma's voor gegevens migratie](https://docs.microsoft.com/azure/dms/dms-tools-matrix)voor een matrix van services en hulpprogram ma's voor data base-en gegevens migratie en voor speciale taken.
 
-Raadpleeg voor meer informatie: 
+Documentatie: 
 - [Documentatie voor Azure Database for PostgreSQL](https://docs.microsoft.com/azure/postgresql/)
 - [documentatie voor ora2pg](https://ora2pg.darold.net/documentation.html)
 - [PostgreSQL-website](https://www.postgresql.org/)
 - [Ondersteuning voor autonome trans acties in PostgreSQL](http://blog.dalibo.com/2016/08/19/Autonoumous_transactions_support_in_PostgreSQL.html) 
-
-Voor video-inhoud: 
-- [Overzicht van de migratie traject en de hulpprogram ma's/services die worden aanbevolen voor het uitvoeren van de evaluatie en migratie](https://azure.microsoft.com/resources/videos/overview-of-migration-and-recommended-tools-services/).

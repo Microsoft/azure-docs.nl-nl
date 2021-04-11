@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 6e7f2e445c3e4e8df7420c0587e156968f3a2c92
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3bbd778eabf150b734b04e004006dfeea2254ec4
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94542674"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106077467"
 ---
 # <a name="sizing-guidance"></a>Richt lijnen voor grootte
 
@@ -92,9 +92,9 @@ Elk exemplaar van SQL Managed instance pod dat wordt gemaakt, heeft drie contain
 
 |Containernaam|CPU-aanvraag|Geheugen aanvraag|CPU-limiet|Geheugen limiet|Notities|
 |---|---|---|---|---|---|
-|fluentbit|100 miljoen|100Mi|Niet opgegeven|Niet opgegeven|De fluentbit container resource aanvragen bevinden zich _naast_ de aanvragen die zijn opgegeven voor het SQL Managed instance.||
-|Arc-sqlmi|Gebruiker opgegeven of niet opgegeven.|Gebruiker opgegeven of niet opgegeven.|Gebruiker opgegeven of niet opgegeven.|Gebruiker opgegeven of niet opgegeven.||
-|verzamelde|Niet opgegeven|Niet opgegeven|Niet opgegeven|Niet opgegeven||
+|fluentbit|100 miljoen|100Mi|Niet opgegeven|Niet opgegeven|De fluentbit container resource aanvragen bevinden zich _naast_ de aanvragen die zijn opgegeven voor het SQL Managed instance.|
+|Arc-sqlmi|Gebruiker opgegeven of niet opgegeven.|Gebruiker opgegeven of niet opgegeven.|Gebruiker opgegeven of niet opgegeven.|Gebruiker opgegeven of niet opgegeven.|
+|verzamelde|Niet opgegeven|Niet opgegeven|Niet opgegeven|Niet opgegeven|
 
 De standaard grootte van het volume voor alle permanente volumes is 5Gi.
 

@@ -1,21 +1,21 @@
 ---
 title: Overzicht van opslag-Azure Time Series Insights Gen2 | Microsoft Docs
 description: Meer informatie over gegevens opslag in Azure Time Series Insights Gen2.
-author: lyrana
-ms.author: lyhughes
-manager: deepakpalled
+author: deepakpalled
+ms.author: dpalled
+manager: diviso
 ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
 ms.date: 01/21/2021
 ms.custom: seodec18
-ms.openlocfilehash: 748eaca93eaee5ec858ea43261995111cef8ceda
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 67ab4c8cf079adaf3b38cdcc30abeec43cd4612f
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98676848"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106505192"
 ---
 # <a name="data-storage"></a>Gegevensopslag
 
@@ -87,7 +87,7 @@ Verwijder niet uw Azure Time Series Insights Gen2-bestanden. Alleen gerelateerde
 
 ### <a name="parquet-file-format-and-folder-structure"></a>Parquet bestands indeling en mapstructuur
 
-Parquet is een open-source kolom indeling die is ontworpen voor efficiënte opslag en prestaties. Azure Time Series Insights Gen2 maakt gebruik van Parquet om query prestaties op basis van tijd reeksen op schaal in te scha kelen.  
+Parquet is een open-source kolom indeling die is ontworpen voor efficiënte opslag en prestaties. Azure Time Series Insights Gen2 maakt gebruik van Parquet om query prestaties op basis van tijd reeksen op schaal in te scha kelen.
 
 Lees de [Parquet-documentatie](https://parquet.apache.org/documentation/latest/)voor meer informatie over het bestands type Parquet.
 

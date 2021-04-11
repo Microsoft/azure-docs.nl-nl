@@ -7,13 +7,13 @@ ms.date: 09/23/2020
 ms.service: key-vault
 ms.subservice: keys
 ms.topic: quickstart
-ms.custom: devx-track-csharp
-ms.openlocfilehash: cecf8330b7060a4cbc4691f64571a3c7865c575c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: devx-track-csharp, devx-track-azurepowershell
+ms.openlocfilehash: 52e33660b4076f8119ddb5d77e2dbbf7ee201913
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97935254"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105968455"
 ---
 # <a name="quickstart-azure-key-vault-key-client-library-for-net-sdk-v4"></a>Quickstart: Azure Key Vault-clientbibliotheek voor sleutels voor .NET (SDK v4)
 
@@ -34,21 +34,26 @@ Zie voor meer informatie over Key Vault en sleutels:
 * [Azure-CLI](/cli/azure/install-azure-cli)
 * Een Key Vault - U kunt er een maken met [Azure Portal](../general/quick-create-portal.md), [Azure CLI](../general/quick-create-cli.md) of [Azure PowerShell](../general/quick-create-powershell.md).
 
-Deze quickstart maakt gebruik van `dotnet` en Azure CLI
-
 ## <a name="setup"></a>Instellen
 
-Deze quickstart maakt gebruik van de Azure Identity-bibliotheek met Azure CLI om de gebruiker te verifiëren bij Azure-services. Ontwikkelaars kunnen ook Visual Studio of Visual Studio Code gebruiken om hun oproepen te verifiëren: zie [De client verifiëren met de Azure Identity-clientbibliotheek](/dotnet/api/overview/azure/identity-readme?#authenticate-the-client&preserve-view=true) (Engelstalig) voor meer informatie.
+Deze Snelstartgids maakt gebruik van de Azure-identiteits bibliotheek om de gebruiker te verifiëren bij Azure-Services. Ontwikkelaars kunnen ook Visual Studio of Visual Studio Code gebruiken om hun oproepen te verifiëren: zie [De client verifiëren met de Azure Identity-clientbibliotheek](/dotnet/api/overview/azure/identity-readme?#authenticate-the-client&preserve-view=true) (Engelstalig) voor meer informatie.
 
 ### <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 
 1. Voer de opdracht `login` uit.
 
+    # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
     ```azurecli-interactive
     az login
     ```
+    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+    
+    ```azurepowershell-interactive
+    Connect-AzAccount
+    ```
+    ---
 
-    Als de CLI uw standaardbrowser kan openen, gebeurt dat ook en wordt er een Azure-aanmeldingspagina geladen.
+    Als Azure CLI of Azure PowerShell uw standaard browser kan openen, wordt dit gedaan en wordt er een Azure-aanmeldings pagina geladen.
 
     Als dat niet het geval is, opent u een browserpagina op [https://aka.ms/devicelogin](https://aka.ms/devicelogin) en voert u de autorisatiecode in die wordt weergegeven in uw terminal.
 
@@ -58,9 +63,16 @@ Deze quickstart maakt gebruik van de Azure Identity-bibliotheek met Azure CLI om
 
 Maak toegangsbeleid voor de sleutelkluis waarmee sleutelmachtigingen worden verleend aan uw gebruikersaccount
 
-```console
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+```azurecli-interactive
 az keyvault set-policy --name <your-key-vault-name> --upn user@domain.com --key-permissions delete get list create purge
 ```
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+
+```azurepowershell-interactive
+Set-AzKeyVaultAccessPolicy -VaultName <your-key-vault-name> -UserPrincipalName user@domain.com -PermissionsToSecrets delete,get,list,set,purge
+```
+---
 
 ### <a name="create-new-net-console-app"></a>Nieuwe .NET-console-app maken
 
@@ -107,7 +119,7 @@ Windows
 set KEY_VAULT_NAME=<your-key-vault-name>
 ````
 Windows PowerShell
-```powershell
+```azurepowershell
 $Env:KEY_VAULT_NAME="<your-key-vault-name>"
 ```
 

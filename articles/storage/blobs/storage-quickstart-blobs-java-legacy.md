@@ -1,19 +1,19 @@
 ---
 title: 'Quickstart: Azure Blob-opslagclientbibliotheek v8 voor Java'
 description: Maak een opslagaccount en een container in object(Blob)-opslag. Vervolgens gebruikt u de Azure Storage-clientbibliotheek voor Java v8 om een blob in Azure Storage te uploaden, een blob te downloaden en de blobs in een container te vermelden.
-author: mhopkins-msft
+author: twooley
 ms.custom: devx-track-java
-ms.author: mhopkins
+ms.author: twooley
 ms.date: 01/19/2021
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: b3bb8736eb7a8e24f47812fc4feecbf96628dfb6
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 49c55a2b565100e370ce561537c96a96b896f355
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98599809"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106280595"
 ---
 # <a name="quickstart-manage-blobs-with-java-v8-sdk"></a>Quickstart: Blobs beheren met Java v8 SDK
 

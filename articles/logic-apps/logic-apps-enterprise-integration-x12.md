@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 04/29/2020
-ms.openlocfilehash: 61f3f2af61bc24f76d061de672a3eaacd54f7f0e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 87a2bcc386ec5688fadb68aabdd2e5239e205516
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96015193"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106077466"
 ---
 # <a name="exchange-x12-messages-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>Exchange X12-berichten voor B2B Enter prise integration in Azure Logic Apps met Enterprise Integration Pack
 
@@ -79,7 +79,6 @@ Nadat u de eigenschappen van de overeenkomst hebt ingesteld, kunt u configureren
 |----------|-------------|
 | **TA1 verwacht** | Een technische bevestiging (TA1) retour neren aan de verzender van het uitwisselings certificaat. |
 | **FA verwacht** | Een functie-bevestigingen (FA) retour neren naar de verzender van het uitwisselings certificaat. <p>Selecteer de 997-of 999-bevestigingen op basis van de schema versie voor de eigenschap **VA-versie** . <p>Als u het genereren van AK2-lussen in functionele bevestigingen voor geaccepteerde transactie sets wilt inschakelen, selecteert u **AK2/IK2-lus toevoegen**. |
-||||
 
 <a name="inbound-schemas"></a>
 

@@ -4,14 +4,14 @@ description: Informatie over het kopiëren van gegevens van OData-bronnen naar o
 author: linda33wj
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 10/14/2020
+ms.date: 03/30/2021
 ms.author: jingwang
-ms.openlocfilehash: 90cc4e3f9915db424cec89cfc764771b5be785e9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9dd86b4982edf5d206e64431a5e1458c4b848e9e
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100389719"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105968488"
 ---
 # <a name="copy-data-from-an-odata-source-by-using-azure-data-factory"></a>Gegevens kopiëren van een OData-bron met behulp van Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -326,6 +326,48 @@ Wanneer u gegevens van OData kopieert, worden de volgende toewijzingen gebruikt 
 
 > [!NOTE]
 > Complexe OData-gegevens typen (zoals **object**) worden niet ondersteund.
+
+## <a name="copy-data-from-project-online"></a>Gegevens uit project online kopiëren
+
+Als u gegevens wilt kopiëren uit project online, kunt u gebruikmaken van de OData-connector en een toegangs token die is verkregen van hulpprogram ma's zoals postman.
+
+> [!CAUTION]
+> Het toegangs token verloopt over 1 uur. standaard moet u een nieuw toegangs Token ophalen wanneer het verloopt.
+
+1. Gebruik **postman** om het toegangs token op te halen:
+
+   1. Ga naar het tabblad **autorisatie** op de Postman-website.
+   1. In het vak **type** selecteert u **OAuth 2,0** en selecteert u in het vak **autorisatie gegevens toevoegen aan** de optie **aanvraag headers**.
+   1. Vul de volgende gegevens in op de pagina **nieuw token configureren** om een nieuw toegangs token op te halen: 
+      - **Toekennings type**: Selecteer een **autorisatie code**.
+      - **URL voor terugbellen**: invoeren `https://www.localhost.com/` . 
+      - **Verificatie-URL**: Voer in `https://login.microsoftonline.com/common/oauth2/authorize?resource=https://<your tenant name>.sharepoint.com` . Vervang door `<your tenant name>` de naam van uw eigen Tenant. 
+      - **URL van toegangs token**: Enter `https://login.microsoftonline.com/common/oauth2/token` .
+      - **Client-id**: Voer de principal-id van uw Aad-service in.
+      - **Client geheim**: Voer het geheim van de Service-Principal in.
+      - **Client verificatie**: Selecteer **verzenden als Basic auth-header**.
+     
+   1. U wordt gevraagd om u aan te melden met uw gebruikers naam en wacht woord.
+   1. Wanneer u uw toegangs token hebt ontvangen, moet u het kopiëren en opslaan voor de volgende stap.
+   
+    [![Postman gebruiken om het toegangs token op te halen](./media/connector-odata/odata-project-online-postman-access-token-inline.png)](./media/connector-odata/odata-project-online-postman-access-token-expanded.png#lightbox)
+
+1. De gekoppelde OData-service maken:
+    - **Service-URL**: Voer in `https://<your tenant name>.sharepoint.com/sites/pwa/_api/Projectdata` . Vervang door `<your tenant name>` de naam van uw eigen Tenant. 
+    - **Verificatie type**: Selecteer **anoniem**.
+    - **Verificatie headers**:
+        - **Eigenschaps naam**: Kies **autorisatie**.
+        - **Waarde**: Voer het **toegangs token** in dat u uit stap 1 hebt gekopieerd.
+    - De gekoppelde service testen.
+
+    ![Gekoppelde OData-service maken](./media/connector-odata/odata-project-online-linked-service.png)
+
+1. De OData-gegevensset maken:
+    1. Maak de gegevensset met de gekoppelde OData-service die u hebt gemaakt in stap 2.
+    1. Preview-gegevens.
+ 
+    ![Preview-gegevens](./media/connector-odata/odata-project-online-preview-data.png)
+ 
 
 
 ## <a name="lookup-activity-properties"></a>Eigenschappen van opzoek activiteit

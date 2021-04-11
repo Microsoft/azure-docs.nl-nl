@@ -12,12 +12,12 @@ ms.custom:
 - mvc
 - mqtt
 - devx-track-java
-ms.openlocfilehash: 3f24f38db7704557894d866b789890763f9e1316
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f5f931ce1aa6c06f151241b6136470d494dbcd48
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103463252"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106218750"
 ---
 # <a name="tutorial-develop-a-java-iot-edge-module-using-linux-containers"></a>Zelf studie: een Java IoT Edge-module ontwikkelen met Linux-containers
 
@@ -50,7 +50,7 @@ Gebruik de volgende tabel om inzicht te krijgen in de opties voor het ontwikkele
 Voordat u met deze zelfstudie begint, moet u de vorige zelfstudie hebben doorlopen om uw ontwikkelomgeving voor Linux-containerontwikkeling in te stellen: [IoT Edge-modules ontwikkelen voor Linux-apparaten](tutorial-develop-for-linux.md). Als u een van deze zelfstudies hebt voltooid, voldoet u aan de volgende vereisten:
 
 * Een gratis of standaard [IoT Hub](../iot-hub/iot-hub-create-through-portal.md)-laag in Azure.
-* Een apparaat met Azure IoT Edge. U kunt de Quick starts gebruiken om een [Linux-apparaat](quickstart-linux.md) of [Windows-apparaat](quickstart.md)in te stellen.
+* Een apparaat met Azure IoT Edge Linux-containers. U kunt de Quick starts gebruiken om een [Linux-apparaat](quickstart-linux.md) of [Windows-apparaat](quickstart.md)in te stellen.
 * Een containerregister, zoals [Azure Container Registry](../container-registry/index.yml).
 * [Visual Studio Code](https://code.visualstudio.com/) geconfigureerd met de [Azure IoT Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools).
 * [Docker CE](https://docs.docker.com/install/) geconfigureerd voor het uitvoeren van Linux-containers.

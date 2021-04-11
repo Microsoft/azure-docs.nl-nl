@@ -10,12 +10,12 @@ ms.date: 03/10/2021
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: c1ad467dcd27bb48d7b1472d8cfb829dcd005f4f
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 0504467e387c0875a8e00bd1cf638ec437232092
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105729796"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106554744"
 ---
 De Azure Communication Services- **groep die held steek proef aanroept** , laat zien hoe de communicatie services die Web-SDK aanroept, kunnen worden gebruikt voor het bouwen van een groeps ervaring.
 
@@ -23,7 +23,7 @@ In deze quickstart over hero-voorbeelden komt u te weten hoe het voorbeeld werkt
 
 ## <a name="download-code"></a>Code downloaden
 
-Zoek de voltooide code voor deze Quick Start op [github](https://github.com/Azure-Samples/communication-services-web-calling-hero).
+Zoek het project voor dit voor beeld op [github](https://github.com/Azure-Samples/communication-services-web-calling-hero). Een versie van het voor beeld met [teams Interop](../../concepts/teams-interop.md) vindt u in een afzonderlijke [vertakking](https://github.com/Azure-Samples/communication-services-web-calling-hero/tree/teams-interop).
 
 ## <a name="overview"></a>Overzicht
 
@@ -46,6 +46,9 @@ Onderdelen van het hoofdgespreksscherm:
 - **Mediagalerie**: Het hoofdgebied waarin de deelnemers worden weergegeven. Als deelnemers hun camera hebben ingeschakeld, wordt hier hun videofeed weergegeven. Elke deelnemer beschikt over een afzonderlijke tegel waarop hun weergavenaam en videostream (indien beschikbaar) worden weergegeven
 - **Header**: Dit is het deel met de primaire besturingselementen voor het gesprek waarmee u tussen de instellingen en de zijbalk met deelnemers kunt wisselen, beeld en geluid kunt in- en uitschakelen, het scherm kunt delen en het gesprek kunt verlaten.
 - **Zijbalk**: Hier worden informatie over de deelnemers en de instellingen weergegeven wanneer u tussen de besturingselementen in de header wisselt. U kunt het onderdeel verwijderen door op X te klikken in de rechterbovenhoek. In de zijbalk met deelnemers ziet u een lijst met alle deelnemers en een koppeling om meer gebruikers voor het gesprek uit te nodigen. In de zijbalk met instellingen kunt u de microfoon- en camera-instellingen configureren.
+
+> [!NOTE]
+> Op basis van beperkingen van de Web-SDK, wordt er slechts één externe video stroom weer gegeven. Zie ondersteuning voor SDK- [Stream aanroepen](https://docs.microsoft.com/azure/communication-services/concepts/voice-video-calling/calling-sdk-features#calling-sdk-streaming-support)voor meer informatie.
 
 Hieronder vindt u meer informatie over de vereisten en stappen voor het instellen van het voorbeeld.
 

@@ -6,12 +6,12 @@ ms.date: 11/04/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: f349d260fff32427712442615cabf6d3958468ac
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 997a4e115f8632544b2f73aef498d40dceb0d459
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105640031"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106449967"
 ---
 # <a name="configuration-options---azure-monitor-application-insights-for-java"></a>Configuratie opties-Azure Monitor Application Insights voor Java
 
@@ -39,14 +39,14 @@ Hieronder vindt u meer informatie en aanvullende configuratie-opties.
 
 ## <a name="configuration-file-path"></a>Pad naar configuratie bestand
 
-Application Insights Java 3,0 verwacht dat het configuratie bestand wordt benoemd `applicationinsights.json` en zich in dezelfde map als bevindt `applicationinsights-agent-3.0.2.jar` .
+Application Insights Java 3,0 verwacht dat het configuratie bestand wordt benoemd `applicationinsights.json` en zich in dezelfde map als bevindt `applicationinsights-agent-3.0.3.jar` .
 
 U kunt uw eigen pad naar een configuratie bestand opgeven met
 
 * `APPLICATIONINSIGHTS_CONFIGURATION_FILE` omgevings variabele of
 * `applicationinsights.configuration.file` Java-systeem eigenschap
 
-Als u een relatief pad opgeeft, wordt dit omgezet ten opzichte van de map waar `applicationinsights-agent-3.0.2.jar` zich bevindt.
+Als u een relatief pad opgeeft, wordt dit omgezet ten opzichte van de map waar `applicationinsights-agent-3.0.3.jar` zich bevindt.
 
 ## <a name="connection-string"></a>Verbindingsreeks
 
@@ -61,7 +61,7 @@ De verbindings reeks is vereist. U kunt uw connection string vinden in uw Applic
 }
 ```
 
-U kunt de connection string ook instellen met behulp van de omgevings variabele `APPLICATIONINSIGHTS_CONNECTION_STRING` (die vervolgens voor rang krijgt als de Connection String ook is opgegeven in de JSON-configuratie).
+U kunt de connection string ook instellen met behulp van de omgevings variabele `APPLICATIONINSIGHTS_CONNECTION_STRING` (die vervolgens voor rang krijgt boven Connection String die is opgegeven in de JSON-configuratie).
 
 Als u de connection string niet instelt, wordt de Java-Agent uitgeschakeld.
 
@@ -81,7 +81,7 @@ Als u de naam van de Cloud functie wilt instellen:
 
 Als de naam van de Cloud functie niet is ingesteld, wordt de naam van de Application Insights resource gebruikt voor het labelen van het onderdeel op de toepassings toewijzing.
 
-U kunt de naam van de Cloud functie ook instellen met behulp van de omgevings variabele `APPLICATIONINSIGHTS_ROLE_NAME` (die vervolgens voor rang krijgt als de naam van de Cloud functie ook is opgegeven in de JSON-configuratie).
+U kunt ook de naam van de Cloud functie instellen met behulp van de omgevings variabele `APPLICATIONINSIGHTS_ROLE_NAME` (die vervolgens voor rang krijgt boven de naam van de Cloud functie die is opgegeven in de JSON-configuratie).
 
 ## <a name="cloud-role-instance"></a>Cloud rolinstantie
 
@@ -98,7 +98,7 @@ Als u de Cloud rolinstantie wilt instellen op iets anders dan de naam van de com
 }
 ```
 
-U kunt ook de functie-instantie van de Cloud instellen met behulp van de omgevings variabele `APPLICATIONINSIGHTS_ROLE_INSTANCE` (die vervolgens voor rang krijgt als de Cloud rolinstantie ook is opgegeven in de JSON-configuratie).
+U kunt ook de functie-instantie van de Cloud instellen met behulp van de omgevings variabele `APPLICATIONINSIGHTS_ROLE_INSTANCE` (die vervolgens voor rang krijgt op het Cloud rolinstantie dat is opgegeven in de JSON-configuratie).
 
 ## <a name="sampling"></a>Steekproeven
 
@@ -117,14 +117,14 @@ Hier volgt een voor beeld van het instellen van de steek proef voor het vastlegg
 }
 ```
 
-U kunt het steekproef percentage ook instellen met behulp van de omgevings variabele `APPLICATIONINSIGHTS_SAMPLING_PERCENTAGE` (die vervolgens voor rang krijgt als het steekproef percentage ook is opgegeven in de JSON-configuratie).
+U kunt het steekproef percentage ook instellen met behulp van de omgevings variabele `APPLICATIONINSIGHTS_SAMPLING_PERCENTAGE` (die vervolgens voor rang krijgt boven het steekproef percentage dat is opgegeven in de JSON-configuratie).
 
 > [!NOTE]
 > Kies voor het steekproef percentage een percentage dat dicht bij 100/N ligt waarbij N een geheel getal is. De huidige steek proef biedt geen ondersteuning voor andere waarden.
 
 ## <a name="sampling-overrides-preview"></a>Steek proeven van onderdrukkingen (preview-versie)
 
-Deze functie is beschikbaar als preview-versie, vanaf 3.0.3-BETA. 2.
+Deze functie is beschikbaar als preview-versie, beginnend bij 3.0.3.
 
 Met bemonsterings onderdrukkingen kunt u het [standaard sampling percentage](#sampling)overschrijven, bijvoorbeeld:
 * Stel het steekproef percentage in op 0 (of een kleine waarde) voor slechte status controles.
@@ -215,7 +215,7 @@ Het standaard niveau dat is geconfigureerd voor Application Insights is `INFO` .
 }
 ```
 
-U kunt het niveau ook instellen met behulp van de omgevings variabele `APPLICATIONINSIGHTS_INSTRUMENTATION_LOGGING_LEVEL` (die vervolgens voor rang krijgt als het niveau ook is opgegeven in de JSON-configuratie).
+U kunt het niveau ook instellen met behulp van de omgevings variabele `APPLICATIONINSIGHTS_INSTRUMENTATION_LOGGING_LEVEL` (die vervolgens voor rang krijgt op het niveau dat is opgegeven in de JSON-configuratie).
 
 Dit zijn de geldige `level` waarden die u in het bestand kunt opgeven `applicationinsights.json` en hoe ze overeenkomen met de registratie niveaus in verschillende registratie raamwerken:
 
@@ -256,9 +256,32 @@ Automatische verzameling van micrometer-metrische gegevens uitschakelen (inclusi
 }
 ```
 
+## <a name="auto-collected-azure-sdk-telemetry"></a>Azure SDK-telemetrie automatisch verzameld
+
+Deze functie is beschikbaar als preview-versie.
+
+Veel van de nieuwste Azure SDK-bibliotheken verzenden telemetrie.
+
+Vanaf versie 3.0.3 kunt u het verzamelen van deze telemetrie inschakelen:
+
+```json
+{
+  "preview": {
+    "instrumentation": {
+      "azureSdk": {
+        "enabled": true
+      }
+    }
+  }
+}
+```
+
+U kunt deze functie ook inschakelen met behulp van de omgevings variabele `APPLICATIONINSIGHTS_PREVIEW_INSTRUMENTATION_AZURE_SDK_ENABLED`
+(deze wordt vervolgens voor rang gegeven boven ingeschakeld in de JSON-configuratie).
+
 ## <a name="suppressing-specific-auto-collected-telemetry"></a>Specifieke telemetrie voor automatisch verzamelen onderdrukken
 
-Vanaf versie 3.0.2 kan specifiek automatisch verzamelde telemetrie worden onderdrukt met behulp van deze configuratie opties:
+Vanaf versie 3.0.3 kan specifiek automatisch verzamelde telemetrie worden onderdrukt met behulp van deze configuratie opties:
 
 ```json
 {
@@ -267,6 +290,9 @@ Vanaf versie 3.0.2 kan specifiek automatisch verzamelde telemetrie worden onderd
       "enabled": false
     },
     "jdbc": {
+      "enabled": false
+    },
+    "jms": {
       "enabled": false
     },
     "kafka": {
@@ -280,13 +306,28 @@ Vanaf versie 3.0.2 kan specifiek automatisch verzamelde telemetrie worden onderd
     },
     "redis": {
       "enabled": false
+    },
+    "springScheduling": {
+      "enabled": false
     }
   }
 }
 ```
 
-> Opmerking Als u op zoek bent naar meer nauw keurige controle, bijvoorbeeld om sommige redis-aanroepen, maar niet alle redis-aanroepen te onderdrukken, raadpleegt u voor beeld van [onderdrukkingen](./java-standalone-sampling-overrides.md).
+U kunt deze instrumentatie ook onderdrukken met behulp van deze omgevings variabelen:
 
+* `APPLICATIONINSIGHTS_INSTRUMENTATION_CASSANDRA_ENABLED`
+* `APPLICATIONINSIGHTS_INSTRUMENTATION_JDBC_ENABLED`
+* `APPLICATIONINSIGHTS_INSTRUMENTATION_JMS_ENABLED`
+* `APPLICATIONINSIGHTS_INSTRUMENTATION_KAFKA_ENABLED`
+* `APPLICATIONINSIGHTS_INSTRUMENTATION_MICROMETER_ENABLED`
+* `APPLICATIONINSIGHTS_INSTRUMENTATION_MONGO_ENABLED`
+* `APPLICATIONINSIGHTS_INSTRUMENTATION_REDIS_ENABLED`
+* `APPLICATIONINSIGHTS_INSTRUMENTATION_SPRING_SCHEDULING_ENABLED`
+
+(deze wordt vervolgens voor rang gegeven boven ingeschakeld in de JSON-configuratie).
+
+> Opmerking Als u op zoek bent naar meer nauw keurige controle, bijvoorbeeld om sommige redis-aanroepen, maar niet alle redis-aanroepen te onderdrukken, raadpleegt u voor beeld van [onderdrukkingen](./java-standalone-sampling-overrides.md).
 
 ## <a name="heartbeat"></a>Hartslag
 
@@ -324,7 +365,7 @@ Deze functie is beschikbaar als preview-versie.
 
 Standaard worden metrische gegevens elke 60 seconden vastgelegd.
 
-Vanaf versie 3.0.3-Bèta kunt u dit interval wijzigen:
+Vanaf versie 3.0.3 kunt u dit interval wijzigen:
 
 ```json
 {
@@ -384,13 +425,13 @@ Application Insights Java 3,0-logboeken worden standaard op niveau `INFO` naar h
 
 `level` Dit kan een van,,,, `OFF` `ERROR` of zijn `WARN` `INFO` `DEBUG` `TRACE` .
 
-`path` Dit kan een absoluut of relatief pad zijn. Relatieve paden worden omgezet in de map waarin zich zich `applicationinsights-agent-3.0.2.jar` bevindt.
+`path` Dit kan een absoluut of relatief pad zijn. Relatieve paden worden omgezet in de map waarin zich zich `applicationinsights-agent-3.0.3.jar` bevindt.
 
 `maxSizeMb` is de maximale grootte van het logboek bestand voordat deze wordt doorgevoerd.
 
 `maxHistory` is het aantal doorgevoerde logboek bestanden dat wordt bewaard (naast het huidige logboek bestand).
 
-Vanaf versie 3.0.2 kunt u de zelf diagnostische gegevens ook instellen `level` met behulp van de omgevings variabele `APPLICATIONINSIGHTS_SELF_DIAGNOSTICS_LEVEL` (die vervolgens voor rang krijgt als de zelf diagnostische gegevens `level` ook zijn opgegeven in de JSON-configuratie).
+Vanaf versie 3.0.2 kunt u de zelf diagnostische gegevens ook instellen `level` met behulp van de omgevings variabele `APPLICATIONINSIGHTS_SELF_DIAGNOSTICS_LEVEL` (die vervolgens voor rang krijgt op het niveau zelf diagnostische gegevens dat is opgegeven in de JSON-configuratie).
 
 ## <a name="an-example"></a>Een voor beeld
 

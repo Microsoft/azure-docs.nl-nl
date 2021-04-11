@@ -6,12 +6,12 @@ ms.date: 03/29/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: b695df29b7a4704ee9e4e25e402fa0de8f2b7685
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: dc6eaaec334e7373f1a673bd1513ef05b761fee6
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103008209"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106450018"
 ---
 # <a name="java-codeless-application-monitoring-azure-monitor-application-insights"></a>Azure Monitor Application Insights voor de bewaking van Java-toepassingen
 
@@ -34,11 +34,11 @@ De 3,0-agent ondersteunt Java 8 en hoger.
 >
 > Controleer alle [configuratie opties](./java-standalone-config.md) zorgvuldig, omdat de JSON-structuur volledig is gewijzigd, naast de naam van het bestand dat alle kleine letters bevat.
 
-[Applicationinsights-agent-3.0.2. jar](https://github.com/microsoft/ApplicationInsights-Java/releases/download/3.0.2/applicationinsights-agent-3.0.2.jar) downloaden
+[Applicationinsights-agent-3.0.3. jar](https://github.com/microsoft/ApplicationInsights-Java/releases/download/3.0.3/applicationinsights-agent-3.0.3.jar) downloaden
 
 **2. Wijs de JVM naar de agent**
 
-Toevoegen `-javaagent:path/to/applicationinsights-agent-3.0.2.jar` aan de JVM-argumenten van uw toepassing
+Toevoegen `-javaagent:path/to/applicationinsights-agent-3.0.3.jar` aan de JVM-argumenten van uw toepassing
 
 Typische argumenten voor JVM zijn onder andere `-Xmx512m` en `-XX:+UseG1GC` . Als u weet waar u deze toevoegt, weet u dus al waar u dit kunt toevoegen.
 
@@ -54,7 +54,7 @@ Wijs de agent naar uw Application Insights-bron, door een omgevings variabele in
 APPLICATIONINSIGHTS_CONNECTION_STRING=InstrumentationKey=...
 ```
 
-U kunt ook een configuratie bestand maken met de naam `applicationinsights.json` en dit in dezelfde map plaatsen als `applicationinsights-agent-3.0.2.jar` met de volgende inhoud:
+U kunt ook een configuratie bestand maken met de naam `applicationinsights.json` en dit in dezelfde map plaatsen als `applicationinsights-agent-3.0.3.jar` met de volgende inhoud:
 
 ```json
 {
@@ -130,6 +130,10 @@ Zie [configuratie opties](./java-standalone-config.md) voor volledige informatie
 * Micrometer (met inbegrip van gegevens over de veer boot-klep)
 * Metrische gegevens van JMX
 
+### <a name="azure-sdks"></a>Azure-SDK's
+
+* Deze functie is beschikbaar als preview-versie. Zie de [configuratie opties](./java-standalone-config.md#auto-collected-azure-sdk-telemetry) voor informatie over het inschakelen ervan.
+
 ## <a name="send-custom-telemetry-from-your-application"></a>Aangepaste telemetrie verzenden vanuit uw toepassing
 
 Met ons doel in 3.0 + kunt u uw aangepaste telemetrie verzenden met behulp van standaard-Api's.
@@ -143,12 +147,12 @@ De volgende tabel bevat momenteel ondersteunde aangepaste typen telemetrie die u
 
 |                     | Micrometer | Log4j, logback, JUL | 2. x SDK |
 |---------------------|------------|---------------------|---------|
-| **Aangepaste gebeurtenissen**   |            |                     |  Yes    |
+| **Aangepaste gebeurtenissen**   |            |                     |  Ja    |
 | **Aangepaste metrische gegevens**  |  Ja       |                     |  Ja    |
-| **Afhankelijkheden**    |            |                     |  Yes    |
+| **Afhankelijkheden**    |            |                     |  Ja    |
 | **Uitzonderingen**      |            |  Ja                |  Ja    |
-| **Paginaweergaven**      |            |                     |  Yes    |
-| **Aanvragen**        |            |                     |  Yes    |
+| **Paginaweergaven**      |            |                     |  Ja    |
+| **Aanvragen**        |            |                     |  Ja    |
 | **Traceringen**          |            |  Ja                |  Ja    |
 
 Er is op dit moment geen planning voor het vrijgeven van een SDK met Application Insights 3,0.
@@ -328,7 +332,7 @@ requestTelemetry.setName("myname");
 ### <a name="get-the-request-telemetry-id-and-the-operation-id-using-the-2x-sdk"></a>De telemetrie-aanvraag-id en de bewerkings-id ophalen met behulp van de 2. x SDK
 
 > [!NOTE]
-> Deze functie is alleen in 3.0.3-BETA en hoger
+> Deze functie is alleen in 3.0.3 en hoger
 
 Toevoegen `applicationinsights-web-2.6.2.jar` aan uw toepassing (alle 2. x-versies worden ondersteund door Application Insights Java 3,0, maar het is een goed idee om de nieuwste te gebruiken als u een keuze hebt):
 

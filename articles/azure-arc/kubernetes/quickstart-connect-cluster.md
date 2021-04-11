@@ -6,14 +6,14 @@ ms.author: magoedte
 ms.service: azure-arc
 ms.topic: quickstart
 ms.date: 03/03/2021
-ms.custom: template-quickstart
+ms.custom: template-quickstart, references_regions
 keywords: Kubernetes, Arc, azure, cluster
-ms.openlocfilehash: 3fc522c4bdda9eb1047d5258bcc431d0268990b9
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: b4cbd45f8478674c7c6bacc50f068bc0ec691a14
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102121640"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106449916"
 ---
 # <a name="quickstart-connect-an-existing-kubernetes-cluster-to-azure-arc"></a>Quick Start: een bestaand Kubernetes-cluster verbinden met Azure Arc 
 
@@ -23,36 +23,35 @@ In deze Quick start gaan we profiteren van de voor delen van Azure Arc enabled K
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../../includes/azure-cli-prepare-your-environment.md)]
 
-* Controleer of u het volgende hebt:
-    * Een up-en-actief Kubernetes-cluster.
-    * Een `kubeconfig` bestand dat verwijst naar het cluster dat u wilt verbinden met Azure Arc.
-    * Lees-en schrijf machtigingen voor de gebruiker of Service-Principal waarmee verbinding wordt gemaakt met het resource type Azure Arc enabled Kubernetes ( `Microsoft.Kubernetes/connectedClusters` ).
+* Een up-en-actief Kubernetes-cluster. Als u er geen hebt, kunt u een cluster maken met een van de volgende opties:
+    * [Kubernetes in docker (KIND)](https://kind.sigs.k8s.io/)
+    * Een Kubernetes-cluster maken met behulp van docker voor [Mac](https://docs.docker.com/docker-for-mac/#kubernetes) of [Windows](https://docs.docker.com/docker-for-windows/#kubernetes)
+    * Zelf-beheerde Kubernetes-cluster met behulp van [cluster-API](https://cluster-api.sigs.k8s.io/user/quick-start.html)
+
+    >[!NOTE]
+    > Het cluster moet ten minste één knoop punt van het type besturings systeem en architectuur hebben `linux/amd64` . Clusters met alleen `linux/arm64` knoop punten worden nog niet ondersteund.
+    
+* Een `kubeconfig` bestand en context die naar uw cluster verwijzen.
+* Lees-en schrijf machtigingen voor het Kubernetes-resource type () van Azure Arc enabled `Microsoft.Kubernetes/connectedClusters` .
+
 * Installeer de [nieuwste versie van helm 3](https://helm.sh/docs/intro/install).
-* Installeer de volgende Kubernetes CLI-uitbrei dingen van Azure Arc enabled van versie >= 1.0.0:
+
+- [Azure cli installeren of upgraden](https://docs.microsoft.com/cli/azure/install-azure-cli) naar versie >= 2.16.0
+* Installeer de `connectedk8s` Azure cli-extensie van versie >= 1.0.0:
   
   ```azurecli
   az extension add --name connectedk8s
-  az extension add --name k8s-configuration
-  ```
-  * Als u deze uitbrei dingen wilt bijwerken naar de nieuwste versie, voert u de volgende opdrachten uit:
-  
-  ```azurecli
-  az extension update --name connectedk8s
-  az extension update --name k8s-configuration
   ```
 
+>[!TIP]
+> Als de `connectedk8s` uitbrei ding al is geïnstalleerd, kunt u deze bijwerken naar de nieuwste versie met behulp van de volgende opdracht: `az extension update --name connectedk8s`
+
+
 >[!NOTE]
->**Ondersteunde regio's:**
->* VS - oost
->* Europa -west
->* VS - west-centraal
->* VS - zuid-centraal
->* Azië - zuidoost
->* Verenigd Koninkrijk Zuid
->* VS - west 2
->* Australië - oost
->* VS - oost 2
->* Europa - noord
+>De lijst met regio's die door Azure Arc enabled Kubernetes worden ondersteund, vindt u [hier](https://azure.microsoft.com/global-infrastructure/services/?products=azure-arc).
+
+>[!NOTE]
+> Als u aangepaste locaties op het cluster wilt gebruiken, gebruikt u VS-Oost of Europa-west regio's voor het verbinden van uw cluster als aangepaste locaties zijn vanaf nu beschikbaar in deze regio's. Alle andere functies van Azure Arc enabled Kubernetes zijn beschikbaar in alle hierboven genoemde regio's.
 
 ## <a name="meet-network-requirements"></a>Voldoen aan de netwerk vereisten
 
@@ -64,7 +63,7 @@ In deze Quick start gaan we profiteren van de voor delen van Azure Arc enabled K
 | Eind punt (DNS) | Beschrijving |  
 | ----------------- | ------------- |  
 | `https://management.azure.com`                                                                                 | Vereist voor de agent om verbinding te maken met Azure en het cluster te registreren.                                                        |  
-| `https://eastus.dp.kubernetesconfiguration.azure.com`, `https://westeurope.dp.kubernetesconfiguration.azure.com`, `https://westcentralus.dp.kubernetesconfiguration.azure.com`, `https://southcentralus.dp.kubernetesconfiguration.azure.com`, `https://southeastasia.dp.kubernetesconfiguration.azure.com`, `https://uksouth.dp.kubernetesconfiguration.azure.com`, `https://westus2.dp.kubernetesconfiguration.azure.com`, `https://australiaeast.dp.kubernetesconfiguration.azure.com`, `https://eastus2.dp.kubernetesconfiguration.azure.com`, `https://northeurope.dp.kubernetesconfiguration.azure.com` | Gegevens vlak eindpunt voor de agent om de status te pushen en configuratie gegevens op te halen.                                      |  
+| `https://<region>.dp.kubernetesconfiguration.azure.com` | Gegevens vlak eindpunt voor de agent om de status te pushen en configuratie gegevens op te halen.                                      |  
 | `https://login.microsoftonline.com`                                                                            | Vereist om Azure Resource Manager-tokens op te halen en bij te werken.                                                                                    |  
 | `https://mcr.microsoft.com`                                                                            | Vereist voor het ophalen van container installatie kopieën voor Azure Arc-agents.                                                                  |  
 | `https://eus.his.arc.azure.com`, `https://weu.his.arc.azure.com`, `https://wcus.his.arc.azure.com`, `https://scus.his.arc.azure.com`, `https://sea.his.arc.azure.com`, `https://uks.his.arc.azure.com`, `https://wus2.his.arc.azure.com`, `https://ae.his.arc.azure.com`, `https://eus2.his.arc.azure.com`, `https://ne.his.arc.azure.com` |  Vereist voor het ophalen van door het systeem toegewezen Managed Service Identity-certificaten (MSI).                                                                  |
@@ -75,11 +74,13 @@ In deze Quick start gaan we profiteren van de voor delen van Azure Arc enabled K
     ```azurecli
     az provider register --namespace Microsoft.Kubernetes
     az provider register --namespace Microsoft.KubernetesConfiguration
+    az provider register --namespace Microsoft.ExtendedLocation
     ```
 2. Het registratie proces bewaken. Het kan tot tien minuten duren voordat de registratie is uitgevoerd.
     ```azurecli
     az provider show -n Microsoft.Kubernetes -o table
-    az provider show -n Microsoft.KubernetesConfiguration -o table    
+    az provider show -n Microsoft.KubernetesConfiguration -o table
+    az provider show -n Microsoft.ExtendedLocation -o table
     ```
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken

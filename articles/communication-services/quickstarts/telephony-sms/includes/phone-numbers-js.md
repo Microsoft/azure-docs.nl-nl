@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 23c64cc91378be605481eb554af2178100df3508
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 956c92c5c020f892b8148e9d43d403b1099fbdba
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105629367"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106112854"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -54,7 +54,7 @@ Met deze `--save` optie wordt de bibliotheek toegevoegd als een afhankelijkheid 
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
-Importeer de **PhoneNumbersClient** uit de client bibliotheek en instantie deze met uw Connection String. Met de onderstaande code wordt de verbindingsreeks voor de resource opgehaald uit een omgevingsvariabele met de naam `COMMUNICATION_SERVICES_CONNECTION_STRING`. Meer informatie over het [beheren van de verbindingsreeks van uw resource](../../create-communication-resource.md#store-your-connection-string).
+Importeer de **PhoneNumbersClient** uit de client bibliotheek en instantie deze met uw Connection String. Met de onderstaande code wordt de verbindingsreeks voor de resource opgehaald uit een omgevingsvariabele met de naam `COMMUNICATION_SERVICES_CONNECTION_STRING`. Meer informatie over het [beheren van de Connection String van uw resource](../../create-communication-resource.md#store-your-connection-string).
 
 Voeg de volgende code toe boven aan **phone-numbers-quickstart.js**:
 

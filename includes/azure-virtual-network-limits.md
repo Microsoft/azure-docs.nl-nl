@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 01/14/2020
 ms.author: anavin
 ms.custom: include file
-ms.openlocfilehash: 44245bc3cd9fd1afcfe9a74d60e2f51135a247ee
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 2262290486047c225cec8e8f6bb73242df7258fa
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101734031"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106271621"
 ---
 ### <a name="networking-limits---azure-resource-manager"></a><a name="azure-resource-manager-virtual-networking-limits"></a>Netwerklimieten - Azure Resource Manager
 De volgende beperkingen gelden alleen voor netwerkresources die worden beheerd via **Azure Resource Manager**. De beperkingen gelden per regio en per abonnement. Meer informatie over het [bekijken van uw huidige resourcegebruik op basis van uw abonnementslimieten](../articles/networking/check-usage-against-limits.md).
@@ -73,12 +73,12 @@ De volgende beperkingen gelden alleen voor netwerkresources die worden beheerd v
 | Regels per NIC (voor alle IP-adressen op een NIC) | 300                           |
 | Frontend-IP-configuraties              | 600                           |
 | Grootte van back-end-pool                       | 1000 IP-configuraties, één virtueel netwerk |
-| Backend-resources per load balancer <sup>1<sup> | 250                   |
+| Backend-resources per load balancer <sup>1<sup> | 1200                   |
 | Poorten met een hoge beschikbaarheid                 | 1 per interne frontend       |
 | Uitgaande regels per load balancer        | 600                           |
 | Load balancers per VM                   | 2 (1 openbaar en 1 intern)   |
 
-<sup>1</sup> de limiet is maxi maal 150 resources, in een combi natie van zelfstandige virtuele-machine resources, bronnen voor beschikbaarheids sets en schaal sets voor virtuele machines.
+<sup>1</sup> de limiet is maxi maal 1.200 resources, in een combi natie van zelfstandige virtuele-machine resources, bronnen voor beschikbaarheids sets en schaal sets voor virtuele machines.
 
 **Basic Load Balancer**
 

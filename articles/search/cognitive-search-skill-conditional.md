@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: f47ca56fa1b40422edeb0d4e11c24be6f60e49e5
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101666366"
 ---
 # <a name="conditional-cognitive-skill"></a>Voorwaardelijke cognitieve vaardigheid
@@ -85,7 +85,7 @@ Omdat de voorwaardelijke vaardigheid evaluatie ondersteunt, kunt u deze gebruike
 ## <a name="skill-inputs"></a>Vaardigheids invoer
 De invoer is hoofdlettergevoelig.
 
-| Invoer   | Beschrijving |
+| Invoer   | Description |
 |-------------|-------------|
 | regeling   | Deze invoer is een [geëvalueerd veld](#evaluated-fields) dat staat voor de voor waarde die moet worden geëvalueerd. Deze voor waarde moet resulteren in een Booleaanse waarde (*waar* of *Onwaar*).   <br/>  Voorbeelden: <br/> "= True" <br/> "= $ (/document/Language) = = ' fr '" <br/> "= $ (/document/Pages/ \* /Language) = = $ (/document/expectedLanguage)" <br/> |
 | whenTrue    | Deze invoer is een [geëvalueerd veld](#evaluated-fields) dat de waarde vertegenwoordigt die moet worden geretourneerd als de voor waarde wordt geëvalueerd als *waar*. Constanten teken reeksen moeten worden geretourneerd tussen enkele aanhalings tekens (' en '). <br/>Voorbeeld waarden: <br/> "=" contract ""<br/>"= $ (/document/contractType)" <br/> "= $ (/document/entities/ \* )" <br/> |

@@ -7,10 +7,10 @@ ms.date: 2/11/2021
 ms.topic: conceptual
 ms.service: iot-hub-device-update
 ms.openlocfilehash: ba43889b885252f68bb3b4b158b5626411aac3d5
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101662666"
 ---
 # <a name="device-update-resources"></a>Resources voor het bijwerken van apparaten
@@ -33,7 +33,7 @@ Als u wilt dat de apparaat-update meldingen over wijzigingen ontvangt van IoT Hu
 
 De volgende bericht routes zijn geconfigureerd voor het bijwerken van apparaten:
 
-|   Route naam    | Routerings query  | Beschrijving  |
+|   Route naam    | Routerings query  | Description  |
 | :--------- | :---- |:---- |
 |  DeviceUpdate.DigitalTwinChanges | true |Luistert naar gebeurtenissen met een digitale dubbele wijziging  |
 |  DeviceUpdate.DeviceLifeCycle | opType = ' deleteDeviceIdentity '  | Luistert naar apparaten die zijn verwijderd |

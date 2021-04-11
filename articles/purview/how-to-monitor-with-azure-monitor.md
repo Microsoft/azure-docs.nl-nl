@@ -8,10 +8,10 @@ ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 12/03/2020
 ms.openlocfilehash: 4cb3965d359980856c238cd563ed8b761754660b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101667736"
 ---
 # <a name="azure-purview-metrics-in-azure-monitor"></a>De metrische gegevens voor Azure controle sfeer liggen in Azure Monitor
@@ -62,7 +62,7 @@ Om vertrouwd te raken met het gebruik van de sectie metric in de Azure Portal de
 
 De volgende tabel bevat de lijst met metrische gegevens die u kunt verkennen in de Azure Portal:
 
-| Naam meetwaarde | Metrische naamruimte | Type aggregatie | Beschrijving |
+| Naam meetwaarde | Metrische naamruimte | Type aggregatie | Description |
 | ------------------- | ------------------- | ------------------- | ----------------- |
 | De scan is geannuleerd | Automatische scan | Sum <br> Count | De geannuleerde gegevens bron wordt gecontroleerd op basis van de tijds periode |
 | De scan is voltooid | Automatische scan | Sum <br> Count | De voltooide scan van gegevens bronnen samen voegen gedurende een bepaalde periode |

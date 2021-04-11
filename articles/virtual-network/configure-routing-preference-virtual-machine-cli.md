@@ -14,10 +14,10 @@ ms.date: 02/01/2021
 ms.author: mnayak
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: ad8f2d150c3cf17c4b24c6dc92188be9017dcfa9
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101666007"
 ---
 # <a name="configure-routing-preference-for-a-vm-using-azure-cli"></a>Routerings voorkeur configureren voor een virtuele machine met behulp van Azure CLI

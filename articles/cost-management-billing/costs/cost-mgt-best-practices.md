@@ -9,12 +9,12 @@ ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: adwise
 ms.custom: seodec18
-ms.openlocfilehash: fc9b6c4edc5d08c30b1eadb5084155b10d0e55a3
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: a1f66feedf33faf107bb4fca1879077379dfa815
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98601510"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106066344"
 ---
 # <a name="how-to-optimize-your-cloud-investment-with-azure-cost-management"></a>Uw investeringen in de cloud optimaliseren met Azure Cost Management
 
@@ -91,7 +91,7 @@ Ga voor meer informatie over de verschillende opties naar [Hoe u Azure kunt kope
 #### <a name="free"></a>[Gratis](https://azure.microsoft.com/free/)
 
 - 12 maanden aan populaire gratis services
-- $200 aan tegoed om services gedurende 30 dagen te verkennen
+- 200 USD tegoed in uw facturerings valuta om services gedurende 30 dagen te verkennen
 - 25+ services zijn altijd gratis
 
 #### <a name="pay-as-you-go"></a>[Betalen per gebruik](https://azure.microsoft.com/offers/ms-azr-0003p)

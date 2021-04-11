@@ -9,12 +9,12 @@ ms.author: eustacea
 ms.date: 08/30/2019
 ms.topic: conceptual
 ms.service: iot-edge
-ms.openlocfilehash: 468f1b91d6c6157cd2af6de9599bad7f43c1ad8f
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: ed73c114c015ce38fefa02d2b71e27e8f85dca39
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103492554"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107028669"
 ---
 # <a name="azure-iot-edge-security-manager"></a>Azure IoT Edge Security Manager
 
@@ -119,12 +119,17 @@ Beveiligd silicium is nodig om de vertrouwens relatie binnen de hardware van IoT
 
 ## <a name="iot-edge-security-manager-integration-and-maintenance"></a>Integratie en onderhoud van beveiligings beheer IoT Edge
 
-Het IoT Edge Security Manager streeft ernaar de onderdelen te identificeren en isoleren die de beveiliging en integriteit van het Azure IoT Edge platform voor aangepaste beveiliging beschermen. Derden, zoals Device makers, moeten gebruikmaken van aangepaste beveiligings functies die beschikbaar zijn met de hardware van het apparaat.  Zie de sectie volgende stappen voor koppelingen die laten zien hoe u de beveiliging van Azure IoT Security Manager kunt beveiligen met de Trusted Platform Module (TPM) op Linux-en Windows-platforms. Deze voor beelden gebruiken software of virtuele-Tpm's, maar zijn rechtstreeks van toepassing op het gebruik van afzonderlijke TPM-apparaten.  
+Het IoT Edge Security Manager streeft ernaar de onderdelen te identificeren en isoleren die de beveiliging en integriteit van het Azure IoT Edge platform voor aangepaste beveiliging beschermen. Derden, zoals Device makers, moeten gebruikmaken van aangepaste beveiligings functies die beschikbaar zijn met de hardware van het apparaat.  
+
+Meer informatie over het beveiligen van de Azure IoT Security Manager met de Trusted Platform Module (TPM) met behulp van software of virtuele-Tpm's:  
+
+Een IoT Edge apparaat maken en inrichten [met een virtuele TPM op een virtuele Linux-machine](how-to-auto-provision-simulated-device-linux.md).
+
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
+Een IoT Edge apparaat maken en inrichten [met een gesimuleerde TPM in Windows](how-to-auto-provision-simulated-device-windows.md).
+:::moniker-end
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Lees de blog over [het beveiligen van de intelligente rand](https://azure.microsoft.com/blog/securing-the-intelligent-edge/).
-
-Een IoT Edge apparaat maken en inrichten [met een virtuele TPM op een virtuele Linux-machine](how-to-auto-provision-simulated-device-linux.md).
-
-Een IoT Edge apparaat maken en inrichten [met een gesimuleerde TPM in Windows](how-to-auto-provision-simulated-device-windows.md).

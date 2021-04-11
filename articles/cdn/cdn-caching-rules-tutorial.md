@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 04/20/2018
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: ae217352b83617600fd983a747d578f8f28e7ddd
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 27c04533f4a2c0bdfafaae1a3e182e9b01e35437
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92779234"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106058932"
 ---
 # <a name="tutorial-set-azure-cdn-caching-rules"></a>Zelfstudie: regels voor Azure CDN-caching instellen
 

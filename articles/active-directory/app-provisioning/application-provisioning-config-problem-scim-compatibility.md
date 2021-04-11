@@ -8,15 +8,15 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: reference
-ms.date: 08/05/2020
+ms.date: 04/07/2021
 ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: d13629b4cb05995b9652e862f769a0ffcae30a8c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 268931715500631ac2d10feacebff1d5c65931bf
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99256895"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107028788"
 ---
 # <a name="known-issues-and-resolutions-with-scim-20-protocol-compliance-of-the-azure-ad-user-provisioning-service"></a>Bekende problemen en oplossingen met SCIM 2,0-protocol compatibiliteit van de Azure AD User Provisioning Service
 
@@ -51,7 +51,7 @@ Gebruik de onderstaande vlaggen in de Tenant-URL van uw toepassing om het standa
 :::image type="content" source="media/application-provisioning-config-problem-scim-compatibility/scim-flags.jpg" alt-text="SCIM markeert tot later gedrag.":::
 
 * Gebruik de volgende URL om het PATCH gedrag bij te werken en te zorgen voor SCIM-naleving (bijvoorbeeld actief als Booleaanse en de juiste verwijdering van groepslid maatschappen). Dit gedrag is momenteel alleen beschikbaar wanneer u de vlag gebruikt, maar zal de standaard instelling in de komende maanden worden. Opmerking deze preview-vlag werkt momenteel niet met inrichten op aanvraag. 
-  * **URL (scim-compatibel):** AzureAdScimPatch062020
+  * **URL (scim-compatibel):** aadOptscim062020
   * **SCIM RFC-verwijzingen:** 
     * https://tools.ietf.org/html/rfc7644#section-3.5.2
   * **Tabtoets**

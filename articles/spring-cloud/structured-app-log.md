@@ -8,10 +8,10 @@ ms.date: 02/05/2021
 ms.author: brendm
 ms.custom: devx-track-java
 ms.openlocfilehash: 844530c6d1650b5fddd27b10c775c4364a3f5147
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104878045"
 ---
 # <a name="structured-application-log-for-azure-spring-cloud"></a>Gestructureerd toepassings logboek voor Azure lente-Cloud
@@ -23,16 +23,16 @@ Om de ervaring van de logboek query te verbeteren, moet een toepassings logboek 
 
 **Vereisten voor het JSON-schema:**
 
-| JSON-sleutel      | Type JSON-waarde|  Vereist | Kolom in Log Analytics| Beschrijving |
+| JSON-sleutel      | Type JSON-waarde|  Vereist | Kolom in Log Analytics| Description |
 | --------------| ------------|-----------|-----------------|--------------------------|
-| tijdstempel     | tekenreeks      |     Ja   | AppTimestamp    | tijds tempel in UTC-notatie  |
+| tijdstempel     | tekenreeks      |     Yes   | AppTimestamp    | tijds tempel in UTC-notatie  |
 | logger        | tekenreeks      |     No    | Logger          | logger                   |
 | niveau         | tekenreeks      |     No    | CustomLevel     | logboek niveau                |
 | reeks        | tekenreeks      |     No    | Reeks          | reeks                   |
 | message       | tekenreeks      |     No    | Bericht         | logboek bericht              |
 | stackTrace    | tekenreeks      |     No    | StackTrace      | stacktrace van uitzonde ring    |
 | exceptionClass| tekenreeks      |     No    | ExceptionClass  | naam uitzonderings klasse     |
-| mdc           | geneste JSON |     Nee    |                 | gekoppelde context voor diagnostische gegevens|
+| mdc           | geneste JSON |     No    |                 | gekoppelde context voor diagnostische gegevens|
 | mdc.traceId   | tekenreeks      |     No    | TraceId         |Trace-id voor gedistribueerde tracering|
 | mdc.spanId    | tekenreeks      |     No    | SpanId          |span-ID voor gedistribueerde tracering |
 |               |             |           |                 |                          |

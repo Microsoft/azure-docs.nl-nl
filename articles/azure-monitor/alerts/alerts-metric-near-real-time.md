@@ -5,13 +5,13 @@ author: harelbr
 ms.author: harelbr
 services: monitoring
 ms.topic: conceptual
-ms.date: 03/11/2021
-ms.openlocfilehash: efc1438fdc539af278ebff1f292c5fa0a91b7b91
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/08/2021
+ms.openlocfilehash: 24298734a46b8339a2a8818692641b4c10812294
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103016097"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107104878"
 ---
 # <a name="supported-resources-for-metric-alerts-in-azure-monitor"></a>Ondersteunde resources voor metrische waarschuwingen in Azure Monitor
 
@@ -29,7 +29,7 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 
 |Resourcetype  |Ondersteunde dimensies |Waarschuwingen voor meerdere resources| Beschik bare metrische gegevens|
 |---------|---------|-----|----------|
-|Micro soft. Aadiam/azureADMetrics | Ja | Nee | |
+|Micro soft. Aadiam/azureADMetrics | Ja | Nee | [Azure AD](../essentials/metrics-supported.md#microsoftaadiamazureadmetrics) |
 |Microsoft.ApiManagement/service | Ja | Nee | [API Management](../essentials/metrics-supported.md#microsoftapimanagementservice) |
 |Micro soft. AppConfiguration/configurationStores |Ja | Nee | [App-configuratie](../essentials/metrics-supported.md#microsoftappconfigurationconfigurationstores) |
 |Micro soft. AppPlatform/lente | Ja | Nee | [Azure Spring Cloud](../essentials/metrics-supported.md#microsoftappplatformspring) |
@@ -37,7 +37,8 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 |Micro soft. AVS/privateClouds | Nee | Nee | [Azure VMware Solution](../essentials/metrics-supported.md#microsoftavsprivateclouds) |
 |Microsoft.Bat-CH/batchAccounts | Ja | Nee | [Batchaccounts](../essentials/metrics-supported.md#microsoftbatchbatchaccounts) |
 |Micro soft. BotService/botServices | Ja | Nee | [Bot Services](../essentials/metrics-supported.md#microsoftbotservicebotservices) |
-|Microsoft.Cache/Redis | Ja | Ja | [Azure Cache voor Redis](../essentials/metrics-supported.md#microsoftcacheredis) |
+|Micro soft. cache/redis | Ja | Ja | [Azure Cache voor Redis](../essentials/metrics-supported.md#microsoftcacheredis) |
+|micro soft. CDN/profielen | Ja | Nee | [CDN-profielen](../essentials/metrics-supported.md#microsoftcdnprofiles) |
 |Micro soft. ClassicCompute/domein naam/sleuven/rollen | Nee | Nee | [Klassieke Cloud Services](../essentials/metrics-supported.md#microsoftclassiccomputedomainnamesslotsroles) |
 |Micro soft. ClassicCompute/informatie | Nee | Nee | [Klassieke Virtual Machines](../essentials/metrics-supported.md#microsoftclassiccomputevirtualmachines) |
 |Micro soft. ClassicStorage/Storage accounts | Ja | Nee | [Opslag accounts (klassiek)](../essentials/metrics-supported.md#microsoftclassicstoragestorageaccounts) |
@@ -49,8 +50,8 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 |Micro soft. Compute/cloudServices | Ja | Nee |  [Cloudservices](../essentials/metrics-supported.md#microsoftcomputecloudservices) |
 |Micro soft. Compute/cloudServices/roles | Ja | Nee |  [Cloud service rollen](../essentials/metrics-supported.md#microsoftcomputecloudservicesroles) |
 |Microsoft.Compute/virtualMachines | Yes | Ja<sup>1</sup> | [Virtual Machines](../essentials/metrics-supported.md#microsoftcomputevirtualmachines) |
-|Microsoft.Compute/virtualMachineScaleSets | Ja | Nee |[Schaal sets voor virtuele machines](../essentials/metrics-supported.md#microsoftcomputevirtualmachinescalesets) |
-|Micro soft. ContainerInstance/containerGroups | Ja| Nee | [Containergroepen](../essentials/metrics-supported.md#microsoftcontainerinstancecontainergroups) |
+|Microsoft.Compute/virtualMachineScaleSets | Ja | Nee |[Virtuele-machineschaalsets](../essentials/metrics-supported.md#microsoftcomputevirtualmachinescalesets) |
+|Micro soft. ContainerInstance/containerGroups | Ja| Nee | [Container groepen](../essentials/metrics-supported.md#microsoftcontainerinstancecontainergroups) |
 |Micro soft. ContainerRegistry/registers | Nee | Nee | [Container registers](../essentials/metrics-supported.md#microsoftcontainerregistryregistries) |
 |Micro soft. container service/managedClusters | Ja | Nee | [Beheerde clusters](../essentials/metrics-supported.md#microsoftcontainerservicemanagedclusters) |
 |Micro soft. DataBoxEdge/dataBoxEdgeDevices | Ja | Ja | [Data Box](../essentials/metrics-supported.md#microsoftdataboxedgedataboxedgedevices) |
@@ -86,7 +87,7 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 |Micro soft. Media/Media Services/streamingEndpoints | Ja | Nee | [Media Services streaming-eind punten](../essentials/metrics-supported.md#microsoftmediamediaservicesstreamingendpoints) |
 |Micro soft. NetApp/netAppAccounts/capacityPools | Ja | Ja | [Azure NetApp-capaciteits Pools](../essentials/metrics-supported.md#microsoftnetappnetappaccountscapacitypools) |
 |Micro soft. NetApp/netAppAccounts/capacityPools/volumes | Ja | Ja | [Azure NetApp-volumes](../essentials/metrics-supported.md#microsoftnetappnetappaccountscapacitypoolsvolumes) |
-|Micro soft. Network/applicationGateways | Ja | Nee | [Toepassings gateways](../essentials/metrics-supported.md#microsoftnetworkapplicationgateways) |
+|Micro soft. Network/applicationGateways | Ja | Nee | [Toepassingsgateways](../essentials/metrics-supported.md#microsoftnetworkapplicationgateways) |
 |Micro soft. Network/azurefirewalls | Ja | Nee | [Firewalls](../essentials/metrics-supported.md#microsoftnetworkazurefirewalls) |
 |Microsoft.Network/dnsZones | Nee | Nee | [DNS-zones](../essentials/metrics-supported.md#microsoftnetworkdnszones) |
 |Microsoft.Network/expressRouteCircuits | Ja | Nee |[ExpressRoute-circuits](../essentials/metrics-supported.md#microsoftnetworkexpressroutecircuits) |

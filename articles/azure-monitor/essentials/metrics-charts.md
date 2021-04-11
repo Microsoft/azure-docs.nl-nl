@@ -6,12 +6,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 01/22/2019
 ms.author: vitalyg
-ms.openlocfilehash: a8a4f84db140ca442371cb71886bebf9214d3e43
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 444185dc41532bfa55c271e2f0027eb8b71de42f
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/30/2021
-ms.locfileid: "105026535"
+ms.locfileid: "105959896"
 ---
 # <a name="advanced-features-of-the-azure-metrics-explorer"></a>Geavanceerde functies van de Azure Metrics Explorer
 
@@ -78,6 +78,23 @@ Als u meerdere metrische gegevens in hetzelfde diagram wilt weer geven, maakt u 
 Selecteer **grafiek toevoegen** om een andere grafiek te maken die gebruikmaakt van een andere metriek.
 
 Als u meerdere grafieken wilt ordenen of verwijderen, selecteert u de knop met het weglatings teken (**...**) om het menu grafiek te openen. Vervolgens kiest **u omhoog**, **omlaag** of **verwijderen**.
+
+## <a name="time-range-controls"></a>Besturings elementen voor tijd bereik
+
+Naast het wijzigen van het tijds bereik met het [deel venster tijd kiezer](metrics-getting-started.md#select-a-time-range)kunt u ook de besturings elementen in het grafiek gebied pannen en inzoomen.
+### <a name="pan"></a>Pannen
+
+Als u wilt pannen, klikt u op de pijl naar links en rechts aan de rand van de grafiek.  Hiermee wordt het geselecteerde tijds bereik weer verplaatst naar een halve tijd van de grafiek.  Als u de afgelopen 24 uur bijvoorbeeld bekijkt, klikt u op de pijl-links om het tijds bereik te verschuiven naar een dag en een halve tot 12 uur geleden.
+
+De meeste metrische gegevens ondersteunen 93 dagen retentie, maar u kunt slechts 30 dagen per keer weer geven.  Met de besturings elementen voor pannen bekijkt u de afgelopen 30 dagen en gaat u snel vijf tien dagen per keer teruglopen om de rest van de Bewaar periode weer te geven.
+
+![GIF-animatie met de linker-en rechter regelaar-besturings elementen.](./media/metrics-charts/metrics-pan-controls.gif)
+
+### <a name="zoom"></a>Zoom
+
+U kunt op het diagram klikken en slepen om in te zoomen op een sectie van een grafiek.  Als u inzoomt, wordt het tijds bereik van de grafiek bijgewerkt om uw selectie op te slaan en wordt er een kleinere tijd geselecteerd als de tijd korrel is ingesteld op ' automatisch '.  Het nieuwe tijds bereik is van toepassing op alle grafieken in metrische gegevens.
+
+![GIF-animatie waarin de functie voor het zoomen op metrische gegevens wordt weer gegeven.](./media/metrics-charts/metrics-zoom-control.gif)
 
 ## <a name="aggregation"></a>Aggregatie
 

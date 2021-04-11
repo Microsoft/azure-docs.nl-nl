@@ -12,10 +12,10 @@ author: NilsPohlmann
 ms.date: 07/31/2020
 ms.custom: devx-track-python
 ms.openlocfilehash: 2a92fa8fd242482585ab3785e99f8239548ce369
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104868338"
 ---
 # <a name="define-machine-learning-pipelines-in-yaml"></a>machine learning pijp lijnen definiëren in YAML
@@ -26,23 +26,23 @@ De volgende tabel bevat een overzicht van wat is en wordt momenteel niet onderst
 
 | Type stap | Ondersteund? |
 | ----- | :-----: |
-| PythonScriptStep | Ja |
-| ParallelRunStep | Ja |
-| AdlaStep | Ja |
-| AzureBatchStep | Ja |
-| DatabricksStep | Ja |
-| DataTransferStep | Ja |
-| AutoMLStep | Nee |
-| HyperDriveStep | Nee |
-| ModuleStep | Ja |
-| MPIStep | Nee |
-| EstimatorStep | Nee |
+| PythonScriptStep | Yes |
+| ParallelRunStep | Yes |
+| AdlaStep | Yes |
+| AzureBatchStep | Yes |
+| DatabricksStep | Yes |
+| DataTransferStep | Yes |
+| AutoMLStep | No |
+| HyperDriveStep | No |
+| ModuleStep | Yes |
+| MPIStep | No |
+| EstimatorStep | No |
 
 ## <a name="pipeline-definition"></a>Pijplijn definitie
 
 Een pijplijn definitie maakt gebruik van de volgende sleutels, die overeenkomen met de klasse [pijp lijnen](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline.pipeline) :
 
-| YAML-sleutel | Beschrijving |
+| YAML-sleutel | Description |
 | ----- | ----- |
 | `name` | De beschrijving van de pijp lijn. |
 | `parameters` | Para meter (s) naar de pijp lijn. |
@@ -54,7 +54,7 @@ Een pijplijn definitie maakt gebruik van de volgende sleutels, die overeenkomen 
 
 `parameters`In de sectie worden de volgende sleutels gebruikt, die overeenkomen met de klasse [PipelineParameter](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelineparameter) :
 
-| YAML-sleutel | Beschrijving |
+| YAML-sleutel | Description |
 | ---- | ---- |
 | `type` | Het waardetype van de para meter. Geldige typen zijn `string` , `int` , `float` , `bool` , of `datapath` . |
 | `default` | De standaard waarde. |
@@ -82,7 +82,7 @@ pipeline:
 
 `data_references`In het gedeelte worden de volgende sleutels gebruikt, die overeenkomen met de [DataReference](/python/api/azureml-core/azureml.data.data_reference.datareference):
 
-| YAML-sleutel | Beschrijving |
+| YAML-sleutel | Description |
 | ----- | ----- |
 | `datastore` | De gegevens opslag waarnaar wordt verwezen. |
 | `path_on_datastore` | Het relatieve pad in de back-upopslag voor de gegevens verwijzing. |
@@ -106,7 +106,7 @@ pipeline:
 
 In stappen wordt een reken omgeving gedefinieerd, samen met de bestanden die in de omgeving moeten worden uitgevoerd. Als u het type van een stap wilt definiëren, gebruikt u de `type` sleutel:
 
-| Type stap | Beschrijving |
+| Type stap | Description |
 | ----- | ----- |
 | `AdlaStep` | Voert een U-SQL-script uit met Azure Data Lake Analytics. Komt overeen met de [AdlaStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.adlastep) -klasse. |
 | `AzureBatchStep` | Voert taken uit met Azure Batch. Komt overeen met de [AzureBatchStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.azurebatchstep) -klasse. |
@@ -117,7 +117,7 @@ In stappen wordt een reken omgeving gedefinieerd, samen met de bestanden die in 
 
 ### <a name="adla-step"></a>ADLA stap
 
-| YAML-sleutel | Beschrijving |
+| YAML-sleutel | Description |
 | ----- | ----- |
 | `script_name` | De naam van het U-SQL-script (ten opzichte van de `source_directory` ). |
 | `compute` | Het Azure Data Lake Compute-doel dat moet worden gebruikt voor deze stap. |
@@ -168,7 +168,7 @@ pipeline:
 
 ### <a name="azure-batch-step"></a>Azure Batch stap
 
-| YAML-sleutel | Beschrijving |
+| YAML-sleutel | Description |
 | ----- | ----- |
 | `compute` | Het Azure Batch Compute-doel dat moet worden gebruikt voor deze stap. |
 | `inputs` | Invoer kan [InputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding), [DataReference](#data-reference), [PortDataReference](/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference), [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata), [DataSet](/python/api/azureml-core/azureml.core.dataset%28class%29), [DatasetDefinition](/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition)of [PipelineDataset](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset)zijn. |
@@ -222,7 +222,7 @@ pipeline:
 
 ### <a name="databricks-step"></a>Databricks stap
 
-| YAML-sleutel | Beschrijving |
+| YAML-sleutel | Description |
 | ----- | ----- |
 | `compute` | Het Azure Databricks Compute-doel dat moet worden gebruikt voor deze stap. |
 | `inputs` | Invoer kan [InputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding), [DataReference](#data-reference), [PortDataReference](/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference), [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata), [DataSet](/python/api/azureml-core/azureml.core.dataset%28class%29), [DatasetDefinition](/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition)of [PipelineDataset](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset)zijn. |
@@ -276,7 +276,7 @@ pipeline:
 
 ### <a name="data-transfer-step"></a>Stap voor gegevens overdracht
 
-| YAML-sleutel | Beschrijving |
+| YAML-sleutel | Description |
 | ----- | ----- |
 | `compute` | Het Azure Data Factory Compute-doel dat moet worden gebruikt voor deze stap. |
 | `source_data_reference` | Invoer verbinding die fungeert als bron van bewerkingen voor gegevens overdracht. Ondersteunde waarden zijn [InputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding), [DataReference](#data-reference), [PortDataReference](/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference), [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata), [DataSet](/python/api/azureml-core/azureml.core.dataset%28class%29), [DatasetDefinition](/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition)of [PipelineDataset](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset). |
@@ -320,7 +320,7 @@ pipeline:
 
 ### <a name="python-script-step"></a>Python-script stap
 
-| YAML-sleutel | Beschrijving |
+| YAML-sleutel | Description |
 | ----- | ----- |
 | `inputs` | Invoer kan [InputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding), [DataReference](#data-reference), [PortDataReference](/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference), [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata), [DataSet](/python/api/azureml-core/azureml.core.dataset%28class%29), [DatasetDefinition](/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition)of [PipelineDataset](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset)zijn. |
 | `outputs` | De uitvoer kan [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) of [OutputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.outputportbinding)zijn. |
@@ -367,7 +367,7 @@ pipeline:
 
 ### <a name="parallel-run-step"></a>Parallelle uitvoerings stap
 
-| YAML-sleutel | Beschrijving |
+| YAML-sleutel | Description |
 | ----- | ----- |
 | `inputs` | Invoer kan [DataSet](/python/api/azureml-core/azureml.core.dataset%28class%29), [DatasetDefinition](/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition)of [PipelineDataset](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset)zijn. |
 | `outputs` | De uitvoer kan [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) of [OutputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.outputportbinding)zijn. |
@@ -419,7 +419,7 @@ pipeline:
 
 ### <a name="pipeline-with-multiple-steps"></a>Pijp lijn met meerdere stappen 
 
-| YAML-sleutel | Beschrijving |
+| YAML-sleutel | Description |
 | ----- | ----- |
 | `steps` | Reeks van een of meer PipelineStep definities. Houd er rekening mee dat de `destination` sleutels van de ene stap `outputs` de `source` sleutels worden naar de `inputs` volgende stap.| 
 
@@ -480,7 +480,7 @@ pipeline:
 
 Bij het definiëren van het schema voor een pijp lijn kan het gegevens archief worden geactiveerd of terugkerend op basis van een tijds interval. Hieronder vindt u de sleutels die worden gebruikt voor het definiëren van een planning:
 
-| YAML-sleutel | Beschrijving |
+| YAML-sleutel | Description |
 | ----- | ----- |
 | `description` | Een beschrijving van het schema. |
 | `recurrence` | Bevat de instellingen van het terugkeer patroon als de planning terugkerend is. |
@@ -511,7 +511,7 @@ Schedule:
 
 Bij het definiëren van een **terugkerend schema** gebruikt u de volgende sleutels onder `recurrence` :
 
-| YAML-sleutel | Beschrijving |
+| YAML-sleutel | Description |
 | ----- | ----- |
 | `frequency` | Hoe vaak de planning wordt herhaald. Geldige waarden zijn,,, en `"Minute"` `"Hour"` `"Day"` `"Week"` `"Month"` . |
 | `interval` | Hoe vaak de planning wordt geactiveerd. De waarde van het gehele getal is het aantal tijds eenheden dat moet worden gewacht tot de planning opnieuw wordt geactiveerd. |

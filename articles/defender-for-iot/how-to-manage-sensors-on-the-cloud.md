@@ -3,14 +3,14 @@ title: Sens oren en abonnementen beheren in de Defender voor IoT-Portal
 description: Meer informatie over het voorbereiden, weer geven en beheren van Sens oren in de Defender voor IoT-Portal.
 ms.date: 2/18/2021
 ms.topic: how-to
-ms.openlocfilehash: 5c529a5679e8b3d4879b003fa3d168e911f9b518
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5b4c8b3d10fe88816e07eb775b2bf3827d578b17
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104781820"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106383045"
 ---
-# <a name="onboard-and-manage-sensors-and-subscriptions-in-the-defender-for-iot-portal"></a>Sens oren en abonnementen beheren in de Defender voor IoT-Portal
+# <a name="manage-sensors-and-subscriptions-in-the-defender-for-iot-portal"></a>Sens oren en abonnementen beheren in de Defender voor IoT-Portal
 
 In dit artikel wordt beschreven hoe u Sens oren in de [Defender voor IOT-Portal](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started)kunt uitschakelen, weer geven en beheren.
 
@@ -137,6 +137,6 @@ Een abonnement niet meer vrijgeven:
 
 De on-premises omgeving wordt niet beïnvloed, maar u moet de sensor verwijderen uit de on-premises omgeving of de sensor opnieuw toewijzen aan een ander abonnement, zodat u kunt voor komen dat gerelateerde gegevens stromen naar de on-premises beheer console. 
 
-## <a name="see-also"></a>Zie ook
+## <a name="next-steps"></a>Volgende stappen
 
 [Uw sensor activeren en instellen](how-to-activate-and-set-up-your-sensor.md)

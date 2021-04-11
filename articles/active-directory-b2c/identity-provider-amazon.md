@@ -13,12 +13,12 @@ ms.date: 03/17/2021
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: e152d9c242a44fe869eb7bfe7a16fbd7dfc8049d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b6c0d9d5430d84006b208c50e78b8d875c95b8ac
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104580111"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107028380"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-an-amazon-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Amazon-account met Azure Active Directory B2C
 
@@ -175,7 +175,7 @@ U kunt een Amazon-account definiëren als een claim provider door deze toe te vo
 ## <a name="test-your-custom-policy"></a>Uw aangepaste beleid testen
 
 1. Selecteer uw Relying Party beleid, bijvoorbeeld `B2C_1A_signup_signin` .
-1. Selecteer voor **toepassing** een webtoepassing die u [eerder hebt geregistreerd](troubleshoot-custom-policies.md#troubleshoot-the-runtime). De **antwoord-URL** moet `https://jwt.ms` weergeven.
+1. Selecteer voor **toepassing** een webtoepassing die u [eerder hebt geregistreerd](tutorial-register-applications.md). De **antwoord-URL** moet `https://jwt.ms` weergeven.
 1. Selecteer de knop **nu uitvoeren** .
 1. Selecteer op de pagina aanmelden of aanmelden **Amazon** om u aan te melden met het Amazon-account.
 

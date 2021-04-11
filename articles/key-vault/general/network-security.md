@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 10/01/2020
 ms.author: mbaldwin
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 13ead70f278f12866dbe00b53c487aebcc43304f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 40094c00a4b896756c5c0e51116e0ae33ae2a096
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101742633"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106580736"
 ---
 # <a name="configure-azure-key-vault-firewalls-and-virtual-networks"></a>Azure Key Vault-firewalls en virtuele netwerken configureren
 
@@ -29,13 +29,14 @@ Deze sectie gaat over de verschillende manieren waarop de Azure Key Vault-firewa
 
 ### <a name="key-vault-firewall-disabled-default"></a>Key Vault-firewall uitgeschakeld (standaard)
 
-Wanneer u een nieuwe sleutel kluis maakt, wordt de Azure Key Vault-firewall standaard uitgeschakeld. Alle toepassingen en Azure-services hebben toegang tot de sleutelkluis en verzenden aanvragen naar de sleutelkluis. Dat betekent echter niet dat elke gebruiker bewerkingen kan uitvoeren op uw sleutelkluis. De sleutelkluis beperkt nog wel de toegang tot geheimen, sleutels en certificaten die in de sleutelkluis zijn opgeslagen door Azure Active Directory-verificatie en toegangsbeleidmachtigingen te vereisen. Meer informatie over sleutelkluisverificatie vindt u in [dit document](./authentication-fundamentals.md) over de basisprincipes van de sleutelkluisverificatie.
+Wanneer u een nieuwe sleutel kluis maakt, wordt de Azure Key Vault-firewall standaard uitgeschakeld. Alle toepassingen en Azure-services hebben toegang tot de sleutelkluis en verzenden aanvragen naar de sleutelkluis. Dat betekent echter niet dat elke gebruiker bewerkingen kan uitvoeren op uw sleutelkluis. De sleutelkluis beperkt nog wel de toegang tot geheimen, sleutels en certificaten die in de sleutelkluis zijn opgeslagen door Azure Active Directory-verificatie en toegangsbeleidmachtigingen te vereisen. Meer informatie over sleutelkluisverificatie vindt u in [dit document](./authentication-fundamentals.md) over de basisprincipes van de sleutelkluisverificatie. Zie [Toegang tot Azure Key Vault achter een firewall](./access-behind-firewall.md) voor meer informatie.
 
 ### <a name="key-vault-firewall-enabled-trusted-services-only"></a>Key Vault-firewall ingeschakeld (alleen vertrouwde services)
 
-Wanneer u de Key Vault-firewall inschakelt, krijgt u de optie om vertrouwde Microsoft-services toe te staan deze firewall over te slaan. De lijst met vertrouwde services bevat niet elke Azure-service. Zo bevindt Azure DevOps zich niet in de lijst met vertrouwde services. **Dit betekent niet dat services die niet worden weergegeven in de lijst met vertrouwde services niet worden vertrouwd of onveilig zijn.** De lijst met vertrouwde services bevat services waarbij Microsoft alle code beheert die op de service wordt uitgevoerd. Omdat gebruikers aangepaste code kunnen schrijven in Azure-services zoals Azure DevOps, biedt Microsoft geen optie om een algemene goedkeuring voor de service te maken. Bovendien betekent het feit dat een service op de lijst met vertrouwde services staat, niet dat deze in alle scenario's is toegestaan.
+Wanneer u de Key Vault-firewall inschakelt, krijgt u de optie om vertrouwde Microsoft-services toe te staan deze firewall over te slaan. De lijst met vertrouwde services bevat niet elke Azure-service. Zo bevindt Azure DevOps zich niet in de lijst met vertrouwde services. **Dit betekent niet dat services die niet worden weergegeven in de lijst met vertrouwde services niet worden vertrouwd of onveilig zijn.** De lijst met vertrouwde services bevat services waarbij Microsoft alle code beheert die op de service wordt uitgevoerd. Omdat gebruikers aangepaste code kunnen schrijven in Azure-services zoals Azure DevOps, biedt Microsoft geen optie om een algemene goedkeuring voor de service te maken. Bovendien betekent het feit dat een service op de lijst met vertrouwde services staat, niet dat deze in alle scenario's is toegestaan. 
 
 Als u wilt bepalen of een service die u wilt gebruiken, zich in de lijst met vertrouwde services bevindt, raadpleegt u [dit document](./overview-vnet-service-endpoints.md#trusted-services).
+Volg de instructies in de hand leiding voor [Portal, Azure CLI en Power shell](https://docs.microsoft.com/azure/key-vault/general/network-security#use-the-azure-portal) voor meer informatie.
 
 ### <a name="key-vault-firewall-enabled-ipv4-addresses-and-ranges---static-ips"></a>Key Vault Firewall ingeschakeld (IPv4-adressen en -bereiken - vaste IP-adressen)
 

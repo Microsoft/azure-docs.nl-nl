@@ -5,18 +5,18 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/12/2021
 ms.topic: conceptual
-ms.openlocfilehash: dfabb3ef521b496a073d502efd4fd672cfcf3b8c
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: ef8b4ddcbf09fa3ec0e3b07ae797693aed095c88
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104597734"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107104963"
 ---
 # <a name="configure-startstop-vms-during-off-hours"></a>VM's buiten bedrijfsuren starten/stoppen configureren
 
 In dit artikel wordt beschreven hoe u de [VM's buiten bedrijfsuren starten/stoppen](automation-solution-vm-management.md) -functie configureert om de beschreven scenario's te ondersteunen. U kunt ook leren hoe u:
 
-* [E-mailmeldingen configureren](#configure-email-notifications)
+* [E-mail meldingen configureren](#configure-email-notifications)
 * [Een VM toevoegen](#add-a-vm)
 * [Een VM uitsluiten](#exclude-a-vm)
 * [De planningen voor opstarten en afsluiten wijzigen](#modify-the-startup-and-shutdown-schedules)
@@ -57,7 +57,7 @@ U kunt de actie richten op een abonnement en resource groep, of een specifieke l
     > [!NOTE]
     > De waarde voor **doel-ResourceGroup namen** wordt opgeslagen als de waarden voor `External_Start_ResourceGroupNames` zowel `External_Stop_ResourceGroupNames` en. Voor nadere granulariteit kunt u elk van deze variabelen wijzigen in doel verschillende resource groepen. Voor het starten van actie, gebruiken `External_Start_ResourceGroupNames` en gebruiken `External_Stop_ResourceGroupNames` voor stop actie. Vm's worden automatisch toegevoegd aan de planningen starten en stoppen.
 
-## <a name="scenario-2-startstop-vms-in-sequence-by-using-tags"></a><a name="tags"></a>Scenario 2: VM'S in volg orde starten/stoppen met behulp van Tags
+## <a name="scenario-2-startstop-vms-in-sequence-by-using-tags"></a><a name="tags"></a>Scenario 2: Vm's in volg orde starten/stoppen met behulp van Tags
 
 In een omgeving met twee of meer onderdelen op meerdere Vm's die een gedistribueerde werk belasting ondersteunen, wordt de volg orde waarin de onderdelen worden gestart en gestopt, op de juiste wijze ondersteund. 
 

@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 01/03/2021
-ms.openlocfilehash: 9c3fa0d8ac4540495e8580fd208507a2c1aaa7ce
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 7bf4ea4beabf9abcc007c101ca5acf79ec919c4e
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102180636"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105732394"
 ---
 # <a name="tutorial-migrate-sql-server-to-azure-sql-database-using-dms"></a>Zelf studie: SQL Server migreren naar Azure SQL Database met behulp van DMS
 
@@ -245,6 +245,9 @@ Selecteer alle data bases of specifieke data bases die u naar Azure SQL Database
 1. Geef in het scherm **doel selecteren** verificatie-instellingen op voor uw Azure SQL database. 
 
    ![Doel selecteren](media/tutorial-sql-server-to-azure-sql/select-target.png)
+   
+   > [!NOTE]
+   > SQL-verificatie is momenteel het enige verificatie type dat wordt ondersteund.
 
 1. Selecteer **Volgende: Toewijzen aan doeldatabases** en wijs de bron- en doeldatabase voor de migratie toe.
 

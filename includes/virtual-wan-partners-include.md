@@ -9,10 +9,10 @@ ms.date: 03/03/2021
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: f1d3223114e9f691bfb3802a65abea003a7aec6e
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105582647"
 ---
 U kunt de koppelingen in deze sectie raadplegen voor meer informatie over services die worden aangeboden door partners. Als uw vertakkings partner niet wordt vermeld in de onderstaande sectie, laat u de provider van uw vertakkings apparaat contact met ons opnemen. Ze kunnen contact met ons opnemen door een e-mail te verzenden naar azurevirtualwan@microsoft.com .

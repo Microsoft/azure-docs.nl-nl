@@ -16,12 +16,12 @@ ms.date: 04/13/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3200dc6ad7756f77dc0d74df83a33c7e89d4bedb
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 1c5e71522d53bd4e528b2a5a106a4dcc344df3ab
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105044563"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105732853"
 ---
 # <a name="azure-active-directory-pass-through-authentication-quickstart"></a>Pass-Through-verificatie Azure Active Directory: Quick Start
 
@@ -73,6 +73,7 @@ Zorg ervoor dat aan de volgende vereisten is voldaan.
      
      Als met uw firewall regels worden afgedwongen op basis van de herkomst van gebruikers, opent u deze poorten voor verkeer dat afkomstig is van Windows-services die als een netwerkservice worden uitgevoerd.
    - Als uw firewall of proxy u in staat stelt om DNS-vermeldingen toe te voegen aan een allowlist, voegt u verbindingen toe aan **\* . msappproxy.net** en **\* . servicebus.Windows.net**. Als dat niet het geval is, moet u toegang toestaan tot de [IP-adresbereiken van Azure Datacenter](https://www.microsoft.com/download/details.aspx?id=41653), die elke week worden bijgewerkt.
+   - Vermijd alle vormen van inline inspectie en beëindiging van uitgaande TLS-communicatie tussen de Azure passthrough-agent en de Azure-eindpunt. 
    - Als u een uitgaande HTTP-proxy hebt, moet u ervoor zorgen dat deze URL, autologon.microsoftazuread-sso.com, voor komt in de lijst toegestaan. U moet deze URL expliciet opgeven omdat het Joker teken mogelijk niet wordt geaccepteerd. 
    - Uw verificatie agenten hebben toegang tot **login.Windows.net** en **login.microsoftonline.com** nodig voor de eerste registratie. Open uw firewall ook voor deze URL's.
     - Voor validatie van het certificaat kunt u de volgende Url's blok keren: **crl3.Digicert.com:80**, **crl4.Digicert.com:80**, **ocsp.digicert.com:80**, **www \. d-trust.net:80**, **root-C3-Ca2-2009.OCSP.d-Trust.net:80**, **CRL.Microsoft.com:80**, **oneocsp.Microsoft.com:80** en **OCSP.msocsp.com:80**. Omdat deze URL's worden gebruikt voor certificaatvalidatie met andere Microsoft-producten, is het mogelijk dat u deze URL's al hebt gedeblokkeerd.

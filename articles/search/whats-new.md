@@ -6,14 +6,14 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: overview
-ms.date: 03/12/2021
+ms.date: 04/07/2021
 ms.custom: references_regions
-ms.openlocfilehash: b9ae576a2d0ab8aee00be5b755c348806b412bef
-ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
+ms.openlocfilehash: 8db1a671904233098610a9ba55ce260e6214c38c
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106108486"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107028499"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Nieuwe functies in Azure Cognitive Search
 
@@ -26,9 +26,8 @@ Meer informatie over nieuwe functies in de service. Voeg een bladwijzer toe aan 
 | [Semantische zoekopdrachten](semantic-search-overview.md) | Een verzameling query-gerelateerde functies waarmee de relevantie van zoek resultaten aanzienlijk wordt verbeterd door minimale aanpassingen van een query aanvraag. </br></br>Met [semantische classificatie](semantic-ranking.md) worden relevantie scores berekend op basis van de semantische betekenis achter woorden en inhoud. </br></br>[Semantische bijschriften](semantic-how-to-query-request.md) retour neren relevante door gangen uit het document die het document het beste samenvatten, met de nadruk op de belangrijkste termen of zinsdelen. </br></br>[Semantische antwoorden](semantic-answers.md) retour neren het passeren van sleutels, geëxtraheerd uit een zoek document dat wordt geformuleerd als een direct antwoord op een query die eruitziet als een vraag. | Open bare Preview ([op aanvraag](https://aka.ms/SemanticSearchPreviewSignup)). </br></br>[Zoek documenten (rest)](/rest/api/searchservice/preview-api/search-documents) API-Version = 2020-06 -30-preview of [Search explorer](search-explorer.md) gebruiken in azure Portal. </br></br>De beperkingen voor de regio en de laag zijn van toepassing. |
 | [Spelling controle van query termen](speller-how-to-add.md) | Voordat de query termen de zoek machine bereiken, kunt u ze controleren op spel fouten. De `speller` optie werkt met elk query type (eenvoudig, volledig of semantisch). |  Open bare preview, alleen REST, API-Version = 2020-06 -30-preview|
 | [Indexer van share point online](search-howto-index-sharepoint-online.md) | Met deze indexer maakt u verbinding met een share point online-site, zodat u inhoud kunt indexeren vanuit een document bibliotheek. | Open bare preview, alleen REST, API-Version = 2020-06 -30-preview |
-| [Normalisatie](search-normalizers.md) | Norma Lise ring van tekst, zoals hoofdletter gebruik, accenten verwijderen, asciifolding, enzovoort zonder de hele analyse keten te door lopen.| Open bare preview, alleen REST, API-Version = 2020-06 -30-preview |
-[**Zoek vaardigheid aangepaste entiteit**](cognitive-search-skill-custom-entity-lookup.md ) |  Een cognitieve vaardigheid die zoekt naar tekst van een aangepaste, door de gebruiker gedefinieerde lijst met woorden en zinsdelen. Aan de hand van deze lijst worden alle documenten met overeenkomende entiteiten gelabeld. De vaardigheid ondersteunt ook het zoeken naar fuzzy overeenkomsten, waarmee overeenkomsten worden gevonden die vergelijkbaar zijn, maar niet helemaal exact. | Algemeen verkrijgbaar. |
-|
+| [Normalisatie](search-normalizers.md) | Normalisatie biedt de voor bereiding van een eenvoudige tekst: consistent hoofdletter gebruik, accenten verwijderen en ASCII-vouwen, zonder de volledige tekst analyse keten aan te roepen.| Open bare preview, alleen REST, API-Version = 2020-06 -30-preview |
+| [Zoek vaardigheid aangepaste entiteit](cognitive-search-skill-custom-entity-lookup.md ) |  Een cognitieve vaardigheid die zoekt naar tekst van een aangepaste, door de gebruiker gedefinieerde lijst met woorden en zinsdelen. Aan de hand van deze lijst worden alle documenten met overeenkomende entiteiten gelabeld. De vaardigheid ondersteunt ook het zoeken naar fuzzy overeenkomsten, waarmee overeenkomsten worden gevonden die vergelijkbaar zijn, maar niet helemaal exact. | Algemeen verkrijgbaar. |
 
 ## <a name="february-2021"></a>Februari 2021
 

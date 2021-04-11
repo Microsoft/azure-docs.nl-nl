@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: db1b559bb4f6a1f8866116c287df5b814500210b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ef56db4ef67515d14f8462db2975e68a1a86f238
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101647469"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105959854"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-on-premises-resources-with-azure-active-directory"></a>Aanmeldings wachtwoord zonder wacht woord inschakelen voor on-premises resources met Azure Active Directory 
 
@@ -193,6 +193,8 @@ Bij een schone installatie van een hybride Azure AD-computer, nadat u het domein
 ### <a name="im-unable-to-get-sso-to-my-ntlm-network-resource-after-signing-in-with-fido-and-get-a-credential-prompt"></a>Ik kan geen SSO ontvangen van mijn NTLM-netwerk bron na aanmelding bij FIDO en een prompt voor referenties ophalen
 
 Zorg ervoor dat er voldoende domein controllers zijn geïnstalleerd om te reageren op de tijd om uw resource aanvraag te verwerken. Als u wilt controleren of u een domein controller kunt zien waarop de functie wordt uitgevoerd, controleert u de uitvoer van `nltest /dsgetdc:contoso /keylist /kdc` .
+
+Opmerking: deze/keylist-switch in de opdracht nltest is te vinden in client Windows 10 v2004 en hoger
 
 ## <a name="next-steps"></a>Volgende stappen
 

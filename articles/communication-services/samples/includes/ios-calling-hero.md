@@ -2,28 +2,28 @@
 title: bestand opnemen
 description: bestand opnemen
 services: azure-communication-services
-author: mikben
-manager: mikben
+author: ddematheu2
+manager: chpalm
 ms.service: azure-communication-services
 ms.subservice: azure-communication-services
 ms.date: 03/10/2021
 ms.topic: include
 ms.custom: include file
-ms.author: mikben
-ms.openlocfilehash: f1d49aa0583f34327afff229b46d7a366202aded
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.author: dademath
+ms.openlocfilehash: 287520f2964fba7c3c3804853e9356a8c77b2d06
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105152730"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106498779"
 ---
-[!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
+[!INCLUDE [Public Preview Notice](../../includes/public-preview-include-android-ios.md)]
 
 De Azure Communication Services-groep die het **voor beeld van een held aanroept voor IOS** laat zien hoe de communicatie services die IOS SDK aanroept, kunnen worden gebruikt voor het bouwen van een groep waarmee u de ervaring met spraak en video kunt opdoen. In dit voor beeld Quick Start leert u hoe u het voor beeld kunt instellen en uitvoeren. Er wordt een overzicht van het voor beeld gegeven voor context.
 
 ## <a name="download-code"></a>Code downloaden
 
-Zoek de voltooide code voor deze Quick Start op [github](https://github.com/Azure-Samples/communication-services-ios-calling-hero).
+Zoek het project voor dit voor beeld op [github](https://github.com/Azure-Samples/communication-services-ios-calling-hero). Een versie van het voor beeld met [teams Interop](../../concepts/teams-interop.md) vindt u in een afzonderlijke [vertakking](https://github.com/Azure-Samples/communication-services-ios-calling-hero/tree/feature/teams_interop).
 
 ## <a name="overview"></a>Overzicht
 
@@ -33,7 +33,7 @@ Het voorbeeld ziet er als volgt uit:
 
 :::image type="content" source="../media/calling/landing-page-ios.png" alt-text="Schermopname van de landingspagina van de voorbeeldtoepassing.":::
 
-Wanneer u op de knop nieuwe oproep starten klikt, maakt de iOS-toepassing een nieuwe aanroep en wordt deze toegevoegd. Met de toepassing kunt u lid worden van een bestaande oproep van Azure Communication Services door de ID van de bestaande oproep op te geven. U kunt ook deel nemen aan een team vergadering door de koppeling voor koppelen in de uitnodiging van de vergadering op te geven.  (De koppeling koppelen heeft de volgende indeling: `https://teams.microsoft.com/l/meetup-join/` ). Ga voor meer informatie over teams Interop naar de [conceptuele documentatie van teams Interop](../../concepts/teams-interop.md).
+Wanneer u op de knop nieuwe oproep starten klikt, maakt de iOS-toepassing een nieuwe aanroep en wordt deze toegevoegd. Met de toepassing kunt u lid worden van een bestaande oproep van Azure Communication Services door de ID van de bestaande oproep op te geven.
 
 Nadat u een gesprek hebt toegevoegd, wordt u gevraagd om de toepassing toegang te geven tot uw camera en microfoon. U wordt ook gevraagd om een weergave naam op te geven.
 

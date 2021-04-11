@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 02/16/2021
 ms.reviewer: dariac
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: 5dd6183bf88c167adb2f084c319cd90b94351dfb
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: faf3afc60c8517509199e6a306f511a15b32358c
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100560488"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105732836"
 ---
 # <a name="local-git-deployment-to-azure-app-service"></a>Lokale Git-implementatie in Azure App Service
 
@@ -140,6 +140,7 @@ Mogelijk worden de volgende veelvoorkomende fout berichten weer geven wanneer u 
 |`Unable to access '[siteURL]': Failed to connect to [scmAddress]`|De app is niet actief.|Start de app in het Azure Portal. Git-implementatie is niet beschikbaar wanneer de web-app is gestopt.|
 |`Couldn't resolve host 'hostname'`|De adres gegevens voor de externe Azure-computer zijn onjuist.|Gebruik de `git remote -v` opdracht om alle externe-en de bijbehorende URL weer te geven. Controleer of de URL voor de externe Azure juist is. Als dat nodig is, kunt u deze extern verwijderen en opnieuw maken met de juiste URL.|
 |`No refs in common and none specified; doing nothing. Perhaps you should specify a branch such as 'main'.`|U hebt geen vertakking opgegeven tijdens `git push` of u hebt geen waarde ingesteld `push.default` in `.gitconfig` .|Voer `git push` opnieuw uit en geef de hoofd vertakking op: `git push azure main` .|
+|`Error - Changes committed to remote repository but deployment to website failed.`|U hebt een lokale vertakking gepusht die niet overeenkomt met de app-implementatie vertakking op Azure.|Controleer of de huidige vertakking is `master` . Als u de standaard vertakking wilt wijzigen, gebruikt u `DEPLOYMENT_BRANCH` toepassings instelling.|
 |`src refspec [branchname] does not match any.`|U probeert te pushen naar een andere vertakking dan Main op de externe Azure.|Voer `git push` opnieuw uit en geef de hoofd vertakking op: `git push azure main` .|
 |`RPC failed; result=22, HTTP code = 5xx.`|Deze fout kan optreden als u probeert een grote Git-opslag plaats via HTTPS te pushen.|Wijzig de Git-configuratie op de lokale computer zodat deze `postBuffer` groter wordt. Bijvoorbeeld: `git config --global http.postBuffer 524288000`.|
 |`Error - Changes committed to remote repository but your web app not updated.`|U hebt een Node.js-app geïmplementeerd met een _package.jsin_ een bestand dat aanvullende vereiste modules bevat.|Bekijk de `npm ERR!` fout berichten vóór deze fout voor meer context over de fout. Hieronder vindt u de bekende oorzaken van deze fout en de bijbehorende `npm ERR!` berichten:<br /><br />**Onjuist gevormd package.jsbestand**: `npm ERR! Couldn't read dependencies.`<br /><br />**Systeem eigen module heeft geen binaire distributie voor Windows**:<br />`npm ERR! \cmd "/c" "node-gyp rebuild"\ failed with 1` <br />of <br />`npm ERR! [modulename@version] preinstall: \make || gmake\ `|

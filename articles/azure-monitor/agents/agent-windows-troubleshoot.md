@@ -6,10 +6,10 @@ author: bwren
 ms.author: bwren
 ms.date: 11/21/2019
 ms.openlocfilehash: 7ab67602ebba2ae5446ecc0052ef4b03bba1e1bf
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104952980"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-windows"></a>Problemen met de Log Analytics-agent voor Windows oplossen 
@@ -68,10 +68,10 @@ Controleer of de firewall of proxy is geconfigureerd voor het toestaan van de vo
 
 |Agentresource|Poorten |Richting |HTTPS-controle overslaan|
 |------|---------|--------|--------|   
-|*.ods.opinsights.azure.com |Poort 443 |Uitgaand|Ja |  
-|*.oms.opinsights.azure.com |Poort 443 |Uitgaand|Ja |  
-|*.blob.core.windows.net |Poort 443 |Uitgaand|Ja |  
-|*. agentsvc.azure-automation.net |Poort 443 |Uitgaand|Ja |  
+|*.ods.opinsights.azure.com |Poort 443 |Uitgaand|Yes |  
+|*.oms.opinsights.azure.com |Poort 443 |Uitgaand|Yes |  
+|*.blob.core.windows.net |Poort 443 |Uitgaand|Yes |  
+|*. agentsvc.azure-automation.net |Poort 443 |Uitgaand|Yes |  
 
 Zie [Azure Government Management](../../azure-government/compare-azure-government-global-azure.md#azure-monitor)voor informatie over de firewall die vereist is voor Azure Government. Als u van plan bent de Azure Automation Hybrid Runbook Worker te gebruiken om verbinding te maken met de Automation-Service voor het gebruik van runbooks of beheer oplossingen in uw omgeving, moet deze toegang hebben tot het poort nummer en de Url's die worden beschreven in [uw netwerk configureren voor de Hybrid Runbook worker](../../automation/automation-hybrid-runbook-worker.md#network-planning). 
 

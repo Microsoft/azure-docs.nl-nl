@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/15/2020
-ms.openlocfilehash: cba248d3f254c9bb97c66ff7a3d39275b4b912c4
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 75f9080b43333168802a72e60751eec2a765c6d4
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102616074"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106580815"
 ---
 # <a name="copy-activity-performance-and-scalability-guide"></a>Handleiding voor prestaties en schaalbaarheid van kopieeractiviteit
 
@@ -62,7 +62,10 @@ Dit volledige gebruik houdt in dat u de algehele door Voer kunt schatten door de
 * Doelgegevensarchief
 * Netwerk bandbreedte tussen de bron-en doel gegevens archieven
 
-De onderstaande tabel berekent de duur van de kopie. De duur is gebaseerd op de gegevens grootte en de bandbreedte limiet voor netwerk/gegevens opslag voor uw omgeving.
+In de volgende tabel ziet u de berekening van de duur van de gegevens verplaatsing. De duur in elke cel wordt berekend op basis van een bepaald netwerk en de band breedte van het gegevens archief en een bepaalde grootte van de gegevens lading.
+
+> [!NOTE]
+> De hieronder vermelde duur is bedoeld om Haal bare prestaties te vormen in een end-to-end oplossing voor gegevens integratie die is geïmplementeerd met behulp van ADF, door gebruik te maken van een of meer prestatie optimalisatie technieken die worden beschreven in functies voor het [optimaliseren van prestaties](#copy-performance-optimization-features), waaronder het gebruik van foreach om meerdere gelijktijdige Kopieer activiteiten te partitioneren en uit te voeren. We raden u aan stappen uit te voeren die worden beschreven in stappen voor het [afstemmen](#performance-tuning-steps) van de prestaties om de Kopieer prestaties te optimaliseren voor uw specifieke gegevensset en systeem configuratie. U moet de aantallen gebruiken die zijn verkregen in uw prestatie afstemmings tests voor de planning van de productie-implementatie, capaciteits planning en facturerings projectie.
 
 &nbsp;
 

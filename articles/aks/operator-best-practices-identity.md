@@ -4,55 +4,61 @@ titleSuffix: Azure Kubernetes Service
 description: Meer informatie over de aanbevolen procedures voor cluster operators voor het beheren van verificatie en autorisatie voor clusters in azure Kubernetes service (AKS)
 services: container-service
 ms.topic: conceptual
-ms.date: 07/07/2020
+ms.date: 03/09/2021
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: 8e0c7324f5b73b3a2ac5e5fd6fa256202035077a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: de84e3e2a8da3e1b5195978a8a2204fdfa2108d7
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98790966"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107105099"
 ---
 # <a name="best-practices-for-authentication-and-authorization-in-azure-kubernetes-service-aks"></a>Aanbevolen procedures voor verificatie en autorisatie in azure Kubernetes service (AKS)
 
-Bij het implementeren en onderhouden van clusters in azure Kubernetes service (AKS), moet u manieren implementeren voor het beheren van de toegang tot bronnen en services. Zonder deze besturings elementen kunnen accounts toegang hebben tot resources en services die ze niet nodig hebben. Het kan ook lastig zijn om bij te houden welke set referenties is gebruikt om wijzigingen aan te brengen.
+Bij het implementeren en onderhouden van clusters in azure Kubernetes service (AKS), implementeert u manieren om de toegang tot resources en services te beheren. Zonder deze besturings elementen:
+* Accounts kunnen toegang hebben tot overbodige bronnen en services. 
+* Bijhouden welke set referenties is gebruikt om wijzigingen te maken, is mogelijk lastig.
 
 In dit artikel Best practices wordt uitgelegd hoe een cluster operator de toegang en identiteit voor AKS-clusters kan beheren. In dit artikel leert u het volgende:
 
 > [!div class="checklist"]
 >
-> * AKS-cluster gebruikers verifiëren met Azure Active Directory
-> * Toegang tot resources beheren met Kubernetes op basis van rollen (Kubernetes RBAC)
-> * Gebruik Azure RBAC om de toegang tot de AKS-resource en de Kubernetes-API op schaal nauw keurig te beheren, evenals de kubeconfig.
-> * Een beheerde identiteit gebruiken om de meeste te verifiëren met andere services
+> * AKS-cluster gebruikers verifiëren met Azure Active Directory.
+> * Toegang tot resources beheren met Kubernetes op basis van rollen (Kubernetes RBAC).
+> * Gebruik Azure RBAC om de toegang tot de AKS-resource, de Kubernetes-API op schaal en de te nauw keurig te beheren `kubeconfig` .
+> * Gebruik een beheerde identiteit voor de verificatie van een of meer andere services.
 
-## <a name="use-azure-active-directory"></a>Azure Active Directory gebruiken
+## <a name="use-azure-active-directory-azure-ad"></a>Azure Active Directory gebruiken (Azure AD)
 
-**Best Practice-richt lijnen** : implementeer AKS-clusters met Azure AD-integratie. Met Azure AD wordt het Identity Management-onderdeel gecentraliseerd. Wijzigingen in het gebruikers account of de groeps status worden automatisch bijgewerkt in de toegang tot het AKS-cluster. Gebruik rollen of ClusterRoles en bindingen, zoals beschreven in de volgende sectie, om gebruikers of groepen te beperken tot een mini maal aantal benodigde machtigingen.
+> **Richtlijnen voor best practices** 
+> 
+> Implementeer AKS-clusters met Azure AD-integratie. Met Azure AD wordt het Identity Management-onderdeel gecentraliseerd. Wijzigingen in het gebruikers account of de groeps status worden automatisch bijgewerkt in de toegang tot het AKS-cluster. Bereik gebruikers of groepen aan de minimale machtigings hoeveelheid met behulp van [rollen, ClusterRoles of bindingen](#use-kubernetes-role-based-access-control-kubernetes-rbac).
 
-De ontwikkel aars en toepassings eigenaren van uw Kubernetes-cluster moeten toegang hebben tot verschillende bronnen. Kubernetes biedt geen oplossing voor identiteits beheer om te bepalen welke gebruikers met welke bronnen kunnen communiceren. In plaats daarvan integreert u uw cluster doorgaans met een bestaande identiteits oplossing. Azure Active Directory (AD) biedt een oplossing voor identiteits beheer op bedrijfs niveau en kan worden geïntegreerd met AKS-clusters.
+Uw Kubernetes-cluster ontwikkelaars en toepassings eigenaren hebben toegang tot verschillende bronnen nodig. Kubernetes heeft geen oplossing voor identiteits beheer voor u om de resources te beheren waarmee gebruikers kunnen communiceren. In plaats daarvan integreert u uw cluster doorgaans met een bestaande identiteits oplossing. Voer Azure AD in: een oplossing voor identiteits beheer op bedrijfs niveau die kan worden geïntegreerd met AKS-clusters.
 
-Met Azure AD-geïntegreerde clusters in AKS maakt u *rollen* of *ClusterRoles* die toegangs machtigingen voor bronnen definiëren. Vervolgens *koppelt* u de rollen aan gebruikers of groepen vanuit Azure AD. Deze Kubernetes op rollen gebaseerd toegangs beheer (Kubernetes RBAC) worden in de volgende sectie besproken. De integratie van Azure AD en het beheren van de toegang tot bronnen kan worden weer gegeven in het volgende diagram:
+Met Azure AD-geïntegreerde clusters in AKS maakt u *rollen* of *ClusterRoles* voor het definiëren van toegangs machtigingen voor bronnen. Vervolgens *koppelt* u de rollen aan gebruikers of groepen vanuit Azure AD. Meer informatie over deze Kubernetes RBAC vindt u in [de volgende sectie](#use-kubernetes-role-based-access-control-kubernetes-rbac). Azure AD-integratie en hoe u de toegang tot resources beheert, kunnen worden weer gegeven in het volgende diagram:
 
 ![Verificatie op cluster niveau voor de integratie van Azure Active Directory met AKS](media/operator-best-practices-identity/cluster-level-authentication-flow.png)
 
 1. Ontwikkel aars worden geverifieerd met Azure AD.
 1. Het Azure AD-token uitgifte-eind punt geeft het toegangs token uit.
-1. De ontwikkelaar voert een actie uit met behulp van het Azure AD-token, zoals `kubectl create pod`
-1. Kubernetes valideert het token met Azure Active Directory en haalt de groepslid maatschappen van de ontwikkelaar op.
-1. Kubernetes op rollen gebaseerd toegangs beheer (Kubernetes RBAC) en cluster beleid worden toegepast.
-1. De aanvraag van de ontwikkelaar is geslaagd of niet gebaseerd op de vorige validatie van Azure AD-groepslid maatschap en Kubernetes RBAC en beleid.
+1. De ontwikkelaar voert een actie uit met behulp van het Azure AD-token, zoals `kubectl create pod` .
+1. Kubernetes valideert het token met Azure AD en haalt de groepslid maatschappen van de ontwikkelaar op.
+1. RBAC en cluster beleid van Kubernetes worden toegepast.
+1. De aanvraag van de ontwikkelaar is gelukt op basis van de vorige validatie van Azure AD-groepslid maatschap en Kubernetes RBAC en beleid.
 
 Zie [Azure Active Directory integreren met AKS][aks-aad]als u een AKS-cluster wilt maken dat gebruikmaakt van Azure AD.
 
 ## <a name="use-kubernetes-role-based-access-control-kubernetes-rbac"></a>Kubernetes met op rollen gebaseerd toegangs beheer (Kubernetes RBAC) gebruiken
 
-**Richt lijnen voor best practices** : gebruik Kubernetes RBAC om de machtigingen te definiëren die gebruikers of groepen hebben voor resources in het cluster. Maak rollen en bindingen die de mini maal vereiste machtigingen toewijzen. Integreer met Azure AD, zodat alle wijzigingen in de gebruikers status of het groepslid maatschap automatisch worden bijgewerkt en de toegang tot cluster bronnen actueel is.
+> **Richtlijnen voor best practices**
+> 
+> Definieer gebruikers-of groeps machtigingen voor cluster bronnen met Kubernetes RBAC. Maak rollen en bindingen die de mini maal vereiste machtigingen toewijzen. Integreer met Azure AD om automatisch eventuele wijzigingen in de gebruikers status of het groepslid maatschap bij te werken en de toegang tot cluster bronnen actueel te blijven.
 
-In Kubernetes kunt u gedetailleerde controle over de toegang tot resources in het cluster bieden. Machtigingen worden gedefinieerd op het niveau van het cluster of aan specifieke naam ruimten. U kunt definiëren welke resources kunnen worden beheerd en met welke machtigingen. Deze rollen worden vervolgens toegepast op gebruikers of groepen met een binding. Zie [toegang en identiteits opties voor Azure Kubernetes service (AKS)][aks-concepts-identity]voor meer informatie over *rollen*, *ClusterRoles* en *bindingen*.
+In Kubernetes geeft u nauw keurig toegangs beheer voor cluster bronnen. U definieert machtigingen op cluster niveau of op specifieke naam ruimten. U bepaalt welke bronnen kunnen worden beheerd en met welke machtigingen. Vervolgens past u deze rollen toe op gebruikers of groepen met een binding. Zie [toegang en identiteits opties voor Azure Kubernetes service (AKS)][aks-concepts-identity]voor meer informatie over *rollen*, *ClusterRoles* en *bindingen*.
 
-U kunt bijvoorbeeld een rol maken die volledige toegang verleent aan resources in de naam ruimte *Finance-App*, zoals wordt weer gegeven in het volgende voor beeld yaml-manifest:
+Als voor beeld maakt u een rol met volledige toegang tot resources in de naam ruimte *Finance-App*, zoals wordt weer gegeven in het volgende voor beeld yaml-manifest:
 
 ```yaml
 kind: Role
@@ -66,7 +72,7 @@ rules:
   verbs: ["*"]
 ```
 
-Vervolgens wordt er een RoleBinding gemaakt die de Azure AD-gebruiker *developer1 \@ contoso.com* koppelt aan de RoleBinding, zoals wordt weer gegeven in het volgende YAML-manifest:
+Vervolgens maakt u een RoleBinding en bindt u de Azure AD-gebruiker *developer1 \@ contoso.com* aan de RoleBinding, zoals wordt weer gegeven in het volgende YAML-manifest:
 
 ```yaml
 kind: RoleBinding
@@ -84,41 +90,64 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
-Wanneer *developer1 \@ contoso.com* wordt geverifieerd op basis van het AKS-cluster, hebben ze volledige machtigingen voor bronnen in de naam ruimte *Finance-App* . Op deze manier kunt u de toegang tot resources logisch scheiden en beheren. Kubernetes RBAC moet worden gebruikt in combi natie met Azure AD-Integration, zoals beschreven in de vorige sectie.
+Wanneer *developer1 \@ contoso.com* wordt geverifieerd op basis van het AKS-cluster, hebben ze volledige machtigingen voor bronnen in de naam ruimte *Finance-App* . Op deze manier kunt u de toegang tot resources logisch scheiden en beheren. Gebruik Kubernetes RBAC in combi natie met Azure AD-integratie.
 
 Zie [toegang tot cluster bronnen beheren met op rollen gebaseerd toegangs beheer en Azure Active Directory-identiteiten in AKS][azure-ad-rbac]voor meer informatie over het gebruik van Azure ad-groepen voor het beheren van de toegang tot Kubernetes-resources met behulp van Kubernetes RBAC.
 
 ## <a name="use-azure-rbac"></a>Azure RBAC gebruiken 
-**Richt lijnen voor best practices** : gebruik Azure RBAC om de mini maal vereiste machtigingen te definiëren die gebruikers of groepen nodig hebben om resources te AKS in een of meer abonnementen.
+> **Richtlijnen voor best practices** 
+> 
+> Gebruik Azure RBAC om de mini maal vereiste gebruikers-en groeps machtigingen te definiëren voor AKS-resources in een of meer abonnementen.
 
 Er zijn twee toegangs niveaus nodig om een AKS-cluster volledig te kunnen gebruiken: 
-1. Open de AKS-resource in uw Azure-abonnement. Met dit toegangs niveau kunt u bepalen of u uw cluster wilt schalen of upgraden met behulp van de AKS-Api's en hoe u uw kubeconfig ophaalt.
-Zie toegang tot het [cluster configuratie bestand beperken](control-kubeconfig-access.md)voor meer informatie over het beheren van de toegang tot de AKS-resource en de kubeconfig.
+1. Open de AKS-resource in uw Azure-abonnement. 
 
-2. Toegang tot de Kubernetes-API. Dit toegangs niveau wordt bepaald door [KUBERNETES RBAC](#use-kubernetes-role-based-access-control-kubernetes-rbac) (traditioneel) of door Azure RBAC te integreren met AKS voor Kubernetes-autorisatie.
-Zie [Azure RBAC gebruiken voor Kubernetes-autorisatie](manage-azure-rbac.md)voor meer informatie over het nauw keurig toekennen van machtigingen aan de KUBERNETES-API met behulp van Azure RBAC.
+    Met dit toegangs niveau kunt u:
+      * Besturings elementen schalen of een cluster bijwerken met behulp van de AKS-Api's
+      * Haal uw `kubeconfig` .
+
+    `kubeconfig`Zie toegang tot het [cluster configuratie bestand beperken](control-kubeconfig-access.md)voor meer informatie over het beheren van de toegang tot de AKS-resource en de.
+
+2. Toegang tot de Kubernetes-API. 
+    
+    Dit toegangs niveau wordt bepaald door:
+    * [KUBERNETES RBAC](#use-kubernetes-role-based-access-control-kubernetes-rbac) (traditioneel) of 
+    * Door Azure RBAC te integreren met AKS voor kubernetes-autorisatie.
+
+    Zie [Azure RBAC gebruiken voor Kubernetes-autorisatie](manage-azure-rbac.md)voor meer informatie over het nauw keurig toekennen van machtigingen aan de KUBERNETES-API met behulp van Azure RBAC.
 
 ## <a name="use-pod-managed-identities"></a>Door Pod beheerde identiteiten gebruiken
 
-**Richt lijnen voor best practices** : gebruik geen vaste referenties binnen de peulen of container installatie kopieën, omdat deze risico lopen op bloot stelling of misbruik. Gebruik in plaats daarvan pod-identiteiten om automatisch toegang aan te vragen met behulp van een centrale Azure AD-identiteits oplossing. Pod-identiteiten zijn alleen bedoeld voor gebruik met Linux-en container installatie kopieën.
+> **Richtlijnen voor best practices** 
+> 
+> Gebruik geen vaste referenties binnen de peulen of container installatie kopieën, omdat deze risico lopen op bloot stelling of misbruik. Gebruik in plaats daarvan *pod-identiteiten* om automatisch toegang aan te vragen met behulp van een centrale Azure AD-identiteits oplossing. 
 
 > [!NOTE]
-> Ondersteuning voor pod-beheerde identiteiten voor Windows-containers is binnenkort beschikbaar.
+> Pod-identiteiten zijn alleen bedoeld voor gebruik met Linux-en container installatie kopieën. Ondersteuning voor pod-beheerde identiteiten voor Windows-containers is binnenkort beschikbaar.
 
-Als er voor het eerst toegang nodig is tot andere Azure-Services, zoals Cosmos DB, Key Vault of Blob Storage, moet de pod toegangs referenties hebben. Deze toegangs referenties kunnen worden gedefinieerd met de container installatie kopie of worden geïnjecteerd als een Kubernetes-geheim, maar moeten hand matig worden gemaakt en toegewezen. De referenties worden vaak opnieuw gebruikt en worden niet regel matig geroteerd.
+Voor toegang tot andere Azure-Services, zoals Cosmos DB, Key Vault of Blob Storage, heeft de pod toegangs referenties nodig. U kunt toegangs referenties definiëren met de container installatie kopie of ze als een Kubernetes-geheim injecteren. In beide gevallen moet u deze hand matig maken en toewijzen. Deze referenties worden meestal vaker gebruikt en worden niet regel matig geroteerd.
 
-Door Pod beheerde identiteiten voor Azure-resources kunt u automatisch toegang vragen tot services via Azure AD. Pod-beheerde identiteiten zijn nu beschikbaar als preview-versie voor de Azure Kubernetes-service. Raadpleeg de documentatie voor het [gebruik van Azure Active Directory pod-beheerde identiteiten in de Azure Kubernetes-service (preview)]( https://docs.microsoft.com/azure/aks/use-azure-ad-pod-identity) om aan de slag te gaan. Met Pod-beheerde identiteiten kunt u niet hand matig referenties voor het eerst definiëren. in plaats daarvan wordt een toegangs token in realtime aangevraagd en kan het worden gebruikt voor toegang tot de toegewezen services. In AKS zijn er twee onderdelen waarmee de bewerkingen kunnen worden uitgevoerd voor het gebruik van de beheerde identiteiten:
+Met Pod-beheerde identiteiten voor Azure-resources vraagt u automatisch toegang tot services via Azure AD. Pod-Managed Identities is nu beschikbaar als preview-versie voor AKS. Raadpleeg de [Azure Active Directory door Pod beheerde identiteiten in de Azure Kubernetes-service (preview) [( https://docs.microsoft.com/azure/aks/use-azure-ad-pod-identity) documentatie om aan de slag te gaan. 
+
+In plaats van het hand matig opgeven van referenties voor een pod-account, wordt door beheerde identiteiten een toegangs token in realtime aangevraagd, zodat het alleen toegang heeft tot de toegewezen services. In AKS zijn er twee onderdelen waarmee de bewerkingen kunnen worden uitgevoerd voor het gebruik van de beheerde identiteiten:
 
 * **De node management Identity (NMI)-server** is een pod die als daemonset wordt uitgevoerd op elk knoop punt in het AKS-cluster. De NMI-server luistert naar pod-aanvragen voor Azure-Services.
 * **De Azure-resource provider** voert een query uit op de Kubernetes API-server en controleert op een Azure Identity-toewijzing die overeenkomt met een pod.
 
-Wanneer een Peul toegang tot een Azure-service vraagt, worden de netwerk regels het verkeer omgeleid naar de NMI-server (node management Identity). De NMI-server identificeert de peulen die toegang aanvragen tot Azure-Services op basis van hun externe adres en query's uitvoeren op de Azure-resource provider. De Azure resource-provider controleert op Azure Identity-toewijzingen in het AKS-cluster en de NMI-server vraagt vervolgens een toegangs token van Azure Active Directory (AD) op op basis van de identiteits toewijzing van pod. Azure AD biedt toegang tot de NMI-server, die wordt geretourneerd aan de pod. Dit toegangs token kan door de pod worden gebruikt om toegang tot services in azure te vragen.
+Wanneer een Peul toegang tot een Azure-service vraagt, wordt het verkeer door netwerk regels omgeleid naar de NMI-server. 
+1. De NMI-server:
+    * Identificeert de unieke aanvragen voor toegang tot Azure-Services op basis van hun externe adres.
+    * Query's uitvoeren op de Azure-resource provider. 
+1. De Azure-resource provider controleert op Azure Identity-toewijzingen in het AKS-cluster.
+1. De NMI-server vraagt een toegangs token van Azure AD op op basis van de identiteits toewijzing van de pod. 
+1. Azure AD biedt toegang tot de NMI-server, die wordt geretourneerd aan de pod. 
+    * Dit toegangs token kan door de pod worden gebruikt om toegang tot services in azure te vragen.
 
 In het volgende voor beeld maakt een ontwikkelaar een pod die gebruikmaakt van een beheerde identiteit om toegang aan te vragen bij Azure SQL Database:
 
 ![Met Pod-identiteiten kan een pod automatisch toegang tot andere services aanvragen](media/operator-best-practices-identity/pod-identities.png)
 
-1. De cluster operator maakt eerst een service account dat kan worden gebruikt voor het toewijzen van identiteiten wanneer per peul toegang tot Services wordt aangevraagd.
+1. De cluster operator maakt een service account om identiteiten toe te wijzen wanneer per peul toegang tot Services wordt aangevraagd.
 1. De NMI-server wordt geïmplementeerd voor het door sturen van pod-aanvragen, samen met de Azure-resource provider, voor toegangs tokens voor Azure AD.
 1. Een ontwikkelaar implementeert een pod met een beheerde identiteit die een toegangs token aanvraagt via de NMI-server.
 1. Het token wordt geretourneerd naar de Pod en wordt gebruikt voor toegang tot Azure SQL Database

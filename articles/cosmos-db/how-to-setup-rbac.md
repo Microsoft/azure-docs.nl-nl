@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 03/24/2021
 ms.author: thweiss
 ms.openlocfilehash: f8028d69e376e2b71549be52267e2f6cbdb1f8ce
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105568644"
 ---
 # <a name="configure-role-based-access-control-with-azure-active-directory-for-your-azure-cosmos-db-account-preview"></a>Op rollen gebaseerd toegangs beheer configureren met Azure Active Directory voor uw Azure Cosmos DB-account (preview-versie)

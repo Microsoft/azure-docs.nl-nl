@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 10/13/2020
 ms.author: jawilley
 ms.custom: devx-track-dotnet, contperf-fy21q2
-ms.openlocfilehash: 06fb087744ff4ecd96bee7a26e4a796e87866322
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 8eafd36c82b09575514afade6b848a7f9186895f
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102433656"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105960041"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-net"></a>Tips voor betere prestaties van Azure Cosmos DB en .NET
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -69,7 +69,7 @@ Als u op hoge doorvoer niveaus test of op tarieven die groter zijn dan 50.000 aa
 
 **Verbindings beleid: modus directe verbinding gebruiken**
 
-De standaard verbindings modus voor .NET v3 SDK is direct. U configureert de verbindings modus wanneer u het `CosmosClient` exemplaar maakt in `CosmosClientOptions` .  Zie het artikel [connectiviteits modi](sql-sdk-connection-modes.md) voor meer informatie over de verschillende connectiviteits opties.
+De standaard verbindings modus van .NET v3 SDK is direct met het TCP-protocol. U configureert de verbindings modus wanneer u het `CosmosClient` exemplaar maakt in `CosmosClientOptions` .  Zie het artikel [connectiviteits modi](sql-sdk-connection-modes.md) voor meer informatie over de verschillende connectiviteits opties.
 
 ```csharp
 string connectionString = "<your-account-connection-string>";

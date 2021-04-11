@@ -295,6 +295,8 @@
           href: enable-host-encryption.md
     - name: Bewaking en registratie
       items:
+        - name: Metrische gegevens van clusters weergeven
+          href: view-metrics.md
         - name: Azure Monitor voor containers
           href: ../azure-monitor/containers/container-insights-overview.md
           maintainContext: true
@@ -349,6 +351,8 @@
       items:
         - name: Over service-meshes
           href: servicemesh-about.md
+        - name: Open Service Mesh AKS-invoeg toepassing (preview)
+          href: servicemesh-osm-about.md
         - name: Istio gebruiken
           items:
             - name: Over Istio

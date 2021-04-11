@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: include
 ms.date: 11/05/2020
 ms.author: v-jawe
-ms.openlocfilehash: 590ad577f3648ea9214ec4dcb6b6cab59dd5a3f1
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 8f968572a357bb3c98d9c3133a7ec0a0a94dbf93
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105104286"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105958207"
 ---
 ## <a name="quickstart-face-client-library-for-javascript"></a>Snelstartgids: Face client-bibliotheek voor Java script
 
@@ -24,7 +24,7 @@ Gebruik de face-client bibliotheek voor Java script voor het volgende:
 
 * [Gezichten in een afbeelding detecteren](#detect-faces-in-an-image)
 * [Vergelijkbare gezichten zoeken](#find-similar-faces)
-* [Een groep personen (PersonGroup) maken](#create-a-person-group)
+* [Een PersonGroup maken](#create-a-persongroup)
 * [Een gezicht identificeren](#identify-a-face)
 
 [Referentiedocumentatie](/javascript/api/@azure/cognitiveservices-face/) | [Bibliotheekbroncode](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-face) | [Pakket (npm)](https://www.npmjs.com/package/@azure/cognitiveservices-face) | [Voorbeelden](/samples/browse/?products=azure&term=face&languages=javascript)
@@ -106,7 +106,7 @@ De onderstaande codefragmenten laten zien hoe u de volgende taken kunt uitvoeren
 * [De client verifiëren](#authenticate-the-client)
 * [Gezichten in een afbeelding detecteren](#detect-faces-in-an-image)
 * [Vergelijkbare gezichten zoeken](#find-similar-faces)
-* [Een groep personen (PersonGroup) maken](#create-a-person-group)
+* [Een PersonGroup maken](#create-a-persongroup)
 * [Een gezicht identificeren](#identify-a-face)
 
 > [!TIP]
@@ -163,27 +163,27 @@ De volgende methode detecteert gezichten in een set doelafbeeldingen en in één
 
 Bij de bewerking [identificeren](/javascript/api/@azure/cognitiveservices-face/face#identify_string____FaceIdentifyOptionalParams__ServiceCallback_IdentifyResult____) wordt een afbeelding van een persoon (of meerdere personen) gebruikt en wordt gezocht naar de identiteit van elk gezicht in de installatie kopie (gezichts herkenning zoeken). Elk gedetecteerd gezicht wordt vergeleken met een [PersonGroup](/javascript/api/@azure/cognitiveservices-face/persongroup), een database van verschillende [Person](/javascript/api/@azure/cognitiveservices-face/person)-objecten waarvan de gezichtskenmerken bekend zijn. Als u de identificerende bewerking wilt uitvoeren, moet u eerst een [PersonGroup](/javascript/api/@azure/cognitiveservices-face/persongroup)maken en trainen.
 
-### <a name="add-faces-to-person-group"></a>Gezichten toevoegen aan persoons groep
+### <a name="add-faces-to-persongroup"></a>Gezichten toevoegen aan PersonGroup
 
 Maak de volgende functie om gezichten toe te voegen aan de [PersonGroup](/javascript/api/@azure/cognitiveservices-face/persongroup).
 
 :::code language="js" source="~/cognitive-services-quickstart-code/javascript/Face/sdk_quickstart.js" id="add_faces":::
 
-### <a name="wait-for-training-of-person-group"></a>Wachten op training van persoons groep
+### <a name="wait-for-training-of-persongroup"></a>Wachten op training van PersonGroup
 
-Maak de volgende Help-functie om te wachten op de persoons groep om de training te volt ooien.
+Maak de volgende Help-functie om te wachten tot de **PersonGroup** -training is voltooid.
 
 :::code language="js" source="~/cognitive-services-quickstart-code/javascript/Face/sdk_quickstart.js" id="wait_for_training":::
 
-### <a name="create-a-person-group"></a>Een groep personen (PersonGroup) maken
+### <a name="create-a-persongroup"></a>Een PersonGroup maken
 
 De volgende code:
-- Hiermee maakt u een [PersonGroup](/javascript/api/@azure/cognitiveservices-face/persongroup)
-- Voegt gezichten toe aan de persoons groep door aan `AddFacesToPersonGroup` te roepen, die u eerder hebt gedefinieerd.
-- Traint de persoons groep.
-- Hiermee worden de gezichten in de groep persoon geïdentificeerd.
+- Hiermee maakt u een [PersonGroup](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-face/persongroup)
+- Voegt gezichten toe aan de **PersonGroup** door `AddFacesToPersonGroup` aan te roepen, die u eerder hebt gedefinieerd.
+- Traint de **PersonGroup**.
+- Hiermee worden de gezichten in de **PersonGroup** aangeduid.
 
-Deze **Person**-groep en de bijbehorende **Person**-objecten zijn nu klaar om te worden gebruikt in de bewerkingen Verifiëren, Identificeren of Groeperen.
+Deze **PersonGroup** en de eraan **gekoppelde objecten zijn nu** klaar voor gebruik in de bewerkingen controleren, identificeren of groeperen.
 
 :::code language="js" source="~/cognitive-services-quickstart-code/javascript/Face/sdk_quickstart.js" id="identify":::
 

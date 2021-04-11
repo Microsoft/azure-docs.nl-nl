@@ -6,12 +6,12 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/30/2020
-ms.openlocfilehash: 77190b85da08d09cf05a02dcc5787f0c24229948
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 9d4aac17ca823f4eaa0f52ab260b1daca3f52f94
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100611691"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106109744"
 ---
 # <a name="programmatically-manage-workbooks"></a>Werkmappen programmatisch beheren
 
@@ -99,19 +99,19 @@ Er zijn twee soorten werkmap bronnen die programmatisch kunnen worden beheerd:
 
 ### <a name="galleries"></a>Galerieën
 
-| Galerie                                        | Resourcetype                                      | Werkmap type |
-| :--------------------------------------------- |:---------------------------------------------------|:--------------|
-| Werkmappen in Azure Monitor                     | `Azure Monitor`                                    | `workbook`    |
-| VM Insights in Azure Monitor                   | `Azure Monitor`                                    | `vm-insights` |
-| Werkmappen in log Analytics-werk ruimte           | `microsoft.operationalinsights/workspaces`         | `workbook`    |
-| Werkmappen in Application Insights              | `microsoft.insights/component`                     | `workbook`    |
-| Probleemoplossings richtlijnen in Application Insights | `microsoft.insights/component`                     | `tsg`         |
-| Gebruik in Application Insights                  | `microsoft.insights/component`                     | `usage`       |
-| Werkmappen in Kubernetes-service                | `Microsoft.ContainerService/managedClusters`       | `workbook`    |
-| Werkmappen in resource groepen                   | `microsoft.resources/subscriptions/resourcegroups` | `workbook`    |
-| Werkmappen in Azure Active Directory            | `microsoft.aadiam/tenant`                          | `workbook`    |
-| VM Insights in virtuele machines                | `microsoft.compute/virtualmachines`                | `insights`    |
-| VM-inzichten in virtuele-machine schaal sets      | `microsoft.compute/virtualmachinescalesets`        | `insights`    |
+| Galerie                                        | Resourcetype                                       | Werkmap type |
+|:-----------------------------------------------|:----------------------------------------------------|:--------------|
+| Werkmappen in Azure Monitor                     | `Azure Monitor`                                     | `workbook`    |
+| VM Insights in Azure Monitor                   | `Azure Monitor`                                     | `vm-insights` |
+| Werkmappen in log Analytics-werk ruimte           | `microsoft.operationalinsights/workspaces`          | `workbook`    |
+| Werkmappen in Application Insights              | `microsoft.insights/components`                     | `workbook`    |
+| Probleemoplossings richtlijnen in Application Insights | `microsoft.insights/components`                     | `tsg`         |
+| Gebruik in Application Insights                  | `microsoft.insights/components`                     | `usage`       |
+| Werkmappen in Kubernetes-service                | `Microsoft.ContainerService/managedClusters`        | `workbook`    |
+| Werkmappen in resource groepen                   | `microsoft.resources/subscriptions/resourcegroups`  | `workbook`    |
+| Werkmappen in Azure Active Directory            | `microsoft.aadiam/tenant`                           | `workbook`    |
+| VM Insights in virtuele machines                | `microsoft.compute/virtualmachines`                 | `insights`    |
+| VM-inzichten in virtuele-machine schaal sets      | `microsoft.compute/virtualmachinescalesets`         | `insights`    |
 
 ## <a name="azure-resource-manager-template-for-deploying-a-workbook-instance"></a>Azure Resource Manager sjabloon voor het implementeren van een werkmap exemplaar
 

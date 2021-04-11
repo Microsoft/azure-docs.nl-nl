@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 03/15/2021
 ms.author: allensu
 ms.custom: fasttrack-edit, references_regions
-ms.openlocfilehash: 6a85bfe7b3390b32fc220000b0c710b5a4e35067
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 19a4c6697c161a78bfb1425009bd0b142dece876
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103496487"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106057232"
 ---
 # <a name="what-is-azure-private-link"></a>Wat is Azure Private Link? 
 Met Azure Private Link hebt u via een [privé-eindpunt](private-endpoint-overview.md) in uw virtuele netwerk toegang tot Azure PaaS-services (bijvoorbeeld Azure Storage en SQL Database) en in Azure gehoste services van klanten of partners.
@@ -36,6 +36,9 @@ Azure Private Link biedt de volgende voordelen:
 - **Globaal bereik**: Maak privé verbinding met services die in andere regio's worden uitgevoerd. Het virtuele netwerk van de consument kan zich in regio A bevinden en kan verbinding maken met services achter een Private Link in regio B.  
  
 - **Breid uit naar uw eigen services**: Schakel dezelfde ervaring en functionaliteit in om uw service privé te maken voor consumenten in Azure. Als u uw service achter een standaard Azure Load Balancer plaatst, kunt u deze inschakelen voor Private Link. De gebruiker kan vervolgens rechtstreeks verbinding maken met uw service met behulp van een privé-eindpunt in zijn eigen virtuele netwerk. U kunt de verbindingsaanvragen beheren met een goedkeuringsaanroepstroom. Azure Private Link werkt voor consumenten en services die deel uitmaken van verschillende Azure Active Directory-tenants. 
+
+> [!NOTE]
+> Persoonlijke Azure-koppeling, samen met Azure-Virtual Network, omvatten over [Azure-beschikbaarheidszones](../availability-zones/az-overview.md) en zijn daarom een robuuste zone. Als u maximale Beschik baarheid voor de Azure-resource wilt bieden met behulp van een persoonlijk eind punt, zorgt u ervoor dat de bron zone is.
 
 ## <a name="availability"></a>Beschikbaarheid 
 

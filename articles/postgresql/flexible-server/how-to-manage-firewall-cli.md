@@ -1,19 +1,19 @@
 ---
 title: Firewall regels beheren-Azure CLI-Azure Database for PostgreSQL-flexibele server
 description: Maak en beheer firewall regels voor Azure Database for PostgreSQL-flexibele server met behulp van de Azure CLI-opdracht regel.
-author: rothja
-ms.author: jroth
+author: sunilagarwal
+ms.author: sunila
 ms.service: postgresql
 ms.devlang: azurecli
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 843ad39d1c09d7c5a2fb7e9b536e300edf58d8e5
-ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
+ms.openlocfilehash: 3aafad8bcc42a9099dbd37b4e8349e4c093a0425
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106551118"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107226274"
 ---
 # <a name="create-and-manage-azure-database-for-postgresql---flexible-server-firewall-rules-using-the-azure-cli"></a>Azure Database for PostgreSQL-flexibele server firewall regels maken en beheren met de Azure CLI
 

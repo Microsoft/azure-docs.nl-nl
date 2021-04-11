@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: quickstart
-ms.date: 01/27/2021
+ms.date: 04/07/2021
 ms.author: alkohli
-ms.openlocfilehash: b6389152116a47bedbc9c2dc44231f3e1732fdc6
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: 43477f11effaafb0bcd6158be6843c79d19092ac
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106055107"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107210807"
 ---
 # <a name="quickstart-get-started-with-azure-stack-edge-pro-with-gpu"></a>Quickstart: Aan de slag met Azure Stack Edge Pro met GPU 
 
@@ -36,7 +36,7 @@ Voordat u implementeert, moet u ervoor zorgen dat aan de volgende vereisten is v
 
 ## <a name="deployment-steps"></a>Implementatiestappen
 
-1. **Installeren**: Sluit POORT 1 aan op een clientcomputer via een crossover-kabel of USB Ethernet-adapter. Verbind minstens één andere poort van het apparaat voor gegevens, bij voorkeur 25 GbE, (van POORT 3 naar POORT 6), met internet via minstens 1 GbE-schakelaar en koperen SFP+-kabels. Sluit de meegeleverde voedingskabels aan op de voedingseenheden en op aparte stopcontacten. Druk op de aan/uit-knop op het voorpaneel om het apparaat in te schakelen.  
+1. **Installeren**: Sluit POORT 1 aan op een clientcomputer via een crossover-kabel of USB Ethernet-adapter. Verbind ten minste één andere poort van het apparaat voor gegevens, bij voor keur 25 GbE, (van poort 3 naar poort 6) op Internet via SFP + koper kabels of gebruik poort 2 met RJ45-patch kabel. Sluit de meegeleverde voedingskabels aan op de voedingseenheden en op aparte stopcontacten. Druk op de aan/uit-knop op het voorpaneel om het apparaat in te schakelen.  
 
     Zie [Cavium FastlinQ 41000 Series-interoperabiliteitsmatrix](https://www.marvell.com/documents/xalflardzafh32cfvi0z/) en [Compatibele producten met de Mellanox dual port 25G ConnectX-4-kanaalnetwerkadapter](https://docs.mellanox.com/display/ConnectX4LxFirmwarev14271016/Firmware+Compatible+Products) voor compatibele netwerkkabels en -schakelaars.
 

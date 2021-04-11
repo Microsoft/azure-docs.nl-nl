@@ -10,18 +10,29 @@ author: cartacioS
 ms.author: sacartac
 ms.date: 10/27/2020
 ms.custom: automl
-ms.openlocfilehash: 44bcc27f877f6b2a547c51ecd3848214719cb085
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: cbc147cb0aabc0540e3a91c99243aa88a8cca146
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105643659"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107210789"
 ---
 # <a name="what-is-automated-machine-learning-automl"></a>Wat is geautomatiseerde machine learning (AutoML)?
 
 Automatische machine learning, ook wel geautomatiseerd ML of AutoML genoemd, is het proces van het automatiseren van de tijdrovende, terugkerende taken van het ontwikkelen van machine learning modellen. Zo kunnen gegevens wetenschappers, analisten en ontwikkel aars ML-modellen bouwen met een hoge schaal, efficiëntie en productiviteit, terwijl de kwaliteit van het model goed wordt. Automatische ML in Azure Machine Learning is gebaseerd op een door braak van onze [micro soft research-afdeling](https://www.microsoft.com/research/project/automl/).
 
 De traditionele ontwikkeling van machine learning modellen is het bronnen-intensief, waardoor de kennis en tijd van het domein belang rijk zijn voor het produceren en vergelijken van tien tallen modellen. Met automatische machine learning versnelt u de tijd die nodig is om productie-Ready ML-modellen te verkrijgen met een geweldig gemak en efficiëntie.
+
+## <a name="automl-in-azure-machine-learning"></a>AutoML in Azure Machine Learning
+
+Azure Machine Learning biedt twee ervaring voor het werken met automatische ML:
+
+* Voor code ervaring hebben klanten [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/intro).  Aan de slag met [zelf studie: automatische machine learning gebruiken om de taxi tarieven te voors pellen](tutorial-auto-train-models.md).
+
+* Voor klanten met een beperkte of geen code ervaring Azure Machine Learning Studio op [https://ml.azure.com](https://ml.azure.com/) .  Aan de slag met deze zelf studies:
+    * [Zelf studie: een classificatie model maken met geautomatiseerd ml in azure machine learning](tutorial-first-experiment-automated-ml.md).
+    *  [Zelfstudie: Vraag voorspellen met automatische machine learning](tutorial-automated-ml-forecast.md)
+
 
 ## <a name="when-to-use-automl-classify-regression--forecast"></a>Wanneer gebruikt u AutoML: classificeren, regressie, & prognose
 
@@ -199,14 +210,6 @@ Het bouwen van een model __voor elk exemplaar of individu__ in de volgende scena
 * De verkoop voor elke afzonderlijke winkel voors pellen
 * Voor speld onderhoud voor honderden olie putjes
 * Het aanpassen van een ervaring voor individuele gebruikers.
-
-## <a name="automl-in-azure-machine-learning"></a>AutoML in Azure Machine Learning
-
-Azure Machine Learning biedt twee ervaring voor het werken met automatische ML:
-
-* Voor code ervaring klanten [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/intro) 
-
-* Voor klanten met een beperkte of geen code ervaring Azure Machine Learning Studio op [https://ml.azure.com](https://ml.azure.com/)  
 
 <a name="parity"></a>
 

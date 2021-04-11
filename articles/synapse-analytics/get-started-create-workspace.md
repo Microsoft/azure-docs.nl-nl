@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
 ms.date: 03/17/2021
-ms.openlocfilehash: fb30913d71df46f4c0afedd475d40205c1429258
-ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
+ms.openlocfilehash: a4fa902268d9a19cd0003a2fdaa4c5e58989a4ff
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106122200"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106218937"
 ---
 # <a name="creating-a-synapse-workspace"></a>Een Synapse-werkruimte maken
 
@@ -37,16 +37,16 @@ Vul de volgende velden in:
 
 1. **Abonnement** : Kies een abonnement.
 1. **Resource groep** : gebruik een resource groep.
-1. **Resource groep** : laat dit veld leeg.
-
+1. **Beheerde resource groep** : laat dit veld leeg.
 
 ## <a name="basics-tab--workspace-details"></a>Tabblad basis informatie > werkruimte Details
 Vul de volgende velden in:
 
 1. **Werkruimte naam** : Kies een wereld wijd unieke naam. In deze zelfstudie gebruiken we **myworkspace**.
 1. **Regio** : Kies een wille keurige regio.
-1. **Data Lake Storage gen 2 selecteren**
-1. Klik op de knop voor **van abonnement**.
+
+Onder **Select data Lake Storage gen 2**:
+
 1. Klik op **account naam** op **Nieuw** en geef de naam van het nieuwe opslag account **contosolake** of soortgelijk op als deze naam uniek moet zijn.
 1. Op **naam van bestands systeem**, klikt u op **nieuwe maken** en de naam **gebruikers** benoemen. Hiermee maakt u een opslag container die **gebruikers** wordt genoemd. In de werkruimte wordt dit opslagaccount gebruikt als het primaire opslagaccount voor logboeken voor Spark-tabellen en Spark-toepassingen.
 1. Schakel het selectie vakje ' de rol van de BLOB voor het koppelen van gegevens in het Data Lake Storage Gen2-account toewijzen ' in. 

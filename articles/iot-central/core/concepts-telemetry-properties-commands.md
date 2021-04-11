@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 ms.custom: device-developer
-ms.openlocfilehash: f027b2d41f63b5aa7ea3df87e06224abd629799b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 995f4670b17d55fe04d5c30a834ea4be576a8348
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100535311"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106489975"
 ---
 # <a name="telemetry-property-and-command-payloads"></a>Payloads van telemetrie, eigenschappen en opdrachten
 
@@ -51,6 +51,10 @@ Met IoT Central kunt u de onbewerkte gegevens weer geven die een apparaat naar e
     In deze weergave kunt u de kolommen selecteren die u wilt weergeven en een tijdsbereik instellen. In de kolom **Niet-gemodelleerde gegevens** ziet u gegevens van het apparaat die niet overeenkomen met een van de eigenschaps- of telemetriedefinities in de apparaatsjabloon.
 
 ## <a name="telemetry"></a>Telemetrie
+
+### <a name="telemetry-in-components"></a>Telemetrie in onderdelen
+
+Als de telemetrie is gedefinieerd in een onderdeel, voegt u een aangepaste bericht eigenschap toe `$.sub` met de naam van het onderdeel zoals gedefinieerd in het model apparaat. Zie [zelf studie: een client toepassing maken en verbinden met uw Azure IOT Central-toepassing](tutorial-connect-device.md)voor meer informatie.
 
 ### <a name="primitive-types"></a>Primitieve typen
 
@@ -437,6 +441,21 @@ Een apparaatclient moet de status als JSON verzenden die eruitziet als in het vo
 > [!NOTE]
 > De payload-indelingen voor eigenschappen zijn van toepassing op toepassingen die zijn gemaakt op of na 07/14/2020.
 
+### <a name="properties-in-components"></a>Eigenschappen in onderdelen
+
+Als de eigenschap is gedefinieerd in een onderdeel, moet u de eigenschap in de naam van het onderdeel inpakken. In het volgende voor beeld wordt de `maxTempSinceLastReboot` in het `thermostat2` onderdeel ingesteld. De markering `__t` geeft aan dat dit een onderdeel is:
+
+```json
+{
+  "thermostat2" : {  
+    "__t" : "c",  
+    "maxTempSinceLastReboot" : 38.7
+    } 
+}
+```
+
+Zie [zelf studie: een client toepassing maken en verbinden met uw Azure IOT Central-toepassing](tutorial-connect-device.md)voor meer informatie.
+
 ### <a name="primitive-types"></a>Primitieve typen
 
 In deze sectie vindt u voor beelden van primitieve eigenschaps typen die een apparaat naar een IoT Central-toepassing verzendt.
@@ -715,15 +734,31 @@ Een apparaatclient moet een JSON-nettolading verzenden die lijkt op het volgende
 }
 ```
 
-### <a name="writeable-property-types"></a>Beschrijf bare eigenschaps typen
+### <a name="writable-property-types"></a>Beschrijf bare eigenschaps typen
 
 In deze sectie vindt u voor beelden van Beschrijf bare eigenschaps typen die een apparaat ontvangt van een IoT Central-toepassing.
 
-IoT Central verwacht een reactie van het apparaat naar updates van schrijf bare eigenschappen. Het antwoord bericht moet de `ac` velden en bevatten `av` . Het veld `ad` is optioneel. Raadpleeg de volgende fragmenten voor voor beelden.
+Als de eigenschap schrijfbaar is gedefinieerd in een onderdeel, bevat het gewenste eigenschaps bericht de naam van het onderdeel. In het volgende voor beeld ziet u het bericht waarin het apparaat wordt gevraagd om het `targetTemperature` in het onderdeel bij te werken `thermostat2` . De markering `__t` geeft aan dat dit een onderdeel is:
+
+```json
+{
+  "thermostat2": {
+    "targetTemperature": {
+      "value": 57
+    },
+    "__t": "c"
+  },
+  "$version": 3
+}
+```
+
+Zie [zelf studie: een client toepassing maken en verbinden met uw Azure IOT Central-toepassing](tutorial-connect-device.md)voor meer informatie.
+
+IoT Central verwacht een reactie van het apparaat naar Beschrijf bare eigenschaps updates. Het antwoord bericht moet de `ac` velden en bevatten `av` . Het veld `ad` is optioneel. Raadpleeg de volgende fragmenten voor voor beelden.
 
 `ac` is een numeriek veld dat gebruikmaakt van de waarden in de volgende tabel:
 
-| Waarde | Label | Description |
+| Waarde | Label | Beschrijving |
 | ----- | ----- | ----------- |
 | `'ac': 200` | Voltooid | De bewerking voor het wijzigen van de eigenschap is voltooid. |
 | `'ac': 202`  of `'ac': 201` | In behandeling | De bewerking voor het wijzigen van de eigenschap is in behandeling of wordt uitgevoerd |
@@ -734,7 +769,7 @@ IoT Central verwacht een reactie van het apparaat naar updates van schrijf bare 
 
 `ad` is een beschrijving van een optie teken reeks.
 
-In het volgende code fragment van een apparaatprofiel wordt de definitie van een Beschrijf bare `string` eigenschaps type weer gegeven:
+In het volgende code fragment van een apparaatprofiel wordt de definitie van een beschrijfbaar `string` eigenschaps type weer gegeven:
 
 ```json
 {
@@ -769,7 +804,7 @@ Het apparaat moet de volgende JSON-Payload verzenden naar IoT Central nadat de u
 }
 ```
 
-In het volgende code fragment van een apparaatprofiel wordt de definitie van een Beschrijf bare `Enum` eigenschaps type weer gegeven:
+In het volgende code fragment van een apparaatprofiel wordt de definitie van een beschrijfbaar `Enum` eigenschaps type weer gegeven:
 
 ```json
 {
@@ -834,6 +869,8 @@ Het apparaat moet de volgende JSON-Payload verzenden naar IoT Central nadat de u
 ```
 
 ## <a name="commands"></a>Opdracht
+
+Als de opdracht is gedefinieerd in een onderdeel, wordt de naam van de opdracht die het apparaat ontvangt, de naam van het onderdeel. Als de opdracht bijvoorbeeld wordt aangeroepen `getMaxMinReport` en het onderdeel wordt aangeroepen `thermostat2` , ontvangt het apparaat een aanvraag voor het uitvoeren van een opdracht met de naam `thermostat2*getMaxMinReport` .
 
 Het volgende code fragment van een model van een apparaat toont de definitie van een opdracht die geen para meters heeft en die niet verwacht dat het apparaat iets retourneert:
 

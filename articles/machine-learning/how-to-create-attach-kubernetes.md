@@ -10,13 +10,13 @@ ms.custom: how-to, devx-track-azurecli
 ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
-ms.date: 03/11/2021
-ms.openlocfilehash: 28a647949fdb3ff4d8527268919dbd7e49b27ea4
-ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
+ms.date: 04/08/2021
+ms.openlocfilehash: 075b02e3e5f2e409298bf31eb0b6720e64af68a0
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106276651"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107210825"
 ---
 # <a name="create-and-attach-an-azure-kubernetes-service-cluster"></a>Een Azure Kubernetes service-cluster maken en koppelen
 
@@ -67,6 +67,10 @@ Azure Machine Learning kunt getrainde machine learning modellen implementeren in
     - [Automatische cluster schaal instellen in AKS](../aks/cluster-autoscaler.md)
 
 - __Werk het cluster niet rechtstreeks bij met behulp van een yaml-configuratie__. Hoewel Azure Kubernetes Services updates ondersteunt via YAML-configuratie, worden de wijzigingen door Azure Machine Learning implementaties genegeerd. De enige twee YAML-velden die niet worden overschreven, zijn __aanvraag limieten__ en __CPU en geheugen__.
+
+- Het maken van een AKS-cluster met behulp van de Azure Machine Learning Studio UI, SDK of CLI-extensie is __niet__ idempotent. Als u de bron opnieuw probeert te maken, resulteert dit in een fout dat er al een cluster met dezelfde naam bestaat.
+    
+    - Het gebruik van een Azure Resource Manager sjabloon en de resource [micro soft. MachineLearningServices/Workspaces/computes](/azure/templates/microsoft.machinelearningservices/2019-11-01/workspaces/computes) voor het maken van een AKS-cluster is ook __niet__ idempotent. Als u de sjabloon opnieuw probeert te gebruiken om een bestaande resource bij te werken, wordt dezelfde fout weer gegeven.
 
 ## <a name="azure-kubernetes-service-version"></a>Azure Kubernetes Service-versie
 

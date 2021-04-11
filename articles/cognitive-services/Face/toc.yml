@@ -3,38 +3,28 @@
 - name: Overzicht
   expanded: true
   items:
-    - name: Wat is de Face-service?
+    - name: Overzicht van gezichts diensten
       href: Overview.md
-    - name: Nieuwe functies
+    - name: Prijzen
+      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/face-api'
+    - name: Wat is er nieuw?
       href: releasenotes.md
-- name: Snelstartgidsen
-  items:
-    - name: De clientbibliotheek of REST API gebruiken
-      href: Quickstarts/client-libraries.md
-- name: Zelfstudies
-  items:
-    - name: De client-SDK gebruiken
-      items:
-        - name: C#
-          href: Tutorials/FaceAPIinCSharpTutorial.md
-- name: Concepten
-  items:
-    - name: Gezichtsdetectie
-      href: concepts/face-detection.md
-    - name: Gezichtsherkenning
-      href: concepts/face-recognition.md
+- name: Gezichts Snelstartgids
+  href: Quickstarts/client-libraries.md
+- name: Voorbeelden
+  href: /samples/browse/?products=azure&term=face
 - name: Instructiegidsen
   items:
-    - name: Gezichten detecteren
+    - name: Gezichten detecteren en analyseren
       href: Face-API-How-to-Topics/HowtoDetectFacesinImage.md
+    - name: Een versie van het gezichts herkennings model opgeven
+      href: Face-API-How-to-Topics/specify-recognition-model.md
+    - name: Een versie van het gezichts detectie model opgeven
+      href: Face-API-How-to-Topics/specify-detection-model.md
     - name: Gezichten toevoegen aan een groep
       href: Face-API-How-to-Topics/how-to-add-faces.md
     - name: Het kenmerk HeadPose gebruiken
       href: Face-API-How-to-Topics/how-to-use-headpose.md
-    - name: Een model voor gezichtsherkenning opgeven
-      href: Face-API-How-to-Topics/specify-recognition-model.md
-    - name: Een model voor gezichtsdetectie opgeven
-      href: Face-API-How-to-Topics/specify-detection-model.md
     - name: Latentie beperken bij het gebruik van de Face-service
       href: Face-API-How-to-Topics/how-to-mitigate-latency.md
     - name: De functie Grootschalig gebruiken
@@ -43,8 +33,12 @@
       href: Face-API-How-to-Topics/HowtoAnalyzeVideo_Face.md
     - name: Gezichtsgegevens migreren
       href: Face-API-How-to-Topics/how-to-migrate-face-data.md
-    - name: Containers gebruiken
+    - name: De face-container gebruiken
       items:
+        - name: Documentatie voor Cognitive Services-containers
+          href: /azure/cognitive-services/containers/index?context=/azure/cognitive-services/computer-vision/context/context
+        - name: 'Containers: overzicht'
+          href: /azure/cognitive-services/cognitive-services-container-support?context=/azure/cognitive-services/computer-vision/context/context
         - name: Containers installeren en uitvoeren
           href: face-how-to-install-containers.md
         - name: Containers configureren
@@ -52,49 +46,47 @@
         - name: Containerinstanties gebruiken
           maintainContext: true
           href: ../containers/azure-container-instance-recipe.md
-        - name: Documentatie voor Cognitive Services-containers
-          href: ../containers/index.yml
-- name: Uitgebreide scenario's
+- name: Concepten
   items:
-    - name: Face-inschrijving
+    - name: Gezichtsdetectie
+      href: concepts/face-detection.md
+    - name: Gezichtsherkenning
+      href: concepts/face-recognition.md
+- name: Zelfstudies
+  items:
+    - name: Een face detector-app maken
+      href: Tutorials/FaceAPIinCSharpTutorial.md
+    - name: Gebruikers toevoegen aan een gezichts service
       items:
-        - name: Overzicht
+        - name: Aanbevolen procedures voor het toevoegen van gebruikers
           href: enrollment-overview.md
-        - name: Instructiegidsen
-          items:
-            - name: Een inschrijvings-app maken met React
-              href: build-enrollment-app.md
-- name: Naslaginformatie
+        - name: Een reagerende app bouwen om gebruikers toe te voegen
+          href: build-enrollment-app.md
+- name: Referentie
   items:
-    - name: Face-API
+    - name: Gezichts REST API
       href: APIReference.md
-    - name: SDK's
-      items:
-        - name: .NET
-          href: /dotnet/api/overview/azure/cognitiveservices/client/faceapi
-        - name: Python
-          href: /python/api/azure-cognitiveservices-vision-face/
-        - name: Java
-          href: /java/api/overview/azure/cognitiveservices/client/faceapi
-        - name: Node.js
-          href: /javascript/api/@azure/cognitiveservices-face
-        - name: Go
-          href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/face'
+    - name: .NET
+      href: /dotnet/api/overview/azure/cognitiveservices/client/faceapi?view=azure-dotnet
+    - name: Java
+      href: /java/api/overview/azure/cognitiveservices/client/faceapi?view=azure-java-stable
+    - name: Node.js
+      href: /javascript/api/@azure/cognitiveservices-face
+    - name: Python
+      href: /python/api/azure-cognitiveservices-vision-face/?view=azure-python
+    - name: Aan de slag
+      href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/face'
 - name: Resources
   items:
+    - name: Ondersteuning voor regio
+      href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+    - name: Modules leren
+      href: 'https://docs.microsoft.com/learn/modules/detect-analyze-faces/'
     - name: Opties voor ondersteuning en hulp
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/face/context/context
-    - name: Voorbeelden
-      items:
-        - name: Face-voorbeelden
-          href: /samples/browse/?products=azure&term=face
-    - name: Prijzen en beperkingen
-      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/face-api'
-    - name: Azure-roadmap
-      href: 'https://azure.microsoft.com/updates/?product=cognitive-services'
-    - name: Regionale beschikbaarheid
-      href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
     - name: Naleving
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Versleuteling
       href: encrypt-data-at-rest.md
+    - name: Azure-updates
+      href: 'https://azure.microsoft.com/updates/?product=cognitive-services'

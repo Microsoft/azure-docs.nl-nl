@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/29/2021
+ms.date: 04/06/2021
 ms.author: b-juche
-ms.openlocfilehash: 47c641eedbbe096a75223286563acb0a2405b1a6
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: d5ff0f2444aac153116e8e33a6ed2af74c93f057
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105935206"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106553512"
 ---
 # <a name="solution-architectures-using-azure-netapp-files"></a>Oplossingsarchitecturen op basis van Azure NetApp Files
 Dit artikel bevat verwijzingen naar aanbevolen procedures waarmee u inzicht krijgt in de oplossings architecturen voor het gebruik van Azure NetApp Files.  
@@ -54,10 +54,11 @@ Deze sectie bevat verwijzingen naar Windows-toepassingen en SQL Server oplossing
 
 ### <a name="sql-server"></a>SQL Server
 
+* [SQL Server in de implementatie handleiding van Azure met behulp van Azure NetApp Files](https://www.netapp.com/pdf.html?item=/media/27154-tr-4888.pdf)
+* [Voor delen van het gebruik van Azure NetApp Files voor SQL Server-implementatie](solutions-benefits-azure-netapp-files-sql-server.md)
 * [SQL Server implementeren via SMB met Azure NetApp Files](https://www.youtube.com/watch?v=x7udfcYbibs)
 * [SQL Server Always-On failover cluster implementeren via SMB met Azure NetApp Files](https://www.youtube.com/watch?v=zuNJ5E07e8Q) 
 * [Always-On-beschikbaarheids groepen implementeren met Azure NetApp Files](https://www.youtube.com/watch?v=y3VQmzzeyvc) 
-* [Voor delen van het gebruik van Azure NetApp Files voor SQL Server-implementatie](solutions-benefits-azure-netapp-files-sql-server.md)
 
 ## <a name="sap-on-azure-solutions"></a>SAP on Azure oplossingen
 

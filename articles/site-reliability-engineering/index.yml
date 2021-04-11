@@ -1,308 +1,302 @@
 ### YamlMime:Hub
 title: Documentatie voor Sitebetrouwbaarheidsengineering
-summary: Sitebetrouwbaarheidsengineering is een techniek die erop is gericht een organisatie te helpen om duurzaam het juiste betrouwbaarheidsniveau te behalen in systemen, services en producten.
+summary: 'Sitebetrouwbaarheidsengineering is een techniek die erop is gericht een organisatie te helpen om duurzaam het juiste betrouwbaarheidsniveau te behalen in systemen, services en producten.'
 brand: azure
 metadata:
   title: Documentatie voor Sitebetrouwbaarheidsengineering
-  description: Sitebetrouwbaarheidsengineering is een techniek die erop is gericht een organisatie te helpen om duurzaam het juiste betrouwbaarheidsniveau te behalen in systemen, services en producten.
+  description: 'Sitebetrouwbaarheidsengineering is een techniek die erop is gericht een organisatie te helpen om duurzaam het juiste betrouwbaarheidsniveau te behalen in systemen, services en producten.'
   services: site-reliability-engineering
   ms.service: site-reliability-engineering
   ms.topic: hub-page
   author: dnblankedelman
   ms.author: dnb
   ms.date: 02/18/2020
-  ms.openlocfilehash: 6070575312d5e6b1b45563f6649ecbc6dfc01cae
-  ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
-  ms.translationtype: MT
-  ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/10/2021
-  ms.locfileid: "102613167"
 highlightedContent:
   items:
-  - title: 'Kennismaking met SRE:  Wat is SRE? (1/3)'
-    itemType: video
-    url: https://channel9.msdn.com/Shows/IT-Ops-Talk/Introduction-to-Site-Reliability-Engineering--Part-1/player
-  - title: 'Kennismaking met SRE: Kernprincipes en practices (2/3)'
-    itemType: video
-    url: https://channel9.msdn.com/Shows/IT-Ops-Talk/Introduction-to-Site-Reliability-Engineering--Part-2/player
-  - title: 'Kennismaking met SRE: Aan de slag (3/3)'
-    itemType: video
-    url: https://channel9.msdn.com/Shows/IT-Ops-Talk/Introduction-to-Site-Reliability-Engineering--Part-3/player
+    - title: 'Kennismaking met SRE:  Wat is SRE? (1/3)'
+      itemType: video
+      url: 'https://channel9.msdn.com/Shows/IT-Ops-Talk/Introduction-to-Site-Reliability-Engineering--Part-1/player'
+    - title: 'Kennismaking met SRE: Kernprincipes en practices (2/3)'
+      itemType: video
+      url: 'https://channel9.msdn.com/Shows/IT-Ops-Talk/Introduction-to-Site-Reliability-Engineering--Part-2/player'
+    - title: 'Kennismaking met SRE: Aan de slag (3/3)'
+      itemType: video
+      url: 'https://channel9.msdn.com/Shows/IT-Ops-Talk/Introduction-to-Site-Reliability-Engineering--Part-3/player'
 productDirectory:
   items:
-  - title: Betrouwbaarheid verbeteren door moderne operationele praktijken
-    imageSrc: ./media/index/video.svg
-    links:
-    - url: https://myignite.microsoft.com/archives/IG19-OPS10
-      text: 'De basis bouwen voor moderne operationele praktijken: bewaking'
-    - url: https://myignite.microsoft.com/archives/IG19-OPS20
-      text: Reageren op incidenten
-    - url: https://myignite.microsoft.com/archives/IG19-OPS30
-      text: Leren van fouten
-    - url: https://myignite.microsoft.com/archives/IG19-OPS40
-      text: Implementatiepraktijken voor grotere betrouwbaarheid
-    - url: https://myignite.microsoft.com/archives/IG19-OPS50
-      text: 'Voorbereiden op groei: capaciteitsplanning en schalen'
-  - title: Online SRE-cursussen
-    imageSrc: ./media/index/learn.svg
-    links:
-    - url: /learn/modules/intro-to-site-reliability-engineering/
-      text: Inleiding tot sitebetrouwbaarheidsengineering
-    - url: /learn/paths/improve-reliability-modern-operations/
-      text: Verbeter uw betrouwbaarheid met moderne bewerkingspraktijken
-  - title: SRE-resources
-    imageSrc: ./media/index/reference.svg
-    links:
-    - url: resources/books.md
-      text: Boeken
-    - url: resources/events.md
-      text: Gebeurtenissen
-    - url: articles/code.md
-      text: 'Veelgestelde vragen: SRE en codering'
-    - url: articles/devops.md
-      text: 'Veelgestelde vragen: SRE en DevOps'
-    - url: resources/links.md
-      text: Koppelingen en samenvattingen
+    - title: Betrouwbaarheid verbeteren door moderne operationele praktijken
+      imageSrc: ./media/index/video.svg
+      links:
+        - url: 'https://myignite.microsoft.com/archives/IG19-OPS10'
+          text: 'De basis bouwen voor moderne operationele praktijken: bewaking'
+        - url: 'https://myignite.microsoft.com/archives/IG19-OPS20'
+          text: Reageren op incidenten
+        - url: 'https://myignite.microsoft.com/archives/IG19-OPS30'
+          text: Leren van fouten
+        - url: 'https://myignite.microsoft.com/archives/IG19-OPS40'
+          text: Implementatiepraktijken voor grotere betrouwbaarheid
+        - url: 'https://myignite.microsoft.com/archives/IG19-OPS50'
+          text: 'Voorbereiden op groei: capaciteitsplanning en schalen'
+    - title: Online SRE-cursussen
+      imageSrc: ./media/index/learn.svg
+      links:
+        - url: /learn/modules/intro-to-site-reliability-engineering/
+          text: Inleiding tot sitebetrouwbaarheidsengineering
+        - url: /learn/paths/improve-reliability-modern-operations/
+          text: Verbeter uw betrouwbaarheid met moderne bewerkingspraktijken
+    - title: SRE-resources
+      imageSrc: ./media/index/reference.svg
+      links:
+        - url: resources/books.md
+          text: Boeken
+        - url: resources/events.md
+          text: Gebeurtenissen
+        - url: articles/code.md
+          text: 'Veelgestelde vragen: SRE en codering'
+        - url: articles/devops.md
+          text: 'Veelgestelde vragen: SRE en DevOps'
+        - url: resources/links.md
+          text: Koppelingen en samenvattingen
 conceptualContent:
   title: SRE in Azure
   summary: Documentatie voor SRE's
   items:
-  - title: Architectuur
-    links:
-    - url: /azure/architecture/framework/
-      itemType: reference
-      text: Azure Architecture Framework
-    - url: /azure/architecture/guide
-      itemType: reference
-      text: Gids voor de toepassingsarchitectuur in Azure
-    - url: /azure/architecture/architectures/?filter=reference-architecture
-      itemType: reference
-      text: Referentiearchitecturen
-    - url: /azure/architecture/cloud-adoption/
-      itemType: reference
-      text: Microsoft Cloud Adoption Framework voor Azure
-    - url: /azure/architecture/architectures/?filter=example-workload
-      itemType: reference
-      text: Voorbeeldworkloads
-    - url: /azure/architecture/microservices
-      itemType: reference
-      text: Microservices bouwen in Azure
-    - url: /azure/architecture/data-guide/
-      itemType: reference
-      text: Handleiding voor de Azure-gegevensarchitectuur
-    - url: /azure/architecture/best-practices/
-      itemType: reference
-      text: Best practices voor de cloud
-    - url: /azure/architecture/framework/resiliency/overview
-      itemType: reference
-      text: Betrouwbare Azure-toepassingen ontwerpen
-    - url: /azure/architecture/patterns
-      itemType: reference
-      text: Cloudontwerppatronen
-    - url: /azure/architecture/aws-professional
-      itemType: reference
-      text: Azure voor AWS-experts
-    - url: /azure/architecture/performance
-      itemType: reference
-      text: Prestaties afstemmen
-    footerLink:
-      url: /azure/architecture/
-      text: Meer informatie in Azure Architecture Center
-  - title: Bewaking
-    links:
-    - url: ../azure-monitor/overview.md
-      itemType: get-started
-      text: Overzicht van Azure Monitor
-    - url: ../azure-monitor/essentials/data-platform-metrics.md
-      itemType: get-started
-      text: Metrische gegevens met Azure Monitor
-    - url: ../azure-monitor/logs/data-platform-logs.md
-      itemType: get-started
-      text: Logboeken met Azure Monitor
-    - url: ../azure-monitor/azure-monitor-app-hub.yml
-      itemType: get-started
-      text: Toepassingsprestatiebeheer met Application Insights
-    - url: ../azure-monitor/app/distributed-tracing.md
-      itemType: get-started
-      text: Gedistribueerde tracering met Azure Monitor
-    footerLink:
-      url: ../azure-monitor/index.yml
-      text: Meer informatie over Azure Monitor
-  - title: Inrichting en levering
-    links:
-    - url: ../azure-resource-manager/index.yml
-      itemType: get-started
-      text: Azure Resource Manager
-    - url: /azure/terraform/
-      itemType: get-started
-      text: Terraform op Azure
-    - url: https://help.github.com/actions
-      itemType: get-started
-      text: GitHub-acties
-    - url: /azure/devops/pipelines/index
-      itemType: get-started
-      text: Azure-pijplijnen
-  - title: Schalen
-    links:
-    - url: ../azure-monitor/autoscale/autoscale-overview.md
-      itemType: get-started
-      text: Overzicht van automatisch schalen
-    - url: /azure/architecture/best-practices/auto-scaling
-      itemType: get-started
-      text: Richtlijnen voor automatisch schalen
-    - url: https://www.pluralsight.com/courses/microsoft-azure-autoscaling-developing
-      itemType: get-started
-      text: Ontwikkelen voor automatisch schalen
-    - url: /azure/architecture/framework/scalability/overview
-      itemType: get-started
-      text: Schaalbaarheidspijler voor Azure-architectuur
-    - url: /azure/architecture/guide/design-principles/scale-out
-      itemType: get-started
-      text: Ontwerp zo dat u kunt uitschalen
-    - url: /azure/architecture/patterns/category/performance-scalability
-      itemType: get-started
-      text: Prestatie- en schaalbaarheidspatronen
-additionalContent:
-  sections:
-  - title: SRE-lezingen van Microsoft
-    items:
-    - title: Cultuur
+    - title: Architectuur
       links:
-      - text: De evolutie van de sitebetrouwbaarheidsengineering
-        url: https://www.usenix.org/conference/srecon18asia/presentation/purgason
-      - text: 'SRE bouwen: Cultuur van buitenaf'
-        url: https://www.usenix.org/conference/srecon18asia/presentation/palino
-      - text: Culturele nuance en efficiënte samenwerking voor multiculturele teams
-        url: https://www.usenix.org/conference/srecon18asia/presentation/ravindran
-      - text: Evolutie van SRE en toenemende behoefte aan SRE-katalisatoren
-        url: https://www.usenix.org/conference/srecon18asia/presentation/ganeriwal
-      - text: "Feedbacklussen: Hoe SRE's profiteren en wat nodig is om het potentieel te bereiken"
-        url: https://www.usenix.org/conference/srecon17americas/program/presentation/tangi
-      - text: Met inzicht in zakelijke metrische gegevens maakt u een betere SRE
-        url: https://www.usenix.org/conference/srecon19asia/presentation/suley
-      - text: Het eindeloze verhaal van sitebetrouwbaarheid
-        url: https://www.usenix.org/conference/srecon17europe/conference-program/presentation/andersen
-      - text: Elke dag is maandag in operationele werkzaamheden
-        url: https://www.usenix.org/conference/srecon17americas/program/presentation/purgason
-    - title: Reacties op incidenten en beoordelingen na incidenten
+        - url: /azure/architecture/framework/
+          itemType: reference
+          text: Microsoft Azure Well-Architected Framework
+        - url: /azure/architecture/guide/
+          itemType: reference
+          text: Gids voor de toepassingsarchitectuur in Azure
+        - url: /azure/architecture/browse/?products=azure
+          itemType: reference
+          text: Referentie architecturen en voorbeeld werkbelastingen
+        - url: /azure/cloud-adoption-framework/
+          itemType: reference
+          text: Microsoft Cloud Adoption Framework voor Azure
+        - url: /azure/architecture/microservices/
+          itemType: reference
+          text: Microservices bouwen in Azure
+        - url: /azure/architecture/data-guide/
+          itemType: reference
+          text: Handleiding voor de Azure-gegevensarchitectuur
+        - url: /azure/architecture/best-practices/
+          itemType: reference
+          text: Best practices voor de cloud
+        - url: /azure/architecture/framework/resiliency/overview
+          itemType: reference
+          text: Betrouwbare Azure-toepassingen ontwerpen
+        - url: /azure/architecture/patterns/
+          itemType: reference
+          text: Cloudontwerppatronen
+        - url: /azure/architecture/aws-professional/
+          itemType: reference
+          text: Azure voor AWS-experts
+        - url: /azure/architecture/gcp-professional/
+          itemType: reference
+          text: Azure voor GCP-experts
+        - url: /azure/architecture/performance/
+          itemType: reference
+          text: Prestaties afstemmen
+      footerLink:
+        url: /azure/architecture/
+        text: Meer informatie in Azure Architecture Center
+    - title: Bewaking
       links:
-      - text: 'Tolerantie bouwen: Meer leren van incidenten'
-        url: https://www.usenix.org/conference/srecon19emea/presentation/stenning
-      - text: "Een verhaal van twee pm's: Een blik op menselijke factoren"
-        url: https://www.usenix.org/conference/srecon19asia/presentation/lund-postmortem
-      - text: 'Ironie van automatisering: Een komedie in drie delen'
-        url: https://www.usenix.org/conference/srecon19asia/presentation/lund-comedy
-      - text: 'Tegen on-call: Een polemiek'
-        url: https://www.usenix.org/conference/srecon18europe/presentation/murphy
-      - text: SRE voor beginners
-        url: https://www.usenix.org/conference/srecon19americas/presentation/tobey
-    - title: Bewaking en waarneembaarheid
+        - url: ../azure-monitor/overview.md
+          itemType: get-started
+          text: Overzicht van Azure Monitor
+        - url: ../azure-monitor/essentials/data-platform-metrics.md
+          itemType: get-started
+          text: Metrische gegevens met Azure Monitor
+        - url: ../azure-monitor/logs/data-platform-logs.md
+          itemType: get-started
+          text: Logboeken met Azure Monitor
+        - url: ../azure-monitor/azure-monitor-app-hub.yml
+          itemType: get-started
+          text: Toepassingsprestatiebeheer met Application Insights
+        - url: ../azure-monitor/app/distributed-tracing.md
+          itemType: get-started
+          text: Gedistribueerde tracering met Azure Monitor
+      footerLink:
+        url: ../azure-monitor/index.yml
+        text: Meer informatie over Azure Monitor
+    - title: Inrichting en levering
       links:
-      - text: 'Meer dan 600 miljoen leden en honderden microservices: Hoe we onze bewakingssystemen schalen om bij te blijven'
-        url: https://www.usenix.org/conference/srecon19asia/presentation/lamba
-      - text: 'Van de gebaande paden: Waarneembaarheidfocus verleggen van uw service naar uw klant'
-        url: https://www.usenix.org/conference/lisa19/presentation/suley
-      - text: U krijgt wat u meet. Waarom metrische gegevens belangrijk zijn
-        url: https://www.usenix.org/conference/srecon18asia/presentation/srinivasamurthy-metrics
-      - text: 'De storm overleven: Hoe vroege waarschuwingen de boerderij redden'
-        url: https://www.usenix.org/conference/srecon19emea/presentation/sherwin
-      - text: Miljoenen query's vastleggen en analyseren zonder overhead
-        url: https://www.usenix.org/conference/srecon17europe/program/presentation/appigatla
-      - text: 'Gebeurteniscorrelatie: Een nieuwe benadering voor het reduceren van MTTR'
-        url: https://www.usenix.org/conference/srecon17asia/program/presentation/rajan
-      - text: Hoe robuuste bewaking hoge beschikbaarheid mogelijk maakt voor de LinkedIn-feed
-        url: https://www.usenix.org/conference/srecon17americas/program/presentation/barot
-      - text: 'MTTR en onware escalaties verminderen: Gebeurteniscorrelatie op LinkedIn'
-        url: https://www.usenix.org/conference/srecon17europe/program/presentation/kehoe-0
-    - title: Procedures en principes
-      links:
-      - text: "Beschikbaarheid: verder denken dan 9's"
-        url: https://www.usenix.org/conference/srecon19asia/presentation/srinivasamurthy
-      - text: Mentale modellen voor SRE's
-        url: https://www.usenix.org/conference/srecon18asia/presentation/suley-mental
-      - text: Prioriteit geven aan vertrouwen tijden het maken van toepassingen
-        url: https://www.usenix.org/conference/srecon19emea/presentation/davis
-      - text: Java haat Linux. Wen er maar aan.
-        url: https://www.usenix.org/conference/srecon17americas/program/presentation/banks
-      - text: Fases van SRE-praktijken uitleggen en begrijpen
-        url: https://www.usenix.org/conference/srecon18asia/presentation/andersen
-      - text: 'Beveiliging en SRE: Vermenigvuldigers van natuurlijke kracht'
-        url: https://www.usenix.org/conference/srecon18americas/presentation/scott
-      - text: 'Beoordeling van productieverbetering: Reparatieschuld verminderen'
-        url: https://www.usenix.org/conference/srecon16europe/program/presentation/check
-      - text: Zorgen voor betrouwbaarheid voor toepassingen met hoge prestaties
-        url: https://www.usenix.org/conference/srecon18asia/presentation/nayak
-      - text: 'De servicescorekaart: operationele uitmuntendheid gamificeren'
-        url: https://www.usenix.org/conference/srecon17americas/program/presentation/lawrence
-      - text: Een service verbeteren door het af te branden
-        url: https://www.usenix.org/conference/srecon16/program/presentation/dickson
-    - title: Teams en beheer
-      links:
-      - text: 'Code geel: Teams voor operationele werkzaamheden slim helpen'
-        url: https://www.usenix.org/conference/srecon19americas/presentation/kehoe
-      - text: 'Leiding geven zonder te managen: Een technische SRE-leider worden'
-        url: https://www.usenix.org/conference/srecon19asia/presentation/palino-leading
-      - text: Verschillen in SRE-implementaties tussen bedrijven
-        url: https://www.usenix.org/conference/srecon19americas/presentation/andersen
-      - text: 100 teams, 100 manieren om te mislukken
-        url: https://www.usenix.org/conference/srecon17europe/program/presentation/keiser
-      - text: Het waarom, wat en hoe van SRE-betrokkenheid beginnen
-        url: https://www.usenix.org/conference/srecon17europe/program/presentation/clawson
-      - text: SRE-teams bouwen en begeleiden
-        url: https://www.usenix.org/conference/srecon16europe/program/presentation/andersen
-      - text: 'Van student tot SRE: Uw werknemer op instapniveau inwerken'
-        url: https://www.usenix.org/conference/srecon16/program/presentation/kehoe
-      - text: 'LinkedIn-SRE: Van begin tot wereldwijde schaal'
-        url: https://www.usenix.org/conference/srecon17asia/program/presentation/connelly
-      - text: DNA-reeksen van SRE splitsen in het grootste softwarebedrijf ter wereld
-        url: https://www.usenix.org/conference/srecon16europe/program/presentation/splicing-sre-dna-sequences-biggest-software-company
-      - text: De beste rupsen veranderen in vlinders
-        url: https://www.usenix.org/conference/srecon16/program/presentation/mushiana
-    - title: Hulpprogramma's en technologieën
-      links:
-      - text: 'Azure SREBot: Meer dan een chatbot. Een intelligente bot om mitigatietijd te verpletteren'
-        url: https://www.usenix.org/conference/srecon17asia/program/presentation/guimaraes
-      - text: 'TrafficShift: Noodherstel op schaal voorkomen'
-        url: https://www.usenix.org/conference/srecon17americas/program/presentation/kehoe_trafficshift
-      - text: Laten we een gedistribueerd bestandssysteem bouwen
-        url: https://www.usenix.org/conference/srecon19asia/presentation/patel
-      - text: 'TCP: architectuur, verbeteringen en afstemming'
-        url: https://www.usenix.org/conference/srecon19asia/presentation/dhakal
-      - text: 'BGP: de ruggengraat van het internet'
-        url: https://www.usenix.org/conference/srecon19asia/presentation/kehoe
-      - text: De operationele werkzaamheden in serverloos
-        url: https://www.usenix.org/conference/srecon19americas/presentation/davis
-      - text: Hoe we Kafka hebben gebruikt om database-infrastructuur te schalen
-        url: https://www.usenix.org/conference/srecon19asia/presentation/thambara
-      - text: "Netwerken voor SRE's: Wat moet ik weten om problemen in toepassingen op te lossen"
-        url: https://www.usenix.org/conference/srecon17europe/program/presentation/kehoe
-      - text: 'Ambry: het gedistribueerde onveranderbare objectarchief van LinkedIn'
-        url: https://www.usenix.org/conference/srecon17americas/program/presentation/shenoy
-      - text: 'BPerf: Bing.com-profilering voor productie in de Cloud'
-        url: https://www.usenix.org/conference/srecon17americas/program/presentation/sabharwal
-      - text: 'DNS: Oude oplossing voor moderne problemen'
-        url: https://www.usenix.org/conference/srecon16europe/program/presentation/jackson
-      - text: Verkeer sturen met Rum DNS @ LinkedIn
-        url: https://www.usenix.org/conference/srecon17europe/program/presentation/rastogi
+        - url: ../azure-resource-manager/index.yml
+          itemType: get-started
+          text: Azure Resource Manager
+        - url: /azure/terraform/
+          itemType: get-started
+          text: Terraform op Azure
+        - url: 'https://help.github.com/actions'
+          itemType: get-started
+          text: GitHub-acties
+        - url: /azure/devops/pipelines/index
+          itemType: get-started
+          text: Azure-pijplijnen
     - title: Schalen
       links:
-      - text: Prognoses maken voor verkeer en stresstests maken voor infrastructuur
-        url: https://www.usenix.org/conference/srecon19asia/presentation/sulakhe
-      - text: Leren op schaal is moeilijk! Analyse van uitvalpatronen en vuile gegevens
-        url: https://www.usenix.org/conference/srecon18americas/presentation/lund
-      - text: 'Een gedistribueerd stateful systeem schalen: Een LinkedIn-casestudy'
-        url: https://www.usenix.org/conference/srecon18asia/presentation/kanuri
-      - text: 'Foutopsporing op schaal: van één vak tot productie'
-        url: https://www.usenix.org/conference/srecon18asia/presentation/srinivasamurthy-debugging
-      - text: Gecentraliseerde chaching-infrastructuur op schaal bouwen
-        url: https://www.usenix.org/conference/srecon19asia/presentation/won
-      - text: 'Schaalbare codering: de fout zoeken'
-        url: https://www.usenix.org/conference/srecon18europe/presentation/ebner-de-carvalho
-      - text: Capaciteit beheren @ LinkedIn
-        url: https://www.usenix.org/conference/srecon17asia/program/presentation/harkare
-      - text: 'InStream: Distributie op grote schaal met BitTorrent, Python, Salt en Kafka'
-        url: https://www.usenix.org/conference/srecon17europe/program/presentation/sharma
-      - text: Capaciteitsbeperkingen vermijden en doorbreken
-        url: https://www.usenix.org/conference/srecon17europe/program/presentation/welch
-      - text: De evolutie van wereldwijde verkeersrouteplanning en failovers
-        url: https://www.usenix.org/conference/srecon16/program/presentation/heady
+        - url: ../azure-monitor/autoscale/autoscale-overview.md
+          itemType: get-started
+          text: Overzicht van automatisch schalen
+        - url: /azure/architecture/best-practices/auto-scaling
+          itemType: get-started
+          text: Richtlijnen voor automatisch schalen
+        - url: 'https://www.pluralsight.com/courses/microsoft-azure-autoscaling-developing'
+          itemType: get-started
+          text: Ontwikkelen voor automatisch schalen
+        - url: /azure/architecture/framework/scalability/overview
+          itemType: get-started
+          text: Overzicht van de prestatie-efficiëntie pijler
+        - url: /azure/architecture/guide/design-principles/scale-out
+          itemType: get-started
+          text: Ontwerp zo dat u kunt uitschalen
+        - url: /azure/architecture/framework/resiliency/reliability-patterns
+          itemType: get-started
+          text: Betrouwbaarheids patronen
+additionalContent:
+  sections:
+    - title: SRE-lezingen van Microsoft
+      items:
+        - title: Cultuur
+          links:
+            - text: De evolutie van de sitebetrouwbaarheidsengineering
+              url: 'https://www.usenix.org/conference/srecon18asia/presentation/purgason'
+            - text: 'SRE bouwen: Cultuur van buitenaf'
+              url: 'https://www.usenix.org/conference/srecon18asia/presentation/palino'
+            - text: Culturele nuance en efficiënte samenwerking voor multiculturele teams
+              url: 'https://www.usenix.org/conference/srecon18asia/presentation/ravindran'
+            - text: Evolutie van SRE en toenemende behoefte aan SRE-katalisatoren
+              url: 'https://www.usenix.org/conference/srecon18asia/presentation/ganeriwal'
+            - text: 'Feedbacklussen: Hoe SRE''s profiteren en wat nodig is om het potentieel te bereiken'
+              url: 'https://www.usenix.org/conference/srecon17americas/program/presentation/tangi'
+            - text: Met inzicht in zakelijke metrische gegevens maakt u een betere SRE
+              url: 'https://www.usenix.org/conference/srecon19asia/presentation/suley'
+            - text: Het eindeloze verhaal van sitebetrouwbaarheid
+              url: 'https://www.usenix.org/conference/srecon17europe/conference-program/presentation/andersen'
+            - text: Elke dag is maandag in operationele werkzaamheden
+              url: 'https://www.usenix.org/conference/srecon17americas/program/presentation/purgason'
+        - title: Reacties op incidenten en beoordelingen na incidenten
+          links:
+            - text: 'Tolerantie bouwen: Meer leren van incidenten'
+              url: 'https://www.usenix.org/conference/srecon19emea/presentation/stenning'
+            - text: 'Een verhaal van twee pm''s: Een blik op menselijke factoren'
+              url: 'https://www.usenix.org/conference/srecon19asia/presentation/lund-postmortem'
+            - text: 'Ironie van automatisering: Een komedie in drie delen'
+              url: 'https://www.usenix.org/conference/srecon19asia/presentation/lund-comedy'
+            - text: 'Tegen on-call: Een polemiek'
+              url: 'https://www.usenix.org/conference/srecon18europe/presentation/murphy'
+            - text: SRE voor beginners
+              url: 'https://www.usenix.org/conference/srecon19americas/presentation/tobey'
+        - title: Bewaking en waarneembaarheid
+          links:
+            - text: 'Meer dan 600 miljoen leden en honderden microservices: Hoe we onze bewakingssystemen schalen om bij te blijven'
+              url: 'https://www.usenix.org/conference/srecon19asia/presentation/lamba'
+            - text: 'Van de gebaande paden: Waarneembaarheidfocus verleggen van uw service naar uw klant'
+              url: 'https://www.usenix.org/conference/lisa19/presentation/suley'
+            - text: U krijgt wat u meet. Waarom metrische gegevens belangrijk zijn
+              url: 'https://www.usenix.org/conference/srecon18asia/presentation/srinivasamurthy-metrics'
+            - text: 'De storm overleven: Hoe vroege waarschuwingen de boerderij redden'
+              url: 'https://www.usenix.org/conference/srecon19emea/presentation/sherwin'
+            - text: Miljoenen query's vastleggen en analyseren zonder overhead
+              url: 'https://www.usenix.org/conference/srecon17europe/program/presentation/appigatla'
+            - text: 'Gebeurteniscorrelatie: Een nieuwe benadering voor het reduceren van MTTR'
+              url: 'https://www.usenix.org/conference/srecon17asia/program/presentation/rajan'
+            - text: Hoe robuuste bewaking hoge beschikbaarheid mogelijk maakt voor de LinkedIn-feed
+              url: 'https://www.usenix.org/conference/srecon17americas/program/presentation/barot'
+            - text: 'MTTR en onware escalaties verminderen: Gebeurteniscorrelatie op LinkedIn'
+              url: 'https://www.usenix.org/conference/srecon17europe/program/presentation/kehoe-0'
+        - title: Procedures en principes
+          links:
+            - text: 'Beschikbaarheid: verder denken dan 9''s'
+              url: 'https://www.usenix.org/conference/srecon19asia/presentation/srinivasamurthy'
+            - text: Mentale modellen voor SRE's
+              url: 'https://www.usenix.org/conference/srecon18asia/presentation/suley-mental'
+            - text: Prioriteit geven aan vertrouwen tijden het maken van toepassingen
+              url: 'https://www.usenix.org/conference/srecon19emea/presentation/davis'
+            - text: Java haat Linux. Wen er maar aan.
+              url: 'https://www.usenix.org/conference/srecon17americas/program/presentation/banks'
+            - text: Fases van SRE-praktijken uitleggen en begrijpen
+              url: 'https://www.usenix.org/conference/srecon18asia/presentation/andersen'
+            - text: 'Beveiliging en SRE: Vermenigvuldigers van natuurlijke kracht'
+              url: 'https://www.usenix.org/conference/srecon18americas/presentation/scott'
+            - text: 'Beoordeling van productieverbetering: Reparatieschuld verminderen'
+              url: 'https://www.usenix.org/conference/srecon16europe/program/presentation/check'
+            - text: Zorgen voor betrouwbaarheid voor toepassingen met hoge prestaties
+              url: 'https://www.usenix.org/conference/srecon18asia/presentation/nayak'
+            - text: 'De servicescorekaart: operationele uitmuntendheid gamificeren'
+              url: 'https://www.usenix.org/conference/srecon17americas/program/presentation/lawrence'
+            - text: Een service verbeteren door het af te branden
+              url: 'https://www.usenix.org/conference/srecon16/program/presentation/dickson'
+        - title: Teams en beheer
+          links:
+            - text: 'Code geel: Teams voor operationele werkzaamheden slim helpen'
+              url: 'https://www.usenix.org/conference/srecon19americas/presentation/kehoe'
+            - text: 'Leiding geven zonder te managen: Een technische SRE-leider worden'
+              url: 'https://www.usenix.org/conference/srecon19asia/presentation/palino-leading'
+            - text: Verschillen in SRE-implementaties tussen bedrijven
+              url: 'https://www.usenix.org/conference/srecon19americas/presentation/andersen'
+            - text: '100 teams, 100 manieren om te mislukken'
+              url: 'https://www.usenix.org/conference/srecon17europe/program/presentation/keiser'
+            - text: 'Het waarom, wat en hoe van SRE-betrokkenheid beginnen'
+              url: 'https://www.usenix.org/conference/srecon17europe/program/presentation/clawson'
+            - text: SRE-teams bouwen en begeleiden
+              url: 'https://www.usenix.org/conference/srecon16europe/program/presentation/andersen'
+            - text: 'Van student tot SRE: Uw werknemer op instapniveau inwerken'
+              url: 'https://www.usenix.org/conference/srecon16/program/presentation/kehoe'
+            - text: 'LinkedIn-SRE: Van begin tot wereldwijde schaal'
+              url: 'https://www.usenix.org/conference/srecon17asia/program/presentation/connelly'
+            - text: DNA-reeksen van SRE splitsen in het grootste softwarebedrijf ter wereld
+              url: 'https://www.usenix.org/conference/srecon16europe/program/presentation/splicing-sre-dna-sequences-biggest-software-company'
+            - text: De beste rupsen veranderen in vlinders
+              url: 'https://www.usenix.org/conference/srecon16/program/presentation/mushiana'
+        - title: Hulpprogramma's en technologieën
+          links:
+            - text: 'Azure SREBot: Meer dan een chatbot. Een intelligente bot om mitigatietijd te verpletteren'
+              url: 'https://www.usenix.org/conference/srecon17asia/program/presentation/guimaraes'
+            - text: 'TrafficShift: Noodherstel op schaal voorkomen'
+              url: 'https://www.usenix.org/conference/srecon17americas/program/presentation/kehoe_trafficshift'
+            - text: Laten we een gedistribueerd bestandssysteem bouwen
+              url: 'https://www.usenix.org/conference/srecon19asia/presentation/patel'
+            - text: 'TCP: architectuur, verbeteringen en afstemming'
+              url: 'https://www.usenix.org/conference/srecon19asia/presentation/dhakal'
+            - text: 'BGP: de ruggengraat van het internet'
+              url: 'https://www.usenix.org/conference/srecon19asia/presentation/kehoe'
+            - text: De operationele werkzaamheden in serverloos
+              url: 'https://www.usenix.org/conference/srecon19americas/presentation/davis'
+            - text: Hoe we Kafka hebben gebruikt om database-infrastructuur te schalen
+              url: 'https://www.usenix.org/conference/srecon19asia/presentation/thambara'
+            - text: 'Netwerken voor SRE''s: Wat moet ik weten om problemen in toepassingen op te lossen'
+              url: 'https://www.usenix.org/conference/srecon17europe/program/presentation/kehoe'
+            - text: 'Ambry: het gedistribueerde onveranderbare objectarchief van LinkedIn'
+              url: 'https://www.usenix.org/conference/srecon17americas/program/presentation/shenoy'
+            - text: 'BPerf: Bing.com-profilering voor productie in de Cloud'
+              url: 'https://www.usenix.org/conference/srecon17americas/program/presentation/sabharwal'
+            - text: 'DNS: Oude oplossing voor moderne problemen'
+              url: 'https://www.usenix.org/conference/srecon16europe/program/presentation/jackson'
+            - text: Verkeer sturen met Rum DNS @ LinkedIn
+              url: 'https://www.usenix.org/conference/srecon17europe/program/presentation/rastogi'
+        - title: Schalen
+          links:
+            - text: Prognoses maken voor verkeer en stresstests maken voor infrastructuur
+              url: 'https://www.usenix.org/conference/srecon19asia/presentation/sulakhe'
+            - text: Leren op schaal is moeilijk! Analyse van uitvalpatronen en vuile gegevens
+              url: 'https://www.usenix.org/conference/srecon18americas/presentation/lund'
+            - text: 'Een gedistribueerd stateful systeem schalen: Een LinkedIn-casestudy'
+              url: 'https://www.usenix.org/conference/srecon18asia/presentation/kanuri'
+            - text: 'Foutopsporing op schaal: van één vak tot productie'
+              url: 'https://www.usenix.org/conference/srecon18asia/presentation/srinivasamurthy-debugging'
+            - text: Gecentraliseerde chaching-infrastructuur op schaal bouwen
+              url: 'https://www.usenix.org/conference/srecon19asia/presentation/won'
+            - text: 'Schaalbare codering: de fout zoeken'
+              url: 'https://www.usenix.org/conference/srecon18europe/presentation/ebner-de-carvalho'
+            - text: Capaciteit beheren @ LinkedIn
+              url: 'https://www.usenix.org/conference/srecon17asia/program/presentation/harkare'
+            - text: 'InStream: Distributie op grote schaal met BitTorrent, Python, Salt en Kafka'
+              url: 'https://www.usenix.org/conference/srecon17europe/program/presentation/sharma'
+            - text: Capaciteitsbeperkingen vermijden en doorbreken
+              url: 'https://www.usenix.org/conference/srecon17europe/program/presentation/welch'
+            - text: De evolutie van wereldwijde verkeersrouteplanning en failovers
+              url: 'https://www.usenix.org/conference/srecon16/program/presentation/heady'

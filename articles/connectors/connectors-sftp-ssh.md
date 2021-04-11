@@ -6,18 +6,18 @@ ms.suite: integration
 author: divyaswarnkar
 ms.reviewer: estfan, logicappspm, azla
 ms.topic: article
-ms.date: 03/08/2021
+ms.date: 04/05/2021
 tags: connectors
-ms.openlocfilehash: 983e0d34692d67302e11c35abac590fefd610b2e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 5eae6b48a65f919ea233ad77a215ed5672425175
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102449625"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106385850"
 ---
-# <a name="monitor-create-and-manage-sftp-files-by-using-ssh-and-azure-logic-apps"></a>SFTP-bestanden bewaken, maken en beheren met behulp van SSH en Azure Logic Apps
+# <a name="create-and-manage-sftp-files-using-ssh-and-azure-logic-apps"></a>SFTP-bestanden maken en beheren met SSH en Azure Logic Apps
 
-U kunt met behulp van het SSH-protocol [(Secure Shell)](https://www.ssh.com/ssh/protocol/) werk stromen met behulp van Azure Logic apps en de SFTP-SSH-connector maken en automatiseren om taken te automatiseren die bestanden op een [beveiligde File Transfer Protocol (SFTP)](https://www.ssh.com/ssh/sftp/) -server bewaken, maken, verzenden en ontvangen. SFTP is een netwerkprotocol dat bestandstoegang, bestandsoverdracht en bestandsbeheer mogelijk maakt via elke betrouwbare gegevensstroom.
+U kunt met behulp van het SSH-protocol [(Secure Shell)](https://www.ssh.com/ssh/protocol/) geautomatiseerde integratie werk stromen maken met behulp van Azure Logic apps en de SFTP-SSH-connector om taken te automatiseren die bestanden maken en beheren op een [beveiligde File Transfer Protocol (SFTP)](https://www.ssh.com/ssh/sftp/) -server. SFTP is een netwerkprotocol dat bestandstoegang, bestandsoverdracht en bestandsbeheer mogelijk maakt via elke betrouwbare gegevensstroom.
 
 Hier volgen enkele voor beelden van taken die u kunt automatiseren:
 
@@ -27,7 +27,7 @@ Hier volgen enkele voor beelden van taken die u kunt automatiseren:
 * Bestands inhoud en meta gegevens ophalen.
 * Haal archief naar mappen.
 
-U kunt triggers gebruiken die gebeurtenissen op uw SFTP-server controleren en uitvoer beschikbaar maken voor andere acties. U kunt acties gebruiken waarmee verschillende taken op uw SFTP-server worden uitgevoerd. U kunt ook andere acties in uw logische app gebruiken de uitvoer van SFTP-acties. Als u bijvoorbeeld regel matig bestanden van uw SFTP-server ophaalt, kunt u e-mail waarschuwingen over die bestanden en hun inhoud verzenden met behulp van de Office 365 Outlook Connector of de Outlook.com-connector. Als u geen ervaring hebt met Logic apps, raadpleegt u [Wat is Azure Logic apps?](../logic-apps/logic-apps-overview.md)
+In uw werk stroom kunt u een trigger gebruiken die gebeurtenissen op uw SFTP-server bewaakt en uitvoer beschikbaar maakt voor andere acties. Vervolgens kunt u acties gebruiken om verschillende taken op uw SFTP-server uit te voeren. U kunt ook andere acties toevoegen die gebruikmaken van de uitvoer van SFTP-SSH-acties. Als u bijvoorbeeld regel matig bestanden van uw SFTP-server ophaalt, kunt u e-mail waarschuwingen over die bestanden en hun inhoud verzenden met behulp van de Office 365 Outlook Connector of de Outlook.com-connector. Als u geen ervaring hebt met Logic apps, raadpleegt u [Wat is Azure Logic apps?](../logic-apps/logic-apps-overview.md)
 
 Zie de sectie [SFTP-SSH versus SFTP vergelijken](#comparison) verderop in dit onderwerp voor verschillen tussen de SFTP-SSH-connector en de SFTP-connector.
 
@@ -40,16 +40,14 @@ Zie de sectie [SFTP-SSH versus SFTP vergelijken](#comparison) verderop in dit on
   * Opentekst Secure MFT
   * GXS voor opentekst
 
-* De SFTP-SSH-connector ondersteunt verificatie van de persoonlijke sleutel of wachtwoord verificatie, niet beide.
-
-* SFTP-SSH-acties die ondersteuning bieden voor [segmentering](../logic-apps/logic-apps-handle-large-messages.md) , kunnen bestanden van Maxi maal 1 GB afhandelen, terwijl SFTP-SSH-acties die geen ondersteuning bieden voor bestands verwerking, bestanden tot 50 MB kunnen verwerken. Hoewel de standaard grootte van het segment 15 MB is, kan deze grootte dynamisch worden gewijzigd, beginnend bij 5 MB en geleidelijk toenemen tot een maximum van 50 MB, op basis van factoren zoals netwerk latentie, Server reactietijd, enzovoort.
+* SFTP-SSH-acties die ondersteuning bieden voor [segmentering](../logic-apps/logic-apps-handle-large-messages.md) , kunnen bestanden van Maxi maal 1 GB afhandelen, terwijl SFTP-SSH-acties die geen ondersteuning bieden voor bestands verwerking, bestanden tot 50 MB kunnen verwerken. De standaard grootte voor chunks is 15 MB. Deze grootte kan echter dynamisch worden gewijzigd, te beginnen met 5 MB en geleidelijk te verhogen tot een maximum van 50 MB. Dynamische grootte is gebaseerd op factoren zoals netwerk latentie, Server reactietijd, enzovoort.
 
   > [!NOTE]
   > Voor Logic apps in een [Integration service Environment (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md), moet de ISE-label versie van deze connector worden gesegmenteerd om in plaats daarvan de [ISE-bericht limieten](../logic-apps/logic-apps-limits-and-config.md#message-size-limits) te gebruiken.
 
   U kunt dit adaptieve gedrag onderdrukken wanneer u in plaats daarvan [een constante segment grootte opgeeft](#change-chunk-size) die u wilt gebruiken. Deze grootte kan variëren van 5 MB tot 50 MB. Stel bijvoorbeeld dat u een 45-MB-bestand hebt en een netwerk dat deze bestands grootte zonder latentie kan ondersteunen. De resultaten van een adaptieve Chunking worden in verschillende aanroepen in plaats van de aanroep. Als u het aantal aanroepen wilt beperken, kunt u een grootte van 50 MB segmenten instellen. In een ander scenario kunt u, als er een time-out optreedt voor uw logische app, bijvoorbeeld een segment van 15 MB gebruiken om de grootte te verkleinen tot 5 MB.
 
-  Segment grootte is gekoppeld aan een verbinding, wat betekent dat u dezelfde verbinding kunt gebruiken voor acties die Chunking ondersteunen en vervolgens voor acties die geen ondersteuning bieden voor Chunking. In dit geval wordt de segment grootte voor acties die geen Chunking-bereik ondersteunen van 5 MB tot 50 MB. In deze tabel ziet u welke SFTP-SSH-acties Chunking ondersteunen:
+  Segment grootte is gekoppeld aan een verbinding. Dit kenmerk betekent dat u dezelfde verbinding kunt gebruiken voor beide acties die ondersteuning bieden voor Chunking en acties die geen ondersteuning bieden voor Chunking. In dit geval wordt de segment grootte voor acties die geen Chunking-bereik ondersteunen van 5 MB tot 50 MB. In deze tabel ziet u welke SFTP-SSH-acties Chunking ondersteunen:
 
   | Bewerking | Ondersteuning voor segmentering | Ondersteuning voor segment grootte negeren |
   |--------|------------------|-----------------------------|
@@ -69,15 +67,15 @@ Zie de sectie [SFTP-SSH versus SFTP vergelijken](#comparison) verderop in dit on
 
 * SFTP-SSH-Triggers bieden geen ondersteuning voor het segmenteren van berichten. Bij het aanvragen van bestands inhoud selecteren triggers alleen bestanden die 15 MB of kleiner zijn. Als u bestanden groter dan 15 MB wilt ophalen, volgt u dit patroon:
 
-  1. Gebruik een SFTP-SSH-trigger die alleen bestands eigenschappen retourneert, zoals **Wanneer een bestand wordt toegevoegd of gewijzigd (alleen eigenschappen)**.
+  1. Gebruik een SFTP-SSH-trigger die alleen bestands eigenschappen retourneert. Deze triggers hebben namen die de beschrijving bevatten **(alleen eigenschappen)**.
 
-  1. Volg de trigger met de bewerking voor het **ophalen van bestands inhoud** van SFTP-SSH, die het volledige bestand leest en impliciet gebruikmaakt van het segmenteren van berichten.
+  1. Volg de trigger met de bewerking voor het **ophalen van bestands inhoud** van SFTP-SSH. Met deze actie wordt het volledige bestand gelezen en wordt er impliciet berichten gesegmenteerd.
 
 <a name="comparison"></a>
 
 ## <a name="compare-sftp-ssh-versus-sftp"></a>SFTP-SSH versus SFTP vergelijken
 
-Hier volgen andere belang rijke verschillen tussen de SFTP-SSH-connector en de SFTP-connector waarbij de SFTP-SSH-connector over de volgende mogelijkheden beschikt:
+In de volgende lijst worden de belangrijkste SFTP-SSH-mogelijkheden beschreven die verschillen van de SFTP-connector:
 
 * Maakt gebruik van de [SSH.net-bibliotheek](https://github.com/sshnet/SSH.NET), een open-source SSH-bibliotheek (Secure Shell) die .net ondersteunt.
 
@@ -85,30 +83,25 @@ Hier volgen andere belang rijke verschillen tussen de SFTP-SSH-connector en de S
 
 * Biedt de actie **Bestands naam wijzigen** , waarmee een bestand op de sftp-server wordt hernoemd.
 
-* Hiermee wordt de verbinding met de SFTP-server *Maxi maal 1 uur* in de cache opgeslagen, waardoor de prestaties worden verbeterd en het aantal pogingen om verbinding te maken met de server wordt verminderd. Als u de duur voor dit cache gedrag wilt instellen, bewerkt u de eigenschap [**' ClientAliveInterval**](https://man.openbsd.org/sshd_config#ClientAliveInterval) in de SSH-configuratie op de sftp-server.
+* Slaat de verbinding met de SFTP-server *Maxi maal één uur* op in de cache. Deze functie verbetert de prestaties en vermindert hoe vaak de connector verbinding probeert te maken met de server. Als u de duur voor dit cache gedrag wilt instellen, bewerkt u de [eigenschap **' ClientAliveInterval**](https://man.openbsd.org/sshd_config#ClientAliveInterval) in de SSH-configuratie op de sftp-server.
 
 ## <a name="prerequisites"></a>Vereisten
 
 * Een Azure-abonnement. Als u nog geen abonnement op Azure hebt, [registreer u dan nu voor een gratis Azure-account](https://azure.microsoft.com/free/).
 
-* Uw SFTP-server adres en account referenties, waarmee uw logische app toegang kan krijgen tot uw SFTP-account. U hebt ook toegang nodig tot een persoonlijke SSH-sleutel en het wacht woord voor de persoonlijke SSH-sleutel. Als u Chunking wilt gebruiken bij het uploaden van grote bestanden, hebt u lees-en schrijf machtigingen nodig voor de hoofdmap van de SFTP-server. Anders krijgt u de fout melding ' 401 niet toegestaan '.
+* Uw SFTP-server adres en account referenties, zodat uw werk stroom toegang heeft tot uw SFTP-account. U hebt ook toegang nodig tot een persoonlijke SSH-sleutel en het wacht woord voor de persoonlijke SSH-sleutel. Als u grote bestanden wilt uploaden met behulp van Chunking, hebt u zowel lees-als schrijf toegang nodig voor de hoofdmap op uw SFTP-server. Anders krijgt u de fout melding ' 401 niet toegestaan '.
 
-  > [!IMPORTANT]
-  >
-  > De SFTP-SSH-connector ondersteunt *alleen* deze indelingen, algoritmen en vinger afdrukken van persoonlijke sleutels:
-  >
-  > * **Indelingen van persoonlijke sleutels**: RSA-sleutels (Rivest Shamir Adleman) en DSA (Digital Signature Algorithm) in zowel de OpenSSH-als de SSH.com-indeling. Als uw persoonlijke sleutel zich in de PuTTy-bestands indeling (. ppk) bevindt, [moet u eerst de sleutel converteren naar de OpenSSH-bestands indeling (. pem)](#convert-to-openssh).
-  >
-  > * **Versleutelings algoritmen**: des-EDE3-CBC, des-EDE3-CFB, des-CBC, AES-128-CBC, AES-192-CBC en AES-256-cbc
-  >
-  > * **Vinger afdruk**: MD5
-  >
-  > Nadat u de SFTP-SSH-trigger of actie die u wilt toevoegen aan uw logische app hebt toegevoegd, moet u verbindings gegevens voor uw SFTP-server opgeven. Wanneer u uw persoonlijke SSH-sleutel voor deze verbinding opgeeft, ***hoeft u de sleutel niet hand matig in te voeren of te bewerken***. Dit kan ertoe leiden dat de verbinding mislukt. Zorg er in plaats daarvan voor dat u ***de sleutel kopieert*** uit uw persoonlijke SSH-sleutel bestand en ***plak*** die sleutel in de verbindings gegevens. 
-  > Zie de sectie [verbinding maken met SFTP met SSH verderop in](#connect) dit artikel voor meer informatie.
+  De SFTP-SSH-connector ondersteunt verificatie met een persoonlijke sleutel en wachtwoord verificatie. De SFTP-SSH-connector ondersteunt echter *alleen* deze indelingen, algoritmen en vinger afdrukken van persoonlijke sleutels:
+
+  * **Indelingen van persoonlijke sleutels**: RSA-sleutels (Rivest Shamir Adleman) en DSA (Digital Signature Algorithm) in zowel de OpenSSH-als de SSH.com-indeling. Als uw persoonlijke sleutel zich in de PuTTy-bestands indeling (. ppk) bevindt, [moet u eerst de sleutel converteren naar de OpenSSH-bestands indeling (. pem)](#convert-to-openssh).
+  * **Versleutelings algoritmen**: des-EDE3-CBC, des-EDE3-CFB, des-CBC, AES-128-CBC, AES-192-CBC en AES-256-cbc
+  * **Vinger afdruk**: MD5
+
+  Nadat u een SFTP-SSH-trigger of-actie aan uw werk stroom hebt toegevoegd, moet u verbindings gegevens voor uw SFTP-server opgeven. Wanneer u uw persoonlijke SSH-sleutel voor deze verbinding opgeeft,**hoeft u niet hand matig de sleutel** _ in te voeren of te bewerken. Dit kan ertoe leiden dat de verbinding mislukt. Zorg er in plaats daarvan voor dat u _*_de sleutel kopieert_*_ vanuit uw persoonlijke SSH-sleutel bestand en _ *_Plakken_** die sleutel in de verbindings gegevens. Zie de sectie [verbinding maken met SFTP met SSH verderop in](#connect) dit artikel voor meer informatie.
 
 * Basis kennis over [het maken van logische apps](../logic-apps/quickstart-create-first-logic-app-workflow.md)
 
-* De logische app waar u toegang wilt krijgen tot uw SFTP-account. [Maak een lege logische app](../logic-apps/quickstart-create-first-logic-app-workflow.md)om te beginnen met een SFTP-SSH-trigger. Als u een SFTP-SSH-actie wilt gebruiken, start u uw logische app met een andere trigger, bijvoorbeeld de trigger voor **terugkeer patroon** .
+* De werk stroom van de logische app waar u toegang wilt krijgen tot uw SFTP-account. [Maak een lege werk stroom voor logische apps](../logic-apps/quickstart-create-first-logic-app-workflow.md)om te beginnen met een SFTP-SSH-trigger. Als u een SFTP-SSH-actie wilt gebruiken, start u uw werk stroom met een andere trigger, bijvoorbeeld de trigger voor **terugkeer patroon** .
 
 ## <a name="how-sftp-ssh-triggers-work"></a>Hoe werken SFTP-SSH-triggers
 
@@ -130,13 +123,13 @@ Wanneer een trigger een nieuw bestand vindt, controleert de trigger of het nieuw
 
 ### <a name="trigger-recurrence-shift-and-drift"></a>Verschuiving van terugkeer patroon en drift activeren
 
-Op verbindingen gebaseerde triggers waarbij u eerst een verbinding moet maken, zoals de SFTP-SSH-trigger, verschillen van ingebouwde triggers die in Azure Logic Apps systeem eigen worden uitgevoerd, zoals de [terugkeer patroon trigger](../connectors/connectors-native-recurrence.md). In terugkerende activeringen op basis van een verbinding is de terugkeer planning niet het enige stuur programma dat de uitvoering beheert, en de tijd zone bepaalt alleen de eerste begin tijd. De volgende uitvoeringen zijn afhankelijk van het terugkeer schema, de laatste uitvoering van triggers *en* andere factoren die kunnen leiden tot een onverwacht gedrag of het produceren van onverwachte werking, zoals het niet behouden van het opgegeven schema wanneer zomer tijd (DST) begint en eindigt. Om ervoor te zorgen dat de tijd van het terugkeer patroon niet wordt verschoven wanneer het ZOMERtijd duurt, moet u het terugkeer patroon hand matig aanpassen zodat uw logische app op het verwachte tijdstip blijft worden uitgevoerd. Anders wordt de begin tijd één uur vooruit geschoven wanneer zomer tijd wordt gestart en één uur terug wanneer de DST eindigt. Zie [terugkeer patroon voor triggers op basis](../connectors/apis-list.md#recurrence-connection-based)van een verbinding voor meer informatie.
+Op verbindingen gebaseerde triggers waarbij u eerst een verbinding moet maken, zoals de SFTP-SSH-trigger, verschillen van ingebouwde triggers die in Azure Logic Apps systeem eigen worden uitgevoerd, zoals de [terugkeer patroon trigger](../connectors/connectors-native-recurrence.md). In terugkerende activeringen op basis van een verbinding is de terugkeer planning niet het enige stuur programma dat de uitvoering beheert, en de tijd zone bepaalt alleen de eerste begin tijd. Volgende uitvoeringen zijn afhankelijk van het terugkeer schema, de laatste uitvoering van triggers *en* andere factoren die kunnen leiden tot een verplaatsings tijd of het produceren van onverwacht gedrag. Zo kan onverwacht gedrag bijvoorbeeld mislukken dat het opgegeven schema bij het starten en beëindigen van zomer tijd (DST) wordt gestart. Als u er zeker van wilt zijn dat de tijd van het terugkeer patroon niet wordt verschoven wanneer het ZOMERtijd gaat, past u het terugkeer patroon hand matig Op die manier blijft uw werk stroom op het verwachte tijdstip actief. Anders wordt de begin tijd één uur vooruit geschoven wanneer zomer tijd wordt gestart en één uur terug wanneer de DST eindigt. Zie [terugkeer patroon voor triggers op basis](../connectors/apis-list.md#recurrence-connection-based)van een verbinding voor meer informatie.
 
 <a name="convert-to-openssh"></a>
 
 ## <a name="convert-putty-based-key-to-openssh"></a>Op PuTTy gebaseerde sleutel converteren naar OpenSSH
 
-Als uw persoonlijke sleutel zich in de PuTTy-indeling bevindt, waarbij de bestandsnaam extensie. ppk (PuTTy persoonlijke sleutel) wordt gebruikt, moet u eerst de sleutel converteren naar de OpenSSH-indeling. Dit maakt gebruik van de bestandsnaam extensie. pem (Privacy Enhanced Mail).
+De indeling PuTTy en OpenSSH gebruiken verschillende bestandsnaam extensies. De PuTTy-indeling gebruikt de bestandsnaam extensie. ppk of PuTTy. De indeling OpenSSH maakt gebruik van de bestands extensie. pem of Privacy Enhanced Mail. Als uw persoonlijke sleutel de PuTTy-indeling heeft en u de OpenSSH-indeling moet gebruiken, moet u eerst de sleutel converteren naar de OpenSSH-indeling door de volgende stappen uit te voeren:
 
 ### <a name="unix-based-os"></a>Op UNIX gebaseerd besturings systeem
 
@@ -176,9 +169,9 @@ In deze sectie worden overwegingen beschreven om te controleren wanneer u de tri
 
 ### <a name="use-different-sftp-folders-for-file-upload-and-processing"></a>Andere SFTP-mappen gebruiken voor het uploaden en verwerken van bestanden
 
-Zorg ervoor dat u op uw SFTP-server afzonderlijke mappen gebruikt voor het opslaan van geüploade bestanden en waar de trigger deze bestanden controleert op verwerking. Dit betekent dat u een manier hebt om bestanden tussen deze mappen te verplaatsen. Als dat niet het geval is, kan de trigger onvoorspelbaar zijn, bijvoorbeeld door een wille keurig aantal bestanden over te slaan dat door de trigger wordt uitgevoerd.
+Gebruik op uw SFTP-server afzonderlijke mappen voor het opslaan van geüploade bestanden en de trigger voor het bewaken van deze bestanden voor verwerking. Als dat niet het geval is, kan de trigger onvoorspelbaar zijn, bijvoorbeeld door een wille keurig aantal bestanden over te slaan dat door de trigger wordt uitgevoerd. Deze vereiste betekent echter dat u een manier nodig hebt om bestanden tussen deze mappen te verplaatsen. 
 
-Als dit probleem optreedt, verwijdert u de bestanden uit de map die de trigger bewaakt en gebruikt u een andere map om de geüploade bestanden op te slaan.
+Als dit probleem optreedt, verwijdert u de bestanden uit de map die door de trigger wordt bewaakt en gebruikt u een andere map om de geüploade bestanden op te slaan.
 
 <a name="create-file"></a>
 
@@ -216,7 +209,7 @@ Als u een bestand op uw SFTP-server wilt maken, kunt u de actie SFTP-SSH- **best
 
    1. Selecteer   >  **kopie** bewerken.
 
-   1. Plak de *volledige* sleutel die u hebt gekopieerd in de eigenschap van de **persoonlijke SSH-sleutel** , die ondersteuning biedt voor meerdere regels in de SFTP-SSH-trigger of de actie die u hebt toegevoegd.  **_Zorg ervoor dat u_*de sleutel plakt. _*_Voer de sleutel niet hand matig in of bewerk deze_**.
+   1. Plak in de trigger of actie voor SFTP-SSH *de volledige* gekopieerde sleutel in de eigenschap **persoonlijke SSH-sleutel** , die ondersteuning biedt voor meerdere regels. **_Voer de sleutel niet hand matig in of bewerk deze_**.
 
 1. Wanneer u klaar bent met het invoeren van de verbindings gegevens, selecteert u **maken**.
 
@@ -244,9 +237,9 @@ Als u het standaard adaptieve gedrag dat door de segmentering wordt gebruikt, wi
 
 ### <a name="sftp---ssh-trigger-when-a-file-is-added-or-modified"></a>SFTP-SSH-trigger: wanneer een bestand wordt toegevoegd of gewijzigd
 
-Deze trigger start een werk stroom voor logische apps wanneer een bestand wordt toegevoegd aan of gewijzigd op een SFTP-server. U kunt bijvoorbeeld een voor waarde toevoegen waarmee de inhoud van het bestand wordt gecontroleerd en de inhoud wordt opgehaald op basis van het feit of de inhoud voldoet aan een opgegeven voor waarde. U kunt vervolgens een actie toevoegen waarmee de inhoud van het bestand wordt opgehaald en die inhoud in een map op de SFTP-server plaatsen.
+Met deze trigger wordt een werk stroom gestart wanneer een bestand wordt toegevoegd aan of gewijzigd op een SFTP-server. Als voor beeld van vervolg acties, kan de werk stroom gebruikmaken van een voor waarde om te controleren of de bestands inhoud voldoet aan de opgegeven criteria. Als de inhoud voldoet aan de voor waarde, kan de actie **Bestands inhoud ophalen** SFTP-SSH de inhoud ophalen en vervolgens kan een andere SFTP-SSH-actie dat bestand in een andere map op de sftp-server plaatsen.
 
-**Enter prise-voor beeld**: u kunt deze trigger gebruiken om een SFTP-map te bewaken voor nieuwe bestanden die klant orders vertegenwoordigen. U kunt vervolgens een SFTP-actie gebruiken, zoals het **ophalen van bestands inhoud** , zodat u de inhoud van de bestelling krijgt voor verdere verwerking en die order in een Data Base orders opslaat.
+**Enter prise-voor beeld**: u kunt deze trigger gebruiken om een SFTP-map te bewaken voor nieuwe bestanden die klant orders vertegenwoordigen. U kunt vervolgens een SFTP-SSH-actie gebruiken, zoals het **ophalen van bestands inhoud** , zodat u de inhoud van de bestelling krijgt voor verdere verwerking en die order in een orders database opslaat.
 
 <a name="get-content"></a>
 
@@ -282,7 +275,7 @@ Deze fout kan optreden wanneer de logische app geen verbinding kan maken met de 
 
 ### <a name="404-error-a-reference-was-made-to-a-file-or-folder-which-does-not-exist"></a>404 fout: ' er is een verwijzing gemaakt naar een bestand of map die niet bestaat '
 
-Deze fout kan zich voordoen wanneer uw logische app een nieuw bestand op uw SFTP-server maakt met behulp van de bewerking SFTP-SSH- **bestand maken** , maar het zojuist gemaakte bestand direct verplaatst voordat de Logic apps-service de meta gegevens van het bestand kan ophalen. Wanneer uw logische app de actie **bestand maken** uitvoert, roept de Logic apps-service ook automatisch uw SFTP-server aan om de meta gegevens van het bestand op te halen. Als uw logische app echter het bestand verplaatst, kan de Logic Apps-service het bestand niet meer vinden zodat het `404` fout bericht wordt weer gegeven.
+Deze fout kan optreden wanneer uw werk stroom een bestand maakt op uw SFTP-server met de bewerking SFTP-SSH- **bestand maken** , maar dat bestand direct verplaatst voordat de Logic apps-service de meta gegevens van het bestand kan ophalen. Als uw werk stroom de actie **bestand maken** uitvoert, roept de Logic apps-service automatisch uw SFTP-server aan om de meta gegevens van het bestand op te halen. Als uw logische app echter het bestand verplaatst, kan de Logic Apps-service het bestand niet meer vinden zodat het `404` fout bericht wordt weer gegeven.
 
 Als u het verplaatsen van het bestand niet kunt voor komen of vertragen, kunt u de meta gegevens van het bestand na het maken van het bestand overs Laan door de volgende stappen uit te voeren:
 

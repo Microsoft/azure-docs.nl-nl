@@ -9,15 +9,15 @@ ms.custom: seodec18, cog-serv-seo-aug-2020
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 03/25/2021
+ms.date: 03/29/2021
 ms.author: aahi
 keywords: on-premises, docker, container, sentiment analyse, natuurlijke taal verwerking
-ms.openlocfilehash: cc5406cec54defd118ba350ba59b8d7311cff563
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: 012e725e31097af5af634a1aba7693048c4c6b3e
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106089702"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106277467"
 ---
 # <a name="install-and-run-text-analytics-containers"></a>De Text Analytics-containers installeren en uitvoeren
 
@@ -32,7 +32,7 @@ Containers bieden u de mogelijkheid de Text Analytics-API's in uw eigen omgeving
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/cognitive-services/) aan voordat u begint.
 
 > [!IMPORTANT]
-> Het gratis account is beperkt tot 5.000 trans acties per maand en alleen de <a href="https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics" target="_blank">prijs categorieën</a> **gratis** en **standaard** zijn geldig voor containers. Zie [gegevens limieten](../overview.md#data-limits)voor meer informatie over de tarieven voor transactie aanvragen.
+> Het gratis account is beperkt tot 5.000 trans acties per maand en alleen de <a href="https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics" target="_blank">prijs categorieën</a> **gratis** en **standaard** zijn geldig voor containers. Zie [gegevens limieten](../concepts/data-limits.md)voor meer informatie over de tarieven voor transactie aanvragen.
 
 ## <a name="prerequisites"></a>Vereisten
 

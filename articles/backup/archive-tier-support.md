@@ -3,12 +3,12 @@ title: Ondersteuning voor archief lagen (preview-versie)
 description: Meer informatie over de ondersteuning van de archiefmap voor Azure Backup
 ms.topic: conceptual
 ms.date: 02/18/2021
-ms.openlocfilehash: 322bc9d7e2160cc9156c793859b9fda833b3df09
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 7a42b8702cfdda14a18aa3cdd4e084ed78767b0a
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105563970"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107012145"
 ---
 # <a name="archive-tier-support-preview"></a>Ondersteuning voor archief lagen (preview-versie)
 
@@ -40,6 +40,8 @@ Ondersteunde clients:
 
 ## <a name="get-started-with-powershell"></a>Aan de slag met PowerShell
 
+1. Down load de [nieuwste](https://github.com/PowerShell/PowerShell/releases) versie van Power shell van github.
+
 1. Voer de volgende opdracht uit in PowerShell:
   
     ```azurepowershell
@@ -57,7 +59,13 @@ Ondersteunde clients:
 
 1. De lijst met back-upitems ophalen:
 
-    `$BackupItemList = Get-AzRecoveryServicesBackupItem -vaultId $vault.ID -BackupManagementType "AzureVM/AzureWorkload" -WorkloadType "AzureVM/MSSQL"`
+    - Voor virtuele machines van Azure:
+
+        `$BackupItemList = Get-AzRecoveryServicesBackupItem -vaultId $vault.ID -BackupManagementType "AzureVM" -WorkloadType "AzureVM"`
+
+    - Voor SQL Server in azure virtual machines:
+
+        `$BackupItemList = Get-AzRecoveryServicesBackupItem -vaultId $vault.ID -BackupManagementType "AzureWorkload" -WorkloadType "MSSQL"`
 
 1. Het back-upitem ophalen.
 

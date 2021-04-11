@@ -1,6 +1,6 @@
 ---
 title: Bestaande gegevens migreren naar een Table-API-account in Azure Cosmos DB
-description: Informatie over het migreren of importeren van on-premises gegevens of gegevens in de cloud naar een Azure Table-API-account in Azure Cosmos DB.
+description: Meer informatie over het migreren of importeren van on-premises of Cloud gegevens naar een Azure Table-API-account in Azure Cosmos DB.
 author: SnehaGunda
 ms.service: cosmos-db
 ms.subservice: cosmosdb-table
@@ -8,39 +8,38 @@ ms.topic: tutorial
 ms.date: 12/07/2017
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: e876ca028532bb3721146e90a91d68c4c12bf79f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 77f4c928db695bd4193ad46c93e0efbd16decf29
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "93096073"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106443335"
 ---
-# <a name="migrate-your-data-to-azure-cosmos-db-table-api-account"></a>Gegevens migreren naar een Azure Cosmos DB Table-API-account
+# <a name="migrate-your-data-to-an-azure-cosmos-db-table-api-account"></a>Uw gegevens migreren naar een Azure Cosmos DB Table-API-account
 [!INCLUDE[appliesto-table-api](includes/appliesto-table-api.md)]
 
-In deze zelfstudie vindt u instructies voor het importeren van gegevens voor gebruik met de Azure Cosmos DB [Table-API](table-introduction.md). Als u gegevens hebt opgeslagen in Azure Table Storage, kunt u het gegevensmigratieprogramma of AzCopy gebruiken om de gegevens te importeren in Azure Cosmos DB Table-API. Als u gegevens hebt opgeslagen in een Azure Cosmos DB Table-API-account (preview), moet u het gegevensmigratieprogramma gebruiken om uw gegevens te migreren. 
+In deze zelfstudie vindt u instructies voor het importeren van gegevens voor gebruik met de Azure Cosmos DB [Table-API](table-introduction.md). Als u gegevens hebt opgeslagen in azure Table Storage, kunt u het hulp programma voor gegevens migratie of AzCopy gebruiken om uw gegevens te importeren naar de Azure Cosmos DB Table-API. 
 
 Deze zelfstudie bestaat uit de volgende taken:
 
 > [!div class="checklist"]
-> * Gegevens importeren met het gegevensmigratieprogramma
+> * Gegevens importeren met het hulp programma voor gegevens migratie
 > * Gegevens importeren met AzCopy
-> * Migreren vanuit Table-API (preview) naar Table-API 
 
 ## <a name="prerequisites"></a>Vereisten
 
-* **Doorvoer vergroten:** de duur van de gegevensmigratie is afhankelijk van de hoeveelheid doorvoer die u voor een afzonderlijke container of een reeks containers instelt. Verhoog de doorvoer voor grotere gegevensmigraties. Nadat u de migratie hebt voltooid, verlaagt u de doorvoer om kosten te besparen. Zie Prestatieniveaus en prijscategorieën in Azure Cosmos DB voor meer informatie over het verhogen van de doorvoer in Azure Portal.
+* **Doorvoer vergroten:** de duur van de gegevensmigratie is afhankelijk van de hoeveelheid doorvoer die u voor een afzonderlijke container of een reeks containers instelt. Verhoog de doorvoer voor grotere gegevensmigraties. Nadat u de migratie hebt voltooid, verlaagt u de doorvoer om kosten te besparen.
 
-* **Azure Cosmos DB-resources maken:** voordat u gegevens gaat migreren, maakt u vooraf alle tabellen vanuit de Azure-portal. Als u migreert naar een Azure Cosmos DB-account dat doorvoer op databaseniveau heeft, moet u een partitiesleutel opgeven bij het maken van de Azure Cosmos DB-tabellen.
+* **Azure Cosmos DB resources maken:** Voordat u begint met het migreren van de gegevens, maakt u alle tabellen van de Azure Portal. Als u migreert naar een Azure Cosmos DB-account met door Voer op database niveau, moet u ervoor zorgen dat u een partitie sleutel opgeeft wanneer u de Azure Cosmos DB tabellen maakt.
 
-## <a name="data-migration-tool"></a>Gegevensmigratieprogramma
+## <a name="data-migration-tool"></a>Hulp programma voor gegevens migratie
 
-Het opdrachtregelprogramma voor Azure Cosmos DB-gegevensmigratie (dt.exe) kan worden gebruikt om uw bestaande Azure Table Storage-gegevens te importeren in een account voor een algemeen beschikbare Table-API of om gegevens te migreren van een Table-API-account (preview) naar een account voor een algemeen beschikbare Table-API. Andere bronnen worden momenteel niet ondersteund. Het gegevensmigratieprogramma dat is gebaseerd op een gebruikersinterface (dtui.exe) wordt momenteel niet ondersteund voor Table-API-accounts. 
+U kunt het hulp programma voor gegevens migratie van de opdracht regel (dt.exe) in Azure Cosmos DB gebruiken om uw bestaande Azure Table Storage-gegevens te importeren in een Table-API-account. 
 
-Als u tabelgegevens wilt migreren, moet u de volgende taken uitvoeren:
+Tabel gegevens migreren:
 
 1. Download het migratieprogramma op [GitHub](https://github.com/azure/azure-documentdb-datamigrationtool).
-2. Voer `dt.exe` uit met de opdrachtregelargumenten voor uw scenario. `dt.exe` wordt uitgevoerd met een opdracht in de volgende indeling:
+2. Voer uit `dt.exe` met behulp van de opdracht regel argumenten voor uw scenario. `dt.exe` wordt uitgevoerd met een opdracht in de volgende indeling:
 
    ```bash
     dt.exe [/<option>:<value>] /s:<source-name> [/s.<source-option>:<value>] /t:<target-name> [/t.<target-option>:<value>] 
@@ -48,72 +47,54 @@ Als u tabelgegevens wilt migreren, moet u de volgende taken uitvoeren:
 
 De ondersteunde opties voor deze opdracht zijn:
 
-* **/ErrorLog:** Optioneel. Naam van het CSV-bestand voor het omleiden van fouten in de gegevensoverdracht
-* **/OverwriteErrorLog:** Optioneel. Foutenlogboekbestand overschrijven
-* **/ProgressUpdateInterval:** Optioneel; standaardwaarde is 00:00:01. Tijdsinterval voor het vernieuwen van de voortgang van de gegevensoverdracht
-* **/ErrorDetails:** Optioneel; standaardwaarde is Geen. Hiermee geeft u op dat gedetailleerde foutgegevens moeten worden weergegeven voor de volgende fouten: Geen, Kritiek, Alles
-* **/EnableCosmosTableLog:** Optioneel. Het logboek naar een cosmos-tabel account sturen. Als deze instelling is ingesteld, wordt dit ook de standaardinstelling van de verbindingsreeks voor de doelaccount tenzij er ook /CosmosTableLogConnectionString is opgegeven. Dit is handig als er meerdere exemplaren van DT tegelijk worden uitgevoerd.
-* **/CosmosTableLogConnectionString:** Optioneel. Verbindingsreeks om het logboek naar een extern cosmos-tabelaccount te sturen.
+* **/ErrorLog:** Optioneel. De naam van het CSV-bestand voor het omleiden van fouten in de gegevens overdracht.
+* **/OverwriteErrorLog:** Optioneel. Overschrijf het fouten logboek bestand.
+* **/ProgressUpdateInterval:** Optioneel, standaard is `00:00:01` . Het tijds interval voor het vernieuwen van de voortgang van de gegevens overdracht op het scherm.
+* **/ErrorDetails:** Optioneel, standaard is `None` . Hiermee geeft u op dat gedetailleerde fout informatie moet worden weer gegeven voor de volgende fouten: `None` , `Critical` of `All` .
+* **/EnableCosmosTableLog:** Optioneel. Het logboek naar een Azure Cosmos DB Table-account door sturen. Als deze instelling is ingesteld, wordt de standaard instelling van het doel account connection string tenzij `/CosmosTableLogConnectionString` er ook is opgegeven. Dit is handig als er meerdere exemplaren van het hulp programma tegelijkertijd worden uitgevoerd.
+* **/CosmosTableLogConnectionString:** Optioneel. Het connection string om het logboek naar een extern Azure Cosmos DB tabel account te leiden.
 
 ### <a name="command-line-source-settings"></a>Broninstellingen voor de opdrachtregel
 
-Gebruik de volgende bronopties bij het definiëren van Azure Table Storage of Table-API preview als de bron van de migratie.
+Gebruik de volgende bron opties wanneer u Azure Table Storage definieert als de bron van de migratie.
 
-* **/s:AzureTable:** Gegevens lezen uit Azure Table Storage
-* **/s.ConnectionString:** Verbindingsreeks voor het eindpunt van de tabel. Het kan worden opgehaald uit de Azure-portal
-* **/s.LocationMode:** Optioneel; standaardwaarde is PrimaryOnly. Hiermee geeft u op welke locatiemodus moet worden gebruikt bij het maken van verbinding met Azure Table Storage: PrimaryOnly, PrimaryThenSecondary, SecondaryOnly, SecondaryThenPrimary
-* **/s.Table:** Naam van de Azure-tabel
-* **/s.InternalFields:** Ingesteld op alle voor de tabelmigratie als RowKey en PartitionKey zijn vereist voor het importeren.
-* **/s.Filter:** Optioneel. Filterreeks die moet worden toegepast
-* **/s.Projection:** Optioneel. Lijst met te selecteren kolommen
+* **/s: AzureTable:** Hiermee worden gegevens uit Table Storage gelezen.
+* **/s.ConnectionString:** Verbindingsreeks voor het eindpunt van de tabel. U kunt dit ophalen uit de Azure Portal.
+* **/s.LocationMode:** Optioneel, standaard is `PrimaryOnly` . Hiermee geeft u op welke locatie modus moet worden gebruikt om verbinding te maken met Table Storage: `PrimaryOnly` ,, `PrimaryThenSecondary` `SecondaryOnly` , `SecondaryThenPrimary` .
+* **/s.table:** De naam van de Azure-tabel.
+* **/s.InternalFields:** Ingesteld op `All` voor tabel migratie omdat `RowKey` en `PartitionKey` is vereist voor het importeren.
+* **/s.Filter:** Optioneel. Filter teken reeks die moet worden toegepast.
+* **/s.Projection:** Optioneel. Lijst met kolommen die moeten worden geselecteerd,
 
-Als u de verbindingsreeks voor de bron wilt ophalen bij het importeren uit Azure Table Storage, opent u Azure Portal, klikt u op **Storage-accounts** > **Account** > **Toegangssleutels** en kopieert u vervolgens de **verbindingsreeks** met de knop Kopiëren.
+Open de Azure Portal om de bron connection string op te halen bij het importeren vanuit Table Storage. Selecteer **opslag accounts**  >  **account**  >  **toegangs sleutels** en kopieer de **verbindings reeks**.
 
-:::image type="content" source="./media/table-import/storage-table-access-key.png" alt-text="Schermopname van de opties Opslagaccounts > Account > Toegangssleutels met de knop Kopiëren gemarkeerd.":::
-
-Als u de verbindingsreeks voor de bron wilt ophalen bij het importeren uit een Azure Cosmos DB Table-API-account (preview), opent u Azure Portal, klikt u op **Azure Cosmos DB** > **Account** > **Verbindingsreeks** en kopieert u vervolgens de **verbindingsreeks** met de knop Kopiëren.
-
-:::image type="content" source="./media/table-import/cosmos-connection-string.png" alt-text="Schermopname van HBase-bronopties":::
-
-[Voorbeeld van Azure Table Storage-opdracht](#azure-table-storage)
-
-[Voorbeeld van opdracht voor Azure Cosmos DB Table-API (preview)](#table-api-preview)
+:::image type="content" source="./media/table-import/storage-table-access-key.png" alt-text="Scherm opname van opslag accounts > account > opties voor toegangs sleutels, en markeert het Kopieer pictogram.":::
 
 ### <a name="command-line-target-settings"></a>Doelinstellingen voor opdrachtregel
 
-Gebruik de volgende doelopties bij het definiëren van de Azure Cosmos DB Table-API als het doel van de migratie.
+Gebruik de volgende doel opties wanneer u de Azure Cosmos DB Table-API als doel van de migratie definieert.
 
-* **/t:TableAPIBulk:** Hiermee worden gegevens geüpload naar Azure CosmosDB-tabel in batches
-* **/t.ConnectionString:** Verbindingsreeks voor het eindpunt van de tabel
-* **/t.TableName:** Geeft de naam van de tabel waarnaar moet worden geschreven
-* **/t.Overwrite:** Optioneel; standaardwaarde is false. Hiermee wordt aangegeven of bestaande waarden moeten worden overschreven
-* **/t.MaxInputBufferSize:** Optioneel; standaardwaarde is 1GB. Geschatte invoerbytes om te bufferen vóór het leegmaken van gegevens naar sink
-* **/t.Throughput:** Optioneel, standaardinstellingen van service als niet opgegeven. Specificeert de doorvoer voor het configureren van de tabel
-* **/t.MaxBatchSize:** Optioneel; standaardwaarde is 2MB. De batchgrootte in bytes opgeven
+* **/t: TableAPIBulk:** Hiermee worden gegevens geüpload naar de Azure Cosmos DB-Table-API in batches.
+* **/t.ConnectionString:** De connection string voor het eind punt van de tabel.
+* **/t.TableName:** Hiermee geeft u de naam van de tabel waarnaar moet worden geschreven.
+* **/t.overwrite:** Optioneel, standaard is `false` . Hiermee wordt aangegeven of bestaande waarden moeten worden overschreven.
+* **/t.MaxInputBufferSize:** Optioneel, standaard is `1GB` . Geschatte geschatte invoer bytes voor buffer vóór het leegmaken van gegevens naar sink.
+* **/t.Throughput:** Optioneel, standaardinstellingen van service als niet opgegeven. Specificeert de door Voer voor het configureren van de tabel.
+* **/t.MaxBatchSize:** Optioneel, standaard is `2MB` . Geef de Batch grootte in bytes op.
 
-<a id="azure-table-storage"></a>
-### <a name="sample-command-source-is-azure-table-storage"></a>Voorbeeldopdracht: bron is Azure-tabelopslag
+### <a name="sample-command-source-is-table-storage"></a>Voorbeeld opdracht: bron is Table Storage
 
-Hier ziet u een voorbeeld van een opdrachtregel voor het importeren vanuit Azure Table Storage in Table-API:
+Hier volgt een voor beeld van een opdracht regel waarin wordt getoond hoe u kunt importeren uit Table Storage naar de Table-API:
 
 ```bash
 dt /s:AzureTable /s.ConnectionString:DefaultEndpointsProtocol=https;AccountName=<Azure Table storage account name>;AccountKey=<Account Key>;EndpointSuffix=core.windows.net /s.Table:<Table name> /t:TableAPIBulk /t.ConnectionString:DefaultEndpointsProtocol=https;AccountName=<Azure Cosmos DB account name>;AccountKey=<Azure Cosmos DB account key>;TableEndpoint=https://<Account name>.table.cosmosdb.azure.com:443 /t.TableName:<Table name> /t.Overwrite
 ```
 
-<a id="table-api-preview"></a>
-### <a name="sample-command-source-is-azure-cosmos-db-table-api-preview"></a>Voorbeeldopdracht: bron is Azure Cosmos DB Table-API (preview)
-
-Hier ziet u een voorbeeld van een opdrachtregel voor het importeren vanuit Table-API preview in een algemeen beschikbare Table-API:
-
-```bash
-dt /s:AzureTable /s.ConnectionString:DefaultEndpointsProtocol=https;AccountName=<Table API preview account name>;AccountKey=<Table API preview account key>;TableEndpoint=https://<Account Name>.documents.azure.com; /s.Table:<Table name> /t:TableAPIBulk /t.ConnectionString:DefaultEndpointsProtocol=https;AccountName=<Azure Cosmos DB account name>;AccountKey=<Azure Cosmos DB account key>;TableEndpoint=https://<Account name>.table.cosmosdb.azure.com:443 /t.TableName:<Table name> /t.Overwrite
-```
-
 ## <a name="migrate-data-by-using-azcopy"></a>Gegevens migreren met AzCopy
 
-U kunt ook met het AzCopy-opdrachtregelprogramma gegevens vanuit Azure Table Storage migreren naar de Azure Cosmos DB Table-API. Als u AzCopy wilt gebruiken, exporteert u eerst de gegevens zoals wordt beschreven in [Gegevens exporteren vanuit Azure Table Storage](/previous-versions/azure/storage/storage-use-azcopy#export-data-from-table-storage) en importeert u de gegevens vervolgens in Azure Cosmos DB zoals wordt beschreven in [Azure Cosmos DB Table-API](/previous-versions/azure/storage/storage-use-azcopy#import-data-into-table-storage).
+U kunt ook het opdracht regel hulpprogramma AzCopy gebruiken om gegevens te migreren van Table Storage naar de Azure Cosmos DB Table-API. Als u AzCopy wilt gebruiken, exporteert u eerst uw gegevens zoals beschreven in [gegevens exporteren uit Table Storage](/previous-versions/azure/storage/storage-use-azcopy#export-data-from-table-storage). Vervolgens importeert u de gegevens naar Azure Cosmos DB, zoals beschreven in [Azure Cosmos DB Table-API](/previous-versions/azure/storage/storage-use-azcopy#import-data-into-table-storage).
 
-Bij het importeren in Azure Cosmos DB kunt u de volgende opdracht als voorbeeld nemen. Houd er rekening mee dat de waarde voor /Dest cosmosdb is en niet core.
+Raadpleeg het volgende voor beeld wanneer u importeert in Azure Cosmos DB. Houd er rekening mee dat de `/Dest` waarde wordt gebruikt `cosmosdb` , niet `core` .
 
 Voorbeeld van opdracht voor importeren:
 
@@ -121,31 +102,13 @@ Voorbeeld van opdracht voor importeren:
 AzCopy /Source:C:\myfolder\ /Dest:https://myaccount.table.cosmosdb.windows.net/mytable1/ /DestKey:key /Manifest:"myaccount_mytable_20140103T112020.manifest" /EntityOperation:InsertOrReplace
 ```
 
-## <a name="migrate-from-table-api-preview-to-table-api"></a>Migreren vanuit Table-API (preview) naar Table-API
-
-> [!WARNING]
-> Als u direct voordeel wilt hebben van de algemeen beschikbare tabellen, migreert u uw bestaande previewtabellen zoals in deze sectie is beschreven. Anders worden de tabellen de komende weken automatisch gemigreerd voor bestaande previewklanten. Houd er echter rekening mee dat er voor automatisch gemigreerde previewtabellen bepaalde beperkingen gelden die niet van toepassing zijn op onlangs gemaakte tabellen.
-
-De Table-API is nu algemeen beschikbaar. Er zijn verschillen tussen de previewversie en de algemeen beschikbare versie voor tabellen in de code die wordt uitgevoerd in de cloud en in de code die wordt uitgevoerd op de client. Daarom wordt het niet aangeraden om een preview SDK-client te combineren met een account voor een algemeen beschikbare Table-API. Als klanten van de Table-API preview de bestaande tabellen willen blijven gebruiken in een productieomgeving, moeten ze de tabellen vanuit de previewomgeving migreren naar de omgeving met een algemeen beschikbare Table-API of wachten totdat de tabellen automatisch worden gemigreerd. Als u wacht op de automatische migratie, krijgt u een melding over de beperkingen die voor de gemigreerde tabellen gelden. Na de migratie kunt u voor uw bestaande account nieuwe tabellen zonder beperkingen maken (alleen gemigreerde tabellen hebben beperkingen).
-
-U migreert als volgt van Table-API (preview) naar de algemeen beschikbare Table-API:
-
-1. Maak een nieuw Azure Cosmos DB-account en stel hiervoor het API-type in op Azure Table, zoals wordt beschreven in [Een databaseaccount maken](create-table-dotnet.md#create-a-database-account).
-
-2. Zorg ervoor dat de clients gebruikmaken van een algemeen beschikbare release van de [Table-API-SDK's](table-sdk-dotnet.md).
-
-3. Migreer de clientgegevens van de previewtabellen naar de algemeen beschikbare tabellen met behulp van het gegevensmigratieprogramma. Instructies voor het gebruik van het gegevensmigratieprogramma voor dit doeleinde worden beschreven in [Gegevensmigratieprogramma](#data-migration-tool). 
-
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie hebt u het volgende geleerd:
-
-> [!div class="checklist"]
-> * Gegevens importeren met het gegevensmigratieprogramma
-> * Gegevens importeren met AzCopy
-> * Migreren vanuit Table-API (preview) naar Table-API
-
-U kunt nu verdergaan met de volgende zelfstudie om te leren hoe u query's uitvoert op gegevens met de Azure Cosmos DB Table-API. 
+Meer informatie over het opvragen van gegevens met behulp van de Azure Cosmos DB Table-API. 
 
 > [!div class="nextstepaction"]
 >[Hoe kan ik query’s uitvoeren op gegevens?](../cosmos-db/tutorial-query-table.md)
+
+
+
+

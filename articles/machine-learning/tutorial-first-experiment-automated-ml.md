@@ -1,7 +1,7 @@
 ---
 title: Geautomatiseerde ML-classificatiemodellen maken
 titleSuffix: Azure Machine Learning
-description: Ontdek hoe u classificatiemodellen kunt trainen en implementeren met een geautomatiseerde machine learning-interface (geautomatiseerde ML) van Azure Machine Learning.
+description: Train & Implementeer classificatie modellen zonder code te schrijven met behulp van de geautomatiseerde machine learning-interface (Automated ML) van Azure Machine Learning.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,29 +11,31 @@ ms.author: sacartac
 ms.reviewer: nibaccam
 ms.date: 12/21/2020
 ms.custom: automl
-ms.openlocfilehash: ad8a9f7af9ddabe969d090f80378ba5ff891d7f1
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: d0e236891e48a20adf1901d2f95a90ae25969c49
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101691940"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107210843"
 ---
 # <a name="tutorial-create-a-classification-model-with-automated-ml-in-azure-machine-learning"></a>Zelfstudie: Een classificatiemodel maken met geautomatiseerde ML in Azure Machine Learning
 
-
-In deze zelfstudie leert u hoe u een eenvoudig classificatiemodel maakt zonder ook maar één regel code te schrijven, met de geautomatiseerde machine learning in de Azure Machine Learning Studio. Dit classificatiemodel voorspelt of een klant een termijnrekening zal openen bij een financiële instelling.
+Meer informatie over het maken van een [eenvoudig classificatie model](concept-automated-ml.md#classification) zonder een enkele regel code te schrijven met behulp van automatische machine learning in azure machine learning Studio. Dit classificatiemodel voorspelt of een klant een termijnrekening zal openen bij een financiële instelling.
 
 Met geautomatiseerde machine learning kunt u tijdsintensieve taken automatiseren. Geautomatiseerde machine learning doorloopt of itereert snel allerlei combinaties van algoritmen en hyperparameters om het beste model te vinden op basis van uw maatstaaf voor succes.
 
-Voor een voorbeeld van tijdreeksprognoses, zie [ Zelfstudie: Vraagprognose en AutoML](tutorial-automated-ml-forecast.md).
-
-In deze zelfstudie leert u hoe u de volgende taken uitvoert:
+In deze zelf studie schrijft u geen code. u gebruikt de Studio-interface om training uit te voeren.  U leert hoe u de volgende taken kunt uitvoeren:
 
 > [!div class="checklist"]
 > * Een Azure Machine Learning-werkruimte maken.
 > * Een experiment voor geautomatiseerde machine learning uitvoeren.
 > * Experimentgegevens bekijken.
 > * Het model implementeren.
+
+Probeer ook geautomatiseerde machine learning voor deze andere model typen:
+
+* Zie [zelf studie: vraag prognose & AutoML](tutorial-automated-ml-forecast.md)voor een voor beeld van een voor spelling zonder code.
+* Voor een voor beeld van een code in eerste instantie van een regressie model raadpleegt [u de zelf studie: automatische machine learning gebruiken om de taxi tarieven te voors pellen](tutorial-auto-train-models.md).
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -52,7 +54,7 @@ Er zijn verschillende manieren om een [werkruimte te maken](how-to-manage-worksp
 >[!IMPORTANT] 
 > Noteer uw **werkruimte** en **abonnement**. U hebt deze nodig om ervoor te zorgen dat u uw experiment op de juiste plek maakt. 
 
-## <a name="get-started-in-azure-machine-learning-studio"></a>Aan de slag met Azure Machine Learning Studio
+## <a name="sign-in-to-the-studio"></a>Meld u aan bij de Studio
 
 U doorloopt de volgende stappen voor het voorbereiden en uitvoeren van het experiment via de Azure Machine Learning Studio op https://ml.azure.com, een geconsolideerde webinterface met hulpmiddelen voor machine learning waar gegevenswetenschappers, ongeacht hun vaardigheidsniveaus, scenario's kunnen uitvoeren. De Studio wordt niet ondersteund in Internet Explorer-browsers.
 

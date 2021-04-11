@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/11/2019
 ms.author: apimpm
-ms.openlocfilehash: c0c7a6b25c15be2e521e0985c315baf819650aa5
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 48f8445e30bd186681d1a4384d16f228a3382473
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99491753"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107012434"
 ---
 # <a name="api-management-transformation-policies"></a>Transformatiebeleid API Management
 In dit onderwerp vindt u een verwijzing naar de volgende API Management-beleids regels. Zie [beleid in API Management](./api-management-policies.md)voor meer informatie over het toevoegen en configureren van beleid.
@@ -366,7 +366,7 @@ Het `set-body` beleid kan worden geconfigureerd voor het gebruik van de taal [Li
 > [!IMPORTANT]
 > De implementatie van liquide middelen die in het beleid worden gebruikt `set-body` , is geconfigureerd in de C#-modus. Dit is met name belang rijk bij het uitvoeren van dingen als filteren. Een voor beeld: als u een datum filter gebruikt, is het gebruik van Pascal-behuizing en C#-datum notatie bijvoorbeeld vereist.
 >
-> {{Body. foo. startDateTime | Datum: "yyyyMMddTHH: mm: ddZ"}}
+> {{Body. foo. startDateTime | Datum: "yyyyMMddTHH: mm: ssZ"}}
 
 > [!IMPORTANT]
 > Als u een juiste binding wilt maken met een XML-hoofd tekst met behulp van de vloeistof sjabloon, gebruikt u een `set-header` beleid om het inhouds type in te stellen op toepassing/XML, tekst/XML (of een wille keurig type dat eindigt met + XML). voor een JSON-hoofd tekst moet Application/JSON, Text/JSON (of een type dat eindigt op + JSON).

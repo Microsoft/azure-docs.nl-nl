@@ -10,14 +10,14 @@ author: gvashishtha
 ms.reviewer: larryfr
 ms.date: 03/25/2021
 ms.topic: conceptual
-ms.custom: how-to, devx-track-python, deploy, devx-track-azurecli
+ms.custom: how-to, devx-track-python, deploy, devx-track-azurecli, contperf-fy21q2
 adobe-target: true
-ms.openlocfilehash: 4d2aa4d43fbc8cf9040702afb1877e0271b2eab2
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 598da277214a2ee8e52cc5baaf2c792dfdc0429d
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105568287"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106220229"
 ---
 # <a name="deploy-machine-learning-models-to-azure"></a>machine learning modellen implementeren in azure
 
@@ -321,7 +321,7 @@ U bent nu klaar om uw model te implementeren.
 Als u het model in uw Azure Machine Learning-werk ruimte hebt geregistreerd, vervangt u ' mymodel: 1 ' door de naam van uw model en het versie nummer.
 
 ```azurecli-interactive
-az ml model deploy -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.json
+az ml model deploy -n tutorial -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.json
 ```
 
 ### <a name="using-a-local-model"></a>Een lokaal model gebruiken
@@ -355,13 +355,13 @@ Tijdens de implementatie van het model ziet u mogelijk de wijziging van de servi
 
 In de volgende tabel worden de verschillende service statussen beschreven:
 
-| Status van webservice | Description | Eind status?
+| Status van webservice | Beschrijving | Eind status?
 | ----- | ----- | ----- |
-| Overstappen | De service is in het implementatie proces. | No |
-| Niet in orde | De service is geïmplementeerd, maar is momenteel niet bereikbaar.  | No |
-| Unschedulable | De service kan op dit moment niet worden geïmplementeerd vanwege een gebrek aan resources. | No |
-| Mislukt | De implementatie van de service is mislukt vanwege een fout of een crash. | Yes |
-| In orde | De service is in orde en het eind punt is beschikbaar. | Yes |
+| Overstappen | De service is in het implementatie proces. | Nee |
+| Niet in orde | De service is geïmplementeerd, maar is momenteel niet bereikbaar.  | Nee |
+| Unschedulable | De service kan op dit moment niet worden geïmplementeerd vanwege een gebrek aan resources. | Nee |
+| Mislukt | De implementatie van de service is mislukt vanwege een fout of een crash. | Ja |
+| In orde | De service is in orde en het eind punt is beschikbaar. | Ja |
 
 > [!TIP]
 > Tijdens de implementatie worden docker-installatie kopieën voor Compute-doelen gemaakt en geladen van Azure Container Registry (ACR). Azure Machine Learning maakt standaard een ACR die gebruikmaakt van de *Basic* -servicelaag. Het wijzigen van de ACR voor uw werk ruimte in de standaard-of Premium-laag kan de tijd verminderen die nodig is om installatie kopieën te bouwen en implementeren in uw reken doelen. Zie [Azure container Registry service lagen](../container-registry/container-registry-skus.md)voor meer informatie.

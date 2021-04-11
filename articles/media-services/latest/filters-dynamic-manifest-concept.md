@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: ad3b6fa581bfc36579ef4b6937b50f8c1789a7f5
-ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
+ms.openlocfilehash: 1fb8724edc32477bb1c399db0493833e9df984bb
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106111659"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106277569"
 ---
 # <a name="filter-your-manifests-using-dynamic-packager"></a>Uw manifesten filteren met behulp van dynamische pakket
 
@@ -26,7 +26,7 @@ ms.locfileid: "106111659"
 
 Wanneer u Adaptive Bitrate Streaming inhoud aan apparaten levert, moet u soms meerdere versies van een manifest publiceren om specifieke apparaatfuncties of beschik bare netwerk bandbreedte te bereiken. Met de [Dynamic packager](encode-dynamic-packaging-concept.md) kunt u filters opgeven waarmee u specifieke codecs, resoluties, bitsnelheden en combi Naties van audio tracks kunt filteren. Met deze filtering wordt de nood zaak om meerdere kopieën te maken verwijderd. U hoeft alleen maar een nieuwe URL te publiceren met een specifieke set filters die zijn geconfigureerd voor uw doel apparaten (iOS, Android, SmartTV of browsers) en de netwerk mogelijkheden (scenario's met een hoge band breedte, mobiele of lage band breedte). In dit geval kunnen clients de streaming van uw inhoud manipuleren via de query reeks (door beschik bare [Asset filters of account filters](filters-concept.md)op te geven) en filters gebruiken om specifieke secties van een stroom te streamen.
 
-Bij sommige bezorgings scenario's moet u ervoor zorgen dat een klant geen toegang krijgt tot specifieke sporen. Bijvoorbeeld: u wilt een manifest dat HD-tracks bevat niet publiceren naar een specifieke Subscriber-laag. Of misschien wilt u specifieke ABR-tracks (Adaptive bitrate) verwijderen om de leverings kosten te verlagen voor een specifiek apparaat dat geen voor deel zou kunnen zijn van de extra sporen. In dit geval kunt u een lijst met vooraf gemaakte filters koppelen aan uw streaming- [Locator](streaming-locators-concept.md) bij het maken. Clients kunnen vervolgens niet manipuleren hoe de inhoud wordt gestreamd, omdat deze is gedefinieerd door de **streaming-Locator**.
+Bij sommige bezorgings scenario's moet u ervoor zorgen dat een klant geen toegang krijgt tot specifieke sporen. Bijvoorbeeld: u wilt een manifest dat HD-tracks bevat niet publiceren naar een specifieke Subscriber-laag. Of misschien wilt u specifieke ABR-tracks (Adaptive bitrate) verwijderen om de leverings kosten te verlagen voor een specifiek apparaat dat geen voor deel zou kunnen zijn van de extra sporen. In dit geval kunt u een lijst met vooraf gemaakte filters koppelen aan uw streaming- [Locator](stream-streaming-locators-concept.md) bij het maken. Clients kunnen vervolgens niet manipuleren hoe de inhoud wordt gestreamd, omdat deze is gedefinieerd door de **streaming-Locator**.
 
 U kunt filteren combi neren door [filters op te geven voor streaming-Locator](filters-concept.md#associating-filters-with-streaming-locator) + aanvullende apparaatspecifieke filters die uw client opgeeft in de URL. Deze combi natie is handig om extra sporen te beperken, zoals meta gegevens of gebeurtenis stromen, audio talen of beschrijvende audio sporen.
 

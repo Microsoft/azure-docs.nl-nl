@@ -10,14 +10,15 @@ ms.service: media-services
 ms.subservice: video-indexer
 ms.workload: na
 ms.topic: article
-ms.date: 02/16/2021
+ms.custom: references_regions
+ms.date: 03/30/2021
 ms.author: juliako
-ms.openlocfilehash: 618617d3602e45ebb15314c7cc5f6898a73bb71f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: c2465d845da9dd9c2c1690c39a8f1d1c7e86899f
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102203722"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106075709"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Release opmerkingen bij Azure Media Services Video Indexer
 
@@ -32,9 +33,31 @@ Om u op de hoogte te houden van de nieuwste ontwikkelingen, biedt dit artikel u 
 
 ## <a name="march-2021"></a>2021 maart
 
+### <a name="audio-analysis"></a>Audio analyse 
+
 Audio analyse is nu beschikbaar in extra nieuwe bundel van audio functies op verschillende prijs punten. De nieuwe **standaard** instelling voor audio analyse biedt een goedkope optie om alleen spraak-transcriptie, vertaling en uitvoer bijschriften en ondertiteling uit te pakken. De **standaard audio** -voor instelling produceert twee afzonderlijke meters op uw factuur, met inbegrip van een regel voor transcriptie en een aparte regel voor de opmaak van het bijschrift en de ondertitel. Zie de pagina met [prijzen voor Media Services](https://azure.microsoft.com/pricing/details/media-services/) voor meer informatie over de prijzen.
 
 De zojuist toegevoegde bundel is beschikbaar wanneer u het bestand indexeert of opnieuw indexeert door de **Geavanceerde**  ->  **Audio** -voor instelling voor de basis opties te kiezen (onder de vervolg keuzelijst **video + audio-indexering** ).
+
+### <a name="new-developer-portal"></a>Nieuwe ontwikkelaars Portal 
+
+Video Indexer heeft een nieuwe [ontwikkelaars Portal](https://api-portal.videoindexer.ai/), probeer de nieuwe video indexer-api's uit en Zoek alle relevante resources op één plek: [github-opslag plaats](https://github.com/Azure-Samples/media-services-video-indexer), [stack overflow](https://stackoverflow.com/questions/tagged/video-indexer), [video indexer tech Community](https://techcommunity.microsoft.com/t5/azure-media-services/bg-p/AzureMediaServices/label-name/Video%20Indexer) met relevante blog berichten, [video indexer Veelgestelde vragen](faq.md), [gebruikers stem](https://feedback.azure.com/forums/932041-cognitive-services?category_id=399016) om uw feedback te geven en functies en  [' CodePen ' te koppelen](https://codepen.io/videoindexer) aan widgets code voorbeelden. 
+ 
+### <a name="advanced-customization-capabilities-for-insight-widget"></a>Geavanceerde aanpassings mogelijkheden voor Insight-widget 
+
+SDK is nu beschikbaar om Video Indexer Insights-widget in uw eigen service in te sluiten en de stijl en gegevens aan te passen. De SDK ondersteunt de Standard Video Indexer Insights-widget en een volledig aanpas bare Insights-widget. Code voorbeeld is beschikbaar in [video indexer github-opslag plaats](https://github.com/Azure-Samples/media-services-video-indexer/tree/master/Embedding%20widgets/widget-customization). Met deze geavanceerde aanpassings mogelijkheden kunnen ontwikkel aars van oplossingen aangepaste opmaak Toep assen en de eigen AI-gegevens van de klant meenemen en in de object Insight presen teren (met of zonder Video Indexer inzichten). 
+
+### <a name="video-indexer-deployed-in-the-us-north-central--us-west-and-canada-central"></a>Video Indexer geïmplementeerd in de VS Noord-Centraal, VS-West en Canada-centraal 
+
+U kunt nu een Video Indexer betaalde account maken in de regio's vs Noord-Centraal, VS-West en Canada-centraal
+ 
+### <a name="new-source-languages-support-for-speech-to-text-stt-translation-and-search"></a>Ondersteuning voor nieuwe bron talen voor STT (Speech-to-text), vertalen en zoeken 
+
+Video Indexer biedt nu ondersteuning voor STT, vertalen en zoeken in Deens (' da-DK '), Noors (' nb-NO '), Zweeds (' sv-SE '), Fins (' fi-FI '), Canadees Frans (' fr-CA '), Thai (' th-TH '), Arabisch (' ar-BH ', ' ar-BIJV ', ' ar-IQ ', ' ar-JO ', ' ar-KW ', ' ar-LB ', ' ar-OM ', ' ar-QA ', ' ar-S ' en ' ar-SY ') en Turks (' tr-TR '). Deze talen zijn beschikbaar in zowel API-als Video Indexer-website. 
+ 
+### <a name="search-by-topic-in-video-indexer-website"></a>Zoeken op onderwerp in Video Indexer website 
+
+U kunt nu de zoek functie gebruiken, boven aan de pagina [video indexer website](https://www.videoindexer.ai/account/login) , om te zoeken naar Video's met specifieke onderwerpen. 
 
 ## <a name="february-2021"></a>Februari 2021
 

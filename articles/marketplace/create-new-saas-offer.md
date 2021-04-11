@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 03/19/2021
-ms.openlocfilehash: f652858f22e26eb7167a0cc7a2cfb8ef4b600ace
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 74d30b7c42002c8f134520e0198774eba1519bcd
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105047297"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106553835"
 ---
 # <a name="how-to-create-a-saas-offer-in-the-commercial-marketplace"></a>Een SaaS-aanbieding maken in de commerciële Marketplace
 
@@ -56,7 +56,7 @@ Op het tabblad installatie van de **aanbieding** , onder **installatie Details**
    + Als u een gratis proef versie van 30 dagen wilt, selecteert u **gratis proef versie** en voert u in het vak **proef-URL** die wordt weer gegeven, de URL in (te beginnen met *http* of *https*), waar klanten toegang hebben tot uw gratis proef versie met [beAzure Active Directory hulp van een verificatie met één klik (Azure AD)](azure-ad-saas.md). Bijvoorbeeld `https://contoso.com/trial/saas-app`.
    + Als u wilt dat potentiële klanten contact met u opnemen om uw aanbieding te kopen, selecteert u **contact met mij opnemen**.
 
-### <a name="enable-a-test-drive-optional"></a>Een test drive inschakelen (optioneel)
+## <a name="enable-a-test-drive-optional"></a>Een test drive inschakelen (optioneel)
 
 Een test drive is een fantastische manier om uw aanbieding aan potentiële klanten te laten presen teren door hen gedurende een vast aantal uur toegang te geven tot een vooraf geconfigureerde omgeving. Het bieden van een test drive resulteert in een verhoogde conversie frequentie en genereert uiterst gekwalificeerde leads. Zie [Wat is een test drive?](./what-is-test-drive.md)voor meer informatie over test stations.
 
@@ -67,14 +67,14 @@ Een test drive is een fantastische manier om uw aanbieding aan potentiële klant
 1.  Schakel onder **test station** het selectie vakje **een test drive inschakelen** in.
 1.  Selecteer in de lijst die wordt weer gegeven het test drive type.
 
-### <a name="configure-lead-management"></a>Leadbeheer configureren
+## <a name="configure-lead-management"></a>Leadbeheer configureren
 
 Verbind uw Customer Relationship Management-systeem (CRM) met uw commerciële Marketplace-aanbieding zodat u contact gegevens van klanten kunt ontvangen wanneer een klant rente uitbrengt of uw product implementeert. U kunt deze verbinding wijzigen op elk gewenst moment tijdens of na het maken van de aanbieding.
 
 > [!NOTE]
 > U moet Lead beheer configureren als u uw aanbieding via micro soft wilt verkopen of als u de optie **contact opnemen met mij** hebt geselecteerd. Zie [leads van klanten van uw aanbieding voor commerciële Marketplace](partner-center-portal/commercial-marketplace-get-customer-leads.md)voor gedetailleerde richt lijnen.
 
-#### <a name="to-configure-the-connection-details-in-partner-center"></a>De verbindings Details configureren in het partner centrum
+### <a name="configure-the-connection-details-in-partner-center"></a>De verbindings Details configureren in het partner centrum
 
 1.  Selecteer onder **leads van klanten** de koppeling **verbinding maken** .
 1. Selecteer in het dialoog venster **verbindings Details** een doel voor de lead in de lijst.
@@ -88,6 +88,36 @@ Verbind uw Customer Relationship Management-systeem (CRM) met uw commerciële Ma
 
 1. Als u de configuratie die u hebt ingevoerd, wilt valideren, selecteert u de koppeling **valideren** .
 1. Selecteer **OK** om het dialoog venster te sluiten.
+
+## <a name="configure-microsoft-365-app-integration"></a>Integratie van Microsoft 365-app configureren
+
+U kunt de [geïntegreerde detectie en levering](./plan-SaaS-offer.md) van uw SaaS-aanbieding en alle gerelateerde Microsoft 365 app-verbruik licht maken door ze te koppelen.
+
+### <a name="integrate-with-microsoft-api"></a>Integreren met micro soft API
+
+1. Als uw SaaS-aanbieding niet wordt geïntegreerd met Microsoft Graph API, selecteert u **Nee**. Ga door met het koppelen van gepubliceerde Microsoft 365 app-verbruiks clients.  
+
+1. Als uw SaaS-aanbieding is geïntegreerd met Microsoft Graph-API, selecteert u **Ja** en geeft u vervolgens de Azure Active Directory app-id op die u hebt gemaakt en geregistreerd om te integreren met Microsoft Graph API. 
+
+### <a name="link-published-microsoft-365-app-consumption-clients"></a>Gepubliceerde Microsoft 365 app-verbruiks clients koppelen
+
+1. Als u geen Office-invoeg toepassing, teams-app of share point-Framework oplossingen hebt gepubliceerd die samen werken met uw SaaS-aanbieding, selecteert u **Nee**.
+
+1. Als u Office-invoeg toepassing, teams-app of share point-Framework oplossingen hebt gepubliceerd die samen werken met uw SaaS-aanbieding, selecteert u **Ja** en selecteert u **+ nog een AppSource-koppeling** toevoegen om nieuwe koppelingen toe te voegen.  
+
+1. Geef een geldige AppSource-koppeling op.
+
+1. Ga door met het toevoegen van alle koppelingen door te klikken op **+ een andere AppSource-koppeling toevoegen** en geldige AppSource-koppelingen op te geven.  
+
+1. De volg orde waarin de gekoppelde producten worden weer gegeven op de pagina vermelding van de SaaS-aanbieding wordt aangegeven met de rang waarde, u kunt deze wijzigen door het pictogram = omhoog en omlaag in de lijst te plaatsen. 
+
+1. U kunt een gekoppeld product verwijderen door **verwijderen** te selecteren in de rij product.  
+
+
+> [!IMPORTANT]
+> Als u het verkopen van een gekoppeld product stopt, wordt het niet automatisch ontkoppeld van de SaaS-aanbieding, moet u het verwijderen uit de lijst met gekoppelde producten en de SaaS-aanbieding opnieuw indienen.  
+
+ 
 
 ## <a name="next-steps"></a>Volgende stappen
 

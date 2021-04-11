@@ -9,12 +9,12 @@ ms.topic: include
 ms.date: 02/19/2021
 ms.author: vlvinogr
 ms.custom: include file
-ms.openlocfilehash: ebaca1f39b16e4a06b5dcaa4e5f1de07122c6c89
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0614e6fb1df13332cb05dcb7bb9b0f07a1764d23
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103622280"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107251589"
 ---
 | Resource | Limiet |
 | ---------------------------------------------------------------------- | -------------------------- |
@@ -29,7 +29,7 @@ ms.locfileid: "103622280"
 | Maximum aantal abonnementen per service-exemplaar<sup>8</sup> | 500 |
 | Maximum aantal clientcertificaten per service-exemplaar<sup>8</sup> | 50 |
 | Maximum aantal API's per service-exemplaar<sup>8</sup> | 50 |
-| Maximum aantal API-bewerkingen per service-exemplaar<sup>8</sup> | 1000 |
+| Maxi maal aantal API Management-bewerkingen per service-exemplaar<sup>8</sup> | 1000 |
 | Maximale totale aanvraagduur<sup>8</sup> | 30 seconden |
 | Maximumgrootte van de gebufferde nettolading<sup>8</sup> | 2 MiB |
 | Maximumgrootte aanvraag-URL<sup>9</sup> | 4096 bytes |

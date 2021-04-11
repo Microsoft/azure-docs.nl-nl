@@ -5,19 +5,19 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/09/2019
-ms.openlocfilehash: 235a6bf4a0dd9afcac8751067b2eac3ddb37c0cd
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 9d60857503402554381068fc36121fa3f7b61622
+ms.sourcegitcommit: c6a2d9a44a5a2c13abddab932d16c295a7207d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102031239"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107283555"
 ---
 # <a name="app-expression-in-azure-monitor-query"></a>app ()-expressie in Azure Monitor query
 
 De `app` expressie wordt gebruikt in een Azure monitor query om gegevens op te halen uit een specifieke Application Insights-app in dezelfde resource groep, een andere resource groep of een ander abonnement. Dit is handig om toepassings gegevens op te halen in een Azure Monitor-logboek query en om gegevens over meerdere toepassingen in een Application Insights query op te vragen.
 
 > [!IMPORTANT]
-> De app ()-expressie wordt niet gebruikt als u gebruikmaakt van een [Application Insights resource op basis van een werk ruimte](../app/create-workspace-resource.md) , aangezien logboek gegevens worden opgeslagen in een log Analytics-werk ruimte. Gebruik de log ()-expressie voor het schrijven van een query die toepassing bevat in meerdere werk ruimten. Voor meerdere toepassingen in dezelfde werk ruimte hebt u geen query op meerdere werk ruimten nodig.
+> De app ()-expressie wordt niet gebruikt als u gebruikmaakt van een [Application Insights resource op basis van een werk ruimte](../app/create-workspace-resource.md) , aangezien logboek gegevens worden opgeslagen in een log Analytics-werk ruimte. Gebruik de werk ruimte ()-expressie voor het schrijven van een query die toepassing bevat in meerdere werk ruimten. Voor meerdere toepassingen in dezelfde werk ruimte hebt u geen query op meerdere werk ruimten nodig.
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,7 +33,7 @@ De `app` expressie wordt gebruikt in een Azure monitor query om gegevens op te h
 | Resourcenaam | Door de mens lees bare naam van de app (ook wel ' component naam ' genoemd) | app ("fabrikamapp") |
 | Gekwalificeerde naam | Volledige naam van de app in de vorm: ' subscriptionname/resourceGroup/naam van onderdeel ' | app (' AI-prototype/fabrikam/fabrikamapp ') |
 | Id | GUID van de app | app ("988ba129-363e-4415-8fe7-8cbab5447518") |
-| Azure-Resource-ID | Id voor de Azure-resource |app ("/subscriptions/7293b69-db12-44fc-9a66-9c2005c3051d/resourcegroups/Fabrikam/providers/microsoft.insights/components/fabrikamapp") |
+| Azure-resource-id | Id voor de Azure-resource |app ("/subscriptions/7293b69-db12-44fc-9a66-9c2005c3051d/resourcegroups/Fabrikam/providers/microsoft.insights/components/fabrikamapp") |
 
 
 ## <a name="notes"></a>Notities

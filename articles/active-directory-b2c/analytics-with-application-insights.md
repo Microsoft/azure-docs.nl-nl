@@ -12,12 +12,12 @@ ms.date: 01/29/2021
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 92da0b12a3119b048866eef5b18f658916595294
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 2cde44ddb49ede8002b8a25ab47ae92ccd602a9d
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101645922"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107226367"
 ---
 # <a name="track-user-behavior-in-azure-ad-b2c-by-using-application-insights"></a>Gebruikers gedrag bijhouden in Azure AD B2C met behulp van Application Insights
 
@@ -252,7 +252,7 @@ Als u wilt voldoen aan uw bedrijfs behoeften, wilt u mogelijk meer claims regist
 
 ### <a name="manipulate-claims"></a>Claims manipuleren
 
-U kunt [invoer claim transformaties](custom-policy-trust-frameworks.md#manipulating-your-claims) gebruiken om de invoer claims te wijzigen of nieuwe te genereren voordat u ze naar Application Insights verzendt. In het volgende voor beeld bevat het technische profiel de `CheckIsAdmin` invoer claims trans formatie.
+U kunt [invoer claim transformaties](custom-policy-overview.md#manipulating-your-claims) gebruiken om de invoer claims te wijzigen of nieuwe te genereren voordat u ze naar Application Insights verzendt. In het volgende voor beeld bevat het technische profiel de `CheckIsAdmin` invoer claims trans formatie.
 
 ```xml
 <TechnicalProfile Id="AppInsights-SignInComplete">
@@ -269,7 +269,7 @@ U kunt [invoer claim transformaties](custom-policy-trust-frameworks.md#manipulat
 
 ### <a name="add-events"></a>Gebeurtenissen toevoegen
 
-Als u een gebeurtenis wilt toevoegen, maakt u een nieuw technisch profiel dat het `AppInsights-Common` technische profiel bevat. Voeg vervolgens het nieuwe technische profiel als een indelings stap toe aan de [gebruikers reis](custom-policy-trust-frameworks.md#orchestration-steps). Gebruik het voor [waarde](userjourneys.md#preconditions) -element om de gebeurtenis te activeren wanneer u klaar bent. Meld de gebeurtenis bijvoorbeeld alleen wanneer gebruikers door multi-factor Authentication worden uitgevoerd.
+Als u een gebeurtenis wilt toevoegen, maakt u een nieuw technisch profiel dat het `AppInsights-Common` technische profiel bevat. Voeg vervolgens het nieuwe technische profiel als een indelings stap toe aan de [gebruikers reis](custom-policy-overview.md#orchestration-steps). Gebruik het voor [waarde](userjourneys.md#preconditions) -element om de gebeurtenis te activeren wanneer u klaar bent. Meld de gebeurtenis bijvoorbeeld alleen wanneer gebruikers door multi-factor Authentication worden uitgevoerd.
 
 ```xml
 <TechnicalProfile Id="AppInsights-MFA-Completed">

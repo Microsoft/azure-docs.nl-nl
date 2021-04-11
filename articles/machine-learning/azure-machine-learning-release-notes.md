@@ -9,18 +9,92 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 02/18/2021
-ms.openlocfilehash: ea7eda7e50e7d8733fd24a63d533272e5bca6bab
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: 13ef91af5f7ed8398e3d23400fa5e9df467ce6bc
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106166680"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107210891"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
 In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga voor de volledige SDK-referentie-inhoud naar de hoofd pagina van de hand leiding van de Azure Machine Learning van de [**SDK voor python**](/python/api/overview/azure/ml/intro) .
 
 __RSS-feed__: ontvang een melding wanneer deze pagina wordt bijgewerkt door de volgende URL in uw feedlezer te kopiëren en plakken: `https://docs.microsoft.com/api/search/rss?search=%22Azure+machine+learning+release+notes%22&locale=en-us`
+
+
+## <a name="2021-04-05"></a>2021-04-05
+
+### <a name="azure-machine-learning-sdk-for-python-v1260"></a>Azure Machine Learning SDK voor python v-1.26.0
++ **Oplossingen en verbeteringen voor oplossingen**
+  + **azureml-automl-core**
+    + Er is een probleem opgelost waarbij Naive modellen worden aanbevolen in AutoMLStep-uitvoeringen en mislukken met functies voor vertraging of Rolling Vensters. Deze modellen worden niet aanbevolen wanneer doel-lags of doel grootte van het beoogde venster zijn ingesteld.
+    +  De console-uitvoer is gewijzigd tijdens het verzenden van een AutoML-uitvoering om een Portal koppeling naar de uitvoering weer te geven.
+  + **azureml-core**
+    + De modus HDFS is toegevoegd aan de documentatie.
+    + Er is ondersteuning toegevoegd voor het begrijpen van bestands gegevensset-partities op basis van de Globs-structuur.
+    + Er is ondersteuning toegevoegd voor het update container register dat is gekoppeld aan de AzureML-werk ruimte.
+    + Afgeschafte omgevings kenmerken onder DockerSection: ' enabled ', ' shared_volume ' en ' arguments ' maken nu deel uit van DockerConfiguration in RunConfiguration.
+    + Documentatie over de pipeline CLI-kloon is bijgewerkt
+    + Bijgewerkte Portal-Uri's om Tenant voor verificatie op te neemt
+    + De naam van het experiment is verwijderd uit de run-Uri's om omleidingen te voor komen 
+    + URO experiment bijgewerkt om experiment ID te gebruiken.
+    + Oplossingen voor het koppelen van externe Compute met de AzureML-CLI.
+    + Bijgewerkte Portal-Uri's om een Tenant voor verificatie op te neemt.
+    + Bijgewerkte experiment-URI voor gebruik van experiment id.
+  + **azureml-interpret**
+    + azureml-Interpreting Updated to use interpret-Community 0.17.0
+  + **azureml-opendatasets**
+    + Invoer begin datum en eind datum type validatie en fout melding als het geen datetime-type is.
+  + **azureml-parallel-run**
+    + [Experimentele functie] `partition_keys` Para meter toevoegen aan ParallelRunConfig, indien opgegeven, worden de invoer-gegevensset (s) gepartitioneerd in de mini-batches door de sleutels die door het programma zijn opgegeven. Hiervoor moeten alle invoer gegevens sets zijn gepartitioneerd.
+  + **azureml-pipeline-steps**
+    + Bugfix ondersteunt path_on_compute tijdens het door geven van de configuratie van de gegevensset als down load.
+    + Afschaffing RScriptStep voor het gebruik van CommandStep voor het uitvoeren van R-scripts in pijp lijnen. 
+    + Afschaffing EstimatorStep in het voor deel van het gebruik van CommandStep voor het uitvoeren van ML-training (inclusief gedistribueerde training) in pijp lijnen.
+  + **azureml-SDK**
+    + Python_requires bijwerken naar < 3,9 voor azureml-SDK
+  + **azureml-train-automl-client**
+    +  De console-uitvoer is gewijzigd tijdens het verzenden van een AutoML-uitvoering om een Portal koppeling naar de uitvoering weer te geven.
+  + **azureml-train-core**
+    + De kenmerken ' enabled ', ' shared_volume ' en ' Attributes ' van de DockerSection zijn afgeschaft in het voor deel van het gebruik van DockerConfiguration met ScriptRunConfig.
+    +  Azure open gegevens sets gebruiken voor MNIST-gegevensset
+    + Hyperdrive-fout berichten zijn bijgewerkt.
+
+
+## <a name="2021-03-22"></a>2021-03-22
+
+### <a name="azure-machine-learning-sdk-for-python-v1250"></a>Azure Machine Learning SDK voor python v-1.25.0
++ **Oplossingen en verbeteringen voor oplossingen**
+  + **azureml-automl-core**
+    +  De console-uitvoer is gewijzigd tijdens het verzenden van een AutoML-uitvoering om een Portal koppeling naar de uitvoering weer te geven.
+  + **azureml-core**
+    + Begint met de ondersteuning van het bijwerken van container register voor werk ruimte in SDK en CLI
+    + De kenmerken ' enabled ', ' shared_volume ' en ' Attributes ' van de DockerSection zijn afgeschaft in het voor deel van het gebruik van DockerConfiguration met ScriptRunConfig.
+    + Documentatie over de pipeline CLI-kloon is bijgewerkt
+    + Bijgewerkte Portal-Uri's om Tenant voor verificatie op te neemt
+    + De naam van het experiment is verwijderd uit de run-Uri's om omleidingen te voor komen
+    + URO experiment bijgewerkt om experiment ID te gebruiken.
+    + Oplossingen voor het koppelen van externe berekeningen met AZ cli
+    + Bijgewerkte Portal-Uri's om een Tenant voor verificatie op te neemt.
+    + Er is ondersteuning toegevoegd voor het begrijpen van bestands gegevensset-partities op basis van de Globs-structuur.
+  + **azureml-interpret**
+    + azureml-Interpreting Updated to use interpret-Community 0.17.0
+  + **azureml-opendatasets**
+    + Invoer begin datum en eind datum type validatie en fout melding als het geen datetime-type is.
+  + **azureml-pipeline-core**
+    + Bugfix ondersteunt path_on_compute tijdens het door geven van de configuratie van de gegevensset als down load.
+  + **azureml-pipeline-steps**
+    + Bugfix ondersteunt path_on_compute tijdens het door geven van de configuratie van de gegevensset als down load.
+    + Afschaffing RScriptStep voor het gebruik van CommandStep voor het uitvoeren van R-scripts in pijp lijnen. 
+    + Afschaffing EstimatorStep in het voor deel van het gebruik van CommandStep voor het uitvoeren van ML-training (inclusief gedistribueerde training) in pijp lijnen.
+  + **azureml-train-automl-runtime**
+    +  De console-uitvoer is gewijzigd tijdens het verzenden van een AutoML-uitvoering om een Portal koppeling naar de uitvoering weer te geven.
+  + **azureml-train-core**
+    + De kenmerken ' enabled ', ' shared_volume ' en ' Attributes ' van de DockerSection zijn afgeschaft in het voor deel van het gebruik van DockerConfiguration met ScriptRunConfig.
+    + Azure open gegevens sets gebruiken voor MNIST-gegevensset
+    + Hyperdrive-fout berichten zijn bijgewerkt.
+
 
 ## <a name="2021-03-31"></a>2021-03-31
 ### <a name="azure-machine-learning-studio-notebooks-experience-march-update"></a>Ervaring met Azure Machine Learning Studio notitie blokken (update voor maart)
@@ -38,6 +112,7 @@ __RSS-feed__: ontvang een melding wanneer deze pagina wordt bijgewerkt door de v
   + Er kunnen nu koppelingen worden geklikt in Terminal
   + Verbeterde IntelliSense-prestaties
 
+
 ## <a name="2021-03-08"></a>2021-03-08
 
 ### <a name="azure-machine-learning-sdk-for-python-v1240"></a>Azure Machine Learning SDK voor python v-1.24.0
@@ -50,8 +125,6 @@ __RSS-feed__: ontvang een melding wanneer deze pagina wordt bijgewerkt door de v
     + Er is functionaliteit toegevoegd om Tabellaire gegevens sets te filteren op kolom waarden en bestands gegevens sets op basis van meta gegevens.
   + **azureml-contrib-fairness**
     + JSON-schema in het wiel toevoegen voor `azureml-contrib-fairness`
-  + **azureml-contrib-K8S**
-    + Moet nu resource_id voorzien van een koppeling in plaats van de resource groep en de cluster naam.
   + **azureml-contrib-Mir**
     + Bij het instellen van show_output op True bij het implementeren van modellen, worden configuratie-en implementatie configuratie voor inschakeling opnieuw afgespeeld voordat de aanvraag naar de server wordt verzonden.
   + **azureml-core**

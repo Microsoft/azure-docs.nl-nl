@@ -13,12 +13,12 @@ ms.date: 05/07/2020
 ms.author: jeferrie
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 84a65e9ce7360a38f552c0dea61a33ff8a94b9cc
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: cdbba1618815dbc8b52195169b7de2bcec2986d8
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106055515"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107255576"
 ---
 # <a name="use-msalnet-to-sign-in-users-with-social-identities"></a>MSAL.NET gebruiken om gebruikers aan te melden met sociale identiteiten
 
@@ -178,7 +178,7 @@ Een symptoom van een dergelijk scenario is dat MSAL.NET retourneert `Missing fro
 
 De voorgestelde tijdelijke oplossing is het gebruik [van caching op basis van beleid](#acquire-a-token-to-apply-a-policy) dat eerder is beschreven.
 
-U kunt de claim ook gebruiken `tid` Als u [aangepaste beleids regels](../../active-directory-b2c/custom-policy-get-started.md) gebruikt in azure AD B2C. Aangepaste beleids regels kunnen aanvullende claims naar uw toepassing retour neren met behulp van de [trans formatie van claims](../../active-directory-b2c/claims-transformation-technical-profile.md).
+U kunt de claim ook gebruiken `tid` Als u [aangepaste beleids regels](../../active-directory-b2c/user-flow-overview.md) gebruikt in azure AD B2C. Aangepaste beleids regels kunnen aanvullende claims naar uw toepassing retour neren met behulp van de [trans formatie van claims](../../active-directory-b2c/claims-transformation-technical-profile.md).
 
 #### <a name="mitigation-for-missing-from-the-token-response"></a>Risico beperking voor ' ontbreekt in het token antwoord '
 

@@ -8,22 +8,22 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 10/20/2020
+ms.date: 03/31/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: references_regions
-ms.openlocfilehash: 9cb7a97b3f57ee7ac10babc53ee2263d51838777
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6e724b3517d9e5a63d8699e9f66c51cf41f02012
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92309682"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106092514"
 ---
 # <a name="azure-active-directory-b2c-region-availability--data-residency"></a>Azure Active Directory B2C: Beschik baarheid van regio's & gegevens locatie
 
 Beschik baarheid van regio's en gegevens locatie zijn twee verschillende concepten die verschillend van toepassing zijn op Azure AD B2C van de rest van Azure. In dit artikel vindt u informatie over de verschillen tussen deze twee concepten en vergelijkt u hoe deze van toepassing zijn op Azure versus Azure AD B2C.
 
-Azure AD B2C is **over het algemeen wereld wijd beschikbaar** met de optie voor **gegevens locatie** in de **Verenigde Staten, Europa of Azië en Stille Oceaan**.
+Azure AD B2C is **over het algemeen wereld wijd beschikbaar** met de optie voor **gegevens locatie** in de **Verenigde Staten, Europa of Azië en Stille Oceaan**. Azure AD B2C bevindt zich in de **open bare preview** in Australië.
 
 [Beschik baarheid van regio's](#region-availability) verwijst naar waar een service beschikbaar is voor gebruik.
 
@@ -53,11 +53,15 @@ Gegevens bevinden zich in **Europa** voor de volgende landen/regio's:
 
 De gegevens bevinden zich in **Azië en Stille Oceaan** voor de volgende landen/regio's:
 
-> Afghanistan (AF), Hong Kong SAR (HK), India (IN), Indonesië (ID), Japan (JP), Korea (KR), Maleisië (MY), Filip pijnen (PH), Singapore (AG), Sri Lanka (LK), Taiwan (TW) en Thai land (TH).
+> Afghanistan (AF), Hong Kong SAR (HK), India (IN), Indonesië (ID), Japan (JP), Korea (KR), Maleisië (MY), Filip pijnen (PH), Singapore (AG), Sri Lanka (LK), Taiwan (TW) en Thai land (TH)
+
+Gegevens bevinden zich in **Australië** (preview) voor de volgende landen/regio's:
+
+> Australië en Nieuw-Zeeland
 
 De volgende landen/regio's worden toegevoegd aan de lijst. U kunt nu nog steeds Azure AD B2C gebruiken door een van de bovenstaande landen/regio's te kiezen.
 
-> Argentinië, Australië, Brazilië, Chili, Colombia, Ecuador, Irak, Nieuw-Zeeland, Paraguay, Peru, Uruguay en Venezuela.
+> Argentinië, Brazilië, Chili, Colombia, Ecuador, Irak, Paraguay, Peru, Uruguay en Venezuela
 
 ## <a name="remote-profile-solution"></a>Oplossing voor externe profielen
 
@@ -66,18 +70,6 @@ Met Azure AD B2C [aangepast beleid](custom-policy-overview.md)kunt u integreren 
 - Bij het aanmelden, na de verificatie van referenties met een lokaal of sociaal account, roept Azure AD B2C de REST API aan, waarmee de unieke id van de gebruiker wordt verzonden als een primaire sleutel van de gebruiker (e-mail adres of objectId). Met de REST API worden de gegevens van de externe data base gelezen en wordt het gebruikers profiel geretourneerd.  
 
 Nadat u zich hebt aangemeld, het profiel hebt bewerkt of het aanmelden is voltooid, bevat Azure AD B2C het gebruikers profiel in het toegangs token dat wordt geretourneerd naar de toepassing. Zie voor meer informatie de Azure AD B2C van de [voorbeeld oplossing voor externe profielen](https://github.com/azure-ad-b2c/samples/tree/master/policies/remote-profile) in github.
-
-## <a name="preview-tenant"></a>Preview-Tenant
-
-Als u een B2C-Tenant hebt gemaakt tijdens de preview-periode van Azure AD B2C's, is het waarschijnlijk dat uw **Tenant type** **een preview-Tenant** bevat.
-
-Als dit het geval is, moet u uw Tenant alleen gebruiken voor ontwikkelings-en test doeleinden. Gebruik geen voor beeld-Tenant voor productie toepassingen.
-
-**Er is geen migratie-pad** van een preview B2C-Tenant naar een productie-Scale B2C-Tenant. U moet een nieuwe B2C-Tenant maken voor uw productie toepassingen.
-
-Er zijn bekende problemen bij het verwijderen van een preview B2C-Tenant en het maken van een B2C-Tenant met dezelfde domein naam. *U moet een B2C-Tenant met een productie schaal maken met een andere domein naam*.
-
-![Scherm opname van een Tenant type, als preview-Tenant.](./media/data-residency/preview-b2c-tenant.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc, references_regions
-ms.openlocfilehash: b53af0fda8bb24bf03d0e02f61ce7d195ae69503
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: fc70e6370f53848e9f3672611a3dfda685bcb9fe
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97680828"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107011773"
 ---
 # <a name="what-is-azure-maps"></a>Wat is Azure Maps?
 
@@ -173,7 +173,7 @@ Zie de [documentatie van de verkeersservice](/rest/api/maps/traffic) voor meer i
 
 Weather-services bieden API’s die ontwikkelaars kunnen gebruiken om weergegevens voor een bepaalde locatie op te halen. De informatie bevat details, zoals de datum en tijd van observatie, een korte beschrijving van de weersomstandigheden, het weerpictogram, de vlagmarkeringen, de temperatuur en de windsnelheid. Er worden ook extra gegevens weergegeven, zoals de RealFeel™-temperatuur en UV-index.
 
-Ontwikkelaars kunnen de [Get Weather along route-API](/rest/api/maps/weather/getweatheralongroutepreview) gebruiken om weerinformatie te verkrijgen voor een bepaalde route. De service biedt ook ondersteuning voor het genereren van weermeldingen voor waypoints die worden beïnvloed door weerrisico's, zoals overstromingen of zware regenbuien.
+Ontwikkelaars kunnen de [Get Weather along route-API](/rest/api/maps/weather/getweatheralongroute) gebruiken om weerinformatie te verkrijgen voor een bepaalde route. De service biedt ook ondersteuning voor het genereren van weermeldingen voor waypoints die worden beïnvloed door weerrisico's, zoals overstromingen of zware regenbuien.
 
 Met de [Get Map Tile V2-API](/rest/api/maps/renderv2/getmaptilepreview) kunt u de tegels voor vroegere, huidige en toekomstige radar- en satellietgegevens opvragen.
 

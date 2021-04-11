@@ -10,12 +10,12 @@ ms.date: 03/10/2021
 ms.topic: include
 ms.custom: include file
 ms.author: tchladek
-ms.openlocfilehash: 1627ba106ed9a035627f425d1c8fce47e5794762
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 653692812507c05c6cfc58b00d3c93ece19019bb
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105958186"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106113483"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -78,7 +78,7 @@ namespace AccessTokensQuickstart
 ```
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
-Initialiseer een `CommunicationIdentityClient` met uw verbindingsreeks. Met de onderstaande code wordt de verbindingsreeks voor de resource opgehaald uit een omgevingsvariabele met de naam `COMMUNICATION_SERVICES_CONNECTION_STRING`. Meer informatie over het [beheren van de verbindingsreeks van uw resource](../create-communication-resource.md#store-your-connection-string).
+Initialiseer een `CommunicationIdentityClient` met uw verbindingsreeks. Met de onderstaande code wordt de verbindingsreeks voor de resource opgehaald uit een omgevingsvariabele met de naam `COMMUNICATION_SERVICES_CONNECTION_STRING`. Meer informatie over het [beheren van de Connection String van uw resource](../create-communication-resource.md#store-your-connection-string).
 
 Voeg de volgende code aan de `Main` methode toe:
 
@@ -150,8 +150,7 @@ Console.WriteLine(token);
 Als u een toegangstoken wilt vernieuwen, geeft u een exemplaar van het `CommunicationUserIdentifier`-object door aan `GetTokenAsync`. Als u deze `Id` hebt opgeslagen en een nieuwe `CommunicationUserIdentifier` wilt maken, kunt u dit doen door uw opgeslagen `Id` als volgt door te geven aan de `CommunicationUserIdentifier`-constructor:
 
 ```csharp
-// In this example, userId is a string containing the Id property of a previously-created CommunicationUser
-var identityToRefresh = new CommunicationUserIdentifier(userId);
+var identityToRefresh = new CommunicationUserIdentifier(identity.Id);
 var tokenResponse = await client.GetTokenAsync(identityToRefresh, scopes: new [] { CommunicationTokenScope.VoIP });
 ```
 

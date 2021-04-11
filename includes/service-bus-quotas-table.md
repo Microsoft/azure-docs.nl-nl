@@ -8,19 +8,19 @@ ms.topic: include
 ms.date: 02/17/2021
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: ee066ff46f319749469a41e6decf12b35c0ee27e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e160b21581bc7b5fa38b12309bd9deb90bfbbe51
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100651937"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107251489"
 ---
 De volgende tabel vermeldt quotuminformatie die specifiek is voor Azure Service Bus-berichten. Voor informatie over prijzen en andere quota voor Service Bus raadpleegt u [Service Bus-prijzen](https://azure.microsoft.com/pricing/details/service-bus/).
 
 | Quotumnaam | Bereik | Notities | Waarde |
 | --- | --- | --- | --- |
-| Maximumaantal Basic- of Standard-naamruimten per Azure-abonnement |Naamruimte |Verdere aanvragen voor aanvullende Basic of Standard-naamruimten worden geweigerd door de Azure Portal. |100|
-| Maximumaantal Premium-naamruimten per Azure-abonnement |Naamruimte |Verdere aanvragen voor aanvullende Premium-naamruimten worden geweigerd door de Portal. |100 |
+| Maximumaantal Basic- of Standard-naamruimten per Azure-abonnement |Naamruimte |Verdere aanvragen voor aanvullende Basic of Standard-naamruimten worden geweigerd door de Azure Portal. | De standaardwaarde is 100. <br/> De maximum waarde is 1.000. <br/><br/> Neem contact op met de ondersteuning van Azure om de limiet te verhogen. |
+| Maximumaantal Premium-naamruimten per Azure-abonnement |Naamruimte |Verdere aanvragen voor aanvullende Premium-naamruimten worden geweigerd door de Portal. | De standaardwaarde is 100. <br/> De maximum waarde is 1.000. <br/><br/> Neem contact op met de ondersteuning van Azure om de limiet te verhogen. |
 | Wachtrij- of onderwerpgrootte |Entiteit |Gedefinieerd bij het maken van de wachtrij of het onderwerp. <br/><br/> Verdere binnenkomende berichten worden geweigerd en er wordt een uitzondering ontvangen door de aanroepende code. |1, 2, 3, 4 GB of 5 GB.<br /><br />In de Premium-SKU en de Standard-SKU waar [partitioneren](../articles/service-bus-messaging/service-bus-partitioning.md) is ingeschakeld is de maximumgrootte van de wachtrij of het onderwerp 80 GB. |
 | Aantal gelijktijdige verbindingen in een naamruimte |Naamruimte |Volgende aanvragen voor extra verbindingen worden geweigerd en er wordt een uitzondering ontvangen door de aanroepende code. REST-bewerkingen tellen niet mee voor gelijktijdige TCP-verbindingen. |Netberichten: 1000.<br /><br />AMQP: 5000. |
 | Aantal gelijktijdige ontvangen verzoeken in een wachtrij, onderwerp of abonnementsentiteit |Entiteit |Verdere ontvangstverzoeken worden geweigerd en er wordt een uitzondering ontvangen door de aanroepende code. Dit quotum is van toepassing op het gecombineerde aantal gelijktijdige ontvangstbewerkingen in alle abonnementen op een onderwerp. |5.000 |
@@ -38,6 +38,6 @@ De volgende tabel vermeldt quotuminformatie die specifiek is voor Azure Service 
 | Grootte van SQL-filters of acties |Naamruimte |Volgende aanvragen om aanvullende filters te maken, worden geweigerd en er wordt een uitzondering ontvangen door de aanroepende code. |Maximale lengte van de filtervoorwaarde: 1024 (1k).<br /><br />Maximale lengte van de regelactie: 1024 (1k).<br /><br />Maximumaantal expressies per regelactie: 32. |
 | Aantal Shared Access Authorization-regels per naam ruimte, wachtrij of onderwerp |Entiteit, naamruimte |Volgende aanvragen om aanvullende regels te maken, worden geweigerd en er wordt een uitzondering ontvangen door de aanroepende code. |Maximumaantal regels per entiteitstype: 12. <br /><br /> Regels die zijn geconfigureerd in een Service Bus-naamruimte zijn van toepassing op alle typen: wachtrijen, onderwerpen. |
 | Aantal berichten per transactie | Transactie | Extra binnenkomende berichten worden geweigerd en een uitzondering met de melding 'Kan niet meer dan 100 berichten in een transactie verzenden' wordt ontvangen door de aanroepende code. | 100 <br /><br /> Voor zowel de bewerking **Send()** als **SendAsync()** . |
-| Aantal filterregels voor virtuele netwerken en IP's | Naamruimte | &nbsp; | 128 | 
+| Aantal filterregels voor virtuele netwerken en IP's | Naamruimte | &nbsp; | 128 |
 
 [Azure portal]: https://portal.azure.com

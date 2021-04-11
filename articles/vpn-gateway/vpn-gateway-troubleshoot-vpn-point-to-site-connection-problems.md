@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: troubleshooting
 ms.date: 03/26/2020
 ms.author: genli
-ms.openlocfilehash: c316aaf02979008b9d2ebc691d54c0fb95a5a52d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 136ea5fcb8dd446cfff6400616df058722fa2827
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "95994856"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106075369"
 ---
 # <a name="troubleshooting-azure-point-to-site-connection-problems"></a>Problemen oplossen: Azure Point-to-site-verbindings problemen
 
@@ -72,11 +72,11 @@ Windows 10 of Server 2016 voorbereiden voor IKEv2:
 1. Installeer de update.
 
    | Besturingssysteemversie | Date | Aantal/koppeling |
-   |---|---|---|---|
+   |---|---|---|
    | Windows Server 2016<br>Windows 10 versie 1607 | 17 januari 2018 | [KB4057142](https://support.microsoft.com/help/4057142/windows-10-update-kb4057142) |
    | Windows 10 versie 1703 | 17 januari 2018 | [KB4057144](https://support.microsoft.com/help/4057144/windows-10-update-kb4057144) |
    | Windows 10 versie 1709 | 22 maart 2018 | [KB4089848](https://www.catalog.update.microsoft.com/search.aspx?q=kb4089848) |
-   |  |  |  |  |
+
 
 2. De registersleutelwaarde instellen. Maak of stel `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan\ IKEv2\DisableCertReqPayload` REG_DWORD sleutel in het REGI ster in op 1.
 

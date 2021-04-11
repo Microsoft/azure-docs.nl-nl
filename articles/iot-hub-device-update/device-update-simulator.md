@@ -6,12 +6,12 @@ ms.author: valls
 ms.date: 2/11/2021
 ms.topic: tutorial
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 8cbc101ec9b5608574b93ea17022a3b0ef02ce4b
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 90e72bd12d9115e5ff95213428ae4ac37979dcf3
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105644421"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106120092"
 ---
 # <a name="device-update-for-azure-iot-hub-tutorial-using-the-ubuntu-1804-x64-simulator-reference-agent"></a>Zelf studie over het bijwerken van apparaten voor Azure IoT Hub met behulp van de Ubuntu (18,04 x64) Simulator-referentie agent
 
@@ -147,9 +147,9 @@ Agent running. [main]
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com) en navigeer naar de IOT hub.
 
-2. Zoek in het navigatie deel venster van IoT-apparaten of IoT Edge in het linkernavigatievenster uw IoT-apparaat op en navigeer naar het dubbele apparaat.
+2. Van ' IoT-apparaten ' of ' IoT Edge ' in het navigatie deel venster aan de linkerkant vindt u uw IoT-apparaat en navigeert u naar het dubbele apparaat of de module dubbele.
 
-3. Verwijder in het dubbele apparaat alle bestaande waarde voor het bijwerken van het apparaat door ze in te stellen op null.
+3. Verwijder in de module met de Update Agent-module van het apparaat alle bestaande waarde voor het bijwerken van het apparaat door ze in te stellen op null. Als u apparaat-id gebruikt met apparaat Update Agent, worden deze wijzigingen aangebracht op het apparaat dubbele.
 
 4. Voeg een nieuwe waarde voor het update label van het apparaat toe, zoals hieronder wordt weer gegeven.
 

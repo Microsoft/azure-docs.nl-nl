@@ -7,13 +7,13 @@ ms.author: bagol
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: conceptual
-ms.date: 03/11/2021
-ms.openlocfilehash: 31ba96e0f8772877d7b4881c6bab0561cbe7956e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 03/31/2021
+ms.openlocfilehash: e882ae89da2fd081d6b41d3d42e998d3600f0e18
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104604250"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106120742"
 ---
 # <a name="whats-new-in-azure-sentinel"></a>Wat is er nieuw in azure Sentinel
 
@@ -32,13 +32,36 @@ Genoteerde functies zijn momenteel beschikbaar als PREVIEW-versie. De [Aanvullen
 
 ## <a name="march-2021"></a>2021 maart
 
+- [Nieuwe detecties voor Azure Firewall](#new-detections-for-azure-firewall)
 - [Automatiserings regels en door incidenten geactiveerde playbooks](#automation-rules-and-incident-triggered-playbooks) (inclusief alle-nieuwe Playbook-documentatie)
 - [Nieuwe waarschuwings verrijkingen: uitgebreide entiteits toewijzing en aangepaste Details](#new-alert-enrichments-enhanced-entity-mapping-and-custom-details)
 - [Uw Azure Sentinel-werkmappen afdrukken of opslaan als PDF-bestand](#print-your-azure-sentinel-workbooks-or-save-as-pdf)
 - [Incident filters en sorteer voorkeuren die nu zijn opgeslagen in uw sessie (open bare preview)](#incident-filters-and-sort-preferences-now-saved-in-your-session-public-preview)
 - [Microsoft 365 Defender-incident integratie (open bare preview)](#microsoft-365-defender-incident-integration-public-preview)
 - [Nieuwe micro soft-service connectors met behulp van Azure Policy](#new-microsoft-service-connectors-using-azure-policy)
- 
+
+### <a name="new-detections-for-azure-firewall"></a>Nieuwe detecties voor Azure Firewall
+
+Er zijn verschillende out-of-the-box-detecties voor Azure Firewall toegevoegd aan het [analytische](import-threat-intelligence.md#analytics-puts-your-threat-indicators-to-work-detecting-potential-threats) gebied in azure Sentinel. Met deze nieuwe detecties kunnen beveiligings teams meldingen ontvangen als computers in het interne netwerk proberen een query uit te voeren of verbinding te maken met Internet domein namen of IP-adressen die zijn gekoppeld aan bekende IOCs, zoals gedefinieerd in de detectie regel query.
+
+De nieuwe detecties zijn onder andere:
+
+- [Solorigate netwerk Beacon](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/MultipleDataSources/Solorigate-Network-Beacon.yaml)
+- [Bekende GALLIUM domeinen en hashes](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/MultipleDataSources/GalliumIOCs.yaml)
+- [Bekend IRIDIUM IP-adres](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/MultipleDataSources/IridiumIOCs.yaml)
+- [Bekende groeps domeinen/IP van fosfor](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/MultipleDataSources/PHOSPHORUSMarch2019IOCs.yaml)
+- [THALLIUM-domeinen die zijn opgenomen in DCU verwijderingen](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/MultipleDataSources/ThalliumIOCs.yaml)
+- [Bekende aan zink gerelateerde maldoc-hash](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/MultipleDataSources/ZincJan272021IOCs.yaml)
+- [Bekende STRONTIUM-groeps domeinen](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/MultipleDataSources/STRONTIUMJuly2019IOCs.yaml)
+- [NOBELIUM-Domain and IP IOCs-maart 2021](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/MultipleDataSources/NOBELIUM_DomainIOCsMarch2021.yaml)
+
+
+Detecties voor Azure-firewalls worden continu toegevoegd aan de ingebouwde sjabloon galerie. Als u de meest recente detecties voor Azure Firewall wilt krijgen, filtert u onder **regel sjablonen** de **gegevens bronnen** op **Azure firewall**:
+
+:::image type="content" source="media/whats-new/new-detections-analytics-efficiency-workbook.jpg" alt-text="Nieuwe detecties in de werk-efficiëntie werkmap van Analytics":::
+
+Zie voor meer informatie [nieuwe detecties voor Azure firewall in azure Sentinel](https://techcommunity.microsoft.com/t5/azure-network-security/new-detections-for-azure-firewall-in-azure-sentinel/ba-p/2244958).
+
 ### <a name="automation-rules-and-incident-triggered-playbooks"></a>Automatiserings regels en door incidenten geactiveerde playbooks
 
 Automatiserings regels zijn een nieuw concept in azure Sentinel, waarmee u de automatisering van incident verwerking centraal kunt beheren. Naast de mogelijkheid om playbooks toe te wijzen aan incidenten (niet alleen op waarschuwingen zoals voorheen), kunt u met automatiserings regels ook de reacties voor meerdere analyse regels tegelijk automatiseren, automatisch tags toewijzen, toekennen of sluiten van incidenten zonder playbooks, en de volg orde bepalen van de acties die worden uitgevoerd. Met Automation-regels worden automatiserings gebruik in azure Sentinel gestroomlijnd en kunt u complexe werk stromen vereenvoudigen voor de indelings processen van uw incident.
@@ -47,7 +70,7 @@ Meer informatie vindt u in deze [volledige uitleg over Automation-regels](automa
 
 Zoals hierboven vermeld, kan playbooks nu worden geactiveerd met de trigger voor incidenten naast de waarschuwing. De incident trigger biedt uw playbooks een grotere set ingangen waarmee u kunt werken (aangezien het incident ook alle waarschuwingen en entiteits gegevens bevat), waardoor u nog meer kracht en flexibiliteit hebt in uw antwoord werk stromen. Door incidenten geactiveerde playbooks worden geactiveerd door te worden aangeroepen vanuit Automation-regels.
 
-Meer informatie over [playbooks ' Enhanced mogelijkheden](automate-responses-with-playbooks.md), en hoe u [een antwoord werk stroom](tutorial-respond-threats-playbook.md) maakt met behulp van playbooks in combi natie met automatiserings regels.
+Meer informatie over [verbeterde mogelijkheden van playbooks](automate-responses-with-playbooks.md)en het maken van [een antwoord werk stroom](tutorial-respond-threats-playbook.md) met behulp van playbooks samen met automatiserings regels.
 
 ### <a name="new-alert-enrichments-enhanced-entity-mapping-and-custom-details"></a>Nieuwe waarschuwings verrijkingen: uitgebreide entiteits toewijzing en aangepaste Details
 

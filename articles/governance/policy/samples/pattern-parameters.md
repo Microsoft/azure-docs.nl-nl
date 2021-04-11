@@ -1,14 +1,14 @@
 ---
 title: 'Patroon: Parameters in een beleidsdefinitie'
-description: Dit Azure Policy-patroon geeft een voorbeeld van het gebruiken van tekenreeks- en matrixparameters in een beleidsdefinitie en van het parameteriseren van het effect.
-ms.date: 08/17/2020
+description: Dit Azure Policy patroon bevat een voor beeld van hoe u teken reeks-en matrix parameters kunt gebruiken in een beleids definitie en hoe u het effect para meters.
+ms.date: 03/31/2021
 ms.topic: sample
-ms.openlocfilehash: 7bb991c43a1deee39dd047aa7d814c124712fe69
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b742aaaf950e2b5670edbaa1f0134da144e675b6
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "89649954"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106092769"
 ---
 # <a name="azure-policy-pattern-parameters"></a>Azure Policy-patroon: parameters
 
@@ -16,7 +16,7 @@ Een beleidsdefinitie kan via [parameters](../concepts/definition-structure.md#pa
 
 ## <a name="sample-1-string-parameters"></a>Voorbeeld 1: Tekenreeksparameters
 
-Deze beleidsdefinitie gebruikt twee parameters, **tagName** en **tagValue**, om in te stellen waar de beleidstoewijzing naar zoekt bij resources. Dankzij deze indeling kan de beleidsdefinitie worden gebruikt voor alle combinaties van tagnaam en tagwaarde, met behoud van één beleidsdefinitie.
+Deze beleids definitie maakt gebruik van twee para meters, **tagName** en **tagValue**, om in te stellen wat de beleids toewijzing op zoek is naar bronnen. Dankzij deze indeling kan de beleidsdefinitie worden gebruikt voor alle combinaties van tagnaam en tagwaarde, met behoud van één beleidsdefinitie.
 
 > [!NOTE]
 > Als u een voorbeeld met een tag wilt zien waarin **mode** _All_ wordt gebruikt en dat gebruikmaakt van een resourcegroep, gaat u naar [Patroon: Tags - Voorbeeld 1](./pattern-tags.md#sample-1-parameterize-tags).

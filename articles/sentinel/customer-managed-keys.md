@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/12/2020
 ms.author: yelevin
-ms.openlocfilehash: a1c2754fcae5768c6b87d6280fc882acd46d9a0a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f7c4905f3122bf5abd2dc955170113cac3039a5d
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100585338"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106219039"
 ---
 # <a name="set-up-azure-sentinel-customer-managed-key"></a>Door de klant beheerde sleutel met Azure-Sentinel instellen
 
@@ -81,7 +81,7 @@ Volg de Cosmos DB instructie voor [het registreren van de Azure Cosmos DB](../co
 
 ### <a name="step-4-add-an-access-policy-to-your-azure-key-vault-instance"></a>STAP 4: een toegangs beleid toevoegen aan uw Azure Key Vault-exemplaar
 
-Zorg ervoor dat u toegang toevoegt van Cosmos DB aan uw Azure Key Vault-exemplaar. Volg de Cosmos DB instructie om [een toegangs beleid toe te voegen aan uw Azure Key Vault-exemplaar](../cosmos-db/how-to-setup-cmk.md#add-an-access-policy-to-your-azure-key-vault-instance) met Azure Cosmos DB principal.
+Zorg ervoor dat u toegang toevoegt van Cosmos DB aan uw Azure Key Vault-exemplaar. Volg de Cosmos DB instructie om [een toegangs beleid toe te voegen aan uw Azure Key Vault-exemplaar](../cosmos-db/how-to-setup-cmk.md#add-access-policy) met Azure Cosmos DB principal.
 
 ### <a name="step-5-enable-cmk-in-azure-sentinel"></a>STAP 5: CMK inschakelen in azure Sentinel
 

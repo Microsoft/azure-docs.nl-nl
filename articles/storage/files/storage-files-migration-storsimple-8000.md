@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/16/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: 814a2f7e32f173111e45fff02f00c3e4d2a9a670
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1d2de439e661ef5b1d1669187355621f25400bc4
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103601080"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106075564"
 ---
 # <a name="storsimple-8100-and-8600-migration-to-azure-file-sync"></a>StorSimple 8100 en 8600 migratie naar Azure File Sync
 
@@ -65,11 +65,11 @@ Wanneer u uw StorSimple-apparaat voor het eerst instelt, is er een ' service geg
 
 De ' service gegevens versleutelings sleutel ' is nodig voor een geslaagde migratie. Het is nu een goed moment om deze sleutel op te halen uit uw records, één voor elk van de apparaten in uw inventaris.
 
-Als u de sleutels niet in uw records vindt, kunt u de sleutel van het apparaat ophalen. Elk apparaat heeft een unieke versleutelings sleutel. De sleutel ophalen:
+Als u de sleutels niet in uw records vindt, kunt u een nieuwe sleutel van het apparaat genereren. Elk apparaat heeft een unieke versleutelings sleutel.
 
-* Een ondersteunings aanvraag met Microsoft Azure indienen via de Azure Portal. De aanvraag moet de serie nummers van uw StorSimple-apparaat bevatten en een aanvraag voor het ophalen van de versleutelings sleutel voor service gegevens.
-* Een StorSimple-ondersteunings technicus neemt contact met u op voor een aanvraag voor een virtuele vergadering.
-* Zorg ervoor dat voordat de vergadering begint, u verbinding maakt met uw StorSimple-apparaat [via een seriële console](../../storsimple/storsimple-8000-windows-powershell-administration.md#connect-to-windows-powershell-for-storsimple-via-the-device-serial-console) of via een [externe Power shell-sessie](../../storsimple/storsimple-8000-windows-powershell-administration.md#connect-remotely-to-storsimple-using-windows-powershell-for-storsimple).
+#### <a name="change-the-service-data-encryption-key"></a>De versleutelings sleutel voor service gegevens wijzigen
+
+[!INCLUDE [storage-files-migration-generate-key](../../../includes/storage-files-migration-generate-key.md)]
 
 > [!CAUTION]
 > Houd rekening met het volgende als u wilt bepalen hoe u verbinding maakt met uw StorSimple-apparaat:

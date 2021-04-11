@@ -3,12 +3,12 @@ title: Inhoud versleutelen met de Azure-portal
 description: In deze quickstart wordt uitgelegd hoe u versleuteling kunt configureren voor uw inhoud met behulp van Azure Media Services in de Azure-portal.
 ms.topic: quickstart
 ms.date: 08/31/2020
-ms.openlocfilehash: a97e1a3c51d44b7c530de0c6eeca569f898d07c1
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: 5ce942447f6d143116350940bda0e01a8b532d24
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106069315"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106277673"
 ---
 # <a name="quickstart-use-portal-to-encrypt-content"></a>Quickstart: De portal gebruiken om inhoud te versleutelen
 
@@ -28,8 +28,8 @@ In deze quickstart wordt getoond hoe u een beleid voor inhoudssleutels maakt waa
 ### <a name="suggested-pre-reading"></a>Aanbevolen om te lezen
 
 * [Dynamische versleuteling en sleutellevering](drm-content-protection-concept.md)
-* [Streaming-locators](streaming-locators-concept.md)
-* [Beleid voor streaming](streaming-policy-concept.md)
+* [Streaming-locators](stream-streaming-locators-concept.md)
+* [Beleid voor streaming](stream-streaming-policy-concept.md)
 * [Beleid voor inhoudssleutels](drm-content-key-policy-concept.md)
 
 ## <a name="prerequisites"></a>Vereisten
@@ -80,7 +80,7 @@ U kunt ook een AES-128 clear key-versleuteling toevoegen aan uw inhoud. De inhou
 1. Klik in de sectie **Streaming-locator** voor de geselecteerde asset op **+ Een streaming-locator toevoegen**. 
 1. Selecteer een **streamingbeleid** dat is afgestemd op het **beleid voor inhoudssleutel** dat u hebt geconfigureerd.
 
-    In het onderwerp [Beleid voor streaming](streaming-policy-concept.md) vindt u meer informatie over welk streamingbeleid aansluit of welk beleid voor inhoudssleutels.
+    In het onderwerp [Beleid voor streaming](stream-streaming-policy-concept.md) vindt u meer informatie over welk streamingbeleid aansluit of welk beleid voor inhoudssleutels.
 1. Wanneer u het juiste streamingbeleid selecteert, kunt u in de vervolgkeuzelijst het beleid voor inhoudssleutels selecteren.
 1. Selecteer **Toevoegen** om de streaming-locator toe te voegen aan uw asset.
 

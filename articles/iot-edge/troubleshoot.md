@@ -4,16 +4,16 @@ description: In dit artikel vindt u informatie over de standaard diagnostische v
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 11/12/2020
+ms.date: 04/01/2021
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 7b3b8078a03ef0e891306f056c604545cde71459
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b82ad29b02e501d41653fd466e58218e35c3b93c
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103489454"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107012166"
 ---
 # <a name="troubleshoot-your-iot-edge-device"></a>Problemen met uw IoT Edge apparaat oplossen
 
@@ -30,6 +30,8 @@ De eerste stap bij het oplossen van problemen met IoT Edge moet de `check` opdra
 
 U kunt de `check` opdracht als volgt uitvoeren, of de `--help` vlag opnemen om een volledige lijst met opties weer te geven:
 
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
 Op Linux:
 
 ```bash
@@ -41,6 +43,19 @@ In Windows:
 ```powershell
 iotedge check
 ```
+
+:::moniker-end
+<!-- end 1.1 -->
+
+<!-- 1.1 -->
+:::moniker range=">=iotedge-2020-11"
+
+```bash
+sudo iotedge check
+```
+
+:::moniker-end
+<!-- end 1.2 -->
 
 Het hulp programma voor probleem oplossing voert veel controles uit die in deze drie categorieën worden gesorteerd:
 
@@ -58,6 +73,9 @@ Wanneer u logboeken van een IoT Edge apparaat wilt verzamelen, kunt u de opdrach
 
 Voer de `support-bundle` opdracht uit met de `--since` vlag om op te geven hoelang van het verleden u logboeken wilt ophalen. U `6h` krijgt bijvoorbeeld Logboeken sinds de laatste zes uur, sinds de laatste zes `6d` dagen `6m` sinds de laatste zes minuten, enzovoort. Neem de `--help` vlag op om een volledige lijst met opties weer te geven.
 
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
+
 Op Linux:
 
 ```bash
@@ -69,6 +87,19 @@ In Windows:
 ```powershell
 iotedge support-bundle --since 6h
 ```
+
+:::moniker-end
+<!-- end 1.1 -->
+
+<!-- 1.2 -->
+:::moniker range=">=iotedge-2020-11"
+
+```bash
+sudo iotedge support-bundle --since 6h
+```
+
+:::moniker-end
+<!-- end 1.2 -->
 
 U kunt ook een [directe methode](how-to-retrieve-iot-edge-logs.md#upload-support-bundle-diagnostics) aanroep naar uw apparaat gebruiken om de uitvoer van de opdracht voor de ondersteunings bundel te uploaden naar Azure Blob Storage.
 
@@ -102,10 +133,9 @@ Met deze opdracht worden alle edgeAgent- [gerapporteerde eigenschappen](./module
 
 De [IOT Edge Security Manager](iot-edge-security-manager.md) is verantwoordelijk voor bewerkingen zoals het initialiseren van het IOT Edge systeem bij het opstarten en het inrichten van apparaten. Als IoT Edge niet wordt gestart, kunnen de logboeken van de beveiligings beheerder nuttige informatie geven.
 
-Op Linux:
-
 <!-- 1.1 -->
 :::moniker range="iotedge-2018-06"
+Op Linux:
 
 * Bekijk de status van de IoT Edge Security Manager:
 
@@ -131,7 +161,7 @@ Op Linux:
 
      ```bash
      [Service]
-     Environment=IOTEDGE_LOG=edgelet=debug
+     Environment=IOTEDGE_LOG=debug
      ```
 
   3. Start de IoT Edge-beveiligings-daemon opnieuw op:
@@ -141,42 +171,6 @@ Op Linux:
      sudo systemctl daemon-reload
      sudo systemctl restart iotedge
      ```
-<!--end 1.1 -->
-:::moniker-end
-
-<!-- 1.2 -->
-:::moniker range=">=iotedge-2020-11"
-
-* Bekijk de status van de IoT Edge-systeem services:
-
-   ```bash
-   sudo iotedge system status
-   ```
-
-* Bekijk de logboeken van de IoT Edge-systeem services:
-
-   ```bash
-   sudo iotedge system logs -- -f
-   ```
-
-* Schakel logboeken voor fout opsporing in om meer gedetailleerde logboeken van de IoT Edge-systeem services weer te geven:
-
-  1. Schakel logboeken voor fout opsporing in.
-
-     ```bash
-     sudo iotedge system set-log-level debug
-     sudo iotedge system restart
-     ```
-
-  1. Ga terug naar de standaard logboeken voor info niveau na het opsporen van fouten.
-
-     ```bash
-     sudo iotedge system set-log-level info
-     sudo iotedge system restart
-     ```
-
-<!-- end 1.2 -->
-:::moniker-end
 
 In Windows:
 
@@ -211,6 +205,43 @@ In Windows:
      ```powershell
      Restart-Service iotedge
      ```
+
+:::moniker-end
+<!--end 1.1 -->
+
+<!-- 1.2 -->
+:::moniker range=">=iotedge-2020-11"
+
+* Bekijk de status van de IoT Edge-systeem services:
+
+   ```bash
+   sudo iotedge system status
+   ```
+
+* Bekijk de logboeken van de IoT Edge-systeem services:
+
+   ```bash
+   sudo iotedge system logs -- -f
+   ```
+
+* Schakel logboeken voor fout opsporing in om meer gedetailleerde logboeken van de IoT Edge-systeem services weer te geven:
+
+  1. Schakel logboeken voor fout opsporing in.
+
+     ```bash
+     sudo iotedge system set-log-level debug
+     sudo iotedge system restart
+     ```
+
+  1. Ga terug naar de standaard logboeken voor info niveau na het opsporen van fouten.
+
+     ```bash
+     sudo iotedge system set-log-level info
+     sudo iotedge system restart
+     ```
+
+:::moniker-end
+<!-- end 1.2 -->
 
 ## <a name="check-container-logs-for-issues"></a>Raadpleeg container logboeken voor problemen
 

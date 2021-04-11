@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
-ms.openlocfilehash: a49fd6f97a9130fa0369d2a36cdc38e59613afc1
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: bcf96a222dd40909401b70d8f1812b7d29b6088b
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105544380"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107012459"
 ---
 # <a name="deploy-an-azure-service-fabric-cluster-across-availability-zones"></a>Een Azure Service Fabric-cluster implementeren via Beschikbaarheidszones
 Beschikbaarheidszones in Azure is een aanbieding met hoge Beschik baarheid die uw toepassingen en gegevens beveiligt tegen Data Center-fouten. Een beschikbaarheids zone is een unieke fysieke locatie die is voorzien van onafhankelijke voeding, koeling en netwerken binnen een Azure-regio.
@@ -33,7 +33,7 @@ De aanbevolen topologie voor het primaire knooppunt type vereist de onderstaande
 * Een NSG waarnaar wordt verwezen door het subnet waarin u de schaal sets voor virtuele machines implementeert.
 
 >[!NOTE]
-> De groeps eigenschap voor de schaalset voor virtuele machines moet worden ingesteld op True, omdat Service Fabric geen ondersteuning biedt voor een schaalset voor virtuele machines die zones omspant.
+> De groeps eigenschap voor de virtuele-machine schaal sets moet worden ingesteld op waar.
 
 Diagram met het diagram voor de architectuur van Azure Service Fabric-beschikbaarheids zone ![ waarin de architectuur van de azure service Fabric-beschikbaarheids zone wordt weer gegeven.][sf-architecture]
 

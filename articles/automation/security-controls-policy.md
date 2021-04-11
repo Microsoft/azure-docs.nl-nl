@@ -1,18 +1,18 @@
 ---
 title: Besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Automation
 description: Toont beschikbare besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Automation. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 03/24/2021
+ms.date: 03/31/2021
 ms.topic: sample
 author: mgoedtel
 ms.author: magoedte
 ms.service: automation
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 58f70856ee341e6d225ec4f39228bb3bf3bf14a7
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 5dc6da769a18b58b48530c99946806953c03b339
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105034063"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106092536"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-automation"></a>Besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Automation
 

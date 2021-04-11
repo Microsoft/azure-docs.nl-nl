@@ -1,15 +1,15 @@
 ---
 title: Richtlijnen voor vertraagde aanvragen
 description: Meer informatie over Group, sprei ding, pagineren en query's parallel om te voor komen dat aanvragen worden beperkt door Azure resource Graph.
-ms.date: 01/27/2021
+ms.date: 04/09/2021
 ms.topic: conceptual
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ddd3cf4d411733e831c94039c3bc9aeaf0e95271
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 891d5951670dd6022b66ae2936ee855f73f8b33a
+ms.sourcegitcommit: c6a2d9a44a5a2c13abddab932d16c295a7207d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98917704"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107283538"
 ---
 # <a name="guidance-for-throttled-requests-in-azure-resource-graph"></a>Richt lijnen voor vertraagde aanvragen in azure resource Graph
 
@@ -231,7 +231,7 @@ Omdat Azure resource Graph Maxi maal 1000 vermeldingen in één query antwoord r
 
 ## <a name="still-get-throttled"></a>Nog steeds beperkt?
 
-Als u na het uitvoeren van de bovenstaande aanbevelingen wilt worden beperkt, neemt u contact op met het team [resourcegraphsupport@microsoft.com](mailto:resourcegraphsupport@microsoft.com) .
+Neem contact op met het team van de [Azure-resource grafiek](mailto:resourcegraphsupport@microsoft.com)als u beperkingen krijgt na de bovenstaande aanbevelingen.
 
 Geef de volgende details op:
 

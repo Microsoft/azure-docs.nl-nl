@@ -12,18 +12,18 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 480b8ef401387863693bc88c3d508ce296636c93
-ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
+ms.openlocfilehash: 8a192c3c3accf115b1a1db8e32a56d6d936078be
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106107584"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106277648"
 ---
 # <a name="create-a-streaming-locator-and-build-urls"></a>Een streaming-locator maken en URL's bouwen
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
-In Azure Media Services moet u eerst een [streaming-Locator](streaming-locators-concept.md)maken om een streaming-URL te bouwen. Vervolgens voegt u de hostnaam van het [streaming-eind punt](/rest/api/media/streamingendpoints) en het pad naar de **streaming-Locator** toe. In dit voorbeeld wordt het *standaard***streaming-eindpunt** gebruikt. Wanneer u voor het eerst een media service-account maakt, wordt dit *standaard* **streaming-eind punt** gestopt, dus u moet **starten** aanroepen om te beginnen met streamen.
+In Azure Media Services moet u eerst een [streaming-Locator](stream-streaming-locators-concept.md)maken om een streaming-URL te bouwen. Vervolgens voegt u de hostnaam van het [streaming-eind punt](/rest/api/media/streamingendpoints) en het pad naar de **streaming-Locator** toe. In dit voorbeeld wordt het *standaard***streaming-eindpunt** gebruikt. Wanneer u voor het eerst een media service-account maakt, wordt dit *standaard* **streaming-eind punt** gestopt, dus u moet **starten** aanroepen om te beginnen met streamen.
 
 In dit artikel wordt beschreven hoe u een streaming-Locator maakt en een streaming-URL bouwt met behulp van Java-en .NET-Sdk's.
 

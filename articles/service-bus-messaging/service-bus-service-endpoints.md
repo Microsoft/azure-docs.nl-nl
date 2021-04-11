@@ -2,14 +2,14 @@
 title: Service-eind punten voor virtuele netwerken configureren voor Azure Service Bus
 description: Dit artikel bevat informatie over het toevoegen van een service-eind punt van micro soft. ServiceBus aan een virtueel netwerk.
 ms.topic: article
-ms.date: 02/12/2021
+ms.date: 03/29/2021
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 2e00c9429ab3e39f95bc5ce6df072a99e4f02b86
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9b5aba6c5ad4e1e6d0c90b99ebcdf441bb35cc39
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100559581"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105960449"
 ---
 # <a name="allow-access-to-azure-service-bus-namespace-from-specific-virtual-networks"></a>Toegang tot Azure Service Bus naam ruimte vanuit specifieke virtuele netwerken toestaan
 Dankzij de integratie van Service Bus met de [service-eind punten van Virtual Network (VNet)][vnet-sep] is beveiligde toegang mogelijk tot berichten mogelijkheden van werk belastingen, zoals virtuele machines die zijn gebonden aan virtuele netwerken, waarbij het netwerkpad van het netwerk verkeer aan beide uiteinden wordt beveiligd.
@@ -18,16 +18,14 @@ Zodra het is geconfigureerd om te worden gebonden aan ten minste één subnet-se
 
 Het resultaat is een privé-en geïsoleerde relatie tussen de werk belastingen die zijn gebonden aan het subnet en de betreffende Service Bus naam ruimte, ondanks het waarneem bare netwerk adres van het berichten service-eind punt in een openbaar IP-bereik.
 
-Het implementeren van de integratie van virtuele netwerken kan voorkomen dat andere Azure-services interactie hebben met Service Bus. Als uitzonde ring kunt u toegang tot Service Bus resources van bepaalde vertrouwde services toestaan, zelfs wanneer de netwerk service-eind punten zijn ingeschakeld. Zie [Trusted Services](#trusted-microsoft-services)(Engelstalig) voor een lijst met vertrouwde services.
+## <a name="important-points"></a>Belang rijke punten
+- Virtuele netwerken worden alleen ondersteund in de [Premium-laag](service-bus-premium-messaging.md) service bus naam ruimten. Wanneer u VNet-service-eind punten met Service Bus gebruikt, moet u deze eind punten niet inschakelen in toepassingen die gebruikmaken van de standaard-en Premium-laag Service Bus naam ruimten. De Standard-laag biedt geen ondersteuning voor VNets. Het eind punt is alleen toegestaan voor de naam ruimte van de Premium-laag.
+- Het implementeren van de integratie van virtuele netwerken kan voorkomen dat andere Azure-services interactie hebben met Service Bus. Als uitzonde ring kunt u toegang tot Service Bus resources van bepaalde **vertrouwde services** toestaan, zelfs wanneer de netwerk service-eind punten zijn ingeschakeld. Zie [Trusted Services](#trusted-microsoft-services)(Engelstalig) voor een lijst met vertrouwde services.
 
-De volgende micro soft-services moeten zich in een virtueel netwerk bevinden
-- Azure App Service
-- Azure Functions
-
-Virtuele netwerken worden alleen ondersteund in de [Premium-laag](service-bus-premium-messaging.md) service bus naam ruimten. Wanneer u VNet-service-eind punten met Service Bus gebruikt, moet u deze eind punten niet inschakelen in toepassingen die gebruikmaken van de standaard-en Premium-laag Service Bus naam ruimten. De Standard-laag biedt geen ondersteuning voor VNets. Het eind punt is alleen toegestaan voor de naam ruimte van de Premium-laag.
-
-> [!IMPORTANT]
-> Geef ten minste één IP-regel of virtuele netwerk regel voor de naam ruimte op om alleen verkeer toe te staan vanaf de opgegeven IP-adressen of het subnet van een virtueel netwerk. Als er geen regels voor IP-en virtueel netwerk zijn, is de naam ruimte toegankelijk via het open bare Internet (met behulp van de toegangs sleutel).  
+    De volgende micro soft-services moeten zich in een virtueel netwerk bevinden
+    - Azure App Service
+    - Azure Functions
+- Geef **ten minste één IP-regel of virtuele netwerk regel** voor de naam ruimte op om alleen verkeer toe te staan vanaf de opgegeven IP-adressen of het subnet van een virtueel netwerk. Als er geen regels voor IP-en virtueel netwerk zijn, is de naam ruimte toegankelijk via het open bare Internet (met behulp van de toegangs sleutel).  
 
 ## <a name="advanced-security-scenarios-enabled-by-vnet-integration"></a>Geavanceerde beveiligings scenario's ingeschakeld door VNet-integratie 
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/13/2020
 ms.author: b-juche
-ms.openlocfilehash: 0cd1f6210fbdb74e3fd511150157dccca3e92dda
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a765d689307b7f56e5100e75d9f7121e944cea14
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "91932461"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106168277"
 ---
 # <a name="benefits-of-using-azure-netapp-files-with-windows-virtual-desktop"></a>Voordelen van het gebruik van Azure NetApp Files met Windows Virtual Desktop 
 
@@ -29,7 +29,7 @@ Azure NetApp Files is een zeer krachtige service voor bestands opslag van Azure.
 
 ## <a name="sample-blueprints"></a>Voorbeeld blauw drukken
 
-In het volgende voor beeld blauw drukken wordt de integratie van virtueel bureau blad van Windows met Azure NetApp Files weer gegeven. In een gegroepd bureau blad worden gebruikers omgeleid naar de beste beschik bare sessie (de [breedte-eerste modus](../virtual-desktop/host-pool-load-balancing.md#breadth-first-load-balancing-method)) in de groep, met behulp van [virtuele machines met meerdere sessies](../virtual-desktop/windows-10-multisession-faq.md#what-is-windows-10-enterprise-multi-session). Aan de andere kant zijn persoonlijke bureau bladen gereserveerd voor scenario's waarin elke gebruiker hun eigen virtuele machine heeft.
+In het volgende voor beeld blauw drukken wordt de integratie van virtueel bureau blad van Windows met Azure NetApp Files weer gegeven. In een gegroepd bureau blad worden gebruikers omgeleid naar de beste beschik bare sessie (de [breedte-eerste modus](../virtual-desktop/host-pool-load-balancing.md#breadth-first-load-balancing-method)) in de groep, met behulp van [virtuele machines met meerdere sessies](../virtual-desktop/windows-10-multisession-faq.yml#what-is-windows-10-enterprise-multi-session). Aan de andere kant zijn persoonlijke bureau bladen gereserveerd voor scenario's waarin elke gebruiker hun eigen virtuele machine heeft.
 
 ### <a name="pooled-desktop-scenario"></a>Gegroepeerde bureaublad scenario
 

@@ -3,15 +3,15 @@ title: Windows virtueel bureau blad integreren met Azure Advisor-Azure
 description: Azure Advisor gebruiken met uw Windows-implementatie voor virtueel bureau blad.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 08/28/2020
+ms.date: 03/31/2021
 ms.author: helohr
-manager: lizross
-ms.openlocfilehash: 76b7f97b6020a3a0d5571a3a105d15f7d7893485
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+manager: femila
+ms.openlocfilehash: b141d3829e9d98cb793d2038e93331804d2e6b8f
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "89147534"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106448284"
 ---
 # <a name="use-azure-advisor-with-windows-virtual-desktop"></a>Azure Advisor gebruiken met virtueel bureau blad van Windows
 
@@ -61,5 +61,3 @@ Wanneer u een categorie selecteert, gaat u naar de pagina met actieve aanbevelin
 ## <a name="next-steps"></a>Volgende stappen
 
 Zie [Azure Advisor aanbevelingen oplossen](azure-advisor-recommendations.md)voor meer informatie over het oplossen van aanbevelingen.
-
-Als u suggesties hebt voor nieuwe aanbevelingen, plaatst u deze op ons [Azure Advisor Voice-Forum voor gebruikers](https://windowsvirtualdesktop.uservoice.com/forums/930847-azure-advisor-recommendations).

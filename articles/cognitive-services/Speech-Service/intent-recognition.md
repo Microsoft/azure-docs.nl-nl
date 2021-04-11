@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 10/13/2020
 ms.author: v-demjoh
 keywords: intentieherkenning
-ms.openlocfilehash: 215b25e440b8cad76e0656e47d32b184edf4ac66
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 532101c8cc307e6a5bb65022702b516c492a51fe
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "95018698"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107210360"
 ---
 # <a name="what-is-intent-recognition"></a>Wat is de intentie herkenning?
 
@@ -33,7 +33,7 @@ Met behulp van de intentie herkenning kunnen uw toepassingen, hulpprogram ma's e
 
 ## <a name="get-started"></a>Aan de slag
 
-Bekijk de [Snelstartgids](quickstarts/intent-recognition.md) om aan de slag te gaan met intentie herkenning.
+Bekijk de [Snelstartgids](get-started-intent-recognition.md) om aan de slag te gaan met intentie herkenning.
 
 ## <a name="sample-code"></a>Voorbeeldcode
 
@@ -53,6 +53,6 @@ Voorbeeld code voor intentie herkenning:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* De [Snelstartgids](quickstarts/intent-recognition.md) voor de Intent herkenning volt ooien
+* De [Snelstartgids](get-started-intent-recognition.md) voor de Intent herkenning volt ooien
 * [Verkrijg gratis een spraakserviceabonnementssleutel](overview.md#try-the-speech-service-for-free)
 * [De Speech SDK ophalen](speech-sdk.md)

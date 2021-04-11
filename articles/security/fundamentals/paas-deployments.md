@@ -4,7 +4,7 @@ description: Leer de aanbevolen procedures voor het ontwerpen, bouwen en beheren
 services: security
 documentationcenter: na
 author: TerryLanfear
-manager: barbkess
+manager: rkarlin
 editor: techlake
 ms.assetid: ''
 ms.service: security
@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/28/2019
+ms.date: 03/29/2021
 ms.author: terrylan
-ms.openlocfilehash: 77a2a32b9a6358c39a14cfe37eeb44f7cb90af0a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d28d55c8dff16df987f6535b0f1452b840b35c43
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94841985"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105960500"
 ---
 # <a name="securing-paas-deployments"></a>PaaS-implementaties beveiligen
 
@@ -127,10 +127,8 @@ Hieronder vindt u aanbevolen procedures voor het gebruik van App Service.
 **Best Practice**: Controleer de beveiligings status van uw app service omgevingen.   
 **Details**: gebruik Azure Security Center om uw app service omgevingen te bewaken. Wanneer Security Center mogelijke beveiligings problemen identificeert, worden er [aanbevelingen](../../security-center/asset-inventory.md) gemaakt die u door het proces van het configureren van de benodigde besturings elementen leiden.
 
-> [!NOTE]
-> Bewakings App Service is in de preview-fase en is alleen beschikbaar voor de [standaard-laag](../../security-center/security-center-pricing.md) van Security Center.
->
->
+## <a name="azure-cloud-services"></a>Azure Cloud Services
+[Azure Cloud Services](../../cloud-services/cloud-services-choose-me.md) is een voor beeld van een Paas. Net als Azure App Service is deze technologie ontworpen voor de ondersteuning van toepassingen die schaalbaar, betrouwbaar en goed koop zijn om te kunnen worden gebruikt. Op dezelfde manier als App Service wordt gehost op virtuele machines (Vm's), is ook Azure Cloud Services. U hebt echter meer controle over de Vm's. U kunt uw eigen software installeren op Vm's die gebruikmaken van Azure Cloud Services en u kunt deze op afstand openen.
 
 ## <a name="install-a-web-application-firewall"></a>Een Web Application Firewall installeren
 Webtoepassingen zijn in toenemende mate het doel van aanvallen die gebruikmaken van veelvoorkomende bekende beveiligingsproblemen. Veelvoorkomende aanvallen zijn hierbij onder andere aanvallen met SQL-injecties en aanvallen via scripting op meerdere sites. Het kan een hele uitdaging zijn om dergelijke aanvallen in toepassingscode te voorkomen en dit kan tevens veel onderhoud, patching en controle vereisen op meerdere lagen van de toepassingstopologie. Een gecentraliseerde firewall voor webtoepassingen maakt het beveiligingsbeheer veel eenvoudiger en biedt toepassingsbeheerders meer veiligheid tegen bedreigingen of aanvallen. Een WAF-oplossing kan ook sneller reageren op een beveiligingsrisico door een patch voor een bekend beveiligingsprobleem toe te passen op een centrale locatie in plaats van elke afzonderlijke webtoepassing te beveiligen. Bestaande toepassingsgateways kunnen eenvoudig worden geconverteerd naar een toepassingsgateway met Web Application Firewall.
@@ -149,13 +147,13 @@ Het valideren van beveiligings beveiliging is net zo belang rijk als het testen 
 
 Fuzz testen is een methode voor het vinden van programma fouten (code fouten) door onjuiste invoer gegevens op te geven voor programma-interfaces (ingangs punten) die deze gegevens parseren en gebruiken. [Micro soft beveiligings risico detectie](https://www.microsoft.com/en-us/security-risk-detection/) is een cloud-gebaseerd hulp programma dat u kunt gebruiken om te zoeken naar fouten en andere beveiligings problemen in uw software voordat u deze implementeert in Azure. Het hulp programma is ontworpen om beveiligings problemen te ondervangen voordat u software implementeert, zodat u geen bug hoeft op te lossen, met crashes kunt omgaan of op een aanval kunt reageren nadat de software is uitgebracht.
 
-
 ## <a name="next-steps"></a>Volgende stappen
-In dit artikel zijn we gericht op beveiligings voordelen van een Azure PaaS-implementatie en aanbevolen beveiligings procedures voor Cloud toepassingen. Vervolgens leert u aanbevolen procedures voor het beveiligen van uw PaaS-webtoepassingen en mobiele oplossingen met behulp van specifieke Azure-Services. We beginnen met Azure App Service, Azure SQL Database en Azure Synapse Analytics en Azure Storage. Wanneer artikelen over aanbevolen procedures voor andere Azure-Services beschikbaar worden, worden koppelingen in de volgende lijst weer gegeven:
+In dit artikel zijn we gericht op beveiligings voordelen van een Azure PaaS-implementatie en aanbevolen beveiligings procedures voor Cloud toepassingen. Vervolgens leert u aanbevolen procedures voor het beveiligen van uw PaaS-webtoepassingen en mobiele oplossingen met behulp van specifieke Azure-Services. We beginnen met Azure App Service, Azure SQL Database en Azure Synapse Analytics, Azure Storage en Azure Cloud Services. Wanneer artikelen over aanbevolen procedures voor andere Azure-Services beschikbaar worden, worden koppelingen in de volgende lijst weer gegeven:
 
 - [Azure App Service](paas-applications-using-app-services.md)
 - [Azure SQL Database en Azure Synapse Analytics](paas-applications-using-sql.md)
 - [Azure Storage](paas-applications-using-storage.md)
+- [Azure Cloud Services](../../cloud-services/security-baseline.md)
 - Azure Cache voor Redis
 - Azure Service Bus
 - Firewalls voor webtoepassingen
@@ -165,5 +163,6 @@ Zie voor het ontwikkelen van [beveiligde toepassingen op Azure](https://azure.mi
 Zie [Aanbevolen procedures en patronen voor Azure-beveiliging](best-practices-and-patterns.md) voor meer aanbevolen procedures voor beveiliging bij het ontwerpen, implementeren en beheren van uw cloud oplossingen met behulp van Azure.
 
 De volgende resources zijn beschikbaar om meer algemene informatie te geven over Azure-beveiliging en gerelateerde micro soft-Services:
-* [Blog van het Azure-beveiligings team](/archive/blogs/azuresecurity/) : voor actuele informatie over de nieuwste Azure-beveiliging
-* [Micro soft Security Response Center](https://technet.microsoft.com/library/dn440717.aspx) : waar micro soft-beveiligings problemen, met inbegrip van problemen met Azure, kunnen worden gerapporteerd of via e-mail worden verzonden naar secure@microsoft.com
+
+- [Blog van het Azure-beveiligings team](/archive/blogs/azuresecurity/) : voor actuele informatie over de nieuwste Azure-beveiliging
+- [Micro soft Security Response Center](https://technet.microsoft.com/library/dn440717.aspx) : waar micro soft-beveiligings problemen, met inbegrip van problemen met Azure, kunnen worden gerapporteerd of via e-mail worden verzonden naar secure@microsoft.com

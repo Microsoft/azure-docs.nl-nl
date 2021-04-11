@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 07/29/2020
 ms.author: hazeng
 ms.custom: devx-track-python
-ms.openlocfilehash: 9b9f5d389eda5d74e7e78cfcfa9a46fba7276cbd
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 56da006dc5a0eef46d5b13984983ca680359b968
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "87846034"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106168090"
 ---
 # <a name="troubleshoot-python-errors-in-azure-functions"></a>Problemen met Python-fouten oplossen in Azure Functions
 
@@ -19,6 +19,8 @@ Hieronder vindt u een lijst met richt lijnen voor probleem oplossing voor veelvo
 
 * [ModuleNotFoundError en ImportError](#troubleshoot-modulenotfounderror)
 * [Kan cygrpc niet importeren](#troubleshoot-cannot-import-cygrpc)
+* [Python is afgesloten met code 137](#troubleshoot-python-exited-with-code-137)
+* [Python is afgesloten met code 139](#troubleshoot-python-exited-with-code-139)
 
 ## <a name="troubleshoot-modulenotfounderror"></a>Problemen met ModuleNotFoundError oplossen
 
@@ -26,22 +28,22 @@ Deze sectie helpt u bij het oplossen van problemen met module fouten in uw pytho
 
 > `Exception: ModuleNotFoundError: No module named 'module_name'.`
 
-Dit fout probleem treedt op wanneer een python-functie-app geen python-module kan laden. De hoofd oorzaak van deze fout is een van de volgende problemen:
+Deze fout treedt op wanneer een python-functie-app geen python-module kan laden. De hoofd oorzaak van deze fout is een van de volgende problemen:
 
-- [Kan het pakket niet vinden](#the-package-cant-be-found)
-- [Het pakket is niet opgelost met het juiste Linux-wiel](#the-package-isnt-resolved-with-proper-linux-wheel)
-- [Het pakket is niet compatibel met de Python-interpreter versie](#the-package-is-incompatible-with-the-python-interpreter-version)
-- [Het pakket conflicteert met andere pakketten](#the-package-conflicts-with-other-packages)
-- [Het pakket ondersteunt alleen Windows-of macOS-platforms](#the-package-only-supports-windows-or-macos-platforms)
+* [Kan het pakket niet vinden](#the-package-cant-be-found)
+* [Het pakket is niet opgelost met het juiste Linux-wiel](#the-package-isnt-resolved-with-proper-linux-wheel)
+* [Het pakket is niet compatibel met de Python-interpreter versie](#the-package-is-incompatible-with-the-python-interpreter-version)
+* [Het pakket conflicteert met andere pakketten](#the-package-conflicts-with-other-packages)
+* [Het pakket ondersteunt alleen Windows-of macOS-platforms](#the-package-only-supports-windows-or-macos-platforms)
 
 ### <a name="view-project-files"></a>Project bestanden weer geven
 
 Als u de daad werkelijke oorzaak van het probleem wilt achterhalen, moet u de python-project bestanden ophalen die worden uitgevoerd in uw functie-app. Als u de project bestanden niet op uw lokale computer hebt, kunt u ze op een van de volgende manieren ophalen:
 
-- Als de functie-app `WEBSITE_RUN_FROM_PACKAGE` app-instelling heeft en de waarde ervan een URL is, downloadt u het bestand door de URL te kopiëren en in uw browser te plakken.
-- Als de functie-app is `WEBSITE_RUN_FROM_PACKAGE` ingesteld op `1` , navigeert u naar `https://<app-name>.scm.azurewebsites.net/api/vfs/data/SitePackages` en downloadt u het bestand van de meest recente `href` URL.
-- Als de app-instelling die hierboven wordt genoemd, niet in de functie-app wordt vermeld, gaat u naar `https://<app-name>.scm.azurewebsites.net/api/settings` de URL en zoekt u deze `SCM_RUN_FROM_PACKAGE` . Down load het bestand door de URL te kopiëren en in uw browser te plakken.
-- Als geen van deze voor u geschikt is, gaat u naar `https://<app-name>.scm.azurewebsites.net/DebugConsole` en onthult u de inhoud onder `/home/site/wwwroot` .
+* Als de functie-app `WEBSITE_RUN_FROM_PACKAGE` app-instelling heeft en de waarde ervan een URL is, downloadt u het bestand door de URL te kopiëren en in uw browser te plakken.
+* Als de functie-app is `WEBSITE_RUN_FROM_PACKAGE` ingesteld op `1` , navigeert u naar `https://<app-name>.scm.azurewebsites.net/api/vfs/data/SitePackages` en downloadt u het bestand van de meest recente `href` URL.
+* Als de app-instelling die hierboven wordt genoemd, niet in de functie-app wordt vermeld, gaat u naar `https://<app-name>.scm.azurewebsites.net/api/settings` de URL en zoekt u deze `SCM_RUN_FROM_PACKAGE` . Down load het bestand door de URL te kopiëren en in uw browser te plakken.
+* Als geen van deze voor u geschikt is, gaat u naar `https://<app-name>.scm.azurewebsites.net/DebugConsole` en onthult u de inhoud onder `/home/site/wwwroot` .
 
 De rest van dit artikel helpt u om mogelijke oorzaken van deze fout op te lossen door de inhoud van uw functie-app te controleren, de hoofd oorzaak te identificeren en het specifieke probleem op te lossen.
 
@@ -150,7 +152,7 @@ Deze sectie helpt u bij het oplossen van problemen met ' cygrpc ' in uw python-f
 
 > `Cannot import name 'cygrpc' from 'grpc._cython'`
 
-Dit probleem treedt op wanneer een python-functie-app niet kan starten met een goede Python-interpreter. De hoofd oorzaak van deze fout is een van de volgende problemen:
+Deze fout treedt op wanneer een python-functie-app niet kan starten met een goede Python-interpreter. De hoofd oorzaak van deze fout is een van de volgende problemen:
 
 - [De Python-interpreter komt niet overeen met de besturingssysteem architectuur](#the-python-interpreter-mismatches-os-architecture)
 - [De Python-interpreter wordt niet ondersteund door Azure Functions python-werk nemer](#the-python-interpreter-is-not-supported-by-azure-functions-python-worker)
@@ -177,6 +179,42 @@ De Azure Functions python-werk nemer biedt alleen ondersteuning voor python 3,6,
 Controleer of uw Python-interpreter overeenkomt met onze verwachte versie `py --version` in Windows of `python3 --version` in UNIX-achtige systemen. Zorg ervoor dat het retour resultaat python 3.6. x, python 3.7. x of python 3.8. x.
 
 Als uw Python interpreter-versie niet aan onze verwachting voldoet, moet u de python 3,6-, 3,7-of 3,8-interpreter downloaden van [python Software Foundation](https://python.org/downloads/release).
+
+---
+
+## <a name="troubleshoot-python-exited-with-code-137"></a>Problemen met python oplossen die is afgesloten met code 137
+
+Code 137 fouten worden meestal veroorzaakt door problemen met de oorzaak van geheugen in uw python-functie-app. Als gevolg hiervan wordt het volgende Azure Functions fout bericht weer gegeven:
+
+> `Microsoft.Azure.WebJobs.Script.Workers.WorkerProcessExitException : python exited with code 137`
+
+Deze fout treedt op wanneer een python-functie-app geforceerd wordt beëindigd door het besturings systeem met een SIGKILL-signaal. Dit signaal duidt meestal op een out-of-Memory-fout in uw python-proces. Het Azure Functions-platform heeft een [service beperking](functions-scale.md#service-limits) waardoor alle functie-apps die deze limiet overschrijden, worden beëindigd.
+
+Ga naar de sectie zelf studie in [geheugen profilering voor python-functies](python-memory-profiler-reference.md#memory-profiling-process) om de geheugen knelpunt in uw functie-app te analyseren.
+
+---
+
+## <a name="troubleshoot-python-exited-with-code-139"></a>Problemen met python oplossen die is afgesloten met code 139
+
+Deze sectie helpt u bij het oplossen van fouten in de segmentatie in uw python-functie-app. Deze fouten resulteren doorgaans in het volgende Azure Functions fout bericht:
+
+> `Microsoft.Azure.WebJobs.Script.Workers.WorkerProcessExitException : python exited with code 139`
+
+Deze fout treedt op wanneer een python-functie-app geforceerd wordt beëindigd door het besturings systeem met een SIGSEGV-signaal. Dit signaal duidt op een schending van geheugen segmentering die kan worden veroorzaakt door onverwacht lezen van of schrijven naar een beperkt geheugen gebied. In de volgende secties bieden we een lijst met algemene hoofd oorzaken.
+
+### <a name="a-regression-from-third-party-packages"></a>Een regressie van pakketten van derden
+
+In de requirements.txt van uw functie-app wordt een niet-vastgemaakt pakket bijgewerkt naar de meest recente versie in elke Azure Functions-implementatie. Leveranciers van deze pakketten kunnen regressies in de meest recente release introduceren. Als u dit probleem wilt herstellen, probeert u de instructies voor importeren uit te voeren, de pakket verwijzingen uit te scha kelen of het pakket vast te maken naar een eerdere versie in requirements.txt.
+
+### <a name="unpickling-from-a-malformed-pkl-file"></a>Orderverzamelen opvangen van een onjuist gevormd. PKL-bestand
+
+Als uw functie-app gebruikmaakt van de python Pickel-bibliotheek voor het laden van python-object uit. PKL-bestand, is het mogelijk dat de. PKL een onjuist ingedeeld byte teken reeks of een ongeldige adres verwijzing bevat. Als u dit probleem wilt herstellen, kunt u de functie selectie. load () gebruiken om een opmerking uit te voeren.
+
+### <a name="pyodbc-connection-collision"></a>Conflict met Pyodbc-verbinding
+
+Als uw functie-app gebruikmaakt van het populaire ODBC-database stuur programma [pyodbc](https://github.com/mkleehammer/pyodbc), is het mogelijk dat er meerdere verbindingen worden geopend in één functie-app. Als u dit probleem wilt voor komen, gebruikt u het Singleton-patroon en zorgt u ervoor dat er slechts één pyodbc-verbinding wordt gebruikt in de functie-app.
+
+---
 
 ## <a name="next-steps"></a>Volgende stappen
 

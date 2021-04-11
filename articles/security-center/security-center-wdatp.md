@@ -7,12 +7,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 03/08/2021
 ms.author: memildin
-ms.openlocfilehash: 085f3a5295d60b83536683a57a34b51abccd3067
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 88d0a3dcd89ea678d77bc558fc680630bc0f2309
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105043016"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106168175"
 ---
 # <a name="protect-your-endpoints-with-security-centers-integrated-edr-solution-microsoft-defender-for-endpoint"></a>Bescherm uw eind punten met de geïntegreerde EDR-oplossing van Security Center: micro soft Defender voor eind punt
 
@@ -38,7 +38,7 @@ Micro soft Defender voor eind punt is een holistische, Cloud geleverde endpoint-
 | Releasestatus:                  | Algemeen verkrijgbaar (GA)                                                                                                                                                                                                                                                                                      |
 | Prijzen:                        | [Azure Defender voor servers](defender-for-servers-introduction.md) is vereist                                                                                                                                                                                                                                             |
 | Ondersteunde platformen:            |  • Azure-machines met Windows<br> • Azure-Arc-machines met Windows|
-| Ondersteunde versies van Windows:  |  • **Algemene Beschik baarheid (ga)-** detectie op Windows Server 2016, 2012 r2 en 2008 R2 SP1<br> • **Preview-** detectie op windows server 2019, [Windows Virtual Desktop (WVD)](../virtual-desktop/overview.md)en [Windows 10 Enter prise multi-session](../virtual-desktop/windows-10-multisession-faq.md) (voorheen Enter PRISE voor Virtual Bureau bladen (EVD)|
+| Ondersteunde versies van Windows:  |  • **Algemene Beschik baarheid (ga)-** detectie op Windows Server 2016, 2012 r2 en 2008 R2 SP1<br> • **Preview-** detectie op windows server 2019, [Windows Virtual Desktop (WVD)](../virtual-desktop/overview.md)en [Windows 10 Enter prise multi-session](../virtual-desktop/windows-10-multisession-faq.yml) (voorheen Enter PRISE voor Virtual Bureau bladen (EVD)|
 | Niet-ondersteunde besturings systemen:  |  • Windows 10 (met uitzonde ring van EVD of WVD)<br> • Linux|
 | Vereiste rollen en machtigingen: | De integratie: **beveiligings beheerder** of **eigenaar** inschakelen/uitschakelen<br>MDATP-waarschuwingen weer geven in Security Center: **beveiligings lezer**, **lezer**, **Inzender voor resource groep**, **eigenaar van resource groep**, **beveiligings beheerder**, **abonnements eigenaar** of **mede werker** van het abonnement|
 | Clouds:                         | ![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov<br>![Nee](./media/icons/no-icon.png) China Gov, Other Gov                                                        |

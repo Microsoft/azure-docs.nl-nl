@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 9c8e971b4fda313ffede58455dd6d057d6848ce4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f21e4aa9bd46ed5524cf83d083a70b9b04f03056
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98678126"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107011132"
 ---
 # <a name="azure-maps-weather-services-preview-frequently-asked-questions-faq"></a>Veelgestelde vragen over Azure Maps-Services (preview)
 
@@ -103,7 +103,7 @@ Ja. Naast de tegels in realtime radar en satellieten kunnen Azure Maps klanten e
 
 **Biedt u pictogrammen voor verschillende weers omstandigheden?**
 
-Ja. U kunt [hier](./weather-services-concepts.md#weather-icons)pictogrammen en de bijbehorende codes vinden. U ziet dat slechts een deel van de Api's van de weer service (preview-versie), zoals de  [huidige voor waarden van de API ophalen](/rest/api/maps/weather/getcurrentconditionspreview), de *iconCode* in het antwoord retour neren. Zie het huidige WeatherConditions open source-voor [beeld](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Get%20current%20weather%20at%20a%20location)voor meer informatie.
+Ja. U kunt [hier](./weather-services-concepts.md#weather-icons)pictogrammen en de bijbehorende codes vinden. U ziet dat slechts een deel van de Api's van de weer service (preview-versie), zoals de  [huidige voor waarden van de API ophalen](/rest/api/maps/weather/getcurrentconditions), de *iconCode* in het antwoord retour neren. Zie het huidige WeatherConditions open source-voor [beeld](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Get%20current%20weather%20at%20a%20location)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

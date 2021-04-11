@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.date: 04/06/2020
 ms.custom: devx-track-java, devx-track-azurecli
 ms.openlocfilehash: 9fbd137f8fa36a7b0526b25d664fceac795ecd81
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104879151"
 ---
 # <a name="tutorial-use-circuit-breaker-dashboard-with-azure-spring-cloud"></a>Zelfstudie: Circuit Breaker Dashboard gebruiken met Azure Spring Cloud

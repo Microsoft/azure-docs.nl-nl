@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 03/12/2021
 ms.author: apimpm
 ms.openlocfilehash: 1a835d26b4c41c92b9849856a2f31b3550947bd8
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104801890"
 ---
 # <a name="api-management-policies-to-validate-requests-and-responses"></a>API Management beleid voor het valideren van aanvragen en antwoorden
@@ -87,20 +87,20 @@ In het volgende voor beeld wordt de JSON-nettolading in aanvragen en antwoorden 
 
 | Naam         | Beschrijving                                                                                                                                   | Vereist |
 | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| validate-content | Hoofd element.                                                                                                                               | Ja      |
-| inhoud | Voeg een of meer van deze elementen toe om het inhouds type in de aanvraag of het antwoord te valideren en de opgegeven actie uit te voeren.  | Nee |
+| validate-content | Hoofd element.                                                                                                                               | Yes      |
+| inhoud | Voeg een of meer van deze elementen toe om het inhouds type in de aanvraag of het antwoord te valideren en de opgegeven actie uit te voeren.  | No |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Naam                       | Beschrijving                                                                                                                                                            | Vereist | Standaard |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
-| niet opgegeven-type actie | [Actie](#actions) die moet worden uitgevoerd voor aanvragen of antwoorden met een inhouds type dat niet is opgegeven in het API-schema. |  Ja     | N.v.t.   |
-| Max-grootte | Maximum lengte van de hoofd tekst van de aanvraag of het antwoord in bytes, vergeleken met de `Content-Length` koptekst. Als de hoofd tekst van de aanvraag of het antwoord is gecomprimeerd, is deze waarde de gedecomprimeerde lengte. Maxi maal toegestane waarde: 102.400 bytes (100 KB).  | Ja       | N.v.t.   |
-| grootte-overschreden-actie | [Actie](#actions) die moet worden uitgevoerd voor aanvragen of antwoorden waarvan de hoofd tekst de grootte overschrijdt die is opgegeven in `max-size` . |  Ja     | N.v.t.   |
-| fouten-variabele-name | De naam van de variabele in `context.Variables` om validatie fouten naar te registreren.  |   Ja    | N.v.t.   |
-| type | Inhouds type voor het uitvoeren van een validatie van de hoofd tekst voor, vergeleken met de `Content-Type` koptekst. Deze waarde is hoofdletter gevoelig. Als deze leeg is, wordt dit toegepast op elk inhouds type dat is opgegeven in het API-schema. |   Nee    |  N.v.t.  |
-| valideren-als | Validatie-engine die moet worden gebruikt voor validatie van de hoofd tekst van een aanvraag of antwoord met een overeenkomend inhouds type. Op dit moment wordt de enige ondersteunde waarde ' JSON ' genoemd.   |  Ja     |  N.v.t.  |
-| actie | De [actie](#actions) die moet worden uitgevoerd voor aanvragen of antwoorden waarvan de hoofd tekst niet overeenkomt met het opgegeven inhouds type.  |  Ja      | N.v.t.   |
+| niet opgegeven-type actie | [Actie](#actions) die moet worden uitgevoerd voor aanvragen of antwoorden met een inhouds type dat niet is opgegeven in het API-schema. |  Yes     | N.v.t.   |
+| Max-grootte | Maximum lengte van de hoofd tekst van de aanvraag of het antwoord in bytes, vergeleken met de `Content-Length` koptekst. Als de hoofd tekst van de aanvraag of het antwoord is gecomprimeerd, is deze waarde de gedecomprimeerde lengte. Maxi maal toegestane waarde: 102.400 bytes (100 KB).  | Yes       | N.v.t.   |
+| grootte-overschreden-actie | [Actie](#actions) die moet worden uitgevoerd voor aanvragen of antwoorden waarvan de hoofd tekst de grootte overschrijdt die is opgegeven in `max-size` . |  Yes     | N.v.t.   |
+| fouten-variabele-name | De naam van de variabele in `context.Variables` om validatie fouten naar te registreren.  |   Yes    | N.v.t.   |
+| type | Inhouds type voor het uitvoeren van een validatie van de hoofd tekst voor, vergeleken met de `Content-Type` koptekst. Deze waarde is hoofdletter gevoelig. Als deze leeg is, wordt dit toegepast op elk inhouds type dat is opgegeven in het API-schema. |   No    |  N.v.t.  |
+| valideren-als | Validatie-engine die moet worden gebruikt voor validatie van de hoofd tekst van een aanvraag of antwoord met een overeenkomend inhouds type. Op dit moment wordt de enige ondersteunde waarde ' JSON ' genoemd.   |  Yes     |  N.v.t.  |
+| actie | De [actie](#actions) die moet worden uitgevoerd voor aanvragen of antwoorden waarvan de hoofd tekst niet overeenkomt met het opgegeven inhouds type.  |  Yes      | N.v.t.   |
 
 ### <a name="usage"></a>Gebruik
 
@@ -153,21 +153,21 @@ In dit voor beeld worden alle para meters voor query's en paden gevalideerd in d
 
 | Naam         | Beschrijving                                                                                                                                   | Vereist |
 | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| validate-para meters | Hoofd element. Geeft standaard validatie acties voor alle para meters in aanvragen aan.                                                                                                                              | Ja      |
-| koppen | Voeg dit element toe om standaard validatie acties voor header-para meters in aanvragen te negeren.   | Nee |
-| query | Voeg dit element toe om standaard validatie acties voor query parameters in aanvragen te negeren.  | Nee |
-| leertraject | Voeg dit element toe om standaard validatie acties voor URL-path-para meters in aanvragen te negeren.  | Nee |
-| parameter | Voeg een of meer elementen voor benoemde para meters toe om de configuratie van de validatie acties op een hoger niveau te overschrijven. | Nee |
+| validate-para meters | Hoofd element. Geeft standaard validatie acties voor alle para meters in aanvragen aan.                                                                                                                              | Yes      |
+| koppen | Voeg dit element toe om standaard validatie acties voor header-para meters in aanvragen te negeren.   | No |
+| query | Voeg dit element toe om standaard validatie acties voor query parameters in aanvragen te negeren.  | No |
+| leertraject | Voeg dit element toe om standaard validatie acties voor URL-path-para meters in aanvragen te negeren.  | No |
+| parameter | Voeg een of meer elementen voor benoemde para meters toe om de configuratie van de validatie acties op een hoger niveau te overschrijven. | No |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Naam                       | Beschrijving                                                                                                                                                            | Vereist | Standaard |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
-| opgegeven-para meter-Action | [Actie](#actions) die moet worden uitgevoerd voor aanvraag parameters die zijn opgegeven in het API-schema. <br/><br/> Als `headers` de waarde in een, `query` of element wordt gegeven, wordt `path` de waarde van `specified-parameter-action` in het element overschreven `validate-parameters` .  |  Ja     | N.v.t.   |
-| niet opgegeven-para meter-Action | [Actie](#actions) die moet worden uitgevoerd voor aanvraag parameters die niet zijn opgegeven in het API-schema. <br/><br/>Als de waarde in een- `headers` of `query` -element wordt gegeven, wordt de waarde van `unspecified-parameter-action` in het element overschreven `validate-parameters` . |  Ja     | N.v.t.   |
-| fouten-variabele-name | De naam van de variabele in `context.Variables` om validatie fouten naar te registreren.  |   Ja    | N.v.t.   |
-| naam | De naam van de para meter voor het overschrijven van de validatie actie voor. Deze waarde is hoofdletter gevoelig.  | Ja | N.v.t. |
-| actie | [Actie](#actions) die moet worden uitgevoerd voor de para meter met de overeenkomende naam. Als de para meter is opgegeven in het API-schema, overschrijft deze waarde de configuratie op een hoger niveau `specified-parameter-action` . Als de para meter niet is opgegeven in het API-schema, overschrijft deze waarde de configuratie op een hoger niveau `unspecified-parameter-action` .| Ja | N.v.t. | 
+| opgegeven-para meter-Action | [Actie](#actions) die moet worden uitgevoerd voor aanvraag parameters die zijn opgegeven in het API-schema. <br/><br/> Als `headers` de waarde in een, `query` of element wordt gegeven, wordt `path` de waarde van `specified-parameter-action` in het element overschreven `validate-parameters` .  |  Yes     | N.v.t.   |
+| niet opgegeven-para meter-Action | [Actie](#actions) die moet worden uitgevoerd voor aanvraag parameters die niet zijn opgegeven in het API-schema. <br/><br/>Als de waarde in een- `headers` of `query` -element wordt gegeven, wordt de waarde van `unspecified-parameter-action` in het element overschreven `validate-parameters` . |  Yes     | N.v.t.   |
+| fouten-variabele-name | De naam van de variabele in `context.Variables` om validatie fouten naar te registreren.  |   Yes    | N.v.t.   |
+| naam | De naam van de para meter voor het overschrijven van de validatie actie voor. Deze waarde is hoofdletter gevoelig.  | Yes | N.v.t. |
+| actie | [Actie](#actions) die moet worden uitgevoerd voor de para meter met de overeenkomende naam. Als de para meter is opgegeven in het API-schema, overschrijft deze waarde de configuratie op een hoger niveau `specified-parameter-action` . Als de para meter niet is opgegeven in het API-schema, overschrijft deze waarde de configuratie op een hoger niveau `unspecified-parameter-action` .| Yes | N.v.t. | 
 
 ### <a name="usage"></a>Gebruik
 
@@ -201,18 +201,18 @@ Het `validate-headers` beleid valideert de antwoord headers op basis van het API
 
 | Naam         | Beschrijving                                                                                                                                   | Vereist |
 | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| validate-headers | Hoofd element. Hiermee geeft u de standaard validatie acties voor alle headers in antwoorden op.                                                                                                                              | Ja      |
-| koptekst | Voeg een of meer elementen voor benoemde kopteksten toe om de standaard validatie acties voor kopteksten in antwoorden te overschrijven. | Nee |
+| validate-headers | Hoofd element. Hiermee geeft u de standaard validatie acties voor alle headers in antwoorden op.                                                                                                                              | Yes      |
+| koptekst | Voeg een of meer elementen voor benoemde kopteksten toe om de standaard validatie acties voor kopteksten in antwoorden te overschrijven. | No |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Naam                       | Beschrijving                                                                                                                                                            | Vereist | Standaard |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
-| opgegeven-header-Action | [Actie](#actions) die moet worden uitgevoerd voor antwoord headers die zijn opgegeven in het API-schema.  |  Ja     | N.v.t.   |
-| niet opgegeven-header-Action | [Actie](#actions) die moet worden uitgevoerd voor antwoord headers die niet zijn opgegeven in het API-schema.  |  Ja     | N.v.t.   |
-| fouten-variabele-name | De naam van de variabele in `context.Variables` om validatie fouten naar te registreren.  |   Ja    | N.v.t.   |
-| naam | De naam van de koptekst waarvoor de validatie actie moet worden overschreven. Deze waarde is hoofdletter gevoelig. | Ja | N.v.t. |
-| actie | [Actie](#actions) die moet worden uitgevoerd voor de header met de overeenkomende naam. Als de header is opgegeven in het API-schema, overschrijft deze waarde de waarde van `specified-header-action` in het- `validate-headers` element. Anders wordt de waarde van `unspecified-header-action` in het element validate-headers overschreven. | Ja | N.v.t. | 
+| opgegeven-header-Action | [Actie](#actions) die moet worden uitgevoerd voor antwoord headers die zijn opgegeven in het API-schema.  |  Yes     | N.v.t.   |
+| niet opgegeven-header-Action | [Actie](#actions) die moet worden uitgevoerd voor antwoord headers die niet zijn opgegeven in het API-schema.  |  Yes     | N.v.t.   |
+| fouten-variabele-name | De naam van de variabele in `context.Variables` om validatie fouten naar te registreren.  |   Yes    | N.v.t.   |
+| naam | De naam van de koptekst waarvoor de validatie actie moet worden overschreven. Deze waarde is hoofdletter gevoelig. | Yes | N.v.t. |
+| actie | [Actie](#actions) die moet worden uitgevoerd voor de header met de overeenkomende naam. Als de header is opgegeven in het API-schema, overschrijft deze waarde de waarde van `specified-header-action` in het- `validate-headers` element. Anders wordt de waarde van `unspecified-header-action` in het element validate-headers overschreven. | Yes | N.v.t. | 
 
 ### <a name="usage"></a>Gebruik
 
@@ -244,17 +244,17 @@ Het `validate-status-code` beleid valideert de HTTP-status codes in reacties op 
 
 | Naam         | Beschrijving                                                                                                                                   | Vereist |
 | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| validate-status-code | Hoofd element.                                                                                                | Ja      |
-| status-code | Voeg een of meer elementen voor HTTP-status codes toe om de standaard validatie actie voor status codes in antwoorden te onderdrukken. | Nee |
+| validate-status-code | Hoofd element.                                                                                                | Yes      |
+| status-code | Voeg een of meer elementen voor HTTP-status codes toe om de standaard validatie actie voor status codes in antwoorden te onderdrukken. | No |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Naam                       | Beschrijving                                                                                                                                                            | Vereist | Standaard |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
-| niet opgegeven-status-code-actie | [Actie](#actions) die moet worden uitgevoerd voor HTTP-status codes in antwoorden die niet zijn opgegeven in het API-schema.  |  Ja     | N.v.t.   |
-| fouten-variabele-name | De naam van de variabele in `context.Variables` om validatie fouten naar te registreren.  |   Ja    | N.v.t.   |
-| code | HTTP-status code voor het overschrijven van de validatie actie voor. | Ja | N.v.t. |
-| actie | De [actie](#actions) die moet worden uitgevoerd voor de overeenkomende status code, die niet is opgegeven in het API-schema. Als de status code is opgegeven in het API-schema, wordt deze onderdrukking niet van kracht. | Ja | N.v.t. | 
+| niet opgegeven-status-code-actie | [Actie](#actions) die moet worden uitgevoerd voor HTTP-status codes in antwoorden die niet zijn opgegeven in het API-schema.  |  Yes     | N.v.t.   |
+| fouten-variabele-name | De naam van de variabele in `context.Variables` om validatie fouten naar te registreren.  |   Yes    | N.v.t.   |
+| code | HTTP-status code voor het overschrijven van de validatie actie voor. | Yes | N.v.t. |
+| actie | De [actie](#actions) die moet worden uitgevoerd voor de overeenkomende status code, die niet is opgegeven in het API-schema. Als de status code is opgegeven in het API-schema, wordt deze onderdrukking niet van kracht. | Yes | N.v.t. | 
 
 ### <a name="usage"></a>Gebruik
 

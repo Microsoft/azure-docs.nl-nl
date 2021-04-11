@@ -2,13 +2,13 @@
 title: Naamgevings beperkingen voor resources
 description: Hier worden de regels en beperkingen voor het benoemen van Azure-resources weer gegeven.
 ms.topic: conceptual
-ms.date: 01/27/2021
-ms.openlocfilehash: 20f7b6dc6c49b972b873ae3b275451829dec5c14
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.date: 04/08/2021
+ms.openlocfilehash: a1dbe409eb5479c4027834cd33e095d12c31e238
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105934169"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107210190"
 ---
 # <a name="naming-rules-and-restrictions-for-azure-resources"></a>Naamgevingsregels en -beperkingen voor Azure-resources
 
@@ -16,7 +16,7 @@ Dit artikel bevat een overzicht van de naamgevings regels en beperkingen voor Az
 
 In dit artikel vindt u bronnen op de naam ruimte van de resource provider. Zie [resource providers voor Azure-Services](azure-services-resource-providers.md)voor een lijst met resource providers die overeenkomen met Azure-Services.
 
-Resource namen zijn hoofdletter gevoelig, tenzij specifiek vermeld in de kolom geldige tekens.
+Resource namen zijn niet hoofdletter gevoelig, tenzij vermeld in de kolom geldige tekens.
 
 In de volgende tabellen verwijst de term alfanumeriek naar:
 
@@ -110,7 +110,7 @@ In de volgende tabellen verwijst de term alfanumeriek naar:
 > [!div class="mx-tableFixed"]
 > | Entiteit | Bereik | Lengte | Geldige tekens |
 > | --- | --- | --- | --- |
-> | batchAccounts | Region | 3-24 | Kleine letters en cijfers. |
+> | batchAccounts | Regio | 3-24 | Kleine letters en cijfers. |
 > | batchAccounts/toepassingen | batch-account | 1-64 | Alfanumeriek, onderstrepings tekens en afbreek streepjes. |
 > | batchAccounts/certificaten | batch-account | 5-45 | Alfanumeriek, onderstrepings tekens en afbreek streepjes. |
 > | batchAccounts/Pools | batch-account | 1-64 | Alfanumeriek, onderstrepings tekens en afbreek streepjes. |
@@ -177,11 +177,18 @@ In de volgende tabellen verwijst de term alfanumeriek naar:
 > | galerieën/afbeeldingen/versies | image | 32-bits geheel getal | Cijfers en peri Oden. |
 > | images | resourcegroep | 1-80 | Alfanumeriek, onderstrepings tekens, punten en afbreek streepjes.<br><br>Begin met alfanumeriek. Eindigen met een alfanumeriek of onderstrepings teken. |
 > | momentopnamen | resourcegroep | 1-80 | Alfanumeriek, onderstrepings tekens, punten en afbreek streepjes.<br><br>Begin met alfanumeriek. Eindigen met een alfanumeriek of onderstrepings teken. |
-> | Informatie | resourcegroep | 1-15 (Windows)<br>1-64 (Linux)<br><br>Zie de opmerking hieronder. | Kan geen spatie of deze tekens gebruiken:<br> `\/"'[]:|<>+=;,?*@&_`<br><br>Windows-Vm's kunnen geen punt bevatten of eindigen met een afbreek streepje.<br><br>Linux-Vm's mogen niet eindigen op een punt of afbreek streepje. |
-> | virtualMachineScaleSets | resourcegroep | 1-15 (Windows)<br>1-64 (Linux)<br><br>Zie de opmerking hieronder. | Kan geen spatie of deze tekens gebruiken:<br> `\/"'[]:|<>+=;,?*@&`<br><br>Kan niet beginnen met een onderstrepings teken. Kan niet eindigen met een punt of afbreek streepje. |
+> | Informatie | resourcegroep | 1-15 (Windows)<br>1-64 (Linux)<br><br>Zie de opmerking hieronder. | Kan geen spatie of deze tekens gebruiken:<br> `~ ! @ # $ % ^ & * ( ) = + _ [ ] { } \ | ; : . ' " , < > / ?`<br><br>Windows-Vm's kunnen geen punt bevatten of eindigen met een afbreek streepje.<br><br>Linux-Vm's mogen niet eindigen op een punt of afbreek streepje. |
+> | virtualMachineScaleSets | resourcegroep | 1-15 (Windows)<br>1-64 (Linux)<br><br>Zie de opmerking hieronder. | Kan geen spatie of deze tekens gebruiken:<br> `~ ! @ # $ % ^ & * ( ) = + _ [ ] { } \ | ; : . ' " , < > / ?`<br><br>Kan niet beginnen met een onderstrepings teken. Kan niet eindigen met een punt of afbreek streepje. |
 
 > [!NOTE]
 > Virtuele Azure-machines hebben twee verschillende namen: resource naam en hostnaam. Wanneer u een virtuele machine in de portal maakt, wordt dezelfde waarde gebruikt voor beide namen. De beperkingen in de voor gaande tabel zijn voor de hostnaam. De werkelijke resourcenaam mag niet langer zijn dan 64 tekens.
+
+## <a name="microsoftcommunication"></a>Micro soft. Communication
+
+> [!div class="mx-tableFixed"]
+> | Entiteit | Bereik | Lengte | Geldige tekens |
+> | --- | --- | --- | --- |
+> | communicationServices | internationaal | 1-63 | Alfanumerieke tekens, afbreek streepjes en onderstrepings tekens. |
 
 ## <a name="microsoftcontainerinstance"></a>Micro soft. ContainerInstance
 
@@ -599,7 +606,7 @@ In de volgende tabellen verwijst de term alfanumeriek naar:
 > | Entiteit | Bereik | Lengte | Geldige tekens |
 > | --- | --- | --- | --- |
 > | implementaties | resourcegroep | 1-64 | Alfanumeriek, onderstrepings tekens, haakjes, afbreek streepjes en punten. |
-> | ResourceGroups | abonnement | 1-90 | Alfanumeriek, onderstreping, haakjes, afbreek streepjes, punten en Unicode-tekens die overeenkomen met de [regex-documentatie](/rest/api/resources/resources/resourcegroups/createorupdate).<br><br>Kan niet eindigen met een punt. |
+> | ResourceGroups | abonnement | 1-90 | Alfanumeriek, onderstreping, haakjes, afbreek streepjes, punten en Unicode-tekens die overeenkomen met de [regex-documentatie](/rest/api/resources/resourcegroups/createorupdate).<br><br>Kan niet eindigen met een punt. |
 > | tagName | resource | 1-512 | Kan niet gebruiken:<br>`<>%&\?/` |
 > | tagName-tagValues | Label naam | 1-256 | Alle tekens. |
 > | templateSpecs | resourcegroep | 1-90 | Alfanumeriek, onderstrepings tekens, haakjes, afbreek streepjes en punten. |
@@ -706,10 +713,12 @@ In de volgende tabellen verwijst de term alfanumeriek naar:
 > | --- | --- | --- | --- |
 > | certificaten | resourcegroep | 1-260 | Kan niet gebruiken:<br>`/` <br><br>Kan niet eindigen met een spatie of een punt.  | 
 > | server farms | resourcegroep | 1-40 | Alfanumerieke tekens en afbreek streepjes. |
-> | sites | internationaal | 2-60 | Bevat alfanumerieke tekens en afbreek streepjes.<br><br>Kan niet beginnen of eindigen met een afbreek streepje. |
+> | sites | globaal of per domein. Zie de opmerking hieronder. | 2-60 | Bevat alfanumerieke tekens en afbreek streepjes.<br><br>Kan niet beginnen of eindigen met een afbreek streepje. |
 > | sites/sleuven | site | 2-59 | Alfanumerieke tekens en afbreek streepjes. |
 
 > [!NOTE]
+> Een website moet een wereld wijd unieke URL hebben. Wanneer u een website maakt die gebruikmaakt van een hosting plan, is de URL `http://<app-name>.azurewebsites.net` . De naam van de app moet globaal uniek zijn. Wanneer u een website maakt die gebruikmaakt van een App Service Environment, moet de app-naam uniek zijn binnen het [domein voor de app service Environment](../../app-service/environment/using-an-ase.md#app-access). In beide gevallen is de URL van de site wereld wijd uniek.
+>
 > Azure Functions heeft dezelfde naamgevings regels en beperkingen als micro soft. web/sites.
 
 ## <a name="next-steps"></a>Volgende stappen

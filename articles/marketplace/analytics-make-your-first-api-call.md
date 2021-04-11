@@ -8,10 +8,10 @@ author: sayantanroy83
 ms.author: sroy
 ms.date: 3/08/2021
 ms.openlocfilehash: 9e5fbdfca80d19f026a014a89ffbf137bacb521c
-ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/28/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105639576"
 ---
 # <a name="make-your-first-api-call-to-access-commercial-marketplace-analytics-data"></a>Maak uw eerste API-oproep voor het verkrijgen van toegang tot commerciële Marketplace Analytics-gegevens

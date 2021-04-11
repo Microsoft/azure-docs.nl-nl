@@ -7,17 +7,17 @@ ms.service: data-catalog
 ms.topic: how-to
 ms.date: 08/01/2019
 ms.openlocfilehash: 6137072b443d54dfc63c2be69e20228d428ad1b1
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "104674713"
 ---
 # <a name="set-up-the-business-glossary-for-governed-tagging"></a>De zakelijke woorden lijst instellen voor de onderhevige labels
 
 [!INCLUDE [Azure Purview redirect](../../includes/data-catalog-use-purview.md)]
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Azure Data Catalog maakt detectie van gegevens bronnen mogelijk, zodat u de gegevens bronnen die u nodig hebt om analyses uit te voeren en beslissingen te nemen, gemakkelijk kunt ontdekken en begrijpen. Deze mogelijkheden maken het grootste effect wanneer u het breedste bereik van beschik bare gegevens bronnen kunt vinden en begrijpen.
 

@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 71a29a2a7e379e253b52813eb7a76f669abbf668
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a8779ee2d3c4d83c06a2c1803e65219d43f0ef14
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101653827"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106275801"
 ---
 # <a name="enable-passwordless-security-key-sign-in"></a>Aanmeldings wachtwoord zonder wacht woord inschakelen 
 
@@ -89,6 +89,8 @@ Als u feedback wilt delen of problemen ondervindt met deze functie, kunt u via d
 ### <a name="security-key-provisioning"></a>Inrichten van beveiligings sleutel
 
 Het inrichten van de beheerder en het ongedaan maken van de inrichting van beveiligings sleutels is niet beschikbaar.
+
+**Opmerking:** FIDO2-aanmelding in cache mislukt bij hybride Azure AD gekoppelde computer die specifiek is voor win10 20H2-versie (wanneer LOS-to-DC niet beschikbaar is). Dit wordt momenteel onderzocht met engineering.
 
 ### <a name="upn-changes"></a>UPN-wijzigingen
 

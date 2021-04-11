@@ -6,12 +6,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: jingwang
-ms.openlocfilehash: 0aee6030e5608b5413864d6a32dc8442dd346f42
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 68d90fa56d5dce902a44a32b322e582a81e419d5
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100392779"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107011634"
 ---
 # <a name="schema-and-data-type-mapping-in-copy-activity"></a>Schema en gegevens type toewijzing in Kopieer activiteit
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -22,7 +22,7 @@ In dit artikel wordt beschreven hoe de Azure Data Factory Kopieer activiteit sch
 
 ### <a name="default-mapping"></a>Standaard toewijzing
 
-De Kopieer activiteit wijst standaard bron gegevens toe aan het **filteren op kolom namen** op hoofdletter gevoelige wijze. Als er geen Sink bestaat, bijvoorbeeld om naar een of meer bestanden te schrijven, worden de namen van de bron velden persistent gemaakt als Sink-namen. Deze standaard toewijzing ondersteunt flexibele schema's en schema drift van bron naar Sink van uitvoering tot uitvoering-alle gegevens die door het brongegevens archief worden geretourneerd, kunnen worden gekopieerd naar sink.
+De Kopieer activiteit wijst standaard bron gegevens toe aan het **filteren op kolom namen** op hoofdletter gevoelige wijze. Als er geen Sink bestaat, bijvoorbeeld om naar een of meer bestanden te schrijven, worden de namen van de bron velden persistent gemaakt als Sink-namen. Als de Sink al bestaat, moet deze alle kolommen bevatten die worden gekopieerd uit de bron. Deze standaard toewijzing ondersteunt flexibele schema's en schema drift van bron naar Sink van uitvoering tot uitvoering-alle gegevens die door het brongegevens archief worden geretourneerd, kunnen worden gekopieerd naar sink.
 
 Als uw bron tekst bestand is zonder header regel, is [expliciet toewijzen](#explicit-mapping) vereist omdat de bron geen kolom namen bevat.
 

@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla
 ms.topic: article
-ms.date: 03/09/2021
-ms.openlocfilehash: b038a0530d392c80fc14d09486f298657fe0da17
-ms.sourcegitcommit: a67b972d655a5a2d5e909faa2ea0911912f6a828
+ms.date: 03/30/2021
+ms.openlocfilehash: 54880f22fae7f9a193a13745702345f5f7efdc32
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104889328"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107210914"
 ---
 # <a name="authenticate-access-to-azure-resources-by-using-managed-identities-in-azure-logic-apps"></a>Toegang tot Azure-bronnen verifiëren door beheerde identiteiten te gebruiken in Azure Logic Apps
 
@@ -19,9 +19,13 @@ Om toegang te krijgen tot andere bronnen die worden beveiligd door Azure Active 
 
 Azure Logic Apps ondersteunt zowel door het [*systeem toegewezen*](../active-directory/managed-identities-azure-resources/overview.md) als door de [*gebruiker toegewezen*](../active-directory/managed-identities-azure-resources/overview.md) beheerde identiteiten. Uw logische app of afzonderlijke verbindingen kunnen gebruikmaken van de door het systeem toegewezen identiteit of *één* door de gebruiker toegewezen identiteit, die u kunt delen via een groep logische apps, maar niet beide.
 
+<a name="triggers-actions-managed-identity"></a>
+
 ## <a name="where-can-logic-apps-use-managed-identities"></a>Waar kunnen logische apps beheerde identiteiten gebruiken?
 
 Op dit moment kunnen alleen [specifieke ingebouwde triggers en acties](../logic-apps/logic-apps-securing-a-logic-app.md#authentication-types-supported-triggers-actions) en [specifieke beheerde connectors](../logic-apps/logic-apps-securing-a-logic-app.md#authentication-types-supported-triggers-actions) die ondersteuning bieden voor Azure AD OAuth een beheerde identiteit voor verificatie gebruiken. Dit is bijvoorbeeld een selectie:
+
+<a name="built-in-managed-identity"></a>
 
 **Ingebouwde triggers en acties**
 
@@ -33,6 +37,8 @@ Op dit moment kunnen alleen [specifieke ingebouwde triggers en acties](../logic-
 
 > [!NOTE]
 > Hoewel de HTTP-trigger en de actie verbindingen kunnen verifiëren met Azure Storage accounts achter Azure-firewalls met behulp van de door het systeem toegewezen beheerde identiteit, kunnen ze de door de gebruiker toegewezen beheerde identiteit niet gebruiken om dezelfde verbindingen te verifiëren.
+
+<a name="managed-connectors-managed-identity"></a>
 
 **Beheerde connectors**
 
@@ -402,55 +408,6 @@ Deze stappen laten zien hoe u de beheerde identiteit met een trigger of actie ku
 
      Voor meer informatie, Zie [voor beeld: Managed connector trigger or action with a Managed Identity](#authenticate-managed-connector-managed-identity)(Engelstalig).
 
-### <a name="connections-that-use-managed-identities"></a>Verbindingen die beheerde identiteiten gebruiken
-
-De verbindingen die gebruikmaken van een beheerde identiteit zijn een speciaal verbindings type dat alleen werkt met een beheerde identiteit. Tijdens runtime maakt de verbinding gebruik van de beheerde identiteit die is ingeschakeld voor de logische app. Deze configuratie wordt opgeslagen in het object van de resource definitie van de logische app `parameters` , dat het `$connections` object bevat dat aanwijzers bevat naar de resource-id van de verbinding, samen met de resource-id van de identiteit, als de door de gebruiker toegewezen identiteit is ingeschakeld.
-
-In dit voor beeld ziet u hoe de configuratie eruitziet wanneer de logische app de door het systeem toegewezen beheerde identiteit mogelijk maakt:
-
-```json
-"parameters": {
-   "$connections": {
-      "value": {
-         "<action-name>": {
-            "connectionId": "/subscriptions/{Azure-subscription-ID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/connections/{connection-name}",
-            "connectionName": "{connection-name}",
-            "connectionProperties": {
-               "authentication": {
-                  "type": "ManagedServiceIdentity"
-               }
-            },
-            "id": "/subscriptions/{Azure-subscription-ID}/providers/Microsoft.Web/locations/{Azure-region}/managedApis/{managed-connector-type}"
-         }
-      }
-   }
-}
- ```
-
-In dit voor beeld ziet u hoe de configuratie eruitziet wanneer de logische app een door de gebruiker toegewezen beheerde identiteit mogelijk maakt:
-
-```json
-"parameters": {
-   "$connections": {
-      "value": {
-         "<action-name>": {
-            "connectionId": "/subscriptions/{Azure-subscription-ID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/connections/{connection-name}",
-            "connectionName": "{connection-name}",
-            "connectionProperties": {
-               "authentication": {
-                  "identity": "/subscriptions/{Azure-subscription-ID}/resourceGroups/{resourceGroupName}/providers/microsoft.managedidentity/userassignedidentities/{managed-identity-name}",
-                  "type": "ManagedServiceIdentity"
-               }
-            },
-            "id": "/subscriptions/{Azure-subscription-ID}/providers/Microsoft.Web/locations/{Azure-region}/managedApis/{managed-connector-type}"
-         }
-      }
-   }
-}
-```
-
-Tijdens runtime controleert de Logic Apps-service of een trigger voor beheerde connectors en acties in de logische app is ingesteld voor het gebruik van de beheerde identiteit en dat alle vereiste machtigingen zijn ingesteld voor het gebruik van de beheerde identiteit voor toegang tot de doel resources die zijn opgegeven door de trigger en acties. Als dit lukt, haalt de Logic Apps-service het Azure AD-token op dat is gekoppeld aan de beheerde identiteit en gebruikt die identiteit om de toegang tot de doel bron te verifiëren en de geconfigureerde bewerking in trigger en acties uit te voeren.
-
 <a name="authenticate-built-in-managed-identity"></a>
 
 #### <a name="example-authenticate-built-in-trigger-or-action-with-a-managed-identity"></a>Voor beeld: ingebouwde trigger of actie verifiëren met een beheerde identiteit
@@ -459,11 +416,11 @@ De HTTP-trigger of actie kan de door het systeem toegewezen identiteit gebruiken
 
 | Eigenschap | Vereist | Beschrijving |
 |----------|----------|-------------|
-| **Methode** | Ja | De HTTP-methode die wordt gebruikt door de bewerking die u wilt uitvoeren |
-| **URI** | Ja | De eind punt-URL voor toegang tot de Azure-doel bron of-entiteit. De URI-syntaxis bevat doorgaans de [resource-id](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication) voor de Azure-resource of-service. |
-| **Kopteksten** | Nee | Eventuele header waarden die u nodig hebt of wilt toevoegen in de uitgaande aanvraag, zoals het inhouds type |
-| **Query's** | Nee | Alle query parameters die u nodig hebt of wilt toevoegen in de aanvraag, zoals de para meter voor een specifieke bewerking of de API-versie voor de bewerking die u wilt uitvoeren |
-| **Verificatie** | Ja | Het verificatie type dat moet worden gebruikt voor het verifiëren van de toegang tot de doel bron of entiteit |
+| **Methode** | Yes | De HTTP-methode die wordt gebruikt door de bewerking die u wilt uitvoeren |
+| **URI** | Yes | De eind punt-URL voor toegang tot de Azure-doel bron of-entiteit. De URI-syntaxis bevat doorgaans de [resource-id](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication) voor de Azure-resource of-service. |
+| **Kopteksten** | No | Eventuele header waarden die u nodig hebt of wilt toevoegen in de uitgaande aanvraag, zoals het inhouds type |
+| **Query's** | No | Alle query parameters die u nodig hebt of wilt toevoegen in de aanvraag, zoals de para meter voor een specifieke bewerking of de API-versie voor de bewerking die u wilt uitvoeren |
+| **Verificatie** | Yes | Het verificatie type dat moet worden gebruikt voor het verifiëren van de toegang tot de doel bron of entiteit |
 ||||
 
 Stel dat u de bewerking voor het maken van een [moment opname-BLOB](/rest/api/storageservices/snapshot-blob) wilt uitvoeren op een BLOB in het Azure Storage account waar u eerder toegang hebt ingesteld voor uw identiteit. De [Azure Blob Storage-connector](/connectors/azureblob/) biedt deze bewerking echter momenteel niet. In plaats daarvan kunt u deze bewerking uitvoeren met behulp van de [http-actie](../logic-apps/logic-apps-workflow-actions-triggers.md#http-action) of een andere [Blob-service rest API bewerking](/rest/api/storageservices/operations-on-blobs).
@@ -475,9 +432,9 @@ Als u de [BLOB-bewerking van de moment opname](/rest/api/storageservices/snapsho
 
 | Eigenschap | Vereist | Voorbeeldwaarde | Beschrijving |
 |----------|----------|---------------|-------------|
-| **Methode** | Ja | `PUT`| De HTTP-methode die wordt gebruikt door de BLOB-bewerking van de moment opname |
-| **URI** | Ja | `https://{storage-account-name}.blob.core.windows.net/{blob-container-name}/{folder-name-if-any}/{blob-file-name-with-extension}` | De resource-ID voor een Azure Blob Storage-bestand in de Azure Global (open bare) omgeving, die gebruikmaakt van deze syntaxis |
-| **Kopteksten** | Voor Azure Storage | `x-ms-blob-type` = `BlockBlob` <p>`x-ms-version` = `2019-02-02` <p>`x-ms-date` = `@{formatDateTime(utcNow(),'r'}` | De `x-ms-blob-type` `x-ms-version` waarden, en en `x-ms-date` header zijn vereist voor Azure Storage bewerkingen. <p><p>**Belang rijk**: in uitgaande HTTP-trigger-en actie aanvragen voor Azure Storage vereist de header de `x-ms-version` eigenschap en de API-versie voor de bewerking die u wilt uitvoeren. De `x-ms-date` moet de huidige datum zijn. Anders mislukt de logische app met een `403 FORBIDDEN` fout. Als u de huidige datum wilt ophalen in de vereiste indeling, kunt u de expressie in de voorbeeld waarde gebruiken. <p>Raadpleeg de volgende onderwerpen voor meer informatie: <p><p>- [Aanvraag headers-moment opname-BLOB](/rest/api/storageservices/snapshot-blob#request) <br>- [Versie beheer voor Azure Storage services](/rest/api/storageservices/versioning-for-the-azure-storage-services#specifying-service-versions-in-requests) |
+| **Methode** | Yes | `PUT`| De HTTP-methode die wordt gebruikt door de BLOB-bewerking van de moment opname |
+| **URI** | Yes | `https://{storage-account-name}.blob.core.windows.net/{blob-container-name}/{folder-name-if-any}/{blob-file-name-with-extension}` | De resource-ID voor een Azure Blob Storage-bestand in de Azure Global (open bare) omgeving, die gebruikmaakt van deze syntaxis |
+| **Kopteksten** | Voor Azure Storage | `x-ms-blob-type` = `BlockBlob` <p>`x-ms-version` = `2019-02-02` <p>`x-ms-date` = `@{formatDateTime(utcNow(),'r')}` | De `x-ms-blob-type` `x-ms-version` waarden, en en `x-ms-date` header zijn vereist voor Azure Storage bewerkingen. <p><p>**Belang rijk**: in uitgaande HTTP-trigger-en actie aanvragen voor Azure Storage vereist de header de `x-ms-version` eigenschap en de API-versie voor de bewerking die u wilt uitvoeren. De `x-ms-date` moet de huidige datum zijn. Anders mislukt de logische app met een `403 FORBIDDEN` fout. Als u de huidige datum wilt ophalen in de vereiste indeling, kunt u de expressie in de voorbeeld waarde gebruiken. <p>Raadpleeg de volgende onderwerpen voor meer informatie: <p><p>- [Aanvraag headers-moment opname-BLOB](/rest/api/storageservices/snapshot-blob#request) <br>- [Versie beheer voor Azure Storage services](/rest/api/storageservices/versioning-for-the-azure-storage-services#specifying-service-versions-in-requests) |
 | **Query's** | Alleen voor de moment opname-BLOB-bewerking | `comp` = `snapshot` | De naam en waarde van de query parameter voor de bewerking. |
 |||||
 
@@ -549,6 +506,83 @@ Met de Azure Resource Manager actie, **Lees een resource**, kunt u de beheerde i
 1. Nadat de verbinding is gemaakt, kan de ontwerper dynamische waarden, inhoud of schema ophalen met behulp van beheerde identiteits verificatie.
 
 1. Ga door met het bouwen van de logische app op de gewenste manier.
+
+<a name="logic-app-resource-definition-connection-managed-identity"></a>
+
+### <a name="logic-app-resource-definition-and-connections-that-use-a-managed-identity"></a>Logische app-resource definitie en verbindingen die gebruikmaken van een beheerde identiteit
+
+Een verbinding waarbij een beheerde identiteit wordt ingeschakeld en gebruikt, is een speciaal verbindings type dat alleen werkt met een beheerde identiteit. Tijdens runtime maakt de verbinding gebruik van de beheerde identiteit die is ingeschakeld voor de logische app. Deze configuratie wordt opgeslagen in het object van de resource definitie van de logische app `parameters` , dat het `$connections` object bevat dat aanwijzers bevat naar de resource-id van de verbinding, samen met de resource-id van de identiteit, als de door de gebruiker toegewezen identiteit is ingeschakeld.
+
+In dit voor beeld ziet u hoe de configuratie eruitziet wanneer de logische app de door het systeem toegewezen beheerde identiteit mogelijk maakt:
+
+```json
+"parameters": {
+   "$connections": {
+      "value": {
+         "<action-name>": {
+            "connectionId": "/subscriptions/{Azure-subscription-ID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/connections/{connection-name}",
+            "connectionName": "{connection-name}",
+            "connectionProperties": {
+               "authentication": {
+                  "type": "ManagedServiceIdentity"
+               }
+            },
+            "id": "/subscriptions/{Azure-subscription-ID}/providers/Microsoft.Web/locations/{Azure-region}/managedApis/{managed-connector-type}"
+         }
+      }
+   }
+}
+```
+
+In dit voor beeld ziet u hoe de configuratie eruitziet wanneer de logische app een door de gebruiker toegewezen beheerde identiteit mogelijk maakt:
+
+```json
+"parameters": {
+   "$connections": {
+      "value": {
+         "<action-name>": {
+            "connectionId": "/subscriptions/{Azure-subscription-ID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/connections/{connection-name}",
+            "connectionName": "{connection-name}",
+            "connectionProperties": {
+               "authentication": {
+                  "identity": "/subscriptions/{Azure-subscription-ID}/resourceGroups/{resourceGroupName}/providers/microsoft.managedidentity/userassignedidentities/{managed-identity-name}",
+                  "type": "ManagedServiceIdentity"
+               }
+            },
+            "id": "/subscriptions/{Azure-subscription-ID}/providers/Microsoft.Web/locations/{Azure-region}/managedApis/{managed-connector-type}"
+         }
+      }
+   }
+}
+```
+
+Tijdens runtime controleert de Logic Apps-service of een trigger voor beheerde connectors en acties in de logische app is ingesteld voor het gebruik van de beheerde identiteit en dat alle vereiste machtigingen zijn ingesteld voor het gebruik van de beheerde identiteit voor toegang tot de doel resources die zijn opgegeven door de trigger en acties. Als dit lukt, haalt de Logic Apps-service het Azure AD-token op dat is gekoppeld aan de beheerde identiteit en gebruikt die identiteit om de toegang tot de doel bron te verifiëren en de geconfigureerde bewerking in trigger en acties uit te voeren.
+
+<a name="arm-templates-connection-resource-managed-identity"></a>
+
+## <a name="arm-template-for-managed-connections-and-managed-identities"></a>ARM-sjabloon voor beheerde verbindingen en beheerde identiteiten
+
+Als u de implementatie met een ARM-sjabloon automatiseert en uw logische app bevat een trigger of actie van een beheerde connector die gebruikmaakt van een beheerde identiteit, controleert u of de onderliggende verbindings bron definitie de `parameterValueType` eigenschap met `Alternative` als de eigenschaps waarde bevat. Anders stelt uw ARM-implementatie de verbinding niet in voor het gebruik van de beheerde identiteit voor verificatie en werkt de verbinding niet in de werk stroom van uw logische app. Deze vereiste geldt alleen voor [specifieke beheerde connector triggers en-acties](#managed-connectors-managed-identity) waarbij u de [optie **verbinding maken met beheerde identiteit**](#authenticate-managed-connector-managed-identity)hebt geselecteerd.
+
+Hier ziet u de onderliggende verbindings bron definitie voor een Azure Automation actie die gebruikmaakt van een beheerde identiteit, waarbij de definitie de `parameterValueType` eigenschap bevat, die is ingesteld `Alternative` als de waarde van de eigenschap:
+
+```json
+{
+    "type": "Microsoft.Web/connections",
+    "name": "[variables('automationAccountApiConnectionName')]",
+    "apiVersion": "2016-06-01",
+    "location": "[parameters('location')]",
+    "kind": "V1",
+    "properties": {
+        "api": {
+            "id": "[subscriptionResourceId('Microsoft.Web/locations/managedApis', parameters('location'), 'azureautomation')]"
+        },
+        "customParameterValues": {},
+        "displayName": "[variables('automationAccountApiConnectionName')]",
+        "parameterValueType": "Alternative"
+    }
+},
+```
 
 <a name="remove-identity"></a>
 

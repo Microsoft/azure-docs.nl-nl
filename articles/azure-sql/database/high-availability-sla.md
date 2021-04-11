@@ -12,12 +12,12 @@ author: emlisa
 ms.author: emlisa
 ms.reviewer: sstein, emlisa
 ms.date: 10/28/2020
-ms.openlocfilehash: a14f8e0ba3ae5cca75cf6518320023703a6d1700
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.openlocfilehash: fbf2a30d029a579026fa9c590f59bedff594f4b8
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105626381"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106109200"
 ---
 # <a name="high-availability-for-azure-sql-database-and-sql-managed-instance"></a>Hoge Beschik baarheid voor Azure SQL Database en SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -119,7 +119,7 @@ Zie voor meer informatie over hoge Beschik baarheid in grootschalige [Data Base 
 
 ## <a name="testing-application-fault-resiliency"></a>Toepassings fout tolerantie testen
 
-Hoge beschikbaarheid is een fundamenteel onderdeel van het SQL Database- en SQL Managed Instance-platform dat transparant werkt voor uw databasetoepassing. We erkennen echter dat u wellicht wilt testen hoe de automatische failoverbewerkingen die worden geïnitieerd tijdens geplande of niet-geplande gebeurtenissen van invloed zijn op een toepassing voordat u deze implementeert voor productie. U kunt een failover hand matig activeren door een speciale API aan te roepen om een Data Base, een elastische pool of een beheerd exemplaar opnieuw te starten. In het geval van een zone redundante data base of elastische pool zou de API-aanroep ertoe leiden dat client verbindingen worden omgeleid naar de nieuwe primaire in een beschikbaarheids zone die afwijkt van de beschikbaarheids zone van de oude primaire. Naast het testen van de manier waarop failover van invloed is op bestaande database sessies, kunt u ook controleren of de end-to-end-prestaties worden gewijzigd vanwege wijzigingen in de netwerk latentie. Omdat de computer opnieuw moet worden opgestart, is er slechts één failover-aanroep elke 15 minuten toegestaan voor elke Data Base, een elastische pool of een beheerd exemplaar.
+Hoge beschikbaarheid is een fundamenteel onderdeel van het SQL Database- en SQL Managed Instance-platform dat transparant werkt voor uw databasetoepassing. We erkennen echter dat u wellicht wilt testen hoe de automatische failoverbewerkingen die worden geïnitieerd tijdens geplande of niet-geplande gebeurtenissen van invloed zijn op een toepassing voordat u deze implementeert voor productie. U kunt een failover hand matig activeren door een speciale API aan te roepen om een Data Base, een elastische pool of een beheerd exemplaar opnieuw te starten. Als er sprake is van een redundante serverloze of ingerichte Algemeen data base of elastische pool, zou de API-aanroep ertoe leiden dat client verbindingen worden omgeleid naar de nieuwe primaire in een beschikbaarheids zone die afwijkt van de beschikbaarheids zone van de oude primaire. Naast het testen van de manier waarop failover van invloed is op bestaande database sessies, kunt u ook controleren of de end-to-end-prestaties worden gewijzigd vanwege wijzigingen in de netwerk latentie. Omdat de computer opnieuw moet worden opgestart, is er slechts één failover-aanroep elke 15 minuten toegestaan voor elke Data Base, een elastische pool of een beheerd exemplaar.
 
 Een failover kan worden gestart met behulp van Power shell, REST API of Azure CLI:
 

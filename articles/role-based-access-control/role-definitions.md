@@ -12,10 +12,10 @@ ms.date: 03/22/2021
 ms.author: rolyon
 ms.custom: ''
 ms.openlocfilehash: 5b2ec3289d187997763ee0d9280a777d4fa1f396
-ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104801754"
 ---
 # <a name="understand-azure-role-definitions"></a>Informatie over Azure Role-definities
@@ -76,7 +76,7 @@ Bewerkingen worden opgegeven met teken reeksen die de volgende indeling hebben:
 
 Het `{action}` gedeelte van een bewerkings reeks geeft u het type bewerkingen op dat u kunt uitvoeren op een resource type. U ziet bijvoorbeeld de volgende subtekenreeksen in `{action}` :
 
-| Subtekenreeks van actie    | Beschrijving         |
+| Subtekenreeks van actie    | Description         |
 | ------------------- | ------------------- |
 | `*` | Het Joker teken verleent toegang tot alle bewerkingen die overeenkomen met de teken reeks. |
 | `read` | Hiermee schakelt u lees bewerkingen in (GET). |
@@ -277,7 +277,7 @@ Als u de gegevens bewerkingen in het REST API wilt bekijken en gebruiken, moet u
 `Actions`Met de machtiging worden de beheer bewerkingen opgegeven die door de functie kunnen worden uitgevoerd. Het is een verzameling bewerkings reeksen waarmee Beveilig bare bewerkingen van Azure-resource providers worden geïdentificeerd. Hier volgen enkele voor beelden van beheer bewerkingen die kunnen worden gebruikt in `Actions` .
 
 > [!div class="mx-tableFixed"]
-> | Bewerkings reeks    | Beschrijving         |
+> | Bewerkings reeks    | Description         |
 > | ------------------- | ------------------- |
 > | `*/read` | Verleent toegang tot Lees bewerkingen voor alle resource typen van alle Azure-resource providers.|
 > | `Microsoft.Compute/*` | Verleent toegang tot alle bewerkingen voor alle resource typen in de micro soft. Compute-resource provider.|
@@ -314,7 +314,7 @@ Toewijzingen weigeren blok keren dat gebruikers specifieke acties kunnen uitvoer
 `DataActions`Met de machtiging worden de gegevens bewerkingen opgegeven die door de functie kunnen worden uitgevoerd op uw gegevens in dat object. Als een gebruiker bijvoorbeeld BLOB-gegevens toegang tot een opslag account heeft gelezen, kunnen ze de blobs binnen dat opslag account lezen. Hier volgen enkele voor beelden van gegevens bewerkingen die kunnen worden gebruikt in `DataActions` .
 
 > [!div class="mx-tableFixed"]
-> | Bewerkings reeks    | Beschrijving         |
+> | Bewerkings reeks    | Description         |
 > | ------------------- | ------------------- |
 > | `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read` | Retourneert een BLOB of een lijst met blobs. |
 > | `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write` | Retourneert het resultaat van het schrijven van een blob. |

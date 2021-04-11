@@ -11,12 +11,12 @@ author: BarbaraSelden
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fc631e4329c1df2cdcbfe57c2b43ccccf14afa85
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: faa18b619c785ad23e1da037621597684b1c5c63
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97936444"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106551778"
 ---
 # <a name="plan-your-azure-active-directory-device-deployment"></a>De implementatie van uw Azure Active Directory-apparaat plannen
 
@@ -54,7 +54,7 @@ De belangrijkste voor delen van het geven van uw apparaten een Azure AD-identite
 
 Video:  [voorwaardelijke toegang met apparaatbesturing](https://youtu.be/NcONUf-jeS4)
 
-Veelgestelde vragen: [Veelgestelde vragen over Azure AD-Apparaatbeheer](faq.md)  en [instellingen en veelgestelde vragen over gegevens roaming](enterprise-state-roaming-faqs.md) 
+Veelgestelde vragen: [Veelgestelde vragen over Azure AD-Apparaatbeheer](faq.yml)  en [instellingen en veelgestelde vragen over gegevens roaming](enterprise-state-roaming-faqs.md) 
 
 ## <a name="plan-the-deployment-project"></a>Het implementatie project plannen
 
@@ -239,9 +239,9 @@ Ondersteunde en niet-ondersteunde platforms voor geïntegreerde apparaten bekijk
 
 | Hulpprogramma’s voor apparaatbeheer| Azure AD-geregistreerd| Azure AD-koppeling| Hybride Azure AD-koppeling|
 | - | - | - | - |
-| [Beheer van mobiele apparaten (MDM) ](/windows/client-management/mdm/azure-active-directory-integration-with-mdm) <br>Voor beeld: Microsoft Intune| ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png)| ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png)| ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png)|  |
-| [Co-beheer met Microsoft Intune en micro soft-eind punt Configuration Manager](/mem/configmgr/comanage/overview) <br>(Windows 10 en hoger)| | ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png)| ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png)|  |
-| [Groepsbeleid](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831791(v=ws.11))<br>(Alleen Windows)| | | ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png)|  |
+| [Beheer van mobiele apparaten (MDM) ](/windows/client-management/mdm/azure-active-directory-integration-with-mdm) <br>Voor beeld: Microsoft Intune| ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png)| ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png)| ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png)| 
+| [Co-beheer met Microsoft Intune en micro soft-eind punt Configuration Manager](/mem/configmgr/comanage/overview) <br>(Windows 10 en hoger)| | ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png)| ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png)| 
+| [Groepsbeleid](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831791(v=ws.11))<br>(Alleen Windows)| | | ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png)| 
 
 
 

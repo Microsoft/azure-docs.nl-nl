@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: aahi
 ms.openlocfilehash: a825b9e0abc4e33eb0f9033f46bb77c38559f740
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104722698"
 ---
 # <a name="telemetry-and-troubleshooting"></a>Telemetrie en probleem oplossing
@@ -103,7 +103,7 @@ Zodra de telegrafie module is geïmplementeerd, zijn de gerapporteerde metrische
 
 ### <a name="system-health-events"></a>Systeem status gebeurtenissen
 
-| Gebeurtenisnaam | Beschrijving|
+| Gebeurtenisnaam | Description|
 |------|---------|
 |archon_exit     |Verzonden wanneer een gebruiker de status van de ruimtelijke analyse module wijzigt van *actief* in *gestopt*.  |
 |archon_error     |Wordt verzonden wanneer een van de processen in de container vastloopt. Dit is een kritieke fout.  |
@@ -243,7 +243,7 @@ De onderstaande tabel geeft een lijst van de para meters die u kunt gebruiken bi
 
 De volgende tabel bevat de kenmerken in de query-antwoord.
 
-| Zoek | Beschrijving|
+| Zoek | Description|
 |--|--|
 |DoPost| *Waar* of *Onwaar*. Hiermee wordt aangegeven of Logboeken zijn geüpload of niet. Wanneer u ervoor kiest geen logboeken te uploaden, retourneert de API informatie ***synchroon** _. Wanneer u ervoor kiest om logboeken te uploaden, retourneert de API 200, als de aanvraag geldig is en het uploaden van Logboeken _ *_asynchroon_* * wordt gestart.|
 |TimeFilter| Tijd filter toegepast op de logboeken.|

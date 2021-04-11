@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: overview
 ms.date: 11/23/2020
 ms.author: trbye
-ms.openlocfilehash: d3d9f41876cf1310fe25a275624f609031c05b00
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: ddb61a79e6af402b06fe8c18df8c62f9287437a3
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98601881"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107209711"
 ---
 # <a name="what-is-the-speech-service"></a>Wat is de Speech-service?
 
@@ -33,7 +33,7 @@ De volgende onderdelen maken deel uit van de spraakservice. Gebruik de koppeling
 | | [Gesprek via meerdere apparaten](multi-device-conversation.md) | Meerdere apparaten of clients in een gesprek verbinden om spraak- of tekstberichten te verzenden, met eenvoudige ondersteuning voor transcriptie en vertaling| Ja | Nee |
 | | [Gesprekstranscriptie](./conversation-transcription.md) | Hiermee schakelt u realtime spraakherkenning, sprekeridentificatie en sprekersindexering in. Het is ideaal voor het transcriberen van persoonlijke vergaderingen met de mogelijkheid om de sprekers te onderscheiden. | Ja | Nee |
 | | [Aangepaste spraakmodellen maken](#customize-your-speech-experience) | Als u spraak-naar-tekst gebruikt voor herkenning en transcriptie in een unieke omgeving, kunt u aangepaste akoestische, taal- en uitspraakmodellen maken en trainen om te kunnen omgaan met omgevingslawaai of branchespecifieke woordenlijsten. | Nee | [Ja](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0) |
-| [Tekst naar spraak](text-to-speech.md) | Tekst naar spraak | Bij tekst-naar-spraak wordt invoertekst omgezet in menselijke spraak die is samengesteld met behulp van [SSML (Speech Synthesis Markup Language)](speech-synthesis-markup.md). Kies uit standaardstemmen en neurale stemmen (zie [Taalondersteuning](language-support.md)). | [Ja](./speech-sdk.md) | [Ja](#reference-docs) |
+| [Tekst naar spraak](text-to-speech.md) | Tekst naar spraak | Bij tekst-naar-spraak wordt invoertekst omgezet in menselijke spraak die is samengesteld met behulp van [SSML (Speech Synthesis Markup Language)](speech-synthesis-markup.md). Gebruik Neural stemmen. Dit zijn mensen zoals stemmen die worden aangedreven door diepe Neural-netwerken. Zie [taal ondersteuning](language-support.md). | [Ja](./speech-sdk.md) | [Ja](#reference-docs) |
 | | [Aangepaste stemmen maken](#customize-your-speech-experience) | Maak aangepaste spraakstijlen die uniek zijn voor uw merk of product. | Nee | [Ja](#reference-docs) |
 | [Speech Translation](speech-translation.md) | Spraakomzetting | Spraakomzetting maakt realtime omzetting van spraak in meerdere talen mogelijk voor uw toepassingen, hulpprogramma's en apparaten. Gebruik deze service voor het omzetten van spraak-naar-spraak en spraak-naar-tekst. | [Ja](./speech-sdk.md) | Nee |
 | [Spraakassistenten](voice-assistants.md) | Spraakassistenten | Spraakassistenten die gebruikmaken van de spraakservice stellen ontwikkelaars in staat om natuurlijke, menselijke gespreksinterfaces te maken voor hun toepassingen en gebruikstoepassingen. De spraakassistentservice biedt een snelle, betrouwbare interactie tussen een apparaat en een assistentimplementatie die gebruikmaakt van het Direct Line Speech-kanaal van Bot Framework of de geïntegreerde service voor het uitvoeren van aangepaste opdrachten voor het uitvoeren van taken. | [Ja](voice-assistants.md) | Nee |
@@ -105,7 +105,7 @@ We bieden quickstarts in de populairste programmeertalen, die zijn ontworpen om 
 * [Quickstart voor spraak-naar-tekst](get-started-speech-to-text.md)
 * [Quickstart voor tekst-naar-spraak](get-started-text-to-speech.md)
 * [Quickstart over spraakomzetting](./get-started-speech-translation.md)
-* [Quickstart over intentieherkenning](quickstarts/intent-recognition.md)
+* [Quickstart over intentieherkenning](./get-started-intent-recognition.md)
 * [Quickstart over sprekerherkenning](./get-started-speaker-recognition.md)
 
 Nu u een begin hebt gemaakt met de spraakservice, kunt u onze zelfstudies proberen waarin u leert om verschillende scenario's op te lossen.

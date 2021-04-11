@@ -1,19 +1,19 @@
 ---
 title: 'Quickstart: Azure Queue Storage-clientbibliotheek v12 - Java'
 description: Leer hoe u de Azure Queue Storage-clientbibliotheek v12 voor Java kunt gebruiken om een wachtrij te maken en er berichten aan toe te voegen. Leer vervolgens hoe u berichten uit de wachtrij kunt lezen en verwijderen. U leert ook hoe u een wachtrij kunt verwijderen.
-author: mhopkins-msft
-ms.author: mhopkins
+author: twooley
+ms.author: twooley
 ms.date: 12/01/2020
 ms.topic: quickstart
 ms.service: storage
 ms.subservice: queues
 ms.custom: devx-track-java
-ms.openlocfilehash: 814531adc9dafa524797d0c2674a1e600e407bed
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 79b10e8281fe8189b490fe97dfe896179c8e64fc
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97588213"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106275869"
 ---
 # <a name="quickstart-azure-queue-storage-client-library-v12-for-java"></a>Quickstart: Azure Queue Storage-clientbibliotheek v12 voor Java
 

@@ -3,12 +3,12 @@ title: Aantal resources zonder limiet van 800
 description: Geeft een lijst van de Azure-resource typen die meer dan 800 exemplaren in een resource groep kunnen bevatten.
 ms.topic: conceptual
 ms.date: 01/08/2021
-ms.openlocfilehash: 6736118f0713a27a91618173e06423530e6f10cb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 05f96597fb572005f7f32599b19d62ff2cb311cc
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103563110"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107210173"
 ---
 # <a name="resources-not-limited-to-800-instances-per-resource-group"></a>Resources die niet beperkt zijn tot 800 exemplaren per resource groep
 
@@ -16,6 +16,10 @@ Standaard kunt u Maxi maal 800 exemplaren van een resource type implementeren in
 
 Voor sommige resource typen moet u contact opnemen met ondersteuning om de limiet van 800-exemplaren te verwijderen. Deze resource typen worden in dit artikel vermeld.
 
+## <a name="microsoftalertsmanagement"></a>Micro soft. AlertsManagement
+
+* smartDetectorAlertRules
+ 
 ## <a name="microsoftautomation"></a>Microsoft.Automation
 
 * automationAccounts

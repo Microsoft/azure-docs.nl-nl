@@ -1,25 +1,25 @@
 ---
-title: Quota en limieten voor Speech Services
+title: Quota en limieten voor spraak Services
 titleSuffix: Azure Cognitive Services
-description: Naslag informatie, gedetailleerde beschrijving en aanbevolen procedures voor de Quota's en limieten van Azure cognitieve speech Services
+description: Naslag informatie, gedetailleerde beschrijving en aanbevolen procedures voor Azure cognitieve Speech-Service Quota's en-limieten
 services: cognitive-services
 author: alexeyo26
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 03/27/2021
+ms.date: 04/07/2021
 ms.author: alexeyo
-ms.openlocfilehash: 7ef6ed5293ec9ecf49c16f8dfb0b6604942408f0
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: f851d7999b063a2b1334564902d81343e3789439
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105937053"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107011170"
 ---
-# <a name="speech-services-quotas-and-limits"></a>Quota en limieten voor Speech Services
+# <a name="speech-service-quotas-and-limits"></a>Quota en limieten voor spraak Services
 
-Dit artikel bevat een korte naslag informatie en een **gedetailleerde beschrijving** van de Quota's en limieten voor de Azure cognitieve speech-Services voor alle [prijs categorieën](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/). Het bevat ook enkele aanbevolen procedures om het beperken van aanvragen te voor komen. 
+Dit artikel bevat een korte naslag informatie en een **gedetailleerde beschrijving** van de Quota's en limieten voor de Azure cognitieve Speech-Service voor alle [prijs categorieën](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/). Het bevat ook enkele aanbevolen procedures om het beperken van aanvragen te voor komen. 
 
 ## <a name="quotas-and-limits-quick-reference"></a>Naslag informatie over quota's en beperkingen
 Overschakelen naar de [quota en limieten voor tekst naar spraak](#text-to-speech-quotas-and-limits-per-speech-resource)
@@ -98,9 +98,13 @@ In de volgende secties worden specifieke gevallen van het aanpassen van quota's 
 Ga naar [tekst-naar-spraak. Limiet voor transcriptie gelijktijdige aanvragen voor aangepaste spraak verhogen](#text-to-speech-increasing-transcription-concurrent-request-limit-for-custom-voice)
 
 ### <a name="speech-to-text-increasing-online-transcription-concurrent-request-limit"></a>Spraak naar tekst: verhogen van de limiet voor gelijktijdige aanvragen voor online transcriptie
-Het aantal gelijktijdige aanvragen is standaard beperkt tot 20 per spraak bron (basis model) of per aangepast eind punt (aangepast model). Dit bedrag kan worden verhoogd voor de prijs categorie Standard. Zorg ervoor dat u bekend bent met het materiaal in [deze sectie](#detailed-description-quota-adjustment-and-best-practices) en op de hoogte bent van deze [Aanbevolen procedures](#general-best-practices-to-mitigate-throttling-during-autoscaling)voordat u de aanvraag indient.
+Het aantal gelijktijdige aanvragen is standaard beperkt tot 100 per spraak resource (basis model) en tot 20 per aangepast eind punt (aangepast model). Dit bedrag kan worden verhoogd voor de prijs categorie Standard. Zorg ervoor dat u bekend bent met het materiaal in [deze sectie](#detailed-description-quota-adjustment-and-best-practices) en op de hoogte bent van deze [Aanbevolen procedures](#general-best-practices-to-mitigate-throttling-during-autoscaling)voordat u de aanvraag indient.
 
-Het verhogen van de limiet voor gelijktijdige aanvragen heeft **geen** invloed op uw kosten. Spraak Services maakt gebruik van het model ' alleen betalen voor wat u gebruikt '. De limiet bepaalt hoe hoog de service kan worden geschaald voordat uw aanvragen worden vertraagd.
+>[!NOTE]
+> Als u aangepaste modellen gebruikt, houd er dan rekening mee dat er één spraak resource kan worden gekoppeld aan veel aangepaste eind punten die als host dienen voor veel aangepaste model implementaties. Elk aangepaste eind punt heeft het standaard aantal gelijktijdige aanvraag limieten (20) dat is ingesteld door te maken. Als u het wilt aanpassen, moet u de aanpassing van elk aangepaste eind punt **afzonderlijk** maken. Houd er ook rekening mee dat de waarde van het aantal gelijktijdige aanvragen voor het basis model van een spraak bron **geen** effect heeft op de aangepaste eind punten die aan deze resource zijn gekoppeld.
+
+
+Het verhogen van de limiet voor gelijktijdige aanvragen heeft **geen** invloed op uw kosten. Voor de spraak service wordt het model ' alleen betalen voor wat u gebruikt ' gebruikt. De limiet bepaalt hoe hoog de service kan worden geschaald voordat uw aanvragen worden vertraagd.
 
 Gelijktijdige aanvraag limieten voor **basis** -en **aangepaste** modellen moeten **afzonderlijk** worden aangepast.
 
@@ -112,9 +116,9 @@ De bestaande waarde van de para meter voor gelijktijdige aanvraag limiet is **ni
 #### <a name="have-the-required-information-ready"></a>De vereiste gegevens zijn gereed:
 - Voor **basis model**:
   - Spraak Resource-ID
-  - Region
+  - Regio
 - Voor **aangepast model**: 
-  - Region
+  - Regio
   - Aangepaste eind punt-ID
 
 - **Informatie over het ophalen van gegevens (basis model)**:  
@@ -122,7 +126,7 @@ De bestaande waarde van de para meter voor gelijktijdige aanvraag limiet is **ni
   - Selecteer de spraak bron waarvoor u de limiet voor gelijktijdige aanvragen wilt verhogen
   - *Eigenschappen* selecteren (*resource beheer* groep) 
   - Kopieer de waarden van de volgende velden en sla deze op:
-    - **Resource-id**
+    - **Resource-ID**
     - **Locatie** (uw eindpunt regio)
 
 - **Informatie over het ophalen van gegevens (aangepast model)**:
@@ -168,7 +172,7 @@ Over het algemeen is het raadzaam om de werk belasting en de werkbelasting patro
 ### <a name="text-to-speech-increasing-transcription-concurrent-request-limit-for-custom-voice"></a>Tekst-naar-spraak: verhogen van de limiet voor transcriptie gelijktijdige aanvragen voor aangepaste spraak
 Het aantal gelijktijdige aanvragen voor een aangepast spraak eind punt is standaard beperkt tot 10. Dit bedrag kan worden verhoogd voor de prijs categorie Standard. Zorg ervoor dat u bekend bent met het materiaal in [deze sectie](#detailed-description-quota-adjustment-and-best-practices) en op de hoogte bent van deze [Aanbevolen procedures](#general-best-practices-to-mitigate-throttling-during-autoscaling)voordat u de aanvraag indient.
 
-Het verhogen van de limiet voor gelijktijdige aanvragen heeft **geen** invloed op uw kosten. Spraak Services maakt gebruik van het model ' alleen betalen voor wat u gebruikt '. De limiet bepaalt hoe hoog de service kan worden geschaald voordat uw aanvragen worden vertraagd.
+Het verhogen van de limiet voor gelijktijdige aanvragen heeft **geen** invloed op uw kosten. Voor de spraak service wordt het model ' alleen betalen voor wat u gebruikt ' gebruikt. De limiet bepaalt hoe hoog de service kan worden geschaald voordat uw aanvragen worden vertraagd.
 
 De bestaande waarde van de para meter voor gelijktijdige aanvraag limiet is **niet** zichtbaar via Azure Portal, Command-Line-hulpprogram MA'S of API-aanvragen. Als u de bestaande waarde wilt verifiëren, maakt u een ondersteunings aanvraag voor Azure.
 

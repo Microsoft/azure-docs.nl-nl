@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/17/2019
 ms.author: kumud
-ms.openlocfilehash: d0b2ccc0bf5d38e9a72bf780875d3b6f29733189
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: b38f2831136b0ccec4aa241135f2fd342c939845
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105026748"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936883"
 ---
 # <a name="quickstart-create-and-configure-azure-ddos-protection-standard"></a>Snelstartgids: Azure DDoS Protection standaard maken en configureren
 
@@ -70,10 +70,9 @@ U kunt een virtueel netwerk niet verplaatsen naar een andere resource groep of e
 ### <a name="enable-ddos-protection-for-an-existing-virtual-network"></a>DDoS-beveiliging inschakelen voor een bestaand virtueel netwerk
 
 1. Maak een DDoS-beschermings plan door de stappen in [een DDoS-beveiligings plan maken](#create-a-ddos-protection-plan)uit te voeren, als u geen bestaand DDoS-beveiligings abonnement hebt.
-2. Selecteer in de linkerbovenhoek van het Azure Portal **een resource maken** .
-3. Voer de naam in van het virtuele netwerk waarvoor u DDoS Protection standaard wilt inschakelen in het **vak resources, services en documenten zoeken** bovenaan de portal. Wanneer de naam van het virtuele netwerk wordt weer gegeven in de zoek resultaten, selecteert u dit.
-4. Selecteer **DDoS Protection** onder **instellingen**.
-5. selecteer **Standaard**. Selecteer onder **DDoS-beschermings plan** een bestaand DDoS-beveiligings plan of het plan dat u hebt gemaakt in stap 1 en selecteer vervolgens **Opslaan**. Het plan dat u selecteert, kan zich in hetzelfde of een ander abonnement bevindt dan het virtuele netwerk, maar beide abonnementen moeten aan dezelfde Azure Active Directory-Tenant zijn gekoppeld.
+2. Voer de naam in van het virtuele netwerk waarvoor u DDoS Protection standaard wilt inschakelen in het **vak resources, services en documenten zoeken** bovenaan de Azure Portal. Wanneer de naam van het virtuele netwerk wordt weer gegeven in de zoek resultaten, selecteert u dit.
+3. Selecteer **DDoS Protection** onder **instellingen**.
+4. selecteer **Standaard**. Selecteer onder **DDoS-beschermings plan** een bestaand DDoS-beveiligings plan of het plan dat u hebt gemaakt in stap 1 en selecteer vervolgens **Opslaan**. Het plan dat u selecteert, kan zich in hetzelfde of een ander abonnement bevindt dan het virtuele netwerk, maar beide abonnementen moeten aan dezelfde Azure Active Directory-Tenant zijn gekoppeld.
 
 ### <a name="enable-ddos-protection-for-all-virtual-networks"></a>DDoS-beveiliging inschakelen voor alle virtuele netwerken
 

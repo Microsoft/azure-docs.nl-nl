@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 03/11/2021
 ms.openlocfilehash: 2363afc4c84ee7606410ceecd6819c12d0333dbb
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105563290"
 ---
 # <a name="transform-data-using-mapping-data-flows"></a>Gegevens transformeren met toewijzingsgegevensstromen

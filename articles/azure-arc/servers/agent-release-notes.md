@@ -2,13 +2,13 @@
 title: Wat is er nieuw in de agent voor servers met Azure Arc ingeschakeld
 description: Dit artikel bevat opmerkingen bij de release voor servers agent voor Azure Arc ingeschakeld. Voor veel van de samen vattingen vindt u koppelingen naar meer informatie.
 ms.topic: conceptual
-ms.date: 03/15/2021
-ms.openlocfilehash: acf606ed1ad0f54c983b14a0141d0dc11e2c45d9
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.date: 03/31/2021
+ms.openlocfilehash: ecff23225f4d482cc1e9a4f7b7724c8ffe0a1d73
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103470503"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106109064"
 ---
 # <a name="whats-new-with-azure-arc-enabled-servers-agent"></a>Wat is er nieuw in de agent voor servers met Azure Arc ingeschakeld
 
@@ -24,9 +24,9 @@ Versie 1,4
 
 ## <a name="new-feature"></a>Nieuwe functie
 
-- Er is ondersteuning toegevoegd voor privé-eind punten.
+- Er is ondersteuning toegevoegd voor persoonlijke eind punten, die momenteel een beperkte preview-versie hebben.
 - Uitgebreide lijst met afsluit codes voor azcmagent.
-- Agent configuratie parameters kunnen nu worden gelezen uit een bestand met de para meter--config.
+- Agent configuratie parameters kunnen nu worden gelezen uit een bestand met de `--config` para meter.
 
 ## <a name="fixed"></a>Opgelost
 

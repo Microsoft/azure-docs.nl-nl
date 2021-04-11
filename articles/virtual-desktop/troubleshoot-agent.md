@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 12/16/2020
 ms.author: sefriend
 manager: clarkn
-ms.openlocfilehash: 86296385a0e657246e415f326261ce401e3cdeaf
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b47a205cac1717dfc66594f856fd9370a01a9ae3
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104604182"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106168209"
 ---
 # <a name="troubleshoot-common-windows-virtual-desktop-agent-issues"></a>Veelvoorkomende problemen met Windows Virtual Desktop agent oplossen
 
@@ -106,7 +106,7 @@ Om dit probleem op te lossen, controleert u of u BrokerURI en BrokerURIGlobal ku
    > ![Scherm afbeelding van de niet-voltooide geladen Broker-wereld wijde toegang](media/unsuccessful-broker-global.png)
 
 8. Als het netwerk deze Url's blokkeert, moet u de blok kering van de vereiste Url's opheffen. Zie de [lijst met vereiste url's](safe-url-list.md)voor meer informatie.
-9. Als het probleem hierdoor niet wordt opgelost, controleert u of er geen groeps beleid is met code ringen waarmee de agent wordt geblokkeerd voor de Broker-verbinding. Windows virtueel bureau blad maakt gebruik van dezelfde TLS 1,2-code ringen als [Azure front-deur](../frontdoor/front-door-faq.MD#what-are-the-current-cipher-suites-supported-by-azure-front-door). Zie [Connection Security](network-connectivity.md#connection-security)(Engelstalig) voor meer informatie.
+9. Als het probleem hierdoor niet wordt opgelost, controleert u of er geen groeps beleid is met code ringen waarmee de agent wordt geblokkeerd voor de Broker-verbinding. Windows virtueel bureau blad maakt gebruik van dezelfde TLS 1,2-code ringen als [Azure front-deur](../frontdoor/front-door-faq.yml#what-are-the-current-cipher-suites-supported-by-azure-front-door-). Zie [Connection Security](network-connectivity.md#connection-security)(Engelstalig) voor meer informatie.
 
 ## <a name="error-3703"></a>Fout: 3703
 

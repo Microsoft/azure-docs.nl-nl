@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: media
 ms.date: 03/25/2021
 ms.author: inhenkel
-ms.openlocfilehash: 3a09e3f2bf29c09066e9414f9aa02a7879375425
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: c0108cf07f1c734ccf4b6e42c013f7237eb7daf2
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105563528"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106122064"
 ---
 # <a name="packaging-and-delivery-scenario-based-migration-guidance"></a>Richt lijnen voor migratie op basis van pakketten en levering
 
@@ -30,10 +30,10 @@ Belang rijke wijzigingen in de manier waarop inhoud wordt gepubliceerd in v3 API
 
 ## <a name="packaging-and-delivery-in-v3"></a>Verpakking en levering in v3
 
-1. [Beleids regels voor inhouds sleutels](content-key-policy-concept.md)maken.
+1. [Beleids regels voor inhouds sleutels](drm-content-key-policy-concept.md)maken.
 1. [Streaming-Locators](streaming-locators-concept.md)maken.
 1. De [streaming-paden](create-streaming-locator-build-url.md) ophalen 
-    1. Configureer deze voor een [Dash](dynamic-packaging-overview.md#mpeg-dash-protocol) -of [HLS](dynamic-packaging-overview.md#hls-protocol) -speler.
+    1. Configureer deze voor een [Dash](encode-dynamic-packaging-concept.md#mpeg-dash-protocol) -of [HLS](encode-dynamic-packaging-concept.md#hls-protocol) -speler.
 
 Raadpleeg publicatie concepten, zelf studies en de onderstaande hand leidingen voor specifieke stappen.
 
@@ -41,9 +41,9 @@ Raadpleeg publicatie concepten, zelf studies en de onderstaande hand leidingen v
 
 ### <a name="concepts"></a>Concepten
 
-- [Dynamische pakketten in Media Services v3](dynamic-packaging-overview.md)
+- [Dynamische pakketten in Media Services v3](encode-dynamic-packaging-concept.md)
 - [Filters](filters-concept.md)
-- [Uw manifesten filteren met behulp van dynamische pakket](filters-dynamic-manifest-overview.md)
+- [Uw manifesten filteren met behulp van dynamische pakket](filters-dynamic-manifest-concept.md)
 - [Streaming-eind punten (oorsprong) in Azure Media Services](streaming-endpoint-concept.md)
 - [Inhoud streamen met CDN-integratie](scale-streaming-cdn.md)
 - [Streaming-Locators](streaming-locators-concept.md)
@@ -53,7 +53,7 @@ Raadpleeg publicatie concepten, zelf studies en de onderstaande hand leidingen v
 - [Streaming-eind punten beheren met Media Services v3](manage-streaming-endpoints-howto.md)
 - [CLI-voorbeeld: Een asset publiceren](cli-publish-asset.md)
 - [Een streaming-locator maken en URL's bouwen](create-streaming-locator-build-url.md)
-- [De resultaten van een taak downloaden](download-results-howto.md)
+- [De resultaten van een taak downloaden](job-download-results-how-to.md)
 - [Beschrijvende geluids sporen voor signalen](signal-descriptive-audio-howto.md)
 - [Volledige installatie Azure Media Player](../azure-media-player/azure-media-player-full-setup.md)
 - [De Video.js Player gebruiken met Azure Media Services](how-to-video-js-player.md)

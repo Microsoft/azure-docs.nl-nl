@@ -47,6 +47,10 @@
           href: ../virtual-network/tutorial-nat-gateway-load-balancer-public-portal.md?toc=%2fazure%2fload-balancer%2ftoc.json
         - name: Interne load balancer van NAT-gateway integreren
           href: ../virtual-network/tutorial-nat-gateway-load-balancer-internal-portal.md?toc=%2fazure%2fload-balancer%2ftoc.json
+    - name: Op IP gebaseerde back-end
+      items:
+        - name: Een open bare load balancer maken met een back-end op basis van IP-Portal
+          href: tutorial-load-balancer-ip-backend-portal.md
 - name: Voorbeelden
   items:
     - name: Azure CLI

@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 06/10/2019
 ms.author: jeedes
 ms.openlocfilehash: 3c665795325ed3863583eb0f21f3e0d3f534154a
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103201505"
 ---
 # <a name="tutorial-integrate-syncplicity-with-azure-active-directory"></a>Zelfstudie: Syncplicity integreren met Azure Active Directory
@@ -95,13 +95,13 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
    ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
-### <a name="configure-syncplicity-sso"></a>Eenmalige aanmelding voor Syncplicity configureren
+### <a name="configure-syncplicity-sso&quot;></a>Eenmalige aanmelding voor Syncplicity configureren
 
 1. Meld u aan bij uw **Syncplicity**-tenant.
 
 1. Klik in het menu aan de bovenkant op **Administrator**, selecteer **instellingen** en klik vervolgens op **aangepast domein en eenmalige aanmelding**.
 
-    ![Syncplicity](./media/syncplicity-tutorial/ic769545.png "Syncplicity")
+    ![Syncplicity](./media/syncplicity-tutorial/ic769545.png &quot;Syncplicity")
 
 1. Voer op de pagina met het dialoogvenster **Eenmalige aanmelding** de volgende stappen uit:
 

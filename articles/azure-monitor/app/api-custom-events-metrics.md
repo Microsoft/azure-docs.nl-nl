@@ -4,12 +4,12 @@ description: Voeg een paar regels code toe aan de apparaat-of bureau blad-app, d
 ms.topic: conceptual
 ms.date: 05/11/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: d658d7e64f720a3fb700d157cd5194ff50a48c33
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8e866dc30d83f1b1f080a1be385026dcfbc77320
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103471635"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106122098"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>Application Insights-API voor aangepaste gebeurtenissen en metrische gegevens
 
@@ -702,6 +702,9 @@ appInsights.setAuthenticatedUserContext(validatedId, accountId);
 In [Metrics Explorer](../essentials/metrics-charts.md)kunt u een grafiek maken waarin **gebruikers, geverifieerde** en **gebruikers accounts** worden geteld.
 
 U kunt ook [zoeken](./diagnostic-search.md) naar client gegevens punten met specifieke gebruikers namen en accounts.
+
+> [!NOTE]
+> De [eigenschap EnableAuthenticationTrackingJavaScript in de klasse ApplicationInsightsServiceOptions](https://github.com/microsoft/ApplicationInsights-dotnet/blob/develop/NETCORE/src/Shared/Extensions/ApplicationInsightsServiceOptions.cs) in de .net core SDK vereenvoudigt de Java script-configuratie die nodig is om de gebruikers naam te injecteren als verificatie-id voor elke tracering die wordt verzonden door de Application Insights java script SDK. Als deze eigenschap is ingesteld op True, wordt de gebruikers naam van de gebruiker in de ASP.NET Core afgedrukt samen met [telemetrie aan de client zijde](asp-net-core.md#enable-client-side-telemetry-for-web-applications), zodat `appInsights.setAuthenticatedUserContext` u deze hand matig hoeft toe te voegen, omdat deze al is ingevoerd door de SDK voor ASP.net core. De verificatie-id wordt ook verzonden naar de server waar de SDK in .NET core deze identificeert en gebruikt voor elke telemetrie aan de server zijde, zoals beschreven in de [Java script API-verwijzing](https://github.com/microsoft/ApplicationInsights-JS/blob/master/API-reference.md#setauthenticatedusercontext). Voor Java script-toepassingen die niet op dezelfde manier werken als ASP.NET Core MVC (zoals SPA web apps), moet u echter nog steeds `appInsights.setAuthenticatedUserContext` hand matig toevoegen.
 
 ## <a name="filtering-searching-and-segmenting-your-data-by-using-properties"></a><a name="properties"></a>Gegevens filteren, zoeken en segmenteren met behulp van eigenschappen
 

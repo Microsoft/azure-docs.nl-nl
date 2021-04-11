@@ -10,58 +10,57 @@ ms.date: 03/10/2021
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: b7bf924ba8514aa8da1d466ea4852f3f9caaf646
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 5bf4bbe2c8dc863f67dffb50609f7775a4499e3a
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105726647"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107073400"
 ---
+[!INCLUDE [Public Preview Notice](../../../includes/public-preview-include-chat.md)]
+
 ## <a name="prerequisites"></a>Vereisten
 Voordat u aan de slag gaat, moet u het volgende doen:
 
 - Maak een Azure-account met een actief abonnement. Zie [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voor meer informatie. 
-- [Xcode](https://developer.apple.com/xcode/) en [Cocoapods](https://cocoapods.org/)installeren we gebruiken Xcode om een IOS-toepassing te maken voor de Snelstartgids en Cocoapods om afhankelijkheden te installeren.
-- Maak een Azure Communication Services-resource. Zie [Een Azure Communication-resource maken](../../create-communication-resource.md) voor meer informatie. U moet **uw resource-eind punt vastleggen** voor deze Quick Start.
-- Maak **twee** ACS-gebruikers en geef ze een [toegangs token](../../access-tokens.md)voor gebruikers toegangs token. Zorg ervoor dat u het bereik instelt op **Chat** en **Noteer de token teken reeks, evenals de teken reeks GebruikersID**. In deze Snelstartgids maakt u een thread met een eerste deel nemer en voegt u vervolgens een tweede deel nemer aan de thread toe.
+- Installeer [Xcode](https://developer.apple.com/xcode/) en [CocoaPods](https://cocoapods.org/). U gebruikt Xcode om een iOS-toepassing te maken voor de Snelstartgids en CocoaPods om afhankelijkheden te installeren.
+- Maak een Azure Communication Services-resource. Zie [Quick Start: bronnen voor communicatie Services maken en beheren](../../create-communication-resource.md)voor meer informatie. Voor deze Quick start moet u het resource-eind punt vastleggen.
+- Maak twee gebruikers in azure Communication Services en geef ze een [token voor gebruikers toegang](../../access-tokens.md). Zorg ervoor dat u het bereik instelt op `chat` en noteer de `token` teken reeks en de `userId` teken reeks. In deze Quick Start maakt u een thread met een eerste deel nemer en voegt u vervolgens een tweede deel nemer aan de thread toe.
 
 ## <a name="setting-up"></a>Instellen
 
 ### <a name="create-a-new-ios-application"></a>Een nieuwe iOS-toepassing maken
 
-Open Xcode en selecteer `Create a new Xcode project` .
+Open Xcode en selecteer **Een nieuw Xcode-project maken**. Selecteer vervolgens **IOS** als het platform en de **app** voor de sjabloon.
 
-Selecteer in het volgende venster `iOS` als platform en `App` voor de sjabloon.
+Voer voor de project naam **ChatQuickstart** in. Selecteer vervolgens **Story Board** als de interface, **UIKit app Delegate** als de levens cyclus en **Swift** als de taal.
 
-Bij het kiezen van opties voert u `ChatQuickstart` de project naam in. Selecteer `Storyboard` als de-interface, `UIKit App Delegate` als de levens cyclus en `Swift` als de taal.
-
-Klik op volgende en selecteer de map waarin u het project wilt maken.
+Selecteer **volgende** en kies de map waarin u het project wilt maken.
 
 ### <a name="install-the-libraries"></a>De bibliotheken installeren
 
-We gebruiken Cocoapods om de benodigde communicatie Services-afhankelijkheden te installeren.
+Gebruik CocoaPods om de benodigde communicatie Services-afhankelijkheden te installeren.
 
-Ga vanaf de opdracht regel in de hoofdmap van het `ChatQuickstart` IOS-project.
-
-Een Podfile maken: `pod init`
+Ga vanaf de opdracht regel in de hoofdmap van het IOS- `ChatQuickstart` project. Maak een Podfile met de volgende opdracht: `pod init` .
 
 Open de Podfile en voeg de volgende afhankelijkheden toe aan het `ChatQuickstart` doel:
+
 ```
 pod 'AzureCommunication', '~> 1.0.0-beta.9'
 pod 'AzureCommunicationChat', '~> 1.0.0-beta.9'
 ```
 
-De afhankelijkheden installeren, wordt er ook een Xcode-werk ruimte gemaakt: `pod install`
+Installeer de afhankelijkheden met de volgende opdracht: `pod install` . Houd er rekening mee dat hiermee ook een Xcode-werk ruimte wordt gemaakt.
 
-**Nadat u de pod-installatie hebt uitgevoerd, opent u het project opnieuw in Xcode door de zojuist gemaakte optie te selecteren `.xcworkspace` .**
+Nadat `pod install` het project is uitgevoerd, opent u het opnieuw in Xcode door de zojuist gemaakte opdracht te selecteren `.xcworkspace` .
 
-### <a name="setup-the-placeholders"></a>De tijdelijke aanduidingen instellen
+### <a name="set-up-the-placeholders"></a>De tijdelijke aanduidingen instellen
 
 Open de werk ruimte `ChatQuickstart.xcworkspace` in Xcode en open `ViewController.swift` .
 
-In deze Snelstartgids voegen we onze code toe aan `viewController` en bekijken we de uitvoer in de Xcode-console. In deze Quick Start wordt het bouwen van een gebruikers interface in iOS niet geadresseerd. 
+In deze Quick Start voegt u uw code toe aan `viewController` en bekijkt u de uitvoer in de Xcode-console. In deze Quick Start wordt het bouwen van een gebruikers interface in iOS niet geadresseerd. 
 
-Bovenaan `viewController.swift` importeren de `AzureCommunication` `AzureCommunicatonChat` bibliotheken en:
+Importeer boven aan de `viewController.swift` `AzureCommunication` `AzureCommunicatonChat` bibliotheken en:
 
 ```
 import AzureCommunication
@@ -98,7 +97,7 @@ override func viewDidLoad() {
     }
 ```
 
-We gebruiken een semafoor om onze code te synchroniseren voor demonstratie doeleinden. In de volgende stappen worden de tijdelijke aanduidingen vervangen door voorbeeld code met behulp van de Azure Communication Services-chat bibliotheek.
+Voor demonstratie doeleinden gebruiken we een semafoor om uw code te synchroniseren. In de volgende stappen vervangt u de tijdelijke aanduidingen door voorbeeld code met behulp van de Azure Communication Services-chat bibliotheek.
 
 
 ### <a name="create-a-chat-client"></a>Een chat-client maken
@@ -120,24 +119,24 @@ let endpoint = "<ACS_RESOURCE_ENDPOINT>"
     )
 ```
 
-Vervang door `<ACS_RESOURCE_ENDPOINT>` het eind punt van uw ACS-resource.
-Vervang door `<ACCESS_TOKEN>` een geldig ACS-toegangs token.
+Vervang door `<ACS_RESOURCE_ENDPOINT>` het eind punt van uw Azure Communication Services-resource. Vervang door `<ACCESS_TOKEN>` een geldig toegangs token voor communicatie Services.
 
-Deze Snelstartgids heeft geen betrekking op het maken van een servicelaag voor het beheren van tokens voor uw chat toepassing, hoewel dit wordt aanbevolen. Raadpleeg de volgende documentatie voor meer informatie over de [architectuur van chatten](../../../concepts/chat/concepts.md)
+Deze Snelstartgids heeft geen betrekking op het maken van een servicelaag voor het beheren van tokens voor uw chat toepassing, maar dat wordt aanbevolen. Zie de sectie ' chat Architecture ' van [Chat concepten](../../../concepts/chat/concepts.md)voor meer informatie.
 
-Meer informatie over [tokens voor gebruikerstoegang](../../access-tokens.md).
+Voor meer informatie over tokens voor gebruikers toegang, Zie [Quick Start: toegangs tokens maken en beheren](../../access-tokens.md).
 
 ## <a name="object-model"></a>Objectmodel 
+
 De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services chat SDK voor Java script.
 
 | Naam                                   | Beschrijving                                                                                                                                                                           |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ChatClient | Deze klasse is vereist voor de chat-functionaliteit. U instantieert deze klasse met uw abonnementsgegevens en gebruikt deze om threads te maken, krijgen en verzenden. |
-| ChatThreadClient | Deze klasse is vereist voor de functionaliteit van de chat-thread. U verkrijgt een instantie via de ChatClient en gebruikt deze om berichten te verzenden, te ontvangen, bij te werken of te verwijderen, gebruikers toe te voegen, te verwijderen of op te halen, getypte meldingen te verzenden, bevestigingen te lezen en u op chatgebeurtenissen te abonneren. |
+| `ChatClient` | Deze klasse is vereist voor de chat functionaliteit. U maakt de app met uw abonnements gegevens en gebruikt deze om threads te maken, op te halen en te verwijderen. |
+| `ChatThreadClient` | Deze klasse is vereist voor de functionaliteit van de chat-thread. U kunt een exemplaar verkrijgen via `ChatClient` en dit gebruiken om berichten te verzenden, te ontvangen, bij te werken en te verwijderen. U kunt dit ook gebruiken om gebruikers toe te voegen, te verwijderen en te verkrijgen, getypte meldingen en lees bevestigingen te verzenden en u te abonneren op chat gebeurtenissen. |
 
 ## <a name="start-a-chat-thread"></a>Een chat-thread starten
 
-Nu gaan we ons gebruiken `ChatClient` om een nieuwe thread te maken met een eerste gebruiker.
+Nu gebruikt u uw `ChatClient` om een nieuwe thread te maken met een eerste gebruiker.
 
 Vervang de opmerking `<CREATE A CHAT THREAD>` door de volgende code:
 
@@ -168,11 +167,11 @@ semaphore.wait()
 
 Vervang door `<USER_ID>` een geldige gebruikers-id voor communicatie Services.
 
-We gebruiken hier een semafoor om te wachten op de voltooiings-handler voordat u doorgaat. We gebruiken de `threadId` van de reactie die wordt geretourneerd naar de voltooiings-handler in latere stappen.
+U gebruikt hier een semafoor om te wachten op de voltooiings-handler voordat u doorgaat. In latere stappen gebruikt u de `threadId` van de reactie die wordt geretourneerd naar de voltooiings-handler.
 
 ## <a name="get-a-chat-thread-client"></a>Een chat-thread-client ophalen
 
-Nu we een chat-thread hebben gemaakt, krijgen we een `ChatThreadClient` bewerking voor het uitvoeren van bewerkingen binnen de thread.
+Nu u een chat-thread hebt gemaakt, kunt u een `ChatThreadClient` voor het uitvoeren van bewerkingen in de thread verkrijgen.
 
 Vervang de opmerking `<CREATE A CHAT THREAD CLIENT>` door de volgende code:
 
@@ -202,7 +201,7 @@ chatThreadClient.send(message: message) { result, _ in
 semaphore.wait()
 ```
 
-Eerst maken we de `SendChatMessageRequest` gegevens die de weergave naam van de inhoud en de afzenders bevatten (de geschiedenis van de share kan eventueel ook worden opgenomen). Het antwoord dat wordt geretourneerd naar de voltooiings-handler bevat de ID van het bericht dat is verzonden.
+Eerst bouwt u de `SendChatMessageRequest` , die de inhoud en de weergave naam van de afzender bevat. Deze aanvraag kan ook de geschiedenis tijd delen bevatten als u deze wilt opnemen. Het antwoord dat wordt geretourneerd naar de voltooiings-handler bevat de ID van het bericht dat is verzonden.
 
 ## <a name="add-a-user-as-a-participant-to-the-chat-thread"></a>Een gebruiker toevoegen als deel nemer aan de chat thread
 
@@ -226,9 +225,9 @@ chatThreadClient.add(participants: [user]) { result, _ in
 semaphore.wait()
 ```
 
-Vervang door `<USER_ID>` de ACS-gebruikers-id van de gebruiker die u wilt toevoegen.
+Vervang door `<USER_ID>` de gebruikers-id van de communicatie services van de gebruiker die u wilt toevoegen.
 
-Wanneer een deel nemer aan een thread wordt toegevoegd, kan het antwoord dat de voltooiing retourneert fouten bevatten. Deze fouten duiden op een fout bij het toevoegen van bepaalde deel nemers.
+Wanneer u een deel nemer aan een thread toevoegt, kan het geretourneerde antwoord fouten bevatten. Deze fouten duiden op een fout bij het toevoegen van bepaalde deel nemers.
 
 ## <a name="list-users-in-a-thread"></a>Gebruikers in een thread weer geven
 
@@ -274,5 +273,5 @@ Vervang door `<USER ID>` de gebruikers-id van de communicatie services van de de
 
 ## <a name="run-the-code"></a>De code uitvoeren
 
-Klik in Xcode op de knop uitvoeren om het project te bouwen en uit te voeren. In de-console kunt u de uitvoer van de code en de logboek uitvoer van de ChatClient weer geven.
+Selecteer in Xcode **uitvoeren** om het project te bouwen en uit te voeren. In de-console kunt u de uitvoer van de code en de logboek uitvoer van de chat-client bekijken.
 

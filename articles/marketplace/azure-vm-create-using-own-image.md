@@ -8,10 +8,10 @@ author: krsh
 ms.author: krsh
 ms.date: 03/10/2021
 ms.openlocfilehash: 4711ea76af83594ec529cfda13a308fbe6646398
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103200463"
 ---
 # <a name="how-to-create-a-virtual-machine-using-your-own-image"></a>Een virtuele machine maken met uw eigen installatie kopie
@@ -158,7 +158,7 @@ Deze opties worden beschreven in de volgende drie secties.
 1. Selecteer **Opslaan**.
 1. Gebruik de para meters in deze tabel om de velden in het volgende scherm te volt ooien.
 
-| Parameters | Beschrijving |
+| Parameters | Description |
 | --- | --- |
 | sourceStorageAccountResourceId | De resource-ID van het bron opslag account waarin de BLOB-VHD zich bevindt.<br><br>Als u de resource-ID wilt ophalen, gaat u naar uw **opslag account** op **Azure Portal**, gaat u naar **Eigenschappen** en kopieert u de waarde **ResourceID** . |
 | sourceBlobUri | BLOB-URI van de VHD-blob van de besturingssysteem schijf (moet in het opslag account worden vermeld).<br><br>Als u de BLOB-URL wilt ophalen, gaat u naar uw **opslag account** op **Azure Portal**, gaat u naar uw **BLOB** en kopieert u de **URL** -waarde. |

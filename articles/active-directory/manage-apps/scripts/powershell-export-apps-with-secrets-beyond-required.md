@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 03/09/2021
 ms.author: kenwith
 ms.reviewer: mifarca
-ms.openlocfilehash: 9c0e5508830343561833785fbce31f547a8a7428
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: daeea48758a9f08e7eedbfcaddcde3815f5c1e16
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103149678"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105729096"
 ---
 # <a name="export-apps-with-secrets-and-certificates-expiring-beyond-the-required-date"></a>Apps exporteren met geheimen en certificaten die na de vereiste datum verlopen
 
@@ -37,7 +37,7 @@ De opdracht ' lid toevoegen ' is verantwoordelijk voor het maken van de kolommen
 
 | Opdracht | Opmerkingen |
 |---|---|
-| [Invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1) | Verzendt HTTP-en HTTPS-aanvragen naar een webpagina of webservice. Hiermee wordt het antwoord geparseerd en worden verzamelingen van koppelingen, afbeeldingen en andere belang rijke HTML-elementen geretourneerd. |
+| [Invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1&preserve-view=true) | Verzendt HTTP-en HTTPS-aanvragen naar een webpagina of webservice. Hiermee wordt het antwoord geparseerd en worden verzamelingen van koppelingen, afbeeldingen en andere belang rijke HTML-elementen geretourneerd. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

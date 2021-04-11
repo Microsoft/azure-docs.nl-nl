@@ -13,10 +13,10 @@ ms.custom:
 - mqtt
 monikerRange: '>=iotedge-2020-11'
 ms.openlocfilehash: 1070a4c8daecfedae513f2fd8738c27abfb33078
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103200586"
 ---
 # <a name="configure-the-api-proxy-module-for-your-gateway-hierarchy-scenario-preview"></a>De API-proxy module configureren voor uw gateway hiërarchie scenario (preview-versie)
@@ -52,7 +52,7 @@ De API-proxy module wordt geleverd met een standaard configuratie die algemene s
 
 Momenteel zijn de standaard omgevings variabelen:
 
-| Omgevingsvariabele | Beschrijving |
+| Omgevingsvariabele | Description |
 | -------------------- | ----------- |
 | `PROXY_CONFIG_ENV_VAR_LIST` | Een lijst met alle variabelen die u wilt bijwerken in een lijst met door komma's gescheiden waarden. Met deze stap wordt voor komen dat de verkeerde configuratie-instellingen per ongeluk worden gewijzigd.
 | `NGINX_DEFAULT_PORT` | Hiermee wijzigt u de poort waarnaar de nginx-proxy luistert. Als u deze omgevings variabele bijwerkt, moet u ervoor zorgen dat de poort die u selecteert ook wordt weer gegeven in de module dockerfile en is gedeclareerd als een poort binding in het implementatie manifest.<br><br>De standaard waarde is 443.<br><br>Wanneer de implementatie wordt geïmplementeerd vanuit Azure Marketplace, wordt de standaard poort bijgewerkt naar 8000, om conflicten met de edgeHub-module te voor komen. Zie [open poorten minimaliseren](#minimize-open-ports)voor meer informatie. |

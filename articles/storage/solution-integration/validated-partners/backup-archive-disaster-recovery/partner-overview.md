@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: storage
 ms.subservice: partner
 ms.openlocfilehash: 9e7f407ecda1fec8d8ae02e21f3b5a5ea4b0befb
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103561495"
 ---
 # <a name="azure-storage-archive-backup-and-disaster-recovery-partners"></a>Azure Storage archivering, back-ups en nood herstel partners
@@ -21,7 +21,7 @@ Dit artikel geeft een overzicht van micro soft-partners die zijn geïntegreerd m
 
 ## <a name="verified-partners"></a>Geverifieerde partners
 
-| Partner | Beschrijving | Website/product koppeling |
+| Partner | Description | Website/product koppeling |
 | ------- | ----------- | -------------------- |
 |![CommVault-bedrijfs logo](./media/commvault-logo.jpg) |**CommVault**<br>Optimaliseer, Beveilig, migreer en Indexeer uw gegevens met behulp van micro soft-infra structuur met CommVault. Neem de controle over uw gegevens met CommVault volledige gegevens beveiliging, de door micro soft gecentreerde en, Azure gerichte oplossing voor gegevens beheer. CommVault biedt de hulp middelen die u nodig hebt om uw gegevens te beheren, te migreren, te openen en te herstellen, ongeacht waar deze zich bevinden, en vermindert de kosten en het risico.|[Partner pagina](https://www.commvault.com/complete-data-protection)<br>[Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/commvault.commvault)<br>[Introductiehandleiding](./commvault/commvault-solution-guide.md)|
 |![Datadobi-bedrijfs logo](./media/datadob-logo.png) |**Datadobi**<br> Datadobi kan uw ongestructureerde opslag omgevingen optimaliseren. Met DobiProtect kunt u een ' gouden kopie ' van uw meest bedrijfskritische NAS-gegevens (Network Attached Storage) op Azure bewaren. Dit biedt beveiliging tegen Cyber dreigingen, Ransomware, onbedoeld verwijderen en software-zwakke plekken. Als u de opslag kosten tot een minimum wilt beperken, selecteert u alleen de gegevens die u nodig hebt bij het aanwijzen van een ramp. Als er sprake is van een ramp, herstelt u de gegevens volledig, herstelt u alleen een subset van gegevens of voert u een failover uit naar uw gouden exemplaar. |[Partner pagina](https://datadobi.com/partners/microsoft/)<br>[Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/datadobi1602192408529.datadobi-dobiprotect?tab=Overview)|

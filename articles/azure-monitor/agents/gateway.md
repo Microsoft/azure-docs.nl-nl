@@ -5,18 +5,14 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 12/24/2019
-ms.openlocfilehash: bae48dc78eb6973e5bce4d535091bc330c4c897f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0c26a7f53609193bf373c3f7f9b1037405d4e518
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102509027"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106122132"
 ---
 # <a name="connect-computers-without-internet-access-by-using-the-log-analytics-gateway-in-azure-monitor"></a>Computers zonder Internet toegang verbinden met behulp van de Log Analytics-gateway in Azure Monitor
-
->[!NOTE]
->Als Microsoft Operations Management Suite (OMS) overgangen naar Microsoft Azure monitor, wordt de terminologie gewijzigd. Dit artikel heeft betrekking op de OMS-gateway als de Azure Log Analytics-gateway. 
->
 
 In dit artikel wordt beschreven hoe u communicatie met Azure Automation en Azure Monitor kunt configureren met behulp van de Log Analytics gateway wanneer computers die rechtstreeks zijn verbonden of die worden bewaakt door Operations Manager geen Internet toegang hebben. 
 
@@ -89,6 +85,9 @@ De Log Analytics gateway is beschikbaar in de volgende talen:
 De Log Analytics-gateway ondersteunt alleen Transport Layer Security (TLS) 1,0, 1,1 en 1,2.  Secure Sockets Layer (SSL) wordt niet ondersteund.  Configureer de gateway voor het gebruik van ten minste TLS 1,2 om te zorgen voor de beveiliging van gegevens die onderweg zijn naar Log Analytics. Oudere versies van TLS of SSL zijn kwetsbaar. Hoewel ze momenteel achterwaartse compatibiliteit toestaan, kunt u ze beter niet gebruiken.  
 
 Raadpleeg voor meer informatie [veilig verzenden van gegevens met behulp van TLS 1,2](../logs/data-security.md#sending-data-securely-using-tls-12). 
+
+>[!NOTE]
+>De gateway is een doorstuur proxy waarmee geen gegevens worden opgeslagen. Zodra de agent verbinding tot stand brengt met Azure Monitor, volgt deze dezelfde versleutelings stroom met of zonder de gateway. De gegevens worden versleuteld tussen de client en het eind punt. Omdat de gateway slechts een tunnel is, beschikt deze niet over de mogelijkheid om te controleren wat er wordt verzonden.
 
 ### <a name="supported-number-of-agent-connections"></a>Ondersteund aantal agent verbindingen
 

@@ -3,19 +3,19 @@ title: Windows Virtual Desktop thin client support-Azure
 description: Een beknopt overzicht van ondersteuning voor thin clients voor virtuele Windows-Bureau bladen.
 author: Heidilohr
 ms.topic: conceptual
-ms.date: 01/23/2020
+ms.date: 03/31/2021
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 90459c3eb171e03b1c28c91e766d3a6b765565b8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 905451b4ce9c7a2a7c7aa2331ce3d433a9952223
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103491466"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106122030"
 ---
 # <a name="linux-support"></a>Linux Support
 
-U hebt toegang tot de virtuele bureau blad-resources van Windows vanaf uw Linux-apparaten met de [webclient](connect-web.md) of de volgende ondersteunde clients, die door onze thin client-partners van Linux worden geboden. We werken samen met een aantal partners om ondersteunde Windows virtual desktop-clients in te scha kelen op meer Linux-gebaseerde besturings systemen en apparaten. Als u ondersteuning voor het virtuele bureau blad van Windows nodig hebt op een Linux-platform dat hier niet wordt vermeld, laat het ons weten op onze [UserVoice-pagina](https://remotedesktop.uservoice.com/forums/923035-remote-desktop-support-on-linux).
+U hebt toegang tot de virtuele bureau blad-resources van Windows vanaf uw Linux-apparaten met de [webclient](connect-web.md) of de volgende ondersteunde clients, die door onze thin client-partners van Linux worden geboden. We werken samen met een aantal partners om ondersteunde Windows virtual desktop-clients in te scha kelen op meer Linux-gebaseerde besturings systemen en apparaten.
 
 ## <a name="connect-with-your-linux-device"></a>Verbinding maken met uw Linux-apparaat
 

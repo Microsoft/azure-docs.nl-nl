@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/07/2020
 ms.author: allensu
-ms.openlocfilehash: ee264a22de5ce094e8a4c1335ace77cbbba49270
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a96e6b567c04f2e0561a0a754e854a0e2b1ad6b0
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94694990"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106076255"
 ---
 # <a name="outbound-only-load-balancer-configuration"></a>Load balancer-configuratie voor alleen uitgaand verkeer
 
@@ -278,7 +278,7 @@ De **myPublicBackendPool** voor de back-end-adres groep maken:
     | IP-adres voor front-end | Selecteer **LoadBalancerFrontEnd**.|
     | Time-out voor inactiviteit (minuten) | Verplaats de schuifregelaar naar **15 minuten**.|
     | TCP opnieuw instellen | Selecteer **Ingeschakeld**.|
-    | Back-end-pool | Selecteer **myPublicBackendPool**.| |
+    | Back-end-pool | Selecteer **myPublicBackendPool**.|
     | Poorttoewijzing -> Poorttoewijzing | Selecteer **het standaard aantal uitgaande poorten gebruiken** |
 
 4. Selecteer **Toevoegen**.

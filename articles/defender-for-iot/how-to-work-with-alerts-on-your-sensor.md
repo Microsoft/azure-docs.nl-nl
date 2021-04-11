@@ -1,14 +1,14 @@
 ---
-title: Over sensor waarschuwingen
+title: Meer informatie over sensor waarschuwingen
 description: Werk met waarschuwingen om u te helpen bij het verbeteren van de beveiliging en werking van uw netwerk.
-ms.date: 11/30/2020
+ms.date: 3/29/2021
 ms.topic: how-to
-ms.openlocfilehash: 178d3aedb44c29f53aab481894defeb4b9355d39
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.openlocfilehash: a34871342e9a868ba593ae894fdd91b5e99c5a44
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104781344"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105729419"
 ---
 # <a name="about-sensor-alerts"></a>Over sensor waarschuwingen
 
@@ -44,7 +44,7 @@ Er zijn extra hulpprogram ma's beschikbaar waarmee u het onderzoek naar waarschu
 
 Waarschuwingen worden geactiveerd wanneer de sensor motoren wijzigingen in het netwerk verkeer en gedrag die uw aandacht nodig hebben, kunnen detecteren. In dit artikel wordt het soort waarschuwingen beschreven dat elke engine activeert.
 
-| Waarschuwingstype | Beschrijving |
+| Waarschuwingstype | Description |
 |-|-|
 | Waarschuwingen voor beleids schendingen | Wordt geactiveerd wanneer de engine voor beleids overtreding een afwijking detecteert van het eerder geleerde verkeer. Bijvoorbeeld: <br /> -Er is een nieuw apparaat gedetecteerd.  <br /> -Er wordt een nieuwe configuratie op een apparaat gedetecteerd. <br /> -Een apparaat dat niet als een programmeer apparaat is gedefinieerd, voert een wijziging in het programma uit. <br /> -Er is een firmware versie gewijzigd. |
 | Waarschuwingen over Protocol schendingen | Wordt geactiveerd wanneer de engine voor protocol overtreding pakket structuren of veld waarden detecteert die niet voldoen aan de protocol specificatie. | 
@@ -64,9 +64,10 @@ Bijvoorbeeld:
 
   - Malware-gebeurtenissen die zijn gedetecteerd op netwerk apparaten worden gerapporteerd in rapporten voor risico analyse. Wanneer waarschuwingen over malware-gebeurtenissen *gedempt* zijn, worden betrokken apparaten niet berekend in het rapport risico beoordeling.
 
-## <a name="see-also"></a>Zie ook
+## <a name="next-steps"></a>Volgende stappen
 
-- [Leer-en slimme IT-leer modi](how-to-control-what-traffic-is-monitored.md#learning-and-smart-it-learning-modes)
-- [De informatie in waarschuwingen weergeven](how-to-view-information-provided-in-alerts.md)
-- [De waarschuwingsgebeurtenis beheren](how-to-manage-the-alert-event.md)
-- [Waarschuwings werk stromen versnellen](how-to-accelerate-alert-incident-response.md)
+[Leer-en slimme it-leer modi](how-to-control-what-traffic-is-monitored.md#learning-and-smart-it-learning-modes) 
+ [In waarschuwingen](how-to-view-information-provided-in-alerts.md) 
+ verstrekte informatie weer geven [De waarschuwings gebeurtenis beheren](how-to-manage-the-alert-event.md) 
+ [Waarschuwings werk stromen versnellen](how-to-accelerate-alert-incident-response.md) 
+ [Waarschuwings typen en-beschrijvingen](alert-engine-messages.md)

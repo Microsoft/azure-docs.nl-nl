@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: allensu
-ms.openlocfilehash: 79d21549e7234e4ee342776466f8d3d8ced5f08c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d1302d44a4cb5b09f6dc3b1bf0cb08a12a932c87
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102508806"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107029400"
 ---
 # <a name="what-is-azure-private-endpoint"></a>Wat is een privé-eindpunt van Azure?
 
@@ -39,7 +39,7 @@ Hier volgen enkele belang rijke informatie over persoonlijke eind punten:
 
 - Bij het maken van een persoonlijk eind punt wordt ook een alleen-lezen netwerk interface gemaakt voor de levens cyclus van de resource. Aan de interface worden dynamisch privé-IP-adressen toegewezen van het subnet dat is toegewezen aan de bron van de persoonlijke koppeling. De waarde van het privé-IP-adres blijft ongewijzigd voor de gehele levens cyclus van het persoonlijke eind punt.
  
-- Het persoonlijke eind punt moet worden geïmplementeerd in dezelfde regio als het virtuele netwerk. 
+- Het persoonlijke eind punt moet worden geïmplementeerd in dezelfde regio en hetzelfde abonnement als het virtuele netwerk. 
  
 - De bron van de persoonlijke koppeling kan worden geïmplementeerd in een andere regio dan het virtuele netwerk en het persoonlijke eind punt.
  

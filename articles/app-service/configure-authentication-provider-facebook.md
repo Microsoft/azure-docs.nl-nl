@@ -3,16 +3,16 @@ title: Facebook-verificatie configureren
 description: Meer informatie over het configureren van Facebook-verificatie als een id-provider voor uw App Service of Azure Functions app.
 ms.assetid: b6b4f062-fcb4-47b3-b75a-ec4cb51a62fd
 ms.topic: article
-ms.date: 06/06/2019
+ms.date: 03/29/2021
 ms.custom:
 - seodec18
 - fasttrack-edit
-ms.openlocfilehash: b6aad323c0d6fa8f59c9fad203640c477b162503
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: bc639eaea76b3309d6ed047e73c726040da19639
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "80519962"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106078006"
 ---
 # <a name="configure-your-app-service-or-azure-functions-app-to-use-facebook-login"></a>Uw App Service of Azure Functions app configureren voor het gebruik van Facebook-aanmelding
 
@@ -52,29 +52,24 @@ Voor het volt ooien van de procedure in dit artikel hebt u een Facebook-account 
 
 ## <a name="add-facebook-information-to-your-application"></a><a name="secrets"> </a>Facebook-gegevens toevoegen aan uw toepassing
 
-1. Meld u aan bij de [Azure Portal] en navigeer naar uw app service-app.
-1. Selecteer **instellingen**  >  **verificatie/autorisatie** en zorg ervoor dat **app service-verificatie** is **ingeschakeld**.
-1. Selecteer **Facebook** en plak vervolgens de waarden voor app-id en app-geheim die u eerder hebt verkregen. Schakel de scopes in die nodig zijn voor uw toepassing.
-1. Selecteer **OK**.
+1. Meld u aan bij de [Azure Portal] en navigeer naar uw app.
+1. Selecteer **verificatie** in het menu aan de linkerkant. Klik op **ID-provider toevoegen**.
+1. Selecteer **Facebook** in de vervolg keuzelijst ID-provider. Plak de App-ID en de geheime waarden van de app die u eerder hebt verkregen.
 
-   ![Scherm afbeelding van Facebook-instellingen voor mobiele apps][0]
+    Het geheim wordt opgeslagen als een sleuf-plak [toepassings instelling](./configure-common.md#configure-app-settings) met de naam `FACEBOOK_PROVIDER_AUTHENTICATION_SECRET` . U kunt deze instelling later bijwerken om [Key Vault verwijzingen](./app-service-key-vault-references.md) te gebruiken als u het geheim in azure Key Vault wilt beheren.
 
-    App Service biedt standaard verificatie, maar de toegang tot de inhoud en Api's van uw site wordt niet beperkt. U moet gebruikers in uw app-code autoriseren.
-1. Beschrijving Als u de toegang wilt beperken tot gebruikers die zijn geverifieerd door Facebook, stelt **u actie in die moet worden uitgevoerd wanneer de aanvraag niet is geverifieerd** voor **Facebook**. Wanneer u deze functionaliteit instelt, vereist uw app dat alle aanvragen worden geverifieerd. Ook worden alle niet-geverifieerde aanvragen voor verificatie doorgestuurd naar Facebook.
+1. Als dit de eerste ID-provider is die voor de toepassing is geconfigureerd, wordt u ook gevraagd om een App Service de sectie **verificatie-instellingen** . Als dat niet het geval is, kunt u door gaan met de volgende stap.
+    
+    Deze opties bepalen hoe uw toepassing reageert op niet-geverifieerde aanvragen en de standaard selecties omleiden alle aanvragen om u aan te melden bij deze nieuwe provider. U kunt dit gedrag nu aanpassen of deze instellingen later aanpassen via het hoofd scherm voor **verificatie** door **bewerken** naast verificatie- **instellingen** te kiezen. Zie voor meer informatie over deze opties [verificatie stroom](overview-authentication-authorization.md#authentication-flow).
 
-   > [!CAUTION]
-   > Het beperken van de toegang op deze manier is van toepassing op alle aanroepen naar uw app. Dit is mogelijk niet wenselijk voor apps met een openbaar beschik bare start pagina, zoals in veel toepassingen met één pagina. Voor dergelijke toepassingen kunt u **anonieme aanvragen (geen actie) toestaan** , zodat de verificatie zelf door de app hand matig wordt gestart. Zie voor meer informatie [verificatie stroom](overview-authentication-authorization.md#authentication-flow).
+1. Beschrijving Klik op **volgende: bereiken** en voeg de scopes toe die nodig zijn voor de toepassing. Deze worden tijdens de aanmeldings tijd aangevraagd voor op de browser gebaseerde stromen.
+1. Klik op **Add**.
 
-1. Selecteer **Opslaan**.
-
-U bent nu klaar om Facebook te gebruiken voor verificatie in uw app.
+U bent nu klaar om Facebook te gebruiken voor verificatie in uw app. De provider wordt weer gegeven in het scherm **verificatie** . Hier kunt u deze provider configuratie bewerken of verwijderen.
 
 ## <a name="next-steps"></a><a name="related-content"> </a>Volgende stappen
 
 [!INCLUDE [app-service-mobile-related-content-get-started-users](../../includes/app-service-mobile-related-content-get-started-users.md)]
-
-<!-- Images. -->
-[0]: ./media/app-service-mobile-how-to-configure-facebook-authentication/mobile-app-facebook-settings.png
 
 <!-- URLs. -->
 [Facebook-ontwikkel aars]: https://go.microsoft.com/fwlink/p/?LinkId=268286

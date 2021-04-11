@@ -3,16 +3,16 @@ title: Twitter-verificatie configureren
 description: Meer informatie over het configureren van Twitter-verificatie als een id-provider voor uw App Service of Azure Functions app.
 ms.assetid: c6dc91d7-30f6-448c-9f2d-8e91104cde73
 ms.topic: article
-ms.date: 02/28/2020
+ms.date: 03/29/2021
 ms.custom:
 - seodec18
 - fasttrack-edit
-ms.openlocfilehash: 11c913b12b4dcb7d2a5ffa532064b347b82904ef
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6ecce954991d9f3901c54a6f87fc803b32469862
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "80519916"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106077972"
 ---
 # <a name="configure-your-app-service-or-azure-functions-app-to-use-twitter-login"></a>Uw App Service of Azure Functions app configureren voor het gebruik van Twitter-aanmelding
 
@@ -34,38 +34,28 @@ Voor het volt ooien van de procedure in dit artikel hebt u een Twitter-account n
    - API-sleutel
    - Geheime API-sleutel
 
-   > [!NOTE]
+   > [!IMPORTANT]
    > De geheime API-sleutel is een belang rijke beveiligings referentie. Deel dit geheim niet met iemand of distribueer het met uw app.
 
 ## <a name="add-twitter-information-to-your-application"></a><a name="secrets"> </a>Twitter-gegevens toevoegen aan uw toepassing
 
-1. Ga naar uw toepassing in de [Azure Portal].
-1. Selecteer **instellingen**  >  **verificatie/autorisatie** en zorg ervoor dat **app service-verificatie** is **ingeschakeld**.
-1. Selecteer **Twitter**.
-1. Plak de `API key` en `API secret key` waarden die u eerder hebt verkregen.
-1. Selecteer **OK**.
+1. Meld u aan bij de [Azure Portal] en navigeer naar uw app.
+1. Selecteer **verificatie** in het menu aan de linkerkant. Klik op **ID-provider toevoegen**.
+1. Selecteer **Twitter** in de vervolg keuzelijst ID-provider. Plak de `API key` en `API secret key` waarden die u eerder hebt verkregen.
 
-   ![Scherm afbeelding van Twitter-instellingen voor mobiele apps][1]
+    Het geheim wordt opgeslagen als een sleuf-plak [toepassings instelling](./configure-common.md#configure-app-settings) met de naam `TWITTER_PROVIDER_AUTHENTICATION_SECRET` . U kunt deze instelling later bijwerken om [Key Vault verwijzingen](./app-service-key-vault-references.md) te gebruiken als u het geheim in azure Key Vault wilt beheren.
 
-   App Service biedt standaard verificatie, maar beperkt geen geautoriseerde toegang tot uw site-inhoud en Api's. U moet gebruikers in uw app-code autoriseren.
+1. Als dit de eerste ID-provider is die voor de toepassing is geconfigureerd, wordt u ook gevraagd om een App Service de sectie **verificatie-instellingen** . Als dat niet het geval is, kunt u door gaan met de volgende stap.
+    
+    Deze opties bepalen hoe uw toepassing reageert op niet-geverifieerde aanvragen en de standaard selecties omleiden alle aanvragen om u aan te melden bij deze nieuwe provider. U kunt dit gedrag nu aanpassen of deze instellingen later aanpassen via het hoofd scherm voor **verificatie** door **bewerken** naast verificatie- **instellingen** te kiezen. Zie voor meer informatie over deze opties [verificatie stroom](overview-authentication-authorization.md#authentication-flow).
 
-1. Beschrijving Als u de toegang tot uw site wilt beperken tot alleen gebruikers die zijn geverifieerd door Twitter, stelt **u actie in die moet worden uitgevoerd wanneer de aanvraag niet is geverifieerd** voor **Twitter**. Wanneer u deze functionaliteit instelt, vereist uw app dat alle aanvragen worden geverifieerd. Ook worden alle niet-geverifieerde aanvragen omgeleid naar Twitter voor authenticatie.
+1. Klik op **Add**.
 
-   > [!CAUTION]
-   > Het beperken van de toegang op deze manier is van toepassing op alle aanroepen naar uw app. Dit is mogelijk niet wenselijk voor apps met een openbaar beschik bare start pagina, zoals in veel toepassingen met één pagina. Voor dergelijke toepassingen kunt u **anonieme aanvragen (geen actie) toestaan** , zodat de verificatie zelf door de app hand matig wordt gestart. Zie voor meer informatie [verificatie stroom](overview-authentication-authorization.md#authentication-flow).
-
-1. Selecteer **Opslaan**.
-
-U bent nu klaar om Twitter te gebruiken voor verificatie in uw app.
+U bent nu klaar om Twitter te gebruiken voor verificatie in uw app. De provider wordt weer gegeven in het scherm **verificatie** . Hier kunt u deze provider configuratie bewerken of verwijderen.
 
 ## <a name="next-steps"></a><a name="related-content"> </a>Volgende stappen
 
 [!INCLUDE [app-service-mobile-related-content-get-started-users](../../includes/app-service-mobile-related-content-get-started-users.md)]
-
-<!-- Images. -->
-
-[0]: ./media/app-service-mobile-how-to-configure-twitter-authentication/app-service-twitter-redirect.png
-[1]: ./media/app-service-mobile-how-to-configure-twitter-authentication/mobile-app-twitter-settings.png
 
 <!-- URLs. -->
 

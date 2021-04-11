@@ -6,12 +6,12 @@ ms.date: 08/31/2020
 author: IngridAtMicrosoft
 ms.author: inhenkel
 manager: femila
-ms.openlocfilehash: 3f175ff8e7c809032f35cdea9dc3cffa8345b82c
-ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
+ms.openlocfilehash: 929d8412b3be894e80a13d9a2bd07ab7401b8dda
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106106820"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106277858"
 ---
 # <a name="quickstart-upload-encode-and-stream-content-with-portal"></a>Quickstart: Inhoud uploaden, coderen en streamen met de portal
 
@@ -41,8 +41,8 @@ In deze quickstart ziet u hoe u Azure Portal kunt gebruiken om inhoud te uploade
     
     Bekijk:
 
-    * [Streaming-locators](streaming-locators-concept.md)
-    * [Beleid voor streaming](streaming-policy-concept.md)
+    * [Streaming-locators](stream-streaming-locators-concept.md)
+    * [Beleid voor streaming](stream-streaming-policy-concept.md)
     * [Verpakking en levering](encode-dynamic-packaging-concept.md)
     * [Filters](filters-concept.md)
 * U kunt uw inhoud beveiligen door deze te versleutelen met Advanced Encryption Standard (AES-128) of/en een van de drie belangrijkste DRM-systemen: Microsoft PlayReady, Google Widevine en Apple FairPlay. In de quickstart [Inhoud versleutelen met Azure Portal](drm-encrypt-content-how-to.md) ziet u hoe u inhoudsbeveiliging kunt configureren.
@@ -94,7 +94,7 @@ Als u een asset wilt publiceren, moet u nu een streaming-locator toevoegen aan u
 
     > [!NOTE]
     > Als u de stream wilt versleutelen, moet u beleid voor inhoudssleutels maken en dit instellen op de streaming-locator. Zie [Inhoud versleutelen met Azure Portal](drm-encrypt-content-how-to.md) voor meer informatie.
-1. In het venster **Streaming-locator toevoegen** kiest u vooraf gedefinieerd beleid voor streaming. Zie [Beleid voor streaming](streaming-policy-concept.md) voor gedetailleerde informatie
+1. In het venster **Streaming-locator toevoegen** kiest u vooraf gedefinieerd beleid voor streaming. Zie [Beleid voor streaming](stream-streaming-policy-concept.md) voor gedetailleerde informatie
 
     ![Streaming-locator](./media/asset-create-asset-upload-portal-quickstart/streaming-locator.png)
 
@@ -105,7 +105,7 @@ Zodra de asset is gepubliceerd, kunt u deze rechtstreeks naar de portal streamen
 Of kopieer de streaming-URL en gebruik deze in uw clientspeler.
 
 > [!NOTE]
-> Zorg ervoor dat uw [streaming-eindpunt](streaming-endpoint-concept.md) wordt uitgevoerd. Wanneer u voor het eerst een Media Service-account maakt, wordt het standaardstreaming-eindpunt gemaakt en heeft het de status Gestopt. U moet het dus starten voordat u uw inhoud kunt streamen.<br/>U wordt alleen gefactureerd wanneer uw streaming-eindpunt wordt uitgevoerd.
+> Zorg ervoor dat uw [streaming-eindpunt](stream-streaming-endpoint-concept.md) wordt uitgevoerd. Wanneer u voor het eerst een Media Service-account maakt, wordt het standaardstreaming-eindpunt gemaakt en heeft het de status Gestopt. U moet het dus starten voordat u uw inhoud kunt streamen.<br/>U wordt alleen gefactureerd wanneer uw streaming-eindpunt wordt uitgevoerd.
 
 ## <a name="cleanup-resources"></a>Resources opruimen
 

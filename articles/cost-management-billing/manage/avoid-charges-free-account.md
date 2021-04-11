@@ -8,16 +8,16 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 03/30/2021
 ms.author: banders
-ms.openlocfilehash: d2648276ead73d8951a93fe3215bee345a79dca9
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: 426d7f5ee117b346280a712cc9f71ab0e617d64f
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106062978"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106220735"
 ---
 # <a name="avoid-charges-with-your-azure-free-account"></a>Vermijd kosten met uw gratis Azure-account
 
-In aanmerking komende nieuwe gebruikers krijgen 200 USD Azure-tegoed in uw facturerings valuta voor de eerste 30 dagen en een beperkt aantal gratis services voor 12 maanden met uw [gratis Azure-account](https://azure.microsoft.com/free/). Zie de [Veelgestelde vragen over het gratis Azure-account](https://azure.microsoft.com/free/free-account-faq/) voor meer informatie over de limieten van gratis services. Zolang uw tegoed niet is verlopen of u alleen gratis services binnen de limieten gebruikt, worden er geen kosten in rekening gebracht.
+In aanmerking komende nieuwe gebruikers ontvangen 200 USD Azure-tegoed voor de eerste 30 dagen en een beperkt aantal gratis services voor 12 maanden met uw [gratis Azure-account](https://azure.microsoft.com/free/). Zie de [Veelgestelde vragen over het gratis Azure-account](https://azure.microsoft.com/free/free-account-faq/) voor meer informatie over de limieten van gratis services. Zolang uw tegoed niet is verlopen of u alleen gratis services binnen de limieten gebruikt, worden er geen kosten in rekening gebracht.
 
 Laten we eens kijken naar enkele redenen waarom er kosten in rekening worden gebracht voor uw gratis Azure-account.
 

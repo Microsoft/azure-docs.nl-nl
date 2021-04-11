@@ -4,12 +4,12 @@ description: Leer hoe u uw eerste serverloze Azure-functie kunt maken met behulp
 ms.topic: how-to
 ms.date: 03/26/2020
 ms.custom: devx-track-csharp, mvc, devcenter, cc996988-fb4f-47
-ms.openlocfilehash: 6ca187181d68d7924f97ebfac08e81dec77251e9
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: ea5b6a9e51b6982a33dc748f72557ed539b8e2e0
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103492108"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106385986"
 ---
 # <a name="create-your-first-function-in-the-azure-portal"></a>Uw eerste functie maken in Azure Portal
 
@@ -60,11 +60,7 @@ Maak vervolgens een functie in de nieuwe functie-app.
 
     ![De functie-URL vanuit Azure Portal kopiëren](./media/functions-create-first-azure-function/function-app-develop-tab-testing.png)
 
-1. Plak de URL van de functie in de adresbalk van uw browser. Voeg de query reeks waarde `?name=<your_name>` toe aan het einde van deze URL en druk op ENTER om de aanvraag uit te voeren. 
-
-    Het volgende voorbeeld toont het antwoord in de browser:
-
-    ![Het antwoord van de functie in de browser.](./media/functions-create-first-azure-function/function-app-browser-testing.png)
+1. Plak de URL van de functie in de adresbalk van uw browser. Voeg de query reeks waarde `?name=<your_name>` toe aan het einde van deze URL en druk op ENTER om de aanvraag uit te voeren. In de browser wordt een antwoord bericht weer gegeven waarin de waarde van de query reeks wordt geretourneerd. 
 
     Als de aanvraag-URL een [toegangs sleutel](functions-bindings-http-webhook-trigger.md#authorization-keys) ( `?code=...` ) bevat, betekent dit dat u in plaats van het **anonieme** toegangs niveau de **functie** hebt gekozen bij het maken van de functie. In dit geval moet u in plaats daarvan toevoegen `&name=<your_name>` .
 

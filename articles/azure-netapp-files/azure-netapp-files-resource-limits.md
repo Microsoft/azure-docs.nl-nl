@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/29/2021
+ms.date: 03/30/2021
 ms.author: b-juche
-ms.openlocfilehash: c82e834c0af3737c1e5ef19c7aa789b94d87f6d8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9b061184f97abeea79912aadbae2c2b188206c72
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99095388"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106057997"
 ---
 # <a name="resource-limits-for-azure-netapp-files"></a>Resourcelimieten voor Azure NetApp Files
 
@@ -45,6 +45,7 @@ In de volgende tabel worden resource limieten voor Azure NetApp Files beschreven
 |  Maximale grootte van één bestand     |    16 TiB    |    No    |    
 |  Maximale grootte van Directory-meta gegevens in één map      |    320 MB    |    No    |    
 |  Maximum aantal bestanden ([maxfiles](#maxfiles)) per volume     |    100.000.000    |    Yes    |    
+|  Maximum aantal export beleids regels per volume     |    5  |    No    | 
 |  Minimale toegewezen door Voer voor een hand matig QoS-volume     |    1 MiB/s   |    No    |    
 |  Maximale toegewezen door Voer voor een hand matig QoS-volume     |    4.500-MiB/s    |    No    |    
 |  Aantal replicatie gegevens beveiliging met meerdere regio's (doel volumes)     |    5    |    Ja    |     

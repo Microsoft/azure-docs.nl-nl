@@ -7,12 +7,12 @@ ms.service: azure-arc
 ms.topic: tutorial
 ms.date: 03/02/2021
 ms.custom: template-tutorial
-ms.openlocfilehash: 987fb5745b6528eb96b4237f698b3ae371d69287
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: ec83d8d56ad67d8c64c6ac3151ca3819e88c0616
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105731816"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106449593"
 ---
 # <a name="tutorial-deploy-configurations-using-gitops-on-an-azure-arc-enabled-kubernetes-cluster"></a>Zelf studie: configuraties implementeren met behulp van GitOps op een Azure Arc enabled Kubernetes-cluster 
 
@@ -30,6 +30,14 @@ In deze zelf studie past u configuraties toe met behulp van GitOps op een Azure 
 - Er is een bestaand Kubernetes-verbonden Azure-Arc-cluster ingeschakeld.
     - Als u nog geen cluster hebt verbonden, doorloopt u [de Snelstartgids een Azure Arc enabled Kubernetes-cluster maken](quickstart-connect-cluster.md).
 - Een goed idee van de voor delen en architectuur van deze functie. Meer informatie vindt u in [configuraties en GitOps-Azure Arc enabled Kubernetes-artikel](conceptual-configurations.md).
+- Installeer de `k8s-configuration` Azure cli-extensie van versie >= 1.0.0:
+  
+  ```azurecli
+  az extension add --name k8s-configuration
+  ```
+
+    >[!TIP]
+    > Als de `k8s-configuration` uitbrei ding al is geïnstalleerd, kunt u deze bijwerken naar de nieuwste versie met behulp van de volgende opdracht: `az extension update --name k8s-configuration`
 
 ## <a name="create-a-configuration"></a>Een configuratie maken
 
@@ -235,7 +243,7 @@ Wanneer een configuratie wordt gemaakt of bijgewerkt, gebeurt er een aantal ding
 
 Tijdens het inrichtings proces wordt de configuratie bron door een paar status wijzigingen verplaatst. Bewaak de voortgang met de `az k8s-configuration show ...` bovenstaande opdracht:
 
-| Wijziging fase | Description |
+| Wijziging fase | Beschrijving |
 | ------------- | ------------- |
 | `complianceStatus`-> `Pending` | Hiermee worden de initiële en in uitvoering zijnde statussen aangegeven. |
 | `complianceStatus` -> `Installed`  | `config-agent` het cluster is geconfigureerd en `flux` zonder fouten geïmplementeerd. |

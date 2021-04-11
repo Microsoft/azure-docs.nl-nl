@@ -7,12 +7,12 @@ ms.service: mysql
 ms.subservice: migration-guide
 ms.topic: conceptual
 ms.date: 10/30/2020
-ms.openlocfilehash: 049a0ad45ea82210d8fac28db0fb3d067841bba4
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 4d553f6c87d1044f8bde7460a0ea7bf123dd1851
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105625140"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106450069"
 ---
 # <a name="migrate-your-mysql-database-by-using-import-and-export"></a>Uw MySQL-database migreren met behulp van importeren en exporteren
 
@@ -35,13 +35,13 @@ Maak een lege data base op de Azure Database for MySQL-server met behulp van MyS
 
 Ga als volgt te werk om verbinding te maken:
 
-1. Zoek in het Azure Portal naar de verbindings gegevens in het deel venster **overzicht** van uw Azure-Data Base voor mysql.
+1. Zoek in het Azure Portal naar de verbindings gegevens in het deel venster **overzicht** van uw Azure database for MySQL.
 
    :::image type="content" source="./media/concepts-migrate-import-export/1_server-overview-name-login.png" alt-text="Scherm afbeelding van de verbindings gegevens van de Azure Database for MySQL server in de Azure Portal.":::
 
 1. Voeg de verbindings gegevens toe aan MySQL Workbench.
 
-   :::image type="content" source="./media/concepts-migrate-import-export/2_setup-new-connection.png" alt-text="MySQL Workbench connection string":::
+   :::image type="content" source="./media/concepts-migrate-import-export/2_setup-new-connection.png" alt-text="Scherm afbeelding van de MySQL Workbench-connection string.":::
 
 ## <a name="determine-when-to-use-import-and-export-techniques"></a>Bepalen wanneer de technieken voor importeren en exporteren worden gebruikt
 
@@ -50,14 +50,14 @@ Ga als volgt te werk om verbinding te maken:
 
 In de volgende scenario's kunt u MySQL-hulpprogram ma's gebruiken om data bases in uw MySQL-data base te importeren en exporteren. Voor andere hulpprogram ma's gaat u naar de sectie ' migratie methoden ' (pagina 22) van de [MySQL naar Azure data base Migration Guide](https://github.com/Azure/azure-mysql/blob/master/MigrationGuide/MySQL%20Migration%20Guide_v1.1.pdf). 
 
-- Wanneer u selectief moet kiezen uit een aantal tabellen die u wilt importeren uit een bestaande MySQL-data base in uw Azure MySQL-data base, kunt u het beste de import-en export techniek gebruiken.  Door dit te doen, kunt u onnodige tabellen uit de migratie weglaten om tijd en resources te besparen. Gebruik bijvoorbeeld de `--include-tables` of `--exclude-tables` Schakel over met [mysqlpump](https://dev.mysql.com/doc/refman/5.7/en/mysqlpump.html#option_mysqlpump_include-tables) en de `--tables` Switch met [mysqldump](https://dev.mysql.com/doc/refman/5.7/en/mysqldump.html#option_mysqldump_tables).
+- Wanneer u selectief moet kiezen uit een aantal tabellen die u wilt importeren uit een bestaande MySQL-data base in uw Azure MySQL-data base, kunt u het beste de import-en export techniek gebruiken. Door dit te doen, kunt u onnodige tabellen uit de migratie weglaten om tijd en resources te besparen. Gebruik bijvoorbeeld de of- `--include-tables` `--exclude-tables` Switch met [mysqlpump](https://dev.mysql.com/doc/refman/5.7/en/mysqlpump.html#option_mysqlpump_include-tables)en de `--tables` Switch met [mysqldump](https://dev.mysql.com/doc/refman/5.7/en/mysqldump.html#option_mysqldump_tables).
 - Wanneer u andere database objecten dan tabellen verplaatst, moet u deze objecten expliciet maken. Neem beperkingen op (primaire sleutel, refererende sleutel en indexen), weer gaven, functies, procedures, triggers en andere database objecten die u wilt migreren.
 - Wanneer u gegevens migreert uit externe gegevens bronnen, met uitzonde ring van een MySQL-data base, maakt u platte bestanden en importeert u deze met behulp van [mysqlimport](https://dev.mysql.com/doc/refman/5.7/en/mysqlimport.html).
 
 > [!Important]
-> Zowel één server als flexibele server bieden *alleen ondersteuning voor de InnoDB-opslag engine*. Zorg ervoor dat alle tabellen in de data base de InnoDB-opslag engine gebruiken wanneer u gegevens laadt in uw Azure Data Base voor MySQL.
+> Zowel één server als flexibele server bieden alleen ondersteuning voor de InnoDB-opslag engine. Zorg ervoor dat alle tabellen in de data base de InnoDB-opslag engine gebruiken wanneer u gegevens laadt in uw Azure Data Base voor MySQL.
 >
-> Als uw bron database een andere opslag engine gebruikt, moet u deze eerst converteren naar de InnoDB-engine voordat u de data base migreert. Als u bijvoorbeeld een WordPress-of web-app hebt die gebruikmaakt van de MyISAM-engine, moet u de tabellen eerst converteren door de gegevens te migreren naar InnoDB-tabellen. Gebruik de-component `ENGINE=INNODB` om de engine in te stellen voor het maken van een tabel en vervolgens de gegevens over te dragen naar de compatibele tabel vóór de migratie.
+> Als uw bron database een andere opslag engine gebruikt, moet u deze converteren naar de InnoDB-engine voordat u de data base migreert. Als u bijvoorbeeld een WordPress-of web-app hebt die gebruikmaakt van de MyISAM-engine, moet u de tabellen eerst converteren door de gegevens te migreren naar InnoDB-tabellen. Gebruik de-component `ENGINE=INNODB` om de engine in te stellen voor het maken van een tabel en vervolgens de gegevens over te dragen naar de compatibele tabel vóór de migratie.
 
    ```sql
    INSERT INTO innodb_table SELECT * FROM myisam_table ORDER BY primary_key_columns
@@ -127,7 +127,7 @@ U kunt het deel venster **gegevens exporteren** gebruiken om uw MySQL-gegevens t
 
 1. Selecteer de database objecten die u wilt exporteren en configureer de gerelateerde opties.
 1. Selecteer **vernieuwen** om de huidige objecten te laden.
-1. Selecteer desgewenst **Geavanceerde opties** in de rechter bovenhoek om de export bewerking te verfijnen. Voeg bijvoorbeeld tabel vergrendelingen toe, gebruik vervangen in plaats van INSERT-instructies en Quote-id's met apostroffen-tekens.
+1. Selecteer desgewenst **Geavanceerde opties** in de rechter bovenhoek om de export bewerking te verfijnen. U kunt bijvoorbeeld tabel vergrendelingen toevoegen, `replace` in plaats van `insert` instructies gebruiken en offerte-id's met apostroffen-tekens.
 1. Selecteer **exporteren starten** om het export proces te starten.
 
 

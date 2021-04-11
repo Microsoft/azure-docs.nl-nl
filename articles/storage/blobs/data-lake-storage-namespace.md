@@ -4,16 +4,16 @@ description: Hierin wordt het concept van een hiërarchische naam ruimte voor Az
 author: normesta
 ms.service: storage
 ms.topic: conceptual
-ms.date: 02/11/2020
+ms.date: 04/01/2021
 ms.author: normesta
 ms.reviewer: jamesbak
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: 26062d73ae4c61af77b15dd2cac0541f2a988d11
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: de7f62dd4d4205e819278e6dc90d905e825580f2
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "95912991"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106220501"
 ---
 # <a name="azure-data-lake-storage-gen2-hierarchical-namespace"></a>Hiërarchische naam ruimte Azure Data Lake Storage Gen2
 
@@ -44,6 +44,10 @@ Over het algemeen is het raadzaam om een hiërarchische naam ruimte in te scha k
 De redenen voor het inschakelen van een hiërarchische naam ruimte worden bepaald door een TCO-analyse. Over het algemeen moeten de verbeteringen in de latentie van de werk belasting vanwege de opslag versnelling minder tijd in beslag nemen. Een latentie voor veel werk belastingen kan worden verbeterd vanwege een Atomic-Directory bewerking die is ingeschakeld door een hiërarchische naam ruimte. In veel werk belastingen vertegenwoordigt de reken resource > 85% van de totale kosten, waardoor zelfs een bescheiden verkleinings latentie gelijk is aan een aanzienlijke besparing van de totale eigendoms kosten. Zelfs in gevallen waarin het inschakelen van een hiërarchische naam ruimte de opslag kosten verhoogt, wordt de TCO nog steeds verlaagd door lagere reken kosten.
 
 Zie [Azure data Lake Storage Gen2 prijzen](https://azure.microsoft.com/pricing/details/storage/data-lake/)voor het analyseren van verschillen in prijzen voor gegevens opslag, transactie prijzen en prijs reservering voor opslag capaciteit tussen accounts met een platte, hiërarchische naam ruimte en een hiërarchische naam ruimte.
+
+## <a name="enabling-a-hierarchical-namespace"></a>Een hiërarchische naam ruimte inschakelen
+
+Het is niet mogelijk om een hiërarchische naam ruimte in te scha kelen op een bestaand opslag account. U kunt een hiërarchische naam ruimte alleen inschakelen wanneer u een opslag account maakt. Zie [een opslag account maken voor gebruik met Azure data Lake Storage Gen2](create-data-lake-storage-account.md)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

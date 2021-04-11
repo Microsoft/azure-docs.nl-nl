@@ -1,198 +1,88 @@
 ---
-title: Zacht verwijderen voor blobs inschakelen en beheren
+title: Voorlopig verwijderen inschakelen voor blobs
 titleSuffix: Azure Storage
-description: Schakel zacht verwijderen voor blobs in om uw gegevens eenvoudiger te herstellen wanneer deze foutief worden gewijzigd of verwijderd.
+description: Schakel zacht verwijderen voor blobs in om blobgegevens te beschermen tegen onbedoeld verwijderen of overschrijvingen.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 07/15/2020
+ms.date: 03/27/2021
 ms.author: tamram
 ms.subservice: blobs
-ms.custom: devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: c89e42736f5b8de65ed93ccb57f8d034d4240bc8
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 11323f2aec05935b9dc45187ed54597e61af924d
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105729079"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106554111"
 ---
-# <a name="enable-and-manage-soft-delete-for-blobs"></a>Zacht verwijderen voor blobs inschakelen en beheren
+# <a name="enable-soft-delete-for-blobs"></a>Voorlopig verwijderen inschakelen voor blobs
 
-Met de methode voor het zacht verwijderen van blobs worden uw gegevens per ongeluk of onbedoeld gewijzigd of verwijderd. Wanneer het dynamisch verwijderen van blobs is ingeschakeld voor een opslag account, kunnen blobs, Blob-versies en moment opnamen in dat opslag account worden hersteld nadat ze zijn verwijderd, binnen een Bewaar periode die u opgeeft.
+Met de methode voor het tijdelijk verwijderen van blobs worden een afzonderlijke Blob en de bijbehorende versies, moment opnamen en meta gegevens beschermd tegen onbedoeld verwijderen of worden overschreven door de verwijderde gegevens in het systeem gedurende een bepaalde periode te bewaren. Tijdens de retentie periode kunt u de BLOB tijdens het verwijderen herstellen naar de status. Nadat de Bewaar periode is verlopen, wordt de BLOB permanent verwijderd. Zie [voorlopig verwijderen voor blobs](soft-delete-blob-overview.md)voor meer informatie over het voorlopig verwijderen van blobs.
 
-Als er een kans is dat uw gegevens per ongeluk worden gewijzigd of verwijderd door een toepassing of een ander opslag account, raadt micro soft aan om de optie voor het voorlopig verwijderen van blobs in te scha kelen. In dit artikel wordt beschreven hoe u de optie voor het voorlopig verwijderen van blobs inschakelt. Zie [voorlopig verwijderen voor blobs](soft-delete-blob-overview.md)voor meer informatie over het voorlopig verwijderen van blobs.
-
-Zie voor meer informatie over het inschakelen van voorlopig verwijderen voor containers, voor het inschakelen [en beheren van voorlopig verwijderen voor containers](soft-delete-container-enable.md).
+Het dynamisch verwijderen van blobs maakt deel uit van een uitgebreide strategie voor gegevens beveiliging voor BLOB-gegevens. Zie [overzicht van gegevens beveiliging](data-protection-overview.md)voor meer informatie over de aanbevelingen van micro soft voor gegevens bescherming.
 
 ## <a name="enable-blob-soft-delete"></a>Voorlopig verwijderen van BLOB inschakelen
 
+Het dynamisch verwijderen van een blob is standaard uitgeschakeld voor een nieuw opslag account. U kunt voorlopig verwijderen voor een opslag account op elk gewenst moment in-of uitschakelen met behulp van de Azure Portal, Power shell of Azure CLI.
+
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-Schakel de optie voor het voorlopig verwijderen van blobs in uw opslag account in met behulp van Azure Portal:
+Voer de volgende stappen uit om het uitvoeren van een BLOB zacht verwijderen voor uw opslag account in te scha kelen met behulp van de Azure Portal:
 
 1. Ga in [Azure Portal](https://portal.azure.com/) naar uw opslagaccount.
 1. Zoek de optie **gegevens bescherming** onder **BLOB service**.
-1. Stel de eigenschap **zacht verwijderen voor BLOB** in op *ingeschakeld*.
-1. Geef onder **Bewaar beleid** op hoe lang voorlopig verwijderde blobs worden bewaard door Azure Storage.
+1. Selecteer in de sectie **herstel** de optie **voorlopig verwijderen inschakelen voor blobs**.
+1. Geef een Bewaar periode op tussen 1 en 365 dagen. Micro soft raadt een minimale Bewaar periode van zeven dagen aan.
 1. Sla uw wijzigingen op.
 
-![Scherm opname van Azure Portal met de gegevens bescherming BLOB-service gekozen.](media/soft-delete-blob-enable/storage-blob-soft-delete-portal-configuration.png)
-
-Als u de voorlopig verwijderde blobs wilt weer geven, schakelt u het selectie vakje **Verwijderde blobs weer geven** in.
-
-![Scherm afbeelding van de pagina gegevens bescherming BLOB-service met de optie verwijderde blobs weer geven gemarkeerd.](media/soft-delete-blob-enable/storage-blob-soft-delete-portal-view-soft-deleted.png)
-
-Als u tijdelijke verwijderde moment opnamen voor een bepaalde BLOB wilt weer geven, selecteert u de BLOB en klikt u vervolgens op **moment opnamen weer geven**.
-
-![Scherm afbeelding van de pagina gegevens bescherming BLOB-service met de optie moment opnamen weer geven gemarkeerd.](media/soft-delete-blob-enable/storage-blob-soft-delete-portal-view-soft-deleted-snapshots.png)
-
-Zorg ervoor dat het selectie vakje **Verwijderde moment opnamen weer geven** is geselecteerd.
-
-![Scherm afbeelding van de pagina moment opnamen weer geven met de optie verwijderde blobs weer geven gemarkeerd.](media/soft-delete-blob-enable/storage-blob-soft-delete-portal-view-soft-deleted-snapshots-check.png)
-
-Wanneer u op een zachte verwijderde BLOB of moment opname klikt, ziet u de nieuwe BLOB-eigenschappen. Ze geven aan wanneer het object is verwijderd en hoeveel dagen resteren totdat de moment opname van de BLOB of BLOB permanent is verlopen. Als het voorlopig verwijderde object geen moment opname is, hebt u ook de mogelijkheid om de verwijdering ervan ongedaan te maken.
-
-![Scherm afbeelding van de details van een voorlopig verwijderd object.](media/soft-delete-blob-enable/storage-blob-soft-delete-portal-properties.png)
-
-Houd er rekening mee dat het verwijderen van een BLOB ook de verwijdering van alle gekoppelde moment opnamen ongedaan maakt. Als u het verwijderen van tijdelijke verwijderde moment opnamen voor een actieve BLOB ongedaan wilt maken, klikt u op de BLOB en selecteert u **verwijderen van alle moment opnamen ongedaan** maken.
-
-![Scherm afbeelding van de details van een voorlopig verwijderde blob.](media/soft-delete-blob-enable/storage-blob-soft-delete-portal-undelete-all-snapshots.png)
-
-Wanneer u de moment opnamen van een BLOB hebt verwijderd, kunt u op **niveau verhogen** klikken om een moment opname te kopiëren over de hoofd-blob, waardoor de BLOB wordt teruggezet naar de moment opname.
-
-![Scherm afbeelding van de pagina moment opnamen weer geven met de optie niveau verhogen gemarkeerd.](media/soft-delete-blob-enable/storage-blob-soft-delete-portal-promote-snapshot.png)
+:::image type="content" source="media/soft-delete-blob-enable/blob-soft-delete-configuration-portal.png" alt-text="Scherm afbeelding die laat zien hoe u zacht verwijderen in de Azure Portal inschakelt":::
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+Als u de optie voor het voorlopig verwijderen van BLOB wilt inschakelen met Power shell, roept u de opdracht [Enable-AzStorageBlobDeleteRetentionPolicy](/powershell/module/az.storage/enable-azstorageblobdeleteretentionpolicy) aan, waarbij u de Bewaar periode in dagen opgeeft.
 
-Als u zacht verwijderen wilt inschakelen, werkt u de service-eigenschappen van een BLOB-client bij. In het volgende voor beeld wordt zacht verwijderen ingeschakeld voor een subset van accounts in een abonnement:
+In het volgende voor beeld wordt de optie voor het voorlopig verwijderen van BLOB ingeschakeld en wordt de Bewaar periode ingesteld op zeven dagen. Vergeet niet om de waarden van de tijdelijke aanduidingen tussen vier Kante haken te vervangen door uw eigen waarden:
 
-```powershell
-Set-AzContext -Subscription "<subscription-name>"
-$MatchingAccounts = Get-AzStorageAccount | where-object{$_.StorageAccountName -match "<matching-regex>"}
-$MatchingAccounts | Enable-AzStorageDeleteRetentionPolicy -RetentionDays 7
+```azurepowershell
+Enable-AzStorageBlobDeleteRetentionPolicy -ResourceGroupName <resource-group> `
+    -StorageAccountName <storage-account> `
+    -RetentionDays 7
 ```
 
-U kunt controleren of de functie voor voorlopig verwijderen is ingeschakeld met behulp van de volgende opdracht:
+Als u de huidige instellingen voor het voorlopig verwijderen van blobs wilt controleren, roept u de opdracht [Get-AzStorageBlobServiceProperty](/powershell/module/az.storage/get-azstorageblobserviceproperty) :
 
-```powershell
-$MatchingAccounts | $account = Get-AzStorageAccount -ResourceGroupName myresourcegroup -Name storageaccount
-   Get-AzStorageServiceProperty -ServiceType Blob -Context $account.Context | Select-Object -ExpandProperty DeleteRetentionPolicy
-```
-
-Als u blobs wilt herstellen die per ongeluk zijn verwijderd, roept u **dedelete BLOB** aan op deze blobs. Houd er rekening mee dat bij het aanroepen van **undelete BLOB**, zowel op actieve als Soft verwijderde blobs, alle gekoppelde tijdelijke verwijderde moment opnamen worden hersteld als actief. In het volgende voor beeld wordt de **verwijdering van BLOB** op alle voorlopig verwijderde en actieve blobs in een container aangeroepen:
-
-```powershell
-# Create a context by specifying storage account name and key
-$ctx = New-AzStorageContext -StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey
-
-# Get the blobs in a given container and show their properties
-$Blobs = Get-AzStorageBlob -Container $StorageContainerName -Context $ctx -IncludeDeleted
-$Blobs.ICloudBlob.Properties
-
-# Undelete the blobs
-$Blobs.ICloudBlob.Undelete()
-```
-Gebruik de volgende opdracht om het huidige Bewaar beleid voor voorlopig verwijderen te vinden:
-
-```azurepowershell-interactive
-   $account = Get-AzStorageAccount -ResourceGroupName myresourcegroup -Name storageaccount
-   Get-AzStorageServiceProperty -ServiceType Blob -Context $account.Context
+```azurepowershell
+$properties = Get-AzStorageBlobServiceProperty -ResourceGroupName <resource-group> `
+    -StorageAccountName <storage-account>
+$properties.DeleteRetentionPolicy.Enabled
+$properties.DeleteRetentionPolicy.Days
 ```
 
 # <a name="cli"></a>[CLI](#tab/azure-CLI)
 
-Als u zacht verwijderen wilt inschakelen, werkt u de service-eigenschappen van een BLOB-client bij:
+Als u de optie voor het voorlopig verwijderen van blobs wilt inschakelen met Azure CLI, roept u de opdracht [AZ Storage account BLOB-Service-Properties update](/cli/azure/ext/storage-blob-preview/storage/account/blob-service-properties#ext_storage_blob_preview_az_storage_account_blob_service_properties_update) aan, waarbij u de Bewaar periode in dagen opgeeft.
+
+In het volgende voor beeld wordt de optie voor het voorlopig verwijderen van BLOB ingeschakeld en wordt de Bewaar periode ingesteld op zeven dagen. Vergeet niet om de waarden van de tijdelijke aanduidingen tussen vier Kante haken te vervangen door uw eigen waarden:
 
 ```azurecli-interactive
-az storage blob service-properties delete-policy update --days-retained 7  --account-name mystorageaccount --enable true
+az storage account blob-service-properties update --account-name <storage-account> \
+    --resource-group <resource-group> \
+    --enable-delete-retention true \
+    --delete-retention-days 7
 ```
 
-Als u wilt controleren of zacht verwijderen is ingeschakeld, gebruikt u de volgende opdracht: 
+Als u de huidige instellingen voor het voorlopig verwijderen van blobs wilt controleren, roept u de opdracht [AZ Storage account BLOB-Service-Properties show](/cli/azure/ext/storage-blob-preview/storage/account/blob-service-properties#ext_storage_blob_preview_az_storage_account_blob_service_properties_show) aan:
 
 ```azurecli-interactive
-az storage blob service-properties delete-policy show --account-name mystorageaccount 
+az storage account blob-service-properties show --account-name <storage-account> \
+    --resource-group <resource-group>
 ```
-
-# <a name="python"></a>[Python](#tab/python)
-
-Als u zacht verwijderen wilt inschakelen, werkt u de service-eigenschappen van een BLOB-client bij:
-
-```python
-# Make the requisite imports
-from azure.storage.blob import BlockBlobService
-from azure.storage.common.models import DeleteRetentionPolicy
-
-# Initialize a block blob service
-block_blob_service = BlockBlobService(
-    account_name='<enter your storage account name>', account_key='<enter your storage account key>')
-
-# Set the blob client's service property settings to enable soft delete
-block_blob_service.set_blob_service_properties(
-    delete_retention_policy=DeleteRetentionPolicy(enabled=True, days=7))
-```
-
-# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
-
-Als u zacht verwijderen wilt inschakelen, werkt u de service-eigenschappen van een BLOB-client bij:
-
-:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/DataProtection.cs" id="Snippet_EnableSoftDelete":::
-
-Als u blobs wilt herstellen die per ongeluk zijn verwijderd, roept u verwijderen ongedaan maken op deze blobs. Houd er rekening mee dat bij het aanroepen van **verwijderen ongedaan** maken, zowel op actieve als Soft verwijderde blobs, alle gekoppelde tijdelijke verwijderde moment opnamen worden hersteld als actief. In het volgende voor beeld wordt de verwijdering van alle voorlopig verwijderde en actieve blobs in een container ongedaan gemaakt:
-
-:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/DataProtection.cs" id="Snippet_RecoverDeletedBlobs":::
-
-Als u wilt herstellen naar een specifieke BLOB-versie, roept u eerst undelete aan voor een BLOB en kopieert u vervolgens de gewenste moment opname over de blob. In het volgende voor beeld wordt een blok-BLOB hersteld naar de meest recent gegenereerde moment opname:
-
-:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/DataProtection.cs" id="Snippet_RecoverSpecificBlobSnapshot":::
-
-# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
-
-Als u zacht verwijderen wilt inschakelen, werkt u de service-eigenschappen van een BLOB-client bij:
-
-```csharp
-// Get the blob client's service property settings
-ServiceProperties serviceProperties = blobClient.GetServiceProperties();
-
-// Configure soft delete
-serviceProperties.DeleteRetentionPolicy.Enabled = true;
-serviceProperties.DeleteRetentionPolicy.RetentionDays = RetentionDays;
-
-// Set the blob client's service property settings
-blobClient.SetServiceProperties(serviceProperties);
-```
-
-Als u blobs wilt herstellen die per ongeluk zijn verwijderd, roept u **dedelete BLOB** aan op deze blobs. Houd er rekening mee dat bij het aanroepen van **undelete BLOB**, zowel op actieve als Soft verwijderde blobs, alle gekoppelde tijdelijke verwijderde moment opnamen worden hersteld als actief. In het volgende voor beeld wordt de **verwijdering van BLOB** op alle voorlopig verwijderde en actieve blobs in een container aangeroepen:
-
-```csharp
-// Recover all blobs in a container
-foreach (CloudBlob blob in container.ListBlobs(useFlatBlobListing: true, blobListingDetails: BlobListingDetails.Deleted))
-{
-       await blob.UndeleteAsync();
-}
-```
-
-Als u wilt herstellen naar een specifieke BLOB-versie, roept u eerst de bewerking voor het verwijderen van de **BLOB** aan en kopieert u de gewenste moment opname over de blob. In het volgende voor beeld wordt een blok-BLOB hersteld naar de meest recent gegenereerde moment opname:
-
-```csharp
-// Undelete
-await blockBlob.UndeleteAsync();
-
-// List all blobs and snapshots in the container prefixed by the blob name
-IEnumerable<IListBlobItem> allBlobVersions = container.ListBlobs(
-    prefix: blockBlob.Name, useFlatBlobListing: true, blobListingDetails: BlobListingDetails.Snapshots);
-
-// Restore the most recently generated snapshot to the active blob
-CloudBlockBlob copySource = allBlobVersions.First(version => ((CloudBlockBlob)version).IsSnapshot &&
-    ((CloudBlockBlob)version).Name == blockBlob.Name) as CloudBlockBlob;
-blockBlob.StartCopy(copySource);
-```  
 
 ---
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Voorlopig verwijderen voor Blob Storage](./soft-delete-blob-overview.md)
-- [BLOB-versie beheer](versioning-overview.md)
+- [Blobs voorlopig verwijderen](soft-delete-blob-overview.md)
+- [Tijdelijke verwijderde blobs beheren en herstellen](soft-delete-blob-manage.md)

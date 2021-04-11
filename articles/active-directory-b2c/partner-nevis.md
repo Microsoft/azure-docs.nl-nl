@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 11/23/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 282ec6a25dc381dc51f28534d272bae57d2e792e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b8e72cab6d6220b71e93550eec7649752201180a
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98674990"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107256579"
 ---
 # <a name="tutorial-to-configure-nevis-with-azure-active-directory-b2c-for-passwordless-authentication"></a>Zelf studie voor het configureren van Nevis met Azure Active Directory B2C voor verificatie zonder wacht woord
 
@@ -32,7 +32,7 @@ Om aan de slag te gaan, hebt u het volgende nodig:
 
 - Een [Azure AD B2C-Tenant](./tutorial-create-tenant.md) die is gekoppeld aan uw Azure-abonnement.
 
-- Geconfigureerde Azure AD B2C-omgeving voor het gebruik van [aangepast beleid](./custom-policy-get-started.md), als u Nevis wilt integreren in uw aanmeldings beleids stroom.
+- Geconfigureerde Azure AD B2C-omgeving voor het gebruik van [aangepast beleid](./tutorial-create-user-flows.md?pivots=b2c-custom-policy), als u Nevis wilt integreren in uw aanmeldings beleids stroom.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
@@ -270,4 +270,4 @@ Raadpleeg de volgende artikelen voor meer informatie
 
 - [Aangepast beleid in Azure AD B2C](./custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md?tabs=applications)
+- [Aan de slag met aangepast beleid in Azure AD B2C](tutorial-create-user-flows.md?pivots=b2c-custom-policy)

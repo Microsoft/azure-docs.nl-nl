@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 05/25/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 261dceb70a6059c76dbe3bd1d7636eee5d9d77bc
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 5037450d401153811899b8d769ca92af7ce4068e
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105936288"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107103773"
 ---
 # <a name="use-the-azure-digital-twins-cli"></a>De Azure Digital Twins-CLI gebruiken
 
@@ -25,7 +25,7 @@ Naast het beheren van uw Azure Digital Apparaatdubbels-exemplaar in de Azure Por
 * [Routes](concepts-route-events.md) beheren
 * [Beveiliging](concepts-security.md) configureren via Azure op rollen gebaseerd toegangs beheer (Azure RBAC)
 
-De opdrachtset heet **AZ DT** en maakt deel uit van de [Azure IOT-extensie voor Azure cli](https://github.com/Azure/azure-iot-cli-extension). U kunt de volledige lijst met opdrachten en hun gebruik weer geven als onderdeel van de referentie documentatie voor de `az iot` opdrachtset: [ *AZ DT* opdracht verwijzing](/cli/azure/ext/azure-iot/dt).
+De opdrachtset heet **AZ DT** en maakt deel uit van de [Azure IOT-extensie voor Azure cli](https://github.com/Azure/azure-iot-cli-extension). U kunt de volledige lijst met opdrachten en hun gebruik weer geven als onderdeel van de referentie documentatie voor de `az iot` opdrachtset: [ *AZ DT* opdracht verwijzing](/cli/azure/dt).
 
 ## <a name="uses-deploy-and-validate"></a>Gebruikt (implementeren en valideren)
 
@@ -61,4 +61,4 @@ az extension add --upgrade -n azure-iot
 ## <a name="next-steps"></a>Volgende stappen
 
 Verken de CLI en de volledige set opdrachten via de referentie documenten:
-* [*AZ DT* -opdracht verwijzing](/cli/azure/ext/azure-iot/dt)
+* [*AZ DT* -opdracht verwijzing](/cli/azure/dt)

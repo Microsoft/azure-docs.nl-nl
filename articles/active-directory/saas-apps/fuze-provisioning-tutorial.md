@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 07/26/2019
+ms.date: 04/05/2021
 ms.author: zhchia
-ms.openlocfilehash: 2fcb85b2c16bc2dd418c2260420733dd8663382a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 809b32fcf6f39ba9dec2980a79e8824e282b54b7
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96179249"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106450086"
 ---
 # <a name="tutorial-configure-fuze-for-automatic-user-provisioning"></a>Zelfstudie: Fuze configureren voor automatische gebruikersinrichting
 
@@ -144,6 +144,7 @@ Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om u
 ## <a name="connector-limitations"></a>Connectorbeperkingen
 
 * Fuze ondersteunt aangepaste SCIM-kenmerken met de naam **Entitlements**. Deze kenmerken kunnen alleen worden gemaakt en niet worden bijgewerkt. 
+* De Fuze SCIM-API biedt geen ondersteuning voor filteren op het kenmerk userName. Als gevolg hiervan kunnen er fouten in de logboeken optreden bij het synchroniseren van een bestaande gebruiker die geen kenmerk userName heeft, maar wel met een e-mail bericht dat overeenkomt met de userPrincipalName in azure AD. 
 
 ## <a name="change-log"></a>Wijzigingenlogboek
 

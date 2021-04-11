@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, az-logic-apps-dev
 ms.topic: conceptual
-ms.date: 03/08/2021
-ms.openlocfilehash: f7f8082cc9120345336610d5cb49741140d3b606
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 03/30/2021
+ms.openlocfilehash: 491d5f14cc8f456d228a5bc6efaa6686575979c1
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102557009"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106078737"
 ---
 # <a name="create-stateful-and-stateless-workflows-in-visual-studio-code-with-the-azure-logic-apps-preview-extension"></a>Stateful en stateless werk stromen maken in Visual Studio code met de extensie Azure Logic Apps (preview)
 
@@ -101,8 +101,8 @@ Voer de volgende stappen uit om een Azure Storage-account te maken en in te stel
 1. Sla de connection string op een veilige plek op. Nadat u uw Logic app-project in Visual Studio code hebt gemaakt, moet u de teken reeks toevoegen aan de **local.settings.jsvoor** het bestand in de hoofdmap van uw project.
 
    > [!IMPORTANT]
-   > Als u van plan bent om te implementeren op een docker-container, moet u deze connection string ook toevoegen aan het docker-bestand dat u voor de implementatie gebruikt.
-
+   > Als u van plan bent om te implementeren op een docker-container, moet u deze connection string ook gebruiken met het docker-bestand dat u voor de implementatie gebruikt. Voor productie scenario's moet u ervoor zorgen dat u deze geheimen en gevoelige informatie beveiligt en beveiligt, bijvoorbeeld door gebruik te maken van een sleutel kluis.
+  
 ### <a name="tools"></a>Hulpprogramma's
 
 * [Visual Studio code 1.30.1 (januari 2019) of hoger](https://code.visualstudio.com/). Dit is gratis. Down load en installeer ook deze hulpprogram ma's voor Visual Studio code, als u deze nog niet hebt:
@@ -304,6 +304,9 @@ Voordat u uw logische app kunt maken, moet u een lokaal project maken, zodat u u
          }
       }
       ```
+
+      > [!IMPORTANT]
+      > Voor productie scenario's moet u ervoor zorgen dat u deze geheimen en gevoelige informatie beveiligt en beveiligt, bijvoorbeeld door gebruik te maken van een sleutel kluis.
 
    1. Wanneer u klaar bent, moet u ervoor zorgen dat u de wijzigingen opslaat.
 
@@ -652,7 +655,7 @@ Als u uw logische app wilt testen, voert u de volgende stappen uit om een foutop
 
    ![Scherm afbeelding van de overzichts pagina van de werk stroom met de status en geschiedenis van de uitvoering](./media/create-stateful-stateless-workflows-visual-studio-code/post-trigger-call.png)
 
-   | Uitvoerings status | Beschrijving |
+   | Uitvoerings status | Description |
    |------------|-------------|
    | **Aborted** | De uitvoering is gestopt of niet voltooid vanwege externe problemen, bijvoorbeeld een systeem storing of een vervallen Azure-abonnement. |
    | **Gevraagd** | De uitvoering is geactiveerd en gestart, maar er is een annulerings aanvraag ontvangen. |
@@ -676,7 +679,7 @@ Als u uw logische app wilt testen, voert u de volgende stappen uit om een foutop
 
    Hier volgen de mogelijke statussen die elke stap in de werk stroom kan hebben:
 
-   | Actie status | Pictogram | Beschrijving |
+   | Actie status | Pictogram | Description |
    |---------------|------|-------------|
    | **Aborted** | ![Pictogram voor de actie status ' afgebroken '][aborted-icon] | De actie is gestopt of niet voltooid vanwege externe problemen, bijvoorbeeld een systeem storing of een vervallen Azure-abonnement. |
    | **Gevraagd** | ![Pictogram voor de actie status geannuleerd][cancelled-icon] | De actie is uitgevoerd, maar er is een aanvraag ontvangen om te annuleren. |
@@ -1205,7 +1208,10 @@ Als u niet bekend bent met docker, raadpleegt u de volgende onderwerpen:
 
 * Een docker-bestand voor de werk stroom die u gebruikt bij het bouwen van uw docker-container
 
-  Dit voor beeld van een docker-bestand implementeert bijvoorbeeld een logische app. Hiermee geeft u de connection string op die de toegangs sleutel bevat voor het Azure Storage account dat is gebruikt voor het publiceren van de logische app naar de Azure Portal. Zie [opslag account ophalen Connection String](#find-storage-account-connection-string)om deze teken reeks te vinden.
+  Dit voor beeld van een docker-bestand implementeert bijvoorbeeld een logische app en specificeert de connection string die de toegangs sleutel bevat voor het Azure Storage account dat is gebruikt voor het publiceren van de logische app naar de Azure Portal. Zie [opslag account ophalen Connection String](#find-storage-account-connection-string)om deze teken reeks te vinden. Raadpleeg [Aanbevolen procedures voor het schrijven van docker-bestanden](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)voor meer informatie.
+  
+  > [!IMPORTANT]
+  > Voor productie scenario's moet u ervoor zorgen dat u deze geheimen en gevoelige informatie beveiligt en beveiligt, bijvoorbeeld door gebruik te maken van een sleutel kluis. Voor docker-bestanden raadpleegt u [installatie kopieën bouwen met BuildKit](https://docs.docker.com/develop/develop-images/build_enhancements/) en [gevoelige gegevens beheren met docker-geheimen](https://docs.docker.com/engine/swarm/secrets/).
 
    ```text
    FROM mcr.microsoft.com/azure-functions/node:3.0
@@ -1219,8 +1225,6 @@ Als u niet bekend bent met docker, raadpleegt u de volgende onderwerpen:
 
    RUN cd /home/site/wwwroot
    ```
-
-   Zie [Aanbevolen procedures voor het schrijven van docker-bestanden](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) voor meer informatie.
 
 <a name="find-storage-account-connection-string"></a>
 

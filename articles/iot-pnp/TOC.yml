@@ -44,7 +44,7 @@
     - name: Digitale tweelingen
       href: concepts-digital-twin.md
     - name: Apparaatcertificering
-      href: concepts-certification-program.md
+      href: ../certification/program-requirements-pnp.md
     - name: Modelopslagplaats
       href: concepts-model-repository.md
     - name: Modellen gebruiken in een oplossing
@@ -61,8 +61,6 @@
       href: howto-use-embedded-c.md
     - name: Digitale tweelingen beheren
       href: howto-manage-digital-twin.md
-    - name: Een apparaat certificeren
-      href: howto-certify-device.md
     - name: Een voor beeld van een IoT Plug en Play-brug verbinden
       href: howto-use-iot-pnp-bridge.md
     - name: IoT Plug en Play-brug bouwen en implementeren

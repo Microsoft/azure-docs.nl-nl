@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 01/11/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 5e0125f14570e917b228c5f713e636335755581d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0629606f602b975b399855a681570ecdac9ec832
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105024265"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107256817"
 ---
 # <a name="azure-active-directory-b2c-isv-partners"></a>Azure Active Directory B2C ISV-partners
 
@@ -77,7 +77,7 @@ Micro soft-partners met de volgende Isv's voor beveiliging.
 
 - [Aangepast beleid in Azure AD B2C](./custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md?tabs=applications)
+- [Aan de slag met aangepast beleid in Azure AD B2C](tutorial-create-user-flows.md?pivots=b2c-custom-policy)
 
 ## <a name="next-steps"></a>Volgende stappen
 

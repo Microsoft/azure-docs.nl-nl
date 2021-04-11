@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 9a878dc5cdbbe336e7279d0cd919bd17cd42d0e8
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: e1b7e091fe09bc2c093cc84473bd07917347f26d
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105728212"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106220786"
 ---
 # <a name="communication-services-notifications"></a>Communication Services-meldingen
 
@@ -67,13 +67,24 @@ armclient POST /subscriptions/<sub_id>/resourceGroups/<resource_group>/providers
 
 #### <a name="using-the-azure-portal-to-link-your-notification-hub"></a>Azure Portal gebruiken om de Notification Hub te koppelen
 
-Navigeer in het portaal naar uw Azure Communication Services-resource. Selecteer in de Communication Services-resource push meldingen in het menu links van de pagina Communication Services en koppel de Notification Hub die u eerder hebt ingericht. U moet uw verbindingsreeks en resourceId hier opgeven:
+1. Ga in de portal naar uw Azure Communication Services-resource.
 
-:::image type="content" source="./media/notifications/acs-anh-portal-int.png" alt-text="Schermopname met de instellingen voor pushmeldingen in Azure Portal.":::
+1. Selecteer in de communicatie Services-resource **Push meldingen** in het menu links van de pagina communicatie Services en verbind de notification hub die u eerder hebt ingericht.
+
+1. Selecteer **Notification hub verbinden**. U ziet een lijst met Notification hubs die beschikbaar zijn om verbinding te maken.
+ 
+1. Selecteer de notification hub die u voor deze resource wilt gebruiken.
+ 
+   - Als u een nieuwe hub wilt maken, selecteert u **nieuwe notification hub maken** om een nieuwe hub te verkrijgen die is ingericht voor deze bron.
+
+   :::image type="content" source="./media/notifications/acs-anh-portal-int.png" alt-text="Schermopname met de instellingen voor pushmeldingen in Azure Portal.":::
+
+Nu ziet u de notification hub die u aan de verbonden status hebt gekoppeld.
+
+Als u een andere hub voor de resource wilt gebruiken, selecteert u **verbinding verbreken** en herhaalt u de stappen om de andere notification hub te koppelen.
 
 > [!NOTE]
-> Als de Azure Notification Hub-verbindingsreeks wordt bijgewerkt, moet de Azure Communication Services-resource ook worden bijgewerkt.
-Eventuele wijzigingen in de manier waarop de hub is gekoppeld, worden weergegeven in het gegevensvlak (d.w.z. bij het verzenden van een melding) binnen een maximum periode van ``10`` minuten. Dit is ook van toepassing wanneer de hub is gekoppeld voor de eerste keer **als** er eerder meldingen zijn verzonden.
+> Wijzigingen in de manier waarop de hub is gekoppeld, worden weer gegeven in het gegevens vlak (dat wil zeggen, wanneer een melding wordt verzonden) binnen een maximum periode van tien minuten. Dit geldt ook wanneer de hub voor de eerste keer wordt gekoppeld, **als er** meldingen voor de wijziging zijn verzonden.
 
 ### <a name="device-registration"></a>Apparaatregistratie
 

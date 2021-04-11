@@ -6,15 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 03/23/2021
+ms.date: 03/30/2021
 ms.author: alkohli
-Customer intent: As an IT admin, I need to understand how to manage network interfaces on an Azure Stack Edge Pro device so that I can use it to run applications using Edge compute before sending it to Azure.
-ms.openlocfilehash: 84077f174fabd02afcd5171e8d365e8cbd3a52c2
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3e709b04b4eac60e6cc0ba3e53eb77583162dfef
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105027652"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106078890"
 ---
 # <a name="use-the-azure-portal-to-manage-network-interfaces-on-the-vms-on-your-azure-stack-edge-pro-gpu"></a>Gebruik de Azure Portal om netwerk interfaces op de virtuele machines op uw Azure Stack Edge Pro GPU te beheren
 
@@ -40,7 +39,7 @@ Uw apparaat ondersteunt slechts één virtuele switch maar meerdere virtuele net
 
 Voordat u begint met het beheren van virtuele machines op uw apparaat via de Azure Portal, moet u ervoor zorgen dat:
 
-1. U hebt een netwerk interface ingeschakeld voor Compute op het apparaat. Met deze actie maakt u een virtuele switch op de netwerk interface van de virtuele machine. 
+1. U hebt toegang tot een geactiveerd Azure Stack Edge Pro GPU-apparaat. U hebt een netwerk interface ingeschakeld voor Compute op het apparaat. Met deze actie maakt u een virtuele switch op de netwerk interface van de virtuele machine. 
     1. Ga in de lokale gebruikers interface van uw apparaat naar **Compute**. Selecteer de netwerkinterface die u wilt gebruiken om een virtuele switch te maken.
 
         > [!IMPORTANT] 

@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.date: 07/22/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 5f408699cae9580188a3780fc8f8654eaa97c26b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 362704368958d2600d16cd907421917b824a59cb
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97108430"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107256596"
 ---
 # <a name="tutorial-for-configuring-lexisnexis-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van LexisNexis met Azure Active Directory B2C
 
@@ -122,7 +122,7 @@ Ga in het meegeleverde [TrustFrameworkExtensions-beleid](https://github.com/azur
 
 ### <a name="part-7---configure-the-azure-ad-b2c-policy"></a>Deel 7: het Azure AD B2C-beleid configureren
 
-Raadpleeg dit [document](./custom-policy-get-started.md?tabs=applications#custom-policy-starter-pack) om [Local accounts Starter Pack](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/LocalAccounts) te downloaden en configureer het [beleid](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/ThreatMetrix/policy) voor de Azure AD B2C Tenant.
+Raadpleeg dit [document](tutorial-create-user-flows.md?pivots=b2c-custom-policy#custom-policy-starter-pack) om [Local accounts Starter Pack](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/LocalAccounts) te downloaden en configureer het [beleid](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/ThreatMetrix/policy) voor de Azure AD B2C Tenant.
 
 >[!NOTE]
 >Werk het opgegeven beleid bij om te koppelen aan uw specifieke Tenant.
@@ -155,4 +155,4 @@ Raadpleeg de volgende artikelen voor meer informatie:
 
 - [Aangepast beleid in Azure AD B2C](./custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md?tabs=applications)
+- [Aan de slag met aangepast beleid in Azure AD B2C](tutorial-create-user-flows.md?pivots=b2c-custom-policy)

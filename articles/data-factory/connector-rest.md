@@ -6,12 +6,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 03/16/2021
 ms.author: jingwang
-ms.openlocfilehash: 6d9bb17e0e68c563c6d8cc18669d8c298d4f267b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 779a8745688e6a1fb8a15bc9119c6fbc1803ca2c
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104951824"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106078924"
 ---
 # <a name="copy-data-from-and-to-a-rest-endpoint-by-using-azure-data-factory"></a>Gegevens kopiëren van en naar een REST-eind punt met behulp van Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -495,7 +495,7 @@ De sjabloon definieert twee para meters:
 
     | Eigenschap | Beschrijving |
     |:--- |:--- |
-    | URL |Geef de URL op waarvoor het OAuth Bearer-token moet worden opgehaald. in het voor beeld is dit bijvoorbeeld https://login.microsoftonline.com/microsoft.onmicrosoft.com/oauth2/token |. 
+    | URL |Geef de URL op waarvoor het OAuth Bearer-token moet worden opgehaald. in het voor beeld is dit bijvoorbeeld https://login.microsoftonline.com/microsoft.onmicrosoft.com/oauth2/token |
     | Methode | De HTTP-methode. Toegestane waarden zijn **post** en **Get**. | 
     | Kopteksten | De header is door de gebruiker gedefinieerd, die verwijst naar één header naam in de HTTP-aanvraag. | 
     | Hoofdtekst | De hoofd tekst van de HTTP-aanvraag. | 

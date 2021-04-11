@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 02/26/2021
+ms.date: 03/30/2021
 ms.author: justinha
-ms.openlocfilehash: 8eb1560887c08c3f64fa599c39e5577242d2a1e8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8bcd3ebef027ec72728be21b0fe1504236f553ba
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101689059"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106058167"
 ---
 # <a name="replica-sets-concepts-and-features-for-azure-active-directory-domain-services"></a>Replica sets van concepten en functies voor Azure Active Directory Domain Services
 
@@ -54,7 +54,7 @@ In het volgende voor beeld ziet u een beheerd domein met drie replica sets om ve
 
 De standaard-SKU voor een beheerd domein is de *Enter prise* -SKU, die ondersteuning biedt voor meerdere replica sets. Als u aanvullende replica sets wilt maken als u de *standaard* -SKU hebt gewijzigd, moet u [het beheerde domein upgraden](change-sku.md) naar *Enter prise* of *Premium*.
 
-Het ondersteunde maximum aantal replica sets is vier, met inbegrip van de eerste replica die is gemaakt tijdens het maken van het beheerde domein.
+Het ondersteunde maximum aantal replica sets is vijf, met inbegrip van de eerste replica die is gemaakt tijdens het maken van het beheerde domein.
 
 Facturering voor elke replicaset is gebaseerd op de domein configuratie-SKU. Als u bijvoorbeeld een beheerd domein hebt dat gebruikmaakt van de *Enter prise* -SKU en u drie replica sets hebt, wordt uw abonnement per uur gefactureerd voor elk van de drie replica sets.
 
@@ -66,7 +66,7 @@ Nee. Replica sets moeten zich in hetzelfde abonnement bevallen als het beheerde 
 
 ### <a name="how-many-replica-sets-can-i-create"></a>Hoeveel replica sets kan ik maken?
 
-U kunt Maxi maal vier replica sets maken: de eerste replicaset voor het beheerde domein, plus drie extra replica sets.
+U kunt Maxi maal vijf replica sets maken: de eerste replicaset voor het beheerde domein plus vier extra replica sets.
 
 ### <a name="how-does-user-and-group-information-get-synchronized-to-my-replica-sets"></a>Hoe worden de gebruikers-en groeps gegevens gesynchroniseerd met mijn replica sets?
 

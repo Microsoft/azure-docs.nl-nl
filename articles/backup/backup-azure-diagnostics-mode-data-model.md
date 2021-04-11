@@ -3,12 +3,12 @@ title: Gegevens model van Azure Monitor logboeken
 description: In dit artikel vindt u informatie over de Azure Monitor Log Analytics gegevens model gegevens voor Azure Backup gegevens.
 ms.topic: conceptual
 ms.date: 02/26/2019
-ms.openlocfilehash: 004c5a6c0c2c4dcfcf13134bd5a5143ba647048f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 2682bf0483b38c50e64bf4ec5255c89f931ab0f0
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102500985"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106078907"
 ---
 # <a name="log-analytics-data-model-for-azure-backup-data"></a>Log Analytics gegevens model voor Azure Backup gegevens
 
@@ -199,9 +199,9 @@ Deze tabel bevat details over velden die betrekking hebben op het beleid.
 | MonthlyRetentionDaysOfTheWeek_s |Tekst ||Dagen van de week geselecteerd voor een maandelijkse Bewaar periode |
 | MonthlyRetentionWeeksOfTheMonth_s |Tekst ||Weken van de maand waarin de maandelijkse retentie is geconfigureerd, bijvoorbeeld eerst, laatste |
 | YearlyRetentionDuration_s |Decimaal getal ||Totale Bewaar duur in jaren voor geconfigureerde back-ups |
-| YearlyRetentionTimes_s |Tekst ||De datum en tijd waarop de jaarlijkse Bewaar periode is geconfigureerd |
-| YearlyRetentionMonthsOfTheYear_s |Tekst ||Maanden van het jaar dat is geselecteerd voor een jaarlijkse Bewaar periode |
-| YearlyRetentionFormat_s |Tekst ||Type configuratie voor jaarlijks bewaren, bijvoorbeeld dagelijks voor dag, wekelijks voor op basis van een week | |
+| YearlyRetentionTimes_s |Tekst | | De datum en tijd waarop de jaarlijkse Bewaar periode is geconfigureerd |
+| YearlyRetentionMonthsOfTheYear_s |Tekst | | Maanden van het jaar dat is geselecteerd voor een jaarlijkse Bewaar periode |
+| YearlyRetentionFormat_s |Tekst ||Type configuratie voor jaarlijks bewaren, bijvoorbeeld dagelijks voor dag, wekelijks voor op basis van een week |
 | YearlyRetentionDaysOfTheMonth_s |Tekst ||De datums van de maand die zijn geselecteerd voor een jaarlijkse Bewaar periode |
 | SynchronisationFrequencyPerDay_s |Geheel getal |v2|Aantal keren per dag dat een back-up van een bestand wordt gesynchroniseerd voor SC DPM en MABS |
 | DiffBackupFormat_s |Tekst |v2|Indeling voor differentiële back-ups voor SQL in azure VM-back-up |

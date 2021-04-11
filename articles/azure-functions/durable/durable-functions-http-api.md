@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 12/17/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 4e4081ecca4714c713d105d363a83a4f96a0d3fc
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0ab9f33616547c073e8e3a2128a441238bf3a17d
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "84697840"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106220450"
 ---
 # <a name="http-api-reference"></a>HTTP API-verwijzing
 
@@ -128,6 +128,7 @@ GET /admin/extensions/DurableTaskExtension/instances/{instanceId}
     &showHistory=[true|false]
     &showHistoryOutput=[true|false]
     &showInput=[true|false]
+    &returnInternalServerErrorOnFailure=[true|false]
 ```
 
 In versie 2. x van de functions runtime heeft de URL-indeling dezelfde para meters, maar met een iets ander voor voegsel:
@@ -140,6 +141,7 @@ GET /runtime/webhooks/durabletask/instances/{instanceId}
     &showHistory=[true|false]
     &showHistoryOutput=[true|false]
     &showInput=[true|false]
+    &returnInternalServerErrorOnFailure=[true|false]
 ```
 
 Aanvraag parameters voor deze API zijn de standaardset die eerder is vermeld, evenals de volgende unieke para meters:
@@ -153,16 +155,17 @@ Aanvraag parameters voor deze API zijn de standaardset die eerder is vermeld, ev
 | **`createdTimeFrom`**   | Queryreeksen    | Optionele parameter. Hiermee wordt de lijst met geretourneerde exemplaren die zijn gemaakt op of na de opgegeven ISO8601-tijds tempel gefilterd.|
 | **`createdTimeTo`**     | Queryreeksen    | Optionele parameter. Hiermee wordt de lijst met geretourneerde exemplaren die zijn gemaakt op of vóór de opgegeven ISO8601-tijds tempel gefilterd.|
 | **`runtimeStatus`**     | Queryreeksen    | Optionele parameter. Hiermee wordt indien opgegeven de lijst met geretourneerde instanties gefilterd op basis van de runtime status. Zie het artikel [querying instances](durable-functions-instance-management.md) voor een lijst met mogelijke runtime status waarden. |
+| **`returnInternalServerErrorOnFailure`**  | Queryreeksen    | Optionele parameter. Als `true` deze API is ingesteld op, wordt een HTTP 500-antwoord geretourneerd in plaats van een 200 als het exemplaar de status Mislukt heeft. Deze para meter is bedoeld voor automatische status polling scenario's. |
 
 ### <a name="response"></a>Antwoord
 
 Er kunnen verschillende mogelijke status code waarden worden geretourneerd.
 
-* **HTTP 200 (OK)**: het opgegeven exemplaar bevindt zich in de status voltooid.
+* **HTTP 200 (OK)**: het opgegeven exemplaar heeft de status voltooid of mislukt.
 * **HTTP 202 (geaccepteerd)**: het opgegeven exemplaar wordt uitgevoerd.
 * **HTTP 400 (ongeldige aanvraag)**: het opgegeven exemplaar is mislukt of is beëindigd.
 * **HTTP 404 (niet gevonden)**: het opgegeven exemplaar bestaat niet of is niet gestart.
-* **HTTP 500 (interne server fout)**: het opgegeven exemplaar is mislukt vanwege een onverwerkte uitzonde ring.
+* **HTTP 500 (interne server fout)**: retourneert alleen als de `returnInternalServerErrorOnFailure` is ingesteld op `true` en het opgegeven exemplaar is mislukt met een onverwerkte uitzonde ring.
 
 De nettolading van de reactie voor de **http 200-** en **http 202** -CASEs is een JSON-object met de volgende velden:
 

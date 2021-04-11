@@ -4,16 +4,16 @@ description: De nieuwe gegevens export gebruiken om uw IoT-gegevens te exportere
 services: iot-central
 author: viv-liu
 ms.author: viviali
-ms.date: 01/27/2021
+ms.date: 03/24/2021
 ms.topic: how-to
 ms.service: iot-central
 ms.custom: contperf-fy21q1, contperf-fy21q3
-ms.openlocfilehash: 7152012c7c4a342c7491e5f8b835eaede4269c4c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7d57f24f8cb4b59ce9b9cd5853be11fb2d104d75
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100522611"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106277892"
 ---
 # <a name="export-iot-data-to-cloud-destinations-using-data-export"></a>IoT-gegevens exporteren naar Cloud bestemmingen met behulp van gegevens export
 
@@ -24,7 +24,7 @@ In dit artikel wordt beschreven hoe u de nieuwe functie voor gegevens export kun
 
 U kunt bijvoorbeeld:
 
-- Doorlopend telemetrie-gegevens en eigenschaps wijzigingen in de JSON-indeling in vrijwel realtime exporteren.
+- Doorlopend telemetrie, wijzigingen in de eigenschappen, levens cyclus van apparaten en levens cyclus van de Device-sjabloon in de JSON-indeling in vrijwel realtime.
 - Filter de gegevens stromen om gegevens te exporteren die overeenkomen met aangepaste voor waarden.
 - Verrijkt de gegevens stromen met aangepaste waarden en eigenschaps waarden van het apparaat.
 - De gegevens verzenden naar bestemmingen zoals Azure Event Hubs, Azure Service Bus, Azure Blob Storage en webhook-eind punten.
@@ -133,21 +133,19 @@ Nu u een bestemming hebt voor het exporteren van uw gegevens naar, moet u de geg
     | :------------- | :---------- | :----------- |
     |  Telemetrie | Telemetrie-berichten van apparaten in bijna realtime exporteren. Elk geëxporteerd bericht bevat de volledige inhoud van het bericht van het oorspronkelijke apparaat, genormaliseerd.   |  [Indeling voor telemetrie-berichten](#telemetry-format)   |
     | Eigenschaps wijzigingen | Wijzigingen in de eigenschappen van het apparaat en de cloud in bijna realtime exporteren. Wijzigingen in de gerapporteerde waarden worden geëxporteerd voor eigenschappen van alleen-lezen apparaten. Voor eigenschappen voor lezen/schrijven worden zowel gerapporteerde als de gewenste waarden geëxporteerd. | [Bericht indeling voor wijzigen van eigenschap](#property-changes-format) |
+    | Levenscyclus van apparaten | Geregistreerde en verwijderde gebeurtenissen van het apparaat exporteren. | [Bericht indeling van levens cyclus van apparaat](#device-lifecycle-changes-format) |
+    | Levens cyclus van Device-sjabloon | De wijzigingen in de sjabloon van het gepubliceerde apparaat exporteren, inclusief het gemaakte, bijgewerkte en verwijderde. | [Bericht indeling levens duur van sjabloon wijzigen](#device-template-lifecycle-changes-format) | 
 
-<a name="DataExportFilters"></a>
-1. Voeg eventueel filters toe om de hoeveelheid geëxporteerde gegevens te verminderen. Er zijn verschillende typen filters beschikbaar voor elk type gegevens export:
-
-    Als u telemetrie wilt filteren, kunt u het volgende doen:
-
-    - **Filter** de geëxporteerde stroom zodanig dat deze alleen telemetrie bevat van apparaten die overeenkomen met de apparaatnaam, de apparaat-id en de filter voorwaarde voor de Apparaatbeheer.
-    - Mogelijkheden **filteren** : als u een telemetrie-item in de vervolg keuzelijst **naam** kiest, bevat de geëxporteerde stroom alleen telemetriegegevens die voldoen aan de filter voorwaarde. Als u een apparaat-of Cloud eigenschaps item in de vervolg keuzelijst **naam** kiest, bevat de geëxporteerde stroom alleen telemetrie van apparaten met eigenschappen die overeenkomen met de filter voorwaarde.
-    - **Filter voor bericht eigenschappen**: apparaten die gebruikmaken van de apparaat-sdk's kunnen *bericht eigenschappen* of *toepassings eigenschappen* voor elk telemetrie-bericht verzenden. De eigenschappen zijn een verzameling sleutel-waardeparen die het bericht labelen met aangepaste id's. Als u een bericht eigenschaps filter wilt maken, voert u de bericht eigenschap sleutel in die u zoekt en geeft u een voor waarde op. Alleen telemetrie-berichten met eigenschappen die overeenkomen met de opgegeven filter voorwaarde, worden geëxporteerd. De volgende teken reeks vergelijkings operatoren worden ondersteund: is gelijk aan, is niet gelijk aan, bevat, niet bevat, bestaat niet. Meer [informatie over toepassings eigenschappen van IOT hub docs](../../iot-hub/iot-hub-devguide-messages-construct.md).
-
-    Als u de wijzigingen wilt filteren op Eigenschappen, gebruikt u een **functie filter**. Kies een eigenschaps item in de vervolg keuzelijst. De geëxporteerde stroom bevat alleen wijzigingen in de geselecteerde eigenschap die voldoen aan de filter voorwaarde.
-
-<a name="DataExportEnrichmnents"></a>
-1. Eventueel verrijkte geëxporteerde berichten met aanvullende meta gegevens van het sleutel/waarde-paar. De volgende verrijkingen zijn beschikbaar voor de gegevens export typen telemetrie en eigenschaps wijzigingen:
-
+1. Voeg eventueel filters toe om de hoeveelheid geëxporteerde gegevens te verminderen. Er zijn verschillende typen filters beschikbaar voor elk type gegevens export: <a name="DataExportFilters"></a>
+    
+    | Type gegevens | Beschik bare filters| 
+    |--------------|------------------|
+    |Telemetrie|<ul><li>Filteren op apparaatnaam, apparaat-ID en apparaatprofiel</li><li>Filter stroom alleen telemetrie bevatten die voldoet aan de filter voorwaarden</li><li>Filter stroom alleen telemetrie van apparaten met eigenschappen die overeenkomen met de filter voorwaarden</li><li>Filter stroom alleen telemetrie met *bericht eigenschappen* die voldoen aan de filter voorwaarde. *Bericht eigenschappen* (ook wel eigenschappen van de *toepassing* genoemd) worden verzonden in een verzameling sleutel-waardeparen op elke telemetrie-bericht, eventueel verzonden door apparaten die gebruikmaken van de apparaat-sdk's. Als u een bericht eigenschaps filter wilt maken, voert u de bericht eigenschap sleutel in die u zoekt en geeft u een voor waarde op. Alleen telemetrie-berichten met eigenschappen die overeenkomen met de opgegeven filter voorwaarde, worden geëxporteerd. [Meer informatie over toepassings eigenschappen uit IoT Hub docs](../../iot-hub/iot-hub-devguide-messages-construct.md) </li></ul>|
+    |Eigenschaps wijzigingen|<ul><li>Filteren op apparaatnaam, apparaat-ID en apparaatprofiel</li><li>Filter stroom om alleen eigenschappen wijzigingen te bevatten die voldoen aan de filter voorwaarden</li></ul>|
+    |Levenscyclus van apparaten|<ul><li>Filteren op apparaatnaam, apparaat-ID en apparaatprofiel</li><li>De stroom filteren om alleen wijzigingen te bevatten van apparaten met eigenschappen die overeenkomen met de filter voorwaarden</li></ul>|
+    |Levens cyclus van Device-sjabloon|<ul><li>Filteren op apparaatprofiel</li></ul>|
+    
+1. Eventueel verrijkte geëxporteerde berichten met aanvullende meta gegevens van het sleutel/waarde-paar. De volgende verrijkingen zijn beschikbaar voor de gegevens export typen telemetrie en eigenschaps wijzigingen: <a name="DataExportEnrichmnents"></a>
     - **Aangepaste teken reeks**: Hiermee voegt u een aangepaste statische teken reeks aan elk bericht toe. Voer een sleutel in en voer een wille keurige teken reeks waarde in.
     - **Eigenschap**: Hiermee wordt de huidige waarde van de eigenschap voor het apparaat of de eigenschap van de cloud aan elk bericht toegevoegd. Voer een wille keurige sleutel in en kies een apparaat-of Cloud eigenschap. Als het geëxporteerde bericht afkomstig is van een apparaat dat niet de opgegeven eigenschap heeft, wordt de verrijking niet door het geëxporteerde bericht opgehaald.
 
@@ -207,6 +205,7 @@ Elk geëxporteerd bericht bevat een genormaliseerde vorm van het volledige beric
 - `deviceId`: De ID van het apparaat dat het telemetrie-bericht heeft verzonden.
 - `schema`: De naam en versie van het payload-schema.
 - `templateId`: De ID van de Device-sjabloon die aan het apparaat is gekoppeld.
+- `enqueuedTime`: De tijd waarop dit bericht is ontvangen door IoT Central.
 - `enrichments`: Eventuele verrijkingen die zijn ingesteld voor de export.
 - `messageProperties`: Extra eigenschappen die het apparaat met het bericht heeft verzonden. Deze eigenschappen worden ook wel *toepassings eigenschappen* genoemd. [Meer informatie over IOT hub docs](../../iot-hub/iot-hub-devguide-messages-construct.md).
 
@@ -349,6 +348,7 @@ Elk bericht of record vertegenwoordigt een wijziging van een apparaat of Cloud e
 - `messageType`: Ofwel `cloudPropertyChange` , `devicePropertyDesiredChange` of `devicePropertyReportedChange` .
 - `deviceId`: De ID van het apparaat dat het telemetrie-bericht heeft verzonden.
 - `schema`: De naam en versie van het payload-schema.
+- `enqueuedTime`: Het tijdstip waarop deze wijziging is gedetecteerd door IoT Central.
 - `templateId`: De ID van de Device-sjabloon die aan het apparaat is gekoppeld.
 - `enrichments`: Eventuele verrijkingen die zijn ingesteld voor de export.
 
@@ -377,13 +377,78 @@ In het volgende voor beeld ziet u het wijzigings bericht voor een geëxporteerde
 }
 ```
 
+## <a name="device-lifecycle-changes-format"></a>Indeling van levens cyclus van apparaat wijzigen
+
+Elk bericht of record vertegenwoordigt één wijziging aan één apparaat. De informatie in het geëxporteerde bericht bevat het volgende:
+
+- `applicationId`: De ID van de IoT Central-toepassing.
+- `messageSource`: De bron voor het bericht- `deviceLifecycle` .
+- `messageType`: Ofwel `registered` of `deleted` .
+- `deviceId`: De ID van het apparaat dat is gewijzigd.
+- `schema`: De naam en versie van het payload-schema.
+- `templateId`: De ID van de Device-sjabloon die aan het apparaat is gekoppeld.
+- `enqueuedTime`: Het tijdstip waarop deze wijziging heeft plaatsgevonden in IoT Central.
+- `enrichments`: Eventuele verrijkingen die zijn ingesteld voor de export.
+
+IoT Central exporteert voor Event Hubs en Service Bus nieuwe bericht gegevens naar uw Event Hub-of Service Bus-wachtrij of-onderwerp in bijna realtime. In de gebruikers eigenschappen (ook wel toepassings eigenschappen genoemd) van elk bericht, de `iotcentral-device-id` ,, `iotcentral-application-id` en `iotcentral-message-source` `iotcentral-message-type` worden automatisch opgenomen.
+
+Voor Blob-opslag worden berichten per minuut in batch verzonden en geëxporteerd.
+
+In het volgende voor beeld ziet u een geëxporteerd levenscyclus bericht voor een apparaat dat is ontvangen in Azure Blob Storage.
+
+```json
+{
+  "applicationId": "1dffa667-9bee-4f16-b243-25ad4151475e",
+  "messageSource": "deviceLifecycle",
+  "messageType": "registered",
+  "deviceId": "1vzb5ghlsg1",
+  "schema": "default@v1",
+  "templateId": "urn:qugj6vbw5:___qbj_27r",
+  "enqueuedTime": "2021-01-01T22:26:55.455Z",
+  "enrichments": {
+    "userSpecifiedKey": "sampleValue"
+  }
+}
+```
+## <a name="device-template-lifecycle-changes-format"></a>Indeling van levens duur van Device Temp late gewijzigd
+
+Elk bericht of record vertegenwoordigt één wijziging in één sjabloon voor een gepubliceerd apparaat. De informatie in het geëxporteerde bericht bevat het volgende:
+
+- `applicationId`: De ID van de IoT Central-toepassing.
+- `messageSource`: De bron voor het bericht- `deviceTemplateLifecycle` .
+- `messageType`: Ofwel `created` , `updated` of `deleted` .
+- `schema`: De naam en versie van het payload-schema.
+- `templateId`: De ID van de Device-sjabloon die aan het apparaat is gekoppeld.
+- `enqueuedTime`: Het tijdstip waarop deze wijziging heeft plaatsgevonden in IoT Central.
+- `enrichments`: Eventuele verrijkingen die zijn ingesteld voor de export.
+
+IoT Central exporteert voor Event Hubs en Service Bus nieuwe bericht gegevens naar uw Event Hub-of Service Bus-wachtrij of-onderwerp in bijna realtime. In de gebruikers eigenschappen (ook wel toepassings eigenschappen genoemd) van elk bericht, de `iotcentral-device-id` ,, `iotcentral-application-id` en `iotcentral-message-source` `iotcentral-message-type` worden automatisch opgenomen.
+
+Voor Blob-opslag worden berichten per minuut in batch verzonden en geëxporteerd.
+
+In het volgende voor beeld ziet u een geëxporteerd levenscyclus bericht voor een apparaat dat is ontvangen in Azure Blob Storage.
+
+```json
+{
+  "applicationId": "1dffa667-9bee-4f16-b243-25ad4151475e",
+  "messageSource": "deviceTemplateLifecycle",
+  "messageType": "created",
+  "schema": "default@v1",
+  "templateId": "urn:qugj6vbw5:___qbj_27r",
+  "enqueuedTime": "2021-01-01T22:26:55.455Z",
+  "enrichments": {
+    "userSpecifiedKey": "sampleValue"
+  }
+}
+```
+
 ## <a name="comparison-of-legacy-data-export-and-data-export"></a>Vergelijking van verouderde gegevens export en gegevens export
 
 In de volgende tabel ziet u de verschillen tussen de [verouderde gegevens export](howto-export-data-legacy.md) en de nieuwe functies voor gegevens export:
 
 | Functies  | Verouderde gegevens export | Nieuwe gegevens export |
 | :------------- | :---------- | :----------- |
-| Beschik bare gegevens typen | Telemetrie, apparaten, apparaatprofielen | Telemetrie, eigenschaps wijzigingen |
+| Beschik bare gegevens typen | Telemetrie, apparaten, apparaatprofielen | Telemetrie, wijzigingen in de eigenschappen, wijzigingen in de levens duur van apparaten, levens duur van de Device-sjabloon |
 | Filteren | Geen | Is afhankelijk van het geëxporteerde gegevens type. Filteren op telemetrie, bericht eigenschappen, eigenschaps waarden |
 | Verrijken | Geen | Verrijken met een aangepaste teken reeks of een eigenschaps waarde op het apparaat |
 | Bestemmingen | Azure Event Hubs, Azure Service Bus wacht rijen en onderwerpen, Azure Blob Storage | Hetzelfde als voor verouderde gegevens export plus webhooks|

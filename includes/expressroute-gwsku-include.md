@@ -2,23 +2,25 @@
 title: bestand opnemen
 description: bestand opnemen
 services: expressroute
-author: cherylmc
+author: duongau
 ms.service: expressroute
 ms.topic: include
-ms.date: 03/22/2018
-ms.author: cherylmc
+ms.date: 04/05/2021
+ms.author: duau
 ms.custom: include file
-ms.openlocfilehash: bf526ebeebb18e22f133383e7956d68584db2486
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 27f5755ce8b7d204cad6cdc2281d7992bf86615a
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "67176569"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106504677"
 ---
 Wanneer u een virtuele netwerkgateway maakt, moet u de gewenste gateway-SKU opgeven. Wanneer u een hogere gateway-SKU selecteert, wordt meer CPU en bandbreedte van het netwerk toegewezen aan de gateway. Daardoor kan de gateway hogere netwerkdoorvoer aan het virtuele netwerk ondersteunen. 
 
-Virtuele ExpressRoute-netwerkgateways kunnen de volgende SKU's gebruiken: 
+Virtuele ExpressRoute-netwerkgateways kunnen de volgende SKU's gebruiken:
 
-* Standard
-* HighPerformance
-* UltraPerformance
+|     | VPN-gateway en ExpressRoute bestaan tegelijk | FastPath | Maximum aantal circuit verbindingen |
+| --- | --- | --- | --- |
+| **Standard** | Ja | Nee | 4 |
+| **HighPerformance** | Ja | Nee | 4 |
+| **UltraPerformance** | Ja | Ja | 16 |

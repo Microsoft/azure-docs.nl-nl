@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/05/2019
 ms.author: duau
-ms.openlocfilehash: a1e1bd107e8b3b9209f99d1abfc4d7e391c3c4a6
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 376aa04228113c56f0f797f737833802c9eca021
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98184336"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107029485"
 ---
 # <a name="how-traffic-manager-works"></a>Hoe Traffic Manager werkt
 
@@ -30,7 +30,7 @@ Traffic Manager biedt twee belang rijke voor delen:
 
 Wanneer een client probeert verbinding maken met een service, moet deze eerst de DNS-naam van de service omzetten naar een IP-adres. De client maakt vervolgens verbinding met dat IP-adres om toegang te krijgen tot de service.
 
-**Het belangrijkste punt om te begrijpen is dat Traffic Manager op het DNS-niveau werkt.**  Traffic Manager DNS gebruikt om clients te leiden naar specifieke service-eind punten op basis van de regels van de methode voor het routeren van verkeer. Clients maken **rechtstreeks** verbinding met het geselecteerde eind punt. Traffic Manager is geen proxy of gateway. Het verkeer dat door de client en de service wordt door Traffic Manager wordt niet weer gegeven.
+**Het belangrijkste punt om te begrijpen is dat Traffic Manager werkt op het DNS-niveau dat zich op de toepassingslaag (laag-7) bevindt.**  Traffic Manager DNS gebruikt om clients te leiden naar specifieke service-eind punten op basis van de regels van de methode voor het routeren van verkeer. Clients maken **rechtstreeks** verbinding met het geselecteerde eind punt. Traffic Manager is geen proxy of gateway. Het verkeer dat door de client en de service wordt door Traffic Manager wordt niet weer gegeven.
 
 ## <a name="traffic-manager-example"></a>Traffic Manager-voor beeld
 

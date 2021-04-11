@@ -6,12 +6,12 @@ ms.author: jife
 ms.service: data-share
 ms.topic: how-to
 ms.date: 02/23/2021
-ms.openlocfilehash: c94d6f7d4d06d7dbaa6a2ad54f94575a6cc85d33
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 4db523624922d8ddcb8c1868b84927926d9ed3d5
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105644660"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107103807"
 ---
 # <a name="share-and-receive-data-from-azure-blob-storage-and-azure-data-lake-storage"></a>Gegevens delen en ontvangen van Azure Blob Storage en Azure Data Lake Storage
 
@@ -201,7 +201,7 @@ De prestaties van de opslag momentopname worden beïnvloed door een aantal facto
 
 * Gelijktijdige toegang tot de bron-en doel gegevens archieven.  
 * Locatie van bron-en doel gegevens archieven. 
-* Voor incrementele moment opnamen kan het aantal bestanden in de gedeelde gegevensset van invloed zijn op de tijd om de lijst met bestanden te vinden waarvan het tijdstip voor het laatst is gewijzigd na de laatste geslaagde moment opname. 
+* Voor incrementele moment opnamen kan het aantal bestanden in de gedeelde gegevensset van invloed zijn op de tijd die nodig is om de lijst met bestanden te vinden waarvan het tijdstip voor het laatst is gewijzigd na de laatste geslaagde moment opname. 
 
 
 ## <a name="next-steps"></a>Volgende stappen

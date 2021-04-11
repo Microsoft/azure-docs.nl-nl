@@ -5,9 +5,8 @@ author: cynthn
 ms.service: virtual-machines
 ms.collection: linux
 ms.topic: quickstart
-ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 10/09/2018
+ms.date: 03/30/2021
 ms.author: cynthn
 ms.custom:
 - mvc
@@ -15,18 +14,18 @@ ms.custom:
 - seo-javascript-october2019
 - seo-python-october2019
 - devx-track-azurecli
-ms.openlocfilehash: fd411255247e6a37b857ac11c1b0abbd4558d02a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3e8c1a06244c46f5789506e8a77d410f5493bbf3
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102549767"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106058575"
 ---
 # <a name="quickstart-create-a-linux-virtual-machine-with-the-azure-cli"></a>Quickstart: Een virtuele Linux-machine maken met de Azure CLI
 
 In deze quickstart wordt beschreven hoe u de Azure-opdrachtregelinterface (CLI) gebruikt om een Linux-VM in Azure te implementeren. De Azure CLI wordt gebruikt voor het maken en beheren van Azure-resources vanaf de opdrachtregel of in scripts.
 
-In deze zelfstudie installeren we Ubuntu 16.04 LTS. Als u wilt zien hoe de virtuele machine in de praktijk werkt, moet u hiermee verbinding maken via SSH en de NGINX-webserver installeren.
+In deze zelf studie wordt de meest recente Ubuntu-installatie kopie van LTS geïnstalleerd. Als u wilt zien hoe de virtuele machine in de praktijk werkt, moet u hiermee verbinding maken via SSH en de NGINX-webserver installeren.
 
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
@@ -88,10 +87,10 @@ az vm open-port --port 80 --resource-group myResourceGroup --name myVM
 
 ## <a name="connect-to-virtual-machine"></a>Verbinding maken met de virtuele machine
 
-SSH met uw virtuele machine zoals normaal. Vervang **publicIPAddress** door het openbare IP-adres van uw VM, zoals is aangegeven in de vorige uitvoer van de VM:
+SSH met uw virtuele machine zoals normaal. Vervang het IP-adres in het voor beeld door het open bare IP-adres van uw virtuele machine zoals vermeld in de vorige uitvoer:
 
 ```bash
-ssh azureuser@publicIpAddress
+ssh azureuser@40.68.254.142
 ```
 
 ## <a name="install-web-server"></a>Webserver installeren

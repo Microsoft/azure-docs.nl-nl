@@ -4,12 +4,12 @@ ms.service: databox
 ms.topic: include
 ms.date: 01/15/2021
 ms.author: alkohli
-ms.openlocfilehash: e459ea1e9d8d7d51a62ba3ed1d2de8815a1b4222
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: f166413507afb9aff814eaddaade099d2e34ae68
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105105010"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106554838"
 ---
 Voordat u Vm's op uw Azure Stack edge-apparaat kunt implementeren, moet u uw client configureren om verbinding te maken met het apparaat via Azure Resource Manager over Azure PowerShell. Zie [verbinding maken met Azure Resource Manager op uw Azure stack edge-apparaat](../articles/databox-online/azure-stack-edge-gpu-connect-resource-manager.md)voor gedetailleerde instructies.
 
@@ -23,9 +23,9 @@ Zorg ervoor dat u de volgende stappen kunt gebruiken om toegang te krijgen tot h
 
 1. Als u de Api's van het lokale apparaat wilt aanroepen voor verificatie, voert u het volgende in: 
 
-    `login-AzureRMAccount -EnvironmentName <Environment Name>`
+    `login-AzureRMAccount -EnvironmentName <Environment Name> -TenantId c0257de7-538f-415c-993a-1b87a031879d`
 
-    Als u verbinding wilt maken via Azure Resource Manager, geeft u de gebruikers naam *EdgeARMuser* en uw wacht woord op.
+    Als u verbinding wilt maken via Azure Resource Manager, geeft u de gebruikers naam *EdgeArmUser* en uw wacht woord op.
 
 1. Als u Compute voor Kubernetes hebt geconfigureerd, kunt u deze stap overs Laan. Anders moet u ervoor zorgen dat u een netwerk interface voor Compute hebt ingeschakeld door de volgende handelingen uit te voeren: 
 

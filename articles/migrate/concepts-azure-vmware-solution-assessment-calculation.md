@@ -6,12 +6,12 @@ ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 06/25/2020
-ms.openlocfilehash: 1d9918786b22faddaeb07a12f0840b36a11ffe4d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b55f0562ae08a6e5a6b38bd0b6fc9f781b94ab64
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104778378"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106078686"
 ---
 # <a name="assessment-overview-migrate-to-azure-vmware-solution"></a>Overzicht van evaluatie (migreren naar Azure VMware-oplossing)
 
@@ -31,6 +31,9 @@ Evaluaties die u met Azure Migrate maakt, zijn een tijdgebonden moment opname va
 **Azure VM** | Evaluaties om uw on-premises servers te migreren naar virtuele Azure-machine. U kunt uw on-premises servers in [VMware](how-to-set-up-appliance-vmware.md) en [Hyper-V-](how-to-set-up-appliance-hyper-v.md) omgeving, en [fysieke servers](how-to-set-up-appliance-physical.md) voor migratie naar virtuele Azure-machines evalueren met dit beoordelings type.
 **Azure SQL** | Beoordelingen voor het migreren van uw on-premises SQL-servers vanuit uw VMware-omgeving naar Azure SQL Database of Azure SQL Managed instance.
 **Azure VMware Solution (AVS)** | Evaluaties om uw on-premises servers te migreren naar [Azure VMware Solution (AVS)](../azure-vmware/introduction.md). U kunt uw on-premises [VMware-VM’s](how-to-set-up-appliance-vmware.md) evalueren voor migratie naar Azure VMware Solution (AVS) met dit evaluatietype. [Meer informatie](concepts-azure-vmware-solution-assessment-calculation.md)
+
+> [!NOTE]
+> Als het aantal Azure VM-of AVS-evaluaties onjuist is in het hulp programma detectie en evaluatie, klikt u op het totale aantal evaluaties om naar alle evaluaties te gaan en de Azure VM-of AVS-evaluaties opnieuw te berekenen. In het hulp programma detectie en evaluatie wordt vervolgens het juiste aantal voor dat evaluatie type weer gegeven. 
 
 De evaluatie van de Azure VMware-oplossing (AVS) biedt twee opties voor het aanpassen van de grootte:
 

@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 11/25/2020
+ms.date: 03/26/2021
 ms.author: jeedes
-ms.openlocfilehash: 77f72d6c63231f0854b58470f86c65ffc81c9775
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6a14b16e34faa827228594bf6d4f0bd9ed48cf72
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98731917"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106221752"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-greenhouse"></a>Zelfstudie: Azure Active Directory-integratie met Greenhouse
 
@@ -40,7 +40,7 @@ U hebt het volgende nodig om aan de slag te gaan:
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* Greenhouse ondersteunt door **SP** geïnitieerde eenmalige aanmelding (SSO)
+* Broeikas ondersteunt door **SP en IDP** geïnitieerde SSO.
 
 ## <a name="adding-greenhouse-from-the-gallery"></a>Greenhouse vanuit de galerie toevoegen
 
@@ -73,18 +73,28 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. Zoek in Azure Portal, op de integratiepagina van de toepassing **Greenhouse**, de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
     ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
-4. In de sectie **Standaard SAML-configuratie** voert u de volgende stappen uit:
+1. Voer in de sectie **Standaard SAML-configuratie** de waarden voor de volgende velden in, als u de toepassing in de met **IDP** geïnitieerde modus wilt configureren:
 
-    a. In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<companyname>.greenhouse.io`
+    a. In het tekstvak **Id** typt u een URL met het volgende patroon: `https://<COMPANYNAME>.greenhouse.io`
 
-    b. In het tekstvak **Id (Entiteits-id)** typt u een URL met de volgende notatie: `https://<companyname>.greenhouse.io`
+    b. In het tekstvak **Antwoord-URL** typt u een URL met één van de volgende patronen:
+    
+    | Antwoord-URL|
+    | -------------- |
+    | `https://<COMPANYNAME>.greenhouse.io/users/saml/consume` |
+    | `https://app.greenhouse.io/<ENTITY ID>/users/saml/consume` |
+    |
+
+1. Klik op **Extra URL's instellen** en voer de volgende stap uit als u de toepassing in de door **SP** geïnitieerde modus wilt configureren:
+
+    In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<COMPANYNAME>.greenhouse.io`
 
     > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL en id. Neem contact op met het [Greenhouse-ondersteuningsteam](https://www.greenhouse.io/contact) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > Dit zijn geen echte waarden. Deze waarden bijwerken met de daad werkelijke id, antwoord-URL en aanmeldings-URL. Neem contact op met het [Greenhouse-ondersteuningsteam](https://www.greenhouse.io/contact) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
 4. Op de pagina **Eenmalige aanmelding met SAML instellen** in het gedeelte **SAML-handtekeningcertificaat** klikt u op **Downloaden** om het **XML-bestand met federatieve metagegevens**  te downloaden uit de gegeven opties overeenkomstig met wat u nodig hebt, en slaat u dit op uw computer op.
 
@@ -127,7 +137,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
     ![Schermopname van de pagina voor eenmalige aanmelding](./media/greenhouse-tutorial/configure.png)
 
-1. Voer op de pagina 'Eenmalige aanmelding' de volgende stappen uit.
+1. Voer de volgende stappen uit op de pagina voor **eenmalige aanmelding** .
 
     ![Schermopname van de configuratiepagina voor eenmalige aanmelding](./media/greenhouse-tutorial/sso-page.png)
 
@@ -172,15 +182,22 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Greenhouse, moeten 
       >[!NOTE]
       >De houder van het Azure Active Directory-account ontvangt een e-mail met een koppeling om het account te bevestigen voordat het actief wordt.
 
-### <a name="test-sso"></a>Eenmalige aanmelding testen 
+## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
 In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van Greenhouse, waar u de aanmeldingsstroom kunt initiëren. 
+#### <a name="sp-initiated"></a>Met SP geïnitieerd:
+
+* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de URL voor broeikasgas aanmelding, waar u de aanmeldings stroom kunt initiëren.  
 
 * Ga rechtstreeks naar de aanmeldings-URL van Greenhouse en initieer hier de aanmeldingsstroom.
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u in 'Mijn apps' op de tegel 'Greenhouse' klikt, wordt u omgeleid naar de aanmeldings-URL van Greenhouse. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+#### <a name="idp-initiated"></a>Met IDP geïnitieerd:
+
+* Klik op **test deze toepassing** in azure Portal en u moet automatisch worden aangemeld bij de kas waarvoor u de SSO hebt ingesteld 
+
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u op de broeikasgas tegel in de app mijn apps klikt, wordt u omgeleid naar de aanmeldings pagina van de toepassing om de aanmeldings stroom te initiëren en als deze is geconfigureerd in de IDP-modus, moet u automatisch worden aangemeld bij de kas waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+
 
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -8,32 +8,32 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 8bb1f8bb2aaeab88e5a9ea19534c8983af8c1626
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6c80b9fd65588fe6c390f44b34509168f3bfb549
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97895747"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106077683"
 ---
 # <a name="ensure-application-high-availability-when-running-in-vmware-on-azure"></a>Hoge Beschik baarheid van toepassingen garanderen bij uitvoering in VMware op Azure
 
 De CloudSimple-oplossing biedt hoge Beschik baarheid voor uw toepassingen die in VMware worden uitgevoerd in de Azure-omgeving. De volgende tabel geeft een overzicht van fout scenario's en de bijbehorende functies voor hoge Beschik baarheid.
 
-| Fout scenario | Toepassing beveiligd? | Functie platform HA | VMware HA-functie | Functie Azure HA |
------------- | ------------- | ------------ | ------------ | ------------- |
-| Schijf fout | JA | Snelle vervanging van een uitgevallen knoop punt | [Over het vSAN-standaard beleid voor opslag](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.virtualsan.doc/GUID-C228168F-6807-4C2A-9D74-E584CAF49A2A.html) |
-| Fout met ventilator | JA | Redundante ventilatoren, snelle vervanging van een mislukt knoop punt |  |  |
-| NIC-fout | JA | Redundante NIC, snelle vervanging van een mislukt knoop punt
-| Stroom storing host | JA | Redundante voeding |  |  |
-| ESXi-host-fout | JA | snelle vervanging van een uitgevallen knoop punt | [VMware vSphere hoge Beschik baarheid](https://www.vmware.com/products/vsphere/high-availability.html) |  |  |
-| VM-fout | JA | [Load balancers](load-balancers.md)  | [VMware vSphere hoge Beschik baarheid](https://www.vmware.com/products/vsphere/high-availability.html) | Azure Load Balancer voor stateless VMware-Vm's |
-| Fout in knooppunt switch poort | JA | Redundante NIC |  |  |
-| Knooppunt switch is mislukt | JA | Redundante Blade Switches |  |  |
-| Rack fout | JA | Plaatsingsgroepen |  |  |
-| Netwerk verbinding met on-premises DC | JA  | Redundante netwerk services |  | Redundante-circuits |
-| Netwerk verbinding met Azure | JA | |  | Redundante-circuits |
-| Fout in Data Center | JA |  |  | Beschikbaarheidszones |
-| Regionale fout | JA  |  |  | Azure-regio's |
+|  Fout scenario  |  Toepassing beveiligd?  |  Functie platform HA  |  VMware HA-functie  |  Functie Azure HA  |
+|----------------------------------------|------------------------|-------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|
+|  Schijf fout  |  JA  |  Snelle vervanging van een uitgevallen knoop punt  |  [Over het vSAN-standaard beleid voor opslag](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.virtualsan.doc/GUID-C228168F-6807-4C2A-9D74-E584CAF49A2A.html)  |  |
+|  Fout met ventilator  |  JA  |  Redundante ventilatoren, snelle vervanging van een mislukt knoop punt  |  |  |
+|  NIC-fout  |  JA  |  Redundante NIC, snelle vervanging van een mislukt knoop punt  |  |  |
+|  Stroom storing host  |  JA  |  Redundante voeding  |  |  |
+|  ESXi-host-fout  |  JA  |  snelle vervanging van een uitgevallen knoop punt  |  [VMware vSphere hoge Beschik baarheid](https://www.vmware.com/products/vsphere/high-availability.html)  |  |
+|  VM-fout  |  JA  |  [Load balancers](load-balancers.md)  |  [VMware vSphere hoge Beschik baarheid](https://www.vmware.com/products/vsphere/high-availability.html)  |  Azure Load Balancer voor stateless VMware-Vm's  |
+|  Fout in knooppunt switch poort  |  JA  |  Redundante NIC  |  |  |
+|  Knooppunt switch is mislukt  |  JA  |  Redundante Blade Switches  |  |  |
+|  Rack fout  |  JA  |  Plaatsings groepen  |  |  |
+|  Netwerk verbinding met on-premises DC  |  JA  |  Redundante netwerk services  |  |  Redundante-circuits  |
+|  Netwerk verbinding met Azure  |  JA  |  |  |  Redundante-circuits  |
+|  Fout in Data Center  |  JA  |  |  |  Beschikbaarheids zones  |
+|  Regionale fout  |  JA  |  |  |  Azure-regio's  |
 
 Azure VMware-oplossing per CloudSimple biedt de volgende functies voor hoge Beschik baarheid.
 

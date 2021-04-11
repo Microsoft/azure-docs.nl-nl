@@ -9,12 +9,12 @@ ms.service: iot-pnp
 services: iot-pnp
 manager: eliotgra
 ms.custom: references_regions
-ms.openlocfilehash: dcdd19faec5e428ac26917178aa8114245c205b3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: eb39939f4a48a549479605dcccc346094359875f
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99594566"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106079009"
 ---
 # <a name="what-is-iot-plug-and-play"></a>Wat is IoT Plug en Play?
 
@@ -68,7 +68,7 @@ Als apparaatontwikkelaar kunt u een IoT-hardwareproduct ontwikkelen dat onderste
 
 ## <a name="device-certification"></a>Apparaatcertificering
 
-Het [programma voor IoT Plug and Play-apparaatcertificering](howto-certify-device.md) verifieert dat een apparaat voldoet aan de IoT Plug and Play-certificeringsvereisten. U kunt een gecertificeerd apparaat toevoegen aan de openbare [catalogus Gecertificeerd voor Azure IoT-apparaten](https://aka.ms/devicecatalog).
+Het [programma voor IoT Plug and Play-apparaatcertificering](../certification/program-requirements-pnp.md) verifieert dat een apparaat voldoet aan de IoT Plug and Play-certificeringsvereisten. U kunt een gecertificeerd apparaat toevoegen aan de openbare [catalogus Gecertificeerd voor Azure IoT-apparaten](https://aka.ms/devicecatalog).
 
 ## <a name="next-steps"></a>Volgende stappen
 

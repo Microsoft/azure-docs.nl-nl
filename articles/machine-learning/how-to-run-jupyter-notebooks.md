@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 01/19/2021
-ms.openlocfilehash: fec4eb55f43bd17db5935ab32e5429927c74f5b9
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: 953b987e908736df703c354067ee27fc27d56073
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106066203"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106220705"
 ---
 # <a name="run-jupyter-notebooks-in-your-workspace"></a>Jupyter-notebooks uitvoeren in uw werk ruimte
 
@@ -46,16 +46,19 @@ U kunt Jupyter of Jjupyterlab ook starten via de werk balk van het notitie blok.
 
 Gebruik de focus modus om uw huidige weer gave uit te breiden zodat u zich kunt concentreren op uw actieve tabbladen. De focus modus verbergt de bestanden Verkenner van notitie blokken.
 
-1. Selecteer in de werk balk van het Terminal venster de **focus modus** om de focus modus in te scha kelen. Afhankelijk van de venster breedte kan dit zich bevinden onder de menu opdracht **..** . in de werk balk.
+1. Selecteer in de werk balk van het Terminal venster de **focus modus** om de focus modus in te scha kelen. Afhankelijk van de venster breedte kan het hulp programma zich bevinden onder de menu opdracht **..** . in de werk balk.
 1. Ga in de focus modus terug naar de standaard weergave door de **standaard weergave** te selecteren.
 
     :::image type="content" source="media/how-to-run-jupyter-notebooks/focusmode.gif" alt-text="Focus modus/standaard weergave in-/uitschakelen":::
 
 ## <a name="code-completion-intellisense"></a>Code voltooiing (IntelliSense)
 
-[IntelliSense](https://code.visualstudio.com/docs/editor/intellisense) is een hulp programma voor het volt ooien van de code die een aantal functies omvat: lijst leden, parameter info, snelle informatie en volledig woord. Deze functies helpen u meer te weten te komen over de code die u gebruikt, het bijhouden van de para meters die u typt en het toevoegen van aanroepen aan eigenschappen en methoden met slechts enkele toetsaanslagen.  
+[IntelliSense](https://code.visualstudio.com/docs/editor/intellisense) is een hulp programma voor het volt ooien van de code die veel functies bevat: lijst leden, parameter info, snelle informatie en volledig woord. Met slechts een paar toetsaanslagen kunt u het volgende doen:
+* Meer informatie over de code die u gebruikt
+* Houd de para meters bij die u typt
+* Aanroepen naar eigenschappen en methoden toevoegen 
 
-### <a name="use-code-snippets-preview"></a>Code fragmenten gebruiken (preview-versie)
+### <a name="insert-code-snippets-preview"></a>Code fragmenten invoegen (preview-versie)
 
 Gebruik **Ctrl + spatie balk** om IntelliSense-code fragmenten te activeren.  Blader door de suggesties of begin te typen om te zoeken naar de code die u wilt invoegen.  Wanneer u de code hebt ingevoegd, kunt u door de argumenten bladeren om de code aan te passen aan uw eigen gebruik.
 
@@ -208,7 +211,7 @@ Een cel bevindt zich in de opdracht modus als er geen tekst cursor wordt gevraag
 
    :::image type="content" source="media/how-to-run-jupyter-notebooks/command-mode.png" alt-text="Notebook-cel in de opdracht modus ":::
 
-| Shortcutdimensie                      | Description                          |
+| Shortcutdimensie                      | Beschrijving                          |
 | ----------------------------- | ------------------------------------|
 | Enter                         | De modus Bewerken openen             |        
 | Shift+Enter                 | Run-cel, hieronder selecteren         |     
@@ -252,7 +255,7 @@ De bewerkings modus wordt aangegeven door een tekst cursor waarin u wordt gevraa
 
 Met de volgende sneltoetsen kunt u gemakkelijker code in Azure Machine Learning notitie blokken navigeren en uitvoeren in de bewerkings modus.
 
-| Shortcutdimensie                      | Description|                                     
+| Shortcutdimensie                      | Beschrijving|                                     
 | ----------------------------- | ----------------------------------------------- |
 | Escape                        | Voer de opdracht modus in|  
 | Control/Command + Space       | IntelliSense activeren |
@@ -285,8 +288,8 @@ Met de volgende sneltoetsen kunt u gemakkelijker code in Azure Machine Learning 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
 * Als u geen verbinding kunt maken met een notitie blok, moet u ervoor zorgen dat de communicatie tussen websockets **niet** is uitgeschakeld. De functionaliteit van de reken instantie Jupyter werkt alleen als de WebSocket-communicatie is ingeschakeld. Zorg ervoor dat uw netwerk WebSocket-verbindingen toestaat naar *. instances.azureml.net en *. instances.azureml.ms. 
-
 * Wanneer reken instantie wordt geïmplementeerd in een persoonlijke koppelings werkruimte, kan deze alleen worden [geopend vanuit een virtueel netwerk](./how-to-secure-training-vnet.md#compute-instance). Als u een aangepast DNS-of hosts-bestand gebruikt, voegt u een vermelding toe voor < exemplaar naam >. < regio >. instances.azureml.ms met het privé-IP-adres van het persoonlijke eind punt van de werk ruimte. Zie het [aangepaste DNS-](./how-to-custom-dns.md?tabs=azure-cli) artikel voor meer informatie.
+
     
 ## <a name="next-steps"></a>Volgende stappen
 

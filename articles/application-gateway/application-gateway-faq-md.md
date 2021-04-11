@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/26/2020
 ms.author: victorh
 ms.custom: references_regions
-ms.openlocfilehash: 83779dcd319614ae15de6b7e3e4e3abfd9599089
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: bc803814e493ffef6f5928dc9971f9f6f864342d
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102619151"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106221735"
 ---
 # <a name="frequently-asked-questions-about-application-gateway"></a>Veelgestelde vragen over Application Gateway
 
@@ -394,6 +394,16 @@ Als u v1 SKU van de Application Gateway/WAF-service gebruikt, moet u het nieuwe 
 Raadpleeg [de documentatie voor](./end-to-end-ssl-portal.md#add-authenticationtrusted-root-certificates-of-back-end-servers)meer informatie.
 
 Als u de v2-SKU van de Application Gateway/WAF-service gebruikt, hoeft u het nieuwe certificaat niet te uploaden in de HTTP-instellingen sinds v2 SKU gebruikmaakt van ' vertrouwde basis certificaten ' en hoeft u hier geen actie te ondernemen.
+
+## <a name="configuration---mutual-authentication"></a>Configuratie-wederzijdse verificatie
+
+### <a name="what-is-mutual-authentication"></a>Wat is wederzijdse verificatie?
+
+Wederzijdse verificatie is twee richtings verificatie tussen een client en een server. Met wederzijdse verificatie met Application Gateway kan de gateway op dit moment de client verifiëren die de aanvraag verzendt. Dit is client verificatie. Normaal gesp roken is de client de enige die de Application Gateway verifieert. Omdat Application Gateway nu ook de client kan verifiëren, wordt deze wederzijdse verificatie wanneer Application Gateway en de client elkaar wederzijds verifiëren. 
+
+### <a name="is-mutual-authentication-available-between-application-gateway-and-its-backend-pools"></a>Is wederzijdse verificatie beschikbaar tussen Application Gateway en de bijbehorende back-endservers?
+
+Nee, er is momenteel alleen wederzijdse verificatie tussen de front-end-client en de Application Gateway. Gemeen schappelijke back-end authenticatie wordt momenteel niet ondersteund.
 
 ## <a name="configuration---ingress-controller-for-aks"></a>Configuratie-ingangs controller voor AKS
 

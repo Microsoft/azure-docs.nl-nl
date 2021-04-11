@@ -7,12 +7,12 @@ ms.service: azure-arc
 ms.topic: tutorial
 ms.date: 03/03/2021
 ms.custom: template-tutorial
-ms.openlocfilehash: f720cc196f4034d29ec1d628e28d3534b10f3e41
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a94784f2f3fc622e0232033d63bc957279a7d34c
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105025812"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106076289"
 ---
 # <a name="tutorial-implement-cicd-with-gitops-using-azure-arc-enabled-kubernetes-clusters"></a>Zelf studie: CI/CD met GitOps implementeren met behulp van Azure Arc-Kubernetes-clusters
 
@@ -58,7 +58,7 @@ In deze zelf studie wordt ervan uitgegaan dat u bekend bent met Azure DevOps, Az
 
 ## <a name="import-application-and-gitops-repos-into-azure-repos"></a>Toepassingen importeren en GitOps opslag plaatsen in azure opslag plaatsen
 
-Importeer een [toepassings opslag plaats](https://docs.microsoft.com/azure/azure-arc/kubernetes/conceptual-gitops-cicd#application-repo) en een [GitOps-opslag plaats](https://docs.microsoft.com/azure/azure-arc/kubernetes/conceptual-gitops-cicd#gitops-repo) in azure opslag plaatsen. Voor deze zelf studie gebruikt u het volgende voor beeld opslag plaatsen:
+Importeer een [toepassings opslag plaats](https://docs.microsoft.com/azure/azure-arc/kubernetes/conceptual-gitops-ci-cd#application-repo) en een [GitOps-opslag plaats](https://docs.microsoft.com/azure/azure-arc/kubernetes/conceptual-gitops-ci-cd#gitops-repo) in azure opslag plaatsen. Voor deze zelf studie gebruikt u het volgende voor beeld opslag plaatsen:
 
 * **Arc-cicd-demo-bron** toepassing opslag plaats
    * URL https://github.com/Azure/arc-cicd-demo-src
@@ -338,4 +338,4 @@ In deze zelf studie hebt u een volledige CI/CD-werk stroom ingesteld die DevOps 
 Ga naar ons conceptuele artikel voor meer informatie over GitOps en configuraties met Azure Arc enabled Kubernetes.
 
 > [!div class="nextstepaction"]
-> [CI/CD-werk stroom met GitOps-Azure Arc enabled Kubernetes](https://docs.microsoft.com/azure/azure-arc/kubernetes/conceptual-gitops-cicd)
+> [CI/CD-werk stroom met GitOps-Azure Arc enabled Kubernetes](https://docs.microsoft.com/azure/azure-arc/kubernetes/conceptual-gitops-ci-cd)

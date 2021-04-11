@@ -1,14 +1,14 @@
 ---
 title: Overzicht van het blauwdrukvoorbeeld SWIFT CSP-CSCF v2020
 description: Overzicht van het blauwdrukvoorbeeld SWIFT CSP-CSCF v2020. Met dit blauwdrukvoorbeeld kunnen klanten specifieke beheeropties van FedRAMP Moderate bekijken.
-ms.date: 01/08/2021
+ms.date: 04/02/2021
 ms.topic: sample
-ms.openlocfilehash: 2fc2aa437cc6e69df3c5ae7c3a0acedfba67e636
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
-ms.translationtype: HT
+ms.openlocfilehash: 1d1236e45930f5288f2d0ac682abfa29b2b28281
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98048739"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106386139"
 ---
 # <a name="overview-of-the-swift-csp-cscf-v2020-blueprint-sample"></a>Overzicht van het blauwdrukvoorbeeld SWIFT CSP-CSCF v2020
 

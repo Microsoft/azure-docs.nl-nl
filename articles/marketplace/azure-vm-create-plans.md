@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 author: mingshen-ms
 ms.author: mingshen
-ms.date: 10/19/2020
-ms.openlocfilehash: c700cce5f50fda7f7a5773e07549e93da1c9f7a2
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/01/2021
+ms.openlocfilehash: b1111caf2eaab1114371cbfed1e929afcff20898
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104956251"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106219362"
 ---
 # <a name="how-to-create-plans-for-a-virtual-machine-offer"></a>Plannen maken voor een aanbieding van een virtuele machine
 
@@ -154,7 +154,9 @@ Persoonlijke aanbiedingen worden niet ondersteund met Azure-abonnementen die zij
 
 Als uw virtuele machine alleen indirect moet worden gebruikt wanneer ernaar wordt verwezen via een andere oplossings sjabloon of beheerde toepassing, schakelt u dit selectie vakje in om de virtuele machine te publiceren, maar deze te verbergen bij klanten die mogelijk rechtstreeks worden gezocht of hiernaar kunnen worden gebladerd.
 
-Verborgen abonnementen bieden geen ondersteuning voor preview-koppelingen.
+Elke Azure-klant kan de aanbieding implementeren met Power shell of CLI.  Als u deze aanbieding beschikbaar wilt maken voor een beperkt aantal klanten, stelt u het abonnement in op **privé**. 
+
+Verborgen abonnementen genereren geen preview-koppelingen. U kunt ze echter testen door [de volgende stappen uit te voeren](azure-vm-create-faq.md#how-do-i-test-a-hidden-preview-image). 
 
 Selecteer **concept opslaan** voordat u doorgaat naar het volgende tabblad in het menu van het linkerdeel venster, **technische configuratie**.
 

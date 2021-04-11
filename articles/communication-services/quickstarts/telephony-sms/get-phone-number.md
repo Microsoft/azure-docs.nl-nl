@@ -10,18 +10,16 @@ ms.topic: quickstart
 ms.service: azure-communication-services
 ms.custom: references_regions
 zone_pivot_groups: acs-azp-java-net-python-csharp-js
-ms.openlocfilehash: e28b8581342824032921ad75e0297b3604fc0bb4
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.openlocfilehash: 0f4a461ac5d459c6e3311400785e34bc22f40a00
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105629342"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105728450"
 ---
 # <a name="quickstart-manage-phone-numbers"></a>Snelstartgids: telefoon nummers beheren
 
 [!INCLUDE [Regional Availability Notice](../../includes/regional-availability-include.md)]
-
-Ga aan de slag met Azure Communication Services met behulp van de Azure Portal of de client bibliotheek communicatie Services telefoon nummers om telefoon nummers te beheren.
 
 ::: zone pivot="platform-azp"
 [!INCLUDE [Azure portal](./includes/phone-numbers-portal.md)]

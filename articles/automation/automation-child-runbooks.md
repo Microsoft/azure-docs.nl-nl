@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 01/17/2019
 ms.topic: conceptual
-ms.openlocfilehash: f0dd5cf5209924972080af6d22429252338754de
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 338de996b06769b9d2891c7208b9050cc3acc7ed
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99491245"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106167291"
 ---
 # <a name="create-modular-runbooks"></a>Modulaire runbooks maken
 
@@ -56,15 +56,15 @@ Als uw runbook een grafisch of een onderliggend runbook van een Power shell-werk
 In het volgende voor beeld wordt een onderliggend runbook voor een test gestart dat een complex object, een geheel getal en een Booleaanse waarde accepteert. De uitvoer van het onderliggende runbook is toegewezen aan een variabele. In dit geval is het onderliggende runbook een Power shell workflow-runbook.
 
 ```azurepowershell-interactive
-$vm = Get-AzVM –ResourceGroupName "LabRG" –Name "MyVM"
-$output = PSWF-ChildRunbook –VM $vm –RepeatCount 2 –Restart $true
+$vm = Get-AzVM -ResourceGroupName "LabRG" -Name "MyVM"
+$output = PSWF-ChildRunbook -VM $vm -RepeatCount 2 -Restart $true
 ```
 
 Hier volgt een voor beeld van het gebruik van een Power shell-runbook als onderliggend object.
 
 ```azurepowershell-interactive
-$vm = Get-AzVM –ResourceGroupName "LabRG" –Name "MyVM"
-$output = .\PS-ChildRunbook.ps1 –VM $vm –RepeatCount 2 –Restart $true
+$vm = Get-AzVM -ResourceGroupName "LabRG" -Name "MyVM"
+$output = .\PS-ChildRunbook.ps1 -VM $vm -RepeatCount 2 -Restart $true
 ```
 
 ## <a name="start-a-child-runbook-using-a-cmdlet"></a>Een onderliggend runbook starten met een cmdlet
@@ -84,7 +84,7 @@ Para meters voor een onderliggend runbook dat is gestart met een cmdlet, worden 
 
 De context van het abonnement kan verloren gaan bij het starten van onderliggende runbooks als afzonderlijke taken. Voor het onderliggende runbook om AZ module-cmdlets uit te voeren op basis van een specifiek Azure-abonnement, moet het onderliggend element worden geverifieerd bij dit abonnement onafhankelijk van het bovenliggende runbook.
 
-Als taken binnen hetzelfde Automation-account werken met meer dan één abonnement, kan het selecteren van een abonnement in de ene taak de momenteel geselecteerde abonnements context voor andere taken wijzigen. Gebruik `Disable-AzContextAutosave –Scope Process` aan het begin van elk runbook om deze situatie te voor komen. Met deze actie wordt de context alleen opgeslagen bij de uitvoering van het runbook.
+Als taken binnen hetzelfde Automation-account werken met meer dan één abonnement, kan het selecteren van een abonnement in de ene taak de momenteel geselecteerde abonnements context voor andere taken wijzigen. Gebruik `Disable-AzContextAutosave -Scope Process` aan het begin van elk runbook om deze situatie te voor komen. Met deze actie wordt de context alleen opgeslagen bij de uitvoering van het runbook.
 
 ### <a name="example"></a>Voorbeeld
 
@@ -92,7 +92,7 @@ In het volgende voor beeld wordt een onderliggend runbook met para meters gestar
 
 ```azurepowershell-interactive
 # Ensure that the runbook does not inherit an AzContext
-Disable-AzContextAutosave –Scope Process
+Disable-AzContextAutosave -Scope Process
 
 # Connect to Azure with Run As account
 $ServicePrincipalConnection = Get-AutomationConnection -Name 'AzureRunAsConnection'
@@ -108,11 +108,11 @@ $AzureContext = Set-AzContext -SubscriptionId $ServicePrincipalConnection.Subscr
 $params = @{"VMName"="MyVM";"RepeatCount"=2;"Restart"=$true}
 
 Start-AzAutomationRunbook `
-    –AutomationAccountName 'MyAutomationAccount' `
-    –Name 'Test-ChildRunbook' `
+    -AutomationAccountName 'MyAutomationAccount' `
+    -Name 'Test-ChildRunbook' `
     -ResourceGroupName 'LabRG' `
     -AzContext $AzureContext `
-    –Parameters $params –Wait
+    -Parameters $params -Wait
 ```
 
 ## <a name="next-steps"></a>Volgende stappen

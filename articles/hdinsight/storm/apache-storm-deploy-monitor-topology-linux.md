@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/18/2019
 ms.openlocfilehash: fb57992c8e26560061faf68443c4993801f9713d
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104871568"
 ---
 # <a name="deploy-and-manage-apache-storm-topologies-on-azure-hdinsight"></a>Apache Storm-topologieën implementeren en beheren in Azure HDInsight
@@ -202,7 +202,7 @@ De pagina overzicht van Storm-topologie ziet er ongeveer als volgt uit:
 
 In het gedeelte **topologie acties** kunt u de volgende knoppen selecteren om een actie uit te voeren:
 
-| Knop | Beschrijving |
+| Knop | Description |
 | --- | --- |
 | Activate | Hiermee wordt de verwerking van een gedeactiveerde topologie hervat. |
 | Deactivate | Hiermee wordt een actieve topologie onderbroken. |
@@ -246,7 +246,7 @@ De basis-URI voor de REST API op op Linux gebaseerde HDInsight-clusters is besch
 
 U kunt de Fully Qualified Domain Name (FQDN) voor het hoofd knooppunt van het cluster op verschillende manieren vinden:
 
-| FQDN-detectie methode | Beschrijving |
+| FQDN-detectie methode | Description |
 | --- | --- |
 | SSH-sessie | Gebruik de opdracht `headnode -f` van een SSH-sessie naar het cluster. |
 | Ambari-Web | Selecteer op de webpagina van het Ambari-cluster ( `https://CLUSTERNAME.azurehdinsight.net` ) **Services** boven aan de pagina en selecteer vervolgens **Storm**. Selecteer op het tabblad **samen vatting** de optie **Storm-gebruikers interface Server**. De FQDN van het knoop punt dat als host fungeert voor de Storm-gebruikers interface en REST API wordt boven aan de pagina weer gegeven. |

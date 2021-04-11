@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 03/29/2018
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: f5739604537ccc67e2cf57310269369909038d67
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4c64a4e06ed452c895c1bc2cf20adc2d9c0060c3
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102508739"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106219260"
 ---
 # <a name="tutorial-prerequisites-for-creating-availability-groups-on-sql-server-on-azure-virtual-machines"></a>Zelf studie: vereisten voor het maken van beschikbaarheids groepen op SQL Server op Azure Virtual Machines
 
@@ -69,11 +69,11 @@ U hebt een Azure-account nodig. U kunt [een gratis Azure-account openen of de](h
 
 De resource groep wordt door Azure gemaakt en er wordt een snelkoppeling naar de resource groep in de portal gespeld.
 
-## <a name="create-the-network-and-subnets"></a>Het netwerk en de subnetten maken
+## <a name="create-the-network-and-subnet"></a>Het netwerk en subnet maken
 
-De volgende stap is het maken van de netwerken en subnetten in de Azure-resource groep.
+De volgende stap is het maken van de netwerken en het subnet in de Azure-resource groep.
 
-De oplossing maakt gebruik van één virtueel netwerk met twee subnetten. Het [overzicht van virtuele](../../../virtual-network/virtual-networks-overview.md) netwerken biedt meer informatie over netwerken in Azure.
+De oplossing maakt gebruik van één virtueel netwerk en één subnet. Het [overzicht van virtuele](../../../virtual-network/virtual-networks-overview.md) netwerken biedt meer informatie over netwerken in Azure.
 
 Het virtuele netwerk maken in de Azure Portal:
 
@@ -100,48 +100,13 @@ Het virtuele netwerk maken in de Azure Portal:
 
    De adres ruimte en het adres bereik van het subnet kunnen afwijken van de tabel. Afhankelijk van uw abonnement stelt de portal een beschik bare adres ruimte en een bijbehorend adres bereik voor het subnet voor. Als er onvoldoende adres ruimte beschikbaar is, gebruikt u een ander abonnement.
 
-   In het voor beeld wordt de naam **beheerder** van het subnet gebruikt. Dit subnet is voor de domein controllers.
+   In het voor beeld wordt de naam **beheerder** van het subnet gebruikt. Dit subnet is voor de domein controllers en SQL Server Vm's.
 
 5. Selecteer **Maken**.
 
    ![Het virtuele netwerk configureren](./media/availability-group-manually-configure-prerequisites-tutorial-/06-configurevirtualnetwork.png)
 
 Azure keert u terug naar het portal-dash board en waarschuwt u wanneer het nieuwe netwerk is gemaakt.
-
-### <a name="create-a-second-subnet"></a>Een tweede subnet maken
-
-Het nieuwe virtuele netwerk heeft één subnet met de naam **admin**. De domein controllers gebruiken dit subnet. De SQL Server-Vm's gebruiken een tweede subnet met de naam **SQL**. Dit subnet configureren:
-
-1. Selecteer op het dash board de resource groep die u hebt gemaakt, **SQL-ha-RG**. Zoek het netwerk in de resource groep onder **resources**.
-
-    Als **SQL-ha-RG** niet zichtbaar is, zoekt u deze door **resource groepen** te selecteren en te filteren op basis van de naam van de resource groep.
-
-2. Selecteer **autoHAVNET** in de lijst met resources. 
-3. Selecteer **subnetten** onder **instellingen** in het virtuele netwerk van **autoHAVNET** .
-
-    Noteer het subnet dat u al hebt gemaakt.
-
-   ![Noteer het subnet dat u al hebt gemaakt](./media/availability-group-manually-configure-prerequisites-tutorial-/07-addsubnet.png)
-
-5. Selecteer **+ subnet** om een tweede subnet te maken.
-6. Configureer het subnet in **subnet toevoegen** door **sqlsubnet** onder **naam** te typen. Azure geeft automatisch een geldig **adres bereik** op. Controleer of dit adres bereik ten minste 10 adressen bevat. In een productie omgeving hebt u mogelijk meer adressen nodig.
-7. Selecteer **OK**.
-
-    ![Subnet configureren](./media/availability-group-manually-configure-prerequisites-tutorial-/08-configuresubnet.png)
-
-De volgende tabel geeft een overzicht van de netwerk configuratie-instellingen:
-
-| **Veld** | Waarde |
-| --- | --- |
-| **Naam** |**autoHAVNET** |
-| **Adresruimte** |Deze waarde is afhankelijk van de beschik bare adres ruimten in uw abonnement. Een typische waarde is 10.0.0.0/16. |
-| **Subnetnaam** |**beheerder** |
-| **Subnetadresbereik** |Deze waarde is afhankelijk van de beschik bare adresbereiken in uw abonnement. Een typische waarde is 10.0.0.0/24. |
-| **Subnetnaam** |**sqlsubnet** |
-| **Subnetadresbereik** |Deze waarde is afhankelijk van de beschik bare adresbereiken in uw abonnement. Een typische waarde is 10.0.1.0/24. |
-| **Abonnement** |Geef het abonnement op dat u wilt gebruiken. |
-| **Resourcegroep** |**SQL-HA-RG** |
-| **Locatie** |Geef dezelfde locatie op die u hebt gekozen voor de resource groep. |
 
 ## <a name="create-availability-sets"></a>Beschikbaarheidssets maken
 
@@ -164,7 +129,7 @@ Nadat u de beschikbaarheids sets hebt gemaakt, keert u terug naar de resource gr
 
 ## <a name="create-domain-controllers"></a>Domein controllers maken
 
-Nadat u de netwerk-, subnetten-en beschikbaarheids sets hebt gemaakt, kunt u de virtuele machines voor de domein controllers maken.
+Nadat u de netwerk-, subnet-en beschikbaarheids sets hebt gemaakt, bent u klaar om de virtuele machines voor de domein controllers te maken.
 
 ### <a name="create-virtual-machines-for-the-domain-controllers"></a>Virtuele machines maken voor de domein controllers
 

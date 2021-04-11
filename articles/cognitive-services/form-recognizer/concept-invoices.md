@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/15/2021
 ms.author: lajanuar
 ms.openlocfilehash: 46cf34bd40832488985008a645f1da25eb87b9d9
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103467383"
 ---
 # <a name="form-recognizer-prebuilt-invoice-model"></a>Vooraf gebouwd factuur model voor formulier herkenning
@@ -73,7 +73,7 @@ De JSON-uitvoer heeft drie delen:
 
 Met de factuur service worden de velden tekst, tabellen en 26 factuur geëxtraheerd. Hieronder vindt u de velden die zijn geëxtraheerd uit een factuur in het JSON-uitvoer antwoord (de onderstaande uitvoer gebruikt deze [voorbeeld factuur](media/sample-invoice.jpg)).
 
-|Naam| Type | Beschrijving | Tekst | Waarde (gestandaardiseerde uitvoer) |
+|Naam| Type | Description | Tekst | Waarde (gestandaardiseerde uitvoer) |
 |:-----|:----|:----|:----| :----|
 | CustomerName | tekenreeks | Klant wordt gefactureerd | Micro soft Corp |  |
 | CustomerId | tekenreeks | Referentie-ID voor de klant | CID-12345 |  |
@@ -104,7 +104,7 @@ Met de factuur service worden de velden tekst, tabellen en 26 factuur geëxtrahe
 
 Hieronder ziet u de regel items die worden geëxtraheerd uit een factuur in het JSON-uitvoer antwoord (de onderstaande uitvoer gebruikt deze [voorbeeld factuur](./media/sample-invoice.jpg))  
 
-|Naam| Type | Beschrijving | Tekst (#1 van regel items) | Waarde (gestandaardiseerde uitvoer) |
+|Naam| Type | Description | Tekst (#1 van regel items) | Waarde (gestandaardiseerde uitvoer) |
 |:-----|:----|:----|:----| :----|
 | Items | tekenreeks | Volledige tekst regel van het regel item | 3/4/2021 A123 Consulting Services 2 uur $30,00 10% $60,00 | |
 | Bedrag | getal | De hoeveelheid van het regel item | $60,00 | 100 |

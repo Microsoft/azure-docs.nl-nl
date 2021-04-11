@@ -9,18 +9,18 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 292c82624103fc2eae46d8aecb5e85b2181e7938
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b3192c3ee8458623f3724da5f875cc09032a42bf
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103463048"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106219413"
 ---
 # <a name="tutorial-deploy-azure-machine-learning-as-an-iot-edge-module-preview"></a>Zelfstudie: Azure Machine Learning als een IoT Edge-module implementeren (preview)
 
 [!INCLUDE [iot-edge-version-all-supported](../../includes/iot-edge-version-all-supported.md)]
 
-Gebruik Azure Notebooks om een machine learning-module te ontwikkelen en te implementeren op een Linux-apparaat met Azure IoT Edge.
+Gebruik Azure Notebooks om een machine learning module te ontwikkelen en te implementeren op een apparaat met Azure IoT Edge met Linux-containers.
 U kunt IoT Edge-modules gebruiken voor het implementeren van code die uw bedrijfslogica rechtstreeks op uw IoT Edge-apparaten implementeert. Deze zelfstudie laat u stapsgewijs zien hoe u een Azure Machine Learning-module kunt implementeren waarmee wordt voorspeld wanneer een apparaat mislukt op basis van gesimuleerde machinetemperatuurgegevens. Zie [Documentatie voor Azure Machine Learning](../machine-learning/how-to-deploy-and-where.md) voor meer informatie over Azure Machine Learning op IoT Edge.
 
 >[!NOTE]

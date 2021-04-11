@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 09/14/2020
+ms.date: 03/22/2021
 ms.author: jeedes
-ms.openlocfilehash: 3b7c8e024ac8361c08cc41195531a114bb12fcb4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3af149f0c1db7f354be6bd968bbd0cf858493d4c
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92522288"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106219294"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-oracle-peoplesoft---protected-by-f5-big-ip-apm"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met Oracle PeopleSoft - Protected by F5 BIG-IP APM
 
@@ -40,19 +40,19 @@ U hebt het volgende nodig om aan de slag te gaan:
     2. Zelfstandige licentie voor F5 BIG-IP Access Policy Manager™ (APM) 
     3. Invoegtoepassingslicentie voor F5 BIG-IP Access Policy Manager™ (APM) in een bestaande BIG-IP F5 BIG-IP® Local Traffic Manager™ (LTM).
     4. Naast de bovenstaande licentie kan het F5-systeem ook in licentie worden verkregen met: 
-        * Een abonnement op URL-filtering voor het gebruik van de URL-categoriedatabase 
-        * Een F5 IP Intelligence-abonnement voor het detecteren en blokkeren van bekende aanvallers en schadelijk verkeer 
-        * Een netwerk-HSM (Hardware Security module) voor het beveiligen en beheren van digitale sleutels voor sterke verificatie
-1. Het F5 BIG-IP-systeem is ingericht met APM-modules (LTM is optioneel) 
+        * Een URL-filter abonnement voor het gebruik van de URL-categorie database. 
+        * Een F5 IP Intelligence-abonnement om bekende aanvallers en schadelijk verkeer te detecteren en te blok keren. 
+        * Een HSM (Hardware Security module) voor het beveiligen en beheren van digitale sleutels voor sterke verificatie.
+1. F5 BIG-IP-systeem wordt ingericht met APM-modules (LTM is optioneel).
 1. Hoewel dit optioneel is, is het raadzaam om de F5-systemen te implementeren in een [synchronisatie/failover-apparaatgroep](https://techdocs.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/big-ip-device-service-clustering-administration-14-1-0.html) (S/F DG), die het actieve stand-by-paar omvat, met een zwevend IP-adres voor hoge beschikbaarheid. U kunt verdere interfaceredundantie bereiken met behulp van het Link Aggregation Control Protocol (LACP). LACP beheert de verbonden fysieke interfaces als één virtuele interface (statistische groep) en detecteert interfacefouten binnen de groep.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* Oracle PeopleSoft - Protected by F5 BIG-IP APM ondersteunt door **SP en IDP** geïnitieerde eenmalige aanmelding
+* Oracle people-protected by F5 BIG-IP APM ondersteunt door **SP en IDP** geïnitieerde SSO.
 
-## <a name="adding-oracle-peoplesoft---protected-by-f5-big-ip-apm-from-the-gallery"></a>Oracle PeopleSoft - Protected by F5 BIG-IP APM toevoegen vanuit de galerie
+## <a name="add-oracle-peoplesoft---protected-by-f5-big-ip-apm-from-the-gallery"></a>Voeg Oracle people-protected by F5 BIG-IP APM vanuit de galerie toe
 
 Als u de integratie van Oracle PeopleSoft - Protected by F5 BIG-IP APM in Azure AD wilt configureren, dient u Oracle PeopleSoft - Protected by F5 BIG-IP APM vanuit de galerie toe te voegen aan uw lijst met beheerde SaaS-apps.
 
@@ -83,7 +83,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. Ga in Azure Portal, op de integratiepagina van de toepassing **Oracle PeopleSoft - Protected by F5 BIG-IP APM**, naar de sectie **Beheren**, en selecteer **eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
@@ -231,7 +231,7 @@ Ga naar **Local Traffic > Profiles > SSL > Client > +** , vul de volgende gegeve
 >[!Note]
 > Naslaginformatie: https://docs.oracle.com/cd/E12530_01/oam.1014/e10356/people.htm
 
-1. Meld u met beheerdersreferenties aan bij de PeopleSoft-console `https://<FQDN>.peoplesoft.f5.com/:8000/psp/ps/?cmd=start` (voorbeeld: PS/PS)
+1. Meld u aan bij People Soft-console `https://<FQDN>.peoplesoft.f5.com/:8000/psp/ps/?cmd=start` met beheerders referenties (bijvoorbeeld: ps/PS).
 
     ![Manager selfservices](./media/oracle-peoplesoft-protected-by-f5-big-ip-apm-tutorial/people-soft-console.png)
 
@@ -302,7 +302,7 @@ Voer de volgende stappen uit om ondersteuning voor eenmalige afmelding toe te vo
 
     * Ga naar **Local Traffic > Virtual Servers > Virtual Server List > PeopleSoftApp > Resources**. Klik op de knop **Manage…** :   
 
-    * Geef `<Name>` op als ingeschakelde iRule en klik op **Finished**
+    * Geef de `<Name>` ingeschakelde iRule op en klik op **voltooid**.
 
         ![_iRule_PeopleSoftApp ](./media/oracle-peoplesoft-protected-by-f5-big-ip-apm-tutorial/irule-people-soft.png)
 
@@ -327,11 +327,10 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 #### <a name="idp-initiated"></a>Met IDP geïnitieerd:
 
-* Klik op **Deze toepassing testen** in Azure Portal. U wordt automatisch aangemeld bij de instantie van Oracle PeopleSoft - Protected by F5 BIG-IP APM waarvoor u eenmalige aanmelding hebt ingesteld 
+* Klik op **test deze toepassing** in azure Portal en u moet automatisch worden aangemeld bij de Oracle-PeopleSoft-Protected door F5 BIG-IP apm waarvoor u de SSO hebt ingesteld. 
 
-U kunt ook het Microsoft-toegangsvenster gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u in het toegangsvenster op de tegel Oracle PeopleSoft - Protected by F5 BIG-IP APM klikt en als deze is geconfigureerd in de SP-modus, wordt u omgeleid naar de aanmeldingspagina van de toepassing voor het initiëren van de aanmeldingsstroom. Als deze is geconfigureerd in de IDP-modus, wordt u automatisch aangemeld bij de instantie van Oracle PeopleSoft - Protected by F5 BIG-IP APM waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
-
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u klikt op de Oracle-tegel PeopleSoft-Protected door F5 BIG-IP APM in de mijn apps, als deze is geconfigureerd in de SP-modus, wordt u omgeleid naar de aanmeldings pagina van de toepassing voor het initiëren van de aanmeldings stroom en als u deze hebt geconfigureerd in de IDP-modus, moet u automatisch worden aangemeld bij de Oracle-PeopleSoft-Protected door F5 BIG-IP APM waarvoor u de Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u Oracle PeopleSoft - Protected by F5 BIG-IP APM hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
+Nadat u Oracle PeopleSoft-Protected hebt geconfigureerd door F5 BIG-IP APM kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

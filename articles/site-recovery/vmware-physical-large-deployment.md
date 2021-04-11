@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/14/2019
 ms.author: raynew
 ms.openlocfilehash: cc87429f269fba5083b87e2c328f0e21de9707ff
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "102454344"
 ---
 # <a name="set-up-disaster-recovery-at-scale-for-vmware-vmsphysical-servers"></a>Herstel na nood geval op schaal instellen voor virtuele VMware-machines/fysieke servers
@@ -100,8 +100,8 @@ Wat betekent er in overeenstemming? Voor het starten van een virtuele Azure-mach
 
 **Machine voldoet aan Azure?** | **Limieten voor Azure-VM'S (failover van beheerde schijf)**
 --- | --- 
-Ja | 2000
-Nee | 1000
+Yes | 2000
+No | 1000
 
 - Bij limieten wordt ervan uitgegaan dat er mini maal andere taken worden uitgevoerd in de doel regio voor het abonnement.
 - Sommige Azure-regio's zijn kleiner en hebben mogelijk iets lagere limieten.

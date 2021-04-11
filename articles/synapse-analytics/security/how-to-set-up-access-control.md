@@ -10,10 +10,10 @@ ms.date: 12/03/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
 ms.openlocfilehash: 97f9d0e0037090a8c058eb6e2393451d975e79c6
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103472253"
 ---
 # <a name="how-to-set-up-access-control-for-your-synapse-workspace"></a>Toegangs beheer instellen voor uw Synapse-werk ruimte 
@@ -43,7 +43,7 @@ Als u een Synapse-werk ruimte wilt beveiligen, volgt u een patroon voor het conf
 
 In dit document worden standaard namen gebruikt om de instructies te vereenvoudigen. Vervang ze door de namen van uw keuze.
 
-|Instelling | Standaard naam | Beschrijving |
+|Instelling | Standaard naam | Description |
 | :------ | :-------------- | :---------- |
 | **Synapse-werkruimte** | `workspace1` |  De naam die de Synapse-werk ruimte heeft. |
 | **ADLSGEN2-account** | `storage1` | Het ADLS-account dat moet worden gebruikt met uw werk ruimte. |
@@ -272,7 +272,7 @@ Als u de toegang wilt beheren, kunt u gebruikers toevoegen aan en verwijderen ui
 Als laatste stap om uw werk ruimte te beveiligen, moet u de netwerk toegang beveiligen met behulp van:
 - [Werkruimte firewall](./synapse-workspace-ip-firewall.md)
 - [Beheerd virtueel netwerk](./synapse-workspace-managed-vnet.md) 
-- [Privé-eind punten](./synapse-workspace-managed-private-endpoints.md)
+- [Privé-eindpunten](./synapse-workspace-managed-private-endpoints.md)
 - [Private Link](../../azure-sql/database/private-endpoint-overview.md)
 
 ## <a name="step-10-completion"></a>STAP 10: voltooiing

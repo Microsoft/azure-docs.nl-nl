@@ -12,10 +12,10 @@ manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: contperf-fy20q4
 ms.openlocfilehash: ee10aa7c461aca65f385c735f6e9aaa28af7f9e5
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103471696"
 ---
 # <a name="what-authentication-and-verification-methods-are-available-in-azure-active-directory"></a>Welke authenticatie- en verificatiemethoden zijn er beschikbaar in Azure Active Directory?
@@ -65,14 +65,14 @@ De volgende tabel geeft een overzicht van de wijze waarop een verificatie method
 
 | Methode                         | Primaire authenticatie | Secundaire verificatie  |
 |--------------------------------|:----------------------:|:-------------------------:|
-| Windows Hello voor Bedrijven     | Ja                    | MFA                       |
-| Microsoft Authenticator-app    | Ja                    | MFA en SSPR              |
-| FIDO2-beveiligings sleutel             | Ja                    | MFA                       |
-| OATH-hardware-tokens (preview-versie) | Nee                     | MFA                       |
-| OATH-software tokens           | Nee                     | MFA                       |
-| Sms                            | Ja                    | MFA en SSPR              |
-| Spraakoproep                     | Nee                     | MFA en SSPR              |
-| Wachtwoord                       | Ja                    |                           |
+| Windows Hello voor Bedrijven     | Yes                    | MFA                       |
+| Microsoft Authenticator-app    | Yes                    | MFA en SSPR              |
+| FIDO2-beveiligings sleutel             | Yes                    | MFA                       |
+| OATH-hardware-tokens (preview-versie) | No                     | MFA                       |
+| OATH-software tokens           | No                     | MFA                       |
+| Sms                            | Yes                    | MFA en SSPR              |
+| Spraakoproep                     | No                     | MFA en SSPR              |
+| Wachtwoord                       | Yes                    |                           |
 
 Al deze verificatie methoden kunnen worden geconfigureerd in de Azure Portal en het gebruik van de [Microsoft Graph rest API bèta](/graph/api/resources/authenticationmethods-overview?view=graph-rest-beta)wordt steeds vaker gebruikt.
 

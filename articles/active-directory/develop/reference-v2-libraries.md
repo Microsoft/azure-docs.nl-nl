@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
 ms.workload: identity
-ms.date: 01/29/2021
+ms.date: 03/30/2021
 ms.author: marsma
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 590e57d587c8e6e254811892b5c5e740b511c302
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 321a5c473df30dd6f00bbcd1294d48ce8da34009
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104690650"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106060377"
 ---
 # <a name="microsoft-identity-platform-authentication-libraries"></a>Micro soft Identity platform-verificatie bibliotheken
 
@@ -29,7 +29,7 @@ Als u uw eigen implementatie op protocol niveau van [OAuth 2,0 of OpenID Connect
 
 ## <a name="single-page-application-spa"></a>Toepassing met één pagina (SPA)
 
-Een toepassing met één pagina wordt volledig uitgevoerd op het browser oppervlak en de pagina gegevens (HTML, CSS en Java script) worden dynamisch of op basis van de laad tijd van de toepassing opgehaald. Het kan Web-Api's aanroepen om te communiceren met back-end-gegevens bronnen.
+Een toepassing met één pagina wordt volledig in de browser uitgevoerd en de pagina gegevens (HTML, CSS en Java script) worden dynamisch of op de laad tijd van de toepassing opgehaald. Het kan Web-Api's aanroepen om te communiceren met back-end-gegevens bronnen.
 
 Omdat de code van een beveiligd-wachtwoord verificatie volledig in de browser wordt uitgevoerd, wordt dit beschouwd als een *open bare client* waarop geheimen niet veilig kunnen worden opgeslagen.
 
@@ -45,7 +45,7 @@ Omdat de code van een webtoepassing wordt uitgevoerd op de webserver, wordt deze
 
 ## <a name="desktop-application"></a>Bureaublad toepassing
 
-Een bureaublad toepassing is doorgaans binaire (gecompileerde) code die een gebruikers interface bedient en die is bedoeld om te worden uitgevoerd op het bureau blad van een gebruiker.
+Een bureaublad toepassing is doorgaans een binaire (gecompileerde) code waarmee een gebruikers interface wordt weer gegeven en die is bedoeld om te worden uitgevoerd op het bureau blad van een gebruiker.
 
 Omdat een bureaublad toepassing op het bureau blad van de gebruiker wordt uitgevoerd, wordt deze beschouwd als een *open bare client* waarop geheimen niet veilig kunnen worden opgeslagen.
 
@@ -53,7 +53,7 @@ Omdat een bureaublad toepassing op het bureau blad van de gebruiker wordt uitgev
 
 ## <a name="mobile-application"></a>Mobiele toepassing
 
-Een mobiele toepassing is doorgaans een binaire (gecompileerde) code die een gebruikers interface oppereert en die is bedoeld om te worden uitgevoerd op het mobiele apparaat van een gebruiker.
+Een mobiele toepassing is doorgaans een binaire (gecompileerde) code waarmee een gebruikers interface wordt weer gegeven en die is bedoeld om te worden uitgevoerd op het mobiele apparaat van een gebruiker.
 
 Omdat een mobiele toepassing wordt uitgevoerd op het mobiele apparaat van de gebruiker, wordt deze beschouwd als een *open bare client* waarop geheimen niet veilig kunnen worden opgeslagen.
 

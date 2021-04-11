@@ -4,10 +4,10 @@ description: Meer informatie over het installeren en implementeren van de Defend
 ms.topic: conceptual
 ms.date: 09/09/2020
 ms.openlocfilehash: c84a70928be13212b56636ad1fbb9baaadd0e7d0
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104784200"
 ---
 # <a name="deploy-defender-for-iot-c-based-security-agent-for-linux"></a>Defender voor IoT C# implementeren op basis van een beveiligings agent voor Linux

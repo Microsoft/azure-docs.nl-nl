@@ -4,10 +4,10 @@ description: De integratie van Azure Defender voor IoT met het Forescout-platfor
 ms.date: 1/17/2021
 ms.topic: article
 ms.openlocfilehash: 07e5187970d193502b95b49c5517a8e3824767be
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104784064"
 ---
 # <a name="about-the-forescout-integration"></a>Over de Forescout-integratie

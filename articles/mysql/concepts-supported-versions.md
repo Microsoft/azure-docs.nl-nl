@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 6/3/2020
-ms.openlocfilehash: 314462517ba4e63694266b5e49231cb8536f3635
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.openlocfilehash: d84f56e5ae0f3c364a0fd3a08ccb173d7c65a5e2
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105604720"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106121758"
 ---
 # <a name="supported-azure-database-for-mysql-server-versions"></a>Ondersteunde serverversies van Azure Database for MySQL
 
@@ -33,7 +33,7 @@ In Azure Database for MySQL-service luistert gateway knooppunten op poort 3308 v
 ## <a name="azure-database-for-mysql-currently-supports-the-following-major-and-minor-versions-of-mysql"></a>Azure Database for MySQL ondersteunt momenteel de volgende primaire en secundaire versies van MySQL:
 
 
-| Versie | Enkele server <br/> Huidige secundaire versie |Flexibele server (preview) <br/> Huidige secundaire versie  |
+| Versie | [Single Server](overview.md) <br/> Huidige secundaire versie |[Flexibele server (preview)](/../flexible-server/overview.md) <br/> Huidige secundaire versie  |
 |:-------------------|:-------------------------------------------|:---------------------------------------------|
 |MySQL-versie 5,6 |  [5.6.47](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-47.html) (buiten gebruik gesteld) | Niet ondersteund|
 |MySQL-versie 5,7 | [5.7.29](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-29.html) | [5.7.29](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-29.html)|

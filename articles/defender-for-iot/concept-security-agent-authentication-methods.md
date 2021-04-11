@@ -4,10 +4,10 @@ description: Meer informatie over de verschillende verificatie methoden die besc
 ms.topic: conceptual
 ms.date: 01/24/2021
 ms.openlocfilehash: bd4d89d8664dae2421ff7f268b3710b5a906427b
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104784608"
 ---
 # <a name="security-agent-authentication-methods"></a>Verificatie methoden voor beveiligings agenten
@@ -44,7 +44,7 @@ Zie [para meters voor de beveiligings agent installeren](#security-agent-install
 Wanneer u [een beveiligings agent implementeert](how-to-deploy-agent.md), moeten de verificatie gegevens als argumenten worden gegeven.
 Deze argumenten worden beschreven in de volgende tabel.
 
-|Naam van Linux-para meter | Naam van Windows-para meter | Steno parameter |Beschrijving|Opties|
+|Naam van Linux-para meter | Naam van Windows-para meter | Steno parameter |Description|Opties|
 |---------------------|---------------|---------|---------------|---------------|
 |verificatie-identiteit|AuthenticationIdentity|aui|Verificatie-identiteit| **SecurityModule** of **apparaat**|
 |verificatie-methode|Authentic|aum|Verificatiemethode|**SymmetricKey** of **SelfSignedCertificate**|

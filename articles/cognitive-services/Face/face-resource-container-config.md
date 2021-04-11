@@ -11,12 +11,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: 2f608843e27b79d02697df8e2a7f2aba6695e10a
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 5287fe6df4a2f0cb728bf0e705a4ce989ca38487
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "80878422"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105934033"
 ---
 # <a name="configure-face-docker-containers"></a>Face docker-containers configureren
 
@@ -67,7 +67,7 @@ De configuratie-instellingen in de `CloudAI` sectie bieden specifieke opties die
 
 ### <a name="storage-scenario-settings"></a>Instellingen voor opslag scenario
 
-Afhankelijk van wat er is opgeslagen, worden de blob-, cache-, meta gegevens-en wachtrij gegevens in de face-container opgeslagen. Bijvoorbeeld: opleidings indexen en resultaten voor een grote groep personen worden opgeslagen als BLOB-gegevens. De face-container biedt twee verschillende opslag scenario's bij het werken met en het opslaan van deze typen gegevens:
+Afhankelijk van wat er is opgeslagen, worden de blob-, cache-, meta gegevens-en wachtrij gegevens in de face-container opgeslagen. Bijvoorbeeld: trainings indexen en resultaten voor een **LargePersonGroup** worden opgeslagen als BLOB-gegevens. De face-container biedt twee verschillende opslag scenario's bij het werken met en het opslaan van deze typen gegevens:
 
 * Geheugen  
   Alle vier de typen gegevens worden opgeslagen in het geheugen. Ze worden niet gedistribueerd en blijven niet behouden. Als de face-container is gestopt of verwijderd, worden alle gegevens in de opslag voor die container vernietigd.  

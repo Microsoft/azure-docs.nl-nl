@@ -5,10 +5,10 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/14/2020
 ms.openlocfilehash: 43640a9de91b6b44a236090ff029a49313ee0247
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104871670"
 ---
 # <a name="azure-hdinsight-virtual-network-architecture"></a>Azure HDInsight Virtual Network-architectuur
@@ -19,7 +19,7 @@ In dit artikel worden de resources beschreven die aanwezig zijn wanneer u een HD
 
 Azure HDInsight-clusters hebben verschillende typen virtuele machines of knoop punten. Elk knooppunt type speelt een rol in de werking van het systeem. De volgende tabel bevat een overzicht van deze knooppunt typen en hun rollen in het cluster.
 
-| Type | Beschrijving |
+| Type | Description |
 | --- | --- |
 | Hoofdknooppunt |  Voor alle cluster typen, met uitzonde ring van Apache Storm, hosten de hoofd knooppunten de processen die de uitvoering van de gedistribueerde toepassing beheren. Het hoofd knooppunt is ook het knoop punt dat u kunt SSHen en uitvoeren van toepassingen die vervolgens worden gecoördineerd om te worden uitgevoerd op de cluster resources. Het aantal hoofd knooppunten is vastgesteld op twee voor alle cluster typen. |
 | ZooKeeper-knoop punt | Zookeeper coördineert taken tussen de knoop punten die gegevens verwerking uitvoeren. Het geeft ook de leider van het hoofd knooppunt en houdt bij welk hoofd knooppunt een specifieke Master service uitvoert. Het aantal ZooKeeper-knoop punten is op drie opgelost. |

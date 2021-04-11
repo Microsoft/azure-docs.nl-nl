@@ -5,12 +5,12 @@ ms.assetid: 5b63649c-ec7f-4564-b168-e0a74cb7e0f3
 ms.topic: conceptual
 ms.date: 08/17/2020
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 490fa46deabc822e416705fe9bf9c5cdb58f8cd6
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 079ac41f8b138bccbe4d435a79836d3acee71b7d
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "97936755"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105728620"
 ---
 # <a name="azure-functions-hosting-options"></a>Opties voor Azure Functions hosten
 
@@ -28,7 +28,7 @@ In dit artikel vindt u een gedetailleerde vergelijking tussen de verschillende h
 
 Hieronder vindt u een overzicht van de voor delen van de drie belangrijkste hosting plannen voor-functies:
 
-| | |
+| Plannen | Voordelen |
 | --- | --- |  
 |**[Verbruiksabonnement](consumption-plan.md)**| Schaal automatisch en betaal alleen voor reken resources wanneer uw functies worden uitgevoerd.<br/><br/>In het verbruiks plan worden instanties van de functions-host dynamisch toegevoegd en verwijderd op basis van het aantal binnenkomende gebeurtenissen.<br/><br/> ✔ Standaard hosting plan.<br/>✔ Betaal alleen wanneer uw functies worden uitgevoerd.<br/>✔ Automatisch schalen, zelfs tijdens het aantal Peri Oden van hoge belasting.|  
 |**[Premium-abonnement](functions-premium-plan.md)**|Schaalt automatisch op basis van de vraag met vooraf gewarmde werk rollen die toepassingen uitvoeren zonder vertraging na inactiviteit, worden uitgevoerd op krachtigere instanties en maakt verbinding met virtuele netwerken. <br/><br/>Bekijk het Azure Functions Premium-abonnement in de volgende situaties: <br/><br/>✔ Uw functie-apps continu of bijna continu worden uitgevoerd.<br/>✔ U een groot aantal kleine uitvoeringen en een hoge uitvoerings factuur hebt, maar in het verbruiks abonnement is er minder dan een seconde.<br/>✔ U meer CPU-of geheugen opties nodig hebt dan wat wordt aangegeven door het verbruiks abonnement.<br/>✔ De code moet langer worden uitgevoerd dan de Maxi maal toegestane uitvoerings tijd voor het verbruiks abonnement.<br/>✔ U functies nodig hebt die niet beschikbaar zijn in het verbruiks abonnement, zoals verbinding met het virtuele netwerk.|  
@@ -36,7 +36,7 @@ Hieronder vindt u een overzicht van de voor delen van de drie belangrijkste host
 
 De vergelijkings tabellen in dit artikel bevatten ook de volgende hosting opties, die de hoogste mate van controle en isolatie bieden waarin u uw functie-apps kunt uitvoeren.  
 
-| | |
+| Hosting optie | Details |
 | --- | --- |  
 |**[ASE](dedicated-plan.md)** | App Service Environment (ASE) is een App Service functie die een volledig geïsoleerde en toegewezen omgeving biedt voor het veilig uitvoeren van App Service-apps op grote schaal.<br/><br/>As zijn geschikt voor werk belastingen van toepassingen die nodig zijn voor: <br/><br/>✔ Zeer grote schaal.<br/>✔ Volledige Compute-isolatie en beveiligde netwerk toegang.<br/>✔ Hoog geheugen gebruik.|  
 | **[Kubernetes](functions-kubernetes-keda.md)** | Kubernetes biedt een volledig geïsoleerde en toegewezen omgeving die boven op het Kubernetes-platform wordt uitgevoerd.<br/><br/> Kubernetes is geschikt voor werk belastingen van toepassingen die het volgende vereisen: <br/>Aangepaste hardwarevereisten ✔.<br/>✔ Isolatie en beveiligde netwerk toegang.<br/>✔ Mogelijkheid om uit te voeren in een hybride of multi-cloud omgeving.<br/>✔ Uitgevoerd naast bestaande Kubernetes-toepassingen en-services.|  
@@ -65,7 +65,7 @@ De volgende tabel geeft een lijst van ondersteunde besturingssysteem-en taal run
 
 De volgende tabel vergelijkt het schaal gedrag van de verschillende hosting plannen.
 
-| | Uitschalen | Maximum aantal instanties |
+| Plannen | Uitschalen | Maximum aantal instanties |
 | --- | --- | --- |
 | **[Verbruiksabonnement](consumption-plan.md)** | [Gestuurde gebeurtenis](event-driven-scaling.md). Automatisch uitschalen, zelfs tijdens het aantal Peri Oden van hoge belasting. Met Azure Functions-infra structuur worden CPU-en geheugen bronnen geschaald door extra exemplaren van de functions-host toe te voegen, op basis van het aantal inkomende trigger gebeurtenissen. | 200 |
 | **[Premium-abonnement](functions-premium-plan.md)** | [Gestuurde gebeurtenis](event-driven-scaling.md). Automatisch uitschalen, zelfs tijdens het aantal Peri Oden van hoge belasting. Met Azure Functions-infra structuur worden CPU-en geheugen bronnen geschaald door extra exemplaren van de functions-host toe te voegen op basis van het aantal gebeurtenissen waarvoor de functies zijn geactiveerd. |100|
@@ -77,7 +77,7 @@ De volgende tabel vergelijkt het schaal gedrag van de verschillende hosting plan
 
 ## <a name="cold-start-behavior"></a>Gedrag van koude start
 
-|    |    | 
+| Plannen | Details | 
 | -- | -- |
 | **[Verbruiks &nbsp; abonnement](consumption-plan.md)** | Apps kunnen op nul worden geschaald wanneer ze niet actief zijn, wat betekent dat sommige aanvragen mogelijk extra latentie bij het opstarten hebben.  Het verbruiks plan heeft een aantal optimalisaties waarmee u de koude start tijd kunt verlagen, inclusief het ophalen van vooraf gewarmde tijdelijke aanduidingen waarvoor al de host-en taal processen van de functie worden uitgevoerd. |
 | **[Premium-abonnement](functions-premium-plan.md)** | Ongebruikte en warme exemplaren om te voor komen dat ze koud worden gestart. |
@@ -95,7 +95,7 @@ De volgende tabel vergelijkt het schaal gedrag van de verschillende hosting plan
 
 ## <a name="billing"></a>Billing
 
-| | | 
+| Plannen | Details |
 | --- | --- |
 | **[Verbruiksabonnement](consumption-plan.md)** | Betaal alleen voor de tijd dat uw functies worden uitgevoerd. De facturering is dan ook gebaseerd op het aantal uitvoeringen, de uitvoeringstijd en het gebruikte geheugen. |
 | **[Premium-abonnement](functions-premium-plan.md)** | Het Premium-abonnement is gebaseerd op het aantal kern seconden en het geheugen dat wordt gebruikt voor alle benodigde en vooraf gewarmde instanties. Ten minste één exemplaar per plan moet altijd warme worden bewaard. Dit abonnement biedt de meest voorspel bare prijzen. |

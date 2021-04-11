@@ -4,10 +4,10 @@ description: Meer informatie over het configureren van Defender voor IoT-beveili
 ms.topic: how-to
 ms.date: 09/09/2020
 ms.openlocfilehash: 5ac9a5cdb4cc13ed91c0e5e29447b9cdbe71bcce
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104784404"
 ---
 # <a name="tutorial-configure-security-agents"></a>Zelf studie: beveiligings agenten configureren
@@ -107,7 +107,7 @@ De volgende tabel bevat de eigenschappen van Defender voor IoT-beveiligings agen
 
 Standaard waarden zijn beschikbaar in het juiste schema in [github](https\://aka.ms/iot-security-module-default).
 
-| Name| Status | Geldige waarden| Standaardwaarden| Beschrijving |
+| Name| Status | Geldige waarden| Standaardwaarden| Description |
 |----------|--------|--|-------|----|
 |highPriorityMessageFrequency|Vereist: onwaar |Geldige waarden: duration in ISO 8601-indeling |Standaard waarde: PT7M |Het maximale tijds interval voor berichten met een hoge prioriteit worden verzonden.|
 |lowPriorityMessageFrequency |Vereist: onwaar|Geldige waarden: duration in ISO 8601-indeling |Standaard waarde: PT5H |Maximale tijd waarna berichten met een lage prioriteit worden verzonden.|

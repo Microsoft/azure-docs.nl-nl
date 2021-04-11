@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/03/2021
 ms.author: memildin
-ms.openlocfilehash: b19a7c156abf32e2a0f6d70717145a6ed5ab42ce
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 2f5d98dd9bf893065f2bf9c37cbec4384d0f7c94
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102099672"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105727137"
 ---
 # <a name="secure-score-in-azure-security-center"></a>Beveiligingsscore in Azure Security Center
 
@@ -69,7 +69,7 @@ De maximum score voor dit besturings element, het Toep assen van systeem updates
 |**Huidige Score van beveiligings beheer**|<br>![Vergelijking voor het berekenen van de Score van een beveiligings controle](media/secure-score-security-controls/secure-score-equation-single-control.png)<br><br>Elk afzonderlijk beveiligings beheer draagt bij aan de beveiligings Score. Elke resource die wordt beïnvloed door een aanbeveling binnen het besturings element, draagt bij aan de huidige Score van het besturings element. De huidige score voor elk besturings element is een meting van de status van de resources *in* het besturings element.<br>![Knop info met de waarden die worden gebruikt bij het berekenen van de huidige Score van het beveiligings beheer](media/secure-score-security-controls/security-control-scoring-tooltips.png)<br>In dit voor beeld wordt de maximale Score van 6 gedeeld door 78, omdat dat de som is van de in orde zijnde en slechte resources.<br>6/78 = 0,0769<br>Als u wilt vermenigvuldigen met het aantal ongezonde resources (4), resulteert dit in de huidige Score:<br>0,0769 * 4 = **0,31**<br><br>|
 |**Beveiligingsscore**<br>Enkel abonnement|<br>![Vergelijking voor het berekenen van de beveiligde Score van een abonnement](media/secure-score-security-controls/secure-score-equation-single-sub.png)<br><br>![Een beveiligde Score van één abonnement waarbij alle besturings elementen zijn ingeschakeld](media/secure-score-security-controls/secure-score-example-single-sub.png)<br>In dit voor beeld is er één abonnement met alle beveiligings controles beschikbaar (een potentiële maximum Score van 60 punten). De score toont 28 punten van een mogelijke 60 en de resterende 32 punten worden weer gegeven in de sectie ' potentiële Score verhogen ' van de beveiligings controles.<br>![Lijst met besturings elementen en de potentiële toename van de Score](media/secure-score-security-controls/secure-score-example-single-sub-recs.png)|
 |**Beveiligingsscore**<br>Meerdere abonnementen|<br>![Vergelijking voor het berekenen van de beveiligde score voor meerdere abonnementen](media/secure-score-security-controls/secure-score-equation-multiple-subs.png)<br><br>Bij het berekenen van de gecombineerde score voor meerdere abonnementen, bevat Security Center een *gewicht* voor elk abonnement. De relatieve gewichten voor uw abonnementen worden bepaald door Security Center op basis van factoren zoals het aantal resources.<br>De huidige score voor elk abonnement wordt berekend op dezelfde manier als voor één abonnement, maar vervolgens wordt het gewicht toegepast, zoals weer gegeven in de vergelijking.<br>Wanneer er meerdere abonnementen worden weer gegeven, evalueert de beveiligde score alle resources binnen het ingeschakelde beleid en worden de gecombineerde impact van elk van de maximale scores van het beveiligings beheer gegroepeerd.<br>![Beveiligde score voor meerdere abonnementen waarbij alle besturings elementen zijn ingeschakeld](media/secure-score-security-controls/secure-score-example-multiple-subs.png)<br>De gecombineerde score is **geen** gemiddelde. in plaats daarvan is het de geëvalueerde postuur van de status van alle resources in alle abonnementen.<br>Ook als u naar de pagina aanbevelingen gaat en de potentiële punten die beschikbaar zijn, opneemt, zult u merken dat het verschil tussen de huidige Score (24) en de Maxi maal beschik bare Score (60) is.|
-||||
+
 
 ### <a name="which-recommendations-are-included-in-the-secure-score-calculations"></a>Welke aanbevelingen zijn opgenomen in de berekeningen van de veilige Score?
 

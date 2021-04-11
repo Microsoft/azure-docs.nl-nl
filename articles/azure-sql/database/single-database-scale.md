@@ -11,12 +11,12 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sstein
 ms.date: 02/22/2021
-ms.openlocfilehash: 5852899175f9cc9f2725b875c6e1ce9fd682768d
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.openlocfilehash: c5b6509cabd743a01a085639a7b76d764555a9f8
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105625260"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106106650"
 ---
 # <a name="scale-single-database-resources-in-azure-sql-database"></a>Resources van een individuele database schalen in Azure SQL Database
 
@@ -62,9 +62,6 @@ De geschatte latentie voor het wijzigen van de servicelaag, het schalen van de r
 >
 > Voer de volgende query uit in de context van de data base om te bepalen of een Data Base PFS-opslag gebruikt. Als de waarde in de kolom account type is `PremiumFileStorage` of `PremiumFileStorage-ZRS` , gebruikt de data base PFS-opslag.
 
-[!NOTE]
- De zone redundante eigenschap blijft standaard hetzelfde wanneer u van de Bedrijfskritiek naar de Algemeen laag wilt schalen. Latentie voor deze downgrade wanneer zone redundantie is ingeschakeld en latentie voor het overschakelen naar zone redundantie voor de Algemeen laag evenredig is met de grootte van de data base.
-
 ```sql
 SELECT s.file_id,
        s.type_desc,
@@ -73,6 +70,9 @@ SELECT s.file_id,
 FROM sys.database_files AS s
 WHERE s.type_desc IN ('ROWS', 'LOG');
 ```
+
+> [!NOTE]
+> De zone redundante eigenschap blijft standaard hetzelfde wanneer u van de Bedrijfskritiek naar de Algemeen laag wilt schalen. Latentie voor deze downgrade wanneer zone redundantie is ingeschakeld en latentie voor het overschakelen naar zone redundantie voor de Algemeen laag evenredig is met de grootte van de data base.
 
 > [!TIP]
 > Zie voor het controleren van bewerkingen in uitvoering: [bewerkingen beheren met behulp van de SQL rest API](/rest/api/sql/operations/list), [bewerkingen beheren met CLI](/cli/azure/sql/db/op), [bewerkingen bewaken met T-SQL](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database) en deze twee Power shell-opdrachten: [Get-AzSqlDatabaseActivity](/powershell/module/az.sql/get-azsqldatabaseactivity) en [Stop-AzSqlDatabaseActivity](/powershell/module/az.sql/stop-azsqldatabaseactivity).

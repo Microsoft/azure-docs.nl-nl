@@ -7,10 +7,10 @@ ms.manager: bsiva
 ms.topic: how-to
 ms.date: 02/22/2021
 ms.openlocfilehash: 9aa9a42422f3c114490d1dbb28a146b6e76ca8cd
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105558615"
 ---
 # <a name="replicate-data-over-expressroute-with-azure-migrate-server-migration"></a>Gegevens repliceren via ExpressRoute met Azure Migrate: Server migratie

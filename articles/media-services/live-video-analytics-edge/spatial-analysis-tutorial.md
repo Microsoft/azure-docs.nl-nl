@@ -4,10 +4,10 @@ description: In deze zelfstudie leert u hoe u Live Video Analytics samen met de 
 ms.topic: tutorial
 ms.date: 09/08/2020
 ms.openlocfilehash: 1c3fd411e60cabb504f01bece62d497ddeea31d8
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105561012"
 ---
 # <a name="analyze-live-video-with-computer-vision-for-spatial-analysis-preview"></a>Livevideo analyseren met Computer Vision voor ruimtelijke analyse (preview)

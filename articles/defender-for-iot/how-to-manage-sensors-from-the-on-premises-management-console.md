@@ -4,10 +4,10 @@ description: Meer informatie over het beheren van Sens oren vanuit de beheer con
 ms.date: 12/07/2020
 ms.topic: how-to
 ms.openlocfilehash: 4706fbcf58b8e5f5eed6532f9a08f65c7716e07e
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104781922"
 ---
 # <a name="manage-sensors-from-the-management-console"></a>Sens oren beheren vanuit de beheer console
@@ -140,7 +140,7 @@ U kunt waarschuwingen naar derden verzenden met informatie over niet-verbonden S
 
 Sens oren worden beschermd door vijf Defender voor IoT-engines. U kunt de engines voor verbonden Sens oren in-of uitschakelen.
 
-| Engine | Beschrijving | Voorbeeldscenario |
+| Engine | Description | Voorbeeldscenario |
 |--|--|--|
 | Engine voor protocol overtreding | Een schending van het protocol treedt op wanneer de pakket structuur of veld waarden niet voldoen aan de protocol specificatie. | De waarschuwing ongeldige MODBUS-bewerking (functie code is nul). Deze waarschuwing geeft aan dat een primair apparaat een aanvraag met functie code 0 naar een secundair apparaat heeft verzonden. Dit is niet toegestaan volgens de protocol specificatie en het secundaire apparaat kan de invoer mogelijk niet correct afhandelen. |
 | Engine voor beleids overtreding | Een beleids schending treedt op met een afwijking van de basislijn gedrag die is gedefinieerd in het geleerde of geconfigureerde beleid. | Waarschuwing voor niet-geautoriseerde HTTP-gebruikers agent. Deze waarschuwing geeft aan dat een toepassing die niet is geleerd of goedgekeurd door het beleid wordt gebruikt als een HTTP-client op een apparaat. Dit kan een nieuwe webbrowser of toepassing op dat apparaat zijn. |

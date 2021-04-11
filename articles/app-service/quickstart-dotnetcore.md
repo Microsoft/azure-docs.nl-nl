@@ -11,10 +11,10 @@ adobe-target-activity: DocsExp–386541–A/B–Enhanced-Readability-Quickstarts
 adobe-target-experience: Experience B
 adobe-target-content: ./quickstart-dotnetcore-uiex
 ms.openlocfilehash: 77e0768a617ef79ab8510f88bfdcd41d5647f9bf
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101701634"
 ---
 # <a name="quickstart-create-an-aspnet-core-web-app-in-azure"></a>Quickstart: Een ASP.NET Core-web-app maken in Azure
@@ -315,12 +315,12 @@ De .NET Core-voorbeeldcode wordt uitgevoerd in App Service op Linux met een inge
 
 [Ondervindt u problemen? Laat het ons weten.](https://aka.ms/DotNetAppServiceLinuxQuickStart)
 
-## <a name="update-and-redeploy-the-code"></a>De code bijwerken en opnieuw implementeren
+## <a name="update-and-redeploy-the-code&quot;></a>De code bijwerken en opnieuw implementeren
 
 Open het bestand _Startup.cs_ in de lokale map. Breng een kleine wijziging aan in de tekst in de methodeaanroep `context.Response.WriteAsync`:
 
 ```csharp
-await context.Response.WriteAsync("Hello Azure!");
+await context.Response.WriteAsync(&quot;Hello Azure!");
 ```
 
 Sla de wijzigingen op en implementeer de app opnieuw met de opdracht `az webapp up`:

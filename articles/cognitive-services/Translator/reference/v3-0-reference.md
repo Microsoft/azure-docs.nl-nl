@@ -11,10 +11,10 @@ ms.topic: reference
 ms.date: 8/11/2020
 ms.author: lajanuar
 ms.openlocfilehash: 567e28ee7f698565d6ad0020db7abdca0557f053
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "100650759"
 ---
 # <a name="translator-v30"></a>Translator v 3.0
@@ -41,7 +41,7 @@ Aanvragen voor de micro soft Translator zijn in de meeste gevallen verwerkt door
 
 Als u wilt afdwingen dat de aanvraag wordt verwerkt door een specifieke Azure-geografie, wijzigt u het globale eind punt in de API-aanvraag naar het gewenste geografische eind punt:
 
-|Beschrijving|Azure-Geografie|Basis-URL (geografisch eind punt)|
+|Description|Azure-Geografie|Basis-URL (geografisch eind punt)|
 |:--|:--|:--|
 |Azure|Algemeen (niet-regionaal)|   api.cognitive.microsofttranslator.com|
 |Azure|Verenigde Staten|   api-nam.cognitive.microsofttranslator.com|
@@ -199,7 +199,7 @@ Zo kan een klant met een gratis proef abonnement de volgende fout melding ontvan
 ```
 De fout code is een getal van 6 cijfers, waarbij de HTTP-status code van 3 cijfers wordt gevolgd door een getal van drie cijfers om de fout verder te categoriseren. Veelvoorkomende fout codes zijn:
 
-| Code | Beschrijving |
+| Code | Description |
 |:----|:-----|
 | 400000| Een van de aanvraag invoer is ongeldig.|
 | 400001| De para meter "scope" is ongeldig.|
@@ -247,7 +247,7 @@ Met metrische gegevens kunt u het gebruik van de Vertaler en beschik baarheid in
 
 Deze tabel bevat de beschik bare metrische gegevens met een beschrijving van hoe ze worden gebruikt voor het bewaken van API-aanroepen voor vertalingen.
 
-| Metrische gegevens | Beschrijving |
+| Metrische gegevens | Description |
 |:----|:-----|
 | TotalCalls| Totaal aantal API-aanroepen.|
 | TotalTokenCalls| Totaal aantal API-aanroepen via token service met verificatie token.|

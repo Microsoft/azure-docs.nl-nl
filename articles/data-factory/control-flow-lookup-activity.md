@@ -7,10 +7,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 02/25/2021
 ms.openlocfilehash: 4b2fb49899b6a676520fe0912dd122dd72cce023
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101712909"
 ---
 # <a name="lookup-activity-in-azure-data-factory"></a>Opzoek activiteit in Azure Data Factory
@@ -57,8 +57,8 @@ De volgende gegevens bronnen worden ondersteund voor opzoek activiteiten.
 
 Naam | Beschrijving | Type | Vereist?
 ---- | ----------- | ---- | --------
-sets | Bevat de referentie voor de gegevensset voor de zoek actie. Details ophalen uit de sectie **Eigenschappen van gegevensset** in elk bijbehorend connector artikel. | Sleutel/waarde-paar | Ja
-source | Bevat eigenschappen van een gegevensset, hetzelfde als de bron van de Kopieer activiteit. Details ophalen uit de sectie **Eigenschappen van Kopieer activiteit** in elk bijbehorende connector-artikel. | Sleutel/waarde-paar | Ja
+sets | Bevat de referentie voor de gegevensset voor de zoek actie. Details ophalen uit de sectie **Eigenschappen van gegevensset** in elk bijbehorend connector artikel. | Sleutel/waarde-paar | Yes
+source | Bevat eigenschappen van een gegevensset, hetzelfde als de bron van de Kopieer activiteit. Details ophalen uit de sectie **Eigenschappen van Kopieer activiteit** in elk bijbehorende connector-artikel. | Sleutel/waarde-paar | Yes
 firstRowOnly | Geeft aan of alleen de eerste rij of alle rijen worden geretourneerd. | Booleaans | Nee. De standaardwaarde is `true`.
 
 > [!NOTE]

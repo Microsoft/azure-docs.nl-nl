@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 04/03/2017
 ms.subservice: autoscale
 ms.openlocfilehash: 3b1f13fd1ce8bedcbe58385d4cee321f1d1405df
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100610842"
 ---
 # <a name="use-autoscale-actions-to-send-email-and-webhook-alert-notifications-in-azure-monitor"></a>Acties voor automatisch schalen gebruiken voor het verzenden van e-mail berichten en waarschuwingen voor webhooks in Azure Monitor
@@ -56,7 +56,7 @@ Wanneer u de REST API-of Resource Manager-sjabloon gebruikt, neemt u het element
     ]
 ```
 
-| Veld | Ingevuld? | Beschrijving |
+| Veld | Ingevuld? | Description |
 | --- | --- | --- |
 | bewerking |ja |de waarde moet ' Scale ' zijn |
 | sendToSubscriptionAdministrator |ja |de waarde moet ' waar ' of ' onwaar ' zijn |
@@ -99,21 +99,21 @@ Wanneer de melding over automatisch schalen wordt gegenereerd, worden de volgend
 ```
 
 
-| Veld | Ingevuld? | Beschrijving |
+| Veld | Ingevuld? | Description |
 | --- | --- | --- |
 | status |ja |De status die aangeeft dat er een actie voor automatisch schalen is gegenereerd |
 | bewerking |ja |Voor een verhoging van de instanties wordt het ' uitschalen ' en voor een afname van de instanties de waarde ' schaalt in ' |
 | context |ja |De actie context voor automatisch schalen |
 | tijdstempel |ja |Tijds tempel wanneer de actie voor automatisch schalen is geactiveerd |
-| id |Ja |Resource Manager-ID van de instelling voor automatisch schalen |
-| naam |Ja |De naam van de instelling voor automatisch schalen |
-| nadere |Ja |Uitleg van de actie die de service voor automatisch schalen heeft ondernomen en de wijziging van het aantal instanties |
-| subscriptionId |Ja |Abonnements-ID van de doel resource die wordt geschaald |
-| resourceGroupName |Ja |De naam van de resource groep van de doel resource die wordt geschaald |
-| resourceName |Ja |De naam van de doel resource die wordt geschaald |
-| resourceType |Ja |De drie ondersteunde waarden: ' micro soft. classiccompute/domainnames/sleuven/roles '-Cloud service roles ' micro soft. Compute/virtualmachinescalesets '-Virtual Machine Scale Sets en ' micro soft. web/server farms '-web-app |
-| resourceId |Ja |Resource Manager-ID van de doel resource die wordt geschaald |
-| portalLink |Ja |Azure Portal koppeling naar de overzichts pagina van de doel resource |
-| oldCapacity |Ja |Het huidige (oude) exemplaar aantal wanneer automatisch schalen een schaal actie heeft uitgevoerd |
-| newCapacity |Ja |Het nieuwe aantal exemplaren dat automatisch wordt geschaald naar de resource |
-| properties |Nee |Optioneel. Set <sleutel, waarde> paren (bijvoorbeeld woorden lijst <teken reeks, teken reeks>). Het veld eigenschappen is optioneel. In een aangepaste werk stroom op basis van een gebruikers interface of logische app kunt u sleutels en waarden invoeren die kunnen worden door gegeven met behulp van de payload. Een alternatieve manier om aangepaste eigenschappen door te geven aan de uitgaande webhook-aanroep is het gebruik van de webhook-URI zelf (als query parameters) |
+| id |Yes |Resource Manager-ID van de instelling voor automatisch schalen |
+| naam |Yes |De naam van de instelling voor automatisch schalen |
+| nadere |Yes |Uitleg van de actie die de service voor automatisch schalen heeft ondernomen en de wijziging van het aantal instanties |
+| subscriptionId |Yes |Abonnements-ID van de doel resource die wordt geschaald |
+| resourceGroupName |Yes |De naam van de resource groep van de doel resource die wordt geschaald |
+| resourceName |Yes |De naam van de doel resource die wordt geschaald |
+| resourceType |Yes |De drie ondersteunde waarden: ' micro soft. classiccompute/domainnames/sleuven/roles '-Cloud service roles ' micro soft. Compute/virtualmachinescalesets '-Virtual Machine Scale Sets en ' micro soft. web/server farms '-web-app |
+| resourceId |Yes |Resource Manager-ID van de doel resource die wordt geschaald |
+| portalLink |Yes |Azure Portal koppeling naar de overzichts pagina van de doel resource |
+| oldCapacity |Yes |Het huidige (oude) exemplaar aantal wanneer automatisch schalen een schaal actie heeft uitgevoerd |
+| newCapacity |Yes |Het nieuwe aantal exemplaren dat automatisch wordt geschaald naar de resource |
+| properties |No |Optioneel. Set <sleutel, waarde> paren (bijvoorbeeld woorden lijst <teken reeks, teken reeks>). Het veld eigenschappen is optioneel. In een aangepaste werk stroom op basis van een gebruikers interface of logische app kunt u sleutels en waarden invoeren die kunnen worden door gegeven met behulp van de payload. Een alternatieve manier om aangepaste eigenschappen door te geven aan de uitgaande webhook-aanroep is het gebruik van de webhook-URI zelf (als query parameters) |

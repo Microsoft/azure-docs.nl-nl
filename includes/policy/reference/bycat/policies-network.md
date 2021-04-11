@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 03/24/2021
+ms.date: 03/31/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 4b67952565ae7d5e8a05661fba2129177072007c
-ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
+ms.openlocfilehash: a6522eb54980cb28f08ce91e29a6a18943d49040
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105033123"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106088952"
 ---
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -36,6 +36,7 @@ ms.locfileid: "105033123"
 |[SSH-toegang via internet moet worden geblokkeerd](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F2c89a2e5-7285-40fe-afe0-ae8654b92fab) |Met dit beleid wordt elke netwerkbeveiligingsregel gecontroleerd die SSH-toegang via internet toestaat |Controle, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/NetworkSecurityGroup_SSHAccess_Audit.json) |
 |[Opslagaccounts moeten gebruikmaken van een  service-eindpunt voor een virtueel netwerk](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F60d21c4f-21a3-4d94-85f4-b924e6aeeda4) |Met dit beleid worden alle opslagaccounts gecontroleerd die niet zijn geconfigureerd voor het gebruik van een  service-eindpunt voor een virtueel netwerk. |Controle, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/VirtualNetworkServiceEndpoint_StorageAccount_Audit.json) |
 |[Virtuele machines moeten zijn verbonden met een goedgekeurd virtueel netwerk](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fd416745a-506c-48b6-8ab1-83cb814bcaa3) |Met dit beleid worden virtuele machines gecontroleerd die zijn verbonden met een niet-goedgekeurd virtueel netwerk. |Controleren, Weigeren, Uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/ApprovedVirtualNetwork_Audit.json) |
+|[Virtuele netwerken moeten worden beveiligd door Azure DDoS Protection Standard](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F94de2ad3-e0c1-4caf-ad78-5d47bbc83d3d) |Bescherm uw virtuele netwerken tegen maat-en protocol aanvallen met Azure DDoS Protection Standard. U vindt meer informatie op [https://aka.ms/ddosprotectiondocs](https://aka.ms/ddosprotectiondocs). |Wijzigen, controleren, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/VirtualNetworkDdosStandard_Audit.json) |
 |[Virtuele netwerken moeten gebruikmaken van de opgegeven virtuele-netwerkgateway](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff1776c76-f58c-4245-a8d0-2b207198dc8b) |Met dit beleid worden alle virtuele netwerken gecontroleerd als de standaardroute niet verwijst naar de opgegeven virtuele-netwerkgateway. |AuditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/VirtualNetwork_ApprovedVirtualNetworkGateway_AuditIfNotExists.json) |
 |[Web Application Firewall (WAF) moet zijn ingeschakeld voor Application Gateway](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F564feb30-bf6a-4854-b4bb-0d2d2d1e6c66) |Implementeer Azure Web Application Firewall (WAF) voor openbare webtoepassingen voor extra inspectie van binnenkomend verkeer. WAF (Web Application Firewall) biedt gecentraliseerde bescherming van uw webtoepassingen, van veelvoorkomende aanvallen tot beveiligingsproblemen, zoals SQL-injecties, aanvallen via scripting op meerdere sites en lokale en externe bestandsuitvoeringen. U kunt de toegang tot uw webtoepassingen ook beperken op basis van landen, IP-adresbereiken en andere http(s)-para meters via aangepaste regels. |Controleren, Weigeren, Uitgeschakeld |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/WAF_AppGatewayEnabled_Audit.json) |
 |[Web Application firewall (WAF) moet zijn ingeschakeld voor de service service van Azure voor de voor deur](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F055aa869-bc98-4af8-bafc-23f1ab6ffe2c) |Implementeer Azure Web Application Firewall (WAF) voor openbare webtoepassingen voor extra inspectie van binnenkomend verkeer. WAF (Web Application Firewall) biedt gecentraliseerde bescherming van uw webtoepassingen, van veelvoorkomende aanvallen tot beveiligingsproblemen, zoals SQL-injecties, aanvallen via scripting op meerdere sites en lokale en externe bestandsuitvoeringen. U kunt de toegang tot uw webtoepassingen ook beperken op basis van landen, IP-adresbereiken en andere http(s)-para meters via aangepaste regels. |Controleren, Weigeren, Uitgeschakeld |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/WAF_AFD_Enabled_Audit.json) |

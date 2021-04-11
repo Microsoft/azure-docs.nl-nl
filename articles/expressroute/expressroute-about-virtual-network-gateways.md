@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 10/14/2019
 ms.author: duau
-ms.openlocfilehash: 038e018a22af3546f5d3c66f6d8ee3963483cce1
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 3f8cf5de012999c0f814964fd41042a0caf78b42
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102615054"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106106667"
 ---
 # <a name="about-expressroute-virtual-network-gateways"></a>Info over virtuele ExpressRoute-netwerkgateways voor meer informatie over de virtuele ExpressRoute-netwerkgateway
 
@@ -53,7 +53,7 @@ Voordat u een ExpressRoute-gateway maakt, moet u een gateway-subnet maken. Het g
 
 Wanneer u het gatewaysubnet maakt, geeft u op hoeveel IP-adressen het subnet bevat. De IP-adressen in het gateway-subnet worden toegewezen aan de gateway-Vm's en Gateway Services. Sommige configuraties vereisen meer IP-adressen dan andere. 
 
-Wanneer u de grootte van het gateway-subnet plant, raadpleegt u de documentatie voor de configuratie die u wilt maken. Zo is voor de configuratie ExpressRoute/VPN Gateway naast elkaar een groter gateway-subnet vereist dan de meeste andere configuraties. Daarnaast wilt u er mogelijk voor zorgen dat uw gateway subnet voldoende IP-adressen bevat voor mogelijke toekomstige extra configuraties. Hoewel u een gateway-subnet kunt maken als/29, raden we u aan een gateway-subnet van/27 of groter te maken (/27,/26 enzovoort) als u over de beschik bare adres ruimte beschikt. Als u een gateway-subnet met dubbele stacks maakt, raden we u aan om ook een IPv6-bereik van/64 of groter te gebruiken. Dit is geschikt voor de meeste configuraties.
+Wanneer u de grootte van het gateway-subnet plant, raadpleegt u de documentatie voor de configuratie die u wilt maken. Zo is voor de configuratie ExpressRoute/VPN Gateway naast elkaar een groter gateway-subnet vereist dan de meeste andere configuraties. Daarnaast wilt u er mogelijk voor zorgen dat uw gateway subnet voldoende IP-adressen bevat voor mogelijke toekomstige extra configuraties. Hoewel u een gateway-subnet kunt maken als/29, raden we u aan een gateway-subnet van/27 of groter te maken (/27,/26 enzovoort) als u over de beschik bare adres ruimte beschikt. Als u van plan bent om 16 ExpressRoute-circuits te verbinden met uw gateway, **moet** u een gateway-subnet van/26 of groter maken. Als u een gateway-subnet met dubbele stacks maakt, raden we u aan om ook een IPv6-bereik van/64 of groter te gebruiken. Dit is geschikt voor de meeste configuraties.
 
 In het volgende voor beeld van Resource Manager Power shell wordt een gateway-subnet met de naam GatewaySubnet weer gegeven. U kunt in de CIDR-notatie een/27 opgeven, zodat er voldoende IP-adressen zijn voor de meeste configuraties die momenteel bestaan.
 

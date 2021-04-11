@@ -8,10 +8,10 @@ ms.date: 02/17/2020
 ms.author: bwren
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
 ms.openlocfilehash: 174f372f9dbe8dc0449c7f9b9f5b34c6206f92de
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101708557"
 ---
 # <a name="install-and-configure-windows-azure-diagnostics-extension-wad"></a>De Windows Azure Diagnostics-extensie (WAD) installeren en configureren
@@ -191,7 +191,7 @@ Zie ook [Power shell gebruiken om Azure Diagnostics in te scha kelen op een virt
 De volgende tabel geeft een lijst van de verschillende typen gegevens die worden verzameld uit de diagnostische uitbrei ding en of ze worden opgeslagen als een tabel of BLOB. De gegevens die zijn opgeslagen in tabellen kunnen ook worden opgeslagen in blobs, afhankelijk van de [instelling para](diagnostics-extension-schema-windows.md#publicconfig-element) in uw open bare configuratie.
 
 
-| Gegevens | Opslagtype | Beschrijving |
+| Gegevens | Opslagtype | Description |
 |:---|:---|:---|
 | WADDiagnosticInfrastructureLogsTable | Tabel | Diagnostische monitor-en configuratie wijzigingen. |
 | WADDirectoriesTable | Tabel | Mappen die door de diagnostische monitor worden bewaakt.  Dit zijn onder andere IIS-logboeken, IIS-aanvraag logboeken en aangepaste directory's.  De locatie van het BLOB-logboek bestand wordt opgegeven in het container veld en de naam van de BLOB bevindt zich in het veld RelativePath.  Het veld AbsolutePath geeft de locatie en de naam van het bestand aan zoals het aanwezig is op de virtuele Azure-machine. |

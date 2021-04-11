@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 01/22/2021
 ms.author: jeedes
 ms.openlocfilehash: f56f2dc974df58575c72c93a0609026cd7bbf88d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101652620"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-veracode"></a>Zelfstudie: Integratie van eenmalige aanmelding via Azure Active Directory met Veracode
@@ -93,7 +93,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     ![Schermopname van de sectie Veracode instellen, met configuratie-URL's gemarkeerd](common/copy-configuration-urls.png)
 
-### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
+### <a name="create-an-azure-ad-test-user&quot;></a>Een Azure AD-testgebruiker maken
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
@@ -105,7 +105,7 @@ In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Porta
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
    1. Klik op **Create**.
 
-### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
+### <a name=&quot;assign-the-azure-ad-test-user&quot;></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen aan Veracode.
 
@@ -117,13 +117,13 @@ In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebru
 1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-## <a name="configure-veracode-sso"></a>Eenmalige aanmelding voor Veracode configureren
+## <a name=&quot;configure-veracode-sso&quot;></a>Eenmalige aanmelding voor Veracode configureren
 
 1. Meld u in een ander browservenster als een beheerder aan bij de bedrijfssite van Veracode.
 
 1. Selecteer **Instellingen** > **Beheerder** in het menu bovenaan.
    
-    ![Schermopname van Veracode-beheer met het pictogram Instellingen en Beheer gemarkeerd](./media/veracode-tutorial/admin.png "Beheer")
+    ![Schermopname van Veracode-beheer met het pictogram Instellingen en Beheer gemarkeerd](./media/veracode-tutorial/admin.png &quot;Beheer")
 
 1. Selecteer het tabblad **SAML**.
 

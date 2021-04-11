@@ -10,12 +10,12 @@ ms.date: 03/11/2021
 ms.topic: include
 ms.custom: include file
 ms.author: lakshmans
-ms.openlocfilehash: aba9b71ec2fbfedecf08577c7bd2eae7a28a5588
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 2b96d62fb2be27de03964212557446d2e792beb8
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105644373"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106113099"
 ---
 Ga aan de slag met Azure Communication Services met behulp van de SMS-SDK voor SMS Services voor het verzenden van berichten.
 
@@ -23,11 +23,11 @@ Voor het voltooien van deze quickstart worden kosten van een paar dollarcent of 
 
 <!--**TODO: update all these reference links as the resources go live**
 
-[API reference documentation](../../../references/overview.md) | [Library source code](#todo-sdk-repo) | [Package (PiPy)](#todo-nuget) | [Samples](#todo-samples)--> 
+[API reference documentation](../../../references/overview.md) | [Library source code](#todo-sdk-repo) | [Package (PiPy)](#todo-nuget) | [Samples](#todo-samples)-->
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) 
+- Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 - [Python](https://www.python.org/downloads/) 2,7 of 3.6 +.
 - Een actieve Communication Services-resource en verbindingsreeks. [Een Communication Services-resource maken](../../create-communication-resource.md).
 - Een telefoonnummer met sms-functionaliteit. [Een telefoonnummer aanvragen](../get-phone-number.md).
@@ -65,7 +65,7 @@ except Exception as ex:
 Terwijl u nog steeds in de toepassingsmap, installeert u de Azure Communication Services SMS SDK voor python-pakket met behulp van de `pip install` opdracht.
 
 ```console
-pip install azure-communication-sms --pre
+pip install azure-communication-sms
 ```
 
 ## <a name="object-model"></a>Objectmodel
@@ -104,7 +104,7 @@ sms_responses = sms_client.send(
 
 ```
 
-U moet `<from-phone-number>` vervangen door een telefoonnummer met sms-functionaliteit dat is gekoppeld aan uw communicatieservice en `<to-phone-number>` met het telefoonnummer waarnaar u een bericht wilt verzenden. 
+U moet `<from-phone-number>` vervangen door een telefoonnummer met sms-functionaliteit dat is gekoppeld aan uw communicatieservice en `<to-phone-number>` met het telefoonnummer waarnaar u een bericht wilt verzenden.
 
 > [!WARNING]
 > Telefoonnummers moeten worden opgegeven in de internationale standaardindeling E.164. (bijvoorbeeld: + 14255550123).
@@ -125,7 +125,7 @@ sms_responses = sms_client.send(
 
 ```
 
-Vervang door `<from-phone-number>` een SMS-telefoon nummer dat is gekoppeld aan uw communicatie service en `<to-phone-number-1>` `<to-phone-number-2>` met een telefoon nummer (s) waarnaar u een bericht wilt verzenden. 
+Vervang door `<from-phone-number>` een SMS-telefoon nummer dat is gekoppeld aan uw communicatie service en `<to-phone-number-1>` `<to-phone-number-2>` met een telefoon nummer (s) waarnaar u een bericht wilt verzenden.
 
 > [!WARNING]
 > Telefoonnummers moeten worden opgegeven in de internationale standaardindeling E.164. (bijvoorbeeld: + 14255550123).

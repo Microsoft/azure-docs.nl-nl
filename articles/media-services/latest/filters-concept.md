@@ -13,18 +13,18 @@ ms.devlang: ne
 ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: bb5561ced93c3f5a899c6e48fdab0f14e52914bb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6ba9a4d5ac427533c2ce005a74fe43b0ce80de79
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "89291546"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106109438"
 ---
 # <a name="filters"></a>Filters
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
-Wanneer u uw inhoud aan klanten levert (live streaming-gebeurtenissen of video op aanvraag), heeft uw client mogelijk meer flexibiliteit nodig dan is beschreven in het manifest bestand van het standaard activum. Azure Media Services biedt [dynamische manifesten](filters-dynamic-manifest-overview.md) op basis van vooraf gedefinieerde filters. 
+Wanneer u uw inhoud aan klanten levert (live streaming-gebeurtenissen of video op aanvraag), heeft uw client mogelijk meer flexibiliteit nodig dan is beschreven in het manifest bestand van het standaard activum. Azure Media Services biedt [dynamische manifesten](filters-dynamic-manifest-concept.md) op basis van vooraf gedefinieerde filters. 
 
 Filters zijn regels aan de server zijde waarmee uw klanten dingen kunnen doen: 
 
@@ -141,12 +141,12 @@ In het volgende voor beeld wordt een filter voor live streams gedefinieerd:
 
 ## <a name="associating-filters-with-streaming-locator"></a>Filters koppelen aan de streaming-Locator
 
-U kunt een lijst met [Asset-of account filters](filters-concept.md) opgeven voor uw [streaming-Locator](/rest/api/media/streaminglocators/create#request-body). Met de [dynamische packager](dynamic-packaging-overview.md) wordt deze lijst met filters toegepast, samen met de records die door uw client zijn opgegeven in de URL. Deze combi natie genereert een [dynamisch manifest](filters-dynamic-manifest-overview.md)dat is gebaseerd op filters in de URL + filters die u opgeeft op de streaming-Locator. 
+U kunt een lijst met [Asset-of account filters](filters-concept.md) opgeven voor uw [streaming-Locator](/rest/api/media/streaminglocators/create#request-body). Met de [dynamische packager](encode-dynamic-packaging-concept.md) wordt deze lijst met filters toegepast, samen met de records die door uw client zijn opgegeven in de URL. Deze combi natie genereert een [dynamisch manifest](filters-dynamic-manifest-concept.md)dat is gebaseerd op filters in de URL + filters die u opgeeft op de streaming-Locator. 
 
 Zie de volgende voorbeelden:
 
-* [Filters koppelen aan streaming-Locator-.NET](filters-dynamic-manifest-dotnet-howto.md#associate-filters-with-streaming-locator)
-* [Filters koppelen aan streaming-Locator-CLI](filters-dynamic-manifest-cli-howto.md#associate-filters-with-streaming-locator)
+* [Filters koppelen aan streaming-Locator-.NET](filters-dynamic-manifest-dotnet-how-to.md#associate-filters-with-streaming-locator)
+* [Filters koppelen aan streaming-Locator-CLI](filters-dynamic-manifest-cli-how-to.md#associate-filters-with-streaming-locator)
 
 ## <a name="updating-filters"></a>Filters bijwerken
  
@@ -161,5 +161,5 @@ Als de filter definitie moet worden gewijzigd, kunt u een nieuw filter maken en 
 In de volgende artikelen ziet u hoe u via een programma filters maakt.  
 
 - [Filters maken met REST-Api's](filters-dynamic-manifest-rest-howto.md)
-- [Filters maken met .NET](filters-dynamic-manifest-dotnet-howto.md)
-- [Filters maken met CLI](filters-dynamic-manifest-cli-howto.md)
+- [Filters maken met .NET](filters-dynamic-manifest-dotnet-how-to.md)
+- [Filters maken met CLI](filters-dynamic-manifest-cli-how-to.md)

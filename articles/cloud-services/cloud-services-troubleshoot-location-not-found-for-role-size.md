@@ -7,12 +7,12 @@ ms.author: v-mibufo
 ms.service: cloud-services
 ms.topic: troubleshooting
 ms.date: 02/22/2021
-ms.openlocfilehash: 3d1a1135db0421d89d4c6c9f278c86e02cb5cb32
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 2ed889bea715ff5a26bf8e918789429e57fa31b2
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105558955"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106109659"
 ---
 # <a name="troubleshoot-locationnotfoundforrolesize-when-deploying-a-cloud-service-classic-to-azure"></a>Problemen met LocationNotFoundForRoleSize oplossen bij het implementeren van een Cloud service (klassiek) naar Azure
 
@@ -47,7 +47,8 @@ In dit scenario moet u een andere regio of SKU selecteren om uw Cloud service (k
 
 ### <a name="list-skus-in-region-using-azure-cli"></a>Sku's in regio weer geven met behulp van Azure CLI
 
-U kunt de opdracht [AZ VM List-sku's](/cli/azure/vm.html#az_vm_list_skus) gebruiken.
+U kunt de [AZ VM List-sku's] (/CLI/Azure/VM? View = Azure-cli-jongste) gebruiken
+#<a name="az_vm_list_skus-command"></a>az_vm_list_skus) opdracht.
 
 - Gebruik de `--location` para meter voor het filteren van uitvoer naar de locatie die u gebruikt.
 - Gebruik de `--size` para meter om te zoeken op een gedeeltelijke grootte naam.

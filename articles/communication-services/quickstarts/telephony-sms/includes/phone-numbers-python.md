@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 283d7d1c83dc4a68901c17c36b548e00e1044e34
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: b9ac58a7cf09463020e0bcd424f5fc5974133657
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105629355"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106112933"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -46,7 +46,7 @@ pip install azure-communication-phone-numbers
 
 ## <a name="authenticate-the-phone-numbers-client"></a>De telefoon nummers-client verifiëren
 
-De `PhoneNumbersClient` is ingeschakeld om Azure Active Directory-verificatie te gebruiken. Het gebruik van het `DefaultAzureCredential` object is de eenvoudigste manier om aan de slag te gaan met Azure Active Directory en u kunt het installeren met behulp van de `pip install` opdracht. 
+De `PhoneNumbersClient` is ingeschakeld om Azure Active Directory-verificatie te gebruiken. Het gebruik van het `DefaultAzureCredential` object is de eenvoudigste manier om aan de slag te gaan met Azure Active Directory en u kunt het installeren met behulp van de `pip install` opdracht.
 
 ```console
 pip install azure-identity
@@ -61,7 +61,7 @@ import os
 from azure.communication.phonenumbers import PhoneNumbersClient
 from azure.identity import DefaultAzureCredential
 
-# You can find your endpoint from your resource in the Azure Portal
+# You can find your endpoint from your resource in the Azure portal
 endpoint = 'https://<RESOURCE_NAME>.communication.azure.com'
 try:
     print('Azure Communication Services - Phone Numbers Quickstart')
@@ -72,13 +72,13 @@ except Exception as ex:
     print(ex)
 ```
 
-Het gebruik van het eind punt en de toegangs sleutel van de communicatie bron voor verificatie is ook aantal.
+U kunt ook het eind punt en de toegangs sleutel van de communicatie bron gebruiken om te verifiëren.
 
 ```python
 import os
 from azure.communication.phonenumbers import PhoneNumbersClient
 
-# You can find your connection string from your resource in the Azure Portal
+# You can find your connection string from your resource in the Azure portal
 connection_string = 'https://<RESOURCE_NAME>.communication.azure.com/;accesskey=<YOUR_ACCESS_KEY>'
 try:
     print('Azure Communication Services - Phone Numbers Quickstart')
@@ -101,7 +101,7 @@ import os
 from azure.communication.phonenumbers import PhoneNumbersClient, PhoneNumberCapabilityType, PhoneNumberAssignmentType, PhoneNumberType, PhoneNumberCapabilities
 from azure.identity import DefaultAzureCredential
 
-# You can find your endpoint from your resource in the Azure Portal
+# You can find your endpoint from your resource in the Azure portal
 endpoint = 'https://<RESOURCE_NAME>.communication.azure.com'
 try:
     print('Azure Communication Services - Phone Numbers Quickstart')
@@ -137,15 +137,15 @@ Het resultaat van het zoeken naar telefoon nummers is een `PhoneNumberSearchResu
 ```python
 import os
 from azure.communication.phonenumbers import (
-    PhoneNumbersClient, 
-    PhoneNumberCapabilityType, 
-    PhoneNumberAssignmentType, 
-    PhoneNumberType, 
+    PhoneNumbersClient,
+    PhoneNumberCapabilityType,
+    PhoneNumberAssignmentType,
+    PhoneNumberType,
     PhoneNumberCapabilities
 )
 from azure.identity import DefaultAzureCredential
 
-# You can find your endpoint from your resource in the Azure Portal
+# You can find your endpoint from your resource in the Azure portal
 endpoint = 'https://<RESOURCE_NAME>.communication.azure.com'
 try:
     print('Azure Communication Services - Phone Numbers Quickstart')
@@ -180,7 +180,7 @@ except Exception as ex:
 
 ### <a name="get-purchased-phone-numbers"></a>Aankoop nummer (s) ophalen
 
-Na een aankoop nummer kunt u het ophalen van de client. 
+Na een aankoop nummer kunt u het ophalen van de client.
 
 ```python
 purchased_phone_number_information = phone_numbers_client.get_purchased_phone_number("+18001234567")

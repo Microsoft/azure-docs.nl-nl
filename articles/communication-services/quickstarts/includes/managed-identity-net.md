@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 8a46e93efbc4435fdc48648f658d13982981812a
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 8e80a08cf8846cecff0db69b3f6b081f360c43da
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105958359"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106112813"
 ---
 ## <a name="add-managed-identity-to-your-communication-services-solution-net"></a>Beheerde identiteit toevoegen aan uw oplossing voor communicatie Services (.NET)
 
@@ -12,7 +12,7 @@ ms.locfileid: "105958359"
 
 ```console
 dotnet add package Azure.Communication.Identity  --version 1.0.0
-dotnet add package Azure.Communication.Sms  --version 1.0.0
+dotnet add package Azure.Communication.Sms --version 1.0.0
 dotnet add package Azure.Identity
 ```
 
@@ -77,4 +77,3 @@ In het volgende code voorbeeld ziet u hoe u een SMS-service-client object met be
           return sendResult;
       }
 ```
-

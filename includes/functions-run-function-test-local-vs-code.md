@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 01/28/2021
 ms.author: glenga
-ms.openlocfilehash: 5bc1d2ddb5b9ddb185a8349fb42d5f5db79c1498
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: eae828d03431dd339c5399d8db8c6e46141ab11b
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103201355"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106075322"
 ---
 ## <a name="run-the-function-locally"></a>De functie lokaal uitvoeren
 
@@ -27,7 +27,7 @@ Visual Studio Code integreert met [Azure Functions Core Tools](../articles/azure
     
 1. In de **hoofd tekst** van de aanvraag ziet u de waarde van de aanvraag bericht hoofdtekst van `{ "name": "Azure" }` . Druk op ENTER om dit aanvraag bericht naar uw functie te verzenden. 
 
-   U kunt in plaats daarvan een HTTP GET-aanvraag naar het <http://localhost:7071/api/HttpExample> adres in een webbrowser hebben verzonden.
+   U kunt in plaats daarvan een HTTP GET-aanvraag naar het `http://localhost:7071/api/HttpExample` adres in een webbrowser hebben verzonden.
 
 1. Wanneer de functie lokaal wordt uitgevoerd en een antwoord retourneert, wordt er een melding gegenereerd in Visual Studio code. Informatie over de uitvoering van de functie wordt weer gegeven in het deel venster **Terminal** .
 

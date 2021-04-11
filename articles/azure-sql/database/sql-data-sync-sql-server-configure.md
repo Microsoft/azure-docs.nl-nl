@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/14/2019
-ms.openlocfilehash: d6b5bab1c1b6c8db4821fdf84728eb66eb55b899
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6b7ead2e54889327bfbea188ad464012c3861556
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98882226"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105968608"
 ---
 # <a name="tutorial-set-up-sql-data-sync-between-databases-in-azure-sql-database-and-sql-server"></a>Zelfstudie: SQL Data Sync instellen tussen databases in Azure SQL Database en SQL Server
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -64,7 +64,7 @@ Zie [Synchroniseren tussen databases in SQL Database](scripts/sql-data-sync-sync
    | **Private Link gebruiken** | Kies een door de service beheerd privé-eindpunt om een beveiligde verbinding tot stand te brengen tussen de synchronisatieservice en de hub-database. |
 
    > [!NOTE]
-   > U wordt aangeraden een nieuwe, lege database te maken die als **Database met metagegevens van synchronisatie** wordt gebruikt. Met Data Sync worden tabellen in deze database gemaakt en een regelmatige workload uitgevoerd. Deze database wordt gedeeld als de **Database met metagegevens van synchronisatie** voor alle synchronisatiegroepen in een geselecteerde regio en een geselecteerd abonnement. U kunt de database of de naam ervan niet wijzigen zonder alle synchronisatiegroepen en synchronisatieagents in de regio te verwijderen.
+   > U wordt aangeraden een nieuwe, lege database te maken die als **Database met metagegevens van synchronisatie** wordt gebruikt. Met Data Sync worden tabellen in deze database gemaakt en een regelmatige workload uitgevoerd. Deze database wordt gedeeld als de **Database met metagegevens van synchronisatie** voor alle synchronisatiegroepen in een geselecteerde regio en een geselecteerd abonnement. U kunt de database of de naam ervan niet wijzigen zonder alle synchronisatiegroepen en synchronisatieagents in de regio te verwijderen. Daarnaast kan een Elastic Jobs-data base niet worden gebruikt als de SQL Data Sync meta gegevens database en andersom.  
 
    Selecteer **OK** en wacht tot de synchronisatiegroep is gemaakt en geïmplementeerd.
    

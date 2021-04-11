@@ -7,14 +7,14 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: conceptual
-ms.date: 12/14/2020
+ms.date: 03/31/2021
 ms.author: banders
-ms.openlocfilehash: 0d0dd5342cfc57da776e38ddef3df3b9c2199ac2
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: b20134cbfb85c2dcaef1227e6390c8c6047ad5be
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735772"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106109387"
 ---
 # <a name="cancel-your-azure-subscription"></a>Uw Azure-abonnement opzeggen
 
@@ -77,6 +77,10 @@ Als u een gratis proefabonnement hebt, hoeft u niet 30 dagen te wachten tot het 
 1. Selecteer het abonnement dat u wilt verwijderen.
 1. Selecteer **Overzicht** en **Abonnement verwijderen**.
 
+## <a name="delete-other-subscriptions"></a>Andere abonnementen verwijderen
+
+Het enige abonnements type dat u hand matig kunt verwijderen, is een gratis proef abonnement. Alle andere typen abonnementen, inclusief betalen per gebruik-abonnementen, worden alleen via het [annulerings](#cancel-subscription-in-the-azure-portal) proces van het abonnement verwijderd. Met andere woorden, u kunt een abonnement niet rechtstreeks verwijderen, tenzij het een gratis proef abonnement is. Nadat u een abonnement hebt geannuleerd, kunt u echter een [Azure-ondersteunings aanvraag](https://go.microsoft.com/fwlink/?linkid=2083458) maken om ervoor te vragen het abonnement onmiddellijk te verwijderen.
+
 ## <a name="reactivate-a-subscription"></a>Een abonnement opnieuw activeren
 
 Als u uw abonnement per ongeluk betaalt met betalen naar gebruik-tarieven, kunt u [deze opnieuw activeren in de Azure Portal](subscription-disabled.md).
@@ -89,7 +93,7 @@ U hebt mogelijk niet de vereiste machtigingen om een abonnement op te zeggen. Zi
 
 ## <a name="how-do-i-delete-my-azure-account"></a>Hoe verwijder ik mijn Azure-account?
 
-*Ik moet mijn account verwijderen, inclusief al mijn persoonlijke gegevens. Ik heb mijn actieve abonnementen (gratis proefabonnementen) al opgezegd. Ik heb geen actieve abonnementen en wil mijn account graag helemaal verwijderen*.
+*Ik moet mijn account verwijderen, inclusief al mijn persoonlijke gegevens. Ik heb mijn actieve abonnementen (gratis proef versie) al geannuleerd. Ik heb geen actieve abonnementen en wil mijn account volledig verwijderen*.
 
 * Als u via uw organisatie een Azure Active Directory-account hebt, kan de Azure AD-beheerder het account verwijderen. Daarna worden uw services uitgeschakeld. Dit betekent dat de toewijzing uw virtuele machines ongedaan wordt gemaakt, dat uw tijdelijke IP-adressen worden vrijgemaakt en dat uw opslag het kenmerk Alleen-lezen heeft. Ter samenvatting: nadat u uw abonnement hebt opgezegd, wordt de facturering onmiddellijk stopgezet.
 

@@ -4,12 +4,12 @@ ms.author: areddish
 ms.service: cognitive-services
 ms.date: 10/26/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: cfcc5bbc101a37e607fcc1bdb0d374510e7c3825
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b78f74ec190f4b871e127fbe4e6b7a0f10d058c1
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102444238"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106112911"
 ---
 Deze handleiding biedt informatie en voorbeeldcode om u op weg te helpen met de Custom Vision-clientbibliotheek voor Node.js om een objectdetectiemodel te maken. U maakt een project, voegt tags toe, traint het project en gebruikt de voorspellingseindpunt-URL van het project om het programmatisch te testen. Gebruik dit voorbeeld als een sjabloon om uw eigen beeldherkennings-app te maken.
 
@@ -75,7 +75,7 @@ Maak variabelen voor het Azure-eindpunt en de Azure-sleutels voor uw resource.
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/CustomVision/ObjectDetection/CustomVisionQuickstart.js?name=snippet_creds)]
 
 > [!IMPORTANT]
-> Ga naar Azure Portal. Als de Custom Vision-resources die u in de sectie **Vereisten** hebt gemaakt, zijn geïmplementeerd, klikt u onder **Volgende stappen** op de knop **Ga naar resource**. U vindt de sleutels en het eindpunt op de pagina's over **sleutel en eindpunt** van de resources, onder **Resourcebeheer**. U moet uw trainings- en voorspellingssleutel samen met het eindpunt van de trainingsresources ophalen.
+> Ga naar Azure Portal. Als de Custom Vision-resources die u in de sectie **Vereisten** hebt gemaakt, zijn geïmplementeerd, klikt u onder **Volgende stappen** op de knop **Ga naar resource**. U vindt de sleutels en het eindpunt op de pagina's over **sleutel en eindpunt** van de resources, onder **Resourcebeheer**. U moet de sleutels voor uw trainings-en Voorspellings bronnen ophalen, samen met het API-eind punt voor uw trainings materiaal.
 >
 > Vergeet niet de sleutel uit uw code te verwijderen wanneer u klaar bent, en plaats deze sleutel nooit in het openbaar. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Zie het artikel Cognitive Services [Beveiliging](../../../../cognitive-services/cognitive-services-security.md) voor meer informatie.
 

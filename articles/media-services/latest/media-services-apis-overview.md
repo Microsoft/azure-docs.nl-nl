@@ -128,7 +128,7 @@ AMSE is een Open-Source-project, en dus wordt er ondersteuning geboden door de c
 
 ## <a name="filtering-ordering-paging-of-media-services-entities"></a>Filteren, ordenen, paginering van Media Services entiteiten
 
-Zie [filteren, ordenen, pagineren van Azure Media Services entiteiten](entities-overview.md).
+Zie [filteren, ordenen, pagineren van Azure Media Services entiteiten](filter-order-page-entitites-how-to.md).
 
 ## <a name="ask-questions-give-feedback-get-updates"></a>Vragen stellen, feedback geven, updates ophalen
 

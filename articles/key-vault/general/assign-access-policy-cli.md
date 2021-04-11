@@ -1,6 +1,6 @@
 ---
 title: Een Azure Key Vault toegangs beleid (CLI) toewijzen
-description: De Azure CLI gebruiken om een Key Vault toegangs beleid toe te wijzen aan een service-principal of toepassings-id.
+description: De Azure CLI gebruiken om een Key Vault toegangs beleid toe te wijzen aan een beveiligingsprincipal of toepassings identiteit.
 services: key-vault
 author: msmbaldwin
 manager: rkarlin
@@ -10,16 +10,16 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 08/27/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 0c7910ac149c8de43eeac92913a0d314fcc1854e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a9dc03f776ac430072e456332955cbfc75d73bf2
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97934574"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105968846"
 ---
 # <a name="assign-a-key-vault-access-policy"></a>Een Key Vault toegangs beleid toewijzen
 
-Een Key Vault toegangs beleid bepaalt of een bepaalde service-principal, namelijk een toepassing of gebruikers groep, verschillende bewerkingen kan uitvoeren op Key Vault [geheimen](../secrets/index.yml), [sleutels](../keys/index.yml)en [certificaten](../certificates/index.yml). U kunt toegangs beleid toewijzen met behulp van de [Azure Portal](assign-access-policy-portal.md), de Azure cli (dit artikel) of [Azure PowerShell](assign-access-policy-powershell.md).
+Een Key Vault toegangs beleid bepaalt of een bepaalde beveiligingsprincipal, namelijk een gebruiker, toepassing of gebruikers groep, verschillende bewerkingen kan uitvoeren op Key Vault [geheimen](../secrets/index.yml), [sleutels](../keys/index.yml)en [certificaten](../certificates/index.yml). U kunt toegangs beleid toewijzen met behulp van de [Azure Portal](assign-access-policy-portal.md), de Azure cli (dit artikel) of [Azure PowerShell](assign-access-policy-powershell.md).
 
 [!INCLUDE [key-vault-access-policy-limits.md](../../../includes/key-vault-access-policy-limits.md)]
 
@@ -69,7 +69,7 @@ Gebruik de opdracht [AZ-set-Policy](/cli/azure/keyvault#az-keyvault-set-policy) 
 az keyvault set-policy --name myKeyVault --object-id <object-id> --secret-permissions <secret-permissions> --key-permissions <key-permissions> --certificate-permissions <certificate-permissions>
 ```
 
-Vervang door `<object-id>` de object-id van de Service-Principal.
+Vervang door `<object-id>` de object-id van uw beveiligingsprincipal.
 
 U hoeft alleen `--secret-permissions` , en toe te voegen, `--key-permissions` en `--certificate-permissions` bij het toewijzen van machtigingen aan deze specifieke typen. De toegestane waarden voor `<secret-permissions>` , `<key-permissions>` en zijn te `<certificate-permissions>` vinden in de documentatie [AZ-set-Policy](/cli/azure/keyvault#az-keyvault-set-policy) .
 

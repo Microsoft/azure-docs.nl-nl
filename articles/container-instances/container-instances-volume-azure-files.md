@@ -2,23 +2,27 @@
 title: Azure Files volume koppelen aan container groep
 description: Meer informatie over het koppelen van een Azure Files-volume om de status te behouden met Azure Container Instances
 ms.topic: article
-ms.date: 07/02/2020
+ms.date: 03/24/2021
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: d52ad8ad02735c98b29a83d8ca69cdea8c6af7d8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 09a4d9922a4f9ba4296fc194d72c621fecb8342d
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97954971"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105968897"
 ---
 # <a name="mount-an-azure-file-share-in-azure-container-instances"></a>Een Azure-bestandsshare koppelen in Azure Container Instances
 
 Azure-containerinstanties zijn standaard staatloos. Als de container opnieuw wordt opgestart, vastloopt of wordt gestopt, is de status van het geheel verloren gegaan. Als u een status langer wilt behouden dan de levensduur van de container, moet u een volume vanuit een externe opslag koppelen. Zoals in dit artikel wordt weer gegeven, kunt Azure Container Instances een Azure-bestands share koppelen die is gemaakt met [Azure files](../storage/files/storage-files-introduction.md). Azure Files biedt volledig beheerde bestands shares die worden gehost in Azure Storage die toegankelijk zijn via het industrie standaard SMB-protocol (Server Message Block). Het gebruik van een Azure-bestands share met Azure Container Instances biedt functies voor het delen van bestanden die vergelijkbaar zijn met het gebruik van een Azure-bestands share met Azure virtual machines.
 
+## <a name="limitations"></a>Beperkingen
+
+* U kunt Azure Files shares alleen koppelen aan linux-containers. Lees meer over de verschillen in functie ondersteuning voor Linux-en Windows-container groepen in het [overzicht](container-instances-overview.md#linux-and-windows-containers).
+* Voor de volume koppeling van de Azure-bestands share moet de Linux-container als *root* worden uitgevoerd.
+* De volume koppelingen van de Azure-bestands share zijn beperkt tot CIFS-ondersteuning.
+
 > [!NOTE]
-> Het koppelen van een Azure Files share is momenteel beperkt tot Linux-containers. Zoek de huidige platform verschillen in het [overzicht](container-instances-overview.md#linux-and-windows-containers).
->
-> Het koppelen van een Azure Files share aan een container exemplaar is vergelijkbaar met een docker [BIND-koppeling](https://docs.docker.com/storage/bind-mounts/). Houd er rekening mee dat als u een share koppelt in een container Directory waarin bestanden of directory's bestaan, deze bestanden of mappen worden verborgen door de koppeling en niet toegankelijk zijn wanneer de container wordt uitgevoerd.
+> Het koppelen van een Azure Files share aan een container exemplaar is vergelijkbaar met een docker [BIND-koppeling](https://docs.docker.com/storage/bind-mounts/). Als u een share koppelt in een container Directory waarin bestanden of directory's bestaan, worden de bestanden of mappen door de koppeling verborgen, waardoor ze niet toegankelijk zijn wanneer de container wordt uitgevoerd.
 >
 
 > [!IMPORTANT]

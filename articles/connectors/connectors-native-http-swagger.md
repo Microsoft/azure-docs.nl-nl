@@ -7,12 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 11/01/2019
 tags: connectors
-ms.openlocfilehash: 810aaae9634a7de8d07b6d49edd0c6c2eda96754
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 8bd46f013680d5cbc9e75a312206fdb2fdcac7ec
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101730878"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106109353"
 ---
 # <a name="call-rest-endpoints-by-using-azure-logic-apps"></a>REST-eind punten aanroepen met behulp van Azure Logic Apps
 
@@ -147,12 +147,12 @@ U kunt verwijzen naar een Swagger-bestand dat niet wordt gehost of niet voldoet 
 
 Hier vindt u meer informatie over de uitvoer van een HTTP + Swagger-trigger of-actie. De HTTP + Swagger-aanroep retourneert deze informatie:
 
-| Naam van eigenschap | Type | Beschrijving |
+| Naam van eigenschap | Type | Description |
 |---------------|------|-------------|
 | koppen | object | De headers van de aanvraag |
-| body | object | JSON-object | Het object met de inhoud van de hoofd tekst van de aanvraag |
+| body | object | Het object met de inhoud van de hoofd tekst van de aanvraag |
 | statuscode | int | De status code van de aanvraag |
-|||
+||||
 
 | Statuscode | Description |
 |-------------|-------------|

@@ -5,14 +5,14 @@ services: firewall-manager
 author: vhorne
 ms.service: firewall-manager
 ms.topic: how-to
-ms.date: 12/01/2020
+ms.date: 03/31/2021
 ms.author: victorh
-ms.openlocfilehash: 906687e08c9f31890a9ecec9154079e704512832
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b8e10eef89df12807cabd96d64d9c7d659f91d6c
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96485719"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106109506"
 ---
 # <a name="deploy-a-security-partner-provider"></a>Een beveiligingspartnerprovider implementeren
 
@@ -67,7 +67,7 @@ Houd er rekening mee dat een VPN-gateway moet worden geïmplementeerd om een bes
 
 ## <a name="configure-third-party-security-providers-to-connect-to-a-secured-hub"></a>Beveiligings providers van derden configureren om verbinding te maken met een beveiligde hub
 
-Om tunnels in te stellen voor de VPN Gateway van de virtuele hub, hebben externe providers toegangs rechten nodig voor uw hub. U kunt dit doen door een service-principal te koppelen aan uw abonnement of resource groep en toegangs rechten te verlenen. Vervolgens moet u deze referenties aan de derde partij geven met behulp van hun portal.
+Om tunnels in te stellen voor de VPN Gateway van de virtuele hub, hebben externe providers toegangs rechten nodig voor uw hub. U kunt dit doen door een service-principal te koppelen aan uw abonnement of resource groep en toegangs rechten te verlenen. Vervolgens moet u deze referenties aan de derde partij geven via hun portal.
 
 ### <a name="create-and-authorize-a-service-principal"></a>Een service-principal maken en autoriseren
 
@@ -90,28 +90,25 @@ Om tunnels in te stellen voor de VPN Gateway van de virtuele hub, hebben externe
    
 2. U kunt de status voor het maken van de tunnel bekijken in de Azure Virtual WAN-Portal in Azure. Zodra de tunnels **zijn verbonden** met Azure en de Partner Portal, gaat u door met de volgende stappen om routes in te stellen om te selecteren welke branches en VNets Internet verkeer naar de partner moeten verzenden.
 
-## <a name="configure-route-settings"></a>Route-instellingen configureren
+## <a name="configure-security-with-firewall-manager"></a>Beveiliging configureren met firewall Manager
 
 1. Blader naar de Azure Firewall Manager-> beveiligde hubs. 
 2. Selecteer een hub. De status van de hub moet nu **worden weer gegeven** in plaats van de **beveiligings verbinding in behandeling**.
 
    Zorg ervoor dat de provider van derden verbinding kan maken met de hub. De tunnels op de VPN-gateway moeten een **verbonden status hebben** . Deze status is beter zichtbaar voor de verbindings status tussen de hub en de partner van derden, vergeleken met de vorige status.
-3. Selecteer de hub en navigeer naar **router instellingen**.
+3. Selecteer de hub en navigeer naar **beveiligings configuraties**.
 
    Wanneer u een provider van derden op de hub implementeert, wordt de hub geconverteerd naar een *beveiligde virtuele hub*. Dit zorgt ervoor dat de provider van derden een ' 0.0.0.0/0-route (standaard) adverteert naar de hub. VNet-verbindingen en sites die zijn verbonden met de hub, krijgen deze route echter alleen als u zich aanmeldt op welke verbindingen deze standaard route moeten worden verkregen.
-4. Onder **Internet verkeer** selecteert u **VNet-naar-Internet** of **vertakking-naar-Internet** of beide, zodat routes worden geconfigureerd via de derde partij.
+4. Configureer virtuele WAN-beveiliging door **Internet verkeer** via Azure firewall en **privé verkeer** via een vertrouwde beveiligings partner in te stellen. Hiermee worden afzonderlijke verbindingen in het virtuele WAN automatisch beveiligd.
 
-   Hiermee wordt alleen aangegeven welk type verkeer moet worden doorgestuurd naar de hub, maar dit is niet van invloed op de routes op VNets of branches. Deze routes worden standaard niet door gegeven aan alle VNets/vertakkingen die zijn gekoppeld aan de hub.
-5. U moet **beveiligde verbindingen** selecteren en de verbindingen selecteren waarop deze routes moeten worden ingesteld. Hiermee wordt aangegeven welke VNets/branches Internet verkeer naar de externe provider kunnen gaan verzenden.
-6. Selecteer vanuit **route**-instellingen **beveiligde verbindingen** onder Internet verkeer en selecteer vervolgens de VNet of vertakkingen (*sites* in virtueel WAN) die moeten worden beveiligd. Selecteer **beveiligd Internet verkeer**.
-   ![Beveiligd Internet verkeer](media/deploy-trusted-security-partner/secure-internet-traffic.png)
-7. Ga terug naar de pagina hubs. De status van de provider van de **beveiligings partner** van de hub moet nu worden  **beveiligd**.
+   :::image type="content" source="media/deploy-trusted-security-partner/security-configuration.png" alt-text="Beveiligingsconfiguratie":::
+5. Als uw organisatie ook open bare IP-adresbereiken in virtuele netwerken en filialen gebruikt, moet u deze IP-voor voegsels expliciet opgeven met behulp van **privé verkeer voor voegsels**. De voor voegsels voor open bare IP-adressen kunnen afzonderlijk of als aggregatie worden opgegeven.
 
 ## <a name="branch-or-vnet-internet-traffic-via-third-party-service"></a>Vertakkings-of VNet-Internet verkeer via een service van derden
 
 Vervolgens kunt u controleren of de virtuele VNet-machines of de filiaal site toegang hebben tot internet en controleren of het verkeer naar de service van derden loopt.
 
-Na het volt ooien van de stappen voor het instellen van de route worden de virtuele VNet-machines en de branch sites verzonden naar een service route van 0/0 naar derden. U kunt geen RDP of SSH in deze virtuele machines. Als u zich wilt aanmelden, kunt u de [Azure Bastion](../bastion/bastion-overview.md) -service in een gepeerd VNet implementeren.
+Na het volt ooien van de stappen voor het instellen van de route worden de virtuele VNet-machines en de branch sites 0/0 verzonden naar de service route van derden. U kunt geen RDP of SSH in deze virtuele machines. Als u zich wilt aanmelden, kunt u de [Azure Bastion](../bastion/bastion-overview.md) -service in een gepeerd VNet implementeren.
 
 ## <a name="next-steps"></a>Volgende stappen
 

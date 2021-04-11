@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/15/2020
 ms.author: trbye
-ms.openlocfilehash: 1a002b6efbe2603ae254c19f9e3cc7377198cea2
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ddf36530e52703ab1033b8e2e787b42b6dc60332
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "97935815"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106553274"
 ---
 # <a name="develop-custom-commands-applications"></a>Toepassingen voor aangepaste opdrachten ontwikkelen
 
@@ -212,7 +212,7 @@ Begin met het bewerken van de bestaande `TurnOn` opdracht om meerdere apparaten 
     | **Is wereld wijd**          | Geselecteerde             |
     | **Vereist**           | Geselecteerd               |
     | **Antwoord voor vereiste para meter**     | **Eenvoudige editor** > `Which device do you want to control?`    | 
-    | **Type**               | **Tekenreeks**                |          |
+    | **Type**               | **Tekenreeks**                |     
     | **Configuratie**      | **Vooraf gedefinieerde invoer waarden van een interne catalogus accepteren** | 
     | **Vooraf gedefinieerde invoer waarden** | `tv`, `fan`               |
     | **Aliassen** ( `tv` )      | `television`, `telly`     |
@@ -633,7 +633,7 @@ Een andere manier om aangepaste opdrachten te beantwoorden, is door een uitvoer 
 > ![Scherm opname met voorbeeld zinnen en-para meters.](media/custom-commands/select-custom-voice.png)
 
 > [!NOTE]
-> Voor open bare stemmen zijn Neural typen alleen beschikbaar voor bepaalde regio's. Zie [ondersteunde regio's voor spraak Services](./regions.md#standard-and-neural-voices)voor meer informatie.
+> Voor open bare stemmen zijn Neural typen alleen beschikbaar voor bepaalde regio's. Zie [ondersteunde regio's voor spraak Services](./regions.md#neural-and-standard-voices)voor meer informatie.
 >
 > U kunt aangepaste stemmen maken op de pagina met het **aangepaste spraak** project. Zie [aan de slag met aangepaste spraak](./how-to-custom-voice.md)voor meer informatie.
 

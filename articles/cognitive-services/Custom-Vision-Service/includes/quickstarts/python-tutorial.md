@@ -3,12 +3,12 @@ author: PatrickFarley
 ms.author: pafarley
 ms.service: cognitive-services
 ms.date: 10/25/2020
-ms.openlocfilehash: 5beff6bdc00e14a7aea4183f7c01e5e0be3594de
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.openlocfilehash: c60c0326018e615a0c84d56c98faee58560f1d87
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104803608"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106113409"
 ---
 Aan de slag met de Custom Vision-clientbibliotheek voor Python. Volg deze stappen om het pakket te installeren en de voorbeeldcode voor het bouwen van een model voor de classificatie van afbeeldingen uit te proberen. U maakt een project, voegt tags toe, traint het project en gebruikt de voorspellingseindpunt-URL van het project om het programmatisch te testen. Gebruik dit voorbeeld als een sjabloon om uw eigen beeldherkennings-app te maken.
 
@@ -59,7 +59,7 @@ Maak variabelen voor het Azure-eindpunt en de abonnementssleutels van uw resourc
 [!code-python[](~/cognitive-services-quickstart-code/python/CustomVision/ImageClassification/CustomVisionQuickstart.py?name=snippet_creds)]
 
 > [!IMPORTANT]
-> Ga naar Azure Portal. Als de Custom Vision-resources die u in de sectie **Vereisten** hebt gemaakt, zijn geïmplementeerd, klikt u onder **Volgende stappen** op de knop **Ga naar resource**. U kunt de sleutels en het eind punt vinden in de **sleutel-en eindpunt** pagina's van de resources. U moet uw trainings- en voorspellingssleutel samen met het eindpunt van de trainingsresources ophalen.
+> Ga naar Azure Portal. Als de Custom Vision-resources die u in de sectie **Vereisten** hebt gemaakt, zijn geïmplementeerd, klikt u onder **Volgende stappen** op de knop **Ga naar resource**. U kunt de sleutels en het eind punt vinden in de **sleutel-en eindpunt** pagina's van de resources. U moet de sleutels voor uw trainings-en Voorspellings bronnen ophalen, samen met het API-eind punt voor uw trainings materiaal.
 >
 > U kunt de waarde voor de resource-ID voor de voor spelling vinden op het tabblad **Eigenschappen** van de resource, vermeld als **abonnements-id**.
 >

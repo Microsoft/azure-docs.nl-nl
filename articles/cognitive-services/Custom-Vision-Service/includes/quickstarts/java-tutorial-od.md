@@ -4,12 +4,12 @@ ms.custom: devx-track-java
 ms.author: pafarley
 ms.service: cognitive-services
 ms.date: 10/13/2020
-ms.openlocfilehash: 594f240eb80f38ce00e97ad4f96ac47ca4199840
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: cb4b21fdb034ea2939377c1010a789de3fb8786f
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102445060"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106112914"
 ---
 Ga aan de slag met de Custom Vision-clientbibliotheek voor Java om een objectdetectiemodel te bouwen. Volg deze stappen om het pakket te installeren en de voorbeeldcode voor basistaken uit te proberen. Gebruik dit voorbeeld als een sjabloon om uw eigen beeldherkennings-app te maken.
 
@@ -100,7 +100,7 @@ Maak in de klasse **CustomVisionQuickstart** van de toepassing variabelen voor d
 
 
 > [!IMPORTANT]
-> Ga naar Azure Portal. Als de Custom Vision-resources die u in de sectie **Vereisten** hebt gemaakt, zijn geïmplementeerd, klikt u onder **Volgende stappen** op de knop **Ga naar resource**. U vindt de sleutels en het eindpunt op de pagina's over **sleutel en eindpunt** van de resources, onder **Resourcebeheer**. U moet uw trainings- en voorspellingssleutel samen met het eindpunt van de trainingsresources ophalen.
+> Ga naar Azure Portal. Als de Custom Vision-resources die u in de sectie **Vereisten** hebt gemaakt, zijn geïmplementeerd, klikt u onder **Volgende stappen** op de knop **Ga naar resource**. U vindt de sleutels en het eindpunt op de pagina's over **sleutel en eindpunt** van de resources, onder **Resourcebeheer**. U moet de sleutels voor uw trainings-en Voorspellings bronnen ophalen, samen met het API-eind punt voor uw trainings materiaal.
 >
 > Vergeet niet de sleutel uit uw code te verwijderen wanneer u klaar bent, en plaats deze sleutel nooit in het openbaar. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Zie het artikel Cognitive Services [Beveiliging](../../../cognitive-services-security.md) voor meer informatie.
 

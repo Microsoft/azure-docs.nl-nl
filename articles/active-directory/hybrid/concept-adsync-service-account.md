@@ -15,12 +15,12 @@ ms.date: 03/17/2021
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb23d79caa6964c3f61fbb84c8b8f229f475b8ab
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ca99a997d621bfd2455e909b36b6802775b20ac2
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104722154"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106074604"
 ---
 # <a name="adsync-service-account"></a>ADSync-serviceaccount
 Azure AD Connect een on-premises service installeert waarmee de synchronisatie tussen Active Directory en Azure Active Directory wordt georchestrator.  De Microsoft Azure AD Sync Synchronization-Service (ADSync) wordt uitgevoerd op een server in uw on-premises omgeving.  De referenties voor de service worden standaard ingesteld in de snelle installaties, maar kunnen worden aangepast om te voldoen aan de beveiligings vereisten van uw organisatie.  Deze referenties worden niet gebruikt om verbinding te maken met uw on-premises forests of Azure Active Directory.
@@ -56,7 +56,7 @@ Legenda:
 - sMSA- [zelfstandig beheerd service account](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd548356(v=ws.10))
 - gMSA: door [groep beheerd service account](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831782(v=ws.11)) 
 
- ||**LocalDB </br> Express**|**LocalDB/LocalSQL </br> aangepast**|**Aangepaste externe SQL- </br>**|
+|Type computer |**LocalDB </br> Express**|**LocalDB/LocalSQL </br> aangepast**|**Aangepaste externe SQL- </br>**|
 |-----|-----|-----|-----|
 |**computer die lid is van een domein**|**KENMERK**|**KENMERK**</br> *sMSA*</br> *gMSA*</br> Lokaal account</br> Domeinaccount| *gMSA* </br>Domeinaccount|
 |Domeincontroller| **sMSA**|**sMSA** </br>*gMSA*</br> Domeinaccount|*gMSA*</br>Domeinaccount| 

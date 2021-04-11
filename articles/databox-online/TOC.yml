@@ -244,8 +244,6 @@
               href: azure-stack-edge-gpu-create-virtual-machine-image.md
             - name: Windows-gegeneraliseerde installatie kopie gebruiken
               href: azure-stack-edge-gpu-prepare-windows-vhd-generalized-image.md
-            - name: Windows specialistische installatie kopie gebruiken
-              href: azure-stack-edge-gpu-deploy-vm-specialized-image-powershell.md
             - name: 'Ondersteunde VM-grootten, -types'
               href: azure-stack-edge-gpu-virtual-machine-sizes.md
             - name: Verbinding maken met VM-console
@@ -256,10 +254,6 @@
               href: azure-stack-edge-gpu-manage-virtual-machine-disks-portal.md
             - name: VM-grootten beheren
               href: azure-stack-edge-gpu-manage-virtual-machine-resize-portal.md
-            - name: VM-labels beheren
-              href: azure-stack-edge-gpu-manage-virtual-machine-tags-powershell.md
-            - name: Virtuele switch maken
-              href: azure-stack-edge-gpu-create-virtual-switch-powershell.md
         - name: Certificaten beheren
           items:
             - name: Vereisten

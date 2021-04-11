@@ -291,6 +291,8 @@
   items:
     - name: Belangrijkste Azure-verklikker werkmappen
       href: top-workbooks.md
+    - name: Azure CLI
+      href: /cli/azure/ext/sentinel/sentinel
     - name: Azure RBAC-rollen
       items:
         - name: Alle Azure-rollen

@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 03/09/2021
+ms.date: 03/30/2021
 ms.author: tamram
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 85520032e9bc63b6296e40dd1c1055e36762dcc8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 30c73849d07c1495251c17510ea71f29c674c618
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/30/2021
-ms.locfileid: "102555003"
+ms.locfileid: "105967486"
 ---
 # <a name="upgrade-to-a-general-purpose-v2-storage-account"></a>Upgraden naar een V2-opslagaccount voor algemeen gebruik
 
@@ -28,7 +28,7 @@ Een upgrade uitvoeren naar een v2-opslag account voor algemeen gebruik vanuit uw
 > [!NOTE]
 > Hoewel micro soft voor de meeste scenario's v2-accounts voor algemeen gebruik aanbeveelt, zal micro soft v1-accounts voor algemeen gebruik blijven ondersteunen voor nieuwe en bestaande klanten. Wanneer Azure Storage in deze regio's beschikbaar is, kunt u in nieuwe regio's v1-opslag accounts voor algemeen gebruik maken. Micro soft heeft momenteel niet de mogelijkheid om ondersteuning te geven voor de V1-accounts voor algemeen gebruik en zal ten minste één jaar de voorafgaande kennisgeving opleveren voordat een Azure Storage functie wordt afgeleverd. Micro soft blijft beveiligings updates bieden voor v1-accounts voor algemeen gebruik, maar er wordt geen nieuwe functie ontwikkeling verwacht voor dit account type.
 >
-> Met ingang van 1 oktober 2020 zijn de prijzen voor algemeen v1-accounts in nieuwe Azure Storage regio's gelijk aan de prijzen voor algemeen gebruik v2-accounts in die regio's. De prijzen in bestaande Azure Storage regio's zijn niet gewijzigd. Zie de pagina met prijzen voor Azure Storage voor prijs informatie voor algemeen v1-accounts in een specifieke regio. Kies uw regio en Selecteer naast **prijs aanbiedingen** **andere**.
+> Voor nieuwe Azure-regio's die online zijn gebracht na 1 oktober 2020, zijn de prijzen voor algemene v1-accounts gewijzigd en is deze gelijk aan de prijzen voor algemeen gebruik v2-accounts in die regio's. Prijzen voor algemene v1-accounts in azure-regio's die bestonden voor 1 oktober 2020, zijn niet gewijzigd. Zie de pagina met prijzen voor Azure Storage voor prijs informatie voor algemeen v1-accounts in een specifieke regio. Kies uw regio en Selecteer naast **prijs aanbiedingen** **andere**.
 
 ## <a name="upgrade-an-account"></a>Een account upgraden
 

@@ -1,18 +1,18 @@
 ---
 title: Een listener voor beschikbaarheidsgroep voor SQL Server configureren op virtuele RHEL-machines in Azure - virtuele Linux-machines | Microsoft Docs
 description: Meer informatie over het instellen van een listener voor beschikbaarheidsgroep in SQL Server op virtuele RHEL-machines in Azure
-ms.service: virtual-machines-linux
+ms.service: virtual-machines-sql
 ms.topic: tutorial
 author: VanMSFT
 ms.author: vanto
 ms.reviewer: jroth
 ms.date: 03/11/2020
-ms.openlocfilehash: 83fde9e957cb2011ce585603e51d331be171bc08
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5f0b300be2f1cec4ee456065455832a2dc3598be
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97586208"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106449500"
 ---
 # <a name="tutorial-configure-an-availability-group-listener-for-sql-server-on-rhel-virtual-machines-in-azure"></a>Zelfstudie: Een listener voor beschikbaarheidsgroep configureren voor SQL Server in virtuele RHEL-machines in Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]

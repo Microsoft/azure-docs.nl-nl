@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 03/10/2021
 ms.author: mikben
-ms.openlocfilehash: 49054d9bbde67dc3670ec444e4b60c3ddf503db5
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 2ecbd207c4b1946a69b01f43ec2bc77d29b1a8c9
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105645368"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106072996"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -21,10 +21,9 @@ ms.locfileid: "105645368"
 ## <a name="install-the-sdk"></a>De SDK installeren
 
 > [!NOTE]
-> In dit document wordt versie 1.0.0-Beta. 10 van de aanroepende SDK gebruikt.
+> Dit document maakt gebruik van ACS-aanroepende Web-SDK.
 
 Gebruik de `npm install` opdracht om de Azure Communication Services-aanroepende en common sdk's voor Java script te installeren.
-In dit document wordt verwezen naar typen in versie 1.0.0-Beta. 10 van de aanroepende bibliotheek.
 
 ```console
 npm install @azure/communication-common --save
@@ -144,6 +143,8 @@ const call = callAgent.join(context);
 ```
 
 ### <a name="join-a-teams-meeting"></a>Deel nemen aan een team vergadering
+> [!NOTE]
+> Deze API is beschikbaar als preview-versie voor ontwikkelaars en wordt mogelijk gewijzigd op basis van de feedback die we ontvangen. Gebruik deze API niet in een productie-omgeving. Gebruik voor het gebruik van deze API de bèta versie van de ACS aanroepende Web SDK
 
 Als u wilt deel nemen aan een team vergadering, gebruikt u de- `join` methode en geeft u een koppeling of coördinaten voor de vergadering door.
 
@@ -593,8 +594,8 @@ console.log(result.video);
 ```
 
 ## <a name="record-calls"></a>Record aanroepen
-
-[!INCLUDE [Private Preview Notice](../../../includes/private-preview-include-section.md)]
+> [!NOTE]
+> Deze API is beschikbaar als preview-versie voor ontwikkelaars en wordt mogelijk gewijzigd op basis van de feedback die we ontvangen. Gebruik deze API niet in een productie-omgeving. Gebruik voor het gebruik van deze API de bèta versie van de ACS aanroepende Web SDK
 
 Het opnemen van aanroepen is een uitgebreide functie van de core- `Call` API. U moet eerst het object voor de opname functie-API verkrijgen:
 
@@ -620,6 +621,8 @@ callRecordingApi.on('isRecordingActiveChanged', isRecordingActiveChangedHandler)
 ```
 
 ## <a name="transfer-calls"></a>Overdrachts aanroepen
+> [!NOTE]
+> Deze API is beschikbaar als preview-versie voor ontwikkelaars en wordt mogelijk gewijzigd op basis van de feedback die we ontvangen. Gebruik deze API niet in een productie-omgeving. Gebruik voor het gebruik van deze API de bèta versie van de ACS aanroepende Web SDK
 
 De aanroep overdracht is een uitgebreide functie van de core- `Call` API. U moet eerst het object voor de overdrachts functie-API ophalen:
 

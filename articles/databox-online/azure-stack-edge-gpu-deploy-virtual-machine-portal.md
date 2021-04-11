@@ -6,15 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 02/22/2021
+ms.date: 03/30/2021
 ms.author: alkohli
-Customer intent: As an IT admin, I need to understand how to configure compute on Azure Stack Edge Pro device so I can use it to transform the data before sending it to Azure.
-ms.openlocfilehash: c11a89d91693075ca54c0689223dcf2af06df521
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 139b543160b679ba063a0633f9091e7bc0ef1fc1
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105568508"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106074804"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-the-azure-portal"></a>Implementeer Vm's op uw Azure Stack Edge Pro GPU-apparaat via de Azure Portal
 
@@ -127,9 +126,10 @@ Volg deze stappen om een virtuele machine te maken nadat u een VM-installatie ko
     |Parameter |Beschrijving  |
     |---------|---------|
     |Naam van de virtuele machine     |         |
+    |Resource groep rand     | Maak een nieuwe resource groep voor alle resources die aan de virtuele machine zijn gekoppeld.        |
     |Installatiekopie     | Selecteer een van de VM-installatie kopieën die beschikbaar zijn op het apparaat.        |
     |Grootte     | Kies uit de [ondersteunde VM-grootten](azure-stack-edge-gpu-virtual-machine-sizes.md).        |
-    |Gebruikersnaam     | Gebruik de standaard gebruikers naam *azureuser*.        |
+    |Gebruikersnaam     | Gebruik de standaard gebruikers naam *azureuser* voor de beheerder om zich aan te melden bij de virtuele machine.        |
     |Verificatietype    | U kunt kiezen uit een open bare SSH-sleutel of een door de gebruiker gedefinieerd wacht woord.       |
     |Wachtwoord     | Voer een wacht woord in om u aan te melden bij de virtuele machine. Het wacht woord moet ten minste 12 tekens lang zijn en voldoen aan de gedefinieerde [complexiteits vereisten](../virtual-machines/windows/faq.md#what-are-the-password-requirements-when-creating-a-vm).        |
     |Wachtwoord bevestigen    | Voer het wachtwoord nogmaals in.        |
@@ -149,11 +149,7 @@ Volg deze stappen om een virtuele machine te maken nadat u een VM-installatie ko
 
         ![VM 4 toevoegen](media/azure-stack-edge-gpu-deploy-virtual-machine-portal/add-virtual-machine-disks-2.png)
 
-    1.  Herhaal de bovenstaande stappen om meer schijven toe te voegen. Nadat de schijven zijn gemaakt, worden ze weer gegeven op het tabblad **schijven** .
-
-        ![VM toevoegen 5](media/azure-stack-edge-gpu-deploy-virtual-machine-portal/add-virtual-machine-disks-3.png)
-
-        Selecteer **Volgende: Netwerken**.
+    1.  Herhaal de bovenstaande stappen om meer schijven toe te voegen. Nadat de schijven zijn gemaakt, worden ze weer gegeven op het tabblad **schijven** . Selecteer **volgende: netwerken**.
 
 1. Op het tabblad **netwerken** configureert u de netwerk verbinding voor uw VM.
 
@@ -168,26 +164,32 @@ Volg deze stappen om een virtuele machine te maken nadat u een VM-installatie ko
 
     Selecteer **Volgende: Beoordelen en maken**.
 
+1. Op het tabblad **Geavanceerd** kunt u de aangepaste gegevens of de Cloud-init opgeven om uw virtuele machine aan te passen. 
+
+    U kunt Cloud-init gebruiken om een virtuele machine aan te passen aan de eerste keer dat deze wordt opgestart. Gebruik de Cloud-init om pakketten te installeren en bestanden te schrijven, of om gebruikers en beveiliging te configureren. Als de Cloud-init wordt uitgevoerd tijdens het eerste opstart proces, zijn er geen extra stappen nodig om uw configuratie toe te passen. Zie [Cloud-init Overview](../virtual-machines/linux/tutorial-automate-vm-deployment.md#cloud-init-overview)(Engelstalig) voor gedetailleerde informatie over Cloud-init.
+
+    ![VM 7 toevoegen](media/azure-stack-edge-gpu-deploy-virtual-machine-portal/add-virtual-machine-advanced-1.png)    
+
 1. Controleer op het tabblad **controleren en maken** de specificaties voor de virtuele machine en selecteer **maken**.
 
-    ![VM 7 toevoegen](media/azure-stack-edge-gpu-deploy-virtual-machine-portal/add-virtual-machine-review-create-1.png)
+    ![VM 8 toevoegen](media/azure-stack-edge-gpu-deploy-virtual-machine-portal/add-virtual-machine-review-create-1.png)
 
 1. Het maken van de VM begint en kan Maxi maal 20 minuten duren. U kunt naar **implementaties** gaan om het maken van de virtuele machine te controleren.
 
-    ![VM 8 toevoegen](media/azure-stack-edge-gpu-deploy-virtual-machine-portal/add-virtual-machine-deployments-page-1.png)
+    ![VM 9 toevoegen](media/azure-stack-edge-gpu-deploy-virtual-machine-portal/add-virtual-machine-deployments-page-1.png)
 
     
 1. Nadat de VM is gemaakt, wordt de **overzichts** pagina bijgewerkt om de nieuwe VM weer te geven.
 
-    ![VM 9 toevoegen](media/azure-stack-edge-gpu-deploy-virtual-machine-portal/add-virtual-machine-overview-page-1.png)
+    ![VM toevoegen 10](media/azure-stack-edge-gpu-deploy-virtual-machine-portal/add-virtual-machine-overview-page-1.png)
 
 1. Selecteer de zojuist gemaakte VM om naar **virtuele machines** te gaan.
 
-    ![VM toevoegen 10](media/azure-stack-edge-gpu-deploy-virtual-machine-portal/add-virtual-machine-page-1.png)
+    ![VM 11 toevoegen](media/azure-stack-edge-gpu-deploy-virtual-machine-portal/add-virtual-machine-page-1.png)
 
     Selecteer de virtuele machine om de details weer te geven. 
 
-    ![VM 11 toevoegen](media/azure-stack-edge-gpu-deploy-virtual-machine-portal/add-virtual-machine-details-1.png)
+    ![VM toevoegen 12](media/azure-stack-edge-gpu-deploy-virtual-machine-portal/add-virtual-machine-details-1.png)
 
 ## <a name="connect-to-a-vm"></a>Verbinding maken met een virtuele machine
 

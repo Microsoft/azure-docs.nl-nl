@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 03/09/2021
+ms.date: 04/02/2021
 ms.author: jeedes
-ms.openlocfilehash: f7167df523ca6f84eacd92fc7af1011e8b3b00b6
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ba6eb0a1b607fc05c4d0c660dd3d7016f81ef4b3
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104950332"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106449486"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cornerstone-single-sign-on"></a>Zelf studie: Azure Active Directory-integratie met eenmalige aanmelding (SSO) met één Sign-On
 
@@ -123,49 +123,11 @@ In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebru
 
 ## <a name="configure-cornerstone-single-sign-on-sso"></a>Eén single Sign-On SSO configureren
 
-1. Meld u aan bij de één Sign-On van de hoek steen als beheerder.
-
-1. Ga naar de **Hulpprogram ma's voor beheer >**.
-
-    ![screeenshot voor de beheer pagina.](./media/cornerstone-ondemand-tutorial/admin.png)
-
-1. Selecteer het deel venster **Edge** in **Configuratiehulpprogramma's**.
-
-    ![screeenshot voor EDGE-paneel.](./media/cornerstone-ondemand-tutorial/edge-panel.png)
-
-1. Selecteer één Sign-On in de sectie **integreren** .
-
-    ![screeenshot voor één Sign-On optie.](./media/cornerstone-ondemand-tutorial/single-sign-on.png)
-
-1. Klik op de knop **SSO toevoegen** . Selecteer **binnenkomend SAML** in het onderstaande pop-upvenster en klik vervolgens op **toevoegen**.
-
-    ![screeenshot voor inkomende SAML.](./media/cornerstone-ondemand-tutorial/inbound.png)
-
-1. Voer de onderstaande stappen uit op de volgende pagina:
-
-    ![screeenshot voor de configuratie sectie voor hoek steen.](./media/cornerstone-ondemand-tutorial/configuration.png)
-
-    a. Klik in de **algemene eigenschappen** op **bestand uploaden** om het certificaat bestand **(base64)** te uploaden, dat u hebt gedownload van de Azure Portal.
-
-    b. Schakel het selectie vakje **inschakelen** in en plak in het TEKSTVAK **IDP URL** de waarde voor de **aanmeldings-URL** die u hebt gekopieerd uit de Azure Portal.
-
-    c. Klik op **Opslaan**.
+Als u eenmalige aanmelding wilt configureren op de hoek van één keer aan de kant van een **eenmalige aanmelding** , moet u het gedownloade **certificaat (base64)** en de juiste gekopieerde url's verzenden van Azure Portal naar [hoek één Sign-On ondersteunings team](mailto:moreinfo@csod.com) van uw organisatie of contact opnemen met uw partner. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-cornerstone-single-sign-on-test-user"></a>Eén Sign-On test gebruiker maken voor één gebruikers
 
 Het doel van deze sectie is het maken van een gebruiker met de naam B. Simon in de hoek van de eenmalige aanmelding. Hoek steen 1 Sign-On ondersteunt automatische gebruikers inrichting, dat standaard is ingeschakeld. U kunt [hier](./cornerstone-ondemand-provisioning-tutorial.md) meer informatie vinden over het configureren van het automatisch inrichten van gebruikers.
-
-**Als u de gebruiker handmatig moet maken, voert u de volgende stappen uit:**
-
-1. Meld u aan bij de één Sign-On van de hoek steen als beheerder.
-
-1. Ga naar de **beheerder-> gebruikers** en klik onder aan de pagina op **gebruiker toevoegen** .
-
-    ![screeenshot voor het maken van een steen hoek voor het testen van de gebruiker.](./media/cornerstone-ondemand-tutorial/user-1.png)
-
-1. Vul de vereiste velden in pagina **nieuwe gebruiker toevoegen** in en klik op **Opslaan**.
-
-    ![screeenshot voor het maken van gebruikers met de vereiste velden.](./media/cornerstone-ondemand-tutorial/user-2.png)
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 

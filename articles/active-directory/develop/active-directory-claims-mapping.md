@@ -13,12 +13,12 @@ ms.topic: how-to
 ms.date: 08/25/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, jeedes, luleon
-ms.openlocfilehash: 2d65889a841655fe27994d3855f30f7a7e20e1ed
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4c7474b001284286ed589f6b7995db6bc7fd50af
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94647593"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106075063"
 ---
 # <a name="how-to-customize-claims-emitted-in-tokens-for-a-specific-app-in-a-tenant-preview"></a>Procedure: claims aanpassen die worden verzonden in tokens voor een specifieke app in een Tenant (preview-versie)
 
@@ -304,7 +304,7 @@ Het ID-element identificeert welke eigenschap van de bron de waarde voor de clai
 | Gebruiker | streetaddress | Adres |
 | Gebruiker | postalcode | Postcode |
 | Gebruiker | preferredlanguage | Voorkeurstaal |
-| Gebruiker | onpremisesuserprincipalname | On-premises UPN |*
+| Gebruiker | onpremisesuserprincipalname | On-premises UPN |
 | Gebruiker | mailNickname | E-mail bijnaam |
 | Gebruiker | extensionattribute1 | Uitbreidings kenmerk 1 |
 | Gebruiker | extensionattribute2 | Uitbreidings kenmerk 2 |
@@ -419,16 +419,6 @@ Op basis van de gekozen methode wordt een set invoer en uitvoer verwacht. Defini
 | ExtractMailPrefix | Geen |
 | Deelnemen | Het achtervoegsel dat wordt gekoppeld, moet een geverifieerd domein zijn van de resource Tenant. |
 
-### <a name="custom-signing-key"></a>Aangepaste handtekening sleutel
-
-Een aangepaste ondertekeningssleutel moet worden toegewezen aan het Service-Principal-object om een claim toewijzings beleid van kracht te laten worden. Dit zorgt ervoor dat de bevestiging van tokens door de maker van het beleid voor claim toewijzing is gewijzigd en dat toepassingen worden beschermd tegen beleids regels voor claim toewijzing die door kwaad aardige Actors zijn gemaakt. Als u een aangepaste ondertekeningssleutel wilt toevoegen, kunt u de cmdlet Azure PowerShell gebruiken [`New-AzureADApplicationKeyCredential`](/powerShell/module/Azuread/New-AzureADApplicationKeyCredential) om een certificaat sleutel referentie voor uw toepassings object te maken.
-
-Apps waarvoor claim toewijzing is ingeschakeld, moeten hun token handtekening sleutels valideren door `appid={client_id}` toe te voegen aan hun [OpenID Connect Connect-aanvragen voor meta gegevens](v2-protocols-oidc.md#fetch-the-openid-connect-metadata-document). Hieronder ziet u de indeling van het OpenID Connect Connect-meta gegevens document dat u moet gebruiken:
-
-```
-https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration?appid={client-id}
-```
-
 ### <a name="cross-tenant-scenarios"></a>Scenario's voor meerdere tenants
 
 Beleids regels voor claim toewijzing zijn niet van toepassing op gast gebruikers. Als een gast gebruiker toegang probeert te krijgen tot een toepassing met een claim toewijzings beleid dat is toegewezen aan de Service-Principal, wordt het standaard token uitgegeven (het beleid heeft geen effect).
@@ -531,6 +521,33 @@ In dit voor beeld maakt u een beleid dat een aangepaste claim ' JoinedData ' uit
       ``` powershell
       Add-AzureADServicePrincipalPolicy -Id <ObjectId of the ServicePrincipal> -RefObjectId <ObjectId of the Policy>
       ```
+
+## <a name="security-considerations"></a>Beveiligingsoverwegingen
+
+Toepassingen die tokens ontvangen, zijn afhankelijk van het feit dat de claim waarden bindend zijn uitgegeven door Azure AD en waarmee niet kan worden geknoeid. Wanneer u echter de token inhoud wijzigt via beleids regels voor claim toewijzing, zijn deze veronderstellingen mogelijk niet meer correct. Toepassingen moeten expliciet controleren of de tokens zijn gewijzigd door de maker van het beleid voor claim toewijzing om zich te beschermen tegen beleids regels voor claim toewijzingen die zijn gemaakt door kwaad aardige actors. U kunt dit op de volgende manieren doen:
+
+- Een aangepaste handtekening sleutel configureren
+- Werk het toepassings manifest bij om toegewezen claims te accepteren.
+ 
+Als u dit niet doet, wordt er een [ `AADSTS50146` fout code](reference-aadsts-error-codes.md#aadsts-error-codes)geretourneerd door Azure AD.
+
+### <a name="custom-signing-key"></a>Aangepaste handtekening sleutel
+
+Als u een aangepaste handtekening sleutel wilt toevoegen aan het Service-Principal-object, kunt u de cmdlet Azure PowerShell gebruiken [`New-AzureADApplicationKeyCredential`](/powerShell/module/Azuread/New-AzureADApplicationKeyCredential) om een certificaat sleutel referentie voor uw toepassings object te maken.
+
+Apps waarvoor claim toewijzing is ingeschakeld, moeten hun token handtekening sleutels valideren door `appid={client_id}` toe te voegen aan hun [OpenID Connect Connect-aanvragen voor meta gegevens](v2-protocols-oidc.md#fetch-the-openid-connect-metadata-document). Hieronder ziet u de indeling van het OpenID Connect Connect-meta gegevens document dat u moet gebruiken:
+
+```
+https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration?appid={client-id}
+```
+
+### <a name="update-the-application-manifest"></a>Het toepassings manifest bijwerken
+
+U kunt de eigenschap ook instellen `acceptMappedClaims` op `true` in het [manifest](reference-app-manifest.md)van de toepassing. Zoals beschreven in het [resource type apiApplication](/graph/api/resources/apiapplication#properties), kan een toepassing claim toewijzing gebruiken zonder een aangepaste ondertekeningssleutel op te geven.
+
+Hiervoor moet de aangevraagde token doelgroep een geverifieerde domein naam van uw Azure AD-Tenant gebruiken. Dit betekent dat u moet instellen `Application ID URI` (vertegenwoordigd door de `identifierUris` in het manifest van de toepassing) bijvoorbeeld to `https://contoso.com/my-api` of (eenvoudigweg de standaard naam van de Tenant te gebruiken) `https://contoso.onmicrosoft.com/my-api` .
+
+Als u geen geverifieerd domein gebruikt, retourneert Azure AD een `AADSTS501461` fout code met *het bericht ' AcceptMappedClaims wordt alleen ondersteund voor een token doelgroep die overeenkomt met de toepassings-GUID of een doel groep binnen de geverifieerde domeinen van de Tenant. Wijzig de resource-id of gebruik een toepassingsspecifieke handtekening sleutel.*
 
 ## <a name="see-also"></a>Zie ook
 

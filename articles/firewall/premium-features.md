@@ -5,15 +5,15 @@ author: vhorne
 ms.service: firewall
 services: firewall
 ms.topic: conceptual
-ms.date: 03/12/2021
+ms.date: 03/30/2021
 ms.author: victorh
 ms.custom: references_regions
-ms.openlocfilehash: 4a8efff7ef53753e15a47e87a2bb82d0124ae997
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8d0e86d95205acea2ac48ce027bcd118f4e3bf20
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/30/2021
-ms.locfileid: "104590446"
+ms.locfileid: "105967027"
 ---
 # <a name="azure-firewall-premium-preview-features"></a>Preview-functies Azure Firewall Premium
 
@@ -105,39 +105,37 @@ U kunt een aanvraag indienen bij [https://aka.ms/azfw-webcategories-request](htt
 
 Azure Firewall Premium Preview wordt ondersteund in de volgende regio's:
 
-- Europa-west (openbaar/Europa)
-- VS-Oost (openbaar/Verenigde Staten)
-- Australië-oost (openbaar/Australië)
-- Zuidoost-Azië (openbaar/Azië en Stille Oceaan)
-- UK-zuid (openbaar/Verenigd Konink rijk)
-- Europa-noord (openbaar/Europa)
-- VS-Oost 2 (openbaar/Verenigde Staten)
-- VS Zuid-Centraal (openbaar/Verenigde Staten)
-- VS-West 2 (openbaar/Verenigde Staten)
-- VS-West (openbaar/Verenigde Staten)
-- VS-centraal (openbaar/Verenigde Staten)
-- Noord-Centraal VS (openbaar/Verenigde Staten)
-- Japan-Oost (openbaar/Japan)
-- Azië-oost (openbaar/Azië en Stille Oceaan)
-- Canada-centraal (openbaar/Canada)
-- Frankrijk-centraal (openbaar/Frank rijk)
-- Zuid-Afrika-noord (openbaar/Zuid-Afrika)
-- UAE-noord (openbaar/VAE)
-- Zwitserland-noord (openbaar/Zwitser land)
-- Brazilië-zuid (openbaar/Brazilië)
-- Noor wegen-Oost (openbaar/Noor wegen)
 - Australië-centraal (openbaar/Australië)
 - Australië-centraal 2 (openbaar/Australië)
+- Australië-oost (openbaar/Australië)
 - Australië-zuidoost (openbaar/Australië)
+- Brazilië-zuid (openbaar/Brazilië)
+- Canada-centraal (openbaar/Canada)
 - Canada-oost (openbaar/Canada)
+- VS-centraal (openbaar/Verenigde Staten)
 - Centrale VS-EUAP (openbaar/Canarische (VS))
+- Azië-oost (openbaar/Azië en Stille Oceaan)
+- VS-Oost (openbaar/Verenigde Staten)
+- VS-Oost 2 (openbaar/Verenigde Staten)
+- Frankrijk-centraal (openbaar/Frank rijk)
 - Frankrijk-zuid (openbaar/Frank rijk)
+- Japan-Oost (openbaar/Japan)
 - Japan-West (openbaar/Japan)
+- Korea-centraal (openbaar/Korea)
 - Korea-zuid (openbaar/Korea)
+- Noord-Centraal VS (openbaar/Verenigde Staten)
+- Europa-noord (openbaar/Europa)
+- Zuid-Afrika-noord (openbaar/Zuid-Afrika)
+- VS Zuid-Centraal (openbaar/Verenigde Staten)
+- Zuidoost-Azië (openbaar/Azië en Stille Oceaan)
 - UAE-centraal (openbaar/VAE)
+- UK-zuid (openbaar/Verenigd Konink rijk)
 - UK-west (openbaar/Verenigd Konink rijk)
 - VS-West-Centraal (openbaar/Verenigde Staten)
+- Europa-west (openbaar/Europa)
 - India-West (openbaar/India)
+- VS-West (openbaar/Verenigde Staten)
+- VS-West 2 (openbaar/Verenigde Staten)
 
 
 ## <a name="known-issues"></a>Bekende problemen

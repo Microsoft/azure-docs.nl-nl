@@ -6,17 +6,17 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 02/19/2021
+ms.date: 03/30/2021
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 412e5ac661761d5fda1d375c59511c053a6354a6
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ce3bda82e634cd80560d7915a08fa33218173779
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101714779"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105967188"
 ---
 # <a name="change-how-a-storage-account-is-replicated"></a>Wijzigen hoe een opslagaccount wordt gerepliceerd
 
@@ -122,25 +122,30 @@ U moet een hand matige migratie uitvoeren als:
 - U wilt gegevens migreren van ZRS naar LRS, GRS of RA-GRS.
 - Uw opslag account bevat gegevens in de laag van het archief.
 
-U kunt Live migratie aanvragen via de [ondersteunings portal van Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview). Selecteer in de portal het opslag account dat u wilt converteren naar ZRS.
+U kunt Live migratie aanvragen via de [ondersteunings portal van Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview). 
 
-1. Selecteer een **nieuwe ondersteunings aanvraag**.
-2. Voltooi de **basis beginselen** op basis van uw account gegevens: 
+> [!IMPORTANT]
+> Als u meer dan één opslag account moet migreren, maakt u één ondersteunings ticket en geeft u de namen van de accounts op die u wilt converteren op het tabblad **Details** .
+
+Volg deze stappen om een Livemigratie aan te vragen:
+
+1. Ga in het Azure Portal naar een opslag account dat u wilt migreren.
+1. Onder **ondersteuning en probleem oplossing**, selecteer **nieuwe ondersteunings aanvraag**.
+1. Vul het tabblad **basis beginselen** in op basis van uw account gegevens:
     - **Probleem type**: Selecteer **Technical**.
-    - **Service**: Selecteer **Mijn services** en **beheer van opslag accounts**.
-    - **Resource**: Selecteer de resource die u wilt converteren naar ZRS.
-3. Selecteer **Next**.
-4. Geef de volgende waarden op voor het **probleem** gedeelte:
-    - **Ernst**: behoud de standaard waarde in.
-    - **Probleem type**: **gegevens migratie** selecteren.
-    - **Categorie**: Selecteer **migreren naar ZRS**.
-    - **Titel**: Typ een beschrijvende titel, bijvoorbeeld ZRS- **account migratie**.
-    - **Details**: Typ meer details in het vak **Details** , bijvoorbeeld ik wil migreren naar ZRS vanuit [LRS, GRS] in de \_ \_ regio.
-5. Selecteer **Next**.
-6. Controleer of de contact gegevens juist zijn op de Blade **contact gegevens** .
-7. Selecteer **Maken**.
+    - **Service**: Selecteer **Mijn services** en vervolgens **beheer van opslag accounts**.
+    - **Resource**: Selecteer een opslag account om te migreren. Als u meerdere opslag accounts moet opgeven, kunt u dit doen in de sectie **Details** .
+    - **Probleem type**: **gegevens migratie** kiezen.
+    - **Subtype van probleem**: Kies **migreren naar ZRS, GZRS of Ra-GZRS**.
 
-Een ondersteunings medewerker neemt contact met u op en geeft u hulp die u nodig hebt.
+    :::image type="content" source="media/redundancy-migration/request-live-migration-basics-portal.png" alt-text="Scherm afbeelding die laat zien hoe u een Live migratie aanvraagt tabblad basis principes":::
+
+1. Selecteer **Next**. Op het tabblad **oplossingen** kunt u de geschiktheid van uw opslag accounts controleren voor migratie.
+1. Selecteer **Next**. Als u meer dan één opslag account hebt om te migreren, geeft u op het tabblad **Details** de naam op voor elk account, gescheiden door een punt komma.
+
+    :::image type="content" source="media/redundancy-migration/request-live-migration-details-portal.png" alt-text="Scherm afbeelding die laat zien hoe u een tabblad met Live-migratie aanvragen":::
+
+1. Vul de aanvullende vereiste informatie in op het tabblad **Details** en selecteer vervolgens **controleren + maken** om uw ondersteunings ticket te controleren en in te dienen. Een ondersteunings medewerker neemt contact met u op om eventuele hulp te bieden die u nodig hebt.
 
 > [!NOTE]
 > Premium-bestands shares (FileStorage-accounts) zijn alleen beschikbaar voor LRS en ZRS.

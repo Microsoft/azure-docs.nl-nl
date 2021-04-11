@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 12/07/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: f690f4a416e86b02de0d35fc673849c1293df577
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 1f3fb07eaf7f63d15232f4c94eeee45f43c81616
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102095762"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106075131"
 ---
 # <a name="single-sign-on-session-management-in-azure-active-directory-b2c"></a>Sessie beheer voor eenmalige aanmelding in Azure Active Directory B2C
 
@@ -30,7 +30,7 @@ Azure AD B2C heeft een aantal SSO-sessie providers gedefinieerd die kunnen worde
 |---------|---------|
 |[NoopSSOSessionProvider](#noopssosessionprovider)     |  Geen       |       
 |[DefaultSSOSessionProvider](#defaultssosessionprovider)    | Azure AD B2C interne sessie beheerder.      |       
-|[ExternalLoginSSOSessionProvider](#externalloginssosessionprovider)     | Tussen Azure AD B2C en OAuth1, OAuth2 of OpenID Connect Connect ID-provider.        |         |
+|[ExternalLoginSSOSessionProvider](#externalloginssosessionprovider)     | Tussen Azure AD B2C en OAuth1, OAuth2 of OpenID Connect Connect ID-provider.        | 
 |[OAuthSSOSessionProvider](#oauthssosessionprovider)     | Tussen een OAuth2 of OpenID connect verbinding maken Relying Party toepassing en Azure AD B2C.        |        
 |[SamlSSOSessionProvider](#samlssosessionprovider)     | Tussen Azure AD B2C en SAML-ID-provider. En tussen een SAML-service provider (Relying Party toepassing) en Azure AD B2C.  |        
 
@@ -120,7 +120,7 @@ Deze provider wordt gebruikt om het scherm ' ID-provider kiezen ' te onderdrukke
 
 | Kenmerk | Vereist | Beschrijving|
 | --- | --- | --- |
-| AlwaysFetchClaimsFromProvider | Nee | Momenteel niet gebruikt, kan worden genegeerd. |
+| AlwaysFetchClaimsFromProvider | No | Momenteel niet gebruikt, kan worden genegeerd. |
 
 ### <a name="oauthssosessionprovider"></a>OAuthSSOSessionProvider
 
@@ -162,8 +162,8 @@ Het volgende `SM-Saml-issuer` technische profiel wordt gebruikt door een [SAML-U
 
 | Kenmerk | Vereist | Beschrijving|
 | --- | --- | --- |
-| IncludeSessionIndex | Nee | Momenteel niet gebruikt, kan worden genegeerd.|
-| RegisterServiceProviders | Nee | Geeft aan dat de provider alle SAML-service providers moet registreren waarvoor een bevestiging is verleend. Mogelijke waarden: `true` (standaard) of `false` .|
+| IncludeSessionIndex | No | Momenteel niet gebruikt, kan worden genegeerd.|
+| RegisterServiceProviders | No | Geeft aan dat de provider alle SAML-service providers moet registreren waarvoor een bevestiging is verleend. Mogelijke waarden: `true` (standaard) of `false` .|
 
 
 ## <a name="next-steps"></a>Volgende stappen

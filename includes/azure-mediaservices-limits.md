@@ -4,12 +4,12 @@ ms.service: media-services
 ms.topic: include
 ms.date: 09/16/2020
 ms.author: jroth
-ms.openlocfilehash: c315c071aeb36eea0bd1af84b1344cf2fef5f703
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f4bdd5332b3c10cf375c7c04ede25137328714a2
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "91329653"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106073299"
 ---
 >[!NOTE]
 >Open een ndersteuningsticket voor resources die niet zijn opgelost om te vragen om een toename van de quota. Maak geen extra Azure Media Services-accounts in een poging om de limieten te verhogen.
@@ -41,7 +41,7 @@ Vanaf 1 april 2017 worden alle taakrecords in uw account die ouder zijn dan 90 d
 
 <sup>3</sup>Bij het maken van een aanvraag om taakentiteiten weer te geven, worden maximaal 1000 entiteiten per aanvraag geretourneerd. Als u ingediende taken wilt bijhouden, gebruikt u de query's voor overslaan of bewaren die zijn beschreven in [Query-opties van het OData-systeem](/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)).
 
-<sup>4</sup>Locators zijn niet ontworpen om toegangsbeheer per gebruiker te regelen. Gebruik DRM-oplossingen (Digital Rights Management) als u afzonderlijke gebruikers verschillende toegangsrechten wilt geven. Raadpleeg [Uw inhoud beveiligen met Azure Media Services](../articles/media-services/previous/media-services-content-protection-overview.md) voor meer informatie.
+<sup>4</sup>Locators zijn niet ontworpen om toegangsbeheer per gebruiker te regelen. Gebruik DRM-oplossingen (Digital Rights Management) als u afzonderlijke gebruikers verschillende toegangsrechten wilt geven. Raadpleeg [Uw inhoud beveiligen met Azure Media Services](../articles/media-services/latest/drm-content-protection-concept.md) voor meer informatie.
 
 <sup>5</sup>De opslagaccounts moeten deel uitmaken van hetzelfde Azure-abonnement.
 

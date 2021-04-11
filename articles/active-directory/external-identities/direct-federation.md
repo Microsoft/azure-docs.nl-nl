@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 03/02/2021
+ms.date: 04/06/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 598cbf303c8a87675833b8d87f05055771e46f55
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ff8ac540459ad79a8980542254cc15518959b5c0
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101687240"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106552288"
 ---
 # <a name="direct-federation-with-ad-fs-and-third-party-providers-for-guest-users-preview"></a>Directe Federatie met AD FS en providers van derden voor gast gebruikers (preview-versie)
 
@@ -33,7 +33,7 @@ Nadat u directe Federatie hebt ingesteld met een organisatie, worden nieuwe gast
  - Als u directe Federatie hebt ingesteld met een partner organisatie en gast gebruikers uitnodigt en vervolgens de partner organisatie later naar Azure AD verplaatst, blijven de gast gebruikers die al ingedeelde uitnodigingen hebben ingewisseld, gebruikmaken van directe Federatie, zolang het directe Federatie beleid in uw Tenant bestaat.
  - Als u directe Federatie met een partner organisatie verwijdert, kunnen gast gebruikers die momenteel direct Federation gebruiken, zich niet aanmelden.
 
-In een van deze scenario's kunt u de verificatie methode van een gast gebruiker bijwerken door het gast gebruikers account te verwijderen uit de map en ze opnieuw uit te nodigen.
+In een van deze scenario's kunt u de verificatie methode van een gast gebruiker bijwerken door [de status van hun inwisseling opnieuw](reset-redemption-status.md)in te stellen.
 
 Directe Federatie is gekoppeld aan domein naam ruimten, zoals contoso.com en fabrikam.com. Bij het tot stand brengen van een directe Federatie configuratie met AD FS of een IdP van derden koppelen organisaties een of meer domein naam ruimten aan deze id. 
 
@@ -89,7 +89,7 @@ Wanneer directe Federatie wordt ingesteld met een partner organisatie, heeft dit
 ### <a name="does-direct-federation-address-sign-in-issues-due-to-a-partially-synced-tenancy"></a>Worden er problemen met het aanmelden van direct Federation-adressen veroorzaakt door een gedeeltelijk gesynchroniseerde pacht?
 Nee, de functie voor [eenmalige e-mail wachtwoord code](one-time-passcode.md) moet in dit scenario worden gebruikt. Een ' gedeeltelijk gesynchroniseerde pacht ' verwijst naar een Azure AD-Tenant van de partner, waarbij on-premises gebruikers identiteiten niet volledig worden gesynchroniseerd met de Cloud. Een gast waarvan de identiteit nog niet bestaat in de Cloud, maar die probeert uw B2B-uitnodiging in te wisselen, kan zich niet aanmelden. Met de functie voor eenmalige wachtwoord code kan deze gast zich aanmelden. De functie directe Federatie biedt een oplossing voor scenario's waarbij de gast een eigen IdP organisatie account heeft, maar de organisatie helemaal geen Azure AD-aanwezigheid heeft.
 ### <a name="once-direct-federation-is-configured-with-an-organization-does-each-guest-need-to-be-sent-and-redeem-an-individual-invitation"></a>Zodra direct Federation is geconfigureerd met een organisatie, moet elke gast een individuele uitnodiging verzenden en inwisselen?
-Door directe Federatie in te stellen, wordt de verificatie methode niet gewijzigd voor gast gebruikers die van u al een uitnodiging hebben ingewisseld. U kunt de verificatie methode van een gast gebruiker bijwerken door het gast gebruikers account uit de map te verwijderen en ze opnieuw uit te nodigen.
+Door directe Federatie in te stellen, wordt de verificatie methode niet gewijzigd voor gast gebruikers die van u al een uitnodiging hebben ingewisseld. U kunt de verificatie methode van een gast gebruiker bijwerken door [de status van hun inwisseling opnieuw](reset-redemption-status.md)in te stellen.
 ## <a name="step-1-configure-the-partner-organizations-identity-provider"></a>Stap 1: de ID-provider van de partner organisatie configureren
 Eerst moet uw partner organisatie hun ID-provider configureren met de vereiste claims en Relying Party-vertrouwens relaties. 
 
@@ -212,7 +212,7 @@ Test nu uw directe Federatie-installatie door een nieuwe B2B-gast gebruiker uit 
 
 
 ## <a name="how-do-i-remove-direct-federation"></a>Direct Federatie Hoe kan ik verwijderen?
-U kunt uw directe Federatie-instellingen verwijderen. Als u dit doet, kunnen gebruikers met een directe Federatie gast die hun uitnodigingen al hebben ingewisseld, zich niet aanmelden. Maar u kunt ze ook weer toegang geven tot uw resources door ze te verwijderen uit de map en ze opnieuw uit te nodigen. Directe Federatie verwijderen met een id-provider in de Azure AD-portal:
+U kunt uw directe Federatie-instellingen verwijderen. Als u dit doet, kunnen gebruikers met een directe Federatie gast die hun uitnodigingen al hebben ingewisseld, zich niet aanmelden. Maar u kunt ze ook weer toegang geven tot uw resources door [de status van hun inwisseling](reset-redemption-status.md)opnieuw in te stellen. Directe Federatie verwijderen met een id-provider in de Azure AD-portal:
 
 1. Ga naar de [Azure Portal](https://portal.azure.com/). Selecteer de knop **Azure Active Directory** in het linkerdeelvenster. 
 2. Selecteer **externe identiteiten**.

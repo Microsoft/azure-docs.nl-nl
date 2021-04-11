@@ -5,12 +5,12 @@ author: VidyaKukke
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: vkukke
-ms.openlocfilehash: 10c9b165041f0a4a1f09511f17bef3629353c3b2
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d58e8b5ce9fb444fa501f897cca722613d9c51fe
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94917525"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105967571"
 ---
 # <a name="network-security-for-azure-event-grid-resources"></a>Netwerk beveiliging voor Azure Event Grid bronnen
 In dit artikel wordt beschreven hoe u de volgende beveiligings functies gebruikt met Azure Event Grid: 
@@ -44,7 +44,7 @@ U kunt [privé-eind punten](../private-link/private-endpoint-overview.md) gebrui
 
 Met persoonlijke eind punten voor uw Event Grid-resource kunt u het volgende doen:
 
-- Veilige toegang tot uw onderwerp of domein vanuit een VNet over een micro soft-backbone-netwerk in plaats van het open bare Internet.
+- Veilige toegang tot uw onderwerp of domein vanuit een VNet via het micro soft backbone-netwerk, in tegens telling tot het open bare Internet.
 - Maak veilig verbinding vanaf on-premises netwerken die verbinding maken met het VNet met behulp van VPN-of Express-routes met privé-peering.
 
 Wanneer u een persoonlijk eind punt maakt voor een onderwerp of domein in uw VNet, wordt een aanvraag voor goed keuring verzonden naar de eigenaar van de resource. Als de gebruiker die het persoonlijke eind punt wil maken ook eigenaar van de resource is, wordt deze aanvraag voor toestemming automatisch goedgekeurd. Anders heeft de verbinding de status in **behandeling** tot goedgekeurd. Toepassingen in het VNet kunnen naadloos verbinding maken met de Event Grid-Service via het persoonlijke eind punt, met behulp van dezelfde verbindings reeksen en autorisatie mechanismen die ze anders zouden gebruiken. Resource-eigen aren kunnen toestemmings aanvragen en de persoonlijke eind punten beheren via het tabblad **privé-eind punten** voor de resource in de Azure Portal.

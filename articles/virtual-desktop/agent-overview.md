@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 12/16/2020
 ms.author: sefriend
 manager: clarkn
-ms.openlocfilehash: ecc4a5a17186eddd4223715462b14399bdf702df
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 371cc78f3ebad638008f4195f164b66a64948c65
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104601887"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106504546"
 ---
 # <a name="get-started-with-the-windows-virtual-desktop-agent"></a>Aan de slag met de virtueel-bureaublad agent van Windows
 
@@ -25,7 +25,7 @@ Dit artikel bevat een kort overzicht van de installatie-en update processen van 
 
 ## <a name="initial-installation-process"></a>Eerste installatie proces
 
-De virtuele Windows-bureau blad-agent wordt in eerste instantie op een van de volgende twee manieren geïnstalleerd. Als u virtuele machines (Vm's) inricht in Azure Portal en Azure Marketplace, worden de bootloader van agent en agent automatisch geïnstalleerd. Als u Vm's inricht met behulp van Power shell, moet u de agent en de agent-bootloader. msi-bestanden hand matig downloaden bij [het maken van een virtuele Windows-bureaubladclient met Power shell](create-host-pools-powershell.md#register-the-virtual-machines-to-the-windows-virtual-desktop-host-pool). Wanneer de agent is geïnstalleerd, worden de Vensters naast elkaar en de bewakings agent voor het virtuele bureau blad van Windows ook tegelijkertijd geïnstalleerd. Het stack onderdeel side-by-side is vereist voor gebruikers om veilig reverse server-to-client-verbindingen tot stand te brengen. De bewakings agent van Genève bewaakt de status van de agent. Alle drie deze onderdelen zijn essentieel voor een goede werking van end-to-end-gebruikers connectiviteit.
+De virtuele Windows-bureau blad-agent wordt in eerste instantie op een van de volgende twee manieren geïnstalleerd. Als u virtuele machines (Vm's) inricht in Azure Portal en Azure Marketplace, worden de bootloader van agent en agent automatisch geïnstalleerd. Als u Vm's inricht met behulp van Power shell, moet u de agent en de agent-bootloader. msi-bestanden hand matig downloaden bij [het maken van een virtuele Windows-bureaubladclient met Power shell](create-host-pools-powershell.md#register-the-virtual-machines-to-the-windows-virtual-desktop-host-pool). Zodra de agent is geïnstalleerd, wordt het Windows-venster voor virtuele Bureau bladen naast elkaar en de bewakings agent voor Genève geïnstalleerd. Het stack onderdeel side-by-side is vereist voor gebruikers om veilig reverse server-to-client-verbindingen tot stand te brengen. De bewakings agent van Genève bewaakt de status van de agent. Alle drie deze onderdelen zijn essentieel voor een goede werking van end-to-end-gebruikers connectiviteit.
 
 >[!IMPORTANT]
 >Als u de Windows-agent voor virtuele Bureau bladen, side-by-side stack en Genève bewakings agent wilt installeren, moet u de blok kering van alle Url's in de [lijst vereiste URL](safe-url-list.md#virtual-machines)opheffen. Het opheffen van de blok kering van deze Url's is vereist voor het gebruik van de virtueel-bureaublad service van Windows.
@@ -38,6 +38,7 @@ Nieuwe versies van de agent worden met regel matige intervallen geïmplementeerd
 
 
 >[!NOTE]
+>Omdat virtuele machines in uw hostgroep op verschillende tijdstippen van agent updates worden ontvangen, moet u het verschil tussen problemen met de vlucht en de mislukte agent-updates kunnen bepalen. Als u naar de gebeurtenis logboeken voor uw virtuele machine gaat op **Logboeken**  >  **Windows-logboeken**  >  -**toepassing** en de gebeurtenis ' id 3277 ' ziet, betekent dit dat de agent update niet werkt. Als u deze gebeurtenis niet ziet, bevindt de virtuele machine zich in een andere vlucht en wordt deze later bijgewerkt.
 >- Wanneer de agent van Genève de laatste versie bijwerkt, wordt de oude GenevaTask-taak gevonden en uitgeschakeld voordat een nieuwe taak voor de nieuwe bewakings agent wordt gemaakt. De eerdere versie van de bewakings agent wordt niet verwijderd als er een probleem is met de meest recente versie van de bewakings agent, waardoor de eerdere versie moet worden hersteld. Als er een probleem is met de nieuwste versie, wordt de oude bewakings agent opnieuw ingeschakeld om bewakings gegevens te blijven leveren. Alle versies van de monitor die ouder zijn dan de laatste die u vóór de update hebt geïnstalleerd, worden verwijderd uit de virtuele machine.
 >- Uw VM houdt drie versies van de side-by-side stack tegelijk. Zo kunt u snel herstel doen als er iets mis gaat met de update. De oudste versie van de stack wordt verwijderd van de VM wanneer de stack wordt bijgewerkt.
 

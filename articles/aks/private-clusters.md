@@ -3,13 +3,13 @@ title: Een persoonlijk Azure Kubernetes service-cluster maken
 description: Meer informatie over het maken van een AKS-cluster (private Azure Kubernetes service)
 services: container-service
 ms.topic: article
-ms.date: 3/5/2021
-ms.openlocfilehash: 21d839df04c868d2c21932f96a6b72a32b0404e5
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 3/31/2021
+ms.openlocfilehash: 474c9a5d58627cec59904ccbcc5b3597de314612
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104771852"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106120364"
 ---
 # <a name="create-a-private-azure-kubernetes-service-cluster"></a>Een persoonlijk Azure Kubernetes service-cluster maken
 
@@ -77,7 +77,7 @@ De volgende para meters kunnen worden gebruikt om Privé-DNS zone te configurere
 
 ### <a name="prerequisites"></a>Vereisten
 
-* De AKS preview-versie 0.5.3 of hoger
+* De AKS preview-versie 0.5.7 of hoger
 * De API-versie 2020-11-01 of hoger
 
 ### <a name="create-a-private-aks-cluster-with-private-dns-zone-preview"></a>Een persoonlijk AKS-cluster maken met Privé-DNS zone (preview-versie)
@@ -91,6 +91,7 @@ az aks create -n <private-cluster-name> -g <private-cluster-resource-group> --lo
 ```azurecli-interactive
 az aks create -n <private-cluster-name> -g <private-cluster-resource-group> --load-balancer-sku standard --enable-private-cluster --enable-managed-identity --assign-identity <ResourceId> --private-dns-zone <custom private dns zone ResourceId> --fqdn-subdomain <subdomain-name>
 ```
+
 ## <a name="options-for-connecting-to-the-private-cluster"></a>Opties voor het maken van verbinding met het privé cluster
 
 Het API-server eindpunt heeft geen openbaar IP-adres. Als u de API-server wilt beheren, moet u een virtuele machine gebruiken die toegang heeft tot de Azure-Virtual Network (VNet) van het AKS-cluster. Er zijn verschillende opties voor het tot stand brengen van een netwerk verbinding met het persoonlijke cluster.
@@ -98,8 +99,61 @@ Het API-server eindpunt heeft geen openbaar IP-adres. Als u de API-server wilt b
 * Maak een virtuele machine in hetzelfde Azure-Virtual Network (VNet) als het AKS-cluster.
 * Gebruik een virtuele machine in een afzonderlijk netwerk en stel de [peering van een virtueel netwerk][virtual-network-peering]in.  Zie de sectie hieronder voor meer informatie over deze optie.
 * Gebruik een [snelle route of VPN-][express-route-or-VPN] verbinding.
+* Gebruik de [opdracht functie AKS uitvoeren](#aks-run-command-preview).
 
 Het maken van een virtuele machine in hetzelfde VNET als het AKS-cluster is de eenvoudigste optie.  Express route en Vpn's voegen kosten toe en vereisen extra netwerk complexiteit.  Voor peering van virtuele netwerken moet u uw netwerkcidr-bereiken plannen om ervoor te zorgen dat er geen overlappende bereiken zijn.
+
+### <a name="aks-run-command-preview"></a>Opdracht AKS uitvoeren (preview-versie)
+
+Wanneer u toegang wilt krijgen tot een persoonlijk cluster, moet u dit doen in het virtuele cluster netwerk of een peered netwerk of client computer. Hiervoor moet de computer doorgaans worden verbonden via een VPN-of Express-route naar het virtuele cluster netwerk of een JumpBox die moet worden gemaakt in het virtuele cluster netwerk. Met de opdracht AKS uitvoeren kunt u op afstand opdrachten aanroepen in een AKS-cluster via de AKS-API. Deze functie biedt een API waarmee u bijvoorbeeld just-in-time-opdrachten kunt uitvoeren vanaf een externe laptop voor een persoonlijk cluster. Dit kan een zeer snelle, just-in-time-toegang tot een persoonlijk cluster, wanneer de client computer zich niet in het privé netwerk van het cluster bevindt, terwijl dezelfde RBAC-besturings elementen en een persoonlijke API-server behouden blijven en afdwingen.
+
+### <a name="register-the-runcommandpreview-preview-feature"></a>De `RunCommandPreview` Preview-functie registreren
+
+Als u de nieuwe opdracht-API voor uitvoeren wilt gebruiken, moet u de `RunCommandPreview` functie vlag inschakelen voor uw abonnement.
+
+De `RunCommandPreview` functie vlag registreren met behulp van de opdracht [AZ feature REGI ster] [AZ-feature-REGI ster], zoals wordt weer gegeven in het volgende voor beeld:
+
+```azurecli-interactive
+az feature register --namespace "Microsoft.ContainerService" --name "RunCommandPreview"
+```
+
+Het duurt enkele minuten voordat de status is *geregistreerd*. Controleer de registratie status met behulp van de opdracht [AZ Feature List][az-feature-list] :
+
+```azurecli-interactive
+az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/RunCommandPreview')].{Name:name,State:properties.state}"
+```
+
+Als u klaar bent, vernieuwt u de registratie van de resource provider *micro soft. container service* met de opdracht [AZ provider REGI ster][az-provider-register] :
+
+```azurecli-interactive
+az provider register --namespace Microsoft.ContainerService
+```
+
+### <a name="use-aks-run-command"></a>De opdracht AKS uitvoeren gebruiken
+
+Eenvoudige opdracht
+
+```azurecli-interactive
+az aks command invoke -g <resourceGroup> -n <clusterName> -c "kubectl get pods -n kube-system"
+```
+
+Een manifest implementeren door het specifieke bestand te koppelen
+
+```azurecli-interactive
+az aks command invoke -g <resourceGroup> -n <clusterName> -c "kubectl apply -f deployment.yaml -n default" -f deployment.yaml
+```
+
+Een manifest implementeren door een hele map te koppelen
+
+```azurecli-interactive
+az aks command invoke -g <resourceGroup> -n <clusterName> -c "kubectl apply -f deployment.yaml -n default" -f .
+```
+
+Een helm-installatie uitvoeren en het specifieke waarden manifest door geven
+
+```azurecli-interactive
+az aks command invoke -g <resourceGroup> -n <clusterName> -c "helm repo add bitnami https://charts.bitnami.com/bitnami && helm repo update && helm install my-release -f values.yaml bitnami/nginx" -f values.yaml
+```
 
 ## <a name="virtual-network-peering"></a>Peering op virtueel netwerk
 

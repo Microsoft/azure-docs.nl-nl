@@ -6,12 +6,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 12/19/2019
 ms.author: bwren
-ms.openlocfilehash: 3300b0587cbb6c2193b56c9152af0cb11ea51936
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: f2b22746b7a78349580220f4aa7579876fd21c33
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102033296"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106074587"
 ---
 # <a name="overview-of-azure-platform-logs"></a>Overzicht van Azure-platformlogboeken
 Platform logboeken bieden gedetailleerde informatie over diagnostische gegevens en controle voor Azure-resources en het Azure-platform waarvan ze afhankelijk zijn. Ze worden automatisch gegenereerd, maar u moet bepaalde platform logboeken configureren om te worden doorgestuurd naar een of meer doelen die moeten worden bewaard. Dit artikel bevat een overzicht van de platform logboeken, inclusief welke informatie ze bieden en hoe u deze kunt configureren voor het verzamelen en analyseren van gegevens.
@@ -43,10 +43,10 @@ Er zijn verschillende opties voor het weer geven en analyseren van de verschille
 ## <a name="destinations"></a>Bestemmingen
 U kunt platform logboeken verzenden naar een of meer van de doelen in de volgende tabel, afhankelijk van uw bewakings vereisten. Configureer doelen voor platform logboeken door [een diagnostische instelling te maken](../essentials/diagnostic-settings.md).
 
-| Doel | Beschrijving |
+| Doel | Description |
 |:---|:---|
-| Log Analytics-werkruimte | Analyseer de logboeken van al uw Azure-resources samen en profiteer van alle functies die beschikbaar zijn voor [Azure monitor logboeken](../logs/data-platform-logs.md) , inclusief [logboek query's](../logs/log-query-overview.md) en [logboek waarschuwingen](../alerts/alerts-log.md). De resultaten van een logboek query vastmaken aan een Azure-dash board of opnemen in een werkmap als onderdeel van een interactief rapport. |  |
-| Event Hub | Verzend gegevens van het platform logboek buiten Azure, bijvoorbeeld naar een SIEM of aangepast telemetrie-platform van derden.
+| Log Analytics-werkruimte | Analyseer de logboeken van al uw Azure-resources samen en profiteer van alle functies die beschikbaar zijn voor [Azure monitor logboeken](../logs/data-platform-logs.md) , inclusief [logboek query's](../logs/log-query-overview.md) en [logboek waarschuwingen](../alerts/alerts-log.md). De resultaten van een logboek query vastmaken aan een Azure-dash board of opnemen in een werkmap als onderdeel van een interactief rapport. | 
+| Event Hub | Verzend gegevens van het platform logboek buiten Azure, bijvoorbeeld naar een SIEM of aangepast telemetrie-platform van derden. |
 | Azure Storage | Archiveer de logboeken voor controle of back-up. |
 
 - Zie voor meer informatie over het maken van een diagnostische instelling voor activiteiten logboek of bron logboeken [Diagnostische instellingen maken om platform logboeken en metrische gegevens naar verschillende bestemmingen te verzenden](../essentials/diagnostic-settings.md). 

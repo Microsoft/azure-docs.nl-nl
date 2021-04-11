@@ -8,14 +8,14 @@ ms.topic: conceptual
 author: iqshahmicrosoft
 ms.author: iqshah
 ms.date: 10/19/2020
-ms.openlocfilehash: 9169d691b58ad4a59796123c64f856128a0f8c83
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0b5d0a8b12ad07c5be3a4cfc0840acc81aa0c395
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98879323"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106060729"
 ---
-# <a name="how-to-plan-a-virtual-machine-offer"></a>Een aanbieding voor een virtuele machine plannen
+# <a name="plan-a-virtual-machine-offer"></a>Een aanbieding voor een virtuele machine plannen
 
 In dit artikel worden de verschillende opties en vereisten beschreven voor het publiceren van een virtuele machine (VM)-aanbieding naar de commerciële Marketplace. VM-aanbiedingen zijn aanbiedingen die via Azure Marketplace kunnen worden geïmplementeerd en gefactureerd.
 
@@ -102,7 +102,7 @@ U kunt de detectie en implementatie van uw virtuele machine beperken tot een spe
 
 Zie voor meer informatie [Abonnementen en prijzen voor commerciële Marketplace-aanbiedingen](plans-pricing.md) en [persoonlijke aanbiedingen in micro soft Commercial Marketplace](private-offers.md).
 
-## <a name="test-drives"></a>Test drives
+## <a name="test-drive"></a>Station testen
 
 U kunt ervoor kiezen om een test drive in te scha kelen voor uw VM. Test stations geven klanten een vast aantal uur toegang tot een vooraf geconfigureerde omgeving. U kunt test stations voor elke publicatie optie inschakelen, maar deze functie heeft aanvullende vereisten. Zie [Wat is een test drive?](what-is-test-drive.md)voor meer informatie over test stations. Zie [technische configuratie testen](test-drive-technical-configuration.md)voor meer informatie over het configureren van verschillende soorten test stations.
 

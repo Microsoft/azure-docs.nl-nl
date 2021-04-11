@@ -5,12 +5,12 @@ ms.subservice: B2C
 ms.topic: include
 ms.date: 01/27/2021
 ms.author: mimart
-ms.openlocfilehash: 41d9962657aa81dbe34a52302d1b68ec655f2893
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e26dd7ea9f45af6f725f4deaefd9b5bd79a37e1c
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102095286"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106073433"
 ---
 Als u nog geen certificaat hebt, kunt u een zelfondertekend certificaat gebruiken. Een zelfondertekend certificaat is een beveiligings certificaat dat niet is ondertekend door een certificerings instantie (CA) en biedt geen beveiligings garanties van een certificaat dat is ondertekend door een CERTIFICERINGs instantie. 
 

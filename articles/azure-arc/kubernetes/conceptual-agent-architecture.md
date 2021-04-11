@@ -8,12 +8,12 @@ author: shashankbarsin
 ms.author: shasb
 description: Dit artikel bevat een overzicht van de architectuur van Azure Arc enabled Kubernetes-agents
 keywords: Kubernetes, Arc, Azure, containers
-ms.openlocfilehash: ec95efdfef871777e7f53617b057529e301739dd
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.openlocfilehash: f59a897e4868d7b16d0a50c28ce2142320992f71
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "104953065"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106442538"
 ---
 # <a name="azure-arc-enabled-kubernetes-agent-architecture"></a>Architectuur van Azure Arc enabled Kubernetes-agent
 
@@ -49,7 +49,10 @@ De meeste on-premises data centers dwingen strikte netwerk regels af waarmee bin
         | `deployment.apps/cluster-metadata-operator` | Verzamelt de clustermetagegevens, inclusief clusterversie, het aantal knooppunten, en de versie van de Azure Arc-agent. |
         | `deployment.apps/resource-sync-agent` | Synchroniseert de bovenvermelde meta gegevens van het cluster naar Azure. |
         | `deployment.apps/flux-logs-agent` | Hiermee worden logboeken van de stroom-Opera tors verzameld die zijn geïmplementeerd als onderdeel van de configuratie van broncode beheer. |
-    
+        | `deployment.apps/extension-manager` | Hiermee wordt de levens cyclus van uitbrei dingen helm grafieken geïnstalleerd en beheerd |  
+        | `deployment.apps/clusterconnect-agent` | Reverse proxy-agent waarmee de functie cluster Connect toegang kan bieden tot het `apiserver` cluster. Dit is een optioneel onderdeel dat alleen wordt geïmplementeerd als `cluster-connect` de functie is ingeschakeld op het cluster   |
+        | `deployment.apps/guard` | Verificatie en autorisatie webhook-server die wordt gebruikt voor AAD RBAC-functie. Dit is een optioneel onderdeel dat alleen wordt geïmplementeerd als `azure-rbac` de functie is ingeschakeld op het cluster   |
+
 1. Als alle Azure Arc enabled Kubernetes-agent peul de `Running` status heeft, controleert u of uw cluster is verbonden met Azure Arc. U ziet het volgende:
     * Een Kubernetes-resource van Azure arc in [Azure Resource Manager](../../azure-resource-manager/management/overview.md). Deze resource wordt door Azure getraceerd als een projectie van het door de klant beheerde Kubernetes-cluster, niet het daad werkelijke Kubernetes-cluster zelf.
     * De meta gegevens van het cluster (zoals de Kubernetes-versie, de agent versie en het aantal knoop punten) worden weer gegeven op de Azure Arc enabled Kubernetes-resource als meta gegevens.

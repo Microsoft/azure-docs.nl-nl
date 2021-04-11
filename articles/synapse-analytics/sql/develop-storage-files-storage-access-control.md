@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 06/11/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 545331fdea56aef3d7b9dac8062d4fc2d6891254
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 254f424694df72a290a07369fe910587fadf58d4
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102501564"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106385544"
 ---
 # <a name="control-storage-account-access-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Toegang tot opslagaccounts beheren voor serverloze SQL-pools in Azure Synapse Analytics
 
@@ -36,11 +36,11 @@ Een gebruiker die zich heeft aangemeld bij een serverloze SQL-pool, moet zijn ge
 **Gebruikersidentiteit**, ook wel 'Azure AD-pass-through' genoemd, is een type autorisatie waarbij de identiteit van de Azure AD-gebruiker die is aangemeld bij een serverloze SQL-pool, wordt gebruikt om toegang tot gegevens te autoriseren. Voordat de gegevens worden vrijgegeven, moet de Azure Storage-beheerder machtigingen verlenen aan de Azure AD-gebruiker. Zoals aangegeven in de tabel hierna, wordt dit niet ondersteund voor het SQL-gebruikerstype.
 
 > [!IMPORTANT]
-> U moet beschikken over de rol van eigenaar/inzender/lezer van Storage-blobgegevens om via uw identiteit toegang te krijgen tot de gegevens.
-> Zelfs als u eigenaar bent van een opslagaccount, moet u nog beschikken over een van deze rollen voor Storage-blobgegevens.
->
-> Raadpleeg het artikel [Toegangsbeheer in Azure Data Lake Storage Gen2](../../storage/blobs/data-lake-storage-access-control.md) voor meer informatie over toegangsbeheer in Azure Data Lake Store Gen2.
->
+> Het AAD-verificatie token kan in de cache worden opgeslagen door de client toepassingen. Voor beeld van een Power bi-cache wordt een AAD-token gebruikt voor een uur. De lange de query's kunnen mislukken als het token verloopt in het midden van de uitvoering van de query. Als u query fouten ondervindt die worden veroorzaakt door de AAD-toegangs token die in het midden van de query verloopt, kunt u overwegen om over te scha kelen naar een [beheerde identiteit](develop-storage-files-storage-access-control.md?tabs=managed-identity#supported-storage-authorization-types) of [gedeelde toegangs handtekening](develop-storage-files-storage-access-control.md?tabs=shared-access-signature#supported-storage-authorization-types).
+
+U moet beschikken over de rol van eigenaar/inzender/lezer van Storage-blobgegevens om via uw identiteit toegang te krijgen tot de gegevens. Als alternatief kunt u verfijnde ACL-regels opgeven voor toegang tot bestanden en mappen. Zelfs als u eigenaar bent van een opslagaccount, moet u nog beschikken over een van deze rollen voor Storage-blobgegevens.
+Raadpleeg het artikel [Toegangsbeheer in Azure Data Lake Storage Gen2](../../storage/blobs/data-lake-storage-access-control.md) voor meer informatie over toegangsbeheer in Azure Data Lake Store Gen2.
+
 
 ### <a name="shared-access-signature"></a>[Shared Access Signature](#tab/shared-access-signature)
 
@@ -54,6 +54,10 @@ U kunt een SAS-token verkrijgen door te navigeren naar de **Azure-portal > Opsla
 > SAS-token: ?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-04-18T20:42:12Z&st=2019-04-18T12:42:12Z&spr=https&sig=lQHczNvrk1KoYLCpFdSsMANd0ef9BrIPBNJ3VYEIq78%3D
 
 U moet de referenties binnen het database- of serverbereik maken om toegang met behulp van een SAS-token mogelijk te maken 
+
+
+> [!IMPORTANT]
+> U kan niet toegang tot accounts voor privé opslag met het SAS-token. Overweeg om over te scha kelen naar een [beheerde identiteit](develop-storage-files-storage-access-control.md?tabs=managed-identity#supported-storage-authorization-types) of [Azure AD Pass-Through-](develop-storage-files-storage-access-control.md?tabs=user-identity#supported-storage-authorization-types) verificatie om toegang te krijgen tot beveiligde opslag.
 
 ### <a name="managed-identity"></a>[Beheerde identiteit](#tab/managed-identity)
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 1/24/2021
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 2ed1b8162c49ccc26cb98dd02897a9c40f809d14
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 01bf9ac6a3bfcb30fb6e6a6f9d56de3f9f516f03
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102204383"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106059272"
 ---
 # <a name="choose-cloud-tiering-policies"></a>Beleid voor Cloud lagen kiezen
 
@@ -34,8 +34,13 @@ Voor Agent versie 9 en hoger is de minimale bestands grootte voor een bestand op
 |16 KB (16384)               | 32 kB   |
 |32 KB (32768)               | 64 kB   |
 |64 KB (65536)    | 128 kB  |
+|128 KB (131072) | 256 kB |
+|256 KB (262144) | 512 kB |
+|512 KB (524288) | 1 MB |
+|1 MB (1048576) | 2 MB |
+|2 MB (2097152) | 4 MB |
 
-Cluster grootten tot 64 KB worden momenteel ondersteund, maar voor grotere grootten werkt Cloud lagen niet.
+Cluster grootten tot 2 MB worden ondersteund met Azure File Sync agent versie 12, maar voor grotere grootten werkt Cloud lagen niet.
 
 Alle bestands systemen die worden gebruikt door Windows, organiseren de vaste schijf op basis van de cluster grootte (ook wel bekend als Allocation Unit Size). Cluster grootte vertegenwoordigt de kleinste hoeveelheid schijf ruimte die kan worden gebruikt om een bestand te bewaren. Wanneer de bestands grootte niet van een even veelvoud van de cluster grootte komt, moet er extra ruimte worden gebruikt om het bestand op te slaan op het volgende veelvoud van de cluster grootte.
 

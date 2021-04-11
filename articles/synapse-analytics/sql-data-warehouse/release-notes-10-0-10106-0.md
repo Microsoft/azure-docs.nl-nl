@@ -12,12 +12,12 @@ ms.reviewer: jrasnick
 manager: craigg
 ms.custom: seo-lt-2019
 tags: azure-synapse
-ms.openlocfilehash: 4f333c4bb66195e6c99bd45dcc7c29a0b9a2eaa9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f6431328a0969ced0d98cbc7ff047cc0673ecb91
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100591416"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106074553"
 ---
 # <a name="dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-release-notes"></a>Exclusieve SQL-groep (voorheen SQL DW) in azure Synapse Analytics-release opmerkingen
 
@@ -90,7 +90,9 @@ Zorg ervoor dat de juiste versie is geïnstalleerd in de opmerking bij de releas
 | Service verbeteringen | Details |
 | --- | --- |
 |**Database compatibiliteits niveau (preview-versie)**| Met deze release kunnen gebruikers nu het compatibiliteits niveau van een Data Base instellen om de Transact-SQL-taal en het verwerkings gedrag van query's te verkrijgen van een specifieke versie van de Synapse SQL-engine. Zie [sys.database_scoped_configurations](/sql/relational-databases/system-catalog-views/sys-database-scoped-configurations-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) en [ALTER data base scoped Configuration](/sql/t-sql/statements/alter-database-scoped-configuration-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)(Engelstalig) voor meer informatie.|
-|**Sp_describe_undeclared_parameters**| Gebruikers toestaan de meta gegevens weer te geven over niet-gedeclareerde para meters in een Transact-SQL-batch. Zie [sp_describe_undeclared_parameters](/sql/relational-databases/system-stored-procedures/sp-describe-undeclared-parameters-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)voor meer informatie.| <br/><br/><br/>
+|**Sp_describe_undeclared_parameters**| Gebruikers toestaan de meta gegevens weer te geven over niet-gedeclareerde para meters in een Transact-SQL-batch. Zie [sp_describe_undeclared_parameters](/sql/relational-databases/system-stored-procedures/sp-describe-undeclared-parameters-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)voor meer informatie.| 
+
+<br/><br/><br/>
 
 | Verbeteringen in het hulp programma                                         | Details                                                      |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |

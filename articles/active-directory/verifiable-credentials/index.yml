@@ -1,0 +1,47 @@
+### YamlMime:Landing
+title: Documentatie over het Azure Active Directory controleren van referenties
+summary: Verifieer bare referenties helpen u bij het ontwikkelen van oplossingen waarmee klanten hun eigen gegevens kunnen beheren.
+metadata:
+  author: barclayn
+  description: Meer informatie over het opnemen van verifieer bare referenties in uw oplossingen waarmee klanten informatie over zichzelf kunnen beheren
+  manager: daveba
+  ms.author: barclayn
+  ms.collection: na
+  ms.date: 03/30/2021
+  ms.service: active-directory
+  ms.subservice: na
+  ms.topic: landing-page
+  services: active-directory
+  ms.openlocfilehash: 13eb88e8e8613c913f66185eba751a1fe3c36e1e
+  ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+  ms.translationtype: MT
+  ms.contentlocale: nl-NL
+  ms.lasthandoff: 04/01/2021
+  ms.locfileid: "106175692"
+landingContent:
+- title: Informatie over verifieer bare referenties
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Inleiding tot Azure Active Directory verifieer bare referenties
+      url: decentralized-identifier-overview.md
+  - linkListType: video
+    links:
+    - text: Toegang tot uw resources beheren
+      url: https://www.youtube.com/watch?v=r20hCF9NbTo
+- title: Verifieer bare referenties stellen personen in de controle over hun persoonlijke gegevens
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Aan de slag met verifieer bare referenties
+      url: get-started-verifiable-credentials.md
+  - linkListType: concept
+    links:
+    - text: Communicatie voorbeelden van de uitgevers service
+      url: issuer-openid.md
+- title: Hoe kan ik een koppeling maken?
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Uw domein koppelen aan uw gedistribueerde id
+      url: how-to-dnsbind.md

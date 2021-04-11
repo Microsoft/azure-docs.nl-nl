@@ -5,13 +5,13 @@ author: enkrumah
 ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 08/25/2020
-ms.openlocfilehash: a94389a075fd62d80345a21e32f1bc977dfdee87
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 4/7/2021
+ms.openlocfilehash: 07b7715935756293467f2a3004109df9bf679661
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98020057"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107029996"
 ---
 # <a name="power-bi-output-from-azure-stream-analytics"></a>Power BI uitvoer van Azure Stream Analytics
 
@@ -73,9 +73,10 @@ Dubbel | Dubbel | Tekenreeks | Tekenreeks | Dubbel
 Tekenreeks | Tekenreeks | Tekenreeks | Tekenreeks | Tekenreeks 
 Datum/tijd | Tekenreeks | Tekenreeks |  Datum/tijd | Tekenreeks
 
-## <a name="output-batch-size"></a>Grootte van uitvoer batch
+## <a name="limitations-and-best-practices"></a>Beperkingen en aanbevolen procedures
+Op dit moment kunnen Power BI ongeveer één keer per seconde worden aangeroepen. Het streamen van visuele elementen ondersteunt pakketten van 15 KB. Dit houdt in dat het streamen van visuele elementen mislukt (maar pushen blijft werken). Als gevolg van deze beperkingen heeft Power BI zichzelf het belangrijkst voor gevallen waarin Azure Stream Analytics een aanzienlijke vermindering van gegevens belasting ondergaat. We raden u aan om een Tumblingvenstertriggers-venster of verspringen-venster te gebruiken om ervoor te zorgen dat de gegevens push per seconde Maxi maal één push is en dat uw query binnen de doorvoer vereisten valt.
 
-Zie [Power bi-limieten voor rest API](/power-bi/developer/automation/api-rest-api-limitations)voor uitvoer Batch grootte.
+Zie [Power bi-rest API-limieten](/power-bi/developer/automation/api-rest-api-limitations)voor meer informatie over de grootte van de uitvoer batch.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mqtt
-ms.openlocfilehash: ffe2f2b7f94d546cdfe393170da2fd2ca6ac0149
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6c54f935ed05451df5922ff1a3d564c775703700
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103490990"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107029349"
 ---
 # <a name="understand-how-azure-iot-edge-uses-certificates"></a>Meer informatie over het gebruik van Azure IoT Edge certificaten
 
@@ -25,7 +25,7 @@ IoT Edge certificaten worden gebruikt door de modules en downstream IoT-apparate
 >[!NOTE]
 >In dit artikel vindt u informatie over de certificaten die worden gebruikt voor het beveiligen van verbindingen tussen de verschillende onderdelen op een IoT Edge apparaat of tussen een IoT Edge apparaat en alle blad apparaten. U kunt ook certificaten gebruiken om uw IoT Edge-apparaat te verifiëren bij IoT Hub. Deze verificatie certificaten verschillen en worden niet in dit artikel besproken. Zie [een IOT edge apparaat maken en inrichten met X. 509-certificaten](how-to-auto-provision-x509-certs.md)voor meer informatie over het verifiëren van uw apparaat met certificaten.
 
-In dit artikel wordt uitgelegd hoe IoT Edge certificaten kunnen werken in productie-, ontwikkelings-en test scenario's. Terwijl de scripts verschillend zijn (Power shell versus bash), zijn de concepten hetzelfde tussen Linux en Windows.
+In dit artikel wordt uitgelegd hoe IoT Edge certificaten kunnen werken in productie-, ontwikkelings-en test scenario's.
 
 ## <a name="iot-edge-certificates"></a>IoT Edge-certificaten
 

@@ -15,12 +15,12 @@ ms.custom:
 - contperf-fy21q1
 - fasttrack-edit
 - iot
-ms.openlocfilehash: 9cedf861594903cd160c24ea35545d388bf1f6ce
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9678648b6417138e216ba2dce3a3605bb4c1bce4
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104582711"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106169229"
 ---
 # <a name="communicate-with-your-iot-hub-using-the-mqtt-protocol"></a>Communiceren met uw IoT-hub met het MQTT-protocol
 
@@ -450,7 +450,7 @@ Zie de [MQTT-documentatie](https://mqtt.org/)voor meer informatie over het MQTT-
 
 Zie voor meer informatie over het plannen van uw IoT Hub-implementatie:
 
-* [Azure Certified voor IoT-apparaatcatalogus](https://catalog.azureiotsolutions.com/)
+* [Azure Certified voor IoT-apparaatcatalogus](https://devicecatalog.azure.com/)
 * [Aanvullende protocollen ondersteunen](iot-hub-protocol-gateway.md)
 * [Vergelijken met Event Hubs](iot-hub-compare-event-hubs.md)
 * [Schalen, HA en DR](iot-hub-scaling.md)

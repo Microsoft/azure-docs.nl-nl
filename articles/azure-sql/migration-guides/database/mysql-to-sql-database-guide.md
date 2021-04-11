@@ -9,17 +9,17 @@ ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
 ms.date: 03/19/2021
-ms.openlocfilehash: 8952e6e1bda8763d403c02dcd5815f1e1c0941e8
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: ba332ed0e949c3c209dc3bd2d72d37187a200eea
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105641873"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107030131"
 ---
 # <a name="migration-guide-mysql-to-azure-sql-database"></a>Migratie handleiding: MySQL naar Azure SQL Database
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqldb.md)]
 
-In deze hand leiding leert u hoe u uw MySQL-data base kunt migreren naar een Azure-SQL database met behulp van SQL Server Migration Assistant voor MySQL (SSMA voor MySQL). 
+In deze hand leiding leert u [hoe](https://azure.microsoft.com/migration/migration-journey) u uw MySQL-data base kunt migreren naar een Azure-SQL database met behulp van [SQL Server Migration](https://azure.microsoft.com/migration/migration-journey) Assistant voor MySQL (SSMA voor MySQL). 
 
 Zie voor andere migratie [handleidingen de Azure data base Migration Guide (Engelstalig](https://docs.microsoft.com/data-migration)). 
 
@@ -33,7 +33,7 @@ Ga als volgt te werk voordat u begint met het migreren van uw MySQL-data base na
 
 ## <a name="pre-migration"></a>Premigratie 
 
-Nadat u aan de vereisten hebt voldaan, bent u klaar om de topologie van uw omgeving te ontdekken en de uitvoer baarheid van uw migratie te beoordelen.
+Nadat u aan de vereisten hebt voldaan, bent u klaar om de topologie van uw omgeving te ontdekken en de haal baarheid van uw [Azure-Cloud migratie](https://azure.microsoft.com/migration)te beoordelen.
 
 ### <a name="assess"></a>Evalueren 
 
@@ -178,3 +178,6 @@ Het IT-team van data SQL heeft deze resources ontwikkeld. Het kern Handvest van 
 - Zie voor andere migratie [handleidingen de Azure data base Migration Guide (Engelstalig](https://datamigration.microsoft.com/)). 
 
 - Zie [overzicht van de migratie traject en aanbevolen migratie-en evaluatie hulpprogramma's en-services](https://azure.microsoft.com/resources/videos/overview-of-migration-and-recommended-tools-services/)voor migratie Video's.
+
+- Zie [oplossingen voor Cloud migratie](https://azure.microsoft.com/migration)voor meer [bronnen voor Cloud migratie](https://azure.microsoft.com/migration/resources/).
+

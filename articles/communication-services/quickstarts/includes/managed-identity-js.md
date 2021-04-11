@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 0f775f97a204bc758e632c92702b93227b47bc15
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: ce250b19478c70109fe28d199ac771a77c42c7dc
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105645352"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106113314"
 ---
 ## <a name="add-managed-identity-to-your-communication-services-solution-js"></a>Beheerde identiteit toevoegen aan uw oplossing voor communicatie Services (JS)
 
@@ -29,7 +29,7 @@ import { SmsClient, SmsSendRequest } from "@azure/communication-sms";
 
 In de onderstaande voor beelden wordt gebruikgemaakt van de [DefaultAzureCredential](/javascript/api/@azure/identity/defaultazurecredential). Deze referentie is geschikt voor productie-en ontwikkelings omgevingen.
 
-Als u de toepassing wilt registreren in de ontwikkel omgeving en omgevings variabelen wilt instellen, raadpleegt u [toegang verlenen met beheerde identiteit](../managed-identity-from-cli.md)  
+Als u de toepassing wilt registreren in de ontwikkel omgeving en omgevings variabelen wilt instellen, raadpleegt u [toegang verlenen met beheerde identiteit](../managed-identity-from-cli.md)
 
 ### <a name="create-an-identity-and-issue-a-token-with-managed-identity"></a>Een identiteit maken en een token uitgeven met een beheerde identiteit
 
@@ -51,16 +51,14 @@ In het volgende code voorbeeld ziet u hoe u een service-client object met beheer
 export async function sendSms(resourceEndpoint: string, fromNumber: any, toNumber: any, message: string) {
      let credential = new DefaultAzureCredential();
      const smsClient = new SmsClient(resourceEndpoint, credential);
-     const sendRequest: SmsSendRequest = { 
-          from: fromNumber, 
-          to: [toNumber], 
-          message: message 
+     const sendRequest: SmsSendRequest = {
+          from: fromNumber,
+          to: [toNumber],
+          message: message
      };
-
      const response = await smsClient.send(
-          sendRequest, 
+          sendRequest,
           {} //Optional SendOptions
           );
 }
 ```
-

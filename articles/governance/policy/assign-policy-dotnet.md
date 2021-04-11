@@ -1,15 +1,15 @@
 ---
 title: 'Quickstart: Nieuwe beleidstoewijzing met .NET Core'
 description: In deze quickstart gebruikt u .NET Core om een Azure Policy-toewijzing te maken om niet-compatibele resources te identificeren.
-ms.date: 09/30/2020
+ms.date: 03/31/2021
 ms.topic: quickstart
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c4c8f8e9df544b6fc00b5b7701435f5a606f9764
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b89a0db419b1e7213e9742e4a39d073445d05189
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "91604548"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106091783"
 ---
 # <a name="quickstart-create-a-policy-assignment-to-identify-non-compliant-resources-with-net-core"></a>Quickstart: Een beleidstoewijzing maken om niet-compatibele resources met .NET Core te identificeren
 

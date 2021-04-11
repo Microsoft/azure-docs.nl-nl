@@ -10,14 +10,14 @@ ms.date: 06/03/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c7f3de20ea3e86e3b56dc71d698354f7eaf782d
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 67018a2ec6b9239661a7022ad7fb9eeb6c9a5f64
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105709715"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106385578"
 ---
-# <a name="migrate-to-cloud-authentication-using-staged-rollout-preview"></a>Migreren naar Cloud authenticatie met behulp van gefaseerde implementatie (preview-versie)
+# <a name="migrate-to-cloud-authentication-using-staged-rollout"></a>Migreren naar cloudverificatie met gefaseerde implementatie
 
 Met gefaseerde implementatie kunt u groepen gebruikers selectief testen met Cloud verificatie mogelijkheden zoals Azure AD Multi-Factor Authentication (MFA), voorwaardelijke toegang, identiteits beveiliging voor gelekte referenties, identiteits beheer en anderen, voordat u uw domeinen knipt.  In dit artikel wordt beschreven hoe u de switch kunt maken. Voordat u begint met de gefaseerde implementatie, moet u rekening houden met de gevolgen als aan een of meer van de volgende voor waarden wordt voldaan:
     
@@ -79,7 +79,7 @@ De volgende scenario's worden niet ondersteund voor gefaseerde implementatie:
 - Beheerders kunnen Cloud verificatie implementeren met behulp van beveiligings groepen. Als u wilt voor komen dat synchronisatie latentie wanneer u gebruikmaakt van on-premises Active Directory beveiligings groepen, raden we u aan Cloud beveiligings groepen te gebruiken. De volgende voor waarden zijn van toepassing:
 
     - U kunt Maxi maal 10 groepen per functie gebruiken. Dat wil zeggen, u kunt elk 10 groepen gebruiken voor de *synchronisatie van wacht woord-hash*, *Pass-Through-verificatie* en *naadloze SSO*.
-    - Geneste groepen worden *niet ondersteund*. Dit bereik is ook van toepassing op open bare preview-versie.
+    - Geneste groepen worden *niet ondersteund*. 
     - Dynamische groepen worden *niet ondersteund* voor gefaseerde implementatie.
     - Met de objecten in de groep wordt de groep geblokkeerd, zodat deze niet meer kan worden toegevoegd.
 
@@ -168,19 +168,19 @@ U kunt een van de volgende opties implementeren:
 
 Ga als volgt te werk:
 
-1. Meld u aan bij de [Azure AD-Portal](https://aka.ms/stagedrolloutux)om toegang te krijgen tot de preview-versie.
+1. Meld u aan bij de [Azure AD-Portal](https://aka.ms/stagedrolloutux)om toegang te krijgen tot de UX.
 
-2. Selecteer de koppeling **gefaseerde implementatie voor beheerde gebruiker aanmelden (preview) inschakelen** .
+2. Selecteer de koppeling **gefaseerde implementatie voor beheerde gebruiker aanmelden inschakelen** .
 
    Als u bijvoorbeeld *optie A* wilt inschakelen, kunt u het **wacht woord hash-synchronisatie** en **naadloze eenmalige aanmelding** **instellen op aan, zoals** wordt weer gegeven in de volgende installatie kopieën.
 
-   ![De pagina Azure AD Connect](./media/how-to-connect-staged-rollout/sr4.png)
+   
 
-   ![De pagina met functies voor gefaseerde implementatie inschakelen (preview)](./media/how-to-connect-staged-rollout/sr5.png)
+  
 
 3. Voeg de groepen toe aan de functie om *Pass Through-verificatie* en *naadloze SSO* in te scha kelen. Als u wilt voor komen dat een UX-time-out optreedt, moet u ervoor zorgen dat de beveiligings groepen in eerste instantie niet meer dan 200 leden bevatten.
 
-   ![De pagina groepen voor wachtwoord hash-synchronisatie (preview) beheren](./media/how-to-connect-staged-rollout/sr6.png)
+   
 
    >[!NOTE]
    >De leden in een groep worden automatisch ingeschakeld voor gefaseerde implementatie. Geneste en dynamische groepen worden niet ondersteund voor gefaseerde implementatie.

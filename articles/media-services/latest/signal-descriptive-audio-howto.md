@@ -12,12 +12,12 @@ ms.topic: how-to
 ms.custom: devx-track-csharp
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 01854e7636f53ec1faab157b51cc84f3539582b4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 00a3fa397bf88520fa4923b6fbe7495c0aa0b8a2
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104596719"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106277399"
 ---
 # <a name="signal-descriptive-audio-tracks"></a>Beschrijvende geluids sporen voor signalen
 
@@ -29,9 +29,9 @@ In dit artikel wordt beschreven hoe u een video codeert, een alleen-audio-MP4-be
 
 ## <a name="prerequisites"></a>Vereisten
 
-- [Een Azure Media Services-account maken](./create-account-howto.md).
+- [Een Azure Media Services-account maken](./account-create-how-to.md).
 - Volg de stappen in [Access Azure Media Services API with the Azure CLI](./access-api-howto.md) (Toegang tot de Azure Media Services-API met de Azure CLI) en sla de referenties op. U hebt deze nodig voor toegang tot de API.
-- Bekijk [dynamische verpakkingen](dynamic-packaging-overview.md).
+- Bekijk [dynamische verpakkingen](encode-dynamic-packaging-concept.md).
 - Bekijk de zelf studie [Video's uploaden, coderen en streamen](stream-files-tutorial-with-api.md) .
 
 ## <a name="create-an-input-asset-and-upload-a-local-file-into-it"></a>Een invoerasset maken en er een lokaal bestand in uploaden 
@@ -64,7 +64,7 @@ In het geval van dit artikel geeft u de `outputAsset.Name` waarde door aan `Subm
 
 ## <a name="create-a-transform-and-a-job-that-encodes-the-uploaded-file"></a>Een trans formatie en een taak maken die het geüploade bestand codeert
 
-Bij het coderen of verwerken van inhoud in Media Services is het een gangbaar patroon om de coderingsinstellingen als recept in te stellen. U dient vervolgens een **taak** in te dienen om het recept toe te passen op een video. Door voor elke nieuwe video nieuwe taken in te dienen, past u dat recept toe op alle video's in de bibliotheek. Een recept in Media Services wordt aangeroepen als een **transformatie**. Zie [Transformaties en taken](./transforms-jobs-concept.md) voor meer informatie. Het voorbeeld dat wordt beschreven in deze zelfstudie definieert een recept dat de video codeert om het te streamen naar tal van iOS- en Android-apparaten. 
+Bij het coderen of verwerken van inhoud in Media Services is het een gangbaar patroon om de coderingsinstellingen als recept in te stellen. U dient vervolgens een **taak** in te dienen om het recept toe te passen op een video. Door voor elke nieuwe video nieuwe taken in te dienen, past u dat recept toe op alle video's in de bibliotheek. Een recept in Media Services wordt aangeroepen als een **transformatie**. Zie [Transformaties en taken](./transform-jobs-concept.md) voor meer informatie. Het voorbeeld dat wordt beschreven in deze zelfstudie definieert een recept dat de video codeert om het te streamen naar tal van iOS- en Android-apparaten. 
 
 In het volgende voor beeld wordt een Transform gemaakt (als deze niet bestaat).
 
@@ -245,4 +245,4 @@ Azure Media Player kan worden gebruikt voor testdoeleinden, maar mag niet worden
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Video's analyseren](analyze-videos-tutorial-with-api.md)
+[Video's analyseren](analyze-videos-tutorial.md)

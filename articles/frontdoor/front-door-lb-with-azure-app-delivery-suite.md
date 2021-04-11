@@ -9,14 +9,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/28/2020
+ms.date: 04/06/2021
 ms.author: duau
-ms.openlocfilehash: 50e047325ad17710794b1640715ab1938373fe85
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0a7e81c57552fdc24262522343a08fdabba71bfd
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96019460"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106552577"
 ---
 # <a name="load-balancing-with-azures-application-delivery-suite"></a>Taakverdeling realiseren met de Azure-suite voor toepassingslevering
 
@@ -40,8 +40,8 @@ Wanneer u deze wereld wijde en regionale Services combineert, profiteert uw toep
 
 ## <a name="global-load-balancing"></a>Globale taak verdeling
 **Traffic Manager** voorziet in globale DNS-taak verdeling. Er wordt gekeken naar inkomende DNS-aanvragen en reageert met een gezonde back-end, na het routerings beleid dat de klant heeft geselecteerd. Opties voor routerings methoden zijn:
-- * * Prestatie routering verzendt aanvragen naar de dichtstbijzijnde back-end met de minste latentie.
-- Met **prioriteit routert** u alle verkeer naar een back-end, met andere back-ends als back-ups.
+- Met **prestatie routering** worden aanvragen verzonden naar de dichtstbijzijnde back-end met de minste latentie.
+- Met **prioriteits routering** wordt al het verkeer naar een back-end geleid, met andere back-ends als back-ups.
 - Met **gewogen Round Robin-route ring** wordt verkeer gedistribueerd op basis van de weging die aan elke back-end is toegewezen.
 - **Geografische route ring** zorgt ervoor dat aanvragen die afkomstig zijn van specifieke geografische regio's, worden verwerkt door back-endservers die zijn toegewezen voor deze regio's. (Alle verzoeken van Spanje moeten bijvoorbeeld worden omgeleid naar de Frankrijk-centraal Azure-regio)
 - Met **subnet routering** kunt u IP-adresbereiken toewijzen aan back-ends, zodat inkomende aanvragen voor deze ip's naar de specifieke back-end worden verzonden. (Gebruikers die verbinding maken vanuit het IP-adres bereik van uw bedrijfs hoofd kantoor, moeten bijvoorbeeld andere webinhoud krijgen dan de algemene gebruikers)

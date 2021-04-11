@@ -1,18 +1,19 @@
 ---
-title: Azure File Sync configureren
-description: Azure File Sync configureren. Een gemeen schappelijk tekst blok, gedeeld via migratie documenten.
+title: bestand opnemen
+description: bestand opnemen
+services: storage
 author: fauhse
 ms.service: storage
-ms.topic: conceptual
+ms.topic: include
 ms.date: 2/20/2020
 ms.author: fauhse
-ms.subservice: files
-ms.openlocfilehash: 64b99976a306c3c8423f5115c95a15158a3ddb51
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: include file
+ms.openlocfilehash: 7aa3867fdc5de320c47a15737b655b8032f402a6
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "93043134"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106075562"
 ---
 Deze stap is gekoppeld aan alle resources en mappen die u tijdens de vorige stappen hebt ingesteld voor uw Windows Server-exemplaar.
 

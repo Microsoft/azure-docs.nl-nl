@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 04bbb0465f26e82d247c53e7393c4476b9d36fde
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d2b80dfa091d6a2b892c8baf8e9c35084c5bee4e
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100386846"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106076385"
 ---
 # <a name="tutorial-migrate-web-service-from-google-maps"></a>Zelfstudie: Webservice migreren vanuit Google Maps
 
@@ -46,11 +46,11 @@ De tabel bevat de service-API's van Azure Maps, die een vergelijkbare functional
 | Geocodering               | [Zoeken](/rest/api/maps/search)                                   |                         
 | Locaties zoeken           | [Zoeken](/rest/api/maps/search)                                   |                         
 | Locatie automatisch aanvullen      | [Zoeken](/rest/api/maps/search)                                   |                         
-| Uitlijnen op weg            | Zie de sectie [Routes en routebeschrijvingen berekenen](#calculate-routes-and-directions).            
-| Snelheidslimieten            | Zie de sectie [Reverse geocodering van een coördinaat](#reverse-geocode-a-coordinate).                  
+| Uitlijnen op weg            | Zie de sectie [Routes en routebeschrijvingen berekenen](#calculate-routes-and-directions).  |        
+| Snelheidslimieten            | Zie de sectie [Reverse geocodering van een coördinaat](#reverse-geocode-a-coordinate).         |         
 | Statische kaart              | [Weergeven](/rest/api/maps/render/getmapimage)                       |                         
 | Tijdzone               | [Tijdzone](/rest/api/maps/timezone)                              |                         
-| Terrein               | [Terrein (preview)](/rest/api/maps/elevation)                   |                         |
+| Terrein               | [Terrein (preview)](/rest/api/maps/elevation)                   | 
 
 De volgende service-API's zijn momenteel niet beschikbaar in Azure Maps:
 

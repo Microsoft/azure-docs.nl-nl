@@ -12,12 +12,12 @@ ms.date: 11/04/2020
 ms.author: marsma
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: dc740acb366212640015ca0fb527d34fade1097d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a19ca14a37bd24e499fdf0681b3510e9a4a8ea3f
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103010759"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106075029"
 ---
 # <a name="microsoft-identity-platform-code-samples-v20-endpoint"></a>Codevoorbeelden voor Microsoft identity platform (v2.0-eindpunt)
 
@@ -61,7 +61,7 @@ De volgende voorbeelden illustreren webtoepassingen waarmee gebruikers worden aa
 | -------- | ------------------- | --------------------------------- |
 | ![In deze afbeelding ziet u het ASP.NET Core-logo](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET Core | [Zelfstudie voor gebruikersaanmelding met ASP.NET Core-web-app](https://aka.ms/aspnetcore-webapp-sign-in) | Hetzelfde voorbeeld in de fase [ASP.NET Core web-app roept Microsoft Graph aan](https://aka.ms/aspnetcore-webapp-call-msgraph)</p>Geavanceerd voorbeeld [Toegang tot de tokencache van de aangemelde gebruiker voor achtergrond-apps, API's en services](https://github.com/Azure-Samples/ms-identity-dotnet-advanced-token-cache) |
 | ![In deze afbeelding ziet u het ASP.NET Framework-logo](media/sample-v2-code/logo_NETframework.png)</p>ASP.NET Core | [Migratiedraaiboek voor AD FS naar Azure AD voor ontwikkelaars](https://github.com/Azure-Samples/ms-identity-dotnet-adfs-to-aad) om te leren hoe u veilig uw toepassingen die geïntegreerd zijn in Active Directory Federation Services (AD FS) migreert naar Azure Active Directory (Azure AD) | |
-| ![In deze afbeelding ziet u het ASP.NET Framework-logo](media/sample-v2-code/logo_NETframework.png)</p> ASP.NET | [ASP.NET-quickstart](https://github.com/AzureAdQuickstarts/AppModelv2-WebApp-OpenIDConnect-DotNet) </p> [dotnet-webapp-openidconnect-v2](https://github.com/azure-samples/active-directory-dotnet-webapp-openidconnect-v2)  |  [dotnet-admin-restricted-scopes-v2](https://github.com/azure-samples/active-directory-dotnet-admin-restricted-scopes-v2) </p> |[msgraph-training-aspnetmvcapp](https://github.com/microsoftgraph/msgraph-training-aspnetmvcapp)
+| ![In deze afbeelding ziet u het ASP.NET Framework-logo](media/sample-v2-code/logo_NETframework.png)</p> ASP.NET | [ASP.NET-quickstart](https://github.com/AzureAdQuickstarts/AppModelv2-WebApp-OpenIDConnect-DotNet) </p> [dotnet-webapp-openidconnect-v2](https://github.com/azure-samples/active-directory-dotnet-webapp-openidconnect-v2)  |  [dotnet-admin-restricted-scopes-v2](https://github.com/azure-samples/active-directory-dotnet-admin-restricted-scopes-v2) </p> [msgraph-training-aspnetmvcapp](https://github.com/microsoftgraph/msgraph-training-aspnetmvcapp) |
 | ![In deze afbeelding ziet u het Java-logo](media/sample-v2-code/logo_java.png)  |[Zelf studie over Java servlet-hoofd stuk 1,1](https://github.com/Azure-Samples/ms-identity-java-servlet-webapp-authentication/blob/main/README.md) Aanmelden met AAD| |
 | ![In deze afbeelding ziet u het Java-logo](media/sample-v2-code/logo_java.png)  |[Zelf studie over Java servlet-hoofd stuk 1,2](https://github.com/Azure-Samples/ms-identity-java-servlet-webapp-authentication/blob/main/README.md) Aanmelden met B2C |
 | ![In deze afbeelding ziet u het Java-logo](media/sample-v2-code/logo_java.png)  | | [Zelf studie over Java servlet-hoofd stuk 2,1](https://github.com/Azure-Samples/ms-identity-java-servlet-webapp-authentication/blob/main/README.md) Aanmelden met AAD en oproep Graph|

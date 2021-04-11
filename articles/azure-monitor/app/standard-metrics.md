@@ -4,13 +4,12 @@ description: Dit artikel bevat een overzicht van Azure-toepassing Insights-metri
 services: azure-monitor
 ms.topic: reference
 ms.date: 07/03/2019
-ms.subservice: application-insights
-ms.openlocfilehash: 0a18088fa434efa76007607c067feec107bdae57
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 494976bf09e5d1717bc60a1f12e039621061e6fa
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100572354"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106385459"
 ---
 # <a name="application-insights-standard-metrics"></a>Application Insights standaard metrische gegevens
 

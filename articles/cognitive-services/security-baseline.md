@@ -4,22 +4,20 @@ description: De Cognitive Services Security Baseline voorziet in procedure richt
 author: msmbaldwin
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 02/17/2021
+ms.date: 03/30/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 218810183f547d4e90043364a318615a204df9d8
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: a7f9570a68102eb20c84942ddf9ac73de033f01c
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105044852"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106076595"
 ---
 # <a name="azure-security-baseline-for-cognitive-services"></a>Azure-beveiligings basislijn voor Cognitive Services
 
-In deze beveiligings basislijn worden richt lijnen van de [Azure Security Bench Mark-versie 1,0](../security/benchmarks/overview-v1.md) ingesteld op Cognitive Services. De Azure Security-benchmark biedt aanbevelingen voor hoe u uw cloudoplossingen in Azure kunt beveiligen.
-De inhoud wordt gegroepeerd op de **beveiligings controles** die zijn gedefinieerd door de Azure Security-benchmark en de bijbehorende richt lijnen die van toepassing zijn op Cognitive Services. **Besturings elementen** die niet van toepassing zijn op Cognitive Services, zijn uitgesloten.
+In deze beveiligings basislijn worden richt lijnen van de [Azure Security Bench Mark versie 1.0](../security/benchmarks/overview-v1.md) Cognitive Services. De Azure Security-benchmark biedt aanbevelingen voor hoe u uw cloudoplossingen in Azure kunt beveiligen. De inhoud wordt gegroepeerd op de **beveiligings controles** die zijn gedefinieerd door de Azure Security-benchmark en de bijbehorende richt lijnen die van toepassing zijn op Cognitive Services. **Besturings elementen** die niet van toepassing zijn op Cognitive Services of waarvoor de verantwoordelijkheid van micro soft is, zijn uitgesloten.
 
- 
 Als u wilt zien hoe Cognitive Services volledig is toegewezen aan de beveiligings benchmark van Azure, raadpleegt u het [volledige Cognitive Services beveiligings basislijn toewijzings bestand](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
 
 ## <a name="network-security"></a>Netwerkbeveiliging
@@ -32,7 +30,7 @@ Als u wilt zien hoe Cognitive Services volledig is toegewezen aan de beveiliging
 
 Ondersteuning voor het virtuele netwerk en het service-eind punt voor Cognitive Services is beperkt tot een specifieke set regio's.
 
-- [Azure Cognitive Services virtuele netwerken configureren](./cognitive-services-virtual-networks.md?tabs=portal)
+- [Azure Cognitive Services virtuele netwerken configureren](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-virtual-networks?tabs=portal)
 
 - [Overzicht van Azure Virtual Networks](../virtual-network/virtual-networks-overview.md)
 
@@ -63,7 +61,7 @@ Houd er rekening mee dat Cognitive Services containers vereist zijn voor het ind
 
 Houd er ook rekening mee dat u grondige pakket inspectie voor uw firewall oplossing moet uitschakelen op de beveiligde kanalen die de Cognitive Services-containers maken voor micro soft-servers. Als u dit niet doet, kan de container niet goed functioneren.
 
-- [Azure Cognitive Services-container beveiliging begrijpen](./cognitive-services-container-support.md#azure-cognitive-services-container-security)
+- [Azure Cognitive Services-container beveiliging begrijpen](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-container-support#azure-cognitive-services-container-security)
 
 **Verantwoordelijkheid**: Klant
 
@@ -83,7 +81,7 @@ Als u Cognitive Services binnen een container gebruikt, kunt u uw container impl
 
 - [Een Azure Blueprint maken](../governance/blueprints/create-blueprint-portal.md)
 
-- [Azure Cognitive Services-container beveiliging begrijpen](./cognitive-services-container-support.md#azure-cognitive-services-container-security)
+- [Azure Cognitive Services-container beveiliging begrijpen](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-container-support#azure-cognitive-services-container-security)
 
 **Verantwoordelijkheid**: Klant
 
@@ -112,7 +110,7 @@ Houd er rekening mee dat Cognitive Services containers vereist zijn voor het ind
 
 Houd er ook rekening mee dat u grondige pakket inspectie voor uw firewall oplossing moet uitschakelen op de beveiligde kanalen die de Cognitive Services-containers maken voor micro soft-servers. Als u dit niet doet, kan de container niet goed functioneren.
 
-- [Azure Cognitive Services-container beveiliging begrijpen](./cognitive-services-container-support.md#azure-cognitive-services-container-security)
+- [Azure Cognitive Services-container beveiliging begrijpen](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-container-support#azure-cognitive-services-container-security)
 
 - [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/?term=Firewall)
 
@@ -131,7 +129,7 @@ Houd er rekening mee dat Cognitive Services containers vereist zijn voor het ind
 
 Houd er ook rekening mee dat u grondige pakket inspectie voor uw firewall oplossing moet uitschakelen op de beveiligde kanalen die de Cognitive Services-containers maken voor micro soft-servers. Als u dit niet doet, kan de container niet goed functioneren.
 
-- [Azure Cognitive Services-container beveiliging begrijpen](./cognitive-services-container-support.md#azure-cognitive-services-container-security)
+- [Azure Cognitive Services-container beveiliging begrijpen](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-container-support#azure-cognitive-services-container-security)
 
 **Verantwoordelijkheid**: Klant
 
@@ -145,7 +143,7 @@ U kunt ook toepassings beveiligings groepen gebruiken om complexe beveiligings c
 
 - [Service tags van virtueel netwerk](../virtual-network/service-tags-overview.md)
 
-- [Toepassings beveiligings groepen](../virtual-network/network-security-groups-overview.md#application-security-groups)
+- [Toepassings beveiligings groepen](https://docs.microsoft.com/azure/virtual-network/network-security-groups-overview#application-security-groups)
 
 **Verantwoordelijkheid**: Klant
 
@@ -179,9 +177,9 @@ U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties t
 
 **Hulp**: gebruik het Azure-activiteiten logboek om netwerk resource configuraties te bewaken en wijzigingen te detecteren voor netwerk bronnen die betrekking hebben op uw Cognitive Services-container. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke netwerk bronnen plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](/azure/azure-monitor/platform/activity-log#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
+- [Waarschuwingen maken in Azure Monitor](/azure/azure-monitor/platform/alerts-activity-log)
 
 **Verantwoordelijkheid**: Klant
 
@@ -195,7 +193,7 @@ U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties t
 
 **Hulp**: Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend de logboeken naar een log Analytics-werk ruimte, een Azure Event hub of een Azure-opslag account voor archivering. Activiteiten logboeken bieden inzicht in de bewerkingen die zijn uitgevoerd op uw Cognitive Services-container op het niveau van het besturings element. Met Azure-activiteiten logboek gegevens kunt u de ' What, wie en wanneer ' bepalen voor schrijf bewerkingen (PUT, POST, DELETE) die zijn uitgevoerd op het niveau van het besturings vlak voor uw Azure-cache voor redis-exemplaren.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/platform/activity-log)
 
 **Verantwoordelijkheid**: Klant
 
@@ -207,7 +205,7 @@ U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties t
 
 Daarnaast verzendt Cognitive Services diagnostische gebeurtenissen die kunnen worden verzameld en gebruikt voor analyse, waarschuwingen en rapportage. U kunt de diagnostische instellingen voor een Cognitive Services container configureren via de Azure Portal. U kunt een of meer diagnostische gebeurtenissen verzenden naar een opslag account, Event hub of een Log Analytics-werk ruimte.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/platform/diagnostic-settings-legacy)
 
 - [Diagnostische instellingen gebruiken voor Azure Cognitive Services](diagnostic-logging.md)
 
@@ -219,7 +217,7 @@ Daarnaast verzendt Cognitive Services diagnostische gebeurtenissen die kunnen wo
 
 **Hulp**: stel binnen Azure monitor uw Bewaar periode voor log Analytics werk ruimte in volgens de nalevings voorschriften van uw organisatie. Gebruik Azure Storage-accounts voor lange termijn/archiverings opslag.
 
-- [Para meters voor het bewaren van Logboeken instellen voor Log Analytics-werk ruimten](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen voor Log Analytics-werk ruimten](/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
 
 **Verantwoordelijkheid**: Klant
 
@@ -229,9 +227,9 @@ Daarnaast verzendt Cognitive Services diagnostische gebeurtenissen die kunnen wo
 
 **Hulp**: Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend de logboeken naar een log Analytics-werk ruimte. Deze logboeken bevatten uitgebreide, frequente gegevens over de werking van een resource die worden gebruikt voor het identificeren van problemen en fout opsporing. Voer query's uit in Log Analytics om zoek termen te zoeken, trends te identificeren, patronen te analyseren en veel andere inzichten te bieden op basis van de activiteiten logboek gegevens die mogelijk zijn verzameld voor Azure Cognitive Services.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/platform/activity-log)
 
-- [Azure-activiteiten logboeken verzamelen en analyseren in Log Analytics werk ruimte in Azure Monitor](../azure-monitor/essentials/activity-log.md)
+- [Azure-activiteiten logboeken verzamelen en analyseren in Log Analytics werk ruimte in Azure Monitor](/azure/azure-monitor/platform/activity-log)
 
 **Verantwoordelijkheid**: Klant
 
@@ -245,7 +243,7 @@ Configureer Diagnostische instellingen voor uw Cognitive Services-container en v
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-- [Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/alerts/alerts-log.md)
+- [Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](/azure/azure-monitor/platform/alerts-log)
 
 **Verantwoordelijkheid**: Klant
 
@@ -259,9 +257,9 @@ Configureer Diagnostische instellingen voor uw Cognitive Services-container en v
 
 **Hulp**: Azure Active Directory (Azure AD) heeft ingebouwde rollen die expliciet moeten worden toegewezen en waarop query's kunnen worden doorzocht. Gebruik de Azure AD Power shell-module om ad hoc-query's uit te voeren om accounts te detecteren die lid zijn van beheer groepen.
 
-- [Een directory-rol verkrijgen in azure AD met Power shell](/powershell/module/azuread/get-azureaddirectoryrole?amp;preserve-view=true&view=azureadps-2.0)
+- [Een directory-rol verkrijgen in azure AD met Power shell](/powershell/module/azuread/get-azureaddirectoryrole)
 
-- [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember?amp;preserve-view=true&view=azureadps-2.0)
+- [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember)
 
 **Verantwoordelijkheid**: Klant
 
@@ -275,7 +273,7 @@ De toegang tot het gegevens vlak tot Cognitive Services wordt beheerd via toegan
 
 Het is niet raadzaam om standaard wachtwoorden te bouwen in uw toepassing. In plaats daarvan kunt u uw wacht woorden opslaan in Azure Key Vault en vervolgens Azure AD gebruiken om deze op te halen.
 
-- [Azure-cache opnieuw genereren voor redis-toegangs sleutels](../azure-cache-for-redis/cache-configure.md#settings)
+- [Azure-cache opnieuw genereren voor redis-toegangs sleutels](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-configure#settings)
 
 **Verantwoordelijkheid**: Klant
 
@@ -365,7 +363,7 @@ Daarnaast kunt u met Azure AD-risico detectie waarschuwingen en rapporten bekijk
 
 Momenteel worden alleen de Computer Vision-API, Face-API, Text Analytics-API, insluitende lezer, formulier herkenning, afwijkings detectie en alle Bing-services ondersteund, met uitzonde ring van Bing Aangepaste zoekopdrachten ondersteuning voor verificatie met behulp van Azure AD.
 
-- [Aanvragen voor Cognitive Services verifiëren](./authentication.md#authenticate-with-azure-active-directory)
+- [Aanvragen voor Cognitive Services verifiëren](https://docs.microsoft.com/azure/cognitive-services/authentication#authenticate-with-azure-active-directory)
 
 **Verantwoordelijkheid**: Klant
 
@@ -379,7 +377,7 @@ Klant voor het onderhouden van de inventaris van API Management gebruikers accou
 
 - [Gebruikersaccounts in Azure API Management beheren](../api-management/api-management-howto-create-or-invite-developers.md)
 
-- [Een lijst met API Management gebruikers ophalen](/powershell/module/az.apimanagement/get-azapimanagementuser?amp;preserve-view=true&view=azps-4.8.0)
+- [Een lijst met API Management gebruikers ophalen](/powershell/module/az.apimanagement/get-azapimanagementuser)
 
 - [Beoordelingen over Azure Identity Access gebruiken](../active-directory/governance/access-reviews-overview.md)
 
@@ -419,7 +417,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Richt lijnen**: niet beschikbaar voor Cognitive Services. Klanten-lockbox wordt nog niet ondersteund voor Cognitive Services.
 
-- [Lijst met door Klanten-lockbox ondersteunde services](../security/fundamentals/customer-lockbox-overview.md#supported-services-and-scenarios-in-general-availability)
+- [Lijst met door Klanten-lockbox ondersteunde services](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability)
 
 **Verantwoordelijkheid**: Klant
 
@@ -514,7 +512,7 @@ Micro soft beheert het onderliggende platform en behandelt alle inhoud van de kl
 
 U kunt ook Azure Key Vault gebruiken om uw door de klant beheerde sleutels op te slaan. U kunt uw eigen sleutels maken en deze opslaan in een sleutelkluis of u kunt de Azure Key Vault API's gebruiken om sleutels te genereren.
 
-- [Lijst met services die de informatie in rust versleutelen](./encryption/cognitive-services-encryption-keys-portal.md)
+- [Lijst met services die de informatie in rust versleutelen](/azure/cognitive-services/encryption/cognitive-services-encryption-keys-portal)
 
 **Verantwoordelijkheid**: Klant
 
@@ -524,7 +522,7 @@ U kunt ook Azure Key Vault gebruiken om uw door de klant beheerde sleutels op te
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken wanneer wijzigingen worden aangebracht in productie-exemplaren van Cognitive Services en andere essentiële of gerelateerde resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](/azure/azure-monitor/platform/alerts-activity-log)
 
 **Verantwoordelijkheid**: Klant
 
@@ -542,7 +540,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 - [Query's maken met Azure resource Graph](../governance/resource-graph/first-query-portal.md)
 
-- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?amp;preserve-view=true&view=azps-4.8.0)
+- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription)
 
 - [Meer informatie over Azure RBAC](../role-based-access-control/overview.md)
 
@@ -604,7 +602,7 @@ Daarnaast kunt u met Azure resource Graph bronnen in de abonnementen opvragen of
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Een specifiek resource type weigeren met Azure Policy](../governance/policy/samples/built-in-policies.md#general)
+- [Een specifiek resource type weigeren met Azure Policy](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#general)
 
 **Verantwoordelijkheid**: Klant
 
@@ -628,7 +626,7 @@ Daarnaast kunt u met Azure resource Graph bronnen in de abonnementen opvragen of
 
 **Richt lijnen**: standaard beveiligings configuraties voor uw Cognitive Services-container definiëren en implementeren met Azure Policy. Gebruik Azure Policy aliassen in de naam ruimte ' micro soft. CognitiveServices ' om aangepaste beleids regels te maken om de configuratie van uw Azure-cache voor redis-exemplaren te controleren of af te dwingen.
 
-- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?amp;preserve-view=true&view=azps-4.8.0)
+- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias)
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
@@ -652,9 +650,9 @@ Daarnaast kunt u met Azure resource Graph bronnen in de abonnementen opvragen of
 
 **Richt lijnen**: als u aangepaste Azure Policy definities of Azure Resource Manager sjablonen gebruikt voor uw Cognitive Services containers en gerelateerde resources, gebruikt u Azure opslag plaatsen om uw code veilig op te slaan en te beheren.
 
-- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow?amp;preserve-view=true&view=azure-devops)
+- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow)
 
-- [Documentatie voor Azure opslag plaatsen](/azure/devops/repos/?amp;preserve-view=true&view=azure-devops)
+- [Documentatie voor Azure opslag plaatsen](/azure/devops/repos/)
 
 **Verantwoordelijkheid**: Klant
 
@@ -686,7 +684,7 @@ Daarnaast kunt u met Azure resource Graph bronnen in de abonnementen opvragen of
 
 - [Integratie met door Azure beheerde identiteiten](../azure-app-configuration/howto-integrate-azure-managed-service-identity.md)
 
-- [Een Key Vault maken](../key-vault/secrets/quick-create-portal.md)
+- [Een Key Vault maken](/azure/key-vault/quick-create-portal)
 
 - [Verifiëren bij Key Vault](../key-vault/general/authentication.md)
 
@@ -760,7 +758,7 @@ U kunt ook de functie levenscyclus beheer gebruiken om een back-up te maken van 
 
 - [Overzicht van Azure Resource Manager](../azure-resource-manager/management/overview.md)
 
-- [Een Cognitive Services resource maken met behulp van een Azure Resource Manager sjabloon](./create-account-resource-manager-template.md?tabs=portal)
+- [Een Cognitive Services resource maken met behulp van een Azure Resource Manager sjabloon](https://docs.microsoft.com/azure/cognitive-services/resource-manager-template?tabs=portal)
 
 - [Eén en meerdere resources exporteren naar een sjabloon in Azure Portal](../azure-resource-manager/templates/export-template-portal.md)
 
@@ -768,7 +766,7 @@ U kunt ook de functie levenscyclus beheer gebruiken om een back-up te maken van 
 
 - [Inleiding tot Azure Automation](../automation/automation-intro.md)
 
-- [Hoe kan ik een back-up maken van sleutel kluis sleutels in azure?](/powershell/module/az.keyvault/backup-azkeyvaultkey?amp;preserve-view=true&view=azps-4.8.0)
+- [Hoe kan ik een back-up maken van sleutel kluis sleutels in azure?](/powershell/module/az.keyvault/backup-azkeyvaultkey)
 
 **Verantwoordelijkheid**: Klant
 
@@ -780,7 +778,7 @@ U kunt ook de functie levenscyclus beheer gebruiken om een back-up te maken van 
 
 - [Resources implementeren met ARM-sjablonen en Azure Portal](../azure-resource-manager/templates/deploy-portal.md)
 
-- [Sleutel kluis sleutels herstellen in azure](/powershell/module/az.keyvault/restore-azkeyvaultkey?amp;preserve-view=true&view=azps-4.8.0)
+- [Sleutel kluis sleutels herstellen in azure](/powershell/module/az.keyvault/restore-azkeyvaultkey)
 
 **Verantwoordelijkheid**: Klant
 
@@ -792,7 +790,7 @@ U kunt ook de functie levenscyclus beheer gebruiken om een back-up te maken van 
 
 Gebruik Azure op rollen gebaseerd toegangs beheer voor het beveiligen van sleutels die door de klant worden beheerd. Schakel Soft-Delete in en verwijder de beveiliging in Key Vault om sleutels te beschermen tegen onbedoelde of schadelijke verwijdering. 
 
-- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow?amp;preserve-view=true&view=azure-devops)
+- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow)
 
 - [Over machtigingen en groepen in azure DevOps](/azure/devops/organizations/security/about-permissions)
 
@@ -890,5 +888,5 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](../security/benchmarks/overview.md)
-- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)
+- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
+- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)

@@ -1,18 +1,18 @@
 ---
 title: De impact van een nieuwe Azure Policy definitie evalueren
 description: Inzicht in het proces dat moet worden gevolgd wanneer een nieuwe beleids definitie wordt geïntroduceerd in uw Azure-omgeving.
-ms.date: 10/05/2020
+ms.date: 03/31/2021
 ms.topic: conceptual
-ms.openlocfilehash: cf52d25aa846388bc387430913a733d5206df82e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 187a64ce3581c4aaa893e2a805ce787a0bfd6c79
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100590805"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106091715"
 ---
 # <a name="evaluate-the-impact-of-a-new-azure-policy-definition"></a>De impact van een nieuwe Azure Policy definitie evalueren
 
-Azure Policy is een krachtig hulp programma voor het beheer van uw Azure-resources op bedrijfs standaarden en om te voldoen aan de vereisten voor naleving. Als mensen, processen of pijp lijnen resources maken of bijwerken, Azure Policy de aanvraag beoordeelt. Wanneer het effect van de beleids definitie [wijzigt](./effects.md#modify), [toevoegen](./effects.md#deny) of [DeployIfNotExists](./effects.md#deployifnotexists), wordt de aanvraag door het beleid gewijzigd of toegevoegd. Wanneer het beleid van de beleids definitie wordt [gecontroleerd](./effects.md#audit) of [AuditIfNotExists](./effects.md#auditifnotexists), wordt een vermelding in het activiteiten logboek gemaakt voor nieuwe en bijgewerkte resources. En wanneer het effect van de beleids definitie is [geweigerd](./effects.md#deny), stopt het beleid het maken of de wijziging van de aanvraag.
+Azure Policy is een krachtig hulp programma voor het beheer van uw Azure-resources op bedrijfs standaarden en om te voldoen aan de vereisten voor naleving. Als mensen, processen of pijp lijnen resources maken of bijwerken, Azure Policy de aanvraag beoordeelt. Wanneer het effect van de beleids definitie wordt [gewijzigd](./effects.md#modify), [toegevoegd](./effects.md#deny)of [DeployIfNotExists](./effects.md#deployifnotexists), wordt de aanvraag door het beleid gewijzigd of toegevoegd. Wanneer het beleid van de beleids definitie wordt [gecontroleerd](./effects.md#audit) of [AuditIfNotExists](./effects.md#auditifnotexists), wordt een vermelding in het activiteiten logboek gemaakt voor nieuwe en bijgewerkte resources. En wanneer het effect van de beleids definitie is [geweigerd](./effects.md#deny), stopt het beleid het maken of de wijziging van de aanvraag.
 
 Deze resultaten zijn precies zo nodig als u weet dat het beleid correct is gedefinieerd. Het is echter belang rijk om een nieuw beleid te valideren, zoals bedoeld voordat het werk kan worden gewijzigd of geblokkeerd. De validatie moet ervoor zorgen dat alleen de beoogde resources niet-compatibel zijn en dat er geen resources zijn die onjuist zijn opgenomen (ook wel een _valse waarde-positief_) in de resultaten.
 

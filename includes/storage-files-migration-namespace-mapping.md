@@ -1,18 +1,19 @@
 ---
-title: Een mapstructuur toewijzen aan een Azure File Sync-topologie
-description: Wijs een bestaande bestands-en mapstructuur toe aan Azure-bestands shares voor gebruik met Azure File Sync. Een gemeen schappelijk tekst blok, gedeeld via migratie documenten.
+title: bestand opnemen
+description: bestand opnemen
+services: storage
 author: fauhse
 ms.service: storage
-ms.topic: conceptual
+ms.topic: include
 ms.date: 2/20/2020
 ms.author: fauhse
-ms.subservice: files
-ms.openlocfilehash: 265d14d7cca05ff510e747c8d3a3b071e44a0a68
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: include file
+ms.openlocfilehash: a8dd83a9584d218d56c7350d6d634bfe4610b790
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102202396"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106075561"
 ---
 In deze stap evalueert u hoeveel Azure-bestands shares u nodig hebt. Eén Windows Server-exemplaar (of-cluster) kan Maxi maal 30 Azure-bestands shares synchroniseren.
 

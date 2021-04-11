@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/01/2021
 ms.author: aahi
 ms.custom: references_regions
-ms.openlocfilehash: 3c6fb1ca23bcc9c57e73bcaf960e0387611fcff3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 00f9c6510a87770367472c0da6774b94034c6d72
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104599205"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107029774"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>De Text Analytics aanroepen REST API
 
@@ -34,6 +34,14 @@ Voordat u de Text Analytics-API gebruikt, moet u een Azure-resource maken met ee
 2.  Selecteer de regio die u voor het eind punt wilt gebruiken.  Houd er rekening mee dat de `/analyze` `/health` eind punten alleen beschikbaar zijn in de volgende REGIO'S: VS-West 2, VS-Oost 2, VS-midden, Europa-noord en Europa-West.
 
 3.  Maak de Text Analytics resource en ga naar de Blade sleutels en eind punt aan de linkerkant van de pagina. Kopieer de sleutel die u later wilt gebruiken wanneer u de Api's aanroept. U voegt dit later toe als waarde voor de `Ocp-Apim-Subscription-Key` koptekst.
+
+4. Controleer het aantal tekst records dat is verzonden met behulp van uw Text Analytics resource:
+
+    1. Navigeer naar uw Text Analytics-resource in de Azure Portal. 
+    2. Klik op **metrische gegevens** onder **bewaking** in het navigatie menu links. 
+    3. Selecteer *verwerkte tekst records* in de vervolg keuzelijst voor **metrische gegevens**.
+    
+Een tekst record is 1000 tekens.
 
 ## <a name="change-your-pricing-tier"></a>Uw prijs categorie wijzigen 
 

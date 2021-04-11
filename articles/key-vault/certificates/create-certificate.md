@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: a9545c040809331a5556b11f6cc7536931e2d421
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f06f2de1f373f72aa5e55da17c249ff119a36950
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "93289571"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106581831"
 ---
 # <a name="certificate-creation-methods"></a>Methoden voor het maken van certificaten
 
@@ -93,4 +93,5 @@ Houd er rekening mee dat wanneer een bestelling wordt geplaatst met de provider 
 
 ## <a name="see-also"></a>Zie ook
 
+ - Instructies voor het maken van certificaten in Key Vault met behulp van [Portal](https://docs.microsoft.com/azure/key-vault/certificates/quick-create-portal), [Azure cli](https://docs.microsoft.com/azure/key-vault/certificates/quick-create-cli), [Azure Power shell](https://docs.microsoft.com/azure/key-vault/certificates/quick-create-powershell)
  - [Het maken van certificaten controleren en beheren](create-certificate-scenarios.md)

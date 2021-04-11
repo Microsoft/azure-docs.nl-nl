@@ -1,0 +1,50 @@
+- name: Documentatie voor Azure AD-verifieer bare referenties
+  href: index.yml
+- name: Overzicht
+  expanded: true
+  items:
+    - name: Inleiding tot Azure Active Directory verifieer bare referenties
+      href: decentralized-identifier-overview.md
+- name: Zelfstudies
+  expanded: true
+  items:
+    - name: Aan de slag met verifieer bare referenties
+      href: get-started-verifiable-credentials.md
+    - name: Verifieer bare referenties in uw Tenant configureren
+      items:
+        - name: '1: verifieer bare uitgevers van Referenties instellen in uw eigen Azure AD'
+          href: enable-your-tenant-verifiable-credentials.md
+        - name: 2-Verbind de uitgever van uw geverifieerde referenties met uw eigen Azure AD
+          href: issue-verify-verifiable-credentials-your-tenant.md
+- name: Concepten
+  expanded: true
+  items:
+    - name: Details van het Connect-protocol van OpenID Connect
+      href: issuer-openid.md
+- name: Instructiegidsen
+  expanded: true
+  items:
+    - name: Uw referenties aanpassen
+      href: credential-design.md
+    - name: Intrekking van referenties beheren
+      href: how-to-issuer-revoke.md
+    - name: Uw domein koppelen aan uw
+      href: how-to-dnsbind.md
+    - name: Afmelden van Controleer bare referenties
+      href: how-to-opt-out.md
+- name: Voorbeelden
+  expanded: true
+  items:
+    - name: Voor beeld-node-app
+      href: 'https://github.com/Azure-Samples/active-directory-verifiable-credentials'
+    - name: Voorbeeld Uitgever
+      href: 'https://didvc-issuer-sample.azurewebsites.net/'
+    - name: Voor beeld Verifier
+      href: 'https://didvc-verifier-sample.azurewebsites.net/'
+- name: Resources
+  expanded: true
+  items:
+    - name: Veelgestelde vragen
+      href: verifiable-credentials-faq.md
+    - name: Een ontwikkelaars account maken
+      href: how-to-create-a-free-developer-account.md

@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 03/19/2021
 ms.author: chrande
 ms.openlocfilehash: 8865a16c2840b65f432de679c6dd63b285b1f760
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104771797"
 ---
 # <a name="upgrade-the-api-version-of-your-azure-cosmos-db-api-for-mongodb-account"></a>Upgrade de API-versie van uw Azure Cosmos DB-API voor het MongoDB-account

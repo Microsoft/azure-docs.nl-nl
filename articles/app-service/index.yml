@@ -7,12 +7,12 @@ metadata:
   ms.topic: landing-page
   ms.service: app-service
   ms.date: 08/06/2020
-  ms.openlocfilehash: 60e96d9d7f930a733f107f4fee2d1d7ca0348223
-  ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+  ms.openlocfilehash: d385cfd0d6b83fb1c6f41751849c4bd79c09f7fe
+  ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/04/2021
-  ms.locfileid: "102122235"
+  ms.lasthandoff: 04/07/2021
+  ms.locfileid: "106579857"
 landingContent:
 - title: Meer informatie over App Service
   linkLists:
@@ -32,10 +32,8 @@ landingContent:
   linkLists:
   - linkListType: quickstart
     links:
-    - text: Eerste ASP.NET Core-app
+    - text: Eerste ASP.NET-Web-app
       url: quickstart-dotnetcore.md
-    - text: Eerste ASP.NET-app (alleen Windows)
-      url: quickstart-dotnet-framework.md
     - text: Eerste Node.js-app
       url: quickstart-nodejs.md
     - text: Eerste PHP-app
@@ -82,6 +80,8 @@ landingContent:
       url: deploy-ci-cd-custom-container.md
     - text: Een container verbinden met Storage Files
       url: configure-connect-to-azure-storage.md
+    - text: Implementeren met GitHub Actions
+      url: deploy-container-github-action.md
 - title: CRUD-app met database
   linkLists:
   - linkListType: tutorial

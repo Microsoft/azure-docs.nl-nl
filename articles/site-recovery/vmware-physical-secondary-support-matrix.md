@@ -1,19 +1,16 @@
 ---
 title: Ondersteuning voor VMware/fysieke nood herstel naar een secundaire site met Azure Site Recovery
 description: Geeft een samen vatting van de ondersteuning voor herstel na nood gevallen van virtuele VMware-machines en fysieke servers naar een secundaire site met Azure Site Recovery.
-author: rayne-wiselman
-manager: carmonm
 ms.service: site-recovery
 services: site-recovery
 ms.topic: conceptual
 ms.date: 11/14/2019
-ms.author: raynew
-ms.openlocfilehash: ac67e3cf8f057738b76b0de7cbcb821ef290e0cb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b3b0cf6387da3f1cb7a9b6ef3a5020e022b5e22b
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98757573"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106579846"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-vmware-vms-and-physical-servers-to-a-secondary-site"></a>Ondersteunings matrix voor nood herstel van virtuele VMware-machines en fysieke servers naar een secundaire site
 

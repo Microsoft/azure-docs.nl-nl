@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/16/2020
 ms.author: chez
 ms.custom: include file
-ms.openlocfilehash: 10aa9b06af439fe701c53ef736ec691167560f95
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 96c67327a8272a02e677cc40b46c3177e470b684
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102109345"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106126063"
 ---
 Azure Data Factory is een service met meerdere tenants met de volgende standaardlimieten om ervoor te zorgen dat klantabonnementen worden beschermd tegen elkaars werkbelastingen. Neem contact op met de ondersteuning als u de limieten wilt verhogen tot de maximumwaarde voor uw abonnement.
 
@@ -49,6 +49,7 @@ Azure Data Factory is een service met meerdere tenants met de volgende standaard
 | Gelijktijdig aantal gegevensstromen per integratieruntime | 50 | [Neem contact op met ondersteuning](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Gelijktijdig aantal foutopsporingssessies van gegevensstroom per gebruiker per factory | 3 | 3 |
 | Azure IR TTL-limiet voor gegevensstroom | 4 uur |  4 uur |
+| Maximale grootte van entiteit van meta gegevens in een Factory | 2 GB | [Neem contact op met ondersteuning](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 
 <sup>1</sup> De gegevensintegratie-eenheid (DIU) wordt gebruikt in een kopieerbewerking van de cloud naar de cloud. Zie [Gegevensintegratie-eenheden (versie 2)](../articles/data-factory/copy-activity-performance.md#data-integration-units) voor meer informatie. Zie [Prijzen voor Azure Data Factory](https://azure.microsoft.com/pricing/details/data-factory/)voor meer informatie over facturering.
 

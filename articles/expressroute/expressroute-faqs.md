@@ -5,14 +5,14 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 03/12/2021
+ms.date: 03/29/2021
 ms.author: duau
-ms.openlocfilehash: da293f15ba070fc9a00ad37defd6a76175ded2f2
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 579a7114a06386fe48fcc074cc1095e980837ba0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104587276"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105732173"
 ---
 # <a name="expressroute-faq"></a>Veelgestelde vragen ExpressRoute
 
@@ -265,7 +265,7 @@ Ja. ExpressRoute kan naast site-naar-site-Vpn's bestaan. Zie [ExpressRoute-en si
 
 ### <a name="how-do-i-enable-routing-between-my-site-to-site-vpn-connection-and-my-expressroute"></a>Hoe kan ik route ring tussen mijn site-naar-site VPN-verbinding en mijn ExpressRoute inschakelen?
 
-Als u route ring wilt inschakelen tussen uw vertakking die is verbonden met Expressoute en uw vertakking is verbonden met een site-naar-site-VPN-verbinding, moet u [Azure route server](../route-server/expressroute-vpn-support.md)instellen.
+Als u route ring wilt inschakelen tussen uw vertakking die is verbonden met ExpressRoute en uw vertakking is verbonden met een site-naar-site-VPN-verbinding, moet u [Azure route server](../route-server/expressroute-vpn-support.md)instellen.
 
 ### <a name="why-is-there-a-public-ip-address-associated-with-the-expressroute-gateway-on-a-virtual-network"></a>Waarom is er een openbaar IP-adres gekoppeld aan de ExpressRoute-gateway in een virtueel netwerk?
 

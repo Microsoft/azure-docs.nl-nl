@@ -6,7 +6,7 @@
       href: service-fabric-overview.md
     - name: Beheerde Service Fabric-clusters
       href: overview-managed-cluster.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: ARM-sjabloon
@@ -502,7 +502,7 @@
                   href: service-fabric-how-to-remove-node-type.md
             - name: Upgraden
               items:
-                - name: De Service Fabric-versie upgraden
+                - name: Service Fabric cluster upgrades beheren
                   href: service-fabric-cluster-upgrade-version-azure.md
                 - name: De clusterconfiguratie upgraden
                   href: service-fabric-cluster-config-upgrade-azure.md

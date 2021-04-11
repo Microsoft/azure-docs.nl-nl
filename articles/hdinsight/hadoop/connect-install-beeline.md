@@ -4,13 +4,13 @@ description: Meer informatie over hoe u verbinding maakt met de Apache Beeline-c
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: contperf-fy21q1
-ms.date: 05/27/2020
-ms.openlocfilehash: ab5dedf6718dad4f16fde59d905e2e59be5c495f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/07/2021
+ms.openlocfilehash: 5dcb6168a263be11410126ff08bd8b015da5af46
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98944459"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107103433"
 ---
 # <a name="connect-to-apache-beeline-on-hdinsight-or-install-it-locally"></a>Verbinding maken met Apache Beeline op HDInsight of lokaal installeren
 
@@ -77,7 +77,9 @@ Apache Spark biedt een eigen implementatie van HiveServer2, die ook wel de Spark
 
 #### <a name="through-public-or-private-endpoints"></a>Via open bare of privé-eind punten
 
-Het gebruikte connection string is iets anders. In plaats van `httpPath=/hive2` het te gebruiken `httpPath/sparkhive2` . Vervang `clustername` door de naam van uw HDInsight-cluster. Vervang door `admin` het cluster aanmeldings account voor uw cluster. Gebruik voor ESP-clusters de volledige UPN (bijvoorbeeld user@domain.com ). Vervang door `password` het wacht woord voor het account voor het aanmelden bij het cluster.
+Het gebruikte connection string is iets anders. In plaats van `httpPath=/hive2` het te gebruiken `httpPath/sparkhive2` . Vervang `clustername` door de naam van uw HDInsight-cluster. Vervang door `admin` het cluster aanmeldings account voor uw cluster. Vervang door `password` het wacht woord voor het account voor het aanmelden bij het cluster.
+> [!NOTE]
+> Voor ESP-clusters vervangt u door de `admin` volledige UPN (bijvoorbeeld user@domain.com ). 
 
 ```bash
 beeline -u 'jdbc:hive2://clustername.azurehdinsight.net:443/;ssl=true;transportMode=http;httpPath=/sparkhive2' -n admin -p 'password'

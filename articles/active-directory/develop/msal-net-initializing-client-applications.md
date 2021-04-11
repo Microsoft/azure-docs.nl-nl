@@ -14,10 +14,10 @@ ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
 ms.openlocfilehash: 7ff61811e8b736f8f6d104a253cfe5dc5e76c428
-ms.sourcegitcommit: 2c1b93301174fccea00798df08e08872f53f669c
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104771359"
 ---
 # <a name="initialize-client-applications-using-msalnet"></a>Client toepassingen initialiseren met MSAL.NET
@@ -98,7 +98,7 @@ In de code fragmenten die gebruikmaken van toepassings bouwers, kan een aantal `
 
 De opties die u kunt instellen op een open bare client of de opbouw functie voor vertrouwelijke client toepassingen zijn:
 
-|Modifier | Beschrijving|
+|Modifier | Description|
 |--------- | --------- |
 |`.WithAuthority()` 7 onderdrukkingen | Hiermee stelt u de standaard instantie van de toepassing in op een Azure AD-instantie, met de mogelijkheid om de Azure-Cloud, de doel groep, de Tenant (Tenant-ID of domein naam) te kiezen of rechtstreeks de CA-URI op te geven.|
 |`.WithAdfsAuthority(string)` | Hiermee stelt u de standaard instantie van de toepassing als ADFS-instantie.|
@@ -117,7 +117,7 @@ De opties die u kunt instellen op een open bare client of de opbouw functie voor
 
 De opties die u kunt instellen voor een open bare-client toepassings Builder op Xamarin. iOS zijn:
 
-|Modifier | Beschrijving|
+|Modifier | Description|
 |--------- | --------- |
 |`.WithIosKeychainSecurityGroup()` | **Alleen Xamarin. IOS**: Hiermee stelt u de beveiligings groep IOS-sleutel keten in (voor de cache persistentie).|
 
@@ -125,7 +125,7 @@ De opties die u kunt instellen voor een open bare-client toepassings Builder op 
 
 De opties die u kunt instellen voor een vertrouwelijk client toepassings Builder zijn:
 
-|Modifier | Beschrijving|
+|Modifier | Description|
 |--------- | --------- |
 |`.WithCertificate(X509Certificate2 certificate)` | Hiermee stelt u het certificaat dat de toepassing identificeert met Azure AD.|
 |`.WithClientSecret(string clientSecret)` | Hiermee stelt u het client geheim (app-wacht woord) voor het identificeren van de toepassing met Azure AD.|

@@ -3,12 +3,12 @@ title: Gebeurtenis levering verifiëren naar gebeurtenis-handlers (Azure Event G
 description: In dit artikel worden verschillende methoden beschreven voor het verifiëren van de levering aan gebeurtenis-handlers in Azure Event Grid.
 ms.topic: conceptual
 ms.date: 01/07/2021
-ms.openlocfilehash: 98d7a4a0dee6c355ec340668bef7d8b306f97496
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: f7a105c36b7c924e35c295edc43107353d738d5b
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98633117"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105968132"
 ---
 # <a name="authenticate-event-delivery-to-event-handlers-azure-event-grid"></a>Gebeurtenis levering verifiëren naar gebeurtenis-handlers (Azure Event Grid)
 Dit artikel bevat informatie over het verifiëren van gebeurtenis levering aan gebeurtenis-handlers. Ook wordt uitgelegd hoe u de webhook-eind punten die worden gebruikt voor het ontvangen van gebeurtenissen van Event Grid met behulp van Azure Active Directory (Azure AD) of een gedeeld geheim kunt beveiligen.
@@ -40,7 +40,7 @@ Als query parameters kunnen client geheimen bevatten, worden ze behandeld met ex
 Zie [webhook Event Delivery](webhook-event-delivery.md) (Engelstalig) voor meer informatie over het leveren van gebeurtenissen aan webhooks
 
 > [!IMPORTANT]
-Azure Event Grid ondersteunt alleen **https** -webhook-eind punten. 
+> Azure Event Grid ondersteunt alleen **https** -webhook-eind punten. 
 
 ## <a name="endpoint-validation-with-cloudevents-v10"></a>Eindpunt validatie met CloudEvents v 1.0
 Als u al bekend bent met Event Grid, is het mogelijk dat u op de hoogte bent van de validatie-Handshake van het eind punt om misbruik te voor komen. CloudEvents v 1.0 implementeert zijn eigen [beveiligings semantiek voor misbruik](webhook-event-delivery.md) door gebruik te maken van de **http-opties** methode. Zie [HTTP 1,1-Webhooks voor gebeurtenis levering-versie 1,0 voor](https://github.com/cloudevents/spec/blob/v1.0/http-webhook.md#4-abuse-protection)meer informatie hierover. Wanneer u het CloudEvents-schema voor uitvoer gebruikt, maakt Event Grid gebruik van de CloudEvents v 1.0-misbruik beveiliging in plaats van het Event Grid validatie gebeurtenis mechanisme. Zie [CloudEvents v 1.0-schema gebruiken met Event grid](cloudevents-schema.md)voor meer informatie. 

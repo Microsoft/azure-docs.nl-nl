@@ -11,12 +11,12 @@ metadata:
   author: KumudD
   ms.author: kumud
   ms.date: 01/28/2021
-  ms.openlocfilehash: 25d73a08b5311d93f46830d6f23095c83db35091
-  ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+  ms.openlocfilehash: ada227d0746b49ba73b6bea2104d3a7adcbaa1c5
+  ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/11/2021
-  ms.locfileid: "103010487"
+  ms.lasthandoff: 04/07/2021
+  ms.locfileid: "107027462"
 landingContent:
 - title: Over Virtual Network
   linkLists:
@@ -100,6 +100,10 @@ landingContent:
     links:
     - text: Netwerkverkeer routeren - Portal
       url: tutorial-create-route-table-portal.md
+  - linkListType: learn
+    links:
+    - text: Verkeersstromen in uw Azure-implementatie beheren en controleren met routes
+      url: /learn/modules/control-network-traffic-flow-with-routes/
 - title: IP-adressen maken
   linkLists:
   - linkListType: concept

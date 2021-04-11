@@ -12,21 +12,21 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/05/2021
+ms.date: 03/29/2021
 ms.author: b-juche
-ms.openlocfilehash: 12807e83f7841bc67999ce385d0cb82bf15f4c71
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 52e855cb4ab42ed78a055ecdc31cffa886dc9bf2
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102175988"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105731986"
 ---
 # <a name="what-changing-to-volume-hard-quota-means-for-your-azure-netapp-files-service"></a>Wat wordt overgeschakeld naar het volume vaste quotum voor uw Azure NetApp Files-service
 
 Vanaf het begin van de service heeft Azure NetApp Files een capaciteits pool inrichten en een mechanisme voor automatische groei gebruikt. Azure NetApp Files volumes worden dun ingericht op een door de klant ingerichte capaciteits groep van een geselecteerde laag en grootte. Volume grootten (quota's) worden gebruikt voor prestaties en capaciteit en de quota's kunnen op elk gewenst moment worden aangepast. Dit gedrag houdt in dat het volume quotum op dit moment een prestatie hendel is die wordt gebruikt om de band breedte naar het volume te beheren. Op dit moment groeien de capaciteits Pools automatisch wanneer de capaciteit omhoog wordt gevuld.   
 
 > [!IMPORTANT] 
-> Het Azure NetApp Files gedrag van het inrichten van het volume en de capaciteits pool wordt gewijzigd in een *hand matig* *en te* bepalen mechanisme. **Vanaf 1 april 2021 (bijgewerkt) worden de bandbreedte prestaties, evenals de ingerichte capaciteit en de onderliggende capaciteits groepen, niet meer automatisch uitgebreid wanneer de volume grootten (quotum) worden beheerd.** 
+> Het Azure NetApp Files gedrag van het inrichten van het volume en de capaciteits pool wordt gewijzigd in een *hand matig* *en te* bepalen mechanisme. **Vanaf 30 april 2021 (bijgewerkt) worden de bandbreedte prestaties, evenals de ingerichte capaciteit en de onderliggende capaciteits groepen, niet meer automatisch uitgebreid wanneer de volume grootten (quotum) worden beheerd.** 
 
 ## <a name="reasons-for-the-change-to-volume-hard-quota"></a>Redenen voor de wijziging van het volume vaste quotum
 

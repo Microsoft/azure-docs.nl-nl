@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 01/06/2016
 ms.custom: seodec18
 ms.openlocfilehash: aec23c28e075dd38fa65f1315f9abd9e21cdc9cb
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104951467"
 ---
 # <a name="provision-and-deploy-microservices-predictably-in-azure"></a>Micro services zoals verwacht inrichten en implementeren in azure
@@ -145,10 +145,10 @@ De verbindings reeksen worden ook gedefinieerd als een geneste resource.
 
 ![Laat zien hoe de verbindings reeksen worden gedefinieerd als een geneste resource in de JSON-code.](./media/app-service-deploy-complex-application-predictably/examinejson-7-webappconnstr.png)
 
-In het `properties` element voor `config/connectionstrings` wordt elke Connection String ook gedefinieerd als een naam: waardepaar, met de specifieke indeling van `"<name>" : {"value": "…", "type": "…"}` . Voor het `type` element zijn mogelijke waarden `MySql` ,, `SQLServer` `SQLAzure` en `Custom` .
+In het `properties` element voor `config/connectionstrings` wordt elke Connection String ook gedefinieerd als een naam: waardepaar, met de specifieke indeling van `"<name>&quot; : {&quot;value&quot;: &quot;…&quot;, &quot;type&quot;: &quot;…&quot;}` . Voor het `type` element zijn mogelijke waarden `MySql` ,, `SQLServer` `SQLAzure` en `Custom` .
 
 > [!TIP]
-> Voor een definitieve lijst van de connection string typen voert u de volgende opdracht uit in Azure PowerShell: \[ Enum]:: GetNames ("micro soft. WindowsAzure. commands. Utilities. websites. Services. webentities. DatabaseType")
+> Voor een definitieve lijst van de connection string typen voert u de volgende opdracht uit in Azure PowerShell: \[ Enum]:: GetNames (&quot;micro soft. WindowsAzure. commands. Utilities. websites. Services. webentities. DatabaseType")
 > 
 > 
 

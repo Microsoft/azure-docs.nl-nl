@@ -12,6 +12,10 @@ items:
         href: create-catalog-portal.md
       - name: Een Purview-account maken - Azure PowerShell
         href: create-catalog-powershell.md
+      - name: Een controle sfeer liggen-account maken-.NET SDK
+        href: create-purview-dotnet.md
+      - name: Een controle sfeer liggen-account maken-python
+        href: create-purview-python.md
   - name: Zelfstudies
     items:
       - name: Starterskit

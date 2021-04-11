@@ -1,20 +1,20 @@
 ---
 title: 'Quickstart: Azure Storage V11 voor .NET gebruiken om een wachtrij te beheren'
 description: In deze quickstart leert u hoe u de Azure Storage-clientbibliotheek voor .NET kunt gebruiken om een wachtrij te maken en er berichten aan toe te voegen. Vervolgens leert u hoe u berichten uit de wachtrij kunt lezen en verwerken.
-author: mhopkins-msft
-ms.author: mhopkins
+author: twooley
+ms.author: twooley
 ms.reviewer: dineshm
 ms.date: 07/24/2020
 ms.topic: quickstart
 ms.service: storage
 ms.subservice: queues
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 23703dc507aa909aea4711289a4d7d5c5e6a170e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 10ab1c487095fe1587a3c665d8a06e0d5cbab7e0
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97588196"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106275886"
 ---
 # <a name="quickstart-use-the-azure-storage-sdk-v11-for-net-to-manage-a-queue"></a>Quickstart: De Azure Storage SDK V11 voor .NET gebruiken om een wachtrij te beheren
 

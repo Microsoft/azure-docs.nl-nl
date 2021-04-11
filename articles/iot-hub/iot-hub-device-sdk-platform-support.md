@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/08/2019
 ms.author: robinsh
-ms.openlocfilehash: c47e67375e093ff6e9a5cf7193c76eeeb5228e29
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: ab450c6ec6ae32cafcf07e88940736f209973d8d
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105045644"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106168039"
 ---
 # <a name="azure-iot-device-sdks-platform-support"></a>Ondersteuning voor Azure IoT Device Sdk's-platform
 
@@ -22,7 +22,7 @@ Naast de Sdk's van het apparaat biedt micro soft verschillende andere mogelijkhe
 
 * Micro soft werkt samen met verschillende partner bedrijven om hen te helpen bij het publiceren van Development Kits, op basis van de Azure IoT C SDK, voor hun hardwareplatforms.
 
-* Micro soft werkt samen met micro soft-vertrouwde partners om een steeds groeiende set apparaten te bieden die zijn getest en gecertificeerd voor Azure IoT. Zie [Azure Certified for IOT Device Catalog](https://catalog.azureiotsolutions.com/)(Engelstalig) voor een actuele lijst van deze apparaten.
+* Micro soft werkt samen met micro soft-vertrouwde partners om een steeds groeiende set apparaten te bieden die zijn getest en gecertificeerd voor Azure IoT. Zie [Azure Certified for IOT Device Catalog](https://devicecatalog.azure.com/)(Engelstalig) voor een actuele lijst van deze apparaten.
 
 * Micro soft biedt een platform Abstraction Layer (PAL) in de Azure IoT Hub Device C SDK waarmee ontwikkel aars de SDK eenvoudig naar hun platform kunnen overbrengen. Zie de [C SDK porting guidance](https://github.com/Azure/azure-c-shared-utility/blob/master/devdoc/porting_guide.md)(Engelstalig) voor meer informatie.
 
@@ -114,9 +114,9 @@ Als uw platform niet onder een van de voor gaande secties valt, kunt u overwegen
 
 Micro soft werkt met een aantal partners om het Azure IoT-universum voortdurend uit te breiden met Azure IoT-geteste en gecertificeerde apparaten.
 
-* Zie [Microsoft Azure Certified for IOT Device Catalog](https://catalog.azureiotsolutions.com/)voor informatie over het bladeren door Azure IOT-gecertificeerde apparaten.
+* Zie [Microsoft Azure Certified for IOT Device Catalog](https://devicecatalog.azure.com/)voor informatie over het bladeren door Azure IOT-gecertificeerde apparaten.
 
-* Zie voor meer informatie over het Azure Certified voor IoT-ecosysteem [lid worden van het Certified voor IOT-ecosysteem](https://catalog.azureiotsolutions.com/register).
+* Zie voor meer informatie over het Azure Certified voor IoT-ecosysteem [lid worden van het Certified voor IOT-ecosysteem](../certification/overview.md).
 
 ## <a name="connecting-to-iot-hub-without-an-sdk"></a>Verbinding maken met IoT Hub zonder een SDK
 

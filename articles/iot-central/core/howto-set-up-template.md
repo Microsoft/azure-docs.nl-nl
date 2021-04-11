@@ -10,12 +10,12 @@ services: iot-central
 ms.custom:
 - contperf-fy21q1
 - device-developer
-ms.openlocfilehash: 22e948a0100f23dbddef8fc138576bb4b9372c77
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9ef4be54f5c6025a09314a04504cff40fc39478d
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100363199"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106168158"
 ---
 # <a name="define-a-new-iot-device-type-in-your-azure-iot-central-application"></a>Een nieuw IoT-apparaattype definiëren in uw Azure IoT Central-toepassing
 
@@ -59,7 +59,7 @@ Sommige [toepassings sjablonen](concepts-app-templates.md) bevatten al sjablonen
 
 ## <a name="create-a-device-template-from-the-device-catalog"></a>Een sjabloon voor een apparaat maken vanuit de catalogus met apparaten
 
-Als bouwer kunt u snel beginnen met het bouwen van uw oplossing met behulp van een gecertificeerd apparaat. Zie de lijst in de [Azure IOT-Apparaatbeheer](https://catalog.azureiotsolutions.com/alldevices). IoT Central integreert met de catalogus van het apparaat, zodat u een apparaatprofiel kunt importeren vanuit een van de gecertificeerde apparaten. Een sjabloon voor een apparaat maken op basis van een van deze apparaten in IoT Central:
+Als bouwer kunt u snel beginnen met het bouwen van uw oplossing met behulp van een gecertificeerd apparaat. Zie de lijst in de [Azure IOT-Apparaatbeheer](https://devicecatalog.azure.com). IoT Central integreert met de catalogus van het apparaat, zodat u een apparaatprofiel kunt importeren vanuit een van de gecertificeerde apparaten. Een sjabloon voor een apparaat maken op basis van een van deze apparaten in IoT Central:
 
 1. Ga naar de pagina met **Apparaatinstellingen** in uw IOT Central-toepassing.
 1. Selecteer **+ Nieuw** en selecteer vervolgens een van de gecertificeerde apparaten uit de catalogus. IoT Central maakt een sjabloon op basis van dit model.

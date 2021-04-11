@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/10/2020
 ms.author: yelevin
-ms.openlocfilehash: da7d540a4b7982c7f743a7ae968515485b45aa5a
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 10812cf97f4f0dfc6f7957608eddf7acf929c3fc
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102035420"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106579754"
 ---
 # <a name="use-logstash-to-connect-data-sources-to-azure-sentinel"></a>Logstash gebruiken om gegevens bronnen te verbinden met Azure Sentinel
 
@@ -44,7 +44,9 @@ De Logstash-engine bestaat uit drie onderdelen:
 - Uitvoer-invoeg toepassingen: aangepaste verzen ding van verzamelde en verwerkte gegevens naar verschillende bestemmingen.
 
 > [!NOTE]
-> Azure Sentinel ondersteunt alleen de eigen meegeleverde uitvoer bare invoeg toepassing. Het biedt geen ondersteuning voor uitvoer-invoeg toepassingen van derden voor Azure Sentinel of een andere Logstash-invoeg toepassing van elk type.
+> - Azure Sentinel ondersteunt alleen de eigen meegeleverde uitvoer bare invoeg toepassing. De huidige versie van deze invoeg toepassing is v 1.0.0, release 2020-08-25. Het biedt geen ondersteuning voor uitvoer-invoeg toepassingen van derden voor Azure Sentinel of een andere Logstash-invoeg toepassing van elk type.
+>
+> - De Logstash-uitvoer-invoeg toepassing van Azure Sentinel ondersteunt alleen **Logstash-versies van 7,0 tot 7,9**.
 
 De Azure Sentinel output-invoeg toepassing voor Logstash verzendt gegevens in JSON-indeling naar uw Log Analytics-werk ruimte met behulp van de Log Analytics HTTP-gegevens verzamelaar REST API. De gegevens worden opgenomen in aangepaste Logboeken.
 
@@ -67,19 +69,21 @@ Gebruik de informatie in de Logstash- [structuur van een config file](https://ww
 
 | Veldnaam | Gegevenstype | Description |
 |----------------|---------------|-----------------|
-| `workspace_id` | tekenreeks | Voer uw werk ruimte-ID-GUID in. * |
-| `workspace_key` | tekenreeks | Voer de GUID van de primaire sleutel van uw werk ruimte in. * |
+| `workspace_id` | tekenreeks | Voer de GUID van uw werk ruimte-ID in (zie tip). |
+| `workspace_key` | tekenreeks | Voer de GUID van de primaire sleutel van uw werk ruimte in (zie tip). |
 | `custom_log_table_name` | tekenreeks | Stel de naam in van de tabel waarin de logboeken worden opgenomen. Er kan slechts één tabel naam per uitvoer-invoeg toepassing worden geconfigureerd. De logboek tabel wordt weer gegeven in azure Sentinel onder **Logboeken**, in **tabellen** in de categorie **aangepaste logboeken** met een `_CL` achtervoegsel. |
 | `endpoint` | tekenreeks | Optioneel veld. Standaard is dit het Log Analytics-eind punt. Gebruik dit veld om een alternatief eind punt in te stellen. |
 | `time_generated_field` | tekenreeks | Optioneel veld. Met deze eigenschap wordt het standaard **TimeGenerated** -veld in log Analytics overschreven. Voer de naam van het tijds tempel veld in de gegevens bron in. De gegevens in het veld moeten voldoen aan de ISO 8601-indeling ( `YYYY-MM-DDThh:mm:ssZ` ) |
 | `key_names` | matrix | Geef een lijst met Log Analytics uitvoer schema velden op. Elk lijst item moet tussen enkele aanhalings tekens worden geplaatst en de items worden gescheiden door komma's en de volledige lijst tussen vier Kante haken. Zie onderstaand voorbeeld. |
-| `plugin_flush_interval` | getal | Optioneel veld. Stel in om het maximum interval (in seconden) te definiëren tussen het verzenden van berichten naar Log Analytics. De standaard waarde is 5. |
-    | `amount_resizing` | booleaans | Waar of onwaar. Het mechanisme voor automatisch schalen in-of uitschakelen, waarbij de grootte van de bericht buffer wordt aangepast op basis van het volume van de ontvangen logboek gegevens. |
+| `plugin_flush_interval` | getal | Optioneel veld. Stel in om het maximum interval (in seconden) te definiëren tussen het verzenden van berichten naar Log Analytics. De standaardwaarde is 5. |
+| `amount_resizing` | booleaans | Waar of onwaar. Het mechanisme voor automatisch schalen in-of uitschakelen, waarbij de grootte van de bericht buffer wordt aangepast op basis van het volume van de ontvangen logboek gegevens. |
 | `max_items` | getal | Optioneel veld. Geldt alleen indien `amount_resizing` ingesteld op ' false '. Gebruiken om een limiet in te stellen voor de buffer grootte van het bericht (in records). De standaardwaarde is 2000.  |
 | `azure_resource_id` | tekenreeks | Optioneel veld. Hiermee definieert u de ID van de Azure-resource waarin de gegevens zich bevinden. <br>De resource-ID-waarde is vooral nuttig als u [resource-context RBAC](resource-context-rbac.md) gebruikt om alleen toegang te bieden tot specifieke gegevens. |
 | | | |
 
-* U kunt de werk ruimte-ID en primaire sleutel vinden in de werkruimte resource, onder **agents beheren**.
+> [!TIP]
+> - U kunt de werk ruimte-ID en primaire sleutel vinden in de werkruimte resource, onder **agents beheren**.
+> - Omdat referenties en andere gevoelige informatie die zijn opgeslagen in een lees bare vorm in de configuratie bestanden niet in overeenstemming zijn met de best practices voor **beveiliging, wordt** u ten zeerste aangeraden om de **Logstash-sleutel opslag** te gebruiken om uw **werk ruimte-id** en de **primaire sleutel van de werk ruimte** in de configuratie veilig op te nemen. Raadpleeg [de documentatie voor Elastic](https://www.elastic.co/guide/en/elasticsearch/reference/current/get-started-logstash-user.html) voor meer informatie.
 
 #### <a name="sample-configurations"></a>Voorbeeld configuraties
 
@@ -175,5 +179,5 @@ Als u geen gegevens in dit logboek bestand ziet, genereert en verzendt u gebeurt
 ## <a name="next-steps"></a>Volgende stappen
 
 In dit document hebt u geleerd hoe u Logstash kunt gebruiken om externe gegevens bronnen met Azure Sentinel te verbinden. Zie de volgende artikelen voor meer informatie over Azure Sentinel:
-- Meer informatie over het [verkrijgen van inzicht in uw gegevens en mogelijke bedreigingen](quickstart-get-visibility.md).
+- Meer informatie over hoe u [inzicht krijgt in uw gegevens en mogelijke bedreigingen](quickstart-get-visibility.md).
 - Ga aan de slag met het detecteren van bedreigingen met Azure Sentinel, met behulp [van ingebouwde](tutorial-detect-threats-built-in.md) of [aangepaste](tutorial-detect-threats-custom.md) regels.

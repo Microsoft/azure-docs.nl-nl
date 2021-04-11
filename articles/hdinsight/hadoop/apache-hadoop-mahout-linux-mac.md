@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 05/14/2020
-ms.openlocfilehash: c31ffaf094801bdd49e5800bd338a15d8b8315f6
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 4c3484c1e65eb70be484a4a2eebda21a41dbf1ea
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98946500"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936866"
 ---
 # <a name="generate-recommendations-using-apache-mahout-in-azure-hdinsight"></a>Aanbevelingen genereren met Apache mahout in azure HDInsight
 
@@ -18,7 +18,7 @@ Meer informatie over het gebruik van de [Apache Mahout](https://mahout.apache.or
 
 Mahout is een [machine learning](https://en.wikipedia.org/wiki/Machine_learning) -bibliotheek voor Apache Hadoop. Mahout bevat algoritmen voor het verwerken van gegevens, zoals filteren, classificatie en clustering. In dit artikel gebruikt u een aanbevelings Engine om film aanbevelingen te genereren die zijn gebaseerd op films die uw vrienden hebben gezien.
 
-Zie [hdinsight-versies en Apache Hadoop onderdelen](../hdinsight-component-versioning.md)voor meer informatie over de versie van mahout in hdinsight.
+Mahout is beschik baarheid in HDInsight 3,6 en is niet beschikbaar in HDInsight 4,0. Zie voor meer informatie over de versie van mahout in HDInsight [hdinsight 3,6-onderdeel versies](../hdinsight-36-component-versioning.md).
 
 ## <a name="prerequisites"></a>Vereisten
 

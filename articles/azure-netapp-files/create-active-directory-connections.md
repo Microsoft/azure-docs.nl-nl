@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 03/24/2021
+ms.date: 04/06/2021
 ms.author: b-juche
-ms.openlocfilehash: d238b566c1286b9b765fb574cd72ee68ccf4b4a7
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 27c2ab96106bbfcc05b8fa12daf9b6f7b816c5c7
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105048371"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106579981"
 ---
 # <a name="create-and-manage-active-directory-connections-for-azure-netapp-files"></a>Active Directory verbindingen voor Azure NetApp Files maken en beheren
 
@@ -215,7 +215,9 @@ Deze instelling wordt geconfigureerd in de **Active Directory verbindingen** ond
         Gebruikers accounts die worden gebruikt voor het installeren van SQL Server in bepaalde scenario's, moeten bijvoorbeeld verhoogde beveiligings bevoegdheden krijgen. Als u een niet-beheerders account (domein) gebruikt om SQL Server te installeren en aan het account geen beveiligings bevoegdheid is toegewezen, moet u beveiligings bevoegdheid toevoegen aan het account.  
 
         > [!IMPORTANT]
-        > Het domein account dat wordt gebruikt voor het installeren van SQL Server moet al bestaan voordat u het toevoegt aan het veld **gebruikers met beveiligings bevoegdheden** . Wanneer u het account van de SQL Server Installer toevoegt aan gebruikers van de **beveiligings bevoegdheid**, kan de Azure NetApp files-service het account valideren door contact op te nemen met de domein controller. De opdracht kan mislukken als er geen verbinding kan worden gemaakt met de domein controller.  
+        > Als u de functie **gebruikers voor beveiligings bevoegdheden** wilt gebruiken, moet u een Waitlist-aanvraag indienen via de **[Waitlist-inzendings pagina Azure NetApp files SMB Continuous Availability shares Public Preview](https://aka.ms/anfsmbcasharespreviewsignup)**. Wacht op een officiële bevestigings-e-mail van het Azure NetApp Files team voordat u deze functie gebruikt.        
+        > 
+        > Het gebruik van deze functie is optioneel en wordt alleen ondersteund voor SQL Server. Het domein account dat wordt gebruikt voor het installeren van SQL Server moet al bestaan voordat u het toevoegt aan het veld **gebruikers met beveiligings bevoegdheden** . Wanneer u het account van de SQL Server Installer toevoegt aan gebruikers van de **beveiligings bevoegdheid**, kan de Azure NetApp files-service het account valideren door contact op te nemen met de domein controller. De opdracht kan mislukken als er geen verbinding kan worden gemaakt met de domein controller.  
 
         `SeSecurityPrivilege`Zie [SQL Server-installatie mislukt als het installatie account geen bepaalde gebruikers rechten heeft](/troubleshoot/sql/install/installation-fails-if-remove-user-right), voor meer informatie over en SQL Server.
 

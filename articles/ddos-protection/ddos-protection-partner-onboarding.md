@@ -3,17 +3,17 @@ title: Partnering met Azure DDoS Protection Standard
 description: Inzicht in de mogelijkheden van partner ondersteuning die worden ingeschakeld door Azure DDoS Protection Standard.
 ms.service: ddos-protection
 documentationcenter: na
-author: yitoh
+author: aletheatoh
 mms.devlang: na
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: kumud
-ms.openlocfilehash: a7a21dcaea22ed0d1c077d0c42ddb5b4bd50d24f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 625f77a6d9dbeaf612df884434ab39b943587791
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99539329"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107103195"
 ---
 # <a name="partnering-with-azure-ddos-protection-standard"></a>Partnering met Azure DDoS Protection Standard
 In dit artikel worden de mogelijkheden voor partner ondersteuning beschreven die worden ingeschakeld door de Azure DDoS Protection Standard. Dit artikel is bedoeld om product managers en rollen van bedrijfs ontwikkeling inzicht te geven in de investerings paden en om inzicht te krijgen in de verwerkings waarde van de partner.

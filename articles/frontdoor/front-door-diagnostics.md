@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/23/2020
 ms.author: yuajia
-ms.openlocfilehash: 58db217ca173acbe0356596de916216c4ab7f241
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a972123604cafbfc4c6753c1fe3ad21147b53b2d
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101715544"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106550656"
 ---
 # <a name="monitoring-metrics-and-logs-in-azure-front-door"></a>Metrische gegevens en logboeken bewaken in azure front deur
 
@@ -71,7 +71,7 @@ Diagnostische logboeken voor uw front-deur configureren:
 
 3. Selecteer **Diagnostische gegevens inschakelen**. Archiveer Diagnostische logboeken Samen met metrische gegevens naar een opslag account, stream ze naar een Event Hub of stuur ze naar Azure Monitor-Logboeken.
 
-De voor deur bevat momenteel Diagnostische logboeken (batched per uur). Diagnostische logboeken bieden afzonderlijke API-aanvragen voor elke vermelding met het volgende schema:
+De voor deur bevat momenteel Diagnostische logboeken. Diagnostische logboeken bieden afzonderlijke API-aanvragen voor elke vermelding met het volgende schema:
 
 | Eigenschap  | Beschrijving |
 | ------------- | ------------- |

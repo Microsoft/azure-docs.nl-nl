@@ -4,12 +4,12 @@ description: Hierin wordt een overzicht gegeven van de ondersteunings instelling
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.custom: references_regions
-ms.openlocfilehash: 82de73944bd833ec5f921e07a29960ac6d175f8d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a0150a4c1a8fbd756de6fc16142f0115b05098ed
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/30/2021
-ms.locfileid: "102609784"
+ms.locfileid: "105967826"
 ---
 # <a name="support-matrix-for-azure-vm-backup"></a>Ondersteuningsmatrix voor back-up van Azure-VM
 
@@ -153,6 +153,7 @@ Back-ups van virtuele Azure-machines met vergren delingen | Niet ondersteund voo
 [Spot-VM's](../virtual-machines/spot-vms.md) | Niet-ondersteunde. Azure Backup de locatie van de virtuele machines als gewone virtuele machines van Azure herstelt.
 [Voor Azure toegewezen host](../virtual-machines/dedicated-hosts.md) | Ondersteund
 Windows-opslag ruimten configureren van zelfstandige virtuele machines in azure | Ondersteund
+[Azure VM Scale Sets](../virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes.md#scale-sets-with-flexible-orchestration) | Wordt ondersteund voor zowel uniforme als flexibele indelings modellen voor het maken van back-ups en het herstellen van één Azure VM.
 
 ## <a name="vm-storage-support"></a>Ondersteuning voor VM-opslag
 

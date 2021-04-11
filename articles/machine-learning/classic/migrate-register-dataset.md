@@ -9,10 +9,10 @@ author: xiaoharper
 ms.author: zhanxia
 ms.date: 02/04/2021
 ms.openlocfilehash: 4c04dd5a2b41b3db54b20c9e514767453951cc35
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103564904"
 ---
 # <a name="migrate-a-studio-classic-dataset-to-azure-machine-learning"></a>Een (klassieke) Studio-gegevensset migreren naar Azure Machine Learning
@@ -101,7 +101,7 @@ Nadat u het gegevens bestand hebt gedownload, kunt u de gegevensset registreren 
 
 Als uw gegevens zich al in een service voor Cloud opslag bevindt en u uw gegevens op de oorspronkelijke locatie wilt bewaren. U kunt een van de volgende opties gebruiken:
 
-|Opname methode|Beschrijving|
+|Opname methode|Description|
 |---| --- |
 |Een Azure Machine Learning-gegevensset registreren|Gegevens opnemen uit lokale en online gegevens bronnen (BLOB, ADLS Gen1, ADLS Gen2, bestands share, SQL-data base). <br><br>Hiermee maakt u een verwijzing naar de gegevens bron, die vertraagd geëvalueerd tijdens runtime. Gebruik deze optie als u herhaaldelijk toegang hebt tot deze gegevensset en geavanceerde gegevens functies wilt inschakelen, zoals versie beheer en bewaking van gegevens.
 |Gegevens module importeren|Gegevens opnemen uit online gegevens bronnen (BLOB, ADLS Gen1, ADLS Gen2, bestands share, SQL-data base). <br><br> De gegevensset wordt alleen geïmporteerd in de huidige uitvoering van de ontwerp pijplijn.

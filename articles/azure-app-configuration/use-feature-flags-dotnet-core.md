@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 09/17/2020
 ms.author: alkemper
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: 327bc687c466a30d4f92810e48dc08f822f752ec
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 4d54e1ff07b250b5595d2f8aee5f022bd2359721
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101726424"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105729504"
 ---
 # <a name="tutorial-use-feature-flags-in-an-aspnet-core-app"></a>Zelfstudie: Functievlaggen gebruiken in een ASP.NET Core-app
 
@@ -218,7 +218,7 @@ Standaard wordt het gedeelte `FeatureManagement` van dit JSON-document gebruikt 
 
 ## <a name="use-dependency-injection-to-access-ifeaturemanager"></a>Afhankelijkheids injectie gebruiken om toegang te krijgen tot IFeatureManager 
 
-Voor sommige bewerkingen, zoals het hand matig controleren van functie vlag waarden, moet u een instantie van [IFeatureManager](/dotnet/api/microsoft.featuremanagement.ifeaturemanager?view=azure-dotnet-preview)ophalen. In ASP.NET Core MVC kunt u de functie beheer openen `IFeatureManager` via afhankelijkheids injectie. In het volgende voor beeld wordt een argument van `IFeatureManager` het type toegevoegd aan de hand tekening van de constructor voor een controller. De runtime lost de verwijzing automatisch op en biedt een van de interface bij het aanroepen van de constructor. Als u een toepassings sjabloon gebruikt waarbij de controller al een of meer argumenten voor het invoegen van afhankelijkheden heeft in de constructor, bijvoorbeeld `ILogger` , kunt u gewoon toevoegen `IFeatureManager` als een extra argument:
+Voor sommige bewerkingen, zoals het hand matig controleren van functie vlag waarden, moet u een instantie van [IFeatureManager](/dotnet/api/microsoft.featuremanagement.ifeaturemanager?preserve-view=true&view=azure-dotnet-preview)ophalen. In ASP.NET Core MVC kunt u de functie beheer openen `IFeatureManager` via afhankelijkheids injectie. In het volgende voor beeld wordt een argument van `IFeatureManager` het type toegevoegd aan de hand tekening van de constructor voor een controller. De runtime lost de verwijzing automatisch op en biedt een van de interface bij het aanroepen van de constructor. Als u een toepassings sjabloon gebruikt waarbij de controller al een of meer argumenten voor het invoegen van afhankelijkheden heeft in de constructor, bijvoorbeeld `ILogger` , kunt u gewoon toevoegen `IFeatureManager` als een extra argument:
 
 ### <a name="net-5x"></a>[.NET 5. x](#tab/core5x)
     
@@ -322,7 +322,7 @@ public IActionResult Index()
 }
 ```
 
-Wanneer een MVC-controller of-actie wordt geblokkeerd omdat de vlag voor het bepalen van de functie is *uitgeschakeld*, wordt een geregistreerde [IDisabledFeaturesHandler](/dotnet/api/microsoft.featuremanagement.mvc.idisabledfeatureshandler?view=azure-dotnet-preview) -interface aangeroepen. De standaard `IDisabledFeaturesHandler`-interface retourneert een 404-statuscode naar de client zonder hoofdtekst van de reactie.
+Wanneer een MVC-controller of-actie wordt geblokkeerd omdat de vlag voor het bepalen van de functie is *uitgeschakeld*, wordt een geregistreerde [IDisabledFeaturesHandler](/dotnet/api/microsoft.featuremanagement.mvc.idisabledfeatureshandler?preserve-view=true&view=azure-dotnet-preview) -interface aangeroepen. De standaard `IDisabledFeaturesHandler`-interface retourneert een 404-statuscode naar de client zonder hoofdtekst van de reactie.
 
 ## <a name="mvc-views"></a>MVC-weergaven
 

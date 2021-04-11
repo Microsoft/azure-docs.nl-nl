@@ -11,10 +11,10 @@ ms.date: 10/22/2020
 ms.topic: troubleshooting
 ms.custom: troubleshooting, devx-track-python, contperf-fy21q2
 ms.openlocfilehash: 195942d1787cdef51ee480fa5c5595db99bc7c78
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102522084"
 ---
 # <a name="troubleshooting-machine-learning-pipelines"></a>Problemen met machine learning pijp lijnen oplossen
@@ -27,8 +27,8 @@ De volgende tabel bevat veelvoorkomende problemen bij het ontwikkelen van pijp l
 
 | Probleem | Mogelijke oplossing |
 |--|--|
-| Kan geen gegevens door geven aan de `PipelineData` map | Zorg ervoor dat u een map hebt gemaakt in het script dat overeenkomt met de locatie van de gegevens van de stap uitvoer. In de meeste gevallen definieert een invoer argument de uitvoermap en maakt u de map expliciet. Gebruiken `os.makedirs(args.output_dir, exist_ok=True)` om de uitvoermap te maken. Raadpleeg de [zelf studie](tutorial-pipeline-batch-scoring-classification.md#write-a-scoring-script) voor een score voorbeeld script waarin dit ontwerp patroon wordt weer gegeven. |
-| Afhankelijkheids fouten | Als er afhankelijkheids fouten in uw externe pijp lijn worden weer gegeven die niet zijn uitgevoerd tijdens het lokaal testen, moet u controleren of de afhankelijkheden en versies van de externe omgeving overeenkomen met die in uw test omgeving. (Zie [omgeving bouwen, in cache plaatsen en opnieuw gebruiken](./concept-environments.md#environment-building-caching-and-reuse)|
+| Kan geen gegevens door geven aan de `PipelineData` map | Zorg ervoor dat u een map hebt gemaakt in het script dat overeenkomt met de locatie van de gegevens van de stapuitvoer. In de meeste gevallen definieert een invoerargument de uitvoermap en maakt u vervolgens de map expliciet. Gebruik `os.makedirs(args.output_dir, exist_ok=True)` om de uitvoermap te maken. Raadpleeg de [zelf studie](tutorial-pipeline-batch-scoring-classification.md#write-a-scoring-script) voor een score voorbeeld script waarin dit ontwerp patroon wordt weer gegeven. |
+| Afhankelijkheidsfouten | Als er afhankelijkheidsfouten in uw externe pijplijn worden weergegeven die niet optraden tijdens het lokaal testen, controleert u of de afhankelijkheden en versies van de externe omgeving overeenkomen met die in uw testomgeving. (Zie [omgeving bouwen, in cache plaatsen en opnieuw gebruiken](./concept-environments.md#environment-building-caching-and-reuse)|
 | Dubbel zinnige fouten met Compute-doelen | Probeer de reken doelen te verwijderen en opnieuw te maken. Het opnieuw maken van Compute-doelen is snel en kan tijdelijke problemen oplossen. |
 | Pijp lijn waarbij de stappen niet opnieuw worden gebruikt | Het opnieuw gebruiken van de stap is standaard ingeschakeld, maar zorg ervoor dat u deze niet hebt uitgeschakeld in een pijplijn stap. Als opnieuw gebruiken is uitgeschakeld, `allow_reuse` wordt de para meter in de stap ingesteld op `False` . |
 | De pijp lijn wordt onnodig opnieuw uitgevoerd | Om ervoor te zorgen dat de stappen alleen worden uitgevoerd wanneer de onderliggende gegevens of scripts worden gewijzigd, moet u de bron code mappen voor elke stap loskoppelen. Als u dezelfde bron directory voor meerdere stappen gebruikt, kan het nodig zijn om niet-uitgevoerde opnieuw uit te voeren. Gebruik de `source_directory` para meter voor een pijplijn stap object om naar uw geïsoleerde map voor die stap te verwijzen en zorg ervoor dat u niet hetzelfde `source_directory` pad gebruikt voor meerdere stappen. |

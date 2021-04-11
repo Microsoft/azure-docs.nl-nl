@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: e598f16c6b441cf986c7ac82d67c037f75be8982
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102547438"
 ---
 #    <a name="named-entity-recognition-cognitive-skill"></a>Herkennings vaardigheid van benoemde entiteiten
@@ -46,14 +46,14 @@ Parameters zijn hoofdlettergevoelig.
 
 ## <a name="skill-inputs"></a>Vaardigheids invoer
 
-| Invoer naam      | Beschrijving                   |
+| Invoer naam      | Description                   |
 |---------------|-------------------------------|
 | languageCode  | Optioneel. De standaardinstelling is `"en"`.  |
 | tekst          | De tekst die moet worden geanalyseerd.          |
 
 ## <a name="skill-outputs"></a>Vaardigheids uitvoer
 
-| Uitvoer naam     | Beschrijving                   |
+| Uitvoer naam     | Description                   |
 |---------------|-------------------------------|
 | personen      | Een matrix met teken reeksen waarbij elke teken reeks de naam van een persoon vertegenwoordigt. |
 | locaties  | Een matrix met teken reeksen waarbij elke teken reeks een locatie vertegenwoordigt. |

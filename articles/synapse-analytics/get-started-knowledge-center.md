@@ -9,13 +9,13 @@ ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
-ms.date: 11/16/2020
-ms.openlocfilehash: 59364a0a2c1d1e411f41dc35dee812c8e920b72d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 04/04/2021
+ms.openlocfilehash: a26f46da7b392bd3b4a49aacb360a4c6147f8d2c
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "98209199"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106382637"
 ---
 # <a name="explore-the-synapse-knowledge-center"></a>Het Synapse Knowledge Center verkennen
 
@@ -47,6 +47,7 @@ In het **Knowledge Center** kunt u drie dingen doen:
 1. Klik op Run. Hiermee wordt alleen de code uitgevoerd die u hebt geselecteerd.
 
 ## <a name="loading-more-nyc-taxi-data"></a>Meer NYC Taxi-gegevens laden
+
 1. Ga naar het **kennis centrum** en klik op **Bladeren in Galerie**.
 1. Selecteer bovenaan het tabblad **SQL-scripts** .
 1. Selecteer het voor beeld van de gegevens opname van **het New York over taxi's-gegevensset laden** en klik op **door gaan**.
@@ -61,6 +62,6 @@ In het **Knowledge Center** kunt u drie dingen doen:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Aan de slag met Azure Synapse Analytics](get-started.md)
-* [Een werkruimte maken](quickstart-create-workspace.md)
-* [Serverloze SQL-pools gebruiken](quickstart-sql-on-demand.md)
+> [!div class="nextstepaction"]
+> [Een beheerder toevoegen](get-started-add-admin.md)
+

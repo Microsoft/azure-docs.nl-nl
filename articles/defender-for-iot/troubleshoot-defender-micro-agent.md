@@ -1,18 +1,18 @@
 ---
 title: Oplossen van problemen met micro agent voor Defender IoT (preview-versie)
 description: Meer informatie over het afhandelen van onverwachte of niet-verklarende fouten.
-ms.date: 1/24/2021
+ms.date: 4/5/2021
 ms.topic: reference
-ms.openlocfilehash: 51550a4d3e5042fed7cadc4eac10a0074e954f19
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3d52c4093c01d7e449c68b1c8143249b51f7061a
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104782449"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107011415"
 ---
 # <a name="defender-iot-micro-agent-troubleshooting-preview"></a>Oplossen van problemen met micro agent voor Defender IoT (preview-versie)
 
-In het geval van onverwachte of onuitgelegde fouten gebruikt u de volgende probleemoplossings methoden om te proberen uw problemen op te lossen. U kunt ook het Azure Defender voor IoT-product team bereiken voor hulp als dat nodig is.   
+Als er een onverwachte fout optreedt, kunt u deze probleemoplossings methoden gebruiken in een poging om het probleem op te lossen. U kunt ook het Azure Defender voor IoT-product team bereiken voor hulp als dat nodig is.   
 
 ## <a name="service-status"></a>Status van services 
 
@@ -34,9 +34,9 @@ Als de service wordt weer gegeven als `inactive` , gebruikt u de volgende opdrac
 systemctl start defender-iot-micro-agent.service 
 ```
 
-U weet dat de service vastloopt als de uptime van het proces te kort is. U kunt dit probleem oplossen door de logboeken te bekijken.
+U weet dat de service vastloopt als de uptime van het proces minder dan 2 minuten is. U kunt dit probleem oplossen door [de logboeken te bekijken](#review-the-logs).
 
-## <a name="review-logs"></a>Logboeken controleren 
+## <a name="validate-micro-agent-root-privileges"></a>Hoofd bevoegdheden van micro agent valideren
 
 Gebruik de volgende opdracht om te controleren of de Defender IoT micro Agent-service wordt uitgevoerd met hoofd bevoegdheden.
 
@@ -45,12 +45,25 @@ ps -aux | grep " defender-iot-micro-agent"
 ```
 
 :::image type="content" source="media/troubleshooting/root-privileges.png" alt-text="Controleer of de Defender voor IoT micro Agent-service wordt uitgevoerd met hoofd bevoegdheden.":::
+## <a name="review-the-logs"></a>Raadpleeg de logboeken 
 
-Als u de logboeken wilt weer geven, gebruikt u de volgende opdracht:  
+Gebruik de volgende opdracht om de logboeken te bekijken:  
 
 ```azurecli
 sudo journalctl -u defender-iot-micro-agent | tail -n 200 
 ```
+
+### <a name="quick-log-review"></a>Snelle logboek controle
+
+Als er een probleem optreedt tijdens het uitvoeren van de micro agent, kunt u de micro agent uitvoeren in een tijdelijke status, zodat u de logboeken weer geven met de volgende opdracht:
+
+```azurecli
+sudo systectl stop defender-iot-micro-agent
+cd /var/defender_iot_micro_agent/
+sudo ./defender_iot_micro_agent
+```
+
+## <a name="restart-the-service"></a>Start de service opnieuw op
 
 Als u de service opnieuw wilt starten, gebruikt u de volgende opdracht: 
 

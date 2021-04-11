@@ -8,12 +8,12 @@ ms.topic: overview
 ms.workload: infrastructure-services
 ms.date: 02/18/2021
 ms.author: duau
-ms.openlocfilehash: 574340825567dcd512a5da1b311c57fe12954e34
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 5c3ae5c7b1c45d170548f6fa00481094117e1737
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102030542"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105937359"
 ---
 # <a name="what-is-azure-front-door-standardpremium-preview"></a>Wat is Azure front deur Standard/Premium (preview)?
 
@@ -28,7 +28,7 @@ Met Azure front deur Standard/Premium kunt u uw wereld wijde consumenten-en bedr
 
 Azure front deur Standard/Premium werkt op laag 7 (HTTP/HTTPS-laag) met behulp van het anycast-protocol met Split TCP en het wereld wijde netwerk van micro soft om de wereld wijde connectiviteit te verbeteren. Op basis van uw aangepaste routerings methode met behulp van de ingestelde regels, kunt u ervoor zorgen dat de Azure-front-deur uw client aanvragen doorstuurt naar de snelste en meest beschik bare oorsprong. Een oorsprong van een toepassing is een Internet gerichte service die binnen of buiten Azure wordt gehost. Azure front deur Standard/Premium biedt een reeks methoden voor het routeren van verkeer en de status bewakings opties voor de oorsprong voor verschillende toepassings behoeften en automatische failover-scenario's. Front Door is vergelijkbaar met Traffic Manager en bestand tegen storingen, waaronder het uitvallen van een hele Azure-regio.
 
-Azure front-deur beveiligt ook uw app aan de rand met geïntegreerde firewall beveiliging van webtoepassingen, bot-beveiliging en ingebouwde set DDoS-beveiliging (Distributed Denial of service) van 3 of laag 4. Ook wordt uw persoonlijke back-ends beveiligd met een privé koppelings service. Azure front-deur biedt u de best practice-beveiliging van micro soft op wereld wijde schaal.  
+Azure front-deur beveiligt ook uw app aan de rand met geïntegreerde firewall beveiliging van webtoepassingen, bot-beveiliging en ingebouwde Layer 3/Layer 4 DDoS-beveiliging (Distributed Denial of service). Ook wordt uw persoonlijke back-ends beveiligd met een privé koppelings service. Azure front-deur biedt u de best practice-beveiliging van micro soft op wereld wijde schaal.  
 
 >[!NOTE]
 > Azure biedt een pakket volledig beheerde oplossingen voor taakverdeling voor uw scenario's.

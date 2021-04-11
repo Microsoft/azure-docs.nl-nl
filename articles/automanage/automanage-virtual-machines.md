@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 02/23/2021
 ms.author: deanwe
 ms.custom: references_regions
-ms.openlocfilehash: 1d3b2174df5dd83852ce120ec6693ae187a3e795
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 973bd1ac121513a297574bbb37d1663b5a18c345
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101643513"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106276906"
 ---
 # <a name="azure-automanage-for-virtual-machines"></a>Azure automanage voor virtuele machines
 
@@ -70,6 +70,8 @@ Als u automanage inschakelt met een nieuw account voor automanage:
 Als u automanage inschakelt met een bestaand automanage-account:
 * Rol **Inzender** voor de resource groep die uw vm's bevat
 
+Voor het account voor automatisch beheer worden **Inzender en** machtigings machtigingen voor het **resource beleid** verleend voor het uitvoeren van acties op automatisch beheerde computers.
+
 > [!NOTE]
 > Als u automanage wilt gebruiken op een virtuele machine die is verbonden met een werk ruimte in een ander abonnement, moet u de hiervoor vermelde machtigingen hebben voor elk abonnement.
 
@@ -94,6 +96,19 @@ Als dit de eerste keer is dat u automatisch beheer voor uw virtuele machine insc
 
 De enige keer dat u moet kunnen communiceren met deze virtuele machine om deze services te beheren, is in het geval dat u de virtuele machine hebt geprobeerd te herstellen, maar dit is niet gelukt. Als uw virtuele machine is hersteld, wordt deze weer in overeenstemming gebracht zonder dat u wordt gewaarschuwd. Zie [status van virtuele machines](#status-of-vms)voor meer informatie.
 
+## <a name="enabling-automanage-for-vms-using-azure-policy"></a>Inschakelen van automanage voor Vm's met behulp van Azure Policy
+U kunt automatisch beheer op Vm's op schaal inschakelen met behulp van de ingebouwde Azure Policy. Het beleid heeft een DeployIfNotExists-effect, wat betekent dat alle in aanmerking komende Vm's die zich binnen het bereik van het beleid bevinden automatisch worden doorgevoerd om aanbevolen procedures voor het Automate van vm's te beheren.
+
+Een directe koppeling naar het beleid is [hier](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F270610db-8c04-438a-a739-e8e6745b22d3).
+
+### <a name="how-to-apply-the-policy"></a>Het beleid Toep assen
+1. Klik op de knop **toewijzen** bij het weer geven van de beleids definitie
+1. Selecteer het bereik waarop u het beleid wilt Toep assen (kan beheer groep, abonnement of resource groep zijn)
+1. Onder **para meters** geeft u para meters op voor het account voor automatische beheer, het configuratie profiel en het effect (het effect moet meestal worden DeployIfNotExists)
+    1. Als u geen automatisch beheer account hebt, moet u er [een maken](#create-an-automanage-account).
+1. Schakel onder **herstel** het selectie vakje ' Klik op een herstel taak ' in. Hiermee wordt onboarding voor automatisch beheer uitgevoerd.
+1. Klik op **controleren + maken** en zorg ervoor dat alle instellingen goed zijn.
+1. Klik op **Create**.
 
 ## <a name="environment-configuration"></a>Omgevingsconfiguratie
 
@@ -142,6 +157,43 @@ Als u automanage met een bestaand automanage-account inschakelt, moet u de rol *
 > [!NOTE]
 > Wanneer u aanbevolen procedures voor automatisch beheer uitschakelt, blijven de machtigingen voor het automatisch beheren van het account voor gekoppelde abonnementen behouden. Verwijder de machtigingen hand matig door naar de IAM-pagina van het abonnement te gaan of door het account voor automatisch beheer te verwijderen. Het automanage-account kan niet worden verwijderd als er nog computers worden beheerd.
 
+### <a name="create-an-automanage-account"></a>Een automanage-account maken
+U kunt een account voor automanage maken via de portal of met een ARM-sjabloon.
+
+#### <a name="portal"></a>Portal
+1. Ga naar de Blade **automanage** in de portal
+1. Klik op **inschakelen op bestaande machine**
+1. Klik onder **Geavanceerd** op ' een nieuw account maken '
+1. Vul de vereiste velden in en klik op **maken**
+
+#### <a name="arm-template"></a>ARM-sjabloon
+Sla de volgende ARM-sjabloon op als `azuredeploy.json` en voer de volgende opdracht uit: `az deployment group create --resource-group <resource group name> --template-file azuredeploy.json`
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "automanageAccountName": {
+            "type": "String"
+        },
+        "location": {
+            "type": "String"
+        }
+    },
+    "resources": [
+        {
+            "apiVersion": "2020-06-30-preview",
+            "type": "Microsoft.Automanage/accounts",
+            "name": "[parameters('automanageAccountName')]",
+            "location": "[parameters('location')]",
+            "identity": {
+                "type": "SystemAssigned"
+            }
+        }
+    ]
+}
+```
 
 ## <a name="status-of-vms"></a>Status van virtuele machines
 

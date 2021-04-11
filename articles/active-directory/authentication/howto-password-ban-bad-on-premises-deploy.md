@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8cae19bd07e1cc87a0aaa25e47cf5f431d566ba
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5134c0eeaf3ebd1467b35cf825aa64bd1b445bd5
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101653810"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107010576"
 ---
 # <a name="plan-and-deploy-on-premises-azure-active-directory-password-protection"></a>On-premises Azure Active Directory wachtwoord beveiliging plannen en implementeren
 
@@ -88,7 +88,7 @@ De volgende kern vereisten zijn van toepassing:
 * De Key Distribution-service moet zijn ingeschakeld op alle domein controllers in het domein waarop Windows Server 2012 en hoger wordt uitgevoerd. Deze service wordt standaard ingeschakeld via hand matige trigger start.
 
 * Er moet een netwerk verbinding zijn tussen ten minste één domein controller in elk domein en ten minste één server die als host fungeert voor de proxy service voor Azure AD-wachtwoord beveiliging. Deze connectiviteit moet toestaan dat de domein controller toegang krijgt tot de RPC-eindpunttoewijzer poort 135 en de RPC-server poort op de proxy service.
-    * De RPC-server poort is standaard een dynamische RPC-poort, maar kan worden geconfigureerd voor het [gebruik van een statische poort](#static).
+    * De RPC-server poort is standaard een dynamische RPC-poort van het bereik (49152-65535), maar kan wel worden geconfigureerd voor het [gebruik van een statische poort](#static).
 * Alle computers waarop de Azure AD-proxy service voor wachtwoord beveiliging wordt geïnstalleerd, moeten netwerk toegang hebben tot de volgende eind punten:
 
     |**Eindpunt**|**Doel**|

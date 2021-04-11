@@ -6,10 +6,10 @@ author: bwren
 ms.author: bwren
 ms.date: 02/26/2021
 ms.openlocfilehash: 0eaa73fa7e0a9896a875af7e3a3aab22db2a37d0
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104657056"
 ---
 # <a name="collect-windows-event-log-data-sources-with-log-analytics-agent"></a>Gegevens bronnen van Windows-gebeurtenis logboeken verzamelen met Log Analytics-agent
@@ -66,7 +66,7 @@ Windows-gebeurtenis records hebben een type **gebeurtenis** en hebben de eigensc
 ## <a name="log-queries-with-windows-events"></a>Query's vastleggen in Logboeken met Windows-gebeurtenissen
 De volgende tabel bevat verschillende voor beelden van logboek query's waarmee Windows-gebeurtenis records worden opgehaald.
 
-| Query’s uitvoeren | Beschrijving |
+| Query | Description |
 |:---|:---|
 | Gebeurtenis |Alle Windows-gebeurtenissen. |
 | Gebeurtenis &#124; waarbij EventLevelName = = "Error" |Alle Windows-gebeurtenissen met de ernst van de fout. |

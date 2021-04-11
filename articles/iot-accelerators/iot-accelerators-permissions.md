@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: dobett
-ms.openlocfilehash: 5a088cb07fa74b65e497de54be8c97bd51d31c16
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e3c9296a909ba23ee8a3475149911af629a01b1a
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97387833"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106167461"
 ---
 # <a name="use-the-azureiotsolutionscom-site-to-deploy-your-solution-accelerator"></a>De azureiotsolutions.com-site gebruiken voor het implementeren van uw oplossings versneller
 
@@ -54,7 +54,7 @@ Raadpleeg de volgende bronnen voor meer informatie over gebruikers en rollen in 
 
 ## <a name="choose-your-device"></a>Uw apparaat kiezen
 
-De AzureIoTSolutions.com-site is gekoppeld aan het [Azure Certified for IOT-apparaat Catalog](https://catalog.azureiotsolutions.com/).
+De AzureIoTSolutions.com-site is gekoppeld aan het [Azure Certified for IOT-apparaat Catalog](https://devicecatalog.azure.com/).
 
 De catalogus bevat honderden gecertificeerde IoT-hardwareapparaten waarmee u verbinding kunt maken met uw oplossings Accelerators om uw IoT-oplossing te bouwen.
 

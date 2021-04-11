@@ -2,17 +2,19 @@
 title: Bicep-modules
 description: Hierin wordt beschreven hoe u een module definieert en gebruikt, en hoe u module bereik kunt gebruiken.
 ms.topic: conceptual
-ms.date: 03/25/2021
-ms.openlocfilehash: 7a680e8aa0fa4d5ef9cac7f9e7ba07a3aa4ee1e2
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.date: 03/30/2021
+ms.openlocfilehash: 6c325bbbe265e13241119761373985ca4552b158
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/30/2021
-ms.locfileid: "105611732"
+ms.locfileid: "105967877"
 ---
 # <a name="use-bicep-modules-preview"></a>Bicep-modules (preview-versie) gebruiken
 
-Met Bicep kunt u een complexe oplossing in modules opsplitsen. Een Bicep-module is een verzameling van een of meer resources die samen moeten worden geïmplementeerd. Modules abstracten complexe details van de onbewerkte resource declaratie, waardoor de Lees baarheid kan toenemen. U kunt deze modules opnieuw gebruiken en delen met anderen. Gecombineerd met [sjabloon specificaties](./template-specs.md)maakt het een manier om de modulariteit en code hergebruik toe te voegen. Zie [zelf studie: Bicep-modules toevoegen](./bicep-tutorial-add-modules.md)voor een zelf studie.
+Met Bicep kunt u een complexe oplossing in modules opsplitsen. Een Bicep-module is een verzameling van een of meer resources die samen moeten worden geïmplementeerd. Modules abstracten complexe details van de onbewerkte resource declaratie, waardoor de Lees baarheid kan toenemen. U kunt deze modules opnieuw gebruiken en delen met anderen. Gecombineerd met [sjabloon specificaties](./template-specs.md)maakt het een manier om de modulariteit en code hergebruik toe te voegen. Bicep-modules worden omgezet in één ARM-sjabloon met [geneste sjablonen](./linked-templates.md#nested-template) voor implementatie. In Bicep wordt [_dependsOn_](./template-syntax.md#resources) automatisch afgehandeld.
+
+Zie [zelf studie: Bicep-modules toevoegen](./bicep-tutorial-add-modules.md)voor een zelf studie.
 
 ## <a name="define-modules"></a>Modules definiëren
 

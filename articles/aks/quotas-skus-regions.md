@@ -4,17 +4,17 @@ titleSuffix: Azure Kubernetes Service
 description: Meer informatie over de standaard quota's, de beperkte VM-groottes voor knoop punten en de beschik baarheid van regio's van de Azure Kubernetes-service (AKS).
 services: container-service
 ms.topic: conceptual
-ms.date: 04/09/2019
-ms.openlocfilehash: 9592b03f5bd9e9436db5665e040b4afd3b68b764
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 03/25/2021
+ms.openlocfilehash: 3e1e74834153584525d2093d2a1bb8ba8e991e5a
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "87562732"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107011461"
 ---
 # <a name="quotas-virtual-machine-size-restrictions-and-region-availability-in-azure-kubernetes-service-aks"></a>Quota’s, groottebeperkingen voor virtuele machines, en beschikbaarheid in regio’s in Azure Kubernetes Service (AKS)
 
-Alle Azure-Services hebben standaard limieten en-quota ingesteld voor resources en functies. Bepaalde VM-Sku's (virtuele machine) zijn ook beperkt voor gebruik.
+Alle Azure-Services stellen standaard limieten en-quota voor bronnen en functies in, inclusief gebruiks beperkingen voor bepaalde virtuele machines van de VM.
 
 In dit artikel worden de standaard resource limieten beschreven voor Azure Kubernetes service (AKS)-resources en de beschik baarheid van AKS in azure-regio's.
 
@@ -27,7 +27,9 @@ In dit artikel worden de standaard resource limieten beschreven voor Azure Kuber
 Alle andere beperkingen voor netwerk, berekening en opslag zijn van toepassing op de ingerichte infrastructuur. Zie [Azure-abonnement en service limieten](../azure-resource-manager/management/azure-subscription-service-limits.md)voor de relevante limieten.
 
 > [!IMPORTANT]
-> Wanneer u een AKS-cluster bijwerkt, worden er tijdelijk extra resources verbruikt. Deze resources omvatten beschik bare IP-adressen in een subnet van een virtueel netwerk of een vCPU-quotum van een virtuele machine. Als u Windows Server-containers gebruikt, is de enige geviseerde aanpak voor het Toep assen van de meest recente updates op de knoop punten het uitvoeren van een upgrade bewerking. Een mislukte upgrade van een cluster kan erop wijzen dat u niet over de beschik bare IP-adres ruimte of het vCPU quotum beschikt om deze tijdelijke bronnen te verwerken. Zie [een knooppunt groep bijwerken in AKS][nodepool-upgrade]voor meer informatie over het upgrade proces voor Windows Server-knoop punten.
+> Wanneer u een AKS-cluster bijwerkt, worden er tijdelijk extra resources verbruikt. Deze resources omvatten beschik bare IP-adressen in een subnet van een virtueel netwerk of een vCPU-quotum van een virtuele machine. 
+>
+> Voor Windows Server-containers kunt u een upgrade bewerking uitvoeren om de nieuwste knooppunt updates toe te passen. Als u niet beschikt over de beschik bare IP-adres ruimte of het vCPU-quotum voor het afhandelen van deze tijdelijke bronnen, mislukt het upgrade proces van het cluster. Zie [een knooppunt groep bijwerken in AKS][nodepool-upgrade]voor meer informatie over het upgrade proces voor Windows Server-knoop punten.
 
 ## <a name="restricted-vm-sizes"></a>Beperkte VM-grootten
 
@@ -49,7 +51,7 @@ Zie [AKS Gewest Availability][region-availability](Engelstalig) voor de meest re
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Bepaalde standaardlimieten en -quota kunnen worden verhoogd. Als uw resource een verhoging ondersteunt, vraagt u de verhoging via een [Azure-ondersteunings aanvraag][azure-support] (voor **type probleem**, selecteert u **quotum**).
+U kunt bepaalde standaard limieten en-quota verhogen. Als uw resource een verhoging ondersteunt, vraagt u de verhoging via een [Azure-ondersteunings aanvraag][azure-support] (voor **type probleem**, selecteert u **quotum**).
 
 <!-- LINKS - External -->
 [azure-support]: https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest

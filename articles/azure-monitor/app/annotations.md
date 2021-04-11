@@ -3,12 +3,12 @@ title: Release aantekeningen voor Application Insights | Microsoft Docs
 description: Voeg implementatie-of build markeringen toe aan uw grafieken met metrische gegevens Verkenner in Application Insights.
 ms.topic: conceptual
 ms.date: 08/14/2020
-ms.openlocfilehash: 776efd56aaa523d1c2621c51cba0446a42bb7411
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9132e65e4705fd9125d97a5e095fe5f0850229a2
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103461909"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107011047"
 ---
 # <a name="annotations-on-metric-charts-in-application-insights"></a>Aantekeningen op metrische grafieken in Application Insights
 
@@ -96,7 +96,10 @@ Ga naar **Geavanceerde instellingen** en selecteer **aantekeningen weer geven** 
 Selecteer een markering voor aantekeningen om details over de release te openen, met inbegrip van de aanvrager, de bron beheer vertakking, de release pijplijn en de omgeving.
 
 ## <a name="create-custom-annotations-from-powershell"></a>Aangepaste aantekeningen maken vanuit Power shell
-U kunt het Power shell-script CreateReleaseAnnotation van GitHub gebruiken om aantekeningen te maken op basis van elk gewenst proces, zonder Azure DevOps te gebruiken.
+U kunt het Power shell-script CreateReleaseAnnotation gebruiken om aantekeningen te maken op basis van elk gewenst proces, zonder Azure DevOps te gebruiken.
+
+> [!IMPORTANT]
+> Als u Power shell 7,1 gebruikt, voegt u `-SkipHttpErrorCheck` aan het einde van regel 26 toe. Bijvoorbeeld: `$request = Invoke-WebRequest -Uri $fwLink -MaximumRedirection 0 -UseBasicParsing -ErrorAction Ignore -SkipHttpErrorCheck`.
 
 1. Een lokale kopie maken van CreateReleaseAnnotation.ps1:
 
@@ -256,8 +259,8 @@ U kunt het Power shell-script CreateReleaseAnnotation van GitHub gebruiken om aa
 
 U kunt het script wijzigen, bijvoorbeeld om aantekeningen voor het verleden te maken.
 
+
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Werkitems maken](./diagnostic-search.md#create-work-item)
 * [Automatisering met PowerShell](./powershell.md)
-

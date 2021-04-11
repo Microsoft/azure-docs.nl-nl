@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.custom: how-to, data4ml
 ms.date: 05/14/2020
 ms.openlocfilehash: 2eec512af9b139b2707c435fd0c78b7d50ac1b11
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102521047"
 ---
 # <a name="create-and-explore-azure-machine-learning-dataset-with-labels"></a>Azure Machine Learning gegevensset maken en verkennen met labels

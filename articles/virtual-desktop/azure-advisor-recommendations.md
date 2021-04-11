@@ -3,15 +3,15 @@ title: Azure Advisor Windows virtueel bureau blad-walkthrough-Azure
 description: Azure Advisor aanbevelingen voor Windows virtueel bureau blad oplossen.
 author: Heidilohr
 ms.topic: conceptual
-ms.date: 08/28/2020
+ms.date: 03/31/2021
 ms.author: helohr
-manager: lizross
-ms.openlocfilehash: 760e0212d2d863e6b869c23c2e523a0e056a28ed
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+manager: femila
+ms.openlocfilehash: 666f882dec6c00b9fe5421485afded1fbd57d961
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "90033027"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106448301"
 ---
 # <a name="how-to-resolve-azure-advisor-recommendations"></a>Azure Advisor aanbevelingen oplossen
 
@@ -72,10 +72,6 @@ Deze aanbeveling wordt weer gegeven onder operationele uitmuntendheid.
 U moet specifieke Url's deblokkeren om ervoor te zorgen dat uw virtuele machine (VM) goed werkt. U ziet de lijst in de [lijst Veilige URL](safe-url-list.md). Als de Url's niet worden gedeblokkeerd, werkt de virtuele machine niet goed.
 
 Om deze aanbeveling op te lossen, moet u ervoor zorgen dat alle Url's in de [lijst met veilige url's](safe-url-list.md)worden gedeblokkeerd. U kunt ook service tags of FQDN-Tags gebruiken om de deblokkerende Url's te blok keren.
-
-## <a name="propose-new-recommendations"></a>Nieuwe aanbevelingen Voorst Ellen
-
-U kunt ons helpen bij het verbeteren van Azure Advisor door ideeën voor aanbevelingen te verzenden. Uw aanbeveling kan een andere gebruiker van een moeilijkere plek helpen. Als u een suggestie wilt indienen, gaat u naar het [UserVoice-forum](https://windowsvirtualdesktop.uservoice.com/forums/930847-azure-advisor-recommendations) en vult u het inzendings formulier in. Wanneer u het formulier invult, moet u ervoor zorgen dat het zo veel mogelijk details geeft.
 
 ## <a name="next-steps"></a>Volgende stappen
 

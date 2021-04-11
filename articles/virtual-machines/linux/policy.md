@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 08/02/2017
 ms.author: mimckitt
 ms.openlocfilehash: c1fb80001f0669672e9f6e8a567685b799314df1
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102549818"
 ---
 # <a name="apply-policies-to-linux-vms-with-azure-resource-manager"></a>Beleids regels Toep assen op virtuele Linux-machines met Azure Resource Manager

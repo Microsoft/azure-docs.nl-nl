@@ -7,12 +7,12 @@ ms.author: chez
 ms.reviewer: jburchel
 ms.topic: conceptual
 ms.date: 03/11/2021
-ms.openlocfilehash: d9012c2bb56b7936b627063be2e9c5b7aa33541e
-ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
+ms.openlocfilehash: 3021d049a38f1d883518fc7c45aa8ca0a906c2f7
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105962727"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106221582"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-in-response-to-a-storage-event"></a>Een trigger maken waarmee een pijp lijn wordt uitgevoerd als reactie op een opslag gebeurtenis
 
@@ -76,7 +76,7 @@ In deze sectie wordt beschreven hoe u een opslag gebeurtenis trigger maakt in de
    In het vorige voor beeld wordt de trigger zo geconfigureerd dat deze wordt geactiveerd wanneer een BLOB-pad dat eindigt op. csv wordt gemaakt in de map _Event-test_ in de _voorbeeld gegevens_ van de container. Met de eigenschappen **FolderPath** en **filename** wordt de locatie van de nieuwe BLOB vastgelegd. Als MoviesDB.csv bijvoorbeeld wordt toegevoegd aan het pad voor beeld/gebeurtenis-testen, `@triggerBody().folderPath` heeft de waarde `sample-data/event-testing` en `@triggerBody().fileName` een waarde van `moviesDB.csv` . Deze waarden worden in het voor beeld toegewezen aan de pijplijn parameters `sourceFolder` en `sourceFile` , die in de pijp lijn kunnen worden gebruikt als `@pipeline().parameters.sourceFolder` `@pipeline().parameters.sourceFile` respectievelijk.
 
    > [!NOTE]
-   > Als u de pijp lijn en de trigger in [Azure Synapse Analytics](/synapse-analytics)maakt, moet u `@trigger().outputs.body.fileName` en `@trigger().outputs.body.folderPath` als para meters gebruiken. Deze twee eigenschappen Capture BLOB-gegevens vastleggen. Gebruik deze eigenschappen in plaats van met `@triggerBody().fileName` en `@triggerBody().folderPath` .
+   > Als u de pijp lijn en de trigger in [Azure Synapse Analytics](../synapse-analytics/overview-what-is.md)maakt, moet u `@trigger().outputs.body.fileName` en `@trigger().outputs.body.folderPath` als para meters gebruiken. Deze twee eigenschappen Capture BLOB-gegevens vastleggen. Gebruik deze eigenschappen in plaats van met `@triggerBody().fileName` en `@triggerBody().folderPath` .
 
 1. Klik op **volt ooien** wanneer u klaar bent.
 
@@ -86,11 +86,11 @@ De volgende tabel bevat een overzicht van de schema-elementen die betrekking heb
 
 | **JSON-element** | **Beschrijving** | **Type** | **Toegestane waarden** | **Vereist** |
 | ---------------- | --------------- | -------- | ------------------ | ------------ |
-| **ligt** | De Azure Resource Manager Resource-ID van het opslag account. | Tekenreeks | Azure Resource Manager-ID | Yes |
+| **ligt** | De Azure Resource Manager Resource-ID van het opslag account. | Tekenreeks | Azure Resource Manager-ID | Ja |
 | **evenementen** | Het type gebeurtenissen dat ervoor zorgt dat deze trigger wordt gestart. | Matrix    | Micro soft. storage. BlobCreated, micro soft. storage. BlobDeleted | Ja, een wille keurige combi natie van deze waarden. |
 | **blobPathBeginsWith** | Het BLOB-pad moet beginnen met het patroon dat is ingesteld voor de trigger om te starten. `/records/blobs/december/`De trigger wordt bijvoorbeeld alleen geactiveerd voor blobs in de `december` map onder de `records` container. | Tekenreeks   | | Geef een waarde op voor ten minste één van deze eigenschappen: `blobPathBeginsWith` of `blobPathEndsWith` . |
 | **blobPathEndsWith** | Het BLOB-pad moet eindigen met het patroon dat is ingesteld voor de trigger om te starten. `december/boxes.csv`De trigger wordt bijvoorbeeld alleen geactiveerd voor blobs `boxes` met de naam in een `december` map. | Tekenreeks   | | U moet een waarde opgeven voor ten minste een van deze eigenschappen: `blobPathBeginsWith` of `blobPathEndsWith` . |
-| **ignoreEmptyBlobs** | Hiermee wordt aangegeven of nul-byte-Blobs een pijplijn uitvoering activeren. Deze instelling is standaard ingesteld op waar. | Booleaans | waar of onwaar | No |
+| **ignoreEmptyBlobs** | Hiermee wordt aangegeven of nul-byte-Blobs een pijplijn uitvoering activeren. Deze instelling is standaard ingesteld op waar. | Booleaans | waar of onwaar | Nee |
 
 ## <a name="examples-of-storage-event-triggers"></a>Voor beelden van opslag gebeurtenis triggers
 

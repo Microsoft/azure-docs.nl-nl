@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/08/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 30348d7ca12ded2d1f4b0522a7cabeadf0553a07
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 37ff3300935e90304754b5f2b375df0adecdaefa
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94953352"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107256239"
 ---
 # <a name="overview-of-policy-keys-in-azure-active-directory-b2c"></a>Overzicht van beleids sleutels in Azure Active Directory B2C
 
@@ -28,7 +28,7 @@ Azure Active Directory B2C (Azure AD B2C) slaat geheimen en certificaten op in d
  In dit artikel wordt beschreven wat u moet weten over de beleids sleutels die worden gebruikt door Azure AD B2C.
 
 > [!NOTE]
-> De configuratie van beleids sleutels is momenteel beperkt tot [aangepast beleid](./custom-policy-get-started.md) .
+> De configuratie van beleids sleutels is momenteel beperkt tot [aangepast beleid](./user-flow-overview.md) .
 
 U kunt geheimen en certificaten configureren voor het tot stand brengen van een vertrouwens relatie tussen services in de Azure Portal onder het menu **beleids sleutels** . Sleutels kunnen symmetrisch of asymmetrisch zijn. *Symmetrische* crypto grafie of persoonlijke sleutel cryptografie is de plaats waar een gedeeld geheim wordt gebruikt om de gegevens te versleutelen en ontsleutelen. *Asymmetrische* crypto grafie of open bare-sleutel cryptografie is een cryptografisch systeem dat paren sleutels gebruikt, bestaande uit open bare sleutels die worden gedeeld met de Relying Party toepassing en persoonlijke sleutels die alleen bekend zijn bij Azure AD B2C.
 

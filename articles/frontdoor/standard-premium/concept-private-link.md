@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 02/18/2021
 ms.author: tyao
 ms.custom: references_regions
-ms.openlocfilehash: 88c000c96e632f970db075fafb13ea5eb4bbddfc
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: c927682231bab1fc92f198c56a2f6aeff2f4c516
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104799926"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106553529"
 ---
 # <a name="secure-your-origin-with-private-link-in-azure-front-door-standardpremium-preview"></a>Uw oorsprong beveiligen met een privé koppeling in azure front deur Standard/Premium (preview)
 
@@ -43,7 +43,7 @@ Wanneer u een persoonlijke koppeling naar uw oorsprong in de Azure front-deur Pr
 
 ## <a name="limitations"></a>Beperkingen
 
-Azure front-deur privé-eind punten zijn beschikbaar in de volgende regio's tijdens de open bare Preview: VS-Oost, West 2 VS en Zuid-Centraal vs.
+Azure front-deur-privé-eind punten zijn beschikbaar in de volgende regio's tijdens de open bare Preview: VS-Oost, West 2 VS, Zuid-Centraal VS en UK-zuid.
 
 Voor de beste latentie moet u altijd een Azure-regio kiezen die het dichtst bij uw oorsprong is als u ervoor kiest om het eind punt van de front-deur persoonlijke koppelingen in te scha kelen.
 

@@ -5,14 +5,14 @@ services: frontdoor
 author: duongau
 ms.service: frontdoor
 ms.topic: conceptual
-ms.date: 03/24/2021
+ms.date: 03/31/2021
 ms.author: yuajia
-ms.openlocfilehash: 039effb885463c1c53085535a6980601be890340
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 9e8defa9e929d21f210c48ffbd3b22e44195c17d
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105561441"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106061618"
 ---
 # <a name="azure-front-door-standardpremium-preview-rule-set-match-conditions"></a>Voor waarden van de regel set voor Azure front deur Standard/Premium (preview)
 
@@ -685,7 +685,7 @@ In dit voor beeld worden alle aanvragen vergeleken waarbij de aanvraag gebruikma
 
 ## <a name="request-url"></a><a name="RequestUrl"></a> Aanvraag-URL
 
-Hiermee worden aanvragen geïdentificeerd die overeenkomen met de opgegeven URL. De volledige URL wordt geëvalueerd. U kunt meerdere waarden opgeven die moeten overeenkomen, die worden gecombineerd met of logica.
+Hiermee worden aanvragen geïdentificeerd die overeenkomen met de opgegeven URL. De volledige URL wordt geëvalueerd, inclusief het protocol en de query teken reeks, maar niet het fragment. U kunt meerdere waarden opgeven die moeten overeenkomen, die worden gecombineerd met of logica.
 
 > [!TIP]
 > Wanneer u deze regel voorwaarde gebruikt, moet u ervoor zorgen dat u het protocol bijvoegt. Gebruik bijvoorbeeld `https://www.contoso.com` in plaats van alleen `www.contoso.com` .
@@ -790,10 +790,6 @@ Reguliere expressies bieden geen ondersteuning voor de volgende bewerkingen:
 * De `\K` instructie start of match reset.
 * Bijschriften en Inge sloten code.
 * Atomische groepering en behorende Kwant.
-
-## <a name="arm-template-support"></a>Ondersteuning voor ARM-sjablonen
-
-Regel sets kunnen worden geconfigureerd met behulp van Azure Resource Manager sjablonen. [Bekijk een voorbeeld sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-rule-set). U kunt matching voorwaarden toevoegen met behulp van de JSON-of Bicep-fragmenten die zijn opgenomen in de bovenstaande voor beelden.
 
 ## <a name="next-steps"></a>Volgende stappen
 

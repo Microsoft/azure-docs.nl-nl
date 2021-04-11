@@ -3,18 +3,17 @@ title: 'Een virtueel netwerk maken: quickstart - Azure CLI'
 titlesuffix: Azure Virtual Network
 description: In deze quickstart leert u hoe u een virtueel netwerk maakt met Azure CLI. Met een virtueel netwerk kunnen Azure-resources met elkaar en met internet communiceren.
 author: KumudD
-Customer intent: I want to create a virtual network so that virtual machines can communicate with privately with each other and with the internet.
 ms.service: virtual-network
 ms.topic: quickstart
 ms.date: 03/06/2021
 ms.author: kumud
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 3f4cd0a09c64c8c89116bf3a7dec40bae9f05f71
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 0795404c2dc5377d60896863f6a088c4b2ffd1ad
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102199064"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106060785"
 ---
 # <a name="quickstart-create-a-virtual-network-using-the-azure-cli"></a>Quickstart: Een virtueel netwerk maken met Azure CLI
 

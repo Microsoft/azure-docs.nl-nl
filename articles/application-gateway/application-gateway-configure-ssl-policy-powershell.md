@@ -8,18 +8,21 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 11/14/2019
 ms.author: victorh
-ms.openlocfilehash: cb0f9ef64cb8032c02f2ccd4b42028103b6d3ec6
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ed81ca2c8f409b7f6c4a6f30f9bf75e594c6c208
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "93397889"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106221701"
 ---
 # <a name="configure-tls-policy-versions-and-cipher-suites-on-application-gateway"></a>TLS-beleidsversies en suites met coderingsmethoden configureren in Application Gateway
 
 Meer informatie over het configureren van TLS/SSL-beleids versies en coderings suites op Application Gateway. U kunt een keuze uit een lijst met vooraf gedefinieerde beleids regels selecteren die verschillende configuraties van TLS-beleids versies en coderings suites bevatten. U hebt ook de mogelijkheid om een [aangepast TLS-beleid](#configure-a-custom-tls-policy) te definiëren op basis van uw vereisten.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
+> [!NOTE]
+> U kunt het beste TLS 1,2 gebruiken als uw minimale TLS-protocol versie voor betere beveiliging op uw Application Gateway. 
 
 ## <a name="get-available-tls-options"></a>Beschik bare TLS-opties ophalen
 
@@ -217,4 +220,6 @@ $SetGW = Set-AzApplicationGateway -ApplicationGateway $AppGW
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Ga naar [Application Gateway omleidings overzicht](./redirect-overview.md) voor meer informatie over het omleiden van http-verkeer naar een HTTPS-eind punt.
+Ga naar [Application Gateway omleidings overzicht](./redirect-overview.md) voor meer informatie over het omleiden van http-verkeer naar een HTTPS-eind punt. 
+
+Bekijk het instellen van een specifiek SSL-beleid voor listener bij het [instellen van een specifiek beleid voor SSL-listener via Portal](./application-gateway-configure-listener-specific-ssl-policy.md)

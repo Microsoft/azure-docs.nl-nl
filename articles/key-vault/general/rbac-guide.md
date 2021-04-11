@@ -9,12 +9,13 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 8/30/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 886b87adeabdc0aadde04c189b78739435aabede
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 216df0d128e0557345db8f82f6010e1ef681593c
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100527020"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105968778"
 ---
 # <a name="provide-access-to-key-vault-keys-certificates-and-secrets-with-an-azure-role-based-access-control"></a>Toegang bieden tot Key Vault sleutels, certificaten en geheimen met een op rollen gebaseerd toegangs beheer van Azure
 
@@ -93,11 +94,22 @@ Als u roltoewijzingen wilt toevoegen, hebt u het volgende nodig:
 > [!Note]
 > Het is raadzaam om de unieke rol-ID in plaats van de rolnaam in scripts te gebruiken. Als de naam van een rol wordt gewijzigd, blijven de scripts daarom gewoon werken. In deze document rolnaam wordt alleen gebruikt voor de Lees baarheid.
 
-Azure CLI-opdracht voor het maken van een roltoewijzing:
+Voer de volgende opdracht uit om een roltoewijzing te maken:
 
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli
 az role assignment create --role <role_name_or_id> --assignee <assignee> --scope <scope>
 ```
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+
+```azurepowershell
+#Assign by User Principal Name
+New-AzRoleAssignment -RoleDefinitionName <role_name> -SignInName <assignee_upn> -Scope <scope>
+
+#Assign by Service Principal ApplicationId
+New-AzRoleAssignment -RoleDefinitionName Reader -ApplicationId <applicationId> -Scope <scope>
+```
+---
 
 In de Azure Portal is het scherm voor het toewijzen van Azure-functies beschikbaar voor alle resources op het tabblad toegangs beheer (IAM).
 
@@ -114,10 +126,20 @@ In de Azure Portal is het scherm voor het toewijzen van Azure-functies beschikba
 
     ![Rol toevoegen-resource groep](../media/rbac/image-5.png)
 
-Azure CLI:
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli
 az role assignment create --role "Key Vault Reader" --assignee {i.e user@microsoft.com} --scope /subscriptions/{subscriptionid}/resourcegroups/{resource-group-name}
 ```
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+
+```azurepowershell
+#Assign by User Principal Name
+New-AzRoleAssignment -RoleDefinitionName 'Key Vault Reader' -SignInName {i.e user@microsoft.com} -Scope /subscriptions/{subscriptionid}/resourcegroups/{resource-group-name}
+
+#Assign by Service Principal ApplicationId
+New-AzRoleAssignment -RoleDefinitionName 'Key Vault Reader' -ApplicationId {i.e 8ee5237a-816b-4a72-b605-446970e5f156} -Scope /subscriptions/{subscriptionid}/resourcegroups/{resource-group-name}
+```
+---
 
 Boven de roltoewijzing biedt u de mogelijkheid om sleutel kluis objecten in sleutel kluis weer te geven.
 
@@ -131,11 +153,20 @@ Boven de roltoewijzing biedt u de mogelijkheid om sleutel kluis objecten in sleu
 
     ![Roltoewijzing-sleutel kluis](../media/rbac/image-6.png)
 
- Azure CLI:
-
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli
 az role assignment create --role "Key Vault Secrets Officer" --assignee {i.e jalichwa@microsoft.com} --scope /subscriptions/{subscriptionid}/resourcegroups/{resource-group-name}/providers/Microsoft.KeyVault/vaults/{key-vault-name}
 ```
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+
+```azurepowershell
+#Assign by User Principal Name
+New-AzRoleAssignment -RoleDefinitionName 'Key Vault Secrets Officer' -SignInName {i.e user@microsoft.com} -Scope /subscriptions/{subscriptionid}/resourcegroups/{resource-group-name}/providers/Microsoft.KeyVault/vaults/{key-vault-name}
+
+#Assign by Service Principal ApplicationId
+New-AzRoleAssignment -RoleDefinitionName 'Key Vault Secrets Officer' -ApplicationId {i.e 8ee5237a-816b-4a72-b605-446970e5f156} -Scope /subscriptions/{subscriptionid}/resourcegroups/{resource-group-name}/providers/Microsoft.KeyVault/vaults/{key-vault-name}
+```
+---
 
 Nadat u de functie toewijzing hebt gemaakt, kunt u geheimen maken/bijwerken/verwijderen.
 
@@ -153,11 +184,20 @@ Nadat u de functie toewijzing hebt gemaakt, kunt u geheimen maken/bijwerken/verw
 
 3. Maak de rol van belang rijke geheimen (Key Vault geheimen) voor de huidige gebruiker, op dezelfde manier als voor de Key Vault.
 
-Azure CLI:
-
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli
 az role assignment create --role "Key Vault Secrets Officer" --assignee {i.e user@microsoft.com} --scope /subscriptions/{subscriptionid}/resourcegroups/{resource-group-name}/providers/Microsoft.KeyVault/vaults/{key-vault-name}/secrets/RBACSecret
 ```
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+
+```azurepowershell
+#Assign by User Principal Name
+New-AzRoleAssignment -RoleDefinitionName 'Key Vault Secrets Officer' -SignInName {i.e user@microsoft.com} -Scope /subscriptions/{subscriptionid}/resourcegroups/{resource-group-name}/providers/Microsoft.KeyVault/vaults/{key-vault-name}/secrets/RBACSecret
+
+#Assign by Service Principal ApplicationId
+New-AzRoleAssignment -RoleDefinitionName 'Key Vault Secrets Officer' -ApplicationId {i.e 8ee5237a-816b-4a72-b605-446970e5f156} -Scope /subscriptions/{subscriptionid}/resourcegroups/{resource-group-name}/providers/Microsoft.KeyVault/vaults/{key-vault-name}/secrets/RBACSecret
+```
+---
 
 ### <a name="test-and-verify"></a>Testen en verifiëren
 
@@ -199,7 +239,7 @@ Nieuw geheim maken (geheimen \> + genereren/importeren) moet de volgende fout we
 
 [opdracht AZ Role definition Create](/cli/azure/role/definition#az-role-definition-create)
 
-**(CLI bash-script)</br>**
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli
 az role definition create --role-definition '{ \
    "Name": "Backup Keys Operator", \
@@ -216,6 +256,31 @@ az role definition create --role-definition '{ \
     "AssignableScopes": ["/subscriptions/{subscriptionId}"] \
 }'
 ```
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+
+```azurepowershell
+$roleDefinition = @"
+{ 
+   "Name": "Backup Keys Operator", 
+   "Description": "Perform key backup/restore operations", 
+    "Actions": [ 
+    ], 
+    "DataActions": [ 
+        "Microsoft.KeyVault/vaults/keys/read ", 
+        "Microsoft.KeyVault/vaults/keys/backup/action", 
+         "Microsoft.KeyVault/vaults/keys/restore/action" 
+    ], 
+    "NotDataActions": [ 
+   ], 
+    "AssignableScopes": ["/subscriptions/{subscriptionId}"] 
+}
+"@
+
+$roleDefinition | Out-File role.json
+
+New-AzRoleDefinition -InputFile role.json
+```
+---
 
 Zie voor meer informatie over het maken van aangepaste rollen:
 

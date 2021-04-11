@@ -4,15 +4,15 @@ description: In dit artikel vindt u de aanbevelingen voor de beveiliging van Azu
 author: memildin
 ms.service: security-center
 ms.topic: reference
-ms.date: 03/22/2021
+ms.date: 04/06/2021
 ms.author: memildin
 ms.custom: generated
-ms.openlocfilehash: 2d9f76bd3c6ad0060a90f52abba1c7378b310e67
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: a44a5e4e715238c42e51e65dfe16d4f70dfcf54d
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104801457"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106504806"
 ---
 # <a name="security-recommendations---a-reference-guide"></a>Aanbevelingen voor beveiliging: een naslaggids
 
@@ -58,12 +58,15 @@ Uw beveiligde Score is gebaseerd op het aantal Security Center aanbevelingen dat
 
 ## <a name="deprecated-recommendations"></a>Afgeschafte aanbevelingen
 
-|Aanbeveling|Beschrijving en gerelateerd beleid|Ernst|Snelle oplossing ingeschakeld? ([Meer informatie](security-center-remediate-recommendations.md#quick-fix-remediation))|Resourcetype|
-|----|----|----|----|----|
-|**Toegang tot App Services moet worden beperkt**|De toegang tot uw App Services beperken door de netwerkconfiguratie te wijzigen, om inkomend verkeer te weigeren van bereiken die te breed zijn.<br>(Gerelateerd beleid: [preview]: Toegang tot App Services moet worden beperkt)|Hoog|N|App Service|
-|**De regels voor webtoepassingen op IaaS NSG's moeten strenger worden**|De netwerk beveiligings groep (NSG) van uw virtuele machines waarop webtoepassingen worden uitgevoerd, beveiligen met NSG-regels die zich te maken hebben met betrekking tot de poorten van Web Application.<br>(Gerelateerd beleid: De regels voor NSG's ten aanzien van webtoepassingen op IaaS moeten strenger worden)|Hoog|N|Virtuele machine|
-|**Beveiligingsbeleid voor pods definiëren om de aanvalsvector te verminderen door onnodige bevoegdheden voor toepassingen te verwijderen (preview)**|Definieer het beveiligingsbeleid voor pods om de aanvalsvector te verminderen door onnodige bevoegdheden voor toepassingen te verwijderen. Het wordt aanbevolen beleidsregels voor pod-beveiliging te configureren zodat pods alleen toegang hebben tot resources waartoe hen toegang is toegestaan.<br>(Gerelateerd beleid: [preview]: Beveiligingsbeleid voor pods moet worden gedefinieerd voor Kubernetes Services)|Normaal|N|Compute-resources (Containers)|
-|**Azure Security Center installeren voor de IoT-beveiligingsmodule om meer inzicht te krijgen in uw IoT-apparaten**|Azure Security Center installeren voor de IoT-beveiligingsmodule om meer inzicht te krijgen in uw IoT-apparaten.|Beperkt|N|IoT-apparaat|
+|Aanbeveling|Beschrijving en gerelateerd beleid|Ernst|
+|----|----|----|
+|Toegang tot App Services moet worden beperkt|De toegang tot uw App Services beperken door de netwerkconfiguratie te wijzigen, om inkomend verkeer te weigeren van bereiken die te breed zijn.<br>(Gerelateerd beleid: [preview]: Toegang tot App Services moet worden beperkt)|Hoog|
+|De regels voor webtoepassingen op IaaS NSG's moeten strenger worden|De netwerk beveiligings groep (NSG) van uw virtuele machines waarop webtoepassingen worden uitgevoerd, beveiligen met NSG-regels die zich te maken hebben met betrekking tot de poorten van Web Application.<br>(Gerelateerd beleid: De regels voor NSG's ten aanzien van webtoepassingen op IaaS moeten strenger worden)|Hoog|
+|Beveiligingsbeleid voor pods definiëren om de aanvalsvector te verminderen door onnodige bevoegdheden voor toepassingen te verwijderen (preview)|Definieer het beveiligingsbeleid voor pods om de aanvalsvector te verminderen door onnodige bevoegdheden voor toepassingen te verwijderen. Het wordt aanbevolen beleidsregels voor pod-beveiliging te configureren zodat pods alleen toegang hebben tot resources waartoe hen toegang is toegestaan.<br>(Gerelateerd beleid: [preview]: Beveiligingsbeleid voor pods moet worden gedefinieerd voor Kubernetes Services)|Normaal|
+|Azure Security Center installeren voor de IoT-beveiligingsmodule om meer inzicht te krijgen in uw IoT-apparaten|Azure Security Center installeren voor de IoT-beveiligingsmodule om meer inzicht te krijgen in uw IoT-apparaten.|Beperkt|
+|Uw machines moeten opnieuw worden opgestart om systeemupdates toe te passen|Start uw machines opnieuw op om de systeemupdates toe te passen en de machine vanuit beveiligingsproblemen te beveiligen. (Gerelateerd beleid: Er moeten systeemupdates op uw computers worden geïnstalleerd)|Normaal|
+|De bewakingsagent moet op uw computers worden geïnstalleerd|Met deze actie wordt de bewakingsagent geïnstalleerd op de geselecteerde virtuele machines. Selecteer een werkruimte waarnaar de agent kan rapporteren. (Geen gerelateerd beleid)|Hoog|
+||||
 
 ## <a name="next-steps"></a>Volgende stappen
 

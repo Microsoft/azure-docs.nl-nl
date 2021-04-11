@@ -4,12 +4,12 @@ description: In deze zelfstudie leert u hoe u een Azure Container Registry-taak 
 ms.topic: tutorial
 ms.date: 11/24/2020
 ms.custom: seodec18, mvc, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 8ec3dbb5019e6bb3947c6d3aec50fd308d99e0fb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3add2f7b19b65341007c0549463ec156bf9d913f
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98919504"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106060292"
 ---
 # <a name="tutorial-automate-container-image-builds-when-a-base-image-is-updated-in-an-azure-container-registry"></a>Zelfstudie: Builds van containerinstallatiekopieën automatiseren wanneer een basisinstallatiekopie wordt bijgewerkt in een Azure-containerregister 
 

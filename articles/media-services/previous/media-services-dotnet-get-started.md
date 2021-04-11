@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 03/10/2021
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f0e7f9fa33af43fb846255815d862d4cd3a07e99
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7edee25c5b52ea1ba1092daa354a4523861bcbb5
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103013972"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107227106"
 ---
 # <a name="get-started-with-delivering-content-on-demand-using-net-sdk"></a>Aan de slag met het leveren van inhoud on demand met .NET SDK
 
@@ -62,7 +62,7 @@ Klik op de afbeelding om deze in volledig formaat weer te geven.
 
 [![Diagram met een aantal van de meest gebruikte objecten in het object gegevens model van Azure Media Services voor het ontwikkelen van video op aanvraag toepassingen.](./media/media-services-dotnet-get-started/media-services-overview-object-model-small.png)](./media/media-services-dotnet-get-started/media-services-overview-object-model.png#lightbox)
 
-U kunt [hier](https://media.windows.net/API/$metadata?api-version=2.15) het hele model bekijken.  
+U kunt [hier](https://m.eet.com/media/1170326/ms-part1.pdf) het hele model bekijken.  
 
 ## <a name="start-streaming-endpoints-using-the-azure-portal"></a>Streaming-eindpunten starten met behulp van Azure Portal
 

@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 04/08/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: cf16bfbd8f90c8d6f06c9dec42aa69b7cffae4f8
-ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
+ms.openlocfilehash: 2a8aabac6960909f2a3d90fcee01cebb0ad7a832
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2021
-ms.locfileid: "107226124"
+ms.locfileid: "107256936"
 ---
 # <a name="azure-ad-b2c-custom-policy-overview"></a>Overzicht van Azure AD B2C aangepaste beleids regels
 
@@ -27,7 +27,7 @@ Een aangepast beleid wordt weer gegeven als een of meer XML-indelings bestanden 
 
 ## <a name="custom-policy-starter-pack"></a>Aangepast beleids Starter Pack
 
-Azure AD B2C aangepast beleids [Starter Pack](custom-policy-get-started.md#get-the-starter-pack) wordt geleverd met verschillende vooraf gemaakte beleids regels om snel aan de slag te gaan. Elk van deze Starter Packs bevat het kleinste aantal technische profielen en gebruikers ritten dat nodig is voor het uitvoeren van de beschreven scenario's:
+Azure AD B2C aangepast beleids [Starter Pack](tutorial-create-user-flows.md?pivots=b2c-custom-policy#get-the-starter-pack) wordt geleverd met verschillende vooraf gemaakte beleids regels om snel aan de slag te gaan. Elk van deze Starter Packs bevat het kleinste aantal technische profielen en gebruikers ritten dat nodig is voor het uitvoeren van de beschreven scenario's:
 
 - **LocalAccounts** : Hiermee schakelt u het gebruik van alleen lokale accounts in.
 - **SocialAccounts** : Hiermee schakelt u het gebruik van sociale (of federatieve) accounts in.
@@ -156,9 +156,9 @@ Aan de slag met Azure AD B2C aangepast beleid:
 
 1. [Een Azure AD B2C-tenant maken](tutorial-create-tenant.md)
 1. [Registreer een webtoepassing](tutorial-register-applications.md) met behulp van de Azure portal zodat u uw beleid kunt testen.
-1. Voeg de benodigde [beleids sleutels](custom-policy-get-started.md#add-signing-and-encryption-keys) toe en [Registreer de Framework-toepassingen voor identiteits ervaring](custom-policy-get-started.md#register-identity-experience-framework-applications).
-1. [Down load het Azure AD B2C Policy Starter Pack](custom-policy-get-started.md#get-the-starter-pack) en upload het naar uw Tenant. 
-1. Nadat u het Starter Pack hebt geüpload, moet u [uw registratie-of aanmeldings beleid testen](custom-policy-get-started.md#test-the-custom-policy).
+1. Voeg de benodigde [beleids sleutels](tutorial-create-user-flows.md?pivots=b2c-custom-policy#add-signing-and-encryption-keys) toe en [Registreer de Framework-toepassingen voor identiteits ervaring](tutorial-create-user-flows.md?pivots=b2c-custom-policy#register-identity-experience-framework-applications).
+1. [Down load het Azure AD B2C Policy Starter Pack](tutorial-create-user-flows.md?pivots=b2c-custom-policy#get-the-starter-pack) en upload het naar uw Tenant. 
+1. Nadat u het Starter Pack hebt geüpload, moet u [uw registratie-of aanmeldings beleid testen](tutorial-create-user-flows.md?pivots=b2c-custom-policy#test-the-custom-policy).
 1. U wordt aangeraden [Visual Studio code](https://code.visualstudio.com/) (VS code) te downloaden en te installeren. Visual Studio code is een licht gewicht, krachtige bron code-editor, die op uw bureau blad wordt uitgevoerd en beschikbaar is voor Windows, macOS en Linux. Met VS code kunt u snel navigeren door uw Azure AD B2C aangepaste beleids-XML-bestanden te openen door de [Azure AD B2C-extensie voor VS code](https://marketplace.visualstudio.com/items?itemName=AzureADB2CTools.aadb2c) te installeren.
  
 ## <a name="next-steps"></a>Volgende stappen

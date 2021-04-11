@@ -1,19 +1,19 @@
 ---
 title: Facturering instellen voor Microsoft-klantovereenkomst - Azure
-description: Informatie over hoe u uw factureringsrekening configureert voor een Microsoft-klantovereenkomst. Bekijk de installatievereisten en aanvullende beschikbare informatiebronnen.
+description: Informatie over hoe u uw factureringsrekening configureert voor een Microsoft-klantovereenkomst. Zie vereisten voor het instellen en weer geven van andere beschik bare resources.
 author: amberbhargava
 tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 10/20/2020
+ms.date: 03/19/2021
 ms.author: banders
-ms.openlocfilehash: 7e930ca938b2531fb001c327132f79f703b2ea74
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
-ms.translationtype: HT
+ms.openlocfilehash: 15aa3acab9fe98a4c2f5103ba211dde34220c54e
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92316412"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107255673"
 ---
 # <a name="set-up-your-billing-account-for-a-microsoft-customer-agreement"></a>Uw factureringsrekening configureren voor een Microsoft-klantovereenkomst
 
@@ -24,7 +24,7 @@ De vernieuwing bestaat uit de volgende stappen:
 1. De nieuwe Microsoft-klantovereenkomst accepteren. Met uw Microsoft-vertegenwoordiger samenwerken om de details van de nieuwe overeenkomst te bespreken en te accepteren.
 2. De nieuwe factureringsrekening configureren die is gemaakt voor de nieuwe Microsoft-klantovereenkomst.
 
-Als u de factureringsrekening wilt configureren, moet u de facturering van uw Azure-abonnementen overzetten van uw Enterprise Agreement-inschrijving naar de nieuwe rekening. De configuratie is niet van invloed op Azure-services die worden uitgevoerd in uw abonnementen. Het is echter wel van invloed op de manier waarop u de facturering voor uw abonnementen beheert.
+Als u de factureringsrekening wilt configureren, moet u de facturering van uw Azure-abonnementen overzetten van uw Enterprise Agreement-inschrijving naar de nieuwe rekening. Het installatie programma heeft geen invloed op Azure-Services die worden uitgevoerd in uw abonnementen. Het is echter wel van invloed op de manier waarop u de facturering voor uw abonnementen beheert.
 
 - In plaats van de [EA-portal](https://ea.azure.com) beheert u uw Azure-services en -facturering in de [Azure-portal](https://portal.azure.com).
 - U ontvangt een maandelijkse digitale factuur voor uw kosten. U bekijkt de factuur op de pagina Azure Cost Management en facturering.
@@ -49,31 +49,54 @@ Voordat u aan de configuratie begint, raden we u aan het volgende te doen:
 
 U hebt de volgende toegang nodig om de configuratie af te ronden:
 
-- Eigenaar van het factureringsprofiel dat is gemaakt toen de Microsoft-klantovereenkomst werd ondertekend. Raadpleeg [Inzicht in factureringsprofielen](../understand/mca-overview.md#billing-profiles) voor meer informatie over factureringsprofielen.
-
+- Eigenaar van het factureringsprofiel dat is gemaakt toen de Microsoft-klantovereenkomst werd ondertekend. Raadpleeg [Inzicht in factureringsprofielen](../understand/mca-overview.md#billing-profiles) voor meer informatie over factureringsprofielen.  
+&mdash; Maar &mdash;
 - Ondernemingsbeheerder van de inschrijving die is vernieuwd.
+
+### <a name="start-migration-and-get-permission-needed-to-complete-setup"></a>Migratie starten en machtiging verkrijgen die nodig is om de installatie te volt ooien
+
+U kunt de volgende opties gebruiken om de migratie-ervaring voor uw EA-inschrijving te starten voor uw klant overeenkomst van micro soft.
+
+
+- Meld u aan bij de Azure-portal met de link in de e-mail die u hebt ontvangen toen u de Microsoft-klantovereenkomst ondertekende.
+
+- Als u deze e-mail niet hebt ontvangen, meldt u zich aan met de volgende link. Vervang `enrollmentNumber` door het inschrijvingsnummer van uw Enterprise Agreement die is vernieuwd.
+
+  `https://portal.azure.com/#blade/Microsoft_Azure_EA/EATransitionToMCA/enrollmentId/<enrollmentNumber>`
+
+Als u de rol rollen voor ondernemings Administrator en facturerings account of het facturerings profiel hebt, ziet u de volgende pagina in de Azure Portal. U kunt door gaan met het instellen van uw EA-inschrijvingen en de facturerings account van een micro soft-klant overeenkomst voor overgang.
+
+:::image type="content" source="./media/mca-setup-account/setup-billing-account-page.png" alt-text="Scherm afbeelding van de pagina uw facturerings account instellen" lightbox="./media/mca-setup-account/setup-billing-account-page.png" :::
+
+Als u niet de rol ondernemings beheerder voor de Enter prise Agreement of de rol van de eigenaar van het facturerings profiel voor de micro soft-klant overeenkomst hebt, gebruikt u de volgende informatie om de toegang te verkrijgen die u nodig hebt om de installatie te volt ooien.
 
 ### <a name="if-youre-not-an-enterprise-administrator-on-the-enrollment"></a>Als u tijdens de inschrijving geen ondernemingsbeheerder bent
 
-U kunt de ondernemingsbeheerders van de inschrijving vragen de configuratie van uw factureringsrekening af te ronden.
+U ziet de volgende pagina in de Azure Portal als u een facturerings account of de rol eigenaar van het facturerings profiel hebt, maar geen ondernemings beheerder bent.
 
-1. Meld u aan bij de Azure-portal met de link in de e-mail die u hebt ontvangen toen u de Microsoft-klantovereenkomst ondertekende.
+:::image type="content" source="./media/mca-setup-account/setup-billing-account-page-not-ea-administrator.png" alt-text="Scherm afbeelding van de pagina uw facturerings account instellen: bereid uw Enterprise Overeenkomst inschrijvingen voor overgang voor." lightbox="./media/mca-setup-account/setup-billing-account-page-not-ea-administrator.png" :::
 
-2. Als u deze e-mail niet hebt ontvangen, meldt u zich aan met de volgende link. Vervang `<enrollmentNumber>` door het inschrijvingsnummer van uw Enterprise Agreement die is vernieuwd.
+U hebt hiervoor twee opties:
 
-   `https://portal.azure.com/#blade/Microsoft_Azure_EA/EATransitionToMCA/enrollmentId/<enrollmentNumber>`
+- Vraag de Enter prise-beheerder van de inschrijving om u de rol ondernemings beheerder te geven. Zie [een andere ondernemings beheerder maken](ea-portal-administration.md#create-another-enterprise-administrator)voor meer informatie.
+-  U kunt een Enter prise-beheerder de eigenaar van het facturerings account of de rol van de facturerings profiel eigenaar geven. Zie [facturerings rollen beheren in de Azure Portal](understand-mca-roles.md#manage-billing-roles-in-the-azure-portal)voor meer informatie.
 
-3. Selecteer de ondernemingsbeheerders die u het verzoek wilt sturen.
-
-   ![Schermafbeelding van een uitnodiging voor de ondernemingsbeheerders](./media/mca-setup-account/ea-mca-invite-admins.png)
-
-4. Selecteer **Verzoek verzenden** .
-
-   De beheerders ontvangen een e-mail met instructies om de configuratie af te ronden.
+Als u de rol ondernemings beheerder hebt gekregen, kopieert u de koppeling op de pagina uw betaal account instellen. Open deze in uw webbrowser om door te gaan met het instellen van uw micro soft-klant overeenkomst. Als dat niet het geval is, kunt u het verzenden naar de ondernemings Administrator.
 
 ### <a name="if-youre-not-an-owner-of-the-billing-profile"></a>Als u geen eigenaar bent van een factureringsprofiel
 
-De gebruiker in uw organisatie die de Microsoft-klantovereenkomst heeft ondertekend, wordt toegevoegd als eigenaar van het factureringsprofiel. Vraag de gebruiker om u toe te voegen als eigenaar, zodat u de configuratie kunt afronden.
+Als u een Enter prise-beheerder bent, maar geen facturerings account of de rol eigenaar van het facturerings profiel voor uw micro soft-klant overeenkomst hebt, ziet u de volgende pagina in de Azure Portal.
+
+Als u denkt dat u de eigenaar van het facturerings profiel toegang hebt tot de juiste micro soft-klant overeenkomst en u ziet het volgende bericht, controleer dan of u zich in de juiste Tenant voor uw organisatie bevindt. Mogelijk moet u mappen wijzigen.
+
+:::image type="content" source="./media/mca-setup-account/setup-billing-account-page-not-billing-account-profile-owner.png" alt-text="Scherm afbeelding van de pagina uw betaal account instellen-micro soft-klant overeenkomst facturerings account." lightbox="./media/mca-setup-account/setup-billing-account-page-not-billing-account-profile-owner.png" :::
+
+U hebt hiervoor twee opties:
+
+- Stel een bestaande eigenaar van een facturerings account in om u de rol van het facturerings account of de eigenaar van het facturerings profiel te geven. Zie [facturerings rollen beheren in de Azure Portal](understand-mca-roles.md#manage-billing-roles-in-the-azure-portal) voor meer informatie.
+- Geef de rol van ondernemings beheerder aan een bestaande eigenaar van het facturerings account. Zie [een andere ondernemings beheerder maken](ea-portal-administration.md#create-another-enterprise-administrator)voor meer informatie.
+
+Als u de rol eigenaar van het facturerings account of de eigenaar van het facturerings profiel hebt gekregen, kopieert u de koppeling op de pagina uw betaal account instellen. Open deze in uw webbrowser om door te gaan met het instellen van uw micro soft-klant overeenkomst. Als dat niet het geval is, verzendt u de koppeling naar de eigenaar van het facturerings account.
 
 ## <a name="understand-changes-to-your-billing-hierarchy"></a>Wijzigingen in uw factureringshiërarchie begrijpen
 
@@ -184,10 +207,10 @@ Als u de configuratie wilt afronden, hebt u toegang nodig tot zowel de nieuwe fa
 
     - In de nieuwe factureringsrekening wordt een factureringshiërarchie gemaakt die correspondeert met uw Enterprise Agreement-hiërarchie. Raadpleeg [inzicht in uw factureringshiërarchie begrijpen](#understand-changes-to-your-billing-hierarchy) voor meer informatie.
     - Beheerders van uw Enterprise Agreement-inschrijving krijgen toegang tot de nieuwe factureringsrekening, zodat zij de facturering voor uw organisatie kunnen blijven beheren.
-    - De facturering van uw Azure-abonnement wordt overgezet naar het nieuwe account. **Deze overgang heeft geen gevolgen voor uw Azure-Services. Ze blijven zonder onderbrekingen actief** .
+    - De facturering van uw Azure-abonnement wordt overgezet naar het nieuwe account. **Deze overgang heeft geen gevolgen voor uw Azure-Services. Ze blijven zonder onderbrekingen actief**.
     - Als u Azure-reserveringen hebt, worden die verplaatst naar uw nieuwe factureringsrekening met dezelfde voordelen en termijn.
 
-4. U kunt de status van de overgang controleren op de pagina **Overgangsstatus** .
+4. U kunt de status van de overgang controleren op de pagina **Overgangsstatus**.
 
    ![Schermopname van de overgangsstatus](./media/mca-setup-account/ea-mca-set-up-status.png)
 
@@ -199,11 +222,11 @@ Als u de configuratie wilt afronden, hebt u toegang nodig tot zowel de nieuwe fa
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
-2. Zoek naar **Kostenbeheer en facturering** .
+2. Zoek naar **Kostenbeheer en facturering**.
 
    ![Schermopname van de zoekopdracht in de Azure-portal](./media/mca-setup-account/search-cmb.png)
 
-3. Selecteer het factureringsaccount. Het type factureringsrekening is **Microsoft-klantovereenkomst** .
+3. Selecteer het factureringsaccount. Het type factureringsrekening is **Microsoft-klantovereenkomst**.
 
 4. Selecteer **Azure-abonnementen** aan de linkerzijde.
 
@@ -219,11 +242,11 @@ Alle Azure-reserveringen in uw Enterprise Agreement-inschrijving worden verplaat
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
-2. Zoek naar **Kostenbeheer en facturering** .
+2. Zoek naar **Kostenbeheer en facturering**.
 
    ![Schermopname van de zoekopdracht in de Azure-portal](./media/mca-setup-account/search-cmb.png)
 
-3. Selecteer de factureringsrekening voor uw **Microsoft-klantovereenkomst** .
+3. Selecteer de factureringsrekening voor uw **Microsoft-klantovereenkomst**.
 
 4. Selecteer **Toegangsbeheer (IAM)** aan de linkerzijde.
 
@@ -235,7 +258,7 @@ Ondernemingsbeheerders worden vermeld als eigenaar van de factureringsrekening t
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
-2. Zoek naar **Kostenbeheer en facturering** .
+2. Zoek naar **Kostenbeheer en facturering**.
 
    ![Schermopname van de zoekopdracht in de Azure-portal](./media/mca-setup-account/search-cmb.png)
 
@@ -251,11 +274,11 @@ Ondernemingsbeheerders worden vermeld als eigenaar van factureringsprofielen ter
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
-2. Zoek naar **Kostenbeheer en facturering** .
+2. Zoek naar **Kostenbeheer en facturering**.
 
    ![Schermopname van de zoekopdracht in de Azure-portal](./media/mca-setup-account/search-cmb.png).
 
-3. Selecteer een factureringsgedeelte. Factuursecties hebben dezelfde naam als hun respectieve afdelingen in Enterprise Agreement-inschrijvingen. Afhankelijk van uw toegang moet u mogelijk een factureringsaccount selecteren. Selecteer in de factureringsrekening **Factureringsprofielen** en selecteer vervolgens **Factuursecties** . Selecteer een factuursectie in de lijst Factuursecties.
+3. Selecteer een factureringsgedeelte. Factuursecties hebben dezelfde naam als hun respectieve afdelingen in Enterprise Agreement-inschrijvingen. Afhankelijk van uw toegang moet u mogelijk een factureringsaccount selecteren. Selecteer in de factureringsrekening **Factureringsprofielen** en selecteer vervolgens **Factuursecties**. Selecteer een factuursectie in de lijst Factuursecties.
 
    ![Schermopname van een lijst van de factuursectie na de overgang](./media/mca-setup-account/mca-invoice-sections-post-transition.png)
 
@@ -263,7 +286,7 @@ Ondernemingsbeheerders worden vermeld als eigenaar van factureringsprofielen ter
 
     ![Schermopname met de toegang van afdeling- en accountbeheerders na de overgang](./media/mca-setup-account/mca-department-account-admins-access-post-transition.png)
 
-Ondernemingsbeheerders en afdelingsbeheerders worden vermeld als eigenaar van een factuursectie of lezer van een factuursectie, terwijl accounteigenaren in de afdelingen worden vermeld als makers van Azure-abonnementen. Herhaal de stap voor alle factuursecties om de toegang voor alle afdelingen in uw Enterprise Agreement-inschrijving te controleren. Accounteigenaren die geen onderdeel waren van een afdeling krijgen machtiging voor een factuursectie met de naam **Standaardfactuursectie** . Als u denkt dat toegang voor een beheerder ontbreekt, geeft u hen toegang in de Azure-portal. Raadpleeg [Factureringsrollen beheren in de Azure-portal](understand-mca-roles.md#manage-billing-roles-in-the-azure-portal) voor meer informatie.
+Ondernemingsbeheerders en afdelingsbeheerders worden vermeld als eigenaar van een factuursectie of lezer van een factuursectie, terwijl accounteigenaren in de afdelingen worden vermeld als makers van Azure-abonnementen. Herhaal de stap voor alle factuursecties om de toegang voor alle afdelingen in uw Enterprise Agreement-inschrijving te controleren. Accounteigenaren die geen onderdeel waren van een afdeling krijgen machtiging voor een factuursectie met de naam **Standaardfactuursectie**. Als u denkt dat toegang voor een beheerder ontbreekt, geeft u hen toegang in de Azure-portal. Raadpleeg [Factureringsrollen beheren in de Azure-portal](understand-mca-roles.md#manage-billing-roles-in-the-azure-portal) voor meer informatie.
 
 ## <a name="need-help-contact-support"></a>Hebt u hulp nodig? Contact opnemen met ondersteuning
 

@@ -5,54 +5,51 @@ ms.assetid: 6ec6a46c-bce4-47aa-b8a3-e133baef22eb
 ms.topic: article
 ms.date: 04/14/2020
 ms.custom: seodec18, fasttrack-edit, has-adal-ref
-ms.openlocfilehash: 0f028f264d02d7300bb888e2053708ef6b06ea51
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: b1254e7db0e62d08ea2a3d6d30f2abd379675c55
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104721559"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106078312"
 ---
 # <a name="configure-your-app-service-or-azure-functions-app-to-use-azure-ad-login"></a>Uw App Service of Azure Functions app configureren voor het gebruik van Azure AD-aanmelding
 
 [!INCLUDE [app-service-mobile-selector-authentication](../../includes/app-service-mobile-selector-authentication.md)]
 
-In dit artikel wordt beschreven hoe u verificatie voor Azure App Service of Azure Functions zodanig configureert dat uw app zich aanmeldt bij gebruikers met Azure Active Directory (Azure AD) als verificatie provider.
+In dit artikel wordt beschreven hoe u verificatie voor Azure App Service of Azure Functions zodanig configureert dat uw app zich aanmeldt bij gebruikers met het [micro soft Identity platform](../active-directory/develop/v2-overview.md) (Azure AD) als verificatie provider.
 
-## <a name="configure-with-express-settings"></a><a name="express"> </a>Configureren met Express-instellingen
+Met de functie voor het App Service-verificatie kunt u automatisch een app-registratie maken met het micro soft Identity-platform. U kunt ook een registratie gebruiken die u of een adreslijst beheerder afzonderlijk maakt.
 
-De optie **Express** is ontworpen om het inschakelen van verificatie eenvoudig te maken en vereist slechts enkele klikken.
-
-Met de Express-instellingen wordt automatisch een toepassings registratie gemaakt die gebruikmaakt van het Azure Active Directory v1-eind punt. Als u [Azure Active Directory v 2.0](../active-directory/develop/v2-overview.md) (inclusief [MSAL](../active-directory/develop/msal-overview.md)) wilt gebruiken, volgt u de [Geavanceerde configuratie-instructies](#advanced).
+- [Automatisch een nieuwe app-registratie maken](#express)
+- [Een bestaande registratie afzonderlijk maken](#advanced)
 
 > [!NOTE]
-> De **Express** -optie is niet beschikbaar voor overheids Clouds.
+> De optie voor het maken van een nieuwe registratie is niet beschikbaar voor overheids Clouds. In plaats daarvan [definieert u een afzonderlijke registratie](#advanced).
 
-Voer de volgende stappen uit om verificatie in te scha kelen met behulp van de **snelle** optie:
+## <a name="create-a-new-app-registration-automatically"></a><a name="express"> </a>Automatisch een nieuwe app-registratie maken
 
-1. In de [Azure Portal]zoekt en selecteert u **app Services** en selecteert u vervolgens uw app.
-2. Selecteer in de linkernavigatiebalk **verificatie/autorisatie**  >  **in**.
-3. Selecteer **Azure Active Directory**  >  **Express**.
+Deze optie is ontworpen om het inschakelen van verificatie eenvoudig te maken en vereist slechts enkele klikken.
 
-   Als u in plaats daarvan een bestaande app-registratie wilt kiezen:
+1. Meld u aan bij de [Azure Portal] en navigeer naar uw app.
+1. Selecteer **verificatie** in het menu aan de linkerkant. Klik op **ID-provider toevoegen**.
+1. Selecteer **micro soft** in de vervolg keuzelijst ID-provider. De optie voor het maken van een nieuwe registratie is standaard geselecteerd. U kunt de naam van de registratie of de ondersteunde account typen wijzigen.
 
-   1. Kies **bestaande AD-app selecteren** en klik vervolgens op **Azure AD-App**.
-   2. Kies een bestaande app-registratie en klik op **OK**.
+    Er wordt een client geheim gemaakt en opgeslagen als een sleuf-plak [toepassings instelling](./configure-common.md#configure-app-settings) met de naam `MICROSOFT_PROVIDER_AUTHENTICATION_SECRET` . U kunt deze instelling later bijwerken om [Key Vault verwijzingen](./app-service-key-vault-references.md) te gebruiken als u het geheim in azure Key Vault wilt beheren.
 
-4. Selecteer **OK** om de app app service te registreren in azure Active Directory. Er wordt een nieuwe app-registratie gemaakt.
+1. Als dit de eerste ID-provider is die voor de toepassing is geconfigureerd, wordt u ook gevraagd om een App Service de sectie **verificatie-instellingen** . Als dat niet het geval is, kunt u door gaan met de volgende stap.
+    
+    Deze opties bepalen hoe uw toepassing reageert op niet-geverifieerde aanvragen en de standaard selecties omleiden alle aanvragen om u aan te melden bij deze nieuwe provider. U kunt dit gedrag nu aanpassen of deze instellingen later aanpassen via het hoofd scherm voor **verificatie** door **bewerken** naast verificatie- **instellingen** te kiezen. Zie voor meer informatie over deze opties [verificatie stroom](overview-authentication-authorization.md#authentication-flow).
 
-    ![Snelle instellingen in Azure Active Directory](./media/configure-authentication-provider-aad/express-settings.png)
+1. Beschrijving Klik op **volgende: machtigingen** en voeg de scopes toe die nodig zijn voor de toepassing. Deze worden toegevoegd aan de app-registratie, maar u kunt deze ook later wijzigen.
+1. Klik op **Add**.
 
-5. Beschrijving App Service biedt standaard verificatie, maar beperkt geen geautoriseerde toegang tot uw site-inhoud en Api's. U moet gebruikers in uw app-code autoriseren. Als u app-toegang alleen wilt beperken voor gebruikers die zijn geverifieerd door Azure Active Directory, stelt **u een actie in die moet worden uitgevoerd wanneer de aanvraag niet is geverifieerd** om u aan te **melden met Azure Active Directory**. Wanneer u deze functionaliteit instelt, vereist uw app dat alle aanvragen worden geverifieerd. Ook worden alle niet-geverifieerde omgeleid naar Azure Active Directory voor authenticatie.
-
-    > [!CAUTION]
-    > Het beperken van de toegang op deze manier is van toepassing op alle aanroepen naar uw app. Dit is mogelijk niet wenselijk voor apps met een openbaar beschik bare start pagina, zoals in veel toepassingen met één pagina. Voor dergelijke toepassingen kunt u **anonieme aanvragen (geen actie)** de voor keur geven, waarbij de app de aanmelding zelf hand matig start. Zie voor meer informatie [verificatie stroom](overview-authentication-authorization.md#authentication-flow).
-6. Selecteer **Opslaan**.
+U bent nu klaar om het micro soft-identiteits platform te gebruiken voor verificatie in uw app. De provider wordt weer gegeven in het scherm **verificatie** . Hier kunt u deze provider configuratie bewerken of verwijderen.
 
 Zie [deze zelf studie](scenario-secure-app-authentication-app-service.md)voor een voor beeld van het configureren van Azure AD-aanmelding voor een web-app die toegang heeft tot Azure Storage en Microsoft Graph.
 
-## <a name="configure-with-advanced-settings"></a><a name="advanced"> </a>Configureren met geavanceerde instellingen
+## <a name="use-an-existing-registration-created-separately"></a><a name="advanced"> </a>Een bestaande registratie afzonderlijk maken
 
-Om ervoor te zorgen dat Azure AD als verificatie provider voor uw app fungeert, moet u uw app ermee registreren. De optie Express doet dit voor u automatisch. Met de optie Geavanceerd kunt u uw app hand matig registreren, de registratie aanpassen en de registratie Details hand matig opnieuw instellen op de App Service. Dit is bijvoorbeeld handig als u een app-registratie wilt gebruiken van een andere Azure AD-Tenant dan die waar uw App Service zich bevindt.
+U kunt uw toepassing ook hand matig registreren voor het micro soft-identiteits platform, de registratie aanpassen en App Service verificatie met de registratie gegevens configureren. Dit is bijvoorbeeld handig als u een app-registratie wilt gebruiken van een andere Azure AD-Tenant dan in de toepassing waarin u zich bevindt.
 
 ### <a name="create-an-app-registration-in-azure-ad-for-your-app-service-app"></a><a name="register"> </a>Een app-registratie maken in azure AD voor uw app service-app
 
@@ -87,22 +84,27 @@ Voer de volgende stappen uit om de app te registreren:
 
 ### <a name="enable-azure-active-directory-in-your-app-service-app"></a><a name="secrets"> </a>Azure Active Directory in uw app service-app inschakelen
 
-1. In de [Azure Portal]zoekt en selecteert u **app Services** en selecteert u vervolgens uw app.
-1. Selecteer in het linkerdeel venster onder **instellingen** de optie **verificatie/autorisatie**  >  .
-1. Beschrijving Standaard staat App Service verificatie niet-geverifieerde toegang tot uw app toe. Als u gebruikers verificatie wilt afdwingen, stelt **u de actie in die moet worden uitgevoerd wanneer de aanvraag niet is geverifieerd** om u aan te **melden met Azure Active Directory**.
-1. Selecteer onder **Azure Active Directory** de optie **Verificatieproviders**.
-1. Selecteer in de **beheer modus** **geavanceerd** en configureer app service verificatie volgens de volgende tabel:
+1. Meld u aan bij de [Azure Portal] en navigeer naar uw app.
+1. Selecteer **verificatie** in het menu aan de linkerkant. Klik op **ID-provider toevoegen**.
+1. Selecteer **micro soft** in de vervolg keuzelijst ID-provider.
+1. Voor het **type app-registratie** kunt u kiezen voor het kiezen **van een bestaande app-registratie in deze map** , waarmee automatisch de benodigde app-gegevens worden verzameld. Als uw registratie afkomstig is van een andere Tenant of als u geen machtiging hebt om het registratie object weer te geven, kiest u **de details van een bestaande app-registratie opgeven**. Voor deze optie moet u de volgende configuratie gegevens invullen:
 
-    |Veld|Beschrijving|
+    |Veld|Description|
     |-|-|
-    |Client-id| Gebruik de **toepassings-id (client)** van de app-registratie. |
-    |URL van de uitgever| Gebruik `<authentication-endpoint>/<tenant-id>/v2.0` en vervang door *\<authentication-endpoint>* het [verificatie-eind punt voor uw cloud omgeving](../active-directory/develop/authentication-national-cloud.md#azure-ad-authentication-endpoints) (bijvoorbeeld ' https://login.microsoftonline.com "voor wereld wijd Azure), vervang ook door *\<tenant-id>* de **Directory-ID (Tenant)** waarin de app-registratie is gemaakt. Deze waarde wordt gebruikt om gebruikers om te leiden naar de juiste Azure AD-Tenant, en om de juiste meta gegevens te downloaden om de juiste sleutels voor token-ondertekening en claim waarde voor token uitgever te bepalen. Voor toepassingen die gebruikmaken van Azure AD v1 en voor Azure Functions-apps, laat u `/v2.0` de URL weg.|
+    |(Client-)id van de app| Gebruik de **toepassings-id (client)** van de app-registratie. |
     |Client geheim (optioneel)| Gebruik het client geheim dat u hebt gegenereerd in de app-registratie. Met een client geheim wordt hybride stroom gebruikt en wordt de App Service de toegangs-en vernieuwings tokens geretourneerd. Wanneer het client geheim niet is ingesteld, wordt impliciete stroom gebruikt en wordt alleen een id-token geretourneerd. Deze tokens worden verzonden door de provider en opgeslagen in de EasyAuth-token opslag.|
+    |URL van de uitgever| Gebruik `<authentication-endpoint>/<tenant-id>/v2.0` en vervang door *\<authentication-endpoint>* het [verificatie-eind punt voor uw cloud omgeving](../active-directory/develop/authentication-national-cloud.md#azure-ad-authentication-endpoints) (bijvoorbeeld ' https://login.microsoftonline.com "voor wereld wijd Azure), vervang ook door *\<tenant-id>* de **Directory-ID (Tenant)** waarin de app-registratie is gemaakt. Deze waarde wordt gebruikt om gebruikers om te leiden naar de juiste Azure AD-Tenant, en om de juiste meta gegevens te downloaden om de juiste sleutels voor token-ondertekening en claim waarde voor token uitgever te bepalen. Voor toepassingen die gebruikmaken van Azure AD v1 en voor Azure Functions-apps, laat u `/v2.0` de URL weg.|
     |Toegestane token doel groepen| Als dit een Cloud-of server-app is en u verificatie tokens van een web-app wilt toestaan, voegt u hier de URI voor de **toepassings-id** van de web-app toe. De geconfigureerde **client-id** wordt *altijd* impliciet beschouwd als een toegestane doel groep.|
 
-2. Selecteer **OK** en selecteer vervolgens **Opslaan**.
+    Het client geheim wordt opgeslagen als een sleuf-plak [toepassings instelling](./configure-common.md#configure-app-settings) met de naam `MICROSOFT_PROVIDER_AUTHENTICATION_SECRET` . U kunt deze instelling later bijwerken om [Key Vault verwijzingen](./app-service-key-vault-references.md) te gebruiken als u het geheim in azure Key Vault wilt beheren.
 
-U bent nu klaar om Azure Active Directory te gebruiken voor verificatie in uw App Service-app.
+1. Als dit de eerste ID-provider is die voor de toepassing is geconfigureerd, wordt u ook gevraagd om een App Service de sectie **verificatie-instellingen** . Als dat niet het geval is, kunt u door gaan met de volgende stap.
+    
+    Deze opties bepalen hoe uw toepassing reageert op niet-geverifieerde aanvragen en de standaard selecties omleiden alle aanvragen om u aan te melden bij deze nieuwe provider. U kunt dit gedrag nu aanpassen of deze instellingen later aanpassen via het hoofd scherm voor **verificatie** door **bewerken** naast verificatie- **instellingen** te kiezen. Zie voor meer informatie over deze opties [verificatie stroom](overview-authentication-authorization.md#authentication-flow).
+
+1. Klik op **Add**.
+
+U bent nu klaar om het micro soft-identiteits platform te gebruiken voor verificatie in uw app. De provider wordt weer gegeven in het scherm **verificatie** . Hier kunt u deze provider configuratie bewerken of verwijderen.
 
 ## <a name="configure-client-apps-to-access-your-app-service"></a>Client-apps configureren voor toegang tot uw App Service
 

@@ -6,12 +6,12 @@ ms.author: inhenkel
 ms.service: media-services
 ms.topic: conceptual
 ms.date: 1/28/2020
-ms.openlocfilehash: f2ea960d28bcdcbf586570933ac00dccae18e46a
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: bc7b1a0742e79c3c84bf533e75467b5def2706b4
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106067993"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106277722"
 ---
 # <a name="bring-your-own-key-customer-managed-keys-with-media-services"></a>Uw eigen sleutel (door de klant beheerde sleutels) meenemen met Media Services
 
@@ -46,8 +46,8 @@ Media Services ondersteunt automatisch dubbele versleuteling. Voor Data-at-rest 
 
 ## <a name="tutorials"></a>Zelfstudies
 
-- [De Azure Portal gebruiken om door klant beheerde sleutels of BYOK met Media Services](tutorial-byok-portal.md)
-- [Gebruik door de klant beheerde sleutels of BYOK met Media Services rest API](tutorial-byok-postman.md).
+- [De Azure Portal gebruiken om door klant beheerde sleutels of BYOK met Media Services](security-customer-managed-keys-portal-tutorial.md)
+- [Gebruik door de klant beheerde sleutels of BYOK met Media Services rest API](security-customer-managed-keys-rest-postman-tutorial.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

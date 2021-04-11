@@ -1,7 +1,7 @@
 ---
 title: Overzicht van SQL Server op virtuele Linux-machines in Azure | Microsoft Docs
 description: Meer informatie over het uitvoeren van volledige SQL Server-edities op virtuele Linux-machines in Azure. U vindt hier rechtstreekse koppelingen naar alle installatiekopieën voor virtuele Linux-machines met SQL Server en gerelateerde inhoud.
-services: virtual-machines-linux
+services: virtual-machines-sql
 documentationcenter: ''
 author: MashaMSFT
 tags: azure-service-management
@@ -11,12 +11,12 @@ ms.workload: iaas-sql-server
 ms.date: 04/10/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: c394fe2aa7639d32e5d79bcb22a01151f7666f5b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3613b8417c78d0a01582defb7396cc65521e2f4c
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96324615"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106449478"
 ---
 # <a name="overview-of-sql-server-on-azure-virtual-machines-linux"></a>Overzicht van SQL Server op virtuele machines in Azure (Linux)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]

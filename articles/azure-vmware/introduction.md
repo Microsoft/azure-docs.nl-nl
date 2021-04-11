@@ -3,12 +3,12 @@ title: Inleiding
 description: Meer informatie over de functies en voordelen van Azure VMware Solution voor het implementeren en beheren van VMware-workloads in Azure.
 ms.topic: overview
 ms.date: 03/24/2021
-ms.openlocfilehash: a75c04cf6b51068ef9867e3f9438b2820da703fe
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 32dd73108dc12d7d7acc605f43a0fbf6d2cf1cd7
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105048813"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106107980"
 ---
 # <a name="what-is-azure-vmware-solution"></a>Wat is Azure VMware Solution?
 
@@ -19,11 +19,6 @@ Azure VMware Solution is een VMware-gevalideerde oplossing met voortdurende vali
 In het diagram wordt de verdeling weergegeven tussen privéclouds en VNets in Azure, Azure-services en on-premises omgevingen. Netwerktoegang van privéclouds naar Azure-services of VNets biedt SLA-gestuurde integratie van Azure-service-eindpunten. ExpressRoute Global Reach verbindt uw on-premises omgeving verbindt met uw Azure VMware Solution-privécloud. 
 
 ![Afbeelding van nabijheid van Azure VMware Solution-privécloud ten opzichte van Azure en on-premises](./media/adjacency-overview-drawing-final.png)
-
-## <a name="customer-communication"></a>Communicatie van klanten
-Problemen met de service, gepland onderhoud, status adviezen, meldingen van beveiligings adviezen worden gepubliceerd via **service Health** in de Azure Portal. U kunt tijdig acties ondernemen wanneer u waarschuwingen voor activiteiten logboeken instelt voor deze meldingen. Zie [service Health Alerts maken met behulp van de Azure Portal](../service-health/alerts-activity-log-service-notifications-portal.md#create-service-health-alert-using-azure-portal)voor meer informatie.
-
-:::image type="content" source="media/service-health.png" alt-text="Scherm opname van Service Health meldingen":::
 
 ## <a name="hosts-clusters-and-private-clouds"></a>Hosts, clusters en privéclouds
 
@@ -60,6 +55,9 @@ In uw privécloud kunt u:
 
 Bewaken dat de patronen in de Azure VMware Solution vergelijkbaar zijn met Azure VM's binnen het IaaS-platform. Zie voor meer informatie en uitleg [VM's van Azure bewaken met Azure Monitor](../azure-monitor/vm/monitor-vm-azure.md).
 
+## <a name="customer-communication"></a>Communicatie van klanten
+[!INCLUDE [customer-communications](includes/customer-communications.md)]
+
 ## <a name="next-steps"></a>Volgende stappen
 
 De volgende stap is het leren van de belangrijkste [privécloud- en clusterconcepten](concepts-private-clouds-clusters.md).
@@ -68,3 +66,5 @@ De volgende stap is het leren van de belangrijkste [privécloud- en clusterconce
 
 <!-- LINKS - internal -->
 [concepts-private-clouds-clusters]: ./concepts-private-clouds-clusters.md
+
+

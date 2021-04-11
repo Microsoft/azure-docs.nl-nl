@@ -4,10 +4,10 @@ description: Meer informatie over hardware en virtuele apparaten voor Certified 
 ms.date: 01/13/2021
 ms.topic: how-to
 ms.openlocfilehash: 242e88e92d6197fd018c56fa55a4dd8166f5d027
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104782755"
 ---
 # <a name="identify-required-appliances"></a>Vereiste apparaten identificeren
@@ -105,7 +105,7 @@ In deze sectie worden de hardwarespecificaties voor de volgende apparaten beschr
 
 ### <a name="appliance-bom"></a>Apparaat-stuk lijst
 
-| PN | Beschrijving | Aantal |
+| PN | Description | Aantal |
 |--|--|--|
 | P19766-B21 | HPE DL360 Gen10 8SFF NC CTO-server | 1 |
 | P19766-B21 | Europa-meertalige lokalisatie | 1 |
@@ -176,7 +176,7 @@ In deze sectie worden de hardwarespecificaties voor de volgende apparaten beschr
 
 ### <a name="appliance-bom"></a>Apparaat-stuk lijst
 
-| PN | Beschrijving | Aantal |
+| PN | Description | Aantal |
 |--|--|--|
 | P06961-B21 | HPE DL20 Gen10 NHP 2LFF CTO-server | 1 |
 | P06961-B21 | HPE DL20 Gen10 NHP 2LFF CTO-server | 1 |
@@ -212,7 +212,7 @@ In deze sectie worden de hardwarespecificaties voor de volgende apparaten beschr
 | Puls | 10G 10 MS, halve sinus, drie voor elke as. (Zowel positieve & negatief Pulse) – DIN-rail |
 
 ### <a name="appliance-bom"></a>Apparaat-stuk lijst
-| Product | Beschrijving |
+| Product | Description |
 |--|--|
 | P25828-B21 | HPE Edgeline EL300 v2 geconvergeerd Edge-systeem |
 | P25828-B21 B19 | HPE EL300 v2-systeem met geconvergeerde rand |
@@ -244,7 +244,7 @@ In deze sectie worden de hardwarespecificaties voor de volgende apparaten beschr
 
 | Type | Enterprise |
 |--|--|
-| Beschrijving | Virtuele apparaten voor Enter prise-implementatie typen |
+| Description | Virtuele apparaten voor Enter prise-implementatie typen |
 | vCPU | 8 |
 | Geheugen | 32 GB |
 | Storage | 1,8 TB |

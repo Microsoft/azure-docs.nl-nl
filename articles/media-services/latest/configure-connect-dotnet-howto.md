@@ -14,12 +14,12 @@ ms.topic: how-to
 ms.date: 11/17/2020
 ms.author: inhenkel
 ms.custom: has-adal-ref, devx-track-csharp
-ms.openlocfilehash: 8946f6e94dd26db45622bc7609fb2375d59bb57e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 677c5998d25205f8de9792888af2554674944798
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102455379"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106107554"
 ---
 # <a name="connect-to-media-services-v3-api---net"></a>Verbinding maken met Media Services v3 API-.NET
 
@@ -29,7 +29,7 @@ In dit artikel wordt beschreven hoe u verbinding maakt met de Azure Media Servic
 
 ## <a name="prerequisites"></a>Vereisten
 
-- [Een Azure Media Services-account maken](./create-account-howto.md). Zorg ervoor dat u de naam van de resource groep en de naam van het Media Services account vergeet
+- [Een Azure Media Services-account maken](./account-create-how-to.md). Zorg ervoor dat u de naam van de resource groep en de naam van het Media Services account vergeet
 - Installeer een hulp programma dat u wilt gebruiken voor .NET-ontwikkeling. In de stappen in dit artikel ziet u hoe u [Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/)gebruikt. U kunt Visual Studio code gebruiken. Zie [werken met C#](https://code.visualstudio.com/docs/languages/csharp). U kunt ook een andere code-editor gebruiken.
 
 > [!IMPORTANT]
@@ -237,14 +237,14 @@ namespace ConsoleApp1
 
 - [Zelf studie: Video's uploaden, coderen en streamen-.NET](stream-files-tutorial-with-api.md) 
 - [Zelf studie: Stream Live met Media Services v3-.NET](stream-live-tutorial-with-api.md)
-- [Zelf studie: Video's analyseren met Media Services v3-.NET](analyze-videos-tutorial-with-api.md)
+- [Zelf studie: Video's analyseren met Media Services v3-.NET](analyze-videos-tutorial.md)
 - [Een taakinvoer maken vanuit een lokaal bestand - .NET](job-input-from-local-file-how-to.md)
 - [Een taakinvoer maken vanuit een HTTPS-URL - .NET](job-input-from-http-how-to.md)
-- [Coderen met een aangepaste transformatie - .NET](customize-encoder-presets-how-to.md)
-- [Dynamische AES-128-versleuteling en de sleutelleveringsservice gebruiken - .NET](protect-with-aes128.md)
-- [Dynamische DRM-versleuteling en licentielevering gebruiken - .NET](protect-with-drm.md)
-- [Een ondertekeningssleutel ophalen uit het bestaand beleid - .NET](get-content-key-policy-dotnet-howto.md)
-- [Filters maken met Media Services - .NET](filters-dynamic-manifest-dotnet-howto.md)
+- [Coderen met een aangepaste transformatie - .NET](encode-custom-presets-how-to.md)
+- [Dynamische AES-128-versleuteling en de sleutelleveringsservice gebruiken - .NET](drm-playready-license-template-concept.md)
+- [Dynamische DRM-versleuteling en licentielevering gebruiken - .NET](drm-protect-with-drm-tutorial.md)
+- [Een ondertekeningssleutel ophalen uit het bestaand beleid - .NET](drm-get-content-key-policy-dotnet-how-to.md)
+- [Filters maken met Media Services - .NET](filters-dynamic-manifest-dotnet-how-to.md)
 - [Voorbeelden van geavanceerde video on demand van Azure Functions-v2 met Media Services v3](https://aka.ms/ams3functions)
 
 ## <a name="see-also"></a>Zie ook

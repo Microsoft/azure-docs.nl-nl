@@ -3,12 +3,12 @@ title: Het toevoegen van een Lab-gebruiker in Azure DevTest Labs automatiseren |
 description: Dit artikel laat u zien hoe u het toevoegen van een gebruiker aan een lab in Azure DevTest Labs kunt automatiseren met Azure Resource Manager sjablonen, Power shell en CLI.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: dc5522cfe694f193b9bbeeb3145808a367a62c12
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 1168e00960c35e2ac1e4a660efba63d30c63a575
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102519398"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105727702"
 ---
 # <a name="automate-adding-a-lab-user-to-a-lab-in-azure-devtest-labs"></a>Automatisch toevoegen van een Lab-gebruiker aan een lab in Azure DevTest Labs
 Met Azure DevTest Labs kunt u snel ontwikkel-en test omgevingen met self-service maken met behulp van de Azure Portal. Als u echter verschillende teams en verschillende DevTest Labs-instanties hebt, kan het maken van het aanmaak proces tijd besparen. Met [Azure Resource Manager sjablonen](https://github.com/Azure/azure-devtestlab/tree/master/Environments) kunt u Labs, Lab-vm's, aangepaste installatie kopieën en formules maken en gebruikers op een geautomatiseerde manier toevoegen. Dit artikel is specifiek gericht op het toevoegen van gebruikers aan een DevTest Labs-exemplaar.
@@ -115,13 +115,13 @@ De rol-ID is gedefinieerd in de sectie Varia bles en met de naam `devTestLabUser
 ### <a name="principal-id"></a>Principal-ID
 De principal-ID is de object-ID van de Active Directory gebruiker, groep of service-principal die u wilt toevoegen als test gebruiker aan het lab. De sjabloon gebruikt de `ObjectId` as a-para meter.
 
-U kunt de ObjectId ophalen met behulp van de cmdlet [Get-AzureRMADUser](/powershell/module/azurerm.resources/get-azurermaduser?view=azurermps-6.13.0), [Get-AzureRMADGroup of [Get-AzureRMADServicePrincipal](/powershell/module/azurerm.resources/get-azurermadserviceprincipal?view=azurermps-6.13.0) Power shell. Deze cmdlets retour neren één of meer lijsten met Active Directory objecten die een ID-eigenschap hebben. Dit is de object-ID die u nodig hebt. In het volgende voor beeld ziet u hoe u de object-ID van één gebruiker bij een bedrijf ophaalt.
+U kunt de ObjectId ophalen met behulp van de cmdlet [Get-AzureRMADUser](/powershell/module/azurerm.resources/get-azurermaduser?view=azurermps-6.13.0&preserve-view=true), [Get-AzureRMADGroup of [Get-AzureRMADServicePrincipal](/powershell/module/azurerm.resources/get-azurermadserviceprincipal?view=azurermps-6.13.0&preserve-view=true) Power shell. Deze cmdlets retour neren één of meer lijsten met Active Directory objecten die een ID-eigenschap hebben. Dit is de object-ID die u nodig hebt. In het volgende voor beeld ziet u hoe u de object-ID van één gebruiker bij een bedrijf ophaalt.
 
 ```powershell
-$userObjectId = (Get-AzureRmADUser -UserPrincipalName ‘email@company.com').Id
+$userObjectId = (Get-AzureRmADUser -UserPrincipalName 'email@company.com').Id
 ```
 
-U kunt ook de Azure Active Directory Power shell-cmdlets gebruiken die [Get-MsolUser](/powershell/module/msonline/get-msoluser?view=azureadps-1.0), [Get-MsolGroup](/powershell/module/msonline/get-msolgroup?view=azureadps-1.0)en [Get-MsolServicePrincipal](/powershell/module/msonline/get-msolserviceprincipal?view=azureadps-1.0)bevatten.
+U kunt ook de Azure Active Directory Power shell-cmdlets gebruiken die [Get-MsolUser](/powershell/module/msonline/get-msoluser?preserve-view=true&view=azureadps-1.0), [Get-MsolGroup](/powershell/module/msonline/get-msolgroup?preserve-view=true&view=azureadps-1.0)en [Get-MsolServicePrincipal](/powershell/module/msonline/get-msolserviceprincipal?preserve-view=true&view=azureadps-1.0)bevatten.
 
 ### <a name="scope"></a>Bereik
 Bereik Hiermee geeft u de resource of resource groep op waarvoor de roltoewijzing moet worden toegepast. Voor resources heeft de scope de volgende notatie: `/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{provider-namespace}/{resource-type}/{resource-name}` . De sjabloon gebruikt de `subscription().subscriptionId` functie om het `subscription-id` deel en de `resourceGroup().name` sjabloon functie in te vullen om het onderdeel in te vullen `resource-group-name` . Als u deze functies gebruikt, moet het lab waaraan u een rol wilt toewijzen, bestaan in het huidige abonnement en dezelfde resource groep waarvoor de sjabloon implementatie is gemaakt. Het laatste deel, `resource-name` , is de naam van het lab. Deze waarde wordt ontvangen via de sjabloon parameter in dit voor beeld. 
@@ -153,7 +153,7 @@ Maak eerst een parameter bestand (bijvoorbeeld: azuredeploy.parameters.jsaan) wa
 }
 ```
 
-Gebruik vervolgens de Power shell [-cmdlet New-AzureRmResourceGroupDeployment](/powershell/module/azurerm.resources/new-azurermresourcegroupdeployment?view=azurermps-6.13.0) om de Resource Manager-sjabloon te implementeren. Met de volgende voorbeeld opdracht wordt een persoon, groep of Service-Principal toegewezen aan de gebruikersrol DevTest Labs voor een lab.
+Gebruik vervolgens de Power shell [-cmdlet New-AzureRmResourceGroupDeployment](/powershell/module/azurerm.resources/new-azurermresourcegroupdeployment) om de Resource Manager-sjabloon te implementeren. Met de volgende voorbeeld opdracht wordt een persoon, groep of Service-Principal toegewezen aan de gebruikersrol DevTest Labs voor een lab.
 
 ```powershell
 New-AzureRmResourceGroupDeployment -Name "MyLabResourceGroup-$(New-Guid)" -ResourceGroupName 'MyLabResourceGroup' -TemplateParameterFile .\azuredeploy.parameters.json -TemplateFile .\azuredeploy.json
@@ -168,7 +168,7 @@ New-AzureRmResourceGroupDeployment -Name "MyLabResourceGroup-$(New-Guid)" -Resou
 ```
 
 ## <a name="use-azure-powershell"></a>Azure PowerShell gebruiken
-Zoals besproken in de inleiding, maakt u een nieuwe functie toewijzing van Azure om een gebruiker toe te voegen aan de gebruikersrol **DevTest Labs** voor het lab. In Power shell kunt u dit doen met behulp van de cmdlet [New-AzureRMRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment?view=azurermps-6.13.0) . Deze cmdlet heeft veel optionele para meters om flexibiliteit te bieden. De `ObjectId` , `SigninName` , of `ServicePrincipalName` kunnen worden opgegeven als het object waaraan machtigingen worden verleend.  
+Zoals besproken in de inleiding, maakt u een nieuwe functie toewijzing van Azure om een gebruiker toe te voegen aan de gebruikersrol **DevTest Labs** voor het lab. In Power shell kunt u dit doen met behulp van de cmdlet [New-AzureRMRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment) . Deze cmdlet heeft veel optionele para meters om flexibiliteit te bieden. De `ObjectId` , `SigninName` , of `ServicePrincipalName` kunnen worden opgegeven als het object waaraan machtigingen worden verleend.  
 
 Hier volgt een voor beeld van een Azure PowerShell opdracht waarmee een gebruiker wordt toegevoegd aan de gebruikersrol DevTest Labs in het opgegeven Lab.
 
@@ -186,7 +186,7 @@ Het object waartoe toegang wordt verleend, kan worden opgegeven met de `objectId
 In het volgende Azure CLI-voor beeld ziet u hoe u een persoon kunt toevoegen aan de gebruikersrol DevTest Labs voor het opgegeven Lab.  
 
 ```azurecli
-az role assignment create --roleName "DevTest Labs User" --signInName <email@company.com> -–resource-name "<Lab Name>" --resource-type “Microsoft.DevTestLab/labs" --resource-group "<Resource Group Name>"
+az role assignment create --roleName "DevTest Labs User" --signInName <email@company.com> -–resource-name "<Lab Name>" --resource-type "Microsoft.DevTestLab/labs" --resource-group "<Resource Group Name>"
 ```
 
 ## <a name="next-steps"></a>Volgende stappen

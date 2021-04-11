@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: sideeksh
-ms.openlocfilehash: 569af28f5773d843f49dd9c8143b45e308ae142e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 675190bee674c745494c2378712afa89bd43cbe4
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "87420410"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105727872"
 ---
 # <a name="run-a-dr-drill-for-hyper-v-vms-to-a-secondary-site"></a>Een DR-analyse uitvoeren voor virtuele Hyper-V-machines naar een secundaire site
 
@@ -43,10 +43,10 @@ U voert een testfailover uit van de primaire naar de secundaire site. Als u alle
 
 Wanneer u een testfailover uitvoert, wordt u gevraagd om de netwerk instellingen voor de test replica-machines te selecteren, zoals in de tabel wordt beschreven.
 
-| **Optie** | **Details** | |
-| --- | --- | --- |
-| **Geen** | De test-VM wordt gemaakt op de host waarop de replica-VM zich bevindt. Deze is niet toegevoegd aan de Cloud en is niet verbonden met een netwerk.<br/><br/> U kunt de computer verbinden met een VM-netwerk nadat deze is gemaakt.| |
-| **Bestaande gebruiken** | De test-VM wordt gemaakt op de host waarop de replica-VM zich bevindt. Deze wordt niet toegevoegd aan de Cloud.<br/><br/>Maak een VM-netwerk dat is geïsoleerd van uw productie netwerk.<br/><br/>Als u een netwerk op basis van VLAN gebruikt, raden we u aan om voor dit doel een afzonderlijk logisch netwerk (niet gebruikt in productie) te maken in VMM. Dit logische netwerk wordt gebruikt voor het maken van VM-netwerken voor testfailover.<br/><br/>Het logische netwerk moet worden gekoppeld aan ten minste een van de netwerk adapters van alle Hyper-V-servers die als host fungeren voor virtuele machines.<br/><br/>Voor logische VLAN-netwerken moeten de netwerk sites die u aan het logische netwerk toevoegt, worden geïsoleerd.<br/><br/>Als u een logisch netwerk op basis van Windows-Netwerkvirtualisatie gebruikt, maakt Azure Site Recovery automatisch geïsoleerde VM-netwerken. | |
+| **Optie** | **Details** |
+| --- | --- |
+| **Geen** | De test-VM wordt gemaakt op de host waarop de replica-VM zich bevindt. Deze is niet toegevoegd aan de Cloud en is niet verbonden met een netwerk.<br/><br/> U kunt de computer verbinden met een VM-netwerk nadat deze is gemaakt.|
+| **Bestaande gebruiken** | De test-VM wordt gemaakt op de host waarop de replica-VM zich bevindt. Deze wordt niet toegevoegd aan de Cloud.<br/><br/>Maak een VM-netwerk dat is geïsoleerd van uw productie netwerk.<br/><br/>Als u een netwerk op basis van VLAN gebruikt, raden we u aan om voor dit doel een afzonderlijk logisch netwerk (niet gebruikt in productie) te maken in VMM. Dit logische netwerk wordt gebruikt voor het maken van VM-netwerken voor testfailover.<br/><br/>Het logische netwerk moet worden gekoppeld aan ten minste een van de netwerk adapters van alle Hyper-V-servers die als host fungeren voor virtuele machines.<br/><br/>Voor logische VLAN-netwerken moeten de netwerk sites die u aan het logische netwerk toevoegt, worden geïsoleerd.<br/><br/>Als u een logisch netwerk op basis van Windows-Netwerkvirtualisatie gebruikt, maakt Azure Site Recovery automatisch geïsoleerde VM-netwerken. |
 | **Een netwerk maken** | Er wordt automatisch een tijdelijk test netwerk gemaakt op basis van de instelling die u opgeeft in **logisch netwerk** en de gerelateerde netwerk sites.<br/><br/> Failover controleert of Vm's zijn gemaakt.<br/><br/> Gebruik deze optie als een herstel plan meer dan één VM-netwerk gebruikt.<br/><br/> Als u Windows Network Virtualization-netwerken gebruikt, kunt u met deze optie automatisch VM-netwerken maken met dezelfde instellingen (subnetten en IP-adres groepen) in het netwerk van de virtuele replica machine. Deze VM-netwerken worden automatisch opgeruimd nadat de testfailover is voltooid.<br/><br/> De test-VM wordt gemaakt op de host waarop de virtuele replica machine zich bevindt. Deze wordt niet toegevoegd aan de Cloud.|
 
 ### <a name="best-practices"></a>Aanbevolen procedures

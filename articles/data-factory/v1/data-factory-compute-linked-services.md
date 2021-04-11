@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: 5f6fbcb73b4139c0a80ea8352071d8683c401d6e
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104782942"
 ---
 # <a name="compute-environments-supported-by-azure-data-factory-version-1"></a>Reken omgevingen die worden ondersteund door Azure Data Factory versie 1
@@ -117,14 +117,14 @@ De volgende JSON definieert een gekoppelde HDInsight-service op aanvraag van Lin
 ### <a name="properties"></a>Eigenschappen
 | Eigenschap                     | Beschrijving                              | Vereist |
 | ---------------------------- | ---------------------------------------- | -------- |
-| type                         | Stel de eigenschap type in op **HDInsightOnDemand**. | Ja      |
-| clusterSize                  | Het aantal werk-en gegevens knooppunten in het cluster. Het HDInsight-cluster wordt gemaakt met twee hoofd knooppunten, naast het aantal worker-knoop punten dat u voor deze eigenschap opgeeft. De knoop punten hebben een grootte Standard_D3, die vier kernen heeft. Een cluster van 4 worker-knoop punten neemt 24 kernen (4 \* 4 = 16 kernen voor worker-knoop punten, plus 2 \* 4 = 8 kernen voor hoofd knooppunten). Zie op [Linux gebaseerde Hadoop-clusters maken in HDInsight](../../hdinsight/hdinsight-hadoop-provision-linux-clusters.md)voor meer informatie over de laag Standard_D3. | Ja      |
-| timeToLive                   | De toegestane tijd niet-actief voor het HDInsight-cluster op aanvraag. Hiermee geeft u op hoelang het HDInsight-cluster op aanvraag actief blijft wanneer de uitvoering van een activiteit is voltooid, als er geen andere actieve taken in het cluster zijn.<br /><br />Als bijvoorbeeld het uitvoeren van een activiteit zes minuten duurt en **timeToLive** is ingesteld op 5 minuten, blijft het cluster 5 minuten na de 6 minuten van verwerking van de uitvoering van de activiteit actief. Als er een andere uitvoering van de activiteit wordt uitgevoerd in het venster van 6 minuten, wordt deze verwerkt door hetzelfde cluster.<br /><br />Het maken van een HDInsight-cluster op aanvraag is een dure bewerking (dit kan enige tijd duren). Gebruik deze instelling als dat nodig is om de prestaties van een data factory te verbeteren door opnieuw gebruik te maken van een on-demand HDInsight-cluster.<br /><br />Als u de waarde **timeToLive** instelt op **0**, wordt het cluster verwijderd zodra de uitvoering van de activiteit is voltooid. Als u echter een hoge waarde instelt, kan het cluster niet-actief blijven, wat leidt tot hoge kosten. Het is belang rijk dat u de juiste waarde instelt op basis van uw behoeften.<br /><br />Als de **timeToLive** -waarde op de juiste wijze is ingesteld, kunnen meerdere pijp lijnen het exemplaar van het HDInsight-cluster op aanvraag delen. | Ja      |
-| versie                      | De versie van het HDInsight-cluster. Zie [ondersteunde hdinsight-versies](../../hdinsight/hdinsight-component-versioning.md#supported-hdinsight-versions)voor toegestane hdinsight-versies. Als deze waarde niet is opgegeven, wordt de [meest recente HDI-standaard versie](../../hdinsight/hdinsight-component-versioning.md) gebruikt. | Nee       |
-| linkedServiceName            | De Azure Storage gekoppelde service die moet worden gebruikt door het cluster op aanvraag om gegevens op te slaan en te verwerken. Het HDInsight-cluster wordt gemaakt in dezelfde regio als dit opslag account.<p>Op dit moment kunt u geen HDInsight-cluster op aanvraag maken dat gebruikmaakt van Azure Data Lake Store als opslag. Als u de resultaat gegevens van HDInsight-verwerking in Data Lake Store wilt opslaan, gebruikt u Kopieer activiteit om de gegevens uit de Blobopslag te kopiëren naar Data Lake Store. </p> | Ja      |
-| additionalLinkedServiceNames | Hiermee geeft u extra opslag accounts voor de gekoppelde HDInsight-service op. Data Factory de opslag accounts namens u registreren. Deze opslag accounts moeten zich in dezelfde regio bevinden als het HDInsight-cluster. Het HDInsight-cluster wordt gemaakt in dezelfde regio als het opslag account dat is opgegeven door de eigenschap **linkedServiceName** . | Nee       |
-| osType                       | Het type besturings systeem. Toegestane waarden zijn **Linux** en **Windows**. Als deze waarde niet is opgegeven, wordt **Linux** gebruikt.  <br /><br />We raden u ten zeerste aan Linux gebaseerde HDInsight-clusters te gebruiken. De datum van pensionering voor HDInsight in Windows is 31 juli 2018. | Nee       |
-| hcatalogLinkedServiceName    | De naam van de gekoppelde Azure SQL-service die verwijst naar de HCatalog-data base. Het HDInsight-cluster op aanvraag wordt gemaakt met behulp van de SQL database als de meta Store. | Nee       |
+| type                         | Stel de eigenschap type in op **HDInsightOnDemand**. | Yes      |
+| clusterSize                  | Het aantal werk-en gegevens knooppunten in het cluster. Het HDInsight-cluster wordt gemaakt met twee hoofd knooppunten, naast het aantal worker-knoop punten dat u voor deze eigenschap opgeeft. De knoop punten hebben een grootte Standard_D3, die vier kernen heeft. Een cluster van 4 worker-knoop punten neemt 24 kernen (4 \* 4 = 16 kernen voor worker-knoop punten, plus 2 \* 4 = 8 kernen voor hoofd knooppunten). Zie op [Linux gebaseerde Hadoop-clusters maken in HDInsight](../../hdinsight/hdinsight-hadoop-provision-linux-clusters.md)voor meer informatie over de laag Standard_D3. | Yes      |
+| timeToLive                   | De toegestane tijd niet-actief voor het HDInsight-cluster op aanvraag. Hiermee geeft u op hoelang het HDInsight-cluster op aanvraag actief blijft wanneer de uitvoering van een activiteit is voltooid, als er geen andere actieve taken in het cluster zijn.<br /><br />Als bijvoorbeeld het uitvoeren van een activiteit zes minuten duurt en **timeToLive** is ingesteld op 5 minuten, blijft het cluster 5 minuten na de 6 minuten van verwerking van de uitvoering van de activiteit actief. Als er een andere uitvoering van de activiteit wordt uitgevoerd in het venster van 6 minuten, wordt deze verwerkt door hetzelfde cluster.<br /><br />Het maken van een HDInsight-cluster op aanvraag is een dure bewerking (dit kan enige tijd duren). Gebruik deze instelling als dat nodig is om de prestaties van een data factory te verbeteren door opnieuw gebruik te maken van een on-demand HDInsight-cluster.<br /><br />Als u de waarde **timeToLive** instelt op **0**, wordt het cluster verwijderd zodra de uitvoering van de activiteit is voltooid. Als u echter een hoge waarde instelt, kan het cluster niet-actief blijven, wat leidt tot hoge kosten. Het is belang rijk dat u de juiste waarde instelt op basis van uw behoeften.<br /><br />Als de **timeToLive** -waarde op de juiste wijze is ingesteld, kunnen meerdere pijp lijnen het exemplaar van het HDInsight-cluster op aanvraag delen. | Yes      |
+| versie                      | De versie van het HDInsight-cluster. Zie [ondersteunde hdinsight-versies](../../hdinsight/hdinsight-component-versioning.md#supported-hdinsight-versions)voor toegestane hdinsight-versies. Als deze waarde niet is opgegeven, wordt de [meest recente HDI-standaard versie](../../hdinsight/hdinsight-component-versioning.md) gebruikt. | No       |
+| linkedServiceName            | De Azure Storage gekoppelde service die moet worden gebruikt door het cluster op aanvraag om gegevens op te slaan en te verwerken. Het HDInsight-cluster wordt gemaakt in dezelfde regio als dit opslag account.<p>Op dit moment kunt u geen HDInsight-cluster op aanvraag maken dat gebruikmaakt van Azure Data Lake Store als opslag. Als u de resultaat gegevens van HDInsight-verwerking in Data Lake Store wilt opslaan, gebruikt u Kopieer activiteit om de gegevens uit de Blobopslag te kopiëren naar Data Lake Store. </p> | Yes      |
+| additionalLinkedServiceNames | Hiermee geeft u extra opslag accounts voor de gekoppelde HDInsight-service op. Data Factory de opslag accounts namens u registreren. Deze opslag accounts moeten zich in dezelfde regio bevinden als het HDInsight-cluster. Het HDInsight-cluster wordt gemaakt in dezelfde regio als het opslag account dat is opgegeven door de eigenschap **linkedServiceName** . | No       |
+| osType                       | Het type besturings systeem. Toegestane waarden zijn **Linux** en **Windows**. Als deze waarde niet is opgegeven, wordt **Linux** gebruikt.  <br /><br />We raden u ten zeerste aan Linux gebaseerde HDInsight-clusters te gebruiken. De datum van pensionering voor HDInsight in Windows is 31 juli 2018. | No       |
+| hcatalogLinkedServiceName    | De naam van de gekoppelde Azure SQL-service die verwijst naar de HCatalog-data base. Het HDInsight-cluster op aanvraag wordt gemaakt met behulp van de SQL database als de meta Store. | No       |
 
 #### <a name="example-linkedservicenames-json"></a>Voor beeld: LinkedServiceNames JSON
 
@@ -140,14 +140,14 @@ Voor een gedetailleerde configuratie van het HDInsight-cluster op aanvraag kunt 
 
 | Eigenschap               | Beschrijving                              | Vereist |
 | :--------------------- | :--------------------------------------- | :------- |
-| coreConfiguration      | Hiermee geeft u de para meters voor de kern configuratie (core-site.xml) op voor het HDInsight-cluster dat moet worden gemaakt. | Nee       |
-| hBaseConfiguration     | Hiermee geeft u de HBase-configuratie parameters (hbase-site.xml) voor het HDInsight-cluster. | Nee       |
-| hdfsConfiguration      | Hiermee geeft u de HDFS-configuratie parameters (hdfs-site.xml) voor het HDInsight-cluster op. | Nee       |
-| hiveConfiguration      | Hiermee geeft u de Hive-configuratie parameters (hive-site.xml) voor het HDInsight-cluster. | Nee       |
-| mapReduceConfiguration | Hiermee geeft u de MapReduce-configuratie parameters (mapred-site.xml) voor het HDInsight-cluster. | Nee       |
-| oozieConfiguration     | Hiermee geeft u de Oozie-configuratie parameters (oozie-site.xml) voor het HDInsight-cluster. | Nee       |
-| stormConfiguration     | Hiermee geeft u de Storm-configuratie parameters (storm-site.xml) voor het HDInsight-cluster. | Nee       |
-| yarnConfiguration      | Hiermee geeft u de garen configuratie parameters (yarn-site.xml) voor het HDInsight-cluster. | Nee       |
+| coreConfiguration      | Hiermee geeft u de para meters voor de kern configuratie (core-site.xml) op voor het HDInsight-cluster dat moet worden gemaakt. | No       |
+| hBaseConfiguration     | Hiermee geeft u de HBase-configuratie parameters (hbase-site.xml) voor het HDInsight-cluster. | No       |
+| hdfsConfiguration      | Hiermee geeft u de HDFS-configuratie parameters (hdfs-site.xml) voor het HDInsight-cluster op. | No       |
+| hiveConfiguration      | Hiermee geeft u de Hive-configuratie parameters (hive-site.xml) voor het HDInsight-cluster. | No       |
+| mapReduceConfiguration | Hiermee geeft u de MapReduce-configuratie parameters (mapred-site.xml) voor het HDInsight-cluster. | No       |
+| oozieConfiguration     | Hiermee geeft u de Oozie-configuratie parameters (oozie-site.xml) voor het HDInsight-cluster. | No       |
+| stormConfiguration     | Hiermee geeft u de Storm-configuratie parameters (storm-site.xml) voor het HDInsight-cluster. | No       |
+| yarnConfiguration      | Hiermee geeft u de garen configuratie parameters (yarn-site.xml) voor het HDInsight-cluster. | No       |
 
 #### <a name="example-on-demand-hdinsight-cluster-configuration-with-advanced-properties"></a>Voor beeld: HDInsight-cluster configuratie op aanvraag met geavanceerde eigenschappen
 
@@ -193,9 +193,9 @@ Als u de grootte van de hoofd-, gegevens-en ZooKeeper-knoop punten wilt opgeven,
 
 | Eigenschap          | Beschrijving                              | Vereist |
 | :---------------- | :--------------------------------------- | :------- |
-| headNodeSize      | Hiermee stelt u de grootte van het hoofd knooppunt. De standaard waarde is **Standard_D3**. Zie [grootte van knoop punten opgeven](#specify-node-sizes)voor meer informatie. | Nee       |
-| dataNodeSize      | Hiermee stelt u de grootte van het gegevens knooppunt in. De standaard waarde is **Standard_D3**. | Nee       |
-| zookeeperNodeSize | Hiermee stelt u de grootte van het ZooKeeper-knoop punt. De standaard waarde is **Standard_D3**. | Nee       |
+| headNodeSize      | Hiermee stelt u de grootte van het hoofd knooppunt. De standaard waarde is **Standard_D3**. Zie [grootte van knoop punten opgeven](#specify-node-sizes)voor meer informatie. | No       |
+| dataNodeSize      | Hiermee stelt u de grootte van het gegevens knooppunt in. De standaard waarde is **Standard_D3**. | No       |
+| zookeeperNodeSize | Hiermee stelt u de grootte van het ZooKeeper-knoop punt. De standaard waarde is **Standard_D3**. | No       |
 
 #### <a name="specify-node-sizes"></a>Knooppunt groottes opgeven
 Zie [grootten van virtuele machines](../../virtual-machines/sizes.md)voor teken reeks waarden die u moet opgeven voor de eigenschappen die in de voor gaande sectie worden beschreven. De waarden moeten voldoen aan de cmdlets en Api's waarnaar wordt verwezen in de [grootte van virtuele machines](../../virtual-machines/sizes.md). De grote (standaard) gegevens knooppunt grootte heeft 7 GB geheugen. Dit is mogelijk niet voldoende voor uw scenario. 
@@ -253,11 +253,11 @@ U kunt een gekoppelde HDInsight-service maken om uw eigen HDInsight-cluster te r
 ### <a name="properties"></a>Eigenschappen
 | Eigenschap          | Beschrijving                              | Vereist |
 | ----------------- | ---------------------------------------- | -------- |
-| type              | Stel de eigenschap type in op **HDInsight**. | Ja      |
-| clusterUri        | De URI van het HDInsight-cluster.        | Ja      |
-| gebruikersnaam          | De naam van het gebruikers account dat moet worden gebruikt om verbinding te maken met een bestaand HDInsight-cluster. | Ja      |
-| wachtwoord          | Het wacht woord voor het gebruikers account.   | Ja      |
-| linkedServiceName | De naam van de gekoppelde opslag service die verwijst naar de Blob-opslag die wordt gebruikt door het HDInsight-cluster. <p>Op dit moment kunt u geen Data Lake Store gekoppelde service opgeven voor deze eigenschap. Als het HDInsight-cluster toegang heeft tot Data Lake Store, kunt u toegang krijgen tot gegevens in Data Lake Store van Hive-of Pig-scripts. </p> | Ja      |
+| type              | Stel de eigenschap type in op **HDInsight**. | Yes      |
+| clusterUri        | De URI van het HDInsight-cluster.        | Yes      |
+| gebruikersnaam          | De naam van het gebruikers account dat moet worden gebruikt om verbinding te maken met een bestaand HDInsight-cluster. | Yes      |
+| wachtwoord          | Het wacht woord voor het gebruikers account.   | Yes      |
+| linkedServiceName | De naam van de gekoppelde opslag service die verwijst naar de Blob-opslag die wordt gebruikt door het HDInsight-cluster. <p>Op dit moment kunt u geen Data Lake Store gekoppelde service opgeven voor deze eigenschap. Als het HDInsight-cluster toegang heeft tot Data Lake Store, kunt u toegang krijgen tot gegevens in Data Lake Store van Hive-of Pig-scripts. </p> | Yes      |
 
 ## <a name="azure-batch-linked-service"></a>Azure Batch gekoppelde service
 U kunt een batch-gekoppelde service maken om een batch-pool van virtuele machines (Vm's) te registreren bij een data factory. U kunt Microsoft .NET aangepaste activiteiten uitvoeren met behulp van batch of HDInsight.
@@ -301,11 +301,11 @@ Een andere optie is om het **batchUri** -eind punt op te geven. Bijvoorbeeld:
 ### <a name="properties"></a>Eigenschappen
 | Eigenschap          | Beschrijving                              | Vereist |
 | ----------------- | ---------------------------------------- | -------- |
-| type              | Stel de eigenschap type in op **AzureBatch**. | Ja      |
-| accountName       | De naam van het batch-account.         | Ja      |
-| accessKey         | De toegangs sleutel voor het batch-account.  | Ja      |
-| poolName          | De naam van de groep Vm's.    | Ja      |
-| linkedServiceName | De naam van de gekoppelde opslag service die is gekoppeld aan deze batch gekoppelde service. Deze gekoppelde service wordt gebruikt voor tijdelijke bestanden die nodig zijn om de activiteit uit te voeren en om uitvoerings logboeken voor de activiteit op te slaan. | Ja      |
+| type              | Stel de eigenschap type in op **AzureBatch**. | Yes      |
+| accountName       | De naam van het batch-account.         | Yes      |
+| accessKey         | De toegangs sleutel voor het batch-account.  | Yes      |
+| poolName          | De naam van de groep Vm's.    | Yes      |
+| linkedServiceName | De naam van de gekoppelde opslag service die is gekoppeld aan deze batch gekoppelde service. Deze gekoppelde service wordt gebruikt voor tijdelijke bestanden die nodig zijn om de activiteit uit te voeren en om uitvoerings logboeken voor de activiteit op te slaan. | Yes      |
 
 ## <a name="azure-machine-learning-studio-classic-linked-service"></a>Gekoppelde service Azure Machine Learning Studio (klassiek)
 U kunt een gekoppelde Azure Machine Learning Studio-Service (klassiek) maken om een studio (klassiek) batch Score-eind punt te registreren voor een data factory.
@@ -328,9 +328,9 @@ U kunt een gekoppelde Azure Machine Learning Studio-Service (klassiek) maken om 
 ### <a name="properties"></a>Eigenschappen
 | Eigenschap   | Beschrijving                              | Vereist |
 | ---------- | ---------------------------------------- | -------- |
-| Type       | Stel de eigenschap type in op **AzureML**. | Ja      |
-| mlEndpoint | De batch Score-URL.                   | Ja      |
-| apiKey     | De API van het gepubliceerde werkruimte model.     | Ja      |
+| Type       | Stel de eigenschap type in op **AzureML**. | Yes      |
+| mlEndpoint | De batch Score-URL.                   | Yes      |
+| apiKey     | De API van het gepubliceerde werkruimte model.     | Yes      |
 
 ## <a name="azure-data-lake-analytics-linked-service"></a>Azure Data Lake Analytics gekoppelde service
 U kunt een Data Lake Analytics gekoppelde service maken om een Data Lake Analytics compute-service aan een Azure-data factory te koppelen. De Data Lake Analytics U-SQL-activiteit in de pijp lijn verwijst naar deze gekoppelde service. 
@@ -339,11 +339,11 @@ In de volgende tabel worden de algemene eigenschappen beschreven die worden gebr
 
 | Eigenschap                 | Beschrijving                              | Vereist                                 |
 | ------------------------ | ---------------------------------------- | ---------------------------------------- |
-| type                 | Stel de eigenschap type in op **AzureDataLakeAnalytics**. | Ja                                      |
-| accountName          | De naam van het Data Lake Analytics-account.  | Ja                                      |
-| dataLakeAnalyticsUri | De Data Lake Analytics-URI.           | Nee                                       |
-| subscriptionId       | De ID van het Azure-abonnement.                    | Nee<br /><br />(Als dit niet is opgegeven, wordt het data factory-abonnement gebruikt.) |
-| resourceGroupName    | De naam van de Azure-resource groep.                | Nee<br /><br /> (Indien niet opgegeven, wordt de data factory resource groep gebruikt.) |
+| type                 | Stel de eigenschap type in op **AzureDataLakeAnalytics**. | Yes                                      |
+| accountName          | De naam van het Data Lake Analytics-account.  | Yes                                      |
+| dataLakeAnalyticsUri | De Data Lake Analytics-URI.           | No                                       |
+| subscriptionId       | De ID van het Azure-abonnement.                    | No<br /><br />(Als dit niet is opgegeven, wordt het data factory-abonnement gebruikt.) |
+| resourceGroupName    | De naam van de Azure-resource groep.                | No<br /><br /> (Indien niet opgegeven, wordt de data factory resource groep gebruikt.) |
 
 ### <a name="authentication-options"></a>Verificatieopties
 Voor uw Data Lake Analytics gekoppelde service kunt u kiezen tussen verificatie met behulp van een service-principal of een gebruikers referentie.
@@ -358,9 +358,9 @@ Gebruik Service-Principal-verificatie door de volgende eigenschappen op te geven
 
 | Eigenschap                | Beschrijving                              | Vereist |
 | :---------------------- | :--------------------------------------- | :------- |
-| servicePrincipalId  | De client-ID van de toepassing.     | Ja      |
-| servicePrincipalKey | De sleutel van de toepassing.           | Ja      |
-| tenant              | De Tenant gegevens (domein naam of Tenant-ID) waar uw toepassing zich bevindt. Als u deze informatie wilt ophalen, houdt u de muis aanwijzer in de rechter bovenhoek van de Azure Portal. | Ja      |
+| servicePrincipalId  | De client-ID van de toepassing.     | Yes      |
+| servicePrincipalKey | De sleutel van de toepassing.           | Yes      |
+| tenant              | De Tenant gegevens (domein naam of Tenant-ID) waar uw toepassing zich bevindt. Als u deze informatie wilt ophalen, houdt u de muis aanwijzer in de rechter bovenhoek van de Azure Portal. | Yes      |
 
 **Voor beeld: Service-Principal-verificatie**
 ```json
@@ -386,8 +386,8 @@ Geef voor de verificatie van de gebruikers referenties voor Data Lake Analytics 
 
 | Eigenschap          | Beschrijving                              | Vereist |
 | :---------------- | :--------------------------------------- | :------- |
-| autorisatie | In Data Factory editor selecteert u de knop **autoriseren** . Geef de referentie op waarmee de automatisch gegenereerde autorisatie-URL wordt toegewezen aan deze eigenschap. | Ja      |
-| sessionId     | De OAuth-sessie-ID van de OAuth-autorisatie sessie. Elke sessie-ID is uniek en kan slechts één keer worden gebruikt. Deze instelling wordt automatisch gegenereerd wanneer u Data Factory editor gebruikt. | Ja      |
+| autorisatie | In Data Factory editor selecteert u de knop **autoriseren** . Geef de referentie op waarmee de automatisch gegenereerde autorisatie-URL wordt toegewezen aan deze eigenschap. | Yes      |
+| sessionId     | De OAuth-sessie-ID van de OAuth-autorisatie sessie. Elke sessie-ID is uniek en kan slechts één keer worden gebruikt. Deze instelling wordt automatisch gegenereerd wanneer u Data Factory editor gebruikt. | Yes      |
 
 **Voor beeld: verificatie van de gebruikers referenties**
 ```json

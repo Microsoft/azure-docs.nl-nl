@@ -6,12 +6,12 @@ ms.author: vimeht
 ms.date: 2/16/2021
 ms.topic: tutorial
 ms.service: iot-hub-device-update
-ms.openlocfilehash: ee09928cab6419d799d06de9cf2f69987e42d157
-ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
+ms.openlocfilehash: 751e9337d74210d238be079e8fcd1bb973937846
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/28/2021
-ms.locfileid: "105644431"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936849"
 ---
 # <a name="device-update-for-azure-iot-hub-tutorial-using-the-package-agent-on-ubuntu-server-1804-x64"></a>Zelf studie over het bijwerken van apparaten voor Azure IoT Hub met behulp van de pakket agent op Ubuntu Server 18,04 x64
 
@@ -19,7 +19,7 @@ Update van het apparaat voor IoT Hub ondersteunt twee soorten updates: op instal
 
 Updates op basis van pakketten zijn gerichte updates waarmee alleen een specifiek onderdeel of een specifieke toepassing op het apparaat wordt gewijzigd. Dit leidt tot een lager verbruik van de band breedte en vermindert de tijd voor het downloaden en installeren van de update. Pakket updates bieden doorgaans minder downtime van apparaten bij het Toep assen van een update en vermijden de overhead van het maken van installatie kopieën.
 
-In deze zelf studie wordt u begeleid bij het volt ooien van een end-to-end update op basis van een pakket via apparaat bijwerken voor IoT Hub. Voor deze zelf studie gebruiken we een Ubuntu Server 18,04 x64 met Azure IoT Edge en de update pakket agent van het apparaat. In de zelf studie wordt gedemonstreerd hoe u een voorbeeld pakket bijwerkt, maar met soort gelijke stappen kunt u andere pakketten bijwerken, zoals Azure IoT Edge of de container engine die wordt gebruikt.
+In deze end-to-end zelf studie wordt uitgelegd hoe u Azure IoT Edge op Ubuntu Server 18,04 x64 bijwerkt met behulp van de update pakket agent van het apparaat. Hoewel in de zelf studie wordt gedemonstreerd hoe u de update IoT Edge, met soort gelijke stappen die u kunt gebruiken om andere pakketten bij te werken zoals de container engine die wordt gebruikt.
 
 De hulpprogram ma's en concepten in deze zelf studie zijn nog steeds van toepassing, zelfs als u van plan bent een andere besturingssysteem platform configuratie te gebruiken. Voltooi deze inleiding tot een end-to-end update proces en kies vervolgens uw voorkeurs formulier voor het bijwerken en het besturings systeem om de details te bekijken.
 

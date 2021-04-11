@@ -4,7 +4,7 @@
   items:
     - name: Wat is een beheerd exemplaar van Azure voor Apache Cassandra?
       href: introduction.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: Een cluster maken-Portal
       href: create-cluster-portal.md
@@ -38,4 +38,4 @@
         - name: Cassandra-data centers
           href: /rest/api/cosmos-db-resource-provider/2021-03-01-preview/cassandradatacenters
     - name: Azure CLI
-      href: /cli/azure/ext/cosmosdb-preview/managed-cassandra?view=azure-cli-latest&preserve-view=true
+      href: /cli/azure/ext/cosmosdb-preview/managed-cassandra

@@ -9,12 +9,12 @@ ms.author: mariusu
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 0f456581e14f17b0ea3ebbd54d0768d419e800b3
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: 7d9e2f02eadec9fac93f14a0fe137c72a35224be
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105110641"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105727906"
 ---
 # <a name="get-started-with-the-web-calling-sample"></a>Aan de slag met het voorbeeld van aanroeping
 
@@ -23,9 +23,6 @@ Het weboproepend voor beeld is een webtoepassing die als stapsgewijze instructie
 Dit voorbeeld is gebouwd voor ontwikkelaars en maakt het eenvoudig om aan de slag te gaan met Communication Services. De gebruikersinterface is onderverdeeld in meerdere secties, elk met de knop 'Code weergeven' waarmee u rechtstreeks vanuit uw browser codes kunt kopiëren naar uw eigen Communication Services-toepassing.
 
 ## <a name="get-started-with-the-web-calling-sample"></a>Aan de slag met het voorbeeld van aanroeping
-
-[!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
-
 
 > [!IMPORTANT]
 > [Dit voorbeeld is beschikbaar op GitHub.](https://github.com/Azure-Samples/communication-services-web-calling-tutorial/).

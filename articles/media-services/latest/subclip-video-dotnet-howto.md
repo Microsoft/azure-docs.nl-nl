@@ -14,12 +14,12 @@ ms.topic: how-to
 ms.date: 06/09/2019
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a9408adfe33fc71707532f3bf5646f3727fd7dda
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b70d08363db212e5039690ceaaef5dbb55bcd65f
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98955051"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106107270"
 ---
 # <a name="subclip-a-video-when-encoding-with-media-services---net"></a>Een video afspelen tijdens het coderen met Media Services-.NET
 
@@ -31,9 +31,9 @@ In het volgende C#-voor beeld wordt een taak gemaakt die een video in een activu
 
 Voor het uitvoeren van de stappen die in dit onderwerp worden beschreven, moet u het volgende doen:
 
-- [Een Azure Media Services-account maken](./create-account-howto.md)
+- [Een Azure Media Services-account maken](./account-create-how-to.md)
 - Maak een trans formatie en een invoer-en uitvoer activa. U kunt zien hoe u een trans formatie-en invoer-en uitvoer assets maakt in de zelf studie [video uploaden, coderen en streamen met behulp van .net](stream-files-tutorial-with-api.md) .
-- Bekijk het [Codeer concept](encoding-concept.md) onderwerp.
+- Bekijk het [Codeer concept](encode-concept.md) onderwerp.
 
 ## <a name="example"></a>Voorbeeld
 
@@ -92,4 +92,4 @@ private static async Task<Job> JobWithBuiltInStandardEncoderWithSingleClipAsync(
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Coderen met een aangepaste trans formatie](customize-encoder-presets-how-to.md) 
+[Coderen met een aangepaste trans formatie](encode-custom-presets-how-to.md) 

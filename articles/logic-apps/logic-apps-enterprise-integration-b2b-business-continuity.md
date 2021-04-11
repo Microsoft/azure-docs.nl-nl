@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 04/10/2017
-ms.openlocfilehash: 1e006dd690e9c008afada8a490da6c3238bc0791
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 09fb738a499d6016c3aead0d33436f034bc5d339
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "91565408"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105728399"
 ---
 # <a name="set-up-cross-region-disaster-recovery-for-integration-accounts-in-azure-logic-apps"></a>Herstel na nood geval in meerdere regio's instellen voor integratie accounts in Azure Logic Apps
 
@@ -60,7 +60,7 @@ Bedrijfs continuïteit in een Logic Apps integratie account biedt ondersteuning 
 
 Tijdens een nood geval is de primaire regio niet beschikbaar voor bedrijfs continuïteit, direct verkeer naar de secundaire regio. Een secundaire regio helpt een bedrijf snel functies te herstellen om te voldoen aan de RPO-RTO die zijn overeengekomen door hun partners. Het minimaliseert ook de inspanningen voor failover van de ene regio naar een andere regio. 
 
-Er is een verwachte latentie tijdens het kopiëren van controle nummers van een primaire regio naar een secundaire regio. Om te voor komen dat dubbele gegenereerde controle nummers naar partners tijdens een nood geval worden verzonden, is de aanbeveling om de controle nummers in de secundaire regio overeenkomsten te verhogen met behulp van [Power shell-cmdlets](/powershell/module/azurerm.logicapp/set-azurermintegrationaccountgeneratedicn?view=azurermps-6.13.0).
+Er is een verwachte latentie tijdens het kopiëren van controle nummers van een primaire regio naar een secundaire regio. Om te voor komen dat dubbele gegenereerde controle nummers naar partners tijdens een nood geval worden verzonden, is de aanbeveling om de controle nummers in de secundaire regio overeenkomsten te verhogen met behulp van [Power shell-cmdlets](/powershell/module/azurerm.logicapp/set-azurermintegrationaccountgeneratedicn).
 
 ## <a name="fall-back-to-a-primary-region-post-disaster-event"></a>Terugvallen op een primair gebied na nood geval
 
@@ -68,7 +68,7 @@ Voer de volgende stappen uit om terug te vallen op een primaire regio wanneer de
 
 1. Stop het accepteren van berichten van partners in de secundaire regio.  
 
-2. Verhoog de gegenereerde controle nummers voor alle primaire regio overeenkomsten met behulp van [Power shell-cmdlets](/powershell/module/azurerm.logicapp/set-azurermintegrationaccountgeneratedicn?view=azurermps-6.13.0).  
+2. Verhoog de gegenereerde controle nummers voor alle primaire regio overeenkomsten met behulp van [Power shell-cmdlets](/powershell/module/azurerm.logicapp/set-azurermintegrationaccountgeneratedicn).  
 
 3. Direct verkeer van de secundaire regio naar de primaire regio.
 

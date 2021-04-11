@@ -7,10 +7,10 @@ ms.service: iot-develop
 ms.topic: conceptual
 ms.date: 02/11/2021
 ms.openlocfilehash: 6bbd7d37418af68065daa194d4ff4bd80f6fd09c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100654154"
 ---
 # <a name="overview-connection-options-for-azure-iot-device-developers"></a>Overzicht: verbindings opties voor Azure IoT-apparaat-ontwikkel aars
@@ -31,7 +31,7 @@ Nadat u IoT Hub of IoT Central hebt geselecteerd om uw IoT-toepassing te hosten,
 > [!NOTE]
 > Naast de volgende hulpprogram ma's kunt u via programma code IoT-toepassingen maken en beheren met behulp van REST API, Azure Sdk's of Azure Resource Manager sjablonen. Meer informatie vindt u in de documentatie van [IOT hub](../iot-hub/about-iot-hub.md) en [IOT Central](../iot-central/core/overview-iot-central.md) service.
 
-|Hulpprogramma  |Ondersteunt IoT-platform &nbsp; &nbsp; &nbsp;&nbsp; |Documentatie  |Beschrijving  |
+|Hulpprogramma  |Ondersteunt IoT-platform &nbsp; &nbsp; &nbsp;&nbsp; |Documentatie  |Description  |
 |---------|---------|---------|---------|
 |Centrale Web-UI     | Midden | [Centrale Snelstartgids](../iot-central/core/quick-deploy-iot-central.md) | Portal op basis van een browser voor IoT Central. |
 |Azure Portal     | Hub, centraal      | [Een IOT-hub maken met Azure Portal](../iot-hub/iot-hub-create-through-portal.md), [IOT Central beheren vanuit de Azure Portal](../iot-central/core/howto-manage-iot-central-from-portal.md)| Portal op basis van een browser voor IoT Hub en apparaten. Werkt ook met andere Azure-resources, waaronder IoT Central. |

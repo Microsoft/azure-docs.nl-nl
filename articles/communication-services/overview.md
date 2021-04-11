@@ -8,12 +8,12 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 40fe1e59b7c600e273b677d60bc162c767569c14
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 0efdf48e78d0cc48e288bea354f5de5f9635c760
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105728569"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106106837"
 ---
 # <a name="what-is-azure-communication-services"></a>Wat is Azure Communication Services?
 
@@ -21,7 +21,7 @@ ms.locfileid: "105728569"
 > Toepassingen die u met Azure Communication Services bouwt, kunnen communiceren met micro soft teams. Ga voor meer informatie naar onze [teams Interop](./quickstarts/voice-video-calling/get-started-teams-interop.md) -documentatie.
 
 
-Met Azure Communication Services kunt u eenvoudig realtime multimediafuncties voor spraak, video en IP-telefonie toevoegen aan uw toepassingen. De Sdk's van Communication Services bieden u ook de mogelijkheid om chat-en SMS-functionaliteit toe te voegen aan uw communicatie oplossingen.
+Met Azure Communication Services kunt u eenvoudig realtime multimediafuncties voor spraak, video en IP-telefonie toevoegen aan uw toepassingen. Met de SDK-bibliotheken voor communicatie Services kunt u ook chat-en SMS-functionaliteit toevoegen aan uw communicatie oplossingen.
 
 <br>
 
@@ -40,14 +40,13 @@ Gemengde scenario's worden ondersteund. Een Communication Services-toepassing ka
 
 ## <a name="common-scenarios"></a>Algemene scenario's
 
-De volgende resources zijn een goede plaats om aan de slag te gaan met Azure Communication Services. 
+De volgende resources zijn een goede plaats om aan de slag te gaan met Azure Communication Services.
 <br>
 
 | Resource                               |Beschrijving                           |
 |---                                    |---                                   |
 |**[Een Communication Services-resource maken](./quickstarts/create-communication-resource.md)**|U kunt Azure Communication Services gaan gebruiken met behulp van de SDK van Azure Portal of Communication Services om uw eerste communicatie Services-resource in te richten. Zodra u de verbindingsreeks van uw Communication Services-resource hebt, kunt u uw eerste toegangstokens voor gebruikers inrichten.|
 |**[Een telefoonnummer aanvragen](./quickstarts/telephony-sms/get-phone-number.md)**|U kunt Azure Communication Services gebruiken om telefoonnummers in te richten en uit te voeren. Deze telefoon nummers kunnen worden gebruikt om uitgaande oproepen te initiëren en oplossingen voor SMS-communicatie te bouwen.|
-|**[Een SMS-bericht verzenden vanuit uw app](./quickstarts/telephony-sms/send.md)**|Met de SMS SDK van Azure Communication Services kunt u SMS-berichten verzenden en ontvangen van uw .NET-en Java script-toepassingen.|
 
 Nadat u een communicatie Services-resource hebt gemaakt, kunt u beginnen met het bouwen van client scenario's, zoals spraak-en video gesprekken of chat tekst.
 
@@ -57,30 +56,31 @@ Nadat u een communicatie Services-resource hebt gemaakt, kunt u beginnen met het
 |**[Aan de slag met spraak- en videogesprekken](./quickstarts/voice-video-calling/getting-started-with-calling.md)**| Met Azure Communication Services kunt u spraak-en video gesprekken aan uw apps toevoegen met behulp van de aanroepende SDK. Deze bibliotheek werkt op basis van WebRTC en stelt u in staat om peer-to-peer, met multimedia en realtime te communiceren binnen uw toepassing.|
 |**[Voeg u aanroepende app toe aan een Teams-meeting](./quickstarts/voice-video-calling/get-started-teams-interop.md)**|Azure Communication Services kan worden gebruikt voor het bouwen van aangepaste vergaderervaringen die communiceren met Microsoft Teams. Gebruikers van uw oplossingen voor communicatie Services kunnen communiceren met teams deel nemers over spraak, video, chatten en het delen van het scherm.|
 |**[Aan de slag met chat](./quickstarts/chat/get-started.md)**|De Azure Communication Services chat SDK kan worden gebruikt om realtime chatten te integreren in uw toepassingen.|
+|**[Een SMS-bericht verzenden vanuit uw app](./quickstarts/telephony-sms/send.md)**|Met de SMS SDK van Azure Communication Services kunt u SMS-berichten verzenden en ontvangen van uw .NET-en Java script-toepassingen.|
 
 ## <a name="samples"></a>Voorbeelden
 
-De volgende voor beelden tonen end-to-end-gebruik van de Azure Communication Services Sdk's. U kunt deze voorbeelden gebruiken om uw eigen Communication Services-oplossingen te bootstrappen.
+In de volgende voor beelden wordt end-to-end-gebruik van de SDK-bibliotheken van Azure Communication Services gedemonstreerd. U kunt deze voorbeelden gebruiken om uw eigen Communication Services-oplossingen te bootstrappen.
 <br>
 
 | Voorbeeldnaam                               | Description                           |
 |---                                    |---                                   |
-|**[Hero-voorbeeld van groepsgesprek](./samples/calling-hero-sample.md)**|Bekijk hoe de Sdk's voor communicatie Services kunnen worden gebruikt voor het bouwen van een groeps ervaring.|
-|**[Het Hero-voorbeeld van groepschat](./samples/chat-hero-sample.md)**|Bekijk hoe de Sdk's voor communicatie Services kunnen worden gebruikt voor het bouwen van een groeps ervaring.|
+|**[Hero-voorbeeld van groepsgesprek](./samples/calling-hero-sample.md)**|Zie hoe de SDK-bibliotheken voor communicatie Services kunnen worden gebruikt voor het bouwen van een groep.|
+|**[Het Hero-voorbeeld van groepschat](./samples/chat-hero-sample.md)**|Zie hoe de SDK-bibliotheken voor communicatie Services kunnen worden gebruikt om een groeps ervaring voor groepen te maken.|
 
 
-## <a name="platforms-and-sdks"></a>Platforms en Sdk's
+## <a name="platforms-and-sdk-libraries"></a>Platforms en SDK-bibliotheken
 
-In de volgende bronnen vindt u meer informatie over de Azure Communication Services Sdk's:
+In de volgende bronnen vindt u meer informatie over de SDK-bibliotheken van Azure Communication Services:
 
 | Resource                               | Beschrijving                           |
 |---                                    |---                                   |
-|**[Sdk's en REST-Api's](./concepts/sdk-options.md)**|De mogelijkheden van Azure Communication Services zijn conceptueel ingedeeld in zes gebieden, die allemaal worden vertegenwoordigd door een SDK. U kunt bepalen welke Sdk's u wilt gebruiken op basis van uw realtime communicatie behoeften.|
+|**[SDK-bibliotheken en REST-Api's](./concepts/sdk-options.md)**|De mogelijkheden van Azure Communication Services zijn conceptueel ingedeeld in zes gebieden, die allemaal worden vertegenwoordigd door een SDK. U kunt bepalen welke SDK-bibliotheken u wilt gebruiken op basis van uw realtime communicatie behoeften.|
 |**[Overzicht van de SDK](./concepts/voice-video-calling/calling-sdk-features.md)**|Raadpleeg de communicatie Services Calling SDK Overview (Engelstalig).|
 |**[Overzicht van chat-SDK](./concepts/chat/sdk-features.md)**|Bekijk het overzicht van de communicatie services-Chat-SDK.|
 |**[SMS-SDK-overzicht](./concepts/telephony-sms/sdk-features.md)**|Bekijk het overzicht van de SMS SDK voor communicatie Services.|
 
-## <a name="compare-azure-communication-services"></a>Azure Communication Services vergelijken
+## <a name="other-microsoft-communication-services"></a>Andere micro soft-communicatie Services
 
 Er zijn twee andere communicatieproducten van Microsoft die u zou kunnen gebruiken, en die momenteel niet rechtstreeks compatibel zijn met Communication Services:
 

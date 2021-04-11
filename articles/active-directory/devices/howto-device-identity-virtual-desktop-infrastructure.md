@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cfea22c10d98adf3b8c89491c248bf7a934ba1ed
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: e5a4cc2b964bcf4fa49d90c8b6d5aa546b7148a1
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104798881"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106107942"
 ---
 # <a name="device-identity-and-desktop-virtualization"></a>Apparaat-id en desktop-virtualisatie
 
@@ -94,6 +94,23 @@ Bij het implementeren van niet-persistente VDI raadt micro soft aan dat IT-behee
 - Definieer en implementeer het proces voor het [beheren van verouderde apparaten](manage-stale-devices.md).
    - Zodra u een strategie hebt voor het identificeren van uw niet-permanente hybride Azure AD-apparaten (zoals het voor voegsel computer weergave naam), moet u de opschoning van deze apparaten agressief maken om ervoor te zorgen dat uw Directory niet wordt gebruikt voor het gebruik van veel verouderde apparaten.
    - Voor niet-permanente VDI-implementaties op Windows huidige en lagere niveaus moet u apparaten met **ApproximateLastLogonTimestamp** ouder dan 15 dagen verwijderen.
+
+> [!NOTE]
+> Als u niet-permanente VDI gebruikt, moet u er zeker van zijn dat de volgende register sleutel is ingesteld als u wilt voor komen dat de status van een apparaat wordt toegevoegd:  
+> `HKLM\SOFTWARE\Policies\Microsoft\Windows\WorkplaceJoin: "BlockAADWorkplaceJoin"=dword:00000001`    
+>
+> Zorg ervoor dat u Windows 10, versie 1803 of hoger gebruikt.  
+>
+> Zwervende gegevens onder het pad `%localappdata%` worden niet ondersteund. Als u ervoor kiest om inhoud onder `%localappdata%` te verplaatsen, moet u ervoor zorgen dat de inhoud van de volgende mappen en register sleutels het apparaat **nooit** onder geen enkele voor waarde verlaat. Bijvoorbeeld: de hulpprogram ma's voor profiel migratie moeten de volgende mappen en sleutels overs Laan:
+>
+> * `%localappdata%\Packages\Microsoft.AAD.BrokerPlugin_cw5n1h2txyewy`
+> * `%localappdata%\Packages\Microsoft.Windows.CloudExperienceHost_cw5n1h2txyewy`
+> * `%localappdata%\Packages\<any app package>\AC\TokenBroker`
+> * `%localappdata%\Microsoft\TokenBroker`
+> * `HKEY_CURRENT_USER\SOFTWARE\Microsoft\IdentityCRL`
+> * `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\AAD`
+>
+
 
 ### <a name="persistent-vdi"></a>Permanente VDI
 

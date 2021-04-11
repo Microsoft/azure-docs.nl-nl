@@ -3,17 +3,18 @@ title: Een Azure-Cloud service (klassiek) schalen in Windows Power shell | Micro
 description: klassieke Meer informatie over het gebruik van Power shell om een webrole of worker-rol in of uit te schalen in Azure.
 ms.topic: article
 ms.service: cloud-services
+ms.subservice: autoscale
 ms.date: 10/14/2020
 ms.author: tagore
 author: tanmaygore
 ms.reviewer: mimckitt
 ms.custom: ''
-ms.openlocfilehash: a090da1933b0fcd6edb5b2415c773f9efcb27387
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0b0a9cc8032cfd849f053e2d45e05f85e4216a23
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98743301"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936611"
 ---
 # <a name="how-to-scale-an-azure-cloud-service-classic-in-powershell"></a>Een Azure-Cloud service (klassiek) schalen in Power shell
 

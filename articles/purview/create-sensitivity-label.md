@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 03/09/2021
-ms.openlocfilehash: 37ac292acc76c681ea38b2ae881ff8cd2ae5ec3c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5f6e2474a533f5619d5544b674a87b6412323cc3
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102502443"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106166731"
 ---
 # <a name="automatically-label-your-data-in-azure-purview"></a>Voorzie uw gegevens automatisch in azure controle sfeer liggen
 
@@ -96,7 +96,7 @@ Voor het Toep assen van MIP-gevoeligheids labels op Azure-assets in azure contro
 Door de gevoeligheids labels van MIP uit te breiden met Azure controle sfeer liggen, kunnen organisaties nu inzicht krijgen in de gevoeligheid van een breder scala aan gegevens bronnen en zo een grotere mate van de nalevings Risico's beperken.
 
 > [!NOTE]
-> Omdat Microsoft 365 en Azure controle sfeer liggen afzonderlijke services zijn, is het mogelijk dat ze in verschillende regio's worden geïmplementeerd. Label namen en aangepaste gevoelige informatie typen worden beschouwd als klant gegevens en worden op dezelfde geografische locatie bewaard, standaard om de gevoeligheid van uw gegevens te beschermen en AVG wetten te voor komen.
+> Omdat Microsoft 365 en Azure controle sfeer liggen afzonderlijke services zijn, is het mogelijk dat ze in verschillende regio's worden geïmplementeerd. Label namen en aangepaste gevoelige informatie typen worden beschouwd als klant gegevens en worden op dezelfde geografische locatie bewaard, standaard om de gevoeligheid van uw gegevens te beschermen en te voldoen aan de privacyinstellingen van de privacy.
 >
 > Daarom worden labels en aangepaste gevoelige informatie typen niet standaard gedeeld met Azure controle sfeer liggen en vereisen uw toestemming om ze te gebruiken in azure controle sfeer liggen.
 

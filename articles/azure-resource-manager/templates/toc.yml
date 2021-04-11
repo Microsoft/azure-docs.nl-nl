@@ -366,9 +366,12 @@
   items:
     - name: Sjablonen maken
       items:
-        - name: Sjabloonbestandstructuur
+        - name: JSON-structuur
           displayName: 'parameters,variables,resources,outputs,condition'
           href: template-syntax.md
+        - name: Bicep-structuur
+          displayName: 'parameters,variables,resources,outputs,condition'
+          href: bicep-file.md
         - name: Sjabloonexpressies schrijven
           href: template-expressions.md
         - name: Parameters

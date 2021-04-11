@@ -7,10 +7,10 @@ ms.date: 10/10/2019
 ms.author: azfuncdf
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 707d624c47c536e00e98910a8902772703733515
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102558760"
 ---
 # <a name="zero-downtime-deployment-for-durable-functions"></a>Implementatie met een nul-uitval tijd voor Durable Functions
@@ -60,42 +60,42 @@ In het volgende diagram ziet u de beschreven configuratie van implementatie sleu
 
 ![Implementatie sleuven en opslag accounts](media/durable-functions-zero-downtime-deployment/deployment-slot.png)
 
-### <a name="hostjson-examples"></a>host.jsop voor beelden
+### <a name="hostjson-examples&quot;></a>host.jsop voor beelden
 
 De volgende JSON-fragmenten zijn voor beelden van de connection string-instelling in de *host.jsvoor* het bestand.
 
-#### <a name="functions-20"></a>Functies 2,0
+#### <a name=&quot;functions-20&quot;></a>Functies 2,0
 
 ```json
 {
-  "version": 2.0,
-  "extensions": {
-    "durableTask": {
-      "hubName": "MyTaskHub",
-      "storageProvider": {
-        "connectionStringName": "DurableManagementStorage"
+  &quot;version&quot;: 2.0,
+  &quot;extensions&quot;: {
+    &quot;durableTask&quot;: {
+      &quot;hubName&quot;: &quot;MyTaskHub&quot;,
+      &quot;storageProvider&quot;: {
+        &quot;connectionStringName&quot;: &quot;DurableManagementStorage&quot;
       }
     }
   }
 }
 ```
 
-#### <a name="functions-1x"></a>Functions 1.x
+#### <a name=&quot;functions-1x&quot;></a>Functions 1.x
 
 ```json
 {
-  "durableTask": {
-    "azureStorageConnectionStringName": "DurableManagementStorage"
+  &quot;durableTask&quot;: {
+    &quot;azureStorageConnectionStringName&quot;: &quot;DurableManagementStorage&quot;
   }
 }
 ```
 
-### <a name="cicd-pipeline-configuration"></a>Configuratie van CI/CD-pijp lijn
+### <a name=&quot;cicd-pipeline-configuration&quot;></a>Configuratie van CI/CD-pijp lijn
 
 Configureer uw CI/CD-pijp lijn zodanig dat deze alleen kan worden geïmplementeerd als uw functie-app geen in behandeling zijnde of actieve Orchestrator-exemplaren bevat. Wanneer u Azure-pijp lijnen gebruikt, kunt u een functie maken die controleert op deze voor waarden, zoals in het volgende voor beeld:
 
 ```csharp
-[FunctionName("StatusCheck")]
+[FunctionName(&quot;StatusCheck")]
 public static async Task<IActionResult> StatusCheck(
     [HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestMessage req,
     [DurableClient] IDurableOrchestrationClient client,

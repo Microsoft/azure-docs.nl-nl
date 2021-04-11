@@ -4,10 +4,10 @@ description: In dit artikel wordt een ondersteunings matrix weer gegeven met all
 ms.date: 03/19/2020
 ms.topic: conceptual
 ms.openlocfilehash: cfdd227135a2124e22a604bad4bd41594a38fb37
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105561267"
 ---
 # <a name="mabs-azure-backup-server-v3-ur1-protection-matrix"></a>MABS (Azure Backup Server) v3 UR1 Protection-matrix

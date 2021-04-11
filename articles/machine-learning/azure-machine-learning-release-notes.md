@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 02/18/2021
-ms.openlocfilehash: a21411e4d1ee30e4f79687bfc07a53575497ca1f
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: ea7eda7e50e7d8733fd24a63d533272e5bca6bab
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105562219"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106166680"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
@@ -22,6 +22,21 @@ In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga
 
 __RSS-feed__: ontvang een melding wanneer deze pagina wordt bijgewerkt door de volgende URL in uw feedlezer te kopiëren en plakken: `https://docs.microsoft.com/api/search/rss?search=%22Azure+machine+learning+release+notes%22&locale=en-us`
 
+## <a name="2021-03-31"></a>2021-03-31
+### <a name="azure-machine-learning-studio-notebooks-experience-march-update"></a>Ervaring met Azure Machine Learning Studio notitie blokken (update voor maart)
++ **Nieuwe functies**
+  + CSV/TSV weer geven. Gebruikers kunnen een gegevens weergave en een TSV/CSV-bestand in een raster indeling maken, zodat ze eenvoudiger kunnen worden geanalyseerd. 
+  + SSO-verificatie voor reken instantie. Gebruikers kunnen nu eenvoudig nieuwe reken instanties rechtstreeks in de gebruikers interface van het notitie blok verifiëren, waardoor het eenvoudiger is om Azure Sdk's rechtstreeks in AzureML te verifiëren en te gebruiken. 
+  + Metrische gegevens van reken instanties. Gebruikers kunnen reken gegevens weer geven, zoals CPU-gebruik en geheugen via Terminal.
+  + Bestands gegevens. Gebruikers kunnen nu bestands details zien, inclusief het tijdstip van de laatste wijziging en de bestands grootte door te klikken op de drie punten naast een bestand.
+
++ **Oplossingen en verbeteringen voor oplossingen**
+  + Verbeterde laad tijden voor pagina's.
+  + Verbeterde prestaties.
+  + Verbeterde snelheid en kernel-betrouw baarheid.
+  + Verticaal het deel venster voor het verwijderen van een notitie blok door permanent verplaatsen
+  + Er kunnen nu koppelingen worden geklikt in Terminal
+  + Verbeterde IntelliSense-prestaties
 
 ## <a name="2021-03-08"></a>2021-03-08
 

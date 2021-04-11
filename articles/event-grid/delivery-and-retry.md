@@ -3,12 +3,12 @@ title: Azure Event Grid levering en probeer het opnieuw
 description: Hierin wordt beschreven hoe Azure Event Grid gebeurtenissen levert en hoe er niet-bezorgde berichten worden verwerkt.
 ms.topic: conceptual
 ms.date: 10/29/2020
-ms.openlocfilehash: e7fa627464ddb85ebded3ae99229b7fe8dd3fde3
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: e24b7540ea1ac41774e2c23781265f9a61940cb1
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105629271"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106276736"
 ---
 # <a name="event-grid-message-delivery-and-retry"></a>Bericht bezorging Event Grid en probeer het opnieuw
 
@@ -17,7 +17,7 @@ In dit artikel wordt beschreven hoe Azure Event Grid gebeurtenissen afhandelt wa
 Event Grid biedt een duurzame levering. Het levert elk bericht **ten minste één keer** per abonnement. Gebeurtenissen worden direct naar het geregistreerde eind punt van elk abonnement verzonden. Als een eind punt de ontvangst van een gebeurtenis niet bevestigt, Event Grid nieuwe pogingen van de gebeurtenis.
 
 > [!NOTE]
-> Event Grid garandeert geen bestelling voor gebeurtenis levering, zodat de abonnee deze niet in de juiste volg orde kan ontvangen. 
+> Event Grid garandeert geen bestelling voor het leveren van gebeurtenissen, zodat abonnees deze niet in de juiste volg orde kunnen ontvangen. 
 
 ## <a name="batched-event-delivery"></a>Levering van batch gebeurtenissen
 
@@ -55,11 +55,11 @@ Voor meer informatie over het gebruik van Azure CLI met Event Grid raadpleegt [u
 
 ## <a name="retry-schedule-and-duration"></a>Schema en duur van opnieuw proberen
 
-Wanneer EventGrid een fout ontvangt voor een gebeurtenis bezorgings poging, bepaalt EventGrid of het een nieuwe levering of onbestelbare letter moet doen of de gebeurtenis wilt verwijderen op basis van het type fout. 
+Wanneer EventGrid een fout ontvangt voor een gebeurtenis bezorgings poging, bepaalt EventGrid of de levering opnieuw moet worden uitgevoerd, dat de gebeurtenis onbestelbaar is of de gebeurtenis wordt verwijderd op basis van het type fout. 
 
-Als de fout die door het geabonneerde eind punt wordt geretourneerd, een configuratie fout is die niet kan worden opgelost met nieuwe pogingen (bijvoorbeeld als het eind punt is verwijderd), voert EventGrid de gebeurtenis onbestelbare berichten uit of verwijdert de gebeurtenis als de onbestelbare letter niet is geconfigureerd.
+Als de fout die door het geabonneerde eind punt wordt geretourneerd, een configuratie fout is die niet kan worden opgelost met nieuwe pogingen (bijvoorbeeld als het eind punt wordt verwijderd), voert EventGrid onbestelbare berichten uit voor het evenement of wordt de gebeurtenis weggehaald als de onbestelbare letter niet is geconfigureerd.
 
-Hier volgen de typen eind punten waarvoor het nieuwe pogingen niet gebeurt:
+In de volgende tabel worden de typen eind punten en fouten beschreven waarvoor opnieuw proberen niet gebeurt:
 
 | Eindpunttype | Foutcodes |
 | --------------| -----------|
@@ -67,7 +67,7 @@ Hier volgen de typen eind punten waarvoor het nieuwe pogingen niet gebeurt:
 | Webhook | 400 ongeldige aanvraag, 413 aanvraag entiteit te groot, 403 verboden, 404 niet gevonden, 401 niet toegestaan |
  
 > [!NOTE]
-> Als Dead-Letter niet is geconfigureerd voor het eind punt, worden gebeurtenissen verwijderd wanneer de bovenstaande fouten optreden. Overweeg het configureren van onbestelbare berichten als u niet wilt dat dit soort gebeurtenissen wordt verwijderd.
+> Als Dead-Letter niet is geconfigureerd voor een eind punt, worden gebeurtenissen verwijderd wanneer de bovenstaande fouten optreden. Overweeg Dead-Letter te configureren als u niet wilt dat dit soort gebeurtenissen wordt verwijderd.
 
 Als de fout die wordt geretourneerd door het geabonneerde eind punt niet voor komt in de bovenstaande lijst, voert EventGrid de volgende stappen uit die hieronder worden beschreven:
 
@@ -89,7 +89,7 @@ Als het eind punt binnen drie minuten reageert, probeert Event Grid de gebeurten
 
 Event Grid voegt een kleine wille keurige stap toe aan alle stappen voor opnieuw proberen en kan eventueel bepaalde nieuwe pogingen overs Laan als een eind punt zich in de consistente status bevindt, gedurende een lange periode niet actief is of niet wordt overbelast.
 
-Stel voor deterministisch gedrag de gebeurtenis tijd in op Live en Maxi maal bezorgings pogingen in het [beleid voor opnieuw proberen](manage-event-delivery.md)van het abonnement.
+Stel voor deterministisch gedrag de gebeurtenis time-to-Live en maximum aantal bezorgings pogingen in voor het [beleid voor opnieuw proberen](manage-event-delivery.md)van het abonnement.
 
 Event Grid verloopt standaard alle gebeurtenissen die binnen 24 uur niet worden geleverd. U kunt [het beleid voor opnieuw proberen](manage-event-delivery.md) aan te passen bij het maken van een gebeurtenis abonnement. U geeft het maximum aantal bezorgings pogingen op (standaard 30) en de gebeurtenis time-to-Live (de standaard waarde is 1440 minuten).
 
@@ -115,7 +115,7 @@ Er is een vertraging van vijf minuten tussen de laatste poging om een gebeurteni
 
 Voordat u de locatie van de onbestelbare letter instelt, moet u een opslag account hebben met een container. U geeft het eind punt voor deze container op bij het maken van het gebeurtenis abonnement. Het eind punt heeft de volgende indeling: `/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.Storage/storageAccounts/<storage-name>/blobServices/default/containers/<container-name>`
 
-Mogelijk wilt u een melding ontvangen wanneer een gebeurtenis naar de locatie van de onbestelbare brief is verzonden. Als u Event Grid wilt gebruiken om te reageren op niet-bezorgde gebeurtenissen, [maakt u een gebeurtenis abonnement](../storage/blobs/storage-blob-event-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json) voor de onbestelbare Blob-opslag. Telkens wanneer uw dead-letter-Blob-opslag een niet-bezorgd gebeurtenis ontvangt, wordt Event Grid een melding verzonden naar uw handler. De handler reageert met de acties die u wilt uitvoeren voor het afstemmen van niet-bezorgde gebeurtenissen. Zie [Dead-letter en beleid voor opnieuw proberen](manage-event-delivery.md)voor een voor beeld van het instellen van een niet-actieve locatie en het beleid voor opnieuw proberen.
+Mogelijk wilt u een melding ontvangen wanneer een gebeurtenis naar de locatie van de onbestelbare brief is verzonden. Als u Event Grid wilt gebruiken om te reageren op niet-bezorgde gebeurtenissen, [maakt u een gebeurtenis abonnement](../storage/blobs/storage-blob-event-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json) voor de onbestelbare Blob-opslag. Telkens wanneer uw dead-letter-Blob-opslag een niet-bezorgd gebeurtenis ontvangt, wordt Event Grid een melding verzonden naar uw handler. De handler reageert met de acties die u wilt uitvoeren voor het afstemmen van niet-bezorgde gebeurtenissen. Zie [Dead-letter en beleid voor opnieuw proberen](manage-event-delivery.md)voor een voor beeld van het instellen van een locatie met een onbestelbare letter en het beleid voor opnieuw proberen.
 
 ## <a name="delivery-event-formats"></a>Bezorgings gebeurtenis indelingen
 In deze sectie vindt u voor beelden van gebeurtenissen en gebeurtenissen met onbestelbare berichten in verschillende indelingen voor afleverings schema's (Event Grid schema, CloudEvents 1,0-schema en aangepast schema). Zie [Event grid](event-schema.md) schema-en [Cloud evenementen 1,0-schema](cloud-event-schema.md) artikelen voor meer informatie over deze indelingen. 
@@ -288,7 +288,7 @@ Alle andere codes die zich niet in de bovenstaande set (200-204) bevinden, worde
 | 503 Service niet beschikbaar | Opnieuw proberen na 30 seconden of langer |
 | Alle andere | Opnieuw proberen na 10 seconden of langer |
 
-## <a name="delivery-with-custom-headers"></a>Levering met aangepaste kopteksten
+## <a name="custom-delivery-properties"></a>Aangepaste leverings eigenschappen
 Met gebeurtenis abonnementen kunt u HTTP-headers instellen die in de geleverde gebeurtenissen zijn opgenomen. Met deze mogelijkheid kunt u aangepaste headers instellen die vereist zijn voor een doel. U kunt Maxi maal 10 kopteksten instellen bij het maken van een gebeurtenis abonnement. Elke header waarde mag niet groter zijn dan 4.096 bytes (4.000). U kunt aangepaste kopteksten instellen voor de gebeurtenissen die worden geleverd aan de volgende bestemmingen:
 
 - Webhooks
@@ -296,7 +296,7 @@ Met gebeurtenis abonnementen kunt u HTTP-headers instellen die in de geleverde g
 - Azure Event Hubs
 - Hybride verbindingen doorgeven
 
-Zie [levering met aangepaste kopteksten](delivery-properties.md)voor meer informatie. 
+Zie [aangepaste bezorgings eigenschappen](delivery-properties.md)voor meer informatie. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

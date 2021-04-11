@@ -8,10 +8,10 @@ author: sayantanroy83
 ms.author: sroy
 ms.date: 3/08/2021
 ms.openlocfilehash: 8e0b94a46e96dd8ba16040e16b421520eb67de19
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102583866"
 ---
 # <a name="programmatic-access-paradigm"></a>Paradigma voor toegang tot software
@@ -52,7 +52,7 @@ In het volgende voor beeld ziet u hoe u een aangepaste query maakt om _genormali
 
 *Aanvraag header*
 
-| Header | Type | Beschrijving |
+| Header | Type | Description |
 | ------------- | ------------- | ------------- |
 | Autorisatie | tekenreeks | Vereist. Het toegangs token Azure Active Directory (Azure AD). De indeling is `Bearer <token>`. |
 | Content-Type | `string` | `application/JSON` |
@@ -82,9 +82,9 @@ Deze tabel bevat de belangrijkste definities van elementen in de aanvraag lading
 
 | Parameter | Vereist | Beschrijving | Toegestane waarden |
 | ------------ | ------------- | ------------- | ------------- |
-| `Name` | Ja | Beschrijvende naam van de query | tekenreeks |
+| `Name` | Yes | Beschrijvende naam van de query | tekenreeks |
 | `Description` | No | Beschrijving van de retour waarde van de query | tekenreeks |
-| `Query` | Ja | Query teken reeks rapport | Gegevens type: teken reeks<br>[Aangepaste query](analytics-sample-queries.md) op basis van bedrijfs behoeften |
+| `Query` | Yes | Query teken reeks rapport | Gegevens type: teken reeks<br>[Aangepaste query](analytics-sample-queries.md) op basis van bedrijfs behoeften |
 |||||
 
 > [!NOTE]
@@ -148,7 +148,7 @@ Bij het maken van een aangepast rapport sjabloon en het ontvangen `QueryID` als 
 
 *Aanvraag header*
 
-| Header | Type | Beschrijving |
+| Header | Type | Description |
 | ------ | ---- | ----------- |
 | Autorisatie | tekenreeks | Vereist. Het toegangs token Azure Active Directory (Azure AD). De indeling is `Bearer <token>`. |
 | Type inhoud | tekenreeks | `application/JSON` |
@@ -183,17 +183,17 @@ Deze tabel bevat de belangrijkste definities van elementen in de aanvraag lading
 
 | Parameter | Vereist | Beschrijving | Toegestane waarden |
 | ------------ | ------------- | ------------- | ------------- |
-| `ReportName` | Ja | Naam die aan het rapport is toegewezen | tekenreeks |
+| `ReportName` | Yes | Naam die aan het rapport is toegewezen | tekenreeks |
 | `Description` | No | Beschrijving van het gemaakte rapport | tekenreeks |
-| `QueryId` | Ja | Rapport query-ID | tekenreeks |
-| `StartTime` | Ja | UTC-tijds tempel waarop het genereren van het rapport wordt gestart.<br>De notatie moet zijn: JJJJ-MM-DDTuu: mm: ssZ | tekenreeks |
-| `RecurrenceInterval` | Ja | De frequentie in uren waarmee het rapport moet worden gegenereerd.<br>De minimum waarde is 4 en de maximum waarde is 90. | geheel getal |
-| `RecurrenceCount` | Nee | Aantal rapporten dat moet worden gegenereerd. | geheel getal |
-| `Format` | Nee | Bestands indeling van het geëxporteerde bestand.<br>De standaard indeling is. Bestand. | CSV/TSV |
-| `CallbackUrl` | Nee | Een openbaar bereik bare URL die optioneel kan worden geconfigureerd als de Terugbel bestemming. | Teken reeks (http-URL) |
-| `ExecuteNow` | Nee | Deze para meter moet worden gebruikt om een rapport te maken dat slechts één keer wordt uitgevoerd. `StartTime`, `RecurrenceInterval` en `RecurrenceCount` worden genegeerd als deze is ingesteld op `true` . Het rapport wordt direct op asynchrone wijze uitgevoerd. | waar/onwaar |
-| `QueryStartTime` | Nee | Hiermee geeft u eventueel de start tijd op voor de query die de gegevens ophaalt. Deze para meter is alleen van toepassing voor eenmalig uitvoerings rapport dat is `ExecuteNow` ingesteld op `true` . De notatie moet JJJJ-MM-DDTuu: mm: ssZ | Tijds tempel als teken reeks |
-| `QueryEndTime` | Nee | Hiermee geeft u eventueel de eind tijd op voor de query die de gegevens ophaalt. Deze para meter is alleen van toepassing voor eenmalig uitvoerings rapport dat is `ExecuteNow` ingesteld op `true` . De notatie moet JJJJ-MM-DDTuu: mm: ssZ | Tijds tempel als teken reeks |
+| `QueryId` | Yes | Rapport query-ID | tekenreeks |
+| `StartTime` | Yes | UTC-tijds tempel waarop het genereren van het rapport wordt gestart.<br>De notatie moet zijn: JJJJ-MM-DDTuu: mm: ssZ | tekenreeks |
+| `RecurrenceInterval` | Yes | De frequentie in uren waarmee het rapport moet worden gegenereerd.<br>De minimum waarde is 4 en de maximum waarde is 90. | geheel getal |
+| `RecurrenceCount` | No | Aantal rapporten dat moet worden gegenereerd. | geheel getal |
+| `Format` | No | Bestands indeling van het geëxporteerde bestand.<br>De standaard indeling is. Bestand. | CSV/TSV |
+| `CallbackUrl` | No | Een openbaar bereik bare URL die optioneel kan worden geconfigureerd als de Terugbel bestemming. | Teken reeks (http-URL) |
+| `ExecuteNow` | No | Deze para meter moet worden gebruikt om een rapport te maken dat slechts één keer wordt uitgevoerd. `StartTime`, `RecurrenceInterval` en `RecurrenceCount` worden genegeerd als deze is ingesteld op `true` . Het rapport wordt direct op asynchrone wijze uitgevoerd. | waar/onwaar |
+| `QueryStartTime` | No | Hiermee geeft u eventueel de start tijd op voor de query die de gegevens ophaalt. Deze para meter is alleen van toepassing voor eenmalig uitvoerings rapport dat is `ExecuteNow` ingesteld op `true` . De notatie moet JJJJ-MM-DDTuu: mm: ssZ | Tijds tempel als teken reeks |
+| `QueryEndTime` | No | Hiermee geeft u eventueel de eind tijd op voor de query die de gegevens ophaalt. Deze para meter is alleen van toepassing voor eenmalig uitvoerings rapport dat is `ExecuteNow` ingesteld op `true` . De notatie moet JJJJ-MM-DDTuu: mm: ssZ | Tijds tempel als teken reeks |
 |||||
 
 *Voorbeeldantwoord*
@@ -271,7 +271,7 @@ U kunt deze methode gebruiken om de status van een rapport uitvoering op te vrag
 
 *Aanvraag header*
 
-| Header | Type | Beschrijving |
+| Header | Type | Description |
 | ------ | ------ | ------ |
 | Autorisatie | tekenreeks | Vereist. Het toegangs token Azure Active Directory (Azure AD). De indeling is `Bearer <token>`. |
 | Inhoudstype | tekenreeks | `application/json` |
@@ -286,9 +286,9 @@ Geen
 | Parameternaam | Vereist | Type | Beschrijving |
 | ------------ | ------------- | ------------- | ------------- |
 | `reportId` | Ja | tekenreeks | Filter om uitvoerings Details op te halen van alleen rapporten die `reportId` in dit argument zijn opgegeven. U `reportIds` kunt meerdere opgeven door deze te scheiden met een punt komma '; '. |
-| `executionId` | Nee | tekenreeks | Filter om details op te halen van alleen rapporten die `executionId` in dit argument staan vermeld. U `executionIds` kunt meerdere opgeven door deze te scheiden met een punt komma '; '. |
-| `executionStatus` | Nee | teken reeks/Enum | Filter om details op te halen van alleen rapporten die `executionStatus` in dit argument staan vermeld.<br>Geldige waarden zijn: `Pending` , `Running` , `Paused` en `Completed` <br>De standaardwaarde is `Completed`. U kunt meerdere statussen opgeven door deze te scheiden met een punt komma '; '. |
-| `getLatestExecution` | Nee | booleaans | De API retourneert Details van de meest recente rapport uitvoering.<br>Deze para meter is standaard ingesteld op `true` . Als u ervoor kiest om de waarde van deze para meter door te geven als `false` , retourneert de API de laatste instanties van 90 dagen. |
+| `executionId` | No | tekenreeks | Filter om details op te halen van alleen rapporten die `executionId` in dit argument staan vermeld. U `executionIds` kunt meerdere opgeven door deze te scheiden met een punt komma '; '. |
+| `executionStatus` | No | teken reeks/Enum | Filter om details op te halen van alleen rapporten die `executionStatus` in dit argument staan vermeld.<br>Geldige waarden zijn: `Pending` , `Running` , `Paused` en `Completed` <br>De standaardwaarde is `Completed`. U kunt meerdere statussen opgeven door deze te scheiden met een punt komma '; '. |
+| `getLatestExecution` | No | booleaans | De API retourneert Details van de meest recente rapport uitvoering.<br>Deze para meter is standaard ingesteld op `true` . Als u ervoor kiest om de waarde van deze para meter door te geven als `false` , retourneert de API de laatste instanties van 90 dagen. |
 |||||
 
 *Payload aanvragen*

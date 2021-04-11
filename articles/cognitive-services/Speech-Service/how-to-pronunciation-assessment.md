@@ -12,12 +12,12 @@ ms.date: 01/12/2021
 ms.author: yulili
 ms.custom: references_regions
 zone_pivot_groups: programming-languages-speech-services-nomore-variant
-ms.openlocfilehash: dc1ab8bd1a851f7fafd5c001ac73e66973e1b64c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 2d1b5e490b7c8212e6103e3d169c1b5491d01dde
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102051885"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106167427"
 ---
 # <a name="pronunciation-assessment"></a>Beoordeling van uitspraak
 
@@ -28,7 +28,7 @@ Docenten kunnen de mogelijkheid gebruiken om de uitspraak van meerdere sprekers 
 In dit artikel vindt u informatie over het instellen `PronunciationAssessmentConfig` en ophalen van het `PronunciationAssessmentResult` gebruik van de spraak-SDK.
 
 > [!NOTE]
-> De functie voor het beoordelen van uitspraak ondersteunt momenteel alleen de taal `en-US` .
+> De functie voor het beoordelen van uitspraak biedt momenteel ondersteuning `en-US` voor de taal, die beschikbaar is voor alle [spraak-naar-tekst-gebieden](regions.md#speech-to-text-text-to-speech-and-translation). De ondersteuning voor `en-GB` en `zh-CN` talen is onder preview, beschikbaar in `westus` `eastasia` en `centralindia` regio's.
 
 ## <a name="pronunciation-assessment-with-the-speech-sdk"></a>Uitspraak beoordeling met de Speech SDK
 
@@ -194,9 +194,63 @@ Deze tabel bevat de resultaat parameters van de uitspraak beoordeling.
 | `PronunciationScore` | Algemene score die de uitspraak kwaliteit van de opgegeven spraak aangeeft. Deze wordt samengesteld op basis `AccuracyScore` van `FluencyScore` en `CompletenessScore` met gewicht. |
 | `ErrorType` | Deze waarde geeft aan of een woord wordt wegge laten, wordt ingevoegd of verkeerd is uitgesp roken, vergeleken met `ReferenceText` . Mogelijke waarden zijn `None` (wat betekent dat er geen fout is in dit woord), `Omission` `Insertion` en `Mispronunciation` . |
 
+### <a name="sample-responses"></a>Voorbeeld reacties
+
+Een typische evaluatie resultaat van de uitspraak in JSON:
+
+```json
+{
+  "RecognitionStatus": "Success",
+  "Offset": "400000",
+  "Duration": "11000000",
+  "NBest": [
+      {
+        "Confidence" : "0.87",
+        "Lexical" : "good morning",
+        "ITN" : "good morning",
+        "MaskedITN" : "good morning",
+        "Display" : "Good morning.",
+        "PronunciationAssessment":
+        {
+            "PronScore" : 84.4,
+            "AccuracyScore" : 100.0,
+            "FluencyScore" : 74.0,
+            "CompletenessScore" : 100.0,
+        },
+        "Words": [
+            {
+              "Word" : "Good",
+              "Offset" : 500000,
+              "Duration" : 2700000,
+              "PronunciationAssessment":
+              {
+                "AccuracyScore" : 100.0,
+                "ErrorType" : "None"
+              }
+            },
+            {
+              "Word" : "morning",
+              "Offset" : 5300000,
+              "Duration" : 900000,
+              "PronunciationAssessment":
+              {
+                "AccuracyScore" : 100.0,
+                "ErrorType" : "None"
+              }
+            }
+        ]
+      }
+  ]
+}
+```
+
 ## <a name="next-steps"></a>Volgende stappen
 
 <!-- TODO: update JavaScript sample links after release -->
+
+* Bekijk de [Video-inleiding](https://www.youtube.com/watch?v=cBE8CUHOFHQ) en [video-zelf studie](https://www.youtube.com/watch?v=zFlwm7N4Awc) van de uitspraak beoordeling
+
+* De demo van de [uitspraak beoordeling](https://github.com/Azure-Samples/Cognitive-Speech-TTS/tree/master/PronunciationAssessment/BrowserJS) uitproberen
 
 ::: zone pivot="programming-language-csharp"
 * Zie de [voorbeeld code](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/csharp/sharedcontent/console/speech_recognition_samples.cs#L949) op github voor het beoordelen van de uitspraak.
@@ -219,3 +273,5 @@ Deze tabel bevat de resultaat parameters van de uitspraak beoordeling.
 ::: zone-end
 
 * [Naslag documentatie voor Speech SDK](speech-sdk.md)
+
+* [Een gratis Azure-account maken](https://azure.microsoft.com/free/cognitive-services/)

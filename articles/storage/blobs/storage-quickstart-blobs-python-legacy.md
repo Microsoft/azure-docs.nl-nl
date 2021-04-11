@@ -1,19 +1,19 @@
 ---
 title: 'Quickstart: Azure Blob Storage-clientbibliotheek v2.1 voor Python'
 description: In deze snelstart maakt u een opslagaccount en een container in object(blob)-opslag. Vervolgens gebruikt u de opslagclientbibliotheek v2.1 voor Python om een blob in Azure Storage te uploaden, een blob te downloaden en de blobs in een container te vermelden.
-author: mhopkins-msft
-ms.author: mhopkins
+author: twooley
+ms.author: twooley
 ms.date: 07/24/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: seo-python-october2019, devx-track-python
-ms.openlocfilehash: 34205caf03d2f2d7255f75ea6203c5572c4c429b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 01ca2ee1bcd551baa471dda64d636e077f6e1a82
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "95523298"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106275444"
 ---
 # <a name="quickstart-manage-blobs-with-python-v21-sdk"></a>Quickstart: Blobs beheren met Python v 2.1 SDK
 

@@ -9,14 +9,16 @@ ms.author: chpalm
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 8b641ec37d134303ae6b31c092cd3c50811477a7
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.openlocfilehash: cf6553cd7c59febd19f9654e31188f127b8eb065
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105108414"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106276753"
 ---
 # <a name="teams-interoperability"></a>Interoperabiliteit met Teams
+
+[!INCLUDE [Public Preview](../includes/public-preview-include-document.md)]
 
 > [!IMPORTANT]
 > Vul [dit formulier](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR21ouQM6BHtHiripswZoZsdURDQ5SUNQTElKR0VZU0VUU1hMOTBBMVhESS4u)in om [teams Tenant interoperabiliteit](../concepts/teams-interop.md)in of uit te scha kelen.
@@ -41,7 +43,7 @@ Wanneer een communicatie Services-gebruiker deelneemt aan de vergadering van de 
 
 Communication Services teams Interop bevindt zich momenteel in een persoonlijke preview. Wanneer het algemeen beschikbaar is, worden communicatie Services-gebruikers behandeld als gebruikers van externe toegang. Meer informatie over externe toegang in [gesprek, chat en samen werking met mensen buiten uw organisatie in micro soft teams](/microsoftteams/communicate-with-users-from-other-organizations).
 
-Gebruikers van Communication Services kunnen deelnemen aan geplande Teams-vergaderingen, zolang anonieme deelnames zijn ingeschakeld in de [instellingen van vergaderingen](/microsoftteams/meeting-settings-in-teams).
+Gebruikers van Communication Services kunnen deelnemen aan geplande Teams-vergaderingen, zolang anonieme deelnames zijn ingeschakeld in de [instellingen van vergaderingen](/microsoftteams/meeting-settings-in-teams). Als de vergadering is gepland voor een kanaal, kunnen communicatie Services gebruikers niet deel nemen aan de chat sessie of berichten verzenden en ontvangen.
 
 ## <a name="teams-in-government-clouds-gcc"></a>Teams in Government Clouds (GCC)
 Azure Communication Services-interoperabiliteit is op dit moment niet compatibel met teams implementaties met behulp van [Microsoft 365 Government Clouds (gcc)](/MicrosoftTeams/plan-for-government-gcc) . 

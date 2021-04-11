@@ -9,12 +9,12 @@ ms.subservice: trusted-launch
 ms.topic: how-to
 ms.date: 03/03/2021
 ms.custom: template-how-to
-ms.openlocfilehash: dec9c7581bbcf55196b04e0a76e9e61f81a27244
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 6499e4b3404a255025f88488e73da1efb6449296
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104582065"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106075948"
 ---
 # <a name="deploy-a-vm-with-trusted-launch-enabled-preview"></a>Een VM implementeren met behulp van vertrouwde start ingeschakeld (preview-versie)
 
@@ -32,27 +32,30 @@ ms.locfileid: "104582065"
 Een virtuele machine maken waarvoor vertrouwde start is ingeschakeld.
 
 1. Meld u aan bij de Azure [Portal](https://aka.ms/TL_preview).
-1. Zoeken naar **virtual machines**.
-1. Selecteer **virtuele machines** onder **Services**.
-1. Selecteer op de pagina **virtuele machines** de optie **toevoegen** en selecteer vervolgens **virtuele machine**.
-1. Controleer onder **Project Details** of het juiste abonnement is geselecteerd.
-1. Selecteer onder **resource groep** de optie **nieuwe maken** en typ een naam voor de resource groep of selecteer een bestaande resource groep in de vervolg keuzelijst.
-1. Typ onder **Details van exemplaar** een naam voor de naam van de virtuele machine en kies een regio die ondersteuning biedt voor [vertrouwde start](trusted-launch.md#public-preview-limitations).
-1. Selecteer onder **afbeelding** een [installatie kopie die ondersteuning biedt voor vertrouwde start](trusted-launch.md#public-preview-limitations). Mogelijk ziet u alleen de versie 1 van de installatie kopie, die u in orde hebt, gaat u verder met de volgende stap.
-1. Schakel over naar het tabblad **Geavanceerd** door het boven aan de pagina te selecteren.
-1. Schuif omlaag naar de sectie voor het genereren van de **virtuele machine** en selecteer vervolgens **gen 2**.
-1. Terwijl u nog steeds op het tabblad **Geavanceerd** , schuift u omlaag naar **vertrouwd starten** en selecteert u vervolgens het selectie vakje **vertrouwd starten** . Zo worden er nog twee opties weer gegeven: beveiligd opstarten en vTPM. Selecteer de juiste opties voor uw implementatie.
+   > [!NOTE] 
+   > De Portal koppeling is uniek voor de preview-versie van vertrouwde start.
+   >  
+2. Zoeken naar **virtual machines**.
+3. Selecteer **virtuele machines** onder **Services**.
+4. Selecteer op de pagina **virtuele machines** de optie **toevoegen** en selecteer vervolgens **virtuele machine**.
+5. Controleer onder **Project Details** of het juiste abonnement is geselecteerd.
+6. Selecteer onder **resource groep** de optie **nieuwe maken** en typ een naam voor de resource groep of selecteer een bestaande resource groep in de vervolg keuzelijst.
+7. Typ onder **Details van exemplaar** een naam voor de naam van de virtuele machine en kies een regio die ondersteuning biedt voor [vertrouwde start](trusted-launch.md#public-preview-limitations).
+8. Selecteer onder **afbeelding** een [installatie kopie die ondersteuning biedt voor vertrouwde start](trusted-launch.md#public-preview-limitations). Mogelijk ziet u alleen de versie 1 van de installatie kopie, die u in orde hebt, gaat u verder met de volgende stap.
+9. Schakel over naar het tabblad **Geavanceerd** door het boven aan de pagina te selecteren.
+10. Schuif omlaag naar de sectie voor het genereren van de **virtuele machine** en selecteer vervolgens **gen 2**.
+11. Terwijl u nog steeds op het tabblad **Geavanceerd** , schuift u omlaag naar **vertrouwd starten** en selecteert u vervolgens het selectie vakje **vertrouwd starten** . Zo worden er nog twee opties weer gegeven: beveiligd opstarten en vTPM. Selecteer de juiste opties voor uw implementatie.
 
     :::image type="content" source="media/trusted-launch/trusted-launch-portal.png" alt-text="Scherm afbeelding met de opties voor vertrouwde start.":::
 
-1. Ga terug naar het tabblad **basis principes** , onder **afbeelding**, en zorg ervoor dat het volgende bericht wordt weer gegeven: **deze afbeelding ondersteunt de preview van vertrouwde start. Configureer op het tabblad Geavanceerd**. U moet nu de installatie kopie van generatie 2 selecteren.
+12. Ga terug naar het tabblad **basis principes** , onder **afbeelding**, en zorg ervoor dat het volgende bericht wordt weer gegeven: **deze afbeelding ondersteunt de preview van vertrouwde start. Configureer op het tabblad Geavanceerd**. U moet nu de installatie kopie van generatie 2 selecteren.
 
     :::image type="content" source="media/trusted-launch/gen-2-image.png" alt-text="Scherm afbeelding met het bericht dat wordt bevestigd dat dit een Gen2-installatie kopie is die een vertrouwde start ondersteunt.":::
 
-1.  Selecteer een VM-grootte die een vertrouwde start ondersteunt. Zie de lijst met [ondersteunde grootten](trusted-launch.md#public-preview-limitations).
-1.  Vul de gegevens van het **Administrator-account** en vervolgens de **Binnenkomende poort regels** in.
-1.  Selecteer onder aan de pagina de optie **bekijken + maken**
-1.  Op de pagina **een virtuele machine maken** ziet u de details van de VM die u gaat implementeren. Wanneer u klaar bent, selecteert u **Maken**.
+13. Selecteer een VM-grootte die een vertrouwde start ondersteunt. Zie de lijst met [ondersteunde grootten](trusted-launch.md#public-preview-limitations).
+14. Vul de gegevens van het **Administrator-account** en vervolgens de **Binnenkomende poort regels** in.
+15. Selecteer onder aan de pagina de optie **bekijken + maken**
+16. Op de pagina **een virtuele machine maken** ziet u de details van de VM die u gaat implementeren. Wanneer u klaar bent, selecteert u **Maken**.
 
     :::image type="content" source="media/trusted-launch/validation.png" alt-text="De Sceenshot van de validatie pagina, met daarin de opties voor het betrouw bare starten, zijn opgenomen.":::
 

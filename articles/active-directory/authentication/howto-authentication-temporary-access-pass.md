@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/18/2021
+ms.date: 03/31/2021
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: inbarckms
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0805ac84318a4fee98c30127ac80c0dac2b96309
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 8774df6a2eee15f8b5a0c37362e5b20f14b07549
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105558258"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106167359"
 ---
 # <a name="configure-temporary-access-pass-in-azure-ad-to-register-passwordless-authentication-methods-preview"></a>Tijdelijke toegangs fase configureren in azure AD om verificatie methoden met een wacht woord (preview-versie) te registreren
 
@@ -57,7 +57,7 @@ Het beleid voor de verificatie methode van tijdelijke toegang door geven:
    | Eenmalig gebruik | Niet waar | Waar/onwaar | Wanneer het beleid is ingesteld op ONWAAR, kunnen door gegeven in de Tenant één keer of meerdere keren worden gebruikt tijdens de geldigheid (maximale levens duur). Door eenmalig gebruik af te dwingen in het beleid voor tijdelijke toegang, worden alle door gegeven die zijn gemaakt in de Tenant, gemaakt als eenmalig gebruik. |
    | Lengte | 8 | 8-48 tekens | Hiermee definieert u de lengte van de wachtwoord code. |
 
-## <a name="create-a-temporary-access-pass-in-the-azure-ad-portal"></a>Een tijdelijke toegangs fase maken in de Azure AD-Portal
+## <a name="create-a-temporary-access-pass"></a>Een tijdelijke toegangs fase maken
 
 Nadat u een beleid hebt ingeschakeld, kunt u een tijdelijke toegangs doorgifte voor een gebruiker in azure AD maken. Deze rollen kunnen de volgende acties uitvoeren met betrekking tot een tijdelijke toegangs doorvoer.
 
@@ -66,9 +66,7 @@ Nadat u een beleid hebt ingeschakeld, kunt u een tijdelijke toegangs doorgifte v
 - Verificatie beheerders kunnen een tijdelijke toegangs doorgifte voor leden maken, verwijderen en bekijken (behalve zelf)
 - De globale beheerder kan de gegevens van de tijdelijke toegangs doorgifte weer geven voor de gebruiker (zonder de code zelf te lezen).
 
-Een tijdelijke toegangs fase maken:
-
-1. Meld u aan bij de portal als een globale beheerder, bevoegde verificatie beheerder of verificatie beheerder. 
+1. Meld u aan bij de Azure Portal als globale beheerder, bevoegde verificatie beheerder of verificatie beheerder. 
 1. Klik op **Azure Active Directory**, blader naar gebruikers, selecteer een gebruiker, zoals *Chris groen*, en kies vervolgens **verificatie methoden**.
 1. Selecteer, indien nodig, de optie voor **het uitproberen van de nieuwe gebruikers verificatie methoden**.
 1. Selecteer de optie om **verificatie methoden toe te voegen**.
@@ -80,6 +78,30 @@ Een tijdelijke toegangs fase maken:
 1. Zodra het apparaat is toegevoegd, worden de details van de tijdelijke toegangs fase weer gegeven. Noteer de werkelijke waarde voor tijdelijke toegang door gegeven. U geeft deze waarde aan de gebruiker. U kunt deze waarde niet weer geven nadat u op **OK** hebt geklikt.
    
    ![Scherm afbeelding van de details van de tijdelijke toegang](./media/how-to-authentication-temporary-access-pass/details.png)
+
+De volgende opdrachten laten zien hoe u een tijdelijke toegang kunt maken en ontvangen met behulp van Power shell:
+
+```powershell
+# Create a Temporary Access Pass for a user
+$properties = @{}
+$properties.isUsableOnce = $True
+$properties.startDateTime = '2021-03-11 06:00:00'
+$propertiesJSON = $properties | ConvertTo-Json
+
+New-MgUserAuthenticationTemporaryAccessPassMethod -UserId user2@contoso.com -BodyParameter $propertiesJSON
+
+Id                                   CreatedDateTime       IsUsable IsUsableOnce LifetimeInMinutes MethodUsabilityReason StartDateTime         TemporaryAccessPass
+--                                   ---------------       -------- ------------ ----------------- --------------------- -------------         -------------------
+c5dbd20a-8b8f-4791-a23f-488fcbde3b38 9/03/2021 11:19:17 PM False    True         60                NotYetValid           11/03/2021 6:00:00 AM TAPRocks!
+
+# Get a user's Temporary Access Pass
+Get-MgUserAuthenticationTemporaryAccessPassMethod -UserId user3@contoso.com
+
+Id                                   CreatedDateTime       IsUsable IsUsableOnce LifetimeInMinutes MethodUsabilityReason StartDateTime         TemporaryAccessPass
+--                                   ---------------       -------- ------------ ----------------- --------------------- -------------         -------------------
+c5dbd20a-8b8f-4791-a23f-488fcbde3b38 9/03/2021 11:19:17 PM False    True         60                NotYetValid           11/03/2021 6:00:00 AM
+
+```
 
 ## <a name="use-a-temporary-access-pass"></a>Een tijdelijke toegangs doorvoer gebruiken
 
@@ -108,6 +130,13 @@ Een verlopen tijdelijke toegangs doorvoer kan niet worden gebruikt. Onder de **v
 1. Blader in de Azure AD-Portal naar **gebruikers**, selecteer een gebruiker, zoals *Tik op gebruiker* en kies **verificatie methoden**.
 1. Selecteer aan de rechter kant van de verificatie methode voor de **tijdelijke toegangs fase (preview)** die in de lijst wordt weer gegeven, de optie **verwijderen**.
 
+U kunt ook Power shell gebruiken:
+
+```powershell
+# Remove a user's Temporary Access Pass
+Remove-MgUserAuthenticationTemporaryAccessPassMethod -UserId user3@contoso.com -TemporaryAccessPassAuthenticationMethodId c5dbd20a-8b8f-4791-a23f-488fcbde3b38
+```
+
 ## <a name="replace-a-temporary-access-pass"></a>Een tijdelijke toegangs doorvoer vervangen 
 
 - Een gebruiker kan slechts één tijdelijke toegang door geven. De wachtwoord code kan worden gebruikt tijdens de begin-en eind tijd van de tijdelijke toegangs fase.
@@ -123,8 +152,8 @@ Houd u aan de volgende beperkingen:
 
 - Wanneer u een eenmalige tijdelijke toegangs fase gebruikt voor het registreren van een wacht woordloze methode zoals FIDO2 of aanmelding via de telefoon, moet de gebruiker de registratie volt ooien binnen 10 minuten na het aanmelden met de eenmalige tijdelijke toegangs fase. Deze beperking is niet van toepassing op een tijdelijke toegangs doorgifte die meer dan één keer kan worden gebruikt.
 - Gast gebruikers kunnen zich niet aanmelden met tijdelijke toegang door gegeven.
-- Gebruikers binnen het bereik voor selfservice voor wachtwoord herstel (SSPR) moeten een van de SSPR-methoden registreren nadat ze zich hebben aangemeld met een tijdelijke toegangs fase. Als de gebruiker alleen de FIDO2-sleutel gaat gebruiken, moet u deze uitsluiten van het SSPR-beleid of het SSPR-registratie beleid uitschakelen. 
-- Een tijdelijke toegangs doorvoer kan niet worden gebruikt met de extensie Network Policy Server (NPS) en Active Directory Federation Services (AD FS).
+- Gebruikers binnen het bereik voor selfservice voor het opnieuw instellen van een wacht woord (SSPR) *of* het registratie beleid voor [identiteits beveiliging](../identity-protection/howto-identity-protection-configure-mfa-policy.md) , zijn vereist voor het registreren van verificatie methoden nadat ze zich hebben aangemeld met een tijdelijke toegangs doorvoer. Gebruikers binnen het bereik van deze beleids regels worden omgeleid naar de [interrupt-modus van de gecombineerde registratie](concept-registration-mfa-sspr-combined.md#combined-registration-modes). Deze ervaring biedt momenteel geen ondersteuning voor FIDO2 en inschrijving via de telefoon. 
+- Een tijdelijke toegangs doorvoer kan niet worden gebruikt met de Network Policy Server (NPS)-extensie en Active Directory Federation Services (AD FS)-adapter, of tijdens Windows Setup/out-of-Box-Experience (OOBE) en auto pilot. 
 - Wanneer naadloze SSO is ingeschakeld op de Tenant, wordt de gebruiker gevraagd een wacht woord in te voeren. De koppeling **gebruik van uw tijdelijke toegang in plaats daarvan** is beschikbaar voor de gebruiker om u aan te melden met een tijdelijke toegangs fase.
 
   ![Scherm opname van het gebruik van een tijdelijke Access-door Voer](./media/how-to-authentication-temporary-access-pass/alternative.png)

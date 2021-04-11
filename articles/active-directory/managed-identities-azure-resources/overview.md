@@ -12,15 +12,15 @@ ms.subservice: msi
 ms.devlang: ''
 ms.topic: overview
 ms.custom: mvc
-ms.date: 10/06/2020
+ms.date: 04/05/2021
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5390811c8da4a8cace32e0e7ba4524e8c537a26a
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: 99db58e39377932608b1c78bac37003432aa4c04
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106055583"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106381902"
 ---
 # <a name="what-are-managed-identities-for-azure-resources"></a>Wat zijn beheerde identiteiten voor Azure-resources?
 
@@ -33,7 +33,7 @@ Waarvoor kan een beheerde identiteit worden gebruikt?
 Hier volgen enkele van de voordelen van het gebruik van beheerde identiteiten:
 
 - U hoeft geen referenties te beheren. Referenties zijn voor u zelfs niet toegankelijk.
-- U kunt de beheerde identiteiten gebruiken voor verificatie bij alle Azure-services die ondersteuning bieden voor Azure AD-verificatie, inclusief Key Vault.
+- U kunt beheerde identiteiten gebruiken om te verifiëren bij elke bron die ondersteuning biedt voor Azure Active Directory-verificatie, inclusief uw eigen toepassingen.
 - Beheerde identiteiten kunnen worden gebruikt zonder extra kosten.
 
 > [!NOTE]

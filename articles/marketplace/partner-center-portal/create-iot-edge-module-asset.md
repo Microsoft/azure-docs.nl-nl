@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 04/03/2020
-ms.openlocfilehash: aca27b89a3b92b410fa560c8b4bd7eb3d4e0a935
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f8eddd5d346003af0c2b41d65fc0aa09c86f48c7
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "93346771"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106167444"
 ---
 # <a name="prepare-your-iot-edge-module-technical-assets"></a>De technische activa van uw IoT Edge module voorbereiden
 
@@ -39,14 +39,14 @@ Uw module moet ondersteuning bieden voor alle platforms van laag 1 die door IoT 
 
 - Geef een van de nieuwste Tags en een versie label (bijvoorbeeld 1.0.1) op die zijn gemaakt met het [manifest hulp programma github](https://github.com/estesp/manifest-tool).
 
-- Gebruik het tabblad aanbiedings vermelding in het [partner centrum](https://partner.microsoft.com/dashboard/commercial-marketplace) om een koppeling toe te voegen aan de sectie **handige koppelingen** naar de [Azure IOT Edge gecertificeerde-stuurprogrammacatalogus](https://catalog.azureiotsolutions.com/alldevices?filters={%2218%22:[%221%22]}/).
+- Gebruik het tabblad aanbiedings vermelding in het [partner centrum](https://partner.microsoft.com/dashboard/commercial-marketplace) om een koppeling toe te voegen aan de sectie **handige koppelingen** naar de [Azure IOT Edge gecertificeerde-stuurprogrammacatalogus](https://devicecatalog.azure.com/devices?certificationBadgeTypes=IoTEdgeCompatible).
 
 #### <a name="a-subset-of-tier-1-platforms-supported-by-iot-edge"></a>Een subset van laag 1-platforms die door IoT Edge worden ondersteund
 
 Uw module moet ondersteuning bieden voor een subset (ten minste één) van laag 1-platformen die door IoT Edge worden ondersteund (zoals vastgelegd in [Azure IOT EDGE-ondersteuning](../../iot-edge/support.md)). Een module die gebruikmaakt van deze platform optie moet:
 
 - Geef een laatste tag en een versie label (bijvoorbeeld 1.0.1) op die zijn gemaakt met het GitHub [-manifest hulp programma](https://github.com/estesp/manifest-tool) als meer dan één platform wordt ondersteund. Manifest Tags zijn alleen optioneel wanneer één platform wordt ondersteund.
-- Gebruik het tabblad aanbiedings vermelding in het [partner centrum](https://partner.microsoft.com/dashboard/commercial-marketplace) om een koppeling toe te voegen onder de sectie **handige koppelingen** naar ten minste één IOT edge apparaat uit de [catalogus met Azure IOT Edge-gecertificeerde apparaten](https://catalog.azureiotsolutions.com/).
+- Gebruik het tabblad aanbiedings vermelding in het [partner centrum](https://partner.microsoft.com/dashboard/commercial-marketplace) om een koppeling toe te voegen onder de sectie **handige koppelingen** naar ten minste één IOT edge apparaat uit de [catalogus met Azure IOT Edge-gecertificeerde apparaten](https://devicecatalog.azure.com/).
 
 :::image type="content" source="media/iot-edge-module-technical-assets-offer-listing.png" alt-text="Dit is een afbeelding van de aanbiedings vermelding in het partner centrum":::
 
@@ -54,7 +54,7 @@ Uw module moet ondersteuning bieden voor een subset (ten minste één) van laag 
 
 IoT Edge module dimensies (zoals CPU, RAM, opslag en GPU) op doel IoT Edge apparaten moeten voldoen aan de volgende vereisten:
 
-- De module moet samen werken met ten minste één IoT Edge apparaat uit de [catalogus met Azure IOT Edge-gecertificeerde apparaten](https://catalog.azureiotsolutions.com/).
+- De module moet samen werken met ten minste één IoT Edge apparaat uit de [catalogus met Azure IOT Edge-gecertificeerde apparaten](https://devicecatalog.azure.com/).
 
 - De minimale hardwarevereisten moeten worden gedocumenteerd als de laatste alinea in de beschrijving van de aanbieding (op het tabblad aanbiedings vermelding in het [partner centrum](https://partner.microsoft.com/dashboard/commercial-marketplace)). U kunt eventueel ook de aanbevolen hardwarevereisten weer geven als ze aanzienlijk verschillen. Voeg bijvoorbeeld de volgende sectie toe aan het einde van de beschrijving van uw aanbieding:
 

@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/27/2020
 ms.openlocfilehash: 883b76929ac3310dd3089ecb088a4691adbb4ca1
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103010351"
 ---
 # <a name="backup-and-restore-in-azure-database-for-mysql"></a>Back-ups maken en herstellen in Azure Database for MySQL
@@ -96,7 +96,7 @@ De geschatte tijd voor het herstel van de server is afhankelijk van verschillend
 ```sql
 select tab.table_schema as database_name, tab.table_name from information_schema.tables tab left join information_schema.table_constraints tco on tab.table_schema = tco.table_schema and tab.table_name = tco.table_name and tco.constraint_type = 'PRIMARY KEY' where tco.constraint_type is null and tab.table_schema not in('mysql', 'information_schema', 'performance_schema', 'sys') and tab.table_type = 'BASE TABLE' order by tab.table_schema, tab.table_name;
 ```
-Voor een grote of zeer actieve Data Base kan het herstellen enkele uren duren. Als er een langdurige storing in een regio optreedt, is het mogelijk dat er een groot aantal aanvragen voor geo-herstel worden gestart voor herstel na nood gevallen. Wanneer er veel aanvragen zijn, kan de herstel tijd voor afzonderlijke data bases toenemen. De meeste data bases worden hersteld in minder dan 12 uur.
+Voor een grote of zeer actieve Data Base kan het herstellen enkele uren duren. Als er een langdurige storing in een regio optreedt, kan het gebeuren dat een groot aantal aanvragen voor geo-herstel wordt geïnitieerd voor herstel na een noodgeval. Wanneer er veel aanvragen zijn, kan de hersteltijd voor individuele databases toenemen. De meeste data bases worden hersteld in minder dan 12 uur.
 
 > [!IMPORTANT]
 > Verwijderde servers kunnen alleen binnen **vijf dagen** na de verwijdering worden hersteld, waarna de back-ups worden verwijderd. De back-up van de data base kan worden geopend en alleen worden teruggezet vanuit het Azure-abonnement dat als host fungeert voor de server. Raadpleeg [gedocumenteerde stappen](howto-restore-dropped-server.md)om een verwijderde server te herstellen. Beheerders kunnen gebruikmaken van [beheer vergrendelingen](../azure-resource-manager/management/lock-resources.md)om Server bronnen te beveiligen, na implementatie van onopzettelijk verwijderen of onverwachte wijzigingen.

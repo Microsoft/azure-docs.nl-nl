@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: reference
 ms.date: 03/17/2021
 ms.author: inhenkel
-ms.openlocfilehash: 6b502690a62410f1e8d2950074e8b479f7dc7f88
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 6b9d3f6973c210e7bd91c088ee7a276bfbcc48ce
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104609319"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106121979"
 ---
 # <a name="azure-event-grid-schemas-for-media-services-events"></a>Azure Event Grid schema's voor Media Services gebeurtenissen
 
@@ -330,7 +330,7 @@ Het gegevens object heeft de volgende eigenschappen:
 | encoderPort | tekenreeks | Poort van het coderings programma waaruit deze stroom afkomstig is. |
 | resultCode | tekenreeks | De reden waarom de verbinding is geweigerd. De resultaat codes worden in de volgende tabel weer gegeven. |
 
-U kunt de fout codes vinden in [fouten met fout codes voor Live-gebeurtenissen](../live-event-error-codes.md).
+U kunt de fout codes vinden in [fouten met fout codes voor Live-gebeurtenissen](../live-event-error-codes-reference.md).
 
 ### <a name="liveeventencoderconnected"></a>LiveEventEncoderConnected
 
@@ -400,7 +400,7 @@ Het gegevens object heeft de volgende eigenschappen:
 | encoderPort | tekenreeks | Poort van het coderings programma waaruit deze stroom afkomstig is. |
 | resultCode | tekenreeks | De reden voor het verbreken van de verbinding met het coderings programma. Het kan zijn dat de verbinding wordt verbroken of dat er een fout optreedt. De resultaat codes worden in de volgende tabel weer gegeven. |
 
-U kunt de fout codes vinden in [fouten met fout codes voor Live-gebeurtenissen](../live-event-error-codes.md).
+U kunt de fout codes vinden in [fouten met fout codes voor Live-gebeurtenissen](../live-event-error-codes-reference.md).
 
 De resultaten van de gevolgde verbrekings verbinding zijn:
 
@@ -676,4 +676,4 @@ Een gebeurtenis heeft de volgende gegevens op het hoogste niveau:
 
 - [EventGrid .NET SDK die media service-gebeurtenissen bevat](https://www.nuget.org/packages/Microsoft.Azure.EventGrid/)
 - [Definities van Media Services gebeurtenissen](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/eventgrid/data-plane/Microsoft.Media/stable/2018-01-01/MediaServices.json)
-- [Fout codes voor Live-gebeurtenissen](../live-event-error-codes.md)
+- [Fout codes voor Live-gebeurtenissen](../live-event-error-codes-reference.md)

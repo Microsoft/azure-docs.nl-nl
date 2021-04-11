@@ -11,12 +11,12 @@ author: aamalvea
 ms.author: aamalvea
 ms.reviewer: sstein
 ms.date: 3/23/2021
-ms.openlocfilehash: eedbc46ee5feb0aa6f6a26c3f5b3c67ac8ca0a5e
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 259a8581d16f4fd6958a0d9ec2631f667d362b19
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105044257"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106579470"
 ---
 # <a name="plan-for-azure-maintenance-events-in-azure-sql-database-and-azure-sql-managed-instance"></a>Azure-onderhouds gebeurtenissen plannen in Azure SQL Database en Azure SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -35,7 +35,7 @@ Onderhouds gebeurtenis kan één of meerdere herconfiguraties veroorzaken, afhan
 
 ## <a name="how-to-simulate-a-planned-maintenance-event"></a>Een geplande onderhouds gebeurtenis simuleren
 
-Om ervoor te zorgen dat uw client toepassing bestand is tegen onderhouds gebeurtenissen voorafgaand aan de implementatie van de productie, helpt het risico op toepassings fouten te verhelpen en helpt de beschik baarheid van toepassingen voor uw eind gebruikers. U kunt het gedrag van uw client toepassing testen tijdens geplande onderhouds gebeurtenissen door [hand matige failover](https://aka.ms/mifailover-techblog) via Power shell, CLI of rest API te initiëren. Het produceert hetzelfde gedrag als onderhouds gebeurtenis die de primaire replica offline brengt.
+Om ervoor te zorgen dat uw client toepassing bestand is tegen onderhouds gebeurtenissen voorafgaand aan de implementatie van de productie, helpt het risico op toepassings fouten te verhelpen en helpt de beschik baarheid van toepassingen voor uw eind gebruikers. U kunt het gedrag van uw client toepassing testen tijdens geplande onderhouds gebeurtenissen door [toepassings fout tolerantie te testen](https://docs.microsoft.com/azure/azure-sql/database/high-availability-sla#testing-application-fault-resiliency) via Power shell, CLI of rest API. Zie ook [hand matige failover initiëren](https://aka.ms/mifailover-techblog) voor een beheerd exemplaar. Het produceert hetzelfde gedrag als onderhouds gebeurtenis die de primaire replica offline brengt.
 
 ## <a name="retry-logic"></a>Logica voor opnieuw proberen
 

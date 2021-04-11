@@ -5,10 +5,10 @@ ms.assetid: d8efe41a-bef8-4167-ba97-f3e016fcd39e
 ms.topic: conceptual
 ms.date: 10/12/2017
 ms.openlocfilehash: 7030ca1c1950f7c06580ce7417a4429fbe330c4e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102614816"
 ---
 # <a name="azure-functions-developer-guide"></a>Ontwikkelaarshandleiding voor Azure Functions
@@ -118,9 +118,9 @@ Verbindingen op basis van een identiteit worden ondersteund door de volgende tri
 
 | Extensie naam | Versie van de extensie                                                                                     | Ondersteund in het verbruiks abonnement |
 |----------------|-------------------------------------------------------------------------------------------------------|---------------------------------------|
-| Azure Blob     | [Versie 5.0.0-beta1 of hoger](./functions-bindings-storage-blob.md#storage-extension-5x-and-higher)  | Nee                                    |
-| Azure Queue    | [Versie 5.0.0-beta1 of hoger](./functions-bindings-storage-queue.md#storage-extension-5x-and-higher) | Nee                                    |
-| Azure Event Hubs    | [Versie 5.0.0-beta1 of hoger](./functions-bindings-event-hubs.md#event-hubs-extension-5x-and-higher) | Nee                                    |
+| Azure Blob     | [Versie 5.0.0-beta1 of hoger](./functions-bindings-storage-blob.md#storage-extension-5x-and-higher)  | No                                    |
+| Azure Queue    | [Versie 5.0.0-beta1 of hoger](./functions-bindings-storage-queue.md#storage-extension-5x-and-higher) | No                                    |
+| Azure Event Hubs    | [Versie 5.0.0-beta1 of hoger](./functions-bindings-event-hubs.md#event-hubs-extension-5x-and-higher) | No                                    |
 
 > [!NOTE]
 > Ondersteuning voor verbindingen op basis van een identiteit is nog niet beschikbaar voor opslag verbindingen die worden gebruikt door de functions-runtime voor kern gedrag. Dit betekent dat de `AzureWebJobsStorage` instelling een Connection String moet zijn.
@@ -129,7 +129,7 @@ Verbindingen op basis van een identiteit worden ondersteund door de volgende tri
 
 Een verbinding op basis van een identiteit voor een Azure-service accepteert de volgende eigenschappen:
 
-| Eigenschap    | Vereist voor uitbrei dingen | Omgevingsvariabele | Beschrijving |
+| Eigenschap    | Vereist voor uitbrei dingen | Omgevingsvariabele | Description |
 |---|---|---|---|
 | Service-URI | Azure-Blob, Azure-wachtrij | `<CONNECTION_NAME_PREFIX>__serviceUri` |  De gegevensfeed-URI van de service waarmee u verbinding maakt. |
 | Volledig gekwalificeerde naam ruimte | Event Hubs | `<CONNECTION_NAME_PREFIX>__fullyQualifiedNamespace` | De volledig gekwalificeerde Event hub-naam ruimte. |
@@ -156,7 +156,7 @@ In sommige gevallen wilt u het gebruik van een andere identiteit opgeven. U kunt
 
 Als u verbinding wilt maken met behulp van een Azure Active Directory Service-Principal met een client-ID en een geheim, definieert u de verbinding met de volgende vereiste eigenschappen naast de bovenstaande [verbindings eigenschappen](#connection-properties) :
 
-| Eigenschap    | Omgevingsvariabele | Beschrijving |
+| Eigenschap    | Omgevingsvariabele | Description |
 |---|---|---|
 | Tenant-id | `<CONNECTION_NAME_PREFIX>__tenantId` | De ID van de Azure Active Directory Tenant (map). |
 | Client-id | `<CONNECTION_NAME_PREFIX>__clientId` |  De client-ID (toepassing) van een app-registratie in de Tenant. |

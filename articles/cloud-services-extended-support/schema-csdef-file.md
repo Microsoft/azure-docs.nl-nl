@@ -9,10 +9,10 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.custom: ''
 ms.openlocfilehash: d9bf1b54f1bfeebacbb406a50c8496817857204c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102507565"
 ---
 # <a name="azure-cloud-services-extended-support-definition-schema-csdef-file"></a>Definitie schema voor Azure Cloud Services (uitgebreide ondersteuning) (csdef-bestand)

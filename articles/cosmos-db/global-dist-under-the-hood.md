@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/02/2020
 ms.author: sngun
 ms.reviewer: sngun
-ms.openlocfilehash: 1b47ad27abbe59eceabd15d091f88f4659d8dad6
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 592a9b89379094c88881c3c8485c7e38a1613b34
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102486383"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106219481"
 ---
 # <a name="global-data-distribution-with-azure-cosmos-db---under-the-hood"></a>Distributie van globale gegevens met Azure Cosmos DB-onder de motorkap
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -61,7 +61,7 @@ Met de service kunt u uw Cosmos-data bases configureren met één schrijf regio 
 
 ## <a name="conflict-resolution"></a>Conflictoplossing
 
-Het ontwerp voor de update doorgifte, conflict oplossing en het bijhouden van causality is geïnspireerd op het vorige werk op de [epidemie-algoritmen](https://www.cs.utexas.edu/~lorenzo/corsi/cs395t/04S/notes/naor98load.pdf) en het [Bayou](https://zoo.cs.yale.edu/classes/cs422/2013/bib/terry95managing.pdf) -systeem. Hoewel de kernels van de ideeën geruime zijn en een handig referentie kader bieden voor het communiceren van het systeem ontwerp van de Cosmos DB, hebben ze ook aanzienlijke trans formatie ondergaan toen we ze op het Cosmos DB systeem hebben toegepast. Dit was nodig omdat de vorige systemen niet zijn ontworpen met de resource governance, noch met de schaal waarop Cosmos DB moet worden uitgevoerd, noch om de mogelijkheden te bieden (bijvoorbeeld gebonden verouderde consistentie) en de strikte en uitgebreide Sla's die Cosmos DB aan zijn klanten.  
+Het ontwerp voor de update doorgifte, conflict oplossing en het bijhouden van causality is geïnspireerd op het vorige werk op de [epidemie-algoritmen](https://www.cs.utexas.edu/~lorenzo/corsi/cs395t/04S/notes/naor98load.pdf) en het [Bayou](https://people.cs.umass.edu/~mcorner/courses/691M/papers/terry.pdf) -systeem. Hoewel de kernels van de ideeën geruime zijn en een handig referentie kader bieden voor het communiceren van het systeem ontwerp van de Cosmos DB, hebben ze ook aanzienlijke trans formatie ondergaan toen we ze op het Cosmos DB systeem hebben toegepast. Dit was nodig omdat de vorige systemen niet zijn ontworpen met de resource governance, noch met de schaal waarop Cosmos DB moet worden uitgevoerd, noch om de mogelijkheden te bieden (bijvoorbeeld gebonden verouderde consistentie) en de strikte en uitgebreide Sla's die Cosmos DB aan zijn klanten.  
 
 Terughalen dat een partitieset wordt gedistribueerd over meerdere regio's en volgt het replicatie protocol Cosmos Db's (Multi-Region Writes) om de gegevens te repliceren tussen de fysieke partities waaruit een bepaalde partitieset bestaat. Elke fysieke partitie (van een partitieset) accepteert schrijf bewerkingen en verzendt normaal gesp roken Lees bewerkingen naar de clients die lokaal zijn voor die regio. Schrijf bewerkingen die worden geaccepteerd door een fysieke partitie binnen een regio worden blijvend vastgelegd en Maxi maal beschikbaar gemaakt in de fysieke partitie voordat ze worden bevestigd aan de client. Dit zijn voorlopige schrijf bewerkingen en worden door gegeven aan andere fysieke partities in de partitieset met een anti-entropie kanaal. Clients kunnen voorlopige of doorgevoerde schrijf bewerkingen aanvragen door een aanvraag header door te geven. De anti-entropie doorgifte (met inbegrip van de frequentie van doorgifte) is dynamisch, op basis van de topologie van de partitieset, de regionale nabijheid van de fysieke partities en het geconfigureerde consistentie niveau. Binnen een partitieset volgt Cosmos DB een primair doorvoer schema met een dynamisch geselecteerde arbiter-partitie. De selectie van arbiter is dynamisch en vormt een integraal onderdeel van de herconfiguratie van de partitieset op basis van de topologie van de overlay. De vastgelegde schrijf bewerkingen (inclusief meerdere rijen/batch-updates) zijn gegarandeerd. 
 

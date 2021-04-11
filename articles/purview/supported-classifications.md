@@ -6,20 +6,20 @@ ms.author: anmuk
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: reference
-ms.date: 02/05/2021
-ms.openlocfilehash: 37df9a276339b80a81e6ac5d5db14872de9edff4
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.date: 4/1/2021
+ms.openlocfilehash: e1d3d495d958465e966701aa7ce91bc2706b48e0
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106065851"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106219583"
 ---
 # <a name="supported-classifications-in-azure-purview"></a>Ondersteunde classificaties in azure controle sfeer liggen
 
 In dit artikel vindt u een overzicht van de ondersteunde en gedefinieerde systeem classificaties in azure controle sfeer liggen (preview).
 
 
-- **Drempel waarde voor DISTINCT**: het totale aantal afzonderlijke gegevens waarden dat in een kolom moet worden gevonden voordat de scanner het gegevens patroon erop uitvoert. Voor onze systeem classificatie regels moet u ten minste 8 afzonderlijke waarden in elke kolom hebben om ze te kunnen classificeren. Het systeem vereist deze waarde om ervoor te zorgen dat de kolom voldoende gegevens bevat voor de scanner om deze nauw keurig te classificeren. Een kolom die bijvoorbeeld meerdere rijen bevat die alle de waarde 1 bevatten, wordt niet geclassificeerd. Kolommen die één rij met een waarde bevatten en de rest van de rijen hebben null-waarden, worden ook niet geclassificeerd. Als u meerdere patronen opgeeft, geldt deze waarde voor elk patroon.
+- **Drempel waarde voor DISTINCT**: het totale aantal afzonderlijke gegevens waarden dat in een kolom moet worden gevonden voordat de scanner het gegevens patroon erop uitvoert. De drempel waarde voor DISTINCT matching heeft niets te maken met patroon vergelijking, maar het is een vereiste voor patroon vergelijking. Voor onze systeem classificatie regels moet u ten minste 8 afzonderlijke waarden in elke kolom hebben om ze te kunnen classificeren. Het systeem vereist deze waarde om ervoor te zorgen dat de kolom voldoende gegevens bevat voor de scanner om deze nauw keurig te classificeren. Een kolom die bijvoorbeeld meerdere rijen bevat die alle de waarde 1 bevatten, wordt niet geclassificeerd. Kolommen die één rij met een waarde bevatten en de rest van de rijen hebben null-waarden, worden ook niet geclassificeerd. Als u meerdere patronen opgeeft, geldt deze waarde voor elk patroon.
 
 - **Drempel waarde voor minimum overeenkomst**: dit is het minimum percentage van de gegevens waarde komt overeen met een kolom die moet worden gevonden door de scanner zodat de classificatie kan worden toegepast. De waarde van de systeem classificatie is ingesteld op 60%.
 

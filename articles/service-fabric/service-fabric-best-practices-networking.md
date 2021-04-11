@@ -5,12 +5,12 @@ author: chrpap
 ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: chrpap
-ms.openlocfilehash: caba864e77822ccab649f694df7e63e0ee5d6e51
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: de6a80f73a97a5732f00e10107fff2330038210a
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101732561"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106122013"
 ---
 # <a name="networking"></a>Netwerken
 
@@ -87,7 +87,7 @@ Meer informatie over de regels voor binnenkomende beveiliging:
 
 * **Toepassing**. Het bereik van de toepassings poort moet groot genoeg zijn om de eindpunt vereiste van uw toepassingen te kunnen voorzien. Dit bereik moet exclusief zijn van het dynamische poort bereik op de computer, dat wil zeggen, het ephemeralPorts-bereik dat is ingesteld in de configuratie. Service Fabric maakt gebruik van deze poorten wanneer er nieuwe poorten zijn vereist en zorgt ervoor dat de firewall voor deze poorten op de knoop punten wordt geopend.
 
-* **SMB**. Het SMB-protocol wordt gebruikt door de installatie kopie opslag-service voor twee scenario's. Deze poort is nodig om de pakketten te downloaden van de installatie kopie opslag door de knoop punten en om deze te repliceren tussen de replica's. 
+* **SMB**. Optioneel, de runtime versie 7.1 + maakt geen gebruik van SMB meer standaard. Het SMB-protocol wordt gebruikt door de installatie kopie opslag-service voor twee scenario's. Deze poort is nodig om de pakketten te downloaden van de installatie kopie opslag door de knoop punten en om deze te repliceren tussen de replica's. 
 
 * **RDP**. Optioneel, als RDP is vereist van Internet of VirtualNetwork voor JumpBox-scenario's. 
 
@@ -101,7 +101,7 @@ Meer informatie over de regels voor binnenkomende beveiliging:
 |---        |---                |---         |---       |---                |---               |---
 |3900       |Netwerk            |Alle         |TCP       |VirtualNetwork     |VirtualNetwork    |Toestaan
 |3910       |Resourceprovider  |443         |TCP       |VirtualNetwork     |ServiceFabric     |Toestaan
-|3920       |Upgrade uitvoeren            |443         |TCP       |VirtualNetwork     |Internet          |Toestaan
+|3920       |Upgraden            |443         |TCP       |VirtualNetwork     |Internet          |Toestaan
 |3950       |Blok keren van uitgaand     |Alle         |Alle       |Alle                |Alle               |Weigeren
 
 Meer informatie over de regels voor uitgaande beveiliging:

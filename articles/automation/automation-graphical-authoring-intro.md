@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: bbac794263fec176e03c7148d860c479a2ed9d39
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 57d5627e45e79263408b9b5760c8332122ce8c91
+ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102501225"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106167393"
 ---
 # <a name="author-graphical-runbooks-in-azure-automation"></a>Grafische runbooks ontwerpen in Azure Automation
 
@@ -328,19 +328,19 @@ Gebruik [vergelijkings operatoren](/powershell/module/microsoft.powershell.core/
 De volgende voor waarde bepaalt bijvoorbeeld of de virtuele machine van een activiteit met de naam `Get-AzureVM` momenteel is gestopt.
 
 ```powershell-interactive
-$ActivityOutput["Get-AzureVM"].PowerState –eq "Stopped"
+$ActivityOutput["Get-AzureVM"].PowerState -eq "Stopped"
 ```
 
 De volgende voor waarde bepaalt of dezelfde virtuele machine zich in een andere status bevindt dan gestopt.
 
 ```powershell-interactive
-$ActivityOutput["Get-AzureVM"].PowerState –ne "Stopped"
+$ActivityOutput["Get-AzureVM"].PowerState -ne "Stopped"
 ```
 
 U kunt meerdere voor waarden in uw runbook samen voegen met behulp van een [logische operator](/powershell/module/microsoft.powershell.core/about/about_logical_operators), zoals `-and` of `-or` . Met de volgende voor waarde wordt bijvoorbeeld gecontroleerd of de virtuele machine in het vorige voor beeld de status beëindigd of gestopt heeft.
 
 ```powershell-interactive
-($ActivityOutput["Get-AzureVM"].PowerState –eq "Stopped") -or ($ActivityOutput["Get-AzureVM"].PowerState –eq "Stopping")
+($ActivityOutput["Get-AzureVM"].PowerState -eq "Stopped") -or ($ActivityOutput["Get-AzureVM"].PowerState -eq "Stopping")
 ```
 
 ### <a name="use-hashtables"></a>Hashtabellen gebruiken

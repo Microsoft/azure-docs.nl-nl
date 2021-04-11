@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: overview
-ms.date: 03/09/2021
+ms.date: 03/29/2021
 ms.author: aahi
 keywords: tekstanalyse, sentimentanalyse, tekst analytics
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: 7fcc030e3c63c24fa255e578c2d8aaf1b466e99c
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: b586478b6b3943fb0154ed6c50bade6fd8b08b76
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104598963"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106219498"
 ---
 # <a name="what-is-the-text-analytics-api"></a>Wat is Text Analytics-API?
 
@@ -26,6 +26,12 @@ De Text Analytics-API is een op de cloud gebaseerde service die NLP-functies (na
 De API maakt deel uit van [Azure Cognitive Services](../index.yml), een verzameling van machine learning- en AI-algoritmen in de cloud, die kunnen worden gebruikt in uw ontwikkelprojecten. U kunt deze functies gebruiken met de REST API [versie 3,0](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V3-0/) of [versie 3,1-Preview](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/)of de [client bibliotheek](quickstarts/client-libraries-rest-api.md).
 
 > [!VIDEO https://channel9.msdn.com/Shows/AI-Show/Whats-New-in-Text-Analytics-Opinion-Mining-and-Async-API/player]
+
+Deze documentatie bevat de volgende typen artikelen:
+* [Quick](./quickstarts/client-libraries-rest-api.md) starts zijn stapsgewijze instructies voor het aanroepen van de service en het verkrijgen van resultaten in korte tijd. 
+* [Hand leidingen](./how-tos/text-analytics-how-to-call-api.md) bevatten instructies voor het gebruik van de service op meer specifieke of aangepaste manieren.
+* [Concepten](text-analytics-user-scenarios.md) bevatten gedetailleerde uitleg over de functionaliteit en functies van de service.
+* [Zelf studies](./tutorials/tutorial-power-bi-key-phrases.md) zijn meer gidsen die laten zien hoe u deze service kunt gebruiken als onderdeel in bredere zakelijke oplossingen.
 
 ## <a name="sentiment-analysis"></a>Sentimentanalyse
 

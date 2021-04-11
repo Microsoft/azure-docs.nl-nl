@@ -8,10 +8,10 @@ ms.author: normesta
 ms.service: data-lake-store
 ms.custom: subject-policy-compliancecontrols
 ms.openlocfilehash: 9037b28f348ec885faf3e246e9c410a46974665f
-ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105034641"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-data-lake-storage-gen1"></a>Besturingselementen voor naleving van Azure Policy-regelgeving voor Azure Data Lake Storage Gen1

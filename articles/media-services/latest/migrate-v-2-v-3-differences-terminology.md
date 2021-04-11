@@ -11,12 +11,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 03/25/2021
 ms.author: inhenkel
-ms.openlocfilehash: 5c1fbaf9be4cb128f0e4390a8c97c6f0b9330ce2
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 42c4c91b6715ffec4c734632c69623206bc6dbae
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105559873"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106075999"
 ---
 # <a name="terminology-and-entity-changes-between-media-services-v2-and-v3"></a>Terminologie en entiteits wijzigingen tussen Media Services v2 en v3
 
@@ -73,7 +73,7 @@ Bekijk de naamgevings regels die worden toegepast op Media Services v3-resources
 | **Codering** <!--new row --> |||
 | Bitsnelheid voor versleuteling <!--new row --> | bitsnelheden gemeten in kbps: 128 (kbps)| bits per seconde, bijvoorbeeld: 128000 (bits/seconde)|
 | DRM-FairPlay coderen <!--new row --> | In Media Services v2 kunt u de initialisatie vector (IV) opgeven. | In Media Services v3 kan de FairPlay IV niet worden opgegeven.|
-| Premium encoder <!--new row --> | Premium encoder en verouderde Indexer| De [Premium encoder](../previous/media-services-encode-asset.md) en de verouderde [Media Analytics-processors](../previous/legacy-components.md) (Azure Media Services indexer 2, Face Redactor, enzovoort) zijn niet toegankelijk via v3. Er is ondersteuning toegevoegd voor audio kanaal toewijzing aan de standaard encoder.  Zie [Audio in de Media Services code ring Swagger-documentatie](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2020-05-01/Encoding.json).  | Zie de onderwerpen over het coderen van [op scenario's gebaseerde code ring](migrate-v-2-v-3-migration-scenario-based-encoding.md) |
+| Premium encoder <!--new row --> | Premium encoder en verouderde Indexer| De [Premium encoder](../previous/media-services-encode-asset.md) en de verouderde [Media Analytics-processors](../previous/legacy-components.md) (Azure Media Services indexer 2, Face Redactor, enzovoort) zijn niet toegankelijk via v3. Er is ondersteuning toegevoegd voor audio kanaal toewijzing aan de standaard encoder.  Zie [Audio in de Media Services code ring Swagger-documentatie](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2020-05-01/Encoding.json).  <br/> Zie de onderwerpen over het coderen van [op scenario's gebaseerde code ring](migrate-v-2-v-3-migration-scenario-based-encoding.md) |
 | **Transformaties en taken** <!--new row -->|||
 | Op taak gebaseerde verwerking HTTPS <!--new row --> |<!-- empty -->| Voor taak verwerking op basis van een bestand kunt u een HTTPS-URL gebruiken als invoer. U hoeft inhoud niet al in azure te hebben opgeslagen en u hoeft geen assets te maken. |
 | ARM-sjablonen voor taken <!--new row --> | Er zijn geen ARM-sjablonen aanwezig in v2. | Een trans formatie kan worden gebruikt om herbruikbare configuraties te bouwen, Azure Resource Manager-sjablonen te maken en verwerkings instellingen te isoleren tussen meerdere klanten of tenants. |

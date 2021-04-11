@@ -6,10 +6,10 @@ author: bwren
 ms.author: bwren
 ms.date: 02/26/2021
 ms.openlocfilehash: 87cb19daa23c9fcca601771a9fe168b98be02627
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104586264"
 ---
 # <a name="collect-iis-logs-with-log-analytics-agent-in-azure-monitor"></a>IIS-logboeken met Log Analytics agent in Azure Monitor verzamelen
@@ -66,7 +66,7 @@ IIS-logboek records hebben een type **W3CIISLog** en hebben de eigenschappen in 
 ## <a name="log-queries-with-iis-logs"></a>Query's vastleggen in Logboeken met IIS-logboeken
 De volgende tabel bevat verschillende voor beelden van logboek query's waarmee IIS-logboek records worden opgehaald.
 
-| Query’s uitvoeren | Description |
+| Query | Description |
 |:--- |:--- |
 | W3CIISLog |Alle IIS-logboek records. |
 | W3CIISLog &#124; waarbij scStatus = = 500 |Alle IIS-logboek records met de retour status 500. |

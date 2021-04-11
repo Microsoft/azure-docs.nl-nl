@@ -4,10 +4,10 @@ description: Hierin worden de functies beschreven die u kunt gebruiken in een Az
 ms.topic: conceptual
 ms.date: 03/02/2021
 ms.openlocfilehash: a9a073284c62efac4e77f8f9b35e8730c350e5f1
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101722718"
 ---
 # <a name="deployment-functions-for-arm-templates"></a>Implementatie functies voor ARM-sjablonen
@@ -321,9 +321,9 @@ Retourneert een parameter waarde. De opgegeven parameter naam moet worden gedefi
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| parameterName |Ja |tekenreeks |De naam van de para meter die moet worden geretourneerd. |
+| parameterName |Yes |tekenreeks |De naam van de para meter die moet worden geretourneerd. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -470,7 +470,7 @@ Retourneert de waarde van variable. De opgegeven naam van de variabele moet word
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
 | variableName |Ja |Tekenreeks |De naam van de variabele die moet worden geretourneerd. |
 

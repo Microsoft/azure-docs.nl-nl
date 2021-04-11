@@ -4,10 +4,10 @@ description: In dit artikel wordt uitgelegd hoe u back-ups op schaal kunt bewake
 ms.topic: conceptual
 ms.date: 09/01/2020
 ms.openlocfilehash: 86b81110d6abeb1425e18ee45dfe65a96f69687d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102506119"
 ---
 # <a name="monitor-and-operate-backups-using-backup-center"></a>Back-ups bewaken en gebruiken met Back-upcentrum

@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 02/10/2021
 ms.author: duau
-ms.openlocfilehash: a43f95ad65e95db2b69b32c3fe8d62db71a98a17
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7fb25892dc71c0bb4e73101e180a58be6c0c1195
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105025200"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106276804"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Partners en peeringlocaties voor ExpressRoute
 
@@ -110,7 +110,7 @@ De volgende tabel geeft de connectiviteitslocaties en de serviceproviders voor e
 | **London2** | [Twee-House-Noord](https://www.telehouse.net/data-centres/emea/uk-data-centres/london-data-centres/north-two) | 1 | Verenigd Koninkrijk Zuid | 10G, 100G | British Telecom, CenturyLink Cloud Connect, Colt, GTT, IX REACH, Equinix, Mega Port, SES, Sohonet, telehouse-KDDI |
 | **Los Angeles** | [CoreSite LA1](https://www.coresite.com/data-centers/locations/los-angeles/one-wilshire) | 1 | n.v.t. | 10G, 100G | CoreSite, Equinix, Megaport, Neutrona Networks, NTT, Zayo |
 | **Los-Angeles2** | [Equinix LA1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/los-angeles-data-centers/la1/) | 1 | n.v.t. | 10G, 100G | Equinix |
-| **Madrid** | [Interxion MAD1](https://www.interxion.com/es/donde-estamos/europa/madrid) | 1 | Europa -west | 10G, 100G | |
+| **Madrid** | [Interxion MAD1](https://www.interxion.com/es/donde-estamos/europa/madrid) | 1 | Europa -west | 10G, 100G | Interxion |
 | **Marseille** |[Interxion MRS1](https://www.interxion.com/Locations/marseille/) | 1 | Frankrijk - zuid | n.v.t. | DE CIX, GEANT, Interxion, Jaguar Network, Ooredoo Cloud Connect |
 | **Melbourne** | [NextDC M1](https://www.nextdc.com/data-centres/m1-melbourne-data-centre) | 2 | Australië - zuidoost | 10G, 100G | AARNet, Devoli, Equinix, Mega Port, NEXTDC, Optus, Telstra Corporation, TPG Telecom |
 | **Miami** | [Equinix MI1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/miami-data-centers/mi1/) | 1 | n.v.t. | 10G, 100G | Claro, C3ntro, Equinix, Mega Port, Neutrona netwerken |
@@ -220,6 +220,7 @@ Als u extern bent en geen glasvezel connectiviteit hebt of als u andere connecti
 | **Amsterdam** | Equinix, Interxion, Level 3 Communications | BICS, CloudXpress, euro Fiber, Fastweb S. p. A, Golf Bridge International, Kalaam Telecom Bahrein B. S. C, MainOne, Nianet, POST Telecom Luxembourg, Proximus, RETN, TDC erhverv, Telecom Italië vonk, Telekom Deutschland GmbH, Telia |
 | **Atlanta** | Equinix| Kroon Castle
 | **Kaapstad** | Teraco | MTN |
+| **Chennai** | Tata Communications | Tata-Teleservices |
 | **Chicago** | Equinix| Kroon Castle, spectrum Enter prise, windstream |
 | **Dallas** | Equinix, Megaport | Axtel, C3ntro Telecom, Cox Business, kroon Castle, data found, spectrum onderneming, Transtelco |
 | **Frankfurt** | Interxion | BICS, Cinia, Equinix, Nianet, QSC AG, Telekom Deutschland GmbH |
@@ -230,6 +231,7 @@ Als u extern bent en geen glasvezel connectiviteit hebt of als u andere connecti
 | **Los Angeles** | Equinix |Kroon Castle, spectrum Enter prise, Transtelco |
 | **Madrid** | Level3 | Zertia |
 | **Montreal** | Cologix| Poort technologieën, Inc. Aptum Technologies, Rogers, Zirro |
+| **Mumbai** | Tata Communications | Tata-Teleservices |
 | **New York** |Equinix, Megaport | Altice Business, kroon Castle, spectrum Enter prise, Webair |
 | **Parijs** | Equinix | Proximus |
 | **Quebec** | Megaport | Fibrenoire |

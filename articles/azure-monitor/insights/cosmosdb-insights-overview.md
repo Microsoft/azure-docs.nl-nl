@@ -6,17 +6,17 @@ ms.author: lagayhar
 ms.topic: conceptual
 ms.date: 05/11/2020
 ms.openlocfilehash: d88bf65f1bd94e29bd9f60f5597d655f0040623b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101725759"
 ---
 # <a name="explore-azure-monitor-for-azure-cosmos-db"></a>Azure Monitor verkennen voor Azure Cosmos DB
 
 Azure Monitor voor Azure Cosmos DB biedt een overzicht van de algehele prestaties, fouten, capaciteit en operationele status van al uw Azure Cosmos DB bronnen in een uniforme interactieve ervaring. In dit artikel vindt u meer informatie over de voor delen van deze nieuwe bewakings ervaring en hoe u de ervaring kunt aanpassen en aanpassen aan de unieke behoeften van uw organisatie.   
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Voordat u aan de slag gaat, moet u weten hoe de informatie wordt gepresenteerd en gevisualiseerd. 
 
@@ -71,7 +71,7 @@ Selecteer **fouten** aan de bovenkant van de pagina en het gedeelte **storingen*
 
 ![Scherm opname van fouten met uitsplitsing op basis van het type HTTP-aanvraag](./media/cosmosdb-insights-overview/failures.png)
 
-| Code |  Beschrijving       | 
+| Code |  Description       | 
 |-----------|:--------------------|
 | `200 OK`  | Een van de volgende REST-bewerkingen is geslaagd: </br>-Een resource ophalen. </br> : In een resource plaatsen. </br> -POST op een resource. </br> -POST op een opgeslagen procedure resource om de opgeslagen procedure uit te voeren.|
 | `201 Created` | Er is een POST-bewerking voor het maken van een resource geslaagd. |

@@ -11,12 +11,12 @@ ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: gezichtsherkenning, gezichtsherkenningssoftware, gezichtsanalyse, gezichtsvergelijking, gezichtsherkennings-app, gezichten zoeken binnen een afbeelding, zoekfunctie voor gezichtsherkenning
-ms.openlocfilehash: 600ca48cc19ee8723b423e484ec96736a55ae7fc
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
-ms.translationtype: HT
+ms.openlocfilehash: 26076289d8c6659abdd55fa805c27b13690feccd
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95532253"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107258738"
 ---
 # <a name="what-is-the-azure-face-service"></a>Wat is de Azure Face-service?
 
@@ -29,12 +29,18 @@ De Azure Face-service biedt AI-algoritmen voor het detecteren, herkennen en anal
 
 De Face-service biedt verschillende functies voor gezichtsanalyse die in de volgende secties worden beschreven.
 
+Deze documentatie bevat de volgende typen artikelen:
+* In de [Quick](./Quickstarts/client-libraries.md) starts vindt u stapsgewijze instructies voor het aanroepen van de service en het verkrijgen van resultaten in korte tijd. 
+* De [hand leidingen](./Face-API-How-to-Topics/HowtoDetectFacesinImage.md) bevatten instructies voor het gebruik van de service op meer specifieke of aangepaste manieren.
+* De [conceptuele artikelen](./concepts/face-detection.md) bevatten gedetailleerde uitleg over de functionaliteit en functies van de service.
+* De [zelf studies](./Tutorials/FaceAPIinCSharpTutorial.md) zijn meer gidsen die laten zien hoe u deze service kunt gebruiken als onderdeel in bredere zakelijke oplossingen.
+
 ## <a name="face-detection"></a>Gezichtsdetectie
 
-De Face-service is in staat om menselijke gezichten te detecteren op een afbeelding en de locatiecoördinaten van de gezichtsrechthoek te retourneren. Gezichtsdetectie kan desgewenst een reeks gezichtsgerelateerde kenmerken extraheren, zoals de houding van het hoofd, geslacht, leeftijd, emotie, gezichtsbeharing en of er een bril gedragen wordt.
+De detectie-API detecteert menselijke gezichten in een afbeelding en retourneert de rechthoek coördinaten van hun locaties. Gezichtsdetectie kan desgewenst een reeks gezichtsgerelateerde kenmerken extraheren, zoals de houding van het hoofd, geslacht, leeftijd, emotie, gezichtsbeharing en of er een bril gedragen wordt. Deze kenmerken zijn algemene voor spellingen, geen werkelijke classificaties. 
 
 > [!NOTE]
-> De functie voor gezichtsdetectie is ook beschikbaar via de [Computer Vision-service](../computer-vision/overview.md). Als u echter verdere bewerkingen met gezichtsgegevens wilt uitvoeren, moet u deze service gebruiken.
+> De functie voor gezichtsdetectie is ook beschikbaar via de [Computer Vision-service](../computer-vision/overview.md). Als u echter nog meer bewerkingen wilt uitvoeren, zoals identificeren, controleren, vergelijk bare of groep, moet u deze face-service gebruiken.
 
 ![Een afbeelding van een vrouw en een man met rechthoeken getekend rond de gezichten, en de leeftijd en het geslacht weergegeven](./Images/Face.detection.jpg)
 
@@ -42,7 +48,19 @@ Zie het artikel over concepten van [gezichtsdetectie](concepts/face-detection.md
 
 ## <a name="face-verification"></a>Gezichtsverificatie
 
-De Verificatie-API voert een verificatie uit op basis van twee gedetecteerde gezichten of op basis van een gedetecteerd gezicht in relatie tot een object van één persoon. Waar het eigenlijk op neerkomt is dat de Verificatie-API evalueert of twee gezichten van dezelfde persoon zijn. Deze mogelijkheid kan goed van pas komen in beveiligingsscenario's. Zie voor meer informatie de handleiding over concepten van [Gezichtsherkenning](concepts/face-recognition.md) of de referentiedocumentatie over de [Verificatie API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523a).
+De controle van de API wordt op detectie gebaseerd en de vraag wordt opgelost. "zijn deze twee installatie kopieën dezelfde persoon?". Verificatie wordt ook wel ' een-op-een-overeenkomst ' genoemd, omdat de test installatie kopie wordt vergeleken met één Inge schreven sjabloon. Verificatie kan worden gebruikt in de identiteits controle of scenario's voor toegangs beheer om te controleren of een afbeelding overeenkomt met een eerder vastgelegde afbeelding (zoals een foto van een door de overheid uitgegeven ID-kaart). Zie voor meer informatie de handleiding over concepten van [Gezichtsherkenning](concepts/face-recognition.md) of de referentiedocumentatie over de [Verificatie API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523a).
+
+## <a name="face-identification"></a>Gezichtsidentificatie
+
+De Identify-API begint ook met de detectie en beantwoordt de vraag ' kan dit gedetecteerde gezicht worden vergeleken met een Inge schreven gezicht in een data base? ' Omdat de zoek opdracht als gezichts herkenning wordt gezocht, wordt ook ' een-op-veel-overeenkomst ' genoemd. Kandidaat-overeenkomsten worden geretourneerd op basis van de mate waarin de test sjabloon met het gedetecteerde gezicht overeenkomt met elk van de geregistreerde sjablonen.
+
+In de volgende afbeelding ziet u een voorbeeld van een database met de naam `"myfriends"`. Elke groep kan maximaal 1 miljoen verschillende persoonsobjecten bevatten. Voor elk persoonsobject kunnen maximaal 248 gezichten zijn geregistreerd.
+
+![Een raster met drie kolommen voor verschillende personen, elk met drie rijen van afbeeldingen van gezichten](./Images/person.group.clare.jpg)
+
+Nadat u een database hebt gemaakt en getraind, kunt u een identificatie uitvoeren op basis van de groep en een nieuw gedetecteerd gezicht. Als het gezicht wordt geïdentificeerd als een persoon in de groep, wordt het persoonsobject geretourneerd.
+
+Zie de handleiding over concepten van [Gezichtsherkenning](concepts/face-recognition.md) of de referentiedocumentatie over de [Identify API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239) voor meer informatie over persoonsidentificatie.
 
 ## <a name="find-similar-faces"></a>Vergelijkbare gezichten zoeken
 
@@ -64,21 +82,6 @@ Om vier vergelijkbare gezichten te vinden, retourneert de modus **matchPerson** 
 
 De Groeperings-API verdeelt een set onbekende gezichten in groepen op basis van gelijkenis. Elke groep is een niet-aaneengesloten juiste subset van de oorspronkelijke set van gezichten. Alle gezichten in een groep behoren waarschijnlijk tot dezelfde persoon. Er kunnen verschillende groepen voor één persoon zijn. De groepen worden onderscheiden door een andere factor, bijvoorbeeld de gezichtsuitdrukking. Zie de handleiding over concepten van [Gezichtsherkenning](concepts/face-recognition.md) of de referentiedocumentatie over de [Group API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395238) voor meer informatie.
 
-## <a name="person-identification"></a>Identificatie van personen
-
-De Identify API wordt gebruikt om een gedetecteerd gezicht te identificeren op basis van een personendatabase (zoekfunctie voor gezichtsherkenning). Deze functie kan nuttig zijn voor het automatisch taggen van afbeeldingen in software voor het beheren van foto's. U maakt de database vooraf en kunt deze na verloop van tijd bewerken.
-
-In de volgende afbeelding ziet u een voorbeeld van een database met de naam `"myfriends"`. Elke groep kan maximaal 1 miljoen verschillende persoonsobjecten bevatten. Voor elk persoonsobject kunnen maximaal 248 gezichten zijn geregistreerd.
-
-![Een raster met drie kolommen voor verschillende personen, elk met drie rijen van afbeeldingen van gezichten](./Images/person.group.clare.jpg)
-
-Nadat u een database hebt gemaakt en getraind, kunt u een identificatie uitvoeren op basis van de groep en een nieuw gedetecteerd gezicht. Als het gezicht wordt geïdentificeerd als een persoon in de groep, wordt het persoonsobject geretourneerd.
-
-Zie de handleiding over concepten van [Gezichtsherkenning](concepts/face-recognition.md) of de referentiedocumentatie over de [Identify API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239) voor meer informatie over persoonsidentificatie.
-
-## <a name="deploy-on-premises-using-docker-containers"></a>On-premises implementeren met behulp van Docker-containers
-
-[Gebruik de Face-container (preview)](face-how-to-install-containers.md) om API-functies on-premises te implementeren. Deze Docker-container stelt u in staat om de service dichter bij uw gegevens te brengen voor naleving, beveiliging en andere operationele redenen.
 
 ## <a name="sample-apps"></a>Voorbeeld-apps
 

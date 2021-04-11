@@ -1,14 +1,14 @@
 ---
-title: 'Quickstart: Computer Vision-clientbibliotheek'
+title: 'Snelstartgids: client bibliotheek of REST API lezen'
 titleSuffix: Azure Cognitive Services
-description: Informatie over het gebruik van Azure Computer Vision in uw toepassing via een systeemeigen clientbibliotheek in de taal van uw keuze.
+description: Meer informatie over het gebruik van OCR (optische teken herkenning) in uw toepassing via een systeem eigen client bibliotheek in de taal van uw keuze.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 12/15/2020
+ms.date: 03/21/2020
 ms.author: pafarley
 ms.custom:
 - devx-track-python
@@ -17,16 +17,16 @@ ms.custom:
 - cog-serv-seo-aug-2020
 zone_pivot_groups: programming-languages-computer-vision
 keywords: computer vision, computer vision-service
-ms.openlocfilehash: 50976de4a60e5330740bcbf387d74c505316c0cf
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
-ms.translationtype: HT
+ms.openlocfilehash: 865002fbc9e492b43b9c572468f722c85c6cc4b8
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97560811"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106284759"
 ---
-# <a name="quickstart-use-the-computer-vision-client-library"></a>Quickstart: De Computer Vision-clientbibliotheek gebruiken
+# <a name="quickstart-use-the-read-client-library-or-rest-api"></a>Quick Start: de bibliotheek of REST API voor het lezen van de client gebruiken
 
-Aan de slag met de REST API of clientbibliotheken voor Computer Vision. De Computer Vision-service geeft u toegang tot AI-algoritmen voor het verwerken van afbeeldingen en het retourneren van informatie over de bijbehorende visuele kenmerken. Volg deze stappen om een pakket in uw toepassing te installeren en de voorbeeldcode voor basistaken te proberen.
+Ga aan de slag met de REST API voor lezen of client bibliotheken. De Lees service biedt AI-algoritmen voor het uitpakken van zicht bare tekst uit afbeeldingen en het retour neren ervan als gestructureerde teken reeksen. Volg deze stappen om een pakket in uw toepassing te installeren en de voorbeeldcode voor basistaken te proberen.
 
 
 

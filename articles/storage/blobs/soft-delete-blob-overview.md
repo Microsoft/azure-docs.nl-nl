@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 03/27/2021
+ms.date: 04/08/2021
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: c0cc29e6cbc9be1e7683b1b4412fa47f71c0538d
-ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
+ms.openlocfilehash: ef1ed584a609b2e4baa27111e47343df99146f5a
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2021
-ms.locfileid: "107227021"
+ms.locfileid: "107257497"
 ---
 # <a name="soft-delete-for-blobs"></a>Blobs voorlopig verwijderen
 
@@ -93,12 +93,14 @@ Zie voor meer informatie over het herstellen van tijdelijke verwijderde objecten
 
 ## <a name="blob-soft-delete-and-versioning"></a>Zacht verwijderen en versie beheer van BLOB
 
-Als blob-versie beheer en dynamisch verwijderen van BLOB zijn ingeschakeld voor een opslag account, wordt door het overschrijven van een blob automatisch een nieuwe versie gemaakt. De nieuwe versie wordt niet zacht verwijderd en wordt niet verwijderd wanneer de tijdelijke Bewaar periode voor het verwijderen is verlopen. Er zijn geen voorlopig verwijderde moment opnamen gemaakt. Wanneer u een BLOB verwijdert, wordt de huidige versie van de BLOB een vorige versie en wordt de huidige versie verwijderd. Er wordt geen nieuwe versie gemaakt en er worden geen tijdelijke verwijderde moment opnamen gemaakt.
+Als blob-versie beheer en dynamisch verwijderen van BLOB zijn ingeschakeld voor een opslag account, wordt door het overschrijven van een blob automatisch een nieuwe versie gemaakt. De nieuwe versie wordt niet zacht verwijderd en wordt niet verwijderd wanneer de tijdelijke Bewaar periode voor het verwijderen is verlopen. Er zijn geen voorlopig verwijderde moment opnamen gemaakt. Wanneer u een BLOB verwijdert, wordt de huidige versie van de BLOB een vorige versie en is er geen actuele versie meer. Er wordt geen nieuwe versie gemaakt en er worden geen tijdelijke verwijderde moment opnamen gemaakt.
 
-Als u de functie voor voorlopig verwijderen en versie beheer inschakelt, worden de BLOB-versies van verwijdering beveiligd. Als zacht verwijderen is ingeschakeld, wordt door het verwijderen van een versie een voorlopig verwijderde versie gemaakt. U kunt de bewerking **BLOB verwijderen** gebruiken om een door een soft verwijderde versie te herstellen, zolang er een actuele versie van de blob is. Als er geen huidige versie is, moet u een vorige versie kopiëren naar de huidige versie voordat u de bewerking voor het verwijderen van een **BLOB** aanroept.
+Als u de functie voor voorlopig verwijderen en versie beheer inschakelt, worden de BLOB-versies van verwijdering beveiligd. Als zacht verwijderen is ingeschakeld, wordt door het verwijderen van een versie een voorlopig verwijderde versie gemaakt. U kunt de bewerking **BLOB verwijderen** gebruiken om met zachte verwijderde versies te herstellen tijdens de tijdelijke verwijderings periode. Met de bewerking **BLOB verwijderen** worden altijd alle voorlopig verwijderde versies van de BLOB hersteld. Het is niet mogelijk om slechts één zacht verwijderde versie te herstellen.
+
+Nadat de Bewaar periode voor de tijdelijke verwijdering is verstreken, worden de door soft verwijderde BLOB-versies definitief verwijderd.
 
 > [!NOTE]
-> Het aanroepen van de bewerking voor het **ongedaan** maken van de BLOB op een verwijderde BLOB wanneer versie beheer is ingeschakeld, worden de door soft verwijderde versies of moment opnamen hersteld, maar wordt de basis-BLOB niet hersteld. Als u de basis-BLOB wilt herstellen, moet u een eerdere versie verhogen door deze te kopiëren naar de basis-blob.
+> Het aanroepen van de bewerking voor het **ongedaan** maken van de BLOB op een verwijderde BLOB wanneer versie beheer is ingeschakeld, worden de door soft verwijderde versies of moment opnamen hersteld, maar wordt de huidige versie niet hersteld. Als u de huidige versie wilt herstellen, moet u een vorige versie verhogen door deze te kopiëren naar de huidige versie.
 
 Micro soft raadt u aan om de functie voor het voorlopig verwijderen van versies en blobs voor uw opslag accounts in te scha kelen voor optimale gegevens bescherming. Zie voor meer informatie over het samen voegen van BLOB-versie en zacht verwijderen, [BLOB-versie beheer en soft verwijderen](versioning-overview.md#blob-versioning-and-soft-delete).
 

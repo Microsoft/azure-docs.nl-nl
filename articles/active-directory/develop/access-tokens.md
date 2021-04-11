@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 2/18/2021
+ms.date: 04/02/2021
 ms.author: hirsin
 ms.reviewer: mmacy, hirsin
 ms.custom: aaddev, identityplatformtop40, fasttrack-edit
-ms.openlocfilehash: 8630dd2fb1157fbeba99f2a06d73712ab46a63f4
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: f5a60f14799e872d835d651fc043edd27dfc6990
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102035064"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107105592"
 ---
 # <a name="microsoft-identity-platform-access-tokens"></a>Toegangs tokens van micro soft Identity platform
 
@@ -176,6 +176,12 @@ Micro soft-identiteiten kunnen op verschillende manieren worden geverifieerd. Di
 | `ngcmfa` | Gelijk aan `mfa` , gebruikt voor het inrichten van bepaalde geavanceerde referentie typen. |
 | `wiaormfa`| De gebruiker heeft Windows of een MFA-referentie gebruikt voor verificatie. |
 | `none` | Er is geen verificatie uitgevoerd. |
+
+## <a name="access-token-lifetime"></a>Levens duur van toegangs token
+
+De standaard levensduur van een toegangs token varieert, afhankelijk van de client toepassing die het token aanvraagt. Een voor beeld: een voor de clients geschikte, voortdurende toegang evaluatie (CAE) die onderhandelen over CAE-sessies krijgt een lange levens duur van het token (tot 28 uur).  Wanneer het toegangs token verloopt, moet de client het vernieuwings token gebruiken om (meestal op de achtergrond) een nieuw vernieuwings token en toegangs token te verkrijgen.
+
+U kunt de levens duur van een toegangs token aanpassen om te bepalen hoe vaak de client toepassing de toepassings sessie verloopt en hoe vaak de gebruiker opnieuw moet worden geverifieerd (op de achtergrond of interactief). Lees de [levens duur van Configureer bare tokens](active-directory-configurable-token-lifetimes.md)voor meer informatie.
 
 ## <a name="validating-tokens"></a>Tokens valideren
 

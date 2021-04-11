@@ -6,12 +6,12 @@ ms.author: weetok
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 02/10/2020
-ms.openlocfilehash: d0fd62c0173bec17c217ece5560119749d1a4fc6
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 2027e3555a7eb616ad024ec00bf6b0f8f452167c
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101739331"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107258517"
 ---
 # <a name="azure-data-factory-faq"></a>Veelgestelde vragen over Azure Data Factory
 
@@ -226,86 +226,11 @@ Gebruik de Kopieer activiteit om gegevens te stage van een van de andere connect
 
 ### <a name="is-the-self-hosted-integration-runtime-available-for-data-flows"></a>Is de zelf-hostende Integration runtime beschikbaar voor gegevens stromen?
 
-Zelf-hostende IR is een ADF-pijp lijn constructie die u met de Kopieer activiteit kunt gebruiken om gegevens te verkrijgen of te verplaatsen naar en van on-premises of op virtuele machines gebaseerde gegevens bronnen en Sinks. Faseer de gegevens eerst met een kopie, vervolgens de gegevens stroom voor trans formatie en vervolgens een volgende kopie als u de getransformeerde gegevens terug naar de on-premises opslag wilt verplaatsen.
+Zelf-hostende IR is een ADF-pijp lijn constructie die u met de Kopieer activiteit kunt gebruiken om gegevens te verkrijgen of te verplaatsen naar en van on-premises of op virtuele machines gebaseerde gegevens bronnen en Sinks. De virtuele machines die u gebruikt voor een zelf-hostende IR, kunnen ook binnen hetzelfde VNET worden geplaatst als uw beveiligde gegevens opslag voor toegang tot de gegevens archieven van ADF. Met gegevens stromen krijgt u deze dezelfde eind resultaten met behulp van de Azure IR met beheerde VNET.
 
 ### <a name="does-the-data-flow-compute-engine-serve-multiple-tenants"></a>Worden er meerdere tenants voor de compute-engine voor gegevens stromen gebruikt?
 
 Clusters worden nooit gedeeld. We garanderen isolatie voor elke uitvoering van een taak in productie-uitvoeringen. In het geval van fout opsporing kan één persoon een cluster ophalen en worden alle fouten naar dat cluster geleid die door die gebruiker worden geïnitieerd.
-
-## <a name="wrangling-data-flows"></a>Wrangling-gegevens stromen
-
-### <a name="what-are-the-supported-regions-for-wrangling-data-flow"></a>Wat zijn de ondersteunde regio's voor wrangling data flow?
-
-Wrangling-gegevens stroom wordt momenteel ondersteund in gegevens fabrieken die in de volgende regio's zijn gemaakt:
-
-* Australië - oost
-* Canada - midden
-* India - centraal
-* VS - oost
-* VS - oost 2
-* Japan - oost
-* Europa - noord
-* Azië - zuidoost
-* VS - zuid-centraal
-* Verenigd Koninkrijk Zuid
-* VS - west-centraal
-* Europa -west
-* VS - west
-* VS - west 2
-
-### <a name="what-are-the-limitations-and-constraints-with-wrangling-data-flow"></a>Wat zijn de beperkingen en beperkingen met wrangling-gegevens stroom?
-
-Namen van gegevensset mogen alleen alfanumerieke tekens bevatten. De volgende gegevens archieven worden ondersteund:
-
-* DelimitedText-gegevensset in Azure Blob Storage met account sleutel verificatie
-* DelimitedText-gegevensset in Azure Data Lake Storage Gen2 met account sleutel of Service-Principal-verificatie
-* DelimitedText-gegevensset in Azure Data Lake Storage gen1 met Service-Principal-verificatie
-* Azure SQL Database en data warehouse met behulp van SQL-verificatie. Zie ondersteunde SQL-typen hieronder. Er is geen poly base-of staging-ondersteuning voor Data Warehouse.
-
-Op dit moment wordt de integratie van de gekoppelde service Key Vault niet ondersteund in de wrangling-gegevens stromen.
-
-### <a name="what-is-the-difference-between-mapping-and-wrangling-data-flows"></a>Wat is het verschil tussen de gegevens stromen toewijzing en wrangling?
-
-Het toewijzen van gegevens stromen biedt een manier om gegevens op schaal te transformeren zonder dat hiervoor benodigde code hoeft te worden uitgevoerd. U kunt een gegevens transformatie taak ontwerpen in het canvas voor gegevens stromen door een reeks trans formaties te maken. Begin met een wille keurig aantal bron transformaties gevolgd door de stappen voor gegevens transformatie. Voltooi uw gegevens stroom met een Sink om uw resultaten in een doel te brengen. Toewijzing van gegevens stroom is handig bij het toewijzen en transformeren van gegevens met zowel bekende als onbekende schema's in de sinks en bronnen.
-
-Wrangling-gegevens stromen bieden u de mogelijkheid om flexibele gegevens voor te bereiden en te verkennen met behulp van de online Mashup-Editor van Power Query op schaal via Spark-uitvoering. Met de verhoging van de gegevens-meren hoeft u alleen maar een gegevensset te verkennen of in het Lake-gegevens verzameling te maken. U bent niet toegewezen aan een bekend doel. Wrangling-gegevens stromen worden gebruikt voor minder formele en op modellen gebaseerde analyse scenario's.
-
-### <a name="what-is-the-difference-between-power-platform-dataflows-and-wrangling-data-flows"></a>Wat is het verschil tussen het Power platform gegevens stromen-en wrangling-gegevens stromen?
-
-Met de gegevens stromen van het Power-platform kunnen gebruikers gegevens uit een breed scala aan gegevens bronnen importeren en transformeren in de Common Data Service en Azure Data Lake om PowerApps-toepassingen te bouwen, Power BI rapporten of stroom automatisering. Power platform gegevens stromen gebruiken de gemaakte Power Query gegevens voorbereidings ervaring, vergelijkbaar met Power BI en Excel. Het gegevens stromen van het Power platform kan ook eenvoudig hergebruik binnen een organisatie inschakelen en de indeling automatisch afhandelen (bijvoorbeeld door het automatisch vernieuwen van gegevens stromen die afhankelijk zijn van een andere gegevens stroom wanneer de voormalige versie wordt vernieuwd).
-
-Azure Data Factory (ADF) is een beheerde service voor gegevens integratie waarmee gegevens technici en burger data integrator complexe (ETL) en werk stromen voor het ophalen van een load-trans formatie (. Wrangling data flow in ADF biedt gebruikers een vrije, serverloze omgeving die het voorbereiden van gegevens in de Cloud vereenvoudigt en kan worden geschaald naar een wille keurige gegevens grootte zonder dat er infrastructuur beheer nodig is. Er wordt gebruikgemaakt van de Power Query gegevens voorbereidings technologie (ook gebruikt in Power platform gegevens stromen, Excel, Power BI) om de gegevens voor te bereiden en te vorm te geven. Wrangling-gegevens stromen maken het voor de verwerking van alle complexiteiten en de schaal uitdagingen van big data integratie, zodat gebruikers snel gegevens op schaal kunnen voorbereiden via Spark-uitvoering. Gebruikers kunnen flexibele gegevens pijplijnen bouwen in een toegankelijke visuele omgeving met onze browser interface en de complexiteit van Spark-uitvoering laten afhandelen met ADF. Bouw planningen voor uw pijp lijnen en bewaak de uitvoeringen van uw gegevens stroom vanuit de ADF-bewakings Portal. Beheer de beschik baarheid van gegevens beschikbaarheid met de uitgebreide Beschik baarheid en waarschuwingen van de ADF en profiteer van ingebouwde continue integratie-en implementatie mogelijkheden om uw stromen in een beheerde omgeving op te slaan en te beheren. Stel waarschuwingen in en Bekijk uitvoerings plannen om te valideren dat uw logica wordt uitgevoerd zoals gepland wanneer u uw gegevens stromen afstemt.
-
-### <a name="supported-sql-types"></a>Ondersteunde SQL-typen
-
-Wrangling-gegevens stroom ondersteunt de volgende gegevens typen in SQL. U krijgt een validatie fout voor het gebruik van een gegevens type dat niet wordt ondersteund.
-
-* korte
-* double
-* werkelijk
-* float
-* char
-* nchar
-* varchar
-* nvarchar
-* geheel getal
-* int
-* bit
-* booleaans
-* smallint
-* tinyint
-* bigint
-* long
-* tekst
-* datum
-* datum/tijd
-* datetime2
-* smalldatetime
-* tijdstempel
-* uniqueidentifier
-* xml
-
-Andere gegevens typen zullen in de toekomst worden ondersteund.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -5,21 +5,39 @@
   href: overview.md
 - name: Accountbeheer
   items:
-    - name: Een nieuw account voor het partnercentrum maken
-      href: partner-center-portal/create-account.md
-    - name: Uw account beheren
-      href: partner-center-portal/manage-account.md
-    - name: Een zakelijk werkaccount zoeken of maken
-      href: partner-center-portal/company-work-accounts.md
-    - name: Accountmigratie van CPP naar Partnercentrum
-      href: partner-center-portal/account-migration-from-cpp-to-pc.md
-    - name: Micro soft op de hoogte stellen
-      href: submit-legal-notice.md
+    - name: Algemeen accountbeheer
+      items:
+        - name: Een nieuw account voor het partnercentrum maken
+          href: create-account.md
+        - name: Nieuwe uitgevers toevoegen
+          href: add-publishers.md
+        - name: Uw account beheren
+          href: manage-account.md
+        - name: Scha kelen tussen accounts
+          href: switch-accounts.md
+        - name: Tenants beheren
+          href: manage-tenants.md
+        - name: Een zakelijk werkaccount zoeken of maken
+          href: company-work-accounts.md
+        - name: Accountmigratie van CPP naar Partnercentrum
+          href: account-migration-from-cpp-to-pc.md
+        - name: Micro soft op de hoogte stellen
+          href: submit-legal-notice.md
+    - name: Gebruikers beheren
+      items:
+        - name: Gebruikers toevoegen en beheren
+          href: add-manage-users.md
+        - name: Gebruikers rollen toewijzen
+          href: user-roles.md
+        - name: Groepen beheren
+          href: manage-groups.md
+        - name: Azure AD-toepassingen toevoegen en beheren
+          href: manage-aad-apps.md
 - name: Concepten
   items:
     - name: Aanbiedingsopties
       href: determine-your-listing-type.md
-    - name: Transacties in de commerciële marketplace
+    - name: Transact-mogelijkheden
       href: marketplace-commercial-transaction-capabilities-and-considerations.md
     - name: Persoonlijke aanbiedingen
       href: private-offers.md

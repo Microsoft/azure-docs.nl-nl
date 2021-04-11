@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 81c026893c3185c6c9f960cdb6acb2d0c2d49cc4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a1ea83dc62c2752e34584b89de2cdb6dbde3dfa0
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104580348"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106443915"
 ---
 # <a name="azure-disk-encryption-for-linux-vms"></a>Azure Disk Encryption voor Linux-VM's 
 
@@ -71,7 +71,8 @@ Linux-server distributies die niet zijn goedgekeurd door Azure, bieden geen onde
 | RedHat | RHEL 8-LVM | 8-LVM | RedHat: RHEL: 8-LVM: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
 | RedHat | RHEL 8,2 | 8,2 | RedHat: RHEL: 8.2: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
 | RedHat | RHEL 8,1 | 8.1 | RedHat: RHEL: 8.1: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
-| RedHat | RHEL 7-LVM | 7-LVM | RedHat: RHEL: 7-LVM: 7.8.2020111201 | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
+| RedHat | RHEL 7-LVM | 7-LVM | RedHat: RHEL: 7-LVM: 7.9.2020111202 | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
+| RedHat | RHEL 7,9 | 7_9 | RedHat: RHEL: 7_9: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
 | RedHat | RHEL 7,8 | 7,8 | RedHat: RHEL: 7,8: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
 | RedHat | RHEL 7,7 | 7.7 | RedHat: RHEL: 7,7: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
 | RedHat | RHEL 7,6 | 7.6 | RedHat: RHEL: 7,6: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
@@ -84,8 +85,9 @@ Linux-server distributies die niet zijn goedgekeurd door Azure, bieden geen onde
 | OpenLogic | CentOS 8-LVM | 8-LVM | Open Logic: CentOS-LVM: 8-LVM: nieuwste | Besturings systeem en gegevens schijf |
 | OpenLogic | CentOS 8,2 | 8_2 | Open Logic: CentOS: 8_2: nieuwste | Besturings systeem en gegevens schijf |
 | OpenLogic | CentOS 8,1 | 8_1 | Open Logic: CentOS: 8_1: nieuwste | Besturings systeem en gegevens schijf |
-| OpenLogic | CentOS 7-LVM | 7-LVM | Open Logic: CentOS-LVM: 7-LVM: 7.8.2020111100 | Besturings systeem en gegevens schijf |
-| OpenLogic | CentOS 7,8 | 7,8 | Open Logic: CentOS: 7_8: nieuwste | Besturings systeem en gegevens schijf |
+| OpenLogic | CentOS 7-LVM | 7-LVM | Open Logic: CentOS-LVM: 7-LVM: 7.9.2021020400 | Besturings systeem en gegevens schijf |
+| OpenLogic | CentOS 7,9 | 7_9 | Open Logic: CentOS: 7_9: nieuwste | Besturings systeem en gegevens schijf |
+| OpenLogic | CentOS 7,8 | 7_8 | Open Logic: CentOS: 7_8: nieuwste | Besturings systeem en gegevens schijf |
 | OpenLogic | CentOS 7,7 | 7.7 | Open Logic: CentOS: 7,7: nieuwste | Besturings systeem en gegevens schijf |
 | OpenLogic | CentOS 7,6 | 7.6 | Open Logic: CentOS: 7,6: nieuwste | Besturings systeem en gegevens schijf |
 | OpenLogic | CentOS 7.5 | 7,5 | Open Logic: CentOS: 7.5: nieuwste | Besturings systeem en gegevens schijf |

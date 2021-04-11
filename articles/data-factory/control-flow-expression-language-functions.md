@@ -7,12 +7,12 @@ ms.reviewer: jburchel
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 11/25/2019
-ms.openlocfilehash: e89cb847bcd5d0137354c07fe97148bcbeca2714
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: af365ef9b94702fa6634235a95a91297d6b7ae50
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104786291"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107123"
 ---
 # <a name="expressions-and-functions-in-azure-data-factory"></a>Expressies en functies in Azure Data Factory
 
@@ -161,6 +161,30 @@ In het volgende voor beeld worden de para meters **inputPath** en **outputPath**
     }
 }
 ```
+
+### <a name="replacing-special-characters"></a>Speciale tekens vervangen
+
+De editor voor dynamische inhoud vergelijkt tekens als dubbele citaten en backslashes in uw inhoud wanneer u klaar bent met het bewerken. Dit leidt tot problemen als u de regel invoer wilt vervangen door gebruik te maken van **\n**, **\t** in de functie Replace (). U kunt de dynamische inhoud in de code weergave bewerken om de extra \ in de expressie te verwijderen, of u kunt de onderstaande stappen volgen om speciale tekens te vervangen met behulp van de expressie taal:
+
+1. URL-code ring op basis van de oorspronkelijke teken reeks waarde
+1. Vervang de gecodeerde URL-teken reeks, bijvoorbeeld regel invoer (% 0A), Carriage Return (% 0D), horizon taal tabblad (%09).
+1. URL-decodering
+
+Bijvoorbeeld: variabele *companyName* met een nieuwe regel teken in de waarde, expressie `@uriComponentToString(replace(uriComponent(variables('companyName')), '%0A', ''))` kan het teken voor de nieuwe regel verwijderen. 
+
+```json
+Contoso-
+Corporation
+```
+
+### <a name="escaping-single-quote-character"></a>Escape teken enkele aanhalings tekens
+
+Expressie functies gebruiken enkele aanhalings tekens voor teken reeks waarde-para meters. Gebruik twee enkele aanhalings tekens om een ' teken reeks functies te escapepen. Bijvoorbeeld: de expressie `@concat('Baba', ''' ', 'book store')` wordt geretourneerd onder het resultaat.
+
+```
+Baba's book store
+```
+
 ### <a name="tutorial"></a>Zelfstudie
 In deze [zelf studie](https://azure.microsoft.com/mediahandler/files/resourcefiles/azure-data-factory-passing-parameters/Azure%20data%20Factory-Whitepaper-PassingParameters.pdf) leert u hoe u para meters kunt door geven tussen een pijp lijn en activiteit en tussen de activiteiten.
 

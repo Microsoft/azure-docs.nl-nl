@@ -6,15 +6,15 @@ ms.reviewer: adwise
 ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.topic: conceptual
-ms.date: 12/10/2020
+ms.date: 04/05/2021
 ms.author: banders
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 1ceed171b0516e293ffe58bca0225d3d3dfdb414
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: 653eacd11c4a3c7ab500abff809a6b9bf8229c1f
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101094663"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106492066"
 ---
 # <a name="managing-azure-enterprise-agreement-roles"></a>Azure Enterprise Agreement-rollen beheren
 
@@ -22,6 +22,7 @@ Voor het beheren van het gebruik en de uitgaven van uw organisatie kunnen Azure-
 
 - Zakelijke beheerder
 - Zakelijke beheerder (alleen lezen)<sup>1</sup>
+- EA-inkoper
 - Afdelingsbeheerder
 - Afdelingsbeheerder (alleen lezen)
 - Eigenaar van account<sup>2</sup>
@@ -61,6 +62,7 @@ In het volgende diagram ziet u eenvoudige Azure EA-hiërarchieën.
 De volgende typen beheerdersgebruikers maken deel uit van uw Enterprise-inschrijving:
 
 - Ondernemingsbeheerder
+- EA-inkoper
 - Afdelingsbeheerder
 - Accounteigenaar
 - Servicebeheerder
@@ -80,12 +82,24 @@ Gebruikers met deze rol hebben het hoogste toegangsniveau. Ze kunnen:
 - Andere ondernemingsbeheerders beheren.
 - Afdelingsbeheerders beheren.
 - Contactpersonen voor meldingen beheren.
+- Koop Azure-Services, inclusief reserve ringen.
 - Gebruik voor alle accounts weergeven.
 - Niet-gefactureerde kosten voor alle accounts weergeven.
 - Alle reserveringsorders en reserveringen weergeven en beheren die van toepassing zijn op de Enterprise Agreement.
   - Ondernemingsbeheerders (alleen lezen) kunnen reserveringsorders en reserveringen weergeven. Ze kunnen deze niet beheren.
 
 U kunt meerdere ondernemingsbeheerders hebben voor elke Enterprise-inschrijving. U kunt alleen-lezentoegang verlenen aan ondernemingsbeheerders. Ze nemen allemaal de rol van afdelingsbeheerder over.
+
+### <a name="ea-purchaser"></a>EA-inkoper
+
+Gebruikers met deze rol hebben machtigingen voor het kopen van Azure-Services, maar zijn niet gemachtigd om accounts te beheren. Ze kunnen:
+
+- Koop Azure-Services, inclusief reserve ringen.
+- Gebruik voor alle accounts weergeven.
+- Niet-gefactureerde kosten voor alle accounts weergeven.
+- Alle reserveringsorders en reserveringen weergeven en beheren die van toepassing zijn op de Enterprise Agreement.
+
+De rol EA inkoper is momenteel alleen ingeschakeld voor toegang op basis van een SPN. Zie [rollen toewijzen aan Azure Enterprise overeenkomst service principal names](assign-roles-azure-service-principals.md)voor meer informatie over het toewijzen van de rol aan een service principal name.
 
 ### <a name="department-administrator"></a>Afdelingsbeheerder
 
@@ -126,6 +140,7 @@ In de volgende secties worden de beperkingen en mogelijkheden van elke rol besch
 |---|---|
 |Zakelijke beheerder|Onbeperkt|
 |Zakelijke beheerder (alleen lezen)|Onbeperkt|
+| EA-inkoper toegewezen aan een SPN | Onbeperkt |
 |Afdelingsbeheerder|Onbeperkt|
 |Afdelingsbeheerder (alleen lezen)|Onbeperkt|
 |Accounteigenaar|1 per account<sup>3</sup>|
@@ -134,18 +149,19 @@ In de volgende secties worden de beperkingen en mogelijkheden van elke rol besch
 
 ## <a name="organization-structure-and-permissions-by-role"></a>De organisatiestructuur en machtigingen per rol
 
-|Taken| Zakelijke beheerder|Zakelijke beheerder (alleen lezen)|Afdelingsbeheerder|Afdelingsbeheerder (alleen lezen)|Accounteigenaar| Partner|
-|---|---|---|---|---|---|---|
-|Zakelijke beheerders weergeven|✔|✔|✘|✘|✘|✔|
-|Zakelijke beheerders toevoegen of verwijderen|✔|✘|✘|✘|✘|✘|
-|Contactpersonen voor meldingen weergeven<sup>4</sup> |✔|✔|✘|✘|✘|✔|
-|Contactpersonen voor meldingen toevoegen of verwijderen<sup>4</sup> |✔|✘|✘|✘|✘|✘|
-|Afdelingen maken en beheren |✔|✘|✘|✘|✘|✘|
-|Afdelingsbeheerders weergeven|✔|✔|✔|✔|✘|✔|
-|Afdelingsbeheerders toevoegen of verwijderen|✔|✘|✔|✘|✘|✘|
-|Accounts in de inschrijving weergeven |✔|✔|✔<sup>5</sup>|✔<sup>5</sup>|✘|✔|
-|Accounts aan de inschrijving toevoegen en de accounteigenaar wijzigen|✔|✘|✔<sup>5</sup>|✘|✘|✘|
-|Abonnementen en abonnementsmachtigingen maken en beheren|✘|✘|✘|✘|✔|✘|
+|Taken| Zakelijke beheerder|Zakelijke beheerder (alleen lezen)| EA-inkoper | Afdelingsbeheerder|Afdelingsbeheerder (alleen lezen)|Accounteigenaar| Partner|
+|---|---|---|---|---|---|---|---|
+|Zakelijke beheerders weergeven|✔|✔| ✔|✘|✘|✘|✔|
+|Zakelijke beheerders toevoegen of verwijderen|✔|✘|✘|✘|✘|✘|✘|
+|Contactpersonen voor meldingen weergeven<sup>4</sup> |✔|✔|✔|✘|✘|✘|✔|
+|Contactpersonen voor meldingen toevoegen of verwijderen<sup>4</sup> |✔|✘|✘|✘|✘|✘|✘|
+|Afdelingen maken en beheren |✔|✘|✘|✘|✘|✘|✘|
+|Afdelingsbeheerders weergeven|✔|✔|✔|✔|✔|✘|✔|
+|Afdelingsbeheerders toevoegen of verwijderen|✔|✘|✘|✔|✘|✘|✘|
+|Accounts in de inschrijving weergeven |✔|✔|✔|✔<sup>5</sup>|✔<sup>5</sup>|✘|✔|
+|Accounts aan de inschrijving toevoegen en de accounteigenaar wijzigen|✔|✘|✘|✔<sup>5</sup>|✘|✘|✘|
+|Reserveringen aanschaffen|✔|✘|✔|✘|✘|✘|✘|
+|Abonnementen en abonnementsmachtigingen maken en beheren|✘|✘|✘|✘|✘|✔|✘|
 
 - <sup>4</sup> Contactpersonen voor meldingen ontvangen e-mailberichten over de Azure Enterprise Agreement.
 - <sup>5</sup> Taak is beperkt tot accounts in uw afdeling.
@@ -166,14 +182,14 @@ Raadpleeg [Een Azure EA-afdelingsbeheerder](ea-portal-administration.md#add-a-de
 
 ## <a name="usage-and-costs-access-by-role"></a>Toegang tot gebruik en kosten per rol
 
-|Taken| Zakelijke beheerder|Zakelijke beheerder (alleen lezen)|Afdelingsbeheerder|Afdelingsbeheerder (alleen lezen) |Accounteigenaar| Partner|
-|---|---|---|---|---|---|---|
-|Tegoedsaldo weergeven, inclusief Azure-vooruitbetaling|✔|✔|✘|✘|✘|✔|
-|Bestedingsquotum van afdeling weergeven|✔|✔|✘|✘|✘|✔|
-|Bestedingsquotum van afdeling instellen|✔|✘|✘|✘|✘|✘|
-|Het EA-prijzenoverzicht van de organisatie weergeven|✔|✔|✘|✘|✘|✔|
-|Details over gebruik en kosten weergeven|✔|✔|✔<sup>6</sup>|✔<sup>6</sup>|✔<sup>7</sup>|✔|
-|Resources beheren in Azure Portal|✘|✘|✘|✘|✔|✘|
+|Taken| Zakelijke beheerder|Zakelijke beheerder (alleen lezen)|EA-inkoper|Afdelingsbeheerder|Afdelingsbeheerder (alleen lezen) |Accounteigenaar| Partner|
+|---|---|---|---|---|---|---|---|
+|Tegoedsaldo weergeven, inclusief Azure-vooruitbetaling|✔|✔|✔|✘|✘|✘|✔|
+|Bestedingsquotum van afdeling weergeven|✔|✔|✔|✘|✘|✘|✔|
+|Bestedingsquotum van afdeling instellen|✔|✘|✘|✘|✘|✘|✘|
+|Het EA-prijzenoverzicht van de organisatie weergeven|✔|✔|✔|✘|✘|✘|✔|
+|Details over gebruik en kosten weergeven|✔|✔|✔|✔<sup>6</sup>|✔<sup>6</sup>|✔<sup>7</sup>|✔|
+|Resources beheren in Azure Portal|✘|✘|✘|✘|✘|✔|✘|
 
 - <sup>6</sup> Hiervoor is vereist dat de ondernemingsbeheerder het beleid **DA-weergavekosten** inschakelt in de Enterprise Portal. De afdelingsbeheerder kan vervolgens gedetailleerde kosten voor de afdeling bekijken.
 - <sup>7</sup> Hiervoor is vereist dat de ondernemingsbeheerder het beleid **AO-weergavekosten** inschakelt in de Enterprise Portal. De accounteigenaar kan vervolgens gedetailleerde kosten voor het account zien.
@@ -198,8 +214,6 @@ In de volgende tabel ziet u de relatie tussen de Enterprise Agreement-beheerders
 |Geen|Niet van toepassing |Eigenaar|Retailprijzen|
 
 U stelt de zakelijke beheerdersrol en beleidsregels voor weergavekosten in via de zakelijke portal. De Azure-rol kan worden bijgewerkt in de Azure-portal. Zie [Azure-rollen toewijzen met behulp van de Azure Portal](../../role-based-access-control/role-assignments-portal.md)voor meer informatie.
-
-
 
 ## <a name="next-steps"></a>Volgende stappen
 

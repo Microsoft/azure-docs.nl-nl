@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 659f61734001163ada6fd26caabe2fb007892f61
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4a8d46b5ff10fdaa62f7747aac654e0b1ca78c42
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104774487"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107259146"
 ---
 # <a name="operationalize-spark-built-machine-learning-models"></a>Met operationeel maken Spark ontwikkelde machine learning modellen
 
@@ -374,7 +374,8 @@ print "Time taken to execute above cell: " + str(timedelta) + " seconds";
 Benodigde tijd voor het uitvoeren van de cel: 19,22 seconden
 
 ## <a name="score-a-linear-regression-model"></a>Een lineair regressie model beoordelen
-We hebben [LinearRegressionWithSGD](https://spark.apache.org/docs/latest/api/python/pyspark.mllib.html#pyspark.mllib.regression.LinearRegressionWithSGD) gebruikt om een lineair regressie model te trainen met de stochastische Gradient DAAL (SGD) voor Optima Lise ring om de hoeveelheid fooien te voors pellen. 
+We hebben [LinearRegressionWithSGD](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.mllib.regression.LinearRegressionWithSGD.html
+) gebruikt om een lineair regressie model te trainen met de stochastische Gradient DAAL (SGD) voor Optima Lise ring om de hoeveelheid fooien te voors pellen. 
 
 De code in deze sectie laat zien hoe u een lineair regressie model laadt vanuit Azure Blob-opslag, een score met geschaalde variabelen en de resultaten vervolgens weer opslaat in de blob.
 

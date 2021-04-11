@@ -1,0 +1,47 @@
+- name: Documentatie voor Azure Certified Device
+  href: index.yml
+- name: Overzicht
+  items:
+    - name: Wat is het Azure Certified Device-programma?
+      href: overview.md
+- name: Zelfstudies
+  expanded: true
+  items:
+    - name: 1-de juiste certificering selecteren
+      href: tutorial-00-selecting-your-certification.md
+    - name: 2-uw project maken
+      href: tutorial-01-creating-your-project.md
+    - name: 3-Details van het apparaat toevoegen
+      href: tutorial-02-adding-device-details.md
+    - name: 4-uw apparaat testen
+      href: tutorial-03-testing-your-device.md
+    - name: 5-uw apparaat publiceren
+      href: tutorial-04-publishing-your-device.md
+- name: Programmavereisten
+  items:
+    - name: Azure-gecertificeerd apparaat
+      href: program-requirements-azure-certified-device.md
+    - name: IoT Plug and Play
+      href: program-requirements-pnp.md
+    - name: Edge beheerd
+      href: program-requirements-edge-managed.md
+    - name: Edge-beveiligd-core (preview-versie)
+      href: program-requirements-edge-secured-core.md
+- name: Concepten
+  items:
+    - name: Verouderde apparaten
+      href: concepts-legacy.md
+    - name: Marketing concepten
+      href: concepts-marketing.md
+- name: Instructiegidsen
+  items:
+    - name: Een gepubliceerd apparaat bewerken
+      href: how-to-edit-published-device.md
+    - name: Een indirect verbonden apparaat certificeren
+      href: how-to-indirectly-connected-devices.md
+    - name: De functie onderdelen gebruiken
+      href: how-to-using-the-components-feature.md
+- name: Resources
+  items:
+    - name: Certificerings woordenlijst
+      href: resources-glossary.md

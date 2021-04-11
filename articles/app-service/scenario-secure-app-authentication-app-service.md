@@ -7,16 +7,16 @@ manager: CelesteDG
 ms.service: app-service-web
 ms.topic: tutorial
 ms.workload: identity
-ms.date: 11/09/2020
+ms.date: 04/02/2021
 ms.author: ryanwi
 ms.reviewer: stsoneff
 ms.custom: azureday1
-ms.openlocfilehash: a8bd2ef1348692bf57f7e5cb7b6606cfcfd324fe
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b17cb6906a37d2cab4383fac18400b35dc8adb2f
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96905567"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106223175"
 ---
 # <a name="tutorial-add-authentication-to-your-web-app-running-on-azure-app-service"></a>Zelfstudie: Verificatie toevoegen aan uw web-app die wordt uitgevoerd in Azure App Service
 
@@ -41,7 +41,7 @@ In deze zelfstudie leert u het volgende:
 
 Voor deze zelfstudie moet er een web-app zijn geïmplementeerd in App Service. U kunt een bestaande web-app gebruiken of u kunt de [snelstartgids voor ASP.NET Core](quickstart-dotnetcore.md) volgen om een nieuwe web-app te maken en publiceren in App Service.
 
-Of u nu een bestaande web-app gebruikt of een nieuwe maakt, noteer de naam van de web-app en de naam van de resourcegroep waarin de web-app is geïmplementeerd. U hebt deze namen nodig in deze zelfstudie. In deze zelfstudie bevatten voorbeeldnamen in procedures en schermafbeeldingen de naam *SecureWebApp*.
+Of u nu een bestaande web-app gebruikt of een nieuwe maakt, noteer de naam van de web-app en de naam van de resourcegroep waarin de web-app is geïmplementeerd. U hebt deze namen nodig in deze zelfstudie. 
 
 ## <a name="configure-authentication-and-authorization"></a>Verificatie en autorisatie configureren
 
@@ -53,17 +53,19 @@ Zoek in **Resourcegroepen** uw resourcegroep en selecteer deze. Selecteer in **O
 
 :::image type="content" alt-text="Schermopname die het selecteren van de beheerpagina van uw app weergeeft." source="./media/scenario-secure-app-authentication-app-service/select-app-service.png":::
 
-Selecteer in het linkermenu van uw app de optie **Verificatie/autorisatie**, en schakel vervolgens App Service-verificatie in door **Aan** te selecteren.
+Selecteer in het menu links van uw app de optie **verificatie** en klik vervolgens op **ID-provider toevoegen**.
 
-Selecteer **Te ondernemen actie wanneer de aanvraag niet is geverifieerd** de optie **Aanmelden met Azure Active Directory**.
+Selecteer op de pagina **een id-provider toevoegen** de optie **micro soft** als **ID-provider** om u aan te melden bij micro soft en Azure AD-identiteiten.
 
-Selecteer onder **Azure Active Directory** de optie **Verificatieproviders**. Selecteer **Express** en accepteer vervolgens de standaardinstellingen om een nieuwe Active Directory-app te maken. Selecteer **OK**.
+  >  Selecteer **nieuwe app-registratie maken** voor het **registratie type** van de app-registratie.
 
-:::image type="content" alt-text="Schermopname waarop Express-verificatie is geselecteerd." source="./media/scenario-secure-app-authentication-app-service/configure-authentication.png":::
+  >  Selecteer **huidige Tenant-enkelvoudige Tenant** voor de **ondersteunde account typen** voor app-registratie.
 
-Selecteer op de pagina **Verificatie/autorisatie** de optie **Opslaan**.
+Laat in de sectie **verificatie-instellingen voor app service** dat verificatie **is** ingesteld op verificatie en **niet-geverifieerde aanvragen** die zijn ingesteld op **HTTP 302, omleiding zijn gevonden: aanbevolen voor websites**. 
 
-Vernieuw de portalpagina wanneer de melding met het bericht `Successfully saved the Auth Settings for <app-name> App` wordt weergegeven.
+Klik onder aan de pagina **een id-provider toevoegen** op **toevoegen** om verificatie voor uw web-app in te scha kelen.
+
+:::image type="content" alt-text="Scherm afbeelding die de configuratie van de verificatie weergeeft." source="./media/scenario-secure-app-authentication-app-service/configure-authentication.png":::
 
 U hebt nu een app die wordt beveiligd door App Service-verificatie en -autorisatie.
 

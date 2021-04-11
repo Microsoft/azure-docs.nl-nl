@@ -4,13 +4,13 @@ ms.service: time-series-insights
 author: deepakpalled
 ms.author: dpalled
 manager: diviso
-ms.date: 07/09/2020
-ms.openlocfilehash: f25c335c568c112c05f81df51d69e83aeff423e2
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 04/01/2021
+ms.openlocfilehash: 6529aa49d06e64947deb5ae54db0c39ad2575569
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "96027674"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106288600"
 ---
 ## <a name="business-disaster-recovery"></a>Bedrijfs nood herstel
 
@@ -24,7 +24,7 @@ Meer functies voor hoge Beschik baarheid die worden geleverd via Azure (en ook b
 
 - **Failover**: Azure biedt [geo-replicatie en taak verdeling](/azure/architecture/resiliency/recovery-loss-azure-region).
 - Herstel van **gegevens** en **opslag herstel**: Azure biedt [verschillende opties om gegevens te bewaren en te herstellen](/azure/architecture/resiliency/recovery-data-corruption).
-- **Azure site Recovery**: Azure biedt functies voor site herstel via [Azure site Recovery](../articles/site-recovery/index.yml).
+- **Azure site Recovery**: Azure biedt herstel functies via [Azure site Recovery](../articles/site-recovery/index.yml).
 - **Azure backup**: [Azure backup](../articles/backup/backup-architecture.md) ondersteunt zowel on-premises als in-Cloud back-ups van virtuele Azure-machines.
 
 Zorg ervoor dat u de relevante Azure-functies inschakelt om wereld wijd een hoge Beschik baarheid te bieden voor uw apparaten en gebruikers.
@@ -44,7 +44,7 @@ Het integreren van Azure Time Series Insights met de andere services biedt extra
 
 ### <a name="azure-time-series-insights"></a>Azure Time Series Insights
 
-Er zijn verschillende manieren om uw Azure Time Series Insights-gegevens,-apps en-services te houden, zelfs als deze worden onderbroken. 
+Er zijn verschillende manieren om uw Azure Time Series Insights-gegevens,-apps en-services te houden, zelfs als deze worden onderbroken.
 
 U kunt echter wel bepalen dat een volledige back-up van uw Azure time series-omgeving ook vereist is voor de volgende doel einden:
 
@@ -63,12 +63,13 @@ Een dubbele omgeving maken:
 Als er zich een gebeurtenis voordoet:
 
 1. Als uw primaire regio wordt beïnvloed tijdens een nood geval, moet u de bewerkingen opnieuw door sturen naar de back-upAzure Time Series Insights omgeving.
+1. Omdat de serie nummers van de hub opnieuw worden opgestart na de failover, maakt u de bron van de gebeurtenis opnieuw in beide regio's/omgevingen met verschillende consumenten groepen om te voor komen dat het lijkt alsof er dubbele gebeurtenissen zijn.
 1. Gebruik uw tweede regio om back-ups te maken en alle Azure Time Series Insights telemetrie en query gegevens te herstellen.
 
 > [!IMPORTANT]
 > Als er een failover optreedt:
-> 
-> * Er kan ook een vertraging optreden.
-> * Er kan een Momente piek in bericht verwerking optreden, omdat bewerkingen worden omgeleid.
-> 
+>
+> - Er kan ook een vertraging optreden.
+> - Er kan een Momente piek in bericht verwerking optreden, omdat bewerkingen worden omgeleid.
+>
 > Lees [beperkende latentie in azure time series Insights](../articles/time-series-insights/time-series-insights-environment-mitigate-latency.md)voor meer informatie.

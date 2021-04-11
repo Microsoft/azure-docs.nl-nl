@@ -7,18 +7,18 @@ ms.topic: how-to
 author: navits09
 ms.author: navits
 ms.date: 12/02/2020
-ms.openlocfilehash: 0c220daab0d1d9ae7d50d37d9303d6677bd52cc1
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1661fd78812bff14d9efddf9ef1c31a359aa959d
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97360302"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107360"
 ---
 # <a name="create-a-dynamics-365-for-customer-engagement--powerapps-offer"></a>Een Dynamics 365 for Customer Engagement- en PowerApps-aanbieding maken
 
 In dit artikel wordt beschreven hoe u een nieuwe Dynamics 365 maakt voor klant betrokkenheid & PowerApps-aanbieding. Alle apps voor Dynamics 365 voor klant betrokkenheid (PowerApps, Sales, service, project service en Field Service) moeten het certificerings proces door lopen, waarmee wordt gecontroleerd of uw oplossing voldoet aan de standaard vereisten, de compatibiliteit en de juiste prak tijken. Met de proef ervaring kunnen gebruikers uw oplossing implementeren in een live Dynamics 365-omgeving.
 
-Voordat u begint, moet u [een commercieel Marketplace-account maken in Partner Center](create-account.md) als u dit nog niet hebt gedaan. Zorg ervoor dat uw account is inge schreven in het Commercial Marketplace-programma.
+Voordat u begint, moet u [een commercieel Marketplace-account maken in Partner Center](../create-account.md) als u dit nog niet hebt gedaan. Zorg ervoor dat uw account is inge schreven in het Commercial Marketplace-programma.
 
 >[!NOTE]
 > Zodra een aanbieding is gepubliceerd, worden wijzigingen in de aanbieding alleen bijgewerkt in partner centrum en de online winkel nadat u de aanbieding voor publicatie opnieuw hebt ingediend.

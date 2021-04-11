@@ -9,12 +9,12 @@ ms.subservice: billing
 ms.topic: how-to
 ms.date: 08/20/2019
 ms.author: banders
-ms.openlocfilehash: cf5772e9cf08eaa7f34acd59a9c96da6f20cd03d
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
-ms.translationtype: HT
+ms.openlocfilehash: 96c37ded2750ad3e4882b203d71c75c9f4608e9d
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131408"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106285906"
 ---
 # <a name="track-microsoft-customer-agreement-azure-credit-balance"></a>Saldo van Azure-tegoed voor Microsoft-klantovereenkomst bijhouden
 
@@ -368,7 +368,7 @@ Via de API worden alle transacties geretourneerd die van invloed waren op het te
 
 In een factureringsrekening voor een Microsoft-klantovereenkomst gebruikt u factureringsprofielen om uw facturen en betalingswijzen te beheren. Voor elk factureringsprofiel wordt maandelijks een factuur gegenereerd. U gebruikt de betalingswijzen om de factuur te betalen.
 
-U wijst tegoed toe dat u aanschaft voor een factureringsprofiel. Als er een factuur wordt gegenereerd voor het factureringsprofiel, worden de tegoeden automatisch toegepast op de totale kosten om te berekenen welk bedrag u moet betalen. U betaalt het resterende bedrag met uw betalingswijzen, zoals een cheque, directe overboeking of creditcard.
+U wijst tegoed toe die u aan een facturerings profiel aanschaft. Als er een factuur wordt gegenereerd voor het factureringsprofiel, worden de tegoeden automatisch toegepast op de totale kosten om te berekenen welk bedrag u moet betalen. U betaalt het resterende bedrag met uw betalingswijzen, zoals een cheque, directe overboeking of creditcard.
 
 ## <a name="products-that-arent-covered-by-azure-credits"></a>Producten die niet onder Azure-tegoed vallen
 

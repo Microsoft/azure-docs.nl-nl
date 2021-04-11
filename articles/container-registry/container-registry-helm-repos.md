@@ -3,12 +3,12 @@ title: Helm-grafieken opslaan
 description: Meer informatie over het opslaan van helm-grafieken voor uw Kubernetes-toepassingen met behulp van opslag plaatsen in Azure Container Registry
 ms.topic: article
 ms.date: 06/12/2020
-ms.openlocfilehash: 69b16f35589586787e1c31a0e9755b9030af755d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9897ed6e43813c16314076b0322cd263cd2ed150
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "86537864"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106223078"
 ---
 # <a name="push-and-pull-helm-charts-to-an-azure-container-registry"></a>Helm-grafieken pushen en pullen naar een Azure container Registry
 
@@ -31,7 +31,7 @@ Helm 3 moet worden gebruikt voor het hosten van helm-grafieken in Azure Containe
 * `helm chart`Opdrachten in de helm CLI gebruiken om helm-grafieken in een REGI ster te pushen, te verzamelen en te beheren
 * Gebruiken `helm install` voor het installeren van grafieken naar een Kubernetes-cluster vanuit een lokale opslagplaats cache.
 > [!NOTE]
-> Vanaf helm 3 kunnen [AZ ACR helm][az-acr-helm] -opdrachten voor gebruik met de helm 2-client worden afgeschaft. Raadpleeg de [product routekaart](https://github.com/Azure/acr/blob/master/docs/acr-roadmap.md#acr-helm-ga). Als u eerder helm 2-grafieken hebt geïmplementeerd, raadpleegt u [helm v2 migreren naar v3](https://helm.sh/docs/topics/v2_v3_migration/).
+> Vanaf helm 3 kunnen [AZ ACR helm][az-acr-helm] -opdrachten voor gebruik met de helm 2-client worden afgeschaft. Vóór het verwijderen van de opdracht wordt een kennisgeving van Mini maal 3 maanden gegeven. Als u eerder helm 2-grafieken hebt geïmplementeerd, raadpleegt u [helm v2 migreren naar v3](https://helm.sh/docs/topics/v2_v3_migration/).
 
 ## <a name="prerequisites"></a>Vereisten
 

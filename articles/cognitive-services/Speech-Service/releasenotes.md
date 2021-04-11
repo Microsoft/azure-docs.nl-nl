@@ -11,14 +11,20 @@ ms.topic: conceptual
 ms.date: 01/27/2021
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: d5bf294e9371c5baf3cea23734c9a89f36091cd5
-ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
+ms.openlocfilehash: 3bbf47da3724b9df0905e2a212cda4a16bf44bdb
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2021
-ms.locfileid: "107210275"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107258551"
 ---
 # <a name="speech-service-release-notes"></a>Release opmerkingen bij de spraak service
+
+## <a name="text-to-speech-2021-april-release"></a>Tekst-naar-spraak 2021-april release
+
+**Neural TTS is beschikbaar in 21 regio's**
+
+- **Twaalf nieuwe regio's toegevoegd** -Neural TTS is nu beschikbaar in de volgende nieuwe 12 regio's: `Japan East` , `Japan West` , `Korea Central` , `North Central US` , `North Europe` , `South Central US` , `Southeast Asia` , `UK South` , `west Central US` , `West Europe` , `West US` , `West US 2` . Controleer [hier](regions.md#text-to-speech) de volledige lijst met 21 ondersteunde regio's.
 
 ## <a name="text-to-speech-2021-march-release"></a>Tekst-naar-spraak 2021-maart release
 

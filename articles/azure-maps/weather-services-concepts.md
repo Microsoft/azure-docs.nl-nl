@@ -1,6 +1,6 @@
 ---
-title: Concepten van weer Services (preview-versie) in Microsoft Azure Maps
-description: Meer informatie over de concepten die van toepassing zijn op Microsoft Azure Maps-Services (preview).
+title: Concepten van weer Services in Microsoft Azure Maps
+description: Meer informatie over de concepten die van toepassing zijn op Microsoft Azure kaarten weer Services.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 09/10/2020
@@ -8,18 +8,14 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 657cb6a86122d267b86e82b6f02eb58e968cddd3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 76d4eb08ba9cc0394610fdd00f6faba02278e8e3
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96904734"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107258007"
 ---
-# <a name="weather-services-preview-in-azure-maps"></a>Weer Services (preview) in Azure Maps
-
-> [!IMPORTANT]
-> Azure Maps Weather-services zijn momenteel beschikbaar in de openbare preview.
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+# <a name="weather-services-in-azure-maps"></a>Weer Services in Azure Maps
 
 In dit artikel worden concepten geïntroduceerd die van toepassing zijn op Azure Maps [weers Services](/rest/api/maps/weather). We raden u aan dit artikel uit te voeren voordat u begint met de weers-Api's.
 

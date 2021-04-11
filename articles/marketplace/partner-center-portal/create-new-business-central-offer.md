@@ -7,18 +7,18 @@ ms.topic: how-to
 author: navits09
 ms.author: navits
 ms.date: 12/02/2020
-ms.openlocfilehash: 99c36354334701dcd4c7c30c5fd5039c13885525
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 65df5f178ce0ec845fca6343c51049b6bf426e18
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97358704"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107106034"
 ---
 # <a name="create-a-dynamics-365-for-business-central-offer"></a>Een Dynamics 365 voor bedrijven Central-aanbieding maken
 
 In dit artikel wordt beschreven hoe u een nieuwe aanbieding voor Dynamics 365 Business Central maakt. [Micro soft Dynamics 365 Business Central](https://dynamics.microsoft.com/business-central) is een ERP-service (Enter prise resource planning) die een breed scala aan bedrijfs processen afhandelt, waaronder financiën, bewerkingen, toeleverings keten, CRM en project beheer en elektronische handel. Premium-pakketten bieden ook ondersteuning voor het klassieke implementatie model en productie. Alle aanbiedingen voor Dynamics 365 Business Central moeten het certificerings proces door lopen.
 
-Voordat u begint, moet u [een commercieel Marketplace-account maken in Partner Center](create-account.md) als u dit nog niet hebt gedaan. Zorg ervoor dat uw account is inge schreven in het Commercial Marketplace-programma.
+Voordat u begint, moet u [een commercieel Marketplace-account maken in Partner Center](../create-account.md) als u dit nog niet hebt gedaan. Zorg ervoor dat uw account is inge schreven in het Commercial Marketplace-programma.
 
 >[!NOTE]
 > Zodra een aanbieding is gepubliceerd, worden wijzigingen in de aanbieding alleen bijgewerkt in partner centrum en de online winkel nadat u de aanbieding voor publicatie opnieuw hebt ingediend.

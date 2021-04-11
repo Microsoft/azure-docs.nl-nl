@@ -3,19 +3,24 @@ title: Aanbevolen procedures voor Azure Kubernetes service (AKS)
 description: Verzameling van de best practices voor cluster operators en ontwikkel aars voor het maken en beheren van toepassingen in azure Kubernetes service (AKS)
 services: container-service
 ms.topic: article
-ms.date: 12/07/2018
-ms.openlocfilehash: e8f9c1946567ac3c3ea1045a216d6b0486fd959a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 03/09/2021
+ms.openlocfilehash: f4bd109ce6827de26b1649380b6f6a2ba7c10e17
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94686256"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107105898"
 ---
 # <a name="cluster-operator-and-developer-best-practices-to-build-and-manage-applications-on-azure-kubernetes-service-aks"></a>Aanbevolen procedures voor cluster operators en ontwikkel aars voor het maken en beheren van toepassingen in azure Kubernetes service (AKS)
 
-Als u toepassingen wilt bouwen en uitvoeren in azure Kubernetes service (AKS), zijn er enkele belang rijke aandachtspunten om te begrijpen en implementeren. Dit zijn onder andere multitenancy-en scheduler-functies, cluster-en pod-beveiliging, of bedrijfs continuïteit en herstel na nood gevallen. De volgende aanbevolen procedures zijn gegroepeerd om cluster operators en ontwikkel aars inzicht te geven in de overwegingen voor elk van deze gebieden en de juiste functies uit te voeren.
+Voor het bouwen en uitvoeren van toepassingen in azure Kubernetes service (AKS) is inzichten en implementatie van een aantal belang rijke overwegingen vereist, waaronder:
+* Multi-pacht-en scheduler-functies.
+* Cluster-en pod-beveiliging.
+* Bedrijfs continuïteit en herstel na nood gevallen. 
 
-Deze aanbevolen procedures en conceptuele artikelen zijn geschreven in combi natie met de AKS-product groep, technische teams en veld teams, met inbegrip van wereld wijde zwarte gordels (GBBs).
+
+De AKS-product groep, technische teams en veld teams (inclusief wereld wijde zwarte gordels [GBBs]) hebben bijgedragen aan, geschreven en gegroepeerde de volgende best practices en conceptuele artikelen. Het doel is om cluster operators en ontwikkel aars te helpen de bovenstaande overwegingen te begrijpen en de juiste functies te implementeren.
+
 
 ## <a name="cluster-operator-best-practices"></a>Aanbevolen procedures voor cluster operators
 

@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 03/29/2021
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: dda58868432248fe93a9fbc83d1e538dfc9b61ba
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: ef1a7f92fd31e8ae87a0ead6b5071d8240aa993e
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105709443"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106286399"
 ---
 # <a name="troubleshoot-azure-monitor-for-windows-virtual-desktop"></a>Problemen met Azure Monitor voor virtueel bureau blad van Windows oplossen
 
@@ -81,4 +81,6 @@ Hieronder vindt u problemen en beperkingen voor het oplossen van het volgende:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u niet zeker weet hoe u de gegevens kunt interpreteren of meer wilt weten over algemene termen, raadpleegt u de [Azure monitor voor de Windows-woorden lijst voor virtueel bureau blad](azure-monitor-glossary.md). Zie [Azure monitor voor Windows virtueel bureau blad gebruiken voor het controleren van uw implementatie](azure-monitor.md)voor meer informatie over het instellen en gebruiken van Azure monitor voor virtueel bureau blad van Windows.
+- Als u aan de slag wilt gaan, raadpleegt u [Azure monitor voor Windows Virtual Desktop gebruiken om uw implementatie te controleren](azure-monitor.md).
+- Zie [schatting van Azure monitor kosten](azure-monitor-costs.md)voor het schatten, meten en beheren van uw kosten voor gegevens opslag.
+- Bekijk onze [verklarende woorden lijst](azure-monitor-glossary.md) voor meer informatie over de termen en concepten die betrekking hebben op Azure monitor voor virtueel bureau blad van Windows.

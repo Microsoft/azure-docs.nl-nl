@@ -43,6 +43,8 @@
       href: concepts-query-units.md
     - name: Integratie met andere services
       href: concepts-integration.md
+    - name: Gebeurtenismeldingen
+      href: concepts-event-notifications.md
     - name: Gebeurtenisroutes
       href: concepts-route-events.md
     - name: Beveiliging voor Azure Digital Twins-oplossingen
@@ -91,8 +93,6 @@
           href: how-to-manage-twin.md
         - name: De tweelinggrafiek met relaties beheren
           href: how-to-manage-graph.md
-        - name: Gebeurtenisgegevens interpreteren
-          href: how-to-interpret-event-data.md
         - name: Een Azure-functie instellen om gegevens te verwerken
           href: how-to-create-azure-function.md
         - name: Query uitvoeren op de tweelinggrafiek

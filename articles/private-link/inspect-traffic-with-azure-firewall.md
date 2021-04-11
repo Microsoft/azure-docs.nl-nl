@@ -8,14 +8,17 @@ ms.service: private-link
 ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: allensu
-ms.openlocfilehash: c3218d8781377e76f05d10a8da2c954ac0b685a7
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 3059d88c9894ba50a608afaf1cb23367dfaf089c
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105641991"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107259452"
 ---
 # <a name="use-azure-firewall-to-inspect-traffic-destined-to-a-private-endpoint"></a>Azure Firewall gebruiken om verkeer te controleren dat is bestemd voor een privé-eindpunt
+
+> [!NOTE]
+> Als u verkeer naar privé-eind punten in azure Virtual WAN wilt beveiligen met behulp van beveiligde virtuele hub, raadpleegt u [beveiligd verkeer dat is bestemd voor privé-eind punten in azure Virtual WAN](../firewall-manager/private-link-inspection-secure-virtual-hub.md).
 
 Persoonlijk Azure-eind punt is de fundamentele bouw steen voor persoonlijke Azure-koppelingen. Met persoonlijke eind punten kunnen Azure-resources worden geïmplementeerd in een virtueel netwerk om privé te communiceren met persoonlijke koppelings bronnen.
 
@@ -166,7 +169,7 @@ Vervang de volgende para meters in de stappen door de onderstaande informatie:
     | Resourcegroep | Selecteer **myResourceGroup**. U hebt deze resourcegroep in de vorige sectie gemaakt.  |
     | **Exemplaardetails** |  |
     | Naam van de virtuele machine | Voer **myVM** in. |
-    | Region | Selecteer **(VS) Zuid-Centraal VS**. |
+    | Regio | Selecteer **(VS) Zuid-Centraal VS**. |
     | Beschikbaarheidsopties | Laat de standaardwaarde **Geen infrastructuurredundantie vereist** staan. |
     | Installatiekopie | Selecteer **Ubuntu Server 18,04 LTS-gen1**. |
     | Grootte | Selecteer **Standard_B2s**. |
@@ -215,7 +218,7 @@ Vervang de volgende para meters in de stappen door de onderstaande informatie:
     | Resourcegroep | Selecteer **myResourceGroup**.  |
     | **Exemplaardetails** |  |
     | Naam | Voer **myAzureFirewall** in. |
-    | Region | Selecteer **Zuid-Centraal VS**. |
+    | Regio | Selecteer **Zuid-Centraal VS**. |
     | Beschikbaarheidszone | Laat de standaardwaarde **Geen** staan. |
     | Een virtueel netwerk kiezen    |    Selecteer **bestaande gebruiken**.    |
     | Virtueel netwerk    |    Selecteer **myAzFwVNet**.    |
@@ -301,7 +304,7 @@ In deze sectie maakt u een persoonlijk eind punt voor de Azure-SQL database in d
     | Resourcegroep | Selecteer **myResourceGroup**. |
     | **Exemplaardetails** | |
     | Naam | Voer **SQLPrivateEndpoint** in. |
-    | Region | Selecteer **(VS) Zuid-Centraal vs.** |
+    | Regio | Selecteer **(VS) Zuid-Centraal vs.** |
 
 6. Selecteer het tabblad **resource** of selecteer **volgende: resource** aan de onderkant van de pagina.
 
@@ -489,7 +492,7 @@ De route verzendt verkeer van het **myVM** -subnet naar de adres ruimte van het 
     | Abonnement | Selecteer uw abonnement. |
     | Resourcegroep | Selecteer **myResourceGroup**.  |
     | **Exemplaardetails** |  |
-    | Region | Selecteer **Zuid-Centraal VS**. |
+    | Regio | Selecteer **Zuid-Centraal VS**. |
     | Name | Voer **het VM-AzureFirewall in**. |
     | Gateway routes door geven | Selecteer **Nee**. |
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 ms.custom: device-developer
-ms.openlocfilehash: 04c2330ffee396f5fc30b85640e992df77c08263
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 2396768d87b93c4df16b6de78d03faf1d8d1cc2b
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97795425"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106491998"
 ---
 # <a name="what-are-device-templates"></a>Wat zijn apparaatsjablonen?
 
@@ -39,70 +39,122 @@ Een apparaatprofiel definieert hoe een apparaat samenwerkt met uw IoT Central-to
 
 Een oplossings ontwikkelaar kan ook een JSON-bestand met het model van het apparaat exporteren. Een ontwikkelaar van een apparaat kan dit JSON-document gebruiken om te begrijpen hoe het apparaat moet communiceren met de IoT Central-toepassing.
 
-Het JSON-bestand dat het model van het apparaat definieert, maakt gebruik van de [Digital-taal versie 2 (DTDL) v2](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md). IoT Central verwacht dat het JSON-bestand het apparaatprofiel bevat met de interfaces die in line zijn gedefinieerd, in plaats van afzonderlijke bestanden.
+Het JSON-bestand dat het model van het apparaat definieert, maakt gebruik van de [Digital-taal versie 2 (DTDL) v2](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md). IoT Central verwacht dat het JSON-bestand het apparaatprofiel bevat met de interfaces die in line zijn gedefinieerd, in plaats van afzonderlijke bestanden. Raadpleeg voor meer informatie de [model gids IoT Plug en Play](../../iot-pnp/concepts-modeling-guide.md).
 
 Een typisch IoT-apparaat bestaat uit:
 
 - Aangepaste onderdelen, die de dingen zijn die uw apparaat uniek maken.
 - Standaard onderdelen, die voor alle apparaten gebruikelijk zijn.
 
-Deze onderdelen worden _interfaces_ genoemd in een model voor apparaten. Interfaces definiëren de details van elk onderdeel dat door uw apparaat wordt geïmplementeerd. Interfaces kunnen worden gebruikt in verschillende modellen. In de DTDL verwijst een onderdeel naar een interface die is gedefinieerd in een afzonderlijk DTDL-bestand.
+Deze onderdelen worden _interfaces_ genoemd in een model voor apparaten. Interfaces definiëren de details van elk onderdeel dat door uw apparaat wordt geïmplementeerd. Interfaces kunnen worden gebruikt in verschillende modellen. In DTDL verwijst een onderdeel naar een andere interface, die kan worden gedefinieerd in een afzonderlijk DTDL-bestand of in een afzonderlijke sectie van het bestand.
 
-In het volgende voor beeld ziet u het overzicht van het model van het apparaat voor een temperatuur controller apparaat. Het standaard onderdeel bevat definities voor `workingSet` , `serialNumber` en `reboot` . Het model van het apparaat omvat ook `thermostat` de `deviceInformation` interfaces en:
+In het volgende voor beeld ziet u het overzicht van het model van het apparaat voor een [temperatuur controller apparaat](https://github.com/Azure/iot-plugandplay-models/blob/main/dtmi/com/example/temperaturecontroller-2.json). Het standaard onderdeel bevat definities voor `workingSet` , `serialNumber` en `reboot` . Het model van het apparaat omvat ook twee `thermostat` onderdelen en een `deviceInformation` onderdeel. De inhoud van de drie onderdelen is verwijderd voor het omwille van de boog:
 
 ```json
-{
-  "@context": "dtmi:dtdl:context;2",
-  "@id": "dtmi:com:example:TemperatureController;1",
-  "@type": "Interface",
-  "displayName": "Temperature Controller",
-  "description": "Device with two thermostats and remote reboot.",
-  "contents": [
-    {
-      "@type": [
-        "Telemetry", "DataSize"
-      ],
-      "name": "workingSet",
-      "displayName": "Working Set",
-      "description": "Current working set of the device memory in KiB.",
-      "schema": "double",
-      "unit" : "kibibyte"
-    },
-    {
-      "@type": "Property",
-      "name": "serialNumber",
-      "displayName": "Serial Number",
-      "description": "Serial number of the device.",
-      "schema": "string"
-    },
-    {
-      "@type": "Command",
-      "name": "reboot",
-      "displayName": "Reboot",
-      "description": "Reboots the device after waiting the number of seconds specified.",
-      "request": {
-        "name": "delay",
-        "displayName": "Delay",
-        "description": "Number of seconds to wait before rebooting the device.",
-        "schema": "integer"
+[
+  {
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:com:example:TemperatureController;2",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@type": [
+          "Telemetry",
+          "DataSize"
+        ],
+        "description": {
+          "en": "Current working set of the device memory in KiB."
+        },
+        "displayName": {
+          "en": "Working Set"
+        },
+        "name": "workingSet",
+        "schema": "double",
+        "unit": "kibibit"
+      },
+      {
+        "@type": "Property",
+        "displayName": {
+          "en": "Serial Number"
+        },
+        "name": "serialNumber",
+        "schema": "string",
+        "writable": false
+      },
+      {
+        "@type": "Command",
+        "commandType": "synchronous",
+        "description": {
+          "en": "Reboots the device after waiting the number of seconds specified."
+        },
+        "displayName": {
+          "en": "Reboot"
+        },
+        "name": "reboot",
+        "request": {
+          "@type": "CommandPayload",
+          "description": {
+            "en": "Number of seconds to wait before rebooting the device."
+          },
+          "displayName": {
+            "en": "Delay"
+          },
+          "name": "delay",
+          "schema": "integer"
+        }
+      },
+      {
+        "@type": "Component",
+        "displayName": {
+          "en": "thermostat1"
+        },
+        "name": "thermostat1",
+        "schema": "dtmi:com:example:Thermostat;2"
+      },
+      {
+        "@type": "Component",
+        "displayName": {
+          "en": "thermostat2"
+        },
+        "name": "thermostat2",
+        "schema": "dtmi:com:example:Thermostat;2"
+      },
+      {
+        "@type": "Component",
+        "displayName": {
+          "en": "DeviceInfo"
+        },
+        "name": "deviceInformation",
+        "schema": "dtmi:azure:DeviceManagement:DeviceInformation;1"
       }
-    },
-    {
-      "@type" : "Component",
-      "schema": "dtmi:com:example:Thermostat;1",
-      "name": "thermostat",
-      "displayName": "Thermostat",
-      "description": "Thermostat One."
-    },
-    {
-      "@type": "Component",
-      "schema": "dtmi:azure:DeviceManagement:DeviceInformation;1",
-      "name": "deviceInformation",
-      "displayName": "Device Information interface",
-      "description": "Optional interface with basic device hardware information."
+    ],
+    "displayName": {
+      "en": "Temperature Controller"
     }
-  ]
-}
+  },
+  {
+    "@context": "dtmi:dtdl:context;2",
+    "@id": "dtmi:com:example:Thermostat;2",
+    "@type": "Interface",
+    "displayName": "Thermostat",
+    "description": "Reports current temperature and provides desired temperature control.",
+    "contents": [
+      ...
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;2",
+    "@id": "dtmi:azure:DeviceManagement:DeviceInformation;1",
+    "@type": "Interface",
+    "displayName": "Device Information",
+    "contents": [
+      ...
+    ]
+  }
+]
 ```
 
 Een interface bevat enkele vereiste velden:
@@ -132,7 +184,7 @@ In het volgende voor beeld wordt de Thermo staat-interface definitie weer gegeve
 ```json
 {
   "@context": "dtmi:dtdl:context;2",
-  "@id": "dtmi:com:example:Thermostat;1",
+  "@id": "dtmi:com:example:Thermostat;2",
   "@type": "Interface",
   "displayName": "Thermostat",
   "description": "Reports current temperature and provides desired temperature control.",
@@ -143,8 +195,8 @@ In het volgende voor beeld wordt de Thermo staat-interface definitie weer gegeve
         "Temperature"
       ],
       "name": "temperature",
-      "displayName" : "Temperature",
-      "description" : "Temperature in degrees Celsius.",
+      "displayName": "Temperature",
+      "description": "Temperature in degrees Celsius.",
       "schema": "double",
       "unit": "degreeCelsius"
     },
@@ -157,7 +209,7 @@ In het volgende voor beeld wordt de Thermo staat-interface definitie weer gegeve
       "schema": "double",
       "displayName": "Target Temperature",
       "description": "Allows to remotely specify the desired target temperature.",
-      "unit" : "degreeCelsius",
+      "unit": "degreeCelsius",
       "writable": true
     },
     {
@@ -167,7 +219,7 @@ In het volgende voor beeld wordt de Thermo staat-interface definitie weer gegeve
       ],
       "name": "maxTempSinceLastReboot",
       "schema": "double",
-      "unit" : "degreeCelsius",
+      "unit": "degreeCelsius",
       "displayName": "Max temperature since last reboot.",
       "description": "Returns the max temperature since last device reboot."
     },
@@ -183,7 +235,7 @@ In het volgende voor beeld wordt de Thermo staat-interface definitie weer gegeve
         "schema": "dateTime"
       },
       "response": {
-        "name" : "tempReport",
+        "name": "tempReport",
         "displayName": "Temperature Report",
         "schema": {
           "@type": "Object",
@@ -199,17 +251,17 @@ In het volgende voor beeld wordt de Thermo staat-interface definitie weer gegeve
               "schema": "double"
             },
             {
-              "name" : "avgTemp",
+              "name": "avgTemp",
               "displayName": "Average Temperature",
               "schema": "double"
             },
             {
-              "name" : "startTime",
+              "name": "startTime",
               "displayName": "Start Time",
               "schema": "dateTime"
             },
             {
-              "name" : "endTime",
+              "name": "endTime",
               "displayName": "End Time",
               "schema": "dateTime"
             }
@@ -233,9 +285,9 @@ Met optionele velden, zoals weergave naam en-beschrijving, kunt u meer details t
 
 Eigenschappen zijn standaard alleen-lezen. Alleen-lezen eigenschappen betekenen dat het apparaat de waarde van de eigenschapwaarde bijwerkt naar uw IoT Central-toepassing. Uw IoT Central toepassing kan de waarde van een alleen-lezen eigenschap niet instellen.
 
-U kunt een eigenschap ook markeren als beschrijfbaar op een interface. Een apparaat kan een update ontvangen van een Beschrijf bare eigenschap van uw IoT Central toepassing, evenals het rapporteren van eigenschaps waarden die worden bijgewerkt naar uw toepassing.
+U kunt een eigenschap ook markeren als beschrijfbaar op een interface. Een apparaat kan een update ontvangen van een Beschrijf bare eigenschap vanuit uw IoT Central-toepassing, evenals het rapporteren van eigenschaps waarden die worden bijgewerkt naar uw toepassing.
 
-Apparaten hoeven geen verbinding te zijn om eigenschaps waarden in te stellen. De bijgewerkte waarden worden overgebracht wanneer het apparaat de volgende keer verbinding maakt met de toepassing. Dit gedrag is van toepassing op zowel alleen-lezen als schrijf bare eigenschappen.
+Apparaten hoeven geen verbinding te zijn om eigenschaps waarden in te stellen. De bijgewerkte waarden worden overgebracht wanneer het apparaat de volgende keer verbinding maakt met de toepassing. Dit gedrag geldt voor zowel alleen-lezen als Beschrijf bare eigenschappen.
 
 Gebruik eigenschappen niet voor het verzenden van telemetrie van uw apparaat. Een ReadOnly-eigenschap zoals bijvoorbeeld `temperatureSetting=80` moet betekenen dat de temperatuur van het apparaat is ingesteld op 80 en dat het apparaat probeert te krijgen, of op deze Tempe ratuur blijft.
 

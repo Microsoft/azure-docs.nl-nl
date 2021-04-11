@@ -3,12 +3,12 @@ title: Uw resource hiërarchie beveiligen-Azure governance
 description: Meer informatie over het beveiligen van uw resource hiërarchie met hiërarchie-instellingen, zoals het instellen van de standaard beheer groep.
 ms.date: 02/05/2021
 ms.topic: conceptual
-ms.openlocfilehash: 0f0afb5401fc646d26598a211604790af191f156
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5d13a0235152046eff2585da170d5fba0e9d3b09
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99594583"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107259078"
 ---
 # <a name="how-to-protect-your-resource-hierarchy"></a>Uw resource hiërarchie beveiligen
 
@@ -50,7 +50,7 @@ Voer de volgende stappen uit om deze instelling te configureren in Azure Portal:
 
 ### <a name="set-default-management-group-with-rest-api"></a>Standaard beheer groep instellen met REST API
 
-Als u deze instelling wilt configureren met REST API, wordt het eind punt van de [hiërarchie-instellingen](/rest/api/resources/hierarchysettings) aangeroepen. Gebruik hiervoor de volgende REST API URI en de indeling van de hoofd tekst. Vervang door `{rootMgID}` de id van uw hoofd beheer groep en `{defaultGroupID}` met de id van de beheer groep om de standaard beheer groep te worden:
+Als u deze instelling wilt configureren met REST API, wordt het eind punt van de [hiërarchie-instellingen](/rest/api/managementgroups/hierarchysettings) aangeroepen. Gebruik hiervoor de volgende REST API URI en de indeling van de hoofd tekst. Vervang door `{rootMgID}` de id van uw hoofd beheer groep en `{defaultGroupID}` met de id van de beheer groep om de standaard beheer groep te worden:
 
 - REST API-URI
 
@@ -91,7 +91,7 @@ Voer de volgende stappen uit om deze instelling te configureren in Azure Portal:
 
 ### <a name="set-require-authorization-with-rest-api"></a>Instellen vereisen autorisatie met REST API
 
-Als u deze instelling wilt configureren met REST API, wordt het eind punt van de [hiërarchie-instellingen](/rest/api/resources/hierarchysettings) aangeroepen. Gebruik hiervoor de volgende REST API URI en de indeling van de hoofd tekst. Deze waarde is een _Boolean_, dus geef **waar** of **Onwaar** op voor de waarde. Met de waarde **True** wordt deze methode voor het beveiligen van uw beheer groeps hiërarchie ingeschakeld:
+Als u deze instelling wilt configureren met REST API, wordt het eind punt van de [hiërarchie-instellingen](/rest/api/managementgroups/hierarchysettings) aangeroepen. Gebruik hiervoor de volgende REST API URI en de indeling van de hoofd tekst. Deze waarde is een _Boolean_, dus geef **waar** of **Onwaar** op voor de waarde. Met de waarde **True** wordt deze methode voor het beveiligen van uw beheer groeps hiërarchie ingeschakeld:
 
 - REST API-URI
 

@@ -8,20 +8,16 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: cc470d12377f50f9f9ae4b362bcabf3a5ce34e8f
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: d61314dc89d341e376de7d3904568825ad3cfb04
+ms.sourcegitcommit: af6eba1485e6fd99eed39e507896472fa930df4d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106169280"
+ms.lasthandoff: 04/04/2021
+ms.locfileid: "106293869"
 ---
 # <a name="about-azure-cloud-services-extended-support"></a>Over Azure Cloud Services (uitgebreide ondersteuning)
 
-> [!IMPORTANT]
-> Cloud Services (uitgebreide ondersteuning) is momenteel beschikbaar als open bare preview.
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
-
-Cloud Services (uitgebreide ondersteuning) is een nieuw implementatie model op basis van [Azure Resource Manager](../azure-resource-manager/management/overview.md) voor [Azure Cloud Services](https://azure.microsoft.com/services/cloud-services/) product en is momenteel beschikbaar als open bare preview. Cloud Services (uitgebreide ondersteuning) heeft het belangrijkste voor deel van het leveren van regionale tolerantie samen met de functie pariteit met Azure Cloud Services geïmplementeerd met Azure Service Manager. Het biedt ook een aantal ARM-mogelijkheden, zoals op rollen gebaseerde toegang en beheer (RBAC), tags, beleid en ondersteuning voor implementatie sjablonen.  
+Cloud Services (uitgebreide ondersteuning) is een nieuw implementatie model op basis van [Azure Resource Manager](../azure-resource-manager/management/overview.md) voor [Azure Cloud Services](https://azure.microsoft.com/services/cloud-services/) product en is nu algemeen verkrijgbaar. Cloud Services (uitgebreide ondersteuning) heeft het belangrijkste voor deel van het leveren van regionale tolerantie samen met de functie pariteit met Azure Cloud Services geïmplementeerd met Azure Service Manager. Het biedt ook een aantal ARM-mogelijkheden, zoals op rollen gebaseerde toegang en beheer (RBAC), tags, beleid en ondersteuning voor implementatie sjablonen.  
 
 Met deze wijziging wordt de naam van het implementatie model op basis van Azure Service Manager voor Cloud Services [Cloud Services (klassiek)](../cloud-services/cloud-services-choose-me.md)gewijzigd. U behoudt de mogelijkheid om uw web-en Cloud toepassingen en-services te bouwen en snel te implementeren. U kunt uw infra structuur voor Cloud Services schalen op basis van de huidige vraag en ervoor zorgen dat de prestaties van uw toepassingen kunnen blijven bestaan terwijl tegelijkertijd de kosten worden verminderd.  
 

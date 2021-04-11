@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 9849648c8a0a76ff89a6f95e64eeade791e7135c
-ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
+ms.openlocfilehash: 8804febe81afc79a4a7eadb56e8350e758ea38ba
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106381771"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107105507"
 ---
 # <a name="deploy-a-cloud-service-extended-support-using-arm-templates"></a>Een Cloud service (uitgebreide ondersteuning) implementeren met ARM-sjablonen
 
@@ -25,14 +25,12 @@ In deze zelf studie wordt uitgelegd hoe u een implementatie van een Cloud servic
 
 2. Maak een nieuwe resource groep met behulp van de [Azure Portal](../azure-resource-manager/management/manage-resource-groups-portal.md) of [Power shell](../azure-resource-manager/management/manage-resource-groups-powershell.md). Deze stap is optioneel als u een bestaande resource groep gebruikt.
 
-3. Maak een openbaar IP-adres en stel de DNS-label eigenschap van het open bare IP-adres in. Cloud Services (uitgebreide ondersteuning) ondersteunt alleen [Basic] ( https://docs.microsoft.com/azure/virtual-network/public-ip-addresses#basic) open bare IP-adressen van SKU. Open bare Ip's van standaard-SKU werken niet met Cloud Services.
+3. Maak een openbaar IP-adres en stel de DNS-label eigenschap van het open bare IP-adres in. Cloud Services (uitgebreide ondersteuning) ondersteunt alleen open bare [standaard](https://docs.microsoft.com/azure/virtual-network/public-ip-addresses#basic) -SKU-IP-adressen. Open bare Ip's van standaard-SKU werken niet met Cloud Services.
 Als u een statisch IP-adres gebruikt, moet ernaar worden verwezen als een Gereserveerd IP in het bestand met de service configuratie (. cscfg). Als u een bestaand IP-adres gebruikt, slaat u deze stap over en voegt u de IP-adres gegevens rechtstreeks toe aan de load balancer configuratie-instellingen van uw ARM-sjabloon.
-
-4. Maak een object voor een netwerk profiel en koppel het open bare IP-adres aan de front-end van de load balancer. Het Azure-platform maakt automatisch een ' klassieke ' SKU load balancer resource in hetzelfde abonnement als de Cloud service resource. De load balancer resource is een alleen-lezen resource in ARM. Updates voor de resource worden alleen ondersteund via de implementatie bestanden voor Cloud Services (. cscfg &. csdef)
  
-5. Maak een nieuw opslag account met behulp van de [Azure Portal](../storage/common/storage-account-create.md?tabs=azure-portal) of [Power shell](../storage/common/storage-account-create.md?tabs=azure-powershell). Deze stap is optioneel als u een bestaand opslag account gebruikt.
+4. Maak een nieuw opslag account met behulp van de [Azure Portal](../storage/common/storage-account-create.md?tabs=azure-portal) of [Power shell](../storage/common/storage-account-create.md?tabs=azure-powershell). Deze stap is optioneel als u een bestaand opslag account gebruikt.
 
-6. Upload uw service definition (csdef) en service configuratie bestanden (. cscfg) naar het opslag account met behulp van de [Azure Portal](../storage/blobs/storage-quickstart-blobs-portal.md#upload-a-block-blob), [AzCopy](../storage/common/storage-use-azcopy-blobs-upload.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) of [Power shell](../storage/blobs/storage-quickstart-blobs-powershell.md#upload-blobs-to-the-container). Verkrijg de SAS-Uri's van beide bestanden die u later in deze zelf studie moet toevoegen aan de ARM-sjabloon.
+5. Upload uw service definition (csdef) en service configuratie bestanden (. cscfg) naar het opslag account met behulp van de [Azure Portal](../storage/blobs/storage-quickstart-blobs-portal.md#upload-a-block-blob), [AzCopy](../storage/common/storage-use-azcopy-blobs-upload.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) of [Power shell](../storage/blobs/storage-quickstart-blobs-powershell.md#upload-blobs-to-the-container). Verkrijg de SAS-Uri's van beide bestanden die u later in deze zelf studie moet toevoegen aan de ARM-sjabloon.
 
 6. Beschrijving Maak een sleutel kluis en upload de certificaten.
 

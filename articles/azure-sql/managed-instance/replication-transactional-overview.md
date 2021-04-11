@@ -12,12 +12,12 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: sstein
 ms.date: 04/20/2020
-ms.openlocfilehash: 3e4b4fc3d4a6c9529c7c0ac0daef8a28173e0bf3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e08fe67dece02b936aa3a22e9cac58d809f19f46
+ms.sourcegitcommit: c6a2d9a44a5a2c13abddab932d16c295a7207d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99225340"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107285680"
 ---
 # <a name="transactional-replication-with-azure-sql-managed-instance-preview"></a>Transactionele replicatie met Azure SQL Managed instance (preview-versie)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -154,7 +154,7 @@ In deze configuratie is een-data base in Azure SQL Database of een door Azure SQ
 
 [Actieve geo-replicatie](../database/active-geo-replication-overview.md) wordt niet ondersteund met een door SQL beheerd exemplaar met transactionele replicatie. Gebruik in plaats van actieve geo-replicatie [groepen voor automatische failover](../database/auto-failover-group-overview.md), maar houd er rekening mee dat de publicatie [hand matig](transact-sql-tsql-differences-sql-server.md#replication) moet worden verwijderd uit het primaire beheerde exemplaar en opnieuw wordt gemaakt op het secundaire SQL-beheerde exemplaar na een failover.
 
-Als geo-replicatie is ingeschakeld op een **Uitgever** of een door de **leverancier** beheerde SQL-instantie in een [failovergroep](../database/auto-failover-group-overview.md), moet de beheerder van de SQL Managed instance alle publicaties opschonen op de oude primaire en opnieuw configureren op de nieuwe primaire locatie nadat een failover is uitgevoerd. In dit scenario zijn de volgende activiteiten nodig:
+Als een met SQL beheerd exemplaar van een **Uitgever** of een **distributie server** wordt uitgevoerd in een [failovergroep](../database/auto-failover-group-overview.md), moet de beheerder van de SQL Managed instance alle publicaties opschonen op de oude primaire en opnieuw configureren op de nieuwe primaire na een failover. In dit scenario zijn de volgende activiteiten nodig:
 
 1. Stop alle replicatie taken die worden uitgevoerd op de data base, indien aanwezig.
 1. Voer het volgende script uit op de Publisher-data base om de meta gegevens van uw abonnement uit Publisher te verwijderen:

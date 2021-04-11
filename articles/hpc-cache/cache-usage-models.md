@@ -4,14 +4,14 @@ description: Hierin worden de verschillende modellen voor de cache gebruikt en w
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
-ms.date: 03/15/2021
+ms.date: 04/08/2021
 ms.author: v-erkel
-ms.openlocfilehash: 3ad252520ca0cf7acdb3c84ef1da87c8076f3172
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: a22f4b257476e96c51ae491b8570e3798f7b3ab7
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104775711"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107259724"
 ---
 # <a name="understand-cache-usage-models"></a>Informatie over de gebruiks modellen van de cache
 
@@ -39,7 +39,7 @@ De gebruiks modellen die in de Azure HPC-cache zijn ingebouwd, hebben verschille
 
 ## <a name="choose-the-right-usage-model-for-your-workflow"></a>Het juiste gebruiks model voor uw werk stroom kiezen
 
-U moet een gebruiks model kiezen voor elk door NFS gekoppeld opslag doel dat u gebruikt. Azure Blob-opslag doelen hebben een ingebouwd gebruiks model dat niet kan worden aangepast.
+U moet een gebruiks model kiezen voor elk NFS-protocol opslag doel dat u gebruikt. Azure Blob-opslag doelen hebben een ingebouwd gebruiks model dat niet kan worden aangepast.
 
 Met de gebruiks modellen van HPC-cache kunt u kiezen hoe u snel antwoord kunt verdelen met het risico dat verouderde gegevens worden opgehaald. Als u de snelheid voor het lezen van bestanden wilt optimaliseren, kunt u er mogelijk niet voor zorgen dat de bestanden in de cache worden gecontroleerd op basis van de back-end-bestanden. Als u daarentegen wilt controleren of uw bestanden altijd up-to-date zijn met de externe opslag, kiest u een model dat regel matig wordt gecontroleerd.
 
@@ -77,6 +77,29 @@ Deze tabel bevat een overzicht van de verschillen in het gebruiks model:
 [!INCLUDE [usage-models-table.md](includes/usage-models-table.md)]
 
 Als u vragen hebt over het beste gebruiks model voor de werk stroom van uw Azure HPC-cache, neemt u contact op met uw Azure-vertegenwoordiger of opent u een ondersteunings aanvraag voor hulp.
+
+## <a name="know-when-to-remount-clients-for-nlm"></a>Weten wanneer u clients opnieuw moet koppelen voor NLM
+
+In sommige gevallen moet u clients mogelijk opnieuw koppelen als u het gebruiks model van een opslag doel wijzigt. Dit is nodig vanwege de manier waarop verschillende gebruiks modellen NLM-aanvragen (Network Lock Manager) verwerken.
+
+De HPC-cache bevindt zich tussen clients en het back-end-opslag systeem. Normaal gesp roken stuurt de cache NLM aanvragen door naar het back-end-opslag systeem, maar in sommige gevallen erkent de cache zelf de NLM-aanvraag en retourneert deze een waarde naar de client. In azure HPC-cache gebeurt dit alleen wanneer u het gebruiks model gebruikt voor het **lezen van zware, incidentele schrijf bewerkingen** (of in een standaard-Blob-opslag doel, die geen Configureer bare gebruiks modellen heeft).
+
+Er is een klein risico op bestands conflicten als u wijzigingen aanbrengt in het gebruiks model en een ander gebruiks model in het geval van een **zware Lees bewerking** . Er is geen manier om de huidige NLM-status van de cache over te zetten naar het opslag systeem of andersom. De vergrendelings status van de client is niet nauw keurig.
+
+Koppel de clients opnieuw om er zeker van te zijn dat ze een nauw keurige NLM-status hebben met de nieuwe vergrendelings Manager.
+
+Als uw clients een NLM-aanvraag verzenden wanneer het gebruiks model of de back-end-opslag deze niet ondersteunt, wordt er een fout melding weer gegeven.
+
+### <a name="disable-nlm-at-client-mount-time"></a>NLM uitschakelen op de client koppelings tijd
+
+Het is niet altijd gemakkelijk om te weten of uw client systemen NLM-aanvragen kunnen verzenden.
+
+U kunt NLM uitschakelen wanneer clients het cluster koppelen met behulp van de optie ``-o nolock`` in de ``mount`` opdracht.
+
+Het exacte gedrag van de ``nolock`` optie is afhankelijk van het besturings systeem van de client. Controleer daarom de koppelings documentatie (man 5 NFS) voor uw client besturingssysteem. In de meeste gevallen wordt de vergren deling lokaal naar de client verplaatst. Wees voorzichtig als uw toepassing bestanden vergrendelt op meerdere clients.
+
+> [!NOTE]
+> ADLS-NFS biedt geen ondersteuning voor NLM. U moet NLM uitschakelen met de optie koppelen hierboven wanneer u een ADLS-NFS-opslag doel gebruikt.
 
 ## <a name="next-steps"></a>Volgende stappen
 

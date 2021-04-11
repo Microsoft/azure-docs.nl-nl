@@ -10,16 +10,16 @@ ms.service: synapse-analytics
 ms.subservice: sql
 ms.topic: tutorial
 ms.date: 12/31/2020
-ms.openlocfilehash: 5f0a7477df2e281748c053ea8c7e7d3e79626296
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0ef76be2c083d6185b8b919d174de28aa3b65446
+ms.sourcegitcommit: af6eba1485e6fd99eed39e507896472fa930df4d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104588015"
+ms.lasthandoff: 04/04/2021
+ms.locfileid: "106293767"
 ---
 # <a name="analyze-data-with-a-serverless-sql-pool"></a>Gegevens analyseren met een serverloze SQL-groep
 
-In deze zelfstudie leert u hoe u gegevens kunt analyseren met serverloze SQL-pool, met behulp van gegevens die zich in Spark-databases bevinden. 
+In deze zelf studie leert u hoe u gegevens kunt analyseren met serverloze SQL-pool. 
 
 ## <a name="the-built-in-serverless-sql-pool"></a>De ingebouwde serverloze SQL-pool
 

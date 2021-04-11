@@ -4,14 +4,14 @@ description: Doel doelen van de Azure HPC-cache bewerken
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
-ms.date: 03/10/2021
+ms.date: 03/29/2021
 ms.author: v-erkel
-ms.openlocfilehash: 0c505937d4adbe2596e91ed7269676e60ada8253
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: d61612b6e491fae550559e499cb360efc0f7c044
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104772574"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107258908"
 ---
 # <a name="edit-storage-targets"></a>Opslagdoelen bewerken
 
@@ -151,7 +151,10 @@ az hpc-cache nfs-storage-target update --cache-name mycache \
 
 ### <a name="change-the-usage-model"></a>Het gebruiks model wijzigen
 
-Het gebruiks model is van invloed op de manier waarop de cache gegevens bewaart. Lees [een gebruiks model kiezen](hpc-cache-add-storage.md#choose-a-usage-model) voor meer informatie.
+Het gebruiks model is van invloed op de manier waarop de cache gegevens bewaart. Lees meer informatie over het gebruik van de [cache](cache-usage-models.md) om meer te weten te komen.
+
+> [!NOTE]
+> Als u gebruiks modellen wijzigt, moet u clients mogelijk opnieuw koppelen om NLM-fouten te voor komen. Lees [hoe u clients opnieuw moet koppelen](cache-usage-models.md#know-when-to-remount-clients-for-nlm) voor meer informatie.
 
 Gebruik een van de volgende methoden om het gebruiks model voor een NFS-opslag doel te wijzigen.
 

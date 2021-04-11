@@ -12,12 +12,12 @@ ms.date: 03/02/2021
 ms.author: aahi
 ms.custom: seodec18, cog-serv-seo-aug-2020
 keywords: on-premises, OCR, docker, container
-ms.openlocfilehash: 1c9e681e3c02cb65b2a54070cc778051a0e7ac53
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 53d59822b378a658f8b6c048de1a32db53a795d1
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102432550"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106285719"
 ---
 # <a name="install-read-ocr-docker-containers-preview"></a>Lees de OCR docker-containers (preview) installeren 
 
@@ -25,7 +25,7 @@ ms.locfileid: "102432550"
 
 Met containers kunt u de Computer Vision-API's uitvoeren in uw eigen omgeving. Containers zijn ideaal voor specifieke vereisten voor beveiliging en gegevensbeheer. In dit artikel leert u hoe u Computer Vision containers kunt downloaden, installeren en uitvoeren.
 
-Met de container OCR *lezen* kunt u gedrukte en handgeschreven tekst uit afbeeldingen en documenten extra heren met ondersteuning voor JPEG-, PNG-, BMP-, PDF-en TIFF-bestands indelingen. Zie de [Lees API-documentatie](concept-recognizing-text.md#read-api)voor meer informatie.
+Met de container OCR *lezen* kunt u gedrukte en handgeschreven tekst uit afbeeldingen en documenten extra heren met ondersteuning voor JPEG-, PNG-, BMP-, PDF-en TIFF-bestands indelingen. Zie voor meer informatie de [lezen API instructies](Vision-API-How-to-Topics/call-read-api.md).
 
 ## <a name="read-32-preview-container"></a>Lees 3,2-Preview-container
 
@@ -96,7 +96,7 @@ Er zijn container installatie kopieën voor lezen beschikbaar.
 
 Gebruik de [`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/) opdracht om een container installatie kopie te downloaden.
 
-### <a name="docker-pull-for-the-read-container"></a>Docker-pull voor de Lees container
+### <a name="docker-pull-for-the-read-ocr-container"></a>Docker-pull voor de container voor het lezen van OCR
 
 # <a name="version-32-preview"></a>[Versie 3,2-Preview](#tab/version-3-2)
 
@@ -139,7 +139,7 @@ ApiKey={API_KEY}
 
 Met deze opdracht gebeurt het volgende:
 
-* Voert de Lees container uit van de container installatie kopie.
+* Voert de container OCR lezen uit vanuit de container installatie kopie.
 * Wijst 8 CPU-kernen en 18 GB aan geheugen toe.
 * Beschrijft TCP-poort 5000 en wijst een pseudo-TTY voor de container toe.
 * Verwijdert de container automatisch nadat deze is afgesloten. De container installatie kopie is nog steeds beschikbaar op de hostcomputer.
@@ -156,7 +156,7 @@ ApiKey={API_KEY}
 
 Met deze opdracht gebeurt het volgende:
 
-* Voert de Lees container uit van de container installatie kopie.
+* Voert de container OCR lezen uit vanuit de container installatie kopie.
 * Wijst 8 CPU-kernen en 16 GB aan geheugen toe.
 * Beschrijft TCP-poort 5000 en wijst een pseudo-TTY voor de container toe.
 * Verwijdert de container automatisch nadat deze is afgesloten. De container installatie kopie is nog steeds beschikbaar op de hostcomputer.
@@ -392,7 +392,7 @@ De `operation-location` is de volledig gekwalificeerde URL en is toegankelijk vi
 ---
 
 > [!IMPORTANT]
-> Als u meerdere Lees containers achter een load balancer implementeert, bijvoorbeeld onder docker opstellen of Kubernetes, moet u een externe cache hebben. Omdat de verwerkings container en de container voor GET-aanvragen mogelijk niet hetzelfde zijn, worden de resultaten door een externe cache opgeslagen en gedeeld in containers. Zie [Computer Vision docker-containers configureren](./computer-vision-resource-container-config.md)voor meer informatie over de cache-instellingen.
+> Als u meerdere OCR-containers lezen achter een load balancer implementeert, bijvoorbeeld onder docker-opstellen of Kubernetes, moet u een externe cache hebben. Omdat de verwerkings container en de container voor GET-aanvragen mogelijk niet hetzelfde zijn, worden de resultaten door een externe cache opgeslagen en gedeeld in containers. Zie [Computer Vision docker-containers configureren](./computer-vision-resource-container-config.md)voor meer informatie over de cache-instellingen.
 
 ### <a name="synchronous-read"></a>Synchrone Lees bewerking
 
@@ -445,7 +445,7 @@ In dit artikel hebt u concepten en werk stromen geleerd om Computer Vision conta
 * Computer Vision biedt een Linux-container voor docker, Inge kapseld voor lezen.
 * Container installatie kopieën worden gedownload uit het container register container preview in Azure.
 * Container installatie kopieën worden uitgevoerd in docker.
-* U kunt de REST API of SDK gebruiken voor het aanroepen van bewerkingen in containers lezen door de URI van de host van de container op te geven.
+* U kunt de REST API of SDK gebruiken om bewerkingen aan te roepen in OCR-containers lezen door de URI van de host op te geven van de container.
 * U moet factuur gegevens opgeven bij het instantiëren van een container.
 
 > [!IMPORTANT]
@@ -454,7 +454,7 @@ In dit artikel hebt u concepten en werk stromen geleerd om Computer Vision conta
 ## <a name="next-steps"></a>Volgende stappen
 
 * Controleer [Containers configureren](computer-vision-resource-container-config.md) voor configuratie-instellingen
-* Bekijk [Overzicht van Computer Vision ](overview.md) voor meer informatie over het herkennen van gedrukte en handgeschreven tekst
-* Raadpleeg de [Computer Vision-API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) voor meer informatie over de methoden die door de container worden ondersteund.
+* Bekijk het [OCR-overzicht](overview-ocr.md) voor meer informatie over het herkennen van gedrukte en handgeschreven tekst
+* Raadpleeg de [Lees-API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) voor meer informatie over de methoden die door de container worden ondersteund.
 * Raadpleeg [Veelgestelde vragen (FAQ)](FAQ.md) voor het oplossen van problemen met betrekking tot de functionaliteit van Computer Vision.
 * Gebruik meer [Cognitive Services-containers](../cognitive-services-container-support.md)

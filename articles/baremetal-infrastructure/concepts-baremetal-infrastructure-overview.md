@@ -4,19 +4,19 @@ description: Biedt een overzicht van de BareMetal-infra structuur op Azure.
 ms.custom: references_regions
 ms.topic: conceptual
 ms.subservice: workloads
-ms.date: 04/06/2021
-ms.openlocfilehash: bccb171ce364a5129489c437f2f18156cc563a1b
-ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
+ms.date: 04/08/2021
+ms.openlocfilehash: 7a4998a096a5c5d9e793c34d5046dce59262a2ae
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106579027"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107257565"
 ---
 #  <a name="what-is-baremetal-infrastructure-on-azure"></a>Wat is een BareMetal-infra structuur op Azure?
 
 Microsoft Azure biedt een Cloud infrastructuur met een breed scala aan geïntegreerde Cloud Services om te voldoen aan de behoeften van uw bedrijf. In sommige gevallen moet u echter mogelijk services uitvoeren op bare-metal servers zonder een virtualisatieserver. U hebt mogelijk toegang tot het hoofd en controle over het besturings systeem (OS) nodig. Azure biedt een BareMetal-infra structuur voor verschillende hoogwaardige en bedrijfsspecifieke toepassingen om aan een dergelijke behoefte te voldoen.
 
-De BareMetal-infra structuur bestaat uit specifieke BareMetal-instanties (reken instanties), hoge prestaties en een toepassings geschikte opslag (NFS, dNFS, ISCSI en Fiber Channel), evenals een set functie-specifieke virtuele Lan's (VLAN'S) in een geïsoleerde omgeving. Opslag kan worden gedeeld tussen BareMetal-instanties, zodat functies zoals scale-out clusters of voor het maken van paren met hoge Beschik baarheid met STONITH worden ingeschakeld.
+De BareMetal-infra structuur bestaat uit specifieke BareMetal-instanties (reken instanties), hoge prestaties en toepassings geschikte opslag (NFS, ISCSI en Fiber Channel), evenals een set functie-specifieke virtuele Lan's (VLAN'S) in een geïsoleerde omgeving. Opslag kan worden gedeeld tussen BareMetal-instanties, zodat functies zoals scale-out clusters of voor het maken van paren met hoge Beschik baarheid met STONITH worden ingeschakeld.
  
 Deze omgeving heeft ook speciale VLAN'S die u kunt gebruiken als u virtuele machines (Vm's) uitvoert op een of meer virtuele Azure-netwerken (VNets) in uw Azure-abonnement. De volledige omgeving wordt weer gegeven als een resource groep in uw Azure-abonnement.
 
@@ -40,7 +40,7 @@ De BareMetal-infra structuur biedt de volgende voor delen:
     - Maxi maal 1 PB/Tenant 
     - IOPS tot 1,2 miljoen per Tenant 
     - 40/100 GB netwerk bandbreedte
-    - Toegankelijk via NFS, dNFS, ISCSI en FC
+    - Toegankelijk via NFS, ISCSI en FC
 - Redundante voeding, voeding, Nic's, TORs, poorten, Wan's, opslag en beheer
 - Hot spares voor vervanging bij een storing (zonder dat de configuratie opnieuw hoeft te worden geconfigureerd)
 - Windows-gecoördineerde onderhouds Vensters

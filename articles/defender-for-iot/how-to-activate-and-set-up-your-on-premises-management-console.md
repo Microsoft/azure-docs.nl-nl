@@ -1,14 +1,14 @@
 ---
 title: Uw on-premises beheerconsole activeren en instellen
 description: Als u de beheer console activeert, zorgt u ervoor dat Sens oren zijn geregistreerd bij Azure en informatie verzenden naar de on-premises beheer console, en dat de on-premises beheer console Beheer taken uitvoert op verbonden Sens oren.
-ms.date: 3/18/2021
+ms.date: 4/6/2021
 ms.topic: how-to
-ms.openlocfilehash: 86bbebb54753145e087865acd8c0d4690a53aa99
-ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
+ms.openlocfilehash: db0d2a84feeb5bf52932842badda8c126994c05d
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106383852"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106492151"
 ---
 # <a name="activate-and-set-up-your-on-premises-management-console"></a>Uw on-premises beheerconsole activeren en instellen 
 
@@ -217,6 +217,10 @@ Een site instellen:
 5. [Verbind de Sens oren](how-to-manage-individual-sensors.md#connect-a-sensor-to-the-management-console).
 
 6. [Wijs sensor toe aan site zones](#assign-sensors-to-zones).
+
+### <a name="delete-a-site"></a>Een site verwijderen
+
+Als u een site niet meer nodig hebt, kunt u deze verwijderen uit uw on-premises beheer console.
 
 Een site verwijderen:
 

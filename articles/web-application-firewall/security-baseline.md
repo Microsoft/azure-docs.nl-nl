@@ -4,25 +4,26 @@ description: De beveiligings basislijn van de firewall van Azure Web Application
 author: msmbaldwin
 ms.service: web-application-firewall
 ms.topic: conceptual
-ms.date: 10/13/2020
+ms.date: 04/08/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: ae6b4f38772cd6c6755ece78fb5c47834a616204
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 54582456e5c55f7cbe513f8ab83fbc87ef6a3931
+ms.sourcegitcommit: c6a2d9a44a5a2c13abddab932d16c295a7207d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102211631"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107285408"
 ---
 # <a name="azure-security-baseline-for-azure-web-application-firewall"></a>Azure-beveiligings basislijn voor Azure Web Application firewall
 
-Deze beveiligings basislijn is van toepassing op de richt lijnen van [Azure Security Bench Mark versie 1,0](../security/benchmarks/overview-v1.md) naar Azure Web Application firewall. De Azure Security-benchmark biedt aanbevelingen voor hoe u uw cloudoplossingen in Azure kunt beveiligen. De inhoud wordt gegroepeerd op de **beveiligings controles** die zijn gedefinieerd door de Azure Security-Bench Mark en de bijbehorende richt lijnen die van toepassing zijn op de firewall van Azure Web Application. **Besturings elementen** die niet van toepassing zijn op de firewall van Azure Web Application, zijn uitgesloten. 
+Deze beveiligings basislijn is van toepassing op de richt lijnen van [Azure Security Bench Mark versie 1,0](../security/benchmarks/overview-v1.md) naar Azure Web Application firewall. De Azure Security-benchmark biedt aanbevelingen voor hoe u uw cloudoplossingen in Azure kunt beveiligen. De inhoud wordt gegroepeerd op de **beveiligings controles** die zijn gedefinieerd door de Azure Security-Bench Mark en de bijbehorende richt lijnen die van toepassing zijn op de firewall van Azure Web Application. 
 
-Zie voor meer informatie over hoe de firewall van Azure-webtoepassingen volledig is toegewezen aan de beveiligings benchmark van Azure [Web Application firewall](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
+> [!NOTE]
+> **Besturings elementen** die niet van toepassing zijn op de firewall van Azure Web Application of waarvoor de verantwoordelijkheid van micro soft is, zijn uitgesloten. Zie voor meer informatie over hoe de firewall van Azure-webtoepassingen volledig is toegewezen aan de beveiligings benchmark van Azure **[Web Application firewall](https://github.com/MicrosoftDocs/SecurityBenchmarks/raw/master/Azure%20Offer%20Security%20Baselines/1.1/azure-web-application-firewall-security-baseline-v1.1.xlsx)**.
 
 ## <a name="network-security"></a>Netwerkbeveiliging
 
-*Zie [Azure Security Bench Mark: Network Security](../security/benchmarks/security-control-network-security.md)(Engelstalig) voor meer informatie.*
+*Zie [Azure Security Benchmark: netwerkbeveiliging](../security/benchmarks/security-control-network-security.md) voor meer informatie.*
 
 ### <a name="13-protect-critical-web-applications"></a>1,3: essentiële webtoepassingen beveiligen
 
@@ -37,25 +38,29 @@ Volg de aanbevelingen op het niveau van Security Center voor alle bronnen die ni
 
 - [CRS-regel groepen en-regels voor Web Application firewall](ag/application-gateway-crs-rulegroups-rules.md) 
 
-- [WAF modi op Application Gateway](ag/ag-overview.md#waf-modes)
+- [WAF modi op Application Gateway](https://docs.microsoft.com/azure/web-application-firewall/ag/ag-overview#waf-modes)
 
-- [WAF modi aan de voor deur](afds/afds-overview.md#waf-modes)
-
-**Monitoring door Azure Security Center**: Ja
+- [WAF modi aan de voor deur](https://docs.microsoft.com/azure/web-application-firewall/afds/afds-overview#waf-modes)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="14-deny-communications-with-known-malicious-ip-addresses"></a>1,4: communicatie met bekende schadelijke IP-adressen weigeren
 
 **Richt lijnen**: gebruik aangepaste regels met de Azure Web Application firewall (WAF) om verkeer toe te staan of te blok keren. Zo kan al het verkeer dat afkomstig is van een bereik van IP-adressen, worden geblokkeerd. Configureer Azure WAF om uit te voeren in de modus voor preventie, waardoor indringingen en aanvallen die door de regels worden gedetecteerd, worden geblokkeerd. Een aanvaller ontvangt een uitzonde ring "403 niet-geautoriseerde toegang" en de verbinding is gesloten. In de preventiemodus worden dergelijke aanvallen vastgelegd in de WAF-logboeken.
 
-- [WAF modi op Application Gateway](ag/ag-overview.md#waf-modes)
+- [WAF modi op Application Gateway](https://docs.microsoft.com/azure/web-application-firewall/ag/ag-overview#waf-modes)
 
-- [WAF modi aan de voor deur](afds/afds-overview.md#waf-modes)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [WAF modi aan de voor deur](https://docs.microsoft.com/azure/web-application-firewall/afds/afds-overview#waf-modes)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/azure/governance/policy/samples/azure-security-benchmark) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/azure/security-center/security-center-recommendations). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/azure/security-center/azure-defender) -plan vereist voor de gerelateerde services.
+
+**Ingebouwde definities Azure Policy-micro soft. Network**:
+
+[!INCLUDE [Resource Policy for Microsoft.Network 1.4](../../includes/policy/standards/asb/rp-controls/microsoft.network-1-4.md)]
 
 ### <a name="17-manage-traffic-to-web-applications"></a>1,7: verkeer naar webtoepassingen beheren
 
@@ -65,15 +70,15 @@ Pas Azure WAF aan met regels en regel groepen om te voldoen aan de vereisten van
 
 Configureer de Azure-WAF om uit te voeren in preventie modus nadat het netwerk verkeer in de detectie modus gedurende een bepaalde periode is basis lijnen. De Azure-WAF blokkeert inbreuken en aanvallen die zijn gedetecteerd door de regels in de modus preventie. Een aanvaller ontvangt een uitzonde ring "403 niet-geautoriseerde toegang" en de verbinding is gesloten. In de preventiemodus worden dergelijke aanvallen vastgelegd in de WAF-logboeken.
 
-- [WAF modi op Application Gateway](ag/ag-overview.md#waf-modes)
+- [WAF modi op Application Gateway](https://docs.microsoft.com/azure/web-application-firewall/ag/ag-overview#waf-modes)
 
-- [WAF modi aan de voor deur](afds/afds-overview.md#waf-modes)
+- [WAF modi aan de voor deur](https://docs.microsoft.com/azure/web-application-firewall/afds/afds-overview#waf-modes)
 
-- [CRS-regel groepen en-regels voor Web Application firewall](ag/application-gateway-crs-rulegroups-rules.md?tabs=owasp31)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [CRS-regel groepen en-regels voor Web Application firewall](https://docs.microsoft.com/azure/web-application-firewall/ag/application-gateway-crs-rulegroups-rules?tabs=owasp31)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="18-minimize-complexity-and-administrative-overhead-of-network-security-rules"></a>1,8: de complexiteit en administratieve overhead van netwerk beveiligings regels minimaliseren
 
@@ -81,13 +86,13 @@ Configureer de Azure-WAF om uit te voeren in preventie modus nadat het netwerk v
 
 Regels en regel groepen Toep assen op Azure Web Application firewall-beleid (WAF) op basis van de toegepaste meta gegevens van het label.
 
-- [WAF-beleid voor Application Gateway](/cli/azure/network/application-gateway/waf-policy) 
+- [WAF-beleid voor Application Gateway](/cli/azure/network/application-gateway/waf-policy)
 
 - [WAF-beleid op de voor deur](/cli/azure/ext/front-door/network/front-door/waf-policy)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="110-document-traffic-configuration-rules"></a>1,10: configuratie regels voor het document verkeer
 
@@ -95,7 +100,7 @@ Regels en regel groepen Toep assen op Azure Web Application firewall-beleid (WAF
 
 Gebruik een van de ingebouwde Azure Policy definities die betrekking hebben op labelen, zoals ' tag vereisen en de waarde ', om ervoor te zorgen dat alle resources met tags worden gemaakt en u op de hoogte moet zijn van bestaande niet-gelabelde resources.
 
-Kies Azure PowerShell of Azure CLI om op basis van hun labels acties op resources te zoeken of uit te voeren.
+Kies Azure PowerShell of Azure CLI om op basis van hun labels acties op te zoeken of uit te voeren op resources.
 
 - [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
@@ -103,21 +108,21 @@ Kies Azure PowerShell of Azure CLI om op basis van hun labels acties op resource
 
 - [Een NSG maken met een beveiligings configuratie](../virtual-network/tutorial-filter-network-traffic.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1,11: gebruik automatische hulpprogram ma's om netwerk bron configuraties te bewaken en wijzigingen te detecteren
 
 **Hulp**: Azure-activiteiten logboek gebruiken om netwerk bron configuraties te bewaken en wijzigingen te detecteren voor netwerk instellingen en-bronnen die betrekking hebben op uw Azure Web Application firewall (WAF)-implementaties. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer wijzigingen in essentiële netwerk instellingen of bronnen plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](https://docs.microsoft.com/azure/azure-monitor/essentials/activity-log#view-the-activity-log)
 
 - [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="logging-and-monitoring"></a>Logboekregistratie en bewaking
 
@@ -127,9 +132,9 @@ Kies Azure PowerShell of Azure CLI om op basis van hun labels acties op resource
 
 **Richt lijnen**: Maak een netwerk regel voor Azure Web Application firewall (WAF) om toegang tot een NTP-server toe te staan met de juiste poort en protocol, zoals poort 123 via UDP.
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="22-configure-central-security-log-management"></a>2,2: Centraal beveiligings logboek beheer configureren
 
@@ -143,32 +148,32 @@ Azure Sentinel heeft een ingebouwde Azure WAF-werkmap, die een overzicht geeft v
 
 - [Gegevens verbinden van micro soft Web Application Firewall naar Azure Sentinel](../sentinel/connect-azure-waf.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="23-enable-audit-logging-for-azure-resources"></a>2,3: controle logboek registratie inschakelen voor Azure-resources
 
 **Hulp**: Schakel logboek registratie in op uw Azure Web Application firewall-bronnen (WAF) voor toegang tot controle-, beveiligings-en Diagnostische logboeken. Azure Web Application Firewall biedt gedetailleerde rapportage over alle gedetecteerde bedreigingen die beschikbaar worden gesteld in de geconfigureerde Diagnostische logboeken. Activiteiten logboeken, die automatisch beschikbaar zijn, omvatten gebeurtenis bron, datum, gebruiker, tijds tempel, bron adressen, doel adressen en andere nuttige elementen.
 
-- [Logboek registratie-overzicht](ag/ag-overview.md#logging)
+- [Logboek registratie-overzicht](https://docs.microsoft.com/azure/web-application-firewall/ag/ag-overview#logging)
 
 - [Overzicht van Azure Monitor-logboek query](../azure-monitor/logs/log-query-overview.md)
 
 - [Overzicht van Azure platform-logboeken](../azure-monitor/essentials/platform-logs-overview.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="25-configure-security-log-storage-retention"></a>2,5: Bewaar beveiliging van het beveiligings logboek configureren
 
 **Richt lijnen**: verzend de Azure Web Application firewall-Logboeken (WAF) naar een aangepast opslag account en definieer het Bewaar beleid. Gebruik Azure Monitor om de Bewaar periode van uw Log Analytics werk ruimte in te stellen op basis van de nalevings vereisten van uw organisatie.
-- [Bewaking configureren voor een opslag account](../storage/common/manage-storage-analytics-logs.md#configure-logging)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Bewaking configureren voor een opslag account](https://docs.microsoft.com/azure/storage/common/manage-storage-analytics-logs#configure-logging)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="26-monitor-and-review-logs"></a>2,6: Logboeken bewaken en controleren
 
@@ -178,27 +183,27 @@ Azure WAF-exemplaren zijn geïntegreerd met Security Center voor het verzenden v
 
 Azure Sentinel heeft een ingebouwde WAF-firewall, die een overzicht geeft van de beveiligings gebeurtenissen op de WAF. Dit zijn onder andere gebeurtenissen, overeenkomende en geblokkeerde regels, en alles wat u kunt vastleggen in de logboeken van de firewall.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/index.yml) 
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/platform/activity-log)
 
 - [Diagnostische instellingen inschakelen voor Azure-toepassing gateway](../application-gateway/application-gateway-diagnostics.md)
 
 - [Metrische gegevens en logboeken bewaken in azure front deur](../frontdoor/front-door-diagnostics.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="27-enable-alerts-for-anomalous-activities"></a>2,7: waarschuwingen inschakelen voor afwijkende activiteiten
 
 **Hulp**: Schakel Diagnostische instellingen voor Azure-activiteiten logboek in, evenals de diagnostische instellingen voor uw Azure-WAF en verzend de logboeken naar een log Analytics-werk ruimte. Query's uitvoeren in Log Analytics om termen te zoeken, trends te identificeren, patronen te analyseren en veel andere inzichten te bieden op basis van de verzamelde gegevens. Waarschuwingen maken voor afwijkende activiteiten op basis van metrische gegevens over WAF. Als er bijvoorbeeld een geblokkeerd aantal aanvragen van meer dan X, ' Y ' is.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](/azure/azure-monitor/essentials/diagnostic-settings-legacy)
 
 - [Waarschuwingen maken in azure](../azure-monitor/alerts/tutorial-response.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="28-centralize-anti-malware-logging"></a>2,8: registratie van anti-malware centraliseren
 
@@ -208,25 +213,25 @@ Azure WAF biedt gecentraliseerde beveiliging van uw webtoepassingen van veelvoor
 
 - [Azure WAF implementeren](ag/create-waf-policy-ag.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="identity-and-access-control"></a>Identiteits- en toegangsbeheer
 
-*Zie [Azure Security Bench Mark: identiteits-en toegangs beheer](../security/benchmarks/security-control-identity-access-control.md)voor meer informatie.*
+*Zie [Azure Security Bench Mark: Identity and Access Control](../security/benchmarks/security-control-identity-access-control.md)voor meer informatie.*
 
 ### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3,1: een inventaris van beheerders accounts onderhouden
 
 **Hulp**: Azure Active Directory (Azure AD) heeft ingebouwde rollen die query's kunnen uitvoeren en expliciet moeten worden toegewezen. Gebruik de Azure AD Power shell-module om ad hoc-query's uit te voeren om accounts te detecteren die lid zijn van beheer groepen.
 
-- [Een directory-rol verkrijgen in azure AD met Power shell](/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
+- [Een directory-rol verkrijgen in azure AD met Power shell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0&amp;preserve-view=true)
 
-- [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
-
-**Monitoring door Azure Security Center**: Ja
+- [Leden van een directory-rol in azure AD ophalen met Power shell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0&amp;preserve-view=true)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="33-use-dedicated-administrative-accounts"></a>3,3: speciale beheerders accounts gebruiken
 
@@ -235,37 +240,37 @@ Het is een goed idee om standaard procedures te maken voor het gebruik van speci
 
 - [Inzicht in Azure Security Center identiteit en toegang](../security-center/security-center-identity-access.md)
 
-- [Meer informatie over het maken van gebruikers met beheerders rechten in Azure Database for PostgreSQL](../postgresql/howto-create-users.md#the-server-admin-account)
+- [Meer informatie over het maken van gebruikers met beheerders rechten in Azure Database for PostgreSQL](https://docs.microsoft.com/azure/postgresql/howto-create-users#the-server-admin-account)
 
 - [Azure Policy gebruiken](../governance/policy/tutorials/create-and-manage.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3,5: multi-factor Authentication gebruiken voor alle op Azure Active Directory gebaseerde toegang
 
-**Hulp**: Schakel Azure Active Directory (Azure AD) multi-factor Authentication (MFA) in en volg de aanbevelingen voor identiteits-en toegangs beheer van Security Center.
+**Hulp**: Schakel Azure Active Directory (Azure AD) multi-factor Authentication in en volg de aanbevelingen voor identiteits-en toegangs beheer van Security Center.
 
-- [MFA inschakelen in Azure](../active-directory/authentication/howto-mfa-getstarted.md)
+- [Multi-factor Authentication inschakelen in azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
 - [Identiteit en toegang bewaken in Azure Security Center](../security-center/security-center-identity-access.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3,6: gebruik speciale machines (privileged Access workstations) voor alle beheer taken
 
-**Hulp**: gebruik paw (privileged Access Workstation) met multi-factor Authentication (MFA) die zijn geconfigureerd voor aanmelding bij en configureer Azure Web Application firewall (WAF) en gerelateerde bronnen. 
+**Hulp**: gebruik paw (privileged Access Workstation) met multi-factor Authentication die is geconfigureerd voor aanmelding bij en configureer Azure Web Application firewall (WAF) en gerelateerde bronnen.
 
-- [Meer informatie over privileged Access workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/) 
+- [Meer informatie over privileged Access workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
-- [MFA inschakelen in Azure](../active-directory/authentication/howto-mfa-getstarted.md)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Multi-factor Authentication inschakelen in azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="37-log-and-alert-on-suspicious-activities-from-administrative-accounts"></a>3,7: Logboeken en waarschuwingen voor verdachte activiteiten van beheerders accounts
 
@@ -275,58 +280,58 @@ Het is een goed idee om standaard procedures te maken voor het gebruik van speci
 
 - [Identiteits- en toegangsactiviteiten van gebruikers controleren in Azure Security Center](../security-center/security-center-identity-access.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="38-manage-azure-resources-from-only-approved-locations"></a>3,8: Azure-resources alleen beheren vanaf goedgekeurde locaties
 
-**Hulp**: de locatie voorwaarde van een beleid voor voorwaardelijke toegang configureren en uw benoemde locaties beheren. 
+**Hulp**: de locatie voorwaarde van een beleid voor voorwaardelijke toegang configureren en uw benoemde locaties beheren.
 
 Maak logische groeperingen van IP-adresbereiken of landen en regio's met benoemde locaties. Beperk de toegang tot uw gevoelige bronnen, zoals Azure Key Vault geheimen, tot uw geconfigureerde benoemde locaties.
 
-- [Wat is de voor waarde voor de locatie in Azure Active Directory voorwaardelijke toegang](../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Wat is de voor waarde voor de locatie in Azure Active Directory voorwaardelijke toegang (Azure AD)](../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="39-use-azure-active-directory"></a>3,9: Azure Active Directory gebruiken
 
 **Hulp**: gebruik Azure Active Directory (Azure AD) als centrale verificatie-en autorisatie systeem. Azure AD beveiligt gegevens door gebruik te maken van sterke code ring voor gegevens in rust en onderweg, met zouten, hashes en het veilig opslaan van gebruikers referenties.
-- [Een Azure AD-instantie maken en configureren](../active-directory/fundamentals/active-directory-access-create-new-tenant.md) 
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Een Azure AD-instantie maken en configureren](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="310-regularly-review-and-reconcile-user-access"></a>3,10: regel matig gebruikers toegang controleren en afstemmen
 
 **Hulp**: Azure Active Directory (Azure AD) biedt logboeken waarmee u verlopen accounts kunt detecteren. Gebruik beoordelingen van Azure Identity Access om groepslid maatschappen, toegang tot bedrijfs toepassingen en roltoewijzingen op efficiënte wijze te beheren. Controleer de gebruikers toegang op regel matige basis om ervoor te zorgen dat alleen actieve gebruikers de toegang blijven houden.
 
-- [Meer informatie over Azure AD-rapportage](../active-directory/reports-monitoring/index.yml)
+- [Meer informatie over Azure AD-rapportage](/azure/active-directory/reports-monitoring)
 
 - [Beoordelingen over Azure Identity Access gebruiken](../active-directory/governance/access-reviews-overview.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="311-monitor-attempts-to-access-deactivated-credentials"></a>3,11: controle pogingen om toegang te krijgen tot gedeactiveerde referenties
 
 **Hulp**: Integreer Azure Active Directory (Azure AD) aanmeldings activiteiten, controle en risico gebeurtenis logboek bronnen, met elk Siem-of bewakings programma zoals Azure Sentinel.
 
-Stroom lijn dit proces door Diagnostische instellingen te maken voor gebruikers accounts voor Azure Active Directory (Azure AD) en de audit logboeken en aanmeldings logboeken te verzenden naar een Log Analytics-werk ruimte. Gewenste waarschuwingen configureren in de Log Analytics-werk ruimte.
+Stroom lijn dit proces door Diagnostische instellingen voor Azure AD-gebruikers accounts te maken en de audit logboeken en aanmeldings logboeken te verzenden naar een Log Analytics-werk ruimte. Gewenste waarschuwingen configureren in de Log Analytics-werk ruimte.
 
-- [Azure-activiteitenlogboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Azure-activiteitenlogboeken integreren in Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
 
 **Verantwoordelijkheid**: Klant
 
+**Azure Security Center bewaking**: geen
+
 ### <a name="312-alert-on-account-sign-in-behavior-deviation"></a>3,12: waarschuwing voor de afwijking van het aanmeldings gedrag van het account
 
-**Hulp**: gebruik de functies voor risico-en identiteits beveiliging van Azure Active Directory (Azure AD) om automatische antwoorden te configureren op gedetecteerde verdachte acties met betrekking tot gebruikers identiteiten. Gegevens opnemen in azure Sentinel voor verder onderzoek.
+**Hulp**: gebruik de functies van Azure Active Directory (Azure AD) voor risico-en identiteits beveiliging om automatische antwoorden te configureren op gedetecteerde verdachte acties met betrekking tot gebruikers identiteiten. Gegevens opnemen in azure Sentinel voor verder onderzoek.
 
 - [Riskante Azure AD-aanmeldingen weergeven](../active-directory/identity-protection/overview-identity-protection.md)
 
@@ -334,28 +339,29 @@ Stroom lijn dit proces door Diagnostische instellingen te maken voor gebruikers 
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="data-protection"></a>Gegevensbeveiliging
 
-*Zie [Azure Security Bench Mark: Data Protection](../security/benchmarks/security-control-data-protection.md)voor meer informatie.*
+*Zie [Azure Security Benchmark: gegevensbescherming](../security/benchmarks/security-control-data-protection.md) voor meer informatie.*
 
 ### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4,1: een inventaris van gevoelige informatie onderhouden
 
 **Hulp**: Tags gebruiken bij het bijhouden van Azure Web Application firewall (WAF) en gerelateerde resources die gevoelige informatie opslaan of verwerken.
+
 - [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4,2: systemen isoleren die gevoelige informatie opslaan of verwerken
 
 **Richt lijnen**: isolatie implementeren met afzonderlijke abonnementen en beheer groepen voor afzonderlijke beveiligings domeinen, zoals omgevings type en gegevens gevoeligheids niveau, bijvoorbeeld ontwikkelings-, test-en productie omgevingen. 
 
-Toegang tot Azure-resources beheren met Azure op rollen gebaseerd toegangs beheer (Azure RBAC).
+Toegang tot Azure-resources beheren met Azure Active Directory (Azure AD) op rollen gebaseerd toegangs beheer (Azure RBAC).
 
 - [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
@@ -363,9 +369,9 @@ Toegang tot Azure-resources beheren met Azure op rollen gebaseerd toegangs behee
 
 - [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="44-encrypt-all-sensitive-information-in-transit"></a>4,4: alle gevoelige gegevens in de overdracht versleutelen
 
@@ -373,20 +379,21 @@ Toegang tot Azure-resources beheren met Azure op rollen gebaseerd toegangs behee
 
 Volg Security Center aanbevelingen voor het versleutelen van de rest en de versleuteling in transit, indien van toepassing.
 
-- [Meer informatie over versleuteling in transit met Azure](../security/fundamentals/encryption-overview.md#encryption-of-data-in-transit)
-
-**Monitoring door Azure Security Center**: Ja
+- [Meer informatie over versleuteling in transit met Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-overview#encryption-of-data-in-transit)
 
 **Verantwoordelijkheid**: Gedeeld
 
-### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4,6: Azure RBAC gebruiken om de toegang tot resources te beheren
+**Azure Security Center bewaking**: geen
 
-**Hulp**: toegang tot Azure-resources beheren met Azure op rollen gebaseerd toegangs beheer (Azure RBAC).
-- [Azure RBAC configureren](../role-based-access-control/role-assignments-portal.md)
+### <a name="46-use-azure-rbac-to-manage-access-to-resources"></a>4,6: Azure RBAC gebruiken om de toegang tot resources te beheren 
 
-**Azure Security Center-bewaking**: Niet van toepassing
+**Hulp**: beheer de toegang tot uw Azure-resources, zoals Web Application Firewall met Azure op rollen gebaseerd toegangs beheer (Azure RBAC).
+
+- [Azure RBAC configureren in azure](../role-based-access-control/role-assignments-portal.md)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="48-encrypt-sensitive-information-at-rest"></a>4,8: gevoelige informatie op rest versleutelen
 
@@ -394,11 +401,11 @@ Volg Security Center aanbevelingen voor het versleutelen van de rest en de versl
 
 - [Meer informatie over versleuteling van data-at-rest in Azure](../security/fundamentals/encryption-atrest.md)
 
-- [Door de klant beheerde versleutelings sleutels configureren](../storage/common/customer-managed-keys-configure-key-vault.md)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Door de klant beheerde versleutelings sleutels configureren](https://docs.microsoft.com/azure/storage/common/customer-managed-keys-configure-key-vault?tabs=portal)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4,9: wijzigingen in essentiële Azure-resources vastleggen en waarschuwen
 
@@ -406,35 +413,35 @@ Volg Security Center aanbevelingen voor het versleutelen van de rest en de versl
 
 De Azure-WAF, in preventie modus, blokkeert inbreuken en aanvallen die worden gedetecteerd door de regels. De aanvaller krijgt een uitzondering '403 onbevoegde toegang' en de verbinding wordt verbroken. In de preventiemodus worden dergelijke aanvallen vastgelegd in de WAF-logboeken.
 
-- [Overzicht van de integratie tussen Application Gateway en Azure Security Center](../security-center/security-center-partner-integration.md)
+- [Overzicht van de integratie tussen Application Gateway en Azure Security Center](https://docs.microsoft.com/azure/security-center/security-center-partner-integration#overview)
 
-- [WAF modi op Application Gateway](ag/ag-overview.md#waf-modes)
+- [WAF modi op Application Gateway](https://docs.microsoft.com/azure/web-application-firewall/ag/ag-overview#waf-modes)
 
-- [WAF modi aan de voor deur](afds/afds-overview.md#waf-modes)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [WAF modi aan de voor deur](https://docs.microsoft.com/azure/web-application-firewall/afds/afds-overview#waf-modes)
 
 **Verantwoordelijkheid**: Klant
 
-## <a name="inventory-and-asset-management"></a>Inventarisatie en asset-management
+**Azure Security Center bewaking**: geen
+
+## <a name="inventory-and-asset-management"></a>Inventarisatie en Asset Management
 
 *Zie [Azure Security Bench Mark: Inventory and Asset Management](../security/benchmarks/security-control-inventory-asset-management.md)voor meer informatie.*
 
 ### <a name="61-use-automated-asset-discovery-solution"></a>6,1: automatische Asset-detectie oplossing gebruiken
 
-**Hulp**: Azure resource Graph gebruiken om alle resources te doorzoeken of te detecteren, zoals compute, opslag, netwerk, poorten en protocollen, enzovoort binnen uw abonnementen. 
+**Hulp**: Azure resource Graph gebruiken om alle resources te doorzoeken of te detecteren, zoals compute, opslag, netwerk, poorten en protocollen, enzovoort binnen uw abonnementen.
 
 Zorg ervoor dat de juiste (Lees-) machtigingen voor uw Tenant en alle Azure-abonnementen en de resources in uw abonnementen inventariseren. Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek, is het raadzaam om Azure Resource Manager resources te maken en te gebruiken.
 
 - [Query's maken met Azure resource Graph](../governance/resource-graph/first-query-portal.md)
 
-- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+- [Uw Azure-abonnementen weer geven](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-4.8.0&amp;preserve-view=true)
 
 - [Meer informatie over Azure RBAC](../role-based-access-control/overview.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="62-maintain-asset-metadata"></a>6,2: meta gegevens van activa onderhouden
 
@@ -442,9 +449,9 @@ Zorg ervoor dat de juiste (Lees-) machtigingen voor uw Tenant en alle Azure-abon
 
 - [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="63-delete-unauthorized-azure-resources"></a>6,3: niet-geautoriseerde Azure-resources verwijderen
 
@@ -456,9 +463,9 @@ Zorg ervoor dat de juiste (Lees-) machtigingen voor uw Tenant en alle Azure-abon
 
 - [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="64-define-and-maintain-inventory-of-approved-azure-resources"></a>6,4: de inventaris van goedgekeurde Azure-resources definiëren en onderhouden
 
@@ -470,9 +477,9 @@ Gebruik Azure Policy om beperkingen toe te voegen voor het type resources dat ka
 
 - [Query's maken met Azure resource Graph](../governance/resource-graph/first-query-portal.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6,5: monitor voor niet-goedgekeurde Azure-resources
 
@@ -483,17 +490,17 @@ Gebruik Azure resource Graph voor het opvragen of detecteren van Azure Web Appli
 
 - [Query's maken met Azure Graph](../governance/resource-graph/first-query-portal.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="67-remove-unapproved-azure-resources-and-software-applications"></a>6,7: niet-goedgekeurde Azure-resources en software toepassingen verwijderen
 
 **Richt lijnen**: niet-goedgekeurde Azure WAF-resources bewaken en verwijderen met Azure Policy om de implementatie van Azure WAF of een bepaald type WAF te weigeren, bijvoorbeeld Azure WAF v1 VS v2.
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="69-use-only-approved-azure-services"></a>6,9: alleen goedgekeurde Azure-Services gebruiken
 
@@ -501,11 +508,11 @@ Gebruik Azure resource Graph voor het opvragen of detecteren van Azure Web Appli
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Een specifiek resource type weigeren met Azure Policy](../governance/policy/samples/index.md)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Een specifiek resource type weigeren met Azure Policy](/azure/governance/policy/samples/built-in-policies#general)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="611-limit-users-ability-to-interact-with-azure-resource-manager"></a>6,11: de mogelijkheid van gebruikers om te communiceren met Azure Resource Manager beperken
 
@@ -513,9 +520,9 @@ Gebruik Azure resource Graph voor het opvragen of detecteren van Azure Web Appli
 
 - [Voorwaardelijke toegang configureren om de toegang tot Azure-bronnen beheer te blok keren](../role-based-access-control/conditional-access-azure-management.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6,13: toepassingen met een hoog risico fysiek of logisch scheiden
 
@@ -527,9 +534,9 @@ Gebruik Azure resource Graph voor het opvragen of detecteren van Azure Web Appli
 
 - [Handleiding voor beslissingen over abonnementen](/azure/cloud-adoption-framework/decision-guides/subscriptions/)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="secure-configuration"></a>Veilige configuratie
 
@@ -538,15 +545,16 @@ Gebruik Azure resource Graph voor het opvragen of detecteren van Azure Web Appli
 ### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7,1: veilige configuraties instellen voor alle Azure-resources
 
 **Hulp**: Definieer en implementeer standaard beveiligings configuraties voor netwerk instellingen met betrekking tot uw WAF-implementaties (Azure Web Application firewall).
+
 Gebruik Azure Policy aliassen in de naam ruimte ' micro soft. netwerk ' om aangepaste beleids regels te maken voor het controleren of afdwingen van de netwerk configuratie van uw Azure-toepassing gateways, virtuele netwerken, netwerk beveiligings groepen en het gebruik van ingebouwde beleids definities.
 
-- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+- [Beschik bare Azure Policy aliassen weer geven](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-4.8.0&amp;preserve-view=true)
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="73-maintain-secure-azure-resource-configurations"></a>7,3: Beveilig Azure-resource configuraties onderhouden
 
@@ -560,23 +568,23 @@ Gebruik Azure Resource Manager sjablonen om de beveiligings configuratie van uw 
 
 - [Overzicht van Azure Resource Manager sjablonen](../azure-resource-manager/templates/overview.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="75-securely-store-configuration-of-azure-resources"></a>7,5: de configuratie van Azure-resources veilig opslaan
 
-**Hulp**: Azure DevOps gebruiken om uw code veilig op te slaan en te beheren, zoals aangepaste Azure-beleids regels en Azure Resource Manager sjablonen. 
+**Hulp**: Azure DevOps gebruiken om uw code veilig op te slaan en te beheren, zoals aangepaste Azure-beleids regels en Azure Resource Manager sjablonen.
 
-Machtigingen verlenen of weigeren voor specifieke gebruikers, ingebouwde beveiligings groepen of groepen die zijn gedefinieerd in Azure Active Directory (Azure AD), indien geïntegreerd met Azure DevOps of Active Directory, indien geïntegreerd met Team Foundation Server (TFS).
+Machtigingen verlenen of weigeren voor specifieke gebruikers, ingebouwde beveiligings groepen of groepen die zijn gedefinieerd in Azure Active Directory (Azure AD), indien geïntegreerd met Azure DevOps of Azure AD, indien geïntegreerd met Team Foundation Server (TFS).
 
-- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops)
+- [Code opslaan in azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops&amp;preserve-view=true)
 
 - [Over machtigingen en groepen in azure DevOps](/azure/devops/organizations/security/about-permissions)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="77-deploy-configuration-management-tools-for-azure-resources"></a>7,7: hulpprogram ma's voor configuratie beheer voor Azure-resources implementeren
 
@@ -584,11 +592,11 @@ Machtigingen verlenen of weigeren voor specifieke gebruikers, ingebouwde beveili
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Documentatie voor Azure Policy](../governance/policy/index.yml)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Documentatie voor Azure Policy](/azure/governance/policy)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="79-implement-automated-configuration-monitoring-for-azure-resources"></a>7,9: geautomatiseerde configuratie bewaking voor Azure-resources implementeren
 
@@ -598,11 +606,11 @@ Gebruik Azure Policy [audit], [deny] en [implementeren indien niet aanwezig] eff
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Documentatie voor Azure Policy](../governance/policy/index.yml)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Documentatie voor Azure Policy](/azure/governance/policy)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="711-manage-azure-secrets-securely"></a>7,11: Azure-geheimen veilig beheren
 
@@ -612,18 +620,18 @@ Azure-toepassing gateway ondersteunt de integratie met Key Vault voor server cer
 
 - [SSL-beëindiging met Key Vault certificaten configureren met behulp van Azure PowerShell](../application-gateway/configure-keyvault-ps.md)
 
-**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="713-eliminate-unintended-credential-exposure"></a>7,13: onbedoelde referentie blootstelling elimineren
 
 **Hulp** bij het implementeren van referentie scanner om referenties in code te identificeren, waardoor het verplaatsen van gedetecteerde referenties naar veiliger locaties, zoals Azure Key Vault, wordt aangeraden.
 - [Referentie scanner instellen](https://secdevtools.azurewebsites.net/helpcredscan.html)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="data-recovery"></a>Gegevensherstel
 
@@ -633,15 +641,15 @@ Azure-toepassing gateway ondersteunt de integratie met Key Vault voor server cer
 
 **Hulp**: Zorg ervoor dat de functie voor voorlopig verwijderen is ingeschakeld voor Azure Key Vault. Met zacht verwijderen kunt u verwijderde sleutel kluizen en kluis objecten zoals sleutels, geheimen en certificaten herstellen.
 
-- [De tijdelijke verwijdering van Azure Key Vault gebruiken](../key-vault/general/key-vault-recovery.md)
-
-**Monitoring door Azure Security Center**: Ja
+- [De tijdelijke verwijdering van Azure Key Vault gebruiken](https://docs.microsoft.com/azure/key-vault/general/key-vault-recovery?tabs=azure-powershell&amp;preserve-view=true)
 
 **Verantwoordelijkheid**: Klant
 
+**Azure Security Center bewaking**: geen
+
 ## <a name="incident-response"></a>Reageren op incidenten
 
-*Zie [Azure Security Bench Mark: Incident Response](../security/benchmarks/security-control-incident-response.md)(Engelstalig) voor meer informatie.*
+*Zie [Azure Security Benchmark: respons op incidenten](../security/benchmarks/security-control-incident-response.md) voor meer informatie.*
 
 ### <a name="101-create-an-incident-response-guide"></a>10,1: een hand leiding voor reactie op incidenten maken
 
@@ -653,36 +661,37 @@ Azure-toepassing gateway ondersteunt de integratie met Key Vault voor server cer
 
 - [De verwerkings gids voor het computer beveiligings incident van het NIST gebruiken om u te helpen bij het maken van uw eigen reactie plan voor incidenten](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10,2: een beoordelings procedure voor incidenten en prioriteits procedures maken
 
-**Hulp**: Security Center wijst aan elke waarschuwing een Ernst toe om te helpen bepalen welke waarschuwingen het eerst moeten worden onderzocht. De ernst is gebaseerd op de manier waarop vertrouwen Security Center is in de zoek actie of het analyse programma dat wordt gebruikt om de waarschuwing te geven, evenals het betrouwbaarheids niveau dat er schadelijke bedoelingen zijn achter de activiteit die tot de waarschuwing heeft geleid.
+**Hulp**: Security Center wijst aan elke waarschuwing een Ernst toe om te helpen bepalen welke waarschuwingen het eerst moeten worden onderzocht. De ernst is gebaseerd op de manier waarop vertrouwen Security Center zich in de zoek actie bevindt of de metriek die wordt gebruikt om de waarschuwing te geven, evenals het betrouwbaarheids niveau waarvan er sprake is van schadelijke opzet achter de activiteit die tot de waarschuwing heeft geleid.
+
 Markeer abonnementen duidelijk (bijvoorbeeld productie, niet-productie) en maak een naamgevings systeem om Azure-resources duidelijk te identificeren en te categoriseren.
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="103-test-security-response-procedures"></a>10,3: procedures voor beveiligings antwoorden testen
 
 **Richt lijnen**: oefent oefeningen uit om de respons mogelijkheden van uw systeem op een gewone uitgebracht te testen. Stel vast waar zich zwakke plekken en hiaten bevinden, en wijzig zo nodig het plan.
 - [Raadpleeg de publicatie handleiding van het NIST om Program Ma's te testen, te trainen en uit te oefenen voor IT-plannen en-mogelijkheden](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10,4: contact gegevens van het beveiligings incident opgeven en waarschuwings meldingen configureren voor beveiligings incidenten
 
 **Hulp**: contact gegevens van beveiligings incidenten worden door micro soft gebruikt om contact met u op te nemen als het micro soft Security Response Center (MSRC) detecteert dat de gegevens van de klant zijn geopend door een onrecht matige of niet-gemachtigde partij. Bekijk incidenten na het feit om te controleren of de problemen zijn opgelost.
 - [De Azure Security Center Security-contact persoon instellen](../security-center/security-center-provide-security-contact-details.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10,5: beveiligings waarschuwingen opnemen in uw reactie systeem van uw incident
 
@@ -692,18 +701,18 @@ Markeer abonnementen duidelijk (bijvoorbeeld productie, niet-productie) en maak 
 
 - [Waarschuwingen streamen naar Azure Sentinel](../sentinel/connect-azure-security-center.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="106-automate-the-response-to-security-alerts"></a>10,6: de reactie op beveiligings waarschuwingen automatiseren
 
 **Hulp**: gebruik de functie werk stroom automatisering in Security Center om automatisch reacties te activeren via ' Logic apps ' in beveiligings waarschuwingen en aanbevelingen.
 - [Werk stroom automatisering en Logic Apps configureren](../security-center/workflow-automation.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Penetratietests en Red Team-oefeningen
 
@@ -717,11 +726,11 @@ Markeer abonnementen duidelijk (bijvoorbeeld productie, niet-productie) en maak 
 
 - [Microsoft Cloud Red Teaming](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie de [Azure Security-Bench Mark](../security/benchmarks/overview.md)
-- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)
+- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
+- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)

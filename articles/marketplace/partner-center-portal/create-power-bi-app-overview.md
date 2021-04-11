@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: navits09
 ms.author: navits
 ms.date: 04/02/2020
-ms.openlocfilehash: b02c5bbf2e6accbea9c7a33dc26c4e89e46bb697
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 13c659592b7e0b45d0d58519e3620babb8cb3c6a
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97679145"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107564"
 ---
 # <a name="power-bi-app-creation-overview"></a>Overzicht van het maken van Power BI-apps
 
@@ -72,7 +72,7 @@ Nadat de app is gemaakt en getest in Power BI, slaat u het webadres voor de inst
 
 De zakelijke vereisten zijn onder andere procedurele, contractuele en juridische verplichtingen. U moet het volgende doen:
 
-- U bent een geregistreerde commerciële Marketplace-Uitgever. Als u niet bent geregistreerd, volgt u de stappen in [een commercieel Marketplace-account maken in Partner Center](create-account.md).
+- U bent een geregistreerde commerciële Marketplace-Uitgever. Als u niet bent geregistreerd, volgt u de stappen in [een commercieel Marketplace-account maken in Partner Center](../create-account.md).
 - Geef inhoud op die voldoet aan de criteria voor uw aanbieding die worden vermeld op AppSource. Zie [een app om weer te geven op AppSource voor meer informatie. Hier volgt een beschrijving van](https://appsource.microsoft.com/blogs/have-an-app-to-list-on-appsource-here-s-how).
 - Ga akkoord met en volg de [privacyverklaring van micro soft](https://privacy.microsoft.com/privacystatement).
 

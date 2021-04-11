@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 11/6/2020
-ms.openlocfilehash: efabb3de69e96ec1a8955b2691af20a36fbabfe4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e3342b38f782b718cefd63295ef4d4d26b525058
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100595936"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107259044"
 ---
 # <a name="slow-query-logs-in-azure-database-for-mysql"></a>Logboekregistratie voor trage query's in Azure Database for MySQL
 In Azure Database for MySQL is het langzame query logboek beschikbaar voor gebruikers. Toegang tot het transactie logboek wordt niet ondersteund. Het logboek met trage query's kan worden gebruikt om prestatie knelpunten voor het oplossen van problemen te identificeren.
@@ -45,7 +45,7 @@ Voor lokale server opslag kunt u langzame query logboeken weer geven en download
 Met Azure Monitor Diagnostische logboeken kunt u langzame query logboeken door geven aan Azure Monitor Logboeken (Log Analytics), Azure Storage of Event Hubs. Zie [hieronder](concepts-server-logs.md#diagnostic-logs) voor meer informatie.
 
 ## <a name="local-server-storage-log-retention"></a>Bewaar periode van lokaal server archief
-Wanneer u zich registreert voor de lokale opslag van de server, zijn Logboeken Maxi maal zeven dagen beschikbaar vanaf het moment waarop ze zijn gemaakt. Als de totale grootte van de beschik bare logboeken groter is dan 7 GB, worden de oudste bestanden verwijderd totdat er ruimte beschikbaar is.
+Wanneer u zich registreert voor de lokale opslag van de server, zijn Logboeken Maxi maal zeven dagen beschikbaar vanaf het moment waarop ze zijn gemaakt. Als de totale grootte van de beschik bare logboeken groter is dan 7 GB, worden de oudste bestanden verwijderd totdat er ruimte beschikbaar is. De opslag limiet van 7 GB voor de server Logboeken is gratis beschikbaar en kan niet worden verlengd. 
 
 Logboeken worden elke 24 uur of 7 GB gedraaid, afhankelijk van wat het eerste komt.
 

@@ -6,10 +6,10 @@
   items:
     - name: Wat is nieuw?
       href: release-notes.md
-    - name: Architectuur van oplossing zonder agent
+    - name: Wat is architectuur zonder agents
       displayName: 'deployment, where to deploy'
       href: architecture.md
-    - name: Architectuur van oplossingen op basis van agent
+    - name: Wat is een oplossings architectuur op basis van een agent
       href: architecture-agent-based.md
 - name: Snelstartgidsen
   expanded: true
@@ -121,20 +121,31 @@
               href: how-to-install-software.md
         - name: Uw sensoren voorbereiden
           items:
-            - name: Sensors onboarden
-              displayName: 'onboard, cloud, register, activate, offboard, subscription, subscriptions'
+            - name: Sens oren beheren
+              displayName: 'onboard, cloud, register, activate, offboard, subscription, subscriptions, offboarding'
               href: how-to-manage-sensors-on-the-cloud.md
             - name: Uw sensor activeren en instellen
               displayName: 'deployment, onboard, register, activation, SSL, TLS, certificate, cloud connected, sign in, login, setup, learning mode, initial'
               href: how-to-activate-and-set-up-your-sensor.md
         - name: Uw on-premises beheerconsole voorbereiden
           items:
+            - name: Abonnementen beheren
+              displayName: 'onboard, offboard, subscription, billing, pricing, payment'
+              href: how-to-manage-subscriptions.md
             - name: Uw on-premises beheerconsole activeren en instellen
               displayName: 'deployment, activate, certificate, sign in, SSL, TLS, login, setup, initial, committed activation file'
               href: how-to-activate-and-set-up-your-on-premises-management-console.md
             - name: Hoge beschikbaarheid instellen
               displayName: 'primary, secondary, failover, failback fail, recovery'
               href: how-to-set-up-high-availability.md
+        - name: Uw sensoren voorbereiden
+          items:
+            - name: Sensors onboarden
+              displayName: 'onboard, cloud, register, activate, offboard, subscription, subscriptions'
+              href: how-to-manage-sensors-on-the-cloud.md
+            - name: Uw sensor activeren en instellen
+              displayName: 'deployment, onboard, register, activation, SSL, TLS, certificate, cloud connected, sign in, login, setup, learning mode, initial'
+              href: how-to-activate-and-set-up-your-sensor.md
         - name: Gebruikers en gebruikerstoegang beheren
           items:
             - name: Gebruikers maken en beheren

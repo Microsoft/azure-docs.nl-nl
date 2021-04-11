@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: sample
-ms.date: 03/09/2021
+ms.date: 03/29/2021
 ms.author: aahi
-ms.openlocfilehash: e9d8e7b514dca7d4930ad33bf08d4ceb07fb860d
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 7cd2b0a6b943ceb32420ef119a7fc5eddefa2e19
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104599121"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106276991"
 ---
 # <a name="how-to-sentiment-analysis-and-opinion-mining"></a>Procedure: Sentimentanalyse en meninganalyse
 
-De functie Sentimentanalyse van Text Analytics-API biedt u twee manieren om positieve en negatieve sentiment te detecteren. Nadat u een aanvraag voor Sentimentanalyse verzendt, retourneert de API sentimentlabels (zoals 'negatief', 'neutraal' en 'positief') en betrouwbaarheidsscores op zins- en documentniveau. U kunt ook opinie Mining-aanvragen verzenden met behulp van het Sentimentanalyse-eind punt, dat gedetailleerde informatie bevat over de adviezen met betrekking tot woorden (zoals de kenmerken van producten of Services) in de tekst. 
+De functie Sentimentanalyse van Text Analytics-API biedt u twee manieren om positieve en negatieve sentiment te detecteren. Nadat u een aanvraag voor Sentimentanalyse verzendt, retourneert de API sentimentlabels (zoals 'negatief', 'neutraal' en 'positief') en betrouwbaarheidsscores op zins- en documentniveau. U kunt ook opinie Mining-aanvragen verzenden met behulp van het Sentimentanalyse-eind punt, dat gedetailleerde informatie bevat over de adviezen met betrekking tot woorden (zoals de kenmerken van producten of Services) in de tekst.
 
 De AI-modellen die door de API worden gebruikt, worden door de service verschaft. U hoeft alleen maar inhoud voor analyse te verzenden.
 
@@ -151,7 +151,7 @@ Uitvoer wordt onmiddellijk geretourneerd. U kunt de resultaten streamen naar een
 
 Sentimentanalyse v3.1 kan respons-objecten retourneren voor zowel Sentimentanalyse als Meninganalyse.
   
-Sentimentanalyse retourneert een sentimentlabel en een betrouwbaarheidsscore voor het hele document, en elke zin daarin. Scores die dichter bij 1 liggen, geven een hogere betrouwbaarheid in de classificatie van het label aan. Lagere scores geven een lagere betrouwbaarheid aan. Een document kan meerdere zinnen bevatten en het totaal van alle betrouwbaarheidsscores binnen elk document of zin is 1. evaluaties 
+Sentimentanalyse retourneert een sentimentlabel en een betrouwbaarheidsscore voor het hele document, en elke zin daarin. Scores die dichter bij 1 liggen, geven een hogere betrouwbaarheid in de classificatie van het label aan. Lagere scores geven een lagere betrouwbaarheid aan. Een document kan meerdere zinnen bevatten en het totaal van alle betrouwbaarheidsscores binnen elk document of zin is 1.
 
 Met opinie Mining vindt u doelen (naam woorden of woorden) in de tekst en de bijbehorende beoordeling (bijvoegings naam). In het onderstaande antwoord heeft de zin dat *het restaurant een fantastische levens middelen heeft en onze wacht tijd* twee doelen heeft: *levens middelen* en *wacht* woorden. De eigenschap van elk doel `relations` bevat een `ref` waarde met de URI-verwijzing naar de bijbehorende `documents` , `sentences` -en- `assessments` objecten.
 

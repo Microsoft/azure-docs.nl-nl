@@ -3,25 +3,35 @@
 - name: Overzicht
   expanded: true
   items:
-    - name: Wat is Personalizer?
+    - name: Overzicht van persoonlijke instellingen
       href: what-is-personalizer.md
+    - name: Prijzen
+      href: 'https://go.microsoft.com/fwlink/?linkid=2092154'
       displayName: 'loop, context, feature, action, rank, reward, developer, use case'
-    - name: Nieuwe functies
+    - name: Nieuw
       href: whats-new.md
       displayName: 'release notes, service updates, videos'
-- name: Snelstartgidsen
+- name: Snelstartgids voor personaler
+  href: ./quickstart-personalizer-sdk.md
+- name: Voorbeelden
+  href: 'https://github.com/Azure-Samples/cognitive-services-personalizer-samples'
+- name: Verantwoordelijk gebruik van AI
   items:
-    - name: SDK gebruiken
-      href: ./quickstart-personalizer-sdk.md
-- name: Zelfstudies
+    - name: Ethiek & verantwoordelijk gebruik
+      href: ethics-responsible-use.md
+- name: Instructiegidsen
   items:
-    - name: Web-app gebruiken
-      href: tutorial-use-personalizer-web-app.md
-    - name: Chatbot gebruiken
-      href: tutorial-use-personalizer-chat-bot.md
-    - name: Azure Notebook gebruiken
-      href: tutorial-use-azure-notebook-generate-loop-data.md
-      displayName: 'jupyter, notebook, python, cell, graph, chart, aggregate, model update frequency'
+    - name: Een Personalizer-resource maken
+      href: how-to-create-resource.md
+    - name: Personalizer configureren
+      href: how-to-settings.md
+      displayName: 'azure, portal, settings, evaluation, offline, policy, export, model, configure'
+    - name: De leerlingmodus gebruiken
+      href: how-to-learning-behavior.md
+    - name: Model- en leerinstellingen beheren
+      href: how-to-manage-model.md
+    - name: Analyseren met een offline evaluatie
+      href: how-to-offline-evaluation.md
 - name: Concepten
   items:
     - name: Hoe Personalizer werkt
@@ -32,10 +42,8 @@
       displayName: 'checklist, considerations, effectiveness, recommendation engine'
     - name: Terminologie
       href: terminology.md
-    - name: Ethiek & verantwoordelijk gebruik
-      href: ethics-responsible-use.md
       displayName: 'best practice, design'
-    - name: Fundamentele concepten
+    - name: Basis beginselen van personaler
       items:
         - name: Actie en context
           href: concepts-features.md
@@ -55,71 +63,61 @@
           displayName: 'RL, contextual bandits, Vowpal Wabbit'
         - name: Verkennen
           href: concepts-exploration.md
-    - name: Analyse
-      items:
-        - name: Offline-evaluatie
-          href: concepts-offline-evaluation.md
-          displayName: 'learning policy, Counterfactual, features'
-        - name: Functie-evaluatie
-          href: concept-feature-evaluation.md
+    - name: Offline-evaluatie
+      href: concepts-offline-evaluation.md
+      displayName: 'learning policy, Counterfactual, features'
+    - name: Functie-evaluatie
+      href: concept-feature-evaluation.md
     - name: Schaalbaarheid en prestaties
       href: concepts-scalability-performance.md
-- name: Instructiegidsen
+- name: Zelfstudies
   items:
-    - name: Een Personalizer-resource maken
-      href: how-to-create-resource.md
-    - name: Personalizer configureren
-      href: how-to-settings.md
-      displayName: 'azure, portal, settings, evaluation, offline, policy, export, model, configure'
-    - name: De leerlingmodus gebruiken
-      href: how-to-learning-behavior.md
-    - name: Model- en leerinstellingen beheren
-      href: how-to-manage-model.md
-    - name: Analyseren met een offline evaluatie
-      href: how-to-offline-evaluation.md
-- name: Naslaginformatie
+    - name: Web-app gebruiken
+      href: tutorial-use-personalizer-web-app.md
+    - name: Chatbot gebruiken
+      href: tutorial-use-personalizer-chat-bot.md
+    - name: Azure Notebook gebruiken
+      href: tutorial-use-azure-notebook-generate-loop-data.md
+      displayName: 'jupyter, notebook, python, cell, graph, chart, aggregate, model update frequency'
+- name: Referentie
   items:
-    - name: Voorbeelden
-      href: 'https://go.microsoft.com/fwlink/?linkid=2092083'
-    - name: Naslaginformatie over REST-API
+    - name: Personaler REST API
       href: 'https://go.microsoft.com/fwlink/?linkid=2092082'
-    - name: SDK's
+    - name: .NET
       items:
-        - name: .NET
-          items:
-            - name: Naslaginformatie
-              href: /dotnet/api/overview/azure/cognitiveservices/client/personalizer
-            - name: NuGet-pakket
-              href: 'https://go.microsoft.com/fwlink/?linkid=2092272'
-        - name: Aan de slag
-          items:
-            - name: SDK
-              href: 'https://github.com/Azure/azure-sdk-for-go/tree/master/services/preview'
-        - name: Node.js
-          items:
-            - name: Naslaginformatie
-              href: /javascript/api/@azure/cognitiveservices-personalizer/
-            - name: NPM
-              href: 'https://www.npmjs.com/package/@azure/cognitiveservices-personalizer/v/1.0.0'
-        - name: Python
-          items:
-            - name: Naslaginformatie
-              href: /python/api/overview/azure/cognitiveservices/personalizer
-            - name: Pypi-pakket
-              href: 'https://pypi.org/project/azure-cognitiveservices-personalizer/'
+        - name: Naslaginformatie
+          href: /dotnet/api/overview/azure/cognitiveservices/client/personalizer
+        - name: NuGet-pakket
+          href: 'https://go.microsoft.com/fwlink/?linkid=2092272'
+    - name: Aan de slag
+      items:
+        - name: Referentie
+          href: 'https://github.com/Azure/azure-sdk-for-go/tree/master/services/preview'
+    - name: Node.js
+      items:
+        - name: Naslaginformatie
+          href: /javascript/api/@azure/cognitiveservices-personalizer/
+        - name: NPM-pakket
+          href: 'https://www.npmjs.com/package/@azure/cognitiveservices-personalizer/v/1.0.0'
+    - name: Python
+      items:
+        - name: Naslaginformatie
+          href: /python/api/overview/azure/cognitiveservices/personalizer
+        - name: Pypi-pakket
+          href: 'https://pypi.org/project/azure-cognitiveservices-personalizer/'
 - name: Resources
   items:
     - name: Opties voor ondersteuning en hulp
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/personalizer/context/context
     - name: Problemen oplossen
       href: troubleshooting.md
-    - name: Regionale beschikbaarheid
+    - name: Modules leren
+      href: 'https://docs.microsoft.com/learn/browse/?terms=personalizer'
+    - name: Ondersteuning voor regio
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
     - name: Naleving
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Versleuteling
       href: encrypt-data-at-rest.md
-    - name: Azure-roadmap
+    - name: Azure-updates
       href: 'https://go.microsoft.com/fwlink/?linkid=2092153'
-    - name: Prijzen
-      href: 'https://go.microsoft.com/fwlink/?linkid=2092154'

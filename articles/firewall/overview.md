@@ -6,14 +6,14 @@ ms.service: firewall
 services: firewall
 ms.topic: overview
 ms.custom: mvc, contperf-fy21q1
-ms.date: 03/10/2021
+ms.date: 04/05/2021
 ms.author: victorh
-ms.openlocfilehash: 6855eb50519afacdf971ffcb8b70aa289b7cfe26
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: bb89b6acbc76a4020ee721e87272b154bab6d0a4
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106066327"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106385170"
 ---
 # <a name="what-is-azure-firewall"></a>Wat is Azure Firewall?
 
@@ -54,7 +54,6 @@ Azure Firewall heeft de volgende bekende problemen:
 
 |Probleem  |Beschrijving  |Oplossing  |
 |---------|---------|---------|
-|Als u een regel van het IP-adres naar de IP-groep of vice versa bijwerkt met behulp van de portal, worden beide typen opgeslagen, maar er wordt slechts één item weer gegeven in de portal.|Dit probleem treedt op met klassieke regels.<br><br>Wanneer u de portal gebruikt voor het bijwerken van een NAT-regel bron type van IP-adres naar IP-groep of andersom, worden beide typen opgeslagen in de back-end, maar wordt alleen het zojuist bijgewerkte type weer gegeven.<br><br>Hetzelfde probleem treedt op wanneer u een netwerk-of toepassings regel doel type bijwerkt van het IP-adres naar het type IP-groep of andersom.|Een portal oplossing is gericht op maart 2021.<br><br>In de tussen tijd gebruikt u Azure PowerShell, Azure CLI of API om een regel te wijzigen van IP-adres in IP-groep of andersom.|
 |Netwerkfilterregels voor niet-TCP/UDP-protocollen (bijvoorbeeld ICMP) werken niet voor internetverkeer|Netwerkfilterregels voor niet-TCP/UDP-protocollen werken niet met SNAT naar uw openbare IP-adres. Niet-TCP/UDP-protocollen worden ondersteund tussen spoke-subnetten en VNets.|Azure Firewall maakt gebruik van de standaardversie van Standard Load Balancer, [die momenteel geen ondersteuning biedt voor SNAT voor IP-protocollen](../load-balancer/load-balancer-overview.md). We onderzoeken mogelijkheden om dit scenario in een toekomstige release te ondersteunen.|
 |Ontbrekende PowerShell- en CLI-ondersteuning voor ICMP|Azure PowerShell en CLI bieden geen ondersteuning voor ICMP als een geldig protocol in netwerkregels.|Het is nog steeds mogelijk om ICMP als een protocol te gebruiken via de portal en de REST-API. Er wordt aan gewerkt om ICMP binnenkort toe te voegen in PowerShell en CLI.|
 |FQDN-tags vereisen instelling van een protocol: poort|Voor toepassingsregels met FQDN-tags is definitie van poort: protocol vereist.|U kunt **https** gebruiken als de waarde voor poort:protocol. Er wordt aan gewerkt om dit veld optioneel te maken wanneer FQDN-tags worden gebruikt.|
@@ -78,6 +77,7 @@ Azure Firewall heeft de volgende bekende problemen:
 |Starten/stoppen werkt niet met een firewall die is geconfigureerd in de modus geforceerde tunnel|Starten/stoppen werkt niet met een Azure-firewall die is geconfigureerd in de modus geforceerde tunnel. Eem poging om Azure Firewall te starten met geconfigureerde geforceerde tunneling resulteert in de volgende fout:<br><br>*Set-AzFirewall: De IP-configuratie van AzureFirewall FW-xx-beheer kan niet worden toegevoegd aan een bestaande firewall. Implementeer opnieuw met een beheer-IP-configuratie als u ondersteuning voor geforceerde tunneling wilt gebruiken.<br>Statuscode: 400<br>ReasonPhrase: Onjuiste aanvraag*|Wordt onderzocht.<br><br>Als tijdelijke oplossing kunt u de bestaande firewall verwijderen en een nieuwe maken met dezelfde parameters.|
 |Kan geen firewallbeleidtags toevoegen via de portal|Azure Firewall-beleid heeft een beperking voor patchondersteuning, zodat u geen tags kunt toevoegen via Azure Portal. De volgende fout wordt gegenereerd: *Kan de tags voor de resource niet opslaan*.|Er wordt een oplossing onderzocht. U kunt ook de Azure PowerShell-cmdlet gebruiken `Set-AzFirewallPolicy` om labels bij te werken.|
 |IPv6 wordt nog niet ondersteund|Als u een IPv6-adres toevoegt aan een regel, mislukt de firewall.|Gebruik alleen iPv4-adressen. Ondersteuning voor IPv6 wordt onderzocht.|
+|Het bijwerken van meerdere IP-groepen mislukt vanwege een conflict fout.|Wanneer u twee of meer IPGroups bijwerkt die zijn gekoppeld aan dezelfde firewall, wordt een van de bronnen een mislukte status.|Dit is een bekend probleem/beperking. <br><br>Wanneer u een IPGroup bijwerkt, wordt er een update geactiveerd op alle firewalls waaraan de IPGroup is gekoppeld. Als een update voor een tweede IPGroup wordt gestart terwijl de firewall nog steeds de update *status heeft* , mislukt de IPGroup-update.<br><br>Om het probleem te voor komen, moet de IPGroups die zijn gekoppeld aan dezelfde firewall, een voor een worden bijgewerkt. Voldoende tijd tussen updates toestaan zodat de firewall de *Update* status kan ophalen.| 
 
 
 ## <a name="next-steps"></a>Volgende stappen

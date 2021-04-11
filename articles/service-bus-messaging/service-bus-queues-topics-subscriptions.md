@@ -2,13 +2,13 @@
 title: Azure Service Bus berichten-wacht rijen, onderwerpen en abonnementen
 description: Dit artikel bevat een overzicht van Azure Service Bus Messa ging-entiteiten (wacht rijen, onderwerpen en abonnementen).
 ms.topic: conceptual
-ms.date: 02/16/2021
-ms.openlocfilehash: b8fb68509ad920fc6911290377f49b89ec610b58
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/08/2021
+ms.openlocfilehash: ccd91d5091dbbba072cf222e5a73c3db1d48c321
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101096322"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107209821"
 ---
 # <a name="service-bus-queues-topics-and-subscriptions"></a>Service Bus-wachtrijen, -onderwerpen en -abonnementen
 Azure Service Bus biedt ondersteuning voor een set Cloud, op berichten gebaseerde middleware-technologieën, waaronder betrouw bare Message Queuing en duurzame berichten over publiceren/abonneren. Deze Brokered Messaging mogelijkheden kunnen worden beschouwd als losgekoppelde berichten functies die ondersteuning bieden voor publiceren-abonneren, tijdelijke loskoppelingen en taakverdelings scenario's met behulp van de werk belasting van Service Bus berichten. Ontkoppelde communicatie heeft veel voor delen. Zo kunnen clients en servers zo nodig verbinding maken en hun bewerkingen op asynchrone wijze uitvoeren.
@@ -53,7 +53,7 @@ In veel gevallen moeten berichten met specifieke kenmerken op verschillende mani
 
 Zie voor een volledig werk voorbeeld het TopicSubscriptionWithRuleOperationsSample-voor [beeld](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/GettingStarted/Microsoft.Azure.ServiceBus/TopicSubscriptionWithRuleOperationsSample) op github.
 
-Zie de documentatie voor de klassen [SqlFilter](/dotnet/api/microsoft.azure.servicebus.sqlfilter) en [SqlRuleAction](/dotnet/api/microsoft.azure.servicebus.sqlruleaction) voor meer informatie over mogelijke filter waarden.
+Zie voor meer informatie over filters [onderwerp filters en acties](topic-filters.md).
 
 ## <a name="java-message-service-jms-20-entities"></a>JMS-entiteiten (Java Message Service) 2,0
 De volgende entiteiten zijn toegankelijk via de JMS-API (Java Message Service) 2,0.

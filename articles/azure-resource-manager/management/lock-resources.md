@@ -2,14 +2,14 @@
 title: Resources vergren delen om wijzigingen te voor komen
 description: Voor komen dat gebruikers Azure-resources bijwerken of verwijderen door een vergren deling toe te passen voor alle gebruikers en rollen.
 ms.topic: conceptual
-ms.date: 03/09/2021
+ms.date: 04/07/2021
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 6d989f2077618ce80382b38acc651553cb331d5a
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 1cc96a855c2bfe79bbf5876f0476c016d36ca9a4
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105932757"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107030063"
 ---
 # <a name="lock-resources-to-prevent-unexpected-changes"></a>Resources vergrendelen om onverwachte wijzigingen te voorkomen
 
@@ -34,11 +34,13 @@ Het Toep assen van vergren delingen kan leiden tot onverwachte resultaten omdat 
 
 * Een alleen-lezen vergrendeling op een **opslag account** voor komt dat gebruikers de account sleutels kunnen weer geven. De bewerking [lijst sleutels](/rest/api/storagerp/storageaccounts/listkeys) Azure Storage wordt verwerkt via een post-aanvraag om de toegang tot de account sleutels te beveiligen, die volledige toegang biedt tot gegevens in het opslag account. Wanneer een alleen-lezen vergrendeling is geconfigureerd voor een opslag account, moeten gebruikers die niet beschikken over de account sleutels Azure AD-referenties gebruiken om toegang te krijgen tot BLOB-of wachtrij gegevens. Een alleen-lezen vergrendeling voor komt ook dat de toewijzing van Azure RBAC-rollen die binnen het bereik van het opslag account of een gegevens container (BLOB-container of wachtrij) vallen.
 
-* Een niet-verwijderings vergrendeling op een **opslag account** voor komt niet dat gegevens in dat account worden verwijderd of gewijzigd. Met dit type vergren deling wordt het opslag account alleen beveiligd tegen verwijderen en worden er geen blob-, wachtrij-, tabel-of bestands gegevens in dat opslag account beschermd. 
+* Een niet-verwijderings vergrendeling van een **opslag account** voor komt niet dat gegevens in dat account worden verwijderd of gewijzigd. Met dit type vergren deling wordt het opslag account alleen beveiligd tegen verwijderen en worden er geen blob-, wachtrij-, tabel-of bestands gegevens in dat opslag account beschermd. 
 
-* Een alleen-lezen vergrendeling op een **opslag account** voor komt niet dat gegevens in dat account worden verwijderd of gewijzigd. Met dit type vergren deling wordt het opslag account alleen beveiligd tegen verwijderen of gewijzigd en worden er geen blob-, wachtrij-, tabel-of bestands gegevens in het opslag account beschermd. 
+* Een alleen-lezen vergrendeling op een **opslag account** voor komt niet dat gegevens in dat account worden verwijderd of gewijzigd. Met dit type vergren deling wordt het opslag account alleen beveiligd tegen verwijderen of gewijzigd en worden er geen blob-, wachtrij-, tabel-of bestands gegevens in dat opslag account beschermd. 
 
 * Met een alleen-lezen vergrendeling voor een **app service** resource kan Visual Studio Server Explorer bestanden voor de resource niet weer geven omdat die interactie schrijf toegang vereist.
+
+* Als u een alleen-lezen vergrendeling wilt inschakelen voor een **resource groep** die een **app service plan** bevat, kunt u [het plan niet omhoog of omlaag schalen](../../app-service/manage-scale-up.md).
 
 * Een alleen-lezen vergrendeling voor een **resource groep** die een **virtuele machine** bevat, voor komt dat alle gebruikers de virtuele machine starten of opnieuw starten. Deze bewerkingen vereisen een POST-aanvraag.
 
@@ -324,7 +326,7 @@ az lock delete --ids $lockid
 
 ### <a name="rest-api"></a>REST-API
 
-U kunt geïmplementeerde resources vergren delen met de [rest API voor beheer vergrendelingen](/rest/api/resources/managementlocks/managementlocks). Met de REST API kunt u vergren delingen maken en verwijderen, en informatie over bestaande vergren delingen ophalen.
+U kunt geïmplementeerde resources vergren delen met de [rest API voor beheer vergrendelingen](/rest/api/resources/managementlocks). Met de REST API kunt u vergren delingen maken en verwijderen, en informatie over bestaande vergren delingen ophalen.
 
 Voer de volgende handelingen uit om een vergren deling te maken:
 

@@ -4,12 +4,12 @@ description: Ziet u geen gegevens in Azure-toepassing Insights? Probeer het hier
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 05/21/2020
-ms.openlocfilehash: 40fbe4d08676d7cc56478d3740424fccaa7addc0
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: fbf53f6d4a928215d25874f4e405147c73cbf81f
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103562192"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106056569"
 ---
 # <a name="troubleshooting-no-data---application-insights-for-netnet-core"></a>Problemen met geen gegevens Application Insights voor .NET/.NET core oplossen
 
@@ -282,7 +282,9 @@ Meer informatie
 
 ## <a name="collect-logs-with-dotnet-trace"></a>Logboeken verzamelen met DotNet-Trace
 
-Een alternatieve methode voor het verzamelen van Logboeken voor het oplossen van problemen die bijzonder handig kunnen zijn voor Linux-omgevingen is [`dotnet-trace`](/dotnet/core/diagnostics/dotnet-trace)
+Klanten kunnen ook gebruikmaken van een platform voor .NET-kern functionaliteit voor meerdere platforms, [`dotnet-trace`](/dotnet/core/diagnostics/dotnet-trace) voor het verzamelen van logboeken die meer hulp kunnen bieden bij het oplossen van problemen. Dit kan bijzonder nuttig zijn voor Linux-omgevingen.
+
+Na de installatie van [`dotnet-trace`](/dotnet/core/diagnostics/dotnet-trace) voert u de onderstaande opdracht uit in bash.
 
 ```bash
 dotnet-trace collect --process-id <PID> --providers Microsoft-ApplicationInsights-Core,Microsoft-ApplicationInsights-Data,Microsoft-ApplicationInsights-WindowsServer-TelemetryChannel,Microsoft-ApplicationInsights-Extensibility-AppMapCorrelation-Dependency,Microsoft-ApplicationInsights-Extensibility-AppMapCorrelation-Web,Microsoft-ApplicationInsights-Extensibility-DependencyCollector,Microsoft-ApplicationInsights-Extensibility-HostingStartup,Microsoft-ApplicationInsights-Extensibility-PerformanceCollector,Microsoft-ApplicationInsights-Extensibility-EventCounterCollector,Microsoft-ApplicationInsights-Extensibility-PerformanceCollector-QuickPulse,Microsoft-ApplicationInsights-Extensibility-Web,Microsoft-ApplicationInsights-Extensibility-WindowsServer,Microsoft-ApplicationInsights-WindowsServer-Core,Microsoft-ApplicationInsights-LoggerProvider,Microsoft-ApplicationInsights-Extensibility-EventSourceListener,Microsoft-ApplicationInsights-AspNetCore
@@ -294,4 +296,3 @@ Meer informatie over het verwijderen van Application Insights in Visual Studio d
 
 ## <a name="still-not-working"></a>Nog steeds niet werken...
 * [Micro soft Q&een vraag pagina voor Application Insights](/answers/topics/azure-monitor.html)
-

@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/10/2021
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 10ff568ede601c57369f8c942ed61cb7a39ba703
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f2d965ec17fb605362c1e8cd8ef781a6bd2029d0
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103465705"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106067381"
 ---
 # <a name="use-media-services-to-deliver-drm-licenses-or-aes-keys"></a>Media Services gebruiken om DRM-licenties of AES-sleutels te leveren
 
@@ -54,7 +54,7 @@ In het volgende diagram ziet u de belangrijkste stappen die u moet nemen om te g
     ```
  
 ## <a name="net-code-example"></a>Voor beeld van .NET-code
-In het volgende code voorbeeld ziet u hoe u een algemene inhouds sleutel maakt en hoe u de Url's van PlayReady-of Widevine-licenties kunt verkrijgen. Als u uw on-premises server wilt configureren, hebt u een inhouds sleutel, de sleutel-ID en de URL voor het verkrijgen van licenties nodig. Nadat u de on-premises server hebt geconfigureerd, kunt u streamen vanuit uw eigen streaming-server. Omdat de versleutelde stroom naar een Media Services licentie server verwijst, vraagt uw speler een licentie van Media Services. Als u token verificatie kiest, valideert de Media Services licentie server het token dat u via HTTPS hebt verzonden. Als het token geldig is, levert de licentie server de licentie terug naar uw speler. In het volgende code voorbeeld wordt alleen beschreven hoe u een gemeen schappelijke inhouds sleutel maakt en hoe u de Url's van PlayReady-of Widevine-licenties kunt verkrijgen. Als u AES-128-sleutels wilt leveren, moet u een sleutel voor enveloppen maken en een URL voor sleutel aanschaf ophalen. Zie [AES-128 Dynamic Encryption and key delivery-service gebruiken](media-services-protect-with-aes128.md)voor meer informatie.
+In het volgende code voorbeeld ziet u hoe u een algemene inhouds sleutel maakt en hoe u de Url's van PlayReady-of Widevine-licenties kunt verkrijgen. Als u uw on-premises server wilt configureren, hebt u een inhouds sleutel, de sleutel-ID en de URL voor het verkrijgen van licenties nodig. Nadat u de on-premises server hebt geconfigureerd, kunt u streamen vanuit uw eigen streaming-server. Omdat de versleutelde stroom naar een Media Services licentie server verwijst, vraagt uw speler een licentie van Media Services. Als u token verificatie kiest, valideert de Media Services licentie server het token dat u via HTTPS hebt verzonden. Als het token geldig is, levert de licentie server de licentie terug naar uw speler. In het volgende code voorbeeld wordt alleen beschreven hoe u een gemeen schappelijke inhouds sleutel maakt en hoe u de Url's van PlayReady-of Widevine-licenties kunt verkrijgen. Als u AES-128-sleutels wilt leveren, moet u een sleutel voor enveloppen maken en een URL voor sleutel aanschaf ophalen. Zie [AES-128 Dynamic Encryption and key delivery-service gebruiken](media-services-playready-license-template-overview.md)voor meer informatie.
 
 ```csharp
 using System;
@@ -357,4 +357,4 @@ namespace DeliverDRMLicenses
 
 ## <a name="see-also"></a>Zie ook
 * [Dynamische algemene versleuteling met PlayReady en/of Widevine gebruiken](media-services-protect-with-playready-widevine.md)
-* [Gebruik AES-128 dynamische versleuteling en de key delivery service](media-services-protect-with-aes128.md)
+* [Gebruik AES-128 dynamische versleuteling en de key delivery service](media-services-playready-license-template-overview.md)

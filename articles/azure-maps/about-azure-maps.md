@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc, references_regions
-ms.openlocfilehash: fc70e6370f53848e9f3672611a3dfda685bcb9fe
-ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
+ms.openlocfilehash: 55955f883425651749809da951832484f098aeaf
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107011773"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107256120"
 ---
 # <a name="what-is-azure-maps"></a>Wat is Azure Maps?
 
@@ -169,7 +169,7 @@ De Traffic-service is een suite van webservices die ontwikkelaars kunnen gebruik
 
 Zie de [documentatie van de verkeersservice](/rest/api/maps/traffic) voor meer informatie.
 
-### <a name="weather-services-preview"></a>Weather-services (preview) 
+### <a name="weather-services"></a>Weather-services
 
 Weather-services bieden API’s die ontwikkelaars kunnen gebruiken om weergegevens voor een bepaalde locatie op te halen. De informatie bevat details, zoals de datum en tijd van observatie, een korte beschrijving van de weersomstandigheden, het weerpictogram, de vlagmarkeringen, de temperatuur en de windsnelheid. Er worden ook extra gegevens weergegeven, zoals de RealFeel™-temperatuur en UV-index.
 

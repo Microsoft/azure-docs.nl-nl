@@ -7,12 +7,12 @@ ms.service: attestation
 ms.topic: reference
 ms.date: 07/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 39f628845bdc9d54b48b1c8037f4a506a9d5c00a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9b15a336e97cad1fb03a63ec34f563a4453755ff
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "89236645"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106504189"
 ---
 # <a name="frequently-asked-questions-for-microsoft-azure-attestation"></a>Veelgestelde vragen over Microsoft Azure-Attestation
 
@@ -31,7 +31,7 @@ Azure PCK-cache service:
 
 ## <a name="is-sgx-attestation-supported-by-azure-attestation-in-non-azure-environments"></a>Wordt SGX-Attestation ondersteund door Azure Attestation in niet-Azure-omgevingen
 
-Azure Attestation is afhankelijk van de beveiligings basislijn die wordt vermeld door de Azure PCK-cache service om de TEEs te valideren. De Azure PCK-cache service is momenteel alleen bedoeld voor het ondersteunen van alleen Azure-knoop punten die vertrouwelijk worden computing. 
+Nee. Azure Attestation is afhankelijk van de beveiligings basislijn die wordt vermeld door de Azure PCK-cache service om de TEEs te valideren. De Azure PCK-cache service is momenteel alleen bedoeld voor het ondersteunen van alleen Azure-knoop punten die vertrouwelijk worden computing. 
 
 ## <a name="what-validations-does-azure-attestation-perform-for-attesting-sgx-enclaves"></a>Welke validaties worden uitgevoerd met Azure Attestation voor de attesting van SGX enclaves
 

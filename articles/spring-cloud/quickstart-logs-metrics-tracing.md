@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 08/04/2020
 ms.custom: devx-track-java, devx-track-azurecli
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 75c50e6342a00ef37215d9e961503dd7ffb0d205
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 4cc7c91e8bbc959c15e18503a9f715d84d1472e1
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104879288"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107256171"
 ---
 # <a name="quickstart-monitoring-azure-spring-cloud-apps-with-logs-metrics-and-tracing"></a>Quickstart: Azure Spring Cloud-apps bewaken met logboeken, metrische gegevens en tracering
 
@@ -72,6 +72,8 @@ Executing ObjectResult, writing value of type 'System.Collections.Generic.KeyVal
 1. Selecteer vervolgens `Run`. De logboeken worden weergeven. Zie [Azure Log Analytics-documenten](../azure-monitor/logs/get-started-queries.md) voor meer informatie over het schrijven van query's.
 
    [ ![Logs Analytics-query - Steeltoe](media/spring-cloud-quickstart-logs-metrics-tracing/logs-query-steeltoe.png) ](media/spring-cloud-quickstart-logs-metrics-tracing/logs-query-steeltoe.png#lightbox)
+
+1. Zie [Azure monitor-logboek query's](/azure/data-explorer/kusto/query/)voor meer informatie over de query taal die wordt gebruikt in log Analytics. Als u wilt zoeken naar alle Log Analytics logboeken van een gecentraliseerde client, raadpleegt u [Azure Data Explorer](https://docs.microsoft.com/azure/data-explorer/query-monitor-data).
 
 ## <a name="metrics"></a>Metrische gegevens
 
@@ -168,6 +170,8 @@ De logboeken ophalen met behulp van Azure-toolkit voor IntelliJ:
 1. Vervolgens worden gefilterde logboeken weergegeven. Zie [Azure Log Analytics-documenten](../azure-monitor/logs/get-started-queries.md) voor meer informatie over het schrijven van query's.
 
    [ ![Logs Analytics-query](media/spring-cloud-quickstart-logs-metrics-tracing/logs-query.png) ](media/spring-cloud-quickstart-logs-metrics-tracing/logs-query.png#lightbox)
+
+1. Zie [Azure monitor-logboek query's](/azure/data-explorer/kusto/query/)voor meer informatie over de query taal die wordt gebruikt in log Analytics. Als u wilt zoeken naar alle Log Analytics logboeken van een gecentraliseerde client, raadpleegt u [Azure Data Explorer](https://docs.microsoft.com/azure/data-explorer/query-monitor-data).
 
 ## <a name="metrics"></a>Metrische gegevens
 

@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 12/09/2020
-ms.openlocfilehash: a7171d656ec9f839aea4ae73763ec6ebd20c2bb3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/06/2021
+ms.openlocfilehash: 92db62622c37241a76d7847931df030162de8f00
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98209828"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106504223"
 ---
 # <a name="how-to-work-with-search-results-in-azure-cognitive-search"></a>Werken met zoek resultaten in azure Cognitive Search
 
@@ -95,7 +95,7 @@ Voor Zoek opdrachten in volledige tekst worden de resultaten automatisch gerangs
 
 Zoek scores geven algemeen inzicht in de relevantie aan, die overeenkomen met de sterkte van de overeenkomst ten opzichte van andere documenten in dezelfde resultatenset. Scores zijn echter niet altijd consistent met de ene query naar de volgende, dus wanneer u met query's werkt, kunnen er kleine verschillen optreden in de manier waarop Zoek documenten worden besteld. Er zijn verschillende uitleg waarom dit kan gebeuren.
 
-| Oorzaak | Description |
+| Oorzaak | Beschrijving |
 |-----------|-------------|
 | Gegevens volatiliteit | De inhoud van de index is afhankelijk van het toevoegen, wijzigen of verwijderen van documenten. De term frequenties worden gewijzigd wanneer index updates na verloop van tijd worden verwerkt, waardoor de zoek scores van overeenkomende documenten worden beïnvloed. |
 | Meerdere replica's | Voor services die gebruikmaken van meerdere replica's, worden query's op elke replica parallel verleend. De index statistieken die worden gebruikt voor het berekenen van een zoek Score worden berekend per replica, met de resultaten samengevoegd en geordend in het query-antwoord. Replica's zijn voornamelijk Spie gels van elkaar, maar statistieken kunnen verschillen als gevolg van kleine verschillen in de status. Eén replica kan bijvoorbeeld verwijderde documenten hebben die bijdragen aan hun statistieken, die uit andere replica's zijn samengevoegd. Normaal gesp roken zijn verschillen in statistieken per replica duidelijker in kleinere indexen. |
@@ -137,12 +137,16 @@ Services die zijn gemaakt na 15 juli 2020 bieden een andere markerings ervaring.
 
 Met het nieuwe gedrag:
 
-* Alleen zinsdelen die overeenkomen met de volledige woordgroepen query worden geretourneerd. De query "Super Bowl" retourneert hooglichten als volgt:
++ Alleen zinsdelen die overeenkomen met de volledige woordgroepen query worden geretourneerd. Met de query woord "Super Bowl" worden de volgende hooglichten als volgt geretourneerd:
 
-    ```html
-    '<em>super bowl</em> is super awesome with a bowl of chips'
-    ```
-  Houd er rekening mee dat de term *Bowlen van chips* geen markeringen heeft omdat deze niet overeenkomt met de volledige woord groep.
+  ```json
+  "@search.highlights": {
+      "sentence": [
+          "The <em>super</em> <em>bowl</em> is super awesome with a bowl of chips"
+     ]
+  ```
+
+  Andere exemplaren van *Super* en *Bowlen* hebben geen markeringen omdat deze instanties niet overeenkomen met de volledige woord groep.
 
 Wanneer u client code schrijft waarmee treffer markeringen worden geïmplementeerd, moet u rekening houden met deze wijziging. Houd er rekening mee dat dit geen invloed heeft op u tenzij u een volledig nieuwe zoek service maakt.
 

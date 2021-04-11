@@ -1,40 +1,43 @@
 ---
-title: Azure-beveiligings basislijn voor Azure Database for PostgreSQL-grootschalige (Citus)
-description: De beveiligings basislijn van de Azure Database for PostgreSQL-grootschalige (Citus) biedt procedure richtlijnen en resources voor het implementeren van de beveiligings aanbevelingen die zijn opgegeven in de Azure Security-Bench Mark.
+title: Azure-beveiligings basislijn voor Azure Database for PostgreSQL-grootschalige
+description: De Azure Database for PostgreSQL-grootschalige beveiligings basislijn biedt procedure richtlijnen en resources voor het implementeren van de beveiligings aanbevelingen die zijn opgegeven in de Azure Security-benchmark test.
 author: msmbaldwin
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 08/04/2020
+ms.date: 04/08/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: c373bb172be01594bb5642a626cad24838b66ea2
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 256b061e11ac77af9d229e3bd8f96b033e925f6d
+ms.sourcegitcommit: c6a2d9a44a5a2c13abddab932d16c295a7207d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102607982"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107284507"
 ---
-# <a name="azure-security-baseline-for-azure-database-for-postgresql---hyperscale-citus"></a>Azure-beveiligings basislijn voor Azure Database for PostgreSQL-grootschalige (Citus)
+# <a name="azure-security-baseline-for-azure-database-for-postgresql---hyperscale"></a>Azure-beveiligings basislijn voor Azure Database for PostgreSQL-grootschalige
 
-De Azure Security Baseline voor Azure Database for PostgreSQL-grootschalige (Citus) bevat aanbevelingen die u helpen de beveiliging van uw implementatie te verbeteren.
+Deze beveiligings basislijn is van toepassing op de richt lijnen van [Azure Security Bench Mark versie 1.0](../security/benchmarks/overview-v1.md) naar Azure database for PostgreSQL-grootschalige. De Azure Security-benchmark biedt aanbevelingen voor hoe u uw cloudoplossingen in Azure kunt beveiligen. De inhoud wordt gegroepeerd op basis van de **beveiligings controles** die zijn gedefinieerd door de Azure Security-benchmark en de bijbehorende richt lijnen die van toepassing zijn op Azure database for PostgreSQL-grootschalige. 
 
-De basis lijn voor deze service wordt opgehaald uit de [Azure Security Bench Mark-versie 1,0](../security/benchmarks/overview.md), die aanbevelingen biedt over hoe u uw cloud oplossingen kunt beveiligen in azure met onze richt lijnen voor best practices.
-
-Zie [overzicht van Azure Security-basis lijnen](../security/benchmarks/security-baselines-overview.md)voor meer informatie.
+> [!NOTE]
+> **Besturings elementen** die niet van toepassing zijn op Azure database for PostgreSQL-grootschalige of waarvoor de verantwoordelijkheid van micro soft is, zijn uitgesloten. Als u wilt zien hoe Azure Database for PostgreSQL-grootschalige volledig is toegewezen aan de beveiligings benchmark van Azure, raadpleegt u het **[volledige Azure database for PostgreSQL-grootschalige](https://github.com/MicrosoftDocs/SecurityBenchmarks/raw/master/Azure%20Offer%20Security%20Baselines/1.1/azure-database-for-postgresql-hyperscale-security-baseline-v1.1.xlsx)**.
 
 ## <a name="network-security"></a>Netwerkbeveiliging
 
-*Zie [beveiligings beheer: netwerk beveiliging](../security/benchmarks/security-control-network-security.md)voor meer informatie.*
+*Zie [Azure Security Benchmark: netwerkbeveiliging](../security/benchmarks/security-control-network-security.md) voor meer informatie.*
 
 ### <a name="11-protect-azure-resources-within-virtual-networks"></a>1,1: Azure-resources in virtuele netwerken beveiligen
 
 **Richt lijnen**: Azure database for PostgreSQL Server firewall voor komt dat u toegang hebt tot uw grootschalige (Citus)-coördinator knooppunt totdat u opgeeft welke computers zijn gemachtigd. De firewall verleent toegang tot de server op basis van het oorspronkelijke IP-adres van elke aanvraag. U configureert de firewall door firewallregels te maken die bereiken opgeven van acceptabele IP-adressen. U kunt Firewall regels maken op server niveau.
 
-- [Firewall regels configureren in Azure Database for PostgreSQL-grootschalige (Citus)](./concepts-hyperscale-firewall-rules.md)
-
-**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
+- [Firewall regels configureren in Azure Database for PostgreSQL-grootschalige (Citus)](concepts-hyperscale-firewall-rules.md)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/azure/governance/policy/samples/azure-security-benchmark) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/azure/security-center/security-center-recommendations). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/azure/security-center/azure-defender) -plan vereist voor de gerelateerde services.
+
+**Ingebouwde definities Azure Policy-micro soft. DBforPostgreSQL**:
+
+[!INCLUDE [Resource Policy for Microsoft.DBforPostgreSQL 1.1](../../includes/policy/standards/asb/rp-controls/microsoft.dbforpostgresql-1-1.md)]
 
 ### <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1,9: standaard beveiligings configuraties voor netwerk apparaten onderhouden
 
@@ -42,17 +45,17 @@ Zie [overzicht van Azure Security-basis lijnen](../security/benchmarks/security-
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Voor beelden Azure Policy voor netwerken](../governance/policy/samples/built-in-policies.md#network)
+- [Voor beelden Azure Policy voor netwerken](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#network)
 
 - [Een Azure Blueprint maken](../governance/blueprints/create-blueprint-portal.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="logging-and-monitoring"></a>Logboekregistratie en bewaking
 
-*Zie voor meer informatie [beveiligings beheer: logboek registratie en controle](../security/benchmarks/security-control-logging-monitoring.md).*
+*Zie [Azure Security Bench Mark: Logging and monitoring](../security/benchmarks/security-control-logging-monitoring.md)(Engelstalig) voor meer informatie.*
 
 ### <a name="22-configure-central-security-log-management"></a>2,2: Centraal beveiligings logboek beheer configureren
 
@@ -62,13 +65,13 @@ Neem ook opname logboeken via Azure Monitor op voor het verzamelen van beveiligi
 
 - [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
-- [Metrische gegevens in grootschalige (Citus)](./concepts-hyperscale-monitoring.md)
+- [Metrische gegevens in grootschalige (Citus)](concepts-hyperscale-monitoring.md)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="23-enable-audit-logging-for-azure-resources"></a>2,3: controle logboek registratie inschakelen voor Azure-resources
 
@@ -78,27 +81,27 @@ Schakel de diagnostische instellingen voor het Azure-activiteiten logboek in voo
 
 Neem ook opname logboeken via Azure Monitor op voor het verzamelen van beveiligings gegevens die zijn gegenereerd door grootschalige (Citus). In de Azure Monitor gebruikt u Log Analytics werk ruimte (n) om een query uit te voeren en een analyse te verrichten en opslag accounts te gebruiken voor lange termijn/archiverings opslag. U kunt ook gegevens naar Azure Sentinel of een beveiligings incident en gebeurtenis beheer van derden (SIEM) inschakelen en op de trein zetten. 
 
-- [Metrische gegevens in grootschalige (Citus)](./concepts-hyperscale-monitoring.md)
+- [Metrische gegevens in grootschalige (Citus)](concepts-hyperscale-monitoring.md)
 
 - [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="25-configure-security-log-storage-retention"></a>2,5: Bewaar beveiliging van het beveiligings logboek configureren
 
 **Richt lijnen**: in azure monitor voor de log Analytics-werk ruimte die wordt gebruikt om uw grootschalige (Citus)-logboeken te bewaren, stelt u de Bewaar periode in volgens de nalevings voorschriften van uw organisatie. Gebruik Azure Storage-accounts voor lange termijn/archiverings opslag.
 
-- [Para meters voor het bewaren van Logboeken instellen voor Log Analytics-werk ruimten](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen voor Log Analytics-werk ruimten](https://docs.microsoft.com/azure/azure-monitor/logs/manage-cost-storage#change-the-data-retention-period)
 
-- [Bron logboeken opslaan in een Azure Storage-account](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Bron logboeken opslaan in een Azure Storage-account](https://docs.microsoft.com/azure/azure-monitor/essentials/resource-logs#send-to-azure-storage)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="26-monitor-and-review-logs"></a>2,6: Logboeken bewaken en controleren
 
@@ -110,9 +113,9 @@ Neem ook opname logboeken via Azure Monitor op voor het verzamelen van beveiligi
 
 - [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="27-enable-alerts-for-anomalous-activities"></a>2,7: waarschuwingen inschakelen voor afwijkende activiteiten
 
@@ -120,19 +123,19 @@ Neem ook opname logboeken via Azure Monitor op voor het verzamelen van beveiligi
 
 Onboarding van uw Log Analytics-werk ruimte naar Azure-Sentinel, omdat dit een via-oplossing (Security Orchestration Automated Response) biedt. Hiermee kunnen playbooks (geautomatiseerde oplossingen) worden gemaakt en gebruikt om beveiligings problemen op te lossen.
 
-- [Metrische gegevens in grootschalige (Citus)](./howto-hyperscale-alert-on-metric.md)
+- [Metrische gegevens in grootschalige (Citus)](howto-hyperscale-alert-on-metric.md)
 
 - [Diagnostische instellingen configureren voor het Azure-activiteiten logboek](../azure-monitor/essentials/activity-log.md)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="identity-and-access-control"></a>Identiteits- en toegangsbeheer
 
-*Zie [beveiligings beheer: identiteits-en toegangs beheer](../security/benchmarks/security-control-identity-access-control.md)voor meer informatie.*
+*Zie [Azure Security Bench Mark: Identity and Access Control](../security/benchmarks/security-control-identity-access-control.md)voor meer informatie.*
 
 ### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3,1: een inventaris van beheerders accounts onderhouden
 
@@ -144,68 +147,65 @@ Daarnaast gebruikt de PostgreSQL-engine rollen om de toegang tot database object
 
 - [Informatie over aangepaste rollen voor het Azure-abonnement](../role-based-access-control/custom-roles.md) 
 
-- [Meer informatie over de bewerkingen van Azure Database for PostgreSQL resource provider](../role-based-access-control/resource-provider-operations.md#microsoftdbforpostgresql) 
+- [Meer informatie over de bewerkingen van Azure Database for PostgreSQL resource provider](https://docs.microsoft.com/azure/role-based-access-control/resource-provider-operations#microsoftdbforpostgresql) 
 
-- [Toegangs beheer voor Azure Database for PostgreSQL](./concepts-security.md#access-management)
+- [Toegangs beheer voor Azure Database for PostgreSQL](https://docs.microsoft.com/azure/postgresql/concepts-security#access-management)
 
-- [Gebruikers maken in Azure Database for PostgreSQL-grootschalige (Citus)](./howto-hyperscale-create-users.md)
+- [Gebruikers maken in Azure Database for PostgreSQL-grootschalige (Citus)](howto-hyperscale-create-users.md)
 
-- [Verbinding maken met PostgreSQL-grootschalige (Citus) met behulp van psql](./quickstart-create-hyperscale-portal.md#connect-to-the-database-using-psql)
-
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Verbinding maken met PostgreSQL-grootschalige (Citus) met behulp van psql](https://docs.microsoft.com/azure/postgresql/quickstart-create-hyperscale-portal#connect-to-the-database-using-psql)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="32-change-default-passwords-where-applicable"></a>3,2: standaard wachtwoorden wijzigen indien van toepassing
 
-**Hulp**: Azure AD heeft niet het concept van standaard wachtwoorden. Andere Azure-resources die een wacht woord vereisen, moeten een wacht woord afdwingen voor het maken van complexiteits vereisten en een minimale wachtwoord lengte, die afhankelijk is van de service. U bent verantwoordelijk voor toepassingen van derden en Marketplace-services die standaard wachtwoorden kunnen gebruiken.
-
-**Azure Security Center-bewaking**: Niet van toepassing
+**Hulp**: Azure Active Directory (Azure AD) beschikt niet over het concept van standaard wachtwoorden. Andere Azure-resources die een wacht woord vereisen, moeten een wacht woord afdwingen voor het maken van complexiteits vereisten en een minimale wachtwoord lengte, die afhankelijk is van de service. U bent verantwoordelijk voor toepassingen van derden en Marketplace-services die standaard wachtwoorden kunnen gebruiken.
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="33-use-dedicated-administrative-accounts"></a>3,3: speciale beheerders accounts gebruiken
 
-**Richt lijnen**: Maak standaard procedures voor het gebruik van specifieke beheerders accounts die worden gebruikt voor toegang tot uw grootschalige-exemplaren (Citus). De beheerders accounts voor het beheren van de Azure-resource zijn gekoppeld aan Azure Active Directory. er zijn ook lokale server beheerders accounts die zich in de grootschalige-Server groep (Citus) bevinden voor het beheren van toegangs machtigingen voor de data base. Gebruik Azure Security Center identiteits-en toegangs beheer om het aantal beheerders accounts in Azure Active Directory te bewaken.
+**Richt lijnen**: Maak standaard procedures voor het gebruik van specifieke beheerders accounts die worden gebruikt voor toegang tot uw grootschalige-exemplaren (Citus). De beheerders accounts voor het beheren van de Azure-resource zijn gekoppeld aan Azure Active Directory (Azure AD). er zijn ook lokale server beheerders accounts die zich in de grootschalige-Server groep (Citus) bevinden voor het beheren van toegangs machtigingen voor de data base. Gebruik Azure Security Center identiteits-en toegangs beheer om het aantal beheerders accounts in azure AD te bewaken.
 
-- [Inzicht in Azure Security Center identiteit en toegang](../security-center/security-center-identity-access.md) 
+- [Inzicht in Azure Security Center identiteit en toegang](../security-center/security-center-identity-access.md)
 
-- [Gebruikers maken in Azure Database for PostgreSQL-grootschalige (Citus)](./howto-hyperscale-create-users.md)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Gebruikers maken in Azure Database for PostgreSQL-grootschalige (Citus)](howto-hyperscale-create-users.md)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3,5: multi-factor Authentication gebruiken voor alle op Azure Active Directory gebaseerde toegang
 
-**Hulp**: voor toegang tot de Azure Portal Azure Active Directory multi-factor Authentication (MFA) in te scha kelen en Azure Security Center aanbevelingen voor identiteits-en toegangs beheer te volgen.
+**Richt lijnen**: voor toegang tot de Azure Portal het inschakelen van Azure Active Directory (Azure AD) multi-factor Authentication en het volgen van Azure Security Center identiteits-en toegangs beheer aanbevelingen.
 
-- [MFA inschakelen in Azure](../active-directory/authentication/howto-mfa-getstarted.md)
+- [Multi-factor Authentication inschakelen in azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
 - [Identiteit en toegang bewaken in Azure Security Center](../security-center/security-center-identity-access.md)
 
-
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
 
-### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3,6: gebruik speciale machines (privileged Access workstations) voor alle beheer taken
+**Azure Security Center bewaking**: geen
 
-**Hulp**: gebruik Paw's (privileged Access workstations) met multi-factor Authentication (MFA) die zijn geconfigureerd voor aanmelding bij en configureren van Azure-resources.
+### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3,6: gebruik speciale machines (privileged Access workstations) voor alle beheer taken 
+
+**Richt lijnen**: gebruik privileged Access workstations (paw's) met multi-factor Authentication die is geconfigureerd om Azure-resources aan te melden en te configureren.
 
 - [Meer informatie over privileged Access workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
-- [MFA inschakelen in Azure](../active-directory/authentication/howto-mfa-getstarted.md)
-
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Multi-factor Authentication inschakelen in azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
 **Verantwoordelijkheid**: Klant
 
+**Azure Security Center bewaking**: geen
+
 ### <a name="37-alert-on-account-login-behavior-deviation"></a>3,7: waarschuwing voor de afwijking van het aanmeldings gedrag van accounts
 
-**Hulp**: gebruik Azure Active Directory (AD) PRIVILEGED Identity Management (PIM) voor het genereren van Logboeken en waarschuwingen wanneer verdachte of onveilige activiteiten in de omgeving worden uitgevoerd.
+**Hulp**: gebruik Azure Active Directory (Azure AD) PRIVILEGED Identity Management (PIM) voor het genereren van Logboeken en waarschuwingen wanneer verdachte of onveilige activiteiten in de omgeving worden uitgevoerd.
 
 Gebruik Azure AD-risico detecties om waarschuwingen en rapporten weer te geven over Risk ante gebruikers gedrag.
 
@@ -213,10 +213,9 @@ Gebruik Azure AD-risico detecties om waarschuwingen en rapporten weer te geven o
 
 - [Meer informatie over Azure AD-risico detectie](../active-directory/identity-protection/overview-identity-protection.md)
 
-
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="38-manage-azure-resources-from-only-approved-locations"></a>3,8: Azure-resources alleen beheren vanaf goedgekeurde locaties
 
@@ -224,58 +223,55 @@ Gebruik Azure AD-risico detecties om waarschuwingen en rapporten weer te geven o
 
 - [Benoemde locaties configureren in azure](../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="39-use-azure-active-directory"></a>3,9: Azure Active Directory gebruiken
 
-**Hulp**: gebruik Azure Active Directory (AD) als centrale verificatie-en autorisatie systeem voor het beheren van postgresql-resources. Azure AD beveiligt gegevens door gebruik te maken van sterke versleuteling voor gegevens in rust en onderweg. Azure AD bevat ook zouten, hashes en veilige gebruikers referenties.
+**Hulp**: gebruik Azure Active Directory (Azure AD) als het centrale verificatie-en autorisatie systeem voor het beheren van postgresql-resources. Azure AD beveiligt gegevens door gebruik te maken van sterke versleuteling voor gegevens in rust en onderweg. Azure AD bevat ook zouten, hashes en veilige gebruikers referenties.
 
-Gebruikers binnen een grootschalige-Server groep (Citus) kunnen niet rechtstreeks aan Azure Active Directory accounts worden gekoppeld. Als u de gebruikers bevoegdheden voor database object toegang wilt wijzigen, gebruikt u de standaard PostgreSQL-opdrachten met hulpprogram ma's als PgAdmin of psql.
+Gebruikers binnen een grootschalige-Server groep (Citus) kunnen niet rechtstreeks aan Azure AD-accounts worden gekoppeld. Als u de gebruikers bevoegdheden voor database object toegang wilt wijzigen, gebruikt u de standaard PostgreSQL-opdrachten met hulpprogram ma's als PgAdmin of psql.
 
-- [Bevoegdheden voor gebruikers rollen wijzigen](./howto-hyperscale-create-users.md#how-to-modify-privileges-for-user-role)
+- [Bevoegdheden voor gebruikers rollen wijzigen](https://docs.microsoft.com/azure/postgresql/howto-hyperscale-create-users#how-to-modify-privileges-for-user-role)
 
-- [Een AAD-exemplaar maken en configureren](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
-
-
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Een Azure AD-instantie maken en configureren](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="310-regularly-review-and-reconcile-user-access"></a>3,10: regel matig gebruikers toegang controleren en afstemmen
 
-**Richt lijnen**: de toegang controleren en afstemmen voor zowel gebruikers die toegang hebben tot de lokale Data Base als via Azure Active Directory voor het beheren van postgresql-resources.
+**Richt lijnen**: toegang controleren en afstemmen voor gebruikers die toegang hebben tot de lokale data base en via Azure Active Directory (Azure AD) voor het beheren van postgresql-resources.
 
-Raadpleeg de logboeken van de Azure Active Directory (AD) voor gebruikers met toegang tot het beheren van data base Azure-resources om verouderde accounts te detecteren. Daarnaast kunt u Azure Identity Access revisies gebruiken om groepslid maatschappen efficiënt te beheren, toegang te krijgen tot bedrijfs toepassingen die kunnen worden gebruikt voor toegang tot grootschalige (Citus) en roltoewijzingen. Gebruikers toegang moet regel matig worden gecontroleerd, bijvoorbeeld elke 90 dagen, om ervoor te zorgen dat alleen de juiste gebruikers toegang hebben.
+Raadpleeg de Azure AD-logboeken voor gebruikers die toegang hebben tot het beheren van data base Azure-resources om verouderde accounts te detecteren. Daarnaast kunt u Azure Identity Access revisies gebruiken om groepslid maatschappen efficiënt te beheren, toegang te krijgen tot bedrijfs toepassingen die kunnen worden gebruikt voor toegang tot grootschalige (Citus) en roltoewijzingen. Gebruikers toegang moet regel matig worden gecontroleerd, bijvoorbeeld elke 90 dagen, om ervoor te zorgen dat alleen de juiste gebruikers toegang hebben.
 
 - [PostgreSQL-gebruikers en toegewezen rollen controleren](https://www.postgresql.org/docs/current/database-roles.html)
 
-- [Meer informatie over Azure AD-rapportage](../active-directory/reports-monitoring/index.yml)
+- [Meer informatie over Azure AD-rapportage](/azure/active-directory/reports-monitoring/)
 
 - [Beoordelingen over Azure Identity Access gebruiken](../active-directory/governance/access-reviews-overview.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="311-monitor-attempts-to-access-deactivated-credentials"></a>3,11: controle pogingen om toegang te krijgen tot gedeactiveerde referenties
 
-**Hulp**: in azure Active Directory (AD) hebt u toegang tot de logboeken van Azure AD-aanmeldings activiteiten, controle en risico gebeurtenissen, waarmee u kunt integreren met elk Siem/bewakings programma. 
+**Richt lijnen**: in azure Active Directory (Azure AD) hebt u toegang tot de Azure AD-aanmeldings activiteit, controle en risico gebeurtenis logboek bronnen, waarmee u kunt integreren met elk Siem/bewakings programma.
 
-U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure Active Directory gebruikers accounts te maken en de audit logboeken en aanmeldings logboeken te verzenden naar een Log Analytics-werk ruimte. U kunt de gewenste waarschuwingen configureren in Log Analytics werk ruimte. 
+U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-gebruikers accounts te maken en de audit logboeken en aanmeldings logboeken te verzenden naar een Log Analytics-werk ruimte. U kunt de gewenste waarschuwingen configureren in Log Analytics werk ruimte.
 
-- [Azure-activiteitenlogboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
-
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Azure-activiteitenlogboeken integreren in Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
 
 **Verantwoordelijkheid**: Klant
 
+**Azure Security Center bewaking**: geen
+
 ### <a name="312-alert-on-account-sign-in-behavior-deviation"></a>3,12: waarschuwing voor de afwijking van het aanmeldings gedrag van het account
 
-**Hulp**: gebruik de functies voor identiteits beveiliging en risico detectie van Azure Active Directory om automatische antwoorden te configureren op gedetecteerde verdachte acties op het niveau van de Azure Active Directory (AD). U kunt automatische antwoorden via Azure Sentinel inschakelen voor het implementeren van de beveiligings reacties van uw organisatie.
+**Richt lijnen**: gebruik de functies voor identiteits beveiliging en risico detectie van Azure Active Directory (Azure AD) voor het configureren van automatische antwoorden op gedetecteerde verdachte acties op het niveau van Azure AD. U kunt automatische antwoorden via Azure Sentinel inschakelen voor het implementeren van de beveiligings reacties van uw organisatie.
 
 U kunt ook logboeken opnemen in azure Sentinel voor verder onderzoek.
 
@@ -285,23 +281,23 @@ U kunt ook logboeken opnemen in azure Sentinel voor verder onderzoek.
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="313-provide-microsoft-with-access-to-relevant-customer-data-during-support-scenarios"></a>3,13: micro soft biedt toegang tot relevante klant gegevens tijdens ondersteunings scenario's
 
 **Hulp**: momenteel niet beschikbaar; Klanten-lockbox wordt nog niet ondersteund voor grootschalige (Citus).
 
-- [Lijst met door Klanten-lockbox ondersteunde services](../security/fundamentals/customer-lockbox-overview.md#supported-services-and-scenarios-in-general-availability)
+- [Lijst met door Klanten-lockbox ondersteunde services](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability)
 
-**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
+**Verantwoordelijkheid**: Klant
 
-**Verantwoordelijkheid**: momenteel niet beschikbaar
+**Azure Security Center bewaking**: geen
 
 ## <a name="data-protection"></a>Gegevensbeveiliging
 
-*Zie [beveiligings beheer: gegevens beveiliging](../security/benchmarks/security-control-data-protection.md)voor meer informatie.*
+*Zie [Azure Security Benchmark: gegevensbescherming](../security/benchmarks/security-control-data-protection.md) voor meer informatie.*
 
 ### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4,1: een inventaris van gevoelige informatie onderhouden
 
@@ -309,9 +305,9 @@ U kunt ook logboeken opnemen in azure Sentinel voor verder onderzoek.
 
 - [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4,2: systemen isoleren die gevoelige informatie opslaan of verwerken
 
@@ -319,15 +315,15 @@ U kunt ook logboeken opnemen in azure Sentinel voor verder onderzoek.
 
 - [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
-- [Beheergroepen maken](../governance/management-groups/create-management-group-portal.md)
+- [Beheer groepen maken](../governance/management-groups/create-management-group-portal.md)
 
-- [Informatie over Firewall regels in Azure Database for PostgreSQL-grootschalige (Citus)](./concepts-hyperscale-firewall-rules.md)
+- [Informatie over Firewall regels in Azure Database for PostgreSQL-grootschalige (Citus)](concepts-hyperscale-firewall-rules.md)
 
-- [Rollen begrijpen in grootschalige (Citus)](./howto-hyperscale-create-users.md)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Rollen begrijpen in grootschalige (Citus)](howto-hyperscale-create-users.md)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="44-encrypt-all-sensitive-information-in-transit"></a>4,4: alle gevoelige gegevens in de overdracht versleutelen
 
@@ -337,17 +333,19 @@ Voor alle Azure Database for PostgreSQL servers die via de Azure Portal worden i
 
 In sommige gevallen vereist toepassingen van derden een lokaal certificaat bestand dat is gegenereerd op basis van een certificaat bestand van een vertrouwde certificerings instantie (. CER) om veilig verbinding te kunnen maken.
 
-- [TLS configureren in Azure Database for PostgreSQL-grootschalige (Citus)](./concepts-hyperscale-ssl-connection-security.md)
+- [TLS configureren in Azure Database for PostgreSQL-grootschalige (Citus)](concepts-hyperscale-ssl-connection-security.md)
 
-- [Toepassingen waarvoor certificaat verificatie voor TLS-connectiviteit is vereist](./concepts-hyperscale-ssl-connection-security.md)
-
-
-
-**Monitoring door Azure Security Center**: Ja
+- [Toepassingen waarvoor certificaat verificatie voor TLS-connectiviteit is vereist](concepts-hyperscale-ssl-connection-security.md)
 
 **Verantwoordelijkheid**: Gedeeld
 
-### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4,6: Azure RBAC gebruiken om de toegang tot resources te beheren
+**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/azure/governance/policy/samples/azure-security-benchmark) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/azure/security-center/security-center-recommendations). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/azure/security-center/azure-defender) -plan vereist voor de gerelateerde services.
+
+**Ingebouwde definities Azure Policy-micro soft. DBforPostgreSQL**:
+
+[!INCLUDE [Resource Policy for Microsoft.DBforPostgreSQL 4.4](../../includes/policy/standards/asb/rp-controls/microsoft.dbforpostgresql-4-4.md)]
+
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4,6: Azure RBAC gebruiken om de toegang tot resources te beheren 
 
 **Richt lijnen**: gebruik Azure RBAC (op rollen gebaseerd toegangs beheer) om de toegang tot het besturings element grootschalige (Citus) (bijvoorbeeld Azure Portal) te beheren. Azure RBAC heeft geen invloed op de gebruikers machtigingen binnen de data base.
 
@@ -355,25 +353,21 @@ Als u de gebruikers bevoegdheden op database niveau wilt wijzigen, gebruikt u de
 
 - [Azure RBAC configureren](../role-based-access-control/role-assignments-portal.md)
 
-- [Gebruikers toegang configureren met SQL voor Azure Database for PostgreSQL](./howto-hyperscale-create-users.md)
-
-
-**Monitoring door Azure Security Center**: Ja
+- [Gebruikers toegang configureren met SQL voor Azure Database for PostgreSQL](howto-hyperscale-create-users.md)
 
 **Verantwoordelijkheid**: Klant
 
+**Azure Security Center bewaking**: geen
+
 ### <a name="48-encrypt-sensitive-information-at-rest"></a>4,8: gevoelige informatie op rest versleutelen
 
-**Hulp**:  
-Azure Database for PostgreSQL grootschalige (Citus) heeft ten minste één keer per dag een moment opname van gegevens bestanden en het transactie logboek van de data base. Met de back-ups kunt u een server herstellen naar elk gewenst moment binnen de Bewaar periode. (De Bewaar periode is momenteel 35 dagen voor alle clusters.) Alle back-ups worden versleuteld met AES 256-bits versleuteling. De PostgreSQL grootschalige (Citus)-aanbieding maakt gebruik van door micro soft beheerde sleutels voor versleuteling.
+**Richt lijnen**: ten minste één keer per dag Azure database for PostgreSQL grootschalige (Citus) moment opnamen maken van gegevens bestanden en het transactie logboek van de data base. Met de back-ups kunt u een server herstellen naar elk gewenst moment binnen de Bewaar periode. (De Bewaar periode is momenteel 35 dagen voor alle clusters.) Alle back-ups worden versleuteld met AES 256-bits versleuteling. De PostgreSQL grootschalige (Citus)-aanbieding maakt gebruik van door micro soft beheerde sleutels voor versleuteling.
 
-- [Informatie over versleuteling voor Azure PostgreSQL-grootschalige (Citus)-back-ups](./concepts-hyperscale-backup.md)
-
-
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Informatie over versleuteling voor Azure PostgreSQL-grootschalige (Citus)-back-ups](concepts-hyperscale-backup.md)
 
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4,9: wijzigingen in essentiële Azure-resources vastleggen en waarschuwen
 
@@ -381,13 +375,13 @@ Azure Database for PostgreSQL grootschalige (Citus) heeft ten minste één keer 
 
 - [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="vulnerability-management"></a>Beheer van beveiligingsproblemen
 
-*Zie [beveiligings beheer: beveiligingslek beheer](../security/benchmarks/security-control-vulnerability-management.md)voor meer informatie.*
+*Zie voor meer informatie de [Azure Security Bench Mark: beveiligingslek beheer](../security/benchmarks/security-control-vulnerability-management.md).*
 
 ### <a name="51-run-automated-vulnerability-scanning-tools"></a>5,1: automatische hulpprogram ma's voor het scannen van beveiligings problemen uitvoeren
 
@@ -395,13 +389,13 @@ Azure Database for PostgreSQL grootschalige (Citus) heeft ten minste één keer 
 
 - [Functie dekking voor Azure PaaS Services in Azure Security Center](../security-center/features-paas.md)
 
-**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
+**Verantwoordelijkheid**: Gedeeld
 
-**Verantwoordelijkheid**: momenteel niet beschikbaar
+**Azure Security Center bewaking**: geen
 
-## <a name="inventory-and-asset-management"></a>Inventarisatie en asset-management
+## <a name="inventory-and-asset-management"></a>Inventarisatie en Asset Management
 
-*Zie voor meer informatie [beveiligings beheer: inventarisatie en activa beheer](../security/benchmarks/security-control-inventory-asset-management.md).*
+*Zie [Azure Security Bench Mark: Inventory and Asset Management](../security/benchmarks/security-control-inventory-asset-management.md)voor meer informatie.*
 
 ### <a name="61-use-automated-asset-discovery-solution"></a>6,1: automatische Asset-detectie oplossing gebruiken
 
@@ -413,9 +407,9 @@ Azure Database for PostgreSQL grootschalige (Citus) heeft ten minste één keer 
 
 - [Meer informatie over Azure RBAC](../role-based-access-control/overview.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="62-maintain-asset-metadata"></a>6,2: meta gegevens van activa onderhouden
 
@@ -423,9 +417,9 @@ Azure Database for PostgreSQL grootschalige (Citus) heeft ten minste één keer 
 
 - [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="63-delete-unauthorized-azure-resources"></a>6,3: niet-geautoriseerde Azure-resources verwijderen
 
@@ -433,13 +427,13 @@ Azure Database for PostgreSQL grootschalige (Citus) heeft ten minste één keer 
 
 - [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
-- [Beheergroepen maken](../governance/management-groups/create-management-group-portal.md)
+- [Beheer groepen maken](../governance/management-groups/create-management-group-portal.md)
 
 - [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="64-define-and-maintain-inventory-of-approved-azure-resources"></a>6,4: de inventaris van goedgekeurde Azure-resources definiëren en onderhouden
 
@@ -455,10 +449,9 @@ Daarnaast gebruikt u de resource grafiek van Azure voor het opvragen/detecteren 
 
 - [Query's maken met Azure Graph](../governance/resource-graph/first-query-portal.md)
 
-
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6,5: monitor voor niet-goedgekeurde Azure-resources
 
@@ -473,24 +466,23 @@ Daarnaast gebruikt u de resource grafiek van Azure voor het opvragen/detecteren 
 
 - [Query's maken met Azure Graph](../governance/resource-graph/first-query-portal.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="69-use-only-approved-azure-services"></a>6,9: alleen goedgekeurde Azure-Services gebruiken
 
 **Hulp: Azure** Policy gebruiken om beperkingen te geven aan het type resources dat kan worden gemaakt in klant abonnement (en) met de volgende ingebouwde beleids definities:
-
 - Niet toegestane resourcetypen
 - Toegestane brontypen
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Een specifiek resource type weigeren met Azure Policy](../governance/policy/samples/index.md)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Een specifiek resource type weigeren met Azure Policy](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#general)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="611-limit-users-ability-to-interact-with-azure-resource-manager"></a>6,11: de mogelijkheid van gebruikers om te communiceren met Azure Resource Manager beperken
 
@@ -498,31 +490,29 @@ Daarnaast gebruikt u de resource grafiek van Azure voor het opvragen/detecteren 
 
 - [Voorwaardelijke toegang configureren om de toegang tot Azure Resource Manager te blok keren](../role-based-access-control/conditional-access-azure-management.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="secure-configuration"></a>Veilige configuratie
 
-*Zie [beveiligings beheer: beveiligde configuratie](../security/benchmarks/security-control-secure-configuration.md)voor meer informatie.*
+*Zie [Azure Security Bench Mark: Secure Configuration](../security/benchmarks/security-control-secure-configuration.md)(Engelstalig) voor meer informatie.*
 
 ### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7,1: veilige configuraties instellen voor alle Azure-resources
 
 **Hulp**: Definieer en implementeer standaard beveiligings configuraties voor uw grootschalige-exemplaren (Citus) met Azure Policy. Gebruik Azure Policy om aangepaste beleids regels te maken om de netwerk configuratie van uw Azure Database for PostgreSQL instanties te controleren of af te dwingen.
 
-Azure Resource Manager heeft ook de mogelijkheid om de sjabloon in JavaScript Object Notation (JSON) te exporteren, die moet worden gecontroleerd om ervoor te zorgen dat de configuraties voldoen aan de beveiligings vereisten voor uw organisatie of deze overschrijden. 
+Azure Resource Manager heeft ook de mogelijkheid om de sjabloon in JavaScript Object Notation (JSON) te exporteren, die moet worden gecontroleerd om ervoor te zorgen dat de configuraties voldoen aan de beveiligings vereisten voor uw organisatie of deze overschrijden.
 
 - [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias)
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Eén en meerdere resources exporteren naar een sjabloon in Azure Portal](../azure-resource-manager/templates/export-template-portal.md) 
-
-
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Eén en meerdere resources exporteren naar een sjabloon in Azure Portal](../azure-resource-manager/templates/export-template-portal.md)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="73-maintain-secure-azure-resource-configurations"></a>7,3: Beveilig Azure-resource configuraties onderhouden
 
@@ -534,11 +524,9 @@ Azure Resource Manager heeft ook de mogelijkheid om de sjabloon in JavaScript Ob
 
 - [Overzicht van Azure Resource Manager sjablonen](../azure-resource-manager/templates/overview.md)
 
-
-
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="75-securely-store-configuration-of-azure-resources"></a>7,5: de configuratie van Azure-resources veilig opslaan
 
@@ -546,11 +534,11 @@ Azure Resource Manager heeft ook de mogelijkheid om de sjabloon in JavaScript Ob
 
 - [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow)
 
-- [Documentatie voor Azure opslag plaatsen](/azure/devops/repos/index)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Documentatie voor Azure opslag plaatsen](/azure/devops/repos/)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="77-deploy-configuration-management-tools-for-azure-resources"></a>7,7: hulpprogram ma's voor configuratie beheer voor Azure-resources implementeren
 
@@ -562,11 +550,9 @@ Azure Resource Manager heeft ook de mogelijkheid om de sjabloon in JavaScript Ob
 
 - [Overzicht van Azure Resource Manager sjablonen](../azure-resource-manager/templates/overview.md)
 
-
-
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="79-implement-automated-configuration-monitoring-for-azure-resources"></a>7,9: geautomatiseerde configuratie bewaking voor Azure-resources implementeren
 
@@ -574,22 +560,21 @@ Azure Resource Manager heeft ook de mogelijkheid om de sjabloon in JavaScript Ob
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="712-manage-identities-securely-and-automatically"></a>7,12: identiteiten veilig en automatisch beheren
 
 **Hulp**: Azure database for PostgreSQL-grootschalige (Citus) biedt momenteel geen rechtstreekse ondersteuning voor beheerde identiteiten. Tijdens het maken van de Azure Database for PostgreSQL-server moet u referenties opgeven voor een beheerders gebruiker. U kunt aanvullende gebruikers rollen maken in de Azure Portal-interface.
 
-- [Een Azure Database for PostgreSQL maken - Hyperscale (Citus)](./quickstart-create-hyperscale-portal.md#create-a-hyperscale-citus-server-group)
+- [Een Azure Database for PostgreSQL maken - Hyperscale (Citus)](https://docs.microsoft.com/azure/postgresql/quickstart-create-hyperscale-portal#create-a-hyperscale-citus-server-group)
 
-- [Aanvullende gebruikers rollen maken](./howto-hyperscale-create-users.md#how-to-create-additional-user-roles)
+- [Aanvullende gebruikers rollen maken](https://docs.microsoft.com/azure/postgresql/howto-hyperscale-create-users#how-to-create-additional-user-roles)
 
+**Verantwoordelijkheid**: Klant
 
-**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
-
-**Verantwoordelijkheid**: momenteel niet beschikbaar
+**Azure Security Center bewaking**: geen
 
 ### <a name="713-eliminate-unintended-credential-exposure"></a>7,13: onbedoelde referentie blootstelling elimineren
 
@@ -597,13 +582,13 @@ Azure Resource Manager heeft ook de mogelijkheid om de sjabloon in JavaScript Ob
 
 - [Referentie scanner instellen](https://secdevtools.azurewebsites.net/helpcredscan.html)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="malware-defense"></a>Beveiliging tegen malware
 
-*Zie [beveiligings beheer: verdediging tegen malware](../security/benchmarks/security-control-malware-defense.md)voor meer informatie.*
+*Zie voor meer informatie de [Azure Security Bench Mark: beveiliging tegen schadelijke software](../security/benchmarks/security-control-malware-defense.md).*
 
 ### <a name="82-pre-scan-files-to-be-uploaded-to-non-compute-azure-resources"></a>8,2: scan bestanden die moeten worden geüpload naar niet-reken resources van Azure
 
@@ -611,23 +596,27 @@ Azure Resource Manager heeft ook de mogelijkheid om de sjabloon in JavaScript Ob
 
 Scan vooraf op inhoud die wordt geüpload naar niet-reken resources van Azure, zoals App Service, Data Lake Storage, Blob Storage, Azure Database for PostgreSQL, enzovoort. Micro soft heeft geen toegang tot uw gegevens in deze instanties.
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="data-recovery"></a>Gegevensherstel
 
-*Zie [beveiligings beheer: gegevens herstel](../security/benchmarks/security-control-data-recovery.md)voor meer informatie.*
+*Zie [Azure Security Bench Mark: Data Recovery](../security/benchmarks/security-control-data-recovery.md)(Engelstalig) voor meer informatie.*
 
 ### <a name="91-ensure-regular-automated-back-ups"></a>9,1: controleren op regel matige automatische back-ups
 
 **Hulp**: met Azure database for PostgreSQL – grootschalige (Citus) worden automatisch back-ups gemaakt van elk knoop punt en opgeslagen in lokaal redundante opslag. Back-ups kunnen worden gebruikt om uw grootschalige-cluster (Citus) naar een opgegeven tijd te herstellen.
 
-- [Back-up en herstel in Azure Database for PostgreSQL-grootschalige (Citus)](./concepts-hyperscale-backup.md)
-
-**Monitoring door Azure Security Center**: Ja
+- [Back-up en herstel in Azure Database for PostgreSQL-grootschalige (Citus)](concepts-hyperscale-backup.md)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/azure/governance/policy/samples/azure-security-benchmark) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/azure/security-center/security-center-recommendations). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/azure/security-center/azure-defender) -plan vereist voor de gerelateerde services.
+
+**Ingebouwde definities Azure Policy-micro soft. DBforPostgreSQL**:
+
+[!INCLUDE [Resource Policy for Microsoft.DBforPostgreSQL 9.1](../../includes/policy/standards/asb/rp-controls/microsoft.dbforpostgresql-9-1.md)]
 
 ### <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9,2: volledige back-ups van het systeem uitvoeren en een back-up maken van door de klant beheerde sleutels
 
@@ -635,12 +624,15 @@ Scan vooraf op inhoud die wordt geüpload naar niet-reken resources van Azure, z
 
 In azure-regio's die beschikbaarheids zones ondersteunen, worden back-upmomentopnamen opgeslagen in drie beschikbaarheids zones. Zolang er ten minste één beschikbaarheids zone online is, is het grootschalige-cluster (Citus) te herstorbaar.
 
-- [Back-up en herstel in Azure Database for PostgreSQL-grootschalige (Citus)](./concepts-hyperscale-backup.md)
-
-
-**Monitoring door Azure Security Center**: Ja
+- [Back-up en herstel in Azure Database for PostgreSQL-grootschalige (Citus)](concepts-hyperscale-backup.md)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/azure/governance/policy/samples/azure-security-benchmark) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/azure/security-center/security-center-recommendations). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/azure/security-center/azure-defender) -plan vereist voor de gerelateerde services.
+
+**Ingebouwde definities Azure Policy-micro soft. DBforPostgreSQL**:
+
+[!INCLUDE [Resource Policy for Microsoft.DBforPostgreSQL 9.2](../../includes/policy/standards/asb/rp-controls/microsoft.dbforpostgresql-9-2.md)]
 
 ### <a name="93-validate-all-backups-including-customer-managed-keys"></a>9,3: alle back-ups valideren, inclusief door de klant beheerde sleutels
 
@@ -648,25 +640,25 @@ In azure-regio's die beschikbaarheids zones ondersteunen, worden back-upmomentop
 
 Firewall-instellingen en PostgreSQL-server parameters blijven niet behouden van de oorspronkelijke server groep. ze worden opnieuw ingesteld op de standaard waarden. De firewall voor komt dat alle verbindingen. U moet deze instellingen na het herstellen hand matig aanpassen.
 
-- [Back-up en herstel in Azure Database for PostgreSQL-grootschalige (Citus)](./concepts-hyperscale-backup.md)
-
-**Monitoring door Azure Security Center**: Ja
+- [Back-up en herstel in Azure Database for PostgreSQL-grootschalige (Citus)](concepts-hyperscale-backup.md)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9,4: zorg voor de bescherming van back-ups en door de klant beheerde sleutels
 
 **Hulp**: verwijderde grootschalige-clusters (Citus) kunnen niet worden hersteld. Als u het cluster verwijdert, worden alle knoop punten die deel uitmaken van het cluster, verwijderd en kunnen ze niet worden hersteld. Voor het beveiligen van cluster bronnen na de implementatie van onopzettelijk verwijderen of onverwachte wijzigingen, kunnen beheerders gebruikmaken van beheer vergrendelingen.
 
-- [Back-up en herstel in Azure Database for PostgreSQL-grootschalige (Citus)](./concepts-hyperscale-backup.md)
-
-**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
+- [Back-up en herstel in Azure Database for PostgreSQL-grootschalige (Citus)](concepts-hyperscale-backup.md)
 
 **Verantwoordelijkheid**: Klant
 
+**Azure Security Center bewaking**: geen
+
 ## <a name="incident-response"></a>Reageren op incidenten
 
-*Zie voor meer informatie [beveiligings beheer: reactie op incidenten](../security/benchmarks/security-control-incident-response.md).*
+*Zie [Azure Security Benchmark: respons op incidenten](../security/benchmarks/security-control-incident-response.md) voor meer informatie.*
 
 ### <a name="101-create-an-incident-response-guide"></a>10,1: een hand leiding voor reactie op incidenten maken
 
@@ -680,19 +672,19 @@ Firewall-instellingen en PostgreSQL-server parameters blijven niet behouden van 
 
 - [Klant kan ook gebruikmaken van de hand leiding voor de verwerking van het computer beveiligings incident van het NIST om hulp te bieden bij het maken van een eigen incident respons plan](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10,2: een beoordelings procedure voor incidenten en prioriteits procedures maken
 
-**Hulp**: Security Center wijst aan elke waarschuwing een Ernst toe om u te helpen bepalen welke waarschuwingen het eerst moeten worden onderzocht. De ernst is gebaseerd op de manier waarop vertrouwen Security Center is in de zoek actie of het analyse programma dat wordt gebruikt om de waarschuwing te geven, evenals het betrouwbaarheids niveau dat er schadelijke bedoelingen zijn achter de activiteit die tot de waarschuwing heeft geleid. 
+**Hulp**: Security Center wijst aan elke waarschuwing een Ernst toe om u te helpen bepalen welke waarschuwingen het eerst moeten worden onderzocht. De ernst is gebaseerd op de manier waarop vertrouwen Security Center zich in de zoek actie bevindt of de metriek die wordt gebruikt om de waarschuwing te geven, evenals het betrouwbaarheids niveau waarvan er sprake is van schadelijke opzet achter de activiteit die tot de waarschuwing heeft geleid. 
 
 Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld productie, niet-productie) en maak een naamgevings systeem om Azure-resources duidelijk te identificeren en te categoriseren.
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="103-test-security-response-procedures"></a>10,3: procedures voor beveiligings antwoorden testen
 
@@ -700,9 +692,9 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 - [Raadpleeg de publicatie van het NIST: hand leiding voor het testen, trainen en uitoefenen van Program Ma's voor IT-plannen en-mogelijkheden](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10,4: contact gegevens van het beveiligings incident opgeven en waarschuwings meldingen configureren voor beveiligings incidenten
 
@@ -710,9 +702,9 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 - [De Azure Security Center Security-contact persoon instellen](../security-center/security-center-provide-security-contact-details.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10,5: beveiligings waarschuwingen opnemen in uw reactie systeem van uw incident
 
@@ -722,9 +714,9 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 - [Waarschuwingen streamen naar Azure Sentinel](../sentinel/connect-azure-security-center.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="106-automate-the-response-to-security-alerts"></a>10,6: de reactie op beveiligings waarschuwingen automatiseren
 
@@ -732,13 +724,13 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 - [Werk stroom automatisering en Logic Apps configureren](../security-center/workflow-automation.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Penetratietests en Red Team-oefeningen
 
-*Zie voor meer informatie [Security Control: Indringings tests en Red team-oefeningen](../security/benchmarks/security-control-penetration-tests-red-team-exercises.md).*
+*Zie [Azure Security Bench Mark: Indringings tests en rode team oefeningen](../security/benchmarks/security-control-penetration-tests-red-team-exercises.md)voor meer informatie.*
 
 ### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings"></a>11,1: voert regel matig indringings tests van uw Azure-resources uit en zorgt voor herbemiddeling van alle essentiële beveiligings resultaten
 
@@ -746,11 +738,11 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 - [U vindt hier meer informatie over de strategie van micro soft en de uitvoering van Red Teaming en live site indringings tests met door micro soft beheerde Cloud infrastructuur,-services en-toepassingen.](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie de [Azure Security-Bench Mark](../security/benchmarks/overview.md)
-- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)
+- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
+- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)

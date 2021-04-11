@@ -2,13 +2,13 @@
 title: Overzicht van Azure Disk Backup
 description: Meer informatie over de back-upoplossing voor Azure-schijven.
 ms.topic: conceptual
-ms.date: 01/07/2021
-ms.openlocfilehash: 9449fdc57909cb143d381ae074913c79d24c8893
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.date: 04/09/2021
+ms.openlocfilehash: 42f37c1f500be719e0bd79bad41226ab3ab2d911
+ms.sourcegitcommit: c6a2d9a44a5a2c13abddab932d16c295a7207d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105107292"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107285136"
 ---
 # <a name="overview-of-azure-disk-backup"></a>Overzicht van Azure Disk Backup
 
@@ -31,20 +31,20 @@ Azure schijf back-up is een agentloze en crash consistente oplossing die gebruik
 
 De oplossing voor back-ups van Azure-schijven is handig in de volgende scenario's:
 
-- Er zijn frequente back-ups per dag nodig zonder dat de quiescent van de toepassing wordt gemaakt
-- Apps die worden uitgevoerd in een cluster scenario: zowel Windows Server-failovercluster als Linux-clusters schrijven naar gedeelde schijven
-- Specifieke nood zaak voor back-up zonder agent vanwege beveiligings-of prestatie problemen in de toepassing
+- Er moeten frequente back-ups per dag worden gemaakt zonder dat de toepassing wordt quiescent.
+- Apps die worden uitgevoerd in een cluster scenario: zowel Windows Server-failovercluster als Linux-clusters schrijven naar gedeelde schijven.
+- Specifieke nood zaak voor back-up zonder agent vanwege beveiligings-of prestatie problemen in de toepassing.
 - Toepassings consistente back-up van de virtuele machine is niet haalbaar, omdat line-of-Business-Apps geen ondersteuning bieden voor Volume Shadow Copy Service (VSS).
 
 Overweeg Azure Disk Backup in scenario's waarin:
 
-- Er wordt een essentiële toepassing uitgevoerd op een virtuele machine van Azure die meerdere back-ups per dag vereist om te voldoen aan de Recovery Point Objective, maar zonder dat dit van invloed is op de productie omgeving of de prestaties van de toepassing
-- uw organisatie-of bedrijfs regelgeving beperkt het installeren van agents vanwege beveiligings problemen
-- het uitvoeren van aangepaste voor-of post-scripts en het aanroepen van bevriezen en ontdooien op virtuele Linux-machines om toepassings consistente back-ups te verkrijgen.
-- container toepassingen die worden uitgevoerd op de Azure Kubernetes-service (AKS-cluster) gebruiken beheerde schijven als permanente opslag. U moet nu een back-up maken van de beheerde schijf via automatiserings scripts die moeilijk te beheren zijn.
-- een beheerde schijf houdt essentiële Bedrijfs gegevens in, gebruikt als bestands share, of bevat back-upbestanden van de data base, en u wilt de back-upkosten optimaliseren door niet te investeren in azure VM backup
-- U hebt veel Linux-en Windows-virtuele machines met één schijf (dat wil zeggen, een virtuele machine met alleen een besturingssysteem schijf en geen gegevens schijven) die als host fungeren voor webserver of zonder status-minder computers of die fungeert als een faserings omgeving met configuratie-instellingen van de toepassing. u hebt een voordelige oplossing voor back-ups nodig om de besturingssysteem schijf te beveiligen. Als u bijvoorbeeld een snelle back-up op aanvraag wilt activeren voordat u de virtuele machine bijwerkt of repareert
-- een virtuele machine voert een besturingssysteem configuratie uit die niet wordt ondersteund door de back-upoplossing van Azure VM (bijvoorbeeld Windows 2008 32-bits server)
+- Een essentiële toepassing wordt uitgevoerd op een virtuele machine van Azure die meerdere back-ups per dag vereist om te voldoen aan de Recovery Point Objective, maar zonder dat dit van invloed is op de productie omgeving of de prestaties van de toepassing.
+- Uw organisatie of branche-regelgeving beperkt het installeren van agents vanwege beveiligings problemen.
+- Het uitvoeren van aangepaste voor-of post-scripts en het aanroepen van het blok keren en ontdooien op virtuele Linux-machines om toepassings consistente back-ups te verkrijgen, heeft buitensporige overhead voor de beschik baarheid van de productie
+- Container toepassingen die worden uitgevoerd op de Azure Kubernetes-service (AKS-cluster) gebruiken beheerde schijven als permanente opslag. U moet nu een back-up maken van de beheerde schijf via automatiserings scripts die moeilijk te beheren zijn.
+- Een beheerde schijf houdt essentiële Bedrijfs gegevens in, gebruikt als bestands share, of bevat back-upbestanden van de data base, en u wilt de back-upkosten optimaliseren door niet te investeren in azure VM-back-ups.
+- U hebt veel Linux-en Windows-virtuele machines met één schijf (dat wil zeggen, een virtuele machine met alleen een besturingssysteem schijf en geen gegevens schijven) die als host fungeren voor de webserver, status minder computers of die fungeert als een faserings omgeving met configuratie-instellingen van de toepassing, en u hebt een voordelige oplossing voor back-ups nodig om de besturingssysteem schijf te beveiligen. U kunt bijvoorbeeld een snelle back-up op aanvraag activeren voordat u de virtuele machine bijwerkt of repareert.
+- Een virtuele machine voert een besturingssysteem configuratie uit die niet wordt ondersteund door de back-upoplossing van Azure VM (bijvoorbeeld Windows 2008 32-bits server).
 
 ## <a name="how-the-backup-and-restore-process-works"></a>Hoe het back-up-en herstel proces werkt
 
@@ -54,7 +54,7 @@ Overweeg Azure Disk Backup in scenario's waarin:
 
 - Als u een back-up wilt configureren, gaat u naar de back-upkluis, wijst u een back-upbeleid toe, selecteert u de beheerde schijf waarvan een back-up moet worden gemaakt en geeft u een resource groep op waar de moment opnamen moeten worden opgeslagen en beheerd. Azure Backup geplande back-uptaken worden automatisch geactiveerd die een incrementele moment opname van de schijf maken op basis van de back-upfrequentie. Oudere moment opnamen worden verwijderd volgens de Bewaar duur die is opgegeven in het back-upbeleid.
 
-- Azure Backup gebruikt [incrementele moment opnamen](../virtual-machines/disks-incremental-snapshots.md#restrictions) van de beheerde schijf. Incrementele moment opnamen zijn een kosteneffectieve, punt-in-time back-up van beheerde schijven die worden gefactureerd voor de Delta wijzigingen op de schijf sinds de laatste moment opname. Ze worden altijd opgeslagen op de meest rendabele opslag, standaard HDD-opslag, ongeacht het opslag type van de bovenliggende schijven. De eerste moment opname van de schijf neemt de gebruikte grootte van de schijf in beslag en opeenvolgende incrementele moment opnamen verschillen wijzigingen in de schijf sinds de laatste moment opname.
+- Azure Backup gebruikt [incrementele moment opnamen](../virtual-machines/disks-incremental-snapshots.md#restrictions) van de beheerde schijf. Incrementele moment opnamen zijn een kosteneffectieve, punt-in-time back-up van beheerde schijven die worden gefactureerd voor de Delta wijzigingen op de schijf sinds de laatste moment opname. Deze worden altijd opgeslagen op de meest rendabele opslag, standaard HDD-opslag, ongeacht het opslag type van de bovenliggende schijven. De eerste moment opname van de schijf neemt de gebruikte grootte van de schijf in beslag en opeenvolgende incrementele moment opnamen verschillen wijzigingen in de schijf sinds de laatste moment opname.
 
 - Zodra u de back-up van een beheerde schijf hebt geconfigureerd, wordt er een back-upexemplaar gemaakt binnen de back-upkluis. Met behulp van het back-upexemplaar kunt u de status van back-upbewerkingen vinden, back-ups op aanvraag activeren en herstel bewerkingen uitvoeren. U kunt ook de status van back-ups in meerdere kluizen en back-upinstanties weer geven met behulp van Back-upcentrum, waarmee u één deel venster met glas kunt weer geven.
 
@@ -62,12 +62,12 @@ Overweeg Azure Disk Backup in scenario's waarin:
 
 - Backup-kluis maakt gebruik van beheerde identiteit voor toegang tot andere Azure-resources. Voor het configureren van een back-up van een beheerde schijf en voor het herstellen van de back-up van de back-upkluis is een set machtigingen vereist voor de bron schijf, de momentopname resource groep waar moment opnamen worden gemaakt en beheerd en de doel resource groep waar u de back-up wilt terugzetten. U kunt machtigingen verlenen aan de beheerde identiteit door gebruik te maken van Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Beheerde identiteit is een service-principal van een speciaal type dat alleen kan worden gebruikt met Azure-resources. Meer informatie over [beheerde identiteiten](../active-directory/managed-identities-azure-resources/overview.md).
 
-- Momenteel ondersteunt Azure-schijf back-ups operationele back-ups van beheerde schijven en worden de back-ups niet gekopieerd naar back-upkluis opslag. Raadpleeg de [ondersteunings matrix](disk-backup-support-matrix.md)voor een gedetailleerde lijst met ondersteunde en niet-ondersteunde scenario's, en beschik baarheid van regio's.
+- Momenteel ondersteunt Azure-schijf back-ups operationele back-ups van beheerde schijven en worden de back-ups niet gekopieerd naar back-upkluis opslag. Raadpleeg de [ondersteunings matrix](disk-backup-support-matrix.md) voor een gedetailleerde lijst met ondersteunde en niet-ondersteunde scenario's, en beschik baarheid van regio's.
 
 ## <a name="pricing"></a>Prijzen
 
-Azure Backup biedt een oplossing voor het beheer van de moment opname levenscyclus voor het beveiligen van Azure-schijven. De moment opnamen van de schijf die zijn gemaakt door Azure Backup worden opgeslagen in de resource groep binnen uw Azure-abonnement en maken kosten voor de **opslag van moment opnamen** . U kunt de [prijs van een beheerde schijf](https://azure.microsoft.com/pricing/details/managed-disks/) bezoeken voor meer informatie over de prijzen van de moment opname. Omdat de moment opnamen niet worden gekopieerd naar de back-upkluis, brengt Azure Backup geen kosten in rekening voor het **beveiligde exemplaar** en zijn de **back-upopslagkosten** niet van toepassing. Daarnaast nemen incrementele moment opnamen verschillen sinds de laatste moment opname en worden ze altijd opgeslagen in de standaard opslag, ongeacht het opslag type van de bovenliggende en beheerde schijven, en worden er kosten in rekening gebracht op basis van de prijzen van de standaard opslag. Dit maakt back-ups van Azure-schijven een rendabele oplossing.
+Azure Backup biedt een oplossing voor het beheer van de moment opname levenscyclus voor het beveiligen van Azure-schijven. De moment opnamen van de schijf die zijn gemaakt door Azure Backup worden opgeslagen in de resource groep binnen uw Azure-abonnement en maken kosten voor de **opslag van moment opnamen** . U kunt de [prijs van een beheerde schijf](https://azure.microsoft.com/pricing/details/managed-disks/) bezoeken voor meer informatie over de prijzen van de moment opname.<br></br>Omdat de moment opnamen niet worden gekopieerd naar de back-upkluis, brengt Azure Backup geen kosten in rekening voor het **beveiligde exemplaar** en zijn de **back-upopslagkosten** niet van toepassing. Daarnaast nemen incrementele moment opnamen Delta wijzigingen op als de laatste moment opname en worden ze altijd opgeslagen in de standaard opslag, ongeacht het opslag type van de bovenliggende en beheerde schijven, en worden er kosten in rekening gebracht op basis van de prijzen van de standaard opslag. Dit maakt back-ups van Azure-schijven een rendabele oplossing.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Azure Disck Backup-ondersteuningsmatrix](disk-backup-support-matrix.md)
+[Azure Disck Backup-ondersteuningsmatrix](disk-backup-support-matrix.md)

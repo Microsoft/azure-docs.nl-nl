@@ -13,12 +13,12 @@ ms.author: mimart
 ms.subservice: B2C
 ms.custom: b2c-support
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: fbcdef0002a227d5319fc01e625146480e4c99fc
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 047b295d68e872b4dc334e53b5b9da0ec07d5826
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105043747"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107257072"
 ---
 # <a name="set-up-a-sign-up-and-sign-in-flow-in-azure-active-directory-b2c"></a>Een registratie en aanmeldings stroom instellen in Azure Active Directory B2C
 
@@ -91,7 +91,7 @@ Met de gebruikersstroom voor registratie en aanmelding worden zowel registratie 
 
 ## <a name="create-a-sign-up-and-sign-in-policy"></a>Een registratie-en aanmeldings beleid maken
 
-Aangepaste beleids regels zijn een set van XML-bestanden die u uploadt naar uw Azure AD B2C-Tenant om gebruikers trajecten te definiëren. We bieden Starter Packs met verschillende vooraf ontwikkelde beleids regels, waaronder: aanmelden en aanmelden, wacht woord opnieuw instellen en profiel bewerkings beleid. Zie [aan de slag met aangepast beleid in azure AD B2C](custom-policy-get-started.md)voor meer informatie.
+Aangepaste beleids regels zijn een set van XML-bestanden die u uploadt naar uw Azure AD B2C-Tenant om gebruikers trajecten te definiëren. We bieden Starter Packs met verschillende vooraf ontwikkelde beleids regels, waaronder: aanmelden en aanmelden, wacht woord opnieuw instellen en profiel bewerkings beleid. Zie [aan de slag met aangepast beleid in azure AD B2C](tutorial-create-user-flows.md?pivots=b2c-custom-policy)voor meer informatie.
 
 ::: zone-end
 

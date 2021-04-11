@@ -1,19 +1,19 @@
 ---
 title: Azure Policy regulerende nalevings controles voor Azure API for FHIR
 description: Een lijst met Azure Policy regulerende nalevings controles die beschikbaar zijn voor Azure API voor FHIR. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 03/24/2021
+ms.date: 03/31/2021
 ms.topic: sample
 author: matjazl
 ms.author: matjazl
 ms.service: healthcare-apis
 ms.subservice: fhir
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 37d35fe720069d4efea64d4084ad4d4422ecbe05
-ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
+ms.openlocfilehash: bbc3f8f8dc8183d2c1daf57f92d0170f0490c62c
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105036341"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106093828"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-api-for-fhir"></a>Azure Policy regulerende nalevings controles voor Azure API for FHIR
 

@@ -8,19 +8,30 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/15/2021
+ms.date: 04/09/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: c5381a93308b5b3c8988cb8e25df541af1043418
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+zone_pivot_groups: b2c-policy-type
+ms.openlocfilehash: 44ba2e39de37703de66aefd1fe843d0ca5002b6b
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105031304"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107256970"
 ---
 # <a name="custom-email-verification-with-sendgrid"></a>Aangepaste e-mail verificatie met SendGrid
 
-Gebruik aangepaste e-mail in Azure Active Directory B2C (Azure AD B2C) om aangepaste e-mail te verzenden naar gebruikers die zich registreren voor het gebruik van uw toepassingen. Met behulp van [DisplayControls](display-controls.md) (momenteel in Preview) en de e-mail provider SendGrid van derden kunt u uw eigen e-mail sjabloon gebruiken, *van:* adres en onderwerp, en ondersteuning bieden voor lokalisatie en aangepaste otp-instellingen (eenmalig wacht woord).
+[!INCLUDE [active-directory-b2c-choose-user-flow-or-custom-policy](../../includes/active-directory-b2c-choose-user-flow-or-custom-policy.md)]
+
+Gebruik aangepaste e-mail in Azure Active Directory B2C (Azure AD B2C) om aangepaste e-mail te verzenden naar gebruikers die zich registreren voor het gebruik van uw toepassingen. Met behulp van de e-mail provider SendGrid van derden kunt u uw eigen e-mail sjabloon gebruiken, *van:* adres en onderwerp, evenals ondersteuning voor lokalisatie en aangepaste otp-instellingen (one-time password).
+
+::: zone pivot="b2c-user-flow"
+
+[!INCLUDE [active-directory-b2c-limited-to-custom-policy](../../includes/active-directory-b2c-limited-to-custom-policy.md)]
+
+::: zone-end
+
+::: zone pivot="b2c-custom-policy"
 
 Voor aangepaste e-mail verificatie is het gebruik van een e-mail provider van derden, zoals [SendGrid](https://sendgrid.com), [Mailjet](https://Mailjet.com)of [SparkPost](https://sparkpost.com), een aangepaste rest API, of een op http gebaseerde e-mail provider (inclusief uw eigen) vereist. In dit artikel wordt beschreven hoe u een oplossing instelt die gebruikmaakt van SendGrid.
 
@@ -556,3 +567,5 @@ U kunt een voor beeld van een aangepast e-mail verificatie beleid vinden op GitH
 
 - [Aangepaste e-mail verificatie-DisplayControls](https://github.com/azure-ad-b2c/samples/tree/master/policies/custom-email-verifcation-displaycontrol)
 - Voor informatie over het gebruik van een aangepaste REST API of een SMTP-e-mail provider op basis van HTTP, raadpleegt u een onderliggend [technisch profiel definiëren in een Azure AD B2C aangepast beleid](restful-technical-profile.md).
+
+::: zone-end

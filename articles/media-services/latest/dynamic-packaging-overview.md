@@ -3,22 +3,18 @@ title: Dynamische pakketten in Azure Media Services v3
 description: Dit artikel geeft een overzicht van dynamische pakketten in Azure Media Services.
 author: myoungerman
 manager: femila
-editor: ''
 services: media-services
-documentationcenter: ''
 ms.service: media-services
 ms.workload: media
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/30/2020
 ms.author: inhenkel
-ms.openlocfilehash: 4f4f53d4a20397f38b565cb73e74b01d15cc3022
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4e396841231659c27f199a7353565c5d69e02877
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102633050"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106061992"
 ---
 # <a name="dynamic-packaging-in-media-services-v3"></a>Dynamische pakketten in Media Services v3
 
@@ -41,7 +37,7 @@ Om video's in de gecodeerde asset beschikbaar te maken voor clients om af te spe
 
 Hierdoor hoeft u voor slechts één opslagindeling de bestanden op te slaan en hiervoor te betalen. De Media Services-service bouwt en levert de juiste reactie op basis van aanvragen van een client.
 
-Als u van plan bent om uw inhoud te beschermen met Media Services dynamische versleuteling, raadpleegt u [Streaming protocols and encryption types](content-protection-overview.md#streaming-protocols-and-encryption-types) (streaming-protocollen en versleutelingstypen).
+Als u van plan bent om uw inhoud te beschermen met Media Services dynamische versleuteling, raadpleegt u [Streaming protocols and encryption types](drm-content-protection-concept.md#streaming-protocols-and-encryption-types) (streaming-protocollen en versleutelingstypen).
 
 ### <a name="hls-protocol"></a>HLS-protocol
 
@@ -49,9 +45,9 @@ Uw streaming-client kan de volgende HLS-indelingen opgeven:
 
 |Protocol|Voorbeeld|
 |---|---|
-|HLS V4 |`https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=m3u8-aapl)`||
-|HLS V3 |`https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=m3u8-aapl-v3)`||
-|HLS CMAF| `https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=m3u8-cmaf)`||
+|HLS V4 |`https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=m3u8-aapl)`|
+|HLS V3 |`https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=m3u8-aapl-v3)`|
+|HLS CMAF| `https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=m3u8-cmaf)`|
 
 > [!NOTE]
 > In de vorige richtlijnen van Apple wordt aanbevolen dat bij de terugval voor netwerken met lage bandbreedte alleen audio zou kunnen worden gestreamd.  Op dit moment genereert de Media Services-encoder automatisch een nummer met alleen audio.  In de Apple-richtlijnen wordt nu vermeld dat het nummer met alleen audio *niet* moet worden opgenomen. Dit geldt met name voor de Apple TV-distributie.  Om te voorkomen dat de speler standaard een nummer met alleen audio kan maken, raden we u aan de tag audio-only=false te gebruiken in de URL waardoor weergave met alleen audio in HLS wordt verwijderd. U kunt ook gewoon HLS-V3 gebruiken. Bijvoorbeeld `http://host/locator/asset.ism/manifest(format=m3u8-aapl,audio-only=false)`.
@@ -62,8 +58,8 @@ Uw streaming-client kan de volgende MPEG-DASH-indelingen opgeven:
 
 |Protocol|Voorbeeld|
 |---|---|
-|MPEG-DASH CSF| `https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=mpd-time-csf)` ||
-|MPEG-DASH CMAF|`https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=mpd-time-cmaf)` ||
+|MPEG-DASH CSF| `https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=mpd-time-csf)` |
+|MPEG-DASH CMAF|`https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=mpd-time-cmaf)` |
 
 ### <a name="smooth-streaming-protocol"></a>Smooth Streaming-protocol
 
@@ -71,7 +67,7 @@ Uw streaming-client kan de volgende Smooth Streaming-indelingen opgeven:
 
 |Protocol|Opmerkingen/voorbeelden| 
 |---|---|
-|Smooth Streaming| `https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest`||
+|Smooth Streaming| `https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest`|
 |Smooth Streaming 2.0 (verouderd manifest)|De Smooth Streaming manifest-indeling bevat standaard de herhalingstag (r-tag). Sommige spelers bieden echter geen ondersteuning voor de `r-tag`. Clients met deze spelers kunnen een indeling gebruiken waarmee de r-tag wordt uitgeschakeld:<br/><br/>`https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=fmp4-v20)`|
 
 > [!NOTE]
@@ -115,7 +111,7 @@ Hier volgt een algemene werkstroom voor live streamen met *dynamische pakketten*
 1. Haal de preview-URL op en gebruik deze om te controleren of de input van de encoder wordt ontvangen.
 1. Maak een nieuwe asset.
 1. Maak een live-uitvoer en gebruik de assetnaam die u hebt gemaakt.<br />De live uitvoer archiveert de stroom naar de asset.
-1. Maak een streaming-locator met de ingebouwde streaming-beleidstypen.<br />Als u van plan bent om uw inhoud te versleutelen, raadpleegt u het [Overzicht van inhoudsbeveiliging](content-protection-overview.md).
+1. Maak een streaming-locator met de ingebouwde streaming-beleidstypen.<br />Als u van plan bent om uw inhoud te versleutelen, raadpleegt u het [Overzicht van inhoudsbeveiliging](drm-content-protection-concept.md).
 1. Maak een lijst van de paden op de streaming-locator om de te gebruiken URL's te krijgen.
 1. Haal de hostnaam op voor het streaming-eindpunt van waaruit u wilt streamen.
 1. Bouw URL's die zijn gericht op verschillende indelingen (HLS, MPEG-DASH en Smooth Streaming). Het *streaming-eindpunt* zorgt voor het aanbieden van het juiste manifest en de juiste aanvragen voor de verschillende indelingen.
@@ -312,7 +308,7 @@ Als u het aantal sporen, indelingen, bitsnelheden en presentatietijdvensters wil
 
 ## <a name="dynamic-encryption"></a>Dynamische versleuteling
 
-U kunt *dynamische versleuteling* gebruiken om uw live of on-demand inhoud te versleutelen met AES-128 of een van de drie voornaamste DRM-systemen (Digital Rights Management): Microsoft PlayReady, Google Widevine en Apple FairPlay. Media Services biedt ook een service voor het leveren van AES-sleutels en DRM-licenties aan geautoriseerde clients. Zie [dynamische versleuteling](content-protection-overview.md) voor meer informatie.
+U kunt *dynamische versleuteling* gebruiken om uw live of on-demand inhoud te versleutelen met AES-128 of een van de drie voornaamste DRM-systemen (Digital Rights Management): Microsoft PlayReady, Google Widevine en Apple FairPlay. Media Services biedt ook een service voor het leveren van AES-sleutels en DRM-licenties aan geautoriseerde clients. Zie [dynamische versleuteling](drm-content-protection-concept.md) voor meer informatie.
 
 > [!NOTE]
 > Widevine is een service van Google Inc. en is onderworpen aan de servicevoorwaarden en het privacybeleid van Google Inc.

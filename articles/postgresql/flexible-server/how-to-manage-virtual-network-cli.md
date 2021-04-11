@@ -1,17 +1,17 @@
 ---
 title: Virtuele netwerken beheren-Azure CLI-Azure Database for PostgreSQL-flexibele server
 description: Virtuele netwerken maken en beheren voor Azure Database for PostgreSQL-flexibele server met behulp van de Azure CLI
-author: rothja
-ms.author: jroth
+author: sunilagarwal
+ms.author: sunila
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
-ms.openlocfilehash: b957e0f0752ceda42c28e606faf26896c2c96012
-ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
+ms.openlocfilehash: 2bc7bbd7a50b5771d794fbf35844311e3deddbbd
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106551081"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107226970"
 ---
 # <a name="create-and-manage-virtual-networks-for-azure-database-for-postgresql---flexible-server-using-the-azure-cli"></a>Virtuele netwerken maken en beheren voor Azure Database for PostgreSQL-flexibele server met behulp van de Azure CLI
 

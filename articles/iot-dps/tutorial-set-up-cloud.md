@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
-ms.openlocfilehash: f45c3def84c548ba12221efa59e9ebbd4699df71
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5707d873bbf67add78f9a8e29fcb9135898486d6
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "91316066"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107226834"
 ---
 # <a name="tutorial-configure-cloud-resources-for-device-provisioning-with-the-iot-hub-device-provisioning-service"></a>Zelfstudie: Cloudresources configureren voor apparaatinrichting met de IoT Hub Device Provisioning Service
 
@@ -120,7 +120,7 @@ In deze zelfstudie heeft u het volgende geleerd:
 > * De IoT-hub koppelen aan de Device Provisioning Service
 > * Het toewijzingsbeleid instellen voor de Device Provisioning Service
 
-Ga door naar de volgende zelfstudie om te leren hoe u uw apparaat instelt voor inrichting.
+Ga naar de volgende zelf studie voor meer informatie over het instellen van uw apparaat voor het inrichten
 
 > [!div class="nextstepaction"]
 > [Apparaat instellen voor inrichting](tutorial-set-up-device.md)

@@ -4,12 +4,12 @@ description: Bevat een samenvatting van ondersteuningsinstellingen en -beperking
 ms.topic: conceptual
 ms.date: 02/17/2019
 ms.custom: references_regions
-ms.openlocfilehash: 2877b0085f31f39849e04678d5e0ddd65e3888e2
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 349a48b6178d5e4618aa62d9f0c3a150fe561e05
+ms.sourcegitcommit: c6a2d9a44a5a2c13abddab932d16c295a7207d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105564463"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107284388"
 ---
 # <a name="support-matrix-for-azure-backup"></a>Ondersteunings matrix voor Azure Backup
 
@@ -151,8 +151,8 @@ Azure Backup de functie voor het terugzetten van meerdere regio's heeft toegevoe
 
 | Type back-upbeheer | Ondersteund                                                    | Ondersteunde regio's |
 | ---------------------- | ------------------------------------------------------------ | ----------------- |
-| Azure VM               | Ondersteund voor virtuele Azure-machines met zowel beheerde als onbeheerde schijven. Niet ondersteund voor klassieke virtuele machines. | Beschikbaar in alle open bare regio's en soevereine regio's van Azure, met uitzonde ring van Frankrijk-centraal, Australië-centraal, Zuid-Afrika-noord, UAE-noord, Zwitserland-noord, Duitsland-west-centraal, Noor wegen Oost. <br>Neem contact op met de voor informatie over het gebruik in deze regio's [AskAzureBackupTeam@microsoft.com](mailto:AskAzureBackupTeam@microsoft.com) |
-| SQL-/SAP HANA | In preview                                                      | Beschikbaar in alle open bare regio's en soevereine regio's van Azure, met uitzonde ring van Frankrijk-centraal, Australië-centraal, Zuid-Afrika-noord, UAE-noord, Zwitserland-noord, Duitsland-west-centraal, Noor wegen Oost. <br>Neem contact op met de voor informatie over het gebruik in deze regio's [AskAzureBackupTeam@microsoft.com](mailto:AskAzureBackupTeam@microsoft.com) |
+| Azure VM               | Ondersteund voor virtuele Azure-machines met zowel beheerde als onbeheerde schijven. Niet ondersteund voor klassieke virtuele machines. | Beschikbaar in alle open bare regio's en soevereine regio's van Azure, met uitzonde ring van Frankrijk-centraal, Australië-centraal, Zuid-Afrika-noord, UAE-noord, Zwitserland-noord, Duitsland-west-centraal, Noor wegen Oost, mg IOWA en mg Virginia. <br>Neem contact op met de voor informatie over het gebruik in deze regio's [AskAzureBackupTeam@microsoft.com](mailto:AskAzureBackupTeam@microsoft.com) |
+| SQL-/SAP HANA | In preview                                                      | Beschikbaar in alle open bare regio's en soevereine regio's van Azure, met uitzonde ring van Frankrijk-centraal, Australië-centraal, Zuid-Afrika-noord, UAE-noord, Zwitserland-noord, Duitsland-west-centraal, Noor wegen Oost, mg IOWA en mg Virginia. <br>Neem contact op met de voor informatie over het gebruik in deze regio's [AskAzureBackupTeam@microsoft.com](mailto:AskAzureBackupTeam@microsoft.com) |
 | MARS-agent/on-premises  | No                                                           | N.v.t.               |
 | AFS (Azure-bestands shares)                 | No                                                           | N.v.t.               |
 

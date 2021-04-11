@@ -3,12 +3,12 @@ title: Gebeurtenis filtering voor Azure Event Grid
 description: Hierin wordt beschreven hoe u gebeurtenissen filtert bij het maken van een Azure Event Grid-abonnement.
 ms.topic: conceptual
 ms.date: 03/04/2021
-ms.openlocfilehash: fa63296f97bfa888cb0f425d0c03a5e4a7e46525
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: b5439b77b86d42d062cf9da66ce678f04f46f813
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103419844"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107256086"
 ---
 # <a name="understand-event-filtering-for-event-grid-subscriptions"></a>Gebeurtenis filters begrijpen voor Event Grid-abonnementen
 
@@ -454,7 +454,7 @@ FOR_EACH filter IN (a, b, c)
 ```
 
 ## <a name="stringin"></a>StringIn
-De operator **StringIn** controleert of de **sleutel** waarde **exact overeenkomt met** een van de opgegeven **filter** waarden. In het volgende voor beeld wordt gecontroleerd of de waarde van het `key1` kenmerk in de `data` sectie is `exact` of `string` of `matches` . 
+De operator **StringIn** controleert of de **sleutel** waarde **exact overeenkomt met** een van de opgegeven **filter** waarden. In het volgende voor beeld wordt gecontroleerd of de waarde van het `key1` kenmerk in de `data` sectie is `contoso` of `fabrikam` of `factory` . 
 
 ```json
 "advancedFilters": [{

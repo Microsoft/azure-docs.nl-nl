@@ -1,17 +1,17 @@
 ---
 title: Opslag Azure Portal automatisch verg Roten-Azure Database for MariaDB
 description: In dit artikel wordt beschreven hoe u automatische groei opslag voor Azure Database for MariaDB kunt inschakelen met behulp van Azure Portal
-author: rothja
-ms.author: jroth
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: c310d55db0b30a30d3964df622f7bb112f4e7552
-ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
+ms.openlocfilehash: c6ca4dc4304e6cd0a7bad2a393fd780ae281815f
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106552135"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107227089"
 ---
 # <a name="auto-grow-storage-in-azure-database-for-mariadb-using-the-azure-portal"></a>Opslag in Azure Database for MariaDB automatisch verg Roten met behulp van de Azure Portal
 In dit artikel wordt beschreven hoe u een Azure Database for MariaDB Server-opslag kunt configureren om te groeien zonder dat dit van invloed is op de werk belasting.

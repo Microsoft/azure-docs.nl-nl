@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 03/11/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: d2d4a61f653c5bedb31223d2eb3d37b92a076821
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3e60b80a4ebeaef7d31d4c0c1d9d4bfc41ec3a56
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103010164"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107256205"
 ---
 # <a name="migrate-users-to-azure-ad-b2c"></a>Gebruikers migreren naar Azure AD B2C
 
@@ -43,7 +43,7 @@ Gebruik de naadloze migratie stroom als niet-gecodeerde wacht woorden in de oude
 - Het wacht woord wordt opgeslagen in een eenrichtings gecodeerde indeling, zoals met een hash-functie.
 - Het wacht woord wordt opgeslagen door de verouderde ID-provider op een manier die u niet kunt openen. Bijvoorbeeld wanneer de ID-provider referenties valideert door een webservice aan te roepen.
 
-Voor de naadloze migratie stroom is nog steeds een vooraf-migratie van gebruikers accounts vereist, maar vervolgens een [aangepast beleid](custom-policy-get-started.md) voor het uitvoeren van een query op een [rest API](custom-policy-rest-api-intro.md) (die u maakt) om het wacht woord van elke gebruiker bij de eerste aanmelding in te stellen.
+Voor de naadloze migratie stroom is nog steeds een vooraf-migratie van gebruikers accounts vereist, maar vervolgens een [aangepast beleid](user-flow-overview.md) voor het uitvoeren van een query op een [rest API](custom-policy-rest-api-intro.md) (die u maakt) om het wacht woord van elke gebruiker bij de eerste aanmelding in te stellen.
 
 De naadloze migratie stroom heeft daarom twee fasen: *pre-migratie* en *Referenties instellen*.
 

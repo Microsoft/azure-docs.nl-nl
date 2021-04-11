@@ -80,7 +80,7 @@ Instructiegidsen bevatten codevoorbeelden die laten zien hoe u taken moet uitvoe
 * [Coderen met HTTPS als taakinvoer - .NET](job-input-from-http-how-to.md)  
 * [Gebeurtenissen bewaken - Portal](monitoring/monitor-events-portal-how-to.md)
 * [Dynamisch versleutelen met multi-DRM - .NET](drm-protect-with-drm-tutorial.md) 
-* [Coderen met een aangepaste transformatie - CLI](encode-custom-preset-cli-how-to.md)
+* [Coderen met een aangepaste transformatie - CLI](transform-custom-preset-cli-how-to.md)
 
 ## <a name="ask-questions-give-feedback-get-updates"></a>Vragen stellen, feedback geven, updates ophalen
 

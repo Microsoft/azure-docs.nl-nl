@@ -1,17 +1,17 @@
 ---
 title: Melding over gepland onderhoud-Azure Database for PostgreSQL-één server
 description: In dit artikel wordt de functie voor gepland onderhouds meldingen in Azure Database for PostgreSQL-één server beschreven
-author: ambhatna
-ms.author: ambhatna
+author: sunilagarwal
+ms.author: sunila
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/21/2020
-ms.openlocfilehash: 8db556709f68a1184046989a15fad147542a05a7
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 250ddf9f92559acd810aaed65d50ae45f2d7adc9
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98735738"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107227464"
 ---
 # <a name="planned-maintenance-notification-in-azure-database-for-postgresql---single-server"></a>Melding over gepland onderhoud in Azure Database for PostgreSQL - Eén server
 

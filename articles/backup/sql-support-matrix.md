@@ -2,14 +2,14 @@
 title: Azure Backup-ondersteunings matrix voor SQL Server back-up in virtuele machines van Azure
 description: Hierin wordt een overzicht gegeven van de ondersteunings instellingen en beperkingen bij het maken van back-ups van SQL Server in azure Vm's met de Azure Backup-service.
 ms.topic: conceptual
-ms.date: 03/05/2020
+ms.date: 04/07/2021
 ms.custom: references_regions
-ms.openlocfilehash: 78436981c515b95ccda763d8ac916738b4364953
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d7038b47bd4aba8f7747eef455f1e8dd3c77a695
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97734790"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107257340"
 ---
 # <a name="support-matrix-for-sql-server-backup-in-azure-vms"></a>Ondersteunings matrix voor SQL Server back-up in virtuele machines van Azure
 
@@ -30,11 +30,10 @@ U kunt Azure Backup gebruiken om een back-up te maken van SQL Server-data bases 
 |Instelling  |Maximumaantal |
 |---------|---------|
 |Aantal data bases dat kan worden beveiligd op een server (en in een kluis)    |   2000      |
-|Ondersteunde database grootte (dit kan leiden tot prestatie problemen)   |   2 TB      |
+|Ondersteunde database grootte (dit kan leiden tot prestatie problemen)   |   6 TB *      |
 |Aantal ondersteunde bestanden in een Data Base    |   1000      |
 
->[!NOTE]
-> [Down load de gedetailleerde resource planner](https://download.microsoft.com/download/A/B/5/AB5D86F0-DCB7-4DC3-9872-6155C96DE500/SQL%20Server%20in%20Azure%20VM%20Backup%20Scale%20Calculator.xlsx) om het geschatte aantal beveiligde data bases te berekenen dat wordt aanbevolen per server op basis van de VM-bronnen, de band breedte en het back-upbeleid.
+_* De limiet voor de grootte van de data base is afhankelijk van de overdrachtsnelheid van gegevens overdracht die wordt ondersteund en de configuratie van de tijds limiet voor back-ups. Dit is niet de vaste limiet. Meer [informatie](#backup-throughput-performance) over de prestaties van de back-updoorvoer._
 
 * SQL Server back-up kan worden geconfigureerd in de Azure Portal of **Power shell**. CLI wordt niet ondersteund.
 * De oplossing wordt ondersteund op beide soorten [implementaties](../azure-resource-manager/management/deployment-models.md) -Azure Resource Manager vm's en klassieke vm's.
@@ -93,6 +92,17 @@ Volledig | Primair
 Differentiële | Primair
 Logboek |  Secundair
 Copy-Only volledig |  Secundair
+
+## <a name="backup-throughput-performance"></a>Prestaties van de back-updoorvoer
+
+Azure Backup ondersteunt een consistente overdrachtsnelheid van 200 Mbps voor volledige en differentiële back-ups van grote SQL-data bases (van 500 GB). Controleer het volgende om de optimale prestaties te benutten:
+
+- De onderliggende VM (die het SQL Server exemplaar bevat, die als host fungeert voor de data base), is geconfigureerd met de vereiste netwerk doorvoer. Als de maximale door Voer van de virtuele machine kleiner is dan 200 Mbps, kan Azure Backup niet op de optimale snelheid gegevens overdragen.<br></br>Daarnaast moet er voldoende doorvoer capaciteit zijn ingericht op de schijf met de database bestanden. Meer [informatie](../virtual-machines/disks-performance.md) over de door Voer van schijven en prestaties in azure vm's. 
+- Processen die worden uitgevoerd in de virtuele machine, gebruiken geen VM-band breedte. 
+- De back-upplanningen zijn verdeeld over een subset van data bases. Meerdere back-ups die gelijktijdig worden uitgevoerd op een VM, delen het netwerk verbruiks aantal tussen de back-ups. Meer [informatie](faq-backup-sql-server.md#can-i-control-how-many-concurrent-backups-run-on-the-sql-server) over het beheren van het aantal gelijktijdige back-ups.
+
+>[!NOTE]
+> [Down load de gedetailleerde resource planner](https://download.microsoft.com/download/A/B/5/AB5D86F0-DCB7-4DC3-9872-6155C96DE500/SQL%20Server%20in%20Azure%20VM%20Backup%20Scale%20Calculator.xlsx) om het geschatte aantal beveiligde data bases te berekenen dat wordt aanbevolen per server op basis van de VM-bronnen, de band breedte en het back-upbeleid.
 
 ## <a name="next-steps"></a>Volgende stappen
 

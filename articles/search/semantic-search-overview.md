@@ -7,14 +7,14 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 03/18/2021
+ms.date: 04/01/2021
 ms.custom: references_regions
-ms.openlocfilehash: b5b33007f71cfc2a29005ce84f1fedba90dd1bf1
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 04300b8d148bb22bf585aa81481c475b347ad462
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105561964"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106222041"
 ---
 # <a name="semantic-search-in-azure-cognitive-search"></a>Semantisch zoeken in azure Cognitive Search
 
@@ -64,7 +64,7 @@ Semantische mogelijkheden zijn beschikbaar via registratie van de aanmelding, op
 
 De spelling correctie is beschikbaar in dezelfde regio's, maar heeft geen laag beperkingen. Als u een bestaande service hebt die voldoet aan de criteria voor lagen en regio's, is aanmelden alleen vereist.
 
-Tussen de preview-versie van 2 maart tot en met 1 april worden de spelling correctie en de semantische classificatie gratis aangeboden. Na 1 april worden de reken kosten voor het uitvoeren van deze functionaliteit een factureer bare gebeurtenis. De verwachte kosten zijn ongeveer USD $500/maand voor 250.000 query's. U vindt gedetailleerde informatie over de kosten die wordt beschreven op de [pagina Cognitive Search prijzen](https://azure.microsoft.com/pricing/details/search/) en in [schatting en beheer kosten](search-sku-manage-costs.md).
+Tussen de preview-versie van 2 maart tot en met eind april, worden spelling correctie en semantische classificatie gratis aangeboden. Later in april worden de reken kosten voor het uitvoeren van deze functionaliteit een factureer bare gebeurtenis. De verwachte kosten zijn ongeveer USD $500/maand voor 250.000 query's. U vindt gedetailleerde informatie over de kosten die wordt beschreven op de [pagina Cognitive Search prijzen](https://azure.microsoft.com/pricing/details/search/) en in [schatting en beheer kosten](search-sku-manage-costs.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

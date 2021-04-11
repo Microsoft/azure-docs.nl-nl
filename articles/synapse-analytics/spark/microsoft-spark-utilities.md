@@ -10,12 +10,12 @@ ms.date: 09/10/2020
 ms.author: ruxu
 ms.reviewer: ''
 zone_pivot_groups: programming-languages-spark-all-minus-sql
-ms.openlocfilehash: 58672bd68d9a2ea85f58b3761f3b89098b9f5afc
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8b3bc99d4391e2079d1b0ecc39011f1b2afc4440
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100368656"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106096033"
 ---
 # <a name="introduction-to-microsoft-spark-utilities"></a>Inleiding tot micro soft Spark-Hulpprogram Ma's
 
@@ -25,9 +25,9 @@ Micro soft Spark-Hulpprogram Ma's (MSSparkUtils) is een ingebouwd pakket waarmee
 
 ### <a name="configure-access-to-azure-data-lake-storage-gen2"></a>Toegang tot Azure Data Lake Storage Gen2 configureren 
 
-Synapse-notebooks gebruiken Azure Active Directory (Azure AD) pass-through om toegang te krijgen tot de ADLS Gen2 accounts. U moet **Blob Storage Inzender** zijn om toegang te krijgen tot het ADLS Gen2 account (of de map). 
+Synapse-notebooks gebruiken Azure Active Directory (Azure AD) pass-through om toegang te krijgen tot de ADLS Gen2 accounts. U moet een Inzender voor **opslag-blobs** hebben om toegang te krijgen tot het ADLS Gen2 account (of de map). 
 
-Synapse-pipelines gebruiken werk ruimte-identiteit (MSI) voor toegang tot de opslag accounts. Als u MSSparkUtils in uw pijplijn activiteiten wilt gebruiken, moet uw werkruimte identiteit worden **Blob Storage Inzender** om toegang te krijgen tot het ADLS Gen2 account (of de map).
+Synapse-pipelines gebruiken werk ruimte-identiteit (MSI) voor toegang tot de opslag accounts. Als u MSSparkUtils in uw pijplijn activiteiten wilt gebruiken, moet de identiteit van de werk **ruimte worden gebruikt om toegang** te krijgen tot het ADLS Gen2 account (of de map).
 
 Volg deze stappen om ervoor te zorgen dat uw Azure AD-en Workspace MSI toegang hebben tot het ADLS Gen2-account:
 1. Open de [Azure Portal](https://portal.azure.com/) en het opslag account dat u wilt openen. U kunt naar de specifieke container navigeren die u wilt openen.

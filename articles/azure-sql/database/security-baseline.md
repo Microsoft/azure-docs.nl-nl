@@ -4,21 +4,19 @@ description: De Azure SQL Database Security Baseline voorziet in procedure richt
 author: msmbaldwin
 ms.service: sql-database
 ms.topic: conceptual
-ms.date: 02/17/2021
+ms.date: 03/30/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: ca28c2a1943912ce6a244929e7438edd7680d131
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: bf89830745207e264e3d8080ac84d1cac5ddb708
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105565959"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106079111"
 ---
 # <a name="azure-security-baseline-for-azure-sql-database"></a>Azure-beveiligings basislijn voor Azure SQL Database
 
-In deze beveiligings basislijn worden richt lijnen van de [Azure Security Bench Mark-versie 1,0](../../security/benchmarks/overview.md) ingesteld op Azure SQL database. De Azure Security-benchmark biedt aanbevelingen voor hoe u uw cloudoplossingen in Azure kunt beveiligen. De inhoud wordt gegroepeerd op de **beveiligings controles** die zijn gedefinieerd door de Azure Security-benchmark en de bijbehorende richt lijnen die van toepassing zijn op Azure SQL database. **Besturings elementen** die niet van toepassing zijn op Azure SQL database, zijn uitgesloten.
-
-Als u wilt zien hoe Azure SQL Database volledig is toegewezen aan de beveiligings benchmark van Azure, raadpleegt u het [volledige Azure SQL database beveiligings basislijn toewijzings bestand](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
+In deze beveiligings basislijn worden richt lijnen van de [Azure Security Bench Mark versie 1.0](../../security/benchmarks/overview-v1.md) Azure SQL database. De Azure Security-benchmark biedt aanbevelingen voor hoe u uw cloudoplossingen in Azure kunt beveiligen. De inhoud wordt gegroepeerd op de **beveiligings controles** die zijn gedefinieerd door de Azure Security-benchmark en de bijbehorende richt lijnen die van toepassing zijn op Azure SQL database. **Besturings elementen** die niet van toepassing zijn op Azure SQL database of waarvoor de verantwoordelijkheid van micro soft is, zijn uitgesloten. Als u wilt zien hoe Azure SQL Database volledig is toegewezen aan de beveiligings benchmark van Azure, raadpleegt u het [volledige Azure monitor beveiligings basislijn toewijzings bestand](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
 
 ## <a name="network-security"></a>Netwerkbeveiliging
 
@@ -32,9 +30,9 @@ Als u wilt toestaan dat verkeer wordt bereikt Azure SQL Database, gebruikt u de 
 
 Met regels voor virtuele netwerken kunnen Azure SQL Database alleen communicatie accepteren die worden verzonden vanuit geselecteerde subnetten binnen een virtueel netwerk.
 
-- [Private Link instellen voor Azure SQL Database](./private-endpoint-overview.md#how-to-set-up-private-link-for-azure-sql-database)
+- [Private Link instellen voor Azure SQL Database](/azure/sql-database/sql-database-private-endpoint-overview#how-to-set-up-private-link-for-azure-sql-database)
 
-- [Service-eind punten en-regels voor virtuele netwerken gebruiken voor database servers](./vnet-service-endpoint-rule-overview.md)
+- [Service-eind punten en-regels voor virtuele netwerken gebruiken voor database servers](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview)
 
 **Verantwoordelijkheid**: Klant
 
@@ -68,9 +66,9 @@ U kunt ook NSG-stroom logboeken naar een Log Analytics-werk ruimte verzenden en 
 
 **Hulp**: Schakel DDoS Protection standaard in voor de virtuele netwerken die zijn gekoppeld aan uw SQL Server-instanties voor beveiliging van gedistribueerde Denial-of-service-aanvallen. Gebruik Azure Security Center geïntegreerde bedreigings informatie om communicatie met bekende of ongebruikte Internet-IP-adressen te weigeren.
 
-- [DDoS-beveiliging configureren](../../ddos-protection/manage-ddos-protection.md)
+- [DDoS-beveiliging configureren](/azure/virtual-network/manage-ddos-protection)
 
-- [Meer informatie over Azure Security Center geïntegreerde bedreigings informatie](../../security-center/azure-defender.md)
+- [Meer informatie over Azure Security Center geïntegreerde bedreigings informatie](/azure/security-center/security-center-alerts-data-services)
 
 **Verantwoordelijkheid**: Klant
 
@@ -92,7 +90,7 @@ U kunt ook NSG-stroom logboeken naar een Log Analytics-werk ruimte verzenden en 
 
 **Hulp**: Schakel Advanced Threat Protection (ATP) in voor Azure SQL database.  Gebruikers ontvangen een waarschuwing bij verdachte database activiteiten, potentiële kwetsbaar heden en SQL-injectie aanvallen, evenals afwijkende database toegang en query patronen. Geavanceerde bedreigingen beveiliging integreert ook waarschuwingen met Azure Security Center. 
 
-- [Advanced Threat Protection voor Azure SQL Database begrijpen en gebruiken](./threat-detection-overview.md)
+- [Advanced Threat Protection voor Azure SQL Database begrijpen en gebruiken](/azure/sql-database/sql-database-threat-detection-overview)
 
 **Verantwoordelijkheid**: Klant
 
@@ -104,7 +102,7 @@ U kunt ook NSG-stroom logboeken naar een Log Analytics-werk ruimte verzenden en 
 
 Wanneer u service-eind punten voor Azure SQL Database gebruikt, is uitgaand naar Azure SQL Database open bare IP-adressen vereist: netwerk beveiligings groepen (Nsg's) moeten zijn geopend om te Azure SQL Database Ip's om verbinding te kunnen maken. U kunt dit doen met behulp van NSG-service tags voor Azure SQL Database.
 
-- [Informatie over service tags met Service-eind punten voor Azure SQL Database](./vnet-service-endpoint-rule-overview.md#limitations)
+- [Informatie over service tags met Service-eind punten voor Azure SQL Database](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview#limitations)
 
 - [Service Tags begrijpen en gebruiken](../../virtual-network/service-tags-overview.md)
 
@@ -136,7 +134,7 @@ Gebruik een van de ingebouwde Azure Policy definities die betrekking hebben op l
 
 U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties op te zoeken of uit te voeren op resources.
 
-- [Tags maken en gebruiken](../../azure-resource-manager/management/tag-resources.md)
+- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
 
 **Verantwoordelijkheid**: Klant
 
@@ -146,9 +144,9 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 **Hulp**: Azure-activiteiten logboek gebruiken om netwerk resource configuraties te bewaken en wijzigingen te detecteren voor netwerk bronnen die betrekking hebben op uw Azure SQL database server-exemplaren. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke netwerk bronnen plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../../azure-monitor/essentials/activity-log.md#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](/azure/azure-monitor/platform/activity-log-view)
 
-- [Waarschuwingen maken in Azure Monitor](../../azure-monitor/alerts/alerts-activity-log.md)
+- [Waarschuwingen maken in Azure Monitor](/azure/azure-monitor/platform/alerts-activity-log)
 
 **Verantwoordelijkheid**: Klant
 
@@ -164,11 +162,11 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 Daarnaast kunt u de telemetrie van Azure SQL Diagnostics streamen naar Azure SQL-analyse, een Cloud oplossing die de prestaties van Azure SQL-data bases en Azure SQL Managed instances op schaal en tussen meerdere abonnementen bewaakt. Het helpt u bij het verzamelen en visualiseren van Azure SQL Database prestatie gegevens en heeft ingebouwde intelligentie voor het oplossen van prestaties.
 
-- [Controle instellen voor uw Azure SQL Database](./auditing-overview.md)
+- [Controle instellen voor uw Azure SQL Database](/azure/sql-database/sql-database-auditing)
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](./metrics-diagnostic-telemetry-logging-streaming-export-configure.md)
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](/azure/sql-database/sql-database-metrics-diag-logging)
 
-- [Diagnostische gegevens streamen naar Azure SQL-analyse](./metrics-diagnostic-telemetry-logging-streaming-export-configure.md#stream-into-sql-analytics)
+- [Diagnostische gegevens streamen naar Azure SQL-analyse](/azure/sql-database/sql-database-metrics-diag-logging#stream-into-azure-sql-analytics)
 
 **Verantwoordelijkheid**: Klant
 
@@ -178,7 +176,7 @@ Daarnaast kunt u de telemetrie van Azure SQL Diagnostics streamen naar Azure SQL
 
 **Hulp**: Schakel controle in op uw Azure SQL database server-exemplaar en kies een opslag locatie voor de audit Logboeken (Azure Storage, log Analytics of event hub).
 
-- [Controle inschakelen voor Azure SQL Server](./auditing-overview.md)
+- [Controle inschakelen voor Azure SQL Server](/azure/sql-database/sql-database-auditing)
 
 **Verantwoordelijkheid**: Klant
 
@@ -192,7 +190,7 @@ Daarnaast kunt u de telemetrie van Azure SQL Diagnostics streamen naar Azure SQL
 
 **Richt lijnen**: wanneer u uw Azure SQL database-logboeken opslaat in een log Analytics-werk ruimte, stelt u de Bewaar periode voor het logboek in volgens de nalevings voorschriften van uw organisatie.
 
-- [Para meters voor het bewaren van Logboeken instellen](../../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen](/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
 
 **Verantwoordelijkheid**: Klant
 
@@ -206,7 +204,7 @@ Daarnaast kunt u de telemetrie van Azure SQL Diagnostics streamen naar Azure SQL
 
 **Richt lijnen**: Logboeken analyseren en bewaken voor afwijkend gedrag en regel matig resultaten bekijken. Gebruik de geavanceerde bedreigings beveiliging van Azure Security Center om te waarschuwen voor ongebruikelijke activiteiten die betrekking hebben op uw Azure SQL Database-exemplaar. U kunt ook waarschuwingen configureren op basis van metrische waarden of Azure-activiteiten logboek vermeldingen die betrekking hebben op uw Azure SQL Database exemplaren.
 
-- [Meer informatie over geavanceerde beveiliging tegen bedreigingen en waarschuwingen voor Azure SQL Server](./threat-detection-overview.md)
+- [Meer informatie over geavanceerde beveiliging tegen bedreigingen en waarschuwingen voor Azure SQL Server](/azure/sql-database/sql-database-threat-detection-overview)
 
 - [Aangepaste waarschuwingen configureren voor Azure SQL Database](alerts-insights-configure-portal.md)
 
@@ -218,7 +216,7 @@ Daarnaast kunt u de telemetrie van Azure SQL Diagnostics streamen naar Azure SQL
 
 **Hulp**: gebruik Azure Security Center Advanced Threat Protection voor Azure SQL-data bases voor bewaking en waarschuwingen over afwijkende activiteiten. Schakel Azure Defender voor SQL in voor uw SQL-data bases. Azure Defender voor SQL bevat functionaliteit voor het detecteren en classificeren van gevoelige gegevens, het halen en het beperken van potentiële database problemen en de detectie van afwijkende activiteiten die kunnen wijzen op een bedreiging voor uw data base.
 
-- [Meer informatie over geavanceerde beveiliging tegen bedreigingen en waarschuwingen voor Azure SQL Database](./threat-detection-overview.md)
+- [Meer informatie over geavanceerde beveiliging tegen bedreigingen en waarschuwingen voor Azure SQL Database](/azure/sql-database/sql-database-threat-detection-overview)
 
 - [Azure Defender voor SQL inschakelen voor Azure SQL Database](azure-defender-for-sql.md)
 
@@ -240,9 +238,9 @@ Daarnaast kunt u de telemetrie van Azure SQL Diagnostics streamen naar Azure SQL
 
 **Hulp**: Azure Active Directory (Azure AD) heeft ingebouwde rollen die expliciet moeten worden toegewezen en waarop query's kunnen worden doorzocht. Gebruik de Azure AD Power shell-module om ad-hoc-query's uit te voeren om accounts te detecteren die lid zijn van beheer groepen.
 
-- [Een directory-rol verkrijgen in azure AD met Power shell](/powershell/module/azuread/get-azureaddirectoryrole?amp;preserve-view=true&view=azureadps-2.0)
+- [Een directory-rol verkrijgen in azure AD met Power shell](/powershell/module/azuread/get-azureaddirectoryrole)
 
-- [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember?amp;preserve-view=true&view=azureadps-2.0)
+- [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember)
 
 **Verantwoordelijkheid**: Klant
 
@@ -252,7 +250,7 @@ Daarnaast kunt u de telemetrie van Azure SQL Diagnostics streamen naar Azure SQL
 
 **Hulp**: Azure Active Directory (Azure AD) beschikt niet over het concept van standaard wachtwoorden. Bij het inrichten van een Azure SQL Database-exemplaar, kunt u het beste de verificatie met Azure AD integreren.
 
-- [Azure AD-verificatie configureren en beheren met Azure SQL](/azure/azure-sql/database/authentication-aad-configure)
+- [Azure AD-verificatie configureren en beheren met Azure SQL](/azure/sql-database/azure-sql/database/authentication-aad-configure)
 
 **Verantwoordelijkheid**: Klant
 
@@ -298,11 +296,11 @@ Daarnaast kunt u de telemetrie van Azure SQL Diagnostics streamen naar Azure SQL
 
 Gebruik Advanced Threat Protection voor Azure SQL Database om afwijkende activiteiten te detecteren die ongebruikelijke en potentieel schadelijke pogingen om toegang te krijgen tot of misbruik te maken van data bases.
 
-- [Azure AD-gebruikers identificeren die zijn gemarkeerd voor riskante activiteiten](../../active-directory/identity-protection/overview-identity-protection.md)
+- [Azure AD-gebruikers identificeren die zijn gemarkeerd voor riskante activiteiten](/azure/active-directory/reports-monitoring/concept-user-at-risk)
 
 - [Identiteits-en toegangs activiteiten van gebruikers controleren in Azure Security Center](../../security-center/security-center-identity-access.md)
 
-- [Geavanceerde beveiliging tegen bedreigingen en mogelijke waarschuwingen controleren](./threat-detection-overview.md#alerts)
+- [Geavanceerde beveiliging tegen bedreigingen en mogelijke waarschuwingen controleren](https://docs.microsoft.com/azure/azure-sql/database/threat-detection-overview#alerts)
 
 **Verantwoordelijkheid**: Klant
 
@@ -360,7 +358,7 @@ Gebruik Advanced Threat Protection voor Azure SQL Database om afwijkende activit
 
 **Hulp**: gebruik Azure Active Directory (Azure AD) identiteits beveiliging en risico detecties om automatische antwoorden te configureren op gedetecteerde verdachte acties met betrekking tot gebruikers identiteiten. Daarnaast kunt u gegevens opnemen in azure Sentinel voor verder onderzoek.
 
-- [Azure AD-risico aanmeldingen weer geven](../../active-directory/identity-protection/overview-identity-protection.md)
+- [Azure AD-risico aanmeldingen weer geven](/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
 
 - [Risico beleid voor identiteits beveiliging configureren en inschakelen](../../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
@@ -386,7 +384,7 @@ Gebruik Advanced Threat Protection voor Azure SQL Database om afwijkende activit
 
 **Hulp**: Tags gebruiken om Azure-resources te helpen bij het bijhouden of verwerken van gevoelige informatie.
 
-- [Tags maken en gebruiken](../../azure-resource-manager/management/tag-resources.md)
+- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
 
 **Verantwoordelijkheid**: Klant
 
@@ -400,13 +398,13 @@ Gebruik Advanced Threat Protection voor Azure SQL Database om afwijkende activit
 
 **Richt lijnen**: afzonderlijke abonnementen en/of beheer groepen implementeren voor ontwikkeling, testen en productie. Resources moeten worden gescheiden door Vnet/subnet, op de juiste wijze worden gelabeld en beveiligd in een NSG of Azure Firewall. Resources die gevoelige gegevens opslaan of verwerken, moeten worden geïsoleerd. Persoonlijke koppeling gebruiken; Implementeer Azure-SQL Server in uw Vnet en maak privé verbinding met behulp van privé-eind punten.
 
-- [Aanvullende Azure-abonnementen maken](../../cost-management-billing/manage/create-subscription.md)
+- [Aanvullende Azure-abonnementen maken](/azure/billing/billing-create-subscription)
 
-- [Beheergroepen maken](../../governance/management-groups/create-management-group-portal.md)
+- [Beheergroepen maken](/azure/governance/management-groups/create)
 
-- [Tags maken en gebruiken](../../azure-resource-manager/management/tag-resources.md)
+- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
 
-- [Private Link instellen voor Azure SQL Database](./private-endpoint-overview.md#how-to-set-up-private-link-for-azure-sql-database)
+- [Private Link instellen voor Azure SQL Database](/azure/sql-database/sql-database-private-endpoint-overview#how-to-set-up-private-link-for-azure-sql-database)
 
 **Verantwoordelijkheid**: Klant
 
@@ -418,7 +416,7 @@ Gebruik Advanced Threat Protection voor Azure SQL Database om afwijkende activit
 
 Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt micro soft alle inhoud van de klant als gevoelig en gaat u naar een fantastische lengte om te beschermen tegen verlies en bloot stelling van klant gegevens. Om ervoor te zorgen dat klant gegevens binnen Azure veilig blijven, heeft micro soft een reeks robuuste besturings elementen en mogelijkheden voor gegevens bescherming geïmplementeerd en onderhouden.
 
-- [Persoonlijke koppelingen en Nsg's configureren om te voor komen dat gegevens exfiltration in uw Azure SQL Database-instanties](./private-endpoint-overview.md)
+- [Persoonlijke koppelingen en Nsg's configureren om te voor komen dat gegevens exfiltration in uw Azure SQL Database-instanties](/azure/sql-database/sql-database-private-endpoint-overview)
 
 - [Informatie over beveiliging van klantgegevens in Azure](../../security/fundamentals/protection-customer-data.md)
 
@@ -430,7 +428,7 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 **Hulp**: gebruik de functie voor Azure SQL database gegevens detectie en-classificatie. Gegevens detectie en-classificatie bieden geavanceerde mogelijkheden die zijn ingebouwd in Azure SQL Database voor het detecteren, classificeren, labelen van &amp; het beveiligen van gevoelige gegevens in uw data bases.
 
-- [Gegevens detectie en-classificatie gebruiken voor Azure SQL Server](./data-discovery-and-classification-overview.md)
+- [Gegevens detectie en-classificatie gebruiken voor Azure SQL Server](/azure/sql-database/sql-database-data-discovery-and-classification)
 
 **Verantwoordelijkheid**: Klant
 
@@ -444,9 +442,9 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 **Hulp**: gebruik Azure Active Directory (Azure AD) voor het verifiëren en beheren van toegang tot Azure SQL database-exemplaren.
 
-- [Azure SQL Server integreren met Azure AD voor verificatie](./authentication-aad-overview.md)
+- [Azure SQL Server integreren met Azure AD voor verificatie](/azure/sql-database/sql-database-aad-authentication)
 
-- [Toegang beheren in Azure SQL Server](./logins-create-manage.md)
+- [Toegang beheren in Azure SQL Server](/azure/sql-database/sql-database-control-access)
 
 **Verantwoordelijkheid**: Klant
 
@@ -456,7 +454,7 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 **Richt lijnen**: transparent Data Encryption (TDE) helpt bij het beschermen van Azure SQL database, Azure SQL Managed instance en Azure Data Warehouse tegen de dreiging van schadelijke offline activiteiten door het versleutelen van gegevens in rust. Het voert in realtime versleuteling en ontsleuteling van de database, bijbehorende back-ups en transactielogboekbestanden 'at-rest' uit, zonder dat er wijzigingen in de toepassing moeten worden aangebracht. TDE is standaard ingeschakeld voor alle zojuist geïmplementeerde data bases in SQL Database en SQL Managed instance. De versleutelings sleutel TDE kan worden beheerd door micro soft of de klant.
 
-- [Transparante gegevens versleuteling beheren en uw eigen versleutelings sleutels gebruiken](./transparent-data-encryption-tde-overview.md?tabs=azure-portal#manage-transparent-data-encryption)
+- [Transparante gegevens versleuteling beheren en uw eigen versleutelings sleutels gebruiken](https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-azure-sql?tabs=azure-portal#manage-transparent-data-encryption)
 
 **Verantwoordelijkheid**: Klant
 
@@ -470,7 +468,7 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken wanneer wijzigingen worden aangebracht in productie-exemplaren van Azure SQL database en andere essentiële of gerelateerde resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../../azure-monitor/alerts/alerts-activity-log.md)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](/azure/azure-monitor/platform/alerts-activity-log)
 
 **Verantwoordelijkheid**: Klant
 
@@ -484,11 +482,11 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 **Hulp**: Azure Defender voor SQL inschakelen voor Azure SQL database en aanbevelingen volgen van Azure Security Center over het uitvoeren van beveiligings evaluaties op uw Azure SQL-servers.
 
-- [Beveiligings evaluaties uitvoeren op Azure SQL Database](./sql-vulnerability-assessment.md)
+- [Beveiligings evaluaties uitvoeren op Azure SQL Database](/azure/sql-database/sql-vulnerability-assessment)
 
 - [Azure Defender voor SQL inschakelen](azure-defender-for-sql.md)
 
-- [Aanbevelingen voor de evaluatie van Azure Security Center-beveiligings problemen implementeren](../../security-center/deploy-vulnerability-assessment-vm.md)
+- [Aanbevelingen voor de evaluatie van Azure Security Center-beveiligings problemen implementeren](/azure/security-center/security-center-vulnerability-assessment-recommendations)
 
 **Verantwoordelijkheid**: Klant
 
@@ -502,7 +500,7 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 **Hulp**: periodieke terugkerende scans voor uw Azure SQL database-instanties inschakelen; Hiermee configureert u een evaluatie van beveiligings problemen om een keer per week automatisch een scan uit te voeren op uw data base. Er wordt een overzicht van de scan resultaten verzonden naar de e-mail adressen die u opgeeft. Vergelijk de resultaten om te controleren of de beveiligings problemen zijn opgelost.
 
-- [Een evaluatie rapport voor beveiligings problemen exporteren in Azure Security Center](./sql-vulnerability-assessment.md#export-an-assessment-report)
+- [Een evaluatie rapport voor beveiligings problemen exporteren in Azure Security Center](/azure/sql-database/sql-vulnerability-assessment#implementing-vulnerability-assessment)
 
 **Verantwoordelijkheid**: Klant
 
@@ -512,7 +510,7 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 **Richt lijnen**: gebruik de standaard risico classificaties (beveiligde Score) van Azure Security Center.
 
-- [Azure Security Center beveiligde Score begrijpen](../../security-center/secure-score-security-controls.md)
+- [Azure Security Center beveiligde Score begrijpen](/azure/security-center/security-center-secure-score)
 
 **Verantwoordelijkheid**: Klant
 
@@ -534,7 +532,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 - [Query's maken met Azure resource Graph](../../governance/resource-graph/first-query-portal.md)
 
-- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?amp;preserve-view=true&view=azps-4.8.0)
+- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription)
 
 - [Meer informatie over Azure RBAC](../../role-based-access-control/overview.md)
 
@@ -546,7 +544,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 **Richt lijnen**: Tags Toep assen op Azure-resources die meta gegevens geven om ze logisch in een taxonomie te organiseren.
 
-- [Tags maken en gebruiken](../../azure-resource-manager/management/tag-resources.md)
+- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
 
 **Verantwoordelijkheid**: Klant
 
@@ -556,11 +554,11 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 **Richt lijnen**: Gebruik labels, beheer groepen en afzonderlijke abonnementen, waar nodig, om assets te organiseren en bij te houden. Sluit de inventaris regel matig af en zorg ervoor dat niet-geautoriseerde resources tijdig worden verwijderd uit het abonnement.
 
-- [Aanvullende Azure-abonnementen maken](../../cost-management-billing/manage/create-subscription.md)
+- [Aanvullende Azure-abonnementen maken](/azure/billing/billing-create-subscription)
 
-- [Beheergroepen maken](../../governance/management-groups/create-management-group-portal.md)
+- [Beheergroepen maken](/azure/governance/management-groups/create)
 
-- [Tags maken en gebruiken](../../azure-resource-manager/management/tag-resources.md)
+- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
 
 **Verantwoordelijkheid**: Klant
 
@@ -594,7 +592,7 @@ Gebruik Azure resource Graph voor het opvragen/detecteren van resources binnen u
 
 - [Azure Policy configureren en beheren](../../governance/policy/tutorials/create-and-manage.md)
 
-- [Een specifiek resource type weigeren met Azure Policy](../../governance/policy/samples/built-in-policies.md#general)
+- [Een specifiek resource type weigeren met Azure Policy](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#general)
 
 **Verantwoordelijkheid**: Klant
 
@@ -640,9 +638,9 @@ Gebruik Azure resource Graph voor het opvragen/detecteren van resources binnen u
 
 **Richt lijnen**: als u aangepaste Azure Policy definities gebruikt, kunt u Azure DevOps of Azure opslag plaatsen gebruiken om uw code veilig op te slaan en te beheren.
 
-- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow?amp;preserve-view=true&view=azure-devops)
+- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow)
 
-- [Documentatie voor Azure opslag plaatsen](/azure/devops/repos/?amp;preserve-view=true&view=azure-devops)
+- [Documentatie voor Azure opslag plaatsen](/azure/devops/repos/)
 
 **Verantwoordelijkheid**: Klant
 
@@ -662,7 +660,7 @@ Gebruik Azure resource Graph voor het opvragen/detecteren van resources binnen u
 
 **Hulp**: Maak gebruik van Azure Security Center om basislijn scans uit te voeren voor uw Azure SQL-servers en-data bases.
 
-- [Aanbevelingen herstellen in Azure Security Center](../../security-center/security-center-remediate-recommendations.md)
+- [Aanbevelingen herstellen in Azure Security Center](/azure/security-center/security-center-sql-service-recommendations)
 
 **Verantwoordelijkheid**: Klant
 
@@ -672,7 +670,7 @@ Gebruik Azure resource Graph voor het opvragen/detecteren van resources binnen u
 
 **Hulp**: gebruik Azure Key Vault om versleutelings sleutels voor Azure SQL database transparent Data Encryption op te slaan (TDE).
 
-- [Het beveiligen van gevoelige gegevens die worden opgeslagen in Azure SQL Server en het opslaan van de versleutelings sleutels in Azure Key Vault](./always-encrypted-azure-key-vault-configure.md)
+- [Het beveiligen van gevoelige gegevens die worden opgeslagen in Azure SQL Server en het opslaan van de versleutelings sleutels in Azure Key Vault](/azure/sql-database/sql-database-always-encrypted-azure-key-vault)
 
 **Verantwoordelijkheid**: Klant
 
@@ -726,7 +724,7 @@ Scan vooraf op inhoud die wordt geüpload naar niet-reken resources van Azure, z
 
 Als u wilt voldoen aan verschillende nalevings vereisten, kunt u verschillende Bewaar perioden selecteren voor wekelijkse, maandelijkse en/of jaarlijkse back-ups. Het opslag verbruik is afhankelijk van de geselecteerde frequentie van back-ups en de retentie periode (n).
 
-- [Meer informatie over back-ups en bedrijfs continuïteit met Azure SQL Server](./business-continuity-high-availability-disaster-recover-hadr-overview.md)
+- [Meer informatie over back-ups en bedrijfs continuïteit met Azure SQL Server](/azure/sql-database/sql-database-business-continuity)
 
 **Verantwoordelijkheid**: Gedeeld
 
@@ -742,9 +740,9 @@ Als u wilt voldoen aan verschillende nalevings vereisten, kunt u verschillende B
 
 Als door de klant beheerde sleutels worden gebruikt voor Transparent Data Encryption, moet u ervoor zorgen dat er een back-up van uw sleutels wordt gemaakt.
 
-- [Meer informatie over back-ups in Azure SQL Server](./automated-backups-overview.md?tabs=single-database)
+- [Meer informatie over back-ups in Azure SQL Server](https://docs.microsoft.com/azure/sql-database/sql-database-automated-backups?tabs=single-database)
 
-- [Hoe kan ik een back-up maken van sleutel kluis sleutels in azure?](/powershell/module/az.keyvault/backup-azkeyvaultkey?amp;preserve-view=true&view=azps-4.8.0)
+- [Hoe kan ik een back-up maken van sleutel kluis sleutels in azure?](/powershell/module/az.keyvault/backup-azkeyvaultkey)
 
 **Verantwoordelijkheid**: Klant
 
@@ -758,9 +756,9 @@ Als door de klant beheerde sleutels worden gebruikt voor Transparent Data Encryp
 
 **Richt lijnen**: Zorg ervoor dat het gegevens herstel van inhoud regel matig wordt uitgevoerd in azure backup. Test zo nodig inhoud terug naar een geïsoleerd VLAN. Het herstellen van een back-up van door de klant beheerde sleutels testen.
 
-- [Sleutel kluis sleutels herstellen in azure](/powershell/module/az.keyvault/restore-azkeyvaultkey?amp;preserve-view=true&view=azps-4.8.0)
+- [Sleutel kluis sleutels herstellen in azure](/powershell/module/az.keyvault/restore-azkeyvaultkey)
 
-- [Azure SQL Database back-ups herstellen met behulp van herstel naar een bepaald tijdstip](./recovery-using-backups.md#point-in-time-restore)
+- [Azure SQL Database back-ups herstellen met behulp van herstel naar een bepaald tijdstip](/azure/sql-database/sql-database-recovery-using-backups#point-in-time-restore)
 
 **Verantwoordelijkheid**: Klant
 
@@ -770,7 +768,7 @@ Als door de klant beheerde sleutels worden gebruikt voor Transparent Data Encryp
 
 **Hulp**: Schakel zacht verwijderen in azure Key Vault in om sleutels te beschermen tegen onbedoelde of schadelijke verwijdering.
 
-- [Zacht verwijderen inschakelen in Key Vault](../../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
+- [Zacht verwijderen inschakelen in Key Vault](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
 
 **Verantwoordelijkheid**: Klant
 
@@ -860,5 +858,5 @@ Als door de klant beheerde sleutels worden gebruikt voor Transparent Data Encryp
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](../../security/benchmarks/overview.md)
-- Meer informatie over [Azure-beveiligingsbasislijnen](../../security/benchmarks/security-baselines-overview.md)
+- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
+- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)

@@ -12,16 +12,19 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 01/08/2020
-ms.openlocfilehash: e9f8d4797907cfdc4e7184580e31ac3cb3975b66
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 050356dc74641e7e7154d6a3976e6cc8d5f4ce3d
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101739879"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106063607"
 ---
 # <a name="tutorial-migrate-mysql-to-azure-database-for-mysql-online-using-dms"></a>Zelfstudie: MySQL online migreren naar Azure Database for MySQL met behulp van DMS
 
 U kunt Azure Database Migration Service gebruiken om de databases met minimale downtime te migreren van een on-premises MySQL-instantie naar [Azure Database for MySQL](../mysql/index.yml). Met andere woorden, de migratie is mogelijk met minimale downtime van de toepassing. In deze zelfstudie migreert u de voorbeelddatabase **Werknemers** van een on-premises exemplaar van MySQL 5.7 naar Azure Database for MySQL met behulp van een onlinemigratieactiviteit in Azure Database Migration Service.
+
+> [!IMPORTANT]
+> Het scenario ' MySQL to Azure Database for MySQL ' voor online migratie wordt vervangen door een geparalleld, Maxi maal uitvoerend offline migratie scenario op 1 juni 2021. Voor online migraties kunt u deze nieuwe aanbieding gebruiken in combi natie met [replicatie van gegevens](https://docs.microsoft.com/azure/mysql/concepts-data-in-replication). U kunt ook open source-hulpprogram ma's, zoals [MyDumper/MyLoader](https://centminmod.com/mydumper.html) , gebruiken met gegevens replicatie voor online migraties. 
 
 In deze zelfstudie leert u het volgende:
 > [!div class="checklist"]

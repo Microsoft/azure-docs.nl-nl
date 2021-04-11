@@ -5,15 +5,15 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: tutorial
-ms.date: 02/19/2021
+ms.date: 04/08/2021
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 54900b7b9089d4a4c6cbc742ecf09aa19ff2a550
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: ac9eaea70de67e67ef690c280b30bae22517ac21
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101741953"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107227990"
 ---
 # <a name="tutorial-deploy-and-configure-azure-firewall-using-the-azure-portal"></a>Zelfstudie: Azure Firewall implementeren en configureren met de Azure-portal
 
@@ -111,7 +111,7 @@ Maak nu de virtuele machine voor de werkbelasting en plaats deze in het subnet *
    |Resourcegroep     |**Test-FW-RG**|
    |Naam van de virtuele machine     |**Srv-Work**|
    |Regio     |Hetzelfde als vorige|
-   |Installatiekopie|Windows Server 2019 Datacenter|
+   |Installatiekopie|Windows Server 2016 Datacenter|
    |Beheerdersgebruikersnaam     |Typ een gebruikersnaam|
    |Wachtwoord     |Typ een wachtwoord|
 
@@ -138,7 +138,7 @@ Implementeer de firewall in het VNet.
    |Abonnement     |\<your subscription\>|
    |Resourcegroep     |**Test-FW-RG** |
    |Naam     |**Test-FW01**|
-   |Region     |Selecteer dezelfde locatie die u eerder hebt gebruikt|
+   |Regio     |Selecteer dezelfde locatie die u eerder hebt gebruikt|
    |Firewall beheer|**Firewall regels (klassiek) gebruiken voor het beheren van deze firewall**|
    |Een virtueel netwerk kiezen     |**Bestaande gebruiken**: **Test-FW-VN**|
    |Openbaar IP-adres     |**Nieuwe toevoegen**<br>**Naam**:  **fw-pip**|

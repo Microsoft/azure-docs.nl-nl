@@ -121,6 +121,9 @@
           href: signin-appauth-ios.md
         - name: Android met App Auth
           href: signin-appauth-android.md
+        - name: Beveiligde API Management-API
+          href: secure-api-management.md
+          displayName: 'apim, api management, migrate, b2clogin.com'
     - name: Stroom maken
       items:
         - name: Registratie- of aanmeldingsbeleid
@@ -222,6 +225,15 @@
           href: password-complexity.md
         - name: E-mailverificatie uitschakelen
           href: disable-email-verification.md
+        - name: Aangepaste e-mailverificatie
+          items:
+            - name: Mailjet
+              href: custom-email-mailjet.md
+              displayName: 'Custom email, Custom verification email, Verification email'
+            - name: SendGrid
+              href: custom-email-sendgrid.md
+              displayName: 'Custom email, Custom verification email, Verification email'
+          displayName: verification
         - name: MFA inschakelen
           items:
             - name: Meervoudige verificatie
@@ -269,17 +281,6 @@
           href: add-api-connector.md
     - name: Aangepast beleid
       items:
-        - name: Aan de slag met aangepaste beleidsregels
-          href: custom-policy-get-started.md
-        - name: Aangepaste e-mailverificatie
-          items:
-            - name: Mailjet
-              href: custom-email-mailjet.md
-              displayName: 'Custom email, Custom verification email, Verification email'
-            - name: SendGrid
-              href: custom-email-sendgrid.md
-              displayName: 'Custom email, Custom verification email, Verification email'
-          displayName: verification
         - name: Uw eigen bedrijfslogica toevoegen
           items:
             - name: REST API integreren
@@ -299,101 +300,6 @@
               displayName: 'troubleshooting, app insights'
             - name: Aangepaste beleids regels voor problemen oplossen
               href: troubleshoot-custom-policies.md
-        - name: Naslaginformatie
-          items:
-            - name: TrustFrameworkPolicy
-              href: trustframeworkpolicy.md
-            - name: BuildingBlocks
-              href: buildingblocks.md
-              items:
-                - name: ClaimsSchema
-                  href: claimsschema.md
-                - name: ClaimsTransformations
-                  href: claimstransformations.md
-                  items:
-                    - name: Booleaans
-                      href: boolean-transformations.md
-                    - name: Date
-                      href: date-transformations.md
-                    - name: Algemeen
-                      href: general-transformations.md
-                    - name: Geheel getal
-                      href: integer-transformations.md
-                    - name: JSON
-                      href: json-transformations.md
-                    - name: Telefoonnummer
-                      href: phone-number-claims-transformations.md
-                    - name: Externe accounts
-                      href: social-transformations.md
-                    - name: StringCollection
-                      href: stringcollection-transformations.md
-                    - name: Tekenreeks
-                      href: string-transformations.md
-                - name: Predicaten
-                  href: predicates.md
-                - name: ContentDefinitions
-                  href: contentdefinitions.md
-                - name: Lokalisatie
-                  href: localization.md
-                  items:
-                    - name: Id's van lokalisatiereeksen
-                      href: localization-string-ids.md
-                - name: DisplayControls
-                  href: display-controls.md
-                  items:
-                    - name: Verificatie
-                      href: display-control-verification.md
-            - name: ClaimsProviders
-              href: claimsproviders.md
-              items:
-                - name: Technische profielen
-                  href: technicalprofiles.md
-                  items:
-                    - name: Over validatie technische profielen
-                      href: validation-technical-profile.md
-                    - name: Azure Active Directory
-                      href: active-directory-technical-profile.md
-                    - name: Azure AD Multi-Factor Authentication
-                      href: multi-factor-auth-technical-profile.md
-                      displayName: mfa
-                    - name: Azure AD SSPR
-                      href: aad-sspr-technical-profile.md
-                    - name: Claimstransformatie
-                      href: claims-transformation-technical-profile.md
-                    - name: ID-tokenhint
-                      href: id-token-hint.md
-                    - name: Uitgever van het JWT-token
-                      href: jwt-issuer-technical-profile.md
-                    - name: OAuth1
-                      href: oauth1-technical-profile.md
-                    - name: OAuth2
-                      href: oauth2-technical-profile.md
-                    - name: Eenmalig wachtwoord
-                      href: one-time-password-technical-profile.md
-                      displayName: otp
-                    - name: OpenID Connect
-                      href: openid-connect-technical-profile.md
-                    - name: Telefoonfactor
-                      href: phone-factor-technical-profile.md
-                    - name: REST
-                      href: restful-technical-profile.md
-                    - name: SAML-provider opslaan
-                      href: saml-identity-provider-technical-profile.md
-                    - name: Uitgever van het SAML-token
-                      href: saml-issuer-technical-profile.md
-                    - name: Zelf bevestigd
-                      href: self-asserted-technical-profile.md
-                    - name: SSO-sessie
-                      href: custom-policy-reference-sso.md
-                      displayName: single sign-on
-            - name: UserJourneys
-              href: userjourneys.md
-            - name: SubJourneys
-              href: subjourneys.md
-            - name: RelyingParty
-              href: relyingparty.md
-            - name: Claim resolvers
-              href: claim-resolver-overview.md
     - name: Eindpunt voor gebruikersinfo
       href: userinfo-endpoint.md
     - name: Partnerintegratie
@@ -458,15 +364,15 @@
         - name: Azure Portal
           href: manage-users-portal.md
           displayName: 'create users, add users, delete users'
+        - name: Gebruikers migreren
+          href: user-migration.md
+          displayName: bulk import
         - name: Partnerintegratie
           items:
             - name: N8identity
               href: partner-n8identity.md
             - name: Saviynt
               href: partner-saviynt.md
-    - name: Beveiligde API Management-API
-      href: secure-api-management.md
-      displayName: 'apim, api management, migrate, b2clogin.com'
     - name: Logboeken en controle
       items:
         - name: Auditlogboeken
@@ -489,12 +395,105 @@
         - name: Gebruikersgegevens
           href: manage-user-data.md
           displayName: GDPR
-    - name: Migratie
-      items:
-        - name: Gebruikers migreren
-          href: user-migration.md
-- name: Naslaginformatie
+- name: Referentie
   items:
+    - name: Aangepast beleids schema
+      items:
+        - name: TrustFrameworkPolicy
+          href: trustframeworkpolicy.md
+        - name: BuildingBlocks
+          href: buildingblocks.md
+          items:
+            - name: ClaimsSchema
+              href: claimsschema.md
+            - name: ClaimsTransformations
+              href: claimstransformations.md
+              items:
+                - name: Booleaans
+                  href: boolean-transformations.md
+                - name: Date
+                  href: date-transformations.md
+                - name: Algemeen
+                  href: general-transformations.md
+                - name: Geheel getal
+                  href: integer-transformations.md
+                - name: JSON
+                  href: json-transformations.md
+                - name: Telefoonnummer
+                  href: phone-number-claims-transformations.md
+                - name: Externe accounts
+                  href: social-transformations.md
+                - name: StringCollection
+                  href: stringcollection-transformations.md
+                - name: Tekenreeks
+                  href: string-transformations.md
+            - name: Predicaten
+              href: predicates.md
+            - name: ContentDefinitions
+              href: contentdefinitions.md
+            - name: Lokalisatie
+              href: localization.md
+              items:
+                - name: Id's van lokalisatiereeksen
+                  href: localization-string-ids.md
+            - name: DisplayControls
+              href: display-controls.md
+              items:
+                - name: Verificatie
+                  href: display-control-verification.md
+        - name: ClaimsProviders
+          href: claimsproviders.md
+          items:
+            - name: Technische profielen
+              href: technicalprofiles.md
+              items:
+                - name: Over validatie technische profielen
+                  href: validation-technical-profile.md
+                - name: Azure Active Directory
+                  href: active-directory-technical-profile.md
+                - name: Azure AD Multi-Factor Authentication
+                  href: multi-factor-auth-technical-profile.md
+                  displayName: mfa
+                - name: Azure AD SSPR
+                  href: aad-sspr-technical-profile.md
+                - name: Claimstransformatie
+                  href: claims-transformation-technical-profile.md
+                - name: ID-tokenhint
+                  href: id-token-hint.md
+                - name: Uitgever van het JWT-token
+                  href: jwt-issuer-technical-profile.md
+                - name: OAuth1
+                  href: oauth1-technical-profile.md
+                - name: OAuth2
+                  href: oauth2-technical-profile.md
+                - name: Eenmalig wachtwoord
+                  href: one-time-password-technical-profile.md
+                  displayName: otp
+                - name: OpenID Connect
+                  href: openid-connect-technical-profile.md
+                - name: Telefoonfactor
+                  href: phone-factor-technical-profile.md
+                - name: REST
+                  href: restful-technical-profile.md
+                - name: SAML-provider opslaan
+                  href: saml-identity-provider-technical-profile.md
+                - name: Uitgever van het SAML-token
+                  href: saml-issuer-technical-profile.md
+                - name: Zelf bevestigd
+                  href: self-asserted-technical-profile.md
+                - name: SSO-sessie
+                  href: custom-policy-reference-sso.md
+                  displayName: single sign-on
+        - name: UserJourneys
+          href: userjourneys.md
+        - name: SubJourneys
+          href: subjourneys.md
+        - name: RelyingParty
+          href: relyingparty.md
+        - name: Claim resolvers
+          href: claim-resolver-overview.md
+    - name: Opmerkingen bij de release van het aangepaste beleid
+      href: custom-policy-developer-notes.md
     - name: Servicelimieten en -beperkingen
       href: service-limits.md
     - name: App-registraties
@@ -510,8 +509,6 @@
       href: error-codes.md
     - name: App met extensies
       href: extensions-app.md
-    - name: Opmerkingen bij de release van aangepast beleid (IEF)
-      href: custom-policy-developer-notes.md
     - name: Versie van pagina-indeling
       href: page-layout.md
       displayName: Page version

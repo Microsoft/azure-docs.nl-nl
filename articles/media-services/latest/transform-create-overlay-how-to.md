@@ -6,12 +6,12 @@ ms.author: inhenkel
 ms.service: media-services
 ms.topic: how-to
 ms.date: 08/31/2020
-ms.openlocfilehash: 95a468d130d1ab1eee349f15592175301c9ddf37
-ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
+ms.openlocfilehash: 6d68f35cd7eff745a3d17009b65b1ed73a190173
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106281910"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106490247"
 ---
 # <a name="how-to-create-an-overlay-with-media-encoder-standard"></a>Een overlay met Media Encoder Standard maken
 
@@ -42,7 +42,7 @@ Met de Media Encoder Standard kunt u een afbeelding, audio bestand of andere vid
 Als u nog niet bekend bent met trans formaties, is het raadzaam om de volgende activiteiten uit te voeren:
 
 * [Video en audio coderen met behulp van Media Services](encode-concept.md)
-* Lees [hoe u codeert met een aangepaste trans formatie-.net](encode-custom-presets-how-to.md). Volg de stappen in dit artikel om de .NET in te stellen die nodig zijn om met trans formaties te werken en ga vervolgens hier terug om een voor beeld van een overlay voor te bereiden.
+* Lees [hoe u codeert met een aangepaste trans formatie-.net](transform-custom-presets-how-to.md). Volg de stappen in dit artikel om de .NET in te stellen die nodig zijn om met trans formaties te werken en ga vervolgens hier terug om een voor beeld van een overlay voor te bereiden.
 * Bekijk het [referentie document transformeert](/rest/api/media/transforms).
 
 Wanneer u bekend bent met trans formaties, downloadt u het voor beeld van de overlays.

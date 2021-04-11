@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: dbb2aeefc22fae4a3c83956dd7681b49fc435500
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 5495e84d23b6723cfc7d4fbdb99e7509e378087f
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102033993"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107257174"
 ---
 # <a name="add-an-identity-provider-to-your-azure-active-directory-b2c-tenant"></a>Een id-provider toevoegen aan uw Azure Active Directory B2C-Tenant
 
@@ -27,7 +27,7 @@ Op de registratie- of aanmeldingspagina wordt door Azure AD B2C een lijst weerge
 
 ![Voorbeeld van mobiele aanmelding met een account voor sociale netwerken (Facebook)](media/add-identity-provider/external-idp.png)
 
-U kunt met behulp van Azure Portal id-providers aan uw [gebruikers stromen](user-flow-overview.md) toevoegen die worden ondersteund door Azure Active Directory B2C (Azure AD B2C). U kunt ook id-providers toevoegen aan uw [aangepaste beleids regels](custom-policy-get-started.md).
+U kunt met behulp van Azure Portal id-providers aan uw [gebruikers stromen](user-flow-overview.md) toevoegen die worden ondersteund door Azure Active Directory B2C (Azure AD B2C). U kunt ook id-providers toevoegen aan uw [aangepaste beleids regels](user-flow-overview.md).
 
 ## <a name="select-an-identity-provider"></a>Een id-provider selecteren
 

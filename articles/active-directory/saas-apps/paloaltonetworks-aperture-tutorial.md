@@ -9,38 +9,37 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 09/10/2020
+ms.date: 03/22/2021
 ms.author: jeedes
-ms.openlocfilehash: 7b4c8ab55a9b2afc9c1a215236fa1276a630a5cf
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 42a6bc9bfb06f1c80b719bdda686ae111a8884ab
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97963618"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106221985"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks---aperture"></a>Zelfstudie: Azure Active Directory-integratie met Palo Alto Networks - Aperture
 
-In deze zelfstudie leert u hoe u Palo Alto Networks - Aperture integreert met Azure Active Directory (Azure AD).
-De integratie van Palo Alto Networks - Aperture met Azure AD biedt de volgende voordelen:
+In deze zelf studie leert u hoe u Palo Alto Networks-opening kunt integreren met Azure Active Directory (Azure AD). Wanneer u Palo Alto Networks-diafragma integreert met Azure AD, kunt u het volgende doen:
 
-* U kunt in Azure AD beheren wie toegang tot Palo Alto Networks - Aperture heeft.
-* U kunt instellen dat gebruikers automatisch met hun Azure AD-account worden aangemeld bij Palo Alto Networks - Aperture (eenmalige aanmelding).
-* U kunt uw accounts vanaf één centrale locatie beheren: de Azure-portal.
+* Controle in azure AD die toegang heeft tot Palo Alto-netwerken-opening.
+* Zorg ervoor dat uw gebruikers automatisch worden aangemeld bij Palo Alto Networks-opening met hun Azure AD-accounts.
+* Uw accounts op een centrale locatie beheren: Azure Portal.
 
 ## <a name="prerequisites"></a>Vereisten
 
-U hebt het volgende nodig om Azure AD-integratie met Palo Alto Networks - Aperture te configureren:
+U hebt het volgende nodig om aan de slag te gaan:
 
-* Een Azure AD-abonnement Als u geen Azure AD-omgeving hebt, kunt u [hier](https://azure.microsoft.com/pricing/free-trial/) de proefversie van één maand krijgen.
-* Abonnement voor Palo Alto Networks - Aperture waarvoor eenmalige aanmelding is ingeschakeld
+* Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
+* Palo Alto Networks-opening single sign-on (SSO) ingeschakeld abonnement.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* Palo Alto Networks - Aperture biedt ondersteuning voor door **SP** en **IDP** geïnitieerde eenmalige aanmelding
+* Palo Alto Networks: opening ondersteunt **SP** -en **IDP** geïnitieerde SSO.
 
-## <a name="adding-palo-alto-networks---aperture-from-the-gallery"></a>Palo Alto Networks - Aperture toevoegen vanuit de galerie
+## <a name="add-palo-alto-networks---aperture-from-the-gallery"></a>Palo Alto-netwerken toevoegen-opening uit de galerie
 
 Als u de integratie van Palo Alto Networks - Aperture met Azure AD wilt configureren, moet u Palo Alto Networks - Aperture toevoegen vanuit de galerie aan de lijst met beheerde SaaS-apps.
 
@@ -59,10 +58,10 @@ Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure 
 Voer de volgende stappen uit om Azure AD eenmalige aanmelding te configureren en te testen met Palo Alto Networks – Aperture:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
-    * **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
-    * **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
+    1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
+    1. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
 2. **[Palo Alto Networks – Aperture SSO configureren](#configure-palo-alto-networks---aperture-sso)** – als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
-    * **[Een testgebruiker voor Palo Alto Networks - Aperture maken](#create-palo-alto-networks---aperture-test-user)** : als u in Palo Alto Networks - Aperture een tegenhanger van Britta Simon wilt hebben die is gekoppeld aan de Azure AD-representatie van de gebruiker.
+    1. **[Een testgebruiker voor Palo Alto Networks - Aperture maken](#create-palo-alto-networks---aperture-test-user)** : als u in Palo Alto Networks - Aperture een tegenhanger van Britta Simon wilt hebben die is gekoppeld aan de Azure AD-representatie van de gebruiker.
 3. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
 ## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
@@ -77,15 +76,11 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 4. In het gedeelte **Standaard SAML-configuratie** voert u de volgende stappen uit als u de toepassing in de door **IDP** geïnitieerde modus wilt configureren:
 
-    ![Schermopname van 'Standaard SAML-configuratie' met de tekstvakken 'Id' en 'Antwoord-URL' gemarkeerd en de actie 'Opslaan' geselecteerd.](common/idp-intiated.png)
-
     a. In het tekstvak **Id** typt u een URL met het volgende patroon: `https://<subdomain>.aperture.paloaltonetworks.com/d/users/saml/metadata`
 
     b. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://<subdomain>.aperture.paloaltonetworks.com/d/users/saml/auth`
 
 5. Klik op **Extra URL's instellen** en voer de volgende stap uit als u de toepassing in de door **SP** geïnitieerde modus wilt configureren:
-
-    ![SP informatie over eenmalige aanmelding bij domeinen en URL's van Palo Alto Networks – Aperture](common/metadata-upload-additional-signon.png)
 
     In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<subdomain>.aperture.paloaltonetworks.com/d/users/saml/sign_in`
 
@@ -130,15 +125,15 @@ In dit gedeelte gaat u B.Simon toestemming geven voor gebruik van eenmalige aanm
 
 2. Klik op de bovenste menubalk op **Instellingen**.
 
-    ![Het tabblad Instellingen](./media/paloaltonetworks-aperture-tutorial/tutorial_paloaltonetwork_settings.png)
+    ![Het tabblad Instellingen](./media/paloaltonetworks-aperture-tutorial/settings.png)
 
 3. Ga naar de sectie **TOEPASSING** en klik op het formulier **Verificatie** aan de linkerkant van het menu.
 
-    ![Het tabblad Verificatie](./media/paloaltonetworks-aperture-tutorial/tutorial_paloaltonetwork_auth.png)
+    ![Het tabblad Verificatie](./media/paloaltonetworks-aperture-tutorial/authentication.png)
     
 4. Voer de volgende stappen uit op de pagina **Verificatie**:
     
-    ![Het tabblad Verificatie](./media/paloaltonetworks-aperture-tutorial/tutorial_paloaltonetwork_singlesignon.png)
+    ![Het tabblad Verificatie](./media/paloaltonetworks-aperture-tutorial/tab.png)
 
     a. Schakel in het veld **Eenmalige aanmelding** de optie **Eenmalige aanmelding inschakelen (ondersteunde SSP-providers zijn Okta, One login)** in.
 

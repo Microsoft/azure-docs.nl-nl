@@ -3,14 +3,14 @@ title: Aangepaste headers voor de geleverde gebeurtenissen Azure Event Grid inst
 description: Hierin wordt beschreven hoe u aangepaste kopteksten (of bezorgings eigenschappen) kunt instellen voor de geleverde gebeurtenissen.
 ms.topic: conceptual
 ms.date: 03/24/2021
-ms.openlocfilehash: 6cc6874b7aba6e0696dec21de5b431ca18df3013
-ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
+ms.openlocfilehash: fb6f0de7919ed7cf9072c0fa35e8f9be5cb5e7db
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105967588"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106278283"
 ---
-# <a name="delivery-with-custom-headers"></a>Levering met aangepaste kopteksten
+# <a name="custom-delivery-properties"></a>Aangepaste leverings eigenschappen
 Met gebeurtenis abonnementen kunt u HTTP-headers instellen die in de geleverde gebeurtenissen zijn opgenomen. Met deze mogelijkheid kunt u aangepaste headers instellen die vereist zijn voor een doel. U kunt Maxi maal 10 kopteksten instellen bij het maken van een gebeurtenis abonnement. Elke header waarde mag niet groter zijn dan 4.096 bytes (4.000).
 
 U kunt aangepaste kopteksten instellen voor de gebeurtenissen die worden geleverd aan de volgende bestemmingen:

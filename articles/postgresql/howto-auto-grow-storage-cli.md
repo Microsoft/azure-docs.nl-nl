@@ -1,18 +1,18 @@
 ---
 title: Opslag automatisch uitbreiden-Azure CLI-Azure Database for PostgreSQL-één server
 description: In dit artikel wordt beschreven hoe u de automatische groei van opslag kunt configureren met behulp van de Azure CLI in Azure Database for PostgreSQL-één server.
-author: rothja
-ms.author: jroth
+author: sunilagarwal
+ms.author: sunila
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 8/7/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: e323dfd0449b0fb4ad5119955227a2aa9bea1031
-ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
+ms.openlocfilehash: 38a15136bb7bee1d37486ee02d5342506ed3f7d8
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106551149"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107228109"
 ---
 # <a name="auto-grow-azure-database-for-postgresql-storage---single-server-using-the-azure-cli"></a>Azure Database for PostgreSQL storage automatisch uitbreiden-één server met behulp van de Azure CLI
 In dit artikel wordt beschreven hoe u een Azure Database for PostgreSQL Server-opslag kunt configureren om te groeien zonder dat dit van invloed is op de werk belasting.

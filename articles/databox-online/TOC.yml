@@ -436,6 +436,10 @@
   items:
     - name: Beveiligingsbasislijn
       href: security-baseline.md
+- name: Naslaginformatie
+  items:
+    - name: Azure CLI
+      href: /cli/azure/databoxedge
 - name: Resources
   items:
     - name: Voorbeelden van Azure Stack Edge Pro C#-module (.NET)

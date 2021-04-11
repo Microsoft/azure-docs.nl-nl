@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: conceptual
 ms.date: 10/23/2020
 ms.author: inhenkel
-ms.openlocfilehash: a8532f87c9360c0812fb1cfe24be6ca07615ea97
-ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
+ms.openlocfilehash: dec4eec16ba24baf31d911db882625479c33fb3b
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106123389"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106278623"
 ---
 # <a name="live-events-and-live-outputs-in-media-services"></a>Livegebeurtenissen en live-uitvoer in Media Services
 
@@ -107,14 +107,14 @@ Als u bepaalde Ip's wilt inschakelen op uw eigen firewalls of als u invoer wilt 
 * De maximale naam van een live-gebeurtenis is 32 tekens.
 * De naam moet volgen op dit [regex](/dotnet/standard/base-types/regular-expression-language-quick-reference) -patroon: `^[a-zA-Z0-9]+(-*[a-zA-Z0-9])*$` .
 
-Zie ook [naam conventies voor streaming-eind punten](streaming-endpoint-concept.md#naming-convention).
+Zie ook [naam conventies voor streaming-eind punten](stream-streaming-endpoint-concept.md#naming-convention).
 
 > [!TIP]
 > Als u de unieke naam van uw live-evenement wilt waarborgen, kunt u een GUID genereren en vervolgens alle afbreek streepjes en accolades verwijderen (indien van toepassing). De teken reeks is uniek voor alle Live-gebeurtenissen en de lengte ervan is gegarandeerd 32.
 
 ## <a name="live-event-ingest-urls"></a>Url's voor Live Event opname
 
-Zodra de live gebeurtenis is gemaakt, kunt u opname-Url's ophalen die u aanbiedt aan de Live on-premises encoder. De live-encoder gebruikt deze URL's voor het invoeren van een live-stream. Zie [Aanbevolen on-premises Live coderings](recommended-on-premises-live-encoders.md)Programma's voor meer informatie.
+Zodra de live gebeurtenis is gemaakt, kunt u opname-Url's ophalen die u aanbiedt aan de Live on-premises encoder. De live-encoder gebruikt deze URL's voor het invoeren van een live-stream. Zie [Aanbevolen on-premises Live coderings](encode-recommended-on-premises-live-encoders.md)Programma's voor meer informatie.
 
 >[!NOTE]
 > Vanaf de 2020-05-01 API-release worden ' Vanity-Url's aangeduid als statische hostnamen (useStaticHostname: True)

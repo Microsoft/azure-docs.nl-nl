@@ -32,6 +32,8 @@
     - name: Versiebeleid
       href: concepts-version-policy.md
       displayName: 'version, postgresql'
+    - name: Aanbevelingen voor prestaties
+      href: concepts-azure-advisor-recommendations.md
     - name: Bekende problemen & beperkingen
       href: concepts-known-issues-limitations.md
       displayName: 'issues, limitations, postgresql'
@@ -93,6 +95,9 @@
             - name: Aan de slag
               href: connect-go.md
               displayName: connect with go
+            - name: Rust
+              href: connect-rust.md
+              displayName: connect with rust
     - name: Zelfstudies
       items:
         - name: Een database ontwerpen
@@ -558,11 +563,15 @@
       items:
         - name: Wat is Hyperscale (Citus)?
           href: hyperscale-overview.md
+        - name: Functies in preview
+          href: hyperscale-preview-features.md
     - name: Snelstartgids
       items:
         - name: Servergroep maken
           items:
-            - name: Azure Portal
+            - name: Basic-laag (preview-versie)
+              href: quickstart-create-hyperscale-basic-tier.md
+            - name: Standaardlaag
               href: quickstart-create-hyperscale-portal.md
               displayName: 'portal, create hyperscale'
     - name: Zelfstudies
@@ -581,6 +590,8 @@
           displayName: 'hyperscale, tutorial, real-time'
     - name: Concepten
       items:
+        - name: Basislaag
+          href: concepts-hyperscale-tiers.md
         - name: Gedistribueerde gegevens
           items:
             - name: Knooppunten en tabellen
@@ -611,26 +622,26 @@
               displayName: 'backup, restore, outage, hyperscale'
             - name: Hoge beschikbaarheid
               href: concepts-hyperscale-high-availability.md
+        - name: Replicatie
+          href: concepts-hyperscale-read-replicas.md
         - name: Controleren en afstemmen
           items:
             - name: Controleren en afstemmen
               href: concepts-hyperscale-monitoring.md
             - name: Auditlogboeken
               href: concepts-hyperscale-audit.md
+        - name: Kolom opslag
+          href: concepts-hyperscale-columnar.md
         - name: Configuratie-opties
           href: concepts-hyperscale-configuration-options.md
+        - name: Limieten en beperkingen
+          href: concepts-hyperscale-limits.md
         - name: Vooruitbetalen voor reservecapaciteit
           href: concepts-hyperscale-reserved-pricing.md
+        - name: PostgreSQL-versies
+          href: concepts-hyperscale-versions.md
         - name: PostgreSQL-extensies
           href: concepts-hyperscale-extensions.md
-    - name: API-verwijzing
-      items:
-        - name: SQL API-functies
-          href: reference-hyperscale-functions.md
-        - name: Serverparameters
-          href: reference-hyperscale-parameters.md
-        - name: Systeemtabellen
-          href: reference-hyperscale-metadata.md
     - name: Instructiegidsen
       items:
         - name: Grootte van servergroep
@@ -656,6 +667,15 @@
               href: howto-hyperscale-modify-distributed-tables.md
         - name: Hoge beschikbaarheid
           href: howto-hyperscale-high-availability.md
+        - name: Replicatie
+          items:
+            - name: Azure Portal
+              href: howto-hyperscale-read-replicas-portal.md
+              displayName: 'replication, read replica'
+        - name: Gepland onderhoud
+          items:
+            - name: Azure Portal
+              href: howto-hyperscale-maintenance.md
         - name: Controleren
           items:
             - name: Waarschuwingen maken op basis van metrische gegevens
@@ -664,6 +684,8 @@
             - name: Toegang tot logboeken van database
               href: howto-hyperscale-logging.md
               displayName: 'log, hyperscale'
+        - name: Belangrijke versie-upgrades
+          href: howto-hyperscale-upgrade.md
         - name: Problemen oplossen
           items:
             - name: Verbindingsfouten oplossen
@@ -671,6 +693,14 @@
               displayName: 'connection errors, hyperscale'
             - name: Nuttige gebruikersquery's
               href: howto-hyperscale-useful-diagnostic-queries.md
+    - name: API-verwijzing
+      items:
+        - name: SQL API-functies
+          href: reference-hyperscale-functions.md
+        - name: Serverparameters
+          href: reference-hyperscale-parameters.md
+        - name: Systeemtabellen
+          href: reference-hyperscale-metadata.md
 - name: Naslaginformatie
   items:
     - name: Azure CLI

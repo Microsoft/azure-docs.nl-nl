@@ -1,16 +1,16 @@
 ---
 title: Ondersteunde regio's voor gekoppelde Log Analytics-werkruimte
 description: In dit artikel worden de ondersteunde regio toewijzingen beschreven tussen een Automation-account en een Log Analytics-werk ruimte, aangezien deze betrekking hebben op bepaalde functies van Azure Automation.
-ms.date: 02/17/2021
+ms.date: 04/01/2021
 services: automation
 ms.topic: conceptual
 ms.custom: references_regions
-ms.openlocfilehash: 0599dcb57b46d1e48b4035acac8b64edbbe06912
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4ac2a575c9fe551d5b1b396ab06b2735a749f9da
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101720168"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106221871"
 ---
 # <a name="supported-regions-for-linked-log-analytics-workspace"></a>Ondersteunde regio's voor gekoppelde Log Analytics-werkruimte
 
@@ -38,30 +38,44 @@ De volgende tabel bevat de ondersteunde toewijzingen:
 |EastUS2<sup>2</sup>|EastUS|
 |WestUS|WestUS|
 |WestUS2|WestUS2|
+|NorthCentralUS|NorthCentralUS|
 |CentralUS|CentralUS|
 |SouthCentralUS|SouthCentralUS|
 |WestCentralUS|WestCentralUS|
+|**Brazilië**||
+|BrazilSouth|BrazilSouth|
 |**Canada**||
 |CanadaCentral|CanadaCentral|
+|**China**||
+|ChinaEast2<sup>3</sup>|ChinaEast2|
 |**Azië en Stille Oceaan**||
-|AustraliaEast|AustraliaEast|
-|AustraliaSoutheast|AustraliaSoutheast|
 |EastAsia|EastAsia|
 |SoutheastAsia|SoutheastAsia|
+|**India**||
 |CentralIndia|CentralIndia|
-|ChinaEast2<sup>3</sup>|ChinaEast2|
+|**Japan**||
 |JapanEast|JapanEast|
+|**Australië**||
+|AustraliaEast|AustraliaEast|
+|AustraliaSoutheast|AustraliaSoutheast|
+|**Korea**||
+|KoreaCentral|KoreaCentral|
+|**Noorwegen**||
+|NorwayEast|NorwayEast|
 |**Europa**||
 |NorthEurope|NorthEurope|
-|FranceCentral|FranceCentral|
-|UKSouth|UKSouth|
 |West-Europa|West-Europa|
+|**Frankrijk**||
+|FranceCentral|FranceCentral|
+|**Verenigd Koninkrijk**
+|UKSouth|UKSouth|
+|**Zwitserland**||
 |SwitzerlandNorth|SwitzerlandNorth|
+|**Verenigde Arabische Emiraten**||
+|UAENorth|UAENorth|
 |**US Gov**||
 |USGovVirginia|USGovVirginia|
 |USGovArizona<sup>3</sup>|USGovArizona|
-
-
 
 <sup>1</sup> -oostus toewijzing voor log Analytics-werk ruimten aan Automation-accounts is niet exact een regionale toewijzing, maar is de juiste toewijzing.
 

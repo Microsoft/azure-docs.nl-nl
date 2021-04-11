@@ -17,19 +17,19 @@ ms.date: 03/16/2021
 ms.author: markvi
 ms.reviewer: besiler
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 185638d683699403c304603d968cfe84e32a55b5
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b17e7f34da1428eec219a393417b0a2a7b461078
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103574557"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106552730"
 ---
 # <a name="azure-active-directory-sign-in-activity-reports---preview"></a>Rapporten over Azure Active Directory-aanmeld activiteiten-preview
 
 De rapportage architectuur in Azure Active Directory (Azure AD) bestaat uit de volgende onderdelen:
 
 - **Activiteit** 
-    - **Aanmeldingen** : informatie over wanneer gebruikers, toepassingen en beheerde bronnen zich aanmelden bij Azure AD om toegang te krijgen tot resources.
+    - **Aanmeldingen** : informatie over wanneer gebruikers, toepassingen en beheerde bronnen zich aanmelden bij Azure AD en toegang krijgen tot resources.
     - **Audit logboeken**  -  [Audit logboeken](concept-audit-logs.md) bevatten informatie over de systeem activiteit van gebruikers en groeps beheer, beheerde toepassingen en Directory-activiteiten.
 - **Beveiliging** 
     - **Risk ante aanmeldingen** : een [Risk ante aanmelding](../identity-protection/overview-identity-protection.md) is een indicator voor een aanmeldings poging door iemand die niet de rechtmatige eigenaar van een gebruikers account is.

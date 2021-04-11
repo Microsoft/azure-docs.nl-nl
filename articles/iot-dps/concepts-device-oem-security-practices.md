@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 ms.custom: iot-p0-scenario, iot-devices-deviceOEM
 ms.reviewer: nberdy
-ms.openlocfilehash: 788738082cbf9995fb2f7282bc3f574903275528
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: dad46e21b35225855d787c367d112362fc95a463
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "90527204"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107010538"
 ---
 # <a name="security-practices-for-azure-iot-device-manufacturers"></a>Beveiligings procedures voor fabrikanten van Azure IoT-apparaten
 Naarmate er meer fabrikanten IoT-apparaten vrijgeven, is het handig om hulp te identificeren rond gang bare prak tijken. Dit artikel bevat een overzicht van de aanbevolen beveiligings procedures waarmee u rekening moet houden wanneer u apparaten produceert voor gebruik met Azure IoT Device Provisioning Service (DPS).  
@@ -177,7 +177,7 @@ Installeer op dit punt in het proces de DPS-client samen met het ID-bereik en de
     > Als u een software-TPM gebruikt, kunt u deze nu installeren.  Pak de EK_pub tegelijk uit.
 
 #### <a name="step-4-device-is-packaged-and-sent-to-the-warehouse"></a>Stap 4: het apparaat wordt verpakt en naar het magazijn verzonden
-Een apparaat kan gedurende 6-12 maanden in een magazijn zitten voordat het wordt geïmplementeerd. 
+Een apparaat kan soms binnen een jaar in een magazijn zitten voordat het wordt geïmplementeerd en ingericht met DPS.  Als een apparaat gedurende lange tijd in een magazijn zit vóór de implementatie, moeten klanten die het apparaat implementeren mogelijk de firmware, software of verlopen referenties bijwerken.
 
 #### <a name="step-5-device-is-installed-into-the-location"></a>Stap 5: het apparaat wordt op de locatie geïnstalleerd
 Wanneer het apparaat op de uiteindelijke locatie arriveert, wordt het geautomatiseerd ingericht met DPS.

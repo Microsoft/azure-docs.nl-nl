@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 27353e6086085aadae622e007a38f97e15cbcb7f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: d657f1df14b083631227cb7c19f64b65be8801d0
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104587862"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107010462"
 ---
 # <a name="introduction-to-securing-azure-service-accounts"></a>Inleiding tot het beveiligen van Azure-service accounts
 
@@ -26,7 +26,7 @@ Er zijn drie soorten service accounts voor Azure Active Directory: beheerde iden
 
 ## <a name="types-of-azure-active-directory-service-accounts"></a>Typen Azure Active Directory-service accounts
 
-Voor services die worden gehost in azure, kunt u het beste een beheerde identiteit gebruiken, indien mogelijk, en een Service-Principal als dat niet het geval is. Beheerde identiteiten kunnen niet worden gebruikt voor services die buiten Azure worden gehost. In dat geval wordt een Service-Principal aangeraden. Als u een beheerde identiteit of een Service-Principal kunt gebruiken. U wordt aangeraden een Azure Active Directory gebruikers account niet als service-principal te gebruiken. Raadpleeg de volgende tabel voor een samen vatting.
+Voor services die worden gehost in azure, kunt u het beste een beheerde identiteit gebruiken, indien mogelijk, en een Service-Principal als dat niet het geval is. Beheerde identiteiten kunnen niet worden gebruikt voor services die buiten Azure worden gehost. In dat geval wordt een Service-Principal aangeraden. Als u een beheerde identiteit of een Service-Principal kunt gebruiken. U wordt aangeraden een Azure Active Directory gebruikers account niet als service account te gebruiken. Raadpleeg de volgende tabel voor een samen vatting.
  
 
 | Service-hosting| Beheerde identiteit| Service-principal| Azure-gebruikers account |
@@ -54,7 +54,7 @@ Een Service-Principal is de lokale weer gave van een toepassings object in één
 
 Er zijn twee mechanismen voor verificatie met Service-principals: client certificaten en client geheimen. Certificaten zijn veiliger: gebruik client certificaten, indien mogelijk. In tegens telling tot client geheimen kunnen client certificaten niet per ongeluk in code worden inge sloten.
 
-Zie Service-principals beveiligen voor meer informatie over het beveiligen van service-principals.
+Zie [service-principals beveiligen](service-accounts-principal.md)voor meer informatie over het beveiligen van service-principals.
 
  
 ## <a name="next-steps"></a>Volgende stappen

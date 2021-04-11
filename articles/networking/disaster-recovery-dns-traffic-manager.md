@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 06/08/2018
+ms.date: 04/06/2021
 ms.author: kumud
-ms.openlocfilehash: 8cb1a490ac8edf2630253b45d99c3394bbe721b8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 077e92b67f0cf6dac673cc870b7ff8c86fbe60dd
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98234151"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106551285"
 ---
 # <a name="disaster-recovery-using-azure-dns-and-traffic-manager"></a>Herstel na noodgevallen met Azure DNS en Traffic Manager
 
@@ -33,13 +33,13 @@ De meeste zakelijke klanten kiezen een architectuur met meerdere regio's voor to
     
     *Afbeelding-actief/passief met configuratie voor nood herstel bij koude stand-by*
 
-- **Actief/passief met pilot light**: in deze failover-oplossing wordt de standby-omgeving ingesteld met een minimale configuratie. Het installatie programma heeft alleen de benodigde services die worden uitgevoerd ter ondersteuning van een minimale en kritieke set toepassingen. In de systeem eigen vorm kan dit scenario alleen minimale functionaliteit uitvoeren, maar kan er extra services worden opgeschaald om grote hoeveel heden productie belasting uit te voeren als er een failover optreedt.
+- **Actief/passief met pilot light**: in deze failover-oplossing wordt de standby-omgeving ingesteld met een minimale configuratie. Het installatie programma heeft alleen de benodigde services die worden uitgevoerd ter ondersteuning van een minimale en kritieke set toepassingen. In de systeem eigen vorm kan dit scenario alleen minimale functionaliteit uitvoeren, maar kan er meer services worden geschaald, zodat er veel van de productie belasting kan worden bereikt als er een failover plaatsvindt.
     
     ![Actief/passief met pilot light](./media/disaster-recovery-dns-traffic-manager/active-passive-with-pilot-light.png)
     
     *Afbeelding: actief/passief met configuratie voor nood herstel met pilot lampje*
 
-- **Actief/passief met warme stand-by**: in deze failover-oplossing is de stand-by-regio vooraf gewarmd en is deze gereed om de basis belasting te halen, automatisch schalen is ingeschakeld en alle exemplaren actief zijn. Deze oplossing wordt niet geschaald om de volledige productie belasting te halen, maar is functioneel en alle services zijn actief. Deze oplossing is een uitgebreide versie van de test lampje-benadering.
+- **Actief/passief met warme stand-by**: in deze failover-oplossing wordt de stand-by-regio vooraf gewarmd en is de functie voor het automatisch schalen van automatische schaling ingeschakeld en zijn alle exemplaren actief. Deze oplossing is niet geschaald om de volledige productie belasting te halen, maar is functioneel en alle services zijn actief. Deze oplossing is een uitgebreide versie van de test lampje-benadering.
     
     ![Actief/passief met warme stand-by](./media/disaster-recovery-dns-traffic-manager/active-passive-with-warm-standby.png)
     
@@ -57,14 +57,14 @@ Er zijn twee technische aspecten voor het instellen van uw nood herstel architec
 Dit artikel is beperkt tot benaderingen via netwerk-en webverkeer omleiden. Zie [Azure site Recovery-documentatie](../site-recovery/index.yml)voor instructies voor het instellen van Azure site Recovery.
 DNS is een van de meest efficiënte mechanismen voor het omleiden van netwerk verkeer omdat DNS vaak globaal en extern is voor het Data Center en wordt geïsoleerd van eventuele storingen op het niveau van regionale of beschikbaarheids zones (AZ). Eén kan gebruikmaken van een op DNS gebaseerd failover-mechanisme en in azure, twee DNS-services kunnen worden uitgevoerd op een manier Azure DNS (gezaghebbende DNS) en Azure Traffic Manager (route ring op basis van op DNS gebaseerd verkeer). 
 
-Het is belang rijk om inzicht te krijgen in enkele concepten in DNS die uitvoerig worden gebruikt voor het bespreken van de oplossingen die in dit artikel worden beschreven:
+Het is belang rijk om te begrijpen dat er weinig concepten zijn in DNS die uitvoerig worden gebruikt voor het bespreken van de oplossingen die in dit artikel worden beschreven:
 - **DNS A-record** : a-records zijn pointers die verwijzen naar een IPv4-adres. 
 - **CNAME of canonieke naam** : dit record type wordt gebruikt om naar een andere DNS-record te verwijzen. CNAME reageert niet met een IP-adres, maar in plaats daarvan met de verwijzing naar de record die het IP-adres bevat. 
 - **Gewogen route ring** : één kan ervoor kiezen om een gewicht aan service-eind punten te koppelen en vervolgens het verkeer te verdelen op basis van het toegewezen gewicht. Deze routerings methode is een van de vier mechanismen voor het routeren van verkeer die beschikbaar is in Traffic Manager. Zie voor meer informatie [gewogen routerings methode](../traffic-manager/traffic-manager-routing-methods.md#weighted).
 - **Prioriteits routering** : prioriteits routering is gebaseerd op status controles van eind punten. Standaard verzendt Azure Traffic Manager al het verkeer naar het eind punt met de hoogste prioriteit en bij een storing of ramp Traffic Manager het verkeer naar het secundaire eind punt routeren. Zie voor meer informatie [routerings methode voor prioriteit](../traffic-manager/traffic-manager-routing-methods.md#priority-traffic-routing-method).
 
 ## <a name="manual-failover-using-azure-dns"></a>Hand matige failover met Azure DNS
-De Azure DNS hand matige failover-oplossing voor herstel na nood gevallen gebruikt het standaard-DNS-mechanisme om een failover naar de back-upsite te maken. De hand matige optie via Azure DNS werkt het beste als u deze gebruikt in combi natie met de koude stand-by-modus of de test lampje-methode. 
+De Azure DNS hand matige failover-oplossing voor herstel na nood gevallen gebruikt het standaard-DNS-mechanisme voor het uitvoeren van een failover naar de back-upsite. De hand matige optie via Azure DNS werkt het beste als u deze gebruikt in combi natie met de koude stand-by-modus of de test lampje-methode. 
 
 ![Hand matige failover met Azure DNS](./media/disaster-recovery-dns-traffic-manager/manual-failover-using-dns.png)
 
@@ -94,7 +94,7 @@ In deze zone maakt u drie records (bijvoorbeeld-www \. contoso.com, Prod.contoso
 
 *Afbeelding: DNS-zone records maken in azure*
 
-In dit scenario heeft de site www- \. contoso.com een TTL van 30 minuten. Dit is onder de vermelde RTO en verwijst naar de productie site Prod.contoso.com. Deze configuratie is tijdens normale bedrijfs activiteiten. De TTL van prod.contoso.com en dr.contoso.com is ingesteld op 300 seconden of 5 minuten. U kunt een Azure-bewakings service gebruiken, zoals Azure Monitor of Azure-app inzichten, of alle oplossingen voor het controleren van de partner, zoals Dynatrace, u kunt zelfs gekweekte oplossingen gebruiken waarmee u toepassingen kunt bewaken of fouten op virtuele infra structuur kunnen controleren.
+In dit scenario heeft de site www- \. contoso.com een TTL van 30 minuten. Dit is onder de vermelde RTO en verwijst naar de productie site Prod.contoso.com. Deze configuratie is tijdens normale bedrijfs activiteiten. De TTL van prod.contoso.com en dr.contoso.com is ingesteld op 300 seconden of 5 minuten. U kunt een Azure-bewakings service gebruiken, zoals Azure Monitor of Azure-app inzichten, of alle oplossingen voor het controleren van de partner, zoals Dynatrace. U kunt zelfs gekweekte oplossingen gebruiken voor het bewaken of detecteren van fouten in toepassingen of virtuele infra structuur.
 
 ### <a name="step-3-update-the-cname-record"></a>Stap 3: de CNAME-record bijwerken
 
@@ -126,7 +126,7 @@ Wanneer u complexe architecturen en meerdere sets resources hebt waarmee dezelfd
 *Afbeelding-automatische failover met Azure Traffic Manager*
 
 De netwerk aanvragen van de gebruikers worden echter alleen actief verwerkt door de primaire regio. De secundaire regio wordt alleen actief wanneer de primaire regio een service onderbreking ondervindt. In dat geval worden alle nieuwe netwerk aanvragen gerouteerd naar de secundaire regio. Omdat het maken van een back-up van de data base zich in de buurt bevindt, hebben beide load balancers IP-adressen waarvoor de status kan worden gecontroleerd en zijn de exemplaren altijd actief. deze topologie biedt een optie voor het uitvoeren van een lage RTO en failover zonder hand matige tussen komst. De secundaire failover-regio moet direct na uitval van de primaire regio gereed zijn voor gebruik.
-Dit scenario is ideaal voor het gebruik van Azure-Traffic Manager met ingebouwde tests voor verschillende soorten status controles, waaronder HTTP/HTTPS en TCP. Azure Traffic Manager heeft ook een regel engine die kan worden geconfigureerd voor failover als er een fout optreedt zoals hieronder wordt beschreven. Laten we eens kijken naar de volgende oplossing met behulp van Traffic Manager:
+Dit scenario is ideaal voor het gebruik van Azure-Traffic Manager met ingebouwde tests voor verschillende soorten status controles, waaronder HTTP/HTTPS en TCP. Azure Traffic Manager heeft ook een regel engine die kan worden geconfigureerd voor het uitvoeren van een failover als er een fout optreedt zoals hieronder wordt beschreven. Laten we eens kijken naar de volgende oplossing met behulp van Traffic Manager:
 - De klant heeft de regio #1 eind punt bekend als prod.contoso.com met een statisch IP-adres als 100.168.124.44 en een regio #2 eind punt dat wordt aangeduid als dr.contoso.com met een statisch IP-adres als 100.168.124.43. 
 -   Elk van deze omgevingen bevindt zich in een open bare eigenschap, zoals een load balancer. De load balancer kan worden geconfigureerd met een op een DNS gebaseerd eind punt of een Fully Qualified Domain Name (FQDN) zoals hierboven wordt weer gegeven.
 -   Alle instanties in regio 2 zijn bijna realtime-replicatie met regio 1. De machine installatie kopieën zijn bijgewerkt en alle software-en configuratie gegevens worden gepatched en zijn in overeenstemming met regio 1.  
@@ -155,7 +155,7 @@ U kunt ook het eind punt voor herstel na nood gevallen maken binnen Traffic Mana
 
 ### <a name="step-3-set-up-health-check-and-failover-configuration"></a>Stap 3: status controle en failover-configuratie instellen
 
-In deze stap stelt u de DNS TTL in op 10 seconden, die wordt gehonoreerd door de meeste recursieve resolvers op internet. Deze configuratie betekent dat de gegevens niet langer dan 10 seconden in de cache worden opgeslagen. Voor de instellingen van het controle programma voor eind punten is het pad actueel ingesteld op/of root, maar u kunt de eindpunt instellingen aanpassen om een pad te evalueren, bijvoorbeeld prod.contoso.com/index. In het onderstaande voor beeld ziet u de **https** als het probing-protocol. U kunt echter ook **http** of **TCP** kiezen. De keuze van het protocol is afhankelijk van de eind toepassing. Het probing-interval is ingesteld op 10 seconden, waardoor het zoeken snel kan worden uitgevoerd en de nieuwe poging is ingesteld op 3. Als gevolg hiervan Traffic Manager een failover naar het tweede eind punt als er drie opeenvolgende intervallen een fout registreren. De volgende formule definieert de totale tijd voor een automatische failover: tijdstip voor failover = TTL + nieuwe poging * probing-interval en in dit geval is de waarde 10 + 3 * 10 = 40 seconden (max).
+In deze stap stelt u de DNS TTL in op 10 seconden, die wordt gehonoreerd door de meeste recursieve resolvers op internet. Deze configuratie betekent dat de gegevens niet langer dan 10 seconden in de cache worden opgeslagen. Voor de instellingen van het controle programma voor eind punten is het pad actueel ingesteld op/of root, maar u kunt de eindpunt instellingen aanpassen om een pad te evalueren, bijvoorbeeld prod.contoso.com/index. In het onderstaande voor beeld ziet u de **https** als het probing-protocol. U kunt echter ook **http** of **TCP** kiezen. De keuze van het protocol is afhankelijk van de eind toepassing. Het probing-interval is ingesteld op 10 seconden, waardoor het zoeken snel kan worden uitgevoerd en de nieuwe poging is ingesteld op 3. Als gevolg hiervan Traffic Manager failover naar het tweede eind punt, indien drie opeenvolgende intervallen een fout registreren. De volgende formule definieert de totale tijd voor een automatische failover: tijdstip voor failover = TTL + nieuwe poging * probing-interval en in dit geval is de waarde 10 + 3 * 10 = 40 seconden (max).
 Als de nieuwe poging is ingesteld op 1 en TTL is ingesteld op 10 seconden, wordt de tijd voor failover 10 + 1 * 10 = 20 seconden. Stel de nieuwe poging in op een waarde die groter is dan **1** om de kans op failovers te elimineren als gevolg van valse positieve of secundaire netwerk problemen. 
 
 
@@ -165,7 +165,7 @@ Als de nieuwe poging is ingesteld op 1 en TTL is ingesteld op 10 seconden, wordt
 
 ### <a name="how-automatic-failover-works-using-traffic-manager"></a>Hoe automatische failover werkt met Traffic Manager
 
-Tijdens een nood geval wordt het primaire eind punt onderzocht en wordt de status gewijzigd in **gedegradeerd** en blijft de site voor nood herstel **online**. Standaard verzendt Traffic Manager al het verkeer naar het primaire eindpunt (met de hoogste prioriteit). Als het primaire eind punt gedegradeerd wordt weer gegeven, stuurt Traffic Manager het verkeer naar het tweede eind punt, zolang dit in orde is. Een van de opties voor het configureren van meer eind punten in Traffic Manager die als extra failover-eind punten kunnen fungeren, of, als load balancers de belasting tussen eind punten delen.
+Tijdens een nood geval wordt het primaire eind punt onderzocht en wordt de status gewijzigd in **gedegradeerd** en blijft de site voor nood herstel **online**. Standaard verzendt Traffic Manager al het verkeer naar het primaire eindpunt (met de hoogste prioriteit). Als het primaire eind punt gedegradeerd wordt weer gegeven, stuurt Traffic Manager het verkeer naar het tweede eind punt, zolang dit in orde is. Met één kunt u meer eind punten configureren in Traffic Manager die als extra failover-eind punten kunnen fungeren, of, als load balancers de belasting tussen eind punten delen.
 
 ## <a name="next-steps"></a>Volgende stappen
 - Meer informatie over [Azure Traffic Manager](../traffic-manager/traffic-manager-overview.md).

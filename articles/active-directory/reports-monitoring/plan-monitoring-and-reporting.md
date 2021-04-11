@@ -12,12 +12,12 @@ ms.date: 11/13/2018
 ms.author: baselden
 ms.reviewer: plenzke
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 683367251c220abe36660d61463bce9e5a0c52f9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c37c672f8784052424e058837d31bc1d22fcfc57
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100577757"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106552611"
 ---
 # <a name="plan-an-azure-active-directory-reporting-and-monitoring-deployment"></a>Een Azure Active Directory rapportage en bewakings implementatie plannen
 
@@ -47,7 +47,7 @@ Met Azure AD monitoring kunt u Logboeken routeren naar:
 * een Azure-Event Hub waar u kunt integreren met uw bestaande SIEM-hulpprogram ma's zoals Splunk, Sumologic of QRadar.
 
 > [!NOTE]
-We hebben onlangs begonnen met het gebruik van de term Azure Monitor Logboeken in plaats van Log Analytics. Logboekgegevens worden nog steeds opgeslagen in een Log Analytics-werkruimte, en worden nog steeds verzameld en geanalyseerd met dezelfde Log Analytics-service. De terminologie wordt bijgewerkt om de rol van [logboeken in Azure Monitor](../../azure-monitor/data-platform.md) beter te weerspiegelen. Zie [Wijzigingen in Azure Monitor-terminologie](../../azure-monitor/terminology.md) voor meer informatie.
+> We hebben onlangs begonnen met het gebruik van de term Azure Monitor Logboeken in plaats van Log Analytics. Logboekgegevens worden nog steeds opgeslagen in een Log Analytics-werkruimte, en worden nog steeds verzameld en geanalyseerd met dezelfde Log Analytics-service. De terminologie wordt bijgewerkt om de rol van [logboeken in Azure Monitor](../../azure-monitor/data-platform.md) beter te weerspiegelen. Zie [Wijzigingen in Azure Monitor-terminologie](../../azure-monitor/terminology.md) voor meer informatie.
 
 Meer [informatie over het Bewaar beleid voor rapporten](./reference-reports-data-retention.md).
 

@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: storage
 ms.subservice: blobs
 ms.reviewer: sadodd
-ms.openlocfilehash: 43aa86504d265927cb94e4333f86bb9cc9d2e2ea
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1366f24ec3bd35ec23d5bf0879fced367c9f6a45
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101095556"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106552429"
 ---
 # <a name="change-feed-support-in-azure-blob-storage"></a>Ondersteuning voor feed wijzigen in Azure Blob Storage
 
@@ -67,14 +67,11 @@ Hier volgen enkele dingen die u moet onthouden wanneer u de wijzigings feed insc
 Schakel feed Change in voor uw opslag account met behulp van Azure Portal:
 
 1. Selecteer uw opslag account in de [Azure Portal](https://portal.azure.com/).
+1. Navigeer naar de optie **gegevens bescherming** onder **BLOB service**.
+1. Selecteer onder **bijhouden** de optie **feed voor wijziging van BLOB inschakelen**.
+1. Kies de knop **Opslaan** om uw instellingen voor gegevens beveiliging te bevestigen.
 
-2. Navigeer naar de optie **gegevens bescherming** onder **BLOB-service**.
-
-3. Klik op **ingeschakeld** onder **feed voor wijziging van BLOB**.
-
-4. Kies de knop **Opslaan** om uw instellingen voor **gegevens beveiliging** te bevestigen.
-
-    ![Scherm opname van de instellingen voor gegevens beveiliging.](media/soft-delete-blob-enable/storage-blob-soft-delete-portal-configuration.png)
+    :::image type="content" source="media/storage-blob-change-feed/change-feed-enable-portal.png" alt-text="Scherm afbeelding die laat zien hoe wijzigings invoer in Azure Portal wordt ingeschakeld":::
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 

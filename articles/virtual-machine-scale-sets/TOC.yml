@@ -401,6 +401,8 @@
           maintainContext: true
 - name: Naslaginformatie
   items:
+    - name: Azure CLI
+      href: /cli/azure/vmss
     - name: Azure PowerShell
       href: /powershell/azure/
     - name: REST

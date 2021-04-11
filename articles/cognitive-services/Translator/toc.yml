@@ -132,8 +132,6 @@
           href: custom-translator/training-and-model.md
         - name: BLEU-score
           href: custom-translator/what-is-bleu-score.md
-        - name: Versleuteling
-          href: encrypt-data-at-rest.md
 - name: Document vertaling
   items:
     - name: Wat is document vertalingen?
@@ -146,8 +144,6 @@
           href: document-translation/create-sas-tokens.md
     - name: Referentie
       items:
-        - name: REST API van document vertalingen
-          href: /rest/api/cognitiveservices/translator/documenttranslation
         - name: Document indelingen ophalen
           href: document-translation/reference/get-document-formats.md
         - name: Woordenlijst indelingen ophalen
@@ -170,5 +166,9 @@
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/translator/context/context
     - name: Naleving
       href: 'https://azure.microsoft.com/en-us/support/legal/cognitive-services-compliance-and-privacy'
+    - name: Versleuteling
+      href: encrypt-data-at-rest.md
     - name: Codevoorbeelden op GitHub
       href: 'https://aka.ms/TranslatorGitHub'
+    - name: Privacy en cookies
+      href: 'https://privacy.microsoft.com/en-US/privacystatement'

@@ -10,16 +10,16 @@ ms.date: 03/05/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: references_regions
-ms.openlocfilehash: 54e703b096ea4e3572a6fc00aa6b7b2b99c4bcad
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: af9d520bab3ff49b30672717414fbd651c915dd4
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104800741"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106552374"
 ---
 # <a name="soft-delete-for-containers-preview"></a>Voorlopig verwijderen voor containers (preview-versie)
 
-Met voorlopig verwijderen voor containers (preview) wordt voor komen dat uw gegevens per ongeluk of opzettelijk worden verwijderd. Wanneer Voorlopig verwijderen van containers is ingeschakeld voor een opslagaccount, worden verwijderde containers en hun inhoud bewaard in Azure Storage voor de periode die u opgeeft. Tijdens de bewaarperiode kunt u eerder verwijderde containers herstellen. Als u een container herstelt, worden ook de blobs hersteld die op het moment van verwijderen aanwezig waren in de container.
+Met voorlopig verwijderen voor containers (preview) wordt voor komen dat uw gegevens per ongeluk of opzettelijk worden verwijderd. Wanneer de container soft delete is ingeschakeld voor een opslag account, wordt een verwijderde container en de inhoud ervan bewaard in Azure Storage voor de periode die u opgeeft. Tijdens de bewaarperiode kunt u eerder verwijderde containers herstellen. Als u een container herstelt, worden ook de blobs hersteld die op het moment van verwijderen aanwezig waren in de container.
 
 Micro soft raadt u aan de volgende functies voor gegevens beveiliging in te scha kelen voor end-to-end-beveiliging voor uw BLOB-gegevens:
 
@@ -37,7 +37,7 @@ Wanneer u de optie voor het voorlopig verwijderen van een container inschakelt, 
 Wanneer u een container herstelt, worden de blobs en BLOB-versies van de container ook hersteld. U kunt de container soft delete echter alleen gebruiken om blobs te herstellen als de container zelf is verwijderd. Als u een verwijderde BLOB wilt herstellen wanneer de bovenliggende container niet is verwijderd, moet u de eigenschap zacht verwijderen of BLOB-versie beheer gebruiken.
 
 > [!WARNING]
-> Met de tijdelijke verwijdering van de container kunt u alleen hele containers en de blobs herstellen die zijn opgenomen op het moment van verwijdering. U kunt een verwijderde BLOB niet herstellen binnen een container met behulp van de tijdelijke verwijdering van de container.
+> Met de tijdelijke verwijdering van een container kunnen alleen hele containers en de inhoud ervan worden hersteld op het moment dat deze wordt verwijderd. U kunt een verwijderde BLOB niet herstellen binnen een container met behulp van de tijdelijke verwijdering van de container. Micro soft raadt aan voor het voorlopig verwijderen van blobs en BLOB-versie beheer in te scha kelen om afzonderlijke blobs in een container te beveiligen.
 
 In het volgende diagram ziet u hoe een verwijderde container kan worden hersteld wanneer de container zacht verwijderen is ingeschakeld:
 
@@ -50,7 +50,7 @@ Nadat de Bewaar periode is verlopen, wordt de container permanent verwijderd uit
 Het uitschakelen van de container soft delete heeft geen permanente verwijdering van containers die eerder zijn verwijderd. Alle voorlopig verwijderde containers worden permanent verwijderd bij het verlopen van de Bewaar periode die van kracht was op het moment dat de container werd verwijderd.
 
 > [!IMPORTANT]
-> Het dynamisch verwijderen van een container biedt geen bescherming tegen het verwijderen van een opslag account, maar alleen voor het verwijderen van containers in dat account. Als u een opslag account wilt beveiligen tegen verwijderen, configureert u een vergren deling voor de bron van het opslag account. Zie [resources vergren delen om onverwachte wijzigingen te voor komen](../../azure-resource-manager/management/lock-resources.md)voor meer informatie over het vergren delen van Azure Resource Manager resources.
+> Het dynamisch verwijderen van een container biedt geen bescherming tegen het verwijderen van een opslag account. Het wordt alleen beschermd tegen het verwijderen van containers in dat account. Als u een opslag account wilt beveiligen tegen verwijderen, configureert u een vergren deling voor de bron van het opslag account. Zie een [Azure Resource Manager Lock Toep assen op een opslag account](../common/lock-account-resource.md)voor meer informatie over het vergren delen van een opslag account.
 
 ## <a name="about-the-preview"></a>Over de preview-versie
 

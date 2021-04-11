@@ -99,6 +99,8 @@
           href: how-to-bind-redis.md
         - name: Een app verbinden met Azure MySQL
           href: how-to-bind-mysql.md
+        - name: Beheerde identiteit om verbinding te maken Azure SQL Database
+          href: connect-managed-identity-to-azure-sql.md
         - name: Met Azure Load Balance Solutions integreren
           href: how-to-integrate-azure-load-balancers.md
     - name: Controleren
@@ -133,6 +135,20 @@
           href: how-to-enable-system-assigned-managed-identity.md
         - name: Rollen en machtigingen maken
           href: how-to-permissions.md
+        - name: End-to-end-Transport Layer Security inschakelen
+          href: how-to-enable-end-to-end-tls.md
+        - name: Toegang tot configuratie server en service register
+          href: how-to-access-data-plane-azure-ad-rbac.md
+    - name: Integreren
+      items:
+        - name: Een app verbinden met Azure CosmosDB
+          href: how-to-bind-cosmos.md
+        - name: Een app verbinden met Azure Cache voor Redis
+          href: how-to-bind-redis.md
+        - name: Een app verbinden met Azure MySQL
+          href: how-to-bind-mysql.md
+        - name: Met Azure Load Balance Solutions integreren
+          href: how-to-integrate-azure-load-balancers.md
     - name: Automatiseren
       items:
         - name: CI/CD met Azure DevOps

@@ -8,20 +8,20 @@ ms.author: cgronlun
 ms.reviewer: larryfr
 ms.service: machine-learning
 ms.subservice: core
-ms.date: 11/05/2020
+ms.date: 04/02/2021
 ms.topic: conceptual
 ms.custom: how-to, has-adal-ref, devx-track-js, devx-track-azurecli, contperf-fy21q2
-ms.openlocfilehash: 30e4fede72df8eaf922745e7781c9e0d11f7ddb4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ee767cbeafcce604ecb4a79ce0fdf21c70bbb47c
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102210815"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106219634"
 ---
 # <a name="set-up-authentication-for-azure-machine-learning-resources-and-workflows"></a>Verificatie instellen voor Azure Machine Learning-resources en -werkstromen
 
 
-Meer informatie over het instellen van verificatie voor uw Azure Machine Learning-werk ruimte. Verificatie voor uw Azure Machine Learning-werk ruimte is gebaseerd op __Azure Active Directory__ (Azure AD) voor de meeste zaken. In het algemeen zijn er drie verificatie werk stromen die u kunt gebruiken om verbinding te maken met de werk ruimte:
+Meer informatie over het instellen van verificatie voor uw Azure Machine Learning-werk ruimte. Verificatie voor uw Azure Machine Learning-werk ruimte is gebaseerd op __Azure Active Directory__ (Azure AD) voor de meeste zaken. Over het algemeen zijn er drie verificatie werk stromen die u kunt gebruiken bij het maken van verbinding met de werk ruimte:
 
 * __Interactief__: u gebruikt uw account in azure Active Directory om ofwel rechtstreeks te verifiëren, of om een token op te halen dat wordt gebruikt voor verificatie. Interactieve verificatie wordt gebruikt tijdens het _experimenteren en iteratieve ontwikkeling_. Met interactieve verificatie kunt u de toegang tot resources (zoals een webservice) per gebruiker beheren.
 
@@ -70,12 +70,6 @@ De eenvoudigste manier om een SP te maken en toegang te verlenen tot uw werk rui
     Als u meerdere Azure-abonnementen hebt, kunt u de `az account set -s <subscription name or ID>` opdracht gebruiken om het abonnement in te stellen. Zie [meerdere Azure-abonnementen gebruiken](/cli/azure/manage-azure-subscriptions-azure-cli)voor meer informatie.
 
     Zie [Aanmelden met Azure cli](/cli/azure/authenticate-azure-cli)voor andere verificatie methoden.
-
-1. Installeer de Azure Machine Learning extensie:
-
-    ```azurecli-interactive
-    az extension add -n azure-cli-ml
-    ```
 
 1. De service-principal maken. In het volgende voor beeld wordt een SP **met de naam ml-auth** gemaakt:
 

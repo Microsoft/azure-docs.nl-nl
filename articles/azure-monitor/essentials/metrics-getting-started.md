@@ -6,12 +6,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: vitalyg
-ms.openlocfilehash: fee71f9ebfc69c19adc026fce5cd78b6a8b5240b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: df745e7612dbd5b5bb9029b89d7f74974270c2d1
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/30/2021
-ms.locfileid: "103490284"
+ms.locfileid: "105962710"
 ---
 # <a name="getting-started-with-azure-metrics-explorer"></a>Aan de slag met Azure Metrics Explorer
 
@@ -45,7 +45,7 @@ Als u een metrische grafiek wilt maken, vanuit uw resource, resource groep, abon
 ## <a name="select-a-time-range"></a>Een tijds bereik selecteren
 
 > [!WARNING]
-> De [meeste metrische gegevens in Azure worden gedurende 93 dagen bewaard](../essentials/data-platform-metrics.md#retention-of-metrics). U kunt echter niet meer dan 30 dagen aan gegevens in één grafiek opvragen. Deze beperking geldt niet voor [metrische gegevens op basis van een logboek](../app/pre-aggregated-metrics-log-metrics.md#log-based-metrics).
+> De [meeste metrische gegevens in Azure worden gedurende 93 dagen bewaard](../essentials/data-platform-metrics.md#retention-of-metrics). U kunt echter niet meer dan 30 dagen aan gegevens in één grafiek opvragen. U kunt het diagram [pannen](metrics-charts.md#pan) om de volledige Bewaar periode weer te geven. De beperking van 30 dagen geldt niet voor [metrische gegevens op basis van een logboek](../app/pre-aggregated-metrics-log-metrics.md#log-based-metrics).
 
 In de grafiek worden standaard de meest recente 24 uur aan metrische gegevens weergegeven. Gebruik het deel venster **tijd kiezer** om het tijds bereik te wijzigen, in te zoomen of uit te zoomen op de grafiek. 
 

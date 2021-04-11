@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0a4ba5a9211cdb89f6ac5a92a315378e58f5d08a
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 34ac4a3b7f55c42711e4bc33c75bba964b49c65e
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105709511"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106551625"
 ---
 # <a name="configure-the-expiration-policy-for-microsoft-365-groups"></a>Het verloop beleid voor Microsoft 365 groepen configureren
 
@@ -91,6 +91,7 @@ Zie [een verwijderde Microsoft 365 groep herstellen in azure Active Directory](g
 > - Wanneer u de verval datum voor het eerst instelt, worden de groepen die ouder zijn dan het verloop interval ingesteld op 35 dagen tot de verval datum, tenzij de groep automatisch wordt vernieuwd of de eigenaar deze vernieuwt.
 > - Wanneer een dynamische groep wordt verwijderd en teruggezet, wordt deze weer gegeven als een nieuwe groep en op basis van de regel opnieuw ingevuld. Dit proces kan Maxi maal 24 uur duren.
 > - Verloop meldingen voor groepen die worden gebruikt in teams, worden weer gegeven in de team eigen aren van teams.
+> - Wanneer u de verval datum voor geselecteerde groepen inschakelt, kunt u Maxi maal 500 groepen toevoegen aan de lijst. Als u meer dan 500 groepen wilt toevoegen, kunt u de verval datum voor al uw groepen instellen. In dat scenario is de limiet van 500-groep niet van toepassing.
 
 ## <a name="email-notifications"></a>E-mailmeldingen
 

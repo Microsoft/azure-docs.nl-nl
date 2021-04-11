@@ -2,15 +2,31 @@
 author: msftradford
 ms.service: azure-spatial-anchors
 ms.topic: include
-ms.date: 2/3/21
+ms.date: 03/30/2021
 ms.author: parkerra
-ms.openlocfilehash: f32c4d24a2799b3f98f7e635748af378be8c560d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: fca9efdf0e39157de5cdd6358477e2ce6f93ff29
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "99550376"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106076688"
 ---
-Open uw project in Unity. Volg de instructies <a href="https://docs.unity3d.com/Manual/upm-ui-tarball.html" target="_blank">hier</a> om de Azure spatiale-ankers te importeren die u hebt gedownload naar het Unity-project met behulp van unit package manager.
+# <a name="web-download"></a>[Webdownload](#tab/unity-package-web-ui)
 
-U kunt de map `Packages` in uw projectweergave uitvouwen om te controleren of de juiste pakketten zijn geïmporteerd.
+Volg de instructies <a href="https://docs.unity3d.com/Manual/upm-ui-tarball.html" target="_blank">hier</a> om de Azure spatiale-ankers te importeren die u hebt gedownload naar het Unity-project met behulp van unit package manager.
+
+# <a name="npm-download"></a>[NPM downloaden](#tab/unity-package-npm)
+
+Volg de instructies <a href="https://docs.unity3d.com/Manual/upm-ui-tarball.html" target="_blank">hier</a> om de Azure spatiale-ankers te importeren die u hebt gedownload naar het Unity-project met behulp van unit package manager.
+
+# <a name="mixed-reality-feature-tool-beta"></a>[Hulp programma voor functie voor gemengde realiteit (bèta)](#tab/unity-package-mixed-reality-feature-tool)
+
+Voor deze stap moet het <a href="/windows/mixed-reality/develop/unity/welcome-to-mr-feature-tool" target="_blank">hulp programma Mixed Reality</a> worden gedownload en beschikbaar zijn.
+
+> [!NOTE]
+> Het <a a href="/windows/mixed-reality/develop/unity/welcome-to-mr-feature-tool" target="_blank">functie hulpprogramma Mixed Reality</a> ondersteunt momenteel alleen Windows.
+
+1. Volg de documentatie over het <a href="/windows/mixed-reality/develop/unity/welcome-to-mr-feature-tool" target="_blank">hulp programma Mixed Reality</a> om het hulp programma in te stellen en te leren hoe u het kunt gebruiken.
+2. Installeer het kern pakket voor de Azure spatiale ankers SDK, evenals elk platform specifiek pakket, in de projectmap.
+
+---

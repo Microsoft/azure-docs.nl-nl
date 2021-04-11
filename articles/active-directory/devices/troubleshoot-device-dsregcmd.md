@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 614b3f927dc22bc534168f8fe95cc2f97031b621
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 2ced48308673c6688def7b949fc225eeb5b2ced4
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98725520"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106551727"
 ---
 # <a name="troubleshooting-devices-using-the-dsregcmd-command"></a>Problemen met apparaten oplossen met behulp van de dsregcmd-opdracht
 
@@ -345,4 +345,4 @@ In deze sectie worden de vereisten controles uitgevoerd voor het inrichten van W
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [Veelgestelde vragen over Apparaatbeheer](faq.md) voor meer informatie.
+Zie [Veelgestelde vragen over Apparaatbeheer](faq.yml) voor meer informatie.

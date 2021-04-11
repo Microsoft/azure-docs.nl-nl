@@ -13,8 +13,6 @@
   items:
     - name: Portal
       items:
-        - name: Een service maken
-          href: search-create-service-portal.md
         - name: Een index maken
           href: search-get-started-portal.md
         - name: Een demo-app maken
@@ -138,20 +136,30 @@
           href: security-baseline.md
 - name: Instructiegidsen
   items:
-    - name: Planning
+    - name: Beheer
       items:
         - name: Een laag kiezen
           href: search-sku-tier.md
-        - name: Capaciteit schatten en beheren
+        - name: Capaciteit plannen
           href: search-capacity-planning.md
-        - name: Kosten schatten
-          href: search-sku-manage-costs.md
+        - name: Een service maken
+          href: search-create-service-portal.md
         - name: Servicelimieten
           href: search-limits-quotas-capacity.md
-        - name: Schalen voor prestaties
+        - name: Kosten beheren
+          href: search-sku-manage-costs.md
+        - name: Beschik baarheid en herstel
           href: search-performance-optimization.md
-        - name: Multitenant-architectuur
+        - name: Multitenancy
           href: search-modeling-multitenant-saas-applications.md
+        - name: Beheren in de portal
+          href: search-manage.md
+        - name: Beheren met PowerShell
+          href: search-manage-powershell.md
+        - name: Beheren met Azure CLI
+          href: search-manage-azure-cli.md
+        - name: Service verplaatsen tussen regio's
+          href: search-howto-move-across-regions.md
     - name: Ontwikkeling
       items:
         - name: API-versies
@@ -276,6 +284,10 @@
           href: search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers.md
         - name: Azre SQL Server-VM's
           href: search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md
+        - name: Problemen met indexeren oplossen
+          href: search-indexer-troubleshooting.md
+        - name: Fouten en waarschuwingen voor Indexeer functies oplossen
+          href: cognitive-search-common-errors-warnings.md
     - name: Vaardighedensets
       items:
         - name: Een Cognitive Services-resource toevoegen
@@ -376,8 +388,28 @@
           href: semantic-ranking.md
         - name: Scoreprofielen
           href: index-add-scoring-profiles.md
+    - name: Prestaties en bewaking
+      items:
+        - name: Analyse van prestaties
+          href: search-performance-analysis.md
+        - name: Tips voor betere prestaties
+          href: search-performance-tips.md
+        - name: Diagnostische logboeken
+          href: search-monitor-logs.md
+        - name: Diagnostische logboeken visualiseren
+          href: search-monitor-logs-powerbi.md
+        - name: Bewakingsoverzicht
+          href: search-monitor-usage.md
+        - name: Query's bewaken
+          href: search-monitor-queries.md
+        - name: Indexeer functie-gebaseerde indexering controleren
+          href: search-howto-monitor-indexers.md
+        - name: Interacties aan de client zijde bewaken
+          href: search-traffic-analytics.md
     - name: Beveiliging
       items:
+        - name: Beheer rechten
+          href: search-security-rbac.md
         - name: Gegevensversleuteling
           items:
             - name: Door klant beheerde sleutels
@@ -406,38 +438,6 @@
               href: search-security-trimming-for-azure-search.md
             - name: Filteren op gebruikersidentiteiten
               href: search-security-trimming-for-azure-search-with-aad.md
-    - name: Beheren
-      items:
-        - name: Portal
-          href: search-manage.md
-        - name: PowerShell
-          href: search-manage-powershell.md
-        - name: Azure CLI
-          href: search-manage-azure-cli.md
-        - name: Service verplaatsen tussen regio's
-          href: search-howto-move-across-regions.md
-        - name: Op rollen gebaseerde beheerderstoegang
-          href: search-security-rbac.md
-    - name: Controleren
-      items:
-        - name: Overzicht
-          href: search-monitor-usage.md
-        - name: Diagnostische logboeken
-          href: search-monitor-logs.md
-        - name: Diagnostische logboeken visualiseren
-          href: search-monitor-logs-powerbi.md
-        - name: Queryactiviteit bewaken
-          href: search-monitor-queries.md
-        - name: Indexeerfuncties bewaken
-          href: search-howto-monitor-indexers.md
-        - name: Analyse zoekverkeer
-          href: search-traffic-analytics.md
-    - name: Problemen oplossen
-      items:
-        - name: Indexeringsproblemen
-          href: search-indexer-troubleshooting.md
-        - name: Fouten en waarschuwingen voor indexeerfunctie
-          href: cognitive-search-common-errors-warnings.md
 - name: Naslaginformatie
   items:
     - name: Azure CLI

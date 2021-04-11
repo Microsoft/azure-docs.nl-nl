@@ -7,16 +7,16 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 03/30/2021
 ms.author: banders
-ms.openlocfilehash: b475990a6b079de5e9ff01e52c2135f3c99a4f2f
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: 15c97640ab1f4e862aab0aff4b3965822daafb2b
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106055634"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106219821"
 ---
 # <a name="create-services-included-with-azure-free-account"></a>Services maken die zijn inbegrepen bij een gratis Azure-account
 
-Gedurende de eerste 30 dagen nadat u een gratis Azure-account hebt gemaakt, hebt u 200 USD-tegoed in uw facturerings valuta die u kunt gebruiken voor elke service, met uitzonde ring van Marketplace-aankopen van derden. U kunt het gratis tegoed gebruiken om te experimenteren met verschillende lagen en typen Azure-services, om zo Azure uit te proberen. Als u gedurende deze periode services of Azure-resources gebruikt die niet gratis zijn, worden de kosten hiervoor afgetrokken van uw tegoed.
+Gedurende de eerste 30 dagen nadat u een gratis Azure-account hebt gemaakt, hebt u 200 USD tegoed in uw facturerings valuta die u kunt gebruiken voor elke service, met uitzonde ring van Marketplace-aankopen van derden. U kunt het gratis tegoed gebruiken om te experimenteren met verschillende lagen en typen Azure-services, om zo Azure uit te proberen. Als u gedurende deze periode services of Azure-resources gebruikt die niet gratis zijn, worden de kosten hiervoor afgetrokken van uw tegoed.
 
 Als u aan het eind van de 30 dagen niet al uw tegoed hebt gebruikt, gaat dit verloren. Na de eerste 30 dagen en tot maximaal 12 maanden na de registratie kunt u slechts gebruikmaken van *bepaalde services* en een beperkte hoeveelheid hiervan. Niet alle Azure-services zijn namelijk gratis. Als u vóór het einde van de 30 dagen een upgrade uitvoert en nog tegoed over hebt, kunt u het resterende tegoed gedurende de overige dagen gebruiken met een Betalen per gebruik-abonnement. Als u zich bijvoorbeeld op 1 november registreert voor het gratis account, en op 5 november een upgrade uitvoert, hebt u tot 30 november de tijd om uw tegoed te gebruiken in het nieuwe Betalen per gebruik-abonnement. 
 

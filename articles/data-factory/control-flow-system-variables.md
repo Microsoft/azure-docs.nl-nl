@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 06/12/2018
 ms.openlocfilehash: b85efa7ac4481ab9eb2b2637aee7d9e5e76e8f3f
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104786053"
 ---
 # <a name="system-variables-supported-by-azure-data-factory"></a>Systeem variabelen die door Azure Data Factory worden ondersteund
@@ -24,7 +24,7 @@ In dit artikel worden de systeem variabelen beschreven die door Azure Data Facto
 
 Naar deze systeem variabelen kan ergens worden verwezen in de JSON van de pijp lijn.
 
-| Naam variabele | Beschrijving |
+| Naam variabele | Description |
 | --- | --- |
 | @pipeline(). DataFactory |De naam van de data factory de pijplijn uitvoering wordt uitgevoerd in |
 | @pipeline(). Pijp lijn |Naam van de pijp lijn |
@@ -41,7 +41,7 @@ Naar deze systeem variabelen kan ergens worden verwezen in de JSON van de pijp l
 
 Naar deze systeem variabelen kan worden verwezen overal in de trigger JSON voor triggers van het type [ScheduleTrigger](concepts-pipeline-execution-triggers.md#schedule-trigger).
 
-| Naam variabele | Beschrijving |
+| Naam variabele | Description |
 | --- | --- |
 | @trigger().scheduledTime |Tijdstip waarop de trigger is gepland voor het aanroepen van de pijplijn uitvoering. |
 | @trigger(). startTime |Tijdstip waarop de trigger **daad werkelijk** is gestart om de pijplijn uitvoering aan te roepen. Dit kan enigszins verschillen van de geplande tijd van de trigger. |
@@ -50,7 +50,7 @@ Naar deze systeem variabelen kan worden verwezen overal in de trigger JSON voor 
 
 Naar deze systeem variabelen kan worden verwezen overal in de trigger JSON voor triggers van het type [TumblingWindowTrigger](concepts-pipeline-execution-triggers.md#tumbling-window-trigger).
 
-| Naam variabele | Beschrijving |
+| Naam variabele | Description |
 | --- | --- |
 | @trigger(). outputs. windowStartTime |Begin van het venster dat is gekoppeld aan de uitvoering van de trigger. |
 | @trigger(). outputs. windowEndTime |Einde van het venster dat is gekoppeld aan de uitvoering van de trigger. |
@@ -61,7 +61,7 @@ Naar deze systeem variabelen kan worden verwezen overal in de trigger JSON voor 
 
 Naar deze systeem variabelen kan worden verwezen overal in de trigger JSON voor triggers van het type [BlobEventsTrigger](concepts-pipeline-execution-triggers.md#event-based-trigger).
 
-| Naam variabele | Beschrijving |
+| Naam variabele | Description |
 | --- | --- |
 | @triggerBody(). fileName  |De naam van het bestand waarvan het maken of verwijderen heeft geleid tot het starten van de trigger.   |
 | @triggerBody(). mapnaam  |Pad naar de map die het bestand bevat dat is opgegeven door `@triggerBody().fileName` . Het eerste segment van het mappad is de naam van de Azure Blob Storage-container.  |
@@ -74,7 +74,7 @@ Naar deze systeem variabelen kan worden verwezen overal in de trigger JSON voor 
 >[!NOTE]
 >Azure Data Factory verwacht dat de aangepaste gebeurtenis wordt opgemaakt met [Azure Event grid-gebeurtenis schema](../event-grid/event-schema.md).
 
-| Naam variabele | Beschrijving
+| Naam variabele | Description
 | --- | --- |
 | @triggerBody(). Event. Event type | Type gebeurtenissen waarmee de aangepaste gebeurtenis trigger wordt uitgevoerd. Het gebeurtenis type is een door de klant gedefinieerd veld en neemt waarden van het teken reeks type op. |
 | @triggerBody(). Event. subject | Het onderwerp van de aangepaste gebeurtenis die de trigger heeft veroorzaakt. |

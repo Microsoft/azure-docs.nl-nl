@@ -10,12 +10,12 @@ ms.date: 09/09/2020
 ms.author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: ereilebr
-ms.openlocfilehash: 2eda67e377a3b61e696e732b916d788c00a18eae
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ca4fe1410c18357a1fab10cc9c971cf3a81542fd
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "95908775"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105963254"
 ---
 # <a name="query-acceleration-sql-language-reference"></a>Naslag informatie over SQL-taal voor query versnelling
 
@@ -122,8 +122,8 @@ De SQL-taal voor de query versnelling ondersteunt de volgende standaard SQL-teke
 |[UPPER](/sql/t-sql/functions/upper-transact-sql)    |Retourneert een teken expressie met kleine teken gegevens die worden omgezet in hoofd letters.|
 |[SUBTEKENREEKS](/sql/t-sql/functions/substring-transact-sql)    |Retourneert een deel van een teken-, binaire-, tekst-of afbeeldings expressie in SQL Server.|
 |[TRIM](/sql/t-sql/functions/trim-transact-sql)    |Hiermee verwijdert u de spatie tekens (32) of andere opgegeven tekens vanaf het begin en het einde van een teken reeks.|
-|WITRUIMTE    |Description|
-|Volg    |Description|
+|WITRUIMTE    |Hiermee verwijdert u de spatie tekens (32) of andere opgegeven tekens vanaf het begin van een teken reeks.|
+|Volg    |Hiermee verwijdert u de spatie tekens (32) of andere opgegeven tekens vanaf het einde van een teken reeks.|
 
 Hier volgen enkele voor beelden:
 

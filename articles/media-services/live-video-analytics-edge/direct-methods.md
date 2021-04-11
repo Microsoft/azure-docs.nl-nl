@@ -3,12 +3,12 @@ title: Gebruik directe methoden in live video Analytics op IoT Edge-Azure
 description: Met live video Analytics op IoT Edge worden verschillende directe methoden getoond. De directe methoden zijn gebaseerd op de conventies die in dit onderwerp worden beschreven.
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: 8b5c16dc72beed4ec757e48461a2fc194c113f8d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 56fbf565af45a9b3877ff8d6c48a56713ddc3da6
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97656237"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106076986"
 ---
 # <a name="direct-methods"></a>Directe methoden
 
@@ -381,7 +381,7 @@ Belangrijkste aspecten:
 | Grafiek validatie fouten | 400 | GraphValidationError |
 | Module validatie fouten | 400 | ModuleValidationError |
 | Bron validatie fouten | 409 | ResourceValidationError |
-| Algemene serverfouten | 500-bereik |  |  |
+| Algemene serverfouten | 500-bereik |  | 
 
 ### <a name="graphinstancedelete"></a>GraphInstanceDelete
 

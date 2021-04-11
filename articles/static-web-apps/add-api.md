@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 05/29/2020
 ms.author: wachegha
 ms.custom: devx-track-js
-ms.openlocfilehash: 8a42ca4cf69515c99bb2e0bd28bb62dfed0e18f8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 33adaf33ba15b49b0a7e4d3e8f1b2a8c435a7966
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100650678"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106449032"
 ---
 # <a name="add-an-api-to-azure-static-web-apps-preview-with-azure-functions"></a>Een API toevoegen aan de preview-versie van statische Web Apps van Azure met Azure Functions
 
@@ -255,7 +255,7 @@ Voeg vervolgens de volgende details van de build toe.
 
     :::image type="content" source="media/add-api/github-action-flag.png" alt-text="GitHub-werk stroom":::
 
-1. Zodra de implementatie is voltooid, kan de organisatie-eenheid naar de web-app navigeren door te klikken op de _URL_ -koppeling die wordt weer gegeven op de pagina _overzicht_ .
+1. Zodra de implementatie is voltooid, kunt u naar de web-app navigeren door te klikken op de _URL_ -koppeling die wordt weer gegeven op de pagina _overzicht_ .
 
     :::image type="content" source="media/add-api/static-app-url-from-portal.png" alt-text="Toegang tot de statische app-URL vanuit de Azure Portal":::
 

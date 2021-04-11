@@ -512,6 +512,8 @@
               href: database/elastic-pool-resource-management.md
             - name: Prestatiediagnoses hyperschalen
               href: database/hyperscale-performance-diagnostics.md
+            - name: T-SQL-ruw blok keren
+              href: database/block-crud-tsql.md
         - name: Beveiligen
           items:
             - name: Controleren op opslagaccount achter VNet of firewall

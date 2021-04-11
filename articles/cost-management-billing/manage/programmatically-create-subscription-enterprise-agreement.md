@@ -5,16 +5,16 @@ author: bandersmsft
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 03/12/2021
+ms.date: 03/29/2021
 ms.reviewer: andalmia
 ms.author: banders
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 3f07d18ccdca87f6395b24e4e3f9e6ee91cfaee3
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 3275fe0a72b70038cf834436e8290b9c55643414
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104593967"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105963288"
 ---
 # <a name="programmatically-create-azure-enterprise-agreement-subscriptions-with-the-latest-apis"></a>Programmatisch Azure Enterprise Agreement-abonnementen maken met de nieuwste API's
 
@@ -31,7 +31,8 @@ Wanneer u programmatisch een Azure-abonnement maakt, wordt dat abonnement beheer
 U moet de rol van eigenaar hebben voor een inschrijvingsaccount om een abonnement te maken. U kunt de rol op twee manieren verkrijgen:
 
 * De Enterprise-beheerder van uw inschrijving kan [u een accounteigenaar maken](https://ea.azure.com/helpdocs/addNewAccount) (aanmelden vereist) waardoor u eigenaar van het inschrijvingsaccount bent.
-* Een bestaande eigenaar van het inschrijvingsaccount kan [u toegang verlenen](/rest/api/billing/2019-10-01-preview/enrollmentaccountroleassignments/put). En als u een service-principal wilt gebruiken om een EA-abonnement te maken, moet u [die service-principal de mogelijkheid verlenen abonnementen te maken](/rest/api/billing/2019-10-01-preview/enrollmentaccountroleassignments/put). 
+* Een bestaande eigenaar van het inschrijvingsaccount kan [u toegang verlenen](/rest/api/billing/2019-10-01-preview/enrollmentaccountroleassignments/put). En als u een service-principal wilt gebruiken om een EA-abonnement te maken, moet u [die service-principal de mogelijkheid verlenen abonnementen te maken](/rest/api/billing/2019-10-01-preview/enrollmentaccountroleassignments/put).  
+    Als u een SPN gebruikt om abonnementen te maken, gebruikt u het ObjectId van de Azure AD-toepassings registratie als Service-Principal ObjectId met [Azure Active Directory Power shell](/powershell/module/azuread/get-azureadserviceprincipal?view=azureadps-2.0) of [Azure cli](/cli/azure/ad/sp?view=azure-cli-latest#az_ad_sp_list).
   > [!NOTE]
   > Zorg ervoor dat u de juiste API-versie gebruikt om de eigenaarsmachtigingen voor het inschrijvingsaccount te verlenen. Voor dit artikel en voor de API's die erin worden beschreven, gebruikt u de API [2019-10-01-preview](/rest/api/billing/2019-10-01-preview/enrollmentaccountroleassignments/put). Als u migreert om de nieuwere API's te gebruiken, moet u de eigenaarsmachtigingen opnieuw toekennen met behulp van [2019-10-01-preview](/rest/api/billing/2019-10-01-preview/enrollmentaccountroleassignments/put). Uw vorige configuratie die is gemaakt met [versie 2015-07-01](grant-access-to-create-subscription.md) wordt niet automatisch geconverteerd voor het gebruik van de nieuwere API's.
 
@@ -231,7 +232,7 @@ Als u de meest recente versie van de module met de cmdlet `New-AzSubscriptionAli
 Voer de volgende [New-AzSubscriptionAlias](/powershell/module/az.subscription/new-azsubscription)-opdracht uit met het factureringsbereik `"/providers/Microsoft.Billing/BillingAccounts/1234567/enrollmentAccounts/7654321"`. 
 
 ```azurepowershell-interactive
-New-AzSubscriptionAlias -AliasName "sampleAlias" -SubscriptionName "Dev Team Subscription" -BillingScope "/providers/Microsoft.Billing/BillingAccounts/1234567/enrollmentAccounts/7654321" -Workload 'Production"
+New-AzSubscriptionAlias -AliasName "sampleAlias" -SubscriptionName "Dev Team Subscription" -BillingScope "/providers/Microsoft.Billing/BillingAccounts/1234567/enrollmentAccounts/7654321" -Workload "Production"
 ```
 
 U ontvangt de subscriptionId als onderdeel van het antwoord van de opdracht.

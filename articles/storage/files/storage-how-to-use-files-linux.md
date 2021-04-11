@@ -8,10 +8,10 @@ ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 4ace5620bf98b06956c294a12b6b08881422e718
-ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104952334"
 ---
 # <a name="use-azure-files-with-linux"></a>Azure Files gebruiken met Linux
@@ -250,22 +250,22 @@ Vanaf Linux kernel 4,18, de SMB-kernel-module, die wordt aangeroepen `cifs` om v
 
 | Distributie | Kan SMB 1 uitschakelen |
 |--------------|-------------------|
-| Ubuntu 14.04-16.04 | Nee |
-| Ubuntu 18.04 | Ja |
-| Ubuntu 19.04 + | Ja |
-| Debian 8-9 | Nee |
-| Debian 10 + | Ja |
-| Fedora 29 + | Ja |
-| CentOS 7 | Nee | 
-| CentOS 8 + | Ja |
-| Red Hat Enterprise Linux 6. x-7. x | Nee |
-| Red Hat Enterprise Linux 8 + | Ja |
-| openSUSE Schrikkel 15,0 | Nee |
-| openSUSE Schrikkel 15.1 + | Ja |
-| openSUSE Tumbleweed | Ja |
-| SUSE Linux Enter prise 11. x-12. x | Nee |
-| SUSE Linux Enter prise 15 | Nee |
-| SUSE Linux Enter prise 15,1 | Nee |
+| Ubuntu 14.04-16.04 | No |
+| Ubuntu 18.04 | Yes |
+| Ubuntu 19.04 + | Yes |
+| Debian 8-9 | No |
+| Debian 10 + | Yes |
+| Fedora 29 + | Yes |
+| CentOS 7 | No | 
+| CentOS 8 + | Yes |
+| Red Hat Enterprise Linux 6. x-7. x | No |
+| Red Hat Enterprise Linux 8 + | Yes |
+| openSUSE Schrikkel 15,0 | No |
+| openSUSE Schrikkel 15.1 + | Yes |
+| openSUSE Tumbleweed | Yes |
+| SUSE Linux Enter prise 11. x-12. x | No |
+| SUSE Linux Enter prise 15 | No |
+| SUSE Linux Enter prise 15,1 | No |
 
 U kunt controleren of uw Linux-distributie de `disable_legacy_dialects` module parameter ondersteunt met behulp van de volgende opdracht.
 

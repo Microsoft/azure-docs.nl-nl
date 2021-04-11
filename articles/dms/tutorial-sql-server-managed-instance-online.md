@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 08/04/2020
-ms.openlocfilehash: 4ee3e9e7d2aa0247011415b43517147fd421902a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5585eb210b54dfa016d25c430256508e1b0b9f61
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101094933"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106076884"
 ---
 # <a name="tutorial-migrate-sql-server-to-an-azure-sql-managed-instance-online-using-dms"></a>Zelfstudie: SQL Server online migreren naar een Azure SQL Managed Instance met behulp van DMS
 
@@ -209,7 +209,7 @@ Nadat er een exemplaar van de service is gemaakt, zoekt u het exemplaar in de Az
 
 1. Geef in het scherm **Migratie-instellingen configureren** de volgende instellingen op:
 
-    | | |
+    | Parameter | Beschrijving |
     |--------|---------|
     |**SMB-netwerksharelocatie** | De lokale SMB-netwerkshare of Azure-bestandsshare die de volledige back-upbestanden bevat van uw database en latere back-logbestanden van transacties die Azure Database Migration Service kan gebruiken voor migratie. Het serviceaccount waarmee het SQL Server-bronexemplaar wordt uitgevoerd, moet lees-\schrijfbevoegdheid op deze netwerkshare hebben. Geef een FQDN-naam of IP-adressen op van de server in de netwerkshare, bijvoorbeeld '\\\servernaam.domeinnaam.com\back-upmap' of '\\\IP-adres\back-upmap'. Voor betere prestaties kunt u het beste afzonderlijke mappen gebruiken voor elke database die moet worden gemigreerd. U kunt het pad naar de bestandsshare op databaseniveau opgeven met behulp van de optie **Geavanceerde instellingen**. Als u problemen ondervindt met het maken van verbinding met de SMB-share, raadpleegt u [SMB-share](known-issues-azure-sql-db-managed-instance-online.md#smb-file-share-connectivity). |
     |**Gebruikersnaam** | Zorg ervoor dat de Windows-gebruiker volledig beheer heeft over de netwerkshare die u hierboven hebt opgegeven. Azure Database Migration Service imiteert de gebruikersreferenties voor het uploaden van de back-upbestanden naar een Azure-opslagcontainer voor herstelbewerkingen. Als u een Azure-bestandsshare gebruikt, gebruikt u de naam van het opslagaccount voorafgegaan door AZURE\ als de gebruikersnaam. |

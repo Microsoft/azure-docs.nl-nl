@@ -1,5 +1,5 @@
 ---
-title: Wat is Azure Cosmos DB Analytical Store?
+title: Wat is analytische opslag van Azure Cosmos DB?
 description: Meer informatie over Azure Cosmos DB transactionele (op rijen gebaseerde) en analytische (op kolommen gebaseerde) opslag. Voor delen van de analytische opslag, invloed op de prestaties voor grootschalige workloads en automatische synchronisatie van gegevens van transactionele opslag naar een analytische opslag
 author: Rodrigossz
 ms.service: cosmos-db
@@ -8,10 +8,10 @@ ms.date: 03/16/2021
 ms.author: rosouz
 ms.custom: seo-nov-2020
 ms.openlocfilehash: 450514541a90a01ea6b70f77491f116adb404887
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105046209"
 ---
 # <a name="what-is-azure-cosmos-db-analytical-store"></a>Wat is Azure Cosmos DB Analytical Store?
@@ -119,7 +119,7 @@ De volgende beperkingen zijn van toepassing op de operationele gegevens in Azure
   * In Spark-Pools in azure Synapse worden deze kolommen weer gegeven als `undefined` .
   * SQL serverloze Pools in azure Synapse vertegenwoordigen deze kolommen als `NULL` .
 
-#### <a name="schema-representation"></a>Schema representatie
+#### <a name="schema-representation"></a>Schemarepresentatie
 
 Er zijn twee modi voor schemarepresentatie in de analytische opslag. Deze modi maken een afweging tussen de eenvoud van een kolomweergave, het behandelen van de polymorfe schema's en eenvoud van de query-ervaring:
 

@@ -12,6 +12,8 @@
       href: quickstart-configure-route-server-powershell.md
     - name: Een route server configureren-CLI
       href: quickstart-configure-route-server-cli.md
+    - name: Een sjabloon voor route server-ARM configureren
+      href: quickstart-configure-template.md
   expanded: true
 - name: Concepten
   items:

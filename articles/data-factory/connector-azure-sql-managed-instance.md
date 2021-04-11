@@ -8,10 +8,10 @@ author: linda33wj
 ms.custom: seo-lt-2019
 ms.date: 03/17/2021
 ms.openlocfilehash: eae085a73e8f43813aa3f02fa910c7931f10f36c
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104597409"
 ---
 # <a name="copy-and-transform-data-in-azure-sql-managed-instance-by-using-azure-data-factory"></a>Gegevens in Azure SQL Managed instance kopiëren en transformeren met behulp van Azure Data Factory
@@ -42,7 +42,7 @@ Voor kopieer activiteit ondersteunt deze Azure SQL Database-Connector de volgend
 
 Om toegang te krijgen tot het [open bare eind punt](../azure-sql/managed-instance/public-endpoint-overview.md)van het SQL-beheerde exemplaar, kunt u een Azure Data Factory beheerde Azure Integration runtime gebruiken. Zorg ervoor dat u het open bare eind punt inschakelt en ook openbaar eindpunt verkeer op de netwerk beveiligings groep toestaat, zodat Azure Data Factory verbinding kan maken met uw data base. Zie [deze richt lijnen](../azure-sql/managed-instance/public-endpoint-configure.md)voor meer informatie.
 
-Stel een [zelf-hostende Integration runtime](create-self-hosted-integration-runtime.md) in die toegang heeft tot de data base om toegang te krijgen tot het privé-eind punt van het SQL Managed instance. Als u de zelf-hostende Integration runtime in hetzelfde virtuele netwerk als uw beheerde exemplaar inricht, moet u ervoor zorgen dat uw Integration runtime-machine zich in een ander subnet bevindt dan uw beheerde exemplaar. Als u uw zelf-hostende Integration runtime inricht in een ander virtueel netwerk dan uw beheerde exemplaar, kunt u een peering van een virtueel netwerk of een virtueel netwerk naar een virtueel netwerk verbinding maken. Raadpleeg [Uw toepassing verbinden met SQL Managed Instance](../azure-sql/managed-instance/connect-application-instance.md) voor meer informatie.
+Stel een [zelf-hostende Integration runtime](create-self-hosted-integration-runtime.md) in die toegang heeft tot de data base om toegang te krijgen tot het privé-eind punt van het SQL Managed instance. Als u de zelf-hostende Integration Runtime in hetzelfde virtuele netwerk als uw beheerde instantie inricht, moet u ervoor zorgen dat uw Integration Runtime-machine zich in een ander subnet bevindt dan uw beheerde instantie. Als u uw zelf-hostende IntegrationRruntime inricht in een ander virtueel netwerk dan uw beheerde instantie, kunt u een peering van virtuele netwerken of een virtueel netwerk naar een virtueel netwerk-verbinding maken. Raadpleeg [Uw toepassing verbinden met SQL Managed Instance](../azure-sql/managed-instance/connect-application-instance.md) voor meer informatie.
 
 ## <a name="get-started"></a>Aan de slag
 
@@ -648,7 +648,7 @@ De onderstaande tabel geeft een lijst van de eigenschappen die worden ondersteun
 | Naam | Beschrijving | Vereist | Toegestane waarden | Eigenschap gegevens stroom script |
 | ---- | ----------- | -------- | -------------- | ---------------- |
 | Tabel | Als u tabel als invoer selecteert, haalt de gegevens stroom alle gegevens op uit de tabel die is opgegeven in de gegevensset. | No | - |- |
-| Query’s uitvoeren | Als u query als invoer selecteert, geeft u een SQL-query op om gegevens op te halen uit de bron, waardoor elke tabel die u in dataset opgeeft, wordt overschreven. Het gebruik van query's is een uitstekende manier om rijen te verminderen voor testen of lookups.<br><br>**Order by** -component wordt niet ondersteund, maar u kunt een volledige Select from-instructie instellen. U kunt ook door de gebruiker gedefinieerde tabel functies gebruiken. **Select * from udfGetData ()** is een UDF in SQL waarmee een tabel wordt geretourneerd die u in de gegevens stroom kunt gebruiken.<br>Query voorbeeld: `Select * from MyTable where customerId > 1000 and customerId < 2000`| Nee | Tekenreeks | query |
+| Query | Als u query als invoer selecteert, geeft u een SQL-query op om gegevens op te halen uit de bron, waardoor elke tabel die u in dataset opgeeft, wordt overschreven. Het gebruik van query's is een uitstekende manier om rijen te verminderen voor testen of lookups.<br><br>**Order by** -component wordt niet ondersteund, maar u kunt een volledige Select from-instructie instellen. U kunt ook door de gebruiker gedefinieerde tabel functies gebruiken. **Select * from udfGetData ()** is een UDF in SQL waarmee een tabel wordt geretourneerd die u in de gegevens stroom kunt gebruiken.<br>Query voorbeeld: `Select * from MyTable where customerId > 1000 and customerId < 2000`| Nee | Tekenreeks | query |
 | Batchgrootte | Geef een batch grootte op om grote gegevens in Lees bewerkingen te segmenteren. | No | Geheel getal | batchSize |
 | Isolatie niveau | Kies een van de volgende isolatie niveaus:<br>-Doorgevoerde lezen<br>-Niet-doorgevoerde lezen (standaard)<br>-Herhaal bare Lees bewerking<br>-Serialiseerbaar<br>-Geen (isolatie niveau negeren) | No | <small>READ_COMMITTED<br/>READ_UNCOMMITTED<br/>REPEATABLE_READ<br/>SERIALIZABLE<br/>GEEN</small> |isolationLevel |
 

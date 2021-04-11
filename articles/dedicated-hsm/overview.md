@@ -14,10 +14,10 @@ ms.custom: mvc, seodec18
 ms.date: 03/25/2021
 ms.author: keithp
 ms.openlocfilehash: 0e07839c3c5ce542335eeadc92e6a3c98fe87856
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105606977"
 ---
 # <a name="what-is-azure-dedicated-hsm"></a>Wat is Azure Toegewezen HSM?

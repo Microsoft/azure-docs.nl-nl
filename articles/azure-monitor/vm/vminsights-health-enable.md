@@ -4,14 +4,14 @@ description: Hierin wordt beschreven hoe u de status van een VM Insights-gast in
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 11/16/2020
+ms.date: 04/05/2021
 ms.custom: references_regions
-ms.openlocfilehash: 540f0725427ace4aec76de373556cd6699a1b229
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 6f6c67e0e9ef1dd2a4092033a9479801cd0e8e7d
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105732751"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106449304"
 ---
 # <a name="enable-vm-insights-guest-health-preview"></a>VM Insights-gast status inschakelen (preview)
 Met de VM Insights-gast status kunt u de status van een virtuele machine bekijken, zoals gedefinieerd door een set prestatie metingen die regel matig worden steek proeven. In dit artikel wordt beschreven hoe u deze functie inschakelt in uw abonnement en hoe u gast bewaking voor elke virtuele machine inschakelt.
@@ -26,6 +26,8 @@ De status van de VM Insights-gast heeft de volgende beperkingen in de open bare 
 ## <a name="supported-operating-systems"></a>Ondersteunde besturingssystemen
 Op de virtuele machine moet een van de volgende besturings systemen worden uitgevoerd: 
 
+  - CentOS 7,5, 7,6, 7,7, 7,8, 7,9
+  - RedHat 7,5, 7,6, 7,7, 7,8, 7,9
   - Ubuntu 16,04 LTS, Ubuntu 18,04 LTS
   - Windows Server 2012 of hoger
 
@@ -45,7 +47,7 @@ De virtuele machine moet zich in een van de volgende regio's bevinden:
 - VS-Oost 2 EUAP
 - Frankrijk - centraal
 - Duitsland - west-centraal
-- Japan - oost
+- Japan East
 - Korea - centraal
 - VS - noord-centraal
 - Europa - noord
@@ -74,7 +76,7 @@ Log Analytics werk ruimte moet zich in een van de volgende regio's bevinden:
 - VS - oost 2
 - VS-Oost 2 EUAP
 - Frankrijk - centraal
-- Japan - oost
+- Japan East
 - VS - noord-centraal
 - Europa - noord
 - VS - zuid-centraal

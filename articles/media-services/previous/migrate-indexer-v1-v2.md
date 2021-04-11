@@ -13,23 +13,23 @@ ms.devlang: na
 ms.topic: article
 ms.date: 3/10/2021
 ms.author: inhenkel
-ms.openlocfilehash: eb4f662a4b34d748da0e97da9b64a386be3f5c49
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 2b1960aa2d08a189e04aea8906c10e761dc1c57a
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/30/2021
-ms.locfileid: "103016420"
+ms.locfileid: "105962642"
 ---
 # <a name="migrate-from-media-indexer-and-media-indexer-2-to-video-indexer"></a>Migreren van Media Indexer en Media Indexer 2 naar Video Indexer
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!IMPORTANT]
-> Het wordt aanbevolen dat klanten migreren vanuit Indexeer functie v1 en Indexeer functie v2 naar het gebruik van de [Media Services v3 AudioAnalyzerPreset Basic-modus](../latest/analyzing-video-audio-files-concept.md). De media processor van [Azure media indexer](media-services-index-content.md) media en [Azure media indexer 2 Preview](./legacy-components.md) worden buiten gebruik gesteld. Voor de pensioen datums raadpleegt u dit onderwerp over [oudere onderdelen](legacy-components.md) .
+> Het wordt aanbevolen dat klanten migreren vanuit Indexeer functie v1 en Indexeer functie v2 naar het gebruik van de [Media Services v3 AudioAnalyzerPreset Basic-modus](../latest/analyze-video-audio-files-concept.md). De media processor van [Azure media indexer](media-services-index-content.md) media en [Azure media indexer 2 Preview](./legacy-components.md) worden buiten gebruik gesteld. Voor de pensioen datums raadpleegt u dit onderwerp over [oudere onderdelen](legacy-components.md) .
 
 Azure Media Services Video Indexer is gebaseerd op Azure Media Analytics, Azure Cognitive Search, Cognitive Services (zoals de Face-API, micro soft Translator, de Computer Vision-API en Custom Speech Service). Hiermee kunt u inzichten ophalen uit uw video's met Video Indexer-modellen voor audio en video. Zie [video indexer video-en audio modellen](../video-indexer/video-indexer-overview.md)om te zien welke scenario's video indexer kunnen worden gebruikt in, welke functies worden aangeboden en hoe u aan de slag kunt gaan. 
 
-U kunt inzichten uit uw video-en audio bestanden extra heren met behulp van de [Azure Media Services v3 Analyzer-voor instellingen](../latest/analyzing-video-audio-files-concept.md) of rechtstreeks met behulp van de [video indexer-api's](https://api-portal.videoindexer.ai/). Er is momenteel een overlap ping tussen de functies die worden geboden door de Video Indexer Api's en de Media Services v3-Api's.
+U kunt inzichten uit uw video-en audio bestanden extra heren met behulp van de [Azure Media Services v3 Analyzer-voor instellingen](../latest/analyze-video-audio-files-concept.md) of rechtstreeks met behulp van de [video indexer-api's](https://api-portal.videoindexer.ai/). Er is momenteel een overlap ping tussen de functies die worden geboden door de Video Indexer Api's en de Media Services v3-Api's.
 
 > [!NOTE]
 > Bekijk het [vergelijkings document](../video-indexer/compare-video-indexer-with-media-services-presets.md)om inzicht te krijgen in de verschillen tussen de voor instellingen van Video Indexer versus Media Services Analyzer.
@@ -49,7 +49,7 @@ In het volgende gedeelte vindt u relevante koppelingen: [Hoe ga ik aan de slag m
 
 ## <a name="getting-started-with-media-services-v3-apis"></a>Aan de slag met Media Services v3-Api's
 
-Met Azure Media Services v3 API kunt u inzichten uit uw video-en audio bestanden ophalen via de [voor instellingen van de Azure Media Services v3 Analyzer](../latest/analyzing-video-audio-files-concept.md).
+Met Azure Media Services v3 API kunt u inzichten uit uw video-en audio bestanden ophalen via de [voor instellingen van de Azure Media Services v3 Analyzer](../latest/analyze-video-audio-files-concept.md).
 
 Met **AudioAnalyzerPreset** kunt u meerdere geluids inzichten uit een audio-of video bestand ophalen. De uitvoer bevat een VTT-of TTML-bestand voor de transcripten van de audio en een JSON-bestand (met alle extra audio inzichten). De geluids inzichten bevatten tref woorden, het indexeren van sprekers en de analyse van spraak sentiment. AudioAnalyzerPreset biedt ook ondersteuning voor taal detectie voor specifieke talen. Zie [trans formaties](/rest/api/media/transforms/createorupdate#audioanalyzerpreset)voor gedetailleerde informatie.
 
@@ -57,7 +57,7 @@ Met **AudioAnalyzerPreset** kunt u meerdere geluids inzichten uit een audio-of v
 
 Om aan de slag te gaan, gaat u naar:
 
-* [Zelfstudie](../latest/analyze-videos-tutorial-with-api.md)
+* [Zelfstudie](../latest/analyze-videos-tutorial.md)
 * Voor beelden van AudioAnalyzerPreset: [Java SDK](https://github.com/Azure-Samples/media-services-v3-java/tree/master/AudioAnalytics/AudioAnalyzer) of [.NET SDK](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/AudioAnalytics/AudioAnalyzer)
 * Voor beelden van VideoAnalyzerPreset: [Java SDK](https://github.com/Azure-Samples/media-services-v3-java/tree/master/VideoAnalytics/VideoAnalyzer) of [.NET SDK](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/VideoAnalytics/VideoAnalyzer)
 

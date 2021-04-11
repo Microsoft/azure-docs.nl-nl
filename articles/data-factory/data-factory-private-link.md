@@ -7,12 +7,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/01/2020
-ms.openlocfilehash: 9e4d686f582a202dbc543620c7bf73dc4e7adb22
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d572509b3b2b3a0fc69f207d005984ee07ce34a4
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100389175"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106076816"
 ---
 # <a name="azure-private-link-for-azure-data-factory"></a>Azure Private Link voor Azure Data Factory
 
@@ -54,7 +54,7 @@ Het inschakelen van de service voor persoonlijke koppelingen voor elk van de voo
    - De opdracht communicatie tussen de zelf-hostende Integration runtime en de Azure Data Factory-service kan veilig worden uitgevoerd in een particuliere netwerk omgeving. Het verkeer tussen de zelf-hostende Integration runtime en de Azure Data Factory-service verloopt via een persoonlijke koppeling. 
 - **Momenteel niet ondersteund**:
    - Interactief ontwerpen waarbij gebruik wordt gemaakt van een zelf-hostende Integration runtime, zoals de verbinding testen, bladeren in mappen lijst en tabel lijst, schema ophalen en gegevens bekijken, via een persoonlijke koppeling.
-   - De nieuwe versie van de zelf-hostende Integration runtime kan automatisch worden gedownload van het micro soft Download centrum als u automatisch bijwerken inschakelt.
+   - De nieuwe versie van de zelf-hostende Integration runtime die automatisch kan worden gedownload van het micro soft Download centrum als u automatisch bijwerken inschakelt, wordt op dit moment niet ondersteund.
 
    > [!NOTE]
    > Voor functionaliteit die momenteel niet wordt ondersteund, moet u nog steeds het eerder genoemde domein en de poort in het virtuele netwerk of de firewall van uw bedrijf configureren. 

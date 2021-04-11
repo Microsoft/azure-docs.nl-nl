@@ -2,14 +2,14 @@
 title: Geavanceerd gebruik van authn/AuthZ
 description: Meer informatie over het aanpassen van de functie voor verificatie en autorisatie in App Service voor verschillende scenario's en het ophalen van gebruikers claims en verschillende tokens.
 ms.topic: article
-ms.date: 07/08/2020
+ms.date: 03/29/2021
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: fc2916cbccc21262467533b0b497b14f4f4b941c
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: b7faf47363a5efee6a60951e67d9ad2bed8bf76f
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105034874"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106076867"
 ---
 # <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Geavanceerd gebruik van verificatie en autorisatie in Azure App Service
 
@@ -18,10 +18,9 @@ In dit artikel wordt beschreven hoe u de ingebouwde [verificatie en autorisatie 
 Als u snel aan de slag wilt gaan, raadpleegt u een van de volgende zelf studies:
 
 * [Zelfstudie: Zelfstudie: Gebruikers eind-tot-eind verifiëren en autoriseren in Azure App Service](tutorial-auth-aad.md)
-* [Uw app configureren voor aanmelding met Azure Active Directory](configure-authentication-provider-aad.md)
+* [Uw app configureren voor het gebruik van micro soft Identity platform login](configure-authentication-provider-aad.md)
 * [Uw app configureren voor aanmelding met Facebook](configure-authentication-provider-facebook.md)
 * [Uw app configureren voor aanmelding met Google](configure-authentication-provider-google.md)
-* [Uw app configureren voor aanmelding met een Microsoft Account](configure-authentication-provider-microsoft.md)
 * [Uw app configureren voor aanmelding met Twitter](configure-authentication-provider-twitter.md)
 * [Uw app configureren voor aanmelding met een OpenID Connect Connect provider (preview-versie)](configure-authentication-provider-openid-connect.md)
 * [Uw app configureren voor aanmelding met een aanmelding met Apple (preview-versie)](configure-authentication-provider-apple.md)
@@ -37,8 +36,7 @@ Selecteer **anonieme aanvragen toestaan (geen actie)** **wanneer de aanvraag nie
 Voeg op de aanmeldings pagina of in de navigatie balk of op een andere locatie van uw app een aanmeldings koppeling toe aan elk van de providers die u hebt ingeschakeld ( `/.auth/login/<provider>` ). Bijvoorbeeld:
 
 ```html
-<a href="/.auth/login/aad">Log in with Azure AD</a>
-<a href="/.auth/login/microsoftaccount">Log in with Microsoft Account</a>
+<a href="/.auth/login/aad">Log in with the Microsoft Identity Platform</a>
 <a href="/.auth/login/facebook">Log in with Facebook</a>
 <a href="/.auth/login/google">Log in with Google</a>
 <a href="/.auth/login/twitter">Log in with Twitter</a>
@@ -159,7 +157,6 @@ Vanuit uw server code worden de providerspecifieke tokens in de aanvraag header 
 | Azure Active Directory | `X-MS-TOKEN-AAD-ID-TOKEN` <br/> `X-MS-TOKEN-AAD-ACCESS-TOKEN` <br/> `X-MS-TOKEN-AAD-EXPIRES-ON`  <br/> `X-MS-TOKEN-AAD-REFRESH-TOKEN` |
 | Facebook-token | `X-MS-TOKEN-FACEBOOK-ACCESS-TOKEN` <br/> `X-MS-TOKEN-FACEBOOK-EXPIRES-ON` |
 | Google | `X-MS-TOKEN-GOOGLE-ID-TOKEN` <br/> `X-MS-TOKEN-GOOGLE-ACCESS-TOKEN` <br/> `X-MS-TOKEN-GOOGLE-EXPIRES-ON` <br/> `X-MS-TOKEN-GOOGLE-REFRESH-TOKEN` |
-| Microsoft-account | `X-MS-TOKEN-MICROSOFTACCOUNT-ACCESS-TOKEN` <br/> `X-MS-TOKEN-MICROSOFTACCOUNT-EXPIRES-ON` <br/> `X-MS-TOKEN-MICROSOFTACCOUNT-AUTHENTICATION-TOKEN` <br/> `X-MS-TOKEN-MICROSOFTACCOUNT-REFRESH-TOKEN` |
 | Twitter | `X-MS-TOKEN-TWITTER-ACCESS-TOKEN` <br/> `X-MS-TOKEN-TWITTER-ACCESS-TOKEN-SECRET` |
 |||
 
@@ -175,7 +172,6 @@ Wanneer het toegangs token van uw provider (niet het [sessie token](#extend-sess
 - **Google**: een `access_type=offline` query reeks parameter toevoegen aan de `/.auth/login/google` API-aanroep. Als u de Mobile Apps SDK gebruikt, kunt u de para meter toevoegen aan een van de `LogicAsync` Overloads (Zie [tokens voor Google-vernieuwing](https://developers.google.com/identity/protocols/OpenIDConnect#refresh-tokens)).
 - **Facebook**: biedt geen vernieuwings tokens. Tokens met een lange levens duur verlopen over 60 dagen (Zie het [verloop van Facebook en de uitbrei ding van toegangs tokens](https://developers.facebook.com/docs/facebook-login/access-tokens/expiration-and-extension)).
 - **Twitter**: toegangs tokens verlopen niet (Zie [Veelgestelde vragen over Twitter OAuth](https://developer.twitter.com/en/docs/authentication/faq)).
-- **Micro soft-account**: Selecteer het bereik bij het [configureren van verificatie-instellingen voor micro soft-accounts](configure-authentication-provider-microsoft.md) `wl.offline_access` .
 - **Azure Active Directory**: in [https://resources.azure.com](https://resources.azure.com) voert u de volgende stappen uit:
     1. Selecteer boven aan de pagina **lezen/schrijven**.
     2. Navigeer in de linkernavigatiebalk naar **abonnementen** > * *_\<subscription\_name_** > **resourceGroups** > * *_ \<resource\_group\_name> _* * > **providers**  >  **micro soft.**  >  **websites** > * *_ \<app\_name> _ * * > **config**  >  **authsettings**. 
@@ -280,14 +276,26 @@ De ID-provider kan bepaalde machtigingen voor een schakel sleutel geven. Bijvoor
 
 Als een van de andere niveaus niet de autorisatie biedt die u nodig hebt, of als uw platform of ID-provider niet wordt ondersteund, moet u aangepaste code schrijven om gebruikers te autoriseren op basis van de [gebruikers claims](#access-user-claims).
 
-## <a name="updating-the-configuration-version-preview"></a>De configuratie versie bijwerken (preview)
+## <a name="updating-the-configuration-version"></a>De configuratie versie bijwerken
 
-Er zijn twee versies van de beheer-API voor de functie voor verificatie/autorisatie. De preview v2-versie is vereist voor de ervaring authenticatie (preview) in de Azure Portal. Een app die al de V1-API gebruikt, kan een upgrade uitvoeren naar versie v2 wanneer er enkele wijzigingen zijn aangebracht. In het bijzonder moet de geheime configuratie worden verplaatst naar de instellingen van een sleuf-Sticky-toepassing. De configuratie van de micro soft-account provider wordt ook momenteel niet ondersteund in v2.
+Er zijn twee versies van de beheer-API voor de functie voor verificatie/autorisatie. De v2-versie is vereist voor de ervaring ' verificatie ' in de Azure Portal. Een app die al de V1-API gebruikt, kan een upgrade uitvoeren naar versie v2 wanneer er enkele wijzigingen zijn aangebracht. In het bijzonder moet de geheime configuratie worden verplaatst naar de instellingen van een sleuf-Sticky-toepassing. Dit kan automatisch worden gedaan vanuit het gedeelte verificatie van de portal voor uw app.
 
 > [!WARNING]
-> Door de migratie naar v2 Preview wordt het beheer van de functie voor App Service verificatie/autorisatie voor uw toepassing via sommige clients, zoals de bestaande ervaring in de Azure Portal, Azure CLI en Azure PowerShell, uitgeschakeld. Dit kan niet worden omgekeerd. Tijdens de preview wordt de migratie van productie werkbelastingen niet aangemoedigd of ondersteund. Volg de stappen in deze sectie alleen voor test toepassingen.
+> Migratie naar v2 schakelt het beheer van de App Service verificatie/autorisatie-functie voor uw toepassing uit via sommige clients, zoals de bestaande ervaring in de Azure Portal, Azure CLI en Azure PowerShell. Dit kan niet worden omgekeerd.
 
-### <a name="moving-secrets-to-application-settings"></a>Geheimen verplaatsen naar toepassings instellingen
+De v2-API biedt geen ondersteuning voor het maken of bewerken van een micro soft-account als een afzonderlijke provider die is gemaakt in v1. In plaats daarvan maakt het gebruik van het geconvergeerde [micro soft-identiteits platform](../active-directory/develop/v2-overview.md) voor het aanmelden van gebruikers met Azure AD en persoonlijke micro soft-accounts. Wanneer u overschakelt naar de v2 API, wordt de configuratie v1 Azure Active Directory gebruikt voor het configureren van de micro soft Identity platform-provider. De V1 micro soft-account provider wordt in het migratie proces getransporteerd en blijft normaal functioneren, maar u wordt aangeraden om over te stappen op het nieuwere micro soft Identity platform model. Zie [ondersteuning voor micro soft-account provider registraties](#support-for-microsoft-account-provider-registrations) voor meer informatie.
+
+Tijdens het geautomatiseerde migratie proces worden de provider geheimen verplaatst naar toepassings instellingen en wordt de rest van de configuratie geconverteerd naar de nieuwe indeling. De automatische migratie gebruiken:
+
+1. Navigeer naar uw app in de portal en selecteer de menu optie voor **authenticatie** .
+1. Als de app is geconfigureerd met het v1-model, ziet u een knop **bijwerken** .
+1. Bekijk de beschrijving in de bevestigings prompt. Als u klaar bent om de migratie uit te voeren, klikt u op **upgrade** in de prompt.
+
+### <a name="manually-managing-the-migration"></a>De migratie hand matig beheren
+
+Met de volgende stappen kunt u de toepassing hand matig migreren naar de v2 API als u de hierboven vermelde automatische versie niet wilt gebruiken.
+
+#### <a name="moving-secrets-to-application-settings"></a>Geheimen verplaatsen naar toepassings instellingen
 
 1. De bestaande configuratie ophalen met behulp van de V1 API:
 
@@ -397,9 +405,7 @@ Er zijn twee versies van de beheer-API voor de functie voor verificatie/autorisa
 
 U hebt nu de app gemigreerd voor het opslaan van geheimen van de identiteits provider als toepassings instellingen.
 
-### <a name="support-for-microsoft-account-registrations"></a>Ondersteuning voor Microsoft-account registraties
-
-De v2-API biedt momenteel geen ondersteuning voor micro soft-accounts als een DISTINCT-provider. In plaats daarvan maakt het gebruik van het geconvergeerde [micro soft Identity-platform](../active-directory/develop/v2-overview.md) om gebruikers te registreren met persoonlijke micro soft-accounts. Wanneer u overschakelt naar de v2 API, wordt de configuratie v1 Azure Active Directory gebruikt voor het configureren van de micro soft Identity platform-provider.
+#### <a name="support-for-microsoft-account-provider-registrations"></a>Ondersteuning voor registraties van micro soft-account providers
 
 Als uw bestaande configuratie een micro soft-account provider bevat en geen Azure Active Directory provider heeft, kunt u de configuratie overschakelen naar de Azure Active Directory provider en vervolgens de migratie uitvoeren. Om dit te doen:
 
@@ -413,12 +419,10 @@ Als uw bestaande configuratie een micro soft-account provider bevat en geen Azur
 1. U hebt nu de configuratie gekopieerd over, maar de bestaande configuratie van de micro soft-account provider blijft behouden. Voordat u het verwijdert, moet u ervoor zorgen dat alle onderdelen van uw app naar de Azure Active Directory provider verwijzen via aanmeldings koppelingen, enzovoort. Controleer of alle onderdelen van uw app werken zoals verwacht.
 1. Zodra u hebt gevalideerd dat dingen werken aan de AAD-Azure Active Directory provider, kunt u de configuratie van de micro soft-account provider verwijderen.
 
-Sommige apps hebben mogelijk al afzonderlijke registraties voor Azure Active Directory en het micro soft-account. Deze apps kunnen op dit moment niet worden gemigreerd. 
-
 > [!WARNING]
 > U kunt de twee registraties convergeren door de [ondersteunde account typen](../active-directory/develop/supported-accounts-validation.md) voor de registratie van de Aad-app te wijzigen. Dit zou er echter toe leiden dat er een nieuwe toestemming wordt gevraagd voor gebruikers van micro soft-accounts en dat de identiteits claims van die gebruikers kunnen verschillen in de structuur, met `sub` name het wijzigen van waarden sinds een nieuwe app-id wordt gebruikt. Deze methode wordt niet aanbevolen, tenzij zorgvuldig is begrepen. U moet in plaats daarvan wachten op ondersteuning voor de twee registraties in het v2 API-Opper vlak.
 
-### <a name="switching-to-v2"></a>Overschakelen naar v2
+#### <a name="switching-to-v2"></a>Overschakelen naar v2
 
 Zodra de bovenstaande stappen zijn uitgevoerd, gaat u naar de app in de Azure Portal. Selecteer de sectie verificatie (preview). 
 

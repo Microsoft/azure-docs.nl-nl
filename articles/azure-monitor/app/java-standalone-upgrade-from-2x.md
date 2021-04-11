@@ -6,12 +6,12 @@ ms.date: 11/25/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 6e1c7e15ff77fd75ff2fb70a6741ea2dd9a4cab8
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 342c535cadb1a2d3f2d18478d8941d9ea61bdf72
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102040240"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106448964"
 ---
 # <a name="upgrading-from-application-insights-java-2x-sdk"></a>Upgraden van Application Insights Java 2. x SDK
 
@@ -45,72 +45,12 @@ In de 2. x SDK werden de bewerkings namen voorafgegaan door de HTTP-methode ( `G
 
 :::image type="content" source="media/java-ipa/upgrade-from-2x/operation-names-prefixed-by-http-method.png" alt-text="Bewerkings namen, voorafgegaan door HTTP-methode":::
 
-In het onderstaande fragment worden drie telemetrie-processors geconfigureerd die combi neren om het vorige gedrag te repliceren.
-De telemetrie-processors voeren de volgende acties uit (op volg orde):
+Vanaf 3.0.3 kunt u dit 2. x-gedrag terugbrengen met behulp van
 
-1. De eerste telemetrieprocessor is een bereik processor (is van het type `span` ), wat betekent dat deze van toepassing is op `requests` en `dependencies` .
-
-   Dit komt overeen met een reeks die een kenmerk met de naam heeft `http.method` en een span naam heeft die begint met `/` .
-
-   Vervolgens wordt deze span name geëxtraheerd naar een kenmerk met de naam `tempName` .
-
-2. De tweede telemetrie-processor is ook een hoeveelheid processor.
-
-   Dit komt overeen met een periode met een kenmerk met de naam `tempName` .
-
-   Vervolgens wordt de bereik naam bijgewerkt door de twee kenmerken samen te voegen `http.method` `tempName` , gescheiden door een spatie.
-
-3. De laatste telemetrieprocessor is een kenmerk processor (is van het type `attribute` ). Dit betekent dat dit van toepassing is op alle telemetrie die kenmerken hebben (momenteel `requests` `dependencies` en `traces` ).
-
-   Dit komt overeen met een telemetrie met een kenmerk met de naam `tempName` .
-
-   Vervolgens wordt het kenmerk met de naam verwijderd `tempName` zodat het niet wordt gerapporteerd als aangepaste dimensie.
-
-```
+```json
 {
   "preview": {
-    "processors": [
-      {
-        "type": "span",
-        "include": {
-          "matchType": "regexp",
-          "attributes": [
-            { "key": "http.method", "value": "" }
-          ],
-          "spanNames": [ "^/" ]
-        },
-        "name": {
-          "toAttributes": {
-            "rules": [ "^(?<tempName>.*)$" ]
-          }
-        }
-      },
-      {
-        "type": "span",
-        "include": {
-          "matchType": "strict",
-          "attributes": [
-            { "key": "tempName" }
-          ]
-        },
-        "name": {
-          "fromAttributes": [ "http.method", "tempName" ],
-          "separator": " "
-        }
-      },
-      {
-        "type": "attribute",
-        "include": {
-          "matchType": "strict",
-          "attributes": [
-            { "key": "tempName" }
-          ]
-        },
-        "actions": [
-          { "key": "tempName", "action": "delete" }
-        ]
-      }
-    ]
+    "httpMethodInOperationName": true
   }
 }
 ```

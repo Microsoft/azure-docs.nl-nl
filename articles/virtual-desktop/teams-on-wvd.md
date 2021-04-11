@@ -3,20 +3,20 @@ title: Micro soft teams op virtueel bureau blad van Windows-Azure
 description: Micro soft teams gebruiken op het virtuele bureau blad van Windows.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 11/10/2020
+ms.date: 04/09/2021
 ms.author: helohr
-manager: lizross
-ms.openlocfilehash: 46796573e14dfc33d02d4faddd5504f3e8b7ee7b
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+manager: femila
+ms.openlocfilehash: 0c528f183106472850d6b5d2a8b492ea8939eda6
+ms.sourcegitcommit: c6a2d9a44a5a2c13abddab932d16c295a7207d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105935717"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107285255"
 ---
 # <a name="use-microsoft-teams-on-windows-virtual-desktop"></a>Micro soft teams gebruiken op het virtuele bureau blad van Windows
 
 >[!IMPORTANT]
->Media optimalisatie voor teams wordt ondersteund voor Microsoft 365 Government (GCC) en GCC-High omgevingen. Media optimalisatie voor teams wordt niet ondersteund voor GCC-High of DoD.
+>Media optimalisatie voor teams wordt ondersteund voor Microsoft 365 Government (GCC) en GCC-High omgevingen. Media optimalisatie voor teams wordt niet ondersteund voor Microsoft 365 DoD.
 
 >[!NOTE]
 >Media optimalisatie voor micro soft teams is alleen beschikbaar voor de Windows desktop-client op Windows 10-computers. Voor media optimalisaties is Windows desktop client versie 1.2.1026.0 of hoger vereist.
@@ -148,11 +148,7 @@ Het gebruik van teams in een gevirtualiseerde omgeving verschilt van het gebruik
 - De app teams ondersteunt geen HID-knoppen of LED-besturings elementen met andere apparaten.
 - Nieuwe Vergader ervaring (NME) wordt momenteel niet ondersteund in VDI-omgevingen.
 
-Voor teams bekende problemen die niet zijn gerelateerd aan gevirtualiseerde omgevingen raadpleegt [u ondersteunings teams in uw organisatie](/microsoftteams/known-issues)
-
-## <a name="uservoice-site"></a>UserVoice-site
-
-Feedback geven over micro soft-teams op het virtuele Windows-bureau blad op de site van het project [UserVoice](https://microsoftteams.uservoice.com/).
+Zie [ondersteunings teams in uw organisatie](/microsoftteams/known-issues)voor bekende problemen die niet zijn gerelateerd aan gevirtualiseerde omgevingen.
 
 ## <a name="collect-teams-logs"></a>Teams-logboeken verzamelen
 

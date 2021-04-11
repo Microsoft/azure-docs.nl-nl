@@ -3,12 +3,12 @@ title: Microsoft Azure Recovery Services-agent (MARS) – Veelgestelde vragen
 description: Behandelt Veelgestelde vragen over het maken van back-ups van bestanden en mappen met Azure Backup.
 ms.topic: conceptual
 ms.date: 04/05/2021
-ms.openlocfilehash: 09c54d7f24ba4bea1bf9081333f345b1a246a4d6
-ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
+ms.openlocfilehash: 98f558c091f1680c165ee26ffb20a8022ab15520
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106505464"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107173"
 ---
 # <a name="frequently-asked-questions---microsoft-azure-recovery-services-mars-agent"></a>Veelgestelde vragen-agent voor Microsoft Azure Recovery Services (MARS)
 
@@ -213,7 +213,7 @@ In het geval van een veiligheids maatregel behoudt Azure Backup het meest recent
 
 Als een actieve herstel taak wordt geannuleerd, wordt het herstel proces gestopt. Alle bestanden die vóór de annulering worden teruggezet, blijven geconfigureerd op de ingestelde bestemming (oorspronkelijke of alternatieve locatie), zonder terugdraai bewerkingen.
 
-### <a name="does-the-mars-agent-backup-and-restore-acls-set-on-files-folders-and-volumes"></a>Wordt de back-up-en herstel-Acl's voor de MARS-agent ingesteld voor bestanden, mappen en volumes?
+### <a name="does-the-mars-agent-back-up-and-restore-acls-set-on-files-folders-and-volumes"></a>Maakt de MARS-agent een back-up en herstelt u de Acl's die zijn ingesteld voor bestanden, mappen en volumes?
 
 * De MARS-agent maakt een back-up van de Acl's die zijn ingesteld voor bestanden, mappen en volumes
 * Voor de herstel optie voor volume herstel biedt de MARS agent een optie voor het overs laan van het terugzetten van ACL-machtigingen naar het bestand of de map die wordt hersteld

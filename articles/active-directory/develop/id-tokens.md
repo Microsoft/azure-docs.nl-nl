@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/09/2020
+ms.date: 04/02/2021
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
 ms:custom: fasttrack-edit
-ms.openlocfilehash: 21e0b800e06b7a5ad0351ff53d26a5e2cd2ba71c
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: cf7940af03c02d96f6ed2ca452322ad012bc6a2d
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102175385"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107105354"
 ---
 # <a name="microsoft-identity-platform-id-tokens"></a>Tokens van micro soft Identity platform ID
 
@@ -124,6 +124,12 @@ Om ervoor te zorgen dat de token grootte niet groter is dan de grootte limieten 
   ...
 }
 ```
+
+## <a name="id-token-lifetime"></a>Levens duur van ID-token
+
+Standaard is een ID-token 1 uur geldig na 1 uur. de client moet een nieuw ID-token aanvragen.
+
+U kunt de levens duur van een ID-token aanpassen om te bepalen hoe vaak de client toepassing de toepassings sessie verloopt en hoe vaak de gebruiker opnieuw moet worden geverifieerd (op de achtergrond of interactief). Lees de [levens duur van Configureer bare tokens](active-directory-configurable-token-lifetimes.md)voor meer informatie.
 
 ## <a name="validating-an-id_token"></a>Een id_token valideren
 

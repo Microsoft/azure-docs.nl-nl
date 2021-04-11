@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 03/10/2021
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9a0e8a513023c093157a3f14a64de9f87de543ab
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: bd544b9eec0c1839ad94ede65e9d4ccde6df81dc
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103009450"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106063350"
 ---
 # <a name="use-playready-andor-widevine-dynamic-common-encryption"></a>Dynamische algemene versleuteling met PlayReady en/of Widevine gebruiken
 
@@ -46,9 +46,9 @@ Zie Integratie met [Axinom](media-services-axinom-integration.md) en [castLabs](
 
 Media Services ondersteunt meerdere manieren om gebruikers te autoriseren die sleutels aanvragen. Het autorisatiebeleid voor inhoudssleutels kan een of meer autorisatiebeperkingen hebben: beperking voor openen of tokenbeperkingen. Het beleid met de tokenbeperking moet vergezeld gaan van een token dat is uitgegeven door een beveiligingstokenservice (STS). Media Services ondersteunt tokens in de indelingen [Simple Web Tokens](/previous-versions/azure/azure-services/gg185950(v=azure.100)#BKMK_2) (SWT) en [JSON Web Token](/previous-versions/azure/azure-services/gg185950(v=azure.100)#BKMK_3) (JWT). 
 
-Zie [Het autorisatiebeleid voor inhoudssleutels configureren](media-services-protect-with-aes128.md#configure_key_auth_policy) voor meer informatie.
+Zie [Het autorisatiebeleid voor inhoudssleutels configureren](media-services-portal-configure-content-key-auth-policy.md) voor meer informatie.
 
-Als u dynamische versleuteling wilt gebruiken, hebt u een asset nodig die een set multi-bitrate MP4-bestanden of multi-bitrate Smooth Streaming-bronbestanden bevat. Ook moet u het leveringsbeleid voor de asset configureren (dit wordt verderop in dit onderwerp beschreven). Vervolgens zorgt de server voor streaming on demand er op basis van de indeling die is opgegeven in de streaming-URL voor dat de stream wordt geleverd in het protocol dat u hebt geselecteerd. Als gevolg hiervan slaat u de bestanden maar in één opslagindeling op en betaalt u ook alleen daarvoor. Media Services bouwt en verwerkt het juiste HTTP-antwoord op basis van elke aanvraag van een client.
+Als u gebruik wilt maken van dynamische versleuteling, maakt u een Asset die een set multi-bitrate MP4-bestanden of multi-bitrate Smooth Streaming bron bestanden bevat. Ook moet u het leveringsbeleid voor de asset configureren (dit wordt verderop in dit onderwerp beschreven). Vervolgens zorgt de server voor streaming on demand er op basis van de indeling die is opgegeven in de streaming-URL voor dat de stream wordt geleverd in het protocol dat u hebt geselecteerd. Als gevolg hiervan slaat u de bestanden maar in één opslagindeling op en betaalt u ook alleen daarvoor. Media Services bouwt en verwerkt het juiste HTTP-antwoord op basis van elke aanvraag van een client.
 
 Dit artikel is nuttig voor ontwikkelaars die werken aan toepassingen die media leveren die worden beveiligd met meerdere DRM's, zoals PlayReady en Widevine. In het artikel wordt beschreven hoe u de PlayReady-service voor het leveren van licenties zo met een autorisatiebeleid configureert dat alleen geautoriseerde clients PlayReady- of Widevine-licenties kunnen ontvangen. Ook wordt uitgelegd hoe u dynamische versleuteling met PlayReady of Widevine DRM via DASH gebruikt.
 

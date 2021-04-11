@@ -1,14 +1,14 @@
 ---
 title: Een beheerde service aanbieding naar Azure Marketplace publiceren
 description: Meer informatie over het publiceren van een Managed Service-aanbod waarmee klanten naar Azure Lighthouse worden geleid.
-ms.date: 02/17/2021
+ms.date: 03/31/2021
 ms.topic: how-to
-ms.openlocfilehash: b906ba9961ae4f77ca16890fd0a9036123343111
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f59d9708925b52bcf9432663fe6d3137a54b37ad
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101092145"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107445"
 ---
 # <a name="publish-a-managed-service-offer-to-azure-marketplace"></a>Een beheerde service aanbieding naar Azure Marketplace publiceren
 
@@ -16,7 +16,7 @@ In dit artikel leert u hoe u een aanbieding voor open bare of privé beheerde se
 
 ## <a name="publishing-requirements"></a>Publicatie vereisten
 
-U hebt een geldig [account in het partner centrum](../../marketplace/partner-center-portal/create-account.md) nodig om aanbiedingen te maken en te publiceren. Als u nog geen account hebt, wordt u door het [aanmeldings proces](https://aka.ms/joinmarketplace) geleid door de stappen voor het maken van een account in partner centrum en het inschrijven van het commerciële Marketplace-programma.
+U hebt een geldig [account in het partner centrum](../../marketplace/create-account.md) nodig om aanbiedingen te maken en te publiceren. Als u nog geen account hebt, wordt u door het [aanmeldings proces](https://aka.ms/joinmarketplace) geleid door de stappen voor het maken van een account in partner centrum en het inschrijven van het commerciële Marketplace-programma.
 
 Op basis van de [certificerings vereisten voor het beheerde service aanbod](/legal/marketplace/certification-policies#700-managed-services)moet u beschikken over een [Silver-of Gold-competentie voor het Cloud platform](/partner-center/learn-about-competencies) of van een Azure-expert- [MSP](https://partner.microsoft.com/membership/azure-expert-msp) om een beheerd service aanbod te kunnen publiceren. Telkens wanneer een klant uw aanbieding implementeert, moet u ook [een doel voor de lead invoeren die een record in uw CRM-systeem maakt](../../marketplace/plan-managed-service-offer.md#customer-leads) .
 
@@ -26,13 +26,14 @@ Aan de hand van de volgende tabel kunt u bepalen of u klanten wilt vrijgeven doo
 
 |**Overweging**  |**Beheerde service aanbieding**  |**ARM-sjablonen**  |
 |---------|---------|---------|
-|Vereist [partner centrum-account](../../marketplace/partner-center-portal/create-account.md)   |Ja         |Nee        |
+|Vereist [partner centrum-account](../../marketplace/create-account.md)   |Ja         |Nee        |
 |Vereist [zilver of Gold-competentie niveau van het Cloud platform](/partner-center/learn-about-competencies) of [Azure expert msp](https://partner.microsoft.com/membership/azure-expert-msp)      |Ja         |Nee         |
 |Beschikbaar voor nieuwe klanten via Azure Marketplace     |Ja     |Nee       |
 |Aanbieding kan worden beperkt tot specifieke klanten     |Ja (alleen met privé aanbiedingen, die niet kan worden gebruikt met abonnementen die zijn vastgesteld via een wederverkoper van het programma voor Cloud Solution Provider (CSP))         |Yes         |
 |Vereist acceptatie van klant in Azure Portal     |Ja     |Nee   |
 |Kan Automation gebruiken om meerdere abonnementen, resource groepen of klanten uit te boarden |Nee     |Ja    |
 |Directe toegang tot nieuwe ingebouwde rollen en Azure Lighthouse-functies     |Niet altijd (algemeen beschikbaar na enige vertraging)         |Yes         |
+|Klanten kunnen bijgewerkte aanbiedingen bekijken en accepteren in de Azure Portal | Ja | Nee |
 
 > [!NOTE]
 > Aanbiedingen van beheerde services zijn mogelijk niet beschikbaar in Azure Government en andere nationale Clouds.
@@ -62,6 +63,8 @@ Nadat een klant uw aanbieding heeft toegevoegd, kunnen ze [een of meer specifiek
 > Delegering moet worden uitgevoerd door een niet-gast account in de Tenant van de klant die een rol heeft met de `Microsoft.Authorization/roleAssignments/write` machtiging, zoals de [eigenaar](../../role-based-access-control/built-in-roles.md#owner), voor het onboarden van het abonnement (of met de resource groepen die worden uitgevoerd). Om gebruikers te vinden die het abonnement kunnen delegeren, kan een gebruiker in de Tenant van de klant het abonnement selecteren in de Azure Portal, **toegangs beheer openen (IAM)** en [alle gebruikers met de rol eigenaar weer geven](../../role-based-access-control/role-assignments-list-portal.md#list-owners-of-a-subscription).
 
 Zodra de klant een abonnement (of een of meer resource groepen binnen een abonnement) delegeert, wordt de resource provider **micro soft. ManagedServices** geregistreerd voor dat abonnement en kunnen gebruikers in uw Tenant toegang krijgen tot de gedelegeerde resources op basis van de autorisaties in uw aanbieding.
+
+Als u een bijgewerkte versie van uw aanbieding publiceert, kan de klant [de wijzigingen in het Azure Portal bekijken en de nieuwe versie accepteren](view-manage-service-providers.md#update-service-provider-offers).
 
 ## <a name="next-steps"></a>Volgende stappen
 

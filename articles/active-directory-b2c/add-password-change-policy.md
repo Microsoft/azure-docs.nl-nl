@@ -12,12 +12,12 @@ ms.date: 03/22/2021
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 21da8f79772d9648836bedec89cb5d7014486dc6
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: cd63144074577d4ff3564da41e672dd1ca226dcb
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104798356"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107257157"
 ---
 # <a name="configure-password-change-using-custom-policies-in-azure-active-directory-b2c"></a>Wachtwoord wijzigingen configureren met aangepast beleid in Azure Active Directory B2C
 
@@ -43,7 +43,7 @@ In Azure Active Directory B2C (Azure AD B2C) kunt u gebruikers die zijn aangemel
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Voer de stappen in aan de [slag met aangepast beleid in Active Directory B2C](custom-policy-get-started.md).
+* Voer de stappen in aan de [slag met aangepast beleid in Active Directory B2C](tutorial-create-user-flows.md?pivots=b2c-custom-policy).
 * Als u dit nog niet hebt gedaan, [registreert u een webtoepassing in azure Active Directory B2C](tutorial-register-applications.md).
 
 ## <a name="add-the-elements"></a>De elementen toevoegen

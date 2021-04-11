@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/07/2021
 ms.author: trbye
 ms.custom: references_regions
-ms.openlocfilehash: 9be9e9b4c5153776bd78675cdc0c9da8c0506f75
-ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
+ms.openlocfilehash: 52dd642c661aa60157876a89d41c771cabfe2f1d
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2021
-ms.locfileid: "107106765"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107256154"
 ---
 # <a name="language-and-voice-support-for-the-speech-service"></a>Taal-en spraak ondersteuning voor de spraak service
 
@@ -38,7 +38,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 
 | Taal                 | Land instelling (BCP-47) | Aanpassingen  | [Taaldetectie](how-to-automatic-language-detection.md) |
 |------------------------------------|--------|---------------------------------------------------|-------------------------------|
-| Arabisch (Bahrein), modern, standaard  | `ar-BH` | Tekst                                   | Yes                           | 
+| Arabisch (Bahrein), modern, standaard  | `ar-BH` | Tekst                                   |                           | 
 | Arabisch (Egypte)                     | `ar-EG` | Tekst                                   | Yes                          |
 | Arabisch (Irak)                      | `ar-IQ` | Tekst                                   |                           |
 | Arabisch (Israël)                    | `ar-IL` | Tekst                                   |                           |
@@ -47,9 +47,9 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 | Arabisch (Libanon)                   | `ar-LB` | Tekst                                   |                           |
 | Arabisch (Oman)                      | `ar-OM` | Tekst                                   |                           |
 | Arabisch (Qatar)                     | `ar-QA` | Tekst                                   |                           |
-| Arabisch (Saoedi-Arabië)              | `ar-SA` | Tekst                                   | Yes                          |
+| Arabisch (Saoedi-Arabië)              | `ar-SA` | Tekst                                   |                           |
 | Arabisch (status van Palestijnse)        | `ar-PS` | Tekst                                   |                           |
-| Arabisch (Syrië)                     | `ar-SY` | Tekst                                   | Yes                          |
+| Arabisch (Syrië)                     | `ar-SY` | Tekst                                   |                           |
 | Arabisch (Verenigde Arabische Emiraten)      | `ar-AE` | Tekst                                   |                           |
 | Bulgaars (Bulgarije)               | `bg-BG` | Tekst                                   |                           |
 | Catalaans (Spanje)                    | `ca-ES` | Tekst                                   | Yes                          |
@@ -64,10 +64,10 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 | Engels (Canada)                   | `en-CA` | Audio (20201019)<br>Tekst                 | Yes                          |
 | Engels (Ghana)                    | `en-GH` | Tekst                                   |                           |
 | Engels (Hongkong)                | `en-HK` | Tekst                                   |                           |
-| Engels (India)                    | `en-IN` | Audio (20200923)<br>Tekst                 | Yes                          |
+| Engels (India)                    | `en-IN` | Audio (20200923)<br>Tekst                 |                          |
 | Engels (Ierland)                  | `en-IE` | Tekst                                   |                           |
 | Engels (Kenia)                    | `en-KE` | Tekst                                   |                           |
-| Engels (Nieuw-Zeeland)              | `en-NZ` | Audio (20201019)<br>Tekst                 |  Yes                         |
+| Engels (Nieuw-Zeeland)              | `en-NZ` | Audio (20201019)<br>Tekst                 |                          |
 | Engels (Nigeria)                  | `en-NG` | Tekst                                   |                           |
 | Engels (Filipijnen)              | `en-PH` | Tekst                                   |                           |
 | Engels (Singapore)                | `en-SG` | Tekst                                   |                           |
@@ -83,7 +83,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 | Frans (Zwitserland)               | `fr-CH` | Tekst<br>Uitspraak van                  |                           |
 | Duits (Oostenrijk)                   | `de-AT` | Tekst<br>Uitspraak van                  |                           |
 | Duits (Duitsland)                   | `de-DE` | Audio (20190701, 20200619, 20201127)<br>Tekst<br>Uitspraak van|  Yes                         |
-| Grieks (Griekenland)                     | `el-GR` | Tekst                                   |                           |
+| Grieks (Griekenland)                     | `el-GR` | Tekst                                   |  Yes                         |
 | Gujarati (Indiase)                  | `gu-IN` | Tekst                                   |                           |
 | Hindi (India)                      | `hi-IN` | Audio (20200701)<br>Tekst                 |     Yes                      |
 | Hongaars (Hongarije)                | `hu-HU` | Tekst                                   |                           |
@@ -101,7 +101,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 | Pools (Polen)                    | `pl-PL` | Tekst                                   |       Yes                    |
 | Portugees (Brazilië)                | `pt-BR` | Audio (20190620, 20201015)<br>Tekst<br>Uitspraak van|          Yes                 |
 | Portugees (Portugal)              | `pt-PT` | Tekst<br>Uitspraak van                  |             Yes              |
-| Roemeens (Roemenië)                 | `ro-RO` | Tekst                                   |                           |
+| Roemeens (Roemenië)                 | `ro-RO` | Tekst                                   |  Yes                         |
 | Russisch (Rusland)                   | `ru-RU` | Audio (20200907)<br>Tekst                 |                Yes           |
 | Slowaaks (Slowakije)                  | `sk-SK` | Tekst                                   |                           |
 | Sloveens (Slovenië)               | `sl-SI` | Tekst                                   |                           |

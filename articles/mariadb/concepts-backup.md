@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 8/13/2020
-ms.openlocfilehash: 68605a22dd0d0b2b716b148399c8406a1ea8d89e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b46efa53bba3b845fa5837b91a3707f4a85d298e
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98659934"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107258772"
 ---
 # <a name="backup-and-restore-in-azure-database-for-mariadb"></a>Back-ups maken en herstellen in Azure Database for MariaDB
 
@@ -19,28 +19,42 @@ Azure Database for MariaDB maakt automatisch server back-ups en slaat ze op in e
 
 ## <a name="backups"></a>Back-ups
 
-Azure Database for MariaDB volledige, differentiële en back-ups van transactie Logboeken. Met deze back-ups kunt u een server herstellen naar elk gewenst moment binnen de geconfigureerde back-upperiode. De standaardretentieperiode voor back-ups is zeven dagen. U kunt deze optioneel configureren tot 35 dagen. Alle back-ups worden versleuteld met AES 256-bits versleuteling.
+Azure Database for MariaDB maakt back-ups van de gegevens bestanden en het transactie logboek. Met deze back-ups kunt u een server herstellen naar elk gewenst moment binnen de geconfigureerde back-upperiode. De standaardretentieperiode voor back-ups is zeven dagen. U kunt [deze optioneel configureren](howto-restore-server-portal.md#set-backup-configuration) tot 35 dagen. Alle back-ups worden versleuteld met AES 256-bits versleuteling.
 
-Deze back-upbestanden zijn niet beschikbaar voor gebruikers en kunnen niet worden geëxporteerd. Deze back-ups kunnen alleen worden gebruikt voor herstel bewerkingen in Azure Database for MariaDB. U kunt [mysqldump](howto-migrate-dump-restore.md) gebruiken om een Data Base te kopiëren.
+Deze back-upbestanden zijn niet beschikbaar voor gebruikers en kunnen niet worden geëxporteerd. Deze back-ups kunnen alleen worden gebruikt voor herstel bewerkingen in Azure Database for MySQL. U kunt [mysqldump](howto-migrate-dump-restore.md) gebruiken om een Data Base te kopiëren.
 
-### <a name="backup-frequency"></a>Back-upfrequentie
+Het type en de frequentie van de back-up is afhankelijk van de back-upopslag voor de servers.
 
-#### <a name="servers-with-up-to-4-tb-storage"></a>Servers met Maxi maal 4 TB opslag
+### <a name="backup-type-and-frequency"></a>Type en frequentie van back-ups
 
-Voor servers die Maxi maal 4 TB aan maximale opslag ondersteunen, worden er één keer per week volledige back-ups uitgevoerd. Differentiële back-ups worden twee keer per dag uitgevoerd. Back-ups van transactielogboeken worden elke vijf minuten uitgevoerd.
+#### <a name="basic-storage-servers"></a>Basis opslag servers
 
-#### <a name="servers-with-up-to-16-tb-storage"></a>Servers met Maxi maal 16 TB opslag
-In een subset van [Azure-regio's](concepts-pricing-tiers.md#storage)kan alle nieuw ingerichte servers Maxi maal 16 TB opslag ondersteunen. Back-ups op deze grote opslag servers zijn gebaseerd op moment opnamen. De eerste volledige momentopnameback-up wordt gepland direct nadat een server is gemaakt. De eerste volledige back-up van de moment opname wordt bewaard als basis back-up van de server. Volgende momentopnameback-ups zijn alleen differentiële back-ups. 
+De basis opslag is de back-end-opslag die de [Basic-laag servers](concepts-pricing-tiers.md)ondersteunt. Back-ups op eenvoudige opslag servers zijn gebaseerd op moment opnamen. Er wordt dagelijks een volledige database momentopname uitgevoerd. Er zijn geen differentiële back-ups die worden uitgevoerd voor basis opslag servers en alle back-ups van moment opnamen zijn alleen volledige database back-ups.
 
-Differentiële momentopnameback-ups worden minstens één keer per dag uitgevoerd. Differentiële momentopnameback-ups worden niet uitgevoerd volgens een vast schema. Back-ups van differentiële moment opnamen worden elke 24 uur uitgevoerd, tenzij het transactie logboek (binlog in MariaDB) 50-GB overschrijdt sinds de laatste differentiële back-up. Op één dag zijn maximaal zes differentiële momentopnamen toegestaan. 
+Back-ups van transactielogboeken worden elke vijf minuten uitgevoerd.
 
-Back-ups van transactielogboeken worden elke vijf minuten uitgevoerd. 
+#### <a name="general-purpose-storage-servers-with-up-to-4-tb-storage"></a>Opslag servers voor algemeen gebruik met Maxi maal 4 TB opslag
+
+De opslag voor algemeen gebruik is de back-end-opslag die [Algemeen](concepts-pricing-tiers.md) en de server met [geoptimaliseerd geheugen](concepts-pricing-tiers.md) ondersteunt. Voor servers met een algemene opslag van Maxi maal 4 TB worden er één keer per week volledige back-ups uitgevoerd. Differentiële back-ups worden twee keer per dag uitgevoerd. Back-ups van transactielogboeken worden elke vijf minuten uitgevoerd. De back-ups in algemene opslag ruimte tot 4 TB opslag worden niet op basis van een moment opname gemaakt en verbruiken i/o-band breedte op het moment van de back-up. Voor grote data bases (> 1 TB) voor opslag van 4 TB kunt u het beste overwegen
+
+- Meer IOPs inrichten voor het account voor back-up-IOs of
+- U kunt ook migreren naar de opslag voor algemeen gebruik die ondersteuning biedt voor Maxi maal 16 TB opslag als de onderliggende opslag infrastructuur beschikbaar is in uw voor keuren [Azure-regio's](./concepts-pricing-tiers.md#storage). Er zijn geen extra kosten verbonden aan opslag voor algemene doel einden, die ondersteuning biedt voor Maxi maal 16 TB aan opslag ruimte. Open een ondersteunings ticket van Azure Portal voor hulp bij de migratie naar 16 TB aan opslag ruimte.
+
+#### <a name="general-purpose-storage-servers-with-up-to-16-tb-storage"></a>Opslag servers voor algemeen gebruik met Maxi maal 16 TB opslag
+
+In een subset van [Azure-regio's](./concepts-pricing-tiers.md#storage)kunnen alle nieuw ingerichte servers ondersteuning bieden voor algemeen gebruik, tot 16 TB aan opslag ruimte. Met andere woorden, opslag tot 16 TB opslag is de standaard opslag voor algemeen gebruik voor alle [regio's](concepts-pricing-tiers.md#storage) waar deze wordt ondersteund. Back-ups op deze opslag servers met 16 TB zijn op moment opnamen gebaseerd. De eerste volledige momentopnameback-up wordt gepland direct nadat een server is gemaakt. De eerste volledige back-up van de moment opname wordt bewaard als basis back-up van de server. Volgende momentopnameback-ups zijn alleen differentiële back-ups.
+
+Differentiële momentopnameback-ups worden minstens één keer per dag uitgevoerd. Differentiële momentopnameback-ups worden niet uitgevoerd volgens een vast schema. Back-ups van differentiële moment opnamen worden elke 24 uur uitgevoerd, tenzij het transactie logboek (binlog in MariaDB) 50 GB overschrijdt sinds de laatste differentiële back-up. Op één dag zijn maximaal zes differentiële momentopnamen toegestaan.
+
+Back-ups van transactielogboeken worden elke vijf minuten uitgevoerd.
+ 
 
 ### <a name="backup-retention"></a>Back-upretentie
 
 Back-ups worden bewaard op basis van de instelling voor de Bewaar periode voor back-ups op de server. U kunt een Bewaar periode van 7 tot 35 dagen selecteren. De standaard Bewaar periode is 7 dagen. U kunt de Bewaar periode instellen tijdens het maken van de server of later door de back-upconfiguratie bij te werken met [Azure Portal](howto-restore-server-portal.md#set-backup-configuration) of [Azure cli](howto-restore-server-cli.md#set-backup-configuration). 
 
 De Bewaar periode voor back-ups bepaalt hoe ver terug in de tijd een herstel naar een bepaald tijdstip kan worden opgehaald, omdat het is gebaseerd op back-ups die beschikbaar zijn. De Bewaar periode voor back-ups kan ook worden behandeld als een herstel venster van een Restore-perspectief. Alle back-ups die zijn vereist voor het uitvoeren van een herstel naar een bepaald tijdstip binnen de Bewaar periode voor back-ups, worden bewaard in back-upopslag. Als de Bewaar periode voor back-ups bijvoorbeeld is ingesteld op 7 dagen, wordt het herstel venster als laatste 7 dagen beschouwd. In dit scenario blijven alle back-ups die nodig zijn om de server in de afgelopen 7 dagen te herstellen, behouden. Met een Bewaar periode voor back-ups van zeven dagen:
+
 - Servers met Maxi maal 4 TB opslag behouden Maxi maal twee volledige back-ups van de data base, alle differentiële back-ups en back-ups van transactie logboeken die zijn uitgevoerd sinds de eerste volledige back-up van de data base.
 -   Servers met Maxi maal 16 TB opslag behouden de volledige database momentopname, alle differentiële moment opnamen en back-ups van transactie Logboeken in de afgelopen 8 dagen.
 

@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 06/16/2020
 ms.custom: sfrev, devx-track-azurepowershell
-ms.openlocfilehash: 4568b791db07eaa7a513c42066b22df04b24cb6d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5d73c02b7fd5e40f3cc23f5b0eba1945cf3c8a40
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103010300"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107258432"
 ---
 # <a name="prepare-your-development-environment-on-windows"></a>Uw ontwikkelomgeving voorbereiden in Windows
 
@@ -62,8 +62,8 @@ Als u alleen de SDK nodig hebt, kunt u dit pakket installeren:
 
 De huidige versies zijn:
 
-* Service Fabric SDK en Hulpprogram Ma's 4.2.477
-* Service Fabric runtime-7.2.477
+* Service Fabric SDK en Hulpprogram Ma's 5.0.514
+* Service Fabric runtime-8.0.514
 
 Zie [service Fabric versies](service-fabric-versions.md) voor een lijst met ondersteunde versies
 

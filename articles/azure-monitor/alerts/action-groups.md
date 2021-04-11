@@ -3,14 +3,14 @@ title: Actiegroepen maken en beheren in Azure Portal
 description: Meer informatie over het maken en beheren van actie groepen in de Azure Portal.
 author: dkamstra
 ms.topic: conceptual
-ms.date: 02/25/2021
+ms.date: 04/07/2021
 ms.author: dukek
-ms.openlocfilehash: fb067e603c181482a863dc9fd75556e32a801bc6
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 7010e20b65142cf0ab85c29d6b22c925c977f1f8
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104772345"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107104980"
 ---
 # <a name="create-and-manage-action-groups-in-the-azure-portal"></a>Actiegroepen maken en beheren in Azure Portal
 Een actie groep is een verzameling voor keuren voor meldingen die zijn gedefinieerd door de eigenaar van een Azure-abonnement. Azure Monitor-en Service Health-waarschuwingen gebruiken actie groepen om gebruikers te laten weten dat een waarschuwing is geactiveerd. Verschillende waarschuwingen kunnen dezelfde actie groep of verschillende actie groepen gebruiken, afhankelijk van de vereisten van de gebruiker. 
@@ -162,12 +162,10 @@ Mogelijk hebt u een beperkt aantal ITSM-acties in een actie groep.
 Mogelijk hebt u een beperkt aantal logische app-acties in een actie groep.
 
 ### <a name="secure-webhook"></a>Beveiligde webhook
+Met de actie groepen veilige webhook-actie kunt u gebruikmaken van Azure Active Directory om de verbinding tussen uw actie groep en de beveiligde web-API (webhook-eind punt) te beveiligen. De algemene werk stroom voor het gebruik van deze functionaliteit wordt hieronder beschreven. Zie [overzicht van micro soft Identity platform (v 2.0)](../../active-directory/develop/v2-overview.md)voor een overzicht van Azure AD-toepassingen en-service-principals.
 
 > [!NOTE]
 > Het gebruik van de webhook-actie vereist dat het eind punt van de doel-webhook geen details vereist van de waarschuwing om correct te laten functioneren of kan de waarschuwings context gegevens parseren die worden verstrekt als onderdeel van de POST-bewerking. Als het webhook-eind punt de informatie over de context van de waarschuwing niet zelf kan verwerken, kunt u een oplossing gebruiken zoals een actie van een [logische app](./action-groups-logic-app.md) voor een aangepaste manipulatie van de waarschuwings context informatie die overeenkomt met de verwachte gegevens indeling van de webhook.
-> De gebruiker moet de **eigenaar** zijn van de service-principal van de webhook om ervoor te zorgen dat de beveiliging niet wordt geschonden. Elke Azure-klant heeft toegang tot alle object-Id's via de portal, zonder de eigenaar te controleren, maar iedereen kan de beveiligde webhook toevoegen aan hun eigen actie groep voor Azure monitor-waarschuwings melding die de beveiliging schendt.
-
-Met de actie groepen webhook kunt u gebruikmaken van Azure Active Directory om de verbinding tussen uw actie groep en de beveiligde web-API (webhook-eind punt) te beveiligen. De algemene werk stroom voor het gebruik van deze functionaliteit wordt hieronder beschreven. Zie [overzicht van micro soft Identity platform (v 2.0)](../../active-directory/develop/v2-overview.md)voor een overzicht van Azure AD-toepassingen en-service-principals.
 
 1. Maak een Azure AD-toepassing voor uw beveiligde web-API. Zie de [beveiligde web-API: app-registratie](../../active-directory/develop/scenario-protected-web-api-app-registration.md).
     - Configureer uw beveiligde API om te worden [aangeroepen door een daemon-app](../../active-directory/develop/scenario-protected-web-api-app-registration.md#if-your-web-api-is-called-by-a-daemon-app).

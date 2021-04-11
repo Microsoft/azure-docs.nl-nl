@@ -20,6 +20,8 @@
       href: walkthrough-exchange-all.md
     - name: Overzicht van Peering Service-partners
       href: walkthrough-peering-service-all.md
+    - name: Scenario communicatie Services-partner
+      href: walkthrough-communications-services-partner.md
     - name: Peer-ASN koppelen aan Azure-abonnement
       items:
         - name: Portal

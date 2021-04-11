@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: overview
 ms.date: 01/13/2021
 ms.author: pafarley
-ms.openlocfilehash: 78746e7623f58af5ae9df829b48245295dc39f01
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.openlocfilehash: f102bbe45fd5eea853ba63def4f1c1a92888ca46
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102487097"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106285940"
 ---
 # <a name="whats-new-in-computer-vision"></a>Wat is er nieuw in Computer Vision?
 
@@ -40,7 +40,7 @@ De open bare preview-versie van Computer Vision Lees-API v 3.2, beschikbaar als 
 * Alleen tekst extra heren voor geselecteerde pagina's voor een document met meerdere pagina's.
 * Beschikbaar als een [Distroless-container](./computer-vision-how-to-install-containers.md?tabs=version-3-2) voor on-premises implementatie.
 
-Meer [informatie](concept-recognizing-text.md) over de Lees-API.
+Raadpleeg de [Lees API-instructies](Vision-API-How-to-Topics/call-read-api.md) voor meer informatie.
 
 > [!div class="nextstepaction"]
 > [De Lees-API v 3.2 open bare preview gebruiken](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-3/operations/5d986960601faab4bf452005)
@@ -48,11 +48,11 @@ Meer [informatie](concept-recognizing-text.md) over de Lees-API.
 
 ## <a name="january-2021"></a>Januari 2021
 
-### <a name="spatial-analysis-container-update"></a>Update van de container voor ruimtelijke analyse
+### <a name="spatial-analysis-container-update"></a>Container update voor ruimtelijke analyse
 
 Er is een nieuwe versie van de [container voor ruimtelijke analyse](spatial-analysis-container.md) vrijgegeven met een nieuwe functieset. Met deze Docker-container kunt u realtime streaming-video analyseren om inzicht te krijgen in de ruimtelijke relaties tussen mensen en hun bewegingen door fysieke omgevingen. 
 
-* [Bewerkingen voor ruimtelijke analyse](spatial-analysis-operations.md) kunnen nu worden geconfigureerd om te detecteren of een persoon gezichtsbedekkende bescherming draagt, zoals een masker. 
+* [Ruimtelijke analyse bewerkingen](spatial-analysis-operations.md) kunnen nu worden geconfigureerd om te detecteren of een persoon een beschermende gezicht draagt, zoals een masker. 
     * Voor de bewerkingen `personcount`, `personcrossingline` en `personcrossingpolygon` kan een maskerclassificatie worden ingeschakeld door parameter `ENABLE_FACE_MASK_CLASSIFIER` te configureren.
     * De kenmerken `face_mask` en `face_noMask` worden geretourneerd als metagegevens met een betrouwbaarheidsscore voor elke persoon die in de videostroom wordt gedetecteerd
 * De bewerking *personcrossingpolygon* is uitgebreid om de berekening van de woning tijd van een persoon in een zone mogelijk te maken. U kunt de `type` para meter in de zone configuratie voor de bewerking instellen op `zonedwelltime` en een nieuwe gebeurtenis van het type *personZoneDwellTimeEvent* bevat het `durationMs` veld dat is ingevuld met het aantal milliseconden dat de persoon die aan de zone heeft gewerkt.
@@ -71,9 +71,9 @@ De Computer Vision-API in Algemene beschikbaarheid is bijgewerkt naar v3.1.
 
 ## <a name="september-2020"></a>September 2020
 
-### <a name="spatial-analysis-container-preview"></a>Ruimtelijke analyse-container (preview)
+### <a name="spatial-analysis-container-preview"></a>Container voorbeeld van ruimtelijke analyse
 
-De [ruimtelijke analyse-container](spatial-analysis-container.md) is nu beschikbaar als preview-versie. Met de functie voor ruimtelijke analyse van Computer Vision kunt u realtime streaming-video analyseren om inzicht te krijgen in de ruimtelijke relaties tussen mensen en hun verplaatsing door fysieke omgevingen. Ruimtelijke analyse is een Docker-container die u on-premises kunt gebruiken. 
+De [container voor ruimtelijke analyse](spatial-analysis-container.md) is nu beschikbaar als preview-versie. Met de functie voor ruimtelijke analyse van Computer Vision kunt u realtime streaming video analyseren om ruimte-relaties tussen mensen en de verplaatsing via fysieke omgevingen te begrijpen. Ruimtelijke analyse is een docker-container die u on-premises kunt gebruiken. 
 
 ### <a name="read-api-v31-public-preview-adds-ocr-for-japanese"></a>Met de openbare preview-versie van Lees-API v3.1 wordt OCR voor Japans toegevoegd
 Lees-API v3.1 (openbare preview-versie) voegt de volgende functies toe:
@@ -83,7 +83,7 @@ Lees-API v3.1 (openbare preview-versie) voegt de volgende functies toe:
 
 * Deze preview-versie van de lees-API ondersteunt de talen Engels, Nederlands, Frans, Duits, Italiaans, Japans, Portugees, vereenvoudigd Chinees en Spaans.
 
-Zie het [Lees-API: overzicht](concept-recognizing-text.md) voor meer informatie.
+Raadpleeg de [Lees API-instructies](Vision-API-How-to-Topics/call-read-api.md) voor meer informatie.
 
 > [!div class="nextstepaction"]
 > [Meer informatie over de Lees-API v3.1 (openbare preview-versie 2)](https://westus2.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-preview-2/operations/5d986960601faab4bf452005)
@@ -95,18 +95,20 @@ Lees-API v3.1 (openbare preview-versie) voegt ondersteuning toe voor vereenvoudi
 
 * Deze preview-versie van de lees-API ondersteunt de talen Engels, Nederlands, Frans, Duits, Italiaans, Portugees, vereenvoudigd Chinees en Spaans.
 
-Zie het [Lees-API: overzicht](concept-recognizing-text.md) voor meer informatie.
+Raadpleeg de [Lees API-instructies](Vision-API-How-to-Topics/call-read-api.md) voor meer informatie.
 
 > [!div class="nextstepaction"]
 > [Meer informatie over de Lees-API v3.1 (openbare preview-versie 1)](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-preview-1/operations/5d986960601faab4bf452005)
 
 ## <a name="may-2020"></a>Mei 2020
-Computer Vision API v3.0 is nu algemeen beschikbaar, met updates voor de [lees-API](concept-recognizing-text.md):
+Computer Vision-API v 3.0 is in algemene Beschik baarheid ingevoerd, met updates voor de Lees-API:
 
 * Ondersteuning voor Engels, Nederlands, Frans, Duits, Italiaans, Portugees en Spaans
 * Verbeterde nauwkeurigheid
 * Betrouwbaarheidsscore voor elk geëxtraheerd woord
 * Nieuwe uitvoerindeling
+
+Zie het [OCR-overzicht](overview-ocr.md) voor meer informatie.
 
 ## <a name="march-2020"></a>Maart 2020
 

@@ -10,20 +10,20 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: bdcbb38a56e46d01a5580f6d32ef733df8911b67
-ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
+ms.openlocfilehash: 4b4ee9d1e583241f8ec9b467ae9ddfdb1360fb52
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106108333"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106284699"
 ---
 # <a name="spatial-analysis-operations"></a>Ruimtelijke analyse bewerkingen
 
-Met ruimtelijke analyse kunt u het realtime streamen van video van camera's analyseren. Voor elke camera die u configureert, wordt een uitvoerstroom van JSON-berichten gegenereerd die naar uw exemplaar van Azure IoT Hub wordt verzonden. 
+Ruimtelijke analyse maakt het mogelijk om realtime streaming video van camera apparaten te analyseren. Voor elk camera apparaat dat u configureert, wordt met de bewerkingen voor ruimtelijke analyse een uitvoer stroom gegenereerd van JSON-berichten die zijn verzonden naar uw exemplaar van Azure IoT Hub. 
 
 De container voor ruimtelijke analyse implementeert de volgende bewerkingen:
 
-| Bewerkings-id| Description|
+| Bewerkings-id| Beschrijving|
 |---------|---------|
 | cognitiveservices. Vision. spatialanalysis-personcount | Telt het aantal personen in een aangewezen zone in het veld weer gave van de camera. De zone moet volledig worden gedekt door één camera zodat PersonCount een nauw keurig totaal kan registreren. <br> Hiermee wordt een eerste _personCountEvent_ -gebeurtenis verzonden en vervolgens _personCountEvent_ -gebeurtenissen wanneer het aantal wordt gewijzigd.  |
 | cognitiveservices. Vision. spatialanalysis-personcrossingline | Hiermee wordt getraceerd wanneer een persoon een opgegeven regel in het veld weer gave van de camera kruist. <br>Hiermee wordt een _personLineEvent_ -gebeurtenis verzonden wanneer de persoon de lijn snijdt en informatie geeft over de richting. 
@@ -33,7 +33,7 @@ De container voor ruimtelijke analyse implementeert de volgende bewerkingen:
 
 Alle bovenstaande bewerkingen zijn ook beschikbaar in de `.debug` versie, die de mogelijkheid hebben om de video frames te visualiseren wanneer ze worden verwerkt. U moet `xhost +` op de hostcomputer worden uitgevoerd om de visualisatie van video frames en-gebeurtenissen in te scha kelen.
 
-| Bewerkings-id| Description|
+| Bewerkings-id| Beschrijving|
 |---------|---------|
 | cognitiveservices. Vision. spatialanalysis-personcount. debug | Telt het aantal personen in een aangewezen zone in het veld weer gave van de camera. <br> Hiermee wordt een eerste _personCountEvent_ -gebeurtenis verzonden en vervolgens _personCountEvent_ -gebeurtenissen wanneer het aantal wordt gewijzigd.  |
 | cognitiveservices. Vision. spatialanalysis-personcrossingline. debug | Hiermee wordt getraceerd wanneer een persoon een opgegeven regel in het veld weer gave van de camera kruist. <br>Hiermee wordt een _personLineEvent_ -gebeurtenis verzonden wanneer de persoon de lijn snijdt en informatie geeft over de richting. 
@@ -45,7 +45,7 @@ Ruimtelijke analyse kan ook worden uitgevoerd met [Live video Analytics](../../m
 
 <!--more details on the setup can be found in the [LVA Setup page](LVA-Setup.md). Below is the list of the operations supported with Live Video Analytics. -->
 
-| Bewerkings-id| Description|
+| Bewerkings-id| Beschrijving|
 |---------|---------|
 | cognitiveservices. Vision. spatialanalysis-personcount. livevideoanalytics | Telt het aantal personen in een aangewezen zone in het veld weer gave van de camera. <br> Hiermee wordt een eerste _personCountEvent_ -gebeurtenis verzonden en vervolgens _personCountEvent_ -gebeurtenissen wanneer het aantal wordt gewijzigd.  |
 | cognitiveservices. Vision. spatialanalysis-personcrossingline. livevideoanalytics | Hiermee wordt getraceerd wanneer een persoon een opgegeven regel in het veld weer gave van de camera kruist. <br>Hiermee wordt een _personLineEvent_ -gebeurtenis verzonden wanneer de persoon de lijn snijdt en informatie geeft over de richting. 
@@ -60,7 +60,7 @@ Live video Analytics-bewerkingen zijn ook beschikbaar in de `.debug` versie (bij
 
 Dit zijn de para meters die vereist zijn voor elk van deze ruimtelijke analyse bewerkingen.
 
-| Bewerkingsparameters| Description|
+| Bewerkingsparameters| Beschrijving|
 |---------|---------|
 | Bewerkings-ID | De bewerkings-id uit de bovenstaande tabel.|
 | enabled | Booleaans: waar of onwaar|
@@ -107,20 +107,20 @@ Dit is een voor beeld van de DETECTOR_NODE_CONFIG para meters voor alle ruimteli
 ```json
 {
 "zones":[{
-    "name": "lobbycamera",
-    "polygon": [[0.3,0.3], [0.3,0.9], [0.6,0.9], [0.6,0.3], [0.3,0.3]],
-    "events":[{
-        "type": "count",
-        "config":{
-            "trigger": "event",
+       "name": "lobbycamera",
+       "polygon": [[0.3,0.3], [0.3,0.9], [0.6,0.9], [0.6,0.3], [0.3,0.3]],
+       "events":[{
+              "type": "count",
+              "config":{
+                     "trigger": "event",
             "threshold": 16.00,
             "focus": "footprint"
       }
-    }]
+       }]
 }
 ```
 
-| Naam | Type| Description|
+| Naam | Type| Beschrijving|
 |---------|---------|---------|
 | `zones` | list| Lijst met zones. |
 | `name` | tekenreeks| Beschrijvende naam voor deze zone.|
@@ -165,7 +165,7 @@ Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONF
 }
 ```
 
-| Naam | Type| Description|
+| Naam | Type| Beschrijving|
 |---------|---------|---------|
 | `lines` | list| Lijst met regels.|
 | `name` | tekenreeks| Beschrijvende naam voor deze regel.|
@@ -211,7 +211,7 @@ Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONF
 }
 ```
 
-| Naam | Type| Description|
+| Naam | Type| Beschrijving|
 |---------|---------|---------|
 | `zones` | list| Lijst met zones. |
 | `name` | tekenreeks| Beschrijvende naam voor deze zone.|
@@ -231,22 +231,22 @@ Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONF
    "name": "lobbycamera",
    "polygon": [[0.3,0.3], [0.3,0.9], [0.6,0.9], [0.6,0.3], [0.3,0.3]],
    "events":[{
-    "type": "persondistance",
-    "config":{
-        "trigger": "event",
-        "output_frequency":1,
-        "minimum_distance_threshold":6.0,
-        "maximum_distance_threshold":35.0,
+       "type": "persondistance",
+       "config":{
+           "trigger": "event",
+           "output_frequency":1,
+           "minimum_distance_threshold":6.0,
+           "maximum_distance_threshold":35.0,
         "aggregation_method": "average"
            "threshold": 16.00,
            "focus": "footprint"
-            }
-    }]
+                   }
+          }]
    }]
 }
 ```
 
-| Naam | Type| Description|
+| Naam | Type| Beschrijving|
 |---------|---------|---------|
 | `zones` | list| Lijst met zones. |
 | `name` | tekenreeks| Beschrijvende naam voor deze zone.|
@@ -431,7 +431,7 @@ Voor beeld-JSON voor een gebeurtenis uitvoer door deze bewerking.
             "face_nomask": 0.99
             }
             }
-    }
+       }
     ],
     "schemaVersion": "1.0"
 }
@@ -635,7 +635,7 @@ Voor beeld van JSON voor detecties tijdens deze bewerking met `zonedwelltime` ty
                 "trackingId": "afcc2e2a32a6480288e24381f9c5d00e",
                 "status": "Exit",
                 "side": "1",
-        "durationMs": 7132.0
+              "durationMs": 7132.0
             },
             "zone": "queuecamera"
         }
@@ -1034,7 +1034,7 @@ U kunt de prestaties en het gebruik van de Gpu's optimaal benutten door gebruik 
       }
   }
   ```
-| Naam | Type| Description|
+| Naam | Type| Beschrijving|
 |---------|---------|---------|
 | `batch_size` | int | Als alle camera's dezelfde resolutie hebben, stelt `batch_size` u in op het aantal camera's dat in die bewerking wordt gebruikt, anders ingesteld `batch_size` op 1 of de standaard waarde (1). Dit betekent dat er geen batch wordt ondersteund. |
 

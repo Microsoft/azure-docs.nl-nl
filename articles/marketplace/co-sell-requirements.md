@@ -8,12 +8,12 @@ author: vamahtan
 ms.author: vamahtan
 ms.reviewer: stmummer
 ms.date: 3/17/2021
-ms.openlocfilehash: e67219e0b029ce401ffc05c009a5cc4a96680a9f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 28fdd8b10c7106380c296c8131ade909ee88d0f8
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104593387"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107088"
 ---
 # <a name="co-sell-requirements"></a>Vereisten voor co-sell
 
@@ -35,7 +35,7 @@ U moet voldoen aan de volgende vereisten voor een aanbieding om de status gereed
 
 **Alle partners**:
 
-- Een MPN-ID en een actief [Commercial Marketplace-account hebben in het partner centrum](./partner-center-portal/create-account.md).
+- Een MPN-ID en een actief [Commercial Marketplace-account hebben in het partner centrum](create-account.md).
 - Zorg ervoor dat u beschikt over een volledig [zakelijk profiel](/partner-center/create-a-marketing-profile) in Partner Center. Als gekwalificeerde micro soft-partner helpt uw bedrijfs profiel uw bedrijf te presen teren aan klanten die op zoek zijn naar uw unieke oplossingen en expertise om hun bedrijfs behoeften op te lossen, wat resulteert in [referrals](/partner-center/referrals).
 - Vul het tabblad **samen met micro soft** in en publiceer de aanbieding naar de commerciële Marketplace.
 - Geef een verkoop contactpersoon op voor elke in aanmerking komende Geografie en vereiste stuk lijst.
@@ -59,7 +59,7 @@ We bieden sjablonen die u helpen bij het maken van deze documenten. Voor meer in
 
 ### <a name="publish-your-offer-live"></a>Uw aanbieding Live publiceren
 
-Als u in aanmerking wilt komen voor de status van de mede koop Ready, moet uw aanbieding of oplossing Live worden gepubliceerd naar ten minste één van de online winkels voor commerciële Marketplace: Azure Marketplace of Microsoft AppSource. Voor informatie over het publiceren van aanbiedingen naar de commerciële Marketplace, Zie [publicatie handleiding per aanbiedings type](publisher-guide-by-offer-type.md). Als u nog geen aanbieding in de handels Marketplace hebt gepubliceerd, moet u ervoor zorgen dat u een [commercieel Marketplace-account](./partner-center-portal/create-account.md)hebt.
+Als u in aanmerking wilt komen voor de status van de mede koop Ready, moet uw aanbieding of oplossing Live worden gepubliceerd naar ten minste één van de online winkels voor commerciële Marketplace: Azure Marketplace of Microsoft AppSource. Voor informatie over het publiceren van aanbiedingen naar de commerciële Marketplace, Zie [publicatie handleiding per aanbiedings type](publisher-guide-by-offer-type.md). Als u nog geen aanbieding in de handels Marketplace hebt gepubliceerd, moet u ervoor zorgen dat u een [commercieel Marketplace-account](create-account.md)hebt.
 
 ## <a name="requirements-for-azure-ip-co-sell-incentivized-status"></a>Vereisten voor Azure IP co-gemotiveerd-status
 

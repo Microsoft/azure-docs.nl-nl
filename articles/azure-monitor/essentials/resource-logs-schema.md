@@ -2,18 +2,18 @@
 title: Ondersteunde services en schema's voor Azure-resourcelogboeken
 description: Meer informatie over de ondersteunde services en het gebeurtenis schema voor Azure-resource Logboeken.
 ms.topic: reference
-ms.date: 09/01/2020
-ms.openlocfilehash: 661cba2d78dbb176bb04e6831cf8e045a285535e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 04/07/2020
+ms.openlocfilehash: 09415353d93313f1b3c4844202b59f577ef3838d
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102033092"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107105762"
 ---
 # <a name="common-and-service-specific-schema-for-azure-resource-logs"></a>Algemeen en specifiek service schema voor Azure-resource logboeken
 
 > [!NOTE]
-> Bron logboeken zijn voorheen bekend als Diagnostische logboeken. De naam is in oktober 2019 gewijzigd, omdat de typen logboeken die door Azure Monitor zijn verzameld, meer dan alleen de Azure-resource bevatten. De lijst met bron logboek categorieën die u kunt verzamelen, wordt ook gebruikt om in dit artikel te worden weer gegeven. Ze zijn verplaatst naar [resource logboek categorieën](resource-logs-categories.md). 
+> Bron logboeken zijn voorheen bekend als Diagnostische logboeken. De naam is in oktober 2019 gewijzigd, omdat de typen logboeken die door Azure Monitor zijn verzameld, meer dan alleen de Azure-resource bevatten. Daarnaast kunt u de lijst met resource logboek categorieën verzamelen die u hebt gebruikt om te worden weer gegeven in dit artikel. Ze bevinden zich nu in [resource logboek categorieën](resource-logs-categories.md). 
 
 [Azure monitor bron logboeken](../essentials/platform-logs-overview.md) worden logboeken gegenereerd door Azure-Services waarmee de werking van deze services of bronnen wordt beschreven. Alle bron logboeken die beschikbaar zijn via Azure Monitor, delen een gemeen schappelijk schema op het hoogste niveau, met flexibiliteit voor elke service om unieke eigenschappen voor hun eigen gebeurtenissen te verzenden.
 
@@ -22,7 +22,7 @@ Een combi natie van het resource type (beschikbaar in de `resourceId` eigenschap
 
 ## <a name="top-level-common-schema"></a>Algemeen schema op het hoogste niveau
 
-| Name | Vereist/optioneel | Beschrijving |
+| Name | Vereist/optioneel | Description |
 |---|---|---|
 | tijd | Vereist | De tijds tempel (UTC) van de gebeurtenis. |
 | resourceId | Vereist | De resource-ID van de resource die de gebeurtenis heeft verzonden. Voor Tenant Services is dit de vorm/tenants/Tenant-id/providers/provider-name. |
@@ -65,6 +65,7 @@ Het schema voor resource logboeken varieert afhankelijk van de categorie resourc
 | Azure Database for MySQL | [Diagnostische logboeken Azure Database for MySQL](../../mysql/concepts-server-logs.md#diagnostic-logs) |
 | Azure Database for PostgreSQL | [Azure Database for PostgreSQL logboeken](../../postgresql/concepts-server-logs.md#resource-logs) |
 | Azure Databricks | [Registratie in diagnoselogboek in Azure Databricks](/azure/databricks/administration-guide/account-settings/azure-diagnostic-logs) |
+| DDoS-beveiliging | [Logboek registratie voor Azure DDoS Protection Standard](../../ddos-protection/diagnostic-logging.md#log-schemas) |
 | Azure Digital Twins | [Diagnostische gegevens over Azure Digital Apparaatdubbels instellen](../../digital-twins/troubleshoot-diagnostics.md#log-schemas)
 | Event Hubs |[Azure Event Hubs-logboeken](../../event-hubs/event-hubs-diagnostic-logs.md) |
 | ExpressRoute | Het schema is niet beschikbaar. |
@@ -76,13 +77,13 @@ Het schema voor resource logboeken varieert afhankelijk van de categorie resourc
 | Load Balancer |[Logboekanalyse voor Azure Load Balancer](../../load-balancer/load-balancer-monitor-log.md) |
 | Logic Apps |[Aangepast Logic Apps B2B-volgschema](../../logic-apps/logic-apps-track-integration-account-custom-tracking-schema.md) |
 | Netwerkbeveiligingsgroepen |[Logboekanalyses voor netwerkbeveiligingsgroepen (NSG's)](../../virtual-network/virtual-network-nsg-manage-log.md) |
-| DDoS-beveiliging | [Logboek registratie voor Azure DDoS Protection Standard](../../ddos-protection/diagnostic-logging.md#log-schemas) |
 | Power BI Dedicated | [Logboek registratie voor Power BI Embedded in azure](/power-bi/developer/azure-pbie-diag-logs) |
 | Recovery Services | [Gegevens model voor Azure Backup](../../backup/backup-azure-reports-data-model.md)|
 | Zoeken |[Zoek Traffic Analytics inschakelen en gebruiken](../../search/search-traffic-analytics.md) |
 | Service Bus |[Azure Service Bus logboeken](../../service-bus-messaging/service-bus-diagnostic-logs.md) |
 | SQL Database | [Azure SQL Database logboek registratie](../../azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure.md) |
 | Stream Analytics |[Taaklogboeken](../../stream-analytics/stream-analytics-job-diagnostic-logs.md) |
+| Storage | [Blobs](/azure/storage/blobs/monitor-blob-storage-reference#resource-logs-preview), [bestanden](/azure/storage/files/storage-files-monitoring-reference#resource-logs-preview), [wacht rijen](/azure/storage/queues/monitor-queue-storage-reference#resource-logs-preview),  [tabellen](/azure/storage/tables/monitor-table-storage-reference#resource-logs-preview) |
 | Traffic Manager | [Traffic Manager-logboek schema](../../traffic-manager/traffic-manager-diagnostic-logs.md) |
 | Virtuele netwerken | Het schema is niet beschikbaar. |
 | Virtuele netwerkgateways | Het schema is niet beschikbaar. |

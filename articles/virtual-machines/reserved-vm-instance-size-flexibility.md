@@ -6,14 +6,14 @@ ms.service: virtual-machines
 ms.subservice: reserved-instances
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 03/01/2021
+ms.date: 04/06/2021
 ms.author: yashar
-ms.openlocfilehash: 9270b7fb135eddd78a7aeb30cf88af4d704e176e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: a6ddcef1493f15442a723bcc93850e6197db84d8
+ms.sourcegitcommit: c6a2d9a44a5a2c13abddab932d16c295a7207d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102030699"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107285595"
 ---
 # <a name="virtual-machine-size-flexibility-with-reserved-vm-instances"></a>Flexibiliteit van de VM-grootte met gereserveerde VM-instanties
 
@@ -39,6 +39,7 @@ U koopt een gereserveerde VM-instantie met de grootte Standard_DS4_v2 waarbij de
 - Scenario 1: Voer acht Standard_DS1_v2 grote Vm's met een ratio van 1 uit. Uw reserverings korting is van toepassing op alle acht Vm's.
 - Scenario 2: Voer twee Standard_DS2_v2 grootte-Vm's uit met een ratio van 2 elk. Voer ook een Standard_DS3_v2 VM-grootte uit met een ratio van 4. De totale footprint is 2 + 2 + 4 = 8. Daarom is uw reserverings korting van toepassing op alle drie de virtuele machines.
 - Scenario 3: een Standard_DS5_v2 met een ratio van 16 uitvoeren. Uw reserverings korting is van toepassing op de helft van de reken kosten van de virtuele machine.
+- Scenario 4: een Standard_DS5_v2 met een ratio van 16 uitvoeren en een extra Standard_DS4_v2 reservering aanschaffen met een ratio van 8. Beide reserve ringen combi neren en Toep assen de korting op de volledige virtuele machine.
 
 In de volgende secties ziet u welke grootten zich in dezelfde reeks groep bevinden wanneer u een gereserveerde VM-instantie koopt die is geoptimaliseerd voor de flexibiliteit van de instantie grootte.
 

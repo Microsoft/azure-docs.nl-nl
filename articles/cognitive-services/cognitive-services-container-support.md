@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 12/16/2020
 ms.author: aahi
 keywords: on-premises, docker, container, Kubernetes
-ms.openlocfilehash: 3b0a39e9d84a56bac3117df9279954e3756d465a
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: 007dfe6d67d504286b9546fe0139055b58dc700f
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106065817"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106285600"
 ---
 # <a name="azure-cognitive-services-containers"></a>Azure Cognitive Services-containers
 
@@ -76,7 +76,7 @@ Azure Cognitive Services-containers bieden de volgende set docker-containers, di
 
 | Service |  Container | Beschrijving | Beschikbaarheid |
 |--|--|--|--|
-| [Computer Vision][cv-containers] | **OCR** ([afbeelding](https://hub.docker.com/_/microsoft-azure-cognitive-services-vision-read)) lezen | Met de container OCR lezen kunt u gedrukte en handgeschreven tekst uit afbeeldingen en documenten extra heren met ondersteuning voor JPEG-, PNG-, BMP-, PDF-en TIFF-bestands indelingen. Zie de [Lees API-documentatie](./computer-vision/concept-recognizing-text.md)voor meer informatie. | Geteste preview. [Toegang aanvragen][request-access]. |
+| [Computer Vision][cv-containers] | **OCR** ([afbeelding](https://hub.docker.com/_/microsoft-azure-cognitive-services-vision-read)) lezen | Met de container OCR lezen kunt u gedrukte en handgeschreven tekst uit afbeeldingen en documenten extra heren met ondersteuning voor JPEG-, PNG-, BMP-, PDF-en TIFF-bestands indelingen. Zie de [Lees API-documentatie](./computer-vision/overview-ocr.md)voor meer informatie. | Geteste preview. [Toegang aanvragen][request-access]. |
 | [Ruimtelijke analyse][spa-containers] | **Ruimtelijke analyse** ([afbeelding](https://hub.docker.com/_/microsoft-azure-cognitive-services-vision-spatial-analysis)) | Analyseer realtime streaming video om ruimtelijke relaties tussen personen, hun beweging en interacties met objecten in fysieke omgevingen te begrijpen. | Geteste preview. [Toegang aanvragen][request-access]. |
 | [Face][fa-containers] | **Face** | Detecteert menselijke gezichten in afbeeldingen en identificeert kenmerken, met inbegrip van gezichts bezienswaardigheden (zoals neus en ogen), geslacht, leeftijd en andere computer-voorspelde gezichts functies. Naast detectie kan het gezicht controleren of twee gezichten in dezelfde afbeelding of verschillende afbeeldingen hetzelfde zijn door gebruik te maken van een betrouwbaarheids Score, of de gezichten vergelijken met een Data Base om te zien of er al een vergelijkbaar of identiek gezicht bestaat. Het kan ook gelijksoortige gezichten in groepen indelen met behulp van gedeelde visuele elementen. | Niet beschikbaar |
 | [Formulier herkenning][fr-containers] | **Form Recognizer** | Formulier uitleg is van toepassing machine learning technologie om sleutel-waardeparen en tabellen uit formulieren te identificeren en uit te pakken. | Niet beschikbaar | 

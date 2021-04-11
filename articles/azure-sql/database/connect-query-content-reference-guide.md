@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/17/2021
-ms.openlocfilehash: 96f40f1abd14987b7c404f5a4210a2cab1fa9143
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a8419ff2ba269b05d1fbf7e9d08a284085465fd8
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104594169"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107257412"
 ---
 # <a name="azure-sql-database-and-azure-sql-managed-instance-connect-and-query-articles"></a>Verbinding maken met Azure SQL Database en Azure SQL Managed Instance en query's uitvoeren voor artikelen
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -40,7 +40,6 @@ Het volgende document bevat koppelingen naar voorbeelden van Azure die laten zie
 |[PHP](connect-query-php.md)|In deze quickstart wordt uitgelegd hoe u PHP gebruikt om een programma te maken dat verbinding maakt met een database en hoe u Transact-SQL-instructies gebruikt om gegevens te doorzoeken.|
 |[Python](connect-query-python.md)|In deze quickstart wordt uitgelegd hoe u Python gebruikt om verbinding te maken met een database en hoe u Transact-SQL-instructies gebruikt om een query uit te voeren voor de gegevens. |
 |[Ruby](connect-query-ruby.md)|In deze quickstart wordt uitgelegd hoe u Ruby gebruikt om een programma te maken dat verbinding maakt met een database en hoe u Transact-SQL-instructies gebruikt om gegevens te doorzoeken.|
-|[R](connect-query-r.md)|In deze quickstart wordt uitgelegd hoe u R gebruikt met Azure SQL Database Machine Learning Services om een programma te maken waarmee u verbinding met een database in Azure SQL Database kunt maken en Transact-SQL-instructies kunt gebruiken om een query voor gegevens uit te voeren.|
 |||
 
 ## <a name="get-server-connection-information"></a>Serververbindingsgegevens ophalen

@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: spark
 ms.topic: tutorial
 ms.date: 03/24/2021
-ms.openlocfilehash: 0becbbdb68f75072e10a51f5a2eae95291b9ed77
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 5d08bc216157fce9ad81eaf3c0f540c7a4d8c3f2
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105108329"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107259826"
 ---
 # <a name="analyze-with-apache-spark"></a>Analyseren met behulp van Apache Spark
 
@@ -41,11 +41,7 @@ Een Spark-groep zonder server is een manier om aan te geven hoe een gebruiker me
 3. Maak een nieuwe code-cel en plak de volgende code in die cel.
     ```py
     %%pyspark
-    from azureml.opendatasets import NycTlcYellow
-
-    data = NycTlcYellow()
-    df = data.to_spark_dataframe()
-    # Display 10 rows
+    df = spark.read.load('abfss://users@contosolake.dfs.core.windows.net/NYCTripSmall.parquet', format='parquet')
     display(df.limit(10))
     ```
 1. Kies in het notitie blok in het menu **koppelen aan** de **Spark1** -serverloze Spark-pool die u eerder hebt gemaakt.
@@ -60,7 +56,7 @@ Een Spark-groep zonder server is een manier om aan te geven hoe een gebruiker me
 
 Gegevens zijn beschikbaar via de data frame met de naam **gegevens**. Laad deze in een Apache Spark-database met de naam **nyctaxi**.
 
-1. Voeg een nieuwe toe aan het notitie blok en voer de volgende code in:
+1. Voeg een nieuwe code-cel toe aan het notitie blok en voer de volgende code in:
 
     ```py
     spark.sql("CREATE DATABASE IF NOT EXISTS nyctaxi")

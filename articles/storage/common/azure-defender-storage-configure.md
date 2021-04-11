@@ -7,15 +7,15 @@ author: tamram
 ms.service: storage
 ms.subservice: common
 ms.topic: conceptual
-ms.date: 09/22/2020
+ms.date: 03/30/2021
 ms.author: tamram
 ms.reviewer: ozgun
-ms.openlocfilehash: cdfc54b1eca3b07202148b7099884a04f35939ef
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e2f044ab267365885260b031638572846184bc83
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101698141"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106063182"
 ---
 # <a name="configure-azure-defender-for-storage"></a>Azure Defender voor Storage configureren
 
@@ -50,7 +50,7 @@ U kunt Azure Defender voor opslag op verschillende manieren configureren, zoals 
 
 ### <a name="azure-security-center"></a>[Azure Security Center](#tab/azure-security-center)
 
-Wanneer u zich abonneert op de Standard-laag in Azure Security Center, wordt Azure Defender automatisch ingesteld op al uw opslag accounts. U kunt Azure Defender voor uw opslag accounts onder een specifiek abonnement als volgt in-of uitschakelen:
+Azure Defender is ingebouwd in Azure Security Center. Wanneer u Azure Defender inschakelt voor uw abonnement, wordt Azure Defender voor Azure Storage automatisch ingeschakeld voor al uw opslag accounts. U kunt Azure Defender voor uw opslag accounts onder een specifiek abonnement als volgt in-of uitschakelen:
 
 1. Start **Azure Security Center** in het [Azure Portal](https://portal.azure.com).
 1. Selecteer in het hoofd menu onder **beheer** de optie **prijzen & instellingen**.
@@ -94,20 +94,38 @@ Gebruik een Azure Policy om Azure Defender in te scha kelen voor opslag accounts
 
     :::image type="content" source="media/azure-defender-storage-configure/storage-atp-policy1.png" alt-text="Beleid toewijzen om Azure Defender voor opslag in te scha kelen":::
 
-### <a name="rest-api"></a>[REST API](#tab/rest-api)
-
-Gebruik rest API-opdrachten om de Azure Defender-instelling voor een specifiek opslag account te maken, bij te werken of op te halen.
-
-- [Advanced Threat Protection-maken](/rest/api/securitycenter/advancedthreatprotection/create)
-- [Advanced Threat Protection-ophalen](/rest/api/securitycenter/advancedthreatprotection/get)
-
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Gebruik de volgende Power shell-cmdlets:
+Als u Azure Defender wilt inschakelen voor een opslag account met Power shell, moet u eerst controleren of u de module [AZ. Security](https://www.powershellgallery.com/packages/Az.Security) hebt geïnstalleerd. Roep vervolgens de opdracht [Enable-AzSecurityAdvancedThreatProtection](/powershell/module/az.security/enable-azsecurityadvancedthreatprotection) aan. Vergeet niet om waarden tussen punt haken te vervangen door uw eigen waarden:
 
-- [Advanced Threat Protection inschakelen](/powershell/module/az.security/enable-azsecurityadvancedthreatprotection)
-- [Geavanceerde beveiliging tegen bedreigingen verkrijgen](/powershell/module/az.security/get-azsecurityadvancedthreatprotection)
-- [Geavanceerde bedreigings beveiliging uitschakelen](/powershell/module/az.security/disable-azsecurityadvancedthreatprotection)
+```azurepowershell
+Enable-AzSecurityAdvancedThreatProtection -ResourceId "/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>/"
+```
+
+Als u de instelling van Azure Defender voor een opslag account met Power shell wilt controleren, roept u de opdracht [Get-AzSecurityAdvancedThreatProtection](/powershell/module/az.security/get-azsecurityadvancedthreatprotection) aan. Vergeet niet om waarden tussen punt haken te vervangen door uw eigen waarden:
+
+```azurepowershell
+Get-AzSecurityAdvancedThreatProtection -ResourceId "/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>/"
+```
+
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+Als u Azure Defender wilt inschakelen voor een opslag account met Azure CLI, roept u de opdracht [AZ Security ATP Storage update](/cli/azure/security/atp/storage#az_security_atp_storage_update) aan. Vergeet niet om waarden tussen punt haken te vervangen door uw eigen waarden:
+
+```azurecli
+az security atp storage update \
+    --resource-group <resource-group> \
+    --storage-account <storage-account> \
+    --is-enabled true
+```
+
+Als u de instelling van Azure Defender wilt controleren voor een opslag account met Azure CLI, roept u de opdracht [AZ Security ATP opslag show](/cli/azure/security/atp/storage#az_security_atp_storage_show) aan. Vergeet niet om waarden tussen punt haken te vervangen door uw eigen waarden:
+
+```azurecli
+az security atp storage show \
+    --resource-group <resource-group> \
+    --storage-account <storage-account>
+```
 
 ---
 
@@ -137,5 +155,6 @@ Waarschuwingen worden gegenereerd door ongebruikelijke en mogelijk schadelijke p
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [Logboeken in azure Storage-accounts](/rest/api/storageservices/About-Storage-Analytics-Logging)
-- Meer informatie over [Azure Security Center](../../security-center/security-center-introduction.md)
+- [Inleiding tot Azure Defender for Storage](../../security-center/defender-for-storage-introduction.md)
+- [Azure Security Center](../../security-center/security-center-introduction.md)
+- [Logboeken in Azure Storage accounts](/rest/api/storageservices/About-Storage-Analytics-Logging)

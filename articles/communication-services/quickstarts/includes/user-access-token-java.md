@@ -10,17 +10,17 @@ ms.date: 03/10/2021
 ms.topic: include
 ms.custom: include file
 ms.author: tchladek
-ms.openlocfilehash: 01d56c93e1a2285c2b4ab4fdf71cd06cd9b05889
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: a0f3e3547c38df63bdab77cf378525072d1e9ad4
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105958278"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106125869"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-- [Java Development Kit (JDK)](/java/azure/jdk/) versie 8 of hoger.
+- [Java Development Kit (JDK)](https://docs.microsoft.com/azure/developer/java/fundamentals/java-jdk-install) versie 8 of hoger.
 - [Apache Maven](https://maven.apache.org/download.cgi).
 - Een actieve Communication Services-resource en verbindingsreeks. [Een Communication Services-resource maken](../create-communication-resource.md).
 
@@ -66,8 +66,6 @@ import com.azure.communication.common.*;
 import com.azure.communication.identity.*;
 import com.azure.communication.identity.models.*;
 import com.azure.core.credential.*;
-import com.azure.core.http.*;
-import com.azure.core.http.netty.*;
 
 import java.io.IOException;
 import java.time.*;
@@ -85,7 +83,7 @@ public class App
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
-Instanteer een `CommunicationIdentityClient` met de toegangssleutel en het eindpunt van uw resource. Meer informatie over het [beheren van de verbindingsreeks van uw resource](../create-communication-resource.md#store-your-connection-string).
+Instanteer een `CommunicationIdentityClient` met de toegangssleutel en het eindpunt van uw resource. Meer informatie over het [beheren van de Connection String van uw resource](../create-communication-resource.md#store-your-connection-string). Daarnaast kunt u de-client met elke aangepaste HTTP-client initialiseren. de interface wordt geïmplementeerd `com.azure.core.http.HttpClient` .
 
 Voeg de volgende code aan de `main` methode toe:
 
@@ -94,32 +92,31 @@ Voeg de volgende code aan de `main` methode toe:
 String endpoint = "https://<RESOURCE_NAME>.communication.azure.com";
 String accessKey = "SECRET";
 
-// Create an HttpClient builder of your choice and customize it
-// Use com.azure.core.http.netty.NettyAsyncHttpClientBuilder if that suits your needs
-// -> Add "import com.azure.core.http.netty.*;"
-// -> Add azure-core-http-netty dependency to file pom.xml
-
-HttpClient httpClient = new NettyAsyncHttpClientBuilder().build();
-
 CommunicationIdentityClient communicationIdentityClient = new CommunicationIdentityClientBuilder()
         .endpoint(endpoint)
         .credential(new AzureKeyCredential(accessKey))
-        .httpClient(httpClient)
         .buildClient();
 ```
-
-U kunt de client initialiseren met een aangepaste HTTP-client. Hiermee implementeert u de `com.azure.core.http.HttpClient`-interface. De bovenstaande code toont het gebruik van de [Azure Core Netty HTTP-client](/java/api/overview/azure/core-http-netty-readme) die wordt verschaft door `azure-core`.
 
 U kunt ook de volledige connection string opgeven met behulp `connectionString()` van de functie in plaats van het eind punt en de toegangs sleutel op te geven.
 ```java
 // Your can find your connection string from your resource in the Azure portal
 String connectionString = "<connection_string>";
-HttpClient httpClient = new NettyAsyncHttpClientBuilder().build();
 
 CommunicationIdentityClient communicationIdentityClient = new CommunicationIdentityClientBuilder()
     .connectionString(connectionString)
-    .httpClient(httpClient)
     .buildClient();
+```
+
+Als u beheerde identiteit hebt ingesteld, raadpleegt u beheerde identiteiten [gebruiken](../managed-identity.md). u kunt ook verifiëren met beheerde identiteit.
+```java
+String endpoint = "https://<RESOURCE_NAME>.communication.azure.com";
+TokenCredential credential = new DefaultAzureCredentialBuilder().build();
+
+CommunicationIdentityClient communicationIdentityClient = new CommunicationIdentityClientBuilder()
+        .endpoint(endpoint)
+        .credential(credential)
+        .buildClient();
 ```
 
 ## <a name="create-an-identity"></a>Een identiteit maken

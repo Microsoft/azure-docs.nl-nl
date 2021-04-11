@@ -5,13 +5,13 @@ author: Heidilohr
 ms.topic: how-to
 ms.date: 01/19/2021
 ms.author: helohr
-manager: lizross
-ms.openlocfilehash: ca92e6e888ead6bbd79c7a8d524516ee95e8c45d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+manager: femila
+ms.openlocfilehash: 654b5b293397af9737813d759a7c784d90629942
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101092925"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106445802"
 ---
 # <a name="prepare-and-customize-a-master-vhd-image"></a>Een VHD-hoofdinstallatiekopie voorbereiden en aanpassen
 

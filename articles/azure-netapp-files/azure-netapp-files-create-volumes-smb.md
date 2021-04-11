@@ -12,18 +12,20 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 03/19/2021
+ms.date: 03/29/2021
 ms.author: b-juche
-ms.openlocfilehash: c673f7a9556193fb05e05ea372bfccd17cd3c5ed
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: eeeaf01dd20e5b309884a01f954ceca576cbcbb9
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104868508"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107259622"
 ---
 # <a name="create-an-smb-volume-for-azure-netapp-files"></a>Een SMB-volume maken voor Azure NetApp Files
 
-Azure NetApp Files biedt ondersteuning voor het maken van volumes met behulp van NFS (NFSv3 en NFSv 4.1), SMB3 of het dubbele Protocol (NFSv3 en SMB). Capaciteitsgebruik van een volume wordt in mindering gebracht op de ingerichte capaciteit van de pool. In dit artikel wordt beschreven hoe u een SMB3-volume maakt.
+Azure NetApp Files biedt ondersteuning voor het maken van volumes met behulp van NFS (NFSv3 en NFSv 4.1), SMB3 of het dubbele Protocol (NFSv3 en SMB). Capaciteitsgebruik van een volume wordt in mindering gebracht op de ingerichte capaciteit van de pool. 
+
+In dit artikel wordt beschreven hoe u een SMB3-volume maakt. Zie [een NFS-volume maken](azure-netapp-files-create-volumes.md)voor NFS-volumes. Zie [een Dual-protocol volume maken](create-volumes-dual-protocol.md)voor volumes met een Dual-protocol.
 
 ## <a name="before-you-begin"></a>Voordat u begint 
 
@@ -128,10 +130,12 @@ Toegang tot een SMB-volume wordt beheerd via machtigingen.
 
 ### <a name="share-permissions"></a>Share machtigingen  
 
-Een nieuw volume heeft standaard de machtigingen delen **iedereen/volledig beheer** . Leden van de groep domein Administrators kunnen de share machtigingen wijzigen door gebruik te maken van computer beheer op het computer account dat wordt gebruikt voor het Azure NetApp Files volume.
+Een nieuw volume heeft standaard de machtigingen delen **iedereen/volledig beheer** . Leden van de groep domein Administrators kunnen de share machtigingen als volgt wijzigen:  
 
-![SMB-koppel pad ](../media/azure-netapp-files/smb-mount-path.png) 
- ![ machtigingen voor delen instellen](../media/azure-netapp-files/set-share-permissions.png) 
+1. Wijs de share toe aan een station.  
+2. Klik met de rechter muisknop op het station, selecteer **Eigenschappen** en ga naar het tabblad **beveiliging** .
+
+[![Share machtigingen instellen](../media/azure-netapp-files/set-share-permissions.png)](../media/azure-netapp-files/set-share-permissions.png#lightbox)
 
 ### <a name="ntfs-file-and-folder-permissions"></a>NTFS-bestands-en mapmachtigingen  
 

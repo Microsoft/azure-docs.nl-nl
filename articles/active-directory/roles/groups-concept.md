@@ -13,12 +13,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a71a53cd2aff16102a54f5a24063615e02d11872
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: 051963060531283b868a5a20e13e871de1919ccb
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106169518"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107256069"
 ---
 # <a name="use-cloud-groups-to-manage-role-assignments-in-azure-active-directory-preview"></a>Cloud groepen gebruiken voor het beheren van roltoewijzingen in Azure Active Directory (preview-versie)
 
@@ -59,7 +59,6 @@ De volgende scenario's worden momenteel niet ondersteund:
 - *Alleen klanten met een licentie voor Azure AD P2*: wijs een groep niet als actief toe aan een rol via Azure ad en PRIVILEGED Identity Management (PIM). Wijs met name geen rol toe aan een door de gebruiker toewijs bare groep wanneer deze wordt gemaakt *en* wijs later met Pim een rol aan de groep toe. Dit leidt tot problemen waar gebruikers hun actieve roltoewijzingen niet kunnen zien in de PIM, en de mogelijkheid tot het verwijderen van die PIM-toewijzing. In dit scenario worden in aanmerking komende toewijzingen niet beïnvloed. Als u probeert deze toewijzing te maken, ziet u mogelijk onverwacht gedrag zoals:
   - De eind tijd voor de roltoewijzing kan onjuist worden weer gegeven.
   - In de PIM-portal kunnen **mijn rollen** slechts één roltoewijzing tonen, ongeacht het aantal methoden waarmee de toewijzing wordt verleend (via een of meer groepen en direct).
-- De functie **gefaseerde implementatie voor beheerde gebruikers aanmelding inschakelen** biedt geen ondersteuning voor toewijzing via groep.
 - *Alleen klanten met een licentie voor Azure AD P2* Zelfs na het verwijderen van de groep wordt er nog steeds een in aanmerking komend lid van de rol weer gegeven in PIM-gebruikers interface. Er is functioneel geen probleem. het is slechts een cache probleem in de Azure Portal.  
 - Gebruik het nieuwe [Exchange-beheer centrum](https://admin.exchange.microsoft.com/) voor roltoewijzingen via groepslid maatschap. Het oude Exchange-beheer centrum biedt nog geen ondersteuning voor deze functie. Exchange Power shell-cmdlets werken zoals verwacht.
 - Azure Information Protection-Portal (de klassieke Portal) herkent het lidmaatschap van de rol nog niet via groep. U kunt [migreren naar het Unified sensitivive labeling platform](/azure/information-protection/configure-policy-migrate-labels) en vervolgens het Office 365 Security & compliance gebruiken om groeps toewijzingen te gebruiken voor het beheren van rollen.

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/13/2021
 ms.author: trbye
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 8f1e5f38e97a1b51a2d919deebbdc452e9daf993
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ddba62b37c200ade87dbb51042fe0cb084a9ef9a
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "98539776"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107106119"
 ---
 # <a name="what-is-the-speech-cli"></a>Wat is de Speech-CLI?
 
@@ -36,7 +36,7 @@ Gebruik de Speech SDK wanneer:
 
 * Spraak herkenning: Converteer spraak naar tekst van audio bestanden of rechtstreeks vanuit een microfoon of transcribeer een opgenomen gesprek.
 
-* Spraak-synthese: Converteer tekst naar spraak met behulp van invoer uit tekst bestanden of voer rechtstreeks vanaf de opdracht regel in. Pas de kenmerken van spraak uitvoer aan met behulp van [SSML-configuraties](speech-synthesis-markup.md)en [standaard-of Neural stemmen](speech-synthesis-markup.md#standard-neural-and-custom-voices).
+* Spraak-synthese: Converteer tekst naar spraak met behulp van invoer uit tekst bestanden of voer rechtstreeks vanaf de opdracht regel in. Pas de kenmerken van spraak uitvoer aan met behulp van [SSML-configuraties](speech-synthesis-markup.md)en [standaard-of Neural stemmen](speech-synthesis-markup.md#neural-and-custom-voices).
 
 * Spraak omzetting: Vertaal audio in een bron taal naar tekst of audio in een doel taal.
 

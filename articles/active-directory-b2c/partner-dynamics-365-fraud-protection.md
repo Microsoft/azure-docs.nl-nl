@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 02/10/2021
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 9483b0a8829c042a7cf8d516c6007cbbf14a97ac
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: d1f0728a9a8da264f0960be2b956516b3c93742e
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105639754"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107258074"
 ---
 # <a name="tutorial-configure-microsoft-dynamics-365-fraud-protection-with-azure-active-directory-b2c"></a>Zelf studie: micro soft Dynamics 365 fraude beveiliging configureren met Azure Active Directory B2C
 
@@ -68,7 +68,7 @@ In het volgende architectuur diagram wordt de implementatie weer gegeven.
 ## <a name="set-up-the-solution"></a>De oplossing instellen
 
 1. [Maak een Facebook-toepassing](./identity-provider-facebook.md#create-a-facebook-application) die is geconfigureerd om Federatie Azure AD B2C toe te staan.
-2. [Voeg het Facebook-geheim toe](./custom-policy-get-started.md#create-the-facebook-key) dat u hebt gemaakt als een framework-beleids sleutel voor identiteits ervaring.
+2. [Voeg het Facebook-geheim toe](./tutorial-create-user-flows.md?pivots=b2c-custom-policy#create-the-facebook-key) dat u hebt gemaakt als een framework-beleids sleutel voor identiteits ervaring.
 
 ## <a name="configure-your-application-under-microsoft-dfp"></a>Uw toepassing configureren onder micro soft DFP
 
@@ -148,7 +148,7 @@ De waarde van de gebruikers-id moet hetzelfde zijn als het item in de bijbehoren
 
 1. Ga naar het [Azure AD B2C-beleid](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Dynamics-Fraud-Protection/Policies) in de map beleid.
 
-2. Volg dit [document](./custom-policy-get-started.md?tabs=applications#custom-policy-starter-pack) om [LocalAccounts Starter Pack](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/LocalAccounts) te downloaden
+2. Volg dit [document](./tutorial-create-user-flows.md?pivots=b2c-custom-policy?tabs=applications#custom-policy-starter-pack) om [LocalAccounts Starter Pack](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/LocalAccounts) te downloaden
 
 3. Configureer het beleid voor de Azure AD B2C Tenant.
 
@@ -184,4 +184,4 @@ Raadpleeg de volgende artikelen voor meer informatie:
 
 - [Aangepast beleid in Azure AD B2C](./custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md?tabs=applications)
+- [Aan de slag met aangepast beleid in Azure AD B2C](./tutorial-create-user-flows.md?pivots=b2c-custom-policy)

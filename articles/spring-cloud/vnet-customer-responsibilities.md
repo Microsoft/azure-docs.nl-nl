@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 12/02/2020
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 32b41c1c4446ba34e3bfad52f1d3cbd7ed72096d
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 91c8834b48625aac0f279f84648d374df15fbdd0
+ms.sourcegitcommit: c6a2d9a44a5a2c13abddab932d16c295a7207d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105108806"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107285391"
 ---
 # <a name="customer-responsibilities-for-running-azure-spring-cloud-in-vnet"></a>Verantwoordelijkheden van klanten voor het uitvoeren van Azure lente Cloud in VNET
 Dit document bevat specificaties voor het gebruik van Azure lente-Cloud in een virtueel netwerk.
@@ -33,7 +33,7 @@ Hier volgt een lijst met resource vereisten voor Azure lente-Cloud Services. Als
 ## <a name="azure-spring-cloud-network-requirements"></a>Azure lente-Cloud netwerk vereisten
 
   | Doel eindpunt | Poort | Gebruik | Notitie |
-  |------|------|------|
+  |------|------|------|------|
   | *: 1194 *of* [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) -Cloud: 1194 | UDP: 1194 | Onderliggend Kubernetes-Cluster beheer. | |
   | *: 443 *of* [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) -Cloud: 443 | TCP: 443 | Azure lente-Cloud Service beheer. | Informatie over het service-exemplaar ' requiredTraffics ' kan bekend zijn bij resource Payload, onder ' networkProfile '. |
   | *: 9000 *of* [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) -Cloud: 9000 | TCP: 9000 | Onderliggend Kubernetes-Cluster beheer. |
@@ -43,9 +43,9 @@ Hier volgt een lijst met resource vereisten voor Azure lente-Cloud Services. Als
   | *. servicebus.windows.net:443 *of* [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) -EventHub: 443 | TCP: 443 | Azure Event hub. | Kan worden vervangen door *Azure Event hubs* [service-eind punt in](../virtual-network/virtual-network-service-endpoints-overview.md)te scha kelen in het virtuele netwerk. |
   
 
-## <a name="azure-spring-cloud-fqdn-requirements--application-rules"></a>FQDN-vereisten/toepassings regels voor Azure lente Cloud
+## <a name="azure-spring-cloud-fqdn-requirementsapplication-rules"></a>FQDN-vereisten/toepassings regels voor Azure lente Cloud
 
-Azure Firewall biedt een Fully Qualified Domain Name (FQDN)-tag **AzureKubernetesService** om de volgende configuraties te vereenvoudigen.
+Azure Firewall biedt de FQDN-code **AzureKubernetesService** om de volgende configuraties te vereenvoudigen:
 
   | Doel-FQDN | Poort | Gebruik |
   |------|------|------|
@@ -61,6 +61,15 @@ Azure Firewall biedt een Fully Qualified Domain Name (FQDN)-tag **AzureKubernete
   | *mscrl.microsoft.com* | HTTPS: 80 | Vereiste micro soft-certificaat keten paden. |
   | *crl.microsoft.com* | HTTPS: 80 | Vereiste micro soft-certificaat keten paden. |
   | *crl3.digicert.com* | HTTPS: 80 | SSL-certificaat keten paden van derden. |
+  
+## <a name="azure-spring-cloud-optional-fqdn-for-third-party-application-performance-management"></a>Azure veer Cloud optioneel FQDN voor beheer van toepassings prestaties van derden
+
+Azure Firewall biedt de FQDN-code **AzureKubernetesService** om de volgende configuraties te vereenvoudigen:
+
+  | Doel-FQDN | Poort | Gebruik                                                          |
+  | ---------------- | ---- | ------------------------------------------------------------ |
+  | Collector *. newrelic. com | TCP: 443/80 | Vereiste netwerken van nieuwe Relic APM-agents in de VS-regio, zie ook [APM-agenten netwerken](https://docs.newrelic.com/docs/using-new-relic/cross-product-functions/install-configure/networks/#agents). |
+  | Collector *. eu01. nr-data.net | TCP: 443/80 | Vereiste netwerken van nieuwe Relic APM-agents uit de EU-regio, zie ook [APM-agenten netwerken](https://docs.newrelic.com/docs/using-new-relic/cross-product-functions/install-configure/networks/#agents). |
 
 ## <a name="see-also"></a>Zie ook
 * [Toegang tot uw toepassing in een privé netwerk](access-app-virtual-network.md)

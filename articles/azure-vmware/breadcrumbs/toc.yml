@@ -5,3 +5,10 @@
     - name: Azure VMware Solution
       tocHref: /azure/
       topicHref: /azure/azure-vmware/index
+      items:
+        - name: Instructiegidsen
+          tocHref: /azure/migrate/
+          topicHref: /azure/azure-vmware/
+        - name: Instructiegidsen
+          tocHref: /azure/site-recovery/
+          topicHref: /azure/azure-vmware/

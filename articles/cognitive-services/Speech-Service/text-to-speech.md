@@ -12,18 +12,18 @@ ms.date: 09/01/2020
 ms.author: trbye
 ms.custom: cog-serv-seo-aug-2020
 keywords: tekst naar spraak
-ms.openlocfilehash: 1a7ff7befc1a5e82c5518cf103a81b35ec38c7db
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.openlocfilehash: 73e37fde4b3c2dd1aeb6ab171c3726f1b4353949
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106449355"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107106085"
 ---
 # <a name="what-is-text-to-speech"></a>Wat is tekst-naar-spraak?
 
 [!INCLUDE [TLS 1.2 enforcement](../../../includes/cognitive-services-tls-announcement.md)]
 
-In dit overzicht vindt u meer informatie over de voor delen en mogelijkheden van de tekst naar spraak-service, waarmee u uw toepassingen, hulpprogram ma's of apparaten tekst kunt converteren naar mensen met een menselijke ervaring. Kies uit standaard-en Neural stemmen of maak een aangepaste spraak die uniek is voor uw product of merk. 75 + standaard stemmen zijn verkrijgbaar in meer dan 45 talen en land instellingen en vijf Neural stemmen zijn beschikbaar in een geselecteerd aantal talen en land instellingen. Zie [ondersteunde talen](language-support.md#text-to-speech)voor een volledige lijst met ondersteunde stemmen, talen en land instellingen.
+In dit overzicht vindt u meer informatie over de voor delen en mogelijkheden van de tekst naar spraak-service, waarmee u uw toepassingen, hulpprogram ma's of apparaten tekst kunt converteren naar mensen met een menselijke ervaring. Gebruik Human-achtige Neural stemmen of maak een aangepaste spraak die uniek is voor uw product of merk. Zie [ondersteunde talen](language-support.md#text-to-speech)voor een volledige lijst met ondersteunde stemmen, talen en land instellingen.
 
 Deze documentatie bevat de volgende artikel typen:
 
@@ -42,8 +42,6 @@ Deze documentatie bevat de volgende artikel typen:
 
 * Asynchrone synthese van lange audio: gebruik de [lange audio-API](long-audio-api.md) om tekst-naar-spraak-bestanden asynchroon te synthesizeren die langer zijn dan 10 minuten (bijvoorbeeld audio boeken of colleges). In tegens telling tot synthese die wordt uitgevoerd met behulp van de spraak-SDK of spraak-naar-tekst REST API, worden antwoorden niet in realtime geretourneerd. De verwachting is dat aanvragen asynchroon worden verzonden, reacties worden gepeild en dat de gesynthesizerde audio wordt gedownload wanneer deze beschikbaar wordt gesteld vanuit de service. Alleen aangepaste Neural stemmen worden ondersteund.
 
-* Standaard stemmen-gemaakt met behulp van statistische parametrische synthese en/of samenvoeg synthese technieken. Deze stemmen zijn zeer begrijpelijk en klinkt natuurlijk. U kunt uw toepassingen eenvoudig laten spreken in meer dan 45 talen, met een breed scala aan spraak opties. Deze stemmen bieden een hoge nauw keurigheid van de uitspraak, inclusief ondersteuning voor afkortingen, acroniem uitbrei dingen, datum-en tijd interpretaties, telefoons en meer. Zie [ondersteunde talen](language-support.md#text-to-speech)voor een volledige lijst met standaard stemmen.
-
 * Neural stemmen-diepe Neural-netwerken worden gebruikt voor het oplossen van de limieten van de traditionele spraak synthese met betrekking tot stress en intonation in gesp roken taal. Prosody-voor spelling en spraak synthese worden gelijktijdig uitgevoerd, wat leidt tot meer vloei bare en natuurlijke geluids uitvoer. Neural stemmen kunnen worden gebruikt om interacties te maken met chat bots uitbreiden en spraak assistenten die natuurlijk en aantrekkelijker zijn, en om digitale teksten, zoals e-books, te converteren naar Audiobooks en de navigatie systemen in de auto te verbeteren. Met het menselijke net zoals natuurlijke prosody en heldere afbakening van woorden, verlaagt Neural stemmen veel luister intensief wanneer u met AI-systemen communiceert. Zie [ondersteunde talen](language-support.md#text-to-speech)voor een volledige lijst met Neural stemmen.
 
 * De stem stijlen aanpassen met SSML-SSML (Speech Synthesis Markup Language) is een op XML gebaseerde opmaak taal die wordt gebruikt voor het aanpassen van de uitvoer van spraak naar tekst. Met SSML kunt u de Toon hoogte aanpassen, onderbrekingen toevoegen, de uitspraak verbeteren, de spraak snelheid verlagen of vertragen, het volume verg Roten of verkleinen, en het kenmerk meerdere stemmen op één document. Zie de [instructies](speech-synthesis-markup.md) voor het aanpassen van de stijl van spreken.
@@ -51,7 +49,7 @@ Deze documentatie bevat de volgende artikel typen:
 * Visemes- [Visemes](how-to-speech-synthesis-viseme.md) zijn de sleutel in waargenomen spraak, met inbegrip van de positie van de lippen, jaw en tong bij het produceren van een bepaalde foneem. Visemes hebben een sterke correlatie met stemmen en fonemen. U kunt met behulp van viseme-gebeurtenissen in spraak-SDK gelaat animatie gegevens genereren, die kunnen worden gebruikt voor het animeren van gezichten in lip-Lees communicatie, onderwijs, entertainment en klanten service.
 
 > [!NOTE]
-> Viseme werkt nu alleen voor `en-US-AriaNeural` spraak.
+> Viseme-gebeurtenissen worden momenteel alleen ondersteund voor de `en-US-AriaNeural` stem.
 
 ## <a name="get-started"></a>Aan de slag
 
@@ -66,7 +64,7 @@ Voorbeeld code voor tekst-naar-spraak is beschikbaar op GitHub. Deze voor beelde
 
 ## <a name="customization"></a>Aanpassing
 
-Naast de standaard-en Neural stemmen, kunt u aangepaste stemmen maken en verfijnen die uniek zijn voor uw product of merk. Alles wat u nodig hebt om aan de slag te gaan zijn een aantal audio bestanden en de bijbehorende transcripties. Zie [aan de slag met aangepaste spraak](how-to-custom-voice.md) voor meer informatie.
+Naast Neural stemmen kunt u aangepaste stemmen maken en verfijnen die uniek zijn voor uw product of merk. Alles wat u nodig hebt om aan de slag te gaan zijn een aantal audio bestanden en de bijbehorende transcripties. Zie [aan de slag met aangepaste spraak](how-to-custom-voice.md) voor meer informatie.
 
 ## <a name="pricing-note"></a>Prijs notitie
 

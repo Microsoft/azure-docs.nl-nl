@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 03/15/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 860f167913211ee7c511e515937f29ba5bf954cf
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 2ab93a8742d210969ef6ad10683bed92221c1a57
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103491556"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107256698"
 ---
 # <a name="migrate-an-owin-based-web-api-to-b2clogincom-or-a-custom-domain"></a>Een op OWIN gebaseerde web-API migreren naar b2clogin.com of een aangepast domein
 
@@ -30,7 +30,7 @@ De volgende secties bevatten een voor beeld van het inschakelen van meerdere ver
 
 U hebt de volgende Azure AD B2C resources nodig om door te gaan met de stappen in dit artikel:
 
-* [Gebruikers stromen](tutorial-create-user-flows.md) of [aangepaste beleids regels](custom-policy-get-started.md) die zijn gemaakt in uw Tenant
+* [Gebruikers stromen](tutorial-create-user-flows.md?pivots=b2c-user-flow) of [aangepaste beleids regels](tutorial-create-user-flows.md?pivots=b2c-custom-policy) die zijn gemaakt in uw Tenant
 
 ## <a name="get-token-issuer-endpoints"></a>Eind punten van token Uitgever ophalen
 

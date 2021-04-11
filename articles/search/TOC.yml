@@ -392,6 +392,8 @@
       items:
         - name: Analyse van prestaties
           href: search-performance-analysis.md
+        - name: Prestatiebenchmarks
+          href: performance-benchmarks.md
         - name: Tips voor betere prestaties
           href: search-performance-tips.md
         - name: Diagnostische logboeken

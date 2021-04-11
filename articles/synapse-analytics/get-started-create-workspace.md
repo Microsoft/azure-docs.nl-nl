@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
 ms.date: 03/17/2021
-ms.openlocfilehash: a4fa902268d9a19cd0003a2fdaa4c5e58989a4ff
-ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
+ms.openlocfilehash: f186acbe030dcbb0c2bad22586a8b2a5d1aa520d
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "106218937"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107259792"
 ---
 # <a name="creating-a-synapse-workspace"></a>Een Synapse-werkruimte maken
 
@@ -64,6 +64,16 @@ Wanneer uw Azure Synapse-werkruimte is gemaakt, kunt u Synapse Studio op twee ma
 
 * Open uw Synapse-werk ruimte in de [Azure Portal](https://portal.azure.com), Selecteer in het gedeelte **overzicht** van de werk ruimte Synapse de optie **openen** in het vak open Synapse Studio.
 * Ga naar `https://web.azuresynapse.net` en meld u aan bij uw werkruimte.
+
+## <a name="place-sample-data-into-the-primary-storage-account"></a>Voorbeeld gegevens in het primaire opslag account plaatsen
+We gaan een kleine voor beeld-100.000 van NYX gebruiken voor veel voor beelden in deze aan de slag-hand leiding. We beginnen met het plaatsen van de app in het primaire opslag account dat u hebt gemaakt voor de werk ruimte.
+
+* Dit bestand downloaden naar uw computer: https://azuresynapsestorage.blob.core.windows.net/sampledata/NYCTaxiSmall/NYCTripSmall.parquet 
+* Ga in Synapse Studiio naar de data hub. 
+* Klik op **koppelen**.
+* Onder de categorie **Azure data Lake Storae Gen2** ziet u een item met een naam zoals **myworkspace (Primary-contosolake)**
+* Klik op de container met de naam **gebruikers (primair)**
+* Klik op **uploaden** en selecteer het `NYCTripSmall.parquet` bestand dat u hebt gedownload
 
 ## <a name="next-steps"></a>Volgende stappen
 

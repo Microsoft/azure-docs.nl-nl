@@ -12,19 +12,20 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 01/28/2020
+ms.date: 04/05/2021
 ms.author: b-juche
-ms.openlocfilehash: 0079c123f908a38cc1e4923790439f18352bf3ce
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b6a2d7ad92c209a93d740d60808c2cbd2f90c6b4
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100574626"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107258415"
 ---
 # <a name="create-a-dual-protocol-nfsv3-and-smb-volume-for-azure-netapp-files"></a>Een NFSv3-en SMB-volume (Dual-Protocol) maken voor Azure NetApp Files
 
-Azure NetApp Files biedt ondersteuning voor het maken van volumes met behulp van NFS (NFSv3 en NFSv 4.1), SMB3 of het dubbele protocol. In dit artikel wordt beschreven hoe u een volume maakt dat gebruikmaakt van het dubbele Protocol van NFSv3 en SMB met ondersteuning voor LDAP-gebruikers toewijzing.  
+Azure NetApp Files biedt ondersteuning voor het maken van volumes met behulp van NFS (NFSv3 en NFSv 4.1), SMB3 of het dubbele protocol. In dit artikel wordt beschreven hoe u een volume maakt dat gebruikmaakt van het dubbele Protocol van NFSv3 en SMB met ondersteuning voor LDAP-gebruikers toewijzing. 
 
+Zie [een NFS-volume maken](azure-netapp-files-create-volumes.md)voor het maken van NFS-volumes. Zie [een SMB-volume maken](azure-netapp-files-create-volumes-smb.md)voor het maken van SMB-volumes. 
 
 ## <a name="before-you-begin"></a>Voordat u begint 
 
@@ -39,7 +40,7 @@ Azure NetApp Files biedt ondersteuning voor het maken van volumes met behulp van
 * Maak een zone voor reverse lookup op de DNS-server en voeg vervolgens een PTR-record (pointer) van de AD-hostcomputer toe aan de zone voor reverse lookup. Als dat niet het geval is, mislukt het maken van het volume met twee protocollen.
 * Zorg ervoor dat de NFS-client up-to-date is en de meest recente updates voor het besturingssysteem worden uitgevoerd.
 * Zorg ervoor dat de Active Directory (AD) LDAP-server op de AD actief is. U kunt dit doen door de functie [Active Directory Lightweight Directory Services (AD LDS)](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831593(v=ws.11)) op de AD-machine te installeren en configureren.
-* Dual-protocol volumes bieden momenteel geen ondersteuning voor Azure Active Directory Domain Services (AADDS).  
+* Dual-protocol volumes bieden momenteel geen ondersteuning voor Azure Active Directory Domain Services (AADDS). LDAP via TLS mag niet zijn ingeschakeld als u AADDS gebruikt.
 * De NFS-versie die door een volume met dubbele protocollen wordt gebruikt, is NFSv3. Daarom gelden de volgende overwegingen:
     * Het dubbele protocol biedt geen ondersteuning voor de uitgebreide kenmerken van Windows-ACL'S `set/get` van NFS-clients.
     * NFS-clients kunnen geen machtigingen wijzigen voor de NTFS-beveiligings stijl en Windows-clients kunnen geen machtigingen wijzigen voor volumes met UNIX-stijl Dual-protocol.   
@@ -121,6 +122,17 @@ Azure NetApp Files biedt ondersteuning voor het maken van volumes met behulp van
  
     Een volume neemt het abonnement, de resourcegroep en de locatiekenmerken over van de bijbehorende capaciteitspool. U kunt de implementatiestatus van het volume controleren vanuit het tabblad Meldingen.
 
+## <a name="allow-local-nfs-users-with-ldap-to-access-a-dual-protocol-volume"></a>Lokale NFS-gebruikers met LDAP toestaan om toegang te krijgen tot een Dual-protocol volume 
+
+U kunt lokale NFS-client gebruikers die niet aanwezig zijn op de Windows LDAP-server inschakelen om toegang te krijgen tot een Dual-protocol volume met LDAP waarvoor uitgebreide groepen zijn ingeschakeld. Hiervoor schakelt u de optie **lokale NFS-gebruikers met LDAP toestaan** als volgt in:
+
+1. Klik op **Active Directory verbindingen**.  Klik op een bestaande Active Directory verbinding op het context menu (de drie puntjes `…` ) en selecteer **bewerken**.  
+
+2. Selecteer in het venster **Active Directory instellingen bewerken** dat wordt weer gegeven, de optie **lokale NFS-gebruikers met LDAP toestaan** .  
+
+    ![Scherm afbeelding met de optie lokale NFS-gebruikers met LDAP toestaan](../media/azure-netapp-files/allow-local-nfs-users-with-ldap.png)  
+
+
 ## <a name="manage-ldap-posix-attributes"></a>LDAP POSIX-kenmerken beheren
 
 U kunt POSIX-kenmerken zoals UID, basismap en andere waarden beheren met de Active Directory MMC-module gebruikers en computers.  In het volgende voor beeld wordt de Active Directory kenmerk editor weer gegeven:  
@@ -129,9 +141,9 @@ U kunt POSIX-kenmerken zoals UID, basismap en andere waarden beheren met de Acti
 
 U moet de volgende kenmerken voor LDAP-gebruikers en LDAP-groepen instellen: 
 * Vereiste kenmerken voor LDAP-gebruikers:   
-    `uid`: Alice, `uidNumber` : 139, `gidNumber` : 555, `objectClass` : posixAccount
+    `uid: Alice`, `uidNumber: 139`, `gidNumber: 555`, `objectClass: posixAccount`
 * Vereiste kenmerken voor LDAP-groepen:   
-    `objectClass`: "posixGroup", `gidNumber` : 555
+    `objectClass: posixGroup`, `gidNumber: 555`
 
 ## <a name="configure-the-nfs-client"></a>De NFS-client configureren 
 
@@ -141,3 +153,4 @@ Volg de instructies in [een NFS-client configureren voor Azure NetApp files](con
 
 * [Een NFS-client voor Azure NetApp Files configureren](configure-nfs-clients.md)
 * [Problemen met SMB-of Dual-protocol volumes oplossen](troubleshoot-dual-protocol-volumes.md)
+* [Problemen met LDAP-volumes oplossen](troubleshoot-ldap-volumes.md)

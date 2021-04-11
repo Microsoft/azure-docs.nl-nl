@@ -7,12 +7,12 @@ ms.topic: article
 author: sayantanroy83
 ms.author: sroy
 ms.date: 3/08/2021
-ms.openlocfilehash: 1cdd3dba8203ce9e8daeaa963f1722389d89d19d
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: b61608c0cb53ab808c5d3d789ec5ddc318c6923d
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105563817"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107106799"
 ---
 # <a name="prerequisites-to-programmatically-access-analytics-data"></a>Vereisten om programmatisch toegang te krijgen tot Analytics-gegevens
 
@@ -20,7 +20,7 @@ Voordat u programmatisch toegang kunt krijgen tot gegevens van de commerciële M
 
 ## <a name="commercial-marketplace-enrollment"></a>Inschrijving voor commerciële Marketplace
 
-Als u via een programma toegang wilt krijgen tot commerciële Marketplace Analytics-gegevens, moet u worden inge schreven in het Commercial Marketplace-programma en beschikken over een partner centrum-account. Zie [een commercieel Marketplace-account maken in Partner Center](./partner-center-portal/create-account.md)voor meer informatie.
+Als u via een programma toegang wilt krijgen tot commerciële Marketplace Analytics-gegevens, moet u worden inge schreven in het Commercial Marketplace-programma en beschikken over een partner centrum-account. Zie [een commercieel Marketplace-account maken in Partner Center](create-account.md)voor meer informatie.
 
 ## <a name="create-azure-active-directory-application"></a>Azure Active Directory-toepassing maken
 

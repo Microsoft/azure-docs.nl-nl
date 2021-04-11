@@ -7,12 +7,12 @@ ms.service: mysql
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 10/22/2020
-ms.openlocfilehash: 074b799a4f0e83c47aac0b2b3fca5386bd45429f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 53878384f4eb056f0cb23ec9005043ac26c8fad2
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100521965"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106492563"
 ---
 # <a name="quickstart-use-the-azure-portal-to-create-an-azure-database-for-mysql-flexible-server"></a>Quickstart: Een Azure Database for MySQL Flexible Server maken met behulp van Azure Portal
 
@@ -51,11 +51,14 @@ Volg deze stappen om een flexibele server te maken:
     Abonnement|De naam van uw abonnement|Het Azure-abonnement dat u wilt gebruiken voor uw server. Als u meerdere abonnementen hebt, kiest u het abonnement waarin u wilt worden gefactureerd voor de resource.|
     Resourcegroep|**myresourcegroup**| Een nieuwe resourcegroepnaam of een bestaande naam uit uw abonnement.|
     Servernaam |**mydemoserver**|Een unieke naam die uw flexibele server identificeert. De domeinnaam `mysql.database.azure.com` wordt toegevoegd aan de naam van de server die u opgeeft. De servernaam mag alleen kleine letters, cijfers en het koppelteken (-) bevatten. Dit wachtwoord moet tussen 3 en 63 tekens bevatten.|
+    Regio|De regio het dichtst bij uw gebruikers| De locatie die het dichtst bij uw gebruikers is.|
+    Type werk belasting| Ontwikkeling | Voor de werk belasting van de productie kunt u kiezen voor kleine/middel groot of groot formaat, afhankelijk van de [max_connections](concepts-server-parameters.md#max_connections) vereisten|
+    Beschikbaarheidszone| Geen voor keur | Als uw toepassing in azure Vm's, virtuele-machine schaal sets of AKS-exemplaar is ingericht in een specifieke beschikbaarheids zone, kunt u uw flexibele server in dezelfde beschikbaarheids zone opgeven voor termijnen-toepassing en-Data Base om de prestaties te verbeteren door de netwerk latentie in meerdere zones te verlagen.|
+    Hoge beschikbaarheid| Standaard | Voor productie servers wordt het inschakelen van een zone redundant hoge Beschik baarheid (HA) sterk aanbevolen voor bedrijfs continuïteit en bescherming tegen zone fouten|
+    MySQL-versie|**5.7**| Een hoofdversie van MySQL.|
     Gebruikersnaam van beheerder |**mydemouser**| Uw eigen aanmeldingsaccount dat moet worden gebruikt om verbinding te maken met de server. De gebruikersnaam van de beheerder mag niet **azure_superuser**, **admin**, **administrator**, **root**, **guest** of **public** zijn.|
     Wachtwoord |Uw wachtwoord| Een nieuw wachtwoord voor het beheerdersaccount voor de server. Dit wachtwoord moet tussen 8 en 128 tekens bevatten. Het moet ook tekens bevatten uit drie van de volgende categorieën: Nederlandse hoofdletters, Nederlandse kleine letters, cijfers (0 t/m 9) en niet-alfanumerieke tekens (!, $, #, % enzovoort).|
-    Regio|De regio het dichtst bij uw gebruikers| De locatie die het dichtst bij uw gebruikers is.|
-    Versie|**5.7**| Een hoofdversie van MySQL.|
-    Berekening en opslag | **Burstable**, **Standard_B1ms**, **10 GiB**, **7 dagen** | De reken-, opslag- en back-upconfiguraties voor de nieuwe server. Selecteer **Server configureren**. **Burstable**, **Standard_B1ms**, **10 GiB** en **7 dagen** zijn de standaardwaarden voor **Rekenlaag**, **Rekengrootte**, **Opslaggrootte** en **Bewaartermijn voor back-up**. U kunt deze waarden laten zoals ze zijn of ze aanpassen. Als u de berekening en opslagselectie wilt opslaan, selecteert u **Opslaan** om door te gaan met configuraties. In de volgende schermopname ziet u de opties voor berekenen en opslaan.|
+    Berekening en opslag | **Burstable**, **Standard_B1ms**, **10 GiB**, **100 IOPS**, **7 dagen** | De berekenings-, opslag-, IOPS-en back-upconfiguraties voor uw nieuwe server. Selecteer **Server configureren**. **Burstable**, **Standard_B1ms**, **10 GiB**, **100 IOPS** en **7 dagen** zijn de standaard waarden voor de **Compute-laag**, de **reken grootte**, de **opslag grootte**, **IOPS** en de **Bewaar periode** voor back-ups. U kunt deze waarden laten zoals ze zijn of ze aanpassen. Voor een snellere gegevens belasting tijdens de migratie wordt aangeraden de IOPS te verhogen tot de maximale grootte die wordt ondersteund door de reken grootte, en deze later opnieuw te schalen om kosten te besparen. Als u de berekening en opslagselectie wilt opslaan, selecteert u **Opslaan** om door te gaan met configuraties. In de volgende schermopname ziet u de opties voor berekenen en opslaan.|
     
     > :::image type="content" source="./media/quickstart-create-server-portal/compute-storage.png" alt-text="Schermopname met de opties voor berekenen en opslaan.":::
 
@@ -89,16 +92,21 @@ Als u een flexibele server hebt gemaakt met Persoonlijke toegang (VNet-integrati
 
 Als u uw flexibele server met Openbare toegang (toegestane IP-adressen) hebt gemaakt, kunt u uw lokale IP-adres toevoegen aan de lijst met firewallregels op uw server. Raadpleeg de [documentatie over het maken of beheren van firewall regels](how-to-manage-firewall-portal.md) voor stapsgewijze instructies.
 
-U kunt [mysql.exe](https://dev.mysql.com/doc/refman/8.0/en/mysql.html) of [MySQL Workbench](./connect-workbench.md) gebruiken om vanuit uw lokale omgeving verbinding met de server te maken. 
+U kunt [mysql.exe](https://dev.mysql.com/doc/refman/8.0/en/mysql.html) of [MySQL Workbench](./connect-workbench.md) gebruiken om vanuit uw lokale omgeving verbinding met de server te maken. Azure Database for MySQL flexibele server ondersteunt het verbinden van uw client toepassingen met de MySQL-service met behulp van Transport Layer Security (TLS), voorheen bekend als Secure Sockets Layer (SSL). TLS is een industrie standaard protocol dat versleutelde netwerk verbindingen tussen uw database server-en client toepassingen waarborgt, zodat u kunt voldoen aan de nalevings vereisten. Als u verbinding wilt maken met uw flexibele MySQL-server, moet u het [open bare SSL-certificaat](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem) voor verificatie van de certificerings instantie downloaden.
+
+In het volgende voor beeld ziet u hoe u verbinding maakt met uw flexibele server met behulp van de MySQL-opdracht regel interface. U moet eerst de MySQL-opdracht regel installeren als deze nog niet is geïnstalleerd. U downloadt het DigiCertGlobalRootCA-certificaat dat vereist is voor SSL-verbindingen. Gebruik de instelling--SSL-modus = vereist connection string om TLS/SSL-certificaat verificatie af te dwingen. Geef het pad van het lokale certificaat bestand door aan de para meter--ssl-ca. Vervang de waarden door uw werkelijke servernaam en wachtwoord.
 
 ```bash
+sudo apt-get install mysql-client
 wget --no-check-certificate https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
-mysql -h mydemoserver.mysql.database.azure.com -u mydemouser -p --ssl=true --ssl-ca=DigiCertGlobalRootCA.crt.pem
+mysql -h mydemoserver.mysql.database.azure.com -u mydemouser -p --ssl-mode=REQUIRED --ssl-ca=DigiCertGlobalRootCA.crt.pem
 ```
 
 Als u uw flexibele server hebt ingericht met behulp van **open bare toegang**, kunt u ook [Azure Cloud shell](https://shell.azure.com/bash) gebruiken om verbinding te maken met uw flexibele server met behulp van een vooraf geïnstalleerde mysql-client, zoals hieronder wordt weer gegeven:
 
-Als u Azure Cloud Shell wilt gebruiken om verbinding te maken met uw flexibele server, moet u toegang tot het netwerk van Azure Cloud Shell op uw flexibele server toestaan. Hiertoe gaat u naar de Blade **netwerk** op Azure portal voor uw flexibele mysql-server en schakelt u het selectie vakje onder **firewall** in, waarbij ' open bare toegang vanaf een Azure-service binnen Azure tot deze server toestaan ' en klik op Opslaan om de instelling te behouden.
+Als u Azure Cloud Shell wilt gebruiken om verbinding te maken met uw flexibele server, moet u toegang tot het netwerk van Azure Cloud Shell op uw flexibele server toestaan. Hiertoe gaat u naar de Blade **netwerk** op Azure portal voor uw flexibele mysql-server en schakelt u het selectie vakje onder **firewall** in, waarbij ' open bare toegang vanaf een Azure-service in azure op deze server toestaan ' wordt weer gegeven in de onderstaande scherm afbeelding. Klik vervolgens op Opslaan om de instelling te behouden.
+
+ > :::image type="content" source="./media/quickstart-create-server-portal/allow-access-to-any-azure-service.png" alt-text="Scherm afbeelding die laat zien hoe u Azure Cloud Shell toegang tot MySQL flexibele server voor open bare netwerk configuratie kunt toestaan.":::
 
 > [!NOTE]
 > Het controleren of het toegankelijk is voor het gebruik **van een Azure-service in azure naar deze server** moet alleen worden gebruikt voor ontwikkelen of testen. Hiermee wordt de firewall geconfigureerd om verbindingen toe te staan van IP-adressen die zijn toegewezen aan een Azure-service of-Asset, met inbegrip van verbindingen van de abonnementen van andere klanten.
@@ -109,6 +117,9 @@ Klik op **proberen** om de Azure Cloud shell te starten en gebruik de volgende o
 wget --no-check-certificate https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
 mysql -h mydemoserver.mysql.database.azure.com -u mydemouser -p --ssl=true --ssl-ca=DigiCertGlobalRootCA.crt.pem
 ```
+> [!IMPORTANT]
+> Wanneer u verbinding maakt met uw flexibele server met behulp van Azure Cloud Shell, moet u de para meter--SSL = True gebruiken en niet-SSL-modus = vereist.
+> De primaire reden hiervoor is Azure Cloud Shell worden geleverd met een vooraf geïnstalleerde mysql.exe-client van een MariaDB-distributie waarvoor--SSL-para meter vereist is, terwijl de mysql-client van de distributie van Oracle vereist--SSL-modus para meter.
 
 Als het volgende fout bericht wordt weer gegeven wanneer u verbinding maakt met uw flexibele server met behulp van de eerder genoemde opdracht, hebt u de firewall regel niet meer ingesteld met de optie ' open bare toegang vanaf een Azure-service toestaan in azure naar deze server ', maar eerder wel of niet opgeslagen. Stel de firewall opnieuw in en probeer het opnieuw.
 

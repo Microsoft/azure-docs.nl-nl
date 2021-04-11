@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: 4c2d1cd1c73b377d85501fd31d0f5a1893df5183
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d58e4303078733eb1014171271d27907ff7a95b0
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102487415"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106286263"
 ---
 # <a name="camera-placement-guide"></a>Gids voor camera plaatsing
 

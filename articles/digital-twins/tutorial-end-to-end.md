@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/15/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: b7883d6c541558e26793f94e37014a20b14d761e
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: f1653158f7a181ad2d61bc726ba7765eab934341
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104577249"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107462"
 ---
 # <a name="tutorial-build-out-an-end-to-end-solution"></a>Zelfstudie: Een end-to-end-oplossing bouwen
 
@@ -426,7 +426,7 @@ Nadat u deze zelf studie hebt voltooid, kunt u kiezen welke resources u wilt ver
 
 [!INCLUDE [digital-twins-cleanup-basic.md](../../includes/digital-twins-cleanup-basic.md)]
 
-* **Als u wilt door gaan met het Azure Digital apparaatdubbels-exemplaar dat u in dit artikel hebt ingesteld, maar een aantal of alle modellen, apparaatdubbels en relaties hebt gewist**, kunt u de [AZ DT](/cli/azure/ext/azure-iot/dt) cli-opdrachten in een [Azure Cloud shell](https://shell.azure.com) -venster gebruiken om de elementen te verwijderen die u wilt verwijderen.
+* **Als u wilt door gaan met het Azure Digital apparaatdubbels-exemplaar dat u in dit artikel hebt ingesteld, maar een aantal of alle modellen, apparaatdubbels en relaties hebt gewist**, kunt u de [AZ DT](/cli/azure/dt) cli-opdrachten in een [Azure Cloud shell](https://shell.azure.com) -venster gebruiken om de elementen te verwijderen die u wilt verwijderen.
 
     Met deze optie worden geen van de andere Azure-resources verwijderd die in deze zelf studie zijn gemaakt (IoT Hub, Azure Functions app, enzovoort). U kunt deze afzonderlijk verwijderen met behulp van de benodigde [DT-opdrachten](/cli/azure/reference-index) voor elk resource type.
 

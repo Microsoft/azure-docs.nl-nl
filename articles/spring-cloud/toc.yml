@@ -93,15 +93,15 @@
           href: how-to-setup-autoscale.md
     - name: Integreren
       items:
-        - name: Een app verbinden met Azure CosmosDB
+        - name: Azure CosmosDB
           href: how-to-bind-cosmos.md
-        - name: Een app verbinden met Azure Cache voor Redis
+        - name: Azure Cache voor Redis
           href: how-to-bind-redis.md
-        - name: Een app verbinden met Azure MySQL
+        - name: Azure Database for MySQL
           href: how-to-bind-mysql.md
-        - name: Beheerde identiteit om verbinding te maken Azure SQL Database
+        - name: Azure SQL Database met beheerde identiteit
           href: connect-managed-identity-to-azure-sql.md
-        - name: Met Azure Load Balance Solutions integreren
+        - name: Azure Load Balancing-oplossingen
           href: how-to-integrate-azure-load-balancers.md
     - name: Controleren
       items:
@@ -194,7 +194,7 @@
 - name: Naslaginformatie
   items:
     - name: Azure CLI-invoeg toepassing
-      href: /cli/azure/ext/spring-cloud/spring-cloud
+      href: /cli/azure/spring-cloud
     - name: Azure PowerShell
       href: /powershell/module/az.springcloud
     - name: Resources

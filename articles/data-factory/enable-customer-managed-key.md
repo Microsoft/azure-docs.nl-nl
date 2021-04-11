@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 05/08/2020
 ms.author: chez
 ms.reviewer: mariozi
-ms.openlocfilehash: c6c376e44c6135a800e6f7e281f8ea85b828329a
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: a18d06e3a0324889a4cb9936fb339fd9d8f9b816
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102443867"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106222680"
 ---
 # <a name="encrypt-azure-data-factory-with-customer-managed-keys"></a>Azure Data Factory versleutelen met door de klant beheerde sleutels
 
@@ -137,6 +137,23 @@ Als u de sleutel wilt wijzigen die wordt gebruikt voor Data Factory-versleutelin
 ## <a name="disable-customer-managed-keys"></a>Door de klant beheerde sleutels uitschakelen
 
 Zodra de functie voor de door de klant beheerde sleutel is ingeschakeld, kunt u de extra beveiligingsstap niet meer verwijderen. We verwachten altijd een door de klant verschafte sleutel om factory en gegevens te versleutelen.
+
+## <a name="customer-managed-key-and-continuous-integration-and-continuous-deployment"></a>Door de klant beheerde sleutel en doorlopende integratie en doorlopende implementatie
+
+CMK-configuratie is standaard niet opgenomen in de sjabloon Factory Azure Resource Manager (ARM). De door de klant beheerde sleutel versleutelings instellingen in ARM-sjabloon toevoegen voor continue integratie (CI/CD):
+
+1. Zorg ervoor dat de fabriek zich in de Git-modus bevindt
+1. Navigeren naar de beheer Portal-sectie door de klant beheerde sleutel
+1. Optie _voor insluiten van arm-sjabloon_ inschakelen
+
+  :::image type="content" source="media/enable-customer-managed-key/07-include-in-template.png" alt-text="Scherm opname van het opnemen van een door de klant beheerde sleutel instelling in ARM-sjabloon.":::
+
+De volgende instellingen worden toegevoegd aan de ARM-sjabloon. Deze eigenschappen kunnen worden para meters in doorlopende integratie-en leverings pijplijnen door de configuratie van de [Azure Resource Manager-para meters](continuous-integration-deployment.md#use-custom-parameters-with-the-resource-manager-template) te bewerken
+
+  :::image type="content" source="media/enable-customer-managed-key/08-template-with-customer-managed-key.png" alt-text="Scherm opname van de instelling van de door de klant beheerde sleutel in Azure Resource Manager sjabloon.":::
+
+> [!NOTE]
+> Door de versleutelings instelling toe te voegen aan de ARM-sjablonen, voegt u een instelling op fabrieks niveau toe die andere instellingen voor het fabrieks niveau overschrijft, zoals git-configuraties, in andere omgevingen. Als u deze instellingen hebt ingeschakeld in een omgeving met verhoogde bevoegdheden, zoals bedoeld of PROD, raadpleegt u de [algemene para meters in CI/cd](author-global-parameters.md#cicd).
 
 ## <a name="next-steps"></a>Volgende stappen
 

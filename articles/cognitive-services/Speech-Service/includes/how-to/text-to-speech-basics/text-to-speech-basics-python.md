@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/25/2020
 ms.author: trbye
-ms.openlocfilehash: 98f13df2c4da993147ba3ef4157340910fcbc5d0
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 9d6d6ec36d5ab7d29b3050dafda5fd711b01f1f4
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104719642"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107108840"
 ---
 In deze quickstart maakt u kennis met algemene ontwerppatronen voor het uitvoeren van een spraak-naar-tekstsynthese met behulp van de Speech-SDK. Eerst voert u een basisconfiguratie en -synthese uit en gaat u verder met geavanceerdere voorbeelden voor aangepaste toepassingsontwikkeling zoals:
 
@@ -129,9 +129,6 @@ Als u de audio-indeling wilt wijzigen, gebruikt u de functie `set_speech_synthes
 
 Voor verschillende bestandstypen zijn er diverse opties mogelijk, afhankelijk van uw vereisten. Houd er rekening mee dat raw-indelingen als `Raw24Khz16BitMonoPcm` geen audio-headers bevatten. Gebruik raw-indelingen alleen als u weet dat uw stroomafwaartse implementatie een onbewerkte bitstream kan decoderen of als u van plan bent om headers handmatig te bouwen op basis van bitdiepte, samplefrequentie, aantal kanalen, enzovoort.
 
-> [!NOTE]
-> Stemmen voor **en-US-AriaRUS** en **en-US-GuyRUS** worden gemaakt uit voorbeelden die zijn gecodeerd in de samplefrequentie `Riff24Khz16BitMonoPcm`.
-
 In dit voorbeeld geeft u een RIFF-indeling met hoge kwaliteit `Riff24Khz16BitMonoPcm` op door `SpeechSynthesisOutputFormat` in te stellen voor het `SpeechConfig`-object. Net als in het voorbeeld in de vorige sectie, gebruikt u [`AudioDataStream`](/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.audiodatastream) om een stroom in het geheugen van het resultaat te verkrijgen en vervolgens naar een bestand te schrijven.
 
 
@@ -148,15 +145,15 @@ Als u het programma opnieuw uitvoert, wordt een aangepast `.wav`-bestand naar he
 
 ## <a name="use-ssml-to-customize-speech-characteristics"></a>SSML gebruiken om spraakkenmerken aan te passen
 
-Met SSML (Speech Synthesis Markup Language) kunt u de toonhoogte, de uitspraak, de spreeksnelheid, het volume en meer van tekst-naar-spraakuitvoer nauwkeuriger instellen door uw aanvragen vanaf een XML-schema te verzenden. In deze sectie vindt u enkele praktische gebruik voorbeelden, maar voor een meer gedetailleerde handleiding raadpleegt u het [Instructieartikel over SSML](../../../speech-synthesis-markup.md).
+Met SSML (Speech Synthesis Markup Language) kunt u de toonhoogte, de uitspraak, de spreeksnelheid, het volume en meer van tekst-naar-spraakuitvoer nauwkeuriger instellen door uw aanvragen vanaf een XML-schema te verzenden. In deze sectie ziet u een voor beeld van het wijzigen van de spraak, maar voor een meer gedetailleerde hand leiding raadpleegt u het [artikel SSMLe How-to](../../../speech-synthesis-markup.md).
 
 Als u SSML voor aanpassing wilt gaan gebruiken, brengt u een eenvoudige wijziging aan die de stem wisselt.
-Maak eerst een nieuw XML-bestand voor de SSML-configuratie in de hoofdmap van het project, in dit voorbeeld `ssml.xml`. Het hoofdelement is altijd `<speak>`, en wanneer u de tekst in een `<voice>`-element verpakt, kunt u de stem wijzigen met behulp van de parameter `name`. In dit voorbeeld wordt de stem gewijzigd in een Engelse (UK), mannelijke stem. Merk op dat deze stem een **standaardstem** is, waarvoor andere prijzen en beschikbaarheid gelden dan **neurale** stemmen. Zie de [volledige lijst](../../../language-support.md#standard-voices) met ondersteunde **standaardstemmen**.
+Maak eerst een nieuw XML-bestand voor de SSML-configuratie in de hoofdmap van het project, in dit voorbeeld `ssml.xml`. Het hoofdelement is altijd `<speak>`, en wanneer u de tekst in een `<voice>`-element verpakt, kunt u de stem wijzigen met behulp van de parameter `name`. Bekijk de [volledige lijst](../../../language-support.md#neural-voices) met ondersteunde **Neural** stemmen.
 
 ```xml
 <speak version="1.0" xmlns="https://www.w3.org/2001/10/synthesis" xml:lang="en-US">
-  <voice name="en-GB-George-Apollo">
-    When you're on the motorway, it's a good idea to use a sat-nav.
+  <voice name="en-US-AriaNeural">
+    When you're on the freeway, it's a good idea to use a GPS.
   </voice>
 </speak>
 ```
@@ -176,36 +173,8 @@ stream = AudioDataStream(result)
 stream.save_to_wav_file("path/to/write/file.wav")
 ```
 
-De uitvoer werkt, maar er zijn enkele eenvoudige wijzigingen die u kunt aanbrengen om het natuurlijker te laten klinken. De gemiddelde spreeksnelheid is iets te snel, dus we voegen een `<prosody>`-tag toe en verminderen de snelheid tot **90%** van de standaardsnelheid. Bovendien is de pauze na de komma in de zin een beetje te kort en klinkt onnatuurlijk. U kunt dit probleem oplossen door een `<break>`-tag toe te voegen om de spraaksnelheid te vertragen en de tijdparameter in te stellen op **200 ms**. Voer de synthese opnieuw uit om te zien hoe deze aanpassingen van invloed zijn op de uitvoer.
-
-```xml
-<speak version="1.0" xmlns="https://www.w3.org/2001/10/synthesis" xml:lang="en-US">
-  <voice name="en-GB-George-Apollo">
-    <prosody rate="0.9">
-      When you're on the motorway,<break time="200ms"/> it's a good idea to use a sat-nav.
-    </prosody>
-  </voice>
-</speak>
-```
-
-## <a name="neural-voices"></a>Neurale stemmen
-
-Neurale stemmen zijn spraaksynthesealgoritmen die worden aangestuurd door Deep Neural Networks. Als u een neurale stem gebruikt, is de gesynthetiseerde spraak bijna niet van de menselijke opnamen te onderscheiden. Dankzij de menselijke, natuurlijke prosodie en duidelijke articulatie verminderen neurale stemmen de bij het luisteren optredende vermoeidheid wanneer gebruikers met AI-systemen communiceren.
-
-Als u wilt overschakelen naar een neurale stem, wijzigt u de `name` in een van de [opties voor neurale stemmen](../../../language-support.md#neural-voices). Voeg vervolgens een XML-naamruimte voor `mstts` toe en verpak uw tekst in de `<mstts:express-as>`-tag. Gebruik parameter `style` om de spreekstijl aan te passen. In dit voorbeeld wordt `cheerful` gebruikt, maar u kunt deze aanpassen naar `customerservice` of `chat` om het verschil in spreekstijl te horen.
-
-> [!IMPORTANT]
-> Neurale stemmen worden **alleen** ondersteund voor spraakbronnen die zijn gemaakt in de regio's *US - oost*, *Azië - zuidoost* en *Europa - west*.
-
-```xml
-<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="https://www.w3.org/2001/mstts" xml:lang="en-US">
-  <voice name="en-US-AriaNeural">
-    <mstts:express-as style="cheerful">
-      This is awesome!
-    </mstts:express-as>
-  </voice>
-</speak>
-```
+> [!NOTE]
+> Als u de stem wilt wijzigen zonder SSML te gebruiken, kunt u de eigenschap instellen op de met `SpeechConfig` behulp van `SpeechConfig.speech_synthesis_voice_name = "en-US-AriaNeural"`
 
 ## <a name="get-facial-pose-events"></a>Gebeurtenissen voor gezichts pose ophalen
 

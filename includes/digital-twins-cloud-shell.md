@@ -5,12 +5,12 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 7/17/2020
 ms.author: baanders
-ms.openlocfilehash: ab5c71b787876c31aaa70fbbfb04fc86721dd168
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: d4d9efd99a60c93dbfef2d6f45971781d71e83fb
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105958363"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107105053"
 ---
 Om aan de slag te gaan met Azure Digital Twins in een open [Azure Cloud Shell](https://shell.azure.com)-venster, moet u zich eerst aanmelden en de shellcontext voor deze sessie instellen op uw abonnement. Voer de volgende opdrachten uit in uw Cloud Shell:
 
@@ -27,7 +27,7 @@ Als dit de eerste keer is dat u dit abonnement met Azure Digital Twins gebruikt,
 az provider register --namespace 'Microsoft.DigitalTwins'
 ```
 
-Vervolgens voegt u de [**Microsoft Azure IoT-extensie voor Azure CLI**](/cli/azure/ext/azure-iot/iot) aan uw Cloud Shell toe om opdrachten voor interactie met Azure Digital Twins en andere IoT-Services in te schakelen. Voer deze opdracht uit om te controleren of u de meest recente versie van de uitbrei ding hebt:
+Vervolgens voegt u de [**Microsoft Azure IoT-extensie voor Azure CLI**](/cli/azure/service-page/azure%20iot) aan uw Cloud Shell toe om opdrachten voor interactie met Azure Digital Twins en andere IoT-Services in te schakelen. Voer deze opdracht uit om te controleren of u de meest recente versie van de uitbrei ding hebt:
 
 ```azurecli-interactive
 az extension add --upgrade -n azure-iot

@@ -67,6 +67,8 @@
       href: ../../application-gateway/security-baseline.md
     - name: Automation-beveiligingsbasislijn
       href: ../../automation/security-baseline.md
+    - name: Beveiligings basislijn Azure Active Directory
+      href: ../../active-directory/fundamentals/security-baseline.md
     - name: Azure Advisor-beveiligingsbasislijn
       href: ../../advisor/security-baseline.md
     - name: Azure App Configuration-beveiligingsbasislijn

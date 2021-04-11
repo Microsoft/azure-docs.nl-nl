@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 02/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 13f5f8da0bd58cef0974e8ea8f5f3c5172daa0ba
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3ca4464f40c0807e51adffca8e3e68c622314de6
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96928729"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107256885"
 ---
 # <a name="deploy-custom-policies-with-azure-pipelines"></a>Aangepaste beleids regels implementeren met Azure-pijp lijnen
 
@@ -34,7 +34,7 @@ Er zijn drie primaire stappen vereist om Azure-pijp lijnen in te scha kelen voor
 ## <a name="prerequisites"></a>Vereisten
 
 * [Azure AD B2C Tenant](tutorial-create-tenant.md)en referenties voor een gebruiker in de directory met de [B2C IEF Policy](../active-directory/roles/permissions-reference.md#b2c-ief-policy-administrator) beheerdersrol
-* [Aangepast beleid](custom-policy-get-started.md) dat is geüpload naar uw Tenant
+* [Aangepast beleid](tutorial-create-user-flows.md?pivots=b2c-custom-policy) dat is geüpload naar uw Tenant
 * De [beheer-app](microsoft-graph-get-started.md) die is geregistreerd in uw Tenant met het Microsoft Graph API-machtigings *beleid. readwrite. TrustFramework*
 * [Azure-pijp lijn](https://azure.microsoft.com/services/devops/pipelines/)en toegang tot een [Azure DevOps Services-project][devops-create-project]
 

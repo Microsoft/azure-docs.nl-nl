@@ -3,21 +3,21 @@ title: Nieuwe functies in Windows Virtual Desktop - Azure
 description: Nieuwe functies en productupdates voor Windows Virtual Desktop.
 author: Heidilohr
 ms.topic: overview
-ms.date: 03/20/2021
+ms.date: 04/08/2021
 ms.author: helohr
 ms.reviewer: thhickli; darank
-manager: lizross
+manager: femila
 ms.custom: references_regions
-ms.openlocfilehash: acb9b6d9d2080c63243ec4b924d07a927d6ccdfd
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 710f33ada7a64248f0371a3e8c39e085d3f0834c
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104774436"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107054"
 ---
 # <a name="whats-new-in-windows-virtual-desktop"></a>Nieuwe functies in Windows Virtual Desktop
 
-Windows Virtual Desktop wordt regelmatig bijgewerkt. In dit artikel vindt u meer informatie over:
+Virtuele Windows-Bureau bladen worden regel matig bijgewerkt. In dit artikel vindt u meer informatie over:
 
 - De meest recente updates
 - Nieuwe functies
@@ -40,14 +40,64 @@ Bekijk deze artikelen voor meer informatie over updates voor onze clients voor W
 
 De virtuele Windows-bureau blad-agent werkt ten minste één keer per maand.
 
-Dit is what's gewijzigd in Windows Virtual Desktop agent:
+Dit is what's gewijzigd in de virtuele bureau blad-agent van Windows:
 
-- Versie 1.0.2800.2800: deze update is uitgebracht in maart 2021 en heeft een probleem met omgekeerde verbinding opgelost.
-- Versie 1.0.2800.2700: deze update is uitgebracht in februari 2021 en heeft een probleem met het delen van de toegang geweigerd.
+- Versie 1.0.2866.1500: deze update is uitgebracht op 26 maart 2021 en heeft een probleem met de stack status controle opgelost.
+- Versie 1.0.2800.2802: deze update is uitgebracht op 10 maart 2021 en heeft algemene verbeteringen en oplossingen voor oplossingen.
+- Versie 1.0.2800.2800: deze update is uitgebracht op 2 maart 2021 en heeft een probleem met omgekeerde verbindingen opgelost.
+- Versie 1.0.2800.2700: deze update is uitgebracht op 10 februari 2021 en heeft algemene verbeteringen en oplossingen voor oplossingen.
+- Versie 1.0.2800.2700: deze update is uitgebracht op 4 februari 2021 en heeft een probleem met het delen van een geweigerde toegang opgelost.
 
 ## <a name="fslogix-updates"></a>FSLogix updates
 
 Nieuws gierig over de nieuwste updates voor FSLogix? Bekijk [wat er nieuw is op FSLogix](/fslogix/whats-new).
+
+## <a name="march-2021"></a>2021 maart
+
+Dit is gewijzigd in maart 2021.
+
+### <a name="updates-to-the-azure-portal-ui-for-windows-virtual-desktop"></a>Updates voor de Azure Portal-gebruikers interface voor virtueel bureau blad van Windows
+
+De volgende updates voor het virtuele bureau blad van Windows zijn gemaakt voor de Azure Portal:
+
+- We hebben nieuwe beschikbaarheids opties (beschikbaarheidsset en zones) ingeschakeld voor de werk stromen om hostgroepen te maken en Vm's toe te voegen.
+- Er is een probleem opgelost waarbij een host met de status "hulp nodig" als niet beschikbaar is. Er wordt nu een waarschuwings pictogram weer gegeven op de host.
+- Sorteren voor actieve sessies is ingeschakeld.
+- U kunt nu berichten verzenden naar of afmelden bij specifieke gebruikers op het tabblad hostgegevens.
+- Het veld maximale sessie limiet is gewijzigd.
+- Er is een pad voor de validatie van de organisatie-eenheid toegevoegd aan de werk stroom voor het maken van een hostgroep.
+- U kunt nu de nieuwste versie van de Windows 10-installatie kopie gebruiken wanneer u een persoonlijke hostgroep maakt.
+
+### <a name="generation-2-images-and-trusted-launch"></a>Installatie kopieën van de tweede generatie en een vertrouwde start
+
+Azure Marketplace heeft nu twee installatie kopieën voor Windows 10 Enter prise en Windows 10 Enter prise multi-session. Met deze installatie kopieën kunt u gebruikmaken van vertrouwde start-Vm's. Meer informatie over virtuele machines van de tweede generatie in [moet ik een generatie 1 of 2 maken](../virtual-machines/generation-2.md). Zie [onze TechCommunity-post](https://techcommunity.microsoft.com/t5/windows-virtual-desktop/windows-virtual-desktop-support-for-trusted-launch/m-p/2206170)voor meer informatie over het inrichten van Windows virtueel bureau blad-vm's met betrouw bare Lance ring.
+
+### <a name="fslogix-is-now-preinstalled-on-windows-10-enterprise-multi-session-images"></a>FSLogix is nu vooraf geïnstalleerd op installatie kopieën met meerdere sessies van Windows 10 Enter prise
+
+Op basis van feedback van klanten hebben we een nieuwe versie ingesteld van de Windows 10 Enter prise-installatie kopie voor meerdere sessies met een niet-geconfigureerde versie van FSLogix die al is geïnstalleerd. We hopen dat de implementatie van uw virtuele Windows-bureau blad eenvoudiger wordt.
+
+### <a name="azure-monitor-for-windows-virtual-desktop-is-now-in-general-availability"></a>Azure Monitor voor virtueel bureau blad van Windows is nu algemene Beschik baarheid
+
+Azure Monitor voor het virtuele bureau blad van Windows is nu algemeen beschikbaar voor het publiek. Deze functie is een geautomatiseerde service waarmee uw implementaties worden bewaakt en waarmee u de suggesties voor gebeurtenissen, status en probleem oplossing op één plek kunt bekijken. Zie [onze documentatie](azure-monitor.md) of Bekijk [onze TechCommunity-post](https://techcommunity.microsoft.com/t5/windows-virtual-desktop/azure-monitor-for-windows-virtual-desktop-is-generally-available/m-p/2242861)voor meer informatie.
+
+### <a name="march-2021-updates-for-teams-on-windows-virtual-desktop"></a>Updates van maart 2021 voor teams op virtueel bureau blad van Windows
+
+We hebben de volgende updates voor teams op virtueel bureau blad van Windows uitgevoerd:
+
+- We hebben de prestaties van de video kwaliteit verbeterd in de modus aanroepen en 2x2.
+- Het CPU-gebruik van 5-10% is gereduceerd (afhankelijk van de generatie van de CPU) door gebruik te maken van de hardware-offload van video verwerking (XVP).
+- Oudere computers kunnen nu XVP en hardwarematige code ring gebruiken om meer inkomende video stromen soepel in de modus 2x2 te laten weer geven.
+- We hebben de WebRTC-stack bijgewerkt van M74 naar M88 voor betere AV-synchronisatie prestaties en minder tijdelijke problemen.
+- We hebben onze software H264 encoder vervangen door OpenH264 (OSS gebruikt in teams op Internet), waardoor de video kwaliteit van de uitgaande camera is verhoogd.
+- We hebben de modus 2x2 ingeschakeld voor teams server voor het grote publiek op 30 maart. de modus 2x2 bevat Maxi maal vier inkomende video stromen tegelijk.
+
+### <a name="start-vm-on-connect-public-preview"></a>VM starten bij het maken van een open bare preview
+
+De nieuwe instelling voor de hostgroep, start VM on Connect, is nu beschikbaar als open bare preview. Met deze instelling kunt u uw Vm's inschakelen wanneer u ze nodig hebt. Als u kosten wilt besparen, moet u de toewijzing van uw Vm's ongedaan maken door uw Azure Compute-instellingen te configureren. Bekijk [onze blog post](https://aka.ms/wvdstartvmonconnect) en [onze documentatie](start-virtual-machine-connect.md)voor meer informatie.
+
+### <a name="windows-virtual-desktop-specialty-certification"></a>Gespecialiseerde Windows-certificering voor Virtual Desktop
+
+We hebben een bèta versie van de AZ-140-examen uitgebracht waarmee u uw expertise kunt bewijzen in het virtuele bureau blad van Windows in Azure. Bekijk [onze TechCommunity-post](https://techcommunity.microsoft.com/t5/microsoft-learn-blog/beta-exam-prove-your-expertise-in-windows-virtual-desktop-on/ba-p/2147107)voor meer informatie.
 
 ## <a name="february-2021"></a>Februari 2021
 

@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/17/2020
+ms.date: 04/02/2021
 ms.author: jeedes
-ms.openlocfilehash: 8435cab1855e9df871d17ff7fa393b6ab2cf0cb1
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5f07e9dbd574d8a27e6048154c72b9afc24b6ba4
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98736336"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106286105"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-netskope-administrator-console"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met Netskope Administrator Console
 
@@ -37,13 +37,12 @@ U hebt het volgende nodig om aan de slag te gaan:
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* Netskope Administrator Console biedt ondersteuning voor door **SP en IDP** geïnitieerde eenmalige aanmelding
+* De Netskope-beheer console ondersteunt door **SP en IDP** geïnitieerde SSO.
 
 > [!NOTE]
 > De id van deze toepassing is een vaste tekenreekswaarde zodat maar één exemplaar in één tenant kan worden geconfigureerd.
 
-
-## <a name="adding-netskope-administrator-console-from-the-gallery"></a>Netskope Administrator Console toevoegen vanuit de galerie
+## <a name="add-netskope-administrator-console-from-the-gallery"></a>Netskope Administrator-console toevoegen vanuit de galerie
 
 Voor het configureren van de integratie van Netskope Administrator Console in Azure AD moet u Netskope Administrator Console vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
@@ -142,19 +141,19 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 1. Klik in het linkernavigatievenster op het tabblad **Settings**.
 
-    ![Schermopname met Settings (Instellingen) geselecteerd in het navigatievenster.](./media/netskope-cloud-security-tutorial/config-settings.png)
+    ![Schermopname met Settings (Instellingen) geselecteerd in het navigatievenster.](./media/netskope-cloud-security-tutorial/configure-settings.png)
 
 1. Klik op het tabblad **Administration**.
 
-    ![Schermopname met Administration (Beheer) geselecteerd vanuit Settings (Instellingen).](./media/netskope-cloud-security-tutorial/config-administration.png)
+    ![Schermopname met Administration (Beheer) geselecteerd vanuit Settings (Instellingen).](./media/netskope-cloud-security-tutorial/administration.png)
 
 1. Klik op het tabblad **SSO**.
 
-    ![Schermopname met SSO (Eenmalige aanmelding) geselecteerd in Administration (Beheer).](./media/netskope-cloud-security-tutorial/config-sso.png)
+    ![Schermopname met SSO (Eenmalige aanmelding) geselecteerd in Administration (Beheer).](./media/netskope-cloud-security-tutorial/tab.png)
 
 1. Voer in de sectie **Network Settings** de volgende stappen uit:
     
-    ![Schermopname van Network Settings (Netwerkinstellingen), waarin u de beschreven waarden kunt invoeren.](./media/netskope-cloud-security-tutorial/config-pasteurls.png)
+    ![Schermopname van Network Settings (Netwerkinstellingen), waarin u de beschreven waarden kunt invoeren.](./media/netskope-cloud-security-tutorial/network.png)
 
     a. Kopieer de waarde van **Assertion Consumer Service URL** en plak deze in het tekstvak **Antwoord-URL** in de sectie **Standaard SAML-configuratie** in Azure Portal.
 
@@ -162,7 +161,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 1. Klik op **EDIT SETTINGS** onder de sectie **SSO/SLO Settings**.
 
-    ![Schermopname van SSO/SLO Settings waar u EDIT SETTINGS kunt selecteren.](./media/netskope-cloud-security-tutorial/config-editsettings.png)
+    ![Schermopname van SSO/SLO Settings waar u EDIT SETTINGS kunt selecteren.](./media/netskope-cloud-security-tutorial/settings.png)
 
 1. Voer in het pop-upvenster **Settings** de volgende stappen uit:
 
@@ -188,11 +187,11 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 1. Klik in het linkernavigatievenster op het tabblad **Settings**.
 
-    ![Schermopname met Settings geselecteerd.](./media/netskope-cloud-security-tutorial/config-settings.png)
+    ![Schermopname met Settings geselecteerd.](./media/netskope-cloud-security-tutorial/configure-settings.png)
 
 1. Klik op het tabblad **Active Platform**.
 
-    ![Schermopname met de optie Actief platform geselecteerd in Instellingen.](./media/netskope-cloud-security-tutorial/user1.png)
+    ![Schermopname met de optie Actief platform geselecteerd in Instellingen.](./media/netskope-cloud-security-tutorial/user-1.png)
 
 1. Klik op het tabblad **Users**.
 

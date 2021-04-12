@@ -7,10 +7,10 @@ ms.custom: hdinsightactive,hdiseo17may2017,seodec18
 ms.topic: how-to
 ms.date: 04/14/2020
 ms.openlocfilehash: c6969c3108fb1465a705d8e61b3a7bdf2083736a
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104865652"
 ---
 # <a name="use-data-lake-tools-for-visual-studio-to-connect-to-azure-hdinsight-and-run-apache-hive-queries"></a>Data Lake-Hulpprogram Ma's voor Visual Studio gebruiken om verbinding te maken met Azure HDInsight en Apache Hive query's uit te voeren

@@ -4,10 +4,10 @@ description: In deze quickstart gebruikt u de Azure-portal om een beheergroep te
 ms.date: 02/05/2021
 ms.topic: quickstart
 ms.openlocfilehash: 2fa9b667079104fe9728ab41ecd87685c35de1b7
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105024683"
 ---
 # <a name="quickstart-create-a-management-group"></a>Quickstart: Een beheergroep maken

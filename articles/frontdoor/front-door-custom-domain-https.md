@@ -10,28 +10,28 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 10/21/2020
+ms.date: 03/26/2021
 ms.author: duau
-ms.openlocfilehash: 6c6d33a36c4a0b71932e8c19c8f6dd105c33817c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: d2c8d4179dbaa44929031ce7e14b597b145ed72a
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101740780"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106067602"
 ---
 # <a name="tutorial-configure-https-on-a-front-door-custom-domain"></a>Zelfstudie: HTTPS configureren in een aangepast Front Door-domein
 
-In deze zelfstudie ziet u hoe u het HTTPS-protocol inschakelt voor een aangepast domein dat onder de sectie Front-endhosts is gekoppeld aan Front Door. Door het HTTPS-protocol te gebruiken in uw aangepaste domein, (bijvoorbeeld https:\//www.contoso.com) zorgt u ervoor dat uw gevoelige gegevens veilig worden afgeleverd via TLS/SSL-versleuteling wanneer deze via internet worden verzonden. Wanneer uw webbrowser is verbonden met een website via HTTPS, wordt het beveiligingscertificaat van de website gevalideerd en wordt er gecontroleerd of het certificaat is uitgegeven door een legitieme certificeringsinstantie. Via dit proces zijn uw webtoepassingen beveiligd tegen aanvallen.
+In deze zelfstudie ziet u hoe u het HTTPS-protocol inschakelt voor een aangepast domein dat onder de sectie Front-endhosts is gekoppeld aan Front Door. Door gebruik te maken van het HTTPS-protocol in uw aangepaste domein (bijvoorbeeld https: \/ /www.contoso.com), zorgt u ervoor dat uw gevoelige gegevens veilig worden afgeleverd via TLS/SSL-versleuteling wanneer ze via internet worden verzonden. Wanneer uw webbrowser is verbonden met een website via HTTPS, wordt het beveiligingscertificaat van de website gevalideerd en wordt er gecontroleerd of het certificaat is uitgegeven door een legitieme certificeringsinstantie. Via dit proces zijn uw webtoepassingen beveiligd tegen aanvallen.
 
-Azure Front Door ondersteunt HTTPS voor een standaardhostnaam van Front Door, zonder dat er aanpassingen nodig zijn. Als u bijvoorbeeld een Front Door maakt (zoals https:`https://contoso.azurefd.net`), wordt HTTPS automatisch ingeschakeld voor aanvragen naar `https://contoso.azurefd.net`. Als u echter later het aangepaste domein 'www.contoso.com' toevoegt, moet u HTTPS ook inschakelen voor deze front-endhost.   
+Azure Front Door ondersteunt HTTPS voor een standaardhostnaam van Front Door, zonder dat er aanpassingen nodig zijn. Als u bijvoorbeeld een Front Door maakt (zoals https:`https://contoso.azurefd.net`), wordt HTTPS automatisch ingeschakeld voor aanvragen naar `https://contoso.azurefd.net`. Als u echter het aangepaste domein ' www.contoso.com ' vrijmaakt, moet u ook HTTPS inschakelen voor deze frontend-host.   
 
 Enkele belangrijke kenmerken van de aangepaste HTTPS-functie zijn:
 
-- Geen extra kosten: er worden geen kosten in rekening gebracht voor het verwerven of vernieuwen van certificaten, of voor HTTPS-verkeer. 
+- Geen extra kosten: er zijn geen kosten voor het ophalen of vernieuwen van certificaten en geen extra kosten voor HTTPS-verkeer. 
 
 - Eenvoudig inschakelen: inrichten met één klik is beschikbaar in [Azure Portal](https://portal.azure.com). U kunt ook REST API of andere hulpprogramma’s voor ontwikkelaars gebruiken om de functie in te schakelen.
 
-- Volledig certificaatbeheer is beschikbaar: alle aanschaf en beheer van certificaten wordt voor u afgehandeld. Certificaten worden automatisch ingericht en vernieuwd vóór de verloopdatum. Hierdoor loopt u niet het risico dat de service wordt onderbroken omdat een certificaat is verlopen.
+- Volledig certificaatbeheer is beschikbaar: alle aanschaf en beheer van certificaten wordt voor u afgehandeld. Certificaten worden automatisch ingericht en verlengd vóór de verval datum, waardoor de Risico's van service onderbreking worden verwijderd vanwege een verlopen certificaat.
 
 In deze zelfstudie leert u het volgende:
 > [!div class="checklist"]
@@ -63,19 +63,20 @@ Volg deze stappen om HTTPS in te schakelen in een aangepast domein:
 
 2. Selecteer in de lijst met front-endhosts de host met het aangepaste domein waarvoor u HTTPS wilt inschakelen.
 
-3. Klik onder de sectie **HTTPS voor aangepast domein** op **Ingeschakeld** en selecteer **Front Door beheerd** als de certificaatbron.
+3. Onder de para graaf HTTPS van het **domein** selecteert u **ingeschakeld** en selecteert u de **voor deur** die wordt beheerd als de bron van het certificaat.
 
-4. Klik op Opslaan.
+4. Selecteer Opslaan.
 
-5. Ga door naar [Domein valideren](#validate-the-domain).
+5. Ga door met [het valideren van het domein](#validate-the-domain).
 
 > [!NOTE]
 > Voor door AFD beheerde certificaten geldt de limiet van 64 tekens van DigiCert. De validatie mislukt als deze limiet wordt overschreden.
 
+! ERAAN Het inschakelen van HTTPS via een door de voor deur beheerd certificaat wordt niet ondersteund voor de Apex/root-domeinen (bijvoorbeeld: contoso.com). U kunt uw eigen certificaat gebruiken voor dit scenario.  Ga door met de optie 2 voor meer informatie.
 
 ### <a name="option-2-use-your-own-certificate"></a>Optie 2: gebruik uw eigen certificaat
 
-U kunt uw eigen certificaat gebruiken voor het inschakelen van de HTTPS-functie. Dit proces verloopt via een integratie met Azure Key Vault, waarmee u uw certificaten veilig kunt opslaan. Azure Front Door maakt gebruik van dit beveiligde mechanisme om uw certificaat op te vragen en er zijn maar een paar extra stappen voor nodig. Wanneer u uw TLS/SSL-certificaat maakt, moet u dat doen met een toegestane certificeringsinstantie (CA). Als u een niet-toegestane CA gebruikt, wordt uw aanvraag geweigerd. Zie [Toegestane certificeringsinstanties voor het inschakelen van aangepaste HTTPS in Azure Front Door](front-door-troubleshoot-allowed-ca.md) voor een lijst met toegestane certificeringsinstanties.
+U kunt uw eigen certificaat gebruiken voor het inschakelen van de HTTPS-functie. Dit proces verloopt via een integratie met Azure Key Vault, waarmee u uw certificaten veilig kunt opslaan. Azure front deur gebruikt dit beveiligde mechanisme om uw certificaat op te halen en er zijn een paar extra stappen vereist. Wanneer u uw TLS/SSL-certificaat maakt, moet u dat doen met een toegestane certificeringsinstantie (CA). Als u een niet-toegestane CA gebruikt, wordt uw aanvraag geweigerd. Zie [Toegestane certificeringsinstanties voor het inschakelen van aangepaste HTTPS in Azure Front Door](front-door-troubleshoot-allowed-ca.md) voor een lijst met toegestane certificeringsinstanties.
 
 #### <a name="prepare-your-azure-key-vault-account-and-certificate"></a>Voorbereiden van uw Azure Key Vault-account en -certificaat
  
@@ -128,30 +129,27 @@ Geef Azure Front Door toegang tot de certificaten in uw Azure Key Vault-account.
 
 3. Kies onder Certificaatbeheertype **Mijn eigen certificaat gebruiken**. 
 
-4. Azure Front Door vereist dat het abonnement van het Key Vault-account hetzelfde is als dat van uw Front Door. Selecteer een sleutelkluis, certificaat (geheim) en certificaatversie.
+4. Azure Front Door vereist dat het abonnement van het Key Vault-account hetzelfde is als dat van uw Front Door. Selecteer een sleutel kluis, geheim en geheime versie.
 
     Azure Front Door geeft de volgende gegevens weer: 
     - De sleutelkluis-accounts voor uw abonnement-ID. 
-    - De certificaten (geheimen) onder de geselecteerde sleutelkluis. 
-    - De beschikbare certificaatversies. 
+    - De geheimen onder de geselecteerde sleutel kluis. 
+    - De beschik bare geheime versies.
 
-> [!NOTE]
-> Als u de certificaatversie leeg laat, zou dit ertoe leiden dat:
-> - De meest recente versie van het certificaat wordt geselecteerd.
-> - Certificaten automatisch worden geroteerd naar de nieuwste versie wanneer er een nieuwere versie van het certificaat beschikbaar is in uw Key Vault.
+    > [!NOTE]
+    >  Als u het certificaat automatisch naar de nieuwste versie wilt draaien als er een nieuwere versie van het certificaat beschikbaar is in uw Key Vault, stelt u de geheime versie in op meest recente. Als er een specifieke versie is geselecteerd, moet u de nieuwe versie hand matig opnieuw selecteren voor het draaien van certificaten. Het duurt Maxi maal 24 uur voordat de nieuwe versie van het certificaat/geheim wordt geïmplementeerd. 
  
-5. Wanneer u uw eigen certificaat gebruikt, is domeinvalidatie niet nodig. Ga verder met [Wachten op doorgifte](#wait-for-propagation).
+5. Wanneer u uw eigen certificaat gebruikt, is domein validatie niet vereist. Blijf [wachten op doorgifte](#wait-for-propagation).
 
 ## <a name="validate-the-domain"></a>Het domein valideren
 
-Als u al een aangepast domein gebruikt dat is toegewezen aan uw aangepaste eindpunt met een CNAME-record of als u een eigen certificaat gebruikt, gaat u verder met  
-[Het aangepaste domein wordt aan uw Front Door](#custom-domain-is-mapped-to-your-front-door-by-a-cname-record). Als de CNAME-record voor uw domein echter niet meer bestaat of als de record het subdomein afdverify bevat, gaat u verder met [Er is geen aangepast domein toegewezen aan uw Front Door met een CNAME-record](#custom-domain-is-not-mapped-to-your-front-door).
+Als u al een aangepast domein gebruikt dat wordt toegewezen aan uw aangepaste eind punt met een CNAME-record of als u uw eigen certificaat gebruikt, gaat u door naar [aangepast domein is toegewezen aan de voor deur](#custom-domain-is-mapped-to-your-front-door-by-a-cname-record). Als het item met de CNAME-record voor uw domein niet meer bestaat of het subdomein afdverify bevat, gaat u naar [aangepast domein is niet toegewezen aan de voor deur](#custom-domain-is-not-mapped-to-your-front-door).
 
 ### <a name="custom-domain-is-mapped-to-your-front-door-by-a-cname-record"></a>Er is geen aangepast domein toegewezen aan uw Front Door met een CNAME-record
 
-Toen u een aangepast domein toevoegde aan de front-endhosts van uw Front Door, hebt u een CNAME-record gemaakt in de DNS-tabel van uw domeinregistrar om het domein toe te wijzen aan de standaardhostnaam .azurefd.net van uw Front Door. Als deze CNAME-records nog steeds bestaat en niet het subdomein afdverify bevat, wordt het door de DigiCert-certificeringsinstantie gebruikt om automatisch het eigendom van uw aangepaste domein te valideren. 
+Toen u een aangepast domein toevoegde aan de front-endhosts van uw Front Door, hebt u een CNAME-record gemaakt in de DNS-tabel van uw domeinregistrar om het domein toe te wijzen aan de standaardhostnaam .azurefd.net van uw Front Door. Als de CNAME-record nog bestaat en niet het subdomein afdverify bevat, gebruikt de DigiCert-certificerings instantie deze om automatisch het eigendom van uw aangepaste domein te valideren. 
 
-Als u uw eigen certificaat gebruikt, is domeinvalidatie niet nodig.
+Als u uw eigen certificaat gebruikt, is domein validatie niet vereist.
 
 Uw CNAME-record moet de volgende indeling hebben, waarbij *Naam* de naam van het aangepaste domein is en *Waarde* de standaardhostnaam .azurefd.net van uw Front Door:
 
@@ -161,7 +159,7 @@ Uw CNAME-record moet de volgende indeling hebben, waarbij *Naam* de naam van het
 
 Zie [Create the CNAME DNS record](../cdn/cdn-map-content-to-custom-domain.md) (De CNAME DNS-record maken) voor meer informatie over CNAME-records.
 
-Als de CNAME-record de juiste indeling heeft, wordt de naam van het aangepaste domein automatisch geverifieerd met DigiCert en wordt er een toegewezen certificaat voor uw domeinnaam gemaakt. U ontvangt via DigiCert geen verificatie-e-mail en u hoeft uw aanvraag niet goed te keuren. Het certificaat is één jaar geldig en wordt, vóórdat het verloopt, automatisch vernieuwd. Ga verder met [Wachten op doorgifte](#wait-for-propagation). 
+Als de CNAME-record de juiste indeling heeft, wordt de naam van het aangepaste domein automatisch geverifieerd met DigiCert en wordt er een toegewezen certificaat voor uw domeinnaam gemaakt. U ontvangt via DigiCert geen verificatie-e-mail en u hoeft uw aanvraag niet goed te keuren. Het certificaat is één jaar geldig en wordt, vóórdat het verloopt, automatisch vernieuwd. Blijf [wachten op doorgifte](#wait-for-propagation). 
 
 Automatische validatie duurt meestal een paar minuten. Als het domein na een uur nog niet is gevalideerd, opent u een ondersteuningsticket.
 
@@ -172,11 +170,11 @@ Automatische validatie duurt meestal een paar minuten. Als het domein na een uur
 
 Als de CNAME-record voor uw eindpunt niet meer bestaat of als deze het subdomein afdverify bevat, volgt u de rest van de instructies in deze stap.
 
-Nadat u HTTPS hebt ingeschakeld voor uw aangepaste domein, wordt met de DigiCert-CA het eigendom van het domein gevalideerd door contact op te nemen met de bijbehorende registrator, op basis van de [WHOIS](http://whois.domaintools.com/)-registratiegegevens van het domein. Contact verloopt via het e-mailadres (standaard) of het telefoonnummer dat staat vermeld in de WHOIS-registratie. U moet de domeinvalidatie voltooien voordat HTTPS actief is voor uw aangepaste domein. U hebt zes werkdagen de tijd om het domein goed te keuren. Aanvragen die niet binnen zes werkdagen zijn goedgekeurd, worden automatisch geannuleerd. 
+Nadat u HTTPS hebt ingeschakeld voor uw aangepaste domein, wordt met de DigiCert-CA het eigendom van het domein gevalideerd door contact op te nemen met de bijbehorende registrator, op basis van de [WHOIS](http://whois.domaintools.com/)-registratiegegevens van het domein. Contact verloopt via het e-mailadres (standaard) of het telefoonnummer dat staat vermeld in de WHOIS-registratie. U moet de domeinvalidatie voltooien voordat HTTPS actief is voor uw aangepaste domein. U hebt zes werkdagen de tijd om het domein goed te keuren. Aanvragen die niet binnen zes werk dagen zijn goedgekeurd, worden automatisch geannuleerd. 
 
 ![WHOIS-record](./media/front-door-custom-domain-https/whois-record.png)
 
-Via DigiCert wordt ook een verificatie-e-mail verzonden naar extra e-mailadressen. Als de WHOIS-registratiegegevens privé zijn, verifieert u dat u direct kunt goedkeuren vanaf een van de volgende adressen:
+DigiCert stuurt ook een verificatie-e-mail naar andere e-mail adressen. Als de WHOIS-registratiegegevens privé zijn, verifieert u dat u direct kunt goedkeuren vanaf een van de volgende adressen:
 
 admin@&lt;uw-domeinnaam.com&gt;  
 administrator@&lt;uw-domeinnaam.com&gt;  
@@ -184,13 +182,13 @@ webmaster@&lt;uw-domeinnaam.com&gt;
 hostmaster@&lt;uw-domeinnaam.com&gt;  
 postmaster@&lt;uw-domeinnaam.com&gt;  
 
-U ontvangt binnen enkele minuten een e-mailbericht, vergelijkbaar met het bericht in het volgende voorbeeld, waarin u wordt gevraagd om de aanvraag goed te keuren. Als u een spamfilter gebruikt, voegt u admin@digicert.com toe aan de lijst met toegestane e-mailadressen. Als u na 24 uur nog geen e-mailbericht hebt ontvangen, neemt u contact op met Microsoft Ondersteuning.
+U ontvangt binnen enkele minuten een e-mailbericht, vergelijkbaar met het bericht in het volgende voorbeeld, waarin u wordt gevraagd om de aanvraag goed te keuren. Als u een spam filter gebruikt, voegt u toe admin@digicert.com aan de allowlist. Als u na 24 uur nog geen e-mailbericht hebt ontvangen, neemt u contact op met Microsoft Ondersteuning.
 
-Als u op de goedkeuringskoppeling klikt, wordt u naar een onlinegoedkeuringsformulier geleid. Volg de instructies op het formulier. U hebt twee verificatieopties:
+Wanneer u de goedkeurings koppeling selecteert, wordt u omgeleid naar een online goedkeurings formulier. Volg de instructies op het formulier. U hebt twee verificatieopties:
 
-- U kunt alle toekomstige bestellingen goedkeuren die met hetzelfde account zijn geplaatst voor hetzelfde hoofddomein, bijvoorbeeld contoso.com. Deze methode wordt aangeraden als u van plan bent om extra aangepaste domeinen toe te voegen voor hetzelfde hoofddomein.
+- U kunt alle toekomstige bestellingen goedkeuren die met hetzelfde account zijn geplaatst voor hetzelfde hoofddomein, bijvoorbeeld contoso.com. Deze methode wordt aanbevolen als u van plan bent om meer aangepaste domeinen voor hetzelfde hoofd domein toe te voegen.
 
-- U kunt alleen de specifieke hostnaam goedkeuren die wordt gebruikt in deze aanvraag. Voor volgende aanvragen is extra goedkeuring is vereist.
+- U kunt alleen de specifieke hostnaam goedkeuren die wordt gebruikt in deze aanvraag. Voor volgende aanvragen is extra goed keuring vereist.
 
 Na goedkeuring wordt het certificaat voor de naam van het aangepaste domein met DigiCert voltooid. Het certificaat is één jaar geldig en wordt, vóórdat het verloopt, automatisch vernieuwd.
 
@@ -200,14 +198,14 @@ Nadat de domeinnaam is gevalideerd, duurt het maximaal 6 tot 8 uur voordat de HT
 
 ### <a name="operation-progress"></a>Bewerkingsvoortgang
 
-In de volgende tabel wordt de bewerkingsvoortgang weergegeven die plaatsvindt nadat u HTTPS hebt ingeschakeld. Als u HTTPS hebt ingeschakeld, worden vier bewerkingsstappen weergegeven in het dialoogvenster Aangepast domein. Telkens als een van deze stappen actief wordt, verschijnen, tijdens de uitvoering, extra substappen onder de stap. Niet al deze substappen worden uitgevoerd. Nadat een stap is voltooid, wordt naast deze stap een groen vinkje weergegeven. 
+In de volgende tabel wordt de bewerkingsvoortgang weergegeven die plaatsvindt nadat u HTTPS hebt ingeschakeld. Als u HTTPS hebt ingeschakeld, worden vier bewerkingsstappen weergegeven in het dialoogvenster Aangepast domein. Wanneer elke stap actief wordt, worden er meer details van substap weer gegeven onder de stap terwijl deze wordt uitgevoerd. Niet al deze substappen worden uitgevoerd. Nadat een stap is voltooid, wordt naast deze stap een groen vinkje weergegeven. 
 
 | Bewerkingsstap | Details van bewerkingssubstap | 
 | --- | --- |
 | 1 Aanvraag verzenden | Aanvraag verzenden |
 | | De HTTPS-aanvraag wordt verzonden. |
 | | De HTTPS-aanvraag is verzonden. |
-| 2 Domeinvalidatie | Het domein wordt automatisch gevalideerd als de CNAME-record is toegewezen aan de standaardfront-endhost van uw Front Door. In alle andere gevallen wordt er een verificatieaanvraag verzonden naar het e-mailadres dat wordt vermeld in de registratierecord (WHOIS-registrator) van uw domein. Verifieer het domein zo snel mogelijk. |
+| 2 Domeinvalidatie | Het domein wordt automatisch gevalideerd als de CNAME is toegewezen aan de default. azurefd.net frontend-host van uw voor deur. In alle andere gevallen wordt er een verificatieaanvraag verzonden naar het e-mailadres dat wordt vermeld in de registratierecord (WHOIS-registrator) van uw domein. Verifieer het domein zo snel mogelijk. |
 | | Uw domeineigendom is gevalideerd. |
 | | Validatieaanvraag voor eigendom van het domein is verlopen (de klant heeft waarschijnlijk niet binnen zes dagen gereageerd). HTTPS wordt niet ingeschakeld voor uw domein. * |
 | | Validatieaanvraag voor eigendom van het domein is geweigerd door de klant. HTTPS wordt niet ingeschakeld voor uw domein. * |
@@ -236,7 +234,7 @@ We encountered an unexpected error while processing your HTTPS request. Please t
 
 3. *Wat moet ik doen als ik geen verificatie-e-mail voor het domein heb ontvangen van DigiCert?*
 
-    Als u beschikt over een CNAME-vermelding voor uw aangepaste domein die rechtstreeks verwijst naar de hostnaam van uw eindpunt (en u niet de subdomeinnaam afdverify gebruikt), ontvangt u een dergelijke verificatie-e-mail niet. Validatie wordt dan automatisch uitgevoerd. In andere gevallen waarbij u geen CNAME-vermelding hebt en binnen 24 uur geen e-mail hebt ontvangen, neemt u contact op met Microsoft Ondersteuning.
+    Als u een CNAME-vermelding voor uw aangepaste domein hebt dat rechtstreeks naar de hostnaam van het eind punt wijst (en u niet de afdverify-subdomeinnaam gebruikt), ontvangt u geen e-mail verificatie van domein. Validatie wordt dan automatisch uitgevoerd. In andere gevallen waarbij u geen CNAME-vermelding hebt en binnen 24 uur geen e-mail hebt ontvangen, neemt u contact op met Microsoft Ondersteuning.
 
 4. *Is het gebruik van een SAN-certificaat minder veilig dan wanneer ik een toegewezen certificaat gebruik?*
     
@@ -244,27 +242,27 @@ We encountered an unexpected error while processing your HTTPS request. Please t
 
 5. *Heb ik een CAA-record nodig bij mijn DNS-provider?*
 
-    Nee, een CAA-record is momenteel niet vereist. Als u er echter wel een hebt, moet deze DigiCert bevatten als een geldige CA.
+    Nee, er is op dit moment geen autorisatie record voor de certificerings instantie vereist. Als u er echter wel een hebt, moet deze DigiCert bevatten als een geldige CA.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-In de voorgaande stappen hebt u het HTTPS-protocol in uw aangepaste domein ingeschakeld. Als u het aangepaste domein niet meer wilt gebruiken met HTTPS, kunt u HTTPS uitschakelen door de volgende stappen uit te voeren:
+In de voorgaande stappen hebt u het HTTPS-protocol in uw aangepaste domein ingeschakeld. Als u uw aangepaste domein niet meer wilt gebruiken met HTTPS, kunt u HTTPS uitschakelen door de volgende stappen uit te voeren:
 
 ### <a name="disable-the-https-feature"></a>De HTTPS-functie uitschakelen 
 
 1. Blader in [Azure Portal](https://portal.azure.com) naar de configuratie van **Azure Front Door**.
 
-2. Klik in de lijst met front-endhosts op het aangepaste domein waarvoor u HTTPS wilt uitschakelen.
+2. Selecteer in de lijst met frontend-hosts het aangepaste domein waarvoor u HTTPS wilt uitschakelen.
 
 3. Klik op **Uitgeschakeld** om HTTPS uit te schakelen. Klik vervolgens op **Opslaan**.
 
 ### <a name="wait-for-propagation"></a>Wachten op doorgifte
 
-Nadat de HTTPS-functie voor aangepaste domeinen is uitgeschakeld, duurt het maximaal 6 tot 8 uur voordat dit is doorgevoerd. Wanneer het proces is voltooid, is de aangepaste HTTPS-status in Azure Portal ingesteld op **Uitgeschakeld** en zijn de drie bewerkingsstappen in het dialoogvenster Aangepast domein gemarkeerd als Voltooid. Het aangepaste domein kan niet meer gebruikmaken van HTTPS.
+Nadat de HTTPS-functie voor aangepaste domeinen is uitgeschakeld, duurt het maximaal 6 tot 8 uur voordat dit is doorgevoerd. Wanneer het proces is voltooid, wordt de aangepaste HTTPS-status in de Azure Portal ingesteld op **uitgeschakeld** en worden de drie bewerkings stappen in het dialoog venster aangepast domein gemarkeerd als voltooid. Het aangepaste domein kan niet meer gebruikmaken van HTTPS.
 
 #### <a name="operation-progress"></a>Bewerkingsvoortgang
 
-In de volgende tabel wordt de bewerkingsvoortgang weergegeven die plaatsvindt nadat u HTTPS hebt uitgeschakeld. Als u HTTPS hebt uitgeschakeld, worden drie bewerkingsstappen weergegeven in het dialoogvenster Aangepast domein. Telkens als een van deze stappen actief wordt, verschijnen extra gegevens onder de stap. Nadat een stap is voltooid, wordt naast deze stap een groen vinkje weergegeven. 
+In de volgende tabel wordt de bewerkingsvoortgang weergegeven die plaatsvindt nadat u HTTPS hebt uitgeschakeld. Als u HTTPS hebt uitgeschakeld, worden drie bewerkingsstappen weergegeven in het dialoogvenster Aangepast domein. Wanneer elke stap actief wordt, worden er meer details weer gegeven onder de stap. Nadat een stap is voltooid, wordt naast deze stap een groen vinkje weergegeven. 
 
 | Bewerkingsvoortgang | Bewerkingsdetails | 
 | --- | --- |
@@ -278,9 +276,9 @@ In deze zelfstudie heeft u het volgende geleerd:
 
 * Een certificaat uploaden naar Key Vault.
 * Een domein valideren.
-* HTTPS inschakelen voor uw aangepaste domein.
+* Schakel HTTPS in voor uw aangepaste domein.
 
-Ga door met de volgende zelfstudie om te leren hoe u een geofilteringsbeleid kunt instellen voor uw Front Door.
+Ga verder met de volgende zelf studie voor meer informatie over het instellen van een beleid voor geografische filtering voor uw voor deur.
 
 > [!div class="nextstepaction"]
 > [Een geofilteringsbeleid instellen](front-door-geo-filtering.md)

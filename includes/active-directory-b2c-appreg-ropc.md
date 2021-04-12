@@ -5,12 +5,12 @@ ms.subservice: B2C
 ms.topic: include
 ms.date: 10/16/2019
 ms.author: mimart
-ms.openlocfilehash: f8d8ffe8c1802a5cf67b7dc2b0fb071b572d76e8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 38261556579fb5db86fb231b0edf3412eed51d35
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "95994351"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106073573"
 ---
 Als u een toepassing wilt registreren in de Azure AD B2C-tenant, kunt u de nieuwe uniforme ervaring voor **App-registraties** of de verouderde ervaring **Toepassingen (verouderd)** gebruiken. [Meer informatie over de nieuwe ervaring](../articles/active-directory-b2c/app-registrations-training-guide.md).
 

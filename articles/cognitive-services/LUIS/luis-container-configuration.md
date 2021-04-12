@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
 ms.openlocfilehash: a4f2b07edc6c290fa030621a4dc400ab50890bba
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "96001150"
 ---
 # <a name="configure-language-understanding-docker-containers"></a>Language Understanding docker-containers configureren 
@@ -28,14 +28,14 @@ Deze container bevat de volgende configuratie-instellingen:
 
 |Vereist|Instelling|Doel|
 |--|--|--|
-|Ja|[ApiKey](#apikey-setting)|Wordt gebruikt om facturerings gegevens bij te houden.|
-|Nee|[ApplicationInsights](#applicationinsights-setting)|Hiermee kunt u ondersteuning voor [Azure-toepassing Insights](/azure/application-insights) -telemetrie toevoegen aan uw container.|
-|Ja|[Facturering](#billing-setting)|Hiermee geeft u de eindpunt-URI op van de service resource op Azure.|
-|Ja|[Houdt](#eula-setting)| Geeft aan dat u de licentie voor de container hebt geaccepteerd.|
-|Nee|[Fluentd](#fluentd-settings)|Schrijf logboek en, eventueel, metrische gegevens naar een vloeiende server.|
-|Nee|[Http-proxy](#http-proxy-credentials-settings)|Een HTTP-proxy configureren voor het maken van uitgaande aanvragen.|
-|Nee|[Logboekregistratie](#logging-settings)|Biedt ASP.NET Core ondersteuning voor logboek registratie voor uw container. |
-|Ja|[Koppelt](#mount-settings)|Gegevens lezen en schrijven van de hostcomputer naar de container en van de container terug naar de hostcomputer.|
+|Yes|[ApiKey](#apikey-setting)|Wordt gebruikt om facturerings gegevens bij te houden.|
+|No|[ApplicationInsights](#applicationinsights-setting)|Hiermee kunt u ondersteuning voor [Azure-toepassing Insights](/azure/application-insights) -telemetrie toevoegen aan uw container.|
+|Yes|[Facturering](#billing-setting)|Hiermee geeft u de eindpunt-URI op van de service resource op Azure.|
+|Yes|[Houdt](#eula-setting)| Geeft aan dat u de licentie voor de container hebt geaccepteerd.|
+|No|[Fluentd](#fluentd-settings)|Schrijf logboek en, eventueel, metrische gegevens naar een vloeiende server.|
+|No|[Http-proxy](#http-proxy-credentials-settings)|Een HTTP-proxy configureren voor het maken van uitgaande aanvragen.|
+|No|[Logboekregistratie](#logging-settings)|Biedt ASP.NET Core ondersteuning voor logboek registratie voor uw container. |
+|Yes|[Koppelt](#mount-settings)|Gegevens lezen en schrijven van de hostcomputer naar de container en van de container terug naar de hostcomputer.|
 
 > [!IMPORTANT]
 > De [`ApiKey`](#apikey-setting) [`Billing`](#billing-setting) instellingen, en [`Eula`](#eula-setting) worden samen gebruikt en u moet geldige waarden opgeven voor alle drie deze. anders wordt de container niet gestart. Zie [facturering](luis-container-howto.md#billing)voor meer informatie over het gebruik van deze configuratie-instellingen voor het instantiëren van een container.

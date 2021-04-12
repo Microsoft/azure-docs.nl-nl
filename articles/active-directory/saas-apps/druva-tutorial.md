@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/06/2020
 ms.author: jeedes
 ms.openlocfilehash: a7868d702ff3f1190d7f51e4ad7316508d453015
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "92454521"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-druva"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Druva
@@ -136,13 +136,13 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-## <a name="configure-druva-sso"></a>Eenmalige aanmelding voor Druva configureren
+## <a name="configure-druva-sso&quot;></a>Eenmalige aanmelding voor Druva configureren
 
 1. Meld u in een ander browservenster aan bij uw bedrijfssite van Druva als een beheerder.
 
 1. Klik op het Druva-logo in de linkerbovenhoek en klik vervolgens op **Druva Cloud-instellingen**.
 
-    ![Instellingen](./media/druva-tutorial/ic795091.png "Instellingen")
+    ![Instellingen](./media/druva-tutorial/ic795091.png &quot;Instellingen")
 
 1. Klik op het tabblad **Eenmalige aanmelding** op **Bewerken**.
 

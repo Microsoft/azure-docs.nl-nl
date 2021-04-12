@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/12/2021
 ms.openlocfilehash: 52b3523d3c092f1b9375f53038cc3b20d0ddedcc
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "103232831"
 ---
 # <a name="configure-the-similarity-ranking-algorithm-in-azure-cognitive-search"></a>Het classificatie algoritme voor overeenkomsten in azure configureren Cognitive Search
@@ -78,7 +78,7 @@ PUT https://[search service name].search.windows.net/indexes/[index name]?api-ve
 
 BM25 gelijkenis voegt twee door de gebruiker aanpas bare para meters toe om de berekende relevantie score te bepalen. U kunt BM25-para meters instellen tijdens het maken van de index of als index-update als de BM25-algoritme is opgegeven tijdens het maken van de index.
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 |----------|------|-------------|
 | K1 | getal | Hiermee bepaalt u de schaal functie tussen de termijn frequentie van elke overeenkomende voor waarden naar de laatste relevantie Score van een document-query paar. Waarden zijn meestal 0,0 tot 3,0, met 1,2 als de standaard waarde. </br></br>Een waarde van 0,0 vertegenwoordigt een ' binair model ', waarbij de bijdrage van één overeenkomende term hetzelfde is voor alle overeenkomende documenten, ongeacht het aantal keren dat de term voor komt in de tekst, terwijl een grotere K1-waarde de score kan blijven verhogen naarmate er meer exemplaren van dezelfde term worden gevonden in het document. </br></br>Het gebruik van een hogere K1-waarde kan belang rijk zijn in gevallen waarin we verwachten dat er meerdere termen deel uitmaken van een zoek opdracht. In dergelijke gevallen is het mogelijk om te voor komen dat documenten die overeenkomen met veel van de verschillende query termen, worden doorzocht op documenten die slechts één keer hetzelfde zijn. Als u bijvoorbeeld een query uitvoert op de index voor documenten met de termen ' Apollo spaceflight ', is het mogelijk dat u de Score van een artikel over Griekse Mythology met de term ' Apollo ' in een paar dozijn keer (zonder vermeldingen van ' spaceflight ') wilt verlagen, vergeleken met een ander artikel waarin expliciet zowel ' Apollo ' als ' spaceflight ' slechts een aantal keer wordt vermeld. |
 | b | getal | Hiermee wordt bepaald hoe de lengte van een document van invloed is op de Score van relevantie. Waarden liggen tussen 0 en 1, met 0,75 als de standaard waarde. </br></br>Een waarde van 0,0 betekent dat de lengte van het document niet van invloed is op de score, terwijl een waarde van 1,0 betekent dat de impact van de term frequentie op relevantie score wordt genormaliseerd door de lengte van het document. </br></br>Het normaliseren van de term frequentie door de lengte van het document is handig in gevallen waarin we meer documenten willen bestraffen. In sommige gevallen worden langere documenten (zoals een volledig roman) waarschijnlijk veel irrelevante voor waarden bevatten, vergeleken met veel kortere documenten. |

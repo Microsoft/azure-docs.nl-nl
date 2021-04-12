@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 11c65498d5a31c2e2ee997bdaf18037b1f0f9060
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5cc877a693ce00ca3c8040a656e743216c092636
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102455209"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105960517"
 ---
 # <a name="create-filters-with-media-services-net-sdk"></a>Filters maken met Media Services .NET SDK
 
@@ -37,7 +37,7 @@ In dit onderwerp wordt beschreven hoe u Media Services .NET SDK gebruikt om een 
 ## <a name="prerequisites"></a>Vereisten 
 
 - Controleer [filters en dynamische manifesten](filters-dynamic-manifest-overview.md).
-- [Een Azure Media Services-account maken](./create-account-howto.md). Zorg ervoor dat u de naam van de resource groep en de naam van het Media Services account vergeet. 
+- [Een Azure Media Services-account maken](./account-create-how-to.md). Zorg ervoor dat u de naam van de resource groep en de naam van het Media Services account vergeet. 
 - Gegevens ophalen die nodig zijn voor [toegang tot api's](./access-api-howto.md)
 - Bekijk het [uploaden, coderen en streamen met behulp van Azure Media Services](stream-files-tutorial-with-api.md) om te zien hoe u [.NET SDK kunt gaan gebruiken](stream-files-tutorial-with-api.md#start-using-media-services-apis-with-net-sdk)
 

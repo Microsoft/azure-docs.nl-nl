@@ -4,10 +4,10 @@ description: Hierin worden de functies beschreven die u kunt gebruiken in een Az
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.openlocfilehash: 95655a4c92a1de9bb7a7faebcdaa83fb0fa75696
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "99833997"
 ---
 # <a name="comparison-functions-for-arm-templates"></a>Vergelijkingsfuncties voor ARM-sjablonen
@@ -31,10 +31,10 @@ Retourneert de eerste waarde die niet null is van de para meters. Lege teken ree
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Ja |int, String, array of object |De eerste waarde die moet worden getest op null. |
-| aanvullende argumenten |Nee |int, String, array of object |Aanvullende waarden om te testen op null. |
+| Arg1 |Yes |int, String, array of object |De eerste waarde die moet worden getest op null. |
+| aanvullende argumenten |No |int, String, array of object |Aanvullende waarden om te testen op null. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -133,10 +133,10 @@ Hiermee wordt gecontroleerd of twee waarden gelijk zijn aan elkaar. De `equals` 
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Ja |int, String, array of object |De eerste waarde die moet worden gecontroleerd op gelijkheid. |
-| Arg2 |Ja |int, String, array of object |De tweede waarde om te controleren op gelijkheid. |
+| Arg1 |Yes |int, String, array of object |De eerste waarde die moet worden gecontroleerd op gelijkheid. |
+| Arg2 |Yes |int, String, array of object |De tweede waarde om te controleren op gelijkheid. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -317,10 +317,10 @@ Controleert of de eerste waarde groter is dan de tweede waarde. De `greater` fun
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Ja |int of String |De eerste waarde voor de grotere vergelijking. |
-| Arg2 |Ja |int of String |De tweede waarde voor de grotere vergelijking. |
+| Arg1 |Yes |int of String |De eerste waarde voor de grotere vergelijking. |
+| Arg2 |Yes |int of String |De tweede waarde voor de grotere vergelijking. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -398,10 +398,10 @@ Hiermee wordt gecontroleerd of de eerste waarde groter is dan of gelijk is aan d
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Ja |int of String |De eerste waarde voor de grotere of gelijk zijnde vergelijking. |
-| Arg2 |Ja |int of String |De tweede waarde voor de groter of gelijke vergelijking. |
+| Arg1 |Yes |int of String |De eerste waarde voor de grotere of gelijk zijnde vergelijking. |
+| Arg2 |Yes |int of String |De tweede waarde voor de groter of gelijke vergelijking. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -479,10 +479,10 @@ Controleert of de eerste waarde lager is dan de tweede waarde. De `less` functie
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Ja |int of String |De eerste waarde voor de minder vergelijkingen. |
-| Arg2 |Ja |int of String |De tweede waarde voor de minder vergelijkingen. |
+| Arg1 |Yes |int of String |De eerste waarde voor de minder vergelijkingen. |
+| Arg2 |Yes |int of String |De tweede waarde voor de minder vergelijkingen. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -560,10 +560,10 @@ Hiermee wordt gecontroleerd of de eerste waarde kleiner is dan of gelijk is aan 
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Ja |int of String |De eerste waarde voor de vergelijking met minder of gelijk aan. |
-| Arg2 |Ja |int of String |De tweede waarde voor de vergelijking met minder of gelijk aan. |
+| Arg1 |Yes |int of String |De eerste waarde voor de vergelijking met minder of gelijk aan. |
+| Arg2 |Yes |int of String |De tweede waarde voor de vergelijking met minder of gelijk aan. |
 
 ### <a name="return-value"></a>Retourwaarde
 

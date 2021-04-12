@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 12/15/2020
 ms.custom: devx-track-java
 ms.author: pafarley
-ms.openlocfilehash: 84ac8e8309d9f1d0536d0f7a16ab9cd9f3c10a2c
-ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
+ms.openlocfilehash: c1322eac7fd5ec1ead09a7b0197db931f96f8d48
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106284758"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107073565"
 ---
 <a name="HOLTop"></a>
 
@@ -209,11 +209,10 @@ Als u een Cognitive Services-abonnement wilt opschonen en verwijderen, kunt u de
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze Quick Start hebt u geleerd hoe u de OCR Java-bibliotheek kunt gebruiken om basis taken uit te voeren. Bestudeer daarna het naslagmateriaal bij de Face-API voor meer informatie.
+In deze Quick Start hebt u geleerd hoe u de OCR-client bibliotheek installeert en de Lees-API gebruikt. Vervolgens leest u meer over de API-functies voor lezen.
 
 > [!div class="nextstepaction"]
->[Naslag informatie over OCR SDK (Java)](/java/api/overview/azure/cognitiveservices/client/computervision)
-
+>[De Read-API aanroepen](../../Vision-API-How-to-Topics/call-read-api.md)
 
 * [Overzicht van OCR](../../overview-ocr.md)
 * De broncode voor dit voorbeeld is te vinden op [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java).

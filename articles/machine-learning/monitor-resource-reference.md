@@ -9,13 +9,13 @@ ms.reviewer: larryfr
 ms.author: aashishb
 author: aashishb
 ms.custom: subject-monitoring
-ms.date: 10/02/2020
-ms.openlocfilehash: f130fc0c65c49c33c838812fc2758619e0d1bca0
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/07/2021
+ms.openlocfilehash: de4d934144d6721db8c00d7199061842e518e44f
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102521336"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107031066"
 ---
 # <a name="monitoring-azure-machine-learning-data-reference"></a>Naslag informatie over Azure machine learning-gegevens bewaken
 
@@ -28,49 +28,62 @@ In deze sectie vindt u alle automatisch verzamelde platform gegevens die zijn ve
 **Model**
 
 | Metrisch | Eenheid | Description |
-| ----- | ----- | ----- |
-| Model implementeren is mislukt | Count | Het aantal model implementaties dat is mislukt. |
-| Model implementeren gestart | Count | Het aantal model implementaties is gestart. |
-| Model implementeren is voltooid | Count | Het aantal model implementaties dat is geslaagd. |
-| Model register mislukt | Count | Het aantal model registraties dat is mislukt. |
-| Model registratie is voltooid | Count | Het aantal model registraties dat is geslaagd. |
+|--|--|--|
+| Model registratie is voltooid | Count | Aantal model registraties dat is geslaagd in deze werk ruimte |
+| Model register mislukt | Count | Aantal model registraties dat is mislukt in deze werk ruimte |
+| Modelimplementatie gestart | Count | Aantal model implementaties gestart in deze werk ruimte |
+| Modelimplementatie geslaagd | Count | Aantal model implementaties dat is geslaagd in deze werk ruimte |
+| Modelimplementatie is mislukt | Count | Aantal model implementaties die zijn mislukt in deze werk ruimte |
 
 **Quota**
 
 Quota gegevens zijn alleen voor het berekenen van Azure Machine Learning.
 
 | Metrisch | Eenheid | Description |
-| ----- | ----- | ----- |
-| Actieve kernen | Count | Het aantal actieve reken kernen. |
-| Actieve knoop punten | Count | Het aantal actieve knoop punten. |
-| Niet-actieve kernen | Count | Het aantal niet-actieve Compute-kernen. |
-| Niet-actieve knoop punten | Count | Het aantal niet-actieve reken knooppunten. |
-| Kernen verlaten | Count | Het aantal Leave-kernen. |
-| Knoop punten verlaten | Count | Het aantal knoop punten dat de poort verlaat. |
-| Afgebroken kernen | Count | Het aantal afgebroken kernen. |
-| Knoop punten die zijn afgebroken | Count | Het aantal knoop punten dat is afgebroken. |
-| Percentage quotum gebruik | Percentage | Het percentage van de gebruikte quota. |
-| Totaal aantal cores | Count | Het totale aantal kernen. |
-| Totaal aantal knoop punten | Count | Het totale aantal knoop punten. |
-| Onbruikbaar aantal kern geheugens | Count | Het aantal onbruikbaar kern geheugens. |
-| Niet-bruikbare knoop punten | Count | Het aantal niet-bruikbare knoop punten. |
+|--|--|--|
+| Totaal aantal knoop punten | Count | Totaal aantal knoop punten. Dit totaal omvat enkele actieve knoop punten, niet-actieve knoop punten, niet-bruikbare knoop punten, afgebroken knoop punten, waardoor knoop punten |
+| Actieve knoop punten | Count | Aantal actieve knoop punten. De knoop punten waarop een taak actief wordt uitgevoerd. |
+| Niet-actieve knoop punten | Count | Aantal niet-actieve knoop punten. Niet-actieve knoop punten zijn de knoop punten waarop geen taken worden uitgevoerd, maar u kunt wel een nieuwe taak accepteren, indien beschikbaar. |
+| Niet-bruikbare knoop punten | Count | Aantal niet-bruikbare knoop punten. Niet-bruikbare knoop punten zijn niet functioneel vanwege een probleem met onherleidbare. Deze knoop punten worden door Azure gerecycled. |
+| Knoop punten die zijn afgebroken | Count | Aantal knoop punten dat is afgebroken. Deze knoop punten zijn de knoop punten met lage prioriteit die worden verwijderd uit de beschik bare knooppunt groep. |
+| Knoop punten verlaten | Count | Aantal knoop punten dat de poort verlaat. Als u knoop punten verlaat, worden de knoop punten die zojuist de verwerking van een taak hebben voltooid, naar de niet-actieve status. |
+| Totaal aantal kernen | Count | Aantal totale kernen |
+| Actieve kernen | Count | Aantal actieve kernen |
+| Niet-actieve kernen | Count | Aantal niet-actieve kern geheugens |
+| Onbruikbaar aantal kern geheugens | Count | Aantal niet-bruikbare kernen |
+| Afgebroken kernen | Count | Aantal afgebroken kernen |
+| Kernen verlaten | Count | Aantal te verlaten kernen |
+| Percentage quotum gebruik | Count | Percentage van gebruikte quota |
 
 **Resource**
 
-| Metrisch | Eenheid | Description |
-| ----- | ----- | ----- |
-| CpuUtilization | Percentage | Hoeveel procent van de CPU voor een bepaald knoop punt is gebruikt tijdens een uitvoering/taak. Deze metrische gegevens worden alleen gepubliceerd wanneer een taak wordt uitgevoerd op een knoop punt. Eén taak kan gebruikmaken van een of meer knoop punten. Deze metriek wordt per knoop punt gepubliceerd. |
-| GpuUtilization | Percentage | Hoeveel percentage van de GPU voor een bepaald knoop punt is gebruikt tijdens een uitvoering/taak. Eén knoop punt kan een of meer Gpu's hebben. Deze metrische gegevens worden per GPU per knoop punt gepubliceerd. |
+| Metrisch| Eenheid | Description |
+|--|--|--|
+| CpuUtilization | Count | Het percentage van het gebruik op een CPU-knoop punt. Het gebruik wordt met een interval van één minuut gerapporteerd. |
+| GpuUtilization | Count | Het percentage van het gebruik op een GPU-knoop punt. Het gebruik wordt met een interval van één minuut gerapporteerd. |
+| GpuMemoryUtilization | Count | Percentage geheugen gebruik op een GPU-knoop punt. Het gebruik wordt met een interval van één minuut gerapporteerd. |
+| GpuEnergyJoules | Count | Interval energie in joules op een GPU-knoop punt. Energie wordt met een interval van één minuut gerapporteerd. |
 
 **Uitvoeren**
 
-Informatie over trainings uitvoeringen.
+Informatie over de trainings uitvoeringen voor de werk ruimte.
 
 | Metrisch | Eenheid | Description |
-| ----- | ----- | ----- |
-| Voltooide uitvoeringen | Count | Het aantal voltooide uitvoeringen. |
-| Mislukte uitvoeringen | Count | Het aantal mislukte uitvoeringen. |
-| Gestart uitvoeringen | Count | Het aantal gestarte uitvoeringen. |
+|--|--|--|
+| Geannuleerde uitvoeringen | Count | Aantal uitvoeringen geannuleerd voor deze werk ruimte. Het aantal wordt bijgewerkt wanneer een uitvoering is geannuleerd. |
+| Geannuleerde uitvoeringen annuleren | Count | Aantal uitvoeringen waarvoor annuleren is aangevraagd voor deze werk ruimte. Het aantal wordt bijgewerkt wanneer de annulerings aanvraag is ontvangen voor een run. |
+| Voltooide uitvoeringen | Count | Het aantal uitvoeringen dat is voltooid voor deze werk ruimte. Het aantal wordt bijgewerkt wanneer een uitvoering is voltooid en de uitvoer is verzameld. |
+| Mislukte uitvoeringen | Count | Aantal uitvoeringen is mislukt voor deze werk ruimte. Het aantal wordt bijgewerkt wanneer een uitvoering mislukt. |
+| Uitvoeringen volt ooien | Count | Aantal uitvoeringen dat de voltooiings status voor deze werk ruimte heeft opgegeven. Het aantal wordt bijgewerkt wanneer een uitvoering is voltooid, maar de uitvoer verzameling nog steeds wordt uitgevoerd. | 
+| Reageert niet | Count | Het aantal uitvoeringen dat niet reageert voor deze werk ruimte. Het aantal wordt bijgewerkt wanneer de status van een uitvoering niet reageert. |
+| Niet gestart uitvoeringen | Count | Het aantal uitvoeringen in de status niet gestart voor deze werk ruimte. Het aantal wordt bijgewerkt wanneer een aanvraag wordt ontvangen om een uitvoering te maken, maar er is nog geen uitvoerings informatie ingevuld. |
+| Uitvoering voorbereiden | Count | Aantal uitvoeringen dat wordt voor bereid voor deze werk ruimte. Het aantal wordt bijgewerkt wanneer de status van een uitvoering wordt voor bereid terwijl de uitvoerings omgeving wordt voor bereid. |
+| Uitvoeringen van inrichting | Count | Aantal uitvoeringen dat wordt ingericht voor deze werk ruimte. Het aantal wordt bijgewerkt wanneer een uitvoering wordt gewacht op het maken of inrichten van het reken doel. |
+| Uitvoeringen in wachtrij | Count | Aantal uitvoeringen dat in de wachtrij staat voor deze werk ruimte. Het aantal wordt bijgewerkt wanneer een uitvoering in de wachtrij wordt geplaatst in een compute-doel. Kan optreden wanneer wordt gewacht tot de vereiste reken knooppunten gereed zijn. |
+| Gestart uitvoeringen | Count | Aantal uitvoeringen dat wordt uitgevoerd voor deze werk ruimte. Het aantal wordt bijgewerkt wanneer de uitvoering wordt uitgevoerd op de vereiste resources. |
+| Uitvoeringen starten | Count | Aantal uitvoeringen gestart voor deze werk ruimte. Het aantal wordt bijgewerkt nadat de aanvraag voor het maken van uitvoerings-en uitvoerings gegevens, zoals de uitvoerings-ID, is ingevuld |
+| Fouten | Count | Aantal uitvoerings fouten in deze werk ruimte. Het aantal wordt bijgewerkt wanneer er een fout optreedt. |
+| Waarschuwingen | Count | Aantal uitvoerings waarschuwingen in deze werk ruimte. Het aantal wordt bijgewerkt wanneer er een waarschuwing wordt gevonden. |
 
 ## <a name="metric-dimensions"></a>Metrische dimensies
 

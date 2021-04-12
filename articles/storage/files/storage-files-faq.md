@@ -7,12 +7,12 @@ ms.date: 02/23/2020
 ms.author: rogarana
 ms.subservice: files
 ms.topic: conceptual
-ms.openlocfilehash: 81cabe8dea178b2988039640065cb0eabc3287af
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ec8104a5fd8d1c524f75c7a5173015115d85a253
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103470891"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106064304"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-files"></a>Lees de veelgestelde vragen (FAQ) over Azure Files
 [Azure files](storage-files-introduction.md) biedt volledig beheerde bestands shares in de cloud die toegankelijk zijn via het industrie standaard [SMB-protocol (Server Message Block)](/windows/win32/fileio/microsoft-smb-protocol-and-cifs-protocol-overview) en het [NFS-protocol (Network File System](https://en.wikipedia.org/wiki/Network_File_System) ) (preview). U kunt Azure-bestands shares gelijktijdig koppelen aan Cloud-of on-premises implementaties van Windows, Linux en macOS. U kunt ook Azure-bestands shares op Windows Server-computers in de cache opslaan met behulp van Azure File Sync voor snelle toegang, waarbij de gegevens worden gebruikt.
@@ -183,6 +183,10 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over Azure Files-functi
     Als u Azure Backup hebt ingeschakeld op de bestands shares die door het bestand sync worden beheerd, kunnen Acl's van bestanden worden hersteld als onderdeel van de werk stroom voor het terugzetten van back-ups. Dit werkt voor de volledige share of afzonderlijke bestanden/directory's.
 
     Als u moment opnamen gebruikt als onderdeel van de zelf-beheerde back-upoplossing voor bestands shares die worden beheerd door bestands synchronisatie, worden uw Acl's mogelijk niet op de juiste wijze teruggezet naar NTFS-Acl's als de moment opnamen zijn gemaakt vóór februari 24, 2020. Als dit het geval is, kunt u contact opnemen met de ondersteuning van Azure.
+
+* <a id="afs-lastwritetime"></a>
+  **Synchroniseert Azure File Sync de LastWriteTime voor directory's?**  
+    Nee, Azure File Sync wordt de LastWriteTime voor mappen niet gesynchroniseerd. Dit is standaard.
     
 ## <a name="security-authentication-and-access-control"></a>Beveiliging, verificatie en toegangs beheer
 * <a id="ad-support"></a>

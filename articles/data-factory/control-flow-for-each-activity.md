@@ -7,12 +7,12 @@ ms.reviewer: jburchel
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/23/2019
-ms.openlocfilehash: a0c3a3cbaa71d627f54550cf92c067afbb1eb3f0
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: d0fd9ab8286496b9801d6c10682761f1264e040a
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104786206"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106120908"
 ---
 # <a name="foreach-activity-in-azure-data-factory"></a>ForEach-activiteit in Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -79,7 +79,7 @@ Activiteiten | De activiteiten die moeten worden uitgevoerd. | Lijst met activit
 Als **isSequential** is ingesteld op False, wordt de activiteit parallel herhaald met een maximum van 20 gelijktijdige herhalingen. Deze instelling moet voorzichtig worden gebruikt. Als de gelijktijdige herhalingen naar dezelfde map, maar naar verschillende bestanden schrijven, is deze benadering nauw keurig. Als de gelijktijdige herhalingen gelijktijdig naar het exacte bestand worden geschreven, veroorzaakt deze methode waarschijnlijk een fout. 
 
 ## <a name="iteration-expression-language"></a>Taal van iteratie expressie
-Geef in de ForEach-activiteit een matrix op die u voor de eigenschaps **items** wilt herhalen. " Gebruiken `@item()` om een enkele opsomming in de foreach-activiteit te herhalen. Als bijvoorbeeld **items** een matrix is: [1, 2, 3], `@item()` retourneert 1 in de eerste iteratie, 2 in de tweede iteratie en 3 in de derde iteratie.
+Geef in de ForEach-activiteit een matrix op die u voor de eigenschaps **items** wilt herhalen. " Gebruiken `@item()` om een enkele opsomming in de foreach-activiteit te herhalen. Als bijvoorbeeld **items** een matrix is: [1, 2, 3], `@item()` retourneert 1 in de eerste iteratie, 2 in de tweede iteratie en 3 in de derde iteratie. U kunt ook een `@range(0,10)` soort gelijke expressie gebruiken om tien keer te herhalen, te beginnen bij 0, eindigend op 9.
 
 ## <a name="iterating-over-a-single-activity"></a>Meerdere activiteiten herhalen
 **Scenario:** Kopieer vanuit hetzelfde bron bestand in Azure Blob naar meerdere doel bestanden in Azure Blob.

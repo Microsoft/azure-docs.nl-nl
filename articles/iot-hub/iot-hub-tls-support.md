@@ -5,14 +5,14 @@ services: iot-hub
 author: jlian
 ms.service: iot-fundamentals
 ms.topic: conceptual
-ms.date: 01/14/2020
+ms.date: 03/31/2021
 ms.author: jlian
-ms.openlocfilehash: d36a7917693aef9063ade473759f2f451d3a677f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6a02b97957cc0599e2960cba551b536e83d1a902
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98234015"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106222552"
 ---
 # <a name="transport-layer-security-tls-support-in-iot-hub"></a>Ondersteuning van Transport Layer Security (TLS) in IoT Hub
 
@@ -23,6 +23,10 @@ TLS 1,0 en 1,1 worden beschouwd als verouderd en zijn gepland voor afschaffing. 
 ## <a name="iot-hubs-server-tls-certificate"></a>TLS-certificaat van IoT Hub server
 
 Tijdens een TLS-Handshake biedt IoT Hub RSA-versleutelings server certificaten om clients te verbinden. De hoofdmap is de basis-CA van de Baltimore Cyber Trust. Onlangs hebben we een wijziging doorgevoerd in ons TLS-server certificaat, zodat dit nu door nieuwe tussenliggende certificerings instanties (ICA) wordt verleend. Zie [IOT hub TLS-certificaat update](https://azure.microsoft.com/updates/iot-hub-tls-certificate-update/)voor meer informatie.
+
+### <a name="4kb-size-limit-on-renewal"></a>limiet voor 4KB-grootte bij vernieuwen
+
+Tijdens de verlenging van IoT Hub certificaten aan de server zijde wordt een controle uitgevoerd aan IoT Hub service zijde om te voor komen dat de `Server Hello` grootte van 4KB overschrijdt. Een client moet mini maal 4KB RAM-geheugen hebben ingesteld voor de maximale inhouds lengte buffer van het binnenkomende TLS-maximum, zodat bestaande apparaten die zijn ingesteld voor 4KB-limiet blijven werken zoals vóór het vernieuwen van het certificaat. Voor beperkte apparaten ondersteunt IoT Hub [TLS-maximale fragment lengte in Preview-fase](#tls-maximum-fragment-length-negotiation-preview). 
 
 ### <a name="elliptic-curve-cryptography-ecc-server-tls-certificate-preview"></a>TLS-certificaat (voor elliptische curve) (ECC)-server (preview)
 

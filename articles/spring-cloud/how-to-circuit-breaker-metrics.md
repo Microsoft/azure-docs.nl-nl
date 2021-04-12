@@ -1,22 +1,22 @@
 ---
-title: Metrische gegevens van de Resilience4J-circuit onderbreker van Lente verzamelen
-description: Instructies voor het verzamelen van metrische gegevens over de Resilience4J-circuit onderbreker.
+title: Metrische gegevens van de Resilience4J-circuit onderbreker met micrometer verzamelen
+description: Wat is het verzamelen van metrische gegevens over de Resilience4J-circuit onderbreker met micrometer in azure lente-Cloud.
 author: MikeDodaro
 ms.author: brendm
 ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 12/15/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 9fc8ccc5ba21f02885b2002d5040051baac92068
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 0b24e8e07b4038d6def9945b7c347bb81ae5378b
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104878050"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107258177"
 ---
-# <a name="collect-spring-cloud-resilience4j-circuit-breaker-metrics-preview"></a>Metrische gegevens van de Resilience4J-circuit onderbreker van Lente verzamelen (preview-versie)
+# <a name="collect-spring-cloud-resilience4j-circuit-breaker-metrics-with-micrometer-preview"></a>Metrische gegevens van het Resilience4J-circuit voor de lente van de Cloud verzamelen met micrometer (preview)
 
-In dit document wordt uitgelegd hoe u metrische gegevens van de lente Cloud Resilience4j-circuits kunt verzamelen met Application Insights Java-agent in het proces.  Met deze functie kunt u de metrische gegevens van de resilience4j-circuit onderbreker bewaken van Application Insights.
+In dit document wordt uitgelegd hoe u metrische gegevens van de lente Cloud Resilience4j-circuits kunt verzamelen met Application Insights Java-agent in het proces. Met deze functie kunt u de metrische gegevens van de resilience4j-circuit onderbreker bewaken van Application Insights met micrometer.
 
 We gebruiken de [demonstratie-demo](https://github.com/spring-cloud-samples/spring-cloud-circuitbreaker-demo) ---circuit-en-instructie om te laten zien hoe het werkt.
 

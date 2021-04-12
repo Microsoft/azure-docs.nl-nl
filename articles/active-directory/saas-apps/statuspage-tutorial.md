@@ -9,38 +9,37 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/18/2020
+ms.date: 03/31/2021
 ms.author: jeedes
-ms.openlocfilehash: cc3ce56ecd17d627001f4925355c055afdc09d22
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6bc2508220a8c0193efb55eb6cd11f7e151c80be
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98729613"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106284495"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-statuspage"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met StatusPage
 
-In deze zelfstudie leert u hoe u StatusPage kunt integreren met Azure Active Directory (Azure AD).
-De integratie van StatusPage met Azure AD heeft de volgende voordelen:
+In deze zelf studie leert u hoe u StatusPage integreert met Azure Active Directory (Azure AD). Wanneer u StatusPage integreert met Azure AD, kunt u het volgende doen:
 
-* U kunt in Azure Active Directory beheren wie toegang tot StatusPage heeft.
-* U kunt uw gebruikers zich automatisch laten aanmelden bij StatusPage (eenmalige aanmelding) met hun Azure AD-account.
-* U kunt uw accounts vanaf één centrale locatie beheren: de Azure-portal.
+* Controle in azure AD die toegang heeft tot StatusPage.
+* Zorg ervoor dat uw gebruikers automatisch worden aangemeld bij StatusPage met hun Azure AD-accounts.
+* Uw accounts op een centrale locatie beheren: Azure Portal.
 
 ## <a name="prerequisites"></a>Vereisten
 
 Voor het configureren van Azure AD-integratie met StatusPage hebt u de volgende zaken nodig:
 
-* Een Azure AD-abonnement Als u geen Azure AD-omgeving hebt, kunt u een [gratis account](https://azure.microsoft.com/free/) krijgen
-* Een abonnement op StatusPage waarvoor eenmalige aanmelding is ingeschakeld
+* Een Azure AD-abonnement Als u geen Azure AD-omgeving hebt, kunt u een [gratis account](https://azure.microsoft.com/free/) krijgen.
+* Abonnement voor eenmalige aanmelding StatusPage ingeschakeld.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* StatusPage ondersteunt door **IDP** geïnitieerde eenmalige aanmelding
+* StatusPage ondersteunt door **IDP** geïnitieerde SSO.
 
-## <a name="adding-statuspage-from-the-gallery"></a>StatusPage toevoegen vanuit de galerie
+## <a name="add-statuspage-from-the-gallery"></a>StatusPage toevoegen vanuit de galerie
 
 Voor het configureren van de integratie van StatusPage in Azure AD moet u StatusPage uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
@@ -65,13 +64,13 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure Active Directory 
     1. **[Testgebruiker voor StatusPage maken](#create-statuspage-test-user)** : als u een tegenhanger van Britta Simon in StatusPage wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
-### <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
+## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
 1. Ga in Azure Portal op de integratiepagina van de toepassing **AskYourTeam** naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
@@ -85,7 +84,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     | `https://<subdomain>.statuspage.io/` |
     |
 
-    b. In het tekstvak **Antwoord-URL** typt u een URL met het volgende patroon:
+    b. In het tekstvak **Antwoord-URL** typt u een URL met één van de volgende patronen:
 
      | Antwoord-URL |
     |--------------|
@@ -152,17 +151,17 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 1. Klik in de hoofdwerkbalk op **Manage Account** (Account beheren).
 
-    ![Schermopname van Manage Account geselecteerd in de bedrijfssite van StatusPage.](./media/statuspage-tutorial/tutorial_statuspage_06.png)
+    ![Schermopname van Manage Account geselecteerd in de bedrijfssite van StatusPage.](./media/statuspage-tutorial/account.png)
 
 1. Klik op het tabblad **Single Sign-on** (Eenmalige aanmelding).
 
-    ![Schermopname van het tabblad Single Sign-on.](./media/statuspage-tutorial/tutorial_statuspage_07.png)
+    ![Schermopname van het tabblad Single Sign-on.](./media/statuspage-tutorial/tab.png)
 
 1. Voer op de pagina SSO Setup (Eenmalige aanmelding instellen) de volgende stappen uit:
 
-    ![Schermopname van de pagina S S O Setup, waarin u de beschreven waarden kunt invoeren.](./media/statuspage-tutorial/tutorial_statuspage_08.png)
+    ![Schermopname van de pagina S S O Setup, waarin u de beschreven waarden kunt invoeren.](./media/statuspage-tutorial/setup.png)
 
-    ![Schermopname toont de knop Save Configuration (Configuratie opslaan).](./media/statuspage-tutorial/tutorial_statuspage_09.png)
+    ![Schermopname toont de knop Save Configuration (Configuratie opslaan).](./media/statuspage-tutorial/configuration.png)
 
     a. Plak in het tekstvak **Doel-URL voor eenmalige aanmelding** de waarde van **Aanmeldings-URL** die u hebt gekopieerd uit de Azure-portal.
 
@@ -182,25 +181,25 @@ StatusPage biedt ondersteuning voor het Just-In-Time inrichten. U hebt deze al i
 
 1. Klik in het menu bovenaan op **Account beheren**.
 
-    ![Schermopname van Manage Account geselecteerd in de bedrijfssite van StatusPage.](./media/statuspage-tutorial/tutorial_statuspage_06.png)
+    ![Schermopname van Manage Account geselecteerd in de bedrijfssite van StatusPage.](./media/statuspage-tutorial/account.png)
 
 1. Klik op het tabblad **Team Members** (Teamleden).
   
-    ![Schermopname van het tabblad Team Members.](./media/statuspage-tutorial/tutorial_statuspage_10.png) 
+    ![Schermopname van het tabblad Team Members.](./media/statuspage-tutorial/sandbox.png) 
 
 1. Klik op **ADD TEAM MEMBER** (Teamlid toevoegen).
   
-    ![Schermopname van de knop Add Team Member.](./media/statuspage-tutorial/tutorial_statuspage_11.png) 
+    ![Schermopname van de knop Add Team Member.](./media/statuspage-tutorial/team.png) 
 
 1. Typ in de betreffende tekstvakken het **Email Address** (E-mailadres), de **First Name** (Voornaam) en **Last Name** (Achternaam) van een geldige gebruiker die u wilt inrichten. 
 
-    ![Schermopname van het dialoogvenster Add a User, waar u de beschreven waarden kunt invoeren.](./media/statuspage-tutorial/tutorial_statuspage_12.png) 
+    ![Schermopname van het dialoogvenster Add a User, waar u de beschreven waarden kunt invoeren.](./media/statuspage-tutorial/user.png) 
 
 1. Kies **Client Administrator** (Clientbeheerder) als **Role** (Rol).
 
 1. Klik op **ACCOUNT MAKEN**.
 
-### <a name="test-sso"></a>Eenmalige aanmelding testen
+## <a name="test-sso"></a>Eenmalige aanmelding testen
 
 In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties.
 

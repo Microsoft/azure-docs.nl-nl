@@ -8,12 +8,12 @@ ms.topic: reference
 ms.service: media-services
 ms.custom: subject-monitoring
 ms.date: 03/17/2021
-ms.openlocfilehash: 66fce608515d16c5418ddd18e00319a3cbf088f7
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 8908fd1acc64fb180121ac0b6a4dc38ce5a02572
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105609085"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106121163"
 ---
 # <a name="monitoring-media-services-data-reference"></a>Media Services gegevens referentie bewaken
 
@@ -44,7 +44,7 @@ U kunt de metrische gegevens van het volgende account bewaken.
 |StreamingPolicyQuota|Quota voor streaming-beleid|Het quotum voor het streamen van beleid in uw account.|
 |StreamingPolicyQuotaUsedPercentage|Percentage gebruikt quotum voor het streaming-beleid|Het percentage van het quotum voor het streaming-beleid wordt al gebruikt.|
 
-U moet ook [rekening quota's en limieten](../limits-quotas-constraints.md)bekijken.
+U moet ook [rekening quota's en limieten](../limits-quotas-constraints-reference.md)bekijken.
 
 ### <a name="streaming-endpoint"></a>Streaming-eindpunt
 

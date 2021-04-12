@@ -1,16 +1,16 @@
 ---
-title: Complexe acties met Azure Monitor waarschuwingen activeren
+title: Activering van complexe acties met Azure Monitor waarschuwingen
 description: Meer informatie over het maken van een actie voor een logische app voor het verwerken van Azure Monitor-waarschuwingen.
 author: dkamstra
 ms.author: dukek
 ms.topic: conceptual
 ms.date: 02/19/2021
-ms.openlocfilehash: a1371e00a6d4c5db609466e25c9d94aad5e73398
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: f1e81dca6926ae9f57e428eb1cef761c588a78b6
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102045714"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107029842"
 ---
 # <a name="how-to-trigger-complex-actions-with-azure-monitor-alerts"></a>Complexe acties met Azure Monitor waarschuwingen activeren
 
@@ -34,66 +34,66 @@ Het proces is vergelijkbaar als u wilt dat de logische app een andere actie uitv
 
 ## <a name="create-an-activity-log-alert-administrative"></a>Een waarschuwing voor een activiteiten logboek maken: beheer
 
-1. [Een logische app maken](~/articles/logic-apps/quickstart-create-first-logic-app-workflow.md)
+1. [Maak een logische app](~/articles/logic-apps/quickstart-create-first-logic-app-workflow.md).
 
-2.  Selecteer de trigger: **Wanneer een HTTP-aanvraag wordt ontvangen**.
+1.  Selecteer de trigger: **Wanneer een HTTP-aanvraag wordt ontvangen**.
 
 1. Selecteer in het dialoogvenster **Wanneer een HTTP-aanvraag wordt ontvangen** de optie **Voorbeeldpayload gebruiken om schema te genereren**.
 
-    ![Schermopname van het dialoogvenster wanneer een H T T P-aanvraag wordt ontvangen waarin de optie Voorbeeld-payload gebruiken om schema te genereren is geselecteerd. ](~/articles/app-service/media/tutorial-send-email/generate-schema-with-payload.png)
+    ![Scherm opname van het dialoog venster wanneer een H T/m P-aanvraag wordt weer gegeven en de optie voor beeld-Payload gebruiken om een schema te genereren is geselecteerd. ](~/articles/app-service/media/tutorial-send-email/generate-schema-with-payload.png)
 
-3.  Kopieer en plak de volgende voor beeld-nettolading in het dialoog venster:
+1.  Kopieer en plak de volgende voor beeld-nettolading in het dialoog venster:
 
     ```json
         {
-            "schemaId": "Microsoft.Insights/activityLogs",
-            "data": {
-                "status": "Activated",
-                "context": {
-                "activityLog": {
-                    "authorization": {
-                    "action": "microsoft.insights/activityLogAlerts/write",
-                    "scope": "/subscriptions/…"
+            "schemaId&quot;: &quot;Microsoft.Insights/activityLogs&quot;,
+            &quot;data&quot;: {
+                &quot;status&quot;: &quot;Activated&quot;,
+                &quot;context&quot;: {
+                &quot;activityLog&quot;: {
+                    &quot;authorization&quot;: {
+                    &quot;action&quot;: &quot;microsoft.insights/activityLogAlerts/write&quot;,
+                    &quot;scope&quot;: &quot;/subscriptions/…&quot;
                     },
-                    "channels": "Operation",
-                    "claims": "…",
-                    "caller": "logicappdemo@contoso.com",
-                    "correlationId": "91ad2bac-1afa-4932-a2ce-2f8efd6765a3",
-                    "description": "",
-                    "eventSource": "Administrative",
-                    "eventTimestamp": "2018-04-03T22:33:11.762469+00:00",
-                    "eventDataId": "ec74c4a2-d7ae-48c3-a4d0-2684a1611ca0",
-                    "level": "Informational",
-                    "operationName": "microsoft.insights/activityLogAlerts/write",
-                    "operationId": "61f59fc8-1442-4c74-9f5f-937392a9723c",
-                    "resourceId": "/subscriptions/…",
-                    "resourceGroupName": "LOGICAPP-DEMO",
-                    "resourceProviderName": "microsoft.insights",
-                    "status": "Succeeded",
-                    "subStatus": "",
-                    "subscriptionId": "…",
-                    "submissionTimestamp": "2018-04-03T22:33:36.1068742+00:00",
-                    "resourceType": "microsoft.insights/activityLogAlerts"
+                    &quot;channels&quot;: &quot;Operation&quot;,
+                    &quot;claims&quot;: &quot;…&quot;,
+                    &quot;caller&quot;: &quot;logicappdemo@contoso.com&quot;,
+                    &quot;correlationId&quot;: &quot;91ad2bac-1afa-4932-a2ce-2f8efd6765a3&quot;,
+                    &quot;description&quot;: &quot;&quot;,
+                    &quot;eventSource&quot;: &quot;Administrative&quot;,
+                    &quot;eventTimestamp&quot;: &quot;2018-04-03T22:33:11.762469+00:00&quot;,
+                    &quot;eventDataId&quot;: &quot;ec74c4a2-d7ae-48c3-a4d0-2684a1611ca0&quot;,
+                    &quot;level&quot;: &quot;Informational&quot;,
+                    &quot;operationName&quot;: &quot;microsoft.insights/activityLogAlerts/write&quot;,
+                    &quot;operationId&quot;: &quot;61f59fc8-1442-4c74-9f5f-937392a9723c&quot;,
+                    &quot;resourceId&quot;: &quot;/subscriptions/…&quot;,
+                    &quot;resourceGroupName&quot;: &quot;LOGICAPP-DEMO&quot;,
+                    &quot;resourceProviderName&quot;: &quot;microsoft.insights&quot;,
+                    &quot;status&quot;: &quot;Succeeded&quot;,
+                    &quot;subStatus&quot;: &quot;&quot;,
+                    &quot;subscriptionId&quot;: &quot;…&quot;,
+                    &quot;submissionTimestamp&quot;: &quot;2018-04-03T22:33:36.1068742+00:00&quot;,
+                    &quot;resourceType&quot;: &quot;microsoft.insights/activityLogAlerts&quot;
                 }
                 },
-                "properties": {}
+                &quot;properties&quot;: {}
             }
         }
     ```
 
-9. In de **ontwerp functie voor logische apps** wordt een pop-upvenster weer gegeven om u eraan te herinneren dat de aanvraag die naar de logische app wordt verzonden **, de content-type-** header moet instellen op **Application/JSON**. Sluit het pop-upvenster. De Azure Monitor waarschuwing stelt de koptekst in.
+1. In de **Logic apps Designer** wordt een pop-upvenster weer gegeven om u eraan te herinneren dat de aanvraag die naar de logische app wordt verzonden **, de content-type-** header moet instellen op **Application/JSON**. Sluit het pop-upvenster. De Azure Monitor waarschuwing stelt de koptekst in.
 
-    ![De content-type-header instellen](media/action-groups-logic-app/content-type-header.png "De content-type-header instellen")
+    ![De content-type-header instellen](media/action-groups-logic-app/content-type-header.png &quot;De content-type-header instellen")
 
-10. Selecteer **+** **nieuwe stap** en kies vervolgens **een actie toevoegen**.
+1. Selecteer **+** **nieuwe stap** en kies vervolgens **een actie toevoegen**.
 
     ![Een actie toevoegen](media/action-groups-logic-app/add-action.png "Een actie toevoegen")
 
-11. Zoek en selecteer de micro soft teams-connector. Kies de actie **micro soft teams-post bericht** .
+1. Zoek en selecteer de micro soft teams-connector. Kies de actie **micro soft teams-post bericht** .
 
     ![Micro soft teams-acties](media/action-groups-logic-app/microsoft-teams-actions.png "Micro soft teams-acties")
 
-12. Configureer de micro soft teams-actie. De **Logic apps Designer** vraagt u om te verifiëren bij uw werk-of school account. Kies de **Team-ID** en de **kanaal-id** waarnaar het bericht moet worden verzonden.
+1. Configureer de micro soft teams-actie. De **Logic apps Designer** vraagt u om te verifiëren bij uw werk-of school account. Kies de **Team-ID** en de **kanaal-id** waarnaar het bericht moet worden verzonden.
 
 13. Configureer het bericht met een combi natie van statische tekst en verwijzingen naar de \<fields\> in de dynamische inhoud. Kopieer en plak de volgende tekst in het **bericht** veld:
 
@@ -111,9 +111,9 @@ Het proces is vergelijkbaar als u wilt dat de logische app een andere actie uitv
 
     ![Micro soft teams-actie: een bericht plaatsen](media/action-groups-logic-app/teams-action-post-message.png "Micro soft teams-actie: een bericht plaatsen")
 
-14. Selecteer op de pagina **Logic apps Designer** de optie **Opslaan** om uw logische app op te slaan.
+1. Selecteer op de pagina **Logic apps Designer** de optie **Opslaan** om uw logische app op te slaan.
 
-15. Open uw bestaande actie groep en voeg een actie toe om te verwijzen naar de logische app. Als u geen bestaande actie groep hebt, raadpleegt u [actie groepen maken en beheren in de Azure Portal](./action-groups.md) om er een te maken. Vergeet niet om uw wijzigingen op te slaan.
+1. Open uw bestaande actie groep en voeg een actie toe om te verwijzen naar de logische app. Als u geen bestaande actie groep hebt, raadpleegt u [actie groepen maken en beheren in de Azure Portal](./action-groups.md) om er een te maken. Vergeet niet om uw wijzigingen op te slaan.
 
     ![De actie groep bijwerken](media/action-groups-logic-app/update-action-group.png "De actie groep bijwerken")
 

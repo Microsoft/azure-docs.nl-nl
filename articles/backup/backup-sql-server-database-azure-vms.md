@@ -2,13 +2,13 @@
 title: Back-up maken van meerdere SQL Server-VM's uit de kluis
 description: In dit artikel vindt u informatie over het maken van een back-up van SQL Server-data bases op virtuele machines van Azure met Azure Backup van de Recovery Services kluis
 ms.topic: conceptual
-ms.date: 09/11/2019
-ms.openlocfilehash: 798dc81012ad968c3ecc287717240513a08a1349
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 04/07/2021
+ms.openlocfilehash: c03b833be6c5e4c352125f31ad8c5ed072674b49
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "105567204"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107258466"
 ---
 # <a name="back-up-multiple-sql-server-vms-from-the-recovery-services-vault"></a>Back-ups maken van meerdere SQL Server Vm's vanuit de Recovery Services kluis
 
@@ -23,10 +23,6 @@ In dit artikel leert u het volgende:
 > * Een kluis maken en configureren.
 > * Ontdek data bases en stel back-ups in.
 > * Automatische beveiliging van databases instellen.
-
->[!NOTE]
->**Voorlopig verwijderen voor SQL Server in azure VM en voorlopig verwijderen voor SAP Hana in azure VM-workloads** is nu beschikbaar als preview-versie.<br>
->Als u zich wilt aanmelden voor de preview, schrijft u voor AskAzureBackupTeam@microsoft.com
 
 ## <a name="prerequisites"></a>Vereisten
 

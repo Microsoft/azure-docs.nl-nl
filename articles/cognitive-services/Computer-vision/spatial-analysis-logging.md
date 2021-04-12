@@ -10,16 +10,16 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: bd35062ca1a5b3218a9af1fbd28fe8e7d7073c07
-ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
+ms.openlocfilehash: 1f03f99e6394c3939855c73548e8fb917f8696bc
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106077615"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106286025"
 ---
 # <a name="telemetry-and-troubleshooting"></a>Telemetrie en probleem oplossing
 
-Ruimtelijke analyse bevat een aantal functies voor het controleren van de status van het systeem en hulp bij het diagnosticeren van problemen.
+Ruimtelijke analyse bevat een aantal functies voor het controleren van de status van het systeem en hulp bij het oplossen van problemen.
 
 ## <a name="enable-visualizations"></a>Visualisaties inschakelen
 
@@ -103,7 +103,7 @@ Zodra de telegrafie module is geïmplementeerd, zijn de gerapporteerde metrische
 
 ### <a name="system-health-events"></a>Systeem status gebeurtenissen
 
-| Gebeurtenisnaam                  | Description    |
+| Gebeurtenisnaam                  | Beschrijving    |
 |-----------------------------|-------------------------------------------------------------------------------------------|
 | archon_exit                 | Verzonden wanneer een gebruiker de status van de ruimtelijke analyse module wijzigt van *actief* in *gestopt*.  |
 | archon_error                | Wordt verzonden wanneer een van de processen in de container vastloopt. Dit is een kritieke fout.      |
@@ -243,7 +243,7 @@ De onderstaande tabel geeft een lijst van de para meters die u kunt gebruiken bi
 
 De volgende tabel bevat de kenmerken in de query-antwoord.
 
-| Zoek | Description|
+| Zoek | Beschrijving|
 |--|--|
 |DoPost| *Waar* of *Onwaar*. Hiermee wordt aangegeven of Logboeken zijn geüpload of niet. Wanneer u ervoor kiest geen logboeken te uploaden, retourneert de API informatie ***synchroon** _. Wanneer u ervoor kiest om logboeken te uploaden, retourneert de API 200, als de aanvraag geldig is en het uploaden van Logboeken _ *_asynchroon_* * wordt gestart.|
 |TimeFilter| Tijd filter toegepast op de logboeken.|

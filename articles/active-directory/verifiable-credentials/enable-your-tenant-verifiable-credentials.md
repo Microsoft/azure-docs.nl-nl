@@ -7,17 +7,17 @@ manager: daveba
 ms.service: identity
 ms.topic: tutorial
 ms.subservice: verifiable-credentials
-ms.date: 03/31/2021
+ms.date: 04/01/2021
 ms.author: barclayn
 ms.reviewer: ''
-ms.openlocfilehash: 08aaa49f73ed437e041ffb93dc9ef5be41e316ec
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: cd39f6c484ebe116918611bb1d543c1919a3cb0a
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106171933"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106222942"
 ---
-# <a name="tutorial-configure-your-azure-active-directory-to-issue-verifiable-credentials-preview"></a>Zelf studie: uw Azure Active Directory configureren voor het uitgeven van verifieer bare referenties (preview-versie)
+# <a name="tutorial---configure-your-azure-active-directory-to-issue-verifiable-credentials-preview"></a>Zelf studie: uw Azure Active Directory configureren voor het uitgeven van verifieer bare referenties (preview-versie)
 
 In deze zelf studie bouwen we voort op het werk dat u hebt gedaan als onderdeel van het artikel [aan](get-started-verifiable-credentials.md) de slag en stelt u uw Azure Active Directory (Azure AD) in met een eigen [gedecentraliseerde id](https://www.microsoft.com/security/business/identity-access-management/decentralized-identity-blockchain?rtc=1#:~:text=Decentralized%20identity%20is%20a%20trust,protect%20privacy%20and%20secure%20transactions.) (was). We gebruiken de gecentraliseerde id om een verifieer bare referentie uit te geven met behulp van de voor beeld-app en uw certificaat verlener. in deze zelf studie gebruiken we echter nog steeds de voor beeld-B2C-Tenant van Azure voor authenticatie.  In onze volgende zelf studie nemen we extra stappen voor het ophalen van de app die is geconfigureerd voor gebruik met uw Azure AD.
 

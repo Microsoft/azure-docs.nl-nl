@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: inhenkel
-ms.openlocfilehash: 2873486b95f0bb4a9a27e2e050cc6f6d5473a44e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 82f01b4216af8d924354ae9e9a204a8eaefb8213
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98898169"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106120840"
 ---
 # <a name="streaming-policies"></a>Beleid voor streaming
 
@@ -34,7 +34,7 @@ De volgende ' beslissings structuur ' helpt u bij het kiezen van een vooraf gede
 
 > [!IMPORTANT]
 > * Eigenschappen van **streaming-beleid** van het type datetime zijn altijd in UTC-indeling.
-> * U dient een beperkt aantal beleids regels te ontwerpen voor uw media service-account en deze opnieuw te gebruiken voor uw streaming-Locators wanneer dezelfde opties nodig zijn. Zie [quota's en limieten](limits-quotas-constraints.md)voor meer informatie.
+> * U dient een beperkt aantal beleids regels te ontwerpen voor uw media service-account en deze opnieuw te gebruiken voor uw streaming-Locators wanneer dezelfde opties nodig zijn. Zie [quota's en limieten](limits-quotas-constraints-reference.md)voor meer informatie.
 
 ## <a name="decision-tree"></a>Beslissingsstructuur
 
@@ -42,7 +42,7 @@ Klik op de afbeelding om deze in volledig formaat weer te geven.
 
 [![Diagram met een beslissings structuur die is ontworpen om u te helpen bij het kiezen van een vooraf gedefinieerd streaming-beleid voor uw scenario.](./media/streaming-policy/large.png)](./media/streaming-policy/large.png#lightbox)
 
-Als u uw inhoud versleutelt, moet u een [beleid voor inhouds sleutels](content-key-policy-concept.md)maken, het **beleid voor inhouds sleutels** is niet nodig voor het wissen van streams of downloaden. 
+Als u uw inhoud versleutelt, moet u een [beleid voor inhouds sleutels](drm-content-key-policy-concept.md)maken, het **beleid voor inhouds sleutels** is niet nodig voor het wissen van streams of downloaden. 
 
 Als u speciale vereisten hebt (bijvoorbeeld als u verschillende protocollen wilt opgeven, een aangepaste key delivery service wilt gebruiken of een leeg audio spoor wilt gebruiken), kunt u een aangepast streaming-beleid [maken](/rest/api/media/streamingpolicies/create) . 
 
@@ -81,10 +81,10 @@ Reactie:
 
 ## <a name="filtering-ordering-paging"></a>Filteren, ordenen, paginering
 
-Zie [filteren, ordenen, pagineren van Media Services entiteiten](entities-overview.md).
+Zie [filteren, ordenen, pagineren van Media Services entiteiten](filter-order-page-entitites-how-to.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Een bestand streamen](stream-files-dotnet-quickstart.md)
-* [Gebruik AES-128 dynamische versleuteling en de key delivery service](protect-with-aes128.md)
-* [De Digital Rights Management-service gebruiken voor dynamische versleuteling en licentielevering](protect-with-drm.md)
+* [Gebruik AES-128 dynamische versleuteling en de key delivery service](drm-playready-license-template-concept.md)
+* [De Digital Rights Management-service gebruiken voor dynamische versleuteling en licentielevering](drm-protect-with-drm-tutorial.md)

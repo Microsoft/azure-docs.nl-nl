@@ -9,20 +9,16 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc, devx-track-python
-ms.openlocfilehash: 276dd5b7eba33081c5131eba722df91d8685adff
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8ab3458003366416e10588d3f2edb29b51619ecf
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98678160"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107257633"
 ---
 # <a name="tutorial-join-sensor-data-with-weather-forecast-data-by-using-azure-notebooks-python"></a>Zelfstudie: Sensorgegevens samenvoegen met weervoorspellingsgegevens met behulp van Azure Notebooks (Python)
 
-> [!IMPORTANT]
-> Azure Maps Weather-services zijn momenteel beschikbaar in de openbare preview.
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
-
-Windkracht is een alternatieve energiebron voor fossiele brandstoffen om klimaatverandering tegen te gaan. Omdat wind van nature niet consistent is, moeten exploitanten van windenergie machine learning-modellen (ML) bouwen om de capaciteit van windenergie te voorspellen. Deze voorspelling is nodig om te kunnen voldoen aan de vraag naar elektriciteit en om de stabiliteit van het elektriciteitsnet te bewaren. In deze zelfstudie wordt uitgelegd hoe Azure Maps weervoorspellingsgegevens worden gecombineerd met voorbeeldgegevens voor weermetingen. Er worden gegevens over de weervoorspelling aangevraagd door de Azure Maps Weather-services (preview) aan te roepen.
+Windkracht is een alternatieve energiebron voor fossiele brandstoffen om klimaatverandering tegen te gaan. Omdat wind van nature niet consistent is, moeten exploitanten van windenergie machine learning-modellen (ML) bouwen om de capaciteit van windenergie te voorspellen. Deze voorspelling is nodig om te kunnen voldoen aan de vraag naar elektriciteit en om de stabiliteit van het elektriciteitsnet te bewaren. In deze zelfstudie wordt uitgelegd hoe Azure Maps weervoorspellingsgegevens worden gecombineerd met voorbeeldgegevens voor weermetingen. Er worden gegevens over de weers verwachting aangevraagd door Azure Maps weer services aan te roepen.
 
 In deze zelfstudie leert u het volgende:
 
@@ -31,7 +27,7 @@ In deze zelfstudie leert u het volgende:
 > * Demogegevens laden uit een bestand.
 > * Azure Maps REST API's aanroepen in Python.
 > * Locatiegegevens op de kaart weergeven.
-> * De demogegevens verrijken met de [dagelijkse weervoorspellingsgegevens](/rest/api/maps/weather/getdailyforecastpreview) van Azure Maps.
+> * De demogegevens verrijken met de [dagelijkse weervoorspellingsgegevens](/rest/api/maps/weather/getdailyforecast) van Azure Maps.
 > * De voorspellingsgegevens in grafieken plotten.
 
 
@@ -72,8 +68,7 @@ df = pd.read_csv("./data/weather_dataset_demo.csv")
 
 ## <a name="request-daily-forecast-data"></a>Dagelijkse voorspellingsgegevens aanvragen
 
-In ons scenario willen we dagelijks de voorspelling aanvragen voor elke sensorlocatie. Met het volgende script wordt de [dagelijkse voorspellings-API](/rest/api/maps/weather/getdailyforecastpreview) van de Azure Maps Weather-services (preview) aangeroepen. Deze API retourneert de weersvoorspelling voor elke windturbine, voor de komende 15 dagen vanaf de huidige datum.
-
+In ons scenario willen we dagelijks de voorspelling aanvragen voor elke sensorlocatie. Met het volgende script wordt de [dagelijkse prognose-API](/rest/api/maps/weather/getdailyforecast) van de Azure Maps weer Services aangeroepen. Deze API retourneert de weersvoorspelling voor elke windturbine, voor de komende 15 dagen vanaf de huidige datum.
 
 ```python
 subscription_key = "Your Azure Maps key"
@@ -86,7 +81,7 @@ years,months,days = [],[],[]
 dates_check=set()
 wind_speeds, wind_direction = [], []
 
-# Call azure maps Weather services (Preview) to get daily forecast data for 15 days from current date
+# Call azure maps Weather services to get daily forecast data for 15 days from current date
 session = aiohttp.ClientSession()
 j=-1
 for i in range(0, len(coords), 2):
@@ -192,7 +187,7 @@ Zie [Elektrische voertuigen routeren met Azure Notebooks](./tutorial-ev-routing.
 
 Als u meer wilt weten over de Azure Maps API's die in deze zelfstudie worden gebruikt, raadpleegt u:
 
-* [Dagelijkse voorspelling](/rest/api/maps/weather/getdailyforecastpreview)
+* [Dagelijkse voorspelling](/rest/api/maps/weather/getdailyforecast)
 * [Renderen - Kaartafbeelding ophalen](/rest/api/maps/render/getmapimage)
 
 Zie [Azure Maps REST API's](./consumption-model.md) voor een volledige lijst met Azure Maps REST API's.

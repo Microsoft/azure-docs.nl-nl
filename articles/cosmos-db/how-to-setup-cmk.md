@@ -4,20 +4,17 @@ description: Meer informatie over het configureren van door de klant beheerde sl
 author: ThomasWeiss
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 02/19/2021
+ms.date: 04/01/2021
 ms.author: thweiss
-ms.openlocfilehash: 3ee566a598ea7fdf060712c934305ef63467e548
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1b1fc0b51c1cd2a99ec97bec9f588699a893ceca
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101656513"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106222619"
 ---
 # <a name="configure-customer-managed-keys-for-your-azure-cosmos-account-with-azure-key-vault"></a>Door de klant beheerde sleutels configureren voor uw Azure Cosmos-account met Azure Key Vault
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
-
-> [!NOTE]
-> Voor het gebruik van door de klant beheerde sleutels met de Azure Cosmos DB [analytische opslag](analytical-store-introduction.md) is momenteel extra configuratie vereist voor uw account. Neem contact op met [azurecosmosdbcmk@service.microsoft.com](mailto:azurecosmosdbcmk@service.microsoft.com) voor meer informatie.
 
 Gegevens die zijn opgeslagen in uw Azure Cosmos-account, worden automatisch en naadloos versleuteld met sleutels die worden beheerd door micro soft (door **service beheerde sleutels**). U kunt desgewenst een tweede laag versleuteling toevoegen met sleutels die u beheert (door de **klant beheerde sleutels**).
 
@@ -51,7 +48,7 @@ Als u een bestaand Azure Key Vault exemplaar gebruikt, kunt u controleren of dez
 - [Voorlopig verwijderen gebruiken met PowerShell](../key-vault/general/key-vault-recovery.md)
 - [Voorlopig verwijderen gebruiken met Azure CLI](../key-vault/general/key-vault-recovery.md)
 
-## <a name="add-an-access-policy-to-your-azure-key-vault-instance"></a>Een toegangs beleid toevoegen aan uw Azure Key Vault-exemplaar
+## <a name="add-an-access-policy-to-your-azure-key-vault-instance"></a><a id="add-access-policy"></a> Een toegangs beleid toevoegen aan uw Azure Key Vault-exemplaar
 
 1. Ga vanuit het Azure Portal naar het Azure Key Vault exemplaar dat u wilt gebruiken voor het hosten van de versleutelings sleutels. Selecteer **toegangs beleid** in het menu links:
 
@@ -63,7 +60,14 @@ Als u een bestaand Azure Key Vault exemplaar gebruikt, kunt u controleren of dez
 
    :::image type="content" source="./media/how-to-setup-cmk/portal-akv-add-ap-perm2.png" alt-text="De juiste machtigingen selecteren":::
 
-1. Selecteer onder **Principal selecteren** de optie **geen geselecteerd**. Vervolgens zoekt u naar **Azure Cosmos DB** Principal en selecteert u deze (om eenvoudiger te vinden, kunt u ook zoeken op Principal-id: `a232010e-820c-4083-83bb-3ace5fc29d0b` voor elke Azure-regio, met uitzonde ring van Azure Government regio's waar de principal-id is `57506a73-e302-42a9-b869-6f12d9ec29e9` ). Kies tot slot onderaan **selecteren** . Als de principal van de **Azure Cosmos DB** zich niet in de lijst bevindt, moet u de resource provider voor **Microsoft.DocumentDB** mogelijk opnieuw registreren zoals beschreven in de sectie [de resource provider registreren](#register-resource-provider) van dit artikel.
+1. Selecteer onder **Principal selecteren** de optie **geen geselecteerd**.
+
+1. Zoek naar **Azure Cosmos DB** -Principal en selecteer deze (om eenvoudiger te vinden, kunt u ook zoeken op Principal-id: `a232010e-820c-4083-83bb-3ace5fc29d0b` voor elke Azure-regio, met uitzonde ring van Azure Government regio's waar de principal-id is `57506a73-e302-42a9-b869-6f12d9ec29e9` ). Als de principal van de **Azure Cosmos DB** zich niet in de lijst bevindt, moet u de resource provider voor **Microsoft.DocumentDB** mogelijk opnieuw registreren zoals beschreven in de sectie [de resource provider registreren](#register-resource-provider) van dit artikel.
+
+   > [!NOTE]
+   > Hiermee registreert u de Azure Cosmos DB identiteit van de eerste partij in uw Azure Key Vault toegangs beleid. Als u deze identiteit van de eerste partij wilt vervangen door de beheerde identiteit van uw Azure Cosmos DB account, raadpleegt [u een beheerde identiteit gebruiken in het Azure Key Vault-toegangs beleid](#using-managed-identity).
+
+1. Kies onder **selecteren** . 
 
    :::image type="content" source="./media/how-to-setup-cmk/portal-akv-add-ap.png" alt-text="Selecteer de Azure Cosmos DB-Principal":::
 
@@ -226,6 +230,34 @@ az cosmosdb show \
     --query keyVaultKeyUri
 ```
 
+## <a name="using-a-managed-identity-in-the-azure-key-vault-access-policy"></a><a id="using-managed-identity"></a> Een beheerde identiteit gebruiken in het Azure Key Vault-toegangs beleid
+
+Met dit toegangs beleid zorgt u ervoor dat uw Azure Cosmos DB-account toegang heeft tot de versleutelings sleutels. Dit wordt gedaan door toegang te verlenen aan een specifieke Azure Active Directory (AD)-identiteit. Er worden twee typen identiteiten ondersteund:
+
+- De identiteit van de eerste partij van Azure Cosmos DB kan worden gebruikt om toegang te verlenen aan de Azure Cosmos DB-service.
+- De [beheerde identiteit](how-to-setup-managed-identity.md) van uw Azure Cosmos DB-account kan worden gebruikt om uw account specifiek toegang te verlenen.
+
+Omdat een door het systeem toegewezen beheerde identiteit alleen kan worden opgehaald nadat uw account is gemaakt, moet u eerst uw account maken met behulp van de identiteit van de eerste partij, zoals [hierboven](#add-access-policy)wordt beschreven. Daarna kunt u het volgende doen:
+
+1. Als dit nog niet is gedaan tijdens het maken van het account, schakelt u een door het [systeem toegewezen beheerde identiteit](how-to-setup-managed-identity.md) in voor uw account en kopieert u de `principalId` toewijzing die is toegewezen.
+
+1. Voeg een nieuw toegangs beleid toe aan uw Azure Key Vault-account, zoals [hierboven](#add-access-policy)is beschreven, maar gebruik de `principalId` u hebt gekopieerd bij de vorige stap in plaats van de identiteit van de eerste partij van Azure Cosmos db.
+
+1. Werk uw Azure Cosmos DB-account bij om aan te geven dat u de door het systeem toegewezen beheerde identiteit wilt gebruiken bij het verkrijgen van toegang tot de versleutelings sleutels in Azure Key Vault. U kunt dit doen door deze eigenschap op te geven in de Azure Resource Manager sjabloon van uw account:
+
+   ```json
+   {
+       "type": " Microsoft.DocumentDB/databaseAccounts",
+       "properties": {
+           "defaultIdentity": "SystemAssignedIdentity",
+           // ...
+       },
+       // ...
+   }
+   ```
+
+1. Desgewenst kunt u de Azure Cosmos DB identiteit van de eerste partij verwijderen uit uw Azure Key Vault toegangs beleid.
+
 ## <a name="key-rotation"></a>Sleutelroulatie
 
 Het draaien van de door de klant beheerde sleutel die wordt gebruikt door uw Azure Cosmos-account kan op twee manieren worden uitgevoerd.
@@ -297,7 +329,7 @@ Deze functie is momenteel alleen beschikbaar voor nieuwe accounts.
 
 ### <a name="is-it-possible-to-use-customer-managed-keys-in-conjunction-with-the-azure-cosmos-db-analytical-store"></a>Is het mogelijk om door de klant beheerde sleutels te gebruiken in combi natie met de Azure Cosmos DB [Analytical Store](analytical-store-introduction.md)?
 
-Ja, maar hiervoor is nog meer configuratie vereist voor uw account. Neem contact op met [azurecosmosdbcmk@service.microsoft.com](mailto:azurecosmosdbcmk@service.microsoft.com) voor meer informatie.
+Ja, maar u moet de [beheerde identiteit van uw Azure Cosmos DB-account](#using-managed-identity) in uw Azure Key Vault toegangs beleid gebruiken voordat u het analytische archief inschakelt.
 
 ### <a name="is-there-a-plan-to-support-finer-granularity-than-account-level-keys"></a>Is er een plan om de nauw keurigheid van sleutels op account niveau te ondersteunen?
 

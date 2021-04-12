@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 07/22/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 2058e5362a65b6cd5f3e5b7cb9c20ce32d020d30
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 84e6f76bcae55ed905e11c46df66478908529970
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96928695"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107258024"
 ---
 # <a name="tutorial-for-configuring-experian-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van Experian met Azure Active Directory B2C
 
@@ -133,7 +133,7 @@ Zoek in het meegeleverde [aangepaste beleid](https://github.com/azure-ad-b2c/par
 
 ### <a name="part-6---configure-the-azure-ad-b2c-policy"></a>Deel 6: het Azure AD B2C-beleid configureren
 
-Raadpleeg dit [document](./custom-policy-get-started.md?tabs=applications#custom-policy-starter-pack) voor instructies over het instellen van uw Azure AD B2C-Tenant en het configureren van beleid.
+Raadpleeg dit [document](./tutorial-create-user-flows.md?pivots=b2c-custom-policy#custom-policy-starter-pack) voor instructies over het instellen van uw Azure AD B2C-Tenant en het configureren van beleid.
 
 >[!NOTE]
 >Dit voorbeeld beleid is gebaseerd op het [lokale account Starter Pack](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/LocalAccounts).
@@ -169,4 +169,4 @@ Raadpleeg de volgende artikelen voor meer informatie:
 
 - [Aangepast beleid in Azure AD B2C](./custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md?tabs=applications)
+- [Aan de slag met aangepast beleid in Azure AD B2C](tutorial-create-user-flows.md?pivots=b2c-custom-policy)

@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 03/04/2020
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 8f7357644639e1bdba07b9ad44533582fc66b600
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3f186ea4afd6a8bbf52f91e94f2976f244fc8dda
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102456069"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106120857"
 ---
 # <a name="streaming-locators"></a>Streaming-locators
 
@@ -29,7 +29,7 @@ Wanneer u een **streaming-Locator** maakt, moet u een **assetnaam** en een naam 
 
 * [Assets](assets-concept.md)
 * [Streaming-beleid](streaming-policy-concept.md)
-* [Beleid voor inhouds sleutels](content-key-policy-concept.md)
+* [Beleid voor inhouds sleutels](drm-content-key-policy-concept.md)
 
 U kunt ook de start-en eind tijd opgeven op uw streaming-Locator, zodat uw gebruiker de inhoud niet kan afspelen tussen deze tijden (bijvoorbeeld tussen 5/1/2019 en 5/5/2019).  
 
@@ -37,7 +37,7 @@ U kunt ook de start-en eind tijd opgeven op uw streaming-Locator, zodat uw gebru
 
 * **Streaming-Locators** kunnen niet worden bijgewerkt. 
 * Eigenschappen van **streaming-Locators** van het type datetime zijn altijd in UTC-indeling.
-* U dient een beperkt aantal beleids regels te ontwerpen voor uw media service-account en deze opnieuw te gebruiken voor uw streaming-Locators wanneer dezelfde opties nodig zijn. Zie [quota's en limieten](limits-quotas-constraints.md)voor meer informatie.
+* U dient een beperkt aantal beleids regels te ontwerpen voor uw media service-account en deze opnieuw te gebruiken voor uw streaming-Locators wanneer dezelfde opties nodig zijn. Zie [quota's en limieten](limits-quotas-constraints-reference.md)voor meer informatie.
 
 ## <a name="create-streaming-locators"></a>Streaming-Locators maken  
 
@@ -85,7 +85,7 @@ Zie [filters: koppelen aan stream Locators](filters-concept.md#associating-filte
 
 ## <a name="filter-order-page-streaming-locator-entities"></a>Filteren, order, entiteiten voor het streamen van een pagina
 
-Zie [filteren, ordenen, pagineren van Media Services entiteiten](entities-overview.md).
+Zie [filteren, ordenen, pagineren van Media Services entiteiten](filter-order-page-entitites-how-to.md).
 
 ## <a name="list-streaming-locators-by-asset-name"></a>Streaming-Locators vermelden op naam van activum
 
@@ -103,7 +103,7 @@ Als u stroomsgewijze Locators wilt ophalen op basis van de gekoppelde Asset-naam
 
 * [Assets](assets-concept.md)
 * [Streaming-beleid](streaming-policy-concept.md)
-* [Beleid voor inhouds sleutels](content-key-policy-concept.md)
+* [Beleid voor inhouds sleutels](drm-content-key-policy-concept.md)
 * [Zelf studie: Video's uploaden, coderen en streamen met behulp van .NET](stream-files-tutorial-with-api.md)
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 09/01/2020
+ms.date: 04/02/2021
 ms.author: jeedes
-ms.openlocfilehash: 397d59c60ed90e0e25df671baa3d46660eff1d47
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d96f1e0413dac8477e2fc40bf84e88318abf3f9d
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96181574"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106284939"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-rsa-archer-suite"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met RSA Archer Suite
 
@@ -37,13 +37,13 @@ U hebt het volgende nodig om aan de slag te gaan:
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* RSA Archer Suite biedt ondersteuning voor met **SP** geïnitieerde eenmalige aanmelding
-* RSA Archer Suite biedt ondersteuning voor **Just-In-Time**-inrichting van gebruikers
+* RSA Archer suite ondersteunt door **SP** geïnitieerde SSO.
+* RSA Archer suite ondersteunt **just-in-time** -gebruikers inrichting.
 
 > [!NOTE]
-> De id van deze toepassing is een vaste tekenreekswaarde zodat maar één instantie in één tenant kan worden geconfigureerd.
+> De id van deze toepassing is een vaste tekenreekswaarde zodat maar één exemplaar in één tenant kan worden geconfigureerd.
 
-## <a name="adding-rsa-archer-suite-from-the-gallery"></a>RSA Archer Suite toevoegen vanuit de galerie
+## <a name="add-rsa-archer-suite-from-the-gallery"></a>RSA Archer Suite toevoegen vanuit de galerie
 
 Voor het configureren van de integratie van RSA Archer Suite in Azure AD moet u RSA Archer Suite vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
@@ -53,7 +53,6 @@ Voor het configureren van de integratie van RSA Archer Suite in Azure AD moet u 
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
 1. Typ in de sectie **Toevoegen uit de galerie** **RSA Archer Suite** in het zoekvak.
 1. Selecteer **RSA Archer Suite** in het resultatenvenster en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
-
 
 ## <a name="configure-and-test-azure-ad-sso-for-rsa-archer-suite"></a>Eenmalige aanmelding van Azure AD voor RSA Archer Suite configureren en testen
 
@@ -74,7 +73,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. Ga in Azure Portal naar de integratiepagina van de toepassing **RSA Archer Suite**, ga naar de sectie **Beheren** en selecteer **eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
@@ -141,7 +140,7 @@ In deze sectie geeft u B. Simon toestemming om eenmalige aanmelding van Azure te
 
 1. Voer de volgende stappen uit op de volgende pagina.
 
-    ![Eenmalige aanmelding met RSA Archer Suite configureren](./media/rsa-archer-suite-tutorial/configuring-saml-sso.png)
+    ![Eenmalige aanmelding met RSA Archer Suite configureren](./media/rsa-archer-suite-tutorial/configuration.png)
 
     a. Ga naar het tabblad **Single Sign-On** en selecteer in de vervolgkeuzelijst de optie **SAML** als **Single Sign-On Mode**.
 

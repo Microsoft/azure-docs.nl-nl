@@ -1,17 +1,17 @@
 ---
 title: Delta-indeling in Azure Data Factory
 description: Gegevens transformeren en verplaatsen vanuit een Delta-Lake met de Delta-indeling
-author: djpmsft
+author: dcstwh
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 03/26/2020
-ms.author: daperlov
-ms.openlocfilehash: 74df809f2206a105b405ba184949ef887096ebc2
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.author: weetok
+ms.openlocfilehash: 6d9d2b0d185750cf8ed8192661f28a2b82d88b78
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105932502"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106222535"
 ---
 # <a name="delta-format-in-azure-data-factory"></a>Delta-indeling in Azure Data Factory
 
@@ -76,7 +76,7 @@ De onderstaande tabel geeft een lijst van de eigenschappen die worden ondersteun
 | Vacuum | Geef de drempel waarde voor bewaren op in uren voor oudere versies van de tabel. Een waarde van 0 of minder standaard ingesteld op 30 dagen | ja | Geheel getal | vacuüm |
 | Update methode | Opgeven welke bijwerk bewerkingen zijn toegestaan op Delta Lake. Voor-methoden die niet worden ingevoegd, is een voor gaande trans formatie van rijen vereist voor het markeren van een rij. | ja | `true` of `false` | verwijderd <br> invoegen <br> bij te werken <br> samenvoegen |
 | Geoptimaliseerde schrijf bewerkingen | Zorg voor een hogere door Voer voor schrijf bewerkingen via het optimaliseren van interne wille keurige volg orde in Spark-uitvoerende bedrijven. Als gevolg hiervan kunt u minder partities en bestanden met een grotere grootte opmerken | nee | `true` of `false` | optimizedWrite: True |
-| Automatisch comprimeren | Nadat een schrijf bewerking is voltooid, voert Spark automatisch de ```OPTIMIZE``` opdracht uit om de gegevens opnieuw in te delen, waardoor er meer partities zijn, indien nodig, voor betere Lees prestaties in de toekomst | nee | `true` of `false` |   autocompact: waar |
+| Automatisch comprimeren | Nadat een schrijf bewerking is voltooid, voert Spark automatisch de ```OPTIMIZE``` opdracht uit om de gegevens opnieuw in te delen, waardoor er meer partities zijn, indien nodig, voor betere Lees prestaties in de toekomst | nee | `true` of `false` |    autocompact: waar |
 
 ### <a name="delta-sink-script-example"></a>Script voor beeld van Delta-Sink
 

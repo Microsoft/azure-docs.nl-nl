@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 04/06/2020
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 9fbd137f8fa36a7b0526b25d664fceac795ecd81
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 09acdc0c4ea2dbe90c0b7b037b6aec501cc1dd55
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104879151"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106223027"
 ---
 # <a name="tutorial-use-circuit-breaker-dashboard-with-azure-spring-cloud"></a>Zelfstudie: Circuit Breaker Dashboard gebruiken met Azure Spring Cloud
 
@@ -20,7 +20,7 @@ ms.locfileid: "104879151"
 
 Spring [Cloud Netflix Turbine](https://github.com/Netflix/Turbine) wordt veel gebruikt voor de aggregatie van meerdere metrische gegevensstromen van [Hystrix](https://github.com/Netflix/Hystrix) zodat meerdere stromen kunnen worden gemonitord in een enkele weergave met het Hystrix-dashboard. In deze zelfstudie leert u hoe u deze kunt gebruiken in Azure Spring Cloud.
 > [!NOTE]
-> Netflix Hystrix wordt gebruikt in vele Spring Cloud-apps maar wordt niet langer actief ontwikkeld. Als u een nieuw project ontwikkelt, gebruikt u in plaats ervan Spring Cloud Circuit Breaker-implementaties zoals [resilience4j](https://github.com/resilience4j/resilience4j). Het nieuwe Spring Cloud Circuit Breaker-framework werkt anders dan Turbine en voegt alle implementaties van de metrische gegevenspijplijn samen in Micrometer. We werken nog aan ondersteuning van Micrometer in Azure Spring Cloud, dus daarom wordt het nog niet behandeld in deze zelfstudie.
+> Netflix Hystrix wordt gebruikt in vele Spring Cloud-apps maar wordt niet langer actief ontwikkeld. Als u een nieuw project ontwikkelt, gebruikt u in plaats ervan Spring Cloud Circuit Breaker-implementaties zoals [resilience4j](https://github.com/resilience4j/resilience4j). Anders dan voor de turbines die in deze zelf studie worden weer gegeven, worden alle implementaties van de gegevens pijplijn van de biometrische stroom door het nieuwe lente-Framework van de buitenste Cloud gebundeld naar micrometer, dat ook wordt ondersteund door de Azure lente-Cloud. [Meer informatie](https://docs.microsoft.com/azure/spring-cloud/how-to-circuit-breaker-metrics).
 
 ## <a name="prepare-your-sample-applications"></a>Uw voorbeeldtoepassingen voorbereiden
 Het voorbeeld is gevorkt van deze [opslagplaats](https://github.com/StackAbuse/spring-cloud/tree/master/spring-turbine).

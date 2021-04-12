@@ -1,18 +1,18 @@
 ---
 title: Controles voor naleving van Azure Policy-regelgeving voor Azure Storage
 description: Een overzicht van de beschikbare controles voor naleving van Azure Policy-regelgeving voor Azure Storage. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 03/24/2021
+ms.date: 03/31/2021
 ms.topic: sample
 author: twooley
 ms.author: twooley
 ms.service: storage
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 2ef722bd5d27e5aba4c16be96246db0e5e0f94e2
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: a2607d2ea4e67ec97b87dda67fa968ce37e1476b
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105036017"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106096221"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-storage"></a>Controles voor naleving van Azure Policy-regelgeving voor Azure Storage
 

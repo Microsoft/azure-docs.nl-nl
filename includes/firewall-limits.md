@@ -5,20 +5,20 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: include
-ms.date: 11/06/2020
+ms.date: 04/07/2021
 ms.author: victorh
 ms.custom: include file
-ms.openlocfilehash: d479c3087b971aa17cf145e0111890da07381eab
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c4c36c0e099ed7474a5d27f6edcbd4b3ac435f4f
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94386574"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107030816"
 ---
 | Resource | Limiet |
 | --- | --- |
 | Gegevensdoorvoer |30 Gbps<sup>1</sup> |
-|Regels|10.000. Alle regeltypen gecombineerd.|
+|Regel limieten|10.000 unieke bron/bestemming in netwerk regels|
 |Maximaal aantal DNAT-regels|298 voor één openbaar IP-adres.<br>Eventuele extra openbare IP-adressen dragen bij aan de beschikbare SNAT-poorten, maar verminderen het aantal beschikbare DNAT-regels. Zo zijn bij twee openbare IP-adressen bijvoorbeeld 297 DNAT-regels mogelijk. Als het protocol van een regel is geconfigureerd voor zowel TCP als UDP, telt dit als twee regels.|
 |Minimale AzureFirewallSubnet-grootte |/26|
 |Poortbereik in netwerk- en toepassingsregels|1 - 65535|

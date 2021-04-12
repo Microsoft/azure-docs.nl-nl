@@ -1,5 +1,5 @@
 ---
-title: Migreren naar de Read v3.x OCR-containers
+title: Migreren naar de Read v3. x-containers
 titleSuffix: Azure Cognitive Services
 description: Meer informatie over het migreren naar de v3 Read OCR-containers
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: overview
 ms.date: 01/29/2021
 ms.author: aahi
-ms.openlocfilehash: baa91e21979022064aaf13aca6079f8d092d673e
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: 1cc17306265e6e8ba2e7fb3f570d0017b006b84f
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99221150"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106284682"
 ---
 # <a name="migrate-to-the-read-v3x-ocr-containers"></a>Migreer naar de Read v3.x OCR-containers
 
@@ -24,7 +24,7 @@ Als u versie 2 van de Computer Vision Read OCR-container gebruikt, raadpleegt u 
 
 ## <a name="configuration-changes"></a>Configuratiewijzigingen
 
-* `ReadEngineConfig:ResultExpirationPeriod` wordt niet meer ondersteund. De Read-container heeft een ingebouwde cron-taak waarmee de resultaten en metagegevens die zijn gekoppeld aan een aanvraag na 48 uur worden verwijderd.
+* `ReadEngineConfig:ResultExpirationPeriod` wordt niet meer ondersteund. De container OCR lezen bevat een ingebouwde cron-taak waarmee de resultaten en meta gegevens die zijn gekoppeld aan een aanvraag na 48 uur, worden verwijderd.
 * `Cache:Redis:Configuration` wordt niet meer ondersteund. De cache wordt niet gebruikt in de v3.x-containers, dus u hoeft deze niet in te stellen.
 
 ## <a name="api-changes"></a>API-wijzigingen
@@ -39,7 +39,7 @@ Raadpleeg de [Migratiehandleiding van Computer Vision v3 REST API](./upgrade-api
 
 ## <a name="memory-requirements"></a>Geheugenvereisten
 
-De vereisten en aanbevelingen zijn gebaseerd op benchmarks met één aanvraag per seconde, met behulp van een afbeelding van 8 MB van een gescande zakelijke brief met 29 regels en een totaal van 803 tekens. In de volgende tabel wordt de minimale en aanbevolen toewijzing van resources voor elke Read-container beschreven.
+De vereisten en aanbevelingen zijn gebaseerd op benchmarks met één aanvraag per seconde, met behulp van een afbeelding van 8 MB van een gescande zakelijke brief met 29 regels en een totaal van 803 tekens. De volgende tabel beschrijft de minimale en aanbevolen toewijzing van resources voor elke OCR-container lezen.
 
 |Container  |Minimum | Aanbevolen  |
 |---------|---------|------|
@@ -81,7 +81,7 @@ Stel de timer in met `Queue:Azure:QueueVisibilityTimeoutInMilliseconds`, waarmee
 ## <a name="next-steps"></a>Volgende stappen
 
 * Controleer [Containers configureren](computer-vision-resource-container-config.md) voor configuratie-instellingen
-* Bekijk [Overzicht van Computer Vision ](overview.md) voor meer informatie over het herkennen van gedrukte en handgeschreven tekst
-* Raadpleeg de [Computer Vision-API](//westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) voor meer informatie over de methoden die door de container worden ondersteund.
+* [Overzicht van OCR](overview-ocr.md) bekijken voor meer informatie over het herkennen van gedrukte en handgeschreven tekst
+* Raadpleeg de [Lees-API](//westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) voor meer informatie over de methoden die door de container worden ondersteund.
 * Raadpleeg [Veelgestelde vragen (FAQ)](FAQ.md) voor het oplossen van problemen met betrekking tot de functionaliteit van Computer Vision.
 * Gebruik meer [Cognitive Services-containers](../cognitive-services-container-support.md)

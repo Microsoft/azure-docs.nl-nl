@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 3/10/2021
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 357fe1844fabf6ec241d509651b4f0cbcffa3df3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: fa7bc6b979869a06ba7441ae33a47f82aea0704c
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103009127"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106063964"
 ---
 # <a name="using-azure-media-packager-to-accomplish-static-packaging-tasks"></a>Azure media packager gebruiken voor het uitvoeren van statische pakket taken  
 
@@ -715,7 +715,7 @@ In het voor beeld wordt de methode UpdatePlayReadyConfigurationXMLFile gedefinie
 ```
 
 ## <a name="using-static-encryption-to-protect-hlsv3-with-aes-128"></a>Statische versleuteling gebruiken om HLSv3 te beveiligen met AES-128
-Als u uw HLS met AES-128 wilt versleutelen, kunt u gebruikmaken van dynamische versleuteling (de aanbevolen optie) of statische versleuteling (zoals weer gegeven in deze sectie). Zie [using AES-128 Dynamic Encryption and key delivery service](media-services-protect-with-aes128.md)(Engelstalig) als u besluit dynamische versleuteling te gebruiken.
+Als u uw HLS met AES-128 wilt versleutelen, kunt u gebruikmaken van dynamische versleuteling (de aanbevolen optie) of statische versleuteling (zoals weer gegeven in deze sectie). Zie [using AES-128 Dynamic Encryption and key delivery service](media-services-playready-license-template-overview.md)(Engelstalig) als u besluit dynamische versleuteling te gebruiken.
 
 > [!NOTE]
 > Als u uw inhoud wilt converteren naar HLS, moet u uw inhoud eerst converteren/coderen in Smooth Streaming.

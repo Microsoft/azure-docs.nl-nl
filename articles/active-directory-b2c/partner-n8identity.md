@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 10/26/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 337275cef0f2159cb5fac40ac0435408baf3bbef
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9fee7965e7834f0e05dba91f8652a0e155087b14
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96170919"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107257871"
 ---
 # <a name="tutorial-for-configuring-theaccesshub-admin-tool-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van TheAccessHub-beheer hulpprogramma met Azure Active Directory B2C
 
@@ -44,7 +44,7 @@ Om aan de slag te gaan, hebt u het volgende nodig:
 
 - Beschrijving Verbindings-en referentie gegevens voor alle data bases of het LDAPs (Lightweight Directory Access Protocol) waarvan u de klant gegevens wilt migreren.
 
-- Beschrijving Geconfigureerde Azure AD B2C-omgeving voor het gebruik van [aangepast beleid](./custom-policy-get-started.md), als u het TheAccessHub-beheer programma wilt integreren in uw beleids stroom voor registratie.
+- Beschrijving Geconfigureerde Azure AD B2C-omgeving voor het gebruik van [aangepast beleid](./tutorial-create-user-flows.md?pivots=b2c-custom-policy), als u het TheAccessHub-beheer programma wilt integreren in uw beleids stroom voor registratie.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
@@ -358,7 +358,7 @@ Gegevens van Azure AD B2C synchroniseren met TheAccessHub-beheer programma:
 
 ## <a name="configure-azure-ad-b2c-policies"></a>Azure AD B2C-beleid configureren
 
-Het TheAccessHub-beheer programma wordt af en toe gesynchroniseerd met een beperkt aantal mogelijkheden om de status up-to-date te houden met Azure AD B2C. We kunnen gebruikmaken van het API-en Azure AD B2C-beleid van het TheAccessHub-beheer hulpprogramma om het TheAccessHub-beheer programma van wijzigingen op de hoogte te stellen wanneer ze plaatsvinden. Deze oplossing vereist technische kennis van [Azure AD B2C aangepast beleid](./custom-policy-get-started.md). In het volgende gedeelte krijgt u een voor beeld van de beleids stappen en een beveiligd certificaat om het TheAccessHub-beheer programma van nieuwe accounts in uw Sign-Up aangepast beleid te melden.
+Het TheAccessHub-beheer programma wordt af en toe gesynchroniseerd met een beperkt aantal mogelijkheden om de status up-to-date te houden met Azure AD B2C. We kunnen gebruikmaken van het API-en Azure AD B2C-beleid van het TheAccessHub-beheer hulpprogramma om het TheAccessHub-beheer programma van wijzigingen op de hoogte te stellen wanneer ze plaatsvinden. Deze oplossing vereist technische kennis van [Azure AD B2C aangepast beleid](./user-flow-overview.md). In het volgende gedeelte krijgt u een voor beeld van de beleids stappen en een beveiligd certificaat om het TheAccessHub-beheer programma van nieuwe accounts in uw Sign-Up aangepast beleid te melden.
 
 ### <a name="create-a-secure-credential-to-invoke-theaccesshub-admin-tools-api"></a>Een beveiligde referentie maken voor het aanroepen van de API van het TheAccessHub-beheer programma
 
@@ -386,7 +386,7 @@ Het TheAccessHub-beheer programma wordt af en toe gesynchroniseerd met een beper
 
 5. Selecteer **downloaden** om een zip-bestand op te halen met een basis beleid waarmee klanten worden toegevoegd aan het TheAccessHub-beheer programma als klanten zich registreren.
 
-6. Volg deze [zelf studie](./custom-policy-get-started.md) om aan de slag te gaan met het ontwerpen van aangepast beleid in azure AD B2C.
+6. Volg deze [zelf studie](./tutorial-create-user-flows.md?pivots=b2c-custom-policy) om aan de slag te gaan met het ontwerpen van aangepast beleid in azure AD B2C.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -394,4 +394,4 @@ Raadpleeg de volgende artikelen voor meer informatie:
 
 - [Aangepast beleid in Azure AD B2C](./custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md?tabs=applications)
+- [Aan de slag met aangepast beleid in Azure AD B2C](tutorial-create-user-flows.md?pivots=b2c-custom-policy)

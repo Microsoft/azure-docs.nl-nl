@@ -1,20 +1,20 @@
 ---
-title: 'Zelf studie: aan de slag met geverifieerde referenties met behulp van een voor beeld-app (preview-versie)'
+title: 'Zelf studie: aan de slag met Azure Active Directory verifieer bare referenties met behulp van een voor beeld-app (preview)'
 description: In deze zelf studie leert u hoe u verifieer bare referenties kunt verlenen met behulp van onze voor beeld-app en Tenant testen
 ms.service: identity
 ms.subservice: verifiable-credentials
 author: barclayn
 ms.author: barclayn
 ms.topic: tutorial
-ms.date: 03/31/2021
-ms.openlocfilehash: 4914df0df30ed990dd2c692f0f5b57586d2a75c6
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.date: 04/01/2021
+ms.openlocfilehash: deebaf31197d8b7335f887ae447f05add45278b2
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106171917"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106222882"
 ---
-# <a name="tutorial-get-started-with-verifiable-credentials-using-a-sample-app-preview"></a>Zelf studie: aan de slag met geverifieerde referenties met behulp van een voor beeld-app (preview-versie)
+#  <a name="tutorial---get-started-with-azure-active-directory-verifiable-credentials-using-a-sample-app-preview"></a>Zelf studie: aan de slag met Azure Active Directory verifieer bare referenties met behulp van een voor beeld-app (preview)
 
 In deze zelf studie gaan we verder met de stappen die nodig zijn om uw eerste verifieer bare referentie uit te geven: een geverifieerde referentie kaart voor referenties. U kunt deze kaart vervolgens gebruiken om te bewijzen dat u een gecontroleerde referentie expert bent die is gemastereerd in de illustratie van digitale referenties. Ga aan de slag met Azure Active Directory verifieer bare referenties met behulp van de voor beeld-app verifieer bare referenties om uw eerste verifieer bare referentie uit te geven.
 

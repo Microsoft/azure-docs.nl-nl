@@ -8,12 +8,12 @@ ms.date: 01/29/2021
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: d3cc8f36f05def18c16db0875cb712cdf5d165f9
-ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
+ms.openlocfilehash: b106c82e3755fbd0e02f12a769d80ce4761cf026
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106121350"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106285855"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Planning voor de implementatie van Azure Files Sync
 
@@ -358,6 +358,15 @@ Als u liever een on-premises back-upoplossing gebruikt, moeten back-ups worden u
 
 > [!Note]  
 > Met versie 9 van de Azure File Sync agent worden VSS-moment opnamen (inclusief het tabblad vorige versies) nu ondersteund op volumes waarvoor Cloud lagen zijn ingeschakeld. U moet echter compatibiliteit met eerdere versies inschakelen via Power shell. [Meer informatie](storage-sync-files-deployment-guide.md#self-service-restore-through-previous-versions-and-vss-volume-shadow-copy-service).
+
+## <a name="data-classification"></a>Gegevensclassificatie
+Als u software voor gegevens classificatie hebt geïnstalleerd, kan het inschakelen van Cloud lagen ertoe leiden dat er meer kosten in rekening worden gebracht om twee redenen:
+
+1. Als Cloud lagen zijn ingeschakeld, worden uw populairste bestanden lokaal in de cache opgeslagen en worden de meest leuke bestanden in de Cloud gelaagd met de Azure-bestands share. Als uw gegevens classificatie regel matig alle bestanden in de bestands share scant, moeten de bestanden die in de Cloud zijn gelaagd worden ingetrokken wanneer ze worden gescand. 
+
+2. Als de gegevens classificatie software de meta gegevens in de gegevens stroom van een bestand gebruikt, moet het bestand volledig worden ingetrokken om de software de classificatie te kunnen zien. 
+
+Deze verhogen zowel het aantal ingetrokken als de hoeveelheid gegevens die wordt ingetrokken, waardoor de kosten kunnen worden verhoogd.
 
 ## <a name="azure-file-sync-agent-update-policy"></a>Updatebeleid Azure File Sync-agent
 [!INCLUDE [storage-sync-files-agent-update-policy](../../../includes/storage-sync-files-agent-update-policy.md)]

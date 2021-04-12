@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: 7c9edce71e0d0565de80153bfd5b3d5f1edb2e8f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c086fe6a47227901cd44c4684452c842df5286ae
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98955153"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106064423"
 ---
 # <a name="azure-role-based-access-control-azure-rbac-for-media-services-accounts"></a>Op rollen gebaseerd toegangs beheer voor Azure (Azure RBAC) voor Media Services accounts
 
@@ -50,4 +50,4 @@ Raadpleeg de volgende artikelen voor meer informatie:
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Ontwikkelen met Media Services v3-Api's](media-services-apis-overview.md)
-- [Beleid voor inhouds sleutels ophalen met behulp van Media Services .NET](get-content-key-policy-dotnet-howto.md)
+- [Beleid voor inhouds sleutels ophalen met behulp van Media Services .NET](drm-get-content-key-policy-dotnet-how-to.md)

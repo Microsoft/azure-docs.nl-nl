@@ -6,18 +6,18 @@ ms.author: vimeht
 ms.date: 2/16/2021
 ms.topic: tutorial
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 751e9337d74210d238be079e8fcd1bb973937846
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 6464ad632251053ac481fbd1f6a3e1197aa470df
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105936849"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106121299"
 ---
 # <a name="device-update-for-azure-iot-hub-tutorial-using-the-package-agent-on-ubuntu-server-1804-x64"></a>Zelf studie over het bijwerken van apparaten voor Azure IoT Hub met behulp van de pakket agent op Ubuntu Server 18,04 x64
 
 Update van het apparaat voor IoT Hub ondersteunt twee soorten updates: op installatie kopie gebaseerd en op basis van een pakket.
 
-Updates op basis van pakketten zijn gerichte updates waarmee alleen een specifiek onderdeel of een specifieke toepassing op het apparaat wordt gewijzigd. Dit leidt tot een lager verbruik van de band breedte en vermindert de tijd voor het downloaden en installeren van de update. Pakket updates bieden doorgaans minder downtime van apparaten bij het Toep assen van een update en vermijden de overhead van het maken van installatie kopieën.
+Updates op basis van pakketten zijn gerichte updates waarmee alleen een specifiek onderdeel of een specifieke toepassing op het apparaat wordt gewijzigd. Updates op basis van pakketten leiden tot minder band breedte en vermindert de tijd voor het downloaden en installeren van de update. Pakket updates bieden doorgaans minder downtime van apparaten bij het Toep assen van een update en vermijden de overhead van het maken van installatie kopieën.
 
 In deze end-to-end zelf studie wordt uitgelegd hoe u Azure IoT Edge op Ubuntu Server 18,04 x64 bijwerkt met behulp van de update pakket agent van het apparaat. Hoewel in de zelf studie wordt gedemonstreerd hoe u de update IoT Edge, met soort gelijke stappen die u kunt gebruiken om andere pakketten bij te werken zoals de container engine die wordt gebruikt.
 
@@ -40,7 +40,7 @@ In deze zelfstudie leert u het volgende:
 ## <a name="prepare-a-device"></a>Een apparaat voorbereiden
 ### <a name="using-the-automated-deploy-to-azure-button"></a>De knop automatisch implementeren naar Azure gebruiken
 
-Voor het gemak maakt deze zelf studie gebruik van een [Azure Resource Manager sjabloon](../azure-resource-manager/templates/overview.md) die is gebaseerd op [Cloud-init](../virtual-machines/linux/using-cloud-init.md), waarmee u snel een virtuele machine met Ubuntu 18,04 LTS kunt instellen. De service installeert zowel de Azure IoT Edge runtime als de update pakket agent van het apparaat en configureert vervolgens automatisch het apparaat met inrichtings informatie met behulp van het apparaat connection string voor een IoT Edge apparaat (vereiste) dat u opgeeft. Zo voor komt u dat er een SSH-sessie moet worden gestart om de installatie te volt ooien.
+Voor het gemak maakt deze zelf studie gebruik van een [Azure Resource Manager sjabloon](../azure-resource-manager/templates/overview.md) die is gebaseerd op [Cloud-init](../virtual-machines/linux/using-cloud-init.md), waarmee u snel een virtuele machine met Ubuntu 18,04 LTS kunt instellen. De service installeert zowel de Azure IoT Edge runtime als de update pakket agent van het apparaat en configureert vervolgens automatisch het apparaat met inrichtings informatie met behulp van het apparaat connection string voor een IoT Edge apparaat (vereiste) dat u opgeeft. De Azure Resource Manager sjabloon voor komt ook dat er een SSH-sessie moet worden gestart om de installatie te volt ooien.
 
 1. Klik op de onderstaande knop om te beginnen:
 
@@ -75,7 +75,7 @@ Voor het gemak maakt deze zelf studie gebruik van een [Azure Resource Manager sj
 
 1. Controleer of de implementatie correct is voltooid. Wacht enkele minuten nadat de implementatie is voltooid voor de installatie van IoT Edge en de Update Agent van het pakket.
 
-   Er moet een virtuele-machineresource zijn geïmplementeerd in de geselecteerde resourcegroep.  Noteer de naam van de computer. dit moet de volgende indeling hebben `vm-0000000000000` . Noteer ook de bijbehorende **DNS-naam**, die de indeling `<dnsLabelPrefix>``<location>`.cloudapp.azure.com moet hebben.
+   Er moet een virtuele-machineresource zijn geïmplementeerd in de geselecteerde resourcegroep.  Noteer de naam van de computer die de indeling moet hebben `vm-0000000000000` . Noteer ook de bijbehorende **DNS-naam**, die de indeling `<dnsLabelPrefix>``<location>`.cloudapp.azure.com moet hebben.
 
     De **DNS-naam** kan worden verkregen in het gedeelte **Overzicht** van de zojuist geïmplementeerde virtuele machine in Azure Portal.
 
@@ -86,7 +86,7 @@ Voor het gemak maakt deze zelf studie gebruik van een [Azure Resource Manager sj
    > Als u na de installatie SSH wilt gebruiken in deze VM, gebruikt u de bijbehorende **DNS-naam** met de opdracht: `ssh <adminUsername>@<DNS_Name>`
 
 ### <a name="optional-manually-prepare-a-device"></a>Beschrijving Een apparaat hand matig voorbereiden
-De volgende hand matige stappen voor het installeren en configureren van het apparaat zijn gelijk aan die van dit [script voor Cloud-init](https://github.com/Azure/iotedge-vm-deploy/blob/1.2.0-rc4/cloud-init.txt). Ze kunnen worden gebruikt om een fysiek apparaat voor te bereiden.
+Net als de stappen die worden uitgevoerd door het script voor de [Cloud-init](https://github.com/Azure/iotedge-vm-deploy/blob/1.2.0-rc4/cloud-init.txt), volgen de volgende hand matige stappen om het apparaat te installeren en te configureren. Deze stappen kunnen worden gebruikt om een fysiek apparaat voor te bereiden.
 
 1. Volg de instructies voor [het installeren van de Azure IOT Edge runtime](../iot-edge/how-to-install-iot-edge.md?view=iotedge-2020-11&preserve-view=true).
    > [!NOTE]
@@ -110,9 +110,9 @@ Lees de licentie voorwaarden voordat u een pakket gebruikt. Uw installatie en he
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com) en navigeer naar de IOT hub.
 
-2. Zoek in het navigatie deel venster van IoT Edge in het linkernavigatievenster het IoT Edge-apparaat op en navigeer naar het dubbele apparaat.
+2. Zoek in het navigatie deel venster aan de linkerkant van IoT Edge het IoT Edge-apparaat en ga naar het dubbele apparaat of de module dubbele.
 
-3. Verwijder in het dubbele apparaat alle bestaande waarde voor het bijwerken van het apparaat door ze in te stellen op null.
+3. Verwijder in de module met de Update Agent-module van het apparaat alle bestaande waarde voor het bijwerken van het apparaat door ze in te stellen op null. Als u apparaat-id gebruikt met apparaat Update Agent, worden deze wijzigingen aangebracht op het apparaat dubbele.
 
 4. Voeg een nieuwe waarde voor het update label van het apparaat toe, zoals hieronder wordt weer gegeven.
 
@@ -124,7 +124,7 @@ Lees de licentie voorwaarden voordat u een pakket gebruikt. Uw installatie en he
 
 ## <a name="import-update"></a>Update importeren
 
-1. Ga in github naar updates voor het [apparaat](https://github.com/Azure/iot-hub-device-update/releases) en klik op de vervolg keuzelijst activa.
+1. Ga in GitHub naar updates voor het [apparaat](https://github.com/Azure/iot-hub-device-update/releases) en klik op de vervolg keuzelijst activa.
 
 3. Down load de `Edge.package.update.samples.zip` door erop te klikken.
 
@@ -149,7 +149,7 @@ Met deze update worden de `aziot-identity-service` en de `aziot-edge` pakketten 
 
 8. Selecteer verzenden om het import proces te starten.
 
-9. Het import proces wordt gestart en het scherm wordt gewijzigd in de sectie import geschiedenis. Selecteer vernieuwen om de voortgang weer te geven totdat het import proces is voltooid. Afhankelijk van de grootte van de update, kan dit binnen enkele minuten worden voltooid, maar dit kan langer duren.
+9. Het import proces wordt gestart en het scherm wordt gewijzigd in de sectie import geschiedenis. Selecteer vernieuwen om de voortgang weer te geven totdat het import proces is voltooid. Afhankelijk van de grootte van de update, wordt het import proces in een paar minuten voltooid, maar dit kan langer duren.
 
    :::image type="content" source="media/import-update/update-publishing-sequence-2.png" alt-text="Scherm opname met update-import volgorde." lightbox="media/import-update/update-publishing-sequence-2.png":::
 
@@ -212,7 +212,7 @@ U hebt nu een voltooide end-to-end pakket update voltooid met update voor het bi
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u deze niet meer nodig hebt, moet u uw update account voor het apparaat, het exemplaar, de IoT Hub en het IoT Edge apparaat opschonen (als u de virtuele machine hebt gemaakt via de knop implementeren in Azure). U kunt dit doen door naar elke afzonderlijke resource te gaan en verwijderen te selecteren. Houd er rekening mee dat u een update-exemplaar voor het apparaat moet opschonen voordat u het update account voor het apparaat opschoont.
+Als u deze niet meer nodig hebt, moet u uw update account voor het apparaat, het exemplaar, de IoT Hub en het IoT Edge apparaat opschonen (als u de virtuele machine hebt gemaakt via de knop implementeren in Azure). U kunt dit doen door naar elke afzonderlijke resource te gaan en verwijderen te selecteren. U moet een update-exemplaar van het apparaat opschonen voordat u het update account voor het apparaat opschoont.
 
 ## <a name="next-steps"></a>Volgende stappen
 

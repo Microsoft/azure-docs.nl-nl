@@ -13,12 +13,12 @@ ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 97718fef0aecd07dd364677ce1b72eb5bba78475
-ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
+ms.openlocfilehash: 652bc9a236a4e4b9d3f99dab640919f2be985984
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106384269"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107257718"
 ---
 # <a name="register-a-saml-application-in-azure-ad-b2c"></a>Een SAML-toepassing registreren in Azure AD B2C
 
@@ -47,7 +47,7 @@ Organisaties die gebruikmaken van Azure AD B2C als klant identiteits-en toegangs
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Voer de stappen in aan de [slag met aangepast beleid in azure AD B2C](custom-policy-get-started.md). U hebt het aangepaste beleid voor *SocialAndLocalAccounts* nodig van het aangepaste beleid dat wordt beschreven in het artikel.
+* Voer de stappen in aan de [slag met aangepast beleid in azure AD B2C](tutorial-create-user-flows.md?pivots=b2c-custom-policy). U hebt het aangepaste beleid voor *SocialAndLocalAccounts* nodig van het aangepaste beleid dat wordt beschreven in het artikel.
 * Basis kennis van het SAML-protocol en de kennis van de SAML-implementatie van de toepassing.
 * Een webtoepassing geconfigureerd als een SAML-toepassing. Voor deze zelf studie kunt u een door ons verstrekte [SAML-test toepassing][samltest] gebruiken.
 
@@ -71,15 +71,15 @@ Om een vertrouwens relatie tussen uw toepassing en Azure AD B2C te maken, moeten
 
 | Gebruik | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| SAML-aanvraag ondertekening  | Nee | Een certificaat met een persoonlijke sleutel die is opgeslagen in uw web-app en die door uw toepassing wordt gebruikt voor het ondertekenen van SAML-aanvragen die naar Azure AD B2C worden verzonden. De web-app moet de open bare sleutel weer geven via het SAML-eind punt voor meta gegevens. Azure AD B2C valideert de hand tekening van de SAML-aanvraag met behulp van de open bare sleutel uit de meta gegevens van de toepassing.|
-| Versleuteling van SAML-verklaring  | Nee | Een certificaat met een persoonlijke sleutel die is opgeslagen in uw web-app. De web-app moet de open bare sleutel weer geven via het SAML-eind punt voor meta gegevens. Azure AD B2C kunt bevestigingen naar uw toepassing versleutelen met behulp van de open bare sleutel. De toepassing maakt gebruik van de persoonlijke sleutel om de bewering te ontsleutelen.|
+| SAML-aanvraag ondertekening  | No | Een certificaat met een persoonlijke sleutel die is opgeslagen in uw web-app en die door uw toepassing wordt gebruikt voor het ondertekenen van SAML-aanvragen die naar Azure AD B2C worden verzonden. De web-app moet de open bare sleutel weer geven via het SAML-eind punt voor meta gegevens. Azure AD B2C valideert de hand tekening van de SAML-aanvraag met behulp van de open bare sleutel uit de meta gegevens van de toepassing.|
+| Versleuteling van SAML-verklaring  | No | Een certificaat met een persoonlijke sleutel die is opgeslagen in uw web-app. De web-app moet de open bare sleutel weer geven via het SAML-eind punt voor meta gegevens. Azure AD B2C kunt bevestigingen naar uw toepassing versleutelen met behulp van de open bare sleutel. De toepassing maakt gebruik van de persoonlijke sleutel om de bewering te ontsleutelen.|
 
 **Azure AD B2C certificaten**
 
 | Gebruik | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| SAML-antwoord ondertekenen | Ja  | Een certificaat met een persoonlijke sleutel die is opgeslagen in Azure AD B2C. Dit certificaat wordt door Azure AD B2C gebruikt voor het ondertekenen van het SAML-antwoord dat naar uw toepassing is verzonden. Uw toepassing leest de open bare sleutel van de Azure AD B2C meta gegevens om de hand tekening van het SAML-antwoord te valideren. |
-| Ondertekenen van SAML-bevestiging | Ja | Een certificaat met een persoonlijke sleutel die is opgeslagen in Azure AD B2C. Dit certificaat wordt door Azure AD B2C gebruikt voor het ondertekenen van de bevestiging van het SAML-antwoord. Het `<saml:Assertion>` deel van het SAML-antwoord.  |
+| SAML-antwoord ondertekenen | Yes  | Een certificaat met een persoonlijke sleutel die is opgeslagen in Azure AD B2C. Dit certificaat wordt door Azure AD B2C gebruikt voor het ondertekenen van het SAML-antwoord dat naar uw toepassing is verzonden. Uw toepassing leest de open bare sleutel van de Azure AD B2C meta gegevens om de hand tekening van het SAML-antwoord te valideren. |
+| Ondertekenen van SAML-bevestiging | Yes | Een certificaat met een persoonlijke sleutel die is opgeslagen in Azure AD B2C. Dit certificaat wordt door Azure AD B2C gebruikt voor het ondertekenen van de bevestiging van het SAML-antwoord. Het `<saml:Assertion>` deel van het SAML-antwoord.  |
 
 In een productie omgeving kunt u het beste certificaten gebruiken die zijn uitgegeven door een open bare certificerings instantie. U kunt deze procedure echter ook volt ooien met zelfondertekende certificaten.
 

@@ -1,6 +1,6 @@
 ---
-title: Dekking van Microsoft Azure Maps-Services (preview)
-description: Meer informatie over de dekking van Microsoft Azure Maps-Services (preview)
+title: Microsoft Azure kaarten weer Services-dekking
+description: Meer informatie over Microsoft Azure Maps Services-dekking
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 12/07/2020
@@ -9,19 +9,14 @@ ms.service: azure-maps
 services: azure-maps
 ms.custom: references_regions
 manager: philmea
-ms.openlocfilehash: 6c4e9eb765a72b7a0b495f81a954b484ef6aa2b7
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5ac209dc898c2d30f8d50a8989b188ef5a9f5046
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96905482"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107257667"
 ---
-# <a name="azure-maps-weather-services-preview-coverage"></a>Dekking van Azure Maps weer Services (preview)
-
-> [!IMPORTANT]
-> Azure Maps Weather-services zijn momenteel beschikbaar in de openbare preview.
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
-
+# <a name="azure-maps-weather-services-coverage"></a>Dekking van Azure Maps-Services
 
 In dit artikel vindt u informatie over de dekking van Azure Maps [weer Services](/rest/api/maps/weather). Azure Maps weer gegevens Services retourneert details zoals radar tegels, huidige weers omstandigheden, weers verwachtingen en het weers bericht langs een route.
 

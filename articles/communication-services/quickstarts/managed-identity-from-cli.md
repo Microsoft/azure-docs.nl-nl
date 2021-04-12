@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 03/10/2021
 ms.author: jbeauregardb
 ms.reviewer: mikben
-ms.openlocfilehash: 2ef5a3b162d62fa79ed01a156345070ee12b4862
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: a5ee7e8de85a1a53359f651a74e2f9f5e51edb70
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105110675"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107030777"
 ---
 # <a name="authorize-access-with-managed-identity-to-your-communication-resource-in-your-development-environment"></a>Toegang verlenen met beheerde identiteit voor uw communicatie bron in uw ontwikkel omgeving
 
@@ -78,6 +78,8 @@ De Azure Identity SDK leest waarden uit drie omgevings variabelen tijdens runtim
 
 > [!IMPORTANT]
 > Nadat u de omgevings variabelen hebt ingesteld, sluit u het console venster en opent u het opnieuw. Als u Visual Studio of een andere ontwikkel omgeving gebruikt, moet u deze mogelijk opnieuw opstarten zodat de nieuwe omgevings variabelen kunnen worden geregistreerd.
+
+Zodra deze variabelen zijn ingesteld, kunt u het DefaultAzureCredential-object in uw code gebruiken om u te verifiëren bij de service-client van uw keuze.
 
 
 ## <a name="next-steps"></a>Volgende stappen

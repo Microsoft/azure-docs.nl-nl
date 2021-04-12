@@ -14,12 +14,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 03/10/2021
 ms.author: inhenkel
-ms.openlocfilehash: 002a7c61d6760decf65016870739ab62b15d5c72
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 55bf597d8df18085fc9a500a9213a6abe59fd5e3
+ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103013683"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106108249"
 ---
 # <a name="filters-and-dynamic-manifests"></a>Filters en dynamische manifesten
 
@@ -27,7 +27,7 @@ ms.locfileid: "103013683"
 
 > [!div class="op_single_selector" title1="Selecteer de versie van Media Services die u gebruikt:"]
 > * [Versie 2](media-services-dynamic-manifest-overview.md)
-> * [Versie 3](../latest/filters-dynamic-manifest-overview.md)
+> * [Versie 3](../latest/filters-dynamic-manifest-concept.md)
 
 Met ingang van 2,17 versie Media Services kunt u filters voor uw assets definiëren. Deze filters zijn regels aan de server zijde waarmee uw klanten dingen kunnen doen: alleen een sectie van een video afspelen (in plaats van de volledige video afspelen), of alleen een subset van audio-en video weergaven opgeven die het apparaat van de klant kan verwerken (in plaats van alle vertoningen die zijn gekoppeld aan de Asset). Dit filter van uw assets wordt bereikt via de **dynamische manifesten** die worden gemaakt op de aanvraag van uw klant om een video te streamen op basis van opgegeven filter (s).
 

@@ -5,6 +5,10 @@
   items:
     - name: Wat is Form Recognizer?
       href: overview.md
+    - name: Taalondersteuning
+      href: language-support.md
+    - name: Prijzen en beperkingen
+      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/form-recognizer/'
     - name: Nieuwe functies
       href: whats-new.md
 - name: Snelstartgidsen
@@ -91,15 +95,13 @@
   items:
     - name: Opties voor ondersteuning en hulp
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/form-recognizer/context/context
-    - name: Prijzen en beperkingen
-      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/form-recognizer/'
     - name: Azure-roadmap
       href: 'https://azure.microsoft.com/updates/?product=cognitive-services'
     - name: Regionale beschikbaarheid
       href: 'https://go.microsoft.com/fwlink/?linkid=2087185'
-    - name: Taalondersteuning
-      href: language-support.md
     - name: Naleving
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Versleuteling
       href: encrypt-data-at-rest.md
+    - name: Privacy en cookies
+      href: 'https://privacy.microsoft.com/en-US/privacystatement'

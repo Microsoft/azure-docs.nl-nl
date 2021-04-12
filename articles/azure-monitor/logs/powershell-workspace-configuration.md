@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/26/2020
-ms.openlocfilehash: d876a380bfc2d318cddc0964266cc3f0a870aa16
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: a1abe79b4ab1caad04a088f659c0afceb2668eac
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102050984"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107106918"
 ---
 # <a name="create-and-configure-a-log-analytics-workspace-in-azure-monitor-using-powershell"></a>Een Log Analytics-werk ruimte maken en configureren in Azure Monitor met behulp van Power shell
 Dit artikel bevat twee code voorbeelden die laten zien hoe u een Log Analytics-werk ruimte maakt en configureert in Azure Monitor.  
@@ -28,7 +28,7 @@ Met het volgende voorbeeld script maakt u een werk ruimte zonder configuratie va
 
 ```powershell
 $ResourceGroup = "my-resource-group"
-$WorkspaceName = "log-analytics-" + (Get-Random -Maximum 99999) # workspace names need to be unique across all Azure subscriptions - Get-Random helps with this for the example code
+$WorkspaceName = "log-analytics-" + (Get-Random -Maximum 99999) # workspace names need to be unique in resource group - Get-Random helps with this for the example code
 $Location = "westeurope"
 
 # Create the resource group if needed
@@ -63,7 +63,7 @@ Met dit script worden de volgende functies uitgevoerd:
 
 ```powershell
 $ResourceGroup = "my-resource-group"
-$WorkspaceName = "log-analytics-" + (Get-Random -Maximum 99999) # workspace names need to be unique across all Azure subscriptions - Get-Random helps with this for the example code
+$WorkspaceName = "log-analytics-" + (Get-Random -Maximum 99999) # workspace names need to be unique in resource group - Get-Random helps with this for the example code
 $Location = "westeurope"
 
 # Create the resource group if needed
@@ -213,7 +213,7 @@ In het bovenstaande voor beeld is regexDelimiter gedefinieerd als ' \\ n ' voor 
 ## <a name="troubleshooting"></a>Problemen oplossen
 Wanneer u een werk ruimte maakt die in de afgelopen 14 dagen is verwijderd en de status voor het [voorlopig verwijderen](../logs/delete-workspace.md#soft-delete-behavior)heeft, kan de bewerking afwijken, afhankelijk van de configuratie van uw werk ruimte:
 1. Als u dezelfde naam voor de werk ruimte, de resource groep, het abonnement en de regio opgeeft als in de verwijderde werk ruimte, wordt uw werk ruimte hersteld, met inbegrip van de bijbehorende gegevens, configuratie en verbonden agents.
-2. Als u dezelfde naam voor de werk ruimte gebruikt, maar een andere resource groep, abonnement of regio, krijgt u een fout melding *de naam van de werk ruimte is niet uniek* of *conflict*. Volg deze stappen om de werk ruimte eerst te herstellen en permanent verwijderen uit te voeren om de tijdelijke verwijdering te onderdrukken en uw werk ruimte permanent te verwijderen en een nieuwe werk ruimte met dezelfde naam te maken:
+2. De naam van de werk ruimte moet uniek zijn per resource groep. Als u een werkruimte naam gebruikt die al bestaat, ook bij het zacht verwijderen in uw resource groep, krijgt u een fout melding *de naam van de werk ruimte is niet uniek* of *conflict*. Volg deze stappen om de werk ruimte eerst te herstellen en permanent verwijderen uit te voeren om de tijdelijke verwijdering te onderdrukken en uw werk ruimte permanent te verwijderen en een nieuwe werk ruimte met dezelfde naam te maken:
    * Uw werkruimte [herstellen](../logs/delete-workspace.md#recover-workspace)
    * Uw werkruimte [permanent verwijderen](../logs/delete-workspace.md#permanent-workspace-delete)
    * Een nieuwe werk ruimte maken met dezelfde werkruimte naam

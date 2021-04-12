@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 03/18/2020
 ms.custom: seodec18
-ms.openlocfilehash: ee6529f36c302cba1dc7b5a4b53aaf96ce58e4a5
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
-ms.translationtype: HT
+ms.openlocfilehash: 0981d325b3c5982793ada480a87afc48bf58acf7
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94532780"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106066575"
 ---
 # <a name="tutorial-deploy-an-image-classification-model-in-azure-container-instances"></a>Zelfstudie: Een afbeeldingsclassificatiemodel implementeren in Azure Container Instances
 
@@ -45,7 +45,7 @@ Deze zelfstudie is ook beschikbaar op [GitHub](https://github.com/Azure/MachineL
 > De rest van dit artikel bevat dezelfde inhoud als die u ziet in de notebook.  
 >
 > Schakel nu over naar de Jupyter-notebook als u wilt meelezen tijdens het uitvoeren van de code.
-> Als u één codecel in een notebook wilt uitvoeren, klikt u op de codecel en drukt u op **Shift + Enter**. U kunt ook de hele notebook uitvoeren door **Alle uitvoeren** te kiezen op de bovenste werkbalk.
+> Als u één codecel in een notebook wilt uitvoeren, klikt u op de codecel en drukt u op **Shift+Enter**. U kunt ook de hele notebook uitvoeren door **Alle uitvoeren** te kiezen op de bovenste werkbalk.
 
 ## <a name="set-up-the-environment"></a><a name="start"></a>Stel de omgeving in
 

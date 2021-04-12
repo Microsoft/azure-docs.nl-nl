@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: 877f589c19663503b9bb0b1627f1dffe0eba1a23
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "96302750"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-wikispaces"></a>Zelfstudie: Azure Active Directory-integratie met Wikispaces
@@ -176,17 +176,17 @@ In deze sectie geeft u Britta Simon de mogelijkheid om eenmalige aanmelding van 
 
 7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-### <a name="create-wikispaces-test-user"></a>Een Wikispaces-testgebruiker maken
+### <a name="create-wikispaces-test-user&quot;></a>Een Wikispaces-testgebruiker maken
 
 Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Wikispaces, moeten ze worden ingericht in Wikispaces. In het geval van Wikispaces is inrichten een handmatige taak.
 
-### <a name="to-provision-a-user-accounts-perform-the-following-steps"></a>Ga als volgt te werk om een gebruikersaccount in te richten:
+### <a name=&quot;to-provision-a-user-accounts-perform-the-following-steps&quot;></a>Ga als volgt te werk om een gebruikersaccount in te richten:
 
 1. Meld u als beheerder aan bij de bedrijfssite van **Wikispaces**.
 
 2. Ga naar **Leden**.
    
-    ![Leden](./media/wikispaces-tutorial/ic787193.png "Leden")
+    ![Leden](./media/wikispaces-tutorial/ic787193.png &quot;Leden")
 
 3. Klik op **Personen uitnodigen**.
    

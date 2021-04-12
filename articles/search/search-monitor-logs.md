@@ -8,16 +8,16 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 3c8dd5cd9da2fd1e741635a6471c0662066d147e
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: f0d85f056cfaaa58fcc72eb9c2182b3e1a78affb
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105709936"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106581620"
 ---
 # <a name="collect-and-analyze-log-data-for-azure-cognitive-search"></a>Logboek gegevens voor Azure Cognitive Search verzamelen en analyseren
 
-Diagnostische of operationele logboeken bieden inzicht in de gedetailleerde bewerkingen van Azure Cognitive Search en zijn nuttig voor het bewaken van service-en workload-processen. Intern behoudt micro soft de systeem gegevens op de back-end korte tijd (ongeveer 30 dagen), voldoende voor onderzoek en analyse als u een ondersteunings ticket bijwerkt. Als u echter eigendom wilt zijn van operationele gegevens, moet u een diagnostische instelling configureren om op te geven waar logboek gegevens worden verzameld.
+Diagnostische of operationele logboeken bieden inzicht in de gedetailleerde bewerkingen van Azure Cognitive Search en zijn nuttig voor het bewaken van de service status en-processen. Intern behoudt micro soft de systeem gegevens op de back-end korte tijd (ongeveer 30 dagen), voldoende voor onderzoek en analyse als u een ondersteunings ticket bijwerkt. Als u echter eigendom wilt zijn van operationele gegevens, moet u een diagnostische instelling configureren om op te geven waar logboek gegevens worden verzameld.
 
 Diagnostische logboek registratie wordt ingeschakeld via integratie met [Azure monitor](../azure-monitor/index.yml). 
 

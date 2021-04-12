@@ -4,13 +4,13 @@ description: In deze quickstart maakt u de basisonderdelen van een app, intentie
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
-ms.date: 11/30/2020
-ms.openlocfilehash: a5443dce9fc8bc028232f66f45b537a46858f35a
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
-ms.translationtype: HT
+ms.date: 03/26/2021
+ms.openlocfilehash: c2f2bafe68dd3f3dad704ba12cdd4d01bf4f6588
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96436671"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106278759"
 ---
 # <a name="quickstart-create-a-new-app-in-the-luis-portal"></a>Quickstart: Een nieuwe app maken in de LUIS-portal
 
@@ -164,4 +164,4 @@ Wanneer u klaar bent met deze quickstart en niet wilt doorgaan met de volgende, 
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [2. Een app implementeren](get-started-portal-deploy-app.md)
+> [Een app implementeren](get-started-portal-deploy-app.md)

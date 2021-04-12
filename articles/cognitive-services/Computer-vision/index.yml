@@ -1,192 +1,135 @@
-### YamlMime:Landing
+### YamlMime:Hub
 title: Documentatie over Computer Vision
-summary: De cloud-gebaseerde Computer Vision-API geeft ontwikkelaars toegang tot geavanceerde algoritmen voor het verwerken van afbeeldingen en het retourneren van informatie. Door een afbeelding te uploaden of een afbeeldings-URL op te geven, kan visuele inhoud door Microsoft Computer Vision-algoritmen op verschillende manieren worden geanalyseerd op basis van invoer en gebruikersopties. Leer met behulp van snelstarts, zelfstudies en voorbeelden hoe u visuele inhoud op verschillende manieren kunt analyseren.
+summary: 'De cloud-gebaseerde Computer Vision-API geeft ontwikkelaars toegang tot geavanceerde algoritmen voor het verwerken van afbeeldingen en het retourneren van informatie. Door een afbeelding te uploaden of een afbeeldings-URL op te geven, kan visuele inhoud door Microsoft Computer Vision-algoritmen op verschillende manieren worden geanalyseerd op basis van invoer en gebruikersopties. Leer met behulp van snelstarts, zelfstudies en voorbeelden hoe u visuele inhoud op verschillende manieren kunt analyseren.'
 metadata:
-  title: Documentatie voor Computer Vision - Quickstarts, zelfstudies, API-naslag - Azure Cognitive Services | Microsoft Docs
-  description: De cloud-gebaseerde Computer Vision-API geeft ontwikkelaars toegang tot geavanceerde algoritmen voor het verwerken van afbeeldingen en het retourneren van informatie. Door een afbeelding te uploaden of een afbeeldings-URL op te geven, kan visuele inhoud door Microsoft Computer Vision-algoritmen op verschillende manieren worden geanalyseerd op basis van invoer en gebruikersopties. Leer met behulp van snelstarts, zelfstudies en voorbeelden hoe u visuele inhoud op verschillende manieren kunt analyseren.
+  title: 'Documentatie voor Computer Vision - Quickstarts, zelfstudies, API-naslag - Azure Cognitive Services | Microsoft Docs'
+  description: 'De cloud-gebaseerde Computer Vision-API geeft ontwikkelaars toegang tot geavanceerde algoritmen voor het verwerken van afbeeldingen en het retourneren van informatie. Door een afbeelding te uploaden of een afbeeldings-URL op te geven, kan visuele inhoud door Microsoft Computer Vision-algoritmen op verschillende manieren worden geanalyseerd op basis van invoer en gebruikersopties. Leer met behulp van snelstarts, zelfstudies en voorbeelden hoe u visuele inhoud op verschillende manieren kunt analyseren.'
   services: cognitive-services
   ms.service: cognitive-services
   ms.subservice: computer-vision
-  ms.topic: landing-page
+  ms.topic: hub-page
   author: PatrickFarley
   ms.author: pafarley
-  ms.date: 09/22/2020
-  ms.openlocfilehash: 940a34cfbf4281649737f0cf3fed7b490a9938a7
-  ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
-  ms.translationtype: MT
-  ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/09/2021
-  ms.locfileid: "102508891"
-landingContent:
-- title: Over Computer Vision
-  linkLists:
-  - linkListType: overview
-    links:
-    - text: Wat is Computer Vision?
+  ms.date: 03/31/2021
+highlightedContent:
+  items:
+    - title: Over Computer Vision
+      itemType: overview
       url: overview.md
-  - linkListType: whats-new
-    links:
-    - text: Nieuwe functies
+    - title: Wat is er nieuw in Computer Vision?
+      itemType: whats-new
       url: whats-new.md
-  - linkListType: video
-    links:
-    - text: Integreer intelligentie in uw apps met Vision-API's
-      url: https://azure.microsoft.com/resources/videos/connect-2017-microsoft-cognitive-services-put-intelligence-into-your-business-apps/
-- title: Optische tekenherkenning (OCR)
-  linkLists:
-  - linkListType: concept
-    links:
-    - text: Optische tekenherkenning (OCR)
-      url: concept-recognizing-text.md
-  - linkListType: quickstart
-    links:
-    - text: De .NET SDK gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-csharp
-    - text: De Python-SDK gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-python
-    - text: De Java-SDK gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-java
-    - text: De Node-SDK gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-javascript
-    - text: Go-SDK gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-go
-    - text: De REST API gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-rest-api
-- title: Objecten in afbeeldingen detecteren
-  linkLists:
-  - linkListType: concept
-    links:
-    - text: Objectdetectie
-      url: concept-object-detection.md
-  - linkListType: quickstart
-    links:
-    - text: De .NET SDK gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-csharp
-    - text: De Python-SDK gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-python
-    - text: De Java-SDK gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-java
-    - text: De Node-SDK gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-javascript
-    - text: Go-SDK gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-go
-    - text: De REST API gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-rest-api
-- title: Inhoudstags toepassen op afbeeldingen
-  linkLists:
-  - linkListType: concept
-    links:
-    - text: Inhoudstags
-      url: concept-tagging-images.md
-  - linkListType: quickstart
-    links:
-    - text: De .NET SDK gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-csharp
-    - text: De Python-SDK gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-python
-    - text: De Java-SDK gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-java
-    - text: De Node-SDK gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-javascript
-    - text: Go-SDK gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-go
-    - text: De REST API gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-rest-api
-- title: De Read-container gebruiken
-  linkLists:
-  - linkListType: get-started
-    links:
-    - text: De container installeren en uitvoeren
-      url: computer-vision-how-to-install-containers.md
-  - linkListType: how-to-guide
-    links:
-    - text: Containers configureren
-      url: computer-vision-resource-container-config.md
-  - linkListType: deploy
-    links:
-    - text: Containerinstanties gebruiken
-      url: ../containers/azure-container-instance-recipe.md
-    - text: Gebruiken met Kubernetes en Helm
-      url: deploy-computer-vision-on-premises.md
-- title: De container voor ruimtelijke analyse gebruiken
-  linkLists:
-  - linkListType: get-started
-    links:
-    - text: Overzicht van ruimtelijke analyse
-      url: intro-to-spatial-analysis-public-preview.md
-    - text: De container installeren en uitvoeren
-      url: spatial-analysis-container.md
-    - text: Bewerkingen configureren
-      url: spatial-analysis-operations.md
-  - linkListType: deploy
-    links:
-    - text: Een app om mensen te tellen implementeren
-      url: spatial-analysis-web-app.md
-  - linkListType: concept
-    links:
-    - text: Zone- en regelplaatsing
-      url: spatial-analysis-zone-line-placement.md
-    - text: Cameraplaatsing
-      url: spatial-analysis-camera-placement.md
-    - text: Logboekregistratie en problemen oplossen
-      url: spatial-analysis-logging.md
-- title: Gezichten in afbeeldingen detecteren
-  linkLists:
-  - linkListType: concept
-    links:
-    - text: Gezichtsdetectie
-      url: concept-detecting-faces.md
-  - linkListType: quickstart
-    links:
-    - text: De .NET SDK gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-csharp
-    - text: De Python-SDK gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-python
-    - text: De Java-SDK gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-java
-    - text: De Node-SDK gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-javascript
-    - text: Go-SDK gebruiken
-      url: quickstarts-sdk/client-library.md?pivots=programming-language-go
-- title: Verantwoordelijk gebruik van AI
-  linkLists:
-  - linkListType: overview
-    links:
-    - text: Transparantie opmerking voor ruimtelijke analyse
-      url: /legal/cognitive-services/computer-vision/transparency-note-spatial-analysis?context=%2fazure%2fcognitive-services%2fComputer-vision%2fcontext%2fcontext
-  - linkListType: concept
-    links:
-    - text: Verantwoordelijk gebruik in AI-implementatie
-      url: /legal/cognitive-services/computer-vision/responsible-use-deployment?context=%2fazure%2fcognitive-services%2fComputer-vision%2fcontext%2fcontext
-    - text: Gegevens, privacy en beveiliging
-      url: /legal/cognitive-services/computer-vision/compliance-privacy-security-2?context=%2fazure%2fcognitive-services%2fComputer-vision%2fcontext%2fcontext
-- title: Naslaginformatie
-  linkLists:
-  - linkListType: reference
-    links:
-    - text: Computer Vision-API v3.2-preview
-      url: https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-3/operations/56f91f2e778daf14a499f21b
-    - text: Computer Vision API v3.1
-      url: https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005
-    - text: Computer Vision-API v2.1
-      url: https://westus.dev.cognitive.microsoft.com/docs/services/5cd27ec07268f6c679a3e641/operations/56f91f2e778daf14a499f21b
-    - text: .NET SDK
-      url: /dotnet/api/overview/azure/cognitiveservices/client/computervision
-    - text: Python-SDK
-      url: /python/api/overview/azure/cognitiveservices/computervision
-    - text: Java-SDK
-      url: /java/api/overview/azure/cognitiveservices/client/computervision
-    - text: Node.js SDK
-      url: /javascript/api/@azure/cognitiveservices-computervision/
-    - text: Go-SDK
-      url: https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.1/computervision
-    - text: Azure PowerShell
-      url: /powershell/module/az.cognitiveservices/#cognitive_services
-    - text: Azure-opdrachtregelinterface (CLI)
-      url: /cli/azure/cognitiveservices#az-cognitiveservices-list
-- title: Help en feedback
-  linkLists:
-  - linkListType: reference
-    links:
-    - text: Opties voor ondersteuning en hulp
-      url: ../cognitive-services-support-options.md?context=/azure/cognitive-services/computer-vision/context/context
+    - title: Taalondersteuning
+      itemType: reference
+      url: language-support.md
+conceptualContent:
+  items:
+    - title: Optische tekenherkenning
+      links:
+        - itemType: overview
+          text: Over OCR
+          url: overview-ocr.md
+        - itemType: quickstart
+          text: Aan de slag met OCR
+          url: quickstarts-sdk/client-library.md
+        - itemType: how-to-guide
+          text: De Read-API aanroepen
+          url: Vision-API-How-to-Topics/call-read-api.md
+        - itemType: deploy
+          text: De container OCR lezen gebruiken
+          url: computer-vision-how-to-install-containers.md
+        - itemType: reference
+          text: Naslag informatie over OCR API
+          url: 'https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-3/operations/5d986960601faab4bf452005'
+      footerLink:
+        text: Meer
+        url: index-ocr.yml
+    - title: Analyse van de afbeelding
+      links:
+        - itemType: overview
+          text: Over afbeeldings analyse
+          url: overview-image-analysis.md
+        - itemType: quickstart
+          text: Aan de slag met afbeeldings analyse
+          url: quickstarts-sdk/image-analysis-client-library.md
+        - itemType: concept
+          text: Inhoudstags
+          url: concept-tagging-images.md
+        - itemType: concept
+          text: Beschrijvingen van afbeeldingen
+          url: concept-describing-images.md
+        - itemType: concept
+          text: Gezichtsdetectie
+          url: concept-detecting-faces.md
+        - itemType: tutorial
+          text: Metagegevens genereren voor afbeeldingen
+          url: Tutorials/storage-lab-tutorial.md
+        - itemType: reference
+          text: API-referentie voor Image analyse
+          url: 'https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-3/operations/56f91f2e778daf14a499f21b'
+      footerLink:
+        text: Meer
+        url: index-image-analysis.yml
+    - title: Ruimtelijke analyse
+      links:
+        - itemType: overview
+          text: Over ruimtelijke analyse
+          url: intro-to-spatial-analysis-public-preview.md
+        - itemType: quickstart
+          text: Aan de slag met ruimtelijke analyse
+          url: spatial-analysis-container.md
+        - itemType: how-to-guide
+          text: Ruimtelijke-analyse bewerkingen configureren
+          url: spatial-analysis-operations.md
+        - itemType: concept
+          text: Zone- en regelplaatsing
+          url: spatial-analysis-zone-line-placement.md
+        - itemType: concept
+          text: Cameraplaatsing
+          url: spatial-analysis-camera-placement.md
+        - itemType: concept
+          text: Logboekregistratie en problemen oplossen
+          url: spatial-analysis-logging.md
+      footerLink:
+        text: Meer
+        url: index-spatial-analysis.yml
+tools:
+  title: Software Development Kits (SDK's)
+  summary: Ga aan de slag met de Computer Vision SDK in uw favoriete programmeer taal.
+  items:
+    - title: C#
+      imageSrc: media/index/logo_Csharp.svg
+      url: /dotnet/api/overview/azure/cognitiveservices/client/computervision?view=azure-dotnet
+    - title: Node.js
+      imageSrc: media/index/logo_nodejs.svg
+      url: /javascript/api/@azure/cognitiveservices-computervision/?view=azure-node-latest
+    - title: Python
+      imageSrc: media/index/logo_python.svg
+      url: /python/api/overview/azure/cognitiveservices/computervision?view=azure-python
+    - title: Aan de slag
+      imageSrc: media/index/logo_go.svg
+      url: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.1/computervision'
+    - title: Java
+      imageSrc: 'https://docs.microsoft.com/media/logos/logo_java.svg'
+      url: /java/api/com.microsoft.cognitiveservices.speech
+additionalContent:
+  sections:
+    - items:
+        - title: REST-API’s
+          links:
+            - text: Optische tekenherkenning (OCR)
+              url: 'https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-3/operations/5d986960601faab4bf452005'
+            - text: Analyse van de afbeelding
+              url: 'https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-3/operations/56f91f2e778daf14a499f21b'
+        - title: Resources
+          links:
+            - text: Prijzen
+              url: 'https://azure.microsoft.com/pricing/details/cognitive-services/computer-vision'
+            - text: Regio's
+              url: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+            - text: Leren
+              url: /learn/paths/explore-computer-vision-microsoft-azure/
+        - title: Ondersteuning
+          links:
+            - text: Opties voor ondersteuning en hulp
+              url: ../cognitive-services-support-options.md?context=/azure/cognitive-services/computer-vision/context/context

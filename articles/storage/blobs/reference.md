@@ -1,19 +1,19 @@
 ---
 title: Naslag informatie over Azure Blob Storage
 description: Naslag informatie over Azure Blob Storage API, leesmij-bestanden en client bibliotheek pakketten zoeken.
-author: mhopkins-msft
-ms.author: mhopkins
+author: twooley
+ms.author: twooley
 ms.date: 09/10/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
 ms.reviewer: ripohane
-ms.openlocfilehash: e6cd816858efb3487fad5ca03959abfb24e7dbe4
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 0f5faa22e18f22ac5324885c404b98e7116e4e32
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102505491"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106277161"
 ---
 # <a name="azure-blob-storage-reference"></a>Naslag informatie over Azure Blob Storage
 

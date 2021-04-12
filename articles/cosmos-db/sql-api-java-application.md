@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 02/10/2021
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: 01c9a8b62190f3b545169bb5ba6732e6799ff9f2
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 489f4aad78437edad2184e773d97d35af24f3249
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105559788"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106285991"
 ---
 # <a name="tutorial-build-a-java-web-application-using-azure-cosmos-db-and-the-sql-api"></a>Zelfstudie: Een Java-webtoepassing maken met Azure Cosmos DB en de SQL-API
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -37,8 +37,7 @@ In deze zelfstudie over het maken van een Java-toepassing wordt uitgelegd hoe u 
 :::image type="content" source="./media/sql-api-java-application/image1.png" alt-text="De Java-toepassing My ToDo List":::
 
 > [!TIP]
-> In deze zelfstudie voor het ontwikkelen van toepassingen wordt ervan uitgegaan dat u ervaring met Java hebt. Als u niet bekend bent met Java of de [vereiste hulpprogram ma's](#Prerequisites), raden we u aan het volledige project [TODO] https://github.com/Azure-Samples/azure-cosmos-java-sql-api-todo-app) te downloaden van github en het te bouwen met behulp van [de instructies aan het einde van dit artikel](#GetProject). Zodra u klaar bent, kunt u het artikel lezen voor meer informatie over de code in de context van het project.  
->
+> In deze zelfstudie voor het ontwikkelen van toepassingen wordt ervan uitgegaan dat u ervaring met Java hebt. Als u niet bekend bent met Java of de [vereiste hulpprogramma's](#Prerequisites), is het raadzaam het volledige [todo](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-todo-app)-project via GitHub te downloaden. Vervolgens kunt u [de instructies aan het eind van dit artikel gebruiken](#GetProject) om het project op te bouwen. Zodra u klaar bent, kunt u het artikel lezen voor meer informatie over de code in de context van het project.  
 
 ## <a name="prerequisites-for-this-java-web-application-tutorial"></a><a id="Prerequisites"></a>Vereisten voor deze zelfstudie over Java-webtoepassingen
 

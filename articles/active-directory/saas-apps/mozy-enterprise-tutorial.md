@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: jeedes
 ms.openlocfilehash: dfeb99fdbd5cf2b0784982b385d46c3a16901ec8
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105567335"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mozy-enterprise"></a>Zelfstudie: Azure Active Directory-integratie met Mozy Enterprise
@@ -120,13 +120,13 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD bij Mozy Enter
 
     c. Afmeldings-URL
 
-### <a name="configure-mozy-enterprise-single-sign-on"></a>Eenmalige aanmelding configureren voor Mozy Enterprise
+### <a name="configure-mozy-enterprise-single-sign-on&quot;></a>Eenmalige aanmelding configureren voor Mozy Enterprise
 
 1. Meld u in een ander browservenster als beheerder aan bij de bedrijfssite van Mozy Enterprise.
 
 2. Klik in de sectie **Configuratie** op **Verificatiebeleid**.
    
-    ![Schermopname toont Verificatiebeleid geselecteerd bij Configuratie.](./media/mozy-enterprise-tutorial/ic777314.png "Verificatiebeleid")
+    ![Schermopname toont Verificatiebeleid geselecteerd bij Configuratie.](./media/mozy-enterprise-tutorial/ic777314.png &quot;Verificatiebeleid")
 
 3. Voer in de sectie **Verificatiebeleid** de volgende stappen uit:
    
@@ -199,7 +199,7 @@ In dit gedeelte stelt u Britta Simon in staat om gebruik te maken van eenmalige 
 
 7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-### <a name="create-mozy-enterprise-test-user"></a>Een testgebruiker voor Mozy Enterprise maken
+### <a name="create-mozy-enterprise-test-user&quot;></a>Een testgebruiker voor Mozy Enterprise maken
 
 Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Mozy Enterprise, moeten ze worden ingericht voor Mozy Enterprise. In Mozy Enterprise is inrichten een handmatige taak.
 
@@ -212,7 +212,7 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Mozy Enterprise, mo
 
 2. Klik op **Gebruikers** en klik vervolgens op **Nieuwe gebruiker toevoegen**.
    
-    ![Gebruikers](./media/mozy-enterprise-tutorial/ic777317.png "Gebruikers")
+    ![Gebruikers](./media/mozy-enterprise-tutorial/ic777317.png &quot;Gebruikers")
    
     >[!NOTE]
     >De optie **Nieuwe gebruiker toevoegen** wordt alleen weergegeven als **Mozy** als provider is geselecteerd onder **Verificatiebeleid**. Als SAML-verificatie is geconfigureerd, worden de gebruikers automatisch toegevoegd bij hun eerste aanmelding via eenmalige aanmelding.

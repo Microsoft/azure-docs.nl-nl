@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.date: 04/05/2021
 ms.author: banders
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 653eacd11c4a3c7ab500abff809a6b9bf8229c1f
-ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
+ms.openlocfilehash: 7331f9a894d36ee15702a8fe53804efd53049762
+ms.sourcegitcommit: c6a2d9a44a5a2c13abddab932d16c295a7207d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106492066"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107284116"
 ---
 # <a name="managing-azure-enterprise-agreement-roles"></a>Azure Enterprise Agreement-rollen beheren
 
-Voor het beheren van het gebruik en de uitgaven van uw organisatie kunnen Azure-klanten met een Enterprise Agreement vijf beheerdersrollen toewijzen:
+Om het gebruik en de uitgaven van uw organisatie te helpen beheren, kunnen Azure-klanten met een Enterprise Overeenkomst zes afzonderlijke beheerders rollen toewijzen:
 
 - Zakelijke beheerder
 - Zakelijke beheerder (alleen lezen)<sup>1</sup>

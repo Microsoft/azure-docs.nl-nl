@@ -3,16 +3,16 @@ title: Verifiëren met beheerde identiteit
 description: Toegang bieden tot installatie kopieën in uw persoonlijke container register met behulp van een door de gebruiker toegewezen of door het systeem toegewezen beheerde Azure-identiteit.
 ms.topic: article
 ms.date: 01/16/2019
-ms.openlocfilehash: e6c0d21f7bdefa94241655225589a52c02110f70
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 2ab27e8548882b5bd296dc45e4bb74d3d6ba357b
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102041464"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106285481"
 ---
 # <a name="use-an-azure-managed-identity-to-authenticate-to-an-azure-container-registry"></a>Een door Azure beheerde identiteit gebruiken om te verifiëren bij een Azure container Registry 
 
-Gebruik een [beheerde identiteit voor Azure-resources](../active-directory/managed-identities-azure-resources/overview.md) om te verifiëren bij een Azure container Registry vanuit een andere Azure-resource, zonder dat u register referenties hoeft op te geven of te beheren. Stel bijvoorbeeld een door de gebruiker toegewezen of door het systeem toegewezen beheerde identiteit op een Linux-VM in om toegang te krijgen tot container installatie kopieën vanuit het container register, net als bij een openbaar REGI ster.
+Gebruik een [beheerde identiteit voor Azure-resources](../active-directory/managed-identities-azure-resources/overview.md) om te verifiëren bij een Azure container Registry vanuit een andere Azure-resource, zonder dat u register referenties hoeft op te geven of te beheren. Stel bijvoorbeeld een door de gebruiker toegewezen of door het systeem toegewezen beheerde identiteit op een Linux-VM in om toegang te krijgen tot container installatie kopieën vanuit het container register, net als bij een openbaar REGI ster. U kunt ook een Azure Kubernetes service-cluster instellen om de [beheerde identiteit](../aks/use-managed-identity.md) te gebruiken voor het ophalen van container installatie kopieën van Azure container Registry voor pod-implementaties.
 
 Voor dit artikel vindt u meer informatie over beheerde identiteiten en over het volgende:
 
@@ -27,23 +27,14 @@ Als u een container register wilt instellen en een container installatie kopie e
 
 ## <a name="why-use-a-managed-identity"></a>Waarom een beheerde identiteit gebruiken?
 
-Een beheerde identiteit voor Azure-resources biedt Azure-Services met een automatisch beheerde identiteit in Azure Active Directory (Azure AD). U kunt [bepaalde Azure-resources](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md), waaronder virtuele machines, configureren met een beheerde identiteit. Gebruik vervolgens de identiteit voor toegang tot andere Azure-resources zonder referenties in code of scripts door te geven.
+Als u niet bekend bent met de functie voor beheerde identiteiten voor Azure-resources, raadpleegt u dit [overzicht](../active-directory/managed-identities-azure-resources/overview.md).
 
-Beheerde identiteiten zijn van twee typen:
+Nadat u geselecteerde Azure-resources met een beheerde identiteit hebt ingesteld, geeft u de identiteit van de gewenste toegang tot een andere bron, net als elke beveiligingsprincipal. Wijs bijvoorbeeld een beheerde identiteit toe met pull, push en pull of andere machtigingen voor een persoonlijk REGI ster in Azure. (Zie [Azure container Registry rollen en machtigingen](container-registry-roles.md)voor een volledige lijst met register rollen.) U kunt een identiteit toegang geven tot een of meer resources.
 
-* Door de *gebruiker toegewezen identiteiten*, die u kunt toewijzen aan meerdere resources en zo lang als u wilt behouden. Door de gebruiker toegewezen identiteiten zijn momenteel beschikbaar als preview-versie.
+Gebruik vervolgens de identiteit voor verificatie bij elke [service die ondersteuning biedt voor Azure AD-verificatie](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication), zonder dat er referenties in uw code zijn. Kies hoe u wilt verifiëren met behulp van de beheerde identiteit, afhankelijk van uw scenario. Als u de identiteit wilt gebruiken voor toegang tot een Azure container Registry vanaf een virtuele machine, kunt u zich verifiëren met Azure Resource Manager. 
 
-* Een door het *systeem beheerde identiteit*, die uniek is voor een specifieke resource, zoals een enkele virtuele machine en de laatste tijd voor de levens duur van die resource.
-
-Nadat u een Azure-resource met een beheerde identiteit hebt ingesteld, geeft u de identiteit van de gewenste toegang tot een andere bron, net als elke beveiligingsprincipal. Wijs bijvoorbeeld een beheerde identiteit toe met pull, push en pull of andere machtigingen voor een persoonlijk REGI ster in Azure. (Zie [Azure container Registry rollen en machtigingen](container-registry-roles.md)voor een volledige lijst met register rollen.) U kunt een identiteit toegang geven tot een of meer resources.
-
-Gebruik vervolgens de identiteit voor verificatie bij elke [service die ondersteuning biedt voor Azure AD-verificatie](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication), zonder dat er referenties in uw code zijn. Als u de identiteit wilt gebruiken voor toegang tot een Azure container Registry vanaf een virtuele machine, kunt u zich verifiëren met Azure Resource Manager. Kies hoe u wilt verifiëren met behulp van de beheerde identiteit, afhankelijk van uw scenario:
-
-* [Een Azure AD-toegangs token programmatisch verkrijgen](../active-directory/managed-identities-azure-resources/how-to-use-vm-token.md) met http-of rest-aanroepen
-
-* De [Azure sdk's](../active-directory/managed-identities-azure-resources/how-to-use-vm-sdk.md) gebruiken
-
-* Meld u aan bij [Azure CLI of Power shell](../active-directory/managed-identities-azure-resources/how-to-use-vm-sign-in.md) met de identiteit. 
+> [!NOTE]
+> Op dit moment kunnen services zoals Azure Web App for Containers of Azure Container Instances hun beheerde identiteit niet gebruiken om te verifiëren met Azure Container Registry bij het ophalen van een container installatie kopie voor het implementeren van de container resource zelf. De identiteit is alleen beschikbaar nadat de container actief is. Als u deze resources wilt implementeren met behulp van installatie kopieën van Azure Container Registry, wordt een andere verificatie methode als [Service-Principal](container-registry-auth-service-principal.md) aanbevolen.
 
 ## <a name="create-a-container-registry"></a>Een containerregister maken
 
@@ -230,8 +221,6 @@ Er wordt een `Login succeeded` bericht weer gegeven. U kunt vervolgens `docker` 
 ```
 docker pull mycontainerregistry.azurecr.io/aci-helloworld:v1
 ```
-> [!NOTE]
-> Door het systeem toegewezen beheerde service-identiteiten kunnen worden gebruikt om te communiceren met ACRs en App Service kan door het systeem toegewezen beheerde service-identiteiten gebruiken. U kunt deze echter niet combi neren, omdat App Service geen MSI kunt gebruiken om te praten met een ACR. De enige manier is om de beheerder in te scha kelen op de ACR en de beheerders naam/-wacht woord te gebruiken.
 
 ## <a name="next-steps"></a>Volgende stappen
 

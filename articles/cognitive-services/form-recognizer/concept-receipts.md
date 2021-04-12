@@ -10,16 +10,16 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 03/15/2021
 ms.author: lajanuar
-ms.openlocfilehash: 81e8cd5cf4af8da76ae4eb09bed5a4ee0368da4b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8248b3ed21561340e963c848dee4430c48829ab1
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103467354"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106285294"
 ---
 # <a name="form-recognizer-prebuilt-receipt-model"></a>Vooraf gegenereerde ontvangst model voor formulier herkenning
 
-Azure Form Recognizer kan gegevens van verkoop ontvangsten analyseren en extra heren met behulp van het vooraf gegenereerde ontvangst model. Het combineert onze krachtige functies voor [optische teken herkenning (OCR)](../computer-vision/concept-recognizing-text.md) met diepe leer modellen voor het uitpakken van belang rijke informatie uit in het Engels geschreven kwitanties.
+Azure Form Recognizer kan gegevens van verkoop ontvangsten analyseren en extra heren met behulp van het vooraf gegenereerde ontvangst model. Het combineert onze krachtige functies voor [optische teken herkenning (OCR)](../computer-vision/overview-ocr.md) met diepe leer modellen voor het uitpakken van belang rijke informatie uit in het Engels geschreven kwitanties.
 
 ## <a name="understanding-receipts"></a>Over ontvangst bevestigingen
 
@@ -36,7 +36,7 @@ De vooraf ontwikkelde service voor ontvangst behaalt de inhoud van de verkoop on
 
 ### <a name="fields-extracted"></a>Geëxtraheerde velden
 
-|Naam| Type | Description | Tekst | Waarde (gestandaardiseerde uitvoer) |
+|Naam| Type | Beschrijving | Tekst | Waarde (gestandaardiseerde uitvoer) |
 |:-----|:----|:----|:----| :----|
 | ReceiptType | tekenreeks | Type verkoop ontvangst | Gespecificeerd |  |
 | Adverteerder | tekenreeks | Naam van de handelaar die de ontvangst heeft uitgegeven | Contoso |  |

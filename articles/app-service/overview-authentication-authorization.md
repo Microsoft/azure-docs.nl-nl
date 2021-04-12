@@ -3,15 +3,15 @@ title: Verificatie en autorisatie
 description: Meer informatie over de ingebouwde ondersteuning voor verificatie en autorisatie in Azure App Service en Azure Functions en hoe deze uw app kan beveiligen tegen onbevoegde toegang.
 ms.assetid: b7151b57-09e5-4c77-a10c-375a262f17e5
 ms.topic: article
-ms.date: 07/08/2020
+ms.date: 03/29/2021
 ms.reviewer: mahender
 ms.custom: seodec18, fasttrack-edit, has-adal-ref
-ms.openlocfilehash: 35513abdfb61d889abdbd4af7125b1fbb556d7b8
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 1b6e600fcaf32a115af14be2444144fee099d635
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105612752"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106075335"
 ---
 # <a name="authentication-and-authorization-in-azure-app-service-and-azure-functions"></a>Verificatie en autorisatie in Azure App Service en Azure Functions
 
@@ -33,8 +33,7 @@ App Service maakt gebruik van [federatieve identiteiten](https://en.wikipedia.or
 
 | Provider | Aanmeldings eindpunt | How-To richtlijnen |
 | - | - | - |
-| [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md) | `/.auth/login/aad` | [App Service Azure AD-aanmelding](configure-authentication-provider-aad.md) |
-| [Microsoft-account](../active-directory/develop/v2-overview.md) | `/.auth/login/microsoftaccount` | [Aanmelden bij micro soft-account App Service](configure-authentication-provider-microsoft.md) |
+| [Micro soft Identity-platform](../active-directory/fundamentals/active-directory-whatis.md) | `/.auth/login/aad` | [Aanmelden bij micro soft Identity platform App Service](configure-authentication-provider-aad.md) |
 | [Facebook](https://developers.facebook.com/docs/facebook-login) | `/.auth/login/facebook` | [App Service Facebook-aanmelding](configure-authentication-provider-facebook.md) |
 | [Google](https://developers.google.com/identity/choose-auth) | `/.auth/login/google` | [Google-aanmelding App Service](configure-authentication-provider-google.md) |
 | [Twitter](https://developer.twitter.com/en/docs/basics/authentication) | `/.auth/login/twitter` | [App Service Twitter-aanmelding](configure-authentication-provider-twitter.md) |
@@ -110,21 +109,17 @@ App Service kunt voor client browsers automatisch alle niet-geverifieerde gebrui
 
 #### <a name="authorization-behavior"></a>Autorisatie gedrag
 
-In de [Azure Portal](https://portal.azure.com)kunt u app service-autorisatie configureren met een aantal gedragingen wanneer een binnenkomende aanvraag niet is geverifieerd.
+In de [Azure Portal](https://portal.azure.com)kunt u app service configureren met een aantal gedragingen wanneer de inkomende aanvraag niet is geverifieerd. In de volgende koppen worden de opties beschreven.
 
-![Een scherm opname met de vervolg keuzelijst ' te ondernemen actie wanneer de aanvraag is niet geverifieerd '](media/app-service-authentication-overview/authorization-flow.png)
-
-In de volgende koppen worden de opties beschreven.
-
-**Anonieme aanvragen toestaan (geen actie)**
+**Niet-geverifieerde aanvragen toestaan**
 
 Met deze optie wordt de autorisatie van niet-geverifieerde verkeer naar uw toepassings code uitgesteld. App Service worden voor geverifieerde aanvragen ook de verificatie gegevens in de HTTP-headers door gegeven.
 
 Deze optie biedt meer flexibiliteit bij het verwerken van anonieme aanvragen. U kunt bijvoorbeeld [meerdere aanmeldings providers](app-service-authentication-how-to.md#use-multiple-sign-in-providers) aan uw gebruikers aanbieden. U moet echter code schrijven.
 
-**Alleen geverifieerde aanvragen toestaan**
+**Verificatie vereisen**
 
-De optie is **Aanmelden bij \<provider>**. App Service stuurt alle anonieme aanvragen door naar `/.auth/login/<provider>` de provider die u kiest. Als de anonieme aanvraag afkomstig is van een systeem eigen mobiele app, is het geretourneerde antwoord een `HTTP 401 Unauthorized` .
+Met deze optie worden niet-geverifieerde verkeer naar uw toepassing geweigerd. Deze afwijzing kan een omleidings actie zijn naar een van de geconfigureerde id-providers. In deze gevallen wordt een browser-client omgeleid naar `/.auth/login/<provider>` voor de provider die u kiest. Als de anonieme aanvraag afkomstig is van een systeem eigen mobiele app, is het geretourneerde antwoord een `HTTP 401 Unauthorized` . U kunt de weigering ook configureren als een `HTTP 401 Unauthorized` of `HTTP 403 Forbidden` voor alle aanvragen.
 
 Met deze optie hoeft u geen verificatie code in uw app te schrijven. Nauw keurige autorisatie, zoals Role-specifieke autorisatie, kan worden verwerkt door de claims van de gebruiker te controleren (Zie [gebruikers claims voor toegang](app-service-authentication-how-to.md#access-user-claims)).
 

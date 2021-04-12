@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: c1b30a1eafe9af92c1ef3f81773d213ccf96555c
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 098c6ace2b673654d07bfa29147fda3cbbc59b76
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103462028"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107547"
 ---
 # <a name="tutorial-create-a-hierarchy-of-iot-edge-devices-preview"></a>Zelfstudie: Een hiërarchie van IoT Edge-apparaten maken (preview)
 
@@ -446,7 +446,7 @@ Zodra u tevreden bent over de configuraties op elk apparaat, bent u klaar om doo
 
 ## <a name="deploy-modules-to-the-top-layer-device"></a>Modules implementeren op het apparaat in de bovenste laag
 
-Modules dienen om de implementatie en de IoT Edge runtime op uw apparaten te volt ooien en de structuur van uw hiërarchie te bepalen. Met de proxy module IoT Edge-API kunt u HTTP-verkeer veilig Routs via één poort van uw lagere laag apparaten. De docker-REGI ster-module biedt een opslag plaats van docker-installatie kopieën die door uw lagere laag apparaten kunnen worden geopend door het door sturen van installatie kopieën naar het apparaat voor de bovenste laag.
+Modules dienen om de implementatie en de IoT Edge runtime op uw apparaten te volt ooien en de structuur van uw hiërarchie te bepalen. De proxy module IoT Edge-API stuurt HTTP-verkeer veilig via één poort van uw lagere laag apparaten. De docker-REGI ster-module biedt een opslag plaats van docker-installatie kopieën die door uw lagere laag apparaten kunnen worden geopend door het door sturen van installatie kopieën naar het apparaat voor de bovenste laag.
 
 U kunt de Azure Portal of Azure CLI gebruiken om modules te implementeren op uw apparaat op de hoogste laag.
 
@@ -623,7 +623,7 @@ U kunt de Azure Portal of Azure CLI gebruiken om modules te implementeren op uw 
 
 ---
 
-Als u de bovenstaande stappen correct hebt uitgevoerd, moet uw apparaat op de **bovenste laag** de vier modules rapporteren: de IOT Edge API-proxy module, de docker container Registry module en de systeem modules, zoals **opgegeven in de implementatie**. Het kan enkele minuten duren voordat het apparaat de nieuwe implementatie ontvangt en de modules start. Vernieuw de pagina totdat de module temperatuur sensor wordt weer gegeven als **gerapporteerd door apparaat**. Zodra de modules zijn gerapporteerd door het apparaat, kunt u door gaan.
+Als u de bovenstaande stappen correct hebt uitgevoerd, moet uw apparaat op de **bovenste laag** de vier modules rapporteren: de IOT Edge API-proxy module, de docker container Registry module en de systeem modules, zoals **opgegeven in de implementatie**. Het kan enkele minuten duren voordat het apparaat de nieuwe implementatie ontvangt en de modules start. Vernieuw de pagina totdat u de IoTEdgeAPIProxy-en register modules ziet die worden **gerapporteerd door apparaat**. Zodra de modules zijn gerapporteerd door het apparaat, kunt u door gaan.
 
 ## <a name="deploy-modules-to-the-lower-layer-device"></a>Modules implementeren op het apparaat in de onderliggende laag
 

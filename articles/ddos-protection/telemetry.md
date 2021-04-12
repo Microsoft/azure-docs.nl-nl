@@ -3,7 +3,7 @@ title: Telemetrie van DDoS Protection voor Azure DDoS Protection Standard weer g
 description: Meer informatie over het weer geven en configureren van DDoS Protection-telemetrie voor Azure DDoS Protection Standard.
 services: ddos-protection
 documentationcenter: na
-author: yitoh
+author: aletheatoh
 ms.service: ddos-protection
 ms.devlang: na
 ms.topic: article
@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 0be184921ff0bd6b98dd2975acb4e0d5c8b26ba0
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 0a04c6c58f8bfa5370a6529b81a5a85090413a2a
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101716190"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107530"
 ---
 # <a name="view-and-configure-ddos-protection-telemetry"></a>DDoS-beschermingstelemetrie bekijken en configureren
 
@@ -37,7 +37,7 @@ In deze zelfstudie leert u het volgende:
 De volgende [metrische gegevens](../azure-monitor/essentials/metrics-supported.md#microsoftnetworkpublicipaddresses) zijn beschikbaar voor Azure DDoS Protection Standard. Deze metrische gegevens kunnen ook worden geëxporteerd via Diagnostische instellingen (Zie [logboek registratie voor diagnostische gegevens van DDoS weer geven en configureren](diagnostic-logging.md)).
 
 
-| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Aggregatietype | Beschrijving |
+| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Aggregatietype | Description |
 | --- | --- | --- | --- | --- |
 | BytesDroppedDDoS | Binnenkomende bytes verloren DDoS | BytesPerSecond | Maximum | Binnenkomende bytes verloren DDoS| 
 | BytesForwardedDDoS | Doorgestuurde binnenkomende bytes DDoS | BytesPerSecond | Maximum | Doorgestuurde binnenkomende bytes DDoS |

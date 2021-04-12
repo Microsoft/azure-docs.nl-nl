@@ -1,15 +1,15 @@
 ---
 title: Referentie-Azure Policy gast configuratie basislijn voor Windows
 description: Details van de Windows-basis lijn op Azure die via Azure Policy-gast configuratie zijn geïmplementeerd.
-ms.date: 03/11/2021
+ms.date: 04/05/2021
 ms.topic: reference
 ms.custom: generated
-ms.openlocfilehash: 415da8f74b6133b3d9bcdc40dbb3ace8ae6b5a1f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4fa93a36c476b17b98e05977f65e77b3d4efd794
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103235003"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106443420"
 ---
 # <a name="azure-policy-guest-configuration-baseline-for-windows"></a>Configuratie basislijn Azure Policy voor Windows
 

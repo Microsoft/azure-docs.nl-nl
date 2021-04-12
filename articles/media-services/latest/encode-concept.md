@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 225f1d311739bdafbe39971a2b4ac74917e770e9
-ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
+ms.openlocfilehash: cd37175bd85e31ddc18c8267cdf01f7dc6249a0b
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106279490"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106491913"
 ---
 # <a name="encoding-video-and-audio-with-media-services"></a>Video en audio coderen met Media Services
 
@@ -45,7 +45,7 @@ Als u wilt coderen met Media Services v3, moet u een [trans formatie](/rest/api/
 
 Wanneer u code ring met Media Services, gebruikt u voor instellingen om de encoder te vertellen hoe de invoer media bestanden moeten worden verwerkt. In Media Services V3 gebruikt u de standaard encoder om uw bestanden te coderen. U kunt bijvoorbeeld de video resolutie en/of het aantal audio kanalen opgeven dat u in de gecodeerde inhoud wilt opnemen.
 
-U kunt snel aan de slag met een van de aanbevolen standaard instellingen op basis van best practices in de branche of u kunt kiezen om een aangepaste voor instelling te bouwen om uw specifieke scenario-of apparaat vereisten te bereiken. Zie [coderen met een aangepaste trans formatie](encode-custom-presets-how-to.md)voor meer informatie.
+U kunt snel aan de slag met een van de aanbevolen standaard instellingen op basis van best practices in de branche of u kunt kiezen om een aangepaste voor instelling te bouwen om uw specifieke scenario-of apparaat vereisten te bereiken. Zie [coderen met een aangepaste trans formatie](transform-custom-presets-how-to.md)voor meer informatie.
 
 Als u begint met een code ring met de standaard Encoder voor het maken van een MP4-bestand (en), wordt er vanaf januari 2019 een nieuw. mpi-bestand gegenereerd en toegevoegd aan de uitvoer Asset. Dit MPI-bestand is bedoeld om de prestaties te verbeteren voor [dynamische pakket](encode-dynamic-packaging-concept.md) -en streaming-scenario's.
 
@@ -136,9 +136,9 @@ Media Services volledig ondersteunt het aanpassen van alle waarden in voor inste
 
 #### <a name="examples"></a>Voorbeelden
 
-- [Voor instellingen aanpassen met .NET](encode-custom-presets-how-to.md)
-- [Voor instellingen aanpassen met CLI](encode-custom-preset-cli-how-to.md)
-- [Voor instellingen aanpassen met REST](encode-custom-preset-rest-how-to.md)
+- [Voor instellingen aanpassen met .NET](transform-custom-presets-how-to.md)
+- [Voor instellingen aanpassen met CLI](transform-custom-preset-cli-how-to.md)
+- [Voor instellingen aanpassen met REST](transform-custom-preset-rest-how-to.md)
 
 
 ## <a name="preset-schema"></a>Vooraf ingesteld schema
@@ -165,4 +165,4 @@ Ga naar het artikel van de [Azure Media Services-community](media-services-commu
 * [Uploaden, coderen en streamen met behulp van Media Services](stream-files-tutorial-with-api.md).
 * [Code ring van een HTTPS-URL met behulp van ingebouwde voor instellingen](job-input-from-http-how-to.md).
 * [Codeer een lokaal bestand met ingebouwde voor instellingen](job-input-from-local-file-how-to.md).
-* [Een aangepaste voorinstelling bouwen voor de vereisten van uw specifieke scenario of apparaat](encode-custom-presets-how-to.md).
+* [Een aangepaste voorinstelling bouwen voor de vereisten van uw specifieke scenario of apparaat](transform-custom-presets-how-to.md).

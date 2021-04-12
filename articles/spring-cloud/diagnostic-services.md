@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 01/06/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: c354435f689f5182dd368fd53fdab28f1ab63d48
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 68b9aee49e4cf7c02c07fc7dd90e9cc6065a443c
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102218788"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107259418"
 ---
 # <a name="analyze-logs-and-metrics-with-diagnostics-settings"></a>Logboeken en metrische gegevens analyseren met Diagnostische instellingen
 
@@ -31,7 +31,7 @@ Kies de categorie van het logboek en de metrische gegevens die u wilt bewaken.
 
 ## <a name="logs"></a>Logboeken
 
-|Logboek | Beschrijving |
+|Logboek | Description |
 |----|----|
 | **ApplicationConsole** | Console logboek van alle toepassingen van klanten. |
 | **SystemLogs** | Op dit moment worden alleen logboeken met [lente-Cloud configuratie servers](https://cloud.spring.io/spring-cloud-config/reference/html/#_spring_cloud_config_server) in deze categorie vastgelegd. |
@@ -110,7 +110,7 @@ Er zijn verschillende methoden om logboeken en metrische gegevens weer te geven,
 > [!NOTE]
 > `==` is hoofdletter gevoelig, maar `=~` niet.
 
-Zie [Azure monitor-logboek query's](/azure/data-explorer/kusto/query/)voor meer informatie over de query taal die wordt gebruikt in log Analytics.
+Zie [Azure monitor-logboek query's](/azure/data-explorer/kusto/query/)voor meer informatie over de query taal die wordt gebruikt in log Analytics. Als u wilt zoeken naar alle Log Analytics logboeken van een gecentraliseerde client, raadpleegt u [Azure Data Explorer](https://docs.microsoft.com/azure/data-explorer/query-monitor-data).
 
 ### <a name="use-your-storage-account"></a>Uw opslag account gebruiken
 

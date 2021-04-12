@@ -4,14 +4,14 @@ description: In dit artikel wordt uitgelegd hoe u aanvullende instellingen voor 
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
-ms.date: 03/17/2021
+ms.date: 04/08/2021
 ms.author: v-erkel
-ms.openlocfilehash: 6e1e1283cb82dcb900da6473de65ef087a5cea82
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0b3996df3c75ff31d0825be1d332dbd055305963
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104773229"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107259758"
 ---
 # <a name="configure-additional-azure-hpc-cache-settings"></a>Aanvullende instellingen voor de Azure HPC-cache configureren
 
@@ -47,24 +47,26 @@ Lees meer over MTU-instellingen in virtuele netwerken van Azure door het [afstem
 
 ## <a name="customize-ntp"></a>NTP aanpassen
 
-Uw cache maakt standaard gebruik van de tijd server-time.microsoft.com op basis van Azure. Als u wilt dat uw cache een andere NTP-server gebruikt, geeft u deze op in de sectie **NTP-configuratie** . Gebruik een Fully Qualified Domain Name of een IP-adres.
+Uw cache maakt standaard gebruik van de tijd server-time.windows.com op basis van Azure. Als u wilt dat uw cache een andere NTP-server gebruikt, geeft u deze op in de sectie **NTP-configuratie** . Gebruik een Fully Qualified Domain Name of een IP-adres.
 
 ## <a name="set-a-custom-dns-configuration"></a>Een aangepaste DNS-configuratie instellen
 
 > [!CAUTION]
 > Wijzig de DNS-configuratie van uw cache niet als u dit niet nodig hebt. Configuratie fouten kunnen ernstige gevolgen hebben. Als uw configuratie geen Azure-service namen kan omzetten, wordt het HPC-cache-exemplaar permanent onbereikbaar.
+>
+> Neem contact op met uw Azure-vertegenwoordigers voordat u een aangepaste DNS-configuratie instelt.
 
 De Azure HPC-cache wordt automatisch geconfigureerd voor het gebruik van het veilige en handige Azure DNS systeem. Voor een paar ongebruikelijke configuraties moet de cache echter gebruikmaken van een afzonderlijk, lokaal DNS-systeem in plaats van het Azure-systeem. De sectie **DNS-configuratie** van de pagina **netwerk** wordt gebruikt om dit type systeem op te geven.
 
 Neem contact op met uw Azure-vertegenwoordigers of Raadpleeg de service en ondersteuning van micro soft om te bepalen of u een aangepaste cache-DNS-configuratie moet gebruiken.
 
-Als u uw eigen on-premises DNS-systeem configureert voor gebruik in de Azure HPC-cache, moet u ervoor zorgen dat de configuratie Azure-eindpunt namen voor Azure-Services kan omzetten. U moet uw aangepaste DNS-omgeving configureren om bepaalde aanvragen voor naam omzetting door te sturen naar Azure DNS of naar een andere server als dat nodig is.
+Als u uw eigen on-premises DNS-systeem configureert voor gebruik in de Azure HPC-cache, moet u ervoor zorgen dat uw lokale DNS-server de namen van Azure service-eind punten rechtstreeks kan omzetten. HPC-cache werkt niet als uw DNS-server is beperkt van een open bare naam omzetting.
 
 Controleer of de DNS-configuratie deze items kan omzetten voordat u deze gebruikt voor een Azure HPC-cache:
 
 * ``*.core.windows.net``
 * Certificaat intrekkings lijst (CRL) downloaden en verificatie services voor OCSP (Online Certificate Status Protocol). Aan het einde van dit [Azure TLS-artikel](../security/fundamentals/tls-certificate-changes.md)is een gedeeltelijke lijst opgenomen in het [item firewall regels](../security/fundamentals/tls-certificate-changes.md#will-this-change-affect-me) , maar u moet een technische mede werker van micro soft raadplegen om alle vereisten te begrijpen.
-* De Fully Qualified Domain Name van uw NTP-server (time.microsoft.com of een aangepaste server)
+* De Fully Qualified Domain Name van uw NTP-server (time.windows.com of een aangepaste server)
 
 Als u een aangepaste DNS-server voor uw cache wilt instellen, gebruikt u de opgegeven velden:
 

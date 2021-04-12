@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure-virtuele-machineschaalsets
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor Azure-virtuele-machineschaalsets. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 03/24/2021
+ms.date: 03/31/2021
 ms.topic: reference
 author: ju-shim
 ms.author: jushiman
 ms.service: virtual-machine-scale-sets
 ms.custom: subject-policy-reference
-ms.openlocfilehash: bb2e68fe379fdd1d2ce183c90f14e1be148a35ef
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: b42d6355a5f3fad3ae88239229cf588e449c1e2b
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105036098"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106092200"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-virtual-machine-scale-sets"></a>Ingebouwde Azure Policy-definities voor Azure-virtuele-machineschaalsets
 

@@ -9,18 +9,18 @@ ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
 ms.date: 08/25/2020
-ms.openlocfilehash: 33664c49c501071c44ac0f5b2486e687c822940d
-ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
+ms.openlocfilehash: 9ae7e8c4544d2e8bd9dc4ff846aabb0c7f7f9358
+ms.sourcegitcommit: c6a2d9a44a5a2c13abddab932d16c295a7207d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107027598"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107284252"
 ---
 # <a name="migration-guide-oracle-to-azure-sql-database"></a>Migratie handleiding: Oracle naar Azure SQL Database
 
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqldb.md)]
 
-In deze hand leiding leert u [hoe](https://azure.microsoft.com/migration/migration-journey) u uw Oracle-schema's naar Azure SQL database kunt migreren met behulp van [SQL Server-migratie](https://azure.microsoft.com/migration/migration-journey) -assistent voor Oracle (SSMA voor Oracle).
+In deze hand leiding leert u [hoe](https://azure.microsoft.com/migration/migration-journey) u uw Oracle-schema's naar Azure SQL database kunt migreren met behulp van [SQL Server-migratie](https://azure.microsoft.com/en-us/migration/sql-server/) -assistent voor Oracle (SSMA voor Oracle).
 
 Raadpleeg de [migratie handleidingen van Azure data base](https://docs.microsoft.com/data-migration)voor andere migratie handleidingen.
 

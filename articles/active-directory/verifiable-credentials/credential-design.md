@@ -9,12 +9,12 @@ ms.subservice: verifiable-credentials
 ms.topic: how-to
 ms.date: 04/01/2021
 ms.author: barclayn
-ms.openlocfilehash: c830f9c7edb252508824b3a92bd31b6fad31395d
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: a43e734c0a5bfa7c3698dcde5cb5b17f15575d90
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106169940"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106222925"
 ---
 # <a name="how-to-customize-your-verifiable-credentials-preview"></a>Uw verifieer bare referenties aanpassen (preview-versie)
 
@@ -165,7 +165,7 @@ Om de interoperabiliteit van uw referenties te waarborgen, is het raadzaam nauw 
 | `vc.type` | Een matrix met teken reeksen die de schema ('s) aangeven waaraan uw Controleer bare referentie voldoet. |
 
 
-## <a name="input-type-self-attested-claims"></a>Invoer type: Self-Attested claims
+## <a name="input-type-self-attested-claims"></a>Invoer type: zelf Attestation-claims
 
 Tijdens de uitgifte stroom kan de gebruiker worden gevraagd om een eigen attest informatie in te voeren. Vanaf nu is het enige invoer type een ' teken reeks '. 
 ```json
@@ -263,7 +263,7 @@ Het weergave bestand heeft de volgende structuur.
 | `claims.{attribute}.type` | Hiermee wordt het kenmerk type aangegeven. Momenteel wordt ' String ' alleen ondersteund. |
 | `claims.{attribute}.label` | De waarde die moet worden gebruikt als label voor het kenmerk, die wordt weer gegeven in verificator. Dit kan afwijken van het label dat in het regel bestand is gebruikt. Aanbevolen maximum lengte van 40 tekens. |
 
->[!note]
+>[!NOTE]
   >Als een claim is opgenomen in het regel bestand en vervolgens wordt wegge laten in het weergave bestand, zijn er twee verschillende soorten ervaring. Op iOS wordt de claim niet weer gegeven in de sectie Details die in de bovenstaande afbeelding wordt weer gegeven, terwijl op Android de claim wordt weer gegeven.  
 
 ## <a name="next-steps"></a>Volgende stappen

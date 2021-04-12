@@ -15,19 +15,19 @@ ms.topic: article
 ms.date: 3/10/2021
 ms.author: willzhan
 ms.reviewer: dwgeo
-ms.openlocfilehash: b13feeda162f9babe1958402a694b728312ea4e5
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b009c0844a0030da9698ba7e058cde8ba68c5f7e
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103015400"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106063312"
 ---
 # <a name="offline-widevine-streaming-for-android"></a>Offline Widevine-streaming voor Android
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!div class="op_single_selector" title1="Selecteer de versie van Media Services die u gebruikt:"]
-> * [Versie 3](../latest/offline-widevine-for-android.md)
+> * [Versie 3](../latest/drm-offline-widevine-for-android.md)
 > * [Versie 2](offline-widevine-for-android.md)
 
 > [!NOTE]

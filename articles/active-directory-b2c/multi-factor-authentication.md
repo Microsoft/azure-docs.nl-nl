@@ -12,12 +12,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: b7b7f1c5fb0a7991707a26b4a7f54fb3ffaf7bab
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: eff33a8670ee8eb9ee32655956ee0e913ddaa4c1
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102033517"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107258126"
 ---
 # <a name="enable-multi-factor-authentication-in-azure-active-directory-b2c"></a>Meervoudige verificatie inschakelen in Azure Active Directory B2C
 
@@ -56,6 +56,6 @@ Er wordt een klant account in uw Tenant gemaakt voordat de multi-factor Authenti
 
 ::: zone pivot="b2c-custom-policy"
 
-Als u de aangepaste beleids Starter Packs wilt inschakelen Multi-Factor Authentication ophalen van GitHub, werkt u de XML-bestanden in het **SocialAndLocalAccountsWithMFA** Starter Pack bij met de naam van uw Azure AD B2C Tenant. De **SocialAndLocalAccountsWithMFA**  maakt sociale, lokale en multi-factor Authentication-opties mogelijk. Zie [aan de slag met aangepast beleid in Active Directory B2C](custom-policy-get-started.md)voor meer informatie. 
+Als u de aangepaste beleids Starter Packs wilt inschakelen Multi-Factor Authentication ophalen van GitHub, werkt u de XML-bestanden in het **SocialAndLocalAccountsWithMFA** Starter Pack bij met de naam van uw Azure AD B2C Tenant. De **SocialAndLocalAccountsWithMFA**  maakt sociale, lokale en multi-factor Authentication-opties mogelijk. Zie [aan de slag met aangepast beleid in Active Directory B2C](tutorial-create-user-flows.md?pivots=b2c-custom-policy)voor meer informatie. 
 
 ::: zone-end

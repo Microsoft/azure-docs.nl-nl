@@ -7,12 +7,12 @@ ms.service: virtual-wan
 ms.topic: tutorial
 ms.date: 10/07/2020
 ms.author: cherylmc
-ms.openlocfilehash: 6b9c4bcf760387f6bbe380c9aa079df2f86a1847
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: 67df1c822f34f45bb0931848f8015374a346673a
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106060649"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106278436"
 ---
 # <a name="tutorial-create-an-expressroute-association-using-azure-virtual-wan"></a>Zelfstudie: Een ExpressRoute-koppeling maken met behulp van Azure Virtual WAN
 
@@ -104,7 +104,7 @@ In deze sectie brengt u de peering-verbinding tussen uw hub en een VNet tot stan
 
 ## <a name="connect-your-circuit-to-the-hub-gateway"></a><a name="connectcircuit"></a>Uw circuit verbinden met de hub-gateway
 
-Zodra de gateway is gemaakt, kunt u deze verbinden met een [ExpressRoute-circuit](../expressroute/expressroute-howto-circuit-portal-resource-manager.md). ExpressRoute Standard- of Premium-circuits die zich in Global Reach ExpressRoute-ondersteunde locaties bevinden, kunnen verbinding maken met een virtuele WAN ExpressRoute-gateway en gebruikmaken van alle virtuele WAN-Transit mogelijkheden (VPN naar VPN, VPN en ExpressRoute Transit). ExpressRoute Standard- en Premium-circuits die zich in niet Global Reach locaties bevinden, kunnen verbinding maken met Azure-resources, maar kunnen geen virtuele WAN-Transit mogelijkheden gebruiken. ExpressRoute Local wordt ondersteund met Azure Virtual WAN-hubs, zolang de spoke-VNET's die met een Virtual WAN-hub zijn verbonden, zich in dezelfde regio bevinden als de Virtual WAN-hub.
+Zodra de gateway is gemaakt, kunt u deze verbinden met een [ExpressRoute-circuit](../expressroute/expressroute-howto-circuit-portal-resource-manager.md). ExpressRoute Standard- of Premium-circuits die zich in Global Reach ExpressRoute-ondersteunde locaties bevinden, kunnen verbinding maken met een virtuele WAN ExpressRoute-gateway en gebruikmaken van alle virtuele WAN-Transit mogelijkheden (VPN naar VPN, VPN en ExpressRoute Transit). ExpressRoute Standard- en Premium-circuits die zich in niet Global Reach locaties bevinden, kunnen verbinding maken met Azure-resources, maar kunnen geen virtuele WAN-Transit mogelijkheden gebruiken. ExpressRoute Local wordt ook ondersteund met virtuele WAN-hubs van Azure.
 
 ### <a name="to-connect-the-circuit-to-the-hub-gateway"></a>Het circuit verbinden met de hub-gateway
 

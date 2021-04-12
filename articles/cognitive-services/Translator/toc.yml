@@ -114,7 +114,7 @@
           href: custom-translator/unsupported-language-deployments.md
     - name: Concepten
       items:
-        - name: Terminologie
+        - name: Belangrijkste termen
           href: custom-translator/terminology.md
         - name: Tekstvertaling aanpassen en verbeteren
           href: customization.md

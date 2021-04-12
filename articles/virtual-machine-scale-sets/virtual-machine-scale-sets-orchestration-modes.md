@@ -8,12 +8,12 @@ ms.service: virtual-machine-scale-sets
 ms.date: 02/12/2021
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: 316f97480dfe7ee6481ef88faf265051a92024da
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 3d9d9449e2a971a4247e507e0c022c8c5fb9956c
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105937257"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106075403"
 ---
 # <a name="preview-orchestration-modes-for-virtual-machine-scale-sets-in-azure"></a>Voor beeld: Orchestration-modi voor virtuele-machine schaal sets in azure 
 
@@ -306,7 +306,7 @@ U kunt Maxi maal 1000 Vm's toevoegen aan een schaalset in de flexibele Orchestra
 
 **Hoe kan de beschik baarheid met flexibele integratie worden vergeleken met beschikbaarheids sets of een uniforme indeling?**
 
-|   | Flexibele indeling  | Uniforme indeling  | Beschikbaarheidssets  |
+| Beschikbaarheids kenmerk  | Flexibele indeling  | Uniforme indeling  | Beschikbaarheidssets  |
 |-|-|-|-|
 | Implementeren in verschillende beschikbaarheids zones  | Nee  | Ja  | Nee  |
 | Gegarandeerde Beschik baarheid van fouten domein binnen een regio  | Ja, Maxi maal 1000 exemplaren kunnen worden gespreid over Maxi maal drie fout domeinen in de regio. Maximum aantal fout domeinen varieert per regio  | Ja, Maxi maal 100 exemplaren  | Ja, Maxi maal 200 exemplaren  |

@@ -6,12 +6,12 @@ ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 03/18/2021
-ms.openlocfilehash: dadca1fadef9d2967f20cae13e40d01de73d39e4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b10d2e10f95470cadf67af762a0d7320bc09b7e0
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104778335"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106075692"
 ---
 # <a name="azure-migrate-appliance"></a>Azure Migrate-apparaat
 
@@ -500,16 +500,15 @@ Details van schijf | Win32_PerfFormattedData_PerfDisk_PhysicalDisk | DiskWritesP
 
 Dit zijn de prestatie gegevens van de Linux-server die het apparaat verzamelt en verzendt naar Azure.
 
-**Gegevens** | **Opdrachten**
---- | ---
-CPU-gebruik | kat/proc/stat/| grep ' CPU '/proc/stat
-Geheugengebruik | gratis \| grep \| -mem awk ' {Print $3/$ 2 * 100,0} '
-Aantal NIC'S | lshw-class Network \| grep ETH [0-60] \| wc-l
-Ontvangen gegevens per NIC | kat/sys/class/net/ETH $ NIC/statistieken/rx_bytes
-Gegevens die per NIC worden verzonden | kat/sys/class/net/ETH $ NIC/statistieken/tx_bytes
-Aantal schijven | fdisk-l \| egrep ' Disk. * bytes ' \| awk ' {Print $2} ' \| knippen-F1-d ': '
-Details van schijf | kat/proc/diskstats
-
+| **Gegevens** | **Opdrachten** |
+| --- | --- |
+| CPU-gebruik | /proc/stat van kat/proc/stat/ \| grep ' CPU ' |
+| Geheugengebruik | gratis \| grep \| -mem awk ' {Print $3/$ 2 * 100,0} ' |
+| Aantal NIC'S | lshw-class Network \| grep ETH [0-60] \| wc-l |
+| Ontvangen gegevens per NIC | kat/sys/class/net/ETH $ NIC/statistieken/rx_bytes |
+| Gegevens die per NIC worden verzonden | kat/sys/class/net/ETH $ NIC/statistieken/tx_bytes |
+| Aantal schijven | fdisk-l \| egrep-schijf. \* bytes ' \| awk ' {print $2} ' \| knippen-F1-d ': ' |
+| Details van schijf | kat/proc/diskstats |
 
 ## <a name="appliance-upgrades"></a>Toestel-upgrades
 

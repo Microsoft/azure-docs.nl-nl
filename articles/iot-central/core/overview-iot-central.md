@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc, contperf-fy21q2
-ms.openlocfilehash: e6971fa129c01fc4cdf64e0dc681ac0fab4f707b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6f7b24c711d99b1127ee77a920b305acb114d20e
+ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99833810"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106505124"
 ---
 # <a name="what-is-azure-iot-central"></a>Wat is Azure IoT Central?
 
@@ -23,16 +23,16 @@ Via de webinterface kunt u de status van apparaten bewaken, regels maken en milj
 
 In dit artikel worden de volgende onderwerpen besproken voor IoT Central:
 
-- De typische persona's die aan een project zijn gekoppeld.
+- De typische gebruikers rollen die aan een project zijn gekoppeld.
 - Het maken van uw toepassing.
 - Het maken van verbinding tussen uw apparaten en uw toepassing
 - Het beheren van uw toepassing.
 - Mogelijkheden van Azure IoT Edge in IoT Central.
 - Hoe u uw Azure IoT Edge runtime-apparaten verbindt met uw toepassing.
 
-## <a name="personas"></a>Persona's
+## <a name="user-roles"></a>Gebruikersrollen
 
-In de documentatie over IoT Central wordt verwezen naar vier persona's die interactie hebben met een IoT Central-toepassing:
+De IoT Central documentatie verwijst naar vier gebruikers rollen die communiceren met een IoT Central-toepassing:
 
 - Een _bouwer van oplossingen_ is verantwoordelijk voor [het maken van een toepassing](quick-deploy-iot-central.md), [het configureren van regels en acties](quick-configure-rules.md), [het definiëren van integraties met andere services](howto-export-data.md), en het verder aanpassen van de toepassing voor operators en apparaatontwikkelaars.
 - Een _operator_ [beheert de apparaten](howto-manage-devices.md) die met de toepassing zijn verbonden.

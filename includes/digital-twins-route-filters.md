@@ -5,12 +5,12 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 12/04/2020
 ms.author: baanders
-ms.openlocfilehash: d93f484e318c10489eb1db3e9c65c6e0c7479c90
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 811e59e8fd2fea1d8ee90014d4a5ea11229eec63
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "98859842"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107257298"
 ---
 | Bestandsnaam | Description | Filter tekst schema | Ondersteunde waarden | 
 | --- | --- | --- | --- |
@@ -21,7 +21,7 @@ ms.locfileid: "98859842"
 | Gegevens schema | DTDL-model-ID | `dataschema = '<model-dtmi-ID>'` | **Voor telemetrie**: het gegevens schema is de model-id van de dubbele of het onderdeel dat de telemetrie verzendt. Bijvoorbeeld: `dtmi:example:com:floor4;2` <br>**Voor meldingen (maken/verwijderen)**: het gegevens schema kan worden geopend in de hoofd tekst van de melding op `$body.$metadata.$model` . <br>**Voor meldingen (update)**: het gegevens schema kan worden geopend in de hoofd tekst van het bericht op `$body.modelId`|
 | Inhoudstype | Inhouds type van gegevens waarde | `datacontenttype = '<contentType>'` | Het inhouds type is `application/json` |
 | Specificatie versie | De versie van het gebeurtenis schema dat u gebruikt | `specversion = '<version>'` | De versie moet zijn `1.0` . Dit geeft de CloudEvents-schema versie 1,0 |
-| Meldings tekst | Verwijzen naar een eigenschap in het `data` veld van een melding | `$body.<property>` | Zie [*How-to: informatie over gebeurtenis gegevens*](../articles/digital-twins/how-to-interpret-event-data.md) voor voor beelden van meldingen. Naar een eigenschap in het `data` veld kan worden verwezen met `$body`
+| Meldings tekst | Verwijzen naar een eigenschap in het `data` veld van een melding | `$body.<property>` | Zie [*concepten: gebeurtenis meldingen*](../articles/digital-twins/concepts-event-notifications.md) voor voor beelden van meldingen. Naar een eigenschap in het `data` veld kan worden verwezen met `$body`
 
 De volgende gegevens typen worden ondersteund als waarden die worden geretourneerd door verwijzingen naar de bovenstaande gegevens:
 

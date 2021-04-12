@@ -4,17 +4,17 @@ description: Meer informatie over het beheren van pod-toelatingen met behulp van
 services: container-service
 ms.topic: article
 ms.date: 03/25/2021
-ms.openlocfilehash: d95cdb51136511bdd8529c829c3f680d19e14ba9
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 4e72bd28910f471656feb27d10c123930305494e
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105611766"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107031219"
 ---
 # <a name="preview---secure-your-cluster-using-pod-security-policies-in-azure-kubernetes-service-aks"></a>Voor beeld: uw cluster beveiligen met behulp van pod-beveiligings beleid in azure Kubernetes service (AKS)
 
 > [!WARNING]
-> **De functie die in dit document wordt beschreven, Pod-beveiligings beleid (preview), begint met Kubernetes versie 1,21 en wordt verwijderd in versie 1,25.** Als Kubernetes upstream benadert deze mijl paal, dan zal de Kubernetes-Community zich bezig gehouden met het documenteren van levensvat bare alternatieven. De vorige aankondiging van de afschaffing werd gedaan op het moment dat er geen geschikte optie is voor klanten. Nu de Kubernetes-community aan een ander werkt, is het niet meer mogelijk om Kubernetes te vervangen.
+> **De functie die in dit document wordt beschreven, Pod-beveiligings beleid (preview) [, begint met](https://kubernetes.io/blog/2021/04/06/podsecuritypolicy-deprecation-past-present-and-future/) Kubernetes versie 1,21 en wordt verwijderd in versie 1,25.** Als Kubernetes upstream benadert deze mijl paal, dan zal de Kubernetes-Community zich bezig gehouden met het documenteren van levensvat bare alternatieven. De vorige aankondiging van de afschaffing werd gedaan op het moment dat er geen geschikte optie is voor klanten. Nu de Kubernetes-community aan een ander werkt, is het niet meer mogelijk om Kubernetes te vervangen. 
 >
 > Nadat de functie voor beveiligingsbeleid voor pods (preview) is afgeschaft, moet u de functie op alle bestaande clusters uitschakelen met behulp van de afgeschafte functie om toekomstige clusterupgrades uit te voeren en de ondersteuning van Azure te kunnen blijven gebruiken.
 

@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 03/17/2021
 ms.author: cynthn
 ms.custom: contperf-fy21q3
-ms.openlocfilehash: 34fd6720b93a1462836b51856d73573a86809367
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 282eaa6e966ff458dfb1dfdd32ef6ec1f2cdc151
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105022820"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106443743"
 ---
 # <a name="find-and-use-azure-marketplace-vm-images-with-azure-powershell"></a>Azure Marketplace-VM-installatie kopieën zoeken en gebruiken met Azure PowerShell
 
@@ -66,7 +66,7 @@ U kunt Power shell gebruiken om een lijst met installatie kopieën te verfijnen.
     U kunt ook gebruiken `latest` Als u de nieuwste afbeelding wilt gebruiken en niet een specifieke oudere versie.
 
 
-Nu kunt u de geselecteerde Uitgever, aanbieding, SKU en versie combi neren in een URN (waarden gescheiden door:). Geef deze URN door met de `--image` para meter bij het maken van een virtuele machine met de cmdlet [New-AzVM](/powershell/module/az.compute/new-azvm) . U kunt ook het versie nummer in de URN vervangen door `latest` om de meest recente versie van de installatie kopie op te halen.
+Nu kunt u de geselecteerde Uitgever, aanbieding, SKU en versie combi neren in een URN (waarden gescheiden door:). Geef deze URN door met de `-Image` para meter bij het maken van een virtuele machine met de cmdlet [New-AzVM](/powershell/module/az.compute/new-azvm) . U kunt ook het versie nummer in de URN vervangen door `latest` om de meest recente versie van de installatie kopie op te halen.
 
 Als u een virtuele machine implementeert met een resource manager-sjabloon, stelt u de installatie kopie parameters afzonderlijk in de `imageReference` Eigenschappen in. Zie de [sjabloonverwijzing](/azure/templates/microsoft.compute/virtualmachines).
 

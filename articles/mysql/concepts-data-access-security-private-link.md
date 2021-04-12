@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: 438ef806f6c59c6f23877a3d3110f22f08ca8713
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: e239b6b00c5a5e993834a10fca30de02b9f715ff
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104863561"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106065511"
 ---
 # <a name="private-link-for-azure-database-for-mysql"></a>Private Link voor Azure Database for MySQL
 
@@ -118,7 +118,7 @@ Als u alleen wilt vertrouwen op privé-eind punten voor toegang tot hun Azure Da
 Als deze instelling is ingesteld op *Ja*, zijn alleen verbindingen via persoonlijke eind punten toegestaan voor uw Azure database for MySQL. Als deze instelling is ingesteld op *Nee*, kunnen clients verbinding maken met uw Azure database for MySQL op basis van de instellingen van uw firewall of VNet-service-eind punten. Nadat de waarde van de toegang tot het particuliere netwerk is ingesteld, kunnen klanten ook bestaande firewall regels en VNet-service-eindpunt regels toevoegen en/of bijwerken.
 
 > [!Note]
-> Deze functie is beschikbaar in alle Azure-regio's waar Azure Database for PostgreSQL-één server ondersteunt de prijs categorieën voor Algemeen en geoptimaliseerd voor geheugen.
+> Deze functie is beschikbaar in alle Azure-regio's waar Azure Database for MySQL-één server ondersteunt de prijs categorieën voor Algemeen en geoptimaliseerd voor geheugen.
 >
 > Deze instelling heeft geen invloed op de SSL-en TLS-configuraties voor uw Azure Database for MySQL.
 

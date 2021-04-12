@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 06/11/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 726395e9f004130699dab061cfa752a2e516c834
-ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
+ms.openlocfilehash: acfaa780f21f5264b546f97e9a3792aa43e9c30b
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/07/2021
-ms.locfileid: "106552951"
+ms.locfileid: "107029740"
 ---
 # <a name="control-storage-account-access-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Toegang tot opslagaccounts beheren voor serverloze SQL-pools in Azure Synapse Analytics
 
@@ -23,6 +23,13 @@ Bij een query van een serverloze SQL-pool worden bestanden rechtstreeks gelezen 
 - **SQL-serviceniveau**: de gebruiker moet toestemming hebben gegeven om gegevens te lezen met behulp van een [externe tabel](develop-tables-external-tables.md) of het uitvoeren van de functie `OPENROWSET`. U vindt meer informatie over [de vereiste machtigingen in deze sectie](develop-storage-files-overview.md#permissions).
 
 In dit artikel worden de typen referenties beschreven die u kunt gebruiken en hoe het opzoeken van referenties voor SQL- en Azure AD-gebruikers in zijn werk gaat.
+
+## <a name="storage-permissions"></a>Opslag machtigingen
+
+Een serverloze SQL-groep in de Synapse Analytics-werk ruimte kan de inhoud lezen van bestanden die zijn opgeslagen in Azure Data Lake opslag. U moet machtigingen voor opslag configureren om een gebruiker in te scha kelen die een SQL-query uitvoert om de bestanden te lezen. Er zijn drie methoden om de toegang tot de bestanden in te scha kelen>
+- Met **[op rollen gebaseerd toegangs beheer (RBAC)](../../role-based-access-control/overview.md)** kunt u een rol toewijzen aan een Azure AD-gebruiker in de Tenant waar uw opslag is geplaatst. RBAC-rollen kunnen worden toegewezen aan Azure AD-gebruikers. Een lezer moet de `Storage Blob Data Reader` rol, hebben `Storage Blob Data Contributor` of hebben `Storage Blob Data Owner` . Een gebruiker die gegevens in de Azure-opslag schrijft, moet een `Storage Blob Data Writer` rol hebben of `Storage Blob Data Owner` rollen hebben. Houd er rekening mee dat de `Storage Owner` rol niet impliceert dat een gebruiker ook `Storage Data Owner` .
+- Met **Access Control-lijsten (ACL)** kunt u een fijn gekorreld machtigings model definiëren voor de bestanden en mappen in azure Storage. ACL kan worden toegewezen aan Azure AD-gebruikers. Als lezers een bestand op een pad in Azure Storage willen lezen, moeten ze beschikken over een uitvoerings-ACL (X) op elke map in het bestandspad en lees-(R) ACL voor het bestand. [Meer informatie over het instellen van ACL-machtigingen in Storage Layer](../../storage/blobs/data-lake-storage-access-control.md#how-to-set-acls)
+- Met **Shared Access Signature (SAS)** is een lezer in staat om toegang te krijgen tot de bestanden op de Azure data Lake-opslag met het token waarvoor een time-out is beperkt. De lezer hoeft niet zelfs als Azure AD-gebruiker te worden geverifieerd. SAS-token bevat de machtigingen die aan de lezer zijn toegekend en de periode waarin het token geldig is. SAS-token is een goede keuze voor tijdgebonden toegang tot een gebruiker die niet zelfs in dezelfde Azure AD-Tenant hoeft te zijn. SAS-token kan worden gedefinieerd in het opslag account of op specifieke directory's. Meer informatie over [het verlenen van beperkte toegang tot Azure storage resources met behulp van hand tekeningen voor gedeelde toegang](../../storage/common/storage-sas-overview.md).
 
 ## <a name="supported-storage-authorization-types"></a>Ondersteunde autorisatietypen voor opslag
 
@@ -103,7 +110,7 @@ Wanneer u toegang wilt tot opslag die wordt beveiligd met de firewall, kunt u **
 
 #### <a name="user-identity"></a>Gebruikersidentiteit
 
-Als u via Gebruikersidentiteit toegang wilt tot opslag die wordt beveiligd met de firewall, kunt u de PowerShell-module Az.Storage gebruiken.
+Als u toegang wilt krijgen tot opslag die wordt beveiligd met de firewall via de gebruikers-id, kunt u Azure Portal gebruikers interface of de Power shell-module AZ. Storage gebruiken.
 #### <a name="configuration-via-azure-portal"></a>Configuratie via Azure Portal
 
 1. Zoek uw opslag account in Azure Portal.

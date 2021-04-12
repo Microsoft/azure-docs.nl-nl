@@ -15,12 +15,12 @@ ms.workload: na
 ms.date: 11/18/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 37e2dc194eb2ebbcbe91eef6e50f3eb1e7b62e17
-ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
+ms.openlocfilehash: 75b45067be49475ecd2e07aed9c4479b147fdd29
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106281903"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106490264"
 ---
 # <a name="create-a-transform"></a>Een transformatie maken
 
@@ -35,7 +35,7 @@ In het Azure CLI-script in dit artikel ziet u hoe u een transformatie kunt maken
 ## <a name="cli"></a>[CLI](#tab/cli/)
 
 > [!NOTE]
-> U kunt alleen een pad opgeven naar een aangepast, vooraf ingesteld JSON-bestand voor een Standard Encoder voor [StandardEncoderPreset](/rest/api/media/transforms/createorupdate#standardencoderpreset). Zie het voorbeeld [Coderen met een aangepaste transformatie](encode-custom-preset-cli-how-to.md).
+> U kunt alleen een pad opgeven naar een aangepast, vooraf ingesteld JSON-bestand voor een Standard Encoder voor [StandardEncoderPreset](/rest/api/media/transforms/createorupdate#standardencoderpreset). Zie het voorbeeld [Coderen met een aangepaste transformatie](transform-custom-preset-cli-how-to.md).
 >
 > U kunt geen bestandsnaam doorgeven wanneer u [BuiltInStandardEncoderPreset](/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) gebruikt.
 

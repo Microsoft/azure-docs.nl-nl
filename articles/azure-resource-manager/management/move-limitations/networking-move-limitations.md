@@ -3,12 +3,12 @@ title: Azure-netwerk bronnen verplaatsen naar een nieuw abonnement of een nieuwe
 description: Gebruik Azure Resource Manager om virtuele netwerken en andere netwerk bronnen te verplaatsen naar een nieuwe resource groep of een nieuw abonnement.
 ms.topic: conceptual
 ms.date: 10/16/2019
-ms.openlocfilehash: 0cd6887d3489f2ffede0f5e3d63533a33a6ccc04
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b7aaf01b696b13136a0f4077f315b137c8917906
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "75485232"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106120126"
 ---
 # <a name="move-guidance-for-networking-resources"></a>Richt lijnen voor netwerk bronnen verplaatsen
 
@@ -16,7 +16,10 @@ In dit artikel wordt beschreven hoe u virtuele netwerken en andere netwerk bronn
 
 ## <a name="dependent-resources"></a>Afhankelijke resources
 
-Wanneer u een virtueel netwerk verplaatst, moet u ook de afhankelijke resources verplaatsen. Voor VPN-gateways moet u IP-adressen, virtuele netwerk gateways en alle gekoppelde verbindings bronnen verplaatsen. Lokale netwerk gateways kunnen zich in een andere resource groep bevindt.
+> [!NOTE]
+> VPN-gateways die zijn gekoppeld aan open bare IP-adressen, kunnen momenteel niet worden verplaatst tussen resource groepen en abonnementen.
+
+Wanneer u een resource verplaatst, moet u ook de afhankelijke bronnen (bijvoorbeeld open bare IP-adressen, virtuele netwerk gateways, alle gekoppelde verbindings bronnen) verplaatsen. Lokale netwerk gateways kunnen zich in een andere resource groep bevindt.
 
 Als u een virtuele machine met een netwerk interface kaart wilt verplaatsen naar een nieuw abonnement, moet u alle afhankelijke resources verplaatsen. Verplaats het virtuele netwerk voor de netwerk interface kaart, alle andere netwerk interface kaarten voor het virtuele netwerk en de VPN-gateways.
 

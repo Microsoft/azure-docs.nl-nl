@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.service: azure-functions
 ms.subservice: ''
 ms.date: 03/29/2021
-ms.openlocfilehash: aac50f085d3ad63fb0183c19cf7d9aaa679e3d04
-ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
+ms.openlocfilehash: 44bfbaa8b18ebeab3b74bc696a16fc4cfb6c08ec
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106111705"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106220931"
 ---
 # <a name="startstop-vms-v2-preview-overview"></a>Overzicht van Vm's van v2 (preview-versie) starten/stoppen
 
@@ -26,7 +26,7 @@ Er wordt een beheerde identiteit gemaakt in Azure Active Directory (Azure AD) vo
 
 Er wordt een HTTP trigger endpoint-functie gemaakt ter ondersteuning van de planning-en sequentie scenario's die in de functie zijn opgenomen, zoals wordt weer gegeven in de volgende tabel.
 
-|Name |Trigger |Description |
+|Name |Trigger |Beschrijving |
 |-----|--------|------------|
 |AlertAvailabilityTest |Timer |Deze functie voert de beschikbaarheids test uit om ervoor te zorgen dat de primaire functie **AutoStopVM** altijd beschikbaar is.|
 |Autostop |HTTP |Deze functie ondersteunt het scenario voor **autostop** , de ingangs punt functie die wordt aangeroepen vanuit een logische app.|
@@ -95,7 +95,7 @@ Het opgeven van een lijst met Vm's kan worden gebruikt wanneer u de start-en sto
 
 - Aan uw account is de machtiging [Inzender](../../role-based-access-control/built-in-roles.md#contributor) verleend in het abonnement.
 
-- Vm's voor starten/stoppen v2 (preview) is beschikbaar in alle wereld wijde Azure-regio's die worden vermeld op de pagina [beschik bare producten per regio](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=functions) voor Azure functions. Voor de Azure Government Cloud is deze alleen beschikbaar in de regio van de Amerikaanse overheid.
+- Vm's v2 starten/stoppen (preview) is beschikbaar in alle Cloud regio's van Azure Global en Amerikaanse overheid die worden vermeld op de pagina [met beschik bare producten per regio](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=functions) voor Azure functions.
 
 ## <a name="next-steps"></a>Volgende stappen
 

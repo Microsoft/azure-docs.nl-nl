@@ -7,17 +7,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/14/2020
+ms.date: 04/05/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: f22a55a65b7dc4fd4f714d880804e6fd65dbbe46
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0f5586b43143763ebf36adb15d96fdb2a91b5f5c
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101654371"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106443471"
 ---
 # <a name="configure-tokens-in-azure-active-directory-b2c"></a>Tokens configureren in Azure Active Directory B2C configureren
 
@@ -228,6 +228,10 @@ Het output claim-element bevat de volgende kenmerken:
 - **AlwaysUseDefaultValue** : het gebruik van de standaard waarde afdwingen.
 
 ::: zone-end
+
+## <a name="authorization-code-lifetime"></a>Levens duur autorisatie code
+
+Wanneer u de [OAuth 2,0-autorisatie code stroom](authorization-code-flow.md)gebruikt, kan de app de autorisatie code gebruiken om een toegangs token aan te vragen voor een doel bron. Autorisatie codes zijn korte tijd die na ongeveer 10 minuten verlopen. De levens duur van de autorisatie code kan niet worden geconfigureerd. Zorg ervoor dat uw toepassing binnen 10 minuten de autorisatie codes inwisselt. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -7,14 +7,17 @@ ms.service: firewall-manager
 ms.topic: how-to
 ms.date: 04/02/2021
 ms.author: jocorte
-ms.openlocfilehash: a1237077b9e0a1af67d34c85d8ea8d526bd71372
-ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
+ms.openlocfilehash: 7322bab635d398fc7a5335546ba6fef327ff24b2
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106281855"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107259350"
 ---
 # <a name="secure-traffic-destined-to-private-endpoints-in-azure-virtual-wan"></a>Beveiligd verkeer dat is bestemd voor privé-eind punten in azure Virtual WAN
+
+> [!NOTE]
+> Dit artikel is alleen van toepassing op beveiligde virtuele hub. Als u verkeer wilt controleren dat is bestemd voor privé-eind punten met behulp van Azure Firewall in een hub-virtueel netwerk, raadpleegt u [Azure firewall gebruiken om verkeer te controleren dat is bestemd voor een persoonlijk eind punt](../private-link/inspect-traffic-with-azure-firewall.md).
 
 [Persoonlijk Azure-eind punt](../private-link/private-endpoint-overview.md) is de fundamentele bouw steen voor [persoonlijke Azure-koppelingen](../private-link/private-link-overview.md). Met persoonlijke eind punten kunnen Azure-resources worden geïmplementeerd in een virtueel netwerk om privé te communiceren met persoonlijke koppelings bronnen.
 

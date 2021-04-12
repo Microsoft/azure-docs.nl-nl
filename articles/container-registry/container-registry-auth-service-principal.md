@@ -2,17 +2,17 @@
 title: Verifiëren met service-principal
 description: Toegang bieden tot installatie kopieën in uw persoonlijke container register met behulp van een Azure Active Directory Service-Principal.
 ms.topic: article
-ms.date: 10/04/2019
-ms.openlocfilehash: 8d49628576a1c337efaea3e5286fef00e39def17
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 03/15/2021
+ms.openlocfilehash: a32538e5fc5354427bafc5098634becdcedd1239
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "86259152"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106285532"
 ---
 # <a name="azure-container-registry-authentication-with-service-principals"></a>Verificatie Azure Container Registry met Service-principals
 
-U kunt een service-principal voor Azure Active Directory (Azure AD) gebruiken om een container installatie kopie te bieden `docker push` en `pull` toegang te krijgen tot uw container register. Met behulp van een Service-Principal kunt u toegang bieden tot ' headless ' Services en toepassingen.
+U kunt een service-principal voor Azure Active Directory (Azure AD) gebruiken om Push-, pull-of andere toegang te bieden tot uw container register. Met behulp van een Service-Principal kunt u toegang bieden tot ' headless ' Services en toepassingen.
 
 ## <a name="what-is-a-service-principal"></a>Wat is een service-principal?
 
@@ -52,7 +52,7 @@ Zodra u een Service-Principal hebt die u toegang tot uw container register hebt 
 * **Gebruikers naam** -id van de Service-Principal-toepassing (ook wel *client-id* genoemd)
 * **Wacht** woord-Service-Principal-wacht woord (ook wel *client geheim* genoemd)
 
-Elke waarde is een GUID van het formulier `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` . 
+Elke waarde heeft de indeling `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` . 
 
 > [!TIP]
 > U kunt het wacht woord van een Service-Principal opnieuw genereren door de opdracht [AZ AD SP reset-credentials](/cli/azure/ad/sp/credential#az-ad-sp-credential-reset) uit te voeren.
@@ -66,7 +66,7 @@ Gebruik bijvoorbeeld de referenties om een installatie kopie van een Azure conta
 
 ### <a name="use-with-docker-login"></a>Gebruiken met aanmelden bij docker
 
-U kunt uitvoeren `docker login` met behulp van een service-principal. In het volgende voor beeld wordt de toepassings-ID van de Service-Principal door gegeven in de omgevings variabele `$SP_APP_ID` en het wacht woord in de variabele `$SP_PASSWD` . Zie voor aanbevolen procedures voor het beheren van docker-referenties de koppeling naar de opdracht [docker login](https://docs.docker.com/engine/reference/commandline/login/) .
+U kunt uitvoeren `docker login` met behulp van een service-principal. In het volgende voor beeld wordt de toepassings-ID van de Service-Principal door gegeven in de omgevings variabele `$SP_APP_ID` en het wacht woord in de variabele `$SP_PASSWD` . Zie voor aanbevolen procedures voor het beheren van docker-referenties de naslag informatie voor het [Aanmelden bij docker](https://docs.docker.com/engine/reference/commandline/login/) -opdrachten.
 
 ```bash
 # Log in to Docker with service principal credentials

@@ -5,12 +5,12 @@ ms.date: 06/10/2019
 ms.topic: conceptual
 hide_comments: true
 hideEdit: true
-ms.openlocfilehash: 7f99c37cd9f029c7478d4102bd17c952ffd52f8c
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 36fb512181986fd04a95e72aa028b7c0253aa45f
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105044274"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105731221"
 ---
 # <a name="service-fabric-releases"></a>Service Fabric releases
 
@@ -57,7 +57,7 @@ Met trots kondigen we aan dat 7,2-versie van de Service Fabric runtime is begonn
 
 Als gevolg van de huidige COVID-crisis, en rekening houdend met de uitdagingen van onze klanten, maken we 7,1 beschikbaar, maar worden er geen automatische upgrade van de clusters ingesteld die automatisch worden bijgewerkt. De automatische upgrades worden onderbroken tot verdere kennisgeving, om ervoor te zorgen dat klanten upgrades kunnen Toep assen wanneer ze het meest geschikt zijn om onverwachte onderbrekingen te voor komen.
 
-U kunt bijwerken naar 7,1 via de [Azure Portal](./service-fabric-cluster-upgrade-version-azure.md#upgrading-to-a-new-version-on-a-cluster-that-is-set-to-manual-mode-via-portal) of via een [Azure Resource Manager-implementatie](./service-fabric-cluster-upgrade-version-azure.md#set-the-upgrade-mode-using-a-resource-manager-template).
+U kunt bijwerken naar 7,1 via de [Azure Portal](./service-fabric-cluster-upgrade-version-azure.md#manual-upgrades-with-azure-portal) of via een [Azure Resource Manager-implementatie](./service-fabric-cluster-upgrade-version-azure.md#resource-manager-template).
 
 Service Fabric clusters waarvoor automatische upgrades zijn ingeschakeld, worden automatisch de 7,1-update ontvangen zodra de standaard implementatie procedure wordt hervat. We zullen een andere aankondiging opgeven voordat de standaard implementatie begint op de website van de [service Fabric tech-Community](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric).
 We hebben ook updates gepubliceerd naar het einde van de ondersteunings datum voor grote releases, te beginnen bij 6,5 [tot 7,1.](./service-fabric-versions.md#supported-versions) 

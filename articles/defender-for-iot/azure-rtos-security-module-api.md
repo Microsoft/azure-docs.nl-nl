@@ -5,10 +5,10 @@ ms.topic: reference
 ms.date: 09/07/2020
 ms.author: mlottner
 ms.openlocfilehash: e7000a7e6d8ba332432f1ececa12bd9543e9e4a7
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104779389"
 ---
 # <a name="defender-iot-micro-agent-for-azure-rtos-api-preview"></a>Defender-IoT-micro agent voor Azure RTO'S-API (preview)
@@ -25,7 +25,7 @@ Deze API is bedoeld voor gebruik met de Defender-IoT-micro-agent voor Azure RTO'
 UINT nx_azure_iot_security_module_enable(NX_AZURE_IOT *nx_azure_iot_ptr);
 ```
 
-### <a name="description"></a>Beschrijving
+### <a name="description"></a>Description
 
 Met deze routine wordt het Azure IoT Defender-IoT-subsysteem van micro agent ingeschakeld. Een interne status computer beheert het verzamelen van beveiligings gebeurtenissen en verzendt deze naar Azure IoT Hub. Er is slechts één NX_AZURE_IOT_SECURITY_MODULE exemplaar vereist en dat nodig is voor het beheren van gegevens verzameling.
 
@@ -37,7 +37,7 @@ Met deze routine wordt het Azure IoT Defender-IoT-subsysteem van micro agent ing
 
 ### <a name="return-values"></a>Retourwaarden
 
-|Retourwaarden  |Beschrijving |
+|Retourwaarden  |Description |
 |---------|---------|
 |NX_AZURE_IOT_SUCCESS|   De Azure IoT-beveiligings module is ingeschakeld.     |
 |NX_AZURE_IOT_FAILURE   |  Het inschakelen van de Azure IoT-beveiligings module is mislukt vanwege een interne fout.    |
@@ -58,7 +58,7 @@ Lijnen
 UINT nx_azure_iot_security_module_disable(NX_AZURE_IOT *nx_azure_iot_ptr);
 ```
 
-### <a name="description"></a>Beschrijving
+### <a name="description"></a>Description
 
 Met deze routine wordt het subsysteem Azure IoT Defender-IoT-micro-agent uitgeschakeld.
 
@@ -70,7 +70,7 @@ Met deze routine wordt het subsysteem Azure IoT Defender-IoT-micro-agent uitgesc
 
 ### <a name="return-values"></a>Retourwaarden
 
-|Retourwaarden  |Beschrijving |
+|Retourwaarden  |Description |
 |---------|---------|
 |NX_AZURE_IOT_SUCCESS     |   Geslaagd wanneer de Azure IoT-beveiligings module is uitgeschakeld.      |
 |NX_AZURE_IOT_INVALID_PARAMETER   |  Het exemplaar van Azure IoT Hub wijkt af van het samengestelde Singleton-exemplaar.       |

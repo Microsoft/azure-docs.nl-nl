@@ -9,10 +9,10 @@ author: mingshen-ms
 ms.author: mingshen
 ms.date: 03/10/2021
 ms.openlocfilehash: f8ddcbef6d2ce4a9cba625374db9908335954424
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102630891"
 ---
 # <a name="how-to-review-and-publish-an-offer-to-the-commercial-marketplace"></a>Een aanbieding bekijken en publiceren naar de commerciële Marketplace
@@ -205,7 +205,7 @@ De geschiedenis van uw aanbieding bekijken:
 3.    Selecteer uw aanbieding.
 4.    Selecteer het tabblad **geschiedenis** in het navigatie menu aan de linkerkant. Op de pagina vindt u informatie over de volgende gebeurtenissen, zoals van toepassing op uw aanbieding:
 
-|Gebeurtenis    |Beschrijving    |
+|Gebeurtenis    |Description    |
 |---------|---------------|
 |Aanbieding gemaakt    |De aanbieding is gemaakt in het partner centrum. Een gebruiker heeft het aanbiedings type, aanbiedings-id en aanbiedings alias geselecteerd in **commercieel Marketplace**-  >  **overzicht**.    |
 |Gemaakt plan: *naam van abonnement*    |Een gebruiker heeft een nieuw plan gemaakt door de plan-ID en plan naam op te geven op het tabblad Overzicht van het **plan** .</br>*Deze gebeurtenis geldt alleen voor aanbiedings typen die ondersteuning bieden voor abonnementen*.    |

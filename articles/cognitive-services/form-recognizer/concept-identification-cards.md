@@ -10,16 +10,16 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 03/15/2021
 ms.author: lajanuar
-ms.openlocfilehash: 01a73e7940f88a3eb6e040f26d255448294cab18
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ed8516f9a898131338fb5b4d75e25cd774c5ab43
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103467808"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106285352"
 ---
 # <a name="form-recognizer-prebuilt-identification-card-id-model"></a>Model voor vooraf gebouwde ID-kaart (ID) voor formulier herkenning
 
-Azure Form Recognizer kan gegevens uit overheids-ID-kaarten (Id's) analyseren en extra heren met behulp van het vooraf samengestelde id-model. Het combineert onze krachtige functies voor [optische teken herkenning (OCR)](../computer-vision/concept-recognizing-text.md) met id-herkennings mogelijkheden voor het extra heren van belang rijke informatie uit de wereld wijde paspoorten en de licenties van het Amerikaanse stuur programma (alle 50 staten en D.C.). De id-API extraheert belang rijke informatie uit deze identiteits documenten, zoals de voor naam, achternaam, geboorte datum, document nummer en nog veel meer. Deze API is beschikbaar in de versie van de formulier Recognizer v 2.1 Preview als een Cloud service en als een on-premises container.
+Azure Form Recognizer kan gegevens uit overheids-ID-kaarten (Id's) analyseren en extra heren met behulp van het vooraf samengestelde id-model. Het combineert onze krachtige functies voor [optische teken herkenning (OCR)](../computer-vision/overview-ocr.md) met id-herkennings mogelijkheden voor het extra heren van belang rijke informatie uit de wereld wijde paspoorten en de licenties van het Amerikaanse stuur programma (alle 50 staten en D.C.). De id-API extraheert belang rijke informatie uit deze identiteits documenten, zoals de voor naam, achternaam, geboorte datum, document nummer en nog veel meer. Deze API is beschikbaar in de versie van de formulier Recognizer v 2.1 Preview als een Cloud service en als een on-premises container.
 
 ## <a name="what-does-the-id-service-do"></a>Wat doet de ID-service? 
 
@@ -31,7 +31,7 @@ De preconstrueerde ID-service extraheert de sleutel waarden van de wereld wijde 
 
 ### <a name="fields-extracted"></a>Geëxtraheerde velden
 
-|Naam| Type | Description | Waarde | 
+|Naam| Type | Beschrijving | Waarde | 
 |:-----|:----|:----|:----|
 |  Land/regio | country | Land code die voldoet aan ISO 3166-standaard | Verenigde Staten | 
 |  DateOfBirth | date | DOB in de indeling JJJJ-MM-DD | "1980-01-01" | 

@@ -12,10 +12,10 @@ ms.author: gaursa
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 ms.openlocfilehash: 56ec38140d53788de7cc94f3cb6046177ad2bed4
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104585465"
 ---
 # <a name="manageability-and-monitoring-with-dedicated-sql-pool-in-azure-synapse-analytics"></a>Beheer baarheid en bewaking met exclusieve SQL-groep in azure Synapse Analytics

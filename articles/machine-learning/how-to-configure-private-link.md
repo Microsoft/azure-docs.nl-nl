@@ -11,12 +11,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 02/09/2021
-ms.openlocfilehash: 6fd497e0bc0fd282d57779c483f1e39e8f5ab60a
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 92b5283e5779cc79ce0a745190b57884a6ca0f7e
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102505474"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106056008"
 ---
 # <a name="configure-azure-private-link-for-an-azure-machine-learning-workspace"></a>Een persoonlijke Azure-koppeling configureren voor een Azure Machine Learning-werk ruimte
 
@@ -175,7 +175,7 @@ Raadpleeg de [virtual machines documentatie](../virtual-machines/index.yml)voor 
 In sommige gevallen wilt u mogelijk toestaan dat iemand verbinding maakt met uw beveiligde werk ruimte via een openbaar eind punt, in plaats van via het VNet. Nadat u een werk ruimte met een persoonlijk eind punt hebt geconfigureerd, kunt u eventueel open bare toegang tot de werk ruimte inschakelen. Als u dit doet, wordt het persoonlijke eind punt niet verwijderd. Alle communicatie tussen onderdelen achter het VNet is nog steeds beveiligd. Hiermee wordt alleen open bare toegang tot de werk ruimte ingeschakeld, naast de persoonlijke toegang via het VNet.
 
 > [!WARNING]
-> Wanneer u verbinding maakt via het open bare eind punt, hebben sommige functies van Studio geen toegang tot uw gegevens. Dit probleem treedt op wanneer de gegevens worden opgeslagen in een service die is beveiligd achter het VNet. Bijvoorbeeld een Azure Storage-account.
+> Wanneer u verbinding maakt via het open bare eind punt, hebben sommige functies van Studio geen toegang tot uw gegevens. Dit probleem treedt op wanneer de gegevens worden opgeslagen in een service die is beveiligd achter het VNet. Bijvoorbeeld een Azure Storage-account. Houd er ook rekening mee dat Compute instance Jupyter/Jjupyterlab/RStudio-functionaliteit en actieve notebooks niet werken.
 
 Als u open bare toegang tot een werk ruimte met persoonlijke koppelingen wilt inschakelen, gebruikt u de volgende stappen:
 

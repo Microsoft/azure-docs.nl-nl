@@ -394,26 +394,26 @@
               href: iot-hub-arduino-iot-devkit-az3166-mqtt-helloworld.md
             - name: De magnetische sensor bewaken en e-mailmeldingen verzenden met Azure Functions
               href: iot-hub-arduino-iot-devkit-az3166-door-monitor.md
-        - name: Uitgebreide IoT-scenario 's
-          items:
-            - name: Berichten op cloudapparaten beheren met Azure IoT Tools voor VS Code
-              href: iot-hub-vscode-iot-toolkit-cloud-device-messaging.md
-            - name: Berichten op cloudapparaten beheren met Cloud Explorer voor Visual Studio
-              href: iot-hub-visual-studio-cloud-device-messaging.md
-            - name: Gegevensvisualisatie in Power BI
-              href: iot-hub-live-data-visualization-in-power-bi.md
-            - name: Gegevensvisualisatie in een web-app
-              href: iot-hub-live-data-visualization-in-web-apps.md
-            - name: Weersvoorspelling met behulp van Azure Machine Learning
-              href: iot-hub-weather-forecast-machine-learning.md
-            - name: Apparaatbeheer met Azure IoT Tools voor VS Code
-              href: iot-hub-device-management-iot-toolkit.md
-            - name: Apparaatbeheer met Cloud Explorer voor Visual Studio
-              href: iot-hub-device-management-visual-studio.md
-            - name: Apparaatbeheer met IoT-extensie voor Azure CLI
-              href: iot-hub-device-management-iot-extension-azure-cli-2-0.md
-            - name: Externe bewaking en meldingen met Logic Apps
-              href: iot-hub-monitoring-notifications-with-azure-logic-apps.md
+    - name: Uitgebreide IoT-scenario 's
+      items:
+        - name: Berichten op cloudapparaten beheren met Azure IoT Tools voor VS Code
+          href: iot-hub-vscode-iot-toolkit-cloud-device-messaging.md
+        - name: Berichten op cloudapparaten beheren met Cloud Explorer voor Visual Studio
+          href: iot-hub-visual-studio-cloud-device-messaging.md
+        - name: Gegevensvisualisatie in Power BI
+          href: iot-hub-live-data-visualization-in-power-bi.md
+        - name: Gegevensvisualisatie in een web-app
+          href: iot-hub-live-data-visualization-in-web-apps.md
+        - name: Weersvoorspelling met behulp van Azure Machine Learning
+          href: iot-hub-weather-forecast-machine-learning.md
+        - name: Apparaatbeheer met Azure IoT Tools voor VS Code
+          href: iot-hub-device-management-iot-toolkit.md
+        - name: Apparaatbeheer met Cloud Explorer voor Visual Studio
+          href: iot-hub-device-management-visual-studio.md
+        - name: Apparaatbeheer met IoT-extensie voor Azure CLI
+          href: iot-hub-device-management-iot-extension-azure-cli-2-0.md
+        - name: Externe bewaking en meldingen met Logic Apps
+          href: iot-hub-monitoring-notifications-with-azure-logic-apps.md
     - name: Problemen vaststellen en oplossen
       items:
         - name: Apparaatverbinding wordt verbroken
@@ -547,8 +547,8 @@
           href: 'https://azure.microsoft.com/resources/samples/azure-iot-samples-python/'
         - name: iOS-platform
           href: 'https://azure.microsoft.com/resources/samples/azure-iot-samples-ios/'
-    - name: Azure Certified voor IoT-apparaatcatalogus
-      href: 'https://catalog.azureiotsolutions.com/'
+    - name: Catalogus met Azure Certified-apparaten
+      href: 'https://devicecatalog.azure.com/'
     - name: Azure IoT-ontwikkelaarscentrum
       href: 'https://azure.microsoft.com/develop/iot/'
     - name: Aanvragen van klantgegevens

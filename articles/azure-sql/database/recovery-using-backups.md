@@ -13,10 +13,10 @@ ms.author: sashan
 ms.reviewer: mathoma, sstein, danil
 ms.date: 11/13/2020
 ms.openlocfilehash: 0c3db3b3f22f9f2639012068924708537f9ada77
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "98795321"
 ---
 # <a name="recover-using-automated-database-backups---azure-sql-database--sql-managed-instance"></a>Herstellen met behulp van automatische database back-ups-Azure SQL Database & door SQL beheerd exemplaar
@@ -47,13 +47,13 @@ De herstel tijd voor het herstellen van een Data Base met behulp van automatisch
 - De netwerk bandbreedte als het terugzetten naar een andere regio gaat.
 - Het aantal gelijktijdige herstel aanvragen dat wordt verwerkt in de doel regio.
 
-Voor een grote of zeer actieve Data Base kan het herstellen enkele uren duren. Als er een langdurige storing in een regio optreedt, is het mogelijk dat er een groot aantal aanvragen voor geo-herstel worden gestart voor herstel na nood gevallen. Wanneer er veel aanvragen zijn, kan de herstel tijd voor afzonderlijke data bases toenemen. De meeste data bases worden hersteld in minder dan 12 uur.
+Voor een grote of zeer actieve Data Base kan het herstellen enkele uren duren. Als er een langdurige storing in een regio optreedt, kan het gebeuren dat een groot aantal aanvragen voor geo-herstel wordt geïnitieerd voor herstel na een noodgeval. Wanneer er veel aanvragen zijn, kan de hersteltijd voor individuele databases toenemen. De meeste data bases worden hersteld in minder dan 12 uur.
 
-Voor één abonnement gelden beperkingen voor het aantal gelijktijdige herstel aanvragen. Deze beperkingen gelden voor elke combi natie van tijdgebonden herstel bewerkingen, geo-restores en herstel bewerkingen van back-ups op lange termijn.
+Voor één abonnement gelden beperkingen voor het aantal gelijktijdige herstelaanvragen. Deze beperkingen zijn van toepassing op elke combinatie van herstelbewerkingen naar een bepaald tijdstip, geo-herstelbewerkingen, en herstelbewerkingen vanaf back-ups met een langetermijnbewaarperiode.
 
-| **Implementatie optie** | **Maximum aantal gelijktijdige aanvragen dat wordt verwerkt** | **Maximum aantal gelijktijdige aanvragen dat wordt verzonden** |
+| **Implementatieoptie** | **Maximumaantal gelijktijdige aanvragen dat wordt verwerkt** | **Maximumaantal gelijktijdige aanvragen dat wordt verzonden** |
 | :--- | --: | --: |
-|**Eén data base (per abonnement)**|30|100|
+|**Individuele database (per abonnement)**|30|100|
 |**Elastische pool (per groep)**|4|2000|
 
 

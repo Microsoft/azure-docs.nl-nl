@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: cd745f90598666e1fc5c849de335c81a2380d99f
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104786223"
 ---
 # <a name="if-condition-activity-in-azure-data-factory"></a>Als conditie activiteit in Azure Data Factory
@@ -65,7 +65,7 @@ Eigenschap | Beschrijving | Toegestane waarden | Vereist
 -------- | ----------- | -------------- | --------
 naam | De naam van de activiteit voor de if-voor waarde. | Tekenreeks | Ja
 type | Moet worden ingesteld op **IfCondition** | Tekenreeks | Ja
-expressie | Expressie die moet worden geëvalueerd als waar of onwaar | Expressie met Booleaanse waarde voor resultaat type | Ja
+expressie | Expressie die moet worden geëvalueerd als waar of onwaar | Expressie met Booleaanse waarde voor resultaat type | Yes
 ifTrueActivities | Een set activiteiten die worden uitgevoerd wanneer de expressie wordt geëvalueerd `true` . | Matrix | Ja
 ifFalseActivities | Een set activiteiten die worden uitgevoerd wanneer de expressie wordt geëvalueerd `false` . | Matrix | Ja
 

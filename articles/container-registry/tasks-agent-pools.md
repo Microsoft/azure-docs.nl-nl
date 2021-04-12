@@ -4,12 +4,12 @@ description: Stel een toegewezen Compute pool (agent groep) in het REGI ster in 
 ms.topic: article
 ms.date: 10/12/2020
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: eeb9a71854f52da5c1a9f4befae93c377ad67b05
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8b1f077d6216443ad267f8620f87882439cb355c
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98920304"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106284138"
 ---
 # <a name="run-an-acr-task-on-a-dedicated-agent-pool"></a>Een ACR-taak uitvoeren op een toegewezen agent groep
 
@@ -31,7 +31,7 @@ Deze functie is beschikbaar in de service tier van het **Premium** -container re
 ## <a name="preview-limitations"></a>Preview-beperkingen
 
 - Taak agent-Pools bieden momenteel ondersteuning voor Linux-knoop punten. Windows-knoop punten worden momenteel niet ondersteund.
-- Taak agent groepen zijn beschikbaar als preview in de volgende regio's: VS-West 2, Zuid-Centraal VS, VS-Oost 2, VS-Oost, VS-midden, USGov Arizona, USGov Texas en USGove Virginia.
+- Taak agent-groepen zijn beschikbaar als preview in de volgende regio's: VS-West 2, Zuid-Centraal VS, VS-Oost 2, VS-Oost, centraal VS, Europa-west, Canada-centraal, USGov Arizona, USGov Texas en USGove Virginia.
 - Voor elk REGI ster is het standaard quotum voor de totale vCPU (kern geheugen) 16 voor alle Standard agent-groepen en is 0 voor geïsoleerde agent groepen. Open een [ondersteunings aanvraag][open-support-ticket] voor aanvullende toewijzing.
 - Het is niet mogelijk om een taak die wordt uitgevoerd op een agent groep te annuleren.
 

@@ -7,14 +7,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 03/04/2021
+ms.date: 03/23/2021
 ms.author: justinha
-ms.openlocfilehash: fec2695c9e196a652a4166161bf012b22b0d00e6
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 928b1a6dcff7ad186bf5fe9ce07d1a886d429867
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104579549"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105933335"
 ---
 # <a name="tutorial-configure-secure-ldap-for-an-azure-active-directory-domain-services-managed-domain"></a>Zelfstudie: Secure LDAP configureren voor een door Azure Active Directory Domain Services beheerd domein
 
@@ -298,6 +298,21 @@ Als u een DNS-vermelding hebt toegevoegd aan het bestand met lokale hosts van uw
 1. Open *Kladblok* als beheerder op uw lokale computer
 1. Blader naar het bestand *C:\Windows\System32\drivers\etc\hosts* en open dit
 1. Verwijder de regel voor de record die u hebt toegevoegd, bijvoorbeeld `168.62.205.103    ldaps.aaddscontoso.com`
+
+## <a name="troubleshooting"></a>Problemen oplossen
+
+Als er een fout bericht wordt weer gegeven dat LDAP.exe geen verbinding kan maken, probeert u de verschillende aspecten van het ophalen van de verbinding. 
+
+1. De domein controller configureren
+1. De client configureren
+1. Netwerken
+1. De TLS-sessie tot stand brengen
+
+Voor de onderwerpnaam van het certificaat komt overeen met de domein controller (niet de naam van het Azure AD-domein) voor het zoeken naar het certificaat in het certificaat archief van Azure. Spel fouten, bijvoorbeeld voor komen dat de domein controller het juiste certificaat selecteert. 
+
+De client probeert de TLS-verbinding tot stand te brengen met behulp van de naam die u hebt ingevoerd. Het verkeer moet de hele richting verkrijgen. De domein controller verzendt de open bare sleutel van het Server verificatie certificaat. Het certificaat moet beschikken over het juiste gebruik in het getuig schrift, de naam die is ondertekend in de onderwerpnaam moet compatibel zijn met de client om te vertrouwen dat de server de DNS-naam is waarmee u verbinding maakt (dat wil zeggen, een Joker teken werkt, zonder spel fouten) en de client de verlener moet vertrouwen. U kunt controleren of er problemen zijn met de keten in het systeem logboek in Logboeken en de gebeurtenissen waarbij de bron gelijk is aan Schannel filteren. Zodra deze onderdelen zijn geïmplementeerd, vormen ze een sessie sleutel.  
+
+Zie [TLS-Handshake](https://docs.microsoft.com/windows/win32/secauthn/tls-handshake-protocol)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

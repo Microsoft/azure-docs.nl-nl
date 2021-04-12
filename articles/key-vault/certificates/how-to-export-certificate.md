@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.custom: mvc
 ms.date: 08/11/2020
 ms.author: sebansal
-ms.openlocfilehash: ad3e5bcda0fb03af0637a309b4dbfd248b54f1a0
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 116bafe2e26ca3af5b4ed68373d20e1e787502b7
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104587199"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105729198"
 ---
 # <a name="export-certificates-from-azure-key-vault"></a>Certificaten exporteren uit Azure Key Vault
 
@@ -102,7 +102,7 @@ $pfxFileByte = $x509Cert.Export($type, $password)
 ```
 
 Met deze opdracht wordt de volledige keten van certificaten geëxporteerd met een persoonlijke sleutel (dat wil zeggen, zoals de sjabloon is geïmporteerd). Het certificaat is beveiligd met een wachtwoord.
-Zie [Get-AzKeyVaultCertificate - Voorbeeld 2](/powershell/module/az.keyvault/Get-AzKeyVaultCertificate?view=azps-4.4.0)voor meer informatie over de **Get-AzKeyVaultCertificate**-opdracht en para meters.
+Zie [Get-AzKeyVaultCertificate - Voorbeeld 2](/powershell/module/az.keyvault/Get-AzKeyVaultCertificate)voor meer informatie over de **Get-AzKeyVaultCertificate**-opdracht en para meters.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 

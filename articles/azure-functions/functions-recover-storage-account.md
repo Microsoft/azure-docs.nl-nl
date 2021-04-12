@@ -4,10 +4,10 @@ description: Meer informatie over het oplossen van problemen met een ongeldig op
 ms.topic: article
 ms.date: 09/05/2018
 ms.openlocfilehash: 392882fc2f0394e61aee973a20479d8f1fa9bc92
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104606970"
 ---
 # <a name="troubleshoot-error-azure-functions-runtime-is-unreachable"></a>Fout oplossen: ' Azure Functions-runtime is onbereikbaar '

@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 2/23/2021
+ms.date: 4/6/2021
 ms.author: kenwith
 ms.reviewer: hpsin
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fa025f7e21f76b4dde547ccabf675511e9156359
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: fb4e876b3fc679dd275f38168b99b9a3a718be58
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104589324"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106552666"
 ---
 # <a name="use-tenant-restrictions-to-manage-access-to-saas-cloud-applications"></a>Tenant beperkingen gebruiken om de toegang tot SaaS-Cloud toepassingen te beheren
 
@@ -97,6 +97,8 @@ In deze sectie wordt de ervaring voor zowel eind gebruikers als beheerders besch
 
 Een voor beeld van een gebruiker is het contoso-netwerk, maar probeert toegang te krijgen tot het fabrikam-exemplaar van een gedeelde SaaS-toepassing, zoals Outlook online. Als Fabrikam een niet-toegestane Tenant is voor de contoso-instantie, ziet de gebruiker een bericht over toegang geweigerd. Dit geeft aan dat u probeert toegang te krijgen tot een resource die tot een organisatie behoort die niet is goedgekeurd door uw IT-afdeling.
 
+![Fout bericht voor Tenant beperkingen van april 2021](./media/tenant-restrictions/error-message.png)
+
 ### <a name="admin-experience"></a>Beheerervaring
 
 Hoewel de configuratie van Tenant beperkingen wordt uitgevoerd op de bedrijfs proxy-infra structuur, hebben beheerders rechtstreeks toegang tot de rapporten met Tenant beperkingen in de Azure Portal. De rapporten weer geven:
@@ -113,7 +115,7 @@ Het rapport kan beperkte informatie bevatten, zoals de doelmap-ID, wanneer een g
 
 Net als bij andere rapporten in de Azure Portal, kunt u filters gebruiken om het bereik van uw rapport op te geven. U kunt filteren op een bepaald tijds interval, gebruiker, toepassing, client of status. Als u de knop **kolommen** selecteert, kunt u ervoor kiezen om gegevens weer te geven met een combi natie van de volgende velden:
 
-- **Gebruiker** : in dit veld kunnen persoonlijke gegevens worden verwijderd, waar deze worden ingesteld op `00000000-0000-0000-0000-000000000000` . 
+- **Gebruiker** : in dit veld kunnen persoonlijke gegevens worden verwijderd, waar ze worden ingesteld `00000000-0000-0000-0000-000000000000` . 
 - **Toepassing**
 - **Status**
 - **Datum**
@@ -207,7 +209,7 @@ Sommige organisaties proberen dit op te lossen door te blok keren `login.live.co
 
 ### <a name="configuration-for-consumer-apps"></a>Configuratie voor consumenten-apps
 
-Terwijl de `Restrict-Access-To-Tenants` header fungeert als een acceptatie lijst, werkt het Microsoft-account (MSA)-blok als een signaal voor weigeren, waarmee wordt aangegeven dat de Microsoft-account platform niet toestaat dat gebruikers zich kunnen aanmelden bij consumenten toepassingen. Als u dit signaal wilt verzenden, `sec-Restrict-Tenant-Access-Policy` wordt de header geïnjecteerd naar verkeer dat wordt bezocht `login.live.com` met dezelfde bedrijfs proxy of firewall als [hierboven](#proxy-configuration-and-requirements). De waarde van de header moet zijn `restrict-msa` . Wanneer de header aanwezig is en een consumenten-app zich rechtstreeks probeert aan te melden bij een gebruiker, wordt dat aanmelden geblokkeerd.
+Hoewel de `Restrict-Access-To-Tenants` header fungeert als een allowlist, werkt het block Microsoft-account (MSA) als een signaal voor weigeren, waarmee wordt aangegeven dat de Microsoft-account platform niet toestaat dat gebruikers zich kunnen aanmelden bij consumenten toepassingen. Als u dit signaal wilt verzenden, `sec-Restrict-Tenant-Access-Policy` wordt de header geïnjecteerd naar verkeer dat wordt bezocht `login.live.com` met dezelfde bedrijfs proxy of firewall als [hierboven](#proxy-configuration-and-requirements). De waarde van de header moet zijn `restrict-msa` . Wanneer de header aanwezig is en een consumenten-app zich rechtstreeks probeert aan te melden bij een gebruiker, wordt dat aanmelden geblokkeerd.
 
 Op dit moment wordt verificatie voor consumenten toepassingen niet weer gegeven in de [beheer logboeken](#admin-experience), omdat login.live.com onafhankelijk van Azure AD wordt gehost.
 

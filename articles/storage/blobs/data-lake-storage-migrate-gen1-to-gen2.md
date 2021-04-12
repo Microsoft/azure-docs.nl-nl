@@ -8,12 +8,12 @@ ms.date: 03/11/2020
 ms.service: storage
 ms.reviewer: rukmani-msft
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: 875c046406b7989a39f09dde82640ed5567b6b3e
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 9d160738208bcef7b066567137a3c3a9738c26a5
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101714864"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105727005"
 ---
 # <a name="migrate-azure-data-lake-storage-from-gen1-to-gen2"></a>Azure Data Lake Storage migreren van gen1 naar Gen2
 
@@ -111,7 +111,7 @@ Deze tabel vergelijkt de mogelijkheden van gen1 tot die van Gen2.
 
 Kies een migratie patroon en wijzig dit patroon naar wens.
 
-|||
+|Migratie patroon | Details |
 |---|---|
 |**Lift en SHIFT**|Het eenvoudigste patroon. Ideaal als uw gegevens pijplijnen downtime kunnen veroorloven.|
 |**Incrementele kopie**|Net als bij *liften en verschuiving*, maar met minder downtime. Ideaal voor grote hoeveel heden gegevens die meer moeten worden gekopieerd.|

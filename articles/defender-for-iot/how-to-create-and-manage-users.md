@@ -4,10 +4,10 @@ description: Gebruikers van Sens oren en de on-premises beheer console maken en 
 ms.date: 03/03/2021
 ms.topic: article
 ms.openlocfilehash: 2afc3cb2b9cfc0ac6b75c98198d9f0965b6dc04c
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104779015"
 ---
 # <a name="about-defender-for-iot-console-users"></a>Over Defender voor IoT-console gebruikers
@@ -181,7 +181,7 @@ Active Directory configureren:
 
 4. Stel de Active Directory server-para meters als volgt in:
 
-   | Server parameter | Beschrijving |
+   | Server parameter | Description |
    |--|--|
    | FQDN van domein controller | Stel de Fully Qualified Domain Name (FQDN) precies zo in als deze op uw LDAP-server wordt weer gegeven. Voer bijvoorbeeld `host1.subdomain.domain.com` in. |
    | Domein controller poort | Definieer de poort waarop uw LDAP is geconfigureerd. |

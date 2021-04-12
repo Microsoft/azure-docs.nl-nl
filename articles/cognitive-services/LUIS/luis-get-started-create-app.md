@@ -4,13 +4,13 @@ description: Deze quickstart laat zien hoe u een LUIS-app maakt die gebruikmaakt
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
-ms.date: 10/13/2020
-ms.openlocfilehash: 2048079a9b1eb5234d03c6fe57073228bd892d53
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
-ms.translationtype: HT
+ms.date: 03/29/2021
+ms.openlocfilehash: e0972998fad647c1c70be814cb7c13f14a6e1141
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95019157"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106277025"
 ---
 # <a name="quickstart-use-prebuilt-home-automation-app"></a>Snelstart: Een vooraf gemaakte app voor huisautomatisering gebruiken
 
@@ -52,7 +52,7 @@ Selecteer **Gereed**.
 
     Wanneer het vooraf gemaakte domein is toegevoegd, wordt in het vak met vooraf gemaakte domeinen de knop **Remove domain** weergegeven.
 
-## <a name="intents-and-entities"></a>Intenties en entiteiten
+## <a name="intents-and-entities&quot;></a>Intenties en entiteiten
 
 1. Selecteer **Intenties** in het navigatiedeelvenster aan de linkerkant om de intenties van het domein 'HomeAutomation' weer te geven. Het bevat voorbeelden van utterances, zoals `HomeAutomation.QueryState` en `HomeAutomation.SetDevice`.
 
@@ -61,8 +61,8 @@ Selecteer **Gereed**.
 
 1. Selecteer de intentie **HomeAutomation.TurnOff**. De intentie bevat een lijst met voorbeelduitingen die zijn gelabeld met entiteiten.
 
-    > [!div class="mx-imgBorder"]
-    > [![Schermopname van de intentie HomeAutomation.TurnOff](media/luis-quickstart-new-app/home-automation-turnoff.png "Schermopname van de intentie HomeAutomation.TurnOff")](media/luis-quickstart-new-app/home-automation-turnoff.png)
+    > [!div class=&quot;mx-imgBorder&quot;]
+    > [![Schermopname van de intentie HomeAutomation.TurnOff](media/luis-quickstart-new-app/home-automation-turnoff.png &quot;Schermopname van de intentie HomeAutomation.TurnOff")](media/luis-quickstart-new-app/home-automation-turnoff.png)
 
 1. Als u de entiteiten voor de app wilt weergeven, selecteert u **Entiteiten**. Als u op een van de entiteiten klikt, zoals **HomeAutomation.DeviceName** ziet u een lijst met waarden die eraan zijn gekoppeld. 
  
@@ -220,7 +220,5 @@ Om een voorspelling van LUIS te ontvangen in een chatbot of een andere clienttoe
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U kunt het eindpunt aanroepen vanuit code:
-
 > [!div class="nextstepaction"]
-> [Een LUIS-eindpunt aanroepen met behulp van code](./luis-get-started-get-intent-from-rest.md)
+> [Terugkerende app-ontwikkeling voor LUIS](./luis-concept-app-iteration.md)

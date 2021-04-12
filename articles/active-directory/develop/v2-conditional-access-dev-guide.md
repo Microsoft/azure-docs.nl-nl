@@ -14,12 +14,12 @@ ms.subservice: develop
 ms.custom: aaddev
 ms.topic: conceptual
 ms.workload: identity
-ms.openlocfilehash: e4021f0ca2c1c9ca9434744a4aebb4b7938315f0
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ed8007c81479c73e4503d74af4c4043e503baf2b
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99584227"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106120143"
 ---
 # <a name="developer-guidance-for-azure-active-directory-conditional-access"></a>Ontwikkelaars richtlijnen voor voorwaardelijke toegang Azure Active Directory
 
@@ -72,10 +72,10 @@ Met name alle Microsoft Graph-bereiken vertegenwoordigen een gegevensset die afz
 Als een app bijvoorbeeld de volgende Microsoft Graph bereiken aanvraagt,
 
 ```
-scopes="Bookings.Read.All Mail.Read"
+scopes="ChannelMessages.Read.All Mail.Read"
 ```
 
-Een app kan hun gebruikers verwachten alle beleids regels te voldoen die zijn ingesteld op boekingen en uitwisseling. Sommige bereiken kunnen worden toegewezen aan meerdere gegevens sets als hiermee toegang wordt verleend.
+Een app kan hun gebruikers verwachten alle beleids regels die zijn ingesteld op teams en Exchange te voldoen. Sommige bereiken kunnen worden toegewezen aan meerdere gegevens sets als hiermee toegang wordt verleend.
 
 ### <a name="complying-with-a-conditional-access-policy"></a>Voldoen aan het beleid voor voorwaardelijke toegang
 

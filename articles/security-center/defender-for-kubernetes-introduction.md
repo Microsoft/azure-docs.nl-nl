@@ -3,26 +3,32 @@ title: 'Azure Defender voor Kubernetes: de voordelen en functies'
 description: Meer informatie over de voordelen en functies van Azure Defender voor Kubernetes.
 author: memildin
 ms.author: memildin
-ms.date: 02/07/2021
+ms.date: 04/07/2021
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 83d0215ebca9d60d61937cb20bb82c7ccb30aac1
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: c500c7b7afb36ffbe04fb63551c3a7d17c1347d9
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102100624"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107029077"
 ---
 # <a name="introduction-to-azure-defender-for-kubernetes"></a>Inleiding tot Azure Defender for Kubernetes
 
-Azure Kubernetes service (AKS) is de beheerde service van Microsoft voor het ontwikkelen, implementeren en beheren van toepassingen in containers.
+Azure Defender voor Kubernetes is het Azure Defender-abonnement dat u wilt beveiligen voor uw Kubernetes-clusters, waar ze ook worden uitgevoerd. 
+
+We kunnen clusters beschermen in:
+
+- **Azure Kubernetes service (AKS)** -beheerde service van micro soft voor het ontwikkelen, implementeren en beheren van toepassingen in containers
+
+- **On-premises en omgevingen met meerdere clouds** : met een [uitbrei ding voor Arc ingeschakelde Kubernetes](defender-for-kubernetes-azure-arc.md)
 
 Azure Security Center en AKS vormen een Cloud-native Kubernetes-beveiligings aanbieding met omgevings beveiliging, beveiliging van werk belastingen en runtime-beveiliging, zoals wordt beschreven in [Container Security in Security Center](container-security.md).
 
-Schakel **Azure Defender voor Kubernetes** in voor het detecteren van bedreigingen voor uw Kubernetes-clusters.
+Detectie van bedreigingen op hostniveau voor uw Linux AKS-knoop punten is beschikbaar als u [Azure Defender voor servers](defender-for-servers-introduction.md) en de log Analytics-agent inschakelt. Als uw cluster echter wordt geïmplementeerd op een schaalset voor virtuele machines, wordt de Log Analytics-agent momenteel niet ondersteund.
 
-Detectie van bedreigingen op hostniveau voor uw Linux AKS-knoop punten is beschikbaar als u [Azure Defender voor servers](defender-for-servers-introduction.md) en de log Analytics-agent inschakelt. Als uw AKS-cluster echter is geïmplementeerd op een schaalset voor virtuele machines, wordt de Log Analytics-agent momenteel niet ondersteund.
+
 
 ## <a name="availability"></a>Beschikbaarheid
 
@@ -36,9 +42,9 @@ Detectie van bedreigingen op hostniveau voor uw Linux AKS-knoop punten is beschi
 
 ## <a name="what-are-the-benefits-of-azure-defender-for-kubernetes"></a>Wat zijn de voordelen van Azure Defender voor Kubernetes?
 
-Azure Defender voor Kubernetes biedt **bedreigingen beveiliging op cluster niveau** door uw door aks beheerde services te bewaken via de logboeken die zijn opgehaald door Azure Kubernetes service (AKS).
+Azure Defender voor Kubernetes biedt **bedreigingen beveiliging op cluster niveau** door de logboeken van uw clusters te bewaken.
 
-Voor beelden van beveiligings gebeurtenissen die door Azure Defender voor Kubernetes-monitors worden weer gegeven, omvatten beschik bare Kubernetes-Dash boards, het maken van rollen met hoge bevoegdheden en het maken van gevoelige koppels. Zie de [naslag tabel met waarschuwingen](alerts-reference.md#alerts-akscluster)voor een volledige lijst met waarschuwingen op AKS-cluster niveau.
+Voor beelden van beveiligings gebeurtenissen die door Azure Defender voor Kubernetes-monitors worden weer gegeven, omvatten beschik bare Kubernetes-Dash boards, het maken van rollen met hoge bevoegdheden en het maken van gevoelige koppels. Zie de [naslag tabel met waarschuwingen](alerts-reference.md#alerts-akscluster)voor een volledige lijst met waarschuwingen op cluster niveau.
 
 > [!TIP]
 > U kunt containerwaarschuwingen simuleren door de instructies in [dit blogbericht](https://techcommunity.microsoft.com/t5/azure-security-center/how-to-demonstrate-the-new-containers-features-in-azure-security/ba-p/1011270) te volgen.
@@ -46,14 +52,14 @@ Voor beelden van beveiligings gebeurtenissen die door Azure Defender voor Kubern
 Bovendien houdt ons wereldwijde team van beveiligingsonderzoekers het bedreigingslandschap voortdurend in de gaten. Ze voegen containerspecifieke waarschuwingen en beveiligingsproblemen toe zodra ze worden gedetecteerd.
 
 >[!NOTE]
-> Security Center genereert beveiligings waarschuwingen voor Azure Kubernetes-service acties en implementaties die plaatsvinden **nadat** u Azure Defender voor Kubernetes hebt ingeschakeld.
+> In azure Defender worden beveiligings waarschuwingen gegenereerd voor acties en implementaties die zich voordoen nadat u het Kubernetes-abonnement voor Defender voor u hebt ingeschakeld.
 
 
 
 
 ## <a name="azure-defender-for-kubernetes---faq"></a>Azure Defender voor Kubernetes: veelgestelde vragen
 
-### <a name="can-i-still-get-aks-protections-without-the-log-analytics-agent"></a>Kan ik nog wel AKS-beveiligingen krijgen zonder de Log Analytics-agent?
+### <a name="can-i-still-get-cluster-protections-without-the-log-analytics-agent"></a>Kan ik nog steeds cluster beveiligingen krijgen zonder de Log Analytics agent?
 
 Het Kubernetes-abonnement **van Azure Defender** biedt beveiliging op cluster niveau. Als u ook de Log Analytics-agent van **Azure Defender voor servers** implementeert, krijgt u de bedreigings beveiliging voor uw knoop punten die bij dat plan worden meegeleverd. Meer informatie vindt [u in Inleiding tot Azure Defender voor servers](defender-for-servers-introduction.md).
 
@@ -67,7 +73,7 @@ Als Azure Defender uw AKS-knooppunten moet bewaken, moet de Log Analytics-agent 
 AKS is een beheerde service en aangezien de Log Analytics-agent een door Microsoft beheerde uitbreiding is, wordt deze ook ondersteund op AKS-clusters.
 
 ### <a name="if-my-cluster-is-already-running-an-azure-monitor-for-containers-agent-do-i-need-the-log-analytics-agent-too"></a>Als op mijn cluster al een Azure Monitor voor containers-agent wordt uitgevoerd, heb ik dan ook de Log Analytics-agent nodig?
-Als Azure Defender uw AKS-knooppunten moet bewaken, moet de Log Analytics-agent erop worden uitgevoerd.
+Voor Azure Defender om uw knoop punten te bewaken, moet de Log Analytics-agent worden uitgevoerd.
 
 Als op uw clusters al de Azure Monitor voor containers-agent wordt uitgevoerd, kunt u de Log Analytics-agent ook installeren en kunnen de twee agents zonder problemen naast elkaar worden gebruikt.
 

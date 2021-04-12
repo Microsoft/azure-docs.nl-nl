@@ -8,12 +8,12 @@ ms.date: 01/29/2021
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 85d5d5b484163c4c65e7ec14c5d5ce5aea339669
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: d3cc8f36f05def18c16db0875cb712cdf5d165f9
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104593200"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106121350"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Planning voor de implementatie van Azure Files Sync
 
@@ -351,7 +351,7 @@ Als Cloud lagen zijn ingeschakeld, mogen oplossingen die rechtstreeks een back-u
 Als u liever een on-premises back-upoplossing gebruikt, moeten back-ups worden uitgevoerd op een server in de synchronisatie groep waarvoor Cloud lagen zijn uitgeschakeld. Wanneer u een herstel bewerking uitvoert, gebruikt u de opties op volume-of bestands niveau herstellen. Bestanden die zijn hersteld met de optie herstel op bestands niveau worden gesynchroniseerd naar alle eind punten in de synchronisatie groep en bestaande bestanden worden vervangen door de versie die wordt hersteld vanuit een back-up.  Herstel bewerkingen op volume niveau worden niet vervangen door nieuwere bestands versies in de Azure-bestands share of andere server eindpunten.
 
 > [!WARNING]
-> Robocopy/switch wordt niet ondersteund met Azure File Sync. Met behulp van de Robocopy/B-switch met een Azure File Sync server-eind punt, omdat de bron kan leiden tot beschadiging van het bestand.
+> Als u Robocopy/B wilt gebruiken met een Azure File Sync-agent die wordt uitgevoerd op de bron-of doel server, voert u een upgrade uit naar Azure File Sync agent versie v 12.0 of hoger. Met behulp van Robocopy/B en agent versies kleiner dan v 12.0 wordt de beschadiging van gelaagde bestanden tijdens het kopiëren tot gevolg.
 
 > [!Note]  
 > Herstellen met Bare-Metal (BMR) kan leiden tot onverwachte resultaten en wordt op dit moment niet ondersteund.

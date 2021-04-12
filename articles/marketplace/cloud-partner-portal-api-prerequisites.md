@@ -7,12 +7,12 @@ ms.topic: reference
 author: mingshen-ms
 ms.author: mingshen
 ms.date: 09/23/2020
-ms.openlocfilehash: 374cc3398d1037b19ceddcbdaafd333f643e44ff
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f5fc77b65f6a83f4f7ca8ed8b8c9294b95307735
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "91261155"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107309"
 ---
 # <a name="api-prerequisites"></a>API-vereisten
 
@@ -31,4 +31,4 @@ Nu u de Service-Principal in uw Tenant hebt gemaakt, kunt u deze als een gebruik
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [Azure AD-toepassingen beheren](partner-center-portal/manage-account.md#manage-azure-ad-applications).
+Zie [Azure AD-toepassingen beheren](manage-aad-apps.md).

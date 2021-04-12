@@ -1,89 +1,68 @@
 ---
-title: Azure Arc enabled Kubernetes-cluster configureren met container Insights | Microsoft Docs
-description: In dit artikel wordt beschreven hoe u bewaking configureert met container Insights op Azure Arc enabled Kubernetes-clusters.
-ms.topic: conceptual
-ms.date: 09/23/2020
-ms.openlocfilehash: d6a725f6af613a541077cecfed3ba2289909130d
-ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
+title: Kubernetes-clusters met Azure-Arc-functionaliteit bewaken
+ms.date: 04/05/2021
+ms.topic: article
+author: shashankbarsin
+ms.author: shasb
+description: Metrische gegevens en logboeken van Azure Arc enabled Kubernetes-clusters verzamelen met behulp van Azure Monitor
+ms.openlocfilehash: 0a983f6d7032310d02d35e713482de942bfbfd70
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "106219227"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106443847"
 ---
-# <a name="enable-monitoring-of-azure-arc-enabled-kubernetes-cluster"></a>De bewaking van een Kubernetes-cluster met Azure Arc inschakelen
+# <a name="azure-monitor-container-insights-for-azure-arc-enabled-kubernetes-clusters"></a>Azure Monitor container Insights voor Azure Arc enabled Kubernetes-clusters
 
-Container Insights biedt uitgebreide bewakings ervaring voor de Azure Kubernetes-service (AKS) en AKS-engine clusters. In dit artikel wordt beschreven hoe u de bewaking van uw Kubernetes-clusters die buiten Azure worden gehost, inschakelt voor een vergelijk bare bewakings ervaring.
+[Azure monitor container Insights](container-insights-overview.md) biedt uitgebreide bewakings ervaring voor Azure Arc enabled Kubernetes-clusters.
 
-Container Insights kan worden ingeschakeld voor een of meer bestaande implementaties van Kubernetes met behulp van een Power shell-of bash-script.
+[!INCLUDE [preview features note](../../azure-arc/kubernetes/includes/preview/preview-callout.md)]
 
 ## <a name="supported-configurations"></a>Ondersteunde configuraties
 
-Container Insights ondersteunt het bewaken van Azure Arc enabled Kubernetes (preview), zoals beschreven in het [overzichts](container-insights-overview.md) artikel, met uitzonde ring van de volgende functies:
-
-- Live-gegevens (preview-versie)
-
-Het volgende wordt officieel ondersteund met container Insights:
-
-- De versies van Kubernetes en het ondersteunings beleid zijn hetzelfde als de versies van AKS die worden [ondersteund](../../aks/supported-kubernetes-versions.md).
-
-- De volgende container-Runtimes worden ondersteund: docker-, Moby-en CRI-compatibele runtime, zoals CRI-O en Containered.
-
-- De versie van het Linux-besturings systeem voor de hoofd-en worker-knoop punten wordt ondersteund: Ubuntu (18,04 LTS en 16,04 LTS).
+- Azure Monitor container Insights ondersteunt het controleren van de Kubernetes (preview) van Azure Arc enabled, zoals beschreven in het [overzichts](container-insights-overview.md) artikel, met uitzonde ring van de functie Live data (preview). Gebruikers hoeven ook geen [eigenaars](../../role-based-access-control/built-in-roles.md#owner) machtigingen te hebben om [metrische gegevens in te scha kelen](container-insights-update-metrics.md)
+- `Docker`, `Moby` en cri compatibele container runtimes, zoals `CRI-O` en `containerd` .
+- Uitgaande proxy zonder verificatie en uitgaande proxy met basis verificatie worden ondersteund. De uitgaande proxy waarmee vertrouwde certificaten worden verwacht, wordt momenteel niet ondersteund.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voordat u begint, moet u ervoor zorgen dat u over het volgende beschikt:
+- U hebt voldaan aan de vereisten die worden vermeld in de [documentatie over algemene cluster uitbreidingen](../../azure-arc/kubernetes/extensions.md#prerequisites).
+- Een Log Analytics-werk ruimte: Azure Monitor container Insights ondersteunt een Log Analytics-werk ruimte in de regio's die worden vermeld op de pagina Azure- [producten per regio](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=monitor). U kunt uw eigen werk ruimte maken via [Azure Resource Manager](../logs/resource-manager-workspace.md), [power shell](../logs/powershell-sample-create-workspace.md)of [Azure Portal](../logs/quick-create-workspace.md).
+- U moet de roltoewijzing voor de rol van [Inzender](../../role-based-access-control/built-in-roles.md#contributor) hebben voor het Azure-abonnement met de Azure Arc enabled Kubernetes-resource. Als de Log Analytics-werk ruimte zich in een ander abonnement bevindt, moet u Log Analytics rol voor [Inzender](../logs/manage-access.md#manage-access-using-azure-permissions) toewijzing is vereist in de log Analytics-werk ruimte.
+- Als u de bewakings gegevens wilt bekijken, moet u de toewijzing van [log Analytics-lezer](../logs/manage-access.md#manage-access-using-azure-permissions) hebben op de log Analytics-werk ruimte.
+- De volgende eind punten moeten worden ingeschakeld voor uitgaande toegang, naast de waarden die worden vermeld onder [een Kubernetes-cluster verbinden met Azure Arc](../../azure-arc/kubernetes/quickstart-connect-cluster.md#meet-network-requirements).
 
-- Een Log Analytics-werkruimte.
+    | Eindpunt | Poort |
+    |----------|------|
+    | `*.ods.opinsights.azure.com` | 443 |
+    | `*.oms.opinsights.azure.com` | 443 |
+    | `dc.services.visualstudio.com` | 443 |
+    | `*.monitoring.azure.com` | 443 |
+    | `login.microsoftonline.com` | 443 |
 
-    Container Insights ondersteunt een Log Analytics-werk ruimte in de regio's die worden vermeld in azure- [producten per regio](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=monitor). Om uw eigen werk ruimte te maken, kan deze worden gemaakt via [Azure Resource Manager](../logs/resource-manager-workspace.md), via [Power shell](../logs/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json)of in de [Azure Portal](../logs/quick-create-workspace.md).
+    Als uw Arc-Kubernetes-bron zich in de Azure-Amerikaanse overheids omgeving bevindt, moeten de volgende eind punten worden ingeschakeld voor uitgaande toegang:
 
-- Als u de functies in container Insights wilt inschakelen en openen, moet u Mini maal lid zijn van de rol Azure *contributor* in het Azure-abonnement en een lid van de rol [*log Analytics inzender*](../logs/manage-access.md#manage-access-using-azure-permissions) van de log Analytics werk ruimte die is geconfigureerd met container Insights.
+    | Eindpunt | Poort |
+    |----------|------|
+    | `*.ods.opinsights.azure.us` | 443 |
+    | `*.oms.opinsights.azure.us` | 443 |
+    | `dc.services.visualstudio.com` | 443 |
+    
 
-- U bent lid van de rol [Inzender](../../role-based-access-control/built-in-roles.md#contributor) op de Azure Arc-cluster resource.
+- Als u eerder Azure Monitor container Insights op dit cluster hebt geïmplementeerd met behulp van script zonder cluster uitbreidingen, volgt u de instructies die [hier](container-insights-optout-hybrid.md) worden weer gegeven om dit helm-diagram te verwijderen. U kunt vervolgens door gaan met het maken van een cluster extensie-exemplaar voor Azure Monitor container Insights.
 
-- Als u de bewakings gegevens wilt bekijken, bent u lid van de machtiging [*log Analytics lezer*](../logs/manage-access.md#manage-access-using-azure-permissions) -rol met de log Analytics werk ruimte die is geconfigureerd met container Insights.
+    >[!NOTE]
+    > De op scripts gebaseerde versie van Deploy Azure Monitor container Insights (preview) wordt vervangen door de [cluster extensie](../../azure-arc/kubernetes/extensions.md) vorm van implementatie. Azure Monitor die eerder via script zijn geïmplementeerd, wordt alleen ondersteund tot en met 2021. het wordt daarom geadviseerd om op het eerste gebruik te migreren naar de cluster extensie vorm van implementatie.
 
-- [Helm-client](https://helm.sh/docs/using_helm/) voor het onboarden van de container Insights-grafiek voor het opgegeven Kubernetes-cluster.
+### <a name="identify-workspace-resource-id"></a>Resource-ID van werk ruimte identificeren
 
-- De volgende proxy-en firewall configuratie gegevens zijn vereist voor de container versie van de Log Analytics-agent voor Linux om te communiceren met Azure Monitor:
-
-    |Agentresource|Poorten |
-    |------|---------|
-    |`*.ods.opinsights.azure.com` |Poort 443 |
-    |`*.oms.opinsights.azure.com` |Poort 443 |
-    |`*.dc.services.visualstudio.com` |Poort 443 |
-
-- De container agent vereist `cAdvisor secure port: 10250` dat Kubelet of moet `unsecure port :10255` worden geopend op alle knoop punten in het cluster om metrische gegevens over prestaties te verzamelen. We raden u `secure port: 10250` aan om te configureren in de cAdvisor van Kubelet als deze nog niet is geconfigureerd.
-
-- Voor de container agent moeten de volgende omgevings variabelen worden opgegeven in de container om te communiceren met de Kubernetes API-service binnen het cluster om inventaris gegevens te verzamelen `KUBERNETES_SERVICE_HOST` `KUBERNETES_PORT_443_TCP_PORT` .
-
-    >[!IMPORTANT]
-    >De minimale agent versie die wordt ondersteund voor het bewaken van Kubernetes-clusters met Arc-functionaliteit is ciprod04162020 of hoger.
-
-- [Power shell core](/powershell/scripting/install/installing-powershell?view=powershell-6&preserve-view=true) is vereist als u controle inschakelt met behulp van de Power shell-methode script.
-
-- [Bash versie 4](https://www.gnu.org/software/bash/) is vereist als u controle inschakelt met behulp van de script methode bash.
-
-## <a name="identify-workspace-resource-id"></a>Resource-ID van werk ruimte identificeren
-
-Als u de bewaking van uw cluster wilt inschakelen met het Power shell-of bash-script dat u eerder hebt gedownload en met een bestaande Log Analytics-werk ruimte hebt geïntegreerd, voert u de volgende stappen uit om eerst de volledige Resource-ID van uw Log Analytics-werk ruimte te identificeren. Dit is vereist voor de `workspaceResourceId` para meter bij het uitvoeren van de opdracht om de invoeg toepassing bewaking in te scha kelen met de opgegeven werk ruimte. Als u geen werk ruimte hebt om op te geven, kunt u overs laan met de `workspaceResourceId` para meter, en kunt u het script een nieuwe werk ruimte laten maken.
+Voer de volgende opdrachten uit om de volledige Azure Resource Manager-id van de Log Analytics-werk ruimte te vinden. 
 
 1. Een lijst met alle abonnementen waartoe u toegang hebt met behulp van de volgende opdracht:
 
     ```azurecli
     az account list --all -o table
     ```
-
-    De uitvoer ziet er ongeveer als volgt uit:
-
-    ```azurecli
-    Name                                  CloudName    SubscriptionId                        State    IsDefault
-    ------------------------------------  -----------  ------------------------------------  -------  -----------
-    Microsoft Azure                       AzureCloud   0fb60ef2-03cc-4290-b595-e71108e8f4ce  Enabled  True
-    ```
-
-    Kopieer de waarde voor **SubscriptionId**.
 
 2. Schakel over naar het abonnement dat als host fungeert voor de Log Analytics-werk ruimte met behulp van de volgende opdracht:
 
@@ -97,190 +76,109 @@ Als u de bewaking van uw cluster wilt inschakelen met het Power shell-of bash-sc
     az resource list --resource-type Microsoft.OperationalInsights/workspaces -o json
     ```
 
-    Zoek in de uitvoer de naam van de werk ruimte en kopieer de volledige Resource-ID van die Log Analytics werk ruimte onder de veld **-id**.
+    Zoek in de uitvoer de naam van de werk ruimte die van belang is. Het `id` veld van dat staat voor de Azure Resource Manager id van die log Analytics werk ruimte.
 
-## <a name="enable-monitoring-using-powershell"></a>Bewaking inschakelen met Power shell
+    >[!TIP]
+    > Dit `id` kan ook worden gevonden op de Blade *overzicht* van de log Analytics-werk ruimte via de Azure Portal.
 
-1. Down load het script en sla het op in een lokale map die uw cluster configureert met de invoeg toepassing voor bewaking met behulp van de volgende opdrachten:
+## <a name="create-extension-instance-using-azure-cli"></a>Een extensie-exemplaar maken met behulp van Azure CLI
 
-    ```powershell
-    Invoke-WebRequest https://aka.ms/enable-monitoring-powershell-script -OutFile enable-monitoring.ps1
-    ```
+### <a name="option-1---with-default-values"></a>Optie 1: met standaard waarden
 
-2. Configureer de `$azureArcClusterResourceId` variabele door de bijbehorende waarden in te stellen voor `subscriptionId` `resourceGroupName` en `clusterName` de resource-id van uw Azure Arc-Kubernetes-cluster resource weer te geven.
+Deze optie maakt gebruik van de volgende standaard waarden:
 
-    ```powershell
-    $azureArcClusterResourceId = "/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Kubernetes/connectedClusters/<clusterName>"
-    ```
+- Maakt of gebruikt bestaande standaard logboek analyse-werk ruimte die overeenkomt met de regio van het cluster
+- Automatische upgrade is ingeschakeld voor de Azure Monitor cluster uitbreiding
 
-3. Configureer de `$kubeContext` variabele met de **uitvoeren-context** van uw cluster door de opdracht uit te voeren `kubectl config get-contexts` . 
-
-    ```powershell
-    $kubeContext = "<kubeContext name of your k8s cluster>"
-    ```
-
-4. Als u bestaande Azure Monitor Log Analytics werk ruimte wilt gebruiken, configureert u de variabele `$logAnalyticsWorkspaceResourceId` met de bijbehorende waarde voor de resource-id van de werk ruimte. Als dat niet het geval is, stelt u de variabele in op `""` en het script maakt een standaardwerk ruimte in de standaard resource groep van het cluster abonnement als deze nog niet in de regio bestaat. De standaardwerk ruimte die wordt gemaakt, lijkt op de indeling van *DefaultWorkspace- \<SubscriptionID> - \<Region>*.
-
-    ```powershell
-    $logAnalyticsWorkspaceResourceId = "/subscriptions/<subscriptionId>/resourceGroups/<resourceGroup>/providers/microsoft.operationalinsights/workspaces/<workspaceName>"
-    ```
-
-5. Als uw met Arc ingeschakeld Kubernetes-cluster communiceert via een proxy server, configureert u de variabele `$proxyEndpoint` met de URL van de proxy server. Als het cluster niet via een proxy server communiceert, kunt u de waarde instellen op `""` .  Zie [Configure proxy endpoint](#configure-proxy-endpoint) verderop in dit artikel voor meer informatie.
-
-6. Voer de volgende opdracht uit om controle in te scha kelen.
-
-    ```powershell
-    .\enable-monitoring.ps1 -clusterResourceId $azureArcClusterResourceId -kubeContext $kubeContext -workspaceResourceId $logAnalyticsWorkspaceResourceId -proxyEndpoint $proxyEndpoint
-    ```
-
-Nadat u bewaking hebt ingeschakeld, kan het ongeveer 15 minuten duren voordat u de metrische gegevens van de status voor het cluster kunt weer geven.
-
-### <a name="using-service-principal"></a>Service-Principal gebruiken
-Het script *enable-monitoring.ps1* maakt gebruik van de aanmelding voor interactieve apparaten. Als u de voor keur geeft aan niet-interactieve aanmelding, kunt u een bestaande Service-Principal gebruiken of een nieuwe maken die de vereiste machtigingen heeft, zoals wordt beschreven in [vereisten](#prerequisites). Als u de Service-Principal wilt gebruiken, moet u $servicePrincipalClientId, $servicePrincipalClientSecret en $tenantId para meters door geven aan de waarden van de service-principal die u wilt gebruiken voor *enable-monitoring.ps1* script.
-
-```powershell
-$subscriptionId = "<subscription Id of the Azure Arc connected cluster resource>"
-$servicePrincipal = New-AzADServicePrincipal -Role Contributor -Scope "/subscriptions/$subscriptionId"
+```console
+az k8s-extension create --name azuremonitor-containers --cluster-name <cluster-name> --resource-group <resource-group> --cluster-type connectedClusters --extension-type Microsoft.AzureMonitor.Containers
 ```
 
-De roltoewijzing hieronder is alleen van toepassing als u een bestaande Log Analytics-werk ruimte gebruikt in een ander Azure-abonnement dan de met Arc K8s verbonden cluster bron.
+### <a name="option-2---with-existing-azure-log-analytics-workspace"></a>Optie 2: met een bestaande Azure Log Analytics-werk ruimte
 
-```powershell
-$logAnalyticsWorkspaceResourceId = "<Azure Resource Id of the Log Analytics Workspace>" # format of the Azure Log Analytics workspace should be /subscriptions/<subId>/resourcegroups/<rgName>/providers/microsoft.operationalinsights/workspaces/<workspaceName>
-New-AzRoleAssignment -RoleDefinitionName 'Log Analytics Contributor'  -ObjectId $servicePrincipal.Id -Scope  $logAnalyticsWorkspaceResourceId
+U kunt een bestaande Azure Log Analytics-werk ruimte gebruiken in elk abonnement waarvoor u *Inzender* of een meer strikte roltoewijzing hebt.
 
-$servicePrincipalClientId =  $servicePrincipal.ApplicationId.ToString()
-$servicePrincipalClientSecret = [System.Net.NetworkCredential]::new("", $servicePrincipal.Secret).Password
-$tenantId = (Get-AzSubscription -SubscriptionId $subscriptionId).TenantId
+```console
+az k8s-extension create --name azuremonitor-containers --cluster-name <cluster-name> --resource-group <resource-group> --cluster-type connectedClusters --extension-type Microsoft.AzureMonitor.Containers --configuration-settings logAnalyticsWorkspaceResourceID=<armResourceIdOfExistingWorkspace>
 ```
 
-Bijvoorbeeld:
+### <a name="option-3---with-advanced-configuration"></a>Optie 3: met geavanceerde configuratie
 
-```powershell
-.\enable-monitoring.ps1 -clusterResourceId $azureArcClusterResourceId -servicePrincipalClientId $servicePrincipalClientId -servicePrincipalClientSecret $servicePrincipalClientSecret -tenantId $tenantId -kubeContext $kubeContext -workspaceResourceId $logAnalyticsWorkspaceResourceId -proxyEndpoint $proxyEndpoint
+Als u de standaard resource aanvragen en limieten wilt aanpassen, kunt u de geavanceerde configuratie-instellingen gebruiken:
+
+```console
+az k8s-extension create --name azuremonitor-containers --cluster-name <cluster-name> --resource-group <resource-group> --cluster-type connectedClusters --extension-type Microsoft.AzureMonitor.Containers --configuration-settings  omsagent.resources.daemonset.limits.cpu=150m omsagent.resources.daemonset.limits.memory=600Mi omsagent.resources.deployment.limits.cpu=1 omsagent.resources.deployment.limits.memory=750Mi
 ```
 
+De [sectie resource aanvragen en limieten van het helm diagram](https://github.com/helm/charts/blob/master/incubator/azuremonitor-containers/values.yaml) voor de beschik bare configuratie-instellingen uitchecken.
 
+### <a name="option-4---on-azure-stack-edge"></a>Optie 4-op Azure Stack rand
 
-## <a name="enable-using-bash-script"></a>Inschakelen met behulp van bash-script
+Als het Azure Arc enabled Kubernetes-cluster zich op Azure Stack Edge bevindt, moet u een aangepast koppelingspad `/home/data/docker` gebruiken.
 
-Voer de volgende stappen uit om de bewaking in te scha kelen met behulp van het meegeleverde bash-script.
+```console
+az k8s-extension create --name azuremonitor-containers --cluster-name <cluster-name> --resource-group <resource-group> --cluster-type connectedClusters --extension-type Microsoft.AzureMonitor.Containers --configuration-settings omsagent.logsettings.custommountpath=/home/data/docker
+```
 
-1. Down load het script en sla het op in een lokale map die uw cluster configureert met de invoeg toepassing voor bewaking met behulp van de volgende opdrachten:
+>[!NOTE]
+> Als u expliciet de versie opgeeft van de uitbrei ding die moet worden geïnstalleerd in de opdracht maken, moet u ervoor zorgen dat de opgegeven versie >= 2.8.2.
 
-    ```bash
-    curl -o enable-monitoring.sh -L https://aka.ms/enable-monitoring-bash-script
+## <a name="create-extension-instance-using-azure-portal"></a>Een extensie-exemplaar maken met behulp van Azure Portal
+
+>[!IMPORTANT]
+>  Als u Azure Monitor implementeert op een Kubernetes-cluster dat wordt uitgevoerd boven op Azure Stack Edge, moet u de Azure CLI-optie volgen in plaats van de optie Azure Portal als een aangepast koppelingspad moet worden ingesteld voor deze clusters.    
+
+### <a name="onboarding-from-the-azure-arc-enabled-kubernetes-resource-blade"></a>Onboarding van de Blade Kubernetes-resource van Azure-boog ingeschakeld
+
+1. Selecteer in de Azure Portal het Kubernetes-cluster dat u wilt bewaken.
+
+2. Selecteer het item Insights (preview) onder de sectie bewaking van de Blade resource.
+
+3. Selecteer op de pagina voor onboarding de knop Azure Monitor configureren
+
+4. U kunt nu de [log Analytics-werk ruimte](../logs/quick-create-workspace.md) kiezen voor het verzenden van uw metrische gegevens en het vastleggen van informatie in.
+
+5. Selecteer de knop configureren om de Azure Monitor container Insights-cluster uitbreiding te implementeren.
+
+### <a name="onboarding-from-azure-monitor-blade"></a>Onboarding van Azure Monitor Blade
+
+1. In de Azure Portal gaat u naar de Blade monitor en selecteert u de optie ' containers ' in het menu ' Insights '.
+
+2. Selecteer het tabblad niet-bewaakte clusters om de Azure Arc enabled Kubernetes-clusters weer te geven waarvoor u bewaking kunt inschakelen.
+
+3. Klik op de koppeling ' inschakelen ' naast het cluster waarvoor u bewaking wilt inschakelen.
+
+4. Kies de werk ruimte Log Analytics en selecteer de knop configureren om door te gaan.
+
+## <a name="create-extension-instance-using-azure-resource-manager"></a>Een extensie-exemplaar maken met behulp van Azure Resource Manager
+
+1. Azure Resource Manager sjabloon en-para meter downloaden:
+
+    ```console
+    curl -L https://aka.ms/arc-k8s-azmon-extension-arm-template -o arc-k8s-azmon-extension-arm-template.json
+    curl -L https://aka.ms/arc-k8s-azmon-extension-arm-template-params -o  arc-k8s-azmon-extension-arm-template-params.json
     ```
 
-2. Configureer de `azureArcClusterResourceId` variabele door de bijbehorende waarden in te stellen voor `subscriptionId` `resourceGroupName` en `clusterName` de resource-id van uw Azure Arc-Kubernetes-cluster resource weer te geven.
+2. Parameter waarden bijwerken in arc-k8s-azmon-extension-arm-template-params.jsvoor het bestand. Voor open bare Azure-Cloud `opinsights.azure.com` moet worden gebruikt als de waarde van workspaceDomain.
 
-    ```bash
-    export azureArcClusterResourceId="/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Kubernetes/connectedClusters/<clusterName>"
+3. De sjabloon implementeren om Azure Monitor container Insights-extensie te maken 
+
+    ```console
+    az login
+    az account set --subscription "Subscription Name"
+    az deployment group create --resource-group <resource-group> --template-file ./arc-k8s-azmon-extension-arm-template.json --parameters @./arc-k8s-azmon-extension-arm-template-params.json
     ```
 
-3. Configureer de `kubeContext` variabele met de **uitvoeren-context** van uw cluster door de opdracht uit te voeren `kubectl config get-contexts` . 
+## <a name="delete-extension-instance"></a>Extensie-exemplaar verwijderen
 
-    ```bash
-    export kubeContext="<kubeContext name of your k8s cluster>"
-    ```
-
-4. Als u bestaande Azure Monitor Log Analytics werk ruimte wilt gebruiken, configureert u de variabele `logAnalyticsWorkspaceResourceId` met de bijbehorende waarde voor de resource-id van de werk ruimte. Als dat niet het geval is, stelt u de variabele in op `""` en het script maakt een standaardwerk ruimte in de standaard resource groep van het cluster abonnement als deze nog niet in de regio bestaat. De standaardwerk ruimte die wordt gemaakt, lijkt op de indeling van *DefaultWorkspace- \<SubscriptionID> - \<Region>*.
-
-    ```bash
-    export logAnalyticsWorkspaceResourceId="/subscriptions/<subscriptionId>/resourceGroups/<resourceGroup>/providers/microsoft.operationalinsights/workspaces/<workspaceName>"
-    ```
-
-5. Als uw met Arc ingeschakeld Kubernetes-cluster communiceert via een proxy server, configureert u de variabele `proxyEndpoint` met de URL van de proxy server. Als het cluster niet via een proxy server communiceert, kunt u de waarde instellen op `""` . Zie [Configure proxy endpoint](#configure-proxy-endpoint) verderop in dit artikel voor meer informatie.
-
-6. Als u bewaking op uw cluster wilt inschakelen, zijn er verschillende opdrachten beschikbaar op basis van uw implementatie scenario.
-
-    Voer de volgende opdracht uit om bewaking met standaard opties in te scha kelen, zoals het gebruik van de huidige uitvoeren-context, het maken van een standaard Log Analytics werkruimte en zonder een proxy server op te geven:
-
-    ```bash
-    bash enable-monitoring.sh --resource-id $azureArcClusterResourceId
-    ```
-
-    Voer de volgende opdracht uit om een standaard Log Analytics-werk ruimte te maken en zonder een proxy server op te geven:
-
-    ```bash
-   bash enable-monitoring.sh --resource-id $azureArcClusterResourceId --kube-context $kubeContext
-    ```
-
-    Voer de volgende opdracht uit om een bestaande Log Analytics-werk ruimte te gebruiken en zonder een proxy server op te geven:
-
-    ```bash
-    bash enable-monitoring.sh --resource-id $azureArcClusterResourceId --kube-context $kubeContext  --workspace-id $logAnalyticsWorkspaceResourceId
-    ```
-
-    Voer de volgende opdracht uit om een bestaande Log Analytics-werk ruimte te gebruiken en een proxy server op te geven:
-
-    ```bash
-    bash enable-monitoring.sh --resource-id $azureArcClusterResourceId --kube-context $kubeContext  --workspace-id $logAnalyticsWorkspaceResourceId --proxy $proxyEndpoint
-    ```
-
-Nadat u bewaking hebt ingeschakeld, kan het ongeveer 15 minuten duren voordat u de metrische gegevens van de status voor het cluster kunt weer geven.
-
-### <a name="using-service-principal"></a>Service-Principal gebruiken
-De bash script *Enable-monitoring.sh* maakt gebruik van de aanmelding van het interactieve apparaat. Als u de voor keur geeft aan niet-interactieve aanmelding, kunt u een bestaande Service-Principal gebruiken of een nieuwe maken die de vereiste machtigingen heeft, zoals wordt beschreven in [vereisten](#prerequisites). Als u de Service-Principal wilt gebruiken, moet u de waarden voor client-id,--client-Secret en--Tenant-id van de service-principal die u wilt gebruiken voor het *Enable-monitoring.sh* bash-script door geven.
+Met de volgende opdracht wordt alleen het extensie-exemplaar verwijderd, maar wordt de Log Analytics-werk ruimte niet verwijderd. De gegevens in de Log Analytics resource blijven intact.
 
 ```bash
-subscriptionId="<subscription Id of the Azure Arc connected cluster resource>"
-servicePrincipal=$(az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/${subscriptionId}")
-servicePrincipalClientId=$(echo $servicePrincipal | jq -r '.appId')
+az k8s-extension delete --name azuremonitor-containers --cluster-type connectedClusters --cluster-name <cluster-name> --resource-group <resource-group>
 ```
 
-De roltoewijzing hieronder is alleen van toepassing als u een bestaande Log Analytics-werk ruimte gebruikt in een ander Azure-abonnement dan de met Arc K8s verbonden cluster bron.
-
-```bash
-logAnalyticsWorkspaceResourceId="<Azure Resource Id of the Log Analytics Workspace>" # format of the Azure Log Analytics workspace should be /subscriptions/<subId>/resourcegroups/<rgName>/providers/microsoft.operationalinsights/workspaces/<workspaceName>
-az role assignment create --role 'Log Analytics Contributor' --assignee $servicePrincipalClientId --scope $logAnalyticsWorkspaceResourceId
-
-servicePrincipalClientSecret=$(echo $servicePrincipal | jq -r '.password')
-tenantId=$(echo $servicePrincipal | jq -r '.tenant')
-```
-
-Bijvoorbeeld:
-
-```bash
-bash enable-monitoring.sh --resource-id $azureArcClusterResourceId --client-id $servicePrincipalClientId --client-secret $servicePrincipalClientSecret  --tenant-id $tenantId --kube-context $kubeContext  --workspace-id $logAnalyticsWorkspaceResourceId --proxy $proxyEndpoint
-```
-
-## <a name="configure-proxy-endpoint"></a>Proxy-eind punt configureren
-
-Met de container-agent voor container Insights kunt u een proxy-eind punt configureren zodat het via uw proxy server kan communiceren. De communicatie tussen de container agent en Azure Monitor kan een HTTP-of HTTPS-proxy server zijn, en zowel anonieme als basis verificatie (gebruikers naam en wacht woord) worden ondersteund.
-
-De waarde van de proxy configuratie heeft de volgende syntaxis: `[protocol://][user:password@]proxyhost[:port]`
-
-> [!NOTE]
->Als uw proxy server geen verificatie vereist, moet u nog steeds een psuedo-gebruikers naam en-wacht woord opgeven. Dit kan een gebruikers naam of wacht woord zijn.
-
-|Eigenschap| Beschrijving |
-|--------|-------------|
-|Protocol | http of https |
-|gebruiker | Optionele gebruikers naam voor proxy verificatie |
-|wachtwoord | Optioneel wacht woord voor proxy verificatie |
-|proxyhost | Adres of FQDN van de proxy server |
-|poort | Optioneel poort nummer voor de proxy server |
-
-Bijvoorbeeld: `http://user01:password@proxy01.contoso.com:3128`
-
-Als u het protocol als **http** opgeeft, worden de HTTP-aanvragen gemaakt met behulp van een beveiligde SSL/TLS-verbinding. Uw proxy server moet SSL/TLS-protocollen ondersteunen.
-
-### <a name="configure-using-powershell"></a>Configureren met behulp van PowerShell
-
-Geef de gebruikers naam en het wacht woord, het IP-adres of de FQDN en het poort nummer van de proxy server op. Bijvoorbeeld:
-
-```powershell
-$proxyEndpoint = https://<user>:<password>@<proxyhost>:<port>
-```
-
-### <a name="configure-using-bash"></a>Configureren met behulp van bash
-
-Geef de gebruikers naam en het wacht woord, het IP-adres of de FQDN en het poort nummer van de proxy server op. Bijvoorbeeld:
-
-```bash
-export proxyEndpoint=https://<user>:<password>@<proxyhost>:<port>
-```
+## <a name="disconnected-cluster"></a>Niet-verbonden cluster
+Als uw cluster gedurende > 48 uur wordt losgekoppeld van Azure, heeft Azure resource Graph geen informatie over uw cluster. Als gevolg hiervan kan de Blade Insights onjuiste informatie over uw cluster status weer geven.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -289,5 +187,3 @@ export proxyEndpoint=https://<user>:<password>@<proxyhost>:<port>
 - De container agent verzamelt standaard de container/stderr-logboeken van alle containers die worden uitgevoerd in alle naam ruimten, met uitzonde ring van uitvoeren-System. Als u de container logboek verzameling specifiek wilt configureren voor bepaalde naam ruimten of naam ruimten, bekijkt u de configuratie van de [container Insights-agent](container-insights-agent-config.md) om de gewenste instellingen voor het verzamelen van gegevens te configureren voor uw ConfigMap-configuratie bestand.
 
 - Als u Prometheus-metrische gegevens uit uw cluster wilt opwaarderen en analyseren, raadpleegt u [Prometheus metrische gegevens](container-insights-prometheus-integration.md) weer geven
-
-- Zie [uw hybride cluster niet meer controleren](container-insights-optout-hybrid.md#how-to-stop-monitoring-on-arc-enabled-kubernetes)voor meer informatie over het stoppen van het bewaken van uw Kubernetes-cluster met behulp van container Insights.

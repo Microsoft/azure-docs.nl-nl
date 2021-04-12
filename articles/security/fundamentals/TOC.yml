@@ -4,6 +4,8 @@
   items:
     - name: Inleiding tot Azure-beveiliging
       href: overview.md
+    - name: End-to-end beveiliging
+      href: end-to-end.md
     - name: Gedeelde verantwoordelijkheid in de cloud
       href: shared-responsibility.md
 - name: Workloads beveiligen in Azure
@@ -63,6 +65,8 @@
       href: steps-secure-identity.md
     - name: Zonder wachtwoord kiezen
       href: ../../active-directory/authentication/concept-authentication-passwordless.md
+    - name: Verificatie
+      href: /azure/architecture/framework/security/design-identity-authentication?toc=azure/security/fundamentals/toc.json&bc=azure/security/breadcrumb/toc.json
 - name: Netwerkbeveiliging
   items:
     - name: Beveiligingsoverzicht

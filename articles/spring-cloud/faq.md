@@ -8,12 +8,12 @@ ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: cee71557e60be9fdd94099453d9b8617c4b3b5ba
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: f28ddfc272e6f95106595958cacfe732b2bfc3cc
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104878138"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107258687"
 ---
 # <a name="azure-spring-cloud-faq"></a>Veelgestelde vragen over Azure veer Cloud
 
@@ -37,7 +37,7 @@ Beveiliging en privacy zijn een van de belangrijkste prioriteiten voor Azure-kla
 
 ### <a name="in-which-regions-is-azure-spring-cloud-available"></a>In welke regio's is Azure lente-Cloud beschikbaar?
 
-VS-Oost, VS-West 2, VS-centraal, Zuid-Centraal VS, Noord-Centraal VS, VS-West, VS-West 2, Europa-west, Europa-noord, UK-zuid, Zuidoost-Azië, Australië-oost, Canada-centraal, UAE-noord, Centraal-India, Korea-centraal, Azië-oost en China-oost 2 (Moon cake). [Meer informatie](https://azure.microsoft.com/global-infrastructure/services/?products=spring-cloud)
+VS-Oost, VS-Oost 2, VS-centraal, Zuid-Centraal VS, Noord-Centraal VS, VS-West, VS-West 2, Europa-west, Europa-noord, UK-zuid, Zuidoost-Azië, Australië-oost, Canada-centraal, UAE-noord, Centraal-India, Korea-centraal, Azië-oost, Japan-Oost, Zuid-Afrika-noord en China-oost 2 (Moon cake). [Meer informatie](https://azure.microsoft.com/global-infrastructure/services/?products=spring-cloud)
 
 ### <a name="is-any-customer-data-stored-outside-of-the-specified-region"></a>Worden klant gegevens buiten de opgegeven regio opgeslagen?
 

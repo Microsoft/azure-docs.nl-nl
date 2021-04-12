@@ -5,13 +5,13 @@ author: Heidilohr
 ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
-manager: lizross
-ms.openlocfilehash: b0fadcc592f5dd52bf1b72dc9d5658866ffba7f4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+manager: femila
+ms.openlocfilehash: 7de94bdd28b51b87b3b06d62685dcc1921a1c6f3
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "88008471"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106445292"
 ---
 # <a name="connect-to-windows-virtual-desktop-classic-with-the-android-client"></a>Verbinding maken met het virtuele bureau blad van Windows (klassiek) met de Android-client
 

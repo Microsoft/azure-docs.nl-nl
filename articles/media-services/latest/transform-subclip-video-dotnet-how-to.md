@@ -14,12 +14,12 @@ ms.topic: how-to
 ms.date: 06/09/2019
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b70d08363db212e5039690ceaaef5dbb55bcd65f
-ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
+ms.openlocfilehash: 333d9d7e23182a98e9b8ad5bcc9c2a63362b2293
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106281886"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106492355"
 ---
 # <a name="subclip-a-video-when-encoding-with-media-services---net"></a>Een video afspelen tijdens het coderen met Media Services-.NET
 
@@ -92,4 +92,4 @@ private static async Task<Job> JobWithBuiltInStandardEncoderWithSingleClipAsync(
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Coderen met een aangepaste trans formatie](encode-custom-presets-how-to.md) 
+[Coderen met een aangepaste trans formatie](transform-custom-presets-how-to.md) 

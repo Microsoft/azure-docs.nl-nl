@@ -9,99 +9,73 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 02/21/2019
+ms.date: 03/30/2021
 ms.author: jeedes
-ms.openlocfilehash: 753256adddf8b28518bac45011d582bc7a079629
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 29bc02466825aa2ea2c1a9ece2826b1262293392
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97670380"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106285152"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-clickup-productivity-platform"></a>Zelfstudie: Azure Active Directory-integratie met ClickUp Productivity Platform
 
-In deze zelfstudie leert u hoe u ClickUp Productivity Platform integreert met Azure Active Directory (Azure AD).
-De integratie van ClickUp Productivity Platform met Azure AD biedt de volgende voordelen:
+In deze zelf studie leert u hoe u ClickUp Productivity platform integreert met Azure Active Directory (Azure AD). Wanneer u ClickUp-productiviteits platform integreert met Azure AD, kunt u het volgende doen:
 
-* U kunt in Azure AD bepalen wie er toegang heeft tot ClickUp Productivity Platform.
-* U kunt instellen dat gebruikers automatisch met hun Azure AD-account worden aangemeld bij ClickUp Productivity Platform (eenmalige aanmelding).
-* U kunt uw accounts vanaf één centrale locatie beheren: de Azure-portal.
-
-Zie [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?) als u wilt graag meer wilt weten over de integratie van SaaS-apps met Azure AD.
-Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
+* Controle in azure AD die toegang heeft tot het ClickUp-productiviteits platform.
+* Stel uw gebruikers in staat om automatisch te worden aangemeld voor ClickUp-productiviteits platform met hun Azure AD-accounts.
+* Uw accounts op een centrale locatie beheren: Azure Portal.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Om Azure AD-integratie te configureren met ClickUp Productivity Platform hebt u het volgende nodig:
+U hebt het volgende nodig om aan de slag te gaan:
 
-* Een Azure AD-abonnement Als u geen Azure AD-omgeving hebt, kunt u [hier](https://azure.microsoft.com/pricing/free-trial/) de proefversie van één maand krijgen.
-* Een abonnement op ClickUp Productivity Platform waarvoor eenmalige aanmelding is ingeschakeld
+* Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
+* ClickUp-abonnement voor eenmalige aanmelding (SSO) met een productiviteits platform.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* ClickUp Productivity Platform ondersteunt door **SP** geïnitieerde eenmalige aanmelding
+* ClickUp Productivity platform ondersteunt door **SP** geïnitieerde SSO.
 
-## <a name="adding-clickup-productivity-platform-from-the-gallery"></a>ClickUp Productivity Platform toevoegen vanuit de galerie
+## <a name="add-clickup-productivity-platform-from-the-gallery"></a>ClickUp-productiviteits platform toevoegen vanuit de galerie
 
 Om de integratie van ClickUp Productivity Platform te configureren in Azure AD, moet u ClickUp Productivity Platform vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-**Voer de volgende stappen uit om ClickUp Productivity Platform toe te voegen vanuit de galerie:**
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
+1. Typ in de sectie **toevoegen vanuit de galerie** **ClickUp productiviteits platform** in het zoekvak.
+1. Selecteer **ClickUp Productivity platform** in het resultaten paneel en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
+## <a name="configure-and-test-azure-ad-sso-for-clickup-productivity-platform"></a>Azure AD SSO configureren en testen voor ClickUp-productiviteits platform
 
-    ![De knop Azure Active Directory](common/select-azuread.png)
+Configureer en test Azure AD SSO met ClickUp-productiviteits platform met behulp van een test gebruiker met de naam **B. Simon**. Voor het werken met SSO moet u een koppelings relatie tot stand brengen tussen een Azure AD-gebruiker en de bijbehorende gebruiker in ClickUp Productivity platform.
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
+Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met ClickUp-productiviteits platform:
 
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
+1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
+    1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
+    1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
+1. **[ClickUp Productivity platform SSO configureren](#configure-clickup-productivity-platform-sso)** : voor het configureren van de instellingen voor eenmalige aanmelding aan de kant van de toepassing.
+    1. **[Maak een ClickUp-gebruikers platform test gebruiker](#create-clickup-productivity-platform-test-user)** -om een soort tegen te brengen van B. Simon in ClickUp-productiviteits platform dat is gekoppeld aan de Azure AD-representatie van de gebruiker.
+1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
-3. Als u de nieuwe toepassing wilt toevoegen, klikt u op de knop **Nieuwe toepassing** boven aan het dialoogvenster.
+## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
-    ![De knop Nieuwe toepassing](common/add-new-app.png)
+Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-4. Typ **ClickUp Productivity Platform** in het zoekvak, selecteer **ClickUp Productivity Platform** in het deelvenster met resultaten en klik op **Toevoegen** om de toepassing toe te voegen.
+1. Zoek in de Azure Portal op de pagina **ClickUp Productivity platform** Application Integration de sectie **Manage** en selecteer **eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
-    ![ClickUp Productivity Platform in de resultatenlijst](common/search-new-app.png)
-
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
-
-In dit gedeelte configureert en test u eenmalige aanmelding van Azure Active Directory met ClickUp Productivity Platform op basis van een testgebruiker met de naam **Britta Simon**.
-Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in ClickUp Productivity Platform tot stand is gebracht.
-
-Als u eenmalige aanmelding van Azure AD wilt configureren en testen met ClickUp Productivity Platform, moet u de volgende procedures uitvoeren:
-
-1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding voor ClickUp Productivity Platform configureren](#configure-clickup-productivity-platform-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wil configureren.
-3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
-4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Een testgebruiker voor ClickUp Productivity Platform maken](#create-clickup-productivity-platform-test-user)**: als u een tegenhanger van Britta Simon in ClickUp Productivity Platform wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
-6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
-
-### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
-
-In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakelen.
-
-Voer deze stappen uit om eenmalige aanmelding van Azure AD bij ClickUp Productivity Platform te configureren:
-
-1. Ga in de [Azure-portal](https://portal.azure.com/) naar de pagina van de integratie voor **ClickUp Productivity Platform** en selecteer **Eenmalige aanmelding**.
-
-    ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
-
-2. In het dialoogvenster **Een methode voor eenmalige aanmelding selecteren** selecteert u de modus **SAML/WS-Federation** om eenmalige aanmelding in te schakelen.
-
-    ![De modus Eenmalige aanmelding selecteren](common/select-saml-option.png)
-
-3. Op de pagina **Eenmalige aanmelding met SAML instellen** klikt u op het pictogram **Bewerken** om het dialoogvenster **Standaard SAML-configuratie** te openen.
-
-    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
+   ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
 4. In de sectie **Standaard SAML-configuratie** voert u de volgende stappen uit:
 
-    ![Domein- en URL-gegevens voor eenmalige aanmelding bij ClickUp Productivity Platform](common/sp-identifier.png)
-
-    a. In het tekstvak **Aanmeldings-URL** typt u een URL: `https://app.clickup.com/login/sso`
+    a. In het tekstvak **Aanmeldings-URL** typt u de URL: `https://app.clickup.com/login/sso`
 
     b. In het tekstvak **Id (Entiteits-id)** typt u een URL met de volgende notatie: `https://api.clickup.com/v1/team/<team_id>/microsoft`
 
@@ -112,23 +86,47 @@ Voer deze stappen uit om eenmalige aanmelding van Azure AD bij ClickUp Productiv
 
     ![De link om het certificaat te downloaden](common/copy-metadataurl.png)
 
-### <a name="configure-clickup-productivity-platform-single-sign-on"></a>Eenmalige aanmelding bij ClickUp Productivity Platform configureren
+### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
+
+In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
+
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
+   1. Voer in het veld **Naam**`B.Simon` in.  
+   1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
+
+### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
+
+In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot het ClickUp-productiviteits platform.
+
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer **ClickUp Productivity Platform** in de lijst met toepassingen.
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
+
+## <a name="configure-clickup-productivity-platform-sso"></a>ClickUp Productivity platform SSO configureren
 
 1. Meld u in een ander browservenster als beheerder aan bij de ClickUp Productivity Platform-tenant.
 
 2. Klik op het **Gebruikersprofiel** en selecteer **Instellingen**.
 
-    ![Schermopname toont de ClickUp Productivity-tenant met het pictogram Instellingen geselecteerd.](./media/clickup-productivity-platform-tutorial/configure0.png)
+    ![Schermopname toont de ClickUp Productivity-tenant met het pictogram Instellingen geselecteerd.](./media/clickup-productivity-platform-tutorial/configure-0.png)
 
-    ![Schermopname toont de instellingen.](./media/clickup-productivity-platform-tutorial/configure1.png)
+    ![Schermopname toont de instellingen.](./media/clickup-productivity-platform-tutorial/configure-1.png)
 
 3. Selecteer **Microsoft** onder Single Sign-On (SSO) Provider (Provider voor eenmalige aanmelding).
 
-    ![Schermopname toont het deelvenster Verificatie waarin Microsoft is geselecteerd.](./media/clickup-productivity-platform-tutorial/configure2.png)
+    ![Schermopname toont het deelvenster Verificatie waarin Microsoft is geselecteerd.](./media/clickup-productivity-platform-tutorial/configure-2.png)
 
 4. Op de pagina **Configure Microsoft Single Sign On** (Eenmalige aanmelding via Microsoft configureren) voert u de volgende stappen uit:
 
-    ![Schermopname toont de pagina 'Eenmalige aanmelding bij Microsoft configureren', waar u de entiteit-id kunt kopiëren en de Azure Federation metagegevens-URL opslaat.](./media/clickup-productivity-platform-tutorial/configure3.png)
+    ![Schermopname toont de pagina 'Eenmalige aanmelding bij Microsoft configureren', waar u de entiteit-id kunt kopiëren en de Azure Federation metagegevens-URL opslaat.](./media/clickup-productivity-platform-tutorial/configure-3.png)
 
     a. Klik op **Kopiëren** om de waarde van de entiteits-ID te kopiëren en plak deze in het tekstvak voor de **id (entiteits-ID)** in het gedeelte **Standaard SAML-configuratie** in de Azure-portal.
 
@@ -136,58 +134,8 @@ Voer deze stappen uit om eenmalige aanmelding van Azure AD bij ClickUp Productiv
 
 5. U voltooit de installatie door op **Authenticate With Microsoft to complete setup** (Verifiëren met Microsoft om de installatie te voltooien) te klikken en te verifiëren met een Microsoft-account.
 
-    ![Schermopname toont de knop 'Verifiëren met Microsoft om de installatie te voltooien'.](./media/clickup-productivity-platform-tutorial/configure4.png)
+    ![Schermopname toont de knop 'Verifiëren met Microsoft om de installatie te voltooien'.](./media/clickup-productivity-platform-tutorial/configure-4.png)
 
-### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
-
-Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
-
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
-
-    ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
-
-2. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-
-    ![Knop Nieuwe gebruiker](common/new-user.png)
-
-3. In Gebruikerseigenschappen voert u de volgende stappen uit.
-
-    ![Het dialoogvenster Gebruiker](common/user-properties.png)
-
-    a. Voer in het veld **Naam** **Britta Simon** in.
-
-    b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
-    Bijvoorbeeld: BrittaSimon@contoso.com
-
-    c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
-
-    d. Klik op **Create**.
-
-### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
-
-In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot ClickUp Productivity Platform.
-
-1. Selecteer **Bedrijfstoepassingen** in de Azure-portal, selecteer **Alle toepassingen** en vervolgens **ClickUp Productivity Platform**.
-
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
-
-2. Selecteer **ClickUp Productivity Platform** in de lijst met toepassingen.
-
-    ![De link ClickUp Productivity Platform in de lijst met toepassingen](common/all-applications.png)
-
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
-
-    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
-
-    ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
-
-5. Selecteer in het dialoogvenster **Gebruikers en groepen** **Britta Simon** in de lijst met gebruikers en klik op de knop **Selecteren** onder aan het scherm.
-
-6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
-
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-clickup-productivity-platform-test-user"></a>Testgebruiker voor ClickUp Productivity Platform maken
 
@@ -195,27 +143,27 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 2. Klik op het **Gebruikersprofiel** en selecteer vervolgens **Personen**.
 
-    ![Schermopname toont de ClickUp-productiviteitstenant.](./media/clickup-productivity-platform-tutorial/configure0.png)
+    ![Schermopname toont de ClickUp-productiviteitstenant.](./media/clickup-productivity-platform-tutorial/configure-0.png)
 
-    ![Schermopname toont de geselecteerde link 'Mensen'.](./media/clickup-productivity-platform-tutorial/user1.png)
+    ![Schermopname toont de geselecteerde link 'Mensen'.](./media/clickup-productivity-platform-tutorial/user-1.png)
 
 3. Voer het e-mailadres van de gebruiker in het tekstvak in en klik op **Uitnodigen**.
 
-    ![Schermopname toont 'Instellingen voor teamgebruikers' waar u personen kunt uitnodigen per e-mail.](./media/clickup-productivity-platform-tutorial/user2.png)
+    ![Schermopname toont 'Instellingen voor teamgebruikers' waar u personen kunt uitnodigen per e-mail.](./media/clickup-productivity-platform-tutorial/user-2.png)
 
     > [!NOTE]
     > De gebruiker zal de melding ontvangen en moet de uitnodiging accepteren om het account te activeren.
 
-### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen
+## <a name="test-sso"></a>Eenmalige aanmelding testen
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u op de tegel ClickUp Productivity Platform klikt in het Toegangsvenster, wordt u automatisch aangemeld bij de instantie van ClickUp Productivity Platform waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de aanmeldings-URL van het ClickUp-productiviteits platform, waar u de aanmeldings stroom kunt initiëren. 
 
-## <a name="additional-resources"></a>Aanvullende resources
+* Ga rechtstreeks naar de aanmeldings-URL van de ClickUp-productiviteits platform en start de aanmeldings stroom vanaf daar.
 
-- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel ClickUp Productivity platform in de mijn apps klikt, wordt dit omgeleid naar de URL voor het ClickUp-productiviteits platform. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
+## <a name="next-steps"></a>Volgende stappen
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+Zodra u ClickUp Productivity platform hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

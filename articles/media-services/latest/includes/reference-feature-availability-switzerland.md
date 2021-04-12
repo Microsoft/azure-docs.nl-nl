@@ -4,12 +4,12 @@ ms.service: media-services
 ms.topic: include
 ms.date: 10/28/2020
 ms.author: inhenkel
-ms.openlocfilehash: 5fa2d8a8ffdb154464f091c9612ea3bf0f2efbfa
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1d64444805b491e5b723325d23319de6e2deb7b7
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104612040"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106125895"
 ---
 <!--Feature availability in region-->
 ## <a name="switzerland"></a>Zwitserland
@@ -17,9 +17,9 @@ ms.locfileid: "104612040"
 | Functie | Zwitserland - noord | Zwitserland - west |
 | --- | :---: | :---: |
 | [Azure EventGrid](../monitoring/reacting-to-media-services-events.md) |![Algemene Beschik baarheid van Azure EventGrid Zwitserland-noord](../media/azure-clouds-regions/ga.svg)  |![Algemene Beschik baarheid van Azure EventGrid Zwitserland-west](../media/azure-clouds-regions/ga.svg) |
-| [VideoAnalyzerPreset](../analyzing-video-audio-files-concept.md) |![VideoAnalyzerPreset Zwitserland-noord algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg)  | ![VideoAnalyzerPreset Zwitserland-west algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg) |
-| [AudioAnalyzerPreset](../analyzing-video-audio-files-concept.md) |![AudioAnalyzerPreset Zwitserland-noord algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg)  | ![AudioAnalyzerPreset Zwitserland-west algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg) |
-| [StandardEncoderPreset](../encoding-concept.md) |![StandardEncoderPreset Zwitserland-noord algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg)  | ![StandardEncoderPreset Zwitserland-west algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg) |
-| [LiveEvents](../live-streaming-overview.md) |![LiveEvents Zwitserland-noord algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg)  | ![LiveEvents Zwitserland-west algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg) |
+| [VideoAnalyzerPreset](../analyze-video-audio-files-concept.md) |![VideoAnalyzerPreset Zwitserland-noord algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg)  | ![VideoAnalyzerPreset Zwitserland-west algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg) |
+| [AudioAnalyzerPreset](../analyze-video-audio-files-concept.md) |![AudioAnalyzerPreset Zwitserland-noord algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg)  | ![AudioAnalyzerPreset Zwitserland-west algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg) |
+| [StandardEncoderPreset](../encode-concept.md) |![StandardEncoderPreset Zwitserland-noord algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg)  | ![StandardEncoderPreset Zwitserland-west algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg) |
+| [LiveEvents](../stream-live-streaming-concept.md) |![LiveEvents Zwitserland-noord algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg)  | ![LiveEvents Zwitserland-west algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg) |
 | [StreamingEndpoints](../streaming-endpoint-concept.md) |![StreamingEndpoints Zwitserland-noord algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg) | ![StreamingEndpoints Zwitserland-west algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg) |
-| [LiveTranscription](../live-transcription.md) |![LiveTranscription Zwitserland-noord algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg) |![LiveTranscription Zwitserland-west algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg) |
+| [LiveTranscription](../live-event-live-transcription-how-to.md) |![LiveTranscription Zwitserland-noord algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg) |![LiveTranscription Zwitserland-west algemene Beschik baarheid](../media/azure-clouds-regions/ga.svg) |

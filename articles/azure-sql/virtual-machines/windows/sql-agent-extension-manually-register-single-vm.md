@@ -15,12 +15,12 @@ ms.date: 11/07/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: devx-track-azurecli, devx-track-azurepowershell, contperf-fy21q2
-ms.openlocfilehash: 983cdab0c5f5b856537c661c7427a83099f30ed4
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 3cea15114e125951a8fbec73f965b272a4f8053d
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102181428"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106284155"
 ---
 # <a name="register-sql-server-vm-with-sql-iaas-agent-extension"></a>SQL Server VM registreren met de SQL IaaS agent-extensie
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -36,7 +36,7 @@ Als u zich registreert met de [SQL Server IaaS agent-extensie](sql-server-iaas-a
 
 Als u een installatie kopie van een Azure-SQL Server VM implementeert via de Azure Portal wordt de virtuele machine van SQL Server automatisch geregistreerd met de extensie. Als u echter zelf SQL Server wilt installeren op een virtuele machine van Azure of als u een virtuele machine van Azure wilt inrichten vanaf een aangepaste VHD, moet u uw SQL Server VM registreren bij de SQL IaaS agent-extensie om de volledige functie voordelen en beheer baarheid te ontgrendelen. 
 
-Als u de SQL IaaS agent-extensie wilt gebruiken, moet u [uw abonnement eerst registreren bij de provider **micro soft. SqlVirtualMachine**](#register-subscription-with-rp). Dit geeft de SQL IaaS-extensie de mogelijkheid om resources te maken binnen dat specifieke abonnement.
+Als u de SQL IaaS agent-extensie wilt gebruiken, moet u [uw abonnement eerst registreren bij de provider **micro soft. SqlVirtualMachine**](#register-subscription-with-resource-provider). Dit geeft de SQL IaaS-extensie de mogelijkheid om resources te maken binnen dat specifieke abonnement.
 
 > [!IMPORTANT]
 > Met de SQL IaaS agent-extensie worden gegevens verzameld voor het snelle doel om klanten optionele voor delen te geven bij het gebruik van SQL Server binnen Azure Virtual Machines. Micro soft gebruikt deze gegevens niet voor licentie controles zonder voorafgaande toestemming van de klant. Raadpleeg de [SQL Server-aanvulling voor privacy](/sql/sql-server/sql-server-privacy#non-personal-data) voor meer informatie.
@@ -50,9 +50,9 @@ Als u uw SQL Server-VM wilt registreren met de extensie, hebt u het volgende nod
 - De nieuwste versie van [Azure cli](/cli/azure/install-azure-cli) of [Azure PowerShell (mini maal 5,0)](/powershell/azure/install-az-ps). 
 
 
-## <a name="register-subscription-with-rp"></a>Abonnement registreren bij RP
+## <a name="register-subscription-with-resource-provider"></a>Een abonnement bij een resource provider registreren
 
-Als u uw SQL Server-VM wilt registreren met de SQL IaaS agent-extensie, moet u uw abonnement eerst registreren bij de provider **micro soft. SqlVirtualMachine** . Dit geeft de SQL IaaS agent-extensie de mogelijkheid om resources binnen uw abonnement te maken.  U kunt dit doen met behulp van de Azure Portal, de Azure CLI of Azure PowerShell.
+Als u uw SQL Server-VM wilt registreren met de SQL IaaS agent-extensie, moet u uw abonnement eerst registreren bij de resource provider **micro soft. SqlVirtualMachine** . Dit geeft de SQL IaaS agent-extensie de mogelijkheid om resources binnen uw abonnement te maken.  U kunt dit doen met behulp van de Azure Portal, de Azure CLI of Azure PowerShell.
 
 ### <a name="azure-portal"></a>Azure Portal
 
@@ -127,7 +127,7 @@ Registreer een SQL Server-VM in Lightweight-modus met Azure PowerShell:
 
 ### <a name="full-management-mode"></a>Volledige beheer modus
 
-Als u uw SQL Server-VM in de volledige modus registreert, wordt de SQL Server-service opnieuw gestart. Ga door met de waarschuwing. 
+Als u uw SQL Server-VM in de volledige modus registreert, wordt de SQL Server-service opnieuw gestart. Ga voorzichtig verder. 
 
 Gebruik de volgende Azure PowerShell opdracht om uw SQL Server-VM rechtstreeks te registreren in de volledige modus (en mogelijk de SQL Server-service opnieuw te starten): 
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/06/2021
 ms.author: mingshen
 author: mingshen-ms
-ms.openlocfilehash: 9797401fd96bf052fdc9de0c2c2ceaf88b3d46b6
-ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
+ms.openlocfilehash: 0a25e1b50455cad5bdbe5b76b2a291f2a1c11940
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106504206"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107003"
 ---
 # <a name="commercial-marketplace-transact-capabilities"></a>De Transact-mogelijkheden voor commerciële Marketplace
 
@@ -42,9 +42,9 @@ De optie voor het publiceren van Transact wordt momenteel ondersteund voor de vo
 
 | Type aanbieding | Facturerings uitgebracht | Factuur met data limiet | Prijsmodel |
 | ------------ | ------------- | ------------- | ------------- |
-| Azure Application<br>(Beheerde toepassing) | Maandelijks | Ja | Op basis van gebruik |
-| Virtuele Azure-machine | Keren | Nee | Op gebruik gebaseerd, BYOL |
-| Software als een dienst (SaaS) | Maandelijks en jaarlijks | Ja | Vast aantal, per gebruiker, op basis van gebruik. |
+| Azure Application<br>(Beheerde toepassing) | Maandelijks | Yes | Op basis van gebruik |
+| Virtuele Azure-machine | Keren | No | Op gebruik gebaseerd, BYOL |
+| Software als een dienst (SaaS) | Maandelijks en jaarlijks | Yes | Vast aantal, per gebruiker, op basis van gebruik. |
 |||||
 
 `*` Azure virtual machine biedt ondersteuning voor op gebruik gebaseerde facturerings plannen. Deze plannen worden maandelijks gefactureerd voor elk uur gebruik van het abonnement op basis van per kern, per kern grootte, of op basis van het gebruik van de markt en de kern grootte.
@@ -189,7 +189,7 @@ In deze sectie worden de vereisten voor trans acties voor verschillende typen aa
 - Er zijn een Microsoft-account en financiële informatie vereist voor de optie voor het publiceren van de Transact, ongeacht het prijs model van de aanbieding.
 - Verplichte financiële informatie omvat het uitbetalings account en het BTW-profiel.
 
-Zie [uw commerciële Marketplace-account beheren in partner centrum](partner-center-portal/manage-account.md)voor meer informatie over het instellen van deze accounts.
+Zie [uw commerciële Marketplace-account beheren in partner centrum](manage-account.md)voor meer informatie over het instellen van deze accounts.
 
 ### <a name="requirements-for-specific-offer-types"></a>Vereisten voor specifieke aanbiedings typen
 

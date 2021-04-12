@@ -9,14 +9,14 @@ MS. service: Media-Services MS. workload: MS. topic: conceptuele MS. date: 02/13
 
 In Microsoft Azure Media Services vertegenwoordigt een [streaming-eind punt](/rest/api/media/streamingendpoints) een dynamische (just-in-time) verpakkings-en bron service die uw Live-en on-demand-inhoud rechtstreeks aan een client speler kan leveren met behulp van een van de algemene protocollen voor streaming media (HLS of Dash). Daarnaast biedt het **streaming-eind punt** dynamische code ring (just-in-time) voor toonaangevende DRMs. 
 
-Wanneer u een Media Services account maakt, wordt er een **standaard** streaming-eind punt voor u gemaakt met de status gestopt. Er kunnen meer streaming-eind punten worden gemaakt onder het account (Zie [quota's en limieten](limits-quotas-constraints.md)).
+Wanneer u een Media Services account maakt, wordt er een **standaard** streaming-eind punt voor u gemaakt met de status gestopt. Er kunnen meer streaming-eind punten worden gemaakt onder het account (Zie [quota's en limieten](limits-quotas-constraints-reference.md)).
 
 > [!NOTE]
 > Als u Video's wilt streamen, moet u het **streaming-eind punt** starten van waaruit u de video wilt streamen.
 >
 > U wordt alleen gefactureerd wanneer uw streaming-eind punt de status actief heeft.
 
-Controleer ook het onderwerp [dynamisch pakket](dynamic-packaging-overview.md) . 
+Controleer ook het onderwerp [dynamisch pakket](encode-dynamic-packaging-concept.md) . 
 
 ## <a name="naming-convention"></a>Naamgevings Conventie
 
@@ -201,7 +201,7 @@ Ga naar het artikel van de [Azure Media Services-community](media-services-commu
 
 ## <a name="see-also"></a>Zie ook
 
-[Dynamische verpakking](dynamic-packaging-overview.md)
+[Dynamische verpakking](encode-dynamic-packaging-concept.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 

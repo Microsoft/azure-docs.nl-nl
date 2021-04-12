@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: b84b7387411e7df8e092a2e810591697319f9554
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 37f0b48190bcbad7ab190da1d690a1a0485501a1
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104774674"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107259316"
 ---
 # <a name="advanced-data-exploration-and-modeling-with-spark"></a>Met Spark verkennen en modelleren van geavanceerde gegevens
 
@@ -37,7 +37,8 @@ De modellen die we gebruiken zijn onder andere logistiek en lineaire regressie, 
 
 * [Lineaire regressie met SGD](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.mllib.regression.LinearRegressionWithSGD.html#pyspark.mllib.regression.LinearRegressionWithSGD
 ) is een lineair regressie model dat gebruikmaakt van een stochastische Gradient DAAL (SGD)-methode en voor Optima Lise ring en functie schaaling om de fooien te voors pellen. 
-* [Logistiek regressie met LBFGS](https://spark.apache.org/docs/latest/api/python/pyspark.mllib.html#pyspark.mllib.classification.LogisticRegressionWithLBFGS) of ' logit-regressie ' is een regressie model dat kan worden gebruikt wanneer de afhankelijke variabele categorische is voor het uitvoeren van de gegevens classificatie. LBFGS is een quasi-Newton-optimalisatie algoritme die de Broyden-Fletcher – Goldfarb – Shanno-algoritme (BFGS) benadert met een beperkte hoeveelheid computer geheugen en die veel wordt gebruikt in machine learning.
+* [Logistiek regressie met LBFGS](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.mllib.classification.LogisticRegressionWithLBFGS.html
+) of ' logit-regressie ' is een regressie model dat kan worden gebruikt wanneer de afhankelijke variabele categorische is voor het uitvoeren van de gegevens classificatie. LBFGS is een quasi-Newton-optimalisatie algoritme die de Broyden-Fletcher – Goldfarb – Shanno-algoritme (BFGS) benadert met een beperkte hoeveelheid computer geheugen en die veel wordt gebruikt in machine learning.
 * [Wille keurige forests](https://spark.apache.org/docs/latest/mllib-ensembles.html#Random-Forests) zijn ensembles van beslissings structuren.  Ze combi neren veel beslissings structuren om het risico van overneming te verminderen. Wille keurige forests worden gebruikt voor regressie en classificatie en kunnen categorische-functies verwerken en kunnen worden uitgebreid naar de classificatie-instelling met een klasse. Ze hoeven niet te worden geschaald en kunnen niet-lineaire en functie-interacties worden vastgelegd. Wille keurige forests zijn een van de meest succes volle machine learning modellen voor classificatie en regressie.
 * GBTS ( [Gradient, boosted trees](https://spark.apache.org/docs/latest/ml-classification-regression.html#gradient-boosted-trees-gbts) ) zijn ensembles van beslissings structuren. GBTSer boom structuren van de trein om een verlies functie te minimaliseren. GBTS wordt gebruikt voor regressie en classificatie, en kan categorische-functies afhandelen, geen functie schaaling vereisen en niet-lineaire en functie-interacties kunnen vastleggen. Ze kunnen ook worden gebruikt in een instelling met een classificatie met een hoge klasse.
 
@@ -504,7 +505,8 @@ print "Time taken to execute above cell: " + str(timedelta) + " seconds";
 Benodigde tijd voor het uitvoeren van de cel: 0,31 seconde
 
 ### <a name="feature-scaling"></a>Functie schalen
-Het schalen van functies, ook wel bekend als gegevensnormalisatie, zorgt ervoor dat functies met weid verspreide waarden geen buitensporige weging krijgen toegewezen in de doelfunctie. De code voor functieschaling maakt gebruik van de [StandardScaler](https://spark.apache.org/docs/latest/api/python/pyspark.mllib.html#pyspark.mllib.feature.StandardScaler) om de functies te schalen op eenheidvariantie. Het wordt verschaft door MLlib voor gebruik in lineaire regressie met stochastische Gradient Daal (SGD). SGD is een populair algoritme voor het trainen van een breed scala aan andere machine learning modellen, zoals geregelde regressieën of Support Vector machines (SVM).   
+Het schalen van functies, ook wel bekend als gegevensnormalisatie, zorgt ervoor dat functies met weid verspreide waarden geen buitensporige weging krijgen toegewezen in de doelfunctie. De code voor functieschaling maakt gebruik van de [StandardScaler](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.mllib.regression.LinearRegressionWithSGD.html
+) om de functies te schalen op eenheidvariantie. Het wordt verschaft door MLlib voor gebruik in lineaire regressie met stochastische Gradient Daal (SGD). SGD is een populair algoritme voor het trainen van een breed scala aan andere machine learning modellen, zoals geregelde regressieën of Support Vector machines (SVM).   
 
 > [!TIP]
 > We hebben vastgesteld dat het algoritme LinearRegressionWithSGD gevoelig is functieschaling.   

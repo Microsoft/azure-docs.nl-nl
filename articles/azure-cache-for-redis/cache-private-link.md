@@ -1,19 +1,19 @@
 ---
-title: Azure-cache voor redis met persoonlijke Azure-koppeling (preview-versie)
+title: Azure-cache voor redis met persoonlijke Azure-koppeling
 description: Persoonlijk Azure-eind punt is een netwerk interface waarmee u privé en veilig kunt verbinden met Azure cache voor redis die worden aangestuurd door een persoonlijke Azure-koppeling. In dit artikel leert u hoe u een Azure-cache, een Azure-Virtual Network en een persoonlijk eind punt maakt met behulp van de Azure Portal.
 author: curib
 ms.author: cauribeg
 ms.service: cache
 ms.topic: conceptual
-ms.date: 10/14/2020
-ms.openlocfilehash: 22bdf93e7236ae5220a6bb7c6ead898628bb51a1
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 3/31/2021
+ms.openlocfilehash: 952f708d8f368b63f772e3af35f6fd441d65622d
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97007582"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106121656"
 ---
-# <a name="azure-cache-for-redis-with-azure-private-link-public-preview"></a>Azure-cache voor redis met persoonlijke Azure-koppeling (open bare preview)
+# <a name="azure-cache-for-redis-with-azure-private-link"></a>Azure-cache voor redis met persoonlijke Azure-koppeling
 In dit artikel leert u hoe u een virtueel netwerk en een Azure-cache maakt voor een redis-exemplaar met een persoonlijk eind punt met behulp van de Azure Portal. U leert ook hoe u een persoonlijk eind punt kunt toevoegen aan een bestaand Azure-cache geheugen voor redis-instantie.
 
 Persoonlijk Azure-eind punt is een netwerk interface waarmee u privé en veilig kunt verbinden met Azure cache voor redis die worden aangestuurd door een persoonlijke Azure-koppeling. 
@@ -22,8 +22,7 @@ Persoonlijk Azure-eind punt is een netwerk interface waarmee u privé en veilig 
 * Azure-abonnement: [u kunt een gratis abonnement nemen](https://azure.microsoft.com/free/)
 
 > [!IMPORTANT]
-> Als u persoonlijke eind punten wilt gebruiken, moet uw Azure-cache voor redis-exemplaar zijn gemaakt na 28 juli 2020.
-> Momenteel wordt geo-replicatie, firewall regels, ondersteuning voor de portal console, meerdere eind punten per geclusterde cache, persistentie naar Firewall en door VNet geïnjecteerde caches niet ondersteund. 
+> Op dit moment worden zone redundantie, portal console-ondersteuning en persistentie van Firewall opslag accounts niet ondersteund. 
 >
 >
 
@@ -112,19 +111,8 @@ Het duurt even voor de cache is gemaakt. U kunt de voortgang bekijken op de **ov
 > [!IMPORTANT]
 > 
 > Er is een `publicNetworkAccess` vlag die `Disabled` standaard is. 
-> Deze vlag is bedoeld om u in staat te stellen zowel open bare als privé-eind punten toegang te geven tot de cache als deze is ingesteld op `Enabled` . Als deze eigenschap is ingesteld op `Disabled` , is toegang tot privé-eind punten alleen toegestaan. U kunt de waarde instellen op `Disabled` of `Enabled` met de volgende patch-aanvraag. Bewerk de waarde om aan te geven welke vlag u voor uw cache wilt.
-> ```http
-> PATCH  https://management.azure.com/subscriptions/{subscription}/resourceGroups/{resourcegroup}/providers/Microsoft.Cache/Redis/{cache}?api-version=2020-06-01
-> {    "properties": {
->        "publicNetworkAccess":"Disabled"
->    }
-> }
-> ```
+> Deze vlag is bedoeld om u in staat te stellen zowel open bare als privé-eind punten toegang te geven tot de cache als deze is ingesteld op `Enabled` . Als deze eigenschap is ingesteld op `Disabled` , is toegang tot privé-eind punten alleen toegestaan. U kunt de waarde instellen op `Disabled` of `Enabled` . Raadpleeg de [Veelgestelde vragen](#how-can-i-change-my-private-endpoint-to-be-disabled-or-enabled-from-public-network-access) voor meer informatie over het wijzigen van de waarde.
 >
-
-> [!IMPORTANT]
-> 
-> Als u verbinding wilt maken met een geclusterde cache, `publicNetworkAccess` moet deze worden ingesteld op `Disabled` en kan er slechts één particuliere eindpunt verbinding zijn. 
 >
 
 ## <a name="create-a-private-endpoint-with-an-existing-azure-cache-for-redis-instance"></a>Een persoonlijk eind punt maken met een bestaand Azure-cache geheugen voor redis-exemplaar 
@@ -173,7 +161,7 @@ Volg deze stappen om een persoonlijk eind punt te maken.
 
 2. Selecteer het cache-exemplaar waaraan u een persoonlijk eind punt wilt toevoegen.
 
-3. Selecteer aan de linkerkant van het scherm het **persoonlijke eind punt (preview-versie)**.
+3. Selecteer aan de linkerkant van het scherm privé- **eind punt**.
 
 4. Klik op de knop **persoonlijk eind punt** om uw persoonlijke eind punt te maken.
 
@@ -204,16 +192,36 @@ Volg deze stappen om een persoonlijk eind punt te maken.
 
 13. Wanneer het bericht groene **validatie is voltooid** wordt weer gegeven, selecteert u **maken**.
 
+> [!IMPORTANT]
+> 
+> Er is een `publicNetworkAccess` vlag die `Disabled` standaard is. 
+> Deze vlag is bedoeld om u in staat te stellen zowel open bare als privé-eind punten toegang te geven tot de cache als deze is ingesteld op `Enabled` . Als deze eigenschap is ingesteld op `Disabled` , is toegang tot privé-eind punten alleen toegestaan. U kunt de waarde instellen op `Disabled` of `Enabled` . Raadpleeg de [Veelgestelde vragen](#how-can-i-change-my-private-endpoint-to-be-disabled-or-enabled-from-public-network-access) voor meer informatie over het wijzigen van de waarde.
+>
+>
+
+
 ## <a name="faq"></a>Veelgestelde vragen
 
 ### <a name="why-cant-i-connect-to-a-private-endpoint"></a>Waarom kan ik geen verbinding maken met een privé-eind punt?
-Als uw cache al een VNet-geïnjecteerde cache is, kunnen privé-eind punten niet worden gebruikt met uw cache-exemplaar. Als uw cache-exemplaar gebruikmaakt van een niet-ondersteunde functie (zie hieronder), kunt u geen verbinding maken met uw exemplaar van een persoonlijk eind punt. Daarnaast moeten cache-exemplaren na juli 27 worden gemaakt om persoonlijke eind punten te kunnen gebruiken.
+Als uw cache al een VNet-geïnjecteerde cache is, kunnen privé-eind punten niet worden gebruikt met uw cache-exemplaar. Als uw cache-exemplaar gebruikmaakt van een niet-ondersteunde functie (zie hieronder), kunt u geen verbinding maken met uw exemplaar van een persoonlijk eind punt.
 
 ### <a name="what-features-are-not-supported-with-private-endpoints"></a>Welke functies worden niet ondersteund met persoonlijke eind punten?
-Geo-replicatie, firewall regels, ondersteuning voor de portal console, meerdere eind punten per geclusterde cache, persistentie voor firewall regels en zone redundantie. 
+Op dit moment worden zone redundantie, portal console-ondersteuning en persistentie van Firewall opslag accounts niet ondersteund. 
 
 ### <a name="how-can-i-change-my-private-endpoint-to-be-disabled-or-enabled-from-public-network-access"></a>Hoe kan ik mijn privé-eind punt wijzigen zodat deze wordt uitgeschakeld of ingeschakeld voor open bare netwerk toegang?
-Er is een `publicNetworkAccess` vlag die `Disabled` standaard is. Deze vlag is bedoeld om u in staat te stellen zowel open bare als privé-eind punten toegang te geven tot de cache als deze is ingesteld op `Enabled` . Als deze eigenschap is ingesteld op `Disabled` , is toegang tot privé-eind punten alleen toegestaan. U kunt de waarde instellen op `Disabled` of `Enabled` met de volgende patch-aanvraag. Bewerk de waarde om aan te geven welke vlag u voor uw cache wilt.
+Er is een `publicNetworkAccess` vlag die `Disabled` standaard is. Deze vlag is bedoeld om u in staat te stellen zowel open bare als privé-eind punten toegang te geven tot de cache als deze is ingesteld op `Enabled` . Als deze eigenschap is ingesteld op `Disabled` , is toegang tot privé-eind punten alleen toegestaan. U kunt de waarde instellen op `Disabled` of `Enabled` in het Azure portal of met een rest API-patch aanvraag. 
+
+Voer de volgende stappen uit om de waarde in de Azure Portal te wijzigen.
+
+1. Zoek in het Azure Portal naar **Azure cache voor redis** en druk op ENTER of selecteer dit in de zoek suggesties.
+
+2. Selecteer het cache-exemplaar dat u wilt wijzigen van de toegangs waarde van het open bare netwerk.
+
+3. Selecteer aan de linkerkant van het scherm privé- **eind punt**.
+
+4. Klik op de knop **open bare netwerk toegang inschakelen** .
+
+Als u de waarde via een rest API-PATCH-aanvraag wilt wijzigen, raadpleegt u hieronder en bewerkt u de waarde om aan te geven welke vlag u voor uw cache wilt instellen.
 
 ```http
 PATCH  https://management.azure.com/subscriptions/{subscription}/resourceGroups/{resourcegroup}/providers/Microsoft.Cache/Redis/{cache}?api-version=2020-06-01
@@ -223,24 +231,23 @@ PATCH  https://management.azure.com/subscriptions/{subscription}/resourceGroups/
 }
 ```
 
+### <a name="how-can-i-have-multiple-endpoints-in-different-virtual-networks"></a>Hoe kan ik meerdere eind punten in verschillende virtuele netwerken hebben?
+Als u meerdere persoonlijke eind punten in verschillende virtuele netwerken wilt hebben, moet de particuliere DNS-zone hand matig worden geconfigureerd voor de meerdere virtuele netwerken _voordat_ u het persoonlijke eind punt maakt. Raadpleeg [DNS-configuratie voor Azure-privé-eindpunt](../private-link/private-endpoint-dns.md) voor meer informatie. 
+
+### <a name="what-happens-if-i-delete-all-the-private-endpoints-on-my-cache"></a>Wat gebeurt er als ik alle persoonlijke eind punten op mijn cache Verwijder?
+Als u de persoonlijke eind punten in uw cache verwijdert, kan het cache-exemplaar mogelijk onbereikbaar zijn totdat u expliciet toegang tot het open bare netwerk inschakelt of een ander persoonlijk eind punt toevoegt. U kunt de `publicNetworkAccess` vlag wijzigen op de Azure portal of via een rest API-patch aanvraag. Raadpleeg de [Veelgestelde vragen](#how-can-i-change-my-private-endpoint-to-be-disabled-or-enabled-from-public-network-access) voor meer informatie over het wijzigen van de waarde.
+
 ### <a name="are-network-security-groups-nsg-enabled-for-private-endpoints"></a>Zijn netwerk beveiligings groepen (NSG) ingeschakeld voor privé-eind punten?
 Nee, ze zijn uitgeschakeld voor privé-eind punten. Hoewel aan subnetten met het persoonlijke eind punt NSG zijn gekoppeld, zijn de regels niet effectief op het verkeer dat door het persoonlijke eind punt wordt verwerkt. U moet [netwerk beleid afdwingen uitgeschakeld](../private-link/disable-private-endpoint-network-policy.md) om persoonlijke eind punten te implementeren in een subnet. NSG wordt nog steeds afgedwongen op andere workloads die worden gehost op hetzelfde subnet. Voor routes op elk client subnet wordt het voor voegsel/32 gebruikt. voor het wijzigen van het standaard routerings gedrag is een vergelijk bare UDR vereist. 
 
 Beheer het verkeer met behulp van NSG-regels voor uitgaand verkeer op de bron-clients. Implementeer afzonderlijke routes met het voor voegsel/32 om persoonlijke eindpunt routes te negeren. NSG-stroom logboeken en controle gegevens voor uitgaande verbindingen worden nog steeds ondersteund en kunnen worden gebruikt
 
-### <a name="can-i-use-firewall-rules-with-private-endpoints"></a>Kan ik Firewall regels met persoonlijke eind punten gebruiken?
-Nee, dit is een huidige beperking van privé-eind punten. Het persoonlijke eind punt werkt niet goed als de firewall regels zijn geconfigureerd voor de cache.
-
-### <a name="how-can-i-connect-to-a-clustered-cache"></a>Hoe kan ik verbinding maken met een geclusterde cache?
-`publicNetworkAccess` moet worden ingesteld op `Disabled` en er mag slechts één particuliere eindpunt verbinding zijn.
-
 ### <a name="since-my-private-endpoint-instance-is-not-in-my-vnet-how-is-it-associated-with-my-vnet"></a>Hoe wordt het exemplaar van mijn privé-eind punt niet in mijn VNet?
 Het is alleen gekoppeld aan uw VNet. Omdat deze zich niet in uw VNet bevindt, hoeven NSG-regels niet te worden gewijzigd voor afhankelijke eind punten.
 
 ### <a name="how-can-i-migrate-my-vnet-injected-cache-to-a-private-endpoint-cache"></a>Hoe kan ik mijn door VNet geïnjecteerde cache naar een persoonlijke eindpunt cache migreren?
-U moet uw door VNet geïnjecteerde cache verwijderen en een nieuw cache-exemplaar maken met een persoonlijk eind punt.
+U moet uw door VNet geïnjecteerde cache verwijderen en een nieuw cache-exemplaar maken met een persoonlijk eind punt. Zie voor meer informatie [migreren naar Azure cache voor redis](cache-migration-guide.md)
 
 ## <a name="next-steps"></a>Volgende stappen
-
 * Zie de [documentatie van Azure private link](../private-link/private-link-overview.md)voor meer informatie over persoonlijke Azure-koppelingen.
 * Zie [Azure cache for redis Network-isolatie opties](cache-network-isolation.md)voor meer informatie over het vergelijken van verschillende netwerk isolatie opties voor uw cache-exemplaar.

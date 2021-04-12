@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/21/2021
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: a571d92dd9663c7d2d0a576b59e5cd2b3352cb76
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ad1351b7c9a649a553ce54422b99a13c286437d6
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104951017"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107292"
 ---
 # <a name="auto-manage-devices-in-azure-digital-twins-using-device-provisioning-service-dps"></a>Apparaten in azure Digital Apparaatdubbels automatisch beheren met behulp van de Device Provisioning Service (DPS)
 
@@ -302,7 +302,7 @@ Zodra u deze stroom hebt door lopen, is alles zo ingesteld dat apparaten end-to-
 
 Als u het proces van het buiten gebruik wilt stellen, moet u het apparaat hand matig verwijderen uit IoT Hub.
 
-U kunt dit doen met een [Azure cli-opdracht](/cli/azure/ext/azure-iot/iot/hub/module-identity#ext_azure_iot_az_iot_hub_module_identity_delete) of in de Azure Portal. Volg de onderstaande stappen om het apparaat te verwijderen in de Azure Portal:
+U kunt dit doen met een [Azure cli-opdracht](/cli/azure/iot/hub/module-identity#az_iot_hub_module_identity_delete) of in de Azure Portal. Volg de onderstaande stappen om het apparaat te verwijderen in de Azure Portal:
 
 1. Navigeer naar uw IoT-hub en kies **IOT-apparaten** in de menu opties aan de linkerkant. 
 2. U ziet een apparaat met de registratie-ID van het apparaat dat u in de [eerste helft van dit artikel](#auto-provision-device-using-device-provisioning-service)hebt gekozen. U kunt ook elk ander apparaat selecteren dat u wilt verwijderen, zolang het een dubbele in azure Digital Apparaatdubbels is, zodat u kunt controleren of de dubbele waarde automatisch wordt verwijderd nadat het apparaat is verwijderd.

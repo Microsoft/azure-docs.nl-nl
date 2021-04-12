@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 03/22/2021
+ms.date: 04/05/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: dc52414fa0d2eeffe0381a68bd66eadafe4862ea
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.openlocfilehash: 8469e05b82a651760829761ca57af3bdb1b256a9
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104781276"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106443403"
 ---
 # <a name="page-layout-versions"></a>Versie van pagina-indeling
 
@@ -33,6 +33,13 @@ Azure AD B2C pagina-indeling maakt gebruik van de volgende versie van de [jQuery
 |1.1.0 | 1.10.2 |
 
 ## <a name="self-asserted-page-selfasserted"></a>Zelfbevestigende pagina (selfasserted)
+
+**2.1.4**
+- De jQuery-versie is bijgewerkt naar 3.5.1.
+- De HandlebarJS-versie is bijgewerkt naar 4.7.6.
+
+**2.1.3**
+- Beveiligings oplossingen.
 
 **omschreven**
 - Het probleem met lokalisatie van code ring voor talen zoals Spaans en Frans is opgelost.
@@ -87,6 +94,14 @@ Azure AD B2C pagina-indeling maakt gebruik van de volgende versie van de [jQuery
 > [!TIP]
 > Als u de pagina lokaliseert om meerdere land instellingen of talen in een gebruikers stroom te ondersteunen. Het artikel [lokalisatie-id's](localization-string-ids.md) bevat de lijst met lokalisatie-id's die u kunt gebruiken voor de pagina versie die u selecteert.
 
+**2.1.4**
+- De jQuery-versie is bijgewerkt naar 3.5.1.
+- De HandlebarJS-versie is bijgewerkt naar 4.7.6.
+
+**2.1.3**
+- Beveiligings oplossingen.
+- Kleine oplossingen voor fouten.
+
 **omschreven**
 - Het probleem met lokalisatie van code ring voor talen zoals Spaans en Frans is opgelost.
 - De koppeling ' wacht woord verg eten ' toestaan om te gebruiken als uitwisseling van claims. Zie [selfservice voor wacht woord opnieuw instellen](add-password-reset-policy.md#self-service-password-reset-recommended)voor meer informatie.
@@ -126,6 +141,15 @@ Azure AD B2C pagina-indeling maakt gebruik van de volgende versie van de [jQuery
 
 ## <a name="mfa-page-multifactor"></a>MFA-pagina (multi-factor)
 
+**1.2.4**
+- De jQuery-versie is bijgewerkt naar 3.5.1.
+- De HandlebarJS-versie is bijgewerkt naar 4.7.6.
+
+**1.2.3**
+- Het overschrijven van knop info-teken reeksen via taal lokalisatie toestaan.
+- Beveiligings oplossingen.
+- Kleine oplossingen voor fouten.
+
 **1.2.2**
 - Er is een probleem opgelost met het automatisch invullen van de verificatie code bij het gebruik van iOS.
 - Er is een probleem opgelost met het omleiden van een token naar het Relying Party van de Android-webweergave. 
@@ -162,6 +186,10 @@ Azure AD B2C pagina-indeling maakt gebruik van de volgende versie van de [jQuery
 
 ## <a name="exception-page-globalexception"></a>Uitzonderings pagina (globalexception)
 
+**1.2.1**
+- De jQuery-versie is bijgewerkt naar 3.5.1.
+- De HandlebarJS-versie is bijgewerkt naar 4.7.6.
+
 **1.2.0**
 
 - Toegankelijkheids oplossingen
@@ -182,6 +210,10 @@ Azure AD B2C pagina-indeling maakt gebruik van de volgende versie van de [jQuery
 - Eerste release
 
 ## <a name="other-pages-providerselection-claimsconsent-unifiedssd"></a>Andere pagina's (ProviderSelection, ClaimsConsent, UnifiedSSD)
+
+**1.2.1**
+- De jQuery-versie is bijgewerkt naar 3.5.1.
+- De HandlebarJS-versie is bijgewerkt naar 4.7.6.
 
 **1.2.0**
 

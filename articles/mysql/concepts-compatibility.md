@@ -6,16 +6,19 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: cba9615a8c76387b593109bc2174ab4718f1750a
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 59f70659f25f925f8f802b0fcaa1f61d4e7f7dc0
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105609305"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107106935"
 ---
 # <a name="mysql-drivers-and-management-tools-compatible-with-azure-database-for-mysql"></a>MySQL-Stuur Programma's en-beheer hulpprogramma's die compatibel zijn met Azure Database for MySQL
-[!INCLUDE[applies-to-single-flexible-server](includes/applies-to-single-flexible-server.md)]
-In dit artikel worden de Stuur Programma's en beheer Programma's beschreven die compatibel zijn met Azure Database for MySQL.
+
+In dit artikel worden de Stuur Programma's en beheer Programma's beschreven die compatibel zijn met Azure Database for MySQL één server.
+
+>[!NOTE]
+>Dit artikel is alleen van toepassing op Azure Database for MySQL één server om ervoor te zorgen dat de Stuur Programma's compatibel zijn met de [connectiviteits architectuur](concepts-connectivity-architecture.md) van een service met één server. [Azure database for MySQL flexibele server](/../flexible-server/overview.md) is compatibel met alle Stuur Programma's en hulpprogram ma's die worden ondersteund en compatibel met de MySQL Community Edition. 
 
 ## <a name="mysql-drivers"></a>MySQL-Stuur Programma's
 Azure Database for MySQL maakt gebruik van de populairste Community-editie van de wereld van de MySQL-data base. Daarom is het compatibel met een groot aantal programmeer talen en-stuur Programma's. Het doel is om de drie meest recente versies MySQL-Stuur Programma's te ondersteunen en inspanningen te doen met auteurs van de open source-community om de functionaliteit en de bruikbaarheid van MySQL-Stuur Programma's voortdurend te verbeteren. In de volgende tabel vindt u een lijst met stuur Programma's die zijn getest en die compatibel zijn met Azure Database for MySQL 5,6 en 5,7.

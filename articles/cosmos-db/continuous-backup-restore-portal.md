@@ -4,15 +4,15 @@ description: Meer informatie over het identificeren van het herstel punt en het 
 author: kanshiG
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 02/01/2021
+ms.date: 04/05/2021
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: ee6eedbc078e1b9c07ed00922ce1c37b38410128
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 707ef9f60891c1da7c13638e233ee74e78fc20dd
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100381865"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106283934"
 ---
 # <a name="configure-and-manage-continuous-backup-and-point-in-time-restore-preview---using-azure-portal"></a>Continue back-ups en herstel naar een tijdstip configureren en beheren (preview)-Azure Portal gebruiken
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -32,6 +32,10 @@ Bij het maken van een nieuw Azure Cosmos DB-account, voor de optie **back-upbele
 
 :::image type="content" source="./media/continuous-backup-restore-portal/configure-continuous-backup-portal.png" alt-text="Richt een Azure Cosmos DB-account in met continue back-upconfiguratie." border="true":::
 
+## <a name="backup-storage-redundancy"></a>Opslag redundantie van back-ups
+
+Standaard slaat Azure Cosmos DB permanente back-upgegevens op in lokaal redundante opslag-blobs. Voor de regio's waarvoor zone redundantie is geconfigureerd, wordt de back-up opgeslagen in zone-redundante opslag-blobs. In deze modus kunt u de redundantie opslag voor back-ups niet bijwerken.
+
 ## <a name="restore-a-live-account-from-accidental-modification"></a><a id="restore-live-account"></a>Een Live-account herstellen tegen onbedoelde wijzigingen
 
 U kunt Azure Portal gebruiken om een Live-account of geselecteerde data bases en containers daarin te herstellen. Gebruik de volgende stappen om uw gegevens te herstellen:
@@ -46,7 +50,7 @@ U kunt Azure Portal gebruiken om een Live-account of geselecteerde data bases en
 
    * **Herstel punt (UTC)** : een tijds tempel in de afgelopen 30 dagen. Het account moet bestaan in die tijds tempel. U kunt het herstel punt in UTC opgeven. Het kan even zijn als de tweede wanneer u deze wilt herstellen. Selecteer de koppeling **Klik hier** om hulp te krijgen bij [het identificeren van het herstel punt](#event-feed).
 
-   * **Locatie** : de doel regio waar het account wordt teruggezet. Het account moet voor komen in deze regio met de opgegeven tijds tempel (bijvoorbeeld VS-West of Oost. Een account kan alleen worden teruggezet naar de regio's waarin het bron account bestond.
+   * **Locatie** : de doel regio waar het account wordt teruggezet. Het account moet voor komen in deze regio met de opgegeven tijds tempel (bijvoorbeeld VS-West of VS-Oost). Een account kan alleen worden teruggezet naar de regio's waarin het bron account bestond.
 
    * **Resource herstellen** : u kunt een **volledig account** of een **geselecteerde data base/container** kiezen om te herstellen. De data bases en containers moeten aanwezig zijn op de opgegeven tijds tempel. Op basis van het herstel punt en de geselecteerde locatie worden de herstel resources gevuld, waardoor de gebruiker specifieke data bases of containers kan selecteren die moeten worden hersteld.
 

@@ -1,14 +1,14 @@
 ---
 title: Beheeropties voor DoD Impact Level 5-blauwdrukvoorbeeld
 description: Beheeropties toewijzen voor het DoD Impact Level 5-blauwdrukvoorbeeld. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 01/08/2021
+ms.date: 04/02/2021
 ms.topic: sample
-ms.openlocfilehash: 01f786684e5f8d73f57eb9f4741593c01fe1c8d4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: af68ee959c50102b8344f91f8c3aa2fe11a0e2c2
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98034778"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106386687"
 ---
 # <a name="control-mapping-of-the-dod-impact-level-5-blueprint-sample"></a>Beheeropties toewijzen voor het DoD Impact Level 5-blauwdrukvoorbeeld
 

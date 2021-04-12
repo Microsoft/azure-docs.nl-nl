@@ -6,14 +6,14 @@ ms.author: bagol
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
-ms.date: 03/21/2021
+ms.date: 04/07/2021
 ms.custom: references_regions
-ms.openlocfilehash: f77bd69f8266d9461481cd0a12a7b70107622de5
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 542b6580994a2054526f0ddbb3ad93dc27c28fcc
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104773450"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107649"
 ---
 # <a name="azure-purview-connector-for-amazon-s3"></a>Azure controle sfeer liggen-connector voor Amazon S3
 
@@ -38,6 +38,7 @@ Voor meer informatie raadpleegt u de gedocumenteerde controle sfeer liggen-limie
 
 - [Quota's voor resources beheren en verg Roten met Azure controle sfeer liggen](how-to-manage-quotas.md)
 - [Ondersteunde gegevens bronnen en bestands typen in azure controle sfeer liggen](sources-and-scans.md)
+- [Privé-eind punten gebruiken voor uw controle sfeer liggen-account](catalog-private-link.md)
 ### <a name="storage-and-scanning-regions"></a>Opslag-en scan regio's
 
 De volgende tabel bevat de regio's waar u gegevens opslaat in de regio waar deze zouden worden gescand door Azure controle sfeer liggen.
@@ -77,9 +78,13 @@ De volgende tabel bevat de regio's waar u gegevens opslaat in de regio waar deze
 
 Zorg ervoor dat u de volgende vereisten hebt uitgevoerd voordat u uw Amazon S3-buckets als controle sfeer liggen-gegevens bronnen toevoegt en uw S3-gegevens scant.
 
-- U moet een Azure controle sfeer liggen-gegevens bron beheerder zijn.
-
-- Wanneer u uw buckets als controle sfeer liggen-resources toevoegt, hebt u de waarden van uw [AWS Arn](#retrieve-your-new-role-arn), [Bucket naam](#retrieve-your-amazon-s3-bucket-name)en soms uw [AWS-account-id](#locate-your-aws-account-id)nodig.
+> [!div class="checklist"]
+> * U moet een Azure controle sfeer liggen-gegevens bron beheerder zijn.
+> * [Een controle sfeer liggen-account maken](#create-a-purview-account) als u er nog geen hebt
+> * [Een controle sfeer liggen-referentie maken voor uw AWS Bucket-scan](#create-a-purview-credential-for-your-aws-bucket-scan)
+> * [Een nieuwe AWS-rol maken voor gebruik met controle sfeer liggen](#create-a-new-aws-role-for-purview)
+> * Het [scannen van versleutelde Amazon S3-buckets configureren](#configure-scanning-for-encrypted-amazon-s3-buckets), indien van toepassing
+> * Wanneer u uw buckets als controle sfeer liggen-resources toevoegt, hebt u de waarden van uw [AWS Arn](#retrieve-your-new-role-arn), [Bucket naam](#retrieve-your-amazon-s3-bucket-name)en soms uw [AWS-account-id](#locate-your-aws-account-id)nodig.
 
 ### <a name="create-a-purview-account"></a>Een controle sfeer liggen-account maken
 
@@ -92,7 +97,7 @@ Zorg ervoor dat u de volgende vereisten hebt uitgevoerd voordat u uw Amazon S3-b
 In deze procedure wordt beschreven hoe u een nieuwe controle sfeer liggen-referentie maakt die u kunt gebruiken bij het scannen van uw AWS-buckets.
 
 > [!TIP]
-> U kunt ook in het midden van het proces een nieuwe referentie maken en [de scan configureren](#create-a-scan-for-your-amazon-s3-bucket). In dat geval selecteert u in het veld **referentie** de optie **Nieuw**.
+> U kunt ook in het midden van het proces een nieuwe referentie maken en [de scan configureren](#create-a-scan-for-one-or-more-amazon-s3-buckets). In dat geval selecteert u in het veld **referentie** de optie **Nieuw**.
 >
 
 1. Ga in controle sfeer liggen naar het **Management Center** en selecteer onder **beveiliging en toegang** de optie **referenties**.
@@ -138,6 +143,13 @@ Zie de [documentatie van Azure controle sfeer liggen Public Preview](manage-cred
 1. In het gebied **rol maken > machtigingen beleid koppelen** , filtert u de machtigingen die worden weer gegeven voor **S3**. Selecteer **AmazonS3ReadOnlyAccess** en selecteer vervolgens **volgende: Tags**.
 
     ![Selecteer het ReadOnlyAccess-beleid voor de nieuwe rol Amazon S3-scan.](./media/register-scan-amazon-s3/aws-permission-role-amazon-s3.png)
+
+    > [!IMPORTANT]
+    > Het **AmazonS3ReadOnlyAccess** -beleid biedt minimale machtigingen die zijn vereist voor het scannen van uw S3-buckets en kan ook andere machtigingen bevatten.
+    >
+    >Als u alleen de mini maal vereiste machtigingen voor het scannen van uw buckets wilt Toep assen, maakt u een nieuw beleid met de machtigingen die zijn vermeld in de [minimale machtigingen voor uw AWS-beleid](#minimum-permissions-for-your-aws-policy), afhankelijk van of u één Bucket of alle buckets in uw account wilt scannen. 
+    >
+    >Pas het nieuwe beleid toe op de rol in plaats van **AmazonS3ReadOnlyAccess.**
 
 1. In het gebied **labels toevoegen (optioneel)** kunt u desgewenst een zinvolle tag maken voor deze nieuwe rol. Met handige Tags kunt u de toegang indelen, bijhouden en beheren voor elke rol die u maakt.
 
@@ -219,7 +231,7 @@ AWS buckets ondersteunen meerdere versleutelings typen. Voor buckets die gebruik
 
 ### <a name="retrieve-your-new-role-arn"></a>De nieuwe functie ARN ophalen
 
-U moet de ARN van uw AWS-functie vastleggen en deze naar controle sfeer liggen kopiëren bij het [maken van een scan voor uw Amazon S3-Bucket](#create-a-scan-for-your-amazon-s3-bucket).
+U moet de ARN van uw AWS-functie vastleggen en deze naar controle sfeer liggen kopiëren bij het [maken van een scan voor uw Amazon S3-Bucket](#create-a-scan-for-one-or-more-amazon-s3-buckets).
 
 **Uw rol ophalen ARN:**
 
@@ -229,11 +241,11 @@ U moet de ARN van uw AWS-functie vastleggen en deze naar controle sfeer liggen k
 
     ![Kopieer de waarde van de rol ARN naar het klem bord.](./media/register-scan-amazon-s3/aws-copy-role-purview.png)
 
-1. Plak deze waarde op een veilige locatie, die u kunt gebruiken bij het [maken van een scan voor uw Amazon S3-Bucket](#create-a-scan-for-your-amazon-s3-bucket).
+1. Plak deze waarde op een veilige locatie, die u kunt gebruiken bij het [maken van een scan voor uw Amazon S3-Bucket](#create-a-scan-for-one-or-more-amazon-s3-buckets).
 
 ### <a name="retrieve-your-amazon-s3-bucket-name"></a>De naam van de Amazon S3-Bucket ophalen
 
-U hebt de naam van uw Amazon S3-Bucket nodig om deze naar controle sfeer liggen te kopiëren bij het [maken van een scan voor uw Amazon S3-Bucket](#create-a-scan-for-your-amazon-s3-bucket)
+U hebt de naam van uw Amazon S3-Bucket nodig om deze naar controle sfeer liggen te kopiëren bij het [maken van een scan voor uw Amazon S3-Bucket](#create-a-scan-for-one-or-more-amazon-s3-buckets)
 
 **De Bucket-naam ophalen:**
 
@@ -270,6 +282,8 @@ Bijvoorbeeld:
 
 Gebruik deze procedure als u slechts één S3-Bucket hebt die u wilt registreren bij controle sfeer liggen als gegevens bron, of als u meerdere buckets hebt in uw AWS-account, maar niet al deze wilt registreren bij controle sfeer liggen.
 
+**De Bucket toevoegen**: 
+
 1. Start de controle sfeer liggen-Portal met de speciale controle sfeer liggen-connector voor de Amazon S3-URL. Deze URL is door gegeven aan het team van de Amazon S3 controle sfeer liggen-connector.
 
     ![Start de controle sfeer liggen-Portal.](./media/register-scan-amazon-s3/purview-portal-amazon-s3.png)
@@ -293,12 +307,15 @@ Gebruik deze procedure als u slechts één S3-Bucket hebt die u wilt registreren
 
     Wanneer u klaar bent, selecteert u **volt ooien** om de registratie te volt ooien.
 
-Ga door met het [maken van een scan voor uw Amazon S3-Bucket.](#create-a-scan-for-your-amazon-s3-bucket)..
+Ga door met [het maken van een scan voor een of meer Amazon S3-buckets.](#create-a-scan-for-one-or-more-amazon-s3-buckets)
 
-## <a name="add-all-of-your-amazon-s3-buckets-as-purview-resources"></a>Voeg al uw Amazon S3-buckets toe als controle sfeer liggen-resources
+## <a name="add-an-amazon-account-as-a-purview-resource"></a>Een Amazon-account toevoegen als een controle sfeer liggen-resource
 
-Gebruik deze procedure als u meerdere S3-buckets hebt in uw Amazon-account en u alle controle sfeer liggen-gegevens bronnen wilt registreren.
+Gebruik deze procedure als u meerdere S3-buckets hebt in uw Amazon-account en u deze allemaal als controle sfeer liggen-gegevens bronnen wilt registreren.
 
+Bij [het configureren van de scan](#create-a-scan-for-one-or-more-amazon-s3-buckets)kunt u de specifieke buckets selecteren die u wilt scannen als u deze niet allemaal tegelijk wilt scannen.
+
+**Uw Amazon-account toevoegen**:
 1. Start de controle sfeer liggen-Portal met de speciale controle sfeer liggen-connector voor de Amazon S3-URL. Deze URL is door gegeven aan het team van de Amazon S3 controle sfeer liggen-connector.
 
     ![Connector starten voor Amazon S3 dedicated controle sfeer liggen-Portal](./media/register-scan-amazon-s3/purview-portal-amazon-s3.png)
@@ -322,9 +339,9 @@ Gebruik deze procedure als u meerdere S3-buckets hebt in uw Amazon-account en u 
 
     Wanneer u klaar bent, selecteert u **volt ooien** om de registratie te volt ooien.
 
-Ga door met het [maken van een scan voor uw Amazon S3-Bucket](#create-a-scan-for-your-amazon-s3-bucket).
+Ga door met [het maken van een scan voor een of meer Amazon S3-buckets](#create-a-scan-for-one-or-more-amazon-s3-buckets).
 
-## <a name="create-a-scan-for-your-amazon-s3-bucket"></a>Een scan voor uw Amazon S3-Bucket maken
+## <a name="create-a-scan-for-one-or-more-amazon-s3-buckets"></a>Een scan maken voor een of meer Amazon S3-buckets
 
 Wanneer u uw buckets hebt toegevoegd als controle sfeer liggen-gegevens bronnen, kunt u een scan configureren om op geplande intervallen of onmiddellijk te worden uitgevoerd.
 
@@ -340,9 +357,10 @@ Wanneer u uw buckets hebt toegevoegd als controle sfeer liggen-gegevens bronnen,
     |**Naam**     |  Voer een beschrijvende naam in voor de scan of gebruik de standaard waarde.       |
     |**Type** |Wordt alleen weer gegeven als u uw AWS-account hebt toegevoegd, waarbij alle buckets zijn opgenomen. <br><br>De huidige opties omvatten alleen **alle**  >  **Amazon S3**. Blijf op de hoogte als u meer opties wilt selecteren om de ondersteunings matrix van controle sfeer liggen uit te vouwen. |
     |**Referentie**     |  Selecteer een controle sfeer liggen-referentie met uw rol ARN. <br><br>**Tip**: als u op dit moment een nieuwe referentie wilt maken, selecteert u **Nieuw**. Zie [een controle sfeer liggen-referentie maken voor uw AWS Bucket-scan](#create-a-purview-credential-for-your-aws-bucket-scan)voor meer informatie.     |
-    |     |         |
+    | **Amazon S3**    |   Wordt alleen weer gegeven als u uw AWS-account hebt toegevoegd, waarbij alle buckets zijn opgenomen. <br><br>Selecteer een of meer buckets die u wilt scannen of **Selecteer alles** om alle buckets in uw account te scannen.      |
+    | | |
 
-    Controle sfeer liggen controleert automatisch of de ARN van de rol geldig is en of de Bucket en het object in de Bucket toegankelijk zijn, en gaat vervolgens verder als de verbinding slaagt.
+    Controle sfeer liggen controleert automatisch of de ARN van de rol geldig is en of de buckets en objecten binnen de buckets toegankelijk zijn. vervolgens wordt het proces voortgezet als de verbinding slaagt.
 
     > [!TIP]
     > Als u andere waarden wilt opgeven en de verbinding zelf wilt testen voordat u doorgaat, selecteert u **verbinding testen** onder aan de rechter kant voordat u **door gaan** selecteert.
@@ -396,6 +414,90 @@ Gebruik de andere gebieden van controle sfeer liggen om informatie te krijgen ov
     Alle controle sfeer liggen Insight-rapporten bevatten de Amazon S3-scan resultaten, samen met de rest van de resultaten van uw Azure-gegevens bronnen. Als dat relevant is, is er een extra **Amazon S3** -Asset type toegevoegd aan de rapport filterings opties.
 
     Zie [inzichten begrijpen in azure controle sfeer liggen](concept-insights.md)voor meer informatie.
+
+## <a name="minimum-permissions-for-your-aws-policy"></a>Minimale machtigingen voor uw AWS-beleid
+
+De standaard procedure voor het [maken van een AWS-rol voor controle sfeer liggen](#create-a-new-aws-role-for-purview) die moet worden gebruikt bij het scannen van uw S3-buckets, maakt gebruik van het **AmazonS3ReadOnlyAccess** -beleid.
+
+Het **AmazonS3ReadOnlyAccess** -beleid biedt minimale machtigingen die zijn vereist voor het scannen van uw S3-buckets en kan ook andere machtigingen bevatten.
+
+Als u alleen de mini maal vereiste machtigingen voor het scannen van uw buckets wilt Toep assen, maakt u een nieuw beleid met de machtigingen die in de volgende secties worden weer gegeven, afhankelijk van of u één Bucket of alle buckets in uw account wilt scannen.
+
+Pas het nieuwe beleid toe op de rol in plaats van **AmazonS3ReadOnlyAccess.**
+
+### <a name="individual-buckets"></a>Afzonderlijke buckets
+
+Bij het scannen van afzonderlijke S3-buckets, zijn de minimale AWS-machtigingen als volgt:
+
+- `GetBucketLocation`
+- `GetBucketPublicAccessBlock`
+- `GetObject`
+- `ListBucket`
+
+Zorg ervoor dat u uw resource definieert met de naam van de specifieke Bucket. Bijvoorbeeld:
+
+```json
+{
+"Version": "2012-10-17",
+"Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetBucketLocation",
+                "s3:GetBucketPublicAccessBlock",
+                "s3:GetObject",
+                "s3:ListBucket"
+            ],
+            "Resource": "arn:aws:s3:::<bucketname>"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": "arn:aws:s3::: <bucketname>/*"
+        }
+    ]
+}
+```
+
+### <a name="all-buckets-in-your-account"></a>Alle buckets in uw account
+
+Bij het scannen van alle buckets in uw AWS-account, zijn de minimale AWS-machtigingen als volgt:
+
+- `GetBucketLocation`
+- `GetBucketPublicAccessBlock`
+- `GetObject`
+- `ListAllMyBuckets`
+- `ListBucket`.
+
+Zorg ervoor dat u uw resource met een Joker teken definieert. Bijvoorbeeld:
+
+```json
+{
+"Version": "2012-10-17",
+"Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetBucketLocation",
+                "s3:GetBucketPublicAccessBlock",
+                "s3:GetObject",
+                "s3:ListAllMyBuckets",
+                "s3:ListBucket"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```
 
 ## <a name="next-steps"></a>Volgende stappen
 

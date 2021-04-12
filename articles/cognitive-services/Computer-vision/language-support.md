@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 04/17/2019
 ms.author: pafarley
-ms.openlocfilehash: 43804907d68ddd58e55c7ce453e0731d0cb4b9b5
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 774eb05ae43e393db3d11e8e21a427736614809b
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102560375"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106285107"
 ---
 # <a name="language-support-for-computer-vision"></a>Taal ondersteuning voor Computer Vision
 
@@ -23,7 +23,7 @@ Sommige functies van Computer Vision ondersteunen meerdere talen; alle functies 
 
 ## <a name="optical-character-recognition-ocr"></a>Optische tekenherkenning (OCR)
 
-De OCR-Api's van Computer Vision ondersteunen verschillende talen. U hoeft geen taal code op te geven. Zie [optische teken herkenning (OCR)](concept-recognizing-text.md) voor meer informatie.
+De OCR-Api's van Computer Vision ondersteunen verschillende talen. U hoeft geen taal code op te geven. Zie het [overzicht van optische teken herkenning (OCR)](overview-ocr.md) voor meer informatie.
 
 |Taal| Taalcode | OCR-API | Lees 3.0/3.1 | Voor beeld van v 3.2 lezen |
 |:-----|:----:|:-----:|:---:|:---:|
@@ -111,9 +111,9 @@ De OCR-Api's van Computer Vision ondersteunen verschillende talen. U hoeft geen 
 
 ## <a name="image-analysis"></a>Afbeeldingsanalyse
 
-Sommige acties van de [analyse-image-](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) API kunnen resultaten retour neren in andere talen, opgegeven met de `language` query-para meter. Andere acties retour neren resultaten in het Engels, ongeacht de taal die is opgegeven, en anderen genereren een uitzonde ring voor niet-ondersteunde talen. Acties zijn opgegeven met de `visualFeatures` `details` para meters en query; Zie het [overzicht](overview.md) voor een lijst met alle acties die u kunt uitvoeren met afbeeldings analyse.
+Sommige acties van de [analyse-image-](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) API kunnen resultaten retour neren in andere talen, opgegeven met de `language` query-para meter. Andere acties retour neren resultaten in het Engels, ongeacht de taal die is opgegeven, en anderen genereren een uitzonde ring voor niet-ondersteunde talen. Acties zijn opgegeven met de `visualFeatures` `details` para meters en query; Zie het [overzicht](overview-image-analysis.md) voor een lijst met alle acties die u kunt uitvoeren met afbeeldings analyse.
 
-|Taal | Taalcode | Categorieën | Tags | Description | Volwassene | Merken | Kleur | Gezichten | ImageType | Objecten | Beroemdheden | Oriëntatiepunten |
+|Taal | Taalcode | Categorieën | Tags | Beschrijving | Volwassene | Merken | Kleur | Gezichten | ImageType | Objecten | Beroemdheden | Oriëntatiepunten |
 |:---|:---:|:----:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |Chinees | `zh`    | ✔ | ✔| ✔|-|-|-|-|-|❌|✔|✔|
 |Engels | `en`   | ✔ | ✔| ✔|✔|✔|✔|✔|✔|✔|✔|✔|

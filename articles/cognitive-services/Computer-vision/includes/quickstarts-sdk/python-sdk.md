@@ -1,6 +1,6 @@
 ---
-title: 'Quickstart: Computer Vision-clientbibliotheek voor Python'
-description: Ga met deze quickstart aan de slag met de Computer Vision-clientbibliotheek voor Python.
+title: 'Snelstartgids: client bibliotheek voor optische teken herkenning voor python'
+description: Ga aan de slag met de optische teken herkenning-client bibliotheek voor python met deze Snelstartgids.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -9,19 +9,16 @@ ms.subservice: computer-vision
 ms.topic: include
 ms.date: 12/15/2020
 ms.author: pafarley
-ms.openlocfilehash: 1b17173c95f26c622a0021d30eb678fc27b60c2f
-ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.openlocfilehash: d0b2a854391097cc7d95c4286ba581f3660d397e
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103622349"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106284760"
 ---
 <a name="HOLTop"></a>
 
-Gebruik de Computer Vision-clientbibliotheek voor het volgende:
-
-* Een afbeelding analyseren op tags, tekstbeschrijvingen, gezichten, inhoud voor volwassenen, en meer.
-* Afgedrukte en handgeschreven tekst lezen met de Read-API.
+Gebruik de client bibliotheek voor optische teken herkenning om gedrukte en handgeschreven tekst te lezen met de Lees-API.
 
 [Referentiedocumentatie](/python/api/azure-cognitiveservices-vision-computervision/azure.cognitiveservices.vision.computervision) | [Broncode bibliotheek](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-vision-computervision) | [Package (PiPy)](https://pypi.org/project/azure-cognitiveservices-vision-computervision/) | [Voorbeelden](https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=vision&sort=0)
 
@@ -74,7 +71,7 @@ Maak variabelen voor de sleutel en het eind punt van uw Computer Vision-abonneme
 
 ## <a name="object-model"></a>Objectmodel
 
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Computer Vision Python SDK.
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de OCR python SDK.
 
 |Naam|Beschrijving|
 |---|---|
@@ -84,10 +81,9 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 
 ## <a name="code-examples"></a>Codevoorbeelden
 
-Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de Computer Vision-clientbibliotheek voor Python:
+Deze code fragmenten laten zien hoe u de volgende taken kunt uitvoeren met de OCR-client bibliotheek voor python:
 
 * [De client verifiëren](#authenticate-the-client)
-* [Een afbeelding analyseren](#analyze-an-image)
 * [Afgedrukte en handgeschreven tekst lezen](#read-printed-and-handwritten-text)
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
@@ -97,89 +93,11 @@ Instantieer een client met uw eindpunt en sleutel. Maak een [CognitiveServicesCr
 [!code-python[](~/cognitive-services-quickstart-code/python/ComputerVision/ComputerVisionQuickstart.py?name=snippet_client)]
 
 > [!div class="nextstepaction"]
-> [Ik heb de client geverifieerd](?success=authenticate-client#analyze-an-image) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Python&Section=authenticate-client)
-
-## <a name="analyze-an-image"></a>Een afbeelding analyseren
-
-Gebruik uw clientobject om de visuele kenmerken van een externe afbeelding te analyseren. Sla eerst een verwijzing op naar de URL van een afbeelding die u wilt analyseren.
-
-[!code-python[](~/cognitive-services-quickstart-code/python/ComputerVision/ComputerVisionQuickstart.py?name=snippet_remoteimage)]
-
-> [!TIP]
-> U kunt ook een lokale afbeelding analyseren. Zie de [ComputerVisionClientOperationsMixin](/python/api/azure-cognitiveservices-vision-computervision/azure.cognitiveservices.vision.computervision.operations.computervisionclientoperationsmixin)-methoden, bijvoorbeeld **analyze_image_in_stream**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/ComputerVision/ComputerVisionQuickstart.py) voor scenario's met betrekking tot lokale afbeeldingen.
-
-### <a name="get-image-description"></a>Beschrijving van afbeelding ophalen
-
-Met de volgende code wordt de lijst met gegenereerde bijschriften voor de afbeelding opgehaald. Zie [Afbeeldingen beschrijven](../../concept-describing-images.md) voor meer informatie.
-
-[!code-python[](~/cognitive-services-quickstart-code/python/ComputerVision/ComputerVisionQuickstart.py?name=snippet_describe)]
-
-### <a name="get-image-category"></a>Categorie van de afbeelding ophalen
-
-Met de volgende code wordt de gedetecteerde categorie van de afbeelding opgehaald. Zie [Afbeeldingen categoriseren](../../concept-categorizing-images.md) voor meer informatie.
-
-[!code-python[](~/cognitive-services-quickstart-code/python/ComputerVision/ComputerVisionQuickstart.py?name=snippet_categorize)]
-
-### <a name="get-image-tags"></a>Afbeeldingstags ophalen
-
-Met de volgende code wordt de set met gedetecteerde tags in de afbeelding opgehaald. Zie [Inhoudstags](../../concept-tagging-images.md) voor meer informatie.
-
-[!code-python[](~/cognitive-services-quickstart-code/python/ComputerVision/ComputerVisionQuickstart.py?name=snippet_tags)]
-
-### <a name="detect-objects"></a>Objecten detecteren
-
-Met de volgende code worden algemene objecten in de afbeelding gedetecteerd en worden deze in de console afgedrukt. Zie [Objectdetectie](../../concept-object-detection.md) voor meer informatie.
-
-[!code-python[](~/cognitive-services-quickstart-code/python/ComputerVision/ComputerVisionQuickstart.py?name=snippet_objects)]        
-
-### <a name="detect-brands"></a>Merken detecteren
-
-Met de volgende code worden bedrijfsmerken en -logo's in de afbeelding gedetecteerd en worden deze in de console afgedrukt. Zie [Merkdetectie](../../concept-brand-detection.md) voor meer informatie.
-
-[!code-python[](~/cognitive-services-quickstart-code/python/ComputerVision/ComputerVisionQuickstart.py?name=snippet_brands)]
-
-### <a name="detect-faces"></a>Gezichten detecteren
-
-Met de volgende code worden de gedetecteerde gezichten in de afbeelding met hun rechthoekcoördinaten als resultaat gegeven en worden gezichtskenmerken geselecteerd. Zie [Gezichtsdetectie](../../concept-detecting-faces.md) voor meer informatie.
-
-[!code-python[](~/cognitive-services-quickstart-code/python/ComputerVision/ComputerVisionQuickstart.py?name=snippet_faces)]
-
-### <a name="detect-adult-racy-or-gory-content"></a>Inhoud voor volwassenen, of ongepaste of bloederige inhoud detecteren
-
-Met de volgende code wordt de gedetecteerde aanwezigheid van inhoud voor volwassenen afgedrukt in de afbeelding. Zie [Inhoud voor volwassenen, of ongepaste, bloederige inhoud](../../concept-detecting-adult-content.md) voor meer informatie.
-
-[!code-python[](~/cognitive-services-quickstart-code/python/ComputerVision/ComputerVisionQuickstart.py?name=snippet_adult)]
-
-### <a name="get-image-color-scheme"></a>Kleurenschema van de afbeelding ophalen
-
-Met de volgende code worden de gedetecteerde kleurkenmerken in de afbeelding afgedrukt, zoals de dominante kleuren en accentkleur. Zie [Kleurenschema's](../../concept-detecting-color-schemes.md) voor meer informatie.
-
-[!code-python[](~/cognitive-services-quickstart-code/python/ComputerVision/ComputerVisionQuickstart.py?name=snippet_color)]
-
-### <a name="get-domain-specific-content"></a>Domeinspecifieke inhoud ophalen
-
-Computer Vision kan een speciaal model gebruiken om verdere analyse van afbeeldingen uit te voeren. Zie [Domeinspecifieke inhoud](../../concept-detecting-domain-content.md) voor meer informatie. 
-
-Met de volgende code worden gegevens over gedetecteerde beroemdheden in de afbeelding geparseerd.
-
-[!code-python[](~/cognitive-services-quickstart-code/python/ComputerVision/ComputerVisionQuickstart.py?name=snippet_celebs)]
-
-Met de volgende code worden gegevens over gedetecteerde bezienswaardigheden in de afbeelding geparseerd.
-
-[!code-python[](~/cognitive-services-quickstart-code/python/ComputerVision/ComputerVisionQuickstart.py?name=snippet_landmarks)]
-
-### <a name="get-the-image-type"></a>Het afbeeldingstype ophalen
-
-Met de volgende code wordt informatie over het type afbeelding afgedrukt&mdash;, of het een illustratie of lijntekening is.
-
-[!code-python[](~/cognitive-services-quickstart-code/python/ComputerVision/ComputerVisionQuickstart.py?name=snippet_type)]
-
-> [!div class="nextstepaction"]
-> [Ik heb een afbeelding geanalyseerd](?success=analyze-image#read-printed-and-handwritten-text) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Python&Section=analyze-image)
+> [Ik heb de client geverifieerd](?success=authenticate-client#read-printed-and-handwritten-text) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Python&Section=authenticate-client)
 
 ## <a name="read-printed-and-handwritten-text"></a>Afgedrukte en handgeschreven tekst lezen
 
-Computer Vision kan zichtbare tekst in een afbeelding lezen en deze converteren naar een tekenstroom. Dit doet u in twee delen.
+De OCR-service kan zicht bare tekst in een afbeelding lezen en deze converteren naar een teken stroom. Dit doet u in twee delen.
 
 ### <a name="call-the-read-api"></a>De Read-API aanroepen
 
@@ -222,10 +140,10 @@ Als u een Cognitive Services-abonnement wilt opschonen en verwijderen, kunt u de
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze quickstart hebt u geleerd hoe u de Computer Vision-bibliotheek voor Python kunt gebruiken om basistaken uit te voeren. Bestudeer daarna het naslagmateriaal bij de Face-API voor meer informatie.
+In deze Quick Start hebt u geleerd hoe u de OCR-bibliotheek voor python kunt gebruiken om basis taken uit te voeren. Bestudeer daarna het naslagmateriaal bij de Face-API voor meer informatie.
 
 > [!div class="nextstepaction"]
->[Referentie voor de Computer Vision-API (Python)](/python/api/azure-cognitiveservices-vision-computervision/azure.cognitiveservices.vision.computervision)
+>[OCR API-verwijzing (python)](/python/api/azure-cognitiveservices-vision-computervision/azure.cognitiveservices.vision.computervision)
 
-* [Wat is Computer Vision?](../../overview.md)
+* [Overzicht van OCR](../../overview-ocr.md)
 * De broncode voor dit voorbeeld is te vinden op [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/ComputerVision/ComputerVisionQuickstart.py).

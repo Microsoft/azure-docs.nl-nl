@@ -12,16 +12,16 @@ ms.date: 10/29/2019
 ms.author: kenwith
 ms.reviewer: luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 95d89ea0cbc7d1e0379a9cbfce40f11d4f8ac93f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e01a3b1538c6bf3030e5c8f129606adaecffda60
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101643759"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107105320"
 ---
-# <a name="configure-the-admin-consent-workflow-preview"></a>De beheerder toestemming werk stroom configureren (preview-versie)
+# <a name="configure-the-admin-consent-workflow"></a>De beheerder toestemming werk stroom configureren
 
-In dit artikel wordt beschreven hoe u de functie voor het beheer van toestemming werk stroom (preview) inschakelt, waarmee eind gebruikers toegang kunnen aanvragen tot toepassingen waarvoor beheerders toestemming nodig is.
+In dit artikel wordt beschreven hoe u de werk stroom functie voor het beheer van toestemming inschakelt, waarmee eind gebruikers toegang kunnen vragen tot toepassingen waarvoor beheerders toestemming nodig is.
 
 Zonder een beheerder toestemming werk stroom, een gebruiker in een Tenant waarbij toestemming van de gebruiker is uitgeschakeld, wordt geblokkeerd wanneer ze proberen toegang te krijgen tot apps die machtigingen nodig hebben om toegang te krijgen tot de organisatie gegevens. De gebruiker ziet een algemeen fout bericht met de melding dat ze niet zijn gemachtigd om toegang te krijgen tot de app en ze moeten hun beheerder vragen om hulp. Maar vaak is de gebruiker niet bekend met wie u contact moet opnemen, zodat ze een nieuw lokaal account in de toepassing kunnen opgeven of maken. Zelfs wanneer een beheerder een melding krijgt, is er geen gestroomlijnd proces om de beheerder te helpen bij het verlenen van toegang en het melden van de gebruikers.
  
@@ -38,7 +38,7 @@ De beheerder toestemming werk stroom inschakelen en revisoren kiezen:
 3. In het zoekvak filteren typt u '**Azure Active Directory**' en selecteert u **het Azure Active Directory** item.
 4. Klik in het navigatie menu op **bedrijfs toepassingen**. 
 5. Selecteer onder **beheren** de optie **gebruikers instellingen**.
-6. Stel gebruikers in het geval van **beheerders toestemming (preview)** in om de toestemming van de **beheerder in te stellen voor apps die niet kunnen worden geinstemming** met **Ja**.
+6. Stel gebruikers in het geval van **beheerders toestemming aanvragen** in **om de beheerder in te stellen om toestemming te vragen aan apps die niet mogen instemmen** op **Ja**.
 
    ![Werk stroom instellingen voor de beheerder toestemming configureren](media/configure-admin-consent-workflow/admin-consent-requests-settings.png)
  
@@ -78,7 +78,7 @@ De beheerders toestemmings aanvragen controleren en actie ondernemen:
 2. Selecteer **alle services** boven aan het navigatie menu aan de linkerkant. De **uitbrei ding Azure Active Directory** wordt geopend.
 3. In het zoekvak filteren typt u '**Azure Active Directory**' en selecteert u het **Azure Active Directory** item.
 4. Klik in het navigatie menu op **bedrijfs toepassingen**.
-5. Selecteer onder **activiteit** de optie **beheerders toestemming aanvragen (preview)**.
+5. Selecteer onder **activiteit** de optie **beheerders toestemming aanvragen**.
 
    > [!NOTE]
    > Revisoren krijgen alleen beheerders aanvragen te zien die zijn gemaakt nadat ze zijn aangewezen als revisor.
@@ -112,11 +112,7 @@ Aanvragers ontvangen e-mail meldingen wanneer:
  
 ## <a name="audit-logs"></a>Auditlogboeken 
  
-In de onderstaande tabel ziet u een overzicht van de scenario's en controle waarden die beschikbaar zijn voor de beheerder toestemming werk stroom. 
-
-> [!NOTE]
-> De gebruikers context van de audit actor ontbreekt momenteel in alle scenario's. Dit is een bekende beperking in de preview-versie.
-
+In de onderstaande tabel ziet u een overzicht van de scenario's en controle waarden die beschikbaar zijn voor de beheerder toestemming werk stroom.
 
 |Scenario  |Audit service  |Controlecategorie  |Controle activiteit  |Actor controleren  |Beperkingen van het controle logboek  |
 |---------|---------|---------|---------|---------|---------|

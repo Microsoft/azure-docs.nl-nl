@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 03/15/2021
 ms.author: v-erkel
-ms.openlocfilehash: afb896100ea60c21aaf37890d7b520bf38c6ce18
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 44b2534d7aeb12f4819a6c42cfb29d057ce26ddc
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104772719"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107259027"
 ---
 # <a name="add-storage-targets"></a>Opslagdoelen toevoegen
 
@@ -314,6 +314,8 @@ ADLS-NFS-opslag doelen hebben een aantal overeenkomsten met Blob Storage-doelen 
 
 Voordat u een ADLS-NFS-opslag doel kunt maken, moet u een opslag account voor NFS maken. Volg de tips in [vereisten voor Azure HPC-cache](hpc-cache-prerequisites.md#nfs-mounted-blob-adls-nfs-storage-requirements-preview) en de instructies in [Blob Storage koppelen met behulp van NFS](../storage/blobs/network-file-system-protocol-support-how-to.md). Nadat uw opslag account is ingesteld, kunt u een nieuwe container maken wanneer u het opslag doel maakt.
 
+Lees met [NFS gekoppelde Blob-opslag met Azure HPC cache](nfs-blob-considerations.md) voor meer informatie over deze configuratie.
+
 Als u een ADLS-NFS-opslag doel wilt maken, opent u de pagina **opslag doel toevoegen** in de Azure Portal. (Aanvullende methoden zijn in ontwikkeling.)
 
 ![Scherm afbeelding van de pagina opslag doel toevoegen met ADLS-NFS-doel gedefinieerd](media/add-adls-target.png)
@@ -331,8 +333,6 @@ Voer deze informatie in.
 * **Gebruiks model** : Kies een van de profielen voor het opslaan van gegevens op basis van uw werk stroom, zoals wordt beschreven in [een gebruiks model selecteren](#choose-a-usage-model) hierboven.
 
 Wanneer u klaar bent, klikt u op **OK** om het opslag doel toe te voegen.
-
-<!-- **** -->
 
 ## <a name="view-storage-targets"></a>Opslag doelen weer geven
 

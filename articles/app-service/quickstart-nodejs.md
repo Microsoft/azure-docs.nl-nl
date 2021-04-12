@@ -10,12 +10,12 @@ adobe-target: true
 adobe-target-activity: DocsExp–386541–A/B–Enhanced-Readability-Quickstarts–2.19.2021
 adobe-target-experience: Experience B
 adobe-target-content: ./quickstart-nodejs-uiex
-ms.openlocfilehash: 6c6f0543dcfbecd16ba4176272f928ffd0eb54de
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 3b1ff02d6a9b3e8c7b7abaf1b185a9becd2be12b
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101735111"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107105830"
 ---
 # <a name="create-a-nodejs-web-app-in-azure"></a>Een Node.js-web-app maken in Azure
 
@@ -313,11 +313,11 @@ U kunt wijzigingen in deze app implementeren met behulp van hetzelfde proces. Al
 
 In deze sectie leert u hoe u de logboeken kunt weergeven vanuit de actieve App Service-app. Alle aanroepen naar `console.log` in de app worden weergegeven in het uitvoervenster van Visual Studio Code.
 
-Ga naar de app in de verkenner van **AZURE APP SERVICE**, klik met de rechtermuisknop op de app, en kies **Streaminglogboeken weergeven**.
+Zoek de app in de **Azure app service** Explorer, klik met de rechter muisknop op de app en kies **streaming-Logboeken starten**.
 
 Het uitvoervenster van VS Code wordt geopend met een verbinding naar de logboekstroom.
 
-![Streaminglogboeken weergeven](./media/quickstart-nodejs/view-logs.png)
+![Streaminglogboeken starten](./media/quickstart-nodejs/view-logs.png)
 
 :::image type="content" source="./media/quickstart-nodejs/enable-restart.png" alt-text="Schermopname van de VS Code-prompt om logboekregistratie voor bestanden in te schakelen en de web-app opnieuw te starten, waarbij de knop Ja is geselecteerd.":::
 

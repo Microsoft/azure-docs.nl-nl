@@ -1,5 +1,5 @@
 ---
-title: Uw domein koppelen aan uw gedecentraliseerde id (voor beeld) (preview)
+title: Uw domein koppelen aan uw gedecentraliseerde id (preview)-Azure Active Directory verifieer bare referenties
 description: Meer informatie over DNS-binding?
 documentationCenter: ''
 author: barclayn
@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.subservice: verifiable-credentials
 ms.date: 04/01/2021
 ms.author: barclayn
-ms.openlocfilehash: be7db16a8e3a827d08c0db637961bf004af1d621
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: 90ea52b0ed5ee2d8e36caab18491eecd6e1295fd
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106170027"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106222812"
 ---
 # <a name="link-your-domain-to-your-decentralized-identifier-did"></a>Uw domein koppelen aan uw gedecentraliseerde id (gelukt)
 

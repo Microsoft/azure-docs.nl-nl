@@ -7,12 +7,12 @@ ms.date: 05/12/2020
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 257855b4f7b1fae56ed8d6a063acfb0588da9b6a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: af6adcf408c9790b09830e986cd1cac00774a2ec
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92123317"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106491930"
 ---
 # <a name="use-workflows-to-integrate-your-azure-iot-central-application-with-other-cloud-services"></a>Werk stromen gebruiken om uw Azure IoT Central-toepassing te integreren met andere Cloud Services
 
@@ -85,7 +85,7 @@ De volgende lijst bevat alle beschik bare IoT Central acties in de **Azure IOT C
 
 Gebruik deze actie om een apparaat in uw IoT Central-toepassing te maken of bij te werken.
 
-| Veld | Description |
+| Veld | Beschrijving |
 | ----- | ----------- |
 | Toepassing | Kies uit de lijst met IoT Central toepassingen. |
 | Apparaat | De unieke ID van het apparaat dat moet worden gemaakt of bijgewerkt. |
@@ -99,7 +99,7 @@ Gebruik deze actie om een apparaat in uw IoT Central-toepassing te maken of bij 
 
 Gebruik deze actie om een apparaat te verwijderen uit uw IoT Central-toepassing.
 
-| Veld | Description |
+| Veld | Beschrijving |
 | ----- | ----------- |
 | Toepassing | Kies uit de lijst met IoT Central toepassingen. |
 | Apparaat | De unieke ID van het apparaat dat moet worden verwijderd. |
@@ -108,7 +108,7 @@ Gebruik deze actie om een apparaat te verwijderen uit uw IoT Central-toepassing.
 
 Gebruik deze actie om een opdracht uit te voeren die is gedefinieerd in een van de interfaces van het apparaat.
 
-| Veld | Description |
+| Veld | Beschrijving |
 | ----- | ----------- |
 | Toepassing | Kies uit de lijst met IoT Central toepassingen. |
 | Apparaat | De unieke ID van het apparaat dat moet worden verwijderd. |
@@ -124,7 +124,7 @@ Gebruik deze actie om een opdracht uit te voeren die is gedefinieerd in een van 
 
 Gebruik deze actie om de details van het apparaat op te halen.
 
-| Veld | Description |
+| Veld | Beschrijving |
 | ----- | ----------- |
 | Toepassing | Kies uit de lijst met IoT Central toepassingen. |
 | Apparaat | De unieke ID van het apparaat dat moet worden verwijderd. |
@@ -135,7 +135,7 @@ U kunt de geretourneerde Details in de dynamische expressies in andere acties ge
 
 Gebruik deze actie om de waarden van de Cloud eigenschappen voor een specifiek apparaat op te halen.
 
-| Veld | Description |
+| Veld | Beschrijving |
 | ----- | ----------- |
 | Toepassing | Kies uit de lijst met IoT Central toepassingen. |
 | Apparaat | De unieke ID van het apparaat dat moet worden verwijderd. |
@@ -147,7 +147,7 @@ U kunt de geretourneerde waarden van de Cloud eigenschap in de dynamische expres
 
 Gebruik deze actie om de eigenschaps waarden voor een specifiek apparaat op te halen.
 
-| Veld | Description |
+| Veld | Beschrijving |
 | ----- | ----------- |
 | Toepassing | Kies uit de lijst met IoT Central toepassingen. |
 | Apparaat | De unieke ID van het apparaat dat moet worden verwijderd. |
@@ -159,7 +159,7 @@ U kunt de geretourneerde eigenschaps waarden in de dynamische expressies in ande
 
 Gebruik deze actie om de telemetrie-waarden voor een specifiek apparaat op te halen.
 
-| Veld | Description |
+| Veld | Beschrijving |
 | ----- | ----------- |
 | Toepassing | Kies uit de lijst met IoT Central toepassingen. |
 | Apparaat | De unieke ID van het apparaat dat moet worden verwijderd. |
@@ -171,7 +171,7 @@ U kunt de geretourneerde telemetrie-waarden in de dynamische expressies in ander
 
 Gebruik deze actie om waarden van de Cloud eigenschappen voor een specifiek apparaat bij te werken.
 
-| Veld | Description |
+| Veld | Beschrijving |
 | ----- | ----------- |
 | Toepassing | Kies uit de lijst met IoT Central toepassingen. |
 | Apparaat | De unieke ID van het apparaat dat moet worden verwijderd. |
@@ -180,14 +180,14 @@ Gebruik deze actie om waarden van de Cloud eigenschappen voor een specifiek appa
 
 ### <a name="update-device-properties"></a>Apparaateigenschappen bijwerken
 
-Gebruik deze actie om Beschrijf bare eigenschaps waarden voor een specifiek apparaat bij te werken.
+Gebruik deze actie om de Beschrijf bare eigenschaps waarden voor een specifiek apparaat bij te werken.
 
-| Veld | Description |
+| Veld | Beschrijving |
 | ----- | ----------- |
 | Toepassing | Kies uit de lijst met IoT Central toepassingen. |
 | Apparaat | De unieke ID van het apparaat dat moet worden verwijderd. |
 | Apparaatsjabloon | Kies uit de lijst met apparaatprofielen in uw IoT Central-toepassing. |
-| Beschrijf bare eigenschappen | Nadat u een sjabloon hebt gekozen, wordt er een veld toegevoegd voor elke Beschrijf bare eigenschap die in de sjabloon is gedefinieerd. |
+| Beschrijf bare eigenschappen | Nadat u een apparaataccount hebt gekozen, wordt er een veld toegevoegd voor elke schrijf bare eigenschap die in de sjabloon is gedefinieerd. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

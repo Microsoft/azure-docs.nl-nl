@@ -7,14 +7,14 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 03/07/2021
+ms.date: 04/05/2021
 ms.author: banders
-ms.openlocfilehash: e7f5370e1e387947d196959fef31043ea8f4d3bd
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: d348eeb5cc789665d7e7004523b9feba0ea6e413
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102508517"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106490553"
 ---
 # <a name="assign-roles-to-azure-enterprise-agreement-service-principal-names"></a>Rollen toewijzen aan Azure Enterprise Overeenkomst service principal names
 
@@ -62,12 +62,14 @@ Voor de volgende stappen geeft u machtigingen voor de Azure AD-app om acties uit
 | Rol | Acties toegestaan | Roldefinitie-ID |
 | --- | --- | --- |
 | EnrollmentReader | Het gebruik en de kosten voor alle accounts en abonnementen kunnen worden weer gegeven. Kan de Azure-voor uitbetaling (eerder de monetaire toezeg ging) saldo van de inschrijving bekijken. | 24f8edb6-1668-4659-b5e2-40bb5f3a7d7e |
+| EA-inkoper | Reserverings orders aanschaffen en reserverings transacties weer geven. Het gebruik en de kosten voor alle accounts en abonnementen kunnen worden weer gegeven. Kan de Azure-voor uitbetaling (eerder de monetaire toezeg ging) saldo van de inschrijving bekijken. | da6647fb-7651-49ee-be91-c43c4877f0c4  |
 | DepartmentReader | Down load de gebruiks gegevens voor de afdeling die ze beheert. Kan het gebruik en de kosten weer geven die aan hun afdeling zijn gekoppeld. | db609904-a47f-4794-9be8-9bd86fbffd8a |
 | SubscriptionCreator | Nieuwe abonnementen maken in het opgegeven bereik van het account. | a0bcee42-bf30-4d1b-926a-48d21664ef71 |
 
 - Een registratie lezer kan alleen worden toegewezen aan een SPN door een gebruiker met de rol van inschrijvings schrijver.
 - Een afdelings lezer kan alleen worden toegewezen aan een SPN door een gebruiker met de rol van inschrijvings schrijver of afdelings schrijver.
-- Een maker van een abonnement kan alleen worden toegewezen aan een SPN door een gebruiker die de account eigenaar van het inschrijvings account is.
+- Een maker van een abonnement kan alleen worden toegewezen aan een SPN door een gebruiker die de account eigenaar van het inschrijvings account is. De rol wordt niet weer gegeven in de EA-Portal. Het wordt alleen gemaakt met behulp van programmatische en alleen voor programmatisch gebruik.
+- De rol EA inkoper wordt niet weer gegeven in de EA-Portal. Het wordt alleen gemaakt met behulp van programmatische en alleen voor programmatisch gebruik.
 
 ## <a name="assign-enrollment-account-role-permission-to-the-spn"></a>Een machtiging voor de rol inschrijvings account toewijzen aan de SPN
 
@@ -120,6 +122,14 @@ Selecteer **uitvoeren** om de opdracht te starten.
 Er `200 OK` wordt een antwoord weer gegeven dat de SPN is toegevoegd.
 
 U kunt nu de SPN (Azure AD-app met de object-ID) gebruiken om op een geautomatiseerde manier toegang te krijgen tot EA-Api's. De SPN heeft de EnrollmentReader-rol.
+
+## <a name="assign-ea-purchaser-role-permission-to-the-spn"></a>Machtiging voor EA-inkoper toewijzen aan de SPN 
+
+Voor de rol EA inkoper gebruikt u dezelfde stappen voor de registratie lezer. Geef het `roleDefinitionId` op in het volgende voor beeld.
+
+`"/providers/Microsoft.Billing/billingAccounts/1111111/billingRoleDefinitions/ da6647fb-7651-49ee-be91-c43c4877f0c4"`
+
+ 
 
 ## <a name="assign-the-department-reader-role-to-the-spn"></a>De rol van de afdelings lezer toewijzen aan de SPN
 

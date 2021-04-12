@@ -12,12 +12,12 @@ ms.date: 02/16/2021
 ms.author: mbullwin
 keywords: afwijkingsdetectie, machine learning, algoritmes
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: ad3bd1eed6e5e7efb783c4a40958e16c3ca23691
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 3bfa30cc5d3d57cfcd2677bb4b2719061541d5a9
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100572076"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106278861"
 ---
 # <a name="what-is-the-anomaly-detector-api"></a>Wat is de Anomaly Detector-API?
 
@@ -28,6 +28,12 @@ Met de Anomaly Detector API kunt u afwijkingen in uw tijdreeksgegevens bewaken e
 ![Detectiepatroonwijzigingen in serviceaanvragen](./media/anomaly_detection2.png)
 
 Voor het gebruik van Anomaly Detector is geen ervaring met machine learning vereist. Met de RESTful-API kunt u de service eenvoudig integreren in uw toepassingen en processen.
+
+Deze documentatie bevat de volgende typen artikelen:
+* In de [Quick](./Quickstarts/client-libraries.md) starts vindt u stapsgewijze instructies voor het aanroepen van de service en het verkrijgen van resultaten in korte tijd. 
+* De [hand leidingen](./how-to/identify-anomalies.md) bevatten instructies voor het gebruik van de service op meer specifieke of aangepaste manieren.
+* De [conceptuele artikelen](./concepts/anomaly-detection-best-practices.md) bevatten gedetailleerde uitleg over de functionaliteit en functies van de service.
+* De [zelf studies](./tutorials/batch-anomaly-detection-powerbi.md) zijn meer gidsen die laten zien hoe u deze service kunt gebruiken als onderdeel in bredere zakelijke oplossingen.
 
 ## <a name="features"></a>Functies
 

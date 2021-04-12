@@ -1,18 +1,18 @@
 ---
 title: Alleen stateless knooppunt typen implementeren in een Service Fabric cluster
-description: Meer informatie over het maken en implementeren van stateless knooppunt typen in het Azure service Fabric-cluster.
+description: Meer informatie over het maken en implementeren van stateless knooppunt typen in azure Service Fabric cluster.
 author: peterpogorski
 ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: pepogors
-ms.openlocfilehash: eb19005019a6e4e878f6b0bd6a145048d4a2804c
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 74680f7b56ad98851e2839b53c1f9e92b6c6c23a
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103563773"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107030005"
 ---
-# <a name="deploy-an-azure-service-fabric-cluster-with-stateless-only-node-types-preview"></a>Een Azure Service Fabric-cluster implementeren met stateless knooppunt typen (preview-versie)
+# <a name="deploy-an-azure-service-fabric-cluster-with-stateless-only-node-types"></a>Een Azure Service Fabric-cluster implementeren met stateless knooppunt typen
 Service Fabric knooppunt typen worden geleverd met inherente veronderstelling dat op een bepaald moment stateful Services kunnen worden geplaatst op de knoop punten. Stateless knooppunt typen versoepelen deze veronderstelling voor een knooppunt type, waardoor het knooppunt type ook andere functies kan gebruiken, zoals het snel uitbreiden van bewerkingen, ondersteuning voor automatische upgrades van besturings systemen op Bronze duurzaamheid en uitschalen naar meer dan 100 knoop punten in één virtuele-machine schaalset.
 
 * Primaire knooppunt typen kunnen niet stateless worden geconfigureerd
@@ -23,7 +23,7 @@ Service Fabric knooppunt typen worden geleverd met inherente veronderstelling da
 Er zijn voorbeeld sjablonen beschikbaar: [service Fabric sjabloon voor stateless knooppunt typen](https://github.com/Azure-Samples/service-fabric-cluster-templates)
 
 ## <a name="enabling-stateless-node-types-in-service-fabric-cluster"></a>Stateless knooppunt typen in Service Fabric cluster inschakelen
-Als u een of meer knooppunt typen als stateless wilt instellen in een cluster bron, stelt u de eigenschap **isStateless** in op ' True '. Als u een Service Fabric cluster met stateless knooppunt typen implementeert, moet u Mini maal één primair knooppunt type hebben in de cluster bron.
+Als u een of meer knooppunt typen als stateless wilt instellen in een cluster bron, stelt u de eigenschap **isStateless** in op **True**. Als u een Service Fabric cluster met stateless knooppunt typen implementeert, moet u Mini maal één primair knooppunt type hebben in de cluster bron.
 
 * De Service Fabric cluster resource apiVersion moet 2020-12-01-preview of hoger zijn.
 
@@ -44,7 +44,7 @@ Als u een of meer knooppunt typen als stateless wilt instellen in een cluster br
         },
         "httpGatewayEndpointPort": "[parameters('nt0fabricHttpGatewayPort')]",
         "isPrimary": true,
-        "isStateless": false,
+        "isStateless": false, // Primary Node Types cannot be stateless
         "vmInstanceCount": "[parameters('nt0InstanceCount')]"
     },
     {
@@ -72,16 +72,15 @@ Als u een of meer knooppunt typen als stateless wilt instellen in een cluster br
 Als u stateless knooppunt typen wilt inschakelen, moet u de onderliggende resource van de virtuele-machine schaalset op de volgende manier configureren:
 
 * De waarde van de eigenschap  **singlePlacementGroup** , die moet worden ingesteld op **False** als u wilt schalen naar meer dan 100 vm's.
-* De **upgrade Policy** - **modus** van de schaalset moet worden ingesteld op **Rolling**.
+* De **upgrade mode ingesteld** van de schaalset moet worden ingesteld op **Rolling**.
 * Voor de modus voor rolling upgrades is een configuratie van een toepassings status of status controles vereist. Configureer de status test met de standaard configuratie voor stateless knooppunt typen, zoals hieronder wordt voorgesteld. Zodra toepassingen zijn geïmplementeerd naar het knooppunt type, kunnen de poorten voor status controle en status worden gewijzigd om de status van de toepassing te bewaken.
 
 >[!NOTE]
-> Het is vereist dat het aantal platform fout domeinen wordt bijgewerkt naar 5 wanneer een stateless knooppunt type wordt ondersteund door een schaalset voor virtuele machines die meerdere zones beslaat. Raadpleeg deze [sjabloon](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/15-VM-2-NodeTypes-Windows-Stateless-CrossAZ-Secure) voor meer informatie.
-> 
-> **platformFaultDomainCount: 5**
+> Wanneer u automatisch schalen met stateless nodetypes gebruikt, wordt de status van het knoop punt na de bewerking omlaag geschaald. Als u de NodeState van de knoop punten wilt opschonen tijdens het automatisch schalen, wordt u aangeraden [service Fabric AutoScale-helper](https://github.com/Azure/service-fabric-autoscale-helper) te gebruiken.
+
 ```json
 {
-    "apiVersion": "2018-10-01",
+    "apiVersion": "2019-03-01",
     "type": "Microsoft.Compute/virtualMachineScaleSets",
     "name": "[parameters('vmNodeType1Name')]",
     "location": "[parameters('computeLocation')]",
@@ -92,8 +91,9 @@ Als u stateless knooppunt typen wilt inschakelen, moet u de onderliggende resour
           "automaticOSUpgradePolicy": {
             "enableAutomaticOSUpgrade": true
           }
-        }
-    }
+        },
+        "platformFaultDomainCount": 5
+    },
     "virtualMachineProfile": {
     "extensionProfile": {
     "extensions": [
@@ -136,6 +136,18 @@ Als u stateless knooppunt typen wilt inschakelen, moet u de onderliggende resour
     ]
 }
 ```
+
+## <a name="configuring-stateless-node-types-with-multiple-availability-zones"></a>Stateless knooppunt typen met meerdere Beschikbaarheidszones configureren
+Als u stateless NodeType-spanning voor meerdere beschikbaarheids zones wilt [configureren, volgt u de onderstaande documentatie](https://docs.microsoft.com/azure/service-fabric/service-fabric-cross-availability-zones#preview-enable-multiple-availability-zones-in-single-virtual-machine-scale-set), samen met de paar wijzigingen:
+
+* Stel **singlePlacementGroup** :  **False**  in als meerdere plaatsings groepen moeten worden ingeschakeld.
+* Set  **upgrade mode ingesteld** : **Rolling**   en toevoegen van de status uitbreiding/Health-tests van de toepassing zoals hierboven wordt vermeld.
+* Stel **platformFaultDomainCount** : **5** in voor de schaalset van de virtuele machine.
+
+>[!NOTE]
+> Onafhankelijk van de VMSSZonalUpgradeMode die in het cluster zijn geconfigureerd, worden updates voor virtuele-machine schaal sets altijd opeenvolgend op één beschikbaarheids zone uitgevoerd voor het stateless NodeType dat meerdere zones omvat, omdat deze de rolling upgrade modus gebruikt.
+
+Zie voor naslag informatie de [sjabloon](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/15-VM-2-NodeTypes-Windows-Stateless-CrossAZ-Secure) voor het configureren van stateless knooppunt typen met meerdere Beschikbaarheidszones
 
 ## <a name="networking-requirements"></a>Netwerkvereisten
 ### <a name="public-ip-and-load-balancer-resource"></a>Openbaar IP-adres en Load Balancer bron
@@ -184,7 +196,7 @@ Als u wilt schalen naar meer dan 100 Vm's in een resource met een schaalset voor
 ```
 
 >[!NOTE]
-> Het is niet mogelijk om een in-place wijziging van de SKU in het open bare IP-adres en load balancer resources uit te voeren. Zie de sectie migratie in dit artikel als u migreert van bestaande resources die een basis-SKU hebben.
+> Het is niet mogelijk om een in-place wijziging van de SKU in het open bare IP-adres en load balancer resources uit te voeren. 
 
 ### <a name="virtual-machine-scale-set-nat-rules"></a>NAT-regels voor schaal sets voor virtuele machines
 De load balancer binnenkomende NAT-regels moeten overeenkomen met de NAT-groepen van de virtuele-machine schaalset. Elke schaalset voor virtuele machines moet een unieke binnenkomende NAT-groep hebben.
@@ -243,7 +255,7 @@ Standard Load Balancer en standaard open bare IP introduceren nieuwe mogelijkhed
 
 
 
-### <a name="migrate-to-using-stateless-node-types-from-a-cluster-using-a-basic-sku-load-balancer-and-a-basic-sku-ip"></a>Migreer naar met stateless knooppunt typen vanuit een cluster met behulp van een basis SKU Load Balancer en een basis-SKU-IP
+## <a name="migrate-to-using-stateless-node-types-in-a-cluster"></a>Migreren naar met stateless knooppunt typen in een cluster
 Voor alle migratie scenario's moet een nieuw stateless knoop punt type worden toegevoegd. Bestaande knooppunt typen kunnen niet worden gemigreerd als alleen stateless.
 
 Als u een cluster wilt migreren dat gebruikmaakt van een Load Balancer en IP met een basis-SKU, moet u eerst een volledig nieuwe Load Balancer en IP-bron maken met behulp van de standaard-SKU. Het is niet mogelijk om deze resources in-place bij te werken.
@@ -256,9 +268,6 @@ U moet de nieuwe resources toevoegen aan uw bestaande resource manager-sjabloon 
 * Een NSG waarnaar wordt verwezen door het subnet waarin u de schaal sets voor virtuele machines implementeert.
 
 Zodra de implementatie van de resources is voltooid, kunt u beginnen met het uitschakelen van de knoop punten in het knooppunt type dat u uit het oorspronkelijke cluster wilt verwijderen.
-
->[!NOTE]
-> Bij het gebruik van automatisch schalen met stateless nodetypes met Bronze duurzaamheid, nadat de bewerking is geschaald, wordt de status van het knoop punt niet automatisch opgeschoond. Als u de NodeState van de knoop punten wilt opschonen tijdens het automatisch schalen, wordt u aangeraden [service Fabric AutoScale-helper](https://github.com/Azure/service-fabric-autoscale-helper) te gebruiken.
 
 ## <a name="next-steps"></a>Volgende stappen 
 * [Reliable Services](service-fabric-reliable-services-introduction.md)

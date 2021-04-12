@@ -32,6 +32,8 @@
     - name: Een beleid toewijzen - ARM-sjabloon
       displayName: 'assign, compliance, resource manager'
       href: ./assign-policy-template.md
+    - name: Een beleid toewijzen-Bicep
+      href: ./assign-policy-bicep.md
     - name: Een beleid toewijzen - Terraform
       displayName: 'assign, compliance, hcl, provider'
       href: ./assign-policy-terraform.md

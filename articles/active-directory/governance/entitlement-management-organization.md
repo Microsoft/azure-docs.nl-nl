@@ -16,12 +16,12 @@ ms.date: 12/11/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8f08c25749bbd21e3624dee898d9a8c97fd74164
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7b6a1ead2fe3c1ec4e2206d1ffbaea4e5ec57433
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98059378"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106222518"
 ---
 # <a name="add-a-connected-organization-in-azure-ad-entitlement-management"></a>Een verbonden organisatie toevoegen in het beheer van rechten van Azure AD
 
@@ -42,7 +42,7 @@ Stel bijvoorbeeld dat u werkt met de Woodgrove Bank en u wilt samen werken met t
 - Grafisch ontwerp Institute maakt gebruik van Azure AD en hun gebruikers hebben een user principal name dat eindigt op *graphicdesigninstitute.com*.
 - Contoso gebruikt nog geen Azure AD. Contoso-gebruikers hebben een user principal name die eindigt op *contoso.com*.
 
-In dit geval kunt u twee verbonden organisaties configureren. U maakt één verbonden organisatie voor grafisch ontwerp Institute en één voor contoso. Als u de twee verbonden organisaties vervolgens aan een beleid toevoegt, kunnen gebruikers van elke organisatie met een user principal name die overeenkomt met het beleid toegangs pakketten aanvragen. Gebruikers met een user principal name die een domein van *graphicdesigninstitute.com* hebben, moeten overeenkomen met de grafische ontwerp Institute-verbonden organisatie en kunnen aanvragen indienen. Gebruikers met een user principal name die een domein van *contoso.com* hebben, moeten overeenkomen met de contoso-verbonden organisatie en kunnen ook pakketten aanvragen. En omdat grafisch ontwerp Institute gebruikmaakt van Azure AD, kunnen gebruikers met een principal-naam die overeenkomt met een [geverifieerd domein](../fundamentals/add-custom-domain.md#verify-your-custom-domain-name) dat is toegevoegd aan hun Tenant, zoals *graphicdesigninstitute. example*, ook toegangs pakketten aanvragen met hetzelfde beleid.
+In dit geval kunt u twee verbonden organisaties configureren. U maakt één verbonden organisatie voor grafisch ontwerp Institute en één voor contoso. Als u de twee verbonden organisaties vervolgens aan een beleid toevoegt, kunnen gebruikers van elke organisatie met een user principal name die overeenkomt met het beleid toegangs pakketten aanvragen. Gebruikers met een user principal name die een domein van contoso.com hebben, moeten overeenkomen met de contoso-verbonden organisatie en kunnen ook pakketten aanvragen. Gebruikers met een user principal name die een domein van *graphicdesigninstitute.com* hebben, moeten overeenkomen met de grafische ontwerp Institute-verbonden organisatie en kunnen aanvragen indienen. En omdat grafisch ontwerp Institute gebruikmaakt van Azure AD, kunnen gebruikers met een principal-naam die overeenkomt met een [geverifieerd domein](../fundamentals/add-custom-domain.md#verify-your-custom-domain-name) dat is toegevoegd aan hun Tenant, zoals *graphicdesigninstitute. example*, ook toegangs pakketten aanvragen met hetzelfde beleid. Als u [een e-mail adres voor eenmalige authenticatie van e-mail (OTP)](../external-identities/one-time-passcode.md) hebt ingeschakeld, met inbegrip van gebruikers uit die domeinen die nog geen Azure AD-accounts hebben die worden geverifieerd met behulp van e-mail-otp bij het openen van uw resources. 
 
 ![Voor beeld van verbonden organisatie](./media/entitlement-management-organization/connected-organization-example.png)
 

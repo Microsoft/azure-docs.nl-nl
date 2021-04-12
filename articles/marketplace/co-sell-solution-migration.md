@@ -8,12 +8,12 @@ author: vamahtan
 ms.author: vamahtan
 ms.reviewer: stmummer
 ms.date: 3/04/2021
-ms.openlocfilehash: 7ffb5a3dfd23a1515c6d21784b82ccdbf0674f0e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: bb954a32a4e598c45578d4b06606bc133babb50d
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104593404"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107149"
 ---
 # <a name="migration-of-co-sell-solutions-from-ocp-gtm-to-the-commercial-marketplace"></a>Migratie van oplossingen voor co-sell van een OCP-GTM naar de commerciële Marketplace
 
@@ -32,7 +32,7 @@ Als een micro soft-partner die is inge schreven in de commerciële Marketplace, 
 Zorg ervoor dat u een actief Microsoft Partner Network lidmaatschap hebt en dat u bent Inge schreven in de commerciële Marketplace in het partner centrum.
 
 - Neem gratis lid [van](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership)de Microsoft Partner Network. Als partner hebt u toegang tot exclusieve bronnen, Program ma's, hulpprogram ma's en verbindingen om uw bedrijf uit te breiden.
-- Als u geen account hebt in commerciële Marketplace, kunt u zich [Nu inschrijven](partner-center-portal/create-account.md) om te blijven samen werken met micro soft en toegang krijgen tot de volledige publicatie.
+- Als u geen account hebt in commerciële Marketplace, kunt u zich [Nu inschrijven](create-account.md) om te blijven samen werken met micro soft en toegang krijgen tot de volledige publicatie.
 
 ## <a name="publishing-updates-for-attaining-co-sell-ready-status"></a>Updates publiceren om de status van co-selling Ready te bereiken
 
@@ -45,7 +45,7 @@ Nadat u zich hebt Inge schreven in de commerciële Marketplace, bereidt u de mig
 
 Volg deze stappen voordat u uw oplossingen importeert vanuit OCP GTM:
 
-1. Ga naar de [lijst met uitgevers](https://partner.microsoft.com/dashboard/account/v3/publishers/list)van uw bedrijf. Het bevat de account eigenaar, managers en ontwikkel aars die toegang hebben tot publiceren. Meer informatie over [gebruikers rollen van het partner centrum](./partner-center-portal/manage-account.md#define-user-roles-and-permissions).
+1. Ga naar de [lijst met uitgevers](https://partner.microsoft.com/dashboard/account/v3/publishers/list)van uw bedrijf. Het bevat de account eigenaar, managers en ontwikkel aars die toegang hebben tot publiceren. Meer informatie over [gebruikers rollen van het partner centrum](user-roles.md).
 2. Vraag een van de vermelde contact personen aan om gebruikers toe te [voegen](https://partner.microsoft.com/dashboard/account/usermanagement) aan de commerciële Marketplace als *managers* of *ontwikkel aars*, omdat alleen deze rollen oplossingen kunnen bewerken en publiceren.
 3. Werk samen met uw ontwikkel aars om uw oplossingen van uw OCP GTM-account naar de commerciële Marketplace te verplaatsen.
 4. Bepaal welk van de volgende handelingen u wilt uitvoeren:
@@ -97,7 +97,7 @@ Selecteer deze optie als u een OCP GTM-oplossing hebt die nog geen correspondere
 
     [![Het tabblad actie 1 van het migratie proces.](media/co-sell-migrate/action-1-migrate.png)](media/co-sell-migrate/action-1-migrate.png#lightbox)
 
-1. Selecteer op het tabblad **actie 2** het profiel van de [Uitgever](partner-center-portal/create-account.md) in de lijst die wordt weer gegeven. Als u geen uitgevers account hebt, maakt u er een in het [partner centrum](https://partner.microsoft.com/solutions/migration)en selecteert u dit hier.
+1. Selecteer op het tabblad **actie 2** het profiel van de [Uitgever](create-account.md) in de lijst die wordt weer gegeven. Als u geen uitgevers account hebt, maakt u er een in het [partner centrum](https://partner.microsoft.com/solutions/migration)en selecteert u dit hier.
 
     [![Het tabblad actie 2 van het migratie proces.](media/co-sell-migrate/action-2-migrate.png)](media/co-sell-migrate/action-2-migrate.png#lightbox)
 

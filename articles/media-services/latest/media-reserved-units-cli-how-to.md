@@ -8,12 +8,12 @@ ms.service: media-services
 ms.topic: how-to
 ms.date: 03/22/2021
 ms.author: inhenkel
-ms.openlocfilehash: 06c0c6333b84697415ef598d4c5e853d5c006f08
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: c5fa3aa8397ea6e13500717f035c414af8de8e3d
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104870157"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106121673"
 ---
 # <a name="how-to-scale-media-reserved-units"></a>Gereserveerde media-eenheden schalen
 
@@ -26,7 +26,7 @@ Dit artikel laat u zien hoe u gereserveerde media-eenheden (MRSs) kunt schalen v
 
 ## <a name="prerequisites"></a>Vereisten
 
-[Een Azure Media Services-account maken](./create-account-howto.md).
+[Een Azure Media Services-account maken](./account-create-how-to.md).
 
 Meer informatie over [gereserveerde media-eenheden](concept-media-reserved-units.md).
 
@@ -46,8 +46,8 @@ Er worden kosten in rekening gebracht op basis van het aantal minuten dat de ger
 
 ## <a name="next-step"></a>Volgende stap
 
-[Video's analyseren](analyze-videos-tutorial-with-api.md)
+[Video's analyseren](analyze-videos-tutorial.md)
 
 ## <a name="see-also"></a>Zie ook
 
-* [Quota en limieten](limits-quotas-constraints.md)
+* [Quota en limieten](limits-quotas-constraints-reference.md)

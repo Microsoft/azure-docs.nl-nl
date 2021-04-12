@@ -6,7 +6,7 @@
       tocHref: /legal/computer-vision
       topicHref: /azure/cognitive-services/Computer-vision/index
       items:
-        - name: Ruimtelijke Computer Vision-analyse
+        - name: Computer Vision ruimtelijke analyse
           tocHref: /legal/cognitive-services/computer-vision/
           topicHref: /azure/cognitive-services/Computer-vision/index
 - name: Azure

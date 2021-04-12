@@ -1,6 +1,6 @@
 ---
-title: Gezichten in Azure Media Services v3 API redigeren | Microsoft Docs
-description: Azure Media Services V3 biedt een voor beeld van een gezichts detectie en redactie, waarmee u een video bestand kunt verzenden, gezichten kunt detecteren en vervaging in één enkele gecombineerde Pass kunt Toep assen, of via een bewerking met twee fasen die kan worden bewerkt. In dit artikel wordt beschreven hoe u gezichten kunt redigeren met de voor instelling voor face detector in de V3 API.
+title: Gezichten zoeken en redigeren in Azure Media Services v3 API | Microsoft Docs
+description: Azure Media Services V3 biedt een voor beeld van een gezichts detectie en redactie (vervaging) waarmee u een video bestand kunt verzenden, gezichten kunt detecteren en eventueel redactie kunt Toep assen (vervagen) in één gecombineerde fase, of via een bewerking met twee fasen die kan worden bewerkt. In dit artikel wordt beschreven hoe u gezichten kunt vinden en redigeren met de voor instelling voor face detector in de V3 API.
 services: media-services
 documentationcenter: ''
 author: IngridAtMicrosoft
@@ -14,14 +14,14 @@ ms.topic: article
 ms.date: 03/25/2021
 ms.author: johndeu
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 6db93aa369366936c90446c41406eafe9ee6e414
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.openlocfilehash: 4907a81fc8cb55499fa97f2b02a3e19e7117bbbc
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105630398"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106286382"
 ---
-# <a name="redact-faces-with-the-face-detector-preset"></a>Gezichten met de voor instelling gezichts detector redigeren
+# <a name="find-and-redact-blur-faces-with-the-face-detector-preset"></a>Gezichten zoeken en redigeren (vervagen) met de voor instelling voor face detector
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
@@ -29,10 +29,11 @@ Azure Media Services v3 API bevat een voor beeld van een face-detector die schaa
 
 In dit artikel vindt u informatie over de **voor instelling face detector** en ziet u hoe u deze kunt gebruiken met Azure Media Services SDK voor .net.
 
+[!INCLUDE [regulation](../video-indexer/includes/regulation.md)]
+
 ## <a name="compliance-privacy-and-security"></a>Naleving, privacy en beveiliging
  
 Als belang rijke herinnering moet u zich houden aan alle toepasselijke wetten in het gebruik van Analytics in Azure Media Services. U moet Azure Media Services of een andere Azure-service niet gebruiken op een manier die de rechten van anderen schendt. Voordat u Video's, met inbegrip van biometrische gegevens, naar de Azure Media Services-service voor verwerking en opslag uploadt, moet u alle juiste rechten hebben, inclusief alle toepasselijke mede werkers, van de personen in de video. Voor meer informatie over naleving, privacy en beveiliging in Azure Media Services, de Azure [Cognitive Services-voor waarden](https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/). Raadpleeg de [privacyverklaring](https://privacy.microsoft.com/PrivacyStatement)van micro soft, het OST-bericht ( [Online Services-voor waarden](https://www.microsoft.com/licensing/product-licensing/products) ) en de [addendum op gegevens verwerking](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=67) ("DPA") voor meer informatie over de privacy van micro soft en het afhandelen van uw gegevens. Meer informatie over privacy, waaronder het bewaren van gegevens, verwijderen/vernietigen, is beschikbaar in de OST en [hier](../video-indexer/faq.md). Door Azure Media Services te gebruiken, gaat u akkoord met de Cognitive Services voor waarden, de OST, DPA en de privacyverklaring
-
 
 ## <a name="face-redaction-modes"></a>Modus voor redactie van gezicht
 
@@ -147,9 +148,6 @@ Voor beeld foo_IDList.txt
 In de **gecombineerde** of **de redactie** modus zijn er vijf verschillende vervagings modi waaruit u kunt kiezen via de JSON-invoer configuratie: **laag**, **med**, **hoog**, **vak** en **zwart**. Standaard wordt **med** gebruikt.
 
 Hieronder vindt u voor beelden van de vervagings typen die hieronder worden beschreven.
-
-### <a name="example-settings-for-face-detector-preset"></a>Voorbeeld instellingen voor de voor instelling face detector
-[!code-csharp[Main](../../../media-services-v3-dotnet/VideoAnalytics/FaceRedactor/Program.cs#FaceDetectorPreset)]
 
 
 #### <a name="low"></a>Beperkt

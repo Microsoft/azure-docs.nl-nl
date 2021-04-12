@@ -1,18 +1,19 @@
 ---
-title: Overwegingen voor het inrichten van Azure-bestands shares
-description: Een Azure-bestands share inrichten voor gebruik met Azure File Sync. Een gemeen schappelijk tekst blok, gedeeld via migratie documenten.
+title: bestand opnemen
+description: bestand opnemen
+services: storage
 author: fauhse
 ms.service: storage
-ms.topic: conceptual
+ms.topic: include
 ms.date: 2/20/2020
 ms.author: fauhse
-ms.subservice: files
-ms.openlocfilehash: d48baba5ee60a2bf5a4cb5e4d1ce840fce8eec43
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: include file
+ms.openlocfilehash: c003e765574d764b6653823e8554d0718ea85e0e
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "82143568"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106081080"
 ---
 Een Azure-bestands share wordt opgeslagen in de cloud in een Azure-opslag account.
 Hier volgt een andere mate van prestatie overwegingen.

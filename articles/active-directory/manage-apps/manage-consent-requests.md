@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 12/27/2019
 ms.author: kenwith
 ms.reviewer: phsignor
-ms.openlocfilehash: 189a89276d922665dd1ad0fbacc77ba499137048
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c41543cdfff4e5ffaad614f6cb7a539d78a0bdae
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99253099"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107105558"
 ---
 # <a name="managing-consent-to-applications-and-evaluating-consent-requests"></a>Het beheren van toestemming voor toepassingen en het evalueren van toestemming aanvragen
 
@@ -26,7 +26,7 @@ Nadat de toestemming van de eind gebruiker is uitgeschakeld of beperkt, zijn er 
 
 ## <a name="process-changes-and-education"></a>Proces wijzigingen en onderwijs
 
- 1. Overweeg de [beheerder toestemming werk stroom (preview)](configure-admin-consent-workflow.md) in te scha kelen, zodat gebruikers rechtstreeks vanuit het venster voor toestemming beheerder kunnen vragen.
+ 1. Overweeg de [beheerder toestemming werk stroom](configure-admin-consent-workflow.md) in te scha kelen zodat gebruikers rechtstreeks vanuit het venster voor toestemming beheerders toestemming kunnen vragen.
 
  2. Zorg ervoor dat alle beheerders inzicht hebben in het [toestemmings-en toestemmings raamwerk](../develop/consent-framework.md), hoe de [toestemming wordt gevraagd](../develop/application-consent-experience.md) en hoe [een aanvraag voor Tenant-beheerders toestemming](#evaluating-a-request-for-tenant-wide-admin-consent)moet worden geëvalueerd.
  3. Bekijk de bestaande processen van uw organisatie voor gebruikers om goed keuring van de beheerder aan te vragen voor een toepassing en breng zo nodig updates aan. Als processen worden gewijzigd:

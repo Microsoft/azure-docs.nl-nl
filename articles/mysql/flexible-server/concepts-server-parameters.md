@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 11/10/2020
-ms.openlocfilehash: f83f743b692ae5a625a4c881b12cbad999f1f606
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: d64dc4f3c034279aee7401503bbb60883c9ed4e7
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105106765"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106492236"
 ---
 # <a name="server-parameters-in-azure-database-for-mysql---flexible-server"></a>Server parameters in Azure Database for MySQL-flexibele server
 
@@ -39,9 +39,11 @@ Raadpleeg de volgende secties voor meer informatie over de limieten van de versc
 
 ### <a name="log_bin_trust_function_creators"></a>log_bin_trust_function_creators
 
-In Azure Database for MySQL flexibele server zijn binaire logboeken altijd ingeschakeld (dat wil zeggen, `log_bin` is ingesteld op aan). Als u triggers wilt gebruiken, wordt er een fout bericht weer gegeven die vergelijkbaar *is met de superrechts-en binaire logboek registratie is ingeschakeld (mogelijk wilt u de minder veilige `log_bin_trust_function_creators` variabele gebruiken)*. 
+In Azure Database for MySQL flexibele server zijn binaire logboeken altijd ingeschakeld (dat wil zeggen, `log_bin` is ingesteld op aan). log_bin_trust_function_creators is standaard ingesteld op ON-the-flexibele servers. 
 
-De indeling van de binaire logboek registratie is altijd **rij** en alle verbindingen met de server gebruiken **altijd** binaire logboek registratie van rijen. Met binaire logboek registratie op basis van rijen bestaan geen beveiligings problemen en kan binaire logboek registratie niet breken, dus u kunt veilig instellen [`log_bin_trust_function_creators`](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_log_bin_trust_function_creators) op **True**.
+De indeling van de binaire logboek registratie is altijd **rij** en alle verbindingen met de server gebruiken **altijd** binaire logboek registratie van rijen. Met binaire logboek registratie op basis van rijen bestaan geen beveiligings problemen en kan binaire logboek registratie niet worden verbroken, zodat u veilig kunt [`log_bin_trust_function_creators`](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_log_bin_trust_function_creators) blijven **staan**.
+
+Als [ `log_bin_trust_function_creators` ] is ingesteld op uit. Als u triggers probeert te maken, kunnen er mogelijk fouten optreden die vergelijkbaar *zijn met de bevoegdheid Super en binaire logboek registratie is ingeschakeld (mogelijk wilt u de minder veilige `log_bin_trust_function_creators` variabele gebruiken)*. 
 
 ### <a name="innodb_buffer_pool_size"></a>innodb_buffer_pool_size
 

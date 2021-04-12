@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 manager: peterpr
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 2f0b6feea5e586c87191b22f42e3ab86e85ba7b3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0072e699107ea51764a728ce3e9987b86b2a6806
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97032521"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106492321"
 ---
 # <a name="manage-devices-in-your-azure-iot-central-application"></a>Apparaten beheren in uw Azure IoT Central-toepassing
 
@@ -156,17 +156,17 @@ Een echt of gesimuleerd apparaat verwijderen uit uw Azure IoT Central-toepassing
 
 ## <a name="change-a-property"></a>Een eigenschap wijzigen
 
-Cloud eigenschappen zijn de meta gegevens van het apparaat die zijn gekoppeld aan het apparaat, zoals City en serie nummer. Cloud eigenschappen bestaan alleen in de IoT Central-toepassing en worden niet gesynchroniseerd met uw apparaten. Beschrijf bare eigenschappen bepalen het gedrag van een apparaat en stelt u in staat om de status van een apparaat op afstand in te stellen, bijvoorbeeld door de doel temperatuur van een thermo staat-apparaat in te stellen.  Apparaateigenschappen worden ingesteld door het apparaat en zijn alleen-lezen in IoT Central. U kunt eigenschappen weer geven en bijwerken op de details van het **apparaat** voor uw apparaat.
+Cloud eigenschappen zijn de meta gegevens van het apparaat die zijn gekoppeld aan het apparaat, zoals City en serie nummer. Cloud eigenschappen bestaan alleen in de IoT Central-toepassing en worden niet gesynchroniseerd met uw apparaten. Beschrijf bare eigenschappen bepalen het gedrag van een apparaat en u kunt de status van een apparaat op afstand instellen, bijvoorbeeld door de doel temperatuur van een thermo staat-apparaat in te stellen.  Apparaateigenschappen worden ingesteld door het apparaat en zijn alleen-lezen in IoT Central. U kunt eigenschappen weer geven en bijwerken op de details van het **apparaat** voor uw apparaat.
 
 1. Kies **apparaten** in het linkerdeel venster.
 
 1. Kies de Device-sjabloon van het apparaat waarvan u de eigenschappen wilt wijzigen en selecteer het doel apparaat.
 
-1. Kies de weer gave met de eigenschappen van het apparaat. in deze weer gave kunt u waarden invoeren en boven aan de pagina **Opslaan** selecteren. Hier ziet u de eigenschappen van uw apparaat en de huidige waarden. Eigenschappen van de Cloud en de Beschrijf bare eigenschappen hebben bewerkte velden, terwijl de apparaateigenschappen alleen-lezen zijn. Voor schrijf bare eigenschappen ziet u de synchronisatie status onder aan het veld. 
+1. Kies de weer gave met de eigenschappen van het apparaat. in deze weer gave kunt u waarden invoeren en boven aan de pagina **Opslaan** selecteren. Hier ziet u de eigenschappen van uw apparaat en de huidige waarden. Eigenschappen van de Cloud en beschrijf bare eigenschappen hebben Bewerk bare velden, terwijl de apparaateigenschappen alleen-lezen zijn. Voor Beschrijf bare eigenschappen ziet u de synchronisatie status onder aan het veld. 
 
 1. Wijzig de eigenschappen in de gewenste waarden. U kunt meerdere eigenschappen tegelijk wijzigen en deze allemaal tegelijk bijwerken.
 
-1. Kies **Opslaan**. Als u schrijf bare eigenschappen hebt opgeslagen, worden de waarden naar uw apparaat verzonden. Wanneer het apparaat de wijziging voor de Beschrijf bare eigenschap bevestigt, keert de status terug naar **gesynchroniseerd**. Als u een Cloud eigenschap hebt opgeslagen, wordt de waarde bijgewerkt.
+1. Kies **Opslaan**. Als u Beschrijf bare eigenschappen hebt opgeslagen, worden de waarden naar uw apparaat verzonden. Wanneer het apparaat de wijziging voor de Beschrijf bare eigenschap bevestigt, keert de status terug naar **gesynchroniseerd**. Als u een Cloud eigenschap hebt opgeslagen, wordt de waarde bijgewerkt.
 
 ## <a name="next-steps"></a>Volgende stappen
 

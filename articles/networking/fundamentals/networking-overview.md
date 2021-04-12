@@ -8,20 +8,20 @@ ms.service: virtual-network
 ms.devlang: na
 ms.topic: article
 ms.workload: infrastructure-services
-ms.date: 10/28/2020
+ms.date: 04/07/2021
 ms.author: kumud
-ms.openlocfilehash: 3145a52a6050272c01cd7ccb64afef0b89812753
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: 34e31bacbb276feb5b11d1b955096877376e989b
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106169956"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107700"
 ---
 # <a name="azure-networking-services-overview"></a>Overzicht van Azure-netwerkservices
 
 De netwerk services in azure bieden diverse netwerk mogelijkheden die samen of afzonderlijk kunnen worden gebruikt. Klik op een van de volgende belang rijke mogelijkheden om meer te weten te komen over:
 - [**Connectiviteits Services**](#connect): Azure-resources en on-premises resources verbinden met een of meer van deze netwerk services in Azure-Virtual Network (VNet), Virtual WAN, ExpressRoute, VPN gateway, virtueel netwerk NAT Gateway, Azure DNS, peering-service en Azure Bastion.
-- [**Application Protection Services**](#protect): Bescherm uw toepassingen met behulp van een of een combi natie van deze netwerk services in azure-private link, DDoS Protection, firewall, netwerk beveiligings groepen, Web Application Firewall en Virtual Network-eind punten.
+- [**Application Protection Services**](#protect): Beveilig uw toepassingen met een of meer van deze netwerk services in Azure-Load Balancer, persoonlijke koppeling, DDoS-beveiliging, firewall, netwerk beveiligings groepen, Web Application Firewall en Virtual Network-eind punten.
 - [**Services**](#deliver)voor het leveren van toepassingen: toepassingen leveren in het Azure-netwerk met behulp van een of een combi natie van deze netwerk services in azure-Content Delivery Network (CDN), Azure front-deur Service, Traffic Manager, Application Gateway, Internet Analyzer en Load Balancer.
 - [**Netwerk bewaking**](#monitor): Controleer uw netwerk bronnen met behulp van een of een combi natie van deze netwerk services in Azure-Network Watcher, ExpressRoute Monitor, Azure monitor of VNet-Terminal toegangs punt (tik).
 
@@ -158,13 +158,13 @@ Het volgende diagram toont op URL-pad gebaseerde route ring met Application Gate
 :::image type="content" source="./media/networking-overview/figure1-720.png" alt-text="Application Gateway-voor beeld":::
 
 ## <a name="network-monitoring-services"></a><a name="monitor"></a>Netwerk bewakings Services
-In deze sectie worden netwerk services in azure beschreven waarmee u uw netwerk bronnen Network Watcher, Azure Monitor voor netwerken, ExpressRoute monitor, Azure Monitor en Virtual Network TIKT kunt bewaken.
+In deze sectie worden netwerk services in azure beschreven waarmee u uw netwerk bronnen kunt bewaken-Network Watcher, Azure Monitor Network Insights, Azure Monitor, ExpressRoute monitor en Virtual Network tikken.
 
 ### <a name="network-watcher"></a><a name="networkwatcher"></a>Network Watcher
 Azure Network Watcher biedt hulpprogramma's voor het controleren, diagnosticeren en weergeven van metrische gegevens en het in- of uitschakelen van logboekregistratie voor resources in een virtueel Azure-netwerk. Zie [Wat is Network Watcher?](../../network-watcher/network-watcher-monitoring-overview.md?toc=%2fazure%2fnetworking%2ftoc.json)voor meer informatie.
 
-### <a name="azure-monitor-for-networks-preview"></a>Preview-versie van Azure Monitor voor netwerken
-Azure Monitor voor netwerken biedt een uitgebreid overzicht van de status en metrische gegevens voor alle geïmplementeerde netwerk bronnen, zonder dat hiervoor configuratie is vereist. Het biedt ook toegang tot netwerk bewakings mogelijkheden, zoals [verbindings monitor](../../network-watcher/connection-monitor-overview.md), [flow logboek registratie voor netwerk beveiligings groepen](../../network-watcher/network-watcher-nsg-flow-logging-overview.md)en [Traffic Analytics](../../network-watcher/traffic-analytics.md). Zie [Azure monitor voor netwerken preview](../../azure-monitor/insights/network-insights-overview.md?toc=%2fazure%2fnetworking%2ftoc.json)voor meer informatie.
+### <a name="azure-monitor-network-insights"></a>Azure Monitor netwerk inzichten
+Azure Monitor voor netwerken biedt een uitgebreid overzicht van de status en metrische gegevens voor alle geïmplementeerde netwerk bronnen, zonder dat hiervoor configuratie is vereist. Het biedt ook toegang tot netwerk bewakings mogelijkheden, zoals [verbindings monitor](../../network-watcher/connection-monitor-overview.md), [flow logboek registratie voor netwerk beveiligings groepen](../../network-watcher/network-watcher-nsg-flow-logging-overview.md)en [Traffic Analytics](../../network-watcher/traffic-analytics.md). Zie [Azure monitor Network Insights](../../azure-monitor/insights/network-insights-overview.md?toc=%2fazure%2fnetworking%2ftoc.json)voor meer informatie.
 
 ### <a name="expressroute-monitor"></a><a name="expressroutemonitor"></a>Monitor voor ExpressRoute
 Zie [ExpressRoute controle, metrische gegevens en waarschuwingen](../../expressroute/expressroute-monitoring-metrics-alerts.md?toc=%2fazure%2fnetworking%2ftoc.json)voor meer informatie over het weer geven van metrische gegevens voor ExpressRoute-circuits, bron logboeken en-waarschuwingen.

@@ -6,13 +6,13 @@ author: dcstwh
 ms.author: weetok
 ms.reviewer: jburchel
 ms.topic: conceptual
-ms.date: 03/11/2021
-ms.openlocfilehash: 24aa3bc455bf716c074526d707594bd3b4170619
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.date: 04/01/2021
+ms.openlocfilehash: 7ffcb93493ada36df59c0a8305e941176e8320b8
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105564174"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106121469"
 ---
 # <a name="continuous-integration-and-delivery-in-azure-data-factory"></a>Continue integratie en levering in Azure Data Factory
 
@@ -697,6 +697,9 @@ Wanneer u een script voorafgaand aan de implementatie uitvoert, moet u een varia
 Bij het uitvoeren van een script na de implementatie moet u in het veld **script argumenten** een variant van de volgende para meters opgeven.
 
 `-armTemplate "$(System.DefaultWorkingDirectory)/<your-arm-template-location>" -ResourceGroupName <your-resource-group-name> -DataFactoryName <your-data-factory-name>  -predeployment $false -deleteDeployment $true`
+
+> [!NOTE]
+> De `-deleteDeployment` vlag wordt gebruikt om op te geven dat de vermelding van de ADF-implementatie moet worden verwijderd uit de implementatie geschiedenis in arm.
 
 ![Azure PowerShell-taak](media/continuous-integration-deployment/continuous-integration-image11.png)
 

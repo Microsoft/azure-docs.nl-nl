@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/25/2021
 ms.author: juliako
 ms.custom: devx-track-js
-ms.openlocfilehash: b13086e11e1181bba91a3255e68e9f8a32e78450
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 56db88bff5b0e92a3819670e200177f10609aaa8
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98797777"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107029723"
 ---
 # <a name="embed-video-indexer-widgets-in-your-apps"></a>Video Indexer widgets insluiten in uw apps
 
@@ -66,16 +66,15 @@ U kunt de editor-widget gebruiken om nieuwe projecten te maken en de inzichten v
 
 <sup>*</sup>De eigenaar moet `accessToken` voorzichtig zijn.
 
-## <a name="embedding-videos"></a>Video's insluiten
+## <a name="embed-videos"></a>Video's insluiten
 
-In deze sectie wordt beschreven hoe u de open bare en persoonlijke inhoud insluit in apps.
+In deze sectie wordt Inge gaan op het insluiten van Video's met [behulp van de portal](#the-portal-experience) of door [de URL hand matig te assembleren](#assemble-the-url-manually) in apps. 
 
 De `location` para meter moet worden opgenomen in de Inge sloten koppelingen. Zie [hoe u de naam van uw regio ophaalt](regions.md). Als uw account in preview is, `trial` moet het worden gebruikt voor de locatie waarde. `trial` is de standaard waarde voor de `location` para meter. Bijvoorbeeld: `https://www.videoindexer.ai/accounts/00000000-0000-0000-0000-000000000000/videos/b2b2c74b8e/?location=trial`.
 
-> [!IMPORTANT]
-> Het delen van een koppeling voor de **Media Player** of **Insights** -widget bevat het toegangs token en verleen de alleen-lezen machtigingen voor uw account.
+### <a name="the-portal-experience"></a>De portal-ervaring
 
-### <a name="public-content"></a>Open bare inhoud
+Als u een video wilt insluiten, gebruikt u de portal zoals hieronder wordt beschreven:
 
 1. Meld u aan bij de [video indexer](https://www.videoindexer.ai/) -website.
 1. Selecteer de video waarmee u wilt werken en druk op **Play**.
@@ -84,18 +83,27 @@ De `location` para meter moet worden opgenomen in de Inge sloten koppelingen. Zi
 5. Kopieer de insluit code (wordt weer gegeven in **de Inge sloten code kopiëren** in het dialoog venster **share & insluiten** ).
 6. Voeg de code toe aan uw app.
 
-### <a name="private-content"></a>Persoonlijke inhoud
+> [!NOTE]
+> Het delen van een koppeling voor de **Media Player** of **Insights** -widget bevat het toegangs token en verleen de alleen-lezen machtigingen voor uw account.
 
-Als u een privé video wilt insluiten, moet u een toegangs token in het `src` kenmerk van het iframe door geven:
+### <a name="assemble-the-url-manually"></a>De URL hand matig samen stellen
+
+#### <a name="public-videos"></a>Open bare Video's
+
+U kunt de volgende open bare Video's insluiten:
+
+`https://www.videoindexer.ai/embed/[insights | player]/<accountId>/<videoId>`
+  
+  
+#### <a name="private-videos"></a>Persoonlijke Video's
+
+Als u een privé video wilt insluiten, moet u een toegangs token door geven (gebruik [video toegangs Token ophalen](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Get-Video-Access-Token?) in het `src` kenmerk van het iframe:
 
 `https://www.videoindexer.ai/embed/[insights | player]/<accountId>/<videoId>/?accessToken=<accessToken>`
-    
-Gebruik een van de volgende methoden om de inhoud van de cognitieve Insights-widget op te halen:
+  
+### <a name="provide-editing-insights-capabilities"></a>Mogelijkheden voor het bewerken van inzichten bieden
 
-- De API voor het [verkrijgen van inzichten-widget](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Video-Insights-Widget?&pattern=widget) .<br/>
-- Het [token voor video toegang ophalen](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Get-Video-Access-Token?). Voeg het als een query parameter toe aan de URL. Geef deze URL op als de `src` waarde voor de iframe, zoals eerder is weer gegeven.
-
-Als u de mogelijkheden voor het bewerken van inzichten in uw Inge sloten object wilt bieden, moet u een toegangs token door geven dat bewerkings machtigingen bevat. Gebruik het [object Insights ophalen](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Video-Insights-Widget?&pattern=widget) of het [token video toegang ophalen](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Video-Access-Token?) met `&allowEdit=true` .
+Als u de mogelijkheden voor het bewerken van inzichten in uw Inge sloten object wilt bieden, moet u een toegangs token door geven dat bewerkings machtigingen bevat. Gebruik het [token video toegang ophalen](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Video-Access-Token?) met `&allowEdit=true` .
 
 ## <a name="widgets-interaction"></a>Interactie van widgets
 

@@ -5,16 +5,16 @@ ms.topic: conceptual
 ms.date: 12/03/2020
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: 451323058ad743d6e26fc8bcea27d1b44c76f543
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 31e30b4853da03e28a4a2d15292050805f5bc292
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97674039"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106064139"
 ---
 # <a name="default-test-cases-for-arm-template-test-toolkit"></a>Standaard test cases voor ARM-sjabloon test Toolkit
 
-In dit artikel worden de standaard tests beschreven die worden uitgevoerd met de [sjabloon test Toolkit](test-toolkit.md). Het biedt voor beelden die de test door geven of mislukken. Het bevat de naam van elke test.
+In dit artikel worden de standaard tests beschreven die worden uitgevoerd met de [sjabloon test Toolkit](test-toolkit.md) voor Azure Resource Manager sjablonen (arm-sjablonen). Het biedt voor beelden die de test door geven of mislukken. Het bevat de naam van elke test. Zie [test parameters](test-toolkit.md#test-parameters)om een specifieke test uit te voeren.
 
 ## <a name="use-correct-schema"></a>Het juiste schema gebruiken
 
@@ -137,7 +137,7 @@ In het volgende voor beeld wordt deze test **door gegeven** .
 
 Test naam: **locatie mag niet hardcoded zijn**
 
-Uw sjablonen moeten een para meter met de naam Location hebben. Gebruik deze para meter om de locatie van resources in uw sjabloon in te stellen. In de hoofd sjabloon (met de naam azuredeploy.jsop of mainTemplate.jsop), kan deze para meter standaard worden ingesteld op de locatie van de resource groep. In gekoppelde of geneste sjablonen mag de locatie parameter geen standaard locatie hebben.
+Uw sjablonen moeten een para meter met de naam Location hebben. Gebruik deze para meter om de locatie van resources in uw sjabloon in te stellen. In de hoofd sjabloon (met de naam _azuredeploy.jsop_ of _mainTemplate.jsop_), kan deze para meter standaard worden ingesteld op de locatie van de resource groep. In gekoppelde of geneste sjablonen mag de locatie parameter geen standaard locatie hebben.
 
 Voor gebruikers van uw sjabloon zijn mogelijk beperkte regio's beschikbaar. Wanneer u de resource locatie permanent codeert, kunnen gebruikers worden geblokkeerd voor het maken van een resource in die regio. Gebruikers kunnen worden geblokkeerd, zelfs als u de resource locatie instelt op `"[resourceGroup().location]"` . De resource groep is mogelijk gemaakt in een regio waartoe andere gebruikers geen toegang hebben. Deze gebruikers worden geblokkeerd voor het gebruik van de sjabloon.
 
@@ -393,11 +393,11 @@ Wanneer u para meters voor en opneemt `_artifactsLocation` `_artifactsLocationSa
 * Als u één para meter opgeeft, moet u de andere opgeven
 * `_artifactsLocation`moet een **teken reeks** zijn
 * `_artifactsLocation` moet een standaard waarde hebben in de hoofd sjabloon
-* `_artifactsLocation` kan geen standaard waarde hebben in een geneste sjabloon 
+* `_artifactsLocation` kan geen standaard waarde hebben in een geneste sjabloon
 * `_artifactsLocation``"[deployment().properties.templateLink.uri]"`de standaard waarde moet van de opslag plaats-URL (of onbewerkte) zijn
 * `_artifactsLocationSasToken`moet een **secureString** zijn
 * `_artifactsLocationSasToken` kan alleen een lege teken reeks voor de standaard waarde hebben
-* `_artifactsLocationSasToken` kan geen standaard waarde hebben in een geneste sjabloon 
+* `_artifactsLocationSasToken` kan geen standaard waarde hebben in een geneste sjabloon
 
 ## <a name="declared-variables-must-be-used"></a>Gedeclareerde variabelen moeten worden gebruikt
 
@@ -520,7 +520,7 @@ In het volgende voor beeld wordt deze test **door gegeven** .
 
 Test naam: **ResourceIds mag niet bevatten**
 
-Gebruik bij het genereren van resource-Id's geen overbodige functies voor optionele para meters. De functie [resourceId](template-functions-resource.md#resourceid) maakt standaard gebruik van het huidige abonnement en de resource groep. U hoeft deze waarden niet op te geven.  
+Gebruik bij het genereren van resource-Id's geen overbodige functies voor optionele para meters. De functie [resourceId](template-functions-resource.md#resourceid) maakt standaard gebruik van het huidige abonnement en de resource groep. U hoeft deze waarden niet op te geven.
 
 In het volgende voor beeld is deze test **mislukt** , omdat u de huidige abonnements-id en de naam van de resource groep niet hoeft op te geven.
 
@@ -691,7 +691,40 @@ Het volgende voor beeld **mislukt** omdat er een [lijst *](template-functions-re
 }
 ```
 
+## <a name="use-protectedsettings-for-commandtoexecute-secrets"></a>ProtectedSettings gebruiken voor commandToExecute-geheimen
+
+Test naam: **CommandToExecute moet ProtectedSettings gebruiken voor geheimen**
+
+In een aangepaste script extensie gebruikt u de versleutelde eigenschap `protectedSettings` bij het `commandToExecute` opnemen van geheime gegevens zoals een wacht woord. Voor beelden van geheime gegevens typen zijn `secureString` , `secureObject` , `list()` functions of scripts.
+
+Zie voor meer informatie over aangepaste script extensie voor virtuele machines [Windows](
+/azure/virtual-machines/extensions/custom-script-windows), [Linux](/azure/virtual-machines/extensions/custom-script-linux)en het schema [micro soft. Compute informatie/Extensions](/azure/templates/microsoft.compute/virtualmachines/extensions).
+
+In dit voor beeld geeft een sjabloon met een para meter met `adminPassword` de naam en `secureString`  het type de test door, omdat de versleutelde eigenschap `protectedSettings` bevat `commandToExecute` .
+
+```json
+"properties": [
+  {
+    "protectedSettings": {
+      "commandToExecute": "[parameters('adminPassword')]"
+    }
+  }
+]
+```
+
+De test **mislukt** als de niet-versleutelde eigenschap `settings` bevat `commandToExecute` .
+
+```json
+"properties": [
+  {
+    "settings": {
+      "commandToExecute": "[parameters('adminPassword')]"
+    }
+  }
+]
+```
+
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [test Toolkit voor arm-sjablonen gebruiken](test-toolkit.md)voor meer informatie over het uitvoeren van de test Toolkit.
-- Zie [Preview wijzigingen en Azure-resources valideren met behulp van wat als' en de arm-sjabloon test Toolkit](/learn/modules/arm-template-test/)voor een Microsoft Learn module die de test Toolkit gebruikt.
+* Zie [test Toolkit voor arm-sjablonen gebruiken](test-toolkit.md)voor meer informatie over het uitvoeren van de test Toolkit.
+* Zie [Preview wijzigingen en Azure-resources valideren met behulp van wat als' en de arm-sjabloon test Toolkit](/learn/modules/arm-template-test/)voor een Microsoft Learn module die de test Toolkit gebruikt.

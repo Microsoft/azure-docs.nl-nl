@@ -6,13 +6,13 @@ ms.author: nayenama
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
-ms.date: 12/02/2020
-ms.openlocfilehash: 6f7f481ae0e0c75b14d894080f791161346cd93f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/02/2021
+ms.openlocfilehash: 6796a53ac05e8db606b29447a8792fa509c03d7e
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104952402"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106284078"
 ---
 # <a name="how-to-create-import-and-export-glossary-terms"></a>Termen van een woorden lijst maken, importeren en exporteren
 
@@ -34,7 +34,7 @@ Voer de volgende stappen uit om een nieuwe woordenlijst term te maken:
 
 5. Stel de **status** voor de term in. Nieuwe voor waarden zijn standaard ingesteld op **concept** status.
 
-   :::image type="content" source="media/how-to-create-import-export-glossary/new-term-options.png" alt-text="Scherm opname van de status keuzes." border="true":::
+   :::image type="content" source="media/how-to-create-import-export-glossary/overview-tab.png" alt-text="Scherm opname van de status keuzes.":::
 
    Deze status markeringen zijn meta gegevens die zijn gekoppeld aan de term. Op dit moment kunt u de volgende status voor elke term instellen:
 
@@ -92,9 +92,10 @@ U moet termen uit de woorden lijst kunnen exporteren zolang de geselecteerde ter
 
 2. Selecteer **exporteren** om de geselecteerde voor waarden te downloaden.
 
- > [!Important]
-   > Als de voor waarden in een hiërarchie deel uitmaken van verschillende term sjablonen, moet u ze in een andere periode splitsen. CSV-bestanden die moeten worden geïmporteerd. Het bijwerken van een bovenliggend item van een term wordt op dit moment niet ondersteund met het import proces.
+   :::image type="content" source="media/how-to-create-import-export-glossary/select-term-template-for-export.png" lightbox="media/how-to-create-import-export-glossary/select-term-template-for-export.png" alt-text="Scherm afbeelding van de pagina met woordenlijst termen, selecteer het bestand dat u wilt exporteren.":::
 
+   > [!Important]
+   > Als de voor waarden in een hiërarchie deel uitmaken van verschillende term sjablonen, moet u ze in verschillende termen splitsen. CSV-bestanden die moeten worden geïmporteerd. Het bijwerken van een bovenliggend item van een term wordt op dit moment niet ondersteund met het import proces.
 
 ## <a name="next-steps"></a>Volgende stappen
 

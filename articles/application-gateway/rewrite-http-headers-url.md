@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: conceptual
 ms.date: 04/05/2021
 ms.author: azhussai
-ms.openlocfilehash: 7662ef5c2c3f5ed20069f64781d222ae44e52168
-ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
+ms.openlocfilehash: 3e7bdc92dc6268c712eecbd69ff014e2229b3b84
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106384836"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106490961"
 ---
 # <a name="rewrite-http-headers-and-url-with-application-gateway"></a>HTTP-headers en URL opnieuw schrijven met Application Gateway
 
@@ -158,6 +158,14 @@ Een regel reeks voor herschrijven bevat:
       * **URL-pad**: de waarde waarnaar het pad moet worden geschreven. 
       * **URL-query teken reeks**: de waarde waarnaar de query teken reeks moet worden geschreven. 
       * **Pad-map opnieuw evalueren**: wordt gebruikt om te bepalen of de URL-pad toewijzing opnieuw moet worden geëvalueerd of niet. Als u dit selectie vakje uitschakelt, wordt het oorspronkelijke URL-pad gebruikt om het pad-patroon in de URL-pad toewijzing overeen te laten komen. Als deze optie is ingesteld op True, wordt de toewijzing van het URL-pad opnieuw geëvalueerd om de overeenkomst met het herschreven pad te controleren. Als u deze schakel optie inschakelt, kan de aanvraag worden doorgestuurd naar een andere back-end-groep na herschrijven.
+
+## <a name="rewrite-configuration-common-pitfall"></a>Algemene Pitfall opnieuw schrijven
+
+* Het inschakelen van de pad-toewijzing opnieuw evalueren is niet toegestaan voor de regels voor basis routering van aanvragen. Dit is om te voor komen dat er een oneindige evaluatie-lus wordt voor een basis routerings regel.
+
+* Er moet ten minste één regel voor voorwaardelijke herschrijf bewerking of 1 herschrijf regel worden ingesteld waarvoor niet de functie pad opnieuw evalueren is ingeschakeld voor op pad gebaseerde routerings regels om te voor komen dat er een oneindige evaluatie-lus wordt uitgevoerd voor een op pad gebaseerde routerings regel.
+
+* Inkomende aanvragen worden met een 500-fout code beëindigd als er dynamisch een lus wordt gemaakt op basis van client invoer. De Application Gateway blijven andere aanvragen verwerken zonder dat hiervoor een dergelijk scenario wordt gebruikt.
 
 ### <a name="using-url-rewrite-or-host-header-rewrite-with-web-application-firewall-waf_v2-sku"></a>Herschrijven van URL'S of hostheadernamen met Web Application firewall (WAF_v2 SKU) gebruiken
 

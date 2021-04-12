@@ -4,12 +4,12 @@ description: Dit is een service waarmee u de prestaties van toepassingen kunt be
 ms.topic: overview
 ms.date: 06/03/2019
 ms.custom: mvc
-ms.openlocfilehash: ac6b6f2b47df0bce9ae164c83df54adfdf00b184
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f25a53cb227d6894aaabaf82033178f15f61c173
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100575712"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106076204"
 ---
 # <a name="what-is-application-insights"></a>Wat is Application Insights?
 Application Insights, een functie van [Azure Monitor](../overview.md), is een uitbreidbare APM-service (Application Performance Management) voor ontwikkelaars en DevOps-professionals. Hiermee kunt u uw livetoepassingen controleren. De service detecteert automatisch afwijkingen in prestaties en bevat krachtige analysehulpmiddelen om u te helpen bij het vaststellen van problemen en te begrijpen wat gebruikers daadwerkelijk doen met uw app.  De service is bedoeld om u te helpen de prestaties en bruikbaarheid van uw apps continu te verbeteren. Het werkt voor apps op uiteenlopende platforms, waaronder .NET, Node.js, Java en Python, on-premises, of in een hybride of openbare cloud gehost. De service kan ook worden geïntegreerd met uw DevOps-proces en bevat verbindingspunten naar verschillende hulpmiddelen voor ontwikkelaars. Gebruik de service voor het controleren en analyseren van telemetrie van mobiele apps door Application Insights te integreren met Visual Studio App Center.
@@ -47,7 +47,7 @@ Application Insights is bedoeld voor het ontwikkelingsteam en helpt u om te begr
 
 Er zijn tal van manieren om uw gegevens te verkennen. Lees de volgende artikelen:
 
-|  |  |
+| Artikel beschrijving   | Installatiekopie |
 | --- | --- |
 | [**Slimme detectie en handmatige waarschuwingen**](./proactive-diagnostics.md)<br/>Stel automatische waarschuwingen in die worden afgestemd op de normale telemetriepatronen van uw app en worden geactiveerd wanneer er zich iets voordoet dat buiten het normale patroon valt. U kunt ook [waarschuwingen instellen](../alerts/alerts-log.md) voor bepaalde niveaus van aangepaste functies of standaardfuncties voor het verzamelen van metrische gegevens. |![Voorbeeld van een waarschuwing](./media/app-insights-overview/alerts-tn.png) |
 | [**Overzicht van de toepassing**](./app-map.md)<br/>Verken de onderdelen van uw app met belangrijke metrische gegevens en waarschuwingen. |![Overzicht van de toepassing](./media/app-insights-overview/appmap-tn.png)  |

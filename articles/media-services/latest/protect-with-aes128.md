@@ -43,7 +43,7 @@ Hieronder wordt aangegeven wat de vereisten zijn om de zelfstudie te voltooien.
 
 * Lees het artikel [Content protection overview](content-protection-overview.md) (Overzicht inhoudsbeveiliging).
 * Installeer Visual Studio Code of Visual Studio.
-* [Een Azure Media Services-account maken](./create-account-howto.md).
+* [Een Azure Media Services-account maken](./account-create-how-to.md).
 * Zorg dat u referenties hebt die nodig zijn om Media Services API's te kunnen gebruiken via [toegangs-API's](./access-api-howto.md).
 
 ## <a name="download-code"></a>Code downloaden

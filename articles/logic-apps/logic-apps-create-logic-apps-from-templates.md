@@ -9,10 +9,10 @@ ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 10/15/2017
 ms.openlocfilehash: 42c592e6aede4537dc983fd2cff043a878f81f1c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "100593096"
 ---
 # <a name="create-logic-app-workflows-from-prebuilt-templates"></a>Werkstromen voor logische apps maken met vooraf gedefinieerde sjablonen
@@ -21,7 +21,7 @@ Logic Apps biedt sjablonen die preconstrueerde Logic apps hebben die de veelgebr
 
 Hier volgen enkele sjabloon categorieën:
 
-| Sjabloon type | Beschrijving | 
+| Sjabloon type | Description | 
 | ------------- | ----------- | 
 | Enter prise Cloud-sjablonen | Voor de integratie van Azure Blob, Dynamics CRM, Sales Force, box en ook andere connectors voor uw Enter prise Cloud-behoeften. U kunt deze sjablonen bijvoorbeeld gebruiken om zakelijke leads te organiseren of een back-up te maken van uw bedrijfs bestands gegevens. | 
 | Persoonlijke productiviteits sjablonen | Verbeter de persoonlijke productiviteit door dagelijks herinneringen in te stellen, belang rijke werk items in te scha kelen in taken lijsten en langdurige taken uit te voeren naar één stap voor het goed keuren van een gebruiker. | 
@@ -97,9 +97,9 @@ Als u nog geen abonnement op Azure hebt, [meld u dan aan voor een gratis Azure-a
    > [!NOTE] 
    > Veel sjablonen bevatten connectors die mogelijk al vooraf ingevuld vereiste eigenschappen hebben. Voor sommige sjablonen is het echter mogelijk dat u nog steeds waarden moet opgeven voordat u de logische app correct kunt implementeren. Als u probeert te implementeren zonder de ontbrekende eigenschaps velden te volt ooien, wordt er een fout bericht weer gegeven. 
 
-## <a name="update-logic-apps-with-templates"></a>Logische apps bijwerken met sjablonen
+## <a name="update-logic-apps-with-templates&quot;></a>Logische apps bijwerken met sjablonen
 
-1. Zoek en open in de [Azure Portal](https://portal.azure.com "Azure Portal")uw logische app in de ontwerp functie voor logische apps.
+1. Zoek en open in de [Azure Portal](https://portal.azure.com &quot;Azure Portal")uw logische app in de ontwerp functie voor logische apps.
 
 2. Kies **sjablonen** op de werk balk van de ontwerp functie. Met deze actie worden niet-opgeslagen wijzigingen verwijderd. er wordt dus een waarschuwing weer gegeven, zodat u kunt bevestigen dat u wilt door gaan. Klik op **OK** om te bevestigen. Bijvoorbeeld:
 

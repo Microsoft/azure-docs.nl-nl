@@ -57,4 +57,4 @@ Hieronder vindt u de belangrijkste scenario's waarin een Media Services-account 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [een account maken](./create-account-howto.md)voor meer informatie over het koppelen van een opslag account aan uw Media Services-account.
+Zie [een account maken](./account-create-how-to.md)voor meer informatie over het koppelen van een opslag account aan uw Media Services-account.

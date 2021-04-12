@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 01/20/2021
 ms.author: jeedes
 ms.openlocfilehash: e1394eafdfd733b5d69a4d4abbb6b218b4c8c10d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/29/2021
 ms.locfileid: "101651901"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-freshdesk"></a>Zelfstudie: Azure Active Directory-integratie met FreshDesk
@@ -95,7 +95,7 @@ Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met Fr
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
 
-### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
+### <a name="create-an-azure-ad-test-user&quot;></a>Een Azure AD-testgebruiker maken 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
@@ -107,7 +107,7 @@ In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Porta
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
    1. Klik op **Create**.
 
-### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
+### <a name=&quot;assign-the-azure-ad-test-user&quot;></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen aan FreshDesk.
 
@@ -119,13 +119,13 @@ In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebru
 1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-## <a name="configure-freshdesk-sso"></a>FreshDesk SSO configureren
+## <a name=&quot;configure-freshdesk-sso&quot;></a>FreshDesk SSO configureren
 
 1. Meld u in een ander browservenster als beheerder aan bij de bedrijfssite van Freshdesk.
 
 2. Selecteer het pictogram **Settings** en voer in de sectie **Security** de volgende stappen uit:
 
-    ![Eenmalige aanmelding](./media/freshdesk-tutorial/configure-1.png "Eenmalige aanmelding")
+    ![Eenmalige aanmelding](./media/freshdesk-tutorial/configure-1.png &quot;Eenmalige aanmelding")
   
     a. Selecteer **On** voor **Single Sign On**.
 

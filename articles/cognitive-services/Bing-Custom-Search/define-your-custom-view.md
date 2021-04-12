@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: aahi
 ms.openlocfilehash: b2d4eb75002474bbec57753bbf0255cc4c2b4a16
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "96338636"
 ---
 # <a name="configure-your-bing-custom-search-experience"></a>Uw Bing Aangepaste zoekopdrachten-ervaring configureren
@@ -30,7 +30,7 @@ Met de portal kunt u een zoek exemplaar maken dat de segmenten van het web bevat
 
 Gebruik het volgende bij het definiëren van uw segmenten van het web:
 
-| Segment naam | Beschrijving                                                                                                                                                                                                                                                                                                |
+| Segment naam | Description                                                                                                                                                                                                                                                                                                |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Domain     | Een domein segment bevat alle inhoud die binnen een Internet domein is gevonden. Bijvoorbeeld `www.microsoft.com`. Als u dit weglaat, `www.` zoekt Bing ook de subdomeinen van het domein. Als u bijvoorbeeld opgeeft `microsoft.com` , retourneert Bing ook resultaten van `support.microsoft.com` of `technet.microsoft.com` . |
 | Subpagina    | Een segment van een subpagina bevat alle inhoud die is gevonden op de subpagina en de onderliggende paden. U kunt Maxi maal twee subpagina's in het pad opgeven. Bijvoorbeeld: `www.microsoft.com/en-us/windows/`                                                                                                                       |
@@ -97,7 +97,7 @@ U kunt uw zoek opdracht testen met behulp van het voorbeeld venster op de rechte
 
 Met de portal kunt u de zoek volgorde van inhoud aanpassen van specifieke domeinen, subpagina's en webpagina's. Na het verzenden van een zoek opdracht in het voorbeeld venster bevat elk Zoek resultaat een lijst met aanpassingen die u kunt maken:  
 
-| Wijzigingen | Beschrijving |
+| Wijzigingen | Description |
 |------------|-------------|
 | Blokkeren      | Hiermee verplaatst u het domein, de subpagina of de webpagina naar de lijst met geblokkeerde blokken. De inhoud van de geselecteerde site wordt uitgesloten van de zoek resultaten.                    |
 | Promoties      | Verhoogt de inhoud van het domein of de subpagina naar een hoger niveau in de zoek resultaten.                                                                                        |

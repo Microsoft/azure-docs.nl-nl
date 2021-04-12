@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/25/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d91bfee228b946ff564f6d080976f9ce5c12caa4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: fa449ad3d9a0e26bd0754a67581c8d63fa025e55
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102426260"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106552305"
 ---
 # <a name="tutorial-voice-enable-your-bot-using-the-speech-sdk"></a>Zelf studie: spraak-uw bot inschakelen met de Speech SDK
 
@@ -83,7 +83,7 @@ De client-app die u in deze zelf studie maakt, maakt gebruik van een aantal Azur
 Als u voor deze zelf studie een andere regio wilt gebruiken, kunnen de volgende factoren uw keuzes beperken:
 
 * Zorg ervoor dat u een [ondersteunde Azure-regio](regions.md#voice-assistants)gebruikt.
-* Het directe lijn spraak kanaal maakt gebruik van de tekst-naar-spraak-service, die standaard en Neural stemmen heeft. Neural stemmen zijn [beperkt tot specifieke Azure-regio's](regions.md#standard-and-neural-voices).
+* Het directe lijn spraak kanaal maakt gebruik van de tekst-naar-spraak-service, die Neural en standaard stemmen heeft. Neural en standaard stemmen zijn beschikbaar in deze [Azure-regio's](regions.md#neural-and-standard-voices).
 
 Zie [Azure-locaties](https://azure.microsoft.com/global-infrastructure/locations/)voor meer informatie over regio's.
 
@@ -328,7 +328,7 @@ Als er een fout bericht wordt weer gegeven in het hoofd venster van de app, gebr
 |Fout (AuthenticationFailure): bijwerken van WebSocket is mislukt met een verificatie fout (401). Controleren op juiste abonnements sleutel (of autorisatie token) en regio naam| Controleer op de pagina instellingen van de app of u de sleutel voor spraak abonnementen en de regio juist hebt ingevoerd.<br>Zorg ervoor dat de spraak sleutel en de sleutel regio correct zijn ingevoerd. |
 |Fout (ConnectionFailure): de verbinding is door de externe host gesloten. Fout code: 1011. Fout Details: er kan geen verbinding worden gemaakt met de bot voordat een bericht wordt verzonden | Zorg ervoor dat u het selectie vakje [streaming-eind punt inschakelen](#register-the-direct-line-speech-channel) en/of [ **websockets**](#enable-web-sockets) op op hebt ingeschakeld.<br>Zorg ervoor dat uw Azure App Service actief is. Als dat het geval is, start u de App Service opnieuw op.|
 |Fout (ConnectionFailure): de verbinding is door de externe host gesloten. Fout code: 1002. Fout Details: de server heeft de status code ' 503 ' geretourneerd wanneer de status code ' 101 ' werd verwacht | Zorg ervoor dat u het selectie vakje [streaming-eind punt inschakelen](#register-the-direct-line-speech-channel) en/of [ **websockets**](#enable-web-sockets) op op hebt ingeschakeld.<br>Zorg ervoor dat uw Azure App Service actief is. Als dat het geval is, start u de App Service opnieuw op.|
-|Fout (ConnectionFailure): de verbinding is door de externe host gesloten. Fout code: 1011. Fout Details: de antwoord status code geeft geen succes aan: 500 (InternalServerError)| Uw bot heeft een Neural-stem opgegeven in het veld [uitspreken](https://github.com/microsoft/botframework-sdk/blob/master/specs/botframework-activity/botframework-activity.md#speak) van uitvoer activiteit, maar de Azure-regio die aan uw spraak abonnements sleutel is gekoppeld, biedt geen ondersteuning voor Neural stemmen. Zie de [standaard-en Neural stemmen](./regions.md#standard-and-neural-voices).|
+|Fout (ConnectionFailure): de verbinding is door de externe host gesloten. Fout code: 1011. Fout Details: de antwoord status code geeft geen succes aan: 500 (InternalServerError)| Uw bot heeft een Neural-stem opgegeven in het veld [uitspreken](https://github.com/microsoft/botframework-sdk/blob/master/specs/botframework-activity/botframework-activity.md#speak) van uitvoer activiteit, maar de Azure-regio die aan uw spraak abonnements sleutel is gekoppeld, biedt geen ondersteuning voor Neural stemmen. Zie [Neural en standaard stemmen](./regions.md#neural-and-standard-voices).|
 
 Als uw probleem niet wordt opgelost in de tabel, raadpleegt u [spraak assistenten: veelgestelde vragen](faq-voice-assistants.md). Als uw probleem nog steeds niet kan worden opgelost nadat u alle stappen in deze zelf studie hebt uitgevoerd, voert u een nieuw probleem in op de GitHub-pagina van de  [Voice Assistant](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/issues).
 
@@ -475,7 +475,7 @@ Als u de in deze zelf studie geïmplementeerde ECHO-bot niet wilt blijven gebrui
 ## <a name="see-also"></a>Zie ook
 
 * Implementatie in een [Azure-regio](https://azure.microsoft.com/global-infrastructure/locations/) in de buurt om de reactie tijd van bot te bekijken
-* Implementeren in een [Azure-regio die hoogwaardige NEURAL TTS-stemmen ondersteunt](./regions.md#standard-and-neural-voices)
+* Implementeren in een [Azure-regio die hoogwaardige NEURAL TTS-stemmen ondersteunt](./regions.md#neural-and-standard-voices)
 * Prijzen gekoppeld aan direct-lijn spraak kanaal:
   * [Prijzen van bot-service](https://azure.microsoft.com/pricing/details/bot-service/)
   * [Speech Service](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/)

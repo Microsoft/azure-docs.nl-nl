@@ -8,18 +8,18 @@ ms.topic: conceptual
 author: iqshahmicrosoft
 ms.author: iqshah
 ms.date: 10/19/2020
-ms.openlocfilehash: 0b5d0a8b12ad07c5be3a4cfc0840acc81aa0c395
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: 6e391ca79c9dcf9ab533a7e67961c654b5f8630b
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106060729"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107103365"
 ---
 # <a name="plan-a-virtual-machine-offer"></a>Een aanbieding voor een virtuele machine plannen
 
 In dit artikel worden de verschillende opties en vereisten beschreven voor het publiceren van een virtuele machine (VM)-aanbieding naar de commerciële Marketplace. VM-aanbiedingen zijn aanbiedingen die via Azure Marketplace kunnen worden geïmplementeerd en gefactureerd.
 
-Voordat u begint, [maakt u een commercieel Marketplace-account in partner centrum](./partner-center-portal/create-account.md) en zorgt u ervoor dat uw account is inge schreven in het commerciële Marketplace-programma.
+Voordat u begint, [maakt u een commercieel Marketplace-account in partner centrum](create-account.md) en zorgt u ervoor dat uw account is inge schreven in het commerciële Marketplace-programma.
 
 ### <a name="technical-fundamentals"></a>Technische basis principes
 

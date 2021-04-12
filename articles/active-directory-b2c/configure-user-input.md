@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 4e709719d56aacacf61e247a5dbe215f766a891a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 257ba16cf015705b8f6da264d9c25f28cef2ebb1
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102607948"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106443437"
 ---
 #  <a name="add-user-attributes-and-customize-user-input-in-azure-active-directory-b2c"></a>Gebruikers kenmerken toevoegen en gebruikers invoer aanpassen in Azure Active Directory B2C
 
@@ -60,7 +60,7 @@ De toepassings claims zijn waarden die worden geretourneerd naar de toepassing. 
 1. Selecteer **pagina-indelingen**.
 1. Selecteer de **pagina voor het registreren van een lokaal account**.
 1. Onder **gebruikers kenmerken** selecteert u **plaats**.
-    1. Selecteer in de vervolg keuzelijst **invoer type gebruiker** de optie **DropdownSingleSelect**.
+    1. Selecteer in de vervolg keuzelijst **invoer type gebruiker** de optie **DropdownSingleSelect**. Optioneel: gebruik de knoppen omhoog/omlaag om de tekst volgorde op de registratie pagina te rangschikken.
     1. Selecteer in de vervolg keuzelijst **optioneel** de optie **Nee**.
 1. Selecteer **Opslaan**. 
 

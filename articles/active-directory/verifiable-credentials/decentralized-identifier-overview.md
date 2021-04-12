@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 04/01/2021
 ms.author: barclayn
 ms.reviewer: ''
-ms.openlocfilehash: 4ae7ad186e2ed8868be6205d48e9cfbef525d810
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: 04b36b9b32e78016f693e61d40246776492be0e3
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106172794"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106222857"
 ---
 # <a name="introduction-to-azure-active-directory-verifiable-credentials-preview"></a>Inleiding tot Azure Active Directory verifieer bare referenties (preview-versie)
 
@@ -28,7 +28,7 @@ Onze digitale en fysieke levens duur worden steeds meer gekoppeld aan de apps, s
 
 Maar identiteits gegevens zijn te vaak zichtbaar in inbreuk op de beveiliging. Deze inbreuken zijn van invloed op het leven van mensen die van invloed zijn op onze sociale, professionele en financiële levens duur. Micro soft is van mening dat er een betere manier is. Elke persoon heeft een recht op een identiteit waarvan ze eigenaar zijn en die deze beheert, een waarmee veilig elementen van hun digitale identiteit worden opgeslagen en de privacy wordt behouden. In deze primer wordt uitgelegd hoe we aan de slag worden toegevoegd met een gevarieerde Community voor het bouwen van een open, betrouw bare, interoperabele en op standaarden gebaseerde, gedecentraliseerde identiteits oplossing voor individuen en organisaties.
 
-## <a name="why-we-need-decentralized-identity"></a>Waarom we gedecentraliseerde identiteit nodig hebben 
+## <a name="why-we-need-decentralized-identity"></a>Waarom we gedecentraliseerde identiteit nodig hebben
 
 Vandaag gebruiken we onze digitale identiteit op het werk, thuis en in alle apps, services en apparaten die we gebruiken. Het bestaat uit alles wat we zeggen, doen en ervaring hebben met het kopen van tickets voor een evenement, het inchecken van een hotel of het afronden van de lunch. Onze identiteit en al onze digitale interacties zijn momenteel eigendom van en worden beheerd door andere partijen, waarvan sommige niet even op de hoogte zijn.
 
@@ -36,7 +36,7 @@ Over het algemeen verlenen gebruikers toestemming voor verschillende apps en app
 
 We zijn ervan overtuigd dat een op standaarden gebaseerd gedecentraliseerd identiteits systeem een nieuwe set ervaringen kan ontgrendelen waarmee gebruikers en organisaties meer controle over hun gegevens kunnen krijgen, en een hogere mate van vertrouwen en beveiliging bieden voor apps, apparaten en service providers
 
-## <a name="lead-with-open-standards"></a>Lood met open standaarden 
+## <a name="lead-with-open-standards"></a>Lood met open standaarden
 
 We streven ernaar nauw samen te werken met klanten, partners en de community om de volgende generatie van gedecentraliseerde identiteiten te ontgrendelen en we zijn enthousiast over de partner met de individuen en organisaties die in deze ruimte geweldige bijdragen doen. Als het DID-ecosysteem groeit, moeten standaarden, technische onderdelen en code-producten open-source zijn en toegankelijk zijn voor alle.
 
@@ -50,21 +50,21 @@ Micro soft maakt actief samen met leden van de gedecentraliseerde identiteits ba
 * [DIF-presentatie uitwisseling](https://identity.foundation/presentation-exchange/)
 
 
-## <a name="what-are-dids"></a>Wat zijn DIDs 
+## <a name="what-are-dids"></a>Wat zijn DIDs?
 
 Voordat we inzicht kunnen krijgen in DIDs, is het handig om ze te vergelijken met de huidige identiteits systemen. E-mail adressen en sociaal-netwerk-Id's zijn mensen vriendelijke aliassen voor samen werking, maar zijn nu overbelast om te fungeren als de controle punten voor gegevens toegang in een groot aantal scenario's buiten de samen werking. Hiermee maakt u een mogelijk probleem, omdat de toegang tot deze Id's op elk gewenst moment door externe partijen kan worden verwijderd.
 
 Gecentraliseerde Id's (DIDs) verschillen. DIDs zijn door de gebruiker gegenereerde, eigen eigendom, wereld wijd unieke id's die zijn geroot in gedecentraliseerde systemen zoals ION. Ze beschikken over unieke kenmerken, zoals een grotere zekerheid van Onveranderbaarheid, censoren weers tand en knoei evasiveness. Deze kenmerken zijn essentieel voor elk ID-systeem dat bedoeld is voor het verlenen van eigen eigendom en gebruikers beheer. 
 
 De verifieer bare referentie oplossing van micro soft maakt gebruik van gedecentraliseerde referenties (DIDs) om een cryptografische ondertekening te maken als bewijs dat een Relying Party (Verifier) een verklaring vormt van de eigenaar van een verifieer bare referentie. Daarom wordt een basis memorandum van gedecentraliseerde id's aanbevolen voor iedereen die een verifieer bare referentie oplossing maakt op basis van de aanbieding van micro soft.
-## <a name="what-are-verifiable-credentials"></a>Wat zijn Controleer bare referenties 
+## <a name="what-are-verifiable-credentials"></a>Wat zijn Controleer bare referenties?
 
  We gebruiken Id's in onze dagelijkse levens duur. We hebben stuur Programma's licenties die worden gebruikt als bewijs van onze mogelijkheid om een auto te gebruiken. Universiteiten geven diploma's die bewijzen dat we een opleidings niveau hebben bereikt. We gebruiken paspoorten om te bewijzen wie de autoriteiten hebben als we aan andere landen aankomen. Het gegevens model beschrijft hoe we deze typen scenario's kunnen verwerken wanneer ze via internet werken, maar op een veilige manier die de privacy van de gebruiker respecteert. U kunt aanvullende informatie krijgen in het [gegevens Model 1,0 verifieer bare referenties](https://www.w3.org/TR/vc-data-model/)
 
 Kortom, Controleer bare referenties zijn gegevens objecten die bestaan uit claims die zijn gemaakt door de certificaat verlener die informatie over een onderwerp verklaart. Deze claims worden aangeduid met een schema en bevatten de uitgever en het onderwerp. De uitgever heeft een digitale hand tekening gemaakt als bewijs dat ze aan deze informatie worden verstrekt.
 
 
-## <a name="how-does-decentralized-identity-work"></a>Hoe werkt gedecentraliseerde identiteit? 
+## <a name="how-does-decentralized-identity-work"></a>Hoe werkt gedecentraliseerde identiteit?
 
 We hebben een nieuwe vorm van identiteit nodig. We hebben een identiteit nodig die technologieën en standaarden biedt om kenmerken van de sleutel identiteit te leveren, zoals eigen eigendom en de weers tand van censoren. Deze mogelijkheden zijn lastig te maken met behulp van bestaande systemen.
 

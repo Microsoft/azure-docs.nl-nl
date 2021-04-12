@@ -7,12 +7,12 @@ ms.prod: kinect-dk
 ms.date: 06/26/2019
 ms.topic: article
 keywords: Kinect, Windows, v2, Azure Kinect, Comparison, SDK, verschillen, hardware, software
-ms.openlocfilehash: 0a8d399370f354524858bdd658ffd65c0494dd4d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1791767e842043bbb0eda058cc3ea92be90a00fb
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "87031572"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106078295"
 ---
 # <a name="azure-kinect-and-kinect-windows-v2-comparison"></a>Vergelijking van Azure Kinect en Kinect Windows v2
 
@@ -46,7 +46,7 @@ De volgende tabel bevat een vergelijking van de toegangs mogelijkheden op laag n
 
 | **Functionaliteit**| **Azure Kinect** | **Kinect voor Windows** | **Opmerkingen** |
 |---------|---------|------------|---------|
-| **Diepga** | ✔️ | ✔️ |    |   |
+| **Diepga** | ✔️ | ✔️ |    | 
 | **FO** | ✔️ | ✔️ |  |
 | **Kleur** | ✔️ | ✔️ | Kleur indeling ondersteunt verschillen, Azure Kinect DK ondersteunt de volgende camera besturings elementen: bloot stelling, witbalans, helderheid, contrast, verzadiging, scherpte en controle |
 | **Audio** | ✔️ | ✔️ | Azure Kinect DK mics wordt geopend via Speech SDK of Windows native API |

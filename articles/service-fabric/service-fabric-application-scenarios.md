@@ -4,10 +4,10 @@ description: Overzicht van categorieën Cloud toepassingen in Service Fabric. Be
 ms.topic: conceptual
 ms.date: 01/08/2020
 ms.openlocfilehash: 7d9459e6e0168657cf8e9062331fec0237f58c70
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105045753"
 ---
 # <a name="service-fabric-application-scenarios"></a>Toepassings scenario's Service Fabric

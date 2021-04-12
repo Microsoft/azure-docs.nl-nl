@@ -4,10 +4,10 @@ description: Dit artikel bevat richt lijnen voor het ontwikkelen en implementere
 ms.topic: how-to
 ms.date: 12/02/2020
 ms.openlocfilehash: dbf46a26626a4143d76385968d092c4f238729da
-ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105034857"
 ---
 # <a name="how-to-guide--develop-and-deploy-a-grpc-inference-server"></a>Instructies voor het ontwikkelen en implementeren van een gRPC-Afleidings server

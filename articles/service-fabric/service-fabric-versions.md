@@ -3,12 +3,12 @@ title: De versie van uw Azure Service Fabric-cluster bijwerken
 description: Meer informatie over cluster versies in azure Service Fabric, met inbegrip van een koppeling naar de nieuwste releases van de Service Fabric-team blog.
 ms.topic: troubleshooting
 ms.date: 06/15/2020
-ms.openlocfilehash: 3e859a04ffb0b885aab0f31e83afad8380cbcc95
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 1f06d7cb5f8fa1182969447168dfb4297473075a
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103010198"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107257531"
 ---
 # <a name="upgrade-your-azure-service-fabric-cluster-version"></a>De versie van uw Azure Service Fabric-cluster bijwerken
 
@@ -85,14 +85,15 @@ De versies van Service Fabric in de tabel bevatten de benodigde wijzigingen om v
 
  | Besturingssysteem | Huidige Service Fabric runtime in het cluster | Release van CU/patch |
   | --- | --- |--- |
-  | Windows | 7,0. * | 7.0.478.9590 |
   | Windows | 7,1. * | 7.1.503.9590 |
-  | Windows | 7,2. * | 7,2. * |
-  | Linux Ubuntu 16,04 | 7,0. * | 7.0.472.1  |
+  | Windows | 7,2. * | 7.2.477.9590 |
+  | Windows | 8,0. * | 8.0.514.9590 |
   | Linux Ubuntu 16,04 | 7,1. * | 7.1.455.1  |
   | Linux Ubuntu 18,04 | 7,1. * | 7.1.455.1804 |
-  | Linux Ubuntu 16,04 | 7,2. * | 7,2. * |
-  | Linux Ubuntu 18,04 | 7,2. * | 7,2. * |
+  | Linux Ubuntu 16,04 | 7,2. * | 7.2.476.1 |
+  | Linux Ubuntu 18,04 | 7,2. * | 7.2.476.1804 |
+  | Linux Ubuntu 16,04 | 8,0. * | 8.0.513.1 |
+  | Linux Ubuntu 18,04 | 8,0. * | 8.0.513.1804 |
 
 ## <a name="supported-versions"></a>Ondersteunde versies
 
@@ -125,13 +126,14 @@ De volgende tabel bevat de versies van Service Fabric en de bijbehorende eind da
 | 7.1.459.* | 7.0.466.* |Kleiner dan of gelijk aan versie 4,1 |31 juli 2021 |
 | 7.1.503.* | 7.0.466.* |Kleiner dan of gelijk aan versie 4,1 |31 juli 2021 |
 | 7.1.510.* | 7.0.466.* |Kleiner dan of gelijk aan versie 4,1 |31 juli 2021 |
-| 7.2.413.* | 7.0.470.* |Kleiner dan of gelijk aan versie 4,2 |Huidige versie, dus geen eind datum |
-| 7.2.432.* | 7.0.470.* |Kleiner dan of gelijk aan versie 4,2 |Huidige versie, dus geen eind datum |
-| 7.2.433.* | 7.0.470.* |Kleiner dan of gelijk aan versie 4,2 |Huidige versie, dus geen eind datum |
-| 7.2.445.* | 7.0.470.* |Kleiner dan of gelijk aan versie 4,2 |Huidige versie, dus geen eind datum |
-| 7.2.452.* | 7.0.470.* |Kleiner dan of gelijk aan versie 4,2 |Huidige versie, dus geen eind datum |
-| 7.2.457.* | 7.0.470.* |Kleiner dan of gelijk aan versie 4,2 |Huidige versie, dus geen eind datum |
-| 7.2.477.* | 7.0.478.* |Kleiner dan of gelijk aan versie 4,2 |Huidige versie, dus geen eind datum |
+| 7.2.413.* | 7.0.470.* |Kleiner dan of gelijk aan versie 4,2 |30 november 2021 |
+| 7.2.432.* | 7.0.470.* |Kleiner dan of gelijk aan versie 4,2 |30 november 2021 |
+| 7.2.433.* | 7.0.470.* |Kleiner dan of gelijk aan versie 4,2 |30 november 2021 |
+| 7.2.445.* | 7.0.470.* |Kleiner dan of gelijk aan versie 4,2 |30 november 2021 |
+| 7.2.452.* | 7.0.470.* |Kleiner dan of gelijk aan versie 4,2 |30 november 2021 |
+| 7.2.457.* | 7.0.470.* |Kleiner dan of gelijk aan versie 4,2 |30 november 2021 |
+| 7.2.477.* | 7.0.478.* |Kleiner dan of gelijk aan versie 4,2 |30 november 2021 |
+| 8.0.514.* | 7.1.510.* |Kleiner dan of gelijk aan versie 5,0 |Huidige versie, dus geen eind datum |
 
 ## <a name="supported-operating-systems"></a>Ondersteunde besturingssystemen
 
@@ -216,3 +218,4 @@ De volgende tabel bevat de versie namen van Service Fabric en de bijbehorende ve
 | 7,2 CU5 | 7.2.452.9590 | 7.2.454.1 |
 | 7,2 CU6 | 7.2.457.9590 | 7.2.456.1 |
 | 7,2 CU7 | 7.2.477.9590 | 7.2.476.1 |
+| 8,0 RTO | 8.0.514.9590 | 8.0.513.1 |

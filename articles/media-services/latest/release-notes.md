@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 03/17/2021
 ms.author: inhenkel
-ms.openlocfilehash: b7d99e3de8a796dea19f3a2ad7a03b98239981e2
-ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
+ms.openlocfilehash: 796abf8506a832c4053b505e903bb24ef9d09004
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106121095"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106279031"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Release opmerkingen bij Azure Media Services v3
 
@@ -150,7 +150,7 @@ De vooraf ingestelde audio analyse bevat nu een prijs categorie voor de Basic-mo
 
 Klanten die Indexeer functie v1 en Indexeer functie v2 gebruiken, moeten worden gemigreerd naar de standaard instelling voor de analyse van audio.
 
-Zie [video-en audio bestanden analyseren](analyze-video-audio-files-concept.md)voor meer informatie over de Basic Audio Analyzer-modus.  Zie [een eenvoudige audio transformatie maken](how-to-create-basic-audio-transform.md)voor meer informatie over het gebruik van de Basic Audio Analyzer-modus met de rest API.
+Zie [video-en audio bestanden analyseren](analyze-video-audio-files-concept.md)voor meer informatie over de Basic Audio Analyzer-modus.  Zie [een eenvoudige audio transformatie maken](transform-create-basic-audio-how-to.md)voor meer informatie over het gebruik van de Basic Audio Analyzer-modus met de rest API.
 
 ### <a name="live-events"></a>Livegebeurtenissen
 
@@ -324,8 +324,8 @@ Deze functionaliteit werkt met elke [trans formatie](/rest/api/media/transforms)
 
 Zie voor beelden:
 
-* [Een video met .NET knippen](subclip-video-dotnet-howto.md)
-* [Een video met REST samenknippen](subclip-video-rest-howto.md)
+* [Een video met .NET knippen](transform-subclip-video-dotnet-how-to.md)
+* [Een video met REST samenknippen](transform-subclip-video-rest-how-to.md)
 
 ## <a name="may-2019"></a>Mei 2019
 
@@ -334,7 +334,7 @@ Zie voor beelden:
 U kunt nu Azure Monitor gebruiken om telemetriegegevens weer te geven die zijn verzonden door Media Services.
 
 * Gebruik de diagnostische logboeken van Azure Monitor om aanvragen te bewaken die worden verzonden door het Media Services key delivery-eind punt. 
-* Bewaak de metrische gegevens die worden verzonden door Media Services [streaming-eind punten](streaming-endpoint-concept.md).   
+* Bewaak de metrische gegevens die worden verzonden door Media Services [streaming-eind punten](stream-streaming-endpoint-concept.md).   
 
 Zie [Media Services metrische gegevens en Diagnostische logboeken bewaken](monitoring/monitor-media-services-data-reference.md)voor meer informatie.
 

@@ -6,13 +6,13 @@ ms.author: jonels
 ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: how-to
-ms.date: 11/17/2020
-ms.openlocfilehash: 59e6e73c99569b0a35c56d65c1a7ccdfcb394c0f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/07/2021
+ms.openlocfilehash: 905224119b9df4e4003b1736443406e9548a49e3
+ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "95026417"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107012526"
 ---
 # <a name="scale-a-hyperscale-citus-server-group"></a>Een Citus-Server groep (grootschalige) schalen
 
@@ -21,6 +21,11 @@ Azure Database for PostgreSQL-grootschalige (Citus) biedt self-service schaling 
 ## <a name="add-worker-nodes"></a>Worker-knoop punten toevoegen
 
 Als u knoop punten wilt toevoegen, gaat u naar het tabblad **Compute + Storage** in de Server groep grootschalige (Citus).  Door de schuif regelaar voor het **aantal worker-knoop punten** te slepen, wijzigt u de waarde.
+
+> [!NOTE]
+>
+> Een grootschalige-Server groep (Citus) die is gemaakt met de [Basic-laag (preview)](concepts-hyperscale-tiers.md) heeft geen werk rollen. Als u het aantal werk nemers verg root, wordt de Server groep automatisch uitgeschaald naar de laag standaard.
+> Na het afronden van een server groep naar de Standard-laag, kunt u deze niet meer downgradeen naar de laag basis.
 
 :::image type="content" source="./media/howto-hyperscale-scaling/01-sliders-workers.png" alt-text="Resource schuif regelaars":::
 

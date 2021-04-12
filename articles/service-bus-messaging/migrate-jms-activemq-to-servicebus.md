@@ -15,10 +15,10 @@ ms.date: 07/07/2020
 ms.author: aschhab
 ms.custom: devx-track-java
 ms.openlocfilehash: 4160a9ab4edbac8584eab2d4e5b9bf1ba11a9aec
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105568780"
 ---
 # <a name="migrate-existing-java-message-service-jms-20-applications-from-apache-activemq-to-azure-service-bus"></a>Bestaande JMS-toepassingen (Java Message Service 2,0) migreren van Apache ActiveMQ naar Azure Service Bus
@@ -89,7 +89,7 @@ Service Bus biedt verschillende functies voor beveiliging en hoge Beschik baarhe
   * [Service-eindpunten voor virtueel netwerk](service-bus-service-endpoints.md)
   * [Firewall](service-bus-ip-filtering.md)
   * [Versleuteling aan de service zijde met de door de klant beheerde sleutel (BYOK)](configure-customer-managed-key.md)
-  * [Privé-eind punten](private-link-service.md)
+  * [Privé-eindpunten](private-link-service.md)
   * [Verificatie en autorisatie](service-bus-authentication-and-authorization.md)
 
 ### <a name="monitoring-alerts-and-tracing"></a>Bewaking, waarschuwingen en tracering

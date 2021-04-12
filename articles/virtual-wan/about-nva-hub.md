@@ -7,18 +7,18 @@ ms.service: virtual-wan
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: scottnap
-ms.openlocfilehash: d5af0cc4eb72a2db850e19e47ed11cd9f6f4536e
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: e70b899ea0133704e4ecab42dd4c2a09bca41804
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106061856"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107226308"
 ---
 # <a name="about-network-virtual-appliance-in-an-azure-virtual-wan-hub-preview"></a>Over virtuele netwerk apparaten in een virtuele WAN-hub van Azure (preview)
 
 Azure Virtual WAN heeft met netwerk partners gewerkt om automatisering te bouwen waarmee het eenvoudig is om hun klant locatie-uitrusting (CPE) te verbinden met een Azure VPN-gateway in de virtuele hub. Azure werkt met geselecteerde netwerk partners om klanten in staat te stellen een virtueel netwerk apparaat (NVA) van derden rechtstreeks naar de virtuele hub te implementeren. Hierdoor kunnen klanten die hun vertakking CPE willen verbinden met dezelfde merk NVA in de virtuele hub, zodat ze profiteren van eigen end-to-end SD-WAN-mogelijkheden.
 
-Barracuda Networks en Cisco Systems zijn de eerste partners die de Nva's bieden die rechtstreeks op de virtuele WAN-hub kunnen worden geïmplementeerd.  Zie [Barracuda CLOUDGEN WAN](https://www.barracuda.com/products/cloudgenwan) en [Cisco Cloud opstap voor multi-Cloud](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/cloudonramp/ios-xe-17/cloud-onramp-book-xe/cloud-onramp-multi-cloud.html#Cisco_Concept.dita_c61e0e7a-fff8-4080-afee-47b81e8df701) voor hun respectieve product documentatie. Azure werkt met meer partners, zodat u rekening moet houden met andere aanbiedingen.
+Barracuda Networks en Cisco Systems zijn de eerste partners die de Nva's bieden die rechtstreeks op de virtuele WAN-hub kunnen worden geïmplementeerd.  Zie [Barracuda CLOUDGEN WAN](https://www.barracuda.com/products/cloudgenwan), [Cisco Cloud opstap for multi-Cloud](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/cloudonramp/ios-xe-17/cloud-onramp-book-xe/cloud-onramp-multi-cloud.html#Cisco_Concept.dita_c61e0e7a-fff8-4080-afee-47b81e8df701) en [VMware SD-WAN](https://kb.vmware.com/s/article/82746) voor hun respectieve product documentatie. Azure werkt met meer partners, zodat u rekening moet houden met andere aanbiedingen.
 
 > [!NOTE]
 > Alleen NVA-aanbiedingen die beschikbaar zijn om te worden geïmplementeerd in de virtuele WAN-hub, kunnen in de virtuele WAN-hub worden geïmplementeerd. Ze kunnen niet worden geïmplementeerd in een wille keurig virtueel netwerk in Azure.
@@ -81,7 +81,7 @@ NVA in de virtuele hub is beschikbaar voor preview in de volgende regio's:
 | Zuid-Amerika | Brazilië - zuid |
 | Europa | Europa-west, UK-zuid|
 |  Midden-Oosten | VAE - noord |
-| Azië | Japan - oost |
+| Azië | Japan East |
 | Australië | Australië - oost |
 
 ## <a name="faq"></a>Veelgestelde vragen

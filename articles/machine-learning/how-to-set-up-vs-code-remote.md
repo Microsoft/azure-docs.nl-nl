@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.custom: how-to
 ms.author: luquinta
 author: luisquintanilla
-ms.date: 11/16/2020
-ms.openlocfilehash: ccd56afc8c4ea7e236946fc6afa54e471203fe31
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.date: 04/08/2021
+ms.openlocfilehash: 14f0d15d48193267c224f3497c24651ca3249b0b
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106065977"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107028579"
 ---
 # <a name="connect-to-an-azure-machine-learning-compute-instance-in-visual-studio-code-preview"></a>Verbinding maken met een Azure Machine Learning Compute-instantie in Visual Studio code (preview)
 
@@ -25,8 +25,75 @@ Een [Azure machine learning Compute-exemplaar](concept-compute-instance.md) is e
 
 Er zijn twee manieren waarop u verbinding kunt maken met een reken instantie vanuit Visual Studio code:
 
+* Externe Compute-instantie. Deze optie biedt u een volledig functionele ontwikkel omgeving voor het maken van uw machine learning-projecten.
 * Externe Jupyter Notebook server. Met deze optie kunt u een reken instantie instellen als een externe Jupyter Notebook server.
-* [Visual Studio code Remote Development](https://code.visualstudio.com/docs/remote/remote-overview). Met Visual Studio code Remote Development kunt u een container, een externe computer of het Windows-subsysteem voor Linux (WSL) gebruiken als een ontwikkel omgeving met volledige functionaliteit.
+
+## <a name="configure-a-remote-compute-instance"></a>Een externe Compute-instantie configureren
+
+Als u een extern Compute-exemplaar voor ontwikkeling wilt configureren, hebt u enkele vereisten nodig.
+
+* Visual Studio code-extensie Azure Machine Learning. Zie de [Azure machine learning Visual Studio code extension Setup Guide (Engelstalig](tutorial-setup-vscode-extension.md)) voor meer informatie.
+* Azure Machine Learning werk ruimte. [Gebruik de Azure machine learning Visual Studio code-extensie om een nieuwe werk ruimte te maken](how-to-manage-resources-vscode.md#create-a-workspace) als u er nog geen hebt.
+* Azure Machine Learning Compute-instantie. [Gebruik de Azure machine learning Visual Studio code-extensie om een nieuw reken exemplaar te maken](how-to-manage-resources-vscode.md#create-compute-instance) als u er nog geen hebt.
+
+Verbinding maken met uw externe Compute-instantie:
+
+# <a name="vs-code"></a>[VS-code](#tab/extension)
+
+### <a name="azure-machine-learning-extension"></a>Azure Machine Learning extensie
+
+1. In VS code opent u de extensie Azure Machine Learning.
+1. Vouw het knoop punt **reken instanties** in uw uitbrei ding uit.
+1. Klik met de rechter muisknop op het reken exemplaar waarmee u verbinding wilt maken en selecteer **verbinding maken met Compute instance**.
+
+:::image type="content" source="media/how-to-set-up-vs-code-remote/vs-code-compute-instance-launch.png" alt-text="Verbinding maken met reken exemplaar Visual Studio code Azure ML extension" lightbox="media/how-to-set-up-vs-code-remote/vs-code-compute-instance-launch.png":::
+
+### <a name="command-palette"></a>Opdracht palet
+
+1. Open in VS code het opdracht palet door **> opdracht venster weer geven** te selecteren.
+1. Voer in het tekstvak **Azure ml: verbinding maken met reken instantie** in.
+1. Selecteer uw abonnement.
+1. Selecteer uw werk ruimte.
+1. Selecteer uw reken instantie of maak een nieuwe.
+
+# <a name="studio"></a>[Studio](#tab/studio)
+
+Ga naar [ml.Azure.com](https://ml.azure.com)
+
+> [!IMPORTANT]
+> Als u verbinding wilt maken met uw externe Compute-exemplaar vanuit Visual Studio code, moet u ervoor zorgen dat het account waarmee u bent aangemeld in Azure Machine Learning Studio hetzelfde is als de naam die u in Visual Studio code gebruikt.
+
+### <a name="compute"></a>Compute
+
+1. Selecteer het tabblad **Compute**
+1. Selecteer in de kolom *toepassings* -URI **VS code** voor het reken exemplaar waarmee u verbinding wilt maken.
+
+:::image type="content" source="media/how-to-set-up-vs-code-remote/studio-compute-instance-vs-code-launch.png" alt-text="Verbinding maken met reken instantie versus code Azure ML Studio" lightbox="media/how-to-set-up-vs-code-remote/studio-compute-instance-vs-code-launch.png":::
+
+### <a name="notebook"></a>Notebook
+
+1. Het tabblad **notebook** selecteren
+1. Selecteer op het tabblad *notebook* het bestand dat u wilt bewerken.
+1. Selecteer **Editors > bewerken in VS code (preview)**.
+
+:::image type="content" source="media/how-to-set-up-vs-code-remote/studio-notebook-compute-instance-vs-code-launch.png" alt-text="Verbinding maken met reken instantie versus code Azure ML notebook" lightbox="media/how-to-set-up-vs-code-remote/studio-notebook-compute-instance-vs-code-launch.png":::
+
+---
+
+Er wordt een nieuw venster gestart voor uw externe Compute-exemplaar. Wanneer u probeert verbinding te maken met een extern Compute-exemplaar, worden de volgende taken uitgevoerd:
+
+1. Autorisatie. Er zijn enkele controles uitgevoerd om ervoor te zorgen dat de gebruiker die een verbinding probeert te maken, gemachtigd is om het reken exemplaar te gebruiken.
+1. De VS code-externe server wordt geïnstalleerd op het reken exemplaar.
+1. Er wordt een WebSocket-verbinding tot stand gebracht voor realtime-interactie.
+
+Zodra de verbinding tot stand is gebracht, wordt deze persistent gemaakt. Er wordt een token uitgegeven aan het begin van de sessie, die automatisch wordt vernieuwd om de verbinding met uw reken exemplaar te onderhouden.
+
+Nadat u verbinding hebt gemaakt met uw externe Compute-exemplaar, gebruikt u de editor voor het volgende:
+
+* [Bestanden maken en beheren op uw externe reken instantie of bestands share](https://code.visualstudio.com/docs/editor/codebasics).
+* Gebruik de [geïntegreerde VS code-Terminal](https://code.visualstudio.com/docs/editor/integrated-terminal) om [opdrachten en toepassingen uit te voeren op uw externe Compute-exemplaar](how-to-access-terminal.md).
+* [Fouten opsporen in uw scripts en toepassingen](https://code.visualstudio.com/Docs/editor/debugging)
+* [VS code gebruiken voor het beheren van uw Git-opslag plaatsen](concept-train-model-git-integration.md)
 
 ## <a name="configure-compute-instance-as-remote-notebook-server"></a>Reken exemplaar als externe notebook server configureren
 
@@ -62,93 +129,6 @@ Op dit moment kunt u door gaan met het uitvoeren van cellen in uw Jupyter Notebo
 
 > [!TIP]
 > U kunt ook werken met python-script bestanden (. py) met Jupyter-achtige code cellen. Zie [Visual Studio code python Interactive documentation](https://code.visualstudio.com/docs/python/jupyter-support-py)(Engelstalig) voor meer informatie.
-
-## <a name="configure-compute-instance-remote-development"></a>Externe ontwikkeling van reken instantie configureren
-
-Voor een volledig functionele externe ontwikkel ervaring hebt u enkele vereisten nodig:
-
-* [Visual Studio code remote SSH-extensie](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh).
-* Reken instantie met SSH-functionaliteit. [Zie de hand leiding Create a Compute instance](how-to-create-manage-compute-instance.md)voor meer informatie.
-
-> [!NOTE]
-> Op Windows-platforms moet u [een met OpenSSH compatibele SSH-client installeren](https://code.visualstudio.com/docs/remote/troubleshooting#_installing-a-supported-ssh-client) als deze nog niet aanwezig is. PuTTy wordt niet ondersteund in Windows omdat de SSH-opdracht zich in het pad moet bevinden.
-
-### <a name="get-the-ip-and-ssh-port-for-your-compute-instance"></a>De IP-en SSH-poort voor uw reken instantie ophalen
-
-1. Ga naar de Azure Machine Learning Studio op https://ml.azure.com/ .
-2. Selecteer uw [werk ruimte](concept-workspace.md).
-1. Klik op het tabblad **Compute instances** .
-1. Klik in de kolom **toepassings-URI** op de **SSH** -koppeling van het reken exemplaar dat u wilt gebruiken als een externe compute. 
-1. Noteer het IP-adres en de SSH-poort in het dialoog venster. 
-1. Sla uw persoonlijke sleutel op in de map ~/.SSH/op de lokale computer. Open bijvoorbeeld een editor voor een nieuw bestand en plak de sleutel in: 
-
-   **Linux**:
-
-   ```sh
-   vi ~/.ssh/id_azmlcitest_rsa  
-   ```
-
-   **Windows**:
-
-   ```cmd
-   notepad C:\Users\<username>\.ssh\id_azmlcitest_rsa
-   ```
-
-   De persoonlijke sleutel ziet er ongeveer als volgt uit:
-
-   ```text
-   -----BEGIN RSA PRIVATE KEY-----
-
-   MIIEpAIBAAKCAQEAr99EPm0P4CaTPT2KtBt+kpN3rmsNNE5dS0vmGWxIXq4vAWXD
-   ..... 
-   ewMtLnDgXWYJo0IyQ91ynOdxbFoVOuuGNdDoBykUZPQfeHDONy2Raw==
-
-   -----END RSA PRIVATE KEY-----
-   ```
-
-1. Wijzig de machtigingen voor het bestand om er zeker van te zijn dat alleen u het bestand kunt lezen.  
-
-   ```sh
-   chmod 600 ~/.ssh/id_azmlcitest_rsa
-   ```
-
-### <a name="add-instance-as-a-host"></a>Exemplaar als host toevoegen
-
-Open het bestand `~/.ssh/config` (Linux) of `C:\Users<username>.ssh\config` (Windows) in een editor en voeg een nieuwe vermelding toe die vergelijkbaar is met de onderstaande inhoud:
-
-```
-Host azmlci1 
-
-    HostName 13.69.56.51 
-
-    Port 50000 
-
-    User azureuser 
-
-    IdentityFile ~/.ssh/id_azmlcitest_rsa
-```
-
-Hier vindt u enkele details over de velden:
-
-|Veld|Description|
-|----|---------|
-|Host|Een wille keurige steno gebruiken voor het reken exemplaar |
-|HostName|Dit is het IP-adres van het reken exemplaar |
-|Poort|Dit is de poort die wordt weer gegeven in het bovenstaande SSH-dialoog venster |
-|Gebruiker|Dit moet worden `azureuser` |
-|IdentityFile|Moet verwijzen naar het bestand waarin u de persoonlijke sleutel hebt opgeslagen |
-
-Nu moet u uw reken exemplaar SSHen met behulp van de steno die u hierboven hebt gebruikt `ssh azmlci1` .
-
-### <a name="connect-vs-code-to-the-instance"></a>VERSUS code verbinden met het exemplaar
-
-1. Klik op het pictogram externe-SSH van de activiteiten balk van Visual Studio om uw SSH-configuraties weer te geven.
-
-1. Klik met de rechter muisknop op de SSH-hostconfiguratie die u zojuist hebt gemaakt.
-
-1. Selecteer **verbinding maken met host in het huidige venster**. 
-
-Vanaf hier kunt u zich helemaal op het reken proces bevinden en nu bewerken, fouten opsporen, Git gebruiken, uitbrei dingen, enzovoort, net als bij uw lokale Visual Studio-code.
 
 ## <a name="next-steps"></a>Volgende stappen
 

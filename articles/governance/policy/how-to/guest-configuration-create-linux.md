@@ -1,15 +1,15 @@
 ---
 title: Beleidsregels voor gastconfiguratie voor Linux maken
 description: Meer informatie over het maken van een Azure Policy gast configuratie beleid voor Linux.
-ms.date: 08/17/2020
+ms.date: 03/31/2021
 ms.topic: how-to
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 352c8b1936c38c9b5f706ac88bd4fd06e008b892
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d356960987ecfe9a1e1858a28b93060dbf4aa634
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99525344"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106096560"
 ---
 # <a name="how-to-create-guest-configuration-policies-for-linux"></a>Beleidsregels voor gastconfiguratie voor Linux maken
 
@@ -90,9 +90,7 @@ DSC fungeert als wrapper voor inspecers om te standaardiseren hoe het wordt uitg
 
 De naam van de aangepaste configuratie moet consistent zijn. De naam van het zip-bestand voor het inhouds pakket, de configuratie naam in het MOF-bestand en de naam van de gast toewijzing in de Azure Resource Manager sjabloon (ARM-sjabloon) moet hetzelfde zijn.
 
-Power shell-cmdlets helpen bij het maken van het pakket.
-Er is geen map op het hoofd niveau of de versie van de map vereist.
-De pakket indeling moet een zip-bestand zijn. en mag niet groter zijn dan de totale grootte van 100 MB bij ongecomprimeerd.
+Power shell-cmdlets helpen bij het maken van het pakket. Er is geen map op het hoofd niveau of de versie van de map vereist. De pakket indeling moet een zip-bestand zijn. en kan niet groter zijn dan de totale grootte van 100 MB wanneer deze niet is gecomprimeerd.
 
 ### <a name="custom-guest-configuration-configuration-on-linux"></a>Configuratie van aangepaste gast configuratie op Linux
 
@@ -211,7 +209,7 @@ Para meters van de `Publish-GuestConfigurationPackage` cmdlet:
 - **Pad**: locatie van het pakket dat moet worden gepubliceerd
 - **ResourceGroupName**: de naam van de resource groep waar het opslag account zich bevindt
 - **StorageAccountName**: naam van het opslag account waarin het pakket moet worden gepubliceerd
-- **StorageContainerName**: (standaard: *guestconfiguration*) naam van de opslag container in het opslag account
+- **StorageContainerName**: (standaard: _guestconfiguration_) naam van de opslag container in het opslag account
 - **Geforceerd**: bestaand pakket overschrijven in het opslag account met dezelfde naam
 
 In het volgende voor beeld wordt het pakket gepubliceerd naar een opslag container naam ' guestconfiguration '.
@@ -277,7 +275,7 @@ Met het beleid dat is gemaakt in azure, is de laatste stap het toewijzen van de 
 
 ### <a name="using-parameters-in-custom-guest-configuration-policies"></a>Para meters gebruiken in aangepaste gast configuratie beleidsregels
 
-Gast configuratie ondersteunt het overschrijven van eigenschappen van een configuratie tijdens runtime. Deze functie betekent dat de waarden in het MOF-bestand in het pakket niet als statisch moeten worden beschouwd. De onderdrukkings waarden worden geleverd via Azure Policy en hebben geen invloed op de manier waarop de configuraties worden gemaakt of gecompileerd.
+Gast configuratie ondersteunt het overschrijven van eigenschappen van een configuratie tijdens runtime. Deze functie betekent dat de waarden in het MOF-bestand in het pakket niet als statisch moeten worden beschouwd. De onderdrukkings waarden worden geleverd via Azure Policy en wijzigen niet hoe de configuraties worden gemaakt of gecompileerd.
 
 Met Inspec worden para meters doorgaans verwerkt als invoer tijdens runtime of als code met behulp van kenmerken. Gast configuratie maakt dit proces verborgen, zodat er een invoer kan worden opgegeven wanneer het beleid is toegewezen. Er wordt automatisch een kenmerk bestand gemaakt op de machine. U hoeft geen bestand te maken en toe te voegen aan uw project. Er zijn twee stappen om para meters toe te voegen aan uw Linux-controle project.
 
@@ -350,8 +348,7 @@ Als u een update wilt vrijgeven voor het beleid, brengt u de wijziging aan voor 
 > [!NOTE]
 > De `version` eigenschap van de toewijzing van de gast configuratie heeft alleen invloed op pakketten die door micro soft worden gehost. De best practice voor het versie beheer van aangepaste inhoud is het insluiten van de versie in de bestands naam.
 
-Geef bij uitvoering `New-GuestConfigurationPackage` een naam op voor het pakket dat deze uniek maakt ten opzichte van vorige versies. U kunt een versie nummer gebruiken in de naam zoals `PackageName_1.0.0` .
-Het nummer in dit voor beeld wordt alleen gebruikt om het pakket uniek te maken, niet om op te geven dat het pakket moet worden beschouwd als een nieuwe of oudere versie dan andere pakketten.
+Geef bij uitvoering `New-GuestConfigurationPackage` een naam op voor het pakket dat deze uniek maakt ten opzichte van vorige versies. U kunt een versie nummer gebruiken in de naam zoals `PackageName_1.0.0` . Het nummer in dit voor beeld wordt alleen gebruikt om het pakket uniek te maken, niet om op te geven dat het pakket moet worden beschouwd als een nieuwe of oudere versie dan andere pakketten.
 
 Werk vervolgens de para meters die worden gebruikt met de `New-GuestConfigurationPolicy` cmdlet uit die hieronder worden beschreven.
 

@@ -5,32 +5,40 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: how-to
-ms.date: 03/23/2021
+ms.date: 04/05/2021
 ms.author: duau
-ms.openlocfilehash: 7033ea6a1ba6d85f9aa15e14bb9577b2439c59a8
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: a5e01a4fc84f852b43e5a76114bebe145da10793
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105050489"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106443572"
 ---
 # <a name="azure-expressroute-insights-using-network-insights"></a>Azure ExpressRoute Insights met behulp van netwerk inzichten
 
 In dit artikel wordt uitgelegd hoe u met Network Insights uw ExpressRoute-metrische gegevens en configuraties op één plek kunt bekijken. Via netwerk inzichten kunt u topologische kaarten en status dashboards met belang rijke ExpressRoute-informatie weer geven zonder dat u extra instellingen hoeft te volt ooien.
 
-:::image type="content" source="./media/expressroute-network-insights/monitor-landing-page.png" alt-text="Scherm afbeelding van de landings pagina van de ExpressRoute-monitor." lightbox="./media/expressroute-network-insights/monitor-landing-page-expanded.png":::
+:::image type="content" source="./media/expressroute-network-insights/network-monitor-page.png" alt-text="Scherm afbeelding van de landings pagina voor de netwerken." lightbox="./media/expressroute-network-insights/monitor-landing-page-expanded.png":::
 
 ## <a name="visualize-functional-dependencies"></a>Functionele afhankelijkheden visualiseren
 
-Als u deze oplossing wilt weer geven, gaat u naar de pagina *Azure monitor* , selecteert u *netwerken* en selecteert u vervolgens de *ExpressRoute-circuit* kaart. Selecteer vervolgens de knop topologie voor het circuit dat u wilt weer geven.
+1. Ga naar de pagina *Azure monitor* en selecteer *netwerken*.
 
-De weer gave functionele afhankelijkheid biedt een duidelijke afbeelding van uw ExpressRoute-installatie, met een overzicht van de relatie tussen verschillende ExpressRoute-onderdelen (peerings, verbindingen, gateways).
+    :::image type="content" source="./media/expressroute-network-insights/monitor-page.png" alt-text="Scherm afbeelding van de pagina landings controle.":::
 
-:::image type="content" source="./media/expressroute-network-insights/topology-view.png" alt-text="Scherm opname van topologie weergave voor netwerk inzichten." lightbox="./media/expressroute-network-insights/topology-view-expanded.png":::
+1. Selecteer de *ExpressRoute-circuit* kaart. 
 
-Beweeg de muis aanwijzer over een onderdeel in de topologie kaart om configuratie-informatie weer te geven. Beweeg bijvoorbeeld de muis aanwijzer over een ExpressRoute-peering-onderdeel om details weer te geven, zoals circuit bandbreedte en Global Reach activering.
+1. Selecteer vervolgens de knop topologie voor het circuit dat u wilt weer geven.
 
-:::image type="content" source="./media/expressroute-network-insights/topology-hovered.png" alt-text="Scherm afbeelding van het aanwijzen van de topologie weergave resources." lightbox="./media/expressroute-network-insights/topology-hovered-expanded.png":::
+   :::image type="content" source="./media/expressroute-network-insights/monitor-landing-page.png" alt-text="Scherm afbeelding van de landings pagina van de ExpressRoute-monitor." lightbox="./media/expressroute-network-insights/monitor-landing-page-expanded.png"::: 
+
+1. De weer gave functionele afhankelijkheid biedt een duidelijke afbeelding van uw ExpressRoute-installatie, met een overzicht van de relatie tussen verschillende ExpressRoute-onderdelen (peerings, verbindingen, gateways).
+
+    :::image type="content" source="./media/expressroute-network-insights/topology-view.png" alt-text="Scherm opname van topologie weergave voor netwerk inzichten." lightbox="./media/expressroute-network-insights/topology-view-expanded.png":::
+
+1. Beweeg de muis aanwijzer over een onderdeel in de topologie kaart om configuratie-informatie weer te geven. Beweeg bijvoorbeeld de muis aanwijzer over een ExpressRoute-peering-onderdeel om details weer te geven, zoals circuit bandbreedte en Global Reach activering.
+
+    :::image type="content" source="./media/expressroute-network-insights/topology-hovered.png" alt-text="Scherm afbeelding van het aanwijzen van de topologie weergave resources." lightbox="./media/expressroute-network-insights/topology-hovered-expanded.png":::
 
 ## <a name="view-a-detailed-and-pre-loaded-metrics-dashboard"></a>Een gedetailleerd en vooraf geladen gegevens dashboard weer geven
 

@@ -3,12 +3,12 @@ title: Bewaar beleid instellen in Azure DevTest Labs | Microsoft Docs
 description: Meer informatie over het configureren van een Bewaar beleid, het opschonen van de fabriek en het buiten gebruik stellen van oude installatie kopieën van DevTest Labs.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 85384e88f8d456c7bf67302a57618d7a9703a5ee
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 4e642d7dc0733e55caa4ed62e3382ef4422030f9
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102550022"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105727532"
 ---
 # <a name="set-up-retention-policy-in-azure-devtest-labs"></a>Bewaar beleid instellen in Azure DevTest Labs
 In dit artikel vindt u informatie over het instellen van een Bewaar beleid, het opschonen van de fabriek en het buiten gebruik stellen van oude installatie kopieën van alle andere DevTest Labs in de organisatie. 
@@ -66,5 +66,5 @@ Het toevoegen van een nieuwe installatie kopie aan uw fabriek is ook eenvoudig. 
 ## <a name="next-steps"></a>Volgende stappen
 1. [Plan uw build/release](/azure/devops/pipelines/build/triggers?tabs=designer) om de installatie kopie in de fabriek periodiek uit te voeren. De door de fabriek gegenereerde installatie kopieën worden regel matig vernieuwd.
 2. Maak meer gouden installatie kopieën voor uw fabriek. U kunt ook overwegen om [artefacten te maken](devtest-lab-artifact-author.md) om extra onderdelen van uw VM-installatie taken te script en de artefacten in uw fabrieks installatie kopieën op te nemen.
-4. Maak een [afzonderlijke build/release](/azure/devops/pipelines/overview?view=azure-devops-2019) om het **DistributeImages** -script afzonderlijk uit te voeren. U kunt dit script uitvoeren wanneer u wijzigingen aanbrengt in Labs.jsen afbeeldingen kopieert naar doel-Labs zonder dat u alle installatie kopieën opnieuw hoeft te maken.
+4. Maak een [afzonderlijke build/release](/azure/devops/pipelines/overview) om het **DistributeImages** -script afzonderlijk uit te voeren. U kunt dit script uitvoeren wanneer u wijzigingen aanbrengt in Labs.jsen afbeeldingen kopieert naar doel-Labs zonder dat u alle installatie kopieën opnieuw hoeft te maken.
 

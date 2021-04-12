@@ -7,12 +7,12 @@ ms.author: dademath
 ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 47a32815ded5809edfde856a38c69ec7c6fd6fdf
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 4ab1a157cdf3ef5017b227cd090379dcab91997e
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103493353"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105931553"
 ---
 # <a name="azure-communication-services-ui-framework"></a>Gebruikers interface-Framework van Azure Communication Services
 
@@ -25,11 +25,11 @@ Met het gebruikers interface raamwerk van Azure Communication Services kunt u ee
 - **Samengestelde onderdelen** : deze onderdelen zijn de belangrijkste oplossingen voor het implementeren van algemene communicatie scenario's. U kunt snel video gesprekken of chat ervaringen toevoegen aan hun toepassingen. Samen stellingen zijn open source-onderdelen die zijn gebouwd met basis onderdelen.
 - **Basis onderdelen** : deze onderdelen zijn open-source bouw stenen waarmee u een aangepaste communicatie-ervaring kunt bouwen. Onderdelen worden aangeboden voor zowel oproep-als chat mogelijkheden die kunnen worden gecombineerd om ervaring te bouwen. 
 
-Deze UI-client bibliotheken gebruiken allemaal [de Fluent-ontwerp taal en-assets van micro soft](https://developer.microsoft.com/fluentui/) . De Fluent-gebruikers interface biedt een basis-laag voor het UI-Framework dat is getest over micro soft-producten.
+Deze UI-Sdk's gebruiken allemaal [de Fluent-ontwerp taal en-assets van micro soft](https://developer.microsoft.com/fluentui/) . De Fluent-gebruikers interface biedt een basis-laag voor het UI-Framework dat is getest over micro soft-producten.
 
 ## <a name="differentiating-components-and-composites"></a>**Onderscheidende onderdelen en samen stellingen**
 
-**Basis onderdelen** zijn gebouwd op basis van de belangrijkste Azure Communication Services-client bibliotheken en implementeren basis acties, zoals het initialiseren van de kern-client Bibliotheken, het renderen van video en het leveren van gebruikers besturings elementen voor dempen, video aan/uit, enzovoort. U kunt deze **basis onderdelen** gebruiken om uw eigen aangepaste lay-outervaringen te bouwen met vooraf ontwikkelde, productie-Ready-communicatie onderdelen.
+**Basis onderdelen** zijn gebaseerd op kernen van Azure Communication Services sdk's en implementeren basis acties, zoals het initialiseren van de kern sdk's, rendering van video en het leveren van gebruikers besturings elementen voor dempen, video aan/uit, enzovoort. U kunt deze **basis onderdelen** gebruiken om uw eigen aangepaste lay-outervaringen te bouwen met vooraf ontwikkelde, productie-Ready-communicatie onderdelen.
 
 :::image type="content" source="../media/ui-framework/component-overview.png" alt-text="Overzicht van onderdeel voor UI-Framework":::
 
@@ -39,19 +39,19 @@ Deze UI-client bibliotheken gebruiken allemaal [de Fluent-ontwerp taal en-assets
 
 ## <a name="what-ui-framework-is-best-for-my-project"></a>Welk UI-Framework is het meest geschikt voor mijn project?
 
-Als u deze vereisten begrijpt, kunt u de juiste client bibliotheek kiezen:
+Als u deze vereisten begrijpt, kunt u de juiste SDK kiezen:
 
-- **Hoeveel aanpassingen wilt u uitvoeren?** Azure Communication core client-bibliotheken hebben geen UX en zijn zo ontworpen dat u elke gewenste UX kunt bouwen. UI-Framework onderdelen bieden UI-elementen tegen de kosten van verminderde aanpassing.
-- **Hebt u Vergader functies nodig?** Het Vergader systeem heeft verschillende unieke mogelijkheden die momenteel niet beschikbaar zijn in de basis-client bibliotheken van Azure Communication Services, zoals vage achtergrond en verhoogde hand.
+- **Hoeveel aanpassingen wilt u uitvoeren?** De Sdk's van Azure Communication core hebben geen UX en zijn zo ontworpen dat u elke gewenste UX kunt bouwen. UI-Framework onderdelen bieden UI-elementen tegen de kosten van verminderde aanpassing.
+- **Hebt u Vergader functies nodig?** Het Vergader systeem heeft verschillende unieke mogelijkheden die momenteel niet beschikbaar zijn in de kern Sdk's van Azure Communication Services, zoals vage achtergrond en verhoogde hand.
 - **Op welke platformen wordt u gestreefd?** Verschillende platforms hebben verschillende mogelijkheden.
 
 Meer informatie over de beschik baarheid van functies in de diverse Sdk's van de [gebruikers interface is hier beschikbaar](ui-sdk-features.md), maar de sleutel vermogens worden hieronder weer gegeven.
 
-|Client bibliotheek/SDK|Implementatie complexiteit|    Aanpassings mogelijkheden|  Aanroepen| Chat| [Teams Interop](./../teams-interop.md)
+|SDK/SDK|Implementatie complexiteit|   Aanpassings mogelijkheden|  Aanroepen| Chat| [Teams Interop](./../teams-interop.md)
 |---|---|---|---|---|---|---|
 |Samengestelde onderdelen|Beperkt|Beperkt|✔|✔|✕
 |Basis onderdelen|Gemiddeld|Gemiddeld|✔|✔|✕
-|Basis-client bibliotheken|Hoog|Hoog|✔|✔ |✔
+|Kern Sdk's|Hoog|Hoog|✔|✔ |✔
 
 ## <a name="cost"></a>Kosten
 
@@ -78,7 +78,7 @@ Er is een Azure Communication Services-identiteit vereist om het UI-Framework te
 
 Samengestelde en basis onderdelen worden geïnitialiseerd met behulp van een toegangs token van Azure Communication Services. Toegangs tokens moeten worden aangeschaft via Azure Communication Services via een vertrouwde service die u beheert. Zie [Quick Start: toegangs tokens](../../quickstarts/access-tokens.md) en de [zelf studie voor een vertrouwde service](../../tutorials/trusted-service-tutorial.md) maken voor meer informatie.
 
-Deze client bibliotheken vereisen ook de context voor de oproep of de chat die wordt toegevoegd. Net als bij gebruikers toegangs tokens, moet deze context worden verspreid naar clients via uw eigen vertrouwde service. De onderstaande lijst bevat een overzicht van de functies voor initialisatie en bron beheer die u nodig hebt om te operationeel makenen.
+Deze Sdk's vereisen ook de context voor de oproep of chatten die ze zullen nemen. Net als bij gebruikers toegangs tokens, moet deze context worden verspreid naar clients via uw eigen vertrouwde service. De onderstaande lijst bevat een overzicht van de functies voor initialisatie en bron beheer die u nodig hebt om te operationeel makenen.
 
 | Contoso-verantwoordelijkheden                                 | Verantwoordelijkheden van UI-Framework                         |
 |----------------------------------------------------------|-----------------------------------------------------------------|

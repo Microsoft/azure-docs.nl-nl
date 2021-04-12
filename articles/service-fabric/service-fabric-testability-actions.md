@@ -2,14 +2,14 @@
 title: Storingen in azure micro Services simuleren
 description: In dit artikel vindt u informatie over de test acties in Microsoft Azure Service Fabric.
 ms.topic: conceptual
-ms.date: 06/07/2017
+ms.date: 03/26/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c57f54096a9593f5ab25a5722d3f2d2b9878b511
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 9f8221d92ded33350b182cce5d28dd889beae4a5
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100595026"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105732870"
 ---
 # <a name="testability-actions"></a>Test acties
 Voor het simuleren van een onbetrouwbare infra structuur biedt Azure Service Fabric u, de ontwikkelaar, de mogelijkheid om verschillende oorzaken van Real-World en status overgangen te simuleren. Deze worden weer gegeven als test taken. De acties zijn de Api's op laag niveau die een specifieke fout injectie, status overgang of validatie veroorzaken. Door deze acties te combi neren, kunt u uitgebreide test scenario's voor uw services schrijven.
@@ -34,6 +34,7 @@ Voor een betere kwaliteits validatie voert u de service en de zakelijke werk bel
 | InvokeQuorumLoss |Hiermee wordt een gegeven stateful service partitie in quorum verlies geplaatst. |InvokeQuorumLossAsync |Invoke-ServiceFabricQuorumLoss |Socket |
 | MovePrimary |Hiermee wordt de opgegeven primaire replica van een stateful service naar het opgegeven cluster knooppunt verplaatst. |MovePrimaryAsync |Move-ServiceFabricPrimaryReplica |Socket |
 | MoveSecondary |Hiermee verplaatst u de huidige secundaire replica van een stateful service naar een ander cluster knooppunt. |MoveSecondaryAsync |Move-ServiceFabricSecondaryReplica |Socket |
+| MoveInstance | Hiermee verplaatst u het huidige exemplaar van een stateless service naar een ander cluster knooppunt. | MoveInstanceAsync | Move-ServiceFabricInstance | Socket |
 | RemoveReplica |Simuleert een replica fout door een replica uit een cluster te verwijderen. Hiermee wordt de replica gesloten en wordt deze overgezet naar de rol geen, waardoor alle statussen uit het cluster worden verwijderd. |RemoveReplicaAsync |Remove-ServiceFabricReplica |Socket |
 | RestartDeployedCodePackage |Simuleert een fout in het proces van een code pakket door een code pakket dat is geïmplementeerd op een knoop punt in een cluster opnieuw te starten. Hiermee wordt het proces van het code pakket afgebroken, waardoor alle gebruikers Service replica's die in dat proces worden gehost, opnieuw worden gestart. |RestartDeployedCodePackageAsync |Restart-ServiceFabricDeployedCodePackage |Geforceerde |
 | RestartNode |Simuleert een Service Fabric cluster knooppunt fout door een knoop punt opnieuw op te starten. |RestartNodeAsync |Restart-ServiceFabricNode |Geforceerde |

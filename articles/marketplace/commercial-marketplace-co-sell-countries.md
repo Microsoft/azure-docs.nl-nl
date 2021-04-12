@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: palanis-MSFT
 ms.author: palanis
 ms.date: 08/27/2019
-ms.openlocfilehash: af110a66bc7ef5737f3d2d97a85ca07525b1d9e7
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d361744ffe66a1ea91849149d05c6741eff600f5
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96744700"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106077309"
 ---
 # <a name="co-sell-country-and-region-codes"></a>Land- en regiocodes voor collectieve verkoop
 
@@ -273,7 +273,6 @@ Als een contact persoon meer dan één land/regio omvat, voert u elk van de twee
 | Jemen                               | TEZAM        |
 | Zambia                              | ZM        |
 | Zimbabwe                            | ZW        |
-|   |   |   |
 
 ## <a name="next-steps"></a>Volgende stappen
 

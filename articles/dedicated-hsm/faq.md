@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/25/2021
 ms.author: keithp
-ms.openlocfilehash: f6705b5f72aaa8f990aaf3b1daa33697b690d1f1
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.openlocfilehash: 8768acc8d4720a750c4c7f7e0f40340aeeff279d
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105608881"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106449049"
 ---
 # <a name="frequently-asked-questions-faq"></a>Veelgestelde vragen
 
@@ -309,7 +309,7 @@ Het [Thales Luna 7 HSM model A790](https://cpl.thalesgroup.com/encryption/hardwa
 
 ### <a name="q-how-many-keys-can-be-supported-in-dedicated-hsm"></a>V: Hoeveel sleutels kunnen worden ondersteund in een toegewezen HSM?
 
-Het maximum aantal sleutels is een functie van het beschik bare geheugen. Het SafeNet Luna 7 model A790 in gebruik heeft 32 MB geheugen. De volgende nummers zijn ook van toepassing op sleutel paren als asymmetrische sleutels worden gebruikt.
+Het maximum aantal sleutels is een functie van het beschik bare geheugen. Het Thales Luna 7 model A790 in gebruik heeft 32 MB geheugen. De volgende nummers zijn ook van toepassing op sleutel paren als asymmetrische sleutels worden gebruikt.
 
 * RSA-2048-19.000
 * ECC-P256-91.000

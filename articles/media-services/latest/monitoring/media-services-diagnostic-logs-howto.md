@@ -14,18 +14,18 @@ ms.topic: how-to
 ms.date: 03/17/2021
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 13dadd9665f2d66861e00d769086fb23a4dea115
-ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
+ms.openlocfilehash: 290b68b90deb669f70fa708e6c3bda83cb7187c0
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105961690"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107227786"
 ---
 # <a name="monitor-media-services-diagnostic-logs"></a>Diagnostische logboeken van Media Services controleren
 
 [!INCLUDE [media services api v3 logo](../includes/v3-hr.md)]
 
-Met [Azure monitor](https://docs.microsoft.com/azure/azure-monitor/overview.md) kunt u metrische gegevens en Diagnostische logboeken bewaken die u helpen begrijpen hoe uw toepassingen worden uitgevoerd. Zie [Media Services metrische gegevens en Diagnostische logboeken controleren](monitor-media-services.md)voor een gedetailleerde beschrijving van deze functie en om te zien waarom u Azure Media Services metrische gegevens en Diagnostische logboeken wilt gebruiken.
+Met [Azure monitor](/azure/azure-monitor/overview) kunt u metrische gegevens en Diagnostische logboeken bewaken die u helpen begrijpen hoe uw toepassingen worden uitgevoerd. Zie [Media Services metrische gegevens en Diagnostische logboeken controleren](monitor-media-services.md)voor een gedetailleerde beschrijving van deze functie en om te zien waarom u Azure Media Services metrische gegevens en Diagnostische logboeken wilt gebruiken.
 
 In dit artikel wordt beschreven hoe u gegevens naar het opslag account rondstuurt en vervolgens de gegevens bekijkt.
 
@@ -183,9 +183,9 @@ Wellicht moet u vijf minuten wachten voordat de gebeurtenis in het opslagaccount
 
 ## <a name="see-also"></a>Zie ook
 
-* [Metrische gegevens van Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/data-platform.md)
-* [Diagnostische logboeken Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/essentials/platform-logs-overview.md)
-* [Logboek gegevens van uw Azure-resources verzamelen en gebruiken](https://docs.microsoft.com/azure/azure-monitor/essentials/platform-logs-overview.md)
+* [Metrische gegevens van Azure Monitor](/azure/azure-monitor/data-platform)
+* [Diagnostische logboeken Azure Monitor](/azure/azure-monitor/essentials/platform-logs-overview)
+* [Logboek gegevens van uw Azure-resources verzamelen en gebruiken](/azure/azure-monitor/essentials/platform-logs-overview)
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -4,10 +4,10 @@ description: U kunt de naam van de poort en het VLAN op uw Sens oren aanpassen a
 ms.date: 12/13/2020
 ms.topic: how-to
 ms.openlocfilehash: de6fbe70d5a5359ad4e4c276642b9b9ed0cef00f
-ms.sourcegitcommit: f611b3f57027a21f7b229edf8a5b4f4c75f76331
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/22/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104784166"
 ---
 # <a name="enhance-port-vlan-and-os-resolution"></a>De oplossing voor poort, VLAN en OS verbeteren

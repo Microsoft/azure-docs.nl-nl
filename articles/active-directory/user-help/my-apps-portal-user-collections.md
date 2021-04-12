@@ -1,5 +1,5 @@
 ---
-title: Verzamelingen (preview) in de portal mijn apps-Azure AD
+title: Apps in verzamelingen indelen in de portal mijn apps-Azure AD
 description: Meer informatie over het maken, bewerken, verwijderen, verbergen en weer geven van app-verzamelingen in mijn apps.
 services: active-directory
 author: curtand
@@ -8,22 +8,20 @@ ms.service: active-directory
 ms.subservice: user-help
 ms.workload: identity
 ms.topic: end-user-help
-ms.date: 01/19/2021
+ms.date: 04/07/2021
 ms.author: curtand
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: 843f957ef8871f6372c1b08a5534f6e90098cc85
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7ac5dede27262d3ce8bc44b4b278ed623063f8e1
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100095117"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107209660"
 ---
-# <a name="user-collections-preview-in-my-apps"></a>Gebruikers verzamelingen (preview) in mijn apps
+# <a name="organize-apps-using-collections-from-my-apps"></a>Apps organiseren met verzamelingen uit mijn apps
 
 Mijn apps is uw enige slag om al uw werk-of school-apps te starten en te beheren. Maak verzamelingen voor het organiseren van uw apps en maak het gemakkelijker om de apps te vinden die u nodig hebt.
-
-[!INCLUDE [preview-notice](../../../includes/active-directory-end-user-my-apps-and-workspaces.md)]
 
 In dit artikel leert u het volgende:
 
@@ -55,7 +53,7 @@ In dit artikel leert u het volgende:
 
     :::image type="content" source="media/my-apps-portal-user-collections/3-add-apps.png" alt-text="Apps uit de lijst toevoegen aan uw verzameling":::
 
-1. Op het volgende kunt u de volg orde wijzigen of apps verwijderen, of **apps toevoegen** selecteren om meer apps voor de verzameling te selecteren. Wanneer u tevreden bent met uw keuzes, selecteert u **nieuwe maken**.  
+1. In het deel venster **Nieuw** kunt u de volg orde wijzigen of apps verwijderen, of **apps toevoegen** selecteren om meer apps voor de verzameling te selecteren. Wanneer u tevreden bent met uw keuzes, selecteert u **nieuwe maken**.  
 
     :::image type="content" source="media/my-apps-portal-user-collections/4-create-button.png" alt-text="Selecteer de knop nieuwe maken om de verzameling op te slaan in mijn apps":::
 
@@ -87,7 +85,7 @@ U kunt alleen verzamelingen bewerken die u hebt gemaakt. Een verzameling bewerke
 
     :::image type="content" source="media/my-apps-portal-user-collections/9-manage-apps-again.png" alt-text="Gebruik de opdracht beheren om uw apps te beheren":::
 
-1. Hier kunt u de volg orde instellen waarin verzamelingen worden weer gegeven in mijn apps. De verzameling aan de bovenkant van de lijst wordt de standaard verzameling die u ziet telkens wanneer u naar myapps.microsoft.com gaat.  
+1. Hier kunt u de volg orde instellen waarin verzamelingen worden weer gegeven in mijn apps. De verzameling boven aan de lijst wordt de standaard verzameling die u ziet elke keer dat u naar myapps.microsoft.com gaat.  
 
     :::image type="content" source="media/my-apps-portal-user-collections/10-default-collection.png" alt-text="Mijn apps bevat nu de nieuwe verzameling":::
 

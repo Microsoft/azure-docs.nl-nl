@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 02/16/2021
+ms.date: 04/02/2021
 ms.author: victorh
-ms.openlocfilehash: 8922e6e0d5137a3a900e0f57f685d449c08b3f47
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4514717274cfb66fbfc0eee25b09aa9e1234ffad
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100596959"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106280323"
 ---
 # <a name="azure-firewall-logs-and-metrics"></a>Azure Firewall-logboeken en metrische gegevens
 
@@ -181,6 +181,8 @@ De volgende metrische gegevens zijn beschikbaar voor Azure Firewall:
     Eenheid: percentage
 
    Wanneer u meer openbare IP-adressen aan uw firewall toevoegt, zijn er meer SNAT-poorten beschikbaar, waardoor het gebruik van de SNAT-poorten afneemt. Als de firewall om wat voor reden dan ook wordt uitgeschaald (bijvoorbeeld CPU of doorvoer), komen er ook extra SNAT-poorten beschikbaar. Een bepaald percentage van het gebruik van de SNAT-poorten kan dan ook worden vervolgd zonder dat u open bare IP-adressen toevoegt, alleen omdat de service is uitgeschaald. U kunt het aantal open bare IP-adressen dat beschikbaar is voor het verg Roten van de beschik bare poorten op uw firewall, direct beheren. Maar u kunt het schalen van de firewall niet rechtstreeks beheren.
+
+   Als uw firewall wordt uitgevoerd in de SNAT-poort uitgeput, moet u ten minste vijf open bare IP-adressen toevoegen. Dit verhoogt het aantal beschik bare SNAT-poorten. Zie [Azure Firewall-functies](features.md#multiple-public-ip-addresses)voor meer informatie.
 
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 04/02/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: 666e9f01d090acf29b8013470ed0264cd83f6d47
-ms.sourcegitcommit: af6eba1485e6fd99eed39e507896472fa930df4d
+ms.openlocfilehash: a8420d23c8bda29290722975ada2acca6733f0e7
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/04/2021
-ms.locfileid: "106293631"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106491667"
 ---
 # <a name="use-databox-to-migrate-from-network-attached-storage-nas-to-azure-file-shares"></a>DataBox gebruiken om te migreren van NAS (Network Attached Storage) naar Azure-bestands shares
 
@@ -137,7 +137,12 @@ Volg de stappen in de Azure DataBox-documentatie:
 
 In de documentatie van de gekoppelde DataBox wordt een RoboCopy-opdracht opgegeven. De opdracht is echter niet geschikt voor het behouden van de volledige betrouw baarheid van bestanden en mappen. Gebruik deze opdracht in plaats daarvan:
 
-[!INCLUDE [storage-files-migration-robocopy](../../../includes/storage-files-migration-robocopy.md)]
+```console
+Robocopy /MT:32 /NP /NFL /NDL /B /MIR /IT /COPY:DATSO /DCOPY:DAT /UNILOG:<FilePathAndName> <SourcePath> <Dest.Path> 
+```
+* Raadpleeg de tabel in het [gedeelte aanstaande Robocopy](#robocopy)voor meer informatie over de details van de afzonderlijke Robocopy-vlaggen.
+* Als u meer wilt weten over de juiste grootte van het thread aantal `/MT:n` , optimaliseert u de snelheid van de Robocopy en maakt u een goede buur in uw Data Center, Bekijk dan de [sectie voor probleem oplossing in Robocopy](#troubleshoot).
+
 
 ## <a name="phase-7-catch-up-robocopy-from-your-nas"></a>Fase 7: het opvangen van RoboCopy van uw NAS
 
@@ -197,59 +202,7 @@ U kunt proberen enkele van deze kopieën parallel uit te voeren. Het is raadzaam
 
 ## <a name="troubleshoot"></a>Problemen oplossen
 
-Snelheid en succes percentage van een bepaalde RoboCopy-uitvoering is afhankelijk van verschillende factoren:
-
-* IOPS op de bron-en doel opslag
-* de beschik bare netwerk bandbreedte ertussen
-* de mogelijkheid om snel bestanden en mappen in een naam ruimte te verwerken
-* het aantal wijzigingen tussen RoboCopy-runs
-
-
-### <a name="iops-and-bandwidth-considerations"></a>Beschik bare IOPS-en bandbreedte overwegingen
-
-In deze categorie moet u rekening houden met de mogelijkheden van de **bron** (uw NAS), het **doel** (Azure DataBox en latere Azure-bestands share) en het **netwerk** waarmee ze zijn verbonden. De maximale door Voer wordt bepaald door het langzaamst van deze drie onderdelen. Een standaard DataBox wordt geleverd met twee netwerk interfaces van 10 Gbps. Afhankelijk van uw NAS kunt u mogelijk overeenkomen met die. Zorg ervoor dat uw netwerk infrastructuur is geconfigureerd voor de ondersteuning van optimale overdrachts snelheid naar de beste mogelijkheden.
-
-> [!CAUTION]
-> Houd er rekening mee dat het gebruik van uw lokale netwerk en een NAS-apparaat voor andere, vaak bedrijfskritische taken, vaak zo snel mogelijk wordt gekopieerd.
-
-Zo snel mogelijk kopiëren is het mogelijk niet wenselijk wanneer er een risico bestaat dat de migratie beschik bare resources in beslag kan nemen.
-
-* Houd rekening met het beste in uw omgeving om migraties uit te voeren: gedurende de dag, buiten kantoor uren of in het weekend.
-* Denk ook aan netwerk-QoS op een Windows-Server om de RoboCopy-snelheid en de invloed op NAS en netwerk te beperken.
-* Vermijd onnodig werk voor de migratie hulpprogramma's.
-
-RobCopy zelf heeft ook de mogelijkheid om onderbrekingen tussen pakketten in te voegen door de switch op te geven `/IPG:n` waarin `n` wordt gemeten in milliseconden tussen Robocopy-pakketten. Met deze switch kunt u voor komen dat bronnen op zowel i/o-apparaten met een beperkte latentie worden gebruikt als netwerk koppelingen met hoge Beschik baarheid. 
-
-`/IPG:n` kan niet worden gebruikt voor nauw keurige netwerk beperking van een bepaalde Mbps. Gebruik in plaats daarvan Windows Server Network QoS. RoboCopy is volledig afhankelijk van het SMB-protocol voor alle netwerken en heeft dus geen invloed op de netwerk doorvoer zelf, maar kan het gebruik ervan vertragen. 
-
-Een vergelijk bare regel wordt toegepast op de IOPS die op de NAS wordt waargenomen. De cluster grootte op het NAS-volume, pakket grootten en een reeks andere factoren beïnvloedt de waargenomen IOPS. Het introduceren van een interpakket vertraging is vaak de eenvoudigste manier om de belasting van de NAS te beheren. Test meerdere waarden, bijvoorbeeld van ongeveer 20 milliseconden (n = 20), om te zien hoeveel vertraging toestaat dat uw andere vereisten worden verwerkt terwijl de snelheid van de RoboCopy voor uw beperkingen wordt gehandhaafd.
-
-### <a name="processing-speed"></a>Verwerkings snelheid
-
-De naam ruimte wordt door RoboCopy door lopen en de bestanden en mappen worden geëvalueerd voor kopiëren. Elk bestand wordt geëvalueerd tijdens een eerste kopie, zoals een kopie over het lokale netwerk naar een DataBox en zelfs tijdens het opvangen van kopieën via de WAN-verbinding met een Azure-bestands share.
-
-Het is vaak standaard om band breedte te beschouwen als de meest beperkende factor in een migratie, en dat kan waar zijn. Maar de mogelijkheid om een naam ruimte op te sommen kan invloed hebben op de totale tijd voor het kopiëren van grotere naam ruimten met kleinere bestanden. Houd er rekening mee dat het kopiëren van 1 TiB van kleine bestanden aanzienlijk langer duurt dan het kopiëren van 1 TiB van minder, maar grotere bestanden, waardoor alle andere variabelen hetzelfde zijn.
-
-De oorzaak van dit verschil is de verwerkings kracht die nodig is om een naam ruimte te door lopen. RoboCopy ondersteunt multi-threaded kopieën via de `/MT:n` para meter waarbij n staat voor het aantal processor-threads. Bij het inrichten van een computer specifiek voor RoboCopy, moet u rekening houden met het aantal processor kernen en hun relatie tot het aantal threads dat ze bieden. De meest voorkomende zijn twee threads per kern. Het aantal kernen en threads van een computer is een belang rijk gegevens punt om te bepalen welke multi-thread waarden `/MT:n` u moet opgeven. Denk ook na over hoeveel RoboCopy-taken u parallel wilt uitvoeren op een bepaalde computer.
-
-Met meer threads wordt ons 1Tib-voor beeld van kleine bestanden aanzienlijk sneller dan minder threads gekopieerd. Tegelijkertijd is er sprake van een dalende rentabiliteit op onze 1Tib van grotere bestanden. Ze kunnen nog steeds sneller de meer threads kopiëren die u toewijst, maar u krijgt waarschijnlijk meer netwerk bandbreedte of IO beperkt.
-
-### <a name="avoid-unnecessary-work"></a>Vermijd onnodig werk
-
-Vermijd grootschalige wijzigingen in uw naam ruimte. Dit omvat het verplaatsen van bestanden tussen directory's, het wijzigen van eigenschappen op een grote schaal of het wijzigen van machtigingen (NTFS-Acl's), omdat deze vaak een trapsgewijs wijzigings effect hebben wanneer de Acl's voor mappen dichter bij de hoofdmap van een share worden gewijzigd. De gevolgen kunnen zijn:
-
-* uitgebreide RoboCopy-taak uitvoerings tijd vanwege elk bestand en elke map die wordt beïnvloed door een ACL-wijziging die moet worden bijgewerkt
-* de effectiviteit van het gebruik van DataBox in de eerste plaats kan worden verkleind wanneer mapstructuren worden gewijzigd nadat de bestanden zijn gekopieerd naar een DataBox. Een RoboCopy-taak kan geen ' afspelen ' van een naam ruimte wijzigen. in plaats daarvan moet u de bestanden die naar een Azure-bestands share worden getransporteerd, verwijderen en de bestanden in de nieuwe mapstructuur opnieuw uploaden naar Azure.
-
-Een ander belang rijk aspect is het gebruik van het hulp programma RoboCopy effectief. Met het aanbevolen RoboCopy-script maakt en slaat u een logboek bestand op voor fouten. Kopieer fouten kunnen zich voordoen. Dit is normaal. Deze fouten maken het vaak nodig om meerdere ronden uit te voeren op een kopieer programma, zoals RoboCopy. Een eerste uitvoering, zeg van NAS naar DataBox, en een of meer extra met de/MIR om bestanden te ondervangen en opnieuw op te halen die niet zijn gekopieerd.
-
-U moet voorbereiden op het uitvoeren van meerdere rondes van RoboCopy op een opgegeven naam ruimte bereik. Opeenvolgende uitvoeringen worden sneller uitgevoerd omdat ze minder hoeven te worden gekopieerd, maar die steeds vaker worden beperkt door de snelheid van de verwerking van de naam ruimte. Wanneer u meerdere afrondingen uitvoert, kunt u elke afronding versnellen door geen RoboCopy te laten proberen om alles bij de eerste poging te kopiëren. Deze RoboCopy-switches kunnen een aanzienlijk verschil vormen:
-
-* `/R:n` n = hoe vaak u een mislukt bestand probeert te kopiëren en 
-* `/W:n` n = aantal seconden dat moet worden gewacht tussen nieuwe pogingen
-
-`/R:5 /W:5` is een redelijke instelling die u kunt aanpassen aan uw eigen smaak. In dit voor beeld wordt een mislukt bestand vijf keer opnieuw geprobeerd, met een wacht tijd van vijf seconden tussen nieuwe pogingen. Als het bestand nog steeds niet kan worden gekopieerd, wordt de volgende RoboCopy-taak opnieuw geprobeerd en vaak worden bestanden niet opgeslagen omdat ze in gebruik zijn of omdat de time-outproblemen uiteindelijk op deze manier kunnen worden gekopieerd.
-
+[!INCLUDE [storage-files-migration-robocopy-optimize](../../../includes/storage-files-migration-robocopy-optimize.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 

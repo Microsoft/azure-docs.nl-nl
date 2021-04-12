@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: error-reference
 ms.date: 05/07/2019
 ms.author: inhenkel
-ms.openlocfilehash: 994e5ae0647f350e0a64f35318bd5803f4ed79b2
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 05ef67e3caafe2c10d02ee4ca2e3248b7ab6c188
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98894980"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106120893"
 ---
 # <a name="streaming-endpoint-origin-errors"></a>Fouten met streaming-eindpunten (oorsprong)
 
@@ -143,24 +143,24 @@ De indeling van de nettolading die door de client wordt verzonden, heeft een nie
 
 Voor versleutelings artikelen en voor beelden raadpleegt u:
 
-- [Concept: beveiliging van inhoud](content-protection-overview.md)
-- [Concept: beleid voor inhouds sleutels](content-key-policy-concept.md)
+- [Concept: beveiliging van inhoud](drm-content-protection-concept.md)
+- [Concept: beleid voor inhouds sleutels](drm-content-key-policy-concept.md)
 - [Concept: streaming-beleid](streaming-policy-concept.md)
-- [Voor beeld: beveiligen met AES-versleuteling](protect-with-aes128.md)
-- [Voor beeld: beveiligen met DRM](protect-with-drm.md)
+- [Voor beeld: beveiligen met AES-versleuteling](drm-playready-license-template-concept.md)
+- [Voor beeld: beveiligen met DRM](drm-protect-with-drm-tutorial.md)
 
 Zie voor richt lijnen voor filters:
 
-- [Concept: dynamische manifesten](filters-dynamic-manifest-overview.md)
+- [Concept: dynamische manifesten](filters-dynamic-manifest-concept.md)
 - [Concept: filters](filters-concept.md)
 - [Voor beeld: filters maken met REST-Api's](filters-dynamic-manifest-rest-howto.md)
-- [Voor beeld: filters maken met .NET](filters-dynamic-manifest-dotnet-howto.md)
-- [Voor beeld: filters maken met CLI](filters-dynamic-manifest-cli-howto.md)
+- [Voor beeld: filters maken met .NET](filters-dynamic-manifest-dotnet-how-to.md)
+- [Voor beeld: filters maken met CLI](filters-dynamic-manifest-cli-how-to.md)
 
 Voor Live-artikelen en voor beelden raadpleegt u:
 
-- [Concept: overzicht van live streams](live-streaming-overview.md)
-- [Concept: live-evenementen en live uitvoer](live-events-outputs-concept.md)
+- [Concept: overzicht van live streams](stream-live-streaming-concept.md)
+- [Concept: live-evenementen en live uitvoer](live-event-outputs-concept.md)
 - [Voor beeld: zelf studie voor live streamen](stream-live-tutorial-with-api.md)
 
 ## <a name="416-range-not-satisfiable"></a>416 Het aangevraagde bereik is niet geldig
@@ -202,7 +202,7 @@ Ga naar het artikel van de [Azure Media Services-community](media-services-commu
 
 - [Foutcodes voor codering](/rest/api/media/jobs/get#joberrorcode)
 - [Azure Media Services concepten](concepts-overview.md)
-- [Quota en limieten](limits-quotas-constraints.md)
+- [Quota en limieten](limits-quotas-constraints-reference.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 

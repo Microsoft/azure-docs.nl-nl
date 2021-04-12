@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 10/14/2020
+ms.date: 04/09/2021
 ms.author: alkohli
-ms.openlocfilehash: bd90a16c09dce65115cea2f097d18f2e0ced931a
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: f4f7e5f69e6b496395b74dbdcd58b3ada0a7f349
+ms.sourcegitcommit: c6a2d9a44a5a2c13abddab932d16c295a7207d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102632030"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107285192"
 ---
 # <a name="security-and-data-protection-for-azure-stack-edge-pro-r-and-azure-stack-edge-mini-r"></a>Beveiliging en gegevens bescherming voor Azure Stack Edge Pro R en Azure Stack Edge mini-R
 
@@ -100,17 +100,23 @@ Gegevens op uw schijven worden beveiligd met twee versleutelings lagen:
 > [!NOTE]
 > De besturingssysteem schijf heeft een BitLocker-XTS-AES-256-software-versleuteling van één laag.
 
-Wanneer het apparaat wordt geactiveerd, wordt u gevraagd een sleutel bestand op te slaan dat herstel sleutels bevat waarmee de gegevens op het apparaat kunnen worden hersteld als het apparaat niet wordt opgestart. Er zijn twee sleutels in het bestand:
+Voordat u het apparaat activeert, moet u versleuteling op uw apparaat configureren. Dit is een vereiste instelling en totdat deze is geconfigureerd, kunt u het apparaat niet activeren. 
 
-- Met één sleutel herstelt u de apparaatconfiguratie op de besturingssysteem volumes.
-<!-- - Second key is to unlock the BitLocker on the data disks. -->
-- Met de tweede sleutel wordt de hardware-versleuteling in de gegevens schijven ontgrendeld.
+In de fabriek wordt BitLocker-versleuteling op volumeniveau ingeschakeld zodra er een installatiekopie op de apparaten is geplaatst. Nadat u het apparaat hebt ontvangen, moet u de versleuteling 'at rest' configureren. De opslag groep en de volumes worden opnieuw gemaakt en u kunt BitLocker-sleutels opgeven om versleuteling in te scha kelen en een andere versleutelings code voor uw data-at-rest te maken. 
+
+De versleutelings-op-rest-sleutel is een door u geleverde sleutel met een lange basis-64 van 32 tekens die u opgeeft en deze sleutel wordt gebruikt om de daad werkelijke versleutelings sleutel te beveiligen. Micro soft heeft geen toegang tot deze versleutelings sleutel op rust die uw gegevens beveiligt. De sleutel wordt opgeslagen in een sleutelbestand op de pagina **Cloudgegevens** nadat het apparaat is geactiveerd.
+
+Wanneer het apparaat wordt geactiveerd, wordt u gevraagd het sleutel bestand op te slaan dat herstel sleutels bevat waarmee de gegevens op het apparaat kunnen worden hersteld als het apparaat niet wordt opgestart. Bij bepaalde herstel scenario's wordt u gevraagd naar het sleutel bestand dat u hebt opgeslagen. Het sleutel bestand bevat de volgende herstel sleutels:
+
+- Een sleutel waarmee de eerste laag van versleuteling wordt ontgrendeld.
+- Een sleutel waarmee de hardware-versleuteling in de gegevens schijven wordt ontgrendeld.
+- Een sleutel die helpt bij het herstellen van de apparaatconfiguratie op de besturingssysteem volumes.
+- Een sleutel die de gegevens beveiligt die via de Azure-service worden doorgelopen.
 
 > [!IMPORTANT]
 > Sla het sleutel bestand op een beveiligde locatie op buiten het apparaat zelf. Als het apparaat niet wordt opgestart en u de sleutel niet hebt, kan dit leiden tot gegevens verlies.
 
-- Bij bepaalde herstel scenario's wordt u gevraagd naar het sleutel bestand dat u hebt opgeslagen. 
-<!--- If a node isn't booting up, you will need to perform a node replacement. You will have the option to swap the data disks from the failed node to the new node. For a 4-node device, you won't need a key file. For a 1-node device, you will be prompted to provide a key file.-->
+
 
 #### <a name="restricted-access-to-data"></a>Beperkte toegang tot gegevens
 
@@ -132,7 +138,6 @@ Wanneer het apparaat een harde reset ondergaat, wordt er een veilig wissen uitge
 ### <a name="protect-data-in-storage-accounts"></a>Gegevens in opslag accounts beveiligen
 
 [!INCLUDE [azure-stack-edge-gateway-data-rest](../../includes/azure-stack-edge-gateway-protect-data-storage-accounts.md)]
-
 - Roteer en [Synchroniseer vervolgens uw opslag account sleutels](azure-stack-edge-gpu-manage-storage-accounts.md) regel matig om uw opslag account te beschermen tegen onbevoegde gebruikers.
 
 ## <a name="manage-personal-information"></a>Persoonlijke gegevens beheren

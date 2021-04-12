@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 9572d612e7ee8e2fd72850ba14447e8449f0f371
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "93321999"
 ---
 # <a name="move-data-to-or-from-azure-blob-storage-using-ssis-connectors"></a>Gegevens verplaatsen van of naar Azure Blob Storage met SSIS-connectors
@@ -64,7 +64,7 @@ Als u gegevens wilt verplaatsen met behulp van het SSIS-functie pakket van on-pr
 
 De para meters die de taak gebruikt, worden hier beschreven:
 
-| Veld | Beschrijving |
+| Veld | Description |
 | --- | --- |
 | **AzureStorageConnection** |Hiermee geeft u een bestaande Azure Storage verbindings beheer of maakt u een nieuwe die verwijst naar een Azure Storage-account waarnaar wordt verwezen naar de host van de BLOB-bestanden. |
 | **Zijn** |Hiermee geeft u de naam op van de BLOB-container die de geüploade bestanden als blobs bevat. |

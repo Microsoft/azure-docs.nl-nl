@@ -6,12 +6,12 @@ ms.author: nimag
 ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 7d7b62d6587a568b74d142a2ee6a93587941559d
-ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
+ms.openlocfilehash: be6ff629a651af5cc06d7928c7972f07aa0fd6e2
+ms.sourcegitcommit: c6a2d9a44a5a2c13abddab932d16c295a7207d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/28/2021
-ms.locfileid: "105645433"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107291374"
 ---
 In deze Snelstartgids leert u hoe u een gesprek start met behulp van de Azure Communication Services-SDK voor Java script.
 
@@ -162,6 +162,6 @@ npx webpack-dev-server --entry ./client.js --output bundle.js --debug --devtool 
 
 Open uw browser en ga naar http://localhost:8080/. U ziet nu het volgende:
 
-:::image type="content" source="../media/javascript/calling-javascript-app.png" alt-text="Schermopname van de voltooide JavaScript-toepassing.":::
+:::image type="content" source="../media/javascript/calling-javascript-app-2.png" alt-text="Schermopname van de voltooide JavaScript-toepassing.":::
 
 U kunt een uitgaande VOIP-oproep maken door een gebruikers-ID op te geven in het tekstveld en te klikken op de knop **Oproep starten**. Door `8:echo123` te bellen, wordt u verbonden met een echo-bot. Dit is handig om aan de slag te gaan en te controleren of uw audio-apparaten werken.

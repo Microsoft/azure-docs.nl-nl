@@ -10,12 +10,12 @@ ms.subservice: billing
 ms.topic: how-to
 ms.date: 01/13/2021
 ms.author: banders
-ms.openlocfilehash: ecc5c8ebef0d2add365d128e11caedaa173d9d63
-ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
+ms.openlocfilehash: f93933e4a6109eef4f9a06b61c7ea06d9fbd7d60
+ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103232140"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106121843"
 ---
 # <a name="how-to-pay-your-bill-for-microsoft-azure"></a>Uw factuur voor Microsoft Azure betalen
 
@@ -59,18 +59,6 @@ Om facturen te betalen in de Azure Portal, moet u de correcte [MCA-machtigingen]
 1. Nadat u een betalingswijze hebt geselecteerd, selecteert u **Nu betalen**.
 
 De factuurstatus verandert binnen 24 uur in *betaald*.
-
-## <a name="pay-now-for-customers-in-india"></a>Betaal nu voor klanten in India
-
-De Reserve Bank van India heeft [nieuwe reglementering](https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12002&Mode=0) uitgegeven die van kracht worden op 1 april 2021. Na deze datum kunnen de banken in India beginnen met het weigeren van automatische terugkerende betalingen en moeten betalingen hand matig worden gemaakt in de Azure Portal.
-
-Als uw bank een automatische terugkerende betaling afwijst, zullen we u per e-mail op de hoogte stellen en instructies geven over hoe u kunt door gaan.
-
-Vanaf 1 april 2021, kunt u op elk gewenst moment een openstaand saldo betalen door de volgende stappen uit te voeren: 
-
-1. Meld u als accountbeheerder aan bij [Azure Portal](https://portal.azure.com/).
-1. Zoek naar **Kostenbeheer en facturering**.
-1. Selecteer op de pagina overzicht de knop **Nu betalen** . (Als u de button **Nu betalen** niet ziet, hebt u geen openstaand saldo.)
 
 ## <a name="check-access-to-a-microsoft-customer-agreement"></a>Toegang tot een Microsoft-klantovereenkomst controleren
 [!INCLUDE [billing-check-mca](../../../includes/billing-check-mca.md)]

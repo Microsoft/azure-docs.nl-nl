@@ -3,12 +3,12 @@ title: Veelgestelde vragen over back-ups van Azure-schijven
 description: Antwoorden vinden op veelgestelde vragen over Azure Disk Backup
 ms.topic: conceptual
 ms.date: 01/07/2021
-ms.openlocfilehash: 7729bc1120fc0e2f4361739a8e05f3a82ccb4268
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 41f2862541d7cb0e3276b5fd24f39668d20fc0a3
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105107309"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107106952"
 ---
 # <a name="frequently-asked-questions-about-azure-disk-backup"></a>Veelgestelde vragen over back-ups van Azure-schijven
 
@@ -73,10 +73,6 @@ Ja, u kunt de schijf herstellen naar een ander abonnement dan die van de bron-be
 ### <a name="can-i-back-up-multiple-disks-together"></a>Kan ik een back-up maken van meerdere schijven?
 
 Nee, punt-in-time moment opnamen van meerdere schijven die zijn gekoppeld aan een virtuele machine worden niet ondersteund. Zie voor meer informatie [back-ups configureren](backup-managed-disks.md#configure-backup) en meer informatie over beperkingen. Raadpleeg de [ondersteunings matrix](disk-backup-support-matrix.md).
-
-### <a name="what-are-my-options-to-back-up-disks-across-multiple-subscriptions"></a>Wat zijn mijn opties voor het maken van back-ups van schijven in meerdere abonnementen?
-
-Op dit moment is het gebruik van de Azure Portal om een back-up van schijven te configureren beperkt tot Maxi maal 20 schijven van hetzelfde abonnement.
 
 ### <a name="what-is-a-target-resource-group"></a>Wat is een doel resource groep?
 

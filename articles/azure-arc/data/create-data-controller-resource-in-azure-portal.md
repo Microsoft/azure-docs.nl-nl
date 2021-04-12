@@ -7,14 +7,14 @@ ms.subservice: azure-arc-data
 author: twright-msft
 ms.author: twright
 ms.reviewer: mikeray
-ms.date: 03/02/2021
+ms.date: 04/07/2021
 ms.topic: how-to
-ms.openlocfilehash: 9c928040aa2ff5a6ebfb7102c03450d3d7297b59
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 12d0997e677bcca423f32951e99a6202855104ad
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101686475"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107030863"
 ---
 # <a name="create-an-azure-arc-data-controller-in-the-azure-portal"></a>Een Azure-Arc-gegevens controller maken in de Azure Portal
 
@@ -26,24 +26,23 @@ U kunt de Azure Portal gebruiken om een Azure-Arc-gegevens controller te maken.
 
 Veel van de mogelijkheden voor het maken van Azure Arc worden gestart in de Azure Portal zelfs als de resource die moet worden gemaakt of beheerd, zich buiten de Azure-infra structuur bevindt. Het patroon van de gebruikers ervaring in deze gevallen, met name wanneer er geen rechtstreekse verbinding tussen Azure en uw omgeving is, is het gebruik van de Azure Portal voor het genereren van een script dat vervolgens kan worden gedownload en uitgevoerd in uw omgeving om een beveiligde verbinding te maken met Azure. Servers met Azure-Arc-functionaliteit volgen dit patroon bijvoorbeeld om [servers met Arc-functionaliteit te maken](../servers/onboard-portal.md).
 
-Op het moment dat de preview alleen ondersteuning biedt voor de indirecte verbonden modus van Azure Arc-gegevens Services, kunt u de Azure Portal gebruiken om een notitie blok voor u te genereren dat vervolgens kan worden gedownload en uitgevoerd in Azure Data Studio op uw Kubernetes-cluster. In de toekomst kunt u de gegevens controller rechtstreeks vanuit de Azure Portal inrichten als de direct verbonden modus beschikbaar is. U kunt meer lezen over [connectiviteits modi](connectivity.md).
+Wanneer u de modus voor indirecte verbinding van gegevens services van Azure Arc gebruikt, kunt u de Azure Portal gebruiken om een notitie blok voor u te genereren dat vervolgens kan worden gedownload en uitgevoerd in Azure Data Studio voor uw Kubernetes-cluster. 
+
+Wanneer u de modus directe verbinding gebruikt, kunt u de gegevens controller rechtstreeks vanuit de Azure Portal inrichten. U kunt meer lezen over [connectiviteits modi](connectivity.md).
 
 ## <a name="use-the-azure-portal-to-create-an-azure-arc-data-controller"></a>De Azure Portal gebruiken om een Azure-Arc-gegevens controller te maken
 
 Volg de onderstaande stappen om een Azure-Arc-gegevens controller te maken met behulp van de Azure Portal en Azure Data Studio.
 
 1. Meld u eerst aan bij de [Azure Portal Marketplace](https://ms.portal.azure.com/#blade/Microsoft_Azure_Marketplace/MarketplaceOffersBlade/selectedMenuItemId/home/searchQuery/azure%20arc%20data%20controller).  De zoek resultaten voor Marketplace worden gefilterd om u de ' Azure Arc data controller ' weer te geven.
-2. Als de eerste stap de zoek criteria niet heeft opgegeven. Voer in de zoek resultaten in en klik op Azure Arc data controller.
-3. Selecteer de tegel Azure data controller in de Marketplace.
-4. Klik op de knop **Create**.
-5. Bekijk de vereisten voor het maken van een Azure Arc-gegevens controller en installeer eventuele ontbrekende vereiste software, zoals Azure Data Studio en kubectl.
-6. Klik op de knop **Details van gegevens controller** .
-7. Kies een abonnement, resource groep en Azure-locatie, net zoals u zou doen voor andere resources die u in de Azure Portal zou maken. In dit geval wordt de Azure-locatie die u selecteert, waar de meta gegevens van de bron worden opgeslagen.  De resource zelf wordt gemaakt op de infra structuur die u kiest. Het hoeft niet in de Azure-infra structuur te zijn.
-8. Voer een naam in voor de gegevens controller.
-9. Selecteer de connectiviteits modus voor de gegevens controller. Meer informatie over [connectiviteits modi en vereisten](./connectivity.md). 
-
-   > [!NOTE] 
-   > Als u de modus **directe** connectiviteit selecteert, controleert u of de referenties van de Service-Principal zijn ingesteld via omgevings variabelen, zoals wordt beschreven in [Service-Principal maken](upload-metrics-and-logs-to-azure-monitor.md#create-service-principal). 
+1. Als de eerste stap de zoek criteria niet heeft opgegeven. Voer in de zoek resultaten in en klik op Azure Arc data controller.
+1. Selecteer de tegel Azure data controller in de Marketplace.
+1. Klik op de knop **Create**.
+1. Selecteer de modus voor indirecte connectiviteit. Meer informatie over [connectiviteits modi en vereisten](./connectivity.md). 
+1. Bekijk de vereisten voor het maken van een Azure Arc-gegevens controller en installeer eventuele ontbrekende vereiste software, zoals Azure Data Studio en kubectl.
+1. Klik op de **volgende knop: Details van gegevens controller** .
+1. Kies een abonnement, resource groep en Azure-locatie, net zoals u zou doen voor andere resources die u in de Azure Portal zou maken. In dit geval wordt de Azure-locatie die u selecteert, waar de meta gegevens van de bron worden opgeslagen.  De resource zelf wordt gemaakt op de infra structuur die u kiest. Het hoeft niet in de Azure-infra structuur te zijn.
+1. Voer een naam in voor de gegevens controller.
 
 1. Selecteer een configuratie profiel voor de implementatie.
 1. Klik op de knop **openen in azure Studio** .

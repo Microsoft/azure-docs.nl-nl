@@ -1,5 +1,5 @@
 ---
-title: Opt-out van de verifieer bare referenties (preview-versie)
+title: Afmelden bij de Azure Active Directory verifieer bare referenties (preview-versie)
 description: Meer informatie over het afmelden van de voor beeld van verifieer bare referenties
 documentationCenter: ''
 author: barclayn
@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.subservice: verifiable-credentials
 ms.date: 04/01/2021
 ms.author: barclayn
-ms.openlocfilehash: 93c493a9b9941913da270fe763175240c8abf9f3
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: d6e72b6d6f566fcf3f52e1c48ab6824c0e9a968e
+ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106170012"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106222789"
 ---
 # <a name="opt-out-of-the-verifiable-credentials-preview"></a>Opt-out van de verifieer bare referenties (preview-versie)
 
@@ -62,7 +62,7 @@ Wanneer u de functie voor het afmelden van de Azure Active Directory Controleer 
 
 Zodra er een opt-out plaatsvindt, kunt u uw werk niet meer herstellen of geen enkele bewerking uitvoeren. Deze stap is een eenrichtings bewerking en u moet zich opnieuw aanmelden, wat resulteert in een nieuw exemplaar dat wordt gemaakt.  
 
-## <a name="effect-on-existing-verifiable-credentials"></a>Effect op bestaande verifieer bare referenties.
+## <a name="effect-on-existing-verifiable-credentials"></a>Effect op bestaande verifieer bare referenties
 
 Alle Controleer bare referenties die al zijn uitgegeven, blijven bestaan. Ze worden niet cryptografisch ongeldig, omdat uw was omgezet in een ION-omzet.
 Als relying party's echter de status-API aanroepen, ontvangen ze altijd een fout bericht.

@@ -1,14 +1,14 @@
 ---
 title: 'Snelstartgids: overzicht van beveiligings agenten'
-description: In deze Quick Start leert u hoe u de architectuur van de beveiligings agent begrijpt voor de agents die in de Azure Defender voor IoT-service worden gebruikt.
+description: In deze Quick Start leert u hoe u de architectuur van de beveiligings agent begrijpt voor de agents die worden gebruikt in de Azure Defender voor IoT-service.
 ms.topic: quickstart
-ms.date: 01/24/2021
-ms.openlocfilehash: 2e7d7d1e6770667b1ce966724611cc003116409d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 4/4/2021
+ms.openlocfilehash: 0937cccb0335f4eee16ca3590babe9574320b89f
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104778505"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106384972"
 ---
 # <a name="quickstart-security-agent-reference-architecture"></a>Snelstartgids: referentie architectuur voor beveiligings agent
 
@@ -33,7 +33,7 @@ Defender voor IoT-beveiligings agenten is ontwikkeld als open-source projecten e
 
 ## <a name="prerequisites"></a>Vereisten
 
-Geen
+- Geen
 
 ## <a name="agent-supported-platforms"></a>Door agents ondersteunde platforms
 
@@ -48,8 +48,7 @@ Defender voor IoT biedt verschillende installatie agenten voor 32 bits-en 64-bit
 ## <a name="next-steps"></a>Volgende stappen
 
 In dit artikel hebt u een overzicht op hoog niveau over Defender voor de architectuur van IoT Defender-IoT-micro-agent en de beschik bare installatie Programma's.
-
-Als u aan de slag wilt gaan met Defender voor IoT-implementatie, gebruikt u de volgende artikelen:
+Als u aan de slag wilt gaan met Defender voor IoT-implementatie, 
 
 > [!div class="nextstepaction"]
 > [verificatie methoden voor beveiligings agenten](concept-security-agent-authentication-methods.md)

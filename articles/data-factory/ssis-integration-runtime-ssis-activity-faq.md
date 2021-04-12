@@ -4,16 +4,16 @@ description: Dit artikel bevat richt lijnen voor probleem oplossing voor het uit
 ms.service: data-factory
 ms.topic: conceptual
 ms.author: wenjiefu
-author: wenjiefu
+author: RodgeFu
 ms.reviewer: sawinark
 ms.custom: seo-lt-2019
 ms.date: 04/15/2019
-ms.openlocfilehash: 2bc56d39de392c9e4c20c25b554e3bdeea048bfb
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 6eecedbc28bcb8bc0bd46534a2c2692636f6f2c1
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "100361873"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105933999"
 ---
 # <a name="troubleshoot-package-execution-in-the-ssis-integration-runtime"></a>Problemen met de uitvoering van pakketten oplossen in SSIS Integration runtime
 
@@ -121,7 +121,10 @@ Deze fout treedt op wanneer de SSIS Integration runtime geen toegang kan krijgen
 Een mogelijke oorzaak is dat de gebruikers naam of het wacht woord waarvoor Azure AD Multi-Factor Authentication is ingeschakeld, is geconfigureerd voor Azure Analysis Services-verificatie. Deze authenticatie wordt niet ondersteund in de SSIS Integration runtime. Probeer een service-principal te gebruiken voor Azure Analysis Services authenticatie:
 
 1. Bereid een service-principal voor zoals beschreven in [Automation met Service-principals](../analysis-services/analysis-services-service-principal.md).
-2. Configureer in verbindings beheer **een specifieke gebruikers naam en wacht woord gebruiken**: Stel **AppID** in als de gebruikers naam en **clientSecret** als wacht woord.
+2. Configureer in verbindings beheer **een specifieke gebruikers naam en wacht woord configureren:** Stel **app:*&lt; AppID &gt;* @* &lt; TenantID &gt;*** in als de gebruikers naam en clientSecret als het wacht woord. Hier volgt een voor beeld van een correct opgemaakte gebruikers naam:
+ 
+   `app:12345678-9012-3456-789a-bcdef012345678@9abcdef0-1234-5678-9abc-def0123456789abc`
+1. Configureer in verbindings beheer **een specifieke gebruikers naam en wacht woord gebruiken**: Stel **AppID** in als de gebruikers naam en **clientSecret** als wacht woord.
 
 ### <a name="error-message-adonet-source-has-failed-to-acquire-the-connection-guid-with-the-following-error-message-login-failed-for-user-nt-authorityanonymous-logon-when-using-a-managed-identity"></a>Fout bericht: de ADONET-bron kan de verbinding {GUID} niet verkrijgen met het volgende fout bericht: de aanmelding is mislukt voor de gebruiker ' NT AUTHORITY\ANONYMOUS LOGON ' ' bij het gebruik van een beheerde identiteit
 

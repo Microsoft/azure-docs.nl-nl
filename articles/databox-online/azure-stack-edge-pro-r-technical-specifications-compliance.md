@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 03/24/2021
 ms.author: alkohli
 ms.openlocfilehash: aa1b861555cff65c9e432ea711af3f7c6e410625
-ms.sourcegitcommit: bed20f85722deec33050e0d8881e465f94c79ac2
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/25/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105109162"
 ---
 # <a name="azure-stack-edge-pro-r-technical-specifications"></a>Technische specificaties van Azure Stack Edge Pro R
@@ -48,14 +48,14 @@ Het Azure Stack Edge Pro R-apparaat heeft twee 100-240 V-energievoedings eenhede
 | Warmte-afbraak (maximum)                   | 2891 BTU/uur                |
 | Frequentie               | 50/60 Hz                   |
 | Selectie van voltage bereik | Automatisch variërend: 115-230 V AC |
-| Hot pluggable           | Ja                        |
+| Hot pluggable           | Yes                        |
 
 ## <a name="network-specifications"></a>Netwerk specificaties
 
 Het Azure Stack Edge Pro R-apparaat heeft vier netwerk interfaces, PORT1-PORT4. 
 
 
-|Specificatie  |Beschrijving                              |
+|Specificatie  |Description                              |
 |----------------------|----------------------------------|
 |Netwerkinterfaces    |**2 x 1 GbE RJ45** <br> POORT 1 wordt gebruikt als beheer interface voor initiële installatie en is standaard statisch. Nadat de eerste installatie is voltooid, kunt u de interface gebruiken voor gegevens met elk IP-adres. Bij het opnieuw instellen wordt de interface echter teruggezet naar het statische IP-adres. <br>De andere interface poort 2 kan door de gebruiker worden geconfigureerd, kan worden gebruikt voor gegevens overdracht en is standaard DHCP.     |
 |Netwerkinterfaces    |**2 x 25 GbE SFP28** <br> Deze gegevens interfaces poort 3 en poort 4 kunnen worden geconfigureerd als DHCP (standaard) of statisch.            |

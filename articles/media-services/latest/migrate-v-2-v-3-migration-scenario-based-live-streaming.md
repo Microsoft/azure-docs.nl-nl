@@ -11,12 +11,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 03/25/2021
 ms.author: inhenkel
-ms.openlocfilehash: 273a1b5986a72acc1d6725fbb3101c9c1df17e45
-ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
+ms.openlocfilehash: d021267c38f0043d2361b1a6392fbacd0634a164
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106122047"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106279694"
 ---
 # <a name="live-streaming-scenario-based-migration-guidance"></a>Richt lijnen voor migratie op basis van live streaming
 
@@ -37,7 +37,7 @@ Test de nieuwe manier om live-gebeurtenissen te leveren met Media Services voord
 
 - Maak een nieuwe v3 [live-gebeurtenis](live-event-outputs-concept.md#live-events) voor code ring. U kunt [1080p-en 720p-coderings instellingen](live-event-types-comparison-reference.md#system-presets)inschakelen.
 - De entiteit [Live uitvoer](live-event-outputs-concept.md#live-outputs) gebruiken in plaats van Program ma's
-- [Streaming-Locators](streaming-locators-concept.md)maken.
+- [Streaming-Locators](stream-streaming-locators-concept.md)maken.
 - Denk na over uw behoefte aan [HLS-en dash](encode-dynamic-packaging-concept.md) -live-streaming.
 - Als u snel aan de slag wilt met Live Events, bekijkt u de nieuwe functies van de [modus stand-by](live-event-outputs-concept.md#standby-mode) .
 - Als u uw live-evenement wilt transcriberen terwijl dit gebeurt, kunt u de nieuwe functie van [Live transcriptie](live-event-live-transcription-how-to.md) verkennen.
@@ -52,7 +52,7 @@ Zie concepten van Live Events, zelf studies en de onderstaande hand leidingen vo
 
 - [Live streamen met Azure Media Services v3](stream-live-streaming-concept.md)
 - [Livegebeurtenissen en live-uitvoer in Media Services](live-event-outputs-concept.md)
-- [Geverifieerde on-premises live streaming encoders](recommended-on-premises-live-encoders.md)
+- [Geverifieerde on-premises live streaming encoders](encode-recommended-on-premises-live-encoders.md)
 - [Gebruik tijd verschuivingen en live uitvoer om video weergave op aanvraag te maken](live-event-cloud-dvr-time-how-to.md)
 - [Live-Event-Live-transcriptie-How-to (preview)](live-event-live-transcription-how-to.md)
 - [Vergelijking van live gebeurtenis typen](live-event-types-comparison-reference.md)

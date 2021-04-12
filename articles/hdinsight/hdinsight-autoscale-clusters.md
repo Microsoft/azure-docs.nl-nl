@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.custom: contperf-fy21q1, contperf-fy21q2
 ms.date: 12/14/2020
 ms.openlocfilehash: 5dabae76308f32da7968d8cfa89b95f1eb19c142
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104863765"
 ---
 # <a name="automatically-scale-azure-hdinsight-clusters"></a>Azure HDInsight-clusters automatisch schalen
@@ -221,7 +221,7 @@ De cluster status die in de Azure Portal wordt weer gegeven, kan u helpen bij he
 
 Alle cluster status berichten die u mogelijk ziet, worden beschreven in de onderstaande lijst.
 
-| De clusterstatus | Beschrijving |
+| De clusterstatus | Description |
 |---|---|
 | Wordt uitgevoerd | Het cluster werkt normaal. Alle vorige activiteiten voor automatisch schalen zijn voltooid. |
 | Bijwerken  | De configuratie van het automatisch schalen van clusters wordt bijgewerkt.  |

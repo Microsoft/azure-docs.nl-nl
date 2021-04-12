@@ -11,12 +11,12 @@ ms.date: 03/11/2019
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 4c7382f84522333b6aae0d79941aae8f2147a12f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5b67f505a71d2af7950422a86ab45ef8aebb3bf4
+ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "81729149"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106056433"
 ---
 # <a name="azure-iot-hub-pricing-information"></a>Prijs informatie voor Azure IoT Hub
 
@@ -33,9 +33,9 @@ ms.locfileid: "81729149"
 | Cloud-naar-apparaat-berichten | Verzonden berichten worden in rekening gebracht in segmenten van 4 KB, bijvoorbeeld als er een 6-KB-bericht 2 berichten in rekening wordt gebracht. |
 | Uploads van bestanden | Bestands overdracht naar Azure Storage is niet gemeten door IoT Hub. Berichten voor het initiëren en volt ooien van bestands overdracht worden in rekening gebracht als een bericht dat wordt gemeten in stappen van 4 KB. Een voor beeld: het overdragen van een bestand van 10 MB wordt in rekening gebracht als twee berichten naast de Azure Storage kosten. |
 | Directe methoden | Aanvragen voor een geslaagde methode worden in rekening gebracht in segmenten van 4 KB en de antwoorden worden in segmenten van 4 KB in rekening gebracht als extra berichten. Aanvragen voor niet-verbonden apparaten worden in rekening gebracht als berichten in segmenten van 4 KB. Een methode met een hoofd tekst van 4 KB die resulteert in een reactie zonder hoofd code van het apparaat, wordt bijvoorbeeld in rekening gebracht als twee berichten. Een methode met een hoofd tekst van 6 KB die resulteert in een antwoord van 1 KB van het apparaat, wordt gefactureerd als twee berichten voor de aanvraag plus een ander bericht voor het antwoord. |
-| Dubbele Lees bewerkingen voor apparaten en modules | Dubbele Lees bewerkingen van het apparaat of de module en van de back-end van de oplossing worden in rekening gebracht als berichten in 512-byte-segmenten. Een voor beeld: het lezen van een dubbele KB-bedrag wordt in rekening gebracht als 12 berichten. |
-| Dubbele updates voor apparaten en modules (tags en eigenschappen) | Dubbele updates van het apparaat of de module en van de back-end van de oplossing worden in rekening gebracht als berichten in 512-byte-segmenten. Een voor beeld: het lezen van een dubbele KB-bedrag wordt in rekening gebracht als 12 berichten. |
-| Dubbele query's apparaat en module | Query's worden in rekening gebracht als berichten, afhankelijk van de grootte van het resultaat in segmenten van 512 bytes. |
+| Dubbele Lees bewerkingen voor apparaten en modules | Dubbele Lees bewerkingen van het apparaat of de module en van de back-end van de oplossing worden in rekening gebracht als berichten in segmenten van 4 KB. Bijvoorbeeld: het lezen van een 8-KB dubbele wordt in rekening gebracht als twee berichten. |
+| Dubbele updates voor apparaten en modules (tags en eigenschappen) | Dubbele updates van het apparaat of de module en van de back-end van de oplossing worden in rekening gebracht als berichten in segmenten van 4 KB. Een voor beeld: het lezen van een 12-KB dubbele wordt in rekening gebracht als 3 berichten. |
+| Dubbele query's apparaat en module | Query's worden in rekening gebracht als berichten, afhankelijk van de resultaat grootte in segmenten van 4 KB. |
 | Taakbewerkingen <br/> (maken, bijwerken, weergeven, verwijderen) | Niet in rekening gebracht. |
 | Taken per apparaat | Taak bewerkingen (zoals dubbele updates en methoden) worden als normaal in rekening gebracht. Bijvoorbeeld: een taak die resulteert in een 1000-methode aanroept met 1 KB-aanvragen en antwoorden op een lege hoofd tekst worden 1000-berichten in rekening gebracht. |
 | Keep-Alive-berichten | Bij het gebruik van AMQP-of MQTT-protocollen worden berichten die worden uitgewisseld om verbinding te maken en de berichten die in de onderhandeling worden uitgewisseld, niet in rekening gebracht. |

@@ -360,8 +360,6 @@
           displayName: 'keda, container, docker'
         - name: Resource-implementatie automatiseren
           href: functions-infrastructure-as-code.md
-        - name: On-premises functies
-          href: functions-runtime-install.md
         - name: De Jenkins-invoegtoepassing implementeren
           href: /azure/developer/jenkins/deploy-to-azure-functions
           maintainContext: true
@@ -404,8 +402,6 @@
               href: ../app-service/configure-authentication-provider-facebook.md?toc=%2fazure%2fazure-functions%2ftoc.json
             - name: Verifiëren met Google
               href: ../app-service/configure-authentication-provider-google.md?toc=%2fazure%2fazure-functions%2ftoc.json
-            - name: Verifiëren met een Microsoft-account
-              href: ../app-service/configure-authentication-provider-microsoft.md?toc=%2fazure%2fazure-functions%2ftoc.json
             - name: Verifiëren met Twitter
               href: ../app-service/configure-authentication-provider-twitter.md?toc=%2fazure%2fazure-functions%2ftoc.json
             - name: Verifiëren met een OpenID Connect-provider (Preview)
@@ -436,6 +432,18 @@
               href: functions-add-output-binding-storage-queue-vs-code.md
             - name: Opslag - Visual Studio
               href: functions-add-output-binding-storage-queue-vs.md
+        - name: VM's starten/stoppen
+          items:
+            - name: Overzicht
+              href: start-stop-vms/overview.md
+            - name: Implementeren en configureren
+              href: start-stop-vms/deploy.md
+            - name: Beheren en bewaken
+              href: start-stop-vms/manage.md
+            - name: Vm's voor starten/stoppen verwijderen
+              href: start-stop-vms/remove.md
+            - name: Problemen oplossen
+              href: start-stop-vms/troubleshoot.md
         - name: Verbinding maken met SQL Database
           href: functions-scenario-database-table-cleanup.md
         - name: Verbinding maken met een virtueel netwerk
@@ -452,10 +460,14 @@
       items:
         - name: Problemen met opslag oplossen
           href: functions-recover-storage-account.md
-        - name: Problemen met Python-functies oplossen
-          href: recover-python-functions.md
-        - name: Schaal en prestaties voor Python-functies
-          href: python-scale-performance-reference.md
+        - name: Python-functies
+          items:
+            - name: Algemene probleem oplossing
+              href: recover-python-functions.md
+            - name: Schaal en prestaties
+              href: python-scale-performance-reference.md
+            - name: Geheugen profilering
+              href: python-memory-profiler-reference.md
 - name: Naslaginformatie
   items:
     - name: API-referenties

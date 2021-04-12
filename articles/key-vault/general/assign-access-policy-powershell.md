@@ -1,6 +1,6 @@
 ---
 title: Een Azure Key Vault toegangs beleid toewijzen
-description: De Azure Portal, Azure CLI of Azure PowerShell gebruiken om een Key Vault toegangs beleid toe te wijzen aan een service-principal of toepassings-id.
+description: De Azure Portal, Azure CLI of Azure PowerShell gebruiken om Key Vault een toegangs beleid toe te wijzen aan een beveiligings-principal of een toepassings identiteit.
 services: key-vault
 author: msmbaldwin
 manager: rkarlin
@@ -10,16 +10,16 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 08/27/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 4cf0393cdb0aae1b352b81df4893f874f34970cc
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4637715b2ba885d58ebb4c5f3ed40a79be2f815b
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97934527"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105968727"
 ---
 # <a name="assign-a-key-vault-access-policy-using-azure-powershell"></a>Een Key Vault toegangs beleid toewijzen met behulp van Azure PowerShell
 
-Een Key Vault toegangs beleid bepaalt of een bepaalde service-principal, namelijk een toepassing of gebruikers groep, verschillende bewerkingen kan uitvoeren op Key Vault [geheimen](../secrets/index.yml), [sleutels](../keys/index.yml)en [certificaten](../certificates/index.yml). U kunt toegangs beleid toewijzen met behulp van de [Azure Portal](assign-access-policy-portal.md), de [Azure cli](assign-access-policy-cli.md)of Azure PowerShell (dit artikel).
+Een Key Vault toegangs beleid bepaalt of een bepaalde beveiligingsprincipal, namelijk een gebruiker, toepassing of gebruikers groep, verschillende bewerkingen kan uitvoeren op Key Vault [geheimen](../secrets/index.yml), [sleutels](../keys/index.yml)en [certificaten](../certificates/index.yml). U kunt toegangs beleid toewijzen met behulp van de [Azure Portal](assign-access-policy-portal.md), de [Azure cli](assign-access-policy-cli.md)of Azure PowerShell (dit artikel).
 
 [!INCLUDE [key-vault-access-policy-limits.md](../../../includes/key-vault-access-policy-limits.md)]
 

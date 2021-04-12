@@ -4,10 +4,10 @@ description: Hierin worden de algemene uitzonde ringen en fouten beschreven die 
 ms.topic: conceptual
 ms.date: 06/20/2018
 ms.openlocfilehash: c2b5418729855ce366512d9718e22124e5cd837a
-ms.sourcegitcommit: a9ce1da049c019c86063acf442bb13f5a0dde213
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105627707"
 ---
 # <a name="common-exceptions-and-errors-when-working-with-the-fabricclient-apis"></a>Algemene uitzonderingen en fouten bij het werken met de FabricClient-API's

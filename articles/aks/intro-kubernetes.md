@@ -5,12 +5,12 @@ services: container-service
 ms.topic: overview
 ms.date: 02/24/2021
 ms.custom: mvc
-ms.openlocfilehash: bb4adac1f59370959830f418d27bc27f9aaf63d2
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1cddd39d0b95e021478235fcdafbacd40eb4097c
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103493013"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107105252"
 ---
 # <a name="azure-kubernetes-service"></a>Azure Kubernetes Service
 
@@ -179,7 +179,7 @@ Meer informatie over het implementeren en beheren van AKS met de Snelstartgids v
 [aks-master-logs]: ./view-control-plane-logs.md
 [aks-supported versions]: supported-kubernetes-versions.md
 [concepts-clusters-workloads]: concepts-clusters-workloads.md
-[kubernetes-rbac]: concepts-identity.md#kubernetes-role-based-access-control-kubernetes-rbac
+[kubernetes-rbac]: concepts-identity.md#kubernetes-rbac
 [concepts-identity]: concepts-identity.md
 [concepts-storage]: concepts-storage.md
 [conf-com-node]: ../confidential-computing/confidential-nodes-aks-overview.md

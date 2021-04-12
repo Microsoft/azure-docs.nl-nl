@@ -5,10 +5,10 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 01/16/2019
 ms.openlocfilehash: b8b054d06c9c0987508abfdf03bbcf9470572bd1
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "104868763"
 ---
 # <a name="migrate-azure-hdinsight-36-apache-storm-to-hdinsight-40-apache-spark"></a>Azure HDInsight 3,6 Apache Storm migreren naar HDInsight 4,0 Apache Spark
@@ -61,7 +61,7 @@ Storm-topologieën bestaan uit meerdere onderdelen die zijn gerangschikt in een 
 
 Storm bestaat uit de volgende drie daemons, waarmee het Storm-cluster goed werkt.
 
-|Daemon |Beschrijving |
+|Daemon |Description |
 |---|---|
 |Nimbus|Net als bij Hadoop JobTracker is het verantwoordelijk voor het distribueren van code rond het cluster en het toewijzen van taken aan machines en het bewaken van fouten.|
 |Zookeeper|Wordt gebruikt voor de coördinatie van het cluster.|

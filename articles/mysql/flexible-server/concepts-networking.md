@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 9/23/2020
-ms.openlocfilehash: ec835073a1fe447490f6965fe41478319a47f503
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: c83f36216e7488df94c372234d0541a4ee9f99b5
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105106833"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106492219"
 ---
 # <a name="connectivity-and-networking-concepts-for-azure-database-for-mysql---flexible-server-preview"></a>Connectiviteits-en netwerk concepten voor Azure Database for MySQL-flexibele server (preview-versie)
 
@@ -118,7 +118,7 @@ Meer informatie over het inschakelen en beheren van open bare toegang (toegestan
 ### <a name="troubleshooting-public-access-issues"></a>Problemen met open bare toegang oplossen
 Houd rekening met de volgende punten wanneer de toegang tot de Microsoft Azure-Data Base voor MySQL-Server service niet werkt zoals verwacht:
 
-* **Wijzigingen in de acceptatie lijst zijn nog niet doorgevoerd:** Het kan een vertraging van vijf minuten duren voordat wijzigingen in de configuratie van de Azure Database for MySQL Server-firewall van kracht worden.
+* **Wijzigingen in de allowlist zijn nog niet doorgevoerd:** Het kan een vertraging van vijf minuten duren voordat wijzigingen in de configuratie van de Azure Database for MySQL Server-firewall van kracht worden.
 
 * **Verificatie is mislukt:** Als een gebruiker geen machtigingen heeft op de Azure Database for MySQL server of het gebruikte wacht woord onjuist is, wordt de verbinding met de Azure Database for MySQL-server geweigerd. Het maken van een firewall instelling biedt clients alleen de mogelijkheid om verbinding te maken met uw server. Elke client moet nog steeds de benodigde beveiligings referenties opgeven.
 
@@ -139,9 +139,23 @@ Voorbeeld
 
 
 ## <a name="tls-and-ssl"></a>TLS en SSL
-Azure Database for MySQL flexibele server ondersteunt het verbinden van uw client toepassingen met de MySQL-service met behulp van Transport Layer Security (TLS). TLS is een industrie standaard protocol dat versleutelde netwerk verbindingen tussen uw database server en client toepassingen garandeert. TLS is een bijgewerkt Protocol van Secure Sockets Layer (SSL).
+Azure Database for MySQL flexibele server ondersteunt het verbinden van uw client toepassingen met de MySQL-server met behulp van Secure Sockets Layer (SSL) met TLS-code ring (trans port Layer Security). TLS is een industrie standaard protocol dat versleutelde netwerk verbindingen tussen uw database server-en client toepassingen waarborgt, zodat u kunt voldoen aan de nalevings vereisten.
 
-Azure Database for MySQL flexibele server ondersteunt alleen versleutelde verbindingen met behulp van Transport Layer Security (TLS 1,2). Alle inkomende verbindingen met TLS 1.0 en TLS 1.1 worden geweigerd. U kunt de TLS-versie niet uitschakelen of wijzigen om verbinding te maken met Azure Database for MySQL flexibele server. Lees hoe u [verbinding maakt met behulp van SSL/TLS](how-to-connect-tls-ssl.md) voor meer informatie. 
+Azure Database for MySQL flexibele server ondersteunt standaard versleutelde verbindingen met behulp van Transport Layer Security (TLS 1,2) en alle binnenkomende verbindingen met TLS 1,0 en TLS 1,1 worden standaard geweigerd. De versleutelde configuratie voor het afdwingen van verbinding of TLS-versie op de flexibele server kan worden geconfigureerd en gewijzigd. 
+
+Hieronder vindt u de verschillende configuratie van SSL-en TLS-instellingen die u kunt hebben voor uw flexibele server:
+
+| Scenario   | Instellingen voor server parameters      | Beschrijving                                    |
+|------------|--------------------------------|------------------------------------------------|
+|SSL uitschakelen (versleutelde verbindingen) | require_secure_transport = uit |Als uw oudere toepassing geen versleutelde verbindingen met de MySQL-server ondersteunt, kunt u het afdwingen van versleutelde verbindingen met uw flexibele server uitschakelen door require_secure_transport = uit te stellen.|
+|SSL afdwingen met TLS-versie < 1,2 | require_secure_transport = ON en tls_version = TLSV1 of TLSV 1.1| Als uw oudere toepassing versleutelde verbindingen ondersteunt, maar TLS-versie < 1,2, kunt u versleutelde verbindingen inschakelen, maar uw flexibele server zo configureren dat verbindingen met de TLS-versie (v 1.0 of v 1.1) die door uw toepassing worden ondersteund, worden toegestaan|
+|SSL afdwingen met TLS-versie = 1.2 (standaard configuratie)|require_secure_transport = ON en tls_version = TLSV 1.2| Dit is de aanbevolen en standaard configuratie voor een flexibele server.|
+|SSL afdwingen met TLS-versie = 1.3 (ondersteund met MySQL v 8.0 en hoger)| require_secure_transport = op en tls_version = TLSV 1.3| Dit is handig en aanbevolen voor het ontwikkelen van nieuwe toepassingen|
+
+> [!Note]
+> Wijzigingen in SSL-code ring op een flexibele server worden niet ondersteund. FIPS-coderings suites worden standaard afgedwongen wanneer tls_version is ingesteld op TLS-versie 1,2. Voor TLS-versies met uitzonde ring van versie 1,2 wordt SSL-code ring ingesteld op standaard instellingen die bij de installatie van MySQL-community's worden geleverd.
+
+Lees hoe u [verbinding maakt met behulp van SSL/TLS](how-to-connect-tls-ssl.md) voor meer informatie. 
 
 
 ## <a name="next-steps"></a>Volgende stappen

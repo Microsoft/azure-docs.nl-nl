@@ -4,15 +4,15 @@ description: In dit artikel wordt beschreven hoe u Azure Cosmos DB accounts conf
 author: kanshiG
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 10/13/2020
+ms.date: 04/05/2021
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: 69a9f0a82f5c19504564825e47f69ab8414e0909
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d0470759a589927b65462f258b20446af608175c
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102565827"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106284027"
 ---
 # <a name="configure-azure-cosmos-db-account-with-periodic-backup"></a>Azure Cosmos DB account configureren met periodieke back-up
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -31,11 +31,32 @@ Azure Cosmos DB maakt op regelmatige tijdstippen automatisch back-ups van uw geg
 
 * De back-ups worden gemaakt zonder dat dit van invloed is op de prestaties of Beschik baarheid van uw toepassing. Azure Cosmos DB gegevens back-up op de achtergrond uitvoeren zonder gebruik te maken van extra ingerichte door Voer (RUs) of de prestaties en beschik baarheid van uw data base beïnvloeden.
 
+## <a name="backup-storage-redundancy"></a><a id="backup-storage-redundancy"></a>Opslag redundantie van back-ups
+
+Azure Cosmos DB slaat standaard de back-upgegevens van de periodieke modus op in geo-redundante [Blob-opslag](../storage/common/storage-redundancy.md) die wordt gerepliceerd naar een [gekoppelde regio](../best-practices-availability-paired-regions.md).  
+
+Om ervoor te zorgen dat uw back-upgegevens binnen dezelfde regio blijven waar uw Azure Cosmos DB-account is ingericht, kunt u de standaard geografisch redundante back-upopslag wijzigen en lokaal redundante of zone-redundante opslag configureren. Opslag redundantie mechanismen slaan meerdere kopieën van uw back-ups op, zodat deze worden beschermd tegen geplande en niet-geplande gebeurtenissen, waaronder tijdelijke hardwarestoringen, netwerk-of energie storingen of enorme natuur rampen.
+
+Back-upgegevens in Azure Cosmos DB worden drie keer gerepliceerd in de primaire regio. U kunt opslag redundantie configureren voor de periodieke back-upmodus op het moment dat het account wordt gemaakt of het bijwerken voor een bestaand account. U kunt de volgende drie opties voor gegevens redundantie gebruiken in de periodieke back-upmodus:
+
+* **Geografisch redundante back-upopslag:** Met deze optie worden uw gegevens asynchroon naar de gekoppelde regio gekopieerd.
+
+* **Zone-redundante back-upopslag:** Met deze optie worden uw gegevens asynchroon gekopieerd over drie Azure-beschikbaarheids zones in de primaire regio.
+
+* **Lokaal redundante back-upopslag:** Met deze optie worden uw gegevens asynchroon drie keer binnen één fysieke locatie in de primaire regio gekopieerd.
+
+> [!NOTE]
+> Zone-redundante opslag is momenteel alleen beschikbaar in [bepaalde regio's](high-availability.md#availability-zone-support). Op basis van de regio die u selecteert; deze optie is niet beschikbaar voor nieuwe of bestaande accounts.
+>
+> Het bijwerken van de redundantie voor back-upopslag heeft geen invloed op de prijzen voor back-upopslag.
+
 ## <a name="modify-the-backup-interval-and-retention-period"></a><a id="configure-backup-interval-retention"></a>Het back-upinterval en de Bewaar periode wijzigen
 
 Azure Cosmos DB maakt automatisch een volledige back-up van uw gegevens voor elke 4 uur en op elk gewenst moment worden de meest recente twee back-ups opgeslagen. Deze configuratie is de standaard optie en wordt aangeboden zonder extra kosten. U kunt het standaardwaarden voor het back-upinterval en de bewaartermijn wijzigen terwijl u het Azure Cosmos-account maakt of daarna. De back-upconfiguratie wordt ingesteld op het niveau van het Azure Cosmos-account en u moet deze voor elk account configureren. Nadat u de back-upopties voor een account hebt geconfigureerd, wordt deze toegepast op alle containers in dat account. U kunt de back-upopties momenteel alleen wijzigen in Azure Portal.
 
 Als u uw gegevens per ongeluk hebt verwijderd of beschadigd **voordat u een ondersteunings aanvraag voor het herstellen van de gegevens maakt, moet u de retentie van de back-up voor uw account verg Roten tot ten minste zeven dagen. Het is het beste om uw Bewaar periode binnen 8 uur na deze gebeurtenis te verg Roten.** Op deze manier heeft het Azure Cosmos DB-team voldoende tijd om uw account te herstellen.
+
+### <a name="modify-backup-options-for-an-existing-account"></a>Back-upopties voor een bestaand account wijzigen
 
 Gebruik de volgende stappen om de standaard back-upopties voor een bestaand Azure Cosmos-account te wijzigen:
 
@@ -48,11 +69,18 @@ Gebruik de volgende stappen om de standaard back-upopties voor een bestaand Azur
 
    * **Kopieën van opgeslagen gegevens** -standaard worden twee back-ups van uw gegevens gratis aangeboden. Als u meer dan twee exemplaren nodig hebt, worden er extra kosten in rekening gebracht. Zie de sectie verbruikte opslag in de [pagina met prijzen](https://azure.microsoft.com/pricing/details/cosmos-db/) voor meer informatie over de exacte prijs voor extra exemplaren.
 
-   :::image type="content" source="./media/configure-periodic-backup-restore/configure-backup-interval-retention.png" alt-text="Het back-upinterval en de retentie voor een bestaand Azure Cosmos-account configureren." border="true":::
+   * **Opslag redundantie van back-ups** : Kies de optie vereiste opslag redundantie, zie de sectie [back-upopslag redundantie](#backup-storage-redundancy) voor beschik bare opties. Uw bestaande accounts voor periodieke back-upmodus hebben standaard geografisch redundante opslag. U kunt andere opslag, zoals lokaal redundante, kiezen om ervoor te zorgen dat de back-up niet wordt gerepliceerd naar een andere regio. De wijzigingen die zijn aangebracht in een bestaand account worden alleen toegepast op toekomstige back-ups. Nadat de redundantie van de back-upopslag van een bestaand account is bijgewerkt, kan het twee maal zo lang duren voordat de wijzigingen zijn doorgevoerd **. u verliest dan de toegang om de oudere back-ups direct te herstellen.**
 
-Als u de opties voor back-up configureert tijdens het maken van het account, kunt u het **back-upbeleid** configureren, ofwel **periodiek** of **doorlopend**. Met het periodieke beleid kunt u het back-upinterval en de retentie van back-ups configureren. Het doorlopende beleid is momenteel alleen beschikbaar als u zich aanmeldt. Het Azure Cosmos DB-team zal uw werk belasting beoordelen en uw aanvraag goed keuren.
+   > [!NOTE]
+   > U moet de rol rol van Azure [Cosmos DB-account lezer](../role-based-access-control/built-in-roles.md#cosmos-db-account-reader-role) toegewezen hebben op het abonnements niveau voor het configureren van redundantie opslag voor back-ups.
 
-:::image type="content" source="./media/configure-periodic-backup-restore/configure-periodic-continuous-backup-policy.png" alt-text="Periodiek of continu back-upbeleid configureren voor nieuwe Azure Cosmos-accounts." border="true":::
+   :::image type="content" source="./media/configure-periodic-backup-restore/configure-backup-options-existing-accounts.png" alt-text="Configureer een back-upinterval, retentie en opslag redundantie voor een bestaand Azure Cosmos-account." border="true":::
+
+### <a name="modify-backup-options-for-a-new-account"></a>Back-upopties voor een nieuw account wijzigen
+
+Wanneer u een nieuw account inricht op het tabblad **back-upbeleid** , selecteert u **periodiek** _ back-upbeleid. Met het periodieke beleid kunt u het back-upinterval, het bewaren van back-ups en de redundantie opslag van back-ups configureren. U kunt bijvoorbeeld kiezen voor een *lokaal redundante back-upopslag** of **zone redundante back-upopslag** om te voor komen dat back-upgegevens buiten uw regio worden gerepliceerd.
+
+:::image type="content" source="./media/configure-periodic-backup-restore/configure-backup-options-new-accounts.png" alt-text="Periodiek of continu back-upbeleid configureren voor nieuwe Azure Cosmos-accounts." border="true":::
 
 ## <a name="request-data-restore-from-a-backup"></a><a id="request-restore"></a>Gegevens terugzetten vanuit een back-up opvragen
 
@@ -115,8 +143,7 @@ Als u de door Voer inricht op database niveau, gebeurt het back-up-en herstel pr
 Principals die deel uitmaken van de rol [CosmosdbBackupOperator](../role-based-access-control/built-in-roles.md#cosmosbackupoperator), eigenaar of Inzender, kunnen een herstel aanvraag aanvragen of de Bewaar periode wijzigen.
 
 ## <a name="understanding-costs-of-extra-backups"></a>Meer informatie over de kosten van extra back-ups
-Twee back-ups zijn gratis en extra back-ups worden in rekening gebracht op basis van de op regio's gebaseerde prijs voor back-upopslag die wordt beschreven in de [prijzen voor back-upopslag](https://azure.microsoft.com/en-us/pricing/details/cosmos-db/). Als back-upbewaaring bijvoorbeeld is geconfigureerd op 240 uur, 10 dagen en een back-upinterval van 24 uur. Dit betekent 10 kopieën van de back-upgegevens. Uitgaande van 1 TB aan gegevens in VS-West 2, zijn de kosten 0,12 * 1000 * 8 voor back-upopslag in de opgegeven maand. 
-
+Twee back-ups zijn gratis en extra back-ups worden in rekening gebracht op basis van de op regio's gebaseerde prijs voor back-upopslag die wordt beschreven in de [prijzen voor back-upopslag](https://azure.microsoft.com/pricing/details/cosmos-db/). Als back-upbewaaring bijvoorbeeld is geconfigureerd op 240 uur, 10 dagen en een back-upinterval van 24 uur. Dit betekent 10 kopieën van de back-upgegevens. Uitgaande van 1 TB aan gegevens in VS-West 2, zijn de kosten 0,12 * 1000 * 8 voor back-upopslag in de opgegeven maand.
 
 ## <a name="options-to-manage-your-own-backups"></a>Opties voor het beheren van uw eigen back-ups
 

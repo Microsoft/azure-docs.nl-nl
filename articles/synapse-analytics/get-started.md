@@ -9,13 +9,13 @@ ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
-ms.date: 03/18/2021
-ms.openlocfilehash: 0153797445e2a3f55baa53e49c06ee5c82e3bebe
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.date: 04/04/2021
+ms.openlocfilehash: d31634809786ca4e62b156b6659289012e27a560
+ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104606222"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106387006"
 ---
 # <a name="get-started-with-azure-synapse-analytics"></a>Aan de slag met Azure Synapse Analytics
 
@@ -32,3 +32,4 @@ Volg de stappen *in onderstaande volgorde* om een rondleiding te krijgen door ve
 * [STAP 7: Gegevens visualiseren met Power BI](get-started-visualize-power-bi.md)
 * [STAP 8 - Activiteiten controleren](get-started-monitor.md)
 * [STEP 9 - Het kenniscentrum verkennen](get-started-knowledge-center.md)
+* [STAP 10: een beheerder toevoegen](get-started-add-admin.md)

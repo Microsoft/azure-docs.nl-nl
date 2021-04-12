@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 02/23/2021
 ms.author: deanwe
 ms.custom: references_regions
-ms.openlocfilehash: 973bd1ac121513a297574bbb37d1663b5a18c345
-ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
+ms.openlocfilehash: e4e1d22e2e7175135e88a08ed5a6d5ae7f021d49
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106276906"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106491271"
 ---
 # <a name="azure-automanage-for-virtual-machines"></a>Azure automanage voor virtuele machines
 
@@ -77,7 +77,7 @@ Voor het account voor automatisch beheer worden **Inzender en** machtigings mach
 
 ## <a name="participating-services"></a>Deelnemende Services
 
-:::image type="content" source="media\automanage-virtual-machines\intelligently-onboard-services.png" alt-text="Services op intelligente wijze voorbereiden.":::
+:::image type="content" source="media\automanage-virtual-machines\intelligently-onboard-services-1.png" alt-text="Services op intelligente wijze voorbereiden.":::
 
 Voor de volledige lijst met deelnemende Azure-Services en de ondersteunde omgeving raadpleegt u het volgende:
 - [Automanage voor Linux](automanage-linux.md)

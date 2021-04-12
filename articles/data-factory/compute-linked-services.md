@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nabhishek
 ms.author: abnarain
 ms.date: 05/08/2019
-ms.openlocfilehash: 2aa7afebede3759221674c48dd66256e740575a3
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: b9f7cce39e4f51aea7fc4db5ca37ee054f42c5cb
+ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105565942"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106078635"
 ---
 # <a name="compute-environments-supported-by-azure-data-factory"></a>Reken omgevingen die worden ondersteund door Azure Data Factory
 
@@ -443,8 +443,8 @@ U maakt een Azure Machine Learning gekoppelde service om een Azure Machine Learn
 | subscriptionId         | Azure-abonnements-ID              | Yes                                      |
 | resourceGroupName      | naam | Yes                                      |
 | mlWorkspaceName        | Naam van Azure Machine Learning werkruimte | Yes  |
-| servicePrincipalId     | Geef de client-ID van de toepassing op.     | No |
-| servicePrincipalKey    | Geef de sleutel van de toepassing op.           | No |
+| servicePrincipalId     | Geef de client-ID van de toepassing op.     | Yes |
+| servicePrincipalKey    | Geef de sleutel van de toepassing op.           | Yes |
 | tenant                 | Geef de Tenant gegevens op (domein naam of Tenant-ID) waaronder uw toepassing zich bevindt. U kunt deze ophalen door de muis in de rechter bovenhoek van de Azure Portal aan te wijzen. | Vereist als updateResourceEndpoint is opgegeven |
 | connectVia             | Het Integration Runtime dat moet worden gebruikt voor het verzenden van de activiteiten naar deze gekoppelde service. U kunt Azure Integration Runtime of zelf-hostende Integration Runtime gebruiken. Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. | No |
 

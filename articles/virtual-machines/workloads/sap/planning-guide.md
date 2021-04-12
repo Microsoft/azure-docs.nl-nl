@@ -8,15 +8,15 @@ ms.service: virtual-machines-sap
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 08/17/2020
+ms.date: 04/08/2021
 ms.author: juergent
 ms.custom: H1Hack27Feb2017, devx-track-azurecli
-ms.openlocfilehash: 8bc289e90470ae9bc8b1996ac08c3144ea78de35
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 67ef0bf7a8c3906122468c895325a77de555c196
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102504709"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107258789"
 ---
 # <a name="azure-virtual-machines-planning-and-implementation-for-sap-netweaver"></a>Azure Virtual Machines planning en implementatie voor SAP net-Weaver
 
@@ -588,7 +588,11 @@ Het is mogelijk om vaste of gereserveerde IP-adressen toe te wijzen aan Vm's bin
 > [!NOTE]
 > Wijs statische IP-adressen via Azure toe aan afzonderlijke Vnic's. Wijs geen vaste IP-adressen in het gast besturingssysteem toe aan een vNIC. Sommige Azure-Services, zoals Azure Backup-Service, zijn afhankelijk van het feit dat ten minste de primaire vNIC is ingesteld op DHCP en niet op statische IP-adressen. Zie ook het document [problemen met back-up van Azure Virtual Machine oplossen](../../../backup/backup-azure-vms-troubleshoot.md#networking).
 >
->
+
+
+##### <a name="secondary-ip-addresses-for-sap-hostname-virtualization"></a>Secundaire IP-adressen voor SAP-hostname-virtualisatie
+Aan de netwerk interface kaart van elke virtuele machine van Azure kunnen meerdere IP-adressen worden toegewezen. dit secundaire IP-adres kan worden gebruikt voor SAP virtuele hostnamen die worden toegewezen aan een A/PTR-record van DNS als dat nodig is. De secundaire IP-adressen moeten worden toegewezen aan de Azure Vnic's IP-configuratie overeenkomstig [dit artikel](../../../virtual-network/virtual-network-multiple-ip-addresses-portal.md) en ook in het besturings systeem geconfigureerd als secundaire ip's worden niet via DHCP toegewezen. Elk secundair IP-adres moet afkomstig zijn van hetzelfde subnet waarvan de vNIC is gebonden. Het gebruik van het zwevend IP-adres van Azure Load Balancer wordt [niet ondersteund]( https://docs.microsoft.com/azure/load-balancer/load-balancer-multivip-overview#limitations) voor secundaire IP-configuraties zoals pacemaker-clusters. in dit geval is het IP-adres van de load BALANCER de SAP virtuele hostnamen ingeschakeld. Zie ook de notitie van SAP [#962955](https://launchpad.support.sap.com/#/notes/962955) over algemene richt lijnen met behulp van namen van virtuele hosts.
+
 
 ##### <a name="multiple-nics-per-vm"></a>Meerdere Nic's per VM
 
@@ -1163,7 +1167,7 @@ Ervaar de ervaring van SAP-implementaties in de afgelopen twee jaar. Dit zijn en
 > ![Linux-logo.][Logo_Linux] Linux
 >
 > * [Software-RAID op Linux configureren][virtual-machines-linux-configure-raid]
-> * [LVM configureren op een virtuele Linux-machine in azure][virtual-machines-linux-configure-lvm]
+> * [Een LVM configureren op een virtuele Linux-machine in Azure][virtual-machines-linux-configure-lvm]
 >
 >
 
@@ -1236,7 +1240,7 @@ Azure geo-replicatie werkt lokaal op elke VHD in een VM en repliceert het I/O's 
 ---
 ### <a name="final-deployment"></a>Definitieve implementatie
 
-Raadpleeg de [implementatie handleiding][deployment-guide]voor de laatste implementatie en de exacte stappen, met name ten aanzien van de implementatie van de Azure-extensie voor SAP.
+Raadpleeg de [implementatie handleiding][deployment-guide]voor de laatste implementatie en de exacte stappen, met name de implementatie van de Azure-extensie voor SAP.
 
 ## <a name="accessing-sap-systems-running-within-azure-vms"></a>Toegang tot SAP-systemen die worden uitgevoerd in azure Vm's
 
@@ -1657,7 +1661,7 @@ Het SAP-wijzigings-en transport systeem (TMS) moet worden geconfigureerd voor he
 
 ##### <a name="configuring-the-transport-domain"></a>Het transport domein configureren
 
-Configureer uw transport domein op het systeem dat u als de transport domein controller hebt opgegeven, zoals beschreven in [de transport domein controller configureren](https://help.sap.com/erp2005_ehp_04/helpdata/en/44/b4a0b47acc11d1899e0000e829fbbd/content.htm). Er wordt een TMSADM van het systeem gebruiker gemaakt en de vereiste RFC-bestemming wordt gegenereerd. U kunt deze RFC'S-verbindingen controleren met behulp van de trans actie-SM59. Hostname-omzetting moet zijn ingeschakeld in uw transport domein.
+Configureer uw transport domein op het systeem dat u als de transport domein controller hebt opgegeven, zoals beschreven in [de transport domein controller configureren](https://help.sap.com/viewer/4a368c163b08418890a406d413933ba7/202009.001/en-US/44b4a0b47acc11d1899e0000e829fbbd.html?q=Configuring%20the%20Transport%20Domain%20Controller). Er wordt een TMSADM van het systeem gebruiker gemaakt en de vereiste RFC-bestemming wordt gegenereerd. U kunt deze RFC'S-verbindingen controleren met behulp van de trans actie-SM59. Hostname-omzetting moet zijn ingeschakeld in uw transport domein.
 
 Procedure:
 
@@ -1670,12 +1674,12 @@ Procedure:
 
 De volg orde van het opnemen van een SAP-systeem in een transport domein ziet er als volgt uit:
 
-* Ga in het ontwikkel systeem in azure naar het Trans Port System (client 000) en roep Trans Action STMS. Kies andere configuratie in het dialoog venster en ga door met systeem in domein toevoegen. Geef de domein controller op als doelhost ([inclusief SAP-systemen in het transport domein](https://help.sap.com/erp2005_ehp_04/helpdata/en/44/b4a0c17acc11d1899e0000e829fbbd/content.htm?frameset=/en/44/b4a0b47acc11d1899e0000e829fbbd/frameset.htm)). Het systeem wacht nu om te worden opgenomen in het transport domein.
+* Ga in het ontwikkel systeem in azure naar het Trans Port System (client 000) en roep Trans Action STMS. Kies andere configuratie in het dialoog venster en ga door met systeem in domein toevoegen. Geef de domein controller op als doelhost ([inclusief SAP-systemen in het transport domein](https://help.sap.com/viewer/4a368c163b08418890a406d413933ba7/202009.001/en-US/44b4a0c17acc11d1899e0000e829fbbd.html?q=Including%20SAP%20Systems%20in%20the%20Transport%20Domain)). Het systeem wacht nu om te worden opgenomen in het transport domein.
 * Uit veiligheids overwegingen moet u vervolgens terugkeren naar de domein controller om uw aanvraag te bevestigen. Kies systeem overzicht en goed keuring van het wacht systeem. Bevestig vervolgens de prompt en de configuratie wordt gedistribueerd.
 
 Dit SAP-systeem bevat nu de benodigde informatie over alle andere SAP-systemen in het transport domein. Terzelfder tijd worden de adres gegevens van het nieuwe SAP-systeem verzonden naar alle andere SAP-systemen en het SAP-systeem wordt ingevoerd in het transport Profiel van het transport beheersysteem. Controleer of de Rfc's en toegang tot de transport Directory van het domein werken.
 
-Ga door met de configuratie van uw transport systeem zoals beschreven in de documentatie [wijzigen en het transport systeem](https://help.sap.com/saphelp_nw70ehp3/helpdata/en/48/c4300fca5d581ce10000000a42189c/content.htm?frameset=/en/44/b4a0b47acc11d1899e0000e829fbbd/frameset.htm).
+Ga door met de configuratie van uw transport systeem zoals beschreven in de documentatie [wijzigen en het transport systeem](https://help.sap.com/viewer/4a368c163b08418890a406d413933ba7/202009.001/en-US/3bdfba3692dc635ce10000009b38f839.html).
 
 Procedure:
 
@@ -1687,13 +1691,13 @@ Procedure:
 
 In site-naar-site verbonden cross-premises-scenario's kan de latentie tussen on-premises en Azure nog steeds aanzienlijk zijn. Als we de volg orde van het Trans Port van objecten volgen via ontwikkelings-en test systemen naar productie of als u nadenkt over het Toep assen van trans porten of het ondersteunen van pakketten naar de verschillende systemen, realiseert u zich dat, afhankelijk van de locatie van de centrale transport Directory, sommige systemen een hoge latentie hebben bij het lezen of schrijven van gegevens in de centrale transport Directory De situatie is vergelijkbaar met SAP-landschap-configuraties waarbij de verschillende systemen worden verspreid via verschillende data centers met een grote afstand tussen de data centers.
 
-Om een dergelijke latentie te omzeilen en de systemen snel te lezen of te schrijven naar of van de transport Directory, kunt u twee STMS-transport domeinen instellen (één voor on-premises en één met de systemen in Azure en de transport domeinen koppelen. Raadpleeg deze documentatie voor meer informatie over de beginselen achter dit concept in het SAP-TMS: <https://help.sap.com/saphelp_me60/helpdata/en/c4/6045377b52253de10000009b38f889/content.htm?frameset=/en/57/38dd924eb711d182bf0000e829fbfe/frameset.htm> .
+Om een dergelijke latentie te omzeilen en de systemen snel te lezen of te schrijven naar of van de transport Directory, kunt u twee STMS-transport domeinen instellen (één voor on-premises en één met de systemen in Azure en de transport domeinen koppelen. Raadpleeg deze [documentatie] (<https://help.sap.com/saphelp_me60/helpdata/en/c4/6045377b52253de10000009b38f889/content.htm?frameset=/en/57/38dd924eb711d182bf0000e829fbfe/frameset.htm) , waarin de principes achter dit concept in het SAP-TMS worden uitgelegd.
+
 
 Procedure:
 
-* Een transport domein instellen op elke locatie (on-premises en Azure) met behulp van trans actie STMS <https://help.sap.com/saphelp_nw70ehp3/helpdata/en/44/b4a0b47acc11d1899e0000e829fbbd/content.htm>
-* Koppel de domeinen aan een domein koppeling en bevestig de koppeling tussen de twee domeinen.
-  <https://help.sap.com/saphelp_nw73ehp1/helpdata/en/a3/139838280c4f18e10000009b38f8cf/content.htm>
+* [Een transport domein instellen] (<op https://help.sap.com/viewer/4a368c163b08418890a406d413933ba7/202009.001/en-US/44b4a0b47acc11d1899e0000e829fbbd.html?q=Set%20up%20a%20transport%20domain) elke locatie (on-premises en Azure) met behulp van trans actie-STMS
+* [Koppel de domeinen aan een domein koppeling](https://help.sap.com/viewer/4a368c163b08418890a406d413933ba7/202009.001/en-US/14c795388d62e450e10000009b38f889.html?q=Link%20the%20domains%20with%20a%20domain%20link) en bevestig de koppeling tussen de twee domeinen.
 * Distribueer de configuratie naar het gekoppelde systeem.
 
 #### <a name="rfc-traffic-between-sap-instances-located-in-azure-and-on-premises-cross-premises"></a>RFC-verkeer tussen SAP-instanties in Azure en on-premises (cross-premises)

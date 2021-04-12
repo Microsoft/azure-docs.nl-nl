@@ -12,12 +12,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: sstein, vanto
 ms.date: 01/25/2021
-ms.openlocfilehash: c589f270fe623f1e4e4bbde4fd353ba95249d1b5
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 40962d0c104fc90385ba4b93852991c7b63e186a
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102426503"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105961894"
 ---
 # <a name="azure-sql-database-and-azure-synapse-analytics-connectivity-architecture"></a>Azure SQL Database- en Azure Synapse Analytics-connectiviteitsarchitectuur
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -90,7 +90,7 @@ Meer informatie over hoe verkeer moet worden gemigreerd naar nieuwe gateways in 
 | China - noord 2        | 40.73.50.0         |
 | Azië - oost            | 52.175.33.150, 13.75.32.4, 13.75.32.14 |
 | VS - oost              | 40.121.158.30, 40.79.153.12, 40.78.225.32 |
-| VS - oost 2            | 40.79.84.180, 52.177.185.181, 52.167.104.0, 191.239.224.107, 104.208.150.3 |
+| VS - oost 2            | 40.79.84.180, 52.177.185.181, 52.167.104.0, 191.239.224.107, 104.208.150.3, 40.70.144.193 |
 | Frankrijk - centraal       | 40.79.137.0, 40.79.129.1, 40.79.137.8, 40.79.145.12 |
 | Frankrijk - zuid         | 40.79.177.0, 40.79.177.10 ,40.79.177.12 |
 | Duitsland - centraal      | 51.4.144.100       |

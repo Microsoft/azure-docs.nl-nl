@@ -5,15 +5,15 @@ author: vhorne
 ms.service: firewall
 services: firewall
 ms.topic: conceptual
-ms.date: 03/30/2021
+ms.date: 04/07/2021
 ms.author: victorh
 ms.custom: references_regions
-ms.openlocfilehash: 8d0e86d95205acea2ac48ce027bcd118f4e3bf20
-ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
+ms.openlocfilehash: fdf0113d73b0b2e82ec889caf2a82c77bb7a040c
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105967027"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107226698"
 ---
 # <a name="azure-firewall-premium-preview-features"></a>Preview-functies Azure Firewall Premium
 
@@ -148,7 +148,6 @@ Azure Firewall Premium preview heeft de volgende bekende problemen:
 |ESNI-ondersteuning voor FQDN-omzetting in HTTPS|Versleutelde SNI wordt niet ondersteund in HTTPS-handshake.|Alleen de huidige Firefox ondersteunt ESNI via aangepaste configuratie. De voorgestelde tijdelijke oplossing is om deze functie uit te scha kelen.|
 |Client certificaten (TLS)|Client certificaten worden gebruikt voor het bouwen van een wederzijdse identiteits vertrouwensrelatie tussen de client en de server. Client certificaten worden gebruikt tijdens een TLS-onderhandeling. Azure firewall onderhandelt een verbinding met de server en heeft geen toegang tot de persoonlijke sleutel van de client certificaten.|Geen|
 |QUIC/HTTP3|QUIC is de nieuwe primaire versie van HTTP. Het is een UDP-protocol op basis van 80 (abonnement) en 443 (SSL). De controle van de FQDN/URL/TLS wordt niet ondersteund.|Het door geven van UDP 80/443 als netwerk regels configureren.|
-|Beveiligde hub en geforceerde tunneling worden niet ondersteund in Premium|De Premium-SKU van firewalls wordt momenteel niet ondersteund in Secure hub-implementaties en geforceerde tunnel configuraties.|Reparatie gepland voor GA.|
 Niet-vertrouwde door de klant ondertekende certificaten|Door de klant ondertekende certificaten worden niet vertrouwd door de firewall zodra ze zijn ontvangen van een webserver op intranet.|Reparatie gepland voor GA.
 |Verkeerde bron-en doel-IP-adressen in waarschuwingen voor id met TLS-inspectie.|Wanneer u TLS-inspectie inschakelt en id een nieuwe waarschuwing geeft, is het weer gegeven IP-adres van de bron/bestemming onjuist (het interne IP-adres wordt weer gegeven in plaats van het oorspronkelijke IP-adres).|Reparatie gepland voor GA.|
 |Onjuist IP-adres van de bron in waarschuwingen met id voor HTTP (zonder TLS-inspectie).|Wanneer het HTTP-verkeer zonder opmaak wordt gebruikt en id een nieuwe waarschuwing geeft en de bestemming een openbaar IP-adres is, is het IP-adres van de weer gegeven bron onjuist (het interne IP-adres wordt weer gegeven in plaats van het oorspronkelijke IP-adres).|Reparatie gepland voor GA.|

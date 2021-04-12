@@ -10,10 +10,10 @@ services: azure-maps
 manager: cpendle
 zone_pivot_groups: azure-maps-android
 ms.openlocfilehash: a60ee8faf8d19afba59e46c52aaba9395c3a5292
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "105604444"
 ---
 # <a name="getting-started-with-azure-maps-android-sdk"></a>Aan de slag met Azure Maps Android SDK
@@ -118,7 +118,7 @@ Hier volgt een voor beeld van Azure Maps waarbij de taal is ingesteld op ' fr-FR
 
 Een volledige lijst met ondersteunde talen en regionale weer gaven wordt [hier](supported-languages.md)beschreven.
 
-## <a name="navigating-the-map"></a>Navigeren in de kaart
+## <a name="navigating-the-map&quot;></a>Navigeren in de kaart
 
 Er zijn verschillende manieren waarop de kaart kan worden ingezoomd, panned, gedraaid en in hoogte kan worden gesteld. Hieronder vindt u meer informatie over de verschillende manieren waarop u kunt navigeren door de kaart.
 
@@ -141,16 +141,16 @@ Er zijn verschillende manieren waarop de kaart kan worden ingezoomd, panned, ged
 
 * Raak de kaart met twee vingers en sleep deze naar boven of beneden.
 
-## <a name="azure-government-cloud-support"></a>Cloud ondersteuning Azure Government
+## <a name=&quot;azure-government-cloud-support&quot;></a>Cloud ondersteuning Azure Government
 
 De Azure Maps Android SDK ondersteunt de Azure Government Cloud. De Azure Maps Android SDK wordt geopend vanuit dezelfde maven-opslag plaats. De volgende taken moeten worden uitgevoerd om verbinding te maken met de Azure Government Cloud versie van het Azure Maps platform.
 
 Op dezelfde plaats waar de Azure Maps verificatie gegevens zijn opgegeven, voegt u de volgende regel code toe om aan te geven dat de toewijzing gebruikmaakt van het Cloud domein Azure Maps Government.
 
-::: zone pivot="programming-language-java-android"
+::: zone pivot=&quot;programming-language-java-android&quot;
 
 ```java
-AzureMaps.setDomain("atlas.azure.us");
+AzureMaps.setDomain(&quot;atlas.azure.us");
 ```
 
 ::: zone-end

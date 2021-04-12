@@ -8,12 +8,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: overview
 ms.date: 04/07/2021
-ms.openlocfilehash: 775785e1b5130499d69b269e72f5c774e9e5f3f9
-ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
+ms.openlocfilehash: 5f0552e09464a6b571a665cfe3895f48c3aa8c41
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107024062"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107258449"
 ---
 # <a name="preview-features-for-postgresql---hyperscale-citus"></a>Preview-functies voor PostgreSQL-grootschalige (Citus)
 
@@ -23,16 +23,18 @@ Azure Database for PostgreSQL-grootschalige (Citus) biedt previews voor niet-uit
 
 Dit zijn de functies die momenteel beschikbaar zijn voor de preview-versie:
 
-* **[Kolom opslag](concepts-hyperscale-columnar.md)**.
-  Sla de kolommen van de geselecteerde tabellen (in plaats van rijen) op de schijf opeenvolgend op. Ondersteunt compressie op schijf. Geschikt voor werk belastingen voor analyse en gegevens opslag.
+* **[Basic-laag](concepts-hyperscale-tiers.md)**. Voer een server groep uit met alleen een coördinator knooppunt en geen worker-knoop punten. Een betaal bare manier om de eerste test en ontwikkeling uit te voeren en kleine productie workloads te verwerken.
 * **[Postgresql 12 en 13](concepts-hyperscale-versions.md)**.
   Gebruik de meest recente versie van de data base in uw server groep.
-* **[Basic-laag](concepts-hyperscale-tiers.md)**. Voer een server groep uit met alleen een coördinator knooppunt en geen worker-knoop punten. Een betaal bare manier om de eerste test en ontwikkeling uit te voeren en kleine productie workloads te verwerken.
+* **[Citus 10](concepts-hyperscale-versions.md#citus-and-other-extension-versions)**.
+  Automatisch geïnstalleerd op Server groepen waarop PostgreSQL 13 wordt uitgevoerd.
+* **[Kolom opslag](concepts-hyperscale-columnar.md)**.
+  Sla de kolommen van de geselecteerde tabellen (in plaats van rijen) op de schijf opeenvolgend op. Ondersteunt compressie op schijf. Geschikt voor werk belastingen voor analyse en gegevens opslag.
 * **[Replica's lezen](howto-hyperscale-read-replicas-portal.md)** (momenteel alleen regio). Eventuele wijzigingen die in de primaire server groep plaatsvinden, worden weer gegeven in de replica en de query's voor de replica veroorzaken geen extra belasting voor het origineel.
   Replica's zijn een handig hulp programma voor het verbeteren van de prestaties voor alleen-lezen workloads.
 * **[Beheerde PgBouncer](concepts-hyperscale-limits.md#managed-pgbouncer-preview)**.
   Een verbindings groep waarmee meerdere clients tegelijk verbinding kunnen maken met de Server groep, terwijl het aantal actieve verbindingen wordt beperkt. Het voldoet aan verbindings aanvragen terwijl het coördinator knooppunt soepel blijft werken.
-* **[PgAudit](concepts-hyperscale-audit.md)**. Biedt gedetailleerde controle logboek registratie van sessies en objecten via de standaard functie voor PostgreSQL-logboek registratie. Het produceert audit logboeken die nodig zijn voor het door geven van bepaalde overheids-, financiële of ISO-certificerings controles.
+* **[pgAudit](concepts-hyperscale-audit.md)**. Biedt gedetailleerde controle logboek registratie van sessies en objecten via de standaard functie voor PostgreSQL-logboek registratie. Het produceert audit logboeken die nodig zijn voor het door geven van bepaalde overheids-, financiële of ISO-certificerings controles.
 
 ### <a name="available-regions-for-preview-features"></a>Beschik bare regio's voor preview-functies
 

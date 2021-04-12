@@ -10,18 +10,18 @@ ms.date: 03/10/2021
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 6fe1e092e1db4ad283f9d0096ea431a1e983f87c
-ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
+ms.openlocfilehash: 322f54e4fa2e8096f68d5bbc216032a5b4e53c22
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/28/2021
-ms.locfileid: "105645363"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105726698"
 ---
 ## <a name="prerequisites"></a>Vereisten
 Voordat u aan de slag gaat, moet u het volgende doen:
 
 - Maak een Azure-account met een actief abonnement. Zie [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voor meer informatie.
-- Installeer [Node.js](https://nodejs.org/en/download/) Active LTS- en Maintenance LTS-versies (8.11.1 en 10.14.1 aanbevolen).
+- Installeer [Node.js](https://nodejs.org/en/download/) actieve LTS en onderhouds LTS-versies.
 - Maak een Azure Communication Services-resource. Zie [Een Azure Communication-resource maken](../../create-communication-resource.md) voor meer informatie. U moet **uw resource-eind punt vastleggen** voor deze Quick Start.
 - Maak *drie* ACS-gebruikers en geef ze een toegangs [token](../../access-tokens.md)voor gebruikers toegangs token. Zorg ervoor dat u het bereik instelt op **Chat** en **Noteer de token teken reeks, evenals de teken reeks GebruikersID**. In de volledige demo wordt een thread met twee eerste deel nemers gemaakt en vervolgens een derde deel nemer aan de thread toegevoegd.
 
@@ -165,35 +165,37 @@ Indien opgelost, `createChatThread` retourneert methode een `CreateChatThreadRes
 
 ```JavaScript
 async function createChatThread() {
-    let createThreadRequest = {
-        topic: 'Preparation for London conference',
-        participants: [{
-                    id: { communicationUserId: '<USER_ID_FOR_JACK>' },
-                    displayName: 'Jack'
-                }, {
-                    id: { communicationUserId: '<USER_ID_FOR_GEETA>' },
-                    displayName: 'Geeta'
-                }]
-    };
-    let createChatThreadResult = await chatClient.createChatThread(createThreadRequest);
-    let threadId = createChatThreadResult.chatThread.id;
-    return threadId;
-    }
+  const createChatThreadRequest = {
+    topic: "Hello, World!"
+  };
+  const createChatThreadOptions = {
+    participants: [
+      {
+        id: '<USER_ID>',
+        displayName: '<USER_DISPLAY_NAME>'
+      }
+    ]
+  };
+  const createChatTtreadResult = await chatClient.createChatThread(
+    createChatThreadRequest,
+    createChatThreadOptions
+  );
+  const threadId = createChatThreadResult.chatThread.id;
+  return threadId;
+}
 
 createChatThread().then(async threadId => {
-    console.log(`Thread created:${threadId}`);
-    // PLACEHOLDERS
-    // <CREATE CHAT THREAD CLIENT>
-    // <RECEIVE A CHAT MESSAGE FROM A CHAT THREAD>
-    // <SEND MESSAGE TO A CHAT THREAD>
-    // <LIST MESSAGES IN A CHAT THREAD>
-    // <ADD NEW PARTICIPANT TO THREAD>
-    // <LIST PARTICIPANTS IN A THREAD>
-    // <REMOVE PARTICIPANT FROM THREAD>
-    });
+  console.log(`Thread created:${threadId}`);
+  // PLACEHOLDERS
+  // <CREATE CHAT THREAD CLIENT>
+  // <RECEIVE A CHAT MESSAGE FROM A CHAT THREAD>
+  // <SEND MESSAGE TO A CHAT THREAD>
+  // <LIST MESSAGES IN A CHAT THREAD>
+  // <ADD NEW PARTICIPANT TO THREAD>
+  // <LIST PARTICIPANTS IN A THREAD>
+  // <REMOVE PARTICIPANT FROM THREAD>
+  });
 ```
-
-Vervang **USER_ID_FOR_JACK** en **USER_ID_FOR_GEETA** met de gebruikers-id's die zijn verkregen bij het maken van gebruikers en tokens ([tokens voor gebruikers toegang](../../access-tokens.md))
 
 Wanneer u het browser tabblad vernieuwt, ziet u het volgende in de-console:
 ```console
@@ -214,6 +216,18 @@ Voeg deze code toe in plaats van de opmerking `<CREATE CHAT THREAD CLIENT>` in *
 Chat Thread client for threadId: <threadId>
 ```
 
+## <a name="list-all-chat-threads"></a>Alle chat-threads weer geven
+
+De `listChatThreads` methode retourneert een `PagedAsyncIterableIterator` van het type `ChatThreadItem` . Het kan worden gebruikt voor het weer geven van alle chat-threads.
+Een iterator van `[ChatThreadItem]` is het antwoord dat wordt geretourneerd door een lijst met threads
+
+```JavaScript
+const threads = chatClient.listChatThreads();
+for await (const thread of threads) {
+   // your code here
+}
+```
+
 ## <a name="send-a-message-to-a-chat-thread"></a>Een bericht verzenden naar een chat-thread
 
 Gebruik `sendMessage` methode om een bericht te verzenden naar een thread die wordt geïdentificeerd door thread.
@@ -230,17 +244,17 @@ Gebruik `sendMessage` methode om een bericht te verzenden naar een thread die wo
 `SendChatMessageResult` is het antwoord dat wordt geretourneerd door het verzenden van een bericht, bevat het een ID. Dit is de unieke ID van het bericht.
 
 ```JavaScript
-let sendMessageRequest =
+const sendMessageRequest =
 {
-    content: 'Hello Geeta! Can you share the deck for the conference?'
+  content: 'Hello Geeta! Can you share the deck for the conference?'
 };
 let sendMessageOptions =
 {
-    senderDisplayName : 'Jack',
-    type: 'text'
+  senderDisplayName : 'Jack',
+  type: 'text'
 };
-let sendChatMessageResult = await chatThreadClient.sendMessage(sendMessageRequest, sendMessageOptions);
-let messageId = sendChatMessageResult.id;
+const sendChatMessageResult = await chatThreadClient.sendMessage(sendMessageRequest, sendMessageOptions);
+const messageId = sendChatMessageResult.id;
 ```
 
 Voeg deze code toe in plaats van de opmerking `<SEND MESSAGE TO A CHAT THREAD>` in **client.js**, vernieuw uw browsertabblad en controleer de console.
@@ -257,8 +271,8 @@ Met realtime signalering kunt u zich abonneren om te luisteren naar nieuwe inkom
 await chatClient.startRealtimeNotifications();
 // subscribe to new notification
 chatClient.on("chatMessageReceived", (e) => {
-    console.log("Notification chatMessageReceived!");
-    // your code here
+  console.log("Notification chatMessageReceived!");
+  // your code here
 });
 
 ```
@@ -269,23 +283,18 @@ U kunt chatberichten ook ophalen door de methode `listMessages` op opgegeven int
 
 ```JavaScript
 
-let pagedAsyncIterableIterator = await chatThreadClient.listMessages();
-let nextMessage = await pagedAsyncIterableIterator.next();
-    while (!nextMessage.done) {
-        let chatMessage = nextMessage.value;
-        console.log(`Message :${chatMessage.content}`);
-        // your code here
-        nextMessage = await pagedAsyncIterableIterator.next();
-    }
+const messages = chatThreadClient.listMessages();
+for await (const message of messages) {
+   // your code here
+}
 
 ```
 Voeg deze code toe in plaats van de opmerking `<LIST MESSAGES IN A CHAT THREAD>` in **client.js**.
 Vernieuw uw tabblad, in de-console, vindt u de lijst met berichten die in deze chat-thread worden verzonden.
 
+`listMessages` retourneert verschillende typen berichten die kunnen worden geïdentificeerd door `chatMessage.type`. 
 
-`listMessages` retourneert de meest recente versie van het bericht, inclusief eventuele bewerkingen of verwijderingen die zijn opgetreden in het bericht met `updateMessage` en `deleteMessage`.
-Voor verwijderde berichten retourneert `chatMessage.deletedOn` een datum/tijd-waarde die aangeeft wanneer het bericht verwijderd werd. Voor bewerkte berichten retourneert `chatMessage.editedOn` een datum/tijd die aangeeft wanneer het bericht is bewerkt. Het oorspronkelijke tijdstip waarop het bericht is gemaakt, kan worden geraadpleegd met `chatMessage.createdOn` en kan worden gebruikt om de berichten te ordenen.
-
+Zie [Berichttypen](../../../concepts/chat/concepts.md#message-types)voor meer informatie.
 
 ## <a name="add-a-user-as-a-participant-to-the-chat-thread"></a>Een gebruiker toevoegen als deel nemer aan de chat thread
 
@@ -300,14 +309,14 @@ Voordat u de `addParticipants` -methode aanroept, moet u ervoor zorgen dat u een
 
 ```JavaScript
 
-let addParticipantsRequest =
+const addParticipantsRequest =
 {
-    participants: [
-        {
-            id: { communicationUserId: '<NEW_PARTICIPANT_USER_ID>' },
-            displayName: 'Jane'
-        }
-    ]
+  participants: [
+    {
+      id: { communicationUserId: '<NEW_PARTICIPANT_USER_ID>' },
+      displayName: 'Jane'
+    }
+  ]
 };
 
 await chatThreadClient.addParticipants(addParticipantsRequest);
@@ -317,16 +326,10 @@ await chatThreadClient.addParticipants(addParticipantsRequest);
 
 ## <a name="list-users-in-a-chat-thread"></a>Gebruikers in een chat-thread weergeven
 ```JavaScript
-async function listParticipants() {
-   let pagedAsyncIterableIterator = await chatThreadClient.listParticipants();
-   let next = await pagedAsyncIterableIterator.next();
-   while (!next.done) {
-      let user = next.value;
-      console.log(`User :${user.displayName}`);
-      next = await pagedAsyncIterableIterator.next();
-   }
+const participants = chatThreadClient.listParticipants();
+for await (const participant of participants) {
+   // your code here
 }
-await listParticipants();
 ```
 Voeg deze code toe in plaats van de opmerking `<LIST PARTICIPANTS IN A THREAD>` in **client.js**, vernieuw uw browsertabblad en controleer de console, waar u informatie over gebruikers in een thread zou moeten zien.
 

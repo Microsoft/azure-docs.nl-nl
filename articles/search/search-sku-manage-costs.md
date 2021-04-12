@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/15/2021
-ms.openlocfilehash: 4ad362b983f81e2cdc10cdbccafd8dda951482d7
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e2ab7a007a92bd2306a7a97781af5653f932d0b7
+ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98539547"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106580609"
 ---
 # <a name="how-to-estimate-and-manage-costs-of-an-azure-cognitive-search-service"></a>De kosten van een Azure Cognitive Search-service ramen en beheren
 
@@ -64,7 +64,7 @@ De minimale kosten zijn de eerste Zoek eenheid (één replica x één partitie) 
 
 Naast het minimum kunt u replica's en partities onafhankelijk van elkaar toevoegen. Incrementele toename van capaciteit via replica's en partities verhoogt uw factuur op basis van de volgende formule: **(replica's x partities x facturerings tarief)**, waarbij het tarief dat u in rekening brengt, afhankelijk is van de prijs categorie die u selecteert.
 
-Wanneer u de kosten van een zoek oplossing wilt schatten, houd er dan rekening mee dat de prijzen en capaciteit niet lineair zijn (verdubbeling van de capaciteit is groter dan de kosten). Zie [replica's en partities toewijzen](search-capacity-planning.md#how-to-allocate-replicas-and-partitions)voor een voor beeld van de werking van de formule.
+Wanneer u de kosten van een zoek oplossing wilt schatten, houd er dan rekening mee dat de prijzen en capaciteit niet lineair zijn (de capaciteit verdubbelet meer dan de kosten op dezelfde laag). Op een bepaald moment kan het overschakelen naar een hogere laag betere en snellere prestaties bieden tegen ongeveer hetzelfde prijs punt. Zie [upgraden naar een standaard S2-laag](search-performance-tips.md#tip-upgrade-to-a-standard-s2-tier)voor meer informatie en een voor beeld.
 
 ### <a name="bandwidth-charges"></a>Bandbreedte kosten
 

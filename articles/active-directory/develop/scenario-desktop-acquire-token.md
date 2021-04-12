@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 01/06/2021
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: c63ee686ae218a696069465bb8d2d1d7413a998e
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 62296acaba77017cd71227582447b9fa7c4f1934
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104799085"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106090236"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Bureau blad-app voor het aanroepen van web-Api's: een Token ophalen
 
@@ -257,7 +257,7 @@ WithParentActivityOrWindow(IWin32Window window)
 // Mac
 WithParentActivityOrWindow(NSWindow window)
 
-// .Net Standard (this will be on all platforms at runtime, but only on NetStandard at build time)
+// .NET Standard (this will be on all platforms at runtime, but only on NetStandard at build time)
 WithParentActivityOrWindow(object parent).
 ```
 
@@ -277,15 +277,26 @@ Opmerkingen
 
 `WithPrompt()` wordt gebruikt om de interactiviteit met de gebruiker te beheren door een prompt op te geven.
 
-![Afbeelding van de velden in de structuur van de prompt. Deze constante waarden bepalen de interactiviteit met de gebruiker door het type prompt te definiëren dat wordt weer gegeven door de methode WithPrompt ().](https://user-images.githubusercontent.com/13203188/53438042-3fb85700-39ff-11e9-9a9e-1ff9874197b3.png)
+![Afbeelding van de velden in de structuur van de prompt. Deze constante waarden bepalen de interactiviteit met de gebruiker door het type prompt te definiëren dat wordt weer gegeven door de methode WithPrompt ().](https://user-images.githubusercontent.com/34331512/112267137-3f1c3a00-8c32-11eb-97fb-33604311329a.png)
 
 De klasse definieert de volgende constanten:
 
 - ``SelectAccount`` Hiermee wordt de STS gedwongen het dialoog venster voor account selectie te presen teren met accounts waarvoor de gebruiker een sessie heeft. Deze optie is handig wanneer ontwikkel aars van toepassingen willen laten kiezen uit verschillende identiteiten. Deze optie verstuurt MSAL om ``prompt=select_account`` naar de ID-provider te verzenden. Dit is de standaardoptie. Het biedt een goede taak om de best mogelijke ervaring te bieden op basis van de beschik bare informatie, zoals het account en de aanwezigheid van een sessie voor de gebruiker. Wijzig deze alleen als u er geen goede reden voor hebt.
 - ``Consent`` Hiermee kan de ontwikkelaar van de toepassing ervoor zorgen dat de gebruiker om toestemming wordt gevraagd, zelfs als toestemming is verleend. In dit geval verzendt MSAL `prompt=consent` naar de ID-provider. Deze optie kan worden gebruikt in sommige toepassingen met een eigen beveiliging waarbij het beheer van de organisatie vereist dat de gebruiker het dialoog venster voor toestemming krijgt telkens wanneer de toepassing wordt gebruikt.
 - ``ForceLogin`` Hiermee kan de ontwikkelaar van de toepassing toestaan dat de gebruiker om referenties wordt gevraagd door de service, zelfs als deze vraag van de gebruiker mogelijk niet nodig is. Deze optie kan handig zijn om de gebruiker opnieuw aan te melden als het verkrijgen van een token mislukt. In dit geval verzendt MSAL `prompt=login` naar de ID-provider. Soms wordt het gebruikt in toepassingen met een eigen beveiliging waarbij het beheer van de organisatie vereist dat de gebruiker zich opnieuw aanmeldt, telkens wanneer ze toegang hebben tot specifieke delen van een toepassing.
+- ``Create`` Hiermee wordt een aanmeldings ervaring geactiveerd, die wordt gebruikt voor externe identiteiten door het verzenden van `prompt=create` de ID-provider. Deze vraag mag niet worden verzonden voor Azure AD B2C-apps. Zie [een self-service-aanmeld gebruiker toevoegen aan een app](https://aka.ms/msal-net-prompt-create)voor meer informatie.
 - ``Never`` (alleen voor .NET 4,5 en WinRT) wordt de gebruiker niet gevraagd, maar in plaats daarvan wordt geprobeerd de cookie te gebruiken die is opgeslagen in de verborgen Inge sloten webweergave. Zie webweergaves in MSAL.NET voor meer informatie. Het gebruik van deze optie kan mislukken. In dat geval wordt `AcquireTokenInteractive` een uitzonde ring gegenereerd om te melden dat er een UI-interactie nodig is. U moet een andere `Prompt` para meter gebruiken.
 - ``NoPrompt`` Er wordt geen prompt verzonden naar de ID-provider. Deze optie is alleen nuttig voor Azure Active Directory (Azure AD) B2C profiel beleid bewerken. Zie [Azure AD B2C-specifiek](https://aka.ms/msal-net-b2c-specificities)voor meer informatie.
+
+#### <a name="withuseembeddedwebview"></a>WithUseEmbeddedWebView
+
+Met deze methode kunt u opgeven of u het gebruik van een Inge sloten webweergave of de weer gave van het systeem (indien beschikbaar) wilt afdwingen. Zie het [gebruik van webbrowsers](msal-net-web-browsers.md)voor meer informatie.
+
+ ```csharp
+ var result = await app.AcquireTokenInteractive(scopes)
+                   .WithUseEmbeddedWebView(true)
+                   .ExecuteAsync();
+  ```
 
 #### <a name="withextrascopetoconsent"></a>WithExtraScopeToConsent
 

@@ -6,14 +6,14 @@ author: ms-puneet-nagpal
 ms.service: healthcare-apis
 ms.subservice: iomt
 ms.topic: quickstart
-ms.date: 11/13/2020
+ms.date: 04/05/2021
 ms.author: punagpal
-ms.openlocfilehash: 3e293782e6f00852a51e0617a07eebd5d8c56261
-ms.sourcegitcommit: c8b50a8aa8d9596ee3d4f3905bde94c984fc8aa2
+ms.openlocfilehash: 0a382ad948e7fd2efc6ab59eb94da3d6cbb210d7
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/28/2021
-ms.locfileid: "105644850"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106443765"
 ---
 # <a name="quickstart-deploy-azure-iot-connector-for-fhir-preview-using-azure-portal"></a>Quickstart: Azure IoT Connector for FHIR (preview) implementeren met Azure Portal
 
@@ -171,6 +171,11 @@ Implementeer de[toepassingssjabloon voor continue patiëntbewaking](../../iot-ce
 ## <a name="connect-your-iot-data-with-the-azure-iot-connector-for-fhir-preview"></a>Uw IoT-gegevens verbinden met Azure IoT Connector for FHIR (preview)
 
 Nadat u uw IoT Central-toepassing hebt geïmplementeerd, wordt telemetrische gegevens gegenereerd met de twee kant-en-klare gesimuleerde apparaten. Voor deze zelfstudie wordt de telemetrie van de *Smart Vitals Patch*-simulator via Azure IoT Connector for FHIR opgenomen. Als u uw IoT-gegevens wilt exporteren naar Azure IoT Connector for FHIR, kunt u het beste [een continue gegevensexport instellen in IoT Central](../../iot-central/core/howto-export-data.md). Eerst moet u een verbinding met het doel maken en vervolgens een taak voor gegevens export maken om continu uit te voeren: 
+
+> [!NOTE]
+> U kunt **gegevens export** versus **gegevens export (verouderd)** selecteren in de IOT Central app-instellingen voor deze sectie.
+
+[![Instellingen voor het exporteren van IoT Central gegevens](media/quickstart-iot-fhir-portal/iot-central-data-export-dashboard.png)](media/quickstart-iot-fhir-portal/iot-central-data-export-dashboard.png#lightbox)
 
 Een nieuwe bestemming maken:
 - Ga naar het tabblad **doelen** en maak een nieuwe bestemming.

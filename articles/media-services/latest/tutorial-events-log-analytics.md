@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: tutorial
 ms.date: 08/24/2020
 ms.author: inhenkel
-ms.openlocfilehash: 8e3b9636dfb900fa0e22bfea8bcd2d0c7edf0241
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 214deb290fc0c0992458c2806644e06ffa00b271
+ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/30/2021
-ms.locfileid: "104596702"
+ms.locfileid: "105963441"
 ---
 # <a name="tutorial-store-azure-media-services-events-in-azure-log-analytics"></a>Zelfstudie: Gebeurtenissen van Azure Media Services opslaan in Azure Log Analytics
 
@@ -40,7 +40,7 @@ Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://az
 ## <a name="prerequisites"></a>Vereisten
 
 > * Een [Azure-abonnement](how-to-set-azure-subscription.md)
-> * Een [Media Services](create-account-howto.md)-account en een resourcegroep.
+> * Een [Media Services](account-create-how-to.md)-account en een resourcegroep.
 > * Een installatie van [FFmpeg](https://ffmpeg.org/download.html) voor uw besturingssysteem.
 > * Een [Log Analytics-werkruimte](../../azure-monitor/logs/quick-create-workspace.md)
 

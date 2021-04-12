@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 04/23/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 62a0bd19f6b10bbe6561f5587ed85d4d1e5880b3
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 1447e7eec9909c8af33005aab00c267e1a251720
+ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/30/2021
-ms.locfileid: "104878165"
+ms.locfileid: "105966823"
 ---
 # <a name="security-controls-for-azure-spring-cloud-service"></a>Beveiligingscontroles voor Azure Spring Cloud Service
 
@@ -34,7 +34,7 @@ Een beveiligings controle is een kwaliteit of functie van een Azure-service die 
 
 | Beveiligingsmaatregelen | Ja/Nee | Notities | Documentatie |
 |:-------------|:-------|:-------------------------------|:----------------------|
-| Servicetag | Yes | Gebruik **AzureSpringCloud** service tag om uitgaande netwerk toegangs beheer voor [netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md#security-rules) of [Azure firewall](../firewall/service-tags.md)te definiëren om verkeer naar Azure lente-Cloud toepassingen toe te staan.<br><br>*Opmerking:* Momenteel alleen nieuwe Azure lente-Cloud service-exemplaar gemaakt na 2020/07/14 ondersteunt **AzureSpringCloud** -service label. | [Servicetags](../virtual-network/service-tags-overview.md) |
+| Servicetag | Yes | Gebruik **AzureSpringCloud** service tag om uitgaande netwerk toegangs beheer voor [netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md#security-rules) of [Azure firewall](../firewall/service-tags.md)te definiëren om verkeer naar Azure lente-Cloud toepassingen toe te staan. | [Servicetags](../virtual-network/service-tags-overview.md) |
 
 ## <a name="next-steps"></a>Volgende stappen
 

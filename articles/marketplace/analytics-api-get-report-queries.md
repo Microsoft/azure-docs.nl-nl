@@ -8,10 +8,10 @@ author: sayantanroy83
 ms.author: sroy
 ms.date: 3/08/2021
 ms.openlocfilehash: e2be43e8402e5179fb62d810fe7b9f41e704c49d
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102583867"
 ---
 # <a name="get-report-queries-api"></a>API voor rapport query's ophalen
@@ -43,8 +43,8 @@ Geen
 | --- | --- | --- | --- |
 | `queryId` | tekenreeks | No | Filteren om alleen details op te halen van query's met de ID die is opgegeven in het argument |
 | `queryName` | tekenreeks | No | Filter om alleen details op te halen van query's met de naam die is opgegeven in het argument |
-| `IncludeSystemQueries` | booleaans | Nee | Vooraf gedefinieerde systeem query's in het antwoord toevoegen |
-| `IncludeOnlySystemQueries` | booleaans | Nee | Alleen systeem query's in het antwoord bevatten |
+| `IncludeSystemQueries` | booleaans | No | Vooraf gedefinieerde systeem query's in het antwoord toevoegen |
+| `IncludeOnlySystemQueries` | booleaans | No | Alleen systeem query's in het antwoord bevatten |
 |||||
 
 **Payload aanvragen**

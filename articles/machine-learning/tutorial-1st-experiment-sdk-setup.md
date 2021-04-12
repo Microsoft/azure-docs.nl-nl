@@ -11,12 +11,12 @@ ms.author: sgilley
 ms.date: 02/10/2020
 ms.custom: devx-track-python, contperf-fy21q3
 adobe-target: true
-ms.openlocfilehash: f00a5efb01ea59b04495747ffd93d9f15ad5f76e
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: ed7a95ea83cacc0eaccfa23cd87403fb9be615ee
+ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105935529"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107210666"
 ---
 # <a name="tutorial-get-started-with-azure-machine-learning-in-jupyter-notebooks"></a>Zelfstudie: Aan de slag met de Azure Machine Learning in Jupyter Notebooks
 
@@ -27,7 +27,13 @@ In deze zelfstudie hebt u:
 > [!div class="checklist"]
 > * Maak een [Azure Machine Learning-werkruimte](concept-workspace.md) om in andere Jupyter Notebook-zelfstudies te gebruiken.
 > * Kloon het zelfstudie-notebook naar uw map in de werkruimte.
-> * Maak een cloudgebaseerd rekenproces met de Python SDK voor Azure Machine Learning geïnstalleerd en vooraf geconfigureerd.
+> * Maak een cloud-gebaseerde Compute-instantie, waarmee u een omgeving met Azure Machine Learning python SDK al hebt geïnstalleerd en voor u hebt geconfigureerd.
+
+In deze zelf studie wordt u voor bereid om Jupyter-notebooks uit te voeren op een reken resource in uw werk ruimte.  
+
+Een andere fantastische manier om te beginnen met Azure machine learning is door batch-taken te verzenden.  Zie [zelf studie: aan de slag met Azure machine learning in uw ontwikkel omgeving](tutorial-1st-experiment-sdk-setup-local.md).
+
+## <a name="prerequisites"></a>Vereisten
 
 Als u nog geen Azure-abonnement hebt, maakt u een gratis account voordat u begint. Probeer vandaag nog de [gratis of betaalde versie van Azure Machine Learning](https://aka.ms/AMLFree).
 

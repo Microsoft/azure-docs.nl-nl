@@ -8,10 +8,10 @@ author: sayantanroy83
 ms.author: sroy
 ms.date: 3/08/2021
 ms.openlocfilehash: 3383af447f40ea984bce9cbc956f22ee6c5af200
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
+ms.lasthandoff: 03/30/2021
 ms.locfileid: "102583842"
 ---
 # <a name="get-report-api"></a>Rapport-API ophalen
@@ -39,9 +39,9 @@ Geen
 
 | **Parameter naam** | **Vereist** | **Type** | **Beschrijving** |
 | --- | --- | --- | --- |
-| `reportId` | Nee | tekenreeks | Filteren om alleen details op te halen van rapporten met de `reportId` opgegeven in dit argument |
-| `reportName` | Nee | tekenreeks | Filteren om alleen details op te halen van rapporten met de `reportName` opgegeven in dit argument |
-| `queryId` | Nee | booleaans | Vooraf gedefinieerde systeem query's in het antwoord toevoegen |
+| `reportId` | No | tekenreeks | Filteren om alleen details op te halen van rapporten met de `reportId` opgegeven in dit argument |
+| `reportName` | No | tekenreeks | Filteren om alleen details op te halen van rapporten met de `reportName` opgegeven in dit argument |
+| `queryId` | No | booleaans | Vooraf gedefinieerde systeem query's in het antwoord toevoegen |
 
 **Woordenlijst**
 

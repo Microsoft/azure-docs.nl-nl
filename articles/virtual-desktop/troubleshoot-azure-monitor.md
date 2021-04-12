@@ -5,13 +5,13 @@ author: Heidilohr
 ms.topic: troubleshooting
 ms.date: 03/29/2021
 ms.author: helohr
-manager: lizross
-ms.openlocfilehash: ef1a7f92fd31e8ae87a0ead6b5071d8240aa993e
-ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
+manager: femila
+ms.openlocfilehash: a104f4d33e1bd38e130101b34d3fd2021de27cd2
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106286399"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106445479"
 ---
 # <a name="troubleshoot-azure-monitor-for-windows-virtual-desktop"></a>Problemen met Azure Monitor voor virtueel bureau blad van Windows oplossen
 

@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 03/15/2021
 ms.author: v-erkel
-ms.openlocfilehash: 7d40dcf80d9ec566146bbe46bc2cb3c558584fcd
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: a03c3987c0cada69f6a7d47d7c1aa7cbf6d5015a
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104775762"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107258874"
 ---
 # <a name="prerequisites-for-azure-hpc-cache"></a>Vereisten voor de Azure HPC-cache
 
@@ -197,6 +197,8 @@ Dit is een algemeen overzicht van de stappen. Deze stappen kunnen veranderen, du
    * Geef de cache toepassing toegang tot uw Azure Storage-account zoals vermeld in de [machtigingen](#permissions)hierboven. U kunt dit doen wanneer u voor het eerst een opslag doel maakt. Volg de procedure in [opslag doelen toevoegen](hpc-cache-add-storage.md#add-the-access-control-roles-to-your-account) om de vereiste toegangs rollen in de cache op te slaan.
 
      Als u niet de eigenaar van het opslag account bent, laat u de eigenaar deze stap uitvoeren.
+
+Meer informatie over het gebruik van ADLS-NFS-opslag doelen met Azure HPC cache in met [NFS gekoppelde Blob-opslag met Azure HPC-cache](nfs-blob-considerations.md).
 
 ## <a name="set-up-azure-cli-access-optional"></a>Toegang tot Azure CLI instellen (optioneel)
 

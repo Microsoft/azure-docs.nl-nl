@@ -3,12 +3,12 @@ title: 'Quickstart: Een beheergroep maken met REST API'
 description: In deze quickstart gebruikt u de REST API om een beheergroep te maken om uw resources in een resource-hiërarchie in te delen.
 ms.date: 02/05/2021
 ms.topic: quickstart
-ms.openlocfilehash: ff1487bf25945c733402ddb74d1e102bea80b4b1
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 26a1c0a8025a00155bcf0498e6dfa89a8a73d983
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99592497"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107259129"
 ---
 # <a name="quickstart-create-a-management-group-with-rest-api"></a>Quickstart: Een beheergroep maken met REST API
 
@@ -28,7 +28,7 @@ Het kan tot vijftien minuten duren voordat de eerste beheergroep die in de map i
 
 ### <a name="create-in-rest-api"></a>Maken in REST API
 
-Gebruik voor REST API het eindpunt [Beheergroepen - eindpunt maken of bijwerken](/rest/api/resources/managementgroups/createorupdate) om een nieuwe beheergroep te maken. In dit voorbeeld is de **groupId** van de beheergroep _Contoso_.
+Gebruik voor REST API het eindpunt [Beheergroepen - eindpunt maken of bijwerken](/rest/api/managementgroups/managementgroups/createorupdate) om een nieuwe beheergroep te maken. In dit voorbeeld is de **groupId** van de beheergroep _Contoso_.
 
 - REST API-URI
 
@@ -81,7 +81,7 @@ In de bovenstaande voorbeelden wordt de nieuwe beheergroep gemaakt in de hoofdbe
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u de eerder gemaakte beheergroep wilt verwijderen, gebruikt u het eindpunt [Beheergroepen - verwijderen](/rest/api/resources/managementgroups/delete):
+Als u de eerder gemaakte beheergroep wilt verwijderen, gebruikt u het eindpunt [Beheergroepen - verwijderen](/rest/api/managementgroups/managementgroups/delete):
 
 - REST API-URI
 

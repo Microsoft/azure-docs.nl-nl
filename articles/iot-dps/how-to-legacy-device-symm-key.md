@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: lizross
-ms.openlocfilehash: a4c16347d1883e1522fda18c2382f2d67b8ace80
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5d193d30428d24ccf65c3f70885192acad2fdc9f
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99051106"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107228324"
 ---
 # <a name="how-to-provision-devices-using-symmetric-key-enrollment-groups"></a>Apparaten inrichten met behulp van symmetrische sleutel registratie groepen
 
@@ -30,6 +30,16 @@ Dit artikel is gericht op een Windows-gebaseerd werkstation. U kunt de procedure
 > [!NOTE]
 > Het voor beeld dat in dit artikel wordt gebruikt, is geschreven in C. Er is ook een voor beeld van een [symmetrische sleutel](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device/SymmetricKeySample) voor het inrichten van een C#-apparaat beschikbaar. Als u dit voor beeld wilt gebruiken, downloadt of kloont u de opslag plaats [Azure-IOT-samples-csharp](https://github.com/Azure-Samples/azure-iot-samples-csharp) en volgt u de instructies in de voorbeeld code. Volg de instructies in dit artikel om een groep voor de registratie van symmetrische sleutels te maken met behulp van de portal en om het ID-bereik en de primaire en secundaire sleutel van de registratie groep te vinden die nodig zijn om het voor beeld uit te voeren. U kunt ook afzonderlijke inschrijvingen maken met behulp van het voor beeld.
 
+## <a name="prerequisites"></a>Vereisten
+
+* Volt ooien van het [instellen van IOT hub Device Provisioning Service met de Azure Portal](./quick-setup-auto-provision.md) Snelstartgids.
+
+De volgende vereisten gelden voor een ontwikkelomgeving in Windows. Voor Linux of macOS raadpleegt u het desbetreffende gedeelte in [Uw ontwikkelomgeving voorbereiden](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md) in de SDK-documentatie.
+
+* [Visual Studio](https://visualstudio.microsoft.com/vs/) 2019 met de workload [Desktopontwikkeling met C++](/cpp/ide/using-the-visual-studio-ide-for-cpp-desktop-development) ingeschakeld. Visual Studio 2015 en Visual Studio 2017 worden ook ondersteund.
+
+* Meest recente versie van [Git](https://git-scm.com/download/) geïnstalleerd.
+
 ## <a name="overview"></a>Overzicht
 
 Er wordt voor elk apparaat een unieke registratie-ID gedefinieerd op basis van informatie die het apparaat identificeert. Bijvoorbeeld het MAC-adres of een serie nummer.
@@ -40,16 +50,6 @@ De apparaatcode die in dit artikel wordt beschreven, volgt hetzelfde patroon als
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-
-## <a name="prerequisites"></a>Vereisten
-
-* Volt ooien van het [instellen van IOT hub Device Provisioning Service met de Azure Portal](./quick-setup-auto-provision.md) Snelstartgids.
-
-De volgende vereisten gelden voor een ontwikkelomgeving in Windows. Voor Linux of macOS raadpleegt u het desbetreffende gedeelte in [Uw ontwikkelomgeving voorbereiden](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md) in de SDK-documentatie.
-
-* [Visual Studio](https://visualstudio.microsoft.com/vs/) 2019 met de workload [Desktopontwikkeling met C++](/cpp/ide/using-the-visual-studio-ide-for-cpp-desktop-development) ingeschakeld. Visual Studio 2015 en Visual Studio 2017 worden ook ondersteund.
-
-* Meest recente versie van [Git](https://git-scm.com/download/) geïnstalleerd.
 
 ## <a name="prepare-an-azure-iot-c-sdk-development-environment"></a>Een ontwikkelomgeving voorbereiden voor de Azure IoT C-SDK
 
@@ -283,6 +283,15 @@ Houd er rekening mee dat de afgeleide apparaatcode die is opgenomen als onderdee
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [IOT hub-concepten](concepts-device-reprovision.md) voor het opnieuw inrichten van apparaten voor meer informatie. 
-* [Snelstartgids: een gesimuleerd apparaat inrichten met symmetrische sleutels](quick-create-simulated-device-symm-key.md)
-* Zie voor meer informatie over het ongedaan maken van de inrichting van [apparaten die eerder automatisch zijn ingericht](how-to-unprovision-devices.md) , ongedaan maken
+* Zie voor meer informatie over het opnieuw inrichten
+
+> [!div class="nextstepaction"]
+> [Concepten IoT Hub apparaten opnieuw inrichten](concepts-device-reprovision.md)
+
+> [!div class="nextstepaction"]
+> [Snelstartgids: een gesimuleerd apparaat inrichten met symmetrische sleutels](quick-create-simulated-device-symm-key.md)
+
+* Zie voor meer informatie over het ongedaan maken van de inrichting.
+
+> [!div class="nextstepaction"]
+> [De inrichting van apparaten die eerder automatisch zijn ingericht, ongedaan maken](how-to-unprovision-devices.md)

@@ -7,12 +7,12 @@ ms.date: 11/06/2020
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 36329987e510372ff286a10584a115ea259afc60
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 39bab52a564439d34b8702de11edabe7f0d6dfbc
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98119081"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106492253"
 ---
 # <a name="use-properties-in-an-azure-iot-central-solution"></a>Eigenschappen in een Azure IoT Central-oplossing gebruiken
 
@@ -45,7 +45,7 @@ De volgende tabel bevat de configuratie-instellingen voor een eigenschaps mogeli
 | Eenheid            | Een eenheid voor de waarde van de eigenschap, zoals **mph**, **%** of **&deg; C**.                                                                                                                                                              |
 | Eenheid weer geven    | Een weergave-eenheid voor gebruik in dash boards en formulieren.                                                                                                                                                                                    |
 | Opmerking         | Eventuele opmerkingen over de eigenschaps mogelijkheid.                                                                                                                                                                                        |
-| Description     | Een beschrijving van de eigenschaps mogelijkheid.                                                                                                                                                                                          |
+| Beschrijving     | Een beschrijving van de eigenschaps mogelijkheid.                                                                                                                                                                                          |
 
 De eigenschappen kunnen ook worden gedefinieerd in een interface in een sjabloon, zoals hier wordt weer gegeven:
 
@@ -80,7 +80,7 @@ In dit voor beeld worden twee eigenschappen weer gegeven. Deze eigenschappen heb
 * `@type` Hiermee geeft u het type mogelijkheid op: `Property` . In het vorige voor beeld wordt ook het semantische type `Temperature` voor beide eigenschappen weer gegeven.
 * `name` voor de eigenschap.
 * `schema` Hiermee geeft u het gegevens type voor de eigenschap op. Deze waarde kan een primitief type zijn, zoals double, integer, Boolean of string. Complexe object typen en Maps worden ook ondersteund.
-* `writable` Eigenschappen zijn standaard alleen-lezen. U kunt een eigenschap markeren als beschrijfbaar met behulp van dit veld.
+* `writable` Eigenschappen zijn standaard alleen-lezen. U kunt een eigenschap markeren als schrijfbaar door dit veld te gebruiken.
 
 Met optionele velden, zoals weergave naam en-beschrijving, kunt u meer details toevoegen aan de interface en de mogelijkheden.
 
@@ -210,7 +210,7 @@ Het antwoord bericht moet de `ac` velden en bevatten `av` . Het veld `ad` is opt
 * `av` is het versie nummer dat naar het apparaat wordt verzonden.
 * `ad` is een beschrijving van een optie teken reeks.
 
-| Waarde | Label | Description |
+| Waarde | Label | Beschrijving |
 | ----- | ----- | ----------- |
 | `'ac': 200` | Voltooid | De bewerking voor het wijzigen van de eigenschap is voltooid. |
 | `'ac': 202` of `'ac': 201` | In behandeling | De bewerking voor het wijzigen van de eigenschap is in behandeling of wordt uitgevoerd. |
@@ -219,7 +219,7 @@ Het antwoord bericht moet de `ac` velden en bevatten `av` . Het veld `ad` is opt
 
 Zie [uw apparaten configureren vanuit een back-end-service](../../iot-hub/tutorial-device-twins.md)voor meer informatie over apparaatdubbels.
 
-Wanneer de operator een Beschrijf bare eigenschap in de Azure IoT Central-toepassing instelt, gebruikt de toepassing een door het apparaat dubbele gewenste eigenschap om de waarde naar het apparaat te verzenden. Het apparaat reageert vervolgens met behulp van een dubbele, gerapporteerde eigenschap van het apparaat. Wanneer Azure IoT Central de gerapporteerde eigenschaps waarde ontvangt, wordt de eigenschappen weergave met de status **geaccepteerd** bijgewerkt.
+Wanneer de operator een Beschrijf bare eigenschap in de Azure IoT Central-toepassing instelt, gebruikt de toepassing een voor het apparaat dubbele gewenste eigenschap om de waarde naar het apparaat te verzenden. Het apparaat reageert vervolgens met behulp van een dubbele, gerapporteerde eigenschap van het apparaat. Wanneer Azure IoT Central de gerapporteerde eigenschaps waarde ontvangt, wordt de eigenschappen weergave met de status **geaccepteerd** bijgewerkt.
 
 In de volgende weer gave worden de Beschrijf bare eigenschappen weer gegeven. Wanneer u de waarde invoert en **Opslaan** selecteert, is de initiële status **in behandeling**. Wanneer het apparaat de wijziging accepteert, wordt de status gewijzigd in **geaccepteerd**.
 

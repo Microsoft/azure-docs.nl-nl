@@ -9,12 +9,12 @@ ms.workload: infrastructure-services
 ms.date: 04/01/2021
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 42c53e72de7f6b2943086544f607042957f4b849
-ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
+ms.openlocfilehash: b010070b7a45c24037c6de4648574c01b017d759
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "106220076"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107394"
 ---
 # <a name="create-a-fully-qualified-domain-name-in-the-azure-portal-for-a-linux-vm"></a>Een Fully Qualified Domain Name maken in de Azure Portal voor een Linux-VM
 
@@ -27,7 +27,7 @@ In dit artikel wordt ervan uitgegaan dat u al een virtuele machine hebt gemaakt.
 1. Selecteer uw virtuele machine in de portal. 
 1. Selecteer in het menu links **Eigenschappen**
 1. Selecteer bij **label voor open bare IP-naam address\DNS** uw IP-adres.
-2. Onder **DNA-naam label** voert u het voor voegsel in dat u wilt gebruiken.
+2. Onder **DNS-naam label** voert u het voor voegsel in dat u wilt gebruiken.
 3. Selecteer **Opslaan** bovenaan de pagina.
 4. Selecteer **overzicht** in het menu links om terug te keren naar de BLADe VM-overzicht.
 5. Controleer of de **DNS-naam** correct wordt weer gegeven. 

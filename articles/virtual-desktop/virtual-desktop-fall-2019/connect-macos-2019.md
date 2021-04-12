@@ -5,13 +5,13 @@ author: Heidilohr
 ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
-manager: lizross
-ms.openlocfilehash: a0d2bd6a07cfc9e5ebe205322550c9e898022846
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+manager: femila
+ms.openlocfilehash: 4014de262490259ed2e61eb17c80b40679e62773
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "88008437"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106445207"
 ---
 # <a name="connect-to-windows-virtual-desktop-classic-with-the-macos-client"></a>Verbinding maken met het virtuele bureau blad van Windows (klassiek) met de macOS-client
 

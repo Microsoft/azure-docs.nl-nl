@@ -5,13 +5,13 @@ author: Heidilohr
 ms.topic: overview
 ms.date: 09/14/2020
 ms.author: helohr
-manager: lizross
-ms.openlocfilehash: f26d6b258c1e22d5d28353486378acc9aa0bbd5d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+manager: femila
+ms.openlocfilehash: 7e14dbf5aab68f5ea2d96274606306378feedad2
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104889634"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106445988"
 ---
 # <a name="what-is-windows-virtual-desktop"></a>Wat is Windows Virtual Desktop?
 

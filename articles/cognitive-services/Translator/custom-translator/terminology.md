@@ -1,24 +1,24 @@
 ---
-title: Terminologie-aangepaste vertaler
+title: Sleutel termen-aangepaste vertaler
 titleSuffix: Azure Cognitive Services
-description: Lijst met de termen die in de aangepaste Translator-artikelen worden gebruikt.
+description: Lijst met belang rijke termen die worden gebruikt in aangepaste Vertaal artikelen.
 author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
-ms.date: 08/17/2020
+ms.date: 04/02/2021
 ms.author: lajanuar
 ms.topic: reference
-ms.openlocfilehash: 4461f584e365a5d47e7ceee942e33bc8b101b2d2
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4a0308f2b961ce9b1321fab3e202e038eb199674
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104657821"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106286416"
 ---
-# <a name="custom-translator-terminology"></a>Aangepaste Vertaal terminologie
+# <a name="custom-translator-key-terms"></a>Aangepaste voor waarden van de vertaler
 
-De volgende tabel bevat een lijst met termen die mogelijk worden gevonden tijdens het werken met het [aangepaste conversie programma](https://portal.customtranslator.azure.ai).
+De volgende tabel bevat een lijst met belang rijke termen die u tijdens het werken met de [aangepaste vertaler](https://portal.customtranslator.azure.ai)kunt vinden.
 
 | Woord of woord groep|Definitie|
 |------------------|-----------|

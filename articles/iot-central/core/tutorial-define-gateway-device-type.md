@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: e42e1791693342592e391a14422b1441c9cbbd31
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: cdace22072e4122150c878d43b99765cd6fd59e1
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "99832382"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106490774"
 ---
 # <a name="tutorial---define-a-new-iot-gateway-device-type-in-your-azure-iot-central-application"></a>Zelfstudie: een nieuw type IoT-gatewayapparaat definiëren in uw Azure IoT Central-toepassing
 
@@ -29,7 +29,7 @@ In deze zelfstudie maakt u een sjabloon voor een **Smart Building**-gatewayappar
 Een gatewayapparaat stelt downstreamapparaten in staat te communiceren met uw IoT Central- toepassing, en kan daarnaast het volgende doen:
 
 * Eigen telemetrie verzenden, zoals temperatuur.
-* Reageren op updates van schrijfbare eigenschappen die zijn gemaakt via een operator. Een operator kan bijvoorbeeld het verzendinterval van de telemetrie wijzigen.
+* Reageren op de Beschrijf bare eigenschaps updates van een operator. Een operator kan bijvoorbeeld het verzendinterval van de telemetrie wijzigen.
 * Reageren op opdrachten, zoals het opnieuw opstarten van het apparaat.
 
 > [!div class="checklist"]

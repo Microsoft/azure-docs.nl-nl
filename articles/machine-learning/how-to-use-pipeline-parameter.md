@@ -7,15 +7,15 @@ ms.service: machine-learning
 ms.subservice: core
 ms.author: keli19
 author: likebupt
-ms.date: 03/19/2021
+ms.date: 04/09/2020
 ms.topic: conceptual
 ms.custom: how-to, designer
-ms.openlocfilehash: 09eabffb0e01ee6c5ea6b541378773a7d60397a3
-ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
+ms.openlocfilehash: 30ae737a170c337fe6be51521aeb358cdcebd44b
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106080270"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107330"
 ---
 # <a name="use-pipeline-parameters-in-the-designer-to-build-versatile-pipelines"></a>Pijplijn parameters in de ontwerp functie gebruiken om veelzijdige pijp lijnen te bouwen
 
@@ -95,9 +95,11 @@ Als u de pijp lijn met variabele gegevens sets wilt verzenden, moet u uw gegeven
 
 U kunt nu een andere gegevensset opgeven met behulp van de pijplijn parameter de volgende keer dat u de pijp lijn uitvoert.
 
-## <a name="attach-module-parameter-to-pipeline-parameter"></a>Module parameter aan pijplijn parameter koppelen 
+## <a name="attach-and-detach-module-parameter-to-pipeline-parameter"></a>Module parameter koppelen en ontkoppelen aan pijplijn parameter 
 
-In deze sectie leert u hoe u module parameter kunt koppelen aan de pijplijn parameter.
+In deze sectie leert u hoe u module parameter kunt koppelen en ontkoppelen aan de pijplijn parameter.
+
+### <a name="attach-module-parameter-to-pipeline-parameter"></a>Module parameter aan pijplijn parameter koppelen
 
 U kunt dezelfde module parameters van dubbele modules aan dezelfde pijplijn parameter koppelen als u de waarde in één keer wilt wijzigen wanneer de uitvoering van de pijp lijn wordt geactiveerd.
 
@@ -115,10 +117,16 @@ In het volgende voor beeld is gedupliceerde **gegevens module clean ontbreekt** 
 
    ![Scherm afbeelding die laat zien hoe u een pijplijn parameter kunt koppelen](media/how-to-use-pipeline-parameter/attach-replace-value-to-pipeline-parameter.png)
 
-U hebt het veld **vervangings waarde** gekoppeld aan de pijplijn parameter. De **vervangings waarde** in de modules kan niet worden uitgevoerd.
+U hebt het veld **vervangings waarde** gekoppeld aan de pijplijn parameter. 
+
+
+### <a name="detach-module-parameter-to-pipeline-parameter"></a>Module parameter koppelen aan pijplijn parameter
+
+Nadat u een **vervangings waarde** aan de pijplijn parameter hebt gekoppeld, is het niet mogelijk om actie te ondernemen.
+
+U kunt de module parameter koppelen aan de pijplijn parameter door te klikken op de weglatings tekens (**...**) naast de module parameter en de **para meter loskoppelen** selecteren.
 
  ![Scherm afbeelding met een niet-actie die niet kan worden uitgevoerd na het koppelen aan de pijplijn parameter](media/how-to-use-pipeline-parameter/non-actionable-module-parameter.png)
-
 
 ## <a name="update-and-delete-pipeline-parameters"></a>Pijplijn parameters bijwerken en verwijderen
 
@@ -133,7 +141,7 @@ Gebruik de volgende stappen om een module pijplijn parameter bij te werken:
 
 ### <a name="delete-a-dataset-pipeline-parameter"></a>Een gegevensset pijplijn parameter verwijderen
 
-Voer de volgende stappen uit om een DataSet pijplijn-para meter los te koppelen:
+Gebruik de volgende stappen voor het verwijderen van een gegevensset pijplijn parameter:
 
 1. Selecteer de module gegevensset.
 1. Schakel de optie **set als pijplijn parameter** uit.
@@ -147,22 +155,14 @@ Gebruik de volgende stappen om een module pijplijn parameter te verwijderen:
 
 1. Selecteer de weglatings tekens (**...**) naast de pijplijn parameter.
 
-    In deze weer gave ziet u aan welke modules de pijplijn parameter is gekoppeld. Als u een pijplijn parameter wilt verwijderen, moet u deze eerst loskoppelen van de module parameters.
+    In deze weer gave ziet u aan welke modules de pijplijn parameter is gekoppeld.
 
-    ![Scherm opname van de huidige pijplijn parameter die wordt toegepast op een module](media/how-to-use-pipeline-parameter/current-pipeline-parameter.png)
+    ![Scherm opname van de huidige pijplijn parameter die wordt toegepast op een module](media/how-to-use-pipeline-parameter/delete-pipeline-parameter2.png)
 
-1. Selecteer op het canvas een module waaraan de pijplijn parameter nog is gekoppeld.
-1. Zoek in het deel venster module-eigenschappen aan de rechter kant het veld waaraan de pijplijn parameter is gekoppeld.
-1. Mouseover het gekoppelde veld. Selecteer vervolgens de weglatings tekens (**...**) die worden weer gegeven.
-1. **Loskoppelen van pijplijn parameter** selecteren
-
-    ![Scherm opname van het loskoppelen van pijplijn parameters](media/how-to-use-pipeline-parameter/detach-from-pipeline-parameter.png)
-
-1. Herhaal de vorige stappen totdat u de para meter pijplijn hebt losgekoppeld van alle velden.
-1. Selecteer de weglatings tekens (**...**) naast de pijplijn parameter.
 1. Selecteer **para meter verwijderen** om de pijplijn parameter te verwijderen.
 
-    ![Scherm opname van het verwijderen van pijplijn parameters](media/how-to-use-pipeline-parameter/delete-pipeline-parameter.png)
+    > [!NOTE]
+    > Wanneer u een pijplijn parameter verwijdert, worden alle gekoppelde module parameters losgekoppeld en wordt de waarde van de losgekoppelde module parameters voor de huidige waarde van de pijplijn parameter bewaard.     
 
 ## <a name="trigger-a-pipeline-run-with-pipeline-parameters"></a>Een pijplijn uitvoering activeren met pijplijn parameters 
 

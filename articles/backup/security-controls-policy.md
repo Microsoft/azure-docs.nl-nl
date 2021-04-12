@@ -3,16 +3,16 @@ title: Besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure
 description: Een overzicht van de beschikbare controles voor naleving van Azure Policy-regelgeving voor Azure Backup. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
 ms.date: 03/31/2021
 ms.topic: sample
-author: dcurwin
-ms.author: dacurwin
+author: v-amallick
+ms.author: v-amallick
 ms.service: backup
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 2e66aae5cb91c530e912c41aa0c99b284575c3d8
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: e6559bf93c895f62ae5c5cf070fbcdd513b88a70
+ms.sourcegitcommit: af6eba1485e6fd99eed39e507896472fa930df4d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106091890"
+ms.lasthandoff: 04/04/2021
+ms.locfileid: "106294022"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-backup"></a>Besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Backup
 

@@ -3,12 +3,12 @@ title: Zelfstudie voor continue video-opname in de cloud en afspelen vanuit de c
 description: In deze zelfstudie leert u hoe u Azure Live Video Analytics kunt gebruiken op Azure IoT Edge om continu video in de cloud op te nemen en een deel van die video te streamen met behulp van Azure Media Services.
 ms.topic: tutorial
 ms.date: 05/27/2020
-ms.openlocfilehash: 2dde1c9d917881d7a16dbc853e4af416dffe5d7b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d534fb174afa700671b6a3991a6aafa6357eb167
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101702416"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106280340"
 ---
 # <a name="tutorial-continuous-video-recording-to-the-cloud-and-playback-from-the-cloud"></a>Zelfstudie: Continue video-opname in de cloud en afspelen vanuit de cloud
 
@@ -389,7 +389,7 @@ U kunt de Media Services-assset die door de mediagrafiek is gemaakt, controleren
 1. Accepteer in de wizard die wordt geopend de standaardopties en klik op **Toevoegen**. Zie [video afspelen](video-playback-concept.md) voor meer informatie.
 
     > [!TIP]
-    > Zorg ervoor dat uw [streaming-eindpunt](../latest/streaming-endpoint-concept.md) wordt uitgevoerd.
+    > Zorg ervoor dat uw [streaming-eindpunt](../latest/stream-streaming-endpoint-concept.md) wordt uitgevoerd.
 1. De video wordt nu geladen in de speler. Selecteer **Afspelen** om deze weer te geven.
 
 > [!NOTE]

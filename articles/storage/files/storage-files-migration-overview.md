@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 3/18/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: 27056f39885949d52c9fcc0d1472033cfc8f9aa0
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0c2de0c1b024d093bd0276a852d9b97ba3320f4b
+ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102554867"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106286331"
 ---
 # <a name="migrate-to-azure-file-shares"></a>Migreren naar Azure-bestandsshares
 
@@ -83,7 +83,7 @@ Een scenario zonder een koppeling heeft nog geen gepubliceerde migratie handleid
 | | Combi natie van gereedschap:| Combi natie van gereedschap: |
 | Windows Server 2012 R2 en hoger | <ul><li>[Azure File Sync](storage-sync-files-deployment-guide.md)</li><li>[Azure File Sync en Azure DataBox](storage-sync-offline-data-transfer.md)</li></ul> | <ul><li>Via RoboCopy naar een gekoppelde Azure-bestands share</li><li>Via Azure File Sync</li></ul> |
 | Windows Server 2012 en lager | <ul><li>Via DataBox en Azure File Sync naar recent server-besturings systeem</li><li>Via de opslag migratie service naar de recente server met Azure File Sync en upload</li></ul> | <ul><li>Via Storage Migration service naar recente server met Azure File Sync</li><li>Via RoboCopy naar een gekoppelde Azure-bestands share</li></ul> |
-| NAS (Network-Attached Storage) | <ul><li>[Via Azure File Sync uploaden](storage-files-migration-nas-hybrid.md)</li><li>[Via DataBox + Azure File Sync](storage-files-migration-nas-hybrid-databox.md)</li></ul> | <ul><li>Via RoboCopy naar een gekoppelde Azure-bestands share</li></ul> |
+| NAS (Network-Attached Storage) | <ul><li>[Via Azure File Sync uploaden](storage-files-migration-nas-hybrid.md)</li><li>[Via DataBox + Azure File Sync](storage-files-migration-nas-hybrid-databox.md)</li></ul> | <ul><li>[Via DataBox](storage-files-migration-nas-cloud-databox.md)</li><li>Via RoboCopy naar een gekoppelde Azure-bestands share</li></ul> |
 | Linux-Samba | <ul><li>[Azure File Sync en RoboCopy](storage-files-migration-linux-hybrid.md)</li></ul> | <ul><li>Via RoboCopy naar een gekoppelde Azure-bestands share</li></ul> |
 | Microsoft Azure StorSimple Cloud apparaat 8100 of StorSimple Cloud Appliance 8600 | <ul><li>[Via een exclusieve gegevens migratie Cloud service](storage-files-migration-storsimple-8000.md)</li></ul> | |
 | StorSimple Cloud Appliance 1200 | <ul><li>[Via Azure File Sync](storage-files-migration-storsimple-1200.md)</li></ul> | |

@@ -6,13 +6,13 @@ ms.author: sunila
 ms.custom: mvc
 ms.service: postgresql
 ms.topic: overview
-ms.date: 03/17/2021
-ms.openlocfilehash: 8e5c204709f0eadb6c1a4b6f479d4833f335b264
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.date: 04/05/2021
+ms.openlocfilehash: 090d38a92da126cd4fd8423231f856d22ea9a64c
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104594883"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107106833"
 ---
 # <a name="azure-database-for-postgresql---flexible-server"></a>Azure Database for PostgreSQL - Flexible Server
 
@@ -90,7 +90,7 @@ De service voor flexibele servers is uitgerust met ingebouwde functies voor pres
 
 Een van de voor delen van het uitvoeren van uw werkbelasting in Azure, is het wereldwijde bereik. De flexibele server is nu beschikbaar in de volgende Azure-regio's:
 
-| Region | Beschikbaarheid | Zone-redundante HA | 
+| Regio | Beschikbaarheid | Zone-redundante HA | 
 | --- | --- | --- |
 | Europa -west | :heavy_check_mark: | :heavy_check_mark: |
 | Europa - noord | :heavy_check_mark: | :heavy_check_mark: |
@@ -100,9 +100,10 @@ Een van de voor delen van het uitvoeren van uw werkbelasting in Azure, is het we
 | VS - centraal | :heavy_check_mark: | :heavy_check_mark: | 
 | VS - oost | :heavy_check_mark: | :heavy_check_mark: | 
 | Azië - zuidoost | :heavy_check_mark: | :heavy_check_mark: |
-| Japan - oost | :heavy_check_mark: | :heavy_check_mark: | 
+| Japan East | :heavy_check_mark: | :heavy_check_mark: | 
 | Australië - oost | :heavy_check_mark: | :heavy_check_mark: | 
 | Canada - midden | :heavy_check_mark: | :heavy_check_mark: | 
+| Frankrijk - centraal | :heavy_check_mark: | :heavy_check_mark: | 
 
 We blijven meer regio's toevoegen voor flexibele servers.
 

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 2/26/2021
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: d155d0c4a18b254f66ff5fb58ea91dbee22d2c34
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: 578befe3e26ebb42fa2172976e07d0a5836e3743
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103496606"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107137"
 ---
 # <a name="tutorial-create-an-azure-digital-twins-graph-using-the-azure-cli"></a>Zelf studie: een Azure Digital Apparaatdubbels-grafiek maken met behulp van de Azure CLI
 
@@ -20,7 +20,7 @@ ms.locfileid: "103496606"
 
 In deze zelf studie maakt u een grafiek in azure Digital Apparaatdubbels met behulp van modellen, apparaatdubbels en relaties. Het hulp programma voor deze zelf studie is de [Azure Digital apparaatdubbels-opdracht die is ingesteld voor de **Azure cli**](how-to-use-cli.md). 
 
-U kunt de CLI-opdrachten gebruiken om essentiële Azure Digital Apparaatdubbels-acties uit te voeren, zoals het uploaden van modellen, het maken en wijzigen van apparaatdubbels en het maken van relaties. U kunt ook de [referentie documentatie voor *AZ DT* command set](/cli/azure/ext/azure-iot/dt?preserve-view=true&view=azure-cli-latest) raadplegen voor een overzicht van de volledige set cli-opdrachten.
+U kunt de CLI-opdrachten gebruiken om essentiële Azure Digital Apparaatdubbels-acties uit te voeren, zoals het uploaden van modellen, het maken en wijzigen van apparaatdubbels en het maken van relaties. U kunt ook de [referentie documentatie voor *AZ DT* command set](/cli/azure/dt) raadplegen voor een overzicht van de volledige set cli-opdrachten.
 
 In deze zelfstudie gaat u...
 > [!div class="checklist"]
@@ -91,7 +91,7 @@ Na het ontwerpen van modellen moet u deze uploaden naar uw Azure Digital Twins-i
     
     Navigeer naar het *Room.js* bestand op uw computer en selecteer openen. Herhaal deze stap vervolgens voor *Floor.jsop*.
 
-1. Gebruik vervolgens de opdracht [**AZ DT model Create**](/cli/azure/ext/azure-iot/dt/model?view=azure-cli-latest&preserve-view=true#ext_azure_iot_az_dt_model_create) , zoals hieronder wordt weer gegeven om uw bijgewerkte *room* -model te uploaden naar uw Azure Digital apparaatdubbels-exemplaar. Met de tweede opdracht uploadt u een ander model, *basis*, dat u ook in de volgende sectie kunt gebruiken om verschillende soorten apparaatdubbels te maken.
+1. Gebruik vervolgens de opdracht [**AZ DT model Create**](/cli/azure/dt/model#az_dt_model_create) , zoals hieronder wordt weer gegeven om uw bijgewerkte *room* -model te uploaden naar uw Azure Digital apparaatdubbels-exemplaar. Met de tweede opdracht uploadt u een ander model, *basis*, dat u ook in de volgende sectie kunt gebruiken om verschillende soorten apparaatdubbels te maken.
 
     ```azurecli-interactive
     az dt model create -n <ADT_instance_name> --models Room.json
@@ -101,9 +101,9 @@ Na het ontwerpen van modellen moet u deze uploaden naar uw Azure Digital Twins-i
     De uitvoer van elke opdracht geeft informatie weer over het model dat is geüpload.
 
     >[!TIP]
-    >U kunt ook alle modellen in een directory tegelijk uploaden met behulp van de `--from-directory` optie voor de opdracht model maken. Zie [optionele para meters voor *AZ DT model Create*](/cli/azure/ext/azure-iot/dt/model?view=azure-cli-latest&preserve-view=true#ext_azure_iot_az_dt_model_create-optional-parameters)(Engelstalig) voor meer informatie.
+    >U kunt ook alle modellen in een directory tegelijk uploaden met behulp van de `--from-directory` optie voor de opdracht model maken. Zie [optionele para meters voor *AZ DT model Create*](/cli/azure/dt/model#az_dt_model_create-optional-parameters)(Engelstalig) voor meer informatie.
 
-1. Controleer of de modellen zijn gemaakt met de opdracht [**AZ DT model List**](/cli/azure/ext/azure-iot/dt/model?view=azure-cli-latest&preserve-view=true#ext_azure_iot_az_dt_model_list) , zoals hieronder wordt weer gegeven. Hiermee wordt een lijst afgedrukt van alle modellen die zijn geüpload naar het Azure Digital Apparaatdubbels-exemplaar met de volledige informatie. 
+1. Controleer of de modellen zijn gemaakt met de opdracht [**AZ DT model List**](/cli/azure/dt/model#az_dt_model_list) , zoals hieronder wordt weer gegeven. Hiermee wordt een lijst afgedrukt van alle modellen die zijn geüpload naar het Azure Digital Apparaatdubbels-exemplaar met de volledige informatie. 
 
     ```azurecli-interactive
     az dt model list -n <ADT_instance_name> --definition
@@ -129,7 +129,7 @@ Omdat modellen niet kunnen worden overschreven, wordt er nu een fout code van we
 
 Nu er een paar modellen zijn geüpload naar uw instantie van Azure Digital Twins, kunt u [**digitale tweelingen**](concepts-twins-graph.md) maken op basis van de modeldefinities. Digitale tweelingen vertegenwoordigen de entiteiten in uw bedrijfsomgeving: dingen als sensoren op een boerderij, ruimten in een gebouw, of lichten in een auto. 
 
-Als u een digitale dubbele wilt maken, gebruikt u de opdracht [**AZ DT dubbele maken**](/cli/azure/ext/azure-iot/dt/twin?view=azure-cli-latest&preserve-view=true#ext_azure_iot_az_dt_twin_create) . U moet verwijzen naar het model waarop de tweeling is gebaseerd, en kunt desgewenst aanvangswaarden definiëren voor alle eigenschappen in het model. U hoeft in dit stadium geen relatiegegevens door de geven.
+Als u een digitale dubbele wilt maken, gebruikt u de opdracht [**AZ DT dubbele maken**](/cli/azure/dt/twin#az_dt_twin_create) . U moet verwijzen naar het model waarop de tweeling is gebaseerd, en kunt desgewenst aanvangswaarden definiëren voor alle eigenschappen in het model. U hoeft in dit stadium geen relatiegegevens door de geven.
 
 1. Voer deze code uit in het Cloud Shell om verschillende apparaatdubbels te maken, op basis van het *room* -model dat u eerder hebt bijgewerkt en een ander *model, basis*. Zoals u weet heeft *Room* drie eigenschappen, zodat u argumenten kunt opgeven met de aanvangswaarden daarvan. (Initialisatie van eigenschaps waarden is optioneel in het algemeen, maar deze zijn nodig voor deze zelf studie.)
 
@@ -151,7 +151,7 @@ Als u een digitale dubbele wilt maken, gebruikt u de opdracht [**AZ DT dubbele m
     
     De uitvoer van elke opdracht geeft informatie weer over de met succes gemaakte dubbele (inclusief eigenschappen voor de apparaatdubbels die met hen zijn geïnitialiseerd).
 
-1. U kunt controleren of de apparaatdubbels zijn gemaakt met de opdracht [**AZ DT dubbele query**](/cli/azure/ext/azure-iot/dt/twin?view=azure-cli-latest&preserve-view=true#ext_azure_iot_az_dt_twin_query) , zoals hieronder wordt weer gegeven. De query die wordt weer gegeven, zoekt alle digitale apparaatdubbels in uw Azure Digital Apparaatdubbels-exemplaar.
+1. U kunt controleren of de apparaatdubbels zijn gemaakt met de opdracht [**AZ DT dubbele query**](/cli/azure/dt/twin#az_dt_twin_query) , zoals hieronder wordt weer gegeven. De query die wordt weer gegeven, zoekt alle digitale apparaatdubbels in uw Azure Digital Apparaatdubbels-exemplaar.
     
     ```azurecli-interactive
     az dt twin query -n <ADT_instance_name> -q "SELECT * FROM DIGITALTWINS"
@@ -165,7 +165,7 @@ Als u een digitale dubbele wilt maken, gebruikt u de opdracht [**AZ DT dubbele m
 
 U kunt de eigenschappen van een digitale dubbel die u hebt gemaakt, ook wijzigen. 
 
-1. Voer deze [**AZ DT**](/cli/azure/ext/azure-iot/dt/twin?view=azure-cli-latest&preserve-view=true#ext_azure_iot_az_dt_twin_update) -opdracht met dubbele update uit om de *room0*-kamer van *room0* te wijzigen in *PresidentialSuite*:
+1. Voer deze [**AZ DT**](/cli/azure/dt/twin#az_dt_twin_update) -opdracht met dubbele update uit om de *room0*-kamer van *room0* te wijzigen in *PresidentialSuite*:
 
     ```azurecli-interactive
     az dt twin update -n <ADT_instance_name> --twin-id room0 --json-patch '{"op":"add", "path":"/RoomName", "value": "PresidentialSuite"}'
@@ -183,7 +183,7 @@ U kunt de eigenschappen van een digitale dubbel die u hebt gemaakt, ook wijzigen
 
     :::image type="content" source="media/tutorial-command-line/cli/output-update-twin.png" alt-text="Scherm opname van Cloud Shell weer geven van het resultaat van de update opdracht, met inbegrip van een kamershape van PresidentialSuite." lightbox="media/tutorial-command-line/cli/output-update-twin.png":::
 
-1. U kunt controleren of de update is geslaagd door de opdracht [**AZ DT dubbele weer geven**](/cli/azure/ext/azure-iot/dt/twin?view=azure-cli-latest&preserve-view=true#ext_azure_iot_az_dt_twin_show) uit te voeren om de informatie van *room0* weer te geven:
+1. U kunt controleren of de update is geslaagd door de opdracht [**AZ DT dubbele weer geven**](/cli/azure/dt/twin#az_dt_twin_show) uit te voeren om de informatie van *room0* weer te geven:
 
     ```azurecli-interactive
     az dt twin show -n <ADT_instance_name> --twin-id room0
@@ -197,7 +197,7 @@ Vervolgens kunt u **relaties** maken tussen deze tweelingen, om ze te verbinden 
 
 De typen relaties die u kunt maken op basis van een dubbele naar een andere, worden gedefinieerd in de [modellen](#model-a-physical-environment-with-dtdl) die u eerder hebt geüpload. De [model definitie voor *vloer*](https://github.com/azure-Samples/digital-twins-samples/blob/master/AdtSampleApp/SampleClientApp/Models/Floor.json) geeft aan dat vloeren een type relatie met de naam *contains* kunnen hebben. Dit maakt het mogelijk om een *contains*-type-relatie te maken van elke *vloer* , naar de bijbehorende ruimte die deze bevat.
 
-Als u een relatie wilt toevoegen, gebruikt u de opdracht [**AZ DT dubbele relatie maken**](/cli/azure/ext/azure-iot/dt/twin/relationship?view=azure-cli-latest&preserve-view=true#ext_azure_iot_az_dt_twin_relationship_create) . Geef het dubbele op waarmee de relatie afkomstig is, het type relatie en de dubbele verbinding waarmee de relatie tot stand wordt gebracht. Ten slotte geeft u de relatie een unieke ID. Als een relatie is gedefinieerd om eigenschappen te hebben, kunt u de relatie-eigenschappen ook initialiseren in deze opdracht.
+Als u een relatie wilt toevoegen, gebruikt u de opdracht [**AZ DT dubbele relatie maken**](/cli/azure/dt/twin/relationship#az_dt_twin_relationship_create) . Geef het dubbele op waarmee de relatie afkomstig is, het type relatie en de dubbele verbinding waarmee de relatie tot stand wordt gebracht. Ten slotte geeft u de relatie een unieke ID. Als een relatie is gedefinieerd om eigenschappen te hebben, kunt u de relatie-eigenschappen ook initialiseren in deze opdracht.
 
 1. Voer de volgende code uit om een *contains*-type-relatie toe te voegen van elk van de *vloer* -apparaatdubbels die u eerder hebt gemaakt in de bijbehorende *ruimte* , twee. De relaties hebben de naam *relationship0* en *relationship1*.
 
@@ -240,7 +240,7 @@ De tweelingen en relaties die u in deze zelfstudie hebt ingesteld vormen de volg
 
 ## <a name="query-the-twin-graph-to-answer-environment-questions"></a>Query uitvoeren op de tweelinggrafiek om vragen over de omgeving te beantwoorden
 
-Een hoofdfunctie van Azure Digital Twins is de mogelijkheid om gemakkelijk en efficiënt [query's](concepts-query-language.md) uit te voeren op uw tweelinggrafiek om vragen over uw omgeving te beantwoorden. In de Azure CLI wordt dit gedaan met de opdracht [**AZ DT dubbele query**](/cli/azure/ext/azure-iot/dt/twin?view=azure-cli-latest&preserve-view=true#ext_azure_iot_az_dt_twin_query) .
+Een hoofdfunctie van Azure Digital Twins is de mogelijkheid om gemakkelijk en efficiënt [query's](concepts-query-language.md) uit te voeren op uw tweelinggrafiek om vragen over uw omgeving te beantwoorden. In de Azure CLI wordt dit gedaan met de opdracht [**AZ DT dubbele query**](/cli/azure/dt/twin#az_dt_twin_query) .
 
 Voer de volgende query's uit in de Cloud Shell om enkele vragen over de voorbeeld omgeving te beantwoorden.
 
@@ -308,7 +308,7 @@ Nadat u deze zelf studie hebt voltooid, kunt u kiezen welke resources u wilt ver
 
 * **Als u van plan bent om door te gaan met de volgende zelf studie**, kunt u de resources die u hier instelt, blijven gebruiken en het Azure Digital apparaatdubbels-exemplaar hergebruiken zonder dat u iets hoeft te doen.
 
-* **Als u het Azure Digital apparaatdubbels-exemplaar wilt blijven gebruiken, maar alle modellen, apparaatdubbels en relaties** wilt verwijderen, kunt u de opdracht [**AZ DT dubbele relatie verwijderen**](/cli/azure/ext/azure-iot/dt/twin/relationship?view=azure-cli-latest&preserve-view=true#ext_azure_iot_az_dt_twin_relationship_delete), [**AZ DT dubbel delete**](/cli/azure/ext/azure-iot/dt/twin?view=azure-cli-latest&preserve-view=true#ext_azure_iot_az_dt_twin_delete)en [**AZ DT model delete**](/cli/azure/ext/azure-iot/dt/model?view=azure-cli-latest&preserve-view=true#ext_azure_iot_az_dt_model_delete) gebruiken om de relaties, apparaatdubbels en modellen in uw exemplaar te wissen.
+* **Als u het Azure Digital apparaatdubbels-exemplaar wilt blijven gebruiken, maar alle modellen, apparaatdubbels en relaties** wilt verwijderen, kunt u de opdracht [**AZ DT dubbele relatie verwijderen**](/cli/azure/dt/twin/relationship#az_dt_twin_relationship_delete), [**AZ DT dubbel delete**](/cli/azure/dt/twin#az_dt_twin_delete)en [**AZ DT model delete**](/cli/azure/dt/model#az_dt_model_delete) gebruiken om de relaties, apparaatdubbels en modellen in uw exemplaar te wissen.
 
 [!INCLUDE [digital-twins-cleanup-basic.md](../../includes/digital-twins-cleanup-basic.md)]
 

@@ -7,18 +7,18 @@ ms.topic: how-to
 author: mingshen-ms
 ms.author: mingshen
 ms.date: 03/10/2021
-ms.openlocfilehash: 827e4d883fd9e80ae84845d620cc4ca00816f56e
-ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
+ms.openlocfilehash: 1ea8583b33fbe711fcffbf9626236923ecd0df8b
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106551307"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107224"
 ---
 # <a name="how-to-create-a-virtual-machine-offer-on-azure-marketplace"></a>Een aanbieding voor een virtuele machine maken op Azure Marketplace
 
 In dit artikel wordt beschreven hoe u een Azure virtual machine-aanbieding maakt voor [Azure Marketplace](https://azuremarketplace.microsoft.com/). Het biedt zowel Windows-als op Linux gebaseerde virtuele machines die een besturings systeem, een virtuele harde schijf (VHD) en Maxi maal 16 gegevens schijven bevatten.
 
-Voordat u begint, moet u [een commercieel Marketplace-account maken in het partner centrum](partner-center-portal/create-account.md). Zorg ervoor dat uw account is inge schreven in het Commercial Marketplace-programma.
+Voordat u begint, moet u [een commercieel Marketplace-account maken in het partner centrum](create-account.md). Zorg ervoor dat uw account is inge schreven in het Commercial Marketplace-programma.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 

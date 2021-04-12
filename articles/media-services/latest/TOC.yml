@@ -334,18 +334,43 @@
           href: asset-upload-media-how-to.md
         - name: Meerdere opslag accounts beheren
           href: storage-managing-multiple-storage-accounts-how-to.md
-    - name: Transformaties en taken maken
+    - name: Transformaties maken
       items:
-        - name: Transformaties maken
+        - name: Een transformatie maken
           href: transform-create-transform-how-to.md
         - name: Een eenvoudige audiotransformatie maken met REST
           href: transform-create-basic-audio-how-to.md
         - name: Miniatuur sprites maken
           href: transform-create-thumbnail-sprites-how-to.md
+        - name: Twee of meer video bestanden samen voegen met .NET
+          href: transform-stitch-how-to.md
+        - name: Een video .NET-fragment afspelen
+          href: transform-subclip-video-dotnet-how-to.md
+          displayName: 'subclipping, clip, edit, trim, clipping'
+        - name: Een video-REST bijsnijden
+          href: transform-subclip-video-rest-how-to.md
+          displayName: 'subclipping, clip, edit, trim, clipping'
+        - name: Voor instellingen voor encoder aanpassen .NET
+          href: transform-custom-presets-how-to.md
+        - name: Een overlay-trans formatie maken .NET
+          href: transform-create-overlay-how-to.md
+        - name: Miniaturen .NET genereren
+          href: transform-generate-thumbnails-dotnet-how-to.md
+        - name: Video's bijsnijden met .NET
+          href: crop-howto.md
+        - name: Voor instellingen voor encoder aanpassen CLI
+          href: transform-custom-preset-cli-how-to.md
+        - name: De voor instellingen voor encoder aanpassen REST
+          displayName: 'encode, encoding, custom, transform'
+          href: transform-custom-preset-rest-how-to.md
+        - name: Miniaturen REST genereren
+          href: transform-generate-thumbnails-rest-how-to.md
         - name: Een copyAllBitrateNonInterleaved-transformatie maken met REST
           href: transform-create-copyallbitratenoninterleaved-how-to.md
         - name: Video's kopiëren zonder codering met REST
           href: transform-create-copy-video-audio-how-to.md
+    - name: Taken maken
+      items:
         - name: Taken maken met CLI
           href: job-create-cli-how-to.md
         - name: Taakinvoer maken met een lokaal bestand en .NET
@@ -353,47 +378,10 @@
           href: job-input-from-local-file-how-to.md
         - name: Taken met meerdere typen transformatie-uitvoer
           href: job-multiple-transform-outputs-how-to.md
-        - name: Twee of meer video bestanden samen voegen met .NET
-          href: transform-stitch-how-to.md
-    - name: Inhoud coderen
-      items:
         - name: HTTPS als taakinvoer
           href: job-input-from-http-how-to.md
-        - name: Lokaal bestand als taakinvoer
-          href: job-input-from-local-file-how-to.md
-        - name: Coderen met een aangepaste transformatie
-          items:
-            - name: Met .NET
-              displayName: 'encode, encoding, custom, transform'
-              items:
-                - name: Aangepaste voorinstellingen encoder
-                  href: encode-custom-presets-how-to.md
-                - name: Een overlaytransformatie maken
-                  href: transform-create-overlay-how-to.md
-                - name: Miniaturen genereren met .NET
-                  href: transform-generate-thumbnails-dotnet-how-to.md
-                - name: Video's bijsnijden met .NET
-                  href: crop-howto.md
-            - name: Met CLI
-              displayName: 'encode, encoding, custom, transform'
-              href: encode-custom-preset-cli-how-to.md
-            - name: Met REST
-              displayName: 'encode, encoding, custom, transform'
-              href: encode-custom-preset-rest-how-to.md
-            - name: Miniaturen genereren met REST
-              href: transform-generate-thumbnails-rest-how-to.md
-            - name: Gereserveerde media-eenheden schalen
-              href: media-reserved-units-cli-how-to.md
-        - name: Een subclip van een video maken
-          items:
-            - name: Met .NET
-              href: transform-subclip-video-dotnet-how-to.md
-              displayName: 'subclipping, clip, edit, trim, clipping'
-            - name: Met REST
-              href: transform-subclip-video-rest-how-to.md
-              displayName: 'subclipping, clip, edit, trim, clipping'
-        - name: Foutcodes in taak
-          href: job-error-codes-reference.md
+    - name: Gereserveerde media-eenheden voor schalen CLI
+      href: media-reserved-units-cli-how-to.md
     - name: Live streamen
       items:
         - name: Livegebeurtenis met portal en Wirecast

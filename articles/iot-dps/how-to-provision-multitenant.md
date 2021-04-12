@@ -7,12 +7,12 @@ ms.date: 04/10/2019
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: eebcfb98d4e155ca965b9e4c68a862afa08a46ca
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 04ab4ae4d3de6f33f800011b9b0802665d5fb16e
+ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101727427"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107228313"
 ---
 # <a name="how-to-provision-for-multitenancy"></a>Inrichten voor multitenancy 
 
@@ -26,11 +26,12 @@ Het is gebruikelijk om deze twee scenario's te combi neren. Zo zal een multi ten
 
 In dit artikel wordt een voor beeld van een gesimuleerd apparaat uit de [Azure IOT C SDK](https://github.com/Azure/azure-iot-sdk-c) gebruikt om te demonstreren hoe u apparaten inricht in een multi tenant-scenario in verschillende regio's. In dit artikel voert u de volgende stappen uit:
 
-* De Azure CLI gebruiken om twee regionale IoT-hubs te maken (VS-**West** en **VS-Oost**)
-* Een multi tenant-inschrijving maken
-* De Azure CLI gebruiken om twee regionale virtuele Linux-machines te maken die als apparaten in dezelfde regio's kunnen fungeren (**VS-West** en **VS-Oost**)
-* De ontwikkel omgeving voor de Azure IoT C-SDK instellen op virtuele Linux-machines
-* Simuleer de apparaten om te zien dat ze zijn ingericht voor dezelfde Tenant in de dichtstbijzijnde regio.
+> [!div class="checklist"]
+> * De Azure CLI gebruiken om twee regionale IoT-hubs te maken (VS-**West** en **VS-Oost**)
+> * Een multi tenant-inschrijving maken
+> * De Azure CLI gebruiken om twee regionale virtuele Linux-machines te maken die als apparaten in dezelfde regio's kunnen fungeren (**VS-West** en **VS-Oost**)
+> * De ontwikkel omgeving voor de Azure IoT C-SDK instellen op virtuele Linux-machines
+> * Simuleer de apparaten om te zien dat ze zijn ingericht voor dezelfde Tenant in de dichtstbijzijnde regio.
 
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
@@ -417,8 +418,11 @@ U verwijdert als volgt de resourcegroep op naam:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-> [!div class="nextstepaction"]
-> Zie IoT Hub voor het opnieuw inrichten van [apparaten](concepts-device-reprovision.md) voor meer informatie.
+* Zie voor meer informatie over het opnieuw inrichten
 
 > [!div class="nextstepaction"]
-> Zie voor meer informatie over het ongedaan maken van de inrichting van [apparaten die eerder automatisch zijn ingericht](how-to-unprovision-devices.md) , ongedaan maken
+> [Concepten IoT Hub apparaten opnieuw inrichten](concepts-device-reprovision.md)
+
+* Zie voor meer informatie over het ongedaan maken van de inrichting.
+> [!div class="nextstepaction"]
+> [De inrichting van apparaten die eerder automatisch zijn ingericht, ongedaan maken](how-to-unprovision-devices.md)

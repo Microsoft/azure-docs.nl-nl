@@ -5,14 +5,14 @@ keywords: Azure, kunstmatige intelligentie, ai, natuurlijke taalverwerking, nlp,
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: overview
-ms.date: 11/23/2020
+ms.date: 03/22/2021
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: f21a2cc8218dde8b0cf7203a1fcb1f5cfb9424a2
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: f32f58bebc0a7d64443259981590e368b109b19b
+ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98790864"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106278946"
 ---
 # <a name="what-is-language-understanding-luis"></a>Wat is Language Understanding (LUIS)?
 
@@ -23,6 +23,13 @@ Language Understanding (LUIS) is een cloudgebaseerde AI met gespreksfuncties die
 Een clienttoepassing voor LUIS is een gesprekstoepassing waarin een gebruiker in natuurlijke taal communiceert om een taak te voltooien. Voorbeelden van clienttoepassingen zijn sociale media-apps, AI chatbots en met spraak bestuurde bureaubladtoepassingen.
 
 ![Conceptuele afbeelding van 3 clienttoepassingen die werken met Cognitive Services Language Understanding (LUIS)](./media/luis-overview/luis-entry-point.png "Conceptuele afbeelding van 3 clienttoepassingen die werken met Cognitive Services Language Understanding (LUIS)")
+
+Deze documentatie bevat de volgende artikel typen:  
+
+* [**Quick**](luis-get-started-create-app.md) starts zijn aan de slag-instructies die u helpen bij het maken van aanvragen voor de service.  
+* [**Hand leidingen**](luis-how-to-start-new-app.md) bevatten instructies voor het gebruik van de service op meer specifieke of aangepaste manieren.  
+* [**Concepten**](artificial-intelligence.md) geven uitgebreide uitleg over de service functionaliteit en-functies.  
+* [**Zelf studies**](tutorial-intents-only.md) zijn meer gidsen die laten zien hoe u de service kunt gebruiken als onderdeel in bredere zakelijke oplossingen.  
 
 ## <a name="use-luis-in-a-chat-bot"></a>LUIS gebruiken in een chatbot
 
@@ -139,8 +146,6 @@ Gebruik de praktische quickstarts in de [portal](get-started-portal-build-app.md
 
 * [Wat is er nieuw](whats-new.md "Nieuwe functies") bij de service en de documentatie
 * [Plan uw app](luis-how-plan-your-app.md "Uw app plannen") met [intenties](luis-concept-intent.md "intents") en [entiteiten](luis-concept-entity-types.md "entiteiten").
-* [Voer een query uit op het voorspellingseindpunt](luis-get-started-get-intent-from-browser.md "Voer een query uit op het voorspellingseindpunt").
-* [Resources voor ontwikkelaars](developer-reference-resource.md "Bronnen voor ontwikkelaars") voor LUIS.
 
 [bot-framework]: /bot-framework/
 [flow]: /connectors/luis/

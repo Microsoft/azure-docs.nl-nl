@@ -8,12 +8,12 @@ ms.service: bastion
 ms.topic: how-to
 ms.date: 03/12/2021
 ms.author: mialdrid
-ms.openlocfilehash: 3a5beba3938b5a845a378ede155f2f64e6baac7a
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: c4e03318fae8d8d3a8b4d29538cad49f9ef39593
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "103417940"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107259112"
 ---
 # <a name="how-to-configure-monitoring-and-metrics-for-azure-bastion-using-azure-monitor"></a>Bewaking en metrische gegevens voor Azure Bastion configureren met behulp van Azure Monitor
 
@@ -58,7 +58,7 @@ U kunt het totale geheugen van Azure Bastion bekijken, splitsen over elk Bastion
 
 #### <a name="used-cpu"></a><a name="used-cpu"></a>Gebruikte CPU
 
-U kunt het CPU-gebruik van Azure Bastion bekijken, splitsen over elk Bastion-exemplaar. Door deze metrische gegevens te bewaken, kunt u de beschik baarheid en capaciteit van de exemplaren van Azure Bastion meten.
+U kunt het CPU-gebruik van Azure Bastion bekijken, splitsen over elk Bastion-exemplaar. Door deze metrische gegevens te controleren, kunt u de beschik baarheid en de capaciteit van de exemplaren van Azure Bastion meten
 
 :::image type="content" source="./media/metrics-monitor-alert/used-cpu.png" alt-text="Scherm opname van CPU-gebruik.":::
 
@@ -73,6 +73,12 @@ U kunt geheugen gebruik weer geven voor elk Bastion-exemplaar, splitsen over elk
 #### <a name="session-count"></a>Aantal sessies
 
 U kunt het aantal actieve sessies per Bastion-exemplaar weer geven, geaggregeerd over elk sessie type (RDP en SSH). Elk Azure-Bastion kan een aantal actieve RDP-en SSH-sessies ondersteunen. Door deze metrische gegevens te controleren, kunt u zien of u het aantal exemplaren moet aanpassen dat de Bastion-service uitvoert. Raadpleeg de [Veelgestelde vragen over Azure Bastion](bastion-faq.md)voor meer informatie over het aantal sessies dat door Azure Bastion kan worden ondersteund.
+
+De aanbevolen waarden voor deze metrische configuratie zijn:
+
+* **Aggregatie:** Gemiddeld
+* **Granulatie:** 5 of 15 minuten
+* Splitsen op instanties wordt aanbevolen om een nauw keuriger aantal te bereiken
 
 :::image type="content" source="./media/metrics-monitor-alert/session-count.png" alt-text="Scherm opname van aantal sessies.":::
 

@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 10/14/2020
-ms.openlocfilehash: b5b5a506b2f932d20a617634ace7ebf02093fbfa
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 92803c1e3062fb9f093012db3e3637746dedf87f
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98664245"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107037"
 ---
 # <a name="azure-database-for-mariadb-pricing-tiers"></a>Azure Database for MariaDB prijs Categorieën
 
@@ -46,9 +46,13 @@ De opslag ruimte die u inricht, is de hoeveelheid opslag capaciteit die beschikb
 | Opslag kenmerken   | Basic | Algemeen gebruik | Geoptimaliseerd geheugen |
 |:---|:----------|:--------------------|:---------------------|
 | Opslagtype | Basis opslag | Opslag Algemeen | Opslag Algemeen |
-| Opslag grootte | 5 GB tot 1 TB | 5 GB tot 4 TB | 5 GB tot 4 TB |
+| Opslag grootte | 5 GB tot 1 TB | 5 GB tot 16 TB | 5 GB tot 16 TB |
 | Grootte van toename van opslag | 1 GB | 1 GB | 1 GB |
 | IOPS | Variabele |3 IOPS/GB<br/>Min. 100 IOPS<br/>Maxi maal 6000 IOPS | 3 IOPS/GB<br/>Min. 100 IOPS<br/>Maxi maal 6000 IOPS |
+
+>[!IMPORTANT]
+> Opslag tot 16TB en 20.000 IOPS wordt ondersteund in de volgende regio's: VS-Oost, VS-Oost 2, centraal VS, Brazilië-zuid, VS-West, Noord-Centraal VS, Zuid-Centraal VS, Europa-noord, Europa-west, UK-zuid, UK-west, Zuidoost-Azië, Azië-oost, Japan-Oost, Japan-West, Korea-centraal, Korea-zuid, Australië-oost, Australië-Zuid-Oost, VS-West 2 , Canada-oost en Canada-centraal.
+> Alle andere regio's ondersteunen Maxi maal 4 TB opslag ruimte en Maxi maal 6000 IOPS.
 
 U kunt extra opslag capaciteit toevoegen tijdens en na het maken van de-server en het systeem toestaan om opslag automatisch te laten groeien op basis van het opslag verbruik van uw werk belasting.
 
@@ -58,23 +62,6 @@ U kunt extra opslag capaciteit toevoegen tijdens en na het maken van de-server e
 De laag basis biedt geen IOPS-garantie. In de prijs Categorieën Algemeen en geoptimaliseerd voor geheugen, wordt de IOPS-schaal met de ingerichte opslag grootte in een verhouding van 3:1.
 
 U kunt uw I/O-gebruik bewaken in de Azure Portal of met behulp van Azure CLI-opdrachten. De relevante metrische gegevens die moeten worden bewaakt [, zijn opslag limiet, opslag percentage, gebruikte opslag en i/o-percentage](concepts-monitoring.md).
-
-### <a name="large-storage-preview"></a>Grote opslag (preview-versie)
-
-We verg Roten de opslag limieten in onze lagen van Algemeen en geoptimaliseerd voor geheugen. Nieuw gemaakte servers die zich aanmelden voor de preview-versie, kunnen tot 16 TB aan opslag ruimte inrichten. De IOPS-schaal bij een verhouding van 3:1 tot 20.000 IOPS. Net zoals bij de huidige algemeen beschik bare opslag ruimte, kunt u extra opslag capaciteit toevoegen na het maken van de server en het systeem toestaan om opslag automatisch te laten groeien op basis van het opslag verbruik van uw werk belasting.
-
-| Opslag kenmerken | Algemeen gebruik | Geoptimaliseerd geheugen |
-|:-------------|:--------------------|:---------------------|
-| Opslagtype | Azure Premium Storage | Azure Premium Storage |
-| Opslag grootte | 32 GB tot 16 TB| 32 tot 16 TB |
-| Grootte van toename van opslag | 1 GB | 1 GB |
-| IOPS | 3 IOPS/GB<br/>Min. 100 IOPS<br/>Maxi maal 20.000 IOPS| 3 IOPS/GB<br/>Min. 100 IOPS<br/>Maxi maal 20.000 IOPS |
-
-> [!IMPORTANT]
-> Grote opslag ruimte bevindt zich momenteel in de open bare preview in de volgende regio's: VS-Oost, VS-Oost 2, Brazilië-zuid, VS-West, VS-Noord-Centraal, Zuid-Centraal VS, Europa-noord, Europa-west, UK-zuid, UK-west, Zuidoost-Azië, Azië-oost, Japan-Oost, Japan-West, Korea-centraal, Korea-zuid, Australië-oost, Australië-Zuid-Oost, Canada-oost en Canada-centraal.
->
-> Alle andere regio's ondersteunen Maxi maal 4 TB opslag ruimte en Maxi maal 6000 IOPS.
->
 
 ### <a name="reaching-the-storage-limit"></a>De opslaglimiet wordt bereikt
 

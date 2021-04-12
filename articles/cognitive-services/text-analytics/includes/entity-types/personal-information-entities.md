@@ -9,12 +9,12 @@ ms.subservice: text-analytics
 ms.topic: include
 ms.date: 03/15/2021
 ms.author: aahi
-ms.openlocfilehash: 19586c09cca9a0dc74ba9ee4ef9da459964f9b7e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7484b49ed3c868a1ad3e0f97dffa346f350e127f
+ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104599300"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106097734"
 ---
 > [!NOTE]
 > Gebruik de `domain=phi` para meter en model versie of hoger om de beschermde status informatie te detecteren (Phi) `2020-04-01` .
@@ -53,7 +53,7 @@ Deze categorie bevat de volgende entiteit:
     :::column span="2":::
         **Details**
 
-        Namen van personen. 
+        Namen van personen. Ook geretourneerd met `domain=phi` .
 
         Als u deze entiteits categorie wilt ophalen, `Person` moet u deze toevoegen aan de `pii-categories` para meter. `Person` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
@@ -140,7 +140,7 @@ Deze categorie bevat de volgende entiteit:
     :::column span="2":::
         **Details**
 
-        Bedrijven, politieke groepen, muziek banden, sport clubs, overheids instanties en open bare organisaties. Nationale en religions zijn niet opgenomen in dit entiteits type.
+        Bedrijven, politieke groepen, muziek banden, sport clubs, overheids instanties en open bare organisaties. Nationale en religions zijn niet opgenomen in dit entiteits type. Ook geretourneerd met `domain=phi` .
 
         Als u deze entiteits categorie wilt ophalen, `Organization` moet u deze toevoegen aan de `pii-categories` para meter. `Organization` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
@@ -241,7 +241,7 @@ Deze categorie bevat de volgende entiteit:
     :::column span="2":::
         **Details**
 
-        Volledig post adres.
+        Volledig post adres. Ook geretourneerd met `domain=phi` .
 
         Als u deze entiteits categorie wilt ophalen, `Address` moet u deze toevoegen aan de `pii-categories` para meter. `Address` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
@@ -270,7 +270,7 @@ Deze categorie bevat de volgende entiteit:
     :::column span="2":::
         **Details**
 
-        E-mail adressen.
+        E-mail adressen. Ook geretourneerd met `domain=phi` .
       
         Als u deze entiteits categorie wilt ophalen, `Email` moet u deze toevoegen aan de `pii-categories` para meter. `Email` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
 
@@ -298,7 +298,7 @@ Deze categorie bevat de volgende entiteit:
     :::column span="2":::
         **Details**
 
-        Url's naar websites. 
+        Url's naar websites. Ook geretourneerd met `domain=phi` .
 
         Als u deze entiteits categorie wilt ophalen, `URL` moet u deze toevoegen aan de `pii-categories` para meter. `URL` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
@@ -327,7 +327,7 @@ Deze categorie bevat de volgende entiteit:
     :::column span="2":::
         **Details**
 
-        IP-adressen van het netwerk. 
+        IP-adressen van het netwerk. Ook geretourneerd met `domain=phi` .
 
         Als u deze entiteits categorie wilt ophalen, `IP` moet u deze toevoegen aan de `pii-categories` para meter. `IP` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
@@ -382,7 +382,7 @@ De entiteit in deze categorie kan de volgende subcategorieën hebben.
     :::column span="2":::
         **Details**
 
-        Kalender datums.
+        Kalender datums. Ook geretourneerd met `domain=phi` .
 
         Als u deze entiteits categorie wilt ophalen, `Date` moet u deze toevoegen aan de `pii-categories` para meter. `Date` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       
@@ -436,7 +436,7 @@ De entiteit in deze categorie kan de volgende subcategorieën hebben.
     :::column span="2":::
         **Details**
 
-        Leeftijd.
+        Leeftijd. 
 
         Als u deze entiteits categorie wilt ophalen, `Age` moet u deze toevoegen aan de `pii-categories` para meter. `Age` wordt geretourneerd in de API-reactie als deze wordt gedetecteerd.
       

@@ -1,33 +1,36 @@
 ---
 title: Querysyntaxis voor grafieken zoeken
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het gebruik van de zoek syntaxis in Azure Machine Learning Designer voor het zoeken naar knoop punten in in pijplijn diagram.
+description: Meer informatie over het gebruik van de zoek query syntaxis in Azure Machine Learning Designer om te zoeken naar knoop punten in de pipeline-grafiek.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
-ms.date: 8/24/2020
-ms.openlocfilehash: 762581ea5b3183d62913e9ea6935bf7e4c4ae67f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+author: likebupt
+ms.author: keli19
+ms.date: 03/24/2021
+ms.openlocfilehash: 74cf0b897529e8bb198b6f82a57e187662a4a285
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "93420764"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107259218"
 ---
 # <a name="graph-search-query-syntax"></a>Querysyntaxis voor grafieken zoeken
 
-In dit artikel vindt u informatie over de syntaxis van de zoek query in de grafiek in Azure Machine Learning. Met de functie voor het zoeken in de grafiek kunt u zoeken naar een knoop punt op basis van de naam en eigenschappen. 
+In dit artikel vindt u meer informatie over de functie voor het zoeken in grafieken in Azure Machine Learning. 
 
- ![Scherm afbeelding met animatie waarin een voor beeld van een voorbeeld grafiek wordt weer gegeven](media/search/graph-search.gif)
+Met de functie voor het zoeken in grafieken kunt u snel naar een knoop punt navigeren wanneer u fouten opspoort of een pijp lijn bouwt. U kunt het sleutel woord of de query in het invoervak in de werk balk of onder het tabblad Zoeken in het linkerdeel venster typen om de zoek actie te activeren. Alle overeenkomende resultaten worden gemarkeerd in het canvas geel en als u een resultaat in het linkerdeel venster selecteert, wordt het knoop punt in het canvas rood gemarkeerd.
+
+![Scherm afbeelding van een voor beeld van een zoek ervaring in de grafiek](media/search/graph-search-0322.png)
 
 De functie voor het zoeken in Zoek opdrachten in volledige tekst in de knooppunt naam en opmerkingen wordt ondersteund. U kunt ook filteren op eigenschap node, zoals runStatus, duration, computeTarget. Het tref woord zoeken is gebaseerd op de Lucene-query. Een volledige zoek opdracht ziet er als volgt uit:  
 
-**[Lucene-query | [filter query]** 
+**[[Lucene-query] | [filter query]]** 
 
 U kunt een lucene-query of filter query gebruiken. Als u beide wilt gebruiken, gebruikt u het **|** scheidings teken. De syntaxis van de filter query is strikter dan de Lucene-query. Dus als de invoer van de klant kan worden geparseerd, wordt de filter query toegepast.
 
+`data OR model | compute in {cpucluster}`Dit is bijvoorbeeld het zoeken naar knoop punten met de naam of opmerking bevat `data` of `model` , en Compute is cpucluster.
  
 
 ## <a name="lucene-query"></a>Lucene-query
@@ -68,6 +71,8 @@ U kunt de volgende knooppunt eigenschappen gebruiken als sleutels:
 - compute
 - duur
 - gebruikt
+- publish
+- tags
 
 En gebruik de volgende Opera tors:
 

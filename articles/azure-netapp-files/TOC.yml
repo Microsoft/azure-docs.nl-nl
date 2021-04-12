@@ -91,6 +91,8 @@
           href: azure-netapp-files-configure-nfsv41-domain.md
         - name: NFSv4.1 Kerberos-versleuteling configureren
           href: configure-kerberos-encryption.md
+        - name: Configureren voegt LDAP toe met uitgebreide groepen voor NFS
+          href: configure-ldap-extended-groups.md
         - name: Een NFS-client voor Azure NetApp Files configureren
           href: configure-nfs-clients.md
         - name: Exportbeleid voor een NFS-volume configureren
@@ -137,6 +139,8 @@
           href: troubleshoot-nfsv41-kerberos-volumes.md
         - name: Problemen met momentopnamebeleid oplossen
           href: troubleshoot-snapshot-policies.md
+        - name: Problemen met LDAP-volumes oplossen
+          href: troubleshoot-ldap-volumes.md
         - name: Resourceproviderproviderfouten oplossen
           href: azure-netapp-files-troubleshoot-resource-provider-errors.md
 - name: Naslaginformatie

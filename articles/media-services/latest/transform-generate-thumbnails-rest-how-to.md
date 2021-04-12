@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 88e19a3153c5a0368bc35d07b5e525e51b9b92da
-ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
+ms.openlocfilehash: 8688f0a477f3fa0a5fced64c288e14132f041299
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106281891"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106492440"
 ---
 # <a name="how-to-generate-thumbnails-using-encoder-standard-with-rest"></a>Miniaturen genereren met behulp van coderings standaard met REST
 
@@ -28,7 +28,7 @@ U kunt Media Encoder Standard gebruiken om een of meer miniaturen te genereren o
 
 ## <a name="recommended-reading-and-practice"></a>Aanbevolen Lees-en praktijk
 
-Het is raadzaam dat u bekend raakt met aangepaste trans formaties door [te lezen hoe u codeert met een aangepaste transform-rest](encode-custom-preset-rest-how-to.md).
+Het is raadzaam dat u bekend raakt met aangepaste trans formaties door [te lezen hoe u codeert met een aangepaste transform-rest](transform-custom-preset-rest-how-to.md).
 
 ## <a name="thumbnail-parameters"></a>Miniatuur parameters
 

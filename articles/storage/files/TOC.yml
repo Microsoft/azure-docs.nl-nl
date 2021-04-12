@@ -227,6 +227,10 @@
       items:
         - name: Migreren naar Azure-bestandsshares
           href: storage-files-migration-overview.md
+        - name: Doel een implementatie in de Cloud
+          items:
+            - name: Migreren van een on-premises NAS naar Azure-bestands shares met DataBox
+              href: storage-files-migration-nas-cloud-databox.md
         - name: Hybride implementatie als doel
           items:
             - name: Bulkgegevens migreren in Azure File Sync met Azure Data Box
@@ -237,8 +241,6 @@
               href: storage-files-migration-nas-hybrid.md
             - name: Migreren van een on-premises NAS naar een hybride Bestands server met DataBox
               href: storage-files-migration-nas-hybrid-databox.md
-            - name: Migreren van een on-premises NAS naar Azure-bestands shares met DataBox
-              href: storage-files-migration-nas-cloud-databox.md
         - name: Uit StorSimple
           items:
             - name: Migratiehandleiding voor StorSimple 8100 en 8600

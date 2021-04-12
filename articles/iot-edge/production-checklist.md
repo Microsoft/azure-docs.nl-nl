@@ -11,12 +11,12 @@ services: iot-edge
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: fda69d582f26b0c9189898bb5c8b0004a1e47360
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 711b4f6577b17e84a5d30774fa7be4c9033d4340
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104722766"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107031124"
 ---
 # <a name="prepare-to-deploy-your-iot-edge-solution-in-production"></a>De implementatie van uw IoT Edge oplossing in productie voorbereiden
 
@@ -174,7 +174,7 @@ Als u wilt verifiëren met een Service-Principal, geeft u de Service-Principal-I
 
 ### <a name="use-tags-to-manage-versions"></a>Tags gebruiken om versies te beheren
 
-Een tag is een docker-concept dat u kunt gebruiken om onderscheid te maken tussen versies van docker-containers. Tags zijn achtervoegsels als **1,0** die aan het einde van een container opslagplaats gaan. Bijvoorbeeld **MCR.Microsoft.com/azureiotedge-agent:1.0**. Tags zijn onveranderbaar en kunnen worden gewijzigd om op elk gewenst moment naar een andere container te gaan, zodat uw team moet overeenkomen met een Conventie bij het bijwerken van de installatie kopieën van uw module.
+Een tag is een docker-concept dat u kunt gebruiken om onderscheid te maken tussen versies van docker-containers. Tags zijn achtervoegsels als **1,1** die aan het einde van een container opslagplaats gaan. Bijvoorbeeld **MCR.Microsoft.com/azureiotedge-agent:1.1**. Tags zijn onveranderbaar en kunnen worden gewijzigd om op elk gewenst moment naar een andere container te gaan, zodat uw team moet overeenkomen met een Conventie bij het bijwerken van de installatie kopieën van uw module.
 
 Met tags kunt u ook updates op uw IoT Edge-apparaten afdwingen. Wanneer u een bijgewerkte versie van een module naar het container register pusht, verhoogt u de code. Vervolgens kunt u een nieuwe implementatie naar uw apparaten pushen met het label dat wordt verhoogd. De container engine herkent de oplopende code als een nieuwe versie en haalt de meest recente module versie naar uw apparaat.
 
@@ -263,6 +263,17 @@ Als uw apparaten worden geïmplementeerd in een netwerk dat gebruikmaakt van een
 
 In Linux gebruikt de IoT Edge-daemon journalen als het standaard stuur programma voor logboek registratie. U kunt het opdracht regel programma gebruiken `journalctl` om de daemon-logboeken te doorzoeken.
 
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
+In Windows gebruikt de IoT Edge-daemon Power shell-diagnose. Gebruiken `Get-IoTEdgeLog` om logboeken vanuit de daemon te doorzoeken. IoT Edge-modules gebruiken het JSON-stuur programma voor logboek registratie. Dit is de standaard instelling.  
+
+```powershell
+. {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; Get-IoTEdgeLog
+```
+
+:::moniker-end
+<!-- end 1.1 -->
+
 <!--1.2-->
 :::moniker range=">=iotedge-2020-11"
 
@@ -281,12 +292,6 @@ Vanaf versie 1,2 is IoT Edge afhankelijk van meerdere daemons. Hoewel de logboek
   ```
 
 :::moniker-end
-
-In Windows gebruikt de IoT Edge-daemon Power shell-diagnose. Gebruiken `Get-IoTEdgeLog` om logboeken vanuit de daemon te doorzoeken. IoT Edge-modules gebruiken het JSON-stuur programma voor logboek registratie. Dit is de standaard instelling.  
-
-```powershell
-. {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; Get-IoTEdgeLog
-```
 
 Wanneer u een IoT Edge-implementatie test, kunt u normaal gesp roken toegang krijgen tot uw apparaten om logboeken op te halen en problemen op te lossen. In een implementatie scenario hebt u deze optie mogelijk niet. Denk na over hoe u informatie over uw apparaten in productie gaat verzamelen. Een optie is het gebruik van een logboek module voor het verzamelen van gegevens uit de andere modules en deze naar de Cloud verzendt. Een voor beeld van een logboek module is [logspout-loganalytics](https://github.com/veyalla/logspout-loganalytics)of u kunt uw eigen ontwerp ontwerpen.
 
@@ -308,12 +313,24 @@ U kunt de grootte van alle container logboeken beperken in de logboek opties van
 }
 ```
 
-Voeg deze gegevens toe aan een bestand met `daemon.json` de naam en plaats het op de juiste locatie voor het platform van uw apparaat.
+Voeg deze gegevens toe aan een bestand met `daemon.json` de naam en plaats het op de volgende locatie:
 
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
 | Platform | Locatie |
 | -------- | -------- |
 | Linux | `/etc/docker/` |
 | Windows | `C:\ProgramData\iotedge-moby\config\` |
+:::moniker-end
+<!-- end 1.1 -->
+
+<!-- 1.2 -->
+:::moniker range=">=iotedge-2020-11"
+
+* `/etc/docker/`
+
+:::moniker-end
+<!-- end 1.2 -->
 
 De container engine moet opnieuw worden gestart om de wijzigingen van kracht te laten worden.
 

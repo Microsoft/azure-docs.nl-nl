@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: how-to
 ms.date: 06/10/2019
 ms.author: inhenkel
-ms.openlocfilehash: 9c568963355068b744820407e6bdd6b1b6721128
-ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
+ms.openlocfilehash: 094c7affb5b285db4e3311fb1eac9b36afdb6458
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106281883"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106490888"
 ---
 # <a name="subclip-a-video-when-encoding-with-media-services---rest"></a>Een video bijsnijden bij het coderen met Media Services-REST
 
@@ -86,4 +86,4 @@ Voor het uitvoeren van de stappen die in dit onderwerp worden beschreven, moet u
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Coderen met een aangepaste trans formatie](encode-custom-preset-rest-how-to.md) 
+[Coderen met een aangepaste trans formatie](transform-custom-preset-rest-how-to.md) 

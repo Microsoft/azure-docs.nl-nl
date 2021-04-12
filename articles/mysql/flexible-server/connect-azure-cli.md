@@ -7,12 +7,12 @@ ms.service: mysql
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 03/01/2021
-ms.openlocfilehash: b28c4457129985a1d5c47d251873eaa52a253f72
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d40dfa9c8a79625910414409ac3a6df7045c31f2
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102607965"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106490910"
 ---
 # <a name="quickstart-connect-and-query-with-azure-cli--with-azure-database-for-mysql---flexible-server"></a>Quick Start: verbinding maken en query's uitvoeren met Azure CLI met Azure Database for MySQL-flexibele server
 
@@ -157,5 +157,6 @@ Your preference of  are now saved to local context. To learn more, type in `az l
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [De server beheren](./how-to-manage-server-cli.md)
+* [Verbinding maken met Azure Database for MySQL-flexibele server met versleutelde verbindingen](how-to-connect-tls-ssl.md)
+* [De server beheren](./how-to-manage-server-cli.md)
 

@@ -3,18 +3,18 @@ title: Beheer van Azure EA Portal
 description: In dit artikel worden de algemene taken beschreven die een beheerder in Azure EA Portal uitvoert.
 author: bandersmsft
 ms.author: banders
-ms.date: 11/13/2020
+ms.date: 03/19/2021
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.reviewer: boalcsva
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 3ce13a103b605ea7b6066e8b2868fa974f4e64e5
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 8f643336d50f5ade145454d408599215ed6fd31e
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99050563"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107259435"
 ---
 # <a name="azure-ea-portal-administration"></a>Beheer van Azure EA Portal
 
@@ -36,7 +36,9 @@ Alleen bestaande Azure-ondernemingsbeheerders kunnen andere ondernemingsbeheerde
 
 ### <a name="create-another-enterprise-administrator"></a>Een andere ondernemingsbeheerder maken
 
-Ga als volgt te werk om een extra ondernemingsbeheerder toe te voegen:
+Gebruik een van de volgende opties, op basis van uw situatie.
+
+#### <a name="if-youre-already-an-enterprise-administrator"></a>Als u al een bedrijfs beheerder bent
 
 1. Meld u aan bij de [Azure Enterprise-portal](https://ea.azure.com).
 1. Ga naar **Beheren** > **Details van inschrijving**.
@@ -44,7 +46,11 @@ Ga als volgt te werk om een extra ondernemingsbeheerder toe te voegen:
 
 Zorg ervoor dat u het e-mailadres en de gewenste verificatiemethode van de gebruiker weet, zoals het werk-, school- of Microsoft-account.
 
-Als u geen ondernemingsbeheerder bent, neemt u contact op met een ondernemingsbeheerder om te vragen of u kunt worden toegevoegd aan een inschrijving. Zodra u bent toegevoegd aan een inschrijving, ontvangt u een activerings-e-mail.
+#### <a name="if-youre-not-an-enterprise-administrator"></a>Als u geen ondernemings Administrator bent
+
+Als u geen Enter prise-beheerder bent, neemt u contact op met een bedrijfs beheerder om u te vragen om u toe te voegen aan een registratie. De Enter prise-beheerder gebruikt de voor gaande stappen om u als ondernemings beheerder toe te voegen. Zodra u bent toegevoegd aan een inschrijving, ontvangt u een activerings-e-mail.
+
+#### <a name="if-your-enterprise-administrator-cant-help-you"></a>Als uw ondernemings beheerder u niet kan helpen
 
 Als de ondernemingsbeheerder u niet kan helpen, maakt u een [ondersteuningsaanvraag voor de Azure Enterprise-portal](https://support.microsoft.com/supportrequestform/cf791efa-485b-95a3-6fad-3daf9cd4027c). Geef de volgende informatie op:
 

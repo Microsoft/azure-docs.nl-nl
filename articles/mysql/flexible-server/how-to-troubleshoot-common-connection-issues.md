@@ -7,12 +7,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: troubleshooting
 ms.date: 9/21/2020
-ms.openlocfilehash: bdd52ba77fd9a65ce27985ff3c86a93fc887ddf9
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 6fc8e08757ee067e0616cc701a3037a9dbf4c6fd
+ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105109979"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106491743"
 ---
 # <a name="troubleshoot-connection-issues-to-azure-database-for-mysql---flexible-server"></a>Verbindings problemen met Azure Database for MySQL-flexibele server oplossen
 
@@ -32,7 +32,7 @@ In dit artikel wordt beschreven hoe u een aantal veelvoorkomende fouten en stapp
 
 Als de toepassing permanent geen verbinding kan maken met Azure Database for MySQL flexibele server, duidt dit meestal op een probleem met een van de volgende:
 
-* Versleutelde verbinding met TLS/SSL: flexibele server ondersteunt alleen versleutelde verbindingen met behulp van Transport Layer Security (TLS 1,2) en alle **binnenkomende verbindingen met tls 1,0 en tls 1,1 worden geweigerd**. U kunt de TLS-versie niet uitschakelen of wijzigen. Meer informatie over [versleutelde connectiviteit met Transport Layer Security (TLS 1,2) in azure database for MySQL-flexibele server](./how-to-connect-tls-ssl.md).
+* Versleutelde verbinding met TLS/SSL: flexibele server ondersteunt versleutelde verbindingen met Transport Layer Security (TLS 1,2) en alle **binnenkomende verbindingen met tls 1,0 en tls 1,1 worden standaard geweigerd**. U kunt het afdwingen van versleutelde verbindingen uitschakelen of de TLS-versie wijzigen. Meer informatie over [versleutelde connectiviteit met Transport Layer Security (TLS 1,2) in azure database for MySQL-flexibele server](./how-to-connect-tls-ssl.md).
 - Flexibele server in *Private Access (VNet-integratie)*: Zorg ervoor dat u verbinding maakt vanuit hetzelfde virtuele netwerk als de flexibele server. Raadpleeg [virtueel netwerk in Azure Database for MySQL flexibele server]<!--(./concepts-networking-virtual-network.md)-->
 - Flexibele server met *open bare toegang (toegestane IP-adressen)*, zorg ervoor dat de firewall zodanig is geconfigureerd dat verbindingen van uw client worden toegestaan. Raadpleeg voor [het maken en beheren van flexibele server firewall regels met behulp van de Azure Portal](./how-to-manage-firewall-portal.md).
 * Firewall configuratie van de client: de firewall op uw client moet verbindingen met uw database server toestaan. IP-adressen en poorten van de server die u niet wilt toestaan en toepassings namen zoals MySQL in sommige firewalls.

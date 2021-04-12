@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 04/05/2021
+ms.date: 04/08/2021
 ms.author: b-juche
-ms.openlocfilehash: 2031cbf07d700307ae1e11c516f9fc736bce5080
-ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
+ms.openlocfilehash: 9edf8c6eca223ece8728f9868ee9fe310c517ca9
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106498964"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107259707"
 ---
 # <a name="configure-adds-ldap-with-extended-groups-for-nfs-volume-access"></a>Configureren voegt LDAP toe met uitgebreide groepen voor NFS-volume toegang
 
@@ -69,9 +69,18 @@ In dit artikel worden de overwegingen en stappen beschreven voor het inschakelen
 
 2. Voor LDAP-volumes is een Active Directory configuratie vereist voor LDAP-server instellingen. Volg de instructies in [vereisten voor Active Directory verbindingen](create-active-directory-connections.md#requirements-for-active-directory-connections) en [Maak een Active Directory verbinding](create-active-directory-connections.md#create-an-active-directory-connection) om Active Directory verbindingen te configureren op de Azure Portal.  
 
-3. Zorg ervoor dat de Active Directory LDAP-server op de Active Directory actief is. U kunt dit doen door de functie [Active Directory Lightweight Directory Services (AD LDS)](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831593(v=ws.11)) op de AD-machine te installeren en configureren.
+3. Zorg ervoor dat de Active Directory LDAP-server op de Active Directory actief is. 
 
-4. LDAP NFS-gebruikers moeten bepaalde POSIX-kenmerken hebben op de LDAP-server. Volg de [LDAP POSIX-kenmerken beheren](create-volumes-dual-protocol.md#manage-ldap-posix-attributes) om de vereiste kenmerken in te stellen.  
+4. LDAP NFS-gebruikers moeten bepaalde POSIX-kenmerken hebben op de LDAP-server. Stel de kenmerken voor LDAP-gebruikers en LDAP-groepen als volgt in: 
+
+    * Vereiste kenmerken voor LDAP-gebruikers:   
+        `uid: Alice`, `uidNumber: 139`, `gidNumber: 555`, `objectClass: user`
+    * Vereiste kenmerken voor LDAP-groepen:   
+        `objectClass: group`, `gidNumber: 555`
+
+    U kunt POSIX-kenmerken beheren met de MMC-module Active Directory gebruikers en computers. In het volgende voor beeld wordt de Active Directory kenmerk editor weer gegeven:  
+
+    ![Active Directory kenmerk editor](../media/azure-netapp-files/active-directory-attribute-editor.png) 
 
 5. Als u een met LDAP geïntegreerde Linux-client wilt configureren, raadpleegt u [een NFS-client configureren voor Azure NetApp files](configure-nfs-clients.md).
 

@@ -3,12 +3,12 @@ title: De implementatie van Azure VMware Solution plannen
 description: In dit artikel vindt u een overzicht van de implementatiewerkstroom voor Azure VMware Solution.  Het uiteindelijke resultaat is een omgeving die gereed is om virtuele machines te maken en te migreren.
 ms.topic: tutorial
 ms.date: 03/17/2021
-ms.openlocfilehash: 2ded5d706ab71b3880633cd324fb366d0a1bccbe
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 60e0a4083c0253d322b2e10472d0df7496722c10
+ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104584632"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107107241"
 ---
 # <a name="planning-the-azure-vmware-solution-deployment"></a>De implementatie van Azure VMware Solution plannen
 
@@ -16,8 +16,12 @@ In dit artikel wordt het plannings proces beschreven voor het identificeren en v
 
 Met de stappen die worden beschreven in deze Quick start krijgt u een omgeving die gereed is voor productie voor het maken van virtuele machines (Vm's) en migratie. 
 
->[!IMPORTANT]
->Voordat u uw Azure VMware Solution-resource maakt, is het raadzaam het artikel [Een Azure VMware Solution-resouce inschakelen](enable-azure-vmware-solution.md) te volgen om een ondersteuningsticket in te dienen om uw hosts te laten toewijzen. Zodra het ondersteuningsteam uw aanvraag heeft ontvangen, duurt het maximaal vijf werkdagen om uw aanvraag te bevestigen en uw hosts toe te wijzen. Als u een bestaande privécloud van Azure VMware Solution hebt en u meer hosts wilt toewijzen, dan volgt u hetzelfde proces. 
+Als u de gegevens wilt bijhouden die u gaat verzamelen, kunt u de [controle lijst voor HCX planning](https://www.virtualworkloads.com/2021/04/hcx-planning-checklist/)ophalen.
+
+> [!IMPORTANT]
+> Het is belang rijk dat u een quotum voor een host opvraagt wanneer u de Azure VMware-oplossings resource hebt voor bereid. U kunt nu een quotum voor een host aanvragen, dus wanneer het plannings proces is voltooid, bent u klaar om de privécloud van de Azure VMware-oplossing te implementeren. Nadat het ondersteunings team uw aanvraag voor een quotum voor een host heeft ontvangen, duurt het Maxi maal vijf werk dagen om uw aanvraag te bevestigen en uw hosts toe te wijzen. Als u een bestaande privécloud van Azure VMware-oplossing hebt en meer hosts wilt toewijzen, voltooit u hetzelfde proces. Zie de volgende koppelingen voor meer informatie, afhankelijk van het type abonnement dat u hebt:
+> - [EA-klanten](enable-azure-vmware-solution.md?tabs=azure-portal#request-host-quota-for-ea-customers)
+> - [CSP-klanten](enable-azure-vmware-solution.md?tabs=azure-portal#request-host-quota-for-csp-customers)
 
 ## <a name="subscription"></a>Abonnement
 
@@ -82,18 +86,6 @@ Dit netwerk segment wordt hoofd zakelijk gebruikt voor test doeleinden tijdens d
 
 :::image type="content" source="media/pre-deployment/nsx-segment-diagram.png" alt-text="Identificeren - IP-adressegment voor workloads van virtuele machines" border="false":::     
 
-## <a name="optional-extend-your-networks"></a>Beschrijving Uw netwerken uitbreiden
-
-U kunt netwerksegmenten van on-premises uitbreiden naar Azure VMware Solution. Als u dit doet, moet u deze netwerken nu identificeren.  
-
-Denk hierbij aan het volgende:
-
-- Als u van plan bent om netwerken van on-premises uit te breiden, moeten die netwerken verbinding maken met een [vSphere Distributed Switch (vDS)](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.networking.doc/GUID-B15C6A13-797E-4BCB-B9D9-5CBC5A60C3A6.html) in uw on-premises VMware-omgeving.  
-- Als het netwerk/de netwerken die u wilt uitbreiden zich op een [vSphere Standard Switch](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.networking.doc/GUID-350344DE-483A-42ED-B0E2-C811EE927D59.html) bevinden, dan kunnen ze niet worden uitgebreid.
-
->[!NOTE]
->Deze netwerken worden uitgebreid als laatste stap in de configuratie, niet tijdens de implementatie.
-
 ## <a name="attach-azure-virtual-network-to-azure-vmware-solution"></a>Azure Virtual Network koppelen aan de Azure VMware-oplossing
 
 Om verbinding te kunnen maken met de Azure VMware-oplossing, wordt een ExpressRoute gemaakt op basis van de privécloud van Azure VMware-oplossing voor een virtuele ExpressRoute-netwerk gateway.
@@ -106,7 +98,7 @@ U kunt een *bestaande* of *nieuwe* ExpressRoute virtuele netwerk gateway gebruik
 
 Als u van plan bent een *bestaande* virtuele ExpressRoute-netwerk gateway te gebruiken, wordt de Azure VMware Solution ExpressRoute-circuit ingesteld als een stap na de implementatie. Laat in dit geval het veld **Virtual Network** leeg.
 
-Als algemene aanbeveling is het niet toegestaan om een bestaande ExpressRoute-gateway van een virtueel netwerk te gebruiken. Voor plannings doeleinden noteert u welke ExpressRoute virtuele netwerk gateway u gaat gebruiken en gaat u verder met de volgende stap.
+Als algemene aanbeveling is het niet toegestaan om een bestaande ExpressRoute-gateway van een virtueel netwerk te gebruiken. Voor plannings doeleinden noteert u welke ExpressRoute virtuele netwerk gateway u gaat gebruiken en gaat u verder met de [volgende stap](#vmware-hcx-network-segments).
 
 ### <a name="create-a-new-expressroute-virtual-network-gateway"></a>Een nieuwe virtuele ExpressRoute-netwerk gateway maken
 
@@ -116,23 +108,36 @@ Wanneer u een *nieuwe* virtuele ExpressRoute-netwerk gateway maakt, kunt u een b
    1. Een virtueel Azure-netwerk identificeren waarbij er geen bestaande virtuele netwerk gateways voor ExpressRoute zijn.
    2. Voordat u de implementatie implementeert, maakt u een [GatewaySubnet](../expressroute/expressroute-howto-add-gateway-portal-resource-manager.md#create-the-gateway-subnet) in azure Virtual Network.
 
-- Voor een nieuwe Azure-Virtual Network kunt u deze vooraf of tijdens de implementatie maken. Selecteer de koppeling **nieuwe maken** onder de lijst **Virtual Network** .
+- Voor een nieuwe Azure-Virtual Network en een virtuele netwerk gateway maakt u die tijdens de implementatie door de **nieuwe koppeling maken** te selecteren in de lijst **Virtual Network** .  Het is belang rijk om de adres ruimte en subnetten vooraf van de implementatie te definiëren, zodat u deze gegevens kunt invoeren wanneer u de implementaties tappen voltooit.
 
-In de onderstaande afbeelding ziet u het scherm **een Privécloud maken** met het **Virtual Network** veld gemarkeerd.
+In de volgende afbeelding ziet u het scherm **een Privécloud maken** met het **Virtual Network** veld gemarkeerd.
 
 :::image type="content" source="media/pre-deployment/azure-vmware-solution-deployment-screen-vnet-circle.png" alt-text="Scherm afbeelding van het implementatie scherm van de Azure VMware-oplossing met Virtual Network veld gemarkeerd.":::
 
->[!NOTE]
->Elk virtueel netwerk dat wordt gebruikt of gemaakt, kan worden gezien door uw on-premises omgeving en Azure VMware-oplossing. Zorg er dus voor dat het IP-segment dat u in dit virtuele netwerk gebruikt en dat subnetten elkaar niet overlappen.
+> [!NOTE]
+> Elk virtueel netwerk dat wordt gebruikt of gemaakt, kan worden gezien door uw on-premises omgeving en Azure VMware-oplossing. Zorg er dus voor dat het IP-segment dat u in dit virtuele netwerk gebruikt en dat subnetten elkaar niet overlappen.
 
 ## <a name="vmware-hcx-network-segments"></a>VMware HCX-netwerksegmenten
 
-VMware HCX is een technologie die deel uitmaakt van Azure VMware Solution. De voornaamste use cases voor VMware HCX zijn migraties van workloads en herstel na noodgevallen. Als u van plan bent een van die twee te doen, dan kunt u het netwerken best nu al plannen.   Als dat niet het geval is, kunt u dit overslaan en naar de volgende stap gaan.
+VMware HCX is een technologie die is gebundeld met de Azure VMware-oplossing. De voornaamste use cases voor VMware HCX zijn migraties van workloads en herstel na noodgevallen. Als u van plan bent een van die twee te doen, dan kunt u het netwerken best nu al plannen. Als dat niet het geval is, kunt u dit overslaan en naar de volgende stap gaan.
 
 [!INCLUDE [hcx-network-segments](includes/hcx-network-segments.md)]
 
+## <a name="optional-extend-your-networks"></a>Beschrijving Uw netwerken uitbreiden
+
+U kunt netwerk segmenten uitbreiden van on-premises naar Azure VMware-oplossing. Als u netwerk segmenten uitbreidt, moet u deze netwerken nu identificeren.  
+
+Hier volgen enkele factoren waarmee u rekening moet houden:
+
+- Als u van plan bent om netwerken van on-premises uit te breiden, moeten die netwerken verbinding maken met een [vSphere Distributed Switch (vDS)](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.networking.doc/GUID-B15C6A13-797E-4BCB-B9D9-5CBC5A60C3A6.html) in uw on-premises VMware-omgeving.  
+- Netwerken die zich op een [vSphere-standaard Switch](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.networking.doc/GUID-350344DE-483A-42ED-B0E2-C811EE927D59.html) bevinden, kunnen niet worden uitgebreid.
+
+>[!NOTE]
+>Deze netwerken worden uitgebreid als laatste stap in de configuratie, niet tijdens de implementatie.
+>
 ## <a name="next-steps"></a>Volgende stappen
 Nu u de benodigde informatie hebt verzameld en gedocumenteerd, gaat u verder naar de volgende sectie om uw Azure VMware Solution-privécloud te maken.
 
 > [!div class="nextstepaction"]
 > [Azure VMware Solution implementeren](deploy-azure-vmware-solution.md)
+> 

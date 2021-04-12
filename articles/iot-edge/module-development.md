@@ -8,12 +8,12 @@ ms.date: 11/10/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: a30b4b056d56e096f80b9494ab80a585fff76e66
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6274d0f0265220877938775ab6efd72ff22b84e4
+ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103489918"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107031119"
 ---
 # <a name="develop-your-own-iot-edge-modules"></a>Uw eigen IoT Edge-modules ontwikkelen
 
@@ -134,7 +134,7 @@ IoT Edge ondersteunt meerdere besturings systemen, architecturen en ontwikkeling
 
 ### <a name="linux"></a>Linux
 
-IoT Edge ondersteunt de ontwikkeling voor AMD64-en ARM32 Linux-apparaten voor alle talen in de volgende tabel.
+Voor alle talen in de volgende tabel biedt IoT Edge ondersteuning voor de ontwikkeling van AMD64-en ARM32 Linux-containers.
 
 | Ontwikkelingstaal | Ontwikkelhulpprogramma’s |
 | -------------------- | ----------------- |
@@ -145,16 +145,30 @@ IoT Edge ondersteunt de ontwikkeling voor AMD64-en ARM32 Linux-apparaten voor al
 | Python | Visual Studio Code |
 
 >[!NOTE]
->Ondersteuning voor het ontwikkelen en opsporen van fouten voor ARM64 Linux-apparaten is beschikbaar in de [open bare preview](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Zie [ARM64 IoT Edge-modules ontwikkelen in Visual Studio Code en er fouten in opsporen (preview)](https://devblogs.microsoft.com/iotdev/develop-and-debug-arm64-iot-edge-modules-in-visual-studio-code-preview) voor meer informatie.
+>Ondersteuning voor het ontwikkelen en opsporen van fouten voor ARM64 Linux-containers is beschikbaar als [open bare preview](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Zie [ARM64 IoT Edge-modules ontwikkelen in Visual Studio Code en er fouten in opsporen (preview)](https://devblogs.microsoft.com/iotdev/develop-and-debug-arm64-iot-edge-modules-in-visual-studio-code-preview) voor meer informatie.
 
 ### <a name="windows"></a>Windows
 
-IoT Edge ondersteunt de ontwikkeling van AMD64 Windows-apparaten voor alle talen in de volgende tabel.
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
+Voor alle talen in de volgende tabel biedt IoT Edge ondersteuning voor de ontwikkeling van AMD64 Windows-containers.
 
 | Ontwikkelingstaal | Ontwikkelhulpprogramma’s |
 | -------------------- | ----------------- |
 | C | Visual Studio 2017/2019 |
 | C# | Visual Studio code (geen mogelijkheden voor fout opsporing)<br>Visual Studio 2017/2019 |
+:::moniker-end
+<!-- end 1.1 -->
+
+<!-- 1.2 -->
+:::moniker range=">=iotedge-2020-11"
+
+IoT Edge 1,1 LTS is het laatste release kanaal dat ondersteuning biedt voor Windows-containers. Vanaf versie 1,2 worden Windows-containers niet ondersteund.
+
+Raadpleeg de [IoT Edge 1,1](?view=iotedge-2018-06&preserve-view=true) -versie van dit artikel voor meer informatie over het ontwikkelen met Windows-containers.
+
+:::moniker-end
+<!-- end 1.2 -->
 
 ## <a name="next-steps"></a>Volgende stappen
 

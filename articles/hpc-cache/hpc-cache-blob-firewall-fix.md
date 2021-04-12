@@ -6,18 +6,18 @@ ms.service: hpc-cache
 ms.topic: troubleshooting
 ms.date: 03/18/2021
 ms.author: v-erkel
-ms.openlocfilehash: 10d68ce679fe42f5deeaae364bc46adb23436a27
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 45a7169330b11e98a8618b08205217212414ca5d
+ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104587148"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107258925"
 ---
 # <a name="work-around-blob-storage-account-firewall-settings"></a>Rond firewallinstellingen van Blob-opslag werken
 
 Een bepaalde instelling die wordt gebruikt in opslag account firewalls kan ertoe leiden dat het maken van het Blob-opslag doel mislukt. Het team van de HPC-cache van Azure werkt aan een software oplossing voor dit probleem, maar u kunt deze omzeilen door de instructies in dit artikel te volgen.
 
-De firewall instelling die alleen toegang toestaat vanuit geselecteerde netwerken kan verhinderen dat de cache een Blob-opslag doel maakt of wijzigt. Deze configuratie bevindt zich op de instellingen pagina **firewalls en virtuele netwerken** van het opslag account.
+De firewall instelling die alleen toegang toestaat vanuit geselecteerde netwerken kan verhinderen dat de cache een Blob-opslag doel maakt of wijzigt. Deze configuratie bevindt zich op de instellingen pagina **firewalls en virtuele netwerken** van het opslag account. (Dit probleem is niet van toepassing op ADLS-NFS-opslag doelen.)
 
 Het probleem is dat de cache service gebruikmaakt van een verborgen service virtueel netwerk dat losstaat van de klant omgevingen. Het is niet mogelijk dit netwerk expliciet te autoriseren voor toegang tot uw opslag account.
 

@@ -5,13 +5,13 @@ author: heidilohr
 ms.topic: conceptual
 ms.date: 12/15/2020
 ms.author: helohr
-manager: lizross
-ms.openlocfilehash: 0ddbd4b798d37498af92cec40af6a80a88115fab
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+manager: femila
+ms.openlocfilehash: fb0935ca2ffcad93ba47ccd207603dd870dc26b0
+ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103014890"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106445700"
 ---
 # <a name="security-best-practices"></a>Aanbevolen procedures voor beveiliging
 
@@ -29,16 +29,16 @@ Hier vindt u de beveiligings behoeften die u nodig hebt voor de implementatie va
 
 | Beveiligings behoeften | Is de klant hiervoor verantwoordelijk? |
 |---------------|:-------------------------:|
-|Identiteit|Yes|
-|Gebruikers apparaten (Mobile en PC)|Yes|
-|App-beveiliging|Yes|
-|Session Host-besturings systeem|Yes|
-|Implementatie configuratie|Yes|
-|Netwerk besturings elementen|Yes|
-|Besturings vlak voor virtualisatie|No|
-|Fysieke hosts|No|
-|Fysiek netwerk|No|
-|Fysiek Data Center|No|
+|Identiteit|Ja|
+|Gebruikers apparaten (Mobile en PC)|Ja|
+|App-beveiliging|Ja|
+|Session Host-besturings systeem|Ja|
+|Implementatie configuratie|Ja|
+|Netwerk besturings elementen|Ja|
+|Besturings vlak voor virtualisatie|Nee|
+|Fysieke hosts|Nee|
+|Fysiek netwerk|Nee|
+|Fysiek Data Center|Nee|
 
 De beveiligings behoeften die de klant niet verantwoordelijk is voor worden verwerkt door micro soft.
 

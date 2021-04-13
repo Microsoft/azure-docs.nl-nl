@@ -3,12 +3,12 @@ title: 'Quickstart: Gebeurtenissen ontvangen met behulp van Apache Storm - Azure
 description: 'Quickstart: In dit artikel vindt u informatie over hoe u gebeurtenissen ontvangt van Azure Event Hubs met behulp van Apache Storm.'
 ms.topic: quickstart
 ms.date: 06/23/2020
-ms.openlocfilehash: 099a3ff1ad57616de0d7929d787b82e9d55c9e00
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b79c2958a10d0193b706c92a28b1792d63c24b82
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "87087574"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107302961"
 ---
 # <a name="quickstart-receive-events-from-event-hubs-using-apache-storm"></a>Quickstart: Gebeurtenissen ontvangen van Event Hubs met behulp van Apache Storm
 
@@ -235,7 +235,7 @@ U kunt meer informatie over Event Hubs vinden via de volgende koppelingen:
 
 * [Event Hubs-overzicht][Event Hubs overview]
 * [Een Event Hub maken](event-hubs-create.md)
-* [Veelgestelde vragen over Event Hubs](event-hubs-faq.md)
+* [Veelgestelde vragen over Event Hubs](event-hubs-faq.yml)
 
 <!-- Links -->
 [Event Hubs overview]: ./event-hubs-about.md

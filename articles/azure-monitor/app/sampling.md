@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.reviewer: vitalyg
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 7b53b0bc8c7cc3df2123d327bf87a85081f88f50
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a03dab43c12b372fc52e7516821fe7aef22d2e16
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100589555"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107305239"
 ---
 # <a name="sampling-in-application-insights"></a>Steekproeven in Application Insights
 
@@ -184,7 +184,7 @@ Met de bovenstaande code worden adaptieve steek proeven uitgeschakeld. Volg de o
 Gebruik extensie methoden van `TelemetryProcessorChainBuilder` zoals hieronder wordt weer gegeven om het steekproef gedrag aan te passen.
 
 > [!IMPORTANT]
-> Als u deze methode gebruikt om steek proeven te configureren, moet u ervoor zorgen dat u de `aiOptions.EnableAdaptiveSampling` eigenschap instelt op `false` Wanneer u aanroept `AddApplicationInsightsTelemetry()` .
+> Als u deze methode gebruikt om steek proeven te configureren, moet u ervoor zorgen dat u de `aiOptions.EnableAdaptiveSampling` eigenschap instelt op `false` Wanneer u aanroept `AddApplicationInsightsTelemetry()` . Nadat u deze wijziging hebt aangebracht, moet u de instructies in het onderstaande code blok **precies** volgen om adaptieve steek proeven opnieuw in te scha kelen met uw aanpassingen. Als u dit niet doet, kan dit leiden tot overbodige gegevens opname. Test na het wijzigen van de voorbeeld instellingen altijd en stel een passende [dagelijkse gegevens limiet](pricing.md#set-the-daily-cap) in om uw kosten te helpen bepalen.
 
 ```csharp
 using Microsoft.ApplicationInsights.Extensibility

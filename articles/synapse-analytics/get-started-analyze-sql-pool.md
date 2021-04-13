@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: sql
 ms.topic: tutorial
 ms.date: 03/24/2021
-ms.openlocfilehash: 4588eee721a58a7e4f3366d0d325b48de0f56ae5
-ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
+ms.openlocfilehash: 267dc7c7d89bbecfbed127f4a46adb7cd9044bc4
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "107259809"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107309370"
 ---
 # <a name="analyze-data-with-dedicated-sql-pools"></a>Gegevens analyseren met toegewezen SQL-pools
 
@@ -99,7 +99,7 @@ Een toegewezen SQL-pool verbruikt factureerbare resources zolang deze worden uit
 
 1. Ga in Synapse Studio naar de hub **Gegevens**.
 1. Ga naar **SQLPOOL1** > **Tabellen**. 
-3. Klik met de rechtermuisknop op de tabel **dbo.Trip** en selecteer **Nieuw SQL-script** > **Eerste 100 rijen selecteren**.
+3. Klik met de rechter muisknop op de **dbo. NYCTaxiTripSmall** -tabel en selecteer **Nieuw SQL-script**  >  **Select Top 100 rows**.
 4. Wacht tot er een nieuw SQL-script wordt gemaakt en uitgevoerd.
 5. U ziet dat bovenaan het SQL-script **Verbinding maken met** automatisch is ingesteld op de SQL-pool met de naam **SQLPOOL1**.
 6. Vervang de tekst van het SQL-script door deze code en voer deze uit.
@@ -108,7 +108,7 @@ Een toegewezen SQL-pool verbruikt factureerbare resources zolang deze worden uit
     SELECT PassengerCount,
           SUM(TripDistanceMiles) as SumTripDistance,
           AVG(TripDistanceMiles) as AvgTripDistance
-    FROM  dbo.Trip
+    FROM  dbo.NYCTaxiTripSmall
     WHERE TripDistanceMiles > 0 AND PassengerCount > 0
     GROUP BY PassengerCount
     ORDER BY PassengerCount;

@@ -7,12 +7,12 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 03/08/2021
-ms.openlocfilehash: d7ae1e72dee28509c1338a1b56cf42a5293af9bf
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a45b8db1f17ead8e55bac2b2bf82aa44cb7f080e
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104670253"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107304695"
 ---
 # <a name="glossary-of-iot-terms"></a>Woorden lijst met IoT-termen
 
@@ -435,6 +435,12 @@ In [IOT Edge](#iot-edge)is een module een docker-container die u op IOT edge app
 [MQTT](https://mqtt.org/) is een van de berichten protocollen die [IOT hub](#iot-hub) ondersteunt voor het communiceren met apparaten. Zie [berichten verzenden en ontvangen met IOT hub](../iot-hub/iot-hub-devguide-messaging.md)voor meer informatie over de berichten protocollen die door IOT hub worden ondersteund.
 
 ## <a name="o"></a>O
+
+### <a name="ontology"></a>Ontology
+
+Een set modellen voor een bepaald domein, zoals onroerend goed, Smart steden, IoT-systemen, energie rasters en meer. Ontologies worden vaak gebruikt als schema's voor kennis grafieken zoals die in [Azure Digital apparaatdubbels](#azure-digital-twins), omdat ze een uitgangs punt bieden op basis van industrie standaarden en aanbevolen procedures.
+
+Zie [Wat is een Ontology?](../digital-twins/concepts-ontologies.md) voor meer informatie over Ontologies.
 
 ### <a name="operations-monitoring"></a>Controle van bewerkingen
 

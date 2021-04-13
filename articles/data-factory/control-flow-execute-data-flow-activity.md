@@ -5,13 +5,13 @@ author: kromerm
 ms.service: data-factory
 ms.topic: conceptual
 ms.author: makromer
-ms.date: 01/03/2021
-ms.openlocfilehash: 0663690318773ccad3bddfaaa03e456c2f58895e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/11/2021
+ms.openlocfilehash: 3e48eee5bf36732edc4f897103cb72bbbe75a5c3
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100383378"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107306310"
 ---
 # <a name="data-flow-activity-in-azure-data-factory"></a>Gegevens stroom activiteit in Azure Data Factory
 
@@ -76,9 +76,9 @@ De eigenschappen kern aantal en reken type kunnen dynamisch worden ingesteld om 
 
 ### <a name="data-flow-integration-runtime"></a>Data flow Integration runtime
 
-Kies welke Integration Runtime moet worden gebruikt voor de uitvoering van de activiteit van de gegevens stroom. Data Factory maakt standaard gebruik van het automatisch oplossen van Azure Integration runtime met vier worker-kernen en geen TTL (time to Live). Deze IR heeft een reken type voor algemeen gebruik en wordt uitgevoerd in dezelfde regio als uw fabriek. U kunt uw eigen Azure Integration Runtimes maken voor het definiëren van specifieke regio's, reken type, kern aantallen en TTL voor de uitvoering van de gegevens stroom activiteit.
+Kies welke Integration Runtime moet worden gebruikt voor de uitvoering van de activiteit van de gegevens stroom. Data Factory maakt standaard gebruik van het automatisch oplossen van Azure Integration runtime met vier worker-kernen. Deze IR heeft een reken type voor algemeen gebruik en wordt uitgevoerd in dezelfde regio als uw fabriek. Voor operationele pijp lijnen is het zeer raadzaam om uw eigen Azure Integration Runtimes te maken voor het definiëren van specifieke regio's, reken type, kern aantallen en TTL voor het uitvoeren van de activiteit van de gegevens stroom.
 
-Voor de uitvoering van pijp lijnen is het cluster een taak cluster, dat enkele minuten in beslag neemt voordat de uitvoering wordt gestart. Als er geen TTL is opgegeven, is deze opstart tijd vereist op elke pijplijn uitvoering. Als u een TTL opgeeft, blijft een warme cluster groep actief gedurende de tijd die na de laatste uitvoering is opgegeven, wat resulteert in kortere opstart tijden. Als u bijvoorbeeld een TTL van 60 minuten hebt en een gegevens stroom eenmaal per uur uitvoert, blijft de cluster groep actief. Zie [Azure Integration runtime](concepts-integration-runtime.md)voor meer informatie.
+Een mini maal reken type van Algemeen (geoptimaliseerd voor de reken kracht wordt niet aanbevolen voor grote werk belastingen) met een configuratie van 8 + 8 (16 kern geheugens) en een 10 minuten is de minimale aanbeveling voor de meeste productie werkbelastingen. Door een kleine TTL in te stellen, kan de Azure IR een warm cluster onderhouden dat de verschillende minuten van de begin tijd van een koud cluster niet verkrijgt. U kunt de uitvoering van uw gegevens stromen ook versnellen door snel opnieuw gebruiken te selecteren in de Azure IR gegevens stroom configuraties. Zie [Azure Integration runtime](concepts-integration-runtime.md)voor meer informatie.
 
 ![Azure Integration Runtime](media/data-flow/ir-new.png "Azure Integration Runtime")
 

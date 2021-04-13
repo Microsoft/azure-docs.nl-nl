@@ -6,16 +6,16 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: how-to
 ms.date: 10/09/2020
-ms.openlocfilehash: 34dddd8e5f3fb418fc7155630bf82a922e418402
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5fc1ab1b3dfbc324668873749c143846c2015cd4
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97657087"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107306276"
 ---
-# <a name="restore-a-dropped-azure-database-for-mysql-server"></a>Een verwijderde Azure Database for MySQL server herstellen
+# <a name="restore-a-deleted-azure-database-for-mysql-server"></a>Een verwijderde Azure Database for MySQL server herstellen
 
-Wanneer een server wordt verwijderd, kan de back-up van de database server tot vijf dagen in de service worden bewaard. De back-up van de data base kan worden geopend en alleen worden teruggezet vanuit het Azure-abonnement waarop de server oorspronkelijk is gesideeerd. De volgende aanbevolen stappen kunnen worden gevolgd om een verwijderde MySQL Server-resource binnen vijf dagen te herstellen vanaf het moment dat de server wordt verwijderd. De aanbevolen stappen werken alleen als de back-up voor de server nog steeds beschikbaar is en niet is verwijderd uit het systeem. 
+Wanneer een server wordt verwijderd, kan de back-up van de database server Maxi maal vijf dagen in de service worden bewaard. De back-up van de data base kan worden geopend en alleen worden teruggezet vanuit het Azure-abonnement waarop de server oorspronkelijk is gesideeerd. De volgende aanbevolen stappen kunnen worden gevolgd om een verwijderde MySQL-Server bron te herstellen binnen 5 dagen vanaf het moment dat de server wordt verwijderd. De aanbevolen stappen werken alleen als de back-up voor de server nog steeds beschikbaar is en niet is verwijderd uit het systeem. 
 
 ## <a name="pre-requisites"></a>Vereisten
 Als u een verwijderde Azure Database for MySQL server wilt herstellen, moet u het volgende doen:
@@ -42,7 +42,7 @@ Als u een verwijderde Azure Database for MySQL server wilt herstellen, moet u he
  
      [![Een server maken met REST API](./media/howto-restore-dropped-server/create-server-from-rest-api.png)](./media/howto-restore-dropped-server/create-server-from-rest-api.png#lightbox)
   
- 6. Schuif hieronder op de sectie aanvraag hoofdtekst en plak de volgende Vervang de ' verwijderde server locatie ', ' submissionTimestamp ' en ' resourceId '. Geef voor ' restorePointInTime ' de waarde ' submissionTimestamp ' min **15 minuten** op om ervoor te zorgen dat de opdracht niet fout wordt uitgevoerd.
+ 6. Schuif hieronder op de sectie aanvraag tekst en plak het volgende:
  
     ```json
     {
@@ -55,10 +55,14 @@ Als u een verwijderde Azure Database for MySQL server wilt herstellen, moet u he
             }
     }
     ```
+7. Vervang de volgende waarden in de bovenstaande hoofd tekst van de aanvraag:
+   * ' Verwijderde server locatie ' door de Azure-regio waar de verwijderde server oorspronkelijk is gemaakt
+   * ' submissionTimestamp ' en ' resourceId ' door de waarden die zijn vastgelegd in stap 3. 
+   * Geef voor ' restorePointInTime ' de waarde ' submissionTimestamp ' min **15 minuten** op om ervoor te zorgen dat de opdracht niet fout wordt uitgevoerd.
+   
+8. Als u antwoord code 201 of 202 ziet, wordt de herstel aanvraag verzonden. 
 
-7. Als u antwoord code 201 of 202 ziet, wordt de herstel aanvraag verzonden. 
-
-8. Het maken van de server kan enige tijd duren, afhankelijk van de grootte van de data base en de reken resources die zijn ingericht op de oorspronkelijke server. De herstel status kan worden bewaakt vanuit het activiteiten logboek door te filteren op 
+9. Het maken van de server kan enige tijd duren, afhankelijk van de grootte van de data base en de reken resources die zijn ingericht op de oorspronkelijke server. De herstel status kan worden bewaakt vanuit het activiteiten logboek door te filteren op 
    - **Abonnement** = uw abonnement
    - **Resource type** = Azure database for MySQL servers (micro soft. DBforMySQL/servers) 
    - **Bewerking** = mysql-server maken bijwerken

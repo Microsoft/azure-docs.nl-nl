@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 03/01/2021
+ms.date: 04/12/2021
 ms.author: alkohli
-ms.openlocfilehash: 3a0b87f04e60fd56d543c7c7a752cd788e087c78
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b0f3b81ac12d0ae96dde0397bc01a4570d992ea9
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101727478"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107310169"
 ---
 # <a name="azure-stack-edge-mini-r-technical-specifications"></a>Technische specificaties voor de Azure Stack Edge-mini
 
@@ -24,31 +24,35 @@ De hardwareonderdelen van uw Microsoft Azure Stack Edge mini-R-apparaat voldoen 
 
 Het Azure Stack Edge mini-R-apparaat heeft de volgende specificaties voor Compute en geheugen:
 
-| Specificatie           | Waarde                  |
-|-------------------------|------------------------|
-| CPU    | 16-core CPU, Intel Xeon-D 1577 |
-| Geheugen              | 48 GB RAM (2400 MT/s)                  |
+| Specificatie           | Waarde                           |
+|-------------------------|---------------------------------|
+| CPU-type                | Intel Xeon-D 1577               |
+| CPU: RAW                | 16 totale kernen, 32 totaal Vcpu's  |
+| CPU: bruikbaar             | 24 Vcpu's                        |
+| Type geheugen             | 16 GB 2400 MT/s SODIMM          |
+| Geheugen: onbewerkt             | 48 GB RAM (3 x 16 GB)           |
+| Geheugen: bruikbaar          | 32 GB RAM                       |
 
 
 ## <a name="compute-acceleration-specifications"></a>Specificaties van Compute Acceleration
 
 Een Vision processing unit (VPU) is opgenomen op elke Azure Stack Edge mini-R-apparaat waarmee Kubernetes-, diepe Neural-netwerk-en computer vision-toepassingen kunnen worden uitgevoerd.
 
-| Specificatie           | Waarde                  |
-|-------------------------|------------------------|
-| Kaart voor Compute-versnelling         | Intel Movidius talloze X VPU <br> Zie [Intel Movidius talloze X VPU](https://www.movidius.com/MyriadX) voor meer informatie. |
+| Specificatie             | Waarde                  |
+|---------------------------|------------------------|
+| Kaart voor Compute-versnelling | Intel Movidius talloze X VPU <br> Zie [Intel Movidius talloze X VPU](https://www.movidius.com/MyriadX) voor meer informatie. |
 
 
 ## <a name="storage-specifications"></a>Opslag specificaties
 
 De Azure Stack Edge mini-R-apparaat heeft 1 gegevens schijf en 1 opstart schijf (die fungeert als opslag voor het besturings systeem). De volgende tabel bevat de Details voor de opslag capaciteit van het apparaat.
 
-|     Specificatie                          |     Waarde             |
-|--------------------------------------------|-----------------------|
-|    Aantal Solid-state drives (Ssd's)     |    2 X 1 TB schijven <br> Eén gegevens schijf en één opstart schijf                  |
-|    Capaciteit van één SSD                     |    1 TB               |
-|    Totale capaciteit (alleen gegevens)              |    1 TB              |
-|    Totale bruikbare capaciteit *                  |    ~ 750 GB        |
+|     Specificatie                          |     Waarde                                              |
+|--------------------------------------------|--------------------------------------------------------|
+|    Aantal Solid-state drives (Ssd's)     |    2 X 1 TB schijven <br> Eén gegevens schijf en één opstart schijf |
+|    Capaciteit van één SSD                     |    1 TB                                                |
+|    Totale capaciteit (alleen gegevens)              |    1 TB                                                |
+|    Totale bruikbare capaciteit *                  |    ~ 750 GB                                            |
 
 **Er is ruimte gereserveerd voor intern gebruik.*
 
@@ -85,9 +89,9 @@ Het Azure Stack Edge mini-R-apparaat bevat ook een onboard-batterij die door de 
 Een extra [batterij van het Type 2590](https://www.bren-tronics.com/bt-70791ck.html) kan worden gebruikt in combi natie met de onboard-batterij om het gebruik van het apparaat tussen de kosten uit te breiden. Deze batterij moet voldoen aan alle veiligheids-, vervoers-en milieu voorschriften die van toepassing zijn in het land van gebruik.
 
 
-| Specificatie           | Waarde                      |
-|-------------------------|----------------------------|
-| Batterij capaciteit onboarding | 73 w/h                    |
+| Specificatie            | Waarde                      |
+|--------------------------|----------------------------|
+| Batterij capaciteit onboarding | 73 w/h                     |
 
 ## <a name="enclosure-dimensions-and-weight-specifications"></a>Afmetingen van behuizing en gewichts specificaties
 
@@ -99,18 +103,18 @@ De volgende tabel bevat de afmetingen van het apparaat en de USP met het robuust
 
 |     Sluit     |     Millimeters     |     Mm     |
 |-------------------|---------------------|----------------|
-|    Hoogte         |    68            |    2,68          |
-|    Breedte          |    208          |      8,19          |
-|    Lengte          |   259           |    10,20          |
+|    Hoogte         |    68               |    2,68        |
+|    Breedte          |    208              |      8,19      |
+|    Lengte          |   259              |    10,20       |
 
 
 ### <a name="enclosure-weight"></a>Gewicht van behuizing
 
 In de volgende tabel wordt het gewicht van het apparaat weer gegeven, inclusief de accu.
 
-|     Sluit                                 |     Gewicht          |
-|-----------------------------------------------|---------------------|
-|    Totaal gewicht van het apparaat     |    7 lbs.          |
+|     Sluit                     |     Gewicht          |
+|-----------------------------------|---------------------|
+|    Totaal gewicht van het apparaat     |     7 lbs           |
 
 ## <a name="enclosure-environment-specifications"></a>Specificaties van behuizing-omgeving
 

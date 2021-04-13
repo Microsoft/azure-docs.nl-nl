@@ -11,12 +11,12 @@ ms.date: 11/16/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 411a8e46151a762bcd270fb676f78a91f760ac4f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 46b5c94c84bdbd0e5bb0d7b08ba9296ebfcd1838
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101653793"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107306055"
 ---
 # <a name="azure-ad-connect-cloud-provisioning-agent-gmsa-powershell-cmdlets"></a>Azure AD Connect Power shell-cmdlets voor gMSA Cloud Provisioning agent
 
@@ -26,7 +26,7 @@ In dit document worden de volgende cmdlets behandeld: 
 
 `Set-AADCloudSyncRestrictedPermissions`
 
-`Ste-AADCloudSyncPermissions` 
+`Set-AADCloudSyncPermissions` 
 
 ## <a name="how-to-use-the-cmdlets"></a>De cmdlets gebruiken:  
 

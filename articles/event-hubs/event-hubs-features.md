@@ -3,12 +3,12 @@ title: Overzicht van functies-Azure Event Hubs | Microsoft Docs
 description: In dit artikel vindt u informatie over de functies en terminologie van Azure Event Hubs.
 ms.topic: article
 ms.date: 03/15/2021
-ms.openlocfilehash: da59d62cb7060389ea94b3af5e6f66a4b6347d7d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8ec4b7cdd13c3407747261ef54cb6b1fc58fdb69
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104602618"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107310072"
 ---
 # <a name="features-and-terminology-in-azure-event-hubs"></a>Functies en terminologie in azure Event Hubs
 
@@ -177,5 +177,5 @@ Voor meer informatie over Event Hubs gaat u naar de volgende koppelingen:
     - [JavaScript](event-hubs-node-get-started-send.md)
 * [Programmeer handleiding voor Event Hubs](event-hubs-programming-guide.md)
 * [Beschikbaarheid en consistentie in Event Hubs](event-hubs-availability-and-consistency.md)
-* [Veelgestelde vragen over Event Hubs](event-hubs-faq.md)
+* [Veelgestelde vragen over Event Hubs](event-hubs-faq.yml)
 * [Event Hubs-voor beelden](event-hubs-samples.md)

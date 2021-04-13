@@ -1,18 +1,18 @@
 ---
 title: 'Programma voor Azure Certified Device-zelf studie: uw apparaat testen'
 description: Een stapsgewijze hand leiding voor het testen van het apparaat met de AICS-service in de Azure Certified Device-Portal
-author: nikuntjo
+author: nkuntjoro
 ms.author: nikuntjo
 ms.service: certification
 ms.topic: tutorial
 ms.date: 03/02/2021
 ms.custom: template-tutorial
-ms.openlocfilehash: 4cc9e37e95c6402bc535d818e994327e7d526047
-ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
+ms.openlocfilehash: ef82d44ef44189c0430ba9789baf3279fbe49a9c
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105969648"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107310951"
 ---
 # <a name="tutorial-test-and-submit-your-device"></a>Zelf studie: uw apparaat testen en verzenden
 

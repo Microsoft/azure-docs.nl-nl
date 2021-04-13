@@ -10,30 +10,36 @@ ms.topic: reference
 author: sachinpMSFT
 ms.author: sachinp
 ms.reviewer: sstein
-ms.date: 03/30/2021
-ms.openlocfilehash: f3c20774accf9e0b589b898cb903d6da4516e553
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.date: 04/09/2021
+ms.openlocfilehash: 906d34a91736d28f0da4a5ba34b7114fbe410adb
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106058915"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107306633"
 ---
 # <a name="resources-limits-for-elastic-pools-using-the-dtu-purchasing-model"></a>Bronnen limieten voor elastische Pools met behulp van het DTU-aankoop model
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 In dit artikel vindt u gedetailleerde resource limieten voor data bases in Azure SQL Database die zich binnen een elastische pool bevinden met behulp van het DTU-aankoop model.
 
-* Zie [DTU-resource limieten-Azure SQL database](resource-limits-dtu-single-databases.md)voor Azure SQL database voor de resource limieten voor DTU-aankoop modellen.
+* Zie [overzicht van resource limieten op een server](resource-limits-logical-server.md)voor de limieten voor DTU-aankoop modellen voor afzonderlijke data bases op een server.
+* Zie voor de resource limieten van het type DTU-aankoop model voor Azure SQL Database de limieten voor [DTU-bronnen enkele data bases](resource-limits-dtu-single-databases.md) en [DTU-bronnen beperken elastische Pools](resource-limits-dtu-elastic-pools.md).
 * Zie [vCore resource limieten-Azure SQL database](resource-limits-vcore-single-databases.md) en vCore resource limieten [-elastische Pools](resource-limits-vcore-elastic-pools.md)voor vCore-resource limieten.
+* Zie [Inkoop modellen en service lagen](purchasing-models.md)voor meer informatie over de verschillende aankoop modellen.
+
+Elke alleen-lezen replica heeft zijn eigen resources, zoals Dtu's, werk rollen en sessies. Elke alleen-lezen replica is onderhevig aan de resource limieten die verderop in dit artikel worden beschreven.
 
 ## <a name="elastic-pool-storage-sizes-and-compute-sizes"></a>Elastische pool: opslag grootten en reken grootten
 
 Voor Azure SQL Database elastische Pools tonen de volgende tabellen de resources die beschikbaar zijn in elke servicelaag en de berekenings grootte. U kunt de servicelaag, de reken grootte en de opslag hoeveelheid instellen met behulp van:
 
+* [Transact-SQL](elastic-pool-scale.md) via [ALTER data base](/sql/t-sql/statements/alter-database-transact-sql#overview-sql-database)
 * [Azure-portal](elastic-pool-manage.md#azure-portal)
 * [PowerShell](elastic-pool-manage.md#powershell)
 * [Azure-CLI](elastic-pool-manage.md#azure-cli)
-* [REST API](elastic-pool-manage.md#rest-api).
+* [REST API](elastic-pool-manage.md#rest-api)
+
 
 > [!IMPORTANT]
 > Zie [een elastische pool schalen](elastic-pool-scale.md) voor schaal baarheid en overwegingen

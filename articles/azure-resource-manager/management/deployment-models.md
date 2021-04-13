@@ -2,13 +2,13 @@
 title: Resource Manager en klassieke implementatie
 description: Lees hier wat de verschillen zijn tussen het implementatiemodel van Resource Manager en het klassieke implementatiemodel (of Service Management).
 ms.topic: conceptual
-ms.date: 02/06/2020
-ms.openlocfilehash: da260db84de0cc8bd092eb95491b7cc38df93a12
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/12/2021
+ms.openlocfilehash: c2009034c431e53d162cb0f2c1f0d9815c8d1942
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96185841"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107306927"
 ---
 # <a name="azure-resource-manager-vs-classic-deployment-understand-deployment-models-and-the-state-of-your-resources"></a>Azure Resource Manager vergeleken met klassieke implementatie: implementatiemodellen en de status van uw resources begrijpen
 
@@ -17,7 +17,7 @@ ms.locfileid: "96185841"
 
 In dit artikel vindt u informatie over Azure Resource Manager en het klassieke implementatiemodel. Het implementatiemodel van Resource Manager en het klassieke implementatiemodel zijn twee verschillende manieren voor het implementeren en beheren van uw Azure-oplossingen. U gebruikt de modellen via twee verschillende API-sets, en de geïmplementeerde resources kunnen sterk afwijken. De twee modellen zijn niet met elkaar compatibel. In dit artikel worden deze verschillen beschreven.
 
-Om de implementatie en het beheer van resources te vereenvoudigen, wordt aangeraden om Resource Manager te gebruiken voor alle nieuwe resources. Indien mogelijk is het ook raadzaam om bestaande resources opnieuw te implementeren via Resource Manager.
+Om de implementatie en het beheer van resources te vereenvoudigen, wordt aangeraden om Resource Manager te gebruiken voor alle nieuwe resources. Indien mogelijk is het ook raadzaam om bestaande resources opnieuw te implementeren via Resource Manager. Als u Cloud Services hebt gebruikt, kunt u uw oplossing migreren naar [Cloud Services (uitgebreide ondersteuning)](../../cloud-services-extended-support/overview.md).
 
 Als u geen ervaring hebt met Resource Manager, kunt u eerst de terminologie bekijken die is gedefinieerd in het [Azure Resource Manager overzicht](overview.md).
 
@@ -40,7 +40,7 @@ Op het moment dat Resource Manager werd toegevoegd, werden alle resources met te
 
 Er zijn drie mogelijke scenario's:
 
-1. Cloud Services biedt geen ondersteuning voor het Resource Manager-implementatie model.
+1. [Cloud Services (klassiek)](../../cloud-services/cloud-services-choose-me.md) biedt geen ondersteuning voor het Resource Manager-implementatie model. [Cloud Services (uitgebreide ondersteuning)](../../cloud-services-extended-support/overview.md) ondersteunt het Resource Manager-implementatie model.
 2. Virtuele machines, opslagaccounts en virtuele netwerken ondersteunen zowel het implementatiemodel van Resource Manager als het klassieke implementatiemodel.
 3. Alle andere Azure-services ondersteunen Resource Manager.
 
@@ -95,7 +95,7 @@ Dit zijn de onderdelen en hun relaties voor een klassieke implementatie:
 
 De klassieke oplossing voor het hosten van een virtuele machine omvat:
 
-* Een vereiste cloudservice die als een container fungeert voor het hosten van virtuele machines (rekentaken). Virtuele machines worden automatisch voorzien van een netwerk interface kaart en een IP-adres dat is toegewezen door Azure. Bovendien bevat de cloudservice een instantie van een externe load balancer, een openbaar IP-adres en standaardeindpunten om verkeer van Extern bureaublad en extern PowerShell-verkeer toe te staan voor virtuele Windows-machines en SSH-verkeer (Secure Shell) voor virtuele Linux-machines.
+* Cloud Services (klassiek) fungeert als een container voor het hosten van virtuele machines (Compute). Virtuele machines worden automatisch voorzien van een netwerk interface kaart en een IP-adres dat is toegewezen door Azure. Bovendien bevat de cloudservice een instantie van een externe load balancer, een openbaar IP-adres en standaardeindpunten om verkeer van Extern bureaublad en extern PowerShell-verkeer toe te staan voor virtuele Windows-machines en SSH-verkeer (Secure Shell) voor virtuele Linux-machines.
 * Een vereist opslag account voor het opslaan van de virtuele harde schijven voor een virtuele machine, met inbegrip van het besturings systeem, tijdelijke en aanvullende gegevens schijven (opslag).
 * Een optioneel virtueel netwerk dat fungeert als een extra container, waarin u een subnet-structuur kunt maken en het subnet moet kiezen waarop de virtuele machine zich bevindt (netwerk).
 

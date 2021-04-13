@@ -5,16 +5,16 @@ keywords: ''
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 03/01/2021
+ms.date: 04/07/2021
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 1ed9aef66e9e1a672274b814abbc4e83600761f5
-ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
+ms.openlocfilehash: e5034c228a354c98b5792492d484da9eb10b8cf2
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107028703"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107310849"
 ---
 # <a name="update-the-iot-edge-security-daemon-and-runtime"></a>De IoT Edge-beveiligingsdaemon en -runtime bijwerken
 
@@ -202,9 +202,10 @@ Enkele van de belangrijkste verschillen tussen 1,2 en eerdere versies zijn:
 
 * De pakket naam is gewijzigd van **iotedge** naar **aziot-Edge**.
 * Het **libiothsm-STD-** pakket wordt niet meer gebruikt. Als u het standaard pakket hebt gebruikt dat deel uitmaakt van de IoT Edge release, kunnen uw configuraties worden overgedragen naar de nieuwe versie. Als u een andere implementatie van libiothsm-STD hebt gebruikt, moeten alle door de gebruiker aangelegde certificaten, zoals het apparaat-ID-certificaat, de certificerings instantie van het apparaat en de vertrouwens bundel, opnieuw worden geconfigureerd.
-* Een nieuwe identiteits service, **aziot-Identity-service** , werd geïntroduceerd als onderdeel van de 1,2-release. Met deze service wordt het inrichten en beheren van identiteiten voor IoT Edge en voor andere onderdelen van apparaten die met IoT Hub moeten communiceren, zoals Azure IoT Hub apparaat bijwerken, verwerkt. <!--TODO: add link to ADU when available -->
-* Het standaard configuratie bestand heeft een nieuwe naam en locatie. Voorheen `/etc/iotedge/config.yaml` zullen de configuratie gegevens van uw apparaat nu standaard worden ingevuld `/etc/aziot/config.toml` . De `iotedge config import` opdracht kan worden gebruikt om configuratie gegevens te migreren van de oude locatie en syntaxis naar de nieuwe.
-* Modules die gebruikmaken van de API van IoT Edge workload voor het versleutelen of ontsleutelen van permanente gegevens kunnen niet worden ontsleuteld na de update. IoT Edge genereert dynamisch een Master-id-sleutel en versleutelings sleutel voor intern gebruik. Deze sleutel wordt niet overgedragen naar de nieuwe service. IoT Edge v 1.2 genereert een nieuwe.
+* Een nieuwe identiteits service, **aziot-Identity-service** , werd geïntroduceerd als onderdeel van de 1,2-release. Met deze service wordt het inrichten en beheren van identiteiten voor IoT Edge en voor andere onderdelen van apparaten die moeten communiceren met IoT Hub, zoals het [bijwerken van het apparaat voor IOT hub](../iot-hub-device-update/understand-device-update.md).
+* Het standaard configuratie bestand heeft een nieuwe naam en locatie. Voorheen `/etc/iotedge/config.yaml` zullen de configuratie gegevens van uw apparaat nu standaard worden ingevuld `/etc/aziot/config.toml` . De `iotedge config import` opdracht kan worden gebruikt voor het migreren van configuratie-informatie van de oude locatie en syntaxis naar de nieuwe.
+  * Met de import opdracht kunnen geen toegangs regels worden gedetecteerd of gewijzigd in de Trusted Platform Module (TPM) van een apparaat. Als uw apparaat gebruikmaakt van TPM-Attestation, moet u het/etc/udev/rules.d/tpmaccess.rules-bestand hand matig bijwerken om toegang te geven tot de aziottpm-service. Zie [IOT Edge toegang tot de TPM geven](how-to-auto-provision-simulated-device-linux.md?view=iotedge-2020-11&preserve-view=true#give-iot-edge-access-to-the-tpm)voor meer informatie.
+* Met de workload API in versie 1,2 worden versleutelde geheimen opgeslagen in een nieuwe indeling. Als u een oudere versie bijwerkt naar versie 1,2, wordt de bestaande hoofd versleutelings sleutel geïmporteerd. Met de API voor workload kunnen geheimen worden gelezen die zijn opgeslagen in de vorige indeling met behulp van de geïmporteerde versleutelings sleutel. De workload API kan echter geen versleutelde geheimen in de oude indeling schrijven. Zodra een geheim door een module opnieuw is versleuteld, wordt het opgeslagen in de nieuwe indeling. De versleutelde geheimen in versie 1,2 zijn onleesbaar voor dezelfde module in versie 1,1. Als u versleutelde gegevens persistent maakt naar een aan een host gekoppelde map of een volume, moet u altijd een back-up van de gegevens maken *voordat* u een upgrade uitvoert om de mogelijkheid te verlagen, indien nodig.
 
 Voordat u een update proces automatiseert, controleert u of het werkt op test machines.
 

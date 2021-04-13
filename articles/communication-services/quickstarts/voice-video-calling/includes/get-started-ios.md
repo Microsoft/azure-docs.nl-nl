@@ -1,24 +1,24 @@
 ---
 title: 'Snelstart: oproepen toevoegen aan een iOS-app met behulp van Azure Communication Services'
-description: In deze Quick Start leert u hoe u de Azure Communication Services roept SDK voor iOS te gebruiken.
+description: In deze quickstart leert u hoe u de Azure Communication Services Calling SDK voor iOS gebruikt.
 author: chpalm
 ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 22c9d8f8bdf3e6195bf152fa0431ad5ce9bcdfeb
-ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
+ms.openlocfilehash: e1eed3f9449843e6c2dd8c77719402e709fdeb23
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "106073584"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107327053"
 ---
-In deze Snelstartgids leert u hoe u een gesprek start met behulp van de Azure Communication Services-SDK voor iOS.
+In deze quickstart leert u hoe u een aanroep start met behulp van de Azure Communication Services Calling SDK voor iOS.
 
 [!INCLUDE [Public Preview Notice](../../../includes/public-preview-include-android-ios.md)]
 
 > [!NOTE]
-> In dit document wordt versie 1.0.0-Beta. 8 van de aanroepende SDK gebruikt.
+> In dit document wordt versie 1.0.0-beta.9 van de SDK voor oproepen gebruikt.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -39,17 +39,17 @@ Maak in Xcode een nieuw iOS-project en selecteer de sjabloon **Single View-app**
 
 ### <a name="install-the-package-and-dependencies-with-cocoapods"></a>Installeer het pakket en de afhankelijkheden met CocoaPods
 
-1. Als u een Podfile voor uw toepassing wilt maken, opent u de Terminal en navigeert u naar de projectmap en voert u ```pod init```
-3. Voeg de volgende code toe aan de Podfile en sla deze op (zorg ervoor dat "doel" overeenkomt met de naam van uw project):
+1. Als u een Podfile voor uw toepassing wilt maken, opent u de terminal en navigeert u naar de projectmap en voer deze uit ```pod init```
+3. Voeg de volgende code toe aan de Podfile en sla deze op (zorg ervoor dat 'doel' overeenkomt met de naam van uw project):
 
    ```
    platform :ios, '13.0'
    use_frameworks!
 
    target 'AzureCommunicationCallingSample' do
-     pod 'AzureCommunicationCalling', '~> 1.0.0-beta.8'
-     pod 'AzureCommunication', '~> 1.0.0-beta.8'
-     pod 'AzureCore', '~> 1.0.0-beta.8'
+     pod 'AzureCommunicationCalling', '~> 1.0.0-beta.9'
+     pod 'AzureCommunication', '~> 1.0.0-beta.9'
+     pod 'AzureCore', '~> 1.0.0-beta.9'
    end
    ```
 
@@ -121,14 +121,14 @@ struct ContentView: View {
 
 ## <a name="object-model"></a>Objectmodel
 
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services-aanroepende SDK:
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services Calling SDK:
 
 | Naam                                  | Beschrijving                                                  |
 | ------------------------------------- | ------------------------------------------------------------ |
-| CallClient | De CallClient is het belangrijkste ingangs punt voor de aanroepende SDK.|
+| CallClient | De CallClient is het belangrijkste toegangspunt voor de aanroepende SDK.|
 | CallAgent | De CallAgent wordt gebruikt om oproepen te starten en te beheren. |
-| CommunicationTokenCredential | De CommunicationTokenCredential wordt gebruikt als de token referentie voor het instantiëren van de CallAgent.| 
-| CommunicationUserIdentifier | De CommunicationUserIdentifier wordt gebruikt om de identiteit van de gebruiker te vertegenwoordigen. Dit kan een van de volgende zijn: CommunicationUserIdentifier/PhoneNumberIdentifier/CallingApplication. |
+| CommunicationTokenCredential | CommunicationTokenCredential wordt gebruikt als tokenreferentie om de CallAgent te instanteren.| 
+| CommunicationUserIdentifier | De CommunicationUserIdentifier wordt gebruikt om de identiteit van de gebruiker aan te geven. Dit kan een van de volgende zijn: CommunicationUserIdentifier/PhoneNumberIdentifier/CallingApplication. |
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
@@ -173,7 +173,7 @@ func startCall()
         if granted {
             // start call logic
             let callees:[CommunicationIdentifier] = [CommunicationUserIdentifier(identifier: self.callee)]
-            self.call = self.callAgent?.call(participants: callees, options: StartCallOptions())
+            self.call = self.callAgent?.startCall(participants: callees, options: StartCallOptions())
         }
     }
 }
@@ -188,7 +188,7 @@ Implementeer de `endCall`-methode om de huidige oproep te beëindigen wanneer op
 ```swift
 func endCall()
 {    
-    self.call!.hangup(HangupOptions()) { (error) in
+    self.call!.hangUp(HangUpOptions()) { (error) in
         if (error != nil) {
             print("ERROR: It was not possible to hangup the call.")
         }

@@ -13,12 +13,12 @@ ms.topic: article
 ms.custom: ''
 ms.date: 05/15/2019
 ms.author: ikbarmen
-ms.openlocfilehash: 18f2cf3daa281400151ba223e1735e7138d97e8e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7596aa4cef6c4bc601c15018e8ede4265f395eb7
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "76990501"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107312855"
 ---
 # <a name="manage-multiple-tenants"></a>Meerdere tenants beheren
 
@@ -45,7 +45,7 @@ Wanneer u deze architectuur gebruikt, wordt er voor elke Tenant een Video Indexe
 * Moeilijker te beheren vanwege meerdere Video Indexer (en gekoppelde Media Services) accounts per Tenant.
 
 > [!TIP]
-> Maak een gebruiker met beheerders rechten voor uw systeem in [video indexer ontwikkelaars Portal](https://api-portal.videoindexer.ai/) en gebruik de autorisatie-API om uw tenants het relevante [account toegangs token](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Account-Access-Token)te geven.
+> Maak een gebruiker met beheerders rechten voor uw systeem in [video indexer ontwikkelaars Portal](https://api-portal.videoindexer.ai/) en gebruik de autorisatie-API om uw tenants het relevante [account toegangs token](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Get-Account-Access-Token)te geven.
 
 ## <a name="single-video-indexer-account-for-all-users"></a>Eén Video Indexer account voor alle gebruikers
 
@@ -55,7 +55,7 @@ Wanneer deze architectuur wordt gebruikt, is de klant verantwoordelijk voor de i
 
 Met deze optie kunnen aanpassings modellen (persoon, taal en merken) worden gedeeld of geïsoleerd tussen tenants door de modellen te filteren op Tenant.
 
-Wanneer u [Video's uploadt](https://api-portal.videoindexer.ai/docs/services/operations/operations/Upload-video?), kunt u een ander partitie kenmerk per Tenant opgeven. Hiermee wordt isolatie in de [zoek-API](https://api-portal.videoindexer.ai/docs/services/operations/operations/Search-videos?)toegestaan. Door het partitie kenmerk in de zoek-API op te geven, krijgt u alleen resultaten van de opgegeven partitie. 
+Wanneer u [Video's uploadt](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Upload-Video), kunt u een ander partitie kenmerk per Tenant opgeven. Hiermee wordt isolatie in de [zoek-API](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Search-Videos)toegestaan. Door het partitie kenmerk in de zoek-API op te geven, krijgt u alleen resultaten van de opgegeven partitie. 
 
 ### <a name="considerations"></a>Overwegingen
 

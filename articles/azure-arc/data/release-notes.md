@@ -7,14 +7,14 @@ ms.reviewer: mikeray
 services: azure-arc
 ms.service: azure-arc
 ms.subservice: azure-arc-data
-ms.date: 04/06/2021
+ms.date: 04/09/2021
 ms.topic: conceptual
-ms.openlocfilehash: 2f41034331ed21e194fc2b86c2902c5957333313
-ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
+ms.openlocfilehash: 1fe5974bafddcb4e474ef59a062836e071ab9461
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107010595"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107304916"
 ---
 # <a name="release-notes---azure-arc-enabled-data-services-preview"></a>Release opmerkingen-Azure Arc ingeschakelde Data Services (preview-versie)
 
@@ -24,7 +24,7 @@ In dit artikel worden mogelijkheden, functies en verbeteringen besproken die rec
 
 ## <a name="march-2021"></a>2021 maart
 
-De release van maart 2021 is geïntroduceerd op 6 april 2021.
+De release van maart 2021 is in eerste instantie geïntroduceerd op 5 april 2021 en de laatste versies van de release zijn voltooid op 9de 2021.
 
 Lees de beperkingen van deze release in [bekende problemen-Azure Arc enabled Data Services (preview)](known-issues.md).
 
@@ -45,7 +45,9 @@ Zowel de aangepaste resource definities (CRD) voor PostgreSQL zijn samengevoegd 
 
 U verwijdert de vorige CRDs tijdens het opschonen van eerdere installaties. Zie [opschonen uit eerdere installaties](create-data-controller-using-kubernetes-native-tools.md#cleanup-from-past-installations).
 
-### <a name="azure-arc-enabled-managed-instance"></a>Beheerd exemplaar waarvoor Azure Arc is ingeschakeld
+### <a name="azure-arc-enabled-sql-managed-instance"></a>SQL Managed Instance met Azure Arc
+
+- U kunt nu een SQL Managed instance maken op basis van de Azure Portal in de direct verbonden modus.
 
 - U kunt nu een Data Base herstellen naar een SQL-beheerd exemplaar met drie replica's en deze wordt automatisch toegevoegd aan de beschikbaarheids groep. 
 

@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 9/15/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: de16932f1f77e569302b222fe2948de3046fabd6
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a5e00ef81afc709a9072eedbb07983057f57eb08
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104950587"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107304292"
 ---
 # <a name="ingest-iot-hub-telemetry-into-azure-digital-twins"></a>IoT Hub telemetrie opnemen in azure Digital Apparaatdubbels
 
@@ -45,7 +45,7 @@ Wanneer een Tempe ratuur-telemetrie-gebeurtenis wordt verzonden door het Thermo 
 
 In deze sectie gaat u een [digitale](concepts-twins-graph.md) Apparaatdubbels in azure configureren die het Thermo staats apparaat vertegenwoordigt. deze gegevens worden bijgewerkt met informatie uit IOT hub.
 
-Als u een thermo staat wilt maken, moet u eerst het Thermo staats [model](concepts-models.md) uploaden naar uw exemplaar, waarin de eigenschappen van een thermo staat worden beschreven en later worden gebruikt voor het maken van de dubbele. 
+Als u een thermo staat wilt maken, moet u eerst het Thermo staats [model](concepts-models.md) uploaden naar uw exemplaar, waarin de eigenschappen van een thermo staat worden beschreven en later worden gebruikt voor het maken van de dubbele.
 
 [!INCLUDE [digital-twins-thermostat-model-upload.md](../../includes/digital-twins-thermostat-model-upload.md)]
 

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 25320fb8cde0cc5a38f1edf4019a2f0e07cefe14
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: a830c2cbbc16d5d5e93e6f2283af012e4412c0be
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103461093"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107310645"
 ---
 # <a name="tutorial-send-data-via-transparent-gateway"></a>Zelfstudie: Gegevens verzenden via een transparante gateway
 
@@ -250,4 +250,4 @@ In dit artikel hebben we onze ontwikkel-VM gebruikt voor het simuleren van een l
 Als u meer wilt leren over de mogelijkheden van IoT Edge, gaat u naar deze zelfstudie:
 
 > [!div class="nextstepaction"]
-> [Een hiërarchie van IoT Edge-apparaten maken (preview)](tutorial-nested-iot-edge.md?view=iotedge-2020-11&preserve-view=true)
+> [Een hiërarchie van IoT Edge-apparaten maken](tutorial-nested-iot-edge.md?view=iotedge-2020-11&preserve-view=true)

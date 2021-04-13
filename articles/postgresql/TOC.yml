@@ -32,8 +32,6 @@
     - name: Versiebeleid
       href: concepts-version-policy.md
       displayName: 'version, postgresql'
-    - name: Aanbevelingen voor prestaties
-      href: concepts-azure-advisor-recommendations.md
     - name: Bekende problemen & beperkingen
       href: concepts-known-issues-limitations.md
       displayName: 'issues, limitations, postgresql'
@@ -217,6 +215,8 @@
             - name: Aanbevelingen voor prestaties
               href: concepts-performance-recommendations.md
               displayName: 'query store, performance, optimize, recommendations'
+            - name: Aanbevelingen voor Azure Advisor
+              href: concepts-azure-advisor-recommendations.md
         - name: Ontwikkeling van apps
           items:
             - name: Aanbevolen procedures

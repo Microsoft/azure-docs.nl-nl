@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 01/06/2021
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 62296acaba77017cd71227582447b9fa7c4f1934
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: d45c40bb6878da80f68fff9642b55da68706743a
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106090236"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107305834"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Bureau blad-app voor het aanroepen van web-Api's: een Token ophalen
 
@@ -1012,7 +1012,7 @@ Deze stroom wordt niet ondersteund op MSAL voor macOS.
 
 # <a name="nodejs"></a>[Node.js](#tab/nodejs)
 
-Deze extractie is afkomstig uit de [MSAL-knooppunt dev](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/standalone-samples/username-password)-voor beelden. In het onderstaande code fragment worden de gebruikers naam en het wacht woord alleen voor illustratie doeleinden hardcoded. Dit moet worden vermeden in de productie omgeving. In plaats daarvan wordt de gebruiker door een eenvoudige gebruikers interface gevraagd om zijn gebruikers naam en wacht woord in te voeren. 
+Deze extractie is afkomstig uit de [MSAL-knooppunt dev](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/username-password)-voor beelden. In het onderstaande code fragment worden de gebruikers naam en het wacht woord alleen voor illustratie doeleinden hardcoded. Dit moet worden vermeden in de productie omgeving. In plaats daarvan wordt de gebruiker door een eenvoudige gebruikers interface gevraagd om zijn gebruikers naam en wacht woord in te voeren. 
 
 ```JavaScript
 const msal = require("@azure/msal-node");
@@ -1255,7 +1255,7 @@ Deze stroom is niet van toepassing op macOS.
 
 # <a name="nodejs"></a>[Node.js](#tab/nodejs)
 
-Deze extractie is afkomstig uit de [MSAL-knooppunt dev](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/standalone-samples/device-code)-voor beelden.
+Deze extractie is afkomstig uit de [MSAL-knooppunt dev](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/device-code)-voor beelden.
 
 ```JavaScript
 const msal = require('@azure/msal-node');

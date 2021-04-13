@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 11/23/2020
+ms.date: 04/09/2021
 ms.author: aahi
 ms.custom: seodec18
-ms.openlocfilehash: 7b421877b2a41074bf901817c7ad8922083c3e77
-ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
+ms.openlocfilehash: 3e6c4b73e8aeb26c6ac4025ef3c07fb4f8d48eaf
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106285668"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107308639"
 ---
 # <a name="configure-read-ocr-docker-containers"></a>Lees de OCR docker-containers configureren
 
@@ -33,14 +33,14 @@ De container heeft ook de volgende container-specifieke configuratie-instellinge
 
 |Vereist|Instelling|Doel|
 |--|--|--|
-|Nee|ReadEngineConfig:ResultExpirationPeriod| v 2.0-containers. Verloop tijd van resultaat in uren. De standaard waarde is 48 uur. De instelling geeft aan wanneer het systeem herkennings resultaten moet wissen. Als `resultExpirationPeriod=1` het systeem bijvoorbeeld het herkennings resultaat 1 uur na het proces wist. Als het `resultExpirationPeriod=0` systeem het herkennings resultaat verwijdert nadat het resultaat is opgehaald.|
-|Nee|Cache: redis| v 2.0-containers. Hiermee wordt redis-opslag voor het opslaan van resultaten ingeschakeld. Een cache is *vereist* als meerdere OCR-containers voor lezen worden geplaatst achter een Load Balancer.|
-|Nee|Wachtrij: RabbitMQ|v 2.0-containers. Hiermee schakelt u RabbitMQ in voor het verzenden van taken. De instelling is handig wanneer meerdere OCR-containers voor lezen achter een load balancer worden geplaatst.|
-|Nee|Wachtrij: Azure: QueueVisibilityTimeoutInMilliseconds | alleen containers voor v3. x. De tijd dat een bericht onzichtbaar moet zijn wanneer een andere werk nemer het verwerkt. |
-|Nee|Opslag::D ocumentStore:: MongoDB|v 2.0-containers. Hiermee wordt MongoDB ingeschakeld voor permanente resultaat opslag. |
-|Nee|Opslag: ObjectStore: AzureBlob: Connections Tring| alleen containers voor v3. x. Azure Blob-opslag connection string. |
-|Nee|Opslag: TimeToLiveInDays| alleen containers voor v3. x. Verloop periode van resultaat in dagen. De instelling geeft aan wanneer het systeem herkennings resultaten moet wissen. De standaard waarde is 2 dagen (48 uur), wat betekent dat een resultaat dat langer gedurende langere tijd actief is dan die periode niet kan worden opgehaald. |
-|Nee|Taak: MaxRunningTimeSpanInMinutes| alleen containers voor v3. x. Maximale uitvoerings tijd voor een enkele aanvraag. De standaard waarde is 60 minuten. |
+|No|ReadEngineConfig:ResultExpirationPeriod| v 2.0-containers. Verloop tijd van resultaat in uren. De standaard waarde is 48 uur. De instelling geeft aan wanneer het systeem herkennings resultaten moet wissen. Als `resultExpirationPeriod=1` het systeem bijvoorbeeld het herkennings resultaat 1 uur na het proces wist. Als het `resultExpirationPeriod=0` systeem het herkennings resultaat verwijdert nadat het resultaat is opgehaald.|
+|No|Cache: redis| v 2.0-containers. Hiermee wordt redis-opslag voor het opslaan van resultaten ingeschakeld. Een cache is *vereist* als meerdere OCR-containers voor lezen worden geplaatst achter een Load Balancer.|
+|No|Wachtrij: RabbitMQ|v 2.0-containers. Hiermee schakelt u RabbitMQ in voor het verzenden van taken. De instelling is handig wanneer meerdere OCR-containers voor lezen achter een load balancer worden geplaatst.|
+|No|Wachtrij: Azure: QueueVisibilityTimeoutInMilliseconds | alleen containers voor v3. x. De tijd dat een bericht onzichtbaar moet zijn wanneer een andere werk nemer het verwerkt. |
+|No|Opslag::D ocumentStore:: MongoDB|v 2.0-containers. Hiermee wordt MongoDB ingeschakeld voor permanente resultaat opslag. |
+|No|Opslag: ObjectStore: AzureBlob: Connections Tring| alleen containers voor v3. x. Azure Blob-opslag connection string. |
+|No|Opslag: TimeToLiveInDays| alleen containers voor v3. x. Verloop periode van resultaat in dagen. De instelling geeft aan wanneer het systeem herkennings resultaten moet wissen. De standaard waarde is 2 dagen (48 uur), wat betekent dat een resultaat dat langer gedurende langere tijd actief is dan die periode niet kan worden opgehaald. |
+|No|Taak: MaxRunningTimeSpanInMinutes| alleen containers voor v3. x. Maximale uitvoerings tijd voor een enkele aanvraag. De standaard waarde is 60 minuten. |
 
 ## <a name="apikey-configuration-setting"></a>Configuratie-instelling ApiKey
 
@@ -62,11 +62,11 @@ Deze instelling bevindt zich op de volgende locatie:
 
 * Azure Portal: **Cognitive Services** overzicht, met het label `Endpoint`
 
-Vergeet niet om de `vision/v1.0` route ring toe te voegen aan de URI van het eind punt, zoals wordt weer gegeven in de volgende tabel. 
+Vergeet niet om de `vision/<version>` route ring toe te voegen aan de URI van het eind punt, zoals wordt weer gegeven in de volgende tabel. 
 
 |Vereist| Name | Gegevenstype | Beschrijving |
 |--|------|-----------|-------------|
-|Ja| `Billing` | Tekenreeks | URL van het facturerings eindpunt<br><br>Voorbeeld:<br>`Billing=https://westcentralus.api.cognitive.microsoft.com/vision/v1.0` |
+|Ja| `Billing` | Tekenreeks | URL van het facturerings eindpunt<br><br>Voorbeeld:<br>`Billing=https://westcentralus.api.cognitive.microsoft.com/vision/v3.2` |
 
 ## <a name="eula-setting"></a>Gebruiksrecht overeenkomst instellen
 
@@ -122,13 +122,13 @@ Vervang {_argument_name_} door uw eigen waarden:
 De volgende docker-voor beelden zijn voor de Lees OCR-container.
 
 
-# <a name="version-32-preview"></a>[Versie 3,2-Preview](#tab/version-3-2)
+# <a name="version-32"></a>[Versie 3,2](#tab/version-3-2)
 
 ### <a name="basic-example"></a>Basis voorbeeld
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 18g --cpus 8 \
-mcr.microsoft.com/azure-cognitive-services/vision/read:3.2-preview.1 \
+mcr.microsoft.com/azure-cognitive-services/vision/read:3.2 \
 Eula=accept \
 Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}
@@ -139,7 +139,7 @@ ApiKey={API_KEY}
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 18g --cpus 8 \
-mcr.microsoft.com/azure-cognitive-services/vision/read:3.2-preview.1 \
+mcr.microsoft.com/azure-cognitive-services/vision/read:3.2 \
 Eula=accept \
 Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}

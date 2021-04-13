@@ -7,14 +7,14 @@ ms.topic: reference
 ms.workload: identity
 author: rolyon
 ms.author: rolyon
-ms.date: 03/15/2021
+ms.date: 04/09/2021
 ms.custom: generated
-ms.openlocfilehash: 150c174842d50663779012e57f8402ec8b3d3b02
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: e11e03ec7379dede6bf998f639a237201c297e72
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104580926"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107303624"
 ---
 # <a name="azure-resource-provider-operations"></a>Azure-resource provider bewerkingen
 
@@ -264,6 +264,7 @@ Azure-service: [Azure service Health](../service-health/index.yml)
 > | Micro soft. ResourceHealth/meta gegevens/lezen | Haalt meta gegevens op |
 > | Micro soft. ResourceHealth/meldingen/lezen | Ontvangt Azure Resource Manager meldingen |
 > | Micro soft. ResourceHealth/Operations/lezen | De beschik bare bewerkingen voor de micro soft-ResourceHealth ophalen |
+> | Micro soft. ResourceHealth/potentialoutages/lezen |  |
 
 ### <a name="microsoftsupport"></a>Microsoft.Support
 
@@ -281,8 +282,6 @@ Azure-service: kern geheugen
 > | Micro soft. Support/Services/problemClassifications/lezen | Een of alle probleem classificaties voor een Azure-service weer geven |
 > | Microsoft.Support/supportTickets/read | Een of alle ondersteunings tickets weer geven |
 > | Microsoft.Support/supportTickets/write | Staat het maken en bijwerken van een ondersteunings ticket toe |
-> | Micro soft. support/supportTickets/Communications/lezen | Een lijst met een of alle ondersteunings ticket communicatie |
-> | Micro soft. support/supportTickets/communicatie/schrijven | Hiermee wordt een nieuwe communicatie toegevoegd aan een ondersteunings ticket |
 
 ## <a name="compute"></a>Compute
 
@@ -673,6 +672,7 @@ Azure-service: [Content Delivery Network](../cdn/index.yml)
 > | Bewerking | Beschrijving |
 > | --- | --- |
 > | Micro soft. CDN/registreren/actie | Hiermee wordt het abonnement voor de CDN-resource provider geregistreerd en wordt het maken van CDN-profielen ingeschakeld. |
+> | Micro soft. CDN/niet registreren/actie | Hiermee wordt de registratie van het abonnement voor de CDN-resource provider ongedaan gemaakt. |
 > | Micro soft. CDN/CheckNameAvailability/actie |  |
 > | Micro soft. CDN/ValidateProbe/actie |  |
 > | Micro soft. CDN/CheckResourceUsage/actie |  |
@@ -697,6 +697,8 @@ Azure-service: [Content Delivery Network](../cdn/index.yml)
 > | Micro soft. CDN/operationresults/profileresults/CheckResourceUsage/actie |  |
 > | Micro soft. CDN/operationresults/profileresults/GenerateSsoUri/actie |  |
 > | Micro soft. CDN/operationresults/profileresults/GetSupportedOptimizationTypes/actie |  |
+> | Micro soft. CDN/operationresults/profileresults/CheckHostNameAvailability/actie |  |
+> | Micro soft. CDN/operationresults/profileresults/usages/Action |  |
 > | Micro soft. CDN/operationresults/profileresults/afdendpointresults/lezen |  |
 > | Micro soft. CDN/operationresults/profileresults/afdendpointresults/write |  |
 > | Micro soft. CDN/operationresults/profileresults/afdendpointresults/verwijderen |  |
@@ -748,9 +750,9 @@ Azure-service: [Content Delivery Network](../cdn/index.yml)
 > | Micro soft. CDN/operationresults/profileresults/secretresults/write |  |
 > | Micro soft. CDN/operationresults/profileresults/secretresults/verwijderen |  |
 > | Micro soft. CDN/operationresults/profileresults/secretresults/ValidateSecret/Action |  |
-> | Micro soft. CDN/operationresults/profileresults/securitypoliciesresults/lezen |  |
-> | Micro soft. CDN/operationresults/profileresults/securitypoliciesresults/write |  |
-> | Micro soft. CDN/operationresults/profileresults/securitypoliciesresults/verwijderen |  |
+> | Micro soft. CDN/operationresults/profileresults/securitypolicyresults/lezen |  |
+> | Micro soft. CDN/operationresults/profileresults/securitypolicyresults/write |  |
+> | Micro soft. CDN/operationresults/profileresults/securitypolicyresults/verwijderen |  |
 > | Micro soft. CDN/bewerkingen/lezen |  |
 > | Micro soft. CDN/profielen/lezen |  |
 > | Micro soft. CDN/profielen/schrijven |  |
@@ -758,6 +760,8 @@ Azure-service: [Content Delivery Network](../cdn/index.yml)
 > | Micro soft. CDN/profielen/CheckResourceUsage/actie |  |
 > | Micro soft. CDN/profielen/GenerateSsoUri/actie |  |
 > | Micro soft. CDN/profielen/GetSupportedOptimizationTypes/actie |  |
+> | Micro soft. CDN/profielen/CheckHostNameAvailability/actie |  |
+> | Micro soft. CDN/profielen/gebruiks-en actie |  |
 > | Micro soft. CDN/Profiles/afdendpoints/lezen |  |
 > | Micro soft. CDN/profielen/afdendpoints/schrijven |  |
 > | Micro soft. CDN/profielen/afdendpoints/verwijderen |  |
@@ -791,6 +795,12 @@ Azure-service: [Content Delivery Network](../cdn/index.yml)
 > | Micro soft. CDN/profielen/eind punten/oorsprongen/lezen |  |
 > | Micro soft. CDN/profielen/eind punten/oorsprongen/schrijven |  |
 > | Micro soft. CDN/profielen/eind punten/oorsprong/verwijderen |  |
+> | Micro soft. CDN/Profiles/getloganalyticslocations/lezen |  |
+> | Micro soft. CDN/Profiles/getloganalyticsmetrics/lezen |  |
+> | Micro soft. CDN/Profiles/getloganalyticsrankings/lezen |  |
+> | Micro soft. CDN/Profiles/getloganalyticsresources/lezen |  |
+> | Micro soft. CDN/Profiles/getwafloganalyticsmetrics/lezen |  |
+> | Micro soft. CDN/Profiles/getwafloganalyticsrankings/lezen |  |
 > | Micro soft. CDN/Profiles/origingroups/lezen |  |
 > | Micro soft. CDN/profielen/origingroups/schrijven |  |
 > | Micro soft. CDN/profielen/origingroups/verwijderen |  |
@@ -1557,6 +1567,7 @@ Azure-service: [Azure data Box](../databox/index.yml)
 > | Micro soft. DataBox/registratie/actie | Un-Register provider micro soft. Databox |
 > | Micro soft. DataBox/Jobs/annuleren/actie | Hiermee wordt een volg orde die wordt uitgevoerd, geannuleerd. |
 > | Micro soft. DataBox/Jobs/bookShipmentPickUp/actie | Hiermee kunt u een ophalen van retour zendingen boeken. |
+> | Micro soft. DataBox/Jobs/verminderen/actie | Deze methode helpt bij het uitvoeren van de beperkings actie voor een taak met een oplossings code |
 > | Micro soft. DataBox/Jobs/listCredentials/actie | Geeft een lijst van de niet-versleutelde referenties die zijn gerelateerd aan de order. |
 > | Micro soft. DataBox/locaties/validateInputs/actie | Met deze methode worden alle typen validaties ondersteund. |
 > | Micro soft. DataBox/locaties/validateAddress/actie | Valideert het verzend adres en levert eventueel alternatieve adressen. |
@@ -1675,6 +1686,7 @@ Azure-service: [Azure NetApp files](../azure-netapp-files/index.yml)
 > | Micro soft. NetApp/netAppAccounts/capacityPools/volumes/BackupStatus/lezen |  |
 > | Micro soft. NetApp/netAppAccounts/capacityPools/volumes/MountTargets/lezen | Hiermee wordt een bron van het doel van een koppeling gelezen. |
 > | Micro soft. NetApp/netAppAccounts/capacityPools/volumes/ReplicationStatus/lezen | Hiermee wordt de status van de volume replicatie gelezen. |
+> | Micro soft. NetApp/netAppAccounts/capacityPools/volumes/RestoreStatus/lezen |  |
 > | Micro soft. NetApp/netAppAccounts/capacityPools/volumes/moment opnamen/lezen | Hiermee wordt een momentopname resource gelezen. |
 > | Micro soft. NetApp/netAppAccounts/capacityPools/volumes/moment opnamen/schrijven | Schrijft een momentopname resource. |
 > | Micro soft. NetApp/netAppAccounts/capacityPools/volumes/moment opnamen/verwijderen | Hiermee verwijdert u een momentopname resource. |
@@ -1756,6 +1768,7 @@ Azure-service: [opslag](../storage/index.yml)
 > | Micro soft. Storage/Storage accounts/fileServices/lezen | Eigenschappen van bestands service ophalen |
 > | Micro soft. Storage/Storage accounts/fileServices/shares/verwijderen | Bestands share verwijderen |
 > | Micro soft. Storage/Storage accounts/fileServices/shares/lezen | Bestands share ophalen |
+> | Micro soft. Storage/Storage accounts/fileServices/shares/lease/actie |  |
 > | Micro soft. Storage/Storage accounts/fileServices/shares/lezen | Bestands shares weer geven |
 > | Micro soft. Storage/Storage accounts/fileServices/shares/schrijven | Een bestands share maken of bijwerken |
 > | Micro soft. Storage/Storage accounts/inventoryPolicies/verwijderen |  |
@@ -2227,6 +2240,7 @@ Azure-service: [Media Services](../media-services/index.yml)
 > | Micro soft. Media/Media Services/Listkeys ophalen/actie | De ACS-sleutels voor het Media Services-account weer geven |
 > | Micro soft. Media/Media Services/syncStorageKeys/actie | De opslag sleutels voor een gekoppeld Azure Storage account synchroniseren |
 > | Micro soft. Media/Media Services/listEdgePolicies/actie | Lijst met beleids regels voor een edge-apparaat. |
+> | Micro soft. Media/Media Services/PrivateEndpointConnectionsApproval/actie | Privé-eindpunt verbindingen goed keuren |
 > | Micro soft. Media/Media Services/accountfilters/lezen | Een account filter lezen |
 > | Micro soft. Media/Media Services/accountfilters/schrijven | Een account filter maken of bijwerken |
 > | Micro soft. Media/Media Services/accountfilters/verwijderen | Een account filter verwijderen |
@@ -2256,14 +2270,6 @@ Azure-service: [Media Services](../media-services/index.yml)
 > | Micro soft. Media/Media Services/liveEvents/liveOutputs/lezen | Een wille keurige live-uitvoer lezen |
 > | Micro soft. Media/Media Services/liveEvents/liveOutputs/schrijven | Een live-uitvoer maken of bijwerken |
 > | Micro soft. Media/Media Services/liveEvents/liveOutputs/verwijderen | Een live uitvoer verwijderen |
-> | Micro soft. Media/Media Services/liveEvents/privateEndpointConnectionProxies/lezen | Een persoonlijke eind punt verbindings proxy voor een live gebeurtenis lezen |
-> | Micro soft. Media/Media Services/liveEvents/privateEndpointConnectionProxies/schrijven | Een privé-eind punt verbindings proxy maken |
-> | Micro soft. Media/Media Services/liveEvents/privateEndpointConnectionProxies/verwijderen | De verbindings proxy van het privé-eind punt voor een live gebeurtenis verwijderen |
-> | Micro soft. Media/Media Services/liveEvents/privateEndpointConnectionProxies/validate/Action | De verbindings proxy voor het persoonlijke eind punt van Live Event valideren |
-> | Micro soft. Media/Media Services/liveEvents/privateEndpointConnections/lezen | Een persoonlijke eindpunt verbinding voor een live gebeurtenis lezen |
-> | Micro soft. Media/Media Services/liveEvents/privateEndpointConnections/schrijven | Een privé-eindpunt verbinding voor een live gebeurtenis maken |
-> | Micro soft. Media/Media Services/liveEvents/privateEndpointConnections/verwijderen | Een persoonlijke eindpunt verbinding voor een live gebeurtenis verwijderen |
-> | Micro soft. Media/Media Services/liveEvents/privateLinkResources/lezen | Een resource voor persoonlijke koppelingen voor Live gebeurtenissen lezen |
 > | Micro soft. Media/Media Services/liveOutputOperations/lezen | Een live uitvoer bewerking lezen |
 > | Micro soft. Media/Media Services/mediaGraphs/lezen | Alle media grafieken lezen |
 > | Micro soft. Media/Media Services/mediaGraphs/schrijven | Een media grafiek maken of bijwerken |
@@ -2286,14 +2292,6 @@ Azure-service: [Media Services](../media-services/index.yml)
 > | Micro soft. Media/Media Services/streamingEndpoints/start/actie | Een streaming-eindpunt bewerking starten |
 > | Micro soft. Media/Media Services/streamingEndpoints/stop/actie | Een streaming-eindpunt bewerking stoppen |
 > | Micro soft. Media/Media Services/streamingEndpoints/schalen/actie | Een streaming-eindpunt bewerking schalen |
-> | Micro soft. Media/Media Services/streamingEndpoints/privateEndpointConnectionProxies/lezen | Alle verbindings proxy voor het persoonlijke eind punt van een streaming-eind punt lezen |
-> | Micro soft. Media/Media Services/streamingEndpoints/privateEndpointConnectionProxies/schrijven | Een particuliere endpoint-verbindings proxy voor streaming-eind punt maken |
-> | Micro soft. Media/Media Services/streamingEndpoints/privateEndpointConnectionProxies/verwijderen | De verbindings proxy van het persoonlijke eind punt voor het eind punt verwijderen |
-> | Micro soft. Media/Media Services/streamingEndpoints/privateEndpointConnectionProxies/validate/Action | Verbindings proxy voor het privé-eind punt van streaming-eind punt valideren |
-> | Micro soft. Media/Media Services/streamingEndpoints/privateEndpointConnections/lezen | Een persoonlijke eindpunt verbinding voor een streaming-eind punt lezen |
-> | Micro soft. Media/Media Services/streamingEndpoints/privateEndpointConnections/schrijven | Een persoonlijke eindpunt verbinding voor een streaming-eind punt maken |
-> | Micro soft. Media/Media Services/streamingEndpoints/privateEndpointConnections/verwijderen | De persoonlijke eindpunt verbinding van het streaming-eind punt verwijderen |
-> | Micro soft. Media/Media Services/streamingEndpoints/privateLinkResources/lezen | Een persoonlijke koppelings bron voor een streaming-eind punt lezen |
 > | Micro soft. Media/Media Services/streamingLocators/lezen | Een streaming-Locator lezen |
 > | Micro soft. Media/Media Services/streamingLocators/schrijven | Een streaming-Locator maken of bijwerken |
 > | Micro soft. Media/Media Services/streamingLocators/verwijderen | Een streaming-Locator verwijderen |
@@ -2302,8 +2300,6 @@ Azure-service: [Media Services](../media-services/index.yml)
 > | Micro soft. Media/Media Services/streamingPolicies/lezen | Elk streaming-beleid lezen |
 > | Micro soft. Media/Media Services/streamingPolicies/schrijven | Een streaming-beleid maken of bijwerken |
 > | Micro soft. Media/Media Services/streamingPolicies/verwijderen | Een streaming-beleid verwijderen |
-> | Micro soft. Media/Media Services/streamingPrivateEndpointConnectionOperations/lezen | Een verbindings bewerking voor een privé-eind punt voor streaming lezen |
-> | Micro soft. Media/Media Services/streamingPrivateEndpointConnectionProxyOperations/lezen | De bewerking voor de verbindings proxy van een privé-eind punt voor streaming lezen |
 > | Micro soft. Media/Media Services/transformaties/lezen | Een trans formatie lezen |
 > | Micro soft. Media/Media Services/transformaties/schrijven | Een trans formatie maken of bijwerken |
 > | Micro soft. Media/Media Services/transformaties/verwijderen | Trans formatie verwijderen |
@@ -2358,29 +2354,44 @@ Azure-service: [Azure signalerings service](../azure-signalr/index.yml)
 > | --- | --- |
 > | Micro soft. SignalRService/REGI ster/actie | Hiermee wordt de resource provider micro soft. SignalRService geregistreerd bij een abonnement |
 > | Micro soft. SignalRService/registratie/actie | Hiermee wordt de registratie van de resource provider micro soft. SignalRService met een abonnement ongedaan gemaakt |
-> | Micro soft. SignalRService/locaties/checknameavailability/actie | Hiermee wordt gecontroleerd of een naam beschikbaar is voor gebruik met een nieuwe signalerings service |
+> | Micro soft. SignalRService/locaties/checknameavailability/actie | Hiermee wordt gecontroleerd of een naam beschikbaar is voor gebruik met een nieuwe micro soft. SignalRService-resource. |
 > | Micro soft. SignalRService/locations/operationresults/Signaler/Read | Query uitvoeren op het resultaat van een op locatie gebaseerde asynchrone bewerking |
+> | Micro soft. SignalRService/locaties/operationresults/webpubsub/lezen | Query uitvoeren op het resultaat van een op locatie gebaseerde asynchrone bewerking |
 > | Micro soft. SignalRService/locations/operationStatuses/Signaler/Read | De status van een op locatie gebaseerde asynchrone bewerking opvragen |
-> | Micro soft. SignalRService/locaties/gebruik/lezen | Het quotum gebruik voor de Azure signalerings service ophalen |
+> | Micro soft. SignalRService/locaties/operationStatuses/webpubsub/lezen | De status van een op locatie gebaseerde asynchrone bewerking opvragen |
+> | Micro soft. SignalRService/locaties/gebruik/lezen | Haal het quotum gebruik op voor de resource provider micro soft. SignalRService. |
 > | Micro soft. SignalRService/operationresults/lezen | Query uitvoeren op het resultaat van een asynchrone bewerking op Provider niveau |
-> | Micro soft. SignalRService/Operations/lezen | De bewerkingen voor de Azure signalerings service weer geven. |
+> | Micro soft. SignalRService/Operations/lezen | Geef een lijst van de bewerkingen voor de resource provider micro soft. SignalRService. |
 > | Micro soft. SignalRService/operationstatus/lezen | De status van een asynchrone bewerking op Provider niveau opvragen |
 > | Micro soft. SignalRService/Signa lering/lezen | De instellingen en configuraties van de signaal sterkte weer geven in de beheer portal of via API |
 > | Micro soft. SignalRService/seingevings/schrijven | Wijzig de instellingen en configuraties van de signaal sterkte in de beheer portal of via API |
-> | Micro soft. SignalRService/signalering/verwijderen | De volledige signalerings service verwijderen |
+> | Micro soft. SignalRService/signalering/verwijderen | De signaal resource verwijderen. |
 > | Micro soft. SignalRService/seingevings/listkeys ophalen/Action | De waarde van de toegangs sleutels voor de Signa lering in de beheer portal of via API weer geven |
 > | Micro soft. SignalRService/seingevings/regeneratekey/Action | Wijzig de waarde van de toegangs sleutels voor de Signa lering in de beheer portal of via API |
-> | Micro soft. SignalRService/seingevings/restart/actie | Een Azure signalerings service opnieuw starten in de beheer portal of via de API. Er is een bepaalde uitval tijd. |
-> | Micro soft. SignalRService/seingevings/eventGridFilters/lezen | Hiermee worden de eigenschappen van het opgegeven gebeurtenis raster filter opgehaald of worden alle gebeurtenis raster filters voor de opgegeven Signa lering weer gegeven. |
-> | Micro soft. SignalRService/seingevings/eventGridFilters/schrijven | Een gebeurtenis raster filter voor een signaal sterkte met de opgegeven para meters maken of bijwerken. |
-> | Micro soft. SignalRService/seingevings/eventGridFilters/verwijderen | Een gebeurtenis raster filter verwijderen van een Signaaler. |
+> | Micro soft. SignalRService/seingevings/restart/actie | Een signaal bron opnieuw starten in de beheer portal of via de API. Er is een bepaalde uitval tijd. |
+> | Micro soft. SignalRService/seingevings/eventGridFilters/lezen | Hiermee worden de eigenschappen van het opgegeven gebeurtenis raster filter opgehaald of worden alle gebeurtenis raster filters voor de opgegeven signaal resource weer gegeven. |
+> | Micro soft. SignalRService/seingevings/eventGridFilters/schrijven | Een gebeurtenis raster filter voor een signaal resource maken of bijwerken met de opgegeven para meters. |
+> | Micro soft. SignalRService/seingevings/eventGridFilters/verwijderen | Een gebeurtenis raster filter van een signaal resource verwijderen. |
 > | Micro soft. SignalRService/seingevings/privateEndpointConnectionProxies/validate/Action | Een particuliere endpoint-verbindings proxy valideren |
 > | Micro soft. SignalRService/seingevings/privateEndpointConnectionProxies/schrijven | Een particuliere endpoint-verbindings proxy maken |
 > | Micro soft. SignalRService/seingevings/privateEndpointConnectionProxies/lezen | Een Connetion proxy voor een persoonlijk eind punt lezen |
 > | Micro soft. SignalRService/seingevings/privateEndpointConnectionProxies/verwijderen | Een particuliere endpoint-verbindings proxy verwijderen |
 > | Micro soft. SignalRService/seingevings/privateEndpointConnections/schrijven | Een persoonlijke eindpunt verbinding goed keuren of afwijzen |
 > | Micro soft. SignalRService/seingevings/privateEndpointConnections/lezen | Een verbinding met een privé-eind punt lezen |
-> | Micro soft. SignalRService/seingevings/privateLinkResources/lezen | Alle persoonlijke koppelings resources van de seingevings lijst weer geven |
+> | Micro soft. SignalRService/seingevings/privateLinkResources/lezen | Alle persoonlijke koppelings resources van een seingevings resource weer geven. |
+> | Micro soft. SignalRService/WebPubSub/lezen | De instellingen en configuraties van de WebPubSub weer geven in de beheer portal of via API |
+> | Micro soft. SignalRService/WebPubSub/schrijven | Wijzig de instellingen en configuraties van WebPubSub in de beheer portal of via API |
+> | Micro soft. SignalRService/WebPubSub/verwijderen | Verwijder de WebPubSub-resource. |
+> | Micro soft. SignalRService/WebPubSub/listkeys ophalen/Action | De waarde van de toegangs sleutels voor WebPubSub in de beheer portal of via API weer geven |
+> | Micro soft. SignalRService/WebPubSub/regeneratekey/Action | Wijzig de waarde van de toegangs sleutels WebPubSub in de beheer portal of via API |
+> | Micro soft. SignalRService/WebPubSub/restart/actie | Om een WebPubSub-resource opnieuw te starten in de beheer portal of via de API. Er is een bepaalde uitval tijd. |
+> | Micro soft. SignalRService/WebPubSub/privateEndpointConnectionProxies/validate/Action | Een particuliere endpoint-verbindings proxy valideren |
+> | Micro soft. SignalRService/WebPubSub/privateEndpointConnectionProxies/write | Een particuliere endpoint-verbindings proxy maken |
+> | Micro soft. SignalRService/WebPubSub/privateEndpointConnectionProxies/lezen | Een Connetion proxy voor een persoonlijk eind punt lezen |
+> | Micro soft. SignalRService/WebPubSub/privateEndpointConnectionProxies/verwijderen | Een particuliere endpoint-verbindings proxy verwijderen |
+> | Micro soft. SignalRService/WebPubSub/privateEndpointConnections/write | Een persoonlijke eindpunt verbinding goed keuren of afwijzen |
+> | Micro soft. SignalRService/WebPubSub/privateEndpointConnections/lezen | Een verbinding met een privé-eind punt lezen |
+> | Micro soft. SignalRService/WebPubSub/privateLinkResources/lezen | Alle persoonlijke koppelings resources van een WebPubSub-resource weer geven. |
 > | **DataAction** | **Beschrijving** |
 > | Micro soft. SignalRService/seingevings/auth/accessKey/actie | Een tijdelijke AccessKey voor het ondertekenen van ClientTokens genereren. |
 > | Micro soft. SignalRService/seingevings/auth/clientToken/actie | Genereer een ClientToken voor het starten van een client verbinding. |
@@ -2394,7 +2405,16 @@ Azure-service: [Azure signalerings service](../azure-signalr/index.yml)
 > | Micro soft. SignalRService/seingevings/serverConnection/schrijven | Start een server verbinding. |
 > | Micro soft. SignalRService/signalering/gebruiker/verzenden/actie | Berichten naar de gebruiker verzenden die kunnen bestaan uit meerdere client verbindingen. |
 > | Micro soft. SignalRService/Signa lering/gebruiker/lezen | Controleer de aanwezigheid van de gebruiker. |
-> | Micro soft. SignalRService/signalering/gebruiker/schrijven |  |
+> | Micro soft. SignalRService/signalering/gebruiker/schrijven | Een gebruiker wijzigen. |
+> | Micro soft. SignalRService/WebPubSub/clientConnection/Send/Action | Verzend berichten rechtstreeks naar een client verbinding. |
+> | Micro soft. SignalRService/WebPubSub/clientConnection/lezen | Controleer de aanwezigheid van de client verbinding. |
+> | Micro soft. SignalRService/WebPubSub/clientConnection/write | Sluit de client verbinding. |
+> | Micro soft. SignalRService/WebPubSub/groep/verzenden/actie | Broadcast bericht naar groep. |
+> | Micro soft. SignalRService/WebPubSub/groep/lezen | Controleer of de groep bestaat of de gebruiker in de groep bestaat. |
+> | Micro soft. SignalRService/WebPubSub/groep/schrijven | Groep toevoegen/verlaten. |
+> | Micro soft. SignalRService/WebPubSub/hub/verzenden/actie | Berichten broadcasten naar alle client verbindingen in hub. |
+> | Micro soft. SignalRService/WebPubSub/gebruiker/verzenden/actie | Berichten naar de gebruiker verzenden die kunnen bestaan uit meerdere client verbindingen. |
+> | Micro soft. SignalRService/WebPubSub/gebruiker/lezen | Controleer de aanwezigheid van de gebruiker. |
 
 ### <a name="microsoftweb"></a>micro soft. Web
 
@@ -2470,6 +2490,8 @@ Azure-service: [app service](../app-service/index.yml), [Azure functions](../azu
 > | micro soft. Web/hostingenvironments/CV/actie | Hosting omgevingen hervatten. |
 > | micro soft. Web/hostingenvironments/Pause/actie | Hosting omgevingen blok keren. |
 > | micro soft. Web/hostingenvironments/capaciteiten/lezen | De capaciteit van hosting omgevingen ophalen. |
+> | Micro soft. Web/hostingEnvironments/configuraties/netwerken/lezen | Netwerk configuratie van een App Service Environment ophalen |
+> | Micro soft. Web/hostingEnvironments/configuraties/netwerken/schrijven | De netwerk configuratie van een App Service Environment bijwerken. |
 > | micro soft. Web/hostingenvironments/detectors/lezen | Detecties voor hosting omgevingen ophalen. |
 > | micro soft. Web/hostingenvironments/diagnostiek/lezen | Diagnostische gegevens over hosting omgevingen ophalen. |
 > | Micro soft. Web/hostingEnvironments/eventGridFilters/verwijderen | Verwijder Event Grid filter op de hosting omgeving. |
@@ -2887,6 +2909,9 @@ Azure-service: [app service](../app-service/index.yml), [Azure functions](../azu
 > | Micro soft. Web/staticSites/builds/listappsettings/actie | App-instellingen voor een statische site-build weer geven |
 > | Micro soft. Web/staticSites/builds/zipdeploy/actie | Een statische site-build implementeren vanuit gezipte inhoud |
 > | Micro soft. Web/staticSites/builds/config/schrijven | App-instellingen voor een statische site-build maken of bijwerken |
+> | Micro soft. Web/staticSites/builds/userProvidedFunctionApps/verwijderen | Een door de gebruiker ingevoerde functie-app ontkoppelen van een statische site-build |
+> | Micro soft. Web/staticSites/builds/userProvidedFunctionApps/lezen | Ophalen van de statische site door de gebruiker verschafte functie-apps |
+> | Micro soft. Web/staticSites/builds/userProvidedFunctionApps/schrijven | Een door de gebruiker verschafte functie-app registreren met een statische site-build |
 > | Micro soft. Web/staticSites/config/schrijven | App-instellingen voor een statische site maken of bijwerken |
 > | Micro soft. Web/staticSites/customdomains/schrijven | Een aangepast domein maken voor een statische site |
 > | Micro soft. Web/staticSites/customdomains/verwijderen | Een aangepast domein voor een statische site verwijderen |
@@ -2897,6 +2922,9 @@ Azure-service: [app service](../app-service/index.yml), [Azure functions](../azu
 > | Micro soft. Web/staticSites/privateEndpointConnections/lezen | Een verbinding met een privé-eind punt of de lijst met privé-eindpunt verbindingen voor een statische site verkrijgen |
 > | Micro soft. Web/staticSites/privateEndpointConnections/verwijderen | Een persoonlijke eindpunt verbinding voor een statische site verwijderen |
 > | Micro soft. Web/staticSites/privateLinkResources/lezen | Persoonlijke koppelings resources ophalen |
+> | Micro soft. Web/staticSites/userProvidedFunctionApps/verwijderen | Een door de gebruiker ingevoerde functie-app ontkoppelen van een statische site |
+> | Micro soft. Web/staticSites/userProvidedFunctionApps/lezen | Door de gebruiker beschik bare functie-apps van de statische site ophalen |
+> | Micro soft. Web/staticSites/userProvidedFunctionApps/schrijven | Een door de gebruiker ingevoerde functie-app registreren bij een statische site |
 
 ## <a name="containers"></a>Containers
 
@@ -3035,6 +3063,7 @@ Azure-service: [Azure Kubernetes service (AKS)](../aks/index.yml)
 > | Micro soft. container service/locaties/operationresults/lezen | Hiermee wordt de status van een asynchroon bewerkings resultaat opgehaald |
 > | Micro soft. container service/locaties/bewerkingen/lezen | Hiermee wordt de status van een asynchrone bewerking opgehaald |
 > | Micro soft. container service/locaties/Orchestrator/lezen | Een lijst met ondersteunde Orchestrator |
+> | Micro soft. container service/locaties/OS-opties/lezen | Hiermee worden de besturingssysteem opties opgehaald |
 > | Micro soft. container service/managedClusters/lezen | Een beheerd cluster ophalen |
 > | Micro soft. container service/managedClusters/schrijven | Hiermee maakt u een nieuw beheerd cluster of wordt er een bestaande bijgewerkt |
 > | Micro soft. container service/managedClusters/verwijderen | Hiermee wordt een beheerd cluster verwijderd |
@@ -3580,6 +3609,10 @@ Azure-service: [Data Factory](../data-factory/index.yml)
 > | Micro soft. DataFactory/factories/privateEndpointConnectionProxies/validate/Action | Een particuliere endpoint-verbindings proxy valideren. |
 > | Micro soft. DataFactory/factories/privateEndpointConnectionProxies/operationresults/lezen | Lees de resultaten van het maken van een verbinding proxy voor een persoonlijk eind punt. |
 > | Micro soft. DataFactory/factories/privateEndpointConnectionProxies/operationstatuses/lezen | Lees de status van het maken van een verbinding proxy voor een persoonlijk eind punt. |
+> | Micro soft. DataFactory/fabrieken/privateEndpointConnections/lezen | Persoonlijke eindpunt verbinding lezen. |
+> | Micro soft. DataFactory/fabrieken/privateEndpointConnections/schrijven | Maak een verbinding met een privé-eind punt of werk deze bij. |
+> | Micro soft. DataFactory/factories/privateEndpointConnections/verwijderen | De verbinding voor een privé-eind punt verwijderen. |
+> | Micro soft. DataFactory/fabrieken/privateLinkResources/lezen | De resource van een persoonlijke koppeling lezen. |
 > | Micro soft. DataFactory/fabrieken/queryFeaturesValue/lezen | Leest onderdeel waarden van belichtings controle voor een lijst met functies. |
 > | Micro soft. DataFactory/fabrieken/querypipelineruns/lezen | Hiermee wordt het resultaat van de query pijplijn uitvoeringen gelezen. |
 > | Micro soft. DataFactory/fabrieken/querytriggerruns/lezen | Hiermee wordt het resultaat van trigger uitvoeringen gelezen. |
@@ -4162,6 +4195,7 @@ Azure-service: [Azure Cosmos DB](../cosmos-db/index.yml)
 > | Microsoft.DocumentDB/databaseAccounts/Tables/throughputSettings/operationResults/lezen | Lees de status van de asynchrone bewerking. |
 > | Microsoft.DocumentDB/databaseAccounts/gebruik/lezen | Hiermee worden de gebruiks gegevens van het database account gelezen. |
 > | Microsoft.DocumentDB/locaties/deleteVirtualNetworkOrSubnets/actie | Er wordt een melding verzonden Microsoft.DocumentDB dat VirtualNetwork of subnet wordt verwijderd |
+> | Microsoft.DocumentDB/locaties/lezen | De meta gegevens van een locatie lezen of alle locatie-meta gegevens weer geven |
 > | Microsoft.DocumentDB/locaties/deleteVirtualNetworkOrSubnets/operationResults/lezen | Lees status van asynchrone bewerking deleteVirtualNetworkOrSubnets |
 > | Microsoft.DocumentDB/locaties/operationsStatus/lezen | Hiermee wordt de status van asynchrone bewerkingen gelezen |
 > | Microsoft.DocumentDB/locaties/restorableDatabaseAccounts/lezen | Een restorable data base-account lezen of alle restorable database accounts weer geven |
@@ -4571,6 +4605,9 @@ Azure-service: [Azure SQL database](../azure-sql/database/index.yml), Azure [SQL
 > | Micro soft. SQL/servers/sleutels/verwijderen | Hiermee verwijdert u een bestaande server sleutel. |
 > | Micro soft. SQL/servers/operationResults/lezen | Hiermee worden Server bewerkingen uitgevoerd |
 > | Micro soft. SQL/servers/bewerkingen/lezen | De lijst met bewerkingen die op de server zijn uitgevoerd, retour neren |
+> | Micro soft. SQL/servers/outboundFirewallRules/lezen | Regel voor uitgaande firewall lezen |
+> | Micro soft. SQL/servers/outboundFirewallRules/verwijderen | Regel voor uitgaande firewall verwijderen |
+> | Micro soft. SQL/servers/outboundFirewallRules/schrijven | Uitgaande firewall regel maken |
 > | Micro soft. SQL/servers/privateEndpointConnectionProxies/updatePrivateEndpointProperties/actie | Wordt door NRP gebruikt voor het backfill van een verbinding met een privé-eind punt |
 > | Micro soft. SQL/servers/privateEndpointConnectionProxies/valideren/actie | Hiermee wordt een aanroep voor het maken van een privé-eind punt gevalideerd aan de kant van de NRP |
 > | Micro soft. SQL/servers/privateEndpointConnectionProxies/lezen | Hiermee wordt de lijst met particuliere endpoint-verbindings proxy's geretourneerd of worden de eigenschappen opgehaald voor de opgegeven verbinding proxy voor het particuliere eind punt. |
@@ -4947,6 +4984,10 @@ Azure-service: [azure Data Explorer](/azure/data-explorer/)
 > | Micro soft. Kusto/clusters/PrincipalAssignments/lezen | Hiermee wordt een resource van een cluster Principal-toewijzingen gelezen. |
 > | Micro soft. Kusto/clusters/PrincipalAssignments/schrijven | Schrijft een resource van een cluster Principal-toewijzingen. |
 > | Micro soft. Kusto/clusters/PrincipalAssignments/verwijderen | Hiermee verwijdert u een resource van een cluster Principal-toewijzingen. |
+> | Micro soft. Kusto/clusters/PrivateEndpointConnectionProxies/lezen | Hiermee wordt een particuliere endpoint-verbindings proxy gelezen |
+> | Micro soft. Kusto/clusters/PrivateEndpointConnectionProxies/schrijven | Schrijft een particuliere endpoint-verbindings proxy |
+> | Micro soft. Kusto/clusters/PrivateEndpointConnectionProxies/verwijderen | Hiermee verwijdert u een particuliere endpoint-verbindings proxy |
+> | Micro soft. Kusto/clusters/PrivateEndpointConnectionProxies/valideren/actie | Hiermee wordt een particuliere endpoint-verbindings proxy gevalideerd |
 > | Micro soft. Kusto/clusters/Sku's/lezen | Hiermee wordt een cluster-SKU-resource gelezen. |
 > | Micro soft. Kusto/locaties/CheckNameAvailability/actie | Hiermee wordt de beschik baarheid van resource namen gecontroleerd. |
 > | Micro soft. Kusto/locaties/GetNetworkPolicies/actie | Hiermee wordt het netwerk beleid voor intenties opgehaald |
@@ -5285,6 +5326,11 @@ Azure-service: [Azure bot service](/azure/bot-service/)
 > | Micro soft. BotService/checknameavailability/providers/micro soft. Insights/diagnosticSettings/schrijven | Hiermee wordt de diagnostische instelling voor de resource gemaakt of bijgewerkt |
 > | Micro soft. BotService/checknameavailability/providers/micro soft. Insights/logDefinitions/lezen | Hiermee worden de beschik bare logboeken opgehaald voor &lt; de naam van de resource&gt; |
 > | Micro soft. BotService/checknameavailability/providers/micro soft. Insights/metricDefinitions/lezen | Hiermee wordt de diagnostische instelling voor de resource gemaakt of bijgewerkt |
+> | Micro soft. BotService/hostsettings/lezen | De instellingen ophalen die nodig zijn om de bot-service te hosten |
+> | Micro soft. BotService/hostsettings/providers/micro soft. Insights/diagnosticSettings/lezen | Hiermee wordt de diagnostische instelling voor de resource opgehaald |
+> | Micro soft. BotService/hostsettings/providers/micro soft. Insights/diagnosticSettings/schrijven | Hiermee wordt de diagnostische instelling voor de resource gemaakt of bijgewerkt |
+> | Micro soft. BotService/hostsettings/providers/micro soft. Insights/logDefinitions/lezen | Hiermee worden de beschik bare logboeken opgehaald voor &lt; de naam van de resource&gt; |
+> | Micro soft. BotService/hostsettings/providers/micro soft. Insights/metricDefinitions/lezen | Hiermee wordt de diagnostische instelling voor de resource gemaakt of bijgewerkt |
 > | Micro soft. BotService/listauthserviceproviders/providers/micro soft. Insights/diagnosticSettings/lezen | Hiermee wordt de diagnostische instelling voor de resource opgehaald |
 > | Micro soft. BotService/listauthserviceproviders/providers/micro soft. Insights/diagnosticSettings/schrijven | Hiermee wordt de diagnostische instelling voor de resource gemaakt of bijgewerkt |
 > | Micro soft. BotService/listauthserviceproviders/providers/micro soft. Insights/logDefinitions/lezen | Hiermee worden de beschik bare logboeken opgehaald voor &lt; de naam van de resource&gt; |
@@ -5611,14 +5657,19 @@ Azure-service: [Cognitive Services](../cognitive-services/index.yml)
 > | Micro soft. CognitiveServices/accounts/ImageSearch/trending/actie | Huidige trend afbeeldingen ophalen. |
 > | Micro soft. CognitiveServices/accounts/ImmersiveReader/getcontentmodelforreader/actie | Hiermee maakt u een insluitende lezer-sessie |
 > | Micro soft. CognitiveServices/accounts/LUIS/voors pellen/actie | Hiermee wordt de gepubliceerde eindpunt voorspelling opgehaald voor de opgegeven query. |
+> | Micro soft. CognitiveServices/accounts/LUIS/zonder label/actie | Voegt niet-gelabelde gegevens toe aan de bijbehorende toepassingen |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/schrijven | Hiermee maakt u een nieuwe LUIS-app. Hiermee wordt de naam of beschrijving van de toepassing bijgewerkt. |
 > | Micro soft. CognitiveServices/accounts/LUIS/Apps/account/actie | Hiermee wijst u een Azure-account toe aan de toepassing. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/verwijderen | Hiermee verwijdert u een toepassing. |
-> | Micro soft. CognitiveServices/accounts/LUIS/apps/lezen | Hiermee haalt u de toepassings gegevens op. Een lijst met alle gebruikers toepassingen. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/lezen | Hiermee haalt u de toepassings gegevens op. Een lijst met alle gebruikers toepassingen. Hiermee wordt de lijst met toepassingen geretourneerd * |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/importeren/actie | Hiermee wordt een toepassing geïmporteerd in LUIS, de JSON van de toepassing moet worden opgenomen in de hoofd tekst van de aanvraag. Hiermee wordt een nieuwe app-ID geretourneerd. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/publiceren/actie | Hiermee publiceert u een specifieke versie van de toepassing. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/querylogsasync/actie | Start een download aanvraag voor de query logboeken van de afgelopen maand voor de toepassing. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/verplaatsen/actie | Hiermee verplaatst u de app naar een andere Azure-resource voor LUIS-ontwerp. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/abonnementen/actie | Hiermee worden de abonnements gegevens toegewezen aan de opgegeven toepassing. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/zonder label/actie | Hiermee worden niet-gelabelde gegevens uit het CSV-bestand geüpload naar de toepassing |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/testdatasets/actie | *NotDefined* |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/activeversion/schrijven | Hiermee wordt de momenteel actieve versie van de opgegeven app bijgewerkt |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/assistenten/lezen | **DEZE API IS AFGESCHAFT.** |
 > | Micro soft. CognitiveServices/accounts/LUIS/Apps/account/lezen | Hiermee worden de LUIS Azure-accounts opgehaald die aan de toepassing zijn toegewezen voor de gebruiker met behulp van zijn Azure Resource Manager-token. |
 > | Micro soft. CognitiveServices/accounts/LUIS/Apps/account/verwijderen | Hiermee worden de LUIS Azure-accounts opgehaald voor de gebruiker met behulp van zijn Azure Resource Manager-token. |
@@ -5628,6 +5679,8 @@ Azure-service: [Cognitive Services](../cognitive-services/index.yml)
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/customprebuiltdomains/lezen | Hiermee worden alle beschik bare aangepaste vooraf gedefinieerde domeinen opgehaald voor een specifieke cultuur worden alle beschik bare aangepaste vooraf gedefinieerde domeinen voor alle cult uren opgehaald |
 > | Micro soft. CognitiveServices/accounts/LUIS/Apps/domeinen/lezen | Hiermee worden de beschik bare toepassings domeinen opgehaald. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/eind punten/lezen | Hiermee worden de beschik bare endpoint-implementatie regio's en-url's geretourneerd |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/meta gegevens/lezen | De meta gegevens van de toepassing ophalen |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/meta gegevens/schrijven | Hiermee worden de meta gegevens van de toepassing bijgewerkt |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/machtigingen/schrijven | Voegt een gebruiker toe aan de lijst met toegestane gebruikers voor toegang tot deze LUIS-toepassing. Hiermee wordt de lijst met huidige gebruikers toegang vervangen door het item dat in de hoofd tekst is verzonden. * |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/machtigingen/lezen | Hiermee wordt de lijst met e-mail berichten van gebruikers opgehaald die machtigingen hebben voor toegang tot uw toepassing.  |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/machtigingen/verwijderen | Er is een gebruiker verwijderd uit de lijst met toegestane gebruikers om toegang te krijgen tot deze LUIS-toepassing. |
@@ -5635,8 +5688,24 @@ Azure-service: [Cognitive Services](../cognitive-services/index.yml)
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/publishsettings/schrijven | Hiermee werkt u de publicatie-instellingen van de toepassing bij. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/querylogs/lezen | Hiermee worden de query logboeken van de afgelopen maand voor de toepassing opgehaald. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/querylogsasync/lezen | De status van de Download aanvraag voor query logboeken ophalen. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/runtimepermissions/bot/actie | Hiermee wordt een bot-runtime machtiging voor de toepassing toegevoegd |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/runtimepermissions/bot/verwijderen | De machtiging voor het uitvoeren van een run runtime-toepassing is verwijderd |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/runtimepermissions/bot/lezen | Hiermee worden de bot-runtime machtigingen voor de toepassing opgehaald. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/instellingen/lezen | De toepassings instellingen ophalen |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/instellingen/schrijven | Hiermee worden de toepassings instellingen bijgewerkt |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/sleuven/voors pellen/actie | Hiermee worden de gepubliceerde voor spellingen voor de opgegeven sleuf opgehaald met behulp van de opgegeven query. De huidige maximale query grootte is 500 tekens. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/sleuven/evaluaties/actie | *NotDefined* |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/sleuven/evaluaties/resultaat/lezen | *NotDefined* |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/sleuven/evaluaties/status/lezen | *NotDefined* |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/sleuven/voors pellen/lezen | Hiermee worden de gepubliceerde voor spellingen voor de opgegeven sleuf opgehaald met behulp van de opgegeven query. De huidige maximale query grootte is 500 tekens. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/statistieken/detailedendpointhitshistory/lezen | Hiermee wordt de geschiedenis van treffers voor eind punten voor een bepaalde periode opgehaald met informatie over de sleuf en de regio. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/abonnementen/lezen | De informatie van de toegewezen abonnementen voor de toepassing retour neren |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/abonnementen/verwijderen | Hiermee wordt het abonnement met de opgegeven id verwijderd uit de toegewezen abonnementen voor de toepassing |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/testdatasets/verwijderen | Hiermee verwijdert u een gegeven gegevensset van een bepaalde toepassing. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/testdatasets/lezen | Hiermee worden de opgegeven meta gegevens van de batch test opgehaald. Retourneert een lijst met alle batch test gegevens sets van een bepaalde toepassing. * |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/testdatasets/schrijven | Hiermee worden de laatste test resultaten van een bestaande batch test-gegevensset voor een bepaalde toepassing bijgewerkt. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/testdatasets/downloaden/lezen | Hiermee wordt de gegevensset met de opgegeven id gedownload. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/testdatasets/naam wijzigen/schrijven | Hiermee wordt de naam van een bestaande batch test gegevensset bijgewerkt voor een bepaalde toepassing. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/usagescenarios/lezen | Hiermee haalt u de beschik bare gebruiks scenario's voor de toepassing op. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/trainen/actie | Hiermee verzendt u een aanvraag voor een training voor een versie van een opgegeven LUIS-toepassing. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/klonen/actie | Hiermee maakt u een nieuwe toepassings versie die gelijk is aan de huidige moment opname van de geselecteerde toepassings versie. |
@@ -5644,11 +5713,17 @@ Azure-service: [Cognitive Services](../cognitive-services/index.yml)
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/lezen | Hiermee haalt u de versie gegevens van de toepassing op. Hiermee wordt de informatie opgehaald voor de lijst met toepassings versies. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/importeren/actie | Hiermee wordt een nieuwe versie in een LUIS-toepassing geïmporteerd, de versie JSON moet worden opgenomen in de hoofd tekst van de aanvraag. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/schrijven | Hiermee wordt de naam of beschrijving van de toepassings versie bijgewerkt. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/voors pellen/actie | Hiermee worden de gepubliceerde voor spellingen voor de opgegeven toepassings versie opgehaald met behulp van de opgegeven query. De huidige maximale query grootte is 500 tekens. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/evaluaties/actie | *NotDefined* |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/statistieken/actie | Trainings statistieken voor toepassings versie berekenen |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/releasedispatch/actie | Hiermee wordt een nieuwe moment opname vrijgegeven van de versie van de geselecteerde toepassing die moet worden gebruikt door Verzend toepassingen |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/assignedkey/schrijven | **DIT IS AFGESCHAFT** |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/assignedkey/lezen | **DIT IS AFGESCHAFT** |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/closedlists/schrijven | Voegt een lijst entiteit toe aan de LUIS-app. Hiermee voegt u een batch met sublijsten toe aan een bestaande closedlist. * Hiermee wordt het gesloten lijst model bijgewerkt. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/closedlists/verwijderen | Hiermee verwijdert u een gesloten lijst entiteit uit de toepassing. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/closedlists/lezen | Hiermee wordt informatie opgehaald van een gesloten lijst model. Hiermee haalt u informatie op over de closedlist modellen. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/closedlists/suggereren/actie | nieuwe vermeldingen Voorst Ellen voor bestaande of zojuist gemaakte gesloten lijsten |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/closedlists/presuggereren/lezen | Laadt het vorige suggestie resultaat voor de entiteit gesloten lijst. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/closedlists/rollen/schrijven | Voegt een rol toe voor een gesloten lijst entiteits model update een rol voor een gesloten lijst entiteits model. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/closedlists/rollen/verwijderen | Hiermee verwijdert u de rol voor een gesloten lijst-entiteits model. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/closedlists/rollen/lezen | Hiermee wordt de rol voor een gesloten lijst-entiteits model opgehaald. Hiermee worden de rollen voor een gesloten lijst-entiteits model opgehaald. |
@@ -5674,7 +5749,9 @@ Azure-service: [Cognitive Services](../cognitive-services/index.yml)
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/customprebuiltentities/rollen/lezen | Hiermee wordt de rol opgehaald voor een aangepast vooraf gebouwd domein-entiteits model. Hiermee worden de rollen opgehaald voor een aangepast, vooraf gebouwd domein entiteits model. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/customprebuiltintents/schrijven | Hiermee voegt u een aangepast vooraf gebouwd domein intentie model toe aan de toepassing. Gebruik [de intentie-](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c1c) id om deze intentie te verwijderen. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/customprebuiltintents/lezen | Hiermee haalt u aangepaste info intenties op voor deze toepassings versie. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/customprebuiltintentsbatch/schrijven | Voegt aangepaste vooraf gemaakte domein intentie toe aan de toepassing in batch |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/customprebuiltmodels/lezen | Hiermee worden alle aangepaste vooraf gedefinieerde domein model gegevens voor deze toepassings versie opgehaald. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/detailedmodels/lezen | *NotDefined* |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/entiteiten/schrijven | Voegt een eenvoudige entiteits-Extractor toe aan de versie van de toepassing. Hiermee wordt de naam van een entiteit-Extractor bijgewerkt. Hiermee wordt het Extractor van de entiteit bijgewerkt. * |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/entiteiten/verwijderen | Hiermee verwijdert u een eenvoudige entiteits-Extractor uit de versie van de toepassing. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/entiteiten/lezen | Hiermee haalt u informatie op over het eenvoudige entiteits model. Haalt informatie op over de modellen van de eenvoudige entiteit in de versie van de toepassing. |
@@ -5686,7 +5763,10 @@ Azure-service: [Cognitive Services](../cognitive-services/index.yml)
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/entiteiten/rollen/verwijderen | Hiermee verwijdert u de rol voor een eenvoudig entiteits model. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/entiteiten/rollen/lezen | Hiermee wordt de rol voor een eenvoudig entiteits model opgehaald. Hiermee worden de rollen voor een eenvoudig entiteits model opgehaald. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/entiteiten/rollen/suggereren/lezen | Suggereert voor beelden die de nauw keurigheid van het entiteits model verbeteren. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/entiteiten/statistieken/endpointscores/lezen | Hiermee wordt het aantal keren opgehaald dat het entiteits model de hoogste intentie heeft gescoord |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/entiteiten/suggereren/lezen | Suggereert voor beelden die de nauw keurigheid van het entiteits model verbeteren. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/evaluaties/resultaat/lezen | *NotDefined* |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/evaluaties/status/lezen | *NotDefined* |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/voor beeld/schrijven | Hiermee voegt u een voor beeld van een label toe aan de versie van de toepassing. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/voor beelden/schrijven | Voegt een batch met niet-gedupliceerde voor beelden van labels toe aan de opgegeven toepassing. Een batch kan geen hiërarchische onderliggende entiteiten bevatten. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/voor beelden/verwijderen | Hiermee verwijdert u het label met de opgegeven ID. |
@@ -5696,6 +5776,8 @@ Azure-service: [Cognitive Services](../cognitive-services/index.yml)
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/externalkeys/lezen | **DIT IS AFGESCHAFT** |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/externalkeys/schrijven | **DIT IS AFGESCHAFT** |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/functies/lezen | Hiermee worden alle versie functies van de toepassing opgehaald. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/featuresuggestion/status/lezen | Status suggestie voor functie versie van toepassing ophalen |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/featuresuggestion/suggesties/lezen | Suggesties voor de functie versie van de toepassing ophalen |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/hierarchicalentities/schrijven | Hiermee wordt een hiërarchische entiteit extractie toegevoegd aan de versie van de toepassing. Hiermee worden de naam en onderliggende items van een model voor het Extractor van een hiërarchische entiteit bijgewerkt. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/hierarchicalentities/verwijderen | Hiermee verwijdert u een hiërarchische entiteits-Extractor uit de toepassings versie. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/hierarchicalentities/lezen | Hiermee wordt informatie over het hiërarchische entiteits model opgehaald. Haalt informatie op over de hiërarchische entiteits modellen in de versie van de toepassing. |
@@ -5708,14 +5790,22 @@ Azure-service: [Cognitive Services](../cognitive-services/index.yml)
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/intents/schrijven | Voegt een intentie classificatie toe aan de versie van de toepassing. Hiermee wordt de naam van een intentie classificatie bijgewerkt. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/intenties/verwijderen | Hiermee verwijdert u een intentie classificatie uit de toepassings versie. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/intents/lezen | Hiermee wordt informatie over het intentie model opgehaald. Haalt informatie op over de intentie modellen in de versie van de toepassing. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/intents/entitiescount/lezen | Hiermee wordt het aantal entiteiten opgehaald van de gelabelde uitingen voor de opgegeven intentie in de opgegeven taak in de opgegeven app. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/intentie/onderdelen/functies/schrijven | Hiermee wordt een functie relatie voor een intentie model toegevoegd, wordt de lijst met functie relaties voor de intentie bijgewerkt * |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/intentie/onderdelen/verwijderen | Hiermee verwijdert u de functie relatie voor een intentie model. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/intentie/functies/onderdelen/lezen | Hiermee worden de functie relaties voor een intentie model opgehaald. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/intents/patternrules/lezen | Hiermee haalt u de patronen voor een specifiek doel op. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/intenties/statistieken/lezen | Trainings statistieken voor toepassings versies per intentie ophalen |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/intenties/statistieken/endpointscores/lezen | Hiermee wordt het aantal keren opgehaald dat het intentie model de hoogste intentie heeft gescoord |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/intenties/Voorst Ellen/lezen | Stelt voor beelden voor die de nauw keurigheid van het intentie model kunnen verbeteren. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/labeleddata/lezen | Hiermee worden de gelabelde gegevens opgehaald voor de opgegeven toepassing |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/listprebuilts/lezen | Hiermee worden alle beschik bare vooraf gemaakte entiteiten voor de toepassing opgehaald op basis van de cultuur van de toepassing. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/modellen/lezen | Haalt informatie op over de versie modellen van de toepassing. Hiermee wordt informatie over een model opgehaald. * |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/modellen/endpointscoreshistory/lezen | Hiermee wordt het aantal keren opgehaald dat het intentie model een score heeft die de hoogste intentie geschiedenis heeft opgegeven |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/modellen/voor beelden/lezen | Hiermee wordt een lijst met voor beelden van modellen opgehaald. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/modellen/controleren/lezen | Hiermee wordt de gelabelde uitingen voor het opgegeven model in de opgegeven taak in de opgegeven app opgehaald. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/modellen/reviewlabels/lezen | Hiermee wordt de gelabelde uitingen voor het opgegeven model in de opgegeven taak in de opgegeven app opgehaald. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/modellen/reviewpredictions/lezen | Hiermee wordt de gelabelde uitingen voor het opgegeven model in de opgegeven taak in de opgegeven app opgehaald. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/patternanyentities/schrijven | Hiermee voegt u een patroon toe. elke entiteits-extractor voor de toepassings versie. Hiermee wordt het patroon bijgewerkt. elke entiteits-extractor. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/patternanyentities/verwijderen | Hiermee verwijdert u een patroon. de entiteits-Extractor van de toepassings versie. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/patternanyentities/lezen | Hiermee haalt u informatie op over het patroon. elk entiteits model. Hiermee haalt u informatie op over het patroon. alle entiteits modellen in de toepassings versie. |
@@ -5735,12 +5825,15 @@ Azure-service: [Cognitive Services](../cognitive-services/index.yml)
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/phraselists/schrijven | Hiermee maakt u een nieuwe phraselist-functie. Hiermee worden de zinsdelen, de status en de naam van de phraselist-functie bijgewerkt. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/phraselists/verwijderen | Hiermee verwijdert u een phraselist-functie uit een toepassing. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/phraselists/lezen | Hiermee wordt de phraselist-functie gegevens opgehaald. Hiermee worden alle phraselist-functies voor de toepassings versie opgehaald. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/phraselists/suggereren/actie | nieuwe vermeldingen Voorst Ellen voor bestaande of nieuw gemaakte woordgroepen lijsten |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/phraselists/presuggereren/lezen | Laadt het vorige suggestie resultaat voor de functie phraselist. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/vooraf gebouwd/schrijven | Hiermee wordt een lijst met vooraf gedefinieerde entiteit-extracten toegevoegd aan de toepassings versie. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/vooraf gebouwd/verwijderen | Hiermee verwijdert u een vooraf ontwikkelde entiteits-Extractor uit de toepassings versie. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/vooraf gebouwd/lezen | Hiermee haalt u informatie op over het vooraf gebouwde entiteits model. Haalt informatie op over de vooraf gemaakte entity modellen in de toepassings versie. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/vooraf gebouwd/rollen/schrijven | Hiermee wordt een rol voor een vooraf samengesteld entiteits model toegevoegd, waarmee een rol voor een vooraf samengesteld entiteits model wordt bijgewerkt. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/preconstrueers/rollen/verwijderen | Hiermee verwijdert u de rol voor een vooraf gebouwd entiteits model. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/vooraf gebouwd/rollen/lezen | Hiermee wordt de rol voor een vooraf samengesteld entiteits model opgehaald. Hiermee worden de rollen voor een vooraf gebouwd entiteits model opgehaald. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/voors pellen/lezen | Hiermee worden de gepubliceerde voor spellingen voor de opgegeven toepassings versie opgehaald met behulp van de opgegeven query. De huidige maximale query grootte is 500 tekens. Hiermee wordt de voor spelling (intenties/entiteiten) opgehaald voor de opgegeven utterance. * |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/regexentities/schrijven | Voegt een reguliere expressie-entiteit Extractor toe aan de versie van de toepassing. Hiermee wordt het entiteits model van de reguliere expressie bijgewerkt. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/regexentities/verwijderen | Hiermee verwijdert u een reguliere expressie-entiteit model uit de toepassings versie. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/regexentities/lezen | Hiermee wordt informatie opgehaald over het entiteits model van een reguliere expressie. Haalt informatie op over de entiteits modellen van de reguliere expressie in de versie van de toepassing. |
@@ -5749,18 +5842,82 @@ Azure-service: [Cognitive Services](../cognitive-services/index.yml)
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/regexentities/rollen/lezen | Hiermee worden de rollen opgehaald voor een reguliere expressie-entiteits model. Hiermee wordt de rol opgehaald voor een reguliere expressie-entiteits model. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/instellingen/lezen | Hiermee worden de versie-instellingen van de toepassing opgehaald. |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/instellingen/schrijven | Hiermee werkt u de versie-instellingen van de toepassing bij. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/State/lezen | Hiermee wordt een vlag opgehaald waarmee wordt aangegeven of de App-versie eerder is getraind |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/statistieken/lezen | Trainings statistieken voor toepassings versies ophalen |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/statistieken/endpointhitshistory/lezen | Hiermee haalt u de geschiedenis van de eind punten voor elke dag op voor een bepaalde periode. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/statistieken/examplesperentity/lezen | Hiermee wordt het aantal voor beelden per entiteit van een bepaalde toepassing opgehaald |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/statistieken/labelsperentity/lezen | Hiermee wordt het aantal labels per entiteit van een bepaalde toepassing opgehaald |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/statistieken/labelsperintent/lezen | Hiermee wordt het aantal labels per intentie voor een bepaalde toepassing opgehaald |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/statistieken/bewerkingen/lezen | De bewerkings gegevens van de trainings statistieken voor toepassings versies ophalen niet verlopen |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/statsmetadata/lezen | Meta gegevens van de trainings statistieken voor de toepassings versie ophalen |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/Voorst Ellen/verwijderen | Er is een eind punt utterance verwijderd. Deze utterance bevindt zich in de lijst "eind punt uitingen controleren". |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/testdatasets/uitvoeren/lezen | Voert de batch test uit die is opgegeven door de toepassings-id en de gegevensset-id op de opgegeven |
 > | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/trainen/lezen | Hiermee wordt de trainings status van alle modellen (intenties en entiteiten) opgehaald voor de opgegeven toepassings versie. U moet de Train API aanroepen om de LUIS-app te trainen voordat u deze API aanroept om de trainings status op te halen. |
+> | Micro soft. CognitiveServices/accounts/LUIS/apps/versies/trainingstatus/lezen | Hiermee wordt een vlag opgehaald waarmee wordt aangegeven of de App-versie eerder is getraind |
 > | Micro soft. CognitiveServices/accounts/LUIS/account/lezen | Hiermee worden de LUIS Azure-accounts opgehaald voor de gebruiker met behulp van zijn Azure Resource Manager-token. |
+> | Micro soft. CognitiveServices/accounts/LUIS/compositesmigration/apps/versies/migreren/actie | Samen stellingen migreren voor versie van toepassing |
+> | Micro soft. CognitiveServices/accounts/LUIS/compositesmigration/apps/versies/bewerkingen/migreren/lezen | Resultaat van samengestelde migratie ophalen |
+> | Micro soft. CognitiveServices/accounts/LUIS/compositesmigration/apps/versies/bewerkingen/migreren/status/lezen | Status samengestelde migratie bewerking ophalen |
+> | Micro soft. CognitiveServices/accounts/LUIS/compositesmigration/needmigrationapps/lezen | Toepassingen ophalen die samengestelde migraties nodig hebben |
+> | Micro soft. CognitiveServices/accounts/LUIS/gesprekken/previewfeatures/lezen | Hiermee wordt de geschiktheids status opgehaald van preview-functies voor de huidige eigenaar. |
+> | Micro soft. CognitiveServices/accounts/LUIS/Documents/apps/classifierslabelscount/lezen | Het aantal labels voor elke classificatie ophalen |
+> | Micro soft. CognitiveServices/accounts/LUIS/documenten/apps/documenten/modellen/trellis/actie | Extractie bewerking na trellis |
+> | Micro soft. CognitiveServices/accounts/LUIS/Documents/apps/documenten/modellen/Operations/trellis/lezen | Het antwoord van de trellis-extractie bewerking ophalen |
+> | Micro soft. CognitiveServices/accounts/LUIS/documenten/apps/documenten/modellen/bewerkingen/trellis/status/lezen | Status van trellis-extractie bewerking ophalen |
+> | Micro soft. CognitiveServices/accounts/LUIS/Documents/apps/extractorslabelscount/lezen | Het aantal labels voor elke Extractor ophalen |
+> | Micro soft. CognitiveServices/accounts/LUIS/documenten/apps/modellen/modeltracker/actie | Initiaion-aanvraag voor de bewerking van de model tracering |
+> | Micro soft. CognitiveServices/accounts/LUIS/documenten/apps/modellen/voors pellen/actie | Bewerking voor het voors pellen van een document activeren |
+> | Micro soft. CognitiveServices/accounts/LUIS/documenten/apps/modellen/predicttext/actie | Bewerking voor het voors pellen van document tekst activeren |
+> | Micro soft. CognitiveServices/accounts/LUIS/documenten/apps/modellen/klonen/actie | Kloont een model in dezelfde app-versie. |
+> | Micro soft. CognitiveServices/accounts/LUIS/Documents/apps/modellen/Operations/modeltracker/lezen | Het antwoord van de operations tracker-bewerking ophalen |
+> | Micro soft. CognitiveServices/accounts/LUIS/Documents/apps/modellen/Operations/modeltracker/meta gegevens/lezen | Reactie op meta gegevens van de model tracerings bewerking ophalen |
+> | Micro soft. CognitiveServices/accounts/LUIS/Documents/apps/modellen/Operations/modeltracker/status/lezen | Bewerkings status van model vastleggen ophalen |
+> | Micro soft. CognitiveServices/accounts/LUIS/documenten/apps/modellen/bewerkingen/voors pellen/lezen | Reactie van bewerkings respons voor document voors pellen ophalen |
+> | Micro soft. CognitiveServices/accounts/LUIS/documenten/apps/modellen/bewerkingen/voors pellen/status lezen | De bewerkings status voor document voorspelling ophalen |
+> | Micro soft. CognitiveServices/accounts/LUIS/Documents/apps/modellen/Operations/predicttext/lezen | Reactie van bewerkings antwoord van document tekst ophalen |
+> | Micro soft. CognitiveServices/accounts/LUIS/Documents/apps/modellen/Operations/predicttext/status/lezen | Status van de bewerking voor de voor spelling van document tekst ophalen |
+> | Micro soft. CognitiveServices/accounts/LUIS/documenten/apps/bewerkingen/lezen | Bewerkingen voor een toepassing ophalen |
+> | Micro soft. CognitiveServices/accounts/LUIS/Documents/entity/exploratorysuggestions/Suggestions/actie | De experimentele entiteit suggesties voor een specifiek model ophalen. |
+> | Micro soft. CognitiveServices/accounts/LUIS/Documents/entity/exploratorysuggestions/result/Read | De belangrijkste N experimentele entiteit suggesties voor een specifiek model ophalen. |
+> | Micro soft. CognitiveServices/accounts/LUIS/documenten/entiteit/exploratorysuggestions/status/lezen | De verwerkings status van verkennende entiteit suggesties voor een specifiek model ophalen. |
+> | Micro soft. CognitiveServices/accounts/LUIS/documenten/entitysuggestions/suggesties/actie | De suggesties voor een specifiek model ophalen. |
+> | Micro soft. CognitiveServices/accounts/LUIS/documenten/entitysuggestions/resultaten/lezen | De suggesties voor een specifiek model ophalen. |
+> | Micro soft. CognitiveServices/accounts/LUIS/Documents/entitysuggestions/status/lezen | De verwerkings status voor suggesties voor een specifiek model ophalen. |
+> | Micro soft. CognitiveServices/accounts/LUIS/documenten/featurerepositorysearch/lezen | *NotDefined* |
+> | Micro soft. CognitiveServices/accounts/LUIS/Documents/featurerepositorystore/functies/gegevens/lezen | Toegang tot een specifieke stroom. |
+> | Micro soft. CognitiveServices/accounts/LUIS/Documents/featurerepositorystore/manifest/lezen | Het manifest-object voor het globale archief ophalen. |
+> | Micro soft. CognitiveServices/accounts/LUIS/documenten/Storage accounts/containers/lezen | Hiermee haalt u gegevens van een opslag account container op. Hiermee worden de eerder geregistreerde containers opgehaald die deel uitmaken van een opslag account. * |
+> | Micro soft. CognitiveServices/accounts/LUIS/documenten/Storage accounts/containers/status/actie | Hiermee wordt de voortgang van de opgegeven opslag account containers opgehaald. |
+> | Micro soft. CognitiveServices/accounts/LUIS/documenten/Storage accounts/containers/voor bereiding/actie | Een aanvraag in de wachtrij plaatsen voor het voorbereiden van een opslag account container die moet worden gebruikt in document toepassingen. |
+> | Micro soft. CognitiveServices/accounts/LUIS/documenten/Storage accounts/containers/Sync/actie | Een aanvraag voor het bijwerken van een al voor bereide opslag account container in de wachtrij plaatsen. |
+> | Micro soft. CognitiveServices/accounts/LUIS/documenten/Storage accounts/containers/schrijven | Update de gegevens van het opslag account. |
+> | Micro soft. CognitiveServices/accounts/LUIS/documenten/Storage accounts/containers/bewerkingen/voor bereiding/status/lezen | Hiermee wordt de status opgehaald van de voor bereiding van de container voor opslag accounts. |
+> | Micro soft. CognitiveServices/accounts/LUIS/documenten/Storage accounts/containers/Operations/Sync/status/lezen | Hiermee wordt de status opgehaald van de container voor het bijwerken van het opslag account. |
+> | Micro soft. CognitiveServices/accounts/LUIS/Documents/Storage accounts/containers/voor bereiding/resultaat/lezen | Hiermee worden de resultaten van de laatste voorbereidings bewerking opgehaald. |
+> | Micro soft. CognitiveServices/accounts/LUIS/documenten/Storage accounts/containers/synchronisatie/resultaat/lezen | Hiermee worden de resultaten van de laatste synchornization-bewerking opgehaald. |
 > | Micro soft. CognitiveServices/accounts/LUIS/externalkeys/schrijven | **DEZE API IS AFGESCHAFT.** |
 > | Micro soft. CognitiveServices/accounts/LUIS/externalkeys/verwijderen | **DEZE API IS AFGESCHAFT.** |
 > | Micro soft. CognitiveServices/accounts/LUIS/externalkeys/lezen | **DEZE API IS AFGESCHAFT.** |
 > | Micro soft. CognitiveServices/accounts/LUIS/package/sleuf/gzip/lezen | De LUIS-toepassing is gepubliceerd als GZip-pakket |
 > | Micro soft. CognitiveServices/accounts/LUIS/package/versies/gzip/lezen | Pakketten die zijn getraind LUIS-toepassing als GZip |
+> | Micro soft. CognitiveServices/accounts/LUIS/ping/lezen | *NotDefined* |
+> | Micro soft. CognitiveServices/accounts/LUIS/previewfeatures/lezen | Hiermee wordt de geschiktheids status opgehaald van preview-functies voor de huidige eigenaar. |
 > | Micro soft. CognitiveServices/accounts/LUIS/programmatickey/schrijven | **DEZE API IS AFGESCHAFT.** |
+> | Micro soft. CognitiveServices/accounts/LUIS/resources/apps/aantal/lezen | Hiermee wordt het aantal toepassingen opgehaald dat eigendom is van de gebruiker. |
+> | Micro soft. CognitiveServices/accounts/LUIS/resources/apps/versies/aantal/lezen | Hiermee wordt het aantal versies van een bepaalde toepassing opgehaald. |
 > | Micro soft. CognitiveServices/accounts/LUIS/abonnementen/schrijven | **DEZE API IS AFGESCHAFT.** |
 > | Micro soft. CognitiveServices/accounts/LUIS/abonnementen/verwijderen | **DEZE API IS AFGESCHAFT.** |
 > | Micro soft. CognitiveServices/accounts/LUIS/abonnementen/lezen | **DEZE API IS AFGESCHAFT.** |
+> | Micro soft. CognitiveServices/accounts/LUIS/gebruiker/termsofuse/actie | *NotDefined* |
+> | Micro soft. CognitiveServices/accounts/LUIS/gebruiker/lezen | *NotDefined* |
+> | Micro soft. CognitiveServices/accounts/LUIS/gebruiker/verwijderen | *NotDefined* |
+> | Micro soft. CognitiveServices/accounts/LUIS/gebruiker/schrijven | *NotDefined* |
+> | Micro soft. CognitiveServices/accounts/LUIS/User/authoringazureaccount/write | Hiermee wordt de APIM-ontwerp sleutel van de gebruiker gemigreerd naar een Azure-resource. |
+> | Micro soft. CognitiveServices/accounts/LUIS/gebruiker/samen werkers/lezen | Haalt gebruikers per app op voor alle apps waarvoor de gebruiker deel nemers heeft. |
+> | Micro soft. CognitiveServices/accounts/LUIS/gebruiker/detailedinfo/lezen | *NotDefined* |
+> | Micro soft. CognitiveServices/accounts/LUIS/gebruiker/programmatickey/lezen | *NotDefined* |
+> | Micro soft. CognitiveServices/accounts/LUIS/gebruiker/programmatickeywithendpointurl/lezen | *NotDefined* |
+> | Micro soft. CognitiveServices/accounts/LUIS/gebruiker/unownedappsowners/lezen | Hiermee worden eigen aren opgehaald van de apps waarmee de gebruiker samenwerkt. |
 > | Micro soft. CognitiveServices/accounts/MetricsAdvisor/waarschuwing/anomalie/configuraties/schrijven | Configuratie van anomalie waarschuwing maken of bijwerken |
 > | Micro soft. CognitiveServices/accounts/MetricsAdvisor/waarschuwing/anomalie/configuraties/verwijderen | Configuratie van anomalie waarschuwing verwijderen |
 > | Micro soft. CognitiveServices/accounts/MetricsAdvisor/waarschuwing/anomalie/configuraties/lezen | Query uitvoeren op een configuratie met één afwijkings waarschuwing |
@@ -5847,6 +6004,43 @@ Azure-service: [Cognitive Services](../cognitive-services/index.yml)
 > | Micro soft. CognitiveServices/accounts/QnAMaker/Knowledge bases/maken/schrijven | Asynchrone bewerking voor het maken van een nieuwe Knowledge Base. |
 > | Micro soft. CognitiveServices/accounts/QnAMaker/Knowledge bases/downloaden/lezen | Down load de Knowledge Base. |
 > | Micro soft. CognitiveServices/accounts/QnAMaker/Operations/lezen | Hiermee worden details van een specifieke langlopende bewerking opgehaald. |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/modellen/actie | Deze methode kan worden gebruikt om een model van de ene locatie naar een andere te kopiëren. Als het doel abonnement |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/webhooks/actie | Bewerkingen voor webhooks |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/data sets/schrijven | Een gegevensset maken of bijwerken |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/data sets/verwijderen | Een gegevensset verwijderen |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/data sets/lezen | Een of meer gegevens sets ophalen |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/data sets/bestanden/lezen | Een of meer gegevensset-bestanden ophalen |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/endpoints/schrijven | Een eind punt maken of bijwerken |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/endpoints/verwijderen | Een eind punt verwijderen |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/endpoints/lezen | Een of meer eind punten ophalen |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/eind punten/bestanden/logboeken/schrijven | Een eind punt gegevens exporteren maken |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/eind punten/bestanden/logboeken/verwijderen | Enkele of alle logboeken van het aangepaste model eindpunt verwijderen |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/eind punten/bestanden/logboeken/lezen | Een of meer aangepaste model eindpunt logboeken ophalen |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/evaluaties/schrijven | Een evaluatie maken of bijwerken |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/Beoordelingen/verwijderen | Een evaluatie verwijderen |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/beoordelingen/lezen | Een of meer evaluaties ophalen |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/evaluaties/bestanden/lezen | Een of meer evaluatie bestanden ophalen |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/healthstatus/lezen | Status ophalen |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/modellen/schrijven | Een model maken of bijwerken. |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/modellen/verwijderen | Een model verwijderen |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/modellen/lezen | Een of meer modellen ophalen |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/modellen/basis/manifest/lezen | Retourneert een manifest voor dit basis model dat kan worden gebruikt in een on-premises container. |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/modellen/manifest/lezen | Retourneert een manifest voor dit model dat kan worden gebruikt in een on-premises container. |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/projecten/schrijven | Een project maken of bijwerken |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/projects/verwijderen | Een project verwijderen |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/projects/lezen | Een of meer projecten ophalen |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/transcripties/schrijven | Een transcriptie maken of bijwerken |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/transcripties/verwijderen | Een transcriptie verwijderen |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/transcripties/lezen | Een of meer transcripties ophalen |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/transcripties/bestanden/lezen | Een of meer transcriptie-bestanden ophalen |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/webhooks/schrijven | Een webhook maken of bijwerken |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/webhooks/verwijderen | Een webhook verwijderen |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/speechrest/webhooks/lezen | Een of meer webhooks ophalen |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/Unified-speech/frontend/Action | Dit eind punt beheert de spraak-front-end |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/Unified-speech/Management/Action | Dit eind punt beheert de spraak-front-end |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/Unified-speech/probes/Action | Dit eind punt bewaakt de status van de spraak-front-end |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/Unified-Speech/talen/Action | Dit eind punt biedt de REST-taal-API. |
+> | Micro soft. CognitiveServices/accounts/SpeechServices/Unified-speech/legacy/query/Action | De verouderde REST API van de speech-service. |
 > | Micro soft. CognitiveServices/accounts/spelling/spelling/actie | Resultaat van een spelling controle query ophalen via GET of POST. |
 > | Micro soft. CognitiveServices/accounts/TextAnalytics/talen/actie | De API retourneert de gedetecteerde taal en een numerieke score tussen 0 en 1. Scores dicht bij 1 geven aan dat er 100% zekerheid is dat de geïdentificeerde taal waar is. Er worden in totaal 120 talen ondersteund. |
 > | Micro soft. CognitiveServices/accounts/TextAnalytics/entities/actie | De API retourneert een lijst met bekende entiteiten en algemene benoemde entiteiten ( \" persoon \" , \" locatie \" , \" organisatie \" enz.) in een bepaald document. |
@@ -5957,7 +6151,9 @@ Azure-service: [machine learning-service](../machine-learning/index.yml)
 > | Micro soft. MachineLearningServices/werk ruimten/berekeningen/starten/actie | Compute-resource starten in Machine Learning Services werk ruimte |
 > | Micro soft. MachineLearningServices/werk ruimten/berekeningen/stoppen/actie | Reken resource stoppen in Machine Learning Services werk ruimte |
 > | Micro soft. MachineLearningServices/werk ruimten/berekeningen/opnieuw opstarten/actie | Compute-resource opnieuw starten in Machine Learning Services werk ruimte |
+> | Micro soft. MachineLearningServices/werk ruimten/berekeningen/updateDataMounts/actie | Reken gegevens koppelen in Machine Learning Services werk ruimte bijwerken |
 > | Micro soft. MachineLearningServices/werk ruimten/berekeningen/applicationaccess/actie | Toegang tot Compute-resource in Machine Learning Services-werk ruimte |
+> | Micro soft. MachineLearningServices/werk ruimten/berekeningen/updateSchedules/actie | Schema's voor het starten/stoppen van de reken bewerking bewerken |
 > | Micro soft. MachineLearningServices/werk ruimten/verbindingen/lezen | Hiermee worden de Machine Learning Services werkruimte verbinding (en) opgehaald |
 > | Micro soft. MachineLearningServices/werk ruimten/verbindingen/schrijven | Hiermee worden een Machine Learning Services verbinding (en) gemaakt of bijgewerkt |
 > | Micro soft. MachineLearningServices/werk ruimten/verbindingen/verwijderen | Hiermee verwijdert u de Machine Learning Services-verbinding (en) |
@@ -5994,6 +6190,7 @@ Azure-service: [machine learning-service](../machine-learning/index.yml)
 > | Micro soft. MachineLearningServices/werk ruimten/experimenten/uitvoeringen/verzenden/actie | Maakt of update script uitvoeringen in Machine Learning Services werk ruimte (n) |
 > | Micro soft. MachineLearningServices/werk ruimten/experimenten/uitvoeringen/lezen | Wordt uitgevoerd in Machine Learning Services werk ruimte (n) |
 > | Micro soft. MachineLearningServices/werk ruimten/experimenten/uitvoeringen/schrijven | Maakt of updates wordt uitgevoerd in Machine Learning Services werk ruimte (n) |
+> | Micro soft. MachineLearningServices/werk ruimten/experimenten/uitvoeringen/verwijderen | Hiermee verwijdert u uitvoeringen in Machine Learning Services werk ruimte (n) |
 > | Micro soft. MachineLearningServices/werk ruimten/onderdelen/lezen | Hiermee worden alle ingeschakelde functies voor een Machine Learning Services werkruimte opgehaald |
 > | Micro soft. MachineLearningServices/werk ruimten/inferenceEndpoints/lezen | Hiermee worden de in-verrekenings eindpunten in Machine Learning Services werk ruimte (n) afdoende |
 > | Micro soft. MachineLearningServices/werk ruimten/inferenceEndpoints/schrijven | Hiermee wordt een Afleidings eindpunt voor een afleiding in Machine Learning Services werk ruimte (n) gemaakt of bijgewerkt |
@@ -6042,6 +6239,8 @@ Azure-service: [machine learning-service](../machine-learning/index.yml)
 > | Micro soft. MachineLearningServices/werk ruimten/onlineEndpoints/schrijven | Hiermee wordt een online Afleidings eindpunt gemaakt of bijgewerkt in Machine Learning Services werk ruimte (n) |
 > | Micro soft. MachineLearningServices/werk ruimten/onlineEndpoints/verwijderen | Hiermee verwijdert u een online in-interferentie-eind punt in Machine Learning Services werk ruimte (n) |
 > | Micro soft. MachineLearningServices/werk ruimten/onlineEndpoints/Score/actie | Verificatie token of-sleutels ophalen om online-eind punten te scoren in Machine Learning Services werk ruimte (n) |
+> | Micro soft. MachineLearningServices/werk ruimten/onlineEndpoints/token/actie | Verificatie Token ophalen voor online-eind punten in Machine Learning Services werk ruimte (n) |
+> | Micro soft. MachineLearningServices/werk ruimten/onlineEndpoints/listkeys ophalen/actie | Verificatie sleutels voor Score online-eind punten ophalen in Machine Learning Services werk ruimte (n) |
 > | Micro soft. MachineLearningServices/werk ruimten/onlineEndpoints/checkNameAvailability/lezen | Controleert naam voor een online Afleidings eindpunt in Machine Learning Services werk ruimte (n) |
 > | Micro soft. MachineLearningServices/werk ruimten/onlineEndpoints/implementaties/lezen | Hiermee worden implementaties opgehaald in een online Afleidings eindpunt in Machine Learning Services werk ruimte (n) |
 > | Micro soft. MachineLearningServices/werk ruimten/onlineEndpoints/implementaties/schrijven | Hiermee wordt een implementatie gemaakt of bijgewerkt in een online Afleidings eindpunt in Machine Learning Services werk ruimte (n) |
@@ -6209,6 +6408,26 @@ Azure-service: [IOT hub](../iot-hub/index.yml), [IOT hub Device Provisioning Ser
 > | Micro soft. devices/provisioningServices/sku's/lezen | Geldige IotDps-Sku's ophalen |
 > | Micro soft. apparaten/gebruik/lezen | Details van het abonnements gebruik voor deze provider ophalen. |
 > | Micro soft. apparaten/gebruik/lezen | Details van het abonnements gebruik voor deze provider ophalen. |
+> | **DataAction** | **Beschrijving** |
+> | Micro soft. apparaten/IotHubs/cloudToDeviceMessages/verzenden/actie | Cloud-naar-apparaat-bericht naar elk apparaat verzenden  |
+> | Micro soft. devices/IotHubs/cloudToDeviceMessages/feedback/actie | Cloud-naar-apparaat bericht feedback melding ontvangen, volt ooien of beëindigen |
+> | Micro soft. apparaten/IotHubs/cloudToDeviceMessages/wachtrij/opschonen/actie | Hiermee verwijdert u alle in behandeling zijnde opdrachten voor een apparaat |
+> | Micro soft. devices/IotHubs/configuraties/lezen | Configuraties voor Apparaatbeheer lezen |
+> | Micro soft. devices/IotHubs/configuraties/schrijven | Configuraties voor Apparaatbeheer maken of bijwerken |
+> | Micro soft. devices/IotHubs/configuraties/verwijderen | Apparaatbeheer configuratie verwijderen |
+> | Micro soft. devices/IotHubs/configuraties/applyToEdgeDevice/actie | Hiermee wordt de configuratie-inhoud toegepast op een apparaat aan de rand |
+> | Micro soft. devices/IotHubs/configuraties/testQueries/actie | Valideert de doel voorwaarde en aangepaste metrische query's voor een configuratie |
+> | Micro soft. apparaten/IotHubs/apparaten/lezen | Een apparaat-of module-ID lezen |
+> | Micro soft. apparaten/IotHubs/apparaten/schrijven | De identiteit van een apparaat of module maken of bijwerken |
+> | Micro soft. apparaten/IotHubs/apparaten/verwijderen | Een apparaat-of module-ID verwijderen |
+> | Micro soft. devices/IotHubs/directMethods/invoke/Action | Hiermee wordt een directe methode aangeroepen op een apparaat |
+> | Micro soft. devices/IotHubs/fileUpload/meldingen/actie | Meldingen over het uploaden van bestanden ontvangen, volt ooien of afbreken |
+> | Micro soft. apparaten/IotHubs/Jobs/lezen | Een lijst met taken retour neren |
+> | Micro soft. apparaten/IotHubs/Jobs/schrijven | Een taak maken of bijwerken |
+> | Micro soft. apparaten/IotHubs/Jobs/verwijderen | Taak verwijderen |
+> | Micro soft. apparaten/IotHubs/statistieken/lezen | Statistieken voor apparaten en services lezen |
+> | Micro soft. devices/IotHubs/apparaatdubbels/lezen | Elk apparaat of elke module dubbele items lezen |
+> | Micro soft. devices/IotHubs/apparaatdubbels/schrijven | Schrijf elk apparaat of elke module op dubbele |
 
 ### <a name="microsoftdeviceupdate"></a>Micro soft. DeviceUpdate
 
@@ -7359,12 +7578,15 @@ Azure-service: [Key Vault](../key-vault/index.yml)
 > | Micro soft. de sleutel kluis/REGI ster/actie | Hiermee wordt een abonnement geregistreerd |
 > | Micro soft. sleutel kluis/registratie/actie | Registratie van een abonnement opheffen |
 > | Micro soft. checkNameAvailability/lezen | Hiermee wordt gecontroleerd of de naam van een sleutel kluis geldig is en niet wordt gebruikt |
+> | Micro soft. deletedManagedHsms/lezen | De eigenschappen van een verwijderde HSM weer geven |
 > | Microsoft.KeyVault/deletedVaults/read | De eigenschappen van voorlopig verwijderde sleutel kluizen weer geven |
 > | Micro soft. hsmPools/lezen | De eigenschappen van een HSM-groep weer geven |
 > | Micro soft. hsmPools/schrijven | Een nieuwe HSM-groep maken om de eigenschappen van een bestaande HSM-groep bij te werken |
 > | Micro soft. hsmPools/verwijderen | Een HSM-groep verwijderen |
 > | Micro soft. hsmPools/joinVault/actie | Een sleutel kluis toevoegen aan een HSM-groep |
 > | Micro soft. sleutel kluis/locaties/deleteVirtualNetworkOrSubnets/actie | Hiermee wordt aan micro soft.-sleutel kluis gemeld dat een virtueel netwerk of subnet wordt verwijderd |
+> | Micro soft. de sleutel kluis/locaties/deletedManagedHsms/lezen | De eigenschappen van een verwijderde HSM weer geven |
+> | Micro soft. sleutel kluis/locaties/deletedManagedHsms/opschonen/actie | Een voorlopig verwijderde, beheerde HSM verwijderen |
 > | Micro soft. de sleutel kluis/locaties/deletedVaults/lezen | De eigenschappen van een voorlopig verwijderde sleutel kluis weer geven |
 > | Microsoft.KeyVault/locations/deletedVaults/purge/action | Een voorlopig verwijderde sleutel kluis leegmaken |
 > | Micro soft. de sleutel kluis/locaties/operationResults/lezen | Het resultaat van een langdurige bewerking controleren |
@@ -7598,6 +7820,8 @@ Azure-service: [Azure Sentinel](../sentinel/index.yml)
 > | Micro soft. SecurityInsights/dataConnectors/lezen | Hiermee worden de gegevens connectors opgehaald |
 > | Micro soft. SecurityInsights/dataConnectors/schrijven | Hiermee wordt een gegevens connector bijgewerkt |
 > | Micro soft. SecurityInsights/dataConnectors/verwijderen | Hiermee verwijdert u een gegevens connector |
+> | Micro soft. SecurityInsights/verrijking/domein/whois/lezen | Whois-verrijking voor een domein ophalen |
+> | Micro soft. SecurityInsights/verrijking/IP/geogegevens/lezen | Geogegevens verrijking voor een IP-adres ophalen |
 > | Micro soft. SecurityInsights/entities/lezen | Hiermee wordt de grafiek van de verklikker entiteiten opgehaald |
 > | Micro soft. SecurityInsights/entities/getTimeline/actie | Hiermee wordt de entiteits tijdlijn voor een specifiek bereik opgehaald |
 > | Micro soft. SecurityInsights/entities/getInsights/actie | Hiermee wordt de entiteits inzichten voor een specifiek bereik opgehaald |
@@ -7608,6 +7832,7 @@ Azure-service: [Azure Sentinel](../sentinel/index.yml)
 > | Micro soft. SecurityInsights/incidenten/lezen | Hiermee wordt een incident opgehaald |
 > | Micro soft. SecurityInsights/incidenten/schrijven | Hiermee wordt een incident bijgewerkt |
 > | Micro soft. SecurityInsights/incidenten/verwijderen | Hiermee wordt een incident verwijderd |
+> | Micro soft. SecurityInsights/incidenten/createTeam/actie | Hiermee maakt u een micro soft-team om het incident te onderzoeken door informatie en inzichten te delen tussen deel nemers |
 > | Micro soft. SecurityInsights/incidenten/opmerkingen/lezen | Hiermee worden de opmerkingen van het incident opgehaald |
 > | Micro soft. SecurityInsights/incidenten/opmerkingen/schrijven | Hiermee wordt een opmerking gemaakt over het incident |
 > | Micro soft. SecurityInsights/incidenten/opmerkingen/verwijderen | Hiermee verwijdert u een opmerking over het incident |
@@ -9044,6 +9269,10 @@ Azure-service: [Azure monitor](../azure-monitor/index.yml)
 > | Micro soft. OperationalInsights/werk ruimten/query/DnsInventory/lezen | Gegevens uit de DnsInventory-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/DynamicEventCollection/lezen | Gegevens uit de DynamicEventCollection-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/Dynamics365Activity/lezen | Gegevens uit de Dynamics365Activity-tabel lezen |
+> | Micro soft. OperationalInsights/werk ruimten/query/EmailAttachmentInfo/lezen | Gegevens uit de EmailAttachmentInfo-tabel lezen |
+> | Micro soft. OperationalInsights/werk ruimten/query/EmailEvents/lezen | Gegevens uit de EmailEvents-tabel lezen |
+> | Micro soft. OperationalInsights/werk ruimten/query/EmailPostDeliveryEvents/lezen | Gegevens uit de EmailPostDeliveryEvents-tabel lezen |
+> | Micro soft. OperationalInsights/werk ruimten/query/EmailUrlInfo/lezen | Gegevens uit de EmailUrlInfo-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/ETWEvent/lezen | Gegevens uit de ETWEvent-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/gebeurtenis/lezen | Gegevens uit de gebeurtenis tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/ExchangeAssessmentRecommendation/lezen | Gegevens uit de ExchangeAssessmentRecommendation-tabel lezen |
@@ -9059,6 +9288,8 @@ Azure-service: [Azure monitor](../azure-monitor/index.yml)
 > | Micro soft. OperationalInsights/werk ruimten/query/HDInsightHBaseMetrics/lezen | Gegevens uit de HDInsightHBaseMetrics-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/HDInsightHiveAndLLAPLogs/lezen | Gegevens uit de HDInsightHiveAndLLAPLogs-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/HDInsightHiveAndLLAPMetrics/lezen | Gegevens uit de HDInsightHiveAndLLAPMetrics-tabel lezen |
+> | Micro soft. OperationalInsights/werk ruimten/query/HDInsightHiveQueryAppStats/lezen | Gegevens uit de HDInsightHiveQueryAppStats-tabel lezen |
+> | Micro soft. OperationalInsights/werk ruimten/query/HDInsightHiveTezAppStats/lezen | Gegevens uit de HDInsightHiveTezAppStats-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/HDInsightJupyterNotebookEvents/lezen | Gegevens uit de HDInsightJupyterNotebookEvents-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/HDInsightKafkaLogs/lezen | Gegevens uit de HDInsightKafkaLogs-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/HDInsightKafkaMetrics/lezen | Gegevens uit de HDInsightKafkaMetrics-tabel lezen |
@@ -9176,6 +9407,7 @@ Azure-service: [Azure monitor](../azure-monitor/index.yml)
 > | Micro soft. OperationalInsights/werk ruimten/query/PowerBIDatasetsWorkspace/lezen | Gegevens uit de PowerBIDatasetsWorkspace-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/PowerBIDatasetsWorkspacePreview/lezen | Gegevens uit de PowerBIDatasetsWorkspacePreview-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/ProtectionStatus/lezen | Gegevens uit de ProtectionStatus-tabel lezen |
+> | Micro soft. OperationalInsights/werk ruimten/query/PurviewScanStatusLogs/lezen | Gegevens uit de PurviewScanStatusLogs-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/aanvragen/lezen | Gegevens uit de tabel aanvragen lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/SCCMAssessmentRecommendation/lezen | Gegevens uit de SCCMAssessmentRecommendation-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/SCOMAssessmentRecommendation/lezen | Gegevens uit de SCOMAssessmentRecommendation-tabel lezen |
@@ -9617,6 +9849,7 @@ Azure-service: [Cost Management en facturering](../cost-management-billing/index
 > | Micro soft. facturering/billingAccounts/lezen |  |
 > | Micro soft. facturering/billingAccounts/listInvoiceSectionsWithCreateSubscriptionPermission/actie |  |
 > | Micro soft. facturering/billingAccounts/schrijven |  |
+> | Micro soft. facturering/billingAccounts/confirmTransition/actie |  |
 > | Micro soft. facturering/billingAccounts/billingProfiles/schrijven |  |
 > | Micro soft. facturering/billingAccounts/billingProfiles/lezen |  |
 > | Micro soft. facturering/billingAccounts/billingProfiles/schrijven |  |
@@ -9849,6 +10082,12 @@ Azure-service: [Azure-boog](../azure-arc/index.yml)
 > | Micro soft. HybridCompute/machines/patchInstallationResults/lezen | Hiermee worden alle Azure-Arc-patchInstallationResults gelezen |
 > | Micro soft. HybridCompute/machines/patchInstallationResults/softwarePatches/lezen | Hiermee worden alle Azure-Arc-patchInstallationResults/softwarePatches gelezen |
 > | Micro soft. HybridCompute/Operations/lezen | Alle bewerkingen voor Azure Arc voor servers lezen |
+> | Micro soft. HybridCompute/privateLinkScopes/lezen | Een wille keurige Azure-Arc privateLinkScopes lezen |
+> | Micro soft. HybridCompute/privateLinkScopes/schrijven | Schrijft een Azure Arc privateLinkScopes |
+> | Micro soft. HybridCompute/privateLinkScopes/verwijderen | Hiermee wordt een Azure Arc privateLinkScopes verwijderd |
+> | Micro soft. HybridCompute/privateLinkScopes/privateEndpointConnections/lezen | Een wille keurige Azure-Arc privateEndpointConnections lezen |
+> | Micro soft. HybridCompute/privateLinkScopes/privateEndpointConnections/write | Schrijft een Azure Arc privateEndpointConnections |
+> | Micro soft. HybridCompute/privateLinkScopes/privateEndpointConnections/verwijderen | Hiermee wordt een Azure Arc privateEndpointConnections verwijderd |
 
 ### <a name="microsoftkubernetes"></a>Microsoft.Kubernetes
 
@@ -10332,8 +10571,8 @@ Azure-service: [site Recovery](../site-recovery/index.yml)
 > | Micro soft. Recovery Services/kluizen/backupOperationResults/lezen | Retourneert een back-upbewerkings resultaat voor Recovery Services kluis. |
 > | Micro soft. Recovery Services/kluizen/backupOperations/lezen | Hiermee wordt de status van de back-upbewerking voor Recovery Services kluis geretourneerd. |
 > | Micro soft. Recovery Services/kluizen/backupOperationVaultGuardProxies/verwijderen | Met de bewerking VaultGuard-proxy verwijderen wordt de opgegeven Azure-resource van het type VaultGuard-proxy verwijderd |
-> | Micro soft. Recovery Services/kluizen/backupOperationVaultGuardProxies/lezen | Get VaultGuard-Proxy bewerking haalt een object op dat staat voor de Azure-resource van het type VaultGuard-proxy |
 > | Micro soft. Recovery Services/kluizen/backupOperationVaultGuardProxies/lezen | De lijst met VaultGuard-proxy's voor een resource ophalen |
+> | Micro soft. Recovery Services/kluizen/backupOperationVaultGuardProxies/lezen | Get VaultGuard-Proxy bewerking haalt een object op dat staat voor de Azure-resource van het type VaultGuard-proxy |
 > | Micro soft. Recovery Services/kluizen/backupOperationVaultGuardProxies/unlockDelete/actie | Ontgrendelen verwijderen VaultGuard Proxy bewerking Hiermee ontgrendelt u de volgende kritieke bewerking verwijderen |
 > | Micro soft. Recovery Services/kluizen/backupOperationVaultGuardProxies/schrijven | Maken van een VaultGuard-Proxy bewerking maakt een Azure-resource van het type ' VaultGuard-proxy ' |
 > | Micro soft. Recovery Services/kluizen/backupPolicies/verwijderen | Een beveiligings beleid verwijderen |

@@ -3,12 +3,12 @@ title: 'Azure-quickstart: Een event hub maken met behulp van de Azure-portal'
 description: In deze quickstart leert u hoe u met Azure Portal een Azure-event hub maakt.
 ms.topic: quickstart
 ms.date: 06/23/2020
-ms.openlocfilehash: 6bd9d247db6cd5a956ff4bce9b70f1f8a5a7499a
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: bf83c53792c4934f43e0039d092bb3e36954bf7b
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101742038"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107303114"
 ---
 # <a name="quickstart-create-an-event-hub-using-azure-portal"></a>Quickstart: Een event hub maken met behulp van Azure Portal
 Azure Event Hubs is een big data-platform voor het streamen van gegevens en een gebeurtenisopneemservice die miljoenen gebeurtenissen per seconde kan ontvangen en verwerken. Event Hubs kan gebeurtenissen, gegevens of telemetrie die wordt geproduceerd door gedistribueerde software en apparaten verwerken en opslaan. Gegevens die naar een Event Hub worden verzonden, kunnen worden omgezet en opgeslagen via een provider voor realtime analytische gegevens of batchverwerking/opslagadapters. Zie [Overzicht van Event Hubs](event-hubs-about.md) en [Functies van Event Hubs](event-hubs-features.md) voor een gedetailleerd overzicht van Event Hubs.
@@ -54,7 +54,7 @@ Een Event Hubs-naamruimte biedt een unieke scopingcontainer waarin u een of meer
    1. Selecteer de **resourcegroep** die u in de vorige stap hebt gemaakt.   
    1. Voer een **naam** in voor de naamruimte. In het systeem wordt onmiddellijk gecontroleerd of de naam beschikbaar is.  
    1. Selecteer een **locatie** voor de naamruimte.
-   1. Kies de **prijscategorie** (Basic of Standard). Zie [Prijzen van Event Hubs](https://azure.microsoft.com/pricing/details/event-hubs/), [Verschillen tussen lagen](event-hubs-faq.md#what-is-the-difference-between-event-hubs-basic-and-standard-tiers) en [Quota en limieten](event-hubs-quotas.md) voor meer informatie over enkele van de verschillen tussen de lagen Basic en Standard. 
+   1. Kies de **prijscategorie** (Basic of Standard). Zie [Prijzen van Event Hubs](https://azure.microsoft.com/pricing/details/event-hubs/), [Verschillen tussen lagen](event-hubs-faq.yml#what-is-the-difference-between-event-hubs-basic-and-standard-tiers-) en [Quota en limieten](event-hubs-quotas.md) voor meer informatie over enkele van de verschillen tussen de lagen Basic en Standard. 
    1. Laat de instellingen voor **doorvoereenheden** ongewijzigd. Doorvoereenheden zijn vooraf aangeschafte capaciteitseenheden. Zie [Schaalbaarheid van Event Hubs](event-hubs-scalability.md#throughput-units) voor meer informatie over doorvoereenheden.  
    1. Selecteer **Controleren en maken** onderaan de pagina.
       

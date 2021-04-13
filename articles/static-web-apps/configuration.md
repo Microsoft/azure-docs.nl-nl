@@ -5,14 +5,14 @@ services: static-web-apps
 author: craigshoemaker
 ms.service: static-web-apps
 ms.topic: conceptual
-ms.date: 02/18/2021
+ms.date: 04/09/2021
 ms.author: cshoe
-ms.openlocfilehash: 280c13fdee281acc4f805aba27a10277eb3988c2
-ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
+ms.openlocfilehash: 3ecd38b725307c7a3d75787795130c5106de85a7
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "106218971"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107312243"
 ---
 # <a name="configure-azure-static-web-apps"></a>Statische Azure-Web Apps configureren
 
@@ -33,7 +33,7 @@ De aanbevolen locatie voor de _staticwebapp.config.jsop_ is in de map die is ing
 Zie het [configuratie](#example-configuration-file) bestand voor het voor beeld voor meer informatie.
 
 > [!IMPORTANT]
-> De [ _routes.jsin_ het bestand](./routes.md) wordt genegeerd als er een _staticwebapp.config.jsop_ bestaat.
+> De [ _staticwebapp.config.jsin_ het bestand](./routes.md) wordt genegeerd als er een _staticwebapp.config.jsop_ bestaat.
 
 ## <a name="routes"></a>Routes
 
@@ -47,28 +47,28 @@ Met routerings regels kunt u het patroon van Url's definiëren waarmee u toegang
 
 De route ring heeft betrekking op een aanzienlijke overlap ping met verificatie (het identificeren van de gebruiker) en autorisatie (het toewijzen van mogelijkheden aan de gebruiker). Lees de hand leiding voor [verificatie en autorisatie](authentication-authorization.md) samen met dit artikel.
 
-Het standaard bestand voor statische inhoud is het *index.html* -bestand.
+Het standaard bestand voor statische inhoud is het _index.html_ -bestand.
 
 ## <a name="defining-routes"></a>Routes definiëren
 
 Elke regel bestaat uit een route patroon, samen met een of meer van de optionele regel eigenschappen. Route regels worden gedefinieerd in de `routes` matrix. Zie het [voorbeeld configuratie bestand](#example-configuration-file) voor gebruiks voorbeelden.
 
-| Regel eigenschap  | Vereist | Standaardwaarde | Opmerking                                                      |
-| -------------- | -------- | ------------- | ------------------------------------------------------------ |
-| `route`        | Ja      | n.v.t.          | Het route patroon dat is aangevraagd door de aanroeper.<ul><li>[Joker tekens](#wildcards) worden aan het einde van route paden ondersteund.<ul><li>De routerings _beheerder/ \*_ komt bijvoorbeeld overeen met een wille keurige route onder het pad van de _beheerder_ .</ul></ul>|
-| `rewrite`        | Nee       | n.v.t.          | Hiermee wordt het bestand of het pad gedefinieerd dat door de aanvraag wordt geretourneerd.<ul><li>Sluiten elkaar wederzijds uit voor een `redirect` regel<li>Herschrijf regels hebben geen invloed op de locatie van de browser.<li>De waarden moeten relatief zijn ten opzichte van de hoofdmap van de app</ul>  |
-| `redirect`        | Nee       | n.v.t.          | Hiermee wordt het bestand of pad voor het omleiden van paden voor een aanvraag gedefinieerd.<ul><li>Sluiten elkaar wederzijds uit voor een `rewrite` regel.<li>Omleidings regels wijzigen de locatie van de browser.<li>Standaard respons code is een [`302`](https://developer.mozilla.org/docs/Web/HTTP/Status/302) (tijdelijke omleiding), maar u kunt overschrijven met een [`301`](https://developer.mozilla.org/docs/Web/HTTP/Status/301) (permanente omleiding).</ul> |
-| `allowedRoles` | Nee       | toegang     | Hiermee wordt een lijst met namen van rollen gedefinieerd die zijn vereist voor toegang tot een route. <ul><li>Geldige tekens zijn `a-z`, `A-Z`, `0-9` en `_`.<li>De ingebouwde rol, [`anonymous`](./authentication-authorization.md) , is van toepassing op alle niet-geverifieerde gebruikers<li>De ingebouwde rol, [`authenticated`](./authentication-authorization.md) , is van toepassing op elke aangemelde gebruiker.<li>Gebruikers moeten deel uitmaken van ten minste één rol.<li>Rollen worden _op basis van_ elkaar vergeleken.<ul><li>Als een gebruiker zich in een van de vermelde rollen bevindt, wordt de toegang verleend.</ul><li>Afzonderlijke gebruikers zijn gekoppeld aan rollen via [uitnodigingen](authentication-authorization.md).</ul> |
-| `headers`<a id="route-headers"></a> | Nee | n.v.t. | De set [http-headers](https://developer.mozilla.org/docs/Web/HTTP/Headers) die aan het antwoord worden toegevoegd. <ul><li>Routenet teksten worden overschreven [`globalHeaders`](#global-headers) wanneer de route-specifieke header hetzelfde is als de algemene header in het antwoord.<li>Als u een koptekst wilt verwijderen, stelt u de waarde in op een lege teken reeks.</ul> |
-| `statusCode`   | Nee       | `200`, `301` , of `302` voor omleidingen | De [HTTP-status code](https://developer.mozilla.org/docs/Web/HTTP/Status) van het antwoord. |
-| `methods` | Nee | Alle methoden | Lijst met aanvraag methoden die overeenkomen met een route. Beschik bare methoden zijn: `GET` ,, `HEAD` ,,,, `POST` `PUT` `DELETE` `CONNECT` `OPTIONS` , `TRACE` en `PATCH` . |
+| Regel eigenschap                       | Vereist | Standaardwaarde                        | Opmerking                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| ----------------------------------- | -------- | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `route`                             | Yes      | n.v.t.                                  | Het route patroon dat is aangevraagd door de aanroeper.<ul><li>[Joker tekens](#wildcards) worden aan het einde van route paden ondersteund.<ul><li>De routerings _beheerder/ \*_ komt bijvoorbeeld overeen met een wille keurige route onder het pad van de _beheerder_ .</ul></ul>                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `rewrite`                           | No       | n.v.t.                                  | Hiermee wordt het bestand of het pad gedefinieerd dat door de aanvraag wordt geretourneerd.<ul><li>Sluiten elkaar wederzijds uit voor een `redirect` regel<li>Herschrijf regels hebben geen invloed op de locatie van de browser.<li>De waarden moeten relatief zijn ten opzichte van de hoofdmap van de app</ul>                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `redirect`                          | No       | n.v.t.                                  | Hiermee wordt het bestand of pad voor het omleiden van paden voor een aanvraag gedefinieerd.<ul><li>Sluiten elkaar wederzijds uit voor een `rewrite` regel.<li>Omleidings regels wijzigen de locatie van de browser.<li>Standaard respons code is een [`302`](https://developer.mozilla.org/docs/Web/HTTP/Status/302) (tijdelijke omleiding), maar u kunt overschrijven met een [`301`](https://developer.mozilla.org/docs/Web/HTTP/Status/301) (permanente omleiding).</ul>                                                                                                                                                                                                              |
+| `allowedRoles`                      | No       | toegang                            | Hiermee wordt een lijst met namen van rollen gedefinieerd die zijn vereist voor toegang tot een route. <ul><li>Geldige tekens zijn `a-z`, `A-Z`, `0-9` en `_`.<li>De ingebouwde rol, [`anonymous`](./authentication-authorization.md) , is van toepassing op alle niet-geverifieerde gebruikers<li>De ingebouwde rol, [`authenticated`](./authentication-authorization.md) , is van toepassing op elke aangemelde gebruiker.<li>Gebruikers moeten deel uitmaken van ten minste één rol.<li>Rollen worden _op basis van_ elkaar vergeleken.<ul><li>Als een gebruiker zich in een van de vermelde rollen bevindt, wordt de toegang verleend.</ul><li>Afzonderlijke gebruikers zijn gekoppeld aan rollen via [uitnodigingen](authentication-authorization.md).</ul> |
+| `headers`<a id="route-headers"></a> | No       | n.v.t.                                  | De set [http-headers](https://developer.mozilla.org/docs/Web/HTTP/Headers) die aan het antwoord worden toegevoegd. <ul><li>Routenet teksten worden overschreven [`globalHeaders`](#global-headers) wanneer de route-specifieke header hetzelfde is als de algemene header in het antwoord.<li>Als u een koptekst wilt verwijderen, stelt u de waarde in op een lege teken reeks.</ul>                                                                                                                                                                                                                                                                                          |
+| `statusCode`                        | No       | `200`, `301` , of `302` voor omleidingen | De [HTTP-status code](https://developer.mozilla.org/docs/Web/HTTP/Status) van het antwoord.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| `methods`                           | No       | Alle methoden                          | Lijst met aanvraag methoden die overeenkomen met een route. Beschik bare methoden zijn: `GET` ,, `HEAD` ,,,, `POST` `PUT` `DELETE` `CONNECT` `OPTIONS` , `TRACE` en `PATCH` .                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
 Elke eigenschap heeft een specifiek doel in de aanvraag/antwoord pijplijn.
 
-| Doel | Eigenschappen |
-|---|---|
-| Overeenkomende routes | `route`, `methods` |
-| Autoriseren nadat een route is gevonden | `allowedRoles` |
+| Doel                                        | Eigenschappen                                                                                   |
+| ---------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| Overeenkomende routes                                   | `route`, `methods`                                                                           |
+| Autoriseren nadat een route is gevonden             | `allowedRoles`                                                                               |
 | Proces nadat een regel is vergeleken en geautoriseerd | `rewrite` (aanvraag wijzigen) <br><br>`redirect`, `headers` , `statusCode` (antwoord wijzigen) |
 
 ## <a name="securing-routes-with-roles"></a>Routes beveiligen met rollen
@@ -118,7 +118,7 @@ U kunt joker tekens filteren op bestands extensie. Als u bijvoorbeeld een regel 
 ```json
 {
   "route": "/articles/*.html",
-  "headers" : {
+  "headers": {
     "Cache-Control": "public, max-age=604800, immutable"
   }
 }
@@ -171,15 +171,15 @@ In de onderstaande voorbeeld bestands structuur zijn de volgende resultaten moge
 └── index.html
 ```
 
-| Aanvragen naar... | retourneert... | met de status... |
-| --- | --- | --- |
-| *wilt* | Het bestand */index.html* | `200` |
-| */images/logo.png* | Het afbeeldings bestand  | `200` |
-| */images/icon.svg* | Het */index.html* -bestand-omdat de extensie van het *SVG* -bestand niet wordt weer gegeven in het `/images/*.{png,jpg,gif}` filter   | `200` |
-| */images/unknown.png* | Fout bestand niet gevonden  | `404` |
-| */css/unknown.css* | Fout bestand niet gevonden  | `404` |
-| */css/global.css* | Het opmaak model bestand | `200` |
-| Elk ander bestand buiten de */images* -of */CSS* -mappen | Het bestand */index.html* | `200` |
+| Aanvragen naar...                                         | retourneert...                                                                                                    | met de status... |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- | ------------------ |
+| _wilt_                                              | Het bestand _/index.html_                                                                                        | `200`              |
+| _/images/logo.png_                                     | Het afbeeldings bestand                                                                                                | `200`              |
+| _/images/icon.svg_                                     | Het _/index.html_ -bestand-omdat de extensie van het _SVG_ -bestand niet wordt weer gegeven in het `/images/*.{png,jpg,gif}` filter | `200`              |
+| _/images/unknown.png_                                  | Fout bestand niet gevonden                                                                                          | `404`              |
+| _/css/unknown.css_                                     | Fout bestand niet gevonden                                                                                          | `404`              |
+| _/css/global.css_                                      | Het opmaak model bestand                                                                                           | `200`              |
+| Elk ander bestand buiten de _/images_ -of _/CSS_ -mappen | Het bestand _/index.html_                                                                                        | `200`              |
 
 ## <a name="global-headers"></a>Algemene kopteksten
 
@@ -201,35 +201,35 @@ De `responseOverrides` sectie biedt de mogelijkheid om een aangepast antwoord te
 
 De volgende HTTP-codes kunnen worden overschreven:
 
-| Statuscode | Betekenis | Mogelijke oorzaak |
-| --- | --- | --- |
-| [400](https://developer.mozilla.org/docs/Web/HTTP/Status/400) | Ongeldige aanvraag | Ongeldige uitnodiging |
-| [401](https://developer.mozilla.org/docs/Web/HTTP/Status/401) | Niet geautoriseerd | Aanvragen voor beperkte pagina's tijdens niet-geverifieerde |
-| [403](https://developer.mozilla.org/docs/Web/HTTP/Status/403) | Verboden |<ul><li>De gebruiker is aangemeld, maar beschikt niet over de vereiste rollen om de pagina weer te geven.<li>De gebruiker is aangemeld, maar de runtime kan de gebruikers gegevens niet ophalen uit hun identiteits claims.<li>Er zijn te veel gebruikers aangemeld bij de site met aangepaste rollen, waardoor de runtime de gebruiker niet kan aanmelden.</ul> |
-| [404](https://developer.mozilla.org/docs/Web/HTTP/Status/404) | Niet gevonden | Kan het bestand niet vinden |
+| Statuscode                                                   | Betekenis      | Mogelijke oorzaak                                                                                                                                                                                                                                                                                     |
+| ------------------------------------------------------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [400](https://developer.mozilla.org/docs/Web/HTTP/Status/400) | Ongeldige aanvraag  | Ongeldige uitnodiging                                                                                                                                                                                                                                                                            |
+| [401](https://developer.mozilla.org/docs/Web/HTTP/Status/401) | Niet geautoriseerd | Aanvragen voor beperkte pagina's tijdens niet-geverifieerde                                                                                                                                                                                                                                                  |
+| [403](https://developer.mozilla.org/docs/Web/HTTP/Status/403) | Verboden    | <ul><li>De gebruiker is aangemeld, maar beschikt niet over de vereiste rollen om de pagina weer te geven.<li>De gebruiker is aangemeld, maar de runtime kan de gebruikers gegevens niet ophalen uit hun identiteits claims.<li>Er zijn te veel gebruikers aangemeld bij de site met aangepaste rollen, waardoor de runtime de gebruiker niet kan aanmelden.</ul> |
+| [404](https://developer.mozilla.org/docs/Web/HTTP/Status/404) | Niet gevonden    | Kan het bestand niet vinden                                                                                                                                                                                                                                                                                     |
 
 In de volgende voorbeeld configuratie ziet u hoe u een fout code kunt overschrijven.
 
 ```json
 {
-    "responseOverrides": {
-        "400" : {
-            "rewrite": "/invalid-invitation-error.html",
-            "statusCode": 200
-        },
-        "401": {
-            "statusCode": 302,
-            "redirect": "/login"
-        },
-        "403": {
-            "rewrite": "/custom-forbidden-page.html",
-            "statusCode": 200
-        },
-        "404": {
-            "rewrite": "/custom-404.html",
-            "statusCode": 200
-        }
+  "responseOverrides": {
+    "400": {
+      "rewrite": "/invalid-invitation-error.html",
+      "statusCode": 200
+    },
+    "401": {
+      "statusCode": 302,
+      "redirect": "/login"
+    },
+    "403": {
+      "rewrite": "/custom-forbidden-page.html",
+      "statusCode": 200
+    },
+    "404": {
+      "rewrite": "/custom-404.html",
+      "statusCode": 200
     }
+  }
 }
 ```
 
@@ -237,106 +237,106 @@ In de volgende voorbeeld configuratie ziet u hoe u een fout code kunt overschrij
 
 ```json
 {
-    "routes": [
-        {
-            "route": "/profile",
-            "allowedRoles": ["authenticated"]
-        },
-        {
-            "route": "/admin/*",
-            "allowedRoles": ["administrator"]
-        },
-        {
-            "route": "/images/*",
-            "headers": {
-                "cache-control": "must-revalidate, max-age=15770000"
-            }
-        },
-        {
-            "route": "/api/*",
-            "methods": [ "GET" ],
-            "allowedRoles": ["registeredusers"]
-        },
-        {
-            "route": "/api/*",
-            "methods": [ "PUT", "POST", "PATCH", "DELETE" ],
-            "allowedRoles": ["administrator"]
-        },
-        {
-            "route": "/api/*",
-            "allowedRoles": ["authenticated"]
-        },
-        {
-            "route": "/customers/contoso",
-            "allowedRoles": ["administrator", "customers_contoso"]
-        },
-        {
-            "route": "/login",
-            "rewrite": "/.auth/login/github"
-        },
-        {
-            "route": "/.auth/login/twitter",
-            "statusCode": 404
-        },
-        {
-            "route": "/logout",
-            "redirect": "/.auth/logout"
-        },
-        {
-            "route": "/calendar/*",
-            "rewrite": "/calendar.html"
-        },
-        {
-            "route": "/specials",
-            "redirect": "/deals",
-            "statusCode": 301
-        }
-    ],
-    "navigationFallback": {
-      "rewrite": "index.html",
-      "exclude": ["/images/*.{png,jpg,gif}", "/css/*"]
+  "routes": [
+    {
+      "route": "/profile",
+      "allowedRoles": ["authenticated"]
     },
-    "responseOverrides": {
-        "400" : {
-            "rewrite": "/invalid-invitation-error.html"
-        },
-        "401": {
-            "redirect": "/login",
-            "statusCode": 302
-        },
-        "403": {
-            "rewrite": "/custom-forbidden-page.html"
-        },
-        "404": {
-            "rewrite": "/404.html"
-        }
+    {
+      "route": "/admin/*",
+      "allowedRoles": ["administrator"]
     },
-    "globalHeaders": {
-        "content-security-policy": "default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'"
+    {
+      "route": "/images/*",
+      "headers": {
+        "cache-control": "must-revalidate, max-age=15770000"
+      }
     },
-    "mimeTypes": {
-        ".json": "text/json"
+    {
+      "route": "/api/*",
+      "methods": ["GET"],
+      "allowedRoles": ["registeredusers"]
+    },
+    {
+      "route": "/api/*",
+      "methods": ["PUT", "POST", "PATCH", "DELETE"],
+      "allowedRoles": ["administrator"]
+    },
+    {
+      "route": "/api/*",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/customers/contoso",
+      "allowedRoles": ["administrator", "customers_contoso"]
+    },
+    {
+      "route": "/login",
+      "rewrite": "/.auth/login/github"
+    },
+    {
+      "route": "/.auth/login/twitter",
+      "statusCode": 404
+    },
+    {
+      "route": "/logout",
+      "redirect": "/.auth/logout"
+    },
+    {
+      "route": "/calendar/*",
+      "rewrite": "/calendar.html"
+    },
+    {
+      "route": "/specials",
+      "redirect": "/deals",
+      "statusCode": 301
     }
+  ],
+  "navigationFallback": {
+    "rewrite": "index.html",
+    "exclude": ["/images/*.{png,jpg,gif}", "/css/*"]
+  },
+  "responseOverrides": {
+    "400": {
+      "rewrite": "/invalid-invitation-error.html"
+    },
+    "401": {
+      "redirect": "/login",
+      "statusCode": 302
+    },
+    "403": {
+      "rewrite": "/custom-forbidden-page.html"
+    },
+    "404": {
+      "rewrite": "/404.html"
+    }
+  },
+  "globalHeaders": {
+    "content-security-policy": "default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'"
+  },
+  "mimeTypes": {
+    ".json": "text/json"
+  }
 }
 ```
 
 Bekijk de volgende scenario's op basis van de bovenstaande configuratie.
 
-| Aanvragen naar... | resultaten in... |
-| --- | --- |
-| _/profile_ | Geverifieerde gebruikers worden het _/profile/index.html_ -bestand geleverd. Niet-geverifieerde gebruikers worden omgeleid naar _/login_. |
-| _/admin_ | Geverifieerde gebruikers in _de beheerdersrol_ worden het _/admin/index.html_ -bestand geleverd. Geverifieerde gebruikers die niet voor komen in de _beheerdersrol_ , worden `403` fout <sup>1</sup>behandeld. Niet-geverifieerde gebruikers worden omgeleid naar _/login_. |
-| _/logo.png_ | Fungeert als installatie kopie met een aangepaste cache regel waarbij de maximale leeftijd een beetje meer is dan 182 dagen (15.770.000 seconden). |
-| _/api/admin_ | `GET` aanvragen van geverifieerde gebruikers in de _registeredusers_ -rol worden naar de API verzonden. Geverifieerde gebruikers die niet voor komen in de _registeredusers_ -rol en niet-geverifieerde gebruikers, krijgen een `401` fout.<br/><br/>`POST`, `PUT` , `PATCH` en `DELETE` aanvragen van geverifieerde gebruikers in de _beheerdersrol_ worden verzonden naar de API. Geverifieerde _gebruikers die niet_ voor komen in de beheerdersrol en niet-geverifieerde gebruikers, krijgen een `401` fout. |
-| _/customers/contoso_ | Geverifieerde gebruikers die deel uitmaken van de rol van de _beheerder_ of _klanten \_ Contoso_ , worden het _/Customers/contoso/index.html_ -bestand geleverd. Geverifieerde gebruikers die niet voor komen in de _groep Administrators_ of _klanten \_ Contoso_ , worden `403` fout <sup>1</sup>geleverd. Niet-geverifieerde gebruikers worden omgeleid naar _/login_. |
-| _/login_ | Niet-geverifieerde gebruikers worden gevraagd om te verifiëren met GitHub. |
-| _/.auth/login/twitter_ | Als autorisatie met Twitter is uitgeschakeld door de route regel, `404` wordt er een fout geretourneerd, die terugvalt op het leveren van _/index.html_ met een `200` status code. |
-| _/logout_ | Gebruikers worden afgemeld bij een verificatie provider. |
-| _/calendar/2021/01_ | De browser wordt het bestand _/calendar.html_ geleverd. |
-| _/specials_ | De browser wordt permanent omgeleid naar _/deals_. |
-| _/data.jsop_ | Het bestand wordt geleverd met het `text/json` MIME-type. |
-| _/about_ of een map die overeenkomt met routerings patronen aan de client zijde | Het bestand _/index.html_ wordt geleverd met een `200` status code. |
-| Een niet-bestaand bestand in de map _/images/_ | Een `404` fout. |
+| Aanvragen naar...                                                    | resultaten in...                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _/profile_                                                        | Geverifieerde gebruikers worden het _/profile/index.html_ -bestand geleverd. Niet-geverifieerde gebruikers worden omgeleid naar _/login_.                                                                                                                                                                                                                                                                                                                              |
+| _/admin_                                                         | Geverifieerde gebruikers in _de beheerdersrol_ worden het _/admin/index.html_ -bestand geleverd. Geverifieerde gebruikers die niet voor komen in de _beheerdersrol_ , worden `403` fout <sup>1</sup>behandeld. Niet-geverifieerde gebruikers worden omgeleid naar _/login_.                                                                                                                                                                                                          |
+| _/logo.png_                                                       | Fungeert als installatie kopie met een aangepaste cache regel waarbij de maximale leeftijd een beetje meer is dan 182 dagen (15.770.000 seconden).                                                                                                                                                                                                                                                                                                                                   |
+| _/api/admin_                                                      | `GET` aanvragen van geverifieerde gebruikers in de _registeredusers_ -rol worden naar de API verzonden. Geverifieerde gebruikers die niet voor komen in de _registeredusers_ -rol en niet-geverifieerde gebruikers, krijgen een `401` fout.<br/><br/>`POST`, `PUT` , `PATCH` en `DELETE` aanvragen van geverifieerde gebruikers in de _beheerdersrol_ worden verzonden naar de API. Geverifieerde _gebruikers die niet_ voor komen in de beheerdersrol en niet-geverifieerde gebruikers, krijgen een `401` fout. |
+| _/customers/contoso_                                              | Geverifieerde gebruikers die deel uitmaken van de _beheerder_ of _customers_contoso_ rollen, worden het _/Customers/contoso/index.html_ -bestand geleverd. Geverifieerde gebruikers die niet voor komen in de _beheerder_ of _customers_contoso_ rollen, worden op `403` fout <sup>1</sup>afgehandeld. Niet-geverifieerde gebruikers worden omgeleid naar _/login_.                                                                                                                            |
+| _/login_                                                          | Niet-geverifieerde gebruikers worden gevraagd om te verifiëren met GitHub.                                                                                                                                                                                                                                                                                                                                                                             |
+| _/.auth/login/twitter_                                            | Als autorisatie met Twitter is uitgeschakeld door de route regel, `404` wordt er een fout geretourneerd, die terugvalt op het leveren van _/index.html_ met een `200` status code.                                                                                                                                                                                                                                                                                     |
+| _/logout_                                                         | Gebruikers worden afgemeld bij een verificatie provider.                                                                                                                                                                                                                                                                                                                                                                                          |
+| _/calendar/2021/01_                                               | De browser wordt het bestand _/calendar.html_ geleverd.                                                                                                                                                                                                                                                                                                                                                                                              |
+| _/specials_                                                       | De browser wordt permanent omgeleid naar _/deals_.                                                                                                                                                                                                                                                                                                                                                                                            |
+| _/data.jsop_                                                      | Het bestand wordt geleverd met het `text/json` MIME-type.                                                                                                                                                                                                                                                                                                                                                                                               |
+| _/about_ of een map die overeenkomt met routerings patronen aan de client zijde | Het bestand _/index.html_ wordt geleverd met een `200` status code.                                                                                                                                                                                                                                                                                                                                                                                    |
+| Een niet-bestaand bestand in de map _/images/_                     | Een `404` fout.                                                                                                                                                                                                                                                                                                                                                                                                                                |
 
 <sup>1</sup> u kunt een aangepaste fout pagina opgeven met behulp van een regel voor het overschrijven van een [antwoord](#response-overrides).
 

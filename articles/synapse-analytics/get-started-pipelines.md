@@ -10,25 +10,28 @@ ms.service: synapse-analytics
 ms.subservice: pipeline
 ms.topic: tutorial
 ms.date: 12/31/2020
-ms.openlocfilehash: 2ea7c3c440fcf95e4512464333efe8461788bceb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 22631cfd872ed226fc78a97d38c423fbc300f78e
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98219399"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107304711"
 ---
 # <a name="integrate-with-pipelines"></a>Integreren met pijplijnen
 
 In deze zelfstudie leert u hoe u pijplijnen en activiteiten kunt integreren met behulp van Synapse Studio. 
 
-## <a name="overview"></a>Overzicht
+## <a name="create-a-pipeline-and-add-a-notebook-activity"></a>Een pijp lijn maken en een notitieblok activiteit toevoegen
 
-U kunt een groot aantal verschillende taken in Azure Synapse integreren.
+
 
 1. Ga in Synapse Studio naar de hub **Integreren**.
 1. Selecteer **+**  > **Pijplijn** om een nieuwe pijplijn te maken. Klik op het nieuwe pijplijn object om de ontwerp functie voor pijp lijnen te openen.
 1. Vouw onder **activiteiten** de map **Synapse** uit en sleep een **notebook** -object naar de ontwerp functie.
-1. Selecteer het tabblad **instellingen** van de eigenschappen van de notitieblok activiteit. Gebruik de vervolg keuzelijst om een notitie blok in uw huidige Synapse-werk ruimte te selecteren. 
+1. Selecteer het tabblad **instellingen** van de eigenschappen van de notitieblok activiteit. Gebruik de vervolg keuzelijst om een notitie blok in uw huidige Synapse-werk ruimte te selecteren.
+
+## <a name="schedule-the-pipeline-to-run-every-hour"></a>Plannen dat de pijp lijn elk uur wordt uitgevoerd
+
 1. Selecteer in de pijplijn **Trigger toevoegen** > **Nieuw/bewerken**.
 1. In **Trigger kiezen** selecteert u **Nieuw** en stelt u **Terugkeerpatroon** in op Elk uur.
 1. Selecteer **OK**. 

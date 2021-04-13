@@ -1,22 +1,22 @@
 ---
 title: 'Snelstart: VOIP-oproepen toevoegen aan een web-app met behulp van Azure Communication Services'
-description: In deze zelf studie leert u hoe u de Azure Communication Services roept SDK voor Java script
+description: In deze zelfstudie leert u hoe u de Azure Communication Services Calling SDK voor JavaScript gebruikt
 author: ddematheu
 ms.author: nimag
 ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: be6ff629a651af5cc06d7928c7972f07aa0fd6e2
-ms.sourcegitcommit: c6a2d9a44a5a2c13abddab932d16c295a7207d6a
+ms.openlocfilehash: a93fe6c6203140bfed3771da8353ea7843b7694f
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "107291374"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107327007"
 ---
-In deze Snelstartgids leert u hoe u een gesprek start met behulp van de Azure Communication Services-SDK voor Java script.
+In deze quickstart leert u hoe u een aanroep start met behulp van de Azure Communication Services Calling SDK voor JavaScript.
 
 > [!NOTE]
-> In dit document wordt versie 1.0.0-Beta. 10 van de aanroepende SDK gebruikt.
+> In dit document wordt versie 1.0.0-beta.10 van de SDK voor oproepen gebruikt.
 
 
 ## <a name="prerequisites"></a>Vereisten
@@ -88,18 +88,18 @@ const hangUpButton = document.getElementById("hang-up-button");
 
 ## <a name="object-model"></a>Objectmodel
 
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services-aanroepende SDK:
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services Calling SDK:
 
 | Naam                             | Beschrijving                                                                                                                                 |
 | ---------------------------------| ------------------------------------------------------------------------------------------------------------------------------------------- |
-| CallClient                       | De CallClient is het belangrijkste ingangs punt voor de aanroepende SDK.                                                                       |
+| CallClient                       | De CallClient is het belangrijkste toegangspunt voor de aanroepende SDK.                                                                       |
 | CallAgent                        | De CallAgent wordt gebruikt om oproepen te starten en te beheren.                                                                                            |
-| AzureCommunicationTokenCredential | De klasse AzureCommunicationTokenCredential implementeert de CommunicationTokenCredential-interface die wordt gebruikt om de CallAgent te instantiëren. |
+| AzureCommunicationTokenCredential | De klasse AzureCommunicationTokenCredential implementeert de CommunicationTokenCredential-interface die wordt gebruikt om de CallAgent te instanteren. |
 
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
-U moet een geldig token voor gebruikers toegang invoeren voor uw resource in het tekst veld en op verzenden klikken. Raadpleeg de documentatie inzake [Token voor gebruikerstoegang](../../access-tokens.md) als u nog geen token hebt. Met behulp van de `CallClient`initialiseert u een `CallAgent`-instantie met een `CommunicationTokenCredential` waarmee we oproepen kunnen doen en ontvangen. Voeg de volgende code toe aan **client.js**:
+U moet een geldig token voor gebruikerstoegang voor uw resource invoeren in het tekstveld en op Verzenden klikken. Raadpleeg de documentatie inzake [Token voor gebruikerstoegang](../../access-tokens.md) als u nog geen token hebt. Met behulp van de `CallClient`initialiseert u een `CallAgent`-instantie met een `CommunicationTokenCredential` waarmee we oproepen kunnen doen en ontvangen. Voeg de volgende code toe aan **client.js**:
 
 ```javascript
 submitToken.addEventListener("click", async () => {
@@ -165,3 +165,7 @@ Open uw browser en ga naar http://localhost:8080/. U ziet nu het volgende:
 :::image type="content" source="../media/javascript/calling-javascript-app-2.png" alt-text="Schermopname van de voltooide JavaScript-toepassing.":::
 
 U kunt een uitgaande VOIP-oproep maken door een gebruikers-ID op te geven in het tekstveld en te klikken op de knop **Oproep starten**. Door `8:echo123` te bellen, wordt u verbonden met een echo-bot. Dit is handig om aan de slag te gaan en te controleren of uw audio-apparaten werken.
+
+## <a name="sample-code"></a>Voorbeeldcode
+
+U kunt de voorbeeld-app downloaden van [Github](https://github.com/Azure-Samples/communication-services-javascript-quickstarts/tree/main/add-1-on-1-voice-calling).

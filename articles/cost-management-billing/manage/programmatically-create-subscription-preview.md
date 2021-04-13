@@ -9,12 +9,12 @@ ms.date: 11/17/2020
 ms.reviewer: andalmia
 ms.author: banders
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: b524869998dd2464ed359ec61ce655a807899aaa
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: 9f20659e772f6321f4d3953f0e55192c833e78b9
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102565713"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107310579"
 ---
 # <a name="programmatically-create-azure-subscriptions-with-preview-apis"></a>Programmatisch Azure-abonnementen maken met preview-API's
 
@@ -365,7 +365,7 @@ POST https://management.azure.com<invoiceSectionId>/providers/Microsoft.Subscrip
 | `skuId` | Ja      | Tekenreeks | De SKU-id die het type het Azure-plan bepaalt. |
 | `owners`      | Nee       | Tekenreeks | De object-id van een gebruiker of service-principal die moet worden toegevoegd als Azure RBAC-eigenaar voor het abonnement wanneer het wordt gemaakt.  |
 | `costCenter` | Nee      | Tekenreeks | Kostenplaats die aan het abonnement is gekoppeld. Deze wordt weergegeven in het CSV-bestand voor het gebruik. |
-| `managementGroupId` | Nee      | Tekenreeks | De id van de beheergroep waaraan het abonnement wordt toegevoegd. Zie [Beheergroepen - Lijst-API](/rest/api/resources/managementgroups/list) voor een lijst met beheergroepen. Gebruik de id van een beheergroep van de API. |
+| `managementGroupId` | Nee      | Tekenreeks | De id van de beheergroep waaraan het abonnement wordt toegevoegd. Zie [Beheergroepen - Lijst-API](/rest/api/managementgroups/entities/list) voor een lijst met beheergroepen. Gebruik de id van een beheergroep van de API. |
 
 In de respons krijgt u een `subscriptionCreationResult`-object terug voor bewaking. Wanneer het abonnement is gemaakt, retourneert het `subscriptionCreationResult`-object een `subscriptionLink`-object, dat de abonnement-id bevat.
 

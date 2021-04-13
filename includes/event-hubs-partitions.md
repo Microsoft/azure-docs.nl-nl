@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/15/2021
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 2cb203a00bb00767126f95e1fdc2f5aff8990f01
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1dd78ba3799573e05e4ebbf55887bae3d9674b7c
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103601271"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107310071"
 ---
 Event Hubs organiseert de volg orde van de gebeurtenissen die naar een Event Hub worden verzonden in een of meer partities. Als er nieuwere gebeurtenissen plaatsvinden, worden deze toegevoegd aan het einde van deze reeks. 
 
@@ -32,7 +32,7 @@ Event Hubs is ontworpen om te helpen bij het verwerken van grote hoeveelheden ge
 ### <a name="number-of-partitions"></a>Aantal partities
 Het aantal partities wordt opgegeven bij het maken en moet voor Event Hubs Standard tussen 1 en 32 liggen. Het aantal partities kan in Event Hubs Dedicated maximaal 2000 partities per capaciteitseenheid zijn. 
 
-We raden u aan om ten minste zoveel partities te kiezen als u verwacht nodig te hebben voor aanhoudende [doorvoereenheden (TU's)](../articles/event-hubs/event-hubs-faq.md#what-are-event-hubs-throughput-units) tijdens piekbelasting van uw toepassing voor die specifieke Event Hub. U moet er rekening mee houden dat één partitie een doorvoercapaciteit heeft van 1 TU (1 MB ingaand, 2 MB uitgaand). U kunt de schaal van uw TU's aanpassen aan uw naamruimte of de capaciteitseenheden van uw cluster, onafhankelijk van het aantal partities. Een Event Hub met 32 partities of een Event Hub met één partitie genereren exact dezelfde kosten als de naamruimte is ingesteld op een capaciteit van één TU. 
+We raden u aan om ten minste zoveel partities te kiezen als u verwacht nodig te hebben voor aanhoudende [doorvoereenheden (TU's)](../articles/event-hubs/event-hubs-faq.yml#what-are-event-hubs-throughput-units-) tijdens piekbelasting van uw toepassing voor die specifieke Event Hub. U moet er rekening mee houden dat één partitie een doorvoercapaciteit heeft van 1 TU (1 MB ingaand, 2 MB uitgaand). U kunt de schaal van uw TU's aanpassen aan uw naamruimte of de capaciteitseenheden van uw cluster, onafhankelijk van het aantal partities. Een Event Hub met 32 partities of een Event Hub met één partitie genereren exact dezelfde kosten als de naamruimte is ingesteld op een capaciteit van één TU. 
 
 Het aantal partities van een Event Hub in een [toegewezen Event Hubs-cluster](../articles/event-hubs/event-hubs-dedicated-overview.md) kan worden [verhoogd](../articles/event-hubs/dynamically-add-partitions.md) nadat de Event Hub is gemaakt, maar de distributie van stromen over partities verandert als deze klaar is, omdat de toewijzing van partitiesleutels aan partities verandert. U kunt dus het beste proberen om dergelijke wijzigingen zoveel mogelijk te vermijden als de relatieve volgorde van gebeurtenissen in uw toepassing van belang is.
 

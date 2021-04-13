@@ -4,19 +4,19 @@ titleSuffix: Azure Digital Twins
 description: Zie een model maken, bewerken en verwijderen in azure Digital Apparaatdubbels.
 author: baanders
 ms.author: baanders
-ms.date: 3/12/2020
+ms.date: 4/07/2021
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 75911e91bb61b84d2e9315421f794739f2b5088b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3c896e2aad7dae8d03b26e2a16ecb96224ab547b
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104953694"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107303753"
 ---
 # <a name="manage-azure-digital-twins-models"></a>Azure Digital Apparaatdubbels-modellen beheren
 
-U kunt de [modellen](concepts-models.md) beheren die uw Azure Digital apparaatdubbels-exemplaar kent over het gebruik van de [**DigitalTwinModels-api's**](/rest/api/digital-twins/dataplane/models), de [.net (C#) SDK](/dotnet/api/overview/azure/digitaltwins/client)of de [Azure Digital apparaatdubbels cli](how-to-use-cli.md). 
+U kunt de [modellen](concepts-models.md) van uw Azure Digital apparaatdubbels-exemplaar beheren met behulp van de [**DigitalTwinModels-api's**](/rest/api/digital-twins/dataplane/models), de [.net (C#) SDK](/dotnet/api/overview/azure/digitaltwins/client)of de [Azure Digital apparaatdubbels cli](how-to-use-cli.md). 
 
 Beheer bewerkingen zijn onder andere uploaden, valideren, ophalen en verwijderen van modellen. 
 

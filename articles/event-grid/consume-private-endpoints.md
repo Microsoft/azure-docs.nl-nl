@@ -3,12 +3,12 @@ title: Gebeurtenissen leveren met behulp van een persoonlijke koppelings service
 description: In dit artikel wordt beschreven hoe u de beperking van het gebruik van een persoonlijke koppelings service kunt omzeilen.
 ms.topic: how-to
 ms.date: 02/12/2021
-ms.openlocfilehash: 9df78e1cc7734ba9e455ed686286658006f9445e
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 75ae8ff2c341048c39156e43da3615788e9d0f0a
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105629288"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107309428"
 ---
 # <a name="deliver-events-using-private-link-service"></a>Gebeurtenissen leveren met behulp van een persoonlijke koppelings service
 Het is momenteel niet mogelijk om gebeurtenissen te leveren met behulp van [persoonlijke eind punten](../private-link/private-endpoint-overview.md). Dat wil zeggen dat er geen ondersteuning is als u strikte vereisten voor netwerk isolatie hebt waarbij het verkeer van de geleverde gebeurtenissen de privé-IP-ruimte niet mag verlaten. 
@@ -36,7 +36,7 @@ Voer de volgende stappen uit om gebeurtenissen te leveren aan Event hubs in uw E
 Ga als volgt te werk om gebeurtenissen te Service Bus die wacht rijen of onderwerpen in uw Service Bus naam ruimte gebruiken met behulp van beheerde identiteit:
 
 1. Door het systeem toegewezen identiteit inschakelen: [systeem onderwerpen](enable-identity-system-topics.md), [aangepaste onderwerpen en domeinen](enable-identity-custom-topics-domains.md). 
-1. [De identiteit toevoegen aan de **Azure Service Bus gegevens afzender**](/service-bus-messaging/service-bus-managed-service-identity#azure-built-in-roles-for-azure-service-bus) -rol op de service bus naam ruimte
+1. [De identiteit toevoegen aan de **Azure Service Bus gegevens afzender**](../service-bus-messaging/service-bus-managed-service-identity.md#azure-built-in-roles-for-azure-service-bus) -rol op de service bus naam ruimte
 1. [Schakel de optie **vertrouwde micro soft-services mogen deze firewall** instelling overs laan voor uw service bus naam ruimte](../service-bus-messaging/service-bus-service-endpoints.md#trusted-microsoft-services)in. 
 1. [Configureer het gebeurtenis abonnement](managed-service-identity.md) dat gebruikmaakt van een service bus wachtrij of onderwerp als een eind punt om de door het systeem toegewezen identiteit te gebruiken.
 

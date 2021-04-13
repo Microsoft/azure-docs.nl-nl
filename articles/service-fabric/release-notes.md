@@ -5,16 +5,16 @@ ms.date: 06/10/2019
 ms.topic: conceptual
 hide_comments: true
 hideEdit: true
-ms.openlocfilehash: 36fb512181986fd04a95e72aa028b7c0253aa45f
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: f7e929000b85462e7fabf6d717c52abc454b47ad
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105731221"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107313331"
 ---
 # <a name="service-fabric-releases"></a>Service Fabric releases
 
-- <a href="https://github.com/Azure/Service-Fabric-Troubleshooting-Guides" target="blank">Richt lijnen voor probleem oplossing</a> 
+- <a href="https://github.com/Azure/Service-Fabric-Troubleshooting-Guides" target="blank">Gidsen voor probleemoplossing</a> 
 - <a href="https://github.com/Azure/service-fabric-issues" target="blank">Bijhouden van problemen</a> 
 - <a href="/azure/service-fabric/service-fabric-support" target="blank">Ondersteuningsopties</a> 
 - <a href="/azure/service-fabric/service-fabric-versions" target="blank">Ondersteunde versies</a> 
@@ -22,11 +22,40 @@ ms.locfileid: "105731221"
 
 In dit artikel vindt u meer informatie over de nieuwste releases en updates voor de Service Fabric runtime en Sdk's.
 
-## <a name="service-fabric-72"></a>Service Fabric 7,2
+## <a name="service-fabric-80"></a>Service Fabric 8,0
 
-Met trots kondigen we aan dat 7,2-versie van de Service Fabric runtime is begonnen met het implementeren van de verschillende Azure-regio's, samen met hulpprogram ma's en SDK-updates. De updates voor .NET SDK, Java SDK en Service Fabric runtime zijn beschikbaar via het installatie programma voor het web platform, NuGet-pakketten en Maven-opslag plaatsen.
+Met trots kondigen we aan dat 8,0-versie van de Service Fabric runtime is begonnen met het implementeren van de verschillende Azure-regio's, samen met hulpprogram ma's en SDK-updates. De updates voor .NET SDK, Java SDK en Service Fabric runtime zijn beschikbaar via het installatie programma voor het web platform, NuGet-pakketten en Maven-opslag plaatsen.
 
 ### <a name="key-announcements"></a>Belang rijke aankondigingen
+
+- **Algemene Beschik baarheid** van ondersteuning voor .net 5 voor Windows
+- **Algemene Beschik baarheid** van [stateless NodeTypes](https://docs.microsoft.com/azure/service-fabric/service-fabric-stateless-node-types)
+- Mogelijkheid om stateless service-instanties te verplaatsen
+- Mogelijkheid om geparametriseerde DefaultLoad toe te voegen aan het toepassings manifest
+- Voor het bijwerken van Singleton replica's: de mogelijkheid om sommige instellingen op cluster niveau te definiëren op toepassings niveau
+- Mogelijkheid voor slimme plaatsing op basis van knooppunt Tags
+- Mogelijkheid om percentage drempelwaarde van beschadigde knoop punten te definiëren die van invloed zijn op de cluster status
+- Mogelijkheid om query's uit de bovenste geladen Services op te vragen
+- Mogelijkheid om een nieuw interval voor nieuwe fout codes toe te voegen
+- Mogelijkheid om service-exemplaar als voltooid te markeren
+- Ondersteuning voor implementatie model op basis van Wave voor automatische upgrades
+- De gereedheids test voor container toepassingen is toegevoegd
+- UseSeparateSecondaryMoveCost standaard op waar instellen
+- Vaste StateManager om de referentie op te heffen zodra deze veilig is voor vrijgave
+- Verwijderen van de service voor centraal geheim tijdens het opslaan van gebruikers geheimen blok keren
+
+
+### <a name="service-fabric-80-releases"></a>Service Fabric 8,0 releases
+| Releasedatum | Release | Meer informatie |
+|---|---|---|
+| 08 april 2021 | [Azure Service Fabric 8,0](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-8-0-release/ba-p/2260016)  | [Releaseopmerkingen](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service_Fabric_ReleaseNotes_80.md)|
+
+
+## <a name="previous-versions"></a>Vorige versies
+
+### <a name="service-fabric-72"></a>Service Fabric 7,2
+
+#### <a name="key-announcements"></a>Belang rijke aankondigingen
 
 - **Voor beeld**: [**service Fabric beheerde clusters**](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-managed-clusters-are-now-in-public-preview/ba-p/1721572) zijn nu beschikbaar als open bare preview. Service Fabric beheerde clusters zijn gericht op het vereenvoudigen van het implementeren en beheren van clusters door de onderliggende resources die samen een Service Fabric cluster vormen, in te kapselen in één ARM-resource. Zie [service Fabric Managed cluster Overview](./overview-managed-cluster.md)(Engelstalig) voor meer informatie.
 - **Voor beeld**: [**ondersteuning voor stateless Services met een aantal exemplaren dat groter is dan het aantal knoop punten**](./service-fabric-cluster-resource-manager-advanced-placement-rules-placement-policies.md) is nu beschikbaar als open bare preview. Met een plaatsings beleid kan meerdere stateless instanties van een partitie op een knoop punt worden gemaakt.
@@ -40,7 +69,7 @@ Met trots kondigen we aan dat 7,2-versie van de Service Fabric runtime is begonn
 - **RunToCompletion**: Service Fabric ondersteunt het concept van Run to completion voor uitvoer bare gast bestanden. Als deze update eenmaal is uitgevoerd, worden de cluster resources die zijn toegewezen aan deze replica, vrijgegeven.
 - [**Ondersteuning van resource governance is verbeterd**](./service-fabric-resource-governance.md): aanvragen en limieten voor de CPU-en geheugen resources worden toegestaan.
 
-### <a name="service-fabric-72-releases"></a>Service Fabric 7,2 releases
+#### <a name="service-fabric-72-releases"></a>Service Fabric 7,2 releases
 | Releasedatum | Release | Meer informatie |
 |---|---|---|
 | 21 oktober 2020 | [Azure Service Fabric 7,2](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-2-release/ba-p/1805653)  | [Releaseopmerkingen](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-72-releasenotes.md)|
@@ -51,7 +80,6 @@ Met trots kondigen we aan dat 7,2-versie van de Service Fabric runtime is begonn
 | 17 februari 2021 | [Release van de zesde vernieuwing van Azure Service Fabric 7,2](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-sixth-refresh-release/ba-p/2144685) | [Releaseopmerkingen](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-72CU6-ReleaseNotes.md)
 | 10 maart 2021 | [Release van de zevende vernieuwing van Azure Service Fabric 7,2](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-seventh-refresh-release/ba-p/2201100) | [Releaseopmerkingen](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-72CU7-releasenotes.md)
 
-## <a name="previous-versions"></a>Vorige versies
 
 ### <a name="service-fabric-71"></a>Service Fabric 7,1
 

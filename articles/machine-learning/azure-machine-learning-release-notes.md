@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 02/18/2021
-ms.openlocfilehash: 13ef91af5f7ed8398e3d23400fa5e9df467ce6bc
-ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
+ms.openlocfilehash: 7c22381d547029aedc5965d07033e8800fcbddc3
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2021
-ms.locfileid: "107210891"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107313144"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
@@ -145,7 +145,7 @@ __RSS-feed__: ontvang een melding wanneer deze pagina wordt bijgewerkt door de v
 ### <a name="azure-machine-learning-studio-notebooks-experience-february-update"></a>Ervaring met Azure Machine Learning Studio notitie blokken (update voor februari)
 + **Nieuwe functies**
   + [Systeem eigen terminal (ga)](./how-to-access-terminal.md). Gebruikers hebben nu toegang tot een geïntegreerde Terminal en een Git-bewerking via de geïntegreerde Terminal.
-  + [Notitieblok fragmenten (preview-versie)](https://azure.github.io/azureml-web/docs/vs-code-snippets/snippets). Algemene code fragmenten van Azure ML zijn nu beschikbaar in uw hand bereik. Navigeer naar het paneel code fragmenten dat toegankelijk is via de werk balk of Activeer het menu met code fragmenten met Ctrl + spatie.  
+  + Notitieblok fragmenten (preview-versie). Algemene code fragmenten van Azure ML zijn nu beschikbaar in uw hand bereik. Navigeer naar het paneel code fragmenten dat toegankelijk is via de werk balk of Activeer het menu met code fragmenten met Ctrl + spatie.  
   + [Sneltoetsen](./how-to-run-jupyter-notebooks.md#useful-keyboard-shortcuts). Volledige pariteit met sneltoetsen die beschikbaar zijn in Jupyter. 
   + Geef de para meters van de cel aan. Toont gebruikers die cellen in een notitie blok zijn parameter cellen en kunnen notitie blokken met para meters uitvoeren via [Papermill](https://github.com/nteract/papermill) op het reken proces.
   + Terminal en kernel Session Manager: gebruikers kunnen alle kernels en Terminal sessies beheren die op hun Compute worden uitgevoerd.

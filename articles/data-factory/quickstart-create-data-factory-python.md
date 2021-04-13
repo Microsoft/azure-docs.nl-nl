@@ -7,14 +7,14 @@ ms.reviewer: jburchel
 ms.service: data-factory
 ms.devlang: python
 ms.topic: quickstart
-ms.date: 04/06/2021
+ms.date: 04/12/2021
 ms.custom: seo-python-october2019, devx-track-python
-ms.openlocfilehash: 50e29262b609887d91c43ea8f012fad0c7a35ee2
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.openlocfilehash: 879ca169604dcd61a79db4ec3ca937289dacdd9b
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106449270"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107309846"
 ---
 # <a name="quickstart-create-a-data-factory-and-pipeline-using-python"></a>Quickstart: Een data factory en pijplijn maken met behulp van Python
 
@@ -40,7 +40,7 @@ Pijplijnen kunnen gegevens uit verschillende gegevensopslagplaatsen opnemen. Pij
 
 * [Azure Storage Explorer](https://storageexplorer.com/) (optioneel).
 
-* [Een app in Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal). Noteer de volgende waarden voor gebruik in latere stappen: **app-id**, **verificatiesleutel** en **tenant-id**. Wijs de app toe aan de rol **Inzender** door de instructies in hetzelfde artikel te volgen.
+* [Een app in Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal). Noteer de volgende waarden voor gebruik in latere stappen: **app-id**, **verificatiesleutel** en **tenant-id**. Wijs de app toe aan de rol **Inzender** door de instructies in hetzelfde artikel te volgen. Noteer de volgende waarden in het artikel die u in latere stappen moet gebruiken: **toepassings-id (Service-Principal-id hieronder), verificatie sleutel (client geheim hieronder) en Tenant-id.**
 
 ## <a name="create-and-upload-an-input-file"></a>Een invoerbestand maken en uploaden
 
@@ -225,6 +225,9 @@ U definieert een gegevensset die de brongegevens in Azure Blob vertegenwoordigt.
         rg_name, df_name, dsOut_name, dsOut_azure_blob)
     print_item(dsOut)
 ```
+ > [!NOTE] 
+ > Als u para meters wilt door geven aan de pijp lijn, voegt u deze toe aan de JSON-teken reeks params_for_pipeline hieronder weer gegeven in de notatie **{"ParameterName1": "ParameterValue1"}** voor elk van de para meters die nodig zijn in de pijp lijn. Om para meters door te geven aan een gegevens stroom, maakt u een pijplijn parameter voor de parameter naam/-waarde en gebruikt u vervolgens de pijplijn parameter in de para meter gegevensstroom in de notatie **@pipeline (). para meters. para meter naam.**
+
 
 ## <a name="create-a-pipeline"></a>Een pijplijn maken
 

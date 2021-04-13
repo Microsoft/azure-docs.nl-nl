@@ -3,12 +3,12 @@ title: Wat is Azure Relay? | Microsoft Docs
 description: In dit artikel vindt u een overzicht van Azure Relay, een service die is bedoeld voor het ontwikkelen van cloudtoepassingen die on-premises services verbruiken die worden uitgevoerd in uw bedrijfsnetwerk zonder dat er een firewallverbinding hoeft te worden geopend of uw netwerkinfrastructuur ingrijpend hoeft te worden gewijzigd.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: fbf1b2134a4c2dce7a3e6a62668d0852dc08c18a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3b222942394b8a83e6f5d4447aa9ccfb33cdec21
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97955379"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107314198"
 ---
 # <a name="what-is-azure-relay"></a>Wat is Azure Relay?
 De Azure Relay-service stelt u in staat om services die worden uitgevoerd in uw bedrijfsnetwerk op een veilige manier aan te bieden aan de openbare cloud. U kunt dit doen zonder een poort in de firewall te openen of de infrastructuur van het bedrijfsnetwerk ingrijpend te wijzigen. 
@@ -80,5 +80,5 @@ Het volgende diagram laat zien hoe binnenkomende relay-aanvragen worden verwerkt
 * [Aan de slag met .NET HTTP Requests](relay-hybrid-connections-http-requests-dotnet-get-started.md)
 * [Aan de slag met Node WebSockets](relay-hybrid-connections-node-get-started.md)
 * [Aan de slag met Node HTTP Requests](relay-hybrid-connections-http-requests-node-get-started.md)
-* [Veelgestelde vragen over Relay](relay-faq.md)
+* [Veelgestelde vragen over Relay](relay-faq.yml)
 

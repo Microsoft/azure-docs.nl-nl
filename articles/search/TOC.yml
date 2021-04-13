@@ -420,7 +420,7 @@
               href: search-security-get-encryption-keys.md
         - name: Binnenkomende beveiliging
           items:
-            - name: API-toegangssleutels
+            - name: API-sleutel verificatie
               href: search-security-api-keys.md
             - name: Een IP-firewall configureren
               href: service-configure-firewall.md

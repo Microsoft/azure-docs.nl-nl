@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: conceptual
-ms.date: 03/05/2021
+ms.date: 04/12/2021
 ms.author: victorh
-ms.openlocfilehash: adbc2a9eb6cd3b054df84911604143ddb711ad20
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e08be08f2d898b017bb34ed38c9c3a69ee0582fa
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102499132"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107312974"
 ---
 # <a name="azure-firewall-active-ftp-support"></a>Ondersteuning voor Active FTP Azure Firewall
 
@@ -20,6 +20,12 @@ Met Active FTP initieert de FTP-server de gegevens verbinding met de toegewezen 
 
 Active FTP-ondersteuning is standaard uitgeschakeld op Azure Firewall voor beveiliging tegen FTP-aanvallen met de FTP- `PORT` opdracht. U kunt Active FTP echter inschakelen wanneer u implementeert met behulp van Azure PowerShell, de Azure CLI of een Azure ARM-sjabloon.
 
+Voor de ondersteuning van de actieve modus FTP moeten de volgende TCP-poorten worden geopend:
+
+- Poort 21 van FTP-server vanaf elke locatie (client initieert verbinding)
+- Poort 21 van FTP-server tot poorten > 1023 (server reageert op besturings poort van client)
+- Poort 20 van FTP-server tot poorten > 1023 op clients (server initieert gegevens verbinding naar de gegevens poort van de client)
+- Poort 20 van de FTP-server van poorten > 1023 op clients (client verzendt naar de gegevens poort van de server)
 
 ## <a name="azure-powershell"></a>Azure PowerShell
 

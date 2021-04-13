@@ -1,6 +1,6 @@
 ---
-title: 'Snelstartgids: Image Analysis-client bibliotheek voor .NET'
-description: In deze Snelstartgids gaat u aan de slag met de Image Analysis-client bibliotheek voor .NET.
+title: 'Quickstart: Clientbibliotheek voor afbeeldingsanalyse voor .NET'
+description: In deze quickstart gaat u aan de slag met de image analysis-clientbibliotheek voor .NET.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -9,16 +9,16 @@ ms.subservice: computer-vision
 ms.topic: include
 ms.date: 03/29/2021
 ms.author: pafarley
-ms.openlocfilehash: 2b5828df0c0f29de04acfd87faf39c6392217ea7
-ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
+ms.openlocfilehash: 407ef167ca05f08d349a017c60164e2fe67977a6
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107073406"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107327251"
 ---
 <a name="HOLTop"></a>
 
-Gebruik de client bibliotheek voor afbeeldings analyse om een afbeelding te analyseren voor Tags, tekst beschrijving, gezichten, inhoud voor volwassenen en meer.
+Gebruik de clientbibliotheek voor afbeeldingsanalyse om een afbeelding te analyseren op tags, tekstbeschrijving, gezichten, inhoud voor volwassenen en meer.
 
 [Referentiedocumentatie](/dotnet/api/overview/azure/cognitiveservices/client/computervision) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Vision.ComputerVision) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.ComputerVision/) | [Voorbeelden](https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=vision&sort=0)
 
@@ -40,7 +40,7 @@ Maak met behulp van Visual Studio een nieuwe .NET Core-toepassing.
 
 ### <a name="install-the-client-library"></a>De clientbibliotheek installeren 
 
-Nadat u een nieuw project hebt gemaakt, installeert u de clientbibliotheek door in **Solution Explorer** met de rechtermuisknop op de projectoplossing te klikken en **NuGet-pakketten beheren** te selecteren. Selecteer in de package manager die wordt geopend de optie **Bladeren**, schakel **Prerelease opnemen** in en zoek naar `Microsoft.Azure.CognitiveServices.Vision.ComputerVision`. Selecteer versie `6.0.0-preview.1` en vervolgens **Installeren**. 
+Nadat u een nieuw project hebt gemaakt, installeert u de clientbibliotheek door in **Solution Explorer** met de rechtermuisknop op de projectoplossing te klikken en **NuGet-pakketten beheren** te selecteren. Selecteer in de package manager die wordt geopend de optie **Bladeren**, schakel **Prerelease opnemen** in en zoek naar `Microsoft.Azure.CognitiveServices.Vision.ComputerVision`. Selecteer versie `7.0.0` en vervolgens **Installeren**. 
 
 #### <a name="cli"></a>[CLI](#tab/cli)
 
@@ -71,7 +71,7 @@ Build succeeded.
 Installeer in de toepassingsmap de Computer Vision-clientbibliotheek voor .NET met de volgende opdracht:
 
 ```console
-dotnet add package Microsoft.Azure.CognitiveServices.Vision.ComputerVision --version 6.0.0
+dotnet add package Microsoft.Azure.CognitiveServices.Vision.ComputerVision --version 7.0.0
 ```
 
 ---
@@ -104,7 +104,7 @@ Voeg in de methode `Main` van de toepassing aanroepen toe voor de methoden die i
 
 ## <a name="object-model"></a>Objectmodel
 
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de .NET SDK voor installatie kopieën.
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Image Analysis .NET SDK.
 
 |Naam|Beschrijving|
 |---|---|
@@ -114,7 +114,7 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 
 ## <a name="code-examples"></a>Codevoorbeelden
 
-Deze code fragmenten laten zien hoe u de volgende taken kunt uitvoeren met de installatie kopie-client bibliotheek voor .NET:
+Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de Image Analysis-clientbibliotheek voor .NET:
 
 * [De client verifiëren](#authenticate-the-client)
 * [Een afbeelding analyseren](#analyze-an-image)
@@ -124,7 +124,7 @@ Deze code fragmenten laten zien hoe u de volgende taken kunt uitvoeren met de in
 > [!NOTE]
 > In deze quickstart wordt ervan uitgegaan dat u [omgevingsvariabelen hebt gemaakt](../../../cognitive-services-apis-create-account.md#configure-an-environment-variable-for-authentication) voor uw Computer Vision-sleutel en -eindpunt, respectievelijk met de naam `COMPUTER_VISION_SUBSCRIPTION_KEY` en `COMPUTER_VISION_ENDPOINT`.
 
-In een nieuwe methode in de klasse **Program** kunt u een client instantiëren met uw eind punt en sleutel. Maak een **[ApiKeyServiceClientCredentials](/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.apikeyserviceclientcredentials)** -object met uw sleutel en maak hiermee en met uw eindpunt een **[ComputerVisionClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.computervisionclient)** -object.
+In een nieuwe methode in de **klasse Program** maakt u een client met uw eindpunt en sleutel. Maak een **[ApiKeyServiceClientCredentials](/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.apikeyserviceclientcredentials)** -object met uw sleutel en maak hiermee en met uw eindpunt een **[ComputerVisionClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.computervisionclient)** -object.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ComputerVision/ComputerVisionQuickstart.cs?name=snippet_auth)]
 
@@ -214,7 +214,7 @@ Met de volgende code worden de gedetecteerde kleurkenmerken in de afbeelding afg
 
 ### <a name="get-domain-specific-content"></a>Domeinspecifieke inhoud ophalen
 
-Image analyse kan gespecialiseerde modellen gebruiken om verdere analyse van installatie kopieën uit te voeren. Zie [Domeinspecifieke inhoud](../../concept-detecting-domain-content.md) voor meer informatie. 
+Afbeeldingsanalyse kan gespecialiseerde modellen gebruiken om verdere analyse van afbeeldingen uit te voeren. Zie [Domeinspecifieke inhoud](../../concept-detecting-domain-content.md) voor meer informatie. 
 
 Met de volgende code worden gegevens over gedetecteerde beroemdheden in de afbeelding geparseerd.
 
@@ -260,11 +260,11 @@ Als u een Cognitive Services-abonnement wilt opschonen en verwijderen, kunt u de
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze Quick Start hebt u geleerd hoe u de installatie kopie-client bibliotheek kunt installeren en elementaire installatie kopieën kunt aanroepen. Vervolgens leest u meer over de API-functies voor analyse.
+In deze quickstart hebt u geleerd hoe u de image analysis-clientbibliotheek installeert en eenvoudige aanroepen voor afbeeldingsanalyse maakt. Hierna krijgt u meer informatie over de functies van De API analyseren.
 
 
 > [!div class="nextstepaction"]
->[De analyse-API aanroepen](../../Vision-API-How-to-Topics/HowToCallVisionAPI.md)
+>[De Analyse-API aanroepen](../../Vision-API-How-to-Topics/HowToCallVisionAPI.md)
 
-* [Overzicht van image analyse](../../overview-image-analysis.md)
+* [Overzicht van afbeeldingsanalyse](../../overview-image-analysis.md)
 * De broncode voor dit voorbeeld is te vinden op [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/ComputerVision/ComputerVisionQuickstart.cs).

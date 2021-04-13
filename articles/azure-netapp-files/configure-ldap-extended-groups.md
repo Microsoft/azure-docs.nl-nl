@@ -12,22 +12,24 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 04/08/2021
+ms.date: 04/09/2021
 ms.author: b-juche
-ms.openlocfilehash: 9edf8c6eca223ece8728f9868ee9fe310c517ca9
-ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
+ms.openlocfilehash: 2546236399853f3ed6fad9e07e031edb568fbfe9
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "107259707"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107311529"
 ---
 # <a name="configure-adds-ldap-with-extended-groups-for-nfs-volume-access"></a>Configureren voegt LDAP toe met uitgebreide groepen voor NFS-volume toegang
 
-Wanneer u [een NFS-volume maakt](azure-netapp-files-create-volumes.md), hebt u de mogelijkheid om de functie LDAP met uitgebreide groepen (de **LDAP** -optie) in te scha kelen voor het volume. Met deze functie kunnen Active Directory LDAP-gebruikers en uitgebreide groepen (Maxi maal 1024 groepen) toegang krijgen tot het volume.  
+Wanneer u [een NFS-volume maakt](azure-netapp-files-create-volumes.md), hebt u de mogelijkheid om de functie LDAP met uitgebreide groepen (de **LDAP** -optie) in te scha kelen voor het volume. Met deze functie kunnen Active Directory LDAP-gebruikers en uitgebreide groepen (Maxi maal 1024 groepen) toegang krijgen tot het volume. U kunt de functie LDAP met uitgebreide groepen gebruiken met zowel NFSv 4.1-als NFSv3-volumes. 
 
 In dit artikel worden de overwegingen en stappen beschreven voor het inschakelen van LDAP met uitgebreide groepen wanneer u een NFS-volume maakt.  
 
 ## <a name="considerations"></a>Overwegingen
+
+* LDAP met uitgebreide groepen wordt alleen ondersteund met Active Directory Domain Services (toevoegen) of Azure Active Directory Domain Services (AADDS). OpenLDAP of andere LDAP-adreslijst services van derden worden niet ondersteund. 
 
 * LDAP via TLS moet *niet* zijn ingeschakeld als u Azure Active Directory Domain Services (AADDS) gebruikt.  
 
@@ -69,6 +71,9 @@ In dit artikel worden de overwegingen en stappen beschreven voor het inschakelen
 
 2. Voor LDAP-volumes is een Active Directory configuratie vereist voor LDAP-server instellingen. Volg de instructies in [vereisten voor Active Directory verbindingen](create-active-directory-connections.md#requirements-for-active-directory-connections) en [Maak een Active Directory verbinding](create-active-directory-connections.md#create-an-active-directory-connection) om Active Directory verbindingen te configureren op de Azure Portal.  
 
+    > [!NOTE]
+    > Zorg ervoor dat u de instellingen voor de Active Directory-verbinding hebt geconfigureerd. Er wordt een machine account gemaakt in de organisatie-eenheid (OE) die is opgegeven in de Active Directory Verbindings instellingen. De instellingen worden door de LDAP-client gebruikt om te verifiëren bij uw Active Directory.
+
 3. Zorg ervoor dat de Active Directory LDAP-server op de Active Directory actief is. 
 
 4. LDAP NFS-gebruikers moeten bepaalde POSIX-kenmerken hebben op de LDAP-server. Stel de kenmerken voor LDAP-gebruikers en LDAP-groepen als volgt in: 
@@ -82,7 +87,7 @@ In dit artikel worden de overwegingen en stappen beschreven voor het inschakelen
 
     ![Active Directory kenmerk editor](../media/azure-netapp-files/active-directory-attribute-editor.png) 
 
-5. Als u een met LDAP geïntegreerde Linux-client wilt configureren, raadpleegt u [een NFS-client configureren voor Azure NetApp files](configure-nfs-clients.md).
+5. Als u een met LDAP geïntegreerde NFSv 4.1 Linux-client wilt configureren, raadpleegt u [een NFS-client configureren voor Azure NetApp files](configure-nfs-clients.md).
 
 6.  Volg de stappen in [een NFS-volume maken voor Azure NetApp files](azure-netapp-files-create-volumes.md) om een NFS-volume te maken. Schakel tijdens het proces voor het maken van het volume, onder het tabblad **protocol** , de optie **LDAP** in.   
 

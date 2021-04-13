@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/15/2021
 ms.custom: IoT Plug and Play Certification Requirements
 ms.service: certification
-ms.openlocfilehash: bbe9a3f18463285521dde0ee64b369cffcd71d75
-ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
+ms.openlocfilehash: b26fab6f8b92e3cb996f545f1f6201d32b1eaced
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105969182"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107310509"
 ---
 # <a name="iot-plug-and-play-certification-requirements"></a>Vereisten voor IoT Plug en Play-certificering
 
@@ -51,7 +51,7 @@ Promise van IoT Plug en Play-certificering zijn:
 | **Besturingssysteem**                  | Agnostisch                                                     |
 | **Validatie type**     | Geautomatiseerd                                                    |
 | **Validatie**          | Het apparaat moet een eenvoudige overdracht van de identiteit van het DPS-ID-bereik implementeren zonder dat de Inge sloten code opnieuw moet worden gecompileerd. Micro soft biedt de [Portal werk stroom](https://certify.azure.com) voor het uitvoeren van de tests om te valideren dat het apparaat DPS **1 ondersteunt.** De gebruiker moet een van de Attestation-methoden (X. 509, TPM en SAS-sleutel) **2 selecteren.** Afhankelijk van de Attestation-methode moet de gebruiker overeenkomstige actie ondernemen, zoals **een)** upload X. 509-certificaat naar AICS beheerd DPS **-Scope b)** Implementeer SAS-sleutel of goedkeurings sleutel in het apparaat |
-| **Bronnen**           | **a)** [Device Provisioning Service-overzicht](../iot-dps/about-iot-dps.md), **b)** [voor beeld van een configuratie bestand voor DPS id-overdracht](https://github.com/Azure/azure-iot-sdk-c/tree/public-preview-pnp/digitaltwin_client/samples/digitaltwin_sample_ll_device/sample_config) |
+| **Bronnen**           | **a)** [Device Provisioning Service-overzicht](../iot-dps/about-iot-dps.md), **b)** [voor beeld van een configuratie bestand voor DPS id-overdracht](https://github.com/Azure/azure-iot-sdk-c/tree/public-preview-pnp/serializer/samples/devicetwin_simplesample) |
 
 **Lang DTDL v2: het doel van de test om te controleren of gedefinieerde modellen en interfaces voor het apparaat compatibel zijn met de Digital Apparaatdubbels Definition Language v2.**                                                              
 
@@ -95,7 +95,7 @@ Promise van IoT Plug en Play-certificering zijn:
 | **Van toepassing op**          | Elk apparaat                                                   |
 | **Besturingssysteem**                  | Agnostisch                                                     |
 | **Validatie type**     | Geautomatiseerd                                                    |
-| **Validatie**          | Met de [Portal werk stroom](https://certify.azure.com) wordt gecontroleerd of de apparaatcode de [apparaatgegevens interface](https://repo.azureiotrepository.com/Models/dtmi:azure:DeviceManagement:DeviceInformation;1?api-version=2020-05-01-previewureiot:DeviceManagement:DeviceInformation:1) **1** implementeert. Controleert of de waarden worden verzonden door de apparaatcode naar IoT Hub **2.** Controleert of de interface is geïmplementeerd in de DCM (deze implementatie wordt gewijzigd in DTDL v2) **3.** De controle-eigenschappen kunnen niet worden geschreven (alleen-lezen) **4.** Hiermee wordt gecontroleerd of het schema type teken reeks is en/of lang en niet Null |
+| **Validatie**          | Met de [Portal werk stroom](https://certify.azure.com) wordt gecontroleerd of de apparaatcode de apparaatgegevens Interface 1 implementeert **.** Controleert of de waarden worden verzonden door de apparaatcode naar IoT Hub **2.** Controleert of de interface is geïmplementeerd in de DCM (deze implementatie wordt gewijzigd in DTDL v2) **3.** De controle-eigenschappen kunnen niet worden geschreven (alleen-lezen) **4.** Hiermee wordt gecontroleerd of het schema type teken reeks is en/of lang en niet Null |
 | **Bronnen**           | [Door micro soft gedefinieerde interface](../iot-pnp/overview-iot-plug-and-play-preview-updates.md) |
 | **Aanbevolen door Azure**  | N.v.t.                                                          |
 

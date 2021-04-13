@@ -7,22 +7,22 @@ ms.topic: reference
 ms.workload: identity
 author: rolyon
 ms.author: rolyon
-ms.date: 03/15/2021
+ms.date: 04/09/2021
 ms.custom: generated
-ms.openlocfilehash: ba5340fdc12bf3141c5e3f24b6b9d178a5db600d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4e559ea1e531e2d472faeef60ebc6d528da0cfd0
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104602516"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107307925"
 ---
 # <a name="azure-built-in-roles"></a>Ingebouwde Azure-rollen
 
-[Toegangs beheer op basis van rollen (Azure RBAC) van](overview.md) Azure heeft verschillende ingebouwde rollen van Azure die u kunt toewijzen aan gebruikers, groepen, service-principals en beheerde identiteiten. Roltoewijzingen zijn de manier waarop u de toegang tot Azure-resources beheert. Als de ingebouwde rollen niet voldoen aan de specifieke behoeften van uw organisatie, kunt u uw eigen [aangepaste Azure-rollen](custom-roles.md) maken.
+[Toegangs beheer op basis van rollen (Azure RBAC) van](overview.md) Azure heeft verschillende ingebouwde rollen van Azure die u kunt toewijzen aan gebruikers, groepen, service-principals en beheerde identiteiten. Roltoewijzingen zijn de manier waarop u de toegang tot Azure-resources beheert. Als de ingebouwde rollen niet voldoen aan de specifieke behoeften van uw organisatie, kunt u uw eigen [aangepaste Azure-rollen](custom-roles.md) maken. Zie [stappen voor het toewijzen van een Azure-rol](role-assignments-steps.md)voor meer informatie over het toewijzen van rollen.
 
-Dit artikel bevat een overzicht van de ingebouwde rollen van Azure, die altijd in ontwikkeling zijn. Gebruik de lijst met [Get-AzRoleDefinition](/powershell/module/az.resources/get-azroledefinition) of [AZ Role definition](/cli/azure/role/definition#az-role-definition-list)om de nieuwste rollen op te halen. Als u op zoek bent naar beheerders rollen voor Azure Active Directory (Azure AD), raadpleegt u [machtigingen voor beheerdersrol in azure Active Directory](../active-directory/roles/permissions-reference.md).
+Dit artikel bevat een overzicht van de ingebouwde rollen van Azure. Als u op zoek bent naar beheerders rollen voor Azure Active Directory (Azure AD), raadpleegt u [ingebouwde rollen van Azure AD](../active-directory/roles/permissions-reference.md).
 
-De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouwde rol. Klik op de naam van de rol om de lijst met `Actions` ,, `NotActions` `DataActions` en `NotDataActions` voor elke rol weer te geven. Zie [begrippen van Azure-functies begrijpen](role-definitions.md)voor informatie over wat deze acties betekenen en hoe deze van toepassing zijn op het beheer-en gegevens abonnement.
+De volgende tabel bevat een korte beschrijving van elke ingebouwde rol. Klik op de naam van de rol om de lijst met `Actions` ,, `NotActions` `DataActions` en `NotDataActions` voor elke rol weer te geven. Zie [begrippen van Azure-functies begrijpen](role-definitions.md)voor informatie over wat deze acties betekenen en hoe deze van toepassing zijn op het beheer-en gegevens abonnement.
 
 ## <a name="all"></a>Alles
 
@@ -77,6 +77,7 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | **Web** |  |  |
 > | [Inzender voor Azure Maps gegevens](#azure-maps-data-contributor) | Hiermee wordt toegang verleend tot lees-, schrijf-en verwijder toegang om gerelateerde gegevens vanuit een Azure Maps-account toe te wijzen. | 8f5e0ce6-4f7b-4dcf-bddf-e6f48634a204 |
 > | [Gegevens lezer Azure Maps](#azure-maps-data-reader) | Hiermee wordt toegang verleend om gerelateerde gegevens te lezen vanuit een Azure Maps-account. | 423170ca-a8f6-4b0f-8487-9e4eb8f49bfa |
+> | [Azure lente Cloud gegevens lezer](#azure-spring-cloud-data-reader) | Lees toegang tot Azure lente-Cloud gegevens toestaan | b5537268-8956-4941-a8f0-646150406f0c |
 > | [Inzender Search Service](#search-service-contributor) | Hiermee kunt u zoek services beheren, maar niet de toegang tot ze. | 7ca78c08-252a-4471-8644-bb5ff32d4ba0 |
 > | [Signaal/AccessKey-lezer](#signalr-accesskey-reader) | Toegangs sleutels voor de seingevings service lezen | 04165923-9d83-45d5-8227-78b77b0a687e |
 > | [Seingevings app-server (preview-versie)](#signalr-app-server-preview) | Hiermee wordt uw app server-toegangs signaal service met AAD-verificatie opties. | 420fcaa2-552c-430f-98ca-3264be4806c7 |
@@ -181,6 +182,7 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | **Beveiliging** |  |  |
 > | [Bijdrager aan verklaring](#attestation-contributor) | Kan de Attestation-provider instantie lezen of verwijderen | bbf86eb8-f7b4-4cce-96e4-18cddf81d86e |
 > | [Attestation-lezer](#attestation-reader) | Kan de eigenschappen van de Attestation-provider lezen | fd1bd22b-8476-40bc-a0bc-69b95687b9f3 |
+> | [Bijdrager voor Azure Sentinel Automation](#azure-sentinel-automation-contributor) | Bijdrager voor Azure Sentinel Automation | f4c81013-99ee-4d62-a7ee-b3f1f648599a |
 > | [Azure Sentinel Contributor](#azure-sentinel-contributor) | Azure Sentinel Contributor | ab8e14d6-4a74-4a29-9ba8-549422addade |
 > | [Azure Sentinel Reader](#azure-sentinel-reader) | Azure Sentinel Reader | 8d289c81-5878-46d4-8554-54e1e3d8b5cb |
 > | [Azure Sentinel Responder](#azure-sentinel-responder) | Azure Sentinel Responder | 3e150937-b8fe-4cfb-8069-0eaf05ecd056 |
@@ -213,9 +215,14 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Automation-taak operator](#automation-job-operator) | Maak en beheer taken met behulp van Automation-Runbooks. | 4fe576fe-1146-4730-92eb-48519fa6bf9f |
 > | [Automation-operator](#automation-operator) | Automatiserings operatoren kunnen taken starten, stoppen, onderbreken en hervatten | d3881f73-407a-4167-8283-e981cbba0404 |
 > | [Automation-Runbook-operator](#automation-runbook-operator) | Runbook-eigenschappen lezen: om taken van het Runbook te kunnen maken. | 5fb5aef8-1081-4b8e-bb16-9d5d0385bab5 |
+> | [Gebruikersrol Azure Arc enabled Kubernetes-cluster](#azure-arc-enabled-kubernetes-cluster-user-role) | Geef de gebruikers referenties voor de cluster lijst op. | 00493d72-78f6-4148-b6c5-d3ce8e4799dd |
+> | [Azure Arc Kubernetes-beheerder](#azure-arc-kubernetes-admin) | Hiermee kunt u alle resources beheren onder cluster/naam ruimte, behalve voor het bijwerken of verwijderen van resource quota's en naam ruimten. | dffb1e0c-446f-4dde-a09f-99eb5cc68b96 |
+> | [Azure Arc Kubernetes-Cluster beheer](#azure-arc-kubernetes-cluster-admin) | Hiermee kunt u alle resources in het cluster beheren. | 8393591c-06b9-48a2-a542-1bd6b377f6a2 |
+> | [Viewer voor Azure Arc Kubernetes](#azure-arc-kubernetes-viewer) | Hiermee kunt u alle resources in het cluster of de naam ruimte weer geven, behalve geheimen. | 63f0a09d-1495-4db4-a681-037d84835eb4 |
+> | [Kubernetes schrijver van Azure Arc](#azure-arc-kubernetes-writer) | Hiermee kunt u alles in cluster-en naam ruimte, met uitzonde ring van cluster rollen en (cluster)-functie bindingen, bijwerken. | 5b999177-9696-4545-85c7-50de3797e5a1 |
 > | [Onboarding van met Azure verbonden computer](#azure-connected-machine-onboarding) | Kan onboarding van met Azure verbonden computers uitvoeren. | b64e21ea-ac4e-4cdf-9dc9-5b892992bee7 |
 > | [Resource beheerder van Azure Connected machine](#azure-connected-machine-resource-administrator) | Kan met Azure verbonden computers lezen, schrijven, verwijderen en onboarden. | cd570a14-e51a-42ad-bac8-bafd67325302 |
-> | [Facturerings lezer](#billing-reader) | Hiermee staat u lees toegang tot facturerings gegevens toe | fa23ad8b-c56e-40d8-ac0c-ce449e1d2c64 |
+> | [Lezer voor facturering](#billing-reader) | Hiermee staat u lees toegang tot facturerings gegevens toe | fa23ad8b-c56e-40d8-ac0c-ce449e1d2c64 |
 > | [Blauwdrukinzender](#blueprint-contributor) | Blauwdrukinzenders kunnen blauwdrukdefinities beheren, maar deze niet toewijzen. | 41077137-e803-4205-871c-5a86e6a753b4 |
 > | [Blauwdrukoperator](#blueprint-operator) | Kan bestaande gepubliceerde blauw drukken toewijzen, maar kan geen nieuwe blauw drukken maken. Houd er rekening mee dat dit alleen werkt als de toewijzing wordt uitgevoerd met een door de gebruiker toegewezen beheerde identiteit. | 437d2ced-4a38-4302-8479-ed2bcb43d090 |
 > | [Inzender Cost Management](#cost-management-contributor) | Kan kosten bekijken en kosten configuratie beheren (bijvoorbeeld budgetten, exports) | 434105ed-43f6-45c7-a02f-909b2ba83430 |
@@ -230,7 +237,7 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Lezer beheer groep](#management-group-reader) | Rol van lezer van beheer groep | ac63b705-f282-497d-ac71-919bf39d939d |
 > | [Nieuwe Inzender voor Relic APM-account](#new-relic-apm-account-contributor) | Hiermee kunt u New Relic Application Performance Management accounts en-toepassingen beheren, maar niet de toegang tot ze. | 5d28c62d-5b37-4476-8438-e587778df237 |
 > | [Policy Insights Data Writer (preview-versie)](#policy-insights-data-writer-preview) | Hiermee wordt lees toegang tot bron beleid en schrijf toegang tot bron onderdeel beleids gebeurtenissen toegestaan. | 66bb4e9e-b016-4a94-8249-4c0511c2be84 |
-> | [Rol van operator voor quotum aanvragen](#quota-request-operator-role) | Lees en maak quota aanvragen, haal de status van de quotum aanvraag op en maak ondersteunings tickets. | 0e5f05e5-9ab9-446b-b98d-1e2157c94125 |
+> | [Operator voor quotum aanvragen](#quota-request-operator) | Lees en maak quota aanvragen, haal de status van de quotum aanvraag op en maak ondersteunings tickets. | 0e5f05e5-9ab9-446b-b98d-1e2157c94125 |
 > | [Reserve ring-verkoper](#reservation-purchaser) | Hiermee kunt u reserve ringen kopen | f7b75c60-3036-4b75-91c3-6b41c27c1689 |
 > | [Inzender voor resourcebeleid](#resource-policy-contributor) | Gebruikers met rechten voor het maken/wijzigen van het resource beleid, het maken van een ondersteunings ticket en het lezen van resources/hiërarchie. | 36243c78-bf99-498c-9df9-86d9f8d28608 |
 > | [Site Recovery-inzender](#site-recovery-contributor) | Hiermee kunt u Site Recovery-service beheren, behalve het maken van een kluis en roltoewijzing | 6670b86e-a3f7-4917-ac9b-5d6ab1be4567 |
@@ -2732,6 +2739,45 @@ Hiermee wordt toegang verleend om gerelateerde gegevens te lezen vanuit een Azur
 }
 ```
 
+### <a name="azure-spring-cloud-data-reader"></a>Azure lente Cloud gegevens lezer
+
+Lees toegang tot Azure lente-Cloud gegevens toestaan [meer informatie](../spring-cloud/how-to-access-data-plane-azure-ad-rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | *geen* |  |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | [Micro soft. AppPlatform](resource-provider-operations.md#microsoftappplatform)/Spring/*/Read |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Allow read access to Azure Spring Cloud Data",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/b5537268-8956-4941-a8f0-646150406f0c",
+  "name": "b5537268-8956-4941-a8f0-646150406f0c",
+  "permissions": [
+    {
+      "actions": [],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.AppPlatform/Spring/*/read"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Azure Spring Cloud Data Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
 ### <a name="search-service-contributor"></a>Inzender Search Service
 
 Hiermee kunt u zoek services beheren, maar niet de toegang tot ze. [Meer informatie](../search/search-security-rbac.md)
@@ -2970,6 +3016,8 @@ Volledige toegang tot REST Api's van de Azure signalerings service
 > | **NotActions** |  |
 > | *geen* |  |
 > | **DataActions** |  |
+> | [Micro soft. SignalRService](resource-provider-operations.md#microsoftsignalrservice)/SignalR/auth/accessKey/Action | Een tijdelijke AccessKey voor het ondertekenen van ClientTokens genereren. |
+> | [Micro soft. SignalRService](resource-provider-operations.md#microsoftsignalrservice)/SignalR/auth/clientToken/Action | Genereer een ClientToken voor het starten van een client verbinding. |
 > | [Micro soft. SignalRService](resource-provider-operations.md#microsoftsignalrservice)/SignalR/hub/Send/Action | Berichten broadcasten naar alle client verbindingen in hub. |
 > | [Micro soft. SignalRService](resource-provider-operations.md#microsoftsignalrservice)/SignalR/Group/Send/Action | Broadcast bericht naar groep. |
 > | [Micro soft. SignalRService](resource-provider-operations.md#microsoftsignalrservice)/SignalR/Group/Read | Controleer of de groep bestaat of de gebruiker in de groep bestaat. |
@@ -2979,7 +3027,7 @@ Volledige toegang tot REST Api's van de Azure signalerings service
 > | [Micro soft. SignalRService](resource-provider-operations.md#microsoftsignalrservice)/SignalR/clientConnection/write | Sluit de client verbinding. |
 > | [Micro soft. SignalRService](resource-provider-operations.md#microsoftsignalrservice)/SignalR/User/Send/Action | Berichten naar de gebruiker verzenden die kunnen bestaan uit meerdere client verbindingen. |
 > | [Micro soft. SignalRService](resource-provider-operations.md#microsoftsignalrservice)/SignalR/User/Read | Controleer de aanwezigheid van de gebruiker. |
-> | [Micro soft. SignalRService](resource-provider-operations.md#microsoftsignalrservice)/SignalR/User/write |  |
+> | [Micro soft. SignalRService](resource-provider-operations.md#microsoftsignalrservice)/SignalR/User/write | Een gebruiker wijzigen. |
 > | **NotDataActions** |  |
 > | *geen* |  |
 
@@ -2996,6 +3044,8 @@ Volledige toegang tot REST Api's van de Azure signalerings service
       "actions": [],
       "notActions": [],
       "dataActions": [
+        "Microsoft.SignalRService/SignalR/auth/accessKey/action",
+        "Microsoft.SignalRService/SignalR/auth/clientToken/action",
         "Microsoft.SignalRService/SignalR/hub/send/action",
         "Microsoft.SignalRService/SignalR/group/send/action",
         "Microsoft.SignalRService/SignalR/group/read",
@@ -7758,6 +7808,51 @@ Kan de eigenschappen van de Attestation-provider lezen [meer informatie](../atte
 }
 ```
 
+### <a name="azure-sentinel-automation-contributor"></a>Bijdrager voor Azure Sentinel Automation
+
+[Meer informatie over](../sentinel/roles.md) de Azure Sentinel Automation-bijdrager
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. Logic](resource-provider-operations.md#microsoftlogic)/workflows/triggers/Read | Hiermee leest u de trigger. |
+> | [Micro soft. Logic](resource-provider-operations.md#microsoftlogic)/workflows/triggers/listCallbackUrl/Action | Hiermee wordt de call back-URL opgehaald voor de trigger. |
+> | [Micro soft. Logic](resource-provider-operations.md#microsoftlogic)/workflows/runs/Read | Hiermee wordt de uitvoering van de werk stroom gelezen. |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Azure Sentinel Automation Contributor",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/f4c81013-99ee-4d62-a7ee-b3f1f648599a",
+  "name": "f4c81013-99ee-4d62-a7ee-b3f1f648599a",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Logic/workflows/triggers/read",
+        "Microsoft.Logic/workflows/triggers/listCallbackUrl/action",
+        "Microsoft.Logic/workflows/runs/read"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Azure Sentinel Automation Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
 ### <a name="azure-sentinel-contributor"></a>Azure Sentinel Contributor
 
 Azure Sentinel contributor [meer informatie](../sentinel/roles.md)
@@ -9484,6 +9579,449 @@ Runbook-eigenschappen lezen: om taken van het Runbook te kunnen maken. [Meer inf
 }
 ```
 
+### <a name="azure-arc-enabled-kubernetes-cluster-user-role"></a>Gebruikersrol Azure Arc enabled Kubernetes-cluster
+
+Geef de gebruikers referenties voor de cluster lijst op.
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/write | Hiermee wordt een implementatie gemaakt of bijgewerkt. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/operationresults/Read | De resultaten van de abonnements bewerking ophalen. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/Read | Hiermee wordt de lijst met abonnementen opgehaald. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/listClusterUserCredentials/Action | Lijst met clusterUser-referenties |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "List cluster user credentials action.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/00493d72-78f6-4148-b6c5-d3ce8e4799dd",
+  "name": "00493d72-78f6-4148-b6c5-d3ce8e4799dd",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Resources/deployments/write",
+        "Microsoft.Resources/subscriptions/operationresults/read",
+        "Microsoft.Resources/subscriptions/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Kubernetes/connectedClusters/listClusterUserCredentials/action",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Azure Arc Enabled Kubernetes Cluster User Role",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="azure-arc-kubernetes-admin"></a>Azure Arc Kubernetes-beheerder
+
+Hiermee kunt u alle resources beheren onder cluster/naam ruimte, behalve voor het bijwerken of verwijderen van resource quota's en naam ruimten. [Meer informatie](../azure-arc/kubernetes/azure-rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/write | Hiermee wordt een implementatie gemaakt of bijgewerkt. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/operationresults/Read | De resultaten van de abonnements bewerking ophalen. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/Read | Hiermee wordt de lijst met abonnementen opgehaald. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/apps/controllerrevisions/Read | Controllerrevisions lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/apps/daemonsets/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/apps/Deployments/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/apps/replicasets/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/apps/statefulsets/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Authorization.K8S.io/localsubjectaccessreviews/write | Schrijft localsubjectaccessreviews |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/AutoScaling/horizontalpodautoscalers/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/batch/cronjobs/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/batch/jobs/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/configmaps/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/endpoints/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Events.K8S.io/Events/Read | Gebeurtenissen lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Events/Read | Gebeurtenissen lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Extensions/daemonsets/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Extensions/Deployments/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Extensions/ingresses/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Extensions/networkpolicies/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Extensions/replicasets/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/limitranges/Read | Limitranges lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/namespaces/Read | Naam ruimten lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Networking.K8S.io/ingresses/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Networking.K8S.io/networkpolicies/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/persistentvolumeclaims/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/pods/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Policy/poddisruptionbudgets/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/RBAC.Authorization.K8S.io/rolebindings/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/RBAC.Authorization.K8S.io/roles/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/replicationcontrollers/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/replicationcontrollers/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/resourcequotas/Read | Resourcequotas lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Secrets/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/serviceaccounts/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Services/* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Lets you manage all resources under cluster/namespace, except update or delete resource quotas and namespaces.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/dffb1e0c-446f-4dde-a09f-99eb5cc68b96",
+  "name": "dffb1e0c-446f-4dde-a09f-99eb5cc68b96",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Resources/deployments/write",
+        "Microsoft.Resources/subscriptions/operationresults/read",
+        "Microsoft.Resources/subscriptions/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.Kubernetes/connectedClusters/apps/controllerrevisions/read",
+        "Microsoft.Kubernetes/connectedClusters/apps/daemonsets/*",
+        "Microsoft.Kubernetes/connectedClusters/apps/deployments/*",
+        "Microsoft.Kubernetes/connectedClusters/apps/replicasets/*",
+        "Microsoft.Kubernetes/connectedClusters/apps/statefulsets/*",
+        "Microsoft.Kubernetes/connectedClusters/authorization.k8s.io/localsubjectaccessreviews/write",
+        "Microsoft.Kubernetes/connectedClusters/autoscaling/horizontalpodautoscalers/*",
+        "Microsoft.Kubernetes/connectedClusters/batch/cronjobs/*",
+        "Microsoft.Kubernetes/connectedClusters/batch/jobs/*",
+        "Microsoft.Kubernetes/connectedClusters/configmaps/*",
+        "Microsoft.Kubernetes/connectedClusters/endpoints/*",
+        "Microsoft.Kubernetes/connectedClusters/events.k8s.io/events/read",
+        "Microsoft.Kubernetes/connectedClusters/events/read",
+        "Microsoft.Kubernetes/connectedClusters/extensions/daemonsets/*",
+        "Microsoft.Kubernetes/connectedClusters/extensions/deployments/*",
+        "Microsoft.Kubernetes/connectedClusters/extensions/ingresses/*",
+        "Microsoft.Kubernetes/connectedClusters/extensions/networkpolicies/*",
+        "Microsoft.Kubernetes/connectedClusters/extensions/replicasets/*",
+        "Microsoft.Kubernetes/connectedClusters/limitranges/read",
+        "Microsoft.Kubernetes/connectedClusters/namespaces/read",
+        "Microsoft.Kubernetes/connectedClusters/networking.k8s.io/ingresses/*",
+        "Microsoft.Kubernetes/connectedClusters/networking.k8s.io/networkpolicies/*",
+        "Microsoft.Kubernetes/connectedClusters/persistentvolumeclaims/*",
+        "Microsoft.Kubernetes/connectedClusters/pods/*",
+        "Microsoft.Kubernetes/connectedClusters/policy/poddisruptionbudgets/*",
+        "Microsoft.Kubernetes/connectedClusters/rbac.authorization.k8s.io/rolebindings/*",
+        "Microsoft.Kubernetes/connectedClusters/rbac.authorization.k8s.io/roles/*",
+        "Microsoft.Kubernetes/connectedClusters/replicationcontrollers/*",
+        "Microsoft.Kubernetes/connectedClusters/replicationcontrollers/*",
+        "Microsoft.Kubernetes/connectedClusters/resourcequotas/read",
+        "Microsoft.Kubernetes/connectedClusters/secrets/*",
+        "Microsoft.Kubernetes/connectedClusters/serviceaccounts/*",
+        "Microsoft.Kubernetes/connectedClusters/services/*"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Azure Arc Kubernetes Admin",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="azure-arc-kubernetes-cluster-admin"></a>Azure Arc Kubernetes-Cluster beheer
+
+Hiermee kunt u alle resources in het cluster beheren. [Meer informatie](../azure-arc/kubernetes/azure-rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/write | Hiermee wordt een implementatie gemaakt of bijgewerkt. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/operationresults/Read | De resultaten van de abonnements bewerking ophalen. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/Read | Hiermee wordt de lijst met abonnementen opgehaald. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Lets you manage all resources in the cluster.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/8393591c-06b9-48a2-a542-1bd6b377f6a2",
+  "name": "8393591c-06b9-48a2-a542-1bd6b377f6a2",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Resources/deployments/write",
+        "Microsoft.Resources/subscriptions/operationresults/read",
+        "Microsoft.Resources/subscriptions/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.Kubernetes/connectedClusters/*"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Azure Arc Kubernetes Cluster Admin",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="azure-arc-kubernetes-viewer"></a>Viewer voor Azure Arc Kubernetes
+
+Hiermee kunt u alle resources in het cluster of de naam ruimte weer geven, behalve geheimen. [Meer informatie](../azure-arc/kubernetes/azure-rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/write | Hiermee wordt een implementatie gemaakt of bijgewerkt. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/operationresults/Read | De resultaten van de abonnements bewerking ophalen. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/Read | Hiermee wordt de lijst met abonnementen opgehaald. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/apps/controllerrevisions/Read | Controllerrevisions lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/apps/daemonsets/Read | Daemonsets lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/apps/Deployments/Read | Leest implementaties |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/apps/replicasets/Read | Replicasets lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/apps/statefulsets/Read | Statefulsets lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/AutoScaling/horizontalpodautoscalers/Read | Horizontalpodautoscalers lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/batch/cronjobs/Read | Cronjobs lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/batch/jobs/Read | Hiermee worden taken gelezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/configmaps/Read | Configmaps lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/endpoints/Read | Hiermee worden eind punten gelezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Events.K8S.io/Events/Read | Gebeurtenissen lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Events/Read | Gebeurtenissen lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Extensions/daemonsets/Read | Daemonsets lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Extensions/Deployments/Read | Leest implementaties |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Extensions/ingresses/Read | Ingresses lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Extensions/networkpolicies/Read | Networkpolicies lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Extensions/replicasets/Read | Replicasets lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/limitranges/Read | Limitranges lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/namespaces/Read | Naam ruimten lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Networking.K8S.io/ingresses/Read | Ingresses lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Networking.K8S.io/networkpolicies/Read | Networkpolicies lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/persistentvolumeclaims/Read | Persistentvolumeclaims lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/pods/Read | Hiermee worden de peulen gelezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Policy/poddisruptionbudgets/Read | Poddisruptionbudgets lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/replicationcontrollers/Read | Replicationcontrollers lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/replicationcontrollers/Read | Replicationcontrollers lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/resourcequotas/Read | Resourcequotas lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/serviceaccounts/Read | Serviceaccounts lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Services/Read | Services lezen |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Lets you view all resources in cluster/namespace, except secrets.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/63f0a09d-1495-4db4-a681-037d84835eb4",
+  "name": "63f0a09d-1495-4db4-a681-037d84835eb4",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Resources/deployments/write",
+        "Microsoft.Resources/subscriptions/operationresults/read",
+        "Microsoft.Resources/subscriptions/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.Kubernetes/connectedClusters/apps/controllerrevisions/read",
+        "Microsoft.Kubernetes/connectedClusters/apps/daemonsets/read",
+        "Microsoft.Kubernetes/connectedClusters/apps/deployments/read",
+        "Microsoft.Kubernetes/connectedClusters/apps/replicasets/read",
+        "Microsoft.Kubernetes/connectedClusters/apps/statefulsets/read",
+        "Microsoft.Kubernetes/connectedClusters/autoscaling/horizontalpodautoscalers/read",
+        "Microsoft.Kubernetes/connectedClusters/batch/cronjobs/read",
+        "Microsoft.Kubernetes/connectedClusters/batch/jobs/read",
+        "Microsoft.Kubernetes/connectedClusters/configmaps/read",
+        "Microsoft.Kubernetes/connectedClusters/endpoints/read",
+        "Microsoft.Kubernetes/connectedClusters/events.k8s.io/events/read",
+        "Microsoft.Kubernetes/connectedClusters/events/read",
+        "Microsoft.Kubernetes/connectedClusters/extensions/daemonsets/read",
+        "Microsoft.Kubernetes/connectedClusters/extensions/deployments/read",
+        "Microsoft.Kubernetes/connectedClusters/extensions/ingresses/read",
+        "Microsoft.Kubernetes/connectedClusters/extensions/networkpolicies/read",
+        "Microsoft.Kubernetes/connectedClusters/extensions/replicasets/read",
+        "Microsoft.Kubernetes/connectedClusters/limitranges/read",
+        "Microsoft.Kubernetes/connectedClusters/namespaces/read",
+        "Microsoft.Kubernetes/connectedClusters/networking.k8s.io/ingresses/read",
+        "Microsoft.Kubernetes/connectedClusters/networking.k8s.io/networkpolicies/read",
+        "Microsoft.Kubernetes/connectedClusters/persistentvolumeclaims/read",
+        "Microsoft.Kubernetes/connectedClusters/pods/read",
+        "Microsoft.Kubernetes/connectedClusters/policy/poddisruptionbudgets/read",
+        "Microsoft.Kubernetes/connectedClusters/replicationcontrollers/read",
+        "Microsoft.Kubernetes/connectedClusters/replicationcontrollers/read",
+        "Microsoft.Kubernetes/connectedClusters/resourcequotas/read",
+        "Microsoft.Kubernetes/connectedClusters/serviceaccounts/read",
+        "Microsoft.Kubernetes/connectedClusters/services/read"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Azure Arc Kubernetes Viewer",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="azure-arc-kubernetes-writer"></a>Kubernetes schrijver van Azure Arc
+
+Hiermee kunt u alles in cluster-en naam ruimte, met uitzonde ring van cluster rollen en (cluster)-functie bindingen, bijwerken. [Meer informatie](../azure-arc/kubernetes/azure-rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/write | Hiermee wordt een implementatie gemaakt of bijgewerkt. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/operationresults/Read | De resultaten van de abonnements bewerking ophalen. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/Read | Hiermee wordt de lijst met abonnementen opgehaald. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/apps/controllerrevisions/Read | Controllerrevisions lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/apps/daemonsets/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/apps/Deployments/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/apps/replicasets/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/apps/statefulsets/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/AutoScaling/horizontalpodautoscalers/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/batch/cronjobs/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/batch/jobs/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/configmaps/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/endpoints/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Events.K8S.io/Events/Read | Gebeurtenissen lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Events/Read | Gebeurtenissen lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Extensions/daemonsets/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Extensions/Deployments/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Extensions/ingresses/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Extensions/networkpolicies/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Extensions/replicasets/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/limitranges/Read | Limitranges lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/namespaces/Read | Naam ruimten lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Networking.K8S.io/ingresses/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Networking.K8S.io/networkpolicies/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/persistentvolumeclaims/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/pods/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Policy/poddisruptionbudgets/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/replicationcontrollers/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/replicationcontrollers/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/resourcequotas/Read | Resourcequotas lezen |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Secrets/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/serviceaccounts/* |  |
+> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Services/* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Lets you update everything in cluster/namespace, except (cluster)roles and (cluster)role bindings.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/5b999177-9696-4545-85c7-50de3797e5a1",
+  "name": "5b999177-9696-4545-85c7-50de3797e5a1",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Resources/deployments/write",
+        "Microsoft.Resources/subscriptions/operationresults/read",
+        "Microsoft.Resources/subscriptions/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.Kubernetes/connectedClusters/apps/controllerrevisions/read",
+        "Microsoft.Kubernetes/connectedClusters/apps/daemonsets/*",
+        "Microsoft.Kubernetes/connectedClusters/apps/deployments/*",
+        "Microsoft.Kubernetes/connectedClusters/apps/replicasets/*",
+        "Microsoft.Kubernetes/connectedClusters/apps/statefulsets/*",
+        "Microsoft.Kubernetes/connectedClusters/autoscaling/horizontalpodautoscalers/*",
+        "Microsoft.Kubernetes/connectedClusters/batch/cronjobs/*",
+        "Microsoft.Kubernetes/connectedClusters/batch/jobs/*",
+        "Microsoft.Kubernetes/connectedClusters/configmaps/*",
+        "Microsoft.Kubernetes/connectedClusters/endpoints/*",
+        "Microsoft.Kubernetes/connectedClusters/events.k8s.io/events/read",
+        "Microsoft.Kubernetes/connectedClusters/events/read",
+        "Microsoft.Kubernetes/connectedClusters/extensions/daemonsets/*",
+        "Microsoft.Kubernetes/connectedClusters/extensions/deployments/*",
+        "Microsoft.Kubernetes/connectedClusters/extensions/ingresses/*",
+        "Microsoft.Kubernetes/connectedClusters/extensions/networkpolicies/*",
+        "Microsoft.Kubernetes/connectedClusters/extensions/replicasets/*",
+        "Microsoft.Kubernetes/connectedClusters/limitranges/read",
+        "Microsoft.Kubernetes/connectedClusters/namespaces/read",
+        "Microsoft.Kubernetes/connectedClusters/networking.k8s.io/ingresses/*",
+        "Microsoft.Kubernetes/connectedClusters/networking.k8s.io/networkpolicies/*",
+        "Microsoft.Kubernetes/connectedClusters/persistentvolumeclaims/*",
+        "Microsoft.Kubernetes/connectedClusters/pods/*",
+        "Microsoft.Kubernetes/connectedClusters/policy/poddisruptionbudgets/*",
+        "Microsoft.Kubernetes/connectedClusters/replicationcontrollers/*",
+        "Microsoft.Kubernetes/connectedClusters/replicationcontrollers/*",
+        "Microsoft.Kubernetes/connectedClusters/resourcequotas/read",
+        "Microsoft.Kubernetes/connectedClusters/secrets/*",
+        "Microsoft.Kubernetes/connectedClusters/serviceaccounts/*",
+        "Microsoft.Kubernetes/connectedClusters/services/*"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Azure Arc Kubernetes Writer",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
 ### <a name="azure-connected-machine-onboarding"></a>Onboarding van met Azure verbonden computer
 
 Kan onboarding van met Azure verbonden computers uitvoeren. [Meer informatie](../azure-arc/servers/onboard-service-principal.md)
@@ -9493,6 +10031,7 @@ Kan onboarding van met Azure verbonden computers uitvoeren. [Meer informatie](..
 > | --- | --- |
 > | [Micro soft. HybridCompute](resource-provider-operations.md#microsofthybridcompute)/machines/Read | Alle Azure-Arc-machines lezen |
 > | [Micro soft. HybridCompute](resource-provider-operations.md#microsofthybridcompute)/machines/write | Schrijft een Azure-Arc-machine |
+> | [Micro soft. HybridCompute](resource-provider-operations.md#microsofthybridcompute)/privateLinkScopes/Read | Een wille keurige Azure-Arc privateLinkScopes lezen |
 > | [Micro soft. GuestConfiguration](resource-provider-operations.md#microsoftguestconfiguration)/guestConfigurationAssignments/Read | Toewijzing van gast configuratie ophalen. |
 > | **NotActions** |  |
 > | *geen* |  |
@@ -9514,6 +10053,7 @@ Kan onboarding van met Azure verbonden computers uitvoeren. [Meer informatie](..
       "actions": [
         "Microsoft.HybridCompute/machines/read",
         "Microsoft.HybridCompute/machines/write",
+        "Microsoft.HybridCompute/privateLinkScopes/read",
         "Microsoft.GuestConfiguration/guestConfigurationAssignments/read"
       ],
       "notActions": [],
@@ -9537,8 +10077,8 @@ Kan met Azure verbonden computers lezen, schrijven, verwijderen en onboarden.
 > | [Micro soft. HybridCompute](resource-provider-operations.md#microsofthybridcompute)/machines/Read | Alle Azure-Arc-machines lezen |
 > | [Micro soft. HybridCompute](resource-provider-operations.md#microsofthybridcompute)/machines/write | Schrijft een Azure-Arc-machine |
 > | [Micro soft. HybridCompute](resource-provider-operations.md#microsofthybridcompute)/machines/Delete | Hiermee wordt een Azure-Arc-machine verwijderd |
-> | [Micro soft. HybridCompute](resource-provider-operations.md#microsofthybridcompute)/machines/reconnect/Action |  |
 > | [Micro soft. HybridCompute](resource-provider-operations.md#microsofthybridcompute)/machines/Extensions/write | Hiermee wordt een Azure-Arc-extensie geïnstalleerd of bijgewerkt |
+> | [Micro soft. HybridCompute](resource-provider-operations.md#microsofthybridcompute)/privateLinkScopes/* |  |
 > | [Micro soft. HybridCompute](resource-provider-operations.md#microsofthybridcompute)/*/Read |  |
 > | **NotActions** |  |
 > | *geen* |  |
@@ -9561,8 +10101,8 @@ Kan met Azure verbonden computers lezen, schrijven, verwijderen en onboarden.
         "Microsoft.HybridCompute/machines/read",
         "Microsoft.HybridCompute/machines/write",
         "Microsoft.HybridCompute/machines/delete",
-        "Microsoft.HybridCompute/machines/reconnect/action",
         "Microsoft.HybridCompute/machines/extensions/write",
+        "Microsoft.HybridCompute/privateLinkScopes/*",
         "Microsoft.HybridCompute/*/read"
       ],
       "notActions": [],
@@ -10297,7 +10837,7 @@ Hiermee wordt lees toegang tot bron beleid en schrijf toegang tot bron onderdeel
 }
 ```
 
-### <a name="quota-request-operator-role"></a>Rol van operator voor quotum aanvragen
+### <a name="quota-request-operator"></a>Operator voor quotum aanvragen
 
 Lees en maak quota aanvragen, haal de status van de quotum aanvraag op en maak ondersteunings tickets. [Meer informatie](/rest/api/reserved-vm-instances/quotaapi)
 
@@ -10325,7 +10865,7 @@ Lees en maak quota aanvragen, haal de status van de quotum aanvraag op en maak o
   "assignableScopes": [
     "/"
   ],
-  "description": "Role to read and create Quota Requests and get Quota Request Status.",
+  "description": "Read and create quota requests, get quota request status, and create support tickets.",
   "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/0e5f05e5-9ab9-446b-b98d-1e2157c94125",
   "name": "0e5f05e5-9ab9-446b-b98d-1e2157c94125",
   "permissions": [
@@ -10346,7 +10886,7 @@ Lees en maak quota aanvragen, haal de status van de quotum aanvraag op en maak o
       "notDataActions": []
     }
   ],
-  "roleName": "Quota Request Operator Role",
+  "roleName": "Quota Request Operator",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }
@@ -11859,6 +12399,6 @@ Met de operator Services hub kunt u alle Lees-, schrijf-en verwijder bewerkingen
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Overeenkomende resource provider voor service](../azure-resource-manager/management/azure-services-resource-providers.md)
+- [Azure-rollen toewijzen met behulp van de Azure Portal](role-assignments-portal.md)
 - [Aangepaste Azure-rollen](custom-roles.md)
 - [Machtigingen in Azure Security Center](../security-center/security-center-permissions.md)

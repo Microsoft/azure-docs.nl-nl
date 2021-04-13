@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.custom: contperf-fy20q4
-ms.openlocfilehash: 78972c4db1802b479a698a22c456561170add4bf
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 9d2c42a664c8d8a591d95a312cdf1c0034c4d031
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105932910"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107305460"
 ---
 # <a name="configure-azure-ad-multi-factor-authentication-settings"></a>Azure AD Multi-Factor Authentication-instellingen configureren
 
@@ -236,7 +236,7 @@ Met de functie voor _vertrouwde ip's_ van Azure AD multi-factor Authentication w
 > [!NOTE]
 > De vertrouwde Ip's kunnen alleen particuliere IP-bereiken bevatten wanneer u MFA server gebruikt. Voor Azure AD-Multi-Factor Authentication in de Cloud, kunt u alleen open bare IP-adresbereiken gebruiken.
 >
-> IPv6-bereiken worden alleen ondersteund in de interface van de [benoemde locatie (preview)](../conditional-access/location-condition.md#preview-features) .
+> IPv6-bereiken worden alleen ondersteund in de interface van de [benoemde locatie (preview)](../conditional-access/location-condition.md) .
 
 Als uw organisatie de NPS-extensie implementeert voor het leveren van MFA aan on-premises toepassingen, ziet u dat het bron-IP-adres altijd de NPS-server is die de verificatie poging doorloopt.
 

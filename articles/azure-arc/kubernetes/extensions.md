@@ -7,12 +7,12 @@ ms.topic: article
 author: shashankbarsin
 ms.author: shasb
 description: De levens cyclus van uitbrei dingen op Azure Arc enabled Kubernetes implementeren en beheren
-ms.openlocfilehash: 63fb14818d148dcc579300fdb4c89d636b47fd05
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.openlocfilehash: 854d7418515d7927a3c0b4b8790ed4770af555ab
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106451039"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107312617"
 ---
 # <a name="kubernetes-cluster-extensions"></a>Kubernetes-cluster uitbreidingen
 
@@ -48,10 +48,10 @@ Een conceptueel overzicht van deze functie is beschikbaar in [cluster uitbreidin
 
 ## <a name="currently-available-extensions"></a>Momenteel beschik bare extensies
 
-| Toestelnummer | Beschrijving |
+| Toestelnummer | Description |
 | --------- | ----------- |
 | [Azure Monitor](../../azure-monitor/containers/container-insights-enable-arc-enabled-clusters.md?toc=/azure/azure-arc/kubernetes/toc.json) | Geeft inzicht in de prestaties van werk belastingen die zijn geïmplementeerd op het Kubernetes-cluster. Verzamelt metrische gegevens over het geheugen en CPU-gebruik van controllers, knoop punten en containers. |
-| [Azure Defender](../../security-center/defender-for-kubernetes-azure-arc.md?toc=/azure/azure-arc/kubernetes/toc.json) | Verzamelt gegevens van het controle logboek van knoop punten van het Kubernetes-cluster. Voorziet in aanbevelingen en bedreigingen op basis van verzamelde gegevens. |
+| [Azure Defender](../../security-center/defender-for-kubernetes-azure-arc.md?toc=/azure/azure-arc/kubernetes/toc.json) | Verzamelt informatie met betrekking tot beveiliging, zoals audit logboek gegevens van het Kubernetes-cluster. Voorziet in aanbevelingen en bedreigingen op basis van verzamelde gegevens. |
 
 ## <a name="usage-of-cluster-extensions"></a>Gebruik van cluster uitbreidingen
 
@@ -235,31 +235,6 @@ az k8s-extension list --cluster-name <clusterName> --resource-group <resourceGro
   }
 ]
 ```
-
-### <a name="update-an-existing-extension-instance"></a>Een bestaand extensie-exemplaar bijwerken
-
-Een extensie-exemplaar in een cluster bijwerken met `k8s-extension update` , waarbij de bij te werken waarden worden door gegeven.  Met deze opdracht worden alleen `auto-upgrade-minor-version` de `release-train` Eigenschappen, en, bijgewerkt `version` . Bijvoorbeeld:
-
-- **Update van release-training:**
-
-    ```azurecli
-    az k8s-extension update --name azuremonitor-containers --cluster-type connectedClusters --cluster-name <clusterName> --resource-group <resourceGroupName> --release-train Preview
-    ```
-
-- **Automatisch bijwerken en uitbrei ding van extensie-exemplaar naar een specifieke versie uitschakelen:**
-
-    ```azurecli
-    az k8s-extension update --name azuremonitor-containers --cluster-type connectedClusters --cluster-name <clusterName> --resource-group <resourceGroupName> --auto-upgrade-minor-version false --version 2.2.2
-    ```
-
-- **Schakel de automatische upgrade voor het uitbreidings exemplaar in:**
-
-    ```azurecli
-    az k8s-extension update --name azuremonitor-containers --cluster-type connectedClusters --cluster-name <clusterName> --resource-group <resourceGroupName> --auto-upgrade-minor-version true
-    ```
-
-> [!NOTE]
-> De `version` para meter kan alleen worden ingesteld als deze `--auto-upgrade-minor-version` is ingesteld op `false` .
 
 ### <a name="delete-extension-instance"></a>Extensie-exemplaar verwijderen
 

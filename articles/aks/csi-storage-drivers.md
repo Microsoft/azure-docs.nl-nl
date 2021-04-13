@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 08/27/2020
 author: palma21
-ms.openlocfilehash: fa40ab22f0c1ebf47bb490a50f782a848d1441e1
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: ec8aeb07e54c6ec49647e7bb65284b6cb7343555
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102182108"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107305664"
 ---
 # <a name="enable-container-storage-interface-csi-drivers-for-azure-disks-and-azure-files-on-azure-kubernetes-service-aks-preview"></a>De Stuur Programma's van de container Storage-interface (CSI) inschakelen voor Azure-schijven en Azure Files op Azure Kubernetes service (AKS) (preview)
 
@@ -86,7 +86,7 @@ Maak het AKS-cluster met ondersteuning voor CSI-opslag Stuur Programma's:
 
 ```azurecli-interactive
 # Create an AKS-managed Azure AD cluster
-az aks create -g MyResourceGroup -n MyManagedCluster --network-plugin azure -k 1.17.9 --aks-custom-headers EnableAzureDiskFileCSIDriver=true
+az aks create -g MyResourceGroup -n MyManagedCluster --network-plugin azure  --aks-custom-headers EnableAzureDiskFileCSIDriver=true
 ```
 
 Als u clusters wilt maken in structuur opslag Stuur Programma's in plaats van CSI-opslag Stuur Programma's, kunt u dit doen door de aangepaste para meter weg te laten `--aks-custom-headers` .

@@ -5,20 +5,23 @@ author: MalcolmTyrrell
 ms.author: matyrr
 ms.date: 09/03/2020
 ms.topic: how-to
-ms.openlocfilehash: 13c4b841fe2d0b62472628d9382b5f6ee3d1fa6c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9a094755dfb9381b1e4d6abdf1c0e6342d7427c1
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "91318072"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107308436"
 ---
 # <a name="laying-out-files-for-conversion"></a>Bestanden indelen voor conversie
 
 Voor een juiste verwerking van een Asset moet de conversie service alle invoer bestanden kunnen vinden.
 Deze bestaan uit het bestand van het hoofd activum dat wordt geconverteerd en meestal enkele andere bestanden waarnaar wordt verwezen door paden binnen het activa bestand.
-De aanvraag voor het converteren van een activum krijgt twee para meters die bepalen hoe de conversie service deze bestanden vindt: de `input.folderPath` (optioneel) en de `input.inputAssetPath` .
+De aanvraag voor het converteren van een activum krijgt twee para meters die bepalen hoe de conversie service deze bestanden vindt: de `settings.inputLocation.blobPrefix` (optioneel) en de `settings.inputLocation.relativeInputAssetPath` .
 Ze zijn volledig gedocumenteerd op de pagina [conversie rest API](conversion-rest-api.md) .
-Voor het indelen van bestanden is het belang rijk om te weten dat de `folderPath` volledige set met bestanden die beschikbaar zijn voor de conversie service tijdens het verwerken van de Asset wordt bepaald.
+Voor het indelen van bestanden is het belang rijk om te weten dat de `BlobPrefix` volledige set met bestanden die beschikbaar zijn voor de conversie service tijdens het verwerken van de Asset wordt bepaald.
+
+> [!Note]
+> Met de service worden alle bestanden in de invoer gedownload. BlobPrefix. Zorg ervoor dat bestands namen en paden niet groter zijn dan [Windows-padlengte](https://docs.microsoft.com/windows/win32/fileio/maximum-file-path-limitation) om problemen met de service te voor komen. 
 
 ## <a name="placing-files-so-they-can-be-found"></a>Bestanden plaatsen zodat ze kunnen worden gevonden
 

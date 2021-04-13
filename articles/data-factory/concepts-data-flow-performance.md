@@ -6,13 +6,13 @@ ms.topic: conceptual
 ms.author: makromer
 ms.service: data-factory
 ms.custom: seo-lt-2019
-ms.date: 03/15/2021
-ms.openlocfilehash: dd5b857c274e757f70920f244786df61c2770085
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/10/2021
+ms.openlocfilehash: cee7993116e746c7b827faaf94724033501f1318
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103561682"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107309047"
 ---
 # <a name="mapping-data-flows-performance-and-tuning-guide"></a>Gegevens stromen toewijzen prestaties en afstemmings handleiding
 
@@ -132,14 +132,17 @@ Gegevens stromen zijn geprijsd op VCore. Dit betekent dat zowel de cluster groot
 
 ### <a name="time-to-live"></a>Time To Live
 
-Elke gegevens stroom activiteit draait standaard naar een nieuw cluster op basis van de IR-configuratie. De opstart tijd van het cluster duurt enkele minuten en de gegevens verwerking kan pas worden gestart als deze is voltooid. Als uw pijp lijnen meerdere **sequentiële** gegevens stromen bevatten, kunt u een TTL-waarde (time to Live) inschakelen. Als u een time to Live-waarde opgeeft, blijft een cluster actief gedurende een bepaalde periode nadat de uitvoering is voltooid. Als een nieuwe taak begint met het gebruik van de IR tijdens de TTL-tijd, wordt het bestaande cluster opnieuw gebruikt en wordt de opstart tijd aanzienlijk verminderd. Nadat de tweede taak is voltooid, blijft het cluster weer actief gedurende de TTL-tijd.
+Elke gegevens stroom activiteit draait standaard naar een nieuw Spark-cluster op basis van de Azure IR configuratie. De opstart tijd van koud cluster duurt enkele minuten en de gegevens verwerking kan pas worden gestart als deze is voltooid. Als uw pijp lijnen meerdere **sequentiële** gegevens stromen bevatten, kunt u een TTL-waarde (time to Live) inschakelen. Als u een time to Live-waarde opgeeft, blijft een cluster actief gedurende een bepaalde periode nadat de uitvoering is voltooid. Als een nieuwe taak begint met het gebruik van de IR tijdens de TTL-tijd, wordt het bestaande cluster opnieuw gebruikt en wordt de opstart tijd aanzienlijk verminderd. Nadat de tweede taak is voltooid, blijft het cluster weer actief gedurende de TTL-tijd.
 
-Er kan slechts één taak tegelijk worden uitgevoerd op één cluster. Als er een cluster beschikbaar is, maar twee gegevens stromen start, wordt er slechts één gebruikt voor het Live cluster. Met de tweede taak wordt een eigen geïsoleerd cluster gedraaid.
+U kunt de opstart tijd van warme clusters ook minimaliseren door de optie snel opnieuw gebruiken in te stellen in azure Integration runtime onder eigenschappen van de gegevens stroom. Als u deze optie instelt op True, wordt het bestaande cluster na elke taak niet teardown en wordt in plaats daarvan het bestaande cluster opnieuw gebruikt. in dat geval wordt de compute-omgeving die u in uw Azure IR hebt ingesteld, in feite bewaard gedurende de periode die is opgegeven in uw TTL. Met deze optie wordt de kortste start tijd van uw activiteiten voor gegevens stromen voor het uitvoeren van een pijp lijn.
 
-Als de meeste gegevens stromen parallel worden uitgevoerd, is het niet raadzaam om TTL in te scha kelen. 
+Als de meeste van uw gegevens stromen echter parallel worden uitgevoerd, is het niet raadzaam om TTL in te scha kelen voor de IR die u voor deze activiteiten gebruikt. Er kan slechts één taak tegelijk worden uitgevoerd op één cluster. Als er een cluster beschikbaar is, maar twee gegevens stromen start, wordt er slechts één gebruikt voor het Live cluster. Met de tweede taak wordt een eigen geïsoleerd cluster gedraaid.
 
 > [!NOTE]
 > Time to Live is niet beschikbaar wanneer de Integration runtime automatisch oplossen wordt gebruikt
+ 
+> [!NOTE]
+> Snel opnieuw gebruiken van bestaande clusters is een functie in het Azure Integration Runtime dat momenteel beschikbaar is als open bare preview
 
 ## <a name="optimizing-sources"></a>Bronnen optimaliseren
 
@@ -304,9 +307,10 @@ Als uw gegevens stromen parallel worden uitgevoerd, wordt het aanbevolen om de e
 
 ### <a name="execute-data-flows-sequentially"></a>Gegevens stromen sequentieel uitvoeren
 
-Als u de gegevens stroom activiteiten op volg orde uitvoert, is het raadzaam een TTL in te stellen in de Azure IR configuratie. De reken resources worden door ADF opnieuw gebruikt, wat resulteert in een snellere start tijd van het cluster. Elke activiteit zal nog steeds geïsoleerd een nieuwe Spark-context ontvangen voor elke uitvoering.
+Als u de gegevens stroom activiteiten op volg orde uitvoert, is het raadzaam een TTL in te stellen in de Azure IR configuratie. De reken resources worden door ADF opnieuw gebruikt, wat resulteert in een snellere start tijd van het cluster. Elke activiteit zal nog steeds geïsoleerd een nieuwe Spark-context ontvangen voor elke uitvoering. Als u de tijd wilt verkorten tussen sequentiële activiteiten nog meer, stelt u het selectie vakje snel opnieuw gebruiken in het Azure IR in om de ADF in te stellen om het bestaande cluster opnieuw te gebruiken.
 
-Het uitvoeren van taken zal waarschijnlijk de langste tijd duren om end-to-end uit te voeren, maar biedt een schone schei ding van logische bewerkingen.
+> [!NOTE]
+> Snel opnieuw gebruiken van bestaande clusters is een functie in het Azure Integration Runtime dat momenteel beschikbaar is als open bare preview
 
 ### <a name="overloading-a-single-data-flow"></a>Eén gegevens stroom overbelasten
 

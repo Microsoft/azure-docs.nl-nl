@@ -8,12 +8,12 @@ ms.date: 04/01/2021
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: b82ad29b02e501d41653fd466e58218e35c3b93c
-ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
+ms.openlocfilehash: 6fa49af946a1e5fc631eeb1ee9b9c7c99d3adff8
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107012166"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107308265"
 ---
 # <a name="troubleshoot-your-iot-edge-device"></a>Problemen met uw IoT Edge apparaat oplossen
 
@@ -64,6 +64,18 @@ Het hulp programma voor probleem oplossing voert veel controles uit die in deze 
 * De *productie gereedheids controles controleren* op aanbevolen productie best practices, zoals de status van certificerings instanties voor certificaten en de configuratie van het logboek bestand van de module.
 
 Het hulp programma IoT Edge controle gebruikt een container om de diagnostische gegevens uit te voeren. De container installatie kopie, `mcr.microsoft.com/azureiotedge-diagnostics:latest` , is beschikbaar via de [micro soft-container Registry](https://github.com/microsoft/containerregistry). Als u een controle wilt uitvoeren op een apparaat zonder directe toegang tot internet, moeten uw apparaten toegang hebben tot de container installatie kopie.
+
+<!-- <1.2> -->
+:::moniker range=">=iotedge-2020-11"
+
+In een scenario met geneste IoT Edge apparaten kunt u toegang krijgen tot de diagnostische installatie kopie op onderliggende apparaten door de installatie kopie via de bovenliggende apparaten te routeren.
+
+```bash
+sudo iotedge check --diagnostics-image-name <parent_device_fqdn_or_ip>:<port_for_api_proxy_module>/azureiotedge-diagnostics:1.2
+```
+
+<!-- </1.2> -->
+:::moniker-end
 
 Zie [IOT Edge problemen met controles oplossen](https://github.com/Azure/iotedge/blob/master/doc/troubleshoot-checks.md)voor meer informatie over elk van de diagnostische gegevens die door dit hulp programma worden uitgevoerd, waaronder wat u moet doen als er een fout of waarschuwing wordt weer gegeven.
 

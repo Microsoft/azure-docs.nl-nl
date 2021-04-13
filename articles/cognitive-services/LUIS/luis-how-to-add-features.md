@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 05/17/2020
-ms.openlocfilehash: 33435d2367b92f312d41f0e32fdbb3a93d59a9fd
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c1a0fb15be92e25b576cd29e671eed3c6a5b948f
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "95999923"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107313263"
 ---
 # <a name="use-features-to-boost-signal-of-word-list"></a>Functies gebruiken om het signaal van een woorden lijst te verhogen
 
@@ -37,7 +37,7 @@ Bekijk de [concepten](luis-concept-feature.md) om te begrijpen wanneer en waarom
 
     Zodra u voldoende waarden hebt ingevoerd voor LUIS, worden er suggesties weer gegeven. U kunt **+ alle** voorgestelde waarden toevoegen of afzonderlijke voor waarden selecteren.
 
-1. Behoud **deze waarden zijn verwisselbaar** ingeschakeld als de woord groepen door elkaar kunnen worden gebruikt.
+1. Behoud **deze waarden zijn verwisselbaar** ingeschakeld als de woord groepen door elkaar kunnen worden gebruikt. De lijst functie van de omwisselende woordgroepen fungeert als een lijst met synoniemen voor training. De lijst met niet-Verwissel bare woordgroepen fungeert als afzonderlijke functies voor training (wat betekent dat de functies vergelijkbaar zijn, maar dat de intentie verandert wanneer u zinsdelen verwisselt).
 
 1. De lijst met zinsdelen kan worden toegepast op de volledige app met de **algemene** instelling of op een specifiek model (intentie of entiteit). Als u de woordgroepen lijst maakt als een _functie_ van een intentie of entiteit, wordt de wissel knop niet ingesteld voor globaal. In dit geval is de betekenis van de wissel knop dat de functie alleen lokaal is voor dat model, dus _niet globaal_ voor de toepassing.
 

@@ -2,15 +2,15 @@
 title: Bicep-bestanden maken-Visual Studio code
 description: Visual Studio code en de Bicep-extensie voor Bicep-bestanden gebruiken voor de implementatie van Azure-resources
 author: mumian
-ms.date: 03/26/2021
+ms.date: 04/12/2021
 ms.topic: quickstart
 ms.author: jgao
-ms.openlocfilehash: 4d1064351ddfacdebfa67fd9b2f517f592de3a7c
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: e82f047f553290c9121d91060c347c5b242c7ec2
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105612880"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107306463"
 ---
 # <a name="quickstart-create-bicep-files-with-visual-studio-code"></a>Quick Start: Bicep-bestanden maken met Visual Studio code
 
@@ -51,6 +51,10 @@ De resource declaratie bestaat uit vier onderdelen:
 - **symbolische naam** (STG): symbolische naam is een id voor het verwijzen naar de resource in uw Bicep-bestand. Het is niet wat de naam van de resource is wanneer deze wordt geïmplementeerd. De naam van de resource wordt gedefinieerd door de eigenschap **naam** .  Zie het vierde onderdeel in deze lijst.
 - **resource type** ( Microsoft.Storage/storageAccounts@2019-06-01 ): het bestaat uit de resource provider (micro soft. Storage), resource type (Storage accounts) en apiVersion (2019-06-01). Elke resourceprovider publiceert eigen API-versies. Met andere woorden, elk type heeft een specifieke waarde. U kunt meer typen en apiVersions vinden voor verschillende Azure-resources van [arm-sjabloon verwijzing](/azure/templates/).
 - **Eigenschappen** (alles binnen = {...}): Geef de eigenschappen voor het bron type op. Elke resource heeft een `name` eigenschap. De meeste resources hebben ook de eigenschap `location`. Hiermee wordt de regio ingesteld waarin de resource wordt geïmplementeerd. De overige eigenschappen variëren per resourcetype en API-versie.
+
+Zie [Bicep structure](./bicep-file.md)(Engelstalig) voor meer informatie.
+
+Er is een opmerking voor de eigenschap name.  Gebruiken `//` voor opmerkingen met één regel of `/* ... */` voor opmerkingen met meerdere regels
 
 ## <a name="completion-and-validation"></a>Voltooiing en validatie
 

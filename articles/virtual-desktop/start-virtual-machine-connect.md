@@ -3,15 +3,15 @@ title: Verbinding met virtuele machine starten-Azure
 description: De functie voor het starten van de virtuele machine in Connect configureren.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 03/31/2021
+ms.date: 04/10/2021
 ms.author: helohr
 manager: femila
-ms.openlocfilehash: d9ce9811cd660c9a9b1fcb6f9e24cadd65d3c2bc
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.openlocfilehash: d3ef8e3656051c4a99ab52a7b52a0d623fdf9ce2
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106445598"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107303952"
 ---
 # <a name="start-virtual-machine-on-connect-preview"></a>Virtuele machine starten bij verbinding maken (preview)
 
@@ -35,8 +35,7 @@ De volgende extern bureau blad-clients ondersteunen de functie voor het starten 
 
 U kunt op het [tech Community-Forum](https://aka.ms/wvdtc)controleren op aankondigingen over updates en client ondersteuning.
 
->[!IMPORTANT]
->De functie voor het starten van virtuele machines in Connect biedt momenteel alleen ondersteuning voor Power shell en REST API, niet voor de Azure Portal. Zie [een hostgroep maken of bijwerken](/rest/api/desktopvirtualization/hostpools/createorupdate)voor meer informatie.
+De Azure Government Cloud biedt momenteel geen ondersteuning voor het starten van VM op Connect.
 
 ## <a name="create-a-custom-role-for-start-vm-on-connect"></a>Een aangepaste rol maken voor het starten van een virtuele machine bij het verbinden
 
@@ -115,6 +114,24 @@ VM starten bij verbinden is een instelling voor een hostgroep. Als u wilt dat ee
 
 >[!IMPORTANT]
 > U kunt deze functie alleen configureren in bestaande hostgroepen. Deze functie is niet beschikbaar wanneer u een nieuwe hostgroep maakt.
+
+### <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
+
+Als u de Azure Portal wilt gebruiken om de start-VM te configureren bij verbinding maken:
+
+1. Open uw browser en ga naar [de Azure Portal](https://portal.azure.com/?feature.startVMonConnect=true#home). U wordt aangeraden om de Azure Portal in een InPrivate-venster te openen.
+
+2. Ga in het Azure Portal naar **virtueel bureau blad van Windows**.
+
+3. Selecteer **hostgroepen** en zoek vervolgens de hostgroep die de persoonlijke bureau bladen bevat waaraan u de rol hebt toegewezen.
+
+   >[!NOTE]
+   > De hostgroep waarvoor u deze functie configureert, moet beschikken over persoonlijke bureau bladen met directe roltoewijzingen. Als de Bureau bladen in de hostgroep niet correct zijn geconfigureerd, werkt het configuratie proces niet.
+
+4. Selecteer **Eigenschappen** in de hostgroep. Selecteer onder **virtuele machine starten bij verbinding maken** de optie **Ja** en selecteer vervolgens **Opslaan** om de instelling onmiddellijk toe te passen.
+
+    > [!div class="mx-imgBorder"]
+    > ![Een scherm opname van de venster Eigenschappen. De optie VM starten bij verbinding maken is rood gemarkeerd.](media/properties-start-vm-on-connect.png)
 
 ### <a name="use-powershell"></a>PowerShell gebruiken
 

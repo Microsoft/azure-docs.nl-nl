@@ -1,14 +1,14 @@
 ---
 title: Uw resource hiërarchie beveiligen-Azure governance
 description: Meer informatie over het beveiligen van uw resource hiërarchie met hiërarchie-instellingen, zoals het instellen van de standaard beheer groep.
-ms.date: 02/05/2021
+ms.date: 04/09/2021
 ms.topic: conceptual
-ms.openlocfilehash: 5d13a0235152046eff2585da170d5fba0e9d3b09
-ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
+ms.openlocfilehash: 11c20ccf5aff74d810533cd56e0a7b116f2dc64b
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "107259078"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107303641"
 ---
 # <a name="how-to-protect-your-resource-hierarchy"></a>Uw resource hiërarchie beveiligen
 
@@ -110,6 +110,28 @@ Als u deze instelling wilt configureren met REST API, wordt het eind punt van de
   ```
 
 Als u de instelling wilt uitschakelen, gebruikt u hetzelfde eind punt en stelt u **requireAuthorizationForGroupCreation** in op de waarde **False**.
+
+## <a name="powershell-sample"></a>Voorbeeld van PowerShell
+
+Power shell beschikt niet over de opdracht AZ om de standaard beheer groep in te stellen of om autorisatie vereist te maken, maar als tijdelijke oplossing kunt u gebruikmaken van de REST API met het Power shell-voor beeld hieronder:
+
+```powershell
+$root_management_group_id = "Enter the ID of root management group"
+$default_management_group_id = "Enter the ID of default management group (or use the same ID of the root management group)"
+
+$body = '{
+     "properties": {
+          "defaultManagementGroup": "/providers/Microsoft.Management/managementGroups/' + $default_management_group_id + '",
+          "requireAuthorizationForGroupCreation": true
+     }
+}'
+
+$token = (Get-AzAccessToken).Token
+$headers = @{"Authorization"= "Bearer $token"; "Content-Type"= "application/json"}
+$uri = "https://management.azure.com/providers/Microsoft.Management/managementGroups/$root_management_group_id/settings/default?api-version=2020-02-01"
+
+Invoke-RestMethod -Method PUT -Uri $uri -Headers $headers -Body $body
+```
 
 ## <a name="next-steps"></a>Volgende stappen
 

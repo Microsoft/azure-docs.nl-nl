@@ -8,18 +8,19 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: lagayhar
-ms.openlocfilehash: d45d8bed328dc91dfeeabd6ce878074fa1218623
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 7ac83d0c43026b431370fab1d8c49aec1adf6659
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101737015"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107312719"
 ---
 # <a name="angular-plugin-for-application-insights-javascript-sdk"></a>Hoek-invoeg toepassing voor Application Insights java script SDK
 
 Met de hoek-invoeg toepassing voor de Application Insights java script SDK kunt u:
 
 - Tracering van router wijzigingen
+- Niet-onderschepte uitzonde ringen bijhouden
 
 > [!WARNING]
 > De hoek-invoeg toepassing is niet compatibel met ECMAScript 3 (ES3).
@@ -62,6 +63,24 @@ export class AppComponent {
         appInsights.loadAppInsights();
     }
 }
+```
+
+Voor het bijhouden van niet-onderschepte uitzonde ringen ApplicationinsightsAngularpluginErrorService in `app.module.ts` :
+
+```js
+import { ApplicationinsightsAngularpluginErrorService } from '@microsoft/applicationinsights-angularplugin-js';
+
+@NgModule({
+  ...
+  providers: [
+    {
+      provide: ErrorHandler,
+      useClass: ApplicationinsightsAngularpluginErrorService
+    }
+  ]
+  ...
+})
+export class AppModule { }
 ```
 
 ## <a name="next-steps"></a>Volgende stappen

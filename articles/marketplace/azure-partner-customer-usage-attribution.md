@@ -6,18 +6,18 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 author: cpercy737
 ms.author: camper
-ms.date: 03/22/2021
+ms.date: 04/12/2021
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 53edd3ec9a8d30d0c25f994db4a8b6f0199c2169
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 7f09e744dfdd7be73c62c70bcfa91804f14aaa68
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105558411"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107313671"
 ---
 # <a name="azure-customer-usage-attribution"></a>Toewijzing van Azure-klant gebruik
 
-Met de toewijzing van klant gebruik wordt het gebruik van Azure-resources gekoppeld aan abonnementen van klanten die zijn gemaakt tijdens de implementatie van uw IP-adres bij u als partner. Door deze koppelingen in interne micro soft-systemen te vormen, beschikt u over meer inzicht in de Azure-footprint die uw software uitvoert. Voor [Azure-toepassing aanbiedingen in de commerciële Marketplace](#commercial-marketplace-azure-apps)kunt u met deze tracking-mogelijkheid u afstemmen op de verkoop teams van micro soft en tegoed voor micro soft-partner Programma's krijgen.
+Met de toewijzing van klant gebruik wordt het gebruik van Azure-resources gekoppeld aan abonnementen van klanten die zijn gemaakt tijdens de implementatie van uw IP-adres bij u als partner. Door deze koppelingen in interne micro soft-systemen te vormen, beschikt u over meer inzicht in de Azure-footprint die uw software uitvoert. Voor [Azure-toepassing aanbiedingen in de commerciële Marketplace](#commercial-marketplace-azure-apps)kunt u met deze tracking-mogelijkheid u afstemmen op de verkoop teams van micro soft en tegoed voor micro soft-partner Programma's krijgen. De toewijzing van klant gebruik is niet van toepassing op [de aanbiedingen van de virtuele machine van Azure in de commerciële Marketplace](./azure-vm-create.md). Er is niets wat een Marketplace-Uitgever nodig heeft voor aanbiedingen van virtuele machines om ervoor te zorgen dat hun Azure-verbruik wordt bijgehouden in abonnementen van eind klanten.
 
 De toewijzing van klant gebruik ondersteunt drie implementatie opties:
 

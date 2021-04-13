@@ -3,12 +3,18 @@
 - name: Overzicht
   expanded: true
   items:
-    - name: Wat is anomalie detectie?
+    - name: Wat is anomalie detector (multidimensionale)?
+      href: overview-multivariate.md
+    - name: Wat is anomalie detector (univariate)?
       href: overview.md
     - name: Prijzen en beperkingen
       href: 'https://aka.ms/adpricing'
-- name: Beafwijkingende detector Snelstartgids
-  href: ./quickstarts/client-libraries.md
+- name: Beanomaliede detector-Quick starts
+  items:
+    - name: Multidimensionale-client bibliotheken
+      href: ./quickstarts/client-libraries-multivariate.md
+    - name: Univariate-client bibliotheken
+      href: ./quickstarts/client-libraries.md
 - name: Voorbeelden
   items:
     - name: Interactieve demo
@@ -39,10 +45,18 @@
               href: how-to/deploy-anomaly-detection-on-container-instances.md
 - name: Concepten
   items:
-    - name: Aanbevolen procedures voor anomalie detectie-API
+    - name: Best practices voor anomalie detectie-API (multidimensionale)
+      href: concepts/best-practices-multivariate.md
+    - name: Best practices voor anomalie detectie-API (univariate)
       href: concepts/anomaly-detection-best-practices.md
+    - name: Architectuur voor voor speld onderhoud (multidimensionale)
+      href: concepts/multivariate-architecture.md
+    - name: Problemen met multidimensionale oplossen
+      href: concepts/troubleshoot.md
     - name: Afwijkings detectie Spectral rest (SR) en Convolutional Neural net (CNN)
       href: 'https://arxiv.org/abs/1906.03821'
+    - name: Multidimensionale time-series anomalie detectie via grafiek attentie netwerk
+      href: 'https://arxiv.org/abs/2009.02040'
 - name: Zelfstudies
   items:
     - name: Afwijkingen in batch visualiseren met behulp van Power BI

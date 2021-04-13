@@ -10,12 +10,12 @@ ms.date: 03/10/2021
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 7fe50a6236cf67f1048dddecbf46fea836ec05c5
-ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
+ms.openlocfilehash: e5b5433be4a95a9df9d3b3527473c3004d24acac
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106125746"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107327645"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -47,7 +47,7 @@ Het POM-bestand van uw toepassing bijwerken voor het gebruik van Java 8 of hoger
 </properties>
 ```
 
-### <a name="add-the-package-references-for-the-chat-sdk"></a>De pakket verwijzingen voor de chat-SDK toevoegen
+### <a name="add-the-package-references-for-the-chat-sdk"></a>De pakketverwijzingen voor de Chat-SDK toevoegen
 
 In uw POM-bestand verwijzen we naar het pakket `azure-communication-chat` met de chat-API's:
 
@@ -71,7 +71,7 @@ Voor verificatie moet uw client het pakket `azure-communication-common` verwijze
 
 ## <a name="object-model"></a>Objectmodel
 
-De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services chat SDK voor Java.
+De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services Chat SDK voor Java.
 
 | Naam                                  | Beschrijving                                                  |
 | ------------------------------------- | ------------------------------------------------------------ |
@@ -81,9 +81,9 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 | ChatThreadAsyncClient | Deze klasse is vereist voor de functionaliteit van de asynchrone chat-thread. U verkrijgt een instantie via de ChatAsyncClient en gebruikt deze om berichten te verzenden/ontvangen/bijwerken/verwijderen, gebruikers toe te voegen/te verwijderen of te verzenden, getypte meldingen te verzenden en bevestigingen te lezen. |
 
 ## <a name="create-a-chat-client"></a>Een chat-client maken
-Als u een chat-client wilt maken, gebruikt u het Communications Service-eindpunt en het toegangstoken dat is gegenereerd als onderdeel van de vereiste stappen. Met toegangstokens voor gebruikers kunt u clienttoepassingen maken die zich rechtstreeks verifiëren bij Azure Communication Services. Zodra u deze tokens op uw server hebt gegenereerd, geeft u ze terug op een clientapparaat. U moet de CommunicationTokenCredential-klasse van de gemeen schappelijke SDK gebruiken om het token door te geven aan uw chat-client.
+Als u een chat-client wilt maken, gebruikt u het Communications Service-eindpunt en het toegangstoken dat is gegenereerd als onderdeel van de vereiste stappen. Met toegangstokens voor gebruikers kunt u clienttoepassingen maken die zich rechtstreeks verifiëren bij Azure Communication Services. Zodra u deze tokens op uw server hebt gegenereerd, geeft u ze terug op een clientapparaat. U moet de CommunicationTokenCredential-klasse van de Common SDK gebruiken om het token door te geven aan uw chatclient.
 
-Meer informatie over de [architectuur van chatten](../../../concepts/chat/concepts.md)
+Meer informatie over [chatarchitectuur](../../../concepts/chat/concepts.md)
 
 Bij het toevoegen van de importinstructies, moet u ervoor zorgen dat u alleen importbewerkingen toevoegt vanuit de com.azure.communication.chat en com.azure.communication.chat.models naamspaties en niet vanuit de com.azure.communication.chat.implementation naamspatie. In het bestand App.java dat is gegenereerd via Maven, kunt u de volgende code gebruiken om te beginnen met:
 
@@ -127,19 +127,22 @@ public class App
 De methode `createChatThread` gebruiken om een chat-thread te maken.
 `createChatThreadOptions` wordt gebruikt om de thread-aanvraag te beschrijven.
 
-- Gebruik de `topic` para meter van de constructor om een onderwerp voor deze chat te geven. Het onderwerp kan worden bijgewerkt nadat de chat thread is gemaakt met behulp van de `UpdateThread` functie.
-- Gebruik `participants` om de thread deelnemers weer te geven die moeten worden toegevoegd aan de thread. `ChatParticipant` neemt u de gebruiker die u hebt gemaakt in de Snelstart [Toegangstoken voor gebruikers](../../access-tokens.md).
+- Gebruik de `topic` parameter van de constructor om een onderwerp aan deze chat te geven; Het onderwerp kan worden bijgewerkt nadat de chat-thread is gemaakt met behulp van de `UpdateThread` functie .
+- Gebruik `participants` om de threaddeelnemers weer te voegen aan de thread. `ChatParticipant` neemt u de gebruiker die u hebt gemaakt in de Snelstart [Toegangstoken voor gebruikers](../../access-tokens.md).
 
-`CreateChatThreadResult` is het antwoord dat wordt geretourneerd door het maken van een chat thread.
-Het bevat een `getChatThread()` methode die het `ChatThread` object retourneert dat kan worden gebruikt voor het ophalen van de thread-client van waaruit u de `ChatThreadClient` bewerkingen voor het uitvoeren van de gemaakte thread kunt verkrijgen: deel nemers toevoegen, bericht verzenden enzovoort. Het `ChatThread` object bevat ook de `getId()` methode waarmee de unieke id van de thread wordt opgehaald.
+`CreateChatThreadResult` is het antwoord dat wordt geretourneerd door het maken van een chat-thread.
+Het bevat een methode die het -object retourneert dat kan worden gebruikt om de threadclient op te halen van waaruit u de kunt krijgen voor het uitvoeren van bewerkingen op de gemaakte thread: deelnemers toevoegen, bericht `getChatThread()` `ChatThread` `ChatThreadClient` verzenden, enzovoort. Het `ChatThread` -object bevat ook `getId()` de methode waarmee de unieke id van de thread wordt opgehaald.
 
 ```Java
+CommunicationUserIdentifier identity1 = new CommunicationUserIdentifier("<USER_1_ID>");
+CommunicationUserIdentifier identity2 = new CommunicationUserIdentifier("<USER_2_ID>");
+
 ChatParticipant firstThreadParticipant = new ChatParticipant()
-    .setCommunicationIdentifier(firstUser)
+    .setCommunicationIdentifier(identity1)
     .setDisplayName("Participant Display Name 1");
 
 ChatParticipant secondThreadParticipant = new ChatParticipant()
-    .setCommunicationIdentifier(secondUser)
+    .setCommunicationIdentifier(identity2)
     .setDisplayName("Participant Display Name 2");
 
 CreateChatThreadOptions createChatThreadOptions = new CreateChatThreadOptions("Topic")
@@ -150,9 +153,9 @@ CreateChatThreadResult result = chatClient.createChatThread(createChatThreadOpti
 String chatThreadId = result.getChatThread().getId();
 ```
 
-## <a name="list-chat-threads"></a>Chat-threads weer geven
+## <a name="list-chat-threads"></a>Chatthreads op een lijst plaatsen
 
-Gebruik de- `listChatThreads` methode om een lijst met bestaande chat-threads op te halen.
+Gebruik de `listChatThreads` methode om een lijst met bestaande chatthreads op te halen.
 
 ```java
 PagedIterable<ChatThreadItem> chatThreads = chatClient.listChatThreads();
@@ -164,7 +167,7 @@ chatThreads.forEach(chatThread -> {
 
 ## <a name="get-a-chat-thread-client"></a>Een chat-thread-client ophalen
 
-De methode `getChatThreadClient` retourneert een thread-client voor een thread die al bestaat. Het kan worden gebruikt voor het uitvoeren van bewerkingen op de gemaakte thread: deel nemers toevoegen, berichten verzenden, enzovoort. `chatThreadId` is de unieke ID van de bestaande chat-thread.
+De methode `getChatThreadClient` retourneert een thread-client voor een thread die al bestaat. Het kan worden gebruikt voor het uitvoeren van bewerkingen op de gemaakte thread: deelnemers toevoegen, bericht verzenden, enzovoort. `chatThreadId` is de unieke id van de bestaande chat-thread.
 
 ```Java
 ChatThreadClient chatThreadClient = chatClient.getChatThreadClient(chatThreadId);
@@ -176,7 +179,7 @@ Gebruik de methode `sendMessage` om een bericht te verzenden naar de thread die 
 `sendChatMessageOptions` wordt gebruikt om de aanvraag voor het chatbericht te beschrijven.
 
 - Gebruik `content` om de inhoud van het chatbericht te geven.
-- Gebruiken `type` om het inhouds type van het chat bericht, tekst of HTML op te geven.
+- Gebruik `type` om het inhoudstype voor het chatbericht, TEKST of HTML, op te geven.
 - Gebruik `senderDisplayName` om de weergavenaam van de afzender te geven.
 
 Het antwoord `sendChatMessageResult` bevat een `id`, dit is de unieke ID van het bericht.
@@ -203,21 +206,21 @@ chatThreadClient.listMessages().forEach(message -> {
 
 `listMessages` retourneert de meest recente versie van het bericht, inclusief eventuele bewerkingen of verwijderingen die zijn opgetreden in het bericht met behulp van .editMessage() en .deleteMessage(). Voor verwijderde berichten retourneert `chatMessage.getDeletedOn()` een datum/tijd-waarde die aangeeft wanneer dat bericht is verwijderd. Voor bewerkte berichten retourneert `chatMessage.getEditedOn()` een datum/tijd die aangeeft wanneer het bericht is bewerkt. De oorspronkelijke tijd van het maken van het bericht kan worden geopend met `chatMessage.getCreatedOn()` en kan worden gebruikt voor het bestellen van de berichten.
 
-Lees hier meer over bericht typen: [bericht typen](../../../concepts/chat/concepts.md#message-types).
+Lees hier meer over berichttypen: [Berichttypen](../../../concepts/chat/concepts.md#message-types).
 
-## <a name="send-read-receipt"></a>Lees bevestiging verzenden
+## <a name="send-read-receipt"></a>Ontvangstbewijs voor lezen verzenden
 
-Gebruik de `sendReadReceipt` methode om een gebeurtenis voor lees bevestiging te plaatsen in een chat-thread, namens een gebruiker.
-`chatMessageId` is de unieke ID van het chat bericht dat is gelezen.
+Gebruik de methode om namens een gebruiker een ontvangstbewijsgebeurtenis te plaatsen in een `sendReadReceipt` chatgesprek.
+`chatMessageId` is de unieke id van het chatbericht dat is gelezen.
 
 ```Java
 String chatMessageId = message.getId();
 chatThreadClient.sendReadReceipt(chatMessageId);
 ```
 
-## <a name="list-chat-participants"></a>Chat deelnemers weer geven
+## <a name="list-chat-participants"></a>Chatdeelnemers op een lijst zetten
 
-Gebruiken `listParticipants` voor het ophalen van een verzameling pagina's met de deel nemers van de chat-thread geïdentificeerd door chatThreadId.
+Gebruik `listParticipants` om een verzameling met pagina's op te halen met de deelnemers van de chat-thread geïdentificeerd door chatThreadId.
 
 ```Java
 PagedIterable<ChatParticipant> chatParticipantsResponse = chatThreadClient.listParticipants();
@@ -226,25 +229,28 @@ chatParticipantsResponse.forEach(chatParticipant -> {
 });
 ```
 
-## <a name="add-a-user-as-participant-to-the-chat-thread"></a>Een gebruiker toevoegen als deel nemer aan de chat thread
+## <a name="add-a-user-as-participant-to-the-chat-thread"></a>Een gebruiker toevoegen als deelnemer aan de chat-thread
 
-Zodra u een chat-thread hebt gemaakt, kunt u gebruikers toevoegen en verwijderen. Door gebruikers toe te voegen, kunt u hen toegang geven tot het verzenden van berichten naar de chat-thread en andere deel nemers toevoegen/verwijderen. U moet beginnen met het ophalen van een nieuw toegangstoken en een nieuwe identiteit voor die gebruiker. Voordat u de methode addParticipants aanroept, moet u ervoor zorgen dat u een nieuw toegangs token en een nieuwe identiteit hebt verkregen voor die gebruiker. De gebruiker heeft dat toegangstoken nodig om zijn chat-client te initialiseren.
+Zodra u een chat-thread hebt gemaakt, kunt u gebruikers toevoegen en verwijderen. Door gebruikers toe te voegen, geeft u hen toegang om berichten naar de chat-thread te verzenden en andere deelnemers toe te voegen/te verwijderen. U moet beginnen met het ophalen van een nieuw toegangstoken en een nieuwe identiteit voor die gebruiker. Voordat u de methode addPartici methodolog aanroept, moet u ervoor zorgen dat u een nieuw toegangsteken en een nieuwe identiteit voor die gebruiker hebt verkregen. De gebruiker heeft dat toegangstoken nodig om zijn chat-client te initialiseren.
 
-Gebruik de- `addParticipants` methode om deel nemers aan de thread toe te voegen.
+Gebruik de `addParticipants` methode om deelnemers aan de thread toe te voegen.
 
-- `communicationIdentifier`, vereist, is het CommunicationIdentifier dat u hebt gemaakt door de CommunicationIdentityClient in de Snelstartgids voor [gebruikers toegangs tokens](../../access-tokens.md) .
-- `displayName`, optioneel, is de weergave naam voor de deel nemer aan de thread.
-- `shareHistoryTime`, optioneel, is de tijd waarop de chat geschiedenis wordt gedeeld met de deel nemer. Als u de geschiedenis wilt delen sinds het begin van de chat-thread, stelt u deze eigenschap in op een willekeurige datum die gelijk is aan of kleiner is dan de aanmaaktijd van de thread. Als u geen geschiedenis wilt delen vóór wanneer de deel nemer is toegevoegd, stelt u deze in op de huidige datum. Als u gedeeltelijke geschiedenis wilt delen, stelt u deze in op de vereiste datum.
+- `communicationIdentifier`, vereist, is de CommunicationIdentifier die u hebt gemaakt door de CommunicationIdentityClient in de quickstart [Token voor gebruikerstoegang.](../../access-tokens.md)
+- `displayName`, optioneel, is de weergavenaam voor de threaddeelnemer.
+- `shareHistoryTime`, optioneel, is het tijdstip waarop de chatgeschiedenis wordt gedeeld met de deelnemer. Als u de geschiedenis wilt delen sinds het begin van de chat-thread, stelt u deze eigenschap in op een willekeurige datum die gelijk is aan of kleiner is dan de aanmaaktijd van de thread. Als u geen geschiedenis wilt delen voorafgaand aan het moment waarop de deelnemer is toegevoegd, stelt u deze in op de huidige datum. Als u gedeeltelijke geschiedenis wilt delen, stelt u deze in op de vereiste datum.
 
 ```Java
 List<ChatParticipant> participants = new ArrayList<ChatParticipant>();
 
+CommunicationUserIdentifier identity3 = new CommunicationUserIdentifier("<USER_3_ID>");
+CommunicationUserIdentifier identity4 = new CommunicationUserIdentifier("<USER_4_ID>");
+
 ChatParticipant thirdThreadParticipant = new ChatParticipant()
-    .setCommunicationIdentifier(user3)
+    .setCommunicationIdentifier(identity3)
     .setDisplayName("Display Name 3");
 
 ChatParticipant fourthThreadParticipant = new ChatParticipant()
-    .setCommunicationIdentifier(user4)
+    .setCommunicationIdentifier(identity4)
     .setDisplayName("Display Name 4");
 
 participants.add(thirdThreadParticipant);

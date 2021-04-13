@@ -5,12 +5,12 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 08/06/2019
 ms.author: tomfitz
-ms.openlocfilehash: f76d3b81c2d5425f7bb91c5c86a79faa097794e3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 36d6af7fb42bc1b705b44bdae6f24b454bfd242f
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96434997"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107312430"
 ---
 # <a name="test-your-portal-interface-for-azure-managed-applications"></a>Uw portal-interface voor Azure Managed Applications testen
 
@@ -18,7 +18,7 @@ Nadat u [de createUiDefinition.jshebt gemaakt](create-uidefinition-overview.md) 
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een **createUiDefinition.jsin** het bestand. Als u dit bestand niet hebt, kopieert u het [voorbeeld bestand](https://github.com/Azure/azure-quickstart-templates/blob/master/100-marketplace-sample/createUiDefinition.json).
+* Een **createUiDefinition.jsin** het bestand. Als u dit bestand niet hebt, kopieert u het [voorbeeld bestand](https://github.com/Azure/azure-quickstart-templates/blob/master/demos/100-marketplace-sample/createUiDefinition.json).
 
 * Een Azure-abonnement. Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 

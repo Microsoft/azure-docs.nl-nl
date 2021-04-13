@@ -7,13 +7,13 @@ ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: references_regions
-ms.date: 12/10/2020
-ms.openlocfilehash: 1529d2d546227880fee71d1823482e040d2e57c1
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/11/2021
+ms.openlocfilehash: 53f300adb57eb17e704e7e3323b9829c485bb87a
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103564317"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107308979"
 ---
 # <a name="mapping-data-flows-in-azure-data-factory"></a>Gegevens stromen toewijzen in Azure Data Factory
 
@@ -96,66 +96,6 @@ Met de foutopsporingsmodus kunt u de resultaten van elke transformatie stap inte
 De stroom voor het toewijzen van gegevens kan worden geïntegreerd met bestaande Azure Data Factory bewakings mogelijkheden. Zie [toewijzings gegevens stroom controleren](concepts-data-flow-monitoring.md)voor meer informatie over het bewaken van de uitvoer van de bewaking van gegevens stromen.
 
 Het Azure Data Factory-team heeft een [hulp programma voor het afstemmen van prestaties](concepts-data-flow-performance.md) gemaakt om u te helpen bij het optimaliseren van de uitvoerings tijd van uw gegevens stromen na het maken van uw bedrijfs logica.
-
-## <a name="available-regions"></a>Beschikbare regio's
-
-= = = = = = De toewijzing van gegevens stromen zijn beschikbaar in de volgende regio's in ADF:
-
-| Azure-regio | Gegevens stromen in ADF |
-| ------------ | ----------------- |
-|  Australië - centraal | |
-| Australië - centraal 2 | |
-| Australië - oost | ✓ |
-| Australië - zuidoost   | ✓ |
-| Brazilië - zuid  | ✓ |
-| Canada - midden | ✓ |
-| India - centraal | ✓ |
-| VS - centraal    | ✓ |
-| China East |      |
-| China - oost 2  |   |
-| China niet-regionaal | |
-| China - noord |     |
-| China - noord 2 | |
-| Azië - oost | ✓ |
-| VS - oost   | ✓ |
-| VS - oost 2 | ✓ |
-| Frankrijk - centraal | ✓ |
-| Frankrijk - zuid  | |
-| Duitsland-centraal (soeverein) | |
-| Duitsland-niet-regionaal (soeverein) | |
-| Duitsland-noord (openbaar) | |
-| Duitsland-noordoost (soeverein) | |
-| Duitsland-west-centraal (openbaar) |  |
-| Japan - oost | ✓ |
-| Japan - west |  |
-| Korea - centraal | ✓ |
-| Korea - zuid | |
-| VS - noord-centraal  | ✓ |
-| Europa - noord  | ✓ |
-| Noorwegen - oost | |
-| Noorwegen - west | |
-| Zuid-Afrika - noord    | ✓ |
-| Zuid-Afrika - west |  |
-| VS - zuid-centraal  | |
-| India - zuid | |
-| Azië - zuidoost    | ✓ |
-| Zwitserland - noord |   |
-| Zwitserland - west | |
-| UAE - centraal | |
-| VAE - noord |  |
-| Verenigd Koninkrijk Zuid  | ✓ |
-| Verenigd Koninkrijk West |     |
-| US DoD Central | |
-| US DoD East | |
-| VS (overheid) - Arizona |      |
-| US Gov - niet-regionaal | |
-| VS (overheid) - Texas | |
-| VS (overheid) - Virginia |     |
-| VS - west-centraal |     |
-| Europa -west   | ✓ |
-| India - west | |
-| VS - west   | ✓ |
-| VS - west 2 | ✓ |
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -10,19 +10,26 @@ ms.topic: conceptual
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sstein
-ms.date: 02/22/2021
-ms.openlocfilehash: c5b6509cabd743a01a085639a7b76d764555a9f8
-ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
+ms.date: 04/09/2021
+ms.openlocfilehash: 47686f457e2579ca8a643de6671c886effefa6f1
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106106650"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107313518"
 ---
 # <a name="scale-single-database-resources-in-azure-sql-database"></a>Resources van een individuele database schalen in Azure SQL Database
 
 In dit artikel wordt beschreven hoe u de berekenings-en opslag resources schaalt die beschikbaar zijn voor een Azure SQL Database in de ingerichte Compute-laag. De [Compute-laag zonder server](serverless-tier-overview.md) biedt ook reken capaciteit automatisch schalen en facturen per seconde voor gebruikte reken kracht.
 
-Nadat u het aantal vCores of Dtu's hebt gekozen, kunt u een enkele data base dynamisch omhoog of omlaag schalen op basis van de werkelijke ervaring met behulp van de [Azure Portal](single-database-manage.md#the-azure-portal), [Transact-SQL](/sql/t-sql/statements/alter-database-transact-sql#examples-1), [Power shell](/powershell/module/az.sql/set-azsqldatabase), de [Azure cli](/cli/azure/sql/db#az-sql-db-update)of de [rest API](/rest/api/sql/databases/update).
+Nadat u het aantal vCores of Dtu's hebt gekozen, kunt u een enkele data base dynamisch omhoog of omlaag schalen op basis van de werkelijke ervaring met:
+
+* [Transact-SQL](/sql/t-sql/statements/alter-database-transact-sql#overview-sql-database)
+* [Azure-portal](single-database-manage.md#the-azure-portal)
+* [PowerShell](/powershell/module/az.sql/set-azsqldatabase)
+* [Azure-CLI](/cli/azure/sql/db#az-sql-db-update)
+* [REST API](/rest/api/sql/databases/update)
+
 
 De volgende video toont het dynamisch wijzigen van de servicelaag en de berekenings grootte om beschik bare Dtu's voor één Data Base te verg Roten.
 
@@ -125,7 +132,7 @@ Er worden kosten in rekening gebracht voor elk uur dat een data base bestaat met
 
 ### <a name="vcore-based-purchasing-model"></a>Aankoopmodel op basis van vCore
 
-- Opslag kan worden ingericht tot de maximale grootte van de gegevens opslag met een veelvoud van 1 GB. De minimale Configureer bare gegevens opslag is 1 GB. Zie documentatie pagina's voor resource limieten voor [afzonderlijke data bases](resource-limits-vcore-single-databases.md) en [elastische Pools](resource-limits-vcore-elastic-pools.md) voor gegevens opslag maximale grootte limieten in elke service doelstelling.
+- Opslag kan worden ingericht tot de maximale grootte van de gegevens opslag met een veelvoud van 1 GB. De minimale Configureer bare gegevens opslag is 1 GB. Zie documentatie pagina's voor resource limieten voor [resource limieten voor afzonderlijke data bases met behulp van het vCore-aankoop model](resource-limits-vcore-single-databases.md) en [resource limieten voor afzonderlijke data bases met behulp van het DTU-aankoop model](resource-limits-dtu-single-databases.md)voor de maximale grootte limieten voor gegevens opslag in elke service doelstelling.
 - Gegevens opslag voor één data base kan worden ingericht door de maximale grootte te verhogen of te verlagen met behulp van de [Azure Portal](https://portal.azure.com), [Transact-SQL](/sql/t-sql/statements/alter-database-transact-sql#examples-1), [Power shell](/powershell/module/az.sql/set-azsqldatabase), [Azure cli](/cli/azure/sql/db#az-sql-db-update)of [rest API](/rest/api/sql/databases/update). Als de waarde voor de maximale grootte in bytes is opgegeven, moet deze een meervoud van 1 GB (1073741824 bytes) zijn.
 - De hoeveelheid gegevens die kan worden opgeslagen in de gegevens bestanden van een Data Base wordt beperkt door de geconfigureerde maximale grootte van de gegevens opslag. Naast die opslag wordt met Azure SQL Database automatisch 30% meer opslag toegewezen voor het transactie logboek.
 - Azure SQL Database wijst 32 GB per vCore automatisch toe aan de `tempdb` Data Base. `tempdb` bevindt zich in de lokale SSD-opslag in alle service lagen.

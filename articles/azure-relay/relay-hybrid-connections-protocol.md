@@ -3,12 +3,12 @@ title: Hand leiding voor Azure Relay Hybride verbindingen Protocol | Microsoft D
 description: In dit artikel wordt de interactie aan de client zijde beschreven met de Hybride verbindingen relay voor het verbinden van clients in de rollen listener en Sender.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 36321f88de173a37c9aa6615c4c0f2b29aec9f20
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 95eb6a66ac7580f115c85ddb258768b9eef62321
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97976959"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107314215"
 ---
 # <a name="azure-relay-hybrid-connections-protocol"></a>Azure Relay Hybride verbindingen-Protocol
 
@@ -498,7 +498,7 @@ Als er een fout optreedt, kan de service als volgt reageren. Of het antwoord afk
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Veelgestelde vragen over Relay](relay-faq.md)
+* [Veelgestelde vragen over Relay](relay-faq.yml)
 * [Een naamruimte maken](relay-create-namespace-portal.md)
 * [Aan de slag met .NET](relay-hybrid-connections-dotnet-get-started.md)
 * [Aan de slag met knooppunten](relay-hybrid-connections-node-get-started.md)

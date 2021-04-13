@@ -2,13 +2,13 @@
 title: Door de gebruiker gedefinieerde functies in sjablonen
 description: Hierin wordt beschreven hoe u door de gebruiker gedefinieerde functies definieert en gebruikt in een Azure Resource Manager sjabloon (ARM-sjabloon).
 ms.topic: conceptual
-ms.date: 02/11/2021
-ms.openlocfilehash: 9c7480958e6315c8aea1fd8d12613bcf9d606723
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/12/2021
+ms.openlocfilehash: 802ac6e1c70db8caa58aecde3efe814430c79682
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100379621"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107307772"
 ---
 # <a name="user-defined-functions-in-arm-template"></a>Door de gebruiker gedefinieerde functies in ARM-sjabloon
 
@@ -107,6 +107,7 @@ Bij het definiëren van een gebruikers functie gelden enkele beperkingen:
 * De functie kan alleen para meters gebruiken die in de functie zijn gedefinieerd. Wanneer u de functie [para meters](template-functions-deployment.md#parameters) in een door de gebruiker gedefinieerde functie gebruikt, bent u beperkt tot de para meters voor die functie.
 * De functie kan geen andere door de gebruiker gedefinieerde functies aanroepen.
 * De functie kan de functie [Reference](template-functions-resource.md#reference) of een van de [lijst](template-functions-resource.md#list) functies niet gebruiken.
+* De functie kan de functie [dateTimeAdd](template-functions-date.md#datetimeadd) niet gebruiken.
 * Para meters voor de functie kunnen geen standaard waarden hebben.
 
 ## <a name="next-steps"></a>Volgende stappen

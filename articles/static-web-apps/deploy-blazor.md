@@ -5,14 +5,14 @@ services: static-web-apps
 author: craigshoemaker
 ms.service: static-web-apps
 ms.topic: tutorial
-ms.date: 09/10/2020
+ms.date: 04/09/2021
 ms.author: cshoe
-ms.openlocfilehash: 0086f7f68fd05d6925d19c7ab457fbc125e36be4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5b8a94409f082177192847f2c65d44a513ecdbe4
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96350225"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107305035"
 ---
 # <a name="tutorial-building-a-static-web-app-with-blazor-in-azure-static-web-apps"></a>Zelfstudie: Een statische web-app bouwen met Blazor in Azure Static Web Apps
 
@@ -43,7 +43,7 @@ Deze projecten vormen samen de vereiste onderdelen om een Blazor-Web-assembly-to
 
 ## <a name="fallback-route"></a>Alternatieve route
 
-De toepassing geeft URL's weer zoals _/counter_ en _/fetchdata_ die aan specifieke routes van de toepassing zijn toegewezen. Omdat deze app is geïmplementeerd als een toepassing met één pagina, krijgt elke route het bestand _index.html_. Om ervoor te zorgen dat voor een aanvraag voor een willekeurig pad _index.html-_ een [terugvalroute](./routes.md#fallback-routes) wordt geïmplementeerd in het _routes.json_-bestand dat is te vinden in de map _wwwroot_ van het client-project.
+De toepassing geeft URL's weer zoals _/counter_ en _/fetchdata_ die aan specifieke routes van de toepassing zijn toegewezen. Omdat deze app is geïmplementeerd als een toepassing met één pagina, krijgt elke route het bestand _index.html_. Om ervoor te zorgen dat de aanvraag voor een wille keurig pad _index.html_ een [terugval route](./routes.md#fallback-routes) wordt geïmplementeerd in de _staticwebapp.config.jsvoor_ het bestand dat is gevonden in de map _wwwroot_ van het client project.
 
 ```json
 {
@@ -64,7 +64,7 @@ De bovenstaande configuratie zorgt ervoor dat aanvragen voor elke route in de ap
 In dit artikel wordt gebruikgemaakt van een GitHub-opslagplaatssjabloon, zodat u eenvoudig aan de slag kunt gaan. De sjabloon biedt een starters-app die wordt geïmplementeerd naar Azure Static Web Apps.
 
 1. Zorg ervoor dat u bent aangemeld bij GitHub en ga naar de volgende locatie om een nieuwe opslagplaats te maken:
-    - [https://github.com/staticwebdev/blazor-starter/generate](https://github.com/login?return_to=/staticwebdev/blazor-starter/generate)
+   - [https://github.com/staticwebdev/blazor-starter/generate](https://github.com/login?return_to=/staticwebdev/blazor-starter/generate)
 1. Geef uw opslagplaats de naam **mijn-eerste-statische-blazor-app**
 
 ## <a name="create-a-static-web-app"></a>Statische web-app maken
@@ -84,7 +84,7 @@ Op het tabblad _Basisbeginselen_ kunt u de nieuwe app configureren en aan een Gi
 1. Selecteer uw _Azure-abonnement_
 1. Een nieuwe _Resourcegroep_ selecteren of maken
 1. Geef de app de naam **mijn-eerste-statische-blazor-app**
-    - Geldige tekens zijn `a-z` (hoofdlettergevoelig), `0-9` en `-`.
+   - Geldige tekens zijn `a-z` (hoofdlettergevoelig), `0-9` en `-`.
 1. Selecteer de _Regio_ het dichtst bij u in de buurt
 1. Selecteer de **gratis** _SKU_
 1. Selecteer de knop **Aanmelden bij GitHub** en verifieer u bij GitHub
@@ -97,23 +97,23 @@ Nadat u zich hebt aangemeld bij GitHub, voert u de gegevens van de opslagplaats 
 1. Selecteer **mijn-eerste-statische-blazor-app** in de vervolgkeuzelijst _Opslagplaats_
 1. Selecteer **Hoofd** in de vervolgkeuzelijst _Vertakking_
 
-    Als u geen opslagplaatsen ziet, moet u mogelijk Azure Static Web Apps autoriseren in GitHub. Ga naar de GitHub-opslagplaats en ga naar **Instellingen > Toepassingen > Geautoriseerde OAuth-apps**, selecteer **Azure Static Web Apps** en selecteer **Verlenen**. Voor organisatie-opslagplaatsen moet u een eigenaar van de organisatie zijn om de machtigingen te verlenen.
+   Als u geen opslagplaatsen ziet, moet u mogelijk Azure Static Web Apps autoriseren in GitHub. Ga naar de GitHub-opslagplaats en ga naar **Instellingen > Toepassingen > Geautoriseerde OAuth-apps**, selecteer **Azure Static Web Apps** en selecteer **Verlenen**. Voor organisatie-opslagplaatsen moet u een eigenaar van de organisatie zijn om de machtigingen te verlenen.
 
 1. Voeg in de sectie _Details van de build_ Blazor-details van de configuratie toe.
 
-    - Selecteer **Blazor** in de vervolgkeuzelijst _Build-presets_ en behoud alle standaardwaarden.
+   - Selecteer **Blazor** in de vervolgkeuzelijst _Build-presets_ en behoud alle standaardwaarden.
 
 1. Selecteer **Controleren + maken**.
 
-    :::image type="content" source="media/deploy-blazor/review-create.png" alt-text="Knop Beoordelen en maken":::
+   :::image type="content" source="media/deploy-blazor/review-create.png" alt-text="Knop Beoordelen en maken":::
 
 1. Selecteer **Maken**.
 
-    :::image type="content" source="media/deploy-blazor/create-button.png" alt-text="De knop Maken":::
+   :::image type="content" source="media/deploy-blazor/create-button.png" alt-text="De knop Maken":::
 
 1. Selecteer **Ga naar resource**.
 
-    :::image type="content" source="media/deploy-blazor/resource-button.png" alt-text="De knop Naar de resource gaan":::
+   :::image type="content" source="media/deploy-blazor/resource-button.png" alt-text="De knop Naar de resource gaan":::
 
 ## <a name="view-the-website"></a>De website weergeven
 

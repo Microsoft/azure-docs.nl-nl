@@ -3,21 +3,21 @@ title: 'Zelfstudie: een aangepast domein toevoegen aan uw Azure Front Door-confi
 description: In deze zelfstudie leert u hoe u een aangepast domein aan Azure Front Door kunt toevoegen.
 services: frontdoor
 documentationcenter: ''
-author: duongau
+author: jessie-jyy
 editor: ''
 ms.service: frontdoor
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 09/24/2020
-ms.author: duau
-ms.openlocfilehash: e1540602bae0779d69c0cb4bb59e93b810b52904
-ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
+ms.date: 04/12/2021
+ms.author: yuajia
+ms.openlocfilehash: 7e2f05a7d911ce2b311a423994d2b459de0fa269
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106550758"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107308860"
 ---
 # <a name="tutorial-add-a-custom-domain-to-your-front-door"></a>Zelfstudie: Een aangepast domein aan uw Front Door toevoegen
 
@@ -40,9 +40,9 @@ In deze zelfstudie leert u het volgende:
 
 * Voordat u de stappen in deze zelfstudie kunt voltooien, moet u een Front Door maken. Raadpleeg [Snelstartgids: Een Front Door maken](quickstart-create-front-door.md) voor meer informatie.
 
-* Als u nog geen aangepast domein hebt, moet u er eerst een aanschaffen bij een domeinprovider. Zie bijvoorbeeld [Een aangepaste domeinnaam kopen](../app-service/manage-custom-dns-buy-domain.md).
+* Als u nog geen aangepast domein hebt, moet u er eerst een aanschaffen bij een domein provider. Zie bijvoorbeeld [Een aangepaste domeinnaam kopen](../app-service/manage-custom-dns-buy-domain.md).
 
-* Als u van Azure gebruikmaakt voor het hosten van uw [DNS-domeinen](../dns/dns-overview.md), moet u het domeinnaam-systeem van de domeinprovider (DNS) naar een Azure DNS overdragen. Zie [Delegate a domain to Azure DNS](../dns/dns-delegate-domain-azure-dns.md) (Een domein aan Azure DNS overdragen) voor meer informatie. Als u van een domeinprovider gebruikmaakt voor het afhandelen van uw DNS-domein, gaat u verder met [Een DNS CNAME-record maken](#create-a-cname-dns-record).
+* Als u Azure gebruikt voor het hosten van uw [DNS-domeinen](../dns/dns-overview.md), moet u de DNS-naam (Domain Name System) van de domein provider overdragen aan een Azure DNS. Zie [Delegate a domain to Azure DNS](../dns/dns-delegate-domain-azure-dns.md) (Een domein aan Azure DNS overdragen) voor meer informatie. Als u echter een domein provider gebruikt voor het verwerken van uw DNS-domein, gaat u door met het [maken van een CNAME DNS-record](#create-a-cname-dns-record).
 
 
 ## <a name="create-a-cname-dns-record"></a>Een CNAME DNS-record maken
@@ -54,9 +54,9 @@ Een aangepast domein en het subdomein kunnen slechts aan één Front Door tegeli
 
 ## <a name="map-the-temporary-afdverify-subdomain"></a>Het tijdelijke afdverify-subdomein toewijzen
 
-Wanneer u een bestaand domein toewijst dat in productie is genomen, zijn er speciale overwegingen. Terwijl u uw aangepaste domein in het Azure Portal registreert, kan een korte periode van uitvaltijd voor het domein optreden. Om te voorkomen dat het webverkeer wordt onderbroken, moet u eerst uw aangepaste domein aan de standaard frond-endhost van uw Front Door het Azure afdverify-subdomein toewijzen om een tijdelijke CNAME-toewijzing te maken. Met deze methode kunnen gebruikers zonder onderbreking toegang krijgen tot uw domein terwijl de DNS-toewijzing wordt uitgevoerd.
+Wanneer u een bestaand domein toewijst dat in productie is genomen, zijn er speciale overwegingen. Terwijl u uw aangepaste domein registreert in de Azure Portal, kan een korte periode van uitval tijd voor het domein optreden. Om te voorkomen dat het webverkeer wordt onderbroken, moet u eerst uw aangepaste domein aan de standaard frond-endhost van uw Front Door het Azure afdverify-subdomein toewijzen om een tijdelijke CNAME-toewijzing te maken. Met deze methode kunnen gebruikers zonder onderbreking toegang krijgen tot uw domein terwijl de DNS-toewijzing wordt uitgevoerd.
 
-U kunt ook uw aangepaste domein rechtstreeks aan uw Front Door toewijzen, als u uw aangepaste domein voor het eerst gebruikt en er geen productieverkeer op wordt uitgevoerd. Ga door naar [Permanent aangepast domein toewijzen](#map-the-permanent-custom-domain).
+Als u uw aangepaste domein voor het eerst gebruikt en er geen productie verkeer wordt uitgevoerd, kunt u uw aangepaste domein rechtstreeks aan uw voor deur toewijzen. Ga door met [het toewijzen van het permanent aangepaste domein](#map-the-permanent-custom-domain).
 
 Om een CNAME-record te maken met het afdverify-subdomein:
 
@@ -70,7 +70,7 @@ Om een CNAME-record te maken met het afdverify-subdomein:
     |---------------------------|-------|---------------------------------|
     | afdverify.www.contoso.com | CNAME | afdverify.contoso-frontend.azurefd.net |
 
-    - Bron: Voer de naam van uw aangepaste domein, met inbegrip van het subdomein afdverify, in de volgende indeling in: afdverify. _&lt;aangepaste domeinnaam&gt;_ . Bijvoorbeeld afdverify.www.contoso.com. Als u een Joker teken domein, zoals. contoso.com, toewijst, \* is de bron waarde hetzelfde als zonder het Joker teken: afdverify.contoso.com.
+    - Bron: Voer de naam van uw aangepaste domein, met inbegrip van het subdomein afdverify, in de volgende indeling in: afdverify. _&lt;aangepaste domeinnaam&gt;_ . Bijvoorbeeld afdverify.www.contoso.com. Als u een Joker teken domein wilt toewijzen, zoals \* . contoso.com, is de bron waarde hetzelfde als zonder het Joker teken: afdverify.contoso.com.
 
     - Type: Voer *CNAME* in.
 
@@ -109,13 +109,13 @@ Nadat u uw aangepaste domein hebt geregistreerd, kunt u dit toevoegen aan uw Fro
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com/) en blader naar de Front Door met de front-endhost die u wilt toewijzen aan een aangepast domein.
     
-2. Klik op de pagina **Front Door-ontwerper** op ‘+’ om een aangepast domein toe te voegen.
+2. Selecteer op de pagina **front deur Designer** ' + ' om een aangepast domein toe te voegen.
     
 3. Geef **Aangepast domein** op. 
 
 4. Bij **Front-endhost** staat de front-endhost die als bestemmingsdomein van uw CNAME-record moet worden gebruikt, al ingevuld op basis van uw Front Door: *&lt;standaardhostnaam&gt;*.azurefd.net. De naam kan niet worden gewijzigd.
 
-5. Bij **Aangepaste hostnaam** voert u de naam van uw aangepaste domein in, inclusief het subdomein, om dit te gebruiken als het brondomein van uw CNAME-record. Bijvoorbeeld: www\.contoso.com of cdn.contoso.com. Gebruik niet de naam van het afdverify-subdomein.
+5. Bij **Aangepaste hostnaam** voert u de naam van uw aangepaste domein in, inclusief het subdomein, om dit te gebruiken als het brondomein van uw CNAME-record. Bijvoorbeeld: www\.contoso.com of cdn.contoso.com. Gebruik niet de afdverify-subdomeinnaam.
 
 6. Selecteer **Toevoegen**.
 
@@ -126,14 +126,14 @@ Nadat u uw aangepaste domein hebt geregistreerd, kunt u dit toevoegen aan uw Fro
 
 ## <a name="verify-the-custom-domain"></a>Het aangepaste domein verifiëren
 
-Nadat u de registratie van uw aangepaste domein hebt voltooid, controleert u of het aangepaste domein verwijst naar uw standaard front-endhost van uw Front Door.
+Nadat u de registratie van uw aangepaste domein hebt voltooid, controleert u of het aangepaste domein naar uw standaard front-end-frontend-host verwijst.
  
 Ga naar het adres van het bestand met behulp van het aangepaste domein in uw browser. Bijvoorbeeld, als uw aangepaste domein robotics.contoso.com is, moet de URL naar het bestand in de cache moet vergelijkbaar zijn met de volgende URL: http:\//robotics.contoso.com/my-public-container/my-file.jpg. Controleer of het resultaat hetzelfde is als wanneer u de Front Door rechtstreeks benadert via *&lt;Front Door-host&gt;* .azurefd.net.
 
 
 ## <a name="map-the-permanent-custom-domain"></a>Permanent aangepast domein toewijzen
 
-Als u hebt gecontroleerd dat het subdomein afdverify met succes is toegewezen aan uw Front Door (of als u een nieuwe aangepast gebruikt domein dat niet in productie is), kunt u vervolgens het aangepaste domein rechtstreeks toewijzen aan de  standaard front-endhost van uw Front Door.
+Als u hebt gecontroleerd of het subdomein afdverify is toegewezen aan de voor deur (of als u een nieuw aangepast domein gebruikt dat niet in productie is), kunt u het aangepaste domein rechtstreeks toewijzen aan uw standaard front-end-frontend-host.
 
 Maken van een CNAME-record voor uw aangepaste domein:
 
@@ -157,7 +157,7 @@ Maken van een CNAME-record voor uw aangepaste domein:
 
 5. Als u eerder een tijdelijk afdverify-subdomein CNAME-record hebt gemaakt, moet u dit verwijderen. 
 
-6. Als u dit aangepaste domein voor het eerst in de productieomgeving gebruikt, volg dan de stappen voor [Het aangepaste domein koppelen aan uw Front Door](#associate-the-custom-domain-with-your-front-door) en [Het aangepaste domein verifiëren](#verify-the-custom-domain).
+6. Als u dit aangepaste domein voor het eerst gebruikt in de productie omgeving, volgt u de stappen voor [het koppelen van het aangepaste domein aan uw voor deur](#associate-the-custom-domain-with-your-front-door) en [het aangepaste domein controleren](#verify-the-custom-domain).
 
 Bijvoorbeeld: de procedure voor de registrar van een GoDaddy-domein is als volgt:
 
@@ -187,17 +187,18 @@ Bijvoorbeeld: de procedure voor de registrar van een GoDaddy-domein is als volgt
 
 8. Selecteer **Verwijderen** om het CNAME-record te verwijderen.
 
-
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-In de voorgaande stappen hebt u een aangepast domein toegevoegd aan een Front Door. Als u uw Front Door niet langer met een aangepast domein wilt koppelen, kunt u het aangepaste domein verwijderen door deze stappen uit te voeren:
+In de voorgaande stappen hebt u een aangepast domein toegevoegd aan een Front Door. Als u de voor deur niet meer wilt koppelen aan een aangepast domein, kunt u het aangepaste domein verwijderen door de volgende stappen uit te voeren:
  
-1. Selecteer in uw Front Door-ontwerper het aangepaste domein dat u wilt verwijderen.
+1. Ga naar uw DNS-provider, verwijder de CNAME-record voor het aangepaste domein of werk de CNAME-record voor het aangepaste domein bij naar een niet-deur eindpunt.
 
-2. Klik in het contextmenu voor het aangepaste domein op Verwijderen.  
+    > [!Important]
+    > Om te voor komen dat DNS-vermeldingen voor Dangling en de beveiligings Risico's die ze maken, vanaf de 9de 2021 van de Azure-deur moeten de CNAME-records worden verwijderd naar eind punten van de front-deur voordat de bronnen kunnen worden gewist. Bronnen omvatten aangepaste voor deur-en front-deur eindpunten of Azure-resource groepen waarvoor een aangepaste front-deur is ingeschakeld.
 
-   Het aangepaste domein is ontkoppeld van het eindpunt.
+2. Selecteer in uw Front Door-ontwerper het aangepaste domein dat u wilt verwijderen.
 
+3. Selecteer **verwijderen** in het context menu voor het aangepaste domein. Het aangepaste domein wordt nu ontkoppeld van het eind punt.
 
 ## <a name="next-steps"></a>Volgende stappen
 

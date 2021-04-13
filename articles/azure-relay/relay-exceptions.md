@@ -3,12 +3,12 @@ title: Azure Relay uitzonde ringen en oplossingen oplossen | Microsoft Docs
 description: Lijst met Azure Relay uitzonde ringen en voorgestelde acties die u kunt uitvoeren om ze te helpen oplossen.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 44eeba6eb7b8cfd4e81a923c2d9a3155f1709f2c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e3f9fe2e8aac826bd63d9842bd3380be10e1b87e
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98625145"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107313943"
 ---
 # <a name="azure-relay-exceptions"></a>Azure Relay uitzonde ringen
 
@@ -80,7 +80,7 @@ Er zijn twee veelvoorkomende oorzaken voor deze fout:
     In sommige gevallen kan de Relay-service vertragingen ondervinden bij het verwerken van aanvragen. Dit kan bijvoorbeeld gebeuren tijdens peri Oden met veel verkeer. Als dit het geval is, voert u de bewerking na een vertraging opnieuw uit totdat de bewerking is voltooid. Als dezelfde bewerking blijft mislukken na meerdere pogingen, controleert u de [Azure-service status site](https://azure.microsoft.com/status/) om te zien of er sprake is van bekende service storingen.
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Veelgestelde vragen over Azure Relay](relay-faq.md)
+* [Veelgestelde vragen over Azure Relay](relay-faq.yml)
 * [Een relay-naam ruimte maken](relay-create-namespace-portal.md)
 * [Aan de slag met Azure Relay en .NET](relay-hybrid-connections-dotnet-get-started.md)
 * [Aan de slag met Azure Relay en het knoop punt](relay-hybrid-connections-node-get-started.md)

@@ -13,14 +13,14 @@ ms.service: virtual-machines-sap
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 02/01/2021
+ms.date: 04/12/2021
 ms.author: radeltch
-ms.openlocfilehash: dd000ca36bb0ad586b973b2bcdc638d8992b1a73
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c2610ed46d707af6acfb1b6004df4367add94391
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101668636"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107305154"
 ---
 # <a name="high-availability-of-sap-hana-scale-out-system-on-red-hat-enterprise-linux"></a>Hoge Beschik baarheid van SAP HANA scale-out systeem op Red Hat Enterprise Linux 
 
@@ -215,7 +215,6 @@ Voor de configuratie die in dit document wordt weer gegeven, implementeert u zev
       1. Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld **Hana-lb**).
       1. Selecteer het front-end-IP-adres, de back-end-pool en de status test die u eerder hebt gemaakt (bijvoorbeeld **Hana-frontend**, **Hana-back-end** en **Hana-HP**).
       1. Selecteer **ha-poorten**.
-      1. Verhoog de **time-out voor inactiviteit** tot 30 minuten.
       1. Zorg ervoor dat u **zwevende IP-adressen inschakelt**.
       1. Selecteer **OK**.
 

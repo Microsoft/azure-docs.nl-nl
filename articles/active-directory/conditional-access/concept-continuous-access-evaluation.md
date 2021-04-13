@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jlu
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 80ee161944a48135778d12942964a88455ab756e
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: d707106d66c77ad1f3a1156906add8bb85fd0ce0
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106055770"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107305970"
 ---
 # <a name="continuous-access-evaluation"></a>Continue toegangsevaluatie
 
@@ -142,7 +142,7 @@ Op deze pagina kunt u optioneel de gebruikers en groepen beperken die aan de pre
 Voor CAE hebben we alleen inzicht in benoemde op IP gebaseerde benoemde locaties. We hebben geen inzicht in andere locatie-instellingen, zoals door [MFA vertrouwde IP-adressen](../authentication/howto-mfa-mfasettings.md#trusted-ips) of locaties op basis van een land. Wanneer de gebruiker afkomstig is van een door MFA vertrouwd IP-adres of vertrouwde locaties met door MFA vertrouwde Ip's of land locatie, wordt de CAE niet afgedwongen nadat de gebruiker naar een andere locatie is verplaatst. In dergelijke gevallen geven we een CAE-token van 1 uur zonder onmiddellijke controle op IP-afdwinging uit.
 
 > [!IMPORTANT]
-> Bij het configureren van locaties voor continue toegang, gebruikt u alleen de [voor waarde voor voorwaardelijke toegang op basis van een IP-](../conditional-access/location-condition.md#preview-features) adres en configureert u alle IP-adressen, **met inbegrip van IPv4 en IPv6**, die kunnen worden weer gegeven door uw ID-provider en bronnen provider. Gebruik geen land locatie voorwaarden of de functie voor vertrouwde IP-adressen die beschikbaar is op de pagina Service-instellingen van Azure AD Multi-Factor Authentication.
+> Bij het configureren van locaties voor continue toegang, gebruikt u alleen de [voor waarde voor voorwaardelijke toegang op basis van een IP-](../conditional-access/location-condition.md) adres en configureert u alle IP-adressen, **met inbegrip van IPv4 en IPv6**, die kunnen worden weer gegeven door uw ID-provider en bronnen provider. Gebruik geen land locatie voorwaarden of de functie voor vertrouwde IP-adressen die beschikbaar is op de pagina Service-instellingen van Azure AD Multi-Factor Authentication.
 
 ### <a name="ip-address-configuration"></a>IP-adresconfiguratie
 

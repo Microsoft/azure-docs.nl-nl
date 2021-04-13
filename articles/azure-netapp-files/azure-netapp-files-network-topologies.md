@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/08/2020
+ms.date: 04/09/2021
 ms.author: ramakk
-ms.openlocfilehash: 96d8ba058a33d408ec2ee2a1adfba9011f393da9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d002932bca51300fa6a031ce7ab0d69186afe9c3
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96184481"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107311682"
 ---
 # <a name="guidelines-for-azure-netapp-files-network-planning"></a>Richtlijnen voor Azure NetApp Files-netwerkplanning
 
@@ -46,7 +46,7 @@ De onderstaande functies worden momenteel niet ondersteund voor Azure NetApp Fil
 
 De volgende netwerk beperkingen zijn van toepassing op Azure NetApp Files:
 
-* Het aantal Ip's dat in een VNet met Azure NetApp Files (inclusief peered VNets) wordt gebruikt, mag niet hoger zijn dan 1000. We zijn bezig om deze limiet te verhogen om tegemoet te komen aan de schaal vereisten van klanten. 
+* Het aantal Ip's dat in een VNet wordt gebruikt met Azure NetApp Files (inclusief *onmiddellijk* peered VNets) mag niet groter zijn dan 1000. We zijn bezig om deze limiet te verhogen om tegemoet te komen aan de schaal vereisten van klanten. 
 * In elk virtueel Azure-netwerk (VNet) kan er slechts één subnet aan Azure NetApp Files worden gedelegeerd.
 
 

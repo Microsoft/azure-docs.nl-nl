@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 09/29/2020
 ms.custom: seodec18
-ms.openlocfilehash: 4f236679d0662df852581a6a8408ed6bc0d4e3fe
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 26363031aea37c53cce098e2b6cbc2b4d93b918f
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "91535686"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107307075"
 ---
 # <a name="understand-data-retention-in-azure-time-series-insights-gen1"></a>Meer informatie over gegevens retentie in Azure Time Series Insights gen1
 
@@ -85,7 +85,7 @@ Op dat moment wordt in de omgeving dezelfde gegevensset weer gegeven totdat inga
 Wanneer ingangs werkzaamheden worden hervat:
 
 - Gegevens stromen in de volg orde waarin deze zijn ontvangen door de gebeurtenis bron
-- De gebeurtenissen worden geïndexeerd op basis van hun tijds tempel, tenzij u het Bewaar beleid voor uw gebeurtenis bron hebt overschreden. [Event hubs Veelgestelde vragen](../event-hubs/event-hubs-faq.md) voor meer informatie over het configureren van de Bewaar periode voor gebeurtenis bronnen.
+- De gebeurtenissen worden geïndexeerd op basis van hun tijds tempel, tenzij u het Bewaar beleid voor uw gebeurtenis bron hebt overschreden. [Event hubs Veelgestelde vragen](../event-hubs/event-hubs-faq.yml) voor meer informatie over het configureren van de Bewaar periode voor gebeurtenis bronnen.
 
 > [!IMPORTANT]
 > Stel waarschuwingen in om te zorgen dat binnenkomend verkeer niet wordt onderbroken. Gegevens verlies is mogelijk omdat de standaard Bewaar periode 1 dag is voor Azure-gebeurtenis bronnen. Wanneer de ingang is onderbroken, verliest u waarschijnlijk de meest recente gegevens, tenzij er extra actie wordt ondernomen. U moet de capaciteit verg Roten of overschakelen om **oude gegevens te verwijderen** om de kans op gegevens verlies te voor komen.

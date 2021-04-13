@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 09/21/2020
-ms.openlocfilehash: 399cf8087d39f78184cfdae4b9f0e34efecaea66
-ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
+ms.openlocfilehash: 6dbb1b46aef40986fc2d601aee152aed02591ac0
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106491585"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107312600"
 ---
 # <a name="connect-to-azure-database-for-mysql---flexible-server-with-encrypted-connections"></a>Verbinding maken met Azure Database for MySQL-flexibele server met versleutelde verbindingen
 
@@ -24,9 +24,9 @@ Azure Database for MySQL flexibele server ondersteunt standaard versleutelde ver
 
 Hieronder vindt u de verschillende configuratie van SSL-en TLS-instellingen die u kunt hebben voor uw flexibele server:
 
-| Scenario   | Instellingen voor server parameters      | Beschrijving                                    |
+| Scenario   | Instellingen voor server parameters      | Description                                    |
 |------------|--------------------------------|------------------------------------------------|
-|SSL uitschakelen (versleutelde verbindingen) | require_secure_transport = uit |Als uw oudere toepassing geen versleutelde verbindingen met de MySQL-server ondersteunt, kunt u het afdwingen van versleutelde verbindingen met uw flexibele server uitschakelen door require_secure_transport = uit te stellen.|
+|SSL-afdwinging uitschakelen | require_secure_transport = uit |Als uw oudere toepassing geen versleutelde verbindingen met de MySQL-server ondersteunt, kunt u het afdwingen van versleutelde verbindingen met uw flexibele server uitschakelen door require_secure_transport = uit te stellen.|
 |SSL afdwingen met TLS-versie < 1,2 | require_secure_transport = ON en tls_version = TLSV1 of TLSV 1.1| Als uw oudere toepassing versleutelde verbindingen ondersteunt, maar TLS-versie < 1,2, kunt u versleutelde verbindingen inschakelen, maar uw flexibele server zo configureren dat verbindingen met de TLS-versie (v 1.0 of v 1.1) die door uw toepassing worden ondersteund, worden toegestaan|
 |SSL afdwingen met TLS-versie = 1.2 (standaard configuratie)|require_secure_transport = ON en tls_version = TLSV 1.2| Dit is de aanbevolen en standaard configuratie voor een flexibele server.|
 |SSL afdwingen met TLS-versie = 1.3 (ondersteund met MySQL v 8.0 en hoger)| require_secure_transport = op en tls_version = TLSV 1.3| Dit is handig en aanbevolen voor het ontwikkelen van nieuwe toepassingen|
@@ -44,7 +44,7 @@ In dit artikel leert u het volgende:
 * De versleutelings status voor de verbinding controleren
 * Verbinding maken met uw flexibele server met versleutelde verbindingen met behulp van verschillende toepassings raamwerken
 
-## <a name="disable-ssl-on-your-flexible-server"></a>SSL op uw flexibele server uitschakelen
+## <a name="disable-ssl-enforcement-on-your-flexible-server"></a>SSL-afdwinging op uw flexibele server uitschakelen
 Als uw client toepassing geen versleutelde verbindingen ondersteunt, moet u het afdwingen van versleutelde verbindingen op uw flexibele server uitschakelen. Als u het afdwingen van versleutelde verbindingen wilt uitschakelen, moet u de para meter require_secure_transport server instellen op uitgeschakeld, zoals wordt weer gegeven in de scherm opname en de configuratie van de server parameter zodanig opslaan dat deze van kracht wordt. require_secure_transport is een **para meter voor dynamische server** die onmiddellijk van kracht wordt en niet opnieuw moet worden opgestart om de server van kracht te laten worden.
 
 > :::image type="content" source="./media/how-to-connect-tls-ssl/disable-ssl.png" alt-text="Scherm opname waarin wordt getoond hoe SSL met Azure Database for MySQL flexibele server moet worden uitgeschakeld.":::

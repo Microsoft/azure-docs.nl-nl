@@ -7,12 +7,12 @@ ms.author: andyriv
 ms.date: 2/16/2021
 ms.topic: tutorial
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 7facb74cd407c576b2a7b119f19427dcd185f04e
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: e9749dfd7b28551a4fc2e7c6ba70ba9cce4e5a69
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105568814"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107307296"
 ---
 # <a name="microsoft-connected-cache-preview-deployment-scenario-sample-two-level-nested-azure-iot-edge-gateway-with-outbound-unauthenticated-proxy"></a>Voor beeld van micro soft Connected cache preview Deployment scenario: geneste Azure IoT Edge gateway op twee niveaus met uitgaande niet-geverifieerde proxy
 
@@ -70,7 +70,7 @@ In het onderstaande diagram wordt het scenario beschreven waarbij één Azure Io
 ## <a name="child-gateway-configuration"></a>Configuratie van onderliggende gateway
 
 >[!Note]
->Als u containers in uw eigen persoonlijke REGI ster hebt gebruikt in uw configuratie, moet u een wijziging aanbrengen in de configuratie. toml-instellingen en runtime-instellingen in de module-implementatie. Raadpleeg voor meer informatie [zelf studie: een hiërarchie van IOT edge apparaten maken-Azure IOT Edge](../iot-edge/tutorial-nested-iot-edge.md?preserve-view=true&tabs=azure-portal&view=iotedge-2020-11#deploy-modules-to-the-lower-layer-device) voor meer informatie.
+>Als u containers in uw eigen persoonlijke REGI ster hebt gebruikt in uw configuratie, moet u een wijziging aanbrengen in de configuratie. toml-instellingen en runtime-instellingen in de module-implementatie. Zie voor meer informatie [verbinding maken met downstream IOT edge apparaten-Azure IOT Edge](../iot-edge/how-to-connect-downstream-iot-edge-device.md?preserve-view=true&tabs=azure-portal&view=iotedge-2020-11#deploy-modules-to-lower-layer-devices) voor meer informatie.
 
 1. Wijzig het pad naar de afbeelding voor de Edge-agent, zoals wordt getoond in het volgende voor beeld:
 

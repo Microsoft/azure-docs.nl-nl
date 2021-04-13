@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/06/2021
+ms.date: 04/12/2021
 ms.author: b-juche
-ms.openlocfilehash: d63587eec1f7e6d24ae1638e8365b85fd1ec2c94
-ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
+ms.openlocfilehash: ae94ac9719a827a2d1af258398988f0972e61b3a
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106504988"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107305511"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Veelgestelde vragen over Azure NetApp Files
 
@@ -27,9 +27,9 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over Azure NetApp Files
 
 ## <a name="networking-faqs"></a>Veelgestelde vragen over netwerken
 
-### <a name="does-the-nfs-data-path-go-over-the-internet"></a>Gaat het NFS-gegevenspad over via Internet?  
+### <a name="does-the-data-path-for-nfs-or-smb-go-over-the-internet"></a>Gaat het gegevenspad voor NFS of SMB via internet.  
 
-Nee. Het pad van de NFS-gegevens gaat niet via internet. Azure NetApp Files is een systeem eigen Azure-service die is geïmplementeerd in de Azure-Virtual Network (VNet) waar de service beschikbaar is. Azure NetApp Files maakt gebruik van een overgedragen subnet en richt een netwerk interface rechtstreeks in op het VNet. 
+Nee. Het gegevenspad voor NFS of SMB gaat niet via internet. Azure NetApp Files is een systeem eigen Azure-service die is geïmplementeerd in de Azure-Virtual Network (VNet) waar de service beschikbaar is. Azure NetApp Files maakt gebruik van een overgedragen subnet en richt een netwerk interface rechtstreeks in op het VNet. 
 
 Zie de [richt lijnen voor het plannen van Azure NetApp files-netwerken](./azure-netapp-files-network-topologies.md) voor meer informatie.  
 

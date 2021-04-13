@@ -64,9 +64,9 @@
     - name: Controlelijst voor beveiliging
       href: steps-secure-identity.md
     - name: Zonder wachtwoord kiezen
-      href: ../../active-directory/authentication/concept-authentication-passwordless.md
+      href: ../../active-directory/authentication/concept-authentication-passwordless.md?toc=/azure/security/fundamentals/toc.json&bc=/azure/security/breadcrumb/toc.json
     - name: Verificatie
-      href: /azure/architecture/framework/security/design-identity-authentication?toc=azure/security/fundamentals/toc.json&bc=azure/security/breadcrumb/toc.json
+      href: /azure/architecture/framework/security/design-identity-authentication?toc=/azure/security/fundamentals/toc.json&bc=/azure/security/breadcrumb/toc.json
 - name: Netwerkbeveiliging
   items:
     - name: Beveiligingsoverzicht
@@ -80,7 +80,7 @@
     - name: Dangling DNS en overname van subdomein
       href: subdomain-takeover.md
     - name: Veilige hybride netwerkarchitectuur
-      href: /azure/architecture/reference-architectures/dmz/secure-vnet-hybrid?bc=%2fazure%2fsecurity%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsecurity%2ftoc.json
+      href: /azure/architecture/reference-architectures/dmz/secure-vnet-hybrid?toc=/azure/security/fundamentals/toc.json&bc=/azure/security/breadcrumb/toc.json
 - name: IaaS-beveiliging
   items:
     - name: Microsoft Antimalware
@@ -120,7 +120,7 @@
         - name: Controlelijst voor beveiliging
           href: database-security-checklist.md
     - name: Gids voor opslagbeveiliging
-      href: ../../storage/blobs/security-recommendations.md?bc=%2fazure%2fsecurity%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsecurity%2ftoc.json
+      href: ../../storage/blobs/security-recommendations.md?toc=/azure/security/fundamentals/toc.json&bc=/azure/security/breadcrumb/toc.json
     - name: Klanten-lockbox
       href: customer-lockbox-overview.md
     - name: Beveiligingsbasislijn voor Klanten-lockbox

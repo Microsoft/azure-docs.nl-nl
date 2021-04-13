@@ -12,14 +12,14 @@ ms.service: virtual-machines-sap
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 10/16/2020
+ms.date: 04/12/2021
 ms.author: radeltch
-ms.openlocfilehash: 993baa521530ffa6a702f8324a1691850687c366
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a08d82103986435593cd73a0728e7426f205a90d
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101668687"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107307534"
 ---
 # <a name="high-availability-for-nfs-on-azure-vms-on-suse-linux-enterprise-server"></a>Hoge Beschik baarheid voor NFS op Azure Vm's op SUSE Linux Enterprise Server
 
@@ -171,7 +171,6 @@ U moet eerst de virtuele machines voor dit NFS-cluster maken. Daarna maakt u een
          1. Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld **NW1-lb**)
          1. Selecteer het frontend-IP-adres, de back-end-pool en de status test die u eerder hebt gemaakt (bijvoorbeeld **NW1-frontend**. **NW-back-end** en **NW1-HP**)
          1. Selecteer **ha-poorten**.
-         1. Time-out voor inactiviteit tot 30 minuten verhogen
          1. **Zorg ervoor dat zwevend IP-adressen zijn ingeschakeld**
          1. Klik op OK
          * Herhaal de bovenstaande stappen om de taakverdelings regel voor NW2 te maken

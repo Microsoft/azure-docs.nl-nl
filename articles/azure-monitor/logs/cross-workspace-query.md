@@ -4,13 +4,13 @@ description: In dit artikel wordt beschreven hoe u een query kunt uitvoeren op r
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 09/22/2020
-ms.openlocfilehash: 57ed43b25c9031138a91f0870d316e1ae7a07a5b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 04/11/2021
+ms.openlocfilehash: e007f5af214dcfa475eb59a5981bc580b9499915
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102030963"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107314232"
 ---
 # <a name="perform-log-query-in-azure-monitor-that-span-across-workspaces-and-apps"></a>Een logboek query uitvoeren in Azure Monitor die betrekking hebben op alle werk ruimten en apps
 
@@ -27,7 +27,7 @@ Er zijn twee methoden voor het opvragen van gegevens die zijn opgeslagen in meer
 ## <a name="cross-resource-query-limits"></a>Limieten voor meerdere bron query's 
 
 * Het aantal Application Insights resources en Log Analytics werk ruimten die u in één query kunt toevoegen, is beperkt tot 100.
-* Query's voor meerdere resources worden niet ondersteund in View Designer. U kunt een query in Log Analytics ontwerpen en deze vastmaken aan Azure dash board om [een logboek query te visualiseren](../visualize/tutorial-logs-dashboards.md). 
+* Query's voor meerdere resources worden niet ondersteund in View Designer. U kunt een query in Log Analytics ontwerpen en deze vastmaken aan het Azure-dash board om [een logboek query te visualiseren](../visualize/tutorial-logs-dashboards.md) of op te geven in [werkmappen](../visualize/workbooks-overview.md).
 * Query's voor meerdere resources in logboek waarschuwingen worden alleen ondersteund in de huidige [scheduledQueryRules-API](/rest/api/monitor/scheduledqueryrules). Als u de API legacy Log Analytics Alerts gebruikt, moet u [overschakelen naar de huidige API](../alerts/alerts-log-api-switch.md).
 
 
@@ -41,6 +41,9 @@ Het identificeren van een werk ruimte kan op een van de volgende manieren worden
 
 * Resource naam: is een door een mens lees bare naam van de werk ruimte, ook wel *onderdeel naam* genoemd. 
 
+    >[!Note]
+    >Omdat de namen van de app en de werk ruimte niet uniek zijn, is deze id mogelijk dubbel zinnig. Als er meerdere exemplaren van de resource naam zijn, moet de verwijzing zijn opgegeven in gekwalificeerde naam, resource-ID of Azure-Resource-ID.
+
     `workspace("contosoretail-it").Update | count`
 
 * Gekwalificeerde naam: is de volledige naam van de werk ruimte, die bestaat uit de naam van het abonnement, de resource groep en de naam van het onderdeel in deze indeling, zoals *subscriptionname/resourceGroup/* naam van onderdeel. 
@@ -48,8 +51,7 @@ Het identificeren van een werk ruimte kan op een van de volgende manieren worden
     `workspace('contoso/contosoretail/contosoretail-it').Update | count`
 
     >[!NOTE]
-    >Omdat namen van Azure-abonnementen niet uniek zijn, is deze id mogelijk dubbel zinnig. 
-    >
+    >Omdat namen van Azure-abonnementen niet uniek zijn, is deze id mogelijk dubbel zinnig.
 
 * Werk ruimte-ID: een werk ruimte-ID is de unieke, onveranderlijke id die is toegewezen aan elke werk ruimte die wordt weer gegeven als een Globally Unique Identifier (GUID).
 

@@ -3,12 +3,12 @@ title: Wat is Azure Event Hubs? - een service voor de opname van Big Data | Micr
 description: Meer informatie over Azure Event Hubs, een big data-streamingservice die miljoenen gebeurtenissen per seconde opneemt.
 ms.topic: overview
 ms.date: 01/13/2021
-ms.openlocfilehash: 36eeb38d9ed1696c9524ae9b346065756ce49c46
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 35e89f60e93ec759d852641653ad138d7672cc37
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98195756"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107303046"
 ---
 # <a name="azure-event-hubs--a-big-data-streaming-platform-and-event-ingestion-service"></a>Azure Event Hubs — Een streamingplatform en service voor het opnemen van big data
 Azure Event Hubs is een streamingplatform en service voor het opnemen van big data. Het kan miljoenen gebeurtenissen per seconde ontvangen en verwerken. Gegevens die naar een Event Hub worden verzonden, kunnen worden omgezet en opgeslagen door gebruik te maken van een provider voor realtime analytische gegevens of batchverwerking/opslagadapters.
@@ -92,4 +92,4 @@ Zie de zelfstudies **Gebeurtenissen verzenden en ontvangen** om aan de slag te g
 Raadpleeg de volgende artikelen voor meer informatie over Event Hubs:
 
 - [Overzicht van functies van Event Hubs](event-hubs-features.md)
-- [Veelgestelde vragen](event-hubs-faq.md).
+- [Veelgestelde vragen](event-hubs-faq.yml).

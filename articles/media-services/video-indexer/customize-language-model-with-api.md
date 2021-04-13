@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 02/04/2020
 ms.author: kumud
-ms.openlocfilehash: f373afae03357ffb65eb459f806fe441e29b21b9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 890e02812fb06cf0b0ebe990b0175311d5c85ab5
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "87047089"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107312923"
 ---
 # <a name="customize-a-language-model-with-the-video-indexer-api"></a>Een taal model aanpassen met de Video Indexer-API
 
@@ -27,7 +27,7 @@ U kunt de Video Indexer-Api's gebruiken om aangepaste taal modellen in uw accoun
 
 ## <a name="create-a-language-model"></a>Een taal model maken
 
-Met de API [Create a language model](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Create-Language-Model?) maakt u een nieuw aangepast taal model in het opgegeven account. U kunt bestanden voor het taal model uploaden in deze aanroep. U kunt ook het taal model hier maken en de bestanden voor het model later uploaden door het taal model bij te werken.
+Met de API [Create a language model](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Create-Language-Model) maakt u een nieuw aangepast taal model in het opgegeven account. U kunt bestanden voor het taal model uploaden in deze aanroep. U kunt ook het taal model hier maken en de bestanden voor het model later uploaden door het taal model bij te werken.
 
 > [!NOTE]
 > U moet het model nog steeds trainen met de ingeschakelde bestanden voor het model om de inhoud van de bestanden te kunnen zien. Instructies voor het trainen van een taal vindt u in de volgende sectie.
@@ -70,7 +70,7 @@ Het antwoord geeft de meta gegevens van het zojuist gemaakte taal model samen me
 
 ## <a name="train-a-language-model"></a>Een taal model trainen
 
-De [trein een taal model-API traint](https://api-portal.videoindexer.ai/docs/services/operations/operations/Train-Language-Model?&pattern=train) een aangepast taal model in het opgegeven account met de inhoud van de bestanden die zijn geüpload naar en ingeschakeld in het taal model.
+De [trein een taal model-API traint](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Train-Language-Model) een aangepast taal model in het opgegeven account met de inhoud van de bestanden die zijn geüpload naar en ingeschakeld in het taal model.
 
 > [!NOTE]
 > U moet eerst het taal model maken en de bestanden uploaden. U kunt bestanden uploaden bij het maken van het taal model of door het taal model bij te werken.
@@ -105,11 +105,11 @@ Het antwoord geeft de meta gegevens van het zojuist getrainde taal model samen m
 }
 ```
 
-De geretourneerde `id` is een unieke id die wordt gebruikt om onderscheid te maken tussen taal modellen en `languageModelId` wordt gebruikt voor het [uploaden van een video om](https://api-portal.videoindexer.ai/docs/services/operations/operations/Upload-video?) een video-api's te indexeren en opnieuw te [indexeren](https://api-portal.videoindexer.ai/docs/services/operations/operations/Re-index-video?) (ook wel bekend als `linguisticModelId` in video indexer-api's voor uploaden/opnieuw indexeren).
+De geretourneerde `id` is een unieke id die wordt gebruikt om onderscheid te maken tussen taal modellen en `languageModelId` wordt gebruikt voor het [uploaden van een video om](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Upload-Video) een video-api's te indexeren en opnieuw te [indexeren](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Re-Index-Video) (ook wel bekend als `linguisticModelId` in video indexer-api's voor uploaden/opnieuw indexeren).
 
 ## <a name="delete-a-language-model"></a>Een taal model verwijderen
 
-Met de API voor het [verwijderen van een taal model](https://api-portal.videoindexer.ai/docs/services/operations/operations/Delete-Language-Model?&pattern=delete) wordt een aangepast taal model uit het opgegeven account verwijderd. Alle Video's die het verwijderde taal model gebruiken, blijven dezelfde index totdat u de video opnieuw indexeert. Als u de video opnieuw indexeert, kunt u een nieuw taal model toewijzen aan de video. Anders wordt het standaard model van Video Indexer gebruikt voor het opnieuw indexeren van de video.
+Met de API voor het [verwijderen van een taal model](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Delete-Language-Model) wordt een aangepast taal model uit het opgegeven account verwijderd. Alle Video's die het verwijderde taal model gebruiken, blijven dezelfde index totdat u de video opnieuw indexeert. Als u de video opnieuw indexeert, kunt u een nieuw taal model toewijzen aan de video. Anders wordt het standaard model van Video Indexer gebruikt voor het opnieuw indexeren van de video.
 
 ### <a name="response"></a>Antwoord
 
@@ -117,7 +117,7 @@ Er is geen inhoud geretourneerd wanneer het taal model is verwijderd.
 
 ## <a name="update-a-language-model"></a>Een taal model bijwerken
 
-Met de [Update een taal model](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Language-Model?&pattern=update) -API wordt een aangepast persoonlijk taal model in het opgegeven account bijgewerkt.
+Met de [Update een taal model](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Update-Language-Model) -API wordt een aangepast persoonlijk taal model in het opgegeven account bijgewerkt.
 
 > [!NOTE]
 > U moet het taal model al hebben gemaakt. U kunt deze aanroep gebruiken om alle bestanden onder het model in of uit te scha kelen, de naam van het taal model bij te werken en bestanden te uploaden die moeten worden toegevoegd aan het taal model.
@@ -161,7 +161,7 @@ Gebruik de `id` van de bestanden die zijn geretourneerd in het antwoord op het d
 
 ## <a name="update-a-file-from-a-language-model"></a>Een bestand bijwerken vanuit een taal model
 
-Met de [Update van een bestand](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Language-Model-file?&pattern=update) kunt u de naam en `enable` status van een bestand in een aangepast taal model in het opgegeven account bijwerken.
+Met de [Update van een bestand](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Update-Language-Model-file) kunt u de naam en `enable` status van een bestand in een aangepast taal model in het opgegeven account bijwerken.
 
 ### <a name="response"></a>Antwoord
 
@@ -181,7 +181,7 @@ Gebruik het `id` van het bestand dat is geretourneerd in het antwoord op het dow
 
 ## <a name="get-a-specific-language-model"></a>Een specifiek taal model ophalen
 
-De [Get](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Language-Model?&pattern=get) -API retourneert informatie over het opgegeven taal model in het opgegeven account, zoals taal en de bestanden in het taal model.
+De [Get](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Get-Language-Model) -API retourneert informatie over het opgegeven taal model in het opgegeven account, zoals taal en de bestanden in het taal model.
 
 ### <a name="response"></a>Antwoord
 
@@ -217,7 +217,7 @@ Gebruik het `id` van het bestand dat is geretourneerd in het antwoord op het dow
 
 ## <a name="get-all-the-language-models"></a>Alle taal modellen ophalen
 
-De [Alles ophalen](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Language-Models?&pattern=get) -API retourneert alle aangepaste taal modellen in het opgegeven account in een lijst.
+De [Alles ophalen](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Get-Language-Models) -API retourneert alle aangepaste taal modellen in het opgegeven account in een lijst.
 
 ### <a name="response"></a>Antwoord
 
@@ -261,7 +261,7 @@ Het antwoord bevat een lijst met alle taal modellen in uw account en elk van de 
 
 ## <a name="delete-a-file-from-a-language-model"></a>Een bestand verwijderen uit een taal model
 
-Met de API [verwijderen](https://api-portal.videoindexer.ai/docs/services/operations/operations/Delete-Language-Model-File?&pattern=delete) wordt het opgegeven bestand uit het opgegeven taal model in het opgegeven account verwijderd.
+Met de API [verwijderen](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Delete-Language-Model-File) wordt het opgegeven bestand uit het opgegeven taal model in het opgegeven account verwijderd.
 
 ### <a name="response"></a>Antwoord
 
@@ -269,7 +269,7 @@ Er is geen inhoud die wordt geretourneerd wanneer het bestand wordt verwijderd u
 
 ## <a name="get-metadata-on-a-file-from-a-language-model"></a>Meta gegevens ophalen voor een bestand van een taal model
 
-De [meta gegevens van een bestands](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Language-Model-File-Data?&pattern=get%20language%20model) -API ophalen retourneert de inhoud van en meta gegevens van het opgegeven bestand uit het gekozen taal model in uw account.
+De [meta gegevens van een bestands](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Get-Language-Model-File-Data) -API ophalen retourneert de inhoud van en meta gegevens van het opgegeven bestand uit het gekozen taal model in uw account.
 
 ### <a name="response"></a>Antwoord
 
@@ -291,7 +291,7 @@ Het antwoord bevat de inhoud en meta gegevens van het bestand in de JSON-indelin
 
 ## <a name="download-a-file-from-a-language-model"></a>Een bestand downloaden van een taal model
 
-Het [downloaden van een bestand](https://api-portal.videoindexer.ai/docs/services/operations/operations/Download-Language-Model-File-Content?) -API downloadt een tekst bestand met de inhoud van het opgegeven bestand uit het opgegeven taal model in het opgegeven account. Dit tekst bestand moet overeenkomen met de inhoud van het tekst bestand dat oorspronkelijk is geüpload.
+Het [downloaden van een bestand](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Download-Language-Model-File-Content) -API downloadt een tekst bestand met de inhoud van het opgegeven bestand uit het opgegeven taal model in het opgegeven account. Dit tekst bestand moet overeenkomen met de inhoud van het tekst bestand dat oorspronkelijk is geüpload.
 
 ### <a name="response"></a>Antwoord
 

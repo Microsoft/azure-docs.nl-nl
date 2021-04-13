@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/18/2020
-ms.openlocfilehash: 19c39632a1ed040636372d6bad53bf6859960b94
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 6aa960eb7aed7a579c3fc95748b6e32601201a61
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101732034"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107305120"
 ---
 # <a name="send-data-from-windows-azure-diagnostics-extension-to-azure-event-hubs"></a>Gegevens verzenden van de Windows Azure Diagnostics-extensie naar Azure Event Hubs
 Azure Diagnostics-extensie is een agent in Azure Monitor die bewakings gegevens van het gast besturingssysteem en werk belastingen van virtuele Azure-machines en andere reken bronnen verzamelt. In dit artikel wordt beschreven hoe u gegevens verzendt van de Windows Azure Diagnostic extension (WAD) naar [Azure Event hubs](https://azure.microsoft.com/services/event-hubs/) zodat u kunt door sturen naar locaties buiten Azure.
@@ -177,7 +177,7 @@ U kunt verschillende methoden gebruiken om te valideren dat gegevens naar de Eve
 
 * [Event Hubs-overzicht](../../event-hubs/event-hubs-about.md)
 * [Een Event Hub maken](../../event-hubs/event-hubs-create.md)
-* [Veelgestelde vragen over Event Hubs](../../event-hubs/event-hubs-faq.md)
+* [Veelgestelde vragen over Event Hubs](../../event-hubs/event-hubs-faq.yml)
 
 <!-- Images. -->
 [0]: ../../event-hubs/media/event-hubs-streaming-azure-diags-data/dashboard.png

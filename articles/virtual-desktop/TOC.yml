@@ -126,8 +126,6 @@
       href: disaster-recovery.md
     - name: De KDC-proxy instellen
       href: key-distribution-center-proxy.md
-    - name: De RD-gateway rol instellen
-      href: rd-gateway-role.md
     - name: VM starten bij verbinden
       items:
         - name: Start VM instellen bij verbinden

@@ -11,16 +11,16 @@ ms.topic: overview
 ms.date: 03/29/2021
 ms.author: pafarley
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: 3fff9f4bd34fc1defdb50f2eefbc8ac1f39b46af
-ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
+ms.openlocfilehash: 41b3552a633c9cebce1138fa042dbd154eee0cb5
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106287231"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107314113"
 ---
 # <a name="what-is-optical-character-recognition"></a>Wat is optische teken herkenning?
 
-Met de service voor optische teken herkenning (OCR) kunt u gedrukte of handgeschreven tekst uit afbeeldingen extra heren, zoals foto's van een licentie plaat of containers met serie nummers, en van documenten &mdash; facturen, facturen, financiële rapporten, artikelen en meer. Het maakt gebruik van diep gaande modellen en werkt met tekst op verschillende Opper vlakken en achtergronden.
+Met de service voor optische teken herkenning (OCR) kunt u gedrukte of handgeschreven tekst uit afbeeldingen extra heren, zoals foto's van straat borden en producten, en van documenten &mdash; facturen, facturen, financiële rapporten, artikelen en meer. Het maakt gebruik van diep gaande modellen en werkt met tekst op verschillende Opper vlakken en achtergronden.
 
 De OCR-Api's bieden ondersteuning voor het extra heren van gedrukte tekst in [verschillende talen](./language-support.md). Volg een [snelstart](./quickstarts-sdk/client-library.md) om aan de slag te gaan.
 
@@ -46,7 +46,7 @@ De **Lees** aanroep neemt afbeeldingen en documenten op als invoer. Ze hebben de
 
 ## <a name="read-api"></a>API lezen 
 
-De Computer Vision [Lees-API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005) is de nieuwste OCR-technologie van Azure ([informatie over wat er nieuw](./whats-new.md)is) waarmee gedrukte tekst (in verschillende talen), handgeschreven tekst (alleen Engels), cijfers en valuta symbolen van afbeeldingen en PDF-documenten met meerdere pagina's worden geëxtraheerd. Het is geoptimaliseerd voor het extra heren van tekst uit tekst-zware afbeeldingen en PDF-documenten met meerdere pagina's met gemengde talen. Het biedt ondersteuning voor het detecteren van gedrukte en handgeschreven tekst in dezelfde afbeelding of hetzelfde document.
+De Computer Vision [Lees-API](https://centraluseuap.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2/operations/5d986960601faab4bf452005) is de nieuwste OCR-technologie van Azure ([informatie over wat er nieuw](./whats-new.md)is) waarmee gedrukte tekst (in verschillende talen), handgeschreven tekst (alleen Engels), cijfers en valuta symbolen van afbeeldingen en PDF-documenten met meerdere pagina's worden geëxtraheerd. Het is geoptimaliseerd voor het extra heren van tekst uit tekst-zware afbeeldingen en PDF-documenten met meerdere pagina's met gemengde talen. Het biedt ondersteuning voor het detecteren van gedrukte en handgeschreven tekst in dezelfde afbeelding of hetzelfde document.
 
 ![Hoe OCR afbeeldingen en documenten converteert naar gestructureerde uitvoer met geëxtraheerde tekst](./Images/how-ocr-works.svg)
 
@@ -58,9 +58,7 @@ Voor een on-premises implementatie kunt u met de [Lees docker-container (preview
 
 ## <a name="ocr-api"></a>OCR-API
 
-De verouderde [OCR-API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f20d) maakt gebruik van een ouder herkennings model, ondersteunt alleen installatie kopieën en voert synchroon uit, wat direct met de gedetecteerde tekst wordt geretourneerd. Zie de OCR-kolom met [ondersteunde talen](./language-support.md#optical-character-recognition-ocr) voor een lijst met ondersteunde talen.
-
-## <a name="recognizetext-api"></a>RecognizeText-API
+De verouderde [OCR-API](https://centraluseuap.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2/operations/56f91f2e778daf14a499f20d) maakt gebruik van een ouder herkennings model, ondersteunt alleen installatie kopieën en voert synchroon uit, wat direct met de gedetecteerde tekst wordt geretourneerd. Zie de OCR-kolom met [ondersteunde talen](./language-support.md#optical-character-recognition-ocr) voor een lijst met ondersteunde talen.
 
 > [!WARNING]
 > De RecognizeText-bewerkingen van Computer Vision 2,0 worden vervangen door de nieuwe [Lees-API](#read-api) die in dit artikel wordt besproken. Bestaande klanten moeten [overstappen op het gebruik van Lees bewerkingen](upgrade-api-versions.md).
@@ -71,6 +69,5 @@ Zoals geldt voor alle Cognitive Services, dienen ontwikkelaars die de Computer V
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Ga aan de slag met de [OCR-rest API of Snelstartgids voor de client bibliotheek](./quickstarts-sdk/client-library.md).
-- Meer informatie over de [lees 3,1-rest API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005).
-- Meer informatie over de [open bare preview-versie van 3,2-lees rest API](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-3/operations/5d986960601faab4bf452005) met ondersteuning voor een totaal van 73 talen.
+- Ga aan de slag met de [OCR (lezen) rest API of Quick](./quickstarts-sdk/client-library.md)starts van de client bibliotheek.
+- Meer informatie over de [lees 3,2-rest API](https://centraluseuap.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2/operations/5d986960601faab4bf452005).

@@ -2,13 +2,13 @@
 title: Azure Event Grid-probleemoplossings gids
 description: Dit artikel bevat een lijst met fout codes, fout berichten, beschrijvingen en aanbevolen acties.
 ms.topic: conceptual
-ms.date: 07/07/2020
-ms.openlocfilehash: 79533918ccc6995f459b39f058de9e01091c0958
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/09/2021
+ms.openlocfilehash: 4647039f67cf84a5471dc7b3f38ca754ca9eecb0
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94592988"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107310866"
 ---
 # <a name="troubleshoot-azure-event-grid-errors"></a>Problemen met Azure Event Grid oplossen
 In deze hand leiding voor probleem oplossing vindt u de volgende informatie: 
@@ -30,7 +30,7 @@ In deze hand leiding voor probleem oplossing vindt u de volgende informatie:
 | ---------- | ------------- | ----------- | -------------- | 
 | Http status code. conflict <br/>409 | Er bestaat al een onderwerp met de opgegeven naam. Kies een andere naam voor het onderwerp.   | De naam van het aangepaste onderwerp moet uniek zijn in één Azure-regio om te zorgen voor een correcte publicatie bewerking. Dezelfde naam kan worden gebruikt in verschillende Azure-regio's. | Kies een andere naam voor het onderwerp. |
 | Http status code. conflict <br/> 409 | Het domein met de opgegeven bestaat al. Kies een andere domein naam. | De domein naam moet uniek zijn in één Azure-regio om te zorgen voor een correcte publicatie bewerking. Dezelfde naam kan worden gebruikt in verschillende Azure-regio's. | Kies een andere naam voor het domein. |
-| Http status code. conflict<br/>409 | De quotum limiet is bereikt. Zie [Azure Event grid limieten](../azure-resource-manager/management/azure-subscription-service-limits.md#event-grid-limits)voor meer informatie over deze limieten.  | Elk Azure-abonnement heeft een limiet voor het aantal Azure Event Grid resources dat kan worden gebruikt. Sommige of alle van deze quota zijn overschreden en er kunnen geen resources meer worden gemaakt. |    Controleer het gebruik van uw huidige resources en verwijder deze die niet nodig zijn. Als u nog steeds uw quotum wilt verhogen, stuurt u een e-mail naar [aeg@microsoft.com](mailto:aeg@microsoft.com) het exacte aantal benodigde resources. |
+| Http status code. conflict<br/>409 | De quotum limiet is bereikt. Zie [Azure Event grid limieten](../azure-resource-manager/management/azure-subscription-service-limits.md#event-grid-limits)voor meer informatie over deze limieten.  | Elk Azure-abonnement heeft een limiet voor het aantal Azure Event Grid resources dat kan worden gebruikt. Sommige of alle van deze quota zijn overschreden en er kunnen geen resources meer worden gemaakt. | Controleer het gebruik van uw huidige resources en verwijder deze die niet nodig zijn. Als u geen resources kunt verwijderen, maakt u een nieuw Azure-abonnement en maakt u Event Grid resources in dat abonnement. |
 
 ## <a name="error-code-403"></a>Fout code: 403
 

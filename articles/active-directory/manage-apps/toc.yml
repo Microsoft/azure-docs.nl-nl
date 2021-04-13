@@ -321,7 +321,7 @@
 - name: Naslaginformatie
   items:
     - name: Veelgestelde vragen over app proxy
-      href: application-proxy-faq.md
+      href: application-proxy-faq.yml
     - name: Veelgestelde vragen over app-beheer certificaten
       href: application-management-certs-faq.md
     - name: Versiegeschiedenis van toepassingsproxy

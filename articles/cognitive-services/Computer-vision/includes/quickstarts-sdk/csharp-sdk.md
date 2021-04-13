@@ -1,6 +1,6 @@
 ---
-title: 'Quick Start: client bibliotheek voor optische teken herkenning voor .NET'
-description: In deze Snelstartgids gaat u aan de slag met de optische teken herkenning-client bibliotheek voor .NET.
+title: 'Quickstart: Clientbibliotheek voor optische tekenherkenning voor .NET'
+description: In deze quickstart gaat u aan de slag met de clientbibliotheek voor optische tekenherkenning voor .NET.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -10,16 +10,16 @@ ms.topic: include
 ms.date: 12/15/2020
 ms.author: pafarley
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 410ced99b1c5053c084921edf4d9bbde1a9443c4
-ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
+ms.openlocfilehash: 538b3ce5a268464b9f014dd00b924875824cab3b
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107073557"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107327730"
 ---
 <a name="HOLTop"></a>
 
-Gebruik de OCR-client bibliotheek om gedrukte en handgeschreven tekst uit een afbeelding te lezen.
+Gebruik de OCR-clientbibliotheek om gedrukte en handgeschreven tekst uit een afbeelding te lezen.
 
 [Referentiedocumentatie](/dotnet/api/overview/azure/cognitiveservices/client/computervision) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Vision.ComputerVision) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.ComputerVision/) | [Voorbeelden](https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=vision&sort=0)
 
@@ -41,7 +41,7 @@ Maak met behulp van Visual Studio een nieuwe .NET Core-toepassing.
 
 ### <a name="install-the-client-library"></a>De clientbibliotheek installeren 
 
-Nadat u een nieuw project hebt gemaakt, installeert u de clientbibliotheek door in **Solution Explorer** met de rechtermuisknop op de projectoplossing te klikken en **NuGet-pakketten beheren** te selecteren. Selecteer in de package manager die wordt geopend de optie **Bladeren**, schakel **Prerelease opnemen** in en zoek naar `Microsoft.Azure.CognitiveServices.Vision.ComputerVision`. Selecteer versie `6.0.0-preview.1` en vervolgens **Installeren**. 
+Nadat u een nieuw project hebt gemaakt, installeert u de clientbibliotheek door in **Solution Explorer** met de rechtermuisknop op de projectoplossing te klikken en **NuGet-pakketten beheren** te selecteren. Selecteer in de package manager die wordt geopend de optie **Bladeren**, schakel **Prerelease opnemen** in en zoek naar `Microsoft.Azure.CognitiveServices.Vision.ComputerVision`. Selecteer versie `7.0.0` en vervolgens **Installeren**. 
 
 #### <a name="cli"></a>[CLI](#tab/cli)
 
@@ -72,7 +72,7 @@ Build succeeded.
 Installeer in de toepassingsmap de Computer Vision-clientbibliotheek voor .NET met de volgende opdracht:
 
 ```console
-dotnet add package Microsoft.Azure.CognitiveServices.Vision.ComputerVision --version 6.0.0
+dotnet add package Microsoft.Azure.CognitiveServices.Vision.ComputerVision --version 7.0.0
 ```
 
 ---
@@ -82,16 +82,16 @@ dotnet add package Microsoft.Azure.CognitiveServices.Vision.ComputerVision --ver
 
 Open vanuit de projectmap het bestand *Program.cs* in uw favoriete editor of IDE.
 
-### <a name="find-the-subscription-key-and-endpoint"></a>De abonnements sleutel en het eind punt zoeken
+### <a name="find-the-subscription-key-and-endpoint"></a>De abonnementssleutel en het eindpunt zoeken
 
-Ga naar Azure Portal. Als de Computer Vision-resource die u in de sectie **Vereisten** hebt gemaakt, succesvol is geïmplementeerd, klikt u op de knop **Ga naar resource** onder **Volgende stappen**. U vindt de abonnements sleutel en het eind punt op de pagina **sleutel en eind punt** van de resource, onder **resource beheer**. 
+Ga naar Azure Portal. Als de Computer Vision-resource die u in de sectie **Vereisten** hebt gemaakt, succesvol is geïmplementeerd, klikt u op de knop **Ga naar resource** onder **Volgende stappen**. U vindt uw abonnementssleutel en eindpunt  op de pagina sleutel en eindpunt van de resource, onder **resourcebeheer.** 
 
-Maak in de **programma** klasse van de toepassing variabelen voor de sleutel en het eind punt van uw computer vision abonnement. Plak uw abonnements sleutel en het eind punt in de volgende code, indien aangegeven. Het Computer Vision-eind punt heeft het formulier `https://<your_computer_vision_resource_name>.cognitiveservices.azure.com/` .
+Maak in de klasse **Program van** de toepassing variabelen voor uw Computer Vision-abonnementssleutel en -eindpunt. Plak waar aangegeven uw abonnementssleutel en -eindpunt in de volgende code. Uw Computer Vision eindpunt heeft de vorm `https://<your_computer_vision_resource_name>.cognitiveservices.azure.com/` .
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ComputerVision/ComputerVisionQuickstart.cs?name=snippet_using_and_vars)]
 
 > [!IMPORTANT]
-> Vergeet niet om de abonnements sleutel uit uw code te verwijderen wanneer u klaar bent en deze nooit openbaar te plaatsen. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Bijvoorbeeld [Azure Key Vault](../../../../key-vault/general/overview.md).
+> Vergeet niet om de abonnementssleutel uit uw code te verwijderen wanneer u klaar bent en deze nooit openbaar te plaatsen. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Bijvoorbeeld [Azure Key Vault](../../../../key-vault/general/overview.md).
 
 Voeg in de methode `Main` van de toepassing aanroepen toe voor de methoden die in deze quickstart worden gebruikt. U gaat deze later maken.
 
@@ -113,14 +113,14 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 
 ## <a name="code-examples"></a>Codevoorbeelden
 
-Deze code fragmenten laten zien hoe u de volgende taken kunt uitvoeren met de OCR-client bibliotheek voor .NET:
+Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de OCR-clientbibliotheek voor .NET:
 
 * [De client verifiëren](#authenticate-the-client)
 * [Afgedrukte en handgeschreven tekst lezen](#read-printed-and-handwritten-text)
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
-In een nieuwe methode in de klasse **Program** kunt u een client instantiëren met uw eind punt en abonnements sleutel. Maak een **[ApiKeyServiceClientCredentials](/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.apikeyserviceclientcredentials)** -object met uw abonnements sleutel en gebruik het met uw eind punt om een **[ComputerVisionClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.computervisionclient)** -object te maken.
+In een nieuwe methode in de **klasse Program** maakt u een client met uw eindpunt en abonnementssleutel. Maak een **[ApiKeyServiceClientCredentials-object](/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.apikeyserviceclientcredentials)** met uw abonnementssleutel en gebruik dit met uw eindpunt om een **[ComputerVisionClient-object te](/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.computervisionclient)** maken.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ComputerVision/ComputerVisionQuickstart.cs?name=snippet_auth)]
 
@@ -129,7 +129,7 @@ In een nieuwe methode in de klasse **Program** kunt u een client instantiëren m
 
 ## <a name="read-printed-and-handwritten-text"></a>Afgedrukte en handgeschreven tekst lezen
 
-De OCR-service kan zicht bare tekst in een afbeelding lezen en deze converteren naar een teken stroom. Zie het overzicht van [optische teken herkenning (OCR)](../../overview-ocr.md) voor meer informatie over het herkennen van tekst. De code in deze sectie maakt gebruik van de nieuwste [Computer Vision SDK-versie voor Read 3,0](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.ComputerVision/6.0.0-preview.1) en definieert een methode, `BatchReadFileUrl` die het client object gebruikt om tekst in de afbeelding te detecteren en uit te pakken.
+De OCR-service kan zichtbare tekst in een afbeelding lezen en converteren naar een tekenstroom. Zie het overzicht van optische tekenherkenning [(OCR)](../../overview-ocr.md) voor meer informatie over tekstherkenning. De code in deze sectie maakt gebruik van de nieuwste [Computer Vision SDK-release voor Read 3.0](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.ComputerVision/) en definieert een methode, , die gebruikmaakt van het clientobject voor het detecteren en extraheren van tekst in de `BatchReadFileUrl` afbeelding.
 
 > [!TIP]
 > U kunt ook tekst extraheren uit een lokale afbeelding. Zie de [ComputerVisionClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.computervisionclient)-methoden, zoals **ReadInStreamAsync**. Of zie de voorbeeldcode op [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/ComputerVision/ComputerVisionQuickstart.cs) voor scenario's met betrekking tot lokale afbeeldingen.
@@ -183,7 +183,7 @@ Als u een Cognitive Services-abonnement wilt opschonen en verwijderen, kunt u de
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze Quick Start hebt u geleerd hoe u de OCR-client bibliotheek installeert en de Lees-API gebruikt. Vervolgens leest u meer over de API-functies voor lezen.
+In deze quickstart hebt u geleerd hoe u de OCR-clientbibliotheek installeert en de Read-API gebruikt. Hierna krijgt u meer informatie over de functies van de Read API.
 
 > [!div class="nextstepaction"]
 >[De Read-API aanroepen](../../Vision-API-How-to-Topics/call-read-api.md)

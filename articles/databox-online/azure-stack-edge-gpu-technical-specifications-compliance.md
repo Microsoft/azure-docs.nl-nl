@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 03/01/2021
+ms.date: 04/12/2021
 ms.author: alkohli
-ms.openlocfilehash: 937f0d1feb0c45c1c158b5e88daf268aeb383509
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: e0eb976f655308082671afe2dc1923f082a3373b
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102034741"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107303165"
 ---
 # <a name="technical-specifications-and-compliance-for-azure-stack-edge-pro-with-gpu"></a>Technische specificaties en naleving voor Azure Stack Edge Pro met GPU 
 
@@ -23,10 +23,14 @@ De hardwareonderdelen van uw Azure Stack Edge Pro met een onboard grafische eenh
 
 Het Azure Stack Edge Pro-apparaat heeft de volgende specificaties voor Compute en geheugen:
 
-| Specificatie           | Waarde                  |
-|-------------------------|----------------------------|
-| CPU                     | 2 X Intel Xeon Silver 4214 (trapsgewijs Lake) CPU<br> 24 fysieke kernen (12 per CPU)<br>48 logische kernen (Vcpu's) (24 per CPU)       |
-| Geheugen                  | 128 (8x16 GB) GB RAM <br> Dell compatible 16 GB PC4-23400 DDR4-2933Mhz 2Rx8 1.2 v ECC geregistreerd RDIMM       |
+| Specificatie  | Waarde                                                                       |
+|----------------|-----------------------------------------------------------------------------|
+| CPU-type       | Dual Intel Xeon Silver 4214 (trapsgewijs Lake) CPU                              |
+| CPU: RAW       | 24 totaal aantal kernen, 48 totale Vcpu's                                              |
+| CPU: bruikbaar    | 40 Vcpu's                                                                    |
+| Type geheugen    | Dell compatible 16 GB PC4-23400 DDR4-2933Mhz 2Rx8 1.2 v ECC geregistreerd RDIMM |
+| Geheugen: onbewerkt    | 128 GB RAM (8 x 16 GB)                                                      |
+| Geheugen: bruikbaar | 102 GB RAM-GEHEUGEN                                                                  |
 
 
 ## <a name="compute-acceleration-specifications"></a>Specificaties van Compute Acceleration
@@ -44,23 +48,23 @@ Het Azure Stack Edge Pro-apparaat heeft twee 100-240 V-energievoedings eenheden 
 
 | Specificatie           | 750 W PSU                  |
 |-------------------------|----------------------------|
-| Maximale uitvoer kracht    | 750 W                     |
+| Maximale uitvoer kracht    | 750 W                      |
 | Frequentie               | 50/60 Hz                   |
 | Selectie van voltage bereik | Automatisch variërend: 100-240 V AC |
-| Hot pluggable           | Ja                        |
+| Hot pluggable           | Yes                        |
 
 
 ## <a name="network-interface-specifications"></a>Specificaties van netwerk interface
 
 Uw Azure Stack Edge Pro-apparaat heeft zes netwerk interfaces, PORT1-PORT6.
 
-| Specificatie           | Beschrijving                 |
+| Specificatie           | Description                 |
 |-------------------------|----------------------------|
 |  Netwerkinterfaces    | **2 X 1 GbE-interfaces** – 1 beheer interface poort 1 wordt gebruikt voor initiële installatie en is standaard statisch. Nadat de eerste installatie is voltooid, kunt u de interface gebruiken voor gegevens met elk IP-adres. Bij het opnieuw instellen wordt de interface echter teruggezet naar het statische IP-adres. <br>De andere interface poort 2 kan door de gebruiker worden geconfigureerd, kan worden gebruikt voor gegevens overdracht en is standaard DHCP. <br>**4 X 25 GbE-interfaces** : deze gegevens interfaces, poort 3 tot en met poort 6, kunnen worden geconfigureerd door de gebruiker als DHCP (standaard) of statisch. Ze kunnen ook worden gebruikt als 10 GbE-interfaces.  | 
 
 Uw Azure Stack Edge Pro-apparaat heeft de volgende netwerkhardware:
 
-* **Aangepaste Microsoft Qlogic Cavium 25G NDC-adapter**: poort 1 tot en met poort 4.
+* **Aangepaste Microsoft `Qlogic` Cavium 25G NDC-adapter** - poort 1 tot en met poort 4.
 * **Mellanox dual-port 25G Connectx-4 kanaalnetwerkadapter**: poort 5 en poort 6.
 
 Hier vindt u de Details voor de Mellanox-kaart:
@@ -74,7 +78,7 @@ Hier vindt u de Details voor de Mellanox-kaart:
 
 Voor een volledige lijst met ondersteunde kabels, schakelaars en ontvangers voor deze netwerkkaarten gaat u naar:
 
-- [MARVELL FastLinQ® 41000 Series Adapters Interoperability Matrix](https://www.marvell.com/documents/xalflardzafh32cfvi0z/)
+- [`Qlogic` Cavium 25G NDC-adapter Interoperability Matrix](https://www.marvell.com/documents/xalflardzafh32cfvi0z/).
 - [Producten die compatibel zijn met Mellanox dual-port 25G Connectx-4 kanaalnetwerkadapter](https://docs.mellanox.com/display/ConnectX4LxFirmwarev14271016/Firmware+Compatible+Products)  
 
 ## <a name="storage-specifications"></a>Opslag specificaties

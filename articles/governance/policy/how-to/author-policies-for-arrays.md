@@ -3,12 +3,12 @@ title: Beleid voor het schrijven van matrix eigenschappen voor bronnen
 description: Meer informatie over het werken met matrix parameters en matrix-taal expressies, de alias [*] evalueren en elementen toevoegen met Azure Policy definitie regels.
 ms.date: 03/31/2021
 ms.topic: how-to
-ms.openlocfilehash: d4e059f3691554aa91dfd15cf308ef62afa58928
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: 18afbee0ca8b1c488e3bd3ce50dacc726bd2ef25
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106089964"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107305188"
 ---
 # <a name="author-policies-for-array-properties-on-azure-resources"></a>Beleid voor het schrijven van matrix eigenschappen op Azure-resources
 
@@ -95,7 +95,7 @@ Gebruik de volgende opdrachten om deze teken reeks te gebruiken voor elke SDK:
 
 - Azure CLI: opdracht [AZ Policy Assignment Create](/cli/azure/policy/assignment#az_policy_assignment_create) with para meter **params**
 - Azure PowerShell: cmdlet [New-AzPolicyAssignment](/powershell/module/az.resources/New-Azpolicyassignment) met para meter **PolicyParameter**
-- REST API: in de _put_ -bewerking [maken](/rest/api/resources/policyassignments/create) als onderdeel van de aanvraag tekst als de waarde van de **Eigenschappen. para meters** -eigenschap
+- REST API: in de _put_ -bewerking [maken](/rest/api/policy/policyassignments/create) als onderdeel van de aanvraag tekst als de waarde van de **Eigenschappen. para meters** -eigenschap
 
 ## <a name="using-arrays-in-conditions"></a>Matrices in voor waarden gebruiken
 

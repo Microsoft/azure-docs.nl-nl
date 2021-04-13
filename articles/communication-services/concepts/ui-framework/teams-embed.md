@@ -7,12 +7,12 @@ ms.author: chpalm
 ms.date: 11/16/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: e55cfb1a4dff7bfda2323e68777d6f50514b1608
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 8301f81b21db50814df1bc764cc1fae38b4f14de
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105930231"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107307636"
 ---
 # <a name="teams-embed"></a>Teams insluiten
 
@@ -33,6 +33,6 @@ De functie voor het insluiten van teams biedt de meeste functies die worden onde
 - In-Meeting-ervaring voor het configureren van audio-en video apparaten
 - [Video-achtergronden](https://support.microsoft.com/office/change-your-background-for-a-teams-meeting-f77a2381-443a-499d-825e-509a140f4780): toestaan dat deel nemers hun achtergronden kunnen vervagen of vervangen
 - [Meerdere opties voor de](https://support.microsoft.com/office/using-video-in-microsoft-teams-3647fc29-7b92-4c26-8c2d-8a596904cdae) uitgebreide galerie met video galerie, samen modus, focus, vastmaken en Spotlight
-- [Delen van inhoud](https://support.microsoft.comoffice/share-content-in-a-meeting-in-teams-fcc2bf59-aecd-4481-8f99-ce55dd836ce8#ID0EABAAA=Mobile): deel nemers toestaan hun scherm te delen
+- [Delen van inhoud](https://support.microsoft.com/en-us/office/share-content-in-a-meeting-in-teams-fcc2bf59-aecd-4481-8f99-ce55dd836ce8): deel nemers toestaan hun scherm te delen
 
 Voor meer informatie over deze gebruikers interface in vergelijking met andere Sdk's van Azure Communication raadpleegt u de [Inleiding over UI SDK-concepten](ui-sdk-overview.md). 

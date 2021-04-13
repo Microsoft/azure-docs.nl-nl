@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 10/20/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: d098af394906dc120a252bdcda65fb3af31e28c8
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: d7e2bd2987e7eaf7798093f3918f72b7e09a3cb0
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104865788"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107313459"
 ---
 # <a name="use-spark--hive-tools-for-visual-studio-code"></a>Gebruik de Spark-& Hive-Hulpprogram Ma's voor Visual Studio code
 
@@ -265,7 +265,7 @@ Het hulp programma biedt ook ondersteuning voor de **Spark SQL** -query:
 
 > [!NOTE]
 >
-> [' MS-python >= 2020.5.78807-versie wordt niet ondersteund voor deze uitbrei ding '](#issues-changed) is opgelost. Werk de **MS-python** nu bij naar de **nieuwste versie** .
+> [MS-toolsai. jupyter >2021.3.684299474-versie wordt niet ondersteund in deze uitbrei ding](#known-issues) is een bekend probleem. Gebruik Synapse kernel door te voegen aan micro soft Jupyter 2021.3.684299474.
 
 ## <a name="submit-pyspark-batch-job"></a>Batch taak PySpark verzenden
 
@@ -485,9 +485,19 @@ Een taak verzenden naar een HDInsight-cluster met behulp van Data Lake Storage G
 
 Ga in de menu balk naar het   >  **opdracht palet** weer geven en voer **Azure in: Meld** u aan.
 
-## <a name="issues-changed"></a>Problemen gewijzigd
+## <a name="known-issues"></a>Bekende problemen 
 
-Voor dit probleem is ' MS-python >= 2020.5.78807-versie wordt niet ondersteund voor deze uitbrei ding ' is opgelost, moet u de **MS-python** nu bijwerken naar de **nieuwste versie** .
+ MS-toolsai. jupyter >2021.3.684299474-versie wordt niet ondersteund voor deze uitbrei ding. gebruik Synapse kernel door te voegen aan micro soft Jupyter 2021.3.684299474.
+
+ 1. Schakel de extensie voor automatisch bijwerken uit.
+
+      ![de uitbrei ding voor automatisch bijwerken uitschakelen](./media/hdinsight-for-vscode/disable-auto-updating-extension.png)
+
+2. Installeer een geselecteerde versie van micro soft Jupyter.
+
+      ![geselecteerde versie van micro soft jupyter](./media/hdinsight-for-vscode/selected-version-of-microsoft-jupyter.png)
+
+3. Micro soft Jupyter-versie 2021.3.684299474 installeren
 
 
 ## <a name="next-steps"></a>Volgende stappen

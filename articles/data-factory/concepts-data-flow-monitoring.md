@@ -3,17 +3,16 @@ title: Gegevens stromen voor toewijzing controleren
 description: Toewijzing van gegevens stromen visueel bewaken in Azure Data Factory
 author: kromerm
 ms.author: makromer
-ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 11/22/2020
-ms.openlocfilehash: 9ca5ea5cdebe297af5081ae6e219935c56ba942e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/11/2021
+ms.openlocfilehash: 82aba428627cba1a3df26fc67c5da0cde52d368c
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96004862"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107309064"
 ---
 # <a name="monitor-data-flows"></a>Gegevens stromen bewaken
 
@@ -77,9 +76,15 @@ U kunt ook gedetailleerde timing voor elke partitie transformatie stap bekijken 
 }
 ```
 
-### <a name="post-processing-time"></a>Verwerkings tijd na verzen ding
+### <a name="sink-processing-time"></a>Verwerkings tijd Sink
 
 Wanneer u een Sink-transformatie pictogram in de kaart selecteert, wordt in het deel venster met de rechter muisknop een extra gegevens punt weer gegeven met de naam ' verwerkings tijd na de onderkant. Dit is de hoeveelheid tijd die nodig is om uw taak uit te voeren op het Spark-cluster *nadat* uw gegevens zijn geladen, getransformeerd en geschreven. Deze tijd kan bestaan uit het sluiten van verbindings Pools, het afsluiten van Stuur Programma's, het verwijderen van bestanden, het samen voegen van bestanden, enzovoort. Wanneer u acties in uw stroom uitvoert, zoals ' bestanden verplaatsen ' en ' uitvoer naar één bestand ', ziet u waarschijnlijk een toename in de waarde voor de verwerkings tijd.
+
+* Duur van schrijf fase: de tijd voor het schrijven van de gegevens naar een faserings locatie voor Synapse SQL
+* SQL-duur tabel bewerking: de tijd die is besteed aan het verplaatsen van gegevens van tijdelijke tabellen naar de doel tabel
+* De duur van de eerste SQL-& na de SQL-duur: de tijd die nodig is voor het uitvoeren van opdrachten
+* De duur van de opdrachten voor het & van de opdracht post opdrachten is de tijd die is besteed aan het uitvoeren van een vooraf/post-bewerking voor op bestanden gebaseerde bron/sinks Verplaats of verwijder bijvoorbeeld bestanden na de verwerking.
+* Samenvoeg duur: de tijd die is besteed aan het samen voegen van het bestand, het samen voegen van bestanden die worden gebruikt voor op bestanden gebaseerde sinks bij het schrijven naar één bestand of wanneer ' bestands naam als kolom gegevens ' wordt gebruikt. Als er een belang rijke tijd wordt besteed aan deze metrische gegevens, moet u deze opties beter niet gebruiken.
   
 ## <a name="error-rows"></a>Fout rijen
 

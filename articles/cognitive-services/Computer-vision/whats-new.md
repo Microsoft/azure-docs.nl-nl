@@ -10,16 +10,29 @@ ms.subservice: computer-vision
 ms.topic: overview
 ms.date: 01/13/2021
 ms.author: pafarley
-ms.openlocfilehash: f102bbe45fd5eea853ba63def4f1c1a92888ca46
-ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
+ms.openlocfilehash: 826bd22375fb6649bf4edbbeca88aed64cfe7245
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106285940"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107312124"
 ---
 # <a name="whats-new-in-computer-vision"></a>Wat is er nieuw in Computer Vision?
 
 Meer informatie over nieuwe functies in de service. Dit kunnen opmerkingen bij de release, video's, blogposts en andere soorten informatie zijn. Voeg een bladwijzer toe voor deze pagina om up-to-date te blijven over de service.
+
+## <a name="april-2021"></a>April 2021
+
+### <a name="computer-vision-v32-ga"></a>Computer Vision v 3.2 GA
+
+De Computer Vision-API v 3.2 is nu algemeen beschikbaar met de volgende updates:
+* Verbeterd model voor afbeeldings code ring: analyseert visuele inhoud en genereert relevante labels op basis van objecten, acties en inhoud die in de afbeelding worden weer gegeven. Dit is beschikbaar via de [Tag Image-API](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-3/operations/56f91f2e778daf14a499f200). Raadpleeg de [hand leiding](https://docs.microsoft.com/azure/cognitive-services/computer-vision/vision-api-how-to-topics/howtocallvisionapi) voor afbeeldings analyse en [overzicht](https://docs.microsoft.com/azure/cognitive-services/computer-vision/overview-image-analysis) voor meer informatie.
+* Geactualiseerd model voor content toezicht: detecteert aanwezigheid van inhoud voor volwassenen en biedt vlaggen voor het filteren van afbeeldingen met inhoud voor volwassenen, ongepaste en benchmarks. Dit is beschikbaar via de [analyse-API](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-3/operations/56f91f2e778daf14a499f21b). Raadpleeg de [hand leiding](https://docs.microsoft.com/azure/cognitive-services/computer-vision/vision-api-how-to-topics/howtocallvisionapi) voor afbeeldings analyse en [overzicht](https://docs.microsoft.com/azure/cognitive-services/computer-vision/overview-image-analysis) voor meer informatie.
+* [OCR (lezen) beschikbaar voor 73 talen](./language-support.md#optical-character-recognition-ocr) , waaronder vereenvoudigd en traditioneel Chinees, Japans, Koreaans en Latijns talen.
+* [OCR (lezen)](./overview-ocr.md) is ook beschikbaar als een [Distroless-container](./computer-vision-how-to-install-containers.md?tabs=version-3-2) voor on-premises implementatie.
+
+> [!div class="nextstepaction"]
+> [Zie Computer Vision v 3.2 GA](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2/operations/5d986960601faab4bf452005)
 
 ## <a name="march-2021"></a>2021 maart
 

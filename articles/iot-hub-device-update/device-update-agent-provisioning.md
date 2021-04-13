@@ -6,12 +6,12 @@ ms.author: valls
 ms.date: 2/16/2021
 ms.topic: how-to
 ms.service: iot-hub-device-update
-ms.openlocfilehash: e778c7ee14d2115bf6d8cf7f12ceaa61e364a4a2
-ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
+ms.openlocfilehash: a5f4b23196a04d88e4329cb5ebf26d0b0a477444
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106120169"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107307263"
 ---
 # <a name="device-update-agent-provisioning"></a>Apparaat-Update Agent inrichten
 
@@ -81,8 +81,25 @@ Volg deze instructies om de apparaat-Update agent in te richten op [IOT Edge ing
 
 1. Volg de instructies om [de Azure IOT Edge runtime te installeren en](https://docs.microsoft.com/azure/iot-edge/how-to-install-iot-edge?view=iotedge-2020-11&preserve-view=true)in te richten.
 
-1. Installeer vervolgens de Update Agent van het apparaat vanuit [artefacten](https://github.com/Azure/iot-hub-device-update/releases) en u bent nu klaar om de apparaat-Update Agent op uw IOT edge-apparaat te starten.
+1. Update Agent voor installatie kopie van het apparaat installeren
+    - We bieden voorbeeld afbeeldingen in [artefacten](https://github.com/Azure/iot-hub-device-update/releases) om installatie kopieën bij te werken naar verschillende versies met behulp van een basis installatie kopie (Adu-base-image) en één update-installatie kopie (Adu-update-image). Bekijk een voor beeld van [hoe u de afbeelding op uw IOT hub apparaat kunt flashen](https://docs.microsoft.com/azure/iot-hub-device-update/device-update-raspberry-pi#flash-sd-card-with-image).  
 
+1. De Update-Agent voor het update pakket voor het apparaat installeren  
+    - Voor de nieuwste agent versies van packages.miscrosoft.com: update pakket lijsten op uw apparaat en installeer het apparaat Update Agent-pakket en de bijbehorende afhankelijkheden met behulp van:   
+    ```shell
+    sudo apt-get update
+    ```
+    
+    ```shell
+    sudo apt-get install deviceupdate-agent deliveryoptimization-plugin-apt
+    ```
+    
+    - Voor aanstaande versies van de release Candi date van [artefacten](https://github.com/Azure/iot-hub-device-update/releases) : down load het. DEP-bestand naar de computer waarop u de apparaat Update Agent wilt installeren en klik vervolgens op:
+     ```shell
+    Sudo apt-get install -y ./"<PATH TO FILE>"/"<.DEP FILE NAME>"
+     ```
+    
+1. U bent nu klaar om de apparaat-Update Agent op uw IoT Edge-apparaat te starten. 
 
 ### <a name="on-non-edge-iot-linux-devices"></a>Van niet-Edge IoT Linux-apparaten
 
@@ -130,14 +147,15 @@ Volg deze instructies om de apparaat-Update Agent op uw IoT Linux-apparaten in t
     sudo aziotctl config apply
     ```
     
-1.  Installeer de Update Agent van het apparaat ten slotte vanuit [artefacten](https://github.com/Azure/iot-hub-device-update/releases) en u bent nu klaar om de apparaat-Update Agent op uw IOT edge-apparaat te starten.
+1.  Installeer de Update Agent van het apparaat ten slotte. We bieden voorbeeld afbeeldingen in [artefacten](https://github.com/Azure/iot-hub-device-update/releases) om installatie kopieën bij te werken naar verschillende versies met behulp van een basis installatie kopie (Adu-base-image) en één update-installatie kopie (Adu-update-image). Bekijk een voor beeld van [hoe u de afbeelding op uw IOT hub apparaat kunt flashen](https://docs.microsoft.com/azure/iot-hub-device-update/device-update-raspberry-pi#flash-sd-card-with-image).
 
+1.  U bent nu klaar om de Update Agent voor apparaten op uw IoT-apparaat te starten. 
 
 ### <a name="other-iot-devices"></a>Andere IoT-apparaten
 
 De Update Agent van het apparaat kan ook worden geconfigureerd zonder de IoT-identiteits service voor het testen of op beperkte apparaten. Volg de onderstaande stappen om de Update Agent van het apparaat in te richten met behulp van een connection string (vanuit de module of het apparaat).
 
-1.  Update-Agent voor apparaat installeren vanuit [artefacten](https://github.com/Azure/iot-hub-device-update/releases).
+1.  We bieden voorbeeld afbeeldingen in [artefacten](https://github.com/Azure/iot-hub-device-update/releases) om installatie kopieën bij te werken naar verschillende versies met behulp van een basis installatie kopie (Adu-base-image) en één update-installatie kopie (Adu-update-image). Bekijk een voor beeld van [hoe u de afbeelding op uw IOT hub apparaat kunt flashen](https://docs.microsoft.com/azure/iot-hub-device-update/device-update-raspberry-pi#flash-sd-card-with-image).
 
 1.  Meld u aan bij de machine of IoT Edge apparaat/IoT-apparaat.
     
@@ -150,16 +168,17 @@ De Update Agent van het apparaat kan ook worden geconfigureerd zonder de IoT-ide
        
     1. Er wordt een venster geopend met een tekst. Verwijder de volledige teken reeks na ' connection_String = ' de eerste keer dat u de Update Agent voor het apparaat op het IoT-apparaat inricht. Het is alleen plaats tekst.
     
-    1. Vervang in de Terminal <uw-verbindings reeks> met de connection string van het apparaat voor uw instantie van apparaat Update Agent.
+    1. Vervang in de Terminal ' <your-connection-string> ' door de connection string van het apparaat voor uw instantie van apparaat Update Agent.
     
         > [!Important]
         > Voeg geen aanhalings tekens toe rondom de connection string.
-        
-        - connection_string =<uw-Connection String>
+        ```shell
+        - connection_string=<ADD CONNECTION STRING HERE>
+       ```
        
     1. Voer in en sla het op.
     
-1.  Nu bent u klaar om de apparaat-Update Agent op uw IoT Edge-apparaat te starten. 
+1.  Nu bent u klaar om de apparaat-Update Agent op uw IoT-apparaat te starten. 
 
 
 ## <a name="how-to-start-the-device-update-agent"></a>De Update-Agent voor het apparaat starten
@@ -191,7 +210,7 @@ U kunt ook uw eigen Update Agent voor klant apparaten maken en wijzigen.
 
 Volg de instructies om de Update Agent van het apparaat te [bouwen](https://github.com/Azure/iot-hub-device-update/blob/main/docs/agent-reference/how-to-build-agent-code.md) vanuit de bron.
 
-Zodra de agent is gebouwd, wordt de agent [uitgevoerd](https://github.com/Azure/iot-hub-device-update/blob/main/docs/agent-reference/how-to-run-agent.md) .
+Zodra de agent is gebouwd, is het tijd om de agent [uit te voeren](https://github.com/Azure/iot-hub-device-update/blob/main/docs/agent-reference/how-to-run-agent.md) .
 
 Breng nu de wijzigingen aan die nodig zijn om de agent in uw installatie kopie op te nemen.  Lees hoe u de Update Agent voor het apparaat kunt [wijzigen](https://github.com/Azure/iot-hub-device-update/blob/main/docs/agent-reference/how-to-modify-the-agent-code.md) voor hulp.
 

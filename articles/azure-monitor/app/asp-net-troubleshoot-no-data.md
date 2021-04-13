@@ -4,12 +4,12 @@ description: Ziet u geen gegevens in Azure-toepassing Insights? Probeer het hier
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 05/21/2020
-ms.openlocfilehash: fbf53f6d4a928215d25874f4e405147c73cbf81f
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: 3b550e434db5b616ffedef7ebe9891b36fa431a2
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106056569"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107311223"
 ---
 # <a name="troubleshooting-no-data---application-insights-for-netnet-core"></a>Problemen met geen gegevens Application Insights voor .NET/.NET core oplossen
 
@@ -28,6 +28,10 @@ ms.locfileid: "106056569"
 *Er treden gegevens verloren in de console-app of op Web-apps wanneer de app wordt gestopt.*
 
 * Het SDK-kanaal houdt telemetrie in de buffer en verzendt deze in batches. Als de toepassing wordt afgesloten, moet u mogelijk expliciet [Flush ()](api-custom-events-metrics.md#flushing-data)aanroepen. Gedrag van `Flush()` hangt af van het gebruikte [kanaal](telemetry-channels.md#built-in-telemetry-channels) .
+
+## <a name="request-count-collected-by-application-insights-sdk-does-not-match-the-iis-log-count-for-my-application"></a>Aantal aanvragen dat is verzameld door Application Insights SDK komt niet overeen met het IIS-logboek aantal voor mijn toepassing
+
+Internet Information Services (IIS)-logboeken tellen van alle aanvragen die IIS bereiken en inherent kunnen verschillen van de totale aanvraag die een toepassing bereikt. Als gevolg hiervan is het niet gegarandeerd dat het aantal aanvragen dat door de Sdk's wordt verzameld, overeenkomt met het totale IIS-logboek aantal. 
 
 ## <a name="no-data-from-my-server"></a>Geen gegevens van mijn server
 *Ik heb mijn app op mijn webserver geïnstalleerd en nu zie ik geen telemetrie. De werk ervaring op mijn dev machine is OK.*

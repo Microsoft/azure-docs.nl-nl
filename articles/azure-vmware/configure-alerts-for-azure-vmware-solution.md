@@ -3,16 +3,16 @@ title: Waarschuwingen configureren en werken met metrische gegevens in de Azure 
 description: Meer informatie over het gebruik van waarschuwingen voor het ontvangen van meldingen. Leer ook hoe u met metrische gegevens kunt werken om meer inzicht te krijgen in uw persoonlijke cloud van Azure VMware-oplossingen.
 ms.topic: how-to
 ms.date: 04/02/2021
-ms.openlocfilehash: f021662658399111187e9963fc5caec434fabf4a
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: 486f25eba017b2d4e37c0796909a0d26adee6ba8
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106096794"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107309625"
 ---
 # <a name="configure-azure-alerts-in-azure-vmware-solution"></a>Azure-waarschuwingen in azure VMware-oplossing configureren 
 
-In dit artikel leert u hoe u [Azure-actie groepen](/azure/azure-monitor/alerts/action-groups) in Microsoft Azure- [waarschuwingen](/azure/azure-monitor/alerts/alerts-overvie) kunt configureren om meldingen te ontvangen van geactiveerde gebeurtenissen die u definieert. U leert ook hoe u [Azure monitor metrische gegevens](/azure/azure-monitor/essentials/data-platform-metrics) kunt gebruiken om dieper inzicht te krijgen in uw persoonlijke cloud van Azure VMware-oplossingen.
+In dit artikel leert u hoe u [Azure-actie groepen](/azure/azure-monitor/alerts/action-groups) in Microsoft Azure- [waarschuwingen](/azure/azure-monitor/alerts/alerts-overview) kunt configureren om meldingen te ontvangen van geactiveerde gebeurtenissen die u definieert. U leert ook hoe u [Azure monitor metrische gegevens](/azure/azure-monitor/essentials/data-platform-metrics) kunt gebruiken om dieper inzicht te krijgen in uw persoonlijke cloud van Azure VMware-oplossingen.
 
 
 ## <a name="supported-metrics-and-activities"></a>Ondersteunde metrische gegevens en activiteiten

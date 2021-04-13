@@ -30,8 +30,8 @@ highlightedContent:
 productDirectory:
   title: Door Azure-producten bladeren
   items:
-    - title: Azure-percept
-      summary: Edge Intelligence van Silicon naar service
+    - title: Azure Percept
+      summary: Edge intelligence van siliconen naar service
       imageSrc: ./media/index/azure-percept.svg
       azureCategories:
         - iot
@@ -71,8 +71,8 @@ productDirectory:
         - ai-machine-learning
         - analytics
       url: /azure/databricks/
-    - title: Status bot
-      summary: Het doel van een beheerde service voor het ontwikkelen van Virtual gezondheids assistenten.
+    - title: Statusbot
+      summary: Een beheerde service die speciaal is gebouwd voor de ontwikkeling van virtuele assistenten in de gezondheidszorg.
       imageSrc: media/index/health-bot-logo.svg
       azureCategories:
         - ai-machine-learning
@@ -408,8 +408,8 @@ productDirectory:
         - databases
         - iot
       url: cosmos-db/index.yml
-    - title: Door Azure beheerde instantie voor Apache Cassandra
-      summary: Implementatie en schaal baarheid automatiseren voor beheerde open-source Apache Cassandra-data centers
+    - title: Azure Managed Instance voor Apache Cassandra
+      summary: Implementatie en schaalbaarheid automatiseren voor beheerde opensource Apache Cassandra-datacenters
       imageSrc: ./media/index/managed-instance-apache-cassandra.svg
       azureCategories:
         - databases
@@ -468,8 +468,8 @@ productDirectory:
         - compute
         - containers
       url: aks/index.yml
-    - title: Azure Quantum (preview-versie)
-      summary: Ontdek vandaag nog Quantum impact op Azure
+    - title: Azure Quantum (preview)
+      summary: Kwantumimpact vandaag nog in Azure ervaren
       imageSrc: ./media/index/quantum.svg
       azureCategories:
         - compute
@@ -714,12 +714,6 @@ productDirectory:
       azureCategories:
         - developer-tools
       url: 'https://code.visualstudio.com/docs'
-    - title: Visual Studio Codespaces (preview)
-      summary: Ontwikkelomgevingen op basis van de cloud die overal toegankelijk zijn
-      imageSrc: 'https://docs.microsoft.com/media/logos/logo_visual-studio.svg'
-      azureCategories:
-        - developer-tools
-      url: /visualstudio/online/overview/what-is-vsonline
     - title: Application Insights
       summary: 'Volledige waarneembaarheid van uw toepassingen, infrastructuur en netwerk'
       imageSrc: 'https://static.docs.com/ui/media/product/azure/application-insights.svg'
@@ -1097,8 +1091,8 @@ productDirectory:
         - migration
         - storage
       url: databox/index.yml
-    - title: Object ankerpunten (preview-versie)
-      summary: 3D-inhoud automatisch uitlijnen en verankeren naar objecten in de fysieke wereld
+    - title: Object Anchors (preview)
+      summary: Automatisch 3D-inhoud uitlijnen en ankeren naar objecten in de fysieke wereld
       imageSrc: ./media/index/object-anchors.svg
       azureCategories:
         - mixed-reality
@@ -1204,8 +1198,8 @@ productDirectory:
       azureCategories:
         - networking
       url: load-balancer/index.yml
-    - title: Azure route server (preview-versie)
-      summary: Vereenvoudig het beheer van uw netwerk apparaten
+    - title: Azure Route Server (preview)
+      summary: Vereenvoudig het operationeel beheer van uw netwerkapparaten
       imageSrc: ./media/index/azure-route-server.svg
       azureCategories:
         - networking
@@ -1380,9 +1374,9 @@ additionalContent:
           url: /azure/china/
     - title: Partneroplossingen
       items:
-        - title: Azure-partner oplossingen
-          summary: Geïntegreerde partner oplossingen die u in azure kunt gebruiken om uw Cloud infrastructuur te verbeteren.
+        - title: Oplossingen van Azure-partners
+          summary: Geïntegreerde partneroplossingen die u in Azure kunt gebruiken om uw cloudinfrastructuur te verbeteren.
           url: ./partner-solutions/overview.md
         - title: Commerciële marketplace
-          summary: Een online Marketplace van toepassingen en services van ISV-partners (Independent Software Vendor).
+          summary: Een onlinemarktplaats met toepassingen en services van ISV-partners (Independent Software Vendor).
           url: ./marketplace/index.yml

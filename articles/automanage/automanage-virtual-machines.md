@@ -1,6 +1,6 @@
 ---
-title: Azure automanage voor virtuele machines
-description: Meer informatie over Azure automanage voor virtuele machines.
+title: Azure Automanage voor virtuele machines
+description: Meer informatie Azure Automanage voor virtuele machines.
 author: deanwe
 ms.service: virtual-machines
 ms.subservice: automanage
@@ -9,42 +9,42 @@ ms.topic: conceptual
 ms.date: 02/23/2021
 ms.author: deanwe
 ms.custom: references_regions
-ms.openlocfilehash: e4e1d22e2e7175135e88a08ed5a6d5ae7f021d49
-ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
+ms.openlocfilehash: 514f1af2a1b120254840986fc5ceb803dfc24345
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106491271"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107363373"
 ---
-# <a name="azure-automanage-for-virtual-machines"></a>Azure automanage voor virtuele machines
+# <a name="azure-automanage-for-virtual-machines"></a>Azure Automanage voor virtuele machines
 
-In dit artikel wordt informatie behandeld over Azure automanage voor virtuele machines, die de volgende voor delen hebben:
+Dit artikel bevat informatie over Azure Automanage virtuele machines, die de volgende voordelen hebben:
 
-- Virtuele machines op intelligente wijze voorbereiden om aanbevolen procedures voor Azure-Services te selecteren
-- Configureert automatisch elke service per aanbevolen procedures van Azure
-- Controleert op drift en corrigeert deze wanneer ze zijn gedetecteerd
-- Biedt een eenvoudige ervaring (punt, klik, instellen, verg eten)
+- Virtuele machines intelligent onboarden om best practices voor Azure-services te selecteren
+- Elke service wordt automatisch geconfigureerd volgens de best practices van Azure
+- Controleert op drift en corrigeert deze wanneer deze wordt gedetecteerd
+- Biedt een eenvoudige ervaring (punt, klik, instellen, vergeten)
 
 
 ## <a name="overview"></a>Overzicht
 
-Azure automanage voor virtuele machines is een service waarmee u niet hoeft te ontdekken, weet hoe u kunt uitkomen en hoe u bepaalde services in azure kunt configureren die voor deel van uw virtuele machine zijn. Deze services worden beschouwd als Services voor aanbevolen procedures van Azure en helpen de betrouw baarheid, beveiliging en het beheer van virtuele machines te verbeteren. Voor beelden van services zijn [Azure updatebeheer](../automation/update-management/overview.md) en [Azure backup](../backup/backup-overview.md).
+Azure Automanage voor virtuele machines is een service die de noodzaak om te ontdekken, te leren onboarden en te configureren van bepaalde services in Azure elimineert die uw virtuele machine ten goede komen. Deze services worden beschouwd als best practices van Azure en helpen de betrouwbaarheid, beveiliging en het beheer van virtuele machines te verbeteren. Voorbeeldservices zijn [Azure Updatebeheer](../automation/update-management/overview.md) en [Azure Backup.](../backup/backup-overview.md)
 
-Nadat u uw virtuele machines hebt voor bereid op Azure automanage, wordt elke best practice-service geconfigureerd met de aanbevolen instellingen. Aanbevolen procedures verschillen voor elk van de services. Een voor beeld is mogelijk Azure Backup, waarbij de best practice mogelijk eenmaal per dag een back-up van de virtuele machine maakt en een Bewaar periode van zes maanden hebben.
+Na het onboarden van uw virtuele machines Azure Automanage, wordt best practice service geconfigureerd met de aanbevolen instellingen. Best practices verschillen voor elk van de services. Een voorbeeld hiervan is Azure Backup, waarbij het best practice is om één keer per dag een back-up van de virtuele machine te maken en een bewaarperiode van zes maanden te hebben.
 
-Met Azure auto Manage wordt ook automatisch gecontroleerd op drift en wordt deze gecorrigeerd wanneer ze worden gedetecteerd. Dit betekent dat als uw virtuele machine onboarded is voor Azure automanage, deze niet alleen worden geconfigureerd per Azure best practices, maar we controleren uw machine om te garanderen dat deze de best practices in de hele levens cyclus blijft naleven. Als uw virtuele machine een drift of afwijking van deze procedures heeft (bijvoorbeeld als een service offboarded is), wordt deze gecorrigeerd en wordt de computer weer in de gewenste staat gebracht.
+Azure Automanage controleert ook automatisch op drift en corrigeert deze wanneer deze wordt gedetecteerd. Dit betekent dat als de onboarding van uw virtuele machine naar Azure Automanage is uitgevoerd, we deze niet alleen configureren volgens de best practices van Azure, maar ook uw machine bewaken om ervoor te zorgen dat deze gedurende de hele levenscyclus blijft voldoen aan deze best practices. Als uw virtuele machine afwijkt van deze procedures (bijvoorbeeld als een service is ge-offboarded), wordt deze gecorrigeerd en wordt de machine weer in de gewenste status opgeslagen.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Er zijn verschillende vereisten die u moet overwegen voordat u Azure automanage op uw virtuele machines inschakelt.
+Er zijn verschillende vereisten waarmee u rekening moet houden voordat u de Azure Automanage virtuele machines inschakelen.
 
-- Ondersteunde [Windows Server-versies](automanage-windows-server.md#supported-windows-server-versions) en [Linux-distributies](automanage-linux.md#supported-linux-distributions-and-versions)
-- Vm's moeten zich in een ondersteunde regio bevinden (zie hieronder)
-- De gebruiker moet over de juiste machtigingen beschikken (zie hieronder)
-- Automanage biedt momenteel geen ondersteuning voor sandbox-abonnementen
+- Ondersteunde [Versies van Windows Server en](automanage-windows-server.md#supported-windows-server-versions) [Linux-distributies](automanage-linux.md#supported-linux-distributions-and-versions)
+- VM's moeten zich in een ondersteunde regio (zie hieronder)
+- De gebruiker moet de juiste machtigingen hebben (zie hieronder)
+- Automanage biedt op dit moment geen ondersteuning voor Sandbox-abonnementen
 
 ### <a name="supported-regions"></a>Ondersteunde regio’s
-Automanage ondersteunt alleen Vm's die zich in de volgende regio's bevinden:
+Automanage ondersteunt alleen VM's in de volgende regio's:
 * Europa -west
 * Europa - noord
 * VS - centraal
@@ -59,184 +59,136 @@ Automanage ondersteunt alleen Vm's die zich in de volgende regio's bevinden:
 * Verenigd Koninkrijk Zuid
 * AU - oost
 * Australië - zuidoost
+* Azië - zuidoost
 
 ### <a name="required-rbac-permissions"></a>Vereiste RBAC-machtigingen
-Voor uw account zijn enigszins verschillende RBAC-rollen vereist, afhankelijk van het feit of u automatisch beheer met een nieuw account voor automatisch beheer inschakelt.
+Uw account heeft iets andere RBAC-rollen nodig, afhankelijk van het inschakelen van Automanage met een nieuw Automanage-account.
 
-Als u automanage inschakelt met een nieuw account voor automanage:
-* De rol van **eigenaar** van het abonnement (en) met uw vm's _**of**_
-* Beheerders-en **gebruikers toegangs** rollen op het abonnement **(en)** die uw vm's bevatten
+Als u Automanage inschakelen met een nieuw Automanage-account:
+* **De** rol eigenaar van de abonnementen die uw VM's bevatten, _**of**_
+* **De** rollen **Inzender en Gebruikerstoegangbeheerder** voor de abonnementen die uw VM's bevatten
 
-Als u automanage inschakelt met een bestaand automanage-account:
-* Rol **Inzender** voor de resource groep die uw vm's bevat
+Als u Automanage inschakelen met een bestaand Automanage-account:
+* **De** rol Inzender voor de resourcegroep die uw VM's bevat
 
-Voor het account voor automatisch beheer worden **Inzender en** machtigings machtigingen voor het **resource beleid** verleend voor het uitvoeren van acties op automatisch beheerde computers.
+Aan het Automanage-account worden de machtigingen **Inzender** en **Inzender voor resourcebeleid** verleend om acties uit te voeren op automatisch beheerde machines.
 
 > [!NOTE]
-> Als u automanage wilt gebruiken op een virtuele machine die is verbonden met een werk ruimte in een ander abonnement, moet u de hiervoor vermelde machtigingen hebben voor elk abonnement.
+> Als u Automatisch beheren wilt gebruiken op een VM die is verbonden met een werkruimte in een ander abonnement, moet u de hierboven beschreven machtigingen voor elk abonnement hebben.
 
-## <a name="participating-services"></a>Deelnemende Services
+## <a name="participating-services"></a>Deelnemende services
 
-:::image type="content" source="media\automanage-virtual-machines\intelligently-onboard-services-1.png" alt-text="Services op intelligente wijze voorbereiden.":::
+:::image type="content" source="media\automanage-virtual-machines\intelligently-onboard-services-1.png" alt-text="Intelligente onboarding van services.":::
 
-Voor de volledige lijst met deelnemende Azure-Services en de ondersteunde omgeving raadpleegt u het volgende:
+Zie de volgende informatie voor de volledige lijst met deelnemende Azure-services en hun ondersteunde omgeving:
 - [Automanage voor Linux](automanage-linux.md)
-- [Automanage voor Windows Server](automanage-windows-server.md)
+- [Automatisch beheren voor Windows Server](automanage-windows-server.md)
 
- U wordt automatisch geadviseerd voor deze deelnemende Services. Ze zijn essentieel voor het technische document van best practices, dat u kunt vinden in ons [Cloud adoptie Framework](/azure/cloud-adoption-framework/manage/azure-server-management).
+ We onboarden u automatisch voor deze deelnemende services. Ze zijn essentieel voor onze whitepaper met best practices, die u kunt vinden in onze [Cloud Adoption Framework.](/azure/cloud-adoption-framework/manage/azure-server-management)
 
-Voor al deze services worden automatisch de voor bereid, automatisch geconfigureerd, bewaken, controleren en verholpen als er een drift wordt gedetecteerd.
+Voor al deze services wordt automatisch onboarden, automatisch geconfigureerd, gecontroleerd op drift en gemediateerd als er drift wordt gedetecteerd.
 
 
-## <a name="enabling-automanage-for-vms-in-azure-portal"></a>Automanage inschakelen voor Vm's in Azure Portal
+## <a name="enabling-automanage-for-vms-in-azure-portal"></a>Automanage inschakelen voor VM's in Azure Portal
 
-In de Azure Portal kunt u automatisch beheer inschakelen op een bestaande virtuele machine of wanneer u een nieuwe virtuele machine maakt. Bekijk de Snelstartgids voor het [autobeheren van virtuele machines](quick-create-virtual-machines-portal.md)voor beknopte stappen voor dit proces.
+In de Azure Portal kunt u Automatischmanage inschakelen op een bestaande virtuele machine of wanneer u een nieuwe virtuele machine maakt. Raadpleeg de [quickstart Automanage voor virtuele machines](quick-create-virtual-machines-portal.md)voor beknopte stappen voor dit proces.
 
-Als dit de eerste keer is dat u automatisch beheer voor uw virtuele machine inschakelt, kunt u zoeken in de Azure Portal voor de aanbevolen procedures voor het automatisch **beheren van virtuele Azure-machines**. Klik op **inschakelen op bestaande virtuele machine**, selecteer de virtuele machines die u wilt vrijmaken, klik op **selecteren**, klik op **inschakelen** en u bent klaar.
+Als het de eerste keer is dat u Automanage inschakelen voor uw VM, kunt u in de Azure Portal zoeken naar De best practices voor virtuele **Azure-machines.** Klik op Inschakelen op bestaande **VM,** selecteer de VM's die u wilt onboarden, klik op **Selecteren,** klik op **Inschakelen** en u bent klaar.
 
-De enige keer dat u moet kunnen communiceren met deze virtuele machine om deze services te beheren, is in het geval dat u de virtuele machine hebt geprobeerd te herstellen, maar dit is niet gelukt. Als uw virtuele machine is hersteld, wordt deze weer in overeenstemming gebracht zonder dat u wordt gewaarschuwd. Zie [status van virtuele machines](#status-of-vms)voor meer informatie.
+De enige tijd die u mogelijk nodig hebt om met deze VM te communiceren om deze services te beheren, is in het geval we hebben geprobeerd uw VM te herstellen, maar dit is mislukt. Als we uw VM hebben kunnen herstellen, brengen we deze weer in overeenstemming zonder u te waarschuwen. Zie Status van [VM's voor meer informatie.](#status-of-vms)
 
-## <a name="enabling-automanage-for-vms-using-azure-policy"></a>Inschakelen van automanage voor Vm's met behulp van Azure Policy
-U kunt automatisch beheer op Vm's op schaal inschakelen met behulp van de ingebouwde Azure Policy. Het beleid heeft een DeployIfNotExists-effect, wat betekent dat alle in aanmerking komende Vm's die zich binnen het bereik van het beleid bevinden automatisch worden doorgevoerd om aanbevolen procedures voor het Automate van vm's te beheren.
+## <a name="enabling-automanage-for-vms-using-azure-policy"></a>Automanage inschakelen voor VM's met Azure Policy
+U kunt automanage ook op VM's op schaal inschakelen met behulp van de ingebouwde Azure Policy. Het beleid heeft een DeployIfNotExists-effect, wat betekent dat alle in aanmerking komende VM's die zich binnen het bereik van het beleid bevinden, automatisch worden onboarding voor best practices voor virtuele VM's automatisch worden geïmplementeerd.
 
-Een directe koppeling naar het beleid is [hier](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F270610db-8c04-438a-a739-e8e6745b22d3).
+U kunt hier een directe koppeling naar het [beleid maken.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F270610db-8c04-438a-a739-e8e6745b22d3)
 
-### <a name="how-to-apply-the-policy"></a>Het beleid Toep assen
-1. Klik op de knop **toewijzen** bij het weer geven van de beleids definitie
-1. Selecteer het bereik waarop u het beleid wilt Toep assen (kan beheer groep, abonnement of resource groep zijn)
-1. Onder **para meters** geeft u para meters op voor het account voor automatische beheer, het configuratie profiel en het effect (het effect moet meestal worden DeployIfNotExists)
-    1. Als u geen automatisch beheer account hebt, moet u er [een maken](#create-an-automanage-account).
-1. Schakel onder **herstel** het selectie vakje ' Klik op een herstel taak ' in. Hiermee wordt onboarding voor automatisch beheer uitgevoerd.
-1. Klik op **controleren + maken** en zorg ervoor dat alle instellingen goed zijn.
+### <a name="how-to-apply-the-policy"></a>Het beleid toepassen
+1. Klik op de **knop Toewijzen** wanneer u de beleidsdefinitie bekijkt
+1. Selecteer het bereik waarop u het beleid wilt toepassen (kan beheergroep, abonnement of resourcegroep zijn)
+1. Geef **onder Parameters** parameters op voor het Automanage-account, Configuratieprofiel en Effect (het effect moet meestal DeployIfNotExists zijn)
+    1. Als u geen Automanage-account hebt, moet u er [een maken.](./automanage-account.md)
+1. Onder **Herstel, selectievakje**"Klik op een hersteltaak" selectievakje. Hiermee wordt onboarding naar Automanage uitvoeren.
+1. Klik **op Controleren en maken** en zorg ervoor dat alle instellingen er goed uitzien.
 1. Klik op **Create**.
 
 ## <a name="environment-configuration"></a>Omgevingsconfiguratie
 
-Wanneer u automatisch beheer voor uw virtuele machine inschakelt, is een omgeving vereist. Omgevingen vormen de basis van deze service. Ze bepalen op welke services uw machines worden uitgevoerd en wat de omvang van de configuratie van die services zou zijn.
+Wanneer u Automanage inschakelen voor uw virtuele machine, is een omgeving vereist. Omgevingen vormen de basis van deze service. Ze definiëren welke services we onboarden voor uw machines en tot op zekere hoogte wat de configuratie van deze services zou zijn.
 
-### <a name="default-environments"></a>Standaard omgevingen
+### <a name="default-environments"></a>Standaardomgevingen
 
 Er zijn momenteel twee omgevingen beschikbaar.
 
-- **Dev/test-** omgeving is ontworpen voor ontwikkel-en test machines.
-- **Productie** omgeving is voor productie.
+- **Dev/Test-omgeving** is ontworpen voor Dev/Test-machines.
+- **De** productieomgeving is voor productie.
 
-De reden voor deze onderscheid is dat bepaalde services worden aanbevolen op basis van de uitgevoerde werk belasting. Zo wordt in een productie machine automatisch op de Azure Backup. Voor een dev/test-machine is een back-upservice echter een overbodige kosten, aangezien ontwikkel-en test machines doorgaans een lagere impact op het bedrijf hebben.
+De reden voor deze differentiator is dat bepaalde services worden aanbevolen op basis van de workload die wordt uitgevoerd. In een productiemachine onboarden we u bijvoorbeeld automatisch naar Azure Backup. Voor een Dev/Test-machine zou een back-upservice echter onnodige kosten met zich mee te maken hebben, omdat Dev/Test-machines doorgaans minder bedrijfsimpact hebben.
 
-### <a name="customizing-an-environment-using-preferences"></a>Een omgeving aanpassen met voor keuren
+### <a name="customizing-an-environment-using-preferences"></a>Een omgeving aanpassen met behulp van voorkeuren
 
-Naast de standaard services die wij u voor u hebben, kunt u een bepaalde subset met voor keuren configureren. Deze voor keuren zijn toegestaan binnen verschillende configuratie opties. In het geval van Azure Backup, kunt u bijvoorbeeld de frequentie van de back-up definiëren en op welke dag van de week deze zich bevindt.
-
-> [!NOTE]
-> In de ontwikkel-en test omgeving wordt helemaal geen back-up gemaakt van de VM.
-
-U kunt de instellingen van een standaard omgeving aanpassen via voor keuren. Meer informatie over het maken van [een voor keur](virtual-machines-custom-preferences.md).
+Naast de standaardservices waarmee we u onboarden, kunt u een bepaalde subset van voorkeuren configureren. Deze voorkeuren zijn toegestaan binnen een bereik van configuratieopties. In het geval van een Azure Backup kunt u bijvoorbeeld de frequentie van de back-up definiëren en op welke dag van de week deze plaatsvindt.
 
 > [!NOTE]
-> U kunt de enivonrment-configuratie op uw virtuele machine niet wijzigen terwijl automanage is ingeschakeld. U moet automatisch beheer voor die virtuele machine uitschakelen en vervolgens automanage opnieuw inschakelen met de gewenste omgeving en voor keuren.
+> In de Dev/Test-omgeving maken we helemaal geen back-up van de VM.
 
-Zie hier voor de volledige lijst met deelnemende Azure-Services en als deze voor keuren worden ondersteund:
+U kunt de instellingen van een standaardomgeving aanpassen via voorkeuren. Meer informatie over het maken van een [voorkeur hier.](virtual-machines-custom-preferences.md)
+
+> [!NOTE]
+> U kunt de configuratie van de inschrijving op uw VM niet wijzigen terwijl Automanage is ingeschakeld. U moet Automanage uitschakelen voor die VM en vervolgens Automatischmanage opnieuw inschakelen met de gewenste omgeving en voorkeuren.
+
+Zie hier voor de volledige lijst met deelnemende Azure-services en als deze ondersteuning bieden voor voorkeuren:
 - [Automanage voor Linux](automanage-windows-server.md)
-- [Automanage voor Windows Server](automanage-windows-server.md)
+- [Automatisch beheren voor Windows Server](automanage-windows-server.md)
 
 
-## <a name="automanage-account"></a>Account voor automanage
+## <a name="automanage-account"></a>Automanage-account
 
-Het account voor automatisch beheer is de beveiligings context of de identiteit waaronder de geautomatiseerde bewerkingen plaatsvinden. Normaal gesp roken hoeft u de optie voor het automatisch beheren van het account niet te selecteren, maar als er sprake is van een overdrachts scenario waarbij u het geautomatiseerde beheer van uw resources (mogelijk tussen twee systeem beheerders) wilt verdelen, kunt u met deze optie een Azure-identiteit definiëren voor elk van deze beheerders.
+Het Automanage-account is de beveiligingscontext of de identiteit waaronder de geautomatiseerde bewerkingen worden uitgevoerd. Normaal gesproken is de optie Account automatisch beheren niet nodig om te selecteren, maar als er een delegeringsscenario is waarin u het geautomatiseerde beheer van uw resources wilt verdelen (mogelijk tussen twee systeembeheerders), kunt u met de optie Account automatisch beheren in de inschakelenstroom een Azure-identiteit definiëren voor elk van deze beheerders.
 
-Wanneer u automatisch beheer op uw virtuele machines inschakelt, is er een geavanceerde vervolg keuzelijst op de Blade **Azure VM-best practice inschakelen** waarmee u het automatisch beheer account kunt toewijzen of hand matig maken. Azure Portal
+Ga naar het document Automanage Account voor meer informatie over het [Automanage-account](./automanage-account.md)en het maken van een account.
 
-Voor het account voor automatisch beheer worden Inzender **rollen en functies** voor het **resource beleid** worden verleend aan de abonnementen met de machine (s) die u wilt beheren. U kunt hetzelfde account voor automatisch beheer op machines op meerdere abonnementen gebruiken, waarmee de **Inzender** en de Inzender machtigingen voor het **resource beleid** voor alle abonnementen worden verleend.
+## <a name="status-of-vms"></a>Status van VM's
 
-Als uw virtuele machine is verbonden met een Log Analytics-werk ruimte in een ander abonnement, wordt aan de automanage- **account zowel Inzender** als **Inzender voor resource beleid** verleend in dat andere abonnement.
-
-Als u automanage inschakelt met een nieuw automanage-account, hebt u de volgende machtigingen nodig voor uw abonnement: rol van **eigenaar** of **Inzender** samen met beheerders rollen van **gebruikers toegang** .
-
-Als u automanage met een bestaand automanage-account inschakelt, moet u de rol **Inzender** hebben voor de resource groep die uw virtuele machines bevat.
-
-> [!NOTE]
-> Wanneer u aanbevolen procedures voor automatisch beheer uitschakelt, blijven de machtigingen voor het automatisch beheren van het account voor gekoppelde abonnementen behouden. Verwijder de machtigingen hand matig door naar de IAM-pagina van het abonnement te gaan of door het account voor automatisch beheer te verwijderen. Het automanage-account kan niet worden verwijderd als er nog computers worden beheerd.
-
-### <a name="create-an-automanage-account"></a>Een automanage-account maken
-U kunt een account voor automanage maken via de portal of met een ARM-sjabloon.
-
-#### <a name="portal"></a>Portal
-1. Ga naar de Blade **automanage** in de portal
-1. Klik op **inschakelen op bestaande machine**
-1. Klik onder **Geavanceerd** op ' een nieuw account maken '
-1. Vul de vereiste velden in en klik op **maken**
-
-#### <a name="arm-template"></a>ARM-sjabloon
-Sla de volgende ARM-sjabloon op als `azuredeploy.json` en voer de volgende opdracht uit: `az deployment group create --resource-group <resource group name> --template-file azuredeploy.json`
-
-```json
-{
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "automanageAccountName": {
-            "type": "String"
-        },
-        "location": {
-            "type": "String"
-        }
-    },
-    "resources": [
-        {
-            "apiVersion": "2020-06-30-preview",
-            "type": "Microsoft.Automanage/accounts",
-            "name": "[parameters('automanageAccountName')]",
-            "location": "[parameters('location')]",
-            "identity": {
-                "type": "SystemAssigned"
-            }
-        }
-    ]
-}
-```
-
-## <a name="status-of-vms"></a>Status van virtuele machines
-
-Ga in het Azure Portal naar de pagina **Aanbevolen procedures voor het automatisch beheren van virtuele Azure-machines** , waarin al uw door u beheerde vm's worden weer gegeven. Hier ziet u de algemene status van elke virtuele machine.
+Ga in Azure Portal naar de pagina Met best practices voor virtuele **Azure-machines automanage – Azure** waarop al uw automatisch beheerde VM's worden vermeld. Hier ziet u de algemene status van elke virtuele machine.
 
 :::image type="content" source="media\automanage-virtual-machines\configured-status.png" alt-text="Lijst met geconfigureerde virtuele machines.":::
 
-Voor elke vermelde VM worden de volgende gegevens weer gegeven: naam, omgeving, configuratie voorkeur, status, besturings systeem, account, abonnement en resource groep.
+Voor elke vermelde VM worden de volgende gegevens weergegeven: Naam, Omgeving, Configuratievoorkeur, Status, Besturingssysteem, Account, Abonnement en Resourcegroep.
 
-In de kolom **status** kunnen de volgende statussen worden weer gegeven:
-- *In uitvoering* : de VM is zojuist ingeschakeld en wordt geconfigureerd
-- *Geconfigureerd* : de virtuele machine is geconfigureerd en er is geen drift gedetecteerd
-- *Mislukt* : de VM is gedrift en kan niet worden hersteld
-- *In behandeling* : de virtuele machine wordt op dit moment niet uitgevoerd en er wordt geprobeerd om de VM op te lossen of te herstellen wanneer deze de volgende keer wordt uitgevoerd
+In **de kolom Status** kunnen de volgende statussen worden weergegeven:
+- *In uitvoering:* de VM is zojuist ingeschakeld en wordt geconfigureerd
+- *Geconfigureerd:* de VM is geconfigureerd en er wordt geen afwijking gedetecteerd
+- *Mislukt:* de VM is gedrift en kan niet worden herstellen
+- *In* behandeling: de VM wordt momenteel niet uitgevoerd en Automanage probeert de VM te onboarden of te herstellen wanneer deze de volgende keer wordt uitgevoerd
 
-Als u de **status** als *mislukt* ziet, kunt u problemen met de implementatie oplossen via de resource groep waar uw VM zich bevindt. Ga naar **resource groepen**, selecteer uw resource groep, klik op **implementaties** en Bekijk de status *mislukt* samen met de fout Details.
+Als u de **status Mislukt** *ziet,* kunt u problemen met de implementatie oplossen via de resourcegroep waarin uw VM zich bevindt. Ga naar **Resourcegroepen,** selecteer uw resourcegroep, klik op **Implementaties** en bekijk de *status* Mislukt, samen met foutdetails.
 
 
-## <a name="disabling-automanage-for-vms"></a>Automanage voor Vm's uitschakelen
+## <a name="disabling-automanage-for-vms"></a>Automanage voor VM's uitschakelen
 
-U kunt een dag kiezen om automanage op bepaalde Vm's uit te scha kelen. Op uw computer wordt bijvoorbeeld een zeer gevoelige veilige werk belasting uitgevoerd en u moet deze zelfs nog verder vergren delen dan Azure zou hebben moeten worden vergrendeld, dus u moet de computer configureren buiten de best practices van Azure.
+U kunt op een dag besluiten om Automanage op bepaalde VM's uit te schakelen. Op uw computer wordt bijvoorbeeld een supergevoelige beveiligde workload uitgevoerd en moet u deze nog verder vergrendelen dan azure op een natuurlijke manier zou hebben gedaan. Daarom moet u de machine configureren buiten de best practices van Azure.
 
-Ga hiervoor in het Azure Portal naar de pagina aanbevolen procedures voor het automatisch **beheren van virtuele Azure-machines** met een lijst met alle automatische beheerde vm's. Schakel het selectie vakje in naast de virtuele machine die u wilt uitschakelen voor automatisch beheer en klik vervolgens op de knop **automanagement uitschakelen** .
+Als u dit wilt doen in de Azure Portal, gaat u naar de pagina Best practices voor virtuele **Azure-machines** automatisch beheer met een overzicht van al uw automatisch beheerde VM's. Schakel het selectievakje in naast de virtuele machine die u wilt uitschakelen in Automanage en klik vervolgens op de knop **Automatischemanagment uitschakelen.**
 
 :::image type="content" source="media\automanage-virtual-machines\disable-step-1.png" alt-text="Automanage uitschakelen op een virtuele machine.":::
 
 Lees aandachtig door de berichten in het pop-upvenster voordat u akkoord gaat met het **uitschakelen**.
 
 > [!NOTE]
-> Het uitschakelen van het automanagement in een VM resulteert in het volgende gedrag:
+> Het uitschakelen van automatisch beheer in een VM resulteert in het volgende gedrag:
 >
-> - De configuratie van de virtuele machine en de services waarop de VM wordt uitgevoerd, worden niet gewijzigd.
-> - Alle kosten die door deze services worden gemaakt, blijven Factureerbaar en blijven worden gemaakt.
-> - Alle gedragingen voor het direct beheren worden onmiddellijk gestopt.
+> - De configuratie van de VM en de services die worden onboarden om niet te wijzigen.
+> - Alle kosten die door deze services worden gemaakt, blijven factureerbaar en worden nog steeds in rekening gebracht.
+> - Controle van drift automatisch wordt onmiddellijk gestopt.
 
 
-In eerste instantie is de virtuele machine niet uit een van de services die we hebben opgedaan bij en geconfigureerd. Alle kosten die door deze services worden gemaakt, blijven Factureerbaar. Als dat nodig is, moet u uit de weg. Elk automatisch beheer gedrag wordt direct gestopt. De virtuele machine wordt bijvoorbeeld niet langer bewaakt voor drift.
+Ten eerste zullen we de virtuele machine niet off-boarden van een van de services waar we de onboarding voor hebben gemaakt en geconfigureerd. Alle kosten die door deze services worden gemaakt, blijven dus factureerbaar. U moet indien nodig off-boarden. Automatisch gedrag wordt onmiddellijk gestopt. We controleren bijvoorbeeld de VM niet langer op drift.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u geleerd dat automatisch beheer voor virtuele machines een manier heeft waarop u de nood zaak voor het voor komen van, het voorbereiden op en het configureren van aanbevolen procedures voor Azure-Services kunt elimineren. Als een door u geplaatste machine voor het automatisch beheren van virtuele machines van het instellen van de omgeving is opgebruikt, zullen we er bovendien voor zorgen dat de computer niet meer compatibel is.
+In dit artikel hebt u geleerd dat Automanage voor virtuele machines een manier biedt waarmee u de noodzaak voor u om te weten te komen, onboarden naar en configureren van best practices voor Azure-services kunt elimineren. Als een machine die u hebt ge onboardd voor Automanage voor virtuele machines afdrijf van de installatie van de omgeving, wordt deze automatisch weer conform gemaakt.
 
-Probeer automanage in te scha kelen voor virtuele machines in de Azure Portal.
+Probeer Automanage in te stellen voor virtuele machines in Azure Portal.
 
 > [!div class="nextstepaction"]
-> [Schakel automanage in voor virtuele machines in de Azure Portal](quick-create-virtual-machines-portal.md)
+> [Automanage inschakelen voor virtuele machines in de Azure Portal](quick-create-virtual-machines-portal.md)

@@ -4,12 +4,12 @@ description: In dit artikel wordt uitgelegd hoe u de bezorging van Azure Service
 ms.topic: article
 ms.date: 06/23/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: e3a940f8aa9e72d9b09e9c0a3305521c6f17dfb0
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 997aab36652b08864892f1171e2b8588ec5f06b4
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98622042"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107306106"
 ---
 # <a name="message-deferral"></a>Berichten uitstellen
 
@@ -22,7 +22,7 @@ Een eenvoudig voor beeld is een verwerkings volgorde voor orders waarbij een bet
 Uiteindelijk worden hulp middelen voor uitstel bij het opnieuw ordenen van berichten van de aankomst order omgezet in een volg orde waarin ze kunnen worden verwerkt, terwijl deze berichten veilig in het berichten archief worden bewaard waarvoor de verwerking moet worden uitgesteld.
 
 > [!NOTE]
-> Uitgestelde berichten worden niet automatisch verplaatst naar de wachtrij met onbestelbare meldingen [nadat deze zijn verlopen](./service-bus-dead-letter-queues.md#exceeding-timetolive). Dit gedrag is zo ontworpen.
+> Uitgestelde berichten worden niet automatisch verplaatst naar de wachtrij met onbestelbare meldingen [nadat deze zijn verlopen](./service-bus-dead-letter-queues.md#time-to-live). Dit gedrag is zo ontworpen.
 
 ## <a name="message-deferral-apis"></a>Api's voor uitstel van berichten
 

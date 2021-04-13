@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 04/17/2019
 ms.author: pafarley
-ms.openlocfilehash: 774eb05ae43e393db3d11e8e21a427736614809b
-ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
+ms.openlocfilehash: a37b740333e599d19248ffa9b21be3e4d6fe78b3
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106285107"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107306293"
 ---
 # <a name="language-support-for-computer-vision"></a>Taal ondersteuning voor Computer Vision
 
@@ -25,7 +25,7 @@ Sommige functies van Computer Vision ondersteunen meerdere talen; alle functies 
 
 De OCR-Api's van Computer Vision ondersteunen verschillende talen. U hoeft geen taal code op te geven. Zie het [overzicht van optische teken herkenning (OCR)](overview-ocr.md) voor meer informatie.
 
-|Taal| Taalcode | OCR-API | Lees 3.0/3.1 | Voor beeld van v 3.2 lezen |
+|Taal| Taalcode | OCR-API | Lees 3.0/3.1 | V 3.2 lezen |
 |:-----|:----:|:-----:|:---:|:---:|
 |Afrikaans|`af`| | |✔ |
 |Albanees |`sq`| | |✔ |
@@ -46,7 +46,7 @@ De OCR-Api's van Computer Vision ondersteunen verschillende talen. U hoeft geen 
 |Deens | `da` |✔ | |✔ |
 |Nederlands | `nl` |✔ |✔ |✔ |
 |Engels | `en` |✔ |✔ |✔ |
-|Ests  |`crh`| | |✔ |
+|Ests  |`et`| | |✔ |
 |Fijisch |`fj`| | |✔ |
 |Filipino  |`fil`| | |✔ |
 |Fins | `fi` |✔ | |✔ |
@@ -113,7 +113,7 @@ De OCR-Api's van Computer Vision ondersteunen verschillende talen. U hoeft geen 
 
 Sommige acties van de [analyse-image-](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) API kunnen resultaten retour neren in andere talen, opgegeven met de `language` query-para meter. Andere acties retour neren resultaten in het Engels, ongeacht de taal die is opgegeven, en anderen genereren een uitzonde ring voor niet-ondersteunde talen. Acties zijn opgegeven met de `visualFeatures` `details` para meters en query; Zie het [overzicht](overview-image-analysis.md) voor een lijst met alle acties die u kunt uitvoeren met afbeeldings analyse.
 
-|Taal | Taalcode | Categorieën | Tags | Beschrijving | Volwassene | Merken | Kleur | Gezichten | ImageType | Objecten | Beroemdheden | Oriëntatiepunten |
+|Taal | Taalcode | Categorieën | Tags | Description | Volwassene | Merken | Kleur | Gezichten | ImageType | Objecten | Beroemdheden | Oriëntatiepunten |
 |:---|:---:|:----:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |Chinees | `zh`    | ✔ | ✔| ✔|-|-|-|-|-|❌|✔|✔|
 |Engels | `en`   | ✔ | ✔| ✔|✔|✔|✔|✔|✔|✔|✔|✔|

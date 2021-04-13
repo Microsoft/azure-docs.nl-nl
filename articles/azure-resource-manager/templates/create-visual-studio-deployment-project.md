@@ -2,13 +2,13 @@
 title: Visual Studio-resource groeps projecten maken & implementeren
 description: Gebruik Visual Studio om een Azure-resourcegroepproject te maken en de resources in Azure te implementeren.
 ms.topic: conceptual
-ms.date: 10/16/2019
-ms.openlocfilehash: f1a06a3e89c5fd2ea8906ff9a438c170f135d6ec
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/12/2021
+ms.openlocfilehash: 4c0e19042506e0cf1772398b0a02b81f0245b1c7
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98704411"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107306973"
 ---
 # <a name="creating-and-deploying-azure-resource-groups-through-visual-studio"></a>Azure-resourcegroepen maken en implementeren met Visual Studio
 
@@ -45,9 +45,9 @@ In deze sectie maakt u een Azure-resource groep-project met een **Web-app** -sja
    | --- | --- |
    | Deploy-AzureResourceGroup.ps1 |Een PowerShell-script waarmee PowerShell-opdrachten worden uitgevoerd om te worden geïmplementeerd in Azure Resource Manager. Visual Studio gebruikt dit Power shell-script voor het implementeren van uw sjabloon. |
    | WebSite.jsop |Het Resource Manager-sjabloon dat de infrastructuur definieert die u in Azure wilt implementeren en de parameters die u kunt opgeven tijdens de implementatie. Hiermee worden ook de afhankelijkheden tussen resources gedefinieerd zodat deze in de juiste volgorde worden geïmplementeerd. |
-   | WebSite.parameters.jsop |Een parameterbestand dat de waarden bevat die nodig zijn voor de sjabloon. U geeft parameterwaarden door om elke implementatie aan te passen. |
+   | WebSite.parameters.jsop |Een parameterbestand dat de waarden bevat die nodig zijn voor de sjabloon. U geeft parameterwaarden door om elke implementatie aan te passen. U ziet dat de **opbouw actie** is ingesteld op **inhoud**. Als u meer parameter bestanden toevoegt, moet u ervoor zorgen dat de actie build is ingesteld op **inhoud**. |
 
-    Alle implementatieprojecten voor resourcegroepen bevatten deze algemene bestanden. Andere projecten bevatten mogelijk extra bestanden ter ondersteuning van andere functies.
+    Alle implementatieprojecten voor resourcegroepen bevatten deze algemene bestanden. Andere projecten hebben mogelijk meer bestanden voor de ondersteuning van andere functionaliteit.
 
 ## <a name="customize-resource-manager-template"></a>Resource Manager-sjabloon aanpassen
 

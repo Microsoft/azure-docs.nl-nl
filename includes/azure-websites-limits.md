@@ -4,12 +4,12 @@ ms.service: app-service
 ms.topic: include
 ms.date: 03/17/2020
 ms.author: msangapu
-ms.openlocfilehash: 80d295d017b11d86df7a3fe4c14afc7a5665cd96
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: dad7799cb5a7579b28847e3968b6b38f1f98298a
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104612397"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107327655"
 ---
 | Resource | Gratis | Gedeeld | Basic | Standard | Premium (v1-v3) | Geïsoleerd </th> |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -17,14 +17,14 @@ ms.locfileid: "104612397"
 | [App Service-plan](../articles/app-service/overview-hosting-plans.md) |10 per regio |10 per resourcegroep |100 per resourcegroep |100 per resourcegroep |100 per resourcegroep |100 per resourcegroep|
 | Type rekenproces |Gedeeld |Gedeeld |Toegewezen<sup>3</sup> |Toegewezen<sup>3</sup> |Toegewezen<sup>3</sup></p> |Toegewezen<sup>3</sup>|
 | [Uitbreiden](../articles/app-service/manage-scale-up.md) (maximum aantal exemplaren) |1 gedeeld |1 gedeeld |3 toegewezen<sup>3</sup> |10 toegewezen<sup>3</sup> | 20 toegewezen voor v1 en v2; 30 toegewezen voor v3.<sup>3</sup>|100 toegewezen<sup>4</sup>|
-| Opslag<sup>5</sup> |1 GB<sup>5</sup> |1 GB<sup>5</sup> |10 GB<sup>5</sup> |50 GB<sup>5</sup> |250 GB<sup>5</sup> <br/><br/> Voor meer dan 250 GB moet u een ondersteuningsaanvraag indienen. |1 TB<sup>5</sup> <br/><br/> De maximaal beschikbare opslag is 999 GB. |
+| Opslag<sup>5</sup> |1 GB<sup>5</sup> |1 GB<sup>5</sup> |10 GB<sup>5</sup> |50 GB<sup>5</sup> |250 GB<sup>5</sup> |1 TB<sup>5</sup> <br/><br/> De maximaal beschikbare opslag is 999 GB. |
 | CPU-tijd (5 minuten)<sup>6</sup> |3 minuten |3 minuten |Onbeperkt, tegen [standaardtarieven](https://azure.microsoft.com/pricing/details/app-service/)</a> |Onbeperkt, tegen [standaardtarieven](https://azure.microsoft.com/pricing/details/app-service/)</a> |Onbeperkt, tegen [standaardtarieven](https://azure.microsoft.com/pricing/details/app-service/)</a> |Onbeperkt, tegen [standaardtarieven](https://azure.microsoft.com/pricing/details/app-service/)</a>|
 | CPU-tijd (dag)<sup>6</sup> |60 minuten |240 minuten |Onbeperkt, tegen [standaardtarieven](https://azure.microsoft.com/pricing/details/app-service/)</a> |Onbeperkt, tegen [standaardtarieven](https://azure.microsoft.com/pricing/details/app-service/)</a> |Onbeperkt, tegen [standaardtarieven](https://azure.microsoft.com/pricing/details/app-service/)</a> |Onbeperkt, tegen [standaardtarieven](https://azure.microsoft.com/pricing/details/app-service/)</a> |
 | Geheugen (1 uur) |1024 MB per App Service-abonnement |1024 MB per app |N.v.t. |N.v.t. |N.v.t. |N.v.t. |
 | Bandbreedte |165 MB |Onbeperkt, [gegevensoverdrachttarieven](https://azure.microsoft.com/pricing/details/data-transfers/) van toepassing |Onbeperkt, [gegevensoverdrachttarieven](https://azure.microsoft.com/pricing/details/data-transfers/) van toepassing |Onbeperkt, [gegevensoverdrachttarieven](https://azure.microsoft.com/pricing/details/data-transfers/) van toepassing |Onbeperkt, [gegevensoverdrachttarieven](https://azure.microsoft.com/pricing/details/data-transfers/) van toepassing |Onbeperkt, [gegevensoverdrachttarieven](https://azure.microsoft.com/pricing/details/data-transfers/) van toepassing |
 | Toepassingsarchitectuur |32-bits |32-bits |32-bits/64-bits |32-bits/64-bits |32-bits/64-bits |32-bits/64-bits |
 | Websockets per exemplaar<sup>7</sup> |5 |35 |350 |Onbeperkt |Onbeperkt |Onbeperkt |
-| Uitgaande IP-verbindingen per instantie | 600 | 600 | Is afhankelijk van de exemplaargrootte<sup>8</sup> | Is afhankelijk van de exemplaargrootte<sup>8</sup> | Is afhankelijk van de exemplaargrootte<sup>8</sup> | 16.000 |
+| Uitgaande IP-verbindingen per exemplaar | 600 | 600 | Is afhankelijk van de exemplaargrootte<sup>8</sup> | Is afhankelijk van de exemplaargrootte<sup>8</sup> | Is afhankelijk van de exemplaargrootte<sup>8</sup> | 16.000 |
 | Gelijktijdige [verbindingen van foutopsporingsprogramma](../articles/app-service/troubleshoot-dotnet-visual-studio.md) per toepassing |1 |1 |1 |5 |5 |5 |
 | App Service-certificaten per abonnement<sup>9</sup>| Niet ondersteund | Niet ondersteund |10 |10 |10 |10 |
 | Aangepaste domeinen per app</a> |0 (alleen subdomein azurewebsites.net)|500 |500 |500 |500 |500 |
@@ -47,26 +47,26 @@ ms.locfileid: "104612397"
 | [Door App Service beheerde certificaten (openbare preview)](https://azure.microsoft.com/updates/secure-your-custom-domains-at-no-cost-with-app-service-managed-certificates-preview/)<sup>12</sup> | |  | X | X | X | X |
 | SLA | |  |99.95%|99.95%|99.95%|99.95%|
 
-<sup>1</sup> apps en opslag quota zijn per app service abonnement, tenzij anders vermeld.
+<sup>1</sup> Apps en opslagquota zijn per abonnement App Service tenzij anders vermeld.
 
-<sup>2</sup> het werkelijke aantal apps dat u op deze machines kunt hosten, is afhankelijk van de activiteit van de apps, de grootte van de computer instanties en het bijbehorende resource gebruik.
+<sup>2</sup> Het werkelijke aantal apps dat u op deze machines kunt hosten, is afhankelijk van de activiteit van de apps, de grootte van de machine-exemplaren en het bijbehorende resourcegebruik.
 
-<sup>3</sup> toegewezen exemplaren kunnen van verschillende grootten zijn. Zie [Prijzen van App Service](https://azure.microsoft.com/pricing/details/app-service/) voor meer informatie.
+<sup>3</sup> Toegewezen exemplaren kunnen van verschillende grootten zijn. Zie [Prijzen van App Service](https://azure.microsoft.com/pricing/details/app-service/) voor meer informatie.
 
-nog <sup>4</sup> zijn op aanvraag toegestaan.
+<sup>4 Meer</sup> zijn toegestaan op aanvraag.
 
-<sup>5</sup> de opslag limiet is de totale inhouds grootte voor alle apps in hetzelfde app service-plan. De totale inhouds grootte van alle apps in alle app service-abonnementen in één resource groep en regio mag niet groter zijn dan 500 GB. Het bestandssysteem quotum voor App Service gehoste apps wordt bepaald door het samen voegen van App Service plannen die zijn gemaakt in een regio en resource groep.
+<sup>5</sup> De opslaglimiet is de totale inhoudsgrootte voor alle apps in hetzelfde App Service-plan. De totale inhoudsgrootte van alle apps in alle App Service-plannen in één resourcegroep en regio mag niet groter zijn dan 500 GB. Het quotum van het bestandssysteem voor App Service gehoste apps wordt bepaald door de aggregatie van App Service plannen die zijn gemaakt in een regio en resourcegroep.
 
-<sup>6</sup> deze resources zijn beperkt door fysieke resources op de toegewezen instanties (de grootte van het exemplaar en het aantal exemplaren).
+<sup>6</sup> Deze resources worden beperkt door fysieke resources op de toegewezen exemplaren (de instantiegrootte en het aantal exemplaren).
 
-<sup>7</sup> als u een app in de basis-laag schaalt naar twee exemplaren, hebt u 350 gelijktijdige verbindingen voor elk van de twee exemplaren. Voor de standaardlaag en hoger zijn er geen theoretische limieten voor het aantal websockets, maar het aantal websockets kan door andere factoren worden beperkt. Bijvoorbeeld maximaal aantal toegestane gelijktijdige aanvragen (gedefinieerd door `maxConcurrentRequestsPerCpu`): 7500 per kleine VM, 15.000 per gemiddelde VM (7500 x 2 kernen) en 75.000 per grote VM (18.750 x 4 kernen).
+<sup>7</sup> Als u een app in de Basic-laag schaalt naar twee exemplaren, hebt u 350 gelijktijdige verbindingen voor elk van de twee exemplaren. Voor de standaardlaag en hoger zijn er geen theoretische limieten voor het aantal websockets, maar het aantal websockets kan door andere factoren worden beperkt. Bijvoorbeeld maximaal aantal toegestane gelijktijdige aanvragen (gedefinieerd door `maxConcurrentRequestsPerCpu`): 7500 per kleine VM, 15.000 per gemiddelde VM (7500 x 2 kernen) en 75.000 per grote VM (18.750 x 4 kernen).
 
-<sup>8</sup> het maximum aantal IP-verbindingen is per exemplaar en is afhankelijk van de instantie grootte: 1.920 per B1/S1/P1V3 instance, 3.968 per B2/S2/P2V3-instantie, 8.064 per B3/S3/P3V3-exemplaar.
+<sup>8</sup> De maximale IP-verbindingen zijn per exemplaar en zijn afhankelijk van de instantiegrootte: 1920 per B1/S1/P1V3-exemplaar, 3968 per B2/S2/P2V3-exemplaar, 8064 per B3/S3/P3V3-exemplaar.
 
-<sup>9</sup> de app service Certificate quotum limiet per abonnement kan worden verhoogd via een ondersteunings aanvraag tot een maximum limiet van 200.
+<sup>9</sup> De App Service Certificate quotumlimiet per abonnement kan via een ondersteuningsaanvraag worden verhoogd tot een maximumlimiet van 200.
 
-<sup>10</sup> app service isolated sku's kunnen intern worden verdeeld (ILB) met Azure Load Balancer, dus er is geen open bare verbinding via internet. Als gevolg hiervan moeten sommige functies van een ILB-geïsoleerde App Service worden gebruikt vanaf machines met rechtstreekse toegang tot het ILB-netwerkeindpunt.
+<sup>10</sup> App Service Isolated SKU's kunnen intern worden verdeeld (ILB) met Azure Load Balancer, zodat er geen openbare verbinding via internet is. Als gevolg hiervan moeten sommige functies van een ILB-geïsoleerde App Service worden gebruikt vanaf machines met rechtstreekse toegang tot het ILB-netwerkeindpunt.
 
-<sup>11</sup> aangepaste uitvoer bare bestanden en/of scripts op aanvraag, op basis van een schema of continu uitvoeren als een achtergrond taak binnen uw app service-exemplaar. AlwaysOn is vereist voor de continue uitvoering van webjobs. Er is geen vooraf gedefinieerde limiet voor het aantal webjobs dat kan worden uitgevoerd in een App Service-exemplaar. Er zijn praktische limieten die afhankelijk zijn van wat de toepassingscode probeert te doen.
+<sup>11</sup> Aangepaste uitvoerbare bestanden en/of scripts op aanvraag, volgens een schema of continu als achtergrondtaak binnen uw App Service uitvoeren. AlwaysOn is vereist voor de continue uitvoering van webjobs. Er is geen vooraf gedefinieerde limiet voor het aantal webjobs dat kan worden uitgevoerd in een App Service-exemplaar. Er zijn praktische limieten die afhankelijk zijn van wat de toepassingscode probeert te doen.
 
-<sup>12</sup> niet-geblote domeinen worden niet ondersteund. Alleen standaard certificaten verlenen (joker tekens zijn niet beschikbaar). Beperkt tot slechts één gratis certificaat per aangepast domein.
+<sup>12</sup> Domeinen met een voor- en achternaak worden niet ondersteund. Alleen standaardcertificaten uitgeven (jokertekencertificaten zijn niet beschikbaar). Beperkt tot slechts één gratis certificaat per aangepast domein.

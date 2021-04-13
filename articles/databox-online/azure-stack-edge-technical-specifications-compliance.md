@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 03/02/2020
+ms.date: 04/12/2021
 ms.author: alkohli
-ms.openlocfilehash: 8b36bb34f4c9081d807998cb8287797443625a6b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 91bb558d47e56ebbcbdf25b0276c2a247ec81b47
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96460300"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107312634"
 ---
 # <a name="azure-stack-edge-pro-technical-specifications"></a>Technische specificaties van Azure Stack Edge Pro
 
@@ -23,16 +23,21 @@ De hardwareonderdelen van uw Microsoft Azure Stack Edge Pro-apparaat voldoen aan
 
 Het Azure Stack Edge Pro-apparaat heeft de volgende specificaties voor Compute en geheugen:
 
-| Specificatie           | Waarde                  |
-|-------------------------|----------------------------|
-| CPU    | 2 X 10 core CPU Intel Xeon Silver 4114 2,2 G                    |
-| Geheugen              | 128 GB RAM (8x 16 GB RDIMM)                 |
+| Specificatie           | Waarde                             |
+|-------------------------|-----------------------------------|
+| CPU-type                | Dual Intel Xeon Silver 4114 2,2 G |
+| CPU: RAW                | 20 totaal aantal kernen, 40 totale Vcpu's    |
+| CPU: bruikbaar             | 32 Vcpu's                          |
+| Type geheugen             | 8 x 16 GB RDIMM                   |
+| Geheugen: onbewerkt             | 128 GB RAM (8 x 16 GB)           |
+| Geheugen: bruikbaar          | 102 GB RAM-GEHEUGEN                        |
+
 
 ## <a name="fpga-specifications"></a>FPGA-specificaties
 
 Een veld Programmeer bare gate array (FPGA) is opgenomen op elk Azure Stack Edge Pro-apparaat dat Machine Learning (ML) scenario's mogelijk maakt.
 
-| Specificatie           | Waarde                  |
+| Specificatie           | Waarde                      |
 |-------------------------|----------------------------|
 | FPGA   | Intel Arria 10 <br> Beschik bare DNN-modellen (diepe Neural Network) zijn hetzelfde als die [van Cloud FPGA-exemplaren](../machine-learning/how-to-deploy-fpga-web-service.md#fpga-support-in-azure).|
 
@@ -42,7 +47,7 @@ Het Azure Stack Edge Pro-apparaat heeft twee 100-240 V-energievoedings eenheden 
 
 | Specificatie           | 750 W PSU                  |
 |-------------------------|----------------------------|
-| Maximale uitvoer kracht    | 750 W                     |
+| Maximale uitvoer kracht    | 750 W                      |
 | Frequentie               | 50/60 Hz                   |
 | Selectie van voltage bereik | Automatisch variërend: 100-240 V AC |
 | Hot pluggable           | Yes                        |
@@ -64,7 +69,7 @@ Uw Azure Stack Edge Pro-apparaat heeft zes netwerk interfaces, PORT1-PORT6.
 |-------------------------|----------------------------|
 |  Netwerkinterfaces    | 2 X 1 GbE-interfaces: Eén beheerinterface, niet configureerbaar door gebruikers, gebruikt voor eerste installatie. De andere gegevensinterface kan door gebruikers worden geconfigureerd, kan worden gebruikt voor gegevensoverdracht en is standaard DHCP. <br>2 X 25 GbE-interfaces: Deze kunnen ook als 10 GbE-interfaces werken. Deze gegevensinterfaces kunnen door gebruikers worden geconfigureerd als DHCP (standaard) of statisch. <br> 2 X 25 GbE-interfaces: Deze gegevensinterfaces kunnen door gebruikers worden geconfigureerd als DHCP (standaard) of statisch.                  |
 
-De gebruikte netwerk adapters zijn: 
+De gebruikte netwerk adapters zijn:
 
 | Specificatie           | Description                 |
 |-------------------------|----------------------------|
@@ -82,7 +87,7 @@ De Azure Stack Edge Pro-apparaten hebben 9 X 2,5 ' NVMe Ssd's, elk met een capac
 |    Aantal Solid-state drives (Ssd's)     |    8                  |
 |    Capaciteit van één SSD                     |    1,6 TB             |
 |    Totale capaciteit                          |    12,8 TB            |
-|    Totale bruikbare capaciteit *                  |    ~ 12,5 TB            |
+|    Totale bruikbare capaciteit *                  |    ~ 12,5 TB          |
 
 **Er is ruimte gereserveerd voor intern gebruik.*
 
@@ -94,19 +99,19 @@ In de volgende tabellen staan de verschillende specificaties van de behuizing vo
 
 De volgende tabel bevat de afmetingen van de behuizing in millimeters en inches.
 
-|     Sluit     |     Millimeters     |     Mm     |
-|-------------------|---------------------|----------------|
-|    Hoogte         |    44,45            |    1,75 '          |
-|    Breedte          |    434,1           |    17,09 '          |
-|    Lengte          |    740,4           |    29,15 '          |
+|     Sluit     |     Millimeters    |     Mm     |
+|-------------------|--------------------|----------------|
+|    Hoogte         |    44,45           |    1,75 '       |
+|    Breedte          |    434,1           |    17,09 '      |
+|    Lengte         |    740,4           |    29,15 '      |
 
 De volgende tabel bevat de afmetingen van het verzend pakket in millimeters en inches.
 
-|     Pakket     |     Millimeters     |     Mm     |
+|     Pakket       |     Millimeters     |     Mm     |
 |-------------------|---------------------|----------------|
-|    Hoogte         |    311,2            |    12,25 '          |
-|    Breedte          |    642,8          |    25,31 '          |
-|    Lengte          |   1.051,1          |    41,38 '          |
+|    Hoogte         |    311,2            |    12,25 '      |
+|    Breedte          |    642,8            |    25,31 '      |
+|    Lengte         |   1.051,1           |    41,38 '      |
 
 ### <a name="enclosure-weight"></a>Gewicht van behuizing
 

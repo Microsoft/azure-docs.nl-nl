@@ -10,25 +10,36 @@ ms.topic: reference
 author: oslake
 ms.author: moslake
 ms.reviewer: sstein
-ms.date: 03/23/2021
-ms.openlocfilehash: fa21acc09858f4468e53788428e4928dc381a94e
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.date: 04/09/2021
+ms.openlocfilehash: 1d58f79d0fe8accc728c4484dd5d92159836aa88
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105107853"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107305137"
 ---
 # <a name="resource-limits-for-elastic-pools-using-the-vcore-purchasing-model"></a>Resource limieten voor elastische Pools met behulp van het vCore-aankoop model
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 In dit artikel vindt u gedetailleerde resource limieten voor Azure SQL Database elastische Pools en gepoolde data bases met behulp van het vCore-aankoop model.
 
-Zie [SQL database DTU-resource limieten-elastische Pools](resource-limits-dtu-elastic-pools.md)voor meer informatie over de limieten voor DTU-aankoop modellen.
+* Zie [overzicht van resource limieten op een server](resource-limits-logical-server.md)voor de limieten voor DTU-aankoop modellen voor afzonderlijke data bases op een server.
+* Zie voor de resource limieten van het type DTU-aankoop model voor Azure SQL Database de limieten voor [DTU-bronnen enkele data bases](resource-limits-dtu-single-databases.md) en [DTU-bronnen beperken elastische Pools](resource-limits-dtu-elastic-pools.md).
+* Zie [vCore resource limieten-Azure SQL database](resource-limits-vcore-single-databases.md) en vCore resource limieten [-elastische Pools](resource-limits-vcore-elastic-pools.md)voor vCore-resource limieten.
+* Zie [Inkoop modellen en service lagen](purchasing-models.md)voor meer informatie over de verschillende aankoop modellen.
 
 > [!IMPORTANT]
 > In sommige gevallen moet u mogelijk een Data Base verkleinen om ongebruikte ruimte te claimen. Zie [Bestands ruimte beheren in Azure SQL database](file-space-manage.md)voor meer informatie.
 
-U kunt de servicelaag, de reken grootte (Service doelstelling) en de opslag hoeveelheid instellen met behulp van de [Azure Portal](elastic-pool-manage.md#azure-portal), [Power shell](elastic-pool-manage.md#powershell), de [Azure cli](elastic-pool-manage.md#azure-cli)of de [rest API](elastic-pool-manage.md#rest-api).
+Elke alleen-lezen replica heeft zijn eigen resources, zoals vCores, geheugen, gegevens IOPS, TempDB, werk rollen en sessies. Elke alleen-lezen replica is onderhevig aan de resource limieten die verderop in dit artikel worden beschreven.
+
+U kunt de servicelaag, de berekenings grootte (Service doelstelling) en de opslag hoeveelheid instellen met behulp van:
+
+* [Transact-SQL](elastic-pool-scale.md) via [ALTER data base](/sql/t-sql/statements/alter-database-transact-sql#overview-sql-database)
+* [Azure-portal](elastic-pool-manage.md#azure-portal)
+* [PowerShell](elastic-pool-manage.md#powershell)
+* [Azure-CLI](elastic-pool-manage.md#azure-cli)
+* [REST API](elastic-pool-manage.md#rest-api)
 
 > [!IMPORTANT]
 > Zie [een elastische pool schalen](elastic-pool-scale.md)voor meer informatie over schaling en overwegingen.

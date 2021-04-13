@@ -1,22 +1,22 @@
 ---
 title: 'Azure Cosmos DB: SQL .NET Standard API, SDK & resources'
-description: Meer informatie over de SQL-API en .NET SDK, inclusief release datums, pensioen datums en wijzigingen die zijn aangebracht tussen elke versie van de Azure Cosmos DB .NET SDK.
+description: Meer informatie over de SQL API en .NET SDK, inclusief releasedatums, pensioendatums en wijzigingen die zijn aangebracht tussen elke versie Azure Cosmos DB .NET SDK.
 author: anfeldma-ms
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: reference
-ms.date: 10/07/2020
+ms.date: 04/06/2021
 ms.author: anfeldma
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: e82372642dceada966d939290a26b5419d7d273f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6a24157b9e689b6f0247317a16607046dcea2d47
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104577054"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107365991"
 ---
-# <a name="azure-cosmos-db-net-sdk-v3-for-sql-api-download-and-release-notes"></a>Azure Cosmos DB .NET SDK v3 voor SQL API: Download-en release-opmerkingen
+# <a name="azure-cosmos-db-net-sdk-v3-for-sql-api-download-and-release-notes"></a>Azure Cosmos DB .NET SDK v3 voor SQL API: download en opmerkingen bij de release
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 > [!div class="op_single_selector"]
@@ -30,10 +30,11 @@ ms.locfileid: "104577054"
 > * [Sync Java-SDK v2](sql-api-sdk-java.md)
 > * [Spring Data v2](sql-api-sdk-java-spring-v2.md)
 > * [Spring Data v3](sql-api-sdk-java-spring-v3.md)
-> * [Spark-connector](sql-api-sdk-java-spark.md)
+> * [Spark 3 OLTP-connector](sql-api-sdk-java-spark-v3.md)
+> * [Spark 2 OLTP-connector](sql-api-sdk-java-spark.md)
 > * [Python](sql-api-sdk-python.md)
 > * [REST](/rest/api/cosmos-db/)
-> * [REST-resource provider](/rest/api/cosmos-db-resource-provider/)
+> * [REST-resourceprovider](/rest/api/cosmos-db-resource-provider/)
 > * [SQL](./sql-query-getting-started.md)
 > * [Bulkuitvoerprogramma - .NET v2](sql-api-sdk-bulk-executor-dot-net.md)
 > * [Bulkuitvoerprogramma - Java](sql-api-sdk-bulk-executor-java.md)
@@ -41,12 +42,12 @@ ms.locfileid: "104577054"
 | | Koppelingen |
 |---|---|
 |**SDK downloaden**|[NuGet](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/)|
-|**API-documentatie**|[Naslag documentatie voor .NET API](/dotnet/api/overview/azure/cosmosdb)|
-|**Voorbeelden**|[.NET-code voorbeelden](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage)|
+|**API-documentatie**|[.NET API-referentiedocumentatie](/dotnet/api/overview/azure/cosmosdb)|
+|**Voorbeelden**|[.NET-codevoorbeelden](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage)|
 |**Aan de slag**|[Aan de slag met de Azure Cosmos DB .NET SDK](sql-api-get-started.md)|
-|**Zelf studie voor web-apps**|[Ontwikkeling van webtoepassingen met Azure Cosmos DB](sql-api-dotnet-application.md)|
-|**Zelf studie voor Entity Framework Core**|[Entity Framework Core met Azure Cosmos DB provider](/ef/core/providers/cosmos/#get-started)|
-|**Huidig ondersteund framework**|[Microsoft .NET standaard 2,0](/dotnet/standard/net-standard)|
+|**Zelfstudie voor web-apps**|[Webtoepassingsontwikkeling met Azure Cosmos DB](sql-api-dotnet-application.md)|
+|**Entity Framework Core-zelfstudie**|[Entity Framework Core met Azure Cosmos DB Provider](/ef/core/providers/cosmos/#get-started)|
+|**Huidig ondersteund framework**|[Microsoft .NET Standard 2.0](/dotnet/standard/net-standard)|
 
 [!INCLUDE[Release notes](~/samples-cosmosdb-dotnet-v3/changelog.md)]
 

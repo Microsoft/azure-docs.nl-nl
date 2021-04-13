@@ -1,45 +1,45 @@
 ---
-title: Opslag Azure Portal automatisch verg Roten-Azure Database for MariaDB
-description: In dit artikel wordt beschreven hoe u automatische groei opslag voor Azure Database for MariaDB kunt inschakelen met behulp van Azure Portal
+title: Automatisch opslag laten groeien - Azure Portal - Azure Database for MariaDB
+description: In dit artikel wordt beschreven hoe u automatisch groter worden van opslag voor Azure Database for MariaDB kunt Azure Portal
 author: savjani
 ms.author: pariks
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: c6ca4dc4304e6cd0a7bad2a393fd780ae281815f
-ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
+ms.openlocfilehash: 49b87648a425277f29ef2b3ebd8752e01019d3ad
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "107227089"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107366110"
 ---
-# <a name="auto-grow-storage-in-azure-database-for-mariadb-using-the-azure-portal"></a>Opslag in Azure Database for MariaDB automatisch verg Roten met behulp van de Azure Portal
-In dit artikel wordt beschreven hoe u een Azure Database for MariaDB Server-opslag kunt configureren om te groeien zonder dat dit van invloed is op de werk belasting.
+# <a name="auto-grow-storage-in-azure-database-for-mariadb-using-the-azure-portal"></a>Automatisch de opslag in Azure Database for MariaDB met behulp van de Azure Portal
+In dit artikel wordt beschreven hoe u een serveropslag Azure Database for MariaDB om te groeien zonder dat dit van invloed is op de werkbelasting.
 
-Wanneer een server de toegewezen opslag limiet bereikt, is de server gemarkeerd als alleen-lezen. Als u automatisch verg Roten van opslag inschakelt, neemt de server opslag echter toe om de groeiende gegevens te verwerken. Voor servers met een ingerichte opslag van minder dan 100 GB wordt de ingerichte opslag grootte met 5 GB verhoogd zodra de beschik bare opslag onder het hoogste van 1 GB of 10% van de ingerichte opslag ligt. Voor servers met meer dan 100 GB ingerichte opslag wordt de ingerichte opslag grootte verhoogd met 5% wanneer de beschik bare opslag ruimte lager is dan 5% van de ingerichte opslag grootte. De maximale opslag limieten die [hier](concepts-pricing-tiers.md#storage) zijn opgegeven, zijn van toepassing.
+Wanneer een server de toegewezen opslaglimiet bereikt, wordt de server gemarkeerd als alleen-lezen. Als u de opslag echter automatisch laat groeien, neemt de serveropslag toe om ruimte te bieden aan de groeiende gegevens. Voor servers met minder dan 100 GB inrichtende opslag wordt de inrichtende opslag met 5 GB verhoogd zodra de gratis opslag lager is dan 1 GB of 10% van de inrichtende opslag. Voor servers met meer dan 100 GB inrichtende opslag wordt de inrichtende opslaggrootte met 5% verhoogd wanneer de vrije opslagruimte kleiner is dan 10 GB van de inrichtende opslaggrootte. De maximale opslaglimieten die hier worden [opgegeven, zijn](concepts-pricing-tiers.md#storage) van toepassing.
 
 ## <a name="prerequisites"></a>Vereisten
-U hebt het volgende nodig om deze hand leiding te volt ooien:
-- Een [Azure database for MariaDB server](./quickstart-create-mariadb-server-database-using-azure-portal.md)
+U hebt het volgende nodig om deze handleiding te voltooien:
+- Een [Azure Database for MariaDB server](./quickstart-create-mariadb-server-database-using-azure-portal.md)
 
-## <a name="enable-storage-auto-grow"></a>Opslag automatisch verg Roten inschakelen 
+## <a name="enable-storage-auto-grow"></a>Automatisch groeien van opslag inschakelen 
 
-Voer de volgende stappen uit om MariaDB-Server opslag automatisch uitbreiden in te stellen:
+Volg deze stappen om automatische groei van MariaDB-serveropslag in te stellen:
 
-1. Selecteer in de [Azure Portal](https://portal.azure.com/)uw bestaande Azure database for MariaDB-server.
+1. Selecteer in [Azure Portal](https://portal.azure.com/)de bestaande Azure Database for MariaDB server.
 
-2. Klik op de pagina MariaDB-server onder **instellingen** kop op **prijs categorie** om de pagina prijs categorie te openen.
+2. Klik op de pagina MariaDB-server onder **de** kop Instellingen op **Prijscategorie** om de pagina prijscategorie te openen.
 
-3. In de sectie automatische groei selecteert u **Ja** om automatische groei van opslag in te scha kelen.
+3. Selecteer ja in de sectie Automatische groei **om** automatisch groeien van opslag in te stellen.
 
-    ![Azure Database for MariaDB-Settings_Pricing_tier-automatische groei](./media/howto-auto-grow-storage-portal/3-auto-grow.png)
+    ![Azure Database for MariaDB - Settings_Pricing_tier - Automatische groei](./media/howto-auto-grow-storage-portal/3-auto-grow.png)
 
 4. Klik op **OK** om de wijzigingen op te slaan.
 
-5. Bij een melding wordt bevestigd dat automatisch uitbreiden is ingeschakeld.
+5. Er wordt een melding ontvangen om te bevestigen dat automatisch groeien is ingeschakeld.
 
-    ![Azure Database for MariaDB-automatisch groei geslaagd](./media/howto-auto-grow-storage-portal/5-auto-grow-successful.png)
+    ![Azure Database for MariaDB- succes van automatische groei](./media/howto-auto-grow-storage-portal/5-auto-grow-successful.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over [het maken van waarschuwingen over metrische gegevens](howto-alert-metric.md).
+Meer informatie over [het maken van waarschuwingen voor metrische gegevens.](howto-alert-metric.md)

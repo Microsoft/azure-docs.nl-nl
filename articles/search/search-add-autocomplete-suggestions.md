@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/24/2021
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 6bc45bb6eec9dbf46e039dd1e2c32197820bb09d
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: b260793cc3c0b5ac3ffce8fac909e2db8991c713
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105626704"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107307806"
 ---
 # <a name="add-autocomplete-and-suggestions-to-client-apps-using-azure-cognitive-search"></a>Automatisch aanvullen en suggesties toevoegen aan client-apps met behulp van Azure Cognitive Search
 
@@ -67,7 +67,7 @@ Antwoorden worden gevormd door de para meters in de aanvraag:
 
 + Stel voor automatisch aanvullen de [autocompleteMode](/rest/api/searchservice/autocomplete#query-parameters) in om te bepalen of de tekst is voltooid op basis van een of twee voor waarden. 
 
-+ Stel [$Select](/rest/api/searchservice/suggestionse#query-parameters) voor suggesties in om velden te retour neren die unieke of afdoende waarden bevatten, zoals namen en beschrijvingen. Vermijd velden die dubbele waarden bevatten (zoals een categorie of plaats).
++ Stel [$Select](/rest/api/searchservice/suggestions#query-parameters) voor suggesties in om velden te retour neren die unieke of afdoende waarden bevatten, zoals namen en beschrijvingen. Vermijd velden die dubbele waarden bevatten (zoals een categorie of plaats).
 
 De volgende aanvullende para meters zijn van toepassing op zowel AutoAanvullen als suggesties, maar zijn mogelijk meer nodig voor suggesties, met name wanneer een suggestie meerdere velden bevat.
 

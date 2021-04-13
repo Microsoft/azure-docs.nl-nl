@@ -1,167 +1,167 @@
 ---
-title: Basis beginselen van Azure Key Vault-verificatie
-description: Meer informatie over de werking van het verificatie model van de sleutel kluis
+title: Azure Key Vault basisprincipes van verificatie
+description: Meer informatie over hoe het verificatiemodel van Key Vault werkt
 author: ShaneBala-keyvault
 ms.author: sudbalas
 ms.date: 09/25/2020
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
-ms.openlocfilehash: 25f00024fb7371fd08bf6c4ceec3177cfaca029b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c43995a8b3a072d98db0ba2c8219694f17e49a26
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103572805"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107363424"
 ---
 # <a name="key-vault-authentication-fundamentals"></a>Basisprincipes van Key Vault-verificatie
 
-Met Azure Key Vault kunt u toepassings referenties zoals geheimen, sleutels en certificaten veilig opslaan en beheren in een centrale en beveiligde Cloud opslagplaats. Key Vault elimineert de nood zaak om referenties op te slaan in uw toepassingen. Uw toepassingen kunnen tijdens de uitvoering verifiëren Key Vault om referenties op te halen.
+Azure Key Vault kunt u toepassingsreferenties zoals geheimen, sleutels en certificaten veilig opslaan en beheren in een centrale en veilige cloudopslagplaats. Key Vault hoeft u geen referenties meer op te slaan in uw toepassingen. Uw toepassingen kunnen tijdens run time Key Vault om referenties op te halen.
 
-Als beheerder kunt u nauw keurig bepalen welke gebruikers en toepassingen toegang hebben tot uw sleutel kluis en kunt u de bewerkingen die ze uitvoeren, beperken en controleren. Dit document bevat uitleg over de basis concepten van het toegangs model voor de sleutel kluis. Het biedt u een inleidend kennis niveau en laat zien hoe u een gebruiker of toepassing kunt verifiëren bij de sleutel kluis van begin tot eind.
+Als beheerder kunt u goed bepalen welke gebruikers en toepassingen toegang hebben tot uw sleutelkluis en kunt u de bewerkingen die ze uitvoeren beperken en controleren. In dit document worden de basisconcepten van het toegangsmodel van de sleutelkluis uitgelegd. Het biedt u een inleidend kennisniveau en laat zien hoe u een gebruiker of toepassing van begin tot eind kunt verifiëren bij Key Vault.
 
 ## <a name="required-knowledge"></a>Vereiste kennis
 
-In dit document wordt ervan uitgegaan dat u bekend bent met de volgende concepten. Als u niet bekend bent met een van deze concepten, volgt u de Help-koppelingen voordat u doorgaat.
+In dit document wordt ervan uitgenomen dat u bekend bent met de volgende concepten. Als u niet bekend bent met een van deze concepten, volgt u de Help-koppelingen voordat u doorgaat.
 
-* [Koppeling](../../active-directory/fundamentals/active-directory-whatis.md) Azure Active Directory
-* [Koppeling](./authentication.md#app-identity-and-security-principals) voor beveiligings-principals
+* Azure Active Directory [koppeling](../../active-directory/fundamentals/active-directory-whatis.md)
+* Koppeling naar [Beveiligingsprincipa](./authentication.md#app-identity-and-security-principals)
 
-## <a name="key-vault-configuration-steps-summary"></a>Samen vatting van Key Vault configuratie stappen
+## <a name="key-vault-configuration-steps-summary"></a>overzicht Key Vault configuratiestappen
 
-1. Registreer uw gebruiker of toepassing in Azure Active Directory als een beveiligingsprincipal.
-1. Configureer een roltoewijzing voor uw beveiligingsprincipal in Azure Active Directory.
-1. Configureer het toegangs beleid voor de sleutel kluis voor uw beveiligings-principal.
-1. Key Vault firewall toegang tot uw sleutel kluis configureren (optioneel).
-1. Test de mogelijkheid van uw beveiligingsprincipal om toegang te krijgen tot de sleutel kluis.
+1. Registreer uw gebruiker of toepassing in Azure Active Directory als een beveiligingsprincipaal.
+1. Configureer een roltoewijzing voor uw beveiligingsprincipaal in Azure Active Directory.
+1. Configureer toegangsbeleid voor de sleutelkluis voor uw beveiligingsprincipaal.
+1. Configureer Key Vault firewalltoegang tot uw sleutelkluis (optioneel).
+1. Test de mogelijkheid van uw beveiligingsprincipaal om toegang te krijgen tot de sleutelkluis.
 
-## <a name="register-a-user-or-application-in-azure-active-directory-as-a-security-principal"></a>Een gebruiker of toepassing in Azure Active Directory registreren als een beveiligingsprincipal
+## <a name="register-a-user-or-application-in-azure-active-directory-as-a-security-principal"></a>Een gebruiker of toepassing registreren in Azure Active Directory als een beveiligingsprincipaal
 
-Wanneer een gebruiker of toepassing een aanvraag indient voor de sleutel kluis, moet de aanvraag eerst worden geverifieerd door Azure Active Directory. Om dit te laten werken, moet de gebruiker of toepassing worden geregistreerd in Azure Active Directory als een beveiligingsprincipal.
+Wanneer een gebruiker of toepassing een aanvraag indient bij de sleutelkluis, moet de aanvraag eerst worden geverifieerd door Azure Active Directory. Om dit te laten werken, moet de gebruiker of toepassing worden geregistreerd in Azure Active Directory als een beveiligingsprincipaal.
 
-Volg de onderstaande documentatie koppelingen om inzicht te krijgen in het registreren van een gebruiker of toepassing in Azure Active Directory.
-**Zorg ervoor dat u een wacht woord voor de gebruikers registratie en een client geheim of referentie voor het client certificaat voor toepassingen maakt.**
+Volg de onderstaande documentatiekoppelingen voor meer informatie over het registreren van een gebruiker of toepassing in Azure Active Directory.
+**Zorg ervoor dat u een wachtwoord maakt voor gebruikersregistratie en een clientgeheim of clientcertificaatreferenties voor toepassingen.**
 
-* Een gebruiker registreren bij Azure Active Directory [koppeling](../../active-directory/fundamentals/add-users-azure-active-directory.md)
-* Een toepassing registreren in Azure Active Directory [koppeling](../../active-directory/develop/quickstart-register-app.md)
+* Een gebruiker registreren in Azure Active Directory [koppeling](../../active-directory/fundamentals/add-users-azure-active-directory.md)
+* Een toepassing registreren in Azure Active Directory [link](../../active-directory/develop/quickstart-register-app.md)
 
-## <a name="assign-your-security-principal-a-role"></a>Uw beveiligingsprincipal een rol toewijzen
+## <a name="assign-your-security-principal-a-role"></a>Een rol toewijzen aan uw beveiligingsprincipaal
 
-U kunt Azure RBAC (op rollen gebaseerd toegangs beheer) gebruiken om machtigingen toe te wijzen aan beveiligings-principals. Deze machtigingen worden roltoewijzingen genoemd.
+U kunt op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC) gebruiken om machtigingen toe te wijzen aan beveiligingsprincipels. Deze machtigingen worden roltoewijzingen genoemd.
 
-In de context van sleutel kluis bepalen deze roltoewijzingen het toegangs niveau van de beveiligingsprincipal voor het beheer vlak (ook wel besturings vlak genoemd) van sleutel kluis. Deze roltoewijzingen bieden niet rechtstreeks toegang tot de gegevens vlak geheimen, maar bieden toegang tot het beheren van eigenschappen van sleutel kluis. Bijvoorbeeld: een gebruiker of toepassing die een **rol van lezer** heeft toegewezen, mag geen wijzigingen aanbrengen in de firewall instellingen van de sleutel kluis, terwijl een gebruiker of toepassing die een **rol Inzender** toegewezen, wijzigingen kan aanbrengen. Geen van beide rollen heeft rechtstreekse toegang voor het uitvoeren van bewerkingen op geheimen, sleutels en certificaten, zoals het maken of ophalen van de waarde tot ze toegang krijgen tot het gegevens vlak van de sleutel kluis. Dit wordt in de volgende stap besproken.
+In de context van de sleutelkluis bepalen deze roltoewijzingen het toegangsniveau van een beveiligingsprincipaal tot het beheervlak (ook wel het besturingsvlak genoemd) van de sleutelkluis. Deze roltoewijzingen bieden niet rechtstreeks toegang tot de gegevensvlakgeheimen, maar bieden wel toegang tot het beheren van eigenschappen van de sleutelkluis. Een gebruiker of toepassing met  de rol Lezer mag bijvoorbeeld geen wijzigingen aanbrengen in de firewallinstellingen  van de sleutelkluis, terwijl een gebruiker of toepassing met de rol Inzender wijzigingen kan aanbrengen. Geen van beide rollen heeft directe toegang tot het uitvoeren van bewerkingen op geheimen, sleutels en certificaten, zoals het maken of ophalen van hun waarde totdat ze toegang krijgen tot het gegevensvlak van de sleutelkluis. Dit wordt behandeld in de volgende stap.
 
 >[!IMPORTANT]
-> Hoewel gebruikers met de rol Inzender of eigenaar geen toegang hebben tot het uitvoeren van bewerkingen op geheimen die zijn opgeslagen in de sleutel kluis, hebben de rollen Inzender en eigenaar, machtigingen voor het toevoegen of verwijderen van toegangs beleid aan geheimen die zijn opgeslagen in de sleutel kluis. Daarom kunnen gebruikers met deze roltoewijzingen zichzelf toegang verlenen tot toegangs geheimen in de sleutel kluis. Daarom is het raadzaam dat alleen beheerders toegang hebben tot de rollen Inzender of eigenaar. Gebruikers en toepassingen die alleen geheimen moeten ophalen uit de sleutel kluis, moeten de rol van lezer krijgen. **Meer informatie vindt u in de volgende sectie.**
+> Hoewel gebruikers met de rol Inzender of Eigenaar niet standaard toegang hebben tot het uitvoeren van bewerkingen op geheimen die zijn opgeslagen in de sleutelkluis, bieden de rollen Inzender en Eigenaar machtigingen voor het toevoegen of verwijderen van toegangsbeleid voor geheimen die zijn opgeslagen in key vault. Daarom kan een gebruiker met deze roltoewijzingen zichzelf toegang verlenen tot geheimen in de sleutelkluis. Daarom wordt het aanbevolen dat alleen beheerders toegang hebben tot de rollen Inzender of Eigenaar. Gebruikers en toepassingen die alleen geheimen uit de sleutelkluis hoeven op te halen, moeten de rol Lezer krijgen. **Meer informatie in de volgende sectie.**
 
 >[!NOTE]
-> Wanneer u een roltoewijzing toewijst aan een gebruiker op het Azure Active Directory Tenant niveau, wordt deze set machtigingen trickle tot alle abonnementen, resource groepen en resources binnen het bereik van de toewijzing. Als u de principal van de minimale bevoegdheid wilt volgen, kunt u deze roltoewijzing op een nauw keuriger bereik maken. U kunt bijvoorbeeld een gebruiker een rol van lezer toewijzen op het abonnements niveau en een rol van eigenaar voor een enkele sleutel kluis. Ga naar de instellingen voor Identity Access Management (IAM) van een abonnement, een resource groep of een sleutel kluis om een roltoewijzing te maken op een nauw keuriger bereik.
+> Wanneer u een roltoewijzing toewijst aan een gebruiker op het niveau van de Azure Active Directory-tenant, wordt deze set machtigingen beperkt tot alle abonnementen, resourcegroepen en resources binnen het bereik van de toewijzing. Als u de principal met de minste bevoegdheden wilt volgen, kunt u deze roltoewijzing een gedetailleerder bereik geven. U kunt een gebruiker bijvoorbeeld de rol Lezer toewijzen op abonnementsniveau en de rol Eigenaar voor één sleutelkluis. Ga naar de IAM-instellingen (Identity Access Management) van een abonnement, resourcegroep of sleutelkluis om een roltoewijzing met een gedetailleerder bereik te maken.
 
-* Meer informatie over de [koppeling](../../role-based-access-control/built-in-roles.md) van Azure-functies
-* Meer informatie over [koppeling](../../role-based-access-control/role-assignments-portal.md) van roltoewijzingen toewijzen of verwijderen
+* Voor meer informatie over de koppeling [Azure-rollen](../../role-based-access-control/built-in-roles.md)
+* Koppeling voor meer informatie over het toewijzen of verwijderen van [roltoewijzingen](../../role-based-access-control/role-assignments-portal.md)
 
-## <a name="configure-key-vault-access-policies-for-your-security-principal"></a>Een sleutel kluis toegangs beleid configureren voor uw beveiligings-principal
+## <a name="configure-key-vault-access-policies-for-your-security-principal"></a>Toegangsbeleid voor key vault configureren voor uw beveiligingsprincipaal
 
-Voordat u toegang verleent aan uw gebruikers en toepassingen voor toegang tot de sleutel kluis, is het belang rijk om te begrijpen wat de verschillende typen bewerkingen zijn die kunnen worden uitgevoerd op een sleutel kluis. Er zijn twee hoofd typen van sleutel kluis bewerkingen, beheer vlak (ook wel besturings vlak) en gegevenslaag bewerkingen.
+Voordat u uw gebruikers en toepassingen toegang verleent tot Key Vault, is het belangrijk om inzicht te krijgen in de verschillende typen bewerkingen die op een sleutelkluis kunnen worden uitgevoerd. Er zijn twee belangrijke typen sleutelkluisbewerkingen: beheervlakbewerkingen (ook wel besturingsvlak genoemd) en bewerkingen voor gegevensvlak.
 
-In deze tabel ziet u een aantal voor beelden van de verschillende bewerkingen die worden beheerd door het beheer vlak versus het gegevens vlak. Bewerkingen die de eigenschappen van de sleutel kluis wijzigen, zijn beheer vlak bewerkingen. Bewerkingen die de waarde van geheimen die zijn opgeslagen in de sleutel kluis wijzigen of ophalen, zijn gegevenslaag bewerkingen.
+Deze tabel bevat verschillende voorbeelden van de verschillende bewerkingen die worden beheerd door het beheervlak versus het gegevensvlak. Bewerkingen die de eigenschappen van de sleutelkluis wijzigen, zijn bewerkingen op de beheervlak. Bewerkingen die de waarde wijzigen of ophalen van geheimen die zijn opgeslagen in de sleutelkluis zijn bewerkingen op het gegevensvlak.
 
-|Beheer vlak bewerkingen (voor beelden)|Data-vlak bewerkingen (voor beelden)|
+|Bewerkingen op beheervlak (voorbeelden)|Gegevensvlakbewerkingen (voorbeelden)|
 | --- | --- |
-| Key Vault maken | Een sleutel, geheim, certificaat maken
-| Key Vault verwijderen | Een sleutel, geheim, certificaat verwijderen
-| Key Vault roltoewijzingen toevoegen of verwijderen | Waarden van sleutels, geheimen en certificaten weer geven en ophalen
-| Key Vault toegangs beleid toevoegen of verwijderen | Back-up-en herstel sleutels, geheimen, certificaten
-| Firewall instellingen van Key Vault wijzigen | Sleutels, geheimen, certificaten vernieuwen
-| Key Vault herstel instellingen wijzigen | Tijdelijke, Verwijderde sleutels, geheimen en certificaten verwijderen of herstellen
-| Instellingen voor Diagnostische logboeken van Key Vault wijzigen
+| Een Key Vault | Een sleutel, geheim, certificaat maken
+| Verwijderen Key Vault | Een sleutel, geheim, certificaat verwijderen
+| Roltoewijzingen Key Vault of verwijderen | Waarden van sleutels, geheimen, certificaten opsnnen en ophalen
+| Toegangsbeleid voor Key Vault toevoegen of verwijderen | Back-up en herstel van sleutels, geheimen, certificaten
+| Firewallinstellingen Key Vault wijzigen | Sleutels, geheimen, certificaten vernieuwen
+| Herstelinstellingen Key Vault wijzigen | Zacht verwijderde sleutels, geheimen, certificaten leeg maken of herstellen
+| Instellingen Key Vault diagnostische logboeken wijzigen
 
-### <a name="management-plane-access--azure-active-directory-role-assignments"></a>Toegangs & voor beheer vlak Azure Active Directory roltoewijzingen
+### <a name="management-plane-access--azure-active-directory-role-assignments"></a>Toegangsbeheervlak & Azure Active Directory roltoewijzingen
 
-Azure Active Directory roltoewijzingen verlenen toegang om beheer vlak bewerkingen uit te voeren op een sleutel kluis. Deze toegang wordt doorgaans verleend aan gebruikers en niet op toepassingen. U kunt beperken welk beheer vlak bewerkingen een gebruiker kan uitvoeren door de roltoewijzing van een gebruiker te wijzigen.
+Azure Active Directory roltoewijzingen toegang verlenen om bewerkingen op de beheervlak uit te voeren op een sleutelkluis. Deze toegang wordt doorgaans verleend aan gebruikers, niet aan toepassingen. U kunt beperken welke beheervlakbewerkingen een gebruiker kan uitvoeren door de roltoewijzing van een gebruiker te wijzigen.
 
-Als u bijvoorbeeld een gebruiker een Key Vault lezer-rol toewijst aan een gebruiker, kunnen ze de eigenschappen van de sleutel kluis zien, zoals het toegangs beleid, maar kunnen ze geen wijzigingen aanbrengen. Als u een gebruiker toewijst, biedt de rol eigenaar volledige toegang tot de instellingen voor het beheer van sleutel kluis.
+Als een gebruiker bijvoorbeeld de rol Key Vault lezer toewijst aan een gebruiker, kunnen ze de eigenschappen van uw sleutelkluis zien, zoals toegangsbeleid, maar kunnen ze geen wijzigingen aanbrengen. Als u een gebruiker toewijst, krijgt deze met de rol Eigenaar volledige toegang tot het wijzigen van de beheervlakinstellingen van de sleutelkluis.
 
-Roltoewijzingen worden beheerd op de Blade van de sleutel kluis Access Control (IAM). Als u een bepaalde gebruiker toegang wilt geven tot een lezer of als beheerder van meerdere sleutel kluis resources, kunt u een roltoewijzing maken op basis van de kluis, de resource groep of het abonnements niveau, en de roltoewijzing wordt toegevoegd aan alle resources binnen het bereik van de toewijzing.
+Roltoewijzingen worden beheerd in de blade sleutelkluis Access Control (IAM). Als u wilt dat een bepaalde gebruiker toegang heeft als lezer of beheerder van meerdere key vault-resources, kunt u een roltoewijzing maken op het niveau van de kluis, resourcegroep of abonnement, en wordt de roltoewijzing toegevoegd aan alle resources binnen het bereik van de toewijzing.
 
-Toegang tot gegevenslaag of toegang tot het uitvoeren van bewerkingen voor sleutels, geheimen en certificaten die zijn opgeslagen in de sleutel kluis kunnen op een van de volgende twee manieren worden toegevoegd.
+Toegang tot de gegevensvlak of toegang om bewerkingen uit te voeren op sleutels, geheimen en certificaten die zijn opgeslagen in de sleutelkluis, kan op twee manieren worden toegevoegd.
 
-### <a name="data-plane-access-option-1-classic-key-vault-access-policies"></a>Toegangs optie voor gegevenslaag 1: klassiek Key Vault-toegangs beleid
+### <a name="data-plane-access-option-1-classic-key-vault-access-policies"></a>Toegangsoptie voor gegevensvlak 1: klassiek Key Vault toegangsbeleid
 
-Met het toegangs beleid voor sleutel kluizen kunnen gebruikers en toepassingen toegang krijgen tot gegevens vlak bewerkingen op een sleutel kluis.
+Toegangsbeleid van Key Vault verleent gebruikers en toepassingen toegang tot het uitvoeren van gegevensvlakbewerkingen op een sleutelkluis.
 
 > [!NOTE]
-> Dit toegangs model is niet compatibel met Azure RBAC voor sleutel kluis (optie 2) zoals hieronder wordt beschreven. U moet er een kiezen. U krijgt de mogelijkheid om deze selectie te maken wanneer u op het tabblad toegangs beleid van uw sleutel kluis klikt.
+> Dit toegangsmodel is niet compatibel met Azure RBAC voor sleutelkluis (optie 2) die hieronder wordt beschreven. U moet er een kiezen. U kunt deze selectie maken wanneer u op het tabblad Toegangsbeleid van uw sleutelkluis klikt.
 
-Klassiek toegangs beleid is nauw keurig. Dit betekent dat u de mogelijkheid van elke afzonderlijke gebruiker of toepassing voor het uitvoeren van afzonderlijke bewerkingen binnen een sleutel kluis kunt toestaan of weigeren. Enkele voorbeelden:
+Klassieke toegangsbeleidsregels zijn gedetailleerd, wat betekent dat u de mogelijkheid van elke afzonderlijke gebruiker of toepassing om afzonderlijke bewerkingen binnen een sleutelkluis uit te voeren, kunt toestaan of weigeren. Enkele voorbeelden:
 
-* Met beveiligingsprincipal 1 kan elke sleutel bewerking worden uitgevoerd, maar het is niet toegestaan een geheim-of certificaat bewerking uit te voeren.
-* Met beveiligingsprincipal 2 kunnen alle sleutels, geheimen en certificaten worden weer geven en gelezen, maar kunnen geen bewerkingen voor maken, verwijderen of vernieuwen worden uitgevoerd.
-* Met beveiligingsprincipal 3 kan een back-up worden gemaakt en kunnen alle geheimen worden hersteld, maar kan de waarde van de geheimen zelf niet worden gelezen.
+* Security Principal 1 kan een sleutelbewerking uitvoeren, maar mag geen geheim- of certificaatbewerkingen uitvoeren.
+* Beveiligingsprincipaal 2 kan alle sleutels, geheimen en certificaten in een lijst en lezen, maar kan geen bewerkingen voor maken, verwijderen of vernieuwen uitvoeren.
+* Security Principal 3 kan een back-up maken van alle geheimen en deze herstellen, maar kan de waarde van de geheimen zelf niet lezen.
 
-Klassiek toegangs beleid staat echter geen machtigingen op niveau per object toe en toegewezen machtigingen worden toegepast op het bereik van een individuele sleutel kluis. Als u bijvoorbeeld de machtiging ' geheim Get ' toegangs beleid toewijst aan een beveiligingsprincipal in een bepaalde sleutel kluis, heeft de beveiligingsprincipal de mogelijkheid om alle geheimen binnen die specifieke sleutel kluis op te halen. De machtiging ' geheim ophalen ' wordt echter niet automatisch uitgebreid naar andere sleutel kluizen en moet expliciet worden toegewezen.
+Klassiek toegangsbeleid staat echter geen machtigingen per objectniveau toe en toegewezen machtigingen worden toegepast op het bereik van een afzonderlijke sleutelkluis. Als u bijvoorbeeld de toegangsbeleidsmachtiging 'Secret Get' verleent aan een beveiligingsprincipaal in een bepaalde sleutelkluis, heeft de beveiligingsprincipaal de mogelijkheid om alle geheimen binnen die specifieke sleutelkluis op te halen. Deze machtiging 'Geheim maken' wordt echter niet automatisch uitgebreid naar andere sleutelkluizen en moet expliciet worden toegewezen.
 
 > [!IMPORTANT]
-> De klassieke sleutel kluis toegangs beleid en Azure Active Directory roltoewijzingen zijn onafhankelijk van elkaar. Als u een beveiligingsprincipal toewijst voor een rol Inzender op abonnements niveau, wordt de beveiligingsprincipal niet automatisch toegestaan op elke sleutel kluis binnen het bereik van het abonnement de mogelijkheid om gegevenslaag bewerkingen uit te voeren. De beveiligingsprincipal moet nog steeds worden verleend, of u hebt zichzelf toegangs beleid machtigingen voor het uitvoeren van gegevenslaag bewerkingen.
+> Klassiek toegangsbeleid voor sleutelkluizen en Azure Active Directory roltoewijzingen zijn onafhankelijk van elkaar. Als u een beveiligingsprincipaal de rol 'Inzender' toewijst op abonnementsniveau, kan de beveiligingsprincipaal niet automatisch bewerkingen op het gegevensvlak uitvoeren op elke sleutelkluis binnen het bereik van het abonnement. De beveiligingsprincipaal moet nog steeds worden verleend of zichzelf toegangsbeleidmachtigingen verlenen om gegevensvlakbewerkingen uit te voeren.
 
-### <a name="data-plane-access-option-2--azure-rbac-for-key-vault-preview"></a>Access-optie voor gegevens vlak 2: Azure RBAC voor Key Vault (preview-versie)
+### <a name="data-plane-access-option-2--azure-rbac-for-key-vault"></a>Toegang tot gegevensvlak optie 2: Azure RBAC voor Key Vault
 
-Een nieuwe manier om toegang tot het sleutel kluis-gegevens vlak te verlenen, is via Azure op rollen gebaseerd toegangs beheer (Azure RBAC) voor sleutel kluis.
+Een nieuwe manier om toegang te verlenen tot de gegevensvlak van de sleutelkluis is via op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC) voor key vault.
 
 > [!NOTE]
-> Dit toegangs model is niet compatibel met het klassieke toegangs beleid van Key kluis dat hierboven wordt weer gegeven. U moet er een kiezen. U krijgt de mogelijkheid om deze selectie te maken wanneer u op het tabblad toegangs beleid van uw sleutel kluis klikt.
+> Dit toegangsmodel is niet compatibel met het klassieke toegangsbeleid van Key Vault dat hierboven wordt weergegeven. U moet er een kiezen. U kunt deze selectie maken wanneer u op het tabblad Toegangsbeleid van uw sleutelkluis klikt.
 
-Key Vault roltoewijzingen zijn een set van ingebouwde rollen toewijzingen van Azure die algemene sets machtigingen bevatten die worden gebruikt voor toegang tot sleutels, geheimen en certificaten. Dit machtigings model biedt ook aanvullende mogelijkheden die niet beschikbaar zijn in het klassieke sleutel kluis toegangs beleid model.
+Key Vault roltoewijzingen zijn een set ingebouwde Azure-roltoewijzingen die algemene sets machtigingen omvatten die worden gebruikt voor toegang tot sleutels, geheimen en certificaten. Dit machtigingsmodel maakt ook aanvullende mogelijkheden mogelijk die niet beschikbaar zijn in het klassieke toegangsbeleidsmodel van de sleutelkluis.
 
-* U kunt Azure RBAC-machtigingen op schaal beheren door gebruikers toe te staan deze rollen toe te wijzen aan een abonnement, resource groep of een kluis niveau van individuele sleutels. Een gebruiker beschikt over de machtigingen voor het gegevens vlak van alle sleutel kluizen binnen het bereik van de RBAC-toewijzing van Azure. Dit elimineert de nood zaak om afzonderlijke toegangs beleid machtigingen per gebruiker/toepassing per sleutel kluis toe te wijzen.
+* Azure RBAC-machtigingen kunnen op schaal worden beheerd doordat gebruikers deze rollen kunnen toewijzen op abonnements-, resourcegroep- of afzonderlijke sleutelkluisniveau. Een gebruiker heeft machtigingen voor de gegevensvlak voor alle sleutelkluizen binnen het bereik van de Azure RBAC-toewijzing. Hierdoor hoeft u geen afzonderlijke toegangsbeleidmachtigingen per gebruiker/toepassing per sleutelkluis toe te wijzen.
 
-* De Azure RBAC-machtigingen zijn compatibel met Privileged Identity Management of PIM. Zo kunt u just-in-time-toegangs beheer configureren voor geprivilegieerde rollen als Key Vault beheerder. Dit is een best practice voor beveiliging en volgt de principal van de minimale bevoegdheid door permanente toegang tot uw sleutel kluizen te elimineren.
+* Azure RBAC-machtigingen zijn compatibel met Privileged Identity Management of PIM. Hiermee kunt u Just-In-Time-toegangsbesturingselementen configureren voor bevoorrechte rollen, Key Vault beheerder. Dit is een best-security practice en volgt de principal van de minste bevoegdheden door permanente toegang tot uw sleutelkluizen te elimineren.
 
-Raadpleeg de volgende documenten voor meer informatie over Azure RBAC voor Key Vault:
+Zie de volgende documenten voor meer informatie over Azure RBAC voor Key Vault:
 
-* [Koppeling](./secure-your-key-vault.md#management-plane-and-azure-rbac) Azure RBAC voor Key Vault
-* [Koppeling](../../role-based-access-control/built-in-roles.md#key-vault-administrator) van Azure RBAC voor Key Vault-rollen
+* Azure RBAC voor Key Vault [koppeling](./secure-your-key-vault.md#management-plane-and-azure-rbac)
+* Koppeling naar Azure RBAC [Key Vault-rollen](../../role-based-access-control/built-in-roles.md#key-vault-administrator)
 
-## <a name="configure-key-vault-firewall"></a>Key Vault firewall configureren
+## <a name="configure-key-vault-firewall"></a>Een firewall Key Vault configureren
 
-Standaard staat sleutel kluis verkeer van het open bare Internet toe om uw sleutel kluis via een openbaar eind punt te verzenden. Voor een extra beveiligingslaag kunt u de firewall van Azure Key Vault zo configureren dat de toegang tot het open bare eind punt van de sleutel kluis wordt beperkt.
+Standaard staat key vault toe dat verkeer van het openbare internet uw sleutelkluis kan verzenden via een openbaar eindpunt. Voor een extra beveiligingslaag kunt u de firewall configureren Azure Key Vault toegang tot het openbare eindpunt van de sleutelkluis te beperken.
 
-Als u de sleutel kluis firewall wilt inschakelen, klikt u op het tabblad netwerk in de sleutel kluis Portal en selecteert u het keuze rondje om toegang toe te staan vanaf: "persoonlijk eind punt en geselecteerde netwerken". Als u ervoor kiest de sleutel kluis firewall in te scha kelen, zijn dit de manieren waarop u verkeer kunt toestaan via de firewall van de sleutel kluis.
+Als u de sleutelkluisfirewall wilt inschakelen, klikt u op het tabblad Netwerken in de portal van de sleutelkluis en selecteert u het keuzerondje Toegang toestaan vanuit: Privé-eindpunt en Geselecteerde netwerken. Als u ervoor kiest om de firewall van de sleutelkluis in teschakelen, zijn dit de manieren waarop u verkeer via de firewall van de sleutelkluis kunt toestaan.
 
-* Voeg IPv4-adressen toe aan de lijst met toegestane firewalls voor de sleutel kluis. Deze optie werkt het beste voor toepassingen met een statisch IP-adres.
+* Voeg IPv4-adressen toe aan de lijst met toegestane adressen voor de sleutelkluisfirewall. Deze optie werkt het beste voor toepassingen met statische IP-adressen.
 
-* Voeg een virtueel netwerk toe aan de firewall voor de sleutel kluis. Deze optie werkt het beste bij Azure-resources met dynamische IP-adressen, zoals Virtual Machines. U kunt Azure-resources toevoegen aan een virtueel netwerk en het virtuele netwerk toevoegen aan de lijst met toegestane firewalls voor de sleutel kluis. Deze optie maakt gebruik van een service-eind punt dat een privé-IP-adres in het virtuele netwerk is. Dit biedt een extra beveiligingslaag, zodat er geen verkeer tussen de sleutel kluis en het virtuele netwerk wordt gerouteerd via het open bare Internet. Raadpleeg de volgende documentatie voor meer informatie over service-eind punten. [gekoppeld](./network-security.md)
+* Voeg een virtueel netwerk toe aan de firewall van de sleutelkluis. Deze optie werkt het beste voor Azure-resources met dynamische IP-adressen, zoals Virtual Machines. U kunt Azure-resources toevoegen aan een virtueel netwerk en het virtuele netwerk toevoegen aan de lijst met toegestane firewalls voor de sleutelkluis. Deze optie maakt gebruik van een service-eindpunt dat een privé-IP-adres in het virtuele netwerk is. Dit biedt een extra beveiligingslaag, zodat er geen verkeer tussen key vault en uw virtuele netwerk wordt gerouteerd via het openbare internet. Zie de volgende documentatie voor meer informatie over service-eindpunten. [Link](./network-security.md)
 
-* Een persoonlijke koppelings verbinding toevoegen aan de sleutel kluis. Met deze optie wordt het virtuele netwerk rechtstreeks verbonden met een bepaald exemplaar van sleutel kluis, waardoor uw sleutel kluis in het virtuele netwerk effectief wordt. Zie de volgende [koppeling](./private-link-service.md) voor meer informatie over het configureren van een particuliere endpoint-verbinding met sleutel kluis.
+* Voeg een private link-verbinding toe aan de sleutelkluis. Met deze optie wordt uw virtuele netwerk rechtstreeks verbonden met een bepaald exemplaar van de sleutelkluis, waardoor uw sleutelkluis in uw virtuele netwerk wordt gebruikt. Zie de volgende koppeling voor meer informatie over het configureren van een privé-eindpuntverbinding met de [sleutelkluis](./private-link-service.md)
 
-## <a name="test-your-service-principals-ability-to-access-key-vault"></a>Test de mogelijkheid van de Service-Principal om toegang te krijgen tot de sleutel kluis
+## <a name="test-your-service-principals-ability-to-access-key-vault"></a>De mogelijkheid van uw service-principal voor toegang tot de sleutelkluis testen
 
-Zodra u alle bovenstaande stappen hebt gevolgd, kunt u geheimen van uw sleutel kluis instellen en ophalen.
+Nadat u alle bovenstaande stappen hebt gevolgd, kunt u geheimen instellen en ophalen uit uw sleutelkluis.
 
-### <a name="authentication-process-for-users-examples"></a>Verificatie proces voor gebruikers (voor beelden)
+### <a name="authentication-process-for-users-examples"></a>Verificatieproces voor gebruikers (voorbeelden)
 
-* Gebruikers kunnen zich aanmelden bij de Azure Portal om sleutel kluis te gebruiken. [Quick start voor Key Vault Portal](./quick-create-portal.md)
+* Gebruikers kunnen zich aanmelden bij de Azure Portal key vault te gebruiken. [Key Vault portal Quickstart](./quick-create-portal.md)
 
-* Gebruiker kan Azure CLI gebruiken voor het gebruik van sleutel kluis. [Snelstartgids voor Key Vault Azure CLI](./quick-create-cli.md)
+* De gebruiker kan Azure CLI gebruiken om key vault te gebruiken. [Key Vault Azure CLI-snelstart](./quick-create-cli.md)
 
-* Gebruiker kan Azure PowerShell gebruiken om sleutel kluis te gebruiken. [Key Vault Azure PowerShell Snelstartgids](./quick-create-powershell.md)
+* De gebruiker kan Azure PowerShell sleutelkluis gebruiken. [Key Vault Azure PowerShell Quickstart](./quick-create-powershell.md)
 
-### <a name="azure-active-directory-authentication-process-for-applications-or-services-examples"></a>Verificatie proces Azure Active Directory voor toepassingen of services (voor beelden)
+### <a name="azure-active-directory-authentication-process-for-applications-or-services-examples"></a>Azure Active Directory verificatieproces voor toepassingen of services (voorbeelden)
 
-* Een toepassing levert een client geheim en een client-ID in een functie om een Azure Active Directory-token op te halen. 
+* Een toepassing biedt een clientgeheim en client-id in een functie om een Azure Active Directory token op te halen. 
 
-* Een toepassing biedt een certificaat om een Azure Active Directory-token op te halen. 
+* Een toepassing biedt een certificaat voor het verkrijgen van een Azure Active Directory token. 
 
-* Een Azure-resource gebruikt MSI-verificatie om een Azure Active Directory-token op te halen. 
+* Een Azure-resource maakt gebruik van MSI-verificatie om een Azure Active Directory op te halen. 
 
-* Meer informatie over MSI-verificatie [koppeling](../../active-directory/managed-identities-azure-resources/overview.md)
+* Meer informatie over [](../../active-directory/managed-identities-azure-resources/overview.md) de MSI-verificatiekoppeling
 
-### <a name="authentication-process-for-application-python-example"></a>Verificatie proces voor toepassingen (python-voor beeld)
+### <a name="authentication-process-for-application-python-example"></a>Verificatieproces voor toepassing (Python-voorbeeld)
 
 Gebruik het volgende codevoorbeeld om te testen of uw toepassing een geheim kan ophalen uit uw sleutelkluis met behulp van de service-principal die u hebt geconfigureerd.
 
 >[!NOTE]
->Dit voor beeld is alleen voor demonstratie-en test doeleinden. **geen gebruik maken van geheime verificatie van client in productie** Dit is geen veilige ontwerp praktijk. U moet het client certificaat of de MSI-verificatie gebruiken als best practice.
+>Dit voorbeeld is alleen bedoeld voor demonstratie- en testdoeleinden. **GEBRUIK GEEN VERIFICATIE VAN CLIENTGEHEIMEN IN PRODUCTIE** Dit is geen veilige ontwerp practice. Gebruik clientcertificaat of MSI-verificatie als een best practice.
 
 ```python
 from azure.identity import ClientSecretCredential
@@ -194,4 +194,4 @@ if __name__ == "__main__":
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Raadpleeg het volgende document voor meer informatie over de sleutel kluis verificatie. [Key Vault-verificatie](./authentication.md)
+Zie het volgende document voor meer informatie over sleutelkluisverificatie. [Key Vault-verificatie](./authentication.md)

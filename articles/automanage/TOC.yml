@@ -10,11 +10,13 @@
   items:
     - name: Automanage voor Linux
       href: automanage-linux.md
-    - name: Automanage voor Windows Server
+    - name: Automatisch beheren voor Windows Server
       href: automanage-windows-server.md
       items:
         - name: Hotpatch voor nieuwe virtuele machines
           href: automanage-hotpatch.md
+    - name: Automanage-account
+      href: automanage-account.md
 - name: Procedures
   expanded: true
   items:
@@ -22,11 +24,13 @@
       href: virtual-machines-custom-preferences.md
     - name: VM's inschakelen via Azure Policy
       href: virtual-machines-policy-enable.md
-    - name: Fouten bij onboarding oplossen
+    - name: Inschakelen op VM's via een ARM-sjabloon
+      href: arm-deploy.md
+    - name: Onboardingfouten oplossen
       href: common-errors.md
     - name: Een beschadigd Automanage-account herstellen
       href: repair-automanage-account.md
-    - name: Een automatische beheerde virtuele machine verplaatsen naar verschillende regio's
+    - name: Een automatischmanagede virtuele machine verplaatsen tussen regio's
       href: move-automanaged-vms.md
 - name: Resources
   expanded: true

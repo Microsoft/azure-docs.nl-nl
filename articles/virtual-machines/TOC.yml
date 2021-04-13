@@ -97,13 +97,13 @@
       href: ./workloads/sap/get-started.md
     - name: Oracle
       href: ./workloads/oracle/oracle-database-quick-create.md
-    - name: Azure voor games
+    - name: Azure voor gaming
       href: 'https://docs.microsoft.com/gaming/azure/'
     - name: Elasticsearch
       href: ./linux/tutorial-elasticsearch.md
     - name: Mainframe opnieuw hosten
       href: ./workloads/mainframe-rehosting/overview.md
-    - name: Azure vertrouwelijk compute
+    - name: Azure Confidential Compute
       href: ../confidential-computing/overview.md
     - name: SQL op Virtual Machines
       href: ../azure-sql/virtual-machines/index.yml
@@ -121,7 +121,7 @@
             - name: CLI
               displayName: 'Change, resize, update size'
               href: ./linux/change-vm-size.md
-            - name: Portal of Power shell
+            - name: Portal of PowerShell
               displayName: 'Change, resize, update size'
               href: ./windows/resize-vm.md
         - name: VM's uit de tweede generatie
@@ -172,7 +172,7 @@
               href: ev4-esv4-series.md
             - name: M-serie
               href: m-series.md
-            - name: Msv2-en Mdsv2-middel grote geheugen reeks
+            - name: Msv2- en Mdsv2-serie voor gemiddeld geheugen
               href: msv2-mdsv2-series.md
             - name: Mv2-serie
               href: mv2-series.md
@@ -227,7 +227,7 @@
             - name: AMD GPU-stuurprogramma's instellen
               displayName: 'AMD GPU drivers, AMD, GPU drivers, GPU'
               href: ./windows/n-series-amd-driver-setup.md
-        - name: FPGA-versnelde compute
+        - name: FPGA - versneld berekenen
           items:
             - name: Overzicht
               displayName: 'FPGA, accelerated compute, compute, accelerated, gpu'
@@ -354,28 +354,28 @@
               href: ./linux/tutorial-lamp-stack.md
             - name: Doorlopende levering
               items:
-                - name: Strategie voor Rolling implementatie configureren
+                - name: Strategie voor rolling implementatie configureren
                   href: ./linux/tutorial-devops-azure-pipelines-classic.md
-                - name: Strategie voor distributie op Canarische configureren
+                - name: Canary-implementatiestrategie configureren
                   href: ./linux/tutorial-azure-devops-canary-strategy.md
-                - name: Strategie voor Blue-Green implementatie configureren
+                - name: Een Blue-Green configureren
                   href: ./linux/tutorial-azure-devops-blue-green-strategy.md
-                - name: CI/CD met Azure pipelines (YAML)
+                - name: CI/CD met Azure Pipelines (YAML)
                   href: ./linux/tutorial-build-deploy-azure-pipelines.md
-            - name: Een beveiligde webserver met TLS\SSL
+            - name: Webserver beveiligen met TLS\SSL
               href: ./linux/tutorial-secure-web-server.md
         - name: Windows
           items:
-            - name: Gespecialiseerde schijf-Portal
+            - name: Gespecialiseerde schijf - Portal
               displayName: 'Create VM, Create'
               href: ./windows/create-vm-specialized-portal.md
-            - name: Gespecialiseerde schijf-Power shell
+            - name: Gespecialiseerde schijf - PowerShell
               displayName: 'Create VM, Create'
               href: ./windows/create-vm-specialized.md
             - name: ARM-sjabloon
               displayName: 'Create VM, Create, ARM'
               href: ./windows/ps-template.md
-            - name: Een beveiligde webserver met TLS\SSL
+            - name: Webserver beveiligen met TLS\SSL
               href: ./windows/tutorial-secure-web-server.md
     - name: Verbinding maken met Virtual Machines
       items:
@@ -387,7 +387,7 @@
               href: ssh-keys-portal.md
             - name: SSH in Linux of macOS
               href: ./linux/mac-create-ssh-keys.md
-            - name: SSH op Windows
+            - name: SSH in Windows
               href: ./linux/ssh-from-windows.md
             - name: Extern bureaublad voor Linux
               href: ./linux/use-remote-desktop.md
@@ -430,6 +430,10 @@
               href: ./extensions/features-windows.md
             - name: VM-agent voor Windows
               href: ./extensions/agent-windows.md
+        - name: Azure Backup voor SQL Server
+          items:
+            - name: Azure Backup voor SQL Server
+              href: ./extensions/backup-azure-sql-server-running-azure-vm.md
         - name: Azure Disk Encryption
           items:
             - name: Linux
@@ -446,10 +450,8 @@
             - name: Windows
               displayName: 'Azure Key Vault, key vault, encryption'
               href: ./extensions/key-vault-windows.md
-        - name: Azure Backup voor SQL Server
-          items:
-            - name: Azure Backup voor SQL Server
-              href: ./extensions/backup-azure-sql-server-running-azure-vm.md
+        - name: Azure Policy gastconfiguratie configureren
+          href: ./extensions/guest-configuration.md
         - name: Aangepast script
           items:
             - name: Linux - versie 2
@@ -594,7 +596,7 @@
           href: migration-classic-resource-manager-faq.md
 - name: Installatiekopieën
   items:
-    - name: Azure Marketplace-installatie kopieën zoeken
+    - name: Zoek Azure Marketplace afbeeldingen
       items:
         - name: CLI
           displayName: 'Images, imaging, marketplace, publisher, plan, offer, URN, purchase plan, terms'
@@ -602,13 +604,13 @@
         - name: PowerShell
           displayName: 'Images, imaging, marketplace, URN, purchase plan, terms'
           href: ./windows/cli-ps-findimage.md
-        - name: Windows-client installatie kopieën
+        - name: Windows-clientafbeeldingen
           displayName: 'Images, imaging, marketplace, Windows, Client'
           href: ./windows/client-images.md
-        - name: Multi tenant-hosting rechten voor Windows 10
+        - name: Multitenant Hosting Rights for Windows 10
           displayName: 'MTHR, multi-tenant, multitenant, hosting, rights'
           href: ./windows/windows-desktop-multitenant-hosting-deployment.md
-    - name: Aangepaste Linux-installatie kopieën
+    - name: Aangepaste Linux-afbeeldingen
       items:
         - name: Overzicht
           displayName: 'Linux custom images, custom, image'
@@ -675,21 +677,21 @@
             - name: Een bestaand bash-script uitvoeren
               href: ./linux/cloudinit-bash-script.md
               displayname: cloud-init
-        - name: Linux-installatie kopieën maken zonder een inrichtings agent
+        - name: Linux-afbeeldingen maken zonder inrichtingsagent
           href: ./linux/no-agent.md
         - name: Inrichten van Linux-agent uitschakelen
           href: ./linux/disable-provisioning.md
         - name: Virtuele machine vastleggen in beheerde installatiekopie
           href: ./linux/capture-image.md
-    - name: Aangepaste Windows-installatie kopieën
+    - name: Aangepaste Windows-afbeeldingen
       items:
         - name: Een VHD voorbereiden om te uploaden
           displayName: 'Windows custom images, images, windows, upload, prepare, VHD'
           href: ./windows/prepare-for-upload-vhd-image.md
-        - name: Een VHD uploaden en een beheerde installatie kopie maken
+        - name: Een VHD uploaden en een beheerde afbeelding maken
           displayName: 'Windows custom images, images, windows, upload, prepare, VHD, managed'
           href: ./windows/upload-generalized-managed.md
-        - name: Een beheerde installatie kopie vastleggen
+        - name: Een beheerde afbeelding vastleggen
           displayName: 'Windows custom images, images, windows, upload, prepare, VHD, managed, capture'
           href: ./windows/capture-image-resource.md
         - name: Een VM maken op basis van een beheerde installatiekopie
@@ -803,7 +805,7 @@
           href: managed-disk-from-image-version.md
         - name: Aankoopplaninformatie
           href: marketplace-images.md
-    - name: Image Builder (preview-versie)
+    - name: Opbouwer van afbeeldingen (preview)
       items:
         - name: Overzicht
           displayName: 'Image builder, images, building'
@@ -916,7 +918,7 @@
         - name: Portal
           displayName: 'availability and scale, availability, scale, autoscale, availability zones, AV zones'
           href: ./windows/create-portal-availability-zone.md
-    - name: Proximity-plaatsings groepen
+    - name: Nabijheidsplaatsingsgroepen
       items:
         - name: Overzicht
           displayName: 'proximity placement groups, ppg'
@@ -940,7 +942,7 @@
         - name: Indelingsmodi
           displayName: 'VMSS, flex, scale set, scale, virtual machine sacle set'
           href: ../virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes.md?context=/azure/virtual-machines/context/context
-    - name: Meer informatie over het opnieuw opstarten van VM'S
+    - name: Inzicht in het opnieuw opstarten van VM's
       href: understand-vm-reboots.md
     - name: Staten en facturering
       href: states-billing.md
@@ -963,7 +965,7 @@
       items:
         - name: Versleuteling aan de serverzijde
           items:
-            - name: Overzicht van versleuteling aan de server zijde
+            - name: Overzicht van versleuteling aan de serverzijde
               href: disk-encryption.md
               displayname: 'Server side encryption, encryption, ADE'
             - name: Door de klant beheerde sleutels inschakelen
@@ -1075,7 +1077,7 @@
                       href: ./windows/disk-encryption-key-vault-aad.md
                     - name: Schijfversleutelingsscenario's voor Windows
                       href: ./windows/disk-encryption-windows-aad.md
-    - name: Prestaties en kosten optimalisatie
+    - name: Optimalisatie van prestaties en kosten
       items:
         - name: Ultraschijven
           href: disks-enable-ultra-ssd.md
@@ -1092,10 +1094,10 @@
         - name: Ontwerp voor hoge prestaties
           href: premium-storage-performance.md
           displayname: 'Performance, cost, perf, disks, disk'
-        - name: Metrische schijf gegevens
+        - name: Schijfgerelateerde metrische gegevens
           href: disks-metrics.md
           displayname: 'Performance, cost, perf, disks, disk'
-        - name: Schijf bursting-modellen
+        - name: Modellen voor het bursten van schijven
           href: disk-bursting.md
           displayname: 'Performance, cost, perf, disks, disk'
         - name: Bursting op aanvraag inschakelen
@@ -1104,9 +1106,9 @@
         - name: Schijfprestatielagen
           href: disks-change-performance.md
           displayname: 'Performance, cost, perf, disks, disk'
-        - name: Laag prestatie niveau wijzigen
+        - name: Prestatielaag van schijf wijzigen
           items:
-            - name: CLI en Power shell
+            - name: CLI en PowerShell
               href: disks-performance-tiers.md
               displayname: 'Performance, cost, perf, disks, disk, change disk performance tier'
             - name: Portal
@@ -1118,32 +1120,32 @@
           href: disks-benchmarks.md
     - name: Schaalbaarheidsdoelen voor schijven
       href: disks-scalability-targets.md
-    - name: Back-up en gegevens beveiliging
+    - name: Back-up en gegevensbescherming
       items:
-        - name: Incrementele moment opnamen inschakelen
+        - name: Incrementele momentopnamen inschakelen
           href: disks-incremental-snapshots.md
         - name: Azure Disk Backup
           items:
             - name: Overzicht
               displayName: 'Azure disk backup, backup'
               href: ../backup/disk-backup-overview.md?context=/azure/virtual-machines/context/context
-            - name: Back-ups van Azure-schijf configureren
+            - name: Azure Disk Backup configureren
               href: ../backup/backup-managed-disks.md?context=/azure/virtual-machines/context/context
-            - name: Schijven herstellen met Azure-schijf back-up
+            - name: Schijven herstellen met Azure Disk Backup
               href: ../backup/restore-managed-disks.md?context=/azure/virtual-machines/context/context
         - name: Back-up en herstel na noodgeval voor schijven
           href: backup-and-disaster-recovery-for-azure-iaas-disks.md
-        - name: Moment opname maken van een schijf-CLI
+        - name: Momentopname van een schijf maken - CLI
           href: ./linux/snapshot-copy-managed-disk.md
-        - name: Moment opname maken van een schijf-Power shell
+        - name: Momentopname van een schijf maken - PowerShell
           href: ./windows/snapshot-copy-managed-disk.md
-        - name: Back-ups van niet-beheerde schijven
+        - name: Back-up maken van niet-managede schijven
           href: ./linux/incremental-snapshots.md
     - name: Kortstondige besturingssysteemschijven
       href: ephemeral-os-disks.md
     - name: Migratie en conversie
       items:
-        - name: Schijf converteren naar een ander schijf type
+        - name: Schijf converteren naar een ander schijftype
           items:
             - name: CLI
               displayName: Convert disk to another disk type
@@ -1151,7 +1153,7 @@
             - name: PowerShell
               displayName: Convert disk to another disk type
               href: ./windows/convert-disk-storage.md
-        - name: Migreren naar Premium Ssd's met Azure Site Recovery
+        - name: Migreren naar Premium-SD's met Azure Site Recovery
           items:
             - name: Linux
               displayName: Migrate to premium SSDs with Azure Site Recovery
@@ -1169,7 +1171,7 @@
             - name: PowerShell
               displayName: Unmanaged VM to Managed Disks
               href: ./windows/convert-unmanaged-to-managed-disks.md
-    - name: Een gegevens schijf toevoegen
+    - name: Een gegevensschijf toevoegen
       items:
         - name: Linux
           items:
@@ -1187,7 +1189,7 @@
             - name: Azure Portal
               displayName: 'add a data disk, data disk'
               href: ./windows/attach-managed-disk-portal.md
-            - name: De letter van het tijdelijke schijf station wijzigen
+            - name: Tijdelijke schijfstationletter wijzigen
               href: ./windows/change-drive-letter.md
     - name: Een schijf loskoppelen
       items:
@@ -1212,9 +1214,9 @@
           href: using-managed-disks-template-deployments.md
         - name: Een schijf veilig importeren/exporteren
           items:
-            - name: Persoonlijke koppelingen voor schijven configureren-CLI
+            - name: Privékoppelingen voor schijven configureren - CLI
               href: ./linux/disks-export-import-private-links-cli.md
-            - name: Persoonlijke koppelingen voor schijven configureren-Portal
+            - name: Privékoppelingen voor schijven configureren - Portal
               href: disks-enable-private-links-for-import-export-portal.md
             - name: Een VHD uploaden naar een schijf - PowerShell
               href: ./windows/disks-upload-vhd-to-managed-disk-powershell.md
@@ -1230,13 +1232,13 @@
                   href: ./windows/download-vhd.md
         - name: Storage Explorer gebruiken om schijven te beheren
           href: disks-use-storage-explorer-managed-disks.md
-        - name: De schijf van het besturings systeem wisselen-CLI
+        - name: De besturingssysteemschijf wisselen - CLI
           href: ./linux/os-disk-swap.md
-        - name: De besturingssysteem schijf wisselen-Power shell
+        - name: De besturingssysteemschijf wisselen - PowerShell
           href: ./windows/os-disk-swap.md
-        - name: Beheerde schijf toewijzen aan gast schijf-Linux
+        - name: Beheerde schijf aan gastschijf wijsen - Linux
           href: ./linux/azure-to-guest-disk-mapping.md
-        - name: Beheerde schijf toewijzen aan gast schijf-Windows
+        - name: Beheerde schijf aan gastschijf wijsen - Windows
           href: ./windows/azure-to-guest-disk-mapping.md
         - name: File Storage
           items:
@@ -1265,11 +1267,11 @@
               href: /previous-versions/azure/virtual-machines/scripts/virtual-machines-cli-sample-create-managed-disk-from-vhd
             - name: Een beheerde schijf kopiëren naar hetzelfde of een ander abonnement
               href: 'https://github.com/Azure-Samples/azure-cli-samples/blob/master/virtual-machine/copy-managed-disks-to-same-or-different-subscription/copy-managed-disks-to-same-or-different-subscription.sh'
-            - name: Een moment opname naar hetzelfde of een ander abonnement kopiëren
+            - name: Een momentopname kopiëren naar hetzelfde of een ander abonnement
               href: /previous-versions/azure/virtual-machines/scripts/virtual-machines-cli-sample-copy-managed-disks-to-same-or-different-subscription
             - name: Een momentopname als VHD exporteren naar een opslagaccount
               href: /previous-versions/azure/virtual-machines/scripts/virtual-machines-cli-sample-copy-snapshot-to-storage-account
-            - name: Een beheerde schijf als VHD exporteren naar een opslag account
+            - name: Een beheerde schijf als een VHD exporteren naar een opslagaccount
               href: /previous-versions/azure/virtual-machines/scripts/virtual-machines-cli-sample-copy-snapshot-to-storage-account
         - name: PowerShell
           items:
@@ -1277,11 +1279,11 @@
               href: /previous-versions/azure/virtual-machines/scripts/virtual-machines-powershell-sample-create-snapshot-from-vhd
             - name: Een beheerde schijf maken op basis van een momentopname
               href: /previous-versions/azure/virtual-machines/scripts/virtual-machines-powershell-sample-create-managed-disk-from-snapshot
-            - name: Een moment opname naar hetzelfde of een ander abonnement kopiëren
+            - name: Een momentopname kopiëren naar hetzelfde of een ander abonnement
               href: /previous-versions/azure/virtual-machines/scripts/virtual-machines-powershell-sample-copy-snapshot-to-same-or-different-subscription
             - name: Een momentopname als VHD exporteren naar een opslagaccount
               href: /previous-versions/azure/virtual-machines/scripts/virtual-machines-powershell-sample-copy-snapshot-to-storage-account
-            - name: Een beheerde schijf als VHD exporteren naar een opslag account
+            - name: Een beheerde schijf als een VHD exporteren naar een opslagaccount
               href: /previous-versions/azure/virtual-machines/scripts/virtual-machines-powershell-sample-copy-managed-disks-vhd
             - name: Een momentopname maken van een VHD
               href: /previous-versions/azure/virtual-machines/scripts/virtual-machines-powershell-sample-create-snapshot-from-vhd
@@ -1305,14 +1307,14 @@
           href: ./windows/nsg-quickstart-portal.md
     - name: Een openbaar IP-adres toewijzen
       href: ../virtual-network/virtual-network-deploy-static-pip-arm-cli.md?context=/azure/virtual-machines/context/context
-    - name: Een aangepaste domein naam gebruiken
+    - name: Een aangepaste domeinnaam gebruiken
       href: custom-domain.md
     - name: Meerdere NIC's gebruiken
       items:
         - name: Linux met CLI
           displayName: Use multipe NICs
           href: ./linux/multiple-nics.md
-        - name: Windows met Power shell
+        - name: Windows met Behulp van PowerShell
           displayName: Use multipe NICs
           href: ./windows/multiple-nics.md
     - name: Versneld netwerken gebruiken
@@ -1342,7 +1344,7 @@
           href: ./windows/security-baseline.md
     - name: Aanbevelingen
       href: security-recommendations.md
-    - name: Vertrouwde start
+    - name: Vertrouwd starten
       items:
         - name: Overzicht
           href: trusted-launch.md
@@ -1356,7 +1358,7 @@
         - name: Overzicht
           displayName: Azure Policy
           href: security-policy.md
-        - name: Besturings elementen op beleid
+        - name: Besturingselementen op beleid
           displayName: 'regulatory, compliance, standards, domains'
           href: security-controls-policy.md
         - name: Naslaginformatie over beleid
@@ -1403,7 +1405,7 @@
               href: ./windows/key-vault-setup.md
     - name: Speculatieve uitvoering beperken
       href: mitigate-se.md
-    - name: Een Linux-VM toevoegen aan Azure Active Directory
+    - name: Een Linux-VM aan een Azure Active Directory
       displayName: Azure AD
       items:
         - name: Red Hat Enterprise Linux
@@ -1435,19 +1437,19 @@
         - name: Azure-SDK's
           displayName: Configured managed identies
           href: ../active-directory/managed-identities-azure-resources/qs-configure-sdk-windows-vm.md?context=/azure/virtual-machines/context/context
-    - name: Aanmelden voor Linux Active Directory
+    - name: Aanmelden bij Linux Active Directory
       href: ./linux/login-using-aad.md
 - name: Updates en onderhoud
   items:
     - name: Overzicht
       displayName: Updates and maintenance
       href: updates-maintenance-overview.md
-    - name: Upgrade van automatische installatie kopie van besturings systeem
+    - name: Automatische upgrade van besturingssysteemafbeelding
       items:
         - name: Overzicht
           displayName: 'Automatic OS image upgrade, image, upgrade, OS'
           href: ../virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade.md?context=/azure/virtual-machines/context/context
-        - name: Onderhouds beheer voor upgrade van installatie kopie van besturings systeem
+        - name: Onderhoudsbeheer voor upgrade van besturingssysteemafbeelding
           items:
             - name: Overzicht (Preview)
               displayName: 'Maintenance control for OS image upgrade, OS, image, upgrade'
@@ -1455,7 +1457,7 @@
             - name: PowerShell (Preview)
               displayName: 'Maintenance control for OS image upgrade, OS, image, upgrade'
               href: virtual-machine-scale-sets-maintenance-control-powershell.md
-    - name: Automatische VM-gast patches (preview-versie)
+    - name: Automatische VM-gastpatching (preview)
       items:
         - name: Overzicht
           displayName: 'Automatic VM guest patching, guest, OS, patching'
@@ -1463,7 +1465,7 @@
         - name: Hotpatch
           displayName: 'patching, patch, update'
           href: ../automanage/automanage-hotpatch.md?context=/azure/virtual-machines/context/context
-    - name: Upgrade van automatische extensie (preview-versie)
+    - name: Automatische extensie-upgrade (preview)
       href: automatic-extension-upgrade.md
     - name: Updatebeheer in Azure Automation
       href: ../automation/update-management/overview.md?context=/azure/virtual-machines/context/context
@@ -1508,7 +1510,7 @@
             - name: Windows
               displayName: Scheduled events
               href: ./windows/scheduled-events.md
-        - name: Vm's bijhouden en bijwerken
+        - name: VM's bijhouden en bijwerken
           items:
             - name: Linux
               displayName: 'update, track'
@@ -1521,7 +1523,7 @@
     - name: Overzicht
       displayName: 'Monitoring Overview, monitoring'
       href: ../azure-monitor/vm/monitor-vm-azure.md?context=%2fazure%2fvirtual-machines%2fcontext%2fcontext
-    - name: Virtuele machines bewaken
+    - name: VM's bewaken
       items:
         - name: Windows
           displayName: Monitoring VMs
@@ -1540,7 +1542,7 @@
               href: ../azure-monitor/agents/diagnostics-extension-overview.md?context=%2fazure%2fvirtual-machines%2fcontext%2fcontext
             - name: Linux-extensie voor diagnostische gegevens
               items:
-                - name: 'Versie 4,0'
+                - name: Versie 4.0
                   displayName: Linux diagnostics extension
                   href: ../virtual-machines/extensions/diagnostics-linux.md?context=/azure/virtual-machines/context/context
                 - name: Versie 3.0
@@ -1571,7 +1573,7 @@
                 - name: Aangepaste JSON-gegevens
                   displayName: 'Data sources, log Analytics'
                   href: ../azure-monitor/agents/data-sources-json.md?context=/azure/virtual-machines/context/context
-                - name: prestatie gegevens verzamelen
+                - name: prestatiegegevens verzamelen
                   displayName: 'Data sources, log Analytics'
                   href: ../azure-monitor/agents/data-sources-collectd.md?context=/azure/virtual-machines/context/context
                 - name: Syslog
@@ -1677,7 +1679,7 @@
     - name: Overzicht
       displayName: Backup and recovery
       href: backup-recovery.md
-    - name: Service onderbrekingen
+    - name: Serviceonderbrekingen
       href: virtual-machines-disaster-recovery-guidance.md
     - name: Back-ups maken van virtuele machines
       items:
@@ -1726,7 +1728,7 @@
               href: ./windows/tutorial-disaster-recovery.md
         - name: Failover van een virtuele machine naar een andere regio uitvoeren
           href: ../site-recovery/azure-to-azure-tutorial-failover-failback.md
-        - name: Een virtuele machine terugsturen naar de primaire regio
+        - name: Een failback van een VM naar de primaire regio
           href: ../site-recovery/azure-to-azure-tutorial-failback.md
     - name: Virtuele machines verplaatsen en migreren
       items:
@@ -1738,7 +1740,7 @@
             - name: PowerShell
               displayName: Change subscription or resource group
               href: ./windows/move-vm.md
-            - name: Abonnement voor Marketplace-Vm's wijzigen
+            - name: Abonnement voor Marketplace-VM's wijzigen
               displayName: Change subscription or resource group
               href: azure-cli-change-subscription-marketplace.md
         - name: Virtuele machines naar een andere regio verplaatsen
@@ -1798,17 +1800,17 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Voorbeelden
       items:
-        - name: Azure CLI-voor beelden opslag plaats
+        - name: Azure CLI-voorbeelden-repo
           href: 'https://github.com/Azure-Samples/azure-cli-samples/tree/master/virtual-machine'
-        - name: Power shell-voor beelden opslag plaats
+        - name: PowerShell-voorbeelden-repo
           href: 'https://github.com/Azure/azure-docs-powershell-samples/tree/master/virtual-machine'
     - name: Algemene CLI-opdrachten
       href: ./linux/cli-manage.md
-    - name: Algemene Power shell-opdrachten
+    - name: Algemene PowerShell-opdrachten
       href: ./windows/ps-common-ref.md
-    - name: Common Networking Power shell-opdrachten
+    - name: Algemene PowerShell-opdrachten voor netwerken
       href: ./windows/ps-common-network-ref.md
-    - name: VM-sjabloon beschrijving
+    - name: Beschrijving van VM-sjabloon
       href: ./windows/template-description.md
     - name: Klassieke implementaties
       items:

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 4/07/2021
 ms.author: terrylan
-ms.openlocfilehash: be270383b868abb7e2865920f4a3852e2f6210dc
-ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
+ms.openlocfilehash: 3ea3c2bcb878dbd8a712e6076dda09853f55e297
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107031374"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107310339"
 ---
 # <a name="end-to-end-security-in-azure"></a>End-to-end beveiliging in azure
 Een van de beste redenen om Azure te gebruiken voor uw toepassingen en services is om te profiteren van de uitgebreide reeks beveiligings Programma's en-mogelijkheden. Met deze hulpprogram ma's en mogelijkheden kunt u beveiligde oplossingen maken op het beveiligde Azure-platform. Microsoft Azure biedt vertrouwelijkheid, integriteit en beschik baarheid van klant gegevens, terwijl ook transparante verantwoording wordt ingeschakeld.
@@ -63,8 +63,8 @@ Het [Azure Security Bench Mark](../benchmarks/introduction.md) -programma bevat 
 | [Azure DDoS Protection Standard](../../ddos-protection/ddos-protection-overview.md) | Biedt verbeterde DDoS-beperkings functies voor het beschermen tegen DDoS-aanvallen. Het wordt automatisch afgestemd om uw specifieke Azure-resources in een virtueel netwerk te beveiligen. |
 | [Azure Front Door](../../frontdoor/front-door-overview.md) | Een wereld wijd schaalbaar ingangs punt dat gebruikmaakt van het wereld wijde Edge-netwerk van micro soft om snelle, veilige en zeer schaal bare webtoepassingen te maken. |
 | [Azure Firewall](../../firewall/overview.md) | Een beheerde, Cloud service voor netwerk beveiliging die uw Azure Virtual Network-Resources beveiligt. Het is een volledige stateful firewall als een service met ingebouwde hoge beschikbaarheid en onbeperkte cloudschaalbaarheid. |
-| [Azure Key Vault](../../key-vault/general/overview.md) | Een beheerde, Cloud service voor netwerk beveiliging die uw Azure Virtual Network-Resources beveiligt. Het is een volledige stateful firewall als een service met ingebouwde hoge beschikbaarheid en onbeperkte cloudschaalbaarheid. |
-| [Beheerde HSDM Key Vault (preview-versie)](../../key-vault/managed-hsm/overview.md) | Een volledig beheerde, Maxi maal beschik bare, met standaarden compatibele Cloud service met één Tenant waarmee u cryptografische sleutels voor uw Cloud toepassingen kunt beveiligen met behulp van FIPS 140-2 level 3-gevalideerde Hsm's. |
+| [Azure Key Vault](../../key-vault/general/overview.md) | Een beveiligde geheimen opslag voor tokens, wacht woorden, certificaten, API-sleutels en andere geheimen. Key Vault kan ook worden gebruikt voor het maken en beheren van de versleutelings sleutels die worden gebruikt voor het versleutelen van uw gegevens. |
+| [Beheerde HSM Key Vault (preview-versie)](../../key-vault/managed-hsm/overview.md) | Een volledig beheerde, Maxi maal beschik bare, met standaarden compatibele Cloud service met één Tenant waarmee u cryptografische sleutels voor uw Cloud toepassingen kunt beveiligen met behulp van FIPS 140-2 level 3-gevalideerde Hsm's. |
 | [Azure Private Link](../../private-link/private-link-overview.md) | Met kunt u toegang krijgen tot Azure PaaS-Services (bijvoorbeeld Azure Storage en SQL Database) en Azure gehoste klant-eigendom/partner services via een persoonlijk eind punt in uw virtuele netwerk. |
 | [Azure Application Gateway](../../application-gateway/overview.md) | Een geavanceerd webverkeer load balancer waarmee u verkeer naar uw webtoepassingen kunt beheren. Application Gateway kan routeringsbeslissingen nemen op basis van extra kenmerken van een HTTP-aanvraag, bijvoorbeeld URI-pad of hostheaders. |
 | [Azure Service Bus](../../service-bus-messaging/service-bus-messaging-overview.md) | Een volledig beheerde Enter prise Message Broker met berichten wachtrijen en onderwerpen over publiceren/abonneren. Service Bus wordt gebruikt voor het loskoppelen van toepassingen en services van elkaar. |

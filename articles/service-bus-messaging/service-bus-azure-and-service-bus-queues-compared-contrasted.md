@@ -2,13 +2,13 @@
 title: Azure Storage- en Service Bus-wachtrijen vergelijken
 description: Analyseer verschillen en overeenkomsten tussen twee typen wacht rijen die door Azure worden aangeboden.
 ms.topic: article
-ms.date: 11/04/2020
-ms.openlocfilehash: 31992aa2012009c51cbeae78010ae8ced65fc872
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/12/2021
+ms.openlocfilehash: 1c3b0fda12d5e301b17a342c5d5ed11ab76c76da
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96928304"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107304355"
 ---
 # <a name="storage-queues-and-service-bus-queues---compared-and-contrasted"></a>Storage Queues and Service Bus Queues - Compared and Contrasted (Storage-wachtrijen en Service Bus-wachtrijen: overeenkomsten en verschillen)
 In dit artikel worden de verschillen en overeenkomsten geanalyseerd tussen de twee typen wacht rijen die worden aangeboden door Microsoft Azure: opslag wachtrijen en Service Bus wacht rijen. Met behulp van deze informatie kunt u een beter gefundeerde beslissing nemen over welke oplossing het beste aan uw behoeften voldoet.
@@ -39,7 +39,7 @@ Als oplossings architect/ontwikkelaar **kunt u overwegen service bus-wacht rijen
 * Uw oplossing moet berichten ontvangen zonder dat de wachtrij moet worden gecontroleerd. Met Service Bus kunt u het verkrijgen met behulp van een lange polling-ontvangst bewerking met behulp van de TCP-protocollen die Service Bus ondersteunt.
 * Voor uw oplossing moet de wachtrij een gegarandeerde, First-in-first-out (FIFO) bestelde levering bieden.
 * Uw oplossing moet ondersteuning bieden voor automatische duplicaten detectie.
-* U wilt dat uw toepassing berichten verwerkt als parallelle, langlopende streams (berichten worden gekoppeld aan een stroom met behulp van de eigenschap [SessionId](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.sessionid) in het bericht). In dit model maakt elk knoop punt in de verbruiks toepassing concurrentie voor streams, in tegens telling tot berichten. Wanneer een stroom aan een verbruikt knoop punt wordt gegeven, kan het knoop punt de status van de status van de toepassings stroom controleren met behulp van trans acties.
+* U wilt dat uw toepassing berichten verwerkt als parallelle, langlopende streams (berichten worden gekoppeld aan een stroom met behulp van de eigenschap **sessie-id** in het bericht). In dit model maakt elk knoop punt in de verbruiks toepassing concurrentie voor streams, in tegens telling tot berichten. Wanneer een stroom aan een verbruikt knoop punt wordt gegeven, kan het knoop punt de status van de status van de toepassings stroom controleren met behulp van trans acties.
 * Uw oplossing vereist transactie gedrag en atomiciteit bij het verzenden of ontvangen van meerdere berichten vanuit een wachtrij.
 * Uw toepassing verwerkt berichten die 64 KB kunnen overschrijden, maar niet waarschijnlijk de limiet van 256 KB.
 * U hebt een vereiste voor het leveren van een op rollen gebaseerd toegangs model voor de wacht rijen en andere rechten/machtigingen voor afzenders en ontvangers. Raadpleeg voor meer informatie de volgende artikelen:
@@ -59,17 +59,17 @@ In deze sectie worden enkele van de fundamentele wachtrij mogelijkheden van opsl
 
 | Vergelijkings criteria | Opslagwachtrijen | Service Bus-wachtrijen |
 | --- | --- | --- |
-| Garantie best Ellen |**Nee** <br/><br>Zie de eerste opmerking in het gedeelte met [aanvullende informatie](#additional-information) voor meer informatie.</br> | **Ja, eerst-in-first-out (FIFO)**<br/><br>(door het gebruik van [bericht sessies](message-sessions.md)) |
+| Garantie best Ellen |**Nee** <br/><br>Zie de eerste opmerking in het gedeelte met [aanvullende informatie](#additional-information) voor meer informatie.</br> | **Ja, eerst-in-first-out (FIFO)**<br/><br>(met behulp van [bericht sessies](message-sessions.md)) |
 | Leverings garantie |**Mini maal één keer** |**Mini maal één keer** (met behulp van de PeekLock-ontvangst modus). Dit is de standaard instelling) <br/><br/>**Mini maal één keer** (met behulp van de ReceiveAndDelete-ontvangst modus) <br/> <br/> Meer informatie over verschillende [ontvangst modi](service-bus-queues-topics-subscriptions.md#receive-modes)  |
 | Ondersteuning voor atomische bewerkingen |**Nee** |**Ja**<br/><br/> |
-| Gedrag ontvangen |**Niet blok keren**<br/><br/>(wordt direct uitgevoerd als er geen nieuw bericht wordt gevonden) |**Blok keren met of zonder time-out**<br/><br/>(biedt lange polling of de [' Comet-techniek '](https://go.microsoft.com/fwlink/?LinkId=613759))<br/><br/>**Niet blok keren**<br/><br/>(alleen met behulp van .NET Managed API) |
-| Push-stijl-API |**Nee** |**Ja**<br/><br/>[QueueClient. OnMessage](/dotnet/api/microsoft.servicebus.messaging.queueclient.onmessage#Microsoft_ServiceBus_Messaging_QueueClient_OnMessage_System_Action_Microsoft_ServiceBus_Messaging_BrokeredMessage__) en [MessageSessionHandler. ONMESSAGE](/dotnet/api/microsoft.servicebus.messaging.messagesessionhandler.onmessage#Microsoft_ServiceBus_Messaging_MessageSessionHandler_OnMessage_Microsoft_ServiceBus_Messaging_MessageSession_Microsoft_ServiceBus_Messaging_BrokeredMessage__) sessies .net API. |
+| Gedrag ontvangen |**Niet blok keren**<br/><br/>(wordt direct uitgevoerd als er geen nieuw bericht wordt gevonden) |**Blok keren met of zonder time-out**<br/><br/>(biedt lange polling of de [' Comet-techniek '](https://go.microsoft.com/fwlink/?LinkId=613759))<br/><br/>**Niet blok keren**<br/><br/>(alleen .NET Managed API gebruiken) |
+| Push-stijl-API |**Nee** |**Ja**<br/><br/>Onze .NET-, Java-, java script-en go-Sdk's bieden een push-stijl-API. |
 | Ontvangst modus |**& lease bekijken** |**& vergrendeling bekijken**<br/><br/>**Ontvangen & verwijderen** |
 | Modus voor exclusieve toegang |**Op basis van lease** |**Op basis van vergren deling** |
-| Duur van de lease en vergren deling |**30 seconden (standaard)**<br/><br/>**7 dagen (Maxi maal)** (u kunt een bericht lease vernieuwen of vrijgeven met behulp van de [UpdateMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.updatemessage) -API.) |**60 seconden (standaard)**<br/><br/>U kunt een bericht vergrendeling vernieuwen met behulp van de [RenewLock](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.renewlock#Microsoft_ServiceBus_Messaging_BrokeredMessage_RenewLock) -API. |
-| Precisie van lease/vergren deling |**Bericht niveau**<br/><br/>Elk bericht kan een andere time-outwaarde hebben, die vervolgens naar behoefte kan worden bijgewerkt tijdens het verwerken van het bericht met behulp van de [UpdateMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.updatemessage) -API. |**Wachtrij niveau**<br/><br/>(elke wachtrij heeft een vergrendelings precisie die is toegepast op alle berichten, maar u kunt de vergren deling vernieuwen met behulp van de [RenewLock](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.renewlock#Microsoft_ServiceBus_Messaging_BrokeredMessage_RenewLock) -API.) |
-| Batch ontvangen |**Ja**<br/><br/>(expliciet opgeven van het aantal berichten bij het ophalen van berichten, Maxi maal 32 berichten) |**Ja**<br/><br/>(impliciet het inschakelen van een eigenschap vooraf ophalen of expliciet door het gebruik van trans acties) |
-| Batch-verzen ding |**Nee** |**Ja**<br/><br/>(door het gebruik van trans acties of batch verwerking aan client zijde) |
+| Duur van de lease en vergren deling |**30 seconden (standaard)**<br/><br/>**7 dagen (Maxi maal)** (u kunt een bericht lease vernieuwen of vrijgeven met behulp van de [UpdateMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.updatemessage) -API.) |**30 seconden (standaard)**<br/><br/>U kunt de bericht vergrendeling voor dezelfde vergrendelings duur elke keer hand matig verlengen of gebruikmaken van de functie voor automatisch vergren delen, waarbij de client vergrendelings verlenging voor u beheert. |
+| Precisie van lease/vergren deling |**Bericht niveau**<br/><br/>Elk bericht kan een andere time-outwaarde hebben, die vervolgens naar behoefte kan worden bijgewerkt tijdens het verwerken van het bericht met behulp van de [UpdateMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.updatemessage) -API. |**Wachtrij niveau**<br/><br/>(elke wachtrij heeft een vergrendelings precisie die is toegepast op alle berichten, maar de vergren deling kan worden vernieuwd zoals beschreven in de vorige rij) |
+| Batch ontvangen |**Ja**<br/><br/>(expliciet opgeven van het aantal berichten bij het ophalen van berichten, Maxi maal 32 berichten) |**Ja**<br/><br/>(impliciet het inschakelen van een eigenschap vooraf ophalen of expliciet door gebruik te maken van trans acties) |
+| Batch-verzen ding |**Nee** |**Ja**<br/><br/>(met behulp van trans acties of batch verwerking aan client zijde) |
 
 ### <a name="additional-information"></a>Aanvullende informatie
 * Berichten in opslag wachtrijen zijn doorgaans eerst in eerste instantie, maar soms kunnen ze niet in de juiste volg orde staan. Bijvoorbeeld, wanneer de zicht baarheid-time-out van een bericht verloopt omdat een client toepassing is vastgelopen tijdens het verwerken van een bericht. Wanneer de time-out voor de zicht baarheid is verlopen, wordt het bericht weer zichtbaar in de wachtrij voor een andere werk nemer om het uit te stellen. Op dat moment kan het pas zicht bare bericht in de wachtrij worden geplaatst om het opnieuw in de wachtrij te plaatsen.
@@ -78,12 +78,12 @@ In deze sectie worden enkele van de fundamentele wachtrij mogelijkheden van opsl
     - Toepassings onderdelen loskoppelen om de schaal baarheid en tolerantie voor fouten te verhogen
     - Taak verdeling
     - Proces werk stromen bouwen.
-* Inconsistenties met betrekking tot de verwerking van berichten in de context van Service Bus sessies kunnen worden vermeden door sessie status te gebruiken om de status van de toepassing op te slaan ten opzichte van de voortgang van het verwerken van de bericht reeks van de sessie en door trans acties te gebruiken om ontvangen berichten te vereffenen en de sessie status bij te werken. Dit type consistentie functie wordt soms *precies zo gelabeld als verwerking* in de producten van andere leveranciers. Als er trans acties mislukken, zullen er uiteraard berichten opnieuw worden bezorgd en dat is de reden waarom de term niet precies voldoende is.
+* Inconsistenties met betrekking tot de verwerking van berichten in de context van Service Bus sessies kunnen worden vermeden door sessie status te gebruiken om de status van de toepassing op te slaan ten opzichte van de voortgang van het verwerken van de bericht reeks van de sessie en door trans acties te gebruiken om ontvangen berichten te vereffenen en de sessie status Dit type consistentie functie wordt soms *precies zo gelabeld als verwerking* in de producten van andere leveranciers. Als er trans acties mislukken, zullen er uiteraard berichten opnieuw worden bezorgd en dat is de reden waarom de term niet precies voldoende is.
 * Opslag wachtrijen bieden een uniform en consistent programmeer model voor wacht rijen, tabellen en BLOBs, zowel voor ontwikkel aars als voor Operations-teams.
 * Service Bus-wacht rijen bieden ondersteuning voor lokale trans acties in de context van één wachtrij.
 * De modus **ontvangen en verwijderen** die door service bus wordt ondersteund, biedt de mogelijkheid om het aantal Messa ging-bewerkingen (en de bijbehorende kosten) in Exchange te verminderen voor verlaagde leverings garantie.
 * Opslag wachtrijen bieden leases met de mogelijkheid om de leases voor berichten uit te breiden. Met deze functie kunnen werk processen korte leases op berichten onderhouden. Als een werk nemer vastloopt, kan het bericht dus snel opnieuw worden verwerkt door een andere werk nemer. Een werk nemer kan de lease ook uitbreiden in een bericht als deze langer moet worden verwerkt dan de huidige lease tijd.
-* Opslag wachtrijen bieden een time-out voor zicht baarheid die u kunt instellen op de enqueuing of de dequeuing van een bericht. U kunt ook een bericht met verschillende lease waarden tijdens runtime bijwerken en verschillende waarden voor alle berichten in dezelfde wachtrij bijwerken. Service Bus time-out voor vergren delingen worden gedefinieerd in de meta gegevens van de wachtrij. U kunt de vergren deling echter verlengen door de methode [RenewLock](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.renewlock#Microsoft_ServiceBus_Messaging_BrokeredMessage_RenewLock) aan te roepen.
+* Opslag wachtrijen bieden een time-out voor zicht baarheid die u kunt instellen op de enqueuing of de dequeuing van een bericht. U kunt ook een bericht met verschillende lease waarden tijdens runtime bijwerken en verschillende waarden voor alle berichten in dezelfde wachtrij bijwerken. Service Bus time-out voor vergren delingen worden gedefinieerd in de meta gegevens van de wachtrij. U kunt de bericht vergrendeling voor de vooraf gedefinieerde vergrendelings duur echter hand matig verlengen of de functie voor automatische vergren deling van het abonnement gebruiken waarbij de client vergrendelings verlenging voor u beheert.
 * De maximale time-out voor een blokkerende ontvangst bewerking in Service Bus wacht rijen is 24 dagen. Op REST gebaseerde time-outs hebben echter een maximum waarde van 55 seconden.
 * Door de batch verwerking aan de client zijde die door Service Bus wordt gegeven, kan een wachtrij client meerdere berichten batchgewijs in één verzend bewerking uitvoeren. Batch verwerking is alleen beschikbaar voor asynchrone verzend bewerkingen.
 * Functies zoals het maximum aantal opslag wachtrijen van 200 TB (meer bij het virtualiseren van accounts) en onbeperkte wacht rijen maken een ideaal platform voor SaaS-providers.
@@ -100,11 +100,11 @@ In deze sectie worden de geavanceerde mogelijkheden van opslag wachtrijen en Ser
 | Ondersteuning voor verontreinigd bericht |**Ja** |**Ja** |
 | In-place update |**Ja** |**Ja** |
 | Transactie logboek aan de server zijde |**Ja** |**Nee** |
-| Metrische opslag gegevens |**Ja**<br/><br/>**Minuut metrieken** bieden realtime metrische gegevens voor beschik BAARHEID, TPS, API-oproep aantallen, fout aantallen en meer. Ze zijn allemaal in realtime, geaggregeerd per minuut en worden gerapporteerd binnen een paar minuten vanaf het moment dat er zojuist een productie is uitgevoerd. Zie [informatie over Opslaganalyse metrische](/rest/api/storageservices/fileservices/About-Storage-Analytics-Metrics)gegevens voor meer informatie. |**Ja**<br/><br/>(bulk query's door het aanroepen van [GetQueues](/dotnet/api/microsoft.servicebus.namespacemanager.getqueues#Microsoft_ServiceBus_NamespaceManager_GetQueues)) |
-| Statusbeheer |**Nee** |**Ja**<br/><br/>[Micro soft. ServiceBus. Messa ging. EntityStatus. Active](/dotnet/api/microsoft.servicebus.messaging.entitystatus), [micro soft. ServiceBus. Messa ging. EntityStatus. disabled](/dotnet/api/microsoft.servicebus.messaging.entitystatus), [micro soft. ServiceBus. Messa ging. EntityStatus. SendDisabled](/dotnet/api/microsoft.servicebus.messaging.entitystatus), [micro soft. ServiceBus. Messa ging. EntityStatus. ReceiveDisabled](/dotnet/api/microsoft.servicebus.messaging.entitystatus) |
+| Metrische opslag gegevens |**Ja**<br/><br/>**Minuut metrieken** bieden realtime metrische gegevens voor beschik BAARHEID, TPS, API-oproep aantallen, fout aantallen en meer. Ze zijn allemaal in realtime, geaggregeerd per minuut en worden gerapporteerd binnen een paar minuten vanaf het moment dat er zojuist een productie is uitgevoerd. Zie [informatie over Opslaganalyse metrische](/rest/api/storageservices/fileservices/About-Storage-Analytics-Metrics)gegevens voor meer informatie. |**Ja**<br/><br/>Zie [bericht metrieken](service-bus-metrics-azure-monitor.md#message-metrics)voor informatie over metrische gegevens die door Azure service bus worden ondersteund. |
+| Statusbeheer |**Nee** |**Ja** (actief, uitgeschakeld, SendDisabled, ReceiveDisabled. Zie [wachtrij status](entity-suspend.md#queue-status)voor meer informatie over deze statussen. |
 | Bericht voor het door sturen van berichten |**Nee** |**Ja** |
 | Wachtrij functie leegmaken |**Ja** |**Nee** |
-| Bericht groepen |**Nee** |**Ja**<br/><br/>(door het gebruik van Messa ging-sessies) |
+| Bericht groepen |**Nee** |**Ja**<br/><br/>(met behulp van Messa ging-sessies) |
 | Toepassings status per bericht groep |**Nee** |**Ja** |
 | Detectie van duplicaten |**Nee** |**Ja**<br/><br/>(configureerbaar aan de zijde van de afzender) |
 | Bericht groepen door bladeren |**Nee** |**Ja** |
@@ -113,14 +113,14 @@ In deze sectie worden de geavanceerde mogelijkheden van opslag wachtrijen en Ser
 ### <a name="additional-information"></a>Aanvullende informatie
 * Beide Queuing-technologieën zorgen ervoor dat een bericht op een later tijdstip kan worden gepland.
 * Door het door sturen van een wachtrij kunnen duizenden wacht rijen hun berichten naar een enkele wachtrij sturen, waaruit de ontvangende toepassing het bericht verbruikt. U kunt dit mechanisme gebruiken voor de beveiliging, controle stroom en het isoleren van opslag tussen elke uitgever van berichten.
-* Opslag wachtrijen bieden ondersteuning voor het bijwerken van bericht inhoud. U kunt deze functie gebruiken voor het persistent maken van status informatie en incrementele voortgangs updates in het bericht, zodat deze kunnen worden verwerkt vanaf het laatste bekende controle punt, in plaats van helemaal vanaf het begin te beginnen. Met Service Bus wachtrijen kunt u hetzelfde scenario inschakelen via het gebruik van bericht sessies. Met sessies kunt u de verwerkings status van de toepassing opslaan en ophalen (met behulp van [SetState](/dotnet/api/microsoft.servicebus.messaging.messagesession.setstate#Microsoft_ServiceBus_Messaging_MessageSession_SetState_System_IO_Stream_) en [GetState](/dotnet/api/microsoft.servicebus.messaging.messagesession.getstate#Microsoft_ServiceBus_Messaging_MessageSession_GetState)).
+* Opslag wachtrijen bieden ondersteuning voor het bijwerken van bericht inhoud. U kunt deze functie gebruiken voor het persistent maken van status informatie en incrementele voortgangs updates in het bericht, zodat deze kunnen worden verwerkt vanaf het laatste bekende controle punt, in plaats van helemaal vanaf het begin te beginnen. Met Service Bus wachtrijen kunt u hetzelfde scenario inschakelen met behulp van bericht sessies. Zie [bericht sessie status](message-sessions.md#message-session-state)voor meer informatie.
 * Service Bus wachtrijen ondersteunen [onbestelbare berichten](service-bus-dead-letter-queues.md). Dit kan handig zijn voor het isoleren van berichten die voldoen aan de volgende criteria:
     - Berichten kunnen niet worden verwerkt door de ontvangende toepassing 
     - Berichten kunnen de bestemming niet bereiken vanwege een verlopen TTL-eigenschap (time-to-Live). De TTL-waarde geeft aan hoe lang een bericht in de wachtrij blijft. Met Service Bus wordt het bericht verplaatst naar een speciale wachtrij met de naam $DeadLetterQueue wanneer de TTL-periode verloopt.
 * Als u ' Poison ' berichten in de opslag wachtrijen wilt vinden, controleert de toepassing de eigenschap [DequeueCount](/dotnet/api/microsoft.azure.storage.queue.cloudqueuemessage.dequeuecount) van het bericht wanneer een bericht wordt overgezet. Als **DequeueCount** groter is dan een bepaalde drempel waarde, verplaatst de toepassing het bericht naar een door de toepassing gedefinieerde wachtrij voor onbestelbare berichten.
 * Met opslag wachtrijen kunt u een gedetailleerd logboek ophalen van alle trans acties die worden uitgevoerd op de wachtrij en statistische gegevens. Beide opties zijn handig voor het opsporen van fouten en het gebruik van de opslag wachtrijen in uw toepassing. Ze zijn ook handig voor het afstemmen van de prestaties van uw toepassing en het verminderen van de kosten voor het gebruik van wacht rijen.
-* Bericht sessies die door Service Bus worden ondersteund, kunnen berichten die deel uitmaken van een logische groep, aan een ontvanger worden gekoppeld. Er wordt een sessie-like-affiniteit gemaakt tussen berichten en hun respectieve ontvangers. U kunt deze geavanceerde functionaliteit in Service Bus inschakelen door de eigenschap [SessionID](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.sessionid#Microsoft_ServiceBus_Messaging_BrokeredMessage_SessionId) van een bericht in te stellen. Ontvangers kunnen vervolgens Luis teren naar een specifieke sessie-ID en berichten ontvangen die de opgegeven sessie-id delen.
-* De functie duplicaten detectie van Service Bus wachtrijen verwijdert automatisch dubbele berichten die naar een wachtrij of onderwerp worden verzonden, op basis van de waarde van de eigenschap [MessageId](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.messageid#Microsoft_ServiceBus_Messaging_BrokeredMessage_MessageId) .
+* [Bericht sessies](message-sessions.md) die door service bus worden ondersteund, kunnen berichten die deel uitmaken van een logische groep, aan een ontvanger worden gekoppeld. Er wordt een sessie-like-affiniteit gemaakt tussen berichten en hun respectieve ontvangers. U kunt deze geavanceerde functionaliteit in Service Bus inschakelen door de eigenschap sessie-ID in te stellen voor een bericht. Ontvangers kunnen vervolgens Luis teren naar een specifieke sessie-ID en berichten ontvangen die de opgegeven sessie-id delen.
+* De duplicatie detectie functie van Service Bus wachtrijen verwijdert automatisch dubbele berichten die naar een wachtrij of onderwerp worden verzonden, op basis van de waarde van de eigenschap bericht-ID.
 
 ## <a name="capacity-and-quotas"></a>Capaciteit en quota's
 In deze sectie worden opslag wachtrijen en Service Bus wachtrijen vergeleken met het perspectief van de [capaciteit en quota's](service-bus-quotas.md) die van toepassing kunnen zijn.
@@ -172,14 +172,14 @@ In deze sectie worden de verificatie-en autorisatie functies beschreven die word
 | --- | --- | --- |
 | Verificatie |**Symmetrische sleutel** |**Symmetrische sleutel** |
 | Beveiligingsmodel |Gedelegeerde toegang via SAS-tokens. |SAS |
-| Federatie van ID-provider |**Nee** |**Ja** |
+| Federatie van ID-provider |**Ja** |**Ja** |
 
 ### <a name="additional-information"></a>Aanvullende informatie
 * Elke aanvraag aan een van de Queuing-technologieën moet worden geverifieerd. Open bare wacht rijen met anonieme toegang worden niet ondersteund. Met [SAS](service-bus-sas.md)kunt u dit scenario aanpakken door een alleen-schrijven SAS, alleen-lezen sa's of zelfs een SAS met volledige toegang te publiceren.
 * Het verificatie schema dat door de opslag wachtrijen wordt verschaft, bestaat uit het gebruik van een symmetrische sleutel. Deze sleutel is een op hash gebaseerde Message Authentication Code (HMAC), berekend met het algoritme SHA-256 en is gecodeerd als **Base64** -teken reeks. Zie [verificatie voor de Azure Storage services](/rest/api/storageservices/fileservices/Authentication-for-the-Azure-Storage-Services)voor meer informatie over het betreffende protocol. Service Bus-wacht rijen bieden ondersteuning voor een vergelijkbaar model met behulp van symmetrische sleutels. Zie [Shared Access Signature Authentication with Service Bus](service-bus-sas.md)(Engelstalig) voor meer informatie.
 
 ## <a name="conclusion"></a>Conclusie
-Door meer inzicht te krijgen in de twee technologieën, kunt u een beter gefundeerde beslissing nemen over welke wachtrij technologie u moet gebruiken en wanneer. De beslissing over het gebruik van opslag wachtrijen of Service Bus wacht rijen is duidelijk afhankelijk van een aantal factoren. Deze factoren kunnen afhankelijk zijn van de individuele behoeften van uw toepassing en de bijbehorende architectuur. 
+Door meer inzicht te krijgen in de twee technologieën, kunt u een beter gefundeerde beslissing nemen over welke wachtrij technologie u moet gebruiken en wanneer. De beslissing over het gebruik van opslag wachtrijen of Service Bus wacht rijen is duidelijk afhankelijk van een groot aantal factoren. Deze factoren kunnen afhankelijk zijn van de individuele behoeften van uw toepassing en de bijbehorende architectuur. 
 
 U kunt de voor keur geven aan opslag wachtrijen om redenen als de volgende:
 
@@ -187,7 +187,7 @@ U kunt de voor keur geven aan opslag wachtrijen om redenen als de volgende:
 - Als u basis communicatie en berichten tussen services nodig hebt 
 - Er zijn wacht rijen nodig die groter kunnen zijn dan 80 GB
 
-Service Bus wachtrijen bieden een aantal geavanceerde functies zoals de volgende. Daarom is het mogelijk een voorkeurs keuze als u een hybride toepassing bouwt of als uw toepassing anders deze functies nodig heeft.
+Service Bus wachtrijen bieden een groot aantal geavanceerde functies zoals de volgende. Daarom is het mogelijk een voorkeurs keuze als u een hybride toepassing bouwt of als uw toepassing anders deze functies nodig heeft.
 
 - [Sessies](message-sessions.md)
 - [Transacties](service-bus-transactions.md)

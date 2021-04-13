@@ -7,12 +7,12 @@ author: vikancha-MSFT
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: vikancha
-ms.openlocfilehash: d73bd81f15263c79e16b574eb961d4ae0ac61175
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 2e10177de1a40bf7ece7acde43a91686bd4c98e5
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103417804"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107306446"
 ---
 # <a name="ncast4_v3-series"></a>NCasT4_v3-series 
 
@@ -23,12 +23,13 @@ De virtuele machines uit de NCasT4_v3-serie worden aangedreven door [Nvidia Tesl
 [ACU](acu.md): 230-260<br>
 [Premium Storage](premium-storage-performance.md): ondersteund<br>
 [Premium Storage caching](premium-storage-performance.md): ondersteund<br>
+[Ultra schijven](disks-types.md#ultra-disk): ondersteund ([meer informatie](https://techcommunity.microsoft.com/t5/azure-compute/ultra-disk-storage-for-hpc-and-gpu-vms/ba-p/2189312) over beschik baarheid, gebruik en prestaties) <br>
 [Livemigratie](maintenance-and-updates.md): niet ondersteund<br>
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
 [Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
 [Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): niet ondersteund <br>
-NVIDIA NVLink Interconnect: ondersteund<br>
+NVIDIA NVLink Interconnect: niet ondersteund<br>
 <br>
 
 | Grootte | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | GPU | GPU-geheugen: GiB | Max. aantal gegevensschijven | Maximum aantal Nic's/verwachte netwerk bandbreedte (Mbps) |

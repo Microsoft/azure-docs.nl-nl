@@ -10,16 +10,16 @@ ms.date: 04/08/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: f104b98c870fe6eee1d32fe656c0bba416cf3700
-ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
+ms.openlocfilehash: 268de3e8ea168ac721362d42149389b9f37c86fe
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "107259741"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107305052"
 ---
 # <a name="blob-versioning"></a>BLOB-versie beheer
 
-U kunt versie beheer van Blob Storage inschakelen om automatisch eerdere versies van een object te onderhouden.  Wanneer BLOB-versie beheer is ingeschakeld, kunt u een eerdere versie van een BLOB herstellen om uw gegevens te herstellen als deze ten onrechte zijn gewijzigd of verwijderd.
+U kunt versie beheer van Blob Storage inschakelen om automatisch eerdere versies van een object te onderhouden. Wanneer BLOB-versie beheer is ingeschakeld, kunt u een eerdere versie van een BLOB herstellen om uw gegevens te herstellen als deze ten onrechte zijn gewijzigd of verwijderd.
 
 [!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
 
@@ -35,21 +35,21 @@ Zie [overzicht van gegevens beveiliging](data-protection-overview.md)voor meer i
 
 ## <a name="how-blob-versioning-works"></a>Hoe BLOB versie beheer werkt
 
-Een versie legt de status van een BLOB op een bepaald moment vast. Wanneer BLOB-versie beheer is ingeschakeld voor een opslag account, maakt Azure Storage automatisch een nieuwe versie van een BLOB wanneer die BLOB wordt gewijzigd.
+Een versie legt de status van een BLOB op een bepaald moment vast. Elke versie wordt aangeduid met een versie-ID. Wanneer BLOB-versie beheer is ingeschakeld voor een opslag account, maakt Azure Storage automatisch een nieuwe versie met een unieke ID wanneer een BLOB voor het eerst wordt gemaakt en elke keer dat de BLOB vervolgens wordt gewijzigd.
 
-Wanneer u een BLOB maakt waarvoor versie beheer is ingeschakeld, is de nieuwe BLOB de huidige versie van de BLOB (of de basis-blob). Als u deze BLOB vervolgens wijzigt, maakt Azure Storage een versie die de status van de BLOB vastlegt voordat deze is gewijzigd. De gewijzigde BLOB wordt de nieuwe huidige versie. Telkens wanneer u de BLOB wijzigt, wordt een nieuwe versie gemaakt.
+Met een versie-ID kan de huidige versie of een vorige versie worden geïdentificeerd. Een BLOB kan slechts één huidige versie tegelijk hebben.
+
+Wanneer u een nieuwe BLOB maakt, bestaat er één versie en de versie is de huidige versie. Wanneer u een bestaande BLOB wijzigt, wordt de huidige versie een vorige versie. Er wordt een nieuwe versie gemaakt om de bijgewerkte status vast te leggen en de nieuwe versie is de huidige versie. Wanneer u een BLOB verwijdert, wordt de huidige versie van de BLOB een vorige versie en is er geen actuele versie meer. Eerdere versies van de BLOB blijven behouden.
 
 In het volgende diagram ziet u hoe versies worden gemaakt voor schrijf bewerkingen en hoe een eerdere versie kan worden gepromoveerd tot de huidige versie:
 
 :::image type="content" source="media/versioning-overview/blob-versioning-diagram.png" alt-text="Diagram waarin wordt weer gegeven hoe BLOB versie beheer werkt":::
 
-Wanneer u een BLOB verwijdert waarvoor versie beheer is ingeschakeld, wordt de huidige versie van de BLOB een vorige versie en is er geen actuele versie meer. Eerdere versies van de BLOB blijven behouden.
-
 BLOB-versies zijn onveranderbaar. U kunt de inhoud of meta gegevens van een bestaande BLOB-versie niet wijzigen.
 
 Een groot aantal versies per Blob kan de latentie verhogen voor bewerkingen in BLOB-vermeldingen. Micro soft raadt aan om minder dan 1000 versies per BLOB te onderhouden. U kunt levenscyclus beheer gebruiken om oude versies automatisch te verwijderen. Zie [kosten optimaliseren door Azure Blob Storage Access-lagen te automatiseren](storage-lifecycle-management-concepts.md)voor meer informatie over levenscyclus beheer.
 
-BLOB-versie beheer is beschikbaar voor algemeen gebruik v2-, blok-Blob-en Blob Storage-accounts. Opslag accounts met een hiërarchische naam ruimte die is ingeschakeld voor gebruik met Azure Data Lake Storage Gen2 worden momenteel niet ondersteund.
+BLOB-versie beheer is beschikbaar voor standaard v2-, Premium-en verouderde Blob Storage-accounts voor algemeen gebruik. Opslag accounts met een hiërarchische naam ruimte die is ingeschakeld voor gebruik met Azure Data Lake Storage Gen2 worden momenteel niet ondersteund.
 
 Versie 2019-10-10 en hoger van de Azure Storage REST API ondersteunt BLOB-versie beheer.
 
@@ -58,9 +58,9 @@ Versie 2019-10-10 en hoger van de Azure Storage REST API ondersteunt BLOB-versie
 
 ### <a name="version-id"></a>Versie-ID
 
-Elke BLOB-versie wordt geïdentificeerd met een versie-ID. De waarde van de versie-ID is het tijds tempel waarop de blob is bijgewerkt. De versie-ID wordt toegewezen op het moment dat de versie wordt gemaakt.
+Elke BLOB-versie wordt geïdentificeerd aan de hand van een unieke versie-ID. De waarde van de versie-ID is het tijds tempel waarop de blob is bijgewerkt. De versie-ID wordt toegewezen op het moment dat de versie wordt gemaakt.
 
-U kunt een lees-of verwijder bewerking uitvoeren op een specifieke versie van een BLOB door de versie-ID op te geven. Als u de versie-ID weglaat, wordt de bewerking uitgevoerd op basis van de huidige versie (de basis-blob).
+U kunt een lees-of verwijder bewerking uitvoeren op een specifieke versie van een BLOB door de versie-ID op te geven. Als u de versie-ID weglaat, wordt de bewerking uitgevoerd op basis van de huidige versie.
 
 Wanneer u een schrijf bewerking aanroept voor het maken of wijzigen van een blob, retourneert Azure Storage de *x-MS-versie-id* -header in het antwoord. Deze header bevat de versie-ID voor de huidige versie van de blob die is gemaakt door de schrijf bewerking.
 
@@ -70,11 +70,9 @@ De versie-ID blijft hetzelfde voor de levens duur van de versie.
 
 Wanneer BLOB-versie beheer is ingeschakeld, maakt elke schrijf bewerking naar een BLOB een nieuwe versie. Schrijf bewerkingen zijn onder andere [put-BLOB](/rest/api/storageservices/put-blob), [blokkerings lijst plaatsen](/rest/api/storageservices/put-block-list), [BLOB kopiëren](/rest/api/storageservices/copy-blob)en [BLOB-meta gegevens instellen](/rest/api/storageservices/set-blob-metadata).
 
-Als de schrijf bewerking een nieuwe BLOB maakt, is de resulterende BLOB de huidige versie van de blob. Als de schrijf bewerking een bestaande BLOB wijzigt, worden de nieuwe gegevens vastgelegd in de bijgewerkte blob, wat de huidige versie is, en maakt Azure Storage een versie die de vorige status van de BLOB opslaat.
+Als de schrijf bewerking een nieuwe BLOB maakt, is de resulterende BLOB de huidige versie van de blob. Als de schrijf bewerking een bestaande BLOB wijzigt, wordt de huidige versie een vorige versie en wordt er een nieuwe huidige versie gemaakt om de bijgewerkte BLOB vast te leggen.
 
-Ter vereenvoudiging wordt de versie-ID als een eenvoudige integer weer gegeven in de diagrammen die in dit artikel worden weer gegeven. In werkelijkheid is de versie-ID een tijds tempel. De huidige versie wordt weer gegeven in blauw en eerdere versies worden grijs weer gegeven.
-
-In het volgende diagram ziet u hoe schrijf bewerkingen van invloed zijn op BLOB-versies. Wanneer een BLOB wordt gemaakt, is die BLOB de huidige versie. Wanneer dezelfde BLOB wordt gewijzigd, wordt een nieuwe versie gemaakt om de vorige status van de BLOB op te slaan en wordt de bijgewerkte BLOB de huidige versie.
+In het volgende diagram ziet u hoe schrijf bewerkingen van invloed zijn op BLOB-versies. Ter vereenvoudiging wordt de versie-ID als een eenvoudige integer weer gegeven in de diagrammen die in dit artikel worden weer gegeven. In werkelijkheid is de versie-ID een tijds tempel. De huidige versie wordt weer gegeven in blauw en eerdere versies worden grijs weer gegeven.
 
 :::image type="content" source="media/versioning-overview/write-operations-blob-versions.png" alt-text="Diagram waarin wordt weer gegeven hoe schrijf bewerkingen van invloed zijn op blobs in versie.":::
 

@@ -5,21 +5,24 @@ services: service-bus-messaging
 author: clemensv
 ms.service: service-bus-messaging
 ms.topic: include
-ms.date: 11/24/2020
+ms.date: 04/08/2021
 ms.author: clemensv
 ms.custom: include file
-ms.openlocfilehash: ca483d0b71bde945a7e46da785dd6a76b3a8f177
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 08fccf366321b075542f36b86c9bf22d5d877167
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98693393"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107304411"
 ---
-De optie AMQP-over-websockets wordt via poort TCP 443 uitgevoerd, net als de HTTP/REST API, maar is in andere gevallen hetzelfde als gewone AMQP. Deze optie heeft een iets hogere latentie van de eerste verbinding vanwege extra Handshake-retour wegen en iets meer naarmate er meer overhead is voor het delen van de HTTPS-poort. Als deze modus is ingeschakeld, is de TCP-poort 443 voldoende voor communicatie. Met de volgende opties kunt u de modus voor de AMQP of AMQP-websockets inschakelen:
+De optie AMQP-over-websockets wordt via poort TCP 443 uitgevoerd, net als de HTTP/REST API, maar is in andere gevallen hetzelfde als gewone AMQP. Deze optie heeft een hogere latentie van de eerste verbinding vanwege extra Handshake-retour wegen en iets meer naarmate er meer overhead is voor het delen van de HTTPS-poort. Als deze modus is ingeschakeld, is de TCP-poort 443 voldoende voor communicatie. Met de volgende opties kunt u de AMQP-websockets-modus selecteren. 
 
 | Taal | Optie   |
 | -------- | ----- |
-| .NET     | Eigenschap [ServiceBusConnection. transport type](/dotnet/api/microsoft.azure.servicebus.servicebusconnection.transporttype) met [transport type. AMQP](/dotnet/api/microsoft.azure.servicebus.transporttype) of [transport type. AmqpWebSockets](/dotnet/api/microsoft.azure.servicebus.transporttype) |
-| Java     | [com. micro soft. Azure. servicebus. ClientSettings](/java/api/com.microsoft.azure.servicebus.clientsettings.clientsettings) met [com. micro soft. Azure. servicebus. primitieven. transport type. AMQP](/java/api/com.microsoft.azure.servicebus.primitives.transporttype) of [com.Microsoft.Azure.servicebus.Primitives.TransportType.AMQP_WEB_SOCKETS](/java/api/com.microsoft.azure.servicebus.primitives.transporttype) |
-| Knooppunt  | [ServiceBusClientOptions](/javascript/api/@azure/service-bus/servicebusclientoptions) heeft een `webSocket` constructor-argument. |
-| Python | [ServiceBusClient.transport_type](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-servicebus/latest/azure.servicebus.html#azure.servicebus.ServiceBusClient) met [transport type. AMQP](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-servicebus/latest/azure.servicebus.html#azure.servicebus.TransportType) of [transport type. AmqpOverWebSocket](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-servicebus/latest/azure.servicebus.html#azure.servicebus.TransportType) |
+| .NET (Azure.Messaging.ServiceBus)    | Maak [ServiceBusClient](/dotnet/api/azure.messaging.servicebus.servicebusclient.-ctor) met behulp van een constructor die [ServiceBusClientOptions](/dotnet/api/azure.messaging.servicebus.servicebusclientoptions) als para meter gebruikt. Stel [ServiceBusClientOptions. transport type](/dotnet/api/azure.messaging.servicebus.servicebusclientoptions.transporttype) in op [ServiceBusTransportType. AmqpWebSockets](/dotnet/api/azure.messaging.servicebus.servicebustransporttype) |
+| .NET (Microsoft.Azure.ServiceBus)    | Gebruik bij het maken van client objecten constructors die [transport type](/dotnet/api/microsoft.azure.servicebus.transporttype), [ServiceBusConnection](/dotnet/api/microsoft.azure.servicebus.servicebusconnection)of [ServiceBusConnectionStringBuilder](/dotnet/api/microsoft.azure.servicebus.servicebusconnectionstringbuilder) als para meters gebruiken. <p>Voor de constructie die `transportType` als para meter wordt gebruikt, stelt u de para meter in op [transport type. AmqpWebSockets](/dotnet/api/microsoft.azure.servicebus.transporttype).</p> <p>Voor de constructor die `ServiceBusConnection` als para meter wordt gebruikt, stelt u de [ServiceBusConnection. transport type](/dotnet/api/microsoft.azure.servicebus.servicebusconnection.transporttype) in op [transport type. AmqpWebSockets](/dotnet/api/microsoft.azure.servicebus.transporttype).</p> <p>Als u gebruikt `ServiceBusConnectionStringBuilder` , maakt u gebruik van constructors waarmee u de kunt opgeven `transportType` .</p> |
+| Java (com. Azure. Messa ging. servicebus)     | Wanneer u clients maakt, stelt u [ServiceBusClientBuilder. transport type](/java/api/com.azure.messaging.servicebus.servicebusclientbuilder.transporttype) in op [AmqpTransportType.AMQP.AMQP_WEB_SOCKETS](/java/api/com.azure.core.amqp.amqptransporttype) |
+| Java (com. micro soft. Azure. servicebus)    | Wanneer u-clients maakt, stelt `transportType` u in [com. micro soft. Azure. Servicebus. ClientSettings](/java/api/com.microsoft.azure.servicebus.clientsettings.clientsettings#com_microsoft_azure_servicebus_ClientSettings_ClientSettings_com_microsoft_azure_servicebus_security_TokenProvider_com_microsoft_azure_servicebus_primitives_RetryPolicy_java_time_Duration_com_microsoft_azure_servicebus_primitives_TransportType_)  in op [com.Microsoft.Azure.servicebus.Primitives.TransportType.AMQP_WEB_SOCKETS](/java/api/com.microsoft.azure.servicebus.primitives.transporttype) |
+| Javascript  | Wanneer u Service Bus-client objecten maakt, gebruikt u de `webSocketOptions` eigenschap in [ServiceBusClientOptions](/javascript/api/@azure/service-bus/servicebusclientoptions). |
+| Python | Wanneer u Service Bus-clients maakt, stelt u [ServiceBusClient.transport_type](/python/api/azure-servicebus/azure.servicebus.servicebusclient) in op [transport type. AmqpOverWebSocket](/python/api/azure-servicebus/azure.servicebus.transporttype) |
+

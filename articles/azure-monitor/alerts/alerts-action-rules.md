@@ -2,13 +2,13 @@
 title: Actie regels voor Azure Monitor waarschuwingen
 description: Meer informatie over actie regels in Azure Monitor zijn en hoe u deze kunt configureren en beheren.
 ms.topic: conceptual
-ms.date: 03/15/2021
-ms.openlocfilehash: 12e7cf8e72c5423b4a2edd6ea2a0f4537e328b08
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.date: 04/08/2021
+ms.openlocfilehash: df71883d04106dd341af4571c13cc55f35a1ecc3
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105036778"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107304814"
 ---
 # <a name="action-rules-preview"></a>Actie regels (preview-versie)
 
@@ -67,7 +67,7 @@ De beschikbare filters zijn:
 
 * **Ernst**  
 Deze regel is alleen van toepassing op waarschuwingen met de geselecteerde ernst.  
-Bijvoorbeeld ' **Ernst = Sev1** ' betekent dat de regel alleen van toepassing is op waarschuwingen met de ernst Sev1.
+Bijvoorbeeld: **ernst = "Sev1"** betekent dat de regel alleen van toepassing is op waarschuwingen met de ernst Sev1.
 * **Service bewaken**  
 Deze regel is alleen van toepassing op waarschuwingen die afkomstig zijn van de geselecteerde bewakings Services.  
 Bijvoorbeeld: de **controle service = "Azure backup"** betekent dat de regel alleen van toepassing is op back-upwaarschuwingen (afkomstig van Azure backup).
@@ -79,7 +79,7 @@ Deze regel is alleen van toepassing op waarschuwingen die afkomstig zijn van een
 Bijvoorbeeld: **waarschuwings regel-id = "/Subscriptions/SubId1/resourceGroups/Rg1/providers/Microsoft.Insights/metricalerts/API-latency"** betekent dat deze regel alleen van toepassing is op waarschuwingen die afkomstig zijn van de WAARSCHUWINGS regel API-latentie.  
 _Opmerking: u kunt de juiste waarschuwings regel-ID ophalen door uw waarschuwings regels van de CLI op te geven of door een specifieke waarschuwings regel te openen in de portal, op Eigenschappen te klikken en de waarde Resource-ID te kopiëren._
 * **Bewakings voorwaarde**  
-Deze regel is alleen van toepassing op waarschuwings gebeurtenissen met de opgegeven bewakings voorwaarde-ofwel **geactiveerd** of **opgelost**.
+Deze regel is alleen van toepassing op waarschuwings gebeurtenissen met de opgegeven bewakings voorwaarde: **' geactiveerd '** of **' opgelost '**.
 * **Beschrijving**  
 Deze regel is alleen van toepassing op waarschuwingen die een specifieke teken reeks in het veld Beschrijving van waarschuwing bevatten. Dit veld bevat de beschrijving van de waarschuwings regel.  
 De **Beschrijving bevat bijvoorbeeld ' Prod '** , zodat de regel alleen overeenkomt met waarschuwingen die de teken reeks ' Prod ' in de beschrijving bevatten.
@@ -87,7 +87,14 @@ De **Beschrijving bevat bijvoorbeeld ' Prod '** , zodat de regel alleen overeenk
 Deze regel is alleen van toepassing op waarschuwingen die een of meer specifieke waarden bevatten in de context velden van de waarschuwing.  
 Bijvoorbeeld: **waarschuwings context (Payload) bevat ' computer-01 '** betekent dat de regel alleen van toepassing is op waarschuwingen waarvan de payload de teken reeks ' computer-01 ' bevat.
 
-Als u meerdere filters in een regel instelt, zijn deze allemaal van toepassing. Als u bijvoorbeeld **resource type = virtual machines** en **Ernst = Sev0** instelt, is de regel alleen van toepassing op Sev0-waarschuwingen op virtuele machines.
+> [!NOTE]
+> Elk filter kan Maxi maal vijf waarden bevatten.  
+> Een filter op de monitor service kan bijvoorbeeld bestaan uit Maxi maal vijf Monitor service namen.
+
+
+
+
+Als u meerdere filters in een regel instelt, zijn deze allemaal van toepassing. Als u bijvoorbeeld **resource type = "virtual machines"** en **ernst = "Sev0"** instelt, is de regel alleen van toepassing op Sev0-waarschuwingen op virtuele machines.
 
 ![Actie regel filters](media/alerts-action-rules/action-rules-new-rule-creation-flow-filters.png)
 

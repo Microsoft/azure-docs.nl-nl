@@ -3,12 +3,12 @@ title: Een cluster bijwerken voor het gebruik van de algemene naam van het certi
 description: Meer informatie over het converteren van een Azure Service Fabric-cluster certificaat van declaraties op basis van een vinger afdruk naar algemene namen.
 ms.topic: conceptual
 ms.date: 09/06/2019
-ms.openlocfilehash: f719b1eb39da776827c6babec61e9e6701bb4602
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: daf8d55e156f30b1f9e9ec5c50d60714e6f17884
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97900787"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107308010"
 ---
 # <a name="convert-cluster-certificates-from-thumbprint-based-declarations-to-common-names"></a>Cluster certificaten van declaraties op basis van vinger afdruk naar algemene namen converteren
 
@@ -45,7 +45,7 @@ Voor test doeleinden *kan* een zelfondertekend certificaat worden GEDECLAREERD d
 
 ## <a name="upload-the-certificate-and-install-it-in-the-scale-set"></a>Upload het certificaat en installeer het in de schaalset
 
-In azure omvat het aanbevolen mechanisme voor het verkrijgen en inrichten van certificaten Azure Key Vault en het bijbehorende hulp programma. Een certificaat dat overeenkomt met de certificaat declaratie van het cluster moet worden ingericht op elk knoop punt van de virtuele-machine schaal sets waaruit het cluster bestaat. Zie [geheimen op schaal sets voor virtuele machines](../virtual-machine-scale-sets/virtual-machine-scale-sets-faq.md#how-do-i-securely-ship-a-certificate-to-the-vm)voor meer informatie.
+In azure omvat het aanbevolen mechanisme voor het verkrijgen en inrichten van certificaten Azure Key Vault en het bijbehorende hulp programma. Een certificaat dat overeenkomt met de certificaat declaratie van het cluster moet worden ingericht op elk knoop punt van de virtuele-machine schaal sets waaruit het cluster bestaat. Zie [geheimen op schaal sets voor virtuele machines](../virtual-machine-scale-sets/virtual-machine-scale-sets-faq.yml#how-do-i-securely-ship-a-certificate-to-the-vm-)voor meer informatie.
 
 Het is belang rijk om zowel het huidige als het doel cluster certificaat te installeren op de virtuele machines van elk knooppunt type van het cluster voordat u wijzigingen aanbrengt in de certificaat verklaringen van het cluster. Het traject van certificaat uitgifte tot inrichting op een Service Fabric knoop punt wordt in [de weg van een certificaat](cluster-security-certificate-management.md#the-journey-of-a-certificate)toegelicht.
 

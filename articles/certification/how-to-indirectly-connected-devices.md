@@ -7,16 +7,16 @@ ms.author: cbroad
 ms.date: 02/23/2021
 ms.topic: how-to
 ms.service: certification
-ms.openlocfilehash: da3110b562bc5ddbd37657f31cbdd3790a13b897
-ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
+ms.openlocfilehash: 3a4fd2838c0ddf6d7d03d68f105fc59471b77dea
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105969215"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107304474"
 ---
 # <a name="device-bundles-and-indirectly-connected-devices"></a>Apparaat-en indirect verbonden apparaten
 
-Om apparaten te ondersteunen die met Azure communiceren via een apparaat, SaaS-of PaaS-aanbieding, onze inrichtings Portal ( https://www.certify.azure.com) , en de catalogus met apparaten), kunt u https://devicecatalog.azure.com) de combi natie van bundels en afhankelijkheden gebruiken om deze apparaten te promoten en in te scha kelen voor het programma Azure Certified device.
+Om apparaten te ondersteunen die met Azure communiceren via een apparaat, SaaS-of PaaS-aanbieding, onze inrichtings Portal ( https://certify.azure.com/) , en de catalogus met apparaten), kunt u https://devicecatalog.azure.com) de combi natie van bundels en afhankelijkheden gebruiken om deze apparaten te promoten en in te scha kelen voor het programma Azure Certified device.
 
 Afhankelijk van de aangeboden product lijn en services, is voor uw situatie een combi natie van de volgende stappen vereist:
 

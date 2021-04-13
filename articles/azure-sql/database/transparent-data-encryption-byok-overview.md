@@ -8,16 +8,16 @@ ms.subservice: security
 ms.custom: seo-lt-2019, azure-synapse
 ms.devlang: ''
 ms.topic: conceptual
-author: jaszymas
-ms.author: jaszymas
+author: shohamMSFT
+ms.author: shohamd
 ms.reviewer: vanto
 ms.date: 02/01/2021
-ms.openlocfilehash: e096e21e7d20c992e18634d684f663f149cc3c55
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 098d874d7de85aa7c66f92703eea9b4d12cee8df
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101691243"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107305290"
 ---
 # <a name="azure-sql-transparent-data-encryption-with-customer-managed-key"></a>Azure SQL Transparent Data Encryption met door de klant beheerde sleutels
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -86,13 +86,13 @@ Audi tors kunnen Azure Monitor gebruiken om de sleutel kluis audit event-logboek
 
 ### <a name="requirements-for-configuring-tde-protector"></a>Vereisten voor het configureren van TDE-beveiliging
 
-- TDE-Protector kan alleen asymmetrische, RSA-of RSA HSM-sleutel zijn. De ondersteunde sleutel lengten zijn 2048 en 3072 bytes.
+- TDE-Protector kan alleen asymmetrische, RSA-of RSA HSM-sleutel zijn. De ondersteunde sleutel lengten zijn 2048 bytes en 3072 bytes.
 
 - De datum en tijd waarop de sleutel wordt geactiveerd, moeten in het verleden liggen. De verval datum (indien ingesteld) moet een datum en tijd in de toekomst zijn.
 
 - De sleutel moet de *ingeschakelde* status hebben.
 
-- Als u een bestaande sleutel in de sleutel kluis importeert, moet u deze opgeven in de ondersteunde bestands indelingen (. pfx,. byok of. back-up).
+- Als u een bestaande sleutel in de sleutel kluis importeert, moet u deze opgeven in de ondersteunde bestands indelingen ( `.pfx` , `.byok` , of `.backup` ).
 
 > [!NOTE]
 > Azure SQL ondersteunt nu het gebruik van een RSA-sleutel die is opgeslagen in een beheerde HSM als TDE-Protector. Deze functie is beschikbaar als **open bare preview**. Azure Key Vault Managed HSM is een volledig beheerde, Maxi maal beschik bare, door standaarden compatibele Cloud service met één Tenant waarmee u cryptografische sleutels voor uw Cloud toepassingen kunt beveiligen met behulp van FIPS 140-2 level 3 gevalideerd Hsm's. Meer informatie over [beheerde hsm's](../../key-vault/managed-hsm/index.yml).
@@ -131,11 +131,11 @@ Wanneer transparante gegevens versleuteling is geconfigureerd voor het gebruik v
 > [!NOTE]
 > Als de data base niet toegankelijk is vanwege een onregelmatige netwerk storing, is er geen actie vereist en worden de data bases automatisch weer online gezet.
 
-Nadat de toegang tot de sleutel is hersteld, is voor de Data Base weer online extra tijd en stappen vereist, afhankelijk van de tijd die is verstreken zonder toegang tot de sleutel en de grootte van de gegevens in de Data Base:
+Nadat de toegang tot de sleutel is hersteld, is voor de Data Base weer online extra tijd en stappen vereist. deze kunnen variëren afhankelijk van de tijd die is verstreken zonder toegang tot de sleutel en de grootte van de gegevens in de Data Base:
 
-- Als de sleutel toegang binnen acht uur wordt hersteld, wordt de data base binnen het volgende uur automatisch opnieuw geactiveerd.
+- Als de sleutel toegang binnen acht uur wordt hersteld, herstelt de data base het volgende uur automatisch.
 
-- Als de sleuteltoegang na meer dan acht uur is hersteld, is automatisch herstellen niet mogelijk en zijn er voor aanvullende stappen in de portal nodig om de database weer actief te krijgen. Dit kan afhankelijk van de grootte van de database vrij lang duren. Zodra de Data Base weer online is, eerder geconfigureerde instellingen op server niveau, zoals [failover-groeps](auto-failover-group-overview.md) configuratie, punt-in-time-herstel geschiedenis en tags **gaan verloren**. Daarom is het raadzaam om een meldings systeem te implementeren waarmee u de onderliggende sleutel toegangs problemen binnen acht uur kunt identificeren en oplossen.
+- Als de sleutel toegang na meer dan acht uur wordt hersteld, is automatisch herstellen niet mogelijk en worden de data bases opnieuw ingesteld, moeten er extra stappen op de portal worden uitgevoerd. Dit kan een aanzienlijke hoeveelheid tijd duren, afhankelijk van de grootte van de data base. Zodra de Data Base weer online is, eerder geconfigureerde instellingen op server niveau, zoals [failover-groeps](auto-failover-group-overview.md) configuratie, punt-in-time-herstel geschiedenis en tags **gaan verloren**. Daarom is het raadzaam om een meldings systeem te implementeren waarmee u de onderliggende sleutel toegangs problemen binnen acht uur kunt identificeren en oplossen.
 
 Hieronder ziet u een overzicht van de extra stappen die vereist zijn op de portal om een ontoegankelijke Data Base weer online te zetten.
 
@@ -175,7 +175,7 @@ Als u een back-up wilt herstellen die is versleuteld met een TDE-Protector van K
 > [!IMPORTANT]
 > Er kan op elk moment niet meer dan één TDE-protector worden ingesteld voor een server. De sleutel is gemarkeerd met de sleutel de standaard TDE-Protector maken op de Blade Azure Portal. Meerdere extra sleutels kunnen echter aan een server worden gekoppeld zonder dat ze als een TDE-protector worden gemarkeerd. Deze sleutels worden niet gebruikt voor het beveiligen van DEK, maar kunnen worden gebruikt tijdens het terugzetten vanuit een back-up, als het back-upbestand is versleuteld met de sleutel met de bijbehorende vinger afdruk.
 
-Als de sleutel die nodig is voor het herstellen van een back-up niet langer beschikbaar is voor de doel server, wordt het volgende fout bericht weer gegeven op de herstel poging: "doel server heeft `<Servername>` geen toegang tot alle Azure-uri's die tussen en zijn gemaakt \<Timestamp #1> \<Timestamp #2> . Voer de bewerking opnieuw uit nadat alle Azure-Uri's zijn teruggezet.
+Als de sleutel die nodig is voor het herstellen van een back-up niet langer beschikbaar is voor de doel server, wordt het volgende fout bericht weer gegeven op de herstel poging: "doel server heeft `<Servername>` geen toegang tot alle Azure-uri's die tussen en zijn gemaakt \<Timestamp #1> \<Timestamp #2> . Voer de bewerking opnieuw uit na het herstellen van alle Azure-Uri's.
 
 Om het te beperken, voert u de cmdlet [Get-AzSqlServerKeyVaultKey](/powershell/module/az.sql/get-azsqlserverkeyvaultkey) uit voor de doel server of [Get-AzSqlInstanceKeyVaultKey](/powershell/module/az.sql/get-azsqlinstancekeyvaultkey) voor het beheerde exemplaar van het doel om de lijst met beschik bare sleutels te retour neren en de ontbrekende waarden te identificeren. Om ervoor te zorgen dat alle back-ups kunnen worden hersteld, moet u ervoor zorgen dat de doel server voor het terugzetten toegang heeft tot alle benodigde sleutels. Deze sleutels hoeven niet als TDE-Protector te worden gemarkeerd.
 
@@ -193,7 +193,7 @@ Het kan ook worden bereikt door sleutel te genereren met behulp van de primaire 
 
 ## <a name="geo-dr-and-customer-managed-tde"></a>Geo-DR en door de klant beheerde TDE
 
-In de scenario's voor zowel [actieve geo-replicatie](active-geo-replication-overview.md) als voor [failover-groepen](auto-failover-group-overview.md) is voor elke server die betrokken is een afzonderlijke sleutel kluis vereist. deze moet zich op dezelfde locatie bevinden als de server in dezelfde Azure-regio. De klant is verantwoordelijk voor het bewaren van het belangrijkste materiaal in de sleutel kluizen, zodat geo-secundair synchroon is en dezelfde sleutel kan overnemen uit de lokale sleutel kluis als de primaire ontoegankelijk is vanwege een storing in de regio en een failover wordt geactiveerd. Er kunnen Maxi maal vier secundairen worden geconfigureerd en koppelen (secundaire zones van de secundaire zones) wordt niet ondersteund.
+In zowel [actieve omgevingen met geo-replicatie](active-geo-replication-overview.md) als voor [failover-groepen](auto-failover-group-overview.md) is voor elke betrokken server een afzonderlijke sleutel kluis vereist. deze moet zich in dezelfde Azure-regio op de server bevinden. De klant is verantwoordelijk voor het bewaren van het belangrijkste materiaal in de sleutel kluizen, zodat geo-secundair synchroon is en dezelfde sleutel kan overnemen uit de lokale sleutel kluis als de primaire ontoegankelijk is vanwege een storing in de regio en een failover wordt geactiveerd. Er kunnen Maxi maal vier secundairen worden geconfigureerd en koppelen (secundaire zones van de secundaire zones) wordt niet ondersteund.
 
 Als u problemen wilt voor komen tijdens het maken of tijdens het tot stand brengen van geo-replicatie vanwege onvolledige sleutel materiaal, is het belang rijk om deze regels te volgen bij het configureren van door de klant beheerde TDE:
 
@@ -205,7 +205,7 @@ Als u problemen wilt voor komen tijdens het maken of tijdens het tot stand breng
 
 ![Failover-groepen en geo-Dr](./media/transparent-data-encryption-byok-overview/customer-managed-tde-with-bcdr.png)
 
-Als u een failover wilt testen, volgt u de stappen in het [overzicht van actieve geo-replicatie](active-geo-replication-overview.md). Het testen van failover moet regel matig worden uitgevoerd om te controleren of SQL Database de toegangs machtiging voor zowel sleutel kluizen heeft behouden.
+Als u een failover wilt testen, volgt u de stappen in het [overzicht van actieve geo-replicatie](active-geo-replication-overview.md). Het testen van de failover moet regel matig worden uitgevoerd om te controleren of SQL Database de toegangs machtiging voor beide sleutel kluizen heeft gehandhaafd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

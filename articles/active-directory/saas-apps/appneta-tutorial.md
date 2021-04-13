@@ -1,6 +1,6 @@
 ---
-title: 'Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met AppNeta Performance Monitor | Microsoft Docs'
-description: Ontdek hoe u eenmalige aanmelding configureert tussen Azure Active Directory en AppNeta Performance Monitor.
+title: 'Zelf studie: Azure Active Directory-integratie met eenmalige aanmelding (SSO) met AppNeta-prestatie beheer | Microsoft Docs'
+description: Meer informatie over het configureren van eenmalige aanmelding tussen Azure Active Directory en AppNeta Performance Manager.
 services: active-directory
 author: jeevansd
 manager: CelesteDG
@@ -11,19 +11,19 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/28/2020
 ms.author: jeedes
-ms.openlocfilehash: b2558b4b3bcd60acba3bf47d4a973a2b6de7424f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 57ac41e56a2a418b7f261bfd0435a4726a64469b
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98736003"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107309421"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-appneta-performance-monitor"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met AppNeta Performance Monitor
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-appneta-performance-manager"></a>Zelf studie: Azure Active Directory-integratie met eenmalige aanmelding (SSO) met AppNeta-prestatie beheer
 
-In deze zelfstudie leert u hoe u AppNeta Performance Monitor kunt integreren met Azure AD (Active Directory). Wanneer u AppNeta Performance Monitor integreert met Azure AD, kunt u het volgende doen:
+In deze zelf studie leert u hoe u AppNeta Performance Manager integreert met Azure Active Directory (Azure AD). Wanneer u AppNeta Performance Manager integreert met Azure AD, kunt u het volgende doen:
 
-* In Azure AD beheren wie toegang heeft tot AppNeta Performance Monitor.
-* U kunt instellen dat gebruikers automatisch met hun Azure AD-account worden aangemeld bij AppNeta Performance Monitor.
+* Controle in azure AD die toegang heeft tot AppNeta Performance Manager.
+* Stel in dat uw gebruikers automatisch worden aangemeld voor AppNeta-prestatie beheer met hun Azure AD-accounts.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
 
 
@@ -32,50 +32,50 @@ In deze zelfstudie leert u hoe u AppNeta Performance Monitor kunt integreren met
 U hebt het volgende nodig om aan de slag te gaan:
 
 * Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
-* Een AppNeta-abonnement waarvoor eenmalige aanmelding is ingeschakeld.
+* AppNeta Performance Manager-abonnement voor eenmalige aanmelding (SSO) is ingeschakeld.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* AppNeta Performance Monitor ondersteunt door **SP** geïnitieerde eenmalige aanmelding
+* AppNeta Performance Manager ondersteunt door **SP** GEÏNITIEERDe SSO
 
-* AppNeta Performance Monitor ondersteunt het **Just-In-Time** inrichten van gebruikers
+* AppNeta Performance Manager ondersteunt **just-in-time** -gebruikers inrichting
 
 > [!NOTE]
 > De id van deze toepassing is een vaste tekenreekswaarde zodat maar één exemplaar in één tenant kan worden geconfigureerd.
 
 
-## <a name="adding-appneta-performance-monitor-from-the-gallery"></a>AppNeta Performance Monitor toevoegen vanuit de galerie
+## <a name="adding-appneta-performance-manager-from-the-gallery"></a>AppNeta-prestatie beheer toevoegen vanuit de galerie
 
-Als u de integratie van AppNeta Performance Monitor met Azure AD wilt configureren, moet u AppNeta Performance Monitor toevoegen vanuit de galerie aan uw lijst van beheerde SaaS-apps.
+Als u de integratie van AppNeta Performance Manager wilt configureren in azure AD, moet u AppNeta-prestatie beheer toevoegen vanuit de galerie aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
 1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ in de sectie **Toevoegen vanuit de galerie** in het zoekvak: **AppNeta Performance Monitor**.
-1. Selecteer **AppNeta Performance Monitor** in het resultatenpaneel en voeg de app vervolgens toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
+1. Typ **AppNeta Performance Manager** in het zoekvak van de sectie **toevoegen vanuit de galerie** .
+1. Selecteer **AppNeta Performance Manager** in het paneel resultaten en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 
-## <a name="configure-and-test-azure-ad-sso-for-appneta-performance-monitor"></a>Eenmalige aanmelding van Azure AD configureren en testen voor AppNeta Performance Monitor
+## <a name="configure-and-test-azure-ad-sso-for-appneta-performance-manager"></a>Azure AD SSO configureren en testen voor AppNeta-prestatie beheer
 
-Configureer en test eenmalige aanmelding van Azure AD met AppNeta Performance Monitor met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de gerelateerde gebruiker in AppNeta Performance Monitor.
+Azure AD SSO configureren en testen met AppNeta Performance Manager met behulp van een test gebruiker met de naam **B. Simon**. Voor het werken met SSO moet u een koppelings relatie tot stand brengen tussen een Azure AD-gebruiker en de bijbehorende gebruiker in AppNeta Performance Manager.
 
-Voer de volgende stappen uit om eenmalige aanmelding met Azure AD bij AppNeta Performance Monitor te configureren en testen:
+Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met AppNeta Performance Manager:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
     1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
     1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
-1. **[Eenmalige aanmelding met AppNeta Performance Monitor configureren](#configure-appneta-performance-monitor-sso)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
-    1. **[Een testgebruiker voor AppNeta Performance Monitor maken](#create-appneta-performance-monitor-test-user)** : als u een tegenhanger van B.Simon in AppNeta Performance Monitor wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
+1. **[AppNeta-prestatie beheer-SSO configureren](#configure-appneta-performance-manager-sso)** : Hiermee configureert u de instellingen voor eenmalige aanmelding aan de kant van de toepassing.
+    1. **[Maak een AppNeta-test gebruiker voor prestatie beheer](#create-appneta-performance-manager-test-user)** , zodat deze een vergelijk is van B. Simon in AppNeta Performance Manager die is gekoppeld aan de Azure AD-representatie van de gebruiker.
 1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
 ## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in Azure Portal, op de integratiepagina van de toepassing **AppNeta Performance Monitor**, de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Zoek in het Azure Portal op de pagina **AppNeta Performance Manager** -toepassings integratie de sectie **beheren** en selecteer **eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
@@ -86,13 +86,13 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     a. In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<subdomain>.pm.appneta.com`
 
     > [!NOTE]
-    > De waarde voor de aanmeldings-URL is niet echt. Werk deze waarde bij met de werkelijke aanmeldings-URL. Neem contact op met [het ondersteuningsteam van AppNeta Performance Monitor](mailto:support@appneta.com) om deze waarde op te halen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > De waarde voor de aanmeldings-URL is niet echt. Werk deze waarde bij met de werkelijke aanmeldings-URL. Neem contact op met het [ondersteunings team van AppNeta Performance Manager](mailto:support@appneta.com) om deze waarde op te halen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
-1. In de AppNeta Performance Monitor-toepassing worden de SAML-asserties in een specifieke indeling verwacht. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van uw SAML-tokenkenmerken. In de volgende schermafbeelding wordt de lijst met standaardkenmerken weergegeven.
+1. AppNeta Performance Manager-toepassing verwacht de SAML-beweringen in een specifieke indeling. hiervoor moet u aangepaste kenmerk toewijzingen toevoegen aan de configuratie van uw SAML-token kenmerken. In de volgende schermafbeelding wordt de lijst met standaardkenmerken weergegeven.
 
     ![image](common/edit-attribute.png)
 
-1. Bovendien worden in de AppNeta Performance Monitor-toepassing nog enkele kenmerken verwacht die als SAML-antwoord moeten worden doorgestuurd. Deze worden hieronder weergegeven. Deze kenmerken worden ook vooraf ingevuld, maar u kunt ze herzien volgens uw vereisten.
+1. Daarnaast verwachtte AppNeta Performance Manager-toepassing nog enkele kenmerken die kunnen worden door gegeven in de SAML-respons die hieronder worden weer gegeven. Deze kenmerken worden ook vooraf ingevuld, maar u kunt ze herzien volgens uw vereisten.
 
     | Naam | Bronkenmerk|
     | --------| ----------------|
@@ -126,7 +126,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     ![De link om het certificaat te downloaden](common/metadataxml.png)
 
-1. Kopieer in de sectie **AppNeta Performance Monitor instellen** de juiste URL('s) op basis van uw behoeften.
+1. Kopieer op de sectie **AppNeta Performance Manager instellen** de gewenste URL ('s) op basis van uw vereiste.
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
@@ -144,37 +144,37 @@ In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Porta
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
-In deze sectie stelt u B.Simon in staat gebruik te maken van eenmalige aanmelding van Azure door haar toegang te verlenen tot AppNeta Performance Monitor.
+In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen aan AppNeta Performance Manager.
 
 1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
-1. Selecteer **AppNeta Performance Monitor** in de lijst toepassingen.
+1. Selecteer **AppNeta Performance Manager** in de lijst toepassingen.
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Als u de rollen hebt ingesteld zoals hierboven beschreven, kunt u deze selecteren in de vervolgkeuzelijst **Selecteer een rol**.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
-## <a name="configure-appneta-performance-monitor-sso"></a>Eenmalige aanmelding met AppNeta Performance Monitor configureren
+## <a name="configure-appneta-performance-manager-sso"></a>SSO van AppNeta-prestatie beheer configureren
 
-Als u eenmalige aanmelding aan de zijde van **AppNeta Performance Monitor** wilt configureren, moet u de gedownloade **XML met federatieve metagegevens** en de correcte uit de Microsoft Azure-portal gekopieerde URL's verzenden naar het [AppNeta Performance Monitor-ondersteuningsteam](mailto:support@appneta.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding wilt configureren voor **AppNeta Performance Manager** , moet u het gedownloade **XML-bestand met federatieve meta gegevens** en de juiste gekopieerde url's verzenden van Azure Portal naar [AppNeta Performance Manager-ondersteunings team](mailto:support@appneta.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
-### <a name="create-appneta-performance-monitor-test-user"></a>Testgebruiker voor AppNeta Performance Monitor maken
+### <a name="create-appneta-performance-manager-test-user"></a>Test gebruiker voor AppNeta-prestatie beheer maken
 
-In dit gedeelte wordt een gebruiker met de naam Britta Simon gemaakt in AppNeta Performance Monitor. AppNeta Performance Monitor ondersteunt Just-In-Time-inrichting van gebruikers. Deze functie is standaard ingeschakeld. Er is geen actie-item voor u in deze sectie. Als er nog geen gebruiker in AppNeta Performance Monitor bestaat, wordt er een nieuwe gemaakt na verificatie.
+In deze sectie wordt een gebruiker met de naam Julia Simon gemaakt in AppNeta Performance Manager. AppNeta Performance Manager ondersteunt just-in-time-gebruikers inrichting, dat standaard is ingeschakeld. Er is geen actie-item voor u in deze sectie. Als een gebruiker nog niet bestaat in AppNeta Performance Manager, wordt er na verificatie een nieuwe gemaakt.
 
 > [!Note]
-> Als u handmatig een gebruiker moet maken, neemt u contact op met het [ondersteuningsteam van AppNeta Performance Monitor](mailto:support@appneta.com).
+> Als u hand matig een gebruiker moet maken, neemt u contact op met het [ondersteunings team van AppNeta Performance Manager](mailto:support@appneta.com).
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
 In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van AppNeta Performance Monitor, waar u de aanmeldingsstroom kunt initiëren. 
+* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de aanmeldings-URL van de AppNeta-Performance Manager, waar u de aanmeldings stroom kunt initiëren. 
 
-* Ga rechtstreeks naar de aanmeldings-URL van AppNeta Performance Monitor en initieer de aanmeldingsstroom daar.
+* Ga rechtstreeks naar de aanmeldings-URL van de AppNeta-Performance Manager en start de aanmeldings stroom.
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u in Mijn apps op de tegel AppNeta Performance Monitor klikt, wordt u omgeleid naar de aanmeldings-URL van AppNeta Performance Monitor. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel AppNeta Performance Manager in de mijn apps klikt, wordt dit omgeleid naar de aanmeldings-URL van AppNeta Performance Manager. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u AppNeta Performance Monitor hebt geconfigureerd, kunt u sessiebeheer afdwingen. Hierdoor worden exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
+Zodra u AppNeta Performance Manager hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

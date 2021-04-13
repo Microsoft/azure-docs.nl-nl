@@ -75,7 +75,7 @@
     - name: Overzicht van image analyse
       href: overview-image-analysis.md
     - name: Quick start voor afbeeldings analyse
-      href: quickstarts-sdk/client-library.md
+      href: quickstarts-sdk/image-analysis-client-library.md
     - name: Voorbeelden
       items:
         - name: Een app voor afbeeldingsverwerking ontdekken
@@ -146,8 +146,6 @@
   items:
     - name: Overzicht van ruimtelijke analyse
       href: intro-to-spatial-analysis-public-preview.md
-    - name: De hostmachine instellen en de container uitvoeren
-      href: spatial-analysis-container.md
     - name: Verantwoordelijk gebruik van AI
       items:
         - name: Transparantienotities
@@ -170,6 +168,8 @@
       items:
         - name: De container voor ruimtelijke analyse gebruiken
           items:
+            - name: De hostmachine instellen en de container uitvoeren
+              href: spatial-analysis-container.md
             - name: Bewerkingen configureren
               href: spatial-analysis-operations.md
             - name: Een web-app voor het tellen van personen implementeren

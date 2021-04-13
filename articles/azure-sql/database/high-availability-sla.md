@@ -12,12 +12,12 @@ author: emlisa
 ms.author: emlisa
 ms.reviewer: sstein, emlisa
 ms.date: 10/28/2020
-ms.openlocfilehash: fbf2a30d029a579026fa9c590f59bedff594f4b8
-ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
+ms.openlocfilehash: 7204f32b8fec411fba2afa39b011a8755aea3744
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106109200"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107309676"
 ---
 # <a name="high-availability-for-azure-sql-database-and-sql-managed-instance"></a>Hoge Beschik baarheid voor Azure SQL Database en SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -126,7 +126,7 @@ Een failover kan worden gestart met behulp van Power shell, REST API of Azure CL
 |Implementatie type|PowerShell|REST-API| Azure CLI|
 |:---|:---|:---|:---|
 |Database|[Invoke-AzSqlDatabaseFailover](/powershell/module/az.sql/invoke-azsqldatabasefailover)|[Data base-failover](/rest/api/sql/databases/failover)|[AZ rest](/cli/azure/reference-index#az-rest) kan worden gebruikt voor het aanroepen van een rest API aanroep vanuit Azure cli|
-|Elastische pool|[Invoke-AzSqlElasticPoolFailover](/powershell/module/az.sql/invoke-azsqlelasticpoolfailover)|[Failover van elastische groep](/rest/api/sql/elasticpools/failover)|[AZ rest](/cli/azure/reference-index#az-rest) kan worden gebruikt voor het aanroepen van een rest API aanroep vanuit Azure cli|
+|Elastische pool|[Invoke-AzSqlElasticPoolFailover](/powershell/module/az.sql/invoke-azsqlelasticpoolfailover)|[Failover van elastische groep](/javascript/api/@azure/arm-sql/elasticpools#failover_string__string__string__msRest_RequestOptionsBase)|[AZ rest](/cli/azure/reference-index#az-rest) kan worden gebruikt voor het aanroepen van een rest API aanroep vanuit Azure cli|
 |Beheerd exemplaar|[Invoke-AzSqlInstanceFailover](/powershell/module/az.sql/Invoke-AzSqlInstanceFailover/)|[Beheerde instanties-failover](/rest/api/sql/managed%20instances%20-%20failover/failover)|[AZ SQL mi failover](/cli/azure/sql/mi/#az-sql-mi-failover)|
 
 > [!IMPORTANT]

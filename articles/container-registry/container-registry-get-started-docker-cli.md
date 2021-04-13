@@ -4,12 +4,12 @@ description: Docker-installatie kopieën pushen en pullen naar uw persoonlijke c
 ms.topic: article
 ms.date: 01/23/2019
 ms.custom: seodec18, H1Hack27Feb2017
-ms.openlocfilehash: 83ef385313b035f5e5d7d993e7948725906c75a7
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 982a49af271648caeb62e5759530aa6049be4382
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99987766"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107308299"
 ---
 # <a name="push-your-first-image-to-your-azure-container-registry-using-the-docker-cli"></a>Uw eerste installatie kopie naar Azure container Registry pushen met de docker-CLI
 
@@ -39,7 +39,7 @@ docker login myregistry.azurecr.io
 
 Beide opdrachten retour neren `Login Succeeded` eenmaal voltooid.
 > [!NOTE]
->* Mogelijk wilt u Visual Studio code gebruiken met docker-uitbrei ding voor een snellere en handigere aanmelding.
+>* Mogelijk wilt u Visual Studio code gebruiken met docker-extensie voor een snellere en handigere aanmelding.
 
 > [!TIP]
 > Geef altijd de volledig gekwalificeerde register naam op (alle kleine letters) wanneer u gebruikt `docker login` en wanneer u afbeeldingen labelt voor het naar uw REGI ster pushen. In de voor beelden in dit artikel is de volledig gekwalificeerde naam *myregistry.azurecr.io*.

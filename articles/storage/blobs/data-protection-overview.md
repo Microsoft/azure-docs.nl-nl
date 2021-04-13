@@ -5,17 +5,17 @@ description: Met de opties voor gegevens beveiliging die beschikbaar zijn voor u
 services: storage
 author: tamram
 ms.service: storage
-ms.date: 03/22/2021
+ms.date: 04/09/2021
 ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: prishet
 ms.subservice: common
-ms.openlocfilehash: afd98e629500bc90cc9ddd1ed4ab2472f733e845
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 90c83397089b77d30694041a37debc0731ea2a38
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104803714"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107304253"
 ---
 # <a name="data-protection-overview"></a>Overzicht van gegevensbescherming
 
@@ -30,7 +30,7 @@ Als u op zoek bent naar de basis dekking voor gegevens beveiliging voor uw opsla
 - Configureer een Azure Resource Manager vergrendeling op het opslag account om het account te beveiligen tegen verwijdering of configuratie wijzigingen. [Meer informatie...](../common/lock-account-resource.md)
 - Schakel het tijdelijk verwijderen van een container in voor het opslag account om een verwijderde container en de inhoud ervan te herstellen. [Meer informatie...](soft-delete-container-enable.md)
 - Sla de status van een BLOB op regel matige intervallen op:
-  - Schakel voor Blob Storage werk belastingen BLOB-versie beheer in om automatisch de status van uw gegevens op te slaan wanneer een BLOB wordt verwijderd of overschreven. [Meer informatie...](versioning-enable.md)
+  - Schakel voor Blob Storage werk belastingen BLOB-versie beheer in om automatisch de status van uw gegevens op te slaan wanneer een BLOB wordt overschreven. [Meer informatie...](versioning-enable.md)
   - Maak voor Azure Data Lake Storage workloads hand matige moment opnamen om de status van uw gegevens op een bepaald moment op te slaan. [Meer informatie...](snapshots-overview.md)
 
 Deze opties, evenals aanvullende opties voor gegevens beveiliging voor andere scenario's, worden uitgebreid beschreven in de volgende sectie.
@@ -46,7 +46,7 @@ De volgende tabel bevat een overzicht van de beschik bare opties in Azure Storag
 | Voor komen dat een opslag account wordt verwijderd of gewijzigd. | Azure Resource Manager Lock<br />[Meer informatie...](../common/lock-account-resource.md) | Vergrendel al uw opslag accounts met een Azure Resource Manager-vergren deling om te voor komen dat het opslag account wordt verwijderd. | Beveiligt het opslag account tegen verwijderings-of configuratie wijzigingen.<br /><br />Beveiligt geen containers of blobs in het account om te worden verwijderd of overschreven. | Yes |
 | Voor komen dat een container en de bijbehorende blobs worden verwijderd of gewijzigd voor een interval dat u beheert. | Onveranderbaarheid-beleid op een container<br />[Meer informatie...](storage-blob-immutable-storage.md) | Stel een Onveranderbaarheid-beleid in op een container om bedrijfskritische documenten te beveiligen, bijvoorbeeld om te voldoen aan de wettelijke of reglementaire nalevings vereisten. | Beveiligt een container en de bijbehorende blobs uit alle verwijderingen en overschrijvingen.<br /><br />Wanneer een wettelijk beveiligde bewaring of een vergrendeld op tijd gebaseerd Bewaar beleid van kracht is, wordt het opslag account ook beveiligd tegen verwijdering. Containers waarvoor geen Onveranderbaarheid-beleid is ingesteld, worden niet beschermd tegen verwijdering. | Ja, in preview-versie |
 | Een verwijderde container herstellen binnen een opgegeven interval. | Container zacht verwijderen (preview-versie)<br />[Meer informatie...](soft-delete-container-overview.md) | Schakel de optie voor het voorlopig verwijderen van containers in voor alle opslag accounts, met een minimale Bewaar periode van 7 dagen.<br /><br />Schakel BLOB-versie beheer en laad bare BLOB-verwijdering samen met de container soft delete om afzonderlijke blobs in een container te beveiligen.<br /><br />Bewaar containers waarvoor verschillende Bewaar perioden in afzonderlijke opslag accounts zijn vereist. | Een verwijderde container en de inhoud ervan kunnen worden hersteld binnen de retentie periode.<br /><br />Alleen bewerkingen op container niveau (bijvoorbeeld [container verwijderen](/rest/api/storageservices/delete-container)) kunnen worden hersteld. Met de optie voor het voorlopig verwijderen van een container kunt u geen afzonderlijke Blob in de container herstellen als deze blob is verwijderd. | Ja, in preview-versie |
-| De status van een BLOB in een vorige versie automatisch opslaan wanneer deze wordt overschreven of verwijderd. | BLOB-versie beheer<br />[Meer informatie...](versioning-overview.md) | Schakel BLOB-versie beheer in, samen met de optie voor het voorlopig verwijderen van een container en het verwijderen van blobs, voor opslag accounts waarvoor u optimale beveiliging voor BLOB-gegevens nodig hebt.<br /><br />Gegevens van blobs opslaan waarvoor geen versie beheer is vereist in een apart account om de kosten te beperken. | Bij elke BLOB-overschrijving of verwijderings bewerking wordt een nieuwe versie gemaakt. Een BLOB kan worden hersteld vanuit een vorige versie als de BLOB wordt verwijderd of overschreven. | No |
+| De status van een BLOB in een vorige versie automatisch opslaan wanneer deze wordt overschreven. | BLOB-versie beheer<br />[Meer informatie...](versioning-overview.md) | Schakel BLOB-versie beheer in, samen met de optie voor het voorlopig verwijderen van een container en het verwijderen van blobs, voor opslag accounts waarvoor u optimale beveiliging voor BLOB-gegevens nodig hebt.<br /><br />Gegevens van blobs opslaan waarvoor geen versie beheer is vereist in een apart account om de kosten te beperken. | Bij elke BLOB-schrijf bewerking wordt een nieuwe versie gemaakt. De huidige versie van een BLOB kan worden hersteld uit een eerdere versie als de huidige versie wordt verwijderd of overschreven. | No |
 | Een verwijderde BLOB of BLOB-versie binnen een opgegeven interval herstellen. | BLOB zacht verwijderen<br />[Meer informatie...](soft-delete-blob-overview.md) | Schakel de optie voor het voorlopig verwijderen van blobs in voor alle opslag accounts, met een minimale Bewaar periode van 7 dagen.<br /><br />Schakel BLOB-versie beheer en dynamisch verwijderen van containers samen met Blob zacht verwijderen voor optimale beveiliging van BLOB-gegevens.<br /><br />Store-blobs waarvoor verschillende Bewaar perioden in afzonderlijke opslag accounts zijn vereist. | Een verwijderde BLOB of BLOB-versie kan worden hersteld binnen de retentie periode. | No |
 | Een set blok-blobs herstellen naar een eerder tijdstip. | Terugzetten naar eerder tijdstip<br />[Meer informatie...](point-in-time-restore-overview.md) | Als u herstel naar een eerder tijdstip wilt gebruiken om terug te gaan naar een eerdere status, moet u uw toepassing zo ontwerpen dat afzonderlijke blok-blobs worden verwijderd in plaats van dat containers worden verwijderd. | Een set blok-blobs kan worden teruggedraaid naar hun status op een specifiek punt in het verleden.<br /><br />Alleen bewerkingen die worden uitgevoerd op blok-blobs worden teruggedraaid. Bewerkingen die worden uitgevoerd op containers, pagina-blobs of toevoeg-blobs, worden niet teruggedraaid. | No |
 | De status van een BLOB hand matig opslaan op een bepaald moment. | BLOB-moment opname<br />[Meer informatie...](snapshots-overview.md) | Wordt aanbevolen als een alternatief voor BLOB-versie beheer wanneer versie beheer niet geschikt is voor uw scenario, als gevolg van kosten of andere overwegingen, of als het opslag account een hiërarchische naam ruimte heeft ingeschakeld. | Een BLOB kan worden hersteld vanuit een moment opname als de BLOB wordt overschreven. Als de BLOB wordt verwijderd, worden er ook moment opnamen verwijderd. | Ja, in preview-versie |

@@ -2,13 +2,13 @@
 title: Azure Service Bus-bericht sessies | Microsoft Docs
 description: In dit artikel wordt uitgelegd hoe u met behulp van sessies gezamenlijke en geordende verwerking van gerelateerde berichten kunt maken.
 ms.topic: article
-ms.date: 01/20/2021
-ms.openlocfilehash: 6d316571d69d2e1e73ddca4ccca53c116ee8fa5f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/12/2021
+ms.openlocfilehash: c9a1c4fdccbbc8b38805e23d4895448959126f10
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98680750"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107308469"
 ---
 # <a name="message-sessions"></a>Berichtsessies
 Microsoft Azure Service Bus-sessies maken gezamenlijke en geordende verwerking van niet-gebonden reeksen van gerelateerde berichten mogelijk. Sessies kunnen worden gebruikt in de **eerste in, first out (FIFO)** en **aanvraag/antwoord-** patronen. In dit artikel wordt beschreven hoe u met behulp van sessies deze patronen kunt implementeren wanneer u Service Bus gebruikt. 
@@ -19,24 +19,27 @@ Microsoft Azure Service Bus-sessies maken gezamenlijke en geordende verwerking v
 ## <a name="first-in-first-out-fifo-pattern"></a>FIFO-patroon (First-in, first out)
 Gebruik sessies om een FIFO-garantie in Service Bus te realiseren. Service Bus is niet een voor Schrift over de aard van de relatie tussen de berichten en definieert ook niet een bepaald model om te bepalen waar een bericht reeks begint of eindigt.
 
-Elke afzender kan een sessie maken bij het indienen van berichten in een onderwerp of wachtrij door de eigenschap [SessionId](/dotnet/api/microsoft.azure.servicebus.message.sessionid#Microsoft_Azure_ServiceBus_Message_SessionId) in te stellen op een door de toepassing gedefinieerde id die uniek is voor de sessie. Op het AMQP 1,0-protocol niveau wordt deze waarde toegewezen aan de eigenschap *Group-ID* .
+Elke afzender kan een sessie maken bij het indienen van berichten in een onderwerp of wachtrij door de eigenschap **sessie-id** in te stellen op een door de toepassing gedefinieerde id die uniek is voor de sessie. Op het AMQP 1,0-protocol niveau wordt deze waarde toegewezen aan de eigenschap *Group-ID* .
 
-In sessie-wacht rijen of-abonnementen kunnen sessies aanwezig zijn wanneer er ten minste één bericht is met de sessie- [SessionId](/dotnet/api/microsoft.azure.servicebus.message.sessionid#Microsoft_Azure_ServiceBus_Message_SessionId). Als er een sessie bestaat, is er geen tijd of API voor wanneer de sessie verloopt of verdwijnt. In theorie kan een bericht worden ontvangen voor een sessie, het volgende bericht in de tijd van het jaar en als de sessie- **id** overeenkomt met het komt overeen met het service bus perspectief.
+In sessie-wacht rijen of-abonnementen zijn sessies aanwezig wanneer er ten minste één bericht met de sessie-ID is. Als er een sessie bestaat, is er geen tijd of API voor wanneer de sessie verloopt of verdwijnt. Theoretisch kan een bericht worden ontvangen voor een sessie van vandaag, het volgende bericht in de tijd van het jaar en als de sessie-ID overeenkomt, is de sessie hetzelfde als in het Service Bus perspectief.
 
-Normaal gesp roken bevat een toepassing echter een duidelijk begrip van waar een reeks gerelateerde berichten begint en eindigt. Service Bus stelt geen specifieke regels in.
+Normaal gesp roken bevat een toepassing echter een duidelijk begrip van waar een reeks gerelateerde berichten begint en eindigt. Service Bus stelt geen specifieke regels in. Uw toepassing kan bijvoorbeeld de eigenschap **Label** instellen voor het eerste bericht dat moet worden **gestart**, voor tussenliggende berichten tot **inhoud** en voor het laatste bericht dat moet worden **beëindigd**. De relatieve positie van de inhouds berichten kan worden berekend als het huidige bericht *SequenceNumber* Delta van het **begin** bericht *SequenceNumber*.
 
-Een voor beeld van het afbakenen van een reeks voor het overdragen van een bestand is het instellen van de **Label** eigenschap voor het eerste bericht dat moet worden **gestart**, voor tussenliggende berichten tot **inhoud** en voor het laatste bericht dat moet worden **beëindigd**. De relatieve positie van de inhouds berichten kan worden berekend als het huidige bericht *SequenceNumber* Delta van het **begin** bericht *SequenceNumber*.
+U schakelt het onderdeel in door de eigenschap [requiresSession](/azure/templates/microsoft.servicebus/namespaces/queues#property-values) in te stellen voor de wachtrij of het abonnement via Azure Resource Manager, of door de vlag in te stellen in de portal. Het is vereist voordat u de gerelateerde API-bewerkingen probeert te gebruiken.
 
-Met de sessie functie in Service Bus kan een specifieke ontvangst bewerking worden uitgevoerd, in de vorm van [MessageSession](/dotnet/api/microsoft.servicebus.messaging.messagesession) in de C#-en Java-api's. U schakelt het onderdeel in door de eigenschap [requiresSession](/azure/templates/microsoft.servicebus/namespaces/queues#property-values) in te stellen voor de wachtrij of het abonnement via Azure Resource Manager, of door de vlag in te stellen in de portal. Het is vereist voordat u de gerelateerde API-bewerkingen probeert te gebruiken.
+In de portal kunt u sessies inschakelen tijdens het maken van een entiteit (wachtrij of abonnement), zoals wordt weer gegeven in de volgende voor beelden. 
 
-Stel in de Portal de vlag in met het volgende selectie vakje:
+:::image type="content" source="./media/message-sessions/queue-sessions.png" alt-text="Sessie inschakelen op het moment dat de wachtrij wordt gemaakt":::
 
-![Scherm afbeelding van het dialoog venster wachtrij maken met de optie voor het inschakelen van sessies, geselecteerd en in rood beschreven.][2]
+:::image type="content" source="./media/message-sessions/subscription-sessions.png" alt-text="Sessie inschakelen op het moment dat het abonnement wordt gemaakt":::
 
-> [!NOTE]
-> Wanneer sessies zijn ingeschakeld voor een wachtrij of een abonnement, kunnen de client toepassingen ***geen*** normale berichten meer verzenden/ontvangen. Alle berichten moeten worden verzonden als onderdeel van een sessie (door de sessie-id in te stellen) en ontvangen door de sessie te ontvangen.
 
-De Api's voor sessies bestaan op de wachtrij-en abonnements-clients. Er is een essentieel model dat bepaalt wanneer er sessies en berichten worden ontvangen en een op een handler gebaseerd model, vergelijkbaar met *OnMessage*, waarmee de complexiteit van het beheer van de receive-lus wordt verborgen.
+> [!IMPORTANT]
+> Wanneer sessies zijn ingeschakeld voor een wachtrij of een abonnement, kunnen de client toepassingen ***geen*** normale berichten meer verzenden/ontvangen. Alle berichten moeten worden verzonden als onderdeel van een sessie (door de sessie-id in te stellen) en worden ontvangen door de sessie te accepteren.
+
+De Api's voor sessies bestaan op de wachtrij-en abonnements-clients. Er is een essentieel model dat bepaalt wanneer er sessies en berichten worden ontvangen en een op een handler gebaseerd model waarmee de complexiteit van het beheer van de receive-lus wordt verborgen. 
+
+Voor voor beelden gebruikt u de koppelingen in de sectie [volgende stappen](#next-steps) . 
 
 ### <a name="session-features"></a>Sessie functies
 
@@ -44,11 +47,9 @@ Sessies bieden gelijktijdige demultiplexing van Interleaved-berichten stromen ti
 
 ![Een diagram dat laat zien hoe de sessie-functie de bestelde levering behoudt.][1]
 
-Er wordt een [MessageSession](/dotnet/api/microsoft.servicebus.messaging.messagesession) -ontvanger gemaakt door de client die een sessie accepteert. De client roept [QueueClient. AcceptMessageSession](/dotnet/api/microsoft.servicebus.messaging.queueclient.acceptmessagesession#Microsoft_ServiceBus_Messaging_QueueClient_AcceptMessageSession) of [QueueClient. AcceptMessageSessionAsync](/dotnet/api/microsoft.servicebus.messaging.queueclient.acceptmessagesessionasync#Microsoft_ServiceBus_Messaging_QueueClient_AcceptMessageSessionAsync) op in C#. In het reactieve call back-model registreert het een sessie-handler.
+Een sessie ontvanger wordt gemaakt door een client die een sessie accepteert. Wanneer de sessie wordt geaccepteerd en bewaard door een client, bevat de client een exclusieve vergren deling voor alle berichten met de **sessie-id** van die sessie in de wachtrij of het abonnement. Het bevat ook exclusieve vergren delingen op alle berichten met de **sessie-id** die later wordt bereikt.
 
-Wanneer het [MessageSession](/dotnet/api/microsoft.servicebus.messaging.messagesession) -object wordt geaccepteerd en terwijl het wordt bewaard door een-client, bevat die client een exclusieve vergren deling voor alle berichten met de [SessionId](/dotnet/api/microsoft.servicebus.messaging.messagesession.sessionid#Microsoft_ServiceBus_Messaging_MessageSession_SessionId) van die sessie die voor komt in de wachtrij of het abonnement, en ook op alle berichten met die **SessionID** die nog steeds arriveren terwijl de sessie wordt gehouden.
-
-De vergren deling wordt vrijgegeven wanneer **Close** of **CloseAsync** wordt aangeroepen, of wanneer de vergren deling verloopt in gevallen waarin de toepassing de sluit bewerking niet kan uitvoeren. De sessie vergrendeling moet worden behandeld als een exclusieve vergren deling van een bestand, wat inhoudt dat de toepassing de sessie moet sluiten zodra deze niet meer nodig is en/of geen verdere berichten verwacht.
+De vergren deling wordt vrijgegeven wanneer u de aan het sluiten gerelateerde methoden aanroept op de ontvanger of wanneer de vergren deling verloopt. Er zijn methoden op de ontvanger om ook de vergren delingen te vernieuwen. In plaats daarvan kunt u de functie voor het vernieuwen van automatische vergren deling gebruiken, waarbij u de tijds duur kunt opgeven waarvoor u de vergren deling wilt blijven verlengen. De sessie vergrendeling moet worden behandeld als een exclusieve vergren deling van een bestand, wat inhoudt dat de toepassing de sessie moet sluiten zodra deze niet meer nodig is en/of geen verdere berichten verwacht.
 
 Wanneer meerdere gelijktijdige ontvangers uit de wachtrij halen, worden de berichten die tot een bepaalde sessie behoren, verzonden naar de specifieke ontvanger die momenteel de vergren deling voor die sessie bevat. Met deze bewerking wordt een Interleaved-berichten stroom in één wachtrij of abonnement schoon gemultiplext voor verschillende ontvangers en kunnen ontvangers ook live op verschillende client computers worden uitgevoerd, omdat het vergrendelings beheer aan de service zijde in Service Bus.
 
@@ -64,11 +65,9 @@ De functie sessie status maakt een door de toepassing gedefinieerde aantekening 
 
 Vanuit het Service Bus perspectief is de status van de bericht sessie een ondoorzichtig binair object dat gegevens kan bevatten van de grootte van één bericht, 256 KB voor Service Bus standaard en 1 MB voor Service Bus Premium. De verwerkings status ten opzichte van een sessie kan worden vastgehouden binnen de sessie status, of de sessie status kan verwijzen naar een opslag locatie of database record die dergelijke informatie bevat.
 
-De Api's voor het beheren van de sessie status, [SetState](/dotnet/api/microsoft.servicebus.messaging.messagesession.setstate#Microsoft_ServiceBus_Messaging_MessageSession_SetState_System_IO_Stream_) en [GetState](/dotnet/api/microsoft.servicebus.messaging.messagesession.getstate#Microsoft_ServiceBus_Messaging_MessageSession_GetState), kunt u vinden in het object [MessageSession](/dotnet/api/microsoft.servicebus.messaging.messagesession) in zowel de C#-als Java-api's. Een sessie die eerder geen sessie statusset had, retourneert een **Null** -verwijzing voor **GetState**. Het wissen van de eerder ingestelde sessie status is voltooid met [SetState (null)](/dotnet/api/microsoft.servicebus.messaging.messagesession.setstate#Microsoft_ServiceBus_Messaging_MessageSession_SetState_System_IO_Stream_).
+De methoden voor het beheren van de sessie status, SetState en GetState, vindt u op het sessie-receiver-object. Een sessie die eerder geen sessie status had, retourneert een null-verwijzing voor GetState. De eerder ingestelde sessie status kan worden gewist door null door te geven aan de SetState-methode op de ontvanger.
 
 De sessie status blijft ongewijzigd, omdat deze niet is gewist ( **Null** wordt geretourneerd), zelfs als alle berichten in een sessie worden verbruikt.
-
-Alle bestaande sessies in een wachtrij of abonnement kunnen worden geïnventariseerd met de **SessionBrowser** -methode in de Java API en met [GetMessageSessions](/dotnet/api/microsoft.servicebus.messaging.queueclient.getmessagesessions#Microsoft_ServiceBus_Messaging_QueueClient_GetMessageSessions) op de [QueueClient](/dotnet/api/microsoft.servicebus.messaging.queueclient) en [SubscriptionClient](/dotnet/api/microsoft.servicebus.messaging.subscriptionclient) in de .NET Framework-client.
 
 De sessie status die is opgeslagen in een wachtrij of in een abonnement, telt de opslag limiet van die entiteit. Wanneer de toepassing is voltooid met een sessie, wordt het aanbevolen om de status van de toepassing op te schonen om te voor komen dat de kosten voor externe beheer worden bespaard.
 
@@ -88,17 +87,17 @@ Het [patroon aanvraag/antwoord](https://www.enterpriseintegrationpatterns.com/pa
 Meerdere toepassingen kunnen hun aanvragen verzenden naar één aanvraag wachtrij, waarbij een specifieke header parameter is ingesteld op unieke identificatie van de afzender toepassing. De ontvanger van de toepassing kan de aanvragen verwerken die in de wachtrij binnenkomen en reacties verzenden op de wachtrij met ingeschakelde sessies, waarbij de sessie-ID wordt ingesteld op de unieke id die de afzender heeft verzonden op het aanvraag bericht. De toepassing die de aanvraag heeft verzonden, kan vervolgens berichten ontvangen over de specifieke sessie-ID en de antwoorden op de juiste manier verwerken.
 
 > [!NOTE]
-> De toepassing die de eerste aanvragen verzendt, moet weten over de sessie-ID en gebruiken `SessionClient.AcceptMessageSession(SessionID)` om de sessie te vergren delen waarop het antwoord wordt verwacht. Het is een goed idee om een GUID te gebruiken die het exemplaar van de toepassing uniek identificeert als een sessie-id. Er mag geen sessie-handler of `AcceptMessageSession(timeout)` in de wachtrij staan om ervoor te zorgen dat antwoorden beschikbaar zijn om te worden vergrendeld en verwerkt door specifieke ontvangers.
+> De toepassing die de eerste aanvragen verzendt, moet weten over de sessie-ID en deze gebruiken om de sessie te accepteren, zodat de sessie waarop de reactie wordt verwacht, wordt vergrendeld. Het is een goed idee om een GUID te gebruiken die het exemplaar van de toepassing uniek identificeert als een sessie-id. Er mag geen sessie-handler of een time-out zijn opgegeven op de sessie ontvanger voor de wachtrij om ervoor te zorgen dat antwoorden beschikbaar zijn om te worden vergrendeld en verwerkt door specifieke ontvangers.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie de voor beelden van [micro soft. Azure. ServiceBus](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.Azure.ServiceBus/Sessions) of [micro soft. ServiceBus. Messa ging](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/Sessions) voor een voor beeld waarin de .NET Framework-client wordt gebruikt voor het afhandelen van sessie bewuste berichten. 
+- [Azure. Messa ging. ServiceBus-voor beelden voor .NET](/samples/azure/azure-sdk-for-net/azuremessagingservicebus-samples/)
+- [Azure Service Bus-client bibliotheek voor Java-voor beelden](/samples/azure/azure-sdk-for-java/servicebus-samples/)
+- [Azure Service Bus-client bibliotheek voor python-voor beelden](/samples/azure/azure-sdk-for-python/servicebus-samples/)
+- [Azure Service Bus-client bibliotheek voor Java script-voor beelden](/samples/azure/azure-sdk-for-js/service-bus-javascript/)
+- [Azure Service Bus-client bibliotheek voor type script-voor beelden](/samples/azure/azure-sdk-for-js/service-bus-typescript/)
+- [Micro soft. Azure. ServiceBus-voor beelden voor .net (voor beelden van](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.Azure.ServiceBus/) sessies en SessionState)  
 
-Zie de volgende onderwerpen voor meer informatie over Service Bus Messa ging:
-
-* [Service Bus-wachtrijen, -onderwerpen en -abonnementen](service-bus-queues-topics-subscriptions.md)
-* [Aan de slag met Service Bus-wachtrijen](service-bus-dotnet-get-started-with-queues.md)
-* [Service Bus-onderwerpen en -abonnementen gebruiken](service-bus-dotnet-how-to-use-topics-subscriptions.md)
+Zie [service bus wacht rijen, onderwerpen en abonnementen](service-bus-queues-topics-subscriptions.md)voor meer informatie over Service Bus berichten.
 
 [1]: ./media/message-sessions/sessions.png
-[2]: ./media/message-sessions/queue-sessions.png

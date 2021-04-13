@@ -7,12 +7,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 03/30/2021
 ms.author: jgao
-ms.openlocfilehash: fb5fc0b6b673f8a754d0d6bb6ff962697cd5f38b
-ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
+ms.openlocfilehash: 3240cce34a6fa645986a58ab43b28ad38485e97b
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105967333"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107308962"
 ---
 # <a name="use-deployment-scripts-in-arm-templates"></a>Implementatie scripts gebruiken in ARM-sjablonen
 
@@ -140,7 +140,7 @@ Details van eigenschaps waarde:
 - `kind`: Geef het type script op. Momenteel worden Azure PowerShell-en Azure CLI-scripts ondersteund. De waarden zijn **AzurePowerShell** en **AzureCLI**.
 - `forceUpdateTag`: Als u deze waarde tussen de sjabloon implementaties wijzigt, wordt het implementatie script opnieuw uitgevoerd. Als u de `newGuid()` functies of gebruikt `utcNow()` , kunnen beide functies alleen worden gebruikt in de standaard waarde voor een para meter. Zie [Script meerdere keren uitvoeren](#run-script-more-than-once) voor meer informatie.
 - `containerSettings`: Geef de instellingen op om Azure container instance aan te passen. Het implementatie script vereist een nieuw Azure container-exemplaar. U kunt geen bestaand exemplaar van Azure container opgeven. U kunt de naam van de container groep echter aanpassen met behulp van `containerGroupName` . Als u niets opgeeft, wordt de groeps naam automatisch gegenereerd.
-- `storageAccountSettings`: Geef de instellingen op voor het gebruik van een bestaand opslag account. Als `containerGroupName` niet wordt opgegeven, wordt er automatisch een opslag account gemaakt. Zie [een bestaand opslag account gebruiken](#use-existing-storage-account).
+- `storageAccountSettings`: Geef de instellingen op voor het gebruik van een bestaand opslag account. Als `storageAccountName` niet wordt opgegeven, wordt er automatisch een opslag account gemaakt. Zie [een bestaand opslag account gebruiken](#use-existing-storage-account).
 - `azPowerShellVersion`/`azCliVersion`: Geef de module versie op die moet worden gebruikt. Een lijst met [ondersteunde versies van Azure PowerShell](https://mcr.microsoft.com/v2/azuredeploymentscripts-powershell/tags/list)weer geven. Een lijst met [ondersteunde Azure cli-versies](https://mcr.microsoft.com/v2/azure-cli/tags/list)weer geven.
 
   >[!IMPORTANT]
@@ -245,7 +245,7 @@ De volgende sjabloon laat zien hoe waarden worden door gegeven tussen twee `depl
 In de eerste resource definieert u een variabele met de naam `$DeploymentScriptOutputs` , en gebruikt u deze om de uitvoer waarden op te slaan. Als u de uitvoer waarde van een andere resource in de sjabloon wilt openen, gebruikt u:
 
 ```json
-reference('<ResourceName>').output.text
+reference('<ResourceName>').outputs.text
 ```
 
 ## <a name="work-with-outputs-from-cli-script"></a>Werken met uitvoer van CLI-script

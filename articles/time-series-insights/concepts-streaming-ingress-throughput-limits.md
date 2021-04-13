@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 01/21/2021
 ms.custom: seodec18
-ms.openlocfilehash: 3c938e7fe180e6a9cf08031a2a4565486f3f77a9
-ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
+ms.openlocfilehash: d86cc6af34036f5bd638b4fc78abdb54d71e6859
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106504631"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107306514"
 ---
 # <a name="streaming-ingestion-throughput-limits"></a>Doorvoer limieten voor stroom inslikken
 
@@ -59,7 +59,7 @@ Bij het plannen van uw Azure Time Series Insights Gen2-omgeving is het belang ri
 
 Een *partitie* is een geordende reeks gebeurtenissen die in een hub worden bewaard. Het aantal partities wordt ingesteld tijdens het maken van de hub en kan niet worden gewijzigd.
 
-Bekijk voor Event Hubs aanbevolen procedures voor het partitioneren van [het aantal partities dat ik nodig heb?](../event-hubs/event-hubs-faq.md#how-many-partitions-do-i-need)
+Bekijk voor Event Hubs aanbevolen procedures voor het partitioneren van [het aantal partities dat ik nodig heb?](../event-hubs/event-hubs-faq.yml#how-many-partitions-do-i-need-)
 
 > [!NOTE]
 > De meeste IoT-hubs die worden gebruikt met Azure Time Series Insights Gen2 hebben slechts vier partities nodig.

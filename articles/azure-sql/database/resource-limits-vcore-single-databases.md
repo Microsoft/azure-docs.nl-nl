@@ -10,22 +10,33 @@ ms.topic: reference
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-ms.date: 03/23/2021
-ms.openlocfilehash: a3cd68b610b0e0db05f60450009bc83a80c3037b
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.date: 04/09/2021
+ms.openlocfilehash: 7f96e6638bd021777d2f4bb888ef70c49c42c716
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105107598"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107313790"
 ---
 # <a name="resource-limits-for-single-databases-using-the-vcore-purchasing-model"></a>Resourcelimieten voor individuele databases met gebruikmaking van het vCore-aankoopmodel
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 In dit artikel vindt u gedetailleerde resource limieten voor afzonderlijke data bases in Azure SQL Database het inkoop model vCore gebruiken.
 
-Zie [overzicht van resource limieten op een server](resource-limits-logical-server.md)voor de limieten voor DTU-aankoop modellen voor afzonderlijke data bases op een server.
+* Zie [overzicht van resource limieten op een server](resource-limits-logical-server.md)voor de limieten voor DTU-aankoop modellen voor afzonderlijke data bases op een server.
+* Zie voor de resource limieten van het type DTU-aankoop model voor Azure SQL Database de limieten voor [DTU-bronnen enkele data bases](resource-limits-dtu-single-databases.md) en [DTU-bronnen beperken elastische Pools](resource-limits-dtu-elastic-pools.md).
+* Zie [vCore resource limieten-Azure SQL database](resource-limits-vcore-single-databases.md) en vCore resource limieten [-elastische Pools](resource-limits-vcore-elastic-pools.md)voor vCore-resource limieten.
+* Zie [Inkoop modellen en service lagen](purchasing-models.md)voor meer informatie over de verschillende aankoop modellen.
 
-U kunt de servicelaag, de reken grootte (Service doelstelling) en de opslag hoeveelheid voor één data base instellen met behulp van de [Azure Portal](single-database-manage.md#the-azure-portal), [Transact-SQL](single-database-manage.md#transact-sql-t-sql), [Power shell](single-database-manage.md#powershell), de [Azure cli](single-database-manage.md#the-azure-cli)of de [rest API](single-database-manage.md#rest-api).
+Elke alleen-lezen replica heeft zijn eigen resources, zoals vCores, geheugen, gegevens IOPS, TempDB, werk rollen en sessies. Elke alleen-lezen replica is onderhevig aan de resource limieten die verderop in dit artikel worden beschreven.
+
+U kunt de servicelaag, de berekenings grootte (Service doelstelling) en de opslag hoeveelheid voor één data base instellen met behulp van:
+
+* [Transact-SQL](single-database-manage.md#transact-sql-t-sql) via [ALTER data base](/sql/t-sql/statements/alter-database-transact-sql#overview-sql-database)
+* [Azure-portal](single-database-manage.md#the-azure-portal)
+* [PowerShell](single-database-manage.md#powershell)
+* [Azure-CLI](single-database-manage.md#the-azure-cli)
+* [REST API](single-database-manage.md#rest-api)
 
 > [!IMPORTANT]
 > Zie [Eén data base schalen](single-database-scale.md)voor richt lijnen en overwegingen voor schalen.

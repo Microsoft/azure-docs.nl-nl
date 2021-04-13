@@ -5,14 +5,14 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 07/14/2020
 ms.author: tomfitz
-ms.openlocfilehash: bbe36e072d10b81c421331b2212d8b161afd2693
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: fdc299ef1945e3ee0810f1c314fc07edfb4f4873
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "87096936"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107313297"
 ---
-# <a name="microsoftcommonarmapicontrol-ui-element"></a>Micro soft. common. ArmApiControl UI-element
+# <a name="microsoftsolutionsarmapicontrol-ui-element"></a>Micro soft. Solutions. ArmApiControl UI-element
 
 Met ArmApiControl kunt u resultaten van een Azure Resource Manager API-bewerking ophalen. Gebruik de resultaten om dynamische inhoud in andere besturings elementen in te vullen.
 
@@ -46,7 +46,14 @@ De uitvoer van het besturings element wordt niet weer gegeven voor de gebruiker.
 ## <a name="remarks"></a>Opmerkingen
 
 - Met de `request.method` eigenschap wordt de HTTP-methode opgegeven. Alleen `GET` of `POST` zijn toegestaan.
-- `request.path`Met de eigenschap geeft u het relatieve pad van de URL op. Dit kan een statisch pad zijn of dynamisch worden samengesteld door de uitvoer waarden van de andere besturings elementen te bepalen.
+- `request.path`Met de eigenschap geeft u een URL op die een relatief pad naar een arm-eind punt moet zijn. Dit kan een statisch pad zijn of dynamisch worden samengesteld door de uitvoer waarden van de andere besturings elementen te bepalen.
+
+  Bijvoorbeeld een ARM-oproep naar de `Microsoft.Network/expressRouteCircuits` resource provider:
+
+  ```json
+  "path": "<subid>/resourceGroup/<resourceGroupName>/providers/Microsoft.Network/expressRouteCircuits/<routecircuitName>/?api-version=2020-05-01"
+  ```
+
 - De `request.body` eigenschap is optioneel. Gebruik deze functie om een JSON-hoofd tekst op te geven die met de aanvraag wordt verzonden. De hoofd tekst kan statische inhoud zijn of dynamisch worden geconstrueerd door te verwijzen naar uitvoer waarden van andere besturings elementen.
 
 ## <a name="example"></a>Voorbeeld
@@ -81,5 +88,5 @@ Zie [micro soft. common. TextBox](microsoft-common-textbox.md)voor een voor beel
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie aan de slag [met CreateUiDefinition](create-uidefinition-overview.md)voor een inleiding tot het maken van UI-definities.
-* Zie [CreateUiDefinition-elementen](create-uidefinition-elements.md)voor een beschrijving van algemene eigenschappen in UI-elementen.
+- Zie aan de slag [met CreateUiDefinition](create-uidefinition-overview.md)voor een inleiding tot het maken van UI-definities.
+- Zie [CreateUiDefinition-elementen](create-uidefinition-elements.md)voor een beschrijving van algemene eigenschappen in UI-elementen.

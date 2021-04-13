@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/11/2020
-ms.openlocfilehash: 8f193cface177e6be6343f28ef4dc27c2d6c6a7b
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: f8fa0344a6959025856f002e1de4eb8700c32da5
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102030899"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107311308"
 ---
 # <a name="log-analytics-data-security"></a>Log Analytics gegevens beveiliging
 Dit document is bedoeld om informatie te verschaffen die specifiek is voor Log Analytics, een functie van Azure Monitor, om de informatie over [Vertrouwenscentrum van Azure](https://www.microsoft.com/en-us/trust-center?rtc=1)aan te vullen.  
@@ -103,7 +103,7 @@ Log Analytics een incident beheer proces heeft dat alle micro soft-Services nale
   * Opera tors die aan de Microsoft Azure-service werken, hebben aanvullende opleidings verplichtingen rond hun toegang tot gevoelige systemen die klant gegevens hosten.
   * Mede werkers van micro soft-beveiligings reacties ontvangen gespecialiseerde training voor hun rollen
 
-Als er klant gegevens verloren gaan, sturen we elke klant binnen één dag op de hoogte. Het verlies van klant gegevens heeft echter nooit plaatsgevonden bij de service. 
+In zeldzame gevallen zal micro soft elke klant binnen één dag waarschuwen als er aanzienlijke verlies van klant gegevens plaatsvindt. 
 
 Zie [Microsoft Azure Security Response in the Cloud](https://gallery.technet.microsoft.com/Azure-Security-Response-in-dd18c678/file/150826/4/Microsoft%20Azure%20Security%20Response%20in%20the%20cloud.pdf)(Engelstalig) voor meer informatie over hoe micro soft reageert op beveiligings incidenten.
 

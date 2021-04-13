@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 02/08/2021
 ms.author: yegu
-ms.openlocfilehash: ad6696fc4fe2af7047c25a3a9c260d3b12588ee2
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 69dec2ce00b263f3536e30ba0a5376e6d922b79c
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102203297"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107308350"
 ---
 # <a name="high-availability-for-azure-cache-for-redis"></a>Hoge Beschik baarheid voor Azure cache voor redis
 
@@ -21,9 +21,9 @@ Azure cache voor redis implementeert hoge Beschik baarheid door gebruik te maken
 
 | Optie | Beschrijving | Beschikbaarheid | Standard | Premium | Enterprise |
 | ------------------- | ------- | ------- | :------: | :---: | :---: |
-| [Standaard replicatie](#standard-replication)| Configuratie met twee knoop punten gerepliceerd in één Data Center met automatische failover | 99,9% |✔|✔|-|
-| [Zoneredundantie](#zone-redundancy) | Gerepliceerde configuratie met meerdere knoop punten op AZs, met automatische failover | 99,95% (Premium-laag), 99,99% (ondernemings lagen) |-|Preview|Preview|
-| [Geo-replicatie](#geo-replication) | Gekoppelde cache-instanties in twee regio's met door de gebruiker beheerde failover | 99,999% (bedrijfs laag) |-|✔|Preview|
+| [Standaard replicatie](#standard-replication)| Configuratie met twee knoop punten gerepliceerd in één Data Center met automatische failover | 99,9% (Zie [Details](https://azure.microsoft.com/support/legal/sla/cache/v1_0/)) |✔|✔|-|
+| [Zoneredundantie](#zone-redundancy) | Gerepliceerde configuratie met meerdere knoop punten op AZs, met automatische failover | Maxi maal 99,99% (Zie [Details](https://azure.microsoft.com/support/legal/sla/cache/v1_0/)) |-|Preview|Preview|
+| [Geo-replicatie](#geo-replication) | Gekoppelde cache-instanties in twee regio's met door de gebruiker beheerde failover | Maxi maal 99,999% (Zie [Details](https://azure.microsoft.com/support/legal/sla/cache/v1_0/)) |-|✔|Preview|
 
 ## <a name="standard-replication"></a>Standaard replicatie
 

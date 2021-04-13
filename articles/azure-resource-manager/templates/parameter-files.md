@@ -2,13 +2,13 @@
 title: Parameterbestand maken
 description: Parameter bestand maken voor het door geven van waarden tijdens de implementatie van een Azure Resource Manager sjabloon
 ms.topic: conceptual
-ms.date: 09/01/2020
-ms.openlocfilehash: 2b6d942b21594fa608127bb8f403e72295671005
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/12/2021
+ms.openlocfilehash: d557bcdfe246dc2c9bfccde17b7f9590c2686358
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "89276640"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107312039"
 ---
 # <a name="create-resource-manager-parameter-file"></a>Een Resource Manager-parameterbestand maken
 
@@ -210,6 +210,8 @@ Zie [resources implementeren met arm-sjablonen en Azure PowerShell](./deploy-pow
 
 > [!NOTE]
 > Het is niet mogelijk om een parameter bestand te gebruiken met de Blade aangepaste sjabloon in de portal.
+
+Als u het Azure- [resource groeps project in Visual Studio](create-visual-studio-deployment-project.md)gebruikt, moet u ervoor zorgen dat de **actie build** van het parameter bestand is ingesteld op **inhoud**.
 
 ## <a name="file-name"></a>Bestandsnaam
 

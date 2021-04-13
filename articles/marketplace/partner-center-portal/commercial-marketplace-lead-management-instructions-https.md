@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: trkeya
 ms.author: trkeya
-ms.date: 03/30/2020
-ms.openlocfilehash: 5bea2cf256e30bd896957bbee0e0ad824057a569
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/09/2021
+ms.openlocfilehash: 0da1fd7b98b86ebd75926cc8a2d2bb5294d048ca
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98247179"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107308143"
 ---
 # <a name="use-an-https-endpoint-to-manage-commercial-marketplace-leads"></a>Een HTTPS-eind punt gebruiken om leads voor commerciële Marketplace te beheren
 
@@ -31,13 +31,13 @@ In dit artikel wordt uitgelegd hoe u een nieuwe stroom maakt in automatische ene
 
     ![Meld u aan bij mijn stromen](./media/commercial-marketplace-lead-management-instructions-https/my-flows-automated.png)
 
-1. Onder **+ Nieuw** selecteert u **+ direct, leeg**.
+1. Onder **+ Nieuw** selecteert u **+ directe Cloud stroom**.
 
-    ![Mijn stromen + geautomatiseerd--leeg](./media/commercial-marketplace-lead-management-instructions-https/https-myflows-create-fromblank.png)
+    ![Mijn stromen + geautomatiseerd--leeg](./media/commercial-marketplace-lead-management-instructions-https/https-my-flows-create-from-blank.png)
 
 1. Geef uw stroom een naam en selecteer vervolgens onder **kiezen hoe deze stroom moet worden geactiveerd**, **Wanneer een HTTP-aanvraag wordt ontvangen**.
 
-    ![Een automatische stroom venster knop overs Laan maken](./media/commercial-marketplace-lead-management-instructions-https/https-myflows-pick-request-trigger.png)
+    ![Een automatische stroom venster knop overs Laan maken](./media/commercial-marketplace-lead-management-instructions-https/https-my-flows-pick-request-trigger.png)
 
 1. Klik op de stap van de stroom om deze uit te vouwen.
 
@@ -132,14 +132,18 @@ In dit artikel wordt uitgelegd hoe u een nieuwe stroom maakt in automatische ene
     ```
 
 >[!NOTE]
->U kunt op dit punt in de configuratie selecteren om verbinding te maken met een CRM-systeem of een e-mail melding te configureren. Volg de overige instructies op basis van uw keuze.
+>Op dit punt in de configuratie kunt u selecteren om verbinding te maken met een CRM-systeem of een e-mail melding configureren. Volg de overige instructies op basis van uw keuze.
 
 ### <a name="connect-to-a-crm-system"></a>Verbinding maken met een CRM-systeem
 
 1. Selecteer **+ nieuwe stap**.
-1. Kies het CRM-systeem van uw keuze door ernaar te zoeken waar **Zoek connectors en acties** worden vermeld. Selecteer deze op het tabblad **acties** met de actie om een nieuwe record te maken. In het volgende scherm ziet u **een nieuwe record (Dynamics 365)** als voor beeld.
+1. Kies het CRM-systeem van uw keuze door ernaar te zoeken waar **Zoek connectors en acties** worden vermeld. In het volgende scherm ziet u een nieuwe record (Common Data Service) als voor beeld.
 
     ![Een nieuwe record maken](./media/commercial-marketplace-lead-management-instructions-https/create-new-record.png)
+
+1. Selecteer het **tabblad acties** met de actie om **een nieuwe record te maken**.
+
+    ![Selecteer een nieuwe record maken](./media/commercial-marketplace-lead-management-instructions-https/select-create-new-record.png)
 
 1. Geef de **naam** van de organisatie op die aan het CRM-systeem is gekoppeld. Selecteer **leads** in de vervolg keuzelijst **entiteits naam** .
 

@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 01/10/2021
-ms.openlocfilehash: 9fdaf42f18c320bf841e710b7066451fca24eaae
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: fdd62ebfe992398d33d2851a1aa1c66497296b5d
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102030984"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107311189"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Door de klant beheerde sleutel van Azure Monitor 
 
@@ -59,7 +59,7 @@ De volgende regels zijn van toepassing:
 - De Log Analytics cluster-opslag accounts genereren een unieke versleutelings sleutel voor elk opslag account, dat wordt aangeduid als de AEK.
 - De AEK wordt gebruikt om DEKs af te leiden. Dit zijn de sleutels die worden gebruikt voor het versleutelen van elk gegevens blok dat naar de schijf wordt geschreven.
 - Wanneer u de sleutel in Key Vault configureert en ernaar verwijst in het cluster, Azure Storage verzendt aanvragen naar uw Azure Key Vault om in te pakken en de AEK te verpakken voor het uitvoeren van gegevens versleuteling en ontsleuteling.
-- Uw KEK verlaat uw Key Vault nooit en in het geval van een HSM-sleutel verlaat het nooit de hardware.
+- Uw KEK verlaat nooit uw Key Vault.
 - Azure Storage gebruikt de beheerde identiteit die is gekoppeld aan de *cluster* bron om te verifiëren en toegang te krijgen tot Azure Key Vault via Azure Active Directory.
 
 ### <a name="customer-managed-key-provisioning-steps"></a>Stappen voor het inrichten van Customer-Managed sleutels
@@ -169,6 +169,9 @@ Selecteer de huidige versie van uw sleutel in Azure Key Vault om de details van 
 
 KeyVaultProperties in cluster bijwerken met sleutel-id-Details.
 
+>[!NOTE]
+>Het draaien van sleutels ondersteunt twee modi: automatisch draaien of expliciete sleutel versie bijwerken. Zie de [belangrijkste draaiing](#key-rotation) om te bepalen wat de beste oplossing voor u is.
+
 De bewerking is asynchroon en kan enige tijd duren.
 
 # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
@@ -266,7 +269,9 @@ In de opslag ruimte van het cluster wordt uw Key Vault periodiek gecontroleerd o
 
 ## <a name="key-rotation"></a>Sleutelroulatie
 
-Voor de door de klant beheerde sleutel rotatie is een expliciete update van het cluster met de nieuwe sleutel versie in Azure Key Vault vereist. [Cluster met sleutel-id-Details bijwerken](#update-cluster-with-key-identifier-details). Als u de nieuwe sleutel versie in het cluster niet bijwerkt, blijft de Log Analytics cluster opslag uw vorige sleutel gebruiken voor versleuteling. Als u de oude sleutel uitschakelt of verwijdert voordat u de nieuwe sleutel in het cluster bijwerkt, krijgt u een [belang rijke intrekkings](#key-revocation) status.
+Het draaien van sleutels heeft twee modi: 
+- Automatisch door draaien: wanneer u uw cluster bijwerkt met de eigenschap overs ```"keyVaultProperties"``` Laan ```"keyVersion"``` of instelt op ```""``` , wordt de nieuwste versie van de opslag autoamatically gebruikt.
+- Expliciete sleutel versie bijwerken: wanneer u uw cluster bijwerkt en de sleutel versie opgeeft ```"keyVersion"``` , moeten voor alle nieuwe sleutel versies een expliciete ```"keyVaultProperties"``` Update in het cluster worden weer geven, de details van het [cluster bijwerken met sleutel-id's](#update-cluster-with-key-identifier-details). Als u een nieuwe sleutel versie in Key Vault genereert, maar deze niet in het cluster bijwerkt, blijft de Log Analytics-cluster opslag de vorige sleutel blijven gebruiken. Als u de oude sleutel uitschakelt of verwijdert voordat u de nieuwe sleutel in het cluster bijwerkt, krijgt u een [belang rijke intrekkings](#key-revocation) status.
 
 Al uw gegevens blijven toegankelijk na de bewerking voor het wijzigen van de sleutel, omdat gegevens altijd worden versleuteld met de account versleutelings sleutel (AEK) terwijl AEK nu wordt versleuteld met uw nieuwe Key Encryption Key (KEK)-versie in Key Vault.
 
@@ -395,7 +400,7 @@ Customer-Managed sleutel wordt op toegewezen cluster gegeven en deze bewerkingen
 - Een werk ruimte ontkoppelen van een cluster
 - Cluster verwijderen
 
-## <a name="limitations-and-constraints"></a>Beperkingen en beperkingen
+## <a name="limitations-and-constraints"></a>Beperkingen
 
 - Het maximale aantal clusters per regio en abonnement is 2
 

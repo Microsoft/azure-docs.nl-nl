@@ -3,12 +3,12 @@ title: Overzicht van gespecialiseerde Event hubs-Azure Event Hubs | Microsoft Do
 description: Dit artikel bevat een overzicht van toegewezen Azure-Event Hubs, dat implementaties met één Tenant van Event hubs biedt.
 ms.topic: article
 ms.date: 10/23/2020
-ms.openlocfilehash: 721acf354c7d14c1362b4f760982af37d59115f9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: fe63b074bfdd01191d81dfb7024af5532a87a12f
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101715612"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107310764"
 ---
 # <a name="overview-of-event-hubs-dedicated"></a>Overzicht van Event Hubs Dedicated
 
@@ -71,4 +71,4 @@ Neem contact op met uw micro soft-verkoop vertegenwoordiger of Microsoft Onderst
 
 - [Een Event Hubs cluster maken via de Azure Portal](https://aka.ms/eventhubsclusterquickstart) 
 - [Event hubs dedicated prijzen](https://azure.microsoft.com/pricing/details/event-hubs/). U kunt ook contact opnemen met uw micro soft-verkoop medewerker of Microsoft Ondersteuning om meer informatie over Event Hubs Dedicated capaciteit te krijgen.
-- De [Veelgestelde](event-hubs-faq.md) vragen over de Event hubs bevatten prijs informatie en antwoorden op veelgestelde vragen over Event hubs.
+- De [Veelgestelde](event-hubs-faq.yml) vragen over de Event hubs bevatten prijs informatie en antwoorden op veelgestelde vragen over Event hubs.

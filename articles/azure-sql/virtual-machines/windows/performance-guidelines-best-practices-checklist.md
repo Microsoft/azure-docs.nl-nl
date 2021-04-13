@@ -15,12 +15,12 @@ ms.date: 03/25/2021
 ms.author: mathoma
 ms.custom: contperf-fy21q3
 ms.reviewer: jroth
-ms.openlocfilehash: 0b88884576a47db871c78b874104d4973ee9ba9a
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 84f2f4f679de80cd9b5fc986d40e084bae8a4cad
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105572384"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107313756"
 ---
 # <a name="checklist-performance-best-practices-for-sql-server-on-azure-vms"></a>Controle lijst: aanbevolen prestatie procedures voor het SQL Server op virtuele machines van Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -40,7 +40,7 @@ Er is doorgaans een afweging tussen het optimaliseren van kosten en het optimali
 
 Hieronder vindt u een korte controle lijst met aanbevolen procedures voor het uitvoeren van uw SQL Server op Azure VM: 
 
-- Gebruik VM-grootten met vier of meer vCPU zoals de [Standard_M8-4 MS](/../../virtual-machines/m-series), de [E4ds_v4](../../../virtual-machines/edv4-edsv4-series.md#edv4-series)of de [DS12_v2](../../../virtual-machines/dv2-dsv2-series-memory.md#dsv2-series-11-15) of hoger. 
+- Gebruik VM-grootten met vier of meer vCPU zoals de [Standard_M8-4 MS](../../../virtual-machines/m-series.md), de [E4ds_v4](../../../virtual-machines/edv4-edsv4-series.md#edv4-series)of de [DS12_v2](../../../virtual-machines/dv2-dsv2-series-memory.md#dsv2-series-11-15) of hoger. 
 - De grootte van virtuele machines die zijn [geoptimaliseerd voor geheugen](../../../virtual-machines/sizes-memory.md) gebruiken voor de beste prestaties van SQL Server werk belastingen. 
 - De [DSv2 11-15](../../../virtual-machines/dv2-dsv2-series-memory.md), [Edsv4](../../../virtual-machines/edv4-edsv4-series.md) Series, de [M-](../../../virtual-machines/m-series.md)en de [Mv2-](../../../virtual-machines/mv2-series.md) series bieden de optimale geheugen-naar-vCore-verhouding die vereist is voor OLTP-workloads. Virtuele machines uit de M-serie bieden de hoogste geheugen-naar-vCore verhouding die is vereist voor essentiële workloads en die ook ideaal zijn voor Data Warehouse-workloads. 
 - Overweeg een hogere geheugen-naar-vCore-verhouding voor bedrijfs kritieke en Data Warehouse-workloads. 

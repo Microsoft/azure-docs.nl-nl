@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 03/22/2021
+ms.date: 04/12/2021
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: e8192c5c6734009f69e3f741531251dd85675b47
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.openlocfilehash: 4130ed4bb690edb3c0c5d72d7d158262ed6ff39d
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106449446"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107305596"
 ---
 # <a name="tutorial-develop-and-plan-provisioning-for-a-scim-endpoint"></a>Zelf studie: inrichten opstellen en plannen voor een SCIM-eind punt
 
@@ -62,7 +62,7 @@ De SCIM-standaard biedt een schema voor het beheren van gebruikers en groepen.
 Voor het **kern** gebruikers schema zijn alleen drie kenmerken vereist (alle andere kenmerken zijn optioneel):
 
 - `id`, gedefinieerde id van service provider
-- `externalId`, door client gedefinieerde id
+- `userName`, een unieke id voor de gebruiker (over het algemeen wordt toegewezen aan de Azure AD-user principal name)
 - `meta`, *alleen-lezen* meta gegevens die worden onderhouden door de service provider
 
 Naast het **kern** gebruikers schema definieert de scim-standaard een gebruikers extensie voor **ondernemingen** met een model voor het uitbreiden van het gebruikers schema om te voldoen aan de behoeften van uw toepassing. 

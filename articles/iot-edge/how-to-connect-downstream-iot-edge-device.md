@@ -12,23 +12,18 @@ ms.custom:
 - amqp
 - mqtt
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: 70b3ed53747deb1f3bdc90de8fe71f42f8f7ce13
-ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
+ms.openlocfilehash: e0912fb452a7f587fef19de835eea111b349a9a4
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106580496"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107310016"
 ---
-# <a name="connect-a-downstream-iot-edge-device-to-an-azure-iot-edge-gateway-preview"></a>Een downstream-IoT Edge apparaat verbinden met een Azure IoT Edge gateway (preview-versie)
+# <a name="connect-a-downstream-iot-edge-device-to-an-azure-iot-edge-gateway"></a>Een downstream-IoT Edge apparaat verbinden met een Azure IoT Edge gateway
 
 [!INCLUDE [iot-edge-version-202011](../../includes/iot-edge-version-202011.md)]
 
 Dit artikel bevat instructies voor het tot stand brengen van een vertrouwde verbinding tussen een IoT Edge gateway en een downstream IoT Edge apparaat.
-
->[!NOTE]
->Voor deze functie is IoT Edge versie 1.2, in openbare preview, met Linux-containers vereist.
->
->Dit artikel heeft betrekking op de nieuwste preview-versie van IoT Edge versie 1,2. Zorg ervoor dat versie [1.2.0-RC4](https://github.com/Azure/azure-iotedge/releases/tag/1.2.0-rc4) of hoger op uw apparaat wordt uitgevoerd. Zie voor stappen voor het verkrijgen van de nieuwste preview-versie op uw apparaat [installeren Azure IOT Edge voor Linux (versie 1,2)](how-to-install-iot-edge.md) of [Update IoT Edge naar versie 1,2](how-to-update-iot-edge.md#special-case-update-from-10-or-11-to-12).
 
 In een gateway scenario kan een IoT Edge apparaat zowel een gateway als een downstream-apparaat zijn. Meerdere IoT Edge gateways kunnen worden gelaagd om een hiërarchie van apparaten te maken. De downstream-(of onderliggende) apparaten kunnen berichten verifiëren en verzenden of ontvangen via hun gateway-(of bovenliggende) apparaat.
 
@@ -162,13 +157,13 @@ Zorg ervoor dat de gebruiker **iotedge** Lees machtigingen heeft voor de directo
 
 1. Zoek het gedeelte **Trust bundel CERT** . Verwijder de opmerking en werk de `trust_bundle_cert` para meter bij met de bestands-URI naar het basis-CA-certificaat op uw apparaat.
 
-1. Hoewel deze functie in de open bare preview is, moet u uw IoT Edge-apparaat configureren om de open bare preview-versie van de IoT Edge agent te gebruiken wanneer deze wordt gestart.
+1. Controleer of uw IoT Edge-apparaat de juiste versie van de IoT Edge agent gebruikt wanneer deze wordt gestart.
 
-   Zoek de sectie **standaard rand agent** en werk de afbeeldings waarde bij naar de open bare voorbeeld installatie kopie:
+   Zoek de sectie **standaard rand agent** en controleer of de waarde voor de installatie kopie is IoT Edge versie 1,2. Als dat niet het geval is, werkt u het bij:
 
    ```toml
    [agent.config]
-   image: "mcr.microsoft.com/azureiotedge-agent:1.2.0-rc4"
+   image: "mcr.microsoft.com/azureiotedge-agent:1.2"
    ```
 
 1. Zoek het gedeelte **CA-certificaat** voor de rand in het configuratie bestand. Verwijder de opmerkingen in de regels in deze sectie en geef de bestands-URI-paden op voor het certificaat en de sleutel bestanden op het IoT Edge-apparaat.
@@ -200,21 +195,6 @@ Zorg ervoor dat de gebruiker **iotedge** Lees machtigingen heeft voor de directo
 
    >[!TIP]
    >Het hulp programma IoT Edge controle maakt gebruik van een container voor het uitvoeren van een deel van de diagnostische controle. Als u dit hulp programma wilt gebruiken op downstream IoT Edge-apparaten, moet u ervoor zorgen dat ze toegang hebben `mcr.microsoft.com/azureiotedge-diagnostics:latest` of de container installatie kopie hebben in het persoonlijke container register.
-
-## <a name="configure-runtime-modules-for-public-preview"></a>Runtime modules voor open bare preview configureren
-
-Hoewel deze functie in de open bare preview is, moet u uw IoT Edge-apparaat configureren voor het gebruik van de open bare Preview-versies van de IoT Edge runtime-modules. De vorige sectie bevat stappen voor het configureren van edgeAgent bij het opstarten. U moet ook de runtime modules configureren in implementaties voor uw apparaat.
-
-1. De edgeHub-module configureren voor het gebruik van de open bare voorbeeld installatie kopie: `mcr.microsoft.com/azureiotedge-hub:1.2.0-rc4` .
-
-1. Configureer de volgende omgevings variabelen voor de module edgeHub:
-
-   | Name | Waarde |
-   | - | - |
-   | `experimentalFeatures__enabled` | `true` |
-   | `experimentalFeatures__nestedEdgeEnabled` | `true` |
-
-1. De edgeAgent-module configureren voor het gebruik van de open bare voorbeeld installatie kopie: `mcr.microsoft.com/azureiotedge-hub:1.2.0-rc4` .
 
 ## <a name="network-isolate-downstream-devices"></a>Downstream-apparaten netwerk isoleren
 
@@ -250,6 +230,8 @@ Voor elk gateway apparaat in een lagere laag moeten netwerk exploitanten het vol
 Het IoT Edge apparaat in de bovenste laag van een gateway hiërarchie heeft een set vereiste modules die erop moeten worden geïmplementeerd, naast eventuele modules die u op het apparaat kunt uitvoeren.
 
 De API-proxy module is ontworpen om te worden aangepast voor het verwerken van de meest voorkomende gateway scenario's. In dit artikel vindt u een voor beeld van het instellen van de modules in een basis configuratie. Raadpleeg [de API-proxy module voor uw gateway hiërarchie scenario configureren](how-to-configure-api-proxy-module.md) voor meer gedetailleerde informatie en voor beelden.
+
+# <a name="portal"></a>[Portal](#tab/azure-portal)
 
 1. Navigeer in het [Azure Portal](https://portal.azure.com)naar uw IOT-hub.
 1. Selecteer **IOT Edge** in het navigatie menu.
@@ -337,6 +319,109 @@ De API-proxy module is ontworpen om te worden aangepast voor het verwerken van d
 1. Selecteer **controleren + maken** om naar de laatste stap te gaan.
 1. Selecteer **maken** om te implementeren op het apparaat.
 
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+1. Maak in de [Azure Cloud shell](https://shell.azure.com/)een JSON-bestand voor implementatie. Bijvoorbeeld:
+
+   ```json
+   {
+       "modulesContent": {
+           "$edgeAgent": {
+               "properties.desired": {
+                   "modules": {
+                       "dockerContainerRegistry": {
+                           "settings": {
+                               "image": "registry:latest",
+                               "createOptions": "{\"HostConfig\":{\"PortBindings\":{\"5000/tcp\":[{\"HostPort\":\"5000\"}]}}}"
+                           },
+                           "type": "docker",
+                           "version": "1.0",
+                           "env": {
+                               "REGISTRY_PROXY_REMOTEURL": {
+                                   "value": "The URL for the container registry you want this registry module to map to. For example, https://myregistry.azurecr"
+                               },
+                               "REGISTRY_PROXY_USERNAME": {
+                                   "value": "Username to authenticate to the container registry."
+                               },
+                               "REGISTRY_PROXY_PASSWORD": {
+                                   "value": "Password to authenticate to the container registry."
+                               }
+                           },
+                           "status": "running",
+                           "restartPolicy": "always"
+                       },
+                       "IoTEdgeAPIProxy": {
+                           "settings": {
+                               "image": "mcr.microsoft.com/azureiotedge-api-proxy:1.0",
+                               "createOptions": "{\"HostConfig\": {\"PortBindings\": {\"443/tcp\": [{\"HostPort\":\"443\"}]}}}"
+                           },
+                           "type": "docker",
+                           "env": {
+                               "NGINX_DEFAULT_PORT": {
+                                   "value": "443"
+                               },
+                               "DOCKER_REQUEST_ROUTE_ADDRESS": {
+                                   "value": "registry:5000"
+                               }
+                           },
+                           "status": "running",
+                           "restartPolicy": "always",
+                           "version": "1.0"
+                       }
+                   },
+                   "runtime": {
+                       "settings": {
+                           "minDockerVersion": "v1.25"
+                       },
+                       "type": "docker"
+                   },
+                   "schemaVersion": "1.1",
+                   "systemModules": {
+                       "edgeAgent": {
+                           "settings": {
+                               "image": "mcr.microsoft.com/azureiotedge-agent:1.2",
+                               "createOptions": ""
+                           },
+                           "type": "docker"
+                       },
+                       "edgeHub": {
+                           "settings": {
+                               "image": "mcr.microsoft.com/azureiotedge-hub:1.2",
+                               "createOptions": "{\"HostConfig\":{\"PortBindings\":{\"5671/tcp\":[{\"HostPort\":\"5671\"}],\"8883/tcp\":[{\"HostPort\":\"8883\"}]}}}"
+                           },
+                           "type": "docker",
+                           "env": {},
+                           "status": "running",
+                           "restartPolicy": "always"
+                       }
+                   }
+               }
+           },
+           "$edgeHub": {
+               "properties.desired": {
+                   "routes": {
+                       "route": "FROM /messages/* INTO $upstream"
+                   },
+                   "schemaVersion": "1.1",
+                   "storeAndForwardConfiguration": {
+                       "timeToLiveSecs": 7200
+                   }
+               }
+           }
+       }
+   }
+   ```
+
+   Met dit implementatie bestand wordt de API-proxy module geconfigureerd om te Luis teren op poort 443. Om conflicten met poort bindingen te voor komen, configureert het bestand de edgeHub-module zodat deze niet luistert op poort 443. In plaats daarvan stuurt de API-proxy module elk edgeHub-verkeer op poort 443.
+
+1. Voer de volgende opdracht in om een implementatie te maken op een IoT Edge apparaat:
+
+   ```bash
+   az iot edge set-modules --device-id <device_id> --hub-name <iot_hub_name> --content ./<deployment_file_name>.json
+   ```
+
+---
+
 ### <a name="deploy-modules-to-lower-layer-devices"></a>Modules implementeren op apparaten met een lagere laag
 
 IoT Edge apparaten in lagere lagen van een gateway hiërarchie een vereiste module hebben die moet worden geïmplementeerd, naast de werkbelasting modules die u op het apparaat kunt uitvoeren.
@@ -347,7 +432,7 @@ Voordat u de vereiste proxy module voor IoT Edge apparaten in Gateway-hiërarchi
 
 Als uw lagere laag apparaten geen verbinding kunnen maken met de Cloud, maar u wilt dat ze de module installatie kopieën laten weer geven, moet het apparaat voor de bovenste laag van de gateway hiërarchie worden geconfigureerd om deze aanvragen af te handelen. Het apparaat voor de bovenste laag moet een docker- **register** module uitvoeren die is toegewezen aan uw container register. Configureer vervolgens de API-proxy module zo dat er container aanvragen worden gerouteerd. Deze details worden besproken in de eerdere secties van dit artikel. In deze configuratie moeten de apparaten in de lagere laag niet verwijzen naar de Cloud container registers, maar naar het REGI ster dat wordt uitgevoerd in de bovenste laag.
 
-In plaats van de oproep `mcr.microsoft.com/azureiotedge-api-proxy:latest` kunnen apparaten met een lagere laag bijvoorbeeld worden aangeroepen `$upstream:443/azureiotedge-api-proxy:latest` .
+In plaats van de oproep `mcr.microsoft.com/azureiotedge-api-proxy:1.0` kunnen apparaten met een lagere laag bijvoorbeeld worden aangeroepen `$upstream:443/azureiotedge-api-proxy:1.0` .
 
 De **$upstream** -para meter verwijst naar het bovenliggende apparaat van een lagere laag, zodat de aanvraag door alle lagen wordt doorgestuurd totdat de bovenste laag die een proxy omgeving heeft, een routerings container aanvragen naar de register module heeft bereikt. De `:443` poort in dit voor beeld moet worden vervangen door de poort waarop de API-proxy module op het bovenliggende apparaat wordt geluisterd.
 
@@ -369,7 +454,7 @@ name = "edgeAgent"
 type = "docker"
 
 [agent.config]
-image: "{Parent FQDN or IP}:443/azureiotedge-agent:1.2.0-rc4"
+image: "{Parent FQDN or IP}:443/azureiotedge-agent:1.2"
 ```
 
 Als u een lokaal container register gebruikt of de container installatie kopieën hand matig op het apparaat opgeeft, moet u het configuratie bestand dienovereenkomstig bijwerken.

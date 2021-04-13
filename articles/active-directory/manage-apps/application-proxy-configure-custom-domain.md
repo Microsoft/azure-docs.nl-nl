@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 10/24/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 49edab5ed20749cb705d160e5cdc46a16bdee951
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: dadb23b9a8d00d484a9c42db9007d8c5b94b4c78
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99258028"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107306786"
 ---
 # <a name="configure-custom-domains-with-azure-ad-application-proxy"></a>Aangepaste domeinen configureren met Azure AD-toepassingsproxy
 
@@ -90,7 +90,7 @@ Uw app publiceren via een toepassings proxy met een aangepast domein:
    
    ![Klik om een certificaat te uploaden](./media/application-proxy-configure-custom-domain/certificate.png)
    
-7. Blader op de pagina **SSL-certificaat** naar het pfx-certificaat bestand en selecteer dit. Voer het wacht woord voor het certificaat in en selecteer **certificaat uploaden**. Zie de sectie [certificaten voor aangepaste domeinen](#certificates-for-custom-domains) voor meer informatie over certificaten. Als het certificaat ongeldig is of als er een probleem is met het wacht woord, wordt een fout bericht weer gegeven. De [Veelgestelde vragen over Application proxy](application-proxy-faq.md#application-configuration) bevat enkele stappen voor probleem oplossing die u kunt proberen.
+7. Blader op de pagina **SSL-certificaat** naar het pfx-certificaat bestand en selecteer dit. Voer het wacht woord voor het certificaat in en selecteer **certificaat uploaden**. Zie de sectie [certificaten voor aangepaste domeinen](#certificates-for-custom-domains) voor meer informatie over certificaten. Als het certificaat ongeldig is of als er een probleem is met het wacht woord, wordt een fout bericht weer gegeven. De [Veelgestelde vragen over Application proxy](application-proxy-faq.yml#application-configuration) bevat enkele stappen voor probleem oplossing die u kunt proberen.
    
    ![Certificaat uploaden](./media/application-proxy-configure-custom-domain/ssl-certificate.png)
    

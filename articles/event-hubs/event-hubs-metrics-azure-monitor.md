@@ -3,12 +3,12 @@ title: Metrische gegevens in Azure Monitor-Azure Event Hubs | Microsoft Docs
 description: Dit artikel bevat informatie over het gebruik van Azure monitoring voor het bewaken van Azure Event Hubs
 ms.topic: article
 ms.date: 02/25/2021
-ms.openlocfilehash: 52ab66fe264b85be117eb8e2e21cb89f38d0fcae
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9b31ed9e8bea67367533813f20265761b77ae371
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101715578"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107307347"
 ---
 # <a name="azure-event-hubs-metrics-in-azure-monitor"></a>Metrische gegevens van Azure Event Hubs in Azure Monitor
 
@@ -77,7 +77,7 @@ Voor meer informatie over Event Hubs gaat u naar de volgende koppelingen:
     - [Java](event-hubs-java-get-started-send.md)
     - [Python](event-hubs-python-get-started-send.md)
     - [JavaScript](event-hubs-node-get-started-send.md)
-* [Veelgestelde vragen over Event Hubs](event-hubs-faq.md)
+* [Veelgestelde vragen over Event Hubs](event-hubs-faq.yml)
 * [Voorbeeldtoepassingen die gebruikmaken van Event Hubs](https://github.com/Azure/azure-event-hubs/tree/master/samples)
 
 [1]: ./media/event-hubs-metrics-azure-monitor/event-hubs-monitor1.png

@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 11/25/2020
 ms.author: anvang
 ms.reviewer: jrasnick
-ms.openlocfilehash: 769ca4cf0ecbdba5fd80d977eb69c8a4f58df55f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 605f495fbc5913663499f5411abcaa531cea97ee
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98071184"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107312209"
 ---
 # <a name="enabling-synapse-workspace-features-for-a-dedicated-sql-pool-formerly-sql-dw"></a>Functies van Synapse-werk ruimte inschakelen voor een toegewezen SQL-groep (voorheen SQL DW)
 
@@ -24,6 +24,7 @@ Alle SQL Data Warehouse-gebruikers hebben nu toegang tot en gebruiken een bestaa
 ## <a name="prerequisites"></a>Vereisten
 Voordat u de functies van de Synapse-werk ruimte in uw data warehouse inschakelt, moet u ervoor zorgen dat u over het volgende beschikt
 - Rechten voor het maken en beheren van de SQL-resources die worden gehost op de logische SQL-Server.
+- Schrijf machtigingen op de host SQL Server. 
 - Rechten voor het maken van Azure Synapse-resources.
 - Een Azure Active Directory beheerder geïdentificeerd op de logische server
 

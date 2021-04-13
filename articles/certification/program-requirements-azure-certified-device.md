@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/15/2021
 ms.custom: Azure Certified Device Certification Requirements
 ms.service: certification
-ms.openlocfilehash: 948fe25da8468e887693fe8c9f75f675dfbea858
-ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
+ms.openlocfilehash: 497ffa4b3026491d6aa95df87708b3b1f2f1619e
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105969186"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107308282"
 ---
 # <a name="azure-certified-device-requirements"></a>Vereisten voor Azure Certified Device 
 (voorheen bekend als IoT Hub)
@@ -40,7 +40,7 @@ Belofte van certificering van Azure Certified-apparaten:
 | **Van toepassing op**          | Leaf-apparaat/rand apparaat                                      |
 | **Besturingssysteem**                  | Agnostisch                                                     |
 | **Validatie type**     | Geautomatiseerd                                                    |
-| **Validatie**          | Het apparaat moet een telemetrie-schema naar IoT Hub verzenden. Micro soft biedt de [Portal werk stroom](https://certify.azure.come) voor het uitvoeren van de tests. Apparaat naar Cloud (vereist): **1.** Hiermee wordt gevalideerd of het apparaat een bericht kan verzenden naar AICS beheerd IoT Hub **2.** De gebruiker moet het aantal en de frequentie van berichten opgeven. **3.** AICS valideert of de telemetrie is ontvangen door het hub-exemplaar |
+| **Validatie**          | Het apparaat moet een telemetrie-schema naar IoT Hub verzenden. Micro soft biedt de [Portal werk stroom](https://certify.azure.com/) voor het uitvoeren van de tests. Apparaat naar Cloud (vereist): **1.** Hiermee wordt gevalideerd of het apparaat een bericht kan verzenden naar AICS beheerd IoT Hub **2.** De gebruiker moet het aantal en de frequentie van berichten opgeven. **3.** AICS valideert of de telemetrie is ontvangen door het hub-exemplaar |
 | **Bronnen**           | [Certificerings stappen](./overview.md) (heeft alle aanvullende bronnen) |
 
 **Lang DPS: het doel van de test is om te controleren of het apparaat wordt geïmplementeerd en ondersteunt IoT Hub Device Provisioning Service met een van de drie Attestation-methoden**

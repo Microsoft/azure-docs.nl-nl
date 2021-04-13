@@ -7,13 +7,13 @@ ms.author: bagol
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: reference
-ms.date: 03/16/2021
-ms.openlocfilehash: 6c23fe86af030d371e12914062bb9558e8db3484
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/12/2021
+ms.openlocfilehash: 1670d1bb291e30295018146f2a24c5282feac6e7
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104776209"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107311648"
 ---
 # <a name="cef-and-commonsecuritylog-field-mapping"></a>CEF en CommonSecurityLog veld toewijzing
 
@@ -37,13 +37,13 @@ Zie [verbinding maken met uw externe oplossing met de algemene gebeurtenis indel
 |Leverancier van apparaat     |  DeviceVendor       | Een teken reeks die samen met de product-en versie definities van het apparaat een unieke identificatie vormt van het type verzendende apparaat.       |
 |Product apparaat     |   DeviceProduct      |   Een teken reeks die samen met de leveranciers-en versie definities van het apparaat een unieke identificatie vormt van het type verzendende apparaat.        |
 |Apparaatstatus     |   DeviceVersion      |      Een teken reeks die samen met de product-en leveranciers definities een unieke identificatie vormt van het type verzendende apparaat.     |
-|DeviceEventClassID     |   DeviceEventClassID     |   Een teken reeks of een geheel getal dat fungeert als een unieke id per gebeurtenis type.      |
 | destinationDnsDomain    | DestinationDnsDomain        |   Het DNS-gedeelte van de Fully Qualified Domain Name (FQDN).      |
 | destinationServiceName | DestinationServiceName | De service die wordt beoogd door de gebeurtenis. Bijvoorbeeld `sshd`.|
 | destinationTranslatedAddress | DestinationTranslatedAddress | Identificeert de vertaalde bestemming waarnaar wordt verwezen door de gebeurtenis in een IP-netwerk als een IPv4-IP-adres. |
 | destinationTranslatedPort | DestinationTranslatedPort | Poort, na de vertaling, zoals een firewall. <br>Geldige poort nummers: `0` - `65535` |
 | deviceDirection | <a name="communicationdirection"></a> CommunicationDirection | Alle informatie over de richting waarin de waargenomen communicatie heeft plaatsgevonden. Geldige waarden: <br>- `0` = Binnenkomend <br>- `1` = Uitgaande |
 | deviceDnsDomain | DeviceDnsDomain | Het DNS-domein gedeelte van de FQDN-naam (Fully Qualified Domain Name) |
+|DeviceEventClassID     |   DeviceEventClassID     |   Een teken reeks of een geheel getal dat fungeert als een unieke id per gebeurtenis type.      |
 | deviceExternalID | DeviceExternalID | Een unieke naam voor het apparaat waarmee de gebeurtenis wordt gegenereerd. |
 | deviceFacility | DeviceFacility | De faciliteit waarmee de gebeurtenis wordt gegenereerd.|
 | deviceInboundInterface | DeviceInboundInterface |De interface waarop het pakket of de gegevens van het apparaat zijn binnengekomen.  |
@@ -118,7 +118,7 @@ Zie [verbinding maken met uw externe oplossing met de algemene gebeurtenis indel
 | requestCookies | RequestCookies |Cookies die zijn gekoppeld aan de aanvraag. |
 | requestMethod | RequestMethod | De methode die wordt gebruikt voor toegang tot een URL. <br><br>Geldige waarden zijn methoden zoals `POST` , `GET` , enzovoort. |
 | RT | ReceiptTime | Het tijdstip waarop de gebeurtenis met betrekking tot de activiteit is ontvangen. |
-|Severity     |  <a name="logseverity"></a> LogSeverity       |  Een teken reeks of geheel getal dat het belang van de gebeurtenis beschrijft.<br><br> Geldige teken reeks waarden: `Unknown` , `Low` , `Medium` , `High` , `Very-High` <br><br>Geldige waarden voor een geheel getal zijn: `0` - `3` = laag, `4` - `6` = Gemiddeld, `7` - `8` = hoog, `9` - `10` = Very-High |
+|Severity     |  <a name="logseverity"></a> LogSeverity       |  Een teken reeks of geheel getal dat het belang van de gebeurtenis beschrijft.<br><br> Geldige teken reeks waarden: `Unknown` , `Low` , `Medium` , `High` , `Very-High` <br><br>Geldige waarden voor een geheel getal zijn:<br> - `0`-`3` = Laag <br>- `4`-`6` = Gemiddeld<br>- `7`-`8` = Hoog<br>- `9`-`10` = Very-High |
 | shost    | SourceHostName        |Identificeert de bron waarnaar de gebeurtenis verwijst in een IP-netwerk. De indeling moet een Fully Qualified Domain Name (DQDN) zijn die is gekoppeld aan het bron knooppunt, wanneer er een knoop punt beschikbaar is. Bijvoorbeeld `host` of `host.domain.com`. |
 | smac | SourceMacAddress | Bron-MAC-adres. |
 | sntdom | SourceNTDomain | De Windows-domein naam voor het bron adres. |
@@ -133,13 +133,126 @@ Zie [verbinding maken met uw externe oplossing met de algemene gebeurtenis indel
 | src | SourceIP |De bron waarnaar een gebeurtenis verwijst in een IP-netwerk als een IPv4-adres. |
 | starten | StartTime | Het tijdstip waarop de activiteit waarnaar de gebeurtenis verwijst, wordt gestart. |
 | suid | SourceUserID | Hiermee wordt de bron gebruiker op ID geïdentificeerd. |
+| suser | SourceUserName | Identificeert de bron gebruiker op naam. |
 | type | EventType | Gebeurtenis type. Waarde waarden zijn onder andere: <br>- `0`: basis gebeurtenis <br>- `1`: samengevoegd <br>- `2`: correlatie gebeurtenis <br>- `3`: actie gebeurtenis <br><br>**Opmerking**: deze gebeurtenis kan worden wegge laten voor basis gebeurtenissen. |
 | | | |
 
-## <a name="unmapped-fields"></a>Niet-toegewezen velden
+## <a name="custom-fields"></a>Aangepaste velden
 
-De volgende **CommonSecurityLog** -veld namen hebben geen toewijzingen in CEF-sleutels:
+In de volgende tabellen worden de namen van CEF-en CommonSecurityLog-velden die beschikbaar zijn voor klanten, gebruikt voor gegevens die niet van toepassing zijn op een van de ingebouwde velden.
 
+### <a name="custom-ipv6-address-fields"></a>Aangepaste IPv6-adres velden
+
+In de volgende tabel worden CEF sleutel-en CommonSecurityLog namen voor de *IPv6-* adres velden weer gegeven die beschikbaar zijn voor aangepaste gegevens.
+
+|CEF-sleutel naam  |CommonSecurityLog-naam  |
+|---------|---------|
+|     c6a1    |     DeviceCustomIPv6Address1       |
+|     c6a1Label    |     DeviceCustomIPv6Address1Label    |
+|     c6a2    |     DeviceCustomIPv6Address2    |
+|     c6a2Label    |     DeviceCustomIPv6Address2Label    |
+|     c6a3    |     DeviceCustomIPv6Address3    |
+|     c6a3Label    |     DeviceCustomIPv6Address3Label    |
+|     c6a4    |     DeviceCustomIPv6Address4    |
+|     c6a4Label    |     DeviceCustomIPv6Address4Label    |
+|     cfp1    |     DeviceCustomFloatingPoint1    |
+|     cfp1Label    |     deviceCustomFloatingPoint1Label    |
+|     cfp2    |     DeviceCustomFloatingPoint2    |
+|     cfp2Label    |     deviceCustomFloatingPoint2Label    |
+|     cfp3    |     DeviceCustomFloatingPoint3    |
+|     cfp3Label    |     deviceCustomFloatingPoint3Label    |
+|     cfp4    |     DeviceCustomFloatingPoint4    |
+|     cfp4Label    |     deviceCustomFloatingPoint4Label    |
+| | |
+
+### <a name="custom-number-fields"></a>Aangepaste numerieke velden
+
+In de volgende tabel worden CEF-en CommonSecurityLog-namen toegewezen voor de *numerieke* velden die beschikbaar zijn voor aangepaste gegevens.
+
+|CEF-sleutel naam  |CommonSecurityLog-naam  |
+|---------|---------|
+|     cn1    |     DeviceCustomNumber1       |
+|     cn1Label    |     DeviceCustomNumber1Label       |
+|     cn2    |     DeviceCustomNumber2       |
+|     cn2Label    |     DeviceCustomNumber2Label       |
+|     cn3    |     DeviceCustomNumber3       |
+|     cn3Label    |     DeviceCustomNumber3Label       |
+| | |
+
+### <a name="custom-string-fields"></a>Aangepaste teken reeks velden
+
+In de volgende tabel worden CEF sleutel-en CommonSecurityLog namen toegewezen voor de *teken reeks* velden die beschikbaar zijn voor aangepaste gegevens.
+
+|CEF-sleutel naam  |CommonSecurityLog-naam  |
+|---------|---------|
+|     CS1    |     DeviceCustomString1 <sup> [1](#use-sparingly)</sup>    |
+|     cs1Label    |     DeviceCustomString1Label <sup> [1](#use-sparingly)</sup>    |
+|     CS2    |     DeviceCustomString2 <sup> [1](#use-sparingly)</sup>   |
+|     cs2Label    |     DeviceCustomString2Label <sup> [1](#use-sparingly)</sup> |
+|     CS3    |     DeviceCustomString3 <sup> [1](#use-sparingly)</sup>  |
+|     cs3Label    |     DeviceCustomString3Label <sup> [1](#use-sparingly)</sup> |
+|     gebruiken    |     DeviceCustomString4 <sup> [1](#use-sparingly)</sup> |
+|     cs4Label    |     DeviceCustomString4Label <sup> [1](#use-sparingly)</sup>  |
+|     cs5    |     DeviceCustomString5 <sup> [1](#use-sparingly)</sup>   |
+|     cs5Label    |     DeviceCustomString5Label <sup> [1](#use-sparingly)</sup>    |
+|     cs6    |     DeviceCustomString6 <sup> [1](#use-sparingly)</sup> |
+|     cs6Label    |     DeviceCustomString6Label <sup> [1](#use-sparingly)</sup> |
+|     flexString1    |     FlexString1    |
+|     flexString1Label    |     FlexString1Label    |
+|     flexString2    |     FlexString2    |
+|     flexString2Label    |     FlexString2Label    |
+| | |
+
+> [!TIP]
+> <a name="use-sparingly"></a><sup>1</sup> we raden u aan om de velden **DeviceCustomString** spaarzaam te gebruiken en waar mogelijk specifieke, ingebouwde velden te gebruiken.
+> 
+
+### <a name="custom-timestamp-fields"></a>Aangepaste tijds tempel velden
+
+In de volgende tabel worden CEF sleutel-en CommonSecurityLog namen voor de *tijds tempel* velden die beschikbaar zijn voor aangepaste gegevens, toegewezen.
+
+|CEF-sleutel naam  |CommonSecurityLog-naam  |
+|---------|---------|
+|     deviceCustomDate1    |     DeviceCustomDate1    |
+|     deviceCustomDate1Label    |     DeviceCustomDate1Label    |
+|     deviceCustomDate2       |     DeviceCustomDate2    |
+|     deviceCustomDate2Label    |     DeviceCustomDate2Label    |
+|     flexDate1    |     FlexDate1    |
+|     flexDate1Label    |     FlexDate1Label    |
+| | |
+
+### <a name="custom-integer-data-fields"></a>Aangepaste gegevens velden met gehele getallen
+
+In de volgende tabel worden de namen van de CEF-en CommonSecurityLog weer gegeven voor de velden met *gehele getallen* die beschikbaar zijn voor aangepaste gegevens.
+
+|CEF-sleutel naam  |CommonSecurityLog-naam  |
+|---------|---------|
+|     flexNumber1    |     FlexNumber1    |
+|     flexNumber1Label    |     FlexNumber1Label    |
+|     flexNumber2    |     FlexNumber2    |
+|     flexNumber2Label    |     FlexNumber2Label    |
+| | |
+
+## <a name="enrichment-fields"></a>Verrijkings velden
+
+De volgende **CommonSecurityLog** -velden worden toegevoegd door Azure Sentinel om de oorspronkelijke gebeurtenissen te verrijken die van de bron apparaten worden ontvangen, en ze hebben geen toewijzingen in CEF-sleutels:
+
+### <a name="threat-intelligence-fields"></a>Threat Intelligence-velden
+
+|CommonSecurityLog veld naam  |Description  |
+|---------|---------|
+|   **IndicatorThreatType**  |  Het [MaliciousIP](#MaliciousIP) -bedreigings type, op basis van de bedreigings informatie feed.       |
+| <a name="MaliciousIP"></a>**MaliciousIP** | Een lijst met alle IP-adressen in het bericht die overeenkomen met de huidige bedreigings informatie-feed. |
+|  **MaliciousIPCountry**   | Het [MaliciousIP](#MaliciousIP) land, op basis van de geografische gegevens op het moment van de opname opname.        |
+| **MaliciousIPLatitude**    |   De [MaliciousIP](#MaliciousIP) -lengte, op basis van de geografische gegevens op het moment van de opname opname.      |
+| **MaliciousIPLongitude**    |  De [MaliciousIP](#MaliciousIP) -lengte, op basis van de geografische gegevens op het moment van de opname opname.       |
+| **ReportReferenceLink**    |    Koppeling naar het rapport van de bedreigings informatie.     |
+|  **ThreatConfidence**   |   Het betrouw baarheid van [MaliciousIP](#MaliciousIP) -bedreigingen, volgens de feed voor bedreigings informatie.      |
+| **ThreatDescription**    |   De beschrijving van de [MaliciousIP](#MaliciousIP) -bedreiging, volgens de feed voor bedreigings informatie.      |
+| **ThreatSeverity** | De bedreigings ernst voor de [MaliciousIP](#MaliciousIP), volgens de bedreigings informatie toevoer op het moment van de opname opname. |
+|     |         |
+
+### <a name="additional-enrichment-fields"></a>Aanvullende verrijkings velden
 
 |CommonSecurityLog veld naam  |Description  |
 |---------|---------|
@@ -147,8 +260,8 @@ De volgende **CommonSecurityLog** -veld namen hebben geen toewijzingen in CEF-sl
 |**RemoteIP**     |     Het externe IP-adres. <br>Deze waarde is, indien mogelijk, gebaseerd op het veld [CommunicationDirection](#communicationdirection) .     |
 |**RemotePort**     |   De externe poort. <br>Deze waarde is, indien mogelijk, gebaseerd op het veld [CommunicationDirection](#communicationdirection) .      |
 |**SimplifiedDeviceAction**     |   Vereenvoudigt de [DeviceAction](#deviceaction) -waarde naar een statische set waarden, terwijl de oorspronkelijke waarde wordt behouden in het veld [DeviceAction](#deviceaction) . <br>Bijvoorbeeld: `Denied`  >  `Deny` .      |
+|**SourceSystem**     | Altijd gedefinieerd als **OpsManager**.        |
 |     |         |
-
 
 ## <a name="next-steps"></a>Volgende stappen
 

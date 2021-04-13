@@ -5,15 +5,15 @@ services: static-web-apps
 author: craigshoemaker
 ms.service: static-web-apps
 ms.topic: conceptual
-ms.date: 05/08/2020
+ms.date: 04/09/2021
 ms.author: cshoe
 ms.custom: devx-track-js
-ms.openlocfilehash: d5a1d810c357aa83b8069023b00d76352da124df
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9aca1e76c825de52744da817f6a0bf236eef617c
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94844792"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107313603"
 ---
 # <a name="accessing-user-information-in-azure-static-web-apps-preview"></a>Toegang tot gebruikers gegevens in azure static Web Apps Preview
 
@@ -25,12 +25,12 @@ Veel gebruikers interfaces zijn sterk afhankelijk van gebruikers verificatie geg
 
 Met client Principal Data-object worden door de gebruiker geïdentificeerde informatie beschikbaar gesteld aan uw app. De volgende eigenschappen worden aanbevolen in het Principal-object van de client:
 
-| Eigenschap  | Beschrijving |
-|-----------|---------|
-| `identityProvider` | De naam van de [ID-provider](authentication-authorization.md). |
-| `userId` | Een statische Web Apps-specifieke Azure-id voor de gebruiker. <ul><li>De waarde is uniek per app. Bijvoorbeeld, dezelfde gebruiker retourneert een andere `userId` waarde op een andere statische web apps resource.<li>De waarde blijft behouden voor de levens duur van een gebruiker. Als u dezelfde gebruiker weer verwijdert en aan de app toevoegt, wordt er een nieuwe `userId` gegenereerd.</ul>|
-| `userDetails` | De gebruikers naam of het e-mail adres van de gebruiker. Sommige providers retour neren het [e-mail adres van de gebruiker](authentication-authorization.md), terwijl anderen de [gebruikers ingang](authentication-authorization.md)verzenden. |
-| `userRoles`     | Een matrix met de [toegewezen rollen](authentication-authorization.md)van de gebruiker. |
+| Eigenschap           | Beschrijving                                                                                                                                                                                                                                                                                                                                                        |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `identityProvider` | De naam van de [ID-provider](authentication-authorization.md).                                                                                                                                                                                                                                                                                              |
+| `userId`           | Een statische Web Apps-specifieke Azure-id voor de gebruiker. <ul><li>De waarde is uniek per app. Bijvoorbeeld, dezelfde gebruiker retourneert een andere `userId` waarde op een andere statische web apps resource.<li>De waarde blijft behouden voor de levens duur van een gebruiker. Als u dezelfde gebruiker weer verwijdert en aan de app toevoegt, wordt er een nieuwe `userId` gegenereerd.</ul> |
+| `userDetails`      | De gebruikers naam of het e-mail adres van de gebruiker. Sommige providers retour neren het [e-mail adres van de gebruiker](authentication-authorization.md), terwijl anderen de [gebruikers ingang](authentication-authorization.md)verzenden.                                                                                                                                                                    |
+| `userRoles`        | Een matrix met de [toegewezen rollen](authentication-authorization.md)van de gebruiker.                                                                                                                                                                                                                                                                                          |
 
 Het volgende voor beeld is een principal-voorbeeld object van de client:
 
@@ -39,7 +39,7 @@ Het volgende voor beeld is een principal-voorbeeld object van de client:
   "identityProvider": "facebook",
   "userId": "d75b260a64504067bfc5b2905e3b8182",
   "userDetails": "user@example.com",
-  "userRoles": [ "anonymous", "authenticated" ]
+  "userRoles": ["anonymous", "authenticated"]
 }
 ```
 
@@ -53,7 +53,7 @@ Met de API voor [ophalen](https://developer.mozilla.org/docs/Web/API/Fetch_API/U
 
 ```javascript
 async function getUserInfo() {
-  const response = await fetch("/.auth/me");
+  const response = await fetch('/.auth/me');
   const payload = await response.json();
   const { clientPrincipal } = payload;
   return clientPrincipal;
@@ -64,7 +64,7 @@ console.log(getUserInfo());
 
 ## <a name="api-functions"></a>API-functies
 
-De API-functies die beschikbaar zijn in statische Web Apps via de Azure Functions back-end hebben toegang tot dezelfde gebruikers gegevens als een client toepassing. Hoewel de API gebruikers herken bare informatie ontvangt, worden er geen eigen controles uitgevoerd als de gebruiker is geverifieerd of als deze overeenkomen met een vereiste rol. Toegangs beheer regels worden gedefinieerd in het [`routes.json`](routes.md) bestand.
+De API-functies die beschikbaar zijn in statische Web Apps via de Azure Functions back-end hebben toegang tot dezelfde gebruikers gegevens als een client toepassing. Hoewel de API gebruikers herken bare informatie ontvangt, worden er geen eigen controles uitgevoerd als de gebruiker is geverifieerd of als deze overeenkomen met een vereiste rol. Toegangs beheer regels worden gedefinieerd in het [`staticwebapp.config.json`](routes.md) bestand.
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -74,14 +74,14 @@ In de volgende voorbeeld functie ziet u hoe u gebruikers gegevens kunt lezen en 
 
 ```javascript
 module.exports = async function (context, req) {
-  const header = req.headers["x-ms-client-principal"];
-  const encoded = Buffer.from(header, "base64");
-  const decoded = encoded.toString("ascii");
+  const header = req.headers['x-ms-client-principal'];
+  const encoded = Buffer.from(header, 'base64');
+  const decoded = encoded.toString('ascii');
 
   context.res = {
     body: {
-      clientPrincipal: JSON.parse(decoded)
-    }
+      clientPrincipal: JSON.parse(decoded),
+    },
   };
 };
 ```
@@ -90,7 +90,7 @@ Ervan uitgaande dat de bovenstaande functie een naam heeft `user` , kunt u de br
 
 ```javascript
 async function getUser() {
-  const response = await fetch("/api/user");
+  const response = await fetch('/api/user');
   const payload = await response.json();
   const { clientPrincipal } = payload;
   return clientPrincipal;

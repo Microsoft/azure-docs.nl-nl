@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 03/20/2021
 ms.author: helohr
 manager: femila
-ms.openlocfilehash: a1e6d2f4fc0444be364ce3c07c14f6408b3f19fe
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.openlocfilehash: 21db7ed0cf13a3ed282929b09847c6c3ba8a36ed
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106446907"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107307245"
 ---
 # <a name="configure-a-kerberos-key-distribution-center-proxy-preview"></a>Een Kerberos-Key Distribution Center proxy configureren (preview-versie)
 
@@ -29,7 +29,7 @@ Er zijn twee onderdelen van de virtueel bureau blad-service van Windows die moet
 - De feed in de virtueel-bureaubladclient van Windows waarmee gebruikers een lijst krijgen met beschik bare Bureau bladen of toepassingen waartoe ze toegang hebben. Dit verificatie proces treedt op in Azure Active Directory, wat betekent dat dit onderdeel niet de focus van dit artikel is.
 - De RDP-sessie die het resultaat is van een gebruiker om een van de beschik bare resources te selecteren. Dit onderdeel maakt gebruik van Kerberos-verificatie en vereist een KDC-proxy voor externe gebruikers.
 
-In dit artikel wordt uitgelegd hoe u de feed in de Windows-client voor virtueel bureau blad kunt configureren in de Azure Portal. Zie [de RD-gateway rol implementeren](/windows-server/remote/rd-gateway-role)als u wilt weten hoe u de RD-gateway functie kunt configureren.
+In dit artikel wordt uitgelegd hoe u de feed in de Windows-client voor virtueel bureau blad kunt configureren in de Azure Portal. Zie [de RD-gateway rol implementeren](/azure/virtual-desktop/rd-gateway-role)als u wilt weten hoe u de RD-gateway functie kunt configureren.
 
 ## <a name="requirements"></a>Vereisten
 

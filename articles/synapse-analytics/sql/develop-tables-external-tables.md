@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: 78e4b35feb4e830a9f4335614a55d49ca90cd791
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1977663f4661fca316e4839671abd76e07b5acda
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101667636"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107304797"
 ---
 # <a name="use-external-tables-with-synapse-sql"></a>Externe tabellen gebruiken met Synapse SQL
 
@@ -339,9 +339,9 @@ Hiermee geeft u de map of het bestandspad en de bestandsnaam op voor de werkelij
 Als u een map LOCATION opgeeft, wordt een serverloze SQL-pool-query geselecteerd in de externe tabel en worden de bestanden opgehaald uit de map.
 
 > [!NOTE]
-> In tegenstelling tot Hadoop en PolyBase, retourneert een serverloze SQL-pool geen submappen. Het retourneert bestanden waarvan de bestandsnaam begint met een underscore (_) of een punt (.).
+> In tegenstelling tot Hadoop en PolyBase, retourneert een serverloze SQL-pool geen submappen tenzij u /* * aan het einde van het pad toevoegt.
 
-In dit voorbeeld worden door if LOCATION='/webdata/', een serverloze SQL-pool-query, rijen uit mydata.txt en _hidden.txt geretourneerd. Het retourneert niet mydata2.txt en mydata3.txt omdat deze bestanden zich in een submap bevinden.
+Als locatie = '/webdata/', een serverloze SQL-groeps query, wordt in dit voor beeld rijen geretourneerd van mydata.txt. Het retourneert niet mydata2.txt en mydata3.txt omdat deze bestanden zich in een submap bevinden.
 
 ![Recursieve gegevens voor externe tabellen](./media/develop-tables-external-tables/folder-traversal.png)
 

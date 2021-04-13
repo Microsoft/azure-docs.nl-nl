@@ -8,14 +8,14 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: lazzeri
 author: FrancescaLazzeri
-ms.date: 01/14/2020
+ms.date: 04/12/2021
 ms.custom: contperf-fy21q1,contperfq1
-ms.openlocfilehash: 48de06d28442b4d05cd3a7ab287732c0999e434c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a9e87796c3557f21bb6192c7d7d0c0925d08d786
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "101659695"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107311750"
 ---
 # <a name="deep-learning-vs-machine-learning-in-azure-machine-learning"></a>Diep gaande informatie versus machine learning in Azure Machine Learning
 
@@ -99,7 +99,7 @@ Met de juiste gegevens transformatie kan een Neural-netwerk tekst, audio en visu
 
 Voor tekst analyse op basis van diepe leer methoden moet u grote hoeveel heden tekst gegevens (bijvoorbeeld medische documenten of onkosten ontvangsten) analyseren, patronen herkennen en gestructureerde en beknopte informatie maken.
 
-Bedrijven gebruiken dieper leren om tekst analyse uit te voeren om de handel en naleving van de overheid te detecteren. Een ander algemeen voor beeld is een verzekerings fraude: tekst analyse is vaak gebruikt voor het analyseren van grote hoeveel heden documenten om de kans op fraude van een verzekerings claim te herkennen. 
+Bedrijven gebruiken dieper leren om tekst analyse uit te voeren om de handel en naleving van de overheid te detecteren. Een ander algemeen voor beeld is een verzekerings fraude: tekst analyse is vaak gebruikt voor het analyseren van grote hoeveel heden documenten om de kans op fraude van een verzekerings claim te herkennen.
 
 ## <a name="artificial-neural-networks"></a>Kunst matige Neural netwerken
 
@@ -111,15 +111,33 @@ In de volgende secties worden de meest populaire kunst matige Neural-netwerk top
 
 Het Feedforward Neural-netwerk is het meest eenvoudige type kunst matig Neural netwerk. In een Feedforward-netwerk worden de gegevens in slechts één richting verplaatst van de invoer laag naar de uitvoer laag. Met Feedforward Neural-netwerken wordt een invoer getransformeerd door een reeks verborgen lagen te plaatsen. Elke laag bestaat uit een set neurons en elke laag is volledig verbonden met alle neurons in de laag. De laatste volledig verbonden laag (de uitvoer laag) vertegenwoordigt de gegenereerde voor spellingen.
 
-### <a name="recurrent-neural-network"></a>Recurrent Neural-netwerk
+### <a name="recurrent-neural-network-rnn"></a>Recurrent Neural-netwerk (RNN)
 
 Recurrente Neural Networks is een veelgebruikt Neural netwerk. In deze netwerken wordt de uitvoer van een laag opgeslagen en weer gegeven in de invoer laag om te helpen bij het voors pellen van het resultaat van de laag. Rehuidige Neural-netwerken hebben fantastische leer mogelijkheden. Ze worden veel gebruikt voor complexe taken, zoals het maken van een time series-prognose, het leren van hand schrift en het herkennen van de taal.
 
-### <a name="convolutional-neural-network"></a>Convolutional Neural-netwerk
+### <a name="convolutional-neural-network-cnn"></a>Convolutional Neural Network (CNN)
 
 Een convolutional Neural-netwerk is een bijzonder effectief Neural netwerk en biedt een unieke architectuur. Lagen zijn ingedeeld in drie dimensies: breedte, hoogte en diepte. De neurons in de ene laag worden niet verbonden met alle neurons in de volgende laag, maar alleen voor een kleine regio van de neurons van de laag. De uiteindelijke uitvoer wordt gereduceerd tot één vector met waarschijnlijkheids scores, geordend op de diepte dimensie. 
 
 Convolutional Neural Networks zijn gebruikt in gebieden zoals video herkenning, afbeeldings herkenning en aanbevolen systemen.
+
+### <a name="generative-adversarial-network-gan"></a>Adversarial netwerk (GAN)
+
+Met de adversarial van een generatie worden er realistische inhoud gemaakt, zoals installatie kopieën. Het bestaat uit twee netwerken, ook wel generator en onderscheider. Beide netwerken worden tegelijkertijd getraind. Tijdens de training gebruikt de generator wille keurige ruis om nieuwe synthetische gegevens te maken die goed lijken op echte gegevens. De discriminator neemt de uitvoer van de generator als invoer en gebruikt echte gegevens om te bepalen of de gegenereerde inhoud werkelijk of synthetisch is. Elk netwerk komt met elkaar in de concurrentie. De generator probeert synthetische inhoud te genereren die niet kan worden onderscheiden van echte inhoud en de discriminator probeert invoer op juiste wijze als echt of synthetisch te classificeren. De uitvoer wordt vervolgens gebruikt om de gewichten van beide netwerken bij te werken, zodat ze hun respectieve doel stellingen beter kunnen bereiken.
+
+Adversarial-netwerken worden gebruikt voor het oplossen van problemen, zoals installatie kopieën voor het omzetten van afbeeldingen en de voortgang van de leeftijd.
+
+### <a name="transformers"></a>Trans formaties
+
+Trans formaties vormen een model architectuur die geschikt is voor het oplossen van problemen met reeksen zoals tekst of tijdreeks gegevens. Ze bestaan uit [encoder-en decoder lagen](https://en.wikipedia.org/wiki/Transformer_(machine_learning_model)#Encoder). Het coderings programma neemt een invoer en wijst deze toe aan een numerieke representatie met informatie zoals context. De decoder gebruikt informatie uit het coderings programma voor het produceren van een uitvoer, zoals een vertaalde tekst. Wat andere architecturen met coderings Programma's en decoders verschilt, is de aandacht van de onderliggende lagen. Let op het idee van het concentreren op specifieke delen van een invoer op basis van het belang van hun context ten opzichte van andere invoer in een reeks. Wanneer u bijvoorbeeld een nieuws artikel samenvattet, zijn niet alle zinnen relevant om het belangrijkste idee te beschrijven. Als u de nadruk houdt op belang rijke woorden in het hele artikel, kan de samen vatting worden uitgevoerd in één zin, de kop.
+
+Trans formaties zijn gebruikt voor het oplossen van problemen met de verwerking van natuurlijke taal, zoals vertalingen, het genereren van tekst, het beantwoorden van vragen en het samen stellen van tekst.
+
+Enkele bekende implementaties van trans formaties zijn:
+
+- Bidirectionele encoder representaties van trans formaties (BERT)
+- Vooraf getrainde trans formatie 2 (GPT-2)
+- Vooraf getrainde trans formatie 3 (GPT-3)
 
 ## <a name="next-steps"></a>Volgende stappen
 

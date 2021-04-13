@@ -92,12 +92,20 @@
   items:
     - name: 'Wachtrijen, onderwerpen en abonnementen'
       href: service-bus-queues-topics-subscriptions.md
+    - name: Berichtsessies
+      href: message-sessions.md
     - name: Onderwerpfilters en acties
       href: topic-filters.md
     - name: Premium Messaging
       href: service-bus-premium-messaging.md
     - name: Azure Queues en Service Bus-wachtrijen vergelijken
       href: service-bus-azure-and-service-bus-queues-compared-contrasted.md
+    - name: 'Berichten overdragen, vergrendelen en verwerken'
+      href: message-transfers-locks-settlement.md
+    - name: Wachtrijen voor onbestelbare berichten
+      href: service-bus-dead-letter-queues.md
+    - name: Berichtentellers
+      href: message-counters.md
     - name: Prestaties optimaliseren
       href: service-bus-performance-improvements.md
     - name: Federatie
@@ -162,16 +170,12 @@
           href: service-bus-filter-examples.md
         - name: Afhandeling van berichten
           items:
-            - name: 'Wachtrijen, onderwerpen en abonnementen'
-              href: service-bus-queues-topics-subscriptions.md
             - name: 'JMS-entiteiten (Java Message Service) 2,0'
               href: java-message-service-20-entities.md
             - name: JMS-ontwikkelaar (Java Message Service) guide.md
               href: jms-developer-guide.md
             - name: 'Berichten, nettoladingen en serialisatie'
               href: service-bus-messages-payloads.md
-            - name: 'Berichten overdragen, vergrendelen en verwerken'
-              href: message-transfers-locks-settlement.md
             - name: Berichtvolgorde en -timestamps
               href: message-sequencing.md
             - name: Verlopen van berichten (Time to Live)
@@ -180,8 +184,6 @@
           href: service-bus-migrate-standard-premium.md
         - name: Gepartitioneerde wachtrijen en onderwerpen
           href: service-bus-partitioning.md
-        - name: Berichtsessies
-          href: message-sessions.md
         - name: AMQP
           items:
             - name: AMQP-overzicht
@@ -198,14 +200,10 @@
               href: service-bus-amqp-troubleshoot.md
         - name: Geavanceerde functies
           items:
-            - name: Wachtrijen voor onbestelbare berichten
-              href: service-bus-dead-letter-queues.md
             - name: Berichten vooraf ophalen
               href: service-bus-prefetch.md
             - name: Detectie van dubbele berichten
               href: duplicate-detection.md
-            - name: Berichtentellers
-              href: message-counters.md
             - name: Berichten uitstellen
               href: message-deferral.md
             - name: Berichten doorzoeken

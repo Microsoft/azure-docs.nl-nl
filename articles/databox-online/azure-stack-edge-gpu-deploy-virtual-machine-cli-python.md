@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 03/04/2021
 ms.author: alkohli
-ms.openlocfilehash: 38ba5679731b5e52eb06751a625aea9df69c76ca
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 14d9c762702648d25efcbcc7ac85824659e20f05
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105643215"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107304066"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-using-azure-cli-and-python"></a>VM's implementeren op uw GPU-apparaat voor Azure Stack Edge Pro met behulp van Azure CLI en Python
 
@@ -355,7 +355,7 @@ Voordat u een virtuele machine op uw Azure Stack Edge Pro-apparaat gaat maken en
 
    De Azure Resource Manager-client-id is vastgelegd in code. De Azure Resource Manager-tenant-id en Azure Resource Manager-abonnements-id zijn beide aanwezig in de uitvoer van opdracht `az login` die u eerder hebt uitgevoerd. Het Azure Resource Manager-clientgeheim is het Azure Resource Manager-wachtwoord dat u hebt ingesteld.
 
-   Zie [Azure Resource Manager-wachtwoord](/azure/azure-stack-edge-gpu-set-azure-resource-manager-password) voor meer informatie.
+   Zie [Azure Resource Manager-wachtwoord](/azure/databox-online/azure-stack-edge-gpu-set-azure-resource-manager-password) voor meer informatie.
 
 5. Wijzig het profiel naar versie 2019-03-01-hybrid. Als u de profielversie wilt wijzigen, voert u de volgende opdracht uit:
 

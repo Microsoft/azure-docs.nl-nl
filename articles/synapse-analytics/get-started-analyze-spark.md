@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: spark
 ms.topic: tutorial
 ms.date: 03/24/2021
-ms.openlocfilehash: 5d08bc216157fce9ad81eaf3c0f540c7a4d8c3f2
-ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
+ms.openlocfilehash: 2b85fe21fee34a9bedab33f0d10756bbfe8dc88b
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "107259826"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107305205"
 ---
 # <a name="analyze-with-apache-spark"></a>Analyseren met behulp van Apache Spark
 
@@ -34,10 +34,10 @@ In deze zelfstudie leert u de basisstappen voor het laden en analyseren van gege
 
 Een Spark-groep zonder server is een manier om aan te geven hoe een gebruiker met Spark wil werken. Wanneer u begint met het gebruik van een pool, wordt indien nodig een Spark-sessie gemaakt. De pool bepaalt hoeveel Spark-resources worden gebruikt door deze sessie en hoe lang de sessie duurt voordat deze automatisch wordt onderbroken. U betaalt voor Spark-resources die tijdens deze sessie worden gebruikt, niet voor de groep zelf. Op deze manier kunt u met Spark werken, zonder dat u zich geen zorgen hoeft te maken dat clusters worden beheerd. Dit is vergelijkbaar met de werking van een serverloze SQL-pool.
 
-## <a name="analyze-nyc-taxi-data-in-blob-storage-using-spark"></a>NYC Taxi-gegevens analyseren in blob-opslag met Spark
+## <a name="analyze-nyc-taxi-data-with-a-spark-pool"></a>NYC taxi-gegevens analyseren met een Spark-pool
 
 1. Ga in Synapse Studio naar de **ontwikkelende** hub
-2. Maak een nieuw notitie blok met de standaard taal ingesteld op **PySpark (python)**.
+2. Een nieuwe notebook maken
 3. Maak een nieuwe code-cel en plak de volgende code in die cel.
     ```py
     %%pyspark
@@ -49,22 +49,23 @@ Een Spark-groep zonder server is een manier om aan te geven hoe een gebruiker me
 1. Als u alleen wilt zien hoe een cel met de volgende code wordt uitgevoerd met het schema van het dataframe:
 
     ```py
+    %%pyspark
     df.printSchema()
     ```
 
 ## <a name="load-the-nyc-taxi-data-into-the-spark-nyctaxi-database"></a>De gegevens van NYC-taxi laden in de Apache Spark-database nyctaxi
 
-Gegevens zijn beschikbaar via de data frame met de naam **gegevens**. Laad deze in een Apache Spark-database met de naam **nyctaxi**.
+Gegevens zijn beschikbaar via de data frame met de naam **DF**. Laad deze in een Apache Spark-database met de naam **nyctaxi**.
 
 1. Voeg een nieuwe code-cel toe aan het notitie blok en voer de volgende code in:
 
     ```py
+    %%pyspark
     spark.sql("CREATE DATABASE IF NOT EXISTS nyctaxi")
     df.write.mode("overwrite").saveAsTable("nyctaxi.trip")
     ```
 ## <a name="analyze-the-nyc-taxi-data-using-spark-and-notebooks"></a>De gegevens over de NYC-taxi met behulp van Apache Spark en notebooks analyseren
 
-1. Ga terug naar uw notebook.
 1. Maak een nieuwe code-cel en voer de volgende code in. 
 
    ```py

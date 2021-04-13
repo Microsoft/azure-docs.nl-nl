@@ -5,14 +5,14 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: reference
-ms.date: 04/06/2021
+ms.date: 04/11/2021
 ms.author: memildin
-ms.openlocfilehash: 81f741fd9b0e3d40eb0027a5cbe0ba4b7113bbea
-ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
+ms.openlocfilehash: 3e4dddf61656ea38bac406366bf993788fd34943
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107027615"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107303148"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -28,26 +28,22 @@ Zie [Belangrijke aanstaande wijzigingen aan Azure Security Center](upcoming-chan
 ## <a name="april-2021"></a>April 2021
 
 De updates in april zijn onder meer:
-- [Vier nieuwe aanbevelingen met betrekking tot gast configuratie (preview-versie)](#four-new-recommendations-related-to-guest-configuration-preview)
+- [Recent getrokken container register installatie kopieën worden nu wekelijks opnieuw gescand (algemene Beschik baarheid)](#recently-pulled-container-registry-images-are-now-rescanned-weekly-general-availability)
 - [Azure Defender voor Kubernetes gebruiken voor het beveiligen van hybride en implementaties met meerdere Cloud Kubernetes (preview-versie)](#use-azure-defender-for-kubernetes-to-protect-hybrid-and-multi-cloud-kubernetes-deployments-preview)
+- [Vier nieuwe aanbevelingen met betrekking tot gast configuratie (preview-versie)](#four-new-recommendations-related-to-guest-configuration-preview)
+- [CMK aanbevelingen die zijn verplaatst naar best practices Security Control](#cmk-recommendations-moved-to-best-practices-security-control)
 - [11 Azure Defender-waarschuwingen afgeschaft](#11-azure-defender-alerts-deprecated)
 - [Er zijn twee aanbevelingen van het beveiligings beheer ' systeem updates Toep assen ' afgeschaft](#two-recommendations-from-apply-system-updates-security-control-were-deprecated)
 
-### <a name="four-new-recommendations-related-to-guest-configuration-preview"></a>Vier nieuwe aanbevelingen met betrekking tot gast configuratie (preview-versie)
+### <a name="recently-pulled-container-registry-images-are-now-rescanned-weekly-general-availability"></a>Recent getrokken container register installatie kopieën worden nu wekelijks opnieuw gescand (algemene Beschik baarheid)
 
-De extensie rapporten van de [gast configuratie](../governance/policy/concepts/guest-configuration.md) van Azure worden Security Center om ervoor te zorgen dat de gast instellingen van uw virtuele machines worden gehard. De uitbrei ding is niet vereist voor servers waarop de Arc is ingeschakeld, omdat deze is opgenomen in de Arc Connected machine agent. Voor de uitbrei ding is een door het systeem beheerde identiteit op de computer vereist.
+Azure Defender voor container registers bevat een ingebouwde beveiligings scanner. Met deze scanner wordt de installatie kopie die u naar het REGI ster hebt gepusht onmiddellijk gescand en wordt een installatie kopie die in de afgelopen 30 dagen is opgehaald.
 
-Er zijn vier nieuwe aanbevelingen toegevoegd aan Security Center om optimaal van deze uitbrei ding te maken.
+Nieuwe beveiligings problemen worden elke dag gedetecteerd. Met deze update worden de container installatie kopieën die in de afgelopen 30 dagen uit uw registers zijn opgehaald, elke week opnieuw **gecontroleerd** . Dit zorgt ervoor dat recent ontdekte beveiligings problemen in uw installatie kopieën worden geïdentificeerd.
 
-- U wordt gevraagd om de uitbrei ding en de vereiste door het systeem beheerde identiteit te installeren:
-    - **De gast configuratie-extensie moet op uw computers zijn geïnstalleerd**
-    - **De gast configuratie-extensie voor virtuele machines moet worden geïmplementeerd met door het systeem toegewezen beheerde identiteit**
+Scans worden in rekening gebracht op basis van een afbeelding, dus er zijn geen extra kosten verbonden aan deze herscans.
 
-- Wanneer de uitbrei ding is geïnstalleerd en wordt uitgevoerd, wordt het controleren van uw computers gestart en wordt u gevraagd om de beveiligings instellingen op te vragen, zoals de configuratie van het besturings systeem en de instellingen van de omgeving. Met deze twee aanbevelingen wordt u gevraagd om uw Windows-en Linux-computers te beveiligen, zoals wordt beschreven:
-    - **Windows Defender exploit Guard moet zijn ingeschakeld op uw computers**
-    - **Voor verificatie op Linux-machines moeten SSH-sleutels zijn vereist**
-
-Meer informatie over [de gast configuratie van Azure Policy](../governance/policy/concepts/guest-configuration.md).
+Meer informatie over deze scanner vindt u in [Azure Defender gebruiken voor container registers voor het scannen van uw installatie kopieën op beveiligings problemen](defender-for-container-registries-usage.md).
 
 
 ### <a name="use-azure-defender-for-kubernetes-to-protect-hybrid-and-multi-cloud-kubernetes-deployments-preview"></a>Azure Defender voor Kubernetes gebruiken voor het beveiligen van hybride en implementaties met meerdere Cloud Kubernetes (preview-versie)
@@ -69,6 +65,40 @@ Deze integratie tussen Azure Security Center, Azure Defender en Azure Arc enable
 Meer informatie over [het gebruik van Azure Defender voor Kubernetes met uw on-premises en multi-Cloud Kubernetes-clusters](defender-for-kubernetes-azure-arc.md).
 
 :::image type="content" source="media/defender-for-kubernetes-azure-arc/extension-recommendation.png" alt-text="De aanbeveling van Azure Security Center voor het implementeren van de Azure Defender-extensie voor Azure Arc enabled Kubernetes-clusters." lightbox="media/defender-for-kubernetes-azure-arc/extension-recommendation.png":::
+
+### <a name="four-new-recommendations-related-to-guest-configuration-preview"></a>Vier nieuwe aanbevelingen met betrekking tot gast configuratie (preview-versie)
+
+De extensie rapporten van de [gast configuratie](../governance/policy/concepts/guest-configuration.md) van Azure worden Security Center om ervoor te zorgen dat de gast instellingen van uw virtuele machines worden gehard. De uitbrei ding is niet vereist voor servers waarop de Arc is ingeschakeld, omdat deze is opgenomen in de Arc Connected machine agent. Voor de uitbrei ding is een door het systeem beheerde identiteit op de computer vereist.
+
+Er zijn vier nieuwe aanbevelingen toegevoegd aan Security Center om optimaal van deze uitbrei ding te maken.
+
+- U wordt gevraagd om de uitbrei ding en de vereiste door het systeem beheerde identiteit te installeren:
+    - **De gast configuratie-extensie moet op uw computers zijn geïnstalleerd**
+    - **De gast configuratie-extensie voor virtuele machines moet worden geïmplementeerd met door het systeem toegewezen beheerde identiteit**
+
+- Wanneer de uitbrei ding is geïnstalleerd en wordt uitgevoerd, wordt het controleren van uw computers gestart en wordt u gevraagd om de beveiligings instellingen op te vragen, zoals de configuratie van het besturings systeem en de instellingen van de omgeving. Met deze twee aanbevelingen wordt u gevraagd om uw Windows-en Linux-computers te beveiligen, zoals wordt beschreven:
+    - **Windows Defender exploit Guard moet zijn ingeschakeld op uw computers**
+    - **Voor verificatie op Linux-machines moeten SSH-sleutels zijn vereist**
+
+Meer informatie over [de gast configuratie van Azure Policy](../governance/policy/concepts/guest-configuration.md).
+
+### <a name="cmk-recommendations-moved-to-best-practices-security-control"></a>CMK aanbevelingen die zijn verplaatst naar best practices Security Control
+
+Het beveiligings programma van elke organisatie bevat vereisten voor gegevens versleuteling. De gegevens van Azure-klanten worden standaard versleuteld met door service beheerde sleutels. Door de klant beheerde sleutels (CMK) zijn echter doorgaans vereist om te voldoen aan de normen voor naleving van regelgeving. Met CMKs kunt u uw gegevens versleutelen met een [Azure Key Vault](../key-vault/general/overview.md) sleutel die u hebt gemaakt en waarvan u eigenaar bent. Dit biedt u volledige controle en verantwoordelijkheid voor de levens cyclus van de sleutel, met inbegrip van rotatie en beheer.
+
+De beveiligings controles van Azure Security Center zijn logische groepen van gerelateerde beveiligings aanbevelingen en weer spie gelen uw kwets bare aanvals oppervlakken. Elk besturings element heeft een maximum aantal punten dat u aan uw beveiligde Score kunt toevoegen als u alle aanbevelingen die worden vermeld in het besturings element herstelt, voor al uw resources. Het beveiligings beheer van **Best practices voor beveiliging** is nul punten waard. Daarom hebben aanbevelingen in dit besturings element geen invloed op uw beveiligde Score.
+
+De aanbevelingen die hieronder worden weer gegeven, worden verplaatst naar het beveiligings beheer **beveiligings best practices implementeren** om de optionele aard beter weer te geven. Deze stap zorgt ervoor dat deze aanbevelingen in het meest geschikte besturings element staan om aan hun doel te voldoen.
+
+- Voor Azure Cosmos DB-accounts moeten door de klant beheerde sleutels worden gebruikt voor het versleutelen van data-at-rest
+- Azure Machine Learning-werkruimten moeten worden versleuteld met een door de klant beheerde sleutel (CMK)
+- Voor Cognitive Services accounts moet gegevens versleuteling worden ingeschakeld met een door de klant beheerde sleutel (CMK)
+- Containerregisters moeten worden versleuteld met een door de klant beheerde sleutel (CMK)
+- Voor met SQL beheerde exemplaren moeten door de klant beheerde sleutels worden gebruikt voor het versleutelen van data-at-rest
+- Voor SQL-servers moeten door de klant beheerde sleutels worden gebruikt voor het versleutelen van data-at-rest
+- Voor opslagaccounts moet een CMK (door de klant beheerde sleutel) worden gebruikt voor versleuteling
+
+Voor meer informatie over welke aanbevelingen zich in elk beveiligingsbeheer bevinden, raadpleegt u [Beveiligingscontroles en de bijbehorende aanbevelingen](secure-score-security-controls.md#security-controls-and-their-recommendations).
 
 
 ### <a name="11-azure-defender-alerts-deprecated"></a>11 Azure Defender-waarschuwingen afgeschaft

@@ -4,16 +4,16 @@ description: Meer informatie over de besturings systemen die de Azure IoT Edge d
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 02/11/2021
+ms.date: 04/09/2021
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 0bd6a8af4850f3a0519bac7644100c2dcf883635
-ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
+ms.openlocfilehash: b60deee6ccb95245839ee740c2b237b98315d483
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107031159"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107313195"
 ---
 # <a name="azure-iot-edge-supported-systems"></a>Ondersteunde systemen Azure IoT Edge
 
@@ -171,9 +171,15 @@ De systemen die in de volgende tabel worden vermeld, worden beschouwd als compat
 
 IoT Edge release-assets en release opmerkingen zijn beschikbaar op de pagina [met Azure iotedge-releases](https://github.com/Azure/azure-iotedge/releases) . Deze sectie bevat informatie uit deze release opmerkingen waarmee u de onderdelen van elke versie gemakkelijker kunt visualiseren.
 
-IoT Edge onderdelen kunnen afzonderlijk worden geïnstalleerd of bijgewerkt, en zijn achterwaarts compatibel met onderdelen van oudere versies. De volgende tabel bevat de onderdelen die zijn opgenomen in elke versie:
+De volgende tabel bevat de onderdelen die zijn opgenomen in elke release, te beginnen met 1.2.0. De onderdelen die in deze tabel worden vermeld, kunnen afzonderlijk worden geïnstalleerd of bijgewerkt, en zijn achterwaarts compatibel met oudere versies.
 
-| Release | Beveiligings-daemon | Edge hub<br>Edge-agent | Libiothsm | Moby |
+| Release | aziot-Edge | edgeHub<br>edgeAgent | aziot-identiteit-service |
+| ------- | ---------- | -------------------- | ---------------------- |
+| **1.2** | 1.2.0      | 1.2.0                | 1.2.0                  |
+
+De volgende tabel bevat de onderdelen die in elke versie zijn opgenomen tot aan de 1,1 LTS-release. De onderdelen die in deze tabel worden vermeld, kunnen afzonderlijk worden geïnstalleerd of bijgewerkt, en zijn achterwaarts compatibel met oudere versies.
+
+| Release | iotedge | edgeHub<br>edgeAgent | libiothsm | moby |
 |--|--|--|--|--|
 | **1,1 LTS**<sup>1</sup> | 1.1.0<br>1.1.1 | 1.1.0<br>1.1.1 | 1.1.0<br>1.1.1 |   |
 | **1.0.10** | 1.0.10<br>1.0.10.1<br>1.0.10.2<br><br>1.0.10.4 | 1.0.10<br>1.0.10.1<br>1.0.10.2<br>1.0.10.3<br>1.0.10.4 | 1.0.10<br>1.0.10.1<br>1.0.10.2<br><br>1.0.10.4 |  |
@@ -192,7 +198,8 @@ IoT Edge maakt gebruik van de micro soft. Azure. devices. client-SDK. Zie de [Az
 
 | IoT Edge-versie | Micro soft. Azure. devices. client-SDK-versie |
 |------------------|--------------------------------------------|
-| 1,1 (LTS)      | 1.28.0                                     |
+| 1.2.0            | 1.33.4-NestedEdge
+| 1,1 (LTS)        | 1.28.0                                     |
 | 1.0.10           | 1.28.0                                     |
 | 1.0.9            | 1.21.1                                     |
 | 1.0.8            | 1.20.3                                     |

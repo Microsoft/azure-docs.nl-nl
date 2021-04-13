@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: previous-author=fboylu, previous-ms.author=fboylu
-ms.openlocfilehash: 1e939b86eeadfee276378488cfcb40c07f28684d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9b6cf2abfa797965d75bacd0b9c5e2eaf02b57a4
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "98880655"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107308571"
 ---
 # <a name="azure-ai-guide-for-predictive-maintenance-solutions"></a>Azure AI-hand leiding voor voorspellende onderhouds oplossingen
 
@@ -439,15 +439,16 @@ Microsoft Azure biedt leer trajecten voor de basis concepten achter PdM-techniek
 
 | Trainings resource  | Beschikbaarheid |
 |:-------------------|--------------|
-| [Leer traject voor PdM met behulp van structuren en wille keurige forests](https://aischool.microsoft.com/learning-paths/1H5vH5wAYcAy88CoQWQcA8) | Openbaar | 
-| [Leer traject voor PdM met behulp van diep gaande lessen](https://aischool.microsoft.com/learning-paths/FSIXxYkOGcauo0eUO8qAS) | Openbaar |
-| [AI-ontwikkelaar op Azure](https://azure.microsoft.com/training/learning-paths/azure-ai-developer) | Openbaar |
-| [Micro soft AI school](https://aischool.microsoft.com/learning-paths) | Openbaar |
-| [Azure AI Learning vanuit GitHub](https://github.com/Azure/connectthedots/blob/master/readme.md) | Openbaar |
+| [Microsoft Docs: rol gegevens wetenschapper](https://docs.microsoft.com/learn/roles/data-scientist) | Openbaar |
+| [Microsoft Docs: AI-Engineer](https://docs.microsoft.com/learn/roles/ai-engineer) | Openbaar |
+| [Microsoft Docs: rol gegevens ingenieur](https://docs.microsoft.com/learn/roles/data-engineer) | Openbaar |
+| [Micro soft AI school](https://www.microsoft.com/ai/ai-school) | Openbaar |
 | [LinkedIn Learning](https://www.linkedin.com/learning) | Openbaar |
-| [Micro soft AI YouTube webinars](https://www.youtube.com/watch?v=NvrH7_KKzoM&t=4s) | Openbaar |
+| [Micro soft: afspeel lijsten op YouTube voor kunst matige intelligentie en analyse](https://www.youtube.com/c/MicrosoftAzure/playlists?view=50&sort=dd&shelf_id=7) | Openbaar |
 | [Micro soft AI-weer gave](https://channel9.msdn.com/Shows/AI-Show) | Openbaar |
-| [LearnAI@MS](https://learnanalytics.microsoft.com) | Partners |
+| [Overzicht van het AI-platform](https://azure.microsoft.com/overview/ai-platform/) | Openbaar |
+| [AI lab](https://www.microsoft.com/ai/ai-lab) | Openbaar |
+| [Micro soft AI](https://www.microsoft.com/AI) | Openbaar |
 | [Microsoft Partner Network](https://partner.microsoft.com/training/training-center) | Partners |
 
 Daarnaast worden gratis Massive (enorme open online cursussen) op AI online aangeboden door academische instellingen als Stanford en MIT, en andere onderwijs bedrijven.

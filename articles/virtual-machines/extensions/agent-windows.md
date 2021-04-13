@@ -8,12 +8,12 @@ ms.author: amjads
 author: amjads1
 ms.collection: windows
 ms.date: 07/20/2019
-ms.openlocfilehash: 33db214013111b0dd4540a1b1d2947b7d1854db9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: bd845c5ef5a06e3a0bca1cebe54ded2e49355617
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104607480"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107309812"
 ---
 # <a name="azure-virtual-machine-agent-overview"></a>Overzicht van de agent voor virtuele Azure-machines
 De Microsoft Azure-agent van de virtuele machine (VM-agent) is een veilig, licht gewicht proces dat interactie van de virtuele machine (VM) beheert met de Azure Fabric-controller. De VM-agent heeft een primaire rol bij het inschakelen en uitvoeren van extensies van virtuele Azure-machines. VM-extensies maken de configuratie van de na de implementatie van de VM mogelijk, zoals het installeren en configureren van software. VM-extensies bieden ook herstel functies, zoals het opnieuw instellen van het beheerders wachtwoord van een virtuele machine. Zonder de VM-agent van Azure kunnen VM-extensies niet worden uitgevoerd.
@@ -121,7 +121,7 @@ Als u een certificaat permanent wilt verwijderen, moet u het verwijderen uit de 
 
 Gebruik voor een virtuele machine de [Remove-AzVMSecret]() om certificaten te verwijderen uit de `OSProfile` .
 
-Zie [Virtual Machine Scale sets-hoe kan ik afgeschafte certificaten verwijderen](../../virtual-machine-scale-sets/virtual-machine-scale-sets-faq.md#how-do-i-remove-deprecated-certificates) voor meer informatie over certificaten voor virtuele-machine schaal sets?
+Zie [Virtual Machine Scale sets-hoe kan ik afgeschafte certificaten verwijderen](../../virtual-machine-scale-sets/virtual-machine-scale-sets-faq.yml#how-do-i-remove-deprecated-certificates-) voor meer informatie over certificaten voor virtuele-machine schaal sets?
 
 
 ## <a name="next-steps"></a>Volgende stappen

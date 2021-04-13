@@ -5,14 +5,14 @@ services: static-web-apps
 author: craigshoemaker
 ms.service: static-web-apps
 ms.topic: conceptual
-ms.date: 02/05/2021
+ms.date: 04/09/2021
 ms.author: cshoe
-ms.openlocfilehash: c0cb32bd3308affa473e9039d92bd3cb23acabee
-ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
+ms.openlocfilehash: 4f1f432da33bded4fc0f04170673e5943dec5fb0
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107027530"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107311325"
 ---
 # <a name="github-actions-workflows-for-azure-static-web-apps-preview"></a>GitHub actions-werk stromen voor de preview-versie van Azure static Web Apps
 
@@ -38,11 +38,11 @@ name: Azure Static Web Apps CI/CD
 on:
   push:
     branches:
-    - main
+      - main
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
-    - main
+      - main
 
 jobs:
   build_and_deploy_job:
@@ -50,33 +50,33 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-    - uses: actions/checkout@v2
-      with:
-        submodules: true
-    - name: Build And Deploy
-      id: builddeploy
-      uses: Azure/static-web-apps-deploy@v0.0.1-preview
-      with:
-        azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_MANGO_RIVER_0AFDB141E }}
-        repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
-        action: 'upload'
-        ###### Repository/Build Configurations - These values can be configured to match you app requirements. ######
-        app_location: '/' # App source code path
-        api_location: 'api' # Api source code path - optional
-        output_location: 'dist' # Built app content directory - optional
-        ###### End of Repository/Build Configurations ######
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v0.0.1-preview
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_MANGO_RIVER_0AFDB141E }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
+          action: 'upload'
+          ###### Repository/Build Configurations - These values can be configured to match you app requirements. ######
+          app_location: '/' # App source code path
+          api_location: 'api' # Api source code path - optional
+          output_location: 'dist' # Built app content directory - optional
+          ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
     name: Close Pull Request Job
     steps:
-    - name: Close Pull Request
-      id: closepullrequest
-      uses: Azure/static-web-apps-deploy@v0.0.1-preview
-      with:
-        azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_MANGO_RIVER_0AFDB141E }}
-        action: 'close'
+      - name: Close Pull Request
+        id: closepullrequest
+        uses: Azure/static-web-apps-deploy@v0.0.1-preview
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_MANGO_RIVER_0AFDB141E }}
+          action: 'close'
 ```
 
 ## <a name="triggers"></a>Triggers
@@ -87,11 +87,11 @@ Met een [trigger](https://help.github.com/actions/reference/events-that-trigger-
 on:
   push:
     branches:
-    - main
+      - main
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
-    - main
+      - main
 ```
 
 Via de instellingen die aan de eigenschap zijn gekoppeld `on` , kunt u definiëren welke vertakkingen een taak activeren en triggers instellen om te worden geactiveerd voor verschillende statussen van pull-aanvragen.
@@ -104,10 +104,10 @@ Voor elke gebeurtenis trigger moet een gebeurtenis-handler worden uitgevoerd. [T
 
 Er zijn twee beschik bare taken in het werk stroom bestand statisch Web Apps.
 
-| Naam  | Beschrijving |
-|---------|---------|
-|`build_and_deploy_job` | Wordt uitgevoerd wanneer u een push uitvoert of een pull-aanvraag opent voor de vertakking die in de eigenschap wordt vermeld `on` . |
-|`close_pull_request_job` | Wordt alleen uitgevoerd wanneer u een pull-aanvraag sluit, waardoor de faserings omgeving die is gemaakt op basis van pull-aanvragen, wordt verwijderd. |
+| Naam                     | Beschrijving                                                                                                    |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| `build_and_deploy_job`   | Wordt uitgevoerd wanneer u een push uitvoert of een pull-aanvraag opent voor de vertakking die in de eigenschap wordt vermeld `on` .          |
+| `close_pull_request_job` | Wordt alleen uitgevoerd wanneer u een pull-aanvraag sluit, waardoor de faserings omgeving die is gemaakt op basis van pull-aanvragen, wordt verwijderd. |
 
 ## <a name="steps"></a>Stappen
 
@@ -115,10 +115,10 @@ Stappen zijn opeenvolgende taken voor een taak. Met een stap worden acties uitge
 
 Een werk stroom bestand definieert de volgende stappen.
 
-| Taak  | Stappen  |
-|---------|---------|
-| `build_and_deploy_job` |<ol><li>Hiermee wordt de opslag plaats in de omgeving van de actie gecontroleerd.<li>Bouwt en implementeert de opslag plaats naar statische Azure-Web Apps.</ol>|
-| `close_pull_request_job` | <ol><li>Hiermee wordt een statische Web Apps van Azure geïnformeerd dat een pull-aanvraag is gesloten.</ol>|
+| Taak                      | Stappen                                                                                                                              |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `build_and_deploy_job`   | <ol><li>Hiermee wordt de opslag plaats in de omgeving van de actie gecontroleerd.<li>Bouwt en implementeert de opslag plaats naar statische Azure-Web Apps.</ol> |
+| `close_pull_request_job` | <ol><li>Hiermee wordt een statische Web Apps van Azure geïnformeerd dat een pull-aanvraag is gesloten.</ol>                                                        |
 
 ## <a name="build-and-deploy"></a>Bouwen en implementeren
 
@@ -126,14 +126,14 @@ De stap met de naam `Build and Deploy` bouwt en implementeert op uw statische Az
 
 ```yml
 with:
-    azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_MANGO_RIVER_0AFDB141E }}
-    repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
-    action: 'upload'
-    ###### Repository/Build Configurations - These values can be configured to match you app requirements. ######
-    app_location: '/' # App source code path
-    api_location: 'api' # Api source code path - optional
-    output_location: 'dist' # Built app content directory - optional
-    ###### End of Repository/Build Configurations ######
+  azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_MANGO_RIVER_0AFDB141E }}
+  repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
+  action: 'upload'
+  ###### Repository/Build Configurations - These values can be configured to match you app requirements. ######
+  app_location: '/' # App source code path
+  api_location: 'api' # Api source code path - optional
+  output_location: 'dist' # Built app content directory - optional
+  ###### End of Repository/Build Configurations ######
 ```
 
 [!INCLUDE [static-web-apps-folder-structure](../../includes/static-web-apps-folder-structure.md)]
@@ -146,10 +146,10 @@ U kunt een nauw keurige controle hebben over de opdrachten die tijdens een imple
 
 De implementatie aanroept altijd `npm install` vóór een aangepaste opdracht.
 
-| Opdracht            | Beschrijving |
-|---------------------|-------------|
-| `app_build_command` | Hiermee wordt een aangepaste opdracht gedefinieerd die moet worden uitgevoerd tijdens de implementatie van de toepassing voor statische inhoud.<br><br>Als u bijvoorbeeld een productie-build voor een hoek toepassing wilt configureren, maakt u een NPM-script `build-prod` met de naam voor uitvoeren `ng build --prod` en voert u `npm run build-prod` als de aangepaste opdracht in. Als dit veld leeg blijft, probeert de werk stroom de of-opdrachten uit te voeren `npm run build` `npm run build:azure` .  |
-| `api_build_command` | Hiermee wordt een aangepaste opdracht gedefinieerd die moet worden uitgevoerd tijdens de implementatie van de Azure Functions API-toepassing. |
+| Opdracht             | Beschrijving                                                                                                                                                                                                                                                                                                                                                                                |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `app_build_command` | Hiermee wordt een aangepaste opdracht gedefinieerd die moet worden uitgevoerd tijdens de implementatie van de toepassing voor statische inhoud.<br><br>Als u bijvoorbeeld een productie-build voor een hoek toepassing wilt configureren, maakt u een NPM-script `build-prod` met de naam voor uitvoeren `ng build --prod` en voert u `npm run build-prod` als de aangepaste opdracht in. Als dit veld leeg blijft, probeert de werk stroom de of-opdrachten uit te voeren `npm run build` `npm run build:azure` . |
+| `api_build_command` | Hiermee wordt een aangepaste opdracht gedefinieerd die moet worden uitgevoerd tijdens de implementatie van de Azure Functions API-toepassing.                                                                                                                                                                                                                                                                                                  |
 
 ## <a name="skip-app-build"></a>App-build overs Laan
 
@@ -159,33 +159,33 @@ Als u het maken van de app wilt overs Laan, stelt `skip_app_build` u in op `true
 
 ```yml
 with:
-    azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_MANGO_RIVER_0AFDB141E }}
-    repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
-    action: 'upload'
-    ###### Repository/Build Configurations - These values can be configured to match you app requirements. ######
-    app_location: 'dist'  # Application build output generated by a previous step
-    api_location: 'api'   # Api source code path - optional
-    output_location: ''   # Leave this empty
-    skip_app_build: true
-    ###### End of Repository/Build Configurations ######
+  azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_MANGO_RIVER_0AFDB141E }}
+  repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
+  action: 'upload'
+  ###### Repository/Build Configurations - These values can be configured to match you app requirements. ######
+  app_location: 'dist' # Application build output generated by a previous step
+  api_location: 'api' # Api source code path - optional
+  output_location: '' # Leave this empty
+  skip_app_build: true
+  ###### End of Repository/Build Configurations ######
 ```
 
-| Eigenschap            | Beschrijving |
-|---------------------|-------------|
-| `skip_app_build`    | Stel de waarde in op om `true` het bouwen van de front-end-app over te slaan. |
+| Eigenschap         | Beschrijving                                                 |
+| ---------------- | ----------------------------------------------------------- |
+| `skip_app_build` | Stel de waarde in op om `true` het bouwen van de front-end-app over te slaan. |
 
 > [!NOTE]
 > U kunt alleen de build voor de front-end-app overs Laan. Als uw app een API heeft, wordt deze nog steeds gemaakt door de statische Web Apps GitHub-actie.
 
 ## <a name="route-file-location"></a>Locatie van routebestand
 
-U kunt de werk stroom aanpassen om te zoeken naar de [routes.js](routes.md) in een wille keurige map in uw opslag plaats. De volgende eigenschap kan worden gedefinieerd in de sectie van een taak `with` .
+U kunt de werk stroom aanpassen om te zoeken naar de [staticwebapp.config.js](routes.md) in een wille keurige map in uw opslag plaats. De volgende eigenschap kan worden gedefinieerd in de sectie van een taak `with` .
 
-| Eigenschap            | Beschrijving |
-|---------------------|-------------|
-| `routes_location` | Hiermee definieert u de maplocatie waar de _routes.jsin_ het bestand wordt gevonden. Deze locatie is relatief ten opzichte van de hoofdmap van de opslag plaats. |
+| Eigenschap          | Beschrijving                                                                                                                                 |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `routes_location` | Hiermee definieert u de maplocatie waar de _staticwebapp.config.jsin_ het bestand wordt gevonden. Deze locatie is relatief ten opzichte van de hoofdmap van de opslag plaats. |
 
- Het is met name belang rijk dat u de locatie van uw _routes.jsop_ het bestand kunt vinden. Dit is vooral handig als uw front-end Framework-build-stap dit bestand niet standaard verplaatst naar de `output_location` .
+Het is met name belang rijk dat u de locatie van uw _staticwebapp.config.jsop_ het bestand kunt vinden. Dit is vooral handig als uw front-end Framework-build-stap dit bestand niet standaard verplaatst naar de `output_location` .
 
 ## <a name="environment-variables"></a>Omgevingsvariabelen
 
@@ -207,11 +207,11 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: "upload"
+          action: 'upload'
           ###### Repository/Build Configurations
-          app_location: "/"
-          api_location: "api"
-          output_location: "public"
+          app_location: '/'
+          api_location: 'api'
+          output_location: 'public'
           ###### End of Repository/Build Configurations ######
         env: # Add environment variables here
           HUGO_VERSION: 0.58.0
@@ -219,7 +219,7 @@ jobs:
 
 ## <a name="monorepo-support"></a>Monorepo-ondersteuning
 
-Een monorepo is een opslag plaats met code voor meer dan één toepassing. Standaard worden in een statisch Web Apps werk stroom bestand alle bestanden in een opslag plaats bijgehouden, maar u kunt dit aanpassen om een enkele app te richten. Daarom heeft elke statische app voor monorepos een eigen configuratie bestand dat naast elkaar wordt weer in de map *. github/werk stromen* van de opslag plaats.
+Een monorepo is een opslag plaats met code voor meer dan één toepassing. Standaard worden in een statisch Web Apps werk stroom bestand alle bestanden in een opslag plaats bijgehouden, maar u kunt dit aanpassen om een enkele app te richten. Daarom heeft elke statische app voor monorepos een eigen configuratie bestand dat naast elkaar wordt weer in de map _. github/werk stromen_ van de opslag plaats.
 
 ```files
 ├── .github
@@ -261,9 +261,9 @@ on:
 
 In dit geval activeren alleen de volgende bestanden een nieuwe build:
 
-- Alle bestanden in de map *app1*
-- Alle bestanden in de map *api1*
-- Wijzigingen in het werk stroom bestand *Azure-static-web-apps-Purple-pond. yml* van de app
+- Alle bestanden in de map _app1_
+- Alle bestanden in de map _api1_
+- Wijzigingen in het werk stroom bestand _Azure-static-web-apps-Purple-pond. yml_ van de app
 
 ## <a name="next-steps"></a>Volgende stappen
 

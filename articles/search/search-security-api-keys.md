@@ -7,17 +7,17 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 02/03/2021
-ms.openlocfilehash: 8b2e85744923fb2e7e474e049df1536aebc56f3c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/08/2021
+ms.openlocfilehash: 6954ce289cb3cf219f8c4024a112411fd60d70e0
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99536930"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107310662"
 ---
-# <a name="create-and-manage-api-keys-for-an-azure-cognitive-search-service"></a>API-sleutels voor een Azure Cognitive Search-service maken en beheren
+# <a name="create-and-manage-api-keys-for-authentication-to-azure-cognitive-search"></a>API-sleutels voor verificatie voor Azure-Cognitive Search maken en beheren
 
-Alle aanvragen voor een zoek service hebben een alleen-lezen API-sleutel nodig die specifiek voor uw service is gegenereerd. De API-sleutel is het enige mechanisme voor het verifiëren van inkomende aanvragen voor uw zoek service-eind punt en is vereist voor elke aanvraag. 
+Wanneer u verbinding maakt met een zoek service, moeten alle aanvragen een alleen-lezen API-sleutel bevatten die specifiek voor uw service is gegenereerd. De API-sleutel is het enige mechanisme voor het verifiëren van inkomende aanvragen voor uw zoek service-eind punt en is vereist voor elke aanvraag. 
 
 + In [rest oplossingen](search-get-started-rest.md)wordt de `api-key` is doorgaans opgegeven in een aanvraag header
 

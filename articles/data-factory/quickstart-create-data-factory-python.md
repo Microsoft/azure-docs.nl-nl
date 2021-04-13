@@ -9,12 +9,12 @@ ms.devlang: python
 ms.topic: quickstart
 ms.date: 04/12/2021
 ms.custom: seo-python-october2019, devx-track-python
-ms.openlocfilehash: 879ca169604dcd61a79db4ec3ca937289dacdd9b
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: 534b5b3aca86cc2f6d7ee2d703939420f80abb8e
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/13/2021
-ms.locfileid: "107309846"
+ms.locfileid: "107365090"
 ---
 # <a name="quickstart-create-a-data-factory-and-pipeline-using-python"></a>Quickstart: Een data factory en pijplijn maken met behulp van Python
 
@@ -34,13 +34,13 @@ Pijplijnen kunnen gegevens uit verschillende gegevensopslagplaatsen opnemen. Pij
 
 * Een Azure-account met een actief abonnement. [Maak er gratis een](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 
-* [Python 3.6 +](https://www.python.org/downloads/).
+* [Python 3.6+](https://www.python.org/downloads/).
 
 * [Een Azure Storage-account](../storage/common/storage-account-create.md).
 
 * [Azure Storage Explorer](https://storageexplorer.com/) (optioneel).
 
-* [Een app in Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal). Noteer de volgende waarden voor gebruik in latere stappen: **app-id**, **verificatiesleutel** en **tenant-id**. Wijs de app toe aan de rol **Inzender** door de instructies in hetzelfde artikel te volgen. Noteer de volgende waarden in het artikel die u in latere stappen moet gebruiken: **toepassings-id (Service-Principal-id hieronder), verificatie sleutel (client geheim hieronder) en Tenant-id.**
+* [Een app in Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal). Maak de toepassing door de stappen in deze koppeling  te volgen en wijs de toepassing toe aan de rol Inzender door de instructies in hetzelfde artikel te volgen. Noteer de volgende waarden zoals weergegeven in het artikel om in latere stappen te gebruiken: toepassings-id **(onderstaande service-principal-id), verificatiesleutel (clientgeheim hieronder) en tenant-id.**
 
 ## <a name="create-and-upload-an-input-file"></a>Een invoerbestand maken en uploaden
 
@@ -66,7 +66,7 @@ Pijplijnen kunnen gegevens uit verschillende gegevensopslagplaatsen opnemen. Pij
     pip install azure-mgmt-datafactory
     ```
 
-    De [python-SDK voor Data Factory](https://github.com/Azure/azure-sdk-for-python) ondersteunt python 2,7 en 3.6 +.
+    De [Python SDK voor Data Factory](https://github.com/Azure/azure-sdk-for-python) ondersteunt Python 2.7 en 3.6+.
 
 4. Voer de volgende opdracht uit om het Python-pakket voor Azure Identity Authentication te installeren:
 
@@ -75,7 +75,7 @@ Pijplijnen kunnen gegevens uit verschillende gegevensopslagplaatsen opnemen. Pij
     ```
     > [!NOTE] 
     > Het pakket 'azure-identity' bevat mogelijk conflicten met 'azure-cli' voor enkele algemene afhankelijkheden. Als u een verificatieprobleem ondervindt, verwijdert u 'azure-cli' en de bijbehorende afhankelijkheden. U kunt ook een schone machine gebruiken zonder het pakket 'azure-cli' te installeren.
-    > Voor onafhankelijke Clouds moet u de toepasselijke Cloud-specifieke constanten gebruiken.  Raadpleeg [verbinding maken met alle regio's met behulp van Azure-bibliotheken voor python multi-Cloud | Microsoft Docs voor instructies voor het maken van verbinding met python in soevereine Clouds.](https://docs.microsoft.com/azure/developer/python/azure-sdk-sovereign-domain)
+    > Voor onafhankelijke clouds moet u de juiste cloudspecifieke constanten gebruiken.  Raadpleeg Verbinding maken met [alle regio's met behulp van Azure-bibliotheken voor Python Multi-cloud | Microsoft Docs voor instructies om verbinding te maken met Python in onafhankelijke clouds.](https://docs.microsoft.com/azure/developer/python/azure-sdk-sovereign-domain)
     
     
 ## <a name="create-a-data-factory-client"></a>Een data factory-client maken
@@ -225,8 +225,6 @@ U definieert een gegevensset die de brongegevens in Azure Blob vertegenwoordigt.
         rg_name, df_name, dsOut_name, dsOut_azure_blob)
     print_item(dsOut)
 ```
- > [!NOTE] 
- > Als u para meters wilt door geven aan de pijp lijn, voegt u deze toe aan de JSON-teken reeks params_for_pipeline hieronder weer gegeven in de notatie **{"ParameterName1": "ParameterValue1"}** voor elk van de para meters die nodig zijn in de pijp lijn. Om para meters door te geven aan een gegevens stroom, maakt u een pijplijn parameter voor de parameter naam/-waarde en gebruikt u vervolgens de pijplijn parameter in de para meter gegevensstroom in de notatie **@pipeline (). para meters. para meter naam.**
 
 
 ## <a name="create-a-pipeline"></a>Een pijplijn maken
@@ -243,6 +241,13 @@ Voeg de volgende code toe aan de methode **Main** om **een pijplijn met een kopi
     copy_activity = CopyActivity(name=act_name,inputs=[dsin_ref], outputs=[dsOut_ref], source=blob_source, sink=blob_sink)
 
     #Create a pipeline with the copy activity
+    
+    #Note1: To pass parameters to the pipeline, add them to the json string params_for_pipeline shown below in the format { “ParameterName1” : “ParameterValue1” } for each of the parameters needed in the pipeline.
+    #Note2: To pass parameters to a dataflow, create a pipeline parameter to hold the parameter name/value, and then consume the pipeline parameter in the dataflow parameter in the format @pipeline().parameters.parametername.
+    
+    p_name = 'copyPipeline'
+    params_for_pipeline = {}
+
     p_name = 'copyPipeline'
     params_for_pipeline = {}
     p_obj = PipelineResource(activities=[copy_activity], parameters=params_for_pipeline)

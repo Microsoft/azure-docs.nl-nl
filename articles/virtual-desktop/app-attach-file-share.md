@@ -1,114 +1,110 @@
 ---
-title: Windows Virtual Desktop set up file share MSIX app attach preview-Azure
-description: Een bestands share instellen voor MSIX app attach voor Windows Virtual Desktop.
+title: Windows Virtual Desktop MSIX-app-attach voor bestands delen instellen - Azure
+description: Een bestands share instellen voor msix-app-attach voor Windows Virtual Desktop.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 12/14/2020
+ms.date: 04/13/2021
 ms.author: helohr
 manager: femila
-ms.openlocfilehash: 1e7a956b358d486250fbfc26da141c47c0238b56
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.openlocfilehash: d8aaa8d5013c426ac1ab6b367309c51be4929cee
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106448386"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107366399"
 ---
-# <a name="set-up-a-file-share-for-msix-app-attach-preview"></a>Een bestands share instellen voor het koppelen van MSIX-apps (preview-versie)
+# <a name="set-up-a-file-share-for-msix-app-attach"></a>Een bestands share instellen voor het koppelen van de MSIX-app
 
-> [!IMPORTANT]
-> MSIX app attach is momenteel beschikbaar als open bare preview.
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+Alle MSIX-afbeeldingen moeten worden opgeslagen op een netwerk share die toegankelijk is voor gebruikers in een hostgroep met alleen-lezen machtigingen.
 
-Alle MSIX-installatie kopieën moeten worden opgeslagen op een netwerk share die toegankelijk is voor gebruikers in een hostgroep met alleen-lezen machtigingen.
-
-MSIX app attach (preview) heeft geen afhankelijkheden voor het type opslag infrastructuur dat door de bestands share wordt gebruikt. De overwegingen voor het koppelen van de MSIX-app zijn hetzelfde als die voor een FSLogix-share. Zie [opslag opties voor FSLogix-profiel containers in Windows virtueel bureau blad](store-fslogix-profile.md)voor meer informatie over opslag vereisten.
+MSIX-app-attach heeft geen afhankelijkheden van het type opslag-fabric dat door de bestands share wordt gebruikt. De overwegingen voor de MSIX-app-attach-share zijn hetzelfde als die voor een FSLogix-share. Zie Opslagopties voor [FSLogix-profielcontainers in](store-fslogix-profile.md)Windows Virtual Desktop voor meer informatie over opslagvereisten.
 
 ## <a name="performance-requirements"></a>Prestatievereisten
 
-MSIX-app koppelen grootte limieten voor uw systeem zijn afhankelijk van het opslag type dat u gebruikt voor het opslaan van de VHD-of VHDx-bestanden, evenals de grootte beperkingen van de VHD-, VHSD-of CIM-bestanden en het bestands systeem.
+De limieten voor de grootte van de MSIX-app koppelen voor uw systeem zijn afhankelijk van het opslagtype dat u gebruikt voor het opslaan van de VHD- of VHDx-bestanden, evenals de groottebeperkingen van de VHD-, HEBTOD- of CIM-bestanden en het bestandssysteem.
 
-In de volgende tabel ziet u een voor beeld van het aantal resources dat één MSIX-installatie kopie van 1 GB met één MSIX-app voor elke VM vereist:
+De volgende tabel geeft een voorbeeld van het aantal resources dat één MSIX-afbeelding van 1 GB met daarin één MSIX-app voor elke VM nodig heeft:
 
 | Resource             | Vereisten |
 |----------------------|--------------|
-| IOPs met stabiele status    | 1 IOPs       |
-| Aanmelden bij computer opstarten | 10 IOPs      |
-| Latentie              | 400 MS       |
+| IOPS met stabiele status    | 1 IOPS       |
+| Aanmelden bij het opstarten van de machine | 10 IOPS      |
+| Latentie              | 400 ms       |
 
-De vereisten kunnen sterk variëren, afhankelijk van het aantal MSIX-toepassingen dat in de MSIX-installatie kopie wordt opgeslagen. Voor grotere MSIX-installatie kopieën moet u meer band breedte toewijzen.
+De vereisten kunnen sterk variëren, afhankelijk van hoeveel MSIX-verpakte toepassingen zijn opgeslagen in de MSIX-afbeelding. Voor grotere MSIX-afbeeldingen moet u meer bandbreedte toewijzen.
 
 ### <a name="storage-recommendations"></a>Aanbevelingen voor opslag
 
-Azure biedt meerdere opslag opties die kunnen worden gebruikt voor het koppelen van MISX-apps. We raden u aan Azure Files of Azure NetApp Files uit te voeren, omdat deze opties de beste waarde bieden tussen kosten-en beheer overhead. Met de artikel [opslag opties voor FSLogix-profiel containers in het virtuele bureau blad van Windows](store-fslogix-profile.md) vergelijkt u de verschillende Managed Storage-oplossingen Azure-aanbiedingen in de context van Windows virtueel bureau blad.
+Azure biedt meerdere opslagopties die kunnen worden gebruikt voor het koppelen van MISX-apps. U kunt het beste Azure Files of Azure NetApp Files omdat deze opties de beste waarde bieden tussen kosten- en beheeroverhead. Het artikel [Opslagopties voor FSLogix-profielcontainers in Windows Virtual Desktop](store-fslogix-profile.md) vergelijkt de verschillende beheerde opslagoplossingen die Azure biedt in de context van Windows Virtual Desktop.
 
-### <a name="optimize-msix-app-attach-performance"></a>Prestaties van MSIX-app-koppeling optimaliseren
+### <a name="optimize-msix-app-attach-performance"></a>Prestaties van MSIX-app koppelen optimaliseren
 
-Hier volgen enkele andere zaken die u kunt doen om de MSIX-koppelings prestaties van de app te optimaliseren:
+Hier zijn enkele andere dingen die u het beste kunt doen om de prestaties van het koppelen van MSIX-apps te optimaliseren:
 
-- De opslag oplossing die u gebruikt voor het koppelen van MSIX-apps moet zich op dezelfde locatie van het Data Center bevindt als de sessie-hosts.
-- Als u prestatie knelpunten wilt voor komen, moet u de volgende VHD-, VHDX-en CIM-bestanden uitsluiten van antivirus scans:
+- De opslagoplossing die u gebruikt voor msix-app-koppelen moet zich op dezelfde datacenterlocatie bevinden als de sessiehosts.
+- Sluit de volgende VHD-, VHDX- en CIM-bestanden uit van antivirusscans om knelpunten in de prestaties te voorkomen:
    
-    - <MSIXAppAttachFileShare \> \* . SCHIJVEN
-    - <MSIXAppAttachFileShare \> \* . INDELING
-    - \\\\storageaccount.file.core.windows.net- \\ share \* \* . SCHIJVEN
-    - \\\\storageaccount.file.core.windows.net- \\ share \* \* . INDELING
-    - <MSIXAppAttachFileShare>. VRACHT
-    - \\\\storageaccount.file.core.windows.net- \\ share \* \* . VRACHT
+    - <MSIXAppAttachFileShare \> \* . Vhd
+    - <MSIXAppAttachFileShare \> \* . VHDX
+    - \\\\storageaccount.file.core.windows.net \\ \* \* delen. Vhd
+    - \\\\storageaccount.file.core.windows.net \\ \* \* delen. VHDX
+    - <MSIXAppAttachFileShare>. Cim
+    - \\\\storageaccount.file.core.windows.net \\ \* \* delen. Cim
 
-- Scheid de opslag infrastructuur voor de MSIX-app die is gekoppeld vanuit FSLogix-profiel containers.
-- Alle VM-systeem accounts en gebruikers accounts moeten alleen-lezen-machtigingen hebben voor toegang tot de bestands share.
-- Voor nood herstel plannen voor virtuele Windows-Bureau bladen moet de bestands share voor het koppelen van de MSIX-app in uw secundaire failover-locatie worden gerepliceerd. Zie [een plan voor bedrijfs continuïteit en herstel na nood gevallen instellen](disaster-recovery.md)voor meer informatie over herstel na nood gevallen.
+- Scheid de opslag-fabric voor MSIX-app-attach van FSLogix-profielcontainers.
+- Alle VM-systeemaccounts en gebruikersaccounts moeten alleen-lezenmachtigingen hebben voor toegang tot de bestands share.
+- Eventuele noodherstelplannen voor Windows Virtual Desktop moeten het repliceren van de MSIX-app-attach-bestands share op uw secundaire failoverlocatie omvatten. Zie Een plan voor bedrijfscontinuïteit en herstel na noodherstel instellen voor meer informatie over [herstel na noodherstel.](disaster-recovery.md)
 
 ## <a name="how-to-set-up-the-file-share"></a>De bestands share instellen
 
-Het installatie proces voor de bestands share MSIX app attach is grotendeels hetzelfde als [het installatie proces voor bestands shares van het FSLogix-profiel](create-host-pools-user-profile.md). U moet echter wel verschillende machtigingen toewijzen aan gebruikers. Voor het koppelen van de MSIX-app zijn alleen-lezen-machtigingen vereist voor toegang tot de bestands share.
+Het installatieproces voor de MSIX-app-attach-bestands share is grotendeels hetzelfde als het installatieproces voor [FSLogix-profielbestands shares.](create-host-pools-user-profile.md) U moet gebruikers echter verschillende machtigingen toewijzen. Voor het koppelen van de MSIX-app zijn alleen-lezen machtigingen vereist voor toegang tot de bestands share.
 
-Als u uw MSIX-toepassingen in Azure Files opslaat, moet u voor uw sessie-hosts alle host-Vm's op basis van het toegangs beheer (RBAC) en bestands shares van het nieuwe technologie bestands systeem (NTFS) op de share toewijzen.
+Als u uw MSIX-toepassingen opslaat in Azure Files, moet u voor uw sessiehosts aan alle sessiehost-VM's zowel op rollen gebaseerd toegangsbeheer (RBAC) als bestands shareMachtigingen voor New Technology File System (NTFS) voor de share toewijzen.
 
-| Azure-object                      | Vereiste rol                                     | Functie                                  |
+| Azure-object                      | Vereiste rol                                     | Functie Rol                                  |
 |-----------------------------------|--------------------------------------------------|-----------------------------------------------|
-| Session Host (VM-computer objecten)| Inzender voor opslagbestandsgegevens via SMB-share          | Lezen en uitvoeren, lezen, Mapinhoud weer geven  |
+| Sessiehost (VM-computerobjecten)| Inzender voor opslagbestandsgegevens via SMB-share          | Mapinhoud lezen en uitvoeren, lezen en weergeven  |
 | Beheerders op bestands share              | Inzender met verhoogde bevoegdheden voor opslagbestandsgegevens via SMB-share | Volledig beheer                                  |
-| Gebruikers op bestands share               | Inzender voor opslagbestandsgegevens via SMB-share          | Lezen en uitvoeren, lezen, Mapinhoud weer geven  |
+| Gebruikers op bestands share               | Inzender voor opslagbestandsgegevens via SMB-share          | Mapinhoud lezen en uitvoeren, lezen en weergeven  |
 
-Vm's voor de sessiehost toewijzen voor het opslag account en de bestands share:
+VM's voor sessiehosts toewijzen voor het opslagaccount en de bestands share:
 
-1. Maak een beveiligings groep voor Active Directory Domain Services (AD DS).
+1. Maak een Active Directory Domain Services (AD DS) beveiligingsgroep.
 
-2. Voeg de computer accounts voor alle hosts voor sessie-Vm's toe als leden van de groep.
+2. Voeg de computeraccounts voor alle sessiehost-VM's toe als leden van de groep.
 
-3. Synchroniseer de AD DS groep naar Azure Active Directory (Azure AD).
+3. Synchroniseer de AD DS naar Azure Active Directory (Azure AD).
 
 4. Een opslagaccount maken.
 
-5. Maak een bestands share onder het opslag account door de instructies in [een Azure-bestands share maken](../storage/files/storage-how-to-create-file-share.md#create-file-share)te volgen.
+5. Maak een bestands share onder het opslagaccount door de instructies in [Een Azure-bestands share maken te volgen.](../storage/files/storage-how-to-create-file-share.md#create-file-share)
 
-6. Voeg het opslag account toe aan AD DS door de instructies in [deel één te volgen: schakel AD DS-verificatie in voor uw Azure-bestands shares](../storage/files/storage-files-identity-ad-ds-enable.md#option-one-recommended-use-azfileshybrid-powershell-module).
+6. Voeg het opslagaccount toe aan AD DS door de instructies te volgen in Deel [1: AD DS verificatie inschakelen voor uw Azure-bestands shares.](../storage/files/storage-files-identity-ad-ds-enable.md#option-one-recommended-use-azfileshybrid-powershell-module)
 
-7. Wijs de gesynchroniseerde AD DS groep toe aan Azure AD en wijs het opslag account toe aan de rol Inzender voor het opslaan van gegevens van de SMB-share.
+7. Wijs de gesynchroniseerde AD DS toe aan Azure AD en wijs aan het opslagaccount de rol Inzender opslagbestandsgegevens SMB-share toe.
 
-8. Koppel de bestands share aan een sessiehost door de instructies in [deel twee te volgen: machtigingen op share niveau toewijzen aan een identiteit](../storage/files/storage-files-identity-ad-ds-assign-permissions.md).
+8. Als u de bestands share aan een sessiehost wilt toevoegen, volgt u de instructies in Deel 2: machtigingen op [shareniveau toewijzen aan een identiteit.](../storage/files/storage-files-identity-ad-ds-assign-permissions.md)
 
-9. Ken NTFS-machtigingen voor de bestands share toe aan de groep AD DS.
+9. Verleen NTFS-machtigingen voor de bestands share aan AD DS groep.
 
-10. Stel NTFS-machtigingen in voor de gebruikers accounts. U hebt een operationele eenheid (OE) nodig die afkomstig is van de AD DS waarvan de accounts in de virtuele machine deel uitmaken.
+10. Stel NTFS-machtigingen in voor de gebruikersaccounts. U hebt een bedrijfseenheid (OE) nodig die afkomstig is van de AD DS de accounts in de VM behoren.
 
-Nadat u de identiteit aan uw opslag hebt toegewezen, volgt u de instructies in de artikelen in de [volgende stappen](#next-steps) om andere vereiste machtigingen te verlenen aan de identiteit die u aan de vm's hebt toegewezen.
+Nadat u de identiteit aan uw opslag hebt toegewezen, volgt u de instructies in de artikelen [in](#next-steps) Volgende stappen om andere vereiste machtigingen te verlenen voor de identiteit die u aan de VM's hebt toegewezen.
 
-U moet er ook voor zorgen dat de virtuele machines van de sessiehost nieuwe NTFS-machtigingen (File System) hebben. U moet een container voor operationele eenheden hebben die is gebrond van Active Directory Domain Services (AD DS), en uw gebruikers moeten lid zijn van die operationele eenheid om deze machtigingen te kunnen gebruiken.
+U moet er ook voor zorgen dat uw sessiehost-VM's machtigingen hebben voor New Technology File System (NTFS). U moet een container voor operationele eenheden hebben die afkomstig is van Active Directory Domain Services (AD DS) en uw gebruikers moeten lid zijn van die operationele eenheid om deze machtigingen te kunnen gebruiken.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Dit zijn de andere zaken die u moet doen nadat u de bestands share hebt ingesteld:
+Dit zijn de andere dingen die u moet doen nadat u de bestands share hebt ingesteld:
 
-- Meer informatie over het instellen van Azure Active Directory Domain Services (AD DS) op [een profiel container maken met Azure files en AD DS](create-file-share.md).
-- Meer informatie over het instellen van Azure Files en Azure AD DS bij [het maken van een profiel container met Azure files en azure AD DS](create-profile-container-adds.md).
-- Meer informatie over het instellen van Azure NetApp Files voor MSIX-app-koppeling in [een profiel container maken met Azure NetApp files en AD DS](create-fslogix-profile-container.md).
-- Meer informatie over het gebruik van een bestands share op basis van een virtuele machine op een [profiel container maken voor een hostgroep met een bestands share](create-host-pools-user-profile.md).
+- Meer informatie over het instellen van Azure Active Directory Domain Services (AD DS) in Een profielcontainer maken [met Azure Files en AD DS.](create-file-share.md)
+- Meer informatie over het instellen van Azure Files en Azure AD DS in [Een profielcontainer maken met Azure Files en Azure AD DS](create-profile-container-adds.md).
+- Meer informatie over het instellen van Azure NetApp Files voor MSIX-app-attach in [Een profielcontainer maken met Azure NetApp Files en AD DS](create-fslogix-profile-container.md).
+- Meer informatie over het gebruik van een bestands share op basis van een virtuele machine in Een profielcontainer voor een [hostgroep maken met behulp van een bestands share](create-host-pools-user-profile.md).
 
-Wanneer u klaar bent, ziet u hier een aantal andere bronnen die u mogelijk handig vindt:
+Wanneer u klaar bent, vindt u hier enkele andere resources die u mogelijk nuttig vindt:
 
-- Vraag onze vragen van de community over deze functie op het [virtuele bureau blad-TechCommunity van Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop).
-- U kunt ook feedback geven voor Windows virtueel bureau blad op de [Windows Virtual Desktop feedback hub](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app).
-- [Woorden lijst voor het toevoegen van MSIX-apps](app-attach-glossary.md)
+- Stel onze communityvragen over deze functie op de [Windows Virtual Desktop TechCommunity.](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop)
+- U kunt ook feedback geven voor Windows Virtual Desktop in Windows Virtual Desktop [feedbackhub.](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)
+- [Verklarende woordenlijst voor het koppelen van MSIX-apps](app-attach-glossary.md)
 - [Veelgestelde vragen over het koppelen van MSIX-apps](app-attach-faq.md)

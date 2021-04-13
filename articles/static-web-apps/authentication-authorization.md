@@ -5,14 +5,14 @@ services: static-web-apps
 author: craigshoemaker
 ms.service: static-web-apps
 ms.topic: conceptual
-ms.date: 05/08/2020
+ms.date: 04/09/2021
 ms.author: cshoe
-ms.openlocfilehash: 9c8dd723c9cde5c0534d9fd5ca4084c7ed15d213
-ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
+ms.openlocfilehash: 29821733b73717634aa8f0ab72270f058ffd3ddc
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "106218631"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107309387"
 ---
 # <a name="authentication-and-authorization-for-azure-static-web-apps-preview"></a>Verificatie en autorisatie voor API-apps in Azure Static Web Apps Preview
 
@@ -24,7 +24,7 @@ Azure static Web Apps stroomlijnt de verificatie-ervaring door verificatie met d
 - Google<sup>1</sup>
 - Twitter
 
-Provider-specifieke [uitnodigingen](#invitations) koppelen gebruikers met rollen en gemachtigde gebruikers krijgen toegang tot [routes](routes.md) op basis van regels die zijn gedefinieerd in de _routes.jsvoor_ het bestand.
+Provider-specifieke [uitnodigingen](#invitations) koppelen gebruikers met rollen en gemachtigde gebruikers krijgen toegang tot [routes](routes.md) op basis van regels die zijn gedefinieerd in de _staticwebapp.config.jsvoor_ het bestand.
 
 Alle verificatie providers zijn standaard ingeschakeld. Als u een verificatie provider wilt beperken, blokkeert u de [toegang](#block-an-authorization-provider) met een aangepaste route regel.
 
@@ -32,18 +32,18 @@ De onderwerpen van verificatie en autorisatie zijn aanzienlijk overlappende rout
 
 ## <a name="roles"></a>Rollen
 
-Elke gebruiker die toegang heeft tot een statische web-app, maakt deel uit van een of meer rollen.  Er zijn twee ingebouwde rollen waarmee gebruikers kunnen behoren:
+Elke gebruiker die toegang heeft tot een statische web-app, maakt deel uit van een of meer rollen. Er zijn twee ingebouwde rollen waarmee gebruikers kunnen behoren:
 
 - **anoniem**: alle gebruikers horen automatisch bij de _anonieme_ rol.
 - **geverifieerd**: alle gebruikers die zijn aangemeld, behoren tot de _geauthenticeerde_ rol.
 
-Naast de ingebouwde rollen kunt u nieuwe rollen maken, ze toewijzen aan gebruikers via uitnodigingen en hiernaar verwijzen in de _routes.jsin_ het bestand.
+Naast de ingebouwde rollen kunt u nieuwe rollen maken, ze toewijzen aan gebruikers via uitnodigingen en hiernaar verwijzen in de _staticwebapp.config.jsin_ het bestand.
 
 ## <a name="role-management"></a>Rolbeheer
 
 ### <a name="add-a-user-to-a-role"></a>Een gebruiker toevoegen aan een rol
 
-Als u gebruikers wilt toevoegen aan uw website, genereert u uitnodigingen waarmee u gebruikers kunt koppelen aan specifieke rollen. Rollen worden gedefinieerd en onderhouden in de _routes.jsvoor_ het bestand.
+Als u gebruikers wilt toevoegen aan uw website, genereert u uitnodigingen waarmee u gebruikers kunt koppelen aan specifieke rollen. Rollen worden gedefinieerd en onderhouden in de _staticwebapp.config.jsvoor_ het bestand.
 
 <a name="invitations" id="invitations"></a>
 
@@ -53,25 +53,25 @@ Uitnodigingen zijn specifiek voor afzonderlijke autorisatie providers. Houd daar
 
 <a name="provider-user-details" id="provider-user-details"></a>
 
-| Autorisatie provider | Beschrijft de gebruikers  |
-| ---------------------- | ----------------- |
-| Azure Active Directory | e-mailadres     |
-| Facebook               | e-mailadres     |
-| GitHub                 | gebruikersnaam          |
-| Google<sup>1</sup>     | e-mailadres     |
-| Twitter                | gebruikersnaam          |
+| Autorisatie provider | Beschrijft de gebruikers |
+| ---------------------- | ---------------- |
+| Azure Active Directory | e-mailadres    |
+| Facebook               | e-mailadres    |
+| GitHub                 | gebruikersnaam         |
+| Google<sup>1</sup>     | e-mailadres    |
+| Twitter                | gebruikersnaam         |
 
 1. Navigeer naar een statische Web Apps resource in de [Azure Portal](https://portal.azure.com).
 1. Klik onder _instellingen_ op **functie beheer**.
 1. Klik op de knop **uitnodiging** .
 1. Selecteer een _autorisatie provider_ in de lijst met opties.
 1. Voeg de gebruikers naam of het e-mail adres van de ontvanger toe in het vak Details van de _uitnodiging_ .
-    - Voor GitHub en Twitter voert u de gebruikers naam in. Voer het e-mail adres van de ontvanger in voor alle andere gebruikers.
+   - Voor GitHub en Twitter voert u de gebruikers naam in. Voer het e-mail adres van de ontvanger in voor alle andere gebruikers.
 1. Selecteer het domein van uw statische site in de vervolg keuzelijst van het _domein_ .
-    - Het domein dat u selecteert, is het domein dat wordt weer gegeven in de uitnodiging. Als u een aangepast domein aan uw site hebt gekoppeld, wilt u waarschijnlijk het aangepaste domein kiezen.
+   - Het domein dat u selecteert, is het domein dat wordt weer gegeven in de uitnodiging. Als u een aangepast domein aan uw site hebt gekoppeld, wilt u waarschijnlijk het aangepaste domein kiezen.
 1. Voeg een lijst met door komma's gescheiden namen toe in het vak _rol_ .
 1. Voer het maximum aantal uren in dat u wilt dat de uitnodiging geldig blijft.
-    - De Maxi maal mogelijke limiet is 168 uur, 7 dagen.
+   - De Maxi maal mogelijke limiet is 168 uur, 7 dagen.
 1. Klik op de knop **Genereren**.
 1. Kopieer de koppeling vanuit het vak _koppeling uitnodigen_ .
 1. De uitnodigings koppeling per e-mail verzenden naar de persoon die u toegang verleent tot uw app.

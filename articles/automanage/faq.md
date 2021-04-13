@@ -1,6 +1,6 @@
 ---
-title: Veelgestelde vragen over Azure automanage voor virtuele machines
-description: Antwoorden op veelgestelde vragen over Azure automanage voor virtuele machines.
+title: Azure Automanage veelgestelde vragen over virtuele machines
+description: Antwoorden op veelgestelde vragen over Azure Automanage virtuele machines.
 author: deanwe
 ms.service: virtual-machines
 ms.subservice: automanage
@@ -8,112 +8,115 @@ ms.workload: infrastructure
 ms.topic: troubleshooting
 ms.date: 02/22/2021
 ms.author: deanwe
-ms.openlocfilehash: 0b4e116210cf68dc672122ad4ddc98f85067f3b8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f5a9ff7661fda372631d1bb912b1c137b37c7e07
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101688005"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107363356"
 ---
-# <a name="frequently-asked-questions-for-azure-automanage-for-vms"></a>Veelgestelde vragen over Azure automanage voor Vm's
+# <a name="frequently-asked-questions-for-azure-automanage-for-vms"></a>Veelgestelde vragen over Azure Automanage voor VM's
 
-In dit artikel vindt u antwoorden op enkele van de meest voorkomende vragen over [Azure automanage voor virtuele machines](automanage-virtual-machines.md).
+In dit artikel vindt u antwoorden op enkele van de meest voorkomende vragen over [Azure Automanage voor virtuele machines.](automanage-virtual-machines.md)
 
-Als uw Azure-probleem niet in dit artikel wordt behandeld, gaat u naar de Azure-forums op [MSDN en Stack Overflow](https://azure.microsoft.com/support/forums/). U kunt uw probleem in deze forums plaatsen of een bericht sturen naar [@AzureSupport op Twitter](https://twitter.com/AzureSupport). U kunt ook een ondersteunings aanvraag voor Azure indienen. Als u een ondersteunings aanvraag wilt indienen, selecteert u op de [pagina ondersteuning voor Azure](https://azure.microsoft.com/support/options/)de optie **ondersteuning ophalen**.
+Als uw Azure-probleem niet in dit artikel wordt behandeld, gaat u naar de Azure-forums op [MSDN en Stack Overflow](https://azure.microsoft.com/support/forums/). U kunt uw probleem in deze forums plaatsen of een bericht sturen naar [@AzureSupport op Twitter](https://twitter.com/AzureSupport). U kunt ook een ondersteuning voor Azure verzenden. Als u een ondersteuningsaanvraag wilt indienen, selecteert [ondersteuning voor Azure](https://azure.microsoft.com/support/options/)ondersteuning **krijgen op de pagina**.
 
 
-## <a name="azure-automanage-for-virtual-machines"></a>Azure automanage voor virtuele machines
+## <a name="azure-automanage-for-virtual-machines"></a>Azure Automanage voor virtuele machines
 
-**Wat zijn de vereisten die nodig zijn om Azure automanage in te scha kelen?**
+**Wat zijn alle vereisten voor het inschakelen van Azure Automanage?**
 
-Hier volgen de vereisten voor het inschakelen van Azure automanage:
-- Ondersteunde [Windows Server-versies](automanage-windows-server.md#supported-windows-server-versions) en [Linux-distributies](automanage-linux.md#supported-linux-distributions-and-versions)
-- Vm's moeten zich in een ondersteunde regio bevinden
-- De gebruiker moet over de juiste machtigingen beschikken
-- Alleen virtuele machines die geen schaal zijn ingesteld
-- Automanage biedt momenteel geen ondersteuning voor sandbox-abonnementen
+Hier volgen de vereisten voor het inschakelen van Azure Automanage:
+- Ondersteunde [Versies van Windows Server en](automanage-windows-server.md#supported-windows-server-versions) [Linux-distributies](automanage-linux.md#supported-linux-distributions-and-versions)
+- VM's moeten zich in een ondersteunde regio
+- De gebruiker moet de juiste machtigingen hebben
+- Alleen niet-schaalset-VM's
+- Automanage biedt op dit moment geen ondersteuning voor Sandbox-abonnementen
 
-**Wat is Azure RBAC-machtiging nodig om automanage in te scha kelen?**
+**Welke Azure RBAC-machtiging is nodig om automatisch te kunnen worden uitgevoerd?**
 
-Als u automanage op een virtuele machine met een bestaand automanage-account inschakelt, moet u de rol Inzender hebben voor de resource groep waar de virtuele machine zich bevindt.
+Als u Automatisch beheer inschakelen op een VM met een bestaand Automanage-account, hebt u de rol Inzender nodig voor de resourcegroep waarin de VM zich bevindt.
 
-Als u een nieuw account voor automanage gebruikt wanneer u dit inschakelt, moet u de rol eigenaar hebben of de rol Inzender + gebruikers toegang hebben voor het abonnement.
+Als u een nieuw Automanage-account gebruikt bij het inschakelen, moet u de rol Eigenaar of Inzender + Gebruikerstoegangbeheerder hebben voor het abonnement.
 
 
 **Welke regio's worden ondersteund?**
 
-De volledige lijst met ondersteunde regio's is [hier](./automanage-virtual-machines.md#supported-regions)beschikbaar.
+De volledige lijst met ondersteunde regio's is hier [beschikbaar.](./automanage-virtual-machines.md#supported-regions)
 
 
-**Welke mogelijkheden automatiseert Azure automatisch beheren?**
+**Welke mogelijkheden worden Azure Automanage automatiseren?**
 
-Automatisch beheer registreert, configureert en bewaakt gedurende de levens cyclus van de virtuele machine die [hier](automanage-virtual-machines.md)wordt vermeld.
+Automanage registreert, configureert en bewaakt gedurende de levenscyclus van de VM de services die hier worden [vermeld.](automanage-virtual-machines.md)
 
-**Werkt Azure automanage met virtuele machines met de Arc-functionaliteit van Azure?**
+**Werkt Azure Automanage met Azure Arc-VM's?**
 
-Automanage biedt momenteel geen ondersteuning voor virtuele machines met Arc-functionaliteit.
+Automanage biedt momenteel geen ondersteuning voor voor Arc ingeschakelde VM's.
 
-**Kan ik configuraties aanpassen voor Azure automanage?**
+**Kan ik configuraties op Azure Automanage?**
 
-Klanten kunnen instellingen voor specifieke services, zoals Azure Backup retentie, aanpassen via configuratie voorkeuren. Zie [onze documentatie voor](automanage-virtual-machines.md#customizing-an-environment-using-preferences)een volledige lijst met instellingen die kunnen worden gewijzigd.
-
-
-**Werkt Azure automanage met zowel Linux-als Windows-Vm's?**
-
-Ja, zie de ondersteunde [Windows Server-versies](automanage-windows-server.md#supported-windows-server-versions) en [Linux-distributies](automanage-linux.md#supported-linux-distributions-and-versions).
+Klanten kunnen instellingen aanpassen voor specifieke services, zoals Azure Backup, via configuratievoorkeuren. Zie onze documentatie hier voor een volledige lijst met instellingen die kunnen worden [gewijzigd.](automanage-virtual-machines.md#customizing-an-environment-using-preferences)
 
 
-**Kan ik automanage selectief Toep assen op een verzameling Vm's?**
+**Werkt Azure Automanage met linux- en Windows-VM's?**
 
-Automanage kan worden ingeschakeld met behulp van klikken en de eenvoud van de geselecteerde nieuwe en bestaande Vm's. Automanage kan ook op elk gewenst moment worden uitgeschakeld.
-
-
-**Ondersteunt Azure automanage Vm's in een Schaalset voor virtuele machines?**
-
-Nee, Azure automanage biedt momenteel geen ondersteuning voor Vm's in een Schaalset met virtuele machines.
+Ja, zie de ondersteunde [Versies van Windows Server](automanage-windows-server.md#supported-windows-server-versions) en [Linux-distributies.](automanage-linux.md#supported-linux-distributions-and-versions)
 
 
-**Wat kost Azure automanage?**
+**Kan ik Automanage selectief toepassen op alleen een set VM's?**
 
-Azure automanage is gratis beschikbaar als open bare preview. Als er Azure-resources zijn gekoppeld, zoals Azure Backup, worden kosten in rekening gebracht.
-
-
-**Kan ik automanage Toep assen via Azure Policy?**
-
-Ja, er is een ingebouwd beleid voor automatisch beheer van alle virtuele machines binnen uw gedefinieerde bereik. U geeft ook de omgevings configuratie (DevTest of productie) op in combi natie met uw account voor automatisch beheren. Meer informatie over het inschakelen van [het beleid voor](virtual-machines-policy-enable.md)autobeheren via Azure.
+Automanage kan worden ingeschakeld met klik- en wijs eenvoud op geselecteerde nieuwe en bestaande VM's. Automanage kan ook op elk moment worden uitgeschakeld.
 
 
-**Wat is een automanage-account?**
+**Ondersteunt Azure Automanage VM's in een virtuele-machineschaalset?**
 
-Het account voor automatisch beheer is een MSI-bestand (Managed Service Identity) dat de beveiligings context of de identiteit waarmee de geautomatiseerde bewerkingen worden uitgevoerd.
+Nee, Azure Automanage biedt momenteel geen ondersteuning voor VM's in een virtuele-machineschaalset.
 
 
-**Als u automanage inschakelt, heeft dit invloed op eventuele extra Vm's naast de virtuele machine (s) die ik heb geselecteerd?**
+**Wat kost Azure Automanage?**
 
-Als uw virtuele machine is gekoppeld aan een bestaande Log Analytics-werk ruimte, wordt die werk ruimte opnieuw gebruikt voor het Toep assen van deze oplossingen: Wijzigingen bijhouden, inventarisatie en Updatebeheer. Voor alle Vm's die zijn verbonden met deze werk ruimte, zijn deze oplossingen ingeschakeld.
+Azure Automanage is gratis beschikbaar in de openbare preview. Gekoppelde Azure-resources, zoals Azure Backup, brengen kosten met zich mee.
+
+
+**Kan ik Automanage toepassen via Azure-beleid?**
+
+Ja, we hebben een ingebouwd beleid dat automatisch wordt toegepast op alle VM's binnen uw gedefinieerde bereik. U geeft ook de omgevingsconfiguratie (DevTest of Production) op, samen met uw Automanage-account. Meer informatie over het inschakelen van Automanage via Azure-beleid kunt u [hier vinden.](virtual-machines-policy-enable.md)
+
+
+**Wat is een Automanage-account?**
+
+Het Automanage-account is een MSI (Managed Service Identity) die de beveiligingscontext of de identiteit biedt waaronder de geautomatiseerde bewerkingen plaatsvinden.
+
+
+**Is het van invloed op eventuele extra VM's naast de VM('s) die ik heb geselecteerd bij het inschakelen van Automanage?**
+
+Als uw VM is gekoppeld aan een bestaande Log Analytics-werkruimte, gebruiken we die werkruimte opnieuw om deze oplossingen toe te passen: Wijzigingen bijhouden, Inventaris en Updatebeheer. Voor alle VM's die met die werkruimte zijn verbonden, zijn deze oplossingen ingeschakeld.
 
 
 **Kan ik de omgeving van mijn VM wijzigen?**
 
-Op dit moment moet u automatisch beheer voor die virtuele machine uitschakelen en vervolgens automanage opnieuw inschakelen met de gewenste omgeving en voor keuren.
+Op dit moment moet u Automanage uitschakelen voor die VM en vervolgens Automatischmanage opnieuw inschakelen met de gewenste omgeving en voorkeuren.
 
 
-**Als mijn virtuele machine al is geconfigureerd voor een service, zoals Updatebeheer, wordt deze dan automatisch beheerd opnieuw geconfigureerd?**
-Nee, automatisch beheer wordt niet opnieuw geconfigureerd. We beginnen met het bewaken van de resources die zijn gekoppeld aan deze service voor drift.
+**Als mijn VM al is geconfigureerd voor een service, zoals Updatebeheer, configureert Automanage deze dan opnieuw?**
+Nee, automanage wordt niet opnieuw geconfigureerd. We beginnen met het controleren van de resources die aan die service zijn gekoppeld op drift.
 
 
-**Waarom heeft mijn VM de status mislukt in de portal voor zelf beheer?**
+**Waarom heeft mijn VM de status Mislukt in de Portal voor automatisch beheren?**
 
-Als u de status als *mislukt* ziet, kunt u problemen met de implementatie oplossen via de resource groep waar uw VM zich bevindt. Ga naar **resource groepen**, selecteer uw resource groep, klik op **implementaties** en Bekijk de status *mislukt* samen met de fout Details.
+Als u de status Mislukt *ziet,* kunt u op verschillende manieren problemen met de implementatie oplossen:
+* Ga naar **Resourcegroepen,** selecteer uw resourcegroep, klik op **Implementaties** en bekijk de *status* Mislukt, samen met foutdetails.
+* Ga naar **Abonnementen,** selecteer uw resourcegroep, klik op **Implementaties** en bekijk de *status* Mislukt, samen met foutdetails.
+* U kunt ook het activiteitenlogboek van een VM bezoeken, dat een vermelding bevat voor 'Configuratieprofieltoewijzingen maken of bijwerken'. Dit kan ook meer informatie bevatten over uw implementatie.
 
-**Hoe kan ik probleemoplossings ondersteuning voor automanage krijgen?**
+**Hoe krijg ik ondersteuning voor probleemoplossing voor Automanage?**
 
-U kunt een [technisch ondersteunings ticket](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)indienen. Voor de optie **service** zoekt en selecteert u in de sectie *bewaking en beheer* op *automanage* .
+U kunt een ticket voor [een technische ondersteuningscase indienen.](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) Voor de **optie Service** zoekt en selecteert u *Automanage* in de *sectie Bewaking en* beheer.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Probeer automanage in te scha kelen voor virtuele machines in de Azure Portal.
+Probeer Automanage in teschakelen voor virtuele machines in Azure Portal.
 
 > [!div class="nextstepaction"]
-> [Schakel automanage in voor virtuele machines in de Azure Portal](quick-create-virtual-machines-portal.md)
+> [Automanage inschakelen voor virtuele machines in de Azure Portal](quick-create-virtual-machines-portal.md)

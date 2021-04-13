@@ -1,49 +1,49 @@
 ---
-title: Een verwijderde Azure Database for PostgreSQL server herstellen
-description: In dit artikel wordt beschreven hoe u een verwijderde server in Azure Database for PostgreSQL kunt herstellen met behulp van de Azure Portal.
+title: Een verwijderde Azure Database for PostgreSQL herstellen
+description: In dit artikel wordt beschreven hoe u een verwijderde server in Azure Database for PostgreSQL herstellen met behulp van Azure Portal.
 author: Bashar-MSFT
 ms.author: bahusse
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 11/03/2020
-ms.openlocfilehash: 591f01004cfba247112f702625ab05ddc0aaede3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5b5bb9fd6e3d34fc4a6b0ae90a2cd76fc84e9ce1
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97652922"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107366518"
 ---
-# <a name="restore-a-dropped-azure-database-for-postgresql-server"></a>Een verwijderde Azure Database for PostgreSQL server herstellen
+# <a name="restore-a-dropped-azure-database-for-postgresql-server"></a>Een verwijderde Azure Database for PostgreSQL herstellen
 
-Wanneer een server wordt verwijderd, kan de back-up van de database server tot vijf dagen in de service worden bewaard. De back-up van de data base kan worden geopend en alleen worden teruggezet vanuit het Azure-abonnement waarop de server oorspronkelijk is gesideeerd. De volgende aanbevolen stappen kunnen worden gevolgd om een verwijderde PostgreSQL-server resource binnen vijf dagen te herstellen vanaf het moment dat de server wordt verwijderd. De aanbevolen stappen werken alleen als de back-up voor de server nog steeds beschikbaar is en niet is verwijderd uit het systeem. 
+Wanneer een server wordt verwijderd, kan de back-up van de databaseserver maximaal vijf dagen in de service worden bewaard. De back-up van de database kan alleen worden gebruikt en hersteld vanuit het Azure-abonnement waarin de server zich oorspronkelijk bevindt. De volgende aanbevolen stappen kunnen worden gevolgd om een verwijderde PostgreSQL-serverresource te herstellen binnen vijf dagen na het moment van verwijdering van de server. De aanbevolen stappen werken alleen als de back-up voor de server nog steeds beschikbaar is en niet is verwijderd uit het systeem. 
 
 ## <a name="pre-requisites"></a>Vereisten
-Als u een verwijderde Azure Database for PostgreSQL server wilt herstellen, moet u het volgende doen:
-- Naam van het Azure-abonnement dat als host fungeert voor de oorspronkelijke server
+Als u een verwijderde Azure Database for PostgreSQL wilt herstellen, hebt u het volgende nodig:
+- Azure-abonnementsnaam die als host voor de oorspronkelijke server wordt gebruikt
 - Locatie waar de server is gemaakt
 
-## <a name="steps-to-restore"></a>Te herstellen stappen
+## <a name="steps-to-restore"></a>Stappen om te herstellen
 
-1. Blader naar [Azure Portal](https://portal.azure.com/#blade/Microsoft_Azure_ActivityLog/ActivityLogBlade). Selecteer de **Azure monitor** -service en selecteer vervolgens **activiteiten logboek**.
+1. Blader naar [Azure Portal](https://portal.azure.com/#blade/Microsoft_Azure_ActivityLog/ActivityLogBlade). Selecteer de **Azure Monitor service** en selecteer vervolgens **Activiteitenlogboek.**
 
-2. Klik in activiteiten logboek op **filter toevoegen** zoals wordt weer gegeven en stel de volgende filters in voor de volgende
+2. Klik in activiteitenlogboek op **Filter toevoegen** zoals wordt weergegeven en stel de volgende filters in voor het volgende
 
-    - **Abonnement** = uw abonnement dat als host fungeert voor de verwijderde server
-    - **Resource type** = Azure database for PostgreSQL servers (micro soft. DBforPostgreSQL/servers)
-    - **Operation** = postgresql-server verwijderen (micro soft. DBforPostgreSQL/servers/verwijderen)
+    - **Abonnement** = Uw abonnement dat als host voor de verwijderde server wordt gebruikt
+    - **Resourcetype** = Azure Database for PostgreSQL servers (Microsoft.DBforPostgreSQL/servers)
+    - **Bewerking** = PostgreSQL-server verwijderen (Microsoft.DBforPostgreSQL/servers/delete)
  
-    ![Activiteiten logboek gefilterd op de bewerking voor het verwijderen van de PostgreSQL-server](./media/howto-restore-dropped-server/activity-log-azure.png)
+    ![Activiteitenlogboek gefilterd om PostgreSQL-serverbewerking te verwijderen](./media/howto-restore-dropped-server/activity-log-azure.png)
 
-3. Selecteer de **postgresql-server gebeurtenis verwijderen** en selecteer vervolgens het **tabblad JSON**. Kopieer de `resourceId` `submissionTimestamp` kenmerken en in JSON-uitvoer. De resourceId heeft de volgende indeling: `/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TargetResourceGroup/providers/Microsoft.DBforPostgreSQL/servers/deletedserver` .
+3. Selecteer de **gebeurtenis PostgreSQL Server** verwijderen en selecteer vervolgens het **tabblad JSON.** Kopieer de `resourceId` kenmerken en in de `submissionTimestamp` JSON-uitvoer. De resourceId heeft de volgende indeling: `/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TargetResourceGroup/providers/Microsoft.DBforPostgreSQL/servers/deletedserver` .
 
 
- 4. Ga naar de [pagina postgresql maken Server rest API](/rest/api/PostgreSQL/servers/create) en selecteer het tabblad **try it is** gemarkeerd als groen. Meld u aan met uw Azure-account.
+ 4. Blader naar de pagina PostgreSQL [Create Server REST API en](/rest/api/PostgreSQL/servers/create) selecteer het tabblad Try It **gemarkeerd** in het groen. Meld u aan met uw Azure-account.
 
- 5. Geef de **resourceGroupName**, **servername** (verwijderde server naam), **subscriptionId** -eigenschappen op op basis van de waarde van het kenmerk resourceId die is vastgelegd in de voor gaande stap 3. De eigenschap API-Version is vooraf ingevuld en kan worden bijgewerkt, zoals wordt weer gegeven in de volgende afbeelding.
+ 5. Geef de **eigenschappen resourceGroupName,** **serverName** (naam van verwijderde server) en **subscriptionId** op op basis van de JSON-waarde van het kenmerk resourceId die in de vorige stap 3 is vastgelegd. De eigenschap api-version is vooraf ingevuld en kan in de staat worden gelaten, zoals wordt weergegeven in de volgende afbeelding.
 
-    ![Een server maken met REST API](./media/howto-restore-dropped-server/create-server-from-rest-api-azure.png)
+    ![Server maken met REST API](./media/howto-restore-dropped-server/create-server-from-rest-api-azure.png)
   
- 6. Schuif hieronder op de sectie aanvraag hoofdtekst en plak de volgende Vervang de ' verwijderde server locatie ', ' submissionTimestamp ' en ' resourceId '. Geef voor ' restorePointInTime ' de waarde ' submissionTimestamp ' min **15 minuten** op om ervoor te zorgen dat de opdracht niet fout wordt uitgevoerd.
+ 6. Schuif hieronder in de sectie Aanvraag body en plak het volgende, ter vervanging van 'Dropped server Location'(bijvoorbeeld CentralUS, EastUS enzovoort), 'submissionTimestamp' en 'resourceId'. Geef voor restorePointInTime een waarde van 'submissionTimestamp' min **15** minuten op om ervoor te zorgen dat de opdracht geen fout bevat.
     
     ```json
     {
@@ -57,18 +57,18 @@ Als u een verwijderde Azure Database for PostgreSQL server wilt herstellen, moet
     }
     ```
 
-    Als bijvoorbeeld de huidige tijd 2020-11-02T23:59:59.0000000 Z is, raden we u aan mini maal 15 minuten voorafgaand aan het herstel punt in de tijd 2020-11-02T23:44:59.0000000 Z.
+    Als de huidige tijd bijvoorbeeld 2020-11-02T23:59:59.0000000Z is, wordt een minimum van 15 minuten voorafgaand aan het herstelpunt in de tijd 2020-11-02T23:44:59.000000Z aangeraden.
 
     > [!Important]
-    > Er is een tijds limiet van vijf dagen na het verwijderen van de server. Na vijf dagen wordt er een fout verwacht omdat het back-upbestand niet kan worden gevonden.
+    > Er is een tijdslimiet van vijf dagen nadat de server is verwijderd. Na vijf dagen wordt er een fout verwacht omdat het back-upbestand niet kan worden gevonden.
     
-7. Als u antwoord code 201 of 202 ziet, wordt de herstel aanvraag verzonden. 
+7. Als u antwoordcode 201 of 202 ziet, wordt de herstelaanvraag verzonden. 
 
-    Het maken van de server kan enige tijd duren, afhankelijk van de grootte van de data base en de reken resources die zijn ingericht op de oorspronkelijke server. De herstel status kan worden bewaakt vanuit het activiteiten logboek door te filteren op 
+    Het maken van de server kan even duren, afhankelijk van de grootte van de database en de rekenbronnen die op de oorspronkelijke server zijn ingericht. De herstelstatus kan worden gecontroleerd vanuit het activiteitenlogboek door te filteren op 
    - **Abonnement** = uw abonnement
-   - **Resource type** = Azure database for PostgreSQL servers (micro soft. DBforPostgreSQL/servers) 
-   - **Operational** = update postgresql server Create
+   - **Resourcetype** = Azure Database for PostgreSQL servers (Microsoft.DBforPostgreSQL/servers) 
+   - **Bewerking** = Maken van PostgreSQL-server bijwerken
 
 ## <a name="next-steps"></a>Volgende stappen
-- Als u een server binnen vijf dagen wilt herstellen en er nog steeds een fout melding wordt weer gegeven nadat u de eerder beschreven stappen hebt uitgevoerd, opent u een ondersteunings incident voor hulp. Als u een verwijderde server na vijf dagen probeert te herstellen, wordt een fout verwacht omdat het back-upbestand niet kan worden gevonden. Open in dit scenario geen ondersteunings ticket. Het ondersteunings team kan geen ondersteuning bieden als de back-up wordt verwijderd uit het systeem. 
-- Om het onbedoeld verwijderen van servers te voor komen, raden we u ten zeerste aan [resource vergrendeling](https://techcommunity.microsoft.com/t5/azure-database-for-PostgreSQL/preventing-the-disaster-of-accidental-deletion-for-your-PostgreSQL/ba-p/825222)te gebruiken.
+- Als u een server binnen vijf dagen probeert te herstellen en nog steeds een foutmelding ontvangt nadat u de eerder besproken stappen nauwkeurig hebt uitgevoerd, opent u een ondersteuningsincident voor hulp. Als u een verwijderde server na vijf dagen probeert te herstellen, wordt er een fout verwacht omdat het back-upbestand niet kan worden gevonden. Open geen ondersteuningsticket in dit scenario. Het ondersteuningsteam kan geen hulp bieden als de back-up uit het systeem wordt verwijderd. 
+- We raden u ten zeerste aan resourcevergrendelingen te gebruiken om onbedoelde verwijdering van servers [te voorkomen.](https://techcommunity.microsoft.com/t5/azure-database-for-PostgreSQL/preventing-the-disaster-of-accidental-deletion-for-your-PostgreSQL/ba-p/825222)

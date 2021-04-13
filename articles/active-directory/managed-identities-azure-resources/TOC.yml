@@ -94,8 +94,6 @@
           href: how-to-use-vm-sign-in.md
         - name: Gebruiken met Azure SDK's
           href: how-to-use-vm-sdk.md
-        - name: Azure IMDS gebruiken in plaats van VM-extensie
-          href: howto-migrate-vm-extension.md
     - name: Een beheerde identiteit toegang geven tot een andere Azure-resource
       items:
         - name: Portal

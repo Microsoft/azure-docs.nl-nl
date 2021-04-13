@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 03/22/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperf-fy21q1, devx-track-azurecli
-ms.openlocfilehash: 686274bc90f516f597a397a6b0270fb638e30c95
-ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
+ms.openlocfilehash: 7f35f9196fb4ab67de724ba73982fed69ac81361
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107027707"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107306837"
 ---
 # <a name="set-up-a-python-development-environment-for-azure-machine-learning"></a>Stel een python-ontwikkel omgeving in voor Azure Machine Learning
 
@@ -100,7 +100,7 @@ Een lokale ontwikkel omgeving of externe VM configureren:
 
 1. Activeer de zojuist gemaakte virtuele python-omgeving.
 1. Installeer de [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/install).
-1. Als u uw lokale omgeving wilt configureren voor het gebruik van uw Azure Machine Learning-werk ruimte, [maakt u een configuratie bestand voor een werk ruimte](#workspace) of gebruikt u een bestaand.
+1. Als u uw lokale omgeving wilt configureren voor het gebruik van uw Azure Machine Learning-werk ruimte, [maakt u een configuratie bestand voor de werk ruimte](#workspace) of gebruikt u een bestaand.
 
 Nu u uw lokale omgeving hebt ingesteld, kunt u aan de slag gaan met Azure Machine Learning. Raadpleeg de Azure Machine Learning aan de slag- [hand leiding voor python](tutorial-1st-experiment-sdk-setup-local.md) om aan de slag te gaan.
 

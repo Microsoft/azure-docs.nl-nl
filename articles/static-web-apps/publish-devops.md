@@ -1,46 +1,46 @@
 ---
-title: 'Zelf studie: Azure static-Web Apps publiceren met Azure DevOps'
-description: Meer informatie over het gebruik van Azure DevOps voor het publiceren van statische Web Apps van Azure.
+title: 'Zelfstudie: Azure Static Web Apps publiceren met Azure DevOps'
+description: Meer informatie over het gebruik van Azure DevOps om uw Azure Static Web Apps.
 services: static-web-apps
 author: scubaninja
 ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 03/23/2021
 ms.author: apedward
-ms.openlocfilehash: 472cf7b69078b3247c393ff65139bc29e5683a32
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: f82ae60ab7f57b20a727deefa6e286d698ee5b6c
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105639366"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107365753"
 ---
-# <a name="tutorial-publish-azure-static-web-apps-with-azure-devops"></a>Zelf studie: Azure static-Web Apps publiceren met Azure DevOps
+# <a name="tutorial-publish-azure-static-web-apps-with-azure-devops"></a>Zelfstudie: Azure Static Web Apps publiceren met Azure DevOps
 
-In dit artikel wordt beschreven hoe u kunt implementeren in [statische web apps Azure](./overview.md) met behulp van [Azure DevOps](https://dev.azure.com/).
+In dit artikel wordt beschreven hoe u implementeert [in Azure Static Web Apps](./overview.md) met behulp van [Azure DevOps.](https://dev.azure.com/)
 
 In deze zelfstudie leert u het volgende:
 
-- Een Azure static Web Apps-site instellen
-- Een Azure DevOps-pijp lijn maken om een statische web-app te bouwen en publiceren
+- Een Azure Static Web Apps instellen
+- Een Azure DevOps-pijplijn maken om een statische web-app te bouwen en te publiceren
 
 ## <a name="prerequisites"></a>Vereisten
 
-- **Actief Azure-account:** Als u er nog geen hebt, kunt u [gratis een account maken](https://azure.microsoft.com/free/).
-- **Azure DevOps-project:** Als u er nog geen hebt, kunt u [gratis een project maken](https://azure.microsoft.com/pricing/details/devops/azure-devops-services/).
-- **Azure DevOps-pijp lijn:** Als u hulp nodig hebt om aan de slag te gaan, raadpleegt u [uw eerste pijp lijn maken](https://docs.microsoft.com/azure/devops/pipelines/create-first-pipeline?view=azure-devops&preserve-view=true).
+- **Actief Azure-account:** Als u nog geen account hebt, kunt u [gratis een account maken.](https://azure.microsoft.com/free/)
+- **Azure DevOps-project:** Als u nog geen project hebt, kunt u [gratis een project maken.](https://azure.microsoft.com/pricing/details/devops/azure-devops-services/)
+- **Azure DevOps-pijplijn:** Zie Uw eerste pijplijn maken als u hulp nodig hebt om aan de slag [te gaan.](https://docs.microsoft.com/azure/devops/pipelines/create-first-pipeline?view=azure-devops&preserve-view=true)
 
-## <a name="create-a-static-web-app-in-an-azure-devops-repository"></a>Een statische web-app maken in een Azure DevOps-opslag plaats
+## <a name="create-a-static-web-app-in-an-azure-devops-repository"></a>Een statische web-app maken in een Azure DevOps-opslagplaats
 
   > [!NOTE]
-  > Als u een bestaande app in uw opslag plaats hebt, kunt u door gaan naar de volgende sectie.
+  > Als u een bestaande app in uw opslagplaats hebt, kunt u naar de volgende sectie gaan.
 
-1. Navigeer naar uw Azure DevOps-opslag plaats.
+1. Navigeer naar uw Azure DevOps-opslagplaats.
 
-1. Selecteer **importeren** om te beginnen met het importeren van een voorbeeld toepassing.
+1. Selecteer **Importeren om** te beginnen met het importeren van een voorbeeldtoepassing.
   
-    :::image type="content" source="media/publish-devops/devops-repo.png" alt-text="DevOps opslag plaats":::
+    :::image type="content" source="media/publish-devops/devops-repo.png" alt-text="DevOps-repo":::
 
-1. Voer in **kloon-URL** in `https://github.com/staticwebdev/vanilla-api.git` .
+1. Voer **in Kloon-URL** `https://github.com/staticwebdev/vanilla-api.git` in.
 
 1. Selecteer **Importeren**.
 
@@ -52,38 +52,38 @@ In deze zelfstudie leert u het volgende:
 
 1. Zoek **Static Web Apps**.
 
-1. Selecteer **statische web apps (preview-versie)**.
+1. Selecteer **Static Web Apps (preview)**.
 
 1. Selecteer **Maken**.
 
-1. Onder _Implementatie Details_ moet u **andere** selecteren. Hiermee kunt u de code in uw Azure DevOps-opslag plaats gebruiken.
+1. Zorg _ervoor dat u_ onder Implementatiedetails Overige **selecteert.** Hiermee kunt u de code in uw Azure DevOps-opslagplaats gebruiken.
 
-    :::image type="content" source="media/publish-devops/create-resource.png" alt-text="Implementatie Details-Overig":::
+    :::image type="content" source="media/publish-devops/create-resource.png" alt-text="Implementatiedetails - overige":::
 
-1. Zodra de implementatie is voltooid, gaat u naar de nieuwe statische Web Apps resource.
+1. Zodra de implementatie is geslaagd, gaat u naar de nieuwe Static Web Apps resource.
 
-1. Selecteer **implementatie token beheren**.
+1. Selecteer **Implementatie-token beheren.**
 
-1. Kopieer het **implementatie token** en plak het in een tekst editor voor gebruik in een ander scherm.
+1. Kopieer het **implementatie-token** en plak het in een teksteditor voor gebruik in een ander scherm.
 
     > [!NOTE]
-    > Deze waarde wordt voor Taan gereserveerd omdat u meer waarden in de volgende stappen kopieert en plakt.
+    > Deze waarde wordt nu gereserveerd omdat u in de komende stappen meer waarden gaat kopiëren en plakken.
 
-    :::image type="content" source="media/publish-devops/deployment-token.png" alt-text="Implementatie token":::
+    :::image type="content" source="media/publish-devops/deployment-token.png" alt-text="Implementatie-token":::
 
-## <a name="create-the-pipeline-task-in-azure-devops"></a>De pijplijn taak maken in azure DevOps
+## <a name="create-the-pipeline-task-in-azure-devops"></a>De pijplijntaak maken in Azure DevOps
 
-1. Ga naar de Azure DevOps-opslag plaats die u eerder hebt gemaakt.
+1. Navigeer naar de Azure DevOps-opslagplaats die eerder is gemaakt.
 
-1. Selecteer **Build instellen**.
+1. Selecteer **Build instellen.**
 
     :::image type="content" source="media/publish-devops/azdo-build.png" alt-text="Build-pipeline":::
 
-1. Selecteer in het scherm *uw pijp lijn configureren* de optie **Start pijp lijn**.
+1. Selecteer in *het scherm Uw pijplijn configureren* de **optie Starter-pijplijn**.
 
-    :::image type="content" source="media/publish-devops/configure-pipeline.png" alt-text="Pijp lijn configureren":::
+    :::image type="content" source="media/publish-devops/configure-pipeline.png" alt-text="Pijplijn configureren":::
 
-1. Kopieer en plak de volgende YAML in de pijp lijn.
+1. Kopieer en plak de volgende YAML in uw pijplijn.
 
     ```yaml
     trigger:
@@ -93,6 +93,9 @@ In deze zelfstudie leert u het volgende:
       vmImage: ubuntu-latest
     
     steps:
+      - checkout: self
+        submodules: true
+
       - task: AzureStaticWebApp@0
         inputs:
           app_location: "/" 
@@ -103,43 +106,43 @@ In deze zelfstudie leert u het volgende:
     ```
 
     > [!NOTE]
-    > Als u de voor beeld-app niet gebruikt, worden de waarden voor en `app_location` `api_location` `output_location` gewijzigd zodat deze overeenkomen met de waarden in uw toepassing.
+    > Als u de voorbeeld-app niet gebruikt, moeten de waarden voor , en worden gewijzigd om overeen te komen `app_location` met de waarden in uw `api_location` `output_location` toepassing.
 
     [!INCLUDE [static-web-apps-folder-structure](../../includes/static-web-apps-folder-structure.md)]
 
-    De `azure_static_web_apps_api_token` waarde is zelf beheerd en is hand matig geconfigureerd.
+    De `azure_static_web_apps_api_token` waarde wordt zelf beheerd en handmatig geconfigureerd.
 
-1. Selecteer **variabelen**.
+1. Selecteer **Variabelen**.
 
 1. Maak een nieuwe variabele.
 
-1. Geef een naam op voor de variabele **deployment_token** (die overeenkomt met de naam in de werk stroom).
+1. Noem de variabele **deployment_token** (die overeenkomt met de naam in de werkstroom).
 
-1. Kopieer het implementatie token dat u eerder hebt geplakt in een tekst editor.
+1. Kopieer het implementatie-token dat u eerder in een teksteditor hebt geseed.
 
-1. Plak het implementatie token in het vak _waarde_ .
+1. Plak het implementatie-token in het _vak_ Waarde.
 
     :::image type="content" source="media/publish-devops/variable-token.png" alt-text="Variabele token":::
 
-1. Selecteer **geheim van deze waarde blijven**.
+1. Selecteer **Deze waarde geheim houden.**
 
 1. Selecteer **OK**.
 
-1. Selecteer **Opslaan** om terug te keren naar de pijplijn YAML.
+1. Selecteer **Opslaan om** terug te keren naar de YAML van uw pijplijn.
 
-1. Selecteer **opslaan en uitvoeren** om het dialoog venster _opslaan en uitvoeren_ te openen.
+1. Selecteer **Opslaan en uitvoeren om** het dialoogvenster Opslaan en uitvoeren _te_ openen.
 
     :::image type="content" source="media/publish-devops/save-and-run.png" alt-text="Pijplijn":::
 
-1. Selecteer **opslaan en uitvoeren** om de pijp lijn uit te voeren.
+1. Selecteer **Opslaan en uitvoeren om** de pijplijn uit te voeren.
 
-1. Zodra de implementatie is voltooid, gaat u naar het **overzicht** van statische web apps van Azure met koppelingen naar de implementatie configuratie. U ziet dat de _bron_ koppeling nu verwijst naar de vertakking en locatie van de Azure DevOps-opslag plaats.
+1. Zodra de implementatie is geslaagd, gaat u naar het Azure Static Web Apps **overzicht** dat koppelingen naar de implementatieconfiguratie bevat. De koppeling _Bron wijst_ nu naar de vertakking en locatie van de Azure DevOps-opslagplaats.
 
-1. Selecteer de **URL** om de zojuist geïmplementeerde website weer te geven.
+1. Selecteer de **URL om** uw zojuist geïmplementeerde website weer te geven.
 
-    :::image type="content" source="media/publish-devops/deployment-location.png" alt-text="Implementatie locatie":::
+    :::image type="content" source="media/publish-devops/deployment-location.png" alt-text="Implementatielocatie":::
 
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Statische Azure-Web Apps configureren](./configuration.md)
+> [Een Azure Static Web Apps](./configuration.md)

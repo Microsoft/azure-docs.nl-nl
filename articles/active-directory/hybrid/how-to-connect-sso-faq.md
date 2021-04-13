@@ -16,12 +16,12 @@ ms.date: 10/07/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 52b450ecc8aff379dbdb8d58f9b7609cf730ad27
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 87b9371bfe3b0bd8ff8b3bd509cc1431f0c2e1c6
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105731663"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107305766"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-frequently-asked-questions"></a>Azure Active Directory naadloze eenmalige aanmelding: veelgestelde vragen
 
@@ -90,7 +90,7 @@ Volg deze stappen op de on-premises server waarop u Azure AD Connect:
    **Stap 1. Lijst met AD-forests ophalen waar naadloze SSO is ingeschakeld**
 
    1. Down load en installeer eerst [Azure AD Power shell](/powershell/azure/active-directory/overview).
-   2. Navigeer naar de map `%programfiles%\Microsoft Azure Active Directory Connect`.
+   2. Navigeer naar de map `$env:programfiles\Microsoft Azure Active Directory Connect`.
    3. Importeer de naadloze SSO Power shell-module met de volgende opdracht: `Import-Module .\AzureADSSO.psd1` .
    4. Voer Power shell uit als beheerder. Bel in Power shell `New-AzureADSSOAuthenticationContext` . Met deze opdracht geeft u een pop-up om de globale beheerders referenties van uw Tenant in te voeren.
    5. Aanroep `Get-AzureADSSOStatus | ConvertFrom-Json` . Met deze opdracht geeft u de lijst met AD-forests weer (Bekijk de lijst ' domeinen ') waarop deze functie is ingeschakeld.
@@ -135,7 +135,7 @@ Volg deze stappen op de on-premises server waarop u Azure AD Connect:
    Voer de volgende stappen uit op de on-premises server waarop u Azure AD Connect uitvoert:
 
    1. Down load en installeer eerst [Azure AD Power shell](/powershell/azure/active-directory/overview).
-   2. Navigeer naar de map `%programfiles%\Microsoft Azure Active Directory Connect`.
+   2. Navigeer naar de map `$env:ProgramFiles\Microsoft Azure Active Directory Connect`.
    3. Importeer de naadloze SSO Power shell-module met de volgende opdracht: `Import-Module .\AzureADSSO.psd1` .
    4. Voer Power shell uit als beheerder. Bel in Power shell `New-AzureADSSOAuthenticationContext` . Met deze opdracht geeft u een pop-up om de globale beheerders referenties van uw Tenant in te voeren.
    5. Aanroep `Enable-AzureADSSO -Enable $false` .
@@ -150,7 +150,7 @@ Volg deze stappen op de on-premises server waarop u Azure AD Connect:
    Volg de onderstaande taken 1 tot en met 4 als u naadloze SSO hebt uitgeschakeld met Azure AD Connect. Als u naadloze SSO hebt uitgeschakeld met behulp van Power shell, gaat u verder met taak 5 hieronder.
 
    1. Down load en installeer eerst [Azure AD Power shell](/powershell/azure/active-directory/overview).
-   2. Navigeer naar de map `%programfiles%\Microsoft Azure Active Directory Connect`.
+   2. Navigeer naar de map `$env:ProgramFiles\Microsoft Azure Active Directory Connect`.
    3. Importeer de naadloze SSO Power shell-module met de volgende opdracht: `Import-Module .\AzureADSSO.psd1` .
    4. Voer Power shell uit als beheerder. Bel in Power shell `New-AzureADSSOAuthenticationContext` . Met deze opdracht geeft u een pop-up om de globale beheerders referenties van uw Tenant in te voeren.
    5. Aanroep `Get-AzureADSSOStatus | ConvertFrom-Json` . Met deze opdracht geeft u de lijst met AD-forests weer (Bekijk de lijst ' domeinen ') waarop deze functie is ingeschakeld.

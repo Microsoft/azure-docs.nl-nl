@@ -5,13 +5,13 @@ author: sakthi-vetrivel
 ms.author: suvetriv
 ms.service: azure-redhat-openshift
 ms.topic: conceptual
-ms.date: 08/11/2020
-ms.openlocfilehash: fca01c77a1ff47cbeee167eb408ed9f29a1307bd
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 03/06/2021
+ms.openlocfilehash: 35cbaf2b6d2618d116d2dd322ae5ac28f578cecc
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100634325"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107303539"
 ---
 # <a name="support-lifecycle-for-azure-red-hat-openshift-4"></a>Levenscyclusondersteuning voor Azure Red Hat OpenShift 4
 
@@ -33,7 +33,7 @@ Elk nummer in de versie geeft algemene compatibiliteit met de vorige versie aan:
 * **Secundaire versie**: ongeveer elke drie maanden vrijgegeven. Upgrades van secundaire versies kunnen bestaan uit onderdeel toevoegingen, verbeteringen, afschaffing, verwijderingen, oplossingen voor oplossingen, verbeteringen in de beveiliging en andere verbeteringen.
 * **Patches**: doorgaans elke week, of indien nodig, vrijgegeven. Upgrades van patch-versies kunnen oplossingen voor problemen, verbeteringen van de beveiliging en andere verbeteringen omvatten.
 
-Klanten moeten zich richten op het uitvoeren van de meest recente kleine release van de primaire versie die ze uitvoeren. Als uw productie cluster bijvoorbeeld op 4,4 is en 4,5 de meest recente, algemeen beschik bare secundaire versie voor de 4-serie is, moet u zo snel mogelijk een upgrade naar 4,5 uitvoeren.
+Klanten moeten zich richten op het uitvoeren van de meest recente kleine release van de primaire versie die ze uitvoeren. Als uw productie cluster bijvoorbeeld op 4,4 is en 4,5 de meest recente, algemeen beschik bare secundaire versie voor de 4-serie is, moet u zo snel mogelijk een upgrade naar 4,5 uitvoeren. 
 
 ### <a name="upgrade-channels"></a>Upgrade kanalen
 
@@ -106,12 +106,16 @@ Raadpleeg de volgende hand leiding voor de [release geschiedenis van de eerdere 
 
 **Wat gebeurt er wanneer een gebruiker een open Shift-cluster bijwerkt met een secundaire versie die niet wordt ondersteund?**
 
-Als u een N-2-versie of ouder hebt, betekent dit dat u buiten de ondersteuning bent en wordt u gevraagd om te upgraden. Wanneer de upgrade van versie N-2 naar N-1 slaagt, is u terug in het ondersteunings beleid. Bijvoorbeeld:
+Als u een N-2-versie of ouder hebt, betekent dit dat u buiten de ondersteuning bent en wordt u gevraagd om te upgraden om de ondersteuning te blijven ontvangen. Wanneer de upgrade van versie N-2 naar N-1 slaagt, is u weer in de ondersteuning. Een upgrade van versie N-3-versie of ouder naar een ondersteunde versie kan lastig zijn en in sommige gevallen niet mogelijk is. We raden u aan uw cluster op de nieuwste versie van open SHIFT te houden om mogelijke upgrade problemen te voor komen. Bijvoorbeeld:
 * Als de oudste Azure Red Hat open Shift-versie 4.4. z is en u zich op 4,3. z of ouder bevindt, bent u buiten ondersteuning.
-* Wanneer de upgrade van 4.3. z naar 4.4. z of hoger is geslaagd, bent u terug in het ondersteunings beleid.
+* Wanneer de upgrade van 4.3. z naar 4.4. z of hoger is geslaagd, bent u terug in het ondersteunings beleid. 
 
 Het herstellen van uw cluster naar een eerdere versie of een terugdraai bewerking wordt niet ondersteund. Alleen upgraden naar een nieuwere versie wordt ondersteund.
 
 **Wat betekent ' buiten het ondersteunings team '?**
 
-"Buiten ondersteuning" betekent dat de versie die u uitvoert, zich buiten de lijst met ondersteunde versies bevindt en u wordt mogelijk gevraagd het cluster bij te werken naar een ondersteunde versie bij het aanvragen van ondersteuning, tenzij u binnen de respijt periode van 30 dagen na versie afschaffing. Bovendien maakt Azure Red Hat open Shift geen garanties voor de uitvoering van runtime of SLA voor clusters buiten de lijst met ondersteunde versies aan het einde van de respijt periode van 30 dagen.
+Als op uw ARO-cluster een open Shift-versie wordt uitgevoerd die zich niet in de lijst met ondersteunde versies bevindt of gebruikmaakt van een niet- [ondersteunde cluster configuratie](https://docs.microsoft.com/azure/openshift/support-policies-v4), is uw cluster "buiten de ondersteuning". Als gevolg hiervan:
+- Wanneer u een ondersteunings ticket voor uw cluster opent, wordt u gevraagd het cluster bij te werken naar een ondersteunde versie. voordat u ondersteuning ontvangt, tenzij u binnen de respijt periode van 30 dagen bent nadat de versie ondersteuning is beëindigd. 
+- Alle runtime-of SLA-garanties voor clusters buiten de ondersteuning worden geannuleerd.
+- Clusters buiten de ondersteuning worden alleen op basis van de beste poging gepatcheerd.
+- Clusters buiten de ondersteuning worden niet bewaakt.

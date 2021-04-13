@@ -1,7 +1,7 @@
 ---
-title: Migreren naar verbindings monitor vanaf Netwerkprestatiemeter
+title: Migreren naar Verbindingsmonitor van Netwerkprestatiemeter
 titleSuffix: Azure Network Watcher
-description: Meer informatie over het migreren naar verbindings monitor vanuit Netwerkprestatiemeter.
+description: Meer informatie over migreren naar Verbindingsmonitor van Netwerkprestatiemeter.
 services: network-watcher
 documentationcenter: na
 author: vinynigam
@@ -12,71 +12,75 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/07/2021
 ms.author: vinigam
-ms.openlocfilehash: 18d0a24de6f0775fdb35799512f9796a323d353a
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: be12a9054fd67b243530ff671c10fa53acafc308
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105045481"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107366348"
 ---
-# <a name="migrate-to-connection-monitor-from-network-performance-monitor"></a>Migreren naar verbindings monitor vanaf Netwerkprestatiemeter
+# <a name="migrate-to-connection-monitor-from-network-performance-monitor"></a>Migreren naar Verbindingsmonitor van Netwerkprestatiemeter
 
 > [!IMPORTANT]
-> Vanaf 1 juli 2021 kunt u geen nieuwe tests toevoegen aan een bestaande werk ruimte of een nieuwe werk ruimte met Netwerkprestatiemeter inschakelen. U kunt de tests die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, migreert u uw tests van Netwerkprestatiemeter naar de nieuwe verbindings monitor in azure Network Watcher vóór 29 februari 2024.
+> Vanaf 1 juli 2021 kunt u geen nieuwe tests meer toevoegen aan een bestaande werkruimte of een nieuwe werkruimte inschakelen met Netwerkprestatiemeter. U kunt de tests die vóór 1 juli 2021 zijn gemaakt, blijven gebruiken. Migreert uw tests vóór 29 februari 2024 van Netwerkprestatiemeter naar de nieuwe Verbindingsmonitor in Azure Network Watcher om serviceonderbrekingen voor uw huidige workloads te minimaliseren.
 
-U kunt tests migreren van Netwerkprestatiemeter (NPM) naar een nieuwe, verbeterde verbindings monitor met één klik en met een downtime van nul. Zie [verbindings monitor](./connection-monitor-overview.md)voor meer informatie over de voor delen.
+U kunt tests migreren van Netwerkprestatiemeter (NPM) naar nieuwe, verbeterde Verbindingsmonitor met één klik en zonder downtime. Zie voor meer informatie over de voordelen [Verbindingsmonitor.](./connection-monitor-overview.md)
 
 
-## <a name="key-points-to-note"></a>Belangrijkste punten om te noteren
+## <a name="key-points-to-note"></a>Belangrijke punten om op te merken
 
-De migratie helpt de volgende resultaten te produceren:
+De migratie helpt bij het produceren van de volgende resultaten:
 
-* On-premises agents en Firewall instellingen werken op dezelfde locatie. Er zijn geen wijzigingen vereist. Log Analytics agents die zijn geïnstalleerd op virtuele machines van Azure, moeten worden vervangen door de [Network Watcher extensie](../virtual-machines/extensions/network-watcher-windows.md).
-* Bestaande testen worden toegewezen aan de verbindings monitor > test groep > test-indeling. Als u **bewerken** selecteert, kunt u de eigenschappen van de nieuwe verbindings monitor weer geven en wijzigen, een sjabloon downloaden om deze wijzigingen aan te brengen en de sjabloon indienen via Azure Resource Manager.
-* Agents verzenden gegevens naar de Log Analytics-werk ruimte en de metrieken.
-* Gegevens bewaking:
-   * **Gegevens in log Analytics**: vóór de migratie blijven de gegevens in de werk ruimte waarin NPM is geconfigureerd in de tabel NetworkMonitoring. Na de migratie worden de gegevens verplaatst naar de tabel NetworkMonitoring, de tabel NWConnectionMonitorTestResult en NWConnectionMonitorPathResult in dezelfde werk ruimte. Nadat de tests zijn uitgeschakeld in NPM, worden de gegevens alleen opgeslagen in de tabel NWConnectionMonitorTestResult en in de tabel NWConnectionMonitorPathResult.
-   * **Waarschuwingen op basis van Logboeken, Dash boards en integraties**: u moet de query's hand matig bewerken op basis van de nieuwe tabel NWConnectionMonitorTestResult en de tabel NWConnectionMonitorPathResult. Zie [netwerk connectiviteit controleren met verbindings monitor](./connection-monitor-overview.md#metrics-in-azure-monitor)als u de waarschuwingen in metrische gegevens opnieuw wilt maken.
-* Voor ExpressRoute bewaking:
-    * **End-to-end-verlies en latentie**: met de verbindings monitor kunt u dit eenvoudiger maken dan NPM omdat gebruikers niet hoeven te configureren welke circuits en peerings moeten worden bewaakt. Circuits in het pad worden automatisch gedetecteerd. de gegevens zijn beschikbaar in metrieken (sneller dan LA, waarbij NPM de resultaten heeft opgeslagen). De topologie werkt ook net zo.
-    * **Bandbreedte metingen**: met het starten van aan band breedte gerelateerde metrische gegevens, is de NPM op basis van logboek analyse niet effectief bij het controleren van de band breedte voor ExpressRoute-klanten. Deze mogelijkheid is nu niet beschikbaar in de verbindings monitor.
+* On-premises agents en firewallinstellingen werken zoals ze zijn. Er zijn geen wijzigingen vereist. Log Analytics-agents die zijn geïnstalleerd op virtuele Azure-machines, moeten worden vervangen door [de Network Watcher extensie](../virtual-machines/extensions/network-watcher-windows.md).
+* Bestaande tests worden aan de Verbindingsmonitor > testgroep > testindeling. Door Bewerken **te selecteren,** kunt u de eigenschappen van de nieuwe Verbindingsmonitor weergeven en wijzigen, een sjabloon downloaden om wijzigingen aan te brengen en de sjabloon verzenden via Azure Resource Manager.
+* Agents verzenden gegevens naar zowel de Log Analytics-werkruimte als de metrische gegevens.
+* Gegevensbewaking:
+   * **Gegevens in Log Analytics:** vóór de migratie blijven de gegevens in de werkruimte waarin NPM is geconfigureerd in de tabel NetworkMonitoring. Na de migratie gaan de gegevens naar de tabel NetworkMonitoring, de tabel NWConnectionMonitorTestResult en de tabel NWConnectionMonitorPathResult in dezelfde werkruimte. Nadat de tests in NPM zijn uitgeschakeld, worden de gegevens alleen opgeslagen in de tabel NWConnectionMonitorTestResult en de tabel NWConnectionMonitorPathResult.
+   * **Waarschuwingen, dashboards en integraties** op basis van logboeken: u moet de query's handmatig bewerken op basis van de nieuwe tabel NWConnectionMonitorTestResult en de tabel NWConnectionMonitorPathResult. Zie Bewaking van netwerkconnectiviteit met Verbindingsmonitor als u de waarschuwingen in metrische [gegevens opnieuw wilt Verbindingsmonitor.](./connection-monitor-overview.md#metrics-in-azure-monitor)
+* Voor ExpressRoute-bewaking:
+    * **End-to-end verlies** en latentie: Verbindingsmonitor zorgt voor stroom en is eenvoudiger dan NPM, omdat gebruikers niet hoeven te configureren welke circuits en peerings moeten worden bewaakt. Circuits in het pad worden automatisch ontdekt, gegevens zijn beschikbaar in metrische gegevens (sneller dan LA waar NPM de resultaten heeft opgeslagen). Topologie werkt ook.
+    * **Bandbreedtemetingen:** Met de introductie van bandbreedtegerelateerde metrische gegevens was de op logboekanalyse gebaseerde benadering van NPM niet effectief in bandbreedtebewaking voor ExpressRoute-klanten. Deze mogelijkheid is nu niet beschikbaar in Verbindingsmonitor.
     
 ## <a name="prerequisites"></a>Vereisten
 
-* Zorg ervoor dat Network Watcher is ingeschakeld in uw abonnement en de regio van de Log Analytics-werk ruimte. 
-* Als Azure VM behoort tot een andere regio/abonnement dan die van Log Analytics werk ruimte wordt gebruikt als eind punt, moet u ervoor zorgen dat Network Watcher is ingeschakeld voor dat abonnement en die regio.   
-* Virtuele Azure-machines waarop Log Analytics-agents zijn geïnstalleerd, moeten worden ingeschakeld met de Network Watcher extensie.
+* Zorg ervoor Network Watcher is ingeschakeld in uw abonnement en de regio van de Log Analytics-werkruimte. Als u dit niet hebt gedaan, ziet u een foutmelding met de tekst 'Voordat u probeert te migreren, moet u de Network Watcher-extensie inschakelen in het selectieabonnement en de locatie van de geselecteerde LA-werkruimte.'
+* Als een Azure-VM die tot een andere regio/ander abonnement behoort dan die van de Log Analytics-werkruimte wordt gebruikt als eindpunt, moet u ervoor zorgen dat Network Watcher is ingeschakeld voor dat abonnement en die regio.   
+* Virtuele Azure-machines met Log Analytics-agents moeten zijn ingeschakeld met de Network Watcher extensie.
 
 ## <a name="migrate-the-tests"></a>De tests migreren
 
-Ga als volgt te werk om de tests te migreren van Netwerkprestatiemeter naar verbindings monitor:
+Ga als volgt te werk om de tests Netwerkprestatiemeter naar Verbindingsmonitor migreren:
 
-1. Selecteer in Network Watcher **verbindings monitor** en selecteer vervolgens het tabblad **tests migreren van NPM** . 
+1. Selecteer Network Watcher **in** Verbindingsmonitor en selecteer vervolgens het tabblad Tests migreren **vanuit NPM.** 
 
-    :::image type="content" source="./media/connection-monitor-2-preview/migrate-npm-to-cm-preview.png" alt-text="Testen van Netwerkprestatiemeter naar verbindings monitor migreren" lightbox="./media/connection-monitor-2-preview/migrate-npm-to-cm-preview.png":::
+    :::image type="content" source="./media/connection-monitor-2-preview/migrate-npm-to-cm-preview.png" alt-text="Tests migreren van Netwerkprestatiemeter naar Verbindingsmonitor" lightbox="./media/connection-monitor-2-preview/migrate-npm-to-cm-preview.png":::
     
-1. Selecteer uw abonnement en werk ruimte in de vervolg keuzelijst en selecteer vervolgens de NPM-functie die u wilt migreren. 
-1. Selecteer **importeren** om de tests te migreren.
+1. Selecteer in de vervolgkeuzelijsten uw abonnement en werkruimte en selecteer vervolgens de NPM-functie die u wilt migreren. 
+1. Selecteer **Importeren om** de tests te migreren.
+* Als NPM niet is ingeschakeld in de werkruimte, ziet u de foutmelding 'Er is geen geldige NPM-configuratie gevonden'. 
+* Als er geen tests bestaan in de functie die u in stap 2 hebt gekozen, wordt de foutmelding 'Werkruimte geselecteerd heeft geen <feature> configuratie' weergegeven.
+* Als er geen geldige tests zijn, ziet u de foutmelding 'Werkruimte geselecteerd heeft geen geldige tests'
+* Uw tests bevatten mogelijk agents die niet meer actief zijn, maar in het verleden actief waren. Er wordt een foutbericht weergegeven met de tekst 'Enkele tests bevatten agents die niet meer actief zijn. Lijst met inactieve agents - {0} . Deze agents worden mogelijk uitgevoerd in het verleden, maar worden afgesloten/niet meer uitgevoerd. Agents inschakelen en migreren naar Verbindingsmonitor. Klik op Doorgaan om de tests te migreren die geen agents bevatten die niet actief zijn.
 
 Nadat de migratie is gestart, worden de volgende wijzigingen doorgevoerd: 
-* Er wordt een nieuwe bron voor verbindings bewaking gemaakt.
-   * Er wordt één verbindings monitor per regio en abonnement gemaakt. Voor testen met on-premises agents wordt de naam van de nieuwe verbindings monitor opgemaakt als `<workspaceName>_"workspace_region_name"` . Voor testen met Azure-agents wordt de naam van de nieuwe verbindings monitor opgemaakt als `<workspaceName>_<Azure_region_name>` .
-   * Bewakings gegevens worden nu opgeslagen in dezelfde Log Analytics werk ruimte waarin NPM is ingeschakeld, in nieuwe tabellen de naam NWConnectionMonitorTestResult Table en NWConnectionMonitorPathResult Table. 
-   * De test naam wordt getransporteerd als de naam van de test groep. De beschrijving van de test wordt niet gemigreerd.
-   * De bron-en doel-eind punten worden gemaakt en gebruikt in de nieuwe test groep. Voor on-premises agents worden de eind punten opgemaakt als `<workspaceName>_<FQDN of on-premises machine>` . De beschrijving van de agent wordt niet gemigreerd.
-   * De doel poort en het probing-interval worden verplaatst naar een test configuratie met de naam `TC_<protocol>_<port>` en `TC_<protocol>_<port>_AppThresholds` . Het protocol wordt ingesteld op basis van de poort waarden. Voor ICMP worden de test configuraties benoemd als `TC_<protocol>` en `TC_<protocol>_AppThresholds` . De drempel waarden voor geslaagde en andere optionele eigenschappen als de set wordt gemigreerd, wordt anders leeg gelaten.
-   * Als de migratie tests agents bevatten die niet worden uitgevoerd, moet u de agents inschakelen en opnieuw migreren.
-* NPM is niet uitgeschakeld. de gemigreerde tests kunnen dus blijven gegevens verzenden naar de tabel NetworkMonitoring, NWConnectionMonitorTestResult tabel en NWConnectionMonitorPathResult. Deze aanpak zorgt ervoor dat bestaande waarschuwingen en integraties op basis van het logboek niet worden beïnvloed.
-* De zojuist gemaakte verbindings monitor is zichtbaar in de verbindings monitor.
+* Er wordt een nieuwe verbindingsmonitorresource gemaakt.
+   * Er wordt één verbindingsmonitor per regio en abonnement gemaakt. Voor tests met on-premises agents is de naam van de nieuwe verbindingsmonitor opgemaakt als `<workspaceName>_"workspace_region_name"` . Voor tests met Azure-agents is de naam van de nieuwe verbindingsmonitor opgemaakt als `<workspaceName>_<Azure_region_name>` .
+   * Bewakingsgegevens worden nu opgeslagen in dezelfde Log Analytics-werkruimte waarin NPM is ingeschakeld, in nieuwe tabellen met de naam NWConnectionMonitorTestResult-tabel en NWConnectionMonitorPathResult-tabel. 
+   * De naam van de test wordt als de naam van de testgroep overgedragen. De beschrijving van de test wordt niet gemigreerd.
+   * Bron- en doel-eindpunten worden gemaakt en gebruikt in de nieuwe testgroep. Voor on-premises agents zijn de eindpunten opgemaakt als `<workspaceName>_<FQDN of on-premises machine>` . De beschrijving van de agent wordt niet gemigreerd.
+   * Doelpoort en testinterval worden verplaatst naar een testconfiguratie met de naam `TC_<protocol>_<port>` en `TC_<protocol>_<port>_AppThresholds` . Het protocol wordt ingesteld op basis van de poortwaarden. Voor ICMP hebben de testconfiguraties de naam `TC_<protocol>` en `TC_<protocol>_AppThresholds` . Drempelwaarden voor succes en andere optionele eigenschappen, indien ingesteld, worden gemigreerd, anders worden leeg gelaten.
+   * Als de migratietests agents bevatten die niet worden uitgevoerd, moet u de agents inschakelen en opnieuw migreren.
+* NPM is niet uitgeschakeld, dus de gemigreerde tests kunnen gegevens blijven verzenden naar de tabel NetworkMonitoring, de tabel NWConnectionMonitorTestResult en de tabel NWConnectionMonitorPathResult. Deze aanpak zorgt ervoor dat bestaande waarschuwingen en integraties op basis van logboeken niet worden beïnvloed.
+* De zojuist gemaakte verbindingsmonitor is zichtbaar in Verbindingsmonitor.
 
-Na de migratie, moet u het volgende doen:
-* Schakel de tests in NPM hand matig uit. Totdat u dit doet, worden er nog steeds kosten in rekening gebracht. 
-* Wanneer u NPM uitschakelt, moet u de waarschuwingen opnieuw maken in de tabellen NWConnectionMonitorTestResult en NWConnectionMonitorPathResult of metrische gegevens gebruiken. 
-* Migreer externe integraties naar de NWConnectionMonitorTestResult-en NWConnectionMonitorPathResult-tabellen. Voor beelden van externe integraties zijn Dash boards in Power BI en Grafana en integraties met Security Information and Event Management-systemen (SIEM).
+Zorg ervoor dat u na de migratie het volgende moet doen:
+* Schakel de tests in NPM handmatig uit. Totdat u dit doet, worden er nog steeds kosten voor in rekening gebracht. 
+* Terwijl u NPM uitstuurt, maakt u de waarschuwingen opnieuw in de tabellen NWConnectionMonitorTestResult en NWConnectionMonitorPathResult of gebruikt u metrische gegevens. 
+* Migreert alle externe integraties naar de tabellen NWConnectionMonitorTestResult en NWConnectionMonitorPathResult. Voorbeelden van externe integraties zijn dashboards in Power BI en Grafana en integraties met Security Information and Event Management (SIEM)-systemen.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie voor meer informatie over verbindings monitor:
-* [Migreren van verbindings monitor (klassiek) naar verbindings monitor](./migrate-to-connection-monitor-from-connection-monitor-classic.md)
-* [Verbindings monitor maken met behulp van de Azure Portal](./connection-monitor-create-using-portal.md)
+Voor meer informatie over Verbindingsmonitor, zie:
+* [Migreren van Verbindingsmonitor (klassiek) naar Verbindingsmonitor](./migrate-to-connection-monitor-from-connection-monitor-classic.md)
+* [Maak Verbindingsmonitor met behulp van de Azure Portal](./connection-monitor-create-using-portal.md)

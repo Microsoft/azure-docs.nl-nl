@@ -3,12 +3,12 @@ title: Geo-nood herstel-Azure Event Hubs | Microsoft Docs
 description: Over het gebruik van geografische regio's om een failover uit te voeren en herstel na nood gevallen in azure Event Hubs
 ms.topic: article
 ms.date: 02/10/2021
-ms.openlocfilehash: f3b74b89f47582fbb3f1640f315f413ab86b26b5
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 091c6c61b079ceb8f96f04e62fb772d91732eb2f
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104602635"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107311206"
 ---
 # <a name="azure-event-hubs---geo-disaster-recovery"></a>Azure-Event Hubs-geo-nood herstel 
 
@@ -205,7 +205,7 @@ Voor meer informatie over Event Hubs gaat u naar de volgende koppelingen:
     - [Java](event-hubs-java-get-started-send.md)
     - [Python](event-hubs-python-get-started-send.md)
     - [JavaScript](event-hubs-node-get-started-send.md)
-* [Veelgestelde vragen over Event Hubs](event-hubs-faq.md)
+* [Veelgestelde vragen over Event Hubs](event-hubs-faq.yml)
 * [Voorbeeldtoepassingen die gebruikmaken van Event Hubs](https://github.com/Azure/azure-event-hubs/tree/master/samples)
 
 [1]: ./media/event-hubs-geo-dr/geo1.png

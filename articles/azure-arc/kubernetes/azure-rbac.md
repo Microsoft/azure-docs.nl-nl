@@ -7,16 +7,16 @@ ms.topic: article
 author: shashankbarsin
 ms.author: shasb
 description: Gebruik Azure RBAC voor autorisatie controles op Azure Arc enabled Kubernetes-clusters
-ms.openlocfilehash: bd8029cb2772a6f6bd9821abe6acf69c9c08599d
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.openlocfilehash: 0ee5f86ce12a39d86754d2e6e88263d8a03a012b
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106451015"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107304202"
 ---
-# <a name="azure-rbac-for-azure-arc-enabled-kubernetes-clusters"></a>Azure RBAC voor Azure Arc enabled Kubernetes-clusters
+# <a name="integrate-azure-active-directory-with-azure-arc-enabled-kubernetes-clusters"></a>Azure Active Directory integreren met Azure Arc enabled Kubernetes-clusters
 
-Kubernetes [ClusterRoleBinding en RoleBinding](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#rolebinding-and-clusterrolebinding) object types helpen u om autorisatie in Kubernetes systeem eigen te definiëren. Met Azure RBAC kunt u Azure Active Directory en roltoewijzingen in azure gebruiken om verificatie controles op het cluster te beheren. Dit betekent dat u nu Azure-roltoewijzingen kunt gebruiken om te bepalen wie uw Kubernetes-objecten, zoals implementatie, Pod en service, kunnen lezen, schrijven, verwijderen.
+Kubernetes [ClusterRoleBinding en RoleBinding](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#rolebinding-and-clusterrolebinding) object types helpen u om autorisatie in Kubernetes systeem eigen te definiëren. Met deze functie kunt u Azure Active Directory en roltoewijzingen in azure gebruiken om verificatie controles op het cluster te beheren. Dit betekent dat u nu Azure-roltoewijzingen kunt gebruiken om te bepalen wie uw Kubernetes-objecten, zoals implementatie, Pod en service, kunnen lezen, schrijven, verwijderen.
 
 Een conceptueel overzicht van deze functie is beschikbaar in het [Kubernetes-artikel van Azure RBAC-Azure Arc enabled](conceptual-azure-rbac.md) .
 
@@ -274,10 +274,10 @@ Eigen aren van de Azure Arc enabled Kubernetes-resource kunnen ingebouwde rollen
 
 | Rol | Beschrijving |
 |---|---|
-| Viewer voor Azure Arc Kubernetes | Hiermee staat u alleen-lezen toegang toe om de meeste objecten in een naam ruimte weer te geven. Met deze rol mogen geen geheimen worden weer gegeven. Dit komt doordat `read` de machtiging voor geheimen toegang zou bieden tot `ServiceAccount` referenties in de naam ruimte, waardoor API-toegang wordt toegestaan via die `ServiceAccount` (een vorm van bevoegdheden escalation). |
-| Kubernetes schrijver van Azure Arc | Hiermee wordt lees-/schrijftoegang tot de meeste objecten in een naam ruimte toegestaan. Deze rol staat het weer geven of wijzigen van rollen of rollen bindingen niet toe. Met deze rol kunt u echter ook toegang krijgen tot geheimen en een Peul uitvoeren als `ServiceAccount` in de naam ruimte, zodat het kan worden gebruikt om de API-toegangs niveaus van elk `ServiceAccount` in de naam ruimte te verkrijgen. |
-| Azure Arc Kubernetes-beheerder | Hiermee staat u beheerders toegang toe. Bedoeld om te worden verleend binnen een naam ruimte met behulp van een RoleBinding. Bij gebruik in een RoleBinding staat lees-/schrijftoegang tot de meeste resources in een naam ruimte toe, inclusief de mogelijkheid om rollen en rollen bindingen te maken binnen de naam ruimte. Deze rol staat geen schrijf toegang tot resource quota of de naam ruimte zelf toe. |
-| Azure Arc Kubernetes-Cluster beheer | Hiermee kan toegang van Super gebruikers elke actie uitvoeren op elke resource. Bij gebruik in een ClusterRoleBinding krijgt u volledige controle over elke resource in het cluster en in alle naam ruimten. Bij gebruik in een RoleBinding krijgt u volledige controle over elke resource in de naam ruimte van de roltype, met inbegrip van de naam ruimte zelf.|
+| [Viewer voor Azure Arc Kubernetes](../../role-based-access-control/built-in-roles.md#azure-arc-kubernetes-viewer) | Hiermee staat u alleen-lezen toegang toe om de meeste objecten in een naam ruimte weer te geven. Met deze rol mogen geen geheimen worden weer gegeven. Dit komt doordat `read` de machtiging voor geheimen toegang zou bieden tot `ServiceAccount` referenties in de naam ruimte, waardoor API-toegang wordt toegestaan via die `ServiceAccount` (een vorm van bevoegdheden escalation). |
+| [Kubernetes schrijver van Azure Arc](../../role-based-access-control/built-in-roles.md#azure-arc-kubernetes-writer) | Hiermee wordt lees-/schrijftoegang tot de meeste objecten in een naam ruimte toegestaan. Deze rol staat het weer geven of wijzigen van rollen of rollen bindingen niet toe. Met deze rol kunt u echter ook toegang krijgen tot geheimen en een Peul uitvoeren als `ServiceAccount` in de naam ruimte, zodat het kan worden gebruikt om de API-toegangs niveaus van elk `ServiceAccount` in de naam ruimte te verkrijgen. |
+| [Azure Arc Kubernetes-beheerder](../../role-based-access-control/built-in-roles.md#azure-arc-kubernetes-admin) | Hiermee staat u beheerders toegang toe. Bedoeld om te worden verleend binnen een naam ruimte met behulp van een RoleBinding. Bij gebruik in een RoleBinding staat lees-/schrijftoegang tot de meeste resources in een naam ruimte toe, inclusief de mogelijkheid om rollen en rollen bindingen te maken binnen de naam ruimte. Deze rol staat geen schrijf toegang tot resource quota of de naam ruimte zelf toe. |
+| [Azure Arc Kubernetes-Cluster beheer](../../role-based-access-control/built-in-roles.md#azure-arc-kubernetes-cluster-admin) | Hiermee kan toegang van Super gebruikers elke actie uitvoeren op elke resource. Bij gebruik in een ClusterRoleBinding krijgt u volledige controle over elke resource in het cluster en in alle naam ruimten. Bij gebruik in een RoleBinding krijgt u volledige controle over elke resource in de naam ruimte van de roltype, met inbegrip van de naam ruimte zelf.|
 
 U kunt roltoewijzingen maken binnen het bereik van het Kubernetes-cluster dat is ingeschakeld op de `Access Control (IAM)` Blade van de cluster resource op Azure Portal. U kunt ook Azure CLI-opdrachten gebruiken, zoals hieronder wordt weer gegeven:
 

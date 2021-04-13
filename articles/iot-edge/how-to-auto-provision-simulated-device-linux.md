@@ -4,27 +4,22 @@ description: Een gesimuleerde TPM op een virtuele Linux-machine gebruiken om de 
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 6/30/2020
+ms.date: 04/09/2021
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 5beb3c750f99b8fe314fabbc2ff6109bfa6bc67c
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: ca16099cffc22a19c2ee35b00ae6f1bcbe2977a7
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106166595"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107312396"
 ---
 # <a name="create-and-provision-an-iot-edge-device-with-a-tpm-on-linux"></a>Een IoT Edge apparaat maken en inrichten met een TPM in Linux
 
-[!INCLUDE [iot-edge-version-201806](../../includes/iot-edge-version-201806.md)]
+[!INCLUDE [iot-edge-version-201806-or-202011](../../includes/iot-edge-version-201806-or-202011.md)]
 
 In dit artikel wordt beschreven hoe u automatische inrichting op een Linux IoT Edge apparaat kunt testen met behulp van een Trusted Platform Module (TPM). U kunt Azure IoT Edge apparaten automatisch inrichten met de [Device Provisioning Service](../iot-dps/index.yml). Als u niet bekend bent met het proces van automatische inrichting, bekijkt u het overzicht voor [inrichting](../iot-dps/about-iot-dps.md#provisioning-process) voordat u verdergaat.
-
-:::moniker range=">=iotedge-2020-11"
-> [!NOTE]
-> Momenteel wordt het automatisch inrichten met behulp van TPM-verificatie niet ondersteund in IoT Edge versie 1,2.
-:::moniker-end
 
 De taken zijn als volgt:
 
@@ -34,7 +29,7 @@ De taken zijn als volgt:
 1. Installeer de IoT Edge runtime en verbind het apparaat met IoT Hub.
 
 > [!TIP]
-> In dit artikel wordt beschreven hoe u DPS Provisioning test met een TPM-Simulator, maar veel van deze is van toepassing op fysieke TPM-hardware, zoals [INFINEON OPTIGA &trade; TPM](https://devicecatalog.azure.com/devices/3f52cdee-bbc4-d74e-6c79-a2546f73df4e), een Azure Certified voor IOT-apparaat.
+> In dit artikel wordt beschreven hoe u DPS Provisioning test met een TPM-Simulator, maar veel van deze is van toepassing op fysieke TPM-hardware, zoals [INFINEON OPTIGA &trade; TPM](https://catalog.azureiotsolutions.com/details?title=OPTIGA-TPM-SLB-9670-Iridium-Board), een Azure Certified voor IOT-apparaat.
 >
 > Als u een fysiek apparaat gebruikt, kunt u door gaan naar de sectie [inrichtings gegevens ophalen van een fysiek apparaat](#retrieve-provisioning-information-from-a-physical-device) in dit artikel.
 
@@ -191,6 +186,9 @@ Volg de stappen in [install the Azure IOT Edge runtime](how-to-install-iot-edge.
 
 Zodra de runtime op uw apparaat is geïnstalleerd, configureert u het apparaat met de informatie die wordt gebruikt om verbinding te maken met Device Provisioning Service en IoT Hub.
 
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
+
 1. Ken het DPS **-id-bereik** en de **registratie-id** van het apparaat die in de vorige secties zijn verzameld.
 
 1. Open het configuratie bestand op het IoT Edge-apparaat.
@@ -216,11 +214,52 @@ Zodra de runtime op uw apparaat is geïnstalleerd, configureert u het apparaat m
    # dynamic_reprovisioning: false
    ```
 
-   Gebruik eventueel de `always_reprovision_on_startup` `dynamic_reprovisioning` regels of om het herinrichtings gedrag van uw apparaat te configureren. Als een apparaat is ingesteld op het opnieuw inrichten bij het opstarten, wordt altijd geprobeerd eerst met DPS in te richten en vervolgens terug te vallen naar de inrichtings back-up als dat mislukt. Als een apparaat is ingesteld op dynamisch opnieuw inrichten, wordt IoT Edge opnieuw opgestart en wordt het opnieuw ingericht als er een herinrichtings gebeurtenis wordt gedetecteerd. Zie IoT Hub voor het opnieuw [inrichten van apparaten](../iot-dps/concepts-device-reprovision.md)voor meer informatie.
-
 1. De waarden van `scope_id` en `registration_id` met uw DPS en apparaatgegevens bijwerken.
 
+1. Gebruik eventueel de `always_reprovision_on_startup` `dynamic_reprovisioning` regels of om het herinrichtings gedrag van uw apparaat te configureren. Als een apparaat is ingesteld op het opnieuw inrichten bij het opstarten, wordt altijd geprobeerd eerst met DPS in te richten en vervolgens terug te vallen naar de inrichtings back-up als dat mislukt. Als een apparaat is ingesteld op dynamisch opnieuw inrichten, wordt IoT Edge opnieuw opgestart en wordt het opnieuw ingericht als er een herinrichtings gebeurtenis wordt gedetecteerd. Zie IoT Hub voor het opnieuw [inrichten van apparaten](../iot-dps/concepts-device-reprovision.md)voor meer informatie.
+
+1. Sla het bestand op en sluit het.
+
+:::moniker-end
+<!-- end 1.1 -->
+
+<!-- 1.2 -->
+:::moniker range=">=iotedge-2020-11"
+
+1. Ken het DPS **-id-bereik** en de **registratie-id** van het apparaat die in de vorige secties zijn verzameld.
+
+1. Open het configuratie bestand op het IoT Edge-apparaat.
+
+   ```bash
+   sudo nano /etc/aziot/config.toml
+   ```
+
+1. Zoek de sectie inrichtings configuraties van het bestand. Verwijder de opmerkingen over de regels voor TPM-inrichting en zorg ervoor dat alle andere inrichtings regels worden uitgeoefend.
+
+   ```toml
+   # DPS provisioning with TPM
+   [provisioning]
+   source = "dps"
+   global_endpoint = "https://global.azure-devices-provisioning.net"
+   id_scope = "<SCOPE_ID>"
+   
+   [provisioning.attestation]
+   method = "tpm"
+   registration_id = "<REGISTRATION_ID>"
+   ```
+
+1. De waarden van `id_scope` en `registration_id` met uw DPS en apparaatgegevens bijwerken.
+
+1. U kunt eventueel ook de sectie modus automatisch opnieuw inrichten van het bestand vinden. Gebruik de `auto_reprovisioning_mode` para meter om het herinrichtings gedrag van uw apparaat te configureren voor `Dynamic` `AlwaysOnStartup` of, of `OnErrorOnly` . Zie IoT Hub voor het opnieuw [inrichten van apparaten](../iot-dps/concepts-device-reprovision.md)voor meer informatie.
+
+1. Sla het bestand op en sluit het.
+:::moniker-end
+<!-- end 1.2 -->
+
 ## <a name="give-iot-edge-access-to-the-tpm"></a>IoT Edge toegang tot de TPM geven
+
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
 
 De IoT Edge runtime moet toegang hebben tot de TPM om uw apparaat automatisch in te richten.
 
@@ -272,9 +311,68 @@ U kunt TPM-toegang verlenen aan de IoT Edge-runtime door de systeem instellingen
    ```
 
    Als u niet ziet dat de juiste machtigingen zijn toegepast, start u de computer opnieuw op om udev te vernieuwen.
+:::moniker-end
+<!-- end 1.1 -->
 
-## <a name="restart-the-iot-edge-runtime"></a>De IoT Edge-runtime opnieuw starten
+<!-- 1.2 -->
+:::moniker range=">=iotedge-2020-11"
+De IoT Edge runtime is afhankelijk van een TPM-service die de toegang tot de TPM van een apparaat in de Broker heeft. Deze service moet toegang hebben tot de TPM om uw apparaat automatisch in te richten.
 
+U kunt toegang krijgen tot de TPM door de systeem instellingen te overschrijven zodat de `aziottpm` service bevoegdheden heeft voor het hoofd niveau. Als u de service bevoegdheden niet wilt verhogen, kunt u ook de volgende stappen gebruiken om de toegang tot de TPM hand matig te bieden.
+
+1. Zoek het bestandspad naar de TPM hardware-module op het apparaat en sla het bestand op als een lokale variabele.
+
+   ```bash
+   tpm=$(sudo find /sys -name dev -print | fgrep tpm | sed 's/.\{4\}$//')
+   ```
+
+2. Maak een nieuwe regel waarmee de IoT Edge runtime toegang krijgt tot tpm0.
+
+   ```bash
+   sudo touch /etc/udev/rules.d/tpmaccess.rules
+   ```
+
+3. Open het regel bestand.
+
+   ```bash
+   sudo nano /etc/udev/rules.d/tpmaccess.rules
+   ```
+
+4. Kopieer de volgende toegangs gegevens naar het regel bestand.
+
+   ```input
+   # allow aziottpm access to tpm0
+   KERNEL=="tpm0", SUBSYSTEM=="tpm", OWNER="aziottpm", MODE="0600"
+   ```
+
+5. Sla het bestand op en sluit het af.
+
+6. Activeer het udev-systeem om de nieuwe regel te evalueren.
+
+   ```bash
+   /bin/udevadm trigger $tpm
+   ```
+
+7. Controleer of de regel is toegepast.
+
+   ```bash
+   ls -l /dev/tpm0
+   ```
+
+   De uitvoer ziet er als volgt uit:
+
+   ```output
+   crw-rw---- 1 root aziottpm 10, 224 Jul 20 16:27 /dev/tpm0
+   ```
+
+   Als u niet ziet dat de juiste machtigingen zijn toegepast, start u de computer opnieuw op om udev te vernieuwen.
+:::moniker-end
+<!-- end 1.2 -->
+
+## <a name="restart-iot-edge-and-verify-successful-installation"></a>IoT Edge opnieuw opstarten en controleren of de installatie is voltooid
+
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
 Start de IoT Edge-runtime opnieuw zodat alle configuratie wijzigingen die u op het apparaat hebt aangebracht, worden opgehaald.
 
    ```bash
@@ -287,6 +385,12 @@ Controleer of de IoT Edge runtime wordt uitgevoerd.
    sudo systemctl status iotedge
    ```
 
+Raadpleeg daemon-Logboeken.
+
+```cmd/sh
+journalctl -u iotedge --no-pager --no-full
+```
+
 Als er inrichtings fouten worden weer gegeven, is het mogelijk dat de configuratie wijzigingen nog niet van kracht zijn. Probeer de IoT Edge-daemon opnieuw op te starten.
 
    ```bash
@@ -294,22 +398,40 @@ Als er inrichtings fouten worden weer gegeven, is het mogelijk dat de configurat
    ```
 
 Of probeer de virtuele machine opnieuw op te starten om te controleren of de wijzigingen van kracht worden op een nieuwe start.
+:::moniker-end
+<!-- end 1.1 -->
 
-## <a name="verify-successful-installation"></a>Geslaagde installatie controleren
+<!-- 1.2 -->
+:::moniker range=">=iotedge-2020-11"
+De configuratie wijzigingen Toep assen die u hebt aangebracht op het apparaat.
 
-Als de runtime is gestart, kunt u naar uw IoT Hub gaan en zien dat het nieuwe apparaat automatisch is ingericht. Uw apparaat is nu klaar om IoT Edge-modules uit te voeren.
+   ```bash
+   sudo iotedge config apply
+   ```
 
-Controleer de status van de IoT Edge-daemon.
+Controleer of de IoT Edge runtime wordt uitgevoerd.
 
-```cmd/sh
-systemctl status iotedge
-```
+   ```bash
+   sudo iotedge system status
+   ```
 
 Raadpleeg daemon-Logboeken.
 
-```cmd/sh
-journalctl -u iotedge --no-pager --no-full
-```
+   ```cmd/sh
+   sudo iotedge system logs
+   ```
+
+Als er inrichtings fouten worden weer gegeven, is het mogelijk dat de configuratie wijzigingen nog niet van kracht zijn. Probeer de IoT Edge-daemon opnieuw op te starten.
+
+   ```bash
+   sudo systemctl daemon-reload
+   ```
+
+Of probeer de virtuele machine opnieuw op te starten om te controleren of de wijzigingen van kracht worden op een nieuwe start.
+:::moniker-end
+<!-- end 1.2 -->
+
+Als de runtime is gestart, kunt u naar uw IoT Hub gaan en zien dat het nieuwe apparaat automatisch is ingericht. Uw apparaat is nu klaar om IoT Edge-modules uit te voeren.
 
 Een lijst met actieve modules weer geven.
 

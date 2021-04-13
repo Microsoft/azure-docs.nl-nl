@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: a6af8f4600544007a9ecb4fcff5ac9016fd7dfbf
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: c37f6d89d5ebd3e18177db8add048739a62c883f
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105640334"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107307942"
 ---
 # <a name="how-to-use-openrowset-using-serverless-sql-pool-in-azure-synapse-analytics"></a>OPENROWSET gebruiken met behulp van serverloze SQL-pool in Azure Synapse Analytics
 
@@ -138,9 +138,9 @@ Als u opgeeft dat unstructured_data_path een map is, haalt een serverloze SQL-po
 U kunt een serverloze SQL-pool instrueren om mappen te doorlopen door /* toe te voegen aan het einde van het pad, zoals in het voorbeeld: `https://sqlondemandstorage.blob.core.windows.net/csv/population/**`
 
 > [!NOTE]
-> In tegenstelling tot Hadoop en PolyBase, retourneert een serverloze SQL-pool geen submappen tenzij u /* * aan het einde van het pad toevoegt. Eveneens in tegenstelling tot Hadoop en PolyBase, retourneert een serverloze SQL-pool wel bestanden waarvan de bestandsnaam begint met een onderstrepingsteken (_) of een punt (.).
+> In tegenstelling tot Hadoop en PolyBase, retourneert een serverloze SQL-pool geen submappen tenzij u /* * aan het einde van het pad toevoegt.
 
-Als in het onderstaande voorbeeld unstructured_data_path=`https://mystorageaccount.dfs.core.windows.net/webdata/`, retourneert een serverloze SQL-pool-query rijen uit mydata.txt en _hidden.txt. Het retourneert niet mydata2.txt en mydata3.txt omdat deze bestanden zich in een submap bevinden.
+Als in het onderstaande voor beeld = de unstructured_data_path = `https://mystorageaccount.dfs.core.windows.net/webdata/` , wordt in een query van een serverloze SQL-groep rijen geretourneerd van mydata.txt. Het retourneert niet mydata2.txt en mydata3.txt omdat deze bestanden zich in een submap bevinden.
 
 ![Recursieve gegevens voor externe tabellen](./media/develop-openrowset/folder-traversal.png)
 

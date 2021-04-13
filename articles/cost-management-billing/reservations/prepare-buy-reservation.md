@@ -6,14 +6,14 @@ ms.reviewer: yashar
 ms.service: cost-management-billing
 ms.subservice: reservations
 ms.topic: how-to
-ms.date: 07/24/2020
+ms.date: 04/12/2021
 ms.author: banders
-ms.openlocfilehash: a70d434b06fd19071f3576f9333579e0bd2b85e7
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 13a9e3ad1dcdfa230d757230e3fdea91e4ee9d23
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99574971"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107310390"
 ---
 # <a name="buy-a-reservation"></a>Een reservering kopen
 
@@ -44,9 +44,9 @@ U beschikt over drie opties om een reservering te koppelen, afhankelijk van uw b
 
 Wanneer u reserveringskorting op uw gebruik toepast, wordt de reservering in deze volgorde door Azure verwerkt:
 
-1. Reserveringen die worden gekoppeld aan een resourcegroep
-2. Reserveringen met één bereik
-3. Reserveringen met gedeeld bereik
+1. Reserve ringen met één resource groeps bereik
+2. Reserve ringen met één abonnements bereik
+3. Reserve ringen met een gedeeld bereik (meerdere abonnementen), eerder beschreven
 
 U kunt het bereik altijd bijwerken nadat u een reservering hebt gekocht. Ga hiervoor naar de reservering, klik op **Configuratie** en koppel de reservering opnieuw. Het opnieuw koppelen van een reservering wordt niet als commerciële transactie beschouwd. Uw reserveringstermijn blijft ongewijzigd. Zie [Het bereik bijwerken na aanschaf van een reservering](manage-reserved-vm-instance.md#change-the-reservation-scope) voor meer informatie over het bijwerken van het bereik.
 

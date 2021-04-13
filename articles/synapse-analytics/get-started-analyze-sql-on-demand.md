@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: sql
 ms.topic: tutorial
 ms.date: 12/31/2020
-ms.openlocfilehash: c8a0ad3eb578280ea29d94dfbb5e74d873568541
-ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
+ms.openlocfilehash: 7c228bfe5897b45e6345234f2ed8e0f5cfbec73a
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "107259639"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107312787"
 ---
 # <a name="analyze-data-with-a-serverless-sql-pool"></a>Gegevens analyseren met een serverloze SQL-groep
 
@@ -27,9 +27,8 @@ Met serverloze SQL-groepen kunt u SQL gebruiken zonder dat hiervoor capaciteit h
 
 Elke werk ruimte wordt geleverd met een vooraf geconfigureerde, serverloze SQL-pool met de naam **ingebouwde**. 
 
-## <a name="analyze-nyc-taxi-data-in-blob-storage-using-serverless-sql-pool"></a>NYC Taxi-gegevens analyseren in blob-opslag met een serverloze SQL-pool
+## <a name="analyze-nyc-taxi-data-with-a-serverless-sql-pool"></a>Analyseer NYCe taxi gegevens met een serverloze SQL-groep
 
-In deze sectie gebruikt u een serverloze SQL-groep voor het analyseren van NYC taxi-gegevens in een Azure Blob Storage-account.
 
 1. Ga in Synapse Studio naar de **ontwikkelende** hub
 1. Maak een nieuw SQL-script.

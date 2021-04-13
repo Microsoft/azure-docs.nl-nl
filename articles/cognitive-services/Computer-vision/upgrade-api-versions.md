@@ -11,25 +11,25 @@ ms.topic: sample
 ms.date: 08/11/2020
 ms.author: pafarley
 ROBOTS: NOINDEX
-ms.openlocfilehash: cfc9745fc4684a7b0d8f7da7e63149a6fe50f6d2
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
-ms.translationtype: HT
+ms.openlocfilehash: 7a05b04872b4f957e879d93972edc45e2932d059
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92331835"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107364087"
 ---
 # <a name="upgrade-from-read-v2x-to-read-v3x"></a>Upgraden van Read v2.x naar Read v3.x
 
-In deze handleiding kunt u zien hoe u de code van uw bestaande container- of Cloud-API kunt bijwerken van Read v2.x naar Read v3.0- en v3.1-preview.
+Deze handleiding laat zien hoe u uw bestaande container- of cloud-API-code kunt upgraden van Read v2.x naar Read v3.x.
 
 ## <a name="determine-your-api-path"></a>Het API-pad bepalen
 Gebruik de volgende tabel om de **tekenreeks van de versie** in het API-pad te bepalen op basis van de Read 3.x-versie waarnaar u migreert.
 
 |Producttype| Versie | Tekenreeks van versie in API-pad van 3.x |
 |:-----|:----|:----|
-|Service | Read 3.0 of 3.1 | **v3.0** of **v3.1** , respectievelijk |
+|Service | Read 3.0 of 3.1 | **v3.0** of **v3.1**, respectievelijk |
 |Service | Read 3.2 preview | **v3.2-preview.1** |
-|Container | Read 3.0 preview of Read 3.1 preview | **v3.0** of **v3.1-preview.2** , respectievelijk |
+|Container | Read 3.0 preview of Read 3.1 preview | **v3.0** of **v3.1-preview.2**, respectievelijk |
 
 
 Gebruik vervolgens de volgende secties om uw bewerkingen te verfijnen en de **tekenreeks van de versie** in het API-pad door de waarde uit de tabel te vervangen. Bijvoorbeeld: werk voor cloud- en containerversies van **Read v3.2-preview** het API-pad bij naar **https://{endpoint}/vision/v3.2-preview.1/read/analyze[?language]** .
@@ -40,15 +40,15 @@ Gebruik vervolgens de volgende secties om uw bewerkingen te verfijnen en de **te
 
 |Read 2.x |Read 3.x  |
 |----------|-----------|
-|https://{endpoint}/vision/ **v2.0/read/core/asyncBatchAnalyze**     |https://{endpoint}/vision/< **version string** >/read/analyze[?language]|
+|https://{endpoint}/vision/**v2.0/read/core/asyncBatchAnalyze**     |https://{endpoint}/vision/<**version string**>/read/analyze[?language]|
     
-Er is een nieuwe optionele _taal_ -parameter beschikbaar. Als u de taal van uw document niet kent, of als het document mogelijk meertalig is, neem het dan niet op. 
+Er is een nieuwe optionele _taal_-parameter beschikbaar. Als u de taal van uw document niet kent, of als het document mogelijk meertalig is, neem het dan niet op. 
 
 ### `Get Read Results`
 
 |Read 2.x |Read 3.x  |
 |----------|-----------|
-|https://{endpoint}/vision/ **v2.0/read/operations** /{operationId}     |https://{endpoint}/vision/< **version string** >/read/analyzeResults/{operationId}|
+|https://{endpoint}/vision/**v2.0/read/operations**/{operationId}     |https://{endpoint}/vision/<**version string**>/read/analyzeResults/{operationId}|
 
 ### <a name="get-read-operation-result-status-flag"></a>`Get Read Operation Result`-statusvlag
 
@@ -174,21 +174,21 @@ In v3.0 is het aangepast:
 ## <a name="service-only"></a>Alleen service
 
 ### `Recognize Text`
-`Recognize Text` is een *preview* -bewerking die wordt *afgeschaft in alle versies van de Computer Vision-API* . U moet migreren van `Recognize Text` naar `Read` (v3.0) of `Batch Read File` (v2.0, v2.1). v3.0 van `Read` bevat nieuwere, betere modellen voor tekstherkenning en aanvullende functies, en wordt dus aanbevolen. Upgraden van `Recognize Text` naar `Read`:
+`Recognize Text` is een *preview*-bewerking die wordt *afgeschaft in alle versies van de Computer Vision-API*. U moet migreren van `Recognize Text` naar `Read` (v3.0) of `Batch Read File` (v2.0, v2.1). v3.0 van `Read` bevat nieuwere, betere modellen voor tekstherkenning en aanvullende functies, en wordt dus aanbevolen. Upgraden van `Recognize Text` naar `Read`:
 
 |Tekst herkennen 2.x |Read 3.x  |
 |----------|-----------|
-|https://{endpoint}/vision/ **v2.0/recognizeText[?mode]**|https://{endpoint}/vision/< **version string** >/read/analyze[?language]|
+|https://{endpoint}/vision/**v2.0/recognizeText[?mode]**|https://{endpoint}/vision/<**version string**>/read/analyze[?language]|
     
-De _modus_ -parameter wordt niet ondersteund in `Read`. Zowel handgeschreven als gedrukte tekst worden automatisch ondersteund.
+De _modus_-parameter wordt niet ondersteund in `Read`. Zowel handgeschreven als gedrukte tekst worden automatisch ondersteund.
     
-Er is een nieuwe optionele _taal_ -parameter beschikbaar in v3.0. Als u de taal van uw document niet kent, of als het document mogelijk meertalig is, neem het dan niet op. 
+Er is een nieuwe optionele _taal_-parameter beschikbaar in v3.0. Als u de taal van uw document niet kent, of als het document mogelijk meertalig is, neem het dan niet op. 
 
 ### `Get Recognize Text Operation Result`
 
 |Tekst herkennen 2.x |Read 3.x  |
 |----------|-----------|
-|https://{endpoint}/vision/ **v2.0/textOperations/** {operationId}|https://{endpoint}/vision/< **version string** >/read/analyzeResults/{operationId}|
+|https://{endpoint}/vision/**v2.0/textOperations/** {operationId}|https://{endpoint}/vision/<**version string**>/read/analyzeResults/{operationId}|
 
 ### <a name="get-recognize-text-operation-result-status-flags"></a>`Get Recognize Text Operation Result`-statusvlaggen
 Wanneer de aanroep naar `Get Recognize Text Operation Result` is geslaagd, wordt er een statustekenreeksveld geretourneerd in de JSON-hoofdtekst. 
@@ -213,7 +213,7 @@ De v3.0-API introduceert ook de volgende verbeteringen die u optioneel kunt benu
 * `angle`: de algemene richting van de tekst met de klok mee, gemeten in graden tussen -180 en 180.
 * `width` en `"height"` geven u de afmetingen van uw document, en `"unit"` geeft de eenheid van die afmetingen (pixel of inch, afhankelijk van het documenttype).
 * `page`: documenten met meerdere pagina’s worden ondersteund.
-* `language`: de invoertaal van het document (uit de optionele _taal_ -parameter).
+* `language`: de invoertaal van het document (uit de optionele _taal_-parameter).
 
 
 In 2.X is de uitvoerindeling als volgt: 
@@ -312,4 +312,4 @@ In v3.x is het aangepast:
 
 |Read 2.0 |Read 3.x  |
 |----------|-----------|
-|https://{endpoint}/vision/ **v2.0/read/core/Analyze**     |https://{endpoint}/vision/< **version string** >/read/syncAnalyze[?language]|
+|https://{endpoint}/vision/**v2.0/read/core/Analyze**     |https://{endpoint}/vision/<**version string**>/read/syncAnalyze[?language]|

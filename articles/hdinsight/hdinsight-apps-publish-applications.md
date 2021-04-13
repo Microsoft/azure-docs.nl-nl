@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 05/14/2018
-ms.openlocfilehash: 73d291fd76d9adbe2a095406b56bd879d497d3b5
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d432d20660cd1b7ee59c9ef72f9db04bc0009481
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98942666"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107306582"
 ---
 # <a name="publish-an-hdinsight-application-in-the-azure-marketplace"></a>Een HDInsight-toepassing publiceren in azure Marketplace
 U kunt een Azure HDInsight-toepassing installeren op een HDInsight-cluster op basis van Linux. In dit artikel leert u hoe u een HDInsight-toepassing publiceert in azure Marketplace. Zie [een aanbieding publiceren in azure Marketplace](../marketplace/overview.md)voor algemene informatie over publiceren in azure Marketplace.
@@ -83,7 +83,8 @@ Maak een zip-bestand dat alle bestanden bevat die nodig zijn voor het installere
 ## <a name="publish-the-application"></a>De toepassing publiceren
 Een HDInsight-toepassing publiceren:
 
-1. Meld u aan bij [Azure Publishing](https://publish.windowsazure.com/).
+1. Meld u aan bij Azure Publishing.
+
 2. Selecteer **oplossingen sjablonen** in het linkermenu.
 3. Voer een titel in en selecteer vervolgens **een nieuwe oplossings sjabloon maken**.
 4. Als u uw organisatie nog niet hebt geregistreerd, selecteert u **ontwikkelaars centrum-account maken en lid worden van het Azure-programma**.  Zie [een micro soft-ontwikkelaars account maken](../marketplace/overview.md)voor meer informatie.

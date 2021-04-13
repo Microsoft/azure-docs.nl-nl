@@ -1,18 +1,21 @@
 ---
-title: Windows Server-failovercluster op Azure VMware Solution vSAN met systeem eigen gedeelde schijven
-description: Windows Server failover cluster (WSFC) in te stellen op de Azure VMware-oplossing en gebruik te maken van oplossingen waarvoor WSFC-functionaliteit is vereist.
+title: Windows Server-failovercluster configureren op de Azure VMware-oplossing vSAN
+description: WSFC (Windows Server failover cluster) in te stellen op Azure VMware Solution vSAN met systeem eigen gedeelde schijven.
 ms.topic: how-to
-ms.date: 03/09/2021
-ms.openlocfilehash: 8162e15675d8bbde9267126c785f152d1cb860bd
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.date: 04/09/2021
+ms.openlocfilehash: f1bc8199eb0d3317e4b6e07a6a297b4ebfe95cc8
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105562236"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107308677"
 ---
-# <a name="windows-server-failover-cluster-on-azure-vmware-solution-vsan-with-native-shared-disks"></a>Windows Server-failovercluster op Azure VMware Solution vSAN met systeem eigen gedeelde schijven
+# <a name="configure-windows-server-failover-cluster-on-azure-vmware-solution-vsan"></a>Windows Server-failovercluster configureren op de Azure VMware-oplossing vSAN
 
-In dit artikel wordt beschreven hoe u Windows Server-failovercluster kunt instellen in de Azure VMware-oplossing. De implementatie in dit artikel is bedoeld voor het testen van concept-en test doeleinden. U kunt het beste een CIB-configuratie (cluster-in-a-Box) gebruiken totdat het plaatsings beleid beschikbaar is.
+In dit artikel leert u hoe u Windows Server-failovercluster instelt op Azure VMware Solution vSAN met systeem eigen gedeelde schijven. 
+
+>[!IMPORTANT]
+>De implementatie in dit artikel is bedoeld voor het testen van concept-en test doeleinden. U kunt het beste een CIB-configuratie (cluster-in-a-Box) gebruiken totdat het plaatsings beleid beschikbaar is.
 
 WSFC (Windows Server failover cluster), voorheen bekend als micro soft service Cluster service (MSCS), is een functie van het Windows Server-besturings systeem (OS). WSFC is een bedrijfskritische functie en voor veel toepassingen is vereist. WSFC is bijvoorbeeld vereist voor de volgende configuraties:
 
@@ -43,7 +46,7 @@ De Azure VMware-oplossing biedt systeem eigen ondersteuning voor gevirtualiseerd
 
 In het volgende diagram ziet u de architectuur van virtuele WSFC-knoop punten in een privécloud van Azure VMware-oplossing. Er wordt weer gegeven waar de Azure VMware-oplossing zich bevindt, met inbegrip van de virtuele WSFC-servers (Red Box), ten opzichte van het bredere Azure-platform. Dit diagram illustreert een typische hub-spoke-architectuur, maar een vergelijk bare configuratie is mogelijk met het gebruik van Azure Virtual WAN. Beide bieden allemaal de waarde andere Azure-Services die u kunt meenemen.
 
-[![Diagram van de architectuur van WSFC virtuele knoop punten op een privécloud met Azure VMware-oplossing.](media/windows-server-failover-cluster/windows-server-failover-architecture.png)](media/windows-server-failover-cluster/windows-server-failover-architecture.png#lightbox)
+:::image type="content" source="media/windows-server-failover-cluster/windows-server-failover-architecture.svg" alt-text="Architectuur diagram van virtuele knoop punten van Windows Server failover cluster in een privécloud van Azure VMware-oplossing." border="false" lightbox="media/windows-server-failover-cluster/windows-server-failover-architecture.svg":::
 
 ## <a name="supported-configurations"></a>Ondersteunde configuraties
 

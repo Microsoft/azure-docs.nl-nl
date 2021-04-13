@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 03/24/2021
+ms.date: 04/12/2021
 ms.author: alkohli
-ms.openlocfilehash: aa1b861555cff65c9e432ea711af3f7c6e410625
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 3b323bf920bd884e821d03bf2def37471775e720
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105109162"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107312702"
 ---
 # <a name="azure-stack-edge-pro-r-technical-specifications"></a>Technische specificaties van Azure Stack Edge Pro R
 
@@ -24,41 +24,44 @@ De hardwareonderdelen van uw Azure Stack Edge Pro R-apparaat voldoen aan de tech
 
 Het Azure Stack Edge Pro R-apparaat heeft de volgende specificaties voor Compute en geheugen:
 
-| Specificatie       | Waarde                  |
-|---------------------|------------------------|
-| CPU    | 2 X Intel Xeon Silver 4114 CPU<br>20 phsyical-kernen (10 per CPU)<br>40 logische kernen (Vcpu's) (20 per CPU)  |
-| Geheugen              | 256 GB RAM (2666 MT/s)     |
-
+| Specificatie  | Waarde                                             |
+|----------------|---------------------------------------------------|
+| CPU-type       | Dual Intel Xeon Silver 4114 CPU                   |
+| CPU: RAW       | 20 totaal aantal kernen, 40 totale Vcpu's                    |
+| CPU: bruikbaar    | 32 Vcpu's                                          |
+| Type geheugen    | Dell compatible 16 GB RDIMM, 2666 MT/s, dubbele positie |
+| Geheugen: onbewerkt    | 256 GB RAM (16 x 16 GB)                           |
+| Geheugen: bruikbaar | 230 GB RAM-GEHEUGEN                                        |
 
 ## <a name="compute-acceleration-specifications"></a>Specificaties van Compute Acceleration
 
 Er is een GPU (graphics processing unit) opgenomen op elk apparaat dat Kubernetes, dieper leren en machine learning scenario's mogelijk maakt.
 
-| Specificatie           | Waarde                  |
+| Specificatie           | Waarde                      |
 |-------------------------|----------------------------|
-| GPU   | Eén nVidia T4 GPU <br> Zie [NVIDIA T4](https://www.nvidia.com/en-us/data-center/tesla-t4/)voor meer informatie.| 
+| GPU   | Eén nVidia T4 GPU <br> Zie [NVIDIA T4](https://www.nvidia.com/en-us/data-center/tesla-t4/)voor meer informatie. | 
 
 ## <a name="power-supply-unit-specifications"></a>Specificaties van voedings eenheid voor voeding
 
 Het Azure Stack Edge Pro R-apparaat heeft twee 100-240 V-energievoedings eenheden (PSUs) met hoge prestaties. De twee PSUs bieden een redundante energie configuratie. Als een PSU mislukt, blijft het apparaat normaal op de andere PSU functioneren totdat de module failed wordt vervangen. De volgende tabel geeft een lijst van de technische specificaties van de PSUs.
 
-| Specificatie           | 550 W PSU                  |
-|-------------------------|----------------------------|
-| Maximale uitvoer kracht    | 550 W                      |
-| Warmte-afbraak (maximum)                   | 2891 BTU/uur                |
-| Frequentie               | 50/60 Hz                   |
-| Selectie van voltage bereik | Automatisch variërend: 115-230 V AC |
-| Hot pluggable           | Yes                        |
+| Specificatie              | 550 W PSU                  |
+|----------------------------|----------------------------|
+| Maximale uitvoer kracht       | 550 W                      |
+| Warmte-afbraak (maximum) | 2891 BTU/uur                |
+| Frequentie                  | 50/60 Hz                   |
+| Selectie van voltage bereik    | Automatisch variërend: 115-230 V AC |
+| Hot pluggable              | Yes                        |
 
 ## <a name="network-specifications"></a>Netwerk specificaties
 
-Het Azure Stack Edge Pro R-apparaat heeft vier netwerk interfaces, PORT1-PORT4. 
+Het Azure Stack Edge Pro R-apparaat heeft vier netwerk interfaces, PORT1-PORT4.
 
 
-|Specificatie  |Description                              |
+|Specificatie         |Description                       |
 |----------------------|----------------------------------|
-|Netwerkinterfaces    |**2 x 1 GbE RJ45** <br> POORT 1 wordt gebruikt als beheer interface voor initiële installatie en is standaard statisch. Nadat de eerste installatie is voltooid, kunt u de interface gebruiken voor gegevens met elk IP-adres. Bij het opnieuw instellen wordt de interface echter teruggezet naar het statische IP-adres. <br>De andere interface poort 2 kan door de gebruiker worden geconfigureerd, kan worden gebruikt voor gegevens overdracht en is standaard DHCP.     |
-|Netwerkinterfaces    |**2 x 25 GbE SFP28** <br> Deze gegevens interfaces poort 3 en poort 4 kunnen worden geconfigureerd als DHCP (standaard) of statisch.            |
+|Netwerkinterfaces    |**2 x 1 GbE RJ45** <br> POORT 1 wordt gebruikt als de beheer interface voor initiële installatie en is standaard statisch. Nadat de eerste installatie is voltooid, kunt u de interface gebruiken voor gegevens met elk IP-adres. Bij het opnieuw instellen wordt de interface echter teruggezet naar het statische IP-adres. <br>De andere interface, poort 2, die door de gebruiker kan worden geconfigureerd, kan worden gebruikt voor gegevens overdracht en is standaard DHCP. |
+|Netwerkinterfaces    |**2 x 25 GbE SFP28** <br> Deze gegevens interfaces op poort 3 en poort 4 kunnen worden geconfigureerd als DHCP (standaard) of statisch. |
 
 Uw Azure Stack Edge Pro R-apparaat heeft de volgende netwerkhardware:
 
@@ -69,27 +72,27 @@ Uw Azure Stack Edge Pro R-apparaat heeft de volgende netwerkhardware:
 | Parameter           | Description                 |
 |-------------------------|----------------------------|
 | Model    | ConnectX®-4 Lx EN network interface card                      |
-| Model Description               | 25GbE dual-port SFP28; PCIe3.0 x8; ROHS R6                    |
+| Model Description               | 25 GbE dual-port SFP28; PCIe3.0 x8; ROHS R6                    |
 | Device Part Number (XR2) | MCX4421A-ACAN  |
 | PSID (R640)           | MT_2420110034                         |-->
 <!-- confirm w/ Ravi what is this-->
 
-Voor een volledige lijst met ondersteunde kabels, switches en transceivers voor deze netwerk kaarten gaat u naar: [Mellanox Dual Port 25G connectx-4 kanaal netwerk adapter compatibele producten](https://docs.mellanox.com/display/ConnectX4LxFirmwarev14271016/Firmware+Compatible+Products).
+Voor een volledige lijst met ondersteunde kabels, switches en transceivers voor deze netwerk kaarten gaat u naar [Mellanox Dual Port 25G connectx-4 kanaal netwerk adapter compatibele producten](https://docs.mellanox.com/display/ConnectX4LxFirmwarev14271016/Firmware+Compatible+Products).
 
 ## <a name="storage-specifications"></a>Opslag specificaties
 
-De Azure Stack Edge Pro R-apparaten hebben 8 gegevens schijven en 2 M. 2 SATA-schijven die fungeren als besturingssysteem schijven. Ga voor meer informatie naar [M. 2 SATA-schijven](https://en.wikipedia.org/wiki/M.2).
+Azure Stack Edge Pro R-apparaten hebben acht gegevens schijven en twee M. 2 SATA-schijven die fungeren als besturingssysteem schijven. Ga voor meer informatie naar [M. 2 SATA-schijven](https://en.wikipedia.org/wiki/M.2).
 
 #### <a name="storage-for-1-node-device"></a>Opslag voor een apparaat met één knoop punt
 
-De volgende tabel bevat de Details voor de opslag capaciteit van het apparaat met één knoop punt.
+De volgende tabel bevat details over de opslag capaciteit van het apparaat met één knoop punt.
 
 |     Specificatie                          |     Waarde             |
 |--------------------------------------------|-----------------------|
 |    Aantal Solid-state drives (Ssd's)     |    8                  |
 |    Capaciteit van één SSD                     |    8 TB               |
 |    Totale capaciteit                          |    64 TB              |
-|    Totale bruikbare capaciteit *                  |    ~ 42 TB          |
+|    Totale bruikbare capaciteit *                  |    ~ 42 TB            |
 
 **Er is ruimte gereserveerd voor intern gebruik.*
 
@@ -148,7 +151,7 @@ Het gewicht van het apparaat is afhankelijk van de configuratie van de behuizing
 
 |     Sluit                                 |     Gewicht          |
 |-----------------------------------------------|---------------------|
-|    Totaal gewicht van het apparaat met 1 knoop punt + robuuste behuizing met eind kapitalen     |    ~ 114 lbs.          |
+|    Totaal gewicht van het apparaat met 1 knoop punt + robuuste behuizing met eind kapitalen     |    ~ 114 lbs          |
 
 <!--#### For the 4-node system
 

@@ -3,7 +3,7 @@
 - name: Overzicht
   expanded: true
   items:
-    - name: Overzicht van Computer Vision
+    - name: Computer Vision overzicht
       href: overview.md
     - name: Taalondersteuning
       href: language-support.md
@@ -11,13 +11,13 @@
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/computer-vision'
     - name: Nieuw
       href: whats-new.md
-    - name: Veelgestelde vragen over Computer Vision
+    - name: Computer Vision veelgestelde vragen
       href: FAQ.md
 - name: Optische tekenherkenning (OCR)
   items:
     - name: Overzicht van OCR
       href: overview-ocr.md
-    - name: Quick start voor OCR
+    - name: Snelstart voor OCR
       href: quickstarts-sdk/client-library.md
     - name: Voorbeelden
       href: /samples/browse/?products=azure&terms=computer-vision
@@ -34,7 +34,7 @@
               displayName: 'docker, container, package, packaged app, swagger, open api, openapi, train, publish, az, acr, cli, tps, core, curl, try it now, import, pull, on-premises'
             - name: Containers configureren
               href: computer-vision-resource-container-config.md
-            - name: Migreren naar v3 van de container voor het lezen van OCR
+            - name: Migreren naar v3 van de Read OCR-container
               href: read-container-migration-guide.md
               displayName: 'docker, container, billing, apikey, pull, logging, on-premises'
             - name: Gebruiken met Kubernetes en Helm
@@ -48,14 +48,12 @@
               href: /azure/cognitive-services/containers/index?context=/azure/cognitive-services/computer-vision/context/context
     - name: Referentie
       items:
-        - name: OCR-REST API v 3.2 Preview
-          href: 'https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-3/operations/56f91f2e778daf14a499f21b'
-        - name: OCR-REST API v 3.1
+        - name: OCR REST API v3.2
+          href: 'https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2/operations/5d986960601faab4bf452005'
+        - name: OCR REST API v3.1
           href: 'https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005'
-        - name: OCR-REST API v 2.1
+        - name: OCR REST API v2.1
           href: 'https://westus.dev.cognitive.microsoft.com/docs/services/5cd27ec07268f6c679a3e641'
-        - name: OCR REST API v 1.0
-          href: 'https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739'
         - name: .NET
           href: /dotnet/api/overview/azure/cognitiveservices/client/computervision?view=azure-dotnet
         - name: Node.js
@@ -72,19 +70,19 @@
           href: /powershell/module/azurerm.cognitiveservices/
 - name: Analyse van de afbeelding
   items:
-    - name: Overzicht van image analyse
+    - name: Overzicht van afbeeldingsanalyse
       href: overview-image-analysis.md
-    - name: Quick start voor afbeeldings analyse
+    - name: Snelstart voor afbeeldingsanalyse
       href: quickstarts-sdk/image-analysis-client-library.md
     - name: Voorbeelden
       items:
         - name: Een app voor afbeeldingsverwerking ontdekken
           href: Tutorials/CSharpTutorial.md
-        - name: Andere voor beelden
+        - name: Andere voorbeelden
           href: /samples/browse/?products=azure&terms=computer-vision
     - name: Instructiegidsen
       items:
-        - name: De afbeeldings analyse-API aanroepen
+        - name: De API voor afbeeldingsanalyse aanroepen
           href: Vision-API-How-to-Topics/HowToCallVisionAPI.md
         - name: Video's in realtime analyseren
           href: Vision-API-How-to-Topics/HowtoAnalyzeVideo_Vision.md
@@ -120,14 +118,12 @@
           href: Tutorials/storage-lab-tutorial.md
     - name: Referentie
       items:
-        - name: Afbeeldings analyse REST API v 3.2 Preview
-          href: 'https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-3/operations/56f91f2e778daf14a499f21b'
-        - name: Afbeeldings analyse REST API v 3.1
+        - name: Afbeeldingsanalyse REST API v3.2
+          href: 'https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2/operations/56f91f2e778daf14a499f21b'
+        - name: Afbeeldingsanalyse REST API v3.1
           href: 'https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005'
-        - name: Afbeeldings analyse REST API v 2.1
+        - name: Afbeeldingsanalyse REST API v2.1
           href: 'https://westus.dev.cognitive.microsoft.com/docs/services/5cd27ec07268f6c679a3e641'
-        - name: Afbeeldings analyse REST API v 1.0
-          href: 'https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739'
         - name: .NET
           href: /dotnet/api/overview/azure/cognitiveservices/client/computervision?view=azure-dotnet
         - name: Node.js
@@ -150,7 +146,7 @@
       items:
         - name: Transparantienotities
           items:
-            - name: Gebruiks voorbeelden van ruimtelijke analyse
+            - name: Gebruiksgevallen voor ruimtelijke analyse
               href: /legal/cognitive-services/computer-vision/transparency-note-spatial-analysis?context=/azure/cognitive-services/computer-vision/context/context
             - name: Kenmerken en beperkingen
               href: /legal/cognitive-services/computer-vision/accuracy-and-limitations?context=/azure/cognitive-services/computer-vision/context/context
@@ -166,7 +162,7 @@
           href: /legal/cognitive-services/computer-vision/compliance-privacy-security-2?context=/azure/cognitive-services/computer-vision/context/context
     - name: Instructiegidsen
       items:
-        - name: De container voor ruimtelijke analyse gebruiken
+        - name: De ruimtelijke analysecontainer gebruiken
           items:
             - name: De hostmachine instellen en de container uitvoeren
               href: spatial-analysis-container.md
@@ -194,7 +190,7 @@
   items:
     - name: Ondersteuning voor regio
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
-    - name: Modules leren
+    - name: LEARN-modules
       href: /learn/paths/explore-computer-vision-microsoft-azure/
     - name: Opties voor ondersteuning en hulp
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/computer-vision/context/context

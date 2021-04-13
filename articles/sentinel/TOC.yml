@@ -35,6 +35,8 @@
           href: roles.md
         - name: Toegang beheren per resource
           href: resource-context-rbac.md
+        - name: MSSP intellectueel eigendom beveiligen
+          href: mssp-protect-intellectual-property.md
     - name: Geavanceerde detectie van aanvallen met meerdere stappen
       href: fusion.md
     - name: Automation (via)

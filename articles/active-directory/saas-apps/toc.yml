@@ -73,7 +73,7 @@
           href: airwatch-tutorial.md
         - name: Akamai
           href: akamai-tutorial.md
-        - name: AKASHI
+        - name: AKJOEN
           href: akashi-tutorial.md
         - name: Alcumus Info Exchange
           href: alcumus-info-tutorial.md
@@ -91,7 +91,7 @@
           href: ally-tutorial.md
         - name: Amazon Business
           href: amazon-business-tutorial.md
-        - name: AWS-toegang Single-Account
+        - name: AWS Single-Account Access
           href: amazon-web-service-tutorial.md
         - name: Amazon Web Services (AWS) om meerdere accounts te koppelen
           href: aws-multi-accounts-tutorial.md
@@ -181,7 +181,7 @@
           href: awarego-tutorial.md
         - name: AWS ClientVPN
           href: aws-clientvpn-tutorial.md
-        - name: AWS enkele Sign-On
+        - name: AWS Single Sign-On
           href: aws-single-sign-on-tutorial.md
         - name: Axiad Cloud
           href: axiad-cloud-tutorial.md
@@ -371,7 +371,7 @@
           href: newsignature-tutorial.md
         - name: CloudCords
           href: cloudcords-tutorial.md
-        - name: CloudKnox-beheer platform voor machtigingen
+        - name: CloudKnox Permissions Management Platform
           href: cloudknox-permissions-management-platform-tutorial.md
         - name: Cloudmore
           href: cloudmore-tutorial.md
@@ -435,7 +435,7 @@
           href: convercent-tutorial.md
         - name: Coralogix
           href: coralogix-tutorial.md
-        - name: 'Hoek steen, enkel Sign-On'
+        - name: Cornerstone Single Sign-On
           href: cornerstone-ondemand-tutorial.md
         - name: CorpTax
           href: corptax-tutorial.md
@@ -599,7 +599,7 @@
           href: euromonitor-passport-tutorial.md
         - name: EverBridge
           href: everbridge-tutorial.md
-        - name: Loof
+        - name: Evergreen
           href: evergreen-tutorial.md
         - name: Evernote
           href: evernote-tutorial.md
@@ -635,7 +635,7 @@
           href: factset-tutorial.md
         - name: Fastly Edge Cloud
           href: fastly-edge-cloud-tutorial.md
-        - name: Faxtaken. TEKEN
+        - name: Fax. Plus
           href: fax.plus-tutorial.md
         - name: FCM HUB
           href: fcm-hub-tutorial.md
@@ -727,7 +727,7 @@
           href: github-ae-tutorial.md
         - name: GitHub Enterprise Cloud - Enterprise-account
           href: github-enterprise-cloud-enterprise-account-tutorial.md
-        - name: Door GitHub Enter prise beheerde gebruiker
+        - name: Door GitHub Enterprise beheerde gebruiker
           href: github-enterprise-managed-user-tutorial.md
         - name: GlassFrog
           href: glassfrog-tutorial.md
@@ -769,7 +769,7 @@
           href: harmony-tutorial.md
         - name: Harness
           href: harness-tutorial.md
-        - name: hCaptcha Enter prise
+        - name: hCaptcha Enterprise
           href: hcaptcha-enterprise-tutorial.md
         - name: Helper Helper
           href: helper-helper-tutorial.md
@@ -817,7 +817,7 @@
           href: hr2day-tutorial.md
         - name: HRworks Single Sign-On
           href: hrworks-single-sign-on-tutorial.md
-        - name: HSB-ThoughtSpot
+        - name: HSB ThoughtSpot
           href: hsb-thoughtspot-tutorial.md
         - name: Hub Planner
           href: hub-planner-tutorial.md
@@ -1003,9 +1003,9 @@
           href: kantegassoforjira-tutorial.md
         - name: Keeper Password Manager & Digital Vault
           href: keeperpasswordmanager-tutorial.md
-        - name: Kemp Kemp Azure AD-integratie
+        - name: Kemp LoadMaster Azure AD Integration
           href: kemp-tutorial.md
-        - name: Kendis-Azure AD-integratie
+        - name: Kendis - Azure AD-integratie
           href: kendis-scaling-agile-platform-tutorial.md
         - name: KFAdvance
           href: kfadvance-tutorial.md
@@ -1119,7 +1119,7 @@
           href: manabipocket-tutorial.md
         - name: Mapbox
           href: mapbox-tutorial.md
-        - name: Maptician
+        - name: Mapticisch
           href: maptician-tutorial.md
         - name: Marketo
           href: marketo-tutorial.md
@@ -1305,7 +1305,7 @@
           href: oracle-cloud-tutorial.md
         - name: Oracle Fusion ERP
           href: oracle-fusion-erp-tutorial.md
-        - name: Oracle people-protected by F5 BIG-IP APM
+        - name: Oracle PeopleSoft - Protected by F5 BIG-IP APM
           href: oracle-peoplesoft-protected-by-f5-big-ip-apm-tutorial.md
         - name: OrgChart Now
           href: orgchartnow-tutorial.md
@@ -1345,7 +1345,7 @@
           href: panorays-tutorial.md
         - name: Pantheon
           href: pantheon-tutorial.md
-        - name: Parkalot-auto Park-beheer
+        - name: Parkalot - Beheer van autoparken
           href: parkalot-car-park-management-tutorial.md
         - name: PatentSQUARE
           href: patentsquare-tutorial.md
@@ -1401,7 +1401,7 @@
           href: podbean-tutorial.md
         - name: PolicyStat
           href: policystat-tutorial.md
-        - name: PoolParty semantische Suite
+        - name: PoolParty Semantic Suite
           href: poolparty-semantic-suite-tutorial.md
         - name: PostBeyond
           href: postbeyond-tutorial.md
@@ -1511,7 +1511,7 @@
           href: reviewsnap-tutorial.md
         - name: Reward Gateway
           href: reward-gateway-tutorial.md
-        - name: Opnieuw bekijken
+        - name: Opnieuw kijken
           href: rewatch-tutorial.md
         - name: RFPIO
           href: rfpio-tutorial.md
@@ -1545,7 +1545,7 @@
           href: runmyprocess-tutorial.md
     - name: S
       items:
-        - name: Saba-Cloud
+        - name: Saba Cloud
           href: saba-cloud-tutorial.md
         - name: Saba TalentSpace
           href: halogen-software-tutorial.md
@@ -1633,13 +1633,13 @@
           href: segment-tutorial.md
         - name: Seismic
           href: seismic-tutorial.md
-        - name: SendPro Enter prise
+        - name: SendPro Enterprise
           href: sendpro-enterprise-tutorial.md
         - name: SendSafely
           href: sendsafely-tutorial.md
         - name: 'SensoScientific, draadloos temperatuurbewakingssysteem'
           href: sensoscientific-tutorial.md
-        - name: Gena Access Control
+        - name: Genea Access Control
           href: sequr-tutorial.md
         - name: Serraview Space Utilization Software Solutions
           href: serraview-space-utilization-software-solutions-tutorial.md
@@ -1671,7 +1671,7 @@
           href: shucchonavi-tutorial.md
         - name: Shutterstock
           href: shutterstock-tutorial.md
-        - name: Sigma computing
+        - name: Sigma Computing
           href: sigma-computing-tutorial.md
         - name: Signagelive
           href: signagelive-tutorial.md
@@ -1853,7 +1853,7 @@
           href: thoughtworks-mingle-tutorial.md
         - name: ThousandEyes
           href: thousandeyes-tutorial.md
-        - name: LXPe bloei
+        - name: Gedijen met LXP
           href: thrive-lxp-tutorial.md
         - name: TicketManager
           href: ticketmanager-tutorial.md
@@ -1893,7 +1893,7 @@
           href: trakopolis-tutorial.md
         - name: Trakstar
           href: trakstar-tutorial.md
-        - name: GlobalLink-dash board in de perfecte stand
+        - name: TransPerfect GlobalLink-dashboard
           href: transperfect-globallink-dashboard-tutorial.md
         - name: Trelica
           href: trelica-tutorial.md
@@ -1925,7 +1925,7 @@
           href: ungerboeck-software-tutorial.md
         - name: UNIFI
           href: unifi-tutorial.md
-        - name: uniFLOW online
+        - name: uniFLOW Online
           href: uniflow-online-tutorial.md
         - name: Upshotly
           href: upshotly-tutorial.md
@@ -2132,7 +2132,7 @@
           href: atlassian-cloud-provisioning-tutorial.md
         - name: SCIM Connector voor Azure Databricks
           href: /azure/databricks/administration-guide/users-groups/scim/aad?bc=%2fazure%2factive-directory%2fsaas-apps%2fbreadcrumb%2ftoc.json&toc=%2fazure%2factive-directory%2fsaas-apps%2ftoc.json
-        - name: AWS enkele Sign-On
+        - name: AWS Single Sign-On
           href: aws-single-sign-on-provisioning-tutorial.md
         - name: BitaBIZ
           href: bitabiz-provisioning-tutorial.md
@@ -2210,7 +2210,7 @@
           href: github-provisioning-tutorial.md
         - name: GitHub AE
           href: github-ae-provisioning-tutorial.md
-        - name: Door GitHub Enter prise beheerde gebruiker
+        - name: Door GitHub Enterprise beheerde gebruiker
           href: github-enterprise-managed-user-provisioning-tutorial.md
         - name: GoToMeeting
           href: citrixgotomeeting-provisioning-tutorial.md
@@ -2242,6 +2242,8 @@
           href: iprova-provisioning-tutorial.md
         - name: Jive
           href: jive-provisioning-tutorial.md
+        - name: Jostle
+          href: jostle-provisioning-tutorial.md
         - name: Juno Journey
           href: juno-journey-provisioning-tutorial.md
         - name: Keeper Password Manager & Digital Vault
@@ -2380,7 +2382,7 @@
           href: tic-tac-mobile-provisioning-tutorial.md
         - name: Templafy SAML2
           href: templafy-saml-2-provisioning-tutorial.md
-        - name: Templafy OpenID Connect Connect
+        - name: Templafy OpenID Connect
           href: templafy-openid-connect-provisioning-tutorial.md
         - name: TheOrgWiki
           href: theorgwiki-provisioning-tutorial.md

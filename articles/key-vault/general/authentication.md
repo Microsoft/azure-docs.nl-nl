@@ -7,12 +7,12 @@ ms.date: 08/27/2020
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
-ms.openlocfilehash: ed83d52d19df126ef9b0e68f984f88f5dfd40c42
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8a8fe4ed0c24d2ccda5fb844005a33a93e85a169
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99492936"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107365515"
 ---
 # <a name="authenticate-to-azure-key-vault"></a>Verifiëren bij Azure Key Vault
 
@@ -59,8 +59,6 @@ Key Vault werkt met twee afzonderlijke machtigingsniveaus:
     - [Azure Portal](../../role-based-access-control/role-assignments-portal.md)
     - [Azure-CLI](../../role-based-access-control/role-assignments-cli.md)
     - [Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)
-
-    Key Vault biedt momenteel alleen ondersteuning voor de rol [Inzender](../../role-based-access-control/built-in-roles.md#key-vault-contributor), waarmee beheerbewerkingen in Key Vault-resources zijn toegestaan. Een aantal andere rollen is momenteel beschikbaar als preview-versie. U kunt ook aangepaste rollen maken, zoals beschreven in [Aangepaste Azure-rollen](../../role-based-access-control/custom-roles.md).
 
     Raadpleeg [Wat is op rollen gebaseerd toegangsbeheer (Azure RBAC)?](../../role-based-access-control/overview.md) voor algemene informatie over rollen.
 

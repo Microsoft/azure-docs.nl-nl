@@ -6,15 +6,15 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 10/09/2020
+ms.date: 03/07/2021
 ms.author: anfeldma
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f02a0673a3fae33f935ae9a9cbf94f101b25c39f
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.openlocfilehash: 2a940f4bb519332e147577e4a9172406c401d152
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106449780"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107365736"
 ---
 # <a name="quickstart-build-a-todo-app-with-xamarin-using-azure-cosmos-db-sql-api-account"></a>Quickstart: een taken-app maken met Xamarin met behulp van een SQL API-account van Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -24,6 +24,7 @@ ms.locfileid: "106449780"
 > * [.NET V4](create-sql-api-dotnet-V4.md)
 > * [Java SDK v4](create-sql-api-java.md)
 > * [Spring Data v3](create-sql-api-spring-data.md)
+> * [Spark v3-connector](create-sql-api-spark.md)
 > * [Node.js](create-sql-api-nodejs.md)
 > * [Python](create-sql-api-python.md)
 > * [Xamarin](create-sql-api-xamarin-dotnet.md)
@@ -96,18 +97,18 @@ Ga terug naar Azure Portal om de API-sleutelgegevens op te halen en deze in de a
 
 2. Open in Visual Studio **ToDoItems.Core/Helpers/APIKeys.cs**.
 
-3. Gebruik in Azure Portal de kopieerknop om de **URI**-waarde te kopiëren, en maak deze de waarde van de variabele `CosmosEndpointUrl` in APIKeys.cs.
+3. Kopieer in Azure Portal de knop Kopiëren de **URI-waarde** en maak deze de waarde van de variabele `CosmosEndpointUrl` in APIKeys.cs.
 
     ```csharp
     //#error Enter the URL of your Azure Cosmos DB endpoint here
-    public static readonly string CosmosEndpointUrl = "[URI Copied from Azure Portal]";
+    public static readonly string CosmosEndpointUrl = "[URI Copied from Azure portal]";
     ```
 
-4. Gebruik in Azure Portal de kopieerknop om de waarde van **PRIMAIRE SLEUTEL** te kopiëren, en maak deze de waarde van de `Cosmos Auth Key` in APIKeys.cs.
+4. Kopieer in Azure Portal knop Kopiëren de waarde **van PRIMAIRE** SLEUTEL en maak er de waarde van `Cosmos Auth Key` in APIKeys.cs.
 
     ```csharp
     //#error Enter the read/write authentication key of your Azure Cosmos DB endpoint here
-    public static readonly string CosmosAuthKey = "[PRIMARY KEY copied from Azure Portal";
+    public static readonly string CosmosAuthKey = "[PRIMARY KEY copied from Azure portal";
     ```
 
 [!INCLUDE [cosmos-db-auth-key-info](../../includes/cosmos-db-auth-key-info.md)]
@@ -144,9 +145,9 @@ Laten we nog eens kort bekijken hoe de app met Azure Cosmos DB communiceert.
 
     De `CreateDocumentQuery<T>` maakt gebruikt van een URI die verwijst naar de container die in de vorige sectie is gemaakt. U kunt ook LINQ-operators opgeven, zoals een `Where`-component. In dit geval worden alleen taken die niet zijn voltooid, geretourneerd.
 
-    De functie `CreateDocumentQuery<T>` wordt synchroon uitgevoerd en retourneert een `IQueryable<T>`. De methode `AsDocumentQuery` zet de `IQueryable<T>` echter om naar een `IDocumentQuery<T>`-object dat asynchroon kan worden uitgevoerd. Zo wordt de gebruikersinterface-thread voor mobiele toepassingen niet geblokkeerd.
+    De functie `CreateDocumentQuery<T>` wordt synchroon uitgevoerd en retourneert een `IQueryable<T>`. De methode `AsDocumentQuery` converteert echter de `IQueryable<T>` naar een `IDocumentQuery<T>` -object, dat asynchroon kan worden uitgevoerd. Zo wordt de gebruikersinterface-thread voor mobiele toepassingen niet geblokkeerd.
 
-    De functie `IDocumentQuery<T>.ExecuteNextAsync<T>` haalt de pagina met resultaten op van Azure Cosmos DB en `HasMoreResults` controleert of er nog extra resultaten moeten worden geretourneerd.
+    De functie haalt de pagina met resultaten op uit Azure Cosmos DB, die wordt onderzocht om te zien of er aanvullende resultaten `IDocumentQuery<T>.ExecuteNextAsync<T>` `HasMoreResults` moeten worden geretourneerd.
 
 > [!TIP]
 > Verschillende functies die op Azure Cosmos-containers en -documenten worden uitgevoerd, gebruiken een URI als een parameter die het adres van de container of het document opgeeft. Deze URI is opgesteld met de klasse `URIFactory`. URI's voor databases, containers en documenten kunnen allemaal met deze klasse worden gemaakt.
@@ -188,7 +189,7 @@ Met de volgende stappen wordt gedemonstreerd hoe u de app uitvoert met behulp va
 
     :::image type="content" source="./media/create-sql-api-xamarin-dotnet/ide-start-debug.png" alt-text="Foutopsporing starten in Visual Studio voor Mac":::
 
-3. Als de iOS-simulator of Android-emulator klaar is met opstarten, geeft de app twee tabbladen weer, onderaan het scherm voor iOS en bovenaan het scherm voor Android. Het eerste geeft taken weer die niet zijn voltooid, het tweede taken die wel zijn voltooid.
+3. Wanneer de iOS-simulator of Android-emulator is starten, worden in de app twee tabbladen onder aan het scherm voor iOS en de bovenkant van het scherm voor Android weergegeven. In de eerste ziet u todo-items, die niet zijn voltooid, de tweede todo-items, die zijn voltooid.
 
     :::image type="content" source="./media/create-sql-api-xamarin-dotnet/ios-droid-started.png" alt-text="Startscherm van taken-app":::
 
@@ -214,7 +215,7 @@ Met de volgende stappen wordt gedemonstreerd hoe u de app uitvoert met behulp va
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze Quick Start hebt u geleerd hoe u een Azure Cosmos-account kunt maken en hebt u een container gemaakt met de Data Explorer en een Xamarin-app ontwikkeld en geïmplementeerd. Nu kunt u aanvullende gegevens in uw Azure Cosmos-account importeren.
+In deze Quick Start hebt u geleerd hoe u een Azure Cosmos-account kunt maken en hebt u een container gemaakt met de Data Explorer en een Xamarin-app ontwikkeld en geïmplementeerd. U kunt nu meer gegevens importeren in uw Azure Cosmos-account.
 
 > [!div class="nextstepaction"]
 > [Gegevens importeren in Azure Cosmos DB](import-data.md)

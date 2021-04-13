@@ -12,14 +12,14 @@ ms.service: virtual-machines-sap
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 01/11/2021
+ms.date: 04/12/2021
 ms.author: radeltch
-ms.openlocfilehash: e652d1374db12d797dc4505f07350e6e110d6408
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b202613e6f24a5cd549267a1c8928e8e68caa232
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101674445"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107303590"
 ---
 # <a name="azure-virtual-machines-high-availability-for-sap-netweaver-on-red-hat-enterprise-linux-with-azure-netapp-files-for-sap-applications"></a>Azure Virtual Machines hoge Beschik baarheid voor SAP NetWeaver op Red Hat Enterprise Linux met Azure NetApp Files voor SAP-toepassingen
 
@@ -208,7 +208,6 @@ Eerst moet u de Azure NetApp Files volumes maken. Implementeer de Vm's. Daarna m
          1. Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld **lb. QAS. ASCS**)
          1. Selecteer het frontend-IP-adres voor ASCS, back-endservers en de status test die u eerder hebt gemaakt (bijvoorbeeld front- **End. QAS. ASCS**, **back-end. QAS** en **status. QAS. ASCS**)
          1. **Ha-poorten** selecteren
-         1. Time-out voor inactiviteit tot 30 minuten verhogen
          1. **Zorg ervoor dat zwevend IP-adressen zijn ingeschakeld**
          1. Klik op OK
          * Herhaal de bovenstaande stappen om taakverdelings regels voor ERS te maken (bijvoorbeeld **lb. QAS. ERS**)

@@ -1,6 +1,6 @@
 ---
-title: Back-ups maken van VM-schijven op Azure Stack Edge Pro GPU-apparaat via Power shell
-description: Hierin wordt beschreven hoe u een back-up maakt van gegevens op virtuele-machine schijven die worden uitgevoerd op uw Azure Stack Edge Pro GPU-apparaat.
+title: Back-up maken van VM-schijven op Azure Stack Edge Pro GPU-apparaat via PowerShell
+description: Beschrijft hoe u een back-up maakt van gegevens op schijven van virtuele machines die worden uitgevoerd op Azure Stack Edge Pro GPU-apparaat.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,46 +8,46 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 04/12/2021
 ms.author: alkohli
-ms.openlocfilehash: ea860f58caba25ef3027fbf7bc4728355a7ca1bc
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: 5fad2a9e1789b98ac541e8a0d95c77131905544d
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/13/2021
-ms.locfileid: "107315438"
+ms.locfileid: "107364721"
 ---
-# <a name="back-up-vm-disks-on-azure-stack-edge-pro-gpu-via-azure-powershell"></a>Back-ups maken van VM-schijven op Azure Stack Edge Pro GPU via Azure PowerShell
+# <a name="back-up-vm-disks-on-azure-stack-edge-pro-gpu-via-azure-powershell"></a>Back-up maken van VM-schijven op Azure Stack Edge Pro GPU via Azure PowerShell
 
 [!INCLUDE [applies-to-GPU-and-pro-r-and-mini-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-mini-r-sku.md)]
 
-In dit artikel wordt beschreven hoe u back-ups maakt van virtuele machine schijven op Azure Stack Edge Pro GPU-apparaat met behulp van Azure PowerShell.
+In dit artikel wordt beschreven hoe u back-ups maakt van schijven van virtuele machines op Azure Stack Edge Pro GPU-apparaat met behulp van Azure PowerShell.
 
 > [!IMPORTANT]
-> Deze procedure is bedoeld om te worden gebruikt voor virtuele machines die worden gestopt. Als u back-ups wilt maken van actieve Vm's, raden we u aan een back-upprogramma van een derde partij te gebruiken.
+> Deze procedure is bedoeld om te worden gebruikt voor VM's die zijn gestopt. Als u back-ups wilt maken van VM's, raden we u aan een back-uphulpprogramma van derden te gebruiken.
 
 ## <a name="workflow"></a>Werkstroom
 
-In de volgende stappen wordt de werk stroom op hoog niveau samenvatten om een back-up te maken van een VM-schijf op uw apparaat:
+De volgende stappen geven een overzicht van de werkstroom op hoog niveau voor het maken van een back-up van een VM-schijf op uw apparaat:
 
 1. Stop de virtuele machine.
-1. Maak een moment opname van de VM-schijf.
-1. Kopieer de moment opname naar een lokaal opslag account als VHD.
+1. Maak een momentopname van de VM-schijf.
+1. Kopieer de momentopname als een VHD naar een lokaal opslagaccount.
 1. Upload de VHD naar een extern doel.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voordat u een back-up maakt van Vm's, moet u het volgende doen:
+Voordat u een back-up maakt van VM's, moet u ervoor zorgen dat:
 
 - U hebt toegang tot een client die u gebruikt om verbinding te maken met uw apparaat.
-    - De client voert een [ondersteund besturings systeem](azure-stack-edge-gpu-system-requirements.md#supported-os-for-clients-connected-to-device)uit.
-    - Uw client is geconfigureerd om verbinding te maken met de lokale Azure Resource Manager van uw apparaat volgens de instructies in [verbinding maken met Azure Resource Manager voor uw apparaat](azure-stack-edge-gpu-connect-resource-manager.md).
+    - Op uw client wordt een [ondersteund besturingssysteem uitgevoerd.](azure-stack-edge-gpu-system-requirements.md#supported-os-for-clients-connected-to-device)
+    - Uw client is geconfigureerd om verbinding te maken met de lokale Azure Resource Manager van uw apparaat volgens de instructies in Verbinding maken met Azure Resource Manager [voor uw apparaat.](azure-stack-edge-gpu-connect-resource-manager.md)
 
-## <a name="verify-connection-to-local-azure-resource-manager"></a>Verbinding met lokale Azure Resource Manager controleren
+## <a name="verify-connection-to-local-azure-resource-manager"></a>Controleer de verbinding met lokale Azure Resource Manager
 
 [!INCLUDE [azure-stack-edge-gateway-verify-azure-resource-manager-connection](../../includes/azure-stack-edge-gateway-verify-azure-resource-manager-connection.md)]
 
 ## <a name="back-up-a-vm-disk"></a>Een back-up maken van een VM-schijf
 
-1. Haal een lijst op met de virtuele machines die op uw apparaat worden uitgevoerd. Identificeer de virtuele machine die u wilt stoppen.
+1. Haal een lijst op van de VM's die op uw apparaat worden uitgevoerd. Identificeer de VM die u wilt stoppen.
 
     ```powershell
     Get-AzureRMVM
@@ -90,12 +90,12 @@ Voordat u een back-up maakt van Vm's, moet u het volgende doen:
     
     PS C:\Users\user>
     ```
-    U kunt de virtuele machine ook stoppen vanuit de Azure Portal.
+    U kunt de VM ook stoppen vanuit de Azure Portal.
  
 
-2. Maak een moment opname van de VM-schijf en sla de moment opname op in een lokale resource groep. U kunt deze procedure voor zowel besturings systeem-als gegevens schijven gebruiken.
+2. Maak een momentopname van de VM-schijf en sla de momentopname op in een lokale resourcegroep. U kunt deze procedure gebruiken voor zowel besturingssysteemschijven als gegevensschijven.
 
-   1. De lijst met schijven op het apparaat of in een specifieke resource groep ophalen. Noteer de naam van de schijf waarvan u een back-up wilt maken.
+   1. Haal de lijst met schijven op uw apparaat of in een specifieke resourcegroep op. Noteer de naam van de schijf waar u een back-up van wilt maken.
 
         ```powershell
         Get-AzureRMDisk -ResourceGroupName <Resource group name>
@@ -109,7 +109,7 @@ Voordat u een back-up maakt van Vm's, moet u het volgende doen:
         myasetestvm1_disk1_0ed91809927f4023b7aceb6eeca51c05
         PS C:\Users\user>
         ```
-   1. Maak een lokale resource groep die als doel moet fungeren voor de VM-moment opname.
+   1. Maak een lokale resourcegroep die dient als doel voor de VM-momentopname.
 
         ```powershell
         PS C:\Users\user> New-AzureRmResourceGroup -ResourceGroupName myaserg3 -Location dbelocal
@@ -123,7 +123,7 @@ Voordat u een back-up maakt van Vm's, moet u het volgende doen:
         PS C:\Users\user>
         ```
 
-   1. Stel een aantal para meters in.
+   1. Stel enkele parameters in.
 
       ```powershell
       $DiskResourceGroup = <Disk resource group>
@@ -132,14 +132,14 @@ Voordat u een back-up maakt van Vm's, moet u het volgende doen:
       $DestinationRG = <Snapshot destination resource group>
       ```
 
-   3. Stel de configuratie van de moment opname in en maak de moment opname.
+   3. Stel de configuratie van de momentopname in en maak de momentopname.
 
         ```powershell
         $Disk = Get-AzureRmDisk -ResourceGroupName $DiskResourceGroup -DiskName $DiskName
         $SnapshotConfig = New-AzureRmSnapshotConfig -SourceUri $Disk.Id -CreateOption Copy -Location 'dbelocal'
         $Snapshot = New-AzureRmSnapshot -Snapshot $SnapshotConfig -SnapshotName $SnapshotName -ResourceGroupName $DestinationRG
         ```
-        Controleer of de moment opname is gemaakt in de doel resource groep.
+        Controleer of de momentopname is gemaakt in de doelresourcegroep.
 
         ```powershell
         Get-AzureRMSnapshot -ResourceGroupName $DestinationRG
@@ -174,11 +174,11 @@ Voordat u een back-up maakt van Vm's, moet u het volgende doen:
         PS C:\Users\user>
         ```
 
-## <a name="copy-the-snapshot-into-a-local-storage-account"></a>De moment opname kopiëren naar een lokaal opslag account
+## <a name="copy-the-snapshot-into-a-local-storage-account"></a>De momentopname kopiëren naar een lokaal opslagaccount
 
-   Kopieer de moment opnamen naar een lokaal opslag account op het apparaat. 
+   Kopieer de momentopnamen naar een lokaal opslagaccount op uw apparaat. 
 
-1. Stel een aantal para meters in. 
+1. Stel enkele parameters in. 
 
     ```powershell
     $StorageAccountRG = <Local storage account resource group>
@@ -188,7 +188,7 @@ Voordat u een back-up maakt van Vm's, moet u het volgende doen:
     $DestFileName = <Blob file name> 
     ```
 
-1. Maak een lokaal opslag account op het apparaat. 
+1. Maak een lokaal opslagaccount op uw apparaat. 
 
     ```powershell
     New-AzureRmStorageAccount -Name <Storage account name> -ResourceGroupName <Storage account resource group> -Location DBELocal -SkuName Standard_LRS
@@ -205,7 +205,7 @@ Voordat u een back-up maakt van Vm's, moet u het volgende doen:
     PS C:\Users\user>
     ```
 
-1. Maak een container in het lokale opslag account dat u hebt gemaakt. 
+1. Maak een container in het lokale opslagaccount dat u hebt gemaakt. 
 
     ```powershell
     $keys = Get-AzureRmStorageAccountKey -ResourceGroupName $StorageAccountRG -Name $StorageAccountName
@@ -255,11 +255,11 @@ Voordat u een back-up maakt van Vm's, moet u het volgende doen:
     PS C:\Users\user>
     ```    
 
-    U kunt ook Azure Storage Explorer gebruiken om [een lokaal opslag account te maken](azure-stack-edge-gpu-deploy-virtual-machine-templates.md#create-a-storage-account) en vervolgens [een container in het lokale opslag account](azure-stack-edge-gpu-deploy-virtual-machine-templates.md#use-storage-explorer-for-upload) op uw apparaat te maken. 
+    U kunt ook Azure Storage Explorer [een](azure-stack-edge-gpu-deploy-virtual-machine-templates.md#create-a-storage-account) lokaal opslagaccount maken en vervolgens Een container maken in het lokale [opslagaccount](azure-stack-edge-gpu-deploy-virtual-machine-templates.md#use-storage-explorer-for-upload) op uw apparaat. 
 
 
 
-1. Down load de moment opname naar het lokale opslag account.
+1. Download de momentopname naar het lokale opslagaccount.
 
    ```powershell
    $sassnapshot = Grant-AzureRmSnapshotAccess -ResourceGroupName $DestinationRG -SnapshotName $SnapshotName -Access 'Read' -DurationInSecond 3600
@@ -305,18 +305,22 @@ Voordat u een back-up maakt van Vm's, moet u het volgende doen:
     PS C:\Users\user>
     ```
 
+    U kunt ook een Storage Explorer om te controleren of de momentopname correct is gekopieerd naar het opslagaccount.
+
+    ![Storage Explorer met de back-up in de container in het lokale opslagaccount](media/azure-stack-edge-gpu-back-up-virtual-machine-disks/back-up-virtual-machine-disk-1.png)
+
 ## <a name="download-vhd-to-external-target"></a>VHD downloaden naar extern doel
 
-Als u uw back-ups naar een externe locatie wilt verplaatsen, kunt u Azure Storage Explorer of AzCopy gebruiken.
+Als u uw back-ups naar een externe locatie wilt verplaatsen, kunt u Azure Storage Explorer of AzCopy.
 
-- Gebruik de volgende AzCopy-opdracht voor het downloaden van de VHD naar een extern doel.
+- Gebruik de volgende AzCopy-opdracht om VHD te downloaden naar een extern doel.
 
     ```powershell
     azcopy copy "https://<local storage account name>.blob.<device name>.<DNS domain>/<container name>/<filename><SAS query string>" <destination target>
     ```
 
-- Als u Azure Storage Explorer wilt instellen en gebruiken met Azure Stack Edge, raadpleegt u de instructies in [Storage Explorer gebruiken voor het uploaden](azure-stack-edge-gpu-deploy-virtual-machine-templates.md#use-storage-explorer-for-upload).
+- Zie de instructies in Use Storage Explorer for upload (Gebruik Storage Explorer voor uploaden) als u een Azure Storage Explorer met Azure Stack Edge [wilt instellen en gebruiken.](azure-stack-edge-gpu-deploy-virtual-machine-templates.md#use-storage-explorer-for-upload)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Implementeer virtuele machines op uw Azure stack Edge Pro GPU-apparaat met behulp van sjablonen](azure-stack-edge-gpu-deploy-virtual-machine-templates.md).
+[Implementeer virtuele machines op uw Azure Stack Edge Pro GPU-apparaat met behulp van sjablonen.](azure-stack-edge-gpu-deploy-virtual-machine-templates.md)

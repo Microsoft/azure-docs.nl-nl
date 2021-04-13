@@ -1,44 +1,40 @@
 ---
-title: Windows-MSIX-app voor het koppelen van preview Power shell-Azure
-description: MSIX-app-koppeling voor Windows Virtual Desktop instellen met behulp van Power shell.
+title: Windows Virtual Desktop MSIX-app koppelen PowerShell - Azure
+description: MsIX-app-attach instellen voor Windows Virtual Desktop behulp van PowerShell.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 12/14/2020
+ms.date: 04/13/2021
 ms.author: helohr
 manager: femila
-ms.openlocfilehash: 8b6bad32ec653fb2ba63c6940cf6a89a13a8afd0
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.openlocfilehash: f44cbf3764063c511c896f11bb7ebfaae2973f0c
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106448318"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107365396"
 ---
-# <a name="set-up-msix-app-attach-preview-using-powershell"></a>MSIX-app-koppeling instellen (preview) met behulp van Power shell
+# <a name="set-up-msix-app-attach-using-powershell"></a>MSIX-app-attach instellen met behulp van PowerShell
 
-> [!IMPORTANT]
-> MSIX app attach is momenteel beschikbaar als open bare preview.
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
-
-Naast de Azure Portal, kunt u ook hand matig MSIX-app-koppeling (preview) instellen met Power shell. In dit artikel wordt uitgelegd hoe u Power shell kunt gebruiken om MSIX-app attach in te stellen.
+Naast de Azure Portal kunt u de MSIX-app ook handmatig koppelen met PowerShell. In dit artikel wordt beschreven hoe u PowerShell gebruikt om een MSIX-app-attach in te stellen.
 
 ## <a name="requirements"></a>Vereisten
 
 >[!IMPORTANT]
->Voordat u aan de slag gaat, moet u ervoor zorgen dat [dit formulier](https://aka.ms/enablemsixappattach) wordt ingevuld en verzonden om de MSIX-app-koppeling in uw abonnement in te scha kelen. Als u geen goedgekeurde aanvraag hebt, werkt MSIX app attach niet. De goed keuring van aanvragen kan tot 24 uur duren tijdens kantoor dagen. U ontvangt een e-mail wanneer uw aanvraag is geaccepteerd en voltooid.
+>Voordat u aan de slag gaat, [](https://aka.ms/enablemsixappattach) moet u dit formulier invullen en verzenden om MSIX-app-koppelen in te kunnenschakelen in uw abonnement. Als u geen goedgekeurde aanvraag hebt, werkt het koppelen van de MSIX-app niet. Het goedkeuren van aanvragen kan tijdens werkdagen maximaal 24 uur duren. U ontvangt een e-mail wanneer uw aanvraag is geaccepteerd en voltooid.
 
-Dit is wat u nodig hebt om de MSIX-app-koppeling te configureren:
+Dit is wat u nodig hebt om een MSIX-app-attach te configureren:
 
-- Een werkende implementatie van virtueel bureau blad in Windows. Zie [een Tenant maken in Windows Virtual Desktop](./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md)voor meer informatie over het implementeren van Windows virtueel bureau blad (klassiek). Zie [een hostgroep maken met de Azure Portal](./create-host-pools-azure-marketplace.md)voor meer informatie over het implementeren van Windows virtueel bureau blad met Azure Resource Manager-integratie.
-- Een Windows-host voor virtuele Bureau bladen met ten minste één actieve sessiehost.
-- Deze hostgroep moet zich in de validatie omgeving bestaan.
-- Een extern bureau blad-app-groep.
-- Het MSIX-verpakkings programma.
-- Een MSIX-toepassing die is uitgepakt in een MSIX-installatie kopie die is geüpload naar een bestands share.
-- Een bestands share in uw Windows-implementatie voor virtueel bureau blad waar het MSIX-pakket wordt opgeslagen.
-- De bestands share waar u de MSIX-installatie kopie hebt geüpload, moet ook toegankelijk zijn voor alle virtuele machines (Vm's) in de hostgroep. Gebruikers hebben alleen-lezen-machtigingen nodig voor toegang tot de installatie kopie.
-- Down load en installeer Power shell core.
-- Down load de module open bare preview Azure PowerShell en breid deze uit naar een lokale map.
-- Installeer de Azure-module door de volgende cmdlet uit te voeren:
+- Een werkende Windows Virtual Desktop implementatie. Zie Een tenant maken in Windows Virtual Desktop voor meer informatie over het implementeren [Windows Virtual Desktop](./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md). Zie Een hostgroep maken met de Windows Virtual Desktop voor meer informatie over het implementeren van Azure Resource Manager met [Azure Portal.](./create-host-pools-azure-marketplace.md)
+- Een Windows Virtual Desktop hostgroep met ten minste één actieve sessiehost.
+- Deze hostgroep moet zich in de validatieomgeving.
+- Een externe bureaublad-app-groep.
+- Het MSIX-pakkethulpprogramma.
+- Een toepassing met MSIX-pakket uitgebreid naar een MSIX-afbeelding die wordt geüpload naar een bestands share.
+- Een bestands share in uw Windows Virtual Desktop implementatie waar het MSIX-pakket wordt opgeslagen.
+- De bestands share waar u de MSIX-afbeelding hebt geüpload, moet ook toegankelijk zijn voor alle virtuele machines (VM's) in de hostgroep. Gebruikers hebben alleen-lezenmachtigingen nodig voor toegang tot de afbeelding.
+- Download en installeer PowerShell Core.
+- Download de openbare preview Azure PowerShell module en vouw deze uit naar een lokale map.
+- Installeer de Azure-module door de volgende cmdlet uit te uitvoeren:
 
     ```powershell
     Install-Module -Name Az -Force
@@ -46,54 +42,54 @@ Dit is wat u nodig hebt om de MSIX-app-koppeling te configureren:
 
 ## <a name="sign-in-to-azure-and-import-the-module"></a>Meld u aan bij Azure en importeer de module
 
-Zodra u klaar bent met de vereisten, opent u Power shell core in een opdracht prompt met verhoogde bevoegdheid en voert u deze cmdlet uit:
+Zodra u alle vereisten gereed hebt, opent u PowerShell Core in een opdrachtprompt met verhoogde bevoegdheid en voer u deze cmdlet uit:
 
 ```powershell
 Connect-AzAccount
 ```
 
-Nadat u het hebt uitgevoerd, verifieert u uw account met behulp van uw referenties. In dit geval wordt u mogelijk gevraagd om een apparaat-URL of een token.
+Nadat u het hebt uitgevoerd, verifieert u uw account met uw referenties. In dit geval wordt u mogelijk gevraagd om een apparaat-URL of een token.
 
-## <a name="import-the-azwindowsvirtualdesktop-module"></a>De module AZ. WindowsVirtualDesktop importeren
+## <a name="import-the-azwindowsvirtualdesktop-module"></a>De Az.WindowsVirtualDesktop-module importeren
 
-U hebt de module AZ. DesktopVirtualization nodig om de instructies in dit artikel te volgen.
+U hebt de module Az.DesktopVirtualization nodig om de instructies in dit artikel te volgen.
 
 >[!NOTE]
->Voor de open bare preview geven we de module op als afzonderlijke ZIP-bestanden die hand matig moeten worden geïmporteerd.
+>Voor de openbare preview bieden we de module als afzonderlijke ZIP-bestanden die u handmatig moet importeren.
 
-Voordat u begint, kunt u de volgende cmdlet uitvoeren om te zien of de module AZ. DesktopVirtualization al is geïnstalleerd in uw sessie of virtuele machine:
+Voordat u begint, kunt u de volgende cmdlet uitvoeren om te zien of de module Az.DesktopVirtualization al is geïnstalleerd op uw sessie of VM:
 
 ```powershell
 Get-Module | Where-Object { $_.Name -Like "desktopvirtualization" }
 ```
 
-Als u een bestaand exemplaar van de module wilt verwijderen en opnieuw wilt starten, voert u de volgende cmdlet uit:
+Als u een bestaande kopie van de module wilt verwijderen en opnieuw wilt beginnen, moet u deze cmdlet uitvoeren:
 
 ```powershell
 Uninstall-Module Az.DesktopVirtualization
 ```
 
-Als de module is geblokkeerd op uw virtuele machine, voert u deze cmdlet uit om deze uit te blok keren:
+Als de module is geblokkeerd op uw VM, moet u deze cmdlet uitvoeren om de blokkering op te opheffen:
 
 ```powershell
 Unblock-File "<path>\Az.DesktopVirtualization.psm1"
 ```
 
-Met deze opschoning uit de weg is het tijd om de module te importeren.
+Nu het opschonen is uit de weg, is het tijd om de module te importeren.
 
-1. Voer de volgende cmdlet uit en druk op de **R** -toets wanneer u wordt gevraagd om de aangepaste code uit te voeren.
+1. Voer de volgende cmdlet uit en druk op **R** wanneer u wordt gevraagd om akkoord te gaan met het uitvoeren van de aangepaste code.
 
    ```powershell
    Import-Module -Name "<path>\Az.DesktopVirtualization.psm1" -Verbose
    ```
 
-2. Nadat u de cmdlet Import hebt uitgevoerd, controleert u of deze de cmdlets voor MSIX bevat door de volgende cmdlet uit te voeren:
+2. Nadat u de import-cmdlet hebt uitgevoerd, controleert u of deze de cmdlets voor MSIX heeft door de volgende cmdlet uit te voeren:
 
    ```powershell
    Get-Command -Module Az.DesktopVirtualization | Where-Object { $_.Name -match "MSIX" }
    ```
 
-   Als de cmdlets aanwezig zijn, ziet de uitvoer er als volgt uit:
+   Als de cmdlets er zijn, moet de uitvoer er als volgende uitzien:
 
    ```powershell
    CommandType     Name                                               Version    Source
@@ -111,31 +107,31 @@ Met deze opschoning uit de weg is het tijd om de module te importeren.
    Function        Update-AzWvdMsixPackage                            0.0        Az.DesktopVirtualization
    ```
 
-   Als deze uitvoer niet wordt weer gegeven, sluit u alle Power shell-en Power shell-kern sessies en probeert u het opnieuw.
+   Als u deze uitvoer niet ziet, sluit u alle PowerShell en PowerShell Core en probeert u het opnieuw.
 
-## <a name="set-up-helper-variables"></a>Hulp variabelen instellen
+## <a name="set-up-helper-variables"></a>Helpervariabelen instellen
 
-Wanneer u de module hebt geïmporteerd, moet u de hulp variabelen instellen. In de volgende voor beelden ziet u hoe u deze kunt doen.
+Nadat u de module hebt geïmporteerd, moet u de helpervariabelen instellen. In de volgende voorbeelden ziet u hoe u elk voorbeeld kunt doen.
 
-Uw abonnements-ID ophalen:
+Ga als volgende te werk om uw abonnements-id op te halen:
 
 ```powershell
 Get-AzContext -ListAvailable | fl
 ```
 
-De context van een Azure-Tenant en-abonnement met een naam selecteren:
+De context van een Azure-tenant en -abonnement met een naam selecteren:
 
 ```powershell
 $obj = Select-AzContext -Name "<Name>"
 ```
 
-De abonnements variabele instellen:
+De abonnementsvariabele instellen:
 
 ```powershell
 $subId = $obj.Subscription.Id
 ```
 
-De naam van de werk ruimte instellen:
+De naam van de werkruimte instellen:
 
 ```powershell
 $ws = "<WorksSpaceName>"
@@ -147,13 +143,13 @@ De naam van de hostgroep instellen:
 $hp = "<HostPoolName>"
 ```
 
-De resource groep instellen waar de host-Vm's voor de sessiehost worden geconfigureerd:
+De resourcegroep instellen waarin de sessiehost-VM's zijn geconfigureerd:
 
 ```powershell
 $rg = "<ResourceGroupName>"
 ```
 
-En ten slotte, om te bevestigen dat u alle variabelen juist hebt ingesteld:
+En ten slotte, om te bevestigen dat u alle variabelen correct hebt ingesteld:
 
 ```powershell
 Get-AzWvdWorkspace -Name $ws -ResourceGroupName $rg -SubscriptionId $subID
@@ -161,9 +157,9 @@ Get-AzWvdWorkspace -Name $ws -ResourceGroupName $rg -SubscriptionId $subID
 
 ## <a name="add-an-msix-package-to-a-host-pool"></a>Een MSIX-pakket toevoegen aan een hostgroep
 
-Zodra u alles hebt ingesteld, is het tijd om het MSIX-pakket toe te voegen aan een hostgroep. Hiervoor moet u eerst het UNC-pad naar de MSIX-installatie kopie ophalen.
+Zodra u alles hebt ingesteld, is het tijd om het MSIX-pakket toe te voegen aan een hostgroep. Als u dit wilt doen, moet u eerst het UNC-pad naar de MSIX-afbeelding krijgen.
 
-Voer met behulp van het UNC-pad deze cmdlet uit om de MSIX-installatie kopie uit te vouwen:
+Voer met behulp van het UNC-pad deze cmdlet uit om de MSIX-afbeelding uit te vouwen:
 
 ```powershell
 $obj = Expand-AzWvdMsixImage -HostPoolName $hp -ResourceGroupName $rg -SubscriptionId $subID -Uri <UNCPath>
@@ -175,29 +171,29 @@ Voer deze cmdlet uit om het MSIX-pakket toe te voegen aan de gewenste hostgroep:
 New-AzWvdMsixPackage -HostPoolName $hp -ResourceGroupName $rg -SubscriptionId $subId -PackageAlias $obj.PackageAlias -DisplayName <DisplayName> -ImagePath <UNCPath> -IsActive:$true
 ```
 
-Wanneer u klaar bent, controleert u of het pakket is gemaakt met deze cmdlet:
+Als u klaar bent, controleert u of het pakket is gemaakt met deze cmdlet:
 
 ```powershell
 Get-AzWvdMsixPackage -HostPoolName $hp -ResourceGroupName $rg -SubscriptionId $subId | Where-Object {$_.PackageFamilyName -eq $obj.PackageFamilyName}
 ```
 
-## <a name="remove-an-msix-package-from-a-host-pool"></a>Een MSIX-pakket verwijderen uit een hostgroep
+## <a name="remove-an-msix-package-from-a-host-pool"></a>Een MSIX-pakket uit een hostgroep verwijderen
 
-Een pakket verwijderen uit een hostgroep:
+Een pakket uit een hostgroep verwijderen:
 
-Haal een lijst op met alle pakketten die aan een hostgroep zijn gekoppeld met deze cmdlet en zoek vervolgens de naam van het pakket dat u wilt verwijderen in de uitvoer:
+Haal een lijst op met alle pakketten die zijn gekoppeld aan een hostgroep met deze cmdlet en zoek vervolgens de naam van het pakket dat u wilt verwijderen in de uitvoer:
 
 ```powershell
 Get-AzWvdMsixPackage -HostPoolName $hp -ResourceGroupName $rg -SubscriptionId $subId 
 ```
 
-U kunt ook een bepaald pakket ophalen op basis van de weergave naam met deze cmdlet:
+U kunt ook een bepaald pakket krijgen op basis van de weergavenaam met deze cmdlet:
 
 ```powershell
 Get-AzWvdMsixPackage -HostPoolName $hp -ResourceGroupName $rg -SubscriptionId $subId | Where-Object { $_.Name -like "Power" }
 ```
 
-Als u het pakket wilt verwijderen, voert u deze cmdlet uit:
+Voer deze cmdlet uit om het pakket te verwijderen:
 
 ```powershell
 Remove-AzWvdMsixPackage -FullName $obj.PackageFullName -HostPoolName $hp -ResourceGroupName $rg
@@ -205,19 +201,19 @@ Remove-AzWvdMsixPackage -FullName $obj.PackageFullName -HostPoolName $hp -Resour
 
 ## <a name="publish-msix-apps-to-an-app-group"></a>MSIX-apps publiceren naar een app-groep
 
-U kunt de instructies in deze sectie alleen volgen als u klaar bent met het volgen van de instructies in de vorige secties. Als u een hostgroep hebt met een actieve sessiehost, ten minste één bureau blad-app-groep en u een MSIX-pakket aan de hostgroep hebt toegevoegd, bent u klaar om te gaan.
+U kunt de instructies in deze sectie alleen volgen als u klaar bent met het volgen van de instructies in de vorige secties. Als u een hostgroep hebt met een actieve sessiehost, ten minste één bureaublad-app-groep en een MSIX-pakket aan de hostgroep hebt toegevoegd, bent u klaar om te gaan.
 
-Als u een app uit het MSIX-pakket naar een app-groep wilt publiceren, moet u de naam ervan vinden en vervolgens die naam gebruiken in de cmdlet voor publiceren.
+Als u een app vanuit het MSIX-pakket wilt publiceren naar een app-groep, moet u de naam ervan vinden en die naam vervolgens gebruiken in de publicatie-cmdlet.
 
 Een app publiceren:
 
-Voer deze cmdlet uit om alle beschik bare app-groepen weer te geven:
+Voer deze cmdlet uit om alle beschikbare app-groepen weer te maken:
 
 ```powershell
 Get-AzWvdApplicationGroup -ResourceGroupName $rg -SubscriptionId $subId
 ```
 
-Wanneer u de naam van de app-groep die u wilt publiceren apps hebt gevonden, gebruikt u de naam in deze cmdlet:
+Wanneer u de naam hebt gevonden van de app-groep waarin u apps wilt publiceren, gebruikt u de naam ervan in deze cmdlet:
 
 ```powershell
 $grName = "<AppGroupName>"
@@ -225,28 +221,28 @@ $grName = "<AppGroupName>"
 
 Ten slotte moet u de app publiceren.
 
-- Als u een MSIX-toepassing wilt publiceren in een desktop-app-groep, voert u deze cmdlet uit:
+- Als u de MSIX-toepassing wilt publiceren naar een bureaublad-app-groep, moet u deze cmdlet uitvoeren:
 
    ```powershell
    New-AzWvdApplication -ResourceGroupName $rg -SubscriptionId $subId -Name PowerBi -ApplicationType MsixApplication -ApplicationGroupName $grName -MsixPackageFamilyName $obj.PackageFamilyName -CommandLineSetting 0
    ```
 
-- Als u de app wilt publiceren naar een externe app-groep, voert u de volgende cmdlet uit:
+- Als u de app wilt publiceren naar een externe app-groep, moet u in plaats daarvan deze cmdlet uitvoeren:
 
    ```powershell
    New-AzWvdApplication -ResourceGroupName $rg -SubscriptionId $subId -Name PowerBi -ApplicationType MsixApplication -ApplicationGroupName $grName -MsixPackageFamilyName $obj.PackageFamilyName -CommandLineSetting 0 -MsixPackageApplicationId $obj.PackageApplication.AppId
    ```
 
 >[!NOTE]
->Als een gebruiker wordt toegewezen aan zowel een externe app-groep als een bureau blad-app in dezelfde hostgroep en de gebruiker verbinding maakt met hun externe bureau blad, worden er MSIX apps uit beide groepen weer geven.
+>Als een gebruiker is toegewezen aan zowel een externe app-groep als een bureaublad-app-groep in dezelfde hostgroep, zien gebruikers msix-apps van beide groepen wanneer ze verbinding maken met hun externe bureaublad.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Vraag onze vragen van de community over deze functie op het [virtuele bureau blad-TechCommunity van Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop).
+Stel onze communityvragen over deze functie op de [Windows Virtual Desktop TechCommunity.](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop)
 
-U kunt ook feedback geven voor Windows virtueel bureau blad op de [Windows Virtual Desktop feedback hub](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app).
+U kunt ook feedback geven voor Windows Virtual Desktop in Windows Virtual Desktop [feedbackhub.](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)
 
-Hier volgen enkele andere artikelen die u mogelijk handig vindt:
+Hier zijn enkele andere artikelen die mogelijk nuttig zijn:
 
-- [Woorden lijst voor het toevoegen van MSIX-apps](app-attach-glossary.md)
+- [Verklarende woordenlijst voor het koppelen van MSIX-apps](app-attach-glossary.md)
 - [Veelgestelde vragen over het koppelen van MSIX-apps](app-attach-faq.md)

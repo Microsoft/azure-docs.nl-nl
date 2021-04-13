@@ -1,7 +1,7 @@
 ---
-title: Overzicht van Azure Communication Services Calling SDK
+title: Azure Communication Services Calling SDK overview (Overzicht van Azure Communication Services Calling SDK)
 titleSuffix: An Azure Communication Services concept document
-description: Biedt een overzicht van de aanroepende SDK.
+description: Biedt een overzicht van de SDK voor oproepen.
 author: mikben
 manager: jken
 services: azure-communication-services
@@ -9,31 +9,31 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: ac9cef77569dffe461f7711195c5638e831aa218
-ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
+ms.openlocfilehash: 28072184d47beb32dc03e0d6ba52328bfceb5b73
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106110101"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107364869"
 ---
-# <a name="calling-sdk-overview"></a>Overzicht van de SDK
+# <a name="calling-sdk-overview"></a>Overzicht van het aanroepen van de SDK
 
-Met de aanroepende SDK kunnen eindgebruikers apparaten spraak-en video communicatie-ervaring bieden. Deze pagina bevat gedetailleerde beschrijvingen van aanroepende functies, waaronder informatie over platform-en browser ondersteuning. Als u meteen aan de slag wilt gaan, raadpleegt u het [oproepen van Quick](../../quickstarts/voice-video-calling/getting-started-with-calling.md) starts of het [aanroepen](../../samples/calling-hero-sample.md)van een voor beeld. 
+Met de SDK voor oproepen kunnen apparaten van eindgebruikers spraak- en videocommunicatie aanroepen. Deze pagina bevat gedetailleerde beschrijvingen van aanroepfuncties, waaronder informatie over platform- en browserondersteuning. Bekijk [Quickstarts](../../quickstarts/voice-video-calling/getting-started-with-calling.md) aanroepen of Hero-voorbeeld [aanroepen](../../samples/calling-hero-sample.md)om meteen aan de slag te gaan. 
 
-Wanneer u de ontwikkeling hebt gestart, raadpleegt u de [pagina bekende problemen](../known-issues.md) om fouten te vinden waaraan we werken.
+Zodra u de ontwikkeling hebt gestart, bekijkt u de [pagina met](../known-issues.md) bekende problemen om te zoeken naar fouten waar we aan werken.
 
-Belangrijkste functies van de aanroepende SDK:
+Belangrijkste functies van de aanroepen van SDK:
 
-- **Adresseren** : Azure Communication Services biedt algemene [identiteiten](../identity-model.md) die worden gebruikt voor communicatie-eind punten. Clients gebruiken deze identiteiten om te verifiëren bij de service en met elkaar te communiceren. Deze identiteiten worden gebruikt bij het aanroepen van Api's die clients inzicht bieden in de gebruikers die zijn verbonden met een aanroep (het schema).
-- **Versleuteling** : de aanroepende SDK versleutelt het verkeer en voor komt manipulatie van de bedrading. 
-- **Apparaatbeheer en media** : de aanroepende SDK biedt voorzieningen voor het binden van audio-en video apparaten, codeert inhoud voor efficiënte verzen ding via de communicatie dataplane en rendert inhoud naar uitvoer apparaten en weer gaven die u opgeeft. Er zijn ook Api's voor het delen van schermen en toepassingen.
-- **PSTN** : de aanroepende SDK kan spraak oproepen ontvangen en initiëren met het traditionele, open bare telefoon systeem met [telefoon nummers dat u in de Azure Portal](../../quickstarts/telephony-sms/get-phone-number.md) of via een programma hebt aangeschaft.
-- **Teams vergaderingen** : de aanroepende SDK kan samen werken met [teams vergaderingen](../../quickstarts/voice-video-calling/get-started-teams-interop.md) en interactie met de spraak-en video dataplane van teams. 
-- **Meldingen** : de aanroepende SDK biedt api's waarmee clients op de hoogte moeten worden gebracht van een inkomende oproep. In situaties waarin uw app niet op de voor grond wordt uitgevoerd, zijn er patronen beschikbaar voor het [starten van pop-upmeldingen](../notifications.md) (pop-upmeldingen) om eind gebruikers van een inkomende oproep te informeren. 
+- **Adressering:** Azure Communication Services biedt algemene [identiteiten die](../identity-model.md) worden gebruikt om communicatie-eindpunten aan te pakken. Clients gebruiken deze identiteiten om te verifiëren bij de service en om met elkaar te communiceren. Deze identiteiten worden gebruikt in het aanroepen van API's die clients inzicht geven in wie is verbonden met een oproep (het rooster).
+- **Versleuteling:** de aanroepende SDK versleutelt verkeer en voorkomt manipulatie op de kabel. 
+- **Apparaatbeheer** en media: de aanroepende SDK biedt mogelijkheden voor het verbinden met audio- en videoapparaten, codeert inhoud voor efficiënte verzending via het communicatiegegevensplane en geeft inhoud weer naar uitvoerapparaten en weergaven die u opgeeft. ER zijn ook API's beschikbaar voor het delen van schermen en toepassingen.
+- **PSTN:** de SDK voor oproepen kan spraakoproepen ontvangen en [](../../quickstarts/telephony-sms/get-phone-number.md) initiëren met het traditionele openbaar geschakelde telefoonsysteem, met behulp van telefoonnummers die u in de Azure Portal of programmatisch hebt verkregen.
+- **Teams-vergaderingen:** de aanroepende SDK kan deelnemen aan [Teams-vergaderingen](../../quickstarts/voice-video-calling/get-started-teams-interop.md) en communiceren met het dataplan teams voor spraak en video. 
+- **Meldingen:** de aanroep-SDK biedt API's waarmee clients op de hoogte kunnen worden gesteld van een binnenkomende aanroep. In situaties waarin uw app niet op de voorgrond wordt uitgevoerd, zijn patronen beschikbaar om [pop-upmeldingen ('pop-upmeldingen')](../notifications.md) te geven om eindgebruikers te informeren over een binnenkomende oproep. 
 
 ## <a name="detailed-capabilities"></a>Gedetailleerde mogelijkheden 
 
-De volgende lijst bevat de set functies die momenteel beschikbaar zijn in de Azure Communication Services die Sdk's aanroepen.
+De volgende lijst bevat de set functies die momenteel beschikbaar zijn in de Azure Communication Services aanroepen van SDK's.
 
 | Groep van functies | Mogelijkheid                                                                                                          | JS  | Java (Android) | Objective-C (iOS)
 | ----------------- | ------------------------------------------------------------------------------------------------------------------- | ---  | -------------- | -------------
@@ -42,7 +42,7 @@ De volgende lijst bevat de set functies die momenteel beschikbaar zijn in de Azu
 |                   | Een een-op-een-oproep promoten met twee gebruikers in een groepsaanroep met meer dan twee gebruikers                                 | ✔️   | ✔️            | ✔️
 |                   | Een groepsoproep toevoegen nadat deze is gestart                                                                              | ✔️   | ✔️            | ✔️
 |                   | Een andere VoIP-deelnemer uitnodigen om deel te nemen aan een actieve groepsoproep                                                       | ✔️   | ✔️            | ✔️
-|  Mid Call Control | Video in- of uitschakelen                                                                                              | ✔️   | ✔️            | ✔️
+|  Besturingselement voor aanroepen halverwege | Video in- of uitschakelen                                                                                              | ✔️   | ✔️            | ✔️
 |                   | Microfoon dempen/dempen opheffen                                                                                                     | ✔️   | ✔️            | ✔️
 |                   | Schakelen tussen camera's                                                                                              | ✔️   | ✔️            | ✔️
 |                   | Lokaal vasthouden/opheffen                                                                                                  | ✔️   | ✔️            | ✔️
@@ -65,60 +65,60 @@ De volgende lijst bevat de set functies die momenteel beschikbaar zijn in de Azu
 |                   | Inbellen vanuit een groepsaanroep als een PSTN-deelnemer                                                                    | ✔️   | ✔️            | ✔️
 | Algemeen           | Uw microfoon, spreker en camera testen met een service voor audio testen (beschikbaar door het aanroepen van 8:echo123)                   | ✔️   | ✔️            | ✔️
 | Apparaatbeheer | Vragen om toestemming voor het gebruik van audio en/of video                                                                       | ✔️   | ✔️            | ✔️
-|                   | Camera lijst ophalen                                                                                                     | ✔️   | ✔️            | ✔️
+|                   | Cameralijst op halen                                                                                                     | ✔️   | ✔️            | ✔️
 |                   | Camera instellen                                                                                                          | ✔️   | ✔️            | ✔️
-|                   | Geselecteerde camera ophalen                                                                                                 | ✔️   | ✔️            | ✔️
-|                   | Microfoon lijst ophalen                                                                                                 | ✔️   | ✔️            | ✔️
-|                   | Microfoon instellen                                                                                                      | ✔️   | ✔️            | ✔️
-|                   | Geselecteerde microfoon ophalen                                                                                             | ✔️   | ✔️            | ✔️
-|                   | Lijst met luid sprekers ophalen                                                                                                   | ✔️   | ✔️            | ✔️
-|                   | Spreker instellen                                                                                                         | ✔️   | ✔️            | ✔️
-|                   | Geselecteerde spreker ophalen                                                                                                | ✔️   | ✔️            | ✔️
-| Video weergave   | Eén video op veel plaatsen weer geven (lokale camera of externe stroom)                                                  | ✔️   | ✔️            | ✔️
-|                   | Schaal modus instellen/bijwerken                                                                                           | ✔️   | ✔️            | ✔️
-|                   | Externe video stroom weer geven                                                                                          | ✔️   | ✔️            | ✔️
+|                   | Geselecteerde camera selecteren                                                                                                 | ✔️   | ✔️            | ✔️
+|                   | Microfoonlijst op halen                                                                                                 | ✔️   | ❌           |❌  
+|                   | Microfoon instellen                                                                                                      | ✔️   | ❌           | ❌  
+|                   | Geselecteerde microfoon selecteren                                                                                             | ✔️   | ❌           | ❌  
+|                   | Lijst met sprekers op halen                                                                                                   | ✔️   | ❌           | ❌  
+|                   | Spreker instellen                                                                                                         | ✔️   | ❌           | ❌  
+|                   | Geselecteerde spreker krijgen                                                                                                | ✔️   | ❌           | ❌  
+| Videorendering   | Eén video op veel plaatsen renderen (lokale camera of externe stream)                                                  | ✔️   | ✔️            | ✔️
+|                   | Schaalmodus instellen/bijwerken                                                                                           | ✔️   | ✔️            | ✔️
+|                   | Externe videostream renderen                                                                                          | ✔️   | ✔️            | ✔️
 
 ## <a name="calling-sdk-streaming-support"></a>Ondersteuning voor SDK-streaming aanroepen
-De communicatie services die SDK aanroept, ondersteunt de volgende streaming-configuraties:
+De Communication Services Calling SDK ondersteunt de volgende streamingconfiguraties:
 
 | Limiet          |Web | Android/iOS|
 |-----------|----|------------|
 |**Aantal uitgaande streams dat tegelijkertijd kan worden verzonden** |1 video of 1 scherm delen | 1 video + 1 scherm delen|
 |**Aantal binnenkomende streams dat tegelijkertijd kan worden weergegeven** |1 video of 1 scherm delen| 6 video + 1 scherm delen |
 
-## <a name="calling-sdk-timeouts"></a>SDK-time-outs aanroepen
+## <a name="calling-sdk-timeouts"></a>Time-outs van SDK aanroepen
 
-De volgende time-outs zijn van toepassing op de communicatie services die Sdk's aanroepen:
+De volgende time-outs zijn van toepassing op de Communication Services aanroepen van SDK's:
 
 | Bewerking           | Time-out in seconden |
 | -------------- | ---------- |
-| Deel nemer opnieuw verbinden/verwijderen | 120 |
-| Een nieuwe modale functie toevoegen aan of verwijderen uit een oproep (video starten/stoppen of scherm delen) | 40 |
-| Time-out voor overdracht van oproep | 60 |
-| time-out voor aanleg van 1:1-aanroepen | 85 |
-| Time-out voor groeperen van groeps aanroepen | 85 |
-| Time-out voor PSTN-aanroepen | 115 |
-| 1:1-aanroep promo veren naar een time-out voor groeps aanroepen | 115 |
+| Deelnemer opnieuw verbinden/verwijderen | 120 |
+| Nieuwe modaliteit toevoegen aan of verwijderen uit een aanroep (video starten/stoppen of scherm delen) | 40 |
+| Time-out van bewerking voor aanroepoverdracht | 60 |
+| 1:1 Time-out van instelling aanroepen | 85 |
+| Time-out van instelling groepsoproep | 85 |
+| Time-out van instelling van PSTN-aanroep | 115 |
+| 1:1-aanroep naar een time-out voor groepsoproepen promoveren | 115 |
 
-## <a name="javascript-calling-sdk-support-by-os-and-browser"></a>Java script aanroepen van SDK-ondersteuning door besturings systeem en browser
+## <a name="javascript-calling-sdk-support-by-os-and-browser"></a>Ondersteuning voor JavaScript Calling SDK per besturingssysteem en browser
 
-De volgende tabel bevat de set ondersteunde browsers die momenteel beschikbaar zijn. De meest recente drie versies van de browser worden ondersteund, tenzij anders aangegeven.
+De volgende tabel vertegenwoordigt de set ondersteunde browsers die momenteel beschikbaar zijn. We ondersteunen de meest recente drie versies van de browser, tenzij anders aangegeven.
 
-| Platform                         | Chrome | Safari  | Rand (chroom) |
+| Platform                         | Chrome | Safari*  | Edge (Chromium) |
 | -------------------------------- | -------| ------  | --------------  |
 | Android                          |  ✔️    | ❌     | ❌             |
 | iOS                              |  ❌    | ✔️**** | ❌             |
-| macOS * * *                         |  ✔️    | ✔️**   | ❌             |
-| Windows * * *                       |  ✔️    | ❌     | ✔️             |
+| macOS***                         |  ✔️    | ✔️**   | ❌             |
+| Windows***                       |  ✔️    | ❌     | ✔️             |
 | Ubuntu/Linux                     |  ✔️    | ❌     | ❌             |
 
-* Safari-versies 13.1 + worden ondersteund, 1:1-aanroepen worden niet ondersteund in Safari.
+*Safari-versies 13.1+ worden ondersteund, 1:1-aanroepen worden niet ondersteund in Safari.
 
-* * Safari 14 +/macOS 11 + vereist voor ondersteuning van uitgaande video.
+**Safari 14+/macOS 11+ nodig voor uitgaande videoondersteuning.
 
-Het delen van een uitgaand scherm wordt alleen ondersteund op Desktop platforms (Windows, macOS en Linux), ongeacht de browser versie, en wordt niet ondersteund op een mobiel platform (Android, iOS, iPad en tablets).
+Het delen van uitgaande schermen wordt alleen ondersteund op desktopplatforms (Windows, macOS en Linux), ongeacht de browserversie en wordt niet ondersteund op een mobiel platform (Android, iOS, iPad en tablets).
 
-Een iOS-app in Safari kan Mic-en luidspreker apparaten (bijvoorbeeld Bluetooth) niet inventariseren/selecteren. Dit is een beperking van het besturings systeem en er is altijd maar één apparaat.
+Een iOS-app in Safari kan microfoon- en sprekerapparaten (bijvoorbeeld Bluetooth) niet opsnoemen/selecteren; Dit is een beperking van het besturingssysteem en er is altijd slechts één apparaat.
 
 
 ## <a name="calling-client---browser-security-model"></a>Aanroepende client - beveiligingsmodel voor browsers

@@ -3,17 +3,17 @@ title: 'ML Studio (klassiek): migreren naar Azure Machine Learning-opnieuw samen
 description: Studio-webservices als pijplijn eindpunten opnieuw samen stellen in Azure Machine Learning
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 author: xiaoharper
 ms.author: zhanxia
 ms.date: 03/08/2021
-ms.openlocfilehash: 5e467d22cc3230bd9945fb276dc16cf1fa765bb6
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 35ee5bf22aa88c18bade0ebdcd961b7687d24e7f
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103565005"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107311818"
 ---
 # <a name="rebuild-a-studio-classic-web-service-in-azure-machine-learning"></a>Een studio-webservice (klassiek) opnieuw bouwen in Azure Machine Learning
 

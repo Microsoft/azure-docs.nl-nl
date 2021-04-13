@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/08/2021
 ms.author: amverma
 ms.reviewer: jushiman
-ms.openlocfilehash: 6978c8588b877c065a78bfd6e99a01f9f75066f3
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 25f0933c2d0b8b3c8ec227ce52c974a50a671043
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104800853"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107309727"
 ---
 # <a name="hbv2-series"></a>HBv2-serie
 
@@ -23,6 +23,7 @@ HBv2-serie Vm's functie 200 GB/sec Mellanox HDR InfiniBand. Deze Vm's zijn verbo
 
 [Premium Storage](premium-storage-performance.md): ondersteund<br>
 [Premium Storage caching](premium-storage-performance.md): ondersteund<br>
+[Ultra schijven](disks-types.md#ultra-disk): ondersteund ([meer informatie](https://techcommunity.microsoft.com/t5/azure-compute/ultra-disk-storage-for-hpc-and-gpu-vms/ba-p/2189312) over beschik baarheid, gebruik en prestaties) <br>
 [Livemigratie](maintenance-and-updates.md): niet ondersteund<br>
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>

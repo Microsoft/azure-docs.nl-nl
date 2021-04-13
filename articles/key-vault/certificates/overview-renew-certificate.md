@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: overview
 ms.date: 07/20/2020
 ms.author: sebansal
-ms.openlocfilehash: ffa130c0598d2405469d272a3ac6852f281ed965
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 0492575bef93a1b08d48475c3ab32ecbc7becd6e
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105726359"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107364291"
 ---
 # <a name="renew-your-azure-key-vault-certificates"></a>Azure Key Vault-certificaten verlengen
 
@@ -74,15 +74,15 @@ Azure Key Vault verwerkt ook het automatisch verlengen van zelfondertekende cert
 
 ## <a name="troubleshoot"></a>Problemen oplossen
 * Als het uitgegeven certificaat in Azure Portal de status *uitgeschakeld* heeft, gaat u naar **Certificaatbewerking** om het foutbericht voor dat certificaat te bekijken.
-* Fout type ' de CSR die is gebruikt om het certificaat op te halen, is al gebruikt. Maak een nieuw certificaat met een nieuwe CSR.
-  Ga naar de sectie Geavanceerd beleid van het certificaat en controleer of de optie **sleutel opnieuw gebruiken bij vernieuwen** is uitgeschakeld.
+* Fouttype 'De CSR die wordt gebruikt om uw certificaat op te halen, is al gebruikt. Probeer een nieuw certificaat te genereren met een nieuwe CSR.
+  Ga naar de sectie Geavanceerd beleid van het certificaat en controleer of de optie **Sleutel** opnieuw gebruiken bij verlenging is uitgeschakeld.
 
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
 
 **Hoe kan ik de functie voor het automatisch roteren van het certificaat testen?**
 
-Maak een certificaat met een geldigheidsduur van **1 maand** en stel vervolgens de levensduuractie voor rotatie in op **1%** . Met deze instelling wordt het certificaat elke 7,2 uur geroteerd.
+Maak een zelf-ondertekend certificaat met een geldigheidsduur van **1** maand en stel vervolgens de levensduuractie voor rotatie in op **1%**. Als het goed is, kunt u de geschiedenis van de certificaatversie bekijken die de komende dagen wordt gemaakt.
   
 **Worden de labels gerepliceerd als het certificaat automatisch is verlengd?**
 

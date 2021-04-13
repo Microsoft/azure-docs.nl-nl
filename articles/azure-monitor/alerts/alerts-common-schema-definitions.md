@@ -3,13 +3,13 @@ title: Schema definities voor waarschuwingen in Azure Monitor
 description: Informatie over de algemene schema definities voor waarschuwingen voor Azure Monitor
 author: ofirmanor
 ms.topic: conceptual
-ms.date: 09/22/2020
-ms.openlocfilehash: 709ec2dee1be6930ca7c09de334aede8a76e95f4
-ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
+ms.date: 04/12/2021
+ms.openlocfilehash: 5ec2adc4594c71f640b027d799b0a3c133ca2333
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106491709"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107308656"
 ---
 # <a name="common-alert-schema-definitions"></a>Definities van algemeen waarschuwingsschema
 
@@ -70,7 +70,7 @@ Elk waarschuwings exemplaar beschrijft de bron die is beïnvloed en de oorzaak v
 
 ## <a name="essentials"></a>Essentials
 
-| Veld | Beschrijving|
+| Veld | Description|
 |:---|:---|
 | alertId | De GUID die het waarschuwings exemplaar uniek identificeert. |
 | alertRule | De naam van de waarschuwings regel die het waarschuwings exemplaar heeft gegenereerd. |
@@ -110,7 +110,7 @@ Elk waarschuwings exemplaar beschrijft de bron die is beïnvloed en de oorzaak v
 
 ## <a name="alert-context"></a>Waarschuwings context
 
-### <a name="metric-alerts"></a>Metrische waarschuwingen
+### <a name="metric-alerts-excluding-availability-tests"></a>Metrische waarschuwingen (met uitzonde ring van beschikbaarheids tests)
 
 #### <a name="monitoringservice--platform"></a>`monitoringService` = `Platform`
 
@@ -136,6 +136,37 @@ Elk waarschuwings exemplaar beschrijft de bron die is beïnvloed en de oorzaak v
               }
             ],
             "metricValue": 31.1105
+          }
+        ],
+        "windowStartTime": "2019-03-22T13:40:03.064Z",
+        "windowEndTime": "2019-03-22T13:45:03.064Z"
+      }
+    }
+}
+```
+
+### <a name="metric-alerts-availability-tests"></a>Metrische waarschuwingen (beschikbaarheids tests)
+
+#### <a name="monitoringservice--platform"></a>`monitoringService` = `Platform`
+
+**Voorbeeld waarden**
+```json
+{
+  "alertContext": {
+      "properties": null,
+      "conditionType": "WebtestLocationAvailabilityCriteria",
+      "condition": {
+        "windowSize": "PT5M",
+        "allOf": [
+          {
+            "metricName": "Failed Location",
+            "metricNamespace": null,
+            "operator": "GreaterThan",
+            "threshold": "2",
+            "timeAggregation": "Sum",
+            "dimensions": [],
+            "metricValue": 5,
+            "webTestName": "myAvailabilityTest-myApplication"
           }
         ],
         "windowStartTime": "2019-03-22T13:40:03.064Z",

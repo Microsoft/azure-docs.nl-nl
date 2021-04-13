@@ -10,12 +10,12 @@ ms.date: 06/03/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 67018a2ec6b9239661a7022ad7fb9eeb6c9a5f64
-ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
+ms.openlocfilehash: 756e5e96a8040fb3d93273a5521236d46879e60d
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106385578"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107306378"
 ---
 # <a name="migrate-to-cloud-authentication-using-staged-rollout"></a>Migreren naar cloudverificatie met gefaseerde implementatie
 
@@ -92,7 +92,7 @@ De volgende scenario's worden niet ondersteund voor gefaseerde implementatie:
 - Windows 10 Hybrid Join's of Azure AD koppelt het primaire vernieuwings token voor alle versies, wanneer de on-premises UPN van de gebruiker niet routeerbaar is. Dit scenario gaat terug naar het WS-Trust-eind punt in de modus voor gefaseerde implementatie, maar werkt niet meer wanneer de gefaseerde migratie is voltooid en de aanmelding van de gebruiker is niet langer afhankelijk van de Federatie server.
 
   >[!NOTE]
-  >U moet nog steeds de uiteindelijke cutover van federatieve naar Cloud authenticatie maken met behulp van Azure AD Connect of Power shell. Gefaseerde implementatie verwisselt geen domeinen van federatieve naar beheerd.  Zie voor meer informatie over Domain cutover [migreren van Federatie naar wacht woord hash-synchronisatie](plan-migrate-adfs-password-hash-sync.md#step-3-change-the-sign-in-method-to-password-hash-synchronization-and-enable-seamless-sso) en [migreren van Federatie naar Pass-Through-verificatie](plan-migrate-adfs-password-hash-sync.md#step-3-change-the-sign-in-method-to-password-hash-synchronization-and-enable-seamless-sso)
+  >U moet nog steeds de uiteindelijke cutover van federatieve naar Cloud authenticatie maken met behulp van Azure AD Connect of Power shell. Gefaseerde implementatie verwisselt geen domeinen van federatieve naar beheerd.  Zie voor meer informatie over Domain cutover [migreren van Federatie naar wacht woord hash-synchronisatie](plan-migrate-adfs-password-hash-sync.md#step-3-change-the-sign-in-method-to-password-hash-synchronization-and-enable-seamless-sso) en [migratie van Federatie naar Pass-Through-verificatie](plan-migrate-adfs-pass-through-authentication.md#step-2-change-the-sign-in-method-to-pass-through-authentication-and-enable-seamless-sso).
   
 ## <a name="get-started-with-staged-rollout"></a>Aan de slag met gefaseerde implementatie
 

@@ -26,15 +26,17 @@
           href: howto-create-private-cluster-4x.md
         - name: DNS-forwarding configureren
           href: dns-forwarding.md
+        - name: Beperk het verkeer voor toegangsverkeer
+          href: howto-restrict-egress.md
     - name: Storage
       items:
-        - name: Pvc's versleutelen met door de klant beheerde sleutel (preview-versie)
+        - name: PVC's versleutelen met door de klant beheerde sleutel (preview)
           href: howto-encrypt-data-disks.md
         - name: Een Azure Files-opslagklasse maken
           href: howto-create-a-storageclass.md
         - name: Het ingebouwde containerregister gebruiken
           href: built-in-container-registry.md
-        - name: Azure container Registry gebruiken
+        - name: Azure Container Registry gebruiken
           href: howto-use-acr-with-aro.md
     - name: Verificatie en beveiliging
       items:

@@ -73,7 +73,7 @@
       href: concepts-connectivity.md
 - name: Server Management
   items:
-    - name: Server concepten
+    - name: Serverconcepten
       href: concepts-servers.md
     - name: Beperkingen
       href: concepts-limits.md
@@ -106,23 +106,23 @@
     - name: Inleiding tot bedrijfscontinuïteit
       displayName: 'backup, restore, backups, restores, georestore, geo-restore, outage'
       href: concepts-business-continuity.md
-    - name: Concepten met hoge Beschik baarheid
+    - name: Concepten voor hoge beschikbaarheid
       href: concepts-high-availability.md
 - name: Netwerken
   items:
     - name: Connectiviteitsarchitectuur
       href: concepts-connectivity-architecture.md
-    - name: Concepten van firewall regels
+    - name: Concepten van firewallregels
       href: concepts-firewall-rules.md
-    - name: Firewall regels configureren
+    - name: Firewallregels configureren
       items:
-        - name: Firewall regels configureren met behulp van Azure Portal
+        - name: Firewallregels configureren met Azure Portal
           href: howto-manage-firewall-portal.md
-        - name: Firewall regels configureren met behulp van Azure CLI
+        - name: Firewallregels configureren met behulp van Azure CLI
           href: howto-manage-firewall-cli.md
     - name: Virtual Network
       href: concepts-data-access-security-vnet.md
-    - name: Virtual Network configureren
+    - name: Een Virtual Network
       items:
         - name: Azure Portal gebruiken
           href: howto-manage-vnet-portal.md
@@ -132,9 +132,9 @@
       href: concepts-data-access-security-private-link.md
     - name: Private Link
       items:
-        - name: Een persoonlijke koppeling configureren met Azure Portal
+        - name: Een Private Link configureren met Azure Portal
           href: howto-configure-privatelink-portal.md
-        - name: Een persoonlijke koppeling configureren met Azure CLI
+        - name: Een Private Link configureren met behulp van Azure CLI
           href: howto-configure-privatelink-cli.md
     - name: Openbare netwerktoegang weigeren
       items:
@@ -149,7 +149,7 @@
     - name: Besturingselementen voor beveiliging van Azure Policy
       displayName: 'regulatory, compliance, standards, domains'
       href: ./security-controls-policy.md
-    - name: Netwerk beveiliging configureren met SSL
+    - name: Netwerkbeveiliging configureren met SSL
       href: concepts-ssl-connection-security.md
     - name: TLS configureren
       href: howto-tls-configurations.md
@@ -157,15 +157,15 @@
       href: concepts-data-access-and-security-threat-protection.md
     - name: Advanced Threat Protection configureren
       href: howto-database-threat-protection-portal.md
-    - name: Controle concepten
+    - name: Controleconcepten
       href: concepts-audit-logs.md
-    - name: Audit logboeken configureren
+    - name: Auditlogboeken configureren
       items:
         - name: Azure Portal
           href: howto-configure-audit-logs-portal.md
         - name: Azure CLI
           href: howto-configure-audit-logs-cli.md
-- name: Onderhoud van de service
+- name: Serviceonderhoud
   items:
     - name: Gepland onderhoud
       href: concepts-planned-maintenance-notification.md
@@ -192,7 +192,7 @@
       href: concepts-monitoring.md
     - name: Logboeken voor langzame query's
       href: concepts-server-logs.md
-    - name: Toegang tot langzame query logboeken
+    - name: Logboeken voor langzame query's openen
       items:
         - name: Azure Portal
           href: howto-configure-server-logs-portal.md
@@ -204,15 +204,17 @@
       href: concepts-query-performance-insight.md
     - name: Aanbevelingen voor prestaties
       href: concepts-performance-recommendations.md
+    - name: Azure Advisor aanbevelingen
+      href: concepts-azure-advisor-recommendations.md
 - name: Replicatie
   items:
     - name: Replicatie van binnenkomende gegevens
       href: concepts-data-in-replication.md
-    - name: Replicatie van gegevens configureren
+    - name: Replicatie van binnenkomende gegevens configureren
       href: howto-data-in-replication.md
     - name: Leesreplica's
       href: concepts-read-replicas.md
-    - name: Lees replica's maken
+    - name: Leesreplica's maken
       items:
         - name: Leesreplica's maken in de Azure-portal
           href: howto-read-replicas-portal.md

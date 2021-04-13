@@ -1,17 +1,17 @@
 ---
-title: Replicatie van gegevens configureren-Azure Database for MySQL
+title: Replicatie van inkomende gegevens configureren Azure Database for MySQL
 description: In dit artikel wordt beschreven hoe u Replicatie van inkomende gegevens instelt voor Azure Database for MySQL.
 author: savjani
 ms.author: pariks
 ms.service: mysql
 ms.topic: how-to
-ms.date: 01/13/2021
-ms.openlocfilehash: 3c12068c6a2c75c7be8b5572b901a714d397b2ca
-ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
+ms.date: 04/08/2021
+ms.openlocfilehash: 5f418867a2f22a16304d16c8889fff9a27a37ab3
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2021
-ms.locfileid: "107209917"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107312158"
 ---
 # <a name="how-to-configure-azure-database-for-mysql-data-in-replication"></a>Azure Database for MySQL Replicatie van inkomende gegevens configureren
 
@@ -21,44 +21,44 @@ In dit artikel wordt beschreven hoe u [replicatie van inkomende gegevens](concep
 > Dit artikel bevat verwijzingen naar de term _Slave_, een term die door micro soft niet meer wordt gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
 >
 
-Voor het maken van een replica in de Azure Database for MySQL-service, [replicatie van inkomende gegevens](concepts-data-in-replication.md)  synchroniseert gegevens van een bron-mysql-server on-premises, in virtuele machines (vm's) of in Cloud database services. Replicatie van inkomende gegevens is gebaseerd op de locatie van het binaire logboek bestand (binlog) of op gtid gebaseerde replicatie van de native modus naar MySQL. Meer informatie over binlog-replicatie vindt u in het [overzicht van MySQL binlog-replicatie](https://dev.mysql.com/doc/refman/5.7/en/binlog-replication-configuration-overview.html).
+Voor het maken van een replica in de Azure Database for MySQL-service, [replicatie van inkomende gegevens](concepts-data-in-replication.md) synchroniseert gegevens van een bron-mysql-server on-premises, in virtuele machines (vm's) of in Cloud database services. Replicatie van inkomende gegevens is gebaseerd op de locatie van het binaire logboek bestand (binlog) of op GTID gebaseerde replicatie van de native modus naar MySQL. Meer informatie over binlog-replicatie vindt u in het [overzicht van MySQL binlog-replicatie](https://dev.mysql.com/doc/refman/5.7/en/binlog-replication-configuration-overview.html).
 
 Bekijk de [beperkingen en vereisten](concepts-data-in-replication.md#limitations-and-considerations) van gegevens replicatie voordat u de stappen in dit artikel uitvoert.
 
-## <a name="1-create-a-azure-database-for-mysql-single-server-to-be-used-as-replica"></a>1. Maak een Azure Database for MySQL enkele server die als replica moet worden gebruikt
+## <a name="create-an-azure-database-for-mysql-single-server-instance-to-use-as-a-replica"></a>Een Azure Database for MySQL exemplaar van één server maken dat als replica moet worden gebruikt
 
-1. Maak een nieuwe Azure Database for MySQL één server (bijvoorbeeld "replica.mysql.database.azure.com"). Raadpleeg [een Azure database for mysql-server maken met behulp van de Azure portal voor het](quickstart-create-mysql-server-database-using-azure-portal.md) maken van de server. Deze server is de replica-server in Replicatie van inkomende gegevens.
+1. Maak een nieuw exemplaar van Azure Database for MySQL één server (bijvoorbeeld "replica.mysql.database.azure.com"). Raadpleeg [een Azure database for mysql-server maken met behulp van de Azure portal voor het](quickstart-create-mysql-server-database-using-azure-portal.md) maken van de server. Deze server is de replica server voor Replicatie van inkomende gegevens.
 
    > [!IMPORTANT]
    > De Azure Database for MySQL-server moet worden gemaakt in de Algemeen of de prijs categorie geoptimaliseerd voor geheugen als replicatie van de gegevens in deze lagen alleen wordt ondersteund.
 
-2. Dezelfde gebruikers accounts en bijbehorende bevoegdheden maken
+2. Maak dezelfde gebruikers accounts en bijbehorende bevoegdheden.
 
    Gebruikers accounts worden niet gerepliceerd van de bron server naar de replica server. Als u van plan bent gebruikers toegang te geven tot de replica-server, moet u alle accounts en de bijbehorende bevoegdheden hand matig maken op deze nieuw gemaakte Azure Database for MySQL server.
 
 3. Voeg het IP-adres van de bron server toe aan de firewall regels van de replica.
 
    Firewallregels bijwerken met de [Azure-portal](howto-manage-firewall-using-portal.md) of [Azure CLI](howto-manage-firewall-using-cli.md).
-   
-4. **Optioneel** : als u [replicatie op basis van gtid](https://dev.mysql.com/doc/mysql-replication-excerpt/5.7/en/replication-gtids-concepts.html) van de bron server naar Azure database for MySQL replica-server wilt gebruiken, moet u de volgende server parameters inschakelen op de Azure database for mysql-server, zoals wordt weer gegeven in de onderstaande installatie kopie van de portal
 
-   :::image type="content" source="./media/howto-data-in-replication/enable-gtid.png" alt-text="Gtid op Azure Database for MySQL server inschakelen":::
+4. **Optioneel** : als u [replicatie op basis van GTID](https://dev.mysql.com/doc/mysql-replication-excerpt/5.7/en/replication-gtids-concepts.html) van de bron server naar de replica server van Azure database for MySQL wilt gebruiken, moet u de volgende server parameters inschakelen op de Azure database for mysql-server, zoals wordt weer gegeven in de onderstaande installatie kopie van de portal:
 
-## <a name="2-configure-the-source-mysql-server"></a>2. Configureer de bron-MySQL-server
+   :::image type="content" source="./media/howto-data-in-replication/enable-gtid.png" alt-text="GTID op Azure Database for MySQL server inschakelen":::
 
-De volgende stappen maken en configureren van de MySQL-server die on-premises wordt gehost, op een virtuele machine of database service die wordt gehost door andere cloud providers voor Replicatie van inkomende gegevens. Deze server is de bron in replicatie van gegevens.
+## <a name="configure-the-source-mysql-server"></a>De MySQL-bron server configureren
+
+De volgende stappen maken en configureren van de MySQL-server die on-premises wordt gehost, op een virtuele machine of database service die wordt gehost door andere cloud providers voor Replicatie van inkomende gegevens. Deze server is de bron voor replicatie van gegevens.
 
 1. Controleer de [vereisten van de bron server](concepts-data-in-replication.md#requirements) voordat u doorgaat.
 
-2. Zorg ervoor dat de bron server zowel binnenkomend als uitgaand verkeer op poort 3306 toestaat en dat het een **openbaar IP-adres** heeft, de DNS openbaar toegankelijk is of een Fully QUALIFIED domain name (FQDN) heeft.
+2. Zorg ervoor dat de bron server zowel binnenkomend als uitgaand verkeer op poort 3306 toestaat en dat het een **openbaar IP-adres** heeft, dat de DNS openbaar toegankelijk is, of dat het een Fully QUALIFIED domain name (FQDN) heeft.
 
    Test de verbinding met de bron server door te proberen verbinding te maken vanaf een hulp programma zoals de MySQL-opdracht regel die wordt gehost op een andere computer of op basis van het [Azure Cloud shell](../cloud-shell/overview.md) dat beschikbaar is in de Azure Portal.
 
    Als uw organisatie een strikt beveiligings beleid heeft en niet alle IP-adressen op de bron server toestaat communicatie van Azure naar uw bron server mogelijk te maken, kunt u de onderstaande opdracht gebruiken om het IP-adres van uw MySQL-server te bepalen.
 
-   1. Meld u aan bij uw Azure Database for MySQL met een hulp programma zoals de MySQL-opdracht regel.
+   1. Meld u aan bij uw Azure Database for MySQL-server met een hulp programma zoals de MySQL-opdracht regel.
 
-   2. Voer de onderstaande query uit.
+   2. Voer de volgende query uit.
 
       ```bash
       mysql> SELECT @@global.redirect_server_host;
@@ -75,7 +75,7 @@ De volgende stappen maken en configureren van de MySQL-server die on-premises wo
       ```
 
    3. Sluit af vanaf de MySQL-opdracht regel.
-   4. Voer de volgende opdracht uit in het hulp programma Ping om het IP-adres op te halen.
+   4. Als u het IP-adres wilt ophalen, voert u de volgende opdracht uit in het hulp programma Ping:
 
       ```bash
       ping <output of step 2b>
@@ -90,51 +90,53 @@ De volgende stappen maken en configureren van de MySQL-server die on-premises wo
 
    5. Configureer de firewall regels van uw bron server zodanig dat het IP-adres van de vorige stap wordt vermeld op poort 3306.
 
-   > [!NOTE]
-   > Dit IP-adres kan gewijzigd worden door onderhouds-en implementatie bewerkingen. Deze verbindings methode is alleen voor klanten die niet in staat zijn om alle IP-adressen op 3306-poort toe te staan.
+      > [!NOTE]
+      > Dit IP-adres kan gewijzigd worden door onderhouds-en implementatie bewerkingen. Deze verbindings methode is alleen voor klanten die niet in staat zijn om alle IP-adressen op 3306-poort toe te staan.
   
-3. Binaire logboek registratie inschakelen
+3. Schakel binaire logboek registratie in.
 
-   Controleer of binaire logboek registratie is ingeschakeld op de bron door de volgende opdracht uit te voeren: 
+   Controleer of binaire logboek registratie is ingeschakeld op de bron door de volgende opdracht uit te voeren:
 
    ```sql
    SHOW VARIABLES LIKE 'log_bin';
    ```
 
    Als de variabele [`log_bin`](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_log_bin) wordt geretourneerd met de waarde ' on ', wordt de binaire logboek registratie ingeschakeld op de server.
-   
-    Als `log_bin` wordt geretourneerd met de waarde uit en op de bron server on-premises of op virtuele machines waarop u toegang hebt tot het configuratie bestand (My. cnf), kunt u de onderstaande stappen volgen:
+
+   Als `log_bin` wordt geretourneerd met de waarde uit en op de bron server on-premises of op virtuele machines waarop u toegang hebt tot het configuratie bestand (My. cnf), kunt u de onderstaande stappen volgen:
    1. Zoek uw MySQL-configuratie bestand (My. cnf) op de bron server. Bijvoorbeeld:/etc/my.cnf
    2. Open het configuratie bestand om het te bewerken en de sectie **mysqld** in het bestand te zoeken.
-   3.  Voeg in de sectie mysqld de volgende regel toe:
-   
+   3. Voeg in de sectie mysqld de volgende regel toe:
+
        ```bash
        log-bin=mysql-bin.log
        ```
+
    4. Start de MySQL-bron server opnieuw op om de wijzigingen van kracht te laten worden.
-   5. Wanneer de server opnieuw is opgestart, controleert u of binaire logboek registratie is ingeschakeld door dezelfde query uit te voeren als voor:
-   
+   5. Nadat de server opnieuw is opgestart, controleert u of binaire logboek registratie is ingeschakeld door dezelfde query uit te voeren als voor:
+
       ```sql
       SHOW VARIABLES LIKE 'log_bin';
       ```
-   
-4. Bron-serverinstellingen
 
-   Replicatie van inkomende gegevens moet para meter `lower_case_table_names` consistent zijn tussen de bron-en replica servers. Deze para meter is standaard 1 in Azure Database for MySQL.
+4. Configureer de instellingen van de bron server.
+
+   Replicatie van inkomende gegevens moet de para meter `lower_case_table_names` consistent zijn tussen de bron-en replica servers. Deze para meter is standaard 1 in Azure Database for MySQL.
 
    ```sql
    SET GLOBAL lower_case_table_names = 1;
    ```
-   **Optioneel** : als u [replicatie op basis van gtid](https://dev.mysql.com/doc/mysql-replication-excerpt/5.7/en/replication-gtids-concepts.html)wilt gebruiken, moet u controleren of gtid is ingeschakeld op de bron server. U kunt de volgende opdracht uitvoeren op de MySQL-bron server om te controleren of de gtid-modus is ingeschakeld.
-   
+
+   **Optioneel** : als u [replicatie op basis van GTID](https://dev.mysql.com/doc/mysql-replication-excerpt/5.7/en/replication-gtids-concepts.html)wilt gebruiken, moet u controleren of GTID is ingeschakeld op de bron server. U kunt de volgende opdracht uitvoeren op de MySQL-bron server om te zien of gtid_mode zich bevindt.
+
    ```sql
    show variables like 'gtid_mode';
    ```
+
    >[!IMPORTANT]
-   > Op alle servers is gtid_mode ingesteld op de standaard waarde. Het is niet nodig om gtid in te scha kelen op de bron-MySQL-server, specifiek voor het instellen van gegevens replicatie. Als gtid al is ingeschakeld op de bron server, kunt u eventueel replicatie op basis van gtid gebruiken voor het installeren van gegevens-in replicatie, met Azure Database for MySQL afzonderlijke server. U kunt replicatie op basis van een bestand gebruiken voor het instellen van replicatie gegevens voor alle servers, ongeacht de configuratie van de gtid-modus op de bron server.
+   > Op alle servers is gtid_mode ingesteld op de standaard waarde. Het is niet nodig om GTID in te scha kelen op de bron-MySQL-server, specifiek voor het instellen van Replicatie van inkomende gegevens. Als GTID al is ingeschakeld op de bron server, kunt u eventueel replicatie op basis van GTID gebruiken om Replicatie van inkomende gegevens te configureren met Azure Database for MySQL enkele server. U kunt replicatie op basis van bestanden gebruiken om replicatie van gegevens in te stellen voor alle servers, ongeacht de gitd_mode configuratie op de bron server.
 
-
-5. Een nieuwe replicatie functie maken en machtigingen instellen
+5. Maak een nieuwe replicatie functie en stel machtigingen in.
 
    Maak een gebruikers account op de bron server die is geconfigureerd met replicatie bevoegdheden. Dit kan worden gedaan via SQL-opdrachten of een hulp programma zoals MySQL Workbench. Overweeg of u van plan bent te repliceren met SSL, omdat dit moet worden opgegeven bij het maken van de gebruiker. Raadpleeg de MySQL-documentatie voor meer informatie over het [toevoegen van gebruikers accounts](https://dev.mysql.com/doc/refman/5.7/en/user-names.html) op de bron server.
 
@@ -174,7 +176,7 @@ De volgende stappen maken en configureren van de MySQL-server die on-premises wo
 
    :::image type="content" source="./media/howto-data-in-replication/replicationslave.png" alt-text="Replicatie-slave":::
 
-6. Stel de bron server in op de modus alleen-lezen
+6. Stel de bron server in op de modus alleen-lezen.
 
    Voordat u begint met het dumpen van de data base, moet de server in de modus alleen-lezen worden geplaatst. In de modus alleen-lezen kan de bron geen schrijf transacties verwerken. Beoordeel de impact op uw bedrijf en plan het alleen-lezen venster in een rustige tijd, indien nodig.
 
@@ -183,28 +185,29 @@ De volgende stappen maken en configureren van de MySQL-server die on-premises wo
    SET GLOBAL read_only = ON;
    ```
 
-7. Naam en offset van binair logboek bestand ophalen
+7. De naam van het binaire logboek bestand en de offset ophalen.
 
    Voer de [`show master status`](https://dev.mysql.com/doc/refman/5.7/en/show-master-status.html) opdracht uit om de huidige binaire logboek bestandsnaam en-offset te bepalen.
 
    ```sql
     show master status;
    ```
-   De resultaten moeten er ongeveer als volgt uitzien. Noteer de naam van het binaire bestand, zoals het wordt gebruikt in latere stappen.
+   De resultaten moeten er ongeveer als volgt uitzien. Noteer de naam van het binaire bestand voor gebruik in latere stappen.
 
    :::image type="content" source="./media/howto-data-in-replication/masterstatus.png" alt-text="Resultaten van de hoofd status":::
-   
 
-## <a name="3-dump-and-restore-source-server"></a>3. bron server dumpen en herstellen
+## <a name="dump-and-restore-the-source-server"></a>De bron server dumpen en herstellen
 
 1. Bepaal welke data bases en tabellen u wilt repliceren naar Azure Database for MySQL en voer de dump uit vanaf de bron server.
 
-    U kunt mysqldump gebruiken om data bases van uw Master te dumpen. Raadpleeg [Dump & herstellen](concepts-migrate-dump-restore.md)voor meer informatie. Het is niet nodig om MySQL-bibliotheek en test bibliotheek te dumpen.
+    U kunt mysqldump gebruiken om data bases van uw primaire server te dumpen. Raadpleeg [Dump & herstellen](concepts-migrate-dump-restore.md)voor meer informatie. Het is niet nodig om de MySQL-bibliotheek en test bibliotheek te dumpen.
 
-2. **Optioneel** : als u [replicatie op basis van gtid](https://dev.mysql.com/doc/mysql-replication-excerpt/5.7/en/replication-gtids-concepts.html)wilt gebruiken, moet u de gtid van de laatste trans actie identificeren die is uitgevoerd op de Master. U kunt de volgende opdracht gebruiken om de gtid van de laatste trans actie op de hoofd server te noteren.
+2. **Optioneel** : als u [replicatie op basis van gtid](https://dev.mysql.com/doc/mysql-replication-excerpt/5.7/en/replication-gtids-concepts.html)wilt gebruiken, moet u de gtid van de laatste trans actie identificeren die op het primaire is uitgevoerd. U kunt de volgende opdracht gebruiken om de GTID van de laatste trans actie op de hoofd server te noteren.
+
    ```sql
    show global variables like 'gtid_executed';
    ```
+
 3. Stel de bron server in op de modus lezen/schrijven.
 
    Nadat de data base is gedumpt, wijzigt u de bron MySQL-server weer in de modus lezen/schrijven.
@@ -214,17 +217,17 @@ De volgende stappen maken en configureren van de MySQL-server die on-premises wo
    UNLOCK TABLES;
    ```
 
-3. Herstel het dump bestand naar een nieuwe server.
+4. Herstel het dump bestand naar een nieuwe server.
 
    Herstel het dump bestand naar de server die in de Azure Database for MySQL-service is gemaakt. Raadpleeg [dump & herstellen](concepts-migrate-dump-restore.md) voor het herstellen van een dump bestand naar een MySQL-server. Als het dump bestand groot is, uploadt u het naar een virtuele machine in azure binnen dezelfde regio als de replica server. Herstel het op de Azure Database for MySQL-server vanaf de virtuele machine.
-   
-4. **Optioneel** : Noteer de gtid van de herstelde server op Azure database for MySQL om te controleren of deze gelijk is aan Master. U kunt de volgende opdracht gebruiken om de gtid van de gtid schoonte waarde op de replica server van Azure Database for MySQL te noteren. De waarde van gtid_purged moet hetzelfde zijn als gtid_executed van het model dat is genoteerd in stap 2 voor het werken met replicatie op basis van gtid.
+
+5. **Optioneel** : Noteer de GTID van de herstelde server op Azure database for MySQL om ervoor te zorgen dat deze gelijk is aan die van de primaire server. U kunt de volgende opdracht gebruiken om de GTID van de GTID schoonte waarde op de replica server van Azure Database for MySQL te noteren. De waarde van gtid_purged moet hetzelfde zijn als gtid_executed van het model dat is genoteerd in stap 2 voor het werken met replicatie op basis van GTID.
 
    ```sql
    show global variables like 'gtid_purged';
    ```
 
-## <a name="4-link-source-and-replica-servers-to-start-data-in-replication"></a>4. bron-en replica servers koppelen om Replicatie van inkomende gegevens te starten
+## <a name="link-source-and-replica-servers-to-start-data-in-replication"></a>Bron-en replica servers koppelen om Replicatie van inkomende gegevens te starten
 
 1. Stel de bron server in.
 
@@ -235,7 +238,9 @@ De volgende stappen maken en configureren van de MySQL-server die on-premises wo
    ```sql
    CALL mysql.az_replication_change_master('<master_host>', '<master_user>', '<master_password>', <master_port>, '<master_log_file>', <master_log_pos>, '<master_ssl_ca>');
    ```
+
    **Optioneel** : als u [replicatie op basis van gtid](https://dev.mysql.com/doc/mysql-replication-excerpt/5.7/en/replication-gtids-concepts.html)wilt gebruiken, moet u de volgende opdracht gebruiken om de twee servers te koppelen.
+
     ```sql
    call mysql.az_replication_change_master_with_gtid('<master_host>', '<master_user>', '<master_password>', <master_port>, '<master_ssl_ca>');
    ```
@@ -279,7 +284,7 @@ De volgende stappen maken en configureren van de MySQL-server die on-premises wo
       CALL mysql.az_replication_change_master('master.companya.com', 'syncuser', 'P@ssword!', 3306, 'mysql-bin.000002', 120, '');
       ```
 
-2. Filteren.
+2. Filters instellen.
 
    Als u het repliceren van sommige tabellen vanuit uw model wilt overs Laan, moet u de `replicate_wild_ignore_table` Server parameter op de replica server bijwerken. U kunt meer dan één tabel patroon opgeven met behulp van een lijst met door komma's gescheiden waarden.
 
@@ -305,7 +310,7 @@ De volgende stappen maken en configureren van de MySQL-server die on-premises wo
 
    Als de status van `Slave_IO_Running` en `Slave_SQL_Running` Ja is en de waarde van `Seconds_Behind_Master` is 0, werkt replicatie goed. `Seconds_Behind_Master` Hiermee wordt aangegeven hoe laat de replica. Als de waarde niet 0 is, betekent dit dat de replica updates verwerkt.
 
-## <a name="other-useful-stored-procedures-for-data-in-replication-operations"></a>Andere nuttige opgeslagen procedures voor replicatie bewerkingen voor gegevens
+## <a name="other-useful-stored-procedures-for-data-in-replication-operations"></a>Andere nuttige opgeslagen procedures voor Replicatie van inkomende gegevens bewerkingen
 
 ### <a name="stop-replication"></a>Replicatie stoppen
 
@@ -330,18 +335,21 @@ Als u een replicatie fout wilt overs Laan en de replicatie wilt laten door gaan,
 ```sql
 CALL mysql.az_replication_skip_counter;
 ```
+
  **Optioneel** : als u [replicatie op basis van gtid](https://dev.mysql.com/doc/mysql-replication-excerpt/5.7/en/replication-gtids-concepts.html)wilt gebruiken, moet u de volgende opgeslagen procedure gebruiken om een trans actie over te slaan
 
 ```sql
 call mysql. az_replication_skip_gtid_transaction(‘<transaction_gtid>’)
 ```
-De procedure kan de trans actie voor de opgegeven gtid overs Laan. Als de gtid-indeling niet rechts is of als de gtid-trans actie al is uitgevoerd, kan de procedure niet worden uitgevoerd. De gtid voor een trans actie kan worden bepaald door het binaire logboek te parseren om de transactie gebeurtenissen te controleren. MySQL biedt [een hulp programma voor het](https://dev.mysql.com/doc/refman/5.7/en/mysqlbinlog.html) parseren van binaire logboeken en het weer geven van de inhoud in de tekst indeling die kan worden gebruikt om gtid van de trans actie te identificeren.
 
-Als u de volgende trans actie wilt overs Laan na de huidige replicatie positie, gebruikt u de volgende opdracht om de gtid van de volgende trans actie te identificeren, zoals hieronder wordt weer gegeven.
+De procedure kan de trans actie voor de opgegeven GTID overs Laan. Als de GTID-indeling niet rechts is of als de GTID-trans actie al is uitgevoerd, kan de procedure niet worden uitgevoerd. De GTID voor een trans actie kan worden bepaald door het binaire logboek te parseren om de transactie gebeurtenissen te controleren. MySQL biedt een hulp programma voor het parseren van binaire logboeken en het weer geven van de inhoud in tekst indeling, die kan worden gebruikt om GTID van de trans [actie te identificeren](https://dev.mysql.com/doc/refman/5.7/en/mysqlbinlog.html) .
+
+Als u de volgende trans actie wilt overs Laan na de huidige replicatie positie, gebruikt u de volgende opdracht om de GTID van de volgende trans actie te identificeren, zoals hieronder wordt weer gegeven.
 
 ```sql
 SHOW BINLOG EVENTS [IN 'log_name'] [FROM pos][LIMIT [offset,] row_count]
 ```
+
   :::image type="content" source="./media/howto-data-in-replication/show-binary-log.png" alt-text="Binaire logboek resultaten weer geven":::
 
 ## <a name="next-steps"></a>Volgende stappen

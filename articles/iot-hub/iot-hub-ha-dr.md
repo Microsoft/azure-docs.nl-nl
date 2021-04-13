@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 03/17/2020
 ms.author: philmea
-ms.openlocfilehash: 9d2ffac813456398c02066c978c37bdb09501aeb
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 10a3360f30d211336e4ce861b124a307c85fb150
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105628982"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107308248"
 ---
 # <a name="iot-hub-high-availability-and-disaster-recovery"></a>Hoge beschikbaarheid en herstel na noodgevallen van IoT Hub
 
@@ -64,7 +64,7 @@ Zodra de failoverbewerking voor de IoT-hub is voltooid, worden alle bewerkingen 
 >
 > - Als u Azure Functions of Azure Stream Analytics gebruikt om verbinding te maken met het ingebouwde eind punt van gebeurtenissen, moet u mogelijk **opnieuw opstarten**. Dit komt doordat tijdens de voorafgaande failover geen geldige offset meer geldig zijn.
 >
-> - Bij het door sturen naar de opslag wordt u aangeraden de blobs of bestanden weer te geven en vervolgens te herhalen, om ervoor te zorgen dat alle blobs of bestanden worden gelezen zonder dat er veronderstellingen worden gemaakt van de partitie. Het partitie bereik kan mogelijk worden gewijzigd tijdens een door micro soft geïnitieerde failover of hand matige failover. U kunt de [List blobs API](/rest/api/storageservices/list-blobs) gebruiken om de lijst met blobs of de [lijst ADLS Gen2-API](/rest/api/storageservices/datalakestoragegen2/filesystem/listpaths) voor de lijst met bestanden op te sommen. Zie [Azure Storage als een eind punt van een route ring](iot-hub-devguide-messages-d2c.md#azure-storage-as-a-routing-endpoint)voor meer informatie.
+> - Bij het door sturen naar de opslag wordt u aangeraden de blobs of bestanden weer te geven en vervolgens te herhalen, om ervoor te zorgen dat alle blobs of bestanden worden gelezen zonder dat er veronderstellingen worden gemaakt van de partitie. Het partitie bereik kan mogelijk worden gewijzigd tijdens een door micro soft geïnitieerde failover of hand matige failover. U kunt de [List blobs API](/rest/api/storageservices/list-blobs) gebruiken om de lijst met blobs of de [lijst ADLS Gen2-API](/rest/api/storageservices/datalakestoragegen2/filesystem/list) voor de lijst met bestanden op te sommen. Zie [Azure Storage als een eind punt van een route ring](iot-hub-devguide-messages-d2c.md#azure-storage-as-a-routing-endpoint)voor meer informatie.
 
 ## <a name="microsoft-initiated-failover"></a>Door micro soft geïnitieerde failover
 

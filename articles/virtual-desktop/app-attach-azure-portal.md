@@ -1,46 +1,41 @@
 ---
-title: Windows-MSIX-app voor het koppelen van apps-Azure
-description: MSIX-app-koppeling voor Windows Virtual Desktop instellen met behulp van de Azure Portal.
+title: Windows Virtual Desktop msix-app koppelen - Azure
+description: MsIX-app-attach instellen voor Windows Virtual Desktop met behulp van de Azure Portal.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 02/11/2021
+ms.date: 04/13/2021
 ms.author: helohr
 manager: femila
-ms.openlocfilehash: a849b65fd25e6943925ffa245430cd8a27529fdb
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.openlocfilehash: 0d7598e332539b8203d55bbcb1cf497811c32540
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106448420"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107366552"
 ---
 # <a name="set-up-msix-app-attach-with-the-azure-portal"></a>MSIX-app-koppeling instellen met de Azure-portal
 
-> [!IMPORTANT]
-> MSIX app attach is momenteel beschikbaar als open bare preview.
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
-> Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
-
-In dit artikel vindt u instructies voor het instellen van MSIX app attach (preview) in een virtuele Windows-desktop omgeving.
+In dit artikel wordt beschreven hoe u een MSIX-app-attach in een Windows Virtual Desktop instellen.
 
 ## <a name="requirements"></a>Vereisten
 
 >[!IMPORTANT]
->Voordat u aan de slag gaat, moet u ervoor zorgen dat [dit formulier](https://aka.ms/enablemsixappattach) wordt ingevuld en verzonden om de MSIX-app-koppeling in uw abonnement in te scha kelen. Als u geen goedgekeurde aanvraag hebt, werkt MSIX app attach niet. De goed keuring van aanvragen kan tot 24 uur duren tijdens kantoor dagen. U ontvangt een e-mail wanneer uw aanvraag is geaccepteerd en voltooid.
+>Voordat u aan de slag gaat, [](https://aka.ms/enablemsixappattach) moet u dit formulier invullen en verzenden om MSIX-app-koppelen in te kunnenschakelen in uw abonnement. Als u geen goedgekeurde aanvraag hebt, werkt het koppelen van de MSIX-app niet. Het goedkeuren van aanvragen kan tijdens werkdagen maximaal 24 uur duren. U ontvangt een e-mail wanneer uw aanvraag is geaccepteerd en voltooid.
 
-Dit is wat u nodig hebt om de MSIX-app-koppeling te configureren:
+Dit is wat u nodig hebt om een MSIX-app-attach te configureren:
 
-- Een werkende implementatie van virtueel bureau blad in Windows. Zie [een Tenant maken in Windows Virtual Desktop](./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md)voor meer informatie over het implementeren van Windows virtueel bureau blad (klassiek). Zie [een hostgroep maken met de Azure Portal](./create-host-pools-azure-marketplace.md)voor meer informatie over het implementeren van Windows virtueel bureau blad met Azure Resource Manager-integratie.
-- Een Windows-host voor virtuele Bureau bladen met ten minste één actieve sessiehost.
-- Deze hostgroep moet zich in de validatie omgeving bestaan. 
-- Het MSIX-verpakkings programma.
-- Een MSIX-toepassing die is uitgepakt in een MSIX-installatie kopie die is geüpload naar een bestands share.
-- Een bestands share in uw Windows-implementatie voor virtueel bureau blad waar het MSIX-pakket wordt opgeslagen.
-- De bestands share waar u de MSIX-installatie kopie hebt geüpload, moet ook toegankelijk zijn voor alle virtuele machines (Vm's) in de hostgroep. Gebruikers hebben alleen-lezen-machtigingen nodig voor toegang tot de installatie kopie.
-- Als het certificaat niet openbaar wordt vertrouwd, volgt u de instructies in [certificaten installeren](app-attach.md#install-certificates).
+- Een werkende Windows Virtual Desktop implementatie. Zie Een tenant maken in Windows Virtual Desktop voor meer informatie over het implementeren [Windows Virtual Desktop](./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md). Zie Een hostgroep maken met de Windows Virtual Desktop voor meer informatie over het implementeren van Azure Resource Manager met [Azure Portal.](./create-host-pools-azure-marketplace.md)
+- Een Windows Virtual Desktop hostgroep met ten minste één actieve sessiehost.
+- Deze hostgroep moet zich in de validatieomgeving. 
+- Het MSIX-pakkethulpprogramma.
+- Een toepassing met MSIX-pakket uitgebreid naar een MSIX-afbeelding die wordt geüpload naar een bestands share.
+- Een bestands share in uw Windows Virtual Desktop implementatie waar het MSIX-pakket wordt opgeslagen.
+- De bestands share waar u de MSIX-afbeelding hebt geüpload, moet ook toegankelijk zijn voor alle virtuele machines (VM's) in de hostgroep. Gebruikers hebben alleen-lezenmachtigingen nodig voor toegang tot de afbeelding.
+- Als het certificaat niet openbaar wordt vertrouwd, volgt u de instructies in [Certificaten installeren.](app-attach.md#install-certificates)
 
-## <a name="turn-off-automatic-updates-for-msix-app-attach-applications"></a>Automatische updates voor MSIX app attach-toepassingen uitschakelen
+## <a name="turn-off-automatic-updates-for-msix-app-attach-applications"></a>Automatische updates uitschakelen voor MSIX-app-koppelingstoepassingen
 
-Voordat u aan de slag gaat, moet u automatische updates voor MSIX app attach-toepassingen uitschakelen. Als u automatische updates wilt uitschakelen, moet u de volgende opdrachten uitvoeren in een opdracht prompt met verhoogde bevoegdheid:
+Voordat u aan de slag gaat, moet u automatische updates uitschakelen voor MSIX-app-koppelingstoepassingen. Als u automatische updates wilt uitschakelen, moet u de volgende opdrachten uitvoeren in een opdrachtprompt met verhoogde opdracht:
 
 ```cmd
 rem Disable Store auto update:
@@ -58,183 +53,183 @@ reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager\De
 ```
 
 >[!NOTE]
->U wordt aangeraden de virtuele machine opnieuw op te starten nadat u Hyper-V hebt ingeschakeld.
+>U wordt aangeraden de virtuele machine opnieuw op te starten nadat u Hyper-V hebt inschakelen.
 
-## <a name="configure-the-msix-app-attach-management-interface"></a>De MSIX-app voor het koppelen van apps configureren
+## <a name="configure-the-msix-app-attach-management-interface"></a>De beheerinterface voor het koppelen van MSIX-apps configureren
 
-Vervolgens moet u de MSIX-app voor het koppelen van apps voor de Azure Portal downloaden en configureren.
+Vervolgens moet u de beheerinterface voor het koppelen van MSIX-apps downloaden en configureren voor de Azure Portal.
 
-De beheer interface instellen:
+De beheerinterface instellen:
 
 1. [Open de Azure Portal](https://portal.azure.com).
-2. Als u wordt gevraagd of u de uitbrei ding betrouwt, selecteert u **toestaan**.
+2. Als u wordt gevraagd of u de extensie betrouwbaar vindt, selecteert u **Toestaan.**
 
       > [!div class="mx-imgBorder"]
-      > ![Een scherm opname van het venster met niet-vertrouwde extensies. ' Toestaan ' is rood gemarkeerd.](media/untrusted-extensions.png)
+      > ![Een schermopname van het venster met niet-vertrouwde extensies. Toestaan is rood gemarkeerd.](media/untrusted-extensions.png)
 
 
-## <a name="add-an-msix-image-to-the-host-pool"></a>Een MSIX-installatie kopie toevoegen aan de hostgroep
+## <a name="add-an-msix-image-to-the-host-pool"></a>Een MSIX-afbeelding toevoegen aan de hostgroep
 
-Vervolgens moet u de MSIX-installatie kopie toevoegen aan de hostgroep.
+Vervolgens moet u de MSIX-afbeelding toevoegen aan uw hostgroep.
 
-De MSIX-installatie kopie toevoegen:
+De MSIX-afbeelding toevoegen:
 
 1. Open Azure Portal.
 
-2. Geef **Windows virtueel bureau blad** op in de zoek balk en selecteer vervolgens de naam van de service.
+2. Voer **Windows Virtual Desktop** in de zoekbalk in en selecteer vervolgens de servicenaam.
 
       > [!div class="mx-imgBorder"]
-      > ![Een scherm afbeelding van een gebruiker die ' Windows virtueel bureau blad ' selecteert in de vervolg keuzelijst zoek balk in het Azure Portal. ' Windows virtueel bureau blad ' is rood gemarkeerd.](media/find-and-select.png)
+      > ![Een schermopname van een gebruiker die 'Windows Virtual Desktop' selecteert in de vervolgkeuzelijst van de zoekbalk in Azure Portal. 'Windows Virtual Desktop' is rood gemarkeerd.](media/find-and-select.png)
 
-3. Selecteer de hostgroep waar u de MSIX-Apps wilt plaatsen.
+3. Selecteer de hostgroep waarin u de MSIX-apps wilt plaatsen.
 
-4. Selecteer **MSIX-pakketten** om het gegevens raster te openen met alle **MSIX-pakketten** die momenteel aan de hostgroep zijn toegevoegd.
+4. Selecteer **MSIX-pakketten om** het gegevensraster te openen met alle **MSIX-pakketten die** momenteel zijn toegevoegd aan de hostgroep.
 
-5. Selecteer **+ toevoegen** om het tabblad **MSIX-pakket toevoegen** te openen.
+5. Selecteer **+ Toevoegen om** het tabblad **MSIX-pakket toevoegen te** openen.
 
-6. Voer op het tabblad **MSIX-pakket toevoegen** de volgende waarden in:
+6. Voer op **het tabblad MSIX-pakket** toevoegen de volgende waarden in:
 
-      - Voer voor **MSIX-installatie kopie pad** een geldig UNC-pad in dat verwijst naar de MSIX-installatie kopie op de bestands share. (Bijvoorbeeld `\\storageaccount.file.core.windows.net\msixshare\appfolder\MSIXimage.vhd` .) Wanneer u klaar bent, selecteert u **toevoegen** om de MSIX-container te vragen om te controleren of het pad geldig is.
+      - Voer **voor MSIX-afbeeldingspad** een geldig UNC-pad in dat verwijst naar de MSIX-afbeelding op de bestands share. `\\storageaccount.file.core.windows.net\msixshare\appfolder\MSIXimage.vhd`(Bijvoorbeeld.) Wanneer u klaar bent, selecteert u **Toevoegen om** de MSIX-container te keuren om te controleren of het pad geldig is.
 
-      - Selecteer voor **MSIX-pakket** de relevante naam van het MSIX-pakket in de vervolg keuzelijst. Dit menu wordt alleen ingevuld als u een geldig pad naar een afbeelding hebt opgegeven in **MSIX-afbeeldings pad**.
+      - Selecteer **voor MSIX-pakket** de relevante MSIX-pakketnaam in de vervolgkeuzelijst. Dit menu wordt alleen ingevuld als u een geldig pad naar de afbeelding hebt ingevoerd in **het MSIX-afbeeldingspad**.
 
-      - Voor **pakket toepassingen** zorgt u ervoor dat de lijst alle MSIX-toepassingen bevat die u beschikbaar wilt maken voor gebruikers in uw MSIX-pakket.
+      - Voor **Pakkettoepassingen moet** u ervoor zorgen dat de lijst alle MSIX-toepassingen bevat die u beschikbaar wilt stellen aan gebruikers in uw MSIX-pakket.
 
-      - U kunt desgewenst een **weergave naam** invoeren als u wilt dat uw pakket een gebruiks vriendelijkere gebruikers implementaties bevat.
+      - Voer desgewenst een **Weergavenaam in** als u wilt dat uw pakket gebruiksvriendelijker is in uw gebruikersimplementaties.
 
-      - Controleer of de **versie** het juiste versie nummer heeft.
+      - Zorg ervoor dat **de versie** het juiste versienummer heeft.
 
-      - Selecteer het **registratie type** dat u wilt gebruiken. Welk account u gebruikt, is afhankelijk van uw behoeften:
+      - Selecteer het **registratietype** dat u wilt gebruiken. Welke u gebruikt, is afhankelijk van uw behoeften:
 
-    - **Bij registratie op aanvraag** wordt de volledige registratie van de MSIX-toepassing uitgesteld totdat de gebruiker de toepassing start. Dit is het registratie type dat u het beste kunt gebruiken.
+    - **Registratie op aanvraag stelt** de volledige registratie van de MSIX-toepassing uit totdat de gebruiker de toepassing start. Dit is het registratietype dat u kunt gebruiken.
 
-    - **Logboek registratie blokkeert** alleen registraties terwijl de gebruiker zich aanmeldt. Dit type wordt niet aanbevolen omdat het kan leiden tot langere aanmeldings tijden voor gebruikers.
+    - **Bij het blokkeren van aanmelding** worden alleen registers geregistreerd wanneer de gebruiker zich aanmeldt. Dit type wordt niet aanbevolen omdat dit kan leiden tot langere aanmeldingstijden voor gebruikers.
 
-7.  Selecteer de gewenste status voor de **status**.
-    -  Met de **actieve** status kunnen gebruikers communiceren met het pakket.
-    -  De status **inactief** zorgt ervoor dat Windows virtueel bureau blad het pakket negeert en het niet aan gebruikers levert.
+7.  Selecteer **bij Status** de gewenste status.
+    -  Met **de** status Actief kunnen gebruikers met het pakket communiceren.
+    -  De **status Inactief** zorgt ervoor Windows Virtual Desktop het pakket negeert en niet aan gebruikers levert.
 
-8. Wanneer u klaar bent, selecteert u **toevoegen**.
+8. Wanneer u klaar bent, selecteert u **Toevoegen.**
 
 ## <a name="publish-msix-apps-to-an-app-group"></a>MSIX-apps publiceren naar een app-groep
 
-Vervolgens moet u de apps in het pakket publiceren. U moet dit doen voor zowel bureau blad-als externe app-toepassings groepen.
+Vervolgens moet u de apps in het pakket publiceren. U moet dit doen voor zowel bureaublad- als externe app-toepassingsgroepen.
 
-Als u al een MSIX-installatie kopie hebt, gaat u verder met het [publiceren van MSIX-apps naar een app-groep](#publish-msix-apps-to-an-app-group). Als u oudere toepassingen wilt testen, volgt u de instructies in een [MSIX-pakket maken op basis van een installatie programma van een desktop computer op een virtuele machine](/windows/msix/packaging-tool/create-app-package-msi-vm/) om de verouderde toepassing te converteren naar een MSIX-pakket.
+Als u al een MSIX-afbeelding hebt, gaat u verder met [MSIX-apps publiceren naar een app-groep.](#publish-msix-apps-to-an-app-group) Als u oudere toepassingen wilt testen, volgt u de instructies in Create an MSIX package from a desktop installer on a VM to convert the legacy application to an MSIX package (Een MSIX-pakket maken van een [desktop-installatieprogramma](/windows/msix/packaging-tool/create-app-package-msi-vm/) op een VM) om de verouderde toepassing te converteren naar een MSIX-pakket.
 
 De apps publiceren:
 
-1. Selecteer in de Windows-Resource provider voor virtueel bureau blad het tabblad **toepassings groepen** .
+1. Selecteer in Windows Virtual Desktop resourceprovider het **tabblad Toepassingsgroepen.**
 
-2. Selecteer de toepassings groep waarnaar u de apps wilt publiceren.
+2. Selecteer de toepassingsgroep waar u de apps naar wilt publiceren.
 
    >[!NOTE]
-   >MSIX-toepassingen kunnen worden geleverd met een MSIX-app die is gekoppeld aan zowel de externe app-als de bureau blad-app-groepen
+   >MSIX-toepassingen kunnen worden geleverd met MSIX-app-gekoppeld aan groepen voor zowel externe apps als bureaublad-apps
 
-3. Zodra u zich in de app-groep bevindt, selecteert u het tabblad **toepassingen** . In het raster **toepassingen** worden alle bestaande apps in de app-groep weer gegeven.
+3. Wanneer u zich in de app-groep hebt weergegeven, selecteert u **het tabblad** Toepassingen. In **het** raster Toepassingen worden alle bestaande apps in de app-groep weergegeven.
 
-4. Selecteer **+ toevoegen** om het tabblad **toepassing toevoegen** te openen.
+4. Selecteer **+ Toevoegen om** het tabblad Toepassing toevoegen **te** openen.
 
       > [!div class="mx-imgBorder"]
-      > ![Een scherm afbeelding van de gebruiker die u selecteert en toevoegen om het tabblad toepassing toevoegen te openen](media/select-add.png)
+      > ![Een schermopname van de gebruiker die + Toevoegen selecteert om het tabblad Toepassing toevoegen te openen](media/select-add.png)
 
-5. Kies voor **toepassings bron** de bron voor uw toepassing.
-    - Als u een bureau blad-app-groep gebruikt, kiest u **MSIX-pakket**.
+5. Kies **voor Toepassingsbron** de bron voor uw toepassing.
+    - Als u een bureaublad-app-groep gebruikt, kiest u **MSIX-pakket**.
       
       > [!div class="mx-imgBorder"]
-      > ![Een scherm opname van een klant en MSIX-pakket selecteren in de vervolg keuzelijst toepassings bron. Het MSIX-pakket is rood gemarkeerd.](media/select-source.png)
+      > ![Een schermopname van een klant die MSIX-pakket selecteert in de vervolgkeuzelijst voor de toepassingsbron. Het MSIX-pakket is rood gemarkeerd.](media/select-source.png)
     
     - Als u een externe app-groep gebruikt, kiest u een van de volgende opties:
         
         - Startmenu
-        - Pad naar app
+        - App-pad
         - MSIX-pakket
 
-    - Voer bij **toepassings naam** een beschrijvende naam in voor de toepassing.
+    - Voer **bij Toepassingsnaam** een beschrijvende naam in voor de toepassing.
 
     U kunt ook de volgende optionele functies configureren:
    
-    - Voer bij **weergave naam** een nieuwe naam in voor het pakket dat uw gebruikers te zien krijgen.
+    - Voer **bij Weergavenaam** een nieuwe naam in voor het pakket dat uw gebruikers te zien krijgen.
 
-    - Voer bij **Beschrijving** een korte beschrijving in van het app-pakket.
+    - Voer **bij Beschrijving** een korte beschrijving van het app-pakket in.
 
-    - Als u een externe app-groep gebruikt, kunt u deze opties ook configureren:
+    - Als u een externe app-groep gebruikt, kunt u ook deze opties configureren:
 
-        - **Pad naar pictogram**
-        - **Pictogram index**
-        - **Weer geven in webfeed**
+        - **Pictogrampad**
+        - **Pictogramindex**
+        - **Weergegeven in webfeed**
 
 6. Selecteer **Opslaan** als u klaar bent.
 
 >[!NOTE]
->Wanneer een gebruiker wordt toegewezen aan de groep externe app-groep en bureau blad-app in dezelfde hostgroep, wordt de groep bureau blad-apps weer gegeven in de feed.
+>Wanneer een gebruiker is toegewezen aan een externe app-groep en bureaublad-app-groep uit dezelfde hostgroep, wordt de bureaublad-app-groep weergegeven in de feed.
 
 ## <a name="assign-a-user-to-an-app-group"></a>Een gebruiker toewijzen aan een app-groep
 
-Nadat u MSIX-apps aan een app-groep hebt toegewezen, moet u gebruikers toegang verlenen tot deze toepassingen. U kunt toegang toewijzen door gebruikers of gebruikers groepen toe te voegen aan een app-groep met gepubliceerde MSIX-toepassingen. Volg de instructies in [app-groepen beheren met de Azure Portal](manage-app-groups.md) om uw gebruikers toe te wijzen aan een app-groep.
+Nadat u MSIX-apps hebt toegewezen aan een app-groep, moet u gebruikers toegang verlenen tot deze apps. U kunt toegang toewijzen door gebruikers of gebruikersgroepen toe te voegen aan een app-groep met gepubliceerde MSIX-toepassingen. Volg de instructies in [App-groepen beheren met de Azure Portal](manage-app-groups.md) om uw gebruikers toe te wijzen aan een app-groep.
 
 >[!NOTE]
->MSIX-app koppelen externe apps worden mogelijk verwijderd uit de feed wanneer u externe apps tijdens de open bare preview test. De apps worden niet weer gegeven omdat de hostgroep die u in de evaluatie omgeving gebruikt, wordt geleverd door een extern bureau blad-Broker in de productie omgeving. Omdat de RD-Broker in de productie omgeving de aanwezigheid van de MSIX-app voor het koppelen van externe apps niet registreert, worden de apps niet weer gegeven in de feed.
+>Externe apps die aan de MSIX-app zijn gekoppeld, kunnen uit de feed verdwijnen wanneer u externe apps test tijdens de openbare preview. De apps worden niet weergegeven omdat de hostgroep die u in de evaluatieomgeving gebruikt, wordt bediend door een RD Broker in de productieomgeving. Omdat de RD Broker in de productieomgeving de aanwezigheid van externe apps die zijn gekoppeld aan de MSIX-app niet registreert, worden de apps niet weergegeven in de feed.
 
-## <a name="change-msix-package-state"></a>Status van MSIX-pakket wijzigen
+## <a name="change-msix-package-state"></a>MSIX-pakkettoestand wijzigen
 
-Vervolgens moet u de status van het MSIX-pakket wijzigen in **actief** of **inactief**, afhankelijk van wat u met het pakket wilt doen. Actieve pakketten zijn pakketten die uw gebruikers kunnen gebruiken wanneer ze zijn gepubliceerd. Inactieve pakketten worden door Windows Virtual Desktop genegeerd, zodat uw gebruikers niet kunnen communiceren met de apps in.
+Vervolgens moet u de status van het MSIX-pakket wijzigen in **Actief** of **Inactief,** afhankelijk van wat u met het pakket wilt doen. Actieve pakketten zijn pakketten die uw gebruikers kunnen gebruiken zodra ze zijn gepubliceerd. Inactieve pakketten worden genegeerd door Windows Virtual Desktop, zodat uw gebruikers niet kunnen communiceren met de apps in de app.
 
-### <a name="change-state-with-the-applications-list"></a>Status wijzigen in de lijst met toepassingen
+### <a name="change-state-with-the-applications-list"></a>Status wijzigen met de lijst met toepassingen
 
-Wijzig de status van het pakket met de lijst met toepassingen:
+De status van het pakket wijzigen met de lijst met toepassingen:
 
-1. Ga naar uw hostgroep en selecteer **MSIX-pakketten**. U ziet een lijst met alle bestaande MSIX-pakketten binnen de hostgroep.
+1. Ga naar uw hostgroep en selecteer **MSIX-pakketten.** Als het goed is, ziet u een lijst met alle bestaande MSIX-pakketten in de hostgroep.
 
-2. Selecteer de MSIX-pakketten waarvan u de status wilt wijzigen, en selecteer vervolgens **status wijzigen**.
+2. Selecteer de MSIX-pakketten waarvan u de status wilt wijzigen en selecteer **vervolgens Status wijzigen.**
 
-### <a name="change-state-with-update-package"></a>Status wijzigen met update pakket
+### <a name="change-state-with-update-package"></a>Status wijzigen met updatepakket
 
-De pakket status wijzigen met een update pakket:
+De pakkettoestand wijzigen met een updatepakket:
 
-1. Ga naar uw hostgroep en selecteer **MSIX-pakketten**. U ziet een lijst met alle bestaande MSIX-pakketten binnen de hostgroep.
+1. Ga naar uw hostgroep en selecteer **MSIX-pakketten.** Als het goed is, ziet u een lijst met alle bestaande MSIX-pakketten in de hostgroep.
 
-2. Selecteer in de lijst MSIX pakket de naam van het pakket waarvan u de status wilt wijzigen. Hiermee opent u het tabblad **Update pakket** .
+2. Selecteer de naam van het pakket waarvan u de status wilt wijzigen in de lijst met MSIX-pakketten. Hiermee opent u het **tabblad Pakket** bijwerken.
 
-3. Schakel de **status** switch in op **inactief** of **actief** en selecteer vervolgens **opslaan.**
+3. Zet de **schakelknop Status** op **Inactief of** **Actief** en selecteer vervolgens **Opslaan.**
 
-## <a name="change-msix-package-registration-type"></a>Het registratie type van het MSIX-pakket wijzigen
+## <a name="change-msix-package-registration-type"></a>MsIX-pakketregistratietype wijzigen
 
-Het registratie type van het pakket wijzigen:
+Het registratietype van het pakket wijzigen:
 
-1. Selecteer **MSIX-pakketten**. U ziet een lijst met alle bestaande MSIX-pakketten binnen de hostgroep.
+1. Selecteer **MSIX-pakketten.** Als het goed is, ziet u een lijst met alle bestaande MSIX-pakketten in de hostgroep.
 
-2. Selecteer **pakket naam in** het **raster MSIX-pakketten** Hiermee wordt de Blade geopend om het pakket bij te werken.
+2. Selecteer **Pakketnaam in het** raster **MSIX-pakketten.** Hiermee wordt de blade geopend om het pakket bij te werken.
 
-3. Schakel het **registratie type** via de knop **op aanvraag/logboeken op** de gewenste locatie in en selecteer **opslaan.**
+3. Schakel het **registratietype naar wens** in via de blokkeringsknop **On-demand/Log on** en selecteer **Opslaan.**
 
 ## <a name="remove-an-msix-package"></a>Een MSIX-pakket verwijderen
 
-Een MSIX-pakket verwijderen uit uw hostgroep:
+Een MSIX-pakket uit uw hostgroep verwijderen:
 
-1. Selecteer **MSIX-pakketten**.  U ziet een lijst met alle bestaande MSIX-pakketten binnen de hostgroep.
+1. Selecteer **MSIX-pakketten.**  Als het goed is, ziet u een lijst met alle bestaande MSIX-pakketten in de hostgroep.
 
-2. Selecteer het beletsel teken aan de rechter kant van de naam van het pakket dat u wilt verwijderen en selecteer vervolgens **verwijderen**.
+2. Selecteer het beletselteken aan de rechterkant de naam van het pakket dat u wilt verwijderen en selecteer **vervolgens Verwijderen.**
 
 ## <a name="remove-msix-apps"></a>MSIX-apps verwijderen
 
 Afzonderlijke MSIX-apps uit uw pakket verwijderen:
 
-1. Ga naar de hostgroep en selecteer **toepassings groepen**.
+1. Ga naar de hostgroep en selecteer **Toepassingsgroepen.**
 
-2. Selecteer de toepassings groep waarvan u de MSIX-Apps wilt verwijderen.
+2. Selecteer de toepassingsgroep waar u MSIX-apps uit wilt verwijderen.
 
-3. Open het tabblad **toepassingen** .
+3. Open het **tabblad** Toepassingen.
 
-4. Selecteer de app die u wilt verwijderen en selecteer vervolgens **verwijderen**.
+4. Selecteer de app die u wilt verwijderen en selecteer **vervolgens Verwijderen.**
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Vraag onze vragen van de community over deze functie op het [virtuele bureau blad-TechCommunity van Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop).
+Stel onze communityvragen over deze functie op de [Windows Virtual Desktop TechCommunity.](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop)
 
-U kunt ook feedback geven voor Windows virtueel bureau blad op de [Windows Virtual Desktop feedback hub](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app).
+U kunt ook feedback geven voor Windows Virtual Desktop in Windows Virtual Desktop [feedbackhub.](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)
 
-Hier volgen enkele andere artikelen die u mogelijk handig vindt:
+Hier zijn enkele andere artikelen die u mogelijk nuttig vindt:
 
-- [Woorden lijst voor het toevoegen van MSIX-apps](app-attach-glossary.md)
+- [Verklarende woordenlijst voor msix-app-attach](app-attach-glossary.md)
 - [Veelgestelde vragen over het koppelen van MSIX-apps](app-attach-faq.md)

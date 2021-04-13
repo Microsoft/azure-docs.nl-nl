@@ -10,18 +10,18 @@ ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
 ms.date: 04/04/2021
-ms.openlocfilehash: a26f46da7b392bd3b4a49aacb360a4c6147f8d2c
-ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
+ms.openlocfilehash: 92d1534b5dd0233ce88b81d605c6502b67a121df
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106382637"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107307891"
 ---
 # <a name="explore-the-synapse-knowledge-center"></a>Het Synapse Knowledge Center verkennen
 
 In deze zelfstudie leert u hoe u het Synapse Studio Knowledge Center gebruikt.
 
-## <a name="getting-to-the-knowledge-center"></a>Het Knowledge Center verkennen
+## <a name="introduction-to-the-knowledge-center"></a>Inleiding tot het kennis centrum
 
 Er zijn twee manieren om het Knowledge Center te vinden in Synapse Studio:
 
@@ -30,16 +30,19 @@ Er zijn twee manieren om het Knowledge Center te vinden in Synapse Studio:
 
 Kies een van beide methoden en open het **Knowledge Center**.
 
-## <a name="overview"></a>Overzicht
-
-In het **Knowledge Center** kunt u drie dingen doen:
+Zodra deze weer gegeven is, ziet u dat u met het **kennis centrum** drie dingen kunt doen:
 * **Voorbeelden direct gebruiken**. Als u een snel voorbeeld wilt van hoe Synapse werkt, kiest u deze optie.
 * **Door galerie bladeren**. Met deze optie kunt u voorbeeldgegevenssets koppelen en voorbeeldcode toevoegen in de vorm van SQL-scripts, -notebooks en -pijplijnen.
 * **Tour Synapse Studio**. Met deze optie krijgt u een korte rondleiding door de basisonderdelen van Synapse Studio. Dit is handig als u Synapse Studio nog nooit eerder hebt gebruikt.
 
-## <a name="exploring-blob-storage-with-serverless-sql-pool"></a>Blob-opslag verkennen met een serverloze SQL-pool
+## <a name="exploring-use-samples-immediately"></a>Verkennen: voor beelden direct gebruiken
 
-1. Ga naar het **kennis centrum** en klik op voor **beelden direct gebruiken**.
+Deze sectie bevat drie items:
+* Voorbeeld gegevens verkennen met Spark
+* Query's uitvoeren op gegevens met SQL
+* Externe tabel maken met SQL
+
+1. Klik in het **kennis centrum** onmiddellijk op voor **beelden gebruiken**.
 1. Selecteer **query gegevens met SQL**.
 1. Klik op voor **beeld gebruiken**.
 1. Er wordt een nieuw voor beeld-SQL-script geopend.

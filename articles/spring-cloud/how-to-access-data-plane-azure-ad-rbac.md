@@ -8,12 +8,12 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 02/04/2021
 ms.custom: devx-track-java
-ms.openlocfilehash: 16433d5b148d7bc441e375591c64af497cd7b8de
-ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
+ms.openlocfilehash: 90ee39039b0734bf434e7339a973358989c08175
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106505329"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107311359"
 ---
 # <a name="access-config-server-and-service-registry"></a>Toegang tot configuratie server en service register
 
@@ -47,15 +47,15 @@ Nadat de Azure lente-rol voor de Cloud gegevens lezer is toegewezen, hebben klan
     ```
 2. Het eind punt opstellen. We ondersteunen standaard eindpunten van de lente-Cloud configuratie server en de lente-Cloud service die wordt beheerd door de Azure lente-Cloud. Zie [Production Ready endpoints](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready-endpoints)(Engelstalig) voor meer informatie. Klanten kunnen ook een volledige lijst met ondersteunde eind punten ophalen van de bron van de lente-Cloud configuratie server en het Cloud service-REGI ster dat wordt beheerd door Azure lente-Cloud door toegang te krijgen tot eind punten:
 
-    * *https://SERVICE_NAME.svc.azuremicroservices.io/eureka/actuator/*
-    * *https://SERVICE_NAME.svc.azuremicroservices.io/config/actuator/* 
+    * *'https://SERVICE_NAME.svc.azuremicroservices.io/eureka/actuator/'*
+    * *'https://SERVICE_NAME.svc.azuremicroservices.io/config/actuator/'* 
 
 >[!NOTE]
 > Als u Azure China gebruikt, vervangt u door `*.azuremicroservices.io` `*.microservices.azure.cn` , [meer informatie](https://docs.microsoft.com/azure/china/resources-developer-guide#check-endpoints-in-azure).
 
 3. Open het samengestelde eind punt met het toegangs token. Plaats het toegangs token in een header om autorisatie te bieden.  Alleen de methode GET wordt ondersteund.
 
-    Bijvoorbeeld: toegang tot een eind punt zoals *https://SERVICE_NAME.svc.azuremicroservices.io/eureka/actuator/health* om de status van Eureka te zien.
+    Bijvoorbeeld: toegang tot een eind punt zoals *' https://SERVICE_NAME.svc.azuremicroservices.io/eureka/actuator/health '* om de status van Eureka weer te geven.
 
     Als het antwoord 401 niet- *geautoriseerd* is, controleert u of de rol is toegewezen.  Het duurt enkele minuten voordat de rol van kracht wordt of Controleer of het toegangs token niet is verlopen.
 

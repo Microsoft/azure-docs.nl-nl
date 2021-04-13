@@ -5,14 +5,14 @@ author: timsander1
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 02/02/2021
+ms.date: 04/09/2021
 ms.author: tisande
-ms.openlocfilehash: d5d5bc0a108cd08283ea29ce3bdc2de49310c5aa
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ad43d83782a2c7e9eb5cc20128be89a45f0213d1
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102499557"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107312175"
 ---
 # <a name="getting-started-with-sql-queries"></a>Aan de slag met SQL-query's
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -43,7 +43,7 @@ In de rest van dit document ziet u hoe u SQL-query's in Azure Cosmos DB kunt sch
 
 ## <a name="upload-sample-data"></a>Voorbeeld gegevens uploaden
 
-Open in uw SQL API-account Cosmos DB het [Data Explorer](./data-explorer.md) om een container te maken `Families` . Nadat de sjabloon is gemaakt, gebruikt u de gegevens structuren browser om deze te zoeken en te openen. In uw `Families` container ziet u de `Items` optie rechts onder de naam van de container. Als u deze optie opent, ziet u een knop in de menu balk in het midden van het scherm om een nieuw item te maken. U gebruikt deze functie om de volgende JSON-items te maken.
+Open in uw SQL API-account Cosmos DB het [Data Explorer](./data-explorer.md) om een container te maken `Families` . Nadat de container is gemaakt, gebruikt u de gegevens structuren browser om deze te zoeken en te openen. In uw `Families` container ziet u de `Items` optie rechts onder de naam van de container. Als u deze optie opent, ziet u een knop in de menu balk in het midden van het scherm om een nieuw item te maken. U gebruikt deze functie om de volgende JSON-items te maken.
 
 ### <a name="create-json-items"></a>JSON-items maken
 

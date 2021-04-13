@@ -7,12 +7,12 @@ ms.subservice: vm-sizes-gpu
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 9d057afc130b75bdd62031e6d2b9372bc9a37615
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7297e0ba8ae64a262983c9e89de1bbe7187610ec
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102615020"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107306429"
 ---
 # <a name="ncv2-series"></a>NCv2-serie
 
@@ -22,6 +22,7 @@ De NC24rs v2-configuratie biedt een netwerk interface met lage latentie en hoge 
 
 [Premium Storage](premium-storage-performance.md): ondersteund<br>
 [Premium Storage caching](premium-storage-performance.md): ondersteund<br>
+[Ultra schijven](disks-types.md#ultra-disk): ondersteund ([meer informatie](https://techcommunity.microsoft.com/t5/azure-compute/ultra-disk-storage-for-hpc-and-gpu-vms/ba-p/2189312) over beschik baarheid, gebruik en prestaties) <br>
 [Livemigratie](maintenance-and-updates.md): niet ondersteund<br>
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>

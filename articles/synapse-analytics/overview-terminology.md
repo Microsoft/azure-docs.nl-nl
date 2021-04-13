@@ -9,12 +9,12 @@ ms.subservice: overview
 ms.date: 11/18/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: 828f37030ae567cacbaad25849b7ba24c561c20c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3b4b4e227a0bdfc449c73541dec5d13c1c6697bc
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98132763"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107313059"
 ---
 # <a name="azure-synapse-analytics-terminology"></a>Azure Synapse Analytics-terminologie
 
@@ -34,7 +34,7 @@ Een werkruimte kan verschillende **Gekoppelde services** bevatten. Dit zijn in p
 
 **Synapse SQL** is de mogelijkheid om op T-SQL gebaseerde analyses uit te voeren in een Synapse-werkruimte. Synapse SQL heeft twee verbruiksmodellen: toegewezen en serverloos.  Gebruik **toegewezen SQL-pools** voor het toegewezen model. Een werkruimte kan elk gewenst aantal pools bevatten. Gebruik de **serverloze SQL-pools** als u het serverloze model wilt gebruiken. Elke werkruimte heeft een van deze pools.
 
-In Synapse Studio kunt u met SQL-pools werken door **SQL-scripts** te maken en uit te voeren.
+In Synapse Studio kunt u met SQL-groepen werken door SQL- **scripts** uit te voeren.
 
 ## <a name="apache-spark-for-synapse"></a>Apache Spark for Synapse
 
@@ -50,7 +50,7 @@ Azure Synapse maakt gebruik van pijplijnen om gegevensintegratie te bieden. U ku
 
 * Een **pijplijn** is een logische groep activiteiten die samen een taak uitvoeren.
 * **Activiteiten** zijn acties binnen een pijplijn die moeten worden uitgevoerd op gegevens, zoals het kopiëren van gegevens of het uitvoeren van een notebook of een SQL-script.
-* **Gegevensstromen** zijn een specifiek soort activiteit om zonder programmeerervaring gegevenstransformatie uit te voeren waarbij achter de schermen gebruik wordt gemaakt van Synapse Spark.
+* **Gegevens stromen** zijn een specifiek soort activiteit voor het uitvoeren van gegevens transformatie waarbij gebruik wordt gemaakt van Synapse Spark onder de-omvatten.
 * **Trigger** - Voert een pijplijn uit. Deze kan handmatig of automatisch worden uitgevoerd (planning, tumblingvenster of op gebeurtenis gebaseerd)
 * **Integratie van gegevensset** - Een weergave van gegevens met een naam die simpelweg verwijst naar de gegevens die in een activiteit moeten worden gebruikt als invoer en uitvoer. Deze hoort bij een gekoppelde service.
 

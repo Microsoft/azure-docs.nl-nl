@@ -4,13 +4,13 @@ description: Veelvoorkomende problemen met Azure Monitor metrische waarschuwinge
 author: harelbr
 ms.author: harelbr
 ms.topic: troubleshooting
-ms.date: 03/15/2021
-ms.openlocfilehash: f14142632f6ded9f598d6e94fd1e91ec17f6d0a7
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/12/2021
+ms.openlocfilehash: 85be4100d62971ef7f69840ae3e9b117fbc3c047
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103466494"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107305222"
 ---
 # <a name="troubleshooting-problems-in-azure-monitor-metric-alerts"></a>Problemen met metrische waarschuwingen in Azure Monitor oplossen 
 
@@ -91,9 +91,10 @@ Als u een specifieke metrische waarschuwing wilt instellen maar deze niet ziet b
 Als u op zoek bent naar [specifieke dimensie waarden van een metriek](./alerts-metric-overview.md#using-dimensions), maar deze waarden niet kunt vinden, moet u rekening houden met het volgende:
 
 1. Het kan enkele minuten duren voordat de dimensiewaarden worden weergegeven onder de lijst **Dimensiewaarden**.
-1. De weergegeven dimensiewaarden zijn gebaseerd op de metrische gegevens die de afgelopen dag zijn verzameld
-1. Als de dimensiewaarde nog niet is verzonden of niet wordt weergegeven, kunt u de optie Aangepaste waarde toevoegen gebruiken om een aangepaste dimensiewaarde toe te voegen
-1. Als u wilt waarschuwen voor alle mogelijke waarden van een dimensie (met inbegrip van toekomstige waarden), kiest u de optie alle huidige en toekomstige waarden selecteren
+2. De weergegeven dimensiewaarden zijn gebaseerd op de metrische gegevens die de afgelopen dag zijn verzameld
+3. Als de dimensiewaarde nog niet is verzonden of niet wordt weergegeven, kunt u de optie Aangepaste waarde toevoegen gebruiken om een aangepaste dimensiewaarde toe te voegen
+4. Als u wilt waarschuwen voor alle mogelijke waarden van een dimensie (met inbegrip van toekomstige waarden), kiest u de optie alle huidige en toekomstige waarden selecteren
+5. Aangepaste metrische dimensies van Application Insights resources zijn standaard uitgeschakeld. Zie [hier](../app/pre-aggregated-metrics-log-metrics.md#custom-metrics-dimensions-and-pre-aggregation)voor het inschakelen van de verzameling dimensies voor deze aangepaste metrische gegevens.
 
 ## <a name="metric-alert-rules-still-defined-on-a-deleted-resource"></a>De regels voor metrische waarschuwingen zijn nog steeds gedefinieerd voor een verwijderde resource 
 

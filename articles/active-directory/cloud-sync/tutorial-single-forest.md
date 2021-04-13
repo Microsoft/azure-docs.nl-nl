@@ -11,12 +11,12 @@ ms.date: 12/05/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a93ce1c4274f63a863880e932b247726639e5cd9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a3bc9378539e6a7f98e34d0a149848d0e892c224
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98611968"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107306089"
 ---
 # <a name="tutorial-integrate-a-single-forest-with-a-single-azure-ad-tenant"></a>Zelfstudie: Een enkele forest integreren met enkele Azure AD-tenant
 
@@ -51,7 +51,7 @@ U kunt de omgeving die u in deze zelf studie maakt, gebruiken om te testen of om
    - Voor certificaatvalidatie deblokkeert u de volgende URL's: **mscrl.microsoft.com:80**, **crl.microsoft.com:80**, **ocsp.msocsp.com:80** en **www\.microsoft.com:80**. Omdat deze URL's worden gebruikt voor certificaatvalidatie met andere Microsoft-producten, is het mogelijk dat u deze URL's al hebt gedeblokkeerd.
 
 ## <a name="install-the-azure-ad-connect-provisioning-agent"></a>De agent voor Azure AD Connect-inrichting installeren
-1. Meld u aan bij de server die is toegevoegd aan het domein.  Als u de zelfstudie [AD- en Azure-basisomgeving](tutorial-basic-ad-azure.md) gebruikt, is dit DC1.
+1. Meld u aan bij de server die is toegevoegd aan het domein.  Als u de basis zelf studie  [D en Azure-omgeving](tutorial-basic-ad-azure.md) gebruikt, is dit DC1.
 2. Meld u aan bij de Azure-portal met behulp van de referenties van de alleen-cloud account voor globale beheerders.
 3. Selecteer aan de linkerkant **Azure Active Directory**, klik op **Azure AD Connect** en selecteer in het midden **Cloud synchronisatie beheren**.
 
@@ -64,7 +64,7 @@ U kunt de omgeving die u in deze zelf studie maakt, gebruiken om te testen of om
    ![Schermopname van het startscherm 'Microsoft Azure A D ConnectProvisioning Agent Package' wordt weergegeven.](media/how-to-install/install-1.png)
 
 7. Zodra deze bewerking is voltooid, wordt de configuratiewizard gestart.  Meld u aan met uw globale beheerdersreferenties voor Azure AD.  Houd er rekening mee dat als u verbeterde beveiliging van Internet Explorer hebt ingeschakeld, aanmelding wordt geblokkeerd.  Als dit het geval is, sluit u de installatie, schakelt u verbeterde beveiliging van Internet Explorer in Serverbeheer uit en klikt u op de **wizard voor de AAD Connect-inrichtingsagent** om de installatie opnieuw te starten.
-8. Klik in het scherm **Verbinding maken met Active Directory** op **Directory toevoegen** en meld u aan met uw Active Directory-domeinbeheerdersaccount.  OPMERKING: Het domeinbeheerdersaccount mag geen vereisten voor wachtwoordwijziging hebben. Als het wachtwoord is verlopen of gewijzigd, moet u de agent opnieuw configureren met de nieuwe referenties. Met deze bewerking wordt uw on-premises adreslijst toegevoegd.  Klik op **Volgende**.
+8. Klik in het scherm **Verbinding maken met Active Directory** op **Directory toevoegen** en meld u aan met uw Active Directory-domeinbeheerdersaccount.  OPMERKING: Het domeinbeheerdersaccount mag geen vereisten voor wachtwoordwijziging hebben. Als het wacht woord is verlopen of gewijzigd, moet u de agent opnieuw configureren met de nieuwe referenties. Met deze bewerking wordt uw on-premises adreslijst toegevoegd.  Klik op **Volgende**.
 
    ![Schermopname van het venster 'Verbinding maken met Active Directory'.](media/how-to-install/install-3a.png)
 
@@ -88,7 +88,7 @@ Voer de volgende stappen uit om te controleren of de agent wordt gedetecteerd do
 ![Azure-portal](media/how-to-install/install-6.png)</br>
 
 3.  Klik op het scherm **Azure AD Connect Cloud Sync** op **Alle agents controleren**.
-![Azure AD-inrichting](media/how-to-install/install-7.png)</br>
+![Azure A D-inrichting](media/how-to-install/install-7.png)</br>
  
 4. In het scherm **On-premises inrichtingsagents** ziet u de agents die u hebt geïnstalleerd.  Controleer of de agent in kwestie beschikbaar is en op **Uitgeschakeld** staat.
 ![Inrichtingsagenten](media/how-to-install/verify-1.png)</br>
@@ -110,28 +110,28 @@ Voer de volgende stappen uit om te controleren of de agent wordt uitgevoerd:
 4.  Selecteer scherm opname van **Cloud synchronisatie beheren** 
  ![ met de koppeling Cloud synchronisatie beheren.](media/how-to-configure/manage-1.png)
 5.  Klik op **nieuwe** 
- ![ scherm afbeelding van Azure AD Connect Cloud synchronisatie met de koppeling ' nieuwe configuratie ' gemarkeerd.](media/tutorial-single-forest/configure-1.png)
+ ![ scherm afbeelding van het venster Azure A D Connect-Cloud synchronisatie met de koppeling ' nieuwe configuratie ' gemarkeerd.](media/tutorial-single-forest/configure-1.png)
 7.  Voer in het configuratiescherm een **E-mailadres voor meldingen** in, zet de selector op **Inschakelen** en klik op **Opslaan**.
 ![Schermopname van het scherm Configureren waarin het e-mailadres voor meldingen is ingevuld en Inschakelen is geselecteerd.](media/how-to-configure/configure-2.png)
 1.  De configuratiestatus moet nu **In orde** zijn.
-![Scherm afbeelding van Azure AD Connect Cloud synchronisatie scherm met de status in orde.](media/how-to-configure/manage-4.png)
+![Scherm opname van Azure een D Connect-venster voor Cloud synchronisatie met de status in orde.](media/how-to-configure/manage-4.png)
 
 ## <a name="verify-users-are-created-and-synchronization-is-occurring"></a>Controleer of gebruikers zijn gemaakt en synchronisatie plaatsvindt
-U gaat nu controleren of de gebruikers die beschikbaar waren in onze on-premises adreslijst, zijn gesynchroniseerd en nu aanwezig zijn in onze Azure AD-tenant.  Dit synchronisatieproces kan enkele uren duren.  Ga als volgt te werk om te controleren of gebruikers zijn gesynchroniseerd.
+U gaat nu controleren of de gebruikers die u in uw on-premises Directory had, zijn gesynchroniseerd en nu aanwezig zijn in uw Azure AD-Tenant.  Dit synchronisatieproces kan enkele uren duren.  Ga als volgt te werk om te controleren of gebruikers zijn gesynchroniseerd.
 
 
 1. Meld u bij de [Azure Portal](https://portal.azure.com) aan met een account waaraan een Azure-abonnement is gekoppeld.
 2. Selecteer links **Azure Active Directory**
 3. Onder **Beheren**, selecteer **Gebruikers**.
-4. Kijk of u de nieuwe gebruikers ziet in onze tenant.</br>
+4. Controleer of de nieuwe gebruikers in uw Tenant worden weer geven</br>
 
-## <a name="test-signing-in-with-one-of-our-users"></a>Aanmelden testen met een van onze gebruikers
+## <a name="test-signing-in-with-one-of-your-users"></a>Aanmelden met een van uw gebruikers testen
 
 1. Blader naar [https://myapps.microsoft.com](https://myapps.microsoft.com)
-2. Meld u aan met een gebruikersaccount dat is gemaakt in onze nieuwe tenant.  U moet zich aanmelden met de volgende indeling: (user@domain.onmicrosoft.com). Gebruik hetzelfde wachtwoord dat de gebruiker gebruikt om zich on-premises aan te melden.</br>
+2. Meld u aan met een gebruikers account dat is gemaakt in uw Tenant.  U moet zich aanmelden met de volgende indeling: (user@domain.onmicrosoft.com). Gebruik hetzelfde wachtwoord dat de gebruiker gebruikt om zich on-premises aan te melden.</br>
    ![Verifiëren](media/tutorial-single-forest/verify-1.png)</br>
 
-U hebt nu een omgeving met een hybride identiteit ingesteld die u kunt gebruiken voor testdoeleinden en om bekend te raken met wat Azure te bieden heeft.
+U hebt nu een hybride identiteits omgeving geconfigureerd met Azure AD Connect Cloud synchronisatie.
 
 
 ## <a name="next-steps"></a>Volgende stappen 

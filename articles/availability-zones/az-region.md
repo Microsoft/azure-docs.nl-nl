@@ -1,47 +1,47 @@
 ---
 title: Azure-services die beschikbaarheidszones ondersteunen
-description: Als u Maxi maal beschik bare en flexibele toepassingen in azure wilt maken, Beschikbaarheidszones u fysiek afzonderlijke locaties bieden die u kunt gebruiken om uw resources uit te voeren.
+description: Als u uiterst beschikbare en flexibele toepassingen in Azure wilt maken, Beschikbaarheidszones fysiek gescheiden locaties bieden die u kunt gebruiken om uw resources uit te voeren.
 author: prsandhu
 ms.service: azure
 ms.topic: conceptual
-ms.date: 04/06/2021
+ms.date: 04/13/2021
 ms.author: prsandhu
 ms.reviewer: cynthn
 ms.custom: fasttrack-edit, mvc, references_regions
-ms.openlocfilehash: 782e632f8707b4cafb6d33438f6c8da7e8b08c30
-ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
+ms.openlocfilehash: fd4443e4ef6bcecacc03ce190bbf438288c9ec60
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106491387"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107364053"
 ---
 # <a name="azure-services-that-support-availability-zones"></a>Azure-services die beschikbaarheidszones ondersteunen
 
-Microsoft Azure wereld wijde infra structuur is ontworpen en gebouwd op elke laag om de hoogste mate van redundantie en tolerantie voor de klanten te leveren. De Azure-infra structuur bestaat uit geografi, regio's en Beschikbaarheidszones, die de versterking van een storing beperken, waardoor de potentiële impact op klant toepassingen en-gegevens wordt beperkt. De Azure-beschikbaarheidszones-constructie is ontwikkeld om een software-en netwerk oplossing te bieden om te beschermen tegen datacenter fouten en om verhoogde hoge Beschik baarheid (HA) te bieden aan onze klanten.
+Microsoft Azure is ontworpen en gebouwd op elke laag om de klanten de hoogste redundantie- en tolerantieniveaus te bieden. De Azure-infrastructuur bestaat uit geografische gebieden, regio's en Beschikbaarheidszones, waardoor de radius van een storing wordt beperkt en potentiële gevolgen voor klanttoepassingen en -gegevens worden beperkt. De Azure-beschikbaarheidszones is ontwikkeld om een software- en netwerkoplossing te bieden ter bescherming tegen storingen in datacenters en om onze klanten een verhoogde hoge beschikbaarheid te bieden.
 
-Beschikbaarheidszones zijn unieke, fysieke locaties binnen een Azure-regio. Elke zone bestaat uit een of meer data centers met onafhankelijke voeding, koeling en netwerken. De fysieke schei ding van Beschikbaarheidszones binnen een regio beperkt de gevolgen voor toepassingen en gegevens uit zone fouten, zoals grootschalige Flooding, grote stormes en superstormen en andere gebeurtenissen die de toegang tot de site kunnen verstoren, veilige passeren, de uptime van uitgebreide hulpprogram ma's en de beschik baarheid van resources. Beschikbaarheidszones en hun bijbehorende data centers zijn zo ontworpen dat als er een zone wordt aangetast, de services, capaciteit en beschik baarheid worden ondersteund door de andere Beschikbaarheidszones in de regio.
+Beschikbaarheidszones zijn unieke, fysieke locaties binnen een Azure-regio. Elke zone bestaat uit een of meer datacenters met onafhankelijke voeding, koeling en netwerken. De fysieke scheiding van Beschikbaarheidszones binnen een regio beperkt de impact op toepassingen en gegevens van zonestoringen, zoals grootschalige overstromingen, grote stormen en superstormen, en andere gebeurtenissen die de toegang tot de site kunnen verstoren, veilige ruimte, uitgebreide uptime van hulpprogramma's en de beschikbaarheid van resources. Beschikbaarheidszones en de bijbehorende datacenters zijn zodanig ontworpen dat als de ene zone wordt aangetast, de services, capaciteit en beschikbaarheid worden ondersteund door de andere Beschikbaarheidszones in de regio.
 
-Alle Azure Management-Services zijn ontworpen om te worden flexibeler dan storingen op regio niveau. In het spectrum van fouten, hebben een of meer fouten in de beschikbaarheids zone binnen een regio een kleinere fout RADIUS vergeleken met een volledige regio fout. Azure kan een storing op zone niveau van beheer services binnen een regio herstellen. Azure voert een kritieke onderhouds bewerking uit binnen een regio, om te voor komen dat er fouten optreden die van invloed zijn op klant resources die zijn geïmplementeerd op Beschikbaarheidszones binnen een regio.
-
-
-![conceptuele weer gave van een Azure-regio met drie zones](./media/az-region/azure-region-availability-zones.png)
+Alle Azure-beheerservices zijn ontworpen om bestand te zijn tegen storingen op regioniveau. In het spectrum van storingen hebben een of meer beschikbaarheidszonefouten binnen een regio een kleinere foutradius in vergelijking met een storing in een hele regio. Azure kan herstellen van een storing op zoneniveau van beheerservices binnen een regio. Azure voert kritiek onderhoud één zone voor één uit binnen een regio om fouten te voorkomen die van invloed zijn op klantbronnen die zijn geïmplementeerd Beschikbaarheidszones binnen een regio.
 
 
-Azure-Services die Beschikbaarheidszones ondersteunen, kunnen worden onderverdeeld in drie categorieën: **zonegebonden**, **zone-redundante** en **niet-regionale** Services. Werk belastingen van klanten kunnen worden gecategoriseerd om gebruik te maken van een van deze architectuur scenario's om te voldoen aan de prestaties en duurzaamheid van toepassingen.
-
-- **Zonegebonden Services** : een resource kan worden geïmplementeerd in een specifieke, zelfgeselecteerde beschikbaarheids zone voor meer strikte latentie of prestatie vereisten.  Tolerantie is zelf ontworpen door toepassingen en gegevens te repliceren naar een of meer zones binnen de regio.  Resources kunnen worden vastgemaakt aan een specifieke zone. Virtuele machines, Managed disks of standaard-IP-adressen kunnen bijvoorbeeld worden vastgemaakt aan een specifieke zone, waardoor de flexibiliteit kan worden verg root door een of meer exemplaren van resources over meerdere zones te verdelen.
-
-- **Zone-redundante Services** : Azure-platform repliceert de resource en gegevens over zones.  Micro soft beheert de levering van hoge Beschik baarheid, omdat Azure automatisch exemplaren van de regio repliceert en distribueert.  ZRS bijvoorbeeld repliceert de gegevens over drie zones, zodat een zone storing geen invloed heeft op de HA van de gegevens. 
-
-- **Niet-regionale Services** : services zijn altijd beschikbaar vanuit Azure-geografi en zijn flexibel voor de zone-brede storingen en de regionale storingen voor de hele regio. 
+![conceptuele weergave van een Azure-regio met 3 zones](./media/az-region/azure-region-availability-zones.png)
 
 
-Als u een uitgebreide bedrijfs continuïteit wilt bereiken op Azure, bouwt u uw toepassings architectuur met de combi natie van Beschikbaarheidszones met Azure-regio paren. U kunt uw toepassingen en gegevens synchroon repliceren met Beschikbaarheidszones binnen een Azure-regio voor hoge Beschik baarheid en asynchroon repliceren in azure-regio's voor nood herstel beveiliging. Lees voor meer informatie over het [bouwen van oplossingen voor hoge Beschik baarheid met behulp van Beschikbaarheidszones](/azure/architecture/high-availability/building-solutions-for-high-availability). 
+Azure-services die Beschikbaarheidszones kunnen worden onderverdeeld in drie categorieën: **zone-redundante** en **niet-regionale** services.  Workloads van klanten kunnen worden gecategoriseerd om elk van deze architectuurscenario's te gebruiken om te voldoen aan de prestaties en duurzaamheid van toepassingen.
 
-## <a name="azure-services-supporting-availability-zones"></a>Azure-Services die Beschikbaarheidszones ondersteunen
+- **Zonespecifieke services:** een resource kan worden geïmplementeerd in een specifieke, zelf geselecteerde beschikbaarheidszone om strengere latentie- of prestatievereisten te bereiken.  Tolerantie is zelf ontworpen door toepassingen en gegevens te repliceren naar een of meer zones in de regio.  Resources kunnen worden vastgemaakt aan een specifieke zone. Virtuele machines, beheerde schijven of standaard-IP-adressen kunnen bijvoorbeeld worden vastgemaakt aan een specifieke zone, waardoor de tolerantie wordt verhoogd door een of meer exemplaren van resources over zones te verdelen.
 
- - De virtuele machines van de vorige generatie worden niet weer gegeven. Zie voor meer informatie [vorige generaties virtuele machine grootten](../virtual-machines/sizes-previous-gen.md).
- - Zoals vermeld in de [regio's en Beschikbaarheidszones in azure](az-overview.md), zijn sommige services niet regionaal. Deze services hebben geen afhankelijkheid van een specifieke Azure-regio, omdat dit tot een groot aantal storingen in de zone ligt en voor regionale storingen.  De lijst met niet-regionale Services vindt u op [producten die beschikbaar zijn per regio](https://azure.microsoft.com/global-infrastructure/services/).
+- **Zone-redundante services:** het Azure-platform repliceert de resource en gegevens tussen zones.  Microsoft beheert de levering van hoge beschikbaarheid omdat Azure automatisch exemplaren binnen de regio repliceert en distribueert.  ZRS repliceert bijvoorbeeld de gegevens in drie zones, zodat een zonefout geen invloed heeft op de ha van de gegevens. 
+
+- **Niet-regionale services: services** zijn altijd beschikbaar vanuit Azure-geografieën en zijn bestand tegen zonebrede uitval en regiobrede uitval. 
+
+
+Als u uitgebreide bedrijfscontinuïteit wilt realiseren in Azure, bouwt u uw toepassingsarchitectuur met behulp van de combinatie van Beschikbaarheidszones met Azure-regioparen. U kunt uw toepassingen en gegevens synchroon repliceren met behulp van Beschikbaarheidszones binnen een Azure-regio voor hoge beschikbaarheid en asynchroon repliceren tussen Azure-regio's voor bescherming tegen noodherstel. Lees Oplossingen bouwen voor [hoge beschikbaarheid met behulp van Beschikbaarheidszones.](/azure/architecture/high-availability/building-solutions-for-high-availability) 
+
+## <a name="azure-services-supporting-availability-zones"></a>Azure-services die ondersteuning Beschikbaarheidszones
+
+ - De virtuele machines van de oudere generatie worden niet weergegeven. Zie Vorige generaties van [virtuele-machinegrootten voor meer informatie.](../virtual-machines/sizes-previous-gen.md)
+ - Zoals vermeld in de [regio's en Beschikbaarheidszones in Azure](az-overview.md), zijn sommige services niet-regionaal. Deze services zijn niet afhankelijk van een specifieke Azure-regio, omdat ze bestand zijn tegen zonebrede uitval en uitval in de hele regio.  De lijst met niet-regionale services vindt u op [Producten beschikbaar per regio.](https://azure.microsoft.com/global-infrastructure/services/)
 
 
 ## <a name="azure-regions-with-availability-zones"></a>Azure-regio's met Beschikbaarheidszones
@@ -50,183 +50,184 @@ Als u een uitgebreide bedrijfs continuïteit wilt bereiken op Azure, bouwt u uw 
 | Noord- en Zuid-Amerika           | Europa               | Afrika              | Azië en Stille Oceaan   |
 |--------------------|----------------------|---------------------|----------------|
 |                    |                      |                     |                |
-| Brazilië - zuid       | Frankrijk - centraal       | Zuid-Afrika-noord * | Australië - oost |
-| Canada - midden     | Duitsland - west-centraal |                     | Centraal-India * |
+| Brazilië - zuid       | Frankrijk - centraal       | Zuid-Afrika - noord* | Australië - oost |
+| Canada - midden     | Duitsland - west-centraal |                     | India - centraal* |
 | VS - centraal         | Europa - noord         |                     | Japan - oost     |
-| VS - oost            | Verenigd Koninkrijk Zuid             |                     | Korea-centraal * |
+| VS - oost            | Verenigd Koninkrijk Zuid             |                     | Korea - centraal* |
 | VS - oost 2          | Europa -west          |                     | Azië - zuidoost |
-| VS Zuid-Centraal |                      |                     |                |
+| VS - zuid-centraal |                      |                     |                |
 | VS (overheid) - Virginia    |                      |                     |                |
-| VS-West 2        |                      |                     |                |
-| VS-West 3 *       |                      |                     |                |
+| VS - west 2        |                      |                     |                |
+| VS - west 3*       |                      |                     |                |
 
-\* Voor meer informatie over de ondersteuning van Beschikbaarheidszones en beschik bare Services in deze regio's, neemt u contact op met uw micro soft-verkoop-of klant vertegenwoordiger. Zie [Azure-geografi](https://azure.microsoft.com/en-us/global-infrastructure/geographies/)(Engelstalig) voor de aanstaande regio's die Beschikbaarheidszones ondersteunen.
-
-
-## <a name="azure-services-supporting-availability-zones"></a>Azure-Services die Beschikbaarheidszones ondersteunen
-
-- Virtuele machines van de vorige generatie worden hieronder niet weer gegeven. Zie voor meer informatie [vorige generaties virtuele machine grootten](../virtual-machines/sizes-previous-gen.md).
-
-- Sommige services zijn niet regionaal, Zie [regio's en Beschikbaarheidszones in azure](az-overview.md) voor meer informatie. Deze services hebben geen afhankelijkheid van een specifieke Azure-regio, waardoor ze robuust zijn voor de zone-ruime onderbrekingen en de regionale storingen.  De lijst met niet-regionale Services vindt u op [producten die beschikbaar zijn per regio](https://azure.microsoft.com/global-infrastructure/services/).
+\* Neem contact op met uw microsoft Beschikbaarheidszones of klantmedewerker voor meer informatie over de ondersteuning van Beschikbaarheidszones en beschikbare services in deze regio's. Zie Azure-regio's voor Beschikbaarheidszones [regio's.](https://azure.microsoft.com/en-us/global-infrastructure/geographies/)
 
 
-### <a name="zone-resilient-services"></a>Zone flexibele services 
+## <a name="azure-services-supporting-availability-zones"></a>Azure-services die ondersteuning Beschikbaarheidszones
 
-: globe_with_meridians: niet-regionale Services: services zijn altijd beschikbaar vanuit Azure-geografi en zijn flexibel voor de zone-brede storingen en de regionale storingen voor de hele regio.
+- Virtuele machines van de oudere generatie worden hieronder niet vermeld. Zie vorige generaties van [virtuele-machinegrootten voor meer informatie.](../virtual-machines/sizes-previous-gen.md)
 
-: large_blue_diamond: robuust aan de zone-brede storingen 
-
-**Foundational Services**
-
-|     Producten                                                    | Flexibiliteit             |
-|-----------------------------------------------------------------|:----------------------------:|
-|     Opslag account                                           | : large_blue_diamond:  |
-|     Application Gateway (v2)                                  | : large_blue_diamond:  |
-|     Azure Backup                                                | : large_blue_diamond:  |
-|     Azure Cosmos DB                                           | : large_blue_diamond:  |
-|     Azure Data Lake Storage gen 2                             | : large_blue_diamond:  |
-|     Azure Express-route                                       | : large_blue_diamond:  |
-|     Open bare IP van Azure                                           | : large_blue_diamond:  |
-|     Azure SQL Database (Algemeen laag)                 | : large_blue_diamond:  |
-|     Azure SQL Database (Premium & Bedrijfskritiek-laag)     | : large_blue_diamond:  |
-|     Disk Storage                                                | : large_blue_diamond:  |
-|     Event Hubs                                                  | : large_blue_diamond:  |
-|     Key Vault                                                   | : large_blue_diamond:  |
-|     Load Balancer                                               | : large_blue_diamond:  |
-|     Service Bus                                                 | : large_blue_diamond:  |
-|     Service Fabric                                            | : large_blue_diamond:  |
-|     Opslag: warme/koud Blob Storage lagen                      | : large_blue_diamond:  |
-|     Opslag: Managed Disks                                    | : large_blue_diamond:  |
-|     Virtual Machines schaal sets                               | : large_blue_diamond:  |
-|     Virtual Machines                                          | : large_blue_diamond:  |
-|     Virtual Machines: Av2-Series                              | : large_blue_diamond:  |
-|     Virtual Machines: Bs-Series                               | : large_blue_diamond:  |
-|     Virtual Machines: DSv2-Series                             | : large_blue_diamond:  |
-|     Virtual Machines: DSv3-Series                             | : large_blue_diamond:  |
-|     Virtual Machines: Dv2-Series                              | : large_blue_diamond:  |
-|     Virtual Machines: Dv3-Series                              | : large_blue_diamond:  |
-|     Virtual Machines: ESv3-Series                             | : large_blue_diamond:  |
-|     Virtual Machines: Ev3-Series                              | : large_blue_diamond:  |
-|     Virtual Machines: F-serie                                | : large_blue_diamond:  |
-|     Virtual Machines: FS-Series                               | : large_blue_diamond:  |
-|     Virtual Network                                           | : large_blue_diamond:  |
-|     VPN Gateway                                                 | : large_blue_diamond:  |
+- Sommige services zijn niet-regionaal. Zie [Regio's en Beschikbaarheidszones in Azure](az-overview.md) voor meer informatie. Deze services zijn niet afhankelijk van een specifieke Azure-regio, waardoor ze bestand zijn tegen zonebrede uitval en regiobrede uitval.  De lijst met niet-regionale services vindt u op [Producten beschikbaar per regio.](https://azure.microsoft.com/global-infrastructure/services/)
 
 
-**Mainstream Services**
+### <a name="zone-resilient-services"></a>Zone Resilient Services 
 
+:globe_with_meridians: niet-regionale services : services zijn altijd beschikbaar vanuit Azure-geografieën en zijn bestand tegen zonebrede uitval en regiobrede uitval.
+
+:large_blue_diamond: bestand tegen zonebrede uitval 
+
+**Basisservices**
 
 |     Producten                                                    | Flexibiliteit             |
 |-----------------------------------------------------------------|:----------------------------:|
-|     App Service-omgevingen                                    | : large_blue_diamond:  |
-|     Azure Active Directory Domain Services                      | : large_blue_diamond:  |
-|     Azure Bastion                                               | : large_blue_diamond:  |
-|     Azure Cache voor Redis                                       | : large_blue_diamond:  |
-|     Azure Cognitive Search                                      | : large_blue_diamond:  |
-|     Azure Cognitive Services: Text Analytics                    | : large_blue_diamond:  |
-|     Azure Data Explorer                                         | : large_blue_diamond:  |
-|     Azure Database for MySQL: flexibele server                  | : large_blue_diamond:  |
-|     Azure Database for PostgreSQL: flexibele server             | : large_blue_diamond:  |
-|     Azure DDoS Protection                                       | : large_blue_diamond:  |
-|     Azure Disk Encryption                                       | : large_blue_diamond:  |
-|     Azure Firewall                                              | : large_blue_diamond:  |
-|     Azure Firewall Manager                                      | : large_blue_diamond:  |
-|     Azure Kubernetes Service (AKS)                              | : large_blue_diamond:  |
-|     Azure Private Link                                          | : large_blue_diamond:  |
-|     Azure Site Recovery                                         | : large_blue_diamond:  |
-|     Azure SQL: virtuele machine                                  | : large_blue_diamond:  |
-|     Azure Web Application Firewall                              | : large_blue_diamond:  |
-|     Container Registry                                          | : large_blue_diamond:  |
-|     Event Grid                                                  | : large_blue_diamond:  |
-|     Network Watcher                                             | : large_blue_diamond:  |
-|     Network Watcher: Traffic Analytics                          | : large_blue_diamond:  |
-|     Power BI Embedded                                           | : large_blue_diamond:  |
-|     Premium-Blob Storage                                        | : large_blue_diamond:  |
-|     Opslag: Azure Premium-bestanden                                | : large_blue_diamond:  |
-|     Virtual Machines: toegewezen Azure-host                      | : large_blue_diamond:  |
-|     Virtual Machines: Ddsv4-Series                              | : large_blue_diamond:  |
-|     Virtual Machines: Ddv4-Series                               | : large_blue_diamond:  |
-|     Virtual Machines: Dsv4-Series                               | : large_blue_diamond:  |
-|     Virtual Machines: Dv4-Series                                | : large_blue_diamond:  |
-|     Virtual Machines: Edsv4-Series                              | : large_blue_diamond:  |
-|     Virtual Machines: Edv4-Series                               | : large_blue_diamond:  |
-|     Virtual Machines: Esv4-Series                               | : large_blue_diamond:  |
-|     Virtual Machines: Ev4-Series                                | : large_blue_diamond:  |
-|     Virtual Machines: Fsv2-Series                               | : large_blue_diamond:  |
-|     Virtual Machines: M-serie                                  | : large_blue_diamond:  |
-|     Virtuele WAN                                                 | : large_blue_diamond:  |
-|     Virtueel WAN: ExpressRoute                                   | : large_blue_diamond:  |
-|     Virtueel WAN: punt-naar-site-VPN Gateway                      | : large_blue_diamond:  |
-|     Virtueel WAN: VPN Gateway site-naar-site                       | : large_blue_diamond:  |
+|     [Application Gateway (V2)](https://docs.microsoft.com/azure/application-gateway/application-gateway-autoscaling-zone-redundant)                                  | :large_blue_diamond:  |
+|     [Azure Backup](https://docs.microsoft.com/azure/backup/backup-create-rs-vault#set-storage-redundancy)                                                | :large_blue_diamond:  |
+|     [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/high-availability#availability-zone-support)                                           | :large_blue_diamond:  |
+|     [Azure Data Lake Storage Gen 2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction)                             | :large_blue_diamond:  |
+|     [Azure Express Route](https://docs.microsoft.com/azure/expressroute/designing-for-high-availability-with-expressroute)                                       | :large_blue_diamond:  |
+|     [Openbaar IP-adres van Azure](https://docs.microsoft.com/azure/virtual-network/public-ip-addresses)                                           | :large_blue_diamond:  |
+|     Azure SQL Database ([Algemeen Laag](https://docs.microsoft.com/azure/azure-sql/database/high-availability-sla))                 | :large_blue_diamond:  |
+|     Azure SQL Database([Premium & Bedrijfskritiek Tier](https://docs.microsoft.com/azure/azure-sql/database/high-availability-sla))     | :large_blue_diamond:  |
+|     [Disk Storage](https://docs.microsoft.com/azure/storage/common/storage-redundancy)                                                | :large_blue_diamond:  |
+|     [Event Hubs](https://docs.microsoft.com/azure/event-hubs/event-hubs-geo-dr#availability-zones)                                                  | :large_blue_diamond:  |
+|     [Key Vault](https://docs.microsoft.com/azure/key-vault/general/disaster-recovery-guidance)                                                   | :large_blue_diamond:  |
+|     [Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-availability-zones)                                               | :large_blue_diamond:  |
+|     [Service Bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-geo-dr#availability-zones)                                                 | :large_blue_diamond:  |
+|     [Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cross-availability-zones#:~:text=An%20Availability%20Zone%20is%20a%20unique%20physical%20location,zones.%20This%20will%20ensure%20high-availability%20of%20your%20applications)                                            | :large_blue_diamond:  |
+|     [Opslagaccount](https://docs.microsoft.com/azure/storage/common/storage-redundancy)                                           | :large_blue_diamond:  |
+|     Opslag:   [hot/cool Blob Storage lagen](https://docs.microsoft.com/azure/storage/common/storage-redundancy)                      | :large_blue_diamond:  |
+|     Opslag:   [Managed Disks](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview)                                    | :large_blue_diamond:  |
+|     [Virtual Machines-schaalsets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/scripts/cli-sample-zone-redundant-scale-set)                               | :large_blue_diamond:  |
+|     [Virtual Machines](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                                          | :large_blue_diamond:  |
+|     Virtual Machines: [Av2-serie](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                              | :large_blue_diamond:  |
+|     Virtual Machines: [Bs-serie](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                               | :large_blue_diamond:  |
+|     Virtual Machines: [DSv2-serie](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                             | :large_blue_diamond:  |
+|     Virtual Machines: [DSv3-serie](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                            | :large_blue_diamond:  |
+|     Virtual Machines: [Dv2-serie](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                             | :large_blue_diamond:  |
+|     Virtual Machines: [Dv3-serie](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                              | :large_blue_diamond:  |
+|     Virtual Machines: [ESv3-serie](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                             | :large_blue_diamond:  |
+|     Virtual Machines: [Ev3-serie](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                              | :large_blue_diamond:  |
+|     Virtual Machines: [F-serie](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                                | :large_blue_diamond:  |
+|     Virtual Machines: [FS-serie](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                               | :large_blue_diamond:  |
+|     Virtual Machines: [Shared Image Gallery](https://docs.microsoft.com/azure/virtual-machines/shared-image-galleries#make-your-images-highly-available) | :large_blue_diamond:  |
+|     [Virtual Network](https://docs.microsoft.com/azure/vpn-gateway/create-zone-redundant-vnet-gateway)                                         | :large_blue_diamond:  |
+|     [VPN Gateway](https://docs.microsoft.com/azure/vpn-gateway/about-zone-redundant-vnet-gateways)                                             | :large_blue_diamond:  |
+
+
+**Algemene services**
+
+
+|     Producten                                                    | Flexibiliteit             |
+|-----------------------------------------------------------------|:----------------------------:|
+|     [App Service-omgevingen](https://docs.microsoft.com/azure/app-service/environment/zone-redundancy)                                    | :large_blue_diamond:  |
+|     [Azure Active Directory Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/overview)                      | :large_blue_diamond:  |
+|     [Azure Bastion](https://docs.microsoft.com/azure/bastion/bastion-overview)                                               | :large_blue_diamond:  |
+|     [Azure Cache voor Redis](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-high-availability)                              | :large_blue_diamond:  |
+|     [Azure Cognitive Search](https://docs.microsoft.com/azure/search/search-performance-optimization#availability-zones)               | :large_blue_diamond:  |
+|     Azure Cognitive Services: [Text Analytics](https://docs.microsoft.com/azure/cognitive-services/text-analytics/)                    | :large_blue_diamond:  |
+|     [Azure Data Explorer](https://docs.microsoft.com/azure/data-explorer/create-cluster-database-portal)                               | :large_blue_diamond:  |
+|     Azure Database for MySQL – [Flexible Server](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-high-availability)                  | :large_blue_diamond:  |
+|     Azure Database for PostgreSQL – [Flexible Server](https://docs.microsoft.com/azure/postgresql/flexible-server/overview)             | :large_blue_diamond:  |
+|     [Azure DDoS Protection](https://docs.microsoft.com/azure/ddos-protection/ddos-faq)                                       | :large_blue_diamond:  |
+|     [Azure Disk Encryption](https://docs.microsoft.com/azure/virtual-machines/disks-redundancy)                                       | :large_blue_diamond:  |
+|     [Azure Firewall](https://docs.microsoft.com/azure/firewall/deploy-availability-zone-powershell#:~:text=For%20more%20information%20about%20Azure%20Firewall%20Availability%20Zones%2C,This%20creates%20a%20zone-redundant%20IP%20address%20by%20default)                                              | :large_blue_diamond:  |
+|     [Azure Firewall Manager](https://docs.microsoft.com/azure/firewall-manager/quick-firewall-policy)                                      | :large_blue_diamond:  |
+|     [Azure Kubernetes Service (AKS)](https://docs.microsoft.com/azure/aks/availability-zones)                              | :large_blue_diamond:  |
+|     [Azure Private Link](https://docs.microsoft.com/azure/private-link/private-link-overview)                                          | :large_blue_diamond:  |
+|     [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-how-to-enable-zone-to-zone-disaster-recovery)                                         | :large_blue_diamond:  |
+|     Azure SQL: [Virtuele machine](https://docs.microsoft.com/azure/azure-sql/database/high-availability-sla)                                  | :large_blue_diamond:  |
+|     [Azure Web Application Firewall](https://docs.microsoft.com/azure/firewall/deploy-availability-zone-powershell#:~:text=For%20more%20information%20about%20Azure%20Firewall%20Availability%20Zones%2C,This%20creates%20a%20zone-redundant%20IP%20address%20by%20default)                              | :large_blue_diamond:  |
+|     [Container Registry](https://docs.microsoft.com/azure/container-registry/zone-redundancy)                                          | :large_blue_diamond:  |
+|     [Event Grid](https://docs.microsoft.com/azure/event-grid/overview)                                                  | :large_blue_diamond:  |
+|     [Network Watcher](https://docs.microsoft.com/azure/network-watcher/frequently-asked-questions#service-availability-and-redundancy)                                             | :large_blue_diamond:  |
+|     Network Watcher: [Traffic Analytics](https://docs.microsoft.com/azure/network-watcher/frequently-asked-questions#service-availability-and-redundancy)                          | :large_blue_diamond:  |
+|     [Power BI Embedded](https://docs.microsoft.com/power-bi/admin/service-admin-failover#what-does-high-availability)                                           | :large_blue_diamond:  |
+|     [Premium Blob Storage](https://docs.microsoft.com/azure/storage/blobs/storage-blob-performance-tiers#:~:text=Table%201%20%20%20%20Area%20%20,%20%20Currently%20supports%20only%20locally-redundan%20...%20)                                        | :large_blue_diamond:  |
+|     Opslag: [Azure Premium Files](https://docs.microsoft.com/azure/storage/files/storage-files-planning)                                | :large_blue_diamond:  |
+|     Virtual Machines: [Azure Dedicated Host](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                     | :large_blue_diamond:  |
+|     Virtual Machines: [Ddsv4-serie](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                              | :large_blue_diamond:  |
+|     Virtual Machines: [Ddv4-serie](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                               | :large_blue_diamond:  |
+|     Virtual Machines: [Dsv4-serie](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                               | :large_blue_diamond:  |
+|     Virtual Machines: [Dv4-serie](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                                | :large_blue_diamond:  |
+|     Virtual Machines: [Edsv4-serie](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                              | :large_blue_diamond:  |
+|     Virtual Machines: [Edv4-serie](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                               | :large_blue_diamond:  |
+|     Virtual Machines: [Esv4-serie](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                               | :large_blue_diamond:  |
+|     Virtual Machines: [Ev4-serie](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                                | :large_blue_diamond:  |
+|     Virtual Machines: [Fsv2-serie](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                               | :large_blue_diamond:  |
+|     Virtual Machines: [M-serie](https://docs.microsoft.com/azure/virtual-machines/windows/create-powershell-availability-zone)                                  | :large_blue_diamond:  |
+|     [Virtuele WAN](https://docs.microsoft.com/azure/virtual-wan/virtual-wan-about#how-are-availability-zones-and-resiliency-handled-in-virtual-wan)                                                 | :large_blue_diamond:  |
+|     Virtual WAN: [ExpressRoute](https://docs.microsoft.com/azure/virtual-wan/virtual-wan-about#how-are-availability-zones-and-resiliency-handled-in-virtual-wan)                                   | :large_blue_diamond:  |
+|     Virtual WAN: [Punt-naar-site-VPN Gateway](https://docs.microsoft.com/azure/vpn-gateway/about-zone-redundant-vnet-gateways)                      | :large_blue_diamond:  |
+|     Virtual WAN: [Site-naar-site-VPN Gateway](https://docs.microsoft.com/azure/vpn-gateway/about-zone-redundant-vnet-gateways)                       | :large_blue_diamond:  |
 
 
 **Gespecialiseerde services**
 
 |     Producten                                                    | Flexibiliteit             |
 |-----------------------------------------------------------------|:----------------------------:|
-|     Azure Red Hat OpenShift                                     | : large_blue_diamond:  |
-|     Cognitive Services: anomalie detectie                        | : large_blue_diamond:  |
-|     Cognitive Services: formulier herkenning                         | : large_blue_diamond:  |
-|     Opslag: Ultra Disk                                         | : large_blue_diamond:  |
+|     Azure Red Hat OpenShift                                     | :large_blue_diamond:  |
+|     Cognitive Services: Anomaly Detector                        | :large_blue_diamond:  |
+|     Cognitive Services: Form Recognizer                         | :large_blue_diamond:  |
+|     Opslag: Ultra Disk                                         | :large_blue_diamond:  |
 
 
-**Niet-regionale**
+**Niet-regionaal**
 
 |     Producten                                                    | Flexibiliteit             |
 |-----------------------------------------------------------------|:----------------------------:|
-|     Azure DNS                                                   | : globe_with_meridians: |
-|     Azure Active Directory                                    | : globe_with_meridians: |
-|     Azure Advanced Threat Protection                            | : globe_with_meridians: |
-|     Azure Advisor                                               | : globe_with_meridians: |
-|     Azure Blueprints                                            | : globe_with_meridians: |
-|     Azure Bot Service                                          | : globe_with_meridians: |
-|     Azure Front Door                                            | : globe_with_meridians: |
-|     Azure Defender voor IoT                                    | : globe_with_meridians: |
-|     Azure Front Door                                            | : globe_with_meridians: |
-|     Azure Information Protection                              | : globe_with_meridians: |
-|     Azure-Lighthouse                                          | : globe_with_meridians: |
-|     Azure Managed Applications                                | : globe_with_meridians: |
-|     Azure Maps                                                  | : globe_with_meridians: |
-|     Diagnostische gegevens over Azure-prestaties                               | : globe_with_meridians: |
-|     Azure Policy                                                | : globe_with_meridians: |
-|     Azure-resource grafiek                                      | : globe_with_meridians: |
-|     Azure Sentinel                                              | : globe_with_meridians: |
-|     Azure Stack                                                 | : globe_with_meridians: |
-|     Azure Stack rand                                          | : globe_with_meridians: |
-|     Cloud Shell                                                 | : globe_with_meridians: |
-|     Content Delivery Network                                    | : globe_with_meridians: |
-|     Cost Management                                             | : globe_with_meridians: |
-|     Klanten-lockbox voor Microsoft Azure                      | : globe_with_meridians: |
-|     Intune                                                      | : globe_with_meridians: |
-|     Microsoft Azure peering-service                           | : globe_with_meridians: |
-|     Microsoft Azure-portal                                    | : globe_with_meridians: |
-|     Microsoft Cloud App Security                                | : globe_with_meridians: |
-|     Microsoft Graph                                             | : globe_with_meridians: |
-|     Security Center                                           | : globe_with_meridians: |
-|     Traffic Manager                                           | : globe_with_meridians: |
+|     Azure DNS                                                   | :globe_with_meridians: |
+|     Azure Active Directory                                    | :globe_with_meridians: |
+|     Azure Advanced Threat Protection                            | :globe_with_meridians: |
+|     Azure Advisor                                               | :globe_with_meridians: |
+|     Azure Blueprints                                            | :globe_with_meridians: |
+|     Azure Bot Service                                          | :globe_with_meridians: |
+|     Azure Front Door                                            | :globe_with_meridians: |
+|     Azure Defender for IoT                                    | :globe_with_meridians: |
+|     Azure Front Door                                            | :globe_with_meridians: |
+|     Azure Information Protection                              | :globe_with_meridians: |
+|     Azure Lighthouse                                          | :globe_with_meridians: |
+|     Azure Managed Applications                                | :globe_with_meridians: |
+|     Azure Maps                                                  | :globe_with_meridians: |
+|     Azure Performance Diagnostics                               | :globe_with_meridians: |
+|     Azure Policy                                                | :globe_with_meridians: |
+|     Azure Resource Graph                                      | :globe_with_meridians: |
+|     Azure Sentinel                                              | :globe_with_meridians: |
+|     Azure Stack                                                 | :globe_with_meridians: |
+|     Azure Stack Edge                                          | :globe_with_meridians: |
+|     Cloud Shell                                                 | :globe_with_meridians: |
+|     Content Delivery Network                                    | :globe_with_meridians: |
+|     Cost Management                                             | :globe_with_meridians: |
+|     Klanten-lockbox voor Microsoft Azure                      | :globe_with_meridians: |
+|     Intune                                                      | :globe_with_meridians: |
+|     Microsoft Azure Peering Service                           | :globe_with_meridians: |
+|     Microsoft Azure-portal                                    | :globe_with_meridians: |
+|     Microsoft Cloud App Security                                | :globe_with_meridians: |
+|     Microsoft Graph                                             | :globe_with_meridians: |
+|     Security Center                                           | :globe_with_meridians: |
+|     Traffic Manager                                           | :globe_with_meridians: |
 
 
-## <a name="pricing-for-vms-in-availability-zones"></a>Prijzen voor Vm's in Beschikbaarheidszones
+## <a name="pricing-for-vms-in-availability-zones"></a>Prijzen voor VM's in Beschikbaarheidszones
 
-Azure-beschikbaarheidszones zijn beschikbaar in uw Azure-abonnement. Meer informatie- [pagina met prijzen voor band breedte](https://azure.microsoft.com/pricing/details/bandwidth/).
+Azure-beschikbaarheidszones zijn beschikbaar met uw Azure-abonnement. Meer informatie hier - [Pagina met bandbreedteprijzen.](https://azure.microsoft.com/pricing/details/bandwidth/)
 
 
 ## <a name="get-started-with-availability-zones"></a>Aan de slag met Beschikbaarheidszones
 
 - [Een virtuele machine maken](../virtual-machines/windows/create-portal-availability-zone.md)
-- [Een beheerde schijf toevoegen met Power shell](../virtual-machines/windows/attach-disk-ps.md#add-an-empty-data-disk-to-a-virtual-machine)
-- [Een door een zone redundante schaalset voor virtuele machines maken](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md)
-- [Taak verdeling van virtuele machines in zones met behulp van een Standard Load Balancer met een zone-redundante front-end](../load-balancer/quickstart-load-balancer-standard-public-cli.md?tabs=option-1-create-load-balancer-standard)
-- [Taak verdeling van Vm's binnen een zone met behulp van een Standard Load Balancer met een zonegebonden-front-end](../load-balancer/quickstart-load-balancer-standard-public-cli.md?tabs=option-1-create-load-balancer-standard)
+- [Een beheerde schijf toevoegen met Behulp van PowerShell](../virtual-machines/windows/attach-disk-ps.md#add-an-empty-data-disk-to-a-virtual-machine)
+- [Een zone-redundante virtuele-machineschaalset maken](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md)
+- [VM's verdelen over zones met behulp van Standard Load Balancer met een zone-redundante front-end](../load-balancer/quickstart-load-balancer-standard-public-cli.md?tabs=option-1-create-load-balancer-standard)
+- [VM's binnen een zone met een Standard Load Balancer met een zonelijke front-end](../load-balancer/quickstart-load-balancer-standard-public-cli.md?tabs=option-1-create-load-balancer-standard)
 - [Zone-redundante opslag](../storage/common/storage-redundancy.md)
-- [SQL Database laag voor algemeen gebruik](../azure-sql/database/high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)
+- [SQL Database algemeen gebruik](../azure-sql/database/high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)
 - [Geo-noodherstel Event Hubs](../event-hubs/event-hubs-geo-dr.md#availability-zones)
 - [Geo-noodherstel Service Bus](../service-bus-messaging/service-bus-geo-dr.md#availability-zones)
 - [Een zone-redundante virtuele netwerkgateway maken](../vpn-gateway/create-zone-redundant-vnet-gateway.md)
-- [Zone redundante regio voor Azure Cosmos DB toevoegen](../cosmos-db/high-availability.md#availability-zone-support)
-- [Aan de slag met Azure cache voor redis Beschikbaarheidszones](https://gist.github.com/JonCole/92c669ea482bbb7996f6428fb6c3eb97#file-redisazgettingstarted-md)
+- [Zone-redundante regio voor Azure Cosmos DB](../cosmos-db/high-availability.md#availability-zone-support)
+- [Aan de slag Azure Cache voor Redis Beschikbaarheidszones](https://gist.github.com/JonCole/92c669ea482bbb7996f6428fb6c3eb97#file-redisazgettingstarted-md)
 - [Een Azure Active Directory Domain Services-instantie maken](../active-directory-domain-services/tutorial-create-instance.md)
-- [Een AKS-cluster (Azure Kubernetes service) maken dat gebruikmaakt van Beschikbaarheidszones](../aks/availability-zones.md)
+- [Een AKS Azure Kubernetes Service cluster (AKS) maken dat gebruikmaakt van Beschikbaarheidszones](../aks/availability-zones.md)
 
 
 ## <a name="next-steps"></a>Volgende stappen

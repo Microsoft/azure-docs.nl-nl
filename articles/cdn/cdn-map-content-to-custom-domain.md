@@ -3,19 +3,19 @@ title: 'Zelfstudie: Een aangepast domein aan uw eindpunt toevoegen'
 titleSuffix: Azure Content Delivery Network
 description: Met deze zelfstudie kunt u een aangepast domein toevoegen aan een Azure Content Delivery Network-eindpunt, zodat uw domeinnaam zichtbaar is in uw URL.
 services: cdn
-author: asudbring
+author: jessie-jyy
 manager: KumudD
 ms.service: azure-cdn
 ms.topic: tutorial
-ms.date: 02/04/2020
-ms.author: allensu
+ms.date: 04/12/2021
+ms.author: yuajia
 ms.custom: mvc
-ms.openlocfilehash: 9bca81e7d0eb68d43c21065f5104fc423115be25
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: 63ca8cc981f7a192c35f7d1889187ae84773ba08
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106065188"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107307993"
 ---
 # <a name="tutorial-add-a-custom-domain-to-your-endpoint"></a>Zelfstudie: Een aangepast domein aan uw eindpunt toevoegen
 
@@ -245,9 +245,14 @@ Nadat u de registratie van uw aangepaste domein hebt voltooid, verifieert u dat 
 
 Als u uw eindpunt niet langer aan een aangepast domein wilt koppelen, verwijdert u het aangepaste domein door de volgende stappen uit te voeren:
  
-1. Selecteer het eindpunt met het aangepaste domein dat u wilt verwijderen in uw CDN-profiel.
+1. Ga naar uw DNS-provider, verwijder de CNAME-record voor het aangepaste domein of werk de CNAME-record voor het aangepaste domein bij naar een niet-Azure CDN eind punt.
 
-2. Klik vanuit de **Eindpunt**-pagina onder Aangepaste domeinen met de rechtermuisknop op het aangepaste domein dat u wilt verwijderen en selecteer vervolgens **Verwijderen** in het contextmenu. Selecteer **Ja**.
+    > [!Important]
+    > Om te voor komen dat DNS-vermeldingen en de beveiligings Risico's die ze maken, vanaf 9 april 2021, Azure CDN moet de CNAME-records worden verwijderd naar Azure CDN-eind punten voordat de bronnen kunnen worden gewist. Resources omvatten Azure CDN aangepaste domeinen, Azure CDN profielen/eind punten of Azure-resource groepen waarvoor Azure CDN aangepaste domein (en) zijn ingeschakeld.
+
+2. Selecteer het eindpunt met het aangepaste domein dat u wilt verwijderen in uw CDN-profiel.
+
+3. Klik vanuit de **Eindpunt**-pagina onder Aangepaste domeinen met de rechtermuisknop op het aangepaste domein dat u wilt verwijderen en selecteer vervolgens **Verwijderen** in het contextmenu. Selecteer **Ja**.
 
    Het aangepaste domein is ontkoppeld van het eindpunt.
 
@@ -255,25 +260,29 @@ Als u uw eindpunt niet langer aan een aangepast domein wilt koppelen, verwijdert
 
 Als u uw eindpunt niet langer aan een aangepast domein wilt koppelen, verwijdert u het aangepaste domein door de volgende stappen uit te voeren:
 
-1. Gebruik [Remove-AzCdnCustomDomain](/powershell/module/az.cdn/remove-azcdncustomdomain) om het aangepaste domein te verwijderen uit het eind punt:
+1. Ga naar uw DNS-provider, verwijder de CNAME-record voor het aangepaste domein of werk de CNAME-record voor het aangepaste domein bij naar een niet-Azure CDN eind punt.
+
+    > [!Important]
+    > Om te voor komen dat DNS-vermeldingen en de beveiligings Risico's die ze maken, vanaf 9 april 2021, Azure CDN moet de CNAME-records worden verwijderd naar Azure CDN-eind punten voordat de bronnen kunnen worden gewist. Resources omvatten Azure CDN aangepaste domeinen, Azure CDN profielen/eind punten of Azure-resource groepen waarvoor Azure CDN aangepaste domein (en) zijn ingeschakeld.
+
+2. Gebruik [Remove-AzCdnCustomDomain](/powershell/module/az.cdn/remove-azcdncustomdomain) om het aangepaste domein te verwijderen uit het eind punt:
 
     * Vervang **myendpoint8675** door de naam van uw CDN-eind punt.
     * Vervang **www.contoso.com** door de naam van uw aangepaste domein.
     * Vervang **myCDN** door de naam van uw CDN-profiel.
     * Vervang **myResourceGroupCDN** door de naam van de resource groep.
 
-
-```azurepowershell-interactive
-    $parameters = @{
-        CustomDomainName = 'www.contoso.com'
-        EndPointName = 'myendpoint8675'
-        ProfileName = 'myCDN'
-        ResourceGroupName = 'myResourceGroupCDN'
-    }
-    Remove-AzCdnCustomDomain @parameters
-```
-
+    ```azurepowershell-interactive
+        $parameters = @{
+            CustomDomainName = 'www.contoso.com'
+            EndPointName = 'myendpoint8675'
+            ProfileName = 'myCDN'
+            ResourceGroupName = 'myResourceGroupCDN'
+        }
+        Remove-AzCdnCustomDomain @parameters
+    ```
 ---
+
 ## <a name="next-steps"></a>Volgende stappen
 
 In deze zelfstudie heeft u het volgende geleerd:

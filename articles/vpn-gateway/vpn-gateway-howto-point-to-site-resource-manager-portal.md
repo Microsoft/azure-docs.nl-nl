@@ -1,27 +1,27 @@
 ---
-title: 'Verbinding maken met een VNet met behulp van P2S VPN-& certificaat verificatie: Portal'
+title: 'Verbinding maken met een VNet via P2S VPN & certificaatverificatie: portal'
 titleSuffix: Azure VPN Gateway
-description: Verbind Windows-, macOS-en Linux-clients veilig met een virtueel Azure-netwerk met behulp van P2S en zelfondertekende of door certificerings instanties uitgegeven certificaten. In dit artikel wordt gebruikgemaakt van Azure Portal.
+description: Verbind Windows-, macOS- en Linux-clients veilig met een virtueel Azure-netwerk met behulp van P2S en zelf-ondertekende of door ca uitgegeven certificaten. In dit artikel wordt gebruikgemaakt van Azure Portal.
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 02/10/2021
 ms.author: cherylmc
-ms.openlocfilehash: 1c6dad28ada14151b9a1cca0da490e38972ad54d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b515ed37b5d2c71843cb138240bd2fa77fe2fd8d
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100379162"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107365549"
 ---
-# <a name="configure-a-point-to-site-vpn-connection-to-a-vnet-using-native-azure-certificate-authentication-azure-portal"></a>Configureer een punt-naar-site-VPN-verbinding met een VNet met behulp van systeem eigen Azure-certificaat verificatie: Azure Portal
+# <a name="configure-a-point-to-site-vpn-connection-to-a-vnet-using-native-azure-certificate-authentication-azure-portal"></a>Een punt-naar-site-VPN-verbinding met een VNet configureren met behulp van systeemeigen Azure-certificaatverificatie: Azure Portal
 
-Dit artikel helpt u bij het veilig verbinden van afzonderlijke clients met Windows, Linux of macOS naar een Azure-VNet. P2S-verbindingen zijn nuttig als u verbinding wilt maken met uw VNet vanaf een externe locatie, bijvoorbeeld als u ook thuis werkt of op een congres verbinding wilt maken. U kunt P2S ook in plaats van een site-naar-site-VPN gebruiken wanneer u maar een paar clients hebt die verbinding moeten maken met een VNet. Punt-naar-site-verbindingen hebben geen VPN-apparaat of openbaar IP-adres nodig. P2S maakt de VPN-verbinding via SSTP (Secure Socket Tunneling Protocol) of IKEv2. Voor meer informatie over punt-naar-site-VPN leest u [About Point-to-Site VPN](point-to-site-about.md) (Over punt-naar-site-VPN).
+Dit artikel helpt u om afzonderlijke clients met Windows, Linux of macOS veilig te verbinden met een Azure VNet. P2S-verbindingen zijn nuttig als u verbinding wilt maken met uw VNet vanaf een externe locatie, bijvoorbeeld als u ook thuis werkt of op een congres verbinding wilt maken. U kunt P2S ook in plaats van een site-naar-site-VPN gebruiken wanneer u maar een paar clients hebt die verbinding moeten maken met een VNet. Punt-naar-site-verbindingen hebben geen VPN-apparaat of openbaar IP-adres nodig. P2S maakt de VPN-verbinding via SSTP (Secure Socket Tunneling Protocol) of IKEv2. Voor meer informatie over punt-naar-site-VPN leest u [About Point-to-Site VPN](point-to-site-about.md) (Over punt-naar-site-VPN).
 
-:::image type="content" source="./media\vpn-gateway-howto-point-to-site-resource-manager-portal/point-to-site-diagram.png" alt-text="Verbinding maken tussen een computer en een Azure VNet-Point-to-site-verbindings diagram":::
+:::image type="content" source="./media/vpn-gateway-howto-point-to-site-resource-manager-portal/point-to-site-diagram.png" alt-text="Verbinding maken vanaf een computer met een Azure-VNet - punt-naar-site-verbindingsdiagram":::
 
-Zie [about Point-to-site VPN](point-to-site-about.md)(Engelstalig) voor meer informatie over punt-naar-site-VPN. Als u deze configuratie wilt maken met behulp van de Azure PowerShell, raadpleegt u [een punt-naar-site-VPN configureren met behulp van Azure PowerShell](vpn-gateway-howto-point-to-site-rm-ps.md).
+Zie About [point-to-site VPN (Over punt-naar-site-VPN)](point-to-site-about.md)voor meer informatie over punt-naar-site-VPN. Zie Configure a point-to-site VPN using Azure PowerShell Azure PowerShell (Een [punt-naar-site-VPN](vpn-gateway-howto-point-to-site-rm-ps.md)configureren met behulp van Azure PowerShell) om deze configuratie te Azure PowerShell.
 
 [!INCLUDE [P2S basic architecture](../../includes/vpn-gateway-p2s-architecture.md)]
 
@@ -34,19 +34,19 @@ Controleer of u een Azure-abonnement hebt. Als u nog geen Azure-abonnement hebt,
 U kunt de volgende waarden gebruiken om een testomgeving te maken of ze raadplegen om meer inzicht te krijgen in de voorbeelden in dit artikel:
 
 * **VNet-naam:** VNet1
-* **Adres ruimte:** 10.1.0.0/16<br>In dit voorbeeld gebruiken we slechts één adresruimte. U kunt meer dan één adresruimte voor uw VNet hebben.
+* **Adresruimte:** 10.1.0.0/16<br>In dit voorbeeld gebruiken we slechts één adresruimte. U kunt meer dan één adresruimte voor uw VNet hebben.
 * **Subnetnaam:** FrontEnd
-* **Adres bereik van subnet:** 10.1.0.0/24
+* **Subnetadresbereik:** 10.1.0.0/24
 * **Abonnement:** controleer of u het juiste abonnement hebt in het geval u er meer dan één hebt.
 * **Resourcegroep:** TestRG1
 * **Locatie:** VS - oost
 * **GatewaySubnet:** 10.1.255.0/27<br>
-* **Naam van de virtuele netwerk gateway:** VNet1GW
+* **Naam van virtuele netwerkgateway:** VNet1GW
 * **Gatewaytype:** VPN
 * **VPN-type:** Op route gebaseerd
 * **Openbare IP-adresnaam:** VNet1GWpip
-* **Verbindings type:** Punt-naar-site
-* **Client-adres groep:** 172.16.201.0/24<br>VPN-clients die verbinding maken met het VNet via deze punt-naar-site-verbinding, ontvangen een IP-adres van de clientadresgroep.
+* **Verbindingstype:** Punt-naar-site
+* **Clientadresgroep:** 172.16.201.0/24<br>VPN-clients die verbinding maken met het VNet via deze punt-naar-site-verbinding, ontvangen een IP-adres van de clientadresgroep.
 
 ## <a name="virtual-network"></a><a name="createvnet"></a>Virtueel netwerk
 
@@ -61,7 +61,7 @@ In deze sectie gaat u een virtueel netwerk maken.
 In deze stap maakt u de virtuele netwerkgateway VNet. Het maken van een gateway duurt vaak 45 minuten of langer, afhankelijk van de geselecteerde gateway-SKU.
 
 >[!NOTE]
->De basis gateway-SKU biedt geen ondersteuning voor IKEv2-of RADIUS-verificatie. Als u van plan bent Mac-clients verbinding te laten maken met uw virtuele netwerk, moet u de basis-SKU niet gebruiken.
+>De Basic-gateway-SKU biedt geen ondersteuning voor IKEv2- of RADIUS-verificatie. Als u van plan bent om Mac-clients verbinding te laten maken met uw virtuele netwerk, moet u de Basic-SKU niet gebruiken.
 >
 
 [!INCLUDE [About gateway subnets](../../includes/vpn-gateway-about-gwsubnet-portal-include.md)]
@@ -72,58 +72,58 @@ In deze stap maakt u de virtuele netwerkgateway VNet. Het maken van een gateway 
 
 Certificaten worden in Azure gebruikt om clients te verifiëren die verbinding willen maken met een VNet met behulp van een punt-naar-site-VPN-verbinding. Als u beschikt over het basiscertificaat, [uploadt](#uploadfile) u de gegevens van de openbare sleutel naar Azure. Het basiscertificaat wordt vervolgens als 'vertrouwd' beschouwd door Azure voor verbinding met het virtuele netwerk via P2S. U kunt ook clientcertificaten genereren op basis van het vertrouwde basiscertificaat en deze vervolgens op elke clientcomputer installeren. Het clientcertificaat wordt gebruikt om de client te verifiëren bij het maken van verbinding met het VNet.
 
-### <a name="generate-a-root-certificate"></a><a name="getcer"></a>Een basis certificaat genereren
+### <a name="generate-a-root-certificate"></a><a name="getcer"></a>Een basiscertificaat genereren
 
 [!INCLUDE [root-certificate](../../includes/vpn-gateway-p2s-rootcert-include.md)]
 
-### <a name="generate-client-certificates"></a><a name="generateclientcert"></a>Client certificaten genereren
+### <a name="generate-client-certificates"></a><a name="generateclientcert"></a>Clientcertificaten genereren
 
 [!INCLUDE [generate-client-cert](../../includes/vpn-gateway-p2s-clientcert-include.md)]
 
 ## <a name="client-address-pool"></a><a name="addresspool"></a>Clientadresgroep
 
-De clientadrespool bestaat uit een privé-IP-adresbereik dat u opgeeft. De clients die dynamisch verbinding maken via een punt-naar-site-VPN-verbinding krijgen een IP-adres uit dit bereik. Gebruik een privé-IP-adresbereik dat niet overlapt met de on-premises locatie waarvanaf u verbinding maakt of met het VNet waarmee u verbinding wilt maken. Als u meerdere protocollen configureert en SSTP een van de protocollen is, wordt de geconfigureerde adres groep op dezelfde manier verdeeld tussen de geconfigureerde protocollen.
+De clientadrespool bestaat uit een privé-IP-adresbereik dat u opgeeft. De clients die dynamisch verbinding maken via een punt-naar-site-VPN-verbinding krijgen een IP-adres uit dit bereik. Gebruik een privé-IP-adresbereik dat niet overlapt met de on-premises locatie waarvanaf u verbinding maakt of met het VNet waarmee u verbinding wilt maken. Als u meerdere protocollen configureert en SSTP een van de protocollen is, wordt de geconfigureerde adresgroep gelijkmatig verdeeld over de geconfigureerde protocollen.
 
-1. Nadat de virtuele netwerkgateway is gemaakt, gaat u naar de sectie **Instellingen** van de pagina van de virtuele netwerkgateway. Selecteer bij **instellingen** de optie **punt-naar-site-configuratie**. Selecteer **nu configureren** om de configuratie pagina te openen.
+1. Nadat de virtuele netwerkgateway is gemaakt, gaat u naar de sectie **Instellingen** van de pagina van de virtuele netwerkgateway. Selecteer **in** Instellingen de **optie Punt-naar-site-configuratie.** Selecteer **Nu configureren** om de configuratiepagina te openen.
 
-   :::image type="content" source="./media/vpn-gateway-howto-point-to-site-resource-manager-portal/configure-now.png" alt-text="De pagina punt-naar-site-configuratie" lightbox="./media/vpn-gateway-howto-point-to-site-resource-manager-portal/configure-now.png":::
-1. Voeg op de pagina **punt-naar-site-configuratie** in het vak **adres groep** het privé-IP-adres bereik toe dat u wilt gebruiken. VPN-clients ontvangen dynamisch een IP-adres uit het bereik dat u opgeeft. Het minimale subnetmasker is 29 bits voor actief/passief en 28 bits voor actieve/actieve configuratie.
-1. Ga door naar de volgende sectie voor het configureren van verificatie-en tunnel typen.
+   :::image type="content" source="./media/vpn-gateway-howto-point-to-site-resource-manager-portal/configure-now.png" alt-text="Pagina Punt-naar-site-configuratie" lightbox="./media/vpn-gateway-howto-point-to-site-resource-manager-portal/configure-now.png":::
+1. Voeg op **de pagina Punt-naar-site-configuratie** in het vak Adresgroep het privé-IP-adresbereik toe dat u wilt gebruiken.  VPN-clients ontvangen dynamisch een IP-adres uit het bereik dat u opgeeft. Het minimale subnetmasker is 29-bits voor actief/passief en 28-bits voor actief/actief-configuratie.
+1. Ga door naar de volgende sectie om verificatie- en tunneltypen te configureren.
 
-## <a name="authentication-and-tunnel-types"></a><a name="type"></a>Verificatie-en tunnel typen
+## <a name="authentication-and-tunnel-types"></a><a name="type"></a>Verificatie- en tunneltypen
 
-In deze sectie configureert u het verificatie type en het tunnel type. Als u het **Tunnel Type** of **verificatie type** niet ziet op de pagina **punt-naar-site-configuratie** , wordt de basis-SKU gebruikt voor uw gateway. De basis-SKU biedt geen ondersteuning voor IKEv2- of RADIUS-verificatie. Als u deze instellingen wilt gebruiken, moet u de gateway verwijderen en opnieuw maken met behulp van een andere gateway-SKU.
+In deze sectie configureert u het verificatietype en tunneltype. Als u **op de pagina Punt-naar-site-configuratie** geen **tunneltype** of verificatietype **ziet,** gebruikt uw gateway de Basis-SKU. De basis-SKU biedt geen ondersteuning voor IKEv2- of RADIUS-verificatie. Als u deze instellingen wilt gebruiken, moet u de gateway verwijderen en opnieuw maken met behulp van een andere gateway-SKU.
 
 ### <a name="tunnel-type"></a><a name="tunneltype"></a>Tunneltype
 
-Selecteer op de pagina **punt-naar-site-configuratie** het tunnel type. De tunnel opties zijn OpenVPN, SSTP en IKEv2.
+Selecteer op **de pagina Punt-naar-site-configuratie** het tunneltype. De tunnelopties zijn OpenVPN, SSTP en IKEv2.
 
 * De strongSwan-client op Android en Linux en de systeemeigen IKEv2 VPN-client op iOS en OS x gebruiken alleen de IKEv2-tunnel om verbinding te maken.
-* Windows-clients proberen eerst IKEv2 en als dat niet het geval is, gaan ze terug naar SSTP.
-* U kunt de OpenVPN-client gebruiken om verbinding te maken met het tunnel type OpenVPN.
+* Windows-clients proberen eerst IKEv2 en als dat geen verbinding maakt, vallen ze terug op SSTP.
+* U kunt de OpenVPN-client gebruiken om verbinding te maken met het OpenVPN-tunneltype.
 
-### <a name="authentication-type"></a><a name="authenticationtype"></a>Verificatie type
+### <a name="authentication-type"></a><a name="authenticationtype"></a>Verificatietype
 
-Selecteer voor **verificatie type** **Azure-certificaat**.
+Selecteer **bij Verificatietype** de optie **Azure-certificaat.**
 
 
-## <a name="root-certificate-data"></a><a name="uploadfile"></a>Basis certificaat gegevens
+## <a name="root-certificate-data"></a><a name="uploadfile"></a>Basiscertificaatgegevens
 
-In deze sectie uploadt u de gegevens van het open bare basis certificaat naar Azure. Als het uploaden is voltooid, kan Azure daarmee clients met een geïnstalleerd clientcertificaat (gemaakt op basis van het vertrouwde basiscertificaat) verifiëren.
+In deze sectie uploadt u gegevens van openbare basiscertificaten naar Azure. Als het uploaden is voltooid, kan Azure daarmee clients met een geïnstalleerd clientcertificaat (gemaakt op basis van het vertrouwde basiscertificaat) verifiëren.
 
 1. Certificaten worden toegevoegd aan de pagina **Punt-naar-site-configuratie**, in de sectie **Basiscertificaat**.
 1. Zorg ervoor dat u het basiscertificaat hebt geëxporteerd als een Base-64 encoded X.509 (.cer)-bestand. U moet het certificaat in deze indeling exporteren, zodat u het certificaat met een teksteditor kunt openen.
 1. Open het certificaat met een teksteditor zoals Kladblok. Zorg er bij het kopiëren van de certificaatgegevens voor dat u de tekst als één ononderbroken regel kopieert zonder regelterugloop of regelinvoer. Mogelijk moet u de weergave in de teksteditor wijzigen naar Symbool weergeven/Alle tekens weergeven om de regelterugloop en regelinvoer te zien. Kopieer alleen het volgende gedeelte als één ononderbroken regel:
 
-   :::image type="content" source="./media/vpn-gateway-howto-point-to-site-resource-manager-portal/notepadroot.png" alt-text="Certificaat gegevens" border="false":::
-1. Plak de certificaatgegevens in het veld **Gegevens van openbaar certificaat**. Geef het certificaat een **naam** en selecteer vervolgens **Opslaan**. U kunt maximaal 20 vertrouwde basiscertificaten toevoegen.
+   :::image type="content" source="./media/vpn-gateway-howto-point-to-site-resource-manager-portal/notepadroot.png" alt-text="Certificaatgegevens" border="false":::
+1. Plak de certificaatgegevens in het veld **Gegevens van openbaar certificaat**. **Noem** het certificaat en selecteer vervolgens **Opslaan.** U kunt maximaal 20 vertrouwde basiscertificaten toevoegen.
 
-   :::image type="content" source="./media/vpn-gateway-howto-point-to-site-resource-manager-portal/uploaded.png" alt-text="Certificaat gegevens plakken" border="false":::
-1. Selecteer **Opslaan** boven aan de pagina om alle configuratie-instellingen op te slaan.
+   :::image type="content" source="./media/vpn-gateway-howto-point-to-site-resource-manager-portal/uploaded.png" alt-text="Certificaatgegevens plakken" border="false":::
+1. Selecteer **Opslaan** bovenaan de pagina om alle configuratie-instellingen op te slaan.
 
    :::image type="content" source="./media/vpn-gateway-howto-point-to-site-resource-manager-portal/save.png" alt-text="Configuratie opslaan" border="false":::
 
-## <a name="client-certificate"></a><a name="installclientcert"></a>Client certificaat
+## <a name="client-certificate"></a><a name="installclientcert"></a>Clientcertificaat
 
 Als u een P2S-verbinding wilt maken vanaf een andere clientcomputer dan de computer die u gebruikt om de clientcertificaten te genereren, moet u een clientcertificaat installeren. Wanneer u een clientcertificaat installeert, hebt u het wachtwoord nodig dat is gemaakt tijdens het exporteren van het clientcertificaat.
 
@@ -131,11 +131,11 @@ Zorg ervoor dat het certificaat is geëxporteerd als een PFX-bestand, samen met 
 
 Zie voor de installatiestappen [Install a client certificate](point-to-site-how-to-vpn-client-install-azure-cert.md) (Een clientcertificaat installeren).
 
-## <a name="vpn-client-configuration-package"></a><a name="clientconfig"></a>Configuratie pakket voor de VPN-client
+## <a name="vpn-client-configuration-package"></a><a name="clientconfig"></a>Configuratiepakket voor VPN-client
 
-VPN-clients moeten worden geconfigureerd met client configuratie-instellingen. Het configuratie pakket voor de VPN-client bevat bestanden met de instellingen voor het configureren van VPN-clients om verbinding te maken met een VNet via een P2S-verbinding.
+VPN-clients moeten worden geconfigureerd met clientconfiguratie-instellingen. Het configuratiepakket voor de VPN-client bevat bestanden met de instellingen voor het configureren van VPN-clients om via een P2S-verbinding verbinding te maken met een VNet.
 
-Zie [VPN-client configuratie bestanden maken en installeren voor systeem eigen Azure-certificaat verificatie P2S](point-to-site-vpn-client-configuration-azure-cert.md)voor de stappen voor het genereren en installeren van configuratie bestanden voor VPN-clients.
+Zie Create and install VPN client configuration files for native Azure certificate authentication P2S configurations (Configuratiebestanden voor VPN-client maken en installeren voor P2S-configuraties voor systeemeigen Azure-certificaatverificatie) voor stappen voor het genereren en [installeren van VPN-clientconfiguratiebestanden.](point-to-site-vpn-client-configuration-azure-cert.md)
 
 ## <a name="connect-to-azure"></a><a name="connect"></a>Verbinding maken met Azure
 
@@ -147,11 +147,11 @@ Zie [VPN-client configuratie bestanden maken en installeren voor systeem eigen A
 
 ### <a name="to-connect-from-a-mac-vpn-client"></a>Verbinding maken vanaf een Mac-VPN-client
 
-Ga in het dialoog venster netwerk naar het client profiel dat u wilt gebruiken, geef de instellingen op in het [VpnSettings.xml](point-to-site-vpn-client-configuration-azure-cert.md#installmac)en selecteer vervolgens **verbinding maken**.
+Zoek in het dialoogvenster Netwerk het clientprofiel dat u wilt gebruiken, geef de instellingen op uit deVpnSettings.xml [en](point-to-site-vpn-client-configuration-azure-cert.md#installmac)selecteer vervolgens **Verbinding maken.**
 
-Controleer de [installatie-Mac (OS X)](./point-to-site-vpn-client-configuration-azure-cert.md#installmac) voor gedetailleerde instructies. Als u problemen ondervindt bij het verbinding maken, controleert u of de gateway van het virtuele netwerk geen basis-SKU gebruikt. Basis-SKU wordt niet ondersteund voor Mac-clients.
+Controleer [Installeren - Mac (OS X) voor](./point-to-site-vpn-client-configuration-azure-cert.md#installmac) gedetailleerde instructies. Als u problemen hebt met het maken van verbinding, controleert u of de gateway van het virtuele netwerk geen basis-SKU gebruikt. Basis-SKU wordt niet ondersteund voor Mac-clients.
 
-:::image type="content" source="./media/vpn-gateway-howto-point-to-site-rm-ps/applyconnect.png" alt-text="Mac VPN-client verbinding" border="false":::
+:::image type="content" source="./media/vpn-gateway-howto-point-to-site-rm-ps/applyconnect.png" alt-text="Mac VPN-clientverbinding" border="false":::
 
 ## <a name="to-verify-your-connection"></a><a name="verify"></a>De verbinding verifiëren
 
@@ -195,7 +195,7 @@ U kunt maximaal 20 vertrouwde .cer-basiscertificaatbestanden toevoegen aan Azure
 
 1. Als u een vertrouwd basiscertificaat wilt verwijderen, gaat u naar de pagina **Punt-naar-site-configuratie** voor uw virtuele netwerkgateway.
 1. Zoek in de sectie **Basiscertificaat** van de pagina het certificaat dat u wilt verwijderen.
-1. Selecteer het beletsel teken naast het certificaat en selecteer vervolgens verwijderen.
+1. Selecteer het beletselteken naast het certificaat en selecteer vervolgens Verwijderen.
 
 ## <a name="to-revoke-a-client-certificate"></a><a name="revokeclient"></a>Een clientcertificaat intrekken
 
@@ -207,7 +207,7 @@ De algemene procedure is het basiscertificaat te gebruiken om de toegang te behe
 
 U kunt een clientcertificaat intrekken door de vingerafdruk toe te voegen aan de intrekkingslijst.
 
-1. Haal de vingerafdruk voor het clientcertificaat op. Zie [de vinger afdruk van een certificaat ophalen](/dotnet/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate)voor meer informatie.
+1. Haal de vingerafdruk voor het clientcertificaat op. Zie De vingerafdruk van een certificaat ophalen [voor meer informatie.](/dotnet/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate)
 1. Kopieer de gegevens naar een teksteditor en verwijder alle spaties, zodat u een doorlopende tekenreeks overhoudt.
 1. Navigeer naar de pagina **Punt-naar-site-configuratie** van de virtuele netwerkgateway. Dit is de pagina die u ook hebt gebruikt voor het [uploaden van een vertrouwd basiscertificaat](#uploadfile).
 1. In het gedeelte **Ingetrokken certificaten** voert u een beschrijvende naam in voor het certificaat (dit hoeft niet de CN van het certificaat te zijn).
@@ -217,7 +217,7 @@ U kunt een clientcertificaat intrekken door de vingerafdruk toe te voegen aan de
 
 ## <a name="point-to-site-faq"></a><a name="faq"></a>Veelgestelde vragen over punt-naar-site
 
-Deze sectie bevat informatie over veelgestelde vragen over punt-naar-site-configuraties. U kunt ook de [Veelgestelde vragen over VPN gateway](vpn-gateway-vpn-faq.md) bekijken voor meer informatie over VPN gateway.
+Deze sectie bevat veelgestelde vragen over punt-naar-site-configuraties. U kunt ook de [veelgestelde VPN Gateway bekijken](vpn-gateway-vpn-faq.md) voor meer informatie over VPN Gateway.
 
 [!INCLUDE [Point-to-Site FAQ](../../includes/vpn-gateway-faq-p2s-azurecert-include.md)]
 

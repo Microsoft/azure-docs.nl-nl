@@ -1,36 +1,32 @@
 ---
-title: Windows virtueel bureau blad MSIX-app voor het koppelen van installatie kopieën voor beeld-Azure voorbereiden
-description: Een MSIX-app voor het koppelen van een installatie kopie maken voor een Windows-hostgroep voor virtueel bureau blad.
+title: Windows Virtual Desktop msix-app-attach-afbeelding voorbereiden - Azure
+description: Een msix-app-attach-afbeelding maken voor een Windows Virtual Desktop hostgroep.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 12/14/2020
+ms.date: 04/13/2021
 ms.author: helohr
 manager: femila
-ms.openlocfilehash: a2d909d04c38a7d6bad42020175cbbbfcfd7bf9f
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.openlocfilehash: 443f117907381862639564dfbf9752562f4a3564
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106448352"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107363662"
 ---
-# <a name="prepare-an-msix-image-for-windows-virtual-desktop"></a>Een MSIX-installatie kopie voorbereiden voor het virtuele bureau blad van Windows
+# <a name="prepare-an-msix-image-for-windows-virtual-desktop"></a>Een MSIX-afbeelding voorbereiden voor Windows Virtual Desktop
 
-> [!IMPORTANT]
-> MSIX app attach is momenteel beschikbaar als open bare preview.
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+MsIX-app-attach is een oplossing voor toepassingslagen waarmee u apps van een MSIX-pakket dynamisch kunt koppelen aan een gebruikerssessie. Het MSIX-pakketsysteem scheidt apps van het besturingssysteem, waardoor het eenvoudiger wordt om installatie afbeeldingen voor virtuele machines te bouwen. MSIX-pakketten bieden u ook meer controle over de apps die uw gebruikers op hun virtuele machines kunnen gebruiken. U kunt zelfs apps scheiden van de hoofdafbeelding en deze later aan gebruikers geven.
 
-MSIX app attach (preview) is een oplossing voor toepassings lagen waarmee u op dynamische wijze apps van een MSIX-pakket kunt koppelen aan een gebruikers sessie. Het MSIX-pakket systeem scheidt apps van het besturings systeem, waardoor het eenvoudiger is om installatie kopieën voor virtuele machines te maken. MSIX-pakketten geven u meer controle over welke apps uw gebruikers op hun virtuele machines kunnen gebruiken. U kunt zelfs apps scheiden van de master installatie kopie en deze later aan gebruikers geven.
+## <a name="create-a-vhd-or-vhdx-package-for-msix"></a>Een VHD- of VHDX-pakket voor MSIX maken
 
-## <a name="create-a-vhd-or-vhdx-package-for-msix"></a>Een VHD-of VHDX-pakket maken voor MSIX
-
-MSIX-pakketten moeten zich in een VHD-of VHDX-indeling bezitten om goed te kunnen werken. Dit betekent dat u een VHD-of VHDX-pakket moet maken om aan de slag te gaan.
+MSIX-pakketten moeten een VHD- of VHDX-indeling hebben om goed te kunnen werken. Dit betekent dat u om te beginnen een VHD- of VHDX-pakket moet maken.
 
 >[!NOTE]
->Als u dat nog niet hebt gedaan, moet u Hyper-V inschakelen door de instructies te volgen in [hyper-v installeren op Windows 10](/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v).
+>Als u dat nog niet hebt gedaan, moet u Hyper-V inschakelen door de instructies in [Hyper-V installeren op](/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)Windows 10.
 
-Een VHD-of VHDX-pakket maken voor MSIX:
+Een VHD- of VHDX-pakket voor MSIX maken:
 
-1. Open eerst Power shell.
+1. Open eerst PowerShell.
 2. Voer vervolgens de volgende cmdlet uit om een VHD te maken:
 
     ```powershell
@@ -38,76 +34,76 @@ Een VHD-of VHDX-pakket maken voor MSIX:
     ```
 
     >[!NOTE]
-    > Zorg ervoor dat de VHD groot genoeg is om het uitgevouwen MSIX-pakket te bewaren.
+    > Zorg ervoor dat de VHD groot genoeg is voor het uitgebreide MSIX-pakket.
 
-3. Voer de volgende cmdlet uit om de VHD die u zojuist hebt gemaakt, te koppelen:
+3. Voer de volgende cmdlet uit om de VHD te maken die u zojuist hebt gemaakt:
 
     ```powershell
     $vhdObject = Mount-VHD c:\temp\<name>.vhd -Passthru
     ```
 
-4. Voer vervolgens deze cmdlet uit om de gekoppelde VHD te initialiseren:
+4. Voer vervolgens deze cmdlet uit om de gemonteerde VHD te initialiseren:
 
     ```powershell
     $disk = Initialize-Disk -Passthru -Number $vhdObject.Number
     ```
 
-5. Daarna voert u deze cmdlet uit om een nieuwe partitie te maken voor de geïnitialiseerde VHD:
+5. Voer daarna deze cmdlet uit om een nieuwe partitie te maken voor de geinitialiseerde VHD:
 
     ```powershell
     $partition = New-Partition -AssignDriveLetter -UseMaximumSize -DiskNumber $disk.Number
     ```
 
-6. Voer deze cmdlet uit om de partitie te Format teren:
+6. Voer deze cmdlet uit om de partitie op te maken:
 
     ```powershell
     Format-Volume -FileSystem NTFS -Confirm:$false -DriveLetter $partition.DriveLetter -Force
     ```
 
-7. Maak ten slotte een bovenliggende map op de gekoppelde VHD. Deze stap is vereist omdat het MSIX-pakket een bovenliggende map moet hebben om goed te kunnen werken. Het maakt niet uit wat u de naam van de bovenliggende map hebt, zolang de bovenliggende map bestaat.
+7. Maak ten slotte een bovenliggende map op de bevestigings-VHD. Deze stap is vereist omdat het MSIX-pakket een bovenliggende map moet hebben om goed te kunnen werken. Het maakt niet uit wat u de bovenliggende map noemt, zolang de bovenliggende map bestaat.
 
-## <a name="expand-msix"></a>MSIX uitvouwen
+## <a name="expand-msix"></a>MSIX uitbreiden
 
-Daarna moet u de MSIX-installatie kopie uitbreiden door de bestanden uit te pakken naar de VHD.
+Daarna moet u de MSIX-afbeelding uitbreiden door de bestanden uit te pakken in de VHD.
 
-De MSIX-installatie kopie uitbreiden:
+De MSIX-afbeelding uitbreiden:
 
-1. [Down load het msixmgr-hulp programma](https://aka.ms/msixmgr) en sla de zip-map op in een map in een sessie-host-VM.
+1. [Download het hulpprogramma msixmgr en](https://aka.ms/msixmgr) sla de map .zip op in een map in een sessiehost-VM.
 
-2. Pak de map msixmgr. zip.
+2. Unzip the msixmgr tool .zip folder.
 
-3. Plaats het bron MSIX-pakket in dezelfde map waarin u het msixmgr-hulp programma hebt uitgepakt.
+3. Plaats het MSIX-bronpakket in dezelfde map waarin u het hulpprogramma msixmgr hebt uitgepakt.
 
-4. Open een opdracht prompt als beheerder en navigeer naar de map waar u het hulp programma msixmgr hebt gedownload en uitgepakt.
+4. Open als beheerder een opdrachtprompt en navigeer naar de map waar u het hulpprogramma msixmgr hebt gedownload en uitgepakt.
 
-5. Voer de volgende cmdlet uit om de MSIX uit te pakken naar de VHD die u in de vorige sectie hebt gemaakt.
+5. Voer de volgende cmdlet uit om de MSIX uit te pakken in de VHD die u in de vorige sectie hebt gemaakt.
 
     ```powershell
     msixmgr.exe -Unpack -packagePath <package>.msix -destination "f:\<name of folder you created earlier>" -applyacls
     ```
 
-    Het volgende bericht moet worden weer gegeven nadat u het pakket hebt uitgepakt:
+    Het volgende bericht wordt weergegeven nadat u klaar bent met uitpakken:
 
-    > De uitpakken en toegepaste Acl's voor het pakket:. msix zijn ongedaan gemaakt <package name>
+    > ACL's zijn uitgepakt en toegepast voor pakket: <package name> .msix
 
     >[!NOTE]
-    > Als u pakketten gebruikt van de Microsoft Store voor bedrijven of onderwijs in uw netwerk of op apparaten die niet zijn verbonden met internet, moet u pakket licenties downloaden en installeren via de Microsoft Store om de apps uit te voeren. Zie [pakketten offline gebruiken](app-attach.md#use-packages-offline)om de licenties op te halen.
+    > Als u pakketten van de Microsoft Store voor Bedrijven of Education in uw netwerk gebruikt of op apparaten die niet zijn verbonden met internet, moet u pakketlicenties downloaden en installeren van de Microsoft Store om de apps uit te voeren. Zie Pakketten offline gebruiken om de [licenties op te halen.](app-attach.md#use-packages-offline)
 
-6. Ga naar de gekoppelde VHD en open de map app om te controleren of de inhoud van het pakket zich daar bevindt.
+6. Ga naar de VHD die is bevestigd en open de map app om te controleren of de inhoud van het pakket daar staat.
 
 7. Ontkoppel de VHD.
 
-## <a name="upload-msix-image-to-share"></a>MSIX-afbeelding uploaden naar share
+## <a name="upload-msix-image-to-share"></a>MSIX-afbeelding uploaden om te delen
 
-Nadat u het MSIX-pakket hebt gemaakt, moet u het resulterende VHD-, VHDX-of CIM-bestand uploaden naar een share waar de virtuele machines van uw gebruikers toegang hebben.
+Nadat u het MSIX-pakket hebt gemaakt, moet u het resulterende VHD-, VHDX- of CIM-bestand uploaden naar een share waar de virtuele machines van uw gebruikers toegang toe hebben.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Vraag onze vragen van de community over deze functie op het [virtuele bureau blad-TechCommunity van Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop).
+Stel onze communityvragen over deze functie op de [Windows Virtual Desktop TechCommunity.](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop)
 
-U kunt ook feedback geven voor Windows virtueel bureau blad op de [Windows Virtual Desktop feedback hub](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app).
+U kunt ook feedback geven voor Windows Virtual Desktop in Windows Virtual Desktop [feedbackhub.](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)
 
-Hier volgen enkele andere artikelen die u mogelijk handig vindt:
+Hier zijn enkele andere artikelen die u mogelijk nuttig vindt:
 
-- [Woorden lijst voor het toevoegen van MSIX-apps](app-attach-glossary.md)
+- [Verklarende woordenlijst voor het koppelen van MSIX-apps](app-attach-glossary.md)
 - [Veelgestelde vragen over het koppelen van MSIX-apps](app-attach-faq.md)

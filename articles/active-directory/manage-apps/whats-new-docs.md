@@ -9,12 +9,12 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: daveba
-ms.openlocfilehash: 81898875af85becf1766f02a5b7e077cb388a173
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.openlocfilehash: f83aa7368ec5ac06f2c5a5ebe121c7ce87f93bd1
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106450035"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107304729"
 ---
 # <a name="azure-active-directory-application-management-whats-new"></a>Azure Active Directory toepassings beheer: wat is er nieuw
 
@@ -40,7 +40,7 @@ Welkom bij wat er nieuw is in Azure Active Directory documentatie voor toepassin
 - [Problemen oplossen met Kerberos-beperkte overdrachtsconfiguraties voor toepassingsproxy](application-proxy-back-end-kerberos-constrained-delegation-how-to.md)
 - [Snelstart: Eenmalige aanmelding (SSO) op basis van SAML instellen voor een toepassing in uw Azure Active Directory-tenant (Azure AD)](add-application-portal-setup-sso.md)
 - [Azure Active Directory toepassings beheer: wat is er nieuw](whats-new-docs.md)
-- [Veelgestelde vragen over de toepassings proxy van Active Directory (Azure AD)](application-proxy-faq.md)
+- [Veelgestelde vragen over de toepassings proxy van Active Directory (Azure AD)](application-proxy-faq.yml)
 - [Problemen oplossen bij het aanmelden bij een toepassing vanuit Azure AD mijn apps](application-sign-in-other-problem-access-panel.md)
 - [Zelfstudie: Een on-premises toepassing voor externe toegang toevoegen via Application Proxy in Azure Active Directory](application-proxy-add-on-premises-application.md)
 - [De verkeers stroom optimaliseren met Azure Active Directory-toepassingsproxy](application-proxy-network-topology.md)
@@ -75,7 +75,7 @@ Welkom bij wat er nieuw is in Azure Active Directory documentatie voor toepassin
 - [Best practices voor toepassingsbeheer](application-management-fundamentals.md)
 - [Hand leiding voor het integreren van Azure Active Directory met toepassingen](plan-an-application-integration.md)
 - [Wat is toepassingsbeheer?](what-is-application-management.md)
-- [Veelgestelde vragen over de toepassings proxy van Active Directory (Azure AD)](application-proxy-faq.md)
+- [Veelgestelde vragen over de toepassings proxy van Active Directory (Azure AD)](application-proxy-faq.yml)
 - [Zelfstudie: Een on-premises toepassing voor externe toegang toevoegen via Application Proxy in Azure Active Directory](application-proxy-add-on-premises-application.md)
 - [Werken met bestaande on-premises proxyservers](application-proxy-configure-connectors-with-proxy-servers.md)
 - [Line-of-Business-Apps ontwikkelen voor Azure Active Directory](../develop/v2-overview.md)

@@ -9,14 +9,14 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 04/07/2021
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 8afa0ec51f86bd77e5539840f3419eaff89171f5
-ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
+ms.openlocfilehash: 559ace3e9cb9f6daeb6dc3da581bb99d3ff9145e
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2021
-ms.locfileid: "107107190"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107365158"
 ---
-# <a name="quickstart-build-a-console-app-using-the-net-v4-sdk-preview-to-manage-azure-cosmos-db-sql-api-account-resources"></a>Quick Start: een console-app bouwen met behulp van de .NET v4 SDK (preview) voor het beheren van Azure Cosmos DB SQL-API-account resources.
+# <a name="quickstart-build-a-console-app-using-the-net-v4-sdk-preview-to-manage-azure-cosmos-db-sql-api-account-resources"></a>Quickstart: Een console-app bouwen met behulp van de .NET V4 SDK (preview) voor het beheren van Azure Cosmos DB SQL API-accountresources.
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 > [!div class="op_single_selector"]
@@ -24,6 +24,7 @@ ms.locfileid: "107107190"
 > * [.NET V4](create-sql-api-dotnet-V4.md)
 > * [Java SDK v4](create-sql-api-java.md)
 > * [Spring Data v3](create-sql-api-spring-data.md)
+> * [Spark v3-connector](create-sql-api-spark.md)
 > * [Node.js](create-sql-api-nodejs.md)
 > * [Python](create-sql-api-python.md)
 > * [Xamarin](create-sql-api-xamarin-dotnet.md)
@@ -31,7 +32,7 @@ ms.locfileid: "107107190"
 Ga aan de slag met de Azure Cosmos DB SQL API-clientbibliotheek voor .NET. Volg de stappen in dit document om het .NET V4-pakket (Azure.Cosmos) te installeren, een app te bouwen en de voorbeeldcode voor basis CRUD-bewerkingen uit te proberen voor de gegevens die zijn opgeslagen in Azure Cosmos DB.
 
 > [!IMPORTANT]
-> De .NET v4 SDK voor Azure Cosmos DB is momenteel beschikbaar als open bare preview.
+> De .NET V4 SDK voor Azure Cosmos DB is momenteel beschikbaar als openbare preview.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
 > Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 

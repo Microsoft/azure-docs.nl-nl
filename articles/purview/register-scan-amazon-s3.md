@@ -8,12 +8,12 @@ ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 04/07/2021
 ms.custom: references_regions
-ms.openlocfilehash: 542b6580994a2054526f0ddbb3ad93dc27c28fcc
-ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
+ms.openlocfilehash: a0559028192b0a99aeffd45a3b2896f9c9d159be
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2021
-ms.locfileid: "107107649"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107310190"
 ---
 # <a name="azure-purview-connector-for-amazon-s3"></a>Azure controle sfeer liggen-connector voor Amazon S3
 
@@ -116,9 +116,30 @@ In deze procedure wordt beschreven hoe u een nieuwe controle sfeer liggen-refere
 
     Selecteer **maken** als u klaar bent om de referentie te maken.
 
-Zie de [documentatie van Azure controle sfeer liggen Public Preview](manage-credentials.md)voor meer informatie over controle sfeer liggen-referenties.
+1. Kopieer en plak de **Microsoft-account-id** en de **externe ID-** waarden die u wilt gebruiken bij het [maken van een nieuwe AWS-functie voor controle sfeer liggen](#create-a-new-aws-role-for-purview), de volgende stap, als u dit nog niet hebt gedaan.
+
+Zie [referenties voor bron verificatie in azure controle sfeer liggen](manage-credentials.md)voor meer informatie over controle sfeer liggen-referenties.
 
 ### <a name="create-a-new-aws-role-for-purview"></a>Een nieuwe AWS-rol maken voor controle sfeer liggen
+
+Voor deze procedure moet u de waarden voor uw Azure-account-ID en externe ID opgeven bij het maken van uw AWS-rol.
+
+Als u deze waarden niet hebt, zoekt u ze eerst in uw [controle sfeer liggen-referentie](#create-a-purview-credential-for-your-aws-bucket-scan).
+
+**Uw micro soft-account-id en externe ID zoeken**:
+
+1. Navigeer in controle sfeer liggen naar de   >  **beveiligings-en toegangs**  >  **referenties** van het Management Center.
+
+1. Selecteer de referentie die u hebt [gemaakt voor uw AWS Bucket-scan](#create-a-purview-credential-for-your-aws-bucket-scan)en selecteer vervolgens **bewerken** in de werk balk.
+
+1. In het deel venster **referentie bewerken** dat aan de rechter kant wordt weer gegeven, kopieert u de **Microsoft-account-id** en de **externe ID-** waarden naar een afzonderlijk bestand, of laat u ze in het relevante veld plakken in AWS.
+
+    Bijvoorbeeld:
+
+    [![Zoek uw Microsoft-account-id en externe ID-waarden. ](./media/register-scan-amazon-s3/locate-account-id-external-id.png)](./media/register-scan-amazon-s3/locate-account-id-external-id.png#lightbox)
+
+
+**Uw AWS-rol maken voor controle sfeer liggen**:
 
 1.  Open uw **Amazon Web Services** -console en selecteer onder **beveiliging, identiteit en naleving** de optie **iam**.
 
@@ -129,12 +150,8 @@ Zie de [documentatie van Azure controle sfeer liggen Public Preview](manage-cred
     |Veld  |Description  |
     |---------|---------|
     |**Account-id**     |    Voer uw micro soft-account-ID in. Bijvoorbeeld: `615019938638`     |
-    |**Externe ID**     |   Onder Opties selecteert u **externe ID vereisen...** en voert u vervolgens uw externe ID in het desbetreffende veld in. <br>Bijvoorbeeld: `e7e2b8a3-0a9f-414f-a065-afaf4ac6d994`    <br><br>U kunt deze externe ID vinden als u.  |
+    |**Externe ID**     |   Onder Opties selecteert u **externe ID vereisen...** en voert u vervolgens uw externe ID in het desbetreffende veld in. <br>Bijvoorbeeld: `e7e2b8a3-0a9f-414f-a065-afaf4ac6d994`     |
     | | |
-
-    > [!NOTE]
-    > U kunt de waarden voor de **micro soft-account-id** en de **externe ID** vinden in het controle sfeer liggen van het **beheer centrum**  >   , waar u [uw controle sfeer liggen-referenties hebt gemaakt](#create-a-purview-credential-for-your-aws-bucket-scan).
-    >
 
     Bijvoorbeeld:
 

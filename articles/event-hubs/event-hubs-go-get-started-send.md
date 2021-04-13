@@ -3,12 +3,12 @@ title: 'Quickstart: Gebeurtenissen verzenden en ontvangen met Go - Azure Event H
 description: 'Quickstart: Dit artikel bevat een overzicht voor het maken van een Go-toepassing die gebeurtenissen verzendt vanuit Azure Event Hubs.'
 ms.topic: quickstart
 ms.date: 06/23/2020
-ms.openlocfilehash: 59cd0d757108e7579ce389d216b0ee4d569e12fd
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ededd042dadd6059bd7b2d689cff78fe1bd6af0b
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "87002451"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107311087"
 ---
 # <a name="quickstart-send-events-to-or-receive-events-from-event-hubs-using-go"></a>Quickstart: Gebeurtenissen verzenden of gebeurtenissen ontvangen uit Event Hubs met behulp van Go
 Azure Event Hubs is een big data-platform voor het streamen van gegevens en een gebeurtenisopneemservice die miljoenen gebeurtenissen per seconde kan opnemen en verwerken. Event Hubs kan gebeurtenissen, gegevens of telemetrie die wordt geproduceerd door gedistribueerde software en apparaten verwerken en opslaan. Gegevens die naar een Event Hub worden verzonden, kunnen worden omgezet en opgeslagen via een provider voor realtime analytische gegevens of batchverwerking/opslagadapters. Zie [Overzicht van Event Hubs](event-hubs-about.md) en [Functies van Event Hubs](event-hubs-features.md) voor een gedetailleerd overzicht van Event Hubs.
@@ -279,7 +279,7 @@ Lees de volgende artikelen:
 
 - [EventProcessorHost](event-hubs-event-processor-host.md)
 - [Functies en terminologie in Azure Event Hubs](event-hubs-features.md)
-- [Veelgestelde vragen over Event Hubs](event-hubs-faq.md)
+- [Veelgestelde vragen over Event Hubs](event-hubs-faq.yml)
 
 
 <!-- Links -->

@@ -1,57 +1,57 @@
 ---
-title: Update van het apparaat voor Azure IoT Hub agent inrichten | Microsoft Docs
-description: Update van het apparaat voor Azure IoT Hub agent inrichten
+title: Apparaatupdate inrichten voor Azure IoT Hub agent| Microsoft Docs
+description: Apparaatupdate inrichten voor Azure IoT Hub agent
 author: ValOlson
 ms.author: valls
 ms.date: 2/16/2021
 ms.topic: how-to
 ms.service: iot-hub-device-update
-ms.openlocfilehash: a5f4b23196a04d88e4329cb5ebf26d0b0a477444
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: 812de4850c6c3577346915a0072ea11c60f7ba73
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/13/2021
-ms.locfileid: "107307263"
+ms.locfileid: "107365447"
 ---
-# <a name="device-update-agent-provisioning"></a>Apparaat-Update Agent inrichten
+# <a name="device-update-agent-provisioning"></a>Agent voor apparaatupdates inrichten
 
-De module agent voor het bijwerken van apparaten kan naast andere systeem processen en [IOT Edge modules](https://docs.microsoft.com/azure/iot-edge/iot-edge-modules) worden uitgevoerd die als onderdeel van hetzelfde logische apparaat verbinding maken met uw IOT hub. In deze sectie wordt beschreven hoe u de Update Agent van het apparaat inricht als een module-identiteit. 
-
-
-## <a name="module-identity-vs-device-identity"></a>Module-identiteit tegenover apparaat-id
-
-In IoT Hub kunt u onder elke apparaat-id Maxi maal 50 module-identiteiten maken. Elke module-id genereert impliciet een module dubbele. Aan de kant van het apparaat kunt u met de Sdk's van het IoT Hub apparaat modules maken waarbij elke ene een onafhankelijke verbinding met IoT Hub opent. Module-identiteit en module dubbele bieden de vergelijk bare mogelijkheden als de apparaat-id en het apparaat, met een nauw keurigere granulariteit. [Meer informatie over module-identiteiten in IoT Hub](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-module-twins)
+De agent voor de apparaatupdatemodule kan worden uitgevoerd naast andere systeemprocessen en [IoT Edge modules](https://docs.microsoft.com/azure/iot-edge/iot-edge-modules) die verbinding maken met uw IoT Hub als onderdeel van hetzelfde logische apparaat. In deze sectie wordt beschreven hoe u de agent voor apparaatupdates inrichten als module-id. 
 
 
-## <a name="support-for-device-update"></a>Ondersteuning voor het bijwerken van apparaten
+## <a name="module-identity-vs-device-identity"></a>Module-id versus apparaat-id
 
-De volgende IoT-apparaattypen worden momenteel ondersteund met updates voor apparaten:
+In IoT Hub kunt u onder elke apparaat-id maximaal 50 module-id's maken. Elke module-identiteit genereert impliciet een module twin. Aan de apparaatzijde kunt u met IoT Hub apparaat-SDK's modules maken waarbij elk apparaat een onafhankelijke verbinding met de IoT Hub. Module-id's en module-tweelingen bieden dezelfde mogelijkheden als apparaat-id's en apparaat dubbels, maar met een fijner granulariteit. [Meer informatie over module-identiteiten in IoT Hub](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-module-twins)
+
+
+## <a name="support-for-device-update"></a>Ondersteuning voor apparaatupdate
+
+De volgende IoT-apparaattypen worden momenteel ondersteund met Apparaatupdate:
 
 * Linux-apparaten (IoT Edge en niet-IoT Edge apparaten):
-    * Update A/B installatie kopie:
-        - Yocto-ARM64 (referentie afbeelding), uitbreidbaar via open source om [uw eigen installatie kopieën](device-update-agent-provisioning.md#how-to-build-and-run-device-update-agent) voor andere architectuur te bouwen.
-        - Ubuntu 18,04 Simulator
+    * A/B-update voor afbeelding:
+        - Yocto - ARM64 (referentieafbeelding), kan worden open source [om](device-update-agent-provisioning.md#how-to-build-and-run-device-update-agent) uw eigen afbeeldingen te bouwen voor andere architectuur, naar behoefte.
+        - Ubuntu 18.04-simulator
        
-    * Pakket agent-ondersteunde builds voor de volgende platforms/architecturen:
-        - Ubuntu Server 18,04 x64-pakket agent 
+    * Package Agent ondersteunde builds voor de volgende platformen/architecturen:
+        - Ubuntu Server 18.04 x64 Package Agent 
         - Debian 9 
         
 * Beperkte apparaten:
-    * Voor beelden van AzureRTOS-apparaat bijwerken: [Update voor azure IOT hub-zelf studie voor Azure-real-time-besturings systeem](device-update-azure-real-time-operating-system.md)
+    * Voorbeelden van AzureRTOS Device [Update-agent: Apparaatupdate voor Azure IoT Hub zelfstudie voor Azure-real-time-besturingssysteem](device-update-azure-real-time-operating-system.md)
 
 * Niet-verbonden apparaten: 
-    * [Ondersteuning voor niet-verbonden apparaten bijwerken](connected-cache-disconnected-device-update.md)
+    * [Ondersteuning voor niet-verbonden apparaatupdates begrijpen](connected-cache-disconnected-device-update.md)
 
 
 ## <a name="prerequisites"></a>Vereisten  
 
-Als u het IoT-apparaat/IoT Edge-apparaat instelt voor [op pakketten gebaseerde updates](https://docs.microsoft.com/azure/iot-hub-device-update/understand-device-update#support-for-a-wide-range-of-update-artifacts), voegt u packages.Microsoft.com toe aan de opslag plaatsen van uw machine door de volgende stappen uit te voeren:
+Als u het IoT-apparaat/IoT-IoT Edge-apparaat instelt voor updates op basis van [pakketten,](https://docs.microsoft.com/azure/iot-hub-device-update/understand-device-update#support-for-a-wide-range-of-update-artifacts)voegt u packages.microsoft.com toe aan de opslagplaatsen van uw computer door de volgende stappen uit te voeren:
 
-1. Meld u aan bij de machine of IoT-apparaat waarop u de Update Agent voor het apparaat wilt installeren.
+1. Meld u aan bij de computer of het IoT-apparaat waarop u de Device Update-agent wilt installeren.
 
-1. Open een Terminal venster.
+1. Open een Terminal-venster.
 
-1. Installeer de configuratie van de opslag plaats die overeenkomt met het besturings systeem van uw apparaat.
+1. Installeer de configuratie van de opslagplaats die overeenkomt met het besturingssysteem van uw apparaat.
     ```shell
     curl https://packages.microsoft.com/config/ubuntu/18.04/multiarch/prod.list > ./microsoft-prod.list
     ```
@@ -70,22 +70,22 @@ Als u het IoT-apparaat/IoT Edge-apparaat instelt voor [op pakketten gebaseerde u
     sudo cp ./microsoft.gpg /etc/apt/trusted.gpg.d/
     ```
 
-## <a name="how-to-provision-the-device-update-agent-as-a-module-identity"></a>De Update Agent van het apparaat inrichten als een module-id
+## <a name="how-to-provision-the-device-update-agent-as-a-module-identity"></a>De agent voor apparaatupdates inrichten als module-id
 
-In deze sectie wordt beschreven hoe u de Update Agent van het apparaat inricht als een module-id op IoT Edge ingeschakelde apparaten, IoT-apparaten die geen deel uitmaken en andere IoT-apparaten.
+In deze sectie wordt beschreven hoe u de agent voor apparaatupdates inrichten als module-id op IoT Edge-apparaten, niet-Edge IoT-apparaten en andere IoT-apparaten.
 
 
 ### <a name="on-iot-edge-enabled-devices"></a>Op IoT Edge ingeschakelde apparaten
 
-Volg deze instructies om de apparaat-Update agent in te richten op [IOT Edge ingeschakelde apparaten](https://docs.microsoft.com/azure/iot-edge).
+Volg deze instructies voor het inrichten van de agent voor apparaatupdates [IoT Edge ingeschakelde apparaten.](https://docs.microsoft.com/azure/iot-edge)
 
-1. Volg de instructies om [de Azure IOT Edge runtime te installeren en](https://docs.microsoft.com/azure/iot-edge/how-to-install-iot-edge?view=iotedge-2020-11&preserve-view=true)in te richten.
+1. Volg de instructies voor het [installeren en inrichten van Azure IoT Edge runtime](https://docs.microsoft.com/azure/iot-edge/how-to-install-iot-edge?view=iotedge-2020-11&preserve-view=true).
 
-1. Update Agent voor installatie kopie van het apparaat installeren
-    - We bieden voorbeeld afbeeldingen in [artefacten](https://github.com/Azure/iot-hub-device-update/releases) om installatie kopieën bij te werken naar verschillende versies met behulp van een basis installatie kopie (Adu-base-image) en één update-installatie kopie (Adu-update-image). Bekijk een voor beeld van [hoe u de afbeelding op uw IOT hub apparaat kunt flashen](https://docs.microsoft.com/azure/iot-hub-device-update/device-update-raspberry-pi#flash-sd-card-with-image).  
+1. De update-agent voor de installatie van de apparaatupdate installeren
+    - We bieden voorbeeldafbeeldingen in [Artefacten](https://github.com/Azure/iot-hub-device-update/releases) om update-implementaties van afbeeldingen te proberen naar verschillende versies met behulp van een basisafbeelding (adu-base-image) en één update-afbeelding (adu-update-image). Zie een voorbeeld van [het flashen van de afbeelding naar uw IoT Hub apparaat.](https://docs.microsoft.com/azure/iot-hub-device-update/device-update-raspberry-pi#flash-sd-card-with-image)  
 
-1. De Update-Agent voor het update pakket voor het apparaat installeren  
-    - Voor de nieuwste agent versies van packages.miscrosoft.com: update pakket lijsten op uw apparaat en installeer het apparaat Update Agent-pakket en de bijbehorende afhankelijkheden met behulp van:   
+1. De update-agent voor het apparaatupdatepakket installeren  
+    - Voor de nieuwste agentversies van packages.miscrosoft.com: pakketlijsten op uw apparaat bijwerken en het pakket van de Device Update-agent en de afhankelijkheden ervan installeren met behulp van:   
     ```shell
     sudo apt-get update
     ```
@@ -94,141 +94,141 @@ Volg deze instructies om de apparaat-Update agent in te richten op [IOT Edge ing
     sudo apt-get install deviceupdate-agent deliveryoptimization-plugin-apt
     ```
     
-    - Voor aanstaande versies van de release Candi date van [artefacten](https://github.com/Azure/iot-hub-device-update/releases) : down load het. DEP-bestand naar de computer waarop u de apparaat Update Agent wilt installeren en klik vervolgens op:
+    - Voor toekomstige releasekandidaatversies van [Artefacten:](https://github.com/Azure/iot-hub-device-update/releases) download het .dep-bestand naar de computer op wie u de Device Update-agent wilt installeren en ga als volgende te werk:
      ```shell
     Sudo apt-get install -y ./"<PATH TO FILE>"/"<.DEP FILE NAME>"
      ```
     
-1. U bent nu klaar om de apparaat-Update Agent op uw IoT Edge-apparaat te starten. 
+1. U bent nu klaar om de agent voor apparaatupdates te starten op IoT Edge apparaat. 
 
-### <a name="on-non-edge-iot-linux-devices"></a>Van niet-Edge IoT Linux-apparaten
+### <a name="on-non-edge-iot-linux-devices"></a>Op niet-Edge IoT Linux-apparaten
 
-Volg deze instructies om de apparaat-Update Agent op uw IoT Linux-apparaten in te richten.
+Volg deze instructies voor het inrichten van de agent voor apparaatupdates op uw IoT Linux-apparaten.
 
-1. Installeer de IoT Identity-service en voeg de nieuwste versie toe aan uw IoT-apparaat. 
-    1. Meld u aan bij de machine of IoT-apparaat.
+1. Installeer de IoT Identity Service en voeg de nieuwste versie toe aan uw IoT-apparaat. 
+    1. Meld u aan bij de computer of het IoT-apparaat.
     1. Een terminalvenster openen.
-    1.  Installeer de meest recente [IOT-identiteits service](https://github.com/Azure/iot-identity-service/blob/main/docs/packaging.md#installing-and-configuring-the-package) op uw IOT-apparaat met behulp van deze opdracht:
+    1.  Installeer de nieuwste [IoT Identity Service op](https://github.com/Azure/iot-identity-service/blob/main/docs/packaging.md#installing-and-configuring-the-package) uw IoT-apparaat met behulp van deze opdracht:
     
         ```shell
         sudo apt-get install aziot-identity-service
         ```
         
-1. IoT Identity service inrichten voor het verkrijgen van IoT-apparaatgegevens.
-    * Maak een aangepaste kopie van de configuratie sjabloon zodat we de inrichtings gegevens kunnen toevoegen. Voer de onderstaande opdracht in een terminal in.
+1. IoT Identity-service inrichten om de IoT-apparaatgegevens op te halen.
+    * Maak een aangepaste kopie van de configuratiesjabloon zodat we de inrichtingsgegevens kunnen toevoegen. Voer in een terminal de onderstaande opdracht in.
       
         ```shell
         sudo cp /etc/aziot/config.toml.template /etc/aziot/config.toml 
         ```
    
-1. Bewerk vervolgens het configuratie bestand om de connection string van het apparaat op te nemen dat u wilt gebruiken als de inrichtings controle voor dit apparaat of deze computer. Voer de onderstaande opdracht in een terminal in.
+1. Bewerk vervolgens het configuratiebestand om de connection string van het apparaat dat u wilt gebruiken als de inrichting voor dit apparaat of apparaat op te nemen. Voer in een terminal de onderstaande opdracht in.
 
     ```shell
     sudo nano /etc/aziot/config.toml
     ```
    
-1. Er wordt een bericht weer gegeven zoals in het volgende voor beeld:
+1. Als het goed is, ziet u een bericht zoals in het volgende voorbeeld:
 
-    :::image type="content" source="media/understand-device-update/config.png" alt-text="Diagram van het configuratie bestand van de IoT-identiteits service." lightbox="media/understand-device-update/config.png":::
+    :::image type="content" source="media/understand-device-update/config.png" alt-text="Diagram van het configuratiebestand van de IoT Identity Service." lightbox="media/understand-device-update/config.png":::
 
-    1. Zoek in hetzelfde nano venster het blok met hand matig inrichten met connection string.
-    1. Verwijder in het venster het symbool ' # ' vóór ' inrichting '
-    1. Verwijder in het venster het symbool ' # ' vóór ' Bron ' 
-    1. Verwijder in het venster het symbool ' # ' vóór ' connection_string '
-    1. Verwijder in het venster de teken reeks binnen de aanhalings tekens rechts van ' connection_string ' en voeg vervolgens uw connection string toe 
-    1. Sla de wijzigingen in het bestand op met CTRL + X en vervolgens op Y en druk op de Enter-toets om uw wijzigingen op te slaan. 
+    1. Zoek in hetzelfde nanovenster het blok met 'Handmatige inrichting met connection string'.
+    1. Verwijder in het venster het symbool '#' voor 'inrichten'
+    1. Verwijder in het venster het symbool '#' voor 'bron' 
+    1. Verwijder in het venster het symbool '#' voor 'connection_string'
+    1. Verwijder in het venster de tekenreeks tussen de aanhalingstekens rechts van 'connection_string' en voeg uw connection string toe 
+    1. Sla uw wijzigingen in het bestand op met 'Ctrl+X' en vervolgens 'Y' en druk op de enter-toets om uw wijzigingen op te slaan. 
     
-1.  Pas nu de IoT-identiteits service toe en start deze opnieuw met behulp van de onderstaande opdracht. U ziet nu een ' gereed! ' afdrukken dat betekent dat de IoT-identiteits service is geconfigureerd.
+1.  Pas nu de IoT Identity-service toe en start deze opnieuw met de onderstaande opdracht. Als het goed is, ziet u nu 'Klaar!' afdrukken, wat betekent dat u de IoT Identity Service hebt geconfigureerd.
 
     > [!Note]
-    > De IoT Identity-service registreert module-identiteiten met IoT Hub door op dit moment symmetrische sleutels te gebruiken.
+    > De IoT Identity-service registreert module-identiteiten met IoT Hub met behulp van symmetrische sleutels.
     
     ```shell
     sudo aziotctl config apply
     ```
     
-1.  Installeer de Update Agent van het apparaat ten slotte. We bieden voorbeeld afbeeldingen in [artefacten](https://github.com/Azure/iot-hub-device-update/releases) om installatie kopieën bij te werken naar verschillende versies met behulp van een basis installatie kopie (Adu-base-image) en één update-installatie kopie (Adu-update-image). Bekijk een voor beeld van [hoe u de afbeelding op uw IOT hub apparaat kunt flashen](https://docs.microsoft.com/azure/iot-hub-device-update/device-update-raspberry-pi#flash-sd-card-with-image).
+1.  Installeer ten slotte de Agent voor apparaatupdates. We bieden voorbeeldafbeeldingen in [Artefacten](https://github.com/Azure/iot-hub-device-update/releases) om update-implementaties van afbeeldingen te proberen naar verschillende versies met behulp van een basisafbeelding (adu-base-image) en één update-afbeelding (adu-update-image). Zie een voorbeeld van [het flashen van de afbeelding naar uw IoT Hub apparaat.](https://docs.microsoft.com/azure/iot-hub-device-update/device-update-raspberry-pi#flash-sd-card-with-image)
 
-1.  U bent nu klaar om de Update Agent voor apparaten op uw IoT-apparaat te starten. 
+1.  U bent nu klaar om de agent voor apparaatupdates op uw IoT-apparaat te starten. 
 
 ### <a name="other-iot-devices"></a>Andere IoT-apparaten
 
-De Update Agent van het apparaat kan ook worden geconfigureerd zonder de IoT-identiteits service voor het testen of op beperkte apparaten. Volg de onderstaande stappen om de Update Agent van het apparaat in te richten met behulp van een connection string (vanuit de module of het apparaat).
+De Agent voor apparaatupdates kan ook worden geconfigureerd zonder de IoT Identity-service voor testen of op beperkte apparaten. Volg de onderstaande stappen om de Agent voor apparaatupdates in te connection string (van de module of het apparaat).
 
-1.  We bieden voorbeeld afbeeldingen in [artefacten](https://github.com/Azure/iot-hub-device-update/releases) om installatie kopieën bij te werken naar verschillende versies met behulp van een basis installatie kopie (Adu-base-image) en één update-installatie kopie (Adu-update-image). Bekijk een voor beeld van [hoe u de afbeelding op uw IOT hub apparaat kunt flashen](https://docs.microsoft.com/azure/iot-hub-device-update/device-update-raspberry-pi#flash-sd-card-with-image).
+1.  We bieden voorbeeldafbeeldingen in [Artefacten](https://github.com/Azure/iot-hub-device-update/releases) om update-implementaties van afbeeldingen te proberen naar verschillende versies met behulp van een basisafbeelding (adu-base-image) en één update-afbeelding (adu-update-image). Zie een voorbeeld van [hoe u de afbeelding naar uw apparaat IoT Hub flasht.](https://docs.microsoft.com/azure/iot-hub-device-update/device-update-raspberry-pi#flash-sd-card-with-image)
 
-1.  Meld u aan bij de machine of IoT Edge apparaat/IoT-apparaat.
+1.  Meld u aan bij de computer IoT Edge apparaat/IoT-apparaat.
     
 1.  Een terminalvenster openen.
 
-1.  Voeg de connection string toe aan het [configuratie bestand](device-update-configuration-file.md)voor het bijwerken van het apparaat:
-    1. Voer in het Terminal venster het volgende in:
-        - [Pakket updates](device-update-ubuntu-agent.md) gebruiken: sudo nano/etc/Adu/adu-conf.txt
-        - [Installatie kopie-updates](device-update-raspberry-pi.md) gebruiken: sudo nano/Adu/adu-conf.txt
+1.  Voeg de connection string toe aan het [configuratiebestand voor apparaatupdates:](device-update-configuration-file.md)
+    1. Voer het onderstaande in het terminalvenster in:
+        - [Gebruik voor](device-update-ubuntu-agent.md) pakketupdates: sudo nano /etc/adu/adu-conf.txt
+        - [Updates voor afbeeldingen](device-update-raspberry-pi.md) gebruiken: sudo nano /adu/adu-conf.txt
        
-    1. Er wordt een venster geopend met een tekst. Verwijder de volledige teken reeks na ' connection_String = ' de eerste keer dat u de Update Agent voor het apparaat op het IoT-apparaat inricht. Het is alleen plaats tekst.
+    1. Als het goed is, wordt er een venster geopend met tekst. Verwijder de volledige tekenreeks na 'connection_String=' de eerste keer dat u de Agent voor apparaatupdates inrichten op het IoT-apparaat. Het is alleen tekst van de plaatshouder.
     
-    1. Vervang in de Terminal ' <your-connection-string> ' door de connection string van het apparaat voor uw instantie van apparaat Update Agent.
+    1. Vervang in de terminal '<your-connection-string>' door de connection string van het apparaat voor uw exemplaar van de Device Update-agent.
     
         > [!Important]
-        > Voeg geen aanhalings tekens toe rondom de connection string.
+        > Voeg geen aanhalingstekens toe rond connection string.
         ```shell
-        - connection_string=<ADD CONNECTION STRING HERE>
-       ```
+        connection_string=<ADD CONNECTION STRING HERE>
+        ```
        
     1. Voer in en sla het op.
     
-1.  Nu bent u klaar om de apparaat-Update Agent op uw IoT-apparaat te starten. 
+1.  U bent nu klaar om de agent voor apparaatupdates op uw IoT-apparaat te starten. 
 
 
-## <a name="how-to-start-the-device-update-agent"></a>De Update-Agent voor het apparaat starten
+## <a name="how-to-start-the-device-update-agent"></a>De agent voor apparaatupdates starten
 
-In deze sectie wordt beschreven hoe u de Update Agent van het apparaat start en controleert als een module-identiteit die op uw IoT-apparaat wordt uitgevoerd.
+In deze sectie wordt beschreven hoe u de agent voor apparaatupdates start en verifieert als een module-id die wordt uitgevoerd op uw IoT-apparaat.
 
-1.  Meld u aan bij de computer of het apparaat waarop de Update Agent voor het apparaat is geïnstalleerd.
+1.  Meld u aan bij de computer of het apparaat waar de Apparaatupdate-agent is geïnstalleerd.
 
-1.  Open een Terminal venster en voer de onderstaande opdracht in.
+1.  Open een Terminal-venster en voer de onderstaande opdracht in.
     ```shell
     sudo systemctl restart adu-agent
     ```
     
-1.  U kunt de status van de agent controleren met behulp van de onderstaande opdracht. Raadpleeg deze [hand leiding voor probleem oplossing](troubleshoot-device-update.md)als u problemen ziet.
+1.  U kunt de status van de agent controleren met behulp van de onderstaande opdracht. Als u problemen ziet, raadpleegt u deze gids [voor probleemoplossing.](troubleshoot-device-update.md)
     ```shell
     sudo systemctl status adu-agent
     ```
     
-    U ziet de status OK.
+    Als het goed is, ziet u de status OK.
 
-1.  Ga op de IoT Hub-Portal naar IoT-apparaat of IoT Edge apparaten om het apparaat te vinden dat u hebt geconfigureerd met Device Update Agent. Hier ziet u de Update Agent van het apparaat die wordt uitgevoerd als een module. Bijvoorbeeld:
+1.  Ga in IoT Hub portal naar IoT-apparaat of IoT Edge om het apparaat te vinden dat u hebt geconfigureerd met de Device Update-agent. Daar ziet u dat de Agent voor apparaatupdates wordt uitgevoerd als een module. Bijvoorbeeld:
 
-    :::image type="content" source="media/understand-device-update/device-update-module.png " alt-text="Diagram van de naam van de module voor het bijwerken van apparaten." lightbox="media/understand-device-update/device-update-module.png":::
+    :::image type="content" source="media/understand-device-update/device-update-module.png " alt-text="Diagram van de modulenaam van de apparaatupdate." lightbox="media/understand-device-update/device-update-module.png":::
 
 
-## <a name="how-to-build-and-run-device-update-agent"></a>Update Agent voor apparaten bouwen en uitvoeren
+## <a name="how-to-build-and-run-device-update-agent"></a>De agent voor apparaatupdates bouwen en uitvoeren
 
-U kunt ook uw eigen Update Agent voor klant apparaten maken en wijzigen.
+U kunt ook uw eigen agent voor apparaatupdates van klanten bouwen en wijzigen.
 
-Volg de instructies om de Update Agent van het apparaat te [bouwen](https://github.com/Azure/iot-hub-device-update/blob/main/docs/agent-reference/how-to-build-agent-code.md) vanuit de bron.
+Volg de instructies voor het [bouwen van](https://github.com/Azure/iot-hub-device-update/blob/main/docs/agent-reference/how-to-build-agent-code.md) de Agent voor apparaatupdates vanuit de bron.
 
-Zodra de agent is gebouwd, is het tijd om de agent [uit te voeren](https://github.com/Azure/iot-hub-device-update/blob/main/docs/agent-reference/how-to-run-agent.md) .
+Zodra de agent is gebouwd, is het tijd om de agent [uit](https://github.com/Azure/iot-hub-device-update/blob/main/docs/agent-reference/how-to-run-agent.md) te voeren.
 
-Breng nu de wijzigingen aan die nodig zijn om de agent in uw installatie kopie op te nemen.  Lees hoe u de Update Agent voor het apparaat kunt [wijzigen](https://github.com/Azure/iot-hub-device-update/blob/main/docs/agent-reference/how-to-modify-the-agent-code.md) voor hulp.
+Maak nu de wijzigingen die nodig zijn om de agent in uw afbeelding op te nemen.  Bekijk hoe u de [agent voor apparaatupdates](https://github.com/Azure/iot-hub-device-update/blob/main/docs/agent-reference/how-to-modify-the-agent-code.md) kunt wijzigen voor hulp.
 
 
 ## <a name="troubleshooting-guide"></a>Handleiding voor het oplossen van problemen
 
-Als u problemen ondervindt, raadpleegt u de update voor het oplossen van problemen met IoT Hub voor [probleem oplossing](troubleshoot-device-update.md) om mogelijke problemen op te lossen en benodigde informatie te verzamelen die aan micro soft kan worden verstrekt.
+Als u problemen hebt, bekijkt u de [](troubleshoot-device-update.md) Gids voor het oplossen van problemen IoT Hub Apparaatupdates om mogelijke problemen op te lossen en de benodigde informatie te verzamelen om Aan Microsoft te verstrekken.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U kunt de volgende vooraf gemaakte installatie kopieën en binaire bestanden gebruiken voor een eenvoudige demonstratie van het bijwerken van het apparaat voor IoT Hub:
+U kunt de volgende vooraf gebouwde afbeeldingen en binaire bestanden gebruiken voor een eenvoudige demonstratie van apparaatupdates voor IoT Hub:
 
-- [Update van de installatie kopie: aan de slag met Raspberry Pi 3 B + Reference yocto-installatie kopie](device-update-raspberry-pi.md) uitbreidbaar via open source om uw eigen installatie kopieën te maken voor andere architectuur waar nodig.
+- Update van de afbeelding: Aan de slag met [Raspberry Pi 3 B+ Reference Yocto Image extensible](device-update-raspberry-pi.md) via open source om uw eigen afbeeldingen te bouwen voor een andere architectuur als dat nodig is.
 
-- [Aan de slag met Ubuntu (18,04 x64) Simulator referentie agent](device-update-simulator.md)
+- [Aan de slag Ubuntu (18.04 x64) Simulator Reference Agent gebruiken](device-update-simulator.md)
 
-- [Pakket update: aan de slag met de Ubuntu Server 18,04 x64-pakket agent](device-update-ubuntu-agent.md)
+- [Package Update:Aan de slag using Ubuntu Server 18.04 x64 Package agent](device-update-ubuntu-agent.md)
 
-- [Zelf studie over het bijwerken van apparaten voor Azure IoT Hub voor Azure-real-time-besturings systeem](device-update-azure-real-time-operating-system.md)
+- [Apparaatupdate voor Azure IoT Hub zelfstudie voor Azure-real-time-besturingssysteem](device-update-azure-real-time-operating-system.md)
 

@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 10/27/2020
 ms.author: olayemio
 ms.reviewer: cynthn
-ms.openlocfilehash: 015fa201fe1c31dde2e30c2fe689ac13452b1b01
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 9652e940674ec7580b006cd38df2a7d17014f939
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105607589"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107309982"
 ---
 # <a name="troubleshoot-shared-image-galleries-in-azure"></a>Problemen met gedeelde afbeeldings galerieën in azure oplossen
 
@@ -303,6 +303,14 @@ Als u problemen ondervindt bij het uitvoeren van bewerkingen in de gedeelde afbe
 **Oorzaak**: de definitie van de installatie kopie die u hebt gebruikt voor het implementeren van de virtuele machine bevat geen installatie kopieën die in de laatste versie zijn opgenomen.  
 **Tijdelijke oplossing**: Zorg ervoor dat er ten minste één installatie kopie versie is ingesteld op ' niet van laatste ' instellen op ONWAAR. 
 
+**Bericht**: *de/Subscriptions/van de galerie-afbeelding <SubscriptionID \> /resourceGroups/<resourceGroup \> /providers/Microsoft.Compute/Galleries/<Gallery \> /images/<Imagenaam \> /Versions/<versie nummer \> is niet beschikbaar in de regio <regio \> . Neem contact op met de eigenaar van de afbeelding om deze regio te repliceren, of wijzig uw aangevraagde regio.*  
+**Oorzaak**: de versie die is geselecteerd voor implementatie bestaat niet of heeft geen replica in de aangegeven regio.  
+**Tijdelijke oplossing**: Zorg ervoor dat de naam van de afbeeldings bron juist is en dat er ten minste één replica in de aangegeven regio is. 
+
+**Bericht**: *de galerie-afbeelding/Subscriptions/<SubscriptionID \> /resourceGroups/<resourceGroup \> /providers/Microsoft.Compute/Galleries/<Gallery \> /images/<Imagenaam \> is niet beschikbaar in de regio <regio \> . Neem contact op met de eigenaar van de afbeelding om deze regio te repliceren, of wijzig uw aangevraagde regio.*  
+**Oorzaak**: de definitie van de installatie kopie die voor de implementatie is geselecteerd, heeft geen installatie kopieën die zijn opgenomen in het meest recente en ook in de aangegeven regio.  
+**Tijdelijke oplossing**: Zorg ervoor dat er ten minste één installatie kopie versie in de regio met de instelling ' uitsluiten van laatste ' is ingesteld op ONWAAR. 
+
 **Bericht**: *de client is gemachtigd om de actie ' micro soft. computes/afbeeldingen/versies/lezen ' op het bereik <resourceID uit te voeren \> , maar de huidige Tenant <tenantID \> is niet geautoriseerd voor toegang tot het gekoppelde abonnement <subscriptionID \> .*  
 **Oorzaak**: de virtuele machine of schaalset is gemaakt met behulp van een SIG-installatie kopie in een andere Tenant. U hebt geprobeerd een wijziging aan te brengen in de virtuele machine of schaalset, maar u hebt geen toegang tot het abonnement dat eigenaar is van de installatie kopie.  
 **Tijdelijke oplossing**: Neem contact op met de eigenaar van het abonnement van de versie van de installatie kopie om Lees toegang te verlenen tot de installatie kopie versie.
@@ -318,10 +326,6 @@ Als u problemen ondervindt bij het uitvoeren van bewerkingen in de gedeelde afbe
 **Bericht**: de *vereiste para meter osProfile ontbreekt (null).*  
 **Oorzaak**: de virtuele machine is gemaakt op basis van een gegeneraliseerde installatie kopie en de gebruikers naam, het wacht woord of de SSH-sleutels van de beheerder ontbreken. Aangezien gegeneraliseerde installatie kopieën de gebruikers naam, het wacht woord of de SSH-sleutels niet behouden, moeten deze velden worden opgegeven tijdens het maken van een virtuele machine of schaalset.  
 **Tijdelijke oplossing**: Geef de gebruikers naam, het wacht woord of de SSH-sleutels op, of gebruik een gespecialiseerde installatie kopie versie.
-
-**Bericht**: *kan geen versie van de galerie afbeelding maken op basis van: <ResourceID \> sinds de status van het besturings systeem in de bovenliggende galerie-afbeelding (' gespecialiseerd ') niet ' gegeneraliseerd ' is.*  
-**Oorzaak**: de versie van de installatie kopie wordt gemaakt op basis van een gegeneraliseerde bron, maar de bovenliggende definitie is gespecialiseerd.  
-**Tijdelijke oplossing**: Maak de installatie kopie versie met behulp van een gespecialiseerde bron of gebruik een bovenliggende definitie die is gegeneraliseerd.
 
 **Bericht**: *kan de Schaalset voor virtuele machines <vmssName niet bijwerken \> omdat de huidige status van het besturings systeem van de VM-schaalset een andere naam heeft dan de bijgewerkte versie van het besturings systeem van de galerie-installatie kopie. deze is gespecialiseerd.*  
 **Oorzaak**: de huidige bron installatie kopie voor de schaalset is een gegeneraliseerde bron installatie kopie, maar wordt bijgewerkt met een bron installatie kopie die speciaal is ingesteld. De huidige bron installatie kopie en de nieuwe bron installatie kopie voor een schaalset moeten dezelfde status hebben.  

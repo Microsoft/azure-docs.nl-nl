@@ -139,6 +139,8 @@
       href: ../../azure-monitor/security-baseline.md
     - name: Azure Migrate-beveiligingsbasislijn
       href: ../../migrate/security-baseline.md
+    - name: Beveiligings basislijn van Azure peering-service
+      href: ../../peering-service/security-baseline.md
     - name: Azure Policy-beveiligingsbasislijn
       href: ../../governance/policy/concepts/azure-security-benchmark-baseline.md
     - name: Azure Private Link-beveiligingsbasislijn

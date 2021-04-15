@@ -2,21 +2,21 @@
 title: Opties voor eenmalige aanmelding in Azure AD
 description: Meer informatie over de beschikbare opties voor eenmalige aanmelding (SSO) in Azure Active Directory.
 services: active-directory
-author: kenwith
-manager: daveba
+author: iantheninja
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 12/03/2019
-ms.author: kenwith
+ms.author: iangithinji
 ms.reviewer: arvindh, japere
-ms.openlocfilehash: 2bf84a22a384e6079c2d85c833b34ba37eecaa46
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d81ad34c81a451f1faecb6cb33c0cc427567f122
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99252352"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107379601"
 ---
 # <a name="single-sign-on-options-in-azure-ad"></a>Opties voor eenmalige aanmelding in Azure AD
 

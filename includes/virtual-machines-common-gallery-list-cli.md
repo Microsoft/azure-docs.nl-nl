@@ -7,35 +7,35 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 01/28/2020
 ms.author: cynthn
-ms.custom: include file, devx-track-azurecli
-ms.openlocfilehash: 6432c125c4fedd962faa28a4c84c7494300b0472
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: include file
+ms.openlocfilehash: 1c06f5ab8995e7285365fa2d0ee77c327be2b1bd
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92755323"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107386939"
 ---
-## <a name="list-information"></a>Gegevens weer geven
+## <a name="list-information"></a>Lijstgegevens
 
-De locatie, status en andere informatie over de beschik bare afbeeldings galerieën ophalen met de [lijst AZ sig](/cli/azure/sig#az-sig-list).
+Haal de locatie, status en andere informatie over de beschikbare galerieën met afbeeldingen op [met az sig list](/cli/azure/sig#az-sig-list).
 
 ```azurecli-interactive 
 az sig list -o table
 ```
 
-De afbeeldings definities in een galerie weer geven, met inbegrip van informatie over het type besturings systeem en de status, met behulp van de [lijst met AZ sig image-definition](/cli/azure/sig/image-definition#az-sig-image-definition-list).
+Vermeld de definities van de afbeeldingen in een galerie, inclusief informatie over het type besturingssysteem en de status, met [behulp van az sig image-definition list](/cli/azure/sig/image-definition#az-sig-image-definition-list).
 
 ```azurecli-interactive 
 az sig image-definition list --resource-group myGalleryRG --gallery-name myGallery -o table
 ```
 
-De versies van de gedeelde installatie kopieën in een galerie weer geven met behulp van de [lijst AZ sig image-version](/cli/azure/sig/image-version#az-sig-image-version-list).
+Gebruik [az sig image-version list](/cli/azure/sig/image-version#az-sig-image-version-list)om de versies van gedeelde afbeeldingen in een galerie weer te geven.
 
 ```azurecli-interactive
 az sig image-version list --resource-group myGalleryRG --gallery-name myGallery --gallery-image-definition myImageDefinition -o table
 ```
 
-De ID van een afbeeldings versie ophalen met behulp van [AZ sig installatie kopie-versie weer geven](/cli/azure/sig/image-version#az-sig-image-version-show).
+Haal de id van een versie van een afbeelding op [met az sig image-version show.](/cli/azure/sig/image-version#az-sig-image-version-show)
 
 ```azurecli-interactive
 az sig image-version show \

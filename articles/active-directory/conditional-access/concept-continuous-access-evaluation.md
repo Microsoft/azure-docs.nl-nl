@@ -1,6 +1,6 @@
 ---
-title: Evaluatie van doorlopende toegang in azure AD
-description: Sneller reageren op wijzigingen in de gebruikers status met de evaluatie van continue toegang in azure AD
+title: Continue toegangsevaluatie in Azure AD
+description: Sneller reageren op wijzigingen in de gebruikerstoestand met continue toegangsevaluatie in Azure AD
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
@@ -11,180 +11,180 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jlu
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d707106d66c77ad1f3a1156906add8bb85fd0ce0
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: 74009759bb9ca2a0516148fc1387b150b67452ab
+ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107305970"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107387901"
 ---
 # <a name="continuous-access-evaluation"></a>Continue toegangsevaluatie
 
-Het verlopen van tokens en vernieuwen is een standaard mechanisme in de branche. Wanneer een client toepassing, zoals Outlook, verbinding maakt met een service zoals Exchange Online, worden de API-aanvragen geautoriseerd met OAuth 2,0-toegangs tokens. De toegangs tokens zijn standaard één uur geldig, wanneer ze verlopen. de client wordt vervolgens teruggeleid naar Azure AD om ze te vernieuwen. Deze vernieuwings periode biedt de mogelijkheid om beleid voor gebruikers toegang opnieuw te evalueren. Bijvoorbeeld: u kunt ervoor kiezen om het token niet te vernieuwen vanwege een beleid voor voorwaardelijke toegang, of omdat de gebruiker is uitgeschakeld in de map. 
+Verloop en vernieuwing van token is een standaardmechanisme in de branche. Wanneer een clienttoepassing zoals Outlook verbinding maakt met een service zoals Exchange Online, worden de API-aanvragen geautoriseerd met behulp van OAuth 2.0-toegangstokens. Standaard zijn deze toegangstokens één uur geldig. Wanneer ze verlopen, wordt de client teruggeleid naar Azure AD om ze te vernieuwen. Deze vernieuwingsperiode biedt de mogelijkheid om beleidsregels voor gebruikerstoegang opnieuw te beoordelen. Bijvoorbeeld: we kunnen ervoor kiezen om het token niet te vernieuwen vanwege een beleid voor voorwaardelijke toegang of omdat de gebruiker is uitgeschakeld in de directory. 
 
-Klanten hebben een probleem met de vertraging tussen wanneer de voor waarden van de gebruiker zijn gewijzigd, zoals netwerk locatie of dief stal van referenties, en wanneer beleids regels kunnen worden afgedwongen met betrekking tot die wijziging. We hebben experimenteren met de benadering ' Blunt object ' van een gereduceerde levens duur van tokens, maar ze kunnen de gebruikers ervaringen en betrouw baarheid verlagen zonder Risico's te elimineren.
+Klanten hebben hun zorgen uitgedrukt over de vertraging tussen het wijzigen van voorwaarden voor de gebruiker, zoals netwerklocatie of diefstal van referenties, en wanneer beleidsregels kunnen worden afgedwongen met betrekking tot die wijziging. We hebben geëxperimenteerd met de 'object object'-benadering van een gereduceerde levensduur van het token, maar hebben ontdekt dat ze gebruikerservaringen en betrouwbaarheid kunnen verminderen zonder risico's te elimineren.
 
-Voor een tijdige reactie op beleids schendingen of beveiligings problemen is een ' conversatie ' vereist tussen de uitgever van het token, zoals Azure AD, en de Relying Party, zoals Exchange Online. Deze twee richtings conversatie biedt ons twee belang rijke mogelijkheden. De Relying Party kan zien wanneer dingen zijn gewijzigd, zoals een client die afkomstig is van een nieuwe locatie, en de uitgever van het token kenbaar maakt. Het biedt ook de token uitgever een manier om de Relying Party te laten weten dat tokens voor een bepaalde gebruiker niet meer worden geëerbiedigd vanwege inbreuk op het account, het uitschakelen of andere problemen. Het mechanisme voor deze conversatie is een voortdurende toegangs beoordeling (CAE). Het doel is om reactie bijna in realtime te zijn, maar in sommige gevallen kan een latentie van Maxi maal 15 minuten worden waargenomen als gevolg van de doorgifte tijd van de gebeurtenis.
+Tijdige reactie op beleidsschendingen of beveiligingsproblemen vereist echt een 'gesprek' tussen de tokenuitgever, zoals Azure AD, en de relying party, zoals Exchange Online. Dit gesprek in twee gevallen biedt ons twee belangrijke mogelijkheden. De relying party kan zien wanneer er dingen zijn gewijzigd, zoals een client die afkomstig is van een nieuwe locatie, en de tokenuitgever op de melding geven. Het biedt de tokenvergever ook een manier om de relying party te laten stoppen met het respecteren van tokens voor een bepaalde gebruiker vanwege accountcompromitteerd, uitgeschakeld of andere problemen. Het mechanisme voor dit gesprek is continue toegangsevaluatie (CAE). Het doel is dat de reactie bijna in realtime is, maar in sommige gevallen kan een latentie van maximaal 15 minuten worden waargenomen als gevolg van de tijd voor het doorgeven van gebeurtenissen.
 
-De eerste implementatie van voortdurende toegangs beoordeling is gericht op Exchange, teams en share point online.
+De eerste implementatie van continue toegangsevaluatie is gericht op Exchange, Teams en SharePoint Online.
 
-Als u uw toepassingen wilt voorbereiden op het gebruik van CAE, raadpleegt u [api's voor continue toegang gebruiken in uw toepassingen](../develop/app-resilience-continuous-access-evaluation.md).
+Zie How to use Continue toegangsevaluatie [enabled APIs in your applications](../develop/app-resilience-continuous-access-evaluation.md)(Api's Continue toegangsevaluatie in uw toepassingen gebruiken) om uw toepassingen voor te bereiden op het gebruik van CAE.
 
 ### <a name="key-benefits"></a>Belangrijkste voordelen
 
-- Gebruikers beëindiging of wacht woord wijzigen/opnieuw instellen: het intrekken van de gebruikers sessie wordt in bijna realtime afgedwongen.
-- Netwerk locatie wijzigen: het beleid voor voorwaardelijke toegang locatie wordt in bijna realtime afgedwongen.
-- Het exporteren van een token naar een computer buiten een vertrouwd netwerk kan worden voor komen met een locatie beleid voor voorwaardelijke toegang.
+- Gebruikersbeëindiging of wachtwoord wijzigen/opnieuw instellen: het intrekken van gebruikerssessies wordt bijna in realtime afgedwongen.
+- Netwerklocatiewijziging: Het beleid voor de locatie van voorwaardelijke toegang wordt bijna in realtime afgedwongen.
+- Tokenexport naar een computer buiten een vertrouwd netwerk kan worden voorkomen met locatiebeleid voor voorwaardelijke toegang.
 
 ## <a name="scenarios"></a>Scenario's 
 
-Er zijn twee scenario's die de evaluatie van de voortdurende toegang, de evaluatie van kritieke gebeurtenissen en het beleid voor voorwaardelijke toegang opleveren.
+Er zijn twee scenario's waarin continue toegangsevaluatie bestaat: evaluatie van kritieke gebeurtenissen en evaluatie van het beleid voor voorwaardelijke toegang.
 
 ### <a name="critical-event-evaluation"></a>Evaluatie van kritieke gebeurtenissen
 
-De evaluatie van voortdurende toegang wordt geïmplementeerd door services, zoals Exchange Online, share point online en teams, in te scha kelen voor kritieke gebeurtenissen in azure AD, zodat deze gebeurtenissen in de buurt van real-time kunnen worden geëvalueerd en afgedwongen. De evaluatie van kritieke gebeurtenissen is niet afhankelijk van het beleid voor voorwaardelijke toegang dat beschikbaar is in een wille keurige Tenant. De volgende gebeurtenissen worden momenteel geëvalueerd:
+Continue toegangsevaluatie wordt geïmplementeerd doordat services, zoals Exchange Online, SharePoint Online en Teams, zich kunnen abonneren op kritieke gebeurtenissen in Azure AD, zodat deze gebeurtenissen in bijna realtime kunnen worden geëvalueerd en afgedwongen. Evaluatie van kritieke gebeurtenissen is niet afhankelijk van beleid voor voorwaardelijke toegang, dus is beschikbaar in elke tenant. De volgende gebeurtenissen worden momenteel geëvalueerd:
 
-- Gebruikers account is verwijderd of uitgeschakeld
-- Het wacht woord voor een gebruiker wordt gewijzigd of opnieuw ingesteld
-- Multi-factor Authentication is ingeschakeld voor de gebruiker
-- De beheerder trekt expliciet alle vernieuwings tokens voor een gebruiker in
-- Hoog gebruikers risico gedetecteerd door Azure AD Identity Protection
+- Gebruikersaccount is verwijderd of uitgeschakeld
+- Het wachtwoord voor een gebruiker wordt gewijzigd of opnieuw ingesteld
+- Meervoudige verificatie is ingeschakeld voor de gebruiker
+- De beheerder trekt alle vernieuwingstokens voor een gebruiker expliciet in
+- Hoog gebruikersrisico gedetecteerd door Azure AD Identity Protection
 
-Dit proces maakt het scenario mogelijk dat gebruikers geen toegang meer hebben tot de share point online-bestanden, e-mail, agenda of taken van de organisatie, en teams van Microsoft 365 client-apps binnen minuten na een van deze kritieke gebeurtenissen. 
+Dit proces maakt het mogelijk dat gebruikers binnen enkele minuten na een van deze kritieke gebeurtenissen geen toegang meer hebben tot SharePoint Online-bestanden, e-mail, agenda of taken van organisaties en Teams vanuit Microsoft 365-client-apps. 
 
 > [!NOTE] 
-> Teams bieden nog geen ondersteuning voor gebruikers risico gebeurtenissen.
+> Teams en SharePoint Online bieden nog geen ondersteuning voor gebruikersrisicogebeurtenissen.
 
-### <a name="conditional-access-policy-evaluation-preview"></a>Evaluatie van voorwaardelijk toegangs beleid (preview-versie)
+### <a name="conditional-access-policy-evaluation-preview"></a>Evaluatie van beleid voor voorwaardelijke toegang (preview)
 
-Exchange en share point kunnen sleutels voor voorwaardelijk toegangs beleid synchroniseren zodat ze binnen de service zelf kunnen worden geëvalueerd.
+Exchange en SharePoint kunnen belangrijke beleidsregels voor voorwaardelijke toegang synchroniseren, zodat ze in de service zelf kunnen worden geëvalueerd.
 
-Met dit proces wordt het scenario ingeschakeld waarbij gebruikers de toegang tot bedrijfs bestanden, e-mail, agenda of taken van Microsoft 365 client-apps of share point online direct na wijzigingen in de netwerk locatie kwijt raken.
+Dit proces maakt het mogelijk dat gebruikers de toegang tot organisatiebestanden, e-mail, agenda of taken van Microsoft 365 client-apps of SharePoint Online direct verliezen nadat de netwerklocatie is gewijzigd.
 
 > [!NOTE]
-> Niet alle combi Naties van app-en resource providers worden ondersteund. Zie de tabel hieronder. Office heeft betrekking op Word, Excel en Power Point.
+> Niet alle combinatie van app en resourceprovider wordt ondersteund. Zie de onderstaande tabel. Office verwijst naar Word, Excel en PowerPoint.
 
 | | Outlook Web | Outlook Win32 | Outlook iOS | Outlook Android | Outlook Mac |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **SharePoint Online** | Ondersteund | Ondersteund | Ondersteund | Ondersteund | Ondersteund |
 | **Exchange Online** | Ondersteund | Ondersteund | Ondersteund | Ondersteund | Ondersteund |
 
-| | Office Web apps | Office Win32-apps | Office voor iOS | Office voor Android | Office voor Mac |
+| | Office-web-apps | Office Win32-apps | Office voor iOS | Office voor Android | Office voor Mac |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **SharePoint Online** | Niet ondersteund | Ondersteund | Ondersteund | Ondersteund | Ondersteund |
 | **Exchange Online** | Niet ondersteund | Ondersteund | Ondersteund | Ondersteund | Ondersteund |
 
-| | OneDrive-Web | OneDrive Win32 | OneDrive iOS | OneDrive Android | OneDrive Mac |
+| | OneDrive-web | OneDrive Win32 | OneDrive iOS | OneDrive Android | OneDrive Mac |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **SharePoint Online** | Ondersteund | Ondersteund | Ondersteund | Ondersteund | Ondersteund |
 
-### <a name="client-side-claim-challenge"></a>Claim vraag aan client zijde
+### <a name="client-side-claim-challenge"></a>Claim-uitdaging aan de clientzijde
 
-Voordat de evaluatie doorlopend wordt gedetecteerd, proberen clients altijd het toegangs token opnieuw af te spelen uit de cache zolang het niet is verlopen. Met CAE wordt een nieuw geval geïntroduceerd dat een resource provider een token kan afwijzen, zelfs wanneer het niet is verlopen. Om ervoor te zorgen dat clients hun cache overs Laan, zelfs als de tokens in de cache niet zijn verlopen, introduceren we een mechanisme met de naam **claim Challenge** om aan te geven dat het token is afgewezen en dat er een nieuw toegangs token moet worden uitgegeven door Azure AD. Voor CAE is een client update vereist om de claim Challenge te begrijpen. De meest recente versie van de volgende toepassingen ondersteunen claim Challenge:
+Vóór continue toegangsevaluatie proberen clients het toegangs token altijd opnieuw af te spelen vanuit de cache, zolang het niet is verlopen. Met CAE introduceren we een nieuwe case waarin een resourceprovider een token kan afwijzen, zelfs wanneer het niet is verlopen. Om clients te informeren dat ze hun cache moeten omzeilen, zelfs als de tokens in de cache niet zijn verlopen, introduceren we een mechanisme met de naam **claimuitdaging** om aan te geven dat het token is afgewezen en een nieuw toegangstoken moet worden uitgegeven door Azure AD. CAE vereist een clientupdate om claim-uitdaging te begrijpen. De nieuwste versie van de volgende toepassingen hieronder biedt ondersteuning voor claim-vraag:
 
-| | Web | - | iOS | Android | Mac |
+| | Web | Win32 | iOS | Android | Mac |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **Outlook** | Ondersteund | Ondersteund | Ondersteund | Ondersteund | Ondersteund |
 | **Teams** | Ondersteund | Ondersteund | Ondersteund | Ondersteund | Ondersteund |
 | **Office** | Niet ondersteund | Ondersteund | Ondersteund | Ondersteund | Ondersteund |
 | **OneDrive** | Ondersteund | Ondersteund | Ondersteund | Ondersteund | Ondersteund |
 
-### <a name="token-lifetime"></a>Levens duur van token
+### <a name="token-lifetime"></a>Levensduur van token
 
-Omdat het risico en het beleid in realtime worden geëvalueerd, zullen clients die onderhandelen over continue toegang-evaluatie sessies, vertrouwen op CAE in plaats van het bestaande beleid voor de levens duur van een statisch toegangs token, wat betekent dat het Configureer bare token levensduur beleid niet meer wordt gehonoreerd voor CAE-compatibele clients die onderhandelen over CAE-compatibele sessies.
+Omdat risico's en beleid in realtime worden geëvalueerd, vertrouwen clients die met continue toegangsevaluaties onderhandelen, op CAE in plaats van bestaande beleidsregels voor levensduur van statische toegangs tokens, wat betekent dat het beleid voor de levensduur van configureerbare token niet meer wordt nageleefd voor clients die geschikt zijn voor CAE.
 
-De levens duur van het token is langer dan 28 uur lang bewaard, in CAE-sessies. Intrekken wordt gereden door kritieke gebeurtenissen en beleids evaluatie, niet alleen een wille keurige tijds periode. Met deze wijziging wordt de stabiliteit van toepassingen verhoogd zonder dat dit van invloed is op de beveiligings postuur. 
+De levensduur van het token wordt in CAE-sessies verhoogd tot een levensduur van maximaal 28 uur. Intrekking wordt aangestuurd door kritieke gebeurtenissen en beleidsevaluatie, niet alleen een willekeurige periode. Deze wijziging verhoogt de stabiliteit van toepassingen zonder dat dit van invloed is op de beveiligingsstatus. 
 
-Als u geen gebruik maakt van CAE-compatibele clients, blijft de standaard levensduur van het toegangs token 1 uur, tenzij u de levens duur van uw toegangs token hebt geconfigureerd met de preview-functie voor de [Configureer bare levens duur van de token (CTL)](../develop/active-directory-configurable-token-lifetimes.md) .
+Als u geen clients gebruikt die geschikt zijn voor CAE, blijft de standaardlevensduur van het toegangtoken 1 uur, tenzij u de levensduur van het toegangtoken hebt geconfigureerd met de [preview-functie Configurable Token Lifetime (CTL).](../develop/active-directory-configurable-token-lifetimes.md)
 
-## <a name="example-flows"></a>Voorbeeld stromen
+## <a name="example-flows"></a>Voorbeeldstromen
 
-### <a name="user-revocation-event-flow"></a>Stroom voor het intrekken van de gebruiker:
+### <a name="user-revocation-event-flow"></a>Gebeurtenisstroom voor intrekken van gebruiker:
 
-![Stroom voor het intrekken van de gebruiker](./media/concept-continuous-access-evaluation/user-revocation-event-flow.png)
+![Gebeurtenisstroom gebruikers intrekken](./media/concept-continuous-access-evaluation/user-revocation-event-flow.png)
 
-1. Een client met CAE-ondersteuning geeft referenties of een vernieuwings token door aan Azure AD die vraagt om een toegangs token voor een bepaalde resource.
+1. Een client die geschikt is voor CAE geeft referenties of een vernieuwings-token aan Azure AD door te vragen om een toegangsken voor een bepaalde resource.
 1. Een toegangs token wordt samen met andere artefacten naar de client geretourneerd.
-1. Een beheerder [trekt expliciet alle vernieuwings tokens voor de gebruiker in](/powershell/module/azuread/revoke-azureaduserallrefreshtoken). Er wordt een intrekkings gebeurtenis verzonden naar de resource provider vanuit Azure AD.
-1. Er wordt een toegangs token aan de resource provider door gegeven. De resource provider evalueert de geldigheid van het token en controleert of er een intrekkings gebeurtenis voor de gebruiker is. De resource provider gebruikt deze informatie om te bepalen of u toegang wilt verlenen aan de resource.
-1. In dit geval weigert de resource provider de toegang en stuurt een 401 + claim-Challenge terug naar de client.
-1. De-client die geschikt is voor CAE, begrijpt de 401 + claim Challenge. Het omzeilt de caches en gaat terug naar stap 1, verzendt het vernieuwings token samen met de claim uitdaging terug naar Azure AD. Azure AD evalueert vervolgens alle voor waarden en vraagt de gebruiker in dit geval opnieuw te verifiëren.
+1. Een beheerder trekt alle [vernieuwingstokens voor de gebruiker expliciet in.](/powershell/module/azuread/revoke-azureaduserallrefreshtoken) Vanuit Azure AD wordt een intrekkingsgebeurtenis verzonden naar de resourceprovider.
+1. Er wordt een toegangs token weergegeven aan de resourceprovider. De resourceprovider evalueert de geldigheid van het token en controleert of er een intrekkingsgebeurtenis voor de gebruiker is. De resourceprovider gebruikt deze informatie om al dan niet toegang te verlenen tot de resource.
+1. In dit geval geeft de resourceprovider geen toegang en stuurt deze een 401+-claimuitdaging terug naar de client.
+1. De cae-client begrijpt de 401+-claim-uitdaging. Het slaat de caches over en gaat terug naar stap 1, en stuurt het vernieuwings-token samen met de claimuitdaging terug naar Azure AD. In Azure AD worden vervolgens alle voorwaarden opnieuw geëvalueerd en wordt de gebruiker gevraagd om zich in dit geval opnieuw te authenticeren.
 
-### <a name="user-condition-change-flow-preview"></a>Wijzigings stroom voor de gebruikers voorwaarde (preview-versie):
+### <a name="user-condition-change-flow-preview"></a>Stroom voor wijziging van gebruikersvoorwaarde (preview):
 
-In het volgende voor beeld heeft een beheerder van de voorwaardelijke toegang een op locatie gebaseerd beleid voor voorwaardelijke toegang geconfigureerd zodat alleen toegang vanaf specifieke IP-bereiken wordt toegestaan:
+In het volgende voorbeeld heeft een beheerder van voorwaardelijke toegang een beleid voor voorwaardelijke toegang op basis van een locatie geconfigureerd om alleen toegang vanuit specifieke IP-bereiken toe te staan:
 
-![Gebeurtenis stroom voor de gebruikers voorwaarde](./media/concept-continuous-access-evaluation/user-condition-change-flow.png)
+![Gebeurtenisstroom voor gebruikersvoorwaarde](./media/concept-continuous-access-evaluation/user-condition-change-flow.png)
 
-1. Een client met CAE-ondersteuning geeft referenties of een vernieuwings token door aan Azure AD die vraagt om een toegangs token voor een bepaalde resource.
-1. Azure AD evalueert alle beleids regels voor voorwaardelijke toegang om te zien of de gebruiker en de client voldoen aan de voor waarden.
-1. Een toegangs token wordt samen met andere artefacten naar de client geretourneerd.
-1. De gebruiker verdwijnt uit een toegestaan IP-bereik
-1. De client presenteert een toegangs token voor de resource provider van buiten een toegestaan IP-bereik.
-1. De resource provider evalueert de geldigheid van het token en controleert het locatie beleid dat vanuit Azure AD is gesynchroniseerd.
-1. In dit geval weigert de resource provider de toegang en stuurt een 401 + claim-Challenge terug naar de client omdat deze niet afkomstig is van het toegestane IP-bereik.
-1. De-client die geschikt is voor CAE, begrijpt de 401 + claim Challenge. Het omzeilt de caches en gaat terug naar stap 1, verzendt het vernieuwings token samen met de claim uitdaging terug naar Azure AD. Azure AD evalueert alle voor waarden en weigert de toegang in dit geval.
+1. Een client die geschikt is voor CAE geeft referenties of een vernieuwings-token aan Azure AD door te vragen naar een toegangs token voor een bepaalde resource.
+1. Azure AD evalueert alle beleidsregels voor voorwaardelijke toegang om te zien of de gebruiker en client aan de voorwaarden voldoen.
+1. Er wordt een toegangs token geretourneerd samen met andere artefacten naar de client.
+1. Gebruiker verplaatst zich buiten een toegestaan IP-bereik
+1. De client geeft een toegangs token aan de resourceprovider van buiten een toegestaan IP-bereik.
+1. De resourceprovider evalueert de geldigheid van het token en controleert het locatiebeleid dat is gesynchroniseerd vanuit Azure AD.
+1. In dit geval geeft de resourceprovider geen toegang en stuurt deze een 401+-claimuitdaging terug naar de client omdat deze niet afkomstig is uit het toegestane IP-bereik.
+1. De cae-client begrijpt de 401+-claim-uitdaging. Het slaat de caches over en gaat terug naar stap 1, en stuurt het vernieuwings-token samen met de claimuitdaging terug naar Azure AD. In Azure AD worden alle voorwaarden opnieuw geëvalueerd en wordt in dit geval de toegang ontzegd.
 
-## <a name="enable-or-disable-cae-preview"></a>CAE in-of uitschakelen (preview-versie)
+## <a name="enable-or-disable-cae-preview"></a>CAE in- of uitschakelen (preview)
 
-1. Meld u aan bij de **Azure Portal** als beheerder voor voorwaardelijke toegang, beveiligings beheerder of globale beheerder
-1. Blader naar **Azure Active Directory**  >    >  **evaluatie van continue toegang** van de beveiliging.
-1. Kies **voor beeld inschakelen**.
+1. Meld u aan bij **Azure Portal** beheerder van voorwaardelijke toegang, beveiligingsbeheerder of globale beheerder
+1. Blader **naar** Azure Active Directory security continuous access evaluation  >  **(Doorlopende** toegang tot  >  **beveiliging).**
+1. Kies **Preview inschakelen.**
 
-Op deze pagina kunt u optioneel de gebruikers en groepen beperken die aan de preview-versie worden onderworpen.
+Op deze pagina kunt u eventueel de gebruikers en groepen beperken die onderhevig zijn aan de preview.
 
-![De preview-versie van CAE inschakelen in de Azure Portal](./media/concept-continuous-access-evaluation/enable-cae-preview.png)
+![De CAE-preview inschakelen in Azure Portal](./media/concept-continuous-access-evaluation/enable-cae-preview.png)
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
-### <a name="supported-location-policies"></a>Ondersteund locatie beleid
+### <a name="supported-location-policies"></a>Ondersteund locatiebeleid
 
-Voor CAE hebben we alleen inzicht in benoemde op IP gebaseerde benoemde locaties. We hebben geen inzicht in andere locatie-instellingen, zoals door [MFA vertrouwde IP-adressen](../authentication/howto-mfa-mfasettings.md#trusted-ips) of locaties op basis van een land. Wanneer de gebruiker afkomstig is van een door MFA vertrouwd IP-adres of vertrouwde locaties met door MFA vertrouwde Ip's of land locatie, wordt de CAE niet afgedwongen nadat de gebruiker naar een andere locatie is verplaatst. In dergelijke gevallen geven we een CAE-token van 1 uur zonder onmiddellijke controle op IP-afdwinging uit.
+Voor CAE hebben we alleen inzicht in benoemde, op IP gebaseerde benoemde locaties. We hebben geen inzicht in andere locatie-instellingen, zoals [vertrouwde MFA-IP's](../authentication/howto-mfa-mfasettings.md#trusted-ips) of locaties op basis van landen. Wanneer de gebruiker afkomstig is van een vertrouwd IP-adres voor MFA of vertrouwde locaties met vertrouwde IP-adressen voor MFA of de locatie van het land, wordt CAE niet afgedwongen nadat de gebruiker naar een andere locatie is verplaatst. In die gevallen geven we een CAE-token van 1 uur uit zonder directe controle van IP-afdwinging.
 
 > [!IMPORTANT]
-> Bij het configureren van locaties voor continue toegang, gebruikt u alleen de [voor waarde voor voorwaardelijke toegang op basis van een IP-](../conditional-access/location-condition.md) adres en configureert u alle IP-adressen, **met inbegrip van IPv4 en IPv6**, die kunnen worden weer gegeven door uw ID-provider en bronnen provider. Gebruik geen land locatie voorwaarden of de functie voor vertrouwde IP-adressen die beschikbaar is op de pagina Service-instellingen van Azure AD Multi-Factor Authentication.
+> Wanneer u locaties configureert voor continue toegangsevaluatie, gebruikt u alleen de locatievoorwaarde voor voorwaardelijke toegang op basis van [IP](../conditional-access/location-condition.md) en configureert u alle IP-adressen, met inbegrip van **zowel IPv4 als IPv6,** die kunnen worden gezien door uw id-provider en resourcesprovider. Gebruik geen landlocatievoorwaarden of de vertrouwde IPS-functie die beschikbaar is op de pagina service-instellingen van Azure AD Multi-Factor Authentication.
 
 ### <a name="ip-address-configuration"></a>IP-adresconfiguratie
 
-Uw ID-provider en resource providers kunnen verschillende IP-adressen zien. Dit kan gebeuren als gevolg van implementaties van de netwerk proxy in uw organisatie of onjuiste IPv4/IPv6-configuraties tussen uw ID-provider en resource provider. Bijvoorbeeld:
+Uw id-provider en resourceproviders kunnen verschillende IP-adressen zien. Dit komt mogelijk niet overeen vanwege implementaties van netwerkproxy's in uw organisatie of onjuiste IPv4-/IPv6-configuraties tussen uw id-provider en resourceprovider. Bijvoorbeeld:
 
-- Uw ID-provider ziet één IP-adres van de client.
-- De resource provider ziet een ander IP-adres dan de client na het door lopen van een proxy.
-- Het IP-adres dat uw ID-provider ziet maakt deel uit van een toegestaan IP-bereik in het beleid, maar het IP-adres van de resource provider is niet.
+- Uw id-provider ziet één IP-adres van de client.
+- Uw resourceprovider ziet een ander IP-adres van de client nadat deze via een proxy is door geven.
+- Het IP-adres dat uw id-provider ziet, maakt deel uit van een toegestaan IP-bereik in het beleid, maar het IP-adres van de resourceprovider niet.
 
-Als dit scenario in uw omgeving bestaat om oneindige lussen te voor komen, geeft Azure AD een CAE-token van één uur op en wordt het wijzigen van de client locatie niet afgedwongen. Zelfs in dit geval is de beveiliging verbeterd ten opzichte van de traditionele tokens van één uur, omdat we nog steeds de [andere gebeurtenissen](#critical-event-evaluation) evalueren behalve client locatie wijzigings gebeurtenissen.
+Als dit scenario in uw omgeving bestaat om oneindige lussen te voorkomen, geeft Azure AD een CAE-token van één uur uit en wordt er geen wijziging van de clientlocatie afgedwongen. Zelfs in dit geval is de beveiliging verbeterd in vergelijking met [](#critical-event-evaluation) traditionele tokens van één uur, omdat we nog steeds de andere gebeurtenissen evalueren, behalve gebeurtenissen voor het wijzigen van de clientlocatie.
 
-### <a name="office-and-web-account-manager-settings"></a>Instellingen voor Office en web-account beheer
+### <a name="office-and-web-account-manager-settings"></a>Office- en webaccountbeheer instellingen
 
-| Kanaal voor Office-updates | DisableADALatopWAMOverride | DisableAADWAM |
+| Office-updatekanaal | DisableADALatopWAMOverride | DisableAADWAM |
 | --- | --- | --- |
-| Semi-Annual Enter prise-kanaal | Als deze instelling is ingeschakeld of is ingesteld op 1, wordt CAE niet ondersteund. | Als deze instelling is ingeschakeld of is ingesteld op 1, wordt CAE niet ondersteund. |
-| Huidig kanaal <br> of <br> Maandelijks bedrijfs kanaal | CAE wordt ondersteund ongeacht de instelling | CAE wordt ondersteund ongeacht de instelling |
+| Semi-Annual Enterprise-kanaal | Als deze is ingesteld op ingeschakeld of 1, wordt CAE niet ondersteund. | Als deze is ingesteld op ingeschakeld of 1, wordt CAE niet ondersteund. |
+| Huidig kanaal <br> of <br> Maandelijks Enterprise-kanaal | CAE wordt ondersteund, ongeacht de instelling | CAE wordt ondersteund, ongeacht de instelling |
 
-Zie [overzicht van update kanalen voor Microsoft 365-apps](/deployoffice/overview-update-channels)voor een uitleg van de Office Update-kanalen. Het wordt aanbevolen dat organisaties web account manager (WAM) niet uitschakelen.
+Zie Overzicht van updatekanalen voor Microsoft 365 Apps voor een uitleg van de [office-updatekanalen.](/deployoffice/overview-update-channels) Het wordt aanbevolen dat organisaties niet uitschakelen webaccountbeheer (WAM).
 
-### <a name="group-membership-and-policy-update-effective-time"></a>Ingangs tijd groepslid maatschap en beleids update
+### <a name="group-membership-and-policy-update-effective-time"></a>Groepslidmaatschap en beleidsupdate effectieve tijd
 
-Groepslid maatschap en beleids updates die door beheerders zijn gemaakt, kunnen tot een dag duren. Er is een optimalisatie uitgevoerd voor beleids updates die de vertraging tot twee uur verminderen. Dit geldt echter niet voor alle scenario's. 
+Het kan tot één dag duren voor groepslidmaatschap en beleidsupdates door beheerders zijn bijgewerkt. Er is enige optimalisatie uitgevoerd voor beleidsupdates, waardoor de vertraging wordt beperkt tot twee uur. Dit geldt echter nog niet voor alle scenario's. 
 
-Als er een nood geval is en u wilt dat uw beleid wordt bijgewerkt of de wijziging van het groepslid maatschap moet worden toegepast op bepaalde gebruikers, moet u deze [Power shell-opdracht](/powershell/module/azuread/revoke-azureaduserallrefreshtoken) of de intrek sessie in de pagina gebruikers profiel gebruiken om de sessie van de gebruiker in te trekken, zodat de bijgewerkte beleids regels onmiddellijk worden toegepast.
+Als er sprake is van een noodgeval en u uw beleid moet laten aanpassen of als u het groepslidmaatschap wilt wijzigen om onmiddellijk toe te passen op bepaalde gebruikers, moet u deze [PowerShell-opdracht](/powershell/module/azuread/revoke-azureaduserallrefreshtoken) of 'Sessie intrekken' op de gebruikersprofielpagina gebruiken om de gebruikerssessie in te trekken. Hiermee zorgt u ervoor dat het bijgewerkte beleid onmiddellijk wordt toegepast.
 
-### <a name="coauthoring-in-office-apps"></a>Cocreatie in Office-apps
+### <a name="coauthoring-in-office-apps"></a>Co-autorering in Office-apps
 
-Wanneer meerdere gebruikers tegelijkertijd samen werken aan hetzelfde document, wordt de toegang van de gebruiker tot het document mogelijk niet onmiddellijk ingetrokken door CAE op basis van gebruikers intrekking of beleids wijzigings gebeurtenissen. In dit geval verliest de gebruiker de toegang volledig na, sluit u het document, sluit u Word, Excel of Power Point, of na een periode van 10 uur.
+Wanneer meerdere gebruikers op hetzelfde moment aan hetzelfde document samenwerken, wordt de toegang van de gebruiker tot het document mogelijk niet onmiddellijk ingetrokken door CAE op basis van gebruikersintrekken of beleidswijzigingsgebeurtenissen. In dit geval verliest de gebruiker de toegang volledig na het sluiten van het document, het sluiten van Word, Excel of PowerPoint, of na een periode van 10 uur.
 
-Als u deze tijd wilt verkorten, kan een share point-beheerder de maximale levens duur voor documenten die zijn opgeslagen in share point online en OneDrive voor bedrijven, eventueel verlagen. hiervoor [configureert u een netwerk locatie beleid in share point online](/sharepoint/control-access-based-on-network-location). Zodra deze configuratie is gewijzigd, wordt de maximale levens duur van cocreatie sessies beperkt tot 15 minuten en kan verder worden aangepast met de share point online Power shell-opdracht ' set-SPOTenant – IPAddressWACTokenLifetime '
+Om deze tijd te beperken, kan een SharePoint-beheerder eventueel de maximale levensduur van co-autoreringssessies verminderen voor documenten die zijn opgeslagen in SharePoint Online en OneDrive voor Bedrijven, door een netwerklocatiebeleid [in SharePoint Online](/sharepoint/control-access-based-on-network-location)te configureren. Zodra deze configuratie is gewijzigd, wordt de maximale levensduur van co-autoridingsessies gereduceerd tot 15 minuten en kan verder worden aangepast met behulp van de SharePoint Online PowerShell-opdracht 'Set-SPOTenant –IPAddressWACTokenLifetime'
 
 ### <a name="enable-after-a-user-is-disabled"></a>Inschakelen nadat een gebruiker is uitgeschakeld
 
-Als u een gebruikers recht inschakelt nadat dit is uitgeschakeld. Er is enige latentie voordat het account kan worden ingeschakeld. SPO en teams hebben een vertraging van 15 minuten. De vertraging is 35-40 minuten voor EXO.
+Als u een gebruiker inschakelen direct nadat deze is uitgeschakeld. Er is enige latentie voordat het account kan worden ingeschakeld. SPO en Teams hebben een vertraging van 15 minuten. De vertraging is 35-40 minuten voor DEN.
 
 ## <a name="faqs"></a>Veelgestelde vragen
 
-### <a name="how-will-cae-work-with-sign-in-frequency"></a>Hoe wordt het gebruik van CAE met de aanmeldings frequentie?
+### <a name="how-will-cae-work-with-sign-in-frequency"></a>Hoe werkt CAE met de aanmeldingsfrequentie?
 
-De aanmeldings frequentie wordt gerespecteerd met of zonder CAE.
+Aanmeldingsfrequentie wordt gehonoreerd met of zonder CAE.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Aangekondigde evaluatie van voortdurende toegang](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/moving-towards-real-time-policy-and-security-enforcement/ba-p/1276933)
+[Aankondiging van continue toegangsevaluatie](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/moving-towards-real-time-policy-and-security-enforcement/ba-p/1276933)

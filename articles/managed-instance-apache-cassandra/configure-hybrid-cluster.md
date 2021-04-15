@@ -1,57 +1,66 @@
 ---
-title: 'Quick Start: een hybride cluster met een beheerd exemplaar van Azure configureren voor Apache Cassandra'
-description: Deze Quick Start laat zien hoe u een hybride cluster met een beheerd exemplaar van Azure kunt configureren voor Apache Cassandra.
+title: 'Quickstart: Een hybride cluster configureren met Azure Managed Instance voor Apache Cassandra'
+description: In deze quickstart ziet u hoe u een hybride cluster configureert met Azure Managed Instance voor Apache Cassandra.
 author: TheovanKraay
 ms.author: thvankra
 ms.service: managed-instance-apache-cassandra
 ms.topic: quickstart
 ms.date: 03/02/2021
-ms.openlocfilehash: b022bff9db87c248881cd18cc21569aaef8f404a
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 9f3ad2a5d5b275ff611653855eff73bd36afda9f
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105562117"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107379414"
 ---
-# <a name="quickstart-configure-a-hybrid-cluster-with-azure-managed-instance-for-apache-cassandra-preview"></a>Snelstartgids: een hybride cluster met een beheerd exemplaar van Azure configureren voor Apache Cassandra (preview)
+# <a name="quickstart-configure-a-hybrid-cluster-with-azure-managed-instance-for-apache-cassandra-preview"></a>Quickstart: Een hybride cluster configureren met Azure Managed Instance voor Apache Cassandra (preview)
 
-Een door Azure beheerde instantie voor Apache Cassandra biedt geautomatiseerde implementatie-en schaal bewerkingen voor beheerde open source Apache Cassandra-data centers. Met deze service kunt u hybride scenario's versnellen en doorlopend onderhoud verminderen.
+Azure Managed Instance voor Apache Cassandra biedt geautomatiseerde implementatie- en schaalbewerkingen voor beheerde opensource Apache Cassandra-datacenters. Deze service helpt u bij het versnellen van hybride scenario's en het verminderen van doorlopend onderhoud.
 
 > [!IMPORTANT]
-> Een door Azure beheerde instantie voor Apache Cassandra is momenteel beschikbaar als open bare preview.
+> Azure Managed Instance voor Apache Cassandra is momenteel beschikbaar als openbare preview.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
 > Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-In deze Quick start ziet u hoe u de Azure CLI-opdrachten gebruikt om een hybride cluster te configureren. Als u bestaande data centers hebt in een on-premises of zelf-hostende omgeving, kunt u met Azure Managed instance voor Apache Cassandra andere data centers aan het cluster toevoegen en deze onderhouden.
+In deze quickstart wordt gedemonstreerd hoe u de Azure CLI-opdrachten gebruikt om een hybride cluster te configureren. Als u bestaande datacenters hebt in een on-premises of zelf-hostende omgeving, kunt u Azure Managed Instance voor Apache Cassandra gebruiken om andere datacenters toe te voegen aan dat cluster en deze te onderhouden.
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-* Voor dit artikel is de Azure CLI-versie 2.12.1 of hoger vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
+* Voor dit artikel is azure CLI versie 2.12.1 of hoger vereist. Als u een Azure Cloud Shell, is de meest recente versie al geïnstalleerd.
 
-* [Azure Virtual Network](../virtual-network/virtual-networks-overview.md) met connectiviteit voor uw zelf-hostende of on-premises omgeving. Zie het artikel [een on-premises netwerk verbinden met Azure](/azure/architecture/reference-architectures/hybrid-networking/) voor meer informatie over het verbinden van on-premises omgevingen met Azure.
+* [Azure Virtual Network](../virtual-network/virtual-networks-overview.md) connectiviteit met uw zelf-hostende of on-premises omgeving. Zie het artikel Connect an on-premises network to Azure (Een on-premises netwerk verbinden met Azure) voor meer informatie over het verbinden van [on-premises omgevingen met Azure.](/azure/architecture/reference-architectures/hybrid-networking/)
 
 ## <a name="configure-a-hybrid-cluster"></a><a id="create-account"></a>Een hybride cluster configureren
 
-1. Meld u aan bij de [Azure Portal](https://portal.azure.com/) en navigeer naar uw Virtual Network-resource.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/) en navigeer naar uw Virtual Network resource.
 
-1. Open het tabblad **subnetten** en maak een nieuw subnet. Zie het [Virtual Network](../virtual-network/virtual-network-manage-subnet.md#add-a-subnet) -artikel voor meer informatie over de velden in het formulier **subnet toevoegen** :
+1. Open het **tabblad Subnetten** en maak een nieuw subnet. Zie het volgende artikel voor meer **informatie** over de velden in het [Virtual Network](../virtual-network/virtual-network-manage-subnet.md#add-a-subnet) subnet toevoegen:
 
-   :::image type="content" source="./media/configure-hybrid-cluster/subnet.png" alt-text="Voeg een nieuw subnet aan uw Virtual Network toe." lightbox="./media/configure-hybrid-cluster/subnet.png" border="true":::
+   :::image type="content" source="./media/configure-hybrid-cluster/subnet.png" alt-text="Voeg een nieuw subnet toe aan uw Virtual Network." lightbox="./media/configure-hybrid-cluster/subnet.png" border="true":::
     <!-- ![image](./media/configure-hybrid-cluster/subnet.png) -->
 
-1. Nu gaan we enkele speciale machtigingen Toep assen op het VNet en het subnet waarvoor het beheerde exemplaar van Cassandra vereist is, met behulp van Azure CLI. Gebruik de `az role assignment create` opdracht, vervang `<subscription ID>` , `<resource group name>` , `<VNet name>` en `<subnet name>` met de juiste waarden:
+    > [!NOTE]
+    > Voor de implementatie van een azure managed instance voor Apache Cassandra is internettoegang vereist. De implementatie mislukt in omgevingen waarin internettoegang wordt beperkt. Zorg ervoor dat u de toegang binnen uw VNet niet blokkeert tot de volgende essentiële Azure-services die nodig zijn om beheerde Cassandra goed te laten werken:
+    > - Azure Storage
+    > - Azure KeyVault
+    > - Microsoft Azure Virtual Machine Scale Sets
+    > - Azure Monitoring
+    > - Azure Active Directory
+    > - Azure-beveiliging
+
+1. Nu gaan we een aantal speciale machtigingen toepassen op het VNet en subnet dat cassandra Managed Instance nodig heeft, met behulp van Azure CLI. Gebruik de opdracht , en te `az role assignment create` vervangen door de juiste `<subscription ID>` `<resource group name>` `<VNet name>` waarden:
 
    ```azurecli-interactive
-   az role assignment create --assignee e5007d2c-4b13-4a74-9b6a-605d99f03501 --role 4d97b98b-1d4f-4787-a291-c67834d212e7 --scope /subscriptions/<subscription ID>/resourceGroups/<resource group name>/providers/Microsoft.Network/virtualNetworks/<VNet name>/subnets/<subnet name>
+   az role assignment create --assignee a232010e-820c-4083-83bb-3ace5fc29d0b --role 4d97b98b-1d4f-4787-a291-c67834d212e7 --scope /subscriptions/<subscription ID>/resourceGroups/<resource group name>/providers/Microsoft.Network/virtualNetworks/<VNet name>
    ```
 
    > [!NOTE]
-   > De `assignee` `role` waarden en in de vorige opdracht zijn respectievelijk een vast Service principe en rol-id's.
+   > De `assignee` waarden en in de vorige opdracht zijn respectievelijk vaste `role` service-principe en rol-id's.
 
-1. Daarna zullen we resources configureren voor het hybride cluster. Omdat u al een cluster hebt, is de cluster naam hier alleen een logische bron om de naam van uw bestaande cluster te identificeren. Zorg ervoor dat u de naam van uw bestaande cluster gebruikt bij `clusterName` het definiëren van en `clusterNameOverride` variabelen in het volgende script. U hebt ook de Seed-knoop punten, open bare client certificaten (als u een open bare/persoonlijke sleutel op uw Cassandra-eind punt hebt geconfigureerd) en Gossip-certificaten van uw bestaande cluster nodig.
+1. Vervolgens configureren we resources voor ons hybride cluster. Omdat u al een cluster hebt, is de clusternaam hier alleen een logische resource om de naam van uw bestaande cluster te identificeren. Zorg ervoor dat u de naam van uw bestaande cluster gebruikt bij het definiëren van `clusterName` variabelen en in het volgende `clusterNameOverride` script. U hebt ook de seed-knooppunten, openbare clientcertificaten (als u een openbare/persoonlijke sleutel op uw cassandra-eindpunt hebt geconfigureerd) en de certificaatcertificaten van uw bestaande cluster nodig.
 
    > [!NOTE]
-   > De waarde van de `delegatedManagementSubnetId` variabele die u hieronder opgeeft, is precies hetzelfde als de waarde `--scope` die u hebt opgegeven in de bovenstaande opdracht:
+   > De waarde van de variabele die u hieronder oplevert, is precies hetzelfde als de waarde van die u `delegatedManagementSubnetId` hebt opgegeven in de `--scope` bovenstaande opdracht:
 
    ```azurecli-interactive
    resourceGroupName='MyResourceGroup'
@@ -75,9 +84,9 @@ In deze Quick start ziet u hoe u de Azure CLI-opdrachten gebruikt om een hybride
    ```
 
     > [!NOTE]
-    > U moet weten waar uw bestaande open bare en/of Gossip-certificaten worden bewaard. Als u niet zeker weet, kunt u uitvoeren `keytool -list -keystore <keystore-path> -rfc -storepass <password>` om de certificaten af te drukken. 
+    > U moet weten waar uw bestaande openbare en/of certificaatcertificaten worden bewaard. Als u het niet zeker weet, moet u kunnen uitvoeren om `keytool -list -keystore <keystore-path> -rfc -storepass <password>` de certificaten af te drukken. 
 
-1. Nadat de cluster bron is gemaakt, voert u de volgende opdracht uit om de details van de Cluster installatie op te halen:
+1. Nadat de clusterresource is gemaakt, moet u de volgende opdracht uitvoeren om de installatiedetails van het cluster op te halen:
 
    ```azurecli-interactive
    resourceGroupName='MyResourceGroup'
@@ -88,12 +97,12 @@ In deze Quick start ziet u hoe u de Azure CLI-opdrachten gebruikt om een hybride
        --resource-group $resourceGroupName \
    ```
 
-1. De vorige opdracht retourneert informatie over de beheerde-exemplaar omgeving. U hebt de Gossip-certificaten nodig zodat u ze op de knoop punten in uw bestaande Data Center kunt installeren. In de volgende scherm afbeelding ziet u de uitvoer van de vorige opdracht en de indeling van certificaten:
+1. De vorige opdracht retourneert informatie over de omgeving van het beheerde exemplaar. U hebt de certificaatcertificaten nodig, zodat u ze kunt installeren op de knooppunten in uw bestaande datacenter. In de volgende schermopname ziet u de uitvoer van de vorige opdracht en de indeling van certificaten:
 
-   :::image type="content" source="./media/configure-hybrid-cluster/show-cluster.png" alt-text="Haal de certificaat details op uit het cluster." lightbox="./media/configure-hybrid-cluster/show-cluster.png" border="true":::
+   :::image type="content" source="./media/configure-hybrid-cluster/show-cluster.png" alt-text="Haal de certificaatgegevens op uit het cluster." lightbox="./media/configure-hybrid-cluster/show-cluster.png" border="true":::
     <!-- ![image](./media/configure-hybrid-cluster/show-cluster.png) -->
 
-1. Maak vervolgens een nieuw Data Center in het hybride cluster. Zorg ervoor dat u de variabele waarden vervangt door de cluster Details:
+1. Maak vervolgens een nieuw datacenter in het hybride cluster. Zorg ervoor dat u de waarden van de variabele vervangt door de details van uw cluster:
 
    ```azurecli-interactive
    resourceGroupName='MyResourceGroup'
@@ -110,7 +119,7 @@ In deze Quick start ziet u hoe u de Azure CLI-opdrachten gebruikt om een hybride
        --node-count 9 
    ```
 
-1. Nu het nieuwe Data Center is gemaakt, voert u de opdracht Data Center weer geven uit om de details ervan weer te geven:
+1. Nu het nieuwe datacenter is gemaakt, kunt u de opdracht datacenter weergeven uitvoeren om de details ervan weer te geven:
 
    ```azurecli-interactive
    resourceGroupName='MyResourceGroup'
@@ -123,20 +132,20 @@ In deze Quick start ziet u hoe u de Azure CLI-opdrachten gebruikt om een hybride
        --data-center-name $dataCenterName 
    ```
 
-1. Met de vorige opdracht worden de Seed-knoop punten van het nieuwe Data Center uitgevoerd. Voeg de Seed-knoop punten van het nieuwe Data Center toe aan de configuratie van uw bestaande Data Center in het bestand *Cassandra. yaml* . En installeer de Gossip-certificaten voor beheerde exemplaren die u eerder hebt verzameld:
+1. Met de vorige opdracht worden de seed-knooppunten van het nieuwe datacenter uitgevoerd. Voeg de seed-knooppunten van het nieuwe datacenter toe aan de configuratie van uw bestaande datacenter in het *bestand cassandra.yaml.* En installeer de certificaatcertificaten voor beheerde exemplaren die u eerder hebt verzameld:
 
-   :::image type="content" source="./media/configure-hybrid-cluster/show-datacenter.png" alt-text="Details van Data Center ophalen." lightbox="./media/configure-hybrid-cluster/show-datacenter.png" border="true":::
+   :::image type="content" source="./media/configure-hybrid-cluster/show-datacenter.png" alt-text="Gegevens van datacenters op te halen." lightbox="./media/configure-hybrid-cluster/show-datacenter.png" border="true":::
     <!-- ![image](./media/configure-hybrid-cluster/show-datacenter.png) -->
 
     > [!NOTE]
-    > Als u meer data centers wilt toevoegen, kunt u de bovenstaande stappen herhalen, maar u hebt alleen de Seed-knoop punten nodig. 
+    > Als u meer datacenters wilt toevoegen, kunt u de bovenstaande stappen herhalen, maar hebt u alleen de seed-knooppunten nodig. 
 
-1. Gebruik tot slot de volgende CQL-query om de replicatie strategie bij te werken in elke spatie om alle data centers in het cluster op te nemen:
+1. Gebruik ten slotte de volgende CQL-query om de replicatiestrategie in elke keyspace bij te werken om alle datacenters in het cluster op te nemen:
 
    ```bash
    ALTER KEYSPACE "ks" WITH REPLICATION = {'class': 'NetworkTopologyStrategy', ‘on-premise-dc': 3, ‘managed-instance-dc': 3};
    ```
-   U moet ook de wachtwoord tabellen bijwerken:
+   U moet ook de wachtwoordtabellen bijwerken:
 
    ```bash
     ALTER KEYSPACE "system_auth" WITH REPLICATION = {'class': 'NetworkTopologyStrategy', ‘on-premise-dc': 3, ‘managed-instance-dc': 3}
@@ -144,25 +153,25 @@ In deze Quick start ziet u hoe u de Azure CLI-opdrachten gebruikt om een hybride
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
-Als er een fout optreedt bij het Toep assen van machtigingen voor uw Virtual Network, zoals het vinden van de *gebruiker of Service-Principal in Graph Data Base voor e5007d2c-4b13-4a74-9B6A-605d99f03501*, kunt u dezelfde machtiging hand matig Toep assen vanuit de Azure Portal. Als u machtigingen wilt Toep assen vanuit de portal, gaat u naar het deel venster **toegangs beheer (IAM)** van uw bestaande virtuele netwerk en voegt u een roltoewijzing voor ' Azure Cosmos db ' toe aan de rol ' netwerk beheerder '. Als er twee vermeldingen worden weer gegeven wanneer u zoekt naar ' Azure Cosmos DB ', voegt u beide vermeldingen toe, zoals wordt weer gegeven in de volgende afbeelding: 
+Als er een fout wordt weergegeven bij het toepassen van machtigingen op uw Virtual Network, zoals Kan gebruiker of service-principal niet vinden in grafiekdatabase voor *'e5007d2c-4b13-4a74-9b6a-605d99f03501',* kunt u dezelfde machtiging handmatig toepassen vanuit de Azure Portal. Als u machtigingen wilt toepassen vanuit de portal, gaat u naar het deelvenster Toegangsbeheer **(IAM)** van uw bestaande virtuele netwerk en voegt u een roltoewijzing voor 'Azure Cosmos DB' toe aan de rol Netwerkbeheerder. Als er twee vermeldingen worden weergegeven wanneer u zoekt naar 'Azure Cosmos DB', voegt u beide vermeldingen toe, zoals wordt weergegeven in de volgende afbeelding: 
 
-   :::image type="content" source="./media/create-cluster-cli/apply-permissions.png" alt-text="Machtigingen Toep assen" lightbox="./media/create-cluster-cli/apply-permissions.png" border="true":::
+   :::image type="content" source="./media/create-cluster-cli/apply-permissions.png" alt-text="Machtigingen toepassen" lightbox="./media/create-cluster-cli/apply-permissions.png" border="true":::
 
 > [!NOTE] 
-> De roltoewijzing Azure Cosmos DB wordt alleen voor implementatie doeleinden gebruikt. Door Azure beheerde instanties voor Apache Cassandra hebben geen back-end-afhankelijkheden op Azure Cosmos DB.  
+> De Azure Cosmos DB roltoewijzing wordt alleen gebruikt voor implementatiedoeleinden. Azure Managed Instanced voor Apache Cassandra heeft geen back-Azure Cosmos DB.  
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u deze beheerde-exemplaar cluster niet meer wilt gebruiken, verwijdert u deze met de volgende stappen:
+Als u dit beheerde exemplaarcluster niet meer gaat gebruiken, verwijdert u het met de volgende stappen:
 
-1. Selecteer **resource groepen** in het menu aan de linkerkant van Azure Portal.
+1. Selecteer resourcegroepen in Azure Portal menu aan **de linkerkant.**
 1. Selecteer de resourcegroep die u eerder voor deze quickstart hebt gemaakt uit de lijst.
-1. Selecteer **resource groep verwijderen** in het deel venster **overzicht** van de resource groep.
+1. Selecteer resourcegroep verwijderen in **het** deelvenster Overzicht **van de resourcegroep.**
 3. Selecteer in het volgende venster de naam van de resourcegroep die u wilt verwijderen en selecteer vervolgens **Verwijderen**.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze Quick Start hebt u geleerd hoe u een hybride cluster maakt met behulp van Azure CLI en Azure Managed instance voor Apache Cassandra. U kunt nu aan de slag gaan met het cluster.
+In deze quickstart hebt u geleerd hoe u een hybride cluster maakt met behulp van Azure CLI en Azure Managed Instance voor Apache Cassandra. U kunt nu aan de slag met het cluster.
 
 > [!div class="nextstepaction"]
-> [Een beheerd exemplaar van Azure beheren voor Apache Cassandra-resources met behulp van Azure CLI](manage-resources-cli.md)
+> [Azure Managed Instance voor Apache Cassandra-resources beheren met behulp van Azure CLI](manage-resources-cli.md)

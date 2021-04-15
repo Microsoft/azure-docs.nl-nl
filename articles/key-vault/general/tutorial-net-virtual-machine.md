@@ -6,15 +6,15 @@ author: msmbaldwin
 ms.service: key-vault
 ms.subservice: general
 ms.topic: tutorial
-ms.date: 07/20/2020
+ms.date: 03/17/2021
 ms.author: mbaldwin
-ms.custom: mvc, devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: a56c08e5bf6054d24af3ade571ec625969286a77
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: mvc, devx-track-csharp, devx-track-azurepowershell
+ms.openlocfilehash: ce982b38faa72978e1b043d374a333b68aca80b6
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102455641"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107374740"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-virtual-machine-in-net"></a>Zelfstudie: Azure Key Vault gebruiken met een virtuele machine in .NET
 
@@ -42,7 +42,7 @@ Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://az
 Voor Windows, Mac en Linux:
   * [Git](https://git-scm.com/downloads)
   * De [.NET Core 3.1 SDK of hoger](https://dotnet.microsoft.com/download/dotnet-core/3.1).
-  * [Azure CLI](/cli/azure/install-azure-cli).
+  * [Azure CLI](/cli/azure/install-azure-cli) of [Azure PowerShell](/powershell/azure/install-az-ps)
 
 ## <a name="create-resources-and-assign-permissions"></a>Resources maken en machtigingen toewijzen
 
@@ -50,11 +50,18 @@ Voordat u begint met het coderen, moet u enkele resources maken, een geheim in u
 
 ### <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 
-Als u zich met behulp van Azure CLI wilt aanmelden bij Azure, voert u het volgende in:
+Meld u aan bij Azure met de volgende opdracht:
 
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli
 az login
 ```
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+
+```azurepowershell
+Connect-AzAccount
+```
+---
 
 ## <a name="create-a-resource-group-and-key-vault"></a>Een resourcegroep en sleutelkluis maken
 
@@ -74,13 +81,14 @@ Gebruik een van de volgende manieren om een virtuele Windows of Linux-machine te
 | [Azure-portal](../../virtual-machines/windows/quick-create-portal.md) | [Azure-portal](../../virtual-machines/linux/quick-create-portal.md) |
 
 ## <a name="assign-an-identity-to-the-vm"></a>Een identiteit toewijzen aan de virtuele machine
-Maak een door het systeem toegewezen identiteit voor de virtuele machine met de opdracht [az vm identity assign](/cli/azure/vm/identity#az-vm-identity-assign):
+Maak een door het systeem toegewezen identiteit voor de virtuele machine met het volgende voorbeeld:
 
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli
 az vm identity assign --name <NameOfYourVirtualMachine> --resource-group <YourResourceGroupName>
 ```
 
-Bekijk de door het systeem toegewezen identiteit die wordt weergegeven in de volgende code. De uitvoer van de vorige opdracht ziet er als volgt uit: 
+Bekijk de door het systeem toegewezen identiteit die wordt weergegeven in de volgende code. De uitvoer van de vorige opdracht ziet er als volgt uit:
 
 ```output
 {
@@ -89,12 +97,36 @@ Bekijk de door het systeem toegewezen identiteit die wordt weergegeven in de vol
 }
 ```
 
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+
+```azurepowershell
+$vm = Get-AzVM -Name <NameOfYourVirtualMachine>
+Update-AzVM -ResourceGroupName <YourResourceGroupName> -VM $vm -IdentityType SystemAssigned
+```
+
+Noteer de PrincipalId die wordt weergegeven in de volgende code. De uitvoer van de vorige opdracht ziet er als volgt uit: 
+
+
+```output
+PrincipalId          TenantId             Type             UserAssignedIdentities
+-----------          --------             ----             ----------------------
+xxxxxxxx-xx-xxxxxx   xxxxxxxx-xxxx-xxxx   SystemAssigned
+```
+---
+
 ## <a name="assign-permissions-to-the-vm-identity"></a>Machtigingen toewijzen aan de VM-identiteit
 Wijs de eerder gemaakte identiteitsmachtigingen toe aan uw sleutelkluis met de opdracht [az keyvault set-policy](/cli/azure/keyvault#az-keyvault-set-policy):
 
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli
-az keyvault set-policy --name '<your-unique-key-vault-name>' --object-id <VMSystemAssignedIdentity> --secret-permissions get list
+az keyvault set-policy --name '<your-unique-key-vault-name>' --object-id <VMSystemAssignedIdentity> --secret-permissions  get list set delete
 ```
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azurepowershell)
+
+```azurepowershell
+Set-AzKeyVaultAccessPolicy -ResourceGroupName <YourResourceGroupName> -VaultName '<your-unique-key-vault-name>' -ObjectId '<VMSystemAssignedIdentity>' -PermissionsToSecrets  get,list,set,delete
+```
+---
 
 ## <a name="sign-in-to-the-virtual-machine"></a>Aanmelden bij de virtuele machine
 
@@ -153,7 +185,7 @@ Voeg deze regels toe, waarbij u de URI bijwerkt volgens de `vaultUri` van uw sle
         static void Main(string[] args)
         {
             string secretName = "mySecret";
-
+            string keyVaultName = "<your-key-vault-name>";
             var kvUri = "https://<your-key-vault-name>.vault.azure.net";
             SecretClientOptions options = new SecretClientOptions()
             {

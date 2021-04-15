@@ -1,67 +1,67 @@
 ---
-title: Configureren hoe eind gebruikers toestemming geven voor toepassingen met Azure AD
-description: Meer informatie over hoe u kunt beheren hoe en wanneer gebruikers toestemming kunnen geven voor toepassingen die toegang hebben tot de gegevens van uw organisatie.
+title: Configureren hoe eindgebruikers toestemming geven voor toepassingen met behulp van Azure AD
+description: Leer hoe u beheert hoe en wanneer gebruikers toestemming kunnen geven voor toepassingen die toegang hebben tot de gegevens van uw organisatie.
 services: active-directory
-author: kenwith
-manager: daveba
+author: iantheninja
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: how-to
 ms.date: 06/01/2020
-ms.author: kenwith
+ms.author: iangithinji
 ms.reviewer: arvindh, luleon, phsignor
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 68bb846ebb0199691161bc501441df908eb8ad87
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 95a651f6201c9f60500c9191821edb7eb76b8535
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101643606"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107374434"
 ---
 # <a name="configure-how-end-users-consent-to-applications"></a>Configureren hoe eindgebruikers toestemming geven voor toepassingen
 
-U kunt uw toepassingen integreren met het micro soft Identity-platform zodat gebruikers zich kunnen aanmelden met hun werk-of school account en toegang hebben tot de gegevens van uw organisatie om uitgebreide gegevensgestuurde ervaringen te leveren.
+U kunt uw toepassingen integreren met het Microsoft Identity Platform zodat gebruikers zich kunnen aanmelden met hun werk- of schoolaccount en toegang kunnen krijgen tot de gegevens van uw organisatie om rijke gegevensgestuurde ervaringen te bieden.
 
-Voordat een toepassing toegang kan krijgen tot de gegevens van uw organisatie, moet een gebruiker de toepassings machtigingen hiervoor verlenen. Met verschillende machtigingen kunnen verschillende toegangs niveaus worden toegestaan. Standaard kunnen alle gebruikers toestemming geven voor machtigingen waarvoor geen toestemming van de beheerder nodig is. Een gebruiker kan bijvoorbeeld standaard toestemming geven om toegang te krijgen tot het postvak van een app, maar kan niet toestemming geven om de toegang tot alle bestanden in uw organisatie te lezen en te schrijven voor een app onbelemmerde.
+Voordat een toepassing toegang kan krijgen tot de gegevens van uw organisatie, moet een gebruiker de toepassing daarvoor machtigingen verlenen. Verschillende machtigingen staan verschillende toegangsniveaus toe. Standaard mogen alle gebruikers toestemming geven voor toepassingen voor machtigingen waarvoor geen toestemming van de beheerder is vereist. Een gebruiker kan bijvoorbeeld standaard toestemming geven om een app toegang te geven tot zijn postvak, maar kan geen toestemming geven om een app ongefetterd toegang te geven tot lezen en schrijven naar alle bestanden in uw organisatie.
 
-Door gebruikers toe te staan apps toegang te verlenen tot gegevens, kunnen gebruikers eenvoudig nuttige toepassingen verkrijgen en productief zijn. In sommige gevallen kan deze configuratie echter een risico vormen als deze niet zorgvuldig wordt bewaakt en beheerd.
+Door gebruikers apps toegang te geven tot gegevens, kunnen gebruikers eenvoudig nuttige toepassingen verkrijgen en productief zijn. In sommige gevallen kan deze configuratie echter een risico vormen als deze niet zorgvuldig wordt bewaakt en gecontroleerd.
 
 > [!IMPORTANT]
-> Om het risico te verkleinen dat kwaadwillende toepassingen gebruikers toegang geven tot de gegevens van uw organisatie, wordt u aangeraden alleen toestemming van de gebruiker toe te staan voor toepassingen die zijn gepubliceerd door een [gecontroleerde uitgever](../develop/publisher-verification-overview.md).
+> Om het risico te beperken dat kwaadwillende toepassingen proberen gebruikers toegang te geven tot de gegevens van uw organisatie, wordt u aangeraden om alleen toestemming van de gebruiker toe te staan voor toepassingen die zijn gepubliceerd door een geverifieerde [uitgever.](../develop/publisher-verification-overview.md)
 
 ## <a name="user-consent-settings"></a>Instellingen voor gebruikers toestemming
 
-Het app-toestemming beleid beschrijft voor waarden waaraan moet worden voldaan voordat een app kan worden ingestemd. Dit beleid kan voor waarden bevatten op de app die toegang vraagt, evenals de machtigingen die de app aanvraagt.
+App-toestemmingsbeleid beschrijft voorwaarden waaraan moet worden voldaan voordat toestemming kan worden verleend aan een app. Deze beleidsregels kunnen voorwaarden bevatten voor de app die toegang aanvraagt, evenals de machtigingen die de app aanvraagt.
 
-Als u kiest welke app-machtigings beleid van toepassing is voor alle gebruikers, kunt u limieten instellen voor wanneer eind gebruikers toestemming mogen geven tot apps, en wanneer ze moeten worden gevraagd om de beheerder en goed keuring van beheerders te vragen:
+Door te kiezen welk app-toestemmingsbeleid van toepassing is op alle gebruikers, kunt u limieten instellen voor wanneer eindgebruikers toestemming mogen verlenen aan apps en wanneer ze beheerdersbeoordeling en -goedkeuring moeten aanvragen:
 
-* **Gebruikers toestemming uitschakelen** : gebruikers kunnen geen machtigingen toekennen aan toepassingen. Gebruikers kunnen zich blijven aanmelden bij apps die voorheen hebben gecommuniceerd naar of die zijn gemachtigd door beheerders in hun naam, maar ze mogen niet toestemming geven voor nieuwe machtigingen of aan nieuwe apps. Alleen gebruikers die een directory-rol met toestemming voor het verlenen van toestemming hebben verleend, kunnen toestemming geven voor nieuwe apps.
+* **Gebruikers toestemming uitschakelen:** gebruikers kunnen geen machtigingen verlenen aan toepassingen. Gebruikers kunnen zich blijven aanmelden bij apps waarvoor ze eerder toestemming hebben gegeven of waarvoor beheerders namens hen toestemming hebben gegeven, maar ze mogen niet zelf toestemming geven voor nieuwe machtigingen of nieuwe apps. Alleen gebruikers aan wie een directoryrol is verleend die de machtiging voor het verlenen van toestemming bevat, kunnen toestemming geven voor nieuwe apps.
 
-* **Gebruikers kunnen toestemming geven voor apps van geverifieerde uitgevers of uw organisatie, maar alleen voor machtigingen die u selecteert** . alle gebruikers kunnen alleen toestemming geven voor apps die zijn gepubliceerd door een [geverifieerde Uitgever](../develop/publisher-verification-overview.md) en apps die zijn geregistreerd in uw Tenant. Gebruikers kunnen alleen toestemming geven voor de machtigingen die u hebt geclassificeerd als ' lage impact '. U moet de [machtigingen classificeren](configure-permission-classifications.md) om te selecteren welke machtigingen gebruikers toestemming mogen geven.
+* Gebruikers kunnen toestemming geven voor apps van geverifieerde uitgevers of uw **organisatie,** maar alleen voor machtigingen die u selecteert: alle gebruikers kunnen alleen toestemming geven voor apps die zijn gepubliceerd door een geverifieerde uitgever en apps die zijn geregistreerd in uw tenant. [](../develop/publisher-verification-overview.md) Gebruikers kunnen alleen toestemming geven voor de machtigingen die u hebt geclassificeerd als 'lage impact'. U moet [machtigingen classificeren](configure-permission-classifications.md) om te selecteren voor welke machtigingen gebruikers toestemming mogen geven.
 
-* **Gebruikers kunnen voor alle apps toestemming** geven: met deze optie kunnen alle gebruikers toestemming geven voor machtigingen waarvoor geen beheerders toestemming is vereist voor elke toepassing.
+* **Gebruikers kunnen toestemming geven voor alle apps:** met deze optie kunnen alle gebruikers toestemming geven voor elke machtiging waarvoor geen beheerders toestemming is vereist, voor elke toepassing.
 
-* **Aangepast beleid** voor de toestemming van de app-voor nog meer opties voor de voor waarden die gelden voor de toestemming van de gebruiker, kunt u een [aangepast beleid voor de toestemming van apps maken](manage-app-consent-policies.md#create-a-custom-app-consent-policy)en configureren dat deze voor toestemming van de gebruiker worden toegepast.
+* **Aangepast app-toestemmingsbeleid:** voor nog meer opties over de voorwaarden voor het verlenen van toestemming van gebruikers kunt u aangepast [app-toestemmingsbeleid](manage-app-consent-policies.md#create-a-custom-app-consent-policy)maken en deze configureren om toestemming van de gebruiker aan te vragen.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-Instellingen voor gebruikers toestemming configureren via de Azure Portal:
+Instellingen voor toestemming van de gebruiker configureren via de Azure Portal:
 
-1. Meld u aan bij de [Azure Portal](https://portal.azure.com) als [globale beheerder](../roles/permissions-reference.md#global-administrator).
-1. Selecteer **Azure Active Directory**  >  toestemming van **bedrijfs toepassingen**  >  **en machtigingen**  >  **instellingen voor gebruikers toestemming**.
-1. Selecteer onder **toestemming van de gebruiker voor toepassingen** de instelling van de toestemming die u wilt configureren voor alle gebruikers.
-1. Selecteer **Opslaan** om uw instellingen op te slaan.
+1. Meld u als globale [Azure Portal](https://portal.azure.com) aan bij [de Azure Portal.](../roles/permissions-reference.md#global-administrator)
+1. Selecteer **Azure Active Directory**  >  **Bedrijfstoepassingen Toestemming** en  >  **machtigingen Instellingen** voor toestemming van  >  **gebruikers.**
+1. Selecteer **onder Gebruikers toestemming voor toepassingen** welke toestemmingsinstelling u wilt configureren voor alle gebruikers.
+1. Selecteer **Opslaan om** uw instellingen op te slaan.
 
-:::image type="content" source="media/configure-user-consent/setting-for-all-users.png" alt-text="Instellingen voor gebruikers toestemming":::
+:::image type="content" source="media/configure-user-consent/setting-for-all-users.png" alt-text="Instellingen voor toestemming van de gebruiker":::
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-U kunt de nieuwste Azure AD Power shell preview-module, [AzureADPreview](/powershell/azure/active-directory/install-adv2?preserve-view=true&view=azureadps-2.0-preview), gebruiken om te kiezen welk app-toestemming beleid gebruikers instemming voor toepassingen bepaalt.
+U kunt de nieuwste Azure AD PowerShell Preview-module, [AzureADPreview,](/powershell/azure/active-directory/install-adv2?preserve-view=true&view=azureadps-2.0-preview)gebruiken om te kiezen welk app-toestemmingsbeleid de toestemming van gebruikers voor toepassingen bepaalt.
 
 #### <a name="disable-user-consent"></a>Toestemming van de gebruiker uitschakelen
 
-Als u toestemming van de gebruiker wilt uitschakelen, stelt u het beleid voor toestemming voor de toestemming van de gebruiker in op leeg:
+Als u toestemming van de gebruiker wilt uitschakelen, stelt u het toestemmingsbeleid in dat de toestemming van de gebruiker leeg is:
 
   ```powershell
   Set-AzureADMSAuthorizationPolicy `
@@ -69,9 +69,9 @@ Als u toestemming van de gebruiker wilt uitschakelen, stelt u het beleid voor to
      -PermissionGrantPolicyIdsAssignedToDefaultUserRole @()
   ```
 
-#### <a name="allow-user-consent-subject-to-an-app-consent-policy"></a>Toestemming van de gebruiker toestaan voor een app-toestemming beleid
+#### <a name="allow-user-consent-subject-to-an-app-consent-policy"></a>Toestaan dat toestemming van de gebruiker is onderworpen aan een app-toestemmingsbeleid
 
-Als u toestemming van de gebruiker wilt toestaan, kiest u welk app-machtigings beleid gebruikers autorisatie moet bepalen om toestemming te verlenen aan apps:
+Als u toestemming van de gebruiker wilt toestaan, kiest u welk app-toestemmingsbeleid de autorisatie van gebruikers moet bepalen om toestemming te verlenen aan apps:
 
   ```powershell
   Set-AzureADMSAuthorizationPolicy `
@@ -79,14 +79,14 @@ Als u toestemming van de gebruiker wilt toestaan, kiest u welk app-machtigings b
      -PermissionGrantPolicyIdsAssignedToDefaultUserRole @("managePermissionGrantsForSelf.{consent-policy-id}")
   ```
 
-Vervang door `{consent-policy-id}` de id van het beleid dat u wilt Toep assen. U kunt kiezen voor een [aangepast app-toestemming beleid](manage-app-consent-policies.md#create-a-custom-app-consent-policy) dat u hebt gemaakt, of u kunt kiezen uit de volgende ingebouwde beleids regels:
+Vervang `{consent-policy-id}` door de id van het beleid dat u wilt toepassen. U kunt een aangepast [app-toestemmingsbeleid kiezen](manage-app-consent-policies.md#create-a-custom-app-consent-policy) dat u hebt gemaakt of u kunt kiezen uit de volgende ingebouwde beleidsregels:
 
 | Id | Description |
 |:---|:------------|
-| micro soft-gebruiker-standaard-laag | **Gebruikers toestemming geven voor apps van geverifieerde uitgevers, voor geselecteerde machtigingen**<br /> Sta beperkte toestemming van de gebruiker alleen toe voor apps van geverifieerde uitgevers en apps die zijn geregistreerd in uw Tenant, en alleen voor machtigingen die u als ' lage impact ' classificeert. (Vergeet niet om [machtigingen te classificeren](configure-permission-classifications.md) om te selecteren naar welke machtigingen gebruikers toestemming mogen geven.) |
-| micro soft-gebruiker-standaard-verouderd | **Toestemming van de gebruiker voor apps toestaan**<br /> Met deze optie kunnen alle gebruikers toestemming geven voor machtigingen waarvoor geen beheerders toestemming is vereist voor elke toepassing |
+| microsoft-user-default-low | **Toestemming van de gebruiker voor apps van geverifieerde uitgevers toestaan voor geselecteerde machtigingen**<br /> Sta alleen beperkte gebruikers toestemming toe voor apps van geverifieerde uitgevers en apps die zijn geregistreerd in uw tenant en alleen voor machtigingen die u classificeert als 'Lage impact'. (Vergeet niet om machtigingen [te classificeren om](configure-permission-classifications.md) te selecteren voor welke machtigingen gebruikers toestemming mogen geven.) |
+| microsoft-user-default-legacy | **Toestemming van de gebruiker voor apps toestaan**<br /> Met deze optie kunnen alle gebruikers toestemming geven voor elke machtiging waarvoor geen beheerders toestemming is vereist, voor elke toepassing |
   
-Als u bijvoorbeeld toestemming van de gebruiker wilt verlenen aan het ingebouwde beleid `microsoft-user-default-low` :
+Als u bijvoorbeeld toestemming van de gebruiker wilt inschakelen voor het ingebouwde `microsoft-user-default-low` beleid:
 
 ```powershell
 Set-AzureADMSAuthorizationPolicy `
@@ -97,39 +97,39 @@ Set-AzureADMSAuthorizationPolicy `
 ---
 
 > [!TIP]
-> [Schakel de beheerder toestemming werk stroom](configure-admin-consent-workflow.md) in om gebruikers toe te staan om de controle en goed keuring van een beheerder aan te vragen van een toepassing waarbij de gebruiker niet toestemming mag geven, bijvoorbeeld wanneer toestemming van de gebruiker is uitgeschakeld of wanneer een toepassing machtigingen aanvraagt die de gebruiker niet mag verlenen.
+> [](configure-admin-consent-workflow.md) Schakel de werkstroom voor beheerdersgoedkeuring in, zodat gebruikers de controle en goedkeuring kunnen aanvragen van een toepassing waar de gebruiker geen toestemming voor mag geven, bijvoorbeeld wanneer toestemming van de gebruiker is uitgeschakeld of wanneer een toepassing machtigingen aanvraagt die de gebruiker niet mag verlenen.
 
-## <a name="risk-based-step-up-consent"></a>Op risico gebaseerde Step-up toestemming
+## <a name="risk-based-step-up-consent"></a>Op risico gebaseerde stapsgewijse toestemming
 
-Met behulp van op risico gebaseerde stapsgewijze toestemming kan de gebruikers bloot stellen aan schadelijke apps die [illegale toestemming aanvragen](/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants)doen. Als micro soft een aanvraag voor een Risk ante toestemming van de eind gebruiker detecteert, heeft de aanvraag een ' stapsgewijs ' door gegeven aan de beheerder. Deze mogelijkheid is standaard ingeschakeld, maar dit resulteert alleen in een wijziging in het gedrag wanneer toestemming van de eind gebruiker is ingeschakeld.
+Op risico gebaseerde stapsgewijse toestemming vermindert de blootstelling van gebruikers aan schadelijke apps die [ongeoorloofde toestemmingsaanvragen doen.](/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants) Als Microsoft een riskante aanvraag voor toestemming van eindgebruikers detecteert, is voor de aanvraag in plaats daarvan een 'stap-up' vereist voor beheerders toestemming. Deze mogelijkheid is standaard ingeschakeld, maar dit leidt alleen tot een gedragswijziging wanneer toestemming van eindgebruikers is ingeschakeld.
 
-Wanneer een Risk ante toestemming aanvraag wordt gedetecteerd, wordt in de toestemming prompt een bericht weer gegeven waarin wordt aangegeven dat de goed keuring van de beheerder nodig is. Als de [aanvraag werk stroom beheerder toestemming](configure-admin-consent-workflow.md) is ingeschakeld, kan de gebruiker de aanvraag naar een beheerder verzenden voor verdere controle, rechtstreeks vanuit de toestemming prompt. Als de functie niet is ingeschakeld, wordt het volgende bericht weer gegeven:
+Wanneer een aanvraag voor riskante toestemming wordt gedetecteerd, wordt in de toestemmingsprompt een bericht weergegeven waarin wordt aangegeven dat er goedkeuring van de beheerder nodig is. Als de [werkstroom voor de toestemmingsaanvraag](configure-admin-consent-workflow.md) van de beheerder is ingeschakeld, kan de gebruiker de aanvraag rechtstreeks vanaf de toestemmingsprompt naar een beheerder verzenden voor verdere controle. Als deze niet is ingeschakeld, wordt het volgende bericht weergegeven:
 
-* **AADSTS90094:** &lt; clientAppDisplayName &gt; heeft toestemming nodig om toegang te krijgen tot bronnen in uw organisatie die alleen door een beheerder kunnen worden verleend. Vraag een beheerder om toestemming te verlenen voor deze app voordat u deze kunt gebruiken.
+* **AADSTS90094:** &lt; clientAppDisplayName &gt; heeft machtigingen nodig voor toegang tot resources in uw organisatie die alleen een beheerder kan verlenen. Vraag een beheerder om toestemming te verlenen voor deze app voordat u deze kunt gebruiken.
 
-In dit geval wordt er ook een controle gebeurtenis vastgelegd met de categorie ' ApplicationManagement ', het activiteitstype ' instemming met de toepassing ' en de status van ' Risk ante toepassing gedetecteerd '.
+In dit geval wordt een controlegebeurtenis ook vastgelegd met de categorie 'ApplicationManagement', het activiteitstype 'Toestemming voor toepassing' en de Statusreden van 'Riskante toepassing gedetecteerd'.
 
 > [!IMPORTANT]
-> Beheerders moeten [alle toestemming aanvragen zorgvuldig evalueren](manage-consent-requests.md#evaluating-a-request-for-tenant-wide-admin-consent) voordat ze een aanvraag goed keuren, met name wanneer micro soft risico heeft gedetecteerd.
+> Beheerders moeten [alle toestemmingsaanvragen zorgvuldig evalueren](manage-consent-requests.md#evaluating-a-request-for-tenant-wide-admin-consent) voordat ze een aanvraag goedkeuren, met name wanneer Microsoft risico's heeft gedetecteerd.
 
-### <a name="disable-or-re-enable-risk-based-step-up-consent-using-powershell"></a>Op risico gebaseerde Step-up van de stap uitschakelen of opnieuw inschakelen met behulp van Power shell
+### <a name="disable-or-re-enable-risk-based-step-up-consent-using-powershell"></a>Op risico's gebaseerde stapsgewijse toestemming uitschakelen of opnieuw inschakelen met behulp van PowerShell
 
-U kunt de Azure AD Power shell preview-module, [AzureADPreview](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview), gebruiken om de stap-tot-toestemming van de beheerder uit te scha kelen in gevallen waarin micro soft risico detecteert of het opnieuw inschakelt als dit eerder was uitgeschakeld.
+U kunt de Azure AD PowerShell Preview-module, [AzureADPreview,](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview)gebruiken om de vereiste stapsgewijs toestemming van de beheerder uit te schakelen in gevallen waarin Microsoft risico's detecteert of om deze opnieuw in te schakelen als deze eerder is uitgeschakeld.
 
-1. Zorg ervoor dat u de [AzureADPreview](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview) -module gebruikt. Deze stap is belang rijk als u de [AzureAD](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0) -module en de [AzureADPreview](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview) -module hebt geïnstalleerd.
+1. Zorg ervoor dat u de [AzureADPreview-module](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview) gebruikt. Deze stap is belangrijk als u zowel de [AzureAD-module](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0) als de [AzureADPreview-module hebt](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview) geïnstalleerd.
 
     ```powershell
     Remove-Module AzureAD
     Import-Module AzureADPreview
     ```
 
-1. Verbinding maken met Azure AD Power shell.
+1. Maak verbinding met Azure AD PowerShell.
 
    ```powershell
    Connect-AzureAD
    ```
 
-1. Haal de huidige waarde op voor de instellingen van de map met instellingen voor het **toestemming beleid** in uw Tenant. Hiervoor moet worden gecontroleerd of de Directory-instellingen voor deze functie zijn gemaakt en als dat niet het geval is, gebruikt u de waarden uit de bijbehorende sjabloon voor Directory-instellingen.
+1. Haal de huidige waarde op voor de **directory-instellingen voor toestemmingsbeleid** in uw tenant. Hiervoor moet worden gecontroleerd of de directory-instellingen voor deze functie zijn gemaakt, en zo niet, met behulp van de waarden uit de bijbehorende directory-instellingensjabloon.
 
     ```powershell
     $consentSettingsTemplateId = "dffd5d46-495d-40a9-8e21-954ff55e198a" # Consent Policy Settings
@@ -143,13 +143,13 @@ U kunt de Azure AD Power shell preview-module, [AzureADPreview](/powershell/modu
     $riskBasedConsentEnabledValue = $settings.Values | ? { $_.Name -eq "BlockUserConsentForRiskyApps" }
     ```
 
-1. Meer informatie over de instellingen waarde:
+1. Inzicht in de waarde van instellingen:
 
     | Instelling       | Type         | Description  |
     | ------------- | ------------ | ------------ |
-    | _BlockUserConsentForRiskyApps_   | Booleaans |  Markering die aangeeft of de gebruikers toestemming wordt geblokkeerd wanneer een Risk ante aanvraag wordt gedetecteerd. |
+    | _BlockUserConsentForRiskyApps_   | Booleaans |  Vlag die aangeeft of toestemming van de gebruiker wordt geblokkeerd wanneer een riskante aanvraag wordt gedetecteerd. |
 
-1. Waarde voor de update-instellingen voor de gewenste configuratie:
+1. Werk de waarde van instellingen bij voor de gewenste configuratie:
 
     ```powershell
     # Disable risk-based step-up consent entirely
@@ -177,12 +177,12 @@ U kunt de Azure AD Power shell preview-module, [AzureADPreview](/powershell/modu
 
 Zie voor meer informatie:
 
-* [Instellingen voor gebruikers toestemming configureren](configure-user-consent.md)
+* [Toestemmingsinstellingen voor gebruikers configureren](configure-user-consent.md)
 * [Beleid voor app-toestemming beheren](manage-app-consent-policies.md)
-* [De beheerder toestemming werk stroom configureren](configure-admin-consent-workflow.md)
-* [Meer informatie over het beheren van toestemming voor toepassingen en het evalueren van toestemming aanvragen](manage-consent-requests.md)
+* [De werkstroom voor beheerders toestemming configureren](configure-admin-consent-workflow.md)
+* [Meer informatie over het beheren van toestemming voor toepassingen en het evalueren van toestemmingsaanvragen](manage-consent-requests.md)
 * [Een toepassing beheerderstoestemming verlenen voor de hele tenant](grant-admin-consent.md)
-* [Machtigingen en toestemming in het micro soft Identity-platform](../develop/v2-permissions-and-consent.md)
+* [Machtigingen en toestemming in het Microsoft Identity Platform](../develop/v2-permissions-and-consent.md)
 
 Om hulp te krijgen of antwoorden op uw vragen te vinden:
-* [Azure AD op micro soft Q&A.](/answers/topics/azure-active-directory.html)
+* [Azure AD op Microsoft Q&A.](/answers/topics/azure-active-directory.html)

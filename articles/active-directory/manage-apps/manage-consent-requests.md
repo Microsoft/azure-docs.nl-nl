@@ -1,122 +1,122 @@
 ---
-title: Het beheren van toestemming voor toepassingen en het evalueren van toestemming aanvragen in Azure Active Directory
-description: Meer informatie over het beheren van toestemming aanvragen wanneer de gebruikers toestemming is uitgeschakeld of beperkt, en hoe u een aanvraag voor de beheerder van de hele Tenant kunt evalueren in Azure Active Directory.
+title: Toestemming voor toepassingen beheren en toestemmingsaanvragen evalueren in Azure Active Directory
+description: Meer informatie over het beheren van toestemmingsaanvragen wanneer toestemming van de gebruiker is uitgeschakeld of beperkt, en hoe u een aanvraag evalueert voor tenantbrede beheerders toestemming voor een toepassing in Azure Active Directory.
 services: active-directory
-author: kenwith
-manager: daveba
+author: iantheninja
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: how-to
 ms.date: 12/27/2019
-ms.author: kenwith
+ms.author: iangithinji
 ms.reviewer: phsignor
-ms.openlocfilehash: c41543cdfff4e5ffaad614f6cb7a539d78a0bdae
-ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
+ms.openlocfilehash: 3405181f9bace023950e583dfe1a334216bf0aa0
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2021
-ms.locfileid: "107105558"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107373941"
 ---
-# <a name="managing-consent-to-applications-and-evaluating-consent-requests"></a>Het beheren van toestemming voor toepassingen en het evalueren van toestemming aanvragen
+# <a name="managing-consent-to-applications-and-evaluating-consent-requests"></a>Toestemming voor toepassingen beheren en toestemmingsaanvragen evalueren
 
-Micro soft [raadt](../../security/fundamentals/steps-secure-identity.md#restrict-user-consent-operations) aan om de toestemming van de eind gebruiker voor toepassingen uit te scha kelen. Hiermee wordt het besluitvormings proces gecentraliseerd met het beveiligings-en identiteits beheerders team van uw organisatie.
+Microsoft [raadt aan](../../security/fundamentals/steps-secure-identity.md#restrict-user-consent-operations) om toestemming van eindgebruikers voor toepassingen uit te uitschakelen. Dit centraliseert het besluitvormingsproces met het beveiligings- en identiteitsbeheerdersteam van uw organisatie.
 
-Nadat de toestemming van de eind gebruiker is uitgeschakeld of beperkt, zijn er enkele belang rijke aandachtspunten om ervoor te zorgen dat uw organisatie veilig blijft terwijl bedrijfs kritieke toepassingen nog steeds kunnen worden gebruikt. Deze stappen zijn van cruciaal belang om de impact op het ondersteunings team van uw organisatie en IT-beheerders te minimaliseren, en het gebruik van niet-beheerde accounts in toepassingen van derden te voor komen.
+Nadat toestemming van eindgebruikers is uitgeschakeld of beperkt, zijn er enkele belangrijke overwegingen om ervoor te zorgen dat uw organisatie veilig blijft terwijl bedrijfskritieke toepassingen nog steeds kunnen worden gebruikt. Deze stappen zijn essentieel om de impact op het ondersteuningsteam en IT-beheerders van uw organisatie te minimaliseren, terwijl het gebruik van niet-beherende accounts in toepassingen van derden wordt voorkomen.
 
-## <a name="process-changes-and-education"></a>Proces wijzigingen en onderwijs
+## <a name="process-changes-and-education"></a>Wijzigingen en onderwijs verwerken
 
- 1. Overweeg de [beheerder toestemming werk stroom](configure-admin-consent-workflow.md) in te scha kelen zodat gebruikers rechtstreeks vanuit het venster voor toestemming beheerders toestemming kunnen vragen.
+ 1. Overweeg de werkstroom [voor beheerdersgoedkeuring](configure-admin-consent-workflow.md) in te stellen zodat gebruikers goedkeuring van de beheerder rechtstreeks vanuit het toestemmingsscherm kunnen aanvragen.
 
- 2. Zorg ervoor dat alle beheerders inzicht hebben in het [toestemmings-en toestemmings raamwerk](../develop/consent-framework.md), hoe de [toestemming wordt gevraagd](../develop/application-consent-experience.md) en hoe [een aanvraag voor Tenant-beheerders toestemming](#evaluating-a-request-for-tenant-wide-admin-consent)moet worden geëvalueerd.
- 3. Bekijk de bestaande processen van uw organisatie voor gebruikers om goed keuring van de beheerder aan te vragen voor een toepassing en breng zo nodig updates aan. Als processen worden gewijzigd:
-    * Werk de relevante documentatie, bewaking, automatisering, enzovoort bij.
-    * Wijzigingen in het proces door geven aan alle betrokken gebruikers, ontwikkel aars, ondersteunings teams en IT-beheerders.
+ 2. Zorg ervoor dat alle beheerders het [machtigingen- en toestemmingskader](../develop/consent-framework.md)begrijpen, hoe de toestemmingsprompt [werkt](../develop/application-consent-experience.md) en hoe ze een aanvraag voor toestemming van een [tenantbrede beheerder kunnen evalueren.](#evaluating-a-request-for-tenant-wide-admin-consent)
+ 3. Controleer de bestaande processen van uw organisatie, zodat gebruikers goedkeuring van de beheerder voor een toepassing kunnen aanvragen en indien nodig updates kunnen aanbrengen. Als processen worden gewijzigd:
+    * Werk de relevante documentatie, bewaking, automatisering, en meer bij.
+    * Communiceer proceswijzigingen naar alle betrokken gebruikers, ontwikkelaars, ondersteuningsteams en IT-beheerders.
 
 ## <a name="auditing-and-monitoring"></a>Controleren en bewaken
 
-1. [Apps controleren en machtigingen verlenen](../../security/fundamentals/steps-secure-identity.md#audit-apps-and-consented-permissions) in uw organisatie om ervoor te zorgen dat er geen onzekere of verdachte toepassingen toegang hebben gekregen tot gegevens.
+1. [Controleer apps en verleende machtigingen](../../security/fundamentals/steps-secure-identity.md#audit-apps-and-consented-permissions) in uw organisatie om ervoor te zorgen dat er eerder geen onoplettbare of verdachte toepassingen toegang tot gegevens zijn verleend.
 
-2. Bekijk [en herstel illegale toestemming subsidies in Office 365](/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants) voor extra aanbevolen procedures en beveiliging tegen verdachte toepassingen die OAuth-toestemming aanvragen.
+2. Bekijk Het detecteren en herstellen van onrechtmatige toestemmingsverlening [in Office 365](/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants) voor aanvullende best practices en veiligheidsmaatregelen tegen verdachte toepassingen die OAuth-toestemming aanvragen.
 
 3. Als uw organisatie de juiste licentie heeft:
 
-    * Gebruik extra [controle functies voor OAuth-toepassingen in Microsoft Cloud app Security](/cloud-app-security/investigate-risky-oauth).
-    * Gebruik [Azure monitor werkmappen om machtigingen en gerelateerde activiteiten te bewaken](../reports-monitoring/howto-use-azure-monitor-workbooks.md) . De *instemming* -werkmap van de toestemming biedt een overzicht van de apps op basis van het aantal mislukte toestemming aanvragen. Dit kan handig zijn om de prioriteit van toepassingen te bepalen en te bepalen of ze toestemming geven voor de beheerder.
+    * Gebruik aanvullende [controlefuncties voor OAuth-toepassingen in Microsoft Cloud App Security](/cloud-app-security/investigate-risky-oauth).
+    * Gebruik [Azure Monitor Workbooks om machtigingen en activiteit met betrekking tot toestemming](../reports-monitoring/howto-use-azure-monitor-workbooks.md) te bewaken. De *Consent Insights-werkmap* biedt een weergave van apps op aantal mislukte toestemmingsaanvragen. Dit kan handig zijn bij het prioriteren van toepassingen die beheerders kunnen beoordelen en bepalen of ze toestemming van de beheerder moeten verlenen.
 
-### <a name="additional-considerations-for-reducing-friction"></a>Aanvullende overwegingen voor het verminderen van wrijving
+### <a name="additional-considerations-for-reducing-friction"></a>Aanvullende overwegingen voor het verminderen van frictie
 
-Als u de gevolgen van vertrouwde, bedrijfskritische toepassingen die al in gebruik zijn, wilt minimaliseren, kunt u de toestemming van de beheerder proactief toekennen aan toepassingen met een groot aantal subsidies voor gebruikers toestemming:
+Als u de gevolgen voor vertrouwde, bedrijfskritische toepassingen die al in gebruik zijn wilt minimaliseren, kunt u overwegen om proactief beheerders toestemming te geven voor toepassingen met een groot aantal gebruikersverklaringen:
 
-1. Maak een inventarisatie van de apps die al zijn toegevoegd aan uw organisatie met een hoog gebruik, op basis van aanmeldings Logboeken of activiteit voor toestemming verlenen. Een Power shell- [script](https://gist.github.com/psignoret/41793f8c6211d2df5051d77ca3728c09) kan worden gebruikt om snel en eenvoudig toepassingen te detecteren met een groot aantal subsidies voor gebruikers toestemming.
+1. Inventariseren van de apps die al zijn toegevoegd aan uw organisatie met een hoog gebruik, op basis van aanmeldingslogboeken of activiteit voor toestemming verlenen. Een [PowerShell-script](https://gist.github.com/psignoret/41793f8c6211d2df5051d77ca3728c09) kan worden gebruikt om snel en eenvoudig toepassingen te ontdekken met een groot aantal toestemmingsaanvragen van gebruikers.
 
-2. De belangrijkste toepassingen evalueren waarvoor de beheerder nog geen toestemming heeft verleend.
+2. Evalueer de belangrijkste toepassingen die nog geen beheerdersmachtiging hebben gekregen.
 
    > [!IMPORTANT]
-   > Evalueer zorgvuldig een toepassing voordat u toestemming verleent aan de beheerder voor de hele Tenant, zelfs als veel gebruikers in de organisatie al zelf hebben ingestemd.
+   > Evalueer een toepassing zorgvuldig voordat u tenantbrede beheerdersmachtiging verleent, zelfs als veel gebruikers in de organisatie al toestemming voor zichzelf hebben gegeven.
 
-3. Voor elke goedgekeurde toepassing verleent u toestemming van de beheerder voor de hele Tenant met een van de hieronder beschreven methoden.
+3. Voor elke toepassing die is goedgekeurd, verleent u beheerders voor de hele tenant toestemming met behulp van een van de onderstaande methoden.
 
-4. Voor elke goedgekeurde toepassing kunt u de [gebruikers toegang beperken](configure-user-consent.md).
+4. Overweeg voor elke goedgekeurde toepassing [gebruikerstoegang te beperken.](configure-user-consent.md)
 
-## <a name="evaluating-a-request-for-tenant-wide-admin-consent"></a>Een aanvraag voor Tenant beheerders toestemming evalueren
+## <a name="evaluating-a-request-for-tenant-wide-admin-consent"></a>Evaluatie van een aanvraag voor beheerdersmachtiging voor de hele tenant
 
-Het verlenen van beheerders toestemming voor de hele Tenant is een gevoelige bewerking.  Machtigingen worden verleend namens de hele organisatie en kunnen machtigingen bevatten voor het uitvoeren van zeer bevoegde bewerkingen. Bijvoorbeeld Role Management, volledige toegang tot alle post vakken of alle sites, en volledige gebruikers imitatie.
+Het verlenen van beheerdersmachtiging voor de hele tenant is een gevoelige bewerking.  Machtigingen worden verleend namens de hele organisatie en kunnen machtigingen bevatten om bewerkingen met hoge bevoegdheden uit te voeren. Bijvoorbeeld rolbeheer, volledige toegang tot alle postvakken of alle sites en volledige gebruikers imitatie.
 
-Voordat u toestemming van de beheerder voor de hele Tenant verleent, moet u ervoor zorgen dat u de toepassing en de uitgever van de toepassing vertrouwt voor het toegangs niveau dat u wilt verlenen. Als u niet zeker weet wie de toepassing bestuurt en waarom de toepassing de machtigingen aanvraagt, *mag u geen toestemming verlenen*.
+Voordat u tenantbrede beheerderstoegang verleent, moet u ervoor zorgen dat u de toepassing en de uitgever van de toepassing vertrouwt voor het toegangsniveau dat u verleent. Als u niet zeker weet wie de toepassing beheert en waarom de toepassing de machtigingen aanvraagt, *verleent u geen toestemming.*
 
-De volgende lijst bevat enkele aanbevelingen waarmee u rekening moet houden bij het evalueren van een aanvraag om beheerders toestemming te verlenen.
+De volgende lijst bevat enkele aanbevelingen die u kunt overwegen bij het evalueren van een aanvraag om beheerders toestemming te verlenen.
 
-* **Meer informatie over de [machtigingen en het toestemmings raamwerk](../develop/consent-framework.md) in het micro soft Identity-platform.**
+* **Meer informatie over [het machtigingen- en toestemmingskader](../develop/consent-framework.md) in het Microsoft Identity Platform.**
 
-* **Meer informatie over het verschil tussen [gedelegeerde machtigingen en toepassings machtigingen](../develop/v2-permissions-and-consent.md#permission-types).**
+* **Het verschil tussen [gedelegeerde machtigingen en toepassingsmachtigingen begrijpen.](../develop/v2-permissions-and-consent.md#permission-types)**
 
-   Met toepassings machtigingen kan de toepassing toegang krijgen tot de gegevens voor de hele organisatie, zonder tussen komst van de gebruiker. Met gedelegeerde machtigingen kan de toepassing namens een gebruiker optreden die op een bepaald moment is aangemeld bij de toepassing.
+   Met toepassingsmachtigingen heeft de toepassing toegang tot de gegevens voor de hele organisatie, zonder tussenkomst van de gebruiker. Met gedelegeerde machtigingen kan de toepassing handelen namens een gebruiker die op een bepaald moment is aangemeld bij de toepassing.
 
-* **Meer informatie over de aangevraagde machtigingen.**
+* **Meer informatie over de machtigingen die worden aangevraagd.**
 
-   De machtigingen die door de toepassing worden aangevraagd, worden weer gegeven in de [toestemming prompt](../develop/application-consent-experience.md). Als u de machtigings titel uitbreidt, wordt de beschrijving van de machtiging weer gegeven. De beschrijving voor toepassings machtigingen eindigt doorgaans op zonder aangemelde gebruiker. De beschrijving voor gedelegeerde machtigingen eindigt doorgaans met ' namens de aangemelde gebruiker '. Machtigingen voor de Microsoft Graph-API worden beschreven in [Microsoft Graph machtigingen referentie](/graph/permissions-reference) -Raadpleeg de documentatie voor andere api's om inzicht te krijgen in de machtigingen die ze beschikbaar maken.
+   De machtigingen die door de toepassing worden aangevraagd, worden vermeld in de [toestemmingsprompt.](../develop/application-consent-experience.md) Als u de titel van de machtiging uit breidt, wordt de beschrijving van de machtiging weergegeven. De beschrijving voor toepassingsmachtigingen eindigt doorgaans op 'zonder een aangemelde gebruiker'. De beschrijving voor gedelegeerde machtigingen eindigt doorgaans op 'namens de aangemelde gebruiker'. Machtigingen voor de Microsoft Graph API worden beschreven in [Microsoft Graph Permissions Reference](/graph/permissions-reference) (Naslag voor machtigingen). Raadpleeg de documentatie voor andere API's voor meer informatie over de machtigingen die ze beschikbaar maken.
 
-   Als u een aangevraagde machtiging niet begrijpt, *mag u geen toestemming verlenen*.
+   Als u niet begrijpt dat een machtiging wordt aangevraagd, *verleent u geen toestemming.*
 
-* **Begrijp welke toepassing machtigingen aanvraagt en wie de toepassing heeft gepubliceerd.**
+* **Begrijpen welke toepassing machtigingen aanvraagt en wie de toepassing heeft gepubliceerd.**
 
-   Wees op de hoede wanneer kwaad aardige toepassingen proberen te zoeken zoals andere toepassingen.
+   Wees op uw hoede voor schadelijke toepassingen die op andere toepassingen lijken.
 
-   Als u twijfelt over de geldigheid van een toepassing of de uitgever, mag u *geen toestemming verlenen*. Zoek in plaats daarvan aanvullende bevestiging (bijvoorbeeld rechtstreeks vanuit de uitgever van de toepassing).
+   Als u twijfelt over de echtheid van een toepassing of de uitgever ervan, *verleent u geen toestemming.* Zoek in plaats daarvan naar extra bevestiging (bijvoorbeeld rechtstreeks van de uitgever van de toepassing).
 
 * **Zorg ervoor dat de aangevraagde machtigingen zijn afgestemd op de functies die u van de toepassing verwacht.**
 
-   Een toepassing die share point-site beheer biedt, kan bijvoorbeeld gedelegeerde toegang hebben om alle site verzamelingen te lezen, maar hoeft niet altijd volledige toegang te hebben tot alle post vakken of volledige imitatie bevoegdheden in de Directory.
+   Een toepassing die SharePoint-sitebeheer aanbiedt, kan bijvoorbeeld gedelegeerde toegang vereisen om alle siteverzamelingen te lezen, maar hoeft niet noodzakelijkerwijs volledige toegang te hebben tot alle postvakken of volledige imitatiebevoegdheden in de map.
 
-   Als u vermoedt dat de toepassing meer machtigingen aanvraagt dan het nodig heeft, mag u *geen toestemming verlenen*. Neem contact op met de uitgever van de toepassing voor meer informatie.
+   Als u vermoedt dat de toepassing meer machtigingen aanvraagt dan nodig is, *verleent u geen toestemming.* Neem contact op met de uitgever van de toepassing voor meer informatie.
 
 ## <a name="granting-consent-as-an-administrator"></a>Toestemming verlenen als beheerder
 
-### <a name="granting-tenant-wide-admin-consent"></a>Toestemming van de beheerder voor de hele Tenant verlenen
-Zie [machtigingen voor Tenant-brede beheerder toestaan voor een toepassing](grant-admin-consent.md) voor stapsgewijze instructies voor het verlenen van toestemming voor de beheerder voor de hele Tenant via de Azure Portal, met behulp van Azure AD Power shell of via de toestemming prompt zelf.
+### <a name="granting-tenant-wide-admin-consent"></a>Tenantbrede beheerdersmachtiging verlenen
+Zie Beheerdersmachtiging voor de hele [tenant](grant-admin-consent.md) verlenen aan een toepassing voor stapsgewijs instructies voor het verlenen van beheerdersmachtiging voor de hele tenant vanuit de Azure Portal, met behulp van Azure AD PowerShell of vanuit de toestemmingsprompt zelf.
 
 ### <a name="granting-consent-on-behalf-of-a-specific-user"></a>Toestemming verlenen namens een specifieke gebruiker
-In plaats van toestemming te verlenen voor de hele organisatie, kan een beheerder ook de [Microsoft Graph-API](/graph/use-the-api) gebruiken om toestemming te geven aan gedelegeerde machtigingen namens één gebruiker. Zie [toegang namens een gebruiker verkrijgen](/graph/auth-v2-user)voor meer informatie.
+In plaats van toestemming te verlenen aan de hele organisatie, kan een beheerder ook de [Microsoft Graph-API](/graph/use-the-api) gebruiken om toestemming te verlenen voor gedelegeerde machtigingen namens één gebruiker. Zie Toegang krijgen namens een [gebruiker voor meer informatie.](/graph/auth-v2-user)
 
-## <a name="limiting-user-access-to-applications"></a>Gebruikers toegang tot toepassingen beperken
-De toegang van gebruikers tot toepassingen kan nog steeds worden beperkt, zelfs wanneer toestemming van de beheerder voor de hele Tenant is verleend. Zie [methoden voor het toewijzen van gebruikers en groepen](./assign-user-or-group-access-portal.md)voor meer informatie over het vereisen van een gebruikers toewijzing aan een toepassing.
+## <a name="limiting-user-access-to-applications"></a>Gebruikerstoegang tot toepassingen beperken
+De toegang van gebruikers tot toepassingen kan nog steeds worden beperkt, zelfs wanneer toestemming van de tenantbrede beheerder is verleend. Zie Methoden voor het toewijzen van gebruikers en groepen voor meer informatie over het vereisen van gebruikerstoewijzing [aan een toepassing.](./assign-user-or-group-access-portal.md)
 
-Zie [Azure AD gebruiken voor toegang tot toepassingen voor](what-is-access-management.md)meer informatie over hoe u extra complexe scenario's kunt afhandelen.
+Zie Azure AD gebruiken voor toegangsbeheer voor toepassingen voor meer informatie over het afhandelen van aanvullende complexe [scenario's.](what-is-access-management.md)
 
-## <a name="disable-all-future-user-consent-operations-to-any-application"></a>Alle toekomstige bewerkingen van de gebruikers toestemming voor elke toepassing uitschakelen
-Door de toestemming van de gebruiker voor uw hele map uit te scha kelen, voor komt u dat eind gebruikers aan elke toepassing worden doorgestuurd. Beheerders kunnen namens de gebruiker nog steeds toestemming geven. Meer informatie over de toestemming van de toepassing en waarom u dit mogelijk niet wilt doen, kunt u lezen [over de toestemming van gebruikers en beheerders](../develop/howto-convert-app-to-be-multi-tenant.md).
+## <a name="disable-all-future-user-consent-operations-to-any-application"></a>Alle toekomstige toestemmingsbewerkingen van gebruikers uitschakelen voor elke toepassing
+Als u toestemming van de gebruiker voor uw hele directory uit te keurt, kunnen eindgebruikers geen toestemming geven voor een toepassing. Beheerders kunnen namens de gebruiker nog steeds toestemming geven. Lees Understanding user and admin consent (Toestemming van gebruiker en beheerder begrijpen) voor meer informatie over toestemming voor toepassingen en waarom u wel of niet [toestemming wilt geven.](../develop/howto-convert-app-to-be-multi-tenant.md)
 
-Voer de volgende stappen uit om alle toekomstige bewerkingen voor gebruikers toestemming in uw hele directory uit te scha kelen:
-1.  Open de [**Azure Portal**](https://portal.azure.com/) en meld u aan als **globale beheerder.**
-2.  Open de **uitbrei ding Azure Active Directory** door te klikken op **alle services** boven aan het hoofd navigatie menu aan de linkerkant.
-3.  Typ **' Azure Active Directory**' in het vak Zoek opdracht filteren en selecteer het **Azure Active Directory** item.
-4.  Selecteer **gebruikers en groepen** in het navigatie menu.
+Als u alle toekomstige toestemmingsbewerkingen van gebruikers in uw hele directory wilt uitschakelen, volgt u deze stappen:
+1.  Open het [**Azure Portal**](https://portal.azure.com/) meld u aan als **globale beheerder.**
+2.  Open de **Azure Active Directory door** te klikken op **Alle services** bovenaan het navigatiemenu linksboven.
+3.  Typ **'Azure Active Directory'** in het filterzoekvak en selecteer het **Azure Active Directory** item.
+4.  Selecteer **Gebruikers en groepen** in het navigatiemenu.
 5.  Selecteer **Gebruikersinstellingen**.
-6.  Schakel alle toekomstige acties voor gebruikers toestemming uit door de gebruikers in staat te stellen **apps toegang te geven tot hun gegevens** in-of uit te scha **kelen en op** de knop **Opslaan** te klikken.
+6.  Schakel alle toekomstige toestemmingsbewerkingen voor gebruikers uit door de schakelknop Gebruikers **kunnen apps** toegang geven tot hun gegevens in te stellen op Nee **en** op de knop **Opslaan te** klikken.
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Vijf stappen voor het beveiligen van uw identiteits infrastructuur](../../security/fundamentals/steps-secure-identity.md#before-you-begin-protect-privileged-accounts-with-mfa)
-* [De beheerder toestemming werk stroom configureren](configure-admin-consent-workflow.md)
+* [Vijf stappen voor het beveiligen van uw identiteitsinfrastructuur](../../security/fundamentals/steps-secure-identity.md#before-you-begin-protect-privileged-accounts-with-mfa)
+* [De werkstroom voor beheerders toestemming configureren](configure-admin-consent-workflow.md)
 * [Configureren hoe eindgebruikers toestemming geven voor toepassingen](configure-user-consent.md)
-* [Machtigingen en toestemming in het micro soft Identity-platform](../develop/v2-permissions-and-consent.md)
+* [Machtigingen en toestemming in het Microsoft Identity Platform](../develop/v2-permissions-and-consent.md)

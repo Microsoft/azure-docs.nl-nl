@@ -6,13 +6,13 @@ author: mksuni
 ms.author: sumuth
 ms.topic: tutorial
 ms.date: 12/10/2020
-ms.custom: mvc
-ms.openlocfilehash: 71066fc2e2f87405455a059fe23c20277c4b09fb
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: b79b470a25a63c0a46ddef94ee65f47f37c560cb
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105726376"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107477805"
 ---
 # <a name="tutorial-deploy-django-app-on-aks-with-azure-database-for-postgresql---flexible-server"></a>Zelfstudie: Django-app implementeren op AKS met Azure Database for PostgreSQL - Flexibele server
 
@@ -128,22 +128,22 @@ De gemaakte server heeft de volgende kenmerken:
 Maak een nieuwe [Django-toepassing](https://docs.djangoproject.com/en/3.1/intro/) of gebruik uw bestaande Django-project. Zorg ervoor dat de code deze mapstructuur heeft.
 
 ```
-└───my-djangoapp
-    └───views.py
-    └───models.py
-    └───forms.py
-    ├───templates
+â””â”€â”€â”€my-djangoapp
+    â””â”€â”€â”€views.py
+    â””â”€â”€â”€models.py
+    â””â”€â”€â”€forms.py
+    â”œâ”€â”€â”€templates
           . . . . . . .
-    ├───static
+    â”œâ”€â”€â”€static
          . . . . . . .
-└───my-django-project
-    └───settings.py
-    └───urls.py
-    └───wsgi.py
+â””â”€â”€â”€my-django-project
+    â””â”€â”€â”€settings.py
+    â””â”€â”€â”€urls.py
+    â””â”€â”€â”€wsgi.py
         . . . . . . .
-    └─── Dockerfile
-    └─── requirements.txt
-    └─── manage.py
+    â””â”€â”€â”€ Dockerfile
+    â””â”€â”€â”€ requirements.txt
+    â””â”€â”€â”€ manage.py
     
 ```
 Werk ```ALLOWED_HOSTS``` in ```settings.py``` bij om ervoor te zorgen dat de Django-toepassing gebruikmaakt van het externe IP-adres dat wordt toegewezen aan de Kubernetes-app.

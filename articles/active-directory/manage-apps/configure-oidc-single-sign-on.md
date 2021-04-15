@@ -1,35 +1,35 @@
 ---
-title: Informatie over eenmalige aanmelding op basis van OIDC (SSO) voor apps in Azure Active Directory
-description: Informatie over eenmalige aanmelding op basis van OIDC voor apps in Azure Active Directory.
+title: Op OIDC gebaseerde eenmalige aanmelding (SSO) voor apps in Azure Active Directory
+description: Op OIDC gebaseerde eenmalige aanmelding (SSO) voor apps in Azure Active Directory.
 services: active-directory
-author: kenwith
-manager: daveba
+author: iantheninja
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 10/19/2020
-ms.author: kenwith
+ms.author: iangithinji
 ms.reviewer: arajpathak7
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: ffaa55d4aa482e8f0eda93b1b32db6310d17e2a3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 990e0c09f8a49b83bc68d7123f5f8146a3551575
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99255246"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107374536"
 ---
-# <a name="understand-oidc-based-single-sign-on"></a>Informatie over eenmalige aanmelding op basis van OIDC
-In de [Quick](view-applications-portal.md) start-serie op toepassings beheer hebt u geleerd hoe u Azure AD als id-provider (IDP) gebruikt voor een toepassing. In dit artikel vindt u meer informatie over apps die gebruikmaken van de OpenID Connect Connect-standaard voor het implementeren van eenmalige aanmelding. 
+# <a name="understand-oidc-based-single-sign-on"></a>Op OIDC gebaseerde een aanmelding begrijpen
+In de [quickstartreeks over](view-applications-portal.md) toepassingsbeheer hebt u geleerd hoe u Azure AD gebruikt als id-provider (IdP) voor een toepassing. In dit artikel wordt gedetailleerder in op apps die gebruikmaken van de OpenID Connect standard voor het implementeren van een een aanmelding. 
 
 ## <a name="before-you-begin"></a>Voordat u begint
-Het proces voor het toevoegen van een app aan uw Azure Active Directory-Tenant is afhankelijk van het type eenmalige aanmelding van de toepassing die is geïmplementeerd. Zie [Opties voor eenmalige aanmelding](sso-options.md)voor meer informatie over de opties voor eenmalige aanmelding die beschikbaar zijn voor apps waarvoor Azure AD kan worden gebruikt voor identiteits beheer. Dit artikel heeft betrekking op OIDC-apps.
+Het proces van het toevoegen van een app aan Azure Active Directory tenant is afhankelijk van het type een aanmelding van de toepassing die is geïmplementeerd. Zie Opties voor een aanmelding voor meer informatie over de opties voor een aanmelding die beschikbaar zijn voor apps die Azure AD kunnen gebruiken voor [identiteitsbeheer.](sso-options.md) In dit artikel worden apps op basis van OIDC beschreven.
 
 
-## <a name="basic-oidc-configuration"></a>Basis configuratie van OIDC
-In de [Quick Start serie](add-application-portal-setup-oidc-sso.md)is er een artikel over het configureren van eenmalige aanmelding. Hierin leert u hoe u een op OIDC gebaseerde app kunt toevoegen aan uw Azure-Tenant.
+## <a name="basic-oidc-configuration"></a>OIDC-basisconfiguratie
+In de [quickstart-reeks](add-application-portal-setup-oidc-sso.md)staat een artikel over het configureren van een een aanmelding. In dit artikel leert u hoe u een op OIDC gebaseerde app toevoegt aan uw Azure-tenant.
 
-Het mooie van het toevoegen van een app die gebruikmaakt van de OIDC-standaard voor eenmalige aanmelding is dat de configuratie mini maal is. Hier volgt een korte video waarin wordt weer gegeven hoe u een OIDC-app toevoegt aan uw Tenant.
+Het mooie van het toevoegen van een app die gebruikmaakt van de OIDC-standaard voor een een aanmelding is dat de configuratie minimaal is. Hier is een korte video waarin wordt getoond hoe u een op OIDC gebaseerde app toevoegt aan uw tenant.
 
 Een OIDC-app toevoegen in Azure Active Directory
 

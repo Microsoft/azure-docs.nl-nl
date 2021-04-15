@@ -2,20 +2,20 @@
 title: 'Quickstart: Een toepassing verwijderen uit uw Azure Active Directory-tenant (Azure AD)'
 description: In deze quickstart wordt Azure Portal gebruikt om een toepassing te verwijderen uit uw Azure AD-tenant (Azure Active Directory).
 services: active-directory
-author: kenwith
-manager: daveba
+author: iantheninja
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: quickstart
 ms.workload: identity
 ms.date: 1/5/2021
-ms.author: kenwith
-ms.openlocfilehash: 59d6044cf42109501941b3f4ff54375aed7fab7c
-ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
+ms.author: iangithinji
+ms.openlocfilehash: 55607d520affe704cecd2e16fb64b3a65c04e167
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106504869"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107374298"
 ---
 # <a name="quickstart-delete-an-application-from-your-azure-active-directory-azure-ad-tenant"></a>Quickstart: Een toepassing verwijderen uit uw Azure Active Directory-tenant (Azure AD)
 
@@ -51,7 +51,7 @@ Een toepassing verwijderen uit uw Azure AD-tenant:
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Wanneer u klaar bent met deze Quick Start reeks, kunt u de app verwijderen om de test Tenant op te schonen. Hoe u de app verwijdert, is behandeld in deze quickstart.
+Wanneer u klaar bent met deze quickstart-reeks, kunt u overwegen om de app te verwijderen om uw testten tenant op te schonen. Hoe u de app verwijdert, is behandeld in deze quickstart.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -1,7 +1,7 @@
 ---
-title: Veelgestelde vragen-Computer Vision
+title: Veelgestelde vragen - Computer Vision
 titleSuffix: Azure Cognitive Services
-description: Krijg antwoorden op veelgestelde vragen over de Computer Vision-API in azure Cognitive Services.
+description: Krijg antwoorden op veelgestelde vragen over de Computer Vision-API in Azure Cognitive Services.
 services: cognitive-services
 author: KellyDF
 manager: nitinme
@@ -11,64 +11,36 @@ ms.topic: conceptual
 ms.date: 04/17/2019
 ms.author: kefre
 ms.custom: seodec18
-ms.openlocfilehash: e8ab205a43e5cb1e8e2b96dbd9600e1fceb29403
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7aac3a38b82b86edc47f48e50d26b5b269486701
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "68564606"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107375233"
 ---
-# <a name="computer-vision-api-frequently-asked-questions"></a>Veelgestelde vragen over Computer Vision-API
+# <a name="computer-vision-api-frequently-asked-questions"></a>Computer Vision veelgestelde vragen over de API
 
 > [!TIP]
-> Als u in deze veelgestelde vragen geen antwoorden op uw vragen kunt vinden, kunt u de Computer Vision-API Community vragen op [stack overflow](https://stackoverflow.com/questions/tagged/project-oxford+or+microsoft-cognitive) of contact opnemen met de [Help en ondersteuning op UserVoice](https://cognitive.uservoice.com/)
+> Als u geen antwoorden op uw vragen kunt vinden in deze veelgestelde vragen, kunt u vragen stellen aan de Computer Vision API-community op [StackOverflow](https://stackoverflow.com/questions/tagged/project-oxford+or+microsoft-cognitive) of contact opnemen met Help en ondersteuning [op UserVoice](https://cognitive.uservoice.com/)
 
 ---
 
-**Vraag**: *kan ik computer vision-API trainen om aangepaste labels te gebruiken?  Ik wil bijvoorbeeld dat ik in afbeeldingen van kat rassen de AI ' Train ', en vervolgens de RAS-waarde op een AI-aanvraag kan ontvangen.*
+**Vraag:** *Kan ik een API Computer Vision om aangepaste tags te gebruiken?  Ik wil bijvoorbeeld foto's* van kattenras invoeren om de AI te 'trainen' en vervolgens de waarde van het ras te ontvangen voor een AI-aanvraag.
 
-**Antwoord**: deze functie is momenteel niet beschikbaar. Onze technici werken echter aan om deze functionaliteit te Computer Vision.
-
----
-
-**Vraag**: *kan computer vision lokaal worden gebruikt zonder Internet verbinding?*
-
-**Antwoord**: we bieden momenteel geen on-premises of lokale oplossing.
+**Antwoord:** Deze functie is momenteel niet beschikbaar. Onze technici werken er echter aan om deze functionaliteit beschikbaar te Computer Vision.
 
 ---
 
-**Vraag**: *kan computer vision worden gebruikt voor het lezen van de licentie platen?*
 
-**Antwoord**: de Vision-API biedt een goede detectie van tekst met OCR, maar is momenteel niet geoptimaliseerd voor licentie platen. We proberen onze services voortdurend te verbeteren en hebben OCR toegevoegd voor de erkenning van automatische licentie plaat aan onze lijst met functie aanvragen.
+**Vraag:** *Kan ik de OCR-functie (Lezen) on-premises implementeren?*
 
----
-
-**Vraag**: *welke typen schrijf oppervlakken worden ondersteund voor handschrift herkenning?*
-
-**Antwoord**: de technologie werkt met verschillende soorten Opper vlakken, waaronder white boards, wit papier en gele plak notities.
+**Antwoord:** Ja, de OCR-cloud-API (Lezen) is ook beschikbaar als een Docker-container voor on-premises implementatie. Meer [informatie over het implementeren van de OCR-containers.](/computer-vision-how-to-install-containers)
 
 ---
 
-**Vraag**: *hoe lang duurt de bewerking voor handschrift herkenning?*
+**Vraag:** *Kan Computer Vision worden gebruikt om borden met licenties te lezen?*
 
-**Antwoord**: de hoeveelheid tijd die nodig is, is afhankelijk van de lengte van de tekst. Voor langere teksten kan het enkele seconden duren. Nadat de bewerking handgeschreven tekst herkennen is voltooid, moet u daarom mogelijk wachten voordat u de resultaten kunt ophalen met behulp van de bewerking handgeschreven tekst bewerking ophalen.
-
----
-
-**Vraag**: *Hoe gaat de technologie voor handschrift herkenning tekst die is ingevoegd met een caret in het midden van een regel?*
-
-**Antwoord**: deze tekst wordt geretourneerd als afzonderlijke regel door de bewerking voor handschrift herkenning.
+**Antwoord:** de Vision-API bevat de mogelijkheden van OCR met deep learning met de nieuwste functie Read. We proberen voortdurend onze services te verbeteren om in alle scenario's te kunnen werken.
 
 ---
 
-**Vraag**: *Hoe wordt de technologie voor handschrift herkenning gebruikt voor het afhandelen van woorden of lijnen?*
-
-**Antwoord**: als de woorden worden gepasseerd met meerdere regels om ze onherkenbaar weer te geven, worden ze niet door de bewerking voor handschrift herkenning gekozen. Als de woorden echter worden gepasseerd met behulp van één regel, wordt die kruising beschouwd als ruis en de woorden worden nog steeds opgehaald door de bewerking voor handschrift herkenning.
-
----
-
-**Vraag**: *welke tekst standen worden ondersteund voor de technologie voor handschrift herkenning?*
-
-**Antwoord**: tekst gericht op hoeken van Maxi maal 30 graden tot 40 graden kan worden opgehaald door de bewerking voor handschrift herkenning.
-
----

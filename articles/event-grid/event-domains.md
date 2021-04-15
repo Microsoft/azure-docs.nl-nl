@@ -1,60 +1,63 @@
 ---
-title: Gebeurtenis domeinen in Azure Event Grid
-description: In dit artikel wordt beschreven hoe u gebeurtenis domeinen gebruikt voor het beheren van de stroom van aangepaste gebeurtenissen naar uw verschillende zakelijke organisaties, klanten of toepassingen.
+title: Gebeurtenisdomeinen in Azure Event Grid
+description: In dit artikel wordt beschreven hoe u gebeurtenisdomeinen gebruikt om de stroom van aangepaste gebeurtenissen naar uw verschillende zakelijke organisaties, klanten of toepassingen te beheren.
 ms.topic: conceptual
-ms.date: 07/07/2020
-ms.openlocfilehash: 46a50a8ecc50bd1b80efcba41228564df1c36c9f
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.date: 04/13/2021
+ms.openlocfilehash: 32c06ac55f667ec9807c7952127c2cf0f0384024
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102198650"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107374706"
 ---
-# <a name="understand-event-domains-for-managing-event-grid-topics"></a>Informatie over gebeurtenis domeinen voor het beheren van Event Grid onderwerpen
+# <a name="understand-event-domains-for-managing-event-grid-topics"></a>Gebeurtenisdomeinen begrijpen voor het beheren van Event Grid onderwerpen
 
-In dit artikel wordt beschreven hoe u gebeurtenis domeinen gebruikt voor het beheren van de stroom van aangepaste gebeurtenissen naar uw verschillende zakelijke organisaties, klanten of toepassingen. Gebruik gebeurtenis domeinen voor het volgende:
+In dit artikel wordt beschreven hoe u gebeurtenisdomeinen gebruikt om de stroom van aangepaste gebeurtenissen naar uw verschillende zakelijke organisaties, klanten of toepassingen te beheren. Gebeurtenisdomeinen gebruiken voor het volgende:
 
-* Architecturen voor multi tenant gebeurtenissen op schaal beheren.
+* Eventing-architecturen voor meerdereten op schaal beheren.
 * Uw autorisatie en verificatie beheren.
-* Partitioneer uw onderwerpen zonder ze afzonderlijk te beheren.
-* Vermijd afzonderlijk publiceren naar elk van uw onderwerp-eind punten.
+* Partitioneren van uw onderwerpen zonder dat u ze afzonderlijk beheert.
+* Voorkom dat u afzonderlijk publiceert naar elk van uw onderwerp-eindpunten.
 
-## <a name="event-domain-overview"></a>Overzicht van gebeurtenis domeinen
+## <a name="event-domain-overview"></a>Overzicht van gebeurtenisdomeinen
 
-Een gebeurtenis domein is een beheer programma voor een groot aantal Event Grid-onderwerpen die betrekking hebben op dezelfde toepassing. U kunt dit beschouwen als een meta onderwerp dat duizenden afzonderlijke onderwerpen kan hebben.
+Een gebeurtenisdomein is een beheerprogramma voor grote aantallen Event Grid onderwerpen met betrekking tot dezelfde toepassing. U kunt het zien als een metaonderwerp dat duizenden afzonderlijke onderwerpen kan hebben.
 
-Gebeurtenis domeinen maken beschikbaar voor u dezelfde architectuur die wordt gebruikt door Azure-Services (zoals Storage en IoT Hub) om hun gebeurtenissen te publiceren. Hiermee kunt u gebeurtenissen naar duizenden onderwerpen publiceren. Domeinen bieden u ook autorisatie en verificatie controle over elk onderwerp, zodat u uw tenants kunt partitioneren.
+Gebeurtenisdomeinen bieden u dezelfde architectuur die wordt gebruikt door Azure-services zoals Storage en IoT Hub om hun gebeurtenissen te publiceren. Met deze informatie kunt u gebeurtenissen publiceren naar duizenden onderwerpen. Domeinen bieden u ook autorisatie- en verificatiebeheer voor elk onderwerp, zodat u uw tenants kunt partitioneren.
 
 ## <a name="example-use-case"></a>Voorbeeld van een toepassing
 [!INCLUDE [event-grid-domain-example-use-case.md](../../includes/event-grid-domain-example-use-case.md)]
 
 ## <a name="access-management"></a>Toegangsbeheer
 
-Met een domein krijgt u een nauw keurige autorisatie en verificatie controle voor elk onderwerp via Azure op rollen gebaseerd toegangs beheer (Azure RBAC). U kunt deze rollen gebruiken om elke Tenant in uw toepassing te beperken tot alleen de onderwerpen waaraan u hen toegang wilt verlenen.
+Met een domein krijgt u via op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC) een fijnkeurige autorisatie en verificatiecontrole voor elk onderwerp. U kunt deze rollen gebruiken om elke tenant in uw toepassing te beperken tot alleen de onderwerpen waar u hen toegang toe wilt verlenen.
 
-Azure RBAC in gebeurtenis domeinen werkt op dezelfde manier als [Managed Access Control](security-authorization.md) werkt in de rest van Event grid en Azure. Gebruik Azure RBAC om aangepaste roldefinities in gebeurtenis domeinen te maken en af te dwingen.
+Azure RBAC in gebeurtenisdomeinen [](security-authorization.md) werkt op dezelfde manier als beheerd toegangsbeheer in de rest van Event Grid en Azure. Gebruik Azure RBAC om aangepaste roldefinities te maken en af te dwingen in gebeurtenisdomeinen.
 
 ### <a name="built-in-roles"></a>Ingebouwde rollen
 
-Event Grid heeft twee ingebouwde roldefinities om Azure RBAC gemakkelijker te maken voor het werken met gebeurtenis domeinen. Deze rollen zijn **EventGrid EventSubscription Inzender (preview)** en **EventGrid EventSubscription Reader (preview)**. U wijst deze rollen toe aan gebruikers die zich moeten abonneren op onderwerpen in uw gebeurtenis domein. U bereikt de roltoewijzing alleen voor het onderwerp dat gebruikers moeten abonneren op.
+Event Grid heeft twee ingebouwde roldefinities om Azure RBAC gemakkelijker te maken om met gebeurtenisdomeinen te werken. Deze rollen zijn **EventGrid EventSubscription Contributor (Preview)** en **EventGrid EventSubscription Reader (Preview)**. U wijst deze rollen toe aan gebruikers die zich moeten abonneren op onderwerpen in uw gebeurtenisdomein. U beperkt de roltoewijzing alleen tot het onderwerp waar gebruikers zich op moeten abonneren.
 
-Zie [ingebouwde rollen voor Event grid](security-authorization.md#built-in-roles)voor meer informatie over deze rollen.
+Zie Ingebouwde rollen voor [Event Grid.](security-authorization.md#built-in-roles)
 
 ## <a name="subscribing-to-topics"></a>Abonneren op onderwerpen
 
-Abonneren op gebeurtenissen in een onderwerp binnen een gebeurtenis domein is hetzelfde als het [maken van een gebeurtenis abonnement op een aangepast onderwerp](./custom-event-quickstart.md) of het abonneren op een gebeurtenis van een Azure-service.
+Abonneren op gebeurtenissen in een onderwerp binnen een gebeurtenisdomein is hetzelfde als het maken van een gebeurtenisabonnement voor een aangepast onderwerp of het abonneren op een gebeurtenis vanuit een Azure-service. [](./custom-event-quickstart.md)
 
-### <a name="domain-scope-subscriptions"></a>Domein bereik abonnementen
+> [!IMPORTANT]
+> Domeinonderwerp wordt beschouwd als **een automatisch beheerde** resource in Event Grid. U kunt een gebeurtenisabonnement maken op het domeinonderwerpbereik zonder het domeinonderwerp te maken. In dit geval maakt Event Grid automatisch het domeinonderwerp namens u. U kunt er natuurlijk nog steeds voor kiezen om het domeinonderwerp handmatig te maken. Met dit gedrag kunt u zich zorgen maken over één resource minder wanneer u te maken hebt met een groot aantal domeinonderwerpen. Wanneer het laatste abonnement op een domeinonderwerp wordt verwijderd, wordt het domeinonderwerp ook verwijderd, ongeacht of het domeinonderwerp handmatig is gemaakt of automatisch is gemaakt. 
 
-In gebeurtenis domeinen kunnen abonnementen op domein bereik worden toegepast. Een gebeurtenis abonnement op een gebeurtenis domein ontvangt alle gebeurtenissen die naar het domein worden verzonden, ongeacht het onderwerp waarnaar de gebeurtenissen worden verzonden. De domein bereik abonnementen kunnen nuttig zijn voor beheer-en controle doeleinden.
+### <a name="domain-scope-subscriptions"></a>Domeinbereikabonnementen
 
-## <a name="publishing-to-an-event-domain"></a>Publiceren naar een gebeurtenis domein
+Gebeurtenisdomeinen maken ook domeinbereikabonnementen mogelijk. Een gebeurtenisabonnement op een gebeurtenisdomein ontvangt alle gebeurtenissen die naar het domein worden verzonden, ongeacht het onderwerp waar de gebeurtenissen naar worden verzonden. Domeinbereikabonnementen kunnen nuttig zijn voor beheer- en controledoeleinden.
 
-Wanneer u een gebeurtenis domein maakt, krijgt u een publicatie-eind punt te zien als u een onderwerp in Event Grid hebt gemaakt. 
+## <a name="publishing-to-an-event-domain"></a>Publiceren naar een gebeurtenisdomein
 
-Als u gebeurtenissen naar een onderwerp in een gebeurtenis domein wilt publiceren, moet u de gebeurtenissen naar het eind punt van het domein pushen op [dezelfde manier als voor een aangepast onderwerp](./post-to-custom-topic.md). Het enige verschil is dat u het onderwerp moet opgeven waarnaar de gebeurtenis moet worden geleverd.
+Wanneer u een gebeurtenisdomein maakt, krijgt u een publicatie-eindpunt dat vergelijkbaar is met als u een onderwerp hebt gemaakt in Event Grid. 
 
-Als u bijvoorbeeld de volgende matrix met gebeurtenissen publiceert, wordt gebeurtenis verzonden met `"id": "1111"` het onderwerp, `foo` terwijl de gebeurtenis met `"id": "2222"` zou worden verzonden naar het onderwerp `bar` :
+Als u gebeurtenissen wilt publiceren naar een onderwerp in een gebeurtenisdomein, pusht u de gebeurtenissen op dezelfde manier naar het eindpunt van het domein als [voor een aangepast onderwerp.](./post-to-custom-topic.md) Het enige verschil is dat u het onderwerp moet opgeven waar u de gebeurtenis aan wilt leveren.
+
+Als u bijvoorbeeld de volgende matrix met gebeurtenissen publiceert, wordt er een gebeurtenis met naar het onderwerp verzonden terwijl de gebeurtenis met `"id": "1111"` naar het onderwerp wordt `foo` `"id": "2222"` `bar` verzonden:
 
 ```json
 [{
@@ -83,26 +86,26 @@ Als u bijvoorbeeld de volgende matrix met gebeurtenissen publiceert, wordt gebeu
 }]
 ```
 
-Gebeurtenis domeinen verwerken het publiceren naar onderwerpen voor u. In plaats van gebeurtenissen te publiceren naar elk onderwerp dat u afzonderlijk beheert, kunt u al uw gebeurtenissen naar het eind punt van het domein publiceren. Event Grid zorgt ervoor dat elke gebeurtenis wordt verzonden naar het juiste onderwerp.
+Gebeurtenisdomeinen verwerken publicatie naar onderwerpen voor u. In plaats van gebeurtenissen te publiceren naar elk onderwerp dat u afzonderlijk beheert, kunt u al uw gebeurtenissen publiceren naar het eindpunt van het domein. Event Grid zorgt ervoor dat elke gebeurtenis naar het juiste onderwerp wordt verzonden.
 
 ## <a name="limits-and-quotas"></a>Limieten en quota
-Dit zijn de limieten en quota die betrekking hebben op gebeurtenis domeinen:
+Dit zijn de limieten en quota met betrekking tot gebeurtenisdomeinen:
 
-- 100.000 onderwerpen per gebeurtenis domein 
-- 100 gebeurtenis domeinen per Azure-abonnement 
-- 500 gebeurtenis abonnementen per onderwerp in een gebeurtenis domein
-- 50 domein bereik abonnementen 
-- 5.000 gebeurtenissen per seconde opname frequentie (in een domein)
+- 100.000 onderwerpen per gebeurtenisdomein 
+- 100 gebeurtenisdomeinen per Azure-abonnement 
+- 500 gebeurtenisabonnementen per onderwerp in een gebeurtenisdomein
+- 50 domeinbereikabonnementen 
+- 5000 gebeurtenissen per seconde opnamefrequentie (in een domein)
 
-Als deze limieten niet aansluiten bij u, kunt u het product team bereiken door een ondersteunings ticket te openen of door een e-mail te verzenden naar [askgrid@microsoft.com](mailto:askgrid@microsoft.com) . 
+Als deze limieten niet geschikt zijn voor u, opent u een ondersteuningsticket of stuurt u een e-mail naar [askgrid@microsoft.com](mailto:askgrid@microsoft.com) . 
 
 ## <a name="pricing"></a>Prijzen
-Gebeurtenis domeinen gebruiken dezelfde [prijzen voor bewerkingen](https://azure.microsoft.com/pricing/details/event-grid/) die alle andere functies in Event grid gebruiken.
+Gebeurtenisdomeinen gebruiken dezelfde prijzen [voor bewerkingen](https://azure.microsoft.com/pricing/details/event-grid/) die alle andere functies in Event Grid gebruiken.
 
-Bewerkingen werken hetzelfde in gebeurtenis domeinen als in aangepaste onderwerpen. Elke ingang van een gebeurtenis in een gebeurtenis domein is een bewerking en elke bezorgings poging voor een gebeurtenis is een bewerking.
+Bewerkingen werken hetzelfde in gebeurtenisdomeinen als in aangepaste onderwerpen. Elk ingress van een gebeurtenis naar een gebeurtenisdomein is een bewerking en elke bezorgingspoging voor een gebeurtenis is een bewerking.
 
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [gebeurtenis domeinen beheren](./how-to-event-domains.md)voor meer informatie over het instellen van gebeurtenis domeinen, het maken van onderwerpen, het maken van gebeurtenis abonnementen en het publiceren van gebeurtenissen.
+* Zie Gebeurtenisdomeinen beheren voor meer informatie over het instellen van [gebeurtenisdomeinen,](./how-to-event-domains.md)het maken van onderwerpen, het maken van gebeurtenisabonnementen en het publiceren van gebeurtenissen.

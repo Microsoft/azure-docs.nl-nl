@@ -1,15 +1,19 @@
-- name: Documentatie voor micro soft-klanten overeenkomst
+- name: Microsoft-klantovereenkomst documentatie
   href: index.yml?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
 - name: Overzicht
   expanded: true
   items:
-    - name: Overzicht van de klant overeenkomst van micro soft
+    - name: Microsoft-klantovereenkomst overzicht
       href: ../understand/mca-overview.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
 - name: Concepten
   items:
-    - name: Meer informatie over uw gebruik en facturerings cyclus
+    - name: Controlelijst na het ondertekenen van uw overeenkomst
+      href: microsoft-customer-agreement-get-started.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
+    - name: Tenants beheren in uw overeenkomst
+      href: manage-tenants.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
+    - name: Inzicht in uw gebruiks- en factureringscyclus
       href: ../understand/mca-understand-your-invoice.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
-    - name: Voor waarden voor gebruik en kosten bestand
+    - name: Bestandsvoorwaarden voor gebruik en kosten
       href: ../understand/mca-understand-your-usage.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
 - name: Zelfstudies
   items:
@@ -22,17 +26,17 @@
   items:
     - name: Facturering instellen
       href: ../manage/mca-setup-account.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
-    - name: Aan de slag met uw facturerings account
+    - name: Aan de slag met uw factureringsrekening
       href: ../understand/mca-overview.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
     - name: Uw factuur organiseren
       href: ../manage/mca-section-invoice.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
     - name: Uw factureringsaccounts weergeven
       href: ../manage/view-all-accounts.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
-    - name: Facturerings rollen
+    - name: Factureringsrollen
       href: ../manage/understand-mca-roles.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
     - name: Toegang tot facturering beheren
       href: ../manage/manage-billing-access.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
-    - name: Beheerder instellen om abonnements gebruikers te beheren
+    - name: Beheerder instellen voor het beheren van abonnementsgebruikers
       href: ../manage/add-change-subscription-administrator.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
     - name: Nieuwe abonnementen maken
       href: ../manage/create-subscription.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
@@ -40,13 +44,17 @@
       href: ../manage/pay-by-invoice.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
     - name: Uw factuur betalen
       href: ../understand/pay-bill.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
-    - name: Eigendom van de facturering ophalen
+    - name: Eigendom van facturering overdragen
       href: ../manage/mca-request-billing-ownership.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
-    - name: EA migreren naar micro soft-gebruikers overeenkomst Api's
+    - name: EA migreren naar Microsoft-klantovereenkomst API's
       href: ../costs/migrate-cost-management-api.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
-    - name: Gebruik en kosten weer geven en downloaden
+    - name: Gebruik en kosten weergeven en downloaden
       href: ../understand/download-azure-daily-usage.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
-    - name: Uw Azure-prijzen bekijken en downloaden
+    - name: Uw Azure-prijzen weergeven en downloaden
       href: ../manage/ea-pricing.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
-    - name: EA-taken in een micro soft-klant overeenkomst
+    - name: EA-taken in een Microsoft-klantovereenkomst
       href: ../manage/mca-enterprise-operations.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
+    - name: Problemen oplossen
+      items:
+        - name: Abonnementstoegang
+          href: troubleshoot-subscription-access.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json

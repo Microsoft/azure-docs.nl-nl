@@ -7,14 +7,14 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: conceptual
-ms.date: 08/20/2020
+ms.date: 04/08/2021
 ms.author: banders
-ms.openlocfilehash: 996c974473c53833dd26abae2fb61585999f33b4
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: ff53131f3078b33b7e7d853c1fca891b0b86d792
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102050440"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107484592"
 ---
 # <a name="terms-in-your-microsoft-customer-agreement-invoice"></a>Terminologie in uw factuur voor een Microsoft-klantovereenkomst
 
@@ -22,13 +22,25 @@ Dit artikel is van toepassing op een Azure-factureringsaccount voor een Microsof
 
 Uw factuur bevat een overzicht van uw kosten en instructies voor betaling. De factuur kan als PDF worden gedownload uit de [Azure-portal](https://portal.azure.com/) of kan per e-mail worden verzonden. Zie [Uw Microsoft Azure-factuur weergeven en downloaden](download-azure-invoice.md) voor meer informatie.
 
-Bekijk de video over het [begrijpen van uw micro soft-klant overeenkomst](https://www.youtube.com/watch?v=e2LGZZ7GubA) voor meer informatie over uw factuur en hoe u de kosten erop kunt analyseren.
+Bekijk de [video Inzicht in Microsoft-klantovereenkomst factuur](https://www.youtube.com/watch?v=e2LGZZ7GubA) voor meer informatie over uw factuur en hoe u de kosten op uw factuur analyseert.
 
 >[!VIDEO https://www.youtube.com/embed/e2LGZZ7GubA]
 
 ## <a name="billing-period"></a>Factureringsperiode
 
 U wordt maandelijks gefactureerd. U kunt zien op welke dag van de maand u facturen ontvangt door naar de *factuurdatum* te kijken in de eigenschappen van uw factureringsprofiel in de [Azure-portal](https://portal.azure.com/). Kosten die zijn gemaakt tussen het einde van de factureringsperiode en de factuurdatum worden opgenomen in de factuur van de volgende maand, aangezien deze zich in de volgende factureringsperiode bevinden. De begin-en einddatum van de factureringsperiode voor elke factuur worden vermeld in de PDF-factuur, boven **Factureringsoverzicht**.
+
+Als u van een EA migreert naar een Microsoft-klantovereenkomst, blijft u facturen voor uw EA ontvangen tot de migratiedatum. De nieuwe factuur voor uw Microsoft-klantovereenkomst wordt gegenereerd op de vijfde dag van de maand na de migratie. De eerste factuur bevat een gedeeltelijke kosten vanaf de migratiedatum. Latere facturen worden elke maand gegenereerd en tonen alle kosten voor elke maand.
+
+### <a name="changes-for-pay-as-you-go-subscriptions"></a>Wijzigingen voor betalen per uur-abonnementen
+
+Wanneer een abonnement wordt overgezet, overgedragen of geannuleerd, bevat de laatst gegenereerde factuur kosten voor de vorige factureringscyclus en de nieuwe onvolledige factureringscyclus.
+
+Bijvoorbeeld:
+
+Stel dat de factureringscyclus van uw abonnement met betalen per gebruik van de dag 8 tot en met dag 7 van elke maand ligt. Het abonnement is op 16 november Microsoft-klantovereenkomst overgedragen naar een nieuwe Microsoft-klantovereenkomst. De laatste factuur voor betalen per uur heeft kosten voor 8 oktober 2020 tot en met 7 november 2020. Het bevat ook de kosten voor de nieuwe gedeeltelijke factureringscyclus voor de Microsoft-klantovereenkomst van 8 november 2020 tot en met 16 november 2020. Hier ziet u een voorbeeldafbeelding.
+
+:::image type="content" source="./media/mca-understand-your-invoice/last-invoice-billing-cycle.png" alt-text="Voorbeeldafbeelding van een factuur met de laatste factureringscyclus." lightbox="./media/mca-understand-your-invoice/last-invoice-billing-cycle.png" :::
 
 ## <a name="invoice-terms-and-descriptions"></a>Gebruikte terminologie in facturen
 

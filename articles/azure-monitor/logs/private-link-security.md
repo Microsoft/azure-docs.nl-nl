@@ -5,231 +5,231 @@ author: noakup
 ms.author: noakuper
 ms.topic: conceptual
 ms.date: 10/05/2020
-ms.openlocfilehash: 76c6d7caf3c63779e12443304688192f7311720a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 43707a99792ae3c4d817f47d770629287b8a774b
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104594560"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107374332"
 ---
 # <a name="use-azure-private-link-to-securely-connect-networks-to-azure-monitor"></a>Azure Private Link gebruiken om netwerken veilig te verbinden met Azure Monitor
 
-Met de [persoonlijke Azure-koppeling](../../private-link/private-link-overview.md) kunt u Azure PaaS-services veilig koppelen aan uw virtuele netwerk met behulp van privé-eind punten. Voor veel services hebt u zojuist een eind punt ingesteld per resource. Azure Monitor is echter een Constellation met verschillende onderling verbonden services die samen werken om uw workloads te bewaken. Als gevolg hiervan hebben we een resource met de naam een Azure Monitor AMPLS (private link scope) gemaakt. Met AMPLS kunt u de grenzen van uw bewakings netwerk definiëren en verbinding maken met uw virtuele netwerk. In dit artikel wordt beschreven hoe u een Azure Monitor persoonlijk koppelings bereik kunt instellen.
+[Azure Private Link](../../private-link/private-link-overview.md) kunt u Azure PaaS-services veilig koppelen aan uw virtuele netwerk met behulp van privé-eindpunten. Voor veel services stelt u alleen een eindpunt per resource in. Maar Azure Monitor is een groot aantal verschillende onderling verbonden services die samenwerken om uw workloads te bewaken. Als gevolg hiervan hebben we een resource gemaakt met de naam Azure Monitor Private Link Scope (AMPLS). Met AMPLS kunt u de grenzen van uw bewakingsnetwerk definiëren en verbinding maken met uw virtuele netwerk. In dit artikel wordt beschreven wanneer u kunt gebruiken en hoe u een Azure Monitor Private Link instellen.
 
 ## <a name="advantages"></a>Voordelen
 
-Met een persoonlijke koppeling kunt u het volgende doen:
+Met Private Link kunt u het volgende doen:
 
-- Privé verbinding maken met Azure Monitor zonder open bare netwerk toegang te openen
-- Controleren of uw bewakings gegevens alleen toegankelijk zijn via geautoriseerde particuliere netwerken
-- Gegevens exfiltration uit uw particuliere netwerken voor komen door specifieke Azure Monitor bronnen te definiëren die verbinding maken via uw persoonlijke eind punt
-- Uw privé on-premises netwerk veilig verbinden met Azure Monitor met behulp van ExpressRoute en een persoonlijke koppeling
-- Bewaar al het verkeer binnen het Microsoft Azure backbone-netwerk
+- Privé verbinding maken met Azure Monitor zonder openbare netwerktoegang te openen
+- Zorg ervoor dat uw bewakingsgegevens alleen toegankelijk zijn via geautoriseerde particuliere netwerken
+- Gegevens exfiltratie van uw particuliere netwerken voorkomen door specifieke Azure Monitor resources te definiëren die verbinding maken via uw privé-eindpunt
+- Uw privé-on-premises netwerk veilig verbinden met Azure Monitor behulp van ExpressRoute en Private Link
+- Houd al het verkeer binnen het Microsoft Azure backbone-netwerk
 
-Zie  [belang rijke voor delen van een persoonlijke koppeling](../../private-link/private-link-overview.md#key-benefits)voor meer informatie.
+Zie Voor meer informatie De [belangrijkste voordelen van Private Link.](../../private-link/private-link-overview.md#key-benefits)
 
 ## <a name="how-it-works"></a>Uitleg
 
-Azure Monitor AMPLS (private link scope) verbindt persoonlijke eind punten (en de VNets die ze bevatten) aan een of meer Azure Monitor resources: Log Analytics werk ruimten en Application Insights onderdelen.
+Azure Monitor Private Link Scope (AMPLS) verbindt privé-eindpunten (en de VNets waarin ze zijn opgenomen) met een of meer Azure Monitor-resources: Log Analytics-werkruimten en Application Insights-onderdelen.
 
-![Diagram van basis resource topologie](./media/private-link-security/private-link-basic-topology.png)
+![Diagram van de basisresourcetopologie](./media/private-link-security/private-link-basic-topology.png)
 
-* Met het persoonlijke eind punt op uw VNet kan het Azure Monitor eind punten bereiken via privé-IP-adressen uit de groep van uw netwerk, in plaats van gebruik te maken van de open bare IP-adressen van deze eind punten. Zo kunt u uw Azure Monitor-resources blijven gebruiken zonder dat uw VNet wordt geopend met niet-vereist uitgaand verkeer. 
-* Verkeer van het persoonlijke eind punt naar uw Azure Monitor-resources gaat over de Microsoft Azure backbone en worden niet doorgestuurd naar open bare netwerken. 
-* U kunt elk van uw werk ruimten of onderdelen zo configureren dat opname en query's van open bare netwerken worden toegestaan of geweigerd. Die een beveiliging op resource niveau biedt, zodat u verkeer naar specifieke resources kunt beheren.
-
-> [!NOTE]
-> Een enkele Azure Monitor resource kan tot meerdere AMPLSs behoren, maar u kunt geen enkele VNet verbinden met meer dan één AMPLS. 
-
-## <a name="planning-your-private-link-setup"></a>De configuratie van uw persoonlijke koppeling plannen
-
-Voordat u uw Azure Monitor voor het instellen van persoonlijke koppelingen instelt, moet u rekening houden met uw netwerk topologie en met name uw DNS-routerings topologie. 
-
-### <a name="the-issue-of-dns-overrides"></a>Het probleem van DNS-onderdrukkingen
-Sommige Azure Monitor Services gebruiken globale eind punten, wat betekent dat ze aanvragen behandelen die gericht zijn op een werk ruimte/onderdeel. Enkele voor beelden zijn het Application Insights opname-eind punt en het query-eind punt van zowel Application Insights als Log Analytics.
-
-Wanneer u een verbinding met een persoonlijke verbinding instelt, wordt uw DNS bijgewerkt om Azure Monitor-eind punten toe te wijzen aan privé-IP-adressen uit het IP-adres bereik van uw VNet. Deze wijziging overschrijft een eerdere toewijzing van deze eind punten, wat zinvolle implicaties kan hebben, zoals hieronder wordt besproken. 
-
-### <a name="azure-monitor-private-link-applies-to-all-azure-monitor-resources---its-all-or-nothing"></a>Azure Monitor persoonlijke koppeling is van toepassing op alle Azure Monitor resources. het is allemaal of niets
-Omdat sommige Azure Monitor-eind punten globaal zijn, is het onmogelijk om een koppeling van een particuliere verbinding te maken voor een specifiek onderdeel of werk ruimte. In plaats daarvan worden uw DNS-records bijgewerkt voor **alle** Application Insights-onderdelen wanneer u een persoonlijke koppeling instelt op een enkele Application Insights onderdeel of log Analytics werk ruimte. Een poging om een onderdeel in te stellen of bij te werken, gaat via de privé koppeling en kan mogelijk mislukken. Met betrekking tot Log Analytics, opname-en configuratie-eind punten zijn werk ruimte-specifiek, wat betekent dat de instelling van de privé-koppeling alleen van toepassing is op de opgegeven werk ruimten. Opname en configuratie van andere werk ruimten wordt omgeleid naar de standaard open bare eind punten van Log Analytics.
-
-![Diagram van DNS-onderdrukkingen in één VNet](./media/private-link-security/dns-overrides-single-vnet.png)
-
-Dat is niet alleen van toepassing op een specifiek VNet, maar voor alle VNets die dezelfde DNS-server delen (Zie [het probleem van DNS-onderdrukkingen](#the-issue-of-dns-overrides)). Bijvoorbeeld, de aanvraag voor het opnemen van logboeken naar een Application Insights onderdeel wordt altijd via de route van de persoonlijke koppeling verzonden. Onderdelen die niet aan de AMPLS zijn gekoppeld, zullen de validatie van de persoonlijke verbinding niet door lopen.
+* Met het privé-eindpunt in uw VNet kunnen Azure Monitor-eindpunten worden bereikt via privé-IP's vanuit de pool van uw netwerk, in plaats van via de openbare IP's van deze eindpunten. Op die manier kunt u uw Azure Monitor blijven gebruiken zonder uw VNet te openen voor niet-uitgaand verkeer. 
+* Verkeer van het privé-eindpunt naar uw Azure Monitor resources gaat via de Microsoft Azure backbone en wordt niet gerouteerd naar openbare netwerken. 
+* U kunt al uw werkruimten of onderdelen configureren om opname en query's van openbare netwerken toe te staan of te weigeren. Dit biedt een beveiliging op resourceniveau, zodat u verkeer naar specifieke resources kunt beheren.
 
 > [!NOTE]
-> Sluiten: zodra de verbinding met een persoonlijke koppeling met één resource is ingesteld, is deze van toepassing op Azure Monitor resources in uw netwerk. Voor Application Insights resources is dat alles of niets. Dit betekent dat u alle Application Insights resources in uw netwerk moet toevoegen aan uw AMPLS, of geen van beide.
+> Eén resource Azure Monitor kan tot meerdere AMPLS's behoren, maar u kunt één VNet niet verbinden met meer dan één AMPLS. 
+
+## <a name="planning-your-private-link-setup"></a>De configuratie van Private Link plannen
+
+Voordat u uw Azure Monitor Private Link instellen, moet u rekening houden met uw netwerktopologie en met name uw DNS-routeringstopologie. 
+
+### <a name="the-issue-of-dns-overrides"></a>Het probleem van DNS-overschrijvingen
+Sommige Azure Monitor gebruiken globale eindpunten, wat betekent dat ze aanvragen verwerken die zijn gericht op elke werkruimte of elk onderdeel. Een aantal voorbeelden zijn het Application Insights eindpunt voor opname en het query-eindpunt van zowel Application Insights als Log Analytics.
+
+Wanneer u een verbinding Private Link, wordt uw DNS bijgewerkt om Azure Monitor-eindpunten toe te voegen aan privé-IP-adressen uit het IP-bereik van uw VNet. Deze wijziging overschrijven alle eerdere toewijzingen van deze eindpunten, die zinvolle implicaties kunnen hebben, die hieronder worden besproken. 
+
+### <a name="azure-monitor-private-link-applies-to-all-azure-monitor-resources---its-all-or-nothing"></a>Azure Monitor Private Link is van toepassing op Azure Monitor resources: alles of niets
+Omdat sommige Azure Monitor eindpunten globaal zijn, is het niet mogelijk om een Private Link maken voor een specifiek onderdeel of specifieke werkruimte. Wanneer u in plaats daarvan een Private Link één Application Insights-onderdeel of Log Analytics-werkruimte in stelt, worden uw DNS-records bijgewerkt voor **alle** Application Insights onderdelen. Elke poging om een onderdeel op te nemen of op te vragen, gaat via Private Link en mislukt mogelijk. Met betrekking tot Log Analytics zijn opname- en configuratie-eindpunten werkruimte-specifiek, wat betekent dat het instellen van de privékoppeling alleen van toepassing is op de opgegeven werkruimten. Opname en configuratie van andere werkruimten worden omgeleid naar de standaard openbare Log Analytics-eindpunten.
+
+![Diagram van DNS-overschrijvingen in één VNet](./media/private-link-security/dns-overrides-single-vnet.png)
+
+Dat geldt niet alleen voor een specifiek VNet, maar voor alle VNets die dezelfde DNS-server delen (zie Het probleem van [DNS-overschrijvingen).](#the-issue-of-dns-overrides) Een aanvraag voor het opnemen van logboeken in een Application Insights onderdeel wordt dus altijd via de Private Link verzonden. Onderdelen die niet aan de AMPLS zijn gekoppeld, mislukken de Private Link validatie en worden niet uitgevoerd.
+
+> [!NOTE]
+> Tot slot: nadat u een verbinding Private Link met één resource hebt ingesteld, is deze van toepassing op Azure Monitor resources in uw netwerk. Voor Application Insights resources is dat Alles of Niets. Dit betekent dat u alle Application Insights resources in uw netwerk moet toevoegen aan uw AMPLS, of geen van deze resources.
 > 
-> Voor het afhandelen van gegevens exfiltration-Risico's is het aanbeveling om alle Application Insights en Log Analytics resources toe te voegen aan uw AMPLS en uw netwerken zo veel mogelijk uit te voeren.
+> Voor het afhandelen van gegevens exfiltratie risico's, is het onze aanbeveling om alle Application Insights- en Log Analytics-resources toe te voegen aan uw AMPLS en het verkeer van uw netwerken zoveel mogelijk te blokkeren.
 
-### <a name="azure-monitor-private-link-applies-to-your-entire-network"></a>Azure Monitor persoonlijke koppeling is van toepassing op uw hele netwerk
-Sommige netwerken bestaan uit meerdere VNets. Als de VNets dezelfde DNS-server gebruikt, worden de DNS-toewijzingen van elkaar overschreven en wordt mogelijk ook de communicatie met Azure Monitor verbroken (Zie [het probleem van DNS-onderdrukkingen](#the-issue-of-dns-overrides)). Uiteindelijk kan alleen het laatste VNet communiceren met Azure Monitor, omdat de DNS Azure Monitor-eind punten toewijst aan privé Ip's uit dit VNets bereik (wat mogelijk niet bereikbaar is vanuit andere VNets).
+### <a name="azure-monitor-private-link-applies-to-your-entire-network"></a>Azure Monitor Private Link is van toepassing op uw hele netwerk
+Sommige netwerken bestaan uit meerdere VNets. Als de VNets dezelfde DNS-server gebruiken, overschrijven ze elkaars DNS-toewijzingen en wordt mogelijk de communicatie van elkaar met Azure Monitor verbreekt (zie Het probleem van [DNS-overschrijvingen).](#the-issue-of-dns-overrides) Uiteindelijk kan alleen het laatste VNet communiceren met Azure Monitor, omdat de DNS Azure Monitor-eindpunten vanuit dit VNets-bereik toekent aan privé-IP's (die mogelijk niet bereikbaar zijn vanaf andere VNets).
 
-![Diagram van DNS-onderdrukkingen in meerdere VNets](./media/private-link-security/dns-overrides-multiple-vnets.png)
+![Diagram van DNS-overschrijvingen in meerdere VNets](./media/private-link-security/dns-overrides-multiple-vnets.png)
 
-In het bovenstaande diagram maakt VNet 10.0.1. x eerst verbinding met AMPLS1 en wijst de Azure Monitor globale eind punten toe aan IP-adressen van het bereik. Later, VNet 10.0.2. x maakt verbinding met AMPLS2 en overschrijft de DNS-toewijzing van *dezelfde globale eind punten* met IP-adressen van het bereik. Omdat deze VNets niet zijn gekoppeld, kan de eerste VNet nu deze eind punten niet bereiken.
+In het bovenstaande diagram maakt VNet 10.0.1.x eerst verbinding met AMPLS1 en worden de globale Azure Monitor-eindpunten vanuit het bereik van de Azure Monitor aan DEP's toe te staan. Later maakt VNet 10.0.2.x verbinding met AMPLS2 en overschrijvingen de DNS-toewijzing van dezelfde globale eindpunten met DEP's uit het bereik.  Omdat deze VNets niet zijn peered, kan het eerste VNet deze eindpunten nu niet bereiken.
 
 > [!NOTE]
-> Te sluiten: AMPLS Setup is van invloed op alle netwerken die dezelfde DNS-zones delen. Om te voor komen dat de DNS-eindpunt toewijzingen van elkaar worden overschreven, is het raadzaam om één persoonlijk eind punt in te stellen op een gekoppeld netwerk (zoals een hub VNet) of door de netwerken op het DNS-niveau te scheiden (Foe-voor beeld met behulp van DNS-doorstuur servers of afzonderlijke DNS-server).
+> Tot slot: AMPLS-installatie is van invloed op alle netwerken die dezelfde DNS-zones delen. Om te voorkomen dat elkaars DNS-eindpunttoewijzingen worden overschrijven, kunt u het beste één privé-eindpunt instellen in een peered netwerk (zoals een hub-VNet) of de netwerken op DNS-niveau scheiden (bijvoorbeeld door DNS-doorstuurservers of afzonderlijke DNS-servers volledig te gebruiken).
 
 ### <a name="hub-spoke-networks"></a>Hub-spoke-netwerken
-Hub-spoke-topologieën kunnen het probleem van DNS-onderdrukkingen voor komen door een persoonlijke koppeling in te stellen op de hub (hoofd) VNet, in plaats van een persoonlijke koppeling voor elk VNet afzonderlijk in te stellen. Deze installatie is vooral handig als de Azure Monitor resources die worden gebruikt door de spoke VNets worden gedeeld. 
+Hub-spoke-topologies kunnen het probleem van DNS-overschrijvingen voorkomen door een Private Link in te stellen op het hub (hoofd)VNet, in plaats van een Private Link voor elk VNet afzonderlijk in te stellen. Deze installatie is vooral zinvol als de Azure Monitor die worden gebruikt door de spoke-VNets worden gedeeld. 
 
-![Hub en spoke-single-PE](./media/private-link-security/hub-and-spoke-with-single-private-endpoint.png)
+![Hub-and-spoke-single-PE](./media/private-link-security/hub-and-spoke-with-single-private-endpoint.png)
 
 > [!NOTE]
-> U kunt opzettelijk afzonderlijke persoonlijke koppelingen maken voor uw spoke-VNets, bijvoorbeeld om elk VNet toegang te geven tot een beperkt aantal bewakings bronnen. In dergelijke gevallen kunt u een speciaal privé-eind punt en AMPLS voor elk VNet maken, maar moet u ook controleren of ze niet dezelfde DNS-zones delen om DNS-onderdrukkingen te voor komen.
+> Mogelijk wilt u liever afzonderlijke privékoppelingen maken voor uw spoke-VNets, bijvoorbeeld om elk VNet toegang te geven tot een beperkte set bewakingsbronnen. In dergelijke gevallen kunt u een toegewezen privé-eindpunt en AMPLS maken voor elk VNet, maar moet u ook controleren of ze niet dezelfde DNS-zones delen om DNS-overschrijvingen te voorkomen.
 
 
-### <a name="consider-limits"></a>Beperkingen overwegen
+### <a name="consider-limits"></a>Limieten overwegen
 
-Zoals vermeld in [beperkingen en beperkingen](#restrictions-and-limitations), heeft het object AMPLS een aantal limieten, zoals wordt weer gegeven in de onderstaande topologie:
-* Elk VNet is verbonden met slechts **één** AMPLS-object.
-* AMPLS B is verbonden met persoonlijke eind punten van twee VNets (VNet2 en VNet3), met behulp van 2 van de 10 mogelijke particuliere endpoint-verbindingen.
-* AMPLS A maakt verbinding met twee werk ruimten en één toepassings inzicht onderdeel met behulp van 3 van de 50 mogelijke Azure Monitor bronnen verbindingen.
+Zoals vermeld in [Beperkingen heeft](#restrictions-and-limitations)het AMPLS-object een aantal limieten, zoals wordt weergegeven in de onderstaande topologie:
+* Elk VNet maakt verbinding met **slechts één** AMPLS-object.
+* AMPLS B is verbonden met privé-eindpunten van twee VNets (VNet2 en VNet3), met behulp van 2 van de 10 mogelijke privé-eindpuntverbindingen.
+* AMPLS A maakt verbinding met twee werkruimten en één Application Insight-onderdeel, met behulp van 3 van de 50 mogelijke Azure Monitor resourcesverbindingen.
 * Workspace2 maakt verbinding met AMPLS A en AMPLS B, met behulp van 2 van de 5 mogelijke AMPLS-verbindingen.
 
 ![Diagram van AMPLS-limieten](./media/private-link-security/ampls-limits.png)
 
 
-## <a name="example-connection"></a>Voorbeeld verbinding
+## <a name="example-connection"></a>Voorbeeldverbinding
 
-Maak eerst een Azure Monitor-bron voor een persoonlijk koppelings bereik.
+Begin met het maken van een Azure Monitor Private Link Scope-resource.
 
-1. Ga naar **een resource maken** in de Azure Portal en zoek naar **Azure monitor persoonlijk koppelings bereik**.
+1. Ga naar **Een resource maken** in Azure Portal en zoek naar Azure Monitor Private Link **Bereik.**
 
-   ![Azure Monitor bereik van een persoonlijke koppeling zoeken](./media/private-link-security/ampls-find-1c.png)
+   ![Bereik Azure Monitor Private Link zoeken](./media/private-link-security/ampls-find-1c.png)
 
 2. Selecteer **Maken**.
-3. Kies een abonnement en resource groep.
-4. Geef een naam op voor de AMPLS. U kunt het beste een duidelijke en duidelijke naam gebruiken, zoals ' AppServerProdTelem '.
+3. Kies een abonnement en resourcegroep.
+4. Geef de AMPLS een naam. U kunt het beste een betekenisvolle en duidelijke naam gebruiken, zoals 'AppServerProdTelem'.
 5. Selecteer **Controleren + maken**. 
 
-   ![Azure Monitor bereik voor persoonlijke koppelingen maken](./media/private-link-security/ampls-create-1d.png)
+   ![Een Azure Monitor Private Link maken](./media/private-link-security/ampls-create-1d.png)
 
-6. Laat de validatie slagen en selecteer vervolgens **maken**.
+6. Laat de validatie slagen en selecteer vervolgens **Maken.**
 
-### <a name="connect-azure-monitor-resources"></a>Azure Monitor-resources verbinden
+### <a name="connect-azure-monitor-resources"></a>Verbinding maken Azure Monitor resources
 
-Verbind Azure Monitor resources (Log Analytics werk ruimten en Application Insights onderdelen) met uw AMPLS.
+Verbind Azure Monitor resources (Log Analytics-werkruimten en Application Insights onderdelen) met uw AMPLS.
 
-1. Selecteer in uw Azure Monitor bereik voor persoonlijke koppelingen **Azure monitor resources** in het menu aan de linkerkant. Selecteer de knop **Add**.
-2. Voeg de werk ruimte of het onderdeel toe. Als u de knop **toevoegen** selecteert, wordt er een dialoog venster geopend waarin u Azure monitor resources kunt selecteren. U kunt door uw abonnementen en resource groepen bladeren of u kunt hun naam typen om deze te filteren. Selecteer de werk ruimte of het onderdeel en selecteer **Toep assen** om ze toe te voegen aan uw bereik.
+1. Selecteer in Azure Monitor Private Link bereik de **optie Azure Monitor Resources** in het menu aan de linkerkant. Selecteer de knop **Add**.
+2. Voeg de werkruimte of het onderdeel toe. Als u **de knop** Toevoegen selecteert, wordt een dialoogvenster weergegeven waarin u de Azure Monitor selecteren. U kunt bladeren door uw abonnementen en resourcegroepen, of u kunt de naam ervan typen om ze te filteren. Selecteer de werkruimte of het onderdeel en selecteer **Toepassen om** deze toe te voegen aan uw bereik.
 
-    ![Scherm afbeelding van een bereik UX selecteren](./media/private-link-security/ampls-select-2.png)
+    ![Schermopname van het selecteren van een bereik-UX](./media/private-link-security/ampls-select-2.png)
 
 > [!NOTE]
-> Als u Azure Monitor resources wilt verwijderen, moet u deze eerst loskoppelen van alle AMPLS-objecten waarmee ze zijn verbonden. Het is niet mogelijk om resources te verwijderen die zijn verbonden met een AMPLS.
+> Als u Azure Monitor resources wilt verwijderen, moet u ze eerst loskoppelen van alle AMPLS-objecten waar ze mee zijn verbonden. Het is niet mogelijk om resources te verwijderen die zijn verbonden met een AMPLS.
 
-### <a name="connect-to-a-private-endpoint"></a>Verbinding maken met een persoonlijk eind punt
+### <a name="connect-to-a-private-endpoint"></a>Verbinding maken met een privé-eindpunt
 
-Nu u resources hebt verbonden met uw AMPLS, maakt u een persoonlijk eind punt om verbinding te maken met ons netwerk. U kunt deze taak uitvoeren in het [Azure Portal persoonlijke koppelingen centrum](https://portal.azure.com/#blade/Microsoft_Azure_Network/PrivateLinkCenterBlade/privateendpoints)of binnen het bereik van uw Azure monitor persoonlijke koppeling, zoals in dit voor beeld wordt gedaan.
+Nu u resources hebt verbonden met uw AMPLS, maakt u een privé-eindpunt om ons netwerk te verbinden. U kunt deze taak uitvoeren in het [Azure Portal Private Link of](https://portal.azure.com/#blade/Microsoft_Azure_Network/PrivateLinkCenterBlade/privateendpoints)binnen uw Azure Monitor Private Link Bereik, zoals in dit voorbeeld.
 
-1. Selecteer in de resource voor uw bereik **persoonlijke eindpunt verbindingen** in het menu van de linkerkant. Selecteer **persoonlijk eind punt** om het proces voor het maken van een eind punt te starten. U kunt ook de verbindingen die in het persoonlijke koppelings centrum zijn gestart, goed keuren door ze te selecteren en **goed keuren** te selecteren.
+1. Selecteer in uw bereikresource **Privé-eindpuntverbindingen** in het menu aan de linkerkant van de resource. Selecteer **Privé-eindpunt om** het proces voor het maken van het eindpunt te starten. U kunt hier ook verbindingen goedkeuren die in het Private Link zijn gestart door ze te selecteren en Goedkeuren **te selecteren.**
 
-    ![Scherm opname van de UX-verbindingen van privé-eind punten](./media/private-link-security/ampls-select-private-endpoint-connect-3.png)
+    ![Schermopname van UX voor privé-eindpuntverbindingen](./media/private-link-security/ampls-select-private-endpoint-connect-3.png)
 
-2. Kies het abonnement, de resource groep en de naam van het eind punt en de regio waarin het moet worden opgenomen. De regio moet dezelfde regio zijn als het VNet waarmee u verbinding maakt.
+2. Kies het abonnement, de resourcegroep en de naam van het eindpunt en de regio waarin het moet zijn op te nemen. De regio moet dezelfde regio zijn als het VNet waar u verbinding mee maakt.
 
 3. Selecteer **Volgende: Resource**. 
 
-4. In het scherm resource,
+4. In het scherm Resource
 
-   a. Kies het **abonnement** dat uw Azure monitor persoonlijke bereik resource bevat. 
+   a. Kies het **abonnement dat** uw Azure Monitor privébereikresource bevat. 
 
-   b. Kies voor **resource type** **micro soft. Insights/privateLinkScopes**. 
+   b. Kies **Microsoft.insights/privateLinkScopes** als **resourcetype.** 
 
-   c. Kies in de vervolg keuzelijst **resource** uw persoonlijke-koppelings bereik dat u eerder hebt gemaakt. 
+   c. Kies in **de vervolgkeuzekeuzeruimte** van de resource Private Link bereik dat u eerder hebt gemaakt. 
 
-   d. Selecteer **volgende: configuratie >**.
-      ![Scherm opname van Selecteer persoonlijk eind punt maken](./media/private-link-security/ampls-select-private-endpoint-create-4.png)
+   d. Selecteer **Volgende: Configuratie >**.
+      ![Schermopname van Het privé-eindpunt maken selecteren](./media/private-link-security/ampls-select-private-endpoint-create-4.png)
 
-5. In het deel venster Configuratie,
+5. In het configuratiedeelvenster
 
-   a.    Kies het **virtuele netwerk** en het **subnet** dat u wilt verbinden met uw Azure monitor-resources. 
+   a.    Kies het **virtuele netwerk en** **subnet** dat u wilt verbinden met uw Azure Monitor resources. 
  
-   b.    Kies **Ja** om te **integreren met een privé-DNS-zone** en laat automatisch een nieuwe privé-DNS zone maken. De daad werkelijke DNS-zones kunnen afwijken van wat wordt weer gegeven in de onderstaande scherm afbeelding. 
+   b.    Kies **Ja** voor **Integreren met privé-DNS-zone** en laat automatisch een nieuwe Privé-DNS maken. De werkelijke DNS-zones kunnen verschillen van wat wordt weergegeven in de onderstaande schermopname. 
    > [!NOTE]
-   > Als u ervoor kiest **geen** DNS-records hand matig te beheren, moet u eerst uw persoonlijke koppeling instellen, met inbegrip van dit persoonlijke eind punt en de AMPLS-configuratie. Vervolgens configureer u uw DNS volgens de instructies in [DNS-configuratie van Azure-privé-eindpunt](../../private-link/private-endpoint-dns.md). Zorg ervoor dat u geen lege records maakt als voorbereiding voor het instellen van uw privékoppeling. De DNS-records die u maakt, kunnen bestaande instellingen overschrijven en de verbinding met Azure Monitor beïnvloeden.
+   > Als u Nee **kiest en** de DNS-records liever handmatig beheert, voltooit u eerst het instellen van uw Private Link, inclusief dit privé-eindpunt en de AMPLS-configuratie. Vervolgens configureer u uw DNS volgens de instructies in [DNS-configuratie van Azure-privé-eindpunt](../../private-link/private-endpoint-dns.md). Zorg ervoor dat u geen lege records maakt als voorbereiding voor het instellen van uw privékoppeling. De DNS-records die u maakt, kunnen bestaande instellingen overschrijven en de verbinding met Azure Monitor beïnvloeden.
  
    c.    Selecteer **Controleren + maken**.
  
-   d.    Laat de validatie slagen. 
+   d.    Validatie laten slagen. 
  
    e.    Selecteer **Maken**. 
 
-    ![Scherm opname van Details van het persoonlijke eind punt selecteren.](./media/private-link-security/ampls-select-private-endpoint-create-5.png)
+    ![Schermopname van De details van het privé-eindpunt selecteren.](./media/private-link-security/ampls-select-private-endpoint-create-5.png)
 
-U hebt nu een nieuw persoonlijk eind punt gemaakt dat is verbonden met deze AMPLS.
+U hebt nu een nieuw privé-eindpunt gemaakt dat is verbonden met deze AMPLS.
 
-## <a name="review-and-validate-your-private-link-setup"></a>De instellingen van uw persoonlijke koppelingen controleren en valideren
+## <a name="review-and-validate-your-private-link-setup"></a>De configuratie van uw Private Link controleren en valideren
 
-### <a name="reviewing-your-endpoints-dns-settings"></a>De DNS-instellingen van uw eind punt controleren
-Voor het persoonlijke eind punt dat u hebt gemaakt, moeten nu vier DNS-zones zijn geconfigureerd:
+### <a name="reviewing-your-endpoints-dns-settings"></a>De DNS-instellingen van uw eindpunt controleren
+Op het privé-eindpunt dat u hebt gemaakt, moeten nu vier DNS-zones zijn geconfigureerd:
 
-[![Scherm afbeelding van de DNS-zones van het privé-eind punt.](./media/private-link-security/private-endpoint-dns-zones.png)](./media/private-link-security/private-endpoint-dns-zones-expanded.png#lightbox)
+[![Schermopname van DNS-zones voor privé-eindpunten.](./media/private-link-security/private-endpoint-dns-zones.png)](./media/private-link-security/private-endpoint-dns-zones-expanded.png#lightbox)
 
-* privatelink-monitor-Azure-com
-* privatelink-OMS-operationeel inzicht-Azure-com
-* privatelink-ODS-operationeel inzicht-Azure-com
-* privatelink-agentsvc-Azure-Automation-net
+* privatelink-monitor-azure-com
+* privatelink-oms-opinsights-azure-com
+* privatelink-ods-opinsights-azure-com
+* privatelink-agentsvc-azure-automation-net
 
 > [!NOTE]
-> Elk van deze zones wijst specifieke Azure Monitor-eind punten toe aan privé IP-adressen uit de groep Ip's van het VNet. De IP-adressen die worden weer gegeven in de onderstaande afbeeldingen zijn alleen voor beelden. In plaats daarvan moet uw configuratie persoonlijke Ip's van uw eigen netwerk weer geven.
+> Elk van deze zones Azure Monitor specifieke eindpunten toe aan privé-IP's uit de pool van DEP's van het VNet. De IP-adressen die in de onderstaande afbeeldingen worden weergegeven, zijn slechts voorbeelden. Uw configuratie moet in plaats daarvan privé-IP's van uw eigen netwerk tonen.
 
-#### <a name="privatelink-monitor-azure-com"></a>Privatelink-monitor-Azure-com
-Deze zone heeft betrekking op de globale eind punten die worden gebruikt door Azure Monitor, wat betekent dat deze eind punten aanvragen behandelen waarbij alle resources worden onderzocht, niet een specifieke. Aan deze zone moeten eind punten zijn toegewezen voor:
-* `in.ai` -(Application Insights opname-eind punt wordt een wereld wijde en regionale vermelding weer gegeven
-* `api` -Application Insights en Log Analytics API-eind punt
-* `live` -Application Insights-eind punt Live Metrics
-* `profiler` -Application Insights Profiler-eind punt
-* `snapshot`-Application Insights moment opnamen van het eind punt [ ![ van de privé-DNS zone monitor-Azure-com.](./media/private-link-security/dns-zone-privatelink-monitor-azure-com.png)](./media/private-link-security/dns-zone-privatelink-monitor-azure-com-expanded.png#lightbox)
+#### <a name="privatelink-monitor-azure-com"></a>Privatelink-monitor-azure-com
+Deze zone heeft betrekking op de globale eindpunten die worden gebruikt door Azure Monitor, wat betekent dat deze eindpunten aanvragen verwerken met alle resources, niet met een specifieke. Aan deze zone moeten eindpunten zijn kaarten voor:
+* `in.ai` - (Application Insights opname-eindpunt ziet u een globale en regionale vermelding
+* `api` - Application Insights- en Log Analytics-API-eindpunt
+* `live` - Application Insights eindpunt voor live metrische gegevens
+* `profiler` - Application Insights profiler-eindpunt
+* `snapshot`- Application Insights eindpunt voor momentopnamen [ ![ Schermopname van Privé-DNS zone monitor-azure-com.](./media/private-link-security/dns-zone-privatelink-monitor-azure-com.png)](./media/private-link-security/dns-zone-privatelink-monitor-azure-com-expanded.png#lightbox)
 
-#### <a name="privatelink-oms-opinsights-azure-com"></a>privatelink-OMS-operationeel inzicht-Azure-com
-Deze zone heeft betrekking op werk ruimte-specifieke toewijzing aan OMS-eind punten. U ziet een vermelding voor elke werk ruimte die is gekoppeld aan de AMPLS die is verbonden met dit persoonlijke eind punt.
-[![Scherm opname van Privé-DNS zone OMS-operationeel inzicht-Azure-com.](./media/private-link-security/dns-zone-privatelink-oms-opinsights-azure-com.png)](./media/private-link-security/dns-zone-privatelink-oms-opinsights-azure-com-expanded.png#lightbox)
+#### <a name="privatelink-oms-opinsights-azure-com"></a>privatelink-oms-opinsights-azure-com
+Deze zone heeft betrekking op werkruimtespecifieke toewijzing aan OMS-eindpunten. Als het goed is, ziet u een vermelding voor elke werkruimte die is gekoppeld aan de AMPLS die is verbonden met dit privé-eindpunt.
+[![Schermopname Privé-DNS zone oms-opinsights-azure-com.](./media/private-link-security/dns-zone-privatelink-oms-opinsights-azure-com.png)](./media/private-link-security/dns-zone-privatelink-oms-opinsights-azure-com-expanded.png#lightbox)
 
-#### <a name="privatelink-ods-opinsights-azure-com"></a>privatelink-ODS-operationeel inzicht-Azure-com
-Deze zone heeft betrekking op werk ruimte-specifieke toewijzing aan ODS-eind punten-het opname-eind punt van Log Analytics. U ziet een vermelding voor elke werk ruimte die is gekoppeld aan de AMPLS die is verbonden met dit persoonlijke eind punt.
-[![Scherm opname van Privé-DNS zone ODS-operationeel inzicht-Azure-com.](./media/private-link-security/dns-zone-privatelink-ods-opinsights-azure-com.png)](./media/private-link-security/dns-zone-privatelink-ods-opinsights-azure-com-expanded.png#lightbox)
+#### <a name="privatelink-ods-opinsights-azure-com"></a>privatelink-ods-opinsights-azure-com
+Deze zone heeft betrekking op werkruimtespecifieke toewijzing aan ODS-eindpunten: het opname-eindpunt van Log Analytics. Als het goed is, ziet u een vermelding voor elke werkruimte die is gekoppeld aan de AMPLS die is verbonden met dit privé-eindpunt.
+[![Schermopname van Privé-DNS zone ods-opinsights-azure-com.](./media/private-link-security/dns-zone-privatelink-ods-opinsights-azure-com.png)](./media/private-link-security/dns-zone-privatelink-ods-opinsights-azure-com-expanded.png#lightbox)
 
-#### <a name="privatelink-agentsvc-azure-automation-net"></a>privatelink-agentsvc-Azure-Automation-net
-Deze zone heeft betrekking op werk ruimte-specifieke toewijzing aan de Agent service Automation-eind punten. U ziet een vermelding voor elke werk ruimte die is gekoppeld aan de AMPLS die is verbonden met dit persoonlijke eind punt.
-[![Scherm opname van Privé-DNS zone agent SVC-Azure-Automation-net.](./media/private-link-security/dns-zone-privatelink-agentsvc-azure-automation-net.png)](./media/private-link-security/dns-zone-privatelink-agentsvc-azure-automation-net-expanded.png#lightbox)
+#### <a name="privatelink-agentsvc-azure-automation-net"></a>privatelink-agentsvc-azure-automation-net
+Deze zone heeft betrekking op werkruimtespecifieke toewijzing aan de automatiserings-eindpunten van de agentservice. Als het goed is, ziet u een vermelding voor elke werkruimte die is gekoppeld aan de AMPLS die is verbonden met dit privé-eindpunt.
+[![Schermopname van Privé-DNS zoneagent svc-azure-automation-net.](./media/private-link-security/dns-zone-privatelink-agentsvc-azure-automation-net.png)](./media/private-link-security/dns-zone-privatelink-agentsvc-azure-automation-net-expanded.png#lightbox)
 
-### <a name="validating-you-are-communicating-over-a-private-link"></a>Controleren of u communiceert via een persoonlijke koppeling
-* Voor het valideren van uw aanvragen worden nu verzonden via het persoonlijke eind punt en naar de particuliere IP-toegewezen eind punten, kunt u deze bekijken met een netwerk tracering naar hulpprogram ma's of zelfs uw browser. Als u bijvoorbeeld probeert een query uit te voeren op uw werk ruimte of toepassing, moet u ervoor zorgen dat de aanvraag wordt verzonden naar het particuliere IP-adres dat is toegewezen aan het API-eind punt, in dit voor beeld *172.17.0.9*.
+### <a name="validating-you-are-communicating-over-a-private-link"></a>Valideren of u communiceert via een Private Link
+* Om te controleren of uw aanvragen nu worden verzonden via het privé-eindpunt en naar de privé-IP-eindpunten, kunt u deze controleren met een netwerktracking naar hulpprogramma's of zelfs uw browser. Wanneer u bijvoorbeeld probeert een query uit te voeren op uw werkruimte of toepassing, moet u ervoor zorgen dat de aanvraag wordt verzonden naar het privé-IP-adres dat is toegezonden aan het API-eindpunt. In dit voorbeeld is dit *172.17.0.9.*
 
-    Opmerking: sommige browsers gebruiken mogelijk andere DNS-instellingen (Zie [DNS-instellingen](#browser-dns-settings)voor de browser). Controleer of de DNS-instellingen van toepassing zijn.
+    Opmerking: sommige browsers kunnen andere DNS-instellingen gebruiken (zie [BROWSER-DNS-instellingen).](#browser-dns-settings) Zorg ervoor dat uw DNS-instellingen van toepassing zijn.
 
-* Als u er zeker van wilt zijn dat uw werk ruimte of onderdeel geen aanvragen van open bare netwerken ontvangt (niet verbonden via AMPLS), stelt u de open bare opname-en query vlaggen van de resource in op *Nee* , zoals wordt uitgelegd in [toegang beheren vanuit het bereik van particuliere koppelingen](#manage-access-from-outside-of-private-links-scopes).
+* Om ervoor te zorgen dat uw werkruimte of onderdeel geen aanvragen ontvangt van openbare netwerken (niet verbonden  via AMPLS), stelt u de openbare opname en queryvlaggen van de resource in op Nee, zoals uitgelegd in Toegang beheren van buiten [privékoppelingsbereiken.](#manage-access-from-outside-of-private-links-scopes)
 
-* Gebruik van een-client op uw beveiligde netwerk `nslookup` naar een van de eind punten die worden vermeld in uw DNS-zones. De DNS-server moet worden omgezet naar de toegewezen privé-IP-adressen in plaats van de open bare IP-adressen die standaard worden gebruikt.
+* Gebruik vanaf een client in uw beveiligde netwerk naar een van de eindpunten die `nslookup` worden vermeld in uw DNS-zones. Deze moet door uw DNS-server worden opgelost naar de toe te voegen privé-IP's in plaats van de openbare IP's die standaard worden gebruikt.
 
 
 ## <a name="configure-log-analytics"></a>Log Analytics configureren
 
-Ga naar Azure Portal. In het menu van de Log Analytics werkruimte resource bevindt zich aan de linkerkant een item met de naam **netwerk isolatie** . Vanuit dit menu kunt u twee verschillende statussen beheren.
+Ga naar Azure Portal. In het resourcemenu van uw Log Analytics-werkruimte staat aan de linkerkant een item met de naam Netwerkisolatie.  U kunt twee verschillende staten in dit menu bepalen.
 
-![LA-netwerk isolatie](./media/private-link-security/ampls-log-analytics-lan-network-isolation-6.png)
+![LA-netwerkisolatie](./media/private-link-security/ampls-log-analytics-lan-network-isolation-6.png)
 
-### <a name="connected-azure-monitor-private-link-scopes"></a>Verbonden Azure Monitor scopes voor persoonlijke koppelingen
-Alle bereiken die zijn verbonden met de werk ruimte, worden weer gegeven in dit scherm. Als u verbinding maakt met scopes (AMPLSs), kan netwerk verkeer van het virtuele netwerk dat is verbonden met elke AMPLS, worden bereikt in deze werk ruimte. Het maken van een verbinding via hier heeft hetzelfde effect als het instellen ervan op het bereik, zoals we hebben gedaan [met het verbinden van Azure monitor resources](#connect-azure-monitor-resources). Als u een nieuwe verbinding wilt toevoegen, selecteert u **toevoegen** en selecteert u het Azure monitor bereik voor persoonlijke koppelingen. Selecteer **Toep assen** om de verbinding te maken. Een werk ruimte kan verbinding maken met 5 AMPLS-objecten, zoals vermeld in [beperkingen en beperkingen](#restrictions-and-limitations). 
+### <a name="connected-azure-monitor-private-link-scopes"></a>Verbonden Azure Monitor Private Link bereiken
+Alle scopes die zijn verbonden met de werkruimte, worden in dit scherm weergegeven. Door verbinding te maken met bereiken (AMPLS's) kan netwerkverkeer van het virtuele netwerk dat is verbonden met elke AMPLS deze werkruimte bereiken. Het maken van een verbinding via hier heeft hetzelfde effect als het instellen ervan op het bereik, zoals we hebben gedaan in Verbinding maken [met Azure Monitor resources.](#connect-azure-monitor-resources) Als u een nieuwe verbinding wilt toevoegen, **selecteert u Toevoegen** en selecteert u Azure Monitor Private Link Bereik. Selecteer **Toepassen om** verbinding te maken. Houd er rekening mee dat een werkruimte verbinding kan maken met 5 AMPLS-objecten, zoals vermeld in [Beperkingen en beperkingen.](#restrictions-and-limitations) 
 
-### <a name="manage-access-from-outside-of-private-links-scopes"></a>Toegang beheren vanaf buiten persoonlijke koppelingen bereiken
-De instellingen in het onderste gedeelte van deze pagina bepalen de toegang vanaf open bare netwerken, wat betekent dat netwerken niet zijn verbonden via de hierboven vermelde bereiken. Instelling **toestaan dat open bare netwerk toegang** **niet** kan worden opgenomen in de opname van logboeken van computers buiten de verbonden bereiken. Instelling **toestaan dat open bare netwerk toegang voor query's** is ingesteld op **geen** blokkeert query's die afkomstig zijn van computers buiten de scopes. Dit omvat query's die worden uitgevoerd via werkmappen, Dash boards, client ervaringen op basis van API, inzichten in de Azure Portal, en meer. Ervaringen die worden uitgevoerd buiten de Azure Portal, en die query Log Analytics gegevens moeten ook worden uitgevoerd binnen het persoonlijk gekoppelde VNET.
+### <a name="manage-access-from-outside-of-private-links-scopes"></a>Toegang beheren van buiten het bereik van privékoppelingen
+De instellingen aan het onderste gedeelte van deze pagina bepalen de toegang vanaf openbare netwerken, wat betekent dat netwerken die niet zijn verbonden via de hierboven vermelde bereiken. Instelling **Openbare netwerktoegang voor opname toestaan** op Geen blokkeert opname van logboeken van computers buiten de verbonden bereiken.  Als **u Openbare netwerktoegang voor query's toestaan instelt** **op** Nee, worden query's die afkomstig zijn van computers buiten de bereiken, niet blokkeert. Dit omvat query's die worden uitgevoerd via werkmappen, dashboards, op API gebaseerde clientervaringen, inzichten in de Azure Portal en meer. Ervaringen die buiten de Azure Portal worden uitgevoerd en die query's uitvoeren op Log Analytics-gegevens moeten ook worden uitgevoerd binnen het privé-gekoppelde VNET.
 
 ### <a name="exceptions"></a>Uitzonderingen
-Het beperken van de toegang zoals hierboven is uitgelegd, is niet van toepassing op de Azure Resource Manager en heeft daarom de volgende beperkingen:
-* Toegang tot gegevens: Hoewel het blok keren/toestaan van query's van open bare netwerken op de meeste Log Analytics-ervaringen van toepassing is, kunnen sommige gegevens query's uitvoeren via Azure Resource Manager en daarom geen query uitvoeren op gegevens tenzij persoonlijke koppelings instellingen worden toegepast op de Resource Manager, ook al is de functie binnenkort beschikbaar. Voor beelden zijn Azure Monitor oplossingen, werkmappen en inzichten en de LogicApp-connector.
-* Werkruimte beheer-werk ruimte-instelling en configuratie wijzigingen (waaronder het inschakelen van deze toegangs instellingen in-of uitschakelen) worden beheerd door Azure Resource Manager. Beperk de toegang tot werk ruimte beheer met de juiste rollen, machtigingen, netwerk besturings elementen en controle. Zie [Azure monitor rollen, machtigingen en beveiliging](../roles-permissions-security.md)voor meer informatie.
+Toegang beperken zoals hierboven wordt uitgelegd, is niet van toepassing op Azure Resource Manager en heeft daarom de volgende beperkingen:
+* Toegang tot gegevens: hoewel het blokkeren/toestaan van query's van openbare netwerken van toepassing is op de meeste Log Analytics-ervaringen, wordt in sommige ervaringen een query uitgevoerd op gegevens via Azure Resource Manager en kunnen er daarom geen query's worden uitgevoerd op gegevens tenzij Private Link-instellingen ook worden toegepast op de Resource Manager (de functie komt binnenkort beschikbaar). Voorbeelden zijn Azure Monitor oplossingen, Werkmappen en Inzichten en de LogicApp-connector.
+* Werkruimtebeheer: wijzigingen in de werkruimte-instellingen en configuratie (inclusief het in- of uitschakelen van deze toegangsinstellingen) worden beheerd door Azure Resource Manager. Beperk de toegang tot werkruimtebeheer met behulp van de juiste rollen, machtigingen, netwerkbesturingselementen en controle. Zie rollen, machtigingen Azure Monitor [beveiliging voor meer informatie.](../roles-permissions-security.md)
 
 > [!NOTE]
-> Logboeken en metrische gegevens die zijn geüpload naar een werk ruimte via [Diagnostische instellingen](../essentials/diagnostic-settings.md) , gaan over een beveiligd persoonlijk micro soft-kanaal en worden niet beheerd door deze instellingen.
+> Logboeken en metrische gegevens [](../essentials/diagnostic-settings.md) die via diagnostische instellingen naar een werkruimte worden geüpload, gaan via een beveiligd privé-Microsoft-kanaal en worden niet beheerd door deze instellingen.
 
-### <a name="log-analytics-solution-packs-download"></a>Downloaden van Log Analytics oplossingen pakketten
+### <a name="log-analytics-solution-packs-download"></a>Log Analytics-oplossingspakketten downloaden
 
-Als u de Log Analytics-agent wilt toestaan om oplossings pakketten te downloaden, voegt u de juiste FQDN-namen toe aan de acceptatie lijst van de firewall. 
+Als u wilt toestaan dat de Log Analytics-agent oplossingspakketten downloadt, voegt u de juiste volledig gekwalificeerde domeinnamen toe aan de toegestane firewalllijst. 
 
 
 | Cloudomgeving | Agentresource | Poorten | Richting |
@@ -238,83 +238,87 @@ Als u de Log Analytics-agent wilt toestaan om oplossings pakketten te downloaden
 |Azure Government | usbn1oicore.blob.core.usgovcloudapi.net | 443 |  Uitgaand
 |Azure China 21Vianet      | mceast2oicore.blob.core.chinacloudapi.cn| 443 | Uitgaand
 
+
+>[!NOTE]
+> Vanaf 19 april 2021 is de bovenstaande instelling niet meer vereist en kunt u het opslagaccount voor oplossingspakketten bereiken via de privékoppeling. Voor de nieuwe mogelijkheid moeten de AMPLS (op 19 april 2021 of hoger) en het privé-eindpunt er opnieuw mee worden verbonden. Deze is niet van toepassing op bestaande AMPLS's en privé-eindpunten.
+
 ## <a name="configure-application-insights"></a>Application Insights configureren
 
-Ga naar Azure Portal. In uw Azure Monitor Application Insights onderdeel resource is een menu opdracht **netwerk isolatie** aan de linkerkant. Vanuit dit menu kunt u twee verschillende statussen beheren.
+Ga naar Azure Portal. In uw Azure Monitor Application Insights onderdeelresource staat een menu-item **Netwerkisolatie** aan de linkerkant. U kunt twee verschillende staten in dit menu bepalen.
 
-![AI-netwerk isolatie](./media/private-link-security/ampls-application-insights-lan-network-isolation-6.png)
+![AI-netwerkisolatie](./media/private-link-security/ampls-application-insights-lan-network-isolation-6.png)
 
-Eerst kunt u deze Application Insights-resource verbinden met Azure Monitor persoonlijke koppelings bereik waartoe u toegang hebt. Selecteer **toevoegen** en selecteer het **Azure monitor bereik voor persoonlijke koppelingen**. Selecteer Toep assen om de verbinding te maken. Alle verbonden bereiken worden in dit scherm weer gegeven. Als u deze verbinding maakt, is netwerk verkeer in de verbonden virtuele netwerken mogelijk om dit onderdeel te bereiken. Dit heeft hetzelfde effect als het verbinden van het bereik op basis van de verbinding met [Azure monitor-resources](#connect-azure-monitor-resources). 
+Ten eerste kunt u deze Application Insights verbinden met Azure Monitor Private Link bereiken waar u toegang tot hebt. Selecteer **Toevoegen** en selecteer Azure Monitor Private Link **Bereik.** Selecteer Toepassen om er verbinding mee te maken. Alle verbonden scopes worden in dit scherm weergegeven. Door deze verbinding te maken, kan netwerkverkeer in de verbonden virtuele netwerken dit onderdeel bereiken. Dit heeft hetzelfde effect als het verbinden ervan vanuit het bereik als in [Connecting Azure Monitor resources](#connect-azure-monitor-resources). 
 
-Ten tweede kunt u bepalen hoe deze bron bereikbaar kan zijn vanaf buiten de eerder vermelde AMPLS-scopes. Als u het **toestaan van open bare netwerk toegang** hebt ingesteld op **Nee**, kunnen machines of sdk's buiten de verbonden bereiken geen gegevens uploaden naar dit onderdeel. Als u het **toestaan van open bare netwerk toegang voor query's** op **Nee** instelt, hebben computers buiten de scopes geen toegang tot gegevens in deze Application Insights bron. Deze gegevens omvatten de toegang tot APM-logboeken, meet gegevens en de Live Metrics stream, evenals ervaring op het niveau van werk bladen, Dash boards, query's op basis van API-client ervaringen, inzichten in de Azure Portal, en meer. 
-
-> [!NOTE]
-> Niet-Portal-ervaringen moeten ook worden uitgevoerd op het persoonlijk gekoppelde VNET dat de bewaakte werk belastingen bevat.
-
-U moet resources toevoegen die de bewaakte werk belastingen hosten voor de privé-koppeling. Zie bijvoorbeeld privé- [eind punten gebruiken voor Azure-web-app](../../app-service/networking/private-endpoint.md).
-
-Het beperken van de toegang op deze manier is alleen van toepassing op gegevens in de Application Insights resource. Configuratie wijzigingen, zoals het inschakelen van deze toegangs instellingen in-of uitschakelen, worden echter beheerd door Azure Resource Manager. U moet de toegang tot Resource Manager dus beperken met behulp van de juiste rollen, machtigingen, netwerk besturings elementen en controle. Zie [Azure monitor rollen, machtigingen en beveiliging](../roles-permissions-security.md)voor meer informatie.
+Vervolgens kunt u bepalen hoe deze resource kan worden bereikt buiten de eerder vermelde PRIVATE Link-bereiken (AMPLS). Als u **Openbare netwerktoegang voor** opname toestaan in stelt op Nee, kunnen computers of SDK's buiten de verbonden bereiken geen gegevens uploaden naar dit onderdeel.  Als u Openbare **netwerktoegang voor** query's toestaan in stelt op **Nee,** hebben computers buiten de bereiken geen toegang tot gegevens in Application Insights resource. Deze gegevens omvatten toegang tot APM-logboeken, metrische gegevens en de live stream met metrische gegevens, evenals ervaringen die erop zijn gebouwd, zoals werkmappen, dashboards, clientervaringen op basis van query's op API Azure Portal, inzichten in de Azure Portal en meer. 
 
 > [!NOTE]
-> Als u op werk ruimte gebaseerde Application Insights volledig wilt beveiligen, moet u de toegang tot Application Insights resource en de onderliggende Log Analytics-werk ruimte vergren delen.
+> Verbruikservaringen buiten de portal moeten ook worden uitgevoerd op het privé-gekoppelde VNET met de bewaakte workloads.
+
+U moet resources die de bewaakte workloads hosten, toevoegen aan de privékoppeling. Zie bijvoorbeeld Using [Private Endpoints for Azure Web App (Privé-eindpunten gebruiken voor Azure Web App).](../../app-service/networking/private-endpoint.md)
+
+Toegang op deze manier beperken is alleen van toepassing op gegevens in Application Insights resource. Configuratiewijzigingen, waaronder het in- of uitschakelen van deze toegangsinstellingen, worden echter beheerd door Azure Resource Manager. Daarom moet u de toegang tot Resource Manager met behulp van de juiste rollen, machtigingen, netwerkbesturingselementen en controle. Zie rollen, machtigingen Azure Monitor [beveiliging voor meer informatie.](../roles-permissions-security.md)
+
+> [!NOTE]
+> Als u werkruimten volledig wilt beveiligen Application Insights, moet u zowel de toegang tot Application Insights resource als de onderliggende Log Analytics-werkruimte vergrendelen.
 >
-> Voor diagnostische gegevens op code niveau (Profiler/Debugger) moet u [uw eigen opslag account opgeven](../app/profiler-bring-your-own-storage.md) ter ondersteuning van een persoonlijke koppeling.
+> Voor diagnostische gegevens op codeniveau (profiler/debugger) moet u uw eigen opslagaccount verstrekken ter ondersteuning van Private Link. [](../app/profiler-bring-your-own-storage.md)
 
-### <a name="handling-the-all-or-nothing-nature-of-private-links"></a>Het afhandelen van de alle-of-Nothing-aard van privé koppelingen
-Zoals beschreven in [het plannen van de instelling van uw persoonlijke koppeling](#planning-your-private-link-setup), het instellen van een persoonlijke koppeling voor een enkele resource is van invloed op alle Azure monitor bronnen in die netwerken, en in andere netwerken die dezelfde DNS delen. Dit kan een onboarding-proces lastig maken. Houd rekening met de volgende opties:
+### <a name="handling-the-all-or-nothing-nature-of-private-links"></a>De aard Van alles of niets van privékoppelingen afhandelen
+Zoals uitgelegd in Uw [Private Link-installatie](#planning-your-private-link-setup)plannen, is het instellen van een Private Link zelfs voor één resource van invloed op alle Azure Monitor-resources in die netwerken en in andere netwerken die dezelfde DNS delen. Dit gedrag kan uw onboardingproces lastig maken. Houd rekening met de volgende opties:
 
-* Alles op de eenvoudigste en veiligste manier is om al uw Application Insights onderdelen toe te voegen aan de AMPLS. Voor onderdelen waarvan u ook nog steeds toegang wilt hebben tot andere netwerken, laat u de vlaggen openbaar Internet toegang voor opname/query toestaan ingesteld op Ja (de standaard instelling).
-* Netwerken isoleren: als u (of kunt uitlijnen met) met spoke vnets, volgt u de instructies in [hub-spoke-netwerk topologie in azure](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke). Stel vervolgens afzonderlijke instellingen voor persoonlijke koppelingen in de relevante spoke-VNets in. Zorg ervoor dat u ook DNS-zones scheidt, omdat het delen van DNS-zones met andere spoke-netwerken leidt tot [DNS-onderdrukkingen](#the-issue-of-dns-overrides).
-* Aangepaste DNS-zones gebruiken voor specifieke apps: met deze oplossing kunt u Application Insights onderdelen selecteren via een privé-koppeling, waarbij al het verkeer via de open bare routes wordt bewaard.
-    - Stel een [aangepaste privé-DNS-zone](../../private-link/private-endpoint-dns.md)in en geef deze een unieke naam, bijvoorbeeld Internal.monitor.Azure.com
-    - Een AMPLS en een persoonlijk eind punt maken en ervoor kiezen om **niet** automatisch te integreren met privé-DNS
-    - Ga naar het persoonlijke eind punt-> DNS-configuratie en controleer de voorgestelde toewijzing van FQDN-namen.
-    - Kies Configuratie toevoegen en selecteer de internal.monitor.azure.com-zone die u zojuist hebt gemaakt
-    - Records toevoegen voor de bovenstaande ![ scherm afbeelding van de geconfigureerde DNS-zone](./media/private-link-security/private-endpoint-global-dns-zone.png)
-    - Ga naar het onderdeel Application Insights en kopieer de [verbindings reeks](../app/sdk-connection-string.md).
-    - Apps of scripts die dit onderdeel willen aanroepen via een privé-koppeling, moeten de connection string gebruiken met de EndpointSuffix = Internal. monitor. Azure. com
-* Wijs eind punten toe via hosts-bestanden in plaats van met DNS, om een persoonlijke koppeling alleen toegang te geven vanaf een specifieke machine/VM in uw netwerk:
-    - Stel een AMPLS en een persoonlijk eind punt in en kies ervoor om **niet** automatisch te integreren met privé-DNS 
-    - De bovenstaande records configureren op een computer waarop de app wordt uitgevoerd in het hosts-bestand
+* All in: de eenvoudigste en veiligste aanpak is om al uw Application Insights toe te voegen aan de AMPLS. Laat de vlaggen 'Openbare internettoegang toestaan voor opname/query' ingesteld op Ja (de standaardinstelling) voor onderdelen die u ook vanuit andere netwerken wilt openen.
+* Netwerken isoleren: als u met behulp van spoke vnets bent (of kunt uitlijnen met), volgt u de richtlijnen in [Hub-spoke-netwerktopologie in Azure](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke). Stel vervolgens afzonderlijke instellingen voor private link in de relevante spoke-VNets in. Zorg ervoor dat u ook DNS-zones scheidt, omdat het delen van DNS-zones met andere spoke-netwerken [dns-overschrijvingen veroorzaakt.](#the-issue-of-dns-overrides)
+* Aangepaste DNS-zones gebruiken voor specifieke apps: met deze oplossing hebt u toegang tot bepaalde Application Insights-onderdelen via een Private Link, terwijl al het andere verkeer via de openbare routes wordt behouden.
+    - Stel een aangepaste [privé-DNS-zone in](../../private-link/private-endpoint-dns.md)en geef deze een unieke naam, zoals internal.monitor.azure.com
+    - Maak een AMPLS en een privé-eindpunt en kies ervoor **om niet** automatisch te integreren met privé-DNS
+    - Ga naar Privé-eindpunt -> DNS-configuratie en bekijk de voorgestelde toewijzing van FQDN's.
+    - Kies Configuratie toevoegen en kies de zone internal.monitor.azure.com u zojuist hebt gemaakt
+    - Records toevoegen voor de bovenstaande ![ schermopname van de geconfigureerde DNS-zone](./media/private-link-security/private-endpoint-global-dns-zone.png)
+    - Ga naar uw Application Insights en kopieer de [verbindingsreeks](../app/sdk-connection-string.md).
+    - Apps of scripts die dit onderdeel via een Private Link willen aanroepen, moeten de connection string gebruiken met EndpointSuffix=internal.monitor.azure.com
+* Eindpunten via hosts-bestanden in plaats van DNS - om een Private Link alleen toegang vanaf een specifieke machine/VM in uw netwerk:
+    - Stel een AMPLS en een privé-eindpunt in en kies ervoor **om niet** automatisch te integreren met privé-DNS 
+    - Configureer de bovenstaande A-records op een computer met de app in het hosts-bestand
 
 
-## <a name="use-apis-and-command-line"></a>Api's en opdracht regel gebruiken
+## <a name="use-apis-and-command-line"></a>API's en opdrachtregel gebruiken
 
-U kunt het eerder beschreven proces automatiseren met Azure Resource Manager sjablonen, REST en opdracht regel interfaces.
+U kunt het eerder beschreven proces automatiseren met behulp Azure Resource Manager sjablonen, REST en opdrachtregelinterfaces.
 
-Als u privé-koppelings bereik wilt maken en beheren, gebruikt u de [rest API](/rest/api/monitor/private%20link%20scopes%20(preview)) of [Azure cli (AZ monitor private-link-scope)](/cli/azure/monitor/private-link-scope).
+Als u private link-scopes wilt maken en beheren, gebruikt [u de REST API](/rest/api/monitor/private%20link%20scopes%20(preview)) of Azure CLI [(az monitor private-link-scope).](/cli/azure/monitor/private-link-scope)
 
-Als u toegang tot het netwerk wilt beheren, gebruikt u de vlaggen `[--ingestion-access {Disabled, Enabled}]` en `[--query-access {Disabled, Enabled}]` op [log Analytics werk ruimten](/cli/azure/monitor/log-analytics/workspace) of [Application Insights onderdelen](/cli/azure/ext/application-insights/monitor/app-insights/component).
+Als u de netwerktoegang wilt beheren, gebruikt u de vlaggen `[--ingestion-access {Disabled, Enabled}]` `[--query-access {Disabled, Enabled}]` en in Log [Analytics-werkruimten](/cli/azure/monitor/log-analytics/workspace) [of Application Insights onderdelen](/cli/azure/ext/application-insights/monitor/app-insights/component).
 
-## <a name="collect-custom-logs-and-iis-log-over-private-link"></a>Aangepaste logboeken en IIS-logboek via persoonlijke koppeling verzamelen
+## <a name="collect-custom-logs-and-iis-log-over-private-link"></a>Aangepaste logboeken en IIS-logboeken verzamelen via Private Link
 
-Opslag accounts worden gebruikt in het opname proces van aangepaste Logboeken. Standaard worden door service beheerde opslag accounts gebruikt. Als u echter aangepaste logboeken op persoonlijke koppelingen wilt opnemen, moet u uw eigen opslag accounts gebruiken en deze koppelen aan Log Analytics werk ruimte (n). Meer informatie over het instellen van dergelijke accounts met behulp van de [opdracht regel](/cli/azure/monitor/log-analytics/workspace/linked-storage).
+Opslagaccounts worden gebruikt in het opnameproces van aangepaste logboeken. Standaard worden door de service beheerde opslagaccounts gebruikt. Als u aangepaste logboeken echter wilt opnemen in privékoppelingen, moet u uw eigen opslagaccounts gebruiken en deze koppelen aan Een of meer Log Analytics-werkruimten. Zie voor meer informatie over het instellen van dergelijke accounts met behulp van [de opdrachtregel](/cli/azure/monitor/log-analytics/workspace/linked-storage).
 
-Zie [opslag accounts van klanten die eigendom zijn van een logboek opname](private-storage.md) voor meer informatie over het inbrengen van uw eigen opslag account
+Zie Opslagaccounts van de klant voor logboekgegevens opnemen voor meer informatie over het meenemen van uw [eigen opslagaccount](private-storage.md)
 
 ## <a name="restrictions-and-limitations"></a>Beperkingen en limieten
 
 ### <a name="ampls"></a>AMPLS
-Het AMPLS-object heeft een aantal beperkingen waarmee u rekening moet houden bij het plannen van de configuratie van uw particuliere verbinding:
+Het AMPLS-object heeft een aantal limieten die u moet overwegen bij het plannen van Private Link installatie:
 
-* Een VNet kan alleen verbinding maken met één AMPLS-object. Dit betekent dat het AMPLS-object toegang moet bieden tot alle Azure Monitor bronnen waartoe het VNet toegang moet hebben.
-* Een Azure Monitor resource (werk ruimte of Application Insights onderdeel) kan Maxi maal 5 AMPLSs.
-* Een AMPLS-object kan Maxi maal 50 Azure Monitor resources worden verbonden.
-* Een AMPLS-object kan Maxi maal 10 persoonlijke eind punten verbinden.
+* Een VNet kan alleen verbinding maken met één AMPLS-object. Dit betekent dat het AMPLS-object toegang moet bieden tot alle Azure Monitor resources waar het VNet toegang toe moet hebben.
+* Een Azure Monitor resource (werkruimte of Application Insights) kan verbinding maken met 5 AMPL's.
+* Een AMPLS-object kan verbinding maken met 50 Azure Monitor resources.
+* Een AMPLS-object kan verbinding maken met 10 privé-eindpunten.
 
-Zie [limieten](#consider-limits) voor een diep gaande beoordeling van deze limieten.
+Zie [Limieten overwegen](#consider-limits) voor een diepere beoordeling van deze limieten.
 
 ### <a name="agents"></a>Agents
 
-De nieuwste versies van de Windows-en Linux-agents moeten worden gebruikt ter ondersteuning van beveiligde opname naar Log Analytics-werk ruimten. Oudere versies kunnen geen bewakings gegevens uploaden via een particulier netwerk.
+De nieuwste versies van de Windows- en Linux-agents moeten worden gebruikt ter ondersteuning van beveiligde opname in Log Analytics-werkruimten. Oudere versies kunnen geen bewakingsgegevens uploaden via een particulier netwerk.
 
 **Windows-agent voor Log Analytics**
 
-Gebruik de Log Analytics agent versie 10.20.18038.0 of hoger.
+Gebruik de Log Analytics-agent versie 10.20.18038.0 of hoger.
 
 **Linux-agent voor Log Analytics**
 
-Gebruik de agent versie 1.12.25 of hoger. Als dat niet het geval is, voert u de volgende opdrachten uit op de virtuele machine.
+Gebruik agentversie 1.12.25 of hoger. Als dat niet mogelijk is, voert u de volgende opdrachten uit op uw VM.
 
 ```cmd
 $ sudo /opt/microsoft/omsagent/bin/omsadmin.sh -X
@@ -323,23 +327,23 @@ $ sudo /opt/microsoft/omsagent/bin/omsadmin.sh -w <workspace id> -s <workspace k
 
 ### <a name="azure-portal"></a>Azure Portal
 
-Als u Azure Monitor Portal-ervaringen wilt gebruiken, zoals Application Insights en Log Analytics, moet u de uitbrei dingen voor Azure Portal en Azure Monitor toegankelijk maken voor de particuliere netwerken. Voeg **AzureActiveDirectory**-, **AzureResourceManager**-, **AzureFrontDoor. FirstParty**-en **AzureFrontDoor.** front-end- [service Tags](../../firewall/service-tags.md) toe aan uw netwerk beveiligings groep.
+Als u Azure Monitor portalervaringen zoals Application Insights en Log Analytics wilt gebruiken, moet u toestaan dat de Azure Portal- en Azure Monitor-extensies toegankelijk zijn in de particuliere netwerken. Voeg **azureActiveDirectory,** **AzureResourceManager,** **AzureFrontDoor.FirstParty** en **AzureFrontdoor.Frontend-servicetags** [toe](../../firewall/service-tags.md) aan uw netwerkbeveiligingsgroep.
 
 ### <a name="querying-data"></a>Query’s op gegevens uitvoeren
-De [ `externaldata` operator](/azure/data-explorer/kusto/query/externaldata-operator?pivots=azuremonitor) wordt niet ondersteund via een persoonlijke koppeling, omdat hiermee gegevens uit opslag accounts worden gelezen, maar niet wordt gegarandeerd dat de opslag privé wordt geopend.
+De [ `externaldata` operator](/azure/data-explorer/kusto/query/externaldata-operator?pivots=azuremonitor) wordt niet ondersteund voor een Private Link, omdat deze gegevens leest uit opslagaccounts, maar niet garandeert dat de opslag privé wordt gebruikt.
 
 ### <a name="programmatic-access"></a>Toegang op programmeerniveau
 
-Als u de REST API, [cli](/cli/azure/monitor) of Power shell met Azure monitor op particuliere netwerken wilt gebruiken, voegt u de [service Tags](../../virtual-network/service-tags-overview.md)  **AzureActiveDirectory** en **AzureResourceManager** toe aan uw firewall.
+Als u de REST API, [CLI](/cli/azure/monitor) of PowerShell wilt gebruiken met Azure Monitor in particuliere netwerken, voegt u de [servicetags](../../virtual-network/service-tags-overview.md)  **AzureActiveDirectory** en **AzureResourceManager toe** aan uw firewall.
 
-### <a name="application-insights-sdk-downloads-from-a-content-delivery-network"></a>Application Insights SDK-down loads van een Content Delivery Network
+### <a name="application-insights-sdk-downloads-from-a-content-delivery-network"></a>Application Insights SDK downloaden van een netwerk voor contentlevering
 
-Bundel de Java script-code in uw script zodat de browser geen code van een CDN probeert te downloaden. Er wordt een voor beeld gegeven op [github](https://github.com/microsoft/ApplicationInsights-JS#npm-setup-ignore-if-using-snippet-setup)
+Bundel de JavaScript-code in uw script, zodat de browser niet probeert code te downloaden van een CDN. Er wordt een voorbeeld gegeven op [GitHub](https://github.com/microsoft/ApplicationInsights-JS#npm-setup-ignore-if-using-snippet-setup)
 
 ### <a name="browser-dns-settings"></a>DNS-instellingen van browser
 
-Als u via een persoonlijke koppeling verbinding maakt met uw Azure Monitor-resources, moet het verkeer naar deze bronnen via het persoonlijke eind punt dat in uw netwerk is geconfigureerd worden door lopen. Als u het persoonlijke eind punt wilt inschakelen, werkt u de DNS-instellingen bij, zoals wordt uitgelegd in [verbinding maken met een persoonlijk eind punt](#connect-to-a-private-endpoint). Sommige browsers gebruiken hun eigen DNS-instellingen in plaats van degene die u instelt. De browser kan proberen verbinding te maken met Azure Monitor open bare eind punten en de persoonlijke koppeling volledig over te slaan. Controleer of uw browser instellingen geen oude DNS-instellingen overschrijven of in de cache opslaan. 
+Als u verbinding maakt met uw Azure Monitor-resources via een Private Link, moet verkeer naar deze resources via het privé-eindpunt gaan dat in uw netwerk is geconfigureerd. Als u het privé-eindpunt wilt inschakelen, moet u uw DNS-instellingen bijwerken zoals uitgelegd in [Verbinding maken met een privé-eindpunt.](#connect-to-a-private-endpoint) Sommige browsers gebruiken hun eigen DNS-instellingen in plaats van de instellingen die u in stelt. De browser probeert mogelijk verbinding te maken met Azure Monitor openbare eindpunten en de Private Link te omzeilen. Controleer of de instellingen van uw browsers oude DNS-instellingen niet overschrijven of in de cache opgeslagen. 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [privé opslag](private-storage.md)
+- Meer informatie over [privéopslag](private-storage.md)

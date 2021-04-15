@@ -8,13 +8,13 @@ ms.topic: quickstart
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: micflan
-ms.custom: contperf-fy21q2
-ms.openlocfilehash: 86f7bbbb52b1596e20fb1f3a67e42b2dd27c501a
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.custom: contperf-fy21q2, devx-track-azurecli
+ms.openlocfilehash: 9b73eeccad6d17df8c711671c56fbb7cee20b17a
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "103012599"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107484724"
 ---
 # <a name="quickstart-explore-and-analyze-costs-with-cost-analysis"></a>Quickstart: Kosten verkennen en analyseren met kostenanalyse
 
@@ -68,9 +68,9 @@ De initiële kostenanalyseweergave omvat de volgende gebieden.
 
 ### <a name="understand-forecast"></a>Prognose begrijpen
 
-Op basis van uw recente gebruik tonen kosten prognoses een projectie van de geschatte kosten voor de geselecteerde tijds periode. Als een budget wordt ingesteld voor de kosten analyse, kunt u weer geven wanneer de prognose van de uitgaven waarschijnlijk de budget drempel overschrijdt. Het prognose model kan toekomstige kosten voors pellen tot een jaar. Selecteer Filters om de gedetailleerde prognose kosten voor de geselecteerde dimensie weer te geven.
+Op basis van uw recente gebruik geven kostenprognoses een geschatte kostenraming weer voor de geselecteerde periode. Als er een budget is ingesteld in Kostenanalyse, kunt u zien wanneer de geraamde uitgaven waarschijnlijk de budgetdrempelwaarde overschrijden. Het prognosemodel kan toekomstige kosten voor maximaal een jaar voorspellen. Selecteer filters om de gedetailleerde geraamde kosten voor de geselecteerde dimensie weer te geven.
 
-Het prognose model is gebaseerd op een tijd reeks regressie model. Er zijn ten minste tien dagen van recente kosten- en gebruiksgegevens nodig om kosten nauwkeurig te kunnen schatten. Voor een bepaalde periode vereist het prognosemodel gelijke delen van trainingsgegevens voor de prognoseperiode. Voor een prognose van drie maanden bijvoorbeeld zijn ten minste drie maanden aan recente kosten- en gebruiksgegevens vereist.
+Het prognosemodel is gebaseerd op een regressiemodel voor tijdreeksen. Er zijn ten minste tien dagen van recente kosten- en gebruiksgegevens nodig om kosten nauwkeurig te kunnen schatten. Voor een bepaalde periode vereist het prognosemodel gelijke delen van trainingsgegevens voor de prognoseperiode. Voor een prognose van drie maanden bijvoorbeeld zijn ten minste drie maanden aan recente kosten- en gebruiksgegevens vereist.
 
 ## <a name="customize-cost-views"></a>Kostenweergaven aanpassen
 

@@ -10,13 +10,13 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 3/18/2021
 ms.author: sudbalas
-ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 3b148ac83b89850cad66bcd7254d385e655cc2fb
-ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
+ms.custom: devx-track-azurepowershell, devx-track-azurecli
+ms.openlocfilehash: 399f55d379f99a784fed97d7e9f72c456eb1f914
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105968744"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107484809"
 ---
 # <a name="azure-key-vault-backup"></a>Back-up voor Azure Key Vault
 
@@ -90,7 +90,7 @@ Volg de stappen in deze sectie voor het maken en herstellen van back-ups van obj
 5. Ga naar de locatie waar u de versleutelde blob hebt opgeslagen.
 6. Selecteer **OK**.
 
-## <a name="back-up-and-restore-from-the-azure-cli-or-azure-powershell"></a>Back-ups maken en herstellen vanuit Azure CLI of Azure PowerShell
+## <a name="back-up-and-restore-from-the-azure-cli-or-azure-powershell"></a>Back-up en herstel vanuit de Azure CLI of Azure PowerShell
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli

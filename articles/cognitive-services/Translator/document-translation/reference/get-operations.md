@@ -1,7 +1,7 @@
 ---
-title: Get-bewerkingen voor document vertalingen
+title: Get-bewerkingen voor documentvertaling
 titleSuffix: Azure Cognitive Services
-description: De methode Get Operations retourneert een lijst met verzonden batch-aanvragen en de status voor elke aanvraag.
+description: De methode get operations retourneert een lijst met verzonden batchaanvragen en de status voor elke aanvraag.
 services: cognitive-services
 author: jann-skotdal
 manager: nitinme
@@ -10,108 +10,108 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 03/25/2021
 ms.author: v-jansk
-ms.openlocfilehash: c42f3081a831c267c7bc605267b99e2a916ea3d8
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: fd7cee564aa3a00e21d1e707d08a18115d519925
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105612990"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107484673"
 ---
-# <a name="document-translation-get-operations"></a>Document vertaling: Get-bewerkingen
+# <a name="document-translation-get-operations"></a>Documentvertaling: bewerkingen uitvoeren
 
-De methode Get Operations retourneert een lijst met verzonden batch-aanvragen en de status voor elke aanvraag. Deze lijst bevat alleen batch-aanvragen die zijn ingediend door de gebruiker (op basis van het abonnement). De status voor elke aanvraag wordt gesorteerd op id.
+De methode Get Operations retourneert een lijst met verzonden batchaanvragen en de status voor elke aanvraag. Deze lijst bevat alleen batchaanvragen die door de gebruiker zijn ingediend (op basis van het abonnement). De status voor elke aanvraag wordt gesorteerd op id.
 
-Als het aantal aanvragen de paginerings limiet overschrijdt, wordt paginering aan de server zijde gebruikt. Gepagineerde reacties duiden op een gedeeltelijk resultaat en bevatten een vervolg token in het antwoord. Het ontbreken van een vervolg token betekent dat er geen extra pagina's beschikbaar zijn.
+Als het aantal aanvragen onze pagineringslimiet overschrijdt, wordt paginering aan de serverzijde gebruikt. Ge pagineerde antwoorden geven een gedeeltelijk resultaat aan en bevatten een vervolg-token in het antwoord. Het ontbreken van een vervolg-token betekent dat er geen extra pagina's beschikbaar zijn.
 
-$top-en $skip query parameters kunnen worden gebruikt om een aantal resultaten op te geven dat moet worden geretourneerd en een offset voor de verzameling.
+$top en $skip queryparameters kunnen worden gebruikt om een aantal te retourneren resultaten en een offset voor de verzameling op te geven.
 
-De server voldoet aan de waarden die zijn opgegeven door de client. Clients moeten echter worden voor bereid op het verwerken van antwoorden die een andere pagina grootte bevatten of een vervolg token bevatten.
+De server respecteert de waarden die zijn opgegeven door de client. Clients moeten echter worden voorbereid op het verwerken van antwoorden die een ander paginaformaat of een vervolg-token bevatten.
 
-Als zowel $top als $skip zijn opgenomen, moet de server eerst $skip Toep assen en vervolgens $top in de verzameling. 
+Wanneer zowel $top als $skip zijn opgenomen, moet de server eerst $skip toepassen en vervolgens $top op de verzameling. 
 
 > [!NOTE]
-> Als de server $top en/of $skip niet kan controleren, moet de server een fout retour neren naar de client die hierover informeert in plaats van de query opties te negeren. Dit vermindert het risico dat de client hypo theses maakt over de gegevens die worden geretourneerd.
+> Als de server geen rekening kan houden met $top en/of $skip, moet de server een fout retourneren aan de client die erover informeert in plaats van alleen de queryopties te negeren. Dit vermindert het risico dat de client veronderstellingen maakt over de geretourneerde gegevens.
 
 ## <a name="request-url"></a>Aanvraag-URL
 
-Een `GET` aanvraag verzenden naar:
+Verzend een `GET` aanvraag naar:
 ```HTTP
 GET https://<NAME-OF-YOUR-RESOURCE>.cognitiveservices.azure.com/translator/text/batch/v1.0-preview.1/batches
 ```
 
-Meer informatie over hoe u uw [aangepaste domein naam](../get-started-with-document-translation.md#find-your-custom-domain-name)kunt vinden.
+Meer informatie over het vinden [van uw aangepaste domeinnaam](../get-started-with-document-translation.md#find-your-custom-domain-name).
 
 > [!IMPORTANT]
 >
-> * **Voor alle API-aanvragen voor de document Vertaal service is een aangepast domein eindpunt vereist**.
-> * U kunt het eind punt dat u hebt gevonden op uw Azure Portal bron _sleutels en de eindpunt_ pagina of het globale Translator-eind punt niet gebruiken `api.cognitive.microsofttranslator.com` om HTTP-aanvragen voor document omzetting te maken.
+> * **Voor alle API-aanvragen voor de documentvertalingsservice is een aangepast domein-eindpunt vereist.**
+> * U kunt het eindpunt op de pagina sleutels  en eindpunten van uw Azure Portal-resource, noch het globale translator-eindpunt, , gebruiken om HTTP-aanvragen te maken voor `api.cognitive.microsofttranslator.com` documentvertaling.
 
-## <a name="request-parameters"></a>Aanvraag parameters
+## <a name="request-parameters"></a>Aanvraagparameters
 
-Aanvraag parameters die zijn door gegeven voor de query reeks zijn:
+Aanvraagparameters die worden doorgegeven aan de queryreeks zijn:
 
 |Queryparameter|Vereist|Beschrijving|
 |--- |--- |--- |
-|$skip|Niet waar|De $skip vermeldingen in de verzameling overs Laan. Wanneer zowel $top als $skip worden opgegeven, wordt $skip eerst toegepast.|
-|$top|Niet waar|Neem de $top items in de verzameling. Wanneer zowel $top als $skip worden opgegeven, wordt $skip eerst toegepast.|
+|$skip|Niet waar|Sla de $skip in de verzameling over. Wanneer zowel $top als $skip worden opgegeven, $skip eerst toegepast.|
+|$top|Niet waar|Neem de $top in de verzameling. Wanneer zowel $top als $skip worden opgegeven, $skip eerst toegepast.|
 
 ## <a name="request-headers"></a>Aanvraagheaders
 
-Aanvraag headers zijn:
+Aanvraagheaders zijn:
 
 |Kopteksten|Beschrijving|
 |--- |--- |
-|Ocp-Apim-Subscription-Key|Header vereiste aanvraag|
+|Ocp-Apim-Subscription-Key|Vereiste aanvraagheader|
 
-## <a name="response-status-codes"></a>Antwoord status codes
+## <a name="response-status-codes"></a>Antwoordstatuscodes
 
-Hier volgen de mogelijke HTTP-status codes die een aanvraag retourneert.
+Hier volgen de mogelijke HTTP-statuscodes die een aanvraag retourneert.
 
-|Statuscode|Description|
+|Statuscode|Beschrijving|
 |--- |--- |
-|200|OK. De aanvraag is voltooid en de status van de bewerkingen wordt geretourneerd. HeadersRetry-After: integerETag: String|
-|400|Ongeldige aanvraag. Ongeldige aanvraag. Controleer de invoer parameters.|
-|401|Gasten. Controleer uw referenties.|
-|500|Interne server fout.|
-|Andere status codes|<ul><li>Te veel aanvragen</li><li>Tijdelijke server niet beschikbaar</li></ul>|
+|200|OK. Geslaagde aanvraag en retourneert de status van alle bewerkingen. HeadersRetry-After: integerETag: string|
+|400|Slechte aanvraag. Ongeldige aanvraag. Controleer de invoerparameters.|
+|401|Onbevoegde. Controleer uw referenties.|
+|500|Interne serverfout.|
+|Andere statuscodes|<ul><li>Te veel aanvragen</li><li>Server tijdelijk niet beschikbaar</li></ul>|
 
-## <a name="get-operations-response"></a>Respons voor bewerkingen ophalen
+## <a name="get-operations-response"></a>Antwoord op bewerkingen krijgen
 
-### <a name="successful-get-operations-response"></a>Het antwoord van de bewerking is voltooid
+### <a name="successful-get-operations-response"></a>Geslaagde reactie op get-bewerkingen
 
-De volgende informatie wordt geretourneerd in een geslaagde reactie.
+De volgende informatie wordt geretourneerd als een geslaagd antwoord.
 
 |Naam|Type|Beschrijving|
 |--- |--- |--- |
-|id|tekenreeks|De ID van de bewerking.|
-|createdDateTimeUtc|tekenreeks|Datum/tijd waarop bewerking is gemaakt.|
-|lastActionDateTimeUtc|tekenreeks|Datum en tijd waarop de status van de bewerking is bijgewerkt.|
-|status|Tekenreeks|Lijst met mogelijke statussen voor taak of document: <ul><li>Geannuleerd</li><li>Annuleren</li><li>Mislukt</li><li>NotStarted</li><li>Wordt uitgevoerd</li><li>Geslaagd</li><li>ValidationFailed</li></ul>|
-|samenvatting|StatusSummary[]|Samen vatting met de hieronder vermelde Details.|
-|samen vatting. totaal|geheel getal|Aantal van het totale aantal documenten.|
-|samen vatting. mislukt|geheel getal|Het aantal mislukte documenten.|
-|samen vatting. geslaagd|geheel getal|Het aantal documenten dat is vertaald.|
-|samen vatting. InProgress|geheel getal|Aantal documenten dat wordt uitgevoerd.|
-|Summary. notYetStarted|geheel getal|Het aantal documenten dat nog niet is begonnen met verwerken.|
-|samen vatting. geannuleerd|geheel getal|Het aantal geannuleerde documenten.|
-|Summary. totalCharacterCharged|geheel getal|Het totale aantal gefactureerde tekens.|
+|id|tekenreeks|Id van de bewerking.|
+|createdDateTimeUtc|tekenreeks|Datum/tijd van bewerking gemaakt.|
+|lastActionDateTimeUtc|tekenreeks|Datum/tijd waarin de status van de bewerking is bijgewerkt.|
+|status|Tekenreeks|Lijst met mogelijke statussen voor een taak of document: <ul><li>Geannuleerd</li><li>Annuleren</li><li>Mislukt</li><li>Niet gestart</li><li>Wordt uitgevoerd</li><li>Geslaagd</li><li>ValidationFailed</li></ul>|
+|samenvatting|StatusSummary[]|Samenvatting met de details die hieronder worden vermeld.|
+|summary.total|geheel getal|Telling van het totale aantal documenten.|
+|summary.failed|geheel getal|Het aantal documenten is mislukt.|
+|summary.success|geheel getal|Aantal documenten dat is vertaald.|
+|summary.inProgress|geheel getal|Aantal documenten dat wordt uitgevoerd.|
+|summary.notYetStarted|geheel getal|Aantal documenten dat nog niet is verwerkt.|
+|summary.cancelled|geheel getal|Aantal geannuleerde documenten.|
+|summary.totalCharacterCharged|geheel getal|Totaal aantal tekens dat in rekening wordt gebracht.|
 
-###<a name="error-response"></a>Fout bericht
+### <a name="error-response"></a>Foutbericht
 
-|Naam|Type|Description|
+|Naam|Type|Beschrijving|
 |--- |--- |--- |
-|code|tekenreeks|Opsommingen met fout codes op hoog niveau. Mogelijke waarden:<br/><ul><li>InternalServerError</li><li>InvalidArgument</li><li>InvalidRequest</li><li>RequestRateTooHigh</li><li>ResourceNotFound</li><li>ServiceUnavailable</li><li>Niet geautoriseerd</li></ul>|
-|message|tekenreeks|Hiermee wordt het fout bericht op hoog niveau opgehaald.|
-|stemming|tekenreeks|Hiermee wordt de bron van de fout opgehaald. Het is bijvoorbeeld ' documenten ' of ' document-id ' in het geval van een ongeldig document.|
-|innerError|InnerErrorV2|De nieuwe interne fout indeling, die voldoet aan Cognitive Services API-richt lijnen. Het bevat de vereiste eigenschappen Error code, Message en optionele eigenschappen target, Details (sleutel waarde-paar), interne fout (dit kan worden genest).|
-|innerError. code|tekenreeks|Hiermee wordt de fout teken reeks van code opgehaald.|
-|innerError. Message|tekenreeks|Hiermee wordt het fout bericht op hoog niveau opgehaald.|
+|code|tekenreeks|Enums met foutcodes op hoog niveau. Mogelijke waarden:<br/><ul><li>InternalServerError</li><li>InvalidArgument</li><li>InvalidRequest</li><li>RequestRateTooHigh</li><li>ResourceNotFound</li><li>ServiceUnavailable</li><li>Niet geautoriseerd</li></ul>|
+|message|tekenreeks|Haalt een foutbericht op hoog niveau op.|
+|Doel|tekenreeks|Haalt de bron van de fout op. Dit zijn bijvoorbeeld 'documenten' of 'document-id' in het geval van een ongeldig document.|
+|innerError|InnerErrorV2|Nieuwe interne foutindeling, die voldoet aan Cognitive Services API-richtlijnen. Het bevat de vereiste eigenschappen ErrorCode, bericht en optionele eigenschappen doel, details(sleutel-waardepaar), interne fout (dit kan worden genest).|
+|innerError.code|tekenreeks|Haalt de codefoutreeks op.|
+|innerError.message|tekenreeks|Haalt een foutbericht op hoog niveau op.|
 
 ## <a name="examples"></a>Voorbeelden
 
-### <a name="example-successful-response"></a>Voor beeld geslaagde reactie
+### <a name="example-successful-response"></a>Voorbeeld van geslaagd antwoord
 
-Hier volgt een voor beeld van een geslaagde reactie.
+Hier volgt een voorbeeld van een geslaagd antwoord.
 
 ```JSON
 {
@@ -135,11 +135,11 @@ Hier volgt een voor beeld van een geslaagde reactie.
 }
 ```
 
-### <a name="example-error-response"></a>Voorbeeld fout bericht
+### <a name="example-error-response"></a>Voorbeeld van een foutbericht
 
-Hier volgt een voor beeld van een fout bericht. Het schema voor andere fout codes is hetzelfde.
+Hier volgt een voorbeeld van een foutbericht. Het schema voor andere foutcodes is hetzelfde.
 
-Status code: 500
+Statuscode: 500
 
 ```JSON
 {
@@ -157,7 +157,7 @@ Status code: 500
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Volg onze Snelstartgids voor meer informatie over het gebruik van document vertalingen en de client bibliotheek.
+Volg onze quickstart voor meer informatie over het gebruik van Documentvertaling en de clientbibliotheek.
 
 > [!div class="nextstepaction"]
-> [Aan de slag met document vertalingen](../get-started-with-document-translation.md)
+> [Aan de slag met documentvertaling](../get-started-with-document-translation.md)

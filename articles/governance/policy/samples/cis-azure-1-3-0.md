@@ -1,23 +1,23 @@
 ---
-title: Details van de naleving van de regelgeving voor CIS Microsoft Azure Stichtings benchmark 1.3.0
-description: Details van de CIS-Microsoft Azure basis Bench Mark 1.3.0 reglementaire naleving ingebouwde initiatief. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 03/31/2021
+title: Details van naleving van regelgeving voor CIS Microsoft Azure Foundations Benchmark 1.3.0
+description: Details van het ingebouwde initiatief voor naleving van regelgeving Microsoft Azure CIS Microsoft Azure Foundations Benchmark 1.3.0. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
+ms.date: 04/14/2021
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 03e8d5ae24e379928910783f9638327f0b7a42dd
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: 3dc7578af93f36ba8f0400099bb21cdabdcffb70
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106091647"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107497724"
 ---
-# <a name="details-of-the-cis-microsoft-azure-foundations-benchmark-130-regulatory-compliance-built-in-initiative"></a>Details van de CIS-Microsoft Azure basis Bench Mark 1.3.0e naleving ingebouwde initiatief
+# <a name="details-of-the-cis-microsoft-azure-foundations-benchmark-130-regulatory-compliance-built-in-initiative"></a>Details van het ingebouwde initiatief voor naleving van regelgeving Microsoft Azure CIS Microsoft Azure Foundations Benchmark 1.3.0
 
-Het volgende artikel bevat informatie over de wijze waarop de Azure Policy regelgeving met betrekking tot naleving van voor Schriften is gekoppeld aan de **nalevings domeinen** en- **besturings elementen** in cis Microsoft Azure stichtings benchmark 1.3.0.
-Zie [CIS Microsoft Azure Stichting-benchmark 1.3.0](https://www.cisecurity.org/benchmark/azure/)voor meer informatie over deze nalevings standaard. Zie [Azure Policy-beleidsdefinitie](../concepts/definition-structure.md#type) en [Gedeelde verantwoordelijkheid in de Cloud](../../../security/fundamentals/shared-responsibility.md) om _Eigendom_ te begrijpen.
+In het volgende artikel wordt beschreven hoe Azure Policy ingebouwde initiatiefdefinitie voor naleving van regelgeving wordt toe te schrijven aan **nalevingsdomeinen** en besturingselementen **in** CIS Microsoft Azure Foundations Benchmark 1.3.0.
+Zie [CIS Microsoft Azure Foundations Benchmark 1.3.0](https://www.cisecurity.org/benchmark/azure/)voor meer informatie over deze nalevingsstandaard. Zie [Azure Policy-beleidsdefinitie](../concepts/definition-structure.md#type) en [Gedeelde verantwoordelijkheid in de Cloud](../../../security/fundamentals/shared-responsibility.md) om _Eigendom_ te begrijpen.
 
-De volgende toewijzingen bevinden zich in de CIS-1.3.0-besturings elementen voor de **Microsoft Azure Stichting** . Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifiek **nalevingsdomein** te gaan. Veel van de beheeropties worden geïmplementeerd met een [Azure Policy](../overview.md)-initiatiefdefinitie. Als u de complete initiatiefdefinitie wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities**.
-Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis Bench Mark-benchmark v 1.3.0** -naleving.
+De volgende toewijzingen zijn voor de **CIS Microsoft Azure Foundations Benchmark 1.3.0-besturingselementen.** Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifiek **nalevingsdomein** te gaan. Veel van de beheeropties worden geïmplementeerd met een [Azure Policy](../overview.md)-initiatiefdefinitie. Als u de complete initiatiefdefinitie wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities**.
+Zoek en selecteer vervolgens de definitie van het ingebouwde initiatief voor naleving van regelgeving **voor CIS Microsoft Azure Foundations Benchmark v1.3.0.**
 
 > [!IMPORTANT]
 > Elke beheeroptie hieronder is gekoppeld aan een of meer [Azure Policy](../overview.md)-definities.
@@ -42,7 +42,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 |---|---|---|---|
 |[MFA moet zijn ingeschakeld voor accounts met leesmachtigingen voor uw abonnement](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fe3576e28-8b17-4677-84c3-db2990658d64) |Schakel meervoudige verificatie (MFA) in voor alle abonnementsaccounts met leesmachtigingen om te voorkomen dat er inbreuk wordt gepleegd op accounts of resources. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableMFAForReadPermissions_Audit.json) |
 
-### <a name="ensure-guest-users-are-reviewed-on-a-monthly-basis"></a>Zorg ervoor dat gast gebruikers maandelijks worden gecontroleerd
+### <a name="ensure-guest-users-are-reviewed-on-a-monthly-basis"></a>Zorg ervoor dat gastgebruikers maandelijks worden beoordeeld
 
 **Id**: **Eigendom** van CIS Azure 1.3: Klant
 
@@ -54,7 +54,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 
 ### <a name="ensure-that-no-custom-subscription-owner-roles-are-created"></a>Controleren of er geen aangepaste rollen voor abonnementseigenaren zijn gemaakt
 
-**Id**: CIS Azure 1,21 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 1.21: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -62,7 +62,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 
 ## <a name="security-center"></a>Security Center
 
-### <a name="ensure-that-azure-defender-is-set-to-on-for-servers"></a>Zorg ervoor dat Azure Defender is ingesteld op on voor servers
+### <a name="ensure-that-azure-defender-is-set-to-on-for-servers"></a>Zorg ervoor Azure Defender is ingesteld op Aan voor servers
 
 **Id**: **Eigendom** van CIS Azure 2.1: Klant
 
@@ -70,7 +70,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 |---|---|---|---|
 |[Azure Defender voor servers moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F4da35fc9-c9e7-4960-aec9-797fe7d9051d) |Azure Defender voor servers biedt realtime beveiliging tegen bedreigingen voor serverworkloads. Ook worden aanbevelingen voor bescherming en waarschuwingen over verdachte activiteiten gegenereerd. |AuditIfNotExists, uitgeschakeld |[1.0.3](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableAdvancedThreatProtectionOnVM_Audit.json) |
 
-### <a name="ensure-that-azure-defender-is-set-to-on-for-app-service"></a>Zorg ervoor dat Azure Defender is ingesteld op in voor App Service
+### <a name="ensure-that-azure-defender-is-set-to-on-for-app-service"></a>Zorg ervoor Azure Defender is ingesteld op Aan voor App Service
 
 **Id**: **Eigendom** van CIS Azure 2.2: Klant
 
@@ -78,7 +78,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 |---|---|---|---|
 |[Azure Defender voor App Service moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F2913021d-f2fd-4f3d-b958-22354e2bdbcb) |Azure Defender voor App Service maakt gebruik van de schaal van de cloud en de zichtbaarheid die Azure als cloudprovider heeft om te controleren op veelvoorkomende aanvallen op web-apps. |AuditIfNotExists, uitgeschakeld |[1.0.3](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableAdvancedThreatProtectionOnAppServices_Audit.json) |
 
-### <a name="ensure-that-azure-defender-is-set-to-on-for-azure-sql-database-servers"></a>Zorg ervoor dat Azure Defender is ingesteld op on voor Azure SQL database-servers
+### <a name="ensure-that-azure-defender-is-set-to-on-for-azure-sql-database-servers"></a>Zorg ervoor Azure Defender is ingesteld op Aan voor Azure SQL databaseservers
 
 **Id**: **Eigendom** van CIS Azure 2.3: Klant
 
@@ -86,7 +86,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 |---|---|---|---|
 |[Azure Defender voor Azure SQL-databaseservers moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F7fe3b40f-802b-4cdd-8bd4-fd799c948cc2) |Azure Defender voor SQL biedt functionaliteit voor het opsporen en verhelpen van mogelijke databasebeveiligingsproblemen, het detecteren van afwijkende activiteiten die kunnen duiden op een bedreiging voor uw SQL-database en het detecteren en classificeren van gevoelige gegevens. |AuditIfNotExists, uitgeschakeld |[1.0.2](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableAdvancedDataSecurityOnSqlServers_Audit.json) |
 
-### <a name="ensure-that-azure-defender-is-set-to-on-for-sql-servers-on-machines"></a>Zorg ervoor dat Azure Defender is ingesteld op on voor SQL-servers op computers
+### <a name="ensure-that-azure-defender-is-set-to-on-for-sql-servers-on-machines"></a>Zorg ervoor Azure Defender is ingesteld op Aan voor SQL-servers op computers
 
 **Id**: **Eigendom** van CIS Azure 2.4: Klant
 
@@ -94,7 +94,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 |---|---|---|---|
 |[Azure Defender voor SQL-servers moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F6581d072-105e-4418-827f-bd446d56421b) |Azure Defender voor SQL biedt functionaliteit voor het opsporen en verhelpen van mogelijke databasebeveiligingsproblemen, het detecteren van afwijkende activiteiten die kunnen duiden op een bedreiging voor uw SQL-database en het detecteren en classificeren van gevoelige gegevens. |AuditIfNotExists, uitgeschakeld |[1.0.2](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableAdvancedDataSecurityOnSqlServerVirtualMachines_Audit.json) |
 
-### <a name="ensure-that-azure-defender-is-set-to-on-for-storage"></a>Zorg ervoor dat Azure Defender is ingesteld op on voor opslag
+### <a name="ensure-that-azure-defender-is-set-to-on-for-storage"></a>Zorg ervoor Azure Defender is ingesteld op Aan voor Opslag
 
 **Id**: **Eigendom** van CIS Azure 2.5: Klant
 
@@ -102,7 +102,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 |---|---|---|---|
 |[Azure Defender voor opslag moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F308fbb08-4ab8-4e67-9b29-592e93fb94fa) |Azure Defender voor opslag biedt functionaliteit voor het detecteren van ongebruikelijke en mogelijk schadelijke pogingen om toegang te verkrijgen tot of aanvallen op opslagaccounts. |AuditIfNotExists, uitgeschakeld |[1.0.3](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableAdvancedThreatProtectionOnStorageAccounts_Audit.json) |
 
-### <a name="ensure-that-azure-defender-is-set-to-on-for-kubernetes"></a>Zorg ervoor dat Azure Defender is ingesteld op on voor Kubernetes
+### <a name="ensure-that-azure-defender-is-set-to-on-for-kubernetes"></a>Zorg ervoor Azure Defender is ingesteld op Aan voor Kubernetes
 
 **Id**: **Eigendom** van CIS Azure 2.6: Klant
 
@@ -110,7 +110,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 |---|---|---|---|
 |[Azure Defender voor Kubernetes moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F523b5cd1-3e23-492f-a539-13118b6d1e3a) |Azure Defender voor Kubernetes biedt realtime-beveiliging tegen bedreigingen voor in containers geplaatste omgevingen. Ook worden waarschuwingen voor verdachte activiteiten gegenereerd. |AuditIfNotExists, uitgeschakeld |[1.0.3](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableAdvancedThreatProtectionOnKubernetesService_Audit.json) |
 
-### <a name="ensure-that-azure-defender-is-set-to-on-for-container-registries"></a>Zorg ervoor dat Azure Defender is ingesteld op aan voor container registers
+### <a name="ensure-that-azure-defender-is-set-to-on-for-container-registries"></a>Zorg ervoor Azure Defender is ingesteld op Aan voor containerregisters
 
 **Id**: **Eigendom** van CIS Azure 2.7: Klant
 
@@ -118,9 +118,9 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 |---|---|---|---|
 |[Azure Defender voor containerregisters moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc25d9a16-bc35-4e15-a7e5-9db606bf9ed4) |Azure Defender voor containerregisters biedt een functie voor het scannen op beveiligingsproblemen met installatiekopieën die in de afgelopen 30 dagen zijn opgehaald, naar uw register zijn gepusht of geïmporteerd, en geeft gedetailleerde resultaten per installatiekopie weer. |AuditIfNotExists, uitgeschakeld |[1.0.3](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableAdvancedThreatProtectionOnContainerRegistry_Audit.json) |
 
-### <a name="ensure-that-azure-defender-is-set-to-on-for-key-vault"></a>Zorg ervoor dat Azure Defender is ingesteld op in voor Key Vault
+### <a name="ensure-that-azure-defender-is-set-to-on-for-key-vault"></a>Zorg ervoor Azure Defender is ingesteld op Aan voor Key Vault
 
-**Id**: CIS Azure 2,8 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 2.8: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -128,13 +128,13 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 
 ### <a name="ensure-that-automatic-provisioning-of-monitoring-agent-is-set-to-on"></a>Zorg dat 'Automatische inrichting van bewakingsagent' is ingesteld op 'ingeschakeld'
 
-**Id**: CIS Azure 2,11 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 2.11: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
 |[Automatisch inrichten van de Log Analytics-agent moet zijn ingeschakeld voor uw abonnement](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F475aae12-b88a-4572-8b36-9b712b2b3a17) |Om te controleren op beveiligingsproblemen en bedreigingen verzamelt Azure Security Center gegevens van uw Azure-VM's. De gegevens worden verzameld met behulp van de Log Analytics-agent, voorheen bekend als de Microsoft Monitoring Agent (MMA), die verschillende configuraties en gebeurtenislogboeken met betrekking tot beveiliging van de machine leest en de gegevens kopieert naar uw Log Analytics-werkruimte voor analyse. U wordt aangeraden automatische inrichting in te schakelen om de agent automatisch te implementeren op alle ondersteunde Azure-VM‘s en eventuele nieuwe virtuele machines die worden gemaakt. |AuditIfNotExists, uitgeschakeld |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_Automatic_provisioning_log_analytics_monitoring_agent.json) |
 
-### <a name="ensure-additional-email-addresses-is-configured-with-a-security-contact-email"></a>Zorg ervoor dat er aanvullende e-mail adressen zijn geconfigureerd met een e-mail contact persoon voor beveiliging
+### <a name="ensure-additional-email-addresses-is-configured-with-a-security-contact-email"></a>Controleren of 'Extra e-mailadressen' is geconfigureerd met een e-mailadres van een contactpersoon voor beveiliging
 
 **Id**: **Eigendom** van CIS Azure 2.13: Klant
 
@@ -142,7 +142,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 |---|---|---|---|
 |[Abonnementen moeten een e-mailadres van contactpersonen voor beveiligingsproblemen bevatten](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F4f4f78b8-e367-4b10-a341-d9a4ad5cf1c7) |Om ervoor te zorgen dat de relevante personen in uw organisatie worden gewaarschuwd wanneer er sprake is van een mogelijke schending van de beveiliging in een van uw abonnementen, moet u een veiligheidscontact instellen die e-mailmeldingen van Security Center ontvangt. |AuditIfNotExists, uitgeschakeld |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_Security_contact_email.json) |
 
-### <a name="ensure-that-notify-about-alerts-with-the-following-severity-is-set-to-high"></a>Zorg ervoor dat ' waarschuwen over waarschuwingen met de volgende Ernst ' is ingesteld op hoog
+### <a name="ensure-that-notify-about-alerts-with-the-following-severity-is-set-to-high"></a>Zorg ervoor dat 'Waarschuwen over waarschuwingen met de volgende ernst' is ingesteld op 'Hoog'
 
 **Id**: **Eigendom** van CIS Azure 2.14: Klant
 
@@ -160,9 +160,9 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 |---|---|---|---|
 |[Beveiligde overdracht naar opslagaccounts moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F404c3081-a854-4457-ae30-26a93ef643f9) |Controleer de vereiste van beveiligde overdracht in uw opslagaccount. Beveiligde overdracht is een optie die afdwingt dat uw opslagaccount alleen aanvragen van beveiligde verbindingen (HTTPS) accepteert. Het gebruik van HTTPS zorgt voor verificatie tussen de server en de service en beveiligt gegevens tijdens de overdracht tegen netwerklaagaanvallen, zoals man-in-the-middle, meeluisteren en sessie-hijacking |Controleren, Weigeren, Uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Storage/Storage_AuditForHTTPSEnabled_Audit.json) |
 
-### <a name="ensure-that-public-access-level-is-set-to-private-for-blob-containers"></a>Zorg ervoor dat ' openbaar toegangs niveau ' is ingesteld op privé voor BLOB-containers
+### <a name="ensure-that-public-access-level-is-set-to-private-for-blob-containers"></a>Zorg ervoor dat Openbaar toegangsniveau is ingesteld op Privé voor blobcontainers
 
-**Id**: CIS Azure 3,5 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 3.5: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -170,11 +170,11 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 
 ### <a name="ensure-default-network-access-rule-for-storage-accounts-is-set-to-deny"></a>Controleren of de standaardregel voor netwerktoegang voor opslagaccounts is ingesteld op weigeren
 
-**Id**: CIS Azure 3,6 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 3.6: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Netwerktoegang tot opslagaccounts moet zijn beperkt](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F34c877ad-507e-4c82-993e-3452a6e0ad3c) |Netwerktoegang tot opslagaccounts moet worden beperkt. Configureer netwerkregels zo dat alleen toepassingen van toegestane netwerken toegang hebben tot het opslagaccount. Om verbindingen van specifieke internet-of on-premises clients toe te staan, kan toegang worden verleend aan verkeer van specifieke Azure Virtual Networks of voor open bare IP-adresbereiken voor Internet |Controleren, Weigeren, Uitgeschakeld |[1.1.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Storage/Storage_NetworkAcls_Audit.json) |
+|[Netwerktoegang tot opslagaccounts moet zijn beperkt](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F34c877ad-507e-4c82-993e-3452a6e0ad3c) |Netwerktoegang tot opslagaccounts moet worden beperkt. Configureer netwerkregels zo dat alleen toepassingen van toegestane netwerken toegang hebben tot het opslagaccount. Om verbindingen van specifieke internet- of on-premises clients toe te staan, kan toegang worden verleend tot verkeer van specifieke virtuele Azure-netwerken of tot ip-adresbereiken voor openbaar internet |Controleren, Weigeren, Uitgeschakeld |[1.1.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Storage/Storage_NetworkAcls_Audit.json) |
 |[Opslagaccounts moeten netwerktoegang beperken met behulp van regels voor virtuele netwerken](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F2a1a9cdf-e04d-429a-8416-3bfb72a1b26f) |Bescherm uw opslagaccounts tegen mogelijke dreigingen met regels voor virtuele netwerken als voorkeursmethode, in plaats van filteren op basis van IP-adressen. Als u filteren basis van IP-adressen niet toestaat, hebben openbare IP-adressen geen toegang tot uw opslagaccounts. |Controleren, Weigeren, Uitgeschakeld |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Storage/StorageAccountOnlyVnetRulesEnabled_Audit.json) |
 
 ### <a name="ensure-trusted-microsoft-services-is-enabled-for-storage-account-access"></a>Controleren of vertrouwde Microsoft-services zijn ingeschakeld voor toegang tot het opslagaccount
@@ -185,19 +185,19 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 |---|---|---|---|
 |[Opslagaccounts moeten toegang uit vertrouwde Microsoft-services toestaan](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc9d007d0-c057-4772-b18c-01e546713bcd) |Sommige Microsoft-services die communiceren met opslagaccounts, werken vanuit netwerken waaraan geen toegang kan worden verleend via netwerkregels. Om dit type service goed te laten werken, moet u de set vertrouwde Microsoft-services toestaan om de netwerkregels over te slaan. Deze services gebruiken vervolgens sterke verificatie om toegang te krijgen tot het opslagaccount. |Controleren, Weigeren, Uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Storage/StorageAccess_TrustedMicrosoftServices_Audit.json) |
 
-### <a name="ensure-storage-for-critical-data-are-encrypted-with-customer-managed-key"></a>Zorg ervoor dat opslag voor essentiële gegevens wordt versleuteld met door de klant beheerde sleutel
+### <a name="ensure-storage-for-critical-data-are-encrypted-with-customer-managed-key"></a>Zorg ervoor dat opslag voor kritieke gegevens is versleuteld met door de klant beheerde sleutel
 
-**Id**: CIS Azure 3,9 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 3.9: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Opslag accounts moeten door de klant beheerde sleutel gebruiken voor versleuteling](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F6fac406b-40ca-413b-bf8e-0bf964659c25) |Beveilig uw opslag account met meer flexibiliteit met door de klant beheerde sleutels. Wanneer u een door klant beheerde sleutel opgeeft, wordt die sleutel gebruikt voor het beveiligen en beheren van de toegang tot de sleutel waarmee uw gegevens worden versleuteld. Het gebruik van door de klant beheerde sleutels biedt extra mogelijkheden voor het beheren van de rotatie van de sleutel versleutelings sleutel of het cryptografisch wissen van gegevens. |Controle, uitgeschakeld |[1.0.2](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Storage/StorageAccountCustomerManagedKeyEnabled_Audit.json) |
+|[Opslagaccounts moeten een door de klant beheerde sleutel gebruiken voor versleuteling](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F6fac406b-40ca-413b-bf8e-0bf964659c25) |Beveilig uw opslagaccount met meer flexibiliteit met behulp van door de klant beheerde sleutels. Wanneer u een door klant beheerde sleutel opgeeft, wordt die sleutel gebruikt voor het beveiligen en beheren van de toegang tot de sleutel waarmee uw gegevens worden versleuteld. Het gebruik van door de klant beheerde sleutels biedt extra mogelijkheden voor het beheer van de rotatie van de sleutelversleutelingssleutel of het cryptografisch wissen van gegevens. |Controle, uitgeschakeld |[1.0.2](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Storage/StorageAccountCustomerManagedKeyEnabled_Audit.json) |
 
 ## <a name="database-services"></a>Databaseservices
 
 ### <a name="ensure-that-auditing-is-set-to-on"></a>Controleren of 'Controle' is ingesteld op 'Aan'
 
-**Id**: CIS Azure 4.1.1 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 4.1.1: Klant 
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -205,7 +205,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 
 ### <a name="ensure-that-data-encryption-is-set-to-on-on-a-sql-database"></a>Controleren of 'gegevensversleuteling' is ingesteld op 'ingeschakeld' op een SQL Database
 
-**Id**: CIS Azure 4.1.2 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 4.1.2: Klant 
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -213,33 +213,33 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 
 ### <a name="ensure-that-auditing-retention-is-greater-than-90-days"></a>Controleren of de bewaarperiode van de 'Controle' 'groter is dan 90 dagen'
 
-**Id**: CIS Azure 4.1.3 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 4.1.3: Klant 
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[SQL-servers met controle naar het opslag account doel moeten worden geconfigureerd met een retentie van 90 dagen of hoger](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F89099bee-89e0-4b26-a5f4-165451757743) |Voor het onderzoeken van incidenten wordt aangeraden om de gegevens retentie voor uw SQL Server ' auditing to Storage account Destination ' in te stellen op ten minste 90 dagen. Bevestig dat u voldoet aan de vereiste Bewaar regels voor de regio's waarin u werkt. Dit is soms vereist om te voldoen aan de regelgevings normen. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServerAuditingRetentionDays_Audit.json) |
+|[SQL-servers met controle naar opslagaccountbestemming moeten worden geconfigureerd met een bewaarperiode van 90 dagen of hoger](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F89099bee-89e0-4b26-a5f4-165451757743) |Voor onderzoek naar incidenten wordt u aangeraden de gegevensretentie voor de controle van uw SQL Server in te stellen op de opslagaccountbestemming op ten minste 90 dagen. Controleer of u aan de benodigde bewaarregels voor de regio's waar u werkt, na komt. Dit is soms vereist voor naleving van regelgevingsstandaarden. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServerAuditingRetentionDays_Audit.json) |
 
-### <a name="ensure-that-advanced-threat-protection-atp-on-a-sql-server-is-set-to-enabled"></a>Zorg ervoor dat Advanced Threat Protection (ATP) op een SQL-Server is ingesteld op ingeschakeld
+### <a name="ensure-that-advanced-threat-protection-atp-on-a-sql-server-is-set-to-enabled"></a>Zorg ervoor dat Advanced Threat Protection (ATP) op een SQL-server is ingesteld op Ingeschakeld
 
-**Id**: CIS Azure 4.2.1 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 4.2.1: Klant 
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
 |[Advanced Data Security moet zijn ingeschakeld voor SQL Managed Instance](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fabfb7388-5bf4-4ad7-ba99-2cd2f41cebb9) |Controleer elke SQL Managed Instance zonder Advanced Data Security. |AuditIfNotExists, uitgeschakeld |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlManagedInstance_AdvancedDataSecurity_Audit.json) |
 |[Advanced Data Security moet zijn ingeschakeld op uw SQL-servers](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fabfb4388-5bf4-4ad7-ba82-2cd2f41ceae9) |SQL-servers zonder Advanced Data Security controleren |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServer_AdvancedDataSecurity_Audit.json) |
 
-### <a name="ensure-that-vulnerability-assessment-va-is-enabled-on-a-sql-server-by-setting-a-storage-account"></a>Zorg ervoor dat de evaluatie van beveiligings problemen (VA) is ingeschakeld op een SQL-Server door een opslag account in te stellen
+### <a name="ensure-that-vulnerability-assessment-va-is-enabled-on-a-sql-server-by-setting-a-storage-account"></a>Zorg ervoor dat evaluatie van beveiligingsleed (VA) is ingeschakeld op een SQL-server door een opslagaccount in te stellen
 
-**Id**: CIS Azure 4.2.2 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 4.2.2: Klant 
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
 |[Evaluatie van beveiligingsproblemen moet zijn ingeschakeld voor SQL Managed Instance](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1b7aa243-30e4-4c9e-bca8-d0d3022b634a) |Controleer elke SQL Managed Instance waarvoor geen terugkerende evaluatie van beveiligingsproblemen is ingeschakeld. Met een evaluatie van beveiligingsproblemen kunt u potentiële beveiligingsproblemen van de database detecteren, bijhouden en herstellen. |AuditIfNotExists, uitgeschakeld |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/VulnerabilityAssessmentOnManagedInstance_Audit.json) |
 |[De evaluatie van beveiligingsproblemen moet worden ingeschakeld op uw SQL-servers](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fef2a8f2a-b3d9-49cd-a8a8-9a3aaaf647d9) |Controleer Azure SQL-servers waarvoor geen terugkerende evaluatie van beveiligingsproblemen is ingeschakeld. Met een evaluatie van beveiligingsproblemen kunt u potentiële beveiligingsproblemen van de database detecteren, bijhouden en herstellen. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/VulnerabilityAssessmentOnServer_Audit.json) |
 
-### <a name="ensure-that-va-setting-send-scan-reports-to-is-configured-for-a-sql-server"></a>Zorg ervoor dat de optie voor het verzenden van scan rapporten voor de VA-instelling voor een SQL-Server is geconfigureerd
+### <a name="ensure-that-va-setting-send-scan-reports-to-is-configured-for-a-sql-server"></a>Zorg ervoor dat de VA-instelling Scanrapporten verzenden naar is geconfigureerd voor een SQL-server
 
-**Id**: CIS Azure 4.2.4 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 4.2.4: Klant 
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -247,7 +247,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 
 ### <a name="ensure-enforce-ssl-connection-is-set-to-enabled-for-postgresql-database-server"></a>Controleren of ‘SSL-verbinding afdwingen’ is ingesteld op ‘INGESCHAKELD’ voor PostgreSQL-databaseservers
 
-**Id**: CIS Azure 4.3.1 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 4.3.1: Klant 
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -255,7 +255,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 
 ### <a name="ensure-enforce-ssl-connection-is-set-to-enabled-for-mysql-database-server"></a>Controleren of ‘SSL-verbinding afdwingen’ is ingesteld op "INGESCHAKELD" voor MySQL-databaseserver
 
-**Id**: CIS Azure 4.3.2 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 4.3.2: Klant 
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -263,7 +263,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 
 ### <a name="ensure-server-parameter-log_checkpoints-is-set-to-on-for-postgresql-database-server"></a>Controleren of de serverparameter ‘log_checkpoints’ is ingesteld op AAN voor PostgreSQL-databaseserver
 
-**Id**: CIS Azure 4.3.3 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 4.3.3: Klant 
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -271,7 +271,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 
 ### <a name="ensure-server-parameter-log_connections-is-set-to-on-for-postgresql-database-server"></a>Controleren of de serverparameter ‘log_connections’ is ingesteld op ‘AAN’ voor PostgreSQL-databaseserver
 
-**Id**: CIS Azure 4.3.4 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 4.3.4: Klant 
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -279,7 +279,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 
 ### <a name="ensure-server-parameter-log_disconnections-is-set-to-on-for-postgresql-database-server"></a>Controleren of dat de serverparameter ‘log_disconnections’ is ingesteld op ‘AAN’ voor PostgreSQL-databaseserver
 
-**Id**: CIS Azure 4.3.5 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 4.3.5: Klant 
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -287,7 +287,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 
 ### <a name="ensure-server-parameter-connection_throttling-is-set-to-on-for-postgresql-database-server"></a>Controleren of de serverparameter ‘connection_throttling’ is ingesteld op ‘AAN" voor PostgreSQL-databaseserver
 
-**Id**: CIS Azure 4.3.6 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 4.3.6: Klant 
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -301,7 +301,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 |---|---|---|---|
 |[Een Azure Active Directory-beheerder moet worden ingericht voor SQL-servers](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1f314764-cb73-4fc9-b863-8eca98ac36e9) |Controleer inrichting van een Azure Active Directory-beheerder voor uw SQL-Server om Azure AD-verificatie in te schakelen. Azure AD-verificatie maakt vereenvoudigd beheer van machtigingen en gecentraliseerd identiteitsbeheer van databasegebruikers en andere Microsoft-services mogelijk |AuditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SQL_DB_AuditServerADAdmins_Audit.json) |
 
-### <a name="ensure-sql-servers-tde-protector-is-encrypted-with-customer-managed-key"></a>Controleren of de TDE-beveiliging van SQL Server is versleuteld met door de klant beheerde sleutel
+### <a name="ensure-sql-servers-tde-protector-is-encrypted-with-customer-managed-key"></a>Zorg ervoor dat de TDE-beveiliging van de SQL-server is versleuteld met een door de klant beheerde sleutel
 
 **Id**: **Eigendom** van CIS Azure 4.5: Klant
 
@@ -312,7 +312,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 
 ## <a name="logging-and-monitoring"></a>Logboekregistratie en bewaking
 
-### <a name="ensure-the-storage-container-storing-the-activity-logs-is-not-publicly-accessible"></a>Zorg ervoor dat de opslag container die de activiteiten logboeken opslaat, niet openbaar toegankelijk is
+### <a name="ensure-the-storage-container-storing-the-activity-logs-is-not-publicly-accessible"></a>Zorg ervoor dat de opslagcontainer die de activiteitenlogboeken opslaat, niet openbaar toegankelijk is
 
 **Id**: **Eigendom** van CIS Azure 5.1.3: Klant
 
@@ -330,11 +330,11 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 
 ### <a name="ensure-that-logging-for-azure-keyvault-is-enabled"></a>Controleren of logboekregistratie van Azure-sleutelkluis is 'ingeschakeld'
 
-**Id**: CIS Azure 5.1.5 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 5.1.5: Klant 
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Bron Logboeken in Key Vault moeten worden ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fcf820ca0-f99e-4f3e-84fb-66e913812d21) |Het inschakelen van bron logboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_AuditDiagnosticLog_Audit.json) |
+|[Resourcelogboeken in Key Vault moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fcf820ca0-f99e-4f3e-84fb-66e913812d21) |Inschakelen van resourcelogboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_AuditDiagnosticLog_Audit.json) |
 
 ### <a name="ensure-that-activity-log-alert-exists-for-create-policy-assignment"></a>Controleren of er een waarschuwing voor een activiteitenlogboek bestaat voor het maken van beleidstoewijzing
 
@@ -344,7 +344,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 |---|---|---|---|
 |[Er moet een waarschuwing voor activiteitenlogboeken bestaan voor specifieke beleidsbewerkingen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc5447c04-a4d7-4ba8-a263-c9ee321a6858) |Met dit beleid worden specifieke beleidsbewerkingen gecontroleerd waarvoor geen waarschuwingen voor activiteitenlogboeken zijn geconfigureerd. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_PolicyOperations_Audit.json) |
 
-### <a name="ensure-that-activity-log-alert-exists-for-delete-policy-assignment"></a>Zorg ervoor dat er een waarschuwing voor activiteiten logboek bestaat voor het verwijderen van beleids toewijzing
+### <a name="ensure-that-activity-log-alert-exists-for-delete-policy-assignment"></a>Controleren of er een waarschuwing voor activiteitenlogboek bestaat voor het verwijderen van beleidstoewijzing
 
 **Id**: **Eigendom** van CIS Azure 5.2.2: Klant
 
@@ -408,24 +408,24 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 |---|---|---|---|
 |[Er moet een waarschuwing voor activiteitenlogboeken bestaan voor specifieke beheerbewerkingen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb954148f-4c11-4c38-8221-be76711e194a) |Met dit beleid worden specifieke beheerbewerkingen gecontroleerd waarvoor geen waarschuwingen voor activiteitenlogboeken zijn geconfigureerd. |AuditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_AdministrativeOperations_Audit.json) |
 
-### <a name="ensure-that-diagnostic-logs-are-enabled-for-all-services-which-support-it"></a>Zorg ervoor dat Diagnostische logboeken zijn ingeschakeld voor alle services die dit ondersteunen.
+### <a name="ensure-that-diagnostic-logs-are-enabled-for-all-services-which-support-it"></a>Zorg ervoor dat diagnostische logboeken zijn ingeschakeld voor alle services die dit ondersteunen.
 
-**Id**: CIS Azure 5,3 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 5.3: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
 |[Diagnostische logboeken in App Services moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb607c5de-e7d9-4eee-9e5c-83f1bcee4fa0) |De inschakeling van diagnostische logboeken in de app controleren. Hiermee kunt u voor onderzoeksdoeleinden activiteitensporen opnieuw maken als er een beveiligingsincident optreedt of als op uw netwerk is ingebroken |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_AuditLoggingMonitoring_Audit.json) |
-|[Bron Logboeken in Azure Data Lake Store moeten worden ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F057ef27e-665e-4328-8ea3-04b3122bd9fb) |Het inschakelen van bron logboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Data%20Lake/DataLakeStore_AuditDiagnosticLog_Audit.json) |
-|[Bron Logboeken in Azure Stream Analytics moeten worden ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff9be5368-9bf5-4b84-9e0a-7850da98bb46) |Het inschakelen van bron logboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Stream%20Analytics/StreamAnalytics_AuditDiagnosticLog_Audit.json) |
-|[Bron Logboeken in batch-accounts moeten worden ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F428256e6-1fac-4f48-a757-df34c2b3336d) |Het inschakelen van bron logboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Batch/Batch_AuditDiagnosticLog_Audit.json) |
-|[Bron Logboeken in Data Lake Analytics moeten worden ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc95c74d9-38fe-4f0d-af86-0c7d626a315c) |Het inschakelen van bron logboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Data%20Lake/DataLakeAnalytics_AuditDiagnosticLog_Audit.json) |
-|[Bron Logboeken in Event hub moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F83a214f7-d01a-484b-91a9-ed54470c9a6a) |Het inschakelen van bron logboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Event%20Hub/EventHub_AuditDiagnosticLog_Audit.json) |
-|[Bron Logboeken in IoT Hub moeten worden ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F383856f8-de7f-44a2-81fc-e5135b5c2aa4) |Het inschakelen van bron logboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[3.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Internet%20of%20Things/IoTHub_AuditDiagnosticLog_Audit.json) |
-|[Bron Logboeken in Key Vault moeten worden ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fcf820ca0-f99e-4f3e-84fb-66e913812d21) |Het inschakelen van bron logboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_AuditDiagnosticLog_Audit.json) |
-|[Bron Logboeken in Logic Apps moeten worden ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F34f95f76-5386-4de7-b824-0d8478470c9d) |Het inschakelen van bron logboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Logic%20Apps/LogicApps_AuditDiagnosticLog_Audit.json) |
-|[Bron Logboeken in Search Services moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb4330a05-a843-4bc8-bf9a-cacce50c67f4) |Het inschakelen van bron logboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Search/Search_AuditDiagnosticLog_Audit.json) |
-|[Bron Logboeken in Service Bus moeten worden ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff8d36e2f-389b-4ee4-898d-21aeb69a0f45) |Het inschakelen van bron logboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Service%20Bus/ServiceBus_AuditDiagnosticLog_Audit.json) |
-|[Bron Logboeken in Virtual Machine Scale Sets moeten worden ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F7c1b1214-f927-48bf-8882-84f0af6588b1) |Het verdient aanbeveling om Logboeken in te schakelen zodat het activiteitenspoor kan worden nagemaakt als er onderzoek is vereist na een incident of inbreuk. |AuditIfNotExists, uitgeschakeld |[2.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Compute/ServiceFabric_and_VMSS_AuditVMSSDiagnostics.json) |
+|[Resourcelogboeken in Azure Data Lake Store moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F057ef27e-665e-4328-8ea3-04b3122bd9fb) |Inschakelen van resourcelogboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Data%20Lake/DataLakeStore_AuditDiagnosticLog_Audit.json) |
+|[Resourcelogboeken in Azure Stream Analytics moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff9be5368-9bf5-4b84-9e0a-7850da98bb46) |Inschakelen van resourcelogboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Stream%20Analytics/StreamAnalytics_AuditDiagnosticLog_Audit.json) |
+|[Resourcelogboeken in Batch-accounts moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F428256e6-1fac-4f48-a757-df34c2b3336d) |Inschakelen van resourcelogboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Batch/Batch_AuditDiagnosticLog_Audit.json) |
+|[Resourcelogboeken in Data Lake Analytics moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc95c74d9-38fe-4f0d-af86-0c7d626a315c) |Inschakelen van resourcelogboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Data%20Lake/DataLakeAnalytics_AuditDiagnosticLog_Audit.json) |
+|[Resourcelogboeken in Event Hub moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F83a214f7-d01a-484b-91a9-ed54470c9a6a) |Inschakelen van resourcelogboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Event%20Hub/EventHub_AuditDiagnosticLog_Audit.json) |
+|[Resourcelogboeken in IoT Hub moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F383856f8-de7f-44a2-81fc-e5135b5c2aa4) |Inschakelen van resourcelogboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[3.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Internet%20of%20Things/IoTHub_AuditDiagnosticLog_Audit.json) |
+|[Resourcelogboeken in Key Vault moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fcf820ca0-f99e-4f3e-84fb-66e913812d21) |Inschakelen van resourcelogboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_AuditDiagnosticLog_Audit.json) |
+|[Resourcelogboeken in Logic Apps moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F34f95f76-5386-4de7-b824-0d8478470c9d) |Inschakelen van resourcelogboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Logic%20Apps/LogicApps_AuditDiagnosticLog_Audit.json) |
+|[Resourcelogboeken in Zoekservices moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb4330a05-a843-4bc8-bf9a-cacce50c67f4) |Inschakelen van resourcelogboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Search/Search_AuditDiagnosticLog_Audit.json) |
+|[Resourcelogboeken in Service Bus moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff8d36e2f-389b-4ee4-898d-21aeb69a0f45) |Inschakelen van resourcelogboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Service%20Bus/ServiceBus_AuditDiagnosticLog_Audit.json) |
+|[Resourcelogboeken in Virtual Machine Scale Sets moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F7c1b1214-f927-48bf-8882-84f0af6588b1) |Het verdient aanbeveling om Logboeken in te schakelen zodat het activiteitenspoor kan worden nagemaakt als er onderzoek is vereist na een incident of inbreuk. |AuditIfNotExists, uitgeschakeld |[2.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Compute/ServiceFabric_and_VMSS_AuditVMSSDiagnostics.json) |
 
 ## <a name="networking"></a>Netwerken
 
@@ -455,7 +455,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 
 ## <a name="virtual-machines"></a>Virtuele machines
 
-### <a name="ensure-virtual-machines-are-utilizing-managed-disks"></a>Zorg ervoor dat Virtual Machines worden gebruikt Managed Disks
+### <a name="ensure-virtual-machines-are-utilizing-managed-disks"></a>Zorg Virtual Machines gebruikmaakt van Managed Disks
 
 **Id**: **Eigendom** van CIS Azure 7.1: Klant
 
@@ -463,7 +463,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 |---|---|---|---|
 |[Controleer virtuele machines die niet gebruikmaken van beheerde schijven](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F06a78e20-9358-41c9-923c-fb736d382a4d) |Dit beleid controleert virtuele machines die niet gebruikmaken van beheerde schijven |controleren |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Compute/VMRequireManagedDisk_Audit.json) |
 
-### <a name="ensure-that-os-and-data-disks-are-encrypted-with-cmk"></a>Zorg ervoor dat de schijven van het besturings systeem en de gegevens zijn versleuteld met CMK
+### <a name="ensure-that-os-and-data-disks-are-encrypted-with-cmk"></a>Controleren of de besturingssysteem- en gegevensschijven zijn versleuteld met CMK
 
 **Id**: **Eigendom** van CIS Azure 7.2: Klant
 
@@ -471,7 +471,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 |---|---|---|---|
 |[Schijfversleuteling moet worden toegepast op virtuele machines](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0961003e-5a0a-4549-abde-af6a37f2724d) |Virtuele machines zonder ingeschakelde schijfversleuteling worden bewaakt via Azure Security Center als aanbevelingen. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_UnencryptedVMDisks_Audit.json) |
 
-### <a name="ensure-that-unattached-disks-are-encrypted-with-cmk"></a>Controleer of ' niet-gekoppelde schijven ' zijn versleuteld met CMK
+### <a name="ensure-that-unattached-disks-are-encrypted-with-cmk"></a>Controleren of 'Niet-vastgemaakte schijven' zijn versleuteld met CMK
 
 **Id**: **Eigendom** van CIS Azure 7.3: Klant
 
@@ -505,17 +505,17 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 
 ## <a name="other-security-considerations"></a>Andere beveiligingsoverwegingen
 
-### <a name="ensure-that-the-expiration-date-is-set-on-all-keys"></a>Zorg ervoor dat de verval datum is ingesteld op alle sleutels
+### <a name="ensure-that-the-expiration-date-is-set-on-all-keys"></a>Zorg ervoor dat de vervaldatum is ingesteld op alle sleutels
 
-**Id**: CIS Azure 8,1 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 8.1: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
 |[Key Vault-sleutels moeten een vervaldatum hebben](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F152b15f7-8e1f-4c1f-ab71-8c010ba5dbc0) |Cryptografische sleutels moeten een gedefinieerde vervaldatum hebben en mogen niet permanent zijn. Sleutels die altijd geldig zijn, bieden een potentiële aanvaller meer tijd om misbruik van de sleutel te maken. Het wordt aanbevolen vervaldatums voor cryptografische sleutels in te stellen. |Controleren, Weigeren, Uitgeschakeld |[1.0.1-preview](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/Keys_ExpirationSet.json) |
 
-### <a name="ensure-that-the-expiration-date-is-set-on-all-secrets"></a>Zorg ervoor dat de verval datum is ingesteld op alle geheimen
+### <a name="ensure-that-the-expiration-date-is-set-on-all-secrets"></a>Zorg ervoor dat de vervaldatum is ingesteld op alle geheimen
 
-**Id**: CIS Azure 8,2 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 8.2: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -626,7 +626,7 @@ Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis
 |[Controleren of de HTTP-versie de meest recente is, als deze wordt gebruikt om de Function-app uit te voeren](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fe2c1c086-2d84-4019-bff3-c44ccd95113c) |Er worden regelmatig nieuwere versies uitgebracht voor HTTP, ofwel vanwege de beveiligingsfouten ofwel om extra functionaliteit toe te voegen. Het gebruik van de nieuwste HTTP-versie voor web-apps wordt aanbevolen om te profiteren van beveiligingsfixes, indien van toepassing, en/of nieuwe functies van de nieuwste versie. Dit beleid is momenteel alleen van toepassing op Linux-web-apps. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_FunctionApp_Audit_HTTP_Latest.json) |
 |[Controleren of de HTTP-versie de meest recente is, als deze wordt gebruikt om de web-app te openen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F8c122334-9d20-4eb8-89ea-ac9a705b74ae) |Er worden regelmatig nieuwere versies uitgebracht voor HTTP, ofwel vanwege de beveiligingsfouten ofwel om extra functionaliteit toe te voegen. Het gebruik van de nieuwste HTTP-versie voor web-apps wordt aanbevolen om te profiteren van beveiligingsfixes, indien van toepassing, en/of nieuwe functies van de nieuwste versie. Dit beleid is momenteel alleen van toepassing op Linux-web-apps. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_WebApp_Audit_HTTP_Latest.json) |
 
-### <a name="ensure-ftp-deployments-are-disabled"></a>Zorg ervoor dat FTP-implementaties zijn uitgeschakeld
+### <a name="ensure-ftp-deployments-are-disabled"></a>Controleren of FTP-implementaties zijn uitgeschakeld
 
 **Id**: **Eigendom** van CIS Azure 9.10: Klant
 

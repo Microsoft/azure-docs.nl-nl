@@ -4,12 +4,12 @@ description: In deze zelfstudie opent u het lab dat is gemaakt met Azure DevTest
 ms.topic: tutorial
 ms.date: 06/26/2020
 ms.author: spelluru
-ms.openlocfilehash: b4477e0b98ef534b8170ee297edf88ac6fa62dd7
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 96d41b74b3c143feb64fc9c602de68182787c08b
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "85476441"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107379465"
 ---
 # <a name="tutorial-access-a-lab-in-azure-devtest-labs"></a>Zelfstudie: Een lab openen in Azure DevTest Labs
 In deze zelfstudie gebruikt u het lab dat is gemaakt in de [zelfstudie: Een lab maken in Azure DevTest Labs](tutorial-create-custom-lab.md).
@@ -46,7 +46,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 1. Selecteer de VM in de lijst. U ziet de **pagina Virtuele Machine** voor uw virtuele machine. Selecteer **Verbinding maken** op de werkbalk.
 
     ![Verbinding maken met de virtuele machine](./media/tutorial-use-custom-lab/connect-button.png)
-2. Sla het gedownloade **RDP**-bestand van de harde schijf op en gebruik het om verbinding te maken met de virtuele machine. Geef de gebruikersnaam en het wachtwoord op die u bij het maken van de VM in de vorige sectie hebt opgegeven. 
+2. Sla het gedownloade **RDP-bestand** op de harde schijf op en gebruik het om verbinding te maken met de virtuele machine. Geef de gebruikersnaam en het wachtwoord op die u bij het maken van de VM in de vorige sectie hebt opgegeven. 
 
     Als u verbinding wilt maken met een Linux-VM, moet SSH- en/of RDP-toegang worden ingeschakeld voor de virtuele machine. Zie, [Extern bureaublad installeren en configureren om verbinding te maken met een virtuele Linux-machine in Azure](../virtual-machines/linux/use-remote-desktop.md) voor stappen voor het maken van verbinding met een Linux-VM via RDP. 
 

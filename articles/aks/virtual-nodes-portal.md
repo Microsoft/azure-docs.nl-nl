@@ -1,35 +1,35 @@
 ---
-title: Virtuele knoop punten maken met behulp van de portal in azure Kubernetes Services (AKS)
-description: Meer informatie over het gebruik van de Azure Portal om een AKS-cluster (Azure Kubernetes Services) te maken dat virtuele knoop punten gebruikt voor het uitvoeren van een Peul.
+title: Virtuele knooppunten maken met behulp van de portal in Azure Kubernetes Services (AKS)
+description: Leer hoe u de Azure Portal om een AKS-cluster (Azure Kubernetes Services) te maken dat gebruikmaakt van virtuele knooppunten om pods uit te voeren.
 services: container-service
 ms.topic: conceptual
 ms.date: 03/15/2021
-ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: c1ecaa88dd5329d86818565983a6ba891a6d8424
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: references_regions
+ms.openlocfilehash: bfb9e4a9a7c788255ea7fcba0fb42404829f82f3
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104577819"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107379346"
 ---
-# <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-in-the-azure-portal"></a>Een AKS-cluster (Azure Kubernetes Services) maken en configureren voor het gebruik van virtuele knoop punten in de Azure Portal
+# <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-in-the-azure-portal"></a>Een AKS-cluster (Azure Kubernetes Services) maken en configureren voor het gebruik van virtuele knooppunten in de Azure Portal
 
-In dit artikel wordt beschreven hoe u de Azure Portal gebruikt voor het maken en configureren van de virtuele netwerk resources en een AKS-cluster waarop virtuele knoop punten zijn ingeschakeld.
+In dit artikel wordt beschreven hoe u de Azure Portal voor het maken en configureren van de resources van het virtuele netwerk en een AKS-cluster met virtuele knooppunten ingeschakeld.
 
 > [!NOTE]
-> In [dit artikel](virtual-nodes.md) vindt u een overzicht van de beschik baarheid van regio's en beperkingen met behulp van virtuele knoop punten.
+> [In dit artikel](virtual-nodes.md) vindt u een overzicht van de beschikbaarheid en beperkingen van regio's met behulp van virtuele knooppunten.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Virtuele knoop punten scha kelen netwerk communicatie in tussen de peulen die worden uitgevoerd in Azure Container Instances (ACI) en het AKS-cluster. Om deze communicatie te bieden, wordt een subnet van een virtueel netwerk gemaakt en worden gedelegeerde machtigingen toegewezen. Virtuele knoop punten werken alleen met AKS-clusters die zijn gemaakt met *Advanced* Network (Azure cni). Standaard worden AKS-clusters gemaakt met *Basic* -netwerken (kubenet). In dit artikel wordt beschreven hoe u een virtueel netwerk en subnetten maakt en hoe u een AKS-cluster implementeert dat gebruikmaakt van geavanceerde netwerken.
+Virtuele knooppunten maken netwerkcommunicatie mogelijk tussen pods die worden uitgevoerd in Azure Container Instances (ACI) en het AKS-cluster. Om deze communicatie mogelijk te maken, wordt er een subnet van een virtueel netwerk gemaakt en worden gedelegeerde machtigingen toegewezen. Virtuele knooppunten werken alleen met AKS-clusters die zijn gemaakt *met behulp van* geavanceerde netwerken (Azure CNI). Standaard worden AKS-clusters gemaakt met *basisnetwerken* (kubenet). In dit artikel wordt beschreven hoe u een virtueel netwerk en subnetten maakt en vervolgens een AKS-cluster implementeert dat gebruikmaakt van geavanceerde netwerken.
 
-Als u geen ACI eerder hebt gebruikt, registreert u de service provider bij uw abonnement. U kunt de status van de ACI-provider registratie controleren met de opdracht [AZ provider List][az-provider-list] , zoals wordt weer gegeven in het volgende voor beeld:
+Als u ACI nog niet eerder hebt gebruikt, registreert u de serviceprovider bij uw abonnement. U kunt de status van de registratie van de ACI-provider controleren met de [opdracht az provider list,][az-provider-list] zoals wordt weergegeven in het volgende voorbeeld:
 
 ```azurecli-interactive
 az provider list --query "[?contains(namespace,'Microsoft.ContainerInstance')]" -o table
 ```
 
-De provider van *micro soft. ContainerInstance* meldt zich aan als *geregistreerd*, zoals wordt weer gegeven in de volgende voorbeeld uitvoer:
+De *provider Microsoft.ContainerInstance* moet rapporteren als *Geregistreerd,* zoals wordt weergegeven in de volgende voorbeelduitvoer:
 
 ```output
 Namespace                    RegistrationState    RegistrationPolicy
@@ -37,7 +37,7 @@ Namespace                    RegistrationState    RegistrationPolicy
 Microsoft.ContainerInstance  Registered           RegistrationRequired
 ```
 
-Als de provider wordt weer gegeven als *NotRegistered*, registreert u de provider met behulp van de [AZ provider REGI ster][az-provider-register] , zoals wordt weer gegeven in het volgende voor beeld:
+Als de provider wordt weergegeven als *NotRegistered,* registreert u de provider met behulp van [az provider register,][az-provider-register] zoals wordt weergegeven in het volgende voorbeeld:
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerInstance
@@ -49,26 +49,26 @@ Meld u aan bij Azure Portal op https://portal.azure.com.
 
 ## <a name="create-an-aks-cluster"></a>Een AKS-cluster maken
 
-Selecteer in de linkerbovenhoek van de Azure Portal **een resource**  >  **Kubernetes-service** maken.
+Selecteer in de linkerbovenhoek van de Azure Portal   >  **Kubernetes Service** de optie Een resource maken.
 
 Configureer op de pagina **Basisprincipes** de volgende opties:
 
-- *Project Details*: Selecteer een Azure-abonnement en selecteer of maak een Azure-resource groep, zoals *myResourceGroup*. Voer een **Kubernetes-clusternaam** in, zoals *myAKSCluster*.
-- *Cluster Details*: Selecteer een regio en Kubernetes-versie voor het AKS-cluster.
-- *Primaire knooppunt groep*: Selecteer een VM-grootte voor de AKS-knoop punten. De VM-grootte kan **niet** meer worden gewijzigd als een AKS-cluster eenmaal is geïmplementeerd.
-     - Selecteer het aantal knooppunten dat u in het cluster wilt implementeren. Voor dit artikel stelt u het **aantal knoop punten** in op *1*. Het aantal knooppunten kan nog **wel** worden gewijzigd als het cluster is geïmplementeerd.
+- *PROJECTDETAILS:* selecteer een Azure-abonnement en selecteer of maak vervolgens een Azure-resourcegroep, zoals *myResourceGroup.* Voer een **Kubernetes-clusternaam** in, zoals *myAKSCluster*.
+- *CLUSTERDETAILS:* selecteer een regio en Kubernetes-versie voor het AKS-cluster.
+- *PRIMAIRE KNOOPPUNTGROEP:* selecteer een VM-grootte voor de AKS-knooppunten. De VM-grootte kan **niet** meer worden gewijzigd als een AKS-cluster eenmaal is geïmplementeerd.
+     - Selecteer het aantal knooppunten dat u in het cluster wilt implementeren. Voor dit artikel stelt u **Aantal knooppunt in** *op 1*. Het aantal knooppunten kan nog **wel** worden gewijzigd als het cluster is geïmplementeerd.
 
-Klik op **volgende: knooppunt groepen**.
+Klik **op Volgende: Knooppuntgroepen.**
 
-Selecteer op de pagina **knooppunt groepen** de optie *virtuele knoop punten inschakelen*.
+Selecteer op **de pagina Knooppuntgroepen** de optie *Virtuele knooppunten inschakelen.*
 
-:::image type="content" source="media/virtual-nodes-portal/enable-virtual-nodes.png" alt-text="In een browser wordt een cluster gemaakt waarop virtuele knoop punten zijn ingeschakeld op de Azure Portal. De optie virtuele knoop punten inschakelen is gemarkeerd.":::
+:::image type="content" source="media/virtual-nodes-portal/enable-virtual-nodes.png" alt-text="In een browser ziet u hoe u een cluster maakt met virtuele knooppunten die zijn ingeschakeld op de Azure Portal. De optie Virtuele knooppunten inschakelen is gemarkeerd.":::
 
-Standaard wordt er een cluster identiteit gemaakt. Deze cluster-id wordt gebruikt voor cluster communicatie en integratie met andere Azure-Services. Deze cluster identiteit is standaard een beheerde identiteit. Zie [Beheerde identiteiten gebruiken](use-managed-identity.md) voor meer informatie. U kunt ook een Service-Principal als uw cluster-id gebruiken.
+Standaard wordt een clusteridentiteit gemaakt. Deze clusteridentiteit wordt gebruikt voor clustercommunicatie en integratie met andere Azure-services. Deze clusteridentiteit is standaard een beheerde identiteit. Zie [Beheerde identiteiten gebruiken](use-managed-identity.md) voor meer informatie. U kunt ook een service-principal gebruiken als uw clusteridentiteit.
 
-Het cluster is ook geconfigureerd voor geavanceerde netwerken. De virtuele knoop punten zijn geconfigureerd voor het gebruik van hun eigen subnet van het virtuele netwerk van Azure. Dit subnet heeft gedelegeerde machtigingen voor het verbinden van Azure-resources tussen het AKS-cluster. Als u nog geen overgedragen subnet hebt, wordt het virtuele Azure-netwerk en-subnet door de Azure Portal gemaakt en geconfigureerd voor gebruik met de virtuele knoop punten.
+Het cluster is ook geconfigureerd voor geavanceerde netwerken. De virtuele knooppunten zijn geconfigureerd voor het gebruik van hun eigen subnet van het virtuele Azure-netwerk. Dit subnet heeft gedelegeerde machtigingen om Azure-resources te verbinden tussen het AKS-cluster. Als u nog geen gedelegeerd subnet hebt, maakt en configureert de Azure Portal het virtuele Azure-netwerk en -subnet voor gebruik met de virtuele knooppunten.
 
-Selecteer **Controleren + maken**. Nadat de validatie is voltooid, selecteert u **maken**.
+Selecteer **Controleren + maken**. Nadat de validatie is voltooid, selecteert u **Maken.**
 
 Het duurt enkele minuten om het AKS-cluster te maken en voor te bereiden voor gebruik.
 
@@ -90,7 +90,7 @@ Als u de verbinding met uw cluster wilt controleren, gebruikt u de opdracht [kub
 kubectl get nodes
 ```
 
-In de volgende voorbeeld uitvoer ziet u het knoop punt met één VM dat is gemaakt en vervolgens het virtuele knoop punt voor Linux, *Virtual-node-ACI-Linux*:
+In de volgende voorbeelduitvoer ziet u het enkele VM-knooppunt dat is gemaakt en vervolgens het virtuele knooppunt voor Linux, *virtual-node-aci-linux:*
 
 ```output
 NAME                           STATUS    ROLES     AGE       VERSION
@@ -98,9 +98,9 @@ virtual-node-aci-linux         Ready     agent     28m       v1.11.2
 aks-agentpool-14693408-0       Ready     agent     32m       v1.11.2
 ```
 
-## <a name="deploy-a-sample-app"></a>Een voor beeld-app implementeren
+## <a name="deploy-a-sample-app"></a>Een voorbeeld-app implementeren
 
-In de Azure Cloud Shell maakt u een bestand `virtual-node.yaml` met de naam en kopieert u dit in de volgende YAML. Als u de container op het knoop punt wilt plannen, worden er een [nodeSelector][node-selector] en- [tolerantie][toleration] gedefinieerd. Met deze instellingen kan de pod worden gepland op het virtuele knoop punt en wordt gecontroleerd of de functie is ingeschakeld.
+Maak in Azure Cloud Shell een bestand met de naam `virtual-node.yaml` en kopieer dit in de volgende YAML. Als u de container op het knooppunt wilt plannen, worden [een knooppuntselector][node-selector] en [-toleratie][toleration] gedefinieerd. Met deze instellingen kan de pod worden gepland op het virtuele knooppunt en wordt bevestigd dat de functie is ingeschakeld.
 
 ```yaml
 apiVersion: apps/v1
@@ -131,13 +131,13 @@ spec:
         operator: Exists
 ```
 
-Voer de toepassing uit met de opdracht [kubectl apply][kubectl-apply] .
+Voer de toepassing uit met de [opdracht kubectl apply.][kubectl-apply]
 
 ```azurecli-interactive
 kubectl apply -f virtual-node.yaml
 ```
 
-Gebruik de opdracht [kubectl Get peul][kubectl-get] with het `-o wide` argument voor het uitvoeren van een lijst met een van de peulen en het geplande knoop punt. U ziet dat de `virtual-node-helloworld` Pod is gepland op het `virtual-node-linux` knoop punt.
+Gebruik de [opdracht kubectl get pods][kubectl-get] met het argument om een lijst met pods en het geplande knooppunt uit `-o wide` te voeren. U ziet dat `virtual-node-helloworld` de pod is gepland op het `virtual-node-linux` knooppunt.
 
 ```console
 kubectl get pods -o wide
@@ -148,32 +148,32 @@ NAME                                     READY     STATUS    RESTARTS   AGE     
 virtual-node-helloworld-9b55975f-bnmfl   1/1       Running   0          4m        10.241.0.4   virtual-node-aci-linux
 ```
 
-Aan de Pod wordt een intern IP-adres toegewezen vanuit het subnet van het virtuele netwerk van Azure dat is gedelegeerd voor gebruik met virtuele knoop punten.
+Aan de pod wordt een intern IP-adres toegewezen uit het subnet van het virtuele Azure-netwerk dat is gedelegeerd voor gebruik met virtuele knooppunten.
 
 > [!NOTE]
-> [Configureer en gebruik een Kubernetes-geheim][acr-aks-secrets]als u installatie kopieën gebruikt die zijn opgeslagen in azure container Registry. Een huidige beperking van virtuele knoop punten is dat u geen geïntegreerde Azure AD-Service-Principal-verificatie kunt gebruiken. Als u geen geheim gebruikt, kan er geen peulen gepland op virtuele knoop punten worden gestart en wordt de fout gerapporteerd `HTTP response status code 400 error code "InaccessibleImage"` .
+> Als u afbeeldingen gebruikt die zijn opgeslagen in Azure Container Registry, configureert en gebruikt u [een Kubernetes-geheim][acr-aks-secrets]. Een huidige beperking van virtuele knooppunten is dat u geen geïntegreerde verificatie van de Azure AD-service-principal kunt gebruiken. Als u geen geheim gebruikt, kunnen pods die zijn gepland op virtuele knooppunten niet worden starten en wordt de fout `HTTP response status code 400 error code "InaccessibleImage"` weergegeven.
 
-## <a name="test-the-virtual-node-pod"></a>De pod van het virtuele knoop punt testen
+## <a name="test-the-virtual-node-pod"></a>De pod van het virtuele knooppunt testen
 
-Als u de pod die op het virtuele knoop punt wordt uitgevoerd wilt testen, bladert u naar de demo toepassing met een webclient. Als aan de pod een intern IP-adres is toegewezen, kunt u deze verbinding snel testen vanaf een andere pod op het AKS-cluster. Een test pod maken en een terminal sessie hieraan koppelen:
+Als u de pod wilt testen die wordt uitgevoerd op het virtuele knooppunt, bladert u naar de demotoepassing met een webclient. Als aan de pod een intern IP-adres is toegewezen, kunt u deze connectiviteit snel testen vanuit een andere pod in het AKS-cluster. Maak een testpod en koppel er een terminalsessie aan:
 
 ```console
 kubectl run -it --rm virtual-node-test --image=mcr.microsoft.com/aks/fundamental/base-ubuntu:v0.0.11
 ```
 
-Installeer `curl` in de Pod met `apt-get` :
+Installeer `curl` in de pod met behulp van `apt-get` :
 
 ```console
 apt-get update && apt-get install -y curl
 ```
 
-U hebt nu toegang tot het adres van uw Pod met `curl` , zoals *http://10.241.0.4* . Geef uw eigen interne IP-adres op dat wordt weer gegeven in de vorige `kubectl get pods` opdracht:
+Ga nu naar het adres van uw pod met `curl` behulp van , zoals *http://10.241.0.4* . Geef uw eigen interne IP-adres op dat wordt weergegeven in de vorige `kubectl get pods` opdracht:
 
 ```console
 curl -L http://10.241.0.4
 ```
 
-De voorbeeld toepassing wordt weer gegeven, zoals wordt weer gegeven in de volgende verkorte voorbeeld uitvoer:
+De demotoepassing wordt weergegeven, zoals wordt weergegeven in de volgende verkorte voorbeelduitvoer:
 
 ```output
 <html>
@@ -183,18 +183,18 @@ De voorbeeld toepassing wordt weer gegeven, zoals wordt weer gegeven in de volge
 [...]
 ```
 
-Sluit de terminal sessie met uw test pod met `exit` . Wanneer de sessie is beëindigd, wordt de pod verwijderd.
+Sluit de terminalsessie met uw testpod met `exit` . Wanneer de sessie is beëindigd, wordt de pod verwijderd.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel is een pod gepland op het virtuele knoop punt en een persoonlijk, intern IP-adres toegewezen. U kunt in plaats daarvan een service-implementatie maken en verkeer naar uw Pod sturen via een load balancer-of ingangs controller. Zie [een Basic ingress-controller maken in AKS][aks-basic-ingress]voor meer informatie.
+In dit artikel is een pod gepland op het virtuele knooppunt en is een privé, intern IP-adres toegewezen. U kunt in plaats daarvan een service-implementatie maken en verkeer naar uw pod doorverzenden via een load balancer controller of controller voor verkeer naar binnenverkeer. Zie Create [a basic ingress controller in AKS (Een eenvoudige controller voor ingress maken in AKS) voor meer informatie.][aks-basic-ingress]
 
-Virtuele knoop punten zijn één onderdeel van een schaal oplossing in AKS. Raadpleeg de volgende artikelen voor meer informatie over het schalen van oplossingen:
+Virtuele knooppunten vormen een onderdeel van een schaaloplossing in AKS. Zie de volgende artikelen voor meer informatie over oplossingen voor schalen:
 
-- [De Kubernetes-functie voor horizontale pod automatisch schalen gebruiken][aks-hpa]
-- [De automatische schaal functie van het Kubernetes-cluster gebruiken][aks-cluster-autoscaler]
-- [Bekijk het voor beeld van automatisch schalen voor virtuele knoop punten][virtual-node-autoscale]
-- [Meer informatie over de open source-bibliotheek van de virtuele-Kubelet][virtual-kubelet-repo]
+- [De automatische horizontale schaal van Kubernetes-pods gebruiken][aks-hpa]
+- [De automatische schaalverdeder voor Kubernetes-clusters gebruiken][aks-cluster-autoscaler]
+- [Bekijk het voorbeeld van automatisch schalen voor virtuele knooppunten][virtual-node-autoscale]
+- [Meer informatie over de virtuele Kubelet-open source bibliotheek][virtual-kubelet-repo]
 
 <!-- LINKS - external -->
 [kubectl]: https://kubernetes.io/docs/user-guide/kubectl/

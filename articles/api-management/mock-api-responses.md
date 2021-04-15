@@ -3,16 +3,16 @@ title: 'Zelfstudie: Gesimuleerde antwoorden van een API in API Management - Azur
 description: In deze zelf studie gebruikt u API Management om een beleid in te stellen voor een API zodat deze een gesimuleerd antwoord retourneert als de back-end niet beschikbaar is voor het verzenden van echte antwoorden.
 author: vladvino
 ms.service: api-management
-ms.custom: mvc
+ms.custom: mvc, devx-track-azurecli
 ms.topic: tutorial
 ms.date: 02/09/2021
 ms.author: apimpm
-ms.openlocfilehash: 75727d139242e1b537505d2ed907ae20fc5479f8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 562ec4cf19d15772b2dec5adf59582f1feb5363a
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100547238"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107478460"
 ---
 # <a name="tutorial-mock-api-responses"></a>Zelfstudie: Gesimuleerde antwoorden van een API
 
@@ -20,7 +20,7 @@ Back-end API's worden geïmporteerd in een APIM-API (API Management) of handmati
 
 De mogelijkheid om gesimuleerde antwoorden te genereren kan nuttig zijn bij een aantal scenario's:
 
-+ Als de API-kant het eerst wordt ontworpen en de back-end implementatie later volgt. Of als de back-end parallel wordt ontwikkeld.
++ Wanneer de API-faÑ-ade het eerst wordt ontworpen en de back-end-implementatie later wordt uitgevoerd. Of als de back-end parallel wordt ontwikkeld.
 + Wanneer de back-end tijdelijk niet operationeel is of niet kan worden geschaald.
 
 In deze zelfstudie leert u het volgende:
@@ -91,11 +91,11 @@ Hoewel dit niet vereist is voor dit voorbeeld, kunnen er op andere tabbladen aan
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Als u Azure CLI wilt gaan gebruiken:
+Als u Azure CLI wilt gaan gebruiken, gaat u als volgende te werk:
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-Als u een bewerking wilt toevoegen aan uw test-API, voert u de opdracht [AZ APIM API Operation Create](/cli/azure/apim/api/operation#az_apim_api_operation_create) uit:
+Voer de opdracht [az apim api operation create](/cli/azure/apim/api/operation#az_apim_api_operation_create) uit om een bewerking toe te voegen aan uw test-API:
 
 ```azurecli
 az apim api operation create --resource-group apim-hello-word-resource-group \
@@ -103,14 +103,14 @@ az apim api operation create --resource-group apim-hello-word-resource-group \
     --url-template /test --service-name apim-hello-world 
 ```
 
-Voer de opdracht [AZ APIM API Operation List](/cli/azure/apim/api/operation#az_apim_api_operation_list) uit om al uw bewerkingen voor een API weer te geven:
+Voer de [opdracht az apim api operation list](/cli/azure/apim/api/operation#az_apim_api_operation_list) uit om al uw bewerkingen voor een API te bekijken:
 
 ```azurecli
 az apim api operation list --resource-group apim-hello-word-resource-group \
     --api-id test-api --service-name apim-hello-world --output table
 ```
 
-Als u een bewerking wilt verwijderen, gebruikt u de opdracht [AZ APIM API bewerking delete](/cli/azure/apim/api/operation#az_apim_api_operation_delete) . Haal de bewerkings-ID uit de vorige opdracht.
+Als u een bewerking wilt verwijderen, gebruikt u [de opdracht az apim api operation delete.](/cli/azure/apim/api/operation#az_apim_api_operation_delete) Haal de bewerkings-id op uit de vorige opdracht.
 
 ```azurecli
 az apim api operation delete --resource-group apim-hello-word-resource-group \

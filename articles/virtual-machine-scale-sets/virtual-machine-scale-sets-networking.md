@@ -1,6 +1,6 @@
 ---
 title: Netwerken voor virtuele-machineschaalsets in Azure
-description: Configuratie van een aantal van de meer geavanceerde netwerk eigenschappen voor schaal sets van virtuele Azure-machines.
+description: Een aantal geavanceerdere netwerkeigenschappen configureren voor virtuele-machineschaalsets van Azure.
 author: ju-shim
 ms.author: jushiman
 ms.topic: how-to
@@ -8,13 +8,13 @@ ms.service: virtual-machine-scale-sets
 ms.subservice: networking
 ms.date: 06/25/2020
 ms.reviewer: mimckitt
-ms.custom: mimckitt, devx-track-azurecli
-ms.openlocfilehash: 9ad761f289805d15d316fc6f528a0049adb36b30
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: mimckitt
+ms.openlocfilehash: e427d51068115db27a36243d738c0e93a10d3cb1
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97722314"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107375913"
 ---
 # <a name="networking-for-azure-virtual-machine-scale-sets"></a>Netwerken voor virtuele-machineschaalsets in Azure
 
@@ -42,8 +42,8 @@ Versneld netwerken in Azure verbetert de prestaties van het netwerk door het ins
 }
 ```
 
-## <a name="azure-virtual-machine-scale-sets-with-azure-load-balancer"></a>Virtuele-machine schaal sets van Azure met Azure Load Balancer
-Zie [Azure Load Balancer en virtual machine Scale sets](../load-balancer/load-balancer-standard-virtual-machine-scale-sets.md) voor meer informatie over het configureren van uw Standard Load Balancer met Virtual Machine Scale sets op basis van uw scenario.
+## <a name="azure-virtual-machine-scale-sets-with-azure-load-balancer"></a>Virtuele-machineschaalsets van Azure met Azure Load Balancer
+Zie [Azure Load Balancer en Virtual Machine Scale Sets](../load-balancer/load-balancer-standard-virtual-machine-scale-sets.md) voor meer informatie over het configureren van uw Standard Load Balancer met Virtual Machine Scale Sets op basis van uw scenario.
 
 ## <a name="create-a-scale-set-that-references-an-application-gateway"></a>Een schaalset maken die verwijst naar een toepassingsgateway
 Om een schaalset te maken die gebruikmaakt van een toepassingsgateway, verwijst u naar de back-endadresgroep van de toepassingsgateway in de sectie ipConfigurations van uw schaalset zoals in deze ARM-sjabloonconfiguratie:
@@ -86,7 +86,7 @@ Als u aangepaste DNS-servers wilt configureren in een Azure-sjabloon, voegt u de
 ### <a name="creating-a-scale-set-with-configurable-virtual-machine-domain-names"></a>Een schaalset maken met de configureerbare domeinnamen van virtuele machines
 Als u een schaalset wilt maken met een aangepaste DNS-naam voor virtuele machines met de CLI, voegt u het argument **--vm-domain-name** toe aan de opdracht **virtual machine scale set create**, gevolgd door een tekenreeks met de domeinnaam.
 
-Als u de domein naam in een Azure-sjabloon wilt instellen, voegt u een eigenschap **dnsSettings** toe aan de sectie Scale set **networkinterfaceconfigurations schaalset** . Bijvoorbeeld:
+Als u de domeinnaam wilt instellen in een Azure-sjabloon, voegt u de eigenschap **dnsSettings** toe aan de sectie **networkInterfaceConfigurations** van de schaalset. Bijvoorbeeld:
 
 ```json
 "networkProfile": {
@@ -125,14 +125,14 @@ De uitvoer voor de DNS-naam van een afzonderlijke virtuele machine heeft de volg
 ```
 
 ## <a name="public-ipv4-per-virtual-machine"></a>Openbare IPv4 per virtuele machine
-Virtuele machines in Azure-schaalsets hebben meestal geen eigen openbaar IP-adres nodig. Voor de meeste scenario's is het rendabeler en veilig om een openbaar IP-adres te koppelen aan een load balancer of aan een afzonderlijke virtuele machine (ook wel bekend als een JumpBox), die vervolgens binnenkomende verbindingen naar virtuele machines met schaal sets doorstuurt (bijvoorbeeld via binnenkomende NAT-regels).
+Virtuele machines in Azure-schaalsets hebben meestal geen eigen openbaar IP-adres nodig. In de meeste scenario's is het voordeliger en veiliger om een openbaar IP-adres te koppelen aan een load balancer of aan een afzonderlijke virtuele machine (ook wel een jumpbox genoemd), die vervolgens zo nodig binnenkomende verbindingen naar virtuele machines in de schaalset routeert (bijvoorbeeld via binnenkomende NAT-regels).
 
 In sommige gevallen hebben virtuele machines van een schaalset echter hun eigen openbare IP-adressen nodig. Dit is bijvoorbeeld het geval bij games, waarbij een console rechtstreeks verbinding moet maken met een virtuele cloudmachine, die de physics van de game verwerkt. Een ander voorbeeld is de situatie waarbij virtuele machines externe verbindingen met elkaar moeten maken via regio's in een gedistribueerde database.
 
 ### <a name="creating-a-scale-set-with-public-ip-per-virtual-machine"></a>Een schaalset met een openbaar IP-adres per virtuele machine maken
 Als u een schaalset wilt maken waarmee een openbaar IP-adres wordt toegewezen aan elke virtuele machine met de CLI, voegt u de parameter **--public-ip-per-vm** toe aan de opdracht **vmss create**. 
 
-Als u een schaalset wilt maken met behulp van een Azure-sjabloon, moet u ervoor zorgen dat de API-versie van de micro soft. Compute/virtualMachineScaleSets-resource ten minste **2017-03-30** is en een **publicipaddressconfiguration toe** JSON-eigenschap toevoegen aan de sectie ipConfigurations van schaal sets. Bijvoorbeeld:
+Als u een schaalset wilt maken met behulp van een Azure-sjabloon, moet u ervoor zorgen dat de API-versie van de resource Microsoft.Compute/virtualMachineScaleSets ten minste **2017-03-30** is en voegt u een **publicIpAddressConfiguration** JSON-eigenschap toe aan de sectie ipConfigurations van de schaalset. Bijvoorbeeld:
 
 ```json
 "publicIpAddressConfiguration": {
@@ -169,7 +169,7 @@ Ga als volgt te werk om een query uit te voeren op [Azure Resource Explorer](htt
 1. Vouw uw abonnement uit.
 1. Vouw uw resourcegroep uit.
 1. Vouw *providers* uit.
-1. Vouw *micro soft. Compute* uit.
+1. Vouw *Microsoft.Compute uit.*
 1. Vouw *virtualMachineScaleSets* uit.
 1. Vouw uw schaalset uit.
 1. Klik op *publicipaddresses*.
@@ -382,25 +382,25 @@ az vmss show \
 ]
 ```
 
-## <a name="make-networking-updates-to-specific-instances"></a>Netwerk updates maken voor specifieke instanties
+## <a name="make-networking-updates-to-specific-instances"></a>Netwerkupdates maken voor specifieke exemplaren
 
-U kunt netwerk updates maken voor specifieke exemplaren van de schaalset van virtuele machines. 
+U kunt netwerkupdates maken voor specifieke exemplaren van virtuele-machineschaalsets. 
 
-U kunt de `PUT` netwerk configuratie bijwerken op basis van het exemplaar. Dit kan worden gebruikt voor het toevoegen of verwijderen van netwerk interface kaarten (Nic's) of het verwijderen van een exemplaar uit een back-end-groep.
+U kunt `PUT` de netwerkconfiguratie bijwerken op basis van het exemplaar. Dit kan worden gebruikt voor bijvoorbeeld het toevoegen of verwijderen van netwerkinterfacekaarten (NIC's) of het verwijderen van een exemplaar uit een back-endpool.
 
 ```
 PUT https://management.azure.com/subscriptions/.../resourceGroups/vmssnic/providers/Microsoft.Compute/virtualMachineScaleSets/vmssnic/virtualMachines/1/?api-version=2019-07-01
 ```
 
-In het volgende voor beeld ziet u hoe u een tweede IP-configuratie toevoegt aan uw NIC.
+In het volgende voorbeeld ziet u hoe u een tweede IP-configuratie toevoegt aan uw NIC.
 
-1. `GET` de Details voor een specifieke virtuele-machine Scale set-exemplaar.
+1. `GET` de details voor een specifiek exemplaar van een virtuele-machineschaalset.
     
     ``` 
     GET https://management.azure.com/subscriptions/.../resourceGroups/vmssnic/providers/Microsoft.Compute/virtualMachineScaleSets/vmssnic/virtualMachines/1/?api-version=2019-07-01
     ```
 
-    *Het volgende is vereenvoudigd, zodat alleen netwerk parameters voor dit voor beeld worden weer gegeven.*
+    *Het volgende is vereenvoudigd om alleen netwerkparameters voor dit voorbeeld weer te geven.*
 
     ```json
     {
@@ -450,14 +450,14 @@ In het volgende voor beeld ziet u hoe u een tweede IP-configuratie toevoegt aan 
     }
     ```
  
-2. `PUT` u kunt de extra IP-configuratie toevoegen aan de hand van het exemplaar. Dit is vergelijkbaar met het toevoegen van extra `networkInterfaceConfiguration` .
+2. `PUT` wordt bijgewerkt om de extra IP-configuratie toe te voegen. Dit is vergelijkbaar voor het toevoegen van extra `networkInterfaceConfiguration` .
 
     
     ```
     PUT https://management.azure.com/subscriptions/.../resourceGroups/vmssnic/providers/Microsoft.Compute/virtualMachineScaleSets/vmssnic/virtualMachines/1/?api-version=2019-07-01
     ```
 
-    *Het volgende is vereenvoudigd, zodat alleen netwerk parameters voor dit voor beeld worden weer gegeven.*
+    *Het volgende is vereenvoudigd om alleen netwerkparameters voor dit voorbeeld weer te geven.*
 
     ```json
       {

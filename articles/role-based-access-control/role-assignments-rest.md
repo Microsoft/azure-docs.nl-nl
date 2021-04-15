@@ -1,6 +1,6 @@
 ---
-title: Azure-rollen toewijzen met behulp van de REST API-Azure RBAC
-description: Meer informatie over het verlenen van toegang tot Azure-resources voor gebruikers, groepen, service-principals of beheerde identiteiten met behulp van de REST API en Azure op rollen gebaseerd toegangs beheer (Azure RBAC).
+title: Azure-rollen toewijzen met behulp van REST API - Azure RBAC
+description: Meer informatie over het verlenen van toegang tot Azure-resources voor gebruikers, groepen, service-principals of beheerde identiteiten met behulp van de REST API en op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC).
 services: active-directory
 author: rolyon
 manager: mtillman
@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 04/06/2021
 ms.author: rolyon
-ms.openlocfilehash: 9a61f54530f25ac33c6ef097698198a11cf1275e
-ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
+ms.openlocfilehash: 3baf44a4240b23b41ce2e80dc22dbda4c7d0672a
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106581443"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107363713"
 ---
 # <a name="assign-azure-roles-using-the-rest-api"></a>Azure-rollen toewijzen met behulp van de REST API
 
-[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control/definition-grant.md)] In dit artikel wordt beschreven hoe u rollen toewijst met behulp van de REST API.
+[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control/definition-grant.md)] In dit artikel wordt beschreven hoe u rollen toewijst met behulp van REST API.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -28,13 +28,13 @@ ms.locfileid: "106581443"
 
 ## <a name="assign-an-azure-role"></a>Een Azure-rol toewijzen
 
-Als u een rol wilt toewijzen, gebruikt u de roltoewijzingen [-rest API maken](/rest/api/authorization/roleassignments/create) en geeft u de beveiligingsprincipal, roldefinitie en bereik op. U moet toegang hebben tot de bewerking om deze API aan te roepen `Microsoft.Authorization/roleAssignments/write` . Van de ingebouwde rollen wordt alleen de beheerder van de [eigenaar](built-in-roles.md#owner) en de [gebruiker toegang](built-in-roles.md#user-access-administrator) verleend tot deze bewerking.
+Als u een rol wilt toewijzen, gebruikt [u](/rest/api/authorization/roleassignments/create) de REST API roltoewijzingen maken en geeft u de beveiligingsprincipaal, roldefinitie en het bereik op. Als u deze API wilt aanroepen, moet u toegang hebben tot de `Microsoft.Authorization/roleAssignments/write` bewerking. Van de ingebouwde rollen krijgen alleen [eigenaar en](built-in-roles.md#owner) beheerder van [gebruikerstoegang](built-in-roles.md#user-access-administrator) toegang tot deze bewerking.
 
-1. Gebruik de [roldefinities-lijst](/rest/api/authorization/roledefinitions/list) rest API of Zie [ingebouwde rollen](built-in-roles.md) om de id op te halen voor de roldefinitie die u wilt toewijzen.
+1. Gebruik de [lijst met](/rest/api/authorization/roledefinitions/list) roldefinities REST API zie [Ingebouwde](built-in-roles.md) rollen om de id op te halen voor de roldefinitie die u wilt toewijzen.
 
-1. Gebruik een GUID-hulp programma voor het genereren van een unieke id die wordt gebruikt voor de toewijzings-id van de rol. De id heeft de volgende indeling: `00000000-0000-0000-0000-000000000000`
+1. Gebruik een GUID-hulpprogramma om een unieke id te genereren die wordt gebruikt voor de roltoewijzings-id. De id heeft de volgende indeling: `00000000-0000-0000-0000-000000000000`
 
-1. Beginnen met de volgende aanvraag en hoofd tekst:
+1. Begin met de volgende aanvraag en de volgende body:
 
     ```http
     PUT https://management.azure.com/{scope}/providers/Microsoft.Authorization/roleAssignments/{roleAssignmentId}?api-version=2015-07-01
@@ -49,7 +49,7 @@ Als u een rol wilt toewijzen, gebruikt u de roltoewijzingen [-rest API maken](/r
     }
     ```
 
-1. Vervang *{Scope}* in de URI door het bereik voor de roltoewijzing.
+1. Vervang *{scope}* binnen de URI door het bereik voor de roltoewijzing.
 
     > [!div class="mx-tableFixed"]
     > | Bereik | Type |
@@ -59,11 +59,11 @@ Als u een rol wilt toewijzen, gebruikt u de roltoewijzingen [-rest API maken](/r
     > | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | Resourcegroep |
     > | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/providers/microsoft.web/sites/mysite1` | Resource |
 
-    In het vorige voor beeld is micro soft. web een resource provider die verwijst naar een App Service-exemplaar. U kunt ook andere resource providers gebruiken en het bereik opgeven. Zie [Azure-resource providers en-typen](../azure-resource-manager/management/resource-providers-and-types.md) en ondersteunde [Azure resource provider-bewerkingen](resource-provider-operations.md)voor meer informatie.  
+    In het vorige voorbeeld is microsoft.web een resourceprovider die verwijst naar een App Service-exemplaar. Op dezelfde manier kunt u ook andere resourceproviders gebruiken en het bereik opgeven. Zie Azure-resourceproviders en [-typen](../azure-resource-manager/management/resource-providers-and-types.md) en ondersteunde bewerkingen voor [Azure-resourceproviders voor meer informatie.](resource-provider-operations.md)  
 
 1. Vervang *{roleAssignmentId}* door de GUID-id van de roltoewijzing.
 
-1. Vervang *{Scope}* in de hoofd tekst van de aanvraag door het bereik voor de roltoewijzing.
+1. Vervang in de aanvraag body *{scope}* door het bereik voor de roltoewijzing.
 
     > [!div class="mx-tableFixed"]
     > | Bereik | Type |
@@ -73,11 +73,11 @@ Als u een rol wilt toewijzen, gebruikt u de roltoewijzingen [-rest API maken](/r
     > | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | Resourcegroep |
     > | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/providers/microsoft.web/sites/mysite1` | Resource |
 
-1. Vervang *{roledefinitionid hebben}* door de roldefinitie-id.
+1. Vervang *{roleDefinitionId} door* de roldefinitie-id.
 
-1. Vervang *{principalId}* door de object-id van de gebruiker, groep of service-principal die wordt toegewezen aan de rol.
+1. Vervang *{principalId}* door de object-id van de gebruiker, groep of service-principal die aan de rol wordt toegewezen.
 
-De volgende aanvraag en hoofd tekst wijst de rol van [back-uplezer](built-in-roles.md#backup-reader) toe aan een gebruiker op het abonnements bereik:
+Met de volgende aanvraag en de volgende body wordt de rol [Van back-uplezer](built-in-roles.md#backup-reader) toegewezen aan een gebruiker op abonnementsbereik:
 
 ```http
 PUT https://management.azure.com/subscriptions/{subscriptionId1}/providers/microsoft.authorization/roleassignments/{roleAssignmentId1}?api-version=2015-07-01
@@ -92,7 +92,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId1}/providers/micro
 }
 ```
 
-Hieronder ziet u een voor beeld van de uitvoer:
+Hieronder ziet u een voorbeeld van de uitvoer:
 
 ```json
 {
@@ -111,14 +111,14 @@ Hieronder ziet u een voor beeld van de uitvoer:
 }
 ```
 
-### <a name="new-service-principal"></a>Nieuwe Service-Principal
+### <a name="new-service-principal"></a>Nieuwe service-principal
 
-Als u een nieuwe Service-Principal maakt en een rol onmiddellijk probeert toe te wijzen aan die Service-Principal, kan die roltoewijzing in sommige gevallen mislukken. Als u bijvoorbeeld een nieuwe beheerde identiteit maakt en vervolgens probeert een rol toe te wijzen aan die Service-Principal, kan de roltoewijzing mislukken. De oorzaak van deze fout is waarschijnlijk een replicatie vertraging. De service-principal wordt gemaakt in één regio. de roltoewijzing kan echter plaatsvinden in een andere regio waarvoor de Service-Principal nog niet is gerepliceerd.
+Als u een nieuwe service-principal maakt en onmiddellijk probeert een rol toe te wijzen aan die service-principal, kan die roltoewijzing in sommige gevallen mislukken. Als u bijvoorbeeld een nieuwe beheerde identiteit maakt en vervolgens probeert een rol toe te wijzen aan die service-principal, kan de roltoewijzing mislukken. De reden voor deze fout is waarschijnlijk een replicatievertraging. De service-principal wordt in één regio gemaakt; De roltoewijzing kan echter plaatsvinden in een andere regio die de service-principal nog niet heeft gerepliceerd.
 
-Als u dit scenario wilt aanpakken, moet u de `principalType` eigenschap instellen op `ServicePrincipal` bij het maken van de roltoewijzing. U moet ook de `apiVersion` toewijzing van de roltoewijzing instellen op `2018-09-01-preview` of hoger.
+Als u dit scenario wilt aanpakken, gebruikt u de [functietoewijzingen - maken REST API](/rest/api/authorization/roleassignments/create) en stelt u de eigenschap in op `principalType` `ServicePrincipal` . U moet ook de `apiVersion` instellen op `2018-09-01-preview` of hoger.
 
 ```http
-PUT https://management.azure.com/subscriptions/{subscriptionId1}/providers/microsoft.authorization/roleassignments/{roleAssignmentId1}?api-version=2018-09-01-preview
+PUT https://management.azure.com/{scope}/providers/Microsoft.Authorization/roleAssignments/{roleAssignmentId}?api-version=2018-09-01-preview
 ```
 
 ```json
@@ -133,7 +133,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId1}/providers/micro
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Azure-roltoewijzingen weer geven met behulp van de REST API](role-assignments-list-rest.md)
+- [Azure-roltoewijzingen met behulp van de REST API](role-assignments-list-rest.md)
 - [Resources implementeren met Resource Manager-sjablonen en Resource Manager REST API](../azure-resource-manager/templates/deploy-rest.md)
 - [Azure REST API-naslaginformatie](/rest/api/azure/)
 - [Aangepaste Azure-rollen maken of bijwerken met behulp van de REST API](custom-roles-rest.md)

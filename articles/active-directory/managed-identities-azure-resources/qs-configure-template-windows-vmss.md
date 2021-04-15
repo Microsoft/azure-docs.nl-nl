@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 12/15/2020
+ms.date: 04/12/2021
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 377bbb9ce111f3cf2daf8426e128186711c30e5f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4e948b96022972dcf702ac5a4d8be85c9afe16e7
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97587448"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107365974"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-an-azure-virtual-machine-scale-using-a-template"></a>Beheerde identiteiten voor Azure-resources configureren op een virtuele-machineschaalset van Azure met een sjabloon
 
@@ -29,6 +29,7 @@ ms.locfileid: "97587448"
 Beheerde identiteiten voor Azure-resources bieden Azure-services met een automatisch beheerde identiteit in Azure Active Directory. U kunt deze identiteit gebruiken voor verificatie bij alle services die Microsoft Azure AD-verificatie ondersteunen, zonder dat u aanmeldingsgegevens in uw code hoeft te hebben.
 
 In dit artikel leert u om de volgende beheerde identiteiten uit te voeren voor bewerkingen van Azure-resources op een virtuele-machineschaalset van Azure met behulp van Azure Resource Manager-implementatiesjabloon:
+
 - De door het systeem toegewezen beheerde identiteit inschakelen en uitschakelen op een virtuele-machineschaalset van Azure
 - Een door de gebruiker toegewezen beheerde identiteit toevoegen aan en verwijderen uit een virtuele-machineschaalset van Azure
 
@@ -60,7 +61,7 @@ Welke optie u ook kiest, de sjabloonsyntaxis is dezelfde tijdens de eerste imple
 
 In deze sectie gaat u de door het systeem toegewezen beheerde identiteit in- en uitschakelen met behulp van een Azure Resource Manager-sjabloon.
 
-### <a name="enable-system-assigned-managed-identity-during-creation-the-creation-of-a-virtual-machines-scale-set-or-an-existing-virtual-machine-scale-set"></a>Door het systeem toegewezen beheerde identiteit inschakelen tijdens het maken van een virtuele-machineschaalset of een bestaande virtuele-machineschaalset
+### <a name="enable-system-assigned-managed-identity-during-the-creation-of-a-virtual-machines-scale-set-or-an-existing-virtual-machine-scale-set"></a>Door het systeem toegewezen beheerde identiteit inschakelen tijdens het maken van een virtuele-machineschaalset of een bestaande virtuele-machineschaalset
 
 1. Gebruik een account dat is gekoppeld aan het Azure-abonnement dat de virtuele-machineschaalset bevat, of u zich nu lokaal aanmeldt of via Azure Portal.
 2. Als u de door het systeem toegewezen beheerde identiteit wilt inschakelen, laadt u de sjabloon in een editor, zoekt u de gewenste `Microsoft.Compute/virtualMachinesScaleSets`-resource op in de resourcessectie en voegt u de eigenschap `identity` op hetzelfde niveau toe als de eigenschap `"type": "Microsoft.Compute/virtualMachinesScaleSets"`. Gebruik de volgende syntaxis:
@@ -70,10 +71,6 @@ In deze sectie gaat u de door het systeem toegewezen beheerde identiteit in- en 
        "type": "SystemAssigned"
    }
    ```
-
-> [!NOTE]
-> U kunt eventueel de beheerde identiteiten voor de virtuele-machine schaalset-extensie van Azure-resources inrichten door deze op te geven in het `extensionProfile`-element van de sjabloon. Deze stap is optioneel, omdat u het identiteitseindpunt van Azure Instance Metadata Service (IMDS) ook kunt gebruiken om tokens op te halen.  Zie [Migreren van VM-extensie naar Azure IMDS voor verificatie](howto-migrate-vm-extension.md) voor meer informatie.
-
 
 4. Wanneer u klaar bent, zijn de volgende secties toegevoegd aan de resourcesectie van uw sjabloon en ziet deze er als volgt uit:
 
@@ -92,23 +89,7 @@ In deze sectie gaat u de door het systeem toegewezen beheerde identiteit in- en 
                 //other resource provider properties...
                 "virtualMachineProfile": {
                     //other virtual machine profile properties...
-                    //The following appears only if you provisioned the optional virtual machine scale set extension (to be deprecated)
-                    "extensionProfile": {
-                        "extensions": [
-                            {
-                                "name": "ManagedIdentityWindowsExtension",
-                                "properties": {
-                                  "publisher": "Microsoft.ManagedIdentity",
-                                  "type": "ManagedIdentityExtensionForWindows",
-                                  "typeHandlerVersion": "1.0",
-                                  "autoUpgradeMinorVersion": true,
-                                  "settings": {
-                                      "port": 50342
-                                  }
-                                }
-                            }
-                        ]
-                    }
+        
                 }
             }
         }
@@ -194,13 +175,10 @@ In deze sectie wijst u een door het systeem toegewezen beheerde identiteit toe a
        }
 
    }
-   ```
-> [!NOTE]
-> U kunt eventueel de beheerde identiteiten voor de virtuele-machine schaalset-extensie van Azure-resources inrichten door deze op te geven in het `extensionProfile`-element van de sjabloon. Deze stap is optioneel, omdat u het identiteitseindpunt van Azure Instance Metadata Service (IMDS) ook kunt gebruiken om tokens op te halen.  Zie [Migreren van VM-extensie naar Azure IMDS voor verificatie](howto-migrate-vm-extension.md) voor meer informatie.
 
-3. Wanneer u klaar bent, moet uw sjabloon er ongeveer als volgt uitzien:
+3. When you are done, your template should look similar to the following:
 
-   **Microsoft.Compute/virtualMachineScaleSets API versie 01-06-2018**   
+   **Microsoft.Compute/virtualMachineScaleSets API version 2018-06-01**   
 
    ```json
    "resources": [
@@ -220,23 +198,6 @@ In deze sectie wijst u een door het systeem toegewezen beheerde identiteit toe a
                 //other virtual machine properties...
                 "virtualMachineProfile": {
                     //other virtual machine profile properties...
-                    //The following appears only if you provisioned the optional virtual machine scale set extension (to be deprecated)
-                    "extensionProfile": {
-                        "extensions": [
-                            {
-                                "name": "ManagedIdentityWindowsExtension",
-                                "properties": {
-                                  "publisher": "Microsoft.ManagedIdentity",
-                                  "type": "ManagedIdentityExtensionForWindows",
-                                  "typeHandlerVersion": "1.0",
-                                  "autoUpgradeMinorVersion": true,
-                                  "settings": {
-                                      "port": 50342
-                                  }
-                                }
-                            }
-                        ]
-                    }
                 }
             }
         }
@@ -263,29 +224,12 @@ In deze sectie wijst u een door het systeem toegewezen beheerde identiteit toe a
                 //other virtual machine properties...
                 "virtualMachineProfile": {
                     //other virtual machine profile properties...
-                    //The following appears only if you provisioned the optional virtual machine scale set extension (to be deprecated)    
-                    "extensionProfile": {
-                        "extensions": [
-                            {
-                                "name": "ManagedIdentityWindowsExtension",
-                                "properties": {
-                                  "publisher": "Microsoft.ManagedIdentity",
-                                  "type": "ManagedIdentityExtensionForWindows",
-                                  "typeHandlerVersion": "1.0",
-                                  "autoUpgradeMinorVersion": true,
-                                  "settings": {
-                                      "port": 50342
-                                  }
-                                }
-                            }
-                        ]
-                    }
                 }
             }
         }
     ]
    ```
-   ### <a name="remove-user-assigned-managed-identity-from-an-azure-virtual-machine-scale-set"></a>Door de gebruiker toegewezen beheerde identiteit uit een virtuele-machineschaalset van Azure verwijderen
+### <a name="remove-user-assigned-managed-identity-from-an-azure-virtual-machine-scale-set"></a>Door de gebruiker toegewezen beheerde identiteit uit een virtuele-machineschaalset van Azure verwijderen
 
 Als u een virtuele-machineschaalset hebt waarvoor geen door de gebruiker toegewezen beheerde identiteit meer nodig is, doet u het volgende:
 

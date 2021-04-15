@@ -1,235 +1,272 @@
 ---
 title: Resourcetypen van extensies
-description: Een lijst met de Azure-resource typen wordt gebruikt om de mogelijkheden van andere resource typen uit te breiden.
+description: Een lijst met de Azure-resourcetypen die worden gebruikt om de mogelijkheden van andere resourcetypen uit te breiden.
 ms.topic: conceptual
-ms.date: 11/14/2020
-ms.openlocfilehash: 5561c480dd5a2849588ed2288eb5bcc35fc1446c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/12/2021
+ms.openlocfilehash: 7085c0894fbf3bd56b56e4187d56f9af54916962
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94658448"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107363985"
 ---
-# <a name="resource-types-that-extend-capabilities-of-other-resources"></a>Resource typen die de mogelijkheden van andere resources uitbreiden
+# <a name="resource-types-that-extend-capabilities-of-other-resources"></a>Resourcetypen die mogelijkheden van andere resources uitbreiden
 
-Een extensie resource is een resource die wordt toegevoegd aan de mogelijkheden van een andere resource. Resource vergrendeling is bijvoorbeeld een uitbreidings resource. U past een resource vergrendeling toe op een andere resource om te voor komen dat deze wordt verwijderd of gewijzigd. Het is niet verstandig een resource vergrendeling zelf te maken. Een extensie resource wordt altijd toegepast op een andere resource.
+Een extensieresource is een resource die wordt toegevoegd aan de mogelijkheden van een andere resource. Resourcevergrendeling is bijvoorbeeld een extensieresource. U kunt een resourcevergrendeling toepassen op een andere resource om te voorkomen dat deze wordt verwijderd of gewijzigd. Het is niet logisch om zelf een resourcevergrendeling te maken. Een extensieresource wordt altijd toegepast op een andere resource.
 
 ## <a name="microsoftadvisor"></a>Microsoft.Advisor
 
-- Micro soft. Advisor/configuraties
-- Micro soft. Advisor/aanbevelingen
-- Micro soft. Advisor/onderdrukkingen
+- Microsoft.Advisor/configurations
+- Microsoft.Advisor/recommendations
+- Microsoft.Advisor/suppressions
 
-## <a name="microsoftalertsmanagement"></a>Micro soft. AlertsManagement
+## <a name="microsoftalertsmanagement"></a>Microsoft.AlertsManagement
 
-- Micro soft. AlertsManagement/Alerts
+- Microsoft.AlertsManagement/alerts
 
 ## <a name="microsoftauthorization"></a>Microsoft.Authorization
 
-- Micro soft. Authorization/denyAssignments
-- Micro soft. autorisatie/vergren delingen
+- Microsoft.Authorization/denyAssignments
+- Microsoft.Authorization/locks
 - Microsoft.Authorization/policyAssignments
-- Micro soft. Authorization/policyDefinitions
-- Micro soft. Authorization/policyExemptions
-- Micro soft. Authorization/policySetDefinitions
-- Micro soft. Authorization/privateLinkAssociations
+- Microsoft.Authorization/policyDefinitions
+- Microsoft.Authorization/policyExemptions
+- Microsoft.Authorization/policySetDefinitions
+- Microsoft.Authorization/privateLinkAssociations
+- Microsoft.Authorization/roleAssignmentApprovals
 - Microsoft.Authorization/roleAssignments
-- Micro soft. Authorization/roleDefinitions
+- Microsoft.Authorization/roleAssignmentScheduleInstances
+- Microsoft.Authorization/roleAssignmentScheduleRequests
+- Microsoft.Authorization/roleAssignmentSchedules
+- Microsoft.Authorization/roleDefinitions
+- Microsoft.Authorization/roleEligibilityScheduleInstances
+- Microsoft.Authorization/roleEligibilityScheduleRequests
+- Microsoft.Authorization/roleEligibilitySchedules
+- Microsoft.Authorization/roleManagementPolicies
+- Microsoft.Authorization/roleManagementPolicyAssignments
 
-## <a name="microsoftautomanage"></a>Micro soft. automanage
+## <a name="microsoftautomanage"></a>Microsoft.Automanage
 
-- Micro soft. automanage/configurationProfileAssignments
+- Microsoft.Automanage/configurationProfileAssignments
 
 ## <a name="microsoftbilling"></a>Microsoft.Billing
 
-- Micro soft. facturering/billingPeriods
-- Micro soft. facturering/billingPermissions
-- Micro soft. facturering/billingRoleAssignments
-- Micro soft. facturering/billingRoleDefinitions
-- Micro soft. facturering/createBillingRoleAssignment
+- Microsoft.Billing/billingPeriods
+- Microsoft.Billing/billingPermissions
+- Microsoft.Billing/billingRoleAssignments
+- Microsoft.Billing/billingRoleDefinitions
+- Microsoft.Billing/createBillingRoleAssignment
 
-## <a name="microsoftblueprint"></a>Micro soft. blauw druk
+## <a name="microsoftblueprint"></a>Microsoft.Blueprint
 
-- Micro soft. blauw druk/blueprintAssignments
-- Micro soft. blauw druk/blauw drukken
+- Microsoft.Blueprint/blueprintAssignments
+- Microsoft.Blueprint/blueprints
 
-## <a name="microsoftconsumption"></a>Micro soft. verbruik
+## <a name="microsoftcapacity"></a>Microsoft.Capacity
 
-- Micro soft. verbruik/AggregatedCost
-- Micro soft. verbruik/saldi
-- Micro soft. verbruik/budgetten
-- Micro soft. verbruik/kosten
-- Micro soft. verbruik/CostTags
-- Micro soft. verbruik/tegoed
-- Micro soft. verbruik/gebeurtenissen
-- Micro soft. verbruik/prognoses
-- Micro soft. verbruik/loten
-- Micro soft. verbruik/markt plaatsen
-- Micro soft. verbruik/Pricesheets
-- Micro soft. verbruik/producten
-- Micro soft. verbruik/ReservationDetails
-- Micro soft. verbruik/ReservationRecommendationDetails
-- Micro soft. verbruik/ReservationRecommendations
-- Micro soft. verbruik/ReservationSummaries
-- Micro soft. verbruik/ReservationTransactions
+- Microsoft.Capacity/listSkus
 
-## <a name="microsoftcontainerinstance"></a>Micro soft. ContainerInstance
+## <a name="microsoftchangeanalysis"></a>Microsoft.ChangeAnalysis
 
-- Micro soft. ContainerInstance/serviceAssociationLinks
+- Microsoft.ChangeAnalysis/changes
 
-## <a name="microsoftcostmanagement"></a>Micro soft. CostManagement
+## <a name="microsoftconsumption"></a>Microsoft.Consumption
 
-- Micro soft. CostManagement/Alerts
-- Micro soft. CostManagement/budgetten
-- Micro soft. CostManagement/Dimensions
-- Micro soft. CostManagement/exports
-- Micro soft. CostManagement/ExternalSubscriptions
-- Micro soft. CostManagement/Forecast
-- Micro soft. CostManagement/Insights
-- Micro soft. CostManagement/query
-- Micro soft. CostManagement/Reportconfigs
-- Micro soft. CostManagement/Reports
-- Micro soft. CostManagement/views
+- Microsoft.Consumption/AggregatedCost
+- Microsoft.Consumption/Balances
+- Microsoft.Consumption/Budgets
+- Microsoft.Consumption/Charges
+- Microsoft.Consumption/CostTags
+- Microsoft.Consumption/credits
+- Microsoft.Consumption/events
+- Microsoft.Consumption/Forecasts
+- Microsoft.Consumption/lots
+- Microsoft.Consumption/Marketplaces
+- Microsoft.Consumption/Pricesheets
+- Microsoft.Consumption/products
+- Microsoft.Consumption/ReservationDetails
+- Microsoft.Consumption/ReservationRecommendationDetails
+- Microsoft.Consumption/ReservationRecommendations
+- Microsoft.Consumption/ReservationSummaries
+- Microsoft.Consumption/ReservationTransactions
 
-## <a name="microsoftcustomproviders"></a>Micro soft. CustomProviders
+## <a name="microsoftcontainerinstance"></a>Microsoft.ContainerInstance
+
+- Microsoft.ContainerInstance/serviceAssociationLinks
+
+## <a name="microsoftcostmanagement"></a>Microsoft.CostManagement
+
+- Microsoft.CostManagement/Alerts
+- Microsoft.CostManagement/Budgets
+- Microsoft.CostManagement/CheckNameAvailability
+- Microsoft.CostManagement/Dimensions
+- Microsoft.CostManagement/Exports
+- Microsoft.CostManagement/ExternalSubscriptions
+- Microsoft.CostManagement/Forecast
+- Microsoft.CostManagement/GenerateDetailedCostReport
+- Microsoft.CostManagement/Insights
+- Microsoft.CostManagement/OperationResults
+- Microsoft.CostManagement/OperationStatus
+- Microsoft.CostManagement/Query
+- Microsoft.CostManagement/Reportconfigs
+- Microsoft.CostManagement/Reports
+- Microsoft.CostManagement/ScheduledActions
+- Microsoft.CostManagement/Views
+
+## <a name="microsoftcustomproviders"></a>Microsoft.CustomProviders
 
 - Microsoft.CustomProviders/associations
 
-## <a name="microsofteventgrid"></a>Micro soft. EventGrid
+## <a name="microsoftdatamigration"></a>Microsoft.DataMigration
 
-- Micro soft. EventGrid/eventSubscriptions
-- Micro soft. EventGrid/extensionTopics
+- Microsoft.DataMigration/DatabaseMigrations
+
+## <a name="microsofteventgrid"></a>Microsoft.EventGrid
+
+- Microsoft.EventGrid/eventSubscriptions
+- Microsoft.EventGrid/extensionTopics
 
 ## <a name="microsoftguestconfiguration"></a>Microsoft.GuestConfiguration
 
-- Micro soft. GuestConfiguration/configurationProfileAssignments
-- Micro soft. GuestConfiguration/guestConfigurationAssignments
-- Micro soft. GuestConfiguration/software
+- Microsoft.GuestConfiguration/configurationProfileAssignments
+- Microsoft.GuestConfiguration/guestConfigurationAssignments
+- Microsoft.GuestConfiguration/software
 
-## <a name="microsoftinsights"></a>micro soft. Insights
+## <a name="microsoftinsights"></a>microsoft.insights
 
-- micro soft. Insights/basis lijn
-- micro soft. Insights/dataCollectionRuleAssociations
-- micro soft. Insights/diagnosticSettings
-- micro soft. Insights/diagnosticSettingsCategories
-- micro soft. Insights/eventtypes
-- micro soft. Insights/extendedDiagnosticSettings
-- micro soft. Insights/guestDiagnosticSettingsAssociation
-- micro soft. Insights/logDefinitions
-- micro soft. Insights/logboeken
-- micro soft. Insights/metricbaselines
-- micro soft. Insights/metricDefinitions
-- micro soft. Insights/metricNamespaces
-- micro soft. Insights/metrische gegevens
-- micro soft. Insights/myWorkbooks
-- micro soft. Insights/topologie
-- micro soft. Insights/trans acties
+- microsoft.insights/baseline
+- microsoft.insights/dataCollectionRuleAssociations
+- microsoft.insights/diagnosticSettings
+- microsoft.insights/diagnosticSettingsCategories
+- microsoft.insights/eventtypes
+- microsoft.insights/extendedDiagnosticSettings
+- microsoft.insights/guestDiagnosticSettingsAssociation
+- microsoft.insights/logDefinitions
+- microsoft.insights/logs
+- microsoft.insights/metricbaselines
+- microsoft.insights/metricDefinitions
+- microsoft.insights/metricNamespaces
+- microsoft.insights/metrics
+- microsoft.insights/myWorkbooks
+- microsoft.insights/topology
+- microsoft.insights/transactions
 
-## <a name="microsoftkubernetesconfiguration"></a>Micro soft. KubernetesConfiguration
+## <a name="microsoftkubernetesconfiguration"></a>Microsoft.KubernetesConfiguration
 
-- Micro soft. KubernetesConfiguration/Extensions
-- Micro soft. KubernetesConfiguration/sourceControlConfigurations
+- Microsoft.KubernetesConfiguration/extensions
+- Microsoft.KubernetesConfiguration/sourceControlConfigurations
 
-## <a name="microsoftmaintenance"></a>Micro soft. onderhoud
+## <a name="microsoftmaintenance"></a>Microsoft.Maintenance
 
-- Micro soft. Maintenance/applyUpdates
-- Micro soft. Maintenance/configurationAssignments
-- Micro soft. onderhoud/updates
+- Microsoft.Maintenance/applyUpdates
+- Microsoft.Maintenance/configurationAssignments
+- Microsoft.Maintenance/updates
 
-## <a name="microsoftmanagedidentity"></a>Micro soft. ManagedIdentity
+## <a name="microsoftmanagedidentity"></a>Microsoft.ManagedIdentity
 
-- Micro soft. ManagedIdentity/Identities
+- Microsoft.ManagedIdentity/Identities
 
-## <a name="microsoftmanagedservices"></a>Micro soft. ManagedServices
+## <a name="microsoftmanagedservices"></a>Microsoft.ManagedServices
 
-- Micro soft. ManagedServices/registrationAssignments
-- Micro soft. ManagedServices/registrationDefinitions
+- Microsoft.ManagedServices/registrationAssignments
+- Microsoft.ManagedServices/registrationDefinitions
 
 ## <a name="microsoftoperationalinsights"></a>Microsoft.OperationalInsights
 
-- Micro soft. OperationalInsights/storageInsightConfigs
+- Microsoft.OperationalInsights/storageInsightConfigs
 
 ## <a name="microsoftoperationsmanagement"></a>Microsoft.OperationsManagement
 
-- Micro soft. OperationsManagement/managementassociations
+- Microsoft.OperationsManagement/managementassociations
 
 ## <a name="microsoftpolicyinsights"></a>Microsoft.PolicyInsights
 
-- Micro soft. PolicyInsights/verklaringen
-- Micro soft. PolicyInsights/policyEvents
-- Micro soft. PolicyInsights/policyStates
-- Micro soft. PolicyInsights/policyTrackedResources
-- Micro soft. PolicyInsights/herstel bewerkingen
+- Microsoft.PolicyInsights/attestations
+- Microsoft.PolicyInsights/eventGridFilters
+- Microsoft.PolicyInsights/policyEvents
+- Microsoft.PolicyInsights/policyStates
+- Microsoft.PolicyInsights/policyTrackedResources
+- Microsoft.PolicyInsights/remediations
 
 ## <a name="microsoftrecoveryservices"></a>Microsoft.RecoveryServices
 
-- Micro soft. Recovery Services/backupProtectedItems
-- Micro soft. Recovery Services/replicationEligibilityResults
+- Microsoft.RecoveryServices/backupProtectedItems
+- Microsoft.RecoveryServices/replicationEligibilityResults
 
 ## <a name="microsoftresourcehealth"></a>Microsoft.ResourceHealth
 
-- Micro soft. ResourceHealth/childResources
-- Micro soft. ResourceHealth/Events
-- Micro soft. ResourceHealth/impactedResources
-- Micro soft. ResourceHealth/meldingen
+- Microsoft.ResourceHealth/childResources
+- Microsoft.ResourceHealth/events
+- Microsoft.ResourceHealth/impactedResources
 
 ## <a name="microsoftresources"></a>Microsoft.Resources
 
-- Micro soft. resources/koppelingen
-- Micro soft. resources/Tags
+- Microsoft.Resources/links
+- Microsoft.Resources/tags
 
 ## <a name="microsoftsecurity"></a>Microsoft.Security
 
-- Micro soft. Security/adaptiveNetworkHardenings
-- Micro soft. Security/advancedThreatProtectionSettings
-- Micro soft. Security/assessmentMetadata
-- Micro soft. Security/beoordelingen
-- Micro soft. Security/Compliances
-- Micro soft. Security/dataCollectionAgents
-- Micro soft. Security/apparaten
-- Micro soft. Security/deviceSecurityGroups
-- Micro soft. Security/InformationProtectionPolicies
-- Micro soft. Security/iotSensors
-- Micro soft. Security/jitPolicies
-- Micro soft. Security/serverVulnerabilityAssessments
-- Micro soft. Security/sqlVulnerabilityAssessments
+- Microsoft.Security/adaptiveNetworkHardenings
+- Microsoft.Security/advancedThreatProtectionSettings
+- Microsoft.Security/assessmentMetadata
+- Microsoft.Security/assessments
+- Microsoft.Security/Compliances
+- Microsoft.Security/dataCollectionAgents
+- Microsoft.Security/devices
+- Microsoft.Security/deviceSecurityGroups
+- Microsoft.Security/InformationProtectionPolicies
+- Microsoft.Security/insights
+- Microsoft.Security/iotAlerts
+- Microsoft.Security/iotRecommendations
+- Microsoft.Security/iotSensors
+- Microsoft.Security/iotSites
+- Microsoft.Security/jitPolicies
+- Microsoft.Security/serverVulnerabilityAssessments
+- Microsoft.Security/sqlVulnerabilityAssessments
 
-## <a name="microsoftsecurityinsights"></a>Micro soft. SecurityInsights
+## <a name="microsoftsecurityinsights"></a>Microsoft.SecurityInsights
 
-- Micro soft. SecurityInsights/aggregaties
-- Micro soft. SecurityInsights/alertRules
-- Micro soft. SecurityInsights/alertRuleTemplates
-- Micro soft. SecurityInsights/automationRules
-- Micro soft. SecurityInsights/blad wijzers
-- Micro soft. SecurityInsights/cases
-- Micro soft. SecurityInsights/dataConnectors
-- Micro soft. SecurityInsights/dataConnectorsCheckRequirements
-- Micro soft. SecurityInsights/entities
-- Micro soft. SecurityInsights/incidenten
-- Micro soft. SecurityInsights/Settings
-- Micro soft. SecurityInsights/threatIntelligence
-- Micro soft. SecurityInsights/Watchlists
+- Microsoft.SecurityInsights/aggregaties
+- Microsoft.SecurityInsights/alertRules
+- Microsoft.SecurityInsights/alertRuleTemplates
+- Microsoft.SecurityInsights/automationRules
+- Microsoft.SecurityInsights/bookmarks
+- Microsoft.SecurityInsights/cases
+- Microsoft.SecurityInsights/dataConnectors
+- Microsoft.SecurityInsights/dataConnectorsCheckRequirements
+- Microsoft.SecurityInsights/enrichment
+- Microsoft.SecurityInsights/entiteiten
+- Microsoft.SecurityInsights/entityQueryTemplates
+- Microsoft.SecurityInsights/incidents
+- Microsoft.SecurityInsights/settings
+- Microsoft.SecurityInsights/threatIntelligence
+- Microsoft.SecurityInsights/watchlists
 
-## <a name="microsoftserialconsoleppe"></a>Micro soft. SerialConsole. BESCHERMINGs
+## <a name="microsoftserialconsole"></a>Microsoft.SerialConsole
 
-- Micro soft. SerialConsole. BESCHERMINGs-serialPorts
+- Microsoft.SerialConsole/serialPorts
 
-## <a name="microsoftsoftwareplan"></a>Micro soft. SoftwarePlan
+## <a name="microsoftservicelinker"></a>Microsoft.ServiceLinker
 
-- Micro soft. SoftwarePlan/hybridUseBenefits
+- Microsoft.ServiceLinker/linkers
 
-## <a name="microsoftsupport"></a>micro soft. ondersteuning
+## <a name="microsoftsoftwareplan"></a>Microsoft.SoftwarePlan
 
-- micro soft. support/Supporttickets
+- Microsoft.SoftwarePlan/hybridUseBenefits
 
-## <a name="microsoftworkloadmonitor"></a>Micro soft. WorkloadMonitor
+## <a name="microsoftsubscription"></a>Microsoft.Subscription
 
-- Micro soft. WorkloadMonitor/-onderdelen
-- Micro soft. WorkloadMonitor/monitorInstances
-- Micro soft. WorkloadMonitor/monitors
-- Micro soft. WorkloadMonitor/notificationSettings
+- Microsoft.Subscription/policies
+
+## <a name="microsoftsupport"></a>microsoft.support
+
+- microsoft.support/supporttickets
+
+## <a name="microsoftworkloadmonitor"></a>Microsoft.WorkloadMonitor
+
+- Microsoft.WorkloadMonitor/monitors
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Gebruik de [extensionResourceId](../templates/template-functions-resource.md#extensionresourceid)om de resource-id voor een extensie bron in een Azure Resource Manager sjabloon op te halen.
-- Zie [Event grid gebeurtenis abonnementen](/azure/templates/microsoft.eventgrid/2019-06-01/eventsubscriptions)voor een voor beeld van het maken van een extensie bron in een sjabloon.
+- Als u de resource-id voor een extensieresource in een Azure Resource Manager sjabloon wilt op halen, gebruikt u [de extensionResourceId](../templates/template-functions-resource.md#extensionresourceid).
+- Zie Gebeurtenisabonnementen voor een voorbeeld van het maken van een extensieresource in [Event Grid sjabloon.](/azure/templates/microsoft.eventgrid/2019-06-01/eventsubscriptions)

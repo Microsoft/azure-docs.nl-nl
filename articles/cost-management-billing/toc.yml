@@ -48,7 +48,7 @@
           href: understand/analyze-unexpected-charges.md
         - name: Kosten beheren met automatisering
           href: costs/manage-automation.md
-        - name: Grote gegevens sets ophalen met uitvoer
+        - name: Grote gegevenssets ophalen met exports
           href: costs/ingest-azure-usage-at-scale.md
         - name: Cost Management voor partners
           href: costs/get-started-partners.md
@@ -98,7 +98,7 @@
           href: reservations/reserved-instance-windows-software-costs.md?toc=/azure/cost-management-billing/toc.json
         - name: Gebruiksgegevens voor afzonderlijke abonnementen
           href: reservations/understand-reserved-instance-usage.md?toc=/azure/cost-management-billing/toc.json
-        - name: Gebruiks gegevens voor Enter prise-en micro soft-klanten overeenkomst
+        - name: Bedrijfs- en Microsoft-klantovereenkomst gegevens
           href: reservations/understand-reserved-instance-usage-ea.md?toc=/azure/cost-management-billing/toc.json
     - name: Billing
       items:
@@ -148,7 +148,7 @@
               href: manage/understand-mca-roles.md
             - name: Partner-id koppelen
               href: manage/link-partner-id.md
-            - name: Partner-ID koppelen aan Power Apps-accounts
+            - name: Partner-id koppelen aan Power Apps accounts
               href: manage/link-partner-id-power-apps-accounts.md
         - name: Abonnementen beheren
           items:
@@ -162,9 +162,9 @@
               href: manage/azurestudents-subscription-disabled.md
             - name: Eigendom overdragen
               href: manage/billing-subscription-transfer.md
-            - name: Eigendom van Microsoft-klantovereenkomst aanvragen
+            - name: Eigendom Microsoft-klantovereenkomst overdragen
               href: manage/mca-request-billing-ownership.md
-            - name: Eigendom van Microsoft-partnerovereenkomst aanvragen
+            - name: Eigendom Microsoft Partner-overeenkomst overdragen
               href: manage/mpa-request-ownership.md
             - name: AWS-integratie instellen en configureren
               href: costs/aws-integration-set-up-configure.md
@@ -206,7 +206,7 @@
               href: manage/transfer-subscriptions-subscribers-csp.md
             - name: Abonnement annuleren
               href: manage/cancel-azure-subscription.md
-            - name: Abonnements beleid beheren
+            - name: Abonnementsbeleid beheren
               href: manage/manage-azure-subscription-policy.md
         - name: Programmatisch abonnementen maken
           items:
@@ -280,7 +280,7 @@
           href: manage/cost-management-budget-scenario.md
         - name: Kostenwaarschuwingen gebruiken
           href: costs/cost-mgt-alerts-monitor-usage-spending.md
-        - name: Kosten gegevens exporteren met een SAS-opslag sleutel
+        - name: Kostengegevens exporteren met een Sas-sleutel voor opslag
           href: costs/export-cost-data-storage-account-sas-key.md
         - name: Kosten toewijzen
           href: costs/allocate-costs.md
@@ -296,7 +296,7 @@
           href: manage/mca-check-azure-credits-balance.md
         - name: Migreren van EA naar MCA-API's
           href: costs/migrate-cost-management-api.md
-        - name: Rollen toewijzen aan EA-Spn's
+        - name: Rollen toewijzen aan EA SPN's
           href: manage/assign-roles-azure-service-principals.md
         - name: Migreren van EA-rapportage naar Azure Resource Manager-API's
           href: costs/migrate-from-enterprise-reporting-to-azure-resource-manager-apis.md
@@ -394,15 +394,15 @@
       href: /rest/api/cost-management
     - name: Azure Consumption REST API
       href: /rest/api/consumption
-    - name: Sjabloon verbruik REST API ARM-budget
+    - name: Arm REST API sjabloon voor verbruik
       href: /azure/templates/microsoft.consumption/budgets
     - name: Voorbeelden van Azure Cost Management REST API
       href: 'https://github.com/Azure-Samples/Cost-Management-Samples'
-    - name: Azure PowerShell-cmdlets voor Cost Management
+    - name: Azure PowerShell cmdlets voor Cost Management
       href: /powershell/module/Az.CostManagement
     - name: Automatiseringsscenario's voor facturering
       href: manage/cost-management-automation-scenarios.md
-    - name: Azure retail-prijzen REST API
+    - name: Prijzen van Azure-REST API
       href: /rest/api/cost-management/retail-prices/azure-retail-prices
     - name: Azure Billing REST API
       href: /rest/api/billing
@@ -410,21 +410,21 @@
       href: manage/consumption-api-overview.md
     - name: Azure Consumption REST API
       href: /rest/api/consumption
-    - name: Overzicht van ENTER prise Reporting REST API
+    - name: Overzicht van bedrijfsrapportage REST API rapportage
       href: manage/enterprise-api.md
-    - name: REST-Api's voor Enter prise Reporting
+    - name: REST API's voor Enterprise-rapportage
       href: /rest/api/billing/enterprise/billing-enterprise-api-balance-summary
     - name: Reservations
       items:
         - name: Reserveringen REST API
           href: reservations/reservation-apis.md?toc=/azure/cost-management-billing/toc.json
-        - name: Azure PowerShell-cmdlets voor reserve ringen
+        - name: Azure PowerShell cmdlets voor reserveringen
           href: /powershell/module/azurerm.reservations
-        - name: Azure CLI voor reserve ringen
+        - name: Azure CLI voor reserveringen
           href: /cli/azure/reservations/reservation
-        - name: Details van gebruik REST API
+        - name: Gebruiksgegevens REST API
           href: /rest/api/consumption/usagedetails
-        - name: Details van reserve ringen REST API
+        - name: Reserveringsdetails REST API
           href: /rest/api/consumption/reservationsdetails
 - name: Resources
   items:

@@ -8,6 +8,8 @@
       href: core/overview-iot-central-tour.md
     - name: Recente updates
       items:
+        - name: Nieuwe en bijgewerkte functies van maart 2021
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-new-and-updated-features-march-2021/'
         - name: Nieuwe en bijgewerkte functies van februari 2021
           href: 'https://azure.microsoft.com/updates/azure-iot-central-new-and-updated-features-february-2021/'
         - name: Nieuwe en bijgewerkte functies van januari 2021
@@ -131,25 +133,25 @@
       href: core/concepts-architecture.md
     - name: Handleiding van apparaatontiwkkelaar
       href: core/overview-iot-central-developer.md
-    - name: Solution Builder-hand leiding
+    - name: Handleiding voor het bouwen van oplossingen
       href: core/overview-iot-central-solution-builder.md
     - name: Beheerdershandleiding
       href: core/overview-iot-central-admin.md
-    - name: Operator handleiding
+    - name: Operatorhandleiding
       href: core/overview-iot-central-operator.md
     - name: Wat zijn toepassingssjablonen?
       href: core/concepts-app-templates.md
-    - name: Branchespecifieke toepassings sjablonen
+    - name: Branchespecifieke toepassingssjablonen
       items:
         - name: Retail
           items:
             - name: Overzicht
               href: retail/overview-iot-central-retail.md
-            - name: Incheck-architectuur in de Store-analyses
+            - name: In-Store Analytics-kassaarchitectuur
               href: retail/store-analytics-architecture.md
-            - name: Beheer architectuur slimme inventaris
+            - name: Architectuur voor slim voorraadbeheer
               href: retail/architecture-smart-inventory-management.md
-            - name: Architectuur van verbonden logistiek
+            - name: Architectuur voor verbonden logistiek
               href: retail/architecture-connected-logistics.md
             - name: Digitaal distributiecentrum
               href: retail/architecture-digital-distribution-center.md
@@ -169,7 +171,7 @@
           items:
             - name: Overzicht
               href: government/overview-iot-central-government.md
-            - name: Architectuur van verbonden afval bewaking
+            - name: Architectuur voor bewaking van verbonden afval
               href: government/concepts-connectedwastemanagement-architecture.md
             - name: Architectuur voor bewaking van waterverbruik maken
               href: government/concepts-waterconsumptionmonitoring-architecture.md
@@ -263,7 +265,7 @@
           href: core/howto-customize-ui.md
         - name: Uw toepassing exporteren
           href: core/howto-use-app-templates.md
-        - name: V2 migreren naar v3-toepassing
+        - name: V2 migreren naar V3-toepassing
           href: core/howto-migrate.md
         - name: De status van de toepassing bewaken
           href: core/howto-monitor-application-health.md
@@ -285,7 +287,7 @@
           href: core/howto-create-and-manage-applications-csp.md
     - name: Uw oplossing personaliseren
       items:
-        - name: Een persoonlijk dash board maken
+        - name: Een persoonlijk dashboard maken
           href: core/howto-create-personal-dashboards.md
         - name: Uw persoonlijke voorkeuren beheren
           href: core/howto-manage-preferences.md
@@ -309,7 +311,7 @@
       href: /samples/browse/?expanded=azure&products=azure-iot-central
     - name: Opties voor ondersteuning en hulp
       href: ../iot-fundamentals/iot-support-help.md?toc=/azure/iot-central/toc.json&bc=/azure/iot-central/breadcrumb/toc.json
-    - name: IoT-woorden lijst
+    - name: Woordenlijst voor IoT
       href: ../iot-fundamentals/iot-glossary.md?toc=/azure/iot-central/toc.json&bc=/azure/iot-central/breadcrumb/toc.json
     - name: Azure IoT-services
       items:

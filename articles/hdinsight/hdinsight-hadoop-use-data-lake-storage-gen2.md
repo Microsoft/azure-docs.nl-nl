@@ -1,67 +1,67 @@
 ---
 title: Azure Data Lake Storage Gen2 gebruiken met Azure HDInsight-clusters
-description: Meer informatie over het gebruik van Azure Data Lake Storage Gen2 met Azure HDInsight-clusters.
+description: Meer informatie over het gebruik Azure Data Lake Storage Gen2 met Azure HDInsight clusters.
 ms.service: hdinsight
 ms.topic: how-to
-ms.custom: hdinsightactive,seoapr2020, devx-track-azurecli
+ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/24/2020
-ms.openlocfilehash: 2bbfbd2d953ea663453f0092ff366e95f6dd5ea7
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ea9dc2627d5a6498f69ca8c61a9cac8089816886
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98945368"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107378581"
 ---
 # <a name="use-azure-data-lake-storage-gen2-with-azure-hdinsight-clusters"></a>Azure Data Lake Storage Gen2 gebruiken met Azure HDInsight-clusters
 
-[Azure data Lake Storage Gen2](../storage/blobs/data-lake-storage-introduction.md) is een service voor Cloud opslag die is toegewezen aan Big Data Analytics, gebouwd op [Azure Blob-opslag](../storage/blobs/storage-blobs-introduction.md). Data Lake Storage Gen2 combineert de mogelijkheden van Azure Blob-opslag en Azure Data Lake Storage Gen1. De resulterende service biedt functies van Azure Data Lake Storage Gen1, waaronder: bestandssysteem semantiek, beveiliging op Directory-en bestands niveau en aanpassings mogelijkheden. Samen met de lage kosten, gelaagde opslag, maximale Beschik baarheid en herstel na nood gevallen van Azure Blob-opslag.
+[Azure Data Lake Storage Gen2](../storage/blobs/data-lake-storage-introduction.md) is een cloudopslagservice die is toegewezen aan big data analytics, gebouwd [op Azure Blob Storage.](../storage/blobs/storage-blobs-introduction.md) Data Lake Storage Gen2 combineert de mogelijkheden van Azure Blob Storage en Azure Data Lake Storage Gen1. De resulterende service biedt functies van Azure Data Lake Storage Gen1 waaronder: semantiek van het bestandssysteem, beveiliging op map- en bestandsniveau en aanpassingsvermogen. Samen met de voordelige, gelaagde opslag, hoge beschikbaarheid en mogelijkheden voor herstel na noodgevallen vanuit Azure Blob Storage.
 
-Zie [opslag opties vergelijken voor gebruik met Azure HDInsight-clusters](hdinsight-hadoop-compare-storage-options.md)voor een volledige vergelijking van de opties voor het maken van clusters met behulp van data Lake Storage Gen2.
+Zie Opslagopties vergelijken voor gebruik met clusters Data Lake Storage Gen2 een volledige vergelijking van de opties voor het [maken Azure HDInsight cluster.](hdinsight-hadoop-compare-storage-options.md)
 
 [!INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
-## <a name="data-lake-storage-gen2-availability"></a>Beschik baarheid Data Lake Storage Gen2
+## <a name="data-lake-storage-gen2-availability"></a>Data Lake Storage Gen2 beschikbaarheid
 
-Data Lake Storage Gen2 is beschikbaar als een opslag optie voor bijna alle Azure HDInsight-cluster typen als standaard en als een extra opslag account. HBase kan echter slechts één account hebben met Data Lake Storage Gen2.
+Data Lake Storage Gen2 is beschikbaar als opslagoptie voor bijna alle Azure HDInsight clustertypen als standaard en een extra opslagaccount. HBase kan echter slechts één account hebben met Data Lake Storage Gen2.
 
 > [!Note]  
-> Nadat u Data Lake Storage Gen2 als uw **primaire opslag type** selecteert, kunt u een Data Lake Storage gen1 als extra opslag ruimte niet selecteren.
+> Nadat u een Data Lake Storage Gen2 als uw primaire **opslagtype hebt** geselecteerd, kunt u geen Data Lake Storage Gen1 als extra opslag.
 
-## <a name="create-hdinsight-clusters-using-data-lake-storage-gen2"></a>HDInsight-clusters maken met behulp van Data Lake Storage Gen2
+## <a name="create-hdinsight-clusters-using-data-lake-storage-gen2"></a>HDInsight-clusters maken met Data Lake Storage Gen2
 
 Gebruik de volgende koppelingen voor gedetailleerde instructies over het maken van HDInsight-clusters met toegang tot Data Lake Storage Gen2.
 
 * [Portal gebruiken](../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2-portal.md)
 * [Azure CLI gebruiken](../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2-azure-cli.md)
-* Power shell wordt momenteel niet ondersteund voor het maken van een HDInsight-cluster met Azure Data Lake Storage Gen2.
+* PowerShell wordt momenteel niet ondersteund voor het maken van een HDInsight-cluster met Azure Data Lake Storage Gen2.
 
-## <a name="access-control-for-data-lake-storage-gen2-in-hdinsight"></a>Toegangs beheer voor Data Lake Storage Gen2 in HDInsight
+## <a name="access-control-for-data-lake-storage-gen2-in-hdinsight"></a>Toegangsbeheer voor Data Lake Storage Gen2 in HDInsight
 
-### <a name="what-kinds-of-permissions-does-data-lake-storage-gen2-support"></a>Welke soorten machtigingen ondersteunt Data Lake Storage Gen2?
+### <a name="what-kinds-of-permissions-does-data-lake-storage-gen2-support"></a>Welke soorten machtigingen worden Data Lake Storage Gen2 ondersteund?
 
-Data Lake Storage Gen2 gebruikt een model voor toegangs beheer dat zowel op rollen gebaseerd toegangs beheer (Azure RBAC) als POSIX-achtige Acl's (toegangs beheer lijsten) ondersteunt. Data Lake Storage Gen1 ondersteunt alleen toegangs beheer lijsten voor het beheren van de toegang tot gegevens.
+Data Lake Storage Gen2 maakt gebruik van een model voor toegangsbeheer dat ondersteuning biedt voor zowel op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC) als POSIX-achtige toegangsbeheerlijsten (ACL's). Data Lake Storage Gen1 ondersteunt alleen toegangsbeheerlijsten voor het beheren van de toegang tot gegevens.
 
-Azure RBAC gebruikt roltoewijzingen voor het effectief Toep assen van machtigingen sets voor gebruikers, groepen en service-principals voor Azure-resources. Normaal gesp roken zijn deze Azure-resources beperkt tot resources op het hoogste niveau (bijvoorbeeld Azure Blob Storage-accounts). Voor Azure Blob-opslag, en ook Data Lake Storage Gen2, is dit mechanisme uitgebreid naar de bestands systeem bron.
+Azure RBAC maakt gebruik van roltoewijzingen om effectief sets machtigingen toe te passen op gebruikers, groepen en service-principals voor Azure-resources. Deze Azure-resources zijn doorgaans beperkt tot resources op het hoogste niveau (bijvoorbeeld Azure Blob Storage-accounts). Voor Azure Blob Storage, en ook Data Lake Storage Gen2, is dit mechanisme uitgebreid naar de bestandssysteemresource.
 
-Zie voor meer informatie over bestands machtigingen met Azure RBAC [Azure op rollen gebaseerd toegangs beheer (Azure RBAC)](../storage/blobs/data-lake-storage-access-control-model.md#role-based-access-control).
+Zie Op rollen gebaseerd toegangsbeheer van [Azure (Azure RBAC)](../storage/blobs/data-lake-storage-access-control-model.md#role-based-access-control)voor meer informatie over bestandsmachtigingen met Azure RBAC.
 
-Zie [toegangs beheer lijsten voor bestanden en mappen](../storage/blobs/data-lake-storage-access-control.md)voor meer informatie over bestands machtigingen met acl's.
+Zie Toegangsbeheerlijsten voor bestanden en mappen voor meer informatie over [bestandsmachtigingen met ACL's.](../storage/blobs/data-lake-storage-access-control.md)
 
-### <a name="how-do-i-control-access-to-my-data-in-data-lake-storage-gen2"></a>Hoe kan ik de toegang tot mijn gegevens in Data Lake Storage Gen2 beheren?
+### <a name="how-do-i-control-access-to-my-data-in-data-lake-storage-gen2"></a>Hoe kan ik toegang tot mijn gegevens in Data Lake Storage Gen2?
 
-De mogelijkheid van uw HDInsight-cluster voor toegang tot bestanden in Data Lake Storage Gen2 wordt beheerd via beheerde identiteiten. Een beheerde identiteit is een identiteit die is geregistreerd in Azure Active Directory (Azure AD) waarvan de referenties door Azure worden beheerd. Met beheerde identiteiten hoeft u geen service-principals te registreren in azure AD. Of behoud referenties zoals certificaten.
+De mogelijkheid van uw HDInsight-cluster om toegang te krijgen tot bestanden in Data Lake Storage Gen2 wordt beheerd via beheerde identiteiten. Een beheerde identiteit is een identiteit die is geregistreerd in Azure Active Directory (Azure AD) waarvan de referenties worden beheerd door Azure. Met beheerde identiteiten hoeft u geen service-principals te registreren in Azure AD. Of behoud referenties zoals certificaten.
 
-Azure-Services hebben twee typen beheerde identiteiten: systeem toegewezen en door de gebruiker toegewezen. HDInsight maakt gebruik van door de gebruiker toegewezen beheerde identiteiten voor toegang tot Data Lake Storage Gen2. A `user-assigned managed identity` wordt gemaakt als een zelfstandige Azure-resource. Via een productieproces maakt Azure een identiteit in de Azure AD-tenant, die wordt vertrouwd door het gebruikte abonnement. Nadat de identiteit is gemaakt, kan deze worden toegewezen aan een of meer Azure-service-exemplaren.
+Azure-services hebben twee typen beheerde identiteiten: door het systeem toegewezen en door de gebruiker toegewezen. HDInsight maakt gebruik van door de gebruiker toegewezen beheerde identiteiten voor toegang tot Data Lake Storage Gen2. Een `user-assigned managed identity` wordt gemaakt als een zelfstandige Azure-resource. Via een productieproces maakt Azure een identiteit in de Azure AD-tenant, die wordt vertrouwd door het gebruikte abonnement. Nadat de identiteit is gemaakt, kan deze worden toegewezen aan een of meer Azure-service-exemplaren.
 
-De levenscyclus van een door de gebruiker toegewezen identiteit wordt afzonderlijk beheerd van de levenscyclus van de Azure Service-exemplaren waaraan de identiteit is toegewezen. Zie [Wat zijn beheerde identiteiten voor Azure-resources?](../active-directory/managed-identities-azure-resources/overview.md)voor meer informatie over beheerde identiteiten.
+De levenscyclus van een door de gebruiker toegewezen identiteit wordt afzonderlijk beheerd van de levenscyclus van de Azure Service-exemplaren waaraan de identiteit is toegewezen. Zie Wat zijn beheerde identiteiten voor Azure-resources? voor meer informatie [over beheerde identiteiten.](../active-directory/managed-identities-azure-resources/overview.md)
 
-### <a name="how-do-i-set-permissions-for-azure-ad-users-to-query-data-in-data-lake-storage-gen2-by-using-hive-or-other-services"></a>Hoe kan ik machtigingen instellen voor Azure AD-gebruikers om gegevens op te vragen in Data Lake Storage Gen2 met behulp van Hive of andere services?
+### <a name="how-do-i-set-permissions-for-azure-ad-users-to-query-data-in-data-lake-storage-gen2-by-using-hive-or-other-services"></a>Hoe kan ik machtigingen instellen voor Azure AD-gebruikers om query's uit te voeren op gegevens in Data Lake Storage Gen2 met behulp van Hive of andere services?
 
-Als u machtigingen voor gebruikers wilt instellen om gegevens op te vragen, gebruikt u Azure AD-beveiligings groepen als de toegewezen Principal in Acl's. Wijs niet rechtstreeks machtigingen voor bestands toegang toe aan afzonderlijke gebruikers of service-principals. Met Azure AD-beveiligings groepen om de machtigings stroom te beheren, kunt u gebruikers of service-principals toevoegen en verwijderen zonder dat Acl's opnieuw worden toegepast op een volledige mapstructuur. U hoeft alleen de gebruikers toe te voegen aan of te verwijderen uit de juiste Azure AD-beveiligings groep. Acl's worden niet overgenomen. Als u Acl's opnieuw wilt Toep assen, moet u de toegangs beheer lijst voor elk bestand en elke submap bijwerken.
+Als u machtigingen wilt instellen voor gebruikers om gegevens op te vragen, gebruikt u Azure AD-beveiligingsgroepen als de toegewezen principal in ACL's. Wijs niet rechtstreeks machtigingen voor bestandstoegang toe aan afzonderlijke gebruikers of service-principals. Met Azure AD-beveiligingsgroepen om de stroom machtigingen te bepalen, kunt u gebruikers of service-principals toevoegen en verwijderen zonder ACL's opnieuw toe te voegen aan een volledige mapstructuur. U hoeft alleen de gebruikers toe te voegen aan of te verwijderen uit de juiste Azure AD-beveiligingsgroep. ACL's worden niet overgenomen, dus voor het opnieuw toevoegen van ACL's moet de ACL voor elk bestand en elke subdirectory worden bijgewerkt.
 
 ## <a name="access-files-from-the-cluster"></a>Bestanden openen vanuit het cluster
 
-Er zijn verschillende manieren om toegang te krijgen tot de bestanden in Data Lake Storage Gen2 vanuit een HDInsight-cluster.
+Er zijn verschillende manieren waarop u toegang hebt tot de bestanden in Data Lake Storage Gen2 vanuit een HDInsight-cluster.
 
 * **De volledig gekwalificeerde naam gebruiken**. Met deze methode geeft u het volledige pad op naar het bestand dat u wilt openen.
 
@@ -69,7 +69,7 @@ Er zijn verschillende manieren om toegang te krijgen tot de bestanden in Data La
     abfs://<containername>@<accountname>.dfs.core.windows.net/<file.path>/
     ```
 
-* **De verkorte padnotatie gebruiken**. Met deze methode vervangt u het pad naar de hoofdmap van het cluster met:
+* **De verkorte padnotatie gebruiken**. Met deze methode vervangt u het pad naar de hoofdmap van het cluster door:
 
     ```
     abfs:///<file.path>/
@@ -81,19 +81,19 @@ Er zijn verschillende manieren om toegang te krijgen tot de bestanden in Data La
     /<file.path>/
     ```
 
-### <a name="data-access-examples"></a>Voor beelden van gegevens toegang
+### <a name="data-access-examples"></a>Voorbeelden van gegevenstoegang
 
-Voor beelden zijn gebaseerd op een [SSH-verbinding](./hdinsight-hadoop-linux-use-ssh-unix.md) met het hoofd knooppunt van het cluster. De voor beelden gebruiken alle drie de URI-schema's. Vervangen `CONTAINERNAME` en `STORAGEACCOUNT` door de relevante waarden
+Voorbeelden zijn gebaseerd op een [SSH-verbinding](./hdinsight-hadoop-linux-use-ssh-unix.md) met het hoofdknooppunt van het cluster. In de voorbeelden worden alle drie de URI-schema's gebruikt. Vervang `CONTAINERNAME` en door de relevante `STORAGEACCOUNT` waarden
 
 #### <a name="a-few-hdfs-commands"></a>Enkele hdfs-opdrachten
 
-1. Maak een bestand op lokale opslag.
+1. Maak een bestand in de lokale opslag.
 
     ```bash
     touch testFile.txt
     ```
 
-1. Maak mappen in de cluster opslag.
+1. Maak directories op clusteropslag.
 
     ```bash
     hdfs dfs -mkdir abfs://CONTAINERNAME@STORAGEACCOUNT.dfs.core.windows.net/sampledata1/
@@ -101,7 +101,7 @@ Voor beelden zijn gebaseerd op een [SSH-verbinding](./hdinsight-hadoop-linux-use
     hdfs dfs -mkdir /sampledata3/
     ```
 
-1. Gegevens uit de lokale opslag kopiëren naar de cluster opslag.
+1. Gegevens kopiëren van lokale opslag naar clusteropslag.
 
     ```bash
     hdfs dfs -copyFromLocal testFile.txt  abfs://CONTAINERNAME@STORAGEACCOUNT.dfs.core.windows.net/sampledata1/
@@ -109,7 +109,7 @@ Voor beelden zijn gebaseerd op een [SSH-verbinding](./hdinsight-hadoop-linux-use
     hdfs dfs -copyFromLocal testFile.txt  /sampledata3/
     ```
 
-1. Mapinhoud weer geven in cluster opslag.
+1. Mapinhoud in clusteropslag weergeven.
 
     ```bash
     hdfs dfs -ls abfs://CONTAINERNAME@STORAGEACCOUNT.dfs.core.windows.net/sampledata1/
@@ -119,7 +119,7 @@ Voor beelden zijn gebaseerd op een [SSH-verbinding](./hdinsight-hadoop-linux-use
 
 #### <a name="creating-a-hive-table"></a>Een Hive-tabel maken
 
-Er worden drie bestands locaties weer gegeven voor illustratie doeleinden. Gebruik slechts één van de vermeldingen voor daad werkelijke uitvoering `LOCATION` .
+Er worden drie bestandslocaties weergegeven voor illustratieve doeleinden. Gebruik slechts een van de vermeldingen voor de `LOCATION` werkelijke uitvoering.
 
 ```hql
 DROP TABLE myTable;
@@ -140,6 +140,6 @@ LOCATION '/example/data/';
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Integratie van Azure HDInsight met Data Lake Storage Gen2-voor beeld-ACL en beveiligings update](https://azure.microsoft.com/blog/azure-hdinsight-integration-with-data-lake-storage-gen-2-preview-acl-and-security-update/)
+* [Azure HDInsight integratie met Data Lake Storage Gen2 preview - ACL en beveiligingsupdate](https://azure.microsoft.com/blog/azure-hdinsight-integration-with-data-lake-storage-gen-2-preview-acl-and-security-update/)
 * [Inleiding tot Azure Data Lake Storage Gen2](../storage/blobs/data-lake-storage-introduction.md)
 * [Zelfstudie: Gegevens extraheren, transformeren en laden met Interactive Query in Azure HDInsight](./interactive-query/interactive-query-tutorial-analyze-flight-data.md)

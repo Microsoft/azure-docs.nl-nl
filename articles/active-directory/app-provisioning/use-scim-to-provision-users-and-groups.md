@@ -12,82 +12,82 @@ ms.date: 04/12/2021
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 4130ed4bb690edb3c0c5d72d7d158262ed6ff39d
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: 3d53c96c4b0306911b0c8a0b8576f35a73419db0
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107305596"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107498149"
 ---
-# <a name="tutorial-develop-and-plan-provisioning-for-a-scim-endpoint"></a>Zelf studie: inrichten opstellen en plannen voor een SCIM-eind punt
+# <a name="tutorial-develop-and-plan-provisioning-for-a-scim-endpoint"></a>Zelfstudie: Inrichting voor een SCIM-eindpunt ontwikkelen en plannen
 
-Als ontwikkelaar van toepassingen kunt u het systeem gebruiken voor SCIM-gebruikers beheer API (Cross-Domain Identity Management) om het automatisch inrichten van gebruikers en groepen tussen uw toepassing en Azure AD (AAD) in te scha kelen. In dit artikel wordt beschreven hoe u een SCIM-eind punt bouwt en integreert met de AAD Provisioning-Service. De SCIM-specificatie biedt een gemeenschappelijk schema voor het inrichten van gebruikers. Bij gebruik in combinatie met federatiestandaarden zoals SAML of OpenID Connect, biedt SCIM beheerders een end-to-end, op standaarden gebaseerde oplossing voor toegangsbeheer.
+Als toepassingsontwikkelaar kunt u de SCIM-API (System for Cross-Domain Identity Management) voor gebruikersbeheer gebruiken om automatische inrichting van gebruikers en groepen tussen uw toepassing en Azure AD (AAD) mogelijk te maken. In dit artikel wordt beschreven hoe u een SCIM-eindpunt bouwt en integreert met de AAD-inrichtingsservice. De SCIM-specificatie biedt een gemeenschappelijk schema voor het inrichten van gebruikers. Bij gebruik in combinatie met federatiestandaarden zoals SAML of OpenID Connect, biedt SCIM beheerders een end-to-end, op standaarden gebaseerde oplossing voor toegangsbeheer.
 
 ![Inrichten vanuit Azure AD naar een app met SCIM](media/use-scim-to-provision-users-and-groups/scim-provisioning-overview.png)
 
-SCIM is een gestandaardiseerde definitie van twee eind punten: een `/Users` eind punt en een `/Groups` eind punt. Er worden algemene REST-werkwoorden gebruikt om objecten te maken, bij te werken en te verwijderen, en een vooraf gedefinieerd schema voor algemene kenmerken zoals groepsnaam, gebruikersnaam, voornaam, achternaam en e-mailadres. Apps die een SCIM 2.0-REST API bieden, kunnen de nadelen van het werken met een eigen API voor gebruikersbeheer verminderen of elimineren. Elke compatibele SCIM-client weet bijvoorbeeld hoe u een HTTP POST van een JSON-object naar het `/Users` eind punt kunt maken om een nieuwe gebruikers vermelding te maken. Apps die voldoen aan de SCIM-standaard kunnen direct profiteren van bestaande clients, hulpprogramma's en code, in plaats van dat ze een iets andere API voor dezelfde basisacties moeten gebruiken. 
+SCIM is een gestandaardiseerde definitie van twee eindpunten: `/Users` een eindpunt en een `/Groups` eindpunt. Er worden algemene REST-werkwoorden gebruikt om objecten te maken, bij te werken en te verwijderen, en een vooraf gedefinieerd schema voor algemene kenmerken zoals groepsnaam, gebruikersnaam, voornaam, achternaam en e-mailadres. Apps die een SCIM 2.0-REST API bieden, kunnen de nadelen van het werken met een eigen API voor gebruikersbeheer verminderen of elimineren. Elke compatibele SCIM-client weet bijvoorbeeld hoe een HTTP POST van een JSON-object naar het eindpunt moet worden gemaakt om `/Users` een nieuwe gebruikersinvoer te maken. Apps die voldoen aan de SCIM-standaard kunnen direct profiteren van bestaande clients, hulpprogramma's en code, in plaats van dat ze een iets andere API voor dezelfde basisacties moeten gebruiken. 
 
 Met het standaard gebruikersobjectschema en de REST-beheer-API’s die zijn gedefinieerd in SCIM 2.0 (RFC [7642](https://tools.ietf.org/html/rfc7642), [7643](https://tools.ietf.org/html/rfc7643), [7644](https://tools.ietf.org/html/rfc7644)) kunnen id-providers en apps gemakkelijker met elkaar worden geïntegreerd. Toepassingsontwikkelaars die een SCIM-eindpunt bouwen, kunnen deze integreren met elke SCIM-compatibele client zonder aanpassingen te doen.
 
-Als u het inrichten voor een toepassing wilt automatiseren, moet u een SCIM-eind punt bouwen en integreren met de Azure AD SCIM-client. Gebruik de volgende stappen om gebruikers en groepen te richten in uw toepassing. 
+Als u het inrichten van een toepassing wilt automatiseren, moet u een SCIM-eindpunt bouwen en integreren met de Azure AD SCIM-client. Gebruik de volgende stappen om te beginnen met het inrichten van gebruikers en groepen in uw toepassing. 
     
-1. Uw gebruikers-en groeps schema ontwerpen
+1. Uw gebruikers- en groepsschema ontwerpen
 
-   Bepaal de objecten en kenmerken van de toepassing om te bepalen hoe ze worden toegewezen aan het gebruikers-en groeps schema dat wordt ondersteund door de AAD SCIM-implementatie.
+   Identificeer de objecten en kenmerken van de toepassing om te bepalen hoe deze worden toe te schrijven aan de gebruiker en het groepsschema dat wordt ondersteund door de AAD SCIM-implementatie.
 
-1. Meer informatie over de AAD SCIM-implementatie
+1. Inzicht in de AAD SCIM-implementatie
 
-   Begrijp hoe de AAD SCIM-client wordt geïmplementeerd om de verwerking van uw SCIM-protocol aanvragen en-antwoorden te model leren.
+   Begrijpen hoe de AAD SCIM-client wordt geïmplementeerd om de afhandeling en reacties van uw SCIM-protocolaanvraag te modelleren.
 
-1. Een SCIM-eind punt bouwen
+1. Een SCIM-eindpunt bouwen
 
-   Een eind punt moet SCIM 2,0-compatibel zijn om te kunnen worden geïntegreerd met de AAD Provisioning-Service. Gebruik als optie micro soft CLI-bibliotheken en-code voorbeelden om uw eind punt te bouwen. Deze voor beelden zijn alleen ter referentie en alleen testen. u wordt aangeraden deze als afhankelijkheden in uw productie-app te gebruiken.
+   Een eindpunt moet SCIM 2.0-compatibel zijn om te kunnen worden geïntegreerd met de AAD-inrichtingsservice. U kunt ook CLI-bibliotheken (Common Language Infrastructure) en codevoorbeelden van Microsoft gebruiken om uw eindpunt te bouwen. Deze voorbeelden zijn alleen voor referentie- en testtests; We raden u aan deze niet te gebruiken als afhankelijkheden in uw productie-app.
 
-1. Uw SCIM-eind punt integreren met de AAD SCIM-client 
+1. Uw SCIM-eindpunt integreren met de AAD SCIM-client 
 
-   Als uw organisatie gebruikmaakt van een toepassing van derden voor het implementeren van een profiel van SCIM 2,0 dat door AAD wordt ondersteund, kunt u snel zowel het inrichten als het ongedaan maken van de inrichting van gebruikers en groepen automatiseren.
+   Als uw organisatie een toepassing van derden gebruikt om een profiel van SCIM 2.0 te implementeren dat door AAD wordt ondersteund, kunt u snel zowel het inrichten als de inrichting van gebruikers en groepen automatiseren.
 
-1. Uw toepassing publiceren in de AAD-toepassings galerie 
+1. Uw toepassing publiceren naar de AAD-toepassingsgalerie 
 
    Maak het eenvoudig voor klanten om uw toepassing te detecteren en de inrichting eenvoudig te configureren. 
 
 ![Stappen voor het integreren van een SCIM-eindpunt met Azure AD](media/use-scim-to-provision-users-and-groups/process.png)
 
-## <a name="design-your-user-and-group-schema"></a>Uw gebruikers-en groeps schema ontwerpen
+## <a name="design-your-user-and-group-schema"></a>Uw gebruikers- en groepsschema ontwerpen
 
-Voor elke toepassing zijn verschillende kenmerken vereist om een gebruiker of groep te maken. Start uw integratie door de vereiste objecten (gebruikers, groepen) en kenmerken (naam, Manager, functie, enz.) te identificeren die nodig zijn voor uw toepassing. 
+Elke toepassing vereist verschillende kenmerken om een gebruiker of groep te maken. Begin uw integratie door de vereiste objecten (gebruikers, groepen) en kenmerken (naam, manager, functie, enzovoort) te identificeren die uw toepassing nodig heeft. 
 
 De SCIM-standaard biedt een schema voor het beheren van gebruikers en groepen. 
 
-Voor het **kern** gebruikers schema zijn alleen drie kenmerken vereist (alle andere kenmerken zijn optioneel):
+Het **basisgebruikersschema** vereist slechts drie kenmerken (alle andere kenmerken zijn optioneel):
 
-- `id`, gedefinieerde id van service provider
-- `userName`, een unieke id voor de gebruiker (over het algemeen wordt toegewezen aan de Azure AD-user principal name)
-- `meta`, *alleen-lezen* meta gegevens die worden onderhouden door de service provider
+- `id`, door serviceprovider gedefinieerde id
+- `userName`, een unieke id voor de gebruiker (wordt doorgaans aan de Azure AD-user principal name)
+- `meta`, *alleen-lezen metagegevens* die worden onderhouden door de serviceprovider
 
-Naast het **kern** gebruikers schema definieert de scim-standaard een gebruikers extensie voor **ondernemingen** met een model voor het uitbreiden van het gebruikers schema om te voldoen aan de behoeften van uw toepassing. 
+Naast het  basisgebruikersschema definieert de  SCIM-standaard een bedrijfsgebruikersextensie met een model voor het uitbreiden van het gebruikersschema om aan de behoeften van uw toepassing te voldoen. 
 
-Als uw toepassing bijvoorbeeld zowel het e-mail adres van een gebruiker als de Manager van de gebruiker vereist, gebruikt u het **basis** schema om het e-mail adres van de gebruiker en het **ondernemings** gebruikers schema te verzamelen voor het verzamelen van de Manager van de gebruiker.
+Als uw toepassing bijvoorbeeld zowel het e-mailadres van een gebruiker  als de manager van de  gebruiker vereist, gebruikt u het basisschema om het e-mailadres van de gebruiker en het bedrijfsgebruikersschema te verzamelen om de manager van de gebruiker te verzamelen.
 
-Voer de volgende stappen uit om uw schema te ontwerpen:
+Volg deze stappen om uw schema te ontwerpen:
 
-1. Geef een lijst van de kenmerken die uw toepassing nodig heeft en Categoriseer vervolgens als kenmerken die nodig zijn voor verificatie (bijvoorbeeld aanmeldings naam en e-mail adres), kenmerken die nodig zijn voor het beheren van de levens cyclus van gebruikers (bijvoorbeeld status/actief) en alle andere kenmerken die nodig zijn om de toepassing te laten werken (bijvoorbeeld Manager, tag).
+1. Vermeld de kenmerken die uw toepassing vereist en categoriseer vervolgens als kenmerken die nodig zijn voor verificatie (bijvoorbeeld loginName en e-mail), kenmerken die nodig zijn voor het beheren van de levenscyclus van de gebruiker (bijvoorbeeld status/actief) en alle andere kenmerken die nodig zijn om de toepassing te laten werken (bijvoorbeeld manager, tag).
 
-1. Controleer of de kenmerken al zijn gedefinieerd in het **basis** gebruikers schema of het gebruikers schema van de **onderneming** . Als dat niet het geval is, moet u een uitbrei ding definiëren voor het gebruikers schema dat betrekking heeft op de ontbrekende kenmerken. Zie voor beeld hieronder voor een uitbrei ding van de gebruiker om het inrichten van een gebruiker toe te staan `tag` .
+1. Controleer of de kenmerken al  zijn gedefinieerd in het basisgebruikersschema of **bedrijfsgebruikersschema.** Zo niet, dan moet u een extensie voor het gebruikersschema definiëren die betrekking heeft op de ontbrekende kenmerken. Zie het onderstaande voorbeeld voor een extensie voor de gebruiker om het inrichten van een gebruiker toe te `tag` staan.
 
-1. SCIM kenmerken toewijzen aan de gebruikers kenmerken in azure AD. Als een van de kenmerken die u hebt gedefinieerd in uw SCIM-eind punt geen duidelijke vergelijk bare soort heeft in het Azure AD-gebruikers schema, begeleidt de Tenant beheerder om het schema uit te breiden of een uitbreidings kenmerk te gebruiken zoals hieronder wordt weer gegeven voor de `tags` eigenschap.
+1. WIJS SCIM-kenmerken toe aan de gebruikerskenmerken in Azure AD. Als een van de kenmerken die u hebt gedefinieerd in uw SCIM-eindpunt geen duidelijke tegenhanger in het Azure AD-gebruikersschema heeft, helpt u de tenantbeheerder om het schema uit te breiden of gebruikt u een extensiekenmerk zoals hieronder wordt weergegeven voor de eigenschap `tags` .
 
-|Vereist app-kenmerk|Toegewezen SCIM-kenmerk|Toegewezen Azure AD-kenmerk|
+|Vereist app-kenmerk|Toegesneden SCIM-kenmerk|Azure AD-kenmerk voor kaart|
 |--|--|--|
 |loginName|userName|userPrincipalName|
 |voornaam|name.givenName|givenName|
-|achternaam|name.familyName|Roep|
-|workMail|e-mail berichten [type EQ "werk]. waarde|Mail|
+|achternaam|name.familyName|Achternaam|
+|workMail|emails[type eq "work"].value|Mail|
 |manager|manager|manager|
 |tag|urn:ietf:params:scim:schemas:extension:2.0:CustomExtension:tag|extensionAttribute1|
 |status|actief|isSoftDeleted (berekende waarde niet opgeslagen voor gebruiker)|
 
-**Voor beeld van een lijst met vereiste kenmerken**
+**Voorbeeld van een lijst met vereiste kenmerken**
 
 ```json
 {
@@ -117,12 +117,12 @@ Voer de volgende stappen uit om uw schema te ontwerpen:
    }
 }   
 ```
-**Voorbeeld schema gedefinieerd door een JSON-nettolading**
+**Voorbeeldschema dat is gedefinieerd door een JSON-nettolading**
 
 > [!NOTE]
-> Naast de kenmerken die vereist zijn voor de toepassing, bevat de JSON-weer gave ook de vereiste `id` `externalId` Eigenschappen, en `meta` kenmerken.
+> Naast de kenmerken die vereist zijn voor de toepassing, bevat de JSON-weergave ook de vereiste `id` `externalId` kenmerken , en `meta` .
 
-Het helpt bij het categoriseren van `/User` en `/Group` het toewijzen van standaard gebruikers kenmerken in azure AD aan de scim RFC, [Zie How Customize Attributes](customize-application-attributes.md)out to to to to your scim endpoint.
+Het helpt bij het categoriseren tussen en om standaardgebruikerskenmerken in Azure AD toe te wijst aan de SCIM RFC. Zie hoe kenmerken worden aangepast tussen Azure AD en uw `/User` `/Group` [SCIM-eindpunt](customize-application-attributes.md).
 
 
 | Azure Active Directory-gebruiker | "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User" |
@@ -146,7 +146,7 @@ Het helpt bij het categoriseren van `/User` en `/Group` het toewijzen van standa
 | telephone-Number |phoneNumbers[type eq "work"].value |
 | user-PrincipalName |userName |
 
-**Voor beeld van een lijst met kenmerken van gebruikers en groepen**
+**Voorbeeld van een lijst met gebruikers- en groepskenmerken**
 
 | Azure Active Directory-groep | urn:ietf:params:scim:schemas:core:2.0:Group |
 | --- | --- |
@@ -157,12 +157,12 @@ Het helpt bij het categoriseren van `/User` en `/Group` het toewijzen van standa
 | objectId |externalId |
 | proxyAddresses |emails[type eq "other"].Value |
 
-**Voor beeld van een lijst met groeps kenmerken**
+**Voorbeeld van een lijst met groepskenmerken**
 
 > [!NOTE]
-> U hoeft niet zowel gebruikers als groepen of alle hier weer gegeven kenmerken te ondersteunen. het is alleen een verwijzing naar de manier waarop kenmerken in azure AD vaak worden toegewezen aan eigenschappen in het SCIM-protocol. 
+> U hoeft niet zowel gebruikers als groepen te ondersteunen, of alle kenmerken die hier worden weergegeven. Het is alleen een verwijzing naar hoe kenmerken in Azure AD vaak worden toegewezen aan eigenschappen in het SCIM-protocol. 
 
-Er zijn verschillende eindpunten gedefinieerd in de SCIM RFC. U kunt beginnen met het `/User` eind punt en vervolgens van daaruit uitbreiden. 
+Er zijn verschillende eindpunten gedefinieerd in de SCIM RFC. U kunt beginnen met het `/User` eindpunt en daar vervolgens uitbreiden. 
 
 |Eindpunt|Beschrijving|
 |--|--|
@@ -171,62 +171,63 @@ Er zijn verschillende eindpunten gedefinieerd in de SCIM RFC. U kunt beginnen me
 |/Schemas|De set kenmerken die door elke client en serviceprovider wordt ondersteund, kan variëren. De ene serviceprovider kan `name`, `title` en `emails` gebruiken, terwijl een andere service provider `name`, `title` en `phoneNumbers` gebruikt. Het eindpunt voor schema's maakt het mogelijk om de kenmerken te detecteren die worden ondersteund.|
 |/Bulk|Met bulkbewerkingen kunt u met één bewerking verschillende bewerkingen uitvoeren op een grote verzameling Resource-objecten (zoals lidmaatschappen bijwerken voor een grote groep).|
 |/ServiceProviderConfig|Bevat informatie over de functies van de SCIM-standaard die worden ondersteund, bijvoorbeeld de resources die worden ondersteund en de verificatiemethode.|
-|/ResourceTypes|Hiermee geeft u meta gegevens voor elke resource op.|
+|/ResourceTypes|Hiermee geeft u metagegevens over elke resource op.|
 
-**Voor beeld van een lijst met eind punten**
+**Voorbeeld van een lijst met eindpunten**
 
 > [!NOTE]
-> Gebruik het `/Schemas` eind punt ter ondersteuning van aangepaste kenmerken of als uw schema regel matig wordt gewijzigd, omdat een client het meest recente schema automatisch kan ophalen. Gebruik het `/Bulk` eind punt om groepen te ondersteunen.
+> Gebruik het eindpunt ter ondersteuning van aangepaste kenmerken of als uw schema regelmatig wordt gewijzigd, omdat een client hierdoor automatisch het meest recente `/Schemas` schema kan ophalen. Gebruik het `/Bulk` eindpunt om groepen te ondersteunen.
 
-## <a name="understand-the-aad-scim-implementation"></a>Meer informatie over de AAD SCIM-implementatie
+## <a name="understand-the-aad-scim-implementation"></a>Inzicht in de AAD SCIM-implementatie
 
-Ter ondersteuning van een SCIM 2,0-API voor gebruikers beheer, in deze sectie wordt beschreven hoe de AAD SCIM-client wordt geïmplementeerd en ziet u hoe u de verwerking van uw SCIM-protocol aanvragen en-antwoorden kunt model leren.
+Ter ondersteuning van een SCIM 2.0-API voor gebruikersbeheer wordt in deze sectie beschreven hoe de AAD SCIM-client wordt geïmplementeerd en wordt beschreven hoe u de verwerking en antwoorden van uw SCIM-protocolaanvraag modelleert.
 
 > [!IMPORTANT]
 > Het gedrag van de Azure AD SCIM-implementatie is voor het laatst bijgewerkt op 18 december 2018. Zie [Naleving van het SCIM 2.0 protocol van de Azure AD-inrichtingsservice voor gebruikers](application-provisioning-config-problem-scim-compatibility.md) voor meer informatie over wat er is gewijzigd.
 
-Binnen de [SCIM 2,0-protocol specificatie](http://www.simplecloud.info/#Specification)moet uw toepassing de volgende vereisten ondersteunen:
+Binnen de [SPECIFICATIE van het SCIM 2.0-protocol](http://www.simplecloud.info/#Specification)moet uw toepassing deze vereisten ondersteunen:
 
-|Vereiste|Referentie notities (SCIM-Protocol)|
+|Vereiste|Referentienotities (SCIM-protocol)|
 |-|-|
-|Gebruikers maken en desgewenst ook groepen|[sectie 3,3](https://tools.ietf.org/html/rfc7644#section-3.3)|
-|Gebruikers of groepen met PATCH aanvragen wijzigen|[sectie 3.5.2](https://tools.ietf.org/html/rfc7644#section-3.5.2). Ondersteuning garandeert dat groepen en gebruikers op een efficiënte manier worden ingericht.|
-|Een bekende resource ophalen voor een gebruiker of groep die u eerder hebt gemaakt|[sectie 3.4.1](https://tools.ietf.org/html/rfc7644#section-3.4.1)|
-|Gebruikers of groepen zoeken|[sectie 3.4.2](https://tools.ietf.org/html/rfc7644#section-3.4.2).  Gebruikers worden standaard opgehaald op basis van `id` en query’s worden uitgevoerd op basis van `username` en de `externalId`. Groepen worden opgehaald door query’s uit te voeren op basis van `displayName`.|
-|Gebruiker op ID en op Manager vragen|sectie 3.4.2|
-|Query's groeperen op ID en op lid|sectie 3.4.2|
-|Het filter [excludedAttributes = leden](#get-group) bij het uitvoeren van een query op de groeps bron|sectie 3.4.2.5|
-|Accepteer één Bearer-token voor verificatie en autorisatie van AAD voor uw toepassing.||
-|Een gebruiker zacht verwijderen `active=false` en de gebruiker herstellen `active=true`|Het gebruikers object moet worden geretourneerd in een aanvraag, ongeacht of de gebruiker actief is. De enige keer dat een gebruiker niet wordt geretourneerd, is wanneer deze permanent wordt verwijderd uit de toepassing.|
-|Het/schemas-eind punt ondersteunen|[sectie 7](https://tools.ietf.org/html/rfc7643#page-30) Het schema detectie-eind punt wordt gebruikt om aanvullende kenmerken te detecteren.|
+|Gebruikers en optioneel ook groepen maken|[sectie 3.3](https://tools.ietf.org/html/rfc7644#section-3.3)|
+|Gebruikers of groepen wijzigen met PATCH-aanvragen|[sectie 3.5.2.](https://tools.ietf.org/html/rfc7644#section-3.5.2) Ondersteuning garandeert dat groepen en gebruikers op een efficiënte manier worden ingericht.|
+|Een bekende resource ophalen voor een gebruiker of groep die eerder is gemaakt|[sectie 3.4.1](https://tools.ietf.org/html/rfc7644#section-3.4.1)|
+|Query's uitvoeren op gebruikers of groepen|[sectie 3.4.2.](https://tools.ietf.org/html/rfc7644#section-3.4.2)  Gebruikers worden standaard opgehaald op basis van `id` en query’s worden uitgevoerd op basis van `username` en de `externalId`. Groepen worden opgehaald door query’s uit te voeren op basis van `displayName`.|
+|Query uitvoeren op gebruiker op id en per manager|sectie 3.4.2|
+|Query's uitvoeren op groepen op id en per lid|sectie 3.4.2|
+|Het filter [excludedAttributes=members bij](#get-group) het uitvoeren van een query op de groepsresource|sectie 3.4.2.5|
+|Accepteer één bearer-token voor verificatie en autorisatie van AAD voor uw toepassing.||
+|Een gebruiker soft-deleting en `active=false` het herstellen van de gebruiker `active=true`|Het gebruikersobject moet worden geretourneerd in een aanvraag, ongeacht of de gebruiker actief is. De enige keer dat een gebruiker niet wordt geretourneerd, is wanneer deze permanent wordt verwijderd uit de toepassing.|
+|Ondersteuning voor het /Schemas-eindpunt|[sectie 7](https://tools.ietf.org/html/rfc7643#page-30) Het eindpunt voor schemadetectie wordt gebruikt om aanvullende kenmerken te ontdekken.|
 
-Gebruik de algemene richt lijnen voor het implementeren van een SCIM-eind punt om te zorgen voor compatibiliteit met AAD:
+Gebruik de algemene richtlijnen bij het implementeren van een SCIM-eindpunt om compatibiliteit met AAD te garanderen:
 
 * `id` is een vereiste eigenschap voor alle resources. Elk antwoord dat een resource retourneert, moet ervoor zorgen dat elke resource deze eigenschap bevat, met uitzondering van `ListResponse` met nul leden.
 * Het antwoord op een query/filter-aanvraag moet altijd een `ListResponse` zijn.
-* Groepen zijn optioneel, maar worden alleen ondersteund als de implementatie van de SCIM **patch** aanvragen ondersteunt.
-* Het is niet nodig om de volledige resource op te neemen in de reactie van de **patch** .
-* Micro soft AAD maakt alleen gebruik van de volgende Opera tors: `eq` , `and`
-* Geen hoofdletter gevoelige overeenkomst voor structurele elementen in SCIM vereist, in het bijzonder **patch** `op` bewerkings waarden, zoals gedefinieerd in [para graaf 3.5.2](https://tools.ietf.org/html/rfc7644#section-3.5.2). AAD verzendt de waarden van `op` als **toevoegen**, **vervangen** en **verwijderen**.
-* Micro soft AAD maakt aanvragen voor het ophalen van een wille keurige gebruiker en groep om ervoor te zorgen dat het eind punt en de referenties geldig zijn. Het wordt ook uitgevoerd als onderdeel van de **test verbindings** stroom in de [Azure Portal](https://portal.azure.com). 
-* Het kenmerk waarvan de bronnen kunnen worden opgevraagd, moet worden ingesteld als een overeenkomend kenmerk op de toepassing in de [Azure Portal](https://portal.azure.com). Zie [toewijzings kenmerk toewijzingen voor gebruikers inrichten aanpassen](customize-application-attributes.md).
-* Ondersteuning voor HTTPS op uw SCIM-eindpunt
-* [Schema detectie](#schema-discovery)
-  * Schema detectie wordt momenteel niet ondersteund voor de aangepaste toepassing, maar wordt wel gebruikt voor bepaalde galerie toepassingen. Schema detectie wordt voor Taan gebruikt als primaire methode voor het toevoegen van extra kenmerken aan een connector. 
-  * Als er geen waarde aanwezig is, verzendt u geen Null-waarden.
-  * Eigenschaps waarden moeten Camel-cases (bijvoorbeeld readWrite) zijn.
-  * Er moet een antwoord op een lijst worden geretourneerd.
+* Groepen zijn optioneel, maar worden alleen ondersteund als de SCIM-implementatie **PATCH-aanvragen** ondersteunt.
+* Het is niet nodig om de volledige resource op te nemen in het **PATCH-antwoord.**
+* Microsoft AAD maakt alleen gebruik van de volgende operators: `eq` , `and`
+* Vereist geen casegevoelige overeenkomst voor structurele elementen in SCIM, met name PATCH-bewerkingswaarden, zoals gedefinieerd in sectie  `op` [3.5.2.](https://tools.ietf.org/html/rfc7644#section-3.5.2) AAD stuurt de waarden van `op` als **Toevoegen,** **Vervangen** en **Verwijderen.**
+* Microsoft AAD doet aanvragen om een willekeurige gebruiker en groep op te halen om ervoor te zorgen dat het eindpunt en de referenties geldig zijn. Dit wordt ook gedaan als onderdeel van de **stroom Verbinding** testen in [de Azure Portal](https://portal.azure.com). 
+* Het kenmerk waar de resources op kunnen worden opgevraagd, moet worden ingesteld als een overeenkomend kenmerk voor de toepassing in de [Azure Portal](https://portal.azure.com). Zie [Customizing User Provisioning Attribute Mappings](customize-application-attributes.md)(Kenmerktoewijzingen voor het inrichten van gebruikers aanpassen).
+* Het rechtenkenmerk wordt niet ondersteund.
+* Ondersteuning voor HTTPS op uw SCIM-eindpunt.
+* [Schemadetectie](#schema-discovery)
+  * Schemadetectie wordt momenteel niet ondersteund in de aangepaste toepassing, maar wordt gebruikt in bepaalde galerietoepassingen. In de toekomst wordt schemadetectie gebruikt als de primaire methode om extra kenmerken aan een connector toe te voegen. 
+  * Als er geen waarde aanwezig is, moet u geen null-waarden verzenden.
+  * Eigenschapswaarden moeten camel cased zijn (bijvoorbeeld readWrite).
+  * Moet een lijstreactie retourneren.
   
 ### <a name="user-provisioning-and-deprovisioning"></a>Inrichting en ongedaan maken van inrichting van gebruikers
 
-In de volgende afbeelding ziet u de berichten die AAD verzendt naar een SCIM-service voor het beheren van de levens cyclus van een gebruiker in de identiteits opslag van uw toepassing.  
+In de volgende afbeelding ziet u de berichten die AAD naar een SCIM-service verzendt om de levenscyclus van een gebruiker in de identiteitsopslag van uw toepassing te beheren.  
 
 ![Hiermee wordt de volgorde voor de inrichting en het ongedaan maken van de inrichting voor gebruikers weergegeven](media/use-scim-to-provision-users-and-groups/scim-figure-4.png)<br/>
 *Volgorde voor inrichting en ongedaan maken van inrichting van gebruikers*
 
 ### <a name="group-provisioning-and-deprovisioning"></a>Inrichting en ongedaan maken van inrichting van groepen
 
-De inrichting en het ongedaan maken van de inrichting van groepen is optioneel. Wanneer de volgende afbeelding is geïmplementeerd en ingeschakeld, ziet u de berichten die AAD verzendt naar een SCIM-service om de levens cyclus van een groep in de identiteits opslag van uw toepassing te beheren. Deze berichten verschillen op twee manieren van de berichten over gebruikers:
+De inrichting en het ongedaan maken van de inrichting van groepen is optioneel. Wanneer AAD is geïmplementeerd en ingeschakeld, ziet u in de volgende afbeelding de berichten die AAD naar een SCIM-service verzendt om de levenscyclus van een groep in de identiteitsopslag van uw toepassing te beheren. Deze berichten verschillen op twee manieren van de berichten over gebruikers:
 
 * Bij aanvragen voor het ophalen van groepen wordt het ledenkenmerk uitgesloten van alle resources die worden weergegeven als antwoord op de aanvraag.  
 * Aanvragen om te bepalen of een verwijzingskenmerk een bepaalde waarde heeft zijn aanvragen over het ledenkenmerk.  
@@ -235,10 +236,10 @@ De inrichting en het ongedaan maken van de inrichting van groepen is optioneel. 
 *Volgorde voor inrichting en ongedaan maken van inrichting van groepen*
 
 ### <a name="scim-protocol-requests-and-responses"></a>Aanvragen en antwoorden van het SCIM-Protocol
-Deze sectie bevat voor beelden van SCIM-aanvragen die worden verzonden door de AAD SCIM-client en voor beelden van verwachte reacties. Voor de beste resultaten moet u de app coderen om deze aanvragen in deze indeling af te handelen en de verwachte antwoorden te verzenden.
+Deze sectie bevat een voorbeeld van SCIM-aanvragen die zijn ingediend door de AAD SCIM-client en voorbeeld van verwachte antwoorden. Voor de beste resultaten moet u de app coderen om deze aanvragen in deze indeling af te handelen en de verwachte antwoorden te verzenden.
 
 > [!IMPORTANT]
-> Als u wilt weten hoe en wanneer de AAD User Provisioning-Service de hieronder beschreven bewerkingen verzendt, raadpleegt u de sectie [cycli: begin en incrementeel](how-provisioning-works.md#provisioning-cycles-initial-and-incremental) in de werking van [inrichting](how-provisioning-works.md).
+> Zie de sectie Inrichtingscycli: Eerste en [incrementele](how-provisioning-works.md#provisioning-cycles-initial-and-incremental) in Hoe inrichting werkt om te begrijpen hoe en wanneer de AAD-service voor het inrichten van gebruikers de hieronder beschreven bewerkingen [indient.](how-provisioning-works.md)
 
 [Gebruikersbewerkingen](#user-operations)
   - [Gebruiker maken](#create-user) ([Aanvraag](#request) / [Antwoord](#response))
@@ -259,8 +260,8 @@ Deze sectie bevat voor beelden van SCIM-aanvragen die worden verzonden door de A
   - [Groep bijwerken [leden verwijderen]](#update-group-remove-members) ([Aanvraag](#request-12) / [Antwoord](#response-12))
   - [Groep verwijderen](#delete-group) ([Aanvraag](#request-13) / [Antwoord](#response-13))
 
-[Schema detectie](#schema-discovery)
-  - [Schema detecteren](#discover-schema) ([](#request-15)  /  [antwoord](#response-15)van aanvraag)
+[Schemadetectie](#schema-discovery)
+  - [Schema ontdekken](#discover-schema) ([](#request-15)  /  [aanvraagreactie](#response-15))
 
 ### <a name="user-operations"></a>Gebruikersbewerkingen
 
@@ -759,11 +760,11 @@ Deze sectie bevat voor beelden van SCIM-aanvragen die worden verzonden door de A
 
 *HTTP/1.1 204 No Content*
 
-### <a name="schema-discovery"></a>Schema detectie
-#### <a name="discover-schema"></a>Schema detecteren
+### <a name="schema-discovery"></a>Schemadetectie
+#### <a name="discover-schema"></a>Schema ontdekken
 
 ##### <a name="request"></a><a name="request-15"></a>Aanvraag
-*/Schemas ophalen* 
+*GET/Schema's* 
 ##### <a name="response"></a><a name="response-15"></a>Response
 *HTTP/1.1 200 OK*
 ```json
@@ -887,13 +888,13 @@ Minimale staaf voor TLS 1.2-coderingssuites:
 ### <a name="ip-ranges"></a>IP-bereiken
 De Azure AD-inrichtingsservice werkt momenteel met de IP-bereiken voor AzureActiveDirectory, zoals [hier](https://www.microsoft.com/download/details.aspx?id=56519&WT.mc_id=rss_alldownloads_all) wordt weergegeven. U kunt de IP-bereiken onder het label AzureActiveDirectory toevoegen om verkeer van de Azure AD-inrichtingsservice toe te staan in uw toepassing. Houd er rekening mee dat u de lijst met IP-bereiken zorgvuldig moet controleren op berekende adressen. Een adres zoals '40.126.25.32' kan worden weergegeven in de lijst met IP-bereiken als ' 40.126.0.0/18'. U kunt de lijst IP-bereik ook programmatisch ophalen met behulp van de volgende [API](/rest/api/virtualnetwork/servicetags/list).
 
-## <a name="build-a-scim-endpoint"></a>Een SCIM-eind punt bouwen
+## <a name="build-a-scim-endpoint"></a>Een SCIM-eindpunt bouwen
 
 Nu u uw schema hebt ontworpen en de Azure AD SCIM-implementatie begrijpt, kunt u aan de slag met het ontwikkelen van uw SCIM-eindpunt. In plaats van helemaal opnieuw te beginnen en de implementatie volledig zelf te bouwen, kunt u gebruikmaken van de open source SCIM-bibliotheken die zijn gepubliceerd door de SCIM-community.
 
-Zie [een voor beeld scim-eind punt ontwikkelen](use-scim-to-build-users-and-groups-endpoints.md)voor meer informatie over het bouwen van een scim-eind punt met voor beelden.
+Zie Een SCIM-voorbeeld-eindpunt ontwikkelen voor hulp bij het bouwen van een [SCIM-eindpunt,](use-scim-to-build-users-and-groups-endpoints.md)inclusief voorbeelden.
 
-Het voor beeld van een open source .NET core- [referentie code](https://aka.ms/SCIMReferenceCode) gepubliceerd door het Azure AD-inrichtings team is een van de bronnen waarmee u uw ontwikkeling kunt starten. Nadat u het SCIM-eindpunt hebt gemaakt, moet u het testen. U kunt de verzameling [postman tests ](https://github.com/AzureAD/SCIMReferenceCode/wiki/Test-Your-SCIM-Endpoint) gebruiken die als onderdeel van de referentiecode worden gegeven, of door de voorbeeld aanvragen/antwoorden uit te voeren die [hierboven](#user-operations) worden genoemd.  
+Het open source .NET [](https://aka.ms/SCIMReferenceCode) Core-referentiecodevoorbeeld dat is gepubliceerd door het Azure AD-inrichtingsteam is een resource die snel aan uw ontwikkeling kan beginnen. Nadat u het SCIM-eindpunt hebt gemaakt, moet u het testen. U kunt de verzameling [postman tests ](https://github.com/AzureAD/SCIMReferenceCode/wiki/Test-Your-SCIM-Endpoint) gebruiken die als onderdeel van de referentiecode worden gegeven, of door de voorbeeld aanvragen/antwoorden uit te voeren die [hierboven](#user-operations) worden genoemd.  
 
    > [!Note]
    > De referentiecode is bedoeld om u te helpen bij het bouwen van uw SCIM-eindpunt en wordt 'AS IS' aangeboden. Bijdragen van de community zijn welkom bij het bouwen en onderhouden van de code.
@@ -990,7 +991,7 @@ In de voorbeeldcode worden aanvragen geverifieerd met het pakket Microsoft.AspNe
 
 Er is ook een Bearer-token vereist voor het gebruik van de verstrekte [postman tests](https://github.com/AzureAD/SCIMReferenceCode/wiki/Test-Your-SCIM-Endpoint) en om lokale foutopsporing uit te voeren met localhost. De voorbeeldcode maakt gebruik van ASP.NET Core-omgevingen om de verificatie-opties tijdens de ontwikkelingsfase te wijzigen en het gebruik van een zelfondertekend token in te schakelen.
 
-Zie voor meer informatie over meerdere omgevingen in ASP.NET Core [meerdere omgevingen gebruiken in ASP.net core](/aspnet/core/fundamentals/environments).
+Zie Use multiple environments in ASP.NET Core (Meerdere omgevingen gebruiken in ASP.NET Core) voor meer informatie over meerdere [omgevingen in ASP.NET Core.](/aspnet/core/fundamentals/environments)
 
 De volgende code dwingt af dat aanvragen voor een van de service-eindpunten worden geverifieerd met behulp van een Bearer-token dat is ondertekend met een aangepaste sleutel:
 
@@ -1057,10 +1058,10 @@ private string GenerateJSONWebToken()
 
 ***Voorbeeld 1. Een query uitvoeren op de service voor een overeenkomende gebruiker***
 
-Azure Active Directory (AAD) vraagt de service om een gebruiker met een `externalId` kenmerk waarde die overeenkomt met de kenmerk waarde mailnickname van een gebruiker in Aad. De query wordt weer gegeven als een Hypertext Transfer Protocol (HTTP)-aanvraag, zoals dit voorbeeld, waarin jyoung een voorbeeld is van een mailnickname van een gebruiker in Azure Active Directory.
+Azure Active Directory (AAD) vraagt de service naar een gebruiker met een kenmerkwaarde die overeenkomt met de `externalId` kenmerkwaarde mailNickname van een gebruiker in AAD. De query wordt weer gegeven als een Hypertext Transfer Protocol (HTTP)-aanvraag, zoals dit voorbeeld, waarin jyoung een voorbeeld is van een mailnickname van een gebruiker in Azure Active Directory.
 
 >[!NOTE]
-> Dit is een voorbeeld. Niet alle gebruikers hebben een mailnickname-kenmerk en de waarde die een gebruiker heeft, is mogelijk niet uniek in de Directory. Het kenmerk dat wordt gebruikt voor het vergelijken (in dit geval `externalId` ) kan ook worden geconfigureerd in de [Aad-kenmerk toewijzingen](customize-application-attributes.md).
+> Dit is een voorbeeld. Niet alle gebruikers hebben een mailnickname-kenmerk en de waarde die een gebruiker heeft, is mogelijk niet uniek in de Directory. Het kenmerk dat wordt gebruikt voor het matchen (in dit geval ) kan ook worden geconfigureerd `externalId` in [de AAD-kenmerktoewijzingen](customize-application-attributes.md).
 
 ```
 GET https://.../scim/Users?filter=externalId eq jyoung HTTP/1.1
@@ -1090,7 +1091,7 @@ In deze voorbeeldquery voor een gebruiker met een opgegeven waarde voor het kenm
 
 ***Voorbeeld 2. Een gebruiker inrichten***
 
-Als het antwoord op een query naar de webservice voor een gebruiker met een `externalId` kenmerk waarde die overeenkomt met de kenmerk waarde mailnickname van een gebruiker geen gebruikers retourneert, worden Aad-aanvragen die door de service worden ingericht, voorzien van een gebruiker die overeenkomt met het account in Aad.  Hier volgt een voorbeeld van een dergelijke aanvraag: 
+Als het antwoord op een query op de webservice voor een gebruiker met een kenmerkwaarde die overeenkomt met de kenmerkwaarde mailNickname van een gebruiker geen gebruikers retourneert, vraagt AAD aan dat de service een gebruiker inrichten die overeenkomt met de waarde `externalId` in AAD.  Hier volgt een voorbeeld van een dergelijke aanvraag: 
 
 ```
 POST https://.../scim/Users HTTP/1.1
@@ -1221,18 +1222,18 @@ In het voorbeeld van een aanvraag om een gebruiker bij te werken, heeft het obje
 
 |Argument|Waarde|
 |-|-|
-|ResourceIdentifier. Identifier|"54D382A4-2050-4C03-94D1-E769F1D15682"|
+|ResourceIdentifier.Identifier|"54D382A4-2050-4C03-94D1-E769F1D15682"|
 |ResourceIdentifier.SchemaIdentifier|"urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"|
-|(PatchRequest als PatchRequest2). Bewerkingen. Count|1|
-|(PatchRequest als PatchRequest2). Bewerkingen. ElementAt (0). OperationName|Operationname. add|
-|(PatchRequest als PatchRequest2). Bewerkingen. ElementAt (0). Path. AttributePath|Manager|
-|(PatchRequest als PatchRequest2). Bewerkingen. ElementAt (0). Waarde. Count|1|
-|(PatchRequest als PatchRequest2). Bewerkingen. ElementAt (0). Waarde. ElementAt (0). Referentielaag|http://.../scim/Users/2819c223-7f76-453a-919d-413861904646|
-|(PatchRequest als PatchRequest2). Bewerkingen. ElementAt (0). Waarde. ElementAt (0). Value| 2819c223-7f76-453a-919d-413861904646|
+|(PatchRequest als PatchRequest2). Operations.Count|1|
+|(PatchRequest als PatchRequest2). Operations.ElementAt(0). OperationName|OperationName.Add|
+|(PatchRequest als PatchRequest2). Operations.ElementAt(0). Path.AttributePath|"manager"|
+|(PatchRequest als PatchRequest2). Operations.ElementAt(0). Value.Count|1|
+|(PatchRequest als PatchRequest2). Operations.ElementAt(0). Value.ElementAt(0). Verwijzing|http://.../scim/Users/2819c223-7f76-453a-919d-413861904646|
+|(PatchRequest als PatchRequest2). Operations.ElementAt(0). Value.ElementAt(0). Waarde| 2819c223-7f76-453a-919d-413861904646|
 
 ***Voorbeeld 6. De inrichting van een gebruiker ongedaan maken***
 
-Voor het ongedaan maken van de inrichting van een gebruiker op basis van een identiteits opslag voor een SCIM-service, verzendt AAD een aanvraag zoals:
+Als u deprovision van een gebruiker wilt in een identiteitsopslag die wordt gebruikt door een SCIM-service, verzendt AAD een aanvraag zoals:
 
 ```
 DELETE ~/scim/Users/54D382A4-2050-4C03-94D1-E769F1D15682 HTTP/1.1
@@ -1256,9 +1257,9 @@ Het object dat als waarde voor het argument resourceIdentifier wordt gegeven, he
 * ResourceIdentifier.Identifier: "54D382A4-2050-4C03-94D1-E769F1D15682"
 * ResourceIdentifier.SchemaIdentifier: "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"
 
-## <a name="integrate-your-scim-endpoint-with-the-aad-scim-client"></a>Uw SCIM-eind punt integreren met de AAD SCIM-client
+## <a name="integrate-your-scim-endpoint-with-the-aad-scim-client"></a>Uw SCIM-eindpunt integreren met de AAD SCIM-client
 
-Azure AD kan worden geconfigureerd voor het automatisch inrichten van toegewezen gebruikers en groepen voor toepassingen die een specifiek profiel van het [SCIM 2.0-protocol implementeren](https://tools.ietf.org/html/rfc7644). De details van het profiel zijn beschreven in [inzicht in de implementatie van Azure AD scim](#understand-the-aad-scim-implementation).
+Azure AD kan worden geconfigureerd voor het automatisch inrichten van toegewezen gebruikers en groepen voor toepassingen die een specifiek profiel van het [SCIM 2.0-protocol implementeren](https://tools.ietf.org/html/rfc7644). De details van het profiel worden beschreven in Understand the Azure AD SCIM implementation (Inzicht in de [Azure AD SCIM-implementatie).](#understand-the-aad-scim-implementation)
 
 Neem contact op met uw toepassingsprovider of de documentatie van uw toepassingsprovider voor instructies over de compatibiliteit met deze vereisten.
 
@@ -1271,19 +1272,19 @@ Toepassingen die ondersteuning bieden voor het SCIM-profiel dat in dit artikel w
 
 **Verbinding maken met een toepassing die ondersteuning biedt voor SCIM:**
 
-1. Meld u aan bij de [Aad-Portal](https://aad.portal.azure.com). U kunt toegang krijgen tot een gratis proefversie van Azure Active Directory met P2-licenties door u aan te melden voor het [ontwikkelaarsprogramma](https://developer.microsoft.com/office/dev-program)
+1. Meld u aan bij de [AAD-portal.](https://aad.portal.azure.com) U kunt toegang krijgen tot een gratis proefversie van Azure Active Directory met P2-licenties door u aan te melden voor het [ontwikkelaarsprogramma](https://developer.microsoft.com/office/dev-program)
 1. Selecteer **Enterprise-toepassingen** in het linkerdeelvenster. Er wordt een lijst met alle geconfigureerde apps weergegeven, met inbegrip van apps die zijn toegevoegd vanuit de galerie.
-1. Selecteer **+ nieuwe toepassing**  >  **+ Maak uw eigen toepassing**.
-1. Voer een naam in voor uw toepassing, kies de optie *een andere toepassing integreren die u niet in de galerie vindt* en selecteer **toevoegen** om een app-object te maken. De nieuwe app wordt toegevoegd aan de lijst met bedrijfstoepassingen en wordt geopend op het scherm voor het beheren van apps.
+1. Selecteer **+ Nieuwe toepassing**+ Uw eigen toepassing  >  **maken.**
+1. Voer een naam in voor uw toepassing, kies de optie 'Integreer alle andere toepassingen die u niet *in* de galerie vindt' en selecteer Toevoegen om **een** app-object te maken. De nieuwe app wordt toegevoegd aan de lijst met bedrijfstoepassingen en wordt geopend op het scherm voor het beheren van apps.
 
-   ![Scherm opname toont de Azure AD-toepassings galerie ](media/use-scim-to-provision-users-and-groups/scim-figure-2b-1.png)
-    *Azure AD-toepassings galerie*
+   ![Schermopname van de Azure AD-toepassingsgalerie ](media/use-scim-to-provision-users-and-groups/scim-figure-2b-1.png)
+    *Azure AD-toepassingsgalerie*
 
    > [!NOTE]
-   > Als u de oude app Gallery-ervaring gebruikt, volgt u de onderstaande scherm gids.
+   > Als u de oude app-galerie gebruikt, volgt u de onderstaande schermhandleiding.
    
-   ![Scherm afbeelding toont de Azure AD-galerie met oude apps die de Azure AD-ervaring voor ](media/use-scim-to-provision-users-and-groups/scim-figure-2a.png)
-    *oude apps Gallery* heeft
+   ![Schermopname van de oude Azure AD-app-galerie-ervaring ](media/use-scim-to-provision-users-and-groups/scim-figure-2a.png)
+    *in de oude Azure AD-appgalerie*
 
 1. Selecteer in het scherm voor het beheren van apps **Inrichting** in het linker deelvenster.
 1. Selecteer **Automatisch** in het menu **Inrichtingsmodus**.
@@ -1316,12 +1317,12 @@ Zodra de eerste cyclus is gestart, kunt u **Inrichtingslogboeken** selecteren in
 > [!NOTE]
 > De initiële cyclus duurt langer dan toekomstige synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de service wordt uitgevoerd.
 
-## <a name="publish-your-application-to-the-aad-application-gallery"></a>Uw toepassing publiceren in de AAD-toepassings galerie
+## <a name="publish-your-application-to-the-aad-application-gallery"></a>Uw toepassing publiceren naar de AAD-toepassingsgalerie
 
 Als u een toepassing bouwt die wordt gebruikt door meer dan één tenant, kunt u deze beschikbaar stellen in de Azure AD-toepassingsgalerie. Dit maakt het eenvoudig voor organisaties om de toepassing te vinden en inrichtingen te configureren. Het publiceren van uw app in de Azure AD-galerie en het beschikbaar stellen van de inrichting voor anderen is eenvoudig. Bekijk de stappen [hier](../develop/v2-howto-app-gallery-listing.md) Microsoft werkt samen met u om uw toepassing te integreren in onze galerie, uw eindpunt te testen en onboarding-[documentatie](../saas-apps/tutorial-list.md) beschikbaar te stellen voor klanten.
 
 ### <a name="gallery-onboarding-checklist"></a>Controlelijst voor onboarding van galerie
-Gebruik de controle lijst om uw toepassing snel vrij te maken en klanten een soepele implementatie-ervaring te bieden. De informatie wordt van u verzameld bij de onboarding in de galerie. 
+Gebruik de controlelijst om uw toepassing snel te onboarden en klanten hebben een soepele implementatie-ervaring. De informatie wordt van u verzameld bij de onboarding in de galerie. 
 > [!div class="checklist"]
 > * Ondersteuning voor een [SCIM 2.0 ](#understand-the-aad-scim-implementation) gebruikers- en groepseindpunt (er is slechts één vereist, maar beide worden aanbevolen)
 > * Ondersteuning voor ten minste 25 aanvragen per seconde per tenant om ervoor te zorgen dat het inrichten en ongedaan maken van de inrichting van gebruikers en groepen zonder vertraging kan worden uitgevoerd (vereist)
@@ -1329,48 +1330,48 @@ Gebruik de controle lijst om uw toepassing snel vrij te maken en klanten een soe
 > * 3 niet-verlopende test-aanmeldingsgegevens voor uw toepassing (vereist)
 > * Ondersteuning voor het verlenen van de OAuth-autorisatiecode of een token met lange levensduur zoals hieronder wordt beschreven (vereist)
 > * Technische hulp en ondersteuning om klanten te ondersteunen na onboarding in de galerie (vereist)
-> * [Ondersteuning voor schema detectie (vereist)](https://tools.ietf.org/html/rfc7643#section-6)
-> * Ondersteuning voor het bijwerken van meerdere groepslid maatschappen met één PATCH
-> * Uw SCIM-eind punt openbaar documenteren
+> * [Ondersteuning voor schemadetectie (vereist)](https://tools.ietf.org/html/rfc7643#section-6)
+> * Ondersteuning voor het bijwerken van meerdere groepslidmaatschap met één PATCH
+> * Uw SCIM-eindpunt openbaar documenteren
 
-### <a name="authorization-to-provisioning-connectors-in-the-application-gallery"></a>Autorisatie voor het inrichten van connectors in de toepassings galerie
-De SCIM spec definieert geen SCIM-specifiek schema voor verificatie en autorisatie, en is afhankelijk van het gebruik van bestaande industrie normen.
+### <a name="authorization-to-provisioning-connectors-in-the-application-gallery"></a>Autorisatie voor het inrichten van connectors in de toepassingsgalerie
+De SCIM-specificatie definieert geen SCIM-specifiek schema voor verificatie en autorisatie en is afhankelijk van het gebruik van bestaande industriestandaarden.
 
 |Verificatiemethode|Voordelen|Nadelen|Ondersteuning|
 |--|--|--|--|
 |Gebruikersnaam en -wachtwoord (niet aanbevolen of niet ondersteund door Azure AD)|Eenvoudig te implementeren|Onveilig: [Your Pa$$word doesn't matter](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/your-pa-word-doesn-t-matter/ba-p/731984)|Per geval ondersteund voor galerie-apps. Niet ondersteund voor niet-galerie-apps.|
 |Bearer-token met lange levensduur|Voor tokens met een lange levensduur hoeft geen gebruiker aanwezig te zijn. Ze kunnen eenvoudig worden gebruikt bij het instellen van de inrichting.|Tokens met een lange levensduur kunnen moeilijk worden gedeeld met een beheerder zonder gebruik te maken van onveilige methoden zoals e-mail. |Ondersteund voor galerie- en niet-galerie-apps. |
-|OAuth-autorisatiecode verlenen|Toegangstokens hebben een veel kortere levensduur dan wachtwoorden en beschikken over een mechanisme voor automatisch vernieuwen die de Bearer-tokens met langere levensduur niet hebben.  Er moet een echte gebruiker aanwezig zijn tijdens de eerste autorisatie, wat een bepaald niveau van verantwoordelijkheid toevoegt |Hiervoor moet een gebruiker aanwezig zijn. Als de gebruiker de organisatie verlaat, wordt het token ongeldig en moet de autorisatie opnieuw worden uitgevoerd.|Ondersteund voor galerie-apps, maar niet voor niet-galerie-apps. U kunt echter een toegangstoken in de gebruikersinterface opgeven als geheim token voor testdoeleinden op korte termijn. Ondersteuning voor OAuth-code toekenning op niet-galerie is in onze achterstand en biedt naast ondersteuning voor Configureer bare verificatie/token-Url's in de galerie-app.|
+|OAuth-autorisatiecode verlenen|Toegangstokens hebben een veel kortere levensduur dan wachtwoorden en beschikken over een mechanisme voor automatisch vernieuwen die de Bearer-tokens met langere levensduur niet hebben.  Er moet een echte gebruiker aanwezig zijn tijdens de eerste autorisatie, wat een bepaald niveau van verantwoordelijkheid toevoegt |Hiervoor moet een gebruiker aanwezig zijn. Als de gebruiker de organisatie verlaat, wordt het token ongeldig en moet de autorisatie opnieuw worden uitgevoerd.|Ondersteund voor galerie-apps, maar niet voor niet-galerie-apps. U kunt echter een toegangstoken in de gebruikersinterface opgeven als geheim token voor testdoeleinden op korte termijn. Ondersteuning voor OAuth-code verlenen aan niet-galerie staat in onze achterstand, naast ondersteuning voor configureerbare URL's voor auth/token in de galerie-app.|
 |Referenties voor OAuth-client verlenen|Toegangstokens hebben een veel kortere levensduur dan wachtwoorden en beschikken over een mechanisme voor automatisch vernieuwen die de Bearer-tokens met langere levensduur niet hebben. Zowel bij het verlenen van de autorisatiecode als de clientaanmeldingsgegevens wordt hetzelfde type toegangstoken gebruikt, dus het schakelen tussen deze methoden is transparant voor de API.  Het inrichten kan volledig worden geautomatiseerd en nieuwe tokens kunnen zonder tussenkomst van de gebruiker worden aangevraagd. ||Niet ondersteund voor apps uit de galerie en niet-galerie-apps. Ondersteuning in onze achterstand.|
 
 > [!NOTE]
-> Het is niet raadzaam om het veld token leeg te laten in de aangepaste app-gebruikers interface van de AAD-inrichtings configuratie. Het gegenereerde token is voornamelijk bedoeld voor testdoeleinden.
+> Het is niet raadzaam om het tokenveld leeg te laten in de gebruikersinterface van de aangepaste app voor AAD-inrichtingsconfiguratie. Het gegenereerde token is voornamelijk bedoeld voor testdoeleinden.
 
-### <a name="oauth-code-grant-flow"></a>OAuth-code subsidie stroom
+### <a name="oauth-code-grant-flow"></a>Stroom voor het verlenen van OAuth-code
 
-De inrichtings service ondersteunt de [autorisatie code Grant](https://tools.ietf.org/html/rfc6749#page-24) en na het verzenden van uw aanvraag voor het publiceren van uw app in de galerie, het team werkt samen met u om de volgende informatie te verzamelen:
+De inrichtingsservice [](https://tools.ietf.org/html/rfc6749#page-24) ondersteunt de toekenning van autorisatiecode. Nadat u uw aanvraag voor het publiceren van uw app in de galerie hebt ingediend, zal ons team met u samenwerken om de volgende informatie te verzamelen:
 
-- **Autorisatie-URL**, een URL door de client voor het verkrijgen van autorisatie van de resource-eigenaar via omleiding van gebruikers agent. De gebruiker wordt omgeleid naar deze URL om de toegang te autoriseren. 
+- **Autorisatie-URL,** een URL van de client voor het verkrijgen van autorisatie van de resource-eigenaar via omleiding van gebruikersagent. De gebruiker wordt omgeleid naar deze URL om de toegang te autoriseren. 
 
-- **Token uitwisseling-URL**, een URL door de client voor het uitwisselen van een autorisatie toekenning voor een toegangs token, meestal met client verificatie.
+- **Url voor tokenuitwisseling,** een URL van de client om een autorisatietoeken voor een toegangs token uit te wisselen, meestal met clientverificatie.
 
-- **Client-id**, de autorisatie server geeft de geregistreerde client een client-id. Dit is een unieke teken reeks voor de registratie gegevens die door de client worden verstrekt.  De client-id is geen geheim. Het is zichtbaar voor de resource-eigenaar en **mag niet** alleen worden gebruikt voor clientverificatie.  
+- **Client-id,** de autorisatieserver geeft de geregistreerde client een client-id. Dit is een unieke tekenreeks die de registratiegegevens vertegenwoordigt die door de client worden verstrekt.  De client-id is geen geheim. Het is zichtbaar voor de resource-eigenaar en **mag niet** alleen worden gebruikt voor clientverificatie.  
 
-- **Client geheim**, een geheim dat door de autorisatie server is gegenereerd en dat een unieke waarde moet zijn die alleen bekend is bij de autorisatie server. 
-
-> [!NOTE]
-> De **autorisatie-URL** en **token uitwisseling-URL** kunnen momenteel niet per Tenant worden geconfigureerd.
+- **Clientgeheim,** een geheim dat wordt gegenereerd door de autorisatieserver en die een unieke waarde moet zijn die alleen bekend is bij de autorisatieserver. 
 
 > [!NOTE]
-> OAuth v1 wordt niet ondersteund vanwege de bloot stelling van het client geheim. OAuth v2 wordt ondersteund.  
+> De **autorisatie-URL** **en token exchange-URL** kunnen momenteel niet per tenant worden geconfigureerd.
+
+> [!NOTE]
+> OAuth v1 wordt niet ondersteund vanwege blootstelling van het clientgeheim. OAuth v2 wordt ondersteund.  
 
 Aanbevolen procedures (aanbevolen, maar niet vereist):
 * Ondersteuning voor meerdere omleidings-URL's. Beheerders kunnen het inrichten configureren via 'portal.azure.com' en 'aad.portal.azure.com'. Door meerdere omleidings-Url's te ondersteunen zorgt u ervoor dat gebruikers toegang kunnen verlenen vanuit beide portals.
-* Ondersteuning voor meerdere geheimen voor eenvoudige verlenging, zonder uitval tijd. 
+* Ondersteuning voor meerdere geheimen voor eenvoudige vernieuwing, zonder uitvaltijd. 
 
-#### <a name="how-to-setup-oauth-code-grant-flow"></a>OAuth-code subsidie stroom instellen
+#### <a name="how-to-setup-oauth-code-grant-flow"></a>OAuth-stroom voor het verlenen van code instellen
 
-1. Meld u aan bij de Azure Portal, ga naar **bedrijfs toepassingen**  >  **toepassings**  >  **inrichten** en selecteer **autoriseren**.
+1. Meld u aan bij de Azure Portal, ga naar **Toepassings** inrichting van bedrijfstoepassingen  >    >   en selecteer **Autoreren.**
 
    1. Azure Portal stuurt de gebruiker door naar de autorisatie-URL (aanmeldingspagina voor de app van derden).
 
@@ -1383,9 +1384,9 @@ Aanbevolen procedures (aanbevolen, maar niet vereist):
 1. Wanneer de inrichtingscyclus begint, controleert de service of het huidige toegangstoken geldig is en wisselt deze zo nodig voor een nieuw token. Het toegangstoken wordt verstrekt in elke aanvraag die aan de app wordt gedaan en de geldigheid van de aanvraag wordt voor elke aanvraag gecontroleerd.
 
 > [!NOTE]
-> Hoewel het niet mogelijk is om OAuth in te stellen op de niet-galerie toepassingen, kunt u hand matig een toegangs token genereren van uw autorisatie server en deze als het geheime token in een niet-galerie toepassing invoeren. Hiermee kunt u de compatibiliteit van uw SCIM-server met de AAD SCIM-client controleren voordat u de app-galerie uitschakelt, die ondersteuning biedt voor de OAuth-code toekenning.  
+> Hoewel het niet mogelijk is om OAuth in te stellen op de toepassingen buiten de galerie, kunt u handmatig een toegangsteken genereren vanaf de autorisatieserver en dit als het geheime token invoeren in een toepassing buiten de galerie. Hiermee kunt u de compatibiliteit van uw SCIM-server met de AAD SCIM-client controleren voordat u de app-galerie onboardt, die ondersteuning biedt voor de OAuth-code-toekenning.  
 
-**Langlopende OAuth Bearer-tokens:** Als uw toepassing de overdrachts stroom van de OAuth-autorisatie code niet ondersteunt, genereert u in plaats daarvan een lang bewaarde OAuth Bearer-token die een beheerder kan gebruiken om de inrichtings integratie in te stellen. Het token moet permanent zijn, anders wordt de inrichtingstaak [in quarantaine geplaatst](application-provisioning-quarantine-status.md) wanneer het token verloopt.
+**Langdurfde OAuth Bearer-tokens:** Als uw toepassing geen ondersteuning biedt voor de stroom voor het verlenen van OAuth-autorisatiecode, genereert u in plaats daarvan een langderend OAuth bearer-token dat een beheerder kan gebruiken om de inrichtingsintegratie in te stellen. Het token moet permanent zijn, anders wordt de inrichtingstaak [in quarantaine geplaatst](application-provisioning-quarantine-status.md) wanneer het token verloopt.
 
 Voor aanvullende verificatie- en autorisatie methoden, kunt u ons benaderen via [UserVoice](https://aka.ms/appprovisioningfeaturerequest).
 
@@ -1393,10 +1394,10 @@ Voor aanvullende verificatie- en autorisatie methoden, kunt u ons benaderen via 
 We raden u aan om uw bestaande documentatie bij te werken en de integratie in uw marketingkanalen te versterken om het bewustzijn en de vraag van onze gezamenlijke integratie te stimuleren.  Hieronder vindt u een aantal controle-activiteiten die u kunt uitvoeren om de lancering te ondersteunen
 
 > [!div class="checklist"]
-> * Zorg ervoor dat uw verkoop-en klant ondersteunings teams op de hoogte zijn van de integratie mogelijkheden. Geef uw teams een korte beschrijving en voeg de integratie toe aan uw verkoop materialen. 
+> * Zorg ervoor dat uw verkoop- en klantondersteuningsteams op de hoogte zijn, klaar zijn en kunnen praten met de integratiemogelijkheden. Geef uw teams veelgestelde vragen en neem de integratie op in uw verkoopmateriaal. 
 > * Maak een blogbericht of persbericht met een beschrijving van de gezamenlijke integratie, de voordelen en hoe deze kan worden gebruikt. [Voorbeeld: Persbericht over Imprivata en Azure Active Directory](https://www.imprivata.com/company/press/imprivata-introduces-iam-cloud-platform-healthcare-supported-microsoft) 
 > * Maak gebruik van uw sociale mediakanalen, zoals Twitter, Facebook of LinkedIn, om de integratie bij uw klanten te introduceren. Zorg ervoor dat @AzureAD wordt toegevoegd, zodat we uw bericht kunnen delen. [Voorbeeld: Imprivata Twitter-bericht](https://twitter.com/azuread/status/1123964502909779968)
-> * Maak of werk uw marketing pagina's/website toe (bijvoorbeeld integratie pagina, partner pagina, prijs pagina enz.) om de beschik baarheid van de gezamenlijke integratie op te halen. [Voorbeeld: Pingboard-integratiepagina](https://pingboard.com/org-chart-for), [Smart Sheet-integratiepagina](https://www.smartsheet.com/marketplace/apps/microsoft-azure-ad), [Monday.com-prijspagina](https://monday.com/pricing/) 
+> * Maak of werk uw marketingpagina's/website (bijvoorbeeld integratiepagina, partnerpagina, pagina met prijzen, enzovoort) bij om de beschikbaarheid van de gezamenlijke integratie op te nemen. [Voorbeeld: Pingboard-integratiepagina](https://pingboard.com/org-chart-for), [Smart Sheet-integratiepagina](https://www.smartsheet.com/marketplace/apps/microsoft-azure-ad), [Monday.com-prijspagina](https://monday.com/pricing/) 
 > * Maak een Help Center-artikel of technische documentatie over hoe klanten aan de slag kunnen. [Voorbeeld: Envoy + Microsft Azure Active Directory-integratie.](https://envoy.help/en/articles/3453335-microsoft-azure-active-directory-integration/
 ) 
 > * Breng klanten van de nieuwe integratie op de hoogte via uw klantcommunicatiekanalen (maandelijkse nieuwsbrieven, e-mailcampagnes, opmerkingen bij de release van het product). 
@@ -1404,10 +1405,10 @@ We raden u aan om uw bestaande documentatie bij te werken en de integratie in uw
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Een voor beeld van een scim-eind punt ontwikkelen](use-scim-to-build-users-and-groups-endpoints.md) 
->  [Gebruikers inrichten en het](user-provisioning.md) ongedaan maken van de inrichting van SaaS-apps 
->  automatiseren [Kenmerk toewijzingen voor gebruikers inrichting aanpassen](customize-application-attributes.md) 
->  [Expressies schrijven voor kenmerk toewijzingen](functions-for-customizing-application-data.md) 
->  [Filters voor het inrichten](define-conditional-rules-for-provisioning-user-accounts.md) 
->  van gebruikers in bereik Meldingen voor het [inrichten van accounts](user-provisioning.md) 
->  [Lijst met zelf studies voor het integreren van SaaS-apps](../saas-apps/tutorial-list.md)
+> [Een voorbeeld van een SCIM-eindpunt ontwikkelen](use-scim-to-build-users-and-groups-endpoints.md) 
+>  Het inrichten en de inrichting van gebruikers [voor SaaS-apps automatiseren](user-provisioning.md) 
+>  [Kenmerktoewijzingen aanpassen voor het inrichten van gebruikers](customize-application-attributes.md) 
+>  [Expressies schrijven voor kenmerktoewijzingen](functions-for-customizing-application-data.md) 
+>  [Bereikfilters voor het inrichten van gebruikers](define-conditional-rules-for-provisioning-user-accounts.md) 
+>  [Meldingen over het inrichten van een account](user-provisioning.md) 
+>  [Lijst met zelfstudies over het integreren van SaaS-apps](../saas-apps/tutorial-list.md)

@@ -1,6 +1,6 @@
 ---
-title: Verificatie met eenmalige wachtwoord code voor B2B-gast gebruikers-Azure AD
-description: Eenmalige e-mail wachtwoord verificatie gebruiken om B2B-gast gebruikers te verifiëren zonder dat hiervoor een Microsoft-account nodig is.
+title: Verificatie van een een time-wachtwoordcode voor B2B-gastgebruikers - Azure AD
+description: Een een time-time wachtwoordcode e-mail gebruiken om B2B-gastgebruikers te verifiëren zonder dat er een Microsoft-account.
 services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
@@ -12,122 +12,122 @@ manager: CelesteDG
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30f22282b00a7ead2e19805f32d78338126e8087
-ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
+ms.openlocfilehash: 3b4089559b341dd268928b1f150b6fc173869ead
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106552747"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107529925"
 ---
-# <a name="email-one-time-passcode-authentication"></a>Verificatie met eenmalige e-mail wachtwoord code
+# <a name="email-one-time-passcode-authentication"></a>Verificatie met een een time-time wachtwoordcode per e-mail
 
-In dit artikel wordt beschreven hoe u eenmalige verificatie via e-mail voor B2B-gast gebruikers inschakelt. Met de functie voor eenmalige e-mail code worden B2B-gast gebruikers geverifieerd wanneer ze niet kunnen worden geverifieerd via andere manieren, zoals Azure AD, een Microsoft-account (MSA) of Google Federatie. Met authenticatie op basis van eenmalige wachtwoord code hoeft u geen Microsoft-account te maken. Wanneer de gast gebruiker een uitnodiging heeft ingewisseld of een gedeelde resource opent, kunnen ze een tijdelijke code aanvragen, die wordt verzonden naar hun e-mail adres. Vervolgens voeren ze deze code in om door te gaan met aanmelden.
+In dit artikel wordt beschreven hoe u verificatie van een een time-mail wachtwoordcode inschakelen voor B2B-gastgebruikers. De functie voor een een time-wachtwoordcode voor e-mail verifieert B2B-gastgebruikers wanneer ze niet kunnen worden geverifieerd via andere middelen, zoals Azure AD, een Microsoft-account (MSA) of Google-federatie. Met een een time-wachtwoordcodeverificatie hoeft u geen wachtwoordcode te Microsoft-account. Wanneer gastgebruikers een uitnodiging inwisselen of toegang krijgen tot een gedeelde resource, kunnen ze een tijdelijke code aanvragen die wordt verzonden naar hun e-mailadres. Vervolgens voeren ze deze code in om zich verder aan te melden.
 
-![Overzichts diagram van het wacht woord voor eenmalige e-mail](media/one-time-passcode/email-otp.png)
+![Overzichtsdiagram voor een een time-wachtwoordcode e-mailen](media/one-time-passcode/email-otp.png)
 
 > [!IMPORTANT]
-> - **Vanaf 2021 oktober** wordt de functie voor eenmalige e-mail wachtwoord code ingeschakeld voor alle bestaande tenants en standaard ingeschakeld voor nieuwe tenants. Als u niet wilt toestaan dat deze functie automatisch wordt ingeschakeld, kunt u deze uitschakelen. Zie [eenmalige E-mail uitschakelen onderstaande wachtwoord code](#disable-email-one-time-passcode) .
-> - De e-mail wachtwoord instellingen voor eenmalige e-mail zijn verplaatst naar de Azure Portal van **externe samenwerkings instellingen** naar **alle id-providers**.
+> - **Vanaf oktober 2021** wordt de functie voor een een time-mail wachtwoordcode ingeschakeld voor alle bestaande tenants en standaard ingeschakeld voor nieuwe tenants. Als u niet wilt dat deze functie automatisch wordt in schakelen, kunt u deze uitschakelen. Zie [E-mail een een time-time wachtwoordcode uitschakelen](#disable-email-one-time-passcode) hieronder.
+> - De instellingen voor een een time-wachtwoordcode voor e-mail zijn in de Azure Portal van Externe **samenwerkingsinstellingen** verplaatst **naar Alle id-providers.**
 
 > [!NOTE]
-> Eenmalige wachtwoord code gebruikers moeten zich aanmelden met behulp van een koppeling die de Tenant context bevat (bijvoorbeeld `https://myapps.microsoft.com/?tenantid=<tenant id>` of `https://portal.azure.com/<tenant id>` , of in het geval van een geverifieerd domein `https://myapps.microsoft.com/<verified domain>.onmicrosoft.com` ). Directe koppelingen naar toepassingen en bronnen werken ook zolang ze de context van de Tenant bevatten. Gast gebruikers kunnen zich momenteel niet aanmelden met eind punten die geen Tenant context hebben. Als u bijvoorbeeld gebruikt `https://myapps.microsoft.com` , treedt er `https://portal.azure.com` een fout op.
+> Gebruikers van een een time-wachtwoordcode moeten zich aanmelden met een koppeling die de tenantcontext bevat (bijvoorbeeld of , of in het geval van `https://myapps.microsoft.com/?tenantid=<tenant id>` `https://portal.azure.com/<tenant id>` een geverifieerd domein, `https://myapps.microsoft.com/<verified domain>.onmicrosoft.com` ). Directe koppelingen naar toepassingen en resources werken ook zolang ze de tenantcontext bevatten. Gastgebruikers kunnen zich momenteel niet aanmelden met eindpunten die geen tenantcontext hebben. Als u bijvoorbeeld `https://myapps.microsoft.com` gebruikt, `https://portal.azure.com` resulteert dit in een fout.
 
-## <a name="user-experience-for-one-time-passcode-guest-users"></a>Gebruikers ervaring voor eenmalige wachtwoord code gast gebruikers
+## <a name="user-experience-for-one-time-passcode-guest-users"></a>Gebruikerservaring voor gastgebruikers met een een time-wachtwoordcode
 
-Wanneer de functie voor eenmalige e-mail wachtwoord code is ingeschakeld, gebruiken recent uitgenodigde gebruikers [die aan bepaalde voor waarden voldoen](#when-does-a-guest-user-get-a-one-time-passcode) , een verificatie met een eenmalige wachtwoord code. Gast gebruikers die een uitnodiging hebben ingewisseld voordat een e-mail bericht met een tijd wachtwoord code is ingeschakeld, blijven dezelfde verificatie methode gebruiken.
+Wanneer de functie voor een een time-time [](#when-does-a-guest-user-get-a-one-time-passcode) wachtwoordcode voor e-mail is ingeschakeld, gebruiken nieuw uitgenodigde gebruikers die aan bepaalde voorwaarden voldoen, een een time-wachtwoordcodeverificatie. Gastgebruikers die een uitnodiging hebben ingewisseld voordat een een time-time wachtwoordcode per e-mail is ingeschakeld, blijven dezelfde verificatiemethode gebruiken.
 
-Met verificatie met eenmalige wachtwoord code kan de gast gebruiker de uitnodiging inwisselen door te klikken op een directe koppeling of door de uitnodiging-e-mail te gebruiken. In beide gevallen geeft een bericht in de browser aan dat een code wordt verzonden naar het e-mail adres van de gast gebruiker. De gast gebruiker selecteert **Verzend code**:
+Met een een time-time wachtwoordcodeverificatie kan de gastgebruiker uw uitnodiging inwisselen door op een directe koppeling te klikken of via de uitnodigings-e-mail. In beide gevallen geeft een bericht in de browser aan dat er een code wordt verzonden naar het e-mailadres van de gastgebruiker. De gastgebruiker selecteert **Code verzenden:**
 
-   ![Scherm afbeelding met de knop code verzenden](media/one-time-passcode/otp-send-code.png)
+   ![Schermopname van de knop Code verzenden](media/one-time-passcode/otp-send-code.png)
 
-Er wordt een wachtwoord code verzonden naar het e-mail adres van de gebruiker. De gebruiker haalt de wachtwoord code op uit het e-mail bericht en voert deze in het browser venster in:
+Er wordt een wachtwoordcode verzonden naar het e-mailadres van de gebruiker. De gebruiker haalt de wachtwoordcode op uit het e-mailbericht en voert deze in het browservenster in:
 
-   ![Scherm opname met de code pagina invoeren](media/one-time-passcode/otp-enter-code.png)
+   ![Schermopname van de pagina Code invoeren](media/one-time-passcode/otp-enter-code.png)
 
-De gast gebruiker is nu geverifieerd en ze kunnen de gedeelde bron zien of zich blijven aanmelden.
+De gastgebruiker is nu geverifieerd en kan de gedeelde resource zien of zich blijven aanmelden.
 
 > [!NOTE]
-> Eenmalige wachtwoord codes zijn 30 minuten geldig. Na 30 minuten is de specifieke eenmalige wachtwoord code niet meer geldig en moet de gebruiker een nieuwe wacht woord aanvragen. Gebruikers sessies verlopen na 24 uur. Daarna ontvangt de gast gebruiker een nieuwe wachtwoord code wanneer hij of zij toegang tot de bron heeft. Sessie verloop biedt extra beveiliging, vooral wanneer een gast gebruiker het bedrijf verlaat of geen toegang meer nodig heeft.
+> Een een time-wachtwoordcodes zijn 30 minuten geldig. Na 30 minuten is die specifieke een time-wachtwoordcode niet meer geldig en moet de gebruiker een nieuwe aanvragen. Gebruikerssessies verlopen na 24 uur. Na die tijd ontvangt de gastgebruiker een nieuwe wachtwoordcode wanneer deze toegang heeft tot de resource. Verlopen van sessies biedt extra beveiliging, met name wanneer een gastgebruiker het bedrijf verlaat of geen toegang meer nodig heeft.
 
-## <a name="when-does-a-guest-user-get-a-one-time-passcode"></a>Wanneer krijgt een gast gebruiker een eenmalige wachtwoord code?
+## <a name="when-does-a-guest-user-get-a-one-time-passcode"></a>Wanneer krijgt een gastgebruiker een een keer een wachtwoordcode?
 
-Wanneer een gast gebruiker een uitnodiging heeft ingewisseld of een koppeling gebruikt naar een resource die met hen is gedeeld, ontvangt deze een eenmalige wachtwoord code als:
+Wanneer een gastgebruiker een uitnodiging inwisselt of een koppeling gebruikt naar een resource die met hem of haar is gedeeld, ontvangt deze een een time-wachtwoordcode als:
 
 - Ze hebben geen Azure AD-account
 - Ze hebben geen Microsoft-account
-- De uitnodigende Tenant heeft geen Google-Federatie ingesteld voor @gmail.com en @googlemail.com gebruikers
+- De uitnodigende tenant heeft geen Google-federatie ingesteld voor @gmail.com - en @googlemail.com -gebruikers
 
-Op het moment van de uitnodiging is er geen indicatie dat de gebruiker die u uitnodigt, gebruikmaakt van verificatie met een eenmalige wachtwoord code. Maar wanneer de gast gebruiker zich aanmeldt, is verificatie met een eenmalige wachtwoord code de terugval methode als er geen andere verificatie methoden kunnen worden gebruikt.
+Op het moment van uitnodiging is er geen indicatie dat de gebruiker die u uitnodigt, een een time-time wachtwoordcodeverificatie gebruikt. Maar wanneer de gastgebruiker zich meldt, is verificatie met een een time-wachtwoordcode de terugvalmethode als er geen andere verificatiemethoden kunnen worden gebruikt.
 
-U kunt zien of een gast gebruiker zich verifieert met een eenmalige wachtwoord code door de **bron** eigenschap in de gegevens van de gebruiker weer te geven. Ga in het Azure Portal naar **Azure Active Directory**  >  **gebruikers** en selecteer vervolgens de gebruiker om de pagina Details te openen.
+U kunt zien of een gastgebruiker zich verifieert met behulp van een een time-wachtwoordcodes door de eigenschap **Source** te bekijken in de details van de gebruiker. Ga in Azure Portal naar **Azure Active Directory** Gebruikers en selecteer vervolgens de  >  gebruiker om de detailpagina te openen.
 
-![Scherm afbeelding met een eenmalige wachtwoord code gebruiker met bron waarde van OTP](media/one-time-passcode/guest-user-properties.png)
+![Schermopname van een een time-wachtwoordcodegebruiker met de bronwaarde OTP](media/one-time-passcode/guest-user-properties.png)
 
 > [!NOTE]
-> Wanneer een gebruiker een eenmalige wachtwoord code inwisselt en later een MSA-, Azure AD-account of een ander federatief account ontvangt, worden ze nog steeds geverifieerd met een eenmalige wachtwoord code. Als u de verificatie methode van de gebruiker wilt bijwerken, kunt u de status van de [aflossingen opnieuw instellen](reset-redemption-status.md).
+> Wanneer een gebruiker een een time-wachtwoordcode inwisselt en later een MSA, Een Azure AD-account of een ander federatief account verkrijgt, wordt deze nog steeds geverifieerd met behulp van een een time-wachtwoordcode. Als u de verificatiemethode van de gebruiker wilt bijwerken, kunt u de [inwisselstatus opnieuw instellen.](reset-redemption-status.md)
 
 ### <a name="example"></a>Voorbeeld
 
-Gast gebruiker teri@gmail.com wordt uitgenodigd voor fabrikam, waarvoor geen Google Federation is ingesteld. Teri heeft geen Microsoft-account. Er wordt een eenmalige wachtwoord code voor verificatie ontvangen.
+teri@gmail.comGastgebruiker wordt uitgenodigd voor Fabrikam, waarvoor geen Google-federatie is ingesteld. Teri heeft geen Microsoft-account. Ze ontvangen een een time-wachtwoordcode voor verificatie.
 
-## <a name="disable-email-one-time-passcode"></a>Wachtwoord code voor eenmalige e-mail uitschakelen
+## <a name="disable-email-one-time-passcode"></a>Een een time-time wachtwoordcode voor e-mail uitschakelen
 
-Vanaf 2021 oktober wordt de functie voor eenmalige e-mail wachtwoord code ingeschakeld voor alle bestaande tenants en standaard ingeschakeld voor nieuwe tenants. Micro soft biedt op dat moment geen ondersteuning meer voor het aflossen van uitnodigingen door het maken van niet-beheerde (' virale ' of ' just-in-time ') Azure AD-accounts en tenants voor B2B-samenwerkings scenario's. De functie voor eenmalige e-mail wachtwoord code wordt ingeschakeld, omdat deze een naadloze terugval verificatie methode biedt voor uw gast gebruikers. U hebt echter de mogelijkheid om deze functie uit te scha kelen als u deze niet wilt gebruiken.
+Vanaf oktober 2021 wordt de functie voor een een time-mail wachtwoordcode ingeschakeld voor alle bestaande tenants en standaard ingeschakeld voor nieuwe tenants. Op dat moment biedt Microsoft geen ondersteuning meer voor het inwisselen van uitnodigingen door het maken van onmanaged ('viral' of 'just-in-time') Azure AD-accounts en -tenants voor B2B-samenwerkingsscenario's. De functie voor een een time-wachtwoordcode voor e-mail wordt inschakelen omdat deze een naadloze terugvalmethode biedt voor uw gastgebruikers. U kunt deze functie echter uitschakelen als u ervoor kiest deze niet te gebruiken.
 
 > [!NOTE]
 >
-> Als de functie voor eenmalige e-mail wachtwoord code is ingeschakeld in uw Tenant en u deze uitschakelt, kunnen gast gebruikers die een eenmalige wachtwoord code hebben ingewisseld, zich niet aanmelden. U kunt [de status van de inzending opnieuw instellen](reset-redemption-status.md) zodat deze zich opnieuw kan aanmelden met een andere verificatie methode.
+> Als de functie voor eenmalige wachtwoordcode voor e-mail is ingeschakeld in uw tenant en u deze uit schakelen, kunnen gastgebruikers die een eenmalige wachtwoordcode hebben ingewisseld, zich niet aanmelden. U kunt [de inwisselstatus opnieuw instellen,](reset-redemption-status.md) zodat ze zich opnieuw kunnen aanmelden met een andere verificatiemethode.
 
-### <a name="to-disable-the-email-one-time-passcode-feature"></a>De functie voor eenmalige e-mail wachtwoord code uitschakelen
+### <a name="to-disable-the-email-one-time-passcode-feature"></a>De functie voor een een time-wachtwoordcode per e-mail uitschakelen
 
-1. Meld u aan bij de [Azure Portal](https://portal.azure.com/) als een globale Azure AD-beheerder.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/) globale beheerder van Azure AD.
 
 2. Selecteer in het navigatiedeelvenster de service **Azure Active Directory**.
 
-3. Selecteer **externe identiteiten**  >  **alle id-providers**.
+3. Selecteer **External Identities**  >  **Alle id-providers.**
 
-4. Selecteer **eenmalige e-mail** en selecteer **eenmalige wachtwoord code voor gasten uitschakelen**.
+4. Selecteer **Een een time-wachtwoordcode e-mailen** selecteer vervolgens **E-mail een time-wachtwoordcode uitschakelen voor gasten.**
 
    > [!NOTE]
-   > De e-mail wachtwoord instellingen voor eenmalige e-mail zijn verplaatst naar de Azure Portal van **externe samenwerkings instellingen** naar **alle id-providers**.
-   > Als er een wissel knop wordt weer gegeven in plaats van de opties voor eenmalige e-mail wachtwoord code, betekent dit dat u eerder hebt ingeschakeld, uitgeschakeld of hebt gekozen voor de preview van de functie. Selecteer **Nee** om de functie uit te scha kelen.
+   > De instellingen voor een een-time wachtwoordcodes per e-mail zijn in de Azure Portal **verplaatst** van Instellingen voor externe samenwerking naar **Alle id-providers.**
+   > Als u een schakelknop ziet in plaats van de opties voor een een time-time wachtwoordcode voor e-mail, betekent dit dat u eerder de preview van de functie hebt ingeschakeld, uitgeschakeld of hebt gekozen. Selecteer **Nee om** de functie uit te schakelen.
    >
-   >![E-mail eenmalige wachtwoord code in-/uitschakelen uitgeschakeld](media/one-time-passcode/enable-email-otp-disabled.png)
+   >![Een een time-time wachtwoordcode in-/uitschakelen](media/one-time-passcode/enable-email-otp-disabled.png)
 
 5. Selecteer **Opslaan**.
 
-## <a name="note-for-public-preview-customers"></a>Opmerking voor open bare preview-klanten
+## <a name="note-for-public-preview-customers"></a>Opmerking voor klanten met een openbare preview
 
-Als u eerder hebt gekozen voor de open bare preview-versie van het e-mail wachtwoord voor de e-mail, is de datum van oktober 2021 voor automatische activering niet van toepassing op u, zodat uw gerelateerde bedrijfs processen niet worden beïnvloed. Daarnaast ziet u in de Azure Portal, onder de **wachtwoord code voor het eenmalige e-mail adres voor gasten** , de optie voor het **automatisch inschakelen van e-mail eenmalige wachtwoord code voor gasten vanaf oktober 2021**. In plaats daarvan wordt de volgende **Ja** -of **geen** wissel knop weer geven:
+Als u eerder hebt gekozen voor de openbare preview van de een time-time wachtwoordcode, is de datum van oktober 2021 voor het inschakelen van automatische functies niet op u van toepassing, waardoor uw gerelateerde bedrijfsprocessen niet worden beïnvloed. Daarnaast ziet u in de Azure Portal onder de eigenschappen Een een **time-time** wachtwoordcode voor gasten e-mailen de optie E-mail automatisch inschakelen voor gasten vanaf oktober **2021** niet meer. In plaats daarvan ziet u de volgende schakelknop **Ja** **of** Nee:
 
-![E-mail met eenmalige wachtwoord code](media/one-time-passcode/enable-email-otp-opted-in.png)
+![Een een time-time wachtwoordcode in- of uit te geven](media/one-time-passcode/enable-email-otp-opted-in.png)
 
-Als u de functie echter wilt uitschakelen en wilt toestaan dat deze automatisch kan worden ingeschakeld in oktober 2021, kunt u terugkeren naar de standaard instellingen met behulp van het [bron type configuratie van de Microsoft Graph-API-e-mail verificatie methode](/graph/api/resources/emailauthenticationmethodconfiguration). Nadat u de standaard instellingen hebt hersteld, zijn de volgende opties beschikbaar onder **e-mail eenmalige wachtwoord code voor gasten**:
+Als u de functie echter liever wilt uitschakelen en deze automatisch wilt inschakelen in oktober 2021, kunt u de standaardinstellingen [](/graph/api/resources/emailauthenticationmethodconfiguration)herstellen met behulp van het configuratiebrontype van de e-mailverificatiemethode van de Microsoft Graph-API. Nadat u de standaardinstellingen hebt teruggedraaid, zijn de volgende opties beschikbaar onder **Een een time-time wachtwoordcode e-mailen voor gasten:**
 
-![Eenmalige E-mail inschakelen wacht woord voor wachtwoord registratie](media/one-time-passcode/email-otp-options.png)
+![Een een time-time wachtwoordcode voor e-mail inschakelen](media/one-time-passcode/email-otp-options.png)
 
-- **Eenmalige e-mail wachtwoord voor gasten automatisch inschakelen vanaf oktober 2021**. Prijs Als de functie voor eenmalige e-mail wachtwoord code nog niet is ingeschakeld voor uw Tenant, wordt deze automatisch ingeschakeld vanaf oktober 2021. Er is geen verdere actie nodig als u de functie op dat moment wilt inschakelen. Als u de functie al hebt ingeschakeld of uitgeschakeld, is deze optie niet beschikbaar.
+- **Schakel vanaf oktober 2021** automatisch een een time-time wachtwoordcode voor e-mail in voor gasten. (Standaard) Als de functie voor een een time-time wachtwoordcode voor e-mail nog niet is ingeschakeld voor uw tenant, wordt deze functie automatisch ingeschakeld vanaf oktober 2021. Er is geen verdere actie nodig als u wilt dat de functie op dat moment is ingeschakeld. Als u de functie al hebt ingeschakeld of uitgeschakeld, is deze optie niet beschikbaar.
 
-- **Eenmalige e-mail wachtwoord instellen voor gasten die nu effectief** zijn. Hiermee schakelt u de functie e-mail eenmalige wachtwoord code in voor uw Tenant.
+- **Schakel een een time-time wachtwoordcode in voor gasten die nu van kracht zijn.** Schakelt de e-mailfunctie voor een een time-time wachtwoordcode in voor uw tenant.
 
-- **Eenmalige e-mail wachtwoord voor gasten uitschakelen**. Hiermee schakelt u de functie e-mail eenmalige wachtwoord code voor uw Tenant uit en voor komt u dat de functie wordt ingeschakeld in oktober 2021.
+- **Een een time-time wachtwoordcode voor gasten uitschakelen.** Hiermee schakelt u de functie voor eenmalige wachtwoordcode voor uw tenant uit en wordt voorkomen dat de functie in oktober 2021 wordt in schakelen.
 
-## <a name="note-for-azure-us-government-customers"></a>Opmerking voor klanten van de Amerikaanse overheid van Azure
+## <a name="note-for-azure-us-government-customers"></a>Opmerking voor Azure-klanten voor de Amerikaanse overheid
 
-De functie voor eenmalige e-mail wachtwoord code is standaard uitgeschakeld in de Azure-Cloud voor de Amerikaanse overheid.  
+De functie voor een een time-wachtwoordcode voor e-mail is standaard uitgeschakeld in de cloud van Azure US Government. Uw partners kunnen zich niet aanmelden, tenzij deze functie is ingeschakeld. In tegenstelling tot de openbare Cloud van Azure biedt de Cloud van Azure voor de Amerikaanse overheid geen ondersteuning voor het inwisselen van uitnodigingen met selfservice Azure Active Directory accounts.
 
- ![E-mail eenmalige wachtwoord code uitgeschakeld](media/one-time-passcode/enable-email-otp-disabled.png)
+ ![Een een time-time wachtwoordcode e-mail uitgeschakeld](media/one-time-passcode/enable-email-otp-disabled.png)
 
-De functie voor eenmalige e-mail wachtwoord code in de Azure-Cloud voor de Amerikaanse overheid inschakelen:
+De functie voor een een time-wachtwoordcode voor e-mail inschakelen in de Azure US Government-cloud:
 
-1. Meld u aan bij de [Azure Portal](https://portal.azure.com) als een globale Azure AD-beheerder.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com) globale beheerder van Azure AD.
 2. Selecteer in het navigatiedeelvenster de service **Azure Active Directory**.
-3. Instellingen voor **organisatie relaties** selecteren   >  ****.
+3. Selecteer **Organisatierelaties**   >  **Alle id-providers.**
 
    > [!NOTE]
-   > - Als u geen **organisatie relaties** ziet, zoekt u naar ' externe identiteiten ' in de zoek balk aan de bovenkant.
+   > - Als u Organisatierelaties niet **ziet,** zoekt u naar 'External Identities' in de zoekbalk bovenaan.
 
-4. Selecteer **eenmalige e-mail wachtwoord code** en selecteer vervolgens **Ja**.
+4. Selecteer **Een een time-wachtwoordcode e-mailen** selecteer vervolgens **Ja.**
 5. Selecteer **Opslaan**.
 
-Zie [Azure Amerikaanse overheids Clouds](current-limitations.md#azure-us-government-clouds)voor meer informatie over huidige beperkingen.
+Zie Azure [US Government-clouds](current-limitations.md#azure-us-government-clouds)voor meer informatie over de huidige beperkingen.

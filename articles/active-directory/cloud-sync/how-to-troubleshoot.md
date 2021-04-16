@@ -1,6 +1,6 @@
 ---
-title: Problemen met het oplossen van Cloud synchronisatie Azure AD Connect
-description: In dit artikel wordt beschreven hoe u problemen kunt oplossen die zich kunnen voordoen met de Cloud inrichtings agent.
+title: Azure AD Connect cloudsynchronisatie oplossen
+description: In dit artikel wordt beschreven hoe u problemen kunt oplossen die zich kunnen voordoen met de inrichtingsagent voor de cloud.
 author: billmath
 ms.author: billmath
 manager: daveba
@@ -8,99 +8,99 @@ ms.date: 01/19/2021
 ms.topic: how-to
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 174ec8c42ea17ccae04769d7c0baaa91b8e7025b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 65022d98c7ee7e90d8f1fe5b6854605c841ad05b
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102517868"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107530306"
 ---
-# <a name="cloud-sync-troubleshooting"></a>Problemen met Cloud synchronisatie oplossen
+# <a name="cloud-sync-troubleshooting"></a>Problemen met cloudsynchronisatie oplossen
 
 Cloudsynchronisatie heeft veel verschillende aspecten en afhankelijkheden. Het brede bereik ervan kan leiden tot verschillende problemen. Dit artikel helpt u bij het oplossen van deze problemen. Het geeft aan op welke gebieden u zich het beste kunt richten, hoe u aanvullende informatie kunt verzamelen, en welke verschillende technieken u kunt gebruiken om problemen op te sporen.
 
 
-## <a name="common-troubleshooting-areas"></a>Algemene probleemoplossings gebieden
+## <a name="common-troubleshooting-areas"></a>Veelvoorkomende gebieden voor probleemoplossing
 
 |Naam|Beschrijving|
 |-----|-----|
-|[Agent problemen](#agent-problems)|Controleer of de agent juist is geïnstalleerd en of deze communiceert met Azure Active Directory (Azure AD).|
-|[Problemen met object synchronisatie](#object-synchronization-problems)|Inrichtings Logboeken gebruiken om problemen met object synchronisatie op te lossen.|
-|[In quarantaine geplaatste problemen inrichten](#provisioning-quarantined-problems)|Informatie over het inrichten van quarantaine problemen en hoe u deze kunt oplossen.|
+|[Problemen met agent](#agent-problems)|Controleer of de agent correct is geïnstalleerd en of deze communiceert met Azure Active Directory (Azure AD).|
+|[Problemen met objectsynchronisatie](#object-synchronization-problems)|Gebruik inrichtingslogboeken om problemen met objectsynchronisatie op te lossen.|
+|[Problemen met in quarantaine inrichten](#provisioning-quarantined-problems)|Informatie over het inrichten van quarantaineproblemen en hoe u deze kunt oplossen.|
 
 
-## <a name="agent-problems"></a>Agent problemen
-Enkele van de eerste dingen die u met de agent wilt verifiëren, zijn:
+## <a name="agent-problems"></a>Problemen met agent
+Enkele van de eerste dingen die u met de agent wilt controleren, zijn:
 
--  Is dit geïnstalleerd?
+-  Is deze geïnstalleerd?
 -  Wordt de agent lokaal uitgevoerd?
--  Bevindt de agent zich in de portal?
+-  Is de agent in de portal?
 -  Is de agent gemarkeerd als in orde?
 
-Deze items kunnen worden geverifieerd in de Azure Portal en op de lokale server waarop de-agent wordt uitgevoerd.
+Deze items kunnen worden geverifieerd in de Azure Portal en op de lokale server met de agent.
 
 ### <a name="azure-portal-agent-verification"></a>Verificatie van Azure Portal-agent
 
-Voer de volgende stappen uit om te controleren of de agent door Azure wordt gezien en in orde is.
+Volg deze stappen om te controleren of de agent wordt gezien door Azure en in orde is.
 
 1. Meld u aan bij Azure Portal.
-1. Selecteer aan de linkerkant **Azure Active Directory**  >  **Azure AD CONNECT**. In het midden selecteert u **synchronisatie beheren**.
-1. Selecteer **Alle agents controleren** op het **Azure AD Connect scherm Cloud synchronisatie** .
+1. Selecteer aan de linkerkant **Azure Active Directory**  >  **Azure AD Connect**. Selecteer synchronisatie beheren in **het midden.**
+1. Selecteer in **Azure AD Connect cloudsynchronisatiescherm** **Alle agents controleren.**
 
    ![Alle agents controleren](media/how-to-install/install-7.png)</br>
  
-1. Op het scherm **on-premises Provisioning agents** ziet u de agents die u hebt geïnstalleerd. Controleer of de agent in kwestie is en is gemarkeerd als *in orde*.
+1. In het **scherm On-premises inrichtingsagents** ziet u de agents die u hebt geïnstalleerd. Controleer of de agent in kwestie hier staat en als In orde *is gemarkeerd.*
 
-   ![Scherm on-premises ingerichte agents](media/how-to-install/install-8.png)</br>
+   ![Scherm On-premises inrichtingsagents](media/how-to-install/install-8.png)</br>
 
 ### <a name="verify-the-port"></a>De poort controleren
 
-Controleer of Azure luistert op poort 443 en of uw agent ermee kan communiceren. 
+Controleer of Azure luistert op poort 443 en of uw agent mee kan communiceren. 
 
-Met deze test wordt gecontroleerd of uw agents kunnen communiceren met Azure via poort 443. Open een browser en ga naar de vorige URL van de server waarop de agent is geïnstalleerd.
+Deze test controleert of uw agents met Azure kunnen communiceren via poort 443. Open een browser en ga naar de vorige URL vanaf de server waarop de agent is geïnstalleerd.
 
-![Verificatie van de bereik baarheid van de poort](media/how-to-install/verify-2.png)
+![Verificatie van de bereikbaarheid van de poort](media/how-to-install/verify-2.png)
 
 ### <a name="on-the-local-server"></a>Op de lokale server
 
-Voer de volgende stappen uit om te controleren of de agent wordt uitgevoerd.
+Volg deze stappen om te controleren of de agent wordt uitgevoerd.
 
-1. Op de server waarop de agent is geïnstalleerd, opent u **Services** door **ernaar te navigeren of door te gaan** met het  >  **uitvoeren** van  >  **Services. msc**.
-1. Zorg er bij **Services** voor dat **Microsoft Azure AD connect agent updater** en **Microsoft Azure AD Connect inrichtings agent** zijn, en de status wordt *uitgevoerd*.
+1. Open Services op de server  met de geïnstalleerde agent door er naar te navigeren of door **Naar Run**  >    >  **Services.msc** starten te gaan.
+1. Zorg **ervoor dat** onder Services Microsoft Azure AD Connect Agent **Updater** en **Microsoft Azure AD Connect Provisioning Agent** zich daar staan en dat hun status Wordt uitgevoerd *is.*
 
    ![Scherm Services](media/how-to-troubleshoot/troubleshoot-1.png)
 
-### <a name="common-agent-installation-problems"></a>Veelvoorkomende problemen met de agent installatie
+### <a name="common-agent-installation-problems"></a>Veelvoorkomende problemen met de installatie van de agent
 
-In de volgende secties worden enkele veelvoorkomende problemen met de agent installatie en typische oplossingen beschreven.
+In de volgende secties worden enkele veelvoorkomende problemen met de installatie van de agent en typische oplossingen beschreven.
 
-#### <a name="agent-failed-to-start"></a>De agent is niet gestart
+#### <a name="agent-failed-to-start"></a>Agent kan niet worden starten
 
-Er wordt mogelijk een fout bericht met de volgende strekking weer gegeven:
+Mogelijk wordt er een foutbericht weergegeven met de volgende tekst:
 
-**De service Microsoft Azure AD Connect inrichtings agent kan niet worden gestart. Controleer of u voldoende rechten hebt om de systeem services te starten.** 
+**Service 'Microsoft Azure AD Connect Provisioning Agent' kan niet worden starten. Controleer of u voldoende bevoegdheden hebt om de systeemservices te starten.** 
 
-Dit probleem wordt meestal veroorzaakt door een groeps beleid waarmee wordt voor komen dat machtigingen kunnen worden toegepast op het aanmeldings account van de lokale NT-service die is gemaakt door het installatie programma (NT SERVICE\AADConnectProvisioningAgent). Deze machtigingen zijn vereist voor het starten van de service.
+Dit probleem wordt meestal veroorzaakt door een groepsbeleid dat voorkomt dat machtigingen worden toegepast op het lokale NT Service-aanmeldaccount dat is gemaakt door het installatieprogramma (NT SERVICE\AADConnectProvisioningAgent). Deze machtigingen zijn vereist voor het starten van de service.
 
-Voer de volgende stappen uit om dit probleem op te lossen.
+Volg deze stappen om dit probleem op te lossen.
 
-1. Meld u met een beheerders account aan bij de server.
-1. Open **Services** door te navigeren naar de service of **door te gaan** met het  >  **uitvoeren** van  >  **Services. msc**.
-1. Dubbel klik onder **Services** op **Microsoft Azure AD Connect inrichtings agent**.
-1. Wijzig op het tabblad **Aanmelden** het **account** in een domein beheerder. Start de service vervolgens opnieuw. 
+1. Meld u aan bij de server met een beheerdersaccount.
+1. Open **Services** door er naar te navigeren of door **Run**  >    >  **Services.msc te starten.**
+1. Dubbelklik **onder Services** op Microsoft Azure AD **Connect Provisioning Agent**.
+1. Op het **tabblad Aanmelden wijzigt** u **Dit account** in een domeinbeheerder. Start de service vervolgens opnieuw. 
 
    ![Tabblad Aanmelden](media/how-to-troubleshoot/troubleshoot-3.png)
 
-#### <a name="agent-times-out-or-certificate-is-invalid"></a>Er is een time-out van de agent of het certificaat is ongeldig
+#### <a name="agent-times-out-or-certificate-is-invalid"></a>Er t/m een agent uit of het certificaat is ongeldig
 
-Mogelijk wordt het volgende fout bericht weer gegeven wanneer u probeert de agent te registreren.
+Mogelijk wordt het volgende foutbericht weergegeven wanneer u de agent probeert te registreren.
 
-![Fout bericht time-out](media/how-to-troubleshoot/troubleshoot-4.png)
+![Time-outfoutbericht](media/how-to-troubleshoot/troubleshoot-4.png)
 
 Dit probleem wordt meestal veroorzaakt door de agent waardoor geen verbinding kan worden gemaakt met de Hybrid Identity-service, hiervoor moet u een HTTP-proxy configureren. U kunt dit probleem oplossen door een uitgaande proxy te configureren. 
 
-De inrichtings agent ondersteunt het gebruik van een uitgaande proxy. U kunt deze configureren door het configuratie bestand van de agent te bewerken *C:\Program Files\Microsoft Azure AD Connect inrichting Agent\AADConnectProvisioningAgent.exe.config*. Voeg de volgende regels toe aan het einde van het bestand net vóór de eindtag `</configuration>` .
-Vervang de variabelen `[proxy-server]` en `[proxy-port]` door de naam en poort waarden van de proxy server.
+De inrichtingsagent ondersteunt het gebruik van een uitgaande proxy. U kunt deze configureren door het configuratiebestand van de agent *C:\Program Files\Microsoft Azure AD Connect Provisioning Agent\AADConnectProvisioningAgent.exe.config*. Voeg de volgende regels toe aan het einde van het bestand, net vóór de afsluitende `</configuration>` tag.
+Vervang de variabelen en door de naam en poortwaarden `[proxy-server]` `[proxy-port]` van uw proxyserver.
 
 ```xml
     <system.net>
@@ -114,115 +114,115 @@ Vervang de variabelen `[proxy-server]` en `[proxy-port]` door de naam en poort w
     </system.net>
 ```
 
-#### <a name="agent-registration-fails-with-security-error"></a>Registratie van agent mislukt vanwege beveiligings fout
+#### <a name="agent-registration-fails-with-security-error"></a>Agentregistratie mislukt met beveiligingsfout
 
-Er wordt mogelijk een fout bericht weer gegeven wanneer u de Cloud inrichtings Agent installeert.
+Mogelijk wordt er een foutbericht weergegeven wanneer u de inrichtingsagent voor de cloud installeert.
 
-Dit probleem wordt meestal veroorzaakt door de agent waardoor de Power shell-registratie scripts niet kunnen worden uitgevoerd vanwege het lokale Power shell-uitvoerings beleid.
+Dit probleem wordt meestal veroorzaakt doordat de agent de PowerShell-registratiescripts niet kan uitvoeren vanwege lokaal PowerShell-uitvoeringsbeleid.
 
-Om dit probleem op te lossen, wijzigt u het Power shell-uitvoerings beleid op de-server. U moet het beleid voor de computer en gebruiker instellen op niet- *gedefinieerde* of *RemoteSigned*. Als ze zijn ingesteld als *onbeperkt*, wordt deze fout weer geven. Zie [Power shell Execution policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies)(Engelstalig) voor meer informatie. 
+U kunt dit probleem oplossen door het PowerShell-uitvoeringsbeleid op de server te wijzigen. U moet het machine- en gebruikersbeleid instellen op *Niet-gedefinieerd* of *Externtekend.* Als deze zijn ingesteld op *Onbeperkt,* wordt deze fout weergegeven. Zie [PowerShell-uitvoeringsbeleid voor meer informatie.](/powershell/module/microsoft.powershell.core/about/about_execution_policies) 
 
 ### <a name="log-files"></a>Logboekbestanden
 
-De agent verzendt standaard minimale foutberichten en stack-traceringsgegevens. U vindt deze traceer Logboeken in de map **C:\PROGRAMDATA\MICROSOFT\AZURE AD Connect Provisioning Agent\Trace**.
+De agent verzendt standaard minimale foutberichten en stack-traceringsgegevens. U vindt deze traceerlogboeken in de map **C:\ProgramData\Microsoft\Azure AD Connect Provisioning Agent\Trace.**
 
-Volg deze stappen om aanvullende informatie te verzamelen voor het oplossen van problemen met de agent.
+Volg deze stappen om aanvullende informatie te verzamelen voor het oplossen van problemen met betrekking tot de agent.
 
-1.  Installeer de AADCloudSyncTools Power shell-module, zoals [hier](reference-powershell.md#install-the-aadcloudsynctools-powershell-module)wordt beschreven.
-2. Gebruik de `Export-AADCloudSyncToolsLogs` Power shell-cmdlet om de gegevens vast te leggen.  U kunt de volgende Schakel opties gebruiken om uw gegevens verzameling te verfijnen.
-      - SkipVerboseTrace alleen huidige logboeken exporteren zonder uitgebreide logboeken te vastleggen (standaard = onwaar)
-      - TracingDurationMins om een andere vastleg duur op te geven (standaard = 3 minuten)
-      - OutputPath om een ander uitvoerpad op te geven (standaard = documenten van de gebruiker)
+1.  Installeer de PowerShell-module AADCloudSyncTools zoals hier wordt [beschreven.](reference-powershell.md#install-the-aadcloudsynctools-powershell-module)
+2. Gebruik de `Export-AADCloudSyncToolsLogs` PowerShell-cmdlet om de informatie vast te leggen.  U kunt de volgende schakelopties gebruiken om uw gegevensverzameling af te stemmen.
+      - SkipVerboseTrace om alleen huidige logboeken te exporteren zonder uitgebreide logboeken vast te leggen (standaard = false)
+      - TracingDurationMins om een andere opnameduur op te geven (standaard = 3 minuten)
+      - OutputPath om een ander uitvoerpad op te geven (standaard = gebruikersdocumenten)
 
 
-## <a name="object-synchronization-problems"></a>Problemen met object synchronisatie
+## <a name="object-synchronization-problems"></a>Problemen met objectsynchronisatie
 
-De volgende sectie bevat informatie over het oplossen van object synchronisatie.
+De volgende sectie bevat informatie over het oplossen van problemen met objectsynchronisatie.
 
 ### <a name="provisioning-logs"></a>Inrichtingslogboeken
 
-In de Azure Portal kunnen inrichtings logboeken worden gebruikt om problemen met object synchronisatie op te sporen en op te lossen. Selecteer **Logboeken** om de logboeken weer te geven.
+In de Azure Portal kunnen inrichtingslogboeken worden gebruikt om problemen met objectsynchronisatie op te sporen en op te lossen. Als u de logboeken wilt weergeven, selecteert **u Logboeken.**
 
-![Knop Logboeken](media/how-to-troubleshoot/log-1.png)
+![De knop Logboeken](media/how-to-troubleshoot/log-1.png)
 
-Inrichtings logboeken bieden een schat aan informatie over de status van de objecten die worden gesynchroniseerd tussen uw on-premises Active Directory omgeving en Azure.
+Inrichtingslogboeken bieden een schat aan informatie over de status van de objecten die worden gesynchroniseerd tussen uw on-premises Active Directory-omgeving en Azure.
 
-![Scherm voor het inrichten van Logboeken](media/how-to-troubleshoot/log-2.png)
+![Scherm Inrichtingslogboeken](media/how-to-troubleshoot/log-2.png)
 
-U kunt de vervolg keuzelijsten boven aan de pagina gebruiken om de weer gave te filteren op nul in op specifieke problemen, zoals datums. Dubbel klik op een afzonderlijke gebeurtenis om aanvullende informatie weer te geven.
+U kunt de vervolgkeuzevakken boven aan de pagina gebruiken om de weergave op nul te filteren op specifieke problemen, zoals datums. Dubbelklik op een afzonderlijke gebeurtenis om aanvullende informatie weer te geven.
 
-![Informatie over de vervolg keuzelijst voor het inrichtings logboek](media/how-to-troubleshoot/log-3.png)
+![Informatie in de vervolgkeuzelijsten voor inrichtingslogboeken](media/how-to-troubleshoot/log-3.png)
 
-Deze informatie bevat gedetailleerde stappen en waar het synchronisatie probleem plaatsvindt. Op deze manier kunt u de exacte plaats van het probleem lokaliseren.
+Deze informatie bevat gedetailleerde stappen en waar het synchronisatieprobleem optreedt. Op deze manier kunt u de exacte locatie van het probleem aanwijzen.
 
 
-## <a name="provisioning-quarantined-problems"></a>In quarantaine geplaatste problemen inrichten
+## <a name="provisioning-quarantined-problems"></a>Problemen met in quarantaine inrichten
 
-Met Cloud Sync wordt de status van uw configuratie gecontroleerd en worden de beschadigde objecten in een quarantaine status geplaatst. Als de meeste of alle aanroepen voor het doel systeem consistent mislukken vanwege een fout, bijvoorbeeld ongeldige beheerders referenties, wordt de synchronisatie taak gemarkeerd als in quarantaine.
+Cloudsynchronisatie bewaakt de status van uw configuratie en plaatst slechte objecten in een quarantainetoestand. Als de meeste of alle aanroepen op het doelsysteem consistent mislukken vanwege een fout, bijvoorbeeld ongeldige beheerdersreferenties, wordt de synchronisatie job gemarkeerd als in quarantaine.
 
 ![Quarantinestatus](media/how-to-troubleshoot/quarantine-1.png)
 
-Als u de status selecteert, ziet u aanvullende informatie over de quarantaine. U kunt ook de fout code en het bericht ophalen.
+Als u de status selecteert, ziet u aanvullende informatie over de quarantaine. U kunt ook de foutcode en het bericht verkrijgen.
 
-![Scherm afbeelding met aanvullende informatie over de quarantaine.](media/how-to-troubleshoot/quarantine-2.png)
+![Schermopname met aanvullende informatie over de quarantaine.](media/how-to-troubleshoot/quarantine-2.png)
 
-Met de rechter muisknop op de status krijgt u extra opties:
+Als u met de rechtermuisknop op de status klikt, worden er extra opties beschikbaar:
     
-   - inrichtings logboeken weer geven
-   - agent weer geven
-   - quarantaine wissen
+   - inrichtingslogboeken weergeven
+   - agent weergeven
+   - quarantaine leeg maken
 
-![Scherm afbeelding met de opties voor klikken met de rechter muisknop.](media/how-to-troubleshoot/quarantine-4.png)
+![Schermopname van de opties in het menu met de rechtermuisknop.](media/how-to-troubleshoot/quarantine-4.png)
 
 
-### <a name="resolve-a-quarantine"></a>Een quarantaine omzetten
+### <a name="resolve-a-quarantine"></a>Een quarantaine oplossen
 Er zijn twee verschillende manieren om een quarantaine op te lossen.  Dit zijn:
 
-  - quarantaine wissen: Hiermee wist u het water merk en voert u een Delta synchronisatie uit
-  - de inrichtings taak opnieuw starten: Hiermee wist u het water merk en voert u een initiële synchronisatie uit
+  - quarantaine verwijderen: het watermerk wordt geweerd en er wordt een deltasynchronisatie uitgevoerd
+  - start de inrichtings job opnieuw op: het watermerk wordt geweerd en er wordt een initiële synchronisatie uitgevoerd
 
-#### <a name="clear-quarantine"></a>Quarantaine wissen
-Als u het water merk wilt wissen en een Delta synchronisatie wilt uitvoeren voor de inrichtings taak nadat u deze hebt gecontroleerd, klikt u met de rechter muisknop op de status en selecteert u **quarantaine wissen**.
+#### <a name="clear-quarantine"></a>Quarantaine leeg maken
+Als u het watermerk wilt verwijderen en een deltasynchronisatie wilt uitvoeren op de inrichtings job nadat u deze hebt geverifieerd, klikt u met de rechtermuisknop op de status en selecteert u **Quarantaine verwijderen.**
 
-U ziet dat de quarantaine wordt gewist.
+U ziet nu een melding dat de quarantaine wordt ge wissen.
 
-![Scherm afbeelding met de mede deling dat de quarantaine wordt gewist.](media/how-to-troubleshoot/quarantine-5.png)
+![Schermopname van de melding dat de quarantaine wordt ge wissen.](media/how-to-troubleshoot/quarantine-5.png)
 
-Vervolgens ziet u de status van de agent als in orde.
+Vervolgens ziet u dat de status van uw agent in orde is.
 
-![Status informatie voor quarantaine](media/how-to-troubleshoot/quarantine-6.png)
+![Statusinformatie over quarantaine](media/how-to-troubleshoot/quarantine-6.png)
 
-#### <a name="restart-the-provisioning-job"></a>De inrichtings taak opnieuw starten
-Gebruik de Azure Portal om de inrichtings taak opnieuw te starten. Selecteer **inrichting opnieuw opstarten** op de pagina configuratie van agent.
+#### <a name="restart-the-provisioning-job"></a>De inrichtings job opnieuw starten
+Gebruik de Azure Portal om de inrichtings job opnieuw te starten. Selecteer op de configuratiepagina van de agent **de optie Inrichting opnieuw starten.**
 
   ![Inrichting opnieuw starten](media/how-to-troubleshoot/quarantine-3.png)
 
-- Gebruik Microsoft Graph om [de inrichtings taak opnieuw te starten](/graph/api/synchronization-synchronizationjob-restart?tabs=http&view=graph-rest-beta). U hebt volledige controle over wat u opnieuw opstart. U kunt het volgende wissen:
-  - Borg, om de borg teller opnieuw op te starten die de quarantaine status toeneemt.
-  - Quarantaine, om de toepassing uit quarantaine te verwijderen.
-  - Water merken. 
+- Gebruik Microsoft Graph om de [inrichtings job opnieuw op te starten.](/graph/api/synchronization-synchronizationjob-restart?tabs=http&view=graph-rest-beta&preserve-view=true) U hebt volledige controle over wat u opnieuw start. U kunt ervoor kiezen om het volgende te doen:
+  - Escrows: om de escrow-teller die in de richting van de quarantainestatus komt, opnieuw op te starten.
+  - Quarantaine om de toepassing uit quarantaine te verwijderen.
+  - Watermerken. 
   
   Gebruik de volgende aanvraag:
  
   `POST /servicePrincipals/{id}/synchronization/jobs/{jobId}/restart`
 
-## <a name="repairing-the-the-cloud-sync-service-account"></a>Het account voor Cloud Sync service herstellen
-Als u het Cloud Sync Service-account moet herstellen, kunt u de gebruiken `Repair-AADCloudSyncToolsAccount` .  
+## <a name="repairing-the-the-cloud-sync-service-account"></a>Het cloudsynchronisatieserviceaccount herstellen
+Als u het cloudsynchronisatieserviceaccount wilt herstellen, kunt u de `Repair-AADCloudSyncToolsAccount` gebruiken.  
 
 
-   1.  Gebruik de installatie stappen die [hier](reference-powershell.md#install-the-aadcloudsynctools-powershell-module) worden beschreven om te beginnen en vervolgens door te gaan met de resterende stappen.
-   2.  Van een Windows Power shell-sessie met beheerders bevoegdheden, kunt u het volgende typen of kopiëren en plakken: 
+   1.  Gebruik de installatiestappen die hier worden [beschreven](reference-powershell.md#install-the-aadcloudsynctools-powershell-module) om te beginnen en vervolgens door te gaan met de resterende stappen.
+   2.  Typ of kopieer Windows PowerShell een sessie met beheerdersbevoegdheden en plak het volgende: 
     ```
     Connect-AADCloudSyncTools
     ```  
-   3. Voer uw Azure AD-referenties voor de globale beheerder in
+   3. Voer uw globale beheerdersreferenties voor Azure AD in
    4. Typ of kopieer en plak het volgende: 
     ```
     Repair-AADCloudSyncToolsAccount
     ```  
-   5. Zodra dit is voltooid, moet u zeggen dat het account is hersteld.
+   5. Zodra dit is voltooid, moet worden gezegd dat het account is hersteld.
 
 ## <a name="next-steps"></a>Volgende stappen 
 
 - [Bekende beperkingen](how-to-prerequisites.md#known-limitations)
-- [Fout codes](reference-error-codes.md)
+- [Foutcodes](reference-error-codes.md)

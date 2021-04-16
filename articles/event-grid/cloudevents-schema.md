@@ -1,28 +1,28 @@
 ---
-title: Azure Event Grid gebruiken met gebeurtenissen in het CloudEvents-schema
-description: Hierin wordt beschreven hoe u het CloudEvents-schema gebruikt voor gebeurtenissen in Azure Event Grid. De service ondersteunt gebeurtenissen in de JSON-implementatie van CloudEvents.
+title: Gebruik Azure Event Grid met gebeurtenissen in het CloudEvents-schema
+description: Beschrijft hoe u het CloudEvents-schema gebruikt voor gebeurtenissen in Azure Event Grid. De service ondersteunt gebeurtenissen in de JSON-implementatie van CloudEvents.
 ms.topic: conceptual
 ms.date: 11/10/2020
 ms.custom: devx-track-js, devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 484f118791d57c082a9f4383b1af4a22c04849c4
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 0ee816663a385601d4a31edbf87f8c787ea5aa91
+ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101737899"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107389499"
 ---
-# <a name="use-cloudevents-v10-schema-with-event-grid"></a>CloudEvents v 1.0-schema gebruiken met Event Grid
-Naast het [standaard schema](event-schema.md)van de gebeurtenis, ondersteunt Azure Event grid systeem eigen gebeurtenissen in de [JSON-implementatie van CloudEvents v 1.0](https://github.com/cloudevents/spec/blob/v1.0/json-format.md) en [http-protocol binding](https://github.com/cloudevents/spec/blob/v1.0/http-protocol-binding.md). [CloudEvents](https://cloudevents.io/) is een [open specificatie](https://github.com/cloudevents/spec/blob/v1.0/spec.md) voor het beschrijven van gebeurtenis gegevens.
+# <a name="use-cloudevents-v10-schema-with-event-grid"></a>CloudEvents v1.0-schema gebruiken met Event Grid
+Naast het standaardgebeurtenisschema [ondersteunt](event-schema.md)Azure Event Grid gebeurtenissen in de JSON-implementatie van [CloudEvents v1.0](https://github.com/cloudevents/spec/blob/v1.0/json-format.md) en [HTTP-protocolbinding](https://github.com/cloudevents/spec/blob/v1.0/http-protocol-binding.md). [CloudEvents](https://cloudevents.io/) is een [open specificatie voor het](https://github.com/cloudevents/spec/blob/v1.0/spec.md) beschrijven van gebeurtenisgegevens.
 
-CloudEvents vereenvoudigt interoperabiliteit door een gemeen schappelijk gebeurtenis schema te bieden voor het publiceren en gebruiken van Cloud gebeurtenissen. Dit schema biedt uniforme hulp middelen, standaard manieren van route ring en afhandeling van gebeurtenissen en universele manieren om het buitenste gebeurtenis schema te deserialiseren. Met een gemeen schappelijk schema kunt u gemakkelijker werk op verschillende platforms integreren.
+CloudEvents vereenvoudigt de interoperabiliteit door een algemeen gebeurtenisschema te bieden voor het publiceren en gebruiken van cloudgebeurtenissen. Dit schema maakt uniforme hulpprogramma's, standaardmanier voor het routeren en verwerken van gebeurtenissen mogelijk, en universele manieren om het buitenste gebeurtenisschema te deserialiseren. Met een gemeenschappelijk schema kunt u werk gemakkelijker integreren op verschillende platformen.
 
-CloudEvents wordt gebouwd door verschillende deel [nemers](https://github.com/cloudevents/spec/blob/master/community/contributors.md), waaronder micro soft, via de [systeem eigen Cloud Computing Foundation](https://www.cncf.io/). Het is momenteel beschikbaar als versie 1,0.
+CloudEvents wordt gebouwd door verschillende [samenwerkers,](https://github.com/cloudevents/spec/blob/master/community/contributors.md)waaronder Microsoft, via de [Cloud Native Computing Foundation.](https://www.cncf.io/) Deze is momenteel beschikbaar als versie 1.0.
 
 In dit artikel wordt beschreven hoe u het CloudEvents-schema gebruikt met Event Grid.
 
 ## <a name="cloudevent-schema"></a>CloudEvent-schema
 
-Hier volgt een voor beeld van een Azure Blob Storage-gebeurtenis in de indeling CloudEvents:
+Hier is een voorbeeld van een Azure Blob Storage gebeurtenis in CloudEvents-indeling:
 
 ``` JSON
 {
@@ -50,29 +50,29 @@ Hier volgt een voor beeld van een Azure Blob Storage-gebeurtenis in de indeling 
 }
 ```
 
-Zie [CloudEvents v 1.0](https://github.com/cloudevents/spec/blob/v1.0/spec.md#required-attributes)voor een gedetailleerde beschrijving van de beschik bare velden, hun typen en definities.
+Zie [CloudEvents v1.0](https://github.com/cloudevents/spec/blob/v1.0/spec.md#required-attributes)voor een gedetailleerde beschrijving van de beschikbare velden, hun typen en definities.
 
-De waarden van headers voor gebeurtenissen die in het CloudEvents-schema en het Event Grid schema worden bezorgd, zijn hetzelfde, behalve voor `content-type` . Voor het CloudEvents-schema is die header waarde `"content-type":"application/cloudevents+json; charset=utf-8"` . Voor het Event Grid schema is die header waarde `"content-type":"application/json; charset=utf-8"` .
+De headerswaarden voor gebeurtenissen die worden geleverd in het CloudEvents-schema en het Event Grid schema zijn hetzelfde, met uitzondering van `content-type` . Voor het CloudEvents-schema is die headerwaarde `"content-type":"application/cloudevents+json; charset=utf-8"` . Voor het Event Grid schema is die headerwaarde `"content-type":"application/json; charset=utf-8"` .
 
-## <a name="configure-event-grid-for-cloudevents"></a>Event Grid configureren voor CloudEvents
+## <a name="configure-event-grid-for-cloudevents"></a>Een Event Grid voor CloudEvents configureren
 
-U kunt Event Grid gebruiken voor zowel de invoer als uitvoer van gebeurtenissen in het CloudEvents-schema. In de volgende tabel worden de mogelijke trans formaties beschreven:
+U kunt Event Grid voor zowel invoer als uitvoer van gebeurtenissen in het CloudEvents-schema. In de volgende tabel worden de mogelijke transformaties beschreven:
 
- Event Grid resource | Invoer schema       | Leverings schema
+ Event Grid resource | Invoerschema       | Leveringsschema
 |---------------------|-------------------|---------------------
-| Systeem onderwerpen       | Event Grid-schema | Event Grid schema of CloudEvents-schema
-| Gebruikers onderwerpen/domeinen | Event Grid-schema | Event Grid schema of CloudEvents-schema
-| Gebruikers onderwerpen/domeinen | CloudEvents-schema | CloudEvents-schema
-| Gebruikers onderwerpen/domeinen | Aangepast schema     | Aangepast schema, Event Grid schema of CloudEvents-schema
-| PartnerTopics       | CloudEvents-schema | CloudEvents-schema
+| Systeemonderwerpen       | Event Grid-schema | Event Grid of CloudEvents-schema
+| Aangepaste onderwerpen/domeinen | Event Grid-schema | Event Grid of CloudEvents-schema
+| Aangepaste onderwerpen/domeinen | CloudEvents-schema | CloudEvents-schema
+| Aangepaste onderwerpen/domeinen | Aangepast schema     | Aangepast schema, Event Grid schema of CloudEvents-schema
+| Partneronderwerpen       | CloudEvents-schema | CloudEvents-schema
 
-Voor alle gebeurtenis schema's moet Event Grid worden gevalideerd wanneer u naar een Event Grid onderwerp publiceert en wanneer u een gebeurtenis abonnement maakt.
+Voor alle gebeurtenisschema's Event Grid validatie vereist wanneer u publiceert naar een Event Grid onderwerp en wanneer u een gebeurtenisabonnement maakt.
 
-Zie [Event grid beveiliging en verificatie](security-authentication.md)voor meer informatie.
+Zie beveiliging en verificatie Event Grid [meer informatie.](security-authentication.md)
 
-### <a name="input-schema"></a>Invoer schema
+### <a name="input-schema"></a>Invoerschema
 
-Wanneer u het aangepaste onderwerp maakt, stelt u het invoer schema voor een aangepast onderwerp in.
+U stelt het invoerschema voor een aangepast onderwerp in wanneer u het aangepaste onderwerp maakt.
 
 Gebruik voor de Azure CLI:
 
@@ -94,9 +94,9 @@ New-AzEventGridTopic `
   -InputSchema CloudEventSchemaV1_0
 ```
 
-### <a name="output-schema"></a>Uitvoer schema
+### <a name="output-schema"></a>Uitvoerschema
 
-U stelt het uitvoer schema in wanneer u het gebeurtenis abonnement maakt.
+U stelt het uitvoerschema in wanneer u het gebeurtenisabonnement maakt.
 
 Gebruik voor de Azure CLI:
 
@@ -121,24 +121,24 @@ New-AzEventGridSubscription `
   -DeliverySchema CloudEventSchemaV1_0
 ```
 
- Op dit moment kunt u geen Event Grid trigger gebruiken voor een Azure Functions-app wanneer de gebeurtenis wordt bezorgd in het CloudEvents-schema. Gebruik een HTTP-trigger. Zie [using CloudEvents with Azure functions](#azure-functions)(Engelstalig) voor voor beelden van het implementeren van een http-trigger die gebeurtenissen ontvangt in het CloudEvents-schema.
+ Op dit moment kunt u geen trigger Event Grid voor een Azure Functions-app wanneer de gebeurtenis wordt geleverd in het CloudEvents-schema. Gebruik een HTTP-trigger. Zie Using [CloudEvents with Azure Functions (CloudEvents](#azure-functions)gebruiken met Azure Functions) voor voorbeelden van het implementeren van een HTTP-trigger die gebeurtenissen in het CloudEvents-schema ontvangt.
 
-## <a name="endpoint-validation-with-cloudevents-v10"></a>Eindpunt validatie met CloudEvents v 1.0
+## <a name="endpoint-validation-with-cloudevents-v10"></a>Eindpuntvalidatie met CloudEvents v1.0
 
-Als u al bekend bent met Event Grid, is het mogelijk dat u op de hoogte bent van de validatie-Handshake van het eind punt om misbruik te voor komen. CloudEvents v 1.0 implementeert zijn eigen [beveiligings semantiek voor misbruik](webhook-event-delivery.md) door gebruik te maken van de http-opties methode. Zie [HTTP 1,1-Webhooks voor gebeurtenis levering-versie 1,0 voor](https://github.com/cloudevents/spec/blob/v1.0/http-webhook.md#4-abuse-protection)meer informatie hierover. Wanneer u het CloudEvents-schema voor uitvoer gebruikt, maakt Event Grid gebruik van de CloudEvents v 1.0-misbruik beveiliging in plaats van het Event Grid validatie gebeurtenis mechanisme.
+Als u al bekend bent met Event Grid, bent u mogelijk op de hoogte van de eindpuntvalidatiehandhake voor het voorkomen van misbruik. CloudEvents v1.0 implementeert een eigen semantiek voor beveiliging tegen misbruik met [behulp](webhook-event-delivery.md) van de HTTP OPTIONS-methode. Zie HTTP [1.1 Web Hooks for event delivery - Version 1.0 (HTTP 1.1-web hooks](https://github.com/cloudevents/spec/blob/v1.0/http-webhook.md#4-abuse-protection)voor levering van gebeurtenissen - versie 1.0) voor meer informatie. Wanneer u het CloudEvents-schema voor uitvoer gebruikt, gebruikt Event Grid de cloudgebeurtenisbeveiliging CloudEvents v1.0 in plaats van het mechanisme voor Event Grid validatiegebeurtenis.
 
 <a name="azure-functions"></a>
 
 ## <a name="use-with-azure-functions"></a>Gebruiken met Azure Functions
 
-De [Azure Functions Event grid-binding](../azure-functions/functions-bindings-event-grid.md) biedt geen systeem eigen ondersteuning voor CloudEvents, dus er worden door http geactiveerde functies gebruikt voor het lezen van CloudEvents-berichten. Wanneer u een HTTP-trigger gebruikt om CloudEvents te lezen, moet u code schrijven voor wat de Event Grid trigger automatisch doet:
+De [Azure Functions Event Grid biedt](../azure-functions/functions-bindings-event-grid.md) geen systeemeigen ondersteuning voor CloudEvents, dus http-geactiveerde functies worden gebruikt om CloudEvents-berichten te lezen. Wanneer u een HTTP-trigger gebruikt om CloudEvents te lezen, moet u code schrijven voor wat de trigger Event Grid automatisch doet:
 
-* Hiermee wordt een validatie reactie verzonden naar een aanvraag voor een [abonnements validatie](../event-grid/webhook-event-delivery.md)
-* Hiermee wordt de functie aangeroepen per element van de gebeurtenis matrix die is opgenomen in de hoofd tekst van de aanvraag
+* Verzendt een validatiereactie op een [abonnementsvalidatieaanvraag](../event-grid/webhook-event-delivery.md)
+* Roept de functie eenmaal aan per element van de gebeurtenis array in de aanvraag body
 
-Voor informatie over de URL die moet worden gebruikt om de functie lokaal aan te roepen of wanneer deze wordt uitgevoerd in azure, raadpleegt u de [referentie documentatie voor de http-trigger binding](../azure-functions/functions-bindings-http-webhook.md).
+Zie de referentiedocumentatie over [HTTP-triggerbinding](../azure-functions/functions-bindings-http-webhook.md)voor informatie over de URL die moet worden gebruikt voor het lokaal aanroepen van de functie of wanneer deze wordt uitgevoerd in Azure.
 
-Met de volgende C#-voorbeeld code voor een HTTP-trigger wordt Event Grid trigger gedrag gesimuleerd. Gebruik dit voor beeld voor gebeurtenissen die in het CloudEvents-schema worden bezorgd.
+De volgende C#-voorbeeldcode voor een HTTP-trigger simuleert Event Grid triggergedrag. Gebruik dit voorbeeld voor gebeurtenissen die worden geleverd in het CloudEvents-schema.
 
 ```csharp
 [FunctionName("HttpTrigger")]
@@ -168,7 +168,7 @@ public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLeve
 }
 ```
 
-Met de volgende Java script-voorbeeld code voor een HTTP-trigger wordt Event Grid trigger gedrag gesimuleerd. Gebruik dit voor beeld voor gebeurtenissen die in het CloudEvents-schema worden bezorgd.
+De volgende JavaScript-voorbeeldcode voor een HTTP-trigger simuleert Event Grid triggergedrag. Gebruik dit voorbeeld voor gebeurtenissen die worden geleverd in het CloudEvents-schema.
 
 ```javascript
 module.exports = function (context, req) {
@@ -203,6 +203,6 @@ module.exports = function (context, req) {
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [Event grid bericht bezorging bewaken](monitor-event-delivery.md)voor meer informatie over het bewaken van gebeurtenis leveringen.
-* We raden u aan om CloudEvents te testen, opmerkingen [te leveren en bij te dragen](https://github.com/cloudevents/spec/blob/master/community/CONTRIBUTING.md).
-* Zie [Event grid Subscription schema](subscription-creation-schema.md)voor meer informatie over het maken van een Azure Event grid-abonnement.
+* Zie Bewaking van de levering van berichten Event Grid informatie over het bewaken [van leveringen van gebeurtenissen.](monitor-event-delivery.md)
+* We raden u aan om [cloudevents](https://github.com/cloudevents/spec/blob/master/community/CONTRIBUTING.md)te testen, er commentaar van te maken en bij te dragen.
+* Zie abonnementschema voor Azure Event Grid meer informatie [Event Grid het maken van een abonnement.](subscription-creation-schema.md)

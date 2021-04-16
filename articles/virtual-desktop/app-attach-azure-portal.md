@@ -1,17 +1,17 @@
 ---
-title: Windows Virtual Desktop msix-app koppelen - Azure
+title: Windows Virtual Desktop MSIX-app koppelen - Azure
 description: MsIX-app-attach instellen voor Windows Virtual Desktop met behulp van de Azure Portal.
 author: Heidilohr
 ms.topic: how-to
 ms.date: 04/13/2021
 ms.author: helohr
 manager: femila
-ms.openlocfilehash: 0d7598e332539b8203d55bbcb1cf497811c32540
-ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
+ms.openlocfilehash: 21dbab6c8d4fb12fe79434a6994dd7f5b8a49190
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107366552"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107502705"
 ---
 # <a name="set-up-msix-app-attach-with-the-azure-portal"></a>MSIX-app-koppeling instellen met de Azure-portal
 
@@ -19,17 +19,13 @@ In dit artikel wordt beschreven hoe u een MSIX-app-attach in een Windows Virtual
 
 ## <a name="requirements"></a>Vereisten
 
->[!IMPORTANT]
->Voordat u aan de slag gaat, [](https://aka.ms/enablemsixappattach) moet u dit formulier invullen en verzenden om MSIX-app-koppelen in te kunnenschakelen in uw abonnement. Als u geen goedgekeurde aanvraag hebt, werkt het koppelen van de MSIX-app niet. Het goedkeuren van aanvragen kan tijdens werkdagen maximaal 24 uur duren. U ontvangt een e-mail wanneer uw aanvraag is geaccepteerd en voltooid.
+Dit is wat u nodig hebt om een MSIX-app-bijlage te configureren:
 
-Dit is wat u nodig hebt om een MSIX-app-attach te configureren:
-
-- Een werkende Windows Virtual Desktop implementatie. Zie Een tenant maken in Windows Virtual Desktop voor meer informatie over het implementeren [Windows Virtual Desktop](./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md). Zie Een hostgroep maken met de Windows Virtual Desktop voor meer informatie over het implementeren van Azure Resource Manager met [Azure Portal.](./create-host-pools-azure-marketplace.md)
+- Een werkende Windows Virtual Desktop implementatie. Zie Een tenant maken in Windows Virtual Desktop voor meer informatie over het implementeren [Windows Virtual Desktop](./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md). Zie Create a host pool with the Azure Portal (Een hostgroep maken met de Azure Portal) voor meer informatie over het implementeren van Windows Virtual Desktop [met Azure Resource Manager-integratie.](./create-host-pools-azure-marketplace.md)
 - Een Windows Virtual Desktop hostgroep met ten minste één actieve sessiehost.
-- Deze hostgroep moet zich in de validatieomgeving. 
 - Het MSIX-pakkethulpprogramma.
 - Een toepassing met MSIX-pakket uitgebreid naar een MSIX-afbeelding die wordt geüpload naar een bestands share.
-- Een bestands share in uw Windows Virtual Desktop implementatie waar het MSIX-pakket wordt opgeslagen.
+- Een bestands share in uw Windows Virtual Desktop implementatie waarin het MSIX-pakket wordt opgeslagen.
 - De bestands share waar u de MSIX-afbeelding hebt geüpload, moet ook toegankelijk zijn voor alle virtuele machines (VM's) in de hostgroep. Gebruikers hebben alleen-lezenmachtigingen nodig voor toegang tot de afbeelding.
 - Als het certificaat niet openbaar wordt vertrouwd, volgt u de instructies in [Certificaten installeren.](app-attach.md#install-certificates)
 
@@ -79,7 +75,7 @@ De MSIX-afbeelding toevoegen:
 2. Voer **Windows Virtual Desktop** in de zoekbalk in en selecteer vervolgens de servicenaam.
 
       > [!div class="mx-imgBorder"]
-      > ![Een schermopname van een gebruiker die 'Windows Virtual Desktop' selecteert in de vervolgkeuzelijst van de zoekbalk in Azure Portal. 'Windows Virtual Desktop' is rood gemarkeerd.](media/find-and-select.png)
+      > ![Een schermopname van een gebruiker die 'Windows Virtual Desktop' selecteert in de vervolgkeuzelijst van de zoekbalk in het Azure Portal. 'Windows Virtual Desktop' is rood gemarkeerd.](media/find-and-select.png)
 
 3. Selecteer de hostgroep waarin u de MSIX-apps wilt plaatsen.
 
@@ -89,13 +85,13 @@ De MSIX-afbeelding toevoegen:
 
 6. Voer op **het tabblad MSIX-pakket** toevoegen de volgende waarden in:
 
-      - Voer **voor MSIX-afbeeldingspad** een geldig UNC-pad in dat verwijst naar de MSIX-afbeelding op de bestands share. `\\storageaccount.file.core.windows.net\msixshare\appfolder\MSIXimage.vhd`(Bijvoorbeeld.) Wanneer u klaar bent, selecteert u **Toevoegen om** de MSIX-container te keuren om te controleren of het pad geldig is.
+      - Voer **voor MSIX-afbeeldingspad** een geldig UNC-pad in dat verwijst naar de MSIX-afbeelding op de bestands share. `\\storageaccount.file.core.windows.net\msixshare\appfolder\MSIXimage.vhd`(Bijvoorbeeld.) Wanneer u klaar bent, selecteert u **Toevoegen om** de MSIX-container te controleren of het pad geldig is.
 
       - Selecteer **voor MSIX-pakket** de relevante MSIX-pakketnaam in de vervolgkeuzelijst. Dit menu wordt alleen ingevuld als u een geldig pad naar de afbeelding hebt ingevoerd in **het MSIX-afbeeldingspad**.
 
-      - Voor **Pakkettoepassingen moet** u ervoor zorgen dat de lijst alle MSIX-toepassingen bevat die u beschikbaar wilt stellen aan gebruikers in uw MSIX-pakket.
+      - Voor **Pakkettoepassingen moet** u ervoor zorgen dat de lijst alle MSIX-toepassingen bevat die beschikbaar moeten zijn voor gebruikers in uw MSIX-pakket.
 
-      - Voer desgewenst een **Weergavenaam in** als u wilt dat uw pakket gebruiksvriendelijker is in uw gebruikersimplementaties.
+      - Voer desgewenst een **Weergavenaam in** als u wilt dat uw pakket gebruiksvriendelijker is voor uw gebruikersimplementaties.
 
       - Zorg ervoor dat **de versie** het juiste versienummer heeft.
 
@@ -115,7 +111,7 @@ De MSIX-afbeelding toevoegen:
 
 Vervolgens moet u de apps in het pakket publiceren. U moet dit doen voor zowel bureaublad- als externe app-toepassingsgroepen.
 
-Als u al een MSIX-afbeelding hebt, gaat u verder met [MSIX-apps publiceren naar een app-groep.](#publish-msix-apps-to-an-app-group) Als u oudere toepassingen wilt testen, volgt u de instructies in Create an MSIX package from a desktop installer on a VM to convert the legacy application to an MSIX package (Een MSIX-pakket maken van een [desktop-installatieprogramma](/windows/msix/packaging-tool/create-app-package-msi-vm/) op een VM) om de verouderde toepassing te converteren naar een MSIX-pakket.
+Als u al een MSIX-afbeelding hebt, gaat u verder met [MSIX-apps publiceren naar een app-groep](#publish-msix-apps-to-an-app-group). Als u oudere toepassingen wilt testen, volgt u de instructies in Create an MSIX package from a desktop installer on a VM to convert the legacy application to an MSIX package (Een MSIX-pakket maken van een [desktop-installatieprogramma](/windows/msix/packaging-tool/create-app-package-msi-vm/) op een VM) om de verouderde toepassing te converteren naar een MSIX-pakket.
 
 De apps publiceren:
 
@@ -124,9 +120,9 @@ De apps publiceren:
 2. Selecteer de toepassingsgroep waar u de apps naar wilt publiceren.
 
    >[!NOTE]
-   >MSIX-toepassingen kunnen worden geleverd met MSIX-app-gekoppeld aan groepen voor zowel externe apps als bureaublad-apps
+   >MSIX-toepassingen kunnen worden geleverd met MSIX-app-koppelen aan groepen voor zowel externe apps als bureaublad-apps
 
-3. Wanneer u zich in de app-groep hebt weergegeven, selecteert u **het tabblad** Toepassingen. In **het** raster Toepassingen worden alle bestaande apps in de app-groep weergegeven.
+3. Als u zich in de app-groep hebt, selecteert u het **tabblad** Toepassingen. In **het** raster Toepassingen worden alle bestaande apps in de app-groep weergegeven.
 
 4. Selecteer **+ Toevoegen om** het tabblad Toepassing toevoegen **te** openen.
 
@@ -137,7 +133,7 @@ De apps publiceren:
     - Als u een bureaublad-app-groep gebruikt, kiest u **MSIX-pakket**.
       
       > [!div class="mx-imgBorder"]
-      > ![Een schermopname van een klant die MSIX-pakket selecteert in de vervolgkeuzelijst voor de toepassingsbron. Het MSIX-pakket is rood gemarkeerd.](media/select-source.png)
+      > ![Een schermopname van een klant die het MSIX-pakket selecteert in de vervolgkeuzelijst voor de toepassingsbron. HET MSIX-pakket is rood gemarkeerd.](media/select-source.png)
     
     - Als u een externe app-groep gebruikt, kiest u een van de volgende opties:
         
@@ -166,7 +162,7 @@ De apps publiceren:
 
 ## <a name="assign-a-user-to-an-app-group"></a>Een gebruiker toewijzen aan een app-groep
 
-Nadat u MSIX-apps hebt toegewezen aan een app-groep, moet u gebruikers toegang verlenen tot deze apps. U kunt toegang toewijzen door gebruikers of gebruikersgroepen toe te voegen aan een app-groep met gepubliceerde MSIX-toepassingen. Volg de instructies in [App-groepen beheren met de Azure Portal](manage-app-groups.md) om uw gebruikers toe te wijzen aan een app-groep.
+Nadat u MSIX-apps aan een app-groep hebt toegewezen, moet u gebruikers toegang verlenen tot deze apps. U kunt toegang toewijzen door gebruikers of gebruikersgroepen toe te voegen aan een app-groep met gepubliceerde MSIX-toepassingen. Volg de instructies in [App-groepen beheren met de Azure Portal](manage-app-groups.md) om uw gebruikers toe te wijzen aan een app-groep.
 
 >[!NOTE]
 >Externe apps die aan de MSIX-app zijn gekoppeld, kunnen uit de feed verdwijnen wanneer u externe apps test tijdens de openbare preview. De apps worden niet weergegeven omdat de hostgroep die u in de evaluatieomgeving gebruikt, wordt bediend door een RD Broker in de productieomgeving. Omdat de RD Broker in de productieomgeving de aanwezigheid van externe apps die zijn gekoppeld aan de MSIX-app niet registreert, worden de apps niet weergegeven in de feed.
@@ -229,7 +225,7 @@ Stel onze communityvragen over deze functie op de [Windows Virtual Desktop TechC
 
 U kunt ook feedback geven voor Windows Virtual Desktop in Windows Virtual Desktop [feedbackhub.](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)
 
-Hier zijn enkele andere artikelen die u mogelijk nuttig vindt:
+Hier zijn enkele andere artikelen die mogelijk nuttig zijn:
 
-- [Verklarende woordenlijst voor msix-app-attach](app-attach-glossary.md)
+- [Verklarende woordenlijst voor MSIX-app-koppelen](app-attach-glossary.md)
 - [Veelgestelde vragen over het koppelen van MSIX-apps](app-attach-faq.md)

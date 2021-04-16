@@ -1,22 +1,22 @@
 ---
-title: Azure Policy regulerende nalevings controles voor Azure API Management
-description: Een lijst met Azure Policy regulerende nalevings controles die beschikbaar zijn voor Azure API Management. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 03/31/2021
+title: Azure Policy controles voor naleving van regelgeving voor Azure API Management
+description: Een Azure Policy beschikbare besturingselementen voor naleving van regelgeving voor Azure API Management. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
+ms.date: 04/14/2021
 ms.topic: sample
 author: dlepow
 ms.author: apimpm
 ms.service: api-management
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: b217078338c8fa0412886c6d9ce7e0065f47b4c8
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: 72e4421f5ff371e9c6531fe12724dd3f4e729f3e
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106094287"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107496675"
 ---
-# <a name="azure-policy-regulatory-compliance-controls-for-azure-api-management"></a>Azure Policy regulerende nalevings controles voor Azure API Management
+# <a name="azure-policy-regulatory-compliance-controls-for-azure-api-management"></a>Azure Policy controles voor naleving van regelgeving voor Azure API Management
 
-[Naleving van regelgeving in Azure Policy](../governance/policy/concepts/regulatory-compliance.md) biedt door Microsoft gemaakte en beheerde initiatiefdefinities, bekend als _ingebouwde modules_, voor de **nalevingsdomeinen** en **beveiligingsmaatregelen** met betrekking tot verschillende nalevingsstandaarden. Op deze pagina vindt u de **compatibiliteits domeinen** en **beveiligings controles** voor Azure API management. U kunt de ingebouwde modules voor een **beveiligingsmaatregel** afzonderlijk toewijzen om uw Azure-resources de specifieke standaard te laten naleven.
+[Naleving van regelgeving in Azure Policy](../governance/policy/concepts/regulatory-compliance.md) biedt door Microsoft gemaakte en beheerde initiatiefdefinities, bekend als _ingebouwde modules_, voor de **nalevingsdomeinen** en **beveiligingsmaatregelen** met betrekking tot verschillende nalevingsstandaarden. Op deze pagina worden de **nalevingsdomeinen en** **beveiligingsmaatregelen voor** Azure API Management. U kunt de ingebouwde modules voor een **beveiligingsmaatregel** afzonderlijk toewijzen om uw Azure-resources de specifieke standaard te laten naleven.
 
 [!INCLUDE [azure-policy-compliancecontrols-introwarning](../../includes/policy/standards/intro-warning.md)]
 

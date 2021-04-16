@@ -3,16 +3,16 @@ title: 'Zelfstudie: versies van uw API met Azure API Management publiceren'
 description: Volg de stappen in deze zelfstudie voor informatie over het publiceren van meerdere API-versies in Azure API Management.
 author: vladvino
 ms.service: api-management
-ms.custom: mvc
+ms.custom: mvc, devx-track-azurecli
 ms.topic: tutorial
 ms.date: 02/10/2021
 ms.author: apimpm
-ms.openlocfilehash: dc3d3b4658bd9a26363b6d41377d448059e30c0f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5930979258372e4269c4d453ffbc5e0d46258088
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104889668"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107483605"
 ---
 # <a name="tutorial-publish-multiple-versions-of-your-api"></a>Zelfstudie: Meerdere versies van uw API publiceren 
 
@@ -88,31 +88,31 @@ Bijvoorbeeld om de versie toe te voegen aan het **Onbeperkt** product:
 
 :::image type="content" source="media/api-management-getstarted-publish-versions/08-add-multiple-versions-03-add-version-product.png" alt-text="Versie toevoegen aan het product":::
 
-## <a name="use-version-sets"></a>Versie sets gebruiken
+## <a name="use-version-sets"></a>Versiesets gebruiken
 
-Wanneer u meerdere versies maakt, maakt de Azure Portal een *versieset* die een set versies voor één logische API vertegenwoordigt. Selecteer de naam van een API met meerdere versies. De **versieset** van de Azure portal wordt weer gegeven. U kunt de **naam** en **Beschrijving** van een virtuele set aanpassen.
+Wanneer u meerdere versies maakt, maakt Azure Portal een *versieset* die een set versies voor één logische API vertegenwoordigt. Selecteer de naam van een API met meerdere versies. In Azure Portal wordt de **versieset weergegeven.** U kunt de naam **en** beschrijving **van** een virtuele set aanpassen.
 
-U kunt rechtstreeks met versie sets communiceren met behulp van de Azure CLI:
+U kunt rechtstreeks met versiesets werken met behulp van de Azure CLI:
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-Als u alle versie sets wilt weer geven, voert u de opdracht [AZ APIM API versionset List](/cli/azure/apim/api/versionset#az_apim_api_versionset_list) uit:
+Voer de opdracht [az apim api versionset list](/cli/azure/apim/api/versionset#az_apim_api_versionset_list) uit om al uw versiesets te zien:
 
 ```azurecli
 az apim api versionset list --resource-group apim-hello-word-resource-group \
     --service-name apim-hello-world --output table
 ```
 
-Wanneer de Azure Portal een versieset voor u maakt, wordt er een alfanumerieke naam toegewezen, die wordt weer gegeven in de kolom **naam** van de lijst. Gebruik deze naam in andere Azure CLI-opdrachten.
+Wanneer de Azure Portal een versieset voor u maakt, wordt een alfanumerieke naam toegewezen die wordt weergegeven in de kolom **Naam** van de lijst. Gebruik deze naam in andere Azure CLI-opdrachten.
 
-Als u details wilt weer geven over een versieset, voert u de opdracht [AZ APIM API versionset show](/cli/azure/apim/api/versionset#az_apim_api_versionset_show) uit:
+Voer de opdracht [az apim api versionset show](/cli/azure/apim/api/versionset#az_apim_api_versionset_show) uit om details over een versieset te bekijken:
 
 ```azurecli
 az apim api versionset show --resource-group apim-hello-word-resource-group \
     --service-name apim-hello-world --version-set-id 00000000000000000000000
 ```
 
-Zie voor meer informatie over versie sets [versies in Azure API Management](api-management-versions.md#how-versions-are-represented).
+Zie Versies in Azure API Management voor meer informatie [over versiesets.](api-management-versions.md#how-versions-are-represented)
 
 ## <a name="browse-the-developer-portal-to-see-the-version"></a>Blader door de portal voor ontwikkelaars om de versie te zien
 

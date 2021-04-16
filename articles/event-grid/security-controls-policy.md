@@ -1,19 +1,19 @@
 ---
-title: Azure Policy regulerende nalevings controles voor Azure Event Grid
-description: Een lijst met Azure Policy regulerende nalevings controles die beschikbaar zijn voor Azure Event Grid. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 03/31/2021
+title: Azure Policy controles voor naleving van regelgeving voor Azure Event Grid
+description: Toont Azure Policy beschikbare besturingselementen voor naleving van regelgeving voor Azure Event Grid. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
+ms.date: 04/14/2021
 ms.topic: sample
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: a045fa086dddb72cbaf866ad08040423492d33e3
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: 819f1178e6c63bafa070362f3c8f84743aa2426b
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106094134"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107504444"
 ---
-# <a name="azure-policy-regulatory-compliance-controls-for-azure-event-grid"></a>Azure Policy regulerende nalevings controles voor Azure Event Grid
+# <a name="azure-policy-regulatory-compliance-controls-for-azure-event-grid"></a>Azure Policy controles voor naleving van regelgeving voor Azure Event Grid
 
-[Naleving van regelgeving in Azure Policy](../governance/policy/concepts/regulatory-compliance.md) biedt door Microsoft gemaakte en beheerde initiatiefdefinities, bekend als _ingebouwde modules_, voor de **nalevingsdomeinen** en **beveiligingsmaatregelen** met betrekking tot verschillende nalevingsstandaarden. Op deze pagina vindt u de **compatibiliteits domeinen** en **beveiligings controles** voor Azure Event grid. U kunt de ingebouwde modules voor een **beveiligingsmaatregel** afzonderlijk toewijzen om uw Azure-resources de specifieke standaard te laten naleven.
+[Naleving van regelgeving in Azure Policy](../governance/policy/concepts/regulatory-compliance.md) biedt door Microsoft gemaakte en beheerde initiatiefdefinities, bekend als _ingebouwde modules_, voor de **nalevingsdomeinen** en **beveiligingsmaatregelen** met betrekking tot verschillende nalevingsstandaarden. Op deze pagina worden **de nalevingsdomeinen en** **beveiligingsmaatregelen voor** Azure Event Grid. U kunt de ingebouwde modules voor een **beveiligingsmaatregel** afzonderlijk toewijzen om uw Azure-resources de specifieke standaard te laten naleven.
 
 [!INCLUDE [azure-policy-compliancecontrols-introwarning](../../includes/policy/standards/intro-warning.md)]
 

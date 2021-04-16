@@ -8,20 +8,20 @@ ms.date: 04/13/2021
 ms.author: prsandhu
 ms.reviewer: cynthn
 ms.custom: fasttrack-edit, mvc, references_regions
-ms.openlocfilehash: fd4443e4ef6bcecacc03ce190bbf438288c9ec60
-ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
+ms.openlocfilehash: b59062395c0b05f36dd0f5bd00fbd1acb3ccb2a9
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107364053"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107529800"
 ---
 # <a name="azure-services-that-support-availability-zones"></a>Azure-services die beschikbaarheidszones ondersteunen
 
-Microsoft Azure is ontworpen en gebouwd op elke laag om de klanten de hoogste redundantie- en tolerantieniveaus te bieden. De Azure-infrastructuur bestaat uit geografische gebieden, regio's en Beschikbaarheidszones, waardoor de radius van een storing wordt beperkt en potentiële gevolgen voor klanttoepassingen en -gegevens worden beperkt. De Azure-beschikbaarheidszones is ontwikkeld om een software- en netwerkoplossing te bieden ter bescherming tegen storingen in datacenters en om onze klanten een verhoogde hoge beschikbaarheid te bieden.
+Microsoft Azure globale infrastructuur is ontworpen en samengesteld op elke laag om de klanten de hoogste redundantie- en tolerantieniveaus te bieden. De Azure-infrastructuur bestaat uit geografische gebieden, regio's en Beschikbaarheidszones, die de radius van een storing beperken en daarom potentiële gevolgen voor klanttoepassingen en -gegevens beperken. De Azure-beschikbaarheidszones is ontwikkeld om een software- en netwerkoplossing te bieden ter bescherming tegen storingen in datacenters en om onze klanten een hogere beschikbaarheid (HA) te bieden.
 
-Beschikbaarheidszones zijn unieke, fysieke locaties binnen een Azure-regio. Elke zone bestaat uit een of meer datacenters met onafhankelijke voeding, koeling en netwerken. De fysieke scheiding van Beschikbaarheidszones binnen een regio beperkt de impact op toepassingen en gegevens van zonestoringen, zoals grootschalige overstromingen, grote stormen en superstormen, en andere gebeurtenissen die de toegang tot de site kunnen verstoren, veilige ruimte, uitgebreide uptime van hulpprogramma's en de beschikbaarheid van resources. Beschikbaarheidszones en de bijbehorende datacenters zijn zodanig ontworpen dat als de ene zone wordt aangetast, de services, capaciteit en beschikbaarheid worden ondersteund door de andere Beschikbaarheidszones in de regio.
+Beschikbaarheidszones zijn unieke, fysieke locaties binnen een Azure-regio. Elke zone bestaat uit een of meer datacenters met onafhankelijke voeding, koeling en netwerken. De fysieke scheiding van Beschikbaarheidszones binnen een regio beperkt de gevolgen voor toepassingen en gegevens van zonestoringen, zoals grootschalige overstromingen, grote stormen en superstormen, en andere gebeurtenissen die de toegang tot de site kunnen verstoren, veilige ruimte, uitgebreide uptime van hulpprogramma's en de beschikbaarheid van resources. Beschikbaarheidszones en de bijbehorende datacenters zijn zodanig ontworpen dat als de ene zone wordt aangetast, de services, capaciteit en beschikbaarheid worden ondersteund door de andere Beschikbaarheidszones in de regio.
 
-Alle Azure-beheerservices zijn ontworpen om bestand te zijn tegen storingen op regioniveau. In het spectrum van storingen hebben een of meer beschikbaarheidszonefouten binnen een regio een kleinere foutradius in vergelijking met een storing in een hele regio. Azure kan herstellen van een storing op zoneniveau van beheerservices binnen een regio. Azure voert kritiek onderhoud één zone voor één uit binnen een regio om fouten te voorkomen die van invloed zijn op klantbronnen die zijn geïmplementeerd Beschikbaarheidszones binnen een regio.
+Alle Azure-beheerservices zijn ontworpen om bestand te zijn tegen storingen op regioniveau. In het spectrum van storingen hebben een of meer beschikbaarheidszone-storingen binnen een regio een kleinere fout radius in vergelijking met een storing in de hele regio. Azure kan herstellen na een fout op zoneniveau van beheerservices binnen een regio. Azure voert kritiek onderhoud één zone tegelijk binnen een regio uit om storingen te voorkomen die van invloed zijn op de resources van klanten die zijn geïmplementeerd Beschikbaarheidszones binnen een regio.
 
 
 ![conceptuele weergave van een Azure-regio met 3 zones](./media/az-region/azure-region-availability-zones.png)
@@ -29,19 +29,19 @@ Alle Azure-beheerservices zijn ontworpen om bestand te zijn tegen storingen op r
 
 Azure-services die Beschikbaarheidszones kunnen worden onderverdeeld in drie categorieën: **zone-redundante** en **niet-regionale** services.  Workloads van klanten kunnen worden gecategoriseerd om elk van deze architectuurscenario's te gebruiken om te voldoen aan de prestaties en duurzaamheid van toepassingen.
 
-- **Zonespecifieke services:** een resource kan worden geïmplementeerd in een specifieke, zelf geselecteerde beschikbaarheidszone om strengere latentie- of prestatievereisten te bereiken.  Tolerantie is zelf ontworpen door toepassingen en gegevens te repliceren naar een of meer zones in de regio.  Resources kunnen worden vastgemaakt aan een specifieke zone. Virtuele machines, beheerde schijven of standaard-IP-adressen kunnen bijvoorbeeld worden vastgemaakt aan een specifieke zone, waardoor de tolerantie wordt verhoogd door een of meer exemplaren van resources over zones te verdelen.
+- **Zonelijke services:** een resource kan worden geïmplementeerd in een specifieke, zelf geselecteerde beschikbaarheidszone om strengere latentie- of prestatievereisten te bereiken.  Tolerantie is zelf ontworpen door toepassingen en gegevens te repliceren naar een of meer zones in de regio.  Resources kunnen worden vastgemaakt aan een specifieke zone. Virtuele machines, beheerde schijven of standaard-IP-adressen kunnen bijvoorbeeld worden vastgemaakt aan een specifieke zone, waardoor de tolerantie wordt verhoogd door een of meer exemplaren van resources over zones te verdelen.
 
 - **Zone-redundante services:** het Azure-platform repliceert de resource en gegevens tussen zones.  Microsoft beheert de levering van hoge beschikbaarheid omdat Azure automatisch exemplaren binnen de regio repliceert en distribueert.  ZRS repliceert bijvoorbeeld de gegevens in drie zones, zodat een zonefout geen invloed heeft op de ha van de gegevens. 
 
 - **Niet-regionale services: services** zijn altijd beschikbaar vanuit Azure-geografieën en zijn bestand tegen zonebrede uitval en regiobrede uitval. 
 
 
-Als u uitgebreide bedrijfscontinuïteit wilt realiseren in Azure, bouwt u uw toepassingsarchitectuur met behulp van de combinatie van Beschikbaarheidszones met Azure-regioparen. U kunt uw toepassingen en gegevens synchroon repliceren met behulp van Beschikbaarheidszones binnen een Azure-regio voor hoge beschikbaarheid en asynchroon repliceren tussen Azure-regio's voor bescherming tegen noodherstel. Lees Oplossingen bouwen voor [hoge beschikbaarheid met behulp van Beschikbaarheidszones.](/azure/architecture/high-availability/building-solutions-for-high-availability) 
+Als u uitgebreide bedrijfscontinuïteit in Azure wilt bereiken, bouwt u uw toepassingsarchitectuur met behulp van de combinatie van Beschikbaarheidszones met Azure-regioparen. U kunt uw toepassingen en gegevens synchroon repliceren met behulp van Beschikbaarheidszones binnen een Azure-regio voor hoge beschikbaarheid en asynchroon repliceren tussen Azure-regio's voor bescherming tegen noodherstel. Lees Oplossingen bouwen voor hoge beschikbaarheid met behulp van Beschikbaarheidszones [voor meer Beschikbaarheidszones.](/azure/architecture/high-availability/building-solutions-for-high-availability) 
 
 ## <a name="azure-services-supporting-availability-zones"></a>Azure-services die ondersteuning Beschikbaarheidszones
 
  - De virtuele machines van de oudere generatie worden niet weergegeven. Zie Vorige generaties van [virtuele-machinegrootten voor meer informatie.](../virtual-machines/sizes-previous-gen.md)
- - Zoals vermeld in de [regio's en Beschikbaarheidszones in Azure](az-overview.md), zijn sommige services niet-regionaal. Deze services zijn niet afhankelijk van een specifieke Azure-regio, omdat ze bestand zijn tegen zonebrede uitval en uitval in de hele regio.  De lijst met niet-regionale services vindt u op [Producten beschikbaar per regio.](https://azure.microsoft.com/global-infrastructure/services/)
+ - Zoals vermeld in de [regio's en Beschikbaarheidszones in Azure](az-overview.md), zijn sommige services niet-regionaal. Deze services zijn niet afhankelijk van een specifieke Azure-regio, omdat ze bestand zijn tegen zonebrede uitval en regiobrede uitval.  De lijst met niet-regionale services vindt u op [Producten beschikbaar per regio.](https://azure.microsoft.com/global-infrastructure/services/)
 
 
 ## <a name="azure-regions-with-availability-zones"></a>Azure-regio's met Beschikbaarheidszones
@@ -52,7 +52,7 @@ Als u uitgebreide bedrijfscontinuïteit wilt realiseren in Azure, bouwt u uw toe
 |                    |                      |                     |                |
 | Brazilië - zuid       | Frankrijk - centraal       | Zuid-Afrika - noord* | Australië - oost |
 | Canada - midden     | Duitsland - west-centraal |                     | India - centraal* |
-| VS - centraal         | Europa - noord         |                     | Japan - oost     |
+| Central US         | Europa - noord         |                     | Japan - oost     |
 | VS - oost            | Verenigd Koninkrijk Zuid             |                     | Korea - centraal* |
 | VS - oost 2          | Europa -west          |                     | Azië - zuidoost |
 | VS - zuid-centraal |                      |                     |                |
@@ -60,19 +60,19 @@ Als u uitgebreide bedrijfscontinuïteit wilt realiseren in Azure, bouwt u uw toe
 | VS - west 2        |                      |                     |                |
 | VS - west 3*       |                      |                     |                |
 
-\* Neem contact op met uw microsoft Beschikbaarheidszones of klantmedewerker voor meer informatie over de ondersteuning van Beschikbaarheidszones en beschikbare services in deze regio's. Zie Azure-regio's voor Beschikbaarheidszones [regio's.](https://azure.microsoft.com/en-us/global-infrastructure/geographies/)
+\* Voor meer informatie over Beschikbaarheidszones en beschikbare services in deze regio's, neem dan contact op met uw Microsoft-verkoop- of klantmedewerker. Zie Azure-geografische gebieden voor Beschikbaarheidszones volgende [regio's die ondersteuning bieden voor de regio's.](https://azure.microsoft.com/en-us/global-infrastructure/geographies/)
 
 
 ## <a name="azure-services-supporting-availability-zones"></a>Azure-services die ondersteuning Beschikbaarheidszones
 
-- Virtuele machines van de oudere generatie worden hieronder niet vermeld. Zie vorige generaties van [virtuele-machinegrootten voor meer informatie.](../virtual-machines/sizes-previous-gen.md)
+- Oudere virtuele machines van de generatie worden hieronder niet vermeld. Zie vorige generaties van [virtuele-machinegrootten voor meer informatie.](../virtual-machines/sizes-previous-gen.md)
 
-- Sommige services zijn niet-regionaal. Zie [Regio's en Beschikbaarheidszones in Azure](az-overview.md) voor meer informatie. Deze services zijn niet afhankelijk van een specifieke Azure-regio, waardoor ze bestand zijn tegen zonebrede uitval en regiobrede uitval.  De lijst met niet-regionale services vindt u op [Producten beschikbaar per regio.](https://azure.microsoft.com/global-infrastructure/services/)
+- Sommige services zijn niet-regionaal. Zie [Regio's en Beschikbaarheidszones in Azure voor](az-overview.md) meer informatie. Deze services zijn niet afhankelijk van een specifieke Azure-regio, waardoor ze bestand zijn tegen zonebrede uitval en regiobrede uitval.  De lijst met niet-regionale services vindt u op [Producten beschikbaar per regio.](https://azure.microsoft.com/global-infrastructure/services/)
 
 
 ### <a name="zone-resilient-services"></a>Zone Resilient Services 
 
-:globe_with_meridians: niet-regionale services : services zijn altijd beschikbaar vanuit Azure-geografieën en zijn bestand tegen zonebrede uitval en regiobrede uitval.
+:globe_with_meridians: niet-regionale services: services zijn altijd beschikbaar vanuit Azure-geografieën en zijn bestand tegen zonebrede uitval en regiobrede uitval.
 
 :large_blue_diamond: bestand tegen zonebrede uitval 
 
@@ -86,7 +86,7 @@ Als u uitgebreide bedrijfscontinuïteit wilt realiseren in Azure, bouwt u uw toe
 |     [Azure Data Lake Storage Gen 2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction)                             | :large_blue_diamond:  |
 |     [Azure Express Route](https://docs.microsoft.com/azure/expressroute/designing-for-high-availability-with-expressroute)                                       | :large_blue_diamond:  |
 |     [Openbaar IP-adres van Azure](https://docs.microsoft.com/azure/virtual-network/public-ip-addresses)                                           | :large_blue_diamond:  |
-|     Azure SQL Database ([Algemeen Laag](https://docs.microsoft.com/azure/azure-sql/database/high-availability-sla))                 | :large_blue_diamond:  |
+|     Azure SQL Database ([Algemeen laag](https://docs.microsoft.com/azure/azure-sql/database/high-availability-sla))                 | :large_blue_diamond:  |
 |     Azure SQL Database([Premium & Bedrijfskritiek Tier](https://docs.microsoft.com/azure/azure-sql/database/high-availability-sla))     | :large_blue_diamond:  |
 |     [Disk Storage](https://docs.microsoft.com/azure/storage/common/storage-redundancy)                                                | :large_blue_diamond:  |
 |     [Event Hubs](https://docs.microsoft.com/azure/event-hubs/event-hubs-geo-dr#availability-zones)                                                  | :large_blue_diamond:  |
@@ -121,6 +121,7 @@ Als u uitgebreide bedrijfscontinuïteit wilt realiseren in Azure, bouwt u uw toe
 |-----------------------------------------------------------------|:----------------------------:|
 |     [App Service-omgevingen](https://docs.microsoft.com/azure/app-service/environment/zone-redundancy)                                    | :large_blue_diamond:  |
 |     [Azure Active Directory Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/overview)                      | :large_blue_diamond:  |
+|     [Azure API Management](https://docs.microsoft.com/azure/api-management/zone-redundancy)                      | :large_blue_diamond:  |
 |     [Azure Bastion](https://docs.microsoft.com/azure/bastion/bastion-overview)                                               | :large_blue_diamond:  |
 |     [Azure Cache voor Redis](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-high-availability)                              | :large_blue_diamond:  |
 |     [Azure Cognitive Search](https://docs.microsoft.com/azure/search/search-performance-optimization#availability-zones)               | :large_blue_diamond:  |

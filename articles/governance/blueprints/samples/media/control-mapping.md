@@ -1,18 +1,18 @@
 ---
 title: Beheer van het blauwdrukvoorbeeld voor Media
 description: Toewijzing van beheeropties voor het blauwdrukvoorbeeld voor Media. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 04/02/2021
+ms.date: 04/13/2021
 ms.topic: sample
-ms.openlocfilehash: b489111010c9a4fcb112428ae642332980302849
-ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
+ms.openlocfilehash: 4c04c661d7dd8b2b07a05c20524258d6bb887e62
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106386396"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107376695"
 ---
 # <a name="control-mapping-of-the-media-blueprint-sample"></a>Toewijzing van beheeropties voor het blauwdrukvoorbeeld voor Media
 
-Het volgende artikel bevat informatie over de manier waarop het Azure Blueprints Media-blauwdrukvoorbeeld wordt toegewezen aan de Media-beheeropties. Zie [Media](https://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/index.html) voor meer informatie over de beheeropties.
+Het volgende artikel bevat informatie over de manier waarop het Azure Blueprints Media-blauwdrukvoorbeeld wordt toegewezen aan de Media-beheeropties. Zie [Media](https://www.motionpictures.org/best-practices) voor meer informatie over de beheeropties.
 
 De volgende toewijzingen zijn voor de **Media**-beheeropties. Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifieke beheeroptie te gaan. Veel van de toegewezen beheeropties worden geïmplementeerd met een [Azure Policy](../../../policy/overview.md)-initiatief. Als u het complete initiatief wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities**. Zoek en selecteer vervolgens de **\[Preview\]: Media-beheeropties controleren** ingebouwd beleidsinitiatief.
 

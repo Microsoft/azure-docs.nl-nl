@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: overview
 ms.service: digital-twins
-ms.openlocfilehash: 315519472baa672e802855b5ab21b8bae8f51935
-ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
+ms.openlocfilehash: d03a4865c8db52f74f4130c458fec3028f5b95a4
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106109846"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107481664"
 ---
 # <a name="what-is-azure-digital-twins"></a>Wat is Azure Digital Twins?
 
@@ -94,14 +94,14 @@ In de volgende grafiek ziet u waar Azure Digital Twins zich bevindt in de contex
 
 ## <a name="service-limits"></a>Servicelimieten
 
-U vindt hier meer informatie over de **service limieten** van Azure Digital Apparaatdubbels: [Azure Digital apparaatdubbels service-limieten](reference-service-limits.md). Dit kan handig zijn bij het werken met de service om inzicht te krijgen in de functionele en frequentie beperkingen van de service, en welke limieten zo nodig kunnen worden aangepast.
+U kunt hier meer lezen over **de servicelimieten** van Azure Digital Twins: [Azure Digital Twins servicelimieten.](reference-service-limits.md) Dit kan nuttig zijn bij het werken met de service om inzicht te krijgen in de functionele en snelheidsbeperkingen van de service, en om te zien welke limieten indien nodig kunnen worden aangepast.
 
 ## <a name="terminology"></a>Terminologie
 
-U kunt een lijst weer geven met **algemene IOT-termen** en hun gebruik in de Azure IOT-Services, waaronder Azure Digital apparaatdubbels, hier: [Azure IOT-woorden lijst](../iot-fundamentals/iot-glossary.md?toc=/azure/digital-twins/toc.json&bc=/azure/digital-twins/breadcrumb/toc.json). Dit kan handig zijn als u aan de slag gaat met Azure Digital Apparaatdubbels en een IoT-oplossing bouwt.
+U kunt hier een lijst met algemene **IoT-termen** en het gebruik van deze termen bekijken in de Azure IoT-services, waaronder Azure Digital Twins: [Azure IoT-woordenlijst.](../iot-fundamentals/iot-glossary.md?toc=/azure/digital-twins/toc.json&bc=/azure/digital-twins/breadcrumb/toc.json) Dit kan een nuttige referentie zijn wanneer u aan de slag gaat met Azure Digital Twins en het bouwen van een IoT-oplossing.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Kijk eens naar het werken met Azure Digital Apparaatdubbels in Quick Start: [*Quick Start: een voorbeeld scenario verkennen*](quickstart-adt-explorer.md).
+* Ga verder met het werken Azure Digital Twins in de [*snelstart: Quickstart: Een voorbeeldscenario verkennen.*](quickstart-azure-digital-twins-explorer.md)
 
-* U kunt ook lezen over Azure Digital Apparaatdubbels-concepten met [*concepten: aangepaste modellen*](concepts-models.md).
+* U kunt ook meer lezen over Azure Digital Twins concepten [*met Concepten: Aangepaste modellen.*](concepts-models.md)

@@ -1,28 +1,29 @@
 ---
-title: Azure dev Spaces inschakelen op AKS & de hulpprogram ma's aan de client zijde installeren
+title: Azure Dev Spaces inschakelen op AKS & de hulpprogramma's aan de clientzijde te installeren
 services: azure-dev-spaces
 ms.date: 07/24/2019
 ms.topic: conceptual
-description: Meer informatie over het inschakelen van Azure dev Spaces in een AKS-cluster en het installeren van de hulpprogram ma's aan de client zijde.
+description: Meer informatie over het inschakelen van Azure Dev Spaces op een AKS-cluster en het installeren van de hulpprogramma's aan de clientzijde.
+ms.custom: devx-track-azurecli
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, servicemesh, servicemeshroutering, kubectl, k8s
-ms.openlocfilehash: 177496a53d204306b2b655b8736ce063dedf0f61
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 079a9e1b28b315457ac20d3aa9e7d29ce28fa077
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102202243"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107505357"
 ---
-# <a name="enable-azure-dev-spaces-on-an-aks-cluster-and-install-the-client-side-tools"></a>Azure dev Spaces inschakelen op een AKS-cluster en de hulpprogram ma's aan de client zijde installeren
+# <a name="enable-azure-dev-spaces-on-an-aks-cluster-and-install-the-client-side-tools"></a>Azure Dev Spaces inschakelen op een AKS-cluster en de hulpprogramma's aan de clientzijde installeren
 
 [!INCLUDE [Azure Dev Spaces deprecation](../../../includes/dev-spaces-deprecation.md)]
 
-In dit artikel wordt beschreven hoe u op verschillende manieren Azure dev-ruimten kunt inschakelen op een AKS-cluster en hoe u de hulpprogram ma's aan de client zijde installeert.
+In dit artikel worden verschillende manieren beschreven om Azure Dev Spaces in teschakelen op een AKS-cluster en de hulpprogramma's aan de clientzijde te installeren.
 
-## <a name="enable-azure-dev-spaces-using-the-cli"></a>Azure-ontwikkel ruimten inschakelen met de CLI
+## <a name="enable-azure-dev-spaces-using-the-azure-cli"></a>Azure Dev Spaces inschakelen met de Azure CLI
 
-Voordat u ontwikkel ruimten kunt inschakelen met behulp van de CLI, hebt u het volgende nodig:
+Voordat u Dev Spaces kunt inschakelen met behulp van de CLI, hebt u het volgende nodig:
 * Een Azure-abonnement. Als u geen Azure-abonnement hebt, kunt u een [gratis account][az-portal-create-account] maken.
-* [De Azure-cli is geïnstalleerd][install-cli].
+* [De Azure CLI is geïnstalleerd.][install-cli]
 * [Een AKS-cluster][create-aks-cli] in een [ondersteunde regio][supported-regions].
 
 Gebruik de opdracht `use-dev-spaces` om Dev Spaces in te schakelen voor uw AKS-cluster en volg de prompts.
@@ -31,7 +32,7 @@ Gebruik de opdracht `use-dev-spaces` om Dev Spaces in te schakelen voor uw AKS-c
 az aks use-dev-spaces -g myResourceGroup -n myAKSCluster
 ```
 
-De bovenstaande opdracht maakt ontwikkel ruimten in het *myAKSCluster* -cluster in de *myResourceGroup* -groep mogelijk en maakt een *standaard* dev-ruimte.
+Met de bovenstaande opdracht schakelt u Dev Spaces in op het cluster *myAKSCluster* in *de* *groep myResourceGroup* en maakt u een standaard dev-ruimte.
 
 ```console
 'An Azure Dev Spaces Controller' will be created that targets resource 'myAKSCluster' in resource group 'myResourceGroup'. Continue? (y/N): y
@@ -49,25 +50,25 @@ Configuring and selecting dev space 'default'...3s
 Managed Kubernetes cluster 'myAKSCluster' in resource group 'myResourceGroup' is ready for development in dev space 'default'. Type `azds prep` to prepare a source directory for use with Azure Dev Spaces and `azds up` to run.
 ```
 
-Met deze `use-dev-spaces` opdracht wordt ook de Azure dev Space cli geïnstalleerd.
+Met `use-dev-spaces` de opdracht wordt ook de AZURE Dev Spaces CLI geïnstalleerd.
 
-## <a name="install-the-client-side-tools"></a>De hulpprogram ma's aan de client zijde installeren
+## <a name="install-the-client-side-tools"></a>De hulpprogramma's aan de clientzijde installeren
 
-U kunt de Azure dev Spaces-client-side hulp middelen gebruiken om te communiceren met ontwikkel ruimten in een AKS-cluster vanaf uw lokale computer. Er zijn verschillende manieren om de hulpprogram ma's aan de client zijde te installeren:
+U kunt de hulpprogramma's aan de clientzijde van Azure Dev Spaces gebruiken om te communiceren met dev-ruimten op een AKS-cluster vanaf uw lokale computer. Er zijn verschillende manieren om de hulpprogramma's aan de clientzijde te installeren:
 
-* Installeer de [Azure dev Space-extensie][vscode-extension]in [Visual Studio code][vscode].
-* Installeer de werk belasting Azure Development in [Visual Studio 2019][visual-studio].
-* Down load en installeer de [Windows][cli-win]-, [Mac][cli-mac]-of [Linux][cli-linux] -cli.
+* Installeer [Visual Studio Azure][vscode] [Dev Spaces-extensie][vscode-extension]in Visual Studio Code.
+* Installeer [Visual Studio 2019][visual-studio]de workload Azure Development.
+* Download en installeer [de Windows-,][cli-win] [Mac-][cli-mac]of [Linux][cli-linux] CLI.
 
-## <a name="remove-azure-dev-spaces-using-the-cli"></a>Azure-ontwikkel ruimten verwijderen met de CLI
+## <a name="remove-azure-dev-spaces-using-the-azure-cli"></a>Azure Dev Spaces verwijderen met behulp van de Azure CLI
 
-Als u Azure dev Spaces wilt verwijderen uit uw AKS-cluster, gebruikt u de `azds remove` opdracht.
+Als u Azure Dev Spaces uit uw AKS-cluster wilt verwijderen, gebruikt u de `azds remove` opdracht .
 
 ```azurecli
 azds remove -g MyResourceGroup -n MyAKS
 ```
 
-In de onderstaande voorbeeld uitvoer ziet u hoe u Azure dev Spaces verwijdert uit het *MyAKS* -cluster.
+In de onderstaande voorbeelduitvoer ziet u hoe Azure Dev Spaces uit het *MyAKS-cluster wordt* verwijderd.
 
 ```azurecli
 $ azds remove -g MyResourceGroup -n MyAKS
@@ -76,7 +77,7 @@ Azure Dev Spaces Controller 'MyAKS' in resource group 'MyResourceGroup' that tar
 Deleting Azure Dev Spaces Controller 'MyAKS' in resource group 'MyResourceGroup' that targets resource 'MyAks' in resource group 'MyResourceGroup' (takes a few minutes)...
 ```
 
-Alle naam ruimten die u met Azure dev Spaces hebt gemaakt, blijven samen met hun werk belastingen, maar nieuwe werk belastingen in deze naam ruimten worden niet met Azure dev-ruimten geinstrumenteerd. Als u een bestaand van de bestaande peulen met Azure dev Spaces opnieuw start, worden er bovendien fouten weer geven. Deze bestanden moeten opnieuw worden geïmplementeerd zonder Azure dev Spaces-hulpprogram ma's. Als u Azure dev Spaces volledig uit uw cluster wilt verwijderen, verwijdert u alle peulen in alle naam ruimten waar Azure dev Spaces is ingeschakeld.
+Alle naamruimten die u hebt gemaakt met Azure Dev Spaces blijven samen met hun workloads, maar nieuwe workloads in deze naamruimten worden niet instrumenteerd met Azure Dev Spaces. Als u bestaande pods die zijn instrumenteerd met Azure Dev Spaces opnieuw opstart, kunnen er bovendien fouten optreden. Deze pods moeten opnieuw worden geïmplementeerd zonder hulpprogramma's van Azure Dev Spaces. Als u Azure Dev Spaces volledig wilt verwijderen uit uw cluster, verwijdert u alle pods in alle naamruimten waarin Azure Dev Spaces is ingeschakeld.
 
 ## <a name="next-steps"></a>Volgende stappen
 

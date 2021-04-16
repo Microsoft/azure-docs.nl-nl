@@ -13,26 +13,26 @@ ms.topic: overview
 ms.custom: mvc, seodec18
 ms.date: 03/25/2021
 ms.author: keithp
-ms.openlocfilehash: 0e07839c3c5ce542335eeadc92e6a3c98fe87856
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 418c8f0844bf2336ce0d4a681071f237d81877ca
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105606977"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107505714"
 ---
 # <a name="what-is-azure-dedicated-hsm"></a>Wat is Azure Toegewezen HSM?
 
 Azure Toegewezen HSM is een Azure-service die opslag van cryptografische sleutels biedt in Azure. Toegewezen HSM voldoet aan de strengste beveiligingseisen. Dit is de ideale oplossing voor klanten die apparaten willen gebruiken die zijn gevalideerd met FIPS 140-2 Niveau 3 en die volledige en exclusieve controle over het HSM-apparaat willen. 
 
- HSM-apparaten zijn wereldwijd geïmplementeerd in verschillende Azure-regio's. Ze kunnen eenvoudig worden ingericht als een paar apparaten en worden geconfigureerd voor hoge beschikbaarheid. HSM-apparaten kunnen ook worden ingericht in verschillende regio's als oplossing voor een eventuele failover op regionaal niveau. Micro soft levert de toegewezen HSM-service met behulp van het [Thales Luna 7 HSM model A790](https://cpl.thalesgroup.com/encryption/hardware-security-modules/network-hsms) -apparaten. Dit apparaat biedt de hoogste prestatieniveaus en de beste opties voor cryptografische integratie. 
+ HSM-apparaten zijn wereldwijd geïmplementeerd in verschillende Azure-regio's. Ze kunnen eenvoudig worden ingericht als een paar apparaten en worden geconfigureerd voor hoge beschikbaarheid. HSM-apparaten kunnen ook worden ingericht in verschillende regio's als oplossing voor een eventuele failover op regionaal niveau. Microsoft levert de Dedicated HSM service met behulp van de [Thales Luna 7 HSM-model A790-apparaten.](https://cpl.thalesgroup.com/encryption/hardware-security-modules/network-hsms) Dit apparaat biedt de hoogste prestatieniveaus en de beste opties voor cryptografische integratie. 
 
-Nadat HSM-apparaten zijn ingericht, zijn ze rechtstreeks verbonden met het virtuele netwerk van een klant. Ze zijn dan ook toegankelijk voor on-premises hulpprogramma's voor toepassingen en beheer door een punt-naar-site-verbinding of site-naar-site-verbinding te configureren voor het VPN. Klanten krijgen de software en documentatie voor het configureren en beheren van HSM-apparaten vanuit de [Thales-portal voor klanten ondersteuning](https://supportportal.thalesgroup.com/csm).
+Nadat HSM-apparaten zijn ingericht, zijn ze rechtstreeks verbonden met het virtuele netwerk van een klant. Ze zijn dan ook toegankelijk voor on-premises hulpprogramma's voor toepassingen en beheer door een punt-naar-site-verbinding of site-naar-site-verbinding te configureren voor het VPN. Klanten krijgen de software en documentatie voor het configureren en beheren van HSM-apparaten via [de Thales-portal voor klantondersteuning.](https://supportportal.thalesgroup.com/csm)
 
 ## <a name="why-use-azure-dedicated-hsm"></a>Waarom Azure Dedicated HSM gebruiken?
 
 ### <a name="fips-140-2-level-3-compliance"></a>Naleving van FIPS 140-2 Niveau 3
 
-Veel organisaties hebben strenge industriële voor Schriften die bepalen dat cryptografische sleutels moeten worden opgeslagen in het [FIPS 140-2-](https://csrc.nist.gov/publications/detail/fips/140/2/final) gevalideerde hsm's niveau 3. Met Azure dedicated HSM en een nieuwe aanbieding voor eenmalige tenants, [Azure Key Vault beheerde HSM (preview)](https://docs.microsoft.com/azure/key-vault/managed-hsm), helpen klanten van verschillende branche segmenten, zoals financiële dienst verleners, overheids instanties en anderen voldoen aan de vereisten van het niveau 3 van FIPS 140-2. Hoewel de multi tenant-service voor [Azure Key Vault](https://docs.microsoft.com/azure/key-vault) van micro soft momenteel gebruikmaakt van FIPS 140-2-hsm's niveau 2 gevalideerd. 
+Veel organisaties hebben strenge brancheregels die voorschrijven dat cryptografische sleutels moeten worden opgeslagen in [met FIPS 140-2 Level-3](https://csrc.nist.gov/publications/detail/fips/140/2/final) gevalideerde HMS's. Azure Dedicated HSM en een nieuwe aanbieding met één [tenant, Azure Key Vault Managed HSM,](https://docs.microsoft.com/azure/key-vault/managed-hsm)helpen klanten uit verschillende bedrijfstakken, zoals de financiële dienstverlening, overheidsinstanties en anderen, te voldoen aan fips 140-2 Niveau 3-vereisten. Hoewel de multiten tenant-service van Microsoft [Azure Key Vault](https://docs.microsoft.com/azure/key-vault) momenteel gebruikmaakt van met FIPS 140-2 Level-2 gevalideerde HMS's. 
 
 ### <a name="single-tenant-devices"></a>Apparaten met één tenant
 
@@ -72,7 +72,7 @@ Azure Dedicated HSM is niet geschikt voor de volgende typen scenario's: Microsof
 
 ### <a name="it-depends"></a>Dat hangt ervan af
 
-Of Azure Dedicated HSM geschikt is voor u, is afhankelijk van een complexe mengeling van vereisten en van de compromissen die wel of niet kunnen worden gesloten. Een voorbeeld is de vereiste voor FIPS 140-2 Niveau 3. Deze vereiste is gebruikelijk, en Azure dedicated HSM en een nieuwe aanbieding voor eenmalige tenants, [Azure Key Vault Managed HSM (preview)](https://docs.microsoft.com/azure/key-vault/managed-hsm) is momenteel de enige opties voor het beantwoorden van deze. Als deze verplichte vereisten niet relevant zijn, is het vaak een keuze tussen Azure Key Vault en een specifieke HSM van Azure. Bekijk wat uw vereisten zijn voordat u een keuze maakt.
+Of Azure Dedicated HSM geschikt is voor u, is afhankelijk van een complexe mengeling van vereisten en van de compromissen die wel of niet kunnen worden gesloten. Een voorbeeld is de vereiste voor FIPS 140-2 Niveau 3. Deze vereiste is gebruikelijk en Azure Dedicated HSM en een nieuwe aanbieding met één tenant, [zijn Azure Key Vault beheerde HSM](https://docs.microsoft.com/azure/key-vault/managed-hsm) momenteel de enige opties om er aan te voldoen. Als deze verplichte vereisten niet relevant zijn, is het vaak een keuze tussen Azure Key Vault en Azure Dedicated HSM. Bekijk wat uw vereisten zijn voordat u een keuze maakt.
 
 Situaties waarin u uw opties moet afwegen, zijn onder andere: 
 
@@ -85,7 +85,7 @@ Situaties waarin u uw opties moet afwegen, zijn onder andere:
 
 Dit is een zeer gespecialiseerde service. Het is daarom belangrijk dat u de belangrijkste concepten in deze documentatieset volledig begrijpt, inclusief de prijzen, de ondersteuning en de serviceovereenkomsten. 
 
-Met de [Thales-integratie handleidingen](https://cpl.thalesgroup.com/partners/overview) kunt u het inrichten van hsm's naar een bestaande virtuele netwerk omgeving vereenvoudigen. Er zijn ook instructies om u te helpen bepalen hoe u uw implementatie architectuur kunt instellen.
+De [Thales-integratiehandleidingen](https://cpl.thalesgroup.com/partners/overview) helpen u bij het inrichten van HMS's in een bestaande virtuele netwerkomgeving. Er zijn ook handleidingen om u te helpen bepalen hoe u uw implementatiearchitectuur moet instellen.
 
 * [Hoge beschikbaarheid](high-availability.md)
 * [Fysieke beveiliging](physical-security.md)

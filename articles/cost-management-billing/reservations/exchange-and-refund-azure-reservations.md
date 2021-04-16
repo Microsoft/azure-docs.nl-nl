@@ -5,30 +5,28 @@ author: yashesvi
 ms.service: cost-management-billing
 ms.subservice: reservations
 ms.topic: how-to
-ms.date: 03/16/2021
+ms.date: 04/14/2021
 ms.author: banders
-ms.openlocfilehash: bd16bbbe33876a3c44b20c5d1756b83814f9b17d
-ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
+ms.openlocfilehash: 3e8f50efd04364483c32ecb8ef5020bdd053e55b
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103601947"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107515478"
 ---
 # <a name="self-service-exchanges-and-refunds-for-azure-reservations"></a>Selfserviceopties voor inruilen en retourneren voor Azure Reservations
 
-Azure-reserveringen bieden flexibiliteit om te voldoen aan uw evoluerende behoeften. U kunt reserve ringen uitwisselen voor een andere reserve ring van hetzelfde type. U kunt bijvoorbeeld meerdere Compute-reserve ringen retour neren, inclusief de exclusieve Azure-host, de Azure VMware-oplossing en Azure Virtual Machines met elkaar. Met andere woorden, de reserverings producten zijn onderling verwisselbaar als ze hetzelfde type reserve ring hebben. In een ander voor beeld kunt u meerdere SQL database reserverings typen uitwisselen, inclusief beheerde instanties en Elastische pool met elkaar.
+Azure-reserveringen bieden flexibiliteit om te voldoen aan uw evoluerende behoeften. U kunt reserveringen inruilen voor een andere reservering van hetzelfde type. U kunt bijvoorbeeld meerdere rekenreserveringen retourneren, Azure Dedicated Host, Azure VMware Solution en Azure Virtual Machines met elkaar in één keer. Met andere woorden, reserveringsproducten zijn onderling uitwisselbaar als ze hetzelfde type reservering zijn. In een ander voorbeeld kunt u meerdere reserveringstypen SQL database, waaronder beheerde exemplaren en Elastische pool met elkaar.
 
-U kunt echter geen ongelijksoortige reserve ringen uitwisselen. U kunt bijvoorbeeld geen Cosmos DB reserve ring uitwisselen voor SQL Database.
+U kunt echter geen verschillende reserveringen inruilen. U kunt bijvoorbeeld geen reservering voor Cosmos DB inruilen voor SQL Database.
 
-U kunt ook een reserve ring uitwisselen om een andere reserve ring van een vergelijkbaar type in een andere regio te kopen. U kunt bijvoorbeeld een reserve ring die zich in VS-West 2 bevindt, omruilen voor een in Europa-west.
+U kunt ook een reservering omruilen om een andere reservering van een vergelijkbaar type in een andere regio aan te schaffen. U kunt bijvoorbeeld een reservering in VS - west 2 inruilen voor een reservering in Europa - west.
 
-Wanneer u een reserve ring uitwisselt, kunt u uw termijn wijzigen van een jaar in drie jaar.
+Wanneer u een reservering inwisselt, kunt u uw termijn wijzigen van één jaar in drie jaar.
 
 U kunt ook reserveringen terugbetalen, maar het totaal van alle geannuleerde reserveringen in uw factureringsbereik (zoals EA, Microsoft Customer Agreement en Microsoft Partner-klantovereenkomst) mag niet hoger zijn dan USD 50.000 in een doorlopende periode van 12 maanden.
 
 Gereserveerde Azure Databricks-capaciteit, Azure VMware-oplossingen via een CloudSimple-reservering, Azure Red Hat Open Shift-reserveringen, Red Hat-plannen en SUSE Linux-plannen komen niet in aanmerking voor restitutie.
-
-De selfserviceoptie voor inwisselen en annuleren is niet beschikbaar voor Enterprise Agreement-klanten van de Amerikaanse overheid. Andere abonnementstypen voor de Amerikaanse overheid, zoals Betalen per gebruik en CSP, (Cloud Solution Provider) worden wel ondersteund.
 
 > [!NOTE]
 > - **U moet eigenaarsrechten voor de reserveringsorder hebben om een bestaande reservering in te wisselen of er een restitutie voor te krijgen.** U kunt [Gebruikers toevoegen of wijzigen die een reservering kunnen beheren](./manage-reserved-vm-instance.md#who-can-manage-a-reservation-by-default).
@@ -47,22 +45,22 @@ U kunt uw reservering inwisselen via [Azure Portal](https://portal.azure.com/#bl
 
 Voor restitutie voor een reservering gaat u naar **Reserveringsgegevens** en selecteert u **Restitutie**.
 
-## <a name="exchange-multiple-reservations"></a>Meerdere reserve ringen uitwisselen
+## <a name="exchange-multiple-reservations"></a>Meerdere reserveringen inruilen
 
-U kunt vergelijk bare typen reserve ringen in één actie retour neren.
+U kunt vergelijkbare typen reserveringen in één actie retourneren.
 
-Wanneer u reserve ringen uitwisselt, moet het nieuwe bedrag in de inkoop valuta groter zijn dan het bedrag voor de terugbetaling. Als uw nieuwe aankoop bedrag lager is dan het bedrag voor restitutie, ontvangt u een fout melding. Als u de fout ziet, vermindert u de hoeveelheid die u wilt retour neren of verhoogt u het te kopen bedrag.
+Wanneer u reserveringen inwisselt, moet het nieuwe aankoopvalutabedrag groter zijn dan het restitutiebedrag. Als uw nieuwe aankoopbedrag lager is dan het restitutiebedrag, krijgt u een foutmelding. Als de fout wordt weergegeven, vermindert u de hoeveelheid die u wilt retourneren of verhoogt u het aankoopbedrag.
 
 1. Meld u aan bij de Azure Portal en navigeer naar **Reserveringen**.
-1. Schakel in de lijst met reserve ringen het selectie vakje in voor elke reserve ring die u wilt uitwisselen.
-1. Klik boven aan de pagina op **Exchange**.
-1. Wijzig indien nodig de hoeveelheid die moet worden geretourneerd voor elke reserve ring.
-1. Als u de retour hoeveelheid automatisch invullen selecteert, kunt u **alle terugbetalen** om de lijst te vullen met het volledige aantal dat u voor elke reserve ring hebt of **optimaliseert voor gebruik (7-dag)** om de lijst te vullen met een hoeveelheid die optimaliseert voor gebruik op basis van de laatste zeven dagen van gebruik. **Selecteer Toep assen**.
-1. Selecteer onder aan de pagina **volgende: kopen**.
-1. Selecteer op het tabblad aankoop de beschik bare producten waarvoor u Exchange wilt selecteren. U kunt meerdere producten van verschillende typen selecteren.
-1. Selecteer in het deel venster product selecteren dat u wilt kopen de gewenste producten en selecteer vervolgens **toevoegen aan winkel wagen** en selecteer vervolgens **sluiten**.
-1. Wanneer u klaar bent, selecteert u **volgende: controleren**.
-1. Controleer de reserve ringen om terug te gaan en nieuwe reserve ringen te kopen en selecteer vervolgens **Exchange bevestigen**.
+1. Schakel in de lijst met reserveringen het selectievakje in voor elke reservering die u wilt inruilen.
+1. Selecteer boven aan de pagina **Exchange.**
+1. Wijzig zo nodig de hoeveelheid die u voor elke reservering wilt retourneren.
+1. Als u de retourhoeveelheid voor automatisch invullen selecteert, kunt u ervoor kiezen om Alle restituties in te vullen met de volledige hoeveelheid die u voor elke reservering hebt of Optimaliseren voor gebruik **(7 dagen)** om de lijst in te vullen met een hoeveelheid die is geoptimaliseerd voor gebruik op basis van de laatste zeven dagen van gebruik.  **Selecteer Toepassen.**
+1. Selecteer onder aan de pagina **Volgende: Kopen.**
+1. Selecteer op het tabblad Aankoop de beschikbare producten die u wilt inruilen. U kunt meerdere producten van verschillende typen selecteren.
+1. Selecteer in het deelvenster Selecteer het product dat u wilt kopen de producten die u wilt, selecteer vervolgens Toevoegen aan **winkelwagen** en selecteer **vervolgens Sluiten.**
+1. Wanneer u klaar bent, **selecteert u Volgende: Controleren.**
+1. Controleer uw reserveringen om te retourneren en nieuwe reserveringen die u wilt kopen en selecteer **vervolgens Inwisseling bevestigen.**
 
 ## <a name="exchange-non-premium-storage-for-premium-storage"></a>Niet-Premium Storage inwisselen voor Premium Storage
 
@@ -105,7 +103,7 @@ Azure heeft de volgende beleidsregels voor annuleringen, inwisselingen en restit
 - Momenteel worden geen kosten voor vroegtijdige beëindiging in rekening gebracht, maar mogelijk geldt in de toekomst bij annuleringen een tarief van 12% voor vroegtijdige beëindiging.
 - De totale geannuleerde toezegging mag niet groter zijn dan 50.000 USD in een doorlopende periode van 12 maanden voor een factureringsprofiel of één inschrijving. Bijvoorbeeld: voor een reservering van drie jaar à USD 100 per maand en die in de 18e maand is terugbetaald, bedraagt de geannuleerde toezegging USD 1800. Na de terugbetaling is uw nieuwe beschikbare limiet voor restitutie USD 48.200. Binnen 365 dagen na de restitutie wordt de limiet van USD 48.200 met USD 1800 verhoogd en heeft uw nieuwe pool een waarde van USD 50.000. Elke andere annulering van een reservering voor het factureringsprofiel of de EA-inschrijving wordt van dezelfde pool afgetrokken en dezelfde aanvullingslogica wordt toegepast.
 - In Azure wordt geen terugbetaling verwerkt die de limiet van 50.000 USD overschrijdt in een periode van twaalf maanden voor een factureringsprofiel of EA-inschrijving.
-    - De restituties die het resultaat zijn van een uitwisseling, worden niet meegeteld op basis van de limiet voor de terugbetaling.
+    - Restituties die het resultaat zijn van een inwisseling, tellen niet mee voor de restitutielimiet.
 - Restituties worden berekend op basis van de laagste prijs, zijnde de aankoopprijs of de huidige prijs van de reservering, welke het laagste is.
 - Alleen eigenaren van reserveringsorders kunnen een restitutie verwerken. [Meer informatie over het toevoegen of wijzigen van gebruikers die een reservering kunnen beheren](manage-reserved-vm-instance.md#who-can-manage-a-reservation-by-default).
 

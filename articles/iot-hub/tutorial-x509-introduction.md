@@ -1,6 +1,6 @@
 ---
-title: Zelf studie-informatie over crypto grafie en X. 509-certificaten voor Azure IoT Hub | Microsoft Docs
-description: Zelf studie-begrijp crypto grafie en X. 509 PKI voor Azure IoT Hub
+title: 'Zelfstudie: Cryptografie- en X.509-certificaten voor Azure IoT Hub | Microsoft Docs'
+description: 'Zelfstudie: cryptografie en X.509 PKI voor Azure IoT Hub'
 author: v-gpettibone
 manager: philmea
 ms.service: iot-hub
@@ -12,126 +12,125 @@ ms.custom:
 - mvc
 - 'Role: Cloud Development'
 - 'Role: Data Analytics'
-- devx-track-azurecli
-ms.openlocfilehash: 88f5803e1d4348b79c7675d627a541ff47700dc0
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 2c375a02f534572826e1ebd6b8549e59f6e83640
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105630692"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107378377"
 ---
-# <a name="tutorial-understanding-public-key-cryptography-and-x509-public-key-infrastructure"></a>Zelf studie: informatie over open bare-sleutel cryptografie en X. 509-infra structuur voor open bare sleutels
+# <a name="tutorial-understanding-public-key-cryptography-and-x509-public-key-infrastructure"></a>Zelfstudie: Informatie over openbare-sleutelcryptografie en infrastructuur met openbare X.509-sleutels
 
-U kunt X. 509-certificaten gebruiken om apparaten te verifiëren bij een Azure-IoT Hub. Een certificaat is een digitaal document dat de open bare sleutel van het apparaat bevat en kan worden gebruikt om te controleren of het apparaat een claim is. X. 509-certificaten en certificaatintrekkingslijsten (Crl's) worden gedocumenteerd door [RFC 5280](https://tools.ietf.org/html/rfc5280). Certificaten zijn slechts één onderdeel van een X. 509 open bare-sleutel infrastructuur (PKI). Voor een beter begrip van X. 509 PKI moet u de cryptografische algoritmen, cryptografische sleutels, certificaten en certificerings instanties (Ca's) begrijpen:
+U kunt X.509-certificaten gebruiken om apparaten te verifiëren bij een Azure IoT Hub. Een certificaat is een digitaal document dat de openbare sleutel van het apparaat bevat en kan worden gebruikt om te controleren of het apparaat is wat het claimt te zijn. X.509-certificaten en certificaat intrekken lijsten (CRL's) worden gedocumenteerd door [RFC 5280.](https://tools.ietf.org/html/rfc5280) Certificaten zijn slechts één onderdeel van een PKI (Public Key Infrastructure) van X.509. Als u inzicht wilt krijgen in de X.509 PKI, moet u inzicht hebben in cryptografische algoritmen, cryptografische sleutels, certificaten en certificeringsinstanties (CERTIFICERINGsinstanties):
 
-* Met **algoritmen** definieert u hoe originele Lees bare gegevens worden omgezet in gecodeerde tekst en terug naar Lees bare tekst.
-* **Sleutels** zijn wille keurige of Pseudorandom gegevens reeksen die worden gebruikt als invoer voor een algoritme.
-* **Certificaten** zijn digitale documenten die de open bare sleutel van een entiteit bevatten en waarmee u kunt bepalen of het onderwerp van het certificaat is wie of wat de claim is.
-* **Certificerings instanties** verklaren de echtheid van certificaat houders.
+* Algoritmen definiëren hoe oorspronkelijke platte-tekstgegevens worden omgezet in **coderingstekst** en terug naar tekst zonder tekst.
+* **Sleutels** zijn willekeurige of pseudorandomgegevensreeksen die worden gebruikt als invoer voor een algoritme.
+* **Certificaten zijn** digitale documenten die de openbare sleutel van een entiteit bevatten en waarmee u kunt bepalen of het onderwerp van het certificaat is wie of wat het claimt te zijn.
+* **Certificeringsinstanties** bevestigen de echtheid van certificaatonderwerpen.
 
-U kunt een certificaat kopen bij een certificerings instantie (CA). U kunt ook voor testen en ontwikkeling of als u in een zelfstandige omgeving werkt, een zelfondertekende basis-CA maken. Als u bijvoorbeeld eigenaar bent van een of meer apparaten en IoT hub-verificatie wilt testen, kunt u uw basis-CA zelf ondertekenen en gebruiken om de certificaten van apparaten uit te geven. U kunt ook zelfondertekende apparaten uitgeven. Dit wordt in de volgende artikelen besproken.
+U kunt een certificaat aanschaffen bij een certificeringsinstantie (CA). U kunt ook, voor testen en ontwikkeling, of als u in een zelfstandige omgeving werkt, een zelf-ondertekende basis-CA maken. Als u bijvoorbeeld eigenaar bent van een of meer apparaten en IoT Hub-verificatie test, kunt u uw basis-CA zelf ondertekenen en deze gebruiken om apparaatcertificaten uit te geven. U kunt ook zelf-ondertekende apparaatcertificaten uitgeven. Dit wordt besproken in volgende artikelen.
 
-Voordat u met behulp van X. 509-certificaten meer gedetailleerde informatie over het verifiëren van apparaten bij een IoT Hub, bespreken we de crypto grafie waarop certificaten zijn gebaseerd.
+Voordat we X.509-certificaten gedetailleerder bespreken en gebruiken om apparaten te verifiëren bij een IoT Hub, bespreken we de cryptografie waarop certificaten zijn gebaseerd.
 
 ## <a name="cryptography"></a>Cryptografie
 
-Crypto grafie wordt gebruikt voor het beveiligen van informatie en communicatie. Dit wordt doorgaans gedaan door gebruik te maken van cryptografische technieken voor het versleutelen van tekst zonder opmaak (normale teken) in gecodeerde tekst (gecodeerd) en weer terug. Dit proces wordt versleuteling genoemd. Het omgekeerde proces heet ontsleutelen. Crypto grafie is betrokken bij de volgende doel stellingen:
+Cryptografie wordt gebruikt om informatie en communicatie te beveiligen. Dit wordt meestal gedaan met behulp van cryptografische technieken om tekst zonder tekst (gewone tekst) om te zetten in coderingstekst (gecodeerde tekst) en weer terug te keren. Dit versleutelingsproces wordt versleuteling genoemd. Het omgekeerde proces wordt ontsleuteling genoemd. Cryptografie heeft betrekking op de volgende doelstellingen:
 
-* **Vertrouwelijkheid**: de informatie kan alleen worden geïnterpreteerd door de beoogde doel groep.
-* **Integriteit**: de informatie kan niet worden gewijzigd in opslag of onderweg.
-* **Niet-afwijzing**: de maker van de informatie kan het maken van de gegevens later niet opzeggen.
-* **Verificatie**: de afzender en de ontvanger kunnen de identiteit van elk ander verifiëren.
+* **Vertrouwelijkheid:** de informatie kan alleen worden begrepen door de beoogde doelgroep.
+* **Integriteit:** de informatie kan niet worden gewijzigd in opslag of tijdens overdracht.
+* **Niet-weerlegbaarheid:** de maker van informatie kan het maken van de gegevens later niet weigeren.
+* **Verificatie:** de afzender en ontvanger kunnen elkaars identiteit bevestigen.
 
 ## <a name="encryption"></a>Versleuteling
 
-Het versleutelings proces vereist een algoritme en een sleutel. Met het algoritme wordt gedefinieerd hoe gegevens worden getransformeerd van tekst zonder opmaak naar een gecodeerde tekst en terug naar de Lees bare sleutel. Een sleutel is een wille keurige teken reeks die wordt gebruikt als invoer voor de algoritme. Alle beveiliging van het proces bevindt zich in de sleutel. Daarom moet de sleutel veilig worden opgeslagen. De details van de populairste algoritmen zijn echter openbaar beschikbaar.
+Voor het versleutelingsproces zijn een algoritme en een sleutel vereist. Het algoritme definieert hoe gegevens worden getransformeerd van platte tekst naar coderingstekst en terug naar tekst zonder tekst. Een sleutel is een willekeurige reeks gegevens die wordt gebruikt als invoer voor het algoritme. Alle beveiliging van het proces is opgenomen in de sleutel. Daarom moet de sleutel veilig worden opgeslagen. De details van de populairste algoritmen zijn echter openbaar beschikbaar.
 
-Er zijn twee soorten versleuteling. Symmetrische versleuteling gebruikt dezelfde sleutel voor versleuteling en ontsleuteling. Asymmetrische versleuteling gebruikt verschillende, wiskundige gerelateerde sleutels voor het uitvoeren van versleuteling en ontsleuteling.
+Er zijn twee soorten versleuteling. Symmetrische versleuteling maakt gebruik van dezelfde sleutel voor zowel versleuteling als ontsleuteling. Asymmetrische versleuteling maakt gebruik van andere, maar wiskundig gerelateerde sleutels om versleuteling en ontsleuteling uit te voeren.
 
 ### <a name="symmetric-encryption"></a>Symmetrische versleuteling
 
-Symmetrische versleuteling maakt gebruik van dezelfde sleutel voor het versleutelen van tekst zonder opmaak in gecodeerde tekst en ontsleuteling van gecodeerde sleutels in de De vereiste lengte van de sleutel, uitgedrukt in aantal bits, wordt bepaald door de algoritme. Nadat de sleutel is gebruikt voor het versleutelen van de Lees bare tekst, wordt het versleutelde bericht verzonden naar de ontvanger die vervolgens de gecodeerde sleutel decodeert. De symmetrische sleutel moet veilig worden verzonden naar de ontvanger. Het verzenden van de sleutel is het grootste beveiligings risico wanneer u een symmetrisch algoritme gebruikt.
+Symmetrische versleuteling maakt gebruik van dezelfde sleutel om ongecodeerde tekst te versleutelen in ciphertext en coderingstekst weer te ontsleutelen in niet-versleutelde tekst. De benodigde lengte van de sleutel, uitgedrukt in aantal bits, wordt bepaald door het algoritme. Nadat de sleutel is gebruikt om leesbare tekst te versleutelen, wordt het versleutelde bericht verzonden naar de ontvanger die vervolgens de coderingstekst ontsleutelt. De symmetrische sleutel moet veilig worden verzonden naar de ontvanger. Het verzenden van de sleutel is het grootste beveiligingsrisico wanneer u een symmetrisch algoritme gebruikt.
 
-![Voor beeld van symmetrische versleuteling](media/tutorial-x509-introduction/symmetric-keys.png)
+![Voorbeeld van symmetrische versleuteling](media/tutorial-x509-introduction/symmetric-keys.png)
 
 ### <a name="asymmetric-encryption"></a>Asymmetrische versleuteling
 
-Als er alleen symmetrische versleuteling wordt gebruikt, is het probleem dat alle partijen bij de communicatie over de persoonlijke sleutel beschikken. Het is echter mogelijk dat niet-geautoriseerde derden de sleutel kunnen vastleggen tijdens de verzen ding naar geautoriseerde gebruikers. U kunt dit probleem oplossen door in plaats daarvan asymmetrische of open bare-sleutel cryptografie te gebruiken.
+Als alleen symmetrische versleuteling wordt gebruikt, is het probleem dat alle partijen in de communicatie over de persoonlijke sleutel moeten beschikken. Het is echter mogelijk dat niet-geautoriseerde derden de sleutel kunnen vastleggen tijdens de overdracht naar gemachtigde gebruikers. U kunt dit probleem oplossen door in plaats daarvan asymmetrische of openbare-sleutelcryptografie te gebruiken.
 
-Bij asymmetrische crypto grafie heeft elke gebruiker twee wiskundige gerelateerde sleutels die een sleutel paar worden genoemd. Een sleutel is openbaar en de andere sleutel is privé. Het sleutel paar zorgt ervoor dat alleen de ontvanger toegang heeft tot de persoonlijke sleutel die nodig is om de gegevens te ontsleutelen. In de volgende afbeelding ziet u een overzicht van het asymmetrische versleutelings proces.
+In asymmetrische cryptografie heeft elke gebruiker twee wiskundig gerelateerde sleutels die een sleutelpaar worden genoemd. De ene sleutel is openbaar en de andere is privé. Het sleutelpaar zorgt ervoor dat alleen de ontvanger toegang heeft tot de persoonlijke sleutel die nodig is om de gegevens te ontsleutelen. In de volgende afbeelding wordt het asymmetrische versleutelingsproces samengevat.
 
-![Voor beeld van asymmetrische versleuteling](media/tutorial-x509-introduction/asymmetric-keys.png)
+![Voorbeeld van asymmetrische versleuteling](media/tutorial-x509-introduction/asymmetric-keys.png)
 
-1. De ontvanger maakt een openbaar-persoonlijk sleutel paar en stuurt de open bare sleutel naar een certificerings instantie. De CA verpakt de open bare sleutel in een X. 509-certificaat.
+1. De ontvanger maakt een openbaar-persoonlijk sleutelpaar en verzendt de openbare sleutel naar een CA. De CA verpakt de openbare sleutel in een X.509-certificaat.
 
-1. De afzender verkrijgt de open bare sleutel van de ontvanger van de certificerings instantie.
+1. De verzendende partij verkrijgt de openbare sleutel van de ontvanger van de CA.
 
-1. De afzender versleutelt gegevens zonder opmaak met behulp van een versleutelings algoritme. De open bare sleutel van de ontvanger wordt gebruikt om versleuteling uit te voeren.
+1. De afzender versleutelt niet-versleutelde gegevens met behulp van een versleutelingsalgoritme. De openbare sleutel van de ontvanger wordt gebruikt om versleuteling uit te voeren.
 
-1. De afzender verzendt de gecodeerde tekst naar de ontvanger. Het is niet nodig om de sleutel te verzenden omdat de ontvanger de persoonlijke sleutel al nodig heeft om de gecodeerde tekst te ontsleutelen.
+1. De afzender verzendt de coderingstekst naar de ontvanger. Het is niet nodig om de sleutel te verzenden omdat de ontvanger al beschikt over de persoonlijke sleutel die nodig is om de coderingscode te ontsleutelen.
 
-1. De ontvanger ontsleutelt de gecodeerde tekst met behulp van het opgegeven asymmetrische algoritme en de persoonlijke sleutel.
+1. De ontvanger ontsleutelt de coderingstekst met behulp van het opgegeven asymmetrische algoritme en de persoonlijke sleutel.
 
-### <a name="combining-symmetric-and-asymmetric-encryption"></a>Combi neren van symmetrische en asymmetrische versleuteling
+### <a name="combining-symmetric-and-asymmetric-encryption"></a>Symmetrische en asymmetrische versleuteling combineren
 
-Symmetrische en asymmetrische versleuteling kunnen worden gecombineerd om te profiteren van hun relatieve kracht. Symmetrische versleuteling is veel sneller dan asymmetrisch, maar vanwege de nood zaak om persoonlijke sleutels naar andere partijen te verzenden, is niet zo veilig. Als u de twee typen samen wilt combi neren, kan symmetrische versleuteling worden gebruikt voor het converteren van tekst zonder opmaak naar een gecodeerde sleutel. Asymmetrische versleuteling wordt gebruikt voor het uitwisselen van de symmetrische sleutel. Dit wordt getoond in het volgende diagram.
+Symmetrische en asymmetrische versleuteling kunnen worden gecombineerd om te profiteren van hun relatieve sterke punten. Symmetrische versleuteling is veel sneller dan asymmetrische, maar vanwege de noodzaak van het verzenden van persoonlijke sleutels naar andere partijen is niet zo veilig. Om de twee typen te combineren, kan symmetrische versleuteling worden gebruikt om niet-versleutelde tekst te converteren naar coderingstekst. Asymmetrische versleuteling wordt gebruikt om de symmetrische sleutel uit te wisselen. Dit wordt gedemonstreerd in het volgende diagram.
 
-![Symmetrische en Assymetric-versleuteling](media/tutorial-x509-introduction/symmetric-asymmetric-encryption.png)
+![Symmetrische en assymetrische versleuteling](media/tutorial-x509-introduction/symmetric-asymmetric-encryption.png)
 
-1. De afzender haalt de open bare sleutel van de ontvanger op.
+1. De afzender haalt de openbare sleutel van de ontvanger op.
 
 1. De afzender genereert een symmetrische sleutel en gebruikt deze om de oorspronkelijke gegevens te versleutelen.
 
-1. De afzender gebruikt de open bare sleutel van de ontvanger voor het versleutelen van de symmetrische sleutel.
+1. De afzender gebruikt de openbare sleutel van de ontvanger om de symmetrische sleutel te versleutelen.
 
-1. De verzender verzendt de versleutelde symmetrische sleutel en de gecodeerde tekst naar de bedoelde ontvanger.
+1. De afzender verzendt de versleutelde symmetrische sleutel en de coderingstekst naar de beoogde ontvanger.
 
-1. De ontvanger gebruikt de persoonlijke sleutel die overeenkomt met de open bare sleutel van de ontvanger voor het ontsleutelen van de symmetrische sleutel van de afzender.
+1. De ontvanger gebruikt de persoonlijke sleutel die overeenkomt met de openbare sleutel van de ontvanger om de symmetrische sleutel van de afzender te ontsleutelen.
 
-1. De ontvanger gebruikt de symmetrische sleutel om de gecodeerde tekst te ontsleutelen.
+1. De ontvanger gebruikt de symmetrische sleutel om de coderingstekst te ontsleutelen.
 
 ### <a name="asymmetric-signing"></a>Asymmetrische ondertekening
 
-Asymmetrische algoritmen kunnen worden gebruikt om gegevens te beveiligen tegen wijzigingen en de identiteit van de gegevens Maker te bewijzen. In de volgende afbeelding ziet u hoe asymmetrisch ondertekenen u helpt de identiteit van de afzender te bewijzen.
+Asymmetrische algoritmen kunnen worden gebruikt om gegevens te beschermen tegen wijzigingen en om de identiteit van de maker van de gegevens te bewijzen. In de volgende afbeelding ziet u hoe asymmetrische ondertekening helpt om de identiteit van de afzender te bewijzen.
 
-![Voor beeld van asymmetrische ondertekening](media/tutorial-x509-introduction/asymmetric-signing.png)
+![Voorbeeld van asymmetrische ondertekening](media/tutorial-x509-introduction/asymmetric-signing.png)
 
-1. De afzender geeft tekst zonder opmaak door middel van een asymmetrische versleutelings algoritme, met behulp van de persoonlijke sleutel voor versleuteling. U ziet dat in dit scenario het gebruik van de persoonlijke en open bare sleutels die in de voor gaande sectie worden beschreven, worden teruggedraaid. Dit is gedetailleerde asymmetrische versleuteling.
+1. De afzender geeft niet-versleutelde gegevens door aan een asymmetrisch versleutelingsalgoritme, met behulp van de persoonlijke sleutel voor versleuteling. U ziet dat in dit scenario het gebruik van de persoonlijke en openbare sleutels die in de vorige sectie zijn beschreven, wordt omgekeerd.
 
-1. De resulterende gecodeerde tekst wordt verzonden naar de ontvanger.
+1. De resulterende coderingstekst wordt verzonden naar de ontvanger.
 
-1. De ontvanger haalt de open bare sleutel van de maker op uit een map.
+1. De ontvanger verkrijgt de openbare sleutel van de oorspronkelijke gebruiker uit een directory.
 
-1. De ontvanger ontsleutelt de gecodeerde tekst met behulp van de open bare sleutel van de maker. De resulterende Lees bare tekst bewijst de identiteit van de maker, omdat alleen de maker toegang heeft tot de persoonlijke sleutel die de oorspronkelijke tekst oorspronkelijk versleutelde.
+1. De ontvanger ontsleutelt de coderingstekst met behulp van de openbare sleutel van de oorspronkelijke gebruiker. De resulterende tekst zonder tekst toont de identiteit van de oorspronkelijke persoon aan, omdat alleen de oorspronkelijke persoon toegang heeft tot de persoonlijke sleutel die de oorspronkelijke tekst in eerste instantie heeft versleuteld.
 
 ## <a name="signing"></a>Ondertekenen
 
-Digitale ondertekening kan worden gebruikt om te bepalen of de gegevens zijn gewijzigd tijdens de overdracht of in rust. De gegevens worden door gegeven via een hash-algoritme, een eenrichtings functie die een wiskundig resultaat van het gegeven bericht produceert. Het resultaat wordt een *hash-waarde*, een *Message Digest*, een samen *vatting*, een *hand tekening* of een *vinger afdruk* genoemd. Een hash-waarde kan niet worden omgekeerd om het oorspronkelijke bericht te verkrijgen. Omdat een kleine wijziging in het bericht resulteert in een belang rijke wijziging in de *vinger afdruk*, kan de hash-waarde worden gebruikt om te bepalen of een bericht is gewijzigd. In de volgende afbeelding ziet u hoe asymmetrische versleuteling en hash-algoritmen kunnen worden gebruikt om te controleren of een bericht niet is gewijzigd.
+Digitale ondertekening kan worden gebruikt om te bepalen of de gegevens tijdens de overdracht of at-rest zijn gewijzigd. De gegevens worden doorgegeven via een hash-algoritme, een functie in één manier die een wiskundig resultaat van het opgegeven bericht produceert. Het resultaat wordt een *hash-waarde,* *message digest,* *digest,* *handtekening* of *vingerafdruk genoemd.* Een hash-waarde kan niet worden omgekeerd om het oorspronkelijke bericht te verkrijgen. Omdat een kleine wijziging in het bericht resulteert in een aanzienlijke wijziging in de *vingerafdruk,* kan de hash-waarde worden gebruikt om te bepalen of een bericht is gewijzigd. In de volgende afbeelding ziet u hoe asymmetrische versleuteling en hash-algoritmen kunnen worden gebruikt om te controleren of een bericht niet is gewijzigd.
 
-![Voor beeld van ondertekening](media/tutorial-x509-introduction/signing.png)
+![Voorbeeld van ondertekening](media/tutorial-x509-introduction/signing.png)
 
-1. De afzender maakt een bericht met een lees bare tekst.
+1. De afzender maakt een bericht met tekst zonder tekst.
 
-1. De afzender hasheert het Lees bare bericht om een Message Digest te maken.
+1. De afzender hasht het bericht zonder tekst om een samenvatting van het bericht te maken.
 
-1. De afzender versleutelt de samen vatting met een persoonlijke sleutel.
+1. De afzender versleutelt de samenvatting met behulp van een persoonlijke sleutel.
 
-1. De afzender verzendt het Lees bare bericht en de versleutelde samen vatting naar de beoogde ontvanger.
+1. De afzender verzendt het bericht met platte tekst en de versleutelde samenvatting naar de beoogde ontvanger.
 
-1. De ontvanger ontsleutelt de Digest met de open bare sleutel van de afzender.
+1. De ontvanger ontsleutelt de samenvatting met behulp van de openbare sleutel van de afzender.
 
-1. De ontvanger voert hetzelfde hash-algoritme uit dat de afzender via het bericht heeft gebruikt.
+1. De ontvanger voert hetzelfde hash-algoritme uit dat de afzender voor het bericht heeft gebruikt.
 
-1. De ontvanger vergelijkt de resulterende hand tekening met de ontsleutelde hand tekening. Als de samen vattingen hetzelfde zijn, is het bericht niet gewijzigd tijdens de verzen ding.
+1. De ontvanger vergelijkt de resulterende handtekening met de ontsleutelde handtekening. Als de samenvattingen hetzelfde zijn, is het bericht niet gewijzigd tijdens de verzending.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie informatie over de [open bare-sleutel certificaten van X. 509](tutorial-x509-certificates.md)voor meer informatie over de velden waaruit een certificaat is opgebouwd.
+Zie Understanding [X.509 Public Key Certificates (Openbare-sleutelcertificaten voor X.509)](tutorial-x509-certificates.md)voor meer informatie over de velden waar een certificaat uit is.
 
-Als u al een groot aantal 509-certificaten kent en u test versies wilt genereren die u kunt gebruiken om uw IoT Hub te verifiëren, raadpleegt u de volgende onderwerpen:
+Zie de volgende onderwerpen als u al veel weet over X.509-certificaten en u testversies wilt genereren die u kunt gebruiken voor verificatie bij uw IoT Hub:
 
-* [Microsoft-Supplied-scripts gebruiken om test certificaten te maken](tutorial-x509-scripts.md)
-* [OpenSSL gebruiken om test certificaten te maken](tutorial-x509-openssl.md)
-* [Self-Signed test certificaten maken met behulp van OpenSSL](tutorial-x509-self-sign.md)
+* [Testcertificaten maken met behulp van Microsoft-Supplied Scripts](tutorial-x509-scripts.md)
+* [OpenSSL gebruiken om testcertificaten te maken](tutorial-x509-openssl.md)
+* [OpenSSL gebruiken om certificaten te Self-Signed testen](tutorial-x509-self-sign.md)
 
-Als u een certificaat van een certificerings instantie of een onderliggend CA-certificaat hebt en u het wilt uploaden naar uw IoT-hub en wilt bewijzen dat u de eigenaar bent, raadpleegt u het [bewijs van een CA-certificaat](tutorial-x509-prove-possession.md).
+Als u een ca-certificaat (certificeringsinstantie) of een onderliggend CA-certificaat hebt en u het wilt uploaden naar uw IoT-hub en wilt bewijzen dat u de eigenaar bent, gaat u naar Het bezit van een [CA-certificaat](tutorial-x509-prove-possession.md)bewijzen.

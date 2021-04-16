@@ -12,9 +12,9 @@ items:
         href: create-catalog-portal.md
       - name: Een Purview-account maken - Azure PowerShell
         href: create-catalog-powershell.md
-      - name: Een controle sfeer liggen-account maken-.NET SDK
+      - name: Een Purview-account maken - .NET SDK
         href: create-purview-dotnet.md
-      - name: Een controle sfeer liggen-account maken-python
+      - name: Een Purview-account maken - Python
         href: create-purview-python.md
   - name: Zelfstudies
     items:
@@ -81,9 +81,9 @@ items:
                 href: manage-data-sources.md
               - name: Overzicht van Purview-connectors
                 href: purview-connector-overview.md
-              - name: Azure meerdere bronnen
+              - name: Azure Multiple Source
                 href: register-scan-azure-multiple-sources.md
-              - name: Azure Synapse Analytics (werk ruimte)
+              - name: Azure Synapse Analytics (werkruimte)
                 href: register-scan-synapse-workspace.md
               - name: Azure Blob Storage
                 href: register-scan-azure-blob-storage-source.md
@@ -106,7 +106,7 @@ items:
               - name: Beheerd exemplaar van Azure SQL Database
                 href: register-scan-azure-sql-database-managed-instance.md
                 displayName: Register and scan Azure SQL DB Managed Instance
-              - name: Exclusieve SQL-groep voor Azure (voorheen SQL DW)
+              - name: Azure Dedicated SQL-pool (voorheen SQL DW)
                 href: register-scan-azure-synapse-analytics.md
               - name: On-premises SQL-server
                 href: register-scan-on-premises-sql-server.md
@@ -128,9 +128,9 @@ items:
             href: how-to-create-import-export-glossary.md
           - name: Termsjablonen beheren
             href: how-to-manage-term-templates.md
-      - name: Bulk bewerking
+      - name: Bulkbewerking
         items:
-          - name: Activa bulksgewijs bewerken om aantekeningen en contact personen aan te labelen
+          - name: Assets bulksgewijs bewerken om aantekeningen en contactpersonen te taggen
             href: how-to-bulk-edit-assets.md
       - name: Classificeren
         items:
@@ -172,13 +172,21 @@ items:
             href: sensitivity-insights.md
           - name: Inzichten in bestandsextensies weergeven
             href: file-extension-insights.md
-      - name: Beveiliging & netwerken
+      - name: Security & Networking
         items:
-          - name: Privé-eind punten beheren
+          - name: Privé-eindpunten beheren
             href: catalog-private-link.md
   - name: Naslaginformatie
     items:
       - name: Ondersteunde classificaties
         href: supported-classifications.md
-      - name: Implementatie handleiding voor ABAP-functies
+      - name: Implementatiehandleiding voor ABAP-functies
         href: abap-functions-deployment-guide.md
+  - name: Resources
+    items:
+      - name: Feedback over functies (user voice)
+        href: 'https://feedback.azure.com/forums/932437-azure-purview'
+      - name: Prijscalculator
+        href: 'https://azure.microsoft.com/pricing/details/azure-purview/'
+      - name: Microsoft Q&A-forum
+        href: 'https://docs.microsoft.com/answers/topics/azure-purview.html'

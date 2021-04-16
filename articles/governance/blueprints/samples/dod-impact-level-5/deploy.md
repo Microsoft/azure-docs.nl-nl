@@ -1,14 +1,14 @@
 ---
 title: DoD Impact Level 5-blauwdrukvoorbeeld
 description: Implementeer stappen voor het DoD Impact Level 5-blauwdrukvoorbeeld, inclusief de parametergegevens voor blauwdrukartefacten.
-ms.date: 04/02/2021
+ms.date: 04/13/2021
 ms.topic: sample
-ms.openlocfilehash: d9292a9033a3c0b92e1a00c63d74bd1fb6023794
-ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
+ms.openlocfilehash: b978b9fb30732c13785a6a425e5195daf67bae0f
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106386716"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107377400"
 ---
 # <a name="deploy-the-dod-impact-level-5-blueprint-sample"></a>Het DoD Impact Level 5-blauwdrukvoorbeeld implementeren
 
@@ -19,7 +19,7 @@ Als u het DoD IL 5-blauwdrukvoorbeeld (Department of Defense Impact Level 5) van
 > - Uw kopie van het voorbeeld markeren als **Gepubliceerd**
 > - Uw kopie van de blauwdruk toewijzen aan een bestaand abonnement
 
-Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free) aan voordat u begint.
+Als u nog geen abonnement Azure Government, vraagt u een proefabonnement [aan](https://azure.microsoft.com/global-infrastructure/government/request/) voordat u begint.
 
 ## <a name="create-blueprint-from-sample"></a>Een blauwdruk maken op basis van een voorbeeld
 

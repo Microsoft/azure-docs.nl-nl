@@ -6,12 +6,12 @@ ms.author: nimag
 ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: a93fe6c6203140bfed3771da8353ea7843b7694f
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: bd9a607b46c87ca590bcefef310f822d6f23483c
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/13/2021
-ms.locfileid: "107327007"
+ms.locfileid: "107386856"
 ---
 In deze quickstart leert u hoe u een aanroep start met behulp van de Azure Communication Services Calling SDK voor JavaScript.
 
@@ -164,7 +164,7 @@ Open uw browser en ga naar http://localhost:8080/. U ziet nu het volgende:
 
 :::image type="content" source="../media/javascript/calling-javascript-app-2.png" alt-text="Schermopname van de voltooide JavaScript-toepassing.":::
 
-U kunt een uitgaande VOIP-oproep maken door een gebruikers-ID op te geven in het tekstveld en te klikken op de knop **Oproep starten**. Door `8:echo123` te bellen, wordt u verbonden met een echo-bot. Dit is handig om aan de slag te gaan en te controleren of uw audio-apparaten werken.
+U kunt een uitgaande VOIP-aanroep maken door een geldig token voor gebruikerstoegang en gebruikers-id op te geven in de bijbehorende tekstvelden en op de **knop Oproep** starten te klikken. Door `8:echo123` te bellen, wordt u verbonden met een echo-bot. Dit is handig om aan de slag te gaan en te controleren of uw audio-apparaten werken.
 
 ## <a name="sample-code"></a>Voorbeeldcode
 

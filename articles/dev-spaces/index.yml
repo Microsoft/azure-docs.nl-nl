@@ -1,9 +1,9 @@
 ### YamlMime:Landing
 title: Documentatie voor Azure Dev Spaces
-summary: Azure Dev Spaces wordt buiten gebruik gesteld en werkt niet meer vanaf 31 oktober 2023.
+summary: Azure Dev Spaces wordt buiten gebruik gesteld en werkt niet meer vanaf 31 oktober 2023. Er kunnen geen nieuwe controllers worden ingericht.
 metadata:
   title: Documentatie voor Azure Dev Spaces
-  description: Azure Dev Spaces wordt buiten gebruik gesteld en werkt niet meer vanaf 31 oktober 2023.
+  description: Azure Dev Spaces wordt buiten gebruik gesteld en werkt niet meer vanaf 31 oktober 2023. Er kunnen geen nieuwe controllers worden ingericht.
   services: azure-dev-spaces
   ms.service: azure-dev-spaces
   ms.topic: landing-page
@@ -11,12 +11,12 @@ metadata:
   ms.author: zarhoads
   manager: gwallace
   ms.date: 10/29/2020
-  ms.openlocfilehash: a3b3ca8c87871b9ae8e1d6a3db32d9e2051215b6
-  ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
-  ms.translationtype: HT
+  ms.openlocfilehash: a2283d189a6423b65364e64f0894e9e666c55463
+  ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 10/30/2020
-  ms.locfileid: "93072028"
+  ms.lasthandoff: 04/14/2021
+  ms.locfileid: "107505935"
 landingContent:
 - title: Bridge to Kubernetes
   linkLists:

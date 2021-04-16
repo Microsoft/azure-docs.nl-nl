@@ -1,88 +1,88 @@
 ---
-title: Informatie over eenmalige aanmelding op basis van wacht woorden (SSO) voor apps in Azure Active Directory
-description: Informatie over eenmalige aanmelding op basis van wacht woorden (SSO) voor apps in Azure Active Directory
+title: Informatie over eenmalige aanmelding (SSO) op basis van wachtwoorden voor apps in Azure Active Directory
+description: Informatie over eenmalige aanmelding (SSO) op basis van wachtwoorden voor apps in Azure Active Directory
 services: active-directory
-author: kenwith
-manager: daveba
+author: iantheninja
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/29/2020
-ms.author: kenwith
-ms.openlocfilehash: bac04bd70469d7b9c4d9485b6a87fd7133967154
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.author: iangithinji
+ms.openlocfilehash: ffa517f068dbc13f2734630216466373d9014ae6
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99255302"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107374553"
 ---
-# <a name="understand-password-based-single-sign-on"></a>Informatie over eenmalige aanmelding op basis van wacht woorden
+# <a name="understand-password-based-single-sign-on"></a>Op wachtwoorden gebaseerde een een-op-een-aanmelding begrijpen
 
-In de [Quick](view-applications-portal.md) start-serie op toepassings beheer hebt u geleerd hoe u Azure AD als id-provider (IDP) gebruikt voor een toepassing. In de hand leiding Snelstartgids configureert u op SAML gebaseerde SSO-of OIDC. Een andere optie is SSO op basis van een wacht woord. In dit artikel vindt u meer informatie over de optie voor eenmalige aanmelding op basis van wacht woorden. 
+In de [quickstart-reeks](view-applications-portal.md) over toepassingsbeheer hebt u geleerd hoe u Azure AD gebruikt als id-provider (IdP) voor een toepassing. In de quickstart configureert u eenmalige aanmelding op basis van SAML of OIDC. Een andere optie is eenmalige aanmelding op basis van een wachtwoord. In dit artikel wordt de optie voor eenmalige aanmelding op basis van wachtwoorden uitgebreider besproken. 
 
-Deze optie is beschikbaar voor elke website met een HTML-aanmeldings pagina. Eenmalige aanmelding op basis van wacht woorden is ook bekend als wachtwoord kluis. Met op wacht woord gebaseerde SSO kunt u gebruikers toegang en-wacht woorden beheren voor webtoepassingen die geen ondersteuning bieden voor identiteits Federatie. Het is ook handig wanneer meerdere gebruikers één account moeten delen, zoals de accounts voor sociale media-apps van uw organisatie.
+Deze optie is beschikbaar voor elke website met een HTML-aanmeldingspagina. Eenmalige aanmelding op basis van een wachtwoord wordt ook wel wachtwoordkluis genoemd. Met eenmalige aanmelding op basis van wachtwoorden kunt u gebruikerstoegang en wachtwoorden beheren voor webtoepassingen die geen ondersteuning bieden voor identiteitsfederatie. Het is ook handig wanneer meerdere gebruikers één account moeten delen, zoals de accounts voor sociale media-apps van uw organisatie.
 
-SSO op basis van wacht woorden is een uitstekende manier om snel toepassingen te integreren in azure AD en biedt de volgende voor delen:
+Eenmalige aanmelding op basis van een wachtwoord is een uitstekende manier om snel aan de slag te gaan met het snel integreren van toepassingen in Azure AD en stelt u in staat het volgende te doen:
 
-- Eenmalige aanmelding inschakelen voor uw gebruikers door gebruikers namen en wacht woorden veilig op te slaan en opnieuw af te spelen
+- Een aanmelding voor uw gebruikers inschakelen door gebruikersnamen en wachtwoorden veilig op te slaan en opnieuw af te spelen
 
-- Ondersteunings toepassingen waarvoor meerdere aanmeldings velden zijn vereist voor toepassingen waarvoor meer dan alleen gebruikers naam en wacht woord zijn vereist om zich aan te melden
+- Ondersteuningstoepassingen waarvoor meerdere aanmeldingsvelden zijn vereist voor toepassingen waarvoor meer dan alleen de velden gebruikersnaam en wachtwoord zijn vereist om u aan te melden
 
-- De labels van de gebruikers naam en het wacht woord aanpassen die uw gebruikers zien op [mijn apps](../user-help/my-apps-portal-end-user-access.md) wanneer ze hun referenties invoeren
+- Pas de labels aan van de gebruikersnaam- en wachtwoordvelden die uw gebruikers zien [op](../user-help/my-apps-portal-end-user-access.md) Mijn apps wanneer ze hun referenties invoeren
 
-- Stel uw gebruikers in staat om hun eigen gebruikers namen en wacht woorden op te geven voor bestaande toepassings accounts die ze hand matig invoeren.
+- Sta uw gebruikers toe hun eigen gebruikersnamen en wachtwoorden op te geven voor bestaande toepassingsaccounts die ze handmatig typen.
 
-- Een lid van de bedrijfs groep toestaan om de gebruikers namen en wacht woorden op te geven die aan een gebruiker zijn toegewezen met behulp van de [self-service toepassings toegangs](./manage-self-service-access.md) functie
+- Een lid van de bedrijfsgroep toestaan de gebruikersnamen en wachtwoorden op te geven die zijn toegewezen aan een gebruiker met behulp van de functie Toegang tot [selfservicetoepassing](./manage-self-service-access.md)
 
--   Een beheerder toestaan om een gebruikers naam en wacht woord op te geven die moeten worden gebruikt door gebruikers of groepen wanneer ze zich aanmelden bij de toepassing met de functie voor het bijwerken van referenties 
+-   Een beheerder toestaan om een gebruikersnaam en wachtwoord op te geven die moeten worden gebruikt door personen of groepen wanneer ze zich aanmelden bij de toepassing met de functie Referenties bijwerken 
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Het gebruik van Azure AD als uw ID-provider (IdP) en het configureren van eenmalige aanmelding (SSO) kan eenvoudig of complex zijn, afhankelijk van de toepassing die wordt gebruikt. Sommige toepassingen kunnen met slechts een paar acties worden geconfigureerd. Andere gebruikers moeten een gedetailleerde configuratie hebben. Volg de Quick Start- [serie](view-applications-portal.md) op toepassings beheer om kennis snel te vinden. Als de toepassing die u wilt toevoegen, eenvoudig is, hoeft u dit artikel waarschijnlijk niet te lezen. Als voor de toepassing die u wilt toevoegen aangepaste configuratie vereist is en u op wacht woord gebaseerde SSO wilt gebruiken, is dit artikel voor u.
+Het gebruik van Azure AD als id-provider (IdP) en het configureren van eenmalige aanmelding (SSO) kan eenvoudig of complex zijn, afhankelijk van de toepassing die wordt gebruikt. Sommige toepassingen kunnen worden geconfigureerd met slechts een paar acties. Voor andere is een diepgaande configuratie vereist. Als u snel kennis wilt maken, doorloop dan de [quickstart-reeks](view-applications-portal.md) over toepassingsbeheer. Als de toepassing die u toevoegt eenvoudig is, hoeft u dit artikel waarschijnlijk niet te lezen. Als voor de toepassing die u toevoegt een aangepaste configuratie is vereist en u eenmalige aanmelding op basis van een wachtwoord moet gebruiken, is dit artikel voor u bedoeld.
 
 > [!IMPORTANT] 
-> Er zijn enkele scenario's waarbij de optie voor **eenmalige aanmelding** niet voor komt in de navigatie voor een toepassing in **bedrijfs toepassingen**. 
+> Er zijn enkele scenario's waarin de optie **voor een een aanmelding** niet in de navigatie voor een toepassing in **Bedrijfstoepassingen staat.** 
 >
-> Als de toepassing is geregistreerd met behulp van **app-registraties** , is de mogelijkheid voor eenmalige aanmelding standaard geconfigureerd voor het gebruik van OIDC OAuth. In dit geval wordt de optie **voor eenmalige aanmelding** niet weer gegeven in de navigatie onder **bedrijfs toepassingen**. Wanneer u **app-registraties** gebruikt om uw aangepaste app toe te voegen, configureert u de opties in het manifest bestand. Zie [Azure Active Directory app-manifest](../develop/reference-app-manifest.md)voor meer informatie over het manifest bestand. Zie [verificatie en autorisatie met behulp van micro soft Identity platform](../develop/authentication-vs-authorization.md#authentication-and-authorization-using-the-microsoft-identity-platform)voor meer informatie over SSO-standaarden. 
+> Als de toepassing is geregistreerd met **behulp App-registraties** is de mogelijkheid voor een aanmelding standaard geconfigureerd voor het gebruik van OIDC OAuth. In dit geval wordt **de optie Voor een aanmelding** niet in de navigatie onder **Bedrijfstoepassingen weer geven.** Wanneer u **App-registraties** aangepaste app toevoegt, configureert u opties in het manifestbestand. Zie voor meer informatie over het manifestbestand [Azure Active Directory app-manifest.](../develop/reference-app-manifest.md) Zie Verificatie en autorisatie met Microsoft Identity Platform voor meer informatie over [SSO-standaarden.](../develop/authentication-vs-authorization.md#authentication-and-authorization-using-the-microsoft-identity-platform) 
 >
-> Andere scenario's waarin **eenmalige aanmelding** ontbreekt in de navigatie, zijn, wanneer een toepassing wordt gehost in een andere Tenant of als uw account niet over de vereiste machtigingen (globale beheerder, Cloud toepassings beheerder, toepassings beheerder of eigenaar van de service-principal) beschikt. Machtigingen kunnen ook leiden tot een scenario waarin u **eenmalige aanmelding** kunt openen, maar niet kunt opslaan. Zie (voor meer informatie over Azure AD-beheerders rollen https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) .
+> Andere scenario's waarbij een een aanmelding ontbreekt in de navigatie, zijn onder andere wanneer een toepassing wordt gehost in een andere tenant of als uw account niet over de vereiste machtigingen (globale beheerder, Cloud Application Administrator, toepassingsbeheerder of eigenaar van de **service-principal)** is. Machtigingen kunnen ook een scenario veroorzaken waarin u een **een aanmelding kunt** openen, maar niet kunt opslaan. Zie voor meer informatie over Azure AD-beheerdersrollen. https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)
 
 
 ## <a name="basic-configuration"></a>Basisconfiguratie
 
-In de [Quick](view-applications-portal.md)start-serie hebt u geleerd hoe u een app kunt toevoegen aan uw Tenant, waardoor Azure AD weet dat deze wordt gebruikt als de ID-provider (IDP) voor de app. Sommige apps zijn al vooraf geconfigureerd en worden weer gegeven in de Azure AD-galerie. Andere apps bevinden zich niet in de galerie en u moet een algemene app maken en deze hand matig configureren. Afhankelijk van de app is de SSO-optie op basis van wacht woorden mogelijk niet beschikbaar. Als u de lijst met op wacht woord gebaseerde opties niet ziet op de pagina voor eenmalige aanmelding voor de app, is deze niet beschikbaar.
+In de [quickstart-reeks](view-applications-portal.md)hebt u geleerd hoe u een app toevoegt aan uw tenant, zodat Azure AD weet dat deze wordt gebruikt als id-provider (IdP) voor de app. Sommige apps zijn al vooraf geconfigureerd en worden in de Azure AD-galerie weer geven. Andere apps staan niet in de galerie en u moet een algemene app maken en deze handmatig configureren. Afhankelijk van de app is de optie voor eenmalige aanmelding op basis van een wachtwoord mogelijk niet beschikbaar. Als u de optielijst op basis van een wachtwoord niet ziet op de pagina voor een aanmelding voor de app, is deze niet beschikbaar.
 
 > [!IMPORTANT]
-> De browser uitbreiding van mijn apps is vereist voor SSO op basis van een wacht woord. Zie [een implementatie van mijn apps plannen](my-apps-deployment-plan.md)voor meer informatie.
+> De Mijn apps browserextensie is vereist voor eenmalige aanmelding op basis van een wachtwoord. Zie Plan a [Mijn apps deployment (Een Mijn apps plannen) voor meer informatie.](my-apps-deployment-plan.md)
 
-De configuratie pagina voor SSO op basis van een wacht woord is eenvoudig. Het bevat alleen de URL van de aanmeldings pagina die door de app wordt gebruikt. Deze teken reeks moet de pagina zijn die het invoergegevens veld van de gebruikers naam bevat.
+De configuratiepagina voor eenmalige aanmelding op basis van een wachtwoord is eenvoudig. Deze bevat alleen de URL van de aanmeldingspagina die door de app wordt gebruikt. Deze tekenreeks moet de pagina zijn die het invoerveld voor de gebruikersnaam bevat.
 
-Nadat u de URL hebt ingevoerd, selecteert u **Opslaan**. Azure AD parseert de HTML-code van de aanmeldings pagina voor de invoer velden gebruikers naam en wacht woord. Als de poging slaagt, bent u klaar.
+Nadat u de URL hebt opgegeven, selecteert u **Opslaan.** Azure AD parseert de HTML van de aanmeldingspagina voor invoervelden voor gebruikersnaam en wachtwoord. Als de poging is gelukt, bent u klaar.
  
-De volgende stap is het [toewijzen van gebruikers of groepen aan de toepassing](./assign-user-or-group-access-portal.md). Nadat u gebruikers en groepen hebt toegewezen, kunt u referenties opgeven die moeten worden gebruikt voor een gebruiker wanneer deze zich aanmeldt bij de toepassing. Selecteer **gebruikers en groepen**, schakel het selectie vakje in voor de rij van de gebruiker of groep en selecteer vervolgens **referenties bijwerken**. Voer ten slotte de gebruikers naam en het wacht woord in die moeten worden gebruikt voor de gebruiker of groep. Als u dit niet doet, wordt gebruikers gevraagd de referenties zelf in te voeren bij het starten.
+De volgende stap is het [toewijzen van gebruikers of groepen aan de toepassing](./assign-user-or-group-access-portal.md). Nadat u gebruikers en groepen hebt toegewezen, kunt u referenties verstrekken die voor een gebruiker moeten worden gebruikt wanneer ze zich aanmelden bij de toepassing. Selecteer **Gebruikers en groepen,** schakel het selectievakje in voor de rij van de gebruiker of groep en selecteer **vervolgens Referenties bijwerken.** Voer ten slotte de gebruikersnaam en het wachtwoord in die moeten worden gebruikt voor de gebruiker of groep. Als u dit niet doen, wordt gebruikers gevraagd om de referenties zelf in te voeren bij het starten.
  
 
 ## <a name="manual-configuration"></a>Handmatige configuratie
 
-Als het parseren van de Azure AD-poging mislukt, kunt u hand matig aanmelden configureren.
+Als de parseringspoging van Azure AD mislukt, kunt u de aanmelding handmatig configureren.
 
-1. Onder **\<application name> configuratie** selecteert u **\<application name> instellingen voor eenmalige aanmelding met een wacht woord configureren** om de aanmeldings pagina **configureren** weer te geven. 
+1. Selecteer **\<application name> onder Configuratie** de optie **Configure Password Single \<application name> Sign-on Settings** om de pagina Aanmelding **configureren weer te** geven. 
 
-2. Selecteer **aanmeldings velden hand matig detecteren**. Aanvullende instructies voor het beschrijven van de hand matige detectie van aanmeldings velden worden weer gegeven.
+2. Selecteer **De aanmeldingsvelden handmatig detecteren.** Er worden aanvullende instructies weergegeven waarin de handmatige detectie van aanmeldingsvelden wordt beschreven.
 
-   ![Hand matige configuratie van op wacht woord gebaseerde eenmalige aanmelding](./media/configure-password-single-sign-on/password-configure-sign-on.png)
-3. Selecteer **aanmeldings velden voor vastleggen**. De pagina vastleg status wordt geopend op een nieuw tabblad, waarin wordt weer gegeven **dat het vastleggen van meta gegevens op het bericht wordt uitgevoerd**.
+   ![Handmatige configuratie van een aanmelding op basis van een wachtwoord](./media/configure-password-single-sign-on/password-configure-sign-on.png)
+3. Selecteer **Aanmeldingsvelden vastleggen.** Er wordt een pagina met de status van de opname geopend op een nieuw tabblad, waarop wordt weergegeven dat het vastleggen van **metagegevens van het bericht wordt uitgevoerd.**
 
-4. Als het selectie vakje ' **mijn apps vereist** ' wordt weer gegeven op een nieuw tabblad, selecteert u **nu installeren** om de extensie browser voor **beveiligde aanmelding van mijn apps** te installeren. (Voor de browser extensie is micro soft Edge, Chrome of Firefox vereist.) Vervolgens installeert, start en activeert u de extensie en vernieuwt u de pagina vastleg status.
+4. Als het **Mijn apps extensie** vereist wordt weergegeven op een  nieuw tabblad, selecteert u Nu installeren om de browserextensie Mijn apps **beveiligde aanmeldingsextensie** te installeren. (Voor de browserextensie Microsoft Edge, Chrome of Firefox vereist.) Vervolgens installeert, start en inschakelen van de extensie en vernieuwt u de pagina Status vastleggen.
 
-   De browser uitbreiding opent vervolgens een ander tabblad met de ingevoerde URL.
-5. Ga op het tabblad met de ingevoerde URL naar het aanmeldings proces. Vul de velden gebruikers naam en wacht woord in en probeer u aan te melden. (U hoeft het juiste wacht woord niet op te geven.)
+   De browserextensie opent vervolgens een ander tabblad met de ingevoerde URL.
+5. Ga op het tabblad met de ingevoerde URL door het aanmeldingsproces. Vul de velden gebruikersnaam en wachtwoord in en probeer u aan te melden. (U hoeft niet het juiste wachtwoord op te geven.)
 
-   U wordt gevraagd om de vastgelegde aanmeldings velden op te slaan.
-6. Selecteer **OK**. De browser uitbreiding werkt de pagina vastleg status bij met de **meta gegevens van het bericht voor de toepassing**. Het tabblad browser wordt gesloten.
+   U wordt gevraagd de vastgelegde aanmeldingsvelden op te slaan.
+6. Selecteer **OK**. De browserextensie werkt de pagina met de capture-status bij met het bericht **Metagegevens is bijgewerkt voor de toepassing**. Het browsertabblad wordt gesloten.
 
-7. Selecteer op de pagina Azure AD **-aanmelding configureren** de optie **OK, ik kan me aanmelden bij de app**.
+7. Selecteer op de **pagina Azure AD-aanmelding configureren** de optie OK. Ik heb me kunnen aanmelden **bij de app.**
 
 8. Selecteer **OK**.
 

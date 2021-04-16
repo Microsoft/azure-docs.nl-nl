@@ -1,80 +1,80 @@
 ---
-title: Besturings elementen toekennen in het beleid voor voorwaardelijke toegang-Azure Active Directory
-description: Wat zijn besturings elementen verlenen in een beleid voor voorwaardelijke toegang van Azure AD
+title: Besturingselementen verlenen in beleid voor voorwaardelijke toegang - Azure Active Directory
+description: Wat zijn toekenningsbesturingselementen in een beleid voor voorwaardelijke toegang van Azure AD?
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 03/17/2021
+ms.date: 03/29/2021
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d01a750948f8e3c264b9bcffdaad3ae72fa40ac0
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: bce54bb845e3085d654e3980123ef5c8a856fd98
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104579107"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107530194"
 ---
-# <a name="conditional-access-grant"></a>Voorwaardelijke toegang: verlenen
+# <a name="conditional-access-grant"></a>Voorwaardelijke toegang: Verlenen
 
-Binnen een beleid voor voorwaardelijke toegang kan een beheerder gebruik maken van toegangs beheer om toegang tot resources toe te kennen of te blok keren.
+Binnen een beleid voor voorwaardelijke toegang kan een beheerder gebruikmaken van toegangsbesturingselementen om de toegang tot resources te verlenen of te blokkeren.
 
-![Beleid voor voorwaardelijke toegang met een granting Control waarvoor multi-factor Authentication is vereist](./media/concept-conditional-access-grant/conditional-access-grant.png)
+![Beleid voor voorwaardelijke toegang met een besturingselement voor toekenning waarvoor meervoudige verificatie is vereist](./media/concept-conditional-access-grant/conditional-access-grant.png)
 
 ## <a name="block-access"></a>Toegang blokkeren
 
-De blok kering houdt rekening met eventuele toewijzingen en voor komt toegang op basis van de configuratie van het beleid voor voorwaardelijke toegang.
+Met Blokkeren wordt rekening gehouden met toewijzingen en wordt de toegang geblokkeerd op basis van de beleidsconfiguratie voor voorwaardelijke toegang.
 
-Blok is een krachtig besturings element dat moet worden beheerd met de juiste kennis. Beleids regels met blok-instructies kunnen onbedoelde neven effecten hebben. Goed te testen en valideren zijn essentieel voordat u op schaal schakelt. Beheerders moeten hulpprogram ma's zoals de [modus alleen rapport-alleen voorwaardelijke toegang](concept-conditional-access-report-only.md) en [het What if-hulp programma in voorwaardelijke toegang](what-if-tool.md) gebruiken bij het aanbrengen van wijzigingen.
+Blokkeren is een krachtig besturingselement dat moet worden gebruikt met de juiste kennis. Beleid met blokin instructies kan onbedoelde neveneffecten hebben. De juiste tests en validatie zijn essentieel voordat deze op schaal worden inschakelen. Beheerders moeten bij het aanbrengen van wijzigingen [gebruikmaken](concept-conditional-access-report-only.md) van hulpprogramma's zoals de rapportmodus voor voorwaardelijke toegang en het hulpprogramma [What If voorwaardelijke](what-if-tool.md) toegang.
 
 ## <a name="grant-access"></a>Toegang verlenen
 
-Beheerders kunnen ervoor kiezen om een of meer besturings elementen af te dwingen bij het verlenen van toegang. Deze besturings elementen bevatten de volgende opties: 
+Beheerders kunnen ervoor kiezen om een of meer besturingselementen af te dwingen bij het verlenen van toegang. Deze besturingselementen omvatten de volgende opties: 
 
-- [Multi-factor Authentication (Azure AD Multi-Factor Authentication) vereisen](../authentication/concept-mfa-howitworks.md)
+- [Meervoudige verificatie vereisen (Azure AD Multi-Factor Authentication)](../authentication/concept-mfa-howitworks.md)
 - [Vereisen dat het apparaat wordt gemarkeerd als compatibel (Microsoft Intune)](/intune/protect/device-compliance-get-started)
 - [Hybride Azure AD-gekoppeld apparaat vereisen](../devices/concept-azure-ad-join-hybrid.md)
 - [Goedgekeurde client-apps vereisen](app-based-conditional-access.md)
 - [Beleid voor app-beveiliging vereisen](app-protection-based-conditional-access.md)
-- [Wachtwoord wijziging vereisen](#require-password-change)
+- [Wachtwoordwijziging vereisen](#require-password-change)
 
-Wanneer beheerders ervoor kiezen deze opties te combi neren, kunnen ze de volgende methoden kiezen:
+Wanneer beheerders ervoor kiezen om deze opties te combineren, kunnen ze de volgende methoden kiezen:
 
-- Alle geselecteerde besturings elementen vereisen (besturings element **en** besturings element)
-- Een van de geselecteerde besturings elementen vereisen (besturings element **of** besturings element)
+- Alle geselecteerde besturingselementen vereisen **(besturingselement EN** besturingselement)
+- Een van de geselecteerde besturingselementen vereisen **(besturingselement OF)**
 
-Voor voorwaardelijke toegang is standaard alle geselecteerde besturings elementen vereist.
+Voor voorwaardelijke toegang zijn standaard alle geselecteerde besturingselementen vereist.
 
 ### <a name="require-multi-factor-authentication"></a>Multi-Factor Authentication vereisen
 
-Als u dit selectie vakje inschakelt, moeten gebruikers Azure AD-Multi-Factor Authentication uitvoeren. Meer informatie over het implementeren van Azure AD-Multi-Factor Authentication vindt u in het artikel [planning van een Azure AD-multi-factor Authentication implementatie](../authentication/howto-mfa-getstarted.md)in de Cloud.
+Als u dit selectievakje incheckt, moeten gebruikers Azure AD Multi-Factor Authentication uitvoeren. Meer informatie over het implementeren van Azure AD Multi-Factor Authentication vindt u in het artikel [Een cloudgebaseerde Azure AD Multi-Factor Authentication-implementatie plannen.](../authentication/howto-mfa-getstarted.md)
 
-[Windows hello voor bedrijven](/windows/security/identity-protection/hello-for-business/hello-overview) voldoet aan de vereiste voor multi-factor Authentication in beleids regels voor voorwaardelijke toegang. 
+[Windows Hello voor Bedrijven](/windows/security/identity-protection/hello-for-business/hello-overview) voldoet aan de vereiste voor meervoudige verificatie in het beleid voor voorwaardelijke toegang. 
 
 ### <a name="require-device-to-be-marked-as-compliant"></a>Vereisen dat het apparaat moet worden gemarkeerd als compatibel
 
-Organisaties die Microsoft Intune hebben geïmplementeerd, kunnen de informatie gebruiken die wordt geretourneerd door hun apparaten om apparaten te identificeren die aan specifieke nalevings vereisten voldoen. Deze informatie over beleids naleving wordt vanuit intune doorgestuurd naar Azure AD, waarbij voorwaardelijke toegang kan besluiten om toegang tot resources toe te kennen of te blok keren. Zie voor meer informatie over nalevings beleid het artikel [regels instellen op apparaten om toegang tot resources in uw organisatie in te stellen met intune](/intune/protect/device-compliance-get-started).
+Organisaties die een apparaat hebben geïmplementeerd Microsoft Intune de informatie die van hun apparaten wordt geretourneerd, gebruiken om apparaten te identificeren die voldoen aan specifieke nalevingsvereisten. Deze informatie over naleving van het beleid wordt doorgestuurd van Intune naar Azure AD, waar voorwaardelijke toegang beslissingen kan nemen om toegang tot resources te verlenen of te blokkeren. Zie het artikel Set rules on devices to allow access to resources in your organization using Intune (Regels instellen op apparaten om toegang tot resources in uw organisatie toe te staan met [behulp van Intune) voor meer informatie over nalevingsbeleid.](/intune/protect/device-compliance-get-started)
 
-Een apparaat kan worden gemarkeerd als compatibel door intune (voor elk besturings systeem van een apparaat) of door een MDM-systeem van derden voor Windows 10-apparaten. Jamf Pro is het enige ondersteunde MDM-systeem van derden. Meer informatie over integratie vindt u in het artikel, [Integreer Jamf Pro met intune voor naleving](/intune/protect/conditional-access-integrate-jamf).
+Een apparaat kan worden gemarkeerd als compatibel door Intune (voor elk besturingssysteem van het apparaat) of door een MDM-systeem van derden voor Windows 10 apparaten. Jamf Pro is het enige ondersteunde MDM-systeem van derden. Meer informatie over integratie vindt u in het artikel [Jamf Pro integreren met Intune voor naleving.](/intune/protect/conditional-access-integrate-jamf)
 
-Apparaten moeten worden geregistreerd in azure AD voordat ze kunnen worden gemarkeerd als compatibel. Meer informatie over apparaatregistratie vindt u in het artikel, [wat een apparaat-id is](../devices/overview.md).
+Apparaten moeten worden geregistreerd in Azure AD voordat ze als compatibel kunnen worden gemarkeerd. Meer informatie over apparaatregistratie vindt u in het artikel [Wat is een apparaat-id?](../devices/overview.md).
 
 ### <a name="require-hybrid-azure-ad-joined-device"></a>Hybride Azure AD-gekoppeld apparaat vereisen
 
-Organisaties kunnen ervoor kiezen om de apparaat-id te gebruiken als onderdeel van het beleid voor voorwaardelijke toegang. Organisaties kunnen vereisen dat apparaten hybride Azure AD zijn toegevoegd met dit selectie vakje. Zie het artikel [Wat is een apparaat-id?](../devices/overview.md)voor meer informatie over apparaat-id's.
+Organisaties kunnen ervoor kiezen om de apparaat-id te gebruiken als onderdeel van hun beleid voor voorwaardelijke toegang. Organisaties kunnen vereisen dat apparaten zijn samengevoegd met hybride Azure AD met behulp van dit selectievakje. Zie het artikel Wat is een apparaat-id? voor meer informatie over [apparaat-id's.](../devices/overview.md)
 
-Wanneer u de [code van de OAuth-stroom](../develop/v2-oauth2-device-code.md)van het apparaat gebruikt, wordt het beleid voor het toekennen van beheerde apparaten of de status van een apparaat niet ondersteund. Dit komt doordat het apparaat dat de verificatie uitvoert, de apparaats status niet kan verstrekken aan het apparaat dat een code levert en de apparaatstatus in het token is vergrendeld op het apparaat dat de verificatie uitvoert. Gebruik in plaats daarvan het besturings element multi-factor Authentication-toekenning vereisen.
+Wanneer u de [OAuth-stroom met apparaatcode](../develop/v2-oauth2-device-code.md)gebruikt, wordt het vereisen van beheer van beheerde apparaatverlening of een apparaattoestandvoorwaarde niet ondersteund. Dit komt doordat het apparaat dat verificatie voert, de apparaattoestand niet kan verstrekken aan het apparaat dat een code verstrekt en de apparaattoestand in het token is vergrendeld voor het apparaat dat verificatie voert. Gebruik in plaats daarvan Het verlenen van meervoudige verificatie vereisen.
 
 ### <a name="require-approved-client-app"></a>Goedgekeurde client-apps vereisen
 
-Organisaties kunnen vereisen dat een toegangs poging tot de geselecteerde Cloud-apps moet worden uitgevoerd vanuit een goedgekeurde client-app. Deze goedgekeurde client-apps ondersteunen het [intune-beveiligings beleid voor apps](/intune/app-protection-policy) onafhankelijk van een MDM-oplossing (Mobile-Device Management).
+Organisaties kunnen vereisen dat een toegangspoging tot de geselecteerde cloud-apps wordt gedaan vanuit een goedgekeurde client-app. Deze goedgekeurde client-apps ondersteunen [Intune-beveiligingsbeleid](/intune/app-protection-policy) voor apps, onafhankelijk van een MDM-oplossing (Mobile Device Management).
 
-Voor voorwaardelijke toegang moet het apparaat worden geregistreerd in Azure Active Directory waarvoor een Broker-app moet worden gebruikt om gebruik te kunnen maken van deze machtigings controle. De Broker-app kan de Microsoft Authenticator voor iOS of de Microsoft Authenticator of micro soft-bedrijfs portal voor Android-apparaten zijn. Als een Broker-app niet is geïnstalleerd op het apparaat wanneer de gebruiker zich probeert te verifiëren, wordt de gebruiker omgeleid naar de juiste App Store om de vereiste Broker-app te installeren.
+Om gebruik te kunnen maken van dit toekenningsbeheer, vereist voorwaardelijke toegang dat het apparaat wordt geregistreerd in Azure Active Directory waarvoor het gebruik van een broker-app is vereist. De broker-app kan de Microsoft Authenticator voor iOS zijn, of de Microsoft Authenticator of de Microsoft-bedrijfsportal voor Android-apparaten. Als er geen broker-app op het apparaat is geïnstalleerd wanneer de gebruiker probeert te verifiëren, wordt de gebruiker omgeleid naar de juiste App Store om de vereiste broker-app te installeren.
 
-Deze instelling is van toepassing op de volgende iOS-en Android-apps:
+Deze instelling is van toepassing op de volgende iOS- en Android-apps:
 
 - Microsoft Azure Information Protection
 - Microsoft Bookings
@@ -108,28 +108,29 @@ Deze instelling is van toepassing op de volgende iOS-en Android-apps:
 
 **Opmerkingen**
 
-- De goedgekeurde client-apps ondersteunen de functie intune-Mobile Application Management.
-- De vereiste **goedgekeurde client-app vereisen** :
-   - Biedt alleen ondersteuning voor de voor waarde iOS en Android voor Device platform.
-   - Er is een Broker-app vereist om het apparaat te registreren. De Broker-app kan de Microsoft Authenticator voor iOS of de Microsoft Authenticator of micro soft-bedrijfs portal voor Android-apparaten zijn.
-- Voorwaardelijke toegang kan niet worden beschouwd als micro soft Edge in de InPrivate-modus van een goedgekeurde client-app.
-- Azure AD-toepassingsproxy gebruiken om de Power BI mobiele app in te scha kelen om verbinding te maken met on-premises Power BI Report Server wordt niet ondersteund met beleids regels voor voorwaardelijke toegang waarvoor de micro soft Power BI-app als goedgekeurde client-app vereist is.
+- De goedgekeurde client-apps ondersteunen de Intune Mobile Application Management-functie.
+- De **vereiste Goedgekeurde client-app** vereisen:
+   - Ondersteunt alleen de platformvoorwaarde voor iOS en Android voor apparaten.
+   - Er is een broker-app vereist om het apparaat te registreren. De broker-app kan de Microsoft Authenticator voor iOS zijn, of de Microsoft Authenticator of de Microsoft-bedrijfsportal voor Android-apparaten.
+- Voorwaardelijke toegang kan geen Microsoft Edge in de InPrivate-modus een goedgekeurde client-app.
+- Het gebruik van Azure AD toepassingsproxy om de mobiele Power BI-app verbinding te laten maken met on-premises Power BI Report Server wordt niet ondersteund met beleid voor voorwaardelijke toegang waarvoor de Microsoft Power BI-app als goedgekeurde client-app is vereist.
 
-Zie het artikel [How to: goedgekeurde client-apps vereisen voor toegang tot Cloud app met voorwaardelijke toegang](app-based-conditional-access.md) voor configuratie voorbeelden.
+Zie het artikel How to: Require approved client apps for cloud app access with Conditional Access (Goedgekeurde client-apps vereisen voor toegang tot [cloud-apps met voorwaardelijke](app-based-conditional-access.md) toegang) voor configuratievoorbeelden.
 
 ### <a name="require-app-protection-policy"></a>Beleid voor app-beveiliging vereisen
 
-In het beleid voor voorwaardelijke toegang kunt u vereisen dat er een [intune-app-beveiligings beleid](/intune/app-protection-policy) aanwezig is op de client-app voordat toegang beschikbaar is voor de geselecteerde Cloud-apps. 
+In uw beleid voor voorwaardelijke toegang kunt u vereisen dat [er een Intune-beveiligingsbeleid](/intune/app-protection-policy) voor apps aanwezig is op de client-app voordat toegang beschikbaar is voor de geselecteerde cloud-apps. 
 
-Voor voorwaardelijke toegang moet het apparaat worden geregistreerd in Azure Active Directory waarvoor een Broker-app moet worden gebruikt om gebruik te kunnen maken van deze machtigings controle. De broker-app kan de Microsoft-Authenticator voor iOS of de Microsoft-bedrijfsportal voor Android-apparaten zijn. Als een Broker-app niet is geïnstalleerd op het apparaat wanneer de gebruiker zich probeert te verifiëren, wordt de gebruiker omgeleid naar de App Store om de Broker-app te installeren.
+Om gebruik te kunnen maken van dit toekenningsbeheer, vereist voorwaardelijke toegang dat het apparaat wordt geregistreerd in Azure Active Directory waarvoor het gebruik van een broker-app is vereist. De broker-app kan de Microsoft-Authenticator voor iOS of de Microsoft-bedrijfsportal voor Android-apparaten zijn. Als er geen broker-app op het apparaat is geïnstalleerd wanneer de gebruiker probeert te verifiëren, wordt de gebruiker omgeleid naar de App Store om de broker-app te installeren.
 
-Toepassingen moeten de **intune SDK** met **beleids garantie** hebben geïmplementeerd en voldoen aan bepaalde andere vereisten ter ondersteuning van deze instelling. Ontwikkel aars die toepassingen implementeren met de intune SDK kunnen meer informatie vinden in de SDK-documentatie over deze vereisten.
+Toepassingen moeten de **Intune-SDK** met **Beleidsgarantie** implementeren en voldoen aan bepaalde andere vereisten om deze instelling te ondersteunen. Ontwikkelaars die toepassingen met de Intune SDK implementeren, kunnen meer informatie vinden in de SDK-documentatie over deze vereisten.
 
-Voor de ondersteuning van deze instelling zijn de volgende client-apps bevestigd:
+De volgende client-apps zijn bevestigd om deze instelling te ondersteunen:
 
 - Microsoft Cortana
 - Microsoft Edge
 - Microsoft Excel
+- Microsoft-lijsten (iOS)
 - Microsoft Office
 - Microsoft OneDrive
 - Microsoft OneNote
@@ -139,43 +140,43 @@ Voor de ondersteuning van deze instelling zijn de volgende client-apps bevestigd
 - Microsoft PowerPoint
 - Microsoft SharePoint
 - Microsoft Word
-- Meerdere lijnen voor intune
-- 9 e-mail adres & agenda
+- MultiLine voor Intune
+- Nine Mail - E-& Agenda
 
 > [!NOTE]
-> Micro soft teams, micro soft Kaizala, micro soft Skype voor bedrijven en micro soft Visio bieden geen ondersteuning voor de toekenning van het **beveiligings beleid voor apps vereisen** . Als u wilt dat deze apps werken, moet u alleen de toekenning **goedgekeurde apps vereisen** . Het gebruik van de or-component tussen de twee subsidies werkt niet voor deze drie toepassingen.
+> Microsoft Teams, Microsoft Kaizala, Microsoft Skype voor Bedrijven en Microsoft Visio bieden geen ondersteuning voor de toekenning van **het beveiligingsbeleid voor apps** vereisen. Als u wilt dat deze apps werken, gebruikt u de toekenning **Goedgekeurde apps** vereisen uitsluitend. Het gebruik van de or-component tussen de twee toekenningen werkt niet voor deze drie toepassingen.
 
 **Opmerkingen**
 
-- Apps voor het app-beveiligings beleid ondersteunen de functie intune-Mobile Application Management met beleids beveiliging.
-- De vereisten voor het **beveiligings beleid voor apps vereisen** :
-    - Biedt alleen ondersteuning voor de voor waarde iOS en Android voor Device platform.
-    - Er is een Broker-app vereist om het apparaat te registreren. Op iOS is de Broker-app Microsoft Authenticator en op Android, Intune-bedrijfsportal app.
+- Apps voor app-beveiligingsbeleid ondersteunen de Intune Mobile Application Management-functie met beleidsbeveiliging.
+- De **beleidsvereisten voor app-beveiliging** vereisen:
+    - Ondersteunt alleen de platformvoorwaarde voor iOS en Android voor apparaten.
+    - Er is een broker-app vereist om het apparaat te registreren. In iOS is de broker-app Microsoft Authenticator en op Android is Intune-bedrijfsportal app.
 
-Zie het artikel [procedure: app-beveiligings beleid en een goedgekeurde client-app vereisen voor toegang tot Cloud-apps met voorwaardelijke toegang](app-protection-based-conditional-access.md) voor configuratie voorbeelden.
+Zie het artikel How [to: Require app protection policy and an approved client app access with Conditional Access](app-protection-based-conditional-access.md) (App-beveiligingsbeleid en een goedgekeurde client-app vereisen voor toegang tot cloud-apps met voorwaardelijke toegang) voor configuratievoorbeelden.
 
-### <a name="require-password-change"></a>Wachtwoord wijziging vereisen 
+### <a name="require-password-change"></a>Wachtwoordwijziging vereisen 
 
-Wanneer gebruikers risico wordt gedetecteerd met behulp van de beleids voorwaarden voor gebruikers Risico's, kunnen beheerders ervoor kiezen de gebruiker het wacht woord veilig te wijzigen met behulp van de selfservice voor wachtwoord herstel van Azure AD. Als gebruikers risico wordt gedetecteerd, kunnen gebruikers een self-service voor het opnieuw instellen van een wacht woord op zichzelf herstellen, waarna de risico gebeurtenis voor gebruikers wordt gesloten om onnodig ruis voor beheerders te voor komen. 
+Wanneer er gebruikersrisico's worden gedetecteerd, kunnen beheerders met behulp van de beleidsvoorwaarden voor gebruikersrisico's ervoor kiezen om de gebruiker het wachtwoord veilig te laten wijzigen met behulp van de selfservice voor wachtwoord opnieuw instellen van Azure AD. Als er een gebruikersrisico wordt gedetecteerd, kunnen gebruikers self-service voor wachtwoord opnieuw instellen om zichzelf te herstellen. Hierdoor wordt de gebeurtenis voor gebruikersrisico's gesloten om onnodige ruis voor beheerders te voorkomen. 
 
-Wanneer een gebruiker wordt gevraagd het wacht woord te wijzigen, moeten ze eerst multi-factor Authentication volt ooien. U wilt ervoor zorgen dat al uw gebruikers zijn geregistreerd voor multi-factor Authentication, zodat ze worden voor bereid als er een risico wordt gedetecteerd voor hun account.  
+Wanneer een gebruiker wordt gevraagd om het wachtwoord te wijzigen, moet deze eerst meervoudige verificatie voltooien. U moet ervoor zorgen dat al uw gebruikers zich hebben geregistreerd voor meervoudige verificatie, zodat ze worden voorbereid voor het geval er risico's voor hun account worden gedetecteerd.  
 
 > [!WARNING]
-> Gebruikers moeten eerder zijn geregistreerd voor selfservice voor wachtwoord herstel voordat ze het beleid voor gebruikers Risico's kunnen activeren. 
+> Gebruikers moeten zich eerder hebben geregistreerd voor selfservice voor wachtwoord opnieuw instellen voordat ze het beleid voor gebruikersrisico's activeren. 
 
-Er bestaat een aantal beperkingen wanneer u een beleid configureert met behulp van het besturings element voor wachtwoord wijziging.  
+Er gelden enkele beperkingen wanneer u een beleid configureert met behulp van het besturingselement voor wachtwoordwijziging.  
 
-1. Het beleid moet worden toegewezen aan alle Cloud-apps. Zo voor komt u dat een kwaadwillende persoon een andere app gebruikt om het wacht woord van de gebruiker te wijzigen en het account risico opnieuw in te stellen door zich eenvoudigweg aan te melden bij een andere app. 
-1. Vereisen dat wachtwoord wijziging niet kan worden gebruikt met andere besturings elementen, zoals het vereisen van een compatibel apparaat.  
-1. Het besturings element voor wachtwoord wijziging kan alleen worden gebruikt met de voor waarde voor de gebruikers-en groeps toewijzing, de voor waarde voor de Cloud app-toewijzing (die moet worden ingesteld op alle) en de risico voorwaarden van de gebruiker. 
+1. Het beleid moet worden toegewezen aan 'alle cloud-apps'. Dit voorkomt dat een aanvaller een andere app kan gebruiken om het wachtwoord van de gebruiker te wijzigen en accountrisico's opnieuw in te stellen door zich gewoon aan te melden bij een andere app. 
+1. Wachtwoordwijziging vereisen kan niet worden gebruikt met andere besturingselementen, zoals het vereisen van een compatibel apparaat.  
+1. Het besturingselement voor wachtwoordwijziging kan alleen worden gebruikt met de voorwaarde voor gebruikers- en groepstoewijzing, de toewijzingsvoorwaarde van de cloud-app (die op alle moet worden ingesteld) en de voorwaarden voor gebruikersrisico's. 
 
 ### <a name="terms-of-use"></a>Gebruiksvoorwaarden
 
-Als uw organisatie gebruiks voorwaarden heeft gemaakt, kunnen er aanvullende opties worden weer gegeven onder besturings elementen verlenen. Met deze opties kunnen beheerders bevestigings voorwaarden vereisen als voor waarde voor het openen van de bronnen die door het beleid worden beveiligd. Meer informatie over de gebruiks voorwaarden vindt u in het artikel [Azure Active Directory gebruiks voorwaarden](terms-of-use.md).
+Als uw organisatie gebruiksvoorwaarden heeft gemaakt, zijn er mogelijk extra opties zichtbaar onder besturingselementen voor toekenning. Met deze opties kunnen beheerders bevestiging van de gebruiksvoorwaarden vereisen als voorwaarde voor toegang tot de resources die door het beleid worden beveiligd. Meer informatie over gebruiksvoorwaarden vindt u in het artikel [Azure Active Directory gebruiksvoorwaarden.](terms-of-use.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Voorwaardelijke toegang: sessie besturings elementen](concept-conditional-access-session.md)
+- [Voorwaardelijke toegang: Sessiebesturingselementen](concept-conditional-access-session.md)
 
 - [Algemeen beleid voor voorwaardelijke toegang](concept-conditional-access-policy-common.md)
 

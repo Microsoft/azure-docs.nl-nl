@@ -1,103 +1,106 @@
 ---
 title: Toewijzing gegevensstromen
-description: Een overzicht van het toewijzen van gegevens stromen in Azure Data Factory
+description: Een overzicht van toewijzingsgegevensstromen in Azure Data Factory
 author: kromerm
 ms.author: makromer
-ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: references_regions
 ms.date: 04/11/2021
-ms.openlocfilehash: 53f300adb57eb17e704e7e3323b9829c485bb87a
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: 26d119fb6880f4c539e0064db424699bc5d22f96
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107308979"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107478672"
 ---
-# <a name="mapping-data-flows-in-azure-data-factory"></a>Gegevens stromen toewijzen in Azure Data Factory
+# <a name="mapping-data-flows-in-azure-data-factory"></a>Toewijzingsgegevensstromen in Azure Data Factory
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 ## <a name="what-are-mapping-data-flows"></a>Wat zijn toewijzingsgegevensstromen?
 
-Het toewijzen van gegevens stromen zijn visueel ontworpen gegevens transformaties in Azure Data Factory. Met gegevens stromen kunnen gegevens technici logica voor gegevens transformatie ontwikkelen zonder code te schrijven. De resulterende gegevens stromen worden uitgevoerd als activiteiten binnen Azure Data Factory pijp lijnen die gebruikmaken van uitgeschaalde Apache Spark clusters. Gegevens stroom activiteiten kunnen worden operationeel met bestaande Azure Data Factory plannings-, beheer-, stroom-en bewakings mogelijkheden.
+Toewijzingsgegevensstromen zijn visueel ontworpen gegevenstransformaties in Azure Data Factory. Met gegevensstromen kunnen data engineers logica voor gegevenstransformatie ontwikkelen zonder code te schrijven. De resulterende gegevensstromen worden uitgevoerd als activiteiten binnen Azure Data Factory pijplijnen die gebruikmaken van Apache Spark clusters. Gegevensstroomactiviteiten kunnen worden operationeel gemaakt met behulp Azure Data Factory mogelijkheden voor planning, controle, stroom en bewaking.
 
-Het toewijzen van gegevens stromen biedt een volledig visuele ervaring zonder code ring vereist. Uw gegevens stromen worden uitgevoerd op ADF-beheerde uitvoerings clusters voor uitgeschaalde gegevens verwerking. Azure Data Factory verwerkt alle code omzetting, optimalisatie van paden en de uitvoering van uw gegevens stroom taken.
+Toewijzingsgegevensstromen bieden een volledig visuele ervaring zonder dat u hoeft te coderen. Uw gegevensstromen worden uitgevoerd op ADF-beheerde uitvoeringsclusters voor de verwerking van geschaalde gegevens. Azure Data Factory verwerkt alle codevertalingen, optimalisatie van paden en uitvoering van uw gegevensstroomtaken.
 
 ## <a name="getting-started"></a>Aan de slag
 
-Gegevens stromen worden gemaakt op basis van het deel venster resources, zoals pijp lijnen en gegevens sets. Als u een gegevens stroom wilt maken, selecteert u het plus teken naast **Factory-resources** en selecteert u vervolgens **gegevens stroom**. 
+Gegevensstromen worden gemaakt vanuit het deelvenster factory-resources, zoals pijplijnen en gegevenssets. Als u een gegevensstroom wilt maken, selecteert u het plusteken naast **Factory-resources** en selecteert u **Gegevensstroom**. 
 
-![Nieuwe gegevens stroom](media/data-flow/new-data-flow.png)
+![Nieuwe gegevensstroom](media/data-flow/new-data-flow.png)
 
-Met deze actie gaat u naar het canvas voor gegevens stromen, waar u uw transformatie logica kunt maken. Selecteer **bron toevoegen** om het configureren van de bron transformatie te starten. Zie [bron transformatie](data-flow-source.md)voor meer informatie.
+Met deze actie gaat u naar het canvas van de gegevensstroom, waar u uw transformatielogica kunt maken. Selecteer **Bron toevoegen om** de brontransformatie te configureren. Zie Brontransformatie [voor meer informatie.](data-flow-source.md)
 
-## <a name="authoring-data-flows&quot;></a>Gegevens stromen ontwerpen
+## <a name="authoring-data-flows&quot;></a>Gegevensstromen maken
 
-De toewijzing van gegevens stroom heeft een uniek ontwerp teken dat is ontworpen om het maken van transformatie logica eenvoudig te maken. Het canvas voor de gegevens stroom is onderverdeeld in drie delen: de bovenste balk, de grafiek en het configuratie paneel. 
+Toewijzingsgegevensstroom heeft een uniek ontwerpvas dat is ontworpen om het bouwen van transformatielogica eenvoudig te maken. Het canvas van de gegevensstroom is gescheiden in drie delen: de bovenste balk, de grafiek en het configuratiepaneel. 
 
-![Scherm afbeelding toont het canvas gegevensstroom met de bovenste balk, het diagram en het configuratie venster met het label.](media/data-flow/canvas-1.png &quot;Canvas")
+![Schermopname van het canvas van de gegevensstroom met de bovenste balk, grafiek en configuratiepaneel gelabeld.](media/data-flow/canvas-1.png &quot;Canvas")
 
 ### <a name="graph"></a>Graph
 
-In de grafiek wordt de transformatie stroom weer gegeven. De afkomst van de bron gegevens worden weer gegeven terwijl deze in een of meer sinks worden stromen. Selecteer **bron toevoegen** om een nieuwe bron toe te voegen. Als u een nieuwe trans formatie wilt toevoegen, selecteert u het plus teken aan de rechter benedenhoek van een bestaande trans formatie. Meer informatie over [het beheren van de gegevens stroom grafiek](concepts-data-flow-manage-graph.md).
+In de grafiek wordt de transformatiestroom weergegeven. Het toont de herkomst van brongegevens wanneer deze naar een of meer sinks stromen. Als u een nieuwe bron wilt toevoegen, selecteert **u Bron toevoegen.** Als u een nieuwe transformatie wilt toevoegen, selecteert u het plusteken rechts onder aan een bestaande transformatie. Meer informatie over het beheren [van de gegevensstroomgrafiek](concepts-data-flow-manage-graph.md).
 
-![Scherm afbeelding toont het grafiek gedeelte van het canvas met een zoekvak.](media/data-flow/canvas-2.png)
+![Schermopname van het graafgedeelte van het canvas met een zoektekstvak.](media/data-flow/canvas-2.png)
 
-### <a name="configuration-panel"></a>Configuratie paneel
+### <a name="configuration-panel"></a>Configuratiepaneel
 
-In het configuratie scherm worden de instellingen weer gegeven die specifiek zijn voor de momenteel geselecteerde trans formatie. Als er geen trans formatie is geselecteerd, wordt de gegevens stroom weer gegeven. In de algehele configuratie van de gegevens stroom kunt u para meters toevoegen via het tabblad **para meters** . Zie [Data flow-para meters toewijzen](parameters-data-flow.md)voor meer informatie.
+In het configuratiepaneel worden de instellingen weergegeven die specifiek zijn voor de geselecteerde transformatie. Als er geen transformatie is geselecteerd, wordt de gegevensstroom weer geven. In de algehele configuratie van de gegevensstroom kunt u parameters toevoegen via het **tabblad Parameters.** Zie Parameters voor toewijzingsgegevensstromen [voor meer informatie.](parameters-data-flow.md)
 
-Elke trans formatie bevat ten minste vier configuratie tabbladen.
+Elke transformatie bevat ten minste vier configuratietabbladen.
 
-#### <a name="transformation-settings"></a>Instellingen voor trans formatie
+#### <a name="transformation-settings"></a>Transformatie-instellingen
 
-Het eerste tabblad in het configuratie venster van elke trans formatie bevat de instellingen die specifiek zijn voor die trans formatie. Zie de documentatie pagina van die trans formatie voor meer informatie.
+Het eerste tabblad in het configuratiedeelvenster van elke transformatie bevat de instellingen die specifiek zijn voor die transformatie. Zie de documentatiepagina van de transformatie voor meer informatie.
 
-![Tabblad Bron instellingen](media/data-flow/source1.png "Tabblad Bron instellingen")
+![Tabblad Broninstellingen](media/data-flow/source1.png "Tabblad Broninstellingen")
 
 #### <a name="optimize"></a>Optimaliseren
 
-Het tabblad **Optimize** bevat instellingen voor het configureren van partitie schema's. Voor meer informatie over hoe u uw gegevens stromen optimaliseert, raadpleegt u de [richt lijnen voor het toewijzen van gegevens stromen](concepts-data-flow-performance.md).
+Het **tabblad Optimaliseren** bevat instellingen voor het configureren van partitioneringsschema's. Zie de prestatiehandleiding voor toewijzingsgegevensstromen voor meer informatie over het optimaliseren [van uw gegevensstromen.](concepts-data-flow-performance.md)
 
-![Scherm afbeelding toont het tabblad Optimize, inclusief partitie optie, partitie type en aantal partities.](media/data-flow/optimize.png)
+![Schermopname van het tabblad Optimaliseren, met de optie Partitie, Partitietype en Aantal partities.](media/data-flow/optimize.png)
 
 #### <a name="inspect&quot;></a>Inspecteren
 
-Het tabblad **controleren** bevat een weer gave van de meta gegevens van de gegevensstroom die u transformeert. U kunt kolom aantallen zien, de kolommen gewijzigd, de kolommen die zijn toegevoegd, de gegevens typen, de kolom volgorde en kolom verwijzingen. **Inspecteer** is een alleen-lezen weer gave van uw meta gegevens. U hoeft de foutopsporingsmodus niet in te scha kelen om meta gegevens in het deel venster **controleren** weer te geven.
+Het **tabblad** Inspecteren biedt een weergave van de metagegevens van de gegevensstroom die u transformeert. U ziet het aantal kolommen, de gewijzigde kolommen, de toegevoegde kolommen, gegevenstypen, de kolomorder en kolomverwijzingen. **Inspecteren** is een alleen-lezen weergave van uw metagegevens. U hoeft de foutopsporingsmodus niet in te schakelen om metagegevens te zien in het **deelvenster** Inspecteren.
 
 ![Inspecteren](media/data-flow/inspect1.png &quot;Inspecteren")
 
-Wanneer u de vorm van uw gegevens via trans formaties wijzigt, worden de wijzigingen in de meta gegevens in het deel venster **controleren** weer gegeven. Als er geen gedefinieerd schema is in uw bron transformatie, worden de meta gegevens niet weer gegeven in het deel venster **controleren** . Het ontbreken van meta gegevens is gebruikelijk in schema-drift-scenario's.
+Wanneer u de vorm van uw gegevens wijzigt via transformaties, ziet u de stroom voor metagegevenswijzigingen in het **deelvenster** Inspecteren. Als uw brontransformatie geen gedefinieerd schema bevat, zijn metagegevens niet zichtbaar in het **deelvenster** Inspecteren. Gebrek aan metagegevens is gebruikelijk in scenario's met schemadrift.
 
 #### <a name="data-preview"></a>Voorbeeld van gegevens
 
-Als de foutopsporingsmodus is ingeschakeld, biedt het tabblad **voor beeld van gegevens** een interactieve moment opname van de gegevens bij elke trans formatie. Zie voor meer informatie de [Preview van gegevens in de foutopsporingsmodus](concepts-data-flow-debug-mode.md#data-preview).
+Als de foutopsporingsmodus is geselecteerd, geeft het tabblad **Gegevensvoorbeeld** u een interactieve momentopname van de gegevens bij elke transformatie. Zie Voorbeeld van gegevens in de [foutopsporingsmodus voor meer informatie.](concepts-data-flow-debug-mode.md#data-preview)
 
 ### <a name="top-bar"></a>Bovenste balk
 
-De bovenste balk bevat acties die van invloed zijn op de hele gegevens stroom, zoals opslaan en valideren. U kunt ook de onderliggende JSON-code en het gegevensstroom script van uw transformatie logica weer geven. Meer informatie vindt u in het [script voor gegevens stromen](data-flow-script.md).
+De bovenste balk bevat acties die van invloed zijn op de hele gegevensstroom, zoals opslaan en valideren. U kunt ook het onderliggende JSON-code- en gegevensstroomscript van uw transformatielogica bekijken. Lees meer over het [gegevensstroomscript voor meer informatie.](data-flow-script.md)
 
-## <a name="available-transformations"></a>Beschik bare trans formaties
+## <a name="available-transformations"></a>Beschikbare transformaties
 
-Bekijk het [overzicht van de toewijzings gegevens stroom transformatie](data-flow-transformation-overview.md) voor een lijst met beschik bare trans formaties.
+Bekijk het overzicht [van de transformatie van toewijzingsgegevensstromen](data-flow-transformation-overview.md) voor een lijst met beschikbare transformaties.
 
-## <a name="data-flow-activity"></a>Activiteit gegevens stroom
+## <a name="data-flow-data-types"></a>Gegevenstypen voor gegevensstromen
 
-Het toewijzen van gegevens stromen is operationeel in ADF-pijp lijnen met behulp van de [activiteit gegevens stroom](control-flow-execute-data-flow-activity.md). Alle een gebruiker heeft te maken met de Integration runtime die moet worden gebruikt en waarmee parameter waarden worden door gegeven. Meer informatie vindt u in de [Azure Integration runtime](concepts-integration-runtime.md#azure-integration-runtime).
+matrix binaire booleaanse complexe decimale datum float integer lange kaart korte tekenreeks tijdstempel
+
+## <a name="data-flow-activity"></a>Gegevensstroomactiviteit
+
+Toewijzingsgegevensstromen worden operationeel gemaakt in ADF-pijplijnen met behulp van [de gegevensstroomactiviteit](control-flow-execute-data-flow-activity.md). Het enige wat een gebruiker hoeft te doen, is opgeven welke Integration Runtime moet worden gebruikt en parameterwaarden moeten worden doorgegeven. Meer informatie over de [Azure Integration Runtime](concepts-integration-runtime.md#azure-integration-runtime)vindt u hier.
 
 ## <a name="debug-mode"></a>Foutopsporingsmodus
 
-Met de foutopsporingsmodus kunt u de resultaten van elke transformatie stap interactief bekijken terwijl u uw gegevens stromen bouwt en oplost. De foutopsporingssessie kan worden gebruikt bij het samen stellen van de logica van de gegevens stroom en het uitvoeren van de fout opsporing van pijp lijnen met gegevens stroom activiteiten. Zie de documentatie voor de [foutopsporingsmodus](concepts-data-flow-debug-mode.md)voor meer informatie.
+Met de foutopsporingsmodus kunt u interactief de resultaten van elke transformatiestap bekijken tijdens het bouwen en opsporen van fouten in uw gegevensstromen. De foutopsporingssessie kan zowel in worden gebruikt bij het bouwen van uw gegevensstroomlogica als bij het uitvoeren van pijplijndebug-runs met gegevensstroomactiviteiten. Zie de documentatie voor [foutopsporingsmodus voor meer informatie.](concepts-data-flow-debug-mode.md)
 
-## <a name="monitoring-data-flows"></a>Gegevens stromen bewaken
+## <a name="monitoring-data-flows"></a>Gegevensstromen bewaken
 
-De stroom voor het toewijzen van gegevens kan worden geïntegreerd met bestaande Azure Data Factory bewakings mogelijkheden. Zie [toewijzings gegevens stroom controleren](concepts-data-flow-monitoring.md)voor meer informatie over het bewaken van de uitvoer van de bewaking van gegevens stromen.
+Toewijzingsgegevensstroom kan worden geïntegreerd met bestaande Azure Data Factory bewakingsmogelijkheden. Zie Bewaking van toewijzingsgegevensstromen voor meer informatie over de bewakingsuitvoer [van gegevensstromen.](concepts-data-flow-monitoring.md)
 
-Het Azure Data Factory-team heeft een [hulp programma voor het afstemmen van prestaties](concepts-data-flow-performance.md) gemaakt om u te helpen bij het optimaliseren van de uitvoerings tijd van uw gegevens stromen na het maken van uw bedrijfs logica.
+Het Azure Data Factory team heeft een [](concepts-data-flow-performance.md) handleiding voor het afstemmen van de prestaties gemaakt om u te helpen de uitvoeringstijd van uw gegevensstromen te optimaliseren na het bouwen van uw bedrijfslogica.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over het maken van een [bron transformatie](data-flow-source.md).
-* Meer informatie over het bouwen van uw gegevens stromen in de [foutopsporingsmodus](concepts-data-flow-debug-mode.md).
+* Meer informatie over het maken van [een brontransformatie.](data-flow-source.md)
+* Meer informatie over het bouwen van uw gegevensstromen in [de foutopsporingsmodus.](concepts-data-flow-debug-mode.md)

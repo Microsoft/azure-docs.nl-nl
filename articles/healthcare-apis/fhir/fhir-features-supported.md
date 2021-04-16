@@ -1,68 +1,68 @@
 ---
-title: Ondersteunde FHIR-functies in azure-Azure API voor FHIR
-description: In dit artikel wordt uitgelegd welke functies van de FHIR-specificatie zijn geïmplementeerd in azure API voor FHIR
+title: Ondersteunde FHIR-functies in Azure - Azure API for FHIR
+description: In dit artikel wordt uitgelegd welke functies van de FHIR-specificatie zijn geïmplementeerd in Azure API for FHIR
 services: healthcare-apis
 author: caitlinv39
 ms.service: healthcare-apis
 ms.subservice: fhir
 ms.topic: reference
-ms.date: 1/30/2021
+ms.date: 4/15/2021
 ms.author: cavoeg
-ms.openlocfilehash: 9bd61d65d6d64dac6081d3491deb8a15efc4a45b
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 56e3ba46ffb43aec907d729a2e74cdf6f7a62c32
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105048416"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107530635"
 ---
 # <a name="features"></a>Functies
 
-Azure API voor FHIR biedt een volledig beheerde implementatie van de micro soft FHIR-server voor Azure. De server is een implementatie van de [FHIR](https://hl7.org/fhir) -standaard. In dit document worden de belangrijkste functies van de FHIR-server vermeld.
+Azure API for FHIR biedt een volledig beheerde implementatie van de Microsoft FHIR-server voor Azure. De server is een implementatie van de [FHIR-standaard.](https://hl7.org/fhir) In dit document worden de belangrijkste functies van de FHIR-server vermeld.
 
 ## <a name="fhir-version"></a>FHIR-versie
 
-Nieuwste versie ondersteund: `4.0.1`
+Meest recente ondersteunde versie: `4.0.1`
 
-Eerdere versies die momenteel worden ondersteund, zijn onder andere: `3.0.2`
+Vorige versies die momenteel ook worden ondersteund, zijn onder andere: `3.0.2`
 
 ## <a name="rest-api"></a>REST-API
 
-| API                            | Ondersteund-PaaS | Ondersteund-OSS (SQL) | Ondersteund-OSS (Cosmos DB) | Opmerking                                             |
+| API                            | Ondersteund - PaaS | Ondersteund - OSS (SQL) | Ondersteund - OSS (Cosmos DB) | Opmerking                                             |
 |--------------------------------|-----------|-----------|-----------|-----------------------------------------------------|
 | lezen                           | Ja       | Ja       | Ja       |                                                     |
 | vread                          | Ja       | Ja       | Ja       |                                                     |
 | update                         | Ja       | Ja       | Ja       |                                                     |
-| bijwerken met optimistische vergren deling | Ja       | Ja       | Ja       |                                                     |
-| Update (voorwaardelijk)           | Ja       | Ja       | Ja       |                                                     |
-| verzenden                          | Nee        | Nee        | Nee        |                                                     |
-| delete                         | Ja       | Ja       | Ja       |  Zie de opmerking hieronder.                                   |
+| bijwerken met optimistische vergrendeling | Ja       | Ja       | Ja       |                                                     |
+| update (voorwaardelijk)           | Ja       | Ja       | Ja       |                                                     |
+| Patch                          | Nee        | Nee        | Nee        |                                                     |
+| delete                         | Ja       | Ja       | Ja       |  Zie Opmerking hieronder.                                   |
 | verwijderen (voorwaardelijk)           | Nee        | Nee        | Nee        |                                                     |
 | geschiedenis                        | Ja       | Ja       | Ja       |                                                     |
 | maken                         | Ja       | Ja       | Ja       | Ondersteuning voor zowel POST/PUT                               |
 | maken (voorwaardelijk)           | Ja       | Ja       | Ja       | Probleem [#1382](https://github.com/microsoft/fhir-server/issues/1382) |
-| zoeken                         | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | Zie de sectie zoeken hieronder.                           |
-| geketende zoek opdracht                 | Ja       | Ja       | Gedeeltelijk   | Zie opmerking 2 hieronder.                                   |
-| geketende zoek opdracht omkeren         | Ja       | Ja       | Gedeeltelijk   | Zie opmerking 2 hieronder.                                   |
+| zoeken                         | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | Zie de sectie Zoeken hieronder.                           |
+| zoeken in keten                 | Gedeeltelijk       | Ja       | Gedeeltelijk   | Zie opmerking 2 hieronder.                                   |
+| reverse chained zoeken         | Gedeeltelijk       | Ja       | Gedeeltelijk   | Zie opmerking 2 hieronder.                                   |
 | mogelijkheden                   | Ja       | Ja       | Ja       |                                                     |
 | batch                          | Ja       | Ja       | Ja       |                                                     |
-| trans actie                    | Nee        | Ja       | Nee        |                                                     |
-| haalt                         | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | `self` en `next` worden ondersteund                     |
-| schakels                 | Nee        | Nee        | Nee        |                                                     |
+| Transactie                    | Nee        | Ja       | Nee        |                                                     |
+| Paging                         | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | `self` en `next` worden ondersteund                     |
+| Tussenpersonen                 | Nee        | Nee        | Nee        |                                                     |
 
 > [!Note]
-> Verwijderd door de FHIR spec vereist dat na het verwijderen van de volgende niet-versie specifieke Lees bewerkingen van een resource een 410 HTTP-status code retourneert en de resource niet meer kan worden gevonden via zoeken. Met de Azure-API voor FHIR kunt u ook de resource volledig verwijderen (inclusief alle geschiedenis). Als u de resource volledig wilt verwijderen, kunt u een parameter instelling door geven `hardDelete` aan True ( `DELETE {server}/{resource}/{id}?hardDelete=true` ). Als u deze para meter niet doorgeeft of instelt `hardDelete` op False, zullen de historische versies van de resource nog steeds beschikbaar zijn.
+> Verwijderen gedefinieerd door de FHIR-specificatie vereist dat na het verwijderen, latere niet-versiespecifieke lees lezen van een resource een 410 HTTP-statuscode retourneert en de resource niet meer wordt gevonden via zoeken. Met Azure API for FHIR kunt u de resource ook volledig verwijderen (inclusief alle geschiedenis). Als u de resource volledig wilt verwijderen, kunt u een parameterinstellingen doorgeven `hardDelete` aan true ( `DELETE {server}/{resource}/{id}?hardDelete=true` ). Als u deze parameter niet doorgeeft of is ingesteld op false, zijn de historische versies van `hardDelete` de resource nog steeds beschikbaar.
 
 
  **Opmerking 2**
-* Hiermee wordt MVP-ondersteuning toegevoegd voor geketende en omgekeerde FHIR-Zoek opdrachten in CosmosDB. 
+* Voegt MVP-ondersteuning toe voor Chained en Reverse Chained FHIR Search in CosmosDB. 
 
-  In de Azure-API voor FHIR en de open-source FHIR-server die wordt ondersteund door Cosmos, is de geketende zoek opdracht en de zoek opdracht omgekeerde keten een MVP-implementatie. Voor het uitvoeren van een geketende zoek opdracht op Cosmos DB, wordt in de implementatie de zoek expressie door lopen en worden er subquery's beschreven om de overeenkomende resources op te lossen. Dit gebeurt voor elk niveau van de expressie. Als een query meer dan 100 resultaten retourneert, wordt er een fout gegenereerd. Standaard bevindt de geketende zoek opdracht zich achter een functie vlag. Gebruik de koptekst om de geketende zoek opdracht te gebruiken in Cosmos DB `x-ms-enable-chained-search: true` . Zie [PR 1695](https://github.com/microsoft/fhir-server/pull/1695)voor meer informatie.
+  In de Azure API for FHIR en de open-source FHIR-server die wordt geback-by door Cosmos, is de geketende zoekopdracht en omgekeerde zoekopdracht een MVP-implementatie. Als u een ketenzoekactie wilt uitvoeren op Cosmos DB, wordt de zoekexpressie door de implementatie geseed en worden subquery's uitgevoerd om de overeenkomende resources op te lossen. Dit wordt gedaan voor elk niveau van de expressie. Als een query meer dan 100 resultaten retourneert, wordt er een foutmelding weergegeven. Ketenzoekactie wordt standaard achter een functievlag weergegeven. Als u de ketenzoekactie wilt gebruiken op Cosmos DB, gebruikt u de header `x-ms-enable-chained-search: true` . Zie PR [1695](https://github.com/microsoft/fhir-server/pull/1695)voor meer informatie.
 
 ## <a name="search"></a>Zoeken
 
-Alle typen zoek parameters worden ondersteund. 
+Alle typen zoekparameters worden ondersteund. 
 
-| Type zoek parameter | Ondersteund-PaaS | Ondersteund-OSS (SQL) | Ondersteund-OSS (Cosmos DB) | Opmerking |
+| Type zoekparameter | Ondersteund - PaaS | Ondersteund - OSS (SQL) | Ondersteund - OSS (Cosmos DB) | Opmerking |
 |-----------------------|-----------|-----------|-----------|---------|
 | Aantal                | Ja       | Ja       | Ja       |         |
 | Datum/datum/tijd         | Ja       | Ja       | Ja       |         |
@@ -72,25 +72,25 @@ Alle typen zoek parameters worden ondersteund.
 | Composite             | Ja       | Ja       | Ja       |         |
 | Aantal              | Ja       | Ja       | Ja       |         |
 | URI                   | Ja       | Ja       | Ja       |         |
-| Specifiek               | Nee        | Nee        | Nee        |         |
+| Speciale               | Nee        | Nee        | Nee        |         |
 
 
-| Para meters             | Ondersteund-PaaS | Ondersteund-OSS (SQL) | Ondersteund-OSS (Cosmos DB) | Opmerking |
+| Modifiers             | Ondersteund - PaaS | Ondersteund - OSS (SQL) | Ondersteund - OSS (Cosmos DB) | Opmerking |
 |-----------------------|-----------|-----------|-----------|---------|
 |`:missing`             | Ja       | Ja       | Ja       |         |
 |`:exact`               | Ja       | Ja       | Ja       |         |
 |`:contains`            | Ja       | Ja       | Ja       |         |
 |`:text`                | Ja       | Ja       | Ja       |         |
-|`:[type]` referentielaag  | Ja       | Ja       | Ja       |         |
+|`:[type]` (naslag)  | Ja       | Ja       | Ja       |         |
 |`:not`                 | Ja       | Ja       | Ja       |         |
-|`:below` URI         | Ja       | Ja       | Ja       |         |
-|`:above` URI         | Nee        | Nee        | Nee        | Probleem [#158](https://github.com/Microsoft/fhir-server/issues/158) |
-|`:in` token          | Nee        | Nee        | Nee        |         |
-|`:below` token       | Nee        | Nee        | Nee        |         |
-|`:above` token       | Nee        | Nee        | Nee        |         |
-|`:not-in` token      | Nee        | Nee        | Nee        |         |
+|`:below` (URI)         | Ja       | Ja       | Ja       |         |
+|`:above` (URI)         | Nee        | Nee        | Nee        | Probleem [#158](https://github.com/Microsoft/fhir-server/issues/158) |
+|`:in` (token)          | Nee        | Nee        | Nee        |         |
+|`:below` (token)       | Nee        | Nee        | Nee        |         |
+|`:above` (token)       | Nee        | Nee        | Nee        |         |
+|`:not-in` (token)      | Nee        | Nee        | Nee        |         |
 
-| Algemene zoek parameter | Ondersteund-PaaS | Ondersteund-OSS (SQL) | Ondersteund-OSS (Cosmos DB) | Opmerking |
+| Algemene zoekparameter | Ondersteund - PaaS | Ondersteund - OSS (SQL) | Ondersteund - OSS (Cosmos DB) | Opmerking |
 |-------------------------| ----------| ----------| ----------|---------|
 | `_id`                   | Ja       | Ja       | Ja       |         |
 | `_lastUpdated`          | Ja       | Ja       | Ja       |         |
@@ -98,19 +98,19 @@ Alle typen zoek parameters worden ondersteund.
 | `_list`                 | Ja       | Ja       | Ja       |         |
 | `_type`                 | Ja       | Ja       | Ja       | Probleem [#1562](https://github.com/microsoft/fhir-server/issues/1562)        |
 | `_security`             | Ja       | Ja       | Ja       |         |
-| `_profile`              | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | Ondersteund in STU3. Als u de Data Base hebt gemaakt **na** 20 februari, 2021, hebt u ook ondersteuning in R4. We zijn bezig om _profile in te scha kelen voor data bases die zijn gemaakt vóór 20 februari, 2021. |
+| `_profile`              | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | Ondersteund in STU3. Als u uw database **hebt** gemaakt na 20 februari 2021, hebt u ook ondersteuning in R4. We werken aan het inschakelen _profile databases die zijn gemaakt vóór 20 februari 2021. |
 | `_text`                 | Nee        | Nee        | Nee        |         |
 | `_content`              | Nee        | Nee        | Nee        |         |
 | `_has`                  | Nee        | Nee        | Nee        |         |
 | `_query`                | Nee        | Nee        | Nee        |         |
 | `_filter`               | Nee        | Nee        | Nee        |         |
 
-| Zoek resultaat parameters | Ondersteund-PaaS | Ondersteund-OSS (SQL) | Ondersteund-OSS (Cosmos DB) | Opmerking |
+| Zoekresultaatparameters | Ondersteund - PaaS | Ondersteund - OSS (SQL) | Ondersteund - OSS (Cosmos DB) | Opmerking |
 |-------------------------|-----------|-----------|-----------|---------|
 | `_elements`             | Ja       | Ja       | Ja       | Probleem [#1256](https://github.com/microsoft/fhir-server/issues/1256)        |
-| `_count`                | Ja       | Ja       | Ja       | `_count` is beperkt tot 1000 tekens. Als deze waarde hoger is dan 1000, wordt alleen 1000 geretourneerd en wordt er een waarschuwing in de bundel geretourneerd. |
-| `_include`              | Ja       | Ja       | Ja       |Opgenomen items zijn beperkt tot 100. Include op PaaS en OSS on Cosmos DB omvat niet: ITER-ondersteuning.|
-| `_revinclude`           | Ja       | Ja       | Ja       | Opgenomen items zijn beperkt tot 100. Include op PaaS en OSS on Cosmos DB [omvat niet: ITER-ondersteuning](https://github.com/microsoft/fhir-server/issues/1313). Probleem [#1319](https://github.com/microsoft/fhir-server/issues/1319)|
+| `_count`                | Ja       | Ja       | Ja       | `_count` is beperkt tot 1000 tekens. Als deze is ingesteld op hoger dan 1000, worden er slechts 1000 geretourneerd en wordt er een waarschuwing geretourneerd in de bundel. |
+| `_include`              | Ja       | Ja       | Ja       |Inbegrepen items zijn beperkt tot 100. Opnemen in PaaS en OSS op Cosmos DB bevat geen :iterate-ondersteuning.|
+| `_revinclude`           | Ja       | Ja       | Ja       | Inbegrepen items zijn beperkt tot 100. Opnemen in PaaS en OSS op Cosmos DB bevat [geen :iterate-ondersteuning.](https://github.com/microsoft/fhir-server/issues/1313) Probleem [#1319](https://github.com/microsoft/fhir-server/issues/1319)|
 | `_summary`              | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | `_summary=count` wordt ondersteund |
 | `_total`                | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | `_total=none` en `_total=accurate`      |
 | `_sort`                 | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   |   `_sort=_lastUpdated` wordt ondersteund       |
@@ -120,56 +120,56 @@ Alle typen zoek parameters worden ondersteund.
 
 ## <a name="extended-operations"></a>Uitgebreide bewerkingen
 
-Alle bewerkingen die worden ondersteund om de REST-API uit te breiden.
+Alle ondersteunde bewerkingen die de RESTful-API uitbreiden.
 
-| Type zoek parameter | Ondersteund-PaaS | Ondersteund-OSS (SQL) | Ondersteund-OSS (Cosmos DB) | Opmerking |
+| Type zoekparameter | Ondersteund - PaaS | Ondersteund - OSS (SQL) | Ondersteund - OSS (Cosmos DB) | Opmerking |
 |------------------------|-----------|-----------|-----------|---------|
-| $export (heel systeem) | Ja       | Ja       | Ja       |         |
+| $export (hele systeem) | Ja       | Ja       | Ja       |         |
 | Patiënt/$export        | Ja       | Ja       | Ja       |         |
 | Groep/$export          | Ja       | Ja       | Ja       |         |
-| $convert-gegevens          | Ja       | Ja       | Ja       |         |
+| $convert-data          | Ja       | Ja       | Ja       |         |
 
 
 ## <a name="persistence"></a>Persistentie
 
-De micro soft FHIR-server heeft een pluggable persistentie module (Zie [`Microsoft.Health.Fhir.Core.Features.Persistence`](https://github.com/Microsoft/fhir-server/tree/master/src/Microsoft.Health.Fhir.Core/Features/Persistence) ).
+De Microsoft FHIR-server heeft een pluggable persistentiemodule (zie [`Microsoft.Health.Fhir.Core.Features.Persistence`](https://github.com/Microsoft/fhir-server/tree/master/src/Microsoft.Health.Fhir.Core/Features/Persistence) ).
 
-Momenteel bevat de open-source code van de FHIR-server een implementatie voor [Azure Cosmos DB](../../cosmos-db/index-overview.md) en [SQL database](https://azure.microsoft.com/services/sql-database/).
+De opensource-code van de FHIR-server bevat momenteel een implementatie [voor Azure Cosmos DB](../../cosmos-db/index-overview.md) en [SQL Database.](https://azure.microsoft.com/services/sql-database/)
 
-Cosmos DB is een wereld wijd gedistribueerde multi-model-data base (SQL API, MongoDB API, etc.). Het ondersteunt verschillende [consistentie niveaus](../../cosmos-db/consistency-levels.md). Met de standaard implementatie sjabloon wordt de FHIR-server met `Strong` consistentie geconfigureerd, maar het consistentie beleid kan worden gewijzigd (over het algemeen ongeforceerd) op een aanvraag op basis van de aanvraag `x-ms-consistency-level` header.
+Cosmos DB is een wereldwijd gedistribueerde database met meerdere modellen (SQL API, MongoDB-API, enzovoort). Het ondersteunt verschillende [consistentieniveaus.](../../cosmos-db/consistency-levels.md) De standaardimplementatiesjabloon configureert de FHIR-server met consistentie, maar het consistentiebeleid kan worden gewijzigd (over het algemeen versoepeld) op aanvraag met behulp van de `Strong` `x-ms-consistency-level` aanvraagheader.
 
 ## <a name="role-based-access-control"></a>Op rollen gebaseerd toegangsbeheer
 
-De FHIR-server gebruikt [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) voor toegangs beheer. Met name op rollen gebaseerd toegangs beheer (RBAC) wordt afgedwongen, als de `FhirServer:Security:Enabled` configuratie parameter is ingesteld op `true` en voor alle aanvragen (behalve `/metadata` ) naar de FHIR-server moet de `Authorization` aanvraag header zijn ingesteld op `Bearer <TOKEN>` . Het token moet een of meer rollen bevatten zoals gedefinieerd in de `roles` claim. Een aanvraag wordt toegestaan als het token een rol bevat waarmee de opgegeven actie kan worden uitgevoerd voor de opgegeven bron.
+De FHIR-server gebruikt [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) voor toegangsbeheer. Met name op rollen gebaseerd toegangsbeheer (RBAC) wordt afgedwongen als de configuratieparameter is ingesteld op en voor alle aanvragen (met uitzondering van ) op de `FhirServer:Security:Enabled` `true` `/metadata` FHIR-server de aanvraagheader moet zijn `Authorization` ingesteld op `Bearer <TOKEN>` . Het token moet een of meer rollen bevatten zoals gedefinieerd in de `roles` claim. Een aanvraag wordt toegestaan als het token een rol bevat waarmee de opgegeven actie voor de opgegeven resource is toegestaan.
 
-Op dit moment worden de toegestane acties voor een bepaalde rol *globaal* toegepast op de API.
+Op dit moment worden de toegestane acties voor een bepaalde rol *globaal toegepast* op de API.
 
 ## <a name="service-limits"></a>Servicelimieten
 
-* [**Aanvraag eenheden (RUs)**](../../cosmos-db/concepts-limits.md) : u kunt maxi maal 10.000 RUs configureren in de portal voor Azure API voor FHIR. U hebt mini maal 400 RUs of 10 RUs/GB nodig, afhankelijk van wat groter is. Als u meer dan 10.000 RUs nodig hebt, kunt u een ondersteunings ticket plaatsen om dit te verg root. De Maxi maal beschik bare waarde is 1.000.000.
+* [**Aanvraageenheden (AANVRAAGeenheden)**](../../cosmos-db/concepts-limits.md) : u kunt maximaal 10.000 AANVRAAGeenheden in de portal configureren voor Azure API for FHIR. U hebt minimaal 400 RUs of 40 RUs/GB nodig, wat groter is. Als u meer dan 10.000 RUs nodig hebt, kunt u een ondersteuningsticket maken om dit aantal te laten toenemen. Het maximum aantal beschikbare is 1.000.000.
 
-* **Gelijktijdige verbindingen** en **instanties** : standaard hebt u vijf gelijktijdige verbindingen op twee exemplaren in het cluster (voor een totaal van 10 gelijktijdige aanvragen). Als u denkt dat u meer gelijktijdige aanvragen nodig hebt, opent u een ondersteunings ticket met informatie over uw behoeften.
+* **Gelijktijdige verbindingen** **en exemplaren:** standaard hebt u vijf gelijktijdige verbindingen op twee exemplaren in het cluster (voor een totaal van 10 gelijktijdige aanvragen). Als u denkt dat u meer gelijktijdige aanvragen nodig hebt, opent u een ondersteuningsticket met informatie over uw behoeften.
 
-* **Bundel grootte** : elke bundel is beperkt tot 500 items.
+* **Bundelgrootte:** elke bundel is beperkt tot 500 items.
 
-* **Gegevens grootte** : gegevens/documenten moeten iets kleiner zijn dan 2 MB.
+* **Gegevensgrootte:** gegevens/documenten moeten elk iets kleiner zijn dan 2 MB.
 
-## <a name="performance-expectations"></a>Prestatie verwachtingen
+## <a name="performance-expectations"></a>Verwachtingen voor prestaties
 
-De prestaties van het systeem zijn afhankelijk van het aantal RUs, gelijktijdige verbindingen en het type bewerkingen dat u uitvoert (put, post, enz.). Hieronder vindt u enkele algemene bereiken van wat u kunt verwachten op basis van het geconfigureerde RUs. Over het algemeen schaalt prestaties lineair met een toename van RUs:
+De prestaties van het systeem zijn afhankelijk van het aantal AANVRAGEN, gelijktijdige verbindingen en het type bewerkingen dat u wilt uitvoeren (Put, Post, enzovoort). Hieronder vindt u enkele algemene reeksen van wat u kunt verwachten op basis van geconfigureerde RUs. Over het algemeen worden de prestaties lineair geschaald met een toename van het aantal RUs:
 
-| # RUs | Bronnen per seconde |    Maximale opslag ruimte (GB) *    |
+| Aantal RUs | Resources per seconde |    Maximale opslag (GB)*    |
 |----------|---------------|--------|                 
-| 400      | 5-10          |     40   |
-| 1000    | 100-150       |      100  |
-| 10.000   | 225-400       |      1000  |
-| 100.000  | 2500-4000   |      10.000  |
+| 400      | 5-10          |     10   |
+| 1000    | 100-150       |      25  |
+| 10.000   | 225-400       |      250  |
+| 100.000  | 2,500-4,000   |      2500  |
 
-Opmerking: per Cosmos DB vereiste is er een minimale door Voer van 10 RU/s per GB opslag ruimte vereist. Bekijk [Cosmos DB Service quota's](../../cosmos-db/concepts-limits.md)voor meer informatie.
+Opmerking: Per Cosmos DB is er een minimumdoorvoer van 40 RU/s per GB aan opslag vereist. 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u meer informatie over de ondersteunde FHIR-functies in azure API voor FHIR. Implementeer vervolgens de Azure-API voor FHIR.
+In dit artikel hebt u meer gelezen over de ondersteunde FHIR-functies in Azure API for FHIR. Implementeer vervolgens de Azure API for FHIR.
  
 >[!div class="nextstepaction"]
 >[De Azure-API voor FHIR implementeren](fhir-paas-portal-quickstart.md)

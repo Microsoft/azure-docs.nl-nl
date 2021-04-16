@@ -36,21 +36,21 @@ conceptualContent:
           text: De Read-API aanroepen
           url: Vision-API-How-to-Topics/call-read-api.md
         - itemType: deploy
-          text: De container OCR lezen gebruiken
+          text: De Read OCR-container gebruiken
           url: computer-vision-how-to-install-containers.md
         - itemType: reference
-          text: Naslag informatie over OCR API
-          url: 'https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-3/operations/5d986960601faab4bf452005'
+          text: NAslaginformatie over de OCR-API
+          url: 'https://centraluseuap.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2/operations/5d986960601faab4bf452005'
       footerLink:
         text: Meer
         url: index-ocr.yml
     - title: Analyse van de afbeelding
       links:
         - itemType: overview
-          text: Over afbeeldings analyse
+          text: Over afbeeldingsanalyse
           url: overview-image-analysis.md
         - itemType: quickstart
-          text: Aan de slag met afbeeldings analyse
+          text: Aan de slag met afbeeldingsanalyse
           url: quickstarts-sdk/image-analysis-client-library.md
         - itemType: concept
           text: Inhoudstags
@@ -65,7 +65,7 @@ conceptualContent:
           text: Metagegevens genereren voor afbeeldingen
           url: Tutorials/storage-lab-tutorial.md
         - itemType: reference
-          text: API-referentie voor Image analyse
+          text: Naslaginformatie over de Api voor afbeeldingsanalyse
           url: 'https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-3/operations/56f91f2e778daf14a499f21b'
       footerLink:
         text: Meer
@@ -79,7 +79,7 @@ conceptualContent:
           text: Aan de slag met ruimtelijke analyse
           url: spatial-analysis-container.md
         - itemType: how-to-guide
-          text: Ruimtelijke-analyse bewerkingen configureren
+          text: Bewerkingen voor ruimtelijke analyse configureren
           url: spatial-analysis-operations.md
         - itemType: concept
           text: Zone- en regelplaatsing
@@ -95,7 +95,7 @@ conceptualContent:
         url: index-spatial-analysis.yml
 tools:
   title: Software Development Kits (SDK's)
-  summary: Ga aan de slag met de Computer Vision SDK in uw favoriete programmeer taal.
+  summary: Ga aan de slag met Computer Vision SDK in uw favoriete programmeertaal.
   items:
     - title: C#
       imageSrc: media/index/logo_Csharp.svg

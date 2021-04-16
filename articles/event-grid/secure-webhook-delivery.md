@@ -1,32 +1,35 @@
 ---
-title: Secure webhook-levering met Azure AD in Azure Event Grid
-description: Hierin wordt beschreven hoe u gebeurtenissen kunt leveren aan HTTPS-eind punten die worden beveiligd door Azure Active Directory met behulp van Azure Event Grid
+title: Beveiligde webhooklevering met Azure AD in Azure Event Grid
+description: Beschrijft hoe u gebeurtenissen levert aan HTTPS-eindpunten die worden beveiligd door Azure Active Directory met Azure Event Grid
 ms.topic: how-to
-ms.date: 03/20/2021
-ms.openlocfilehash: 1298910db78ba468dd9744e84ee4629161e0a776
-ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
+ms.date: 04/13/2021
+ms.openlocfilehash: 4238087d977fa1102d1dd31d0cc9080d6308c175
+ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106076033"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107389686"
 ---
 # <a name="publish-events-to-azure-active-directory-protected-endpoints"></a>Gebeurtenissen publiceren naar beveiligde Azure Active Directory-eindpunten
-In dit artikel wordt beschreven hoe u Azure Active Directory (Azure AD) gebruikt om de verbinding tussen uw **gebeurtenis abonnement** en het **eind punt van de webhook** te beveiligen. Zie [overzicht van micro soft Identity platform (v 2.0)](../active-directory/develop/v2-overview.md)voor een overzicht van Azure AD-toepassingen en-service-principals.
+In dit artikel wordt beschreven hoe u Azure Active Directory (Azure AD) gebruikt om de verbinding tussen uw gebeurtenisabonnement en uw **webhook-eindpunt te beveiligen.**  Zie Overzicht van Microsoft [Identity Platform (v2.0)](../active-directory/develop/v2-overview.md)voor een overzicht van Azure AD-toepassingen en service-principals.
 
-In dit artikel wordt gebruikgemaakt van de Azure Portal voor demonstratie, maar de functie kan ook worden ingeschakeld met CLI, Power shell of de Sdk's.
+In dit artikel wordt Azure Portal demonstratie gebruikt, maar de functie kan ook worden ingeschakeld met cli, PowerShell of de SDK's.
+
+> [!IMPORTANT]
+> Er is een extra toegangscontrole geïntroduceerd als onderdeel van het maken of bijwerken van een gebeurtenisabonnement op 30 maart 2021 om een beveiligingsprobleem op te pakken. De service-principal van de abonneeclient moet een eigenaar zijn of een rol hebben toegewezen aan de service-principal van de doeltoepassing. Configureer uw AAD-toepassing opnieuw aan de hand van de onderstaande nieuwe instructies.
 
 
 ## <a name="create-an-azure-ad-application"></a>Een Azure AD-toepassing maken
-Registreer uw webhook bij Azure AD door een Azure AD-toepassing voor uw beveiligde eind punt te maken. Zie [scenario: beveiligde web-API](https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-overview). Configureer uw beveiligde API om te worden aangeroepen door een daemon-app.
+Registreer uw webhook bij Azure AD door een Azure AD-toepassing te maken voor uw beveiligde eindpunt. Zie [Scenario: Beveiligde web-API.](https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-overview) Configureer uw beveiligde API om te worden aangeroepen door een daemon-app.
     
-## <a name="enable-event-grid-to-use-your-azure-ad-application"></a>Event Grid inschakelen voor het gebruik van uw Azure AD-toepassing
-In deze sectie wordt beschreven hoe u Event Grid kunt inschakelen om uw Azure AD-toepassing te gebruiken. 
+## <a name="enable-event-grid-to-use-your-azure-ad-application"></a>Uw Event Grid Azure AD-toepassing gebruiken inschakelen
+In deze sectie ziet u hoe u Event Grid Azure AD-toepassing kunt gebruiken. 
 
 > [!NOTE]
-> U moet lid zijn van de [rol Azure AD-toepassings beheerder](../active-directory/roles/permissions-reference.md#all-roles) om dit script uit te voeren.
+> U moet lid zijn van de rol [Azure AD-toepassingsbeheerder om](../active-directory/roles/permissions-reference.md#all-roles) dit script uit te voeren.
 
-### <a name="connect-to-your-azure-tenant"></a>Verbinding maken met uw Azure-Tenant
-Maak eerst verbinding met uw Azure-Tenant met behulp van de `Connect-AzureAD` opdracht. 
+### <a name="connect-to-your-azure-tenant"></a>Verbinding maken met uw Azure-tenant
+Maak eerst verbinding met uw Azure-tenant met behulp van de `Connect-AzureAD` opdracht . 
 
 ```PowerShell
 $myWebhookAadTenantId = "<Your Webhook's Azure AD tenant id>"
@@ -34,8 +37,8 @@ $myWebhookAadTenantId = "<Your Webhook's Azure AD tenant id>"
 Connect-AzureAD -TenantId $myWebhookAadTenantId
 ```
 
-### <a name="create-microsofteventgrid-service-principal"></a>De Service-Principal micro soft. EventGrid maken
-Voer het volgende script uit om de service-principal te maken voor **micro soft. EventGrid** als deze nog niet bestaat. 
+### <a name="create-microsofteventgrid-service-principal"></a>Microsoft.EventGrid-service-principal maken
+Voer het volgende script uit om de service-principal voor **Microsoft.EventGrid te** maken als deze nog niet bestaat. 
 
 ```PowerShell
 # This is the "Azure Event Grid" Azure Active Directory (AAD) AppId
@@ -56,7 +59,7 @@ else
 ```
 
 ### <a name="create-a-role-for-your-application"></a>Een rol maken voor uw toepassing   
-Voer het volgende script uit om een rol te maken voor uw Azure AD-toepassing. In dit voor beeld is de naam van de rol: **AzureEventGridSecureWebhookSubscriber**. Wijzig het Power shell `$myTenantId` -script voor het gebruik van uw Azure AD-Tenant-id en `$myAzureADApplicationObjectId` met de object-id van uw Azure AD-toepassing
+Voer het volgende script uit om een rol te maken voor uw Azure AD-toepassing. In dit voorbeeld is de naam van de rol: **AzureEventGridSecureWebhookSubscriber.** Wijzig de van het PowerShell-script `$myTenantId` om uw Azure AD-tenant-id en met de `$myAzureADApplicationObjectId` object-id van uw Azure AD-toepassing te gebruiken
 
 ```PowerShell
 # This is your Webhook's Azure AD Application's ObjectId. 
@@ -107,10 +110,13 @@ Write-Host $myAppRoles
 
 ```
 
-### <a name="create-a-role-assignment"></a>Een roltoewijzing maken
-De roltoewijzing moet worden gemaakt in de webhook Azure AD-app voor de AAD-app of de AAD-gebruiker die het gebeurtenis abonnement maakt. Gebruik een van de volgende scripts, afhankelijk van het feit of een AAD-app of AAD-gebruiker het gebeurtenis abonnement maakt.
+### <a name="create-role-assignment-for-the-client-creating-event-subscription"></a>Roltoewijzing maken voor de client die een gebeurtenisabonnement maakt
+De roltoewijzing moet worden gemaakt in de webhook-Azure AD-app voor de AAD-app of AAD-gebruiker die het gebeurtenisabonnement maakt. Gebruik een van de onderstaande scripts, afhankelijk van of een AAD-app of AAD-gebruiker het gebeurtenisabonnement maakt.
 
-#### <a name="option-a-create-a-role-assignment-for-event-subscription-aad-app"></a>Optie A. een roltoewijzing maken voor de AAD-app van het gebeurtenis abonnement 
+> [!IMPORTANT]
+> Er is een extra toegangscontrole geïntroduceerd als onderdeel van het maken of bijwerken van een gebeurtenisabonnement op 30 maart 2021 om een beveiligingsprobleem aan te pakken. De service-principal van de abonneeclient moet een eigenaar zijn of een rol hebben toegewezen aan de service-principal van de doeltoepassing. Configureer uw AAD-toepassing opnieuw volgens de onderstaande nieuwe instructies.
+
+#### <a name="create-role-assignment-for-an-event-subscription-aad-app"></a>Roltoewijzing maken voor een AAD-app voor een gebeurtenisabonnement 
 
 ```powershell
 # This is the app id of the application which will create event subscription. Set to $null if you are not assigning the role to app.
@@ -125,10 +131,11 @@ if ($eventSubscriptionWriterSP -eq $null)
 }
 
 Write-Host "Creating the Azure Ad App Role assignment for application: " $eventSubscriptionWriterAppId
-New-AzureADServiceAppRoleAssignment -Id $myApp.AppRoles[0].Id -ResourceId $myServicePrincipal.ObjectId -ObjectId $eventSubscriptionWriterSP.ObjectId -PrincipalId $eventSubscriptionWriterSP.ObjectId
+$eventGridAppRole = $myApp.AppRoles | Where-Object -Property "DisplayName" -eq -Value $eventGridRoleName
+New-AzureADServiceAppRoleAssignment -Id $eventGridAppRole.Id -ResourceId $myServicePrincipal.ObjectId -ObjectId $eventSubscriptionWriterSP.ObjectId -PrincipalId $eventSubscriptionWriterSP.ObjectId
 ```
 
-#### <a name="option-b-create-a-role-assignment-for-event-subscription-aad-user"></a>Optie B. een roltoewijzing maken voor een AAD-gebruiker van het gebeurtenis abonnement 
+#### <a name="create-role-assignment-for-an-event-subscription-aad-user"></a>Roltoewijzing maken voor een AAD-gebruiker voor een gebeurtenisabonnement 
 
 ```powershell
 # This is the user principal name of the user who will create event subscription. Set to $null if you are not assigning the role to user.
@@ -138,17 +145,19 @@ $myServicePrincipal = Get-AzureADServicePrincipal -Filter ("appId eq '" + $myApp
     
 Write-Host "Creating the Azure Ad App Role assignment for user: " $eventSubscriptionWriterUserPrincipalName
 $eventSubscriptionWriterUser = Get-AzureAdUser -ObjectId $eventSubscriptionWriterUserPrincipalName
-New-AzureADUserAppRoleAssignment -Id $myApp.AppRoles[0].Id -ResourceId $myServicePrincipal.ObjectId -ObjectId $eventSubscriptionWriterUser.ObjectId -PrincipalId $eventSubscriptionWriterUser.ObjectId
+$eventGridAppRole = $myApp.AppRoles | Where-Object -Property "DisplayName" -eq -Value $eventGridRoleName
+New-AzureADUserAppRoleAssignment -Id $eventGridAppRole.Id -ResourceId $myServicePrincipal.ObjectId -ObjectId $eventSubscriptionWriterUser.ObjectId -PrincipalId $eventSubscriptionWriterUser.ObjectId
 ```
 
-### <a name="add-event-grid-service-principal-to-the-role"></a>Event Grid Service-Principal toevoegen aan de rol
-Voer de New-AzureADServiceAppRoleAssignment opdracht uit om Event Grid Service-Principal toe te wijzen aan de rol die u in de vorige stap hebt gemaakt.
+### <a name="create-role-assignment-for-event-grid-service-principal"></a>Roltoewijzing maken voor Event Grid Service-principal
+Voer de New-AzureADServiceAppRoleAssignment uit om een Event Grid toe te wijzen aan de rol die u in de vorige stap hebt gemaakt.
 
 ```powershell
-New-AzureADServiceAppRoleAssignment -Id $myApp.AppRoles[0].Id -ResourceId $myServicePrincipal.ObjectId -ObjectId $eventGridSP.ObjectId -PrincipalId $eventGridSP.ObjectId
+$eventGridAppRole = $myApp.AppRoles | Where-Object -Property "DisplayName" -eq -Value $eventGridRoleName
+New-AzureADServiceAppRoleAssignment -Id $eventGridAppRole.Id -ResourceId $myServicePrincipal.ObjectId -ObjectId -PrincipalId $eventGridSP.ObjectId
 ```
 
-Voer de volgende opdrachten uit om gegevens uit te voeren die u later gaat gebruiken.
+Voer de volgende opdrachten uit om informatie uit te voeren die u later gaat gebruiken.
 
 ```powershell
 Write-Host "My Webhook's Azure AD Tenant Id:  $myWebhookAadTenantId"
@@ -157,25 +166,25 @@ Write-Host "My Webhook's Azure AD Application ObjectId Id$($myApp.ObjectId)"
 ```
 
     
-## <a name="configure-the-event-subscription"></a>Het gebeurtenis abonnement configureren
-Voer de volgende stappen uit bij het maken van een gebeurtenis abonnement:
+## <a name="configure-the-event-subscription"></a>Het gebeurtenisabonnement configureren
+Volg deze stappen bij het maken van een gebeurtenisabonnement:
 
-1. Selecteer het eindpunt type als **webhook**. 
-1. Geef de eindpunt- **URI** op.
+1. Selecteer het eindpunttype web **hook**. 
+1. Geef de **eindpunt-URI op.**
 
-    ![Type webhook voor eind punt selecteren](./media/secure-webhook-delivery/select-webhook.png)
-1. Klik boven aan de pagina **gebeurtenis abonnementen maken** op het tabblad **extra functies** .
-1. Voer op het tabblad **extra functies** de volgende stappen uit:
-    1. Selecteer **Aad-verificatie gebruiken** en configureer de Tenant-id en toepassings-id:
-    1. Kopieer de Azure AD-Tenant-ID uit de uitvoer van het script en voer deze in het veld **Aad-Tenant-id** in.
-    1. Kopieer de Azure AD-toepassings-ID uit de uitvoer van het script en voer deze in het veld **Aad-toepassings-id** in.
+    ![Webhook van het eindpunttype selecteren](./media/secure-webhook-delivery/select-webhook.png)
+1. Selecteer het **tabblad Extra** functies bovenaan de pagina **Gebeurtenisabonnementen** maken.
+1. Ga als volgende **te werk op** het tabblad Extra functies:
+    1. Selecteer **AAD-verificatie gebruiken** en configureer de tenant-id en toepassings-id:
+    1. Kopieer de Azure AD-tenant-id uit de uitvoer van het script en voer deze in het **veld Tenant-id van AAD** in.
+    1. Kopieer de Azure AD-toepassings-id uit de uitvoer van het script en voer deze in het **veld AAD-toepassings-id** in. U kunt ook de URI van de AAD-toepassings-id gebruiken. Zie dit artikel voor meer informatie over de URI van de [toepassings-id.](../app-service/configure-authentication-provider-aad.md)
 
-        ![Actie beveiligde webhook](./media/secure-webhook-delivery/aad-configuration.png)
+        ![Actie Webhook beveiligen](./media/secure-webhook-delivery/aad-configuration.png)
 
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [Event grid bericht bezorging bewaken](monitor-event-delivery.md)voor meer informatie over het bewaken van gebeurtenis leveringen.
-* Zie [Event grid beveiliging en verificatie](security-authentication.md)voor meer informatie over de verificatie sleutel.
-* Zie [Event grid Subscription schema](subscription-creation-schema.md)voor meer informatie over het maken van een Azure Event grid-abonnement.
+* Zie Monitor Event Grid message delivery (Levering van berichten controleren) Event Grid informatie over het bewaken [van leveringen van gebeurtenissen.](monitor-event-delivery.md)
+* Zie Voor meer informatie over de verificatiesleutel [Event Grid beveiliging en verificatie.](security-authentication.md)
+* Zie abonnementschema voor meer Azure Event Grid over het [maken Event Grid abonnement.](subscription-creation-schema.md)

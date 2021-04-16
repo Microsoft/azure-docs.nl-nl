@@ -3,7 +3,7 @@
 - name: Overzicht
   expanded: true
   items:
-    - name: Overzicht van persoonlijke instellingen
+    - name: Wat is Personalizer?
       href: what-is-personalizer.md
     - name: Prijzen
       href: 'https://go.microsoft.com/fwlink/?linkid=2092154'
@@ -11,7 +11,7 @@
     - name: Nieuw
       href: whats-new.md
       displayName: 'release notes, service updates, videos'
-- name: Snelstartgids voor personaler
+- name: Snelstart
   href: ./quickstart-personalizer-sdk.md
 - name: Voorbeelden
   href: 'https://github.com/Azure-Samples/cognitive-services-personalizer-samples'
@@ -32,6 +32,12 @@
       href: how-to-manage-model.md
     - name: Analyseren met een offline evaluatie
       href: how-to-offline-evaluation.md
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Virtuele netwerken instellen
+          href: ../cognitive-services-virtual-networks.md?context=/azure/cognitive-services/personalizer/context/context
+        - name: Door de klant beheerde sleutels gebruiken
+          href: encrypt-data-at-rest.md
 - name: Concepten
   items:
     - name: Hoe Personalizer werkt
@@ -43,7 +49,7 @@
     - name: Terminologie
       href: terminology.md
       displayName: 'best practice, design'
-    - name: Basis beginselen van personaler
+    - name: Basisprincipes van Personalizer
       items:
         - name: Actie en context
           href: concepts-features.md
@@ -81,7 +87,7 @@
       displayName: 'jupyter, notebook, python, cell, graph, chart, aggregate, model update frequency'
 - name: Referentie
   items:
-    - name: Personaler REST API
+    - name: Personalizer-REST API
       href: 'https://go.microsoft.com/fwlink/?linkid=2092082'
     - name: .NET
       items:
@@ -107,17 +113,17 @@
           href: 'https://pypi.org/project/azure-cognitiveservices-personalizer/'
 - name: Resources
   items:
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Ondersteuning voor regio
+          href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+        - name: Naleving en certificering
+          href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
+    - name: Microsoft Learn modules
+      href: 'https://docs.microsoft.com/learn/browse/?terms=personalizer'
     - name: Opties voor ondersteuning en hulp
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/personalizer/context/context
     - name: Problemen oplossen
       href: troubleshooting.md
-    - name: Modules leren
-      href: 'https://docs.microsoft.com/learn/browse/?terms=personalizer'
-    - name: Ondersteuning voor regio
-      href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
-    - name: Naleving
-      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
-    - name: Versleuteling
-      href: encrypt-data-at-rest.md
     - name: Azure-updates
       href: 'https://go.microsoft.com/fwlink/?linkid=2092153'

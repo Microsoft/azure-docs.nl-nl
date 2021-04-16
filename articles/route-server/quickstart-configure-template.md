@@ -1,6 +1,6 @@
 ---
-title: 'Quick Start: een Azure-route server maken met behulp van een sjabloon voor Azure Resource Manager (ARM-sjabloon)'
-description: In deze Quick start ziet u hoe u een Azure route server maakt met behulp van Azure Resource Manager sjabloon (ARM-sjabloon).
+title: 'Quickstart: Een Azure Route-server maken met behulp van een Azure Resource Manager sjabloon (ARM-sjabloon)'
+description: In deze quickstart ziet u hoe u een Azure Route-server maakt met behulp van Azure Resource Manager-sjabloon (ARM-sjabloon).
 services: route-server
 author: duongau
 ms.service: route-server
@@ -8,16 +8,16 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 04/05/2021
 ms.author: duau
-ms.openlocfilehash: 6f56b9fb1f6a1f5a1fe0811617fb20412c52fd72
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.openlocfilehash: 3476e5fa2c274f0fc2c180711480375b0ebefaf2
+ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106452193"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107388037"
 ---
-# <a name="quickstart-create-an-azure-route-server-using-an-arm-template"></a>Quick Start: een Azure-route server maken met een ARM-sjabloon
+# <a name="quickstart-create-an-azure-route-server-using-an-arm-template"></a>Quickstart: Een Azure Route-server maken met behulp van een ARM-sjabloon
 
-In deze Quick Start wordt beschreven hoe u een Azure Resource Manager sjabloon (ARM-sjabloon) kunt gebruiken voor het implementeren van een Azure route server in een nieuw of bestaand virtueel netwerk.
+In deze quickstart wordt beschreven hoe u een AZURE RESOURCE MANAGER-sjabloon (ARM-sjabloon) gebruikt om een Azure Route-server te implementeren in een nieuw of bestaand virtueel netwerk.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
@@ -33,17 +33,17 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 De sjabloon die in deze quickstart wordt gebruikt, komt uit [Azure-quickstart-sjablonen](https://azure.microsoft.com/resources/templates/101-route-server).
 
-In deze Quick Start implementeert u een Azure-route server in een nieuw of bestaand virtueel netwerk. Er wordt een toegewijd subnet `RouteServerSubnet` met de naam gemaakt om de route server te hosten. De route server wordt ook geconfigureerd met het peer-ASN en het IP-adres van de peer om een BGP-peering tot stand te brengen.
+In deze quickstart implementeert u een Azure Route-server in een nieuw of bestaand virtueel netwerk. Er wordt een toegewezen subnet `RouteServerSubnet` met de naam gemaakt om de routeserver te hosten. De routeserver wordt ook geconfigureerd met de Peer ASN en peer-IP om een BGP-peering tot stand te stellen.
 
 :::code language="json" source="~/quickstart-templates/101-route-server/azuredeploy.json" range="001-145" highlight="105-142":::
 
 Er zijn meerdere Azure-resources gedefinieerd in de sjabloon:
 
 * [**Microsoft.Network/virtualNetworks**](/azure/templates/microsoft.network/virtualNetworks)
-* [**Micro soft. Network/virtualNetworks/subnetten**](/azure/templates/microsoft.network/virtualNetworks/subnets) (twee subnetten, een met de naam `routeserversubnet` )
-* [**Micro soft. Network/virtualHubs**](/azure.templates/microsoft.network/virtualhubs) (route Server-implementatie)
-* [**Micro soft. Network/virtualHubs/ipConfigurations**](/azure.templates/microsoft.network/virtualhubs/ipConfigurations)
-* [**Micro soft. Network/virtualHubs/bgpConnections**](/azure.templates/microsoft.network/virtualhubs/bgpConnections) (peer-ASN en peer-IP-configuratie)
+* [**Microsoft.Network/virtualNetworks/subnetten**](/azure/templates/microsoft.network/virtualNetworks/subnets) (twee subnetten, één met de `routeserversubnet` naam )
+* [**Microsoft.Network/virtualHubs**](/azure/templates/microsoft.network/virtualhubs) (routeserverimplementatie)
+* [**Microsoft.Network/virtualHubs/ipConfigurations**](/azure/templates/microsoft.network/virtualhubs/ipConfigurations)
+* [**Microsoft.Network/virtualHubs/bgpConnections**](/azure/templates/microsoft.network/virtualhubs/bgpconnections) (Peer ASN en Peer IP-configuratie)
 
 
 Zie [Azure-quickstartsjablonen](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Network&pageNumber=1&sort=Popular) als u meer sjablonen wilt vinden die gerelateerd zijn aan ExpressRoute.
@@ -77,7 +77,7 @@ Zie [Azure-quickstartsjablonen](https://azure.microsoft.com/resources/templates/
 
     Het duurt ongeveer 20 minuten om de sjabloon te implementeren. Wanneer voltooid is de uitvoer vergelijkbaar met:
 
-    :::image type="content" source="./media/quickstart-configure-template/powershell-output.png" alt-text="Uitvoer van route Server Resource Manager-sjabloon Power shell-implementatie.":::
+    :::image type="content" source="./media/quickstart-configure-template/powershell-output.png" alt-text="Uitvoer van de PowerShell Resource Manager sjabloon voor powershell-implementatie.":::
 
 Azure PowerShell wordt gebruikt om de sjabloon te implementeren. Naast Azure PowerShell kunt u ook de Azure-portal, Azure CLI en REST API gebruiken. Zie [Sjablonen implementeren](../azure-resource-manager/templates/deploy-portal.md) voor meer informatie over andere implementatiemethoden.
 
@@ -89,19 +89,19 @@ Azure PowerShell wordt gebruikt om de sjabloon te implementeren. Naast Azure Pow
 
 1. Selecteer de resourcegroep die u in de vorige sectie hebt gemaakt. De naam van de standaard resourcegroep is de naam van het project, maar met **rg** eraan toegevoegd.
 
-1. De resource groep mag alleen het virtuele netwerk bevatten:
+1. De resourcegroep mag alleen het virtuele netwerk bevatten:
 
-     :::image type="content" source="./media/quickstart-configure-template/resource-group.png" alt-text="De resource groep voor de route Server implementatie met het virtuele netwerk.":::
+     :::image type="content" source="./media/quickstart-configure-template/resource-group.png" alt-text="Route Server implementatie resourcegroep met virtueel netwerk.":::
 
 1. Ga naar https://aka.ms/routeserver.
 
-1. Selecteer de route server met de naam **routeserver** om te controleren of de implementatie is geslaagd.
+1. Selecteer de routeserver met de **naam routeserver** om te controleren of de implementatie is geslaagd.
 
-    :::image type="content" source="./media/quickstart-configure-template/deployment.png" alt-text="Scherm afbeelding van de pagina overzicht van route server.":::
+    :::image type="content" source="./media/quickstart-configure-template/deployment.png" alt-text="Schermopname van de overzichtspagina van Route Server.":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u de resources die u hebt gemaakt met de route server niet langer nodig hebt, verwijdert u de resource groep. Hiermee verwijdert u de route server en alle gerelateerde resources.
+Wanneer u de resources die u met de routeserver hebt gemaakt niet meer nodig hebt, verwijdert u de resourcegroep. Hiermee verwijdert u de routeserver en alle gerelateerde resources.
 
 Als u de resourcegroep wilt verwijderen, roept u de cmdlet `Remove-AzResourceGroup` aan:
 
@@ -113,11 +113,11 @@ Remove-AzResourceGroup -Name <your resource group name>
 
 In deze quickstart hebt u het volgende gemaakt:
 
-* Route server
+* Routeserver
 * Virtual Network
 * Subnet
 
-Nadat u de Azure route server hebt gemaakt, gaat u verder met meer informatie over hoe Azure route server communiceert met ExpressRoute en VPN-gateways: 
+Nadat u de Azure Route-server hebt maken, gaat u verder met informatie over hoe Azure Route Server communiceert met ExpressRoute en VPN Gateways: 
 
 > [!div class="nextstepaction"]
-> [Azure ExpressRoute-en Azure VPN-ondersteuning](expressroute-vpn-support.md)
+> [Azure ExpressRoute en Azure VPN-ondersteuning](expressroute-vpn-support.md)

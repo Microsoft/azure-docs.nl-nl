@@ -1,257 +1,261 @@
 ---
-title: Waarschuwings typen en-beschrijvingen
-description: Bekijk de beschrijvingen van Defender voor IoT-waarschuwingen.
-author: shhazam-ms
-manager: rkarlin
-ms.author: shhazam
+title: Waarschuwingstypen en beschrijvingen
+description: Bekijk beschrijvingen van Defender for IoT-waarschuwingen.
 ms.date: 4/8/2021
 ms.topic: how-to
-ms.service: azure
-ms.openlocfilehash: 9ef7aa388d0f25adcafec1cb4a5b38dcfb8597a1
-ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
+ms.openlocfilehash: 483563b53a5849b0354986269568bc42b9124cc2
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2021
-ms.locfileid: "107210462"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107477992"
 ---
-# <a name="alert-types-and-descriptions"></a>Waarschuwings typen en-beschrijvingen
+# <a name="alert-types-and-descriptions"></a>Waarschuwingstypen en beschrijvingen
 
-In dit artikel worden alle waarschuwings typen beschreven die kunnen worden gegenereerd van de Defender voor IoT-engines. Waarschuwingen worden weer gegeven in het venster waarschuwingen, waarmee u de waarschuwings gebeurtenis kunt beheren. 
+In dit artikel worden alle waarschuwingstypen beschreven die kunnen worden gegenereerd op basis van de Defender for IoT-engines. Waarschuwingen worden weergegeven in het venster Waarschuwingen, waarmee u de waarschuwingsgebeurtenis kunt beheren. 
 
-## <a name="policy-engine-alerts"></a>Waarschuwingen van beleid-engine
+## <a name="policy-engine-alerts"></a>Waarschuwingen van beleidsent engine
 
-Met waarschuwingen over de beleids engine worden afwijkingen van het geleerde basislijn netwerk gedrag beschreven.
+Waarschuwingen van beleidsent engine beschrijven gedetecteerde afwijkingen van het gedrag van de geleerde basislijn.
 
 | Titel  | Beschrijving | Severity |
 |--|--|--|
-| Abnormaal gebruik van MAC-adressen | Er is een nieuw bron apparaat gedetecteerd op het netwerk, maar dit is niet geautoriseerd. | Secundair |
-| Beckhoff-software gewijzigd | De firmware is bijgewerkt op een bron apparaat. Dit kan geautoriseerde activiteit zijn, bijvoorbeeld een geplande onderhouds procedure. | Primair |
-| Kan de data base niet aanmelden | Er is een mislukte aanmeldings poging van een bron apparaat naar een doel server gedetecteerd. Dit kan het resultaat zijn van een menselijke fout, maar kan ook duiden op een kwaad aardige poging om de server of gegevens erop te manipuleren. | Primair |
-| Versie van Emerson ROC firmware gewijzigd | De firmware is bijgewerkt op een bron apparaat. Dit kan geautoriseerde activiteit zijn, bijvoorbeeld een geplande onderhouds procedure. | Primair |
-| Extern adres binnen het netwerk communiceert met Internet | Een bron apparaat dat is gedefinieerd als onderdeel van uw netwerk, communiceert met Internet adressen. De bron is niet gemachtigd om te communiceren met Internet adressen. | Kritiek |
-| Het veld apparaat is onverwachts gedetecteerd | Er is een nieuw bron apparaat gedetecteerd op het netwerk, maar dit is niet geautoriseerd. | Primair |
-| Wijziging in firmware gedetecteerd | De firmware is bijgewerkt op een bron apparaat. Dit kan geautoriseerde activiteit zijn, bijvoorbeeld een geplande onderhouds procedure. | Primair |
-| Firmware versie gewijzigd | De firmware is bijgewerkt op een bron apparaat. Dit kan geautoriseerde activiteit zijn, bijvoorbeeld een geplande onderhouds procedure. | Primair |
-| Een niet-geautoriseerde bewerking Foxboro | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| FTP-aanmelding mislukt | Er is een mislukte aanmeldings poging van een bron apparaat naar een doel server gedetecteerd. Dit kan het resultaat zijn van een menselijke fout, maar kan ook duiden op een kwaad aardige poging om de server of gegevens erop te manipuleren. | Primair |
-| Functie code verhoogde ongeautoriseerde uitzonde ring | Een bron apparaat (slave) heeft een uitzonde ring geretourneerd naar een doel apparaat (Master). | Primair |
-| Instellingen voor GOOSE-bericht type | Het bericht (geïdentificeerd door de protocol-ID) instellingen is gewijzigd op een bron apparaat. | Waarschuwing |
-| Versie van Honeywell-firmware gewijzigd | De firmware is bijgewerkt op een bron apparaat. Dit kan geautoriseerde activiteit zijn, bijvoorbeeld een geplande onderhouds procedure. | Primair |
-| Ongeldige HTTP-communicatie | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Internet toegang gedetecteerd | Een bron apparaat dat is gedefinieerd als onderdeel van uw netwerk, communiceert met Internet adressen. De bron is niet gemachtigd om te communiceren met Internet adressen. | Primair |
-| Mitsubishi firmware-versie gewijzigd | De firmware is bijgewerkt op een bron apparaat. Dit kan geautoriseerde activiteit zijn, bijvoorbeeld een geplande onderhouds procedure. | Primair |
-| Schending van Modbus-adres bereik | Een Master-apparaat heeft toegang aangevraagd tot een nieuw slave-geheugen adres. | Primair |
-| Versie van Modbus-firmware gewijzigd | De firmware is bijgewerkt op een bron apparaat. Dit kan geautoriseerde activiteit zijn, bijvoorbeeld een geplande onderhouds procedure. | Primair |
-| Nieuwe activiteit gedetecteerd-overschrijvings klasse | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Nieuwe activiteit gedetecteerd-overschrijvings klasse-service | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Nieuwe activiteit gedetecteerd-overschrijving PCCC opdracht | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Nieuwe activiteit gedetecteerd-overschrijvings symbool | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Nieuwe activiteit gedetecteerd-EtherNet/IP-I/O-verbinding | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Nieuwe activiteit gedetecteerd-EtherNet/IP-protocol opdracht | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Nieuwe activiteit gedetecteerd-GSM-bericht code | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Nieuwe activiteit gedetecteerd-LonTalk-opdracht codes | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Nieuwe poort detectie | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Waarschuwing |
-| Nieuwe activiteit gedetecteerd-LonTalk-netwerk variabele | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Nieuwe activiteit gedetecteerd-Ovation-gegevens aanvraag | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Nieuwe activiteit gedetecteerd-lezen/schrijven opdracht (AMS index groep) | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Nieuwe activiteit gedetecteerd-lezen/schrijven opdracht (offset van AMS-index) | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Nieuwe activiteit gedetecteerd-niet-geautoriseerd DeltaV-bericht type | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Nieuwe activiteit gedetecteerd-niet-geautoriseerde DeltaV ROC-bewerking | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Nieuwe activiteit gedetecteerd-niet-geautoriseerd RPC-bericht type | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Nieuwe activiteit gedetecteerd-niet-geautoriseerde RPC-procedure aanroep | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Nieuwe activiteit gedetecteerd-met behulp van AMS-protocol opdracht | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Nieuwe activiteit gedetecteerd-met Siemens SICAM-opdracht | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Nieuwe activiteit gedetecteerd-met behulp van SuiteLink-protocol opdracht | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Nieuwe activiteit gedetecteerd-SuiteLink-protocol sessies gebruiken | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Nieuwe activiteit gedetecteerd-met behulp van Yokogawa VNetIP opdracht | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Nieuwe Asset gedetecteerd | Er is een nieuw bron apparaat gedetecteerd op het netwerk, maar dit is niet geautoriseerd. | Primair |
-| Nieuwe configuratie voor LLDP-apparaten | Er is een nieuw bron apparaat gedetecteerd op het netwerk, maar dit is niet geautoriseerd. | Primair |
-| Nieuwe poort detectie | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Waarschuwing |
-| Omron VINNEN niet-gemachtigde opdracht | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| S7 plus PLC firmware gewijzigd | De firmware is bijgewerkt op een bron apparaat. Dit kan geautoriseerde activiteit zijn, bijvoorbeeld een geplande onderhouds procedure. | Primair |
-| Instellingen voor voorbeeld bericht typen van waarden | Het bericht (geïdentificeerd door de protocol-ID) instellingen is gewijzigd op een bron apparaat. | Waarschuwing |
-| Vermoeden van ongeldige integriteits scan | Er is een scan gevonden op een DNP3-bron apparaat (outstation). Deze scan is niet geautoriseerd als geleerd verkeer op uw netwerk. | Primair |
-| Opdracht Toshiba computer link Unauthorized | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Secundair |
-| Niet-geautoriseerde ABB Totalflow-bestands bewerking | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Registratie bewerking ABB Totalflow niet toegestaan | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Onbevoegde toegang tot het S7-gegevens blok van Siemens | Een bron apparaat heeft geprobeerd toegang te krijgen tot een bron op een ander apparaat. Een poging tot het verkrijgen van toegang tot deze bron tussen deze twee apparaten is niet geautoriseerd als geleerd verkeer op uw netwerk. | Waarschuwing |
-| Onbevoegde toegang tot Siemens S7 plus object | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Onbevoegde toegang tot de Wonderware-tag | Een bron apparaat heeft geprobeerd toegang te krijgen tot een bron op een ander apparaat. Een poging tot het verkrijgen van toegang tot deze bron tussen deze twee apparaten is niet geautoriseerd als geleerd verkeer op uw netwerk. | Primair |
-| Niet-geautoriseerde BACNet-object toegang | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-geautoriseerde BACNet-route | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-geautoriseerde database aanmelding | Er is een aanmeldings poging tussen een bron-client en de doel server gedetecteerd. De communicatie tussen deze apparaten is niet geautoriseerd als geleerd verkeer op uw netwerk. | Primair |
-| Niet-geautoriseerde database bewerking | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-geautoriseerde Emerson ROC-bewerking | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-geautoriseerde bestands toegang tot GE SRTP | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-geautoriseerd GE SRTP protocol opdracht | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-geautoriseerde GE SRTP systeem geheugen bewerking | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-geautoriseerde HTTP-activiteit | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-geautoriseerde HTTP-server | Er is een niet-geautoriseerde toepassing gedetecteerd op een bron apparaat. De toepassing is niet geautoriseerd als een geleerde toepassing in uw netwerk. | Primair |
-| Niet-geautoriseerde HTTP SOAP-actie | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-geautoriseerde HTTP-gebruikers agent | Er is een niet-geautoriseerde toepassing gedetecteerd op een bron apparaat. De toepassing is niet geautoriseerd als een geleerde toepassing in uw netwerk. | Primair |
-| Niet-geautoriseerde Internet connectiviteit gedetecteerd | Een bron apparaat dat is gedefinieerd als onderdeel van uw netwerk, communiceert met Internet adressen. De bron is niet gemachtigd om te communiceren met Internet adressen. | Kritiek |
-| Niet-geautoriseerde Mitsubishi MELSEC-opdracht | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-geautoriseerde MMS-programma toegang | Een bron apparaat heeft geprobeerd toegang te krijgen tot een bron op een ander apparaat. Een poging tot het verkrijgen van toegang tot deze bron tussen deze twee apparaten is niet geautoriseerd als geleerd verkeer op uw netwerk. | Primair |
-| Niet-geautoriseerde MMS-service | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-geautoriseerde multi cast/broadcast-verbinding | Er is een multi cast/broadcast-verbinding gedetecteerd tussen een bron apparaat en andere apparaten. Multi cast/broadcast-communicatie is niet toegestaan. | Kritiek |
-| Niet-gemachtigde naam query | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-geautoriseerde OPC UA-activiteit | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-geautoriseerde OPC UA-aanvraag/antwoord | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Er is een niet-geautoriseerde bewerking gedetecteerd door een door de gebruiker gedefinieerde regel | Verkeer is gedetecteerd tussen twee apparaten. Deze activiteit is niet-geautoriseerd op basis van een aangepaste waarschuwings regel die door een gebruiker is gedefinieerd. | Primair |
-| Niet-geautoriseerde PLC-configuratie lezen | Het bron apparaat is niet gedefinieerd als een programmeer apparaat, maar er is een lees-en schrijf bewerking uitgevoerd op een doel controller. Wijzigingen in het Program meren moeten alleen worden uitgevoerd door apparaten. Er is mogelijk een programmeer toepassing op dit apparaat geïnstalleerd. | Waarschuwing |
-| Niet-geautoriseerde PLC-configuratie schrijven | Het bron apparaat heeft een opdracht verzonden om het programma van een doel controller te lezen/schrijven. Deze activiteit is niet eerder gezien. | Primair |
-| Niet-geautoriseerde PLC-Program Ma's uploaden | Het bron apparaat heeft een opdracht verzonden om het programma van een doel controller te lezen/schrijven. Deze activiteit is niet eerder gezien. | Primair |
-| Niet-geautoriseerde PLC-programmering | Het bron apparaat is niet gedefinieerd als een programmeer apparaat, maar er is een lees-en schrijf bewerking uitgevoerd op een doel controller. Wijzigingen in het Program meren moeten alleen worden uitgevoerd door apparaten. Er is mogelijk een programmeer toepassing op dit apparaat geïnstalleerd. | Kritiek |
-| Niet-geautoriseerd bijzonderings frame type | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-geautoriseerde SAIA S-Bus opdracht | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-gemachtigde Siemens S7-uitvoering van de beheer functie | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-gemachtigde Siemens S7 uitvoering van door de gebruiker gedefinieerde functie | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-geautoriseerde Siemens S7 plus-blok toegang | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-gemachtigde Siemens S7 plus-bewerking | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-geautoriseerde SMB-aanmelding | Er is een aanmeldings poging tussen een bron-client en de doel server gedetecteerd. De communicatie tussen deze apparaten is niet geautoriseerd als geleerd verkeer op uw netwerk. | Primair |
-| Niet-geautoriseerde SNMP-bewerking | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-geautoriseerde SSH-toegang | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-geautoriseerd Windows-proces | Er is een niet-geautoriseerde toepassing gedetecteerd op een bron apparaat. De toepassing is niet geautoriseerd als een geleerde toepassing in uw netwerk. | Primair |
-| Niet-geautoriseerde Windows-service | Er is een niet-geautoriseerde toepassing gedetecteerd op een bron apparaat. De toepassing is niet geautoriseerd als een geleerde toepassing in uw netwerk. | Primair |
-| Er is een niet-geautoriseerde bewerking gedetecteerd door een door de gebruiker gedefinieerde regel | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meter schendt een door de gebruiker gedefinieerde regel | Primair |
-| Niet-toegestane Modbus Schneider elektrische extensie | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-toegestaan gebruik van ASDU-typen | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-toegestaan gebruik van DNP3-functie code | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
-| Niet-toegestaan gebruik van interne indicatie (IIN) | Een DNP3-bron apparaat (outstation) heeft een interne indicatie (IIN) gerapporteerd die geen geleerd verkeer op uw netwerk heeft geautoriseerd. | Primair |
-| Niet-toegestaan gebruik van Modbus-functie code | Er zijn nieuwe verkeers parameters gedetecteerd. Deze combi natie van para meters is niet geautoriseerd als geleerd verkeer op uw netwerk. De volgende combi natie is niet geautoriseerd. | Primair |
+| Abnormaal gebruik van MAC-adressen | Er is een nieuw bronapparaat gedetecteerd in het netwerk, maar dit apparaat is niet geautoriseerd. | Secundair |
+| Hadoe Software is gewijzigd | Firmware is bijgewerkt op een bronapparaat. Dit kan geautoriseerde activiteit zijn, bijvoorbeeld een geplande onderhoudsprocedure. | Primair |
+| Aanmelden bij database is mislukt | Er is een mislukte aanmeldingspoging gedetecteerd vanaf een bronapparaat naar een doelserver. Dit kan het gevolg zijn van een menselijke fout, maar kan ook duiden op een kwaadwillende poging om de server of gegevens erop te compromitteerd. | Primair |
+| Emerson ROC-firmwareversie gewijzigd | Firmware is bijgewerkt op een bronapparaat. Dit kan geautoriseerde activiteit zijn, bijvoorbeeld een geplande onderhoudsprocedure. | Primair |
+| Extern adres in het netwerk dat wordt gecommuniceerd met internet | Een bronapparaat dat is gedefinieerd als onderdeel van uw netwerk communiceert met internetadressen. De bron is niet gemachtigd om te communiceren met internetadressen. | Kritiek |
+| Veldapparaat onverwacht ontdekt | Er is een nieuw bronapparaat gedetecteerd in het netwerk, maar is niet geautoriseerd. | Primair |
+| Firmwarewijziging gedetecteerd | Firmware is bijgewerkt op een bronapparaat. Dit kan geautoriseerde activiteit zijn, bijvoorbeeld een geplande onderhoudsprocedure. | Primair |
+| Firmwareversie gewijzigd | Firmware is bijgewerkt op een bronapparaat. Dit kan geautoriseerde activiteit zijn, bijvoorbeeld een geplande onderhoudsprocedure. | Primair |
+| Foxboro I/A Niet-geautoriseerde bewerking | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| FTP-aanmelding mislukt | Er is een mislukte aanmeldingspoging gedetecteerd van een bronapparaat naar een doelserver. Dit kan het gevolg zijn van een menselijke fout, maar kan ook duiden op een kwaadwillende poging om de server of gegevens erop te compromitteerd. | Primair |
+| Functiecode heeft een niet-geautoriseerde uitzondering tot leven gebracht | Een bronapparaat (slave) heeft een uitzondering geretourneerd op een doelapparaat (master). | Primair |
+| INSTELLINGEN VOOR HET MESSAGE Type VAN HET MESSAGE | Berichtinstellingen (geïdentificeerd op basis van protocol-id) zijn gewijzigd op een bronapparaat. | Waarschuwing |
+| Firmwareversie van firmware van firmware van Firmware is gewijzigd | Firmware is bijgewerkt op een bronapparaat. Dit kan geautoriseerde activiteit zijn, bijvoorbeeld een geplande onderhoudsprocedure. | Primair |
+| Onrechtmatige HTTP-communicatie | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Internettoegang gedetecteerd | Een bronapparaat dat is gedefinieerd als onderdeel van uw netwerk communiceert met internetadressen. De bron is niet gemachtigd om te communiceren met internetadressen. | Primair |
+| De firmwareversie van de firmware is gewijzigd | Firmware is bijgewerkt op een bronapparaat. Dit kan geautoriseerde activiteit zijn, bijvoorbeeld een geplande onderhoudsprocedure. | Primair |
+| Schending van modbus-adresbereik | Een hoofdapparaat heeft toegang aangevraagd tot een nieuw geheugenadres van een slave. | Primair |
+| Modbus Firmware Version Changed | Firmware is bijgewerkt op een bronapparaat. Dit kan geautoriseerde activiteit zijn, bijvoorbeeld een geplande onderhoudsprocedure. | Primair |
+| Nieuwe activiteit gedetecteerd - CIP-klasse | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Nieuwe activiteit gedetecteerd - CIP-klasseservice | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Nieuwe activiteit gedetecteerd - CIP PCCC-opdracht | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Nieuwe activiteit gedetecteerd - CIP-symbool | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Nieuwe activiteit gedetecteerd - EtherNet/IP I/O-verbinding | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Nieuwe activiteit gedetecteerd - EtherNet/IP Protocol-opdracht | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Nieuwe activiteit gedetecteerd - SMS-berichtcode | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Nieuwe activiteit gedetecteerd - LonTalk-opdrachtcodes | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Nieuwe poortdetectie | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Waarschuwing |
+| Nieuwe activiteit gedetecteerd - LonTalk-netwerkvariabele | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Nieuwe activiteit gedetecteerd - Aanvraag voor ovatiegegevens | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Nieuwe activiteit gedetecteerd - opdracht lezen/schrijven (AMS-indexgroep) | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Nieuwe activiteit gedetecteerd - opdracht lezen/schrijven (AMS-index offset) | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Nieuwe activiteit gedetecteerd - Niet-geautoriseerd DeltaV-berichttype | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Nieuwe activiteit gedetecteerd - Niet-geautoriseerde DeltaV ROC-bewerking | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Nieuwe activiteit gedetecteerd - Niet-geautoriseerd RPC-berichttype | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Nieuwe activiteit gedetecteerd - aanroepen van niet-geautoriseerde RPC-procedure | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Nieuwe activiteit gedetecteerd - ams-protocolopdracht gebruiken | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Nieuwe activiteit gedetecteerd - met behulp van de opdracht Siemens SICAM | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| New Activity Detected - Using Suitelink Protocol command (Nieuwe activiteit gedetecteerd- met behulp van de suitelinkprotocolopdracht) | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Nieuwe activiteit gedetecteerd - Suitelink Protocol-sessies gebruiken | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Nieuwe activiteit gedetecteerd- met de opdracht Yokogawa VNetIP | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Nieuwe asset gedetecteerd | Er is een nieuw bronapparaat gedetecteerd in het netwerk, maar is niet geautoriseerd. | Primair |
+| Nieuwe LLDP-apparaatconfiguratie | Er is een nieuw bronapparaat gedetecteerd in het netwerk, maar is niet geautoriseerd. | Primair |
+| Nieuwe poortdetectie | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Waarschuwing |
+| Opdracht omron FINS unauthorized | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| S7 Plus FIRMWARE changed (S7 Plus FIRMWARE gewijzigd) | Firmware is bijgewerkt op een bronapparaat. Dit kan geautoriseerde activiteit zijn, bijvoorbeeld een geplande onderhoudsprocedure. | Primair |
+| Voorbeeldwaarden Instellingen voor berichttype | Berichtinstellingen (geïdentificeerd op basis van protocol-id) zijn gewijzigd op een bronapparaat. | Waarschuwing |
+| Vermoeden van ongeoorloofde integriteitsscan | Er is een scan gedetecteerd op een DNP3-bronapparaat (outstation). Deze scan is niet geautoriseerd als het geleerde verkeer in uw netwerk. | Primair |
+| De opdracht Computer Link Unauthorized | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Secundair |
+| Niet-geautoriseerde ABB Totalflow-bestandsbewerking | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerde ABB Totalflow-registratiebewerking | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Onbevoegde toegang tot Het gegevensblok van Siemens S7 | Een bronapparaat heeft geprobeerd toegang te krijgen tot een resource op een ander apparaat. Een toegangspoging tot deze resource tussen deze twee apparaten is niet geautoriseerd, omdat het geleerde verkeer in uw netwerk wordt gebruikt. | Waarschuwing |
+| Niet-geautoriseerde toegang tot Het Object S7 Plus | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Onbevoegde toegang tot Wonderware Tag | Een bronapparaat heeft geprobeerd toegang te krijgen tot een resource op een ander apparaat. Een toegangspoging tot deze resource tussen deze twee apparaten is niet geautoriseerd, omdat het geleerde verkeer in uw netwerk wordt gebruikt. | Primair |
+| Toegang tot niet-geautoriseerd BACNet-object | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerde BACNet-route | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerde database-aanmelding | Er is een aanmeldingspoging tussen een bronclient en doelserver gedetecteerd. Communicatie tussen deze apparaten is niet geautoriseerd als het geleerde verkeer in uw netwerk. | Primair |
+| Niet-geautoriseerde databasebewerking | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerde Emerson ROC-bewerking | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerde GE SRTP-bestandstoegang | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerde GE SRTP Protocol-opdracht | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerde GE SRTP-systeemgeheugenbewerking | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerde HTTP-activiteit | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerde HTTP-server | Er is een niet-geautoriseerde toepassing gedetecteerd op een bronapparaat. De toepassing is niet geautoriseerd als een geleerde toepassing in uw netwerk. | Primair |
+| Niet-geautoriseerde HTTP SOAP-actie | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerde HTTP-gebruikersagent | Er is een niet-geautoriseerde toepassing gedetecteerd op een bronapparaat. De toepassing is niet geautoriseerd als een geleerde toepassing in uw netwerk. | Primair |
+| Niet-geautoriseerde internetverbinding gedetecteerd | Een bronapparaat dat is gedefinieerd als onderdeel van uw netwerk communiceert met internetadressen. De bron is niet gemachtigd om te communiceren met internetadressen. | Kritiek |
+| Niet-geautoriseerde MelSEC-opdracht | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Toegang tot het MMS-programma niet toegestaan | Een bronapparaat heeft geprobeerd toegang te krijgen tot een resource op een ander apparaat. Een toegangspoging tot deze resource tussen deze twee apparaten is niet geautoriseerd, omdat het geleerde verkeer in uw netwerk wordt gebruikt. | Primair |
+| Niet-geautoriseerde MMS-service | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerde multicast-/broadcastverbinding | Er is een Multicast/Broadcast-verbinding gedetecteerd tussen een bronapparaat en andere apparaten. Multicast-/broadcastcommunicatie is niet geautoriseerd. | Kritiek |
+| Query op niet-geautoriseerde naam | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerde OPC UA-activiteit | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerde OPC UA-aanvraag/-reactie | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerde bewerking is gedetecteerd door een door de gebruiker gedefinieerde regel | Er is verkeer gedetecteerd tussen twee apparaten. Deze activiteit is niet geautoriseerd op basis van een aangepaste waarschuwingsregel die is gedefinieerd door een gebruiker. | Primair |
+| Niet-geautoriseerde READ-configuratie van HETEENF | Het bronapparaat is niet gedefinieerd als een programmeerapparaat, maar heeft een lees-/schrijfbewerking uitgevoerd op een doelcontroller. Programmeerwijzigingen mogen alleen worden uitgevoerd door programmeerapparaten. Mogelijk is er een programmeertoepassing op dit apparaat geïnstalleerd. | Waarschuwing |
+| Schrijven van niet-geautoriseerde TIJDENS DE-configuratie | Het bronapparaat heeft een opdracht verzonden om het programma van een doelcontroller te lezen/schrijven. Deze activiteit is niet eerder gezien. | Primair |
+| Niet-geautoriseerde UPLOAD VAN HET PROGRAMMA | Het bronapparaat heeft een opdracht verzonden om het programma van een doelcontroller te lezen/schrijven. Deze activiteit is niet eerder gezien. | Primair |
+| Niet-geautoriseerde PROGRAMMING-programmering | Het bronapparaat is niet gedefinieerd als een programmeerapparaat, maar heeft een lees-/schrijfbewerking uitgevoerd op een doelcontroller. Programmeerwijzigingen mogen alleen worden uitgevoerd door programmeerapparaten. Mogelijk is er een programmeertoepassing op dit apparaat geïnstalleerd. | Kritiek |
+| Niet-geautoriseerd frametype Profinet | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerde SAIA S-Bus-opdracht | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerde Siemens S7-uitvoering van de besturingsfunctie | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerde Siemens S7-uitvoering van door de gebruiker gedefinieerde functie | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerde Siemens S7 Plus Toegang blokkeren | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerde Siemens S7 Plus-bewerking | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerde SMB-aanmelding | Er is een aanmeldingspoging tussen een bronclient en doelserver gedetecteerd. Communicatie tussen deze apparaten is niet geautoriseerd als het geleerde verkeer in uw netwerk. | Primair |
+| Niet-geautoriseerde SNMP-bewerking | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerde SSH-toegang | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd zoals het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-geautoriseerd Windows-proces | Er is een niet-geautoriseerde toepassing gedetecteerd op een bronapparaat. De toepassing is niet geautoriseerd als een geleerde toepassing in uw netwerk. | Primair |
+| Niet-geautoriseerde Windows-service | Er is een niet-geautoriseerde toepassing gedetecteerd op een bronapparaat. De toepassing is niet geautoriseerd als een geleerde toepassing in uw netwerk. | Primair |
+| Niet-geautoriseerde bewerking is gedetecteerd door een door de gebruiker gedefinieerde regel | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters schendt een door de gebruiker gedefinieerde regel | Primair |
+| Niet-doorgestuurde modbus- en elektrische extensie | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-doorgestuurd gebruik van ASDU-typen | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-doorgestuurd gebruik van DNP3-functiecode | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
+| Niet-doorgestuurd gebruik van interne indicatie (IIN) | Een DNP3-bronapparaat (outstation) heeft een interne indicatie (IIN) gerapporteerd die niet is geautoriseerd als geleerd verkeer in uw netwerk. | Primair |
+| Niet-doorgestuurd gebruik van Modbus-functiecode | Er zijn nieuwe verkeersparameters gedetecteerd. Deze combinatie van parameters is niet geautoriseerd als het geleerde verkeer in uw netwerk. De volgende combinatie is niet geautoriseerd. | Primair |
 
-## <a name="anomaly-engine-alerts"></a>Anomalie-engine waarschuwingen
+## <a name="anomaly-engine-alerts"></a>Waarschuwingen voor anomalie-engine
 
-| Titel | Beschrijving | Severity |
-|--|--|--|
-| Abnormaal uitzonderings patroon in slave | Er is een uitzonderlijk aantal fouten gedetecteerd op een bron apparaat. Dit kan het gevolg zijn van een operationeel probleem. | Secundair |
-| Abnormale HTTP-header lengte | Het bron apparaat heeft een abnormaal bericht verzonden. Dit kan duiden op een poging om het doel apparaat aan te vallen. | Kritiek |
-| Abnormaal aantal para meters in HTTP-header | Het bron apparaat heeft een abnormaal bericht verzonden. Dit kan duiden op een poging om het doel apparaat aan te vallen. | Kritiek |
-| Abnormaal periodiek gedrag in communicatie kanaal | Er is een wijziging in de frequentie van de communicatie tussen de bron-en doel apparaten gedetecteerd. | Secundair |
-| Abnormale beëindiging van toepassingen | Er zijn een buitensporig aantal Stop opdrachten op een bron apparaat gedetecteerd. Dit kan het gevolg zijn van een operationeel probleem of een poging om het apparaat te manipuleren. | Primair |
-| Afwijking van abnormaal verkeer | Er is een abnormale band breedte gedetecteerd op een kanaal. De band breedte lijkt aanzienlijk lager/hoger te zijn dan eerder gedetecteerd. Werk met de widget totale band breedte voor meer informatie. | Waarschuwing |
-| Abnormale verkeers bandbreedte tussen apparaten | Er is een abnormale band breedte gedetecteerd op een kanaal. De band breedte lijkt aanzienlijk lager/hoger te zijn dan eerder gedetecteerd. Werk met de widget totale band breedte voor meer informatie. | Waarschuwing |
-| Adres scan gedetecteerd | Er is een bron apparaat aangetroffen bij het scannen van netwerk apparaten. Dit apparaat is niet geautoriseerd als een netwerk scanapparaat. | Kritiek |
-| ARP-adres scan gedetecteerd | Er is met een bron apparaat gedetecteerd dat netwerk apparaten worden gescand met ARP (Address Resolution Protocol). Het adres van dit apparaat is niet als geldig ARP-scan adres toegestaan. | Kritiek |
-| ARP-adres scan gedetecteerd | Er is met een bron apparaat gedetecteerd dat netwerk apparaten worden gescand met ARP (Address Resolution Protocol). Het adres van dit apparaat is niet als geldig ARP-scan adres toegestaan. | Kritiek |
-| ARP-Spoofing | Er is een abnormaal aantal pakketten gedetecteerd in het netwerk. Dit kan duiden op een aanval, bijvoorbeeld een ARP-vervalsings aanval of een ICMP-Flooding. | Waarschuwing |
-| Buitensporige aanmeldings pogingen | Er is een bron apparaat waargenomen tijdens het uitvoeren van buitensporige aanmeldings pogingen naar een doel server. Dit kan een beveiligings aanval zijn. De server kan worden aangetast door een schadelijke actor. | Kritiek |
-| Uitzonderlijk aantal sessies | Er is een bron apparaat waargenomen tijdens het uitvoeren van buitensporige aanmeldings pogingen naar een doel server. Dit kan een beveiligings aanval zijn. De server kan worden aangetast door een schadelijke actor. | Kritiek |
-| Buitensporige start frequentie van een outstation | Er zijn een buitensporig aantal opdrachten voor opnieuw opstarten gedetecteerd op een bron apparaat. Dit kan het gevolg zijn van een operationeel probleem of een poging om het apparaat te manipuleren. | Primair |
-| Buitensporige SMB-aanmeldings pogingen | Er is een bron apparaat waargenomen tijdens het uitvoeren van buitensporige aanmeldings pogingen naar een doel server. Dit kan een beveiligings aanval zijn. De server kan worden aangetast door een schadelijke actor. | Kritiek |
-| ICMP-Flooding | Er is een abnormaal aantal pakketten gedetecteerd in het netwerk. Dit kan duiden op een aanval, bijvoorbeeld een ARP-vervalsings aanval of een ICMP-Flooding. | Waarschuwing |
-| Ongeldige inhoud voor HTTP-header | Het bron apparaat heeft een ongeldige aanvraag gestart. | Kritiek |
-| Inactief communicatie kanaal | Een communicatie kanaal tussen twee apparaten was inactief tijdens een periode waarin de activiteit meestal wordt gezien. Dit kan erop wijzen dat het programma waarmee dit verkeer wordt gegenereerd, is gewijzigd of dat het programma niet beschikbaar is. U wordt aangeraden de configuratie van het geïnstalleerde programma te controleren en te controleren of het correct is geconfigureerd. | Waarschuwing |
-| Adres scan voor lange duur gedetecteerd | Er is een bron apparaat aangetroffen bij het scannen van netwerk apparaten. Dit apparaat is niet geautoriseerd als een netwerk scanapparaat. | Kritiek |
-| Poging tot wacht woord raden gedetecteerd | Er is een bron apparaat waargenomen tijdens het uitvoeren van buitensporige aanmeldings pogingen naar een doel server. Dit kan een beveiligings aanval zijn. De server kan worden aangetast door een schadelijke actor. | Kritiek |
-| PLC-scan gedetecteerd | Er is een bron apparaat aangetroffen bij het scannen van netwerk apparaten. Dit apparaat is niet geautoriseerd als een netwerk scanapparaat. | Kritiek |
-| Poort controle gedetecteerd | Er is een bron apparaat aangetroffen bij het scannen van netwerk apparaten. Dit apparaat is niet geautoriseerd als een netwerk scanapparaat. | Kritiek |
-| Onverwachte bericht lengte | Het bron apparaat heeft een abnormaal bericht verzonden. Dit kan duiden op een poging om het doel apparaat aan te vallen. | Kritiek |
-| Onverwacht verkeer voor de standaard poort | Verkeer is op een apparaat gedetecteerd met een poort die is gereserveerd voor een ander protocol. | Primair |
-
-## <a name="protocol-violation-engine-alerts"></a>Engine-waarschuwingen voor protocol overtreding
+Waarschuwingen van de anomalie-engine beschrijven gedetecteerde afwijkingen in netwerkactiviteit.
 
 | Titel | Beschrijving | Severity |
 |--|--|--|
-| Overmatige ongeldige pakketten tijdens één sessie | Een abnormaal aantal ongeldige pakketten dat is verzonden van het bron apparaat naar het doel apparaat. Dit kan duiden op foutieve communicatie of een poging om het doel apparaat te manipuleren. | Primair |
-| Firmware-update | Een bron apparaat heeft een opdracht verzonden om firmware op een doel apparaat bij te werken. Controleer of recente programmeer-, configuratie-en firmware-upgrades op het doel apparaat geldig zijn. | Waarschuwing |
-| Functie code wordt niet ondersteund door outstation | Het doel apparaat heeft een ongeldige aanvraag ontvangen. | Primair |
-| Ongeldig BACNet-bericht | Het bron apparaat heeft een ongeldige aanvraag gestart. | Primair |
-| Ongeldige verbindings poging op poort 0 | Een bron apparaat heeft geprobeerd verbinding te maken met het doel apparaat op poort nummer nul (0). Voor TCP is poort 0 gereserveerd en kan niet worden gebruikt. Voor UDP is de poort optioneel en de waarde 0 betekent geen poort. Er is meestal geen service op een systeem die luistert op poort 0. Deze gebeurtenis kan duiden op een poging om het doel apparaat aan te vallen of om aan te geven dat een toepassing onjuist is geprogrammeerd. | Secundair |
-| Ongeldige DNP3-bewerking | Het bron apparaat heeft een ongeldige aanvraag gestart. | Primair |
-| Ongeldige MODBUS-bewerking (uitzonde ring gemeld door hoofd) | Het bron apparaat heeft een ongeldige aanvraag gestart. | Primair |
-| Ongeldige MODBUS-bewerking (functie code is nul) | Het bron apparaat heeft een ongeldige aanvraag gestart. | Primair |
-| Ongeldige Protocol versie | Het bron apparaat heeft een ongeldige aanvraag gestart. | Primair |
-| Onjuiste para meter verzonden naar outstation | Het doel apparaat heeft een ongeldige aanvraag ontvangen. | Primair |
-| Initiëren van een verouderde functie code (gegevens initialiseren) | Het bron apparaat heeft een ongeldige aanvraag gestart. | Secundair |
-| Initiëren van een verouderde functie code (configuratie opslaan) | Het bron apparaat heeft een ongeldige aanvraag gestart. | Secundair |
-| Master heeft een Application Layer-bevestiging aangevraagd | Het bron apparaat heeft een ongeldige aanvraag gestart. | Waarschuwing |
-| Modbus-uitzonde ring | Een bron apparaat (slave) heeft een uitzonde ring geretourneerd naar een doel apparaat (Master). | Primair |
-| Het slave-apparaat heeft een ongeldig ASDU-type ontvangen | Het doel apparaat heeft een ongeldige aanvraag ontvangen. | Primair |
-| Het slave-apparaat heeft een ongeldige opdracht voor verzen ding ontvangen | Het doel apparaat heeft een ongeldige aanvraag ontvangen. | Primair |
-| Apparaat voor slave heeft illegaal algemeen adres ontvangen | Het doel apparaat heeft een ongeldige aanvraag ontvangen. | Primair |
-| Het apparaat dat een slave heeft gekregen, heeft een ongeldige gegevens adres parameter ontvangen | Het doel apparaat heeft een ongeldige aanvraag ontvangen. | Primair |
-| Het slave-apparaat heeft een ongeldige gegevens waarde-para meter ontvangen | Het doel apparaat heeft een ongeldige aanvraag ontvangen. | Primair |
-| Het slave-apparaat heeft een ongeldige functie code ontvangen | Het doel apparaat heeft een ongeldige aanvraag ontvangen. | Primair |
-| Slave-apparaat heeft ongeldig informatie object adres ontvangen | Het doel apparaat heeft een ongeldige aanvraag ontvangen. | Primair |
-| Onbekend object verzonden naar outstation | Het doel apparaat heeft een ongeldige aanvraag ontvangen. | Primair |
-| Gebruik van een gereserveerde functie code | Het bron apparaat heeft een ongeldige aanvraag gestart. | Primair |
-| Gebruik van onjuiste indeling op outstation | Het bron apparaat heeft een ongeldige aanvraag gestart. | Waarschuwing |
-| Gebruik van gereserveerde status vlaggen (IIN) | Een DNP3-bron apparaat (outstation) heeft de gereserveerde interne indicator 2,6 gebruikt. Het is raadzaam om de configuratie van het apparaat te controleren. | Waarschuwing |
+| Abnormaal uitzonderingspatroon in Slave | Er is een overmatig aantal fouten gedetecteerd op een bronapparaat. Dit kan het gevolg zijn van een operationeel probleem. | Secundair |
+| Abnormale lengte http-header | Het bronapparaat heeft een abnormaal bericht verzonden. Dit kan wijzen op een poging om het doelapparaat aan te vallen. | Kritiek |
+| Abnormaal aantal parameters in HTTP-header | Het bronapparaat heeft een abnormaal bericht verzonden. Dit kan wijzen op een poging om het doelapparaat aan te vallen. | Kritiek |
+| Abnormaal periodiek gedrag in communicatiekanaal | Er is een wijziging in de communicatiefrequentie tussen de bron- en doelapparaten gedetecteerd. | Secundair |
+| Abnormale beëindiging van toepassingen | Er is een overmatig aantal stopopdrachten gedetecteerd op een bronapparaat. Dit kan het gevolg zijn van een operationeel probleem of een poging om het apparaat te manipuleren. | Primair |
+| Abnormale bandbreedte voor verkeer | Abnormale bandbreedte is gedetecteerd op een kanaal. De bandbreedte lijkt aanzienlijk lager/hoger te zijn dan eerder gedetecteerd. Werk voor meer informatie met de widget Totale bandbreedte. | Waarschuwing |
+| Abnormale bandbreedte voor verkeer tussen apparaten | Abnormale bandbreedte is gedetecteerd op een kanaal. De bandbreedte lijkt aanzienlijk lager/hoger te zijn dan eerder gedetecteerd. Werk voor meer informatie met de widget Totale bandbreedte. | Waarschuwing |
+| Adresscan gedetecteerd | Er is een bronapparaat gedetecteerd dat netwerkapparaten scant. Dit apparaat is niet geautoriseerd als een netwerkscanapparaat. | Kritiek |
+| ARP-adresscan gedetecteerd | Er is een bronapparaat gedetecteerd dat netwerkapparaten scant met behulp van Address Resolution Protocol (ARP). Dit apparaatadres is niet geautoriseerd als geldig ARP-scanadres. | Kritiek |
+| ARP-adresscan gedetecteerd | Er is een bronapparaat gedetecteerd dat netwerkapparaten scant met behulp van Address Resolution Protocol (ARP). Dit apparaatadres is niet geautoriseerd als geldig ARP-scanadres. | Kritiek |
+| ARP-adresvervalsing | Er is een abnormale hoeveelheid pakketten gedetecteerd in het netwerk. Dit kan duiden op een aanval, bijvoorbeeld een ARP-spoofing- of ICMP-overlastaanval. | Waarschuwing |
+| Overmatige aanmeldingspogingen | Er is een bronapparaat gezien dat overmatige aanmeldingspogingen heeft uitgevoerd op een doelserver. Dit kan een brute force-aanval zijn. De server kan worden aangetast door een kwaadwillende actor. | Kritiek |
+| Overmatig aantal sessies | Er is gezien dat een bronapparaat overmatige aanmeldingspogingen heeft uitgevoerd op een doelserver. Dit kan een brute force-aanval zijn. De server kan worden aangetast door een kwaadwillende actor. | Kritiek |
+| Overmatige herstartsnelheid van een onderstation | Er is een overmatig aantal opdrachten voor opnieuw opstarten gedetecteerd op een bronapparaat. Dit kan het gevolg zijn van een operationeel probleem of een poging om het apparaat te manipuleren. | Primair |
+| Overmatige SMB-aanmeldingspogingen | Er is gezien dat een bronapparaat overmatige aanmeldingspogingen heeft uitgevoerd op een doelserver. Dit kan een brute force-aanval zijn. De server kan worden aangetast door een kwaadwillende actor. | Kritiek |
+| ICMP-overstromingen | Er is een abnormale hoeveelheid pakketten gedetecteerd in het netwerk. Dit kan wijzen op een aanval, bijvoorbeeld een ARP-spoofing- of ICMP-overlastaanval. | Waarschuwing |
+| Inhoud van de verboden HTTP-header | Het bronapparaat heeft een ongeldige aanvraag geïnitieerd. | Kritiek |
+| Inactieve communicatiekanaal | Een communicatiekanaal tussen twee apparaten was inactief gedurende een periode waarin activiteit meestal wordt gezien. Dit kan erop wijzen dat het programma dat dit verkeer genereert, is gewijzigd of dat het programma mogelijk niet beschikbaar is. Het is raadzaam om de configuratie van het geïnstalleerde programma te controleren en te controleren of het programma juist is geconfigureerd. | Waarschuwing |
+| Long Duration Address Scan Detected | Er is een bronapparaat gedetecteerd dat netwerkapparaten scant. Dit apparaat is niet geautoriseerd als een netwerkscanapparaat. | Kritiek |
+| Poging tot wachtwoord raden gedetecteerd | Er is een bronapparaat gezien dat overmatige aanmeldingspogingen heeft uitgevoerd op een doelserver. Dit kan een brute force-aanval zijn. De server kan worden aangetast door een kwaadwillende actor. | Kritiek |
+| DETECTED Scan Detected (SCAN VAN DESE GEDETECTEERD) | Er is een bronapparaat gedetecteerd dat netwerkapparaten scant. Dit apparaat is niet geautoriseerd als een netwerkscanapparaat. | Kritiek |
+| Poortscan gedetecteerd | Er is een bronapparaat gedetecteerd dat netwerkapparaten scant. Dit apparaat is niet geautoriseerd als een netwerkscanapparaat. | Kritiek |
+| Onverwachte berichtlengte | Het bronapparaat heeft een abnormaal bericht verzonden. Dit kan wijzen op een poging om het doelapparaat aan te vallen. | Kritiek |
+| Onverwacht verkeer voor standaardpoort | Er is verkeer gedetecteerd op een apparaat met behulp van een poort die is gereserveerd voor een ander protocol. | Primair |
 
-## <a name="malware-engine-alerts"></a>Malware-engine waarschuwingen
+## <a name="protocol-violation-engine-alerts"></a>Enginewaarschuwingen voor schendingen van protocollen
+
+Waarschuwingen van de protocol-engine beschrijven gedetecteerde afwijkingen in de pakketstructuur of veldwaarden in vergelijking met protocolspecificaties.
+
+| Titel | Beschrijving | Severity |
+|--|--|--|
+| Overmatige misvormde pakketten in één sessie | Een abnormaal aantal verkeerd vormgevormde pakketten dat van het bronapparaat naar het doelapparaat wordt verzonden. Dit kan duiden op onjuiste communicatie of een poging om het doelapparaat te manipuleren. | Primair |
+| Firmware-update | Een bronapparaat heeft een opdracht verzonden om firmware bij te werken op een doelapparaat. Controleer of recente upgrades voor programmeren, configuratie en firmware op het doelapparaat geldig zijn. | Waarschuwing |
+| Functiecode wordt niet ondersteund door het outstation | Het doelapparaat heeft een ongeldige aanvraag ontvangen. | Primair |
+| Het bericht over een verboden BACNet | Het bronapparaat heeft een ongeldige aanvraag geïnitieerd. | Primair |
+| Poging tot verboden verbinding op poort 0 | Een bronapparaat heeft geprobeerd verbinding te maken met het doelapparaat op poortnummer nul (0). Voor TCP is poort 0 gereserveerd en kan niet worden gebruikt. Voor UDP is de poort optioneel en een waarde van 0 betekent geen poort. Er is meestal geen service op een systeem dat luistert op poort 0. Deze gebeurtenis kan wijzen op een poging om het doelapparaat aan te vallen of erop wijzen dat een toepassing onjuist is geprogrammeerd. | Secundair |
+| Onrechtmatige DNP3-bewerking | Het bronapparaat heeft een ongeldige aanvraag geïnitieerd. | Primair |
+| Onrechtmatige MODBUS-bewerking (uitzondering die is veroorzaakt door master) | Het bronapparaat heeft een ongeldige aanvraag geïnitieerd. | Primair |
+| Onrechtmatige MODBUS-bewerking (functiecode nul) | Het bronapparaat heeft een ongeldige aanvraag geïnitieerd. | Primair |
+| Onrechtmatige protocolversie | Het bronapparaat heeft een ongeldige aanvraag geïnitieerd. | Primair |
+| Onjuiste parameter verzonden naar outstation | Het doelapparaat heeft een ongeldige aanvraag ontvangen. | Primair |
+| Initiëren van een verouderde functiecode (gegevens initialiseren) | Het bronapparaat heeft een ongeldige aanvraag geïnitieerd. | Secundair |
+| Initiëren van een verouderde functiecode (Configuratie opslaan) | Het bronapparaat heeft een ongeldige aanvraag geïnitieerd. | Secundair |
+| Master heeft bevestiging van een toepassingslaag aangevraagd | Het bronapparaat heeft een ongeldige aanvraag geïnitieerd. | Waarschuwing |
+| Modbus-uitzondering | Een bronapparaat (slave) heeft een uitzondering geretourneerd op een doelapparaat (master). | Primair |
+| Slave Device Received Illegal ASDU Type | Het doelapparaat heeft een ongeldige aanvraag ontvangen. | Primair |
+| Slave Device ontvangen onrechtmatige opdrachtoorzaak van verzending | Het doelapparaat heeft een ongeldige aanvraag ontvangen. | Primair |
+| Slave Device heeft een verboden veelgebruikt adres ontvangen | Het doelapparaat heeft een ongeldige aanvraag ontvangen. | Primair |
+| De parameter 'Slave Device Received Illegal Data Address' | Het doelapparaat heeft een ongeldige aanvraag ontvangen. | Primair |
+| Parameter voor de waarde van de onrechtmatige gegevenswaarde van het slave-apparaat is ontvangen | Het doelapparaat heeft een ongeldige aanvraag ontvangen. | Primair |
+| Slave Device heeft een onrechtmatige functiecode ontvangen | Het doelapparaat heeft een ongeldige aanvraag ontvangen. | Primair |
+| Slave Device Received Illegal Information Object Address | Het doelapparaat heeft een ongeldige aanvraag ontvangen. | Primair |
+| Onbekend object verzonden naar outstation | Het doelapparaat heeft een ongeldige aanvraag ontvangen. | Primair |
+| Gebruik van een gereserveerde functiecode | Het bronapparaat heeft een ongeldige aanvraag geïnitieerd. | Primair |
+| Gebruik van onjuiste opmaak per outstation | Het bronapparaat heeft een ongeldige aanvraag geïnitieerd. | Waarschuwing |
+| Gebruik van gereserveerde statusvlaggen (IIN) | Een DNP3-bronapparaat (outstation) heeft de gereserveerde interne indicator 2.6 gebruikt. Het is raadzaam om de configuratie van het apparaat te controleren. | Waarschuwing |
+
+## <a name="malware-engine-alerts"></a>Waarschuwingen van de malware-engine
+
+Waarschuwingen van de malware-engine beschrijven gedetecteerde schadelijke netwerkactiviteit.
 
 | Titel | Beschrijving| Severity |
 |--|--|--|
-| Verbindings poging met bekend schadelijk IP-adres | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Primair |
-| Ongeldig SMB-bericht (DoublePulsar-back-implantatie) | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
-| Aanvraag voor schadelijke domein naam | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Primair |
-| Test bestand malware gedetecteerd-EICAR AV geslaagd | Er is een EICAR AV-test bestand aangetroffen in het verkeer tussen twee apparaten. Het bestand is geen malware. Het wordt gebruikt om te controleren of de antivirus software correct is geïnstalleerd. laat zien wat er gebeurt als er een virus wordt gevonden en controleer interne procedures en reacties wanneer een virus wordt gevonden. Antivirus software moet EICAR detecteren alsof het een echt virus betreft. | Primair |
-| Vermoeden van Conficker-malware | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Primair |
-| Vermoeden van een denial of service-aanval | Een bron apparaat heeft geprobeerd een uitzonderlijk groot aantal nieuwe verbindingen met een doel apparaat te initiëren. Dit kan een DOS-aanval (Denial of service) zijn op het doel apparaat en kan de functionaliteit van het apparaat, de prestaties en de beschik baarheid van de service onderbreken of onherstelbare fouten veroorzaken. | Kritiek |
-| Vermoeden van schadelijke activiteiten | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Primair |
-| Vermoeden van schadelijke activiteiten (BlackEnergy) | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
-| Vermoeden van schadelijke activiteiten (DarkComet) | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
-| Vermoeden van schadelijke activiteiten (Duqu) | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
-| Vermoeden van schadelijke activiteiten (vlam) | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
-| Vermoeden van schadelijke activiteiten (metX) | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
-| Vermoeden van schadelijke activiteiten (Karagany) | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
-| Vermoeden van schadelijke activiteiten (LightsOut) | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
-| Vermoeden van schadelijke activiteiten (naam Query's) | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Primair |
-| Vermoeden van schadelijke activiteiten (Poison-Ivy) | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
-| Vermoeden van schadelijke activiteiten (Regin) | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
-| Vermoeden van schadelijke activiteiten (Stuxnet) | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
-| Vermoeden van schadelijke activiteiten (WannaCry) | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Primair |
-| Vermoeden van NotPetya malware-ongeldige SMB-para meters gedetecteerd | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
-| Vermoeden van NotPetya malware-ongeldige SMB-trans actie gedetecteerd | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
-| Vermoeden dat externe code wordt uitgevoerd met PsExec | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Primair |
-| Vermoeden van extern Windows-Service beheer | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Primair |
-| Verdacht uitvoerbaar bestand gedetecteerd op eind punt | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Primair |
-| Verdacht verkeer gedetecteerd | Er is een verdachte netwerk activiteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval die gebruikmaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
+| Verbindingspoging tot bekend schadelijk IP-adres | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Primair |
+| Ongeldig SMB-bericht (DoublePulsar Backdoor:) | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
+| Aanvraag voor schadelijke domeinnaam | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Primair |
+| Testbestand voor malware gedetecteerd - EICAR AV geslaagd | Er is een EICAR AV-testbestand gedetecteerd in het verkeer tussen twee apparaten. Het bestand is geen malware. Het wordt gebruikt om te bevestigen dat de antivirussoftware correct is geïnstalleerd; laten zien wat er gebeurt wanneer er een virus wordt gevonden en interne procedures en reacties controleren wanneer er een virus wordt gevonden. Antivirussoftware moet EICAR detecteren alsof het een echt virus is. | Primair |
+| Vermoeden van confickermalware | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Primair |
+| Vermoeden van Denial of Service-aanval | Een bronapparaat heeft geprobeerd een overmatig aantal nieuwe verbindingen met een doelapparaat te initiëren. Dit kan een DoS-aanval (Denial of Service) op het doelapparaat zijn en kan de functionaliteit van het apparaat onderbreken, de prestaties en beschikbaarheid van de service beïnvloeden of onherkenbare fouten veroorzaken. | Kritiek |
+| Vermoeden van schadelijke activiteit | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Primair |
+| Vermoeden van schadelijke activiteit (BlackEnergy) | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
+| Vermoeden van schadelijke activiteit (DarkComet) | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
+| Vermoeden van schadelijke activiteit (Duqu) | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
+| Vermoeden van schadelijke activiteit (Activity) | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
+| Vermoeden van schadelijke activiteit (Havex) | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
+| Vermoeden van schadelijke activiteit (Kangany) | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
+| Vermoeden van schadelijke activiteit (LightsOut) | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
+| Vermoeden van schadelijke activiteit (naamquery's) | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Primair |
+| Vermoeden van schadelijke activiteit (Verwerkverwerker Ivy) | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
+| Vermoeden van schadelijke activiteit (opnieuw proberen) | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
+| Vermoeden van schadelijke activiteit (Stuxnet) | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
+| Vermoeden van schadelijke activiteit (WannaCry) | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Primair |
+| Vermoeden van NotPetya-malware : schadelijke SMB-parameters gedetecteerd | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
+| Vermoeden van NotPetya-malware - onrechtmatige SMB-transactie gedetecteerd | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
+| Vermoeden van uitvoering van externe code met PsExec | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Primair |
+| Vermoeden van extern Windows-servicebeheer | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Primair |
+| Suspicious Executable File Detected on Endpoint | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Primair |
+| Verdacht verkeer gedetecteerd | Er is verdachte netwerkactiviteit gedetecteerd. Deze activiteit kan worden gekoppeld aan een aanval waarbij gebruik wordt gemaakt van een methode die wordt gebruikt door bekende malware. | Kritiek |
 
-## <a name="operational-engine-alerts"></a>Waarschuwingen van operationele engine
+## <a name="operational-engine-alerts"></a>Waarschuwingen voor operationele engine
+
+Waarschuwingen van operationele engine beschrijven gedetecteerde operationele incidenten of defecte entiteiten.
 
 | Titel | Beschrijving | Severity |
 |--|--|--|
-| Er is een S7 stop PLC-opdracht verzonden | Het bron apparaat heeft een stop opdracht naar een doel controller verzonden. De controller stopt met werken totdat een start opdracht wordt verzonden. | Waarschuwing |
-| De BACNet-bewerking is mislukt | Een server heeft een fout code geretourneerd. Dit duidt op een server fout of een ongeldige aanvraag van een client. | Primair |
-| Ongeldige status van MMS-apparaat | Een VMD-apparaat (MMS Virtual Manufacturing) heeft een status bericht verzonden. Het bericht geeft aan dat de server mogelijk niet juist is geconfigureerd, gedeeltelijk operationeel of niet operationeel is. | Primair |
-| De configuratie van het apparaat wijzigen | Er is een configuratie wijziging gedetecteerd op een bron apparaat. | Secundair |
-| Buffer overloop bij doorlopende gebeurtenissen op outstation | Er is een buffer overloop gebeurtenis gedetecteerd op een bron apparaat. De gebeurtenis kan leiden tot beschadiging van gegevens, het programma loopt vast of de uitvoering van schadelijke code. | Primair |
-| Controller opnieuw instellen | Een bron apparaat heeft een reset-opdracht naar een doel controller verzonden. De controller is tijdelijk gestopt en automatisch opnieuw gestart. | Waarschuwing |
-| Controller stoppen | Het bron apparaat heeft een stop opdracht naar een doel controller verzonden. De controller stopt met werken totdat een start opdracht wordt verzonden. | Waarschuwing |
-| Apparaat kan geen dynamisch IP-adres ontvangen | Het bron apparaat is geconfigureerd voor het ontvangen van een dynamisch IP-adres van een DHCP-server, maar er is geen adres ontvangen. Dit duidt op een configuratie fout op het apparaat of op een operationele fout in de DHCP-server. Het is raadzaam om de netwerk beheerder van het incident op de hoogte te stellen | Primair |
-| Het apparaat wordt mogelijk niet meer verbonden (reageert niet) | Een bron apparaat reageert niet op een opdracht die ernaar is verzonden. De verbinding is mogelijk verbroken toen de opdracht werd verzonden. | Primair |
-| Aanvraag voor EtherNet/IP-overschrijvings service is mislukt | Een server heeft een fout code geretourneerd. Dit duidt op een server fout of een ongeldige aanvraag van een client. | Primair |
-| Opdracht voor EtherNet/IP-Encapsulation-protocol is mislukt | Een server heeft een fout code geretourneerd. Dit duidt op een server fout of een ongeldige aanvraag van een client. | Primair |
-| Overloop gebeurtenis buffer in outstation | Er is een buffer overloop gebeurtenis gedetecteerd op een bron apparaat. De gebeurtenis kan leiden tot beschadiging van gegevens, het programma loopt vast of de uitvoering van schadelijke code. | Primair |
-| De verwachte back-upbewerking is niet uitgevoerd | De verwachte activiteit voor back-up/bestands overdracht is niet uitgevoerd tussen twee apparaten. Dit kan duiden op fouten in het proces voor back-up/bestands overdracht. | Primair |
-| GE SRTP-opdracht fout | Een server heeft een fout code geretourneerd. Dit duidt op een server fout of een ongeldige aanvraag van een client. | Primair |
-| De opdracht GE SRTP stop PLC is verzonden | Het bron apparaat heeft een stop opdracht naar een doel controller verzonden. De controller stopt met werken totdat een start opdracht wordt verzonden. | Waarschuwing |
-| GOOSE-besturings blok vereist verdere configuratie | Een bron apparaat heeft een GOOSE-bericht verzonden dat aangeeft dat het apparaat moet worden geprovisied. Dit betekent dat het GOOSE-besturings blok verdere configuratie-en GOOSE-berichten vereist die gedeeltelijk of volledig niet-operationeel zijn. | Primair |
-| De configuratie van de GOOSE-gegevensset is gewijzigd | Er is een bericht (geïdentificeerd door de protocol-ID) gegevensset gewijzigd op een bron apparaat. Dit betekent dat het apparaat een andere gegevensset voor dit bericht zal rapporteren. | Waarschuwing |
-| Onverwachte status van Honeywell-controller | Een Honeywell-controller heeft een onverwacht diagnostisch bericht verzonden dat aangeeft dat de status is gewijzigd. | Waarschuwing |
-| HTTP-client fout | Het bron apparaat heeft een ongeldige aanvraag gestart. | Waarschuwing |
-| Ongeldig IP-adres | Het systeem heeft verkeer gedetecteerd tussen een bron apparaat en een IP-adres dat een ongeldig adres is. Dit kan duiden op een onjuiste configuratie of een poging om illegaal verkeer te genereren. | Secundair |
-| Verificatie fout Master-Slave | Het verificatie proces tussen een DNP3-bron apparaat (Master) en een bestemmings apparaat (outstation) is mislukt. | Secundair |
-| Aanvraag van MMS-service mislukt | Een server heeft een fout code geretourneerd. Dit duidt op een server fout of een ongeldige aanvraag van een client. | Primair |
-| Geen verkeer gedetecteerd op sensor interface | Een sensor heeft het detecteren van netwerk verkeer op een netwerk interface gestopt. | Kritiek |
-| OPC UA-server heeft een gebeurtenis gegenereerd waarvoor aandacht van de gebruiker is vereist | Een OPC UA-server heeft een gebeurtenis melding naar een client verzonden. Voor dit type gebeurtenis is de aandacht van de gebruiker vereist | Primair |
-| OPC UA-service aanvraag mislukt | Een server heeft een fout code geretourneerd. Dit duidt op een server fout of een ongeldige aanvraag van een client. | Primair |
-| Het station is opnieuw opgestart | Er is een koud opnieuw opstarten gedetecteerd op een bron apparaat. Dit betekent dat het apparaat fysiek is uitgeschakeld en opnieuw weer actief is. | Waarschuwing |
-| Outstation wordt regel matig opnieuw opgestart | Er is een buitensporig aantal koud opnieuw opstarten gedetecteerd op een bron apparaat. Dit betekent dat het apparaat fysiek is uitgeschakeld en opnieuw een buitensporig aantal keer opnieuw wordt weer gegeven. | Secundair |
-| De configuratie van het outstation is gewijzigd | Er is een configuratie wijziging gedetecteerd op een bron apparaat. | Primair |
-| De beschadigde configuratie van het outstation is gedetecteerd | Dit DNP3-bron apparaat (outstation) heeft een beschadigde configuratie gerapporteerd. | Primair |
-| De opdracht DCP kan niet worden uitgevoerd | Een server heeft een fout code geretourneerd. Dit duidt op een server fout of een ongeldige aanvraag van een client. | Primair |
-| Fabrieks instellingen van apparaat verfijnen | Een bron apparaat heeft een fabrieks herstel opdracht verzonden naar een verfijnd doel apparaat. Met de opdracht reset worden de configuraties voor het verfijnen van apparaten gewist en wordt de bewerking gestopt. | Waarschuwing |
-| RPC-bewerking mislukt | Een server heeft een fout code geretourneerd. Dit duidt op een server fout of een ongeldige aanvraag van een client. | Primair |
-| De gegevensset configuratie van de voorbeeld waarden is gewijzigd | Er is een bericht (geïdentificeerd door de protocol-ID) gegevensset gewijzigd op een bron apparaat. Dit betekent dat het apparaat een andere gegevensset voor dit bericht zal rapporteren. | Waarschuwing |
-| Onherstelbare fout van slave-apparaat | Er is een onherstelbare voorwaarde fout gedetecteerd op een bron apparaat. Dit soort fout geeft meestal aan dat er een hardwarestoring of fout is opgetreden bij het uitvoeren van een specifieke opdracht. | Primair |
-| Vermoeden van hardwareproblemen in het outstation | Er is een onherstelbare voorwaarde fout gedetecteerd op een bron apparaat. Dit soort fout geeft meestal aan dat er een hardwarestoring of fout is opgetreden bij het uitvoeren van een specifieke opdracht. | Primair |
-| Vermoeden van niet-reagerend MODBUS-apparaat | Een bron apparaat reageert niet op een opdracht die ernaar is verzonden. De verbinding is mogelijk verbroken toen de opdracht werd verzonden. | Secundair |
-| Verkeer gedetecteerd op sensor interface | Een sensor heeft het detecteren van netwerk verkeer op een netwerk interface hervat. | Waarschuwing |
+| Er is een S7 Stop COMMAND verzonden | Het bronapparaat heeft een stopopdracht verzonden naar een doelcontroller. De controller werkt niet meer totdat er een startopdracht wordt verzonden. | Waarschuwing |
+| BACNet-bewerking is mislukt | Een server heeft een foutcode geretourneerd. Dit duidt op een serverfout of een ongeldige aanvraag door een client. | Primair |
+| Slechte mms-apparaattoestand | Een mms Virtual Manufacturing Device (VMD) heeft een statusbericht verzonden. Het bericht geeft aan dat de server mogelijk niet correct, gedeeltelijk operationeel of helemaal niet operationeel is geconfigureerd. | Primair |
+| Wijziging van apparaatconfiguratie | Er is een configuratiewijziging gedetecteerd op een bronapparaat. | Secundair |
+| Continue gebeurtenisbuffer-overloop op outstation | Er is een bufferoverloopgebeurtenis gedetecteerd op een bronapparaat. De gebeurtenis kan leiden tot beschadiging van gegevens, crashes in het programma of uitvoering van schadelijke code. | Primair |
+| Controller opnieuw instellen | Een bronapparaat heeft een opdracht voor opnieuw instellen verzonden naar een doelcontroller. De controller is tijdelijk gestopt en wordt automatisch opnieuw gestart. | Waarschuwing |
+| Controller stoppen | Het bronapparaat heeft een stopopdracht verzonden naar een doelcontroller. De controller werkt niet meer totdat er een startopdracht wordt verzonden. | Waarschuwing |
+| Apparaat kan geen dynamisch IP-adres ontvangen | Het bronapparaat is geconfigureerd voor het ontvangen van een dynamisch IP-adres van een DHCP-server, maar heeft geen adres ontvangen. Dit duidt op een configuratiefout op het apparaat of een operationele fout in de DHCP-server. Het is raadzaam om de netwerkbeheerder op de hoogte te stellen van het incident | Primair |
+| Apparaat is vermoedelijk niet verbonden (reageert niet) | Een bronapparaat heeft niet gereageerd op een opdracht die naar het apparaat is verzonden. De verbinding is mogelijk verbroken toen de opdracht werd verzonden. | Primair |
+| EtherNet/IP CIP-serviceaanvraag is mislukt | Een server heeft een foutcode geretourneerd. Dit duidt op een serverfout of een ongeldige aanvraag door een client. | Primair |
+| EtherNet/IP Encapsulation Protocol-opdracht is mislukt | Een server heeft een foutcode geretourneerd. Dit duidt op een serverfout of een ongeldige aanvraag door een client. | Primair |
+| Gebeurtenisbuffer-overloop in outstation | Er is een bufferoverloopgebeurtenis gedetecteerd op een bronapparaat. De gebeurtenis kan leiden tot beschadiging van gegevens, crashes in het programma of uitvoering van schadelijke code. | Primair |
+| Verwachte back-upbewerking is niet uitgevoerd | De verwachte activiteit voor back-up/bestandsoverdracht is niet tussen twee apparaten uitgevoerd. Dit kan duiden op fouten in het back-up-/bestandsoverdrachtproces. | Primair |
+| Ge SRTP opdrachtfout | Een server heeft een foutcode geretourneerd. Dit duidt op een serverfout of een ongeldige aanvraag door een client. | Primair |
+| Ge SRTP stop... opdracht is verzonden | Het bronapparaat heeft een stopopdracht verzonden naar een doelcontroller. De controller werkt niet meer totdat er een startopdracht wordt verzonden. | Waarschuwing |
+| VOOR HET BEHEERBLOK is verdere configuratie vereist | Een bronapparaat heeft een SMS-bericht verzonden dat aangeeft dat het apparaat in gebruik moet worden gebruikt. Dit betekent dat het CONTROLEblok verdere configuratie vereist en DAT DE BERICHTEN gedeeltelijk of volledig niet operationeel zijn. | Primair |
+| DE CONFIGURATIE van DE GEGEVENSSET IS GEWIJZIGD | Een bericht -gegevensset (aangeduid met protocol-id) is gewijzigd op een bronapparaat. Dit betekent dat het apparaat een andere gegevensset voor dit bericht rapporteert. | Waarschuwing |
+| Controller controller onverwachte status | Een Controller Controller heeft een onverwacht diagnostisch bericht verzonden waarin een statuswijziging wordt aangegeven. | Waarschuwing |
+| HTTP-clientfout | Het bronapparaat heeft een ongeldige aanvraag geïnitieerd. | Waarschuwing |
+| Verboden IP-adres | Het systeem heeft verkeer gedetecteerd tussen een bronapparaat en een IP-adres dat een ongeldig adres is. Dit kan duiden op een verkeerde configuratie of een poging om verboden verkeer te genereren. | Secundair |
+| Master-Slave verificatiefout | Het verificatieproces tussen een DNP3-bronapparaat (master) en een doelapparaat (outstation) is mislukt. | Secundair |
+| Mms-serviceaanvraag is mislukt | Een server heeft een foutcode geretourneerd. Dit duidt op een serverfout of een ongeldige aanvraag door een client. | Primair |
+| Er is geen verkeer gedetecteerd in de sensorinterface | Een sensor is gestopt met het detecteren van netwerkverkeer op een netwerkinterface. | Kritiek |
+| OPC UA-server heeft een gebeurtenis aan de orde gesteld die de aandacht van de gebruiker vereist | Een OPC UA-server heeft een gebeurtenismelding verzonden naar een client. Dit type gebeurtenis vereist aandacht van de gebruiker | Primair |
+| OPC UA-serviceaanvraag is mislukt | Een server heeft een foutcode geretourneerd. Dit duidt op een serverfout of een ongeldige aanvraag door een client. | Primair |
+| Outstation opnieuw opgestart | Er is een koude herstart gedetecteerd op een bronapparaat. Dit betekent dat het apparaat fysiek is uitgeschakeld en opnieuw is ingeschakeld. | Waarschuwing |
+| Outstation wordt regelmatig opnieuw opgestart | Er is een overmatig aantal koude herstarts gedetecteerd op een bronapparaat. Dit betekent dat het apparaat een overmatig aantal keren fysiek is uitgeschakeld en weer ingeschakeld. | Secundair |
+| Configuratie van het outstation is gewijzigd | Er is een configuratiewijziging gedetecteerd op een bronapparaat. | Primair |
+| Beschadigde configuratie van het outstation gedetecteerd | Dit DNP3-bronapparaat (outstation) heeft een beschadigde configuratie gerapporteerd. | Primair |
+| Profinet DCP-opdracht is mislukt | Een server heeft een foutcode geretourneerd. Dit duidt op een serverfout of een ongeldige aanvraag door een client. | Primair |
+| Profinet apparaat fabrieksinstellingen terugzetten | Een bronapparaat heeft een opdracht voor het terugzetten van de fabrieksinstellingen verzonden naar een Profinet-doelapparaat. Met de opdracht voor opnieuw instellen worden de configuraties van het Profinet-apparaat geweken en wordt de werking ervan gestopt. | Waarschuwing |
+| RPC-bewerking is mislukt | Een server heeft een foutcode geretourneerd. Dit duidt op een serverfout of een ongeldige aanvraag door een client. | Primair |
+| Configuratie van voorbeeldwaarden berichtgegevensset is gewijzigd | Een bericht -gegevensset (aangeduid met protocol-id) is gewijzigd op een bronapparaat. Dit betekent dat het apparaat een andere gegevensset voor dit bericht rapporteert. | Waarschuwing |
+| Onherkenbare fout met slave-apparaat | Er is een onherkenbare voorwaardefout gedetecteerd op een bronapparaat. Dit type fout duidt meestal op een hardwarefout of een fout bij het uitvoeren van een specifieke opdracht. | Primair |
+| Vermoeden van hardwareproblemen in outstation | Er is een onherkenbare voorwaardefout gedetecteerd op een bronapparaat. Dit type fout duidt meestal op een hardwarefout of een fout bij het uitvoeren van een specifieke opdracht. | Primair |
+| Vermoeden van niet-reagerend MODBUS-apparaat | Een bronapparaat heeft niet gereageerd op een opdracht die naar het apparaat is verzonden. De verbinding is mogelijk verbroken toen de opdracht werd verzonden. | Secundair |
+| Verkeer gedetecteerd op sensorinterface | Een sensor heeft het detecteren van netwerkverkeer op een netwerkinterface hervat. | Waarschuwing |
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U kunt [waarschuwings gebeurtenissen beheren](how-to-manage-the-alert-event.md).
-Meer informatie over het [door sturen van waarschuwings gegevens](how-to-forward-alert-information-to-partners.md).
+U kunt [waarschuwingsgebeurtenissen beheren.](how-to-manage-the-alert-event.md)
+Meer informatie over het [doorsturen van waarschuwingsgegevens.](how-to-forward-alert-information-to-partners.md)

@@ -1,27 +1,27 @@
 ---
-title: Een app toevoegen vanuit Azure Marketplace
-description: Dit artikel fungeert als een landings pagina van de knop nu downloaden op de Azure Marketplace.
+title: Een app toevoegen vanuit de Azure Marketplace
+description: Dit artikel fungeert als een landingspagina via de knop Nu Azure Marketplace.
 services: active-directory
-author: kenwith
-manager: daveba
+author: iantheninja
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 07/16/2020
-ms.author: kenwith
+ms.author: iangithinji
 ROBOTS: NOINDEX
-ms.openlocfilehash: 7bff0ca3dfa561f836f94e362ee84d025de020ab
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b2c15ba1f059466240264565d5ff5276b70ddd63
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99258334"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107374145"
 ---
-# <a name="get-it-now---add-an-app-from-the-azure-marketplace"></a>Nu downloaden: een app toevoegen vanuit Azure Marketplace
+# <a name="get-it-now---add-an-app-from-the-azure-marketplace"></a>Nu downloaden - een app toevoegen vanuit de Azure Marketplace
 
-U bent bijna klaar. 
+U bent er bijna! 
 
-Als u Azure AD probeert te gebruiken als de ID-provider voor een app, bent u op de juiste plaats. U hoeft deze alleen aan uw Azure AD-Tenant toe te voegen. Als u wilt weten hoe u dit doet, volgt u de Snelstartgids hier: [apps in uw Azure AD-Tenant weer geven](view-applications-portal.md).
+Als u Azure AD probeert te gebruiken als id-provider voor een app, bent u op de juiste plaats. U hoeft deze alleen maar toe te voegen aan uw Azure AD-tenant. Als u wilt weten hoe u dit doet, volgt u hier de quickstart-reeks: [Apps weergeven in uw Azure AD-tenant.](view-applications-portal.md)
 
-Als u probeert een app op uw lokale computer of mobiel apparaat te installeren, bent u op de verkeerde plaats. De Azure Marketplace is ontworpen voor organisaties die apps gebruiken met hun Azure-tenants. Bekijk de [micro soft-App Store](https://www.microsoft.com/store/apps)voor persoonlijke computers en apparaten.
+Als u een app op uw lokale computer of mobiele apparaat probeert te installeren, bent u op de verkeerde plaats. De Azure Marketplace is ontworpen voor organisaties die apps gebruiken met hun Azure-tenants. Voor pc's en apparaten raadpleegt u de [Microsoft Apps store.](https://www.microsoft.com/store/apps)

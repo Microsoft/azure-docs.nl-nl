@@ -1,93 +1,93 @@
 ---
-title: Aan de slag met het integreren van Azure Active Directory met apps
-description: Dit artikel is een aan de slag-hand leiding voor het integreren van Azure Active Directory (AD) met on-premises toepassingen en Cloud toepassingen.
+title: Aan de slag met het integreren Azure Active Directory apps
+description: Dit artikel is een aan de slag-handleiding voor het integreren van Azure Active Directory (AD) met on-premises toepassingen en cloudtoepassingen.
 services: active-directory
-author: kenwith
-manager: daveba
+author: iantheninja
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 04/05/2021
-ms.author: kenwith
+ms.author: iangithinji
 ms.reviewer: asteen
-ms.openlocfilehash: 2873f3946b5b3c7eed5a3ba1cde702670040c41a
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.openlocfilehash: 37916e5e356e7c5ad6e685ac0838363fe2579496
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106443454"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107374978"
 ---
-# <a name="integrating-azure-active-directory-with-applications-getting-started-guide"></a>Hand leiding voor het integreren van Azure Active Directory met toepassingen
+# <a name="integrating-azure-active-directory-with-applications-getting-started-guide"></a>Aan de slag Azure Active Directory integreren met toepassingen
 
-Dit onderwerp bevat een overzicht van het proces voor het integreren van toepassingen met Azure Active Directory (AD). Elk van de onderstaande secties bevat een korte samen vatting van een gedetailleerd onderwerp, zodat u kunt zien welke onderdelen van deze aan de slag-hand leiding relevant zijn voor u.
+In dit onderwerp wordt het proces voor het integreren van toepassingen met Azure Active Directory (AD) samengevat. Elk van de onderstaande secties bevat een korte samenvatting van een gedetailleerder onderwerp, zodat u kunt bepalen welke onderdelen van deze introductiehandleiding relevant zijn voor u.
 
-Zie [volgende stappen](#next-steps)voor het downloaden van gedetailleerde implementatie plannen.
+Zie Volgende stappen voor het downloaden van uitgebreide [implementatieplannen.](#next-steps)
 
-## <a name="take-inventory"></a>Inventaris maken
-Voordat u toepassingen met Azure AD integreert, is het belang rijk om te weten waar u zich bevindt en waar u wilt gaan.  De volgende vragen zijn bedoeld om u te helpen bij het integratie project van Azure AD-toepassingen.
+## <a name="take-inventory"></a>Inventariseren
+Voordat u toepassingen integreert met Azure AD, is het belangrijk om te weten waar u bent en waar u naartoe wilt gaan.  De volgende vragen zijn bedoeld om u te helpen nadenken over uw Azure AD-toepassingsintegratieproject.
 
 ### <a name="application-inventory"></a>Toepassingsinventaris
-* Waar zijn al uw toepassingen? Wie is eigenaar van de gebruikers?
-* Wat voor soort verificatie vereisen uw toepassingen?
-* Wie moet toegang hebben tot de toepassingen?
+* Waar zijn al uw toepassingen? Wie is de eigenaar?
+* Wat voor soort verificatie is vereist voor uw toepassingen?
+* Wie heeft toegang nodig tot welke toepassingen?
 * Wilt u een nieuwe toepassing implementeren?
-  * Maakt u deze intern en implementeert u deze in een Azure Compute-instantie?
-  * Gebruikt u een die beschikbaar is in de Azure-toepassing galerie?
+  * Gaat u deze zelf bouwen en implementeren op een Azure Compute-exemplaar?
+  * Gebruikt u een galerie die beschikbaar is in Azure-toepassing Gallery?
 
-### <a name="user-and-group-inventory"></a>Gebruikers-en groeps inventaris
-* Waar bevinden uw gebruikers accounts zich?
+### <a name="user-and-group-inventory"></a>Inventaris van gebruikers en groepen
+* Waar bevinden uw gebruikersaccounts zich?
   * On-premises Active Directory
   * Azure AD
-  * Binnen een afzonderlijke toepassings database waarvan u de eigenaar bent
-  * In niet-goedgekeurde toepassingen
+  * Binnen een afzonderlijke toepassingsdatabase die u bezit
+  * In niet-geanctioneerde toepassingen
   * Alle hierboven genoemde antwoorden
-* Welke machtigingen en roltoewijzingen hebben momenteel afzonderlijke gebruikers? Moet u de toegang controleren of weet u zeker dat uw gebruikers toegang en roltoewijzingen nu geschikt zijn?
-* Worden er al groepen in uw on-premises Active Directory gemaakt?
-  * Hoe worden uw groepen ingedeeld?
-  * Wie zijn de groeps leden?
+* Welke machtigingen en roltoewijzingen hebben afzonderlijke gebruikers momenteel? Moet u de toegang controleren of weet u zeker dat uw gebruikerstoegang en roltoewijzingen nu geschikt zijn?
+* Zijn er al groepen in uw on-premises Active Directory?
+  * Hoe zijn uw groepen ingedeeld?
+  * Wie zijn de groepsleden?
   * Welke machtigingen/roltoewijzingen hebben de groepen momenteel?
-* Moet u de gebruikers-of groeps databases opschonen voordat u de integratie kunt door gaan?  (Dit is een belang rijke vraag. Opschonen, opschonen.)
+* Moet u gebruikers-/groepsdatabases ops schonen voordat u gaat integreren?  (Dit is een belangrijke vraag. Garbage in, garbage out.)
 
-### <a name="access-management-inventory"></a>Inventaris van toegangs beheer
-* Hoe beheert u momenteel de gebruikers toegang tot toepassingen? Moet dat veranderen?  Hebt u andere manieren om toegang te beheren, zoals met [Azure RBAC](../../role-based-access-control/role-assignments-portal.md) bijvoorbeeld?
-* Wie moet er toegang tot hebben?
+### <a name="access-management-inventory"></a>Inventaris van toegangsbeheer
+* Hoe beheert u momenteel gebruikerstoegang tot toepassingen? Moet dat veranderen?  Hebt u andere manieren overwogen om toegang te beheren, bijvoorbeeld met [Azure RBAC?](../../role-based-access-control/role-assignments-portal.md)
+* Wie heeft toegang nodig tot wat?
 
-Misschien hebt u niet de antwoorden op al deze vragen, maar dat is wel goed.  Deze hand leiding kan u helpen bij het beantwoorden van enkele van deze vragen en een aantal weloverwogen beslissingen te nemen.
+Misschien hebt u niet van te voren de antwoorden op al deze vragen, maar dat is geen probleem.  Deze handleiding kan u helpen een aantal van deze vragen te beantwoorden en een aantal weloverwogen beslissingen te nemen.
 
-### <a name="find-unsanctioned-cloud-applications-with-cloud-discovery"></a>Niet-goedgekeurde Cloud toepassingen met Cloud Discovery zoeken
+### <a name="find-unsanctioned-cloud-applications-with-cloud-discovery"></a>Niet-geanctioneerde cloudtoepassingen zoeken met Cloud Discovery
 
-Zoals hierboven vermeld, zijn er mogelijk toepassingen die niet zijn beheerd door uw organisatie tot nu toe.  Als onderdeel van het inventaris proces is het mogelijk om niet-goedgekeurde Cloud toepassingen te vinden. Zie [Cloud Discovery instellen](/cloud-app-security/set-up-cloud-discovery).
+Zoals eerder vermeld, zijn er mogelijk toepassingen die tot nu toe niet door uw organisatie zijn beheerd.  Als onderdeel van het inventarisatieproces is het mogelijk om niet-geanctioneerde cloudtoepassingen te vinden. Zie [Set up Cloud Discovery](/cloud-app-security/set-up-cloud-discovery).
 
 ## <a name="integrating-applications-with-azure-ad"></a>Toepassingen integreren met Azure AD
-In de volgende artikelen vindt u informatie over de verschillende manieren waarop toepassingen kunnen worden geïntegreerd met Azure AD en bieden u enkele richt lijnen.
+In de volgende artikelen worden de verschillende manieren besproken waarop toepassingen kunnen worden geïntegreerd met Azure AD en worden enkele richtlijnen gegeven.
 
-* [Bepalen welke Active Directory moeten worden gebruikt](../fundamentals/active-directory-whatis.md)
-* [Toepassingen gebruiken in de Azure-toepassings galerie](what-is-single-sign-on.md)
-* [Lijst met zelf studies voor SaaS-toepassingen integreren](../saas-apps/tutorial-list.md)
+* [Bepalen welke Active Directory moet worden gebruikt](../fundamentals/active-directory-whatis.md)
+* [Toepassingen gebruiken in de Azure-toepassingsgalerie](what-is-single-sign-on.md)
+* [Lijst met zelfstudies over het integreren van SaaS-toepassingen](../saas-apps/tutorial-list.md)
 
 ## <a name="capabilities-for-apps-not-listed-in-the-azure-ad-gallery"></a>Mogelijkheden voor apps die niet worden vermeld in de Azure AD-galerie
 
-U kunt elke toepassing toevoegen die al bestaat in uw organisatie of een toepassing van derden van een leverancier die nog geen deel uitmaakt van de Azure AD-galerie. Afhankelijk van uw [gebruiksrecht overeenkomst](https://azure.microsoft.com/pricing/details/active-directory/)zijn de volgende mogelijkheden beschikbaar:
+U kunt elke toepassing toevoegen die al bestaat in uw organisatie, of een toepassing van derden van een leverancier die nog geen deel uitmaakt van de Azure AD-galerie. Afhankelijk van uw [licentieovereenkomst](https://azure.microsoft.com/pricing/details/active-directory/)zijn de volgende mogelijkheden beschikbaar:
 
-- Selfservice-integratie van elke toepassing die ondersteuning biedt voor services van [Security Assertion Markup Language (SAML) 2,0](https://wikipedia.org/wiki/SAML_2.0) (door SP geïnitieerd of IDP)
-- Self-Service-integratie van elke webtoepassing met een op een HTML gebaseerde aanmeldings pagina met [SSO op basis van wacht woorden](sso-options.md#password-based-sso)
-- Selfservice verbinding van toepassingen die gebruikmaken van het [systeem voor het scim-Protocol (Cross-Domain Identity Management) voor het inrichten van gebruikers](../app-provisioning/use-scim-to-provision-users-and-groups.md)
-- Mogelijkheid om koppelingen toe te voegen aan een toepassing in het [Start programma voor Office 365-apps](https://support.microsoft.com/office/meet-the-microsoft-365-app-launcher-79f12104-6fed-442f-96a0-eb089a3f476a) of [mijn apps](https://myapplications.microsoft.com/)
+- Selfservice-integratie van elke toepassing die ondersteuning biedt [voor Security Assertion Markup Language (SAML) 2.0-id-providers](https://wikipedia.org/wiki/SAML_2.0) (door SP of IdP geïnitieerd)
+- Selfservice-integratie van een webtoepassing met een aanmeldingspagina op basis van HTML met eenmalige [aanmelding op basis van een wachtwoord](sso-options.md#password-based-sso)
+- Selfserviceverbinding van toepassingen die gebruikmaken van het [SCIM-protocol (System for Cross-Domain Identity Management)](../app-provisioning/use-scim-to-provision-users-and-groups.md) voor het inrichten van gebruikers
+- Mogelijkheid om koppelingen toe te voegen aan elke toepassing [](https://myapplications.microsoft.com/) in het [start-](https://support.microsoft.com/office/meet-the-microsoft-365-app-launcher-79f12104-6fed-442f-96a0-eb089a3f476a) of Mijn apps
 
-Zie [verificatie scenario's voor Azure AD](../develop/authentication-vs-authorization.md)als u hulp nodig hebt bij het integreren van aangepaste apps met Azure AD. Wanneer u een App ontwikkelt die gebruikmaakt van een modern protocol zoals [OpenID Connect Connect/OAuth](../develop/active-directory-v2-protocols.md) om gebruikers te verifiëren, kunt u dit registreren bij het micro soft Identity-platform met behulp van de [app-registraties](../develop/quickstart-register-app.md) -ervaring in de Azure Portal.
+Zie Verificatiescenario's voor Azure AD als u op zoek bent naar richtlijnen voor ontwikkelaars over het integreren van aangepaste apps [met Azure AD.](../develop/authentication-vs-authorization.md) Wanneer u een app ontwikkelt die gebruikmaakt van een modern protocol zoals [OpenId Connect/OAuth](../develop/active-directory-v2-protocols.md) om gebruikers te verifiëren, kunt u deze registreren bij het Microsoft Identity Platform met behulp van de [App-registraties-ervaring](../develop/quickstart-register-app.md) in de Azure Portal.
 
-### <a name="authentication-types"></a>Verificatie typen
-Elk van uw toepassingen heeft mogelijk andere verificatie vereisten. Met Azure AD kunnen handtekening certificaten worden gebruikt met toepassingen die gebruikmaken van SAML 2,0-, WS-Federation-of OpenID Connect Connect-protocollen en wacht woord eenmalige aanmelding. Zie voor meer informatie over toepassings verificatie typen [certificaten beheren voor federatieve enkelvoudige Sign-On in azure Active Directory](manage-certificates-for-federated-single-sign-on.md) en [op wacht woord gebaseerde eenmalige aanmelding](what-is-single-sign-on.md).
+### <a name="authentication-types"></a>Verificatietypen
+Elk van uw toepassingen kan verschillende verificatievereisten hebben. Met Azure AD kunnen handtekeningcertificaten worden gebruikt met toepassingen die gebruikmaken van SAML 2.0, WS-Federation of OpenID Connect Protocols and Password Single Sign On. Zie Managing [Certificates for Federated Single Sign-On in Azure Active Directory](manage-certificates-for-federated-single-sign-on.md) and Password based single sign on (Certificaten voor ge federated Single Sign-On beheren in Azure Active Directory en Een wachtwoord gebaseerde een aanmelding ) voor meer informatie over toepassingsverificatietypen. [](what-is-single-sign-on.md)
 
-### <a name="enabling-sso-with-azure-ad-app-proxy"></a>Eenmalige aanmelding met Azure AD-app proxy inschakelen
-Met Microsoft Azure AD toepassings proxy kunt u vanaf elke locatie en op elk apparaat toegang bieden tot toepassingen die zich in uw particuliere netwerk bevinden. Nadat u een toepassings proxy connector hebt geïnstalleerd in uw omgeving, kunt u deze eenvoudig configureren met Azure AD.
+### <a name="enabling-sso-with-azure-ad-app-proxy"></a>Eenmalige aanmelding met Azure AD-app inschakelen
+Met Microsoft Azure AD toepassingsproxy kunt u veilig toegang bieden tot toepassingen in uw particuliere netwerk, vanaf elke locatie en elk apparaat. Nadat u een toepassingsproxyconnector in uw omgeving hebt geïnstalleerd, kan deze eenvoudig worden geconfigureerd met Azure AD.
 
 ### <a name="integrating-custom-applications"></a>Aangepaste toepassingen integreren
-Als u uw aangepaste toepassing wilt toevoegen aan de Azure-toepassing galerie, raadpleegt u [uw app naar de app-galerie van Azure AD publiceren](../develop/v2-howto-app-gallery-listing.md).
+Zie Publish your app to the Azure AD app gallery (Uw app publiceren naar de [Azure AD-appgalerie)](../develop/v2-howto-app-gallery-listing.md)als u uw aangepaste toepassing wilt toevoegen aan Azure-toepassing Gallery.
 
 ## <a name="managing-access-to-applications"></a>Toegang tot toepassingen beheren
-In de volgende artikelen worden de manieren beschreven waarop u de toegang tot toepassingen kunt beheren wanneer ze zijn geïntegreerd met Azure AD met behulp van Azure AD-connectors en Azure AD.
+In de volgende artikelen worden manieren beschreven waarop u de toegang tot toepassingen kunt beheren nadat ze zijn geïntegreerd met Azure AD met behulp van Azure AD-connectors en Azure AD.
 
 * [Toegang tot apps beheren met Azure AD](what-is-access-management.md)
 * [Automatiseren met Azure AD-connectors](../app-provisioning/user-provisioning.md)
@@ -96,9 +96,9 @@ In de volgende artikelen worden de manieren beschreven waarop u de toegang tot t
 * [Accounts delen](../enterprise-users/users-sharing-accounts.md)
 
 ## <a name="next-steps"></a>Volgende stappen
-Voor gedetailleerde informatie kunt u Azure Active Directory implementatie plannen downloaden van [github](../fundamentals/active-directory-deployment-plans.md). Voor galerie toepassingen kunt u implementatie plannen voor eenmalige aanmelding, voorwaardelijke toegang en gebruikers inrichten via de [Azure Portal](https://portal.azure.com)downloaden.
+Voor uitgebreide informatie kunt u de implementatieplannen Azure Active Directory [gitHub downloaden.](../fundamentals/active-directory-deployment-plans.md) Voor galerietoepassingen kunt u implementatieplannen voor een aanmelding, voorwaardelijke toegang en het inrichten van gebruikers downloaden via [de Azure Portal](https://portal.azure.com).
 
-Een implementatie plan downloaden van de Azure Portal:
+Een implementatieplan downloaden van de Azure Portal:
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-2. Selecteer   |  **een app**-  |  **implementatie plan** voor bedrijfs toepassingen.
+2. Selecteer **Bedrijfstoepassingen**  |  **Kies een app-implementatieplan.**  |  

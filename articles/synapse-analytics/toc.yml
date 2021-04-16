@@ -1,7 +1,7 @@
 items:
   - name: Azure Synapse Analytics
     href: index.yml
-  - name: Overschakelen naar een toegewezen SQL-groep (voorheen SQL DW) >
+  - name: Overschakelen naar toegewezen SQL-pool (voorheen SQL DW) >
     href: ./sql-data-warehouse/sql-data-warehouse-overview-what-is.md
   - name: Overzicht
     items:
@@ -21,13 +21,13 @@ items:
       - name: 1 Een Synapse-werkruimte maken
         href: get-started-create-workspace.md
         displayName: 'get, started'
-      - name: 2 analyseren met serverloze SQL-groep
+      - name: 2 Analyseren met serverloze SQL-pool
         href: get-started-analyze-sql-on-demand.md
         displayName: 'get, started'
-      - name: 3 analyseren met behulp van een niet-functionerende Spark-pool
+      - name: 3 Analyseren met serverloze Spark-pool
         href: get-started-analyze-spark.md
         displayName: 'get, started'
-      - name: 4 analyseren met behulp van een toegewezen SQL-groep
+      - name: 4 Analyseren met behulp van een toegewezen SQL-pool
         href: get-started-analyze-sql-pool.md
         displayName: 'get, started'
       - name: 5 Gegevens analyseren in een opslagaccount
@@ -45,7 +45,7 @@ items:
       - name: 9 Het Knowledge Center verkennen
         href: get-started-knowledge-center.md
         displayName: 'get, started'
-      - name: 10 een beheerder toevoegen
+      - name: 10 Een beheerder toevoegen
         href: get-started-add-admin.md
         displayName: 'get, started'
   - name: Werkruimte
@@ -69,7 +69,7 @@ items:
           - name: Een Power BI-werkruimte koppelen
             href: quickstart-power-bi.md
             displayName: quickstart
-          - name: ADLS Gen2 lezen in Pandas data frame
+          - name: Informatie ADLS Gen2 Pandas-gegevensframe lezen
             href: quickstart-read-from-gen2-to-pandas-dataframe.md
             displayName: quickstart
           - name: Verbinding maken met Azure Data Explorer
@@ -105,7 +105,7 @@ items:
             href: ./cicd/continuous-integration-deployment.md
           - name: Beveiliging
             items:
-              - name: Beveiligings controle door Azure Policy
+              - name: Beveiligingsmaatregelen per Azure Policy
                 href: ./security-controls-policy.md
               - name: Versleuteling
                 href: ./security/workspaces-encryption.md
@@ -124,7 +124,7 @@ items:
                     href: ./security/workspace-data-exfiltration-protection.md
                   - name: Synapse-werkruimte met Private Link-hubs
                     href: ./security/synapse-private-link-hubs.md
-                  - name: Verbinding maken met een beveiligd opslag account
+                  - name: Verbinding maken met een beveiligd opslagaccount
                     href: ./security/connect-to-a-secure-storage-account.md
               - name: Verificatie pass-through
                 items:
@@ -177,7 +177,7 @@ items:
                   - name: Verbinding maken met de Azure Synapse-werkruimte met privé-eindpunten
                     href: security/how-to-connect-to-workspace-with-private-links.md
                     displayname: links
-                  - name: Een gekoppelde service met beheerde Vnet inrichten en beveiligen
+                  - name: Een gekoppelde service inrichten en beveiligen met een beheerd VNet
                     href: ./data-integration/linked-service.md
                   - name: Verbinding maken met Synapse-werkruimte vanuit een afgeschermd netwerk
                     href: security/how-to-connect-to-workspace-from-restricted-network.md
@@ -196,7 +196,7 @@ items:
                 href: troubleshoot/reading-utf8-text.md
   - name: Migratiehandleidingen
     items:
-      - name: Migreren naar een toegewezen SQL-groep
+      - name: Migreren naar een toegewezen SQL-pool
         href: migration-guides/migrate-to-synapse-analytics-guide.md
   - name: Synapse SQL
     items:
@@ -354,9 +354,9 @@ items:
                     href: sql/develop-stored-procedures.md
                   - name: Transacties
                     items:
-                      - name: Toegewezen SQL-pool transacties
+                      - name: Toegewezen SQL-pooltransacties
                         href: sql/develop-transactions.md
-                      - name: Best practices-trans acties voor toegewezen SQL-Pools
+                      - name: Best practices voor transacties voor toegewezen SQL-pool
                         displayname: 'Transaction, best, practices'
                         href: sql/develop-transaction-best-practices.md
                   - name: Door de gebruiker gedefinieerde schema's
@@ -431,7 +431,7 @@ items:
             items:
               - name: Herstelpunten maken
                 href: ./backuprestore/sqlpool-create-restore-point.md
-              - name: Een toegewezen SQL-groep herstellen
+              - name: Een toegewezen SQL-pool herstellen
                 href: ./backuprestore/restore-sql-pool.md
           - name: Beheren en bewaken
             items:
@@ -564,17 +564,17 @@ items:
             href: ./spark/apache-spark-machine-learning-mllib-notebook.md
           - name: Spark-taakdefinities verzenden
             href: ./spark/apache-spark-job-definitions.md
-          - name: De metrische gegevens van Azure Synapse Spark-toepassings niveau verbinden en bewaken
+          - name: Metrische gegevens op Azure Synapse Spark-toepassingsniveau verbinden en bewaken
             href: ./spark/connect-monitor-azure-synapse-spark-application-level-metrics.md
-          - name: Apache Spark metrische gegevens op toepassings niveau bewaken met Prometheus en Grafana
+          - name: Metrische Apache Spark op toepassingsniveau bewaken met Prometheus en Grafana
             href: ./spark/use-prometheus-grafana-to-monitor-apache-spark-application-level-metrics.md
-          - name: Azure Log Analytics gebruiken voor het verzamelen en visualiseren van metrische gegevens en Logboeken (preview)
+          - name: Azure Log Analytics gebruiken voor het verzamelen en visualiseren van metrische gegevens en logboeken (preview)
             href: ./spark/apache-spark-azure-log-analytics.md
       - name: Concepten
         items:
           - name: Apache Spark
             href: ./spark/apache-spark-concepts.md
-          - name: Configuraties van Apache Spark Pools
+          - name: Apache Spark poolconfiguraties configureren
             href: ./spark/apache-spark-pool-configurations.md
           - name: Delta Lake
             href: ./spark/apache-spark-what-is-delta-lake.md
@@ -600,9 +600,9 @@ items:
                 href: ./spark/apache-spark-manage-python-packages.md
               - name: Scala-pakketten beheren
                 href: ./spark/apache-spark-manage-scala-packages.md
-              - name: Problemen met installatie fouten van Python-pakketten oplossen
+              - name: Installatiefouten in Python-pakketten oplossen
                 href: ./spark/apache-spark-troubleshoot-library-errors.md
-              - name: Een persoonlijk Conda-kanaal maken
+              - name: Een privékanaal van Conda maken
                 href: ./spark/apache-spark-custom-conda-channel.md
           - name: Notebooks en IDE-hulpprogramma's gebruiken
             items:
@@ -1148,7 +1148,7 @@ items:
             href: ./machine-learning/tutorial-cognitive-services-sentiment.md
           - name: Anomaliedetectie met Cognitive Services
             href: ./machine-learning/tutorial-cognitive-services-anomaly.md
-          - name: Machine learning-toepassingen maken met micro Soft Machine Learning voor Apache Spark (preview-versie)
+          - name: Bouw machine learning toepassingen met Microsoft Machine Learning for Apache Spark (preview)
             href: ./machine-learning/tutorial-build-applications-use-mmlspark.md
   - name: Data Catalog en governance
     items:

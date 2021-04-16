@@ -3,13 +3,15 @@ title: 'Quickstart: Een beheergroep maken met JavaScript'
 description: In deze quickstart gebruikt u JavaScript om een beheergroep te maken om uw resources in een resourcehiërarchie in te delen.
 ms.date: 02/05/2021
 ms.topic: quickstart
-ms.custom: devx-track-js
-ms.openlocfilehash: 99a2ed406d4837f6fc346e68b3b400003feed38c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom:
+- devx-track-js
+- mode-api
+ms.openlocfilehash: 553133f30bd16543444356e8cda3e70458247b5c
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100099146"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107536013"
 ---
 # <a name="quickstart-create-a-management-group-with-javascript"></a>Quickstart: Een beheergroep maken met JavaScript
 
@@ -29,7 +31,7 @@ Het kan tot vijftien minuten duren voordat de eerste beheergroep die in de map i
 
 ## <a name="application-setup"></a>Installatie van toepassing
 
-Als u Java script wilt inschakelen om beheer groepen te beheren, moet u de omgeving instellen. Deze instelling werkt overal waar JavaScript kan worden gebruikt, met inbegrip van [bash in Windows 10](/windows/wsl/install-win10).
+Als u JavaScript wilt inschakelen voor het beheren van beheergroepen, moet de omgeving worden ingesteld. Deze instelling werkt overal waar JavaScript kan worden gebruikt, met inbegrip van [bash in Windows 10](/windows/wsl/install-win10).
 
 1. Stel een nieuw Node.js-project in door de volgende opdracht uit te voeren.
 

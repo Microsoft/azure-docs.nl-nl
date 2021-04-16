@@ -2,18 +2,18 @@
 title: Een Azure Portal-dashboard maken met Azure CLI
 description: 'Quickstart: Meer informatie over het maken van een dashboard in Azure Portal met behulp van de Azure CLI. Een dashboard is een gerichte en georganiseerde weergave van uw cloudresources.'
 ms.topic: quickstart
-ms.custom: devx-track-azurepowershell
+ms.custom: devx-track-azurepowershell, devx-track-azurecli
 ms.date: 12/4/2020
-ms.openlocfilehash: ddfee1932c6887c6ca7593ca7a28c03e68e09899
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d951c692c7d3c282ae68c5f9b53e9cda5407df10
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104613208"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107481018"
 ---
 # <a name="quickstart-create-an-azure-portal-dashboard-with-azure-cli"></a>Quickstart: Een Azure Portal-dashboard maken met Azure CLI
 
-Een dashboard in de Azure-portal is een gerichte en georganiseerde weergave van uw cloudresources. Dit artikel gaat over het proces van het gebruik van Azure CLI om een dash board te maken.
+Een dashboard in de Azure-portal is een gerichte en georganiseerde weergave van uw cloudresources. Dit artikel is gericht op het proces van het gebruik van Azure CLI om een dashboard te maken.
 Het dashboard toont de prestaties van een virtuele machine (VM), evenals een aantal statische gegevens en links.
 
 

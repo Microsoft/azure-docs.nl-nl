@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Kubernetes met ingeschakelde Azure Arc
 description: Toont de ingebouwde beleidsdefinities van Azure Policy voor Kubernetes met ingeschakelde Azure Arc. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 03/31/2021
+ms.date: 04/14/2021
 ms.service: azure-arc
 author: mlearned
 ms.author: mlearned
 ms.topic: reference
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 9adcb15362a048c43c1bd5c3f1b4327b23416574
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: cfcb9d7de1a0a114d876bceb3ca11e6fb8ae8fda
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106092893"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107499717"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-arc-enabled-kubernetes"></a>Ingebouwde Azure Policy-definities voor Kubernetes met ingeschakelde Azure Arc
 

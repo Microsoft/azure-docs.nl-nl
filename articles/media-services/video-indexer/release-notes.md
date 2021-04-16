@@ -1,6 +1,6 @@
 ---
-title: Release opmerkingen bij Azure Media Services Video Indexer | Microsoft Docs
-description: Om up-to-date te blijven met de meest recente ontwikkelingen, biedt dit artikel u de meest recente updates op Azure Media Services Video Indexer.
+title: Azure Media Services Video Indexer opmerkingen bij de release | Microsoft Docs
+description: Om op de hoogte te blijven van de nieuwste ontwikkelingen, vindt u in dit artikel de nieuwste updates over Azure Media Services Video Indexer.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -13,16 +13,16 @@ ms.topic: article
 ms.custom: references_regions
 ms.date: 03/30/2021
 ms.author: juliako
-ms.openlocfilehash: c2465d845da9dd9c2c1690c39a8f1d1c7e86899f
-ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
+ms.openlocfilehash: b3602d421718cbd1de3509751491ec6db65b1b01
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106075709"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107532893"
 ---
-# <a name="azure-media-services-video-indexer-release-notes"></a>Release opmerkingen bij Azure Media Services Video Indexer
+# <a name="azure-media-services-video-indexer-release-notes"></a>Azure Media Services Video Indexer opmerkingen bij de release
 
->Ontvang een melding over wanneer u deze pagina voor updates opnieuw moet bezoeken door deze URL te kopiëren en te plakken: `https://docs.microsoft.com/api/search/rss?search=%22Azure+Media+Services+Video+Indexer+release+notes%22&locale=en-us` in uw RSS-feed-lezer.
+>Ontvang een melding wanneer u deze pagina opnieuw moet bezoeken voor updates door deze URL te kopiëren en in uw `https://docs.microsoft.com/api/search/rss?search=%22Azure+Media+Services+Video+Indexer+release+notes%22&locale=en-us` RSS-feedlezer te kopiëren en te kopiëren.
 
 Om u op de hoogte te houden van de nieuwste ontwikkelingen, biedt dit artikel u informatie over:
 
@@ -31,369 +31,369 @@ Om u op de hoogte te houden van de nieuwste ontwikkelingen, biedt dit artikel u 
 * Opgeloste fouten
 * Afgeschafte functionaliteit
 
-## <a name="march-2021"></a>2021 maart
+## <a name="march-2021"></a>Maart 2021
 
-### <a name="audio-analysis"></a>Audio analyse 
+### <a name="audio-analysis"></a>Audioanalyse 
 
-Audio analyse is nu beschikbaar in extra nieuwe bundel van audio functies op verschillende prijs punten. De nieuwe **standaard** instelling voor audio analyse biedt een goedkope optie om alleen spraak-transcriptie, vertaling en uitvoer bijschriften en ondertiteling uit te pakken. De **standaard audio** -voor instelling produceert twee afzonderlijke meters op uw factuur, met inbegrip van een regel voor transcriptie en een aparte regel voor de opmaak van het bijschrift en de ondertitel. Zie de pagina met [prijzen voor Media Services](https://azure.microsoft.com/pricing/details/media-services/) voor meer informatie over de prijzen.
+Audio-analyse is nu beschikbaar in een extra nieuwe bundel audiofuncties voor verschillende prijs. De nieuwe **standaardinstelling voor standaard** audioanalyse biedt een voordelige optie om alleen spraaktranscriptie, vertaling en indeling van uitvoerbijschriften en ondertiteling te extraheren. De **standaardinstelling Basic Audio** produceert twee afzonderlijke meters op uw factuur, waaronder een regel voor transcriptie en een afzonderlijke regel voor het opmaken van bijschriften en ondertiteling. Zie de pagina met prijzen Media Services meer [informatie over de](https://azure.microsoft.com/pricing/details/media-services/) prijzen.
 
-De zojuist toegevoegde bundel is beschikbaar wanneer u het bestand indexeert of opnieuw indexeert door de **Geavanceerde**  ->  **Audio** -voor instelling voor de basis opties te kiezen (onder de vervolg keuzelijst **video + audio-indexering** ).
+De zojuist toegevoegde bundel is beschikbaar bij het indexeren of opnieuw indexeren van uw bestand door de geavanceerde optie Standaard audio vooraf te kiezen (onder de vervolgkeuzevak  ->   Video **+ audio** indexeren).
 
-### <a name="new-developer-portal"></a>Nieuwe ontwikkelaars Portal 
+### <a name="new-developer-portal"></a>Nieuwe ontwikkelaarsportal 
 
-Video Indexer heeft een nieuwe [ontwikkelaars Portal](https://api-portal.videoindexer.ai/), probeer de nieuwe video indexer-api's uit en Zoek alle relevante resources op één plek: [github-opslag plaats](https://github.com/Azure-Samples/media-services-video-indexer), [stack overflow](https://stackoverflow.com/questions/tagged/video-indexer), [video indexer tech Community](https://techcommunity.microsoft.com/t5/azure-media-services/bg-p/AzureMediaServices/label-name/Video%20Indexer) met relevante blog berichten, [video indexer Veelgestelde vragen](faq.md), [gebruikers stem](https://feedback.azure.com/forums/932041-cognitive-services?category_id=399016) om uw feedback te geven en functies en  [' CodePen ' te koppelen](https://codepen.io/videoindexer) aan widgets code voorbeelden. 
+Video Indexer heeft een nieuwe [](https://api-portal.videoindexer.ai/)ontwikkelaarsportal, probeert de nieuwe Video Indexer-API's uit en vindt alle relevante resources op één plek: [GitHub-opslagplaats,](https://github.com/Azure-Samples/media-services-video-indexer) [Stack overflow,](https://stackoverflow.com/questions/tagged/video-indexer) [Video Indexer tech-community](https://techcommunity.microsoft.com/t5/azure-media-services/bg-p/AzureMediaServices/label-name/Video%20Indexer) met relevante blogberichten, [Video Indexer](faq.md)Veelgestelde vragen, [User Voice](https://feedback.azure.com/forums/932041-cognitive-services?category_id=399016) om uw feedback te geven en functies voor te stellen, en ['CodePen'-koppeling](https://codepen.io/videoindexer) met codevoorbeelden voor widgets. 
  
-### <a name="advanced-customization-capabilities-for-insight-widget"></a>Geavanceerde aanpassings mogelijkheden voor Insight-widget 
+### <a name="advanced-customization-capabilities-for-insight-widget"></a>Geavanceerde aanpassingsmogelijkheden voor inzichtwidget 
 
-SDK is nu beschikbaar om Video Indexer Insights-widget in uw eigen service in te sluiten en de stijl en gegevens aan te passen. De SDK ondersteunt de Standard Video Indexer Insights-widget en een volledig aanpas bare Insights-widget. Code voorbeeld is beschikbaar in [video indexer github-opslag plaats](https://github.com/Azure-Samples/media-services-video-indexer/tree/master/Embedding%20widgets/widget-customization). Met deze geavanceerde aanpassings mogelijkheden kunnen ontwikkel aars van oplossingen aangepaste opmaak Toep assen en de eigen AI-gegevens van de klant meenemen en in de object Insight presen teren (met of zonder Video Indexer inzichten). 
+SDK is nu beschikbaar voor het insluiten Video Indexer widget inzichten in uw eigen service en om de stijl en gegevens aan te passen. De SDK ondersteunt de standaard widget Video Indexer inzichten en een volledig aanpasbare inzichtenwidget. Codevoorbeeld is beschikbaar in [Video Indexer GitHub-opslagplaats](https://github.com/Azure-Samples/media-services-video-indexer/tree/master/Embedding%20widgets/widget-customization). Met deze geavanceerde aanpassingsmogelijkheden kan de ontwikkelaar van oplossingen aangepaste stijlen toepassen en de eigen AI-gegevens van de klant gebruiken en deze presenteren in de inzichtwidget (met of zonder Video Indexer inzichten). 
 
-### <a name="video-indexer-deployed-in-the-us-north-central--us-west-and-canada-central"></a>Video Indexer geïmplementeerd in de VS Noord-Centraal, VS-West en Canada-centraal 
+### <a name="video-indexer-deployed-in-the-us-north-central--us-west-and-canada-central"></a>Video Indexer geïmplementeerd in US - noord-centraal, US - west en Canada - centraal 
 
-U kunt nu een Video Indexer betaalde account maken in de regio's vs Noord-Centraal, VS-West en Canada-centraal
+U kunt nu een betaald Video Indexer maken in de regio's US - noord-centraal, US - west en Canada - centraal regio's
  
-### <a name="new-source-languages-support-for-speech-to-text-stt-translation-and-search"></a>Ondersteuning voor nieuwe bron talen voor STT (Speech-to-text), vertalen en zoeken 
+### <a name="new-source-languages-support-for-speech-to-text-stt-translation-and-search"></a>Ondersteuning voor nieuwe brontalen voor spraak-naar-tekst (STT), vertaling en zoeken 
 
-Video Indexer biedt nu ondersteuning voor STT, vertalen en zoeken in Deens (' da-DK '), Noors (' nb-NO '), Zweeds (' sv-SE '), Fins (' fi-FI '), Canadees Frans (' fr-CA '), Thai (' th-TH '), Arabisch (' ar-BH ', ' ar-BIJV ', ' ar-IQ ', ' ar-JO ', ' ar-KW ', ' ar-LB ', ' ar-OM ', ' ar-QA ', ' ar-S ' en ' ar-SY ') en Turks (' tr-TR '). Deze talen zijn beschikbaar in zowel API-als Video Indexer-website. 
+Video Indexer biedt nu ondersteuning voor STT, vertaling en zoeken in Deens ('da-DK'), Noors('nb-NO'), Zweeds('sv-SE'), Fins('fi-FI'), Frans ('fr-CA'), Thai('th-TH'), Arabisch ('ar-WANT', 'ar-EG', 'ar-IQ', 'ar-JO', 'ar-KW', 'ar-LB', 'ar-OM', 'ar-QA', 'ar-S' en 'ar-SY' en Turks('tr-TR'). Deze talen zijn beschikbaar op zowel de API- als Video Indexer website. 
  
 ### <a name="search-by-topic-in-video-indexer-website"></a>Zoeken op onderwerp in Video Indexer website 
 
-U kunt nu de zoek functie gebruiken, boven aan de pagina [video indexer website](https://www.videoindexer.ai/account/login) , om te zoeken naar Video's met specifieke onderwerpen. 
+U kunt nu de zoekfunctie bovenaan de pagina Video Indexer [gebruiken](https://www.videoindexer.ai/account/login) om te zoeken naar video's met specifieke onderwerpen. 
 
 ## <a name="february-2021"></a>Februari 2021
 
-### <a name="multiple-account-owners"></a>Meerdere account eigenaren 
+### <a name="multiple-account-owners"></a>Meerdere accounteigenaren 
 
-De rol account eigenaar is toegevoegd aan Video Indexer. U kunt gebruikers toevoegen, wijzigen en verwijderen. Wijzig hun rol. Zie [gebruikers uitnodigen](invite-users.md)voor meer informatie over het delen van een account.
+De rol accounteigenaar is toegevoegd aan Video Indexer. U kunt gebruikers toevoegen, wijzigen en verwijderen; hun rol te wijzigen. Zie Invite users (Gebruikers uitnodigen) voor meer informatie over het [delen van een account.](invite-users.md)
 
-### <a name="audio-event-detection-public-preview"></a>Audio gebeurtenis detectie (open bare preview)
+### <a name="audio-event-detection-public-preview"></a>Detectie van audiogebeurtenissen (openbare preview)
 
 > [!NOTE]
-> Deze functie is alleen beschikbaar in proef accounts. 
+> Deze functie is alleen beschikbaar in proefaccounts. 
 
-Video Indexer detecteert nu de volgende audio-effecten in de niet-spraak segmenten van de inhoud: Gunshot, glas Brokers, alarm, Siren, explosie, honden schors, alinea, laughter, massa reacties (cheering, Clapping en booing) en stilte. 
+Video Indexer detecteert nu de volgende audio-effecten in de niet-spraaksegmenten van de inhoud: gunshot, glassurken, alarm, siren, explosion, dog dog dog, booing, crowd reactions (herkenning, clapping en booing) en Stilte. 
 
-De functie voor nieuw toegevoegde audio is beschikbaar wanneer u een bestand indexeert door de **geavanceerde optie**  ->  **geavanceerde audio** -voor instelling te kiezen (onder video en audio indexeren). Standaard indexering bevat alleen **stilte** -en overschrijvings **reacties**. 
+De zojuist toegevoegde functie voor audio-invloeden is beschikbaar bij het indexeren van uw bestand door de geavanceerde optie Geavanceerde audiovoorinstelling te kiezen  ->   (onder Video en audio indexeren). Standaardindexering omvat alleen stilte **en** **reacties van de massa.** 
 
-Het gebeurtenis type **Clapping** dat is opgenomen in het vorige model voor audio-effecten, is nu geëxtraheerd door een deel van het gebeurtenis type voor de **reactie** van de hoeveelheid.
+Het **gebeurtenistype voor clapping** dat is opgenomen in het vorige model voor audio-effecten, is nu geëxtraheerd als onderdeel van het gebeurtenistype **crowdreactie.**
 
-Wanneer u ervoor kiest om **inzichten** van uw video op de [video indexer](https://www.videoindexer.ai/) website te bekijken, worden de audio-effecten op de pagina weer gegeven.
+Wanneer u ervoor kiest om **Inzichten van** uw video weer te geven op de Video Indexer website, worden de audio-effecten weergegeven op de pagina. [](https://www.videoindexer.ai/)
 
-:::image type="content" source="./media/release-notes/audio-detection.png" alt-text="Geluids gebeurtenis detectie":::
+:::image type="content" source="./media/release-notes/audio-detection.png" alt-text="Detectie van audiogebeurtenissen":::
 
-### <a name="named-entities-enhancement"></a>Verbetering van benoemde entiteiten  
+### <a name="named-entities-enhancement"></a>Verbeterde benoemde entiteiten  
 
-De geëxtraheerde lijst met personen en locatie is uitgebreid en bijgewerkt in het algemeen. 
+De uitgepakte lijst met personen en locatie is uitgebreid en in het algemeen bijgewerkt. 
 
-Daarnaast bevat het model nu mensen en locaties in context die niet beroemde zijn, zoals een ' Sam ' of ' Home ' in de video. 
+Daarnaast bevat het model nu personen en locaties in de context die niet beroemde zijn, zoals een 'Sam' of 'Home' in de video. 
 
 ## <a name="january-2021"></a>Januari 2021
 
-### <a name="video-indexer-is-deployed-on-us-government-cloud"></a>Video Indexer is geïmplementeerd in de Amerikaanse overheids Cloud 
+### <a name="video-indexer-is-deployed-on-us-government-cloud"></a>Video Indexer is geïmplementeerd in de cloud van de Amerikaanse overheid 
 
-U kunt nu een Video Indexer betaalde account maken voor de Amerikaanse overheids Cloud in Virginia en Arizona regio's. Video Indexer aanbieding voor een gratis proef versie is niet beschikbaar in de vermelde regio. Ga naar Video Indexer-documentatie voor meer informatie. 
+U kunt nu een betaald Video Indexer account maken in de cloud van de Amerikaanse overheid in de regio's Virginia en Arizona. Video Indexer gratis proefversie is niet beschikbaar in de genoemde regio. Ga voor meer informatie naar Video Indexer Documentatie. 
 
-### <a name="video-indexer-deployed-in-the-india-central-region"></a>Video Indexer geïmplementeerd in de regio India centraal 
+### <a name="video-indexer-deployed-in-the-india-central-region"></a>Video Indexer geïmplementeerd in de regio India - centraal 
 
-U kunt nu een Video Indexer betaalde account maken in de regio India centraal. 
+U kunt nu een betaald Video Indexer maken in de regio India - centraal. 
 
 ### <a name="new-dark-mode-for-the-video-indexer-website-experience"></a>Nieuwe donkere modus voor de Video Indexer website-ervaring
 
-De ervaring van de Video Indexer website is nu beschikbaar in de donkere modus. Als u de donkere modus wilt inschakelen, opent u het deel venster instellingen en schakelt u de optie voor de **donkere modus** in. 
+De Video Indexer website is nu beschikbaar in de donkere modus. Als u de donkere modus wilt inschakelen, opent u het instellingenvenster en schakelt u de **optie Donkere** modus in. 
 
 :::image type="content" source="./media/release-notes/dark-mode.png" alt-text="Instelling voor donkere modus":::
 
 ## <a name="december-2020"></a>December 2020
 
-### <a name="video-indexer-deployed-in-the-switzerland-west-and-switzerland-north"></a>Video Indexer geïmplementeerd in de Zwitserland-west en Zwitserland-noord
+### <a name="video-indexer-deployed-in-the-switzerland-west-and-switzerland-north"></a>Video Indexer geïmplementeerd in de Zwitserland - west en Zwitserland - noord
 
-U kunt nu een Video Indexer betaalde account maken in de regio's Zwitserland-west en Zwitserland-noord.
+U kunt nu een betaald Video Indexer maken in de Zwitserland - west en Zwitserland - noord regio's.
 
 ## <a name="october-2020"></a>Oktober 2020
 
-### <a name="animated-character-identification-improvements"></a>Verbeteringen van animatie van teken-id's  
+### <a name="animated-character-identification-improvements"></a>Verbeteringen in de identificatie van animaties  
 
-Video Indexer ondersteunt detectie, groepering en herkenning van tekens in inhoud met animatie via integratie met Cognitive Services aangepaste visie. We hebben in de detectie-en teken herkenning een grote verbetering toegevoegd aan deze AI-algoritme, omdat inzicht in de nauw keurigheid en geïdentificeerde tekens aanzienlijk wordt verbeterd.
+Video Indexer ondersteunt detectie, groepering en herkenning van tekens in animaties via integratie met Cognitive Services Custom Vision. We hebben een belangrijke verbetering toegevoegd aan dit AI-algoritme in de detectie en de herkenning van tekens, omdat de nauwkeurigheid van het inzicht en geïdentificeerde tekens aanzienlijk worden verbeterd.
 
-### <a name="planned-video-indexer-website-authenticatication-changes"></a>Geplande Video Indexer website wijzigingen authenticatication
+### <a name="planned-video-indexer-website-authenticatication-changes"></a>Wijzigingen Video Indexer de authenticatie van geplande websites
 
-Vanaf 1 maart 2021 kunt u zich niet meer registreren en u aanmelden bij de [ontwikkelaars Portal](video-indexer-use-apis.md) van [video indexer website](https://www.videoindexer.ai/) met behulp van Facebook of LinkedIn.
+Vanaf 1 maart 2021 kunt u zich niet meer registreren en aanmelden bij de ontwikkelaarsportal van [de Video Indexer-website](https://www.videoindexer.ai/) [](video-indexer-use-apis.md) via Facebook of LinkedIn.
 
-U kunt zich aanmelden en aanmelden met een van deze providers: Azure AD, micro soft en Google.
+U kunt zich registreren en aanmelden met een van deze providers: Azure AD, Microsoft en Google.
 
 > [!NOTE]
-> De Video Indexer accounts die zijn verbonden met LinkedIn en Facebook, zijn na 2021 1 maart niet toegankelijk. 
+> De Video Indexer-accounts die zijn verbonden met LinkedIn en Facebook, zijn niet meer toegankelijk na 1 maart 2021. 
 > 
-> U moet een e-mail bericht van Azure AD, micro soft of Google [uitnodigen](invite-users.md) voor het video indexer-account, zodat u nog steeds toegang hebt. U kunt een extra eigenaar van ondersteunde providers toevoegen, zoals wordt beschreven in [uitnodigen](invite-users.md). <br/>
+> U moet [een](invite-users.md) e-mail van Azure AD, Microsoft of Google uitnodigen die u hebt voor het Video Indexer-account, zodat u nog steeds toegang hebt. U kunt een extra eigenaar van ondersteunde providers toevoegen, zoals beschreven in [Uitnodigen.](invite-users.md) <br/>
 > U kunt ook een betaald account maken en de gegevens migreren.
 
 ## <a name="august-2020"></a>Augustus 2020
 
-### <a name="mobile-design-for-the-video-indexer-website"></a>Mobiel ontwerp voor de Video Indexer-website
+### <a name="mobile-design-for-the-video-indexer-website"></a>Mobiel ontwerp voor de Video Indexer website
 
-De ervaring van de Video Indexer website is nu het ondersteunen van mobiele apparaten. De gebruikers ervaring reageert op het aanpassen van de grootte van uw mobiele scherm (met uitzonde ring van aanpassings UIs). 
+De Video Indexer website ondersteunt nu mobiele apparaten. De gebruikerservaring is responsief om zich aan te passen aan de grootte van uw mobiele scherm (met uitzondering van aanpassings-API's). 
 
-### <a name="accessibility-improvements-and-bug-fixes"></a>Verbeterde toegankelijkheid en oplossingen voor oplossingen 
+### <a name="accessibility-improvements-and-bug-fixes"></a>Toegankelijkheidsverbeteringen en oplossingen voor fouten 
 
-Als onderdeel van de WCAG (richt lijnen voor toegankelijkheid van webinhoud) wordt de ervaring van de Video Indexer website uitgelijnd met categorie C als onderdeel van de micro soft-toegankelijkheids standaarden. Verschillende bugs en verbeteringen met betrekking tot toetsenbord navigatie, programmatische toegang en scherm lezer zijn opgelost. 
+Als onderdeel van WCAG (Richtlijnen voor toegankelijkheid van webinhoud) is de Video Indexer website-ervaring afgestemd op klasse C, als onderdeel van microsoft-toegankelijkheidsstandaarden. Er zijn verschillende fouten en verbeteringen met betrekking tot toetsenbordnavigatie, programmatische toegang en schermlezer opgelost. 
 
 ## <a name="july-2020"></a>Juli 2020
 
-### <a name="ga-for-multi-language-identification"></a>GA voor multi-language-identificatie
+### <a name="ga-for-multi-language-identification"></a>GA voor identificatie in meerdere talen
 
-Multi-language-identificatie wordt verplaatst van preview naar GA en klaar voor productief gebruik.
+Identificatie in meerdere talen is verplaatst van de preview-versie naar de ga-versie en klaar voor productief gebruik.
 
-Er zijn geen prijs wijzigingen die betrekking hebben op de overgang ' preview to GA '.
+Er zijn geen gevolgen voor de prijzen met betrekking tot de overgang 'Preview naar GA'.
 
-### <a name="video-indexer-website-improvements"></a>Verbeterde website Video Indexer
+### <a name="video-indexer-website-improvements"></a>Video Indexer website verbeteren
 
-#### <a name="adjustments-in-the-video-gallery"></a>Aanpassingen in de video galerie
+#### <a name="adjustments-in-the-video-gallery"></a>Aanpassingen in de videogalerie
 
-Nieuwe zoek balk voor uitgebreid inzicht zoeken met extra filter mogelijkheden is toegevoegd. De zoek resultaten zijn ook verbeterd.
+Er is een nieuwe zoekbalk toegevoegd voor zoeken in deep insights met aanvullende filtermogelijkheden. Zoekresultaten zijn ook verbeterd.
 
-Nieuwe lijst weergave met de mogelijkheid om een video archief met meerdere bestanden te sorteren en te beheren.
+Nieuwe lijstweergave met de mogelijkheid om videoarchieven met meerdere bestanden te sorteren en te beheren.
 
-#### <a name="new-panel-for-easy-selection-and-configuration"></a>Nieuw paneel voor eenvoudige selectie en configuratie
+#### <a name="new-panel-for-easy-selection-and-configuration"></a>Nieuw deelvenster voor eenvoudige selectie en configuratie
 
-Side Panel voor eenvoudige selectie en gebruikers configuratie is toegevoegd, waardoor eenvoudig en snel accounts kunnen worden gemaakt en gedeeld, en configuratie kan worden ingesteld.
+Zijpaneel voor eenvoudige selectie en gebruikersconfiguratie is toegevoegd, zodat u eenvoudig en snel een account kunt maken en delen en de configuratie kunt instellen.
 
-Side Panel wordt ook gebruikt voor gebruikers voorkeuren en Help.
+Zijpaneel wordt ook gebruikt voor gebruikersvoorkeuren en help.
 
 ## <a name="june-2020"></a>Juni 2020
 
 ### <a name="search-by-topics"></a>Zoeken op onderwerpen
 
-U kunt nu de zoek-API gebruiken om te zoeken naar Video's met specifieke onderwerpen (alleen API).
+U kunt nu de zoek-API gebruiken om te zoeken naar video's met specifieke onderwerpen (alleen API).
 
-Onderwerpen worden toegevoegd als onderdeel van de `textScope` (optionele para meter). Zie de [API](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Search-Videos) voor meer informatie.  
+Onderwerpen worden toegevoegd als onderdeel van de `textScope` (optionele parameter). Zie [API](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Search-Videos) voor meer informatie.  
 
-### <a name="labels-enhancement"></a>Uitbrei ding van labels
+### <a name="labels-enhancement"></a>Labels verbeteren
 
-Het label Tagger is bijgewerkt en bevat nu meer visuele labels die kunnen worden geïdentificeerd.
+De labeltagger is bijgewerkt en bevat nu meer visuele labels die kunnen worden geïdentificeerd.
 
 ## <a name="may-2020"></a>Mei 2020
 
-### <a name="video-indexer-deployed-in-the-east-us"></a>Video Indexer geïmplementeerd in het VS-Oost
+### <a name="video-indexer-deployed-in-the-east-us"></a>Video Indexer geïmplementeerd in VS - oost
 
-U kunt nu een Video Indexer betaalde account maken in de regio VS-Oost.
+U kunt nu een betaald Video Indexer maken in de regio VS - oost.
  
 ### <a name="video-indexer-url"></a>Video Indexer URL
 
-Video Indexer regionale eind punten zijn allemaal gecombineerd om te starten met www. Er is geen actie-item vereist.
+Video Indexer regionale eindpunten zijn samengevoegd om alleen met www te beginnen. Er is geen actie-item vereist.
 
-Vanaf nu bereikt u www.videoindexer.ai of het gaat om widgets in te sluiten of u aan te melden Video Indexer webtoepassingen.
+Vanaf nu kunt u zien www.videoindexer.ai het is voor het insluiten van widgets of het aanmelden bij Video Indexer webtoepassingen.
 
-Wus.videoindexer.ai wordt ook omgeleid naar www. Meer informatie is beschikbaar in [Inge sloten video indexer widgets in uw apps](video-indexer-embed-widgets.md).
+Ook wus.videoindexer.ai worden omgeleid naar www. Meer informatie is beschikbaar in [Insluiten Video Indexer widgets in uw apps.](video-indexer-embed-widgets.md)
 
 ## <a name="april-2020"></a>April 2020
 
-### <a name="new-widget-parameters-capabilities"></a>Mogelijkheden van nieuwe widget parameters
+### <a name="new-widget-parameters-capabilities"></a>Mogelijkheden voor nieuwe widgetparameters
 
-De widget **inzichten** bevat nieuwe para meters: `language` en `control` .
+De **widget Inzichten** bevat nieuwe parameters: en `language` `control` .
 
-De **Player** -widget heeft een nieuwe `locale` para meter. `locale` `language` De para meters en zijn van invloed op de taal van de speler.
+De **widget Speler** heeft een nieuwe `locale` parameter. De `locale` parameters en bepalen de taal van de `language` speler.
 
-Zie de sectie [typen widget](video-indexer-embed-widgets.md#widget-types) voor meer informatie. 
+Zie de sectie [widgettypen voor meer](video-indexer-embed-widgets.md#widget-types) informatie. 
 
-### <a name="new-player-skin"></a>Nieuwe Player-weer gave
+### <a name="new-player-skin"></a>Nieuwe speler skin
 
-Er is een nieuwe Player-weer gave gestart met een bijgewerkt ontwerp.
+Er wordt een nieuwe speler-skin gelanceerd met bijgewerkt ontwerp.
 
-### <a name="prepare-for-upcoming-changes"></a>Voorbereiden op aanstaande wijzigingen
+### <a name="prepare-for-upcoming-changes"></a>Voorbereiden op toekomstige wijzigingen
 
-* De volgende Api's retour neren vandaag een account object:
+* Vandaag retourneren de volgende API's een accountobject:
 
-    * [Create-betaald-account](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Create-Paid-Account)
-    * [Get-account](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Get-Account)
-    * [Get-accounts-Authorization](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Get-Accounts-Authorization)
-    * [Get-accounts-with-token](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Get-Accounts-With-Token)
+    * [Betaald account maken](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Create-Paid-Account)
+    * [Get-Account](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Get-Account)
+    * [Get-Accounts-Authorization](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Get-Accounts-Authorization)
+    * [Get-Accounts-with-Token](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Get-Accounts-With-Token)
  
-    Het account object heeft een `Url` veld dat verwijst naar de locatie van de [video indexer website](https://www.videoindexer.ai/).
-Voor betaalde accounts `Url` verwijst het veld momenteel naar een interne URL in plaats van naar de open bare website.
-In de komende weken wordt dit gewijzigd en wordt de URL van de [video indexer website](https://www.videoindexer.ai/) voor alle accounts (proef en betaalde) geretourneerd.
+    Het object Account heeft een `Url` veld dat verwijst naar de locatie van de [Video Indexer website](https://www.videoindexer.ai/).
+Voor betaalde accounts `Url` verwijst het veld momenteel naar een interne URL in plaats van de openbare website.
+In de komende weken wijzigen we deze en retourneren we de URL [Video Indexer website](https://www.videoindexer.ai/) voor alle accounts (proefversie en betaald).
 
-    Gebruik niet de interne Url's, u moet de [video indexer open bare api's](https://api-portal.videoindexer.ai/)gebruiken.
-* Als u Video Indexer Url's insluit in uw toepassingen en de Url's niet verwijzen naar de [video indexer website](https://www.videoindexer.ai/) of het video indexer API-eind punt ( `https://api.videoindexer.ai` ), maar in plaats van naar een regionaal eind punt (bijvoorbeeld `https://wus2.videoindexer.ai` ), genereert u de url's opnieuw.
+    Gebruik niet de interne URL's. Gebruik de Video Indexer [API's](https://api-portal.videoindexer.ai/).
+* Als u Video Indexer-URL's insluit in uw toepassingen en de URL's niet naar de [Video Indexer-website of](https://www.videoindexer.ai/) het Video Indexer API-eindpunt ( ) maar naar een regionaal eindpunt (bijvoorbeeld ) wijzen, worden de URL's opnieuw `https://api.videoindexer.ai` `https://wus2.videoindexer.ai` gemaakt.
 
-   U kunt dit doen door een van de volgende handelingen uit te voeren:
+   U kunt dit doen door:
 
-    * Door de URL te vervangen door een URL die verwijst naar de Video Indexer-widget-Api's (bijvoorbeeld de [widget Insights](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Get-Video-Insights-Widget))
-    * De Video Indexer-website gebruiken om een nieuwe Inge sloten URL te genereren:
+    * Vervang de URL door een URL die verwijst naar Video Indexer widget-API's (bijvoorbeeld de [widget inzichten](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Get-Video-Insights-Widget))
+    * Gebruik de Video Indexer om een nieuwe ingesloten URL te genereren:
          
-         Druk op **Play** om naar de pagina van de video te gaan > Klik op de knop **&lt; / &gt; insluiten** -> de URL naar uw toepassing kopiëren:
+         Druk **op Afspelen** om naar de pagina van uw video te gaan. Klik > op de knop **&lt; / &gt; Insluiten** om > URL naar uw toepassing te kopiëren:
    
-    De regionale Url's worden niet ondersteund en worden in de komende weken geblokkeerd.
+    De regionale URL's worden niet ondersteund en worden de komende weken geblokkeerd.
 
 ## <a name="january-2020"></a>Januari 2020
  
-### <a name="custom-language-support-for-additional-languages"></a>Aangepaste taal ondersteuning voor extra talen
+### <a name="custom-language-support-for-additional-languages"></a>Ondersteuning voor aangepaste talen voor aanvullende talen
 
-Video Indexer ondersteunt nu aangepaste taal modellen voor `ar-SY` , `en-UK` en `en-AU` (alleen API).
+Video Indexer ondersteunt nu aangepaste taalmodellen voor `ar-SY` `en-UK` , en `en-AU` (alleen API).
  
-### <a name="delete-account-timeframe-action-update"></a>Update van tijds bestek actie verwijderen
+### <a name="delete-account-timeframe-action-update"></a>Actie-update voor het tijdsbestek van het account verwijderen
 
-Met account actie verwijderen wordt het account nu binnen 90 dagen verwijderd in plaats van 48 uur.
+Met de actie Account verwijderen wordt het account nu binnen 90 dagen verwijderd in plaats van 48 uur.
  
-### <a name="new-video-indexer-github-repository"></a>Nieuwe Video Indexer GitHub-opslag plaats
+### <a name="new-video-indexer-github-repository"></a>Nieuwe Video Indexer GitHub-opslagplaats
 
-Een nieuwe Video Indexer GitHub met verschillende projecten, aan de slag-hand leidingen en code voorbeelden is nu beschikbaar: https://github.com/Azure-Samples/media-services-video-indexer
+Een nieuwe Video Indexer GitHub met verschillende projecten, aan de slag-handleidingen en codevoorbeelden is nu beschikbaar: https://github.com/Azure-Samples/media-services-video-indexer
  
-### <a name="swagger-update"></a>Update Swagger
+### <a name="swagger-update"></a>Swagger-update
 
-Video Indexer gecombineerde **authenticaties** en **bewerkingen** in één [video indexer OpenAPI-specificatie (Swagger)](https://api-portal.videoindexer.ai/docs/services/Operations/export?DocumentFormat=OpenApiJson). Ontwikkel aars kunnen de Api's vinden in [video indexer ontwikkelaars Portal](https://api-portal.videoindexer.ai/).
+Video Indexer **verificaties en** bewerkingen **in** één enkele [Video Indexer OpenAPI-specificatie (swagger) .](https://api-portal.videoindexer.ai/api-details#api=Operations&operation) Ontwikkelaars kunnen de API's vinden in [Video Indexer Developer Portal.](https://api-portal.videoindexer.ai/)
 
 ## <a name="december-2019"></a>December 2019
 
-### <a name="update-transcript-with-the-new-api"></a>Transcript bijwerken met de nieuwe API
+### <a name="update-transcript-with-the-new-api"></a>Transcriptie bijwerken met de nieuwe API
 
-Werk een specifieke sectie in het transcript bij met de API [Update-video-index](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Update-Video-Index?&pattern=update) .
+Werk een specifieke sectie in de transcriptie bij met [behulp van de API Update-Video-Index.](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Update-Video-Index)
 
-### <a name="fix-account-configuration-from-the-video-indexer-portal"></a>De account configuratie van de Video Indexer Portal herstellen
+### <a name="fix-account-configuration-from-the-video-indexer-portal"></a>Accountconfiguratie herstellen vanuit de Video Indexer portal
 
-U kunt nu Media Services configuratie van de verbinding bijwerken om zelf hulp te krijgen met problemen als: 
+U kunt nu de Media Services bijwerken om zelfhulp te bieden bij problemen zoals: 
 
 * onjuiste Azure Media Services resource
-* wachtwoord wijzigingen
-* Media Services resources zijn verplaatst tussen abonnementen  
+* wachtwoordwijzigingen
+* Media Services zijn verplaatst tussen abonnementen  
 
-Als u de account configuratie wilt herstellen, gaat u in het Video Indexer Portal naar instellingen > account tabblad (als eigenaar).
+Als u de accountconfiguratie wilt herstellen, gaat u in Video Indexer portal naar > tabblad Instellingen en account (als eigenaar).
 
-### <a name="configure-the-custom-vision-account"></a>Het aangepaste gezichts account configureren
+### <a name="configure-the-custom-vision-account"></a>Het Custom Vision-account configureren
 
-Configureer het aangepaste gezichts account op betaalde accounts met behulp van de Video Indexer-Portal (voorheen werd dit alleen ondersteund door de API). Als u dit wilt doen, meldt u zich aan bij de Video Indexer-Portal en kiest u model aanpassing > animatie tekens > configureren. 
+Configureer het Custom Vision-account voor betaalde accounts met behulp van Video Indexer portal (voorheen werd dit alleen ondersteund door de API). Als u dit wilt doen, meld u zich aan bij Video Indexer portal, kiest u Modelaanpassing > animaties > Configureren. 
 
-### <a name="scenes-shots-and-keyframes--now-in-one-insight-pane"></a>Scènes, afbeeldingen en keyframes: nu in één inzicht deel venster
+### <a name="scenes-shots-and-keyframes--now-in-one-insight-pane"></a>Scènes, opnamen en keyframes, nu in één inzichtvenster
 
-Scènes, afbeeldingen en keyframes zijn nu samengevoegd in één inzicht voor eenvoudiger gebruik en navigatie. Wanneer u de gewenste scène selecteert, kunt u zien welke opnamen en keyframes het bevat. 
+Scènes, opnamen en keyframes worden nu samengevoegd in één inzicht voor eenvoudiger gebruik en eenvoudigere navigatie. Wanneer u de gewenste scène selecteert, kunt u zien uit welke opnamen en keyframes deze bestaat. 
 
-### <a name="notification-about-a-long-video-name"></a>Melding over een lange video naam
+### <a name="notification-about-a-long-video-name"></a>Melding over een lange videonaam
 
-Wanneer een video naam langer is dan 80 tekens, bevat Video Indexer een beschrijvende fout bij het uploaden.
+Wanneer de naam van een video langer is dan 80 tekens, Video Indexer bij het uploaden een beschrijvende fout weergegeven.
 
-### <a name="streaming-endpoint-is-disabled-notification"></a>Melding van streaming-eind punt is uitgeschakeld
+### <a name="streaming-endpoint-is-disabled-notification"></a>Melding dat het streaming-eindpunt is uitgeschakeld
 
-Wanneer streaming-eind punt is uitgeschakeld, wordt in Video Indexer een beschrijvende fout weer gegeven op de pagina van de speler.
+Wanneer het streaming-eindpunt is uitgeschakeld, Video Indexer een beschrijvende fout weergegeven op de spelerpagina.
 
-### <a name="error-handling-improvement"></a>Verbetering van fout afhandeling
+### <a name="error-handling-improvement"></a>Verbetering van foutafhandeling
 
-De status code 409 wordt nu geretourneerd door de [video opnieuw te indexeren](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Re-Index-Video?https://api-portal.videoindexer.ai/docs/services/Operations/operations/Re-Index-Video?) en [video-index](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Update-Video-Index?) api's bij te werken voor het geval een video actief wordt geïndexeerd, om te voor komen dat de huidige herindex wijzigingen per ongeluk worden overschreven.
+Statuscode 409 wordt nu geretourneerd door de API's Video opnieuw [indexeren](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Re-Index-Video) en [Video Index](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Update-Video-Index) bijwerken voor het geval een video actief wordt geïndexeerd, om te voorkomen dat de huidige wijzigingen in de index per ongeluk worden overschrijven.
 
 ## <a name="november-2019"></a>November 2019
  
-* Ondersteuning voor Koreaanse aangepaste taal modellen
+* Ondersteuning voor aangepaste taalmodellen koreaans
 
-    Video indexer ondersteunt nu aangepaste taal modellen in Koreaans ( `ko-KR` ) in zowel de API als de portal. 
-* Nieuwe talen die worden ondersteund voor spraak naar tekst (STT)
+    Video indexer ondersteunt nu aangepaste taalmodellen in koreaans ( `ko-KR` ) in zowel de API als de portal. 
+* Nieuwe talen die worden ondersteund voor spraak-naar-tekst (STT)
 
-    Video Indexer-Api's bieden nu ondersteuning voor STT in Arabische Levantine (AR-SY), Engels UK dialect (en-GB) en Engels Australisch dialect (en-AU).
+    Video Indexer-API's bieden nu ondersteuning voor STT in de Arabische Levantine (ar-SY), engels ENGELS ENGELS dialect (en-GB) en Engels Australisch dialect (en-AU).
     
-    Als u video wilt uploaden, worden de HANS naar zh-CN vervangen, maar worden beide ondersteund, maar wordt zh-CN aanbevolen en nauw keuriger.
+    Voor het uploaden van video hebben we zh-HANS vervangen door zh-CN. Beide worden ondersteund, maar zh-CN wordt aanbevolen en nauwkeuriger.
     
 ## <a name="october-2019"></a>Oktober 2019
  
-* Zoeken naar tekst met animatie in de galerie
+* Zoeken naar animaties in de galerie
 
-    Wanneer u animatie tekens indexeert, kunt u deze nu zoeken in de video-drukproef weergave van het account. Zie [herkenning van animatie tekens](animated-characters-recognition.md)voor meer informatie.
+    Wanneer u animaties indexeert, kunt u deze nu zoeken in de videogalley van het account. Zie Herkenning van [animaties voor meer informatie.](animated-characters-recognition.md)
 
 ## <a name="september-2019"></a>September 2019
  
 Meerdere verbeteringen aangekondigd op IBC 2019:
  
-* Animatie teken herkenning (open bare preview)
+* Herkenning van animaties (openbare preview)
 
-    De mogelijkheid om groeps advertenties te herkennen in inhoud met animatie, via integratie met aangepaste visie. Zie voor meer informatie [tekst detectie met animatie](animated-characters-recognition.md).
-* Multi-language Identification (open bare preview)
+    De mogelijkheid om tekens in animaties van groeps-ad-herkennen te detecteren via integratie met Custom Vision. Zie Detectie van animaties [voor meer informatie.](animated-characters-recognition.md)
+* Identificatie met meerdere talen (openbare preview)
 
-    Detecteer segmenten in meerdere talen in het audio spoor en maak een meertalige transcript op basis hiervan. Eerste ondersteuning: Engels, Spaans, Duits en Frans. Zie [Inhoud in meerdere talen automatisch identificeren en transcriberen](multi-language-identification-transcription.md) voor meer informatie.
-* Extractie van benoemde entiteiten voor personen en locatie
+    Segmenten in meerdere talen in het audiospoor detecteren en op basis daarvan een meertalige transcriptie maken. Eerste ondersteuning: Engels, Spaans, Duits en Frans. Zie [Inhoud in meerdere talen automatisch identificeren en transcriberen](multi-language-identification-transcription.md) voor meer informatie.
+* Extractie van benoemde entiteiten voor Personen en Locatie
 
-    Pakt merken, locaties en mensen uit vanuit spraak en visuele tekst via natuurlijke taal verwerking (NLP).
-* Classificatie van type redactionele shot
+    Extraheert merken, locaties en personen uit spraak- en visuele tekst via NLP (Natural Language Processing).
+* Classificatie van het type in een hoofdartikel
 
-    Het labelen van afbeeldingen met redactionele typen zoals close up, middel grote opname, twee opnamen, binnen en buiten, enzovoort. Zie [redactionele shot type Detection](scenes-shots-keyframes.md#editorial-shot-type-detection)(Engelstalig) voor meer informatie.
-* Uitbrei ding voor het afdekken van het onderwerp-nu dekking van niveau 2
+    Het taggen van opnamen met redactionele typen, zoals close-up, gemiddelde opname, twee keer binnen, buiten, enzovoort. Zie Voor meer informatie De detectie [van het type hoofdschermafbeelding.](scenes-shots-keyframes.md#editorial-shot-type-detection)
+* Uitbreiding van onderwerpdeferencing - nu niveau 2
     
-    Het model voor het defragmenteren van het onderwerp ondersteunt nu een diepere granulatie van de IPTC-taxonomie. Lees de volledige details op [Azure Media Services nieuwe, AI-innovaties](https://azure.microsoft.com/blog/azure-media-services-new-ai-powered-innovation/).
+    Het model voor onderwerpdeductie ondersteunt nu een diepere granulariteit van de IPTC-taxonomie. Lees de volledige details [op Azure Media Services nieuwe innovatie op basis van AI.](https://azure.microsoft.com/blog/azure-media-services-new-ai-powered-innovation/)
 
 ## <a name="august-2019"></a>Augustus 2019
  
-### <a name="video-indexer-deployed-in-uk-south"></a>Video Indexer geïmplementeerd in UK-zuid
+### <a name="video-indexer-deployed-in-uk-south"></a>Video Indexer geïmplementeerd in VK - zuid
 
-U kunt nu een Video Indexer betaalde account maken in de regio UK Zuid.
+U kunt nu een betaald account Video Indexer in de regio VK - zuid.
 
-### <a name="new-editorial-shot-type-insights-available"></a>Nieuwe redactionele-afbeeldings type inzichten beschikbaar
+### <a name="new-editorial-shot-type-insights-available"></a>Er zijn nieuwe inzichten voor het type hoofdartikels beschikbaar
 
-Nieuwe tags die aan video opnamen worden toegevoegd, bieden redactionele ' shot types ' om ze te identificeren met veelvoorkomende redactionele woord groepen die in de werk stroom voor het maken van inhoud worden gebruikt, zoals: extreme close, close, Wide, medium, two shot, buiten, binnen, links en rechts gezicht (beschikbaar in de JSON).
+Nieuwe tags die aan video-opnamen zijn toegevoegd, bieden een aantal hoofdinhoudstypen om ze te identificeren met veelgebruikte woordgroepen die worden gebruikt in de werkstroom voor het maken van inhoud, zoals: extreme close-up, close-up, breed, gemiddeld, twee keer buiten, binnen, linker- en rechtergezicht (beschikbaar in de JSON).
 
-### <a name="new-people-and-locations-entities-extraction-available"></a>Uitpakken van nieuwe personen en locaties-entiteiten beschikbaar
+### <a name="new-people-and-locations-entities-extraction-available"></a>Extractie van nieuwe personen- en locaties-entiteiten beschikbaar
 
-Video Indexer identificeert benoemde locaties en personen via natuurlijke taal verwerking (NLP) van de OCR-en transcriptie van de video. Video Indexer gebruikt machine learning algoritme om te herkennen wanneer specifieke locaties (bijvoorbeeld de Eiffel-Tower) of mensen (bijvoorbeeld John Splinter) worden aangeroepen in een video.
+Video Indexer identificeert benoemde locaties en personen via natuurlijke taalverwerking (NLP) van OCR en transcriptie van de video. Video Indexer maakt gebruik van machine learning algoritme om te herkennen wanneer specifieke locaties (bijvoorbeeld de Tower Tower) of personen (bijvoorbeeld John Doe) worden opgeroepen in een video.
 
-### <a name="keyframes-extraction-in-native-resolution"></a>Extractie van hoofd frames in systeem eigen resolutie
+### <a name="keyframes-extraction-in-native-resolution"></a>Extractie van keyframes in native resolutie
 
-Hoofd frames die door Video Indexer worden geëxtraheerd, zijn beschikbaar in de oorspronkelijke resolutie van de video.
+Keyframes die zijn geëxtraheerd Video Indexer zijn beschikbaar in de oorspronkelijke resolutie van de video.
  
-### <a name="ga-for-training-custom-face-models-from-images"></a>GA naar aangepaste gezichts modellen van afbeeldingen
+### <a name="ga-for-training-custom-face-models-from-images"></a>GA voor het trainen van aangepaste gezichtsmodellen van afbeeldingen
 
-Trainings gezichten van afbeeldingen die zijn verplaatst van de preview-modus naar GA (beschikbaar via API en in de portal).
+Trainingsgezichten van afbeeldingen zijn verplaatst van de Preview-modus naar ga (beschikbaar via API en in de portal).
 
 > [!NOTE]
-> Er zijn geen prijs wijzigingen die betrekking hebben op de overgang ' preview to GA '.
+> Er zijn geen gevolgen voor de prijzen met betrekking tot de overgang 'Preview naar GA'.
 
-### <a name="hide-gallery-toggle-option"></a>Schakel optie galerie verbergen
+### <a name="hide-gallery-toggle-option"></a>De optie Galerie-schakelaar verbergen
 
-De gebruiker kan kiezen om het tabblad Galerie van de portal te verbergen (vergelijkbaar met het verbergen van het tabblad voor beelden).
+De gebruiker kan ervoor kiezen om het tabblad Galerie te verbergen in de portal (vergelijkbaar met het verbergen van het tabblad Voorbeelden).
  
-### <a name="maximum-url-size-increased"></a>De maximale URL-grootte is verhoogd
+### <a name="maximum-url-size-increased"></a>Maximale URL-grootte verhoogd
 
-Ondersteuning voor URL-query teken reeks van 4096 (in plaats van 2048) bij het indexeren van een video.
+Ondersteuning voor URL-queryreeks van 4096 (in plaats van 2048) bij het indexeren van een video.
  
-### <a name="support-for-multi-lingual-projects"></a>Ondersteuning voor projecten met meerdere talen
+### <a name="support-for-multi-lingual-projects"></a>Ondersteuning voor meertalige projecten
 
-Projecten kunnen nu worden gemaakt op basis van Video's die in verschillende talen zijn geïndexeerd (alleen API).
+Projecten kunnen nu worden gemaakt op basis van video's die in verschillende talen zijn geïndexeerd (alleen API).
 
 ## <a name="july-2019"></a>Juli 2019
 
-### <a name="editor-as-a-widget"></a>Editor als een widget
+### <a name="editor-as-a-widget"></a>Editor als widget
 
-De Video Indexer AI-editor is nu beschikbaar als widget die moeten worden inge sloten in klant toepassingen.
+De Video Indexer AI-editor is nu beschikbaar als een widget die kan worden ingesloten in klanttoepassingen.
 
-### <a name="update-custom-language-model-from-closed-caption-file-from-the-portal"></a>Aangepast taal model bijwerken vanuit ondertitelings bestand vanuit de portal
+### <a name="update-custom-language-model-from-closed-caption-file-from-the-portal"></a>Aangepast taalmodel bijwerken vanuit een ondertitelingsbestand vanuit de portal
 
-Klanten kunnen VTT-, SRT-en TTML-bestands indelingen opgeven als invoer voor taal modellen op de pagina aanpassing van de portal.
+Klanten kunnen VTT-, SRT- en TTML-bestandsindelingen leveren als invoer voor taalmodellen op de aanpassingspagina van de portal.
 
 ## <a name="june-2019"></a>Juni 2019
 
-### <a name="video-indexer-deployed-to-japan-east"></a>Video Indexer geïmplementeerd in Japan-Oost
+### <a name="video-indexer-deployed-to-japan-east"></a>Video Indexer geïmplementeerd in Japan - oost
 
-U kunt nu een Video Indexer betaalde account maken in de regio Japan Oost.
+U kunt nu een betaald Video Indexer maken in de regio Japan - oost.
 
-### <a name="create-and-repair-account-api-preview"></a>Account-API maken en herstellen (preview-versie)
+### <a name="create-and-repair-account-api-preview"></a>Account-API maken en herstellen (preview)
 
-Er is een nieuwe API toegevoegd waarmee u [het eind punt of de sleutel van de Azure media service-verbinding kunt bijwerken](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Update-Paid-Account-Azure-Media-Services?&groupBy=tag).
+Er is een nieuwe API toegevoegd waarmee u het eindpunt of de sleutel van de [Azure Media Service-verbinding kunt bijwerken.](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Update-Paid-Account-Azure-Media-Services)
 
-### <a name="improve-error-handling-on-upload"></a>Fout afhandeling bij uploaden verbeteren 
+### <a name="improve-error-handling-on-upload"></a>Foutafhandeling bij uploaden verbeteren 
 
-Er wordt een beschrijvende bericht weer gegeven in geval van een onjuiste configuratie van het onderliggende Azure Media Services-account.
+Er wordt een beschrijvend bericht geretourneerd in het geval van een onjuiste configuratie van het onderliggende Azure Media Services account.
 
-### <a name="player-timeline-keyframes-preview"></a>Voor beeld van tijdlijn hoofdframes in de speler 
+### <a name="player-timeline-keyframes-preview"></a>Preview van keyframes op de tijdlijn van de speler 
 
-U kunt nu een voor beeld van een afbeelding zien voor elke keer op de tijd lijn van de speler.
+U ziet nu een voorbeeld van een afbeelding voor elke keer op de tijdlijn van de speler.
 
-### <a name="editor-semi-select"></a>De editor semi-Select
+### <a name="editor-semi-select"></a>Editor semi-select
 
-U kunt nu een voor beeld zien van alle inzichten die zijn geselecteerd als gevolg van het kiezen van een specifieke inzichten periode in de editor.
+U kunt nu een voorbeeld bekijken van alle inzichten die zijn geselecteerd als gevolg van het kiezen van een specifiek inzicht in de editor.
 
 ## <a name="may-2019"></a>Mei 2019
 
-### <a name="update-custom-language-model-from-closed-caption-file"></a>Aangepast taal model bijwerken vanuit ondertitelings bestand
+### <a name="update-custom-language-model-from-closed-caption-file"></a>Aangepast taalmodel bijwerken vanuit ondertitelingsbestand
 
-[Aangepaste taal model maken](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Create-Language-Model?&groupBy=tag) en [aangepaste taal modellen bijwerken](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Update-Language-Model?&groupBy=tag) api's bieden nu ondersteuning voor VTT-, SRT-en TTML-bestands indelingen als invoer voor taal modellen.
+[Api's voor aangepast taalmodel](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Create-Language-Model) maken en Aangepaste taalmodellen bijwerken ondersteunen nu VTT-, SRT- en TTML-bestandsindelingen als invoer voor taalmodellen. [](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Update-Language-Model)
 
-Bij het aanroepen van de [Update video transcriptie-API](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Update-Video-Transcript?&pattern=transcript)wordt de transcripten automatisch toegevoegd. Het trainings model dat is gekoppeld aan de video wordt automatisch bijgewerkt. Zie [een taal model aanpassen met video indexer](customize-language-model-overview.md)voor meer informatie over het aanpassen en trainen van uw taal modellen.
+Bij het [aanroepen van de API voor het bijwerken van videotranscripties](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Update-Video-Transcript)wordt de transcriptie automatisch toegevoegd. Het trainingsmodel dat aan de video is gekoppeld, wordt ook automatisch bijgewerkt. Zie Een taalmodel aanpassen met een Video Indexer voor meer informatie over het aanpassen en trainen [van uw taalmodellen.](customize-language-model-overview.md)
 
-### <a name="new-download-transcript-formats--txt-and-csv"></a>Nieuwe indelingen voor het downloaden van transcripten – TXT en CSV
+### <a name="new-download-transcript-formats--txt-and-csv"></a>Nieuwe transcriptindelingen downloaden - TXT en CSV
 
-Naast de indeling voor ondertiteling die al wordt ondersteund (SRT, VTT en TTML), ondersteunt Video Indexer nu het downloaden van transcripten in TXT-en CSV-indelingen.
+Naast de ondertitelingsindeling die al wordt ondersteund (SRT, VTT en TTML), ondersteunt Video Indexer nu het downloaden van de transcriptie in TXT- en CSV-indelingen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

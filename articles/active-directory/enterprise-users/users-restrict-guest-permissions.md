@@ -1,6 +1,6 @@
 ---
-title: Toegangs machtigingen voor gast gebruikers beperken-Azure Active Directory | Microsoft Docs
-description: Toegangs machtigingen voor gast gebruikers beperken met behulp van de Azure Portal, Power shell of Microsoft Graph in Azure Active Directory
+title: Toegangsmachtigingen voor gastgebruikers beperken - Azure Active Directory | Microsoft Docs
+description: Toegangsmachtigingen voor gastgebruikers beperken met Azure Portal, PowerShell of Microsoft Graph in Azure Active Directory
 services: active-directory
 author: curtand
 ms.author: curtand
@@ -13,45 +13,45 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: krbain
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf2d0d3335468147575eb53a99940866baa18375
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: df4cb32720d80dd23289be7e760c9934e9a8db8a
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98222518"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107501498"
 ---
-# <a name="restrict-guest-access-permissions-preview-in-azure-active-directory"></a>Machtigingen voor gast toegang (preview) beperken in Azure Active Directory
+# <a name="restrict-guest-access-permissions-preview-in-azure-active-directory"></a>Machtigingen voor gasttoegang beperken (preview) in Azure Active Directory
 
-Met Azure Active Directory (Azure AD) kunt u beperken wat externe gast gebruikers in hun organisatie kunnen zien in azure AD. Gast gebruikers worden standaard ingesteld op een beperkt machtigings niveau in azure AD, terwijl de standaard instelling is de volledige set standaard gebruikers machtigingen. Dit is een voor beeld van een nieuw machtigings niveau voor gast gebruikers in de externe samenwerkings instellingen van uw Azure AD-organisatie voor nog meer beperkte toegang, zodat uw opties voor gast toegang nu zijn:
+Azure Active Directory (Azure AD) kunt u beperken wat externe gastgebruikers in hun organisatie kunnen zien in Azure AD. Gastgebruikers worden standaard ingesteld op een beperkt machtigingsniveau in Azure AD, terwijl de standaardinstelling voor lidgebruikers de volledige set standaardgebruikersmachtigingen is. Dit is een preview van een nieuw machtigingsniveau voor gastgebruikers in de instellingen voor externe samenwerking van uw Azure AD-organisatie voor nog beperktere toegang. Uw opties voor gasttoegang zijn nu dus:
 
-Machtigingsniveau         | Toegangsniveau
-----------------         | ------------
-Hetzelfde als gebruikers van leden     | Gasten hebben dezelfde toegang tot Azure AD-resources als gebruikers van een gebruiker
-Beperkte toegang (standaard) | Gasten kunnen lidmaatschap van alle niet-verborgen groepen zien
-**Beperkte toegang (nieuw)**  | **Gasten kunnen lidmaatschap van groepen niet zien**
+Machtigingsniveau         | Toegangsniveau | Waarde
+----------------         | ------------ | -----
+Hetzelfde als lidgebruikers     | Gasten hebben dezelfde toegang tot Azure AD-resources als lidgebruikers | a0b1b346-4d3e-4e8b-98f8-753987be4970
+Beperkte toegang (standaard) | Gasten kunnen het lidmaatschap van alle niet-verborgen groepen zien | 10dae51f-b6af-4016-8d66-8c2a99b929b3
+**Beperkte toegang (nieuw)**  | **Gasten kunnen geen lidmaatschap van groepen zien** | **2af84b1e-32c8-42b7-82bc-daa82404023b**
 
-Als gast toegang is beperkt, kunnen gasten alleen hun eigen gebruikers profiel bekijken. Machtiging voor het weer geven van andere gebruikers is niet toegestaan, zelfs niet als de gast zoekt op User Principal name of objectId. Met beperkte toegang kunnen gast gebruikers ook het lidmaatschap van groepen weer geven waarin ze zich bevinden. Zie [Wat zijn de standaard machtigingen voor gebruikers in azure Active Directory?](../fundamentals/users-default-permissions.md)voor meer informatie over de algemene standaard machtigingen voor gebruikers, inclusief gast gebruikers machtigingen.
+Wanneer gasttoegang is beperkt, kunnen gasten alleen hun eigen gebruikersprofiel bekijken. Machtiging om andere gebruikers weer te geven is niet toegestaan, zelfs niet als de gast zoekt op User Principal Name of objectId. Met beperkte toegang kunnen gastgebruikers ook geen lidmaatschap zien van de groepen waarin ze zich hebben. Zie What are the [default user permissions in Azure Active Directory?](../fundamentals/users-default-permissions.md)(Wat zijn de standaardgebruikersmachtigingen in Azure Active Directory? voor meer informatie over de algemene standaardgebruikersmachtigingen, waaronder machtigingen voor gastgebruikers.
 
 ## <a name="permissions-and-licenses"></a>Machtigingen en licenties
 
-U moet de rol globale beheerder hebben om de instellingen voor externe samen werking te kunnen configureren. Er zijn geen aanvullende licentie vereisten om gast toegang te beperken.
+U moet de rol globale beheerder hebben om de instellingen voor externe samenwerking te configureren. Er zijn geen aanvullende licentievereisten om gasttoegang te beperken.
 
-## <a name="update-in-the-azure-portal"></a>Bijwerken in de Azure Portal
+## <a name="update-in-the-azure-portal"></a>Werk in de Azure Portal
 
-Er zijn wijzigingen aangebracht in de bestaande Azure Portal-besturings elementen voor gast gebruikers machtigingen.
+We hebben wijzigingen aangebracht in de bestaande besturingselementen Azure Portal voor gastgebruikersmachtigingen.
 
-1. Meld u aan bij het [Azure AD-beheer centrum](https://aad.portal.azure.com) met globale beheerders machtigingen.
-1. Selecteer op de pagina **Azure Active Directory** overzicht voor uw organisatie de optie **gebruikers instellingen**.
-1. Onder **externe gebruikers** selecteert u **externe instellingen voor samen werking beheren**.
-1. Selecteer op de pagina **externe samenwerkings instellingen** de optie **gast gebruikers toegang is beperkt tot de eigenschappen en lidmaatschappen van hun eigen Directory-objecten** .
+1. Meld u aan bij [het Azure AD-beheercentrum](https://aad.portal.azure.com) met Globale beheerder machtigingen.
+1. Selecteer op **Azure Active Directory** overzichtspagina voor uw organisatie de **optie Gebruikersinstellingen.**
+1. Selecteer **onder Externe gebruikers** de optie Instellingen voor externe samenwerking **beheren.**
+1. Selecteer op **de pagina Instellingen voor** externe samenwerking de optie Gastgebruikerstoegang is beperkt tot eigenschappen en **lidmaatschappen van hun eigen directoryobjecten.**
 
-    ![Pagina instellingen voor externe samen werking van Azure AD](./media/users-restrict-guest-permissions/external-collaboration-settings.png)
+    ![Pagina instellingen voor externe samenwerking van Azure AD](./media/users-restrict-guest-permissions/external-collaboration-settings.png)
 
-1. Selecteer **Opslaan**. Het kan tot vijf tien minuten duren voordat de wijzigingen zijn doorgevoerd voor gast gebruikers.
+1. Selecteer **Opslaan**. Het kan tot 15 minuten duren voordat de wijzigingen zijn doorgevoerd voor gastgebruikers.
 
 ## <a name="update-with-the-microsoft-graph-api"></a>Bijwerken met de Microsoft Graph-API
 
-We hebben een nieuwe Microsoft Graph-API toegevoegd om gast machtigingen in uw Azure AD-organisatie te configureren. De volgende API-aanroepen kunnen worden uitgevoerd om een machtigings niveau toe te wijzen. De waarde voor guestUserRoleId die hier wordt gebruikt, is bedoeld ter illustratie van de instelling voor de meeste beperkte gast gebruikers. Zie [authorizationPolicy resource type](/graph/api/resources/authorizationpolicy)voor meer informatie over het gebruik van de Microsoft Graph om gast machtigingen in te stellen.
+We hebben een nieuwe API voor Microsoft Graph toegevoegd om gastmachtigingen in uw Azure AD-organisatie te configureren. De volgende API-aanroepen kunnen worden gedaan om elk machtigingsniveau toe te wijzen. De waarde voor guestUserRoleId die hier wordt gebruikt, is ter illustratie van de meest beperkte gastgebruikersinstelling. Zie [authorizationPolicy resource type](/graph/api/resources/authorizationpolicy)voor meer Microsoft Graph het instellen van gastmachtigingen.
 
 ### <a name="configuring-for-the-first-time"></a>Voor de eerste keer configureren
 
@@ -63,7 +63,7 @@ POST https://graph.microsoft.com/beta/policies/authorizationPolicy/authorization
 }
 ````
 
-Het antwoord moet slagen 204.
+Het antwoord moet Geslaagd 204 zijn.
 
 ### <a name="updating-the-existing-value"></a>De bestaande waarde bijwerken
 
@@ -75,9 +75,9 @@ PATCH https://graph.microsoft.com/beta/policies/authorizationPolicy/authorizatio
 }
 ````
 
-Het antwoord moet slagen 204.
+Het antwoord moet Geslaagd 204 zijn.
 
-### <a name="view-the-current-value"></a>De huidige waarde weer geven
+### <a name="view-the-current-value"></a>De huidige waarde weergeven
 
 ````PowerShell
 GET https://graph.microsoft.com/beta/policies/authorizationPolicy/authorizationPolicy
@@ -99,11 +99,11 @@ Voorbeeld van een reactie:
 }
 ````
 
-## <a name="update-with-powershell-cmdlets"></a>Bijwerken met Power shell-cmdlets
+## <a name="update-with-powershell-cmdlets"></a>Bijwerken met PowerShell-cmdlets
 
-Met deze functie hebben we de mogelijkheid voor het configureren van de beperkte machtigingen via Power shell v2-cmdlets toegevoegd. Power shell-cmdlets ophalen en instellen zijn gepubliceerd in versie 2.0.2.85.
+Met deze functie hebben we de mogelijkheid toegevoegd om de beperkte machtigingen te configureren via PowerShell v2-cmdlets. Get- en Set PowerShell-cmdlets zijn gepubliceerd in versie 2.0.2.85.
 
-### <a name="get-command-get-azureadmsauthorizationpolicy"></a>Get-opdracht: Get-AzureADMSAuthorizationPolicy
+### <a name="get-command-get-azureadmsauthorizationpolicy"></a>Opdracht get: Get-AzureADMSAuthorizationPolicy
 
 Voorbeeld:
 
@@ -119,7 +119,7 @@ GuestUserRoleId                                   : 10dae51f-b6af-4016-8d66-8c2a
 PermissionGrantPolicyIdsAssignedToDefaultUserRole : {user-default-legacy}
 ````
 
-### <a name="set-command-set-azureadmsauthorizationpolicy"></a>Stel opdracht: Set-AzureADMSAuthorizationPolicy
+### <a name="set-command-set-azureadmsauthorizationpolicy"></a>Opdracht instellen: Set-AzureADMSAuthorizationPolicy
 
 Voorbeeld:
 
@@ -128,26 +128,26 @@ PS C:\WINDOWS\system32> Set-AzureADMSAuthorizationPolicy -GuestUserRoleId '2af84
 ````
 
 > [!NOTE]
-> U moet authorizationPolicy als de ID opgeven wanneer u hierom wordt gevraagd.
+> Wanneer u hierom wordt gevraagd, moet u authorizationPolicy als id invoeren.
 
-## <a name="supported-microsoft-365-services"></a>Ondersteunde Microsoft 365 Services
+## <a name="supported-microsoft-365-services"></a>Ondersteunde Microsoft 365 services
 
 ### <a name="supported-services"></a>Ondersteunde services
 
-Op basis van ondersteund wordt de ervaring als verwacht beschouwd. Dit is met name hetzelfde als de huidige gast ervaring.
+Met ondersteund bedoelen we dat de ervaring is zoals verwacht; om precies te zijn dat dit hetzelfde is als de huidige gastervaring.
 
 - Teams
 - Outlook (OWA)
 - SharePoint
-- Planner in teams
+- Planner in Teams
 - Planner-web-app
 
 ### <a name="services-currently-not-supported"></a>Services worden momenteel niet ondersteund
 
-Service zonder huidige ondersteuning heeft mogelijk compatibiliteits problemen met de instelling voor nieuwe gast beperkingen.
+Service zonder huidige ondersteuning kan compatibiliteitsproblemen hebben met de nieuwe gastbeperkingsinstelling.
 
 - Formulieren
-- Mobiele app voor planner
+- Mobiele planner-app
 - Project
 - Yammer
 
@@ -155,17 +155,17 @@ Service zonder huidige ondersteuning heeft mogelijk compatibiliteits problemen m
 
 Vraag | Antwoord
 -------- | ------
-Waar zijn deze machtigingen van toepassing? | Deze machtigingen op mapniveau worden afgedwongen voor Azure AD-Services en-portals, met inbegrip van de Microsoft Graph, Power shell v2, de Azure Portal en mijn apps-Portal. Microsoft 365 services die gebruikmaken van Microsoft 365 groepen voor samenwerkings scenario's, worden ook beïnvloed, met name Outlook, micro soft teams en share point.
-Wat is de invloed van beperkte machtigingen op welke groepen gasten kunnen worden weer geven? | Gasten kunnen de lijst met groepen of gebruikers niet opsommen, ongeacht de standaard of beperkte machtigingen voor gasten. Gasten kunnen groepen weer geven waarvan ze lid zijn in zowel de Azure Portal als de portal mijn apps, afhankelijk van de machtigingen:<li>**Standaard machtigingen**: als u wilt zoeken naar de groepen waarvan ze lid zijn in de Azure Portal, moet de gast in de lijst **alle gebruikers** zoeken naar hun object-id en vervolgens **groepen** selecteren. Hier ziet u de lijst met groepen waarvan deze deel uitmaken, met inbegrip van alle groeps gegevens, met inbegrip van de naam, het e-mail adres, enzovoort. In de portal mijn apps kunnen ze een lijst zien van de groepen waarvan ze zijn en de groepen waarvan ze lid zijn.</li><li>**Beperkte machtigingen voor gasten**: in de Azure portal kunnen ze nog steeds de lijst met groepen waarvan ze deel uitmaken, vinden door te zoeken naar hun object-id in de lijst alle gebruikers en vervolgens groepen te selecteren. Ze kunnen alleen zeer beperkte Details over de groep weer geven, met name de object-ID. De kolommen naam en e-mail adres zijn leeg en het groeps type wordt niet herkend. In de portal mijn apps hebben ze geen toegang tot de lijst met groepen waarvan ze lid zijn of groepen waarvan ze deel uitmaken.</li><br>Zie [standaard gebruikers machtigingen](../fundamentals/users-default-permissions.md#member-and-guest-users)voor een gedetailleerde vergelijking van de mapmachtigingen die afkomstig zijn van de Graph API.
-Welke onderdelen van de portal van mijn apps beïnvloeden deze functie? | De functionaliteit van de groepen in de portal mijn apps voldoet aan deze nieuwe machtigingen. Dit omvat alle paden voor het weer geven van de groepen lijst en groepslid maatschappen in mijn apps. Er zijn geen wijzigingen aangebracht in de beschik baarheid voor groeps tegels. De beschik baarheid van de groeps tegel wordt nog steeds beheerd door de bestaande groeps instelling in de Azure Portal.
-Deze machtigingen overschrijven gast instellingen voor share point of micro soft teams? | Nee. Deze bestaande instellingen bepalen nog steeds de ervaring en toegang in deze toepassingen. Als u bijvoorbeeld problemen in share point ziet, controleert u de instellingen voor extern delen.
-Wat zijn de bekende compatibiliteits problemen in planner en Yammer? | <li>Als de machtigingen zijn ingesteld op beperkt, hebben gasten die zijn aangemeld bij de mobiele app van de planner geen toegang tot hun plannen of taken.<li>Als de machtigingen zijn ingesteld op beperkt, kunnen gasten die zijn aangemeld bij Yammer de groep niet verlaten.
-Worden mijn bestaande gast machtigingen gewijzigd in mijn Tenant? | Er zijn geen wijzigingen aangebracht in de huidige instellingen. We behouden achterwaartse compatibiliteit met uw huidige instellingen. U bepaalt wanneer u wijzigingen wilt aanbrengen.
-Worden deze machtigingen standaard ingesteld? | Nee. De bestaande standaard machtigingen blijven ongewijzigd. U kunt de machtigingen eventueel zo instellen dat ze meer beperkend zijn.
-Zijn er licentie vereisten voor deze functie? | Nee, er zijn geen nieuwe licentie vereisten voor deze functie.
+Waar zijn deze machtigingen van toepassing? | Deze machtigingen op mapniveau worden afgedwongen in Azure AD-services en -portals, waaronder de Microsoft Graph, PowerShell v2, de Azure Portal en Mijn apps-portal. Microsoft 365 services die gebruikmaken van Microsoft 365 voor samenwerkingsscenario's worden ook beïnvloed, met name Outlook, Microsoft Teams en SharePoint.
+Hoe beïnvloeden beperkte machtigingen welke groepen gasten kunnen zien? | Ongeacht de standaard- of beperkte gastmachtigingen kunnen gasten de lijst met groepen of gebruikers niet opsnoemen. Gasten kunnen groepen zien waar ze lid van zijn in zowel de Azure Portal als de Mijn apps portal, afhankelijk van de machtigingen:<li>**Standaardmachtigingen:** om de groepen te vinden waar ze lid van zijn in de  Azure Portal, moet de gast zoeken naar de object-id in de lijst Alle gebruikers en vervolgens **Groepen selecteren.** Hier kunnen ze de lijst met groepen zien waarvan ze lid zijn, met inbegrip van alle groepsdetails, inclusief naam, e-mailadres, en meer. In de Mijn apps-portal kunnen ze een lijst zien met de groepen waar ze eigenaar van zijn en de groepen waar ze lid van zijn.</li><li>**Beperkte gastmachtigingen:** in de Azure Portal kunnen ze nog steeds de lijst met groepen vinden waar ze lid van zijn door te zoeken naar hun object-id in de lijst Alle gebruikers en vervolgens Groepen te selecteren. Ze kunnen slechts zeer beperkte details over de groep zien, met name de object-id. De kolommen Naam en E-mail zijn in het ontwerp leeg en Groepstype is Niet herkend. In de Mijn apps hebben ze geen toegang tot de lijst met groepen waar ze eigenaar van zijn of groepen waar ze lid van zijn.</li><br>Zie Standaardgebruikersmachtigingen voor een gedetailleerde vergelijking van de directorymachtigingen die afkomstig zijn van de [Graph API.](../fundamentals/users-default-permissions.md#member-and-guest-users)
+Op welke onderdelen van Mijn apps portal is deze functie van invloed? | De functionaliteit van groepen in de Mijn apps portal zal deze nieuwe machtigingen in eren. Dit omvat alle paden voor het weergeven van de lijst met groepen en groepslidmaatschap in Mijn apps. Er zijn geen wijzigingen aangebracht in de beschikbaarheid van de groepstegel. De beschikbaarheid van de groepstegel wordt nog steeds bepaald door de bestaande groepsinstelling in Azure Portal.
+Overschrijven deze machtigingen sharepoint- of Microsoft Teams-gastinstellingen? | Nee. Deze bestaande instellingen bepalen nog steeds de ervaring en toegang in deze toepassingen. Als u bijvoorbeeld problemen in SharePoint ziet, controleert u uw instellingen voor extern delen.
+Wat zijn de bekende compatibiliteitsproblemen in Planner en Yammer? | <li>Als de machtigingen zijn ingesteld op 'beperkt', hebben gasten die zijn aangemeld bij de mobiele Planner-app geen toegang tot hun plannen of taken.<li>Als de machtigingen zijn ingesteld op 'beperkt', kunnen gasten die zijn aangemeld bij Yammer de groep niet verlaten.
+Worden mijn bestaande gastmachtigingen gewijzigd in mijn tenant? | Er zijn geen wijzigingen aangebracht in uw huidige instellingen. We blijven achterwaarts compatibel met uw bestaande instellingen. U bepaalt wanneer u wijzigingen wilt aanbrengen.
+Worden deze machtigingen standaard ingesteld? | Nee. De bestaande standaardmachtigingen blijven ongewijzigd. U kunt eventueel instellen dat de machtigingen beperkter zijn.
+Zijn er licentievereisten voor deze functie? | Nee, er zijn geen nieuwe licentievereisten met deze functie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Wat zijn de standaard gebruikers machtigingen in azure Active Directory?](../fundamentals/users-default-permissions.md) voor meer informatie over bestaande gast machtigingen in azure AD?
-- Zie [authorizationPolicy resource type](/graph/api/resources/authorizationpolicy) voor een overzicht van de Microsoft Graph API-methoden voor het beperken van toegang tot gasten.
-- Als u alle toegang voor een gebruiker wilt intrekken, raadpleegt u [gebruikers toegang intrekken in azure AD](users-revoke-access.md)
+- Zie Wat zijn de standaardgebruikersmachtigingen in azure ad voor meer informatie over [bestaande gastmachtigingen in Azure Active Directory?](../fundamentals/users-default-permissions.md)
+- Zie [authorizationPolicy resource type](/graph/api/resources/authorizationpolicy) Microsoft Graph de API-methoden voor het beperken van gasttoegang
+- Zie Gebruikerstoegang intrekken in Azure AD als u alle toegang voor een gebruiker [wilt intrekken](users-revoke-access.md)

@@ -3,17 +3,17 @@
 - name: Overzicht
   expanded: true
   items:
-    - name: Wat is anomalie detector (multidimensionale)?
+    - name: Wat is Anomaly Detector (multivariate)?
       href: overview-multivariate.md
-    - name: Wat is anomalie detector (univariate)?
+    - name: Wat is Anomaly Detector (univariate)?
       href: overview.md
-    - name: Prijzen en beperkingen
+    - name: Prijzen
       href: 'https://aka.ms/adpricing'
-- name: Beanomaliede detector-Quick starts
+- name: Snelstartgidsen
   items:
-    - name: Multidimensionale-client bibliotheken
+    - name: Multivariate clientbibliotheken
       href: ./quickstarts/client-libraries-multivariate.md
-    - name: Univariate-client bibliotheken
+    - name: Univariate-clientbibliotheken
       href: ./quickstarts/client-libraries.md
 - name: Voorbeelden
   items:
@@ -27,7 +27,7 @@
   items:
     - name: Afwijkingen in uw gegevens identificeren
       href: how-to/identify-anomalies.md
-    - name: Anomalie detectie implementeren
+    - name: Implementatie Anomaly Detector
       items:
         - name: Implementeren naar IoT Edge
           href: how-to/deploy-anomaly-detection-on-iot-edge.md
@@ -43,19 +43,25 @@
               displayName: 'docker, container, apikey, billing, log, mount, run, pull, port'
             - name: Containerinstanties gebruiken
               href: how-to/deploy-anomaly-detection-on-container-instances.md
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Virtuele netwerken instellen
+          href: ../cognitive-services-virtual-networks.md?context=/azure/cognitive-services/anomaly-detector/context/context
+        - name: Azure AD-verificatie gebruiken
+          href: ../authentication.md?context=/azure/cognitive-services/anomaly-detector/context/context
 - name: Concepten
   items:
-    - name: Best practices voor anomalie detectie-API (multidimensionale)
+    - name: Anomaly Detector API-best practices (multivariate)
       href: concepts/best-practices-multivariate.md
-    - name: Best practices voor anomalie detectie-API (univariate)
+    - name: Anomaly Detector API-best practices (univariate)
       href: concepts/anomaly-detection-best-practices.md
-    - name: Architectuur voor voor speld onderhoud (multidimensionale)
+    - name: Architectuur voor voorspellend onderhoud (multivariabel)
       href: concepts/multivariate-architecture.md
-    - name: Problemen met multidimensionale oplossen
+    - name: Problemen met meerdere varianten oplossen
       href: concepts/troubleshoot.md
-    - name: Afwijkings detectie Spectral rest (SR) en Convolutional Neural net (CNN)
+    - name: Neurale residuen (SR) en anomaliedetectie van convolutionele neurale netwerken (CNN)
       href: 'https://arxiv.org/abs/1906.03821'
-    - name: Multidimensionale time-series anomalie detectie via grafiek attentie netwerk
+    - name: Anomaliedetectie met meerdere tijdreeksen via het netwerk voor grafieken aandacht
       href: 'https://arxiv.org/abs/2009.02040'
 - name: Zelfstudies
   items:
@@ -63,7 +69,7 @@
       href: tutorials/batch-anomaly-detection-powerbi.md
 - name: Referentie
   items:
-    - name: Anomalie detectie REST API
+    - name: Anomaly Detector REST API
       href: 'https://aka.ms/anomaly-detector-rest-api-ref'
     - name: .NET
       href: 'https://aka.ms/anomaly-detector-dotnet-ref'
@@ -75,20 +81,22 @@
       href: 'https://go.microsoft.com/fwlink/?linkid=2090788'
 - name: Resources
   items:
-    - name: Ondersteuning voor regio
-      href: 'https://aka.ms/adregion'
-    - name: Modules leren
-      href: 'https://docs.microsoft.com/learn/modules/intro-to-anomaly-detector/'
-    - name: Ondersteuning voor & hulp
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Ondersteuning voor regio
+          href: 'https://aka.ms/adregion'
+        - name: Naleving en certificering
+          href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
+    - name: Opties voor ondersteuning en hulp
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/anomaly-detector/context/context
+    - name: Microsoft Learn modules
+      href: 'https://docs.microsoft.com/learn/modules/intro-to-anomaly-detector/'
     - name: Door gebruikers gegenereerde inhoud
       href: user-generated-content.md
     - name: Word lid van de Anomaly Detector-adviesgroep van Microsoft Teams
       href: 'https://aka.ms/adadvisorsjoin'
     - name: Referentiearchitectuur voor de oplossing
       href: 'https://azure.microsoft.com/solutions/architecture/anomaly-detector-process/'
-    - name: Naleving
-      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Azure-updates
       href: 'https://azure.microsoft.com/en-us/updates/?product=cognitive-services'
     - name: Technische blogs

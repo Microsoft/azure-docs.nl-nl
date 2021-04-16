@@ -258,7 +258,7 @@
         - name: Resource Manager-sjabloon gebruiken
           displayName: arm
           href: how-to-create-workspace-template.md
-        - name: Koppeling naar Azure Synapse Analytics-werk ruimte
+        - name: Koppeling naar Azure Synapse Analytics werkruimte
           href: how-to-link-synapse-ml-workspaces.md
     - name: Compute-resources maken en beheren
       items:
@@ -268,7 +268,7 @@
         - name: Rekencluster
           displayName: 'compute target, low priority, managed identity'
           href: how-to-create-attach-compute-cluster.md
-        - name: Host OS upgraden
+        - name: Host-besturingssysteem upgraden
           displayName: 'upgrade compute cluster, upgrade compute instance, upgrade ubuntu'
           href: how-to-compute-cluster-instance-os-upgrade.md
         - name: Azure Kubernetes Service
@@ -292,7 +292,7 @@
               displayName: 'Jupyter, notebooks, clone, samples'
             - name: Jupyter Notebooks uitvoeren
               href: how-to-run-jupyter-notebooks.md
-            - name: Een Terminal gebruiken
+            - name: Een terminal gebruiken
               href: how-to-access-terminal.md
               displayName: 'git, github, clone, kernel, package'
         - name: Softwareomgevingen instellen
@@ -326,12 +326,12 @@
             - name: Gegevensset maken met labels
               displayName: 'data, labels, torchvision'
               href: how-to-use-labeled-dataset.md
-        - name: Gegevens ophalen & voorbereiden
+        - name: Gegevens & voorbereiden
           items:
             - name: Gegevensopname met Azure Data Factory
               displayName: 'data, ingestion, adf'
               href: how-to-data-ingest-adf.md
-            - name: Gegevens voorbereiding met Azure Synapse
+            - name: Gegevensvoorbereiding met Azure Synapse
               displayName: 'data, data prep, spark, spark pool, cluster, spark cluster,dataset, datastore'
               href: how-to-data-prep-synapse-spark-pool.md
             - name: DevOps voor gegevensopname
@@ -345,7 +345,7 @@
             - name: Verbinding maken met Azure-opslag (Python)
               displayName: 'blob, get, fileshare, access, mount, download, data lake, datastore'
               href: how-to-access-data.md
-            - name: Gegevens toegang tot opslag op basis van identiteiten
+            - name: Op identiteit gebaseerde gegevenstoegang tot opslag
               displayName: 'blob, access, data lake, datastore, managed identity'
               href: how-to-identity-based-data-access.md
             - name: Gegevens uit gegevensarchief ophalen (Python)
@@ -396,7 +396,7 @@
             - name: Logboeken inschakelen
               displayName: 'troubleshoot, log, files, tracing'
               href: how-to-track-experiments.md
-            - name: Logboeken en metrische gegevens voor uitvoeringen weer geven
+            - name: Logboeken en metrische gegevens voor runs weergeven
               displayName: 'troubleshoot, log, files, tracing, metrics'
               href: how-to-monitor-view-training-logs.md
             - name: Uitvoeringen visualiseren met TensorBoard
@@ -450,7 +450,7 @@
           displayName: 'automl, feature engineering, feature importance'
           href: how-to-configure-cross-validation-data-splits.md
         - name: Featurization in geautomatiseerde ML (Python)
-          displayName: 'automl, feature engineering, feature importance'
+          displayName: 'automl, feature engineering, feature importance, BERT'
           href: how-to-configure-auto-features.md
         - name: Automatische ML gebruiken in ML-pijplijnen (Python)
           displayName: machine learning automl
@@ -459,7 +459,7 @@
           href: how-to-understand-automated-ml.md
         - name: ONNX-model gebruiken in .NET-toepassing
           href: how-to-use-automl-onnx-model-dotnet.md
-        - name: Problemen met automatische ML oplossen
+        - name: Problemen met geautomatiseerde ML oplossen
           href: how-to-troubleshoot-auto-ml.md
     - name: Modellen implementeren & bedienen
       items:
@@ -544,7 +544,7 @@
           href: how-to-move-data-in-out-of-pipelines.md
         - name: ML-pijplijnen implementeren (Python)
           href: how-to-deploy-pipelines.md
-        - name: Azure Synapse Apache Spark-Pools gebruiken in een ML-pijp lijn (python)
+        - name: Apache Spark Azure Synapse pools gebruiken in een ML-pijplijn (Python)
           href: how-to-use-synapsesparkstep.md
         - name: Een pijplijn activeren
           href: how-to-trigger-published-pipeline.md
@@ -556,7 +556,7 @@
             - name: Gegevens transformeren
               displayName: pipeline
               href: how-to-designer-transform-data.md
-            - name: Pijplijn parameters gebruiken
+            - name: Pijplijnparameters gebruiken
               displayName: 'designer, pipeline parameters'
               href: how-to-use-pipeline-parameter.md
             - name: Opnieuw trainen met behulp van gepubliceerde pijplijnen

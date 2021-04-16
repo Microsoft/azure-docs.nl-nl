@@ -4,14 +4,14 @@ ms.service: key-vault
 ms.topic: include
 ms.date: 07/20/2020
 ms.author: msmbaldwin
-ms.openlocfilehash: 13d4bb94d3efb574895df6cfdf240cdeec77e539
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d19c656946817b06cd620d8a48073bed8299af7d
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99070183"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107502250"
 ---
-Gebruik de Azure PowerShell [New-AzKeyVault](/powershell/module/az.keyvault/new-azkeyvault) cmdlet om een Key Vault in de resource groep te maken uit de vorige stap. U moet enkele gegevens verstrekken:
+Gebruik de Azure PowerShell [cmdlet New-AzKeyVault](/powershell/module/az.keyvault/new-azkeyvault) om een Key Vault maken in de resourcegroep uit de vorige stap. U moet enkele gegevens verstrekken:
 
 - Naam van de sleutelkluis: Een tekenreeks van 3 tot en met 24 tekens, die alleen cijfers (0-9), letters (a-z, A-Z) en afbreekstreepjes (-) mag bevatten.
 
@@ -22,7 +22,7 @@ Gebruik de Azure PowerShell [New-AzKeyVault](/powershell/module/az.keyvault/new-
 - De locatie: **EastUS**.
 
 ```azurepowershell-interactive
-New-AzKeyVault -Name "<your-unique-keyvault-name>" -ResourceGroupName "ContosoResourceGroup" -Location "East US"
+New-AzKeyVault -Name "<your-unique-keyvault-name>" -ResourceGroupName "myResourceGroup" -Location "East US"
 ```
 
 De uitvoer van deze cmdlet toont eigenschappen van de nieuw gemaakte sleutelkluis. Let op de onderstaande twee eigenschappen:

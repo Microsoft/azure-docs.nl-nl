@@ -2,15 +2,17 @@
 title: De Azure-portal gebruiken om Service Bus-onderwerpen en -abonnementen te maken
 description: 'Quickstart: In deze quickstart leert u hoe u een Service Bus-onderwerp en abonnementen op dat onderwerp kunt maken met behulp van de Azure-portal.'
 author: spelluru
-ms.topic: quickstart
-ms.date: 06/23/2020
 ms.author: spelluru
-ms.openlocfilehash: 749ba3d2947dfd7defdf2549305f2a61c16ba713
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 06/23/2020
+ms.topic: quickstart
+ms.custom:
+- mode-portal
+ms.openlocfilehash: 25b0579f05c1f7669a8dfc1df02e9a1f575ea066
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "95803292"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107537152"
 ---
 # <a name="use-the-azure-portal-to-create-a-service-bus-topic-and-subscriptions-to-the-topic"></a>De Azure-portal gebruiken om een Service Bus-onderwerp en abonnementen te maken voor het onderwerp
 In deze quickstart gebruikt u de Azure-portal om een Service Bus-onderwerp te maken en vervolgens abonnementen op dat onderwerp te maken. 

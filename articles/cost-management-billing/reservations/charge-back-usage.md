@@ -5,14 +5,14 @@ author: yashesvi
 ms.service: cost-management-billing
 ms.subservice: reservations
 ms.topic: how-to
-ms.date: 02/10/2021
+ms.date: 03/10/2021
 ms.author: banders
-ms.openlocfilehash: 4fb15a7e677d566454d5d487c1cf69767d7f3a30
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 4059318e6b8052f3b0221c87e8a357cfc8679e44
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100368741"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107532762"
 ---
 # <a name="charge-back-azure-reservation-costs"></a>Azure-reserveringskosten terugstorten
 
@@ -20,11 +20,11 @@ Enterprise Enrollment-factureringslezers en factureringslezers van een Microsoft
 
 Gebruikers met een individueel abonnement kunnen de afgeschreven kostengegevens bekijken in hun gebruiksbestand. Wanneer een resource een reserveringskorting krijgt, bevat het gedeelte *AdditionalInfo* in het gebruiksbestand de reserveringsdetails. Zie [Gebruiksgegevens downloaden vanuit Azure Portal](../understand/download-azure-daily-usage.md#download-usage-from-the-azure-portal-csv) voor meer informatie.
 
-## <a name="see-reservation-usage-data-for-show-back-and-charge-back"></a>Raadpleeg de gebruiks gegevens van de reserve ring voor weer geven en terugsturen
+## <a name="see-reservation-usage-data-for-show-back-and-charge-back"></a>Zie reserveringsgebruiksgegevens voor terug- en terugkosten
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-2. Ga naar **Cost Management en facturering** 
-3. **Kosten analyse** uit de linkernavigatiebalk selecteren 
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+2. Ga naar **Cost Management and Billing** 
+3. Kostenanalyse **selecteren** in het linkernavigatievenster 
 4. Selecteer onder **Werkelijke kosten** de metriek **Afgeschreven kosten**.
 5. Als u wilt zien welke resources door een reservering zijn gebruikt, past u een filter toe voor **Reservering** en selecteert u vervolgens reserveringen.
 6. Stel **Granulariteit** in op **Maandelijks** of **Dagelijks**.
@@ -33,18 +33,18 @@ Gebruikers met een individueel abonnement kunnen de afgeschreven kostengegevens 
 
 [![Voorbeeld van resources van reserveringskosten die u voor terugstorting kunt gebruiken](./media/charge-back-usage/amortized-reservation-costs.png)](./media/charge-back-usage/amortized-reservation-costs.png#lightbox)
 
-Hier volgt een video waarin wordt weergegeven hoe de kosten voor het reserveringsgebruik in Azure Portal worden weergegeven.
+Hier is een video waarin wordt getoond hoe u de kosten voor reserveringsgebruik op abonnements-, resourcegroep- en resourceniveau in de Azure Portal.
 
  > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4sQOw] 
 
-## <a name="get-the-data-for-show-back-and-charge-back"></a>De gegevens ophalen voor weer geven en terugsturen
+## <a name="get-the-data-for-show-back-and-charge-back"></a>De gegevens voor show terug en terug in rekening brengen
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-2. Ga naar **Cost Management en facturering** 
-3. Selecteer **exporteren** vanuit linkernavigatiebalk 
-4. Klik op de knop **toevoegen**
-5. Afgelosse kosten selecteren als metrische knop en uw export instellen
+2. Ga naar **Cost Management and Billing** 
+3. Selecteer **Exporteren in** de linkernavigatiebalk 
+4. Klik op **de knop** Toevoegen
+5. Selecteer Afgeschreven kosten als de knop met metrische gegevens en stel uw export in
 
-de EffectivePrice voor het gebruik dat een reserverings korting krijgt, is de evenredige kosten van de reserve ring (in plaats van nul). Deze gegevens helpen bij het bepalen van de monetaire waarde van reserveringsverbruik door een abonnement, resourcegroep of resource, en kan u helpen om het gebruik van de reservering intern toe te rekenen. De gegevensset heeft ook ongebruikte reserveringsuren. 
+De EffectivePrice voor het gebruik dat reserveringskorting krijgt, zijn de pro prognosekosten van de reservering (in plaats van nul). Deze gegevens helpen bij het bepalen van de monetaire waarde van reserveringsverbruik door een abonnement, resourcegroep of resource, en kan u helpen om het gebruik van de reservering intern toe te rekenen. De gegevensset heeft ook ongebruikte reserveringsuren. 
 
 ## <a name="get-azure-consumption-and-reservation-usage-data-using-api"></a>Gebruiks- en reserveringsgegevens van Azure opvragen met een API
 
@@ -74,7 +74,7 @@ De informatie in de onderstaande tabel over metrische gegevens en filters kan he
 
 ## <a name="download-the-usage-csv-file-with-new-data"></a>CSV-bestand met nieuwe gebruiksgegevens downloaden
 
-Als u een EA-beheerder bent, kunt u het CSV-bestand downloaden dat nieuwe gebruiks gegevens bevat van Azure Portal. Deze gegevens zijn niet beschikbaar vanuit de EA Portal (ea.azure.com). U moet het gebruiksbestand downloaden via de Azure-portal (portal.azure.com) om de nieuwe gegevens te zien.
+Als u een EA-beheerder bent, kunt u het CSV-bestand met nieuwe gebruiksgegevens downloaden van Azure Portal. Deze gegevens zijn niet beschikbaar vanuit de EA Portal (ea.azure.com). U moet het gebruiksbestand downloaden via de Azure-portal (portal.azure.com) om de nieuwe gegevens te zien.
 
 Ga in de Azure-portal naar [Kostenbeheer en facturering](https://portal.azure.com/#blade/Microsoft_Azure_Billing/ModernBillingMenuBlade/BillingAccounts).
 
@@ -82,7 +82,7 @@ Ga in de Azure-portal naar [Kostenbeheer en facturering](https://portal.azure.co
 2. Klik op **Gebruik en kosten**.
 3. Klik op **Downloaden**.  
 ![Voorbeeld waarin wordt aangegeven waar u het CSV-bestand met gebruiksgegevens kunt downloaden in de Azure-portal](./media/understand-reserved-instance-usage-ea/portal-download-csv.png)
-4. In **gebruiks Details** selecteert u **afgeschreven gebruiks gegevens**.
+4. Selecteer **in Gebruiksgegevens** **de optie Afgeschreven gebruiksgegevens.**
 
 De CSV-bestanden die u downloadt, bevatten de werkelijke kosten en afgeschreven kosten.
 
@@ -91,6 +91,6 @@ De CSV-bestanden die u downloadt, bevatten de werkelijke kosten en afgeschreven 
 Als u vragen hebt of hulp nodig hebt, [kunt u een ondersteuningsaanvraag maken](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
 ## <a name="next-steps"></a>Volgende stappen
-- Raadpleeg de volgende artikelen voor meer informatie over het Azure Reservations van gebruiks gegevens:
-  - [Reserverings kosten en gebruik van de klant overeenkomst van Enterprise Overeenkomst en micro soft](understand-reserved-instance-usage-ea.md)
+- Zie de volgende artikelen voor meer informatie over gebruiksgegevens van Azure Reservations:
+  - [Enterprise Agreement en Microsoft-klantovereenkomst reserveringskosten en -gebruik](understand-reserved-instance-usage-ea.md)
  

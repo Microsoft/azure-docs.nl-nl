@@ -3,12 +3,12 @@ title: Wat is nieuw? Releaseopmerkingen voor Azure Event Grid
 description: Ontdek wat er nieuw is in Azure Event Grid, zoals de laatste opmerkingen bij de release, bekende problemen, opgeloste problemen, verminderde functionaliteit en aankomende wijzigingen.
 ms.topic: overview
 ms.date: 07/23/2020
-ms.openlocfilehash: da0b26e4f163f428e6955a37636ceb19bb34abc5
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: f135b25f28002c037dd24fa0cb3bb7476a06309f
+ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105107530"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107389584"
 ---
 # <a name="whats-new-in-azure-event-grid"></a>Wat is er nieuw in Azure Event Grid?
 
@@ -21,6 +21,24 @@ Azure Event Grid wordt doorlopend verder verbeterd. Om u op de hoogte te houden 
 - Opgeloste fouten
 - Afgeschafte functionaliteit
 - Plannen voor wijzigingen
+
+## <a name="610-preview-2020-10"></a>6.1.0-preview (2020-10)
+- [Beheerde identiteiten voor systeemonderwerpen](enable-identity-system-topics.md)
+- [Aangepaste leveringseigenschappen](delivery-properties.md)
+- [Opslagwachtrij - time-to-live (TTL) van bericht](delivery-properties.md#configure-time-to-live-on-outgoing-events-to-azure-storage-queues)
+- [Geavanceerde filterverbeteringen](event-filtering.md#advanced-filtering)
+    - Ondersteuning voor filteren op matrixgegevens in binnenkomende gebeurtenissen
+    - Filteren op contextkenmerken van CloudEvents-extensies toestaan
+    - Nieuwe operators
+        - StringNotContains
+        - StringNotBeginsWith
+        - StringNotEndsWith
+        - NumberInRange
+        - NumberNotInRange
+        - Isnull
+        - IsNotNull
+- [Schematransformaties Event Grid CloudEvents 1.0 toestaan voor aangepaste onderwerpen en domeinen](cloudevents-schema.md#configure-event-grid-for-cloudevents)
+        
 
 ## <a name="600-2020-06"></a>6.0.0 (2020-06)
 - Ondersteuning toevoegen voor nieuwe, algemeen beschikbare (GA) versie van service-API 2020-06-01.

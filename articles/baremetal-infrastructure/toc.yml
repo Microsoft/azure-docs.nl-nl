@@ -2,11 +2,11 @@
   href: index.yml
 - name: Overzicht
   items:
-    - name: Wat is een BareMetal-infra structuur?
+    - name: Wat is BareMetal Infrastructure?
       href: concepts-baremetal-infrastructure-overview.md
     - name: Inzicht in de voorwaarden
       href: know-baremetal-terms.md
-    - name: BareMetal-instanties in azure verbinden
+    - name: BareMetal-exemplaren verbinden in Azure
       displayName: 'Azure CLI, az baremetalinstance, az baremetalinstance restart'
       href: connect-baremetal-infrastructure.md
 - name: Workloads
@@ -85,3 +85,5 @@
               href: /azure/virtual-machines/workloads/sap/hana-large-instance-virtual-machine-migration?context=/azure/baremetal-infrastructure/workloads/sap/context/context
             - name: Een reservering voor SAP HANA Large Instances kopen
               href: /azure/cost-management-billing/reservations/prepay-hana-large-instances-reserved-capacity
+    - name: Oracle
+      href: ./workloads/oracle/toc.yml

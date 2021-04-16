@@ -1,15 +1,15 @@
 ---
 title: Lijst met ingebouwde beleidsdefinities
 description: Lijst met ingebouwde beleidsdefinities voor Azure Policy. Categorieën zijn tags, naleving van regelgeving, Key Vault, Kubernetes, gastconfiguratie en meer.
-ms.date: 03/31/2021
+ms.date: 04/14/2021
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 13b772a5e80db12ee4be4bec7731f72e46f0898f
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: 8110ee2539165dfd6daa243dca151578726d0d84
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106090721"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107498638"
 ---
 # <a name="azure-policy-built-in-policy-definitions"></a>Ingebouwde beleidsdefinities voor Azure Policy
 

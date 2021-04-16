@@ -1,59 +1,59 @@
 ---
-title: 'Snelstartgids: verbinding maken met behulp van Azure CLI-Azure Database for MySQL-flexibele server'
-description: Deze Quick Start biedt verschillende manieren om verbinding te maken met Azure CLI met Azure Database for MySQL-flexibele server.
+title: 'Quickstart: Verbinding maken met behulp van Azure CLI - Azure Database for MySQL - Flexible Server'
+description: Deze quickstart biedt verschillende manieren om verbinding te maken met Azure CLI met Azure Database for MySQL - Flexible Server.
 author: mksuni
 ms.author: sumuth
 ms.service: mysql
-ms.custom: mvc
+ms.custom: mvc, devx-track-azurecli
 ms.topic: quickstart
 ms.date: 03/01/2021
-ms.openlocfilehash: d40dfa9c8a79625910414409ac3a6df7045c31f2
-ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
+ms.openlocfilehash: e0fd5969a3c4f84b6e8f98e99335bf120179e7af
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106490910"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107481086"
 ---
-# <a name="quickstart-connect-and-query-with-azure-cli--with-azure-database-for-mysql---flexible-server"></a>Quick Start: verbinding maken en query's uitvoeren met Azure CLI met Azure Database for MySQL-flexibele server
+# <a name="quickstart-connect-and-query-with-azure-cli--with-azure-database-for-mysql---flexible-server"></a>Quickstart: Verbinding maken en query's uitvoeren met Azure CLI met Azure Database for MySQL - Flexible Server
 
 > [!IMPORTANT]
 > Azure Database for MySQL - Flexible Server is momenteel beschikbaar als openbare preview.
 
-In deze Quick start ziet u hoe u verbinding kunt maken met een Azure Database for MySQL flexibele server met behulp van Azure CLI met de ```az mysql flexible-server connect``` opdracht. Met deze opdracht kunt u de verbinding met uw database server testen en query's rechtstreeks uitvoeren op uw server.  U kunt ook de opdracht uitvoeren in een interactieve modus gebruiken om meerdere query's uit te voeren.
+In deze quickstart wordt gedemonstreerd hoe u verbinding maakt met een Azure Database for MySQL Flexible Server met behulp van Azure CLI met ```az mysql flexible-server connect``` de opdracht . Met deze opdracht kunt u de connectiviteit met uw databaseserver testen en query's rechtstreeks op uw server uitvoeren.  U kunt ook de opdracht uitvoeren in een interactieve modus gebruiken voor het uitvoeren van meerdere query's.
 
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-account. Als u geen account hebt, kunt u [een gratis proefversie krijgen](https://azure.microsoft.com/free/).
-- De nieuwste versie van [Azure cli](/cli/azure/install-azure-cli) installeren (2.20.0 of hoger)
-- Aanmelden met behulp van Azure CLI met ```az login``` opdracht 
-- Schakel parameter persistentie in met ```az config param-persist on``` . Met parameter persistentie kunt u lokale context gebruiken zonder dat u veel argumenten hoeft te herhalen, zoals een resource groep of locatie, enzovoort.
+- Installeer de nieuwste versie van [Azure CLI](/cli/azure/install-azure-cli) (2.20.0 of hoger)
+- Meld u aan met behulp van Azure CLI met ```az login``` de opdracht 
+- Schakel parameterpersistence in met ```az config param-persist on``` . Parameterpersistence helpt u bij het gebruik van lokale context zonder veel argumenten te herhalen, zoals resourcegroep of locatie, enzovoort.
 
-## <a name="create-an-mysql-flexible-server"></a>Een flexibele MySQL-server maken
+## <a name="create-an-mysql-flexible-server"></a>Een MySQL Flexible Server maken
 
-We maken eerst een beheerde MySQL-server. Voer in [Azure Cloud shell](https://shell.azure.com/)het volgende script uit en noteer de **Server naam**, de **gebruikers naam** en het  **wacht woord** die zijn gegenereerd met deze opdracht.
+We maken eerst een beheerde MySQL-server. Voer [Azure Cloud Shell](https://shell.azure.com/)volgende script uit en noteer de **servernaam,** gebruikersnaam en het **wachtwoord** die zijn gegenereerd met deze opdracht. 
 
 ```azurecli
 az mysql flexible-server create --public-access <your-ip-address>
 ```
 
-U kunt aanvullende argumenten opgeven voor deze opdracht om deze aan te passen. Bekijk alle argumenten voor [AZ mysql Flexible-server Create](/cli/azure/mysql/flexible-server#az_mysql_flexible_server_create).
+U kunt aanvullende argumenten voor deze opdracht geven om deze aan te passen. Zie alle argumenten voor [az mysql flexible-server create.](/cli/azure/mysql/flexible-server#az_mysql_flexible_server_create)
 
 ## <a name="create-a-database"></a>Een database maken
-Voer de volgende opdracht uit om een Data Base te maken, **newdatabase** als u deze nog niet hebt gemaakt.
+Voer de volgende opdracht uit om een database, **newdatabase,** te maken als u er nog geen hebt gemaakt.
 
 ```azurecli
 az mysql flexible-server db create -d newdatabase
 ```
 
-## <a name="view-all-the-arguments"></a>Alle argumenten weer geven
-U kunt alle argumenten voor deze opdracht weer geven met een ```--help``` argument. 
+## <a name="view-all-the-arguments"></a>Alles weergeven argumenten op te geven
+U kunt alle argumenten voor deze opdracht weergeven met ```--help``` argument. 
 
 ```azurecli
 az mysql flexible-server connect --help
 ```
 
-## <a name="test-database-server-connection"></a>Database server verbinding testen
-Voer het volgende script uit om de verbinding met de data base te testen en te valideren vanuit uw ontwikkel omgeving.
+## <a name="test-database-server-connection"></a>Databaseserververbinding testen
+Voer het volgende script uit om de verbinding met de database vanuit uw ontwikkelomgeving te testen en te valideren.
 
 ```azurecli
 az mysql flexible-server connect -n <servername> -u <username> -p <password> -d <databasename>
@@ -64,21 +64,21 @@ az mysql flexible-server connect -n <servername> -u <username> -p <password> -d 
 az mysql flexible-server connect -n mysqldemoserver1 -u dbuser -p "dbpassword" -d newdatabase
 ```
 
-De volgende uitvoer wordt weer geven voor een geslaagde verbinding:
+Als het goed is, ziet u de volgende uitvoer voor een geslaagde verbinding:
 
 ```output
 Command group 'mysql flexible-server' is in preview and under development. Reference and support levels: https://aka.ms/CLI_refstatus
 Connecting to newdatabase database.
 Successfully connected to mysqldemoserver1.
 ```
-Als de verbinding is mislukt, probeert u de volgende oplossingen:
-- Controleer of poort 3306 is geopend op de client computer.
-- Als de gebruikers naam en het wacht woord van de server beheerder juist zijn
-- Als u de firewall regel voor uw client computer hebt geconfigureerd
-- Als u uw server hebt geconfigureerd met persoonlijke toegang in virtuele netwerken, zorgt u ervoor dat de client computer zich in hetzelfde virtuele netwerk bevindt.
+Probeer de volgende oplossingen als de verbinding is mislukt:
+- Controleer of poort 3306 is geopend op uw clientmachine.
+- als de gebruikersnaam en het wachtwoord van de serverbeheerder juist zijn
+- als u een firewallregel hebt geconfigureerd voor uw clientmachine
+- Als u uw server hebt geconfigureerd met privétoegang in virtuele netwerken, moet u ervoor zorgen dat uw clientmachine zich in hetzelfde virtuele netwerk.
 
 ## <a name="run-single-query"></a>Eén query uitvoeren
-Voer de volgende opdracht uit om één query uit te voeren met behulp van het ```--querytext``` argument ```-q``` .
+Voer de volgende opdracht uit om één query uit te voeren met ```--querytext``` behulp van argument , ```-q``` .
 
 ```azurecli
 az mysql flexible-server connect -n <server-name> -u <username> -p "<password>" -d <database-name> --querytext "<query text>"
@@ -89,7 +89,7 @@ az mysql flexible-server connect -n <server-name> -u <username> -p "<password>" 
 az mysql flexible-server connect -n mysqldemoserver1 -u dbuser -p "dbpassword" -d newdatabase -q "select * from table1;" --output table
 ```
 
-U ziet een uitvoer zoals hieronder wordt weer gegeven:
+U ziet een uitvoer zoals hieronder wordt weergegeven:
 
 ```output
 Command group 'mysql flexible-server' is in preview and under development. Reference and support levels: https://aka.ms/CLI_refstatus
@@ -110,8 +110,8 @@ test   200
 test   200
 ```
 
-## <a name="run-multiple-queries-using-interactive-mode"></a>Meerdere query's uitvoeren met de interactieve modus
-U kunt meerdere query's uitvoeren met de **interactieve** modus. Voer de volgende opdracht uit om de interactieve modus in te scha kelen:
+## <a name="run-multiple-queries-using-interactive-mode"></a>Meerdere query's uitvoeren met behulp van de interactieve modus
+U kunt meerdere query's uitvoeren met behulp van **de interactieve** modus. Voer de volgende opdracht uit om de interactieve modus in te schakelen
 
 ```azurecli
 az mysql flexible-server connect -n <server-name> -u <username> -p <password> --interactive
@@ -122,7 +122,7 @@ az mysql flexible-server connect -n <server-name> -u <username> -p <password> --
 az mysql flexible-server connect -n mysqldemoserver1 -u dbuser -p "dbpassword" -d newdatabase --interactive
 ```
 
-U ziet de **MySQL** shell-ervaring, zoals hieronder wordt weer gegeven:
+U ziet de **MySQL-shell-ervaring** zoals hieronder wordt weergegeven:
 
 ```bash
 Command group 'mysql flexible-server' is in preview and under development. Reference and support levels: https://aka.ms/CLI_refstatus
@@ -157,6 +157,6 @@ Your preference of  are now saved to local context. To learn more, type in `az l
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-* [Verbinding maken met Azure Database for MySQL-flexibele server met versleutelde verbindingen](how-to-connect-tls-ssl.md)
+* [Verbinding maken met Azure Database for MySQL - Flexible Server met versleutelde verbindingen](how-to-connect-tls-ssl.md)
 * [De server beheren](./how-to-manage-server-cli.md)
 

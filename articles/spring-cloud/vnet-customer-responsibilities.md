@@ -1,76 +1,76 @@
 ---
-title: Verantwoordelijkheden van klanten die Azure lente Cloud in vnet uitvoeren
-description: In dit artikel worden de verantwoordelijkheden beschreven van klanten die Azure lente Cloud in vnet uitvoeren.
+title: Verantwoordelijkheden van de klant die Azure Spring Cloud in vnet
+description: In dit artikel worden de verantwoordelijkheden van de klant beschreven die Azure Spring Cloud in vnet.
 author: MikeDodaro
 ms.author: brendm
 ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 12/02/2020
-ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 91c8834b48625aac0f279f84648d374df15fbdd0
-ms.sourcegitcommit: c6a2d9a44a5a2c13abddab932d16c295a7207d6a
+ms.custom: devx-track-java
+ms.openlocfilehash: a6b444092ec4e3588564a3f902b49c4ed3dc5fe5
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "107285391"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107376780"
 ---
-# <a name="customer-responsibilities-for-running-azure-spring-cloud-in-vnet"></a>Verantwoordelijkheden van klanten voor het uitvoeren van Azure lente Cloud in VNET
-Dit document bevat specificaties voor het gebruik van Azure lente-Cloud in een virtueel netwerk.
+# <a name="customer-responsibilities-for-running-azure-spring-cloud-in-vnet"></a>Verantwoordelijkheden van de klant voor het uitvoeren Azure Spring Cloud in VNET
+Dit document bevat specificaties voor het gebruik van Azure Spring Cloud in een virtueel netwerk.
 
-Als Azure lente-Cloud in uw virtuele netwerk wordt geïmplementeerd, heeft dit uitgaande afhankelijkheden voor services buiten het virtuele netwerk. Voor beheer-en operationele doeleinden moet Azure lente-Cloud toegang hebben tot bepaalde poorten en FQDN-namen (Fully Qualified Domain Name). Deze eind punten zijn vereist om te communiceren met het Azure lente-Cloud beheer vlak en om essentiële Kubernetes-cluster onderdelen en beveiligings updates te downloaden en te installeren.
+Wanneer Azure Spring Cloud wordt geïmplementeerd in uw virtuele netwerk, zijn er uitgaande afhankelijkheden van services buiten het virtuele netwerk. Voor beheer- en operationele doeleinden moeten Azure Spring Cloud toegang hebben tot bepaalde poorten en FQDN's (Fully Qualified Domain Names). Deze eindpunten zijn vereist om te communiceren met Azure Spring Cloud beheervlak en om kernonderdelen en beveiligingsupdates van Kubernetes-clusters te downloaden en installeren.
 
-Azure lente-Cloud heeft standaard onbeperkte uitgaande (uitgaand) Internet toegang. Dit niveau van netwerk toegang maakt het mogelijk dat toepassingen die u uitvoert, toegang krijgen tot externe bronnen. Als u uitgaand verkeer wilt beperken, moet een beperkt aantal poorten en adressen toegankelijk zijn voor onderhouds taken. De eenvoudigste oplossing voor het beveiligen van uitgaande adressen is het gebruik van een firewall apparaat dat uitgaand verkeer op basis van domein namen kan beheren. Azure Firewall kan bijvoorbeeld het uitgaande HTTP-en HTTPS-verkeer beperken op basis van de FQDN van de bestemming. U kunt ook uw voorkeurs firewall en beveiligings regels configureren om deze vereiste poorten en adressen toe te staan.
+Standaard heeft Azure Spring Cloud onbeperkte uitgaande (uitgaande) internettoegang. Met dit niveau van netwerktoegang hebben toepassingen die u wilt uitvoeren toegang tot externe resources. Als u het toegangsverkeer wilt beperken, moet een beperkt aantal poorten en adressen toegankelijk zijn voor onderhoudstaken. De eenvoudigste oplossing voor het beveiligen van uitgaande adressen is het gebruik van een firewallapparaat dat uitgaand verkeer op basis van domeinnamen kan beheren. Azure Firewall kunt bijvoorbeeld uitgaand HTTP- en HTTPS-verkeer beperken op basis van de FQDN van de bestemming. U kunt ook de firewall en beveiligingsregels van uw voorkeur configureren om deze vereiste poorten en adressen toe te staan.
 
-## <a name="azure-spring-cloud-resource-requirements"></a>Azure lente Cloud resource vereisten 
+## <a name="azure-spring-cloud-resource-requirements"></a>Azure Spring Cloud resourcevereisten 
 
-Hier volgt een lijst met resource vereisten voor Azure lente-Cloud Services. Als algemene vereiste moet u de resource groepen die zijn gemaakt door de Azure lente-Cloud en de onderliggende netwerk bronnen niet wijzigen.
-- Wijzig geen resource groepen die zijn gemaakt en eigendom zijn van Azure lente Cloud.
-  - Deze resource groepen worden standaard aangeduid als AP-SVC-rt_ [SERVICE-INSTANCE-NAME]_[regio] * en AP_[Service-instance-name] _ [regio] *.
-- Wijzig geen subnetten die worden gebruikt door Azure lente Cloud.
-- Maak niet meer dan één Azure veer-Cloud service-exemplaar in hetzelfde subnet.
-- Als u een firewall gebruikt om verkeer te beheren, blokkeert u *niet* het volgende uitgaand verkeer naar Azure lente-Cloud onderdelen die het service-exemplaar gebruiken, onderhouden en ondersteunen.
+Hier volgt een lijst met resourcevereisten voor Azure Spring Cloud services. Als algemene vereiste moet u resourcegroepen die zijn gemaakt door Azure Spring Cloud en de onderliggende netwerkresources niet wijzigen.
+- Wijzig geen resourcegroepen die zijn gemaakt en eigendom zijn van Azure Spring Cloud.
+  - Standaard worden deze resourcegroepen benoemd als ap-svc-rt_[SERVICE-INSTANCE-NAME]_[REGION]*_ en ap [SERVICE-INSTANCE-NAME]_[REGION]*.
+- Wijzig geen subnetten die worden gebruikt door Azure Spring Cloud.
+- Maak niet meer dan één Azure Spring Cloud service-exemplaar in hetzelfde subnet.
+- Wanneer u een firewall gebruikt om verkeer te *beheren,* moet u het volgende verkeer voor Azure Spring Cloud blokkeren die het service-exemplaar gebruiken, onderhouden en ondersteunen.
 
-## <a name="azure-spring-cloud-network-requirements"></a>Azure lente-Cloud netwerk vereisten
+## <a name="azure-spring-cloud-network-requirements"></a>Azure Spring Cloud netwerkvereisten
 
-  | Doel eindpunt | Poort | Gebruik | Notitie |
+  | Doel-eindpunt | Poort | Gebruik | Notitie |
   |------|------|------|------|
-  | *: 1194 *of* [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) -Cloud: 1194 | UDP: 1194 | Onderliggend Kubernetes-Cluster beheer. | |
-  | *: 443 *of* [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) -Cloud: 443 | TCP: 443 | Azure lente-Cloud Service beheer. | Informatie over het service-exemplaar ' requiredTraffics ' kan bekend zijn bij resource Payload, onder ' networkProfile '. |
-  | *: 9000 *of* [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) -Cloud: 9000 | TCP: 9000 | Onderliggend Kubernetes-Cluster beheer. |
-  | *: 123 *of* ntp.Ubuntu.com:123 | UDP: 123 | NTP-tijd synchronisatie op Linux-knoop punten. | |
-  | *. azure.io:443 *of* [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) -AzureContainerRegistry: 443 | TCP: 443 | Azure Container Registry. | Kan worden vervangen door *Azure container Registry* [service-eind punt in](../virtual-network/virtual-network-service-endpoints-overview.md)te scha kelen in het virtuele netwerk. |
-  | *. core.windows.net:443 en *. core.windows.net:445 *of* [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) -Storage: 443 en Storage: 445 | TCP: 443, TCP: 445 | Azure File Storage | Kan worden vervangen door *Azure Storage* [service-eind punt in](../virtual-network/virtual-network-service-endpoints-overview.md)te scha kelen in het virtuele netwerk. |
-  | *. servicebus.windows.net:443 *of* [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) -EventHub: 443 | TCP: 443 | Azure Event hub. | Kan worden vervangen door *Azure Event hubs* [service-eind punt in](../virtual-network/virtual-network-service-endpoints-overview.md)te scha kelen in het virtuele netwerk. |
+  | *:1194 *of* [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) - AzureCloud:1194 | UDP:1194 | Onderliggend Kubernetes-clusterbeheer. | |
+  | *:443 *of* [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) - AzureCloud:443 | TCP:443 | Azure Spring Cloud Service Management. | Informatie over het service-exemplaar 'requiredTraffics' kan bekend zijn in de nettolading van de resource, onder de sectie networkProfile. |
+  | *:9000 *of* [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) - AzureCloud:9000 | TCP:9000 | Onderliggend Kubernetes-clusterbeheer. |
+  | *:123 *Of* ntp.ubuntu.com:123 | UDP:123 | NTP tijdsynchronisatie op Linux-knooppunten. | |
+  | *.azure.io:443 Or  [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) - AzureContainerRegistry:443 | TCP:443 | Azure Container Registry. | Kan worden vervangen door het inschakelen *Azure Container Registry* [service-eindpunt in virtueel netwerk](../virtual-network/virtual-network-service-endpoints-overview.md). |
+  | *.core.windows.net:443 en *.core.windows.net:445 *Or* [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) - Storage:443 en Storage:445 | TCP:443, TCP:445 | Azure File Storage | Kan worden vervangen door het *inschakelen Azure Storage* [service-eindpunt in virtueel netwerk](../virtual-network/virtual-network-service-endpoints-overview.md). |
+  | *.servicebus.windows.net:443 Of  [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) - EventHub:443 | TCP:443 | Azure Event Hub. | Kan worden vervangen door het *inschakelen Azure Event Hubs* [service-eindpunt in virtueel netwerk](../virtual-network/virtual-network-service-endpoints-overview.md). |
   
 
-## <a name="azure-spring-cloud-fqdn-requirementsapplication-rules"></a>FQDN-vereisten/toepassings regels voor Azure lente Cloud
+## <a name="azure-spring-cloud-fqdn-requirementsapplication-rules"></a>Azure Spring Cloud FQDN-vereisten/toepassingsregels
 
-Azure Firewall biedt de FQDN-code **AzureKubernetesService** om de volgende configuraties te vereenvoudigen:
+Azure Firewall biedt de FQDN-tag **AzureKubernetesService** om de volgende configuraties te vereenvoudigen:
 
   | Doel-FQDN | Poort | Gebruik |
   |------|------|------|
-  | *. azmk8s.io | HTTPS: 443 | Onderliggend Kubernetes-Cluster beheer. |
-  | <i>mcr.microsoft.com</i> | HTTPS: 443 | Micro soft Container Registry (MCR). |
-  | *. cdn.mscr.io | HTTPS: 443 | MCR-opslag ondersteund door de Azure CDN. |
-  | *. data.mcr.microsoft.com | HTTPS: 443 | MCR-opslag ondersteund door de Azure CDN. |
-  | <i>management.azure.com</i> | HTTPS: 443 | Onderliggend Kubernetes-Cluster beheer. |
-  | <i>* login.microsoftonline.com</i> | HTTPS: 443 | Azure Active Directory-verificatie. |
-  | <i>* login.microsoft.com</i> | HTTPS: 443 | Azure Active Directory-verificatie. |
-  |<i>packages.microsoft.com</i>    | HTTPS: 443 | Micro soft packages-opslag plaats. |
-  | <i>acs-mirror.azureedge.net</i> | HTTPS: 443 | De opslag plaats is vereist om de vereiste binaire bestanden te installeren, zoals kubenet en Azure CNI. |
-  | *mscrl.microsoft.com* | HTTPS: 80 | Vereiste micro soft-certificaat keten paden. |
-  | *crl.microsoft.com* | HTTPS: 80 | Vereiste micro soft-certificaat keten paden. |
-  | *crl3.digicert.com* | HTTPS: 80 | SSL-certificaat keten paden van derden. |
+  | *.azmk8s.io | HTTPS:443 | Onderliggend Kubernetes-clusterbeheer. |
+  | <i>mcr.microsoft.com</i> | HTTPS:443 | Microsoft Container Registry (MCR). |
+  | *.cdn.mscr.io | HTTPS:443 | MCR-opslag met de Azure CDN. |
+  | *.data.mcr.microsoft.com | HTTPS:443 | MCR-opslag met de Azure CDN. |
+  | <i>management.azure.com</i> | HTTPS:443 | Onderliggend Kubernetes-clusterbeheer. |
+  | <i>*login.microsoftonline.com</i> | HTTPS:443 | Azure Active Directory verificatie. |
+  | <i>*login.microsoft.com</i> | HTTPS:443 | Azure Active Directory verificatie. |
+  |<i>packages.microsoft.com</i>    | HTTPS:443 | Opslagplaats voor Microsoft-pakketten. |
+  | <i>acs-mirror.azureedge.net</i> | HTTPS:443 | Opslagplaats vereist voor het installeren van vereiste binaire bestanden, zoals kubenet en Azure CNI. |
+  | *mscrl.microsoft.com* | HTTPS:80 | Vereiste microsoft-certificaatketenpaden. |
+  | *crl.microsoft.com* | HTTPS:80 | Vereiste microsoft-certificaatketenpaden. |
+  | *crl3.digicert.com* | HTTPS:80 | SSL-certificaatketenpaden van derden. |
   
-## <a name="azure-spring-cloud-optional-fqdn-for-third-party-application-performance-management"></a>Azure veer Cloud optioneel FQDN voor beheer van toepassings prestaties van derden
+## <a name="azure-spring-cloud-optional-fqdn-for-third-party-application-performance-management"></a>Azure Spring Cloud FQDN voor prestatiebeheer van toepassingen van derden
 
-Azure Firewall biedt de FQDN-code **AzureKubernetesService** om de volgende configuraties te vereenvoudigen:
+Azure Firewall biedt de FQDN-tag **AzureKubernetesService** om de volgende configuraties te vereenvoudigen:
 
   | Doel-FQDN | Poort | Gebruik                                                          |
   | ---------------- | ---- | ------------------------------------------------------------ |
-  | Collector *. newrelic. com | TCP: 443/80 | Vereiste netwerken van nieuwe Relic APM-agents in de VS-regio, zie ook [APM-agenten netwerken](https://docs.newrelic.com/docs/using-new-relic/cross-product-functions/install-configure/networks/#agents). |
-  | Collector *. eu01. nr-data.net | TCP: 443/80 | Vereiste netwerken van nieuwe Relic APM-agents uit de EU-regio, zie ook [APM-agenten netwerken](https://docs.newrelic.com/docs/using-new-relic/cross-product-functions/install-configure/networks/#agents). |
+  | collector*.newrelic.com | TCP:443/80 | Vereiste netwerken van New Relic APM-agents uit de regio VS, zie [ook APM Agents Networks](https://docs.newrelic.com/docs/using-new-relic/cross-product-functions/install-configure/networks/#agents). |
+  | collector*.eu01.nr-data.net | TCP:443/80 | Vereiste netwerken van New Relic APM-agents uit de EU-regio, zie [ook APM Agents Networks](https://docs.newrelic.com/docs/using-new-relic/cross-product-functions/install-configure/networks/#agents). |
 
 ## <a name="see-also"></a>Zie ook
-* [Toegang tot uw toepassing in een privé netwerk](access-app-virtual-network.md)
+* [Toegang tot uw toepassing in een particulier netwerk](access-app-virtual-network.md)
 * [Apps beschikbaar maken met Application Gateway en Azure Firewall](expose-apps-gateway-azure-firewall.md)

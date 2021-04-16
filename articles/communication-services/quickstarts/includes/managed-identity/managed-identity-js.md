@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d70514e81bc838b4193862e66b0c03440d006128
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: ce29158c2a44f01fa06649e4b4497bf5c5076866
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107307433"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107510740"
 ---
 ## <a name="setting-up"></a>Instellen
 
@@ -33,11 +33,11 @@ npm install @azure/identity
 
 ### <a name="create-a-new-file"></a>Een nieuw bestand maken
 
-Open een nieuw bestand met een tekst editor en sla dit `index.js` op als. de code wordt in dit bestand geplaatst.
+Open een nieuw bestand met een teksteditor en sla het op als `index.js` . We plaatsen onze code in dit bestand.
 
 ### <a name="use-the-sdk-packages"></a>De SDK-pakketten gebruiken
 
-Voeg de volgende- `require` instructies toe aan het begin van `index.js` om de Azure Identity-en Azure Storage sdk's te gebruiken.
+Voeg bovenaan de `require` volgende instructies toe om de Azure Identity- en `index.js` Azure Storage-SDK's te gebruiken.
 
 ```JavaScript
 const { DefaultAzureCredential } = require("@azure/identity");
@@ -46,7 +46,7 @@ const { SmsClient, SmsSendRequest } = require("@azure/communication-sms");
 ```
 ## <a name="create-a-defaultazurecredential"></a>Een DefaultAzureCredential maken
 
-We gebruiken de [DefaultAzureCredential](/javascript/api/@azure/identity/defaultazurecredential) voor deze Quick Start. Deze referentie is geschikt voor productie-en ontwikkelings omgevingen. Als dat nodig is voor elke bewerking, kunt u deze maken binnen het begin van het `index.js` bestand. 
+We gebruiken de [DefaultAzureCredential](/javascript/api/@azure/identity/defaultazurecredential) voor deze quickstart. Deze referentie is geschikt voor productie- en ontwikkelomgevingen. Omdat deze nodig is voor elke bewerking, maken we deze bovenaan het `index.js` bestand. 
 
 ```JavaScript
     const credential = new DefaultAzureCredential();
@@ -54,7 +54,7 @@ We gebruiken de [DefaultAzureCredential](/javascript/api/@azure/identity/default
 
 ## <a name="create-an-identity-and-issue-a-token-with-managed-identities"></a>Een identiteit maken en een token uitgeven met beheerde identiteiten
 
-We gaan nu een functie schrijven die een nieuwe identiteit maakt en een token voor deze identiteit uitgeeft. we gebruiken dit later om de instellingen van de beheerde identiteit te testen.
+Vervolgens schrijven we een functie die een nieuwe identiteit maakt en een token voor deze identiteit uit geeft. We gebruiken dit later om de installatie van onze beheerde identiteit te testen.
 
 ```JavaScript
 async function createIdentityAndIssueToken(resourceEndpoint) {
@@ -63,9 +63,9 @@ async function createIdentityAndIssueToken(resourceEndpoint) {
 }
 ```
 
-## <a name="send-an-sms-with-managed-identity"></a>Een SMS-bericht verzenden met een beheerde identiteit
+## <a name="send-an-sms-with-managed-identity"></a>Een sms verzenden met een beheerde identiteit
 
-Nu kunt u een functie schrijven waarbij beheerde identiteiten worden gebruikt voor het verzenden van een SMS:
+Nu gaan we een functie schrijven die gebruikmaakt van beheerde identiteiten om een sms te verzenden:
 
 ```JavaScript
 async function sendSms(resourceEndpoint, fromNumber, toNumber, message) {
@@ -82,9 +82,9 @@ async function sendSms(resourceEndpoint, fromNumber, toNumber, message) {
 }
 ```
 
-## <a name="write-the-main-method"></a>Schrijf de methode Main
+## <a name="write-the-main-function"></a>De hoofdfunctie schrijven
 
-Met de functies die zijn gemaakt, kunnen we nu een hoofd functie schrijven om deze aan te roepen en het gebruik van beheerde identiteiten te demonstreren:
+Nu onze functies zijn gemaakt, kunnen we een hoofdfunctie schrijven om deze aan te roepen en het gebruik van beheerde identiteiten te demonstreren:
 ```JavaScript
 async function main() {
     // You can find your endpoint and access key from your resource in the Azure portal
@@ -107,7 +107,7 @@ async function main() {
 main();
 ```
 
-Het uiteindelijke `index.js` bestand moet er als volgt uitzien:
+Het `index.js` uiteindelijke bestand moet er als volgende uitzien:
 ```JavaScript
 const { DefaultAzureCredential } = require("@azure/identity");
 const { CommunicationIdentityClient, CommunicationUserToken } = require("@azure/communication-identity");
@@ -156,7 +156,7 @@ main();
 
 ## <a name="run-the-program"></a>Het programma uitvoeren
 
-Als alles is voltooid, kunt u het bestand uitvoeren door `node index.js` in te voeren vanuit de map van uw project. Als alles goed is geworden, zou het volgende moeten worden weer gegeven.
+Als alles is voltooid, kunt u het bestand uitvoeren door in te `node index.js` voeren vanuit de map van uw project. Als alles goed is gegaan, ziet u iets dat lijkt op het volgende.
 
 ```Bash
     $ node index.js

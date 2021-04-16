@@ -1,6 +1,6 @@
 ---
-title: Azure Active Directory Connect Health bewerkingen
-description: In dit artikel worden aanvullende bewerkingen beschreven die kunnen worden uitgevoerd nadat u Azure AD Connect Health hebt geïmplementeerd.
+title: Azure Active Directory Connect Health-bewerkingen
+description: In dit artikel worden aanvullende bewerkingen beschreven die kunnen worden uitgevoerd nadat u de Azure AD Connect Health.
 services: active-directory
 documentationcenter: ''
 author: billmath
@@ -15,160 +15,161 @@ ms.topic: how-to
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 37e41a00c1489d5b7b4822fec8bb4da35e917826
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 836c7bf9aefd4b2cb7d52c66bbd37e7ba38a467c
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101686458"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107377307"
 ---
-# <a name="azure-active-directory-connect-health-operations"></a>Azure Active Directory Connect Health bewerkingen
-In dit onderwerp worden de verschillende bewerkingen beschreven die u kunt uitvoeren met behulp van Azure Active Directory (Azure AD) Connect Health.
+# <a name="azure-active-directory-connect-health-operations"></a>Azure Active Directory Connect Health-bewerkingen
+In dit onderwerp worden de verschillende bewerkingen beschreven die u kunt uitvoeren met Azure Active Directory (Azure AD) Connect Health.
 
-## <a name="enable-email-notifications"></a>E-mail meldingen inschakelen
-U kunt de Azure AD Connect Health-Service configureren om e-mail meldingen te verzenden wanneer waarschuwingen aangeven dat uw identiteits infrastructuur niet in orde is. Dit doet zich voor wanneer er een waarschuwing wordt gegenereerd en wanneer deze is opgelost.
+## <a name="enable-email-notifications"></a>E-mailmeldingen inschakelen
+U kunt de service Azure AD Connect Health om e-mailmeldingen te verzenden wanneer waarschuwingen aangeven dat uw identiteitsinfrastructuur niet in orde is. Dit gebeurt wanneer een waarschuwing wordt gegenereerd en wanneer deze wordt opgelost.
 
-![Scherm afbeelding van instellingen voor e-mail meldingen van Azure AD Connect Health](./media/how-to-connect-health-operations/email_noti_discover.png)
+![Schermopname van Azure AD Connect Health instellingen voor e-mailmeldingen](./media/how-to-connect-health-operations/email_noti_discover.png)
 
 > [!NOTE]
-> E-mail meldingen zijn standaard ingeschakeld.
+> E-mailmeldingen zijn standaard ingeschakeld.
 >
 
-### <a name="to-enable-azure-ad-connect-health-email-notifications"></a>Azure AD Connect Health e-mail meldingen inschakelen
-1. Open de Blade **waarschuwingen** voor de service waarvoor u een e-mail melding wilt ontvangen.
-2. Klik op de actie balk op **instellingen voor meldingen**.
-3. Selecteer aan op de e-mail meldings optie **aan**.
-4. Schakel het selectie vakje in als u wilt dat alle globale beheerders e-mail meldingen ontvangen.
-5. Als u e-mail meldingen wilt ontvangen op elk gewenst e-mail adres, geeft u deze op in het vak **extra e-mail ontvangers** . Als u een e-mail adres uit deze lijst wilt verwijderen, klikt u met de rechter muisknop op het item en selecteert u **verwijderen**.
-6. Klik op **Opslaan** om de wijzigingen te volt ooien. Wijzigingen worden pas van kracht nadat u hebt bespaard.
+### <a name="to-enable-azure-ad-connect-health-email-notifications"></a>E-mailmeldingen Azure AD Connect Health inschakelen
+1. Zoek in Azure Portal naar Azure AD Connect Health
+2. **Synchronisatiefouten selecteren**
+3. Selecteer **Meldingsinstellingen.**
+5. Selecteer op de schakelaar voor e-mailmeldingen **de optie AAN.**
+6. Schakel het selectievakje in als u wilt dat alle globale beheerders e-mailmeldingen ontvangen.
+7. Als u e-mailmeldingen op andere e-mailadressen wilt ontvangen, geeft u deze op in het vak **Extra e-mailontvangers.** Als u een e-mailadres uit deze lijst wilt verwijderen, klikt u met de rechtermuisknop op de vermelding en selecteert u **Verwijderen.**
+8. Klik op Opslaan om de wijzigingen te **maken.** Wijzigingen worden pas van kracht nadat u hebt op slaan.
 
 >[!NOTE] 
-> Wanneer er problemen zijn met de verwerking van synchronisatie aanvragen in onze back-end-service, verzendt deze service een e-mail bericht met de details van de fout naar het e-mail adres (sen) van de beheerder van uw Tenant. We hebben feedback van klanten gehoord die in bepaalde gevallen het volume van deze berichten prohibitively groot zijn zodat we de manier wijzigen waarop we deze berichten verzenden. 
+> Wanneer er problemen zijn met het verwerken van synchronisatieaanvragen in onze back-upservice, stuurt deze service een e-mailmelding met de details van de fout naar de e-mailadressen van de contactpersoon met beheerdersaccounts van uw tenant. We hebben feedback van klanten gehoord dat in bepaalde gevallen het volume van deze berichten te groot is, dus we veranderen de manier waarop we deze berichten verzenden. 
 >
-> In plaats van elke keer dat er een bericht wordt verzonden voor elke synchronisatie fout, verzenden we een dagelijks overzicht van alle fouten die de back-end-service heeft geretourneerd. Hierdoor kunnen klanten deze fouten op een efficiëntere manier verwerken en het aantal dubbele fout berichten verminderen.
+> In plaats van steeds een bericht te verzenden voor elke synchronisatiefout, verzenden we een dagelijkse samenvatting van alle fouten die de back-endservice heeft geretourneerd. Hierdoor kunnen klanten deze fouten efficiënter verwerken en het aantal dubbele foutberichten verminderen.
 
-## <a name="delete-a-server-or-service-instance"></a>Een server-of service-exemplaar verwijderen
-
->[!NOTE] 
-> De Azure AD Premium-licentie is vereist voor de stappen voor het verwijderen.
-
-In sommige gevallen wilt u mogelijk een server verwijderen om te worden bewaakt. Dit is wat u moet weten als u een server uit de Azure AD Connect Health-Service wilt verwijderen.
-
-Houd bij het verwijderen van een server rekening met het volgende:
-
-* Met deze actie wordt het verzamelen van verdere gegevens van die server gestopt. Deze server is verwijderd uit de bewakings service. Na deze actie kunt u geen nieuwe waarschuwingen, bewaking of gebruiks analyse gegevens voor deze server weer geven.
-* Met deze actie wordt de Health-Agent niet van de server verwijderd. Als u de Health-Agent niet hebt verwijderd voordat u deze stap uitvoert, worden er mogelijk fouten met betrekking tot de Health-Agent op de server weer geven.
-* Met deze actie worden de gegevens die al zijn verzameld van deze server niet verwijderd. Deze gegevens worden verwijderd volgens het Azure data retentie beleid.
-* Als u deze actie hebt uitgevoerd en u dezelfde server opnieuw wilt bewaken, moet u de Health-Agent op deze server verwijderen en opnieuw installeren.
-
-### <a name="delete-a-server-from-the-azure-ad-connect-health-service"></a>Een server verwijderen uit de Azure AD Connect Health-Service
+## <a name="delete-a-server-or-service-instance"></a>Een server of service-exemplaar verwijderen
 
 >[!NOTE] 
-> De Azure AD Premium-licentie is vereist voor de stappen voor het verwijderen.
+> Azure AD Premium-licentie is vereist voor de verwijderingsstappen.
 
-Azure AD Connect Health voor Active Directory Federation Services (AD FS) en Azure AD Connect (synchronisatie):
+In sommige gevallen wilt u mogelijk een server verwijderen om te worden bewaakt. Dit is wat u moet weten om een server te verwijderen uit de Azure AD Connect Health service.
 
-1. Open de Blade **Server** op de Blade **server lijst** door de server naam te selecteren die u wilt verwijderen.
-2. Op de Blade **Server** klikt u op de actie balk op **verwijderen**.
-![Scherm opname van Azure AD Connect Health server verwijderen](./media/how-to-connect-health-operations/DeleteServer2.png)
-3. Bevestig door de naam van de server in het bevestigings venster te typen.
+Wanneer u een server wilt verwijderen, moet u rekening houden met het volgende:
+
+* Met deze actie wordt het verzamelen van verdere gegevens van die server gestopt. Deze server wordt verwijderd uit de bewakingsservice. Na deze actie kunt u geen nieuwe waarschuwingen, bewakings- of gebruiksanalysegegevens meer weergeven voor deze server.
+* Met deze actie wordt de health-agent niet van uw server verwijderd. Als u de Health-agent nog niet hebt verwijderd voordat u deze stap hebt uitgevoerd, ziet u mogelijk fouten met betrekking tot de health-agent op de server.
+* Met deze actie worden de gegevens die al van deze server zijn verzameld, niet verwijderd. Deze gegevens worden verwijderd in overeenstemming met het Azure-beleid voor gegevensretentie.
+* Als u na het uitvoeren van deze actie opnieuw wilt beginnen met het bewaken van dezelfde server, moet u de health-agent op deze server verwijderen en opnieuw installeren.
+
+### <a name="delete-a-server-from-the-azure-ad-connect-health-service"></a>Een server verwijderen uit de Azure AD Connect Health service
+
+>[!NOTE] 
+> Azure AD Premium-licentie is vereist voor de verwijderingsstappen.
+
+Azure AD Connect Health voor Active Directory Federation Services (AD FS) en Azure AD Connect (Synchroniseren):
+
+1. Open de blade **Server** op de blade **Serverlijst** door de servernaam te selecteren die moet worden verwijderd.
+2. Klik op **de** blade Server in de actiebalk op **Verwijderen.**
+![Schermopname van Azure AD Connect Health server verwijderen](./media/how-to-connect-health-operations/DeleteServer2.png)
+3. Bevestig dit door de servernaam in het bevestigingsvak te typen.
 4. Klik op **Verwijderen**.
 
 Azure AD Connect Health voor Azure Active Directory Domain Services:
 
-1. Open het dash board **domein controllers** .
-2. Selecteer de domein controller die u wilt verwijderen.
-3. Klik op de actie balk op **verwijderen geselecteerd**.
+1. Open het dashboard **Domeincontrollers.**
+2. Selecteer de domeincontroller die u wilt verwijderen.
+3. Klik in de actiebalk op **Geselecteerde verwijderen.**
 4. Bevestig de actie om de server te verwijderen.
 5. Klik op **Verwijderen**.
 
-### <a name="delete-a-service-instance-from-azure-ad-connect-health-service"></a>Een service-exemplaar verwijderen van Azure AD Connect Health Service
-In sommige gevallen wilt u mogelijk een service-exemplaar verwijderen. Dit is wat u moet weten om een service-exemplaar te verwijderen uit de Azure AD Connect Health-Service.
+### <a name="delete-a-service-instance-from-azure-ad-connect-health-service"></a>Een service-exemplaar verwijderen uit Azure AD Connect Health service
+In sommige gevallen wilt u mogelijk een service-exemplaar verwijderen. Dit is wat u moet weten om een service-exemplaar te verwijderen uit de Azure AD Connect Health service.
 
-Wanneer u een service-exemplaar verwijdert, moet u rekening houden met het volgende:
+Wanneer u een service-exemplaar wilt verwijderen, moet u rekening houden met het volgende:
 
-* Met deze actie wordt het huidige service-exemplaar verwijderd uit de bewakings service.
-* Met deze actie wordt de Health-Agent niet verwijderd of verwijderd uit de servers die als onderdeel van dit service-exemplaar werden bewaakt. Als u de Health-Agent niet hebt verwijderd voordat u deze stap uitvoert, worden er mogelijk fouten met betrekking tot de Health-Agent op de servers weer geven.
-* Alle gegevens van dit service-exemplaar worden verwijderd overeenkomstig het Azure-beleid voor gegevens retentie.
-* Als u deze actie hebt uitgevoerd en u de service wilt bewaken, moet u de Health-Agent verwijderen en opnieuw installeren op alle servers. Als u deze actie hebt uitgevoerd en u dezelfde server opnieuw wilt bewaken, moet u de Health-Agent op die server verwijderen, opnieuw installeren en registreren.
+* Met deze actie wordt het huidige service-exemplaar uit de bewakingsservice verwijderd.
+* Met deze actie wordt de health-agent niet verwijderd van een van de servers die zijn bewaakt als onderdeel van dit service-exemplaar. Als u de health-agent niet hebt verwijderd voordat u deze stap hebt uitvoeren, ziet u mogelijk fouten met betrekking tot de statusagent op de servers.
+* Alle gegevens van dit service-exemplaar worden verwijderd in overeenstemming met het Azure-gegevensretentiebeleid.
+* Als u na het uitvoeren van deze actie wilt beginnen met het bewaken van de service, verwijdert u de Health-agent en installeert u deze opnieuw op alle servers. Als u na het uitvoeren van deze actie opnieuw wilt beginnen met het bewaken van dezelfde server, verwijdert, installeert en registreert u de health-agent op die server.
 
-#### <a name="to-delete-a-service-instance-from-the-azure-ad-connect-health-service"></a>Een service-exemplaar verwijderen uit de Azure AD Connect Health-Service
-1. Open de Blade **service** op de Blade **service lijst** door de Service-id (Farm naam) te selecteren die u wilt verwijderen. 
-2. Klik op de Blade **service** op de actie balk op **verwijderen**. 
-![Scherm opname van Azure AD Connect Health Service verwijderen](./media/how-to-connect-health-operations/DeleteServer.png)
-3. Bevestig door de service naam in het bevestigings venster te typen (bijvoorbeeld: sts.contoso.com).
+#### <a name="to-delete-a-service-instance-from-the-azure-ad-connect-health-service"></a>Een service-exemplaar verwijderen uit de Azure AD Connect Health service
+1. Open de blade **Service** op de blade **Servicelijst** door de service-id (farmnaam) te selecteren die u wilt verwijderen. 
+2. Klik op **de** blade Service op de actiebalk op **Verwijderen.** 
+![Schermopname van Azure AD Connect Health service verwijderen](./media/how-to-connect-health-operations/DeleteServer.png)
+3. Bevestig dit door de servicenaam in het bevestigingsvak te typen (bijvoorbeeld: sts.contoso.com).
 4. Klik op **Verwijderen**.
    <br><br>
 
-[//]: # (Het gedeelte voor het starten van RBAC)
+[//]: # (Sectie Start van RBAC)
 ## <a name="manage-access-with-azure-rbac"></a>Toegang beheren met Azure RBAC
-[Toegangs beheer op basis van rollen (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md) voor Azure AD Connect Health biedt toegang tot gebruikers en groepen, met uitzonde ring van globale beheerders. Azure RBAC wijst rollen toe aan de beoogde gebruikers en groepen en biedt een mechanisme voor het beperken van de globale beheerders in uw Directory.
+[Op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md) voor Azure AD Connect Health biedt toegang tot andere gebruikers en groepen dan globale beheerders. Azure RBAC wijst rollen toe aan de beoogde gebruikers en groepen en biedt een mechanisme om de globale beheerders binnen uw directory te beperken.
 
 ### <a name="roles"></a>Rollen
 Azure AD Connect Health ondersteunt de volgende ingebouwde rollen:
 
 | Rol | Machtigingen |
 | --- | --- |
-| Eigenaar |Eigen aren kunnen de *toegang beheren* (bijvoorbeeld een rol toewijzen aan een gebruiker of groep), *alle informatie weer geven* (bijvoorbeeld waarschuwingen weer geven) vanuit de portal en *instellingen wijzigen* (bijvoorbeeld e-mail meldingen) in azure AD Connect Health. <br>Standaard worden aan Azure AD globale beheerders deze rol toegewezen. Dit kan niet worden gewijzigd. |
-| Inzender |Inzenders kunnen *alle informatie weer geven* (bijvoorbeeld waarschuwingen weer geven) vanuit de portal en *instellingen wijzigen* (bijvoorbeeld e-mail meldingen) in azure AD Connect Health. |
-| Lezer |Lezers kunnen *alle informatie weer geven* (bijvoorbeeld waarschuwingen weer geven) vanuit de portal binnen Azure AD Connect Health. |
+| Eigenaar |Eigenaren kunnen toegang *beheren* (bijvoorbeeld een rol toewijzen aan een gebruiker of *groep),* alle informatie (bijvoorbeeld waarschuwingen weergeven) vanuit de portal bekijken en instellingen *(bijvoorbeeld* e-mailmeldingen) wijzigen in Azure AD Connect Health. <br>Standaard krijgen globale Azure AD-beheerders deze rol toegewezen en dit kan niet worden gewijzigd. |
+| Inzender |Inzenders *kunnen alle* informatie (bijvoorbeeld waarschuwingen weergeven) in de portal bekijken en instellingen (bijvoorbeeld e-mailmeldingen) wijzigen in Azure AD Connect Health.  |
+| Lezer |Lezers kunnen *alle informatie* (bijvoorbeeld waarschuwingen weergeven) in de portal in Azure AD Connect Health. |
 
-Alle andere rollen (zoals beheerders van gebruikers toegang of DevTest Labs-gebruikers) hebben geen invloed op de toegang tot Azure AD Connect Health, zelfs niet als de functies beschikbaar zijn in de portal-ervaring.
+Alle andere rollen (zoals Gebruikerstoegangbeheerders of DevTest Labs-gebruikers) hebben geen invloed op toegang binnen Azure AD Connect Health, zelfs niet als de rollen beschikbaar zijn in de portalervaring.
 
-### <a name="access-scope"></a>Toegangs bereik
-Azure AD Connect Health biedt ondersteuning voor het beheren van toegang op twee niveaus:
+### <a name="access-scope"></a>Toegangsbereik
+Azure AD Connect Health ondersteunt het beheren van toegang op twee niveaus:
 
-* **Alle service-exemplaren**: dit is in de meeste gevallen het aanbevolen pad. Het beheert de toegang voor alle service-exemplaren (bijvoorbeeld een AD FS-Farm) voor alle typen rollen die door Azure AD Connect Health worden bewaakt.
-* **Service-exemplaar**: in sommige gevallen moet u de toegang mogelijk scheiden op basis van roltype of een service-exemplaar. In dit geval kunt u de toegang beheren op het niveau van het service-exemplaar.  
+* **Alle service-exemplaren:** dit is in de meeste gevallen het aanbevolen pad. Hiermee bepaalt u de toegang voor alle service-exemplaren (bijvoorbeeld een AD FS-farm) voor alle roltypen die worden bewaakt door Azure AD Connect Health.
+* **Service-exemplaar:** In sommige gevallen moet u de toegang mogelijk scheiden op basis van roltypen of door een service-exemplaar. In dit geval kunt u de toegang beheren op het niveau van het service-exemplaar.  
 
-Er wordt toestemming verleend als een eind gebruiker toegang heeft tot het niveau van de Directory of het service-exemplaar.
+Er wordt toestemming verleend als een eindgebruiker toegang heeft op het niveau van de directory of het service-exemplaar.
 
-### <a name="allow-users-or-groups-access-to-azure-ad-connect-health"></a>Toestaan dat gebruikers of groepen toegang hebben tot Azure AD Connect Health
-De volgende stappen laten zien hoe u toegang kunt toestaan.
-#### <a name="step-1-select-the-appropriate-access-scope"></a>Stap 1: Selecteer het juiste toegangs bereik
-Als u een gebruiker toegang wilt geven tot het niveau *alle service-exemplaren* binnen Azure AD Connect Health, opent u de hoofd Blade in azure AD Connect Health.<br>
+### <a name="allow-users-or-groups-access-to-azure-ad-connect-health"></a>Gebruikers of groepen toegang geven tot Azure AD Connect Health
+De volgende stappen laten zien hoe u toegang toestaat.
+#### <a name="step-1-select-the-appropriate-access-scope"></a>Stap 1: selecteer het juiste toegangsbereik
+Als u een gebruiker toegang wilt geven op het niveau *van* alle service-exemplaren binnen Azure AD Connect Health, opent u de hoofdblade in Azure AD Connect Health.<br>
 
 #### <a name="step-2-add-users-and-groups-and-assign-roles"></a>Stap 2: gebruikers en groepen toevoegen en rollen toewijzen
-1. Klik in de sectie **configureren** op **gebruikers**.<br>
-   ![Scherm opname van Azure AD Connect Health resource zijbalk](./media/how-to-connect-health-operations/startRBAC.png)
+1. Klik in **de sectie** Configureren op **Gebruikers.**<br>
+   ![Schermopname van Azure AD Connect Health resource zijbalk](./media/how-to-connect-health-operations/startRBAC.png)
 2. Selecteer **Toevoegen**.
-3. Selecteer in het deel venster **een rol selecteren** een rol (bijvoorbeeld **eigenaar**).<br>
-   ![Scherm opname van Azure AD Connect Health en Azure RBAC-menu configureren](./media/how-to-connect-health-operations/RBAC_add.png)
-4. Typ de naam of id van de doel gebruiker of-groep. U kunt een of meer gebruikers of groepen tegelijk selecteren. Klik op **Selecteren**.
-   ![Scherm opname van Azure AD Connect Health en de lijst met Azure-rollen](./media/how-to-connect-health-operations/RBAC_select_users.png)
+3. Selecteer in **het deelvenster** Een rol selecteren een rol (bijvoorbeeld **Eigenaar**).<br>
+   ![Schermopname van Azure AD Connect Health azure RBAC-menu configureren](./media/how-to-connect-health-operations/RBAC_add.png)
+4. Typ de naam of id van de beoogde gebruiker of groep. U kunt een of meer gebruikers of groepen tegelijk selecteren. Klik op **Selecteren**.
+   ![Schermopname van Azure AD Connect Health en Azure-rollijst](./media/how-to-connect-health-operations/RBAC_select_users.png)
 5. Selecteer **OK**.<br>
-6. Nadat de roltoewijzing is voltooid, worden de gebruikers en groepen weer gegeven in de lijst.<br>
-   ![Scherm opname van Azure AD Connect Health en Azure RBAC en nieuwe gebruikers gemarkeerd](./media/how-to-connect-health-operations/RBAC_user_list.png)
+6. Nadat de roltoewijzing is voltooid, worden de gebruikers en groepen weergegeven in de lijst.<br>
+   ![Schermopname van Azure AD Connect Health azure RBAC en nieuwe gebruikers gemarkeerd](./media/how-to-connect-health-operations/RBAC_user_list.png)
 
-De vermelde gebruikers en groepen hebben nu toegang tot, volgens hun toegewezen rollen.
+De vermelde gebruikers en groepen hebben nu toegang op basis van hun toegewezen rollen.
 
 > [!NOTE]
-> * Globale beheerders hebben altijd volledige toegang tot alle bewerkingen, maar globale beheerders accounts zijn niet aanwezig in de voor gaande lijst.
-> * De functie gebruikers uitnodigen wordt niet ondersteund in Azure AD Connect Health.
+> * Globale beheerders hebben altijd volledige toegang tot alle bewerkingen, maar globale beheerdersaccounts zijn niet aanwezig in de voorgaande lijst.
+> * De functie Invite Users wordt niet ondersteund in Azure AD Connect Health.
 >
 >
 
-#### <a name="step-3-share-the-blade-location-with-users-or-groups"></a>Stap 3: de Blade locatie delen met gebruikers of groepen
-1. Nadat u machtigingen hebt toegewezen, kan een gebruiker Azure AD Connect Health gebruiken door [hier](https://aka.ms/aadconnecthealth)te gaan.
-2. Op de Blade kan de gebruiker de Blade of verschillende delen ervan vastmaken aan het dash board. Klik op het pictogram **vastmaken aan dash board** .<br>
-   ![Scherm afbeelding van de Blade Azure AD Connect Health en Azure RBAC-pincode, met het pictogram pincode gemarkeerd](./media/how-to-connect-health-operations/RBAC_pin_blade.png)
+#### <a name="step-3-share-the-blade-location-with-users-or-groups"></a>Stap 3: de bladelocatie delen met gebruikers of groepen
+1. Nadat u machtigingen hebt toegewezen, heeft een gebruiker toegang Azure AD Connect Health door hier te [gaan.](https://aka.ms/aadconnecthealth)
+2. Op de blade kan de gebruiker de blade of verschillende onderdelen ervan vastmaken aan het dashboard. Klik op het **pictogram Vastmaken aan dashboard.**<br>
+   ![Schermopname van Azure AD Connect Health en azure RBAC-speldblade, met het speldpictogram gemarkeerd](./media/how-to-connect-health-operations/RBAC_pin_blade.png)
 
 > [!NOTE]
-> Een gebruiker met de toegewezen rol van lezer kan geen Azure AD Connect Health-uitbrei ding ophalen van de Azure Marketplace. De gebruiker kan de benodigde bewerking ' maken ' daarom niet uitvoeren. De gebruiker kan nog steeds toegang krijgen tot de Blade door naar de vorige koppeling te gaan. Voor het volgende gebruik kan de gebruiker de Blade vastmaken aan het dash board.
+> Een gebruiker met de toegewezen rol Lezer kan de extensie Azure AD Connect Health de Azure Marketplace. De gebruiker kan de benodigde 'create'-bewerking niet uitvoeren om dit te doen. De gebruiker kan nog steeds toegang krijgen tot de blade door naar de voorgaande koppeling te gaan. Voor later gebruik kan de gebruiker de blade vastmaken aan het dashboard.
 >
 >
 
 ### <a name="remove-users-or-groups"></a>Gebruikers of groepen verwijderen
-U kunt een gebruiker of een groep die is toegevoegd aan Azure AD Connect Health en Azure RBAC verwijderen. Klik met de rechter muisknop op de gebruiker of groep en selecteer **verwijderen**.<br>
-![Scherm afbeelding van Azure AD Connect Health en Azure RBAC met gemarkeerd verwijderen](./media/how-to-connect-health-operations/RBAC_remove.png)
+U kunt een gebruiker of een groep die is toegevoegd aan Azure AD Connect Health en Azure RBAC verwijderen. Klik met de rechtermuisknop op de gebruiker of groep en selecteer **Verwijderen.**<br>
+![Schermopname van Azure AD Connect Health en Azure RBAC met Verwijderen gemarkeerd](./media/how-to-connect-health-operations/RBAC_remove.png)
 
-[//]: # (Sectie einde van RBAC)
+[//]: # (Sectie Einde van RBAC)
 
 ## <a name="next-steps"></a>Volgende stappen
 * [Azure AD Connect Health (Engelstalig)](./whatis-azure-ad-connect.md)
-* [Installatie van Azure AD Connect Health-Agent](how-to-connect-health-agent-install.md)
+* [Azure AD Connect Health agent installeren](how-to-connect-health-agent-install.md)
 * [Azure AD Connect Health gebruiken met AD FS](how-to-connect-health-adfs.md)
-* [Azure AD Connect Health gebruiken voor synchronisatie](how-to-connect-health-sync.md)
+* [Een Azure AD Connect Health voor synchronisatie gebruiken](how-to-connect-health-sync.md)
 * [Azure AD Connect Health gebruiken met AD DS](how-to-connect-health-adds.md)
 * [Veelgestelde vragen over Azure AD Connect Health](reference-connect-health-faq.md)
 * [Versiegeschiedenis van Azure AD Connect Health](reference-connect-health-version-history.md)

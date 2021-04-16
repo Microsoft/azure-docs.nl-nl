@@ -1,50 +1,50 @@
 ---
-title: 'Snelstartgids: verbinding maken met behulp van Azure CLI-Azure Database for PostgreSQL-flexibele server'
-description: Deze Quick Start biedt verschillende manieren om verbinding te maken met Azure CLI met Azure Database for PostgreSQL-flexibele server.
+title: 'Quickstart: Verbinding maken met behulp van Azure CLI - Azure Database for PostgreSQL - Flexible Server'
+description: Deze quickstart biedt verschillende manieren om verbinding te maken met Azure CLI met Azure Database for PostgreSQL - Flexible Server.
 author: mksuni
 ms.author: sumuth
 ms.service: postgresql
-ms.custom: mvc
+ms.custom: mvc, devx-track-azurecli
 ms.topic: quickstart
 ms.date: 03/06/2021
-ms.openlocfilehash: f4eec89aadee1966271286b9280916af973e4b1c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7526644e02b0ed4d0522ad00a27b691ece98754a
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102614340"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107479233"
 ---
-# <a name="quickstart-connect-and-query-with-azure-cli--with-azure-database-for-postgresql---flexible-server"></a>Quick Start: verbinding maken en query's uitvoeren met Azure CLI met Azure Database for PostgreSQL-flexibele server
+# <a name="quickstart-connect-and-query-with-azure-cli--with-azure-database-for-postgresql---flexible-server"></a>Quickstart: Verbinding maken en query's uitvoeren met Azure CLI met Azure Database for PostgreSQL - Flexible Server
 
 > [!IMPORTANT]
-> Azure Database for PostgreSQL-flexibele server is momenteel beschikbaar als open bare preview.
+> Azure Database for PostgreSQL - Flexible Server is momenteel beschikbaar als openbare preview.
 
-In deze Quick start ziet u hoe u verbinding kunt maken met een Azure Database for PostgreSQL flexibele server met behulp van Azure CLI met de ```az postgres flexible-server connect``` opdracht. Met deze opdracht kunt u de verbinding met uw database server testen en query's uitvoeren. U kunt ook meerdere query's uitvoeren met de interactieve modus. 
+In deze quickstart wordt gedemonstreerd hoe u verbinding maakt met een Azure Database for PostgreSQL Flexible Server met behulp van Azure CLI met ```az postgres flexible-server connect``` de opdracht . Met deze opdracht kunt u de connectiviteit met uw databaseserver testen en query's uitvoeren. U kunt ook meerdere query's uitvoeren met behulp van de interactieve modus. 
 
 ## <a name="prerequisites"></a>Vereisten
 - Een Azure-account. Als u geen account hebt, kunt u [een gratis proefversie krijgen](https://azure.microsoft.com/free/).
-- De nieuwste versie van [Azure cli](/cli/azure/install-azure-cli) installeren (2.20.0 of hoger)
-- Aanmelden met behulp van Azure CLI met ```az login``` opdracht 
-- Schakel parameter persistentie in met ```az config param-persist on``` . Met parameter persistentie kunt u lokale context gebruiken zonder veel argumenten te herhalen, zoals een resource groep of locatie.
+- Installeer de nieuwste versie van [Azure CLI](/cli/azure/install-azure-cli) (2.20.0 of hoger)
+- Meld u aan met behulp van Azure CLI met ```az login``` de opdracht 
+- Schakel parameterpersistence in met ```az config param-persist on``` . Parameterpersistence helpt u bij het gebruik van lokale context zonder dat u veel argumenten zoals resourcegroep of locatie moet herhalen.
 
-## <a name="create-an-postgresql-flexible-server"></a>Een flexibele PostgreSQL-server maken
+## <a name="create-an-postgresql-flexible-server"></a>Een Flexibele PostgreSQL-server maken
 
-We maken eerst een beheerde PostgreSQL-server. Voer in [Azure Cloud shell](https://shell.azure.com/)het volgende script uit en noteer de **Server naam**, de **gebruikers naam** en het  **wacht woord** die zijn gegenereerd met deze opdracht.
+We maken eerst een beheerde PostgreSQL-server. Voer [Azure Cloud Shell](https://shell.azure.com/)volgende script uit en noteer de **servernaam,** gebruikersnaam en het **wachtwoord** die zijn gegenereerd met deze opdracht. 
 
 ```azurecli
 az postgres flexible-server create --public-access <your-ip-address>
 ```
-U kunt aanvullende argumenten opgeven voor deze opdracht om deze aan te passen. Zie alle argumenten voor [AZ post gres Flexible-server Create](/cli/azure/postgres/flexible-server#az_postgres_flexible_server_create).
+U kunt aanvullende argumenten voor deze opdracht geven om deze aan te passen. Zie alle argumenten voor [az postgres flexible-server create.](/cli/azure/postgres/flexible-server#az_postgres_flexible_server_create)
 
-## <a name="view-all-the-arguments"></a>Alle argumenten weer geven
-U kunt alle argumenten voor deze opdracht weer geven met een ```--help``` argument. 
+## <a name="view-all-the-arguments"></a>Alles weergeven argumenten op te geven
+U kunt alle argumenten voor deze opdracht weergeven met ```--help``` argument. 
 
 ```azurecli
 az postgresql flexible-server connect --help
 ```
 
-## <a name="test-database-server-connection"></a>Database server verbinding testen
-Met behulp van de opdracht kunt u de verbinding met de data base testen en valideren via de-omgeving.
+## <a name="test-database-server-connection"></a>Databaseserververbinding testen
+U kunt de verbinding met de database testen en valideren vanuit uw ontwikkelomgeving met behulp van de opdracht .
 
 ```azurecli
 az postgres flexible-server connect -n <servername> -u <username> -p "<password>" -d <databasename>
@@ -53,7 +53,7 @@ az postgres flexible-server connect -n <servername> -u <username> -p "<password>
 ```azurecli
 az postgres flexible-server connect -n postgresdemoserver -u dbuser -p "dbpassword" -d postgres
 ```
-Als de verbinding is geslaagd, ziet u de uitvoer.
+U ziet de uitvoer als de verbinding is geslaagd.
 ```output
 Command group 'postgres flexible-server' is in preview and under development. Reference and support levels: https://aka.ms/CLI_refstatus
 Successfully connected to postgresdemoserver.
@@ -61,14 +61,14 @@ Local context is turned on. Its information is saved in working directory C:\myd
 Your preference of  are now saved to local context. To learn more, type in `az local-context --help`
 ```
 
-Als de verbinding is mislukt, probeert u de volgende oplossingen:
-- Controleer of poort 5432 is geopend op de client computer.
-- Als de gebruikers naam en het wacht woord van de server beheerder juist zijn
-- Als u de firewall regel voor uw client computer hebt geconfigureerd
-- Als u uw server hebt geconfigureerd met persoonlijke toegang in virtuele netwerken, zorgt u ervoor dat de client computer zich in hetzelfde virtuele netwerk bevindt.
+Probeer de volgende oplossingen als de verbinding is mislukt:
+- Controleer of poort 5432 is geopend op uw clientmachine.
+- als de gebruikersnaam en het wachtwoord van de serverbeheerder juist zijn
+- als u een firewallregel hebt geconfigureerd voor uw clientmachine
+- Als u uw server hebt geconfigureerd met privétoegang in virtuele netwerken, moet u ervoor zorgen dat uw clientmachine zich in hetzelfde virtuele netwerk.
 
 ## <a name="run-single-query"></a>Eén query uitvoeren
-U kunt één query uitvoeren met de opdracht met behulp van het ```--querytext``` argument ```-q``` .
+U kunt één query uitvoeren met de opdracht met behulp van ```--querytext``` argument , ```-q``` .
 
 ```azurecli
 az postgres flexible-server connect -n <server-name> -u <username> -p "<password>" -d <database-name> -q "<query-text>"
@@ -79,7 +79,7 @@ az postgres flexible-server connect -n <server-name> -u <username> -p "<password
 az postgresql flexible-server connect -n postgresdemoserver -u dbuser -p "dbpassword" -d flexibleserverdb -q "select * from table1;" --output table
 ```
 
-U ziet een uitvoer zoals hieronder wordt weer gegeven:
+U ziet een uitvoer zoals hieronder wordt weergegeven:
 
 ```output
 Command group 'postgres flexible-server' is in preview and under development. Reference and support levels: https://aka.ms/CLI_refstatus
@@ -100,8 +100,8 @@ test   200
 test   200
 ```
 
-## <a name="run-multiple-queries-using-interactive-mode"></a>Meerdere query's uitvoeren met de interactieve modus
-U kunt meerdere query's uitvoeren met de **interactieve** modus. Voer de volgende opdracht uit om de interactieve modus in te scha kelen:
+## <a name="run-multiple-queries-using-interactive-mode"></a>Meerdere query's uitvoeren met behulp van de interactieve modus
+U kunt meerdere query's uitvoeren met behulp van **de interactieve** modus . Voer de volgende opdracht uit om de interactieve modus in te schakelen
 
 ```azurecli
 az postgres flexible-server connect -n <servername> -u <username> -p "<password>" -d <databasename>
@@ -113,7 +113,7 @@ az postgres flexible-server connect -n <servername> -u <username> -p "<password>
 az postgresql flexible-server connect -n postgresdemoserver -u dbuser -p "dbpassword" -d flexibleserverdb --interactive
 ```
 
-U ziet de **psql** shell-ervaring, zoals hieronder wordt weer gegeven:
+U ziet de **psql** shell-ervaring zoals hieronder wordt weergegeven:
 
 ```bash
 Command group 'postgres flexible-server' is in preview and under development. Reference and support levels: https://aka.ms/CLI_refstatus

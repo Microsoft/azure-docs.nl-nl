@@ -1,45 +1,45 @@
 ---
-title: Metrische gegevens van de Resilience4J-circuit onderbreker met micrometer verzamelen
-description: Wat is het verzamelen van metrische gegevens over de Resilience4J-circuit onderbreker met micrometer in azure lente-Cloud.
+title: Metrische gegevens Spring Cloud Resilience4J Circuit Breaker verzamelen met Micrometer
+description: Metrische gegevens Spring Cloud Resilience4J Circuit Breaker verzamelen met Micrometer in Azure Spring Cloud.
 author: MikeDodaro
 ms.author: brendm
 ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 12/15/2020
-ms.custom: devx-track-java
-ms.openlocfilehash: 0b24e8e07b4038d6def9945b7c347bb81ae5378b
-ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: fedebd9182c168b9b7c455d5f6726e66720e0a8b
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "107258177"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107479156"
 ---
-# <a name="collect-spring-cloud-resilience4j-circuit-breaker-metrics-with-micrometer-preview"></a>Metrische gegevens van het Resilience4J-circuit voor de lente van de Cloud verzamelen met micrometer (preview)
+# <a name="collect-spring-cloud-resilience4j-circuit-breaker-metrics-with-micrometer-preview"></a>Metrische gegevens Spring Cloud Resilience4J Circuit Breaker verzamelen met Micrometer (preview)
 
-In dit document wordt uitgelegd hoe u metrische gegevens van de lente Cloud Resilience4j-circuits kunt verzamelen met Application Insights Java-agent in het proces. Met deze functie kunt u de metrische gegevens van de resilience4j-circuit onderbreker bewaken van Application Insights met micrometer.
+In dit document wordt uitgelegd hoe u Spring Cloud Resilience4j Circuit Breaker Metrics verzamelt met Application Insights in-process-agent van Java. Met deze functie kunt u de metrische gegevens van de resilience4j-circuit breaker bewaken Application Insights micrometer.
 
-We gebruiken de [demonstratie-demo](https://github.com/spring-cloud-samples/spring-cloud-circuitbreaker-demo) ---circuit-en-instructie om te laten zien hoe het werkt.
+We gebruiken de [spring-cloud-circuit-breaker-demo om](https://github.com/spring-cloud-samples/spring-cloud-circuitbreaker-demo) te laten zien hoe het werkt.
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Schakel Java In-Process agent in via de [java In-Process-agent voor Application Insights Guide](./spring-cloud-howto-application-insights.md#enable-java-in-process-agent-for-application-insights). 
+* Schakel Java In-Process-agent in vanuit de [Java In-Process Agent for Application Insights-handleiding](./spring-cloud-howto-application-insights.md#enable-java-in-process-agent-for-application-insights). 
 
-* Schakel dimensie verzameling voor resilience4j-metrische gegevens in de [hand leiding Application Insights](../azure-monitor/app/pre-aggregated-metrics-log-metrics.md#custom-metrics-dimensions-and-pre-aggregation).
+* Schakel dimensieverzameling in voor metrische tolerantie4j-gegevens uit [de Application Insights handleiding](../azure-monitor/app/pre-aggregated-metrics-log-metrics.md#custom-metrics-dimensions-and-pre-aggregation).
 
-* Installeer Git, maven en Java, als deze nog niet worden gebruikt door de ontwikkel computer.
+* Installeer git, Maven en Java, als dit nog niet wordt gebruikt door de ontwikkelcomputer.
 
 ## <a name="build-and-deploy-apps"></a>Apps bouwen en implementeren
 
-De volgende procedure bouwt en implementeert apps.
+Met de volgende procedure worden apps gebouwd en geïmplementeerd.
 
-1. De demo opslagplaats klonen en bouwen.
+1. Kloon en bouw de demo-opslagplaats.
 
 ```bash
 git clone https://github.com/spring-cloud-samples/spring-cloud-circuitbreaker-demo.git
 cd spring-cloud-circuitbreaker-demo && mvn clean package -DskipTests
 ```
 
-2. Toepassingen maken met eind punten
+2. Toepassingen met eindpunten maken
 
 ```azurecli
 az spring-cloud app create --name resilience4j --assign-endpoint \
@@ -61,7 +61,7 @@ az spring-cloud app deploy -n reactive-resilience4j \
 
 > [!Note]
 >
-> * De vereiste afhankelijkheid voor Resilience4j toevoegen:
+> * Neem de vereiste afhankelijkheid voor Resilience4j op:
 >
 >   ```xml
 >   <dependency>
@@ -73,9 +73,9 @@ az spring-cloud app deploy -n reactive-resilience4j \
 >       <artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
 >   </dependency>
 >   ```
-> * De code van de klant moet gebruikmaken van de API van `CircuitBreakerFactory` , die wordt geïmplementeerd als `bean` automatisch gemaakt wanneer u een lente-starter van een veer Cloud circuit opneemt. Zie voor meer informatie de [lente Cloud circuit onderbreker](https://spring.io/projects/spring-cloud-circuitbreaker#overview).
+> * De klantcode moet gebruikmaken van de API van , die wordt geïmplementeerd als een die automatisch wordt gemaakt wanneer u een `CircuitBreakerFactory` `bean` Spring Cloud circuitonderbreker starter opsluit. Zie circuit [breaker Spring Cloud voor meer informatie.](https://spring.io/projects/spring-cloud-circuitbreaker#overview)
 >
-> * De volgende twee afhankelijkheden hebben een conflict met bovenstaande resilient4j-pakketten.  Zorg ervoor dat de klant deze niet bevat.
+> * De volgende twee afhankelijkheden hebben conflicten met resilient4j-pakketten hierboven.  Zorg ervoor dat de klant deze niet op neemt.
 >
 >   ```xml
 >   <dependency>
@@ -89,7 +89,7 @@ az spring-cloud app deploy -n reactive-resilience4j \
 >   ```
 >
 >
-> Ga naar de URL die wordt verschaft door gateway toepassingen en open het eind punt via de volgende [demo](https://github.com/spring-cloud-samples/spring-cloud-circuitbreaker-demo) :
+> Navigeer als volgt naar de URL van gatewaytoepassingen en open het eindpunt vanuit [spring-cloud-circuit-breaker-demo:](https://github.com/spring-cloud-samples/spring-cloud-circuitbreaker-demo)
 >
 >   ```console
 >   /get
@@ -97,34 +97,34 @@ az spring-cloud app deploy -n reactive-resilience4j \
 >   /get/fluxdelay/{seconds}
 >   ```
 
-## <a name="locate-resilence4j-metrics-from-portal"></a>Resilence4j metrische gegevens uit Portal zoeken
+## <a name="locate-resilence4j-metrics-from-portal"></a>Metrische gegevens van Resilence4j zoeken in de portal
 
-1. Selecteer de Blade **Application Insights** in azure lente Cloud Portal en klik op **Application Insights**.
+1. Selecteer de **Application Insights** blade in Azure Spring Cloud portal en klik op **Application Insights**.
 
    [![resilience4J 0](media/spring-cloud-resilience4j/resilience4J-0.png)](media/spring-cloud-resilience4j/resilience4J-0.PNG)
 
-2. Selecteer **metrische gegevens** op de pagina **Application Insights** .  Selecteer **Azure. applicationinsights** uit de **naam ruimte Metrics**.  Selecteer ook **resilience4j_circuitbreaker_buffered_calls** metrische gegevens met **gemiddelde**.
+2. Selecteer **Metrische** gegevens op **Application Insights** pagina.  Selecteer **azure.applicationinsights in** **Metrics Namespace**.  Selecteer ook **resilience4j_circuitbreaker_buffered_calls** met **Gemiddelde**.
 
    [![resilience4J 1](media/spring-cloud-resilience4j/resilience4J-1.png)](media/spring-cloud-resilience4j/resilience4J-1.PNG)
 
-3. Selecteer **resilience4j_circuitbreaker_calls** metrische gegevens en **gemiddeld**.
+3. Selecteer **resilience4j_circuitbreaker_calls** en **Gemiddelde**.
 
    [![resilience4J 2](media/spring-cloud-resilience4j/resilience4J-2.png)](media/spring-cloud-resilience4j/resilience4J-2.PNG)
 
-4. Selecteer **resilience4j_circuitbreaker_calls**  metrische gegevens en **gemiddeld**.  Klik op **filter toevoegen** en selecteer naam als **createNewAccount**.
+4. Selecteer **resilience4j_circuitbreaker_calls**  en **Gemiddelde**.  Klik **op Filter toevoegen** en selecteer vervolgens naam als **createNewAccount.**
 
    [![resilience4J 3](media/spring-cloud-resilience4j/resilience4J-3.png)](media/spring-cloud-resilience4j/resilience4J-3.PNG)
 
-5. Selecteer **resilience4j_circuitbreaker_calls**  metrische gegevens en **gemiddeld**.  Klik vervolgens op **splitsing Toep assen** en selecteer **type**.
+5. Selecteer **resilience4j_circuitbreaker_calls**  en **Gemiddelde**.  Klik vervolgens **op Splitsen toepassen** en selecteer **soort**.
 
-   [![resilience4J 4](media/spring-cloud-resilience4j/resilience4J-4.png)](media/spring-cloud-resilience4j/resilience4J-4.PNG)
+   [![tolerantie4J 4](media/spring-cloud-resilience4j/resilience4J-4.png)](media/spring-cloud-resilience4j/resilience4J-4.PNG)
 
-6. Selecteer **resilience4j_circuitbreaker_calls**,**resilience4j_circuitbreaker_buffered_calls** en **resilience4j_circuitbreaker_slow_calls** metrische gegevens met **gemiddelde**.
+6. Selecteer **resilience4j_circuitbreaker_calls**, '**resilience4j_circuitbreaker_buffered_calls** en **resilience4j_circuitbreaker_slow_calls** met **Gemiddelde**.
 
-   [![resilience4J 5](media/spring-cloud-resilience4j/resilience4j-5.png)](media/spring-cloud-resilience4j/resilience4j-5.PNG)
+   [![tolerantie4J 5](media/spring-cloud-resilience4j/resilience4j-5.png)](media/spring-cloud-resilience4j/resilience4j-5.PNG)
 
 ## <a name="see-also"></a>Zie ook
 
 * [Application Insights](spring-cloud-howto-application-insights.md)
 * [Gedistribueerde tracering](spring-cloud-howto-distributed-tracing.md)
-* [Dash board voor circuit onderbreker](spring-cloud-tutorial-circuit-breaker.md)
+* [Dashboard circuit breaker](spring-cloud-tutorial-circuit-breaker.md)

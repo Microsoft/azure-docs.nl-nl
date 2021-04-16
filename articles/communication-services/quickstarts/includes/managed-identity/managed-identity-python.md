@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 42d079a2aa98549b12aafecdd8d58f3361db8b4d
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: 3fcfb364ebffdd3643e803922cbe4f3dd0d87935
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107307434"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107511598"
 ---
 ## <a name="setting-up"></a>Instellen
 
@@ -25,11 +25,11 @@ pip install azure-communication-sms
 ```
 
 ### <a name="create-a-new-file"></a>Een nieuw bestand maken
-Open een nieuw bestand in de map gemaakt en sla het op in `managed-identity.py` dit bestand.
+Open en sla een nieuw bestand op in de gemaakte map met de naam `managed-identity.py` . We plaatsen onze code in dit bestand.
 
 ### <a name="use-the-sdk-packages"></a>De SDK-pakketten gebruiken
 
-Voeg de volgende `import` instructies toe aan de bovenkant van het bestand om de geïnstalleerde sdk's te gebruiken.
+Voeg bovenaan `import` het bestand de volgende -instructies toe om de SDK's te gebruiken die we hebben geïnstalleerd.
 
 ```python
 from azure.identity import DefaultAzureCredential
@@ -39,15 +39,15 @@ from azure.communication.sms import SmsClient
 
 ### <a name="create-a-defaultazurecredential"></a>Een DefaultAzureCredential maken
 
-We maken gebruik van de [DefaultAzureCredential](/python/api/azure-identity/azure.identity.defaultazurecredential). Deze referentie is geschikt voor productie-en ontwikkelings omgevingen. Zoals we in deze Snelstartgids gebruiken, maken we deze boven aan het bestand.
+We gebruiken de [DefaultAzureCredential](/python/api/azure-identity/azure.identity.defaultazurecredential). Deze referentie is geschikt voor productie- en ontwikkelomgevingen. Omdat we deze in deze quickstart gaan gebruiken, maken we deze bovenaan het bestand.
 
 ```python
      credential = DefaultAzureCredential()
 ```
 
-## <a name="create-an-identity-and-issue-a-token-with-managed-identities"></a>Maak een identiteit en geef een token uit met beheerde identiteiten.
+## <a name="create-an-identity-and-issue-a-token-with-managed-identities"></a>Een identiteit maken en een token uitgeven met beheerde identiteiten
 
-Nu voegt u code toe die gebruikmaakt van de gemaakte referentie voor het uitgeven van een VoIP-toegangs token. We noemen deze code later op:
+Nu gaan we code toevoegen die gebruikmaakt van de gemaakte referentie om een VoIP-toegangs token uit te geven. We noemen deze code later:
 
 ```python
 def create_identity_and_get_token(resource_endpoint):
@@ -59,8 +59,8 @@ def create_identity_and_get_token(resource_endpoint):
      return token_response
 ```
 
-### <a name="send-an-sms-with-managed-identities"></a>Een SMS-bericht verzenden met beheerde identiteiten
-Als een ander voor beeld van het gebruik van beheerde identiteiten, voegen we deze code toe die gebruikmaakt van dezelfde referentie voor het verzenden van een SMS:
+### <a name="send-an-sms-with-managed-identities"></a>Een sms verzenden met beheerde identiteiten
+Als een ander voorbeeld van het gebruik van beheerde identiteiten, voegen we deze code toe die dezelfde referentie gebruikt om een sms te verzenden:
 
 ```python
 def send_sms(resource_endpoint, from_phone_number, to_phone_number, message_content):
@@ -74,9 +74,9 @@ def send_sms(resource_endpoint, from_phone_number, to_phone_number, message_cont
      )
 ```
 
-## <a name="write-our-main-code"></a>Schrijf onze hoofd code
+## <a name="write-our-main-code"></a>Onze hoofdcode schrijven
 
-Met onze functies die we hebben gemaakt, kunnen we nu de hoofd code schrijven die de functies aanroept die we eerder hebben geschreven.
+Nu de functies zijn gemaakt, kunnen we de hoofdcode schrijven die de functies aanroept die we eerder hebben geschreven.
 
 ```python
 # You can find your endpoint and access key from your resource in the Azure portal
@@ -95,7 +95,7 @@ print(f'SMS ID: {sms_result[0].message_id}');
 print(f'Send Result Successful: {sms_result[0].successful}');
 ```
 
-Het uiteindelijke `managed-identity.py` bestand ziet er ongeveer als volgt uit:
+Het `managed-identity.py` uiteindelijke bestand ziet er als het volgende uit:
 
 ```python
 from azure.identity import DefaultAzureCredential
@@ -140,7 +140,7 @@ print(f'Send Result Successful: {sms_result[0].successful}');
 ```
 ## <a name="run-the-program"></a>Het programma uitvoeren
 
-Als alles is voltooid, kunt u het bestand uitvoeren door `python managed-identity.py` in te voeren vanuit de map van uw project. Als alles goed is geworden, zou het volgende moeten worden weer gegeven.
+Als alles is voltooid, kunt u het bestand uitvoeren door in te `python managed-identity.py` voeren vanuit de map van uw project. Als alles goed is gegaan, ziet u iets dat lijkt op het volgende.
 
 ```Bash
     $ python managed-identity.py

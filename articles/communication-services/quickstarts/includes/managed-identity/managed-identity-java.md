@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 55876d85e72555f51ce47b9bd77a961a194f4e4a
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: b51f52e24ca843abd94a8511e86b3193a797edd5
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107307432"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107511986"
 ---
 ## <a name="additional-prerequisites-for-java"></a>Aanvullende vereisten voor Java
 Voor Java hebt u ook het volgende nodig:
@@ -47,7 +47,7 @@ Open het bestand **pom.xml** in uw teksteditor. Voeg het volgende afhankelijkhei
 
 ### <a name="use-the-sdk-packages"></a>De SDK-pakketten gebruiken
 
-Voeg de volgende- `import` instructies toe aan uw code voor het gebruik van de Azure-identiteits-en Azure Communication-sdk's.
+Voeg de volgende instructies `import` toe aan uw code om de Azure Identity- en Azure Communication-SDK's te gebruiken.
 
 ```java
 import com.azure.communication.common.*;
@@ -63,15 +63,15 @@ import java.util.*;
 
 ## <a name="create-a-defaultazurecredential"></a>Een DefaultAzureCredential maken
 
-We gebruiken de [DefaultAzureCredential](/java/api/com.azure.identity.defaultazurecredential) voor deze Quick Start. Deze referentie is geschikt voor productie-en ontwikkelings omgevingen. Wanneer dit nodig is voor elke bewerking, wordt deze in de `App.java` klasse gemaakt. Voeg het volgende toe boven aan de `App.java` klasse.
+We gebruiken de [DefaultAzureCredential](/java/api/com.azure.identity.defaultazurecredential) voor deze quickstart. Deze referentie is geschikt voor productie- en ontwikkelomgevingen. Omdat dit nodig is voor elke bewerking, maken we deze in de `App.java` klasse . Voeg het volgende toe aan de bovenkant van de `App.java` klasse .
 
 ```java
 private TokenCredential credential = new DefaultAzureCredentialBuilder().build();
 ```
 
-## <a name="issue-a-token-with-managed-identities"></a>Een token met beheerde identiteiten uitgeven
+## <a name="issue-a-token-with-managed-identities"></a>Een token uitgeven met beheerde identiteiten
 
-Nu voegt u code toe die gebruikmaakt van de gemaakte referentie voor het uitgeven van een VoIP-toegangs token. We noemen deze code later op.
+Nu gaan we code toevoegen die gebruikmaakt van de gemaakte referentie om een VoIP-toegangs token uit te geven. We noemen deze code later;
 
 ```java
     public AccessToken createIdentityAndGetTokenAsync(String endpoint) {
@@ -85,9 +85,9 @@ Nu voegt u code toe die gebruikmaakt van de gemaakte referentie voor het uitgeve
     }
 ```
 
-## <a name="send-an-sms-with-managed-identities"></a>Een SMS-bericht verzenden met beheerde identiteiten
+## <a name="send-an-sms-with-managed-identities"></a>Een sms verzenden met beheerde identiteiten
 
-Als een ander voor beeld van het gebruik van beheerde identiteiten, voegen we deze code toe die gebruikmaakt van dezelfde referentie voor het verzenden van een SMS:
+Als een ander voorbeeld van het gebruik van beheerde identiteiten, voegen we deze code toe die dezelfde referentie gebruikt om een sms te verzenden:
 
 ```java
      public SmsSendResult sendSms(String endpoint, String from, String to, String message) {
@@ -100,9 +100,9 @@ Als een ander voor beeld van het gebruik van beheerde identiteiten, voegen we de
           return smsClient.send(from, to, message);
      }
 ```
-## <a name="write-the-main-method"></a>Schrijf de methode Main
+## <a name="write-the-main-method"></a>De Main-methode schrijven
 
-Je `App.java` zou al een hoofd methode moeten hebben. we gaan een code toevoegen waarmee we eerder gemaakte code kunnen aanroepen om het gebruik van beheerde identiteiten te demonstreren:
+Als u al een Main-methode hebt, gaan we code toevoegen die onze eerder gemaakte code aanroept om het gebruik van beheerde `App.java` identiteiten te demonstreren:
 ```java
     public static void main(String[] args) {
           App instance = new App();
@@ -122,7 +122,7 @@ Je `App.java` zou al een hoofd methode moeten hebben. we gaan een code toevoegen
     }
 ```
 
-Uw laatste `App.java` moet er als volgt uitzien:
+Uw `App.java` uiteindelijke ziet er als volgende uit:
 
 ```java
 package com.communication.quickstart;
@@ -200,7 +200,7 @@ Voer de volgende `mvn`-opdracht uit om de app uit te voeren.
 mvn exec:java -Dexec.mainClass="com.communication.quickstart.App" -Dexec.cleanupDaemonThreads=false
 ```
 
-De uiteindelijke uitvoer moet er als volgt uitzien:
+De uiteindelijke uitvoer moet er als volgt uit zien:
 ```
 Retrieving new Access Token, using Managed Identities
 Retrieved Access Token: ey..A

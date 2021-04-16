@@ -7,15 +7,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: include
-ms.date: 03/19/2021
+ms.date: 04/14/2021
 ms.custom: devx-track-java
 ms.author: lajanuar
-ms.openlocfilehash: a709f82b04ed5c1fe70f6927b33605cfff20ed6b
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: cd5e6383e71e3f37a26b866156b64c86302f6990
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104761163"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107516409"
 ---
 <!-- markdownlint-disable MD001 -->
 <!-- markdownlint-disable MD024 -->
@@ -40,7 +40,7 @@ ms.locfileid: "104761163"
 
 ### <a name="create-a-new-gradle-project"></a>Een nieuw Gradle-project maken
 
-Maak in een consolevenster (zoals cmd, PowerShell of Bash) een nieuwe map voor de app, en navigeer naar deze map. 
+Maak in een consolevenster (zoals cmd, PowerShell of Bash) een nieuwe map voor de app, en navigeer naar deze map.
 
 ```console
 mkdir myapp && cd myapp
@@ -74,12 +74,12 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    implementation(group = "com.azure", name = "azure-ai-formrecognizer", version = "3.1.0-beta.1")
+    implementation(group = "com.azure", name = "azure-ai-formrecognizer", version = "3.1.0-beta.3")
 }
 ```
 
 > [!NOTE]
-> De 3.1.0 SDK van Form Recognizer weerspiegelt _API versie 2,1 Preview. 2_. Gebruik de [**rest API**](../../quickstarts/client-library.md) voor _API versie 2,1 Preview. 3_.
+> De Form Recognizer 3.1.0-beta.3 SDK weerspiegelt _API-versie 2.1-preview.3._
 
 #### <a name="v20"></a>[v2.0](#tab/ga)
 
@@ -95,12 +95,12 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    implementation(group = "com.azure", name = "azure-ai-formrecognizer", version = "3.0.0")
+    implementation(group = "com.azure", name = "azure-ai-formrecognizer", version = "3.1.0-beta.3")
 }
 ```
 
 > [!NOTE]
-> De 3.0.0 SDK van de formulier herkenning weerspiegelt API v 2.0
+> De Form Recognizer 3.0.0 SDK weerspiegelt API v2.1-preview.3
 
 ---
 
@@ -126,14 +126,14 @@ Maak in de klasse **FormRecognizer** van de toepassing variabelen voor de sleute
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_creds)]
 
 > [!IMPORTANT]
-> Ga naar Azure Portal. Als de Form Recognizer-resource die u in de sectie **Vereisten** hebt gemaakt, succesvol is geïmplementeerd, klikt u op de knop **Ga naar resource** onder **Volgende stappen**. U vindt uw sleutel en eindpunt op de pagina **Sleutel en eindpunt** van de resource, onder **Resourcebeheer**. 
+> Ga naar Azure Portal. Als de Form Recognizer-resource die u in de sectie **Vereisten** hebt gemaakt, succesvol is geïmplementeerd, klikt u op de knop **Ga naar resource** onder **Volgende stappen**. U vindt uw sleutel en eindpunt op de pagina **Sleutel en eindpunt** van de resource, onder **Resourcebeheer**.
 >
 > Vergeet niet de sleutel uit uw code te verwijderen wanneer u klaar bent, en plaats deze sleutel nooit in het openbaar. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Zie het artikel Cognitive Services [Beveiliging](../../../cognitive-services-security.md) voor meer informatie.
 
 Voeg in de **hoofdmethode** van de toepassing aanroepen toe voor de methoden die in deze quickstart worden gebruikt. U definieert deze later. U moet ook verwijzingen naar de URL's toevoegen voor uw trainings- en testgegevens.
 
 * [!INCLUDE [get SAS URL](../../includes/sas-instructions.md)]
-  
+
    :::image type="content" source="../../media/quickstarts/get-sas-url.png" alt-text="SAS-URL ophalen":::
 * Als u een URL wilt ophalen van een formulier dat u wilt testen, kunt u de bovenstaande stappen gebruiken om de SAS-URL van een afzonderlijk document in Blob Storage op te halen. U kunt ook de URL gebruiken van een document dat zich elders bevindt.
 * Gebruik de bovenstaande methode ook om de URL te verkrijgen van een kopie van een ontvangstbewijs.
@@ -160,16 +160,16 @@ Met Form Recognizer kunt u twee verschillende clienttypen maken. De eerste, `For
 
 `FormRecognizerClient` biedt bewerkingen voor:
 
-* Het herkennen van formulier velden en inhoud, het gebruik van aangepaste modellen die zijn getraind om uw aangepaste formulieren te analyseren.  Deze waarden worden geretourneerd in een verzameling `RecognizedForm`-objecten. Zie het voorbeeld [Aangepaste formulieren analyseren](#analyze-forms-with-a-custom-model).
+* Het herkennen van formuliervelden en -inhoud met behulp van aangepaste modellen die zijn getraind om uw aangepaste formulieren te analyseren.  Deze waarden worden geretourneerd in een verzameling `RecognizedForm`-objecten. Zie het voorbeeld [Aangepaste formulieren analyseren](#analyze-forms-with-a-custom-model).
 * Het herkennen van formulierinhoud, met inbegrip van tabellen, regels en woorden, zonder dat u een model hoeft te trainen.  Formulierinhoud wordt geretourneerd in een verzameling `FormPage`-objecten. Bekijk het voorbeeld [Indeling analyseren](#analyze-layout).
-* Het herkennen van algemene velden van Amerikaanse ontvangstbewijzen met behulp van een vooraf getraind ontvangstbewijsmodel in de Form Recognizer-service.  Deze velden en metagegevens worden geretourneerd in een verzameling `RecognizedForm`-objecten. Bekijk het voorbeeld [Ontvangstbewijzen analyseren](#analyze-receipts).
+* Het herkennen van algemene velden van Amerikaanse ontvangstbewijzen, visitekaartjes, facturen en identiteitsdocumenten met behulp van een vooraf getraind model voor de Form Recognizer service.
 
 ### <a name="formtrainingclient"></a>FormTrainingClient
 
 `FormTrainingClient` biedt bewerkingen voor:
 
-* Aangepaste modellen trainen om alle velden en waarden te analyseren die in uw aangepaste formulieren worden gevonden.  A `CustomFormModel` wordt geretourneerd met het type formulier dat door het model moet worden geanalyseerd en de velden die worden opgehaald voor elk formulier type.
-* Aangepaste modellen trainen om specifieke velden en waarden te analyseren die u opgeeft door uw aangepaste formulieren te labelen.  Er wordt een `CustomFormModel` geretourneerd, dat aangeeft welke velden het model zal extraheren, evenals de geschatte nauwkeurigheid van elk veld.
+* Aangepaste modellen trainen om alle velden en waarden in uw aangepaste formulieren te analyseren.  Er `CustomFormModel` wordt een geretourneerd die de formuliertypen aangeeft die door het model worden geanalyseerd en de velden die het voor elk formuliertype extraheert.
+* Aangepaste modellen trainen voor het analyseren van specifieke velden en waarden die u opgeeft door uw aangepaste formulieren te labelen.  Er wordt een `CustomFormModel` geretourneerd, dat aangeeft welke velden het model zal extraheren, evenals de geschatte nauwkeurigheid van elk veld.
 * Modellen beheren die zijn gemaakt in uw account.
 * Het kopiëren van een aangepast model van de ene Form Recognizer-resource naar de andere.
 
@@ -187,6 +187,7 @@ Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de cli
 * [Ontvangstbewijzen analyseren](#analyze-receipts)
 * [Visitekaartjes analyseren](#analyze-business-cards)
 * [Facturen analyseren](#analyze-invoices)
+* [Identiteitsdocumenten analyseren](#analyze-identity-documents)
 * [Aangepast model trainen](#train-a-custom-model)
 * [Formulieren analyseren met een aangepast model](#analyze-forms-with-a-custom-model)
 * [Uw aangepaste modellen beheren](#manage-your-custom-models)
@@ -200,7 +201,6 @@ Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de cli
 * [Formulieren analyseren met een aangepast model](#analyze-forms-with-a-custom-model)
 * [Uw aangepaste modellen beheren](#manage-your-custom-models)
 
-
 ---
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
@@ -211,9 +211,9 @@ Voeg de volgende code toe bovenaan uw **hoofd** methode. Hier gaat u twee client
 
 ## <a name="analyze-layout"></a>Indeling analyseren
 
-U kunt de formulier herkenner gebruiken voor het analyseren van tabellen, lijnen en woorden in documenten, zonder dat u een model hoeft te trainen. Zie de [conceptuele hand leiding voor lay-out](../../concept-layout.md)voor meer informatie over indelings extractie.
+U kunt deze Form Recognizer voor het analyseren van tabellen, lijnen en woorden in documenten, zonder dat u een model hoeft te trainen. Zie de conceptuele handleiding indeling voor meer informatie over [indelingsextractie.](../../concept-layout.md)
 
-Als u de inhoud van een bestand op een bepaalde URL wilt analyseren, gebruikt u de methode **beginRecognizeContentFromUrl** .
+Gebruik de **methode beginRecognizeContentFromUrl** om de inhoud van een bestand op een bepaalde URL te analyseren.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_getcontent_call)]
 
@@ -241,14 +241,73 @@ Cell has text 4/16/2018.
 Cell has text $89,024.34.
 Cell has text ET.
 ```
+## <a name="analyze-receipts"></a>Ontvangstbewijzen analyseren
+
+In deze sectie wordt gedemonstreerd hoe u algemene velden kunt analyseren en extraheren uit Amerikaanse ontvangstbewijzen met behulp van een vooraf getraind ontvangstbewijsmodel. Zie de conceptuele handleiding voor ontvangstbewijzen voor meer informatie over [bonanalyse.](../../concept-receipts.md)
+
+Als u ontvangstbewijzen van een URI wilt analyseren, gebruikt u de **methode beginRecognizeReceiptsFromUrl.**
+
+[!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_receipts_call)]
+
+> [!TIP]
+> U kunt ook afbeeldingen van lokale ontvangstbewijzen analyseren. Zie de [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient)-methoden, zoals **beginRecognizeReceipts**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
+
+De geretourneerde waarde is een verzameling **RecognizedReceipt**-objecten: één voor elke pagina in het ingediende document. In het volgende codeblok worden de ontvangstbewijzen doorlopen en worden de details ervan naar de console afgedrukt.
+
+[!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_receipts_print)]
+
+In het volgende codeblok worden de afzonderlijke items die op het ontvangstbewijs zijn gedetecteerd doorlopen en worden de details ervan naar de console afgedrukt.
+
+[!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_receipts_print_items)]
+
+### <a name="output"></a>Uitvoer
+
+```console
+Analyze receipt...
+----------- Recognized Receipt page 0 -----------
+Merchant Name: Contoso Contoso, confidence: 0.62
+Merchant Address: 123 Main Street Redmond, WA 98052, confidence: 0.99
+Transaction Date: 2020-06-10, confidence: 0.90
+Receipt Items:
+Name: Cappuccino, confidence: 0.96s
+Quantity: null, confidence: 0.957s]
+Total Price: 2.200000, confidence: 0.95
+Name: BACON & EGGS, confidence: 0.94s
+Quantity: null, confidence: 0.927s]
+Total Price: null, confidence: 0.93
+```
+
+## <a name="analyze-business-cards"></a>Visitekaartjes analyseren
+
+#### <a name="v21-preview"></a>[Preview van v2.1](#tab/preview)
+
+In deze sectie wordt gedemonstreerd hoe u algemene velden kunt analyseren en extraheren uit Engelse visitekaartjes met behulp van een vooraf getraind model. Zie de conceptuele handleiding visitekaartjes voor meer informatie over [visitekaartjesanalyse.](../../concept-business-cards.md)
+
+Als u visitekaartjes wilt analyseren vanuit een URL, gebruikt u de `beginRecognizeBusinessCardsFromUrl` methode .
+
+[!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java?name=snippet_bc_call)]
+
+> [!TIP]
+> U kunt ook lokale visitekaartjesafbeeldingen analyseren. Zie de methoden [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient), zoals **beginRecognizeBusinessCards**. Of zie de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
+
+De geretourneerde waarde is een verzameling **RecognizedForm**-objecten: één voor elke kaart in het document. Met de volgende code wordt het visitekaartje op de opgegeven URI verwerkt, en worden de belangrijkste velden en waarden op de console weergegeven.
+
+[!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java?name=snippet_bc_print)]
+
+#### <a name="v20"></a>[v2.0](#tab/ga)
+
+> [!IMPORTANT]
+> Deze functie is niet beschikbaar in de geselecteerde API-versie.
+
+---
 
 ## <a name="analyze-invoices"></a>Facturen analyseren
 
 #### <a name="v21-preview"></a>[Preview van v2.1](#tab/preview)
 
-In deze sectie wordt beschreven hoe u algemene velden van verkoop facturen kunt analyseren en extra heren met behulp van een vooraf getraind model. Zie de [hand leiding voor factuur begrippen](../../concept-invoices.md)voor meer informatie over het analyseren van facturen.
+In deze sectie wordt gedemonstreerd hoe u algemene velden kunt analyseren en extraheren uit verkoopfacturen met behulp van een vooraf getraind model. Zie de conceptuele handleiding voor facturen voor meer informatie over [factuuranalyse.](../../concept-invoices.md)
 
-Als u facturen van een URL wilt analyseren, gebruikt u de- `beginRecognizeInvoicesFromUrl` methode. 
+Als u facturen wilt analyseren vanuit een URL, gebruikt u de `beginRecognizeInvoicesFromUrl` methode .
 
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java?name=snippet_invoice_call)]
 
@@ -266,6 +325,30 @@ De geretourneerde waarde is een verzameling **RecognizedForm**-objecten: één v
 
 ---
 
+## <a name="analyze-identity-documents"></a>Identiteitsdocumenten analyseren
+
+#### <a name="v21-preview"></a>[Preview van v2.1](#tab/preview)
+
+In deze sectie wordt gedemonstreerd hoe u belangrijke informatie kunt analyseren en extraheren uit door de overheid uitgegeven identificatiedocumenten( wereldwijd paspoorten en Licenties voor Amerikaanse stuurprogramma's) met behulp van het vooraf gebouwde Form Recognizer-id-model. Zie onze conceptuele handleiding voor het vooraf gebouwde identificatiemodel voor meer informatie over de analyse van [identiteitsdocumentatie.](../../concept-identification-cards.md)
+
+Gebruik de methode om identiteitsdocumenten van een URI te `beginRecognizeIdDocumentsFromUrl` analyseren.
+
+:::code language="java" source="~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java" id="snippet_id_call":::
+
+> [!TIP]
+> U kunt ook afbeeldingen van lokale identiteitsdocumentatie analyseren. Zie de [FormRecognizerClient-methoden,](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient) zoals **beginRecognizeIdDocuments.** Zie ook de voorbeeldcode op [GitHub voor scenario's](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) met lokale afbeeldingen.
+
+Met de volgende code wordt het identiteitsdocument op de opgegeven URI verwerkt en worden de belangrijkste velden en waarden naar de console afgedrukt.
+
+:::code language="java" source="~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java" id="snippet_id_print":::
+
+#### <a name="v20"></a>[v2.0](#tab/ga)
+
+> [!IMPORTANT]
+> Deze functie is niet beschikbaar in de geselecteerde API-versie.
+
+---
+
 ## <a name="train-a-custom-model"></a>Aangepast model trainen
 
 In deze sectie ziet u hoe u een model kunt trainen met uw eigen gegevens. Met een getraind model kunnen gestructureerde gegevens worden uitgevoerd waarin ook de sleutel-waarderelaties uit het oorspronkelijke formulierdocument zijn opgenomen. Nadat u het model hebt getraind, kunt u het testen, opnieuw trainen en hiermee uiteindelijk gegevens naar behoefte extraheren uit meer formulieren.
@@ -275,20 +358,19 @@ In deze sectie ziet u hoe u een model kunt trainen met uw eigen gegevens. Met ee
 
 ### <a name="train-a-model-without-labels"></a>Een model trainen zonder labels
 
-Train aangepaste modellen om alle velden en waarden te analyseren die in uw aangepaste formulieren worden gevonden zonder hand matig labels te krijgen voor de trainings documenten.
+Train aangepaste modellen om alle velden en waarden in uw aangepaste formulieren te analyseren zonder de trainingsdocumenten handmatig te labelen.
 
-Met de volgende methode wordt een model voor een bepaalde set documenten getraind en wordt de status van het model in de console weergegeven. 
+Met de volgende methode wordt een model voor een bepaalde set documenten getraind en wordt de status van het model in de console weergegeven.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_train_call)]
 
-Het geretourneerde **CustomFormModel** -object bevat informatie over de formulier typen die het model kan analyseren en de velden die het kan ophalen uit elk formulier type. In het volgende codeblok wordt deze informatie op de console weergegeven.
+Het **geretourneerde CustomFormModel-object** bevat informatie over de formuliertypen die het model kan analyseren en de velden die kunnen worden geëxtraheerd uit elk formuliertype. In het volgende codeblok wordt deze informatie op de console weergegeven.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_train_print)]
 
 Ten slotte retourneert deze methode de unieke id van het model.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_train_return)]
-
 
 ### <a name="output"></a>Uitvoer
 
@@ -349,7 +431,7 @@ In deze sectie ziet u hoe u belangrijke/waardevolle informatie en andere inhoud 
 > [!IMPORTANT]
 > Als u dit scenario wilt implementeren, moet u al een model hebben getraind, zodat u de id ervan kunt doorgeven aan onderstaande methode. Zie de sectie [Een model trainen](#train-a-model-without-labels).
 
-U gebruikt de methode **beginRecognizeCustomFormsFromUrl**. 
+U gebruikt de methode **beginRecognizeCustomFormsFromUrl**.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_analyze_call)]
 
@@ -376,65 +458,7 @@ Field 'field-5' has label 'Charges' with a confidence score of 1.00.
 Field 'field-6' has label 'VAT ID' with a confidence score of 1.00.
 ```
 
-## <a name="analyze-receipts"></a>Ontvangstbewijzen analyseren
 
-In deze sectie wordt beschreven hoe u algemene velden van Amerikaanse ontvangsten analyseert en extraheert met behulp van een vooraf getraind ontvangst model. Zie de [conceptuele hand leiding voor bevestigingen](../../concept-receipts.md)voor meer informatie over de ontvangst analyse.
-
-Als u de ontvangst van een URI wilt analyseren, gebruikt u de methode **beginRecognizeReceiptsFromUrl** . 
-
-[!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_receipts_call)]
-
-> [!TIP]
-> U kunt ook lokale ontvangstbewijs afbeeldingen analyseren. Zie de [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient)-methoden, zoals **beginRecognizeReceipts**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
-
-De geretourneerde waarde is een verzameling **RecognizedReceipt**-objecten: één voor elke pagina in het ingediende document. In het volgende codeblok worden de ontvangstbewijzen doorlopen en worden de details ervan naar de console afgedrukt.
-
-[!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_receipts_print)]
-
-In het volgende codeblok worden de afzonderlijke items die op het ontvangstbewijs zijn gedetecteerd doorlopen en worden de details ervan naar de console afgedrukt.
-
-[!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_receipts_print_items)]
-
-### <a name="output"></a>Uitvoer 
-
-```console
-Analyze receipt...
------------ Recognized Receipt page 0 -----------
-Merchant Name: Contoso Contoso, confidence: 0.62
-Merchant Address: 123 Main Street Redmond, WA 98052, confidence: 0.99
-Transaction Date: 2020-06-10, confidence: 0.90
-Receipt Items:
-Name: Cappuccino, confidence: 0.96s
-Quantity: null, confidence: 0.957s]
-Total Price: 2.200000, confidence: 0.95
-Name: BACON & EGGS, confidence: 0.94s
-Quantity: null, confidence: 0.927s]
-Total Price: null, confidence: 0.93
-```
-
-## <a name="analyze-business-cards"></a>Visitekaartjes analyseren
-
-#### <a name="v21-preview"></a>[Preview van v2.1](#tab/preview)
-
-In deze sectie wordt beschreven hoe u algemene velden uit de Engelse visite kaartjes analyseert en extraheert met behulp van een vooraf getraind model. Zie de [conceptuele hand leiding voor visite](../../concept-business-cards.md)kaartjes voor meer informatie over het analyseren van bedrijfs kaarten.
-
-Als u visite kaartjes wilt analyseren vanuit een URL, gebruikt u de- `beginRecognizeBusinessCardsFromUrl` methode. 
-
-[!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java?name=snippet_bc_call)]
-
-> [!TIP]
-> U kunt ook lokale visite kaart afbeeldingen analyseren. Zie de methoden [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient), zoals **beginRecognizeBusinessCards**. Of zie de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
-
-De geretourneerde waarde is een verzameling **RecognizedForm**-objecten: één voor elke kaart in het document. Met de volgende code wordt het visitekaartje op de opgegeven URI verwerkt, en worden de belangrijkste velden en waarden op de console weergegeven.
-
-[!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java?name=snippet_bc_print)]
-
-#### <a name="v20"></a>[v2.0](#tab/ga)
-
-> [!IMPORTANT]
-> Deze functie is niet beschikbaar in de geselecteerde API-versie.
-
----
 
 ## <a name="manage-custom-models"></a>Aangepaste modellen beheren
 
@@ -450,7 +474,7 @@ In het volgende codeblok wordt het aantal modellen gecontroleerd dat u in uw For
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_manage_count)]
 
 
-#### <a name="output"></a>Uitvoer 
+#### <a name="output"></a>Uitvoer
 
 ```console
 The account has 12 custom models, and we can have at most 250 custom models
@@ -463,7 +487,7 @@ In het volgende codeblok worden de huidige modellen in uw account vermeld en wor
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_manage_list)]
 
 
-#### <a name="output"></a>Uitvoer 
+#### <a name="output"></a>Uitvoer
 
 Dit antwoord is ingekort zodat het beter leesbaar is.
 

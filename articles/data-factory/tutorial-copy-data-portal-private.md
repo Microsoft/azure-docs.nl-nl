@@ -5,14 +5,14 @@ author: linda33wj
 ms.service: data-factory
 ms.topic: tutorial
 ms.custom: seo-lt-2019
-ms.date: 02/18/2021
+ms.date: 04/14/2021
 ms.author: jingwang
-ms.openlocfilehash: a3cc3686d4b256fc7b8702f34cdf393dc1b0e25f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 191ad61990e10fdb718eebf1a8f57d8edaadcf35
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101740389"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107515448"
 ---
 # <a name="copy-data-securely-from-azure-blob-storage-to-a-sql-database-by-using-private-endpoints"></a>Kopieer de gegevens veilig vanuit Azure Blob-opslag naar een SQL-database met privé-eindpunten
 
@@ -102,8 +102,8 @@ In deze stap maakt u een Azure-integratieruntime en schakelt u het door Data Fac
 1. Ga in de Data Factory-portal naar **Beheren** en selecteer **Nieuwe** om een nieuwe Azure-integratieruntime te maken.
 
    ![Schermopname van het maken van een nieuwe Azure-integratieruntime.](./media/tutorial-copy-data-portal-private/create-new-azure-ir.png)
-1. Kies op de pagina **Integration runtime Setup** welke Integration runtime u wilt maken op basis van de vereiste mogelijkheden. In deze zelf studie selecteert u **Azure, zelf-hostend** en klikt u vervolgens op **door gaan**. 
-1. Selecteer **Azure** en klik vervolgens op **door gaan** om een Azure Integration runtime te maken.
+1. Kies op **de pagina Integratieruntime** instellen welke integratieruntime moet worden gemaakt op basis van de vereiste mogelijkheden. In deze zelfstudie selecteert **u Azure, zelf-hostend** en klikt u vervolgens op **Doorgaan.** 
+1. Selecteer **Azure en** klik vervolgens op Doorgaan **om** een Azure Integration Runtime te maken.
 
    ![Schermopname met een nieuwe Azure-integratieruntime.](./media/tutorial-copy-data-portal-private/azure-ir.png)
 1. Selecteer onder **Configuratie van virtueel netwerk (preview)** de optie **Inschakelen**.

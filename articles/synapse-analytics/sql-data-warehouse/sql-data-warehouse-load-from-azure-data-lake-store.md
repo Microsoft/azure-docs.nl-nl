@@ -1,34 +1,34 @@
 ---
-title: Zelf studie gegevens laden van Azure Data Lake Storage
-description: Gebruik de instructie COPY om gegevens van Azure Data Lake Storage te laden voor toegewezen SQL-groepen.
+title: 'Zelfstudie: gegevens uit Azure Data Lake Storage'
+description: Gebruik de INSTRUCTIE COPY om gegevens te laden uit Azure Data Lake Storage voor toegewezen SQL-pools.
 services: synapse-analytics
-author: gaursa
+author: julieMSFT
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
 ms.date: 11/20/2020
-ms.author: gaursa
+ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: ca57c6200cf7006a89be4b1fd621974559e5b514
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 16f95a86169be04eba202b311fc4437b204ec8b3
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104606120"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107566525"
 ---
-# <a name="load-data-from-azure-data-lake-storage-into-dedicated-sql-pools-in-azure-synapse-analytics"></a>Gegevens van Azure Data Lake Storage laden in toegewezen SQL-groepen in azure Synapse Analytics
+# <a name="load-data-from-azure-data-lake-storage-into-dedicated-sql-pools-in-azure-synapse-analytics"></a>Gegevens uit Azure Data Lake Storage in toegewezen SQL-pools in Azure Synapse Analytics
 
-In deze hand leiding wordt beschreven hoe u de [instructie Copy](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true) kunt gebruiken om gegevens uit Azure data Lake Storage te laden. Voor snelle voor beelden over het gebruik van de instructie COPY voor alle verificatie methoden gaat u naar de volgende documentatie: [gegevens veilig laden met behulp van toegewezen SQL-groepen](./quickstart-bulk-load-copy-tsql-examples.md).
+In deze handleiding wordt beschreven hoe u de [copy-instructie gebruikt](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true) om gegevens uit uw Azure Data Lake Storage. Voor snelle voorbeelden van het gebruik van de COPY-instructie voor alle verificatiemethoden, gaat u naar de volgende documentatie: Gegevens veilig laden [met behulp van toegewezen SQL-pools.](./quickstart-bulk-load-copy-tsql-examples.md)
 
 > [!NOTE]  
-> Als u feedback wilt geven of problemen wilt melden voor de instructie COPY, stuurt u een e-mail naar de volgende distributie lijst: sqldwcopypreview@service.microsoft.com .
+> Als u feedback wilt geven of problemen wilt melden met de COPY-instructie, stuurt u een e-mail naar de volgende distributielijst: sqldwcopypreview@service.microsoft.com .
 >
 > [!div class="checklist"]
 >
-> * Maak de doel tabel om gegevens van Azure Data Lake Storage te laden.
-> * Maak de instructie COPY om gegevens naar het Data Warehouse te laden.
+> * Maak de doeltabel om gegevens uit de Azure Data Lake Storage.
+> * Maak de INSTRUCTIE COPY om gegevens in het datawarehouse te laden.
 
 Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 
@@ -38,12 +38,12 @@ Download en installeer voordat u met deze zelfstudie begint de nieuwste versie v
 
 U hebt het volgende nodig om deze zelfstudie te volgen:
 
-* Een toegewezen SQL-groep. Zie [een toegewezen SQL-groep en query gegevens maken](create-data-warehouse-portal.md).
-* Een Data Lake Storage-account. Zie [aan de slag met Azure data Lake Storage](../../data-lake-store/data-lake-store-get-started-portal.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). Voor dit opslag account moet u een van de volgende referenties configureren of opgeven om te laden: een sleutel voor een opslag account, een SAS-sleutel (Shared Access Signature), een Azure Directory-toepassings gebruiker of een AAD-gebruiker die de juiste Azure-rol heeft voor het opslag account.
+* Een toegewezen SQL-pool. Zie [Een toegewezen SQL-pool maken en gegevens opvragen.](create-data-warehouse-portal.md)
+* Een Data Lake Storage account. Zie [Aan de slag met Azure Data Lake Storage](../../data-lake-store/data-lake-store-get-started-portal.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). Voor dit opslagaccount moet u een van de volgende referenties configureren of opgeven om te laden: een opslagaccountsleutel, SAS-sleutel (Shared Access Signature), een azure directorytoepassingsgebruiker of een AAD-gebruiker met de juiste Azure-rol voor het opslagaccount.
 
 ## <a name="create-the-target-table"></a>De doeltabel maken
 
-Maak verbinding met uw toegewezen SQL-groep en stel de doel tabel in waarnaar u wilt laden. In dit voor beeld maken we een tabel met product dimensies.
+Maak verbinding met uw toegewezen SQL-pool en maak de doeltabel waar u naar wilt laden. In dit voorbeeld maken we een productdimenssietabel.
 
 ```sql
 -- A: Create the target table
@@ -63,9 +63,9 @@ WITH
 ```
 
 
-## <a name="create-the-copy-statement"></a>De instructie COPY maken
+## <a name="create-the-copy-statement"></a>De COPY-instructie maken
 
-Maak verbinding met uw SQL-toegewezen pool en voer de instructie COPY uit. Voor een volledige lijst met voor beelden gaat u naar de volgende documentatie: [gegevens veilig laden met behulp van exclusieve SQL-groepen](./quickstart-bulk-load-copy-tsql-examples.md).
+Maak verbinding met uw toegewezen SQL-pool en voer de COPY-instructie uit. Ga naar de volgende documentatie voor een volledige lijst met voorbeelden: [Gegevens veilig laden met behulp van toegewezen SQL-pools.](./quickstart-bulk-load-copy-tsql-examples.md)
 
 ```sql
 -- B: Create and execute the COPY statement
@@ -102,11 +102,11 @@ WITH
 ) OPTION (LABEL = 'COPY: ADLS tutorial');
 ```
 
-## <a name="optimize-columnstore-compression"></a>Column Store-compressie optimaliseren
+## <a name="optimize-columnstore-compression"></a>Columnstore-compressie optimaliseren
 
-Tabellen worden standaard gedefinieerd als een geclusterde column store-index. Nadat het laden is voltooid, zijn sommige gegevens rijen mogelijk niet gecomprimeerd naar de column Store.  Er zijn verschillende redenen waarom dit kan gebeuren. Zie [Column Store-indexen beheren](sql-data-warehouse-tables-index.md)voor meer informatie.
+Tabellen worden standaard gedefinieerd als een geclusterde columnstore-index. Nadat het laden is voltooid, worden sommige gegevensrijen mogelijk niet gecomprimeerd in de columnstore.  Er zijn verschillende redenen waarom dit kan gebeuren. Zie [Columnstore-indexen](sql-data-warehouse-tables-index.md)beheren voor meer informatie.
 
-Als u de query prestaties en column Store-compressie wilt optimaliseren na een laad opdracht, bouwt u de tabel opnieuw op om ervoor te zorgen dat de column store-index alle rijen kan comprimeren.
+Als u de queryprestaties en columnstore-compressie na het laden wilt optimaliseren, moet u de tabel opnieuw opbouwen om de columnstore-index te dwingen alle rijen te comprimeren.
 
 ```sql
 
@@ -116,23 +116,23 @@ ALTER INDEX ALL ON [dbo].[DimProduct] REBUILD;
 
 ## <a name="optimize-statistics"></a>Statistieken optimaliseren
 
-Het is aan te raden om statistieken voor één kolom direct na een belasting te maken. Er zijn enkele keuzes voor statistieken. Als u bijvoorbeeld statistieken voor één kolom maakt voor elke kolom, kan het lang duren om alle statistieken opnieuw samen te stellen. Als u weet dat bepaalde kolommen zich niet in query predikaten bevinden, kunt u het maken van statistieken voor die kolommen overs Laan.
+Het is het beste om statistieken met één kolom direct na het laden te maken. Er zijn enkele opties voor statistieken. Als u bijvoorbeeld statistieken met één kolom maakt voor elke kolom, kan het lang duren om alle statistieken opnieuw samen te stellen. Als u weet dat bepaalde kolommen niet in querypredicaten worden opgenomen, kunt u het maken van statistieken voor deze kolommen overslaan.
 
-Als u besluit om met één kolom statistieken te maken voor elke kolom van elke tabel, kunt u het voor beeld van de opgeslagen procedure code `prc_sqldw_create_stats` in het [statistiek](sql-data-warehouse-tables-statistics.md) artikel gebruiken.
+Als u besluit statistieken met één kolom te maken voor elke kolom van elke tabel, kunt u het opgeslagen codevoorbeeld voor de procedure `prc_sqldw_create_stats` gebruiken in het artikel [statistieken.](sql-data-warehouse-tables-statistics.md)
 
-Het volgende voor beeld is een goed uitgangs punt voor het maken van statistieken. Er worden statistieken voor één kolom gemaakt voor elke kolom in de dimensie tabel en voor elke join-kolom in de feiten tabellen. U kunt later altijd statistieken met één of meerdere kolommen toevoegen aan andere feiten tabel kolommen.
+Het volgende voorbeeld is een goed uitgangspunt voor het maken van statistieken. Er worden statistieken met één kolom gemaakt voor elke kolom in de dimensietabel en voor elke samenbundelende kolom in de feitentabellen. U kunt later altijd statistieken met één of meerdere kolommen toevoegen aan andere feitentabelkolommen.
 
-## <a name="achievement-unlocked"></a>Prestaties vergren delen.
+## <a name="achievement-unlocked"></a>Prestatie ontgrendeld!
 
-U hebt gegevens geladen in uw data warehouse. Helemaal goed!
+U hebt gegevens in uw datawarehouse geladen. Helemaal goed!
 
 ## <a name="next-steps"></a>Volgende stappen
-Het laden van gegevens is de eerste stap bij het ontwikkelen van een Data Warehouse-oplossing met behulp van Azure Synapse Analytics. Bekijk onze ontwikkelings bronnen.
+Het laden van gegevens is de eerste stap bij het ontwikkelen van een datawarehouseoplossing met behulp Azure Synapse Analytics. Bekijk onze ontwikkelingsbronnen.
 
 > [!div class="nextstepaction"]
-> [Meer informatie over het ontwikkelen van tabellen voor gegevens opslag](sql-data-warehouse-tables-overview.md)
+> [Meer informatie over het ontwikkelen van tabellen voor datawarehousing](sql-data-warehouse-tables-overview.md)
 
-Raadpleeg de volgende documentatie voor meer informatie over het laden van voor beelden en verwijzingen:
-- [Naslag documentatie over het kopiëren van instructies](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true#syntax)
-- [Voor beelden kopiëren voor elke authenticatie methode](./quickstart-bulk-load-copy-tsql-examples.md)
-- [Quick start voor één tabel kopiëren](./quickstart-bulk-load-copy-tsql.md)
+Bekijk de volgende documentatie voor meer laadvoorbeelden en -verwijzingen:
+- [Referentiedocumentatie voor COPY-instructie](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true#syntax)
+- [COPY-voorbeelden voor elke verificatiemethode](./quickstart-bulk-load-copy-tsql-examples.md)
+- [Snelstart copy voor één tabel](./quickstart-bulk-load-copy-tsql.md)

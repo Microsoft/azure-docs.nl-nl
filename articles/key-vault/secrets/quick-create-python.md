@@ -7,13 +7,13 @@ ms.date: 09/03/2020
 ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
-ms.custom: devx-track-python, devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: b82c86983bc07f39c1adb5aa741497d8cc3246e9
-ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
+ms.custom: devx-track-python, devx-track-azurepowershell
+ms.openlocfilehash: e9e27720c50de8653fa859e051c9cfb3af4509ff
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105967117"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107377468"
 ---
 # <a name="quickstart-azure-key-vault-secret-client-library-for-python"></a>Quickstart: Azure Key Vault-clientbibliotheek voor geheimen voor Python
 
@@ -24,7 +24,7 @@ Ga aan de slag met de Azure Key Vault-clientbibliotheek voor geheimen voor Pytho
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-abonnement (u kunt [een gratis abonnement maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)).
-- [Python 2.7 + of 3.6 +](/azure/developer/python/configure-local-development-environment)
+- [Python 2.7+ of 3.6+](/azure/developer/python/configure-local-development-environment)
 - [Azure-CLI](/cli/azure/install-azure-cli)
 
 In deze quickstart wordt ervan uitgegaan dat u [Azure CLI](/cli/azure/install-azure-cli) uitvoert in een Linux-terminalvenster.

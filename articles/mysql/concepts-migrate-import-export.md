@@ -1,146 +1,146 @@
 ---
-title: Importeren en exporteren-Azure Database for MySQL
-description: In dit artikel worden algemene manieren uitgelegd voor het importeren en exporteren van data bases in Azure Database for MySQL, met behulp van hulpprogram ma's zoals MySQL Workbench.
+title: Importeren en exporteren - Azure Database for MySQL
+description: In dit artikel worden veelgebruikte manieren beschreven om databases in Azure Database for MySQL importeren en exporteren met behulp van hulpprogramma's zoals MySQL Workbench.
 author: savjani
 ms.author: pariks
 ms.service: mysql
 ms.subservice: migration-guide
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/30/2020
-ms.openlocfilehash: 4d553f6c87d1044f8bde7460a0ea7bf123dd1851
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.openlocfilehash: 641dfa2439513138b5dd8f56843e81c31eb38609
+ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106450069"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107389771"
 ---
 # <a name="migrate-your-mysql-database-by-using-import-and-export"></a>Uw MySQL-database migreren met behulp van importeren en exporteren
 
 [!INCLUDE[applies-to-single-flexible-server](includes/applies-to-single-flexible-server.md)]
 
-In dit artikel worden twee veelvoorkomende benaderingen beschreven voor het importeren en exporteren van gegevens naar een Azure Database for MySQL-server met behulp van MySQL Workbench.
+In dit artikel worden twee veelgebruikte methoden beschreven voor het importeren en exporteren van gegevens naar een Azure Database for MySQL server met behulp van MySQL Workbench.
 
-Zie de bronnen voor de [migratie handleiding](https://github.com/Azure/azure-mysql/tree/master/MigrationGuide)voor gedetailleerde en uitgebreide richt lijnen voor migratie. 
+Zie de resources van de migratiehandleiding voor gedetailleerde en [uitgebreide migratiehandleiding.](https://github.com/Azure/azure-mysql/tree/master/MigrationGuide) 
 
-Zie de [hand leiding voor database migratie](https://datamigration.microsoft.com/)voor andere migratie scenario's. 
+Zie de Database Migration Guide (Handleiding voor [databasemigratie) voor andere migratiescenario's.](https://datamigration.microsoft.com/) 
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voordat u begint met de migratie van uw MySQL-data base, moet u het volgende doen:
-- Een Azure Database for MySQL-server maken met [behulp van de Azure Portal](quickstart-create-mysql-server-database-using-azure-portal.md).
-- Down load en Installeer [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) of een ander mysql-hulp programma van derden voor het importeren en exporteren.
+Voordat u begint met het migreren van uw MySQL-database, moet u het volgende doen:
+- Maak een [Azure Database for MySQL server met behulp van de Azure Portal](quickstart-create-mysql-server-database-using-azure-portal.md).
+- Download en installeer [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) of een ander MySQL-hulpprogramma van derden voor het importeren en exporteren.
 
-## <a name="create-a-database-on-the-azure-database-for-mysql-server"></a>Een Data Base op de Azure Database for MySQL-server maken
-Maak een lege data base op de Azure Database for MySQL-server met behulp van MySQL Workbench, Toad of Navicat. De data base kan dezelfde naam hebben als de data base die de dumped gegevens bevat of u kunt een Data Base maken met een andere naam.
+## <a name="create-a-database-on-the-azure-database-for-mysql-server"></a>Een database maken op de Azure Database for MySQL server
+Maak een lege database op de Azure Database for MySQL server met behulp van MySQL Workbench, Toad of Navicat. De database kan dezelfde naam hebben als de database die de dumpgegevens bevat, of u kunt een database met een andere naam maken.
 
 Ga als volgt te werk om verbinding te maken:
 
-1. Zoek in het Azure Portal naar de verbindings gegevens in het deel venster **overzicht** van uw Azure database for MySQL.
+1. Zoek in Azure Portal verbindingsgegevens in **het** deelvenster Overzicht van uw Azure Database for MySQL.
 
-   :::image type="content" source="./media/concepts-migrate-import-export/1_server-overview-name-login.png" alt-text="Scherm afbeelding van de verbindings gegevens van de Azure Database for MySQL server in de Azure Portal.":::
+   :::image type="content" source="./media/concepts-migrate-import-export/1_server-overview-name-login.png" alt-text="Schermopname van de Azure Database for MySQL serververbindingsgegevens in de Azure Portal.":::
 
-1. Voeg de verbindings gegevens toe aan MySQL Workbench.
+1. Voeg de verbindingsgegevens toe aan MySQL Workbench.
 
-   :::image type="content" source="./media/concepts-migrate-import-export/2_setup-new-connection.png" alt-text="Scherm afbeelding van de MySQL Workbench-connection string.":::
+   :::image type="content" source="./media/concepts-migrate-import-export/2_setup-new-connection.png" alt-text="Schermopname van de mySQL Workbench-connection string.":::
 
-## <a name="determine-when-to-use-import-and-export-techniques"></a>Bepalen wanneer de technieken voor importeren en exporteren worden gebruikt
+## <a name="determine-when-to-use-import-and-export-techniques"></a>Bepalen wanneer u import- en exporttechnieken gebruikt
 
 > [!TIP]
-> Voor scenario's waarbij u de gehele Data Base wilt dumpen en herstellen, gebruikt u de methode voor [dump en herstel](concepts-migrate-dump-restore.md) .
+> Gebruik in plaats daarvan de dump- en [herstelbenadering](concepts-migrate-dump-restore.md) voor scenario's waarin u de hele database wilt dumpen en herstellen.
 
-In de volgende scenario's kunt u MySQL-hulpprogram ma's gebruiken om data bases in uw MySQL-data base te importeren en exporteren. Voor andere hulpprogram ma's gaat u naar de sectie ' migratie methoden ' (pagina 22) van de [MySQL naar Azure data base Migration Guide](https://github.com/Azure/azure-mysql/blob/master/MigrationGuide/MySQL%20Migration%20Guide_v1.1.pdf). 
+In de volgende scenario's gebruikt u MySQL-hulpprogramma's om databases te importeren en exporteren naar uw MySQL-database. Ga voor andere hulpprogramma's naar de sectie Migratiemethoden (pagina 22) van de migratiehandleiding voor [MySQL naar Azure Database.](https://github.com/Azure/azure-mysql/blob/master/MigrationGuide/MySQL%20Migration%20Guide_v1.1.pdf) 
 
-- Wanneer u selectief moet kiezen uit een aantal tabellen die u wilt importeren uit een bestaande MySQL-data base in uw Azure MySQL-data base, kunt u het beste de import-en export techniek gebruiken. Door dit te doen, kunt u onnodige tabellen uit de migratie weglaten om tijd en resources te besparen. Gebruik bijvoorbeeld de of- `--include-tables` `--exclude-tables` Switch met [mysqlpump](https://dev.mysql.com/doc/refman/5.7/en/mysqlpump.html#option_mysqlpump_include-tables)en de `--tables` Switch met [mysqldump](https://dev.mysql.com/doc/refman/5.7/en/mysqldump.html#option_mysqldump_tables).
-- Wanneer u andere database objecten dan tabellen verplaatst, moet u deze objecten expliciet maken. Neem beperkingen op (primaire sleutel, refererende sleutel en indexen), weer gaven, functies, procedures, triggers en andere database objecten die u wilt migreren.
-- Wanneer u gegevens migreert uit externe gegevens bronnen, met uitzonde ring van een MySQL-data base, maakt u platte bestanden en importeert u deze met behulp van [mysqlimport](https://dev.mysql.com/doc/refman/5.7/en/mysqlimport.html).
+- Wanneer u selectief een paar tabellen moet kiezen om te importeren uit een bestaande MySQL-database in uw Azure MySQL-database, kunt u het beste de import- en exporttechniek gebruiken. Hierdoor kunt u onnodige tabellen weglaten uit de migratie om tijd en resources te besparen. Gebruik bijvoorbeeld de `--include-tables` schakelknop of `--exclude-tables` met [mysqlpump](https://dev.mysql.com/doc/refman/5.7/en/mysqlpump.html#option_mysqlpump_include-tables)en de `--tables` switch met [mysqldump](https://dev.mysql.com/doc/refman/5.7/en/mysqldump.html#option_mysqldump_tables).
+- Wanneer u andere databaseobjecten dan tabellen verplaatst, maakt u deze objecten expliciet. Neem beperkingen op (primaire sleutel, vreemde sleutel en indexen), weergaven, functies, procedures, triggers en andere databaseobjecten die u wilt migreren.
+- Wanneer u gegevens migreert uit andere externe gegevensbronnen dan een MySQL-database, maakt u platte bestanden en importeert u deze met behulp van [mysqlimport.](https://dev.mysql.com/doc/refman/5.7/en/mysqlimport.html)
 
 > [!Important]
-> Zowel één server als flexibele server bieden alleen ondersteuning voor de InnoDB-opslag engine. Zorg ervoor dat alle tabellen in de data base de InnoDB-opslag engine gebruiken wanneer u gegevens laadt in uw Azure Data Base voor MySQL.
+> Zowel Single Server als Flexible Server ondersteunen alleen de InnoDB-opslagen engine. Zorg ervoor dat alle tabellen in de database de InnoDB-opslagen engine gebruiken wanneer u gegevens laadt in uw Azure-database voor MySQL.
 >
-> Als uw bron database een andere opslag engine gebruikt, moet u deze converteren naar de InnoDB-engine voordat u de data base migreert. Als u bijvoorbeeld een WordPress-of web-app hebt die gebruikmaakt van de MyISAM-engine, moet u de tabellen eerst converteren door de gegevens te migreren naar InnoDB-tabellen. Gebruik de-component `ENGINE=INNODB` om de engine in te stellen voor het maken van een tabel en vervolgens de gegevens over te dragen naar de compatibele tabel vóór de migratie.
+> Als uw brondatabase gebruikmaakt van een andere opslagen engine, converteert u deze naar de InnoDB-engine voordat u de database migreert. Als u bijvoorbeeld een WordPress- of web-app hebt die gebruikmaakt van de MyISAM-engine, converteert u eerst de tabellen door de gegevens te migreren naar InnoDB-tabellen. Gebruik de -component om de engine in te stellen voor het maken van een tabel en breng de gegevens vóór de migratie over naar `ENGINE=INNODB` de compatibele tabel.
 
    ```sql
    INSERT INTO innodb_table SELECT * FROM myisam_table ORDER BY primary_key_columns
    ```
 
-## <a name="performance-recommendations-for-import-and-export"></a>Prestatie aanbevelingen voor importeren en exporteren
+## <a name="performance-recommendations-for-import-and-export"></a>Prestatieaanbevelingen voor importeren en exporteren
 
-Voor optimale prestaties bij het importeren en exporteren van gegevens kunt u het volgende doen:
--   Maak geclusterde indexen en primaire sleutels voordat u gegevens laadt. Laad de gegevens in de volg orde van de primaire sleutel.
+Voor optimale prestaties bij het importeren en exporteren van gegevens raden we u aan het volgende te doen:
+-   Maak geclusterde indexen en primaire sleutels voordat u gegevens laadt. Laad de gegevens in de volgorde van de primaire sleutel.
 -   Het maken van secundaire indexen vertragen totdat de gegevens zijn geladen.
--   Schakel beperkingen van refererende sleutels uit voordat u de gegevens laadt. Het uitschakelen van externe-sleutel controles biedt aanzienlijke prestatie verbeteringen. Schakel de beperkingen in en controleer de gegevens na de belasting om de referentiële integriteit te waarborgen.
--   Gegevens parallel laden. Vermijd te veel parallellisme, waardoor u een resource limiet kunt bereiken en resources bewaken met behulp van de metrische gegevens die beschikbaar zijn in de Azure Portal.
--   Gebruik gepartitioneerde tabellen wanneer dat nodig is.
+-   Schakel beperkingen voor de foreign key uit voordat u de gegevens laadt. Het uitschakelen van controles van vreemde sleutels levert aanzienlijke prestatieverbeteringen op. Schakel de beperkingen in en controleer de gegevens na het laden om de referentiële integriteit te garanderen.
+-   Gegevens parallel laden. Vermijd te veel parallellisme dat ertoe zou leiden dat u een resourcelimiet bereikt en controleer resources met behulp van de metrische gegevens die beschikbaar zijn in de Azure Portal.
+-   Gebruik gepartitiede tabellen indien van toepassing.
 
 ## <a name="import-and-export-data-by-using-mysql-workbench"></a>Gegevens importeren en exporteren met behulp van MySQL Workbench
-Er zijn twee manieren om gegevens te exporteren en te importeren in MySQL Workbench: vanuit het context menu object browser of vanuit het deel venster navigator. Elke methode fungeert voor een ander doel.
+Er zijn twee manieren om gegevens te exporteren en importeren in MySQL Workbench: vanuit het contextmenu van de objectbrowser of vanuit het deelvenster Navigator. Elke methode heeft een ander doel.
 
 > [!NOTE]
-> Ga als volgt te werk als u een verbinding toevoegt aan een enkele server met MySQL of een flexibele server (preview) in MySQL Workbench:
-> - Zorg ervoor dat de gebruikers naam in de indeling is voor MySQL-één server *\<username@servername>* .
-> - Gebruik voor MySQL flexibele server *\<username>* alleen. Als u gebruikt *\<username@servername>* om verbinding te maken, mislukt de verbinding.
+> Als u een verbinding toevoegt aan MySQL Single Server of Flexible Server (Preview) in MySQL Workbench, gaat u als volgt te werk:
+> - Zorg ervoor dat voor MySQL Enkele server de gebruikersnaam de notatie *\<username@servername>* heeft.
+> - Gebruik alleen voor MySQL Flexible *\<username>* Server. Als u gebruikt *\<username@servername>* om verbinding te maken, mislukt de verbinding.
 
-### <a name="run-the-table-data-export-and-import-wizards-from-the-object-browser-context-menu"></a>Voer de wizards tabel gegevens exporteren en importeren uit in het context menu object browser
+### <a name="run-the-table-data-export-and-import-wizards-from-the-object-browser-context-menu"></a>De wizards tabelgegevens exporteren en importeren uitvoeren vanuit het contextmenu van de objectbrowser
 
-:::image type="content" source="./media/concepts-migrate-import-export/p1.png" alt-text="Scherm afbeelding van de wizard exporteren en importeren van MySQL Workbench in het context menu van het object browser.":::
+:::image type="content" source="./media/concepts-migrate-import-export/p1.png" alt-text="Schermopname van de opdrachten voor het exporteren en importeren van de MySQL Workbench-wizard in het contextmenu van de objectbrowser.":::
 
-De tabel gegevens wizards ondersteunen import-en export bewerkingen door gebruik te maken van CSV-en JSON-bestanden. De wizards bevatten verschillende configuratie opties, zoals scheidings tekens, kolom selectie en coderings selectie. U kunt elke wizard uitvoeren op een lokaal of extern aangesloten MySQL-servers. De import actie bevat tabel-, kolom-en type toewijzing.
+De wizards voor tabelgegevens ondersteunen import- en exportbewerkingen met behulp van CSV- en JSON-bestanden. De wizards bevatten verschillende configuratieopties, zoals scheidingstekens, kolomselectie en coderingsselectie. U kunt elke wizard uitvoeren op lokale of extern verbonden MySQL-servers. De importactie omvat tabel-, kolom- en typetoewijzing.
 
-Als u deze wizards wilt openen vanuit het context menu van de object browser, klikt u met de rechter muisknop op een tabel en selecteert u vervolgens de **wizard tabel gegevens exporteren** of de **wizard tabel gegevens importeren**.
+Als u deze wizards wilt openen vanuit het contextmenu van de objectbrowser, klikt u met de rechtermuisknop op een tabel en selecteert u vervolgens **Wizard** Tabelgegevens exporteren of Wizard **Tabelgegevens importeren.**
 
-#### <a name="the-table-data-export-wizard"></a>De wizard tabel gegevens exporteren
+#### <a name="the-table-data-export-wizard"></a>De wizard tabelgegevens exporteren
 
 Een tabel exporteren naar een CSV-bestand:
 
-1. Klik met de rechter muisknop op de tabel van de data base die u wilt exporteren.
-1. Selecteer de **wizard tabel gegevens exporteren**. Selecteer de kolommen die u wilt exporteren, verschuiving van rij (indien aanwezig) en aantal (indien van toepassing).
-1. Selecteer **volgende** in het deel venster **gegevens selecteren voor exporteren** . Selecteer het bestandspad, CSV of JSON-bestands type. Selecteer ook het regel scheidings teken, de methode van insluitende teken reeksen en het scheidings teken voor velden.
-1. Selecteer **volgende** in het deel venster **locatie van uitvoer bestand selecteren** .
-1. Selecteer **volgende** in het deel venster **gegevens exporteren** .
+1. Klik met de rechtermuisknop op de tabel van de database die moet worden geëxporteerd.
+1. Selecteer **wizard Tabelgegevens exporteren.** Selecteer de kolommen die moeten worden geëxporteerd, de rij offset (indien van een) en het aantal (indien van) .
+1. Selecteer in **het deelvenster Gegevens selecteren voor export** de optie **Volgende.** Selecteer het bestandspad, CSV- of JSON-bestandstype. Selecteer ook het regelscheidingsteken, de methode voor het insluiten van tekenreeksen en het veldscheidingsteken.
+1. Selecteer in **het deelvenster Locatie van uitvoerbestand** selecteren de optie **Volgende.**
+1. Selecteer volgende **in het** deelvenster Gegevens **exporteren.**
 
-#### <a name="the-table-data-import-wizard"></a>De wizard tabel gegevens importeren
+#### <a name="the-table-data-import-wizard"></a>De wizard tabelgegevens importeren
 
-Een tabel uit een CSV-bestand importeren:
+Een tabel importeren uit een CSV-bestand:
 
-1. Klik met de rechter muisknop op de tabel van de data base die u wilt importeren.
-1. Zoek en selecteer het CSV-bestand dat moet worden geïmporteerd en selecteer vervolgens **volgende**.
-1. Selecteer de doel tabel (nieuw of bestaand), schakel het selectie vakje **tabel afkappen vóór importeren** in of uit en selecteer **volgende**.
-1. Selecteer de code ring en de kolommen die u wilt importeren en selecteer vervolgens **volgende**.
-1. Selecteer **volgende** in het deel venster **gegevens importeren** . De gegevens worden door de wizard geïmporteerd.
+1. Klik met de rechtermuisknop op de tabel van de database die moet worden geïmporteerd.
+1. Zoek en selecteer het CSV-bestand dat moet worden geïmporteerd en selecteer **vervolgens Volgende.**
+1. Selecteer de doeltabel (nieuw of bestaand), schakel het selectievakje **Tabel** afkapen vóór importeren in of uit en selecteer **vervolgens Volgende.**
+1. Selecteer de codering en de kolommen die moeten worden geïmporteerd en selecteer vervolgens **Volgende.**
+1. Selecteer in **het deelvenster Gegevens** importeren de optie **Volgende.** De wizard importeert de gegevens.
 
-### <a name="run-the-sql-data-export-and-import-wizards-from-the-navigator-pane"></a>De wizard SQL-gegevens exporteren en importeren uitvoeren vanuit het deel venster navigator
-Gebruik een wizard voor het exporteren of importeren van SQL-gegevens die zijn gegenereerd vanuit MySQL Workbench of van de mysqldump-opdracht. U kunt de wizards openen vanuit het deel venster **Navigator** of u kunt **Server** selecteren in het hoofd menu.
+### <a name="run-the-sql-data-export-and-import-wizards-from-the-navigator-pane"></a>De wizards SQL-gegevens exporteren en importeren uitvoeren vanuit het deelvenster Navigator
+Gebruik een wizard om SQL-gegevens te exporteren of te importeren die zijn gegenereerd op basis van MySQL Workbench of met de opdracht mysqldump. U kunt de wizards openen vanuit het **deelvenster Navigator** of u kunt **Server selecteren** in het hoofdmenu.
 
 #### <a name="export-data"></a>Gegevens exporteren
 
-:::image type="content" source="./media/concepts-migrate-import-export/p2.png" alt-text="Scherm afbeelding van het deel venster Navigator gebruiken om het venster gegevens exporteren in MySQL Workbench weer te geven.":::
+:::image type="content" source="./media/concepts-migrate-import-export/p2.png" alt-text="Schermopname van het gebruik van het deelvenster Navigator om het deelvenster Gegevensexport in MySQL Workbench weer te geven.":::
 
-U kunt het deel venster **gegevens exporteren** gebruiken om uw MySQL-gegevens te exporteren.
+U kunt het deelvenster **Gegevensexport gebruiken** om uw MySQL-gegevens te exporteren.
 
-1. Selecteer in MySQL Workbench in het deel venster **Navigator** de optie **gegevens export**.
+1. Selecteer in MySQL Workbench in het **deelvenster Navigator** de optie **Gegevensexport.**
 
-1. Selecteer in het deel venster **gegevens exporteren** elk schema dat u wilt exporteren.
+1. Selecteer in **het deelvenster Gegevensexport** elk schema dat u wilt exporteren.
  
-   Voor elk schema kunt u specifieke schema objecten of tabellen selecteren die u wilt exporteren. Configuratie opties zijn onder andere exporteren naar een projectmap of een zelf opgenomen SQL-bestand, opgeslagen routines en gebeurtenissen dumpen of tabel gegevens overs Laan.
+   Voor elk schema kunt u specifieke schemaobjecten of tabellen selecteren die u wilt exporteren. Configuratieopties zijn onder andere exporteren naar een projectmap of een zelfstandig SQL-bestand, dumpen van opgeslagen routines en gebeurtenissen of het overslaan van tabelgegevens.
 
-   U kunt ook **een resultatenset exporteren** gebruiken om een specifieke resultatenset in de SQL-Editor te exporteren naar een andere indeling, zoals CSV, JSON, HTML en XML.
+   U kunt ook Een **resultatenset** exporteren gebruiken om een specifieke resultatenset in de SQL-editor te exporteren naar een andere indeling, zoals CSV, JSON, HTML en XML.
 
-1. Selecteer de database objecten die u wilt exporteren en configureer de gerelateerde opties.
-1. Selecteer **vernieuwen** om de huidige objecten te laden.
-1. Selecteer desgewenst **Geavanceerde opties** in de rechter bovenhoek om de export bewerking te verfijnen. U kunt bijvoorbeeld tabel vergrendelingen toevoegen, `replace` in plaats van `insert` instructies gebruiken en offerte-id's met apostroffen-tekens.
-1. Selecteer **exporteren starten** om het export proces te starten.
+1. Selecteer de databaseobjecten die u wilt exporteren en configureer de gerelateerde opties.
+1. Selecteer **Vernieuwen om** de huidige objecten te laden.
+1. Selecteer eventueel Geavanceerde **opties in** de rechterbovenhoek om de exportbewerking te verfijnen. Voeg bijvoorbeeld tabelvergrendelingen toe, gebruik `replace` in plaats van instructies en `insert` prijsopgave-id's met backtick-tekens.
+1. Selecteer **Exporteren starten om** het exportproces te starten.
 
 
 #### <a name="import-data"></a>Gegevens importeren
 
-:::image type="content" source="./media/concepts-migrate-import-export/p3.png" alt-text="Scherm afbeelding van het deel venster Navigator gebruiken om het venster gegevens importeren in MySQL Workbench weer te geven.":::
+:::image type="content" source="./media/concepts-migrate-import-export/p3.png" alt-text="Schermopname van het gebruik van het deelvenster Navigator om het deelvenster Gegevensimport in MySQL Workbench weer te geven.":::
 
-U kunt het deel venster **gegevens importeren** gebruiken voor het importeren of herstellen van geëxporteerde gegevens uit de bewerking voor gegevens export of van de mysqldump-opdracht.
+U kunt het deelvenster **Gegevens** importeren gebruiken om geëxporteerde gegevens te importeren of te herstellen vanuit de gegevensexportbewerking of met de opdracht mysqldump.
 
-1. In MySQL Workbench selecteert u in het deel venster **Navigator** de optie **gegevens exporteren/herstellen**.
-1. Selecteer de projectmap of het zelf opgenomen SQL-bestand, selecteer het schema dat u wilt importeren of selecteer de knop **Nieuw** om een nieuw schema te definiëren.
-1. Selecteer **importeren starten** om het import proces te starten.
+1. Selecteer in MySQL Workbench in het **deelvenster Navigator** de optie **Gegevens exporteren/herstellen.**
+1. Selecteer de projectmap of het zelfstandige SQL-bestand, selecteer het schema waarin u wilt importeren of selecteer de knop **Nieuw** om een nieuw schema te definiëren.
+1. Selecteer **Import starten om** het importproces te starten.
 
 ## <a name="next-steps"></a>Volgende stappen
-- Zie [uw MySQL-data base migreren naar een Azure-Data Base voor MySQL met behulp van dump en herstellen](concepts-migrate-dump-restore.md)voor een andere migratie methode.
-- Zie de [hand leiding voor database migratie](https://github.com/Azure/azure-mysql/tree/master/MigrationGuide)voor meer informatie over het migreren van data bases naar een Azure-Data Base voor mysql.
+- Zie Uw MySQL-database migreren naar een [Azure-database voor MySQL](concepts-migrate-dump-restore.md)met behulp van dump en herstel voor een andere migratiebenadering.
+- Zie de Database Migration Guide (Handleiding voor databasemigratie) voor meer informatie over het migreren van databases naar een [Azure-database](https://github.com/Azure/azure-mysql/tree/master/MigrationGuide)voor MySQL.

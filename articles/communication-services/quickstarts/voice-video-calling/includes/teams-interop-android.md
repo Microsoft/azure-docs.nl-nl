@@ -1,29 +1,29 @@
 ---
-title: 'Snelstartgids: deel nemen aan een team vergadering vanuit een Android-app'
-description: In deze zelf studie leert u hoe u kunt deel nemen aan een team vergadering met behulp van de Azure Communication Services Calling SDK voor Android
+title: 'Quickstart: deelnemen aan een Teams-vergadering vanuit een Android-app'
+description: In deze zelfstudie leert u hoe u deel kunt nemen aan een Teams-vergadering met behulp van de Azure Communication Services Calling SDK voor Android
 author: chpalm
 ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: e5361b92c2080c724b872be2ad27bc5bd4554e8d
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: af1794a2f9eeaa1b1de2c62d5131c722dfd152a5
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105108173"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107564627"
 ---
-In deze Quick Start leert u hoe u kunt deel nemen aan een team vergadering met behulp van de Azure Communication Services-SDK voor Android.
+In deze quickstart leert u hoe u deel kunt nemen aan een Teams-vergadering met behulp van de Azure Communication Services Calling SDK voor Android.
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Een werkende [communicatie service die Android-app aanroept](../getting-started-with-calling.md).
+- Een werkende Communication Services [android-app aanroept.](../getting-started-with-calling.md)
 - Een [Teams implementatie](/deployoffice/teams-install).
 
 
 ## <a name="add-the-teams-ui-controls"></a>De besturingselementen voor de gebruikersinterface van Teams toevoegen
 
-Vervang code in activity_main.xml door het volgende fragment. Het tekstvak wordt gebruikt voor het invoeren van de context van de Teams-vergadering en de knop wordt gebruikt om deel te nemen aan de opgegeven vergadering:
+Vervang code in activity_main.xml door het volgende codefragment. Het tekstvak wordt gebruikt voor het invoeren van de context van de Teams-vergadering en de knop wordt gebruikt om deel te nemen aan de opgegeven vergadering:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -93,7 +93,7 @@ Vervang code in activity_main.xml door het volgende fragment. Het tekstvak wordt
 
 ## <a name="enable-the-teams-ui-controls"></a>De besturingselementen voor de gebruikersinterface van Teams inschakelen
 
-Vervang de inhoud van `MainActivity.java` door het volgende fragment:
+Vervang de inhoud van `MainActivity.java` door het volgende codefragment:
 
 ```java
 
@@ -253,13 +253,13 @@ public class MainActivity extends AppCompatActivity {
 
 ## <a name="get-the-teams-meeting-link"></a>Koppeling naar de Teams-vergadering ophalen
 
-De koppeling naar de Teams-vergadering kan worden opgehaald met behulp van Graph API’s. Dit wordt beschreven in [Graph-documentatie](/graph/api/onlinemeeting-createorget?tabs=http&view=graph-rest-beta).
-The aanroepende SDK voor Communication Services accepteert een volledige koppeling naar een Teams-vergadering. Deze koppeling wordt geretourneerd als onderdeel van de `onlineMeeting` resource, toegankelijk via de [ `joinWebUrl` eigenschap](/graph/api/resources/onlinemeeting?view=graph-rest-beta). U kunt ook de vereiste gegevens van de vergadering ophalen van de **vergaderings** -URL voor deelname aan de team vergadering zelf uitnodigen.
+De koppeling naar de Teams-vergadering kan worden opgehaald met behulp van Graph API’s. Dit wordt beschreven in [Graph-documentatie](/graph/api/onlinemeeting-createorget?tabs=http&view=graph-rest-beta&preserve-view=true).
+The aanroepende SDK voor Communication Services accepteert een volledige koppeling naar een Teams-vergadering. Deze koppeling wordt geretourneerd als onderdeel van de `onlineMeeting` resource, toegankelijk onder de [ `joinWebUrl` eigenschap](/graph/api/resources/onlinemeeting?view=graph-rest-beta&preserve-view=true). U kunt ook de vereiste informatie over de vergadering verkrijgen via de URL van **de join-vergadering** in de teamsvergadering uitnodiging zelf.
 
-## <a name="launch-the-app-and-join-teams-meeting"></a>De app starten en deel nemen aan vergaderingen in teams
+## <a name="launch-the-app-and-join-teams-meeting"></a>De app starten en deelnemen aan de Teams-vergadering
 
 De app kan nu worden gestart met behulp van de knop App uitvoeren op de werkbalk (Shift + F10). U ziet nu het volgende:
 
 :::image type="content" source="../media/android/acs-join-teams-meeting-quickstart.png" alt-text="Schermopname met de voltooide toepassing.":::
 
-Voeg de context van de teams in het tekstvak in en klik op *deel nemen aan vergadering* om deel te nemen aan de team vergadering vanuit uw communicatie Services-toepassing.
+Voeg de Teams-context in het tekstvak in en druk op *Join Meeting om* vanuit uw toepassing deel te nemen aan de Teams-Communication Services.

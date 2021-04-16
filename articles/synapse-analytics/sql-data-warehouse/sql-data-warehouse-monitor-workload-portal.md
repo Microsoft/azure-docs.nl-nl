@@ -1,46 +1,46 @@
 ---
-title: Workload bewaken-Azure Portal
-description: Synapse SQL bewaken met behulp van de Azure Portal
+title: Workload bewaken - Azure Portal
+description: Uw Synapse SQL bewaken met behulp van de Azure Portal
 services: synapse-analytics
-author: gaursa
+author: julieMSFT
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
 ms.date: 02/04/2020
-ms.author: gaursa
+ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: 3fb81ffc24ed6073e5398b14b7f490a0f63df84f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4f4c50588a67e2e69d0975c9f4414242ecf23617
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104585584"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107568264"
 ---
-# <a name="monitor-workload---azure-portal"></a>Workload bewaken-Azure Portal
+# <a name="monitor-workload---azure-portal"></a>Workload bewaken - Azure Portal
 
-In dit artikel wordt beschreven hoe u de Azure Portal kunt gebruiken om uw workload te bewaken. Dit omvat het instellen van Azure Monitor logboeken voor het onderzoeken van de uitvoering van query's en het analyseren van werk belasting met behulp van log Analytics voor [Synapse SQL](https://azure.microsoft.com/blog/workload-insights-with-sql-data-warehouse-delivered-through-azure-monitor-diagnostic-logs-pass/).
+In dit artikel wordt beschreven hoe u de Azure Portal om uw workload te bewaken. Dit omvat het instellen van Azure Monitor logboeken om query-uitvoering en workloadtrends te onderzoeken met behulp van log analytics [voor Synapse SQL](https://azure.microsoft.com/blog/workload-insights-with-sql-data-warehouse-delivered-through-azure-monitor-diagnostic-logs-pass/).
 
 ## <a name="prerequisites"></a>Vereisten
 
 - Azure-abonnement: Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
-- SQL-groep: er worden logboeken verzameld voor een SQL-groep. Als u geen SQL-groep hebt ingericht, raadpleegt u de instructies in [een SQL-groep maken](./load-data-from-azure-blob-storage-using-copy.md).
+- SQL-pool: we verzamelen logboeken voor een SQL-pool. Als u geen SQL-pool hebt ingericht, bekijkt u de instructies in [Een SQL-pool maken.](./load-data-from-azure-blob-storage-using-copy.md)
 
 ## <a name="create-a-log-analytics-workspace"></a>Een Log Analytics-werkruimte maken
 
-Ga naar de Blade bladeren voor Log Analytics-werk ruimten en maak een werk ruimte
+Navigeer naar de bladerblade voor Log Analytics-werkruimten en maak een werkruimte
 
 ![Log Analytics-werkruimten](./media/sql-data-warehouse-monitor-workload-portal/log_analytics_workspaces.png)
 
-![Scherm afbeelding toont de Log Analytics-werk ruimten waar u toevoegen kunt selecteren.](./media/sql-data-warehouse-monitor-workload-portal/add_analytics_workspace.png)
+![Schermopname van de Log Analytics-werkruimten waar u Toevoegen kunt selecteren.](./media/sql-data-warehouse-monitor-workload-portal/add_analytics_workspace.png)
 
-![Scherm afbeelding toont de Log Analytics werk ruimte waar u waarden kunt invoeren.](./media/sql-data-warehouse-monitor-workload-portal/add_analytics_workspace_2.png)
+![Schermopname van de Log Analytics-werkruimte waar u waarden kunt invoeren.](./media/sql-data-warehouse-monitor-workload-portal/add_analytics_workspace_2.png)
 
-Raadpleeg de volgende [documentatie](../../azure-monitor/logs/quick-create-workspace.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.jsond#create-a-workspace)voor meer informatie over werk ruimten.
+Ga naar de volgende documentatie voor meer informatie over [werkruimten.](../../azure-monitor/logs/quick-create-workspace.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.jsond#create-a-workspace)
 
-## <a name="turn-on-resource-logs"></a>Resource logboeken inschakelen
+## <a name="turn-on-resource-logs"></a>Resourcelogboeken in-
 
-Diagnostische instellingen configureren voor het verzenden van Logboeken uit uw SQL-groep. Logboeken bestaan uit telemetrie-weer gaven die gelijk zijn aan de meest gebruikte prestatie problemen met de Dmv's. Momenteel worden de volgende weer gaven ondersteund:
+Configureer diagnostische instellingen om logboeken uit uw SQL-pool te zenden. Logboeken bestaan uit telemetrieweergaven die gelijk zijn aan de meest gebruikte dmv's voor het oplossen van prestatieproblemen. Momenteel worden de volgende weergaven ondersteund:
 
 - [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 - [sys.dm_pdw_request_steps](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-request-steps-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
@@ -48,28 +48,28 @@ Diagnostische instellingen configureren voor het verzenden van Logboeken uit uw 
 - [sys.dm_pdw_waits](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-waits-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 - [sys.dm_pdw_sql_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-sql-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 
-![Resource logboeken inschakelen](./media/sql-data-warehouse-monitor-workload-portal/enable_diagnostic_logs.png)
+![Resourcelogboeken inschakelen](./media/sql-data-warehouse-monitor-workload-portal/enable_diagnostic_logs.png)
 
-Logboeken kunnen worden verzonden naar Azure Storage, Stream Analytics of Log Analytics. Voor deze zelf studie selecteert u Log Analytics.
+Logboeken kunnen worden Azure Storage, Stream Analytics of Log Analytics. Voor deze zelfstudie selecteert u Log Analytics.
 
 ![Logboeken opgeven](./media/sql-data-warehouse-monitor-workload-portal/specify_logs.png)
 
 ## <a name="run-queries-against-log-analytics"></a>Query's uitvoeren op Log Analytics
 
-Navigeer naar uw Log Analytics-werk ruimte waar u het volgende kunt doen:
+Navigeer naar uw Log Analytics-werkruimte waar u het volgende kunt doen:
 
-- Logboeken analyseren met behulp van logboek query's en query's opslaan voor hergebruik
+- Logboeken analyseren met behulp van logboekquery's en query's opslaan voor hergebruik
 - Query's opslaan voor hergebruik
 - Logboekwaarschuwingen maken
-- Query resultaten vastmaken aan een dash board
+- Queryresultaten vastmaken aan een dashboard
 
-Raadpleeg de volgende [documentatie](/azure/data-explorer/kusto/query/?bc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2ftoc.json)voor meer informatie over de mogelijkheden van logboek query's.
+Ga naar de volgende documentatie voor meer informatie over de mogelijkheden van [logboekquery's.](/azure/data-explorer/kusto/query/?bc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2ftoc.json)
 
-![Log Analytics werkruimte editor](./media/sql-data-warehouse-monitor-workload-portal/log_analytics_workspace_editor.png)
+![Log Analytics-werkruimte-editor](./media/sql-data-warehouse-monitor-workload-portal/log_analytics_workspace_editor.png)
 
-![Log Analytics werkruimte query's](./media/sql-data-warehouse-monitor-workload-portal/log_analytics_workspace_queries.png)
+![Query's voor Log Analytics-werkruimten](./media/sql-data-warehouse-monitor-workload-portal/log_analytics_workspace_queries.png)
 
-## <a name="sample-log-queries"></a>Voorbeeld logboek query's
+## <a name="sample-log-queries"></a>Voorbeeld van logboekquery's
 
 ```Kusto
 //List all queries
@@ -97,4 +97,4 @@ AzureDiagnostics
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u de logboeken van Azure monitor hebt ingesteld en geconfigureerd, [past u Azure-Dash boards](../../azure-portal/azure-portal-dashboards.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) aan om te delen in uw team.
+Nu u Azure Monitor-logboeken hebt ingesteld en geconfigureerd, kunt u [Azure-dashboards aanpassen om](../../azure-portal/azure-portal-dashboards.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) ze in uw team te delen.

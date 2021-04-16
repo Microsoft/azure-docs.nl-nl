@@ -1,75 +1,75 @@
 ---
 title: Een gekoppelde service beveiligen
-description: Meer informatie over het inrichten en beveiligen van een gekoppelde service met beheerde VNet
+description: Meer informatie over het inrichten en beveiligen van een gekoppelde service met een beheerd VNet
 services: synapse-analytics
 author: RonyMSFT
 ms.service: synapse-analytics
 ms.topic: how-to
-ms.subservice: ''
+ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: be7ee2f4b2b8472c5edeff63e143d99c958bfc5a
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 6be76878a9a07c5f4a1e2a9348bb7b09cb1b10eb
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105627214"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107567584"
 ---
-# <a name="secure-a-linked-service-with-private-links"></a>Een gekoppelde service beveiligen met persoonlijke koppelingen
+# <a name="secure-a-linked-service-with-private-links"></a>Een gekoppelde service beveiligen met privékoppelingen
 
-In dit artikel leert u hoe u een gekoppelde service in Synapse kunt beveiligen met een persoonlijk eind punt.
+In dit artikel leert u hoe u een gekoppelde service in Synapse beveiligt met een privé-eindpunt.
 
 ## <a name="prerequisites"></a>Vereisten
 
-* **Azure-abonnement**: als u nog geen Azure-abonnement hebt, maakt u een [gratis Azure-account](https://azure.microsoft.com/free/) voordat u begint.
-* **Azure Storage account**: u Azure data Lake gen 2 gebruiken als een *brongegevens* opslag. Als u geen opslag account hebt, raadpleegt u [een Azure Storage-account maken](../../storage/common/storage-account-create.md) om er een te maken. Zorg ervoor dat het opslag account de Synapse Studio-IP-filtering heeft voor toegang tot de service en dat u alleen **geselecteerde netwerken** toegang wilt geven tot het opslag account. De instelling onder de Blade **firewalls en virtuele netwerken** moet er ongeveer uitzien als in de onderstaande afbeelding.
+* **Azure-abonnement:** als u geen Azure-abonnement hebt, maakt u een gratis [Azure-account](https://azure.microsoft.com/free/) voordat u begint.
+* **Azure Storage:** u gebruikt Azure Data Lake Gen 2 als brongegevensopslag.  Als u geen opslagaccount hebt, zie Een opslagaccount [maken Azure Storage stappen](../../storage/common/storage-account-create.md) om er een te maken. Zorg ervoor dat het opslagaccount beschikt Synapse Studio IP-filtering voor toegang  en dat u alleen geselecteerde netwerken toegang tot het opslagaccount geeft. De instelling onder de blade **Firewalls en virtuele netwerken** moet er uitzien zoals in de onderstaande afbeelding.
 
-![Account voor beveiligde opslag](./media/secure-storage-account.png)
+![Beveiligd opslagaccount](./media/secure-storage-account.png)
 
-## <a name="create-a-linked-service-with-private-links"></a>Een gekoppelde service maken met persoonlijke koppelingen
+## <a name="create-a-linked-service-with-private-links"></a>Een gekoppelde service maken met privékoppelingen
 
-In Azure Synapse Analytics definieert u de verbindingsgegevens voor andere services in een gekoppelde service. In deze sectie voegt u Azure Synapse Analytics en Azure Data Lake gen 2 toe als gekoppelde services.
+In Azure Synapse Analytics definieert u de verbindingsgegevens voor andere services in een gekoppelde service. In deze sectie voegt u een Azure Synapse Analytics Azure Data Lake Gen 2 toe als gekoppelde services.
 
-1. Open Azure Synapse Studio en ga naar het tabblad **beheren** .
-1. Onder **externe verbindingen** selecteert u **gekoppelde services**.
+1. Open Azure Synapse Studio en ga naar het **tabblad** Beheren.
+1. Selecteer **onder Externe verbindingen** de optie **Gekoppelde services.**
 1. Selecteer **Nieuw** om een gekoppelde service toe te voegen.
-1. Selecteer de tegel Azure Data Lake Storage Gen2 in de lijst en selecteer **door gaan**.
+1. Selecteer de Azure Data Lake Storage Gen2 in de lijst en selecteer **Doorgaan.**
 1. Zorg ervoor dat u **Interactieve creatie** inschakelt. Het kan ongeveer 1 minuut duren voordat deze is ingeschakeld. 
-1. Voer uw verificatie referenties in. Account sleutel, Service-Principal en beheerde identiteit worden momenteel ondersteunde verificatie typen. Selecteer verbinding testen om te controleren of uw referenties correct zijn.
-1. Selecteer **verbinding testen**, de fout moet mislukken omdat het opslag account geen toegang tot de server inschakelt zonder een persoonlijk eind punt te maken en goed te keuren. In het fout bericht wordt een koppeling weer gegeven om een **persoonlijk eind punt** te maken dat u kunt volgen om naar het volgende deel te gaan. Sla het volgende gedeelte over als u deze koppeling volgt.
+1. Voer uw verificatiereferenties in. Accountsleutel, service-principal en beheerde identiteit worden momenteel ondersteunde verificatietypen. Selecteer Verbinding testen om te controleren of uw referenties juist zijn.
+1. Selecteer **Verbinding testen.** Dit zou moeten mislukken omdat het opslagaccount geen toegang tot de verbinding inschakelen zonder het maken en goedkeuren van een privé-eindpunt. In het foutbericht ziet u een koppeling om een privé-eindpunt **te** maken dat u kunt volgen om naar het volgende deel te gaan. Als u deze koppeling volgt, slaat u het volgende deel over.
 1. Selecteer **Maken** nadat dit is voltooid.
 
 ## <a name="create-a-managed-private-endpoint"></a>Een beheerd privé-eindpunt maken
 
-Als u de Hyper link niet hebt geselecteerd bij het testen van de bovenstaande verbinding, volgt u het volgende pad. Maak een beheerd privé-eind punt dat u maakt om verbinding te maken met de gekoppelde service die hierboven is gemaakt.
+Als u niet hebt geselecteerd in de hyperlink tijdens het testen van de bovenstaande verbinding, volgt u het volgende pad. Maak een beheerd privé-eindpunt dat u verbindt met de gekoppelde service die hierboven is gemaakt.
 
 1. Ga naar het tabblad **Beheren**.
-1. Ga naar de sectie **beheerde virtuele netwerken** .
-1. Selecteer **+ Nieuw** onder beheerd persoonlijk eind punt.
-1. Selecteer de tegel Azure Data Lake Storage Gen2 in de lijst en selecteer **door gaan**.
+1. Ga naar de **sectie Beheerde virtuele** netwerken.
+1. Selecteer **+ Nieuw** onder Beheerd privé-eindpunt.
+1. Selecteer de Azure Data Lake Storage Gen2 in de lijst en selecteer **Doorgaan.**
 1. Voer de naam van het opslagaccount in dat u hierboven hebt gemaakt.
 1. Selecteer **Maken**
 1. Na enkele seconden wachten moet u zien dat de privékoppeling een goedkeuring vereist.
 
-## <a name="private-link-approval"></a>Goed keuring van persoonlijke koppelingen
-1. Selecteer het privé-eindpunt dat u hierboven hebt gemaakt. U kunt een Hyper link zien waarmee u het persoonlijke eind punt kunt goed keuren op het niveau van het opslag account. *U kunt ook rechtstreeks naar het Azure Portal Storage-account gaan en naar de Blade **persoonlijke eindpunt verbindingen** gaan.*
-1. Tik het persoonlijke eind punt dat u hebt gemaakt in de studio en selecteer **goed keuren**.
-1. Een beschrijving toevoegen en **Ja** selecteren
-1. Ga terug naar Synapse Studio in het gedeelte **beheerde virtuele netwerken** van het tabblad **beheren** .
-1. Het duurt ongeveer 1 minuut voordat de goed keuring voor uw persoonlijke eind punt wordt weer gegeven.
+## <a name="private-link-approval"></a>Goedkeuring van private link
+1. Selecteer het privé-eindpunt dat u hierboven hebt gemaakt. U ziet een hyperlink die u in staat maakt om het privé-eindpunt goed te keuren op het niveau van het opslagaccount. *U kunt ook rechtstreeks naar het opslagaccount Azure Portal gaan en naar de blade Verbindingen **met privé-eindpunt gaan.***
+1. Tik op het privé-eindpunt dat u in studio hebt gemaakt en selecteer **Goedkeuren.**
+1. Voeg een beschrijving toe en selecteer **Ja**
+1. Terug u Synapse Studio in onder de sectie **Beheerde virtuele** netwerken van het **tabblad** Beheren.
+1. Het duurt ongeveer 1 minuut om de goedkeuring voor uw privé-eindpunt weer te geven.
 
 ## <a name="check-the-connection-works"></a>Controleer of de verbinding werkt
-1. Ga naar het tabblad **beheren** en selecteer de gekoppelde service die u hebt gemaakt.
-1. Zorg ervoor dat **interactieve ontwerpen** actief is.
-1. Selecteer **Verbinding testen**. U ziet dat de verbinding slaagt.
+1. Ga naar het **tabblad Beheren** en selecteer de gekoppelde service die u hebt gemaakt.
+1. Zorg ervoor dat **Interactief schrijven** actief is.
+1. Selecteer **Verbinding testen**. Als het goed is, ziet u dat de verbinding is geslaagd.
 
-U hebt nu een beveiligde en particuliere verbinding tot stand gebracht tussen Synapse en uw gekoppelde service.
+U hebt nu een beveiligde en privéverbinding tot stand gebracht tussen Synapse en uw gekoppelde service.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 
-Zie [beheerde persoonlijke eind punten](../security/synapse-workspace-managed-private-endpoints.md)voor meer informatie over het beheerde persoonlijke eind punt in azure Synapse Analytics.
+Zie Beheerde privé-eindpunten voor meer informatie over beheerde privé-eindpunten in [Azure Synapse Analytics.](../security/synapse-workspace-managed-private-endpoints.md)
 
 
-Zie voor meer informatie over gegevens integratie voor Azure Synapse Analytics de [opname gegevens in een Data Lake](data-integration-data-lake.md) -artikel.
+Zie het artikel Gegevens opnemen in Azure Synapse Analytics Data Lake voor meer informatie over gegevensintegratie voor een data [lake.](data-integration-data-lake.md)

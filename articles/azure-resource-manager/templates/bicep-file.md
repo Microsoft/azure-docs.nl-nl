@@ -1,24 +1,24 @@
 ---
-title: Bicep en syntaxis van bestands structuur
-description: Hierin worden de structuur en eigenschappen van een Bicep-bestand beschreven met declaratieve syntaxis.
+title: Bicep-bestandsstructuur en syntaxis
+description: Beschrijft de structuur en eigenschappen van een Bicep-bestand met behulp van declaratieve syntaxis.
 ms.topic: conceptual
 ms.date: 03/31/2021
-ms.openlocfilehash: 09993ae9c08f53144de8e94e6555ad93bec681f6
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: 1b8eddd388878be8f653f963ef967cf2c0af685f
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106168685"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107537868"
 ---
 # <a name="understand-the-structure-and-syntax-of-bicep-files"></a>De structuur en syntaxis van Bicep-bestanden begrijpen
 
-In dit artikel wordt de structuur van een Bicep-bestand beschreven. Het bevat de verschillende secties van het bestand en de eigenschappen die beschikbaar zijn in deze secties.
+In dit artikel wordt de structuur van een Bicep-bestand beschreven. Het geeft de verschillende secties van het bestand en de eigenschappen die beschikbaar zijn in deze secties.
 
-Dit artikel is bedoeld voor gebruikers met een zekere kennis van Bicep-bestanden. Het bevat gedetailleerde informatie over de structuur van de sjabloon. Voor een stapsgewijze zelf studie die u door het proces van het maken van een Bicep-bestand leidt, raadpleegt u [zelf studie: het eerste Azure Resource Manager Bicep-bestand maken en implementeren](bicep-tutorial-create-first-bicep.md).
+Dit artikel is bedoeld voor gebruikers die enige bekendheid hebben met Bicep-bestanden. Het bevat gedetailleerde informatie over de structuur van de sjabloon. Voor een stapsgewijze zelfstudie die u door het proces van het maken van een Bicep-bestand leidt, gaat u naar Zelfstudie: eerste maken en implementeren [Azure Resource Manager Bicep-bestand.](bicep-tutorial-create-first-bicep.md)
 
 ## <a name="template-format"></a>Sjabloonindeling
 
-Een Bicep-bestand heeft de volgende elementen. De elementen kunnen in een wille keurige volg orde worden weer gegeven.
+Een Bicep-bestand heeft de volgende elementen. De elementen kunnen in elke volgorde worden weergegeven.
 
 ```bicep
 targetScope = '<scope>'
@@ -69,7 +69,7 @@ module <module-symbolic-name> '<path-to-file>' = [for <item> in <collection>: {
 output <output-name> <output-data-type> = <output-value>
 ```
 
-In het volgende voor beeld ziet u een implementatie van deze elementen.
+In het volgende voorbeeld ziet u een implementatie van deze elementen.
 
 ```bicep
 @minLength(3)
@@ -104,35 +104,35 @@ module webModule './webApp.bicep' = {
 output storageEndpoint object = stg.properties.primaryEndpoints
 ```
 
-## <a name="target-scope"></a>Doel bereik
+## <a name="target-scope"></a>Doelbereik
 
-Het doel bereik is standaard ingesteld op `resourceGroup` . Als u op het niveau van de resource groep implementeert, hoeft u het doel bereik niet in uw Bicep-bestand in te stellen.
+Het doelbereik is standaard ingesteld op `resourceGroup` . Als u implementeert op het niveau van de resourcegroep, hoeft u het doelbereik niet in uw Bicep-bestand in te stellen.
 
 De toegestane waarden zijn:
 
-* **resourceGroup** : de standaard waarde, die wordt gebruikt voor [implementaties van resource groepen](deploy-to-resource-group.md).
-* **abonnement** : wordt gebruikt voor [implementaties van abonnementen](deploy-to-subscription.md).
-* **managementGroup** : wordt gebruikt voor [implementaties van beheer groepen](deploy-to-management-group.md).
-* **Tenant** : wordt gebruikt voor [Tenant implementaties](deploy-to-tenant.md).
+* **resourceGroup:** standaardwaarde die wordt gebruikt voor [implementaties van resourcegroepen.](deploy-to-resource-group.md)
+* **abonnement** : wordt gebruikt voor [abonnementsimplementaties.](deploy-to-subscription.md)
+* **managementGroup:** wordt gebruikt voor [implementaties van beheergroepen.](deploy-to-management-group.md)
+* **tenant** : wordt gebruikt voor [tenantimplementaties.](deploy-to-tenant.md)
 
 ## <a name="parameters"></a>Parameters
 
-Gebruik para meters voor waarden die moeten variëren voor verschillende implementaties. U kunt een standaard waarde definiëren voor de para meter die wordt gebruikt als er geen waarde wordt opgegeven tijdens de implementatie.
+Gebruik parameters voor waarden die moeten variëren voor verschillende implementaties. U kunt een standaardwaarde definiëren voor de parameter die wordt gebruikt als er geen waarde wordt opgegeven tijdens de implementatie.
 
-U kunt bijvoorbeeld een SKU-para meter toevoegen om verschillende grootten voor een resource op te geven. U kunt sjabloon functies gebruiken voor het maken van de standaard waarde, zoals het ophalen van de locatie van de resource groep.
+U kunt bijvoorbeeld een SKU-parameter toevoegen om verschillende grootten voor een resource op te geven. U kunt sjabloonfuncties gebruiken voor het maken van de standaardwaarde, zoals het verkrijgen van de locatie van de resourcegroep.
 
 ```bicep
 param storageSKU string = 'Standard_LRS'
 param location string = resourceGroup().location
 ```
 
-Zie [gegevens typen in sjablonen](data-types.md)voor de beschik bare gegevens typen.
+Zie Gegevenstypen in sjablonen voor [de beschikbare gegevenstypen.](data-types.md)
 
-Zie [para meters in sjablonen](template-parameters.md)voor meer informatie.
+Zie Parameters [in sjablonen voor meer informatie.](template-parameters.md)
 
-## <a name="parameter-decorators"></a>Para meters voor Constructors
+## <a name="parameter-decorators"></a>Parameterparameters
 
-U kunt een of meer versieers voor elke para meter toevoegen. Deze conversies definiëren de waarden die zijn toegestaan voor de para meter. In het volgende voor beeld worden de Sku's opgegeven die via het Bicep-bestand kunnen worden geïmplementeerd.
+U kunt een of meer aaneenvoegers toevoegen voor elke parameter. Deze verantwoordelijken definiëren de waarden die zijn toegestaan voor de parameter. In het volgende voorbeeld worden de SKU's opgegeven die kunnen worden geïmplementeerd via het Bicep-bestand.
 
 ```bicep
 @allowed([
@@ -144,36 +144,36 @@ U kunt een of meer versieers voor elke para meter toevoegen. Deze conversies def
 param storageSKU string = 'Standard_LRS'
 ```
 
-De volgende tabel beschrijft de beschik bare versie van versieer en hoe u deze kunt gebruiken.
+In de volgende tabel worden de beschikbare makers beschreven en wordt beschreven hoe u deze kunt gebruiken.
 
 | Decorator | Van toepassing op | Argument | Description |
 | --------- | ---- | ----------- | ------- |
-| toegestaan | all | matrix | Toegestane waarden voor de para meter. Gebruik deze decorator om er zeker van te zijn dat de gebruiker de juiste waarden geeft. |
-| beschrijving | all | tekenreeks | Tekst waarin wordt uitgelegd hoe de para meter moet worden gebruikt. De beschrijving wordt weer gegeven voor gebruikers via de portal. |
-| Lengte | matrix, teken reeks | int | De maximale lengte voor teken reeks-en matrix parameters. De waarde is inclusief. |
-| maxValue | int | int | De maximum waarde voor de para meter integer. Deze waarde is inclusief. |
-| metagegevens | all | object | Aangepaste eigenschappen die moeten worden toegepast op de para meter. Kan een eigenschap Description bevatten die gelijk is aan de beschrijving decorator. |
-| minLength | matrix, teken reeks | int | De minimale lengte voor teken reeks-en matrix parameters. De waarde is inclusief. |
-| minValue | int | int | De minimum waarde voor de para meter integer. Deze waarde is inclusief. |
-| beveiligd | teken reeks, object | geen | Markeert de para meter als beveiligd. De waarde voor een beveiligde para meter wordt niet opgeslagen in de implementatie geschiedenis en wordt niet geregistreerd. Zie [beveiligde teken reeksen en objecten](data-types.md#secure-strings-and-objects)voor meer informatie. |
+| Toegestaan | all | matrix | Toegestane waarden voor de parameter . Gebruik deze bewaarder om ervoor te zorgen dat de gebruiker de juiste waarden levert. |
+| beschrijving | all | tekenreeks | Tekst waarin wordt uitgelegd hoe u de parameter gebruikt. De beschrijving wordt weergegeven voor gebruikers via de portal. |
+| Maxlength | matrix, tekenreeks | int | De maximale lengte voor tekenreeks- en matrixparameters. De waarde is inclusief. |
+| maxValue | int | int | De maximumwaarde voor de parameter integer. Deze waarde is inclusief. |
+| metagegevens | all | object | Aangepaste eigenschappen die moeten worden toegepast op de parameter. Kan een beschrijvings-eigenschap bevatten die gelijk is aan de beschrijvingsdealator. |
+| minLength | matrix, tekenreeks | int | De minimale lengte voor tekenreeks- en matrixparameters. De waarde is inclusief. |
+| minValue | int | int | De minimumwaarde voor de parameter integer. Deze waarde is inclusief. |
+| Veilige | tekenreeks, object | geen | Markeert de parameter als veilig. De waarde voor een beveiligde parameter wordt niet opgeslagen in de implementatiegeschiedenis en wordt niet geregistreerd. Zie Beveiligde tekenreeksen en [objecten voor meer informatie.](data-types.md#secure-strings-and-objects) |
 
 ## <a name="variables"></a>Variabelen
 
-Gebruik variabelen voor complexe expressies die worden herhaald in een Bicep-bestand. U kunt bijvoorbeeld een variabele toevoegen voor een resource naam die is gemaakt door verschillende waarden samen te voegen.
+Gebruik variabelen voor complexe expressies die worden herhaald in een Bicep-bestand. U kunt bijvoorbeeld een variabele toevoegen voor een resourcenaam die wordt samengesteld door verschillende waarden samen te voegen.
 
 ```bicep
 var uniqueStorageName = '${storagePrefix}${uniqueString(resourceGroup().id)}'
 ```
 
-U geeft geen [gegevens type](data-types.md) op voor een variabele. In plaats daarvan wordt het gegevens type afgeleid van de waarde.
+U geeft geen gegevenstype [op voor](data-types.md) een variabele. In plaats daarvan wordt het gegevenstype afgeleid van de waarde.
 
-Zie [variabelen in sjablonen](template-variables.md)voor meer informatie.
+Zie Variabelen in [sjablonen voor meer informatie.](template-variables.md)
 
 ## <a name="resource"></a>Resource
 
-Gebruik het `resource` sleutel woord om een resource te definiëren die u wilt implementeren. De resource declaratie bevat een symbolische naam voor de resource. U gebruikt deze symbolische naam in andere delen van het Bicep-bestand als u een waarde uit de resource moet ophalen.
+Gebruik het `resource` trefwoord om een resource te definiëren die moet worden geïmplementeerd. Uw resourcedeclaratie bevat een symbolische naam voor de resource. U gebruikt deze symbolische naam in andere delen van het Bicep-bestand als u een waarde uit de resource wilt krijgen.
 
-De resource verklaring bevat ook het resource type en de API-versie.
+De resourcedeclaratie bevat ook het resourcetype en de API-versie.
 
 ```bicep
 resource stg 'Microsoft.Storage/storageAccounts@2019-06-01' = {
@@ -189,11 +189,11 @@ resource stg 'Microsoft.Storage/storageAccounts@2019-06-01' = {
 }
 ```
 
-In uw resource verklaring neemt u de eigenschappen voor het resource type op. Deze eigenschappen zijn uniek voor elk resource type.
+In de resourcedeclaratie gebruikt u eigenschappen voor het resourcetype. Deze eigenschappen zijn uniek voor elk resourcetype.
 
-Zie [resource verklaring in sjablonen](resource-declaration.md)voor meer informatie.
+Zie Resourcedeclaratie [in sjablonen voor meer informatie.](resource-declaration.md)
 
-Als u [een resource voorwaardelijk wilt implementeren](conditional-resource-deployment.md), voegt u een `if` expressie toe.
+Als [u een resource voorwaardelijk wilt implementeren,](conditional-resource-deployment.md)voegt u een expressie `if` toe.
 
 ```bicep
 resource sa 'Microsoft.Storage/storageAccounts@2019-06-01' = if (newOrExisting == 'new') {
@@ -209,7 +209,7 @@ resource sa 'Microsoft.Storage/storageAccounts@2019-06-01' = if (newOrExisting =
 }
 ```
 
-Als u [meer dan één exemplaar](https://github.com/Azure/bicep/blob/main/docs/spec/loops.md) van een resource type wilt implementeren, voegt u een `for` expressie toe. De expressie kan worden doorlopend voor leden van een matrix.
+Als [u meer dan één exemplaar van een](https://github.com/Azure/bicep/blob/main/docs/spec/loops.md) resourcetype wilt implementeren, voegt u een expressie `for` toe. De expressie kan worden overgenomen door leden van een matrix.
 
 ```bicep
 resource sa 'Microsoft.Storage/storageAccounts@2019-06-01' = [for storageName in storageAccounts: {
@@ -239,17 +239,17 @@ module webModule './webApp.bicep' = {
 }
 ```
 
-Met de symbolische naam kunt u naar de module verwijzen vanuit een andere locatie in het bestand. U kunt bijvoorbeeld een uitvoer waarde uit een module ophalen met behulp van de symbolische naam en de naam van de uitvoer waarde.
+Met de symbolische naam kunt u vanuit een andere map in het bestand naar de module verwijzen. U kunt bijvoorbeeld een uitvoerwaarde van een module krijgen met behulp van de symbolische naam en de naam van de uitvoerwaarde.
 
 Net als bij resources kunt u een module voorwaardelijk of iteratief implementeren. De syntaxis is hetzelfde voor modules als resources.
 
-Zie [Bicep-modules gebruiken](bicep-modules.md)voor meer informatie.
+Zie [Bicep-modules gebruiken voor meer informatie.](bicep-modules.md)
 
-## <a name="resource-and-module-decorators"></a>Resource-en module-conversies
+## <a name="resource-and-module-decorators"></a>Resource- en moduledelers
 
-U kunt een decorator toevoegen aan een resource of module definitie. De enige ondersteunde decorator is `batchSize(int)` . U kunt deze alleen Toep assen op een resource of module definitie die gebruikmaakt van een `for` expressie.
+U kunt eenator toevoegen aan een resource- of moduledefinitie. De enige ondersteundeator is `batchSize(int)` . U kunt deze alleen toepassen op een resource- of moduledefinitie die gebruikmaakt van een `for` expressie.
 
-Standaard worden bronnen parallel geïmplementeerd. U weet niet de volg orde waarin deze zijn voltooid. Wanneer u de `batchSize` decorator toevoegt, implementeert u instanties serieel. Gebruik het argument integer om het aantal exemplaren op te geven dat parallel moet worden geïmplementeerd.
+Standaard worden resources parallel geïmplementeerd. U weet niet in welke volgorde ze zijn gefinisht. Wanneer u `batchSize` deator toevoegt, implementeert u exemplaren serieel. Gebruik het argument integer om het aantal exemplaren op te geven dat parallel moet worden geïmplementeerd.
 
 ```bicep
 @batchSize(3)
@@ -258,25 +258,25 @@ resource storageAccountResources 'Microsoft.Storage/storageAccounts@2019-06-01' 
 }]
 ```
 
-Zie [serieel of parallel](copy-resources.md#serial-or-parallel)voor meer informatie.
+Zie Serieel of [parallel voor meer informatie.](copy-resources.md#serial-or-parallel)
 
 ## <a name="outputs"></a>Uitvoerwaarden
 
-Gebruik uitvoer om de waarde van de implementatie te retour neren. Normaal gesp roken retourneert u een waarde uit een geïmplementeerde resource wanneer u deze waarde opnieuw moet gebruiken voor een andere bewerking.
+Gebruik uitvoer om de waarde van de implementatie te retourneren. Normaal gesproken retourneert u een waarde van een geïmplementeerde resource wanneer u die waarde opnieuw moet gebruiken voor een andere bewerking.
 
 ```bicep
 output storageEndpoint object = stg.properties.primaryEndpoints
 ```
 
-Geef een [gegevens type](data-types.md) op voor de uitvoer waarde.
+Geef een [gegevenstype op](data-types.md) voor de uitvoerwaarde.
 
-Zie [uitvoer in sjablonen](template-outputs.md)voor meer informatie.
+Zie [Outputs in templates (Uitvoer in sjablonen) voor meer informatie.](template-outputs.md)
 
 ## <a name="comments"></a>Opmerkingen
 
-Gebruiken `//` voor opmerkingen met één regel of `/* ... */` voor opmerkingen met meerdere regels
+Gebruiken `//` voor opmerkingen van één regel of voor opmerkingen van meerdere `/* ... */` lijnen
 
-In het volgende voor beeld ziet u een opmerking met één regel.
+In het volgende voorbeeld ziet u een opmerking met één regel.
 
 ```bicep
 // This is your primary NIC.
@@ -285,7 +285,7 @@ resource nic1 'Microsoft.Network/networkInterfaces@2020-06-01' = {
 }
 ```
 
-In het volgende voor beeld ziet u een opmerking met meerdere regels.
+In het volgende voorbeeld ziet u een opmerking met meerdere lijnen.
 
 ```bicep
 /*
@@ -295,15 +295,15 @@ In het volgende voor beeld ziet u een opmerking met meerdere regels.
 param existingKeyVaultName string
 ```
 
-## <a name="multi-line-strings"></a>Reeksen met meerdere regels
+## <a name="multi-line-strings"></a>Tekenreeksen met meerdere lijnen
 
-U kunt een teken reeks opsplitsen in meerdere regels. Gebruik drie enkele aanhalings tekens `'''` om de teken reeks met meerdere regels te starten en te beëindigen. 
+U kunt een tekenreeks in meerdere regels ops breken. Gebruik drie enkele aangavetekens om de tekenreeks met meerdere regel te `'''` starten en te beëindigen.
 
-De tekens in de teken reeks met meerdere regels worden verwerkt als-is. Escape-tekens zijn niet nodig. U kunt `'''` in de teken reeks met meerdere regels niet gebruiken. Interpolatie van teken reeksen wordt momenteel niet ondersteund.
+Tekens in de tekenreeks met meerdere lijnen worden verwerkt zoals ze zijn. Escapetekens zijn niet nodig. U kunt niet opnemen `'''` in de tekenreeks met meerdere lijnen. Tekenreeksinterpolatie wordt momenteel niet ondersteund.
 
-U kunt de teken reeks direct starten nadat het openen `'''` of toevoegen van een nieuwe regel. In beide gevallen bevat de resulterende teken reeks geen nieuwe regel. Afhankelijk van de regel die in uw Bicep-bestand eindigt, worden nieuwe regels geïnterpreteerd als `\r\n` of `\n` .
+U kunt de tekenreeks direct na het openen starten of `'''` een nieuwe regel opnemen. In beide gevallen bevat de resulterende tekenreeks geen nieuwe regel. Afhankelijk van de regeleinden in uw Bicep-bestand, worden nieuwe regels geïnterpreteerd als `\r\n` of `\n` .
 
-In het volgende voor beeld ziet u een teken reeks met meerdere regels.
+In het volgende voorbeeld ziet u een tekenreeks met meerdere lijnen.
 
 ```bicep
 var stringVar = '''
@@ -313,7 +313,7 @@ this is multi-line
 '''
 ```
 
-Het vorige voor beeld is gelijk aan de volgende JSON.
+Het voorgaande voorbeeld is gelijk aan de volgende JSON.
 
 ```json
 "variables": {
@@ -323,4 +323,4 @@ Het vorige voor beeld is gelijk aan de volgende JSON.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [Wat is Bicep?](bicep-overview.md)voor een inleiding tot Bicep.
+Zie Wat is Bicep? voor een inleiding [tot Bicep.](bicep-overview.md)

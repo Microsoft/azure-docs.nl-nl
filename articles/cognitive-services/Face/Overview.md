@@ -11,12 +11,12 @@ ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: gezichtsherkenning, gezichtsherkenningssoftware, gezichtsanalyse, gezichtsvergelijking, gezichtsherkennings-app, gezichten zoeken binnen een afbeelding, zoekfunctie voor gezichtsherkenning
-ms.openlocfilehash: 26076289d8c6659abdd55fa805c27b13690feccd
-ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
+ms.openlocfilehash: a999b2100dc57d7b623cebbbe261f821a80835e3
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "107258738"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107505119"
 ---
 # <a name="what-is-the-azure-face-service"></a>Wat is de Azure Face-service?
 
@@ -30,17 +30,17 @@ De Azure Face-service biedt AI-algoritmen voor het detecteren, herkennen en anal
 De Face-service biedt verschillende functies voor gezichtsanalyse die in de volgende secties worden beschreven.
 
 Deze documentatie bevat de volgende typen artikelen:
-* In de [Quick](./Quickstarts/client-libraries.md) starts vindt u stapsgewijze instructies voor het aanroepen van de service en het verkrijgen van resultaten in korte tijd. 
-* De [hand leidingen](./Face-API-How-to-Topics/HowtoDetectFacesinImage.md) bevatten instructies voor het gebruik van de service op meer specifieke of aangepaste manieren.
-* De [conceptuele artikelen](./concepts/face-detection.md) bevatten gedetailleerde uitleg over de functionaliteit en functies van de service.
-* De [zelf studies](./Tutorials/FaceAPIinCSharpTutorial.md) zijn meer gidsen die laten zien hoe u deze service kunt gebruiken als onderdeel in bredere zakelijke oplossingen.
+* De [quickstarts](./Quickstarts/client-libraries.md) zijn stapsgewijs instructies voor het aanroepen van de service en het in korte tijd krijgen van resultaten. 
+* De [instructiegidsen bevatten](./Face-API-How-to-Topics/HowtoDetectFacesinImage.md) instructies voor het gebruik van de service op specifiekere of aangepaste manieren.
+* De [conceptuele artikelen](./concepts/face-detection.md) bevatten uitgebreide uitleg over de functionaliteit en functies van de service.
+* De [zelfstudies zijn](./enrollment-overview.md) langere handleidingen die laten zien hoe u deze service kunt gebruiken als onderdeel van bredere zakelijke oplossingen.
 
 ## <a name="face-detection"></a>Gezichtsdetectie
 
-De detectie-API detecteert menselijke gezichten in een afbeelding en retourneert de rechthoek coördinaten van hun locaties. Gezichtsdetectie kan desgewenst een reeks gezichtsgerelateerde kenmerken extraheren, zoals de houding van het hoofd, geslacht, leeftijd, emotie, gezichtsbeharing en of er een bril gedragen wordt. Deze kenmerken zijn algemene voor spellingen, geen werkelijke classificaties. 
+De Detect-API detecteert menselijke gezichten in een afbeelding en retourneert de rechthoekcoördinaten van hun locaties. Gezichtsdetectie kan desgewenst een reeks gezichtsgerelateerde kenmerken extraheren, zoals de houding van het hoofd, geslacht, leeftijd, emotie, gezichtsbeharing en of er een bril gedragen wordt. Deze kenmerken zijn algemene voorspellingen, geen werkelijke classificaties. 
 
 > [!NOTE]
-> De functie voor gezichtsdetectie is ook beschikbaar via de [Computer Vision-service](../computer-vision/overview.md). Als u echter nog meer bewerkingen wilt uitvoeren, zoals identificeren, controleren, vergelijk bare of groep, moet u deze face-service gebruiken.
+> De functie voor gezichtsdetectie is ook beschikbaar via de [Computer Vision-service](../computer-vision/overview.md). Als u echter meer Face-bewerkingen wilt uitvoeren, zoals Identificeren, Verifiëren, Vergelijkbaar zoeken of Groeperen, moet u in plaats daarvan deze Face-service gebruiken.
 
 ![Een afbeelding van een vrouw en een man met rechthoeken getekend rond de gezichten, en de leeftijd en het geslacht weergegeven](./Images/Face.detection.jpg)
 
@@ -48,11 +48,11 @@ Zie het artikel over concepten van [gezichtsdetectie](concepts/face-detection.md
 
 ## <a name="face-verification"></a>Gezichtsverificatie
 
-De controle van de API wordt op detectie gebaseerd en de vraag wordt opgelost. "zijn deze twee installatie kopieën dezelfde persoon?". Verificatie wordt ook wel ' een-op-een-overeenkomst ' genoemd, omdat de test installatie kopie wordt vergeleken met één Inge schreven sjabloon. Verificatie kan worden gebruikt in de identiteits controle of scenario's voor toegangs beheer om te controleren of een afbeelding overeenkomt met een eerder vastgelegde afbeelding (zoals een foto van een door de overheid uitgegeven ID-kaart). Zie voor meer informatie de handleiding over concepten van [Gezichtsherkenning](concepts/face-recognition.md) of de referentiedocumentatie over de [Verificatie API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523a).
+De Verify-API bouwt voort op Detectie en beantwoordt de vraag: 'Zijn deze twee afbeeldingen dezelfde persoon?'. Verificatie wordt ook wel 'een-op-een' genoemd, omdat de testafbeelding wordt vergeleken met slechts één ingeschreven sjabloon. Verificatie kan worden gebruikt in scenario's voor identiteitsverificatie of toegangsbeheer om te controleren of een afbeelding overeenkomt met een eerder vastgelegde afbeelding (zoals van een foto van een door de overheid uitgegeven id-kaart). Zie voor meer informatie de handleiding over concepten van [Gezichtsherkenning](concepts/face-recognition.md) of de referentiedocumentatie over de [Verificatie API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523a).
 
 ## <a name="face-identification"></a>Gezichtsidentificatie
 
-De Identify-API begint ook met de detectie en beantwoordt de vraag ' kan dit gedetecteerde gezicht worden vergeleken met een Inge schreven gezicht in een data base? ' Omdat de zoek opdracht als gezichts herkenning wordt gezocht, wordt ook ' een-op-veel-overeenkomst ' genoemd. Kandidaat-overeenkomsten worden geretourneerd op basis van de mate waarin de test sjabloon met het gedetecteerde gezicht overeenkomt met elk van de geregistreerde sjablonen.
+De Identify-API begint ook met Detectie en beantwoordt de vraag 'Kan dit gedetecteerde gezicht worden gematcht met een geregistreerd gezicht in een database?' Omdat het lijkt op zoeken in gezichtsherkenning, wordt ook wel 'een-op-veel'-matching genoemd. Mogelijke overeenkomsten worden geretourneerd op basis van hoe nauwkeurig de testsjabloon met het gedetecteerde gezicht overeenkomt met elk van de ingeschreven sjablonen.
 
 In de volgende afbeelding ziet u een voorbeeld van een database met de naam `"myfriends"`. Elke groep kan maximaal 1 miljoen verschillende persoonsobjecten bevatten. Voor elk persoonsobject kunnen maximaal 248 gezichten zijn geregistreerd.
 

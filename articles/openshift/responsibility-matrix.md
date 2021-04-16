@@ -7,12 +7,12 @@ ms.date: 4/12/2021
 author: sakthi-vetrivel
 ms.author: suvetriv
 keywords: aro, openshift, az aro, red hat, cli, RACI, support
-ms.openlocfilehash: 364b0a04e3394efcacba00c538218ecee2355f89
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 4bb00cb533d0065a992831f09ed8280c96efcdee
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107495021"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107537009"
 ---
 # <a name="overview-of-responsibilities-for-azure-red-hat-openshift"></a>Overzicht van verantwoordelijkheden voor Azure Red Hat OpenShift
 
@@ -190,7 +190,7 @@ De klant en Microsoft en Red Hat delen de verantwoordelijkheid voor de bewaking 
    <td>
 <ul>
 
-<li>Beveilig netwerkverkeer dat optioneel is geconfigureerd via VNet-naar-VNet-verbinding, VPN-verbinding of Private Link-verbinding op mogelijke problemen of beveiligingsrisico's.
+<li>Beveilig netwerkverkeer dat optioneel is geconfigureerd via VNet-naar-VNet-verbinding, VPN-verbinding of Private Link-verbinding voor potentiële problemen of beveiligingsrisico's.
 </li>
 </ul>
    </td>
@@ -340,7 +340,7 @@ Microsoft en Red Hat zijn verantwoordelijk voor het inschakelen van wijzigingen 
    <td>
 <ul>
 
-<li>Gebruik van besturingsvlak bewaken (hoofdknooppunten)
+<li>Het gebruik van het besturingsvlak bewaken (hoofdknooppunten)
 
 <li>Beheervlakknooppunten schalen en/of het beheervlak het schalen en/of het schalen om de kwaliteit van de service te behouden
 
@@ -405,14 +405,14 @@ Identiteits- en toegangsbeheer omvat alle verantwoordelijkheden om ervoor te zor
    <td>
 <ul>
 
-<li>Systeemeigen OpenShift RBAC en mogelijkheden voor toegewezen beheerders bieden.
+<li>Biedt native OpenShift RBAC-mogelijkheden.
 </li>
 </ul>
    </td>
    <td>
 <ul>
 
-<li>OpenShift dedicated-admins en RBAC configureren om de toegang tot routeconfiguratie te beheren, indien nodig.
+<li>Configureer OpenShift RBAC om de toegang tot de routeconfiguratie zo nodig te bepalen.
 </li>
 </ul>
    </td>
@@ -423,7 +423,7 @@ Identiteits- en toegangsbeheer omvat alle verantwoordelijkheden om ervoor te zor
    <td>
 <ul>
 
-<li>Systeemeigen OpenShift RBAC en mogelijkheden voor toegewezen beheerders bieden.
+<li>Biedt native OpenShift RBAC-mogelijkheden.
 </li>
 </ul>
    </td>
@@ -434,7 +434,7 @@ Identiteits- en toegangsbeheer omvat alle verantwoordelijkheden om ervoor te zor
 
 <li>Beheer organisatiebeheerders voor Red Hat om toegang te verlenen tot OpenShift Cluster Manager.
 
-<li>OpenShift dedicated-admins en RBAC configureren om de toegang tot routeconfiguratie te beheren, indien nodig.
+<li>Configureer OpenShift RBAC om de toegang tot de routeconfiguratie zo nodig te bepalen.
 </li>
 </ul>
    </td>
@@ -482,7 +482,7 @@ Beveiliging en naleving omvatten alle verantwoordelijkheden en controles die zor
    <td>
 <ul>
 
-<li>Cluster auditlogboeken verzenden naar een Microsoft en Red Hat SIEM voor het analyseren van beveiligingsgebeurtenissen. Behoudt auditlogboeken voor een bepaalde periode ter ondersteuning van forensische analyse.
+<li>Clustercontrolelogboeken verzenden naar een Microsoft- en Red Hat SIEM om te analyseren op beveiligingsgebeurtenissen. Behoudt auditlogboeken voor een bepaalde periode ter ondersteuning van forensische analyse.
 </li>
 </ul>
    </td>
@@ -509,7 +509,7 @@ Beveiliging en naleving omvatten alle verantwoordelijkheden en controles die zor
    <td>
 <ul>
 
-<li>Optioneel geconfigureerde onderdelen van virtuele netwerken controleren op mogelijke problemen en beveiligingsrisico's.
+<li>Beveilig optioneel geconfigureerde onderdelen van virtuele netwerken op mogelijke problemen en beveiligingsrisico's.
 
 <li>Configureer indien nodig de benodigde firewallregels of datacenterbeveiligingen.
 </li>
@@ -527,7 +527,7 @@ Tabel 5. Gedeelde verantwoordelijkheden voor naleving van beveiliging en regelge
 
 ### <a name="customer-data-and-applications"></a>Klantgegevens en -toepassingen
 
-De klant is verantwoordelijk voor de toepassingen, workloads en gegevens die ze implementeren in Azure Red Hat OpenShift. Microsoft en Red Hat bieden echter verschillende hulpprogramma's waarmee de klant gegevens en toepassingen op het platform kan beheren.
+De klant is verantwoordelijk voor de toepassingen, workloads en gegevens die in de Azure Red Hat OpenShift. Microsoft en Red Hat bieden echter verschillende hulpprogramma's waarmee de klant gegevens en toepassingen op het platform kan beheren.
 
 
 <table>
@@ -544,7 +544,7 @@ De klant is verantwoordelijk voor de toepassingen, workloads en gegevens die ze 
    <td>
 <ul>
 
-<li>Behoud standaarden op platformniveau voor gegevensversleuteling zoals gedefinieerd door beveiligings- en nalevingsstandaarden in de branche. 
+<li>Behoud standaarden op platformniveau voor gegevensversleuteling zoals gedefinieerd door beveiligings- en nalevingsstandaarden van de branche. 
 
 <li>OpenShift-onderdelen bieden voor het beheren van toepassingsgegevens, zoals geheimen.
 
@@ -583,7 +583,7 @@ De klant is verantwoordelijk voor de toepassingen, workloads en gegevens die ze 
 
 <li>Als een klant Red Hat, de community, derden, hun eigen of andere services aan het cluster toevoegt met operators of externe afbeeldingen, is de klant verantwoordelijk voor deze services en voor het werken met de juiste provider (inclusief Red Hat) om eventuele problemen op te lossen.
 
-<li>Gebruik de geleverde hulpprogramma's en functies om <a href="https://docs.openshift.com/dedicated/4/architecture/understanding-development.html#application-types">te configureren en te implementeren;</a> <a href="https://docs.openshift.com/dedicated/4/applications/deployments/deployment-strategies.html">up-to-date houden;</a> <a href="https://docs.openshift.com/dedicated/4/applications/working-with-quotas.html">resourceaanvragen en -limieten instellen;</a> <a href="https://docs.openshift.com/dedicated/4/getting_started/scaling-your-cluster.html">het cluster zo groot maken dat het voldoende resources heeft om apps uit te voeren;</a> <a href="https://docs.openshift.com/dedicated/4/administering_a_cluster/dedicated-admin-role.html#dedicated-admin-granting-permissions_dedicated-administrator">machtigingen instellen;</a> integreren met andere services; <a href="https://docs.openshift.com/dedicated/4/openshift_images/images-understand.html">afbeeldingsstreams of sjablonen beheren die de klant implementeert;</a> <a href="https://docs.openshift.com/dedicated/4/cloud_infrastructure_access/dedicated-aws-private-cluster.html">extern dienen;</a> gegevens opslaan, er een back-up van maken en gegevens herstellen; en op andere wijze hun zeer beschikbare en flexibele workloads beheren.
+<li>Gebruik de geleverde hulpprogramma's en functies om <a href="https://docs.openshift.com/aro/4/architecture/understanding-development.html#application-types">te configureren en te implementeren;</a> <a href="https://docs.openshift.com/aro/4/applications/deployments/deployment-strategies.html">up-to-date houden;</a> <a href="https://docs.openshift.com/aro/4/applications/working-with-quotas.html">resourceaanvragen en -limieten instellen;</a> <a href="https://docs.openshift.com/aro/4/getting_started/scaling-your-cluster.html">het cluster zo groot maken dat het voldoende resources heeft om apps uit te voeren;</a> <a href="https://docs.openshift.com/aro/4/administering_a_cluster/">machtigingen instellen;</a> integreren met andere services; <a href="https://docs.openshift.com/aro/4/openshift_images/images-understand.html">afbeeldingsstreams of sjablonen beheren die de klant implementeert;</a> <a href="https://docs.openshift.com/aro/4/cloud_infrastructure_access">extern dienen;</a> gegevens opslaan, er een back-up van maken en gegevens herstellen; en op andere wijze hun zeer beschikbare en flexibele workloads beheren.
 
 <li>Behoudt de verantwoordelijkheid voor het bewaken van de toepassingen die worden uitgevoerd op Azure Red Hat OpenShift; inclusief het installeren en beheren van software voor het verzamelen van metrische gegevens en het maken van waarschuwingen.
 </li>

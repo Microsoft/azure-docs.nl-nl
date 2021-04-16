@@ -1,9 +1,9 @@
 ### YamlMime:Landing
-title: Documentatie over het bijwerken van apparaten voor IoT Hub
-summary: Update van het apparaat voor IoT Hub is een service waarmee u over-the-Air-updates (OTA) kunt implementeren op uw IoT-apparaten.
+title: Apparaatupdate voor IoT Hub documentatie
+summary: Apparaatupdate voor IoT Hub is een service waarmee u over-the-air updates (OTA) kunt implementeren op uw IoT-apparaten.
 metadata:
-  title: Documentatie over het bijwerken van apparaten voor IoT Hub
-  description: Update van het apparaat voor IoT Hub is een service waarmee u over-the-Air-updates (OTA) kunt implementeren op uw IoT-apparaten.
+  title: Apparaatupdate voor IoT Hub documentatie
+  description: Apparaatupdate voor IoT Hub is een service waarmee u over-the-air updates (OTA) kunt implementeren op uw IoT-apparaten.
   services: iot-hub
   ms.service: iot-hub
   ms.topic: landing-page
@@ -11,62 +11,62 @@ metadata:
   ms.author: philmea
   manager: philmea
   ms.date: 2/17/2021
-  ms.openlocfilehash: 8943e22428d6f510b374ef31938257ec08a0dff6
-  ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+  ms.openlocfilehash: 9fd99eeefcae6667dfcc9a11c7d623f5d213ffac
+  ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
   ms.translationtype: MT
   ms.contentlocale: nl-NL
   ms.lasthandoff: 04/13/2021
-  ms.locfileid: "107312090"
+  ms.locfileid: "107377816"
 landingContent:
-- title: Over het bijwerken van het apparaat
+- title: Over apparaatupdate
   linkLists:
   - linkListType: overview
     links:
-    - text: Wat is apparaat bijwerken voor IoT Hub?
+    - text: Wat is Apparaatupdate voor IoT Hub?
       url: understand-device-update.md
 - title: Lees meer
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Een update account voor een apparaat maken
+    - text: Een apparaatupdateaccount maken
       url: create-device-update-account.md
-    - text: Update van het apparaat voor Azure IoT Hub agent inrichten
+    - text: Agent voor apparaatupdates inrichten
       url: device-update-agent-provisioning.md
     - text: Een update importeren
       url: import-update.md
-    - text: Een update groep maken
+    - text: Een updategroep maken
       url: create-update-group.md
     - text: Een update implementeren
       url: deploy-update.md
   - linkListType: concept
     links:
-    - text: Het gebruik van Plug en Play voor het bijwerken van apparaten
+    - text: Hoe apparaatupdate gebruikmaakt van Plug en Play
       url: device-update-plug-and-play.md
-    - text: De verificatie en autorisatie van het apparaat bijwerken
+    - text: Verificatie en autorisatie van apparaatupdates begrijpen
       url: device-update-control-access.md
-    - text: Informatie over de Update Agent van het apparaat
+    - text: Informatie over de agent voor apparaatupdates
       url: device-update-agent-overview.md
-    - text: Informatie over het importeren van het apparaat bijwerken
+    - text: Informatie over het importeren van apparaatupdates
       url: import-concepts.md
-    - text: Informatie over update groepen voor apparaten
+    - text: Informatie over apparaatupdategroepen
       url: device-update-groups.md
 - title: Ontwikkelaarsgids
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Update Agent voor apparaten bouwen en uitvoeren
+    - text: Agent voor apparaatupdates bouwen en uitvoeren
       url: device-update-agent-provisioning.md#how-to-build-and-run-device-update-agent
 - title: Aan de slag
   linkLists:
   - linkListType: tutorial
     links:
-    - text: Apparaat bijwerken op een simulator
+    - text: Apparaatupdate in een simulator
       url: device-update-simulator.md
-    - text: Apparaat bijwerken op Raspberry pi
+    - text: Apparaatupdate op Raspberry Pi
       url: device-update-raspberry-pi.md
-    - text: Apparaat bijwerken op Ubuntu Server 18,04 x64-pakket agent
+    - text: Apparaatupdate op Ubuntu Server 18.04 x64 Package agent
       url: device-update-ubuntu-agent.md
-- title: Naslag informatie over API en SDK
+- title: API- en SDK-naslaginformatie
   linkLists:
   - linkListType: reference
     links:
@@ -74,15 +74,15 @@ landingContent:
       url: https://docs.microsoft.com/rest/api/deviceupdate/
   - linkListType: reference
     links:
-    - text: Besturings vlak-.NET
+    - text: Besturingsvlak - .NET
       url: https://docs.microsoft.com/dotnet/api/overview/azure/iot/management?view=azure-dotnet
-    - text: Besturings vlak-python
+    - text: Besturingsvlak - Python
       url: https://docs.microsoft.com/python/api/azure-mgmt-deviceupdate/?view=azure-python
   - linkListType: reference
     links:
-    - text: Gegevens vlak-java script
+    - text: Gegevensvlak - JavaScript
       url: https://docs.microsoft.com/javascript/api/@azure/iot-device-update/?view=azure-node-preview
-    - text: Gegevens vlak-java
+    - text: Gegevensvlak - Java
       url: https://docs.microsoft.com/java/api/com.azure.iot.deviceupdate?view=azure-java-preview
-    - text: Gegevens vlak-python
+    - text: Gegevensvlak - Python
       url: https://docs.microsoft.com/python/api/azure-mgmt-deviceupdate/azure.mgmt.deviceupdate?view=azure-python-preview

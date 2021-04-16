@@ -1,33 +1,33 @@
 ---
-title: Application Insights Java In-Process-agent gebruiken in azure lente-Cloud
-description: Apps en micro services bewaken met Application Insights Java In-Process agent in azure lente Cloud.
+title: Java-agent Application Insights In-Process in Azure Spring Cloud
+description: Apps en microservices bewaken met behulp van Application Insights Java In-Process Agent in Azure Spring Cloud.
 author: MikeDodaro
 ms.author: brendm
 ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 12/04/2020
-ms.custom: devx-track-java
-ms.openlocfilehash: f6f1ed1a3e09397a720dfd4d842b79cd88aa738d
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: c7083cb6669d7bc779a8e69babfef38988819f8c
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104878134"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107483770"
 ---
-# <a name="application-insights-java-in-process-agent-in-azure-spring-cloud-preview"></a>Application Insights Java In-Process-agent in azure lente Cloud (preview-versie)
+# <a name="application-insights-java-in-process-agent-in-azure-spring-cloud-preview"></a>Application Insights Java In-Process Agent in Azure Spring Cloud (preview)
 
-In dit document wordt uitgelegd hoe u apps en micro services bewaken met behulp van de Application Insights Java-agent in azure lente Cloud. 
+In dit document wordt uitgelegd hoe u apps en microservices bewaakt met behulp van Application Insights Java-agent in Azure Spring Cloud. 
 
 Met deze functie kunt u het volgende doen:
 
 * Traceringsgegevens zoeken met verschillende filters.
-* Afhankelijkheids toewijzing van micro services weer geven.
-* Controleer de prestaties van de aanvraag.
-* Real-time dynamische metrische gegevens bewaken.
-* Controleren op mislukte aanvragen.
+* Afhankelijkheidskaart van microservices weergeven.
+* Controleer de prestaties van aanvragen.
+* Realtime live metrische gegevens bewaken.
+* Controleer mislukte aanvragen.
 * Controleer de metrische gegevens van de toepassing.
 
-Application Insights bieden een groot aantal waarneem bare perspectieven, waaronder:
+Application Insights bieden veel waarneembare perspectieven, waaronder:
 
 * Overzicht van de toepassing
 * Prestaties
@@ -36,22 +36,22 @@ Application Insights bieden een groot aantal waarneem bare perspectieven, waaron
 * Live Metrics
 * Beschikbaarheid
 
-## <a name="enable-java-in-process-agent-for-application-insights"></a>Java In-Process-agent voor Application Insights inschakelen
+## <a name="enable-java-in-process-agent-for-application-insights"></a>Java In-Process-agent inschakelen voor Application Insights
 
-Gebruik de volgende procedure om de preview-functie van Java In-Process agent in te scha kelen.
+Schakel de previewIn-Process functie java-agent in met behulp van de volgende procedure.
 
-1. Ga naar de pagina service overzicht van uw service-exemplaar.
-2. Klik op **Application Insights** item onder bewaking Blade.
-3. Klik op **inschakelen Application Insights** knop om **Application Insights** integratie in te scha kelen.
-4. Selecteer een bestaande instantie van Application Insights of maak een nieuwe.
-5. Kuiken **schakelt java in-process agent** in om preview-functie java in-process in te scha kelen. Hier kunt u ook de sampling frequentie aanpassen van 0 tot 100.
+1. Ga naar de overzichtspagina van uw service-exemplaar.
+2. Klik **Application Insights** op de blade Bewaking.
+3. Klik **op de Application Insights** inschakelen om de integratie **Application Insights** inschakelen.
+4. Selecteer een bestaand exemplaar van Application Insights of maak een nieuw exemplaar.
+5. Enable **Java in-process agent to** enable preview Java in-process agent feature. Hier kunt u ook de samplingfrequentie van 0 tot 100 aanpassen.
 6.  Klik op **Opslaan** om de wijziging op te slaan.
 
 ## <a name="portal"></a>Portal
 
-1. Ga naar de **service | Overzicht** pagina en selecteer **Application Insights** in het gedeelte **bewaking** . 
-2. Klik op **inschakelen Application Insights** om Application Insights in te scha kelen in azure lente-Cloud.
-3. Klik op **Java inschakelen in process-agent** om de preview-functie van Java IPA in te scha kelen. Wanneer een IPA preview-functie is ingeschakeld, kunt u één optionele sampling frequentie (standaard 10,0%) configureren.
+1. Ga naar de **service | Overzichtspagina** en selecteer **Application Insights** in de **sectie** Bewaking. 
+2. Klik **op Application Insights** inschakelen om Application Insights in Azure Spring Cloud.
+3. Klik **op Enable Java in-process agent om** de Java IPA preview-functie in te schakelen. Wanneer een IPA-preview-functie is ingeschakeld, kunt u één optionele steekproeffrequentie configureren (standaard 10,0%).
 
   [![IPA 0](media/spring-cloud-application-insights/insights-process-agent-0.png)](media/spring-cloud-application-insights/insights-process-agent-0.png)
 
@@ -59,36 +59,36 @@ Gebruik de volgende procedure om de preview-functie van Java In-Process agent in
 
 Wanneer de **Application Insights** functie is ingeschakeld, kunt u het volgende doen:
 
-Klik in het navigatie deel venster links op **Application Insights** om naar de pagina **overzicht** van Application Insights te gaan. 
+Klik in het linkernavigatiedeelvenster **op Application Insights** naar de **pagina** Overzicht van Application Insights. 
 
-* Klik op **toepassings toewijzing** om de status van aanroepen tussen toepassingen weer te geven.
+* Klik **op Toepassingskaart** om de status van aanroepen tussen toepassingen te bekijken.
 
   [![IPA 2](media/spring-cloud-application-insights/insights-process-agent-2-map.png)](media/spring-cloud-application-insights/insights-process-agent-2-map.png)
 
-* Klik op de koppeling tussen klanten-service en `petclinic` om meer details weer te geven, zoals een query van SQL.
+* Klik op de koppeling tussen klanten-service en `petclinic` voor meer informatie, zoals een query van SQL.
 
-* Klik in het navigatie deel venster links op **prestaties** om de prestatie gegevens van alle toepassings bewerkingen te bekijken, evenals afhankelijkheden en rollen.
+* Klik in het linkernavigatiedeelvenster op **Prestaties** om de prestatiegegevens te zien van alle toepassingen, evenals afhankelijkheden en rollen.
 
   [![IPA 4](media/spring-cloud-application-insights/insights-process-agent-4-performance.png)](media/spring-cloud-application-insights/insights-process-agent-4-performance.png)
 
-* Klik in het navigatie deel venster links op **fouten** om te zien of er iets onverwacht van uw toepassingen is.
+* Klik in het linkernavigatiedeelvenster op **Fouten om** te zien of er iets onverwachts is voor uw toepassingen.
 
   [![IPA 6](media/spring-cloud-application-insights/insights-process-agent-6-failures.png)](media/spring-cloud-application-insights/insights-process-agent-6-failures.png)
 
-* Klik in het navigatie deel venster links op **metrische gegevens** en selecteer de naam ruimte. u ziet dan de standaard waarden voor veer boot en aangepaste metrische gegevens, indien van toepassing.
+* Klik in het linkernavigatiedeelvenster op Metrische gegevens en selecteer de naamruimte. U ziet zowel Spring Boot metrische gegevens als aangepaste metrische gegevens, indien van mij. 
 
   [![IPA 7](media/spring-cloud-application-insights/insights-process-agent-5-metrics.png)](media/spring-cloud-application-insights/insights-process-agent-5-metrics.png)
 
-* Klik in het navigatie deel venster aan de linkerkant op **Live metrische** gegevens om de metrische gegevens voor de realtime voor verschillende dimensies te bekijken.
+* Klik in het linkernavigatiedeelvenster op **Live Metrics om** de realtime metrische gegevens voor verschillende dimensies te bekijken.
 
   [![IPA 8](media/spring-cloud-application-insights/petclinic-microservices-live-metrics.jpg)](media/spring-cloud-application-insights/petclinic-microservices-live-metrics.jpg)
 
-* Klik in het navigatie deel venster links op **Beschik baarheid** om de beschik baarheid en reactie snelheid van web-apps te bewaken door [beschikbaarheids tests te maken in Application Insights](../azure-monitor/app/monitor-web-app-availability.md).
+* Klik in het navigatiedeelvenster links op **Beschikbaarheid om** de beschikbaarheid en reactiesnelheid van web-apps te controleren door [Beschikbaarheidstests te maken in Application Insights](../azure-monitor/app/monitor-web-app-availability.md).
 
   [![IPA 9](media/spring-cloud-application-insights/petclinic-microservices-availability.jpg)](media/spring-cloud-application-insights/petclinic-microservices-availability.jpg)
 
 ## <a name="arm-template"></a>ARM-sjabloon
-Als u de sjabloon Azure Resource Manager wilt gebruiken, kopieert u de volgende inhoud naar `azuredeploy.json` .
+Als u de sjabloon Azure Resource Manager, kopieert u de volgende inhoud naar `azuredeploy.json` .
 
 ```json
 {
@@ -121,22 +121,22 @@ Als u de sjabloon Azure Resource Manager wilt gebruiken, kopieert u de volgende 
 ```
 
 ## <a name="cli"></a>CLI
-ARM-sjabloon Toep assen met de CLI-opdracht:
+Pas de ARM-sjabloon toe met de CLI-opdracht:
 
-* Voor een bestaande Azure veer Cloud-instantie:
+* Voor een bestaand Azure Spring Cloud-exemplaar:
 
 ```azurecli
-az spring-cloud app-insights update [--app-insights/--app-insights-key] "assignedName" [--sampling-rate] "samplingRate" –name "assignedName" –resource-group "resourceGroupName"
+az spring-cloud app-insights update [--app-insights/--app-insights-key] "assignedName" [--sampling-rate] "samplingRate" â€“name "assignedName" â€“resource-group "resourceGroupName"
 ```
-* Voor een nieuw Azure lente Cloud-exemplaar:
+* Voor een nieuw gemaakt Azure Spring Cloud-exemplaar:
 
 ```azurecli
-az spring-cloud create/update [--app-insights]/[--app-insights-key] "assignedName" --disable-app-insights false --enable-java-agent true --name "assignedName" –resource-group "resourceGroupName"
+az spring-cloud create/update [--app-insights]/[--app-insights-key] "assignedName" --disable-app-insights false --enable-java-agent true --name "assignedName" â€“resource-group "resourceGroupName"
 ```
 * App-inzicht uitschakelen:
 
 ```azurecli
-az spring-cloud app-insights update --disable –name "assignedName" –resource-group "resourceGroupName"
+az spring-cloud app-insights update --disable â€“name "assignedName" â€“resource-group "resourceGroupName"
 
 ```
 

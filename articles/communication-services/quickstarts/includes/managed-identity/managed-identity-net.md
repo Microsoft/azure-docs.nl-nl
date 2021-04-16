@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a055cc1b715f93830647c9b13793a59d09db605c
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
-ms.translationtype: HT
+ms.openlocfilehash: fe487aa684e0ec4c68adb9f5224066ac742676be
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107512468"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107564614"
 ---
 ## <a name="setting-up"></a>Instellen
 
@@ -136,7 +136,7 @@ class Program
                Console.WriteLine("Sending SMS using Managed Identities");
 
                // You will need a phone number from your resource to send an SMS.
-               SmsSendResult result = instance.SendSms(endpoint, "+18445504651", "+14256253982", "Hello from Managed Identities");
+               SmsSendResult result = instance.SendSms(endpoint, "<Your ACS Phone Number>", "<The Phone Number you'd like to send the SMS to.>", "Hello from Managed Identities");
                Console.WriteLine($"Sms id: {result.MessageId}");
                Console.WriteLine($"Send Result Successful: {result.Successful}");
           }

@@ -1,25 +1,25 @@
 ---
-title: Logboeken van container instanties & gebeurtenissen ophalen
-description: Meer informatie over het ophalen van container logboeken en gebeurtenissen in Azure Container Instances voor het oplossen van container problemen
+title: Logboeken van container-exemplaren & gebeurtenissen
+description: Meer informatie over het ophalen van containerlogboeken en gebeurtenissen in Azure Container Instances om containerproblemen op te lossen
 ms.topic: article
 ms.date: 12/30/2019
-ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 20b6e1cfe6bb8f6ac721a401c3d0831d4f447edb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: mvc
+ms.openlocfilehash: b2b7ffb2cb4a7b1171afa42c2ef5a64b2bd928f8
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92746968"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107379278"
 ---
 # <a name="retrieve-container-logs-and-events-in-azure-container-instances"></a>Containerlogboeken en gebeurtenissen ophalen in Azure Container Instances
 
-Wanneer u een niet-gestarte container in Azure Container Instances hebt, moet u eerst de logboeken weer geven met [AZ container logs][az-container-logs], en de standaard-out en de standaard fout stroomen met [AZ container attach][az-container-attach]. U kunt ook logboeken en gebeurtenissen voor container instanties in het Azure Portal weer geven of logboek-en gebeurtenis gegevens voor container groepen naar [Azure monitor-logboeken](container-instances-log-analytics.md)verzenden.
+Als u een container in Azure Container Instances hebt die zich niet goed gedraagt, bekijkt u eerst de logboeken met [az container logs][az-container-logs]en streamt u de standaardfout out en standard met az container [attach][az-container-attach]. U kunt ook logboeken en gebeurtenissen voor container instances weergeven in de Azure Portal of logboek- en gebeurtenisgegevens voor containergroepen verzenden naar [Azure Monitor logboeken.](container-instances-log-analytics.md)
 
 ## <a name="view-logs"></a>Logboeken weergeven
 
-Als u logboeken wilt weer geven vanuit de code van uw toepassing in een container, kunt u de opdracht [AZ container logs][az-container-logs] gebruiken.
+Als u logboeken vanuit uw toepassingscode in een container wilt weergeven, kunt u de [opdracht az container logs][az-container-logs] gebruiken.
 
-Hieronder volgt een logboek uitvoer van de voor beeld-op taak gebaseerde container in [de opdracht regel in een container exemplaar instellen](container-instances-start-command.md#azure-cli-example), nadat een ongeldige URL is opgegeven met behulp van een opdracht regel onderdrukking:
+Hieronder volgt logboekuitvoer van de voorbeeldcontainer op basis van een taak in De opdrachtregel instellen in een [containerin](container-instances-start-command.md#azure-cli-example)instance nadat u een ongeldige URL hebt opgegeven met behulp van een opdrachtregel overschrijven:
 
 ```azurecli
 az container logs --resource-group myResourceGroup --name mycontainer
@@ -48,9 +48,9 @@ urllib.error.HTTPError: HTTP Error 404: Not Found
 
 ## <a name="attach-output-streams"></a>Uitvoerstromen koppelen
 
-De opdracht [AZ container attach][az-container-attach] bevat diagnostische gegevens tijdens het opstarten van de container. Zodra de container is gestart, worden STDOUT en STDERR naar uw lokale console gestreamd.
+De [opdracht az container attach][az-container-attach] biedt diagnostische informatie tijdens het opstarten van de container. Zodra de container is gestart, worden STDOUT en STDERR naar uw lokale console gestreamd.
 
-Hier ziet u bijvoorbeeld de uitvoer van de container op basis van een taak in [de opdracht regel in een container exemplaar instellen](container-instances-start-command.md#azure-cli-example), nadat u een geldige URL hebt opgegeven van een groot tekst bestand dat moet worden verwerkt:
+Hier is bijvoorbeeld uitvoer van de op taken gebaseerde container in De opdrachtregel instellen in een [container-instantie](container-instances-start-command.md#azure-cli-example)nadat u een geldige URL hebt opgegeven van een groot tekstbestand dat moet worden verwerkt:
 
 ```azurecli
 az container attach --resource-group myResourceGroup --name mycontainer
@@ -80,15 +80,15 @@ Start streaming logs:
  ('is', 8195)]
 ```
 
-## <a name="get-diagnostic-events"></a>Diagnostische gebeurtenissen ophalen
+## <a name="get-diagnostic-events"></a>Diagnostische gebeurtenissen op halen
 
-Als uw container niet kan worden geïmplementeerd, controleert u de diagnostische gegevens die door de Azure Container Instances resource provider zijn verstrekt. Als u de gebeurtenissen voor uw container wilt weer geven, voert u de opdracht [AZ container show][az-container-show] uit:
+Als de implementatie van uw container mislukt, controleert u de diagnostische gegevens die zijn verstrekt door de Azure Container Instances resourceprovider. Voer de opdracht az container [show][az-container-show] uit om de gebeurtenissen voor uw container weer te geven:
 
 ```azurecli-interactive
 az container show --resource-group myResourceGroup --name mycontainer
 ```
 
-De uitvoer bevat de kern eigenschappen van uw container, samen met de implementatie gebeurtenissen (die hier zijn afgekapt):
+De uitvoer bevat de kerneigenschappen van uw container, samen met implementatiegebeurtenissen (hier ingekort weergegeven):
 
 ```JSON
 {
@@ -149,9 +149,9 @@ De uitvoer bevat de kern eigenschappen van uw container, samen met de implementa
 }
 ```
 ## <a name="next-steps"></a>Volgende stappen
-Meer informatie over het [oplossen van veelvoorkomende problemen met betrekking tot containers en implementaties](container-instances-troubleshooting.md) voor Azure container instances.
+Meer informatie over het [oplossen van veelvoorkomende container- en](container-instances-troubleshooting.md) implementatieproblemen voor Azure Container Instances.
 
-Informatie over het verzenden van logboek-en gebeurtenis gegevens voor container groepen naar [Azure monitor-logboeken](container-instances-log-analytics.md).
+Meer informatie over het verzenden van logboek- en gebeurtenisgegevens voor containergroepen [naar Azure Monitor logboeken.](container-instances-log-analytics.md)
 
 <!-- LINKS - Internal -->
 [az-container-attach]: /cli/azure/container#az-container-attach

@@ -4,303 +4,297 @@ summary: Azure Active Directory (Azure AD) is een multi-tenant identiteit- en to
 brand: azure
 metadata:
   title: Documentatie voor Azure Active Directory
-  description: Azure Active Directory (Azure AD) is de multi-tenant directory- en identiteitsbeheerservice van Microsoft in de cloud die belangrijke directory services, toegangsbeheer voor toepassingen en identiteitsbeveiliging in één oplossing combineert.
+  description: 'Azure Active Directory (Azure AD) is de multi-tenant directory- en identiteitsbeheerservice van Microsoft in de cloud die belangrijke directory services, toegangsbeheer voor toepassingen en identiteitsbeveiliging in één oplossing combineert.'
   ms.service: active-directory
   ms.topic: hub-page
   ms.collection: M365-identity-device-management
   author: mtillman
   ms.author: mtillman
   manager: daveba
-  ms.date: 12/01/2020
-  ms.openlocfilehash: de96c1ed6828a6933102755d6c020cf01c4c9c7b
-  ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
-  ms.translationtype: MT
-  ms.contentlocale: nl-NL
-  ms.lasthandoff: 01/20/2021
-  ms.locfileid: "98611148"
+  ms.date: 04/14/2021
 highlightedContent:
   items:
-  - title: Wat is Azure AD?
-    itemType: overview
-    url: ./fundamentals/active-directory-whatis.md
-  - title: Wat is er nieuw in Azure AD?
-    itemType: whats-new
-    url: ./fundamentals/whats-new.md
-  - title: Beveilig uw externe personeel
-    itemType: get-started
-    url: /enterprise-mobility-security/remote-work/
-  - title: Rollen toewijzen aan gebruikers
-    itemType: how-to-guide
-    url: ./fundamentals/active-directory-users-assign-role-azure-portal.md
-  - title: Controlelijst voor Azure AD-implementatie
-    itemType: concept
-    url: ./fundamentals/active-directory-deployment-checklist-p2.md
-  - title: Tolerantie inbouwen in identiteit- en toegangsbeheer met Azure AD
-    itemType: overview
-    url: ./fundamentals/resilience-overview.md
+    - title: Wat is Azure AD?
+      itemType: overview
+      url: ./fundamentals/active-directory-whatis.md
+    - title: Wat is er nieuw in Azure AD?
+      itemType: whats-new
+      url: ./fundamentals/whats-new.md
+    - title: Beveilig uw externe personeel
+      itemType: get-started
+      url: /enterprise-mobility-security/remote-work/
+    - title: Wat zijn verifieerbare referenties (preview)?
+      itemType: overview
+      url: ./verifiable-credentials/decentralized-identifier-overview.md
+    - title: Controlelijst voor Azure AD-implementatie
+      itemType: concept
+      url: ./fundamentals/active-directory-deployment-checklist-p2.md
+    - title: Tolerantie inbouwen in identiteit- en toegangsbeheer met Azure AD
+      itemType: overview
+      url: ./fundamentals/resilience-overview.md
 conceptualContent:
   items:
-  - title: Toepassingsbeheer
-    links:
-    - url: ./manage-apps/what-is-application-management.md
-      itemType: overview
-      text: Wat is toepassingsbeheer?
-    - url: ./manage-apps/view-applications-portal.md
-      itemType: quickstart
-      text: De apps weergeven die gebruikmaken van uw tenant voor identiteitsbeheer
-    - url: ./manage-apps/add-application-portal-setup-sso.md
-      itemType: quickstart
-      text: Op SAML gebaseerde SSO instellen
-    footerLink:
-      url: ./manage-apps/index.yml
-      text: Meer informatie
-  - title: Toepassing- en HR-inrichting
-    links:
-    - url: ./app-provisioning/user-provisioning.md
-      itemType: overview
-      text: Wat is toepassingsinrichting?
-    - url: ./app-provisioning/how-provisioning-works.md
-      itemType: concept
-      text: Hoe toepassingsinrichting werkt
-    - url: ./app-provisioning/plan-cloud-hr-provision.md
-      itemType: how-to-guide
-      text: Cloud-implementatie van een HR-inrichting plannen
-    footerLink:
-      url: ./app-provisioning/index.yml
-      text: Meer informatie
-  - title: Verificatie
-    links:
-    - url: ./authentication/overview-authentication.md
-      itemType: concept
-      text: Wat is Azure AD-verificatie?
-    - url: ./authentication/tutorial-enable-sspr.md
-      itemType: tutorial
-      text: Selfservice voor wachtwoordherstel inschakelen
-    - url: ./authentication/tutorial-enable-azure-mfa.md
-      itemType: tutorial
-      text: Azure AD Multi-Factor Authentication inschakelen
-    footerLink:
-      url: ./authentication/index.yml
-      text: Meer informatie
-  - title: Cloud synchronisatie
-    links:
-    - url: ./cloud-sync/what-is-cloud-sync.md
-      itemType: overview
-      text: Wat is Cloud synchronisatie?
-    - url: ./cloud-sync/tutorial-single-forest.md
-      itemType: tutorial
-      text: Een enkele forest integreren met enkele Azure AD-tenant
-    - url: ./cloud-sync/how-to-install.md
-      itemType: how-to-guide
-      text: Azure AD Connect-inrichtings agent installeren
-    footerLink:
-      url: ./cloud-sync/index.yml
-      text: Meer informatie
-  - title: Voorwaardelijke toegang
-    links:
-    - url: ./conditional-access/overview.md
-      itemType: overview
-      text: Wat is voorwaardelijke toegang?
-    - url: ./authentication/tutorial-enable-azure-mfa.md
-      itemType: quickstart
-      text: Meervoudige verificatie vereisen voor specifieke apps
-    - url: ./conditional-access/location-condition.md
-      itemType: concept
-      text: Voorwaarden op basis van locatie
-    footerLink:
-      url: ./conditional-access/index.yml
-      text: Meer informatie
-  - title: Apparaatbeheer
-    links:
-    - url: ./devices/overview.md
-      itemType: overview
-      text: Wat is apparaatbeheer?
-    - url: ./devices/hybrid-azuread-join-plan.md
-      itemType: how-to-guide
-      text: Een hybride Azure AD-join plannen
-    - url: ./devices/azureadjoin-plan.md
-      itemType: how-to-guide
-      text: Een Azure AD-join plannen
-    footerLink:
-      url: ./devices/index.yml
-      text: Meer informatie
-  - title: Domeinservices
-    links:
-    - url: ../active-directory-domain-services/overview.md
-      itemType: overview
-      text: Wat is Azure AD Domain Services?
-    - url: ../active-directory-domain-services/tutorial-create-instance.md
-      itemType: quickstart
-      text: Azure AD Domain Services inschakelen
-    - url: ../active-directory-domain-services/manage-group-policy.md
-      itemType: how-to-guide
-      text: Groepsbeleid beheren
-    footerLink:
-      url: ../active-directory-domain-services/index.yml
-      text: Meer informatie
-  - title: Zakelijke gebruikers
-    links:
-    - url: ./enterprise-users/groups-create-rule.md
-      itemType: how-to-guide
-      text: Een dynamische groep maken
-    - url: ./enterprise-users/groups-settings-v2-cmdlets.md
-      itemType: how-to-guide
-      text: PowerShell voor Azure AD-groepen
-    - url: ./enterprise-users/directory-service-limits-restrictions.md
-      itemType: reference
-      text: Servicelimieten en -beperkingen voor Azure AD
-    footerLink:
-      url: ./enterprise-users/index.yml
-      text: Meer informatie
-  - title: Externe identiteiten
-    links:
-    - url: ./external-identities/compare-with-b2c.md
-      itemType: overview
-      text: Oplossingen voor externe gebruikers vergelijken
-    - url: ../active-directory-b2c/overview.md
-      itemType: overview
-      text: Uw apps schalen naar consumenten (B2C)
-    - url: ./external-identities/what-is-b2b.md
-      itemType: overview
-      text: Samenwerken met gebruikers buiten uw organisatie (B2B)
-    footerLink:
-      url: ./external-identities/index.yml
-      text: Meer informatie
-  - title: Hybride identiteit
-    links:
-    - url: ./hybrid/whatis-hybrid-identity.md
-      itemType: overview
-      text: Wat is hybride identiteit?
-    - url: ./hybrid/how-to-connect-sso.md
-      itemType: how-to-guide
-      text: Eenmalige aanmelding met Azure AD Connect
-    - url: ./hybrid/how-to-connect-install-custom.md
-      itemType: how-to-guide
-      text: Aangepaste Azure AD Connect-installatie
-    footerLink:
-      url: ./hybrid/index.yml
-      text: Meer informatie
-  - title: Identiteitsbeheer
-    links:
-    - url: ./governance/entitlement-management-access-package-first.md
-      itemType: how-to-guide
-      text: Een toegangspakket maken
-    - url: ./governance/create-access-review.md
-      itemType: how-to-guide
-      text: Een toegangsbeoordeling van een groep of app maken
-    - url: ./conditional-access/terms-of-use.md
-      itemType: how-to-guide
-      text: Gebruikers verplichten de gebruiksvoorwaarden te accepteren
-    footerLink:
-      url: ./governance/index.yml
-      text: Meer informatie
-  - title: Identiteitsbeveiliging
-    links:
-    - url: ./identity-protection/overview-identity-protection.md
-      itemType: overview
-      text: Wat is identiteitsbeveiliging?
-    - url: ./identity-protection/howto-identity-protection-configure-risk-policies.md
-      itemType: how-to-guide
-      text: Gebruikersrisicobeleid configureren
-    - url: ./identity-protection/howto-identity-protection-remediate-unblock.md
-      itemType: how-to-guide
-      text: Gebruikers deblokkeren
-    footerLink:
-      url: ./identity-protection/index.yml
-      text: Meer informatie
-  - title: Beheerde identiteiten voor Azure-resources
-    links:
-    - url: ./managed-identities-azure-resources/tutorial-windows-vm-access-sql.md
-      itemType: tutorial
-      text: Toegang krijgen tot Azure SQL met een virtuele Windows-machine
-    - url: ./managed-identities-azure-resources/how-to-use-vm-token.md
-      itemType: how-to-guide
-      text: Virtuele Azure-machine gebruiken om tokens te verkrijgen
-    - url: ./managed-identities-azure-resources/services-support-managed-identities.md
-      itemType: concept
-      text: Services die beheerde identiteiten ondersteunen
-    footerLink:
-      url: ./managed-identities-azure-resources/index.yml
-      text: Meer informatie
-  - title: Microsoft-identiteitsplatform
-    links:
-    - url: ./develop/v2-overview.md
-      itemType: overview
-      text: Over het Microsoft Identity Platform
-    - url: ./develop/v2-oauth2-auth-code-flow.md
-      itemType: concept
-      text: Toestemming voor OAuth 2.0-codestroom
-    - url: ./develop/quickstart-register-app.md
-      itemType: quickstart
-      text: Een app registreren bij het Microsoft Identity Platform
-    footerLink:
-      url: ./develop/index.yml
-      text: Meer informatie
-  - title: Privileged Identity Management (PIM)
-    links:
-    - url: ./privileged-identity-management/pim-getting-started.md
-      itemType: how-to-guide
-      text: Beginnen met PIM
-    - url: ./privileged-identity-management/pim-how-to-activate-role.md
-      itemType: how-to-guide
-      text: Mijn directory-rollen activeren
-    - url: ./privileged-identity-management/pim-how-to-add-role-to-user.md
-      itemType: how-to-guide
-      text: Directory-rollen toewijzen
-    footerLink:
-      url: ./privileged-identity-management/index.yml
-      text: Meer informatie
-  - title: Rapporten en controle
-    links:
-    - url: ./reports-monitoring/concept-audit-logs.md
-      itemType: concept
-      text: Auditlogboeken
-    - url: ./reports-monitoring/concept-sign-ins.md
-      itemType: concept
-      text: Aanmeldingslogboeken
-    - url: ./reports-monitoring/reference-sign-ins-error-codes.md
-      itemType: reference
-      text: Naslaginformatie over foutcodes voor aanmelding
-    footerLink:
-      url: ./reports-monitoring/index.yml
-      text: Meer informatie
-  - title: Rollen
-    links:
-    - url: ./roles/groups-assign-role.md
-      itemType: concept
-      text: Inzicht in de Azure AD-rollen
-    - url: ./roles/concept-understand-roles.md
-      itemType: how-to-guide
-      text: Een aangepaste rol maken
-    - url: ./roles/groups-view-assignments.md
-      itemType: reference
-      text: Rollen weergeven die zijn toegewezen aan een groep
-    footerLink:
-      url: ./roles/index.yml
-      text: Meer informatie
-  - title: Externe toepassingen
-    links:
-    - url: ./saas-apps/amazon-web-service-tutorial.md
-      itemType: tutorial
-      text: Integratie van eenmalige aanmelding van Azure AD met Amazon Web Services
-    - url: ./saas-apps/workday-inbound-tutorial.md
-      itemType: tutorial
-      text: Workday configureren voor automatische gebruikersinrichting
-    - url: ./develop/v2-howto-app-gallery-listing.md
-      itemType: get-started
-      text: Aanvragen om uw app toe te voegen aan galerie
-    footerLink:
-      url: ./saas-apps/tutorial-list.md
-      text: Meer apps bekijken
+    - title: Toepassingsbeheer
+      links:
+        - url: ./manage-apps/what-is-application-management.md
+          itemType: overview
+          text: Wat is toepassingsbeheer?
+        - url: ./manage-apps/view-applications-portal.md
+          itemType: quickstart
+          text: De apps weergeven die gebruikmaken van uw tenant voor identiteitsbeheer
+        - url: ./manage-apps/add-application-portal-setup-sso.md
+          itemType: quickstart
+          text: Op SAML gebaseerde SSO instellen
+      footerLink:
+        url: ./manage-apps/index.yml
+        text: Meer informatie
+    - title: Toepassing- en HR-inrichting
+      links:
+        - url: ./app-provisioning/user-provisioning.md
+          itemType: overview
+          text: Wat is toepassingsinrichting?
+        - url: ./app-provisioning/how-provisioning-works.md
+          itemType: concept
+          text: Hoe toepassingsinrichting werkt
+        - url: ./app-provisioning/plan-cloud-hr-provision.md
+          itemType: how-to-guide
+          text: Cloud-implementatie van een HR-inrichting plannen
+      footerLink:
+        url: ./app-provisioning/index.yml
+        text: Meer informatie
+    - title: Verificatie
+      links:
+        - url: ./authentication/overview-authentication.md
+          itemType: concept
+          text: Wat is Azure AD-verificatie?
+        - url: ./authentication/tutorial-enable-sspr.md
+          itemType: tutorial
+          text: Selfservice voor wachtwoordherstel inschakelen
+        - url: ./authentication/tutorial-enable-azure-mfa.md
+          itemType: tutorial
+          text: Azure AD Multi-Factor Authentication inschakelen
+      footerLink:
+        url: ./authentication/index.yml
+        text: Meer informatie
+    - title: Cloudsynchronisatie
+      links:
+        - url: ./cloud-sync/what-is-cloud-sync.md
+          itemType: overview
+          text: Wat is cloudsynchronisatie?
+        - url: ./cloud-sync/tutorial-single-forest.md
+          itemType: tutorial
+          text: Een enkele forest integreren met enkele Azure AD-tenant
+        - url: ./cloud-sync/how-to-install.md
+          itemType: how-to-guide
+          text: Een inrichtingsagent Azure AD Connect installeren
+      footerLink:
+        url: ./cloud-sync/index.yml
+        text: Meer informatie
+    - title: Voorwaardelijke toegang
+      links:
+        - url: ./conditional-access/overview.md
+          itemType: overview
+          text: Wat is voorwaardelijke toegang?
+        - url: ./authentication/tutorial-enable-azure-mfa.md
+          itemType: quickstart
+          text: Meervoudige verificatie vereisen voor specifieke apps
+        - url: ./conditional-access/location-condition.md
+          itemType: concept
+          text: Voorwaarden op basis van locatie
+      footerLink:
+        url: ./conditional-access/index.yml
+        text: Meer informatie
+    - title: Apparaatbeheer
+      links:
+        - url: ./devices/overview.md
+          itemType: overview
+          text: Wat is apparaatbeheer?
+        - url: ./devices/hybrid-azuread-join-plan.md
+          itemType: how-to-guide
+          text: Een hybride Azure AD-join plannen
+        - url: ./devices/azureadjoin-plan.md
+          itemType: how-to-guide
+          text: Een Azure AD-join plannen
+      footerLink:
+        url: ./devices/index.yml
+        text: Meer informatie
+    - title: Domeinservices
+      links:
+        - url: ../active-directory-domain-services/overview.md
+          itemType: overview
+          text: Wat is Azure AD Domain Services?
+        - url: ../active-directory-domain-services/tutorial-create-instance.md
+          itemType: quickstart
+          text: Azure AD Domain Services inschakelen
+        - url: ../active-directory-domain-services/manage-group-policy.md
+          itemType: how-to-guide
+          text: Groepsbeleid beheren
+      footerLink:
+        url: ../active-directory-domain-services/index.yml
+        text: Meer informatie
+    - title: Zakelijke gebruikers
+      links:
+        - url: ./enterprise-users/groups-create-rule.md
+          itemType: how-to-guide
+          text: Een dynamische groep maken
+        - url: ./enterprise-users/groups-settings-v2-cmdlets.md
+          itemType: how-to-guide
+          text: PowerShell voor Azure AD-groepen
+        - url: ./enterprise-users/directory-service-limits-restrictions.md
+          itemType: reference
+          text: Servicelimieten en -beperkingen voor Azure AD
+      footerLink:
+        url: ./enterprise-users/index.yml
+        text: Meer informatie
+    - title: Externe identiteiten
+      links:
+        - url: ./external-identities/compare-with-b2c.md
+          itemType: overview
+          text: Oplossingen voor externe gebruikers vergelijken
+        - url: ../active-directory-b2c/overview.md
+          itemType: overview
+          text: Uw apps schalen naar consumenten (B2C)
+        - url: ./external-identities/what-is-b2b.md
+          itemType: overview
+          text: Samenwerken met gebruikers buiten uw organisatie (B2B)
+      footerLink:
+        url: ./external-identities/index.yml
+        text: Meer informatie
+    - title: Hybride identiteit
+      links:
+        - url: ./hybrid/whatis-hybrid-identity.md
+          itemType: overview
+          text: Wat is hybride identiteit?
+        - url: ./hybrid/how-to-connect-sso.md
+          itemType: how-to-guide
+          text: Eenmalige aanmelding met Azure AD Connect
+        - url: ./hybrid/how-to-connect-install-custom.md
+          itemType: how-to-guide
+          text: Aangepaste Azure AD Connect-installatie
+      footerLink:
+        url: ./hybrid/index.yml
+        text: Meer informatie
+    - title: Identiteitsbeheer
+      links:
+        - url: ./governance/entitlement-management-access-package-first.md
+          itemType: how-to-guide
+          text: Een toegangspakket maken
+        - url: ./governance/create-access-review.md
+          itemType: how-to-guide
+          text: Een toegangsbeoordeling van een groep of app maken
+        - url: ./conditional-access/terms-of-use.md
+          itemType: how-to-guide
+          text: Gebruikers verplichten de gebruiksvoorwaarden te accepteren
+      footerLink:
+        url: ./governance/index.yml
+        text: Meer informatie
+    - title: Identiteitsbeveiliging
+      links:
+        - url: ./identity-protection/overview-identity-protection.md
+          itemType: overview
+          text: Wat is identiteitsbeveiliging?
+        - url: ./identity-protection/howto-identity-protection-configure-risk-policies.md
+          itemType: how-to-guide
+          text: Gebruikersrisicobeleid configureren
+        - url: ./identity-protection/howto-identity-protection-remediate-unblock.md
+          itemType: how-to-guide
+          text: Gebruikers deblokkeren
+      footerLink:
+        url: ./identity-protection/index.yml
+        text: Meer informatie
+    - title: Beheerde identiteiten voor Azure-resources
+      links:
+        - url: ./managed-identities-azure-resources/tutorial-windows-vm-access-sql.md
+          itemType: tutorial
+          text: Toegang krijgen tot Azure SQL met een virtuele Windows-machine
+        - url: ./managed-identities-azure-resources/how-to-use-vm-token.md
+          itemType: how-to-guide
+          text: Virtuele Azure-machine gebruiken om tokens te verkrijgen
+        - url: ./managed-identities-azure-resources/services-support-managed-identities.md
+          itemType: concept
+          text: Services die beheerde identiteiten ondersteunen
+      footerLink:
+        url: ./managed-identities-azure-resources/index.yml
+        text: Meer informatie
+    - title: Microsoft-identiteitsplatform
+      links:
+        - url: ./develop/v2-overview.md
+          itemType: overview
+          text: Over het Microsoft Identity Platform
+        - url: ./develop/v2-oauth2-auth-code-flow.md
+          itemType: concept
+          text: Toestemming voor OAuth 2.0-codestroom
+        - url: ./develop/quickstart-register-app.md
+          itemType: quickstart
+          text: Een app registreren bij het Microsoft Identity Platform
+      footerLink:
+        url: ./develop/index.yml
+        text: Meer informatie
+    - title: Privileged Identity Management (PIM)
+      links:
+        - url: ./privileged-identity-management/pim-getting-started.md
+          itemType: how-to-guide
+          text: Beginnen met PIM
+        - url: ./privileged-identity-management/pim-how-to-activate-role.md
+          itemType: how-to-guide
+          text: Mijn directory-rollen activeren
+        - url: ./privileged-identity-management/pim-how-to-add-role-to-user.md
+          itemType: how-to-guide
+          text: Directory-rollen toewijzen
+      footerLink:
+        url: ./privileged-identity-management/index.yml
+        text: Meer informatie
+    - title: Rapporten en controle
+      links:
+        - url: ./reports-monitoring/concept-audit-logs.md
+          itemType: concept
+          text: Auditlogboeken
+        - url: ./reports-monitoring/concept-sign-ins.md
+          itemType: concept
+          text: Aanmeldingslogboeken
+        - url: ./reports-monitoring/reference-sign-ins-error-codes.md
+          itemType: reference
+          text: Naslaginformatie over foutcodes voor aanmelding
+      footerLink:
+        url: ./reports-monitoring/index.yml
+        text: Meer informatie
+    - title: Rollen
+      links:
+        - url: ./roles/groups-assign-role.md
+          itemType: concept
+          text: Inzicht in de Azure AD-rollen
+        - url: ./roles/concept-understand-roles.md
+          itemType: how-to-guide
+          text: Een aangepaste rol maken
+        - url: ./roles/groups-view-assignments.md
+          itemType: reference
+          text: Rollen weergeven die zijn toegewezen aan een groep
+      footerLink:
+        url: ./roles/index.yml
+        text: Meer informatie
+    - title: Externe toepassingen
+      links:
+        - url: ./saas-apps/amazon-web-service-tutorial.md
+          itemType: tutorial
+          text: Integratie van eenmalige aanmelding van Azure AD met Amazon Web Services
+        - url: ./saas-apps/workday-inbound-tutorial.md
+          itemType: tutorial
+          text: Workday configureren voor automatische gebruikersinrichting
+        - url: ./develop/v2-howto-app-gallery-listing.md
+          itemType: get-started
+          text: Aanvragen om uw app toe te voegen aan galerie
+      footerLink:
+        url: ./saas-apps/tutorial-list.md
+        text: Meer apps bekijken
 additionalContent:
   sections:
-  - items:
-    - title: Microsoft 365
-      summary: Verken Microsoft 365, een complete oplossing met Azure AD.
-      url: /microsoft-365/
-    - title: Azure AD PowerShell
-      summary: Informatie over hoe u de Azure AD PowerShell-module installeert en gebruikt.
-      url: /powershell/module/azuread/
-    - title: Azure CLI-opdrachten voor Azure AD
-      summary: De Azure AD-opdrachten in de CLI-verwijzing zoeken.
-      url: /cli/azure/ad
+    - items:
+        - title: Microsoft 365
+          summary: 'Verken Microsoft 365, een complete oplossing met Azure AD.'
+          url: /microsoft-365/
+        - title: Azure AD PowerShell
+          summary: Informatie over hoe u de Azure AD PowerShell-module installeert en gebruikt.
+          url: /powershell/module/azuread/
+        - title: Azure CLI-opdrachten voor Azure AD
+          summary: De Azure AD-opdrachten in de CLI-verwijzing zoeken.
+          url: /cli/azure/ad

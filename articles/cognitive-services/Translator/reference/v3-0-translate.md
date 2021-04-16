@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 08/06/2020
 ms.author: lajanuar
-ms.openlocfilehash: 148aa722515d9364ce5af85b3f7c3b39958c9c91
-ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
+ms.openlocfilehash: 7c92fb7f5de5542af08d1335bea745557a330f0d
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/14/2021
-ms.locfileid: "107388377"
+ms.locfileid: "107506003"
 ---
 # <a name="translator-30-translate"></a>Translator 3.0: Vertalen
 
@@ -44,7 +44,7 @@ Aanvraagparameters die worden doorgegeven aan de queryreeks zijn:
   </tr>
   <tr>
     <td>tot</td>
-    <td><em>Vereiste parameter</em>.<br/>Hiermee geeft u de taal van de uitvoertekst. De doeltaal moet een van de <a href="./v3-0-languages.md">ondersteunde talen in</a> het bereik <code>translation</code> zijn. Gebruik bijvoorbeeld om <code>to=de</code> te vertalen naar het Duits.<br/>Het is mogelijk om naar meerdere talen tegelijk te vertalen door de parameter in de queryreeks te herhalen. Gebruik bijvoorbeeld om <code>to=de&to=it</code> te vertalen naar het Duits en Italiaans.</td>
+    <td><em>Vereiste parameter</em>.<br/>Hiermee geeft u de taal van de uitvoertekst. De doeltaal moet een van de <a href="./v3-0-languages.md">ondersteunde talen zijn die</a> zijn opgenomen in het <code>translation</code> bereik. Gebruik bijvoorbeeld om <code>to=de</code> te vertalen naar het Duits.<br/>Het is mogelijk om naar meerdere talen tegelijk te vertalen door de parameter in de queryreeks te herhalen. Gebruik bijvoorbeeld om <code>to=de&to=it</code> te vertalen naar het Duits en Italiaans.</td>
   </tr>
 </table>
 
@@ -59,7 +59,7 @@ Aanvraagparameters die worden doorgegeven aan de queryreeks zijn:
   </tr>  
   <tr>
     <td>textType</td>
-    <td><em>Optionele parameter</em>.<br/>Hiermee definieert u of de tekst die wordt vertaald platte tekst of HTML-tekst is. Elke HTML moet een goed gevormd, volledig element zijn. Bij het vertalen van HTML-tekst bevat de uitvoertekst de volgende speciale tekens in de vorm van een escape-teken: '&', '<' en '>'. Dit staat los van het gegeven of de html-invoertekst de tekens bevat met een escape-teken. Mogelijke waarden zijn: <code>plain</code> (standaard) of <code>html</code>.</td>
+    <td><em>Optionele parameter</em>.<br/>Hiermee definieert u of de tekst die wordt vertaald platte tekst of HTML-tekst is. Elke HTML moet een goed gevormd, volledig element zijn. Mogelijke waarden zijn: <code>plain</code> (standaard) of <code>html</code>.</td>
   </tr>
   <tr>
     <td>category</td>
@@ -95,7 +95,7 @@ Aanvraagparameters die worden doorgegeven aan de queryreeks zijn:
   </tr>
   <tr>
     <td>allowFallback</td>
-    <td><em>Optionele parameter</em>.<br/>Hiermee geeft u op dat de service mag terugvallen op een algemeen systeem wanneer er geen aangepast systeem bestaat. Mogelijke waarden zijn: <code>true</code> (standaard) of <code>false</code> .<br/><br/><code>allowFallback=false</code> geeft aan dat de vertaling alleen systemen mag gebruiken die zijn getraind voor <code>category</code> de die zijn opgegeven door de aanvraag. Als voor een vertaling van taal X naar taal Y ketens via een draaitaal E vereist zijn, moeten alle systemen in de keten (X->E en E->Y) aangepast zijn en dezelfde categorie hebben. Als er geen systeem wordt gevonden met de specifieke categorie, retournt de aanvraag een statuscode van 400. <code>allowFallback=true</code> geeft aan dat de service mag terugvallen op een algemeen systeem wanneer er geen aangepast systeem bestaat.
+    <td><em>Optionele parameter</em>.<br/>Hiermee geeft u op dat de service mag terugvallen op een algemeen systeem wanneer een aangepast systeem niet bestaat. Mogelijke waarden zijn: <code>true</code> (standaard) of <code>false</code> .<br/><br/><code>allowFallback=false</code> geeft aan dat de vertaling alleen systemen moet gebruiken die zijn getraind voor <code>category</code> de die zijn opgegeven door de aanvraag. Als voor een vertaling van taal X naar taal Y ketens zijn vereist via een draaitaal E, moeten alle systemen in de keten (X->E en E->Y) aangepast zijn en dezelfde categorie hebben. Als er geen systeem wordt gevonden met de specifieke categorie, retournt de aanvraag een statuscode van 400. <code>allowFallback=true</code> geeft aan dat de service mag terugvallen op een algemeen systeem wanneer een aangepast systeem niet bestaat.
 </td>
   </tr>
 </table> 
@@ -135,8 +135,8 @@ De body van de aanvraag is een JSON-matrix. Elk matrixelement is een JSON-object
 
 De volgende beperkingen zijn van toepassing:
 
-* De matrix kan uit niet meer dan 100 elementen bevatten.
-* De volledige tekst die in de aanvraag is opgenomen, mag niet langer zijn dan 10.000 tekens, inclusief spaties.
+* De matrix kan uit niet meer dan 100 elementen zijn.
+* De volledige tekst in de aanvraag mag niet langer zijn dan 10.000 tekens, inclusief spaties.
 
 ## <a name="response-body"></a>Hoofdtekst van de reactie
 
@@ -146,7 +146,7 @@ Een geslaagd antwoord is een JSON-matrix met één resultaat voor elke tekenreek
 
       * `language`: Een tekenreeks die de code van de gedetecteerde taal vertegenwoordigt.
 
-      * `score`: Een float-waarde die het vertrouwen in het resultaat aangeeft. De score ligt tussen nul en één en een lage score geeft een lage betrouwbaarheid aan.
+      * `score`: Een floatwaarde die de betrouwbaarheid in het resultaat aangeeft. De score ligt tussen nul en één en een lage score geeft een lage betrouwbaarheid aan.
 
     De `detectedLanguage` eigenschap is alleen aanwezig in het resultaatobject wanneer automatische taaldetectie wordt aangevraagd.
 
@@ -156,9 +156,9 @@ Een geslaagd antwoord is een JSON-matrix met één resultaat voor elke tekenreek
 
     * `text`: Een tekenreeks die de vertaalde tekst geeft.
 
-    * `transliteration`: Een -object dat de vertaalde tekst geeft in het script dat is opgegeven door de `toScript` parameter .
+    * `transliteration`: Een -object dat de vertaalde tekst in het script geeft dat is opgegeven door de `toScript` parameter .
 
-      * `script`: Een tekenreeks die het doelscript opgeeft.   
+      * `script`: een tekenreeks die het doelscript opgeeft.   
 
       * `text`: Een tekenreeks die de vertaalde tekst in het doelscript geeft.
 
@@ -218,7 +218,7 @@ Hier volgen de mogelijke HTTP-statuscodes die een aanvraag retourneert.
   </tr>
   <tr>
     <td>408</td>
-    <td>De aanvraag kan niet worden voltooid omdat een resource ontbreekt. Controleer het foutbericht met details. Wanneer u een aangepaste gebruikt, geeft dit vaak aan dat het aangepaste vertaalsysteem nog niet beschikbaar <code>category</code> is voor het verwerken van aanvragen. De aanvraag moet opnieuw worden ingediend na een wachttijd (bijvoorbeeld 1 minuut).</td>
+    <td>De aanvraag kan niet worden voltooid omdat er een resource ontbreekt. Controleer het foutbericht met details. Wanneer u een aangepaste gebruikt, geeft dit vaak aan dat het aangepaste vertaalsysteem nog niet beschikbaar is voor <code>category</code> het verwerken van aanvragen. De aanvraag moet na een wachttijd (bijvoorbeeld 1 minuut) opnieuw worden ingediend.</td>
   </tr>
   <tr>
     <td>429</td>
@@ -234,7 +234,7 @@ Hier volgen de mogelijke HTTP-statuscodes die een aanvraag retourneert.
   </tr>
 </table> 
 
-Als er een fout optreedt, retourneert de aanvraag ook een JSON-foutbericht. De foutcode is een 6-cijferig getal dat de 3-cijferige HTTP-statuscode combineert, gevolgd door een getal van 3 cijfers om de fout verder te categoriseren. Algemene foutcodes vindt u op de [v3 Translator-referentiepagina.](./v3-0-reference.md#errors) 
+Als er een fout optreedt, retourneert de aanvraag ook een JSON-foutbericht. De foutcode is een 6-cijferig getal dat de 3-cijferige HTTP-statuscode combineert, gevolgd door een 3-cijferig getal om de fout verder te categoriseren. Veelvoorkomende foutcodes vindt u op de [v3 Translator-referentiepagina.](./v3-0-reference.md#errors) 
 
 ## <a name="examples"></a>Voorbeelden
 
@@ -258,11 +258,11 @@ De antwoord-body is:
 ]
 ```
 
-De matrix bevat één element, waarmee één stukje tekst in de `translations` invoer wordt vertaald.
+De `translations` matrix bevat één element, dat de vertaling van het enige stukje tekst in de invoer biedt.
 
 ### <a name="translate-a-single-input-with-language-auto-detection"></a>Eén invoer vertalen met automatische taaldetectie
 
-In dit voorbeeld ziet u hoe u één zin van het Engels kunt vertalen naar vereenvoudigd Chinees. De aanvraag geeft de invoertaal niet op. In plaats daarvan wordt automatische detectie van de brontaal gebruikt.
+In dit voorbeeld ziet u hoe u één zin van het Engels kunt vertalen naar vereenvoudigd Chinees. In de aanvraag wordt de invoertaal niet opgegeven. In plaats daarvan wordt automatische detectie van de brontaal gebruikt.
 
 ```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=zh-Hans" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'Hello, what is your name?'}]"
@@ -280,11 +280,11 @@ De antwoord-body is:
     }
 ]
 ```
-Het antwoord is vergelijkbaar met het antwoord uit het vorige voorbeeld. Omdat automatische taaldetectie is aangevraagd, bevat het antwoord ook informatie over de taal die is gedetecteerd voor de invoertekst. De automatische taaldetectie werkt beter met langere invoertekst.
+Het antwoord is vergelijkbaar met het antwoord uit het vorige voorbeeld. Omdat automatische taaldetectie is aangevraagd, bevat het antwoord ook informatie over de taal die is gedetecteerd voor de invoertekst. Automatische detectie van de taal werkt beter met langere invoertekst.
 
 ### <a name="translate-with-transliteration"></a>Vertalen met transliteratie
 
-We gaan het vorige voorbeeld uitbreiden door transliteratie toe te voegen. In de volgende aanvraag wordt gevraagd om een Chinese vertaling die is geschreven in het Latijnse script.
+We gaan het vorige voorbeeld uitbreiden door transliteratie toe te voegen. In de volgende aanvraag wordt om een Chinese vertaling gevraagd die is geschreven in het Latijnse script.
 
 ```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=zh-Hans&toScript=Latn" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'Hello, what is your name?'}]"
@@ -311,7 +311,7 @@ Het vertaalresultaat bevat nu een eigenschap, waarmee de vertaalde tekst wordt `
 
 ### <a name="translate-multiple-pieces-of-text"></a>Meerdere tekstteksten vertalen
 
-Het vertalen van meerdere tekenreeksen tegelijk is simpelweg een kwestie van het opgeven van een matrix met tekenreeksen in de aanvraag body.
+Het omzetten van meerdere tekenreeksen tegelijk is gewoon een kwestie van het opgeven van een matrix met tekenreeksen in de aanvraag body.
 
 ```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-Hans" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'Hello, what is your name?'}, {'Text':'I am fine, thank you.'}]"
@@ -358,9 +358,9 @@ De antwoord-body is:
 
 ### <a name="handle-profanity"></a>Grof taalgebruik afhandelen
 
-Normaal gesproken behoudt de Translator-service grof taalgebruik dat aanwezig is in de bron in de vertaling. De mate van grof taalgebruik en de context waardoor woorden grof zijn, verschillen tussen culturen. Als gevolg hiervan kan de mate van grof taalgebruik in de doeltaal worden versterkt of verminderd.
+Normaal gesproken behoudt de Translator-service grof taalgebruik dat aanwezig is in de bron in de vertaling. De mate van grof taalgebruik en de context waardoor woorden grof zijn, verschillen tussen culturen en als gevolg hiervan kan de mate van grof taalgebruik in de doeltaal worden versterkt of verminderd.
 
-Als u wilt voorkomen dat de vertaling grof taalgebruik krijgt, ongeacht de aanwezigheid van grof taalgebruik in de brontekst, kunt u de filteroptie voor grof taalgebruik gebruiken. Met de optie kunt u kiezen of u grof taalgebruik wilt zien, of u grof taalgebruik wilt markeren met de juiste tags (zodat u uw eigen naverwerking kunt toevoegen) of dat u geen actie wilt ondernemen. De geaccepteerde waarden `ProfanityAction` van zijn , en `Deleted` `Marked` `NoAction` (standaard).
+Als u wilt voorkomen dat de vertaling grof taalgebruik krijgt, ongeacht de aanwezigheid van grof taalgebruik in de brontekst, kunt u de filteroptie voor grof taalgebruik gebruiken. Met de optie kunt u kiezen of u grof taalgebruik wilt zien, of u grof taalgebruik wilt markeren met de juiste tags (zodat u de mogelijkheid hebt om uw eigen naverwerking toe te voegen) of dat u geen actie wilt ondernemen. De geaccepteerde waarden `ProfanityAction` van zijn , en `Deleted` `Marked` `NoAction` (standaard).
 
 <table width="100%">
   <th width="20%">ProfanityAction</th>
@@ -368,26 +368,26 @@ Als u wilt voorkomen dat de vertaling grof taalgebruik krijgt, ongeacht de aanwe
   <tr>
     <td><code>NoAction</code></td>
     <td>Dit is de standaardinstelling. Grof taalgebruik wordt van bron naar doel doorgeven.<br/><br/>
-    <strong>Voorbeeldbron (Japans)</strong>: 彼はジャsカ extraです"<br/>
+    <strong>Voorbeeldbron (Japans)</strong>: 彼はジャ hoe カ de です.<br/>
     <strong>Voorbeeldvertaling (Engels)</strong>: Hij is een jackass.
     </td>
   </tr>
   <tr>
     <td><code>Deleted</code></td>
     <td>Scheldwoorden worden zonder vervanging uit de uitvoer verwijderd.<br/><br/>
-    <strong>Voorbeeldbron (Japans)</strong>: 彼はジャsカ extraです"<br/>
+    <strong>Voorbeeldbron (Japans)</strong>: 彼はジャ hoe カ de です.<br/>
     <strong>Voorbeeldvertaling (Engels)</strong>: Hij is een.
     </td>
   </tr>
   <tr>
     <td><code>Marked</code></td>
     <td>Scheldwoorden worden vervangen door een markering in de uitvoer. De markering is afhankelijk van de <code>ProfanityMarker</code> parameter .<br/><br/>
-Voor <code>ProfanityMarker=Asterisk</code> worden aaneenlaste woorden vervangen door <code>***</code> :<br/>
-    <strong>Voorbeeldbron (Japans)</strong>: 彼はジャsカ extraです"<br/>
+Voor <code>ProfanityMarker=Asterisk</code> worden grof taalgebruik vervangen door <code>***</code> :<br/>
+    <strong>Voorbeeldbron (Japans)</strong>: 彼はジャ hoe カ de です.<br/>
     <strong>Voorbeeldvertaling (Engels)</strong>: Hij is een \* \* \* .<br/><br/>
 Voor worden scheldwoorden omgeven door XML-tags grof taalgebruik en <code>ProfanityMarker=Tag</code> &lt; &gt; &lt; /grof taalgebruik: &gt;<br/>
-    <strong>Voorbeeldbron (Japans)</strong>: 彼はジャ hoe カ de です.<br/>
-    <strong>Voorbeeldvertaling (Engels)</strong>: Hij is een grof taalgebruik &lt; &gt; jackass &lt; /profanity &gt; .
+    <strong>Voorbeeldbron (Japans)</strong>: 彼はジャsカ extraです"<br/>
+    <strong>Voorbeeldomtaling (Engels)</strong>: Hij is een grof taalgebruik &lt; &gt; jackass &lt; /profanity &gt; .
   </tr>
 </table> 
 
@@ -428,14 +428,14 @@ Deze laatste aanvraag retourneert:
 
 ### <a name="translate-content-with-markup-and-decide-whats-translated"></a>Inhoud vertalen met markeringen en bepalen wat er wordt vertaald
 
-Het is gebruikelijk om inhoud te vertalen die markeringen bevat, zoals inhoud van een HTML-pagina of inhoud uit een XML-document. Neem de `textType=html` queryparameter op bij het vertalen van inhoud met tags. Bovendien is het soms handig om specifieke inhoud uit te sluiten van vertaling. U kunt het kenmerk gebruiken `class=notranslate` om inhoud op te geven die in de oorspronkelijke taal moet blijven. In het volgende voorbeeld wordt de inhoud in het eerste element niet vertaald, terwijl de inhoud in het tweede `div` `div` element wordt vertaald.
+Het is gebruikelijk om inhoud te vertalen die markeringen bevat, zoals inhoud van een HTML-pagina of inhoud van een XML-document. Neem de `textType=html` queryparameter op bij het vertalen van inhoud met tags. Daarnaast is het soms handig om specifieke inhoud uit te sluiten van vertaling. U kunt het kenmerk gebruiken om `class=notranslate` inhoud op te geven die in de oorspronkelijke taal moet blijven. In het volgende voorbeeld wordt de inhoud in het eerste element niet vertaald, terwijl de inhoud in het `div` tweede `div` element wordt vertaald.
 
 ```
 <div class="notranslate">This will not be translated.</div>
 <div>This will be translated. </div>
 ```
 
-Hier ziet u een voorbeeldaanvraag ter illustratie.
+Hier ziet u een voorbeeld van een aanvraag om te illustreren.
 
 ```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-Hans&textType=html" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'<div class=\"notranslate\">This will not be translated.</div><div>This will be translated.</div>'}]"
@@ -453,13 +453,13 @@ Het antwoord is:
 ]
 ```
 
-### <a name="obtain-alignment-information"></a>Informatie over uitlijning verkrijgen
+### <a name="obtain-alignment-information"></a>Uitlijningsinformatie verkrijgen
 
-Uitlijning wordt geretourneerd als een tekenreekswaarde met de volgende notatie voor elk woord van de bron. De informatie voor elk woord wordt gescheiden door een spatie, inclusief voor niet-door ruimte gescheiden talen (scripts) zoals Chinees:
+Uitlijning wordt geretourneerd als een tekenreekswaarde met de volgende notatie voor elk woord van de bron. De informatie voor elk woord wordt gescheiden door een spatie, inclusief voor niet-spaties gescheiden talen (scripts) zoals Chinees:
 
 [[SourceTextStartIndex]:[SourceTextEndIndex]–[TgtTextStartIndex]:[TgtTextEndIndex]] *
 
-Voorbeeld van een uitlijningsreeks: '0:0-7:10 1:2-11:20 3:4-0:3 3:4-4:6 5:5-21:21'.
+Voorbeeld van uitlijningsreeks: '0:0-7:10 1:2-11:20 3:4-0:3 3:4-4:6 5:5-21:21'.
 
 Met andere woorden, de dubbele punt scheidt de begin- en eindindex, het streepje scheidt de talen en spatie scheidt de woorden. Het ene woord kan worden uitgelijnd met nul, één of meerdere woorden in de andere taal en de uitgelijnde woorden kunnen niet-aaneengesloten zijn. Wanneer er geen uitlijningsinformatie beschikbaar is, is het element Uitlijning leeg. De methode retourneert in dat geval geen fout.
 
@@ -485,21 +485,21 @@ Het antwoord is:
 ]
 ```
 
-De uitlijningsinformatie begint met , wat betekent dat de eerste drie tekens in de brontekst ( ) worden afgestemd op de eerste twee tekens `0:2-0:1` `The` in de vertaalde tekst ( `La` ).
+De informatie over uitlijning begint met , wat betekent dat de eerste drie tekens in de brontekst ( ) worden toe te schrijven aan de eerste twee tekens `0:2-0:1` `The` in de vertaalde tekst ( `La` ).
 
 #### <a name="limitations"></a>Beperkingen
 Het verkrijgen van uitlijningsinformatie is een experimentele functie die we hebben ingeschakeld voor het prototypen van onderzoek en ervaringen met mogelijke woordgroepentoewijzingen. We kunnen ervoor kiezen om dit in de toekomst niet meer te ondersteunen. Hier zijn enkele van de belangrijkste beperkingen waarbij uitlijning niet wordt ondersteund:
 
 * Uitlijning is niet beschikbaar voor tekst in HTML-indeling, dat wil zeggen textType=html
 * Uitlijning wordt alleen geretourneerd voor een subset van de taalparen:
-  - Engels naar/van een andere taal, met uitzondering van traditioneel Chinees, Cantonees (traditioneel) of Servisch (Cyrillisch).
+  - Engels van/naar een andere taal, met uitzondering van traditioneel Chinees, Kantonees (traditioneel) of Servisch (Cyrillisch).
   - van Japans naar Koreaans of van Koreaans tot Japans.
-  - van Japans naar Chinees Vereenvoudigd en Chinees Vereenvoudigd naar Japans. 
-  - van Chinees vereenvoudigd tot traditioneel Chinees en Traditioneel Chinees tot Vereenvoudigd Chinees. 
-* U ontvangt geen uitlijning als de zin een vertaling in een canned is. Voorbeeld van een verwerkte vertaling is 'This is a test', 'I love you' en andere zinnen met een hoge frequentie.
+  - van Japans naar Chinees Vereenvoudigd en Chinees Vereenvoudigd tot Japans. 
+  - van Vereenvoudigd Chinees naar Chinees Traditioneel en Chinees Traditioneel tot Vereenvoudigd Chinees. 
+* U ontvangt geen uitlijning als de zin een in canned vertaling is. Voorbeeld van een canned vertaling is 'This is a test', 'I love you' en andere zinnen met hoge frequentie.
 * Uitlijning is niet beschikbaar wanneer u een van de benaderingen wilt toepassen om vertaling te voorkomen, zoals hier wordt [beschreven](../prevent-translation.md)
 
-### <a name="obtain-sentence-boundaries"></a>Grenzen van zinnen verkrijgen
+### <a name="obtain-sentence-boundaries"></a>Zinsgrenzen verkrijgen
 
 Als u informatie wilt ontvangen over de zinlengte in de brontekst en vertaalde tekst, geeft u `includeSentenceLength=true` op in de queryreeks.
 
@@ -525,9 +525,9 @@ Het antwoord is:
 
 ### <a name="translate-with-dynamic-dictionary"></a>Vertalen met dynamische woordenlijst
 
-Als u al weet welke vertaling u wilt toepassen op een woord of woordgroep, kunt u deze als markering in de aanvraag inleveren. De dynamische woordenlijst is alleen veilig voor de juiste zelfstandige naamwoorden, zoals persoonlijke namen en productnamen.
+Als u al weet welke vertaling u wilt toepassen op een woord of woordgroep, kunt u deze als markering in de aanvraag leveren. De dynamische woordenlijst is alleen veilig voor de juiste zelfstandige naamwoorden, zoals persoonlijke namen en productnamen.
 
-De te leveren markering maakt gebruik van de volgende syntaxis.
+De te leveren markeringen maken gebruik van de volgende syntaxis.
 
 ``` 
 <mstrans:dictionary translation="translation of phrase">phrase</mstrans:dictionary>

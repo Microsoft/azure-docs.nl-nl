@@ -9,24 +9,24 @@ ms.subservice: overview
 ms.date: 03/24/2021
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: bb09a25d7ea242dfafd7d853015ae8e127b13883
-ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
+ms.openlocfilehash: 652f98659f96b36e3185432e50d9d36dc569bd43
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106383402"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107537941"
 ---
 # <a name="what-is-azure-synapse-analytics"></a>Wat is Azure Synapse Analytics?
 
-**Azure Synapse** is een Enter prise Analytics-service die tijd voor inzicht in data warehouses en Big data systemen versnelt. Azure Synapse combineert het beste van de **SQL**-technologieën die in zakelijke datawarehousing worden gebruikt, **Spark**-technologieën die voor big data worden gebruikt en **Pijplijnen** voor gegevensintegratie en ETL/ELT, en diepe integratie met andere Azure-services, zoals **Power BI**, **CosmosDB** en **AzureML**.
+**Azure Synapse** is een analyseservice voor ondernemingen die sneller inzicht krijgt in datawarehouses en big data systemen. Azure Synapse combineert het beste van de **SQL**-technologieën die in zakelijke datawarehousing worden gebruikt, **Spark**-technologieën die voor big data worden gebruikt en **Pijplijnen** voor gegevensintegratie en ETL/ELT, en diepe integratie met andere Azure-services, zoals **Power BI**, **CosmosDB** en **AzureML**.
 
-![Diagram van Azure Synapse Analytics-architectuur.](./media/overview-what-is/synapse-architecture.png)
+![Diagram van Azure Synapse Analytics architectuur.](./media/overview-what-is/synapse-architecture.png)
 
 ## <a name="industry-leading-sql"></a>Toonaangevende SQL
 
-**Synapse SQL** is een gedistribueerd query systeem voor T-SQL waarmee data warehouse-en data Virtualization-Scenario's en T-SQL kunnen worden geadresseerd en machine learning scenario's worden uitgebreid.
+**Synapse SQL** is een gedistribueerd querysysteem voor T-SQL dat scenario's voor datawarehousing en gegevensvirtualisatie mogelijk maakt en T-SQL uitbreidt om scenario's voor streaming en machine learning aanpakken.
 
-* Synapse SQL biedt zowel **serverloze** als **toegewezen** resource modellen. Voor voorspelbare prestaties en kosten kunt u toegewezen SQL-pools maken om verwerkingskracht te reserveren voor gegevens die zijn opgeslagen in SQL-tabellen. Voor niet-geplande of bursty werkbelastingen gebruikt u het altijd beschikbare, serverloze SQL-eindpunt.
+* Synapse SQL biedt **zowel serverloze** als **toegewezen** resourcemodellen. Voor voorspelbare prestaties en kosten kunt u toegewezen SQL-pools maken om verwerkingskracht te reserveren voor gegevens die zijn opgeslagen in SQL-tabellen. Voor niet-geplande of bursty werkbelastingen gebruikt u het altijd beschikbare, serverloze SQL-eindpunt.
 * Gebruik ingebouwde **streamingmogelijkheden** om gegevens van gegevensbronnen in de cloud in SQL-tabellen te plaatsen
 * Integreer AI met SQL door **machine learning**-modellen te gebruiken om gegevens een score te geven met behulp van de [functie T-SQL PREDICT](/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest&preserve-view=true)
 
@@ -43,37 +43,30 @@ ms.locfileid: "106383402"
 
 Azure Synapse verwijdert de traditionele technologische barrières tussen het gebruik van SQL en Spark. U kunt naadloos combineren en vergelijken op basis van uw behoeften en expertise.
 
-* Tabellen die zijn gedefinieerd voor bestanden in de data Lake, worden naadloos gebruikt door Spark of Hive.
+* Tabellen die zijn gedefinieerd voor bestanden in data lake worden naadloos gebruikt door Spark of Hive.
 * SQL en Spark kunnen Parquet-, CSV-, TSV- en JSON-bestanden die zijn opgeslagen in de data lake rechtstreeks verkennen en analyseren.
-* Snelle, schaal bare gegevens belasting tussen SQL-en Spark-data bases
+* Snel, schaalbaar gegevens laden tussen SQL- en Spark-databases
 
-## <a name="built-in-data-integration"></a>Ingebouwde gegevens integratie
+## <a name="built-in-data-integration"></a>Ingebouwde gegevensintegratie
 
-Azure Synapse bevat dezelfde gegevens integratie-engine en ervaringen als Azure Data Factory, zodat u uitgebreide ETL-pijp lijnen kunt maken zonder Azure Synapse Analytics te verlaten.
+Azure Synapse bevat dezelfde engine voor gegevensintegratie en ervaringen als Azure Data Factory, zodat u uitgebreide ETL-pijplijnen op schaal kunt maken zonder dat u Azure Synapse Analytics.
 
 * Gegevens opnemen uit meer dan 90 gegevensbronnen
 * Code-Free ETL met gegevensstroomactiviteiten
-* U kunt notitie blokken, Spark-taken, opgeslagen procedures, SQL-scripts en meer indelen
+* Notebooks, Spark-taken, opgeslagen procedures, SQL-scripts en meer ins delen
 
-## <a name="unified-management-monitoring-and-security"></a>Uniform beheer, bewaking en beveiliging
+## <a name="unified-experience"></a>Uniforme ervaring 
 
-Azure Synapse biedt ondernemingen één manier om analyse-resources te beheren, gebruik en activiteiten te bewaken en beveiliging af te dwingen.
+**Synapse Studio** biedt ondernemingen één manier om oplossingen te bouwen, te onderhouden en te beveiligen in één gebruikerservaring
 
-* Gebruikers toewijzen aan Rol om de toegang tot analytics-resources te vereenvoudigen
-* Nauwkeurig toegangsbeheer voor gegevens en code
-* Eén dashboard voor het bewaken van resources, gebruik en gebruikers in SQL en Spark
+* Belangrijke taken uitvoeren: opnemen, verkennen, voorbereiden, orkestreren, visualiseren
+* Resources, gebruik en gebruikers bewaken in SQL en Spark
+* Op rollen gebaseerd toegangsbeheer gebruiken om de toegang tot analysebronnen te vereenvoudigen
+* SQL- of Spark-code schrijven en integreren met ZAKELIJKE CI/CD-processen
 
-## <a name="unified-experience"></a>Uniforme ervaring
+## <a name="engage-with-the-synapse-community"></a>Contact maken met de Synapse-community
 
-**Synapse Studio** is de gebruikers ervaring die alles samen met gegevens technici verbindt. Hiermee kunnen ze elke taak uitvoeren die ze nodig hebben om een volledige analyse oplossing te bouwen.
-
-* Belangrijkste gegevens engineer op één locatie: opnemen, verkennen, voorbereiden, organiseren, visualiseren
-* Toonaangevende productiviteit voor het schrijven van SQL-of Spark-code: ontwerpen, fout opsporing en optimalisatie van prestaties
-* Integreren met Enter prise CI/CD-proces
-
-## <a name="engage-with-the-synapse-community"></a>Neem contact op met de Synapse-Community
-
-- [Micro soft Q&A](/answers/topics/azure-synapse-analytics.html): Stel technische vragen.
+- [Microsoft Q&A:](/answers/topics/azure-synapse-analytics.html)stel technische vragen.
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-synapse): Voor ontwikkelingsvragen.
 
 ## <a name="next-steps"></a>Volgende stappen

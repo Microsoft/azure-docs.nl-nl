@@ -68,7 +68,7 @@
           href: azure-file-share-support-matrix.md
         - name: Azure Disck Backup-ondersteuningsmatrix
           href: disk-backup-support-matrix.md
-        - name: Matrix voor back-upondersteuning voor Azure blobs
+        - name: Ondersteuningsmatrix voor Azure Blobs-back-ups
           href: blob-backup-support-matrix.md
         - name: Active Directory-domeincontrollers
           href: active-directory-backup-restore.md
@@ -77,25 +77,25 @@
     - name: Veelgestelde vragen
       items:
         - name: 'Veelgestelde vragen: Recovery Services-kluizen'
-          href: backup-azure-backup-faq.md
+          href: backup-azure-backup-faq.yml
         - name: 'Veelgestelde vragen: back-upcentrum'
           href: backup-center-faq.yml
         - name: 'Veelgestelde vragen: Azure VM Backup'
           href: backup-azure-vm-backup-faq.yml
         - name: 'Veelgestelde vragen: MARS-agent'
-          href: backup-azure-file-folder-backup-faq.md
+          href: backup-azure-file-folder-backup-faq.yml
         - name: 'Veelgestelde vragen: back-ups maken van Azure Files'
-          href: backup-azure-files-faq.md
+          href: backup-azure-files-faq.yml
         - name: 'Veelgestelde vragen: Azure Disck Backup'
-          href: disk-backup-faq.md
+          href: disk-backup-faq.yml
         - name: 'Veelgestelde vragen: back-ups maken van SQL Server-databases in virtuele Azure-machines'
-          href: faq-backup-sql-server.md
+          href: faq-backup-sql-server.yml
         - name: Veelgestelde vragen over back-ups maken van SAP HANA-databases in virtuele Azure-machines
-          href: sap-hana-faq-backup-azure-vm.md
+          href: sap-hana-faq-backup-azure-vm.yml
         - name: Veelgestelde vragen over Azure Backup-server en DPM
-          href: backup-azure-dpm-azure-server-faq.md
+          href: backup-azure-dpm-azure-server-faq.yml
         - name: Veelgestelde vragen over Azure Backup-bewakingswaarschuwingen
-          href: backup-azure-monitor-alert-faq.md
+          href: backup-azure-monitor-alert-faq.yml
     - name: Back-up maken van architectuur
       href: backup-architecture.md
     - name: Richtlijnen en aanbevolen procedures
@@ -236,7 +236,7 @@
               href: backup-managed-disks-ps.md
             - name: Herstellen
               href: restore-managed-disks-ps.md
-    - name: Back-ups van Azure-blobs
+    - name: Back-up van Azure Blobs
       items:
         - name: Overzicht
           href: blob-backup-overview.md
@@ -374,7 +374,7 @@
           href: monitor-azure-backup-with-backup-explorer.md
         - name: Azure Portal gebruiken
           href: backup-azure-monitoring-built-in-monitor.md
-        - name: Azure Monitor-Logboeken gebruiken
+        - name: Logboeken Azure Monitor gebruiken
           href: backup-azure-monitoring-use-azuremonitor.md
     - name: Rapporten
       items:
@@ -382,13 +382,13 @@
           items:
             - name: Azure Backup-rapporten configureren
               href: configure-reports.md
-            - name: E-mail Azure Backup rapporten
+            - name: E-Azure Backup mailrapporten
               href: backup-reports-email.md
         - name: Diagnostische gebeurtenissen configureren voor Recovery Services-kluizen
           items:
             - name: Diagnostische instellingen gebruik voor Recovery Services-kluizen
               href: backup-azure-diagnostic-events.md
-            - name: Systeem functies gebruiken
+            - name: Systeemfuncties gebruiken
               href: backup-reports-system-functions.md
             - name: Log Analytics-gegevensmodel voor resourcespecifieke gebeurtenissen
               href: backup-azure-reports-data-model.md
@@ -463,7 +463,7 @@
           href: security-baseline.md
     - name: Toegangslaag
       items:
-        - name: Laag van archief
+        - name: Archieflaag
           href: archive-tier-support.md
     - name: Problemen oplossen
       items:

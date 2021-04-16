@@ -1,51 +1,52 @@
 ---
-title: Aan de slag met de virtueel-bureaublad agent van Windows
-description: Een overzicht van de Windows Virtual Desktop agent en update processen.
+title: Aan de slag met de Windows Virtual Desktop Agent
+description: Een overzicht van de Windows Virtual Desktop agent en updateprocessen.
 author: Sefriend
 ms.topic: conceptual
 ms.date: 12/16/2020
 ms.author: sefriend
 manager: clarkn
-ms.openlocfilehash: 371cc78f3ebad638008f4195f164b66a64948c65
-ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
+ms.openlocfilehash: 529a86712994aae91a554589d383cc748f79d07f
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106504546"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107520102"
 ---
-# <a name="get-started-with-the-windows-virtual-desktop-agent"></a>Aan de slag met de virtueel-bureaublad agent van Windows
+# <a name="get-started-with-the-windows-virtual-desktop-agent"></a>Aan de slag met de Windows Virtual Desktop Agent
 
-In het Windows Virtual Desktop service Framework bevinden zich drie hoofd onderdelen: de Extern bureaublad-client, de service en de virtuele machines. Deze virtuele machines bevinden zich in het abonnement van de klant waar de virtuele Windows-bureau blad-agent en de bootloader van de agent zijn geïnstalleerd. De agent fungeert als de tussenliggende Communicator tussen de service en de virtuele machines, waardoor connectiviteit mogelijk is. Als u problemen ondervindt met het installeren, bijwerken of configureren van de agent, kan uw virtuele machines daarom geen verbinding maken met de service. De bootloader van de agent is het uitvoer bare bestand dat de agent laadt. 
+In het Windows Virtual Desktop Service-framework zijn er drie hoofdonderdelen: de Extern bureaublad client, de service en de virtuele machines. Deze virtuele machines staan in het klantabonnement waar de Windows Virtual Desktop agent en agent bootloader zijn geïnstalleerd. De agent fungeert als de tussenliggende machine tussen de service en de virtuele machines, waardoor connectiviteit mogelijk wordt. Als u dus problemen ondervindt met de installatie, update of configuratie van de agent, kunnen uw virtuele machines geen verbinding maken met de service. De agent bootloader is het uitvoerbare bestand dat de agent laadt. 
 
-Dit artikel bevat een kort overzicht van de installatie-en update processen van de agent.
+In dit artikel vindt u een kort overzicht van de agentinstallatie- en updateprocessen.
 
 >[!NOTE]
->Deze documentatie is niet voor de FSLogix-agent of de Extern bureaublad-client agent.
+>Deze documentatie is niet voor de FSLogix-agent of de Extern bureaublad Clientagent.
 
 
-## <a name="initial-installation-process"></a>Eerste installatie proces
+## <a name="initial-installation-process"></a>Eerste installatieproces
 
-De virtuele Windows-bureau blad-agent wordt in eerste instantie op een van de volgende twee manieren geïnstalleerd. Als u virtuele machines (Vm's) inricht in Azure Portal en Azure Marketplace, worden de bootloader van agent en agent automatisch geïnstalleerd. Als u Vm's inricht met behulp van Power shell, moet u de agent en de agent-bootloader. msi-bestanden hand matig downloaden bij [het maken van een virtuele Windows-bureaubladclient met Power shell](create-host-pools-powershell.md#register-the-virtual-machines-to-the-windows-virtual-desktop-host-pool). Zodra de agent is geïnstalleerd, wordt het Windows-venster voor virtuele Bureau bladen naast elkaar en de bewakings agent voor Genève geïnstalleerd. Het stack onderdeel side-by-side is vereist voor gebruikers om veilig reverse server-to-client-verbindingen tot stand te brengen. De bewakings agent van Genève bewaakt de status van de agent. Alle drie deze onderdelen zijn essentieel voor een goede werking van end-to-end-gebruikers connectiviteit.
+De Windows Virtual Desktop agent wordt in eerste instantie op een van de twee manieren geïnstalleerd. Als u virtuele machines (VM's) in de Azure Portal en Azure Marketplace, worden de agent en agent bootloader automatisch geïnstalleerd. Als u VM's inrichten met Behulp van PowerShell, moet u de agent en agent bootloader .msi-bestanden handmatig downloaden bij het maken van een [Windows Virtual Desktop-hostgroep met PowerShell.](create-host-pools-powershell.md#register-the-virtual-machines-to-the-windows-virtual-desktop-host-pool) Zodra de agent is geïnstalleerd, worden de Windows Virtual Desktop stack naast elkaar en de Genève Monitoring-agent geïnstalleerd. Het side-by-side stack-onderdeel is vereist voor gebruikers om veilig omgekeerde server-naar-client-verbindingen tot stand te brengen. De Bewakingsagent van Genève bewaakt de status van de agent. Al deze onderdelen zijn essentieel voor een goede end-to-end-gebruikersconnectiviteit.
 
 >[!IMPORTANT]
->Als u de Windows-agent voor virtuele Bureau bladen, side-by-side stack en Genève bewakings agent wilt installeren, moet u de blok kering van alle Url's in de [lijst vereiste URL](safe-url-list.md#virtual-machines)opheffen. Het opheffen van de blok kering van deze Url's is vereist voor het gebruik van de virtueel-bureaublad service van Windows.
+>Als u de Windows Virtual Desktop-agent, side-by-side-stack en Genève-bewakingsagent wilt installeren, moet u alle URL's deblokkeren die worden vermeld in de lijst Vereiste [URL.](safe-url-list.md#virtual-machines) Het deblokkeren van deze URL's is vereist om de Windows Virtual Desktop gebruiken.
 
-## <a name="agent-update-process"></a>Update proces van agent
+## <a name="agent-update-process"></a>Agent-updateproces
 
-De Windows Virtual Desktop-service werkt de agent bij wanneer een update beschikbaar wordt. Agent updates kunnen nieuwe functionaliteit of oplossingen voor eerdere problemen bevatten. Zodra de eerste versie van de virtuele bureau blad-agent van Windows is geïnstalleerd, vraagt de agent regel matig de virtueel-bureaublad service van Windows op om te bepalen of er een nieuwere versie van het onderdeel agent, stack of bewaking beschikbaar is. Als er al een nieuwere versie van een van de onderdelen is geïmplementeerd, wordt het bijgewerkte onderdeel automatisch geïnstalleerd.
+De Windows Virtual Desktop-service werkt de agent bij wanneer een update beschikbaar komt. Agentupdates kunnen nieuwe functionaliteit of oplossingen voor eerdere problemen bevatten. U moet altijd de nieuwste stabiele versie van de agent hebben geïnstalleerd, zodat uw VM's de connectiviteit of beveiliging niet verliezen. Zodra de eerste versie van de Windows Virtual Desktop-agent is geïnstalleerd, vraagt de agent regelmatig een query uit op de Windows Virtual Desktop-service om te bepalen of er een nieuwere versie van de agent, stack of bewakingscomponent beschikbaar is. Als er al een nieuwere versie van een van de onderdelen is geïmplementeerd, wordt het bijgewerkte onderdeel automatisch geïnstalleerd door het vluchtsysteem.
 
-Nieuwe versies van de agent worden met regel matige intervallen geïmplementeerd in weeklong Peri Oden naar alle Azure-abonnementen. Deze update-Peri Oden worden "vluchten" genoemd. Wanneer er een vlucht optreedt, kunnen de virtuele machines in uw hostgroep de agent update op verschillende tijdstippen ontvangen. Alle VM-agents in alle abonnementen worden bijgewerkt aan het einde van de implementatie periode. Het Windows virtueel bureau blad-vlucht systeem verbetert de betrouw baarheid van de service door de stabiliteit en kwaliteit van de update van de agent te garanderen.
+Nieuwe versies van de agent worden met regelmatige tussenpozen in weekperioden geïmplementeerd voor alle Azure-abonnementen. Deze updateperioden worden 'vluchten' genoemd. Wanneer een vlucht gebeurt, ziet u mogelijk dat VM's in uw hostgroep de agentupdate op verschillende tijdstippen ontvangen. Alle VM-agents in alle abonnementen worden aan het einde van de implementatieperiode bijgewerkt. Het Windows Virtual Desktop flightingsysteem verbetert de betrouwbaarheid van de service door de stabiliteit en kwaliteit van de agentupdate te garanderen.
 
 
->[!NOTE]
->Omdat virtuele machines in uw hostgroep op verschillende tijdstippen van agent updates worden ontvangen, moet u het verschil tussen problemen met de vlucht en de mislukte agent-updates kunnen bepalen. Als u naar de gebeurtenis logboeken voor uw virtuele machine gaat op **Logboeken**  >  **Windows-logboeken**  >  -**toepassing** en de gebeurtenis ' id 3277 ' ziet, betekent dit dat de agent update niet werkt. Als u deze gebeurtenis niet ziet, bevindt de virtuele machine zich in een andere vlucht en wordt deze later bijgewerkt.
->- Wanneer de agent van Genève de laatste versie bijwerkt, wordt de oude GenevaTask-taak gevonden en uitgeschakeld voordat een nieuwe taak voor de nieuwe bewakings agent wordt gemaakt. De eerdere versie van de bewakings agent wordt niet verwijderd als er een probleem is met de meest recente versie van de bewakings agent, waardoor de eerdere versie moet worden hersteld. Als er een probleem is met de nieuwste versie, wordt de oude bewakings agent opnieuw ingeschakeld om bewakings gegevens te blijven leveren. Alle versies van de monitor die ouder zijn dan de laatste die u vóór de update hebt geïnstalleerd, worden verwijderd uit de virtuele machine.
->- Uw VM houdt drie versies van de side-by-side stack tegelijk. Zo kunt u snel herstel doen als er iets mis gaat met de update. De oudste versie van de stack wordt verwijderd van de VM wanneer de stack wordt bijgewerkt.
+Andere belangrijke zaken waar u rekening mee moet houden:
 
-Deze update-installatie werkt normaal 2-3 minuten op een nieuwe virtuele machine en zorgt er niet voor dat uw virtuele machine verbinding verliest of wordt afgesloten. Dit update proces is van toepassing op zowel Windows virtueel bureau blad (klassiek) als de nieuwste versie van Windows virtueel bureau blad met Azure Resource Manager.
+- Omdat VM's in uw hostgroep op verschillende tijdstippen agentupdates kunnen ontvangen, moet u het verschil kunnen zien tussen vluchtproblemen en mislukte agentupdates. Als u naar de gebeurtenislogboeken voor uw VM gaat op **Logboeken** Windows Logs Application en een gebeurtenis met het label  >    >   'ID 3277' ziet, betekent dit dat de agentupdate niet werkt. Als u deze gebeurtenis niet ziet, is de VM in een andere vlucht en wordt deze later bijgewerkt.
+- Wanneer de Genève Monitoring-agent wordt bijgewerkt naar de nieuwste versie, wordt de oude Taak Van GenèveTask gevonden en uitgeschakeld voordat een nieuwe taak voor de nieuwe bewakingsagent wordt gemaakt. De eerdere versie van de bewakingsagent wordt niet verwijderd als de meest recente versie van de bewakingsagent een probleem heeft dat moet worden teruggehaald naar de eerdere versie om op te lossen. Als er een probleem is met de nieuwste versie, wordt de oude bewakingsagent opnieuw ingeschakeld om door te gaan met het leveren van bewakingsgegevens. Alle versies van de monitor die eerder zijn dan de laatste versie die u hebt geïnstalleerd vóór de update, worden verwijderd van uw VM.
+- Uw VM behoudt drie versies van de side-by-side stack tegelijk. Hierdoor is snel herstel mogelijk als er iets misgaat met de update. De vroegste versie van de stack wordt verwijderd uit de VM wanneer de stack wordt bijgewerkt.
+
+De update van de agent duurt normaal gesproken 2-3 minuten op een nieuwe VM en mag er niet toe leiden dat uw VM de verbinding verliest of wordt afgesloten. Dit updateproces is van toepassing op Windows Virtual Desktop (klassiek) en de nieuwste versie van Windows Virtual Desktop met Azure Resource Manager.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u een beter inzicht hebt in de Windows Virtual Desktop-Agent, kunt u het volgende doen:
+Nu u een beter inzicht hebt in de Windows Virtual Desktop agent, zijn hier enkele resources die u kunnen helpen:
 
-- Als u problemen ondervindt met de agent of de verbinding hebt, raadpleegt u de [hand leiding problemen oplossen met Windows Virtual Desktop agent](troubleshoot-agent.md).
+- Als u problemen ondervindt met de agent of connectiviteit, raadpleegt u de probleemoplossingsgids [Windows Virtual Desktop agentproblemen.](troubleshoot-agent.md)

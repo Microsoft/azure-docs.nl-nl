@@ -1,27 +1,27 @@
 ---
-title: Een Azure Red Hat open Shift 4-cluster toepassing maken met behulp van velero
-description: Meer informatie over het maken van een back-up van uw Azure Red Hat open Shift-cluster toepassingen met velero
+title: Een back-up van Azure Red Hat OpenShift 4-clustertoepassing maken met behulp van Velero
+description: Meer informatie over het maken van een back-up van uw Azure Red Hat OpenShift clustertoepassingen met behulp van Velero
 ms.service: azure-redhat-openshift
 ms.topic: article
 ms.date: 06/22/2020
 author: troy0820
 ms.author: b-trconn
-keywords: Aro, open Shift, AZ Aro, Red Hat, cli
-ms.custom: mvc
-ms.openlocfilehash: bbfe280ed0b1b562e0f50b23a09ea159750c4a79
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+keywords: aro, openshift, az aro, red hat, cli
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: c8bf722bd77372cd89e7c64757347b5fd07eb1ed
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102217088"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107481358"
 ---
-# <a name="create-an-azure-red-hat-openshift-4-cluster-application-backup"></a>Een Azure Red Hat open Shift 4-cluster toepassing back-up maken
+# <a name="create-an-azure-red-hat-openshift-4-cluster-application-backup"></a>Een toepassingsback-Azure Red Hat OpenShift 4-cluster maken
 
-In dit artikel maakt u een voor bereiding van uw omgeving voor het maken van een back-up van Azure Red Hat open Shift 4-cluster toepassing. U leert het volgende:
+In dit artikel bereidt u uw omgeving voor op het maken van een back-up van Azure Red Hat OpenShift 4 clustertoepassing. U leert het volgende:
 
 > [!div class="checklist"]
-> * De vereisten instellen en de benodigde hulpprogram ma's installeren
-> * Een Azure Red Hat open Shift 4-toepassing maken
+> * De vereisten instellen en de benodigde hulpprogramma's installeren
+> * Een back-up van Azure Red Hat OpenShift 4-toepassing maken
 
 Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u Azure CLI 2.6.0 of hoger gebruiken voor deze zelfstudie. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren](/cli/azure/install-azure-cli) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
@@ -29,11 +29,11 @@ Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u Azure
 
 ### <a name="install-velero"></a>Velero installeren
 
-Als u Velero op uw systeem wilt [installeren](https://velero.io/docs/main/basic-install/) , volgt u het aanbevolen proces voor uw besturings systeem.
+Als [u](https://velero.io/docs/main/basic-install/) Velero op uw systeem wilt installeren, volgt u het aanbevolen proces voor uw besturingssysteem.
 
-### <a name="set-up-azure-storage-account-and-blob-container"></a>Azure Storage-account en BLOB-container instellen
+### <a name="set-up-azure-storage-account-and-blob-container"></a>Azure Storage-account en Blob-container instellen
 
-Met deze stap maakt u een resource groep buiten de resource groep van het ARO-cluster.  Met deze resource groep kunnen back-ups persistent worden gemaakt en toepassingen naar nieuwe clusters herstellen.
+Met deze stap maakt u een resourcegroep buiten de resourcegroep van het ARO-cluster.  Met deze resourcegroep kunnen de back-ups blijven bestaan en kunnen toepassingen worden hersteld naar nieuwe clusters.
 
 ```bash
 AZURE_BACKUP_RESOURCE_GROUP=Velero_Backups
@@ -53,11 +53,11 @@ BLOB_CONTAINER=velero
 az storage container create -n $BLOB_CONTAINER --public-access off --account-name $AZURE_STORAGE_ACCOUNT_ID
 ```
 
-## <a name="set-permissions-for-velero"></a>Machtigingen instellen voor velero
+## <a name="set-permissions-for-velero"></a>Machtigingen instellen voor Velero
 
 ### <a name="create-service-principal"></a>Een service-principal maken
 
-Velero heeft machtigingen nodig om back-ups te maken en op te slaan. Wanneer u een Service-Principal maakt, geeft u Velero toestemming om toegang te krijgen tot de resource groep die u in de vorige stap hebt gedefinieerd. In deze stap wordt de resource groep van het cluster opgehaald:
+Velero heeft machtigingen nodig voor het maken van back-ups en herstel. Wanneer u een service-principal maakt, geeft u Velero toestemming voor toegang tot de resourcegroep die u in de vorige stap hebt definiëren. Met deze stap wordt de resourcegroep van het cluster op halen:
 
 ```bash
 export AZURE_RESOURCE_GROUP=$(az aro show --name <name of cluster> --resource-group <name of resource group> | jq -r .clusterProfile.resourceGroupId | cut -d '/' -f 5,5)
@@ -88,9 +88,9 @@ AZURE_CLOUD_NAME=AzurePublicCloud
 EOF
 ```
 
-## <a name="install-velero-on-azure-red-hat-openshift-4-cluster"></a>Velero installeren op Azure Red Hat open Shift 4-cluster
+## <a name="install-velero-on-azure-red-hat-openshift-4-cluster"></a>Velero installeren op Azure Red Hat OpenShift 4-cluster
 
-Met deze stap wordt Velero geïnstalleerd in een eigen project en de [aangepaste resource definities](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) die nodig zijn om back-ups te maken en op te slaan met Velero. Zorg ervoor dat u bent aangemeld bij een Azure Red Hat open Shift v4-cluster.
+Met deze stap installeert u Velero in een eigen project en de aangepaste [resourcedefinities](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) die nodig zijn voor back-ups en herstel met Velero. Zorg ervoor dat u bent aangemeld bij een Azure Red Hat OpenShift v4-cluster.
 
 
 ```bash
@@ -105,49 +105,49 @@ velero install \
 --velero-pod-mem-request="0" --velero-pod-cpu-request="0"
 ```
 
-## <a name="create-a-backup-with-velero"></a>Een back-up maken met velero
+## <a name="create-a-backup-with-velero"></a>Een back-up maken met Velero
 
-Als u een back-up van een toepassing met Velero wilt maken, moet u de naam ruimte waarin deze toepassing zich bevindt, toevoegen.  Als u een `nginx-example` naam ruimte hebt en alle resources in die naam ruimte wilt toevoegen aan de back-up, voert u de volgende opdracht uit in de terminal:
+Als u een back-up van een toepassing wilt maken met Velero, moet u de naamruimte opnemen waarin deze toepassing zich in zich.  Als u een naamruimte hebt en alle resources in die naamruimte in de back-up wilt opnemen, moet u `nginx-example` de volgende opdracht uitvoeren in de terminal:
 
 ```bash
 velero create backup <name of backup> --include-namespaces=nginx-example
 ```
-U kunt de status van de back-up controleren door het volgende uit te voeren:
+U kunt de status van de back-up controleren door het volgende uit te doen:
 
 ```bash
 oc get backups -n velero <name of backup> -o yaml
 ```
 
-Een geslaagde back-up wordt uitgevoerd `phase:Completed` en de objecten bevinden zich in de container in het opslag account.
+Een geslaagde back-up wordt `phase:Completed` uitgevoerd en de objecten worden in de container in het opslagaccount geplaatst.
 
-## <a name="create-a-backup-with-velero-to-include-snapshots"></a>Maak een back-up met Velero om moment opnamen op te nemen
+## <a name="create-a-backup-with-velero-to-include-snapshots"></a>Een back-up maken met Velero om momentopnamen op te nemen
 
-Als u een back-up van een toepassing wilt maken met Velero om de permanente volumes van uw toepassing op te nemen, moet u de naam ruimte die de toepassing bevat en de `snapshot-volumes=true` vlag toevoegen bij het maken van de back-up.
+Als u een toepassingsback-up wilt maken met Velero om de permanente volumes van uw toepassing op te nemen, moet u de naamruimte opnemen waarin de toepassing zich in zich heeft en de vlag opnemen bij het maken van de `snapshot-volumes=true` back-up
 
 ```bash
 velero backup create <name of backup> --include-namespaces=nginx-example --snapshot-volumes=true --include-cluster-resources=true
 ```
 
-U kunt de status van de back-up controleren door het volgende uit te voeren:
+U kunt de status van de back-up controleren door het volgende uit te doen:
 
 ```bash
 oc get backups -n velero <name of backup> -o yaml
 ```
 
-Een geslaagde back-up met uitvoer `phase:Completed` en de objecten bevinden zich in de container in het opslag account.
+Een geslaagde back-up met `phase:Completed` uitvoer en de objecten worden in de container in het opslagaccount geplaatst.
 
-Voor meer informatie over het maken van back-ups en herstel bewerkingen met Velero raadpleegt u [de systeem eigen manier van back-ups](https://www.openshift.com/blog/backup-openshift-resources-the-native-way) .
+Zie Backup OpenShift resources the native way (Back-up maken van [OpenShift-resources](https://www.openshift.com/blog/backup-openshift-resources-the-native-way) op de systeemeigen manier) voor meer informatie over het maken van back-ups en herstels met velero
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel is een back-up gemaakt van een Azure Red Hat open Shift 4-cluster toepassing. U hebt geleerd hoe u:
+In dit artikel is een Azure Red Hat OpenShift 4-clustertoepassing geback-upt. U hebt geleerd hoe u:
 
 > [!div class="checklist"]
-> * Een open Shift v4-cluster toepassing maken met behulp van velero
-> * Een open Shift v4-cluster toepassing back-up maken met moment opnamen met behulp van velero
+> * Een back-up van een OpenShift v4-clustertoepassing maken met velero
+> * Een back-up van een OpenShift v4-clustertoepassing maken met momentopnamen met behulp van Velero
 
 
-Ga naar het volgende artikel voor meer informatie over het maken van een Azure Red Hat open Shift 4-cluster toepassing herstellen.
+Lees het volgende artikel voor meer informatie over het maken van een Azure Red Hat OpenShift herstellen van een clustertoepassing met vier clusters.
 
-* [Een Azure Red Hat open Shift 4-cluster toepassing herstellen](howto-create-a-restore.md)
-* [Een Azure Red Hat open Shift 4-cluster toepassing herstellen met inbegrip van moment opnamen](howto-create-a-restore.md)
+* [Herstel van een Azure Red Hat OpenShift 4-clustertoepassing maken](howto-create-a-restore.md)
+* [Herstel van een Azure Red Hat OpenShift 4-clustertoepassing maken, inclusief momentopnamen](howto-create-a-restore.md)

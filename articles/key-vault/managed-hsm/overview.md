@@ -10,14 +10,14 @@ ms.custom: mvc
 ms.date: 04/01/2021
 ms.author: mbaldwin
 author: msmbaldwin
-ms.openlocfilehash: 605e3f0451cc2029ecc98e42741f30a2d3ef190b
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: b56031d131743a3dc8c97bcd3e85d4653cdd2833
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106167954"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107484180"
 ---
-# <a name="what-is-azure-key-vault-managed-hsm-preview"></a>Wat is Azure Key Vault Managed HSM (preview)?
+# <a name="what-is-azure-key-vault-managed-hsm"></a>Wat is beheerde HSM van Azure Key Vault?
 
 Azure Key Vault Managed HSM is een cloudservice van hoge beschikbaarheid en één tenant, die volledig beheerd is en aan de standaarden voldoet. Met deze cloudservice kunt u cryptografische sleutels voor uw cloudtoepassingen waarborgen met behulp van met **FIPS 140-2 Level 3** gevalideerde HSM's.  
 
@@ -36,7 +36,7 @@ Azure Key Vault Managed HSM is een cloudservice van hoge beschikbaarheid en éé
 - **Geïsoleerd toegangsbeheer**: Met toegangsbeheer op basis van lokale RBAC van beheerde HSM kunnen toegewezen HSM-clusterbeheerders volledige controle hebben over de HSM's, die zelfs beheerders van beheergroepen, abonnementen of resourcegroepen niet kunnen overschrijven.
 - **Met FIPS 140-2 Level 3 gevalideerde HSM's**: Uw gegevens worden beschermd en er wordt voldaan aan de nalevingsvereisten met HSM's die zijn gevalideerd met FIPS (Federal Information Protection Standard) 140-2 Level 3. Beheerde HSM's maken gebruik van de Marvell LiquidSecurity HSM-adapters.
 - **Bewaken en controleren**: volledig geïntegreerd met Azure Monitor. U kunt volledige logboeken van alle activiteiten ophalen via Azure Monitor. Gebruik Azure Log Analytics voor analyse en waarschuwingen.
-- **Data locatie**: door beheerde HSM worden geen klant gegevens opgeslagen en verwerkt buiten de regio waarin de klant het HSM-exemplaar implementeert in.
+- **Gegevensopslag:** Beheerde HSM kan geen klantgegevens opslaan/verwerken buiten de regio waarin de klant het HSM-exemplaar implementeert.
 
 ### <a name="integrated-with-azure-and-microsoft-paassaas-services"></a>Geïntegreerd met PaaS-/SaaS-services van Azure en Microsoft 
 

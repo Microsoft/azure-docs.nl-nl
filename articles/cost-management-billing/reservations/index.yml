@@ -10,13 +10,13 @@ metadata:
   ms.collection: collection
   author: bandersmsft
   ms.author: banders
-  ms.date: 03/01/2021
-  ms.openlocfilehash: b25d522d5db9f513628e43724cb1abde9f55e99c
-  ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+  ms.date: 04/15/2021
+  ms.openlocfilehash: c7c9a72e3954598e0cb3265e0533ccbd14b68e4b
+  ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/04/2021
-  ms.locfileid: "102040818"
+  ms.lasthandoff: 04/16/2021
+  ms.locfileid: "107532660"
 landingContent:
 - title: Reserveringen aanschaffen
   linkLists:
@@ -24,6 +24,12 @@ landingContent:
     links:
     - text: Wat zijn Azure-reserveringen?
       url: save-compute-costs-reservations.md
+    - text: Aanbevelingen voor reserveringsaankopen
+      url: reserved-instance-purchase-recommendations.md
+    - text: Flexibiliteit van instantiegrootte
+      url: ../../virtual-machines/reserved-vm-instance-size-flexibility.md?toc=/azure/cost-management-billing/reservations/toc.json
+    - text: Kosten voor Windows- en SQL-software afzonderlijk in rekening gebracht
+      url: reserved-instance-windows-software-costs.md
   - linkListType: how-to-guide
     links:
     - text: Een reservering kopen
@@ -36,16 +42,24 @@ landingContent:
     links:
     - text: Toepassen van een reserveringskorting
       url: reservation-discount-application.md
-- title: Reserveringen beheren
+- title: Reserveringen beheren na aankoop
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Reserveringen beheren
-      url: manage-reserved-vm-instance.md
-    - text: Reserve ringen en machtigingen voor beheer weer geven
+    - text: Machtigingen voor het weergeven en beheren van reserveringen
       url: view-reservations.md
+    - text: Reserveringsbereik wijzigen, splitsen, samenvoegen
+      url: manage-reserved-vm-instance.md
     - text: Reserveringen uitwisselen en restitutie
       url: exchange-and-refund-azure-reservations.md
+- title: Kosten rapporteren na aankoop
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Azure-reserveringskosten terugstorten
+      url: charge-back-usage.md
+    - text: Aankoop- en terugbetalingstransacties van reserveringen weergeven
+      url: view-purchase-refunds.md
   - linkListType: reference
     links:
     - text: Reserverings-API's

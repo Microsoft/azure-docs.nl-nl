@@ -1,96 +1,96 @@
 ---
 title: Azure Monitor metrische gegevens voor Application Gateway
-description: Meer informatie over het gebruik van metrische gegevens voor het bewaken van de prestaties van de toepassings gateway
+description: Meer informatie over het gebruik van metrische gegevens voor het bewaken van de prestaties van application gateway
 services: application-gateway
-author: surajmb
+author: azhar2005
 ms.service: application-gateway
 ms.topic: article
 ms.date: 06/06/2020
-ms.author: surmb
-ms.openlocfilehash: 9faa3a284aa7151880526c1ee70cfadc3dbf3089
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.author: azhussai
+ms.openlocfilehash: 3baaf49cb3d1c8c5502d96974f9729d05996c75b
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100576116"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107519879"
 ---
 # <a name="metrics-for-application-gateway"></a>Metrische gegevens voor Application Gateway
 
-Application Gateway publiceert gegevens punten, met de naam metrieken, naar [Azure monitor](../azure-monitor/overview.md) voor de prestaties van uw Application Gateway-en back-end-exemplaren. Deze metrische gegevens zijn numerieke waarden in een geordende set gegevensverzamelinggegevens die op een bepaald moment een aspect van uw toepassings gateway beschrijven. Als er aanvragen worden doorgelopen door de Application Gateway, worden de metrische gegevens gemeten en verzonden in intervallen van 60 seconden. Als er geen aanvragen worden verzonden door de Application Gateway of geen gegevens voor een metriek, wordt de metriek niet gerapporteerd. Zie [Azure monitor metrische](../azure-monitor/essentials/data-platform-metrics.md)gegevens voor meer informatie.
+Application Gateway publiceert gegevenspunten, ook wel metrische gegevens genoemd, om [Azure Monitor](../azure-monitor/overview.md) prestaties van uw Application Gateway en back-Application Gateway te verbeteren. Deze metrische gegevens zijn numerieke waarden in een geordende set tijdreeksgegevens die een bepaald aspect van uw toepassingsgateway op een bepaald moment beschrijven. Als er aanvragen door de Application Gateway, meet en verzendt het de metrische gegevens in intervallen van 60 seconden. Als er geen aanvragen door de gegevensstroom Application Gateway of geen gegevens voor een metrische gegevens, wordt de metrische gegevens niet gerapporteerd. Zie metrische gegevens voor [Azure Monitor meer informatie.](../azure-monitor/essentials/data-platform-metrics.md)
 
-## <a name="metrics-supported-by-application-gateway-v2-sku"></a>Metrische gegevens die worden ondersteund door Application Gateway v2 SKU
+## <a name="metrics-supported-by-application-gateway-v2-sku"></a>Metrische gegevens die worden ondersteund Application Gateway V2 SKU
 
-### <a name="timing-metrics"></a>Metrische gegevens over timing
+### <a name="timing-metrics"></a>Metrische timinggegevens
 
-Application Gateway biedt verschillende ingebouwde metrische gegevens voor de timing met betrekking tot de aanvraag en het antwoord, die allemaal worden gemeten in milliseconden. 
+Application Gateway biedt verschillende ingebouwde metrische timinggegevens met betrekking tot de aanvraag en het antwoord, die allemaal worden gemeten in milliseconden. 
 
-![Diagram van metrische gegevens over timing, voor de Application Gateway.](./media/application-gateway-metrics/application-gateway-metrics.png)
+![Diagram van metrische timinggegevens voor de Application Gateway.](./media/application-gateway-metrics/application-gateway-metrics.jpg)
 
 > [!NOTE]
 >
-> Als er meer dan één listener is in de Application Gateway, filtert u altijd op de dimensie *listener* terwijl u verschillende latentie gegevens vergelijkt om zinvolle interferentie te verkrijgen.
+> Als er meer dan één listener in de Application Gateway,  filtert u altijd op listenerdimensie terwijl u verschillende metrische latentiegegevens vergelijkt om zinvolle deferentie te krijgen.
 
-- **Moment back-end verbinding**
+- **Verbindingstijd van back-en-back-en**
 
-  Tijd die is besteed aan het tot stand brengen van een verbinding met de back-end-toepassing. 
+  Tijd besteed aan het tot stand brengen van een verbinding met de back-endtoepassing. 
 
-  Dit geldt ook voor de netwerk latentie en de tijd die nodig is voor de TCP-stack van de back-endserver om nieuwe verbindingen tot stand te brengen. In het geval van TLS omvat het ook de tijd die wordt besteed aan handshake. 
+  Dit omvat de netwerklatentie en de tijd die de TCP-stack van de back-ende server nodig heeft om nieuwe verbindingen tot stand te brengen. In het geval van TLS omvat het ook de tijd die wordt besteed aan handshake. 
 
-- **Reactie tijd eerste byte van back-end**
+- **Reactietijd van eerste back-byte**
 
-  Het tijds interval tussen het begin van het tot stand brengen van een verbinding met de back-endserver en het ontvangen van de eerste byte van de reactie header. 
+  Tijdsinterval tussen het begin van het tot stand brengen van een verbinding met de back-mailserver en het ontvangen van de eerste byte van de antwoordheader. 
 
-  Dit is een benadering van de som van de *back-uptijd*, het tijdstip van de aanvraag om de back-end te bereiken van Application Gateway, de tijd die door de back-end-toepassing wordt gebruikt om te reageren (het tijdstip waarop de server inhoud heeft gegenereerd, mogelijk database query's op te halen), en de tijd die wordt ingenel door de eerste byte Application Gateway van de back-end.
+  Hiermee wordt de som van de verbindingstijd van de back-end, de tijd die nodig is voor de aanvraag om de back-Application Gateway te bereiken, de tijd die de back-endtoepassing nodig heeft om te reageren (de tijd die de server nodig heeft om inhoud te genereren, mogelijk databasequery's op te halen) en de tijd die nodig is door de eerste byte van het antwoord om de Application Gateway te bereiken vanuit de back-end.
 
-- **Reactie tijd laatste byte van back-end**
+- **Reactietijd van laatste back-eind byte**
 
-  Het tijds interval tussen het begin van het tot stand brengen van een verbinding met de back-endserver en het ontvangen van de laatste byte van de antwoord tekst. 
+  Tijdsinterval tussen het begin van het tot stand brengen van een verbinding met de back-endserver en het ontvangen van de laatste byte van de antwoord-body. 
 
   Bij benadering vormt dit de som van *Reactietijd van de eerste back-endbyte* en de gegevensoverdrachttijd (deze tijdsduur kan verschillen afhankelijk van de grootte van de aangevraagde objecten en de latentie van het servernetwerk).
 
-- **Totale tijd toepassings gateway**
+- **Totale tijd van Application Gateway**
 
-  De gemiddelde tijd die nodig is om een aanvraag te ontvangen, verwerkt en het antwoord ervan te verzenden. 
+  De gemiddelde tijd die het kost om een aanvraag te ontvangen, te verwerken en te antwoorden. 
 
-  Dit is het interval vanaf het moment dat Application Gateway de eerste byte van de HTTP-aanvraag ontvangt naar het tijdstip waarop de laatste reactie byte is verzonden naar de client. Dit omvat de verwerkings tijd van Application Gateway, de *laatste reactie tijd* van de back-end-byte, de tijd die door Application Gateway is genomen om alle antwoorden en de *client RTT* te verzenden.
+  Dit is het interval vanaf het moment waarop Application Gateway de eerste byte van de HTTP-aanvraag ontvangt tot het tijdstip waarop de laatste antwoord-byte naar de client is verzonden. Dit omvat de verwerkingstijd van Application Gateway, de reactietijd van de laatste *back-Application Gateway,* de tijd die door de Application Gateway wordt genomen om het antwoord en de *Client RTT te verzenden.*
 
 - **Client RTT**
 
-  Gemiddelde Round-retour tijd tussen clients en Application Gateway.
+  Gemiddelde retourtijd tussen clients en Application Gateway.
 
 
 
-Deze metrische gegevens kunnen worden gebruikt om te bepalen of de waargenomen vertraging wordt veroorzaakt door het client netwerk, de Application Gateway prestaties, het back-end netwerk en de back-endserver TCP-stack verzadiging, back-end-toepassings prestaties of grote bestands grootte.
+Deze metrische gegevens kunnen worden gebruikt om te bepalen of de waargenomen vertraging wordt veroorzaakt door het clientnetwerk, de Application Gateway-prestaties, de TCP-stackverzadiging van de back-endserver, de prestaties van de back-endtoepassing of de grote bestandsgrootte.
 
-Als er bijvoorbeeld sprake is van een piek in de back-end voor de *reactie tijd* van een time-out voor de back-end, maar de trend van de *moment verbinding* voor het verbinden stabiel is, kan deze worden uitgesteld dat de toepassings gateway naar de back-end-latentie en de tijd die nodig is om de verbinding tot stand te brengen stabiel is. Daarentegen, als de piek in de *back-end-byte-reactie tijd* is gekoppeld aan een corresponderende Prikker in back- *End Connect time*, kan deze worden afgeleid dat het netwerk tussen Application Gateway-en back-endserver of de TCP-stack van de back-endserver verzadigd is. 
+Als er bijvoorbeeld een piek is in de reactietijd van de eerste *back-end-byte,* maar de trend voor de verbinding met de *back-end* stabiel is, kan worden afgeleid dat de latentie van application gateway naar back-end en de tijd die nodig is om de verbinding tot stand te brengen stabiel is, en dat de piek wordt veroorzaakt door een toename in de reactietijd van de back-endtoepassing. Als de piek in reactietijd van de eerste back-ende *byte* daarentegen is gekoppeld aan een overeenkomstige piek in *back-endverbindingstijd,* kan worden afgeleid dat het netwerk tussen de Application Gateway- en back-en-back-en-back-endserver of de TCP-stack van de back-endserver is verzadigd. 
 
-Als u een piek in de *reactie tijd van de laatste byte* van de back-end hebt gezien, maar de *back-end-reactie tijd* van de backend stabiel is, kan deze worden afgeleid door een groter bestand dat wordt aangevraagd.
+Als u een piek in reactietijd van de laatste back-ende *byte* ziet, maar de reactietijd van de eerste back-ende *byte* stabiel is, kan dit worden afgeleid dat de piek wordt veroorzaakt doordat een groter bestand wordt aangevraagd.
 
-En als de *totale tijd van de toepassings gateway* een piek heeft, maar de *reactie tijd van de laatste byte* van de back-end is stabiel, dan kan het een teken van het knel punt van de prestaties zijn op het Application Gateway of een knel punt in het netwerk tussen client en Application Gateway. Bovendien, als de *client RTT* ook een overeenkomende Prikker heeft, geeft deze aan dat de degradatie wordt veroorzaakt door het netwerk tussen client en Application Gateway.
+En als de totale tijd van *de toepassingsgateway* een piek heeft, maar de reactietijd van de laatste *back-byte* stabiel is, kan dit een teken zijn van een prestatieknelpunt in de Application Gateway of een knelpunt in het netwerk tussen client en Application Gateway. Als de *client-RTT* ook een overeenkomstige piek heeft, geeft dit aan dat de degradatie komt door het netwerk tussen de client en Application Gateway.
 
 ### <a name="application-gateway-metrics"></a>Application Gateway metrische gegevens
 
-De volgende metrische gegevens zijn beschikbaar voor Application Gateway:
+Voor Application Gateway zijn de volgende metrische gegevens beschikbaar:
 
 - **Ontvangen bytes**
 
-   Aantal bytes dat is ontvangen door de Application Gateway van de clients
+   Aantal bytes dat door de Application Gateway ontvangen van de clients
 
 - **Verzonden bytes**
 
-   Aantal bytes dat door de Application Gateway is verzonden naar de clients
+   Aantal bytes dat door de Application Gateway naar de clients wordt verzonden
 
-- **TLS-protocol van client**
+- **Client-TLS-protocol**
 
-   Aantal TLS-en niet-TLS-aanvragen dat door de client is gestart en die verbinding heeft gemaakt met de Application Gateway. Als u de TLS-protocol distributie wilt weer geven, filtert u op het TLS-protocol van de dimensie.
+   Aantal TLS- en niet-TLS-aanvragen dat is geïnitieerd door de client die verbinding heeft gemaakt met de Application Gateway. Als u de TLS-protocoldistributie wilt weergeven, filtert u op het dimensie-TLS-protocol.
 
 - **Huidige capaciteitseenheden**
 
-   Aantal capaciteitseenheden dat is verbruikt om de verkeerstaken te verdelen. Er zijn drie determinanten voor de capaciteits eenheid: reken eenheid, permanente verbindingen en door voer. Elke capaciteits eenheid bestaat uit Maxi maal 1 Compute-eenheid of 2500 permanente verbindingen, of door Voer van 2,22-Mbps.
+   Aantal capaciteitseenheden dat is verbruikt om de verkeerstaken te verdelen. Er zijn drie determinanten voor capaciteitseenheid: rekeneenheid, permanente verbindingen en doorvoer. Elke capaciteitseenheid bestaat uit ten zeerste: 1 rekeneenheid of 2500 permanente verbindingen of 2,22 Mbps doorvoer.
 
-- **Huidige reken eenheden**
+- **Huidige rekeneenheden**
 
-   Aantal verbruikte processor capaciteit. Factoren die de rekeneenheid beïnvloeden, zijn: TLS-verbindingen per seconde, berekeningen voor het herschrijven van URL's en de verwerking van WAF-regels. 
+   Aantal verbruikte processorcapaciteit. Factoren die de rekeneenheid beïnvloeden, zijn: TLS-verbindingen per seconde, berekeningen voor het herschrijven van URL's en de verwerking van WAF-regels. 
 
 - **Huidige verbindingen**
 
@@ -98,11 +98,11 @@ De volgende metrische gegevens zijn beschikbaar voor Application Gateway:
    
 - **Geschatte gefactureerde capaciteitseenheden**
 
-  Bij de tweede versie van de SKU is het prijsmodel gebaseerd op het verbruik. Capaciteitseenheden meten verbruikskosten die naast de vaste kosten in rekening worden gebracht. *Geschatte gefactureerde capaciteits eenheden* duiden het aantal capaciteits eenheden aan waarmee de facturering wordt geschat. Dit wordt berekend als het verschil tussen *Huidige capaciteitseenheden* (capaciteitseenheden die nodig zijn om de verkeerstaken te verdelen) en *Vaste factureerbare capaciteitseenheden* (minimaal aantal capaciteitseenheden dat wordt ingericht).
+  Bij de tweede versie van de SKU is het prijsmodel gebaseerd op het verbruik. Capaciteitseenheden meten verbruikskosten die naast de vaste kosten in rekening worden gebracht. *Geschatte gefactureerde capaciteitseenheden* geeft het aantal capaciteitseenheden aan op basis waarvan de facturering wordt geschat. Dit wordt berekend als het verschil tussen *Huidige capaciteitseenheden* (capaciteitseenheden die nodig zijn om de verkeerstaken te verdelen) en *Vaste factureerbare capaciteitseenheden* (minimaal aantal capaciteitseenheden dat wordt ingericht).
 
 - **Mislukte aanvragen**
 
-  Het aantal aanvragen dat Application Gateway heeft geleverd met 5xx-server fout codes. Dit omvat de 5xx-codes die worden gegenereerd op basis van de Application Gateway en de 5xx-codes die worden gegenereerd op basis van de back-end. Het aantal aanvragen kan verder worden gefilterd om het aantal weer te geven per/specifieke back-end-groep-combi natie van http-instellingen.
+  Aantal aanvragen dat Application Gateway heeft uitgevoerd met 5xx serverfoutcodes. Dit omvat de 5xx-codes die worden gegenereerd op basis van de Application Gateway en de 5xx-codes die worden gegenereerd op basis van de back-end. Het aantal aanvragen kan verder worden gefilterd om het aantal per combinatie van back-endpool-http-instelling weer te geven.
    
 - **Vaste factureerbare capaciteitseenheden**
 
@@ -110,47 +110,47 @@ De volgende metrische gegevens zijn beschikbaar voor Application Gateway:
    
  - **Nieuwe verbindingen per seconde**
 
-   Het gemiddelde aantal nieuwe TCP-verbindingen per seconde dat is gemaakt van clients met de Application Gateway en van de Application Gateway aan de back-end-leden.
+   Het gemiddelde aantal nieuwe TCP-verbindingen per seconde dat is ingesteld van clients naar de Application Gateway en van de Application Gateway naar de back-endleden.
 
 
-- **Reactie status**
+- **Antwoordstatus**
 
-   De HTTP-antwoord status die is geretourneerd door Application Gateway. De antwoord status code distributie kan verder worden gecategoriseerd om antwoorden weer te geven in 2xx-, 3xx-, 4xx-en 5xx-categorieën.
+   HTTP-antwoordstatus geretourneerd door Application Gateway. De distributie van de antwoordstatuscode kan verder worden gecategoriseerd om antwoorden weer te geven in de categorieën 2xx, 3xx, 4xx en 5xx.
 
 - **Doorvoer**
 
-   Aantal bytes per seconde dat de Application Gateway heeft bediend
+   Aantal bytes per seconde dat door Application Gateway wordt bediend
 
 - **Totaal aantal aanvragen**
 
-   Aantal geslaagde aanvragen dat Application Gateway heeft geleverd. Het aantal aanvragen kan verder worden gefilterd om het aantal weer te geven per/specifieke back-end-groep-combi natie van http-instellingen.
+   Aantal geslaagde aanvragen dat Application Gateway heeft bediend. Het aantal aanvragen kan verder worden gefilterd om het aantal per/specifieke combinatie van back-endpool-http-instellingen weer te geven.
 
-### <a name="backend-metrics"></a>Metrische gegevens van back-end
+### <a name="backend-metrics"></a>Metrische gegevens van back-en-over
 
-De volgende metrische gegevens zijn beschikbaar voor Application Gateway:
+Voor Application Gateway zijn de volgende metrische gegevens beschikbaar:
 
-- **Reactie status van back-end**
+- **Antwoordstatus van back-end**
 
-  Aantal HTTP-antwoord status codes dat door de back-end wordt geretourneerd. Dit omvat geen antwoord codes die zijn gegenereerd door de Application Gateway. De antwoord status code distributie kan verder worden gecategoriseerd om antwoorden weer te geven in 2xx-, 3xx-, 4xx-en 5xx-categorieën.
+  Aantal HTTP-antwoordstatuscodes dat door de back-einden wordt geretourneerd. Dit omvat geen responscodes die door de Application Gateway. De distributie van de antwoordstatuscode kan verder worden gecategoriseerd om antwoorden weer te geven in de categorieën 2xx, 3xx, 4xx en 5xx.
 
 - **Hostaantal in orde**
 
-  Het aantal back-ends dat in orde wordt gesteld door de status test. U kunt filteren op basis van een per back-end-groep om het aantal gezonde hosts in een specifieke back-end-groep weer te geven.
+  Het aantal back-einden dat in orde wordt bepaald door de statustest. U kunt filteren op basis van een back-endpool om het aantal gezonde hosts in een specifieke back-endpool weer te geven.
 
 - **Hostaantal beschadigd**
 
-  Het aantal back-ends dat niet in orde is voor de status test. U kunt filteren op basis van een per back-end-groep om het aantal beschadigde hosts in een specifieke back-end-groep weer te geven.
+  Het aantal back-einden dat door de statustest niet in orde is. U kunt filteren op basis van een back-endpool om het aantal hosts met een slechte status in een specifieke back-endpool weer te geven.
   
-- **Aanvragen per minuut per gegezonde host**
+- **Aanvragen per minuut per host met een goede gezondheid**
 
-  Het gemiddelde aantal aanvragen dat is ontvangen door elk in orded lid in een back-end-groep in een minuut. U moet de back-end-pool opgeven met de dimensie *hosts HttpSettings* .  
+  Het gemiddelde aantal aanvragen dat in één minuut door elk gezond lid in een back-endpool is ontvangen. U moet de back-endpool opgeven met behulp van de *dimensie HttpSettings van BackendPool.*  
   
 
-## <a name="metrics-supported-by-application-gateway-v1-sku"></a>Metrische gegevens die worden ondersteund door Application Gateway v1 SKU
+## <a name="metrics-supported-by-application-gateway-v1-sku"></a>Metrische gegevens die worden ondersteund door Application Gateway V1 SKU
 
 ### <a name="application-gateway-metrics"></a>Application Gateway metrische gegevens
 
-De volgende metrische gegevens zijn beschikbaar voor Application Gateway:
+Voor Application Gateway zijn de volgende metrische gegevens beschikbaar:
 
 - **CPU-gebruik**
 
@@ -158,87 +158,87 @@ De volgende metrische gegevens zijn beschikbaar voor Application Gateway:
 
 - **Huidige verbindingen**
 
-  Aantal actieve verbindingen dat tot stand is gebracht met Application Gateway
+  Aantal huidige verbindingen tot stand gebracht met Application Gateway
 
 - **Mislukte aanvragen**
 
-  Het aantal aanvragen dat is mislukt vanwege verbindings problemen. Dit aantal bevat aanvragen die zijn mislukt omdat de HTTP-instelling voor het aanvragen van een time-out is overschreden en aanvragen die zijn mislukt vanwege verbindings problemen tussen de toepassings gateway en de back-end. Dit aantal bevat geen fouten omdat er geen gezonde back-end beschikbaar is. 4xx-en 5xx-antwoorden van de back-end worden ook niet beschouwd als onderdeel van deze metriek.
+  Aantal aanvragen dat is mislukt vanwege verbindingsproblemen. Dit aantal omvat aanvragen die zijn mislukt vanwege het overschrijden van de HTTP-instelling 'Time-out van aanvraag' en aanvragen die zijn mislukt vanwege verbindingsproblemen tussen Application Gateway en back-end. Dit aantal omvat geen fouten omdat er geen goede back-end beschikbaar is. 4xx- en 5xx-antwoorden van de back-end worden ook niet beschouwd als onderdeel van deze metrische gegevens.
 
-- **Reactie status**
+- **Antwoordstatus**
 
-  De HTTP-antwoord status die is geretourneerd door Application Gateway. De antwoord status code distributie kan verder worden gecategoriseerd om antwoorden weer te geven in 2xx-, 3xx-, 4xx-en 5xx-categorieën.
+  HTTP-antwoordstatus geretourneerd door Application Gateway. De distributie van de antwoordstatuscode kan verder worden gecategoriseerd om antwoorden weer te geven in de categorieën 2xx, 3xx, 4xx en 5xx.
 
 - **Doorvoer**
 
-  Aantal bytes per seconde dat de Application Gateway heeft bediend
+  Aantal bytes per seconde dat de Application Gateway heeft gebruikt
 
 - **Totaal aantal aanvragen**
 
-  Aantal geslaagde aanvragen dat Application Gateway heeft geleverd. Het aantal aanvragen kan verder worden gefilterd om het aantal weer te geven per/specifieke back-end-groep-combi natie van http-instellingen.
+  Aantal geslaagde aanvragen dat Application Gateway heeft ingediend. Het aantal aanvragen kan verder worden gefilterd om het aantal per combinatie van back-endpool-http-instelling weer te geven.
 
-- **Aantal geblokkeerde aanvragen voor Web Application firewall**
-- **Distributie van door Web Application firewall geblokkeerde aanvragen**
-- **Totale regel distributie Web Application firewall**
+- **Web Application Firewall aantal geblokkeerde aanvragen**
+- **Web Application Firewall distributie van geblokkeerde aanvragen**
+- **Web Application Firewall totale regeldistributie**
 
-### <a name="backend-metrics"></a>Metrische gegevens van back-end
+### <a name="backend-metrics"></a>Metrische gegevens van back-en-over
 
-De volgende metrische gegevens zijn beschikbaar voor Application Gateway:
+Voor Application Gateway zijn de volgende metrische gegevens beschikbaar:
 
 - **Hostaantal in orde**
 
-  Het aantal back-ends dat in orde wordt gesteld door de status test. U kunt filteren op basis van een per back-end-groep om het aantal gezonde hosts in een specifieke back-end-groep weer te geven.
+  Het aantal back-einden dat in orde wordt bepaald door de statustest. U kunt filteren op basis van een back-endpool om het aantal gezonde hosts in een specifieke back-endpool weer te geven.
 
 - **Hostaantal beschadigd**
 
-  Het aantal back-ends dat niet in orde is voor de status test. U kunt filteren op basis van een per back-end-groep om het aantal beschadigde hosts in een specifieke back-end-groep weer te geven.
+  Het aantal back-einden dat door de statustest niet in orde is. U kunt filteren op basis van een back-endpool om het aantal hosts met een slechte status in een specifieke back-endpool weer te geven.
 
 ## <a name="metrics-visualization"></a>Visualisatie van metrische gegevens
 
-Blader naar een toepassings gateway onder **bewaking** **metrische gegevens** selecteren. Om de beschikbare waarden te zien, selecteert u de vervolgkeuzelijst **METRISCH**.
+Blader naar een toepassingsgateway en selecteer **onder Bewaking de** optie **Metrische gegevens.** Om de beschikbare waarden te zien, selecteert u de vervolgkeuzelijst **METRISCH**.
 
-In de volgende afbeelding ziet u een voor beeld met drie metrische gegevens die gedurende de laatste 30 minuten worden weer gegeven:
+In de volgende afbeelding ziet u een voorbeeld met drie metrische gegevens die in de afgelopen 30 minuten zijn weergegeven:
 
-:::image type="content" source="media/application-gateway-diagnostics/figure5.png" alt-text="Metrische weer gave." lightbox="media/application-gateway-diagnostics/figure5-lb.png":::
+:::image type="content" source="media/application-gateway-diagnostics/figure5.png" alt-text="Metrische weergave." lightbox="media/application-gateway-diagnostics/figure5-lb.png":::
 
-Zie [ondersteunde metrische gegevens met Azure monitor](../azure-monitor/essentials/metrics-supported.md)voor een actuele lijst met metrische gegevens.
+Zie Ondersteunde metrische gegevens met de Azure Monitor voor [een Azure Monitor.](../azure-monitor/essentials/metrics-supported.md)
 
-### <a name="alert-rules-on-metrics"></a>Waarschuwings regels voor metrische gegevens
+### <a name="alert-rules-on-metrics"></a>Waarschuwingsregels voor metrische gegevens
 
-U kunt waarschuwings regels starten op basis van metrische gegevens voor een resource. Een waarschuwing kan bijvoorbeeld een webhook aanroepen of een beheerder e-mailen als de door Voer van de toepassings gateway boven, onder of met een drempel waarde voor een opgegeven periode.
+U kunt waarschuwingsregels starten op basis van metrische gegevens voor een resource. Een waarschuwing kan bijvoorbeeld een webhook aanroepen of een beheerder een e-mail sturen als de doorvoer van de toepassingsgateway boven, onder of op een drempelwaarde voor een bepaalde periode ligt.
 
-In het volgende voor beeld wordt stapsgewijs uitgelegd hoe u een waarschuwings regel maakt waarmee een e-mail wordt verzonden naar een beheerder na een drempel waarde voor de door Voer, bijvoorbeeld:
+In het volgende voorbeeld ziet u hoe u een waarschuwingsregel maakt die een e-mailbericht naar een beheerder verzendt nadat de doorvoer een drempelwaarde overschrijdt:
 
-1. Selecteer **waarschuwing voor metrische gegevens toevoegen** om de pagina **regel toevoegen** te openen. U kunt deze pagina ook bereiken via de pagina metrische gegevens.
+1. Selecteer **Waarschuwing voor metrische gegevens toevoegen** om de pagina Regel toevoegen **te** openen. U kunt deze pagina ook bereiken via de pagina met metrische gegevens.
 
-   ![Knop voor waarschuwing voor metrische gegevens toevoegen][6]
+   ![Knop Waarschuwing voor metrische gegevens toevoegen][6]
 
-2. Vul op de pagina **regel toevoegen** de naam, de voor waarde en de meldings secties in en selecteer **OK**.
+2. Vul op **de pagina** Regel toevoegen de secties naam, voorwaarde en melding in en selecteer **OK.**
 
-   * Selecteer in de **voor waarden** kiezer een van de vier waarden: **groter dan**, **groter dan of gelijk** aan, **kleiner dan** of **kleiner dan of gelijk aan**.
+   * Selecteer in **de** selector Voorwaarde een van de vier **waarden:** Groter dan , Groter dan of **gelijk** aan , **Kleiner dan** of Kleiner dan of **gelijk aan**.
 
-   * Selecteer in de **periode** kiezer een periode van vijf minuten tot zes uur.
+   * Selecteer in **de** selector Periode een periode van vijf minuten tot zes uur.
 
-   * Als u **e-mail eigenaren, inzenders en lezers** selecteert, kan het e-mail bericht dynamisch zijn op basis van de gebruikers die toegang hebben tot de bron. Als dat niet het geval is, kunt u een door komma's gescheiden lijst met gebruikers opgeven in het vak **extra e-mail adres** van de beheerder.
+   * Als u **E-maileigenaren, bijdragers** en lezers selecteert, kan het e-mailbericht dynamisch zijn op basis van de gebruikers die toegang hebben tot die resource. Anders kunt u een door komma's gescheiden lijst met gebruikers in het vak **Extra e-mail van beheerders** verstrekken.
 
-   ![Regel pagina toevoegen][7]
+   ![Regelpagina toevoegen][7]
 
-Als de drempel waarde wordt geschonden, ontvangt u een e-mail bericht dat lijkt op dat van de volgende afbeelding:
+Als de drempelwaarde wordt overschreden, ontvangt u een e-mailbericht dat vergelijkbaar is met het e-mailbericht in de volgende afbeelding:
 
-![E-mail voor drempel waarde voor schending][8]
+![E-mail voor overschreden drempelwaarde][8]
 
-Er wordt een lijst met waarschuwingen weer gegeven nadat u een metrische waarschuwing hebt gemaakt. Het bevat een overzicht van alle waarschuwings regels.
+Er wordt een lijst met waarschuwingen weergegeven nadat u een waarschuwing voor metrische gegevens hebt maken. Het biedt een overzicht van alle waarschuwingsregels.
 
 ![Lijst met waarschuwingen en regels][9]
 
-Zie [waarschuwings meldingen ontvangen](../azure-monitor/alerts/alerts-overview.md)voor meer informatie over waarschuwings meldingen.
+Zie Waarschuwingsmeldingen ontvangen voor [meer informatie over waarschuwingsmeldingen.](../azure-monitor/alerts/alerts-overview.md)
 
-Ga voor meer informatie over webhooks en hoe u deze kunt gebruiken met waarschuwingen, [een webhook configureren voor een Azure metric-waarschuwing](../azure-monitor/alerts/alerts-webhooks.md).
+Als u meer wilt weten over webhooks en hoe u deze kunt gebruiken met waarschuwingen, gaat u naar Een webhook configureren [voor een Azure-waarschuwing voor metrische gegevens.](../azure-monitor/alerts/alerts-webhooks.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Visualiseer teller-en gebeurtenis logboeken met behulp van [Azure monitor-logboeken](../azure-monitor/insights/azure-networking-analytics.md).
-* [Visualiseer uw Azure-activiteiten logboek met Power bi](https://powerbi.microsoft.com/blog/monitor-azure-audit-logs-with-power-bi/) blog bericht.
-* [Bekijk en analyseer activiteiten logboeken van Azure in Power bi en meer](https://azure.microsoft.com/blog/analyze-azure-audit-logs-in-powerbi-more/) blog berichten.
+* Visualiseer teller- en gebeurtenislogboeken met [behulp Azure Monitor logboeken.](../azure-monitor/insights/azure-networking-analytics.md)
+* [Visualiseer uw Azure-activiteitenlogboek met Power BI](https://powerbi.microsoft.com/blog/monitor-azure-audit-logs-with-power-bi/) blogpost.
+* [Bekijk en analyseer Azure-activiteitenlogboeken in Power BI blogpost.](https://azure.microsoft.com/blog/analyze-azure-audit-logs-in-powerbi-more/)
 
 [1]: ./media/application-gateway-diagnostics/figure1.png
 [2]: ./media/application-gateway-diagnostics/figure2.png

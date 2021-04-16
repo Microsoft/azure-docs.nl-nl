@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/21/2020
+ms.date: 04/06/2021
 ms.author: jeedes
-ms.openlocfilehash: 6fdc9c70d1c9fc67c38edfd794354f9e03321c73
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 56f2eea9dc485c69b6070fda6e9519887f7b30cb
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98731402"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107519532"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-easysso-for-bitbucket"></a>Zelfstudie: Integratie van eenmalige aanmelding bij Azure Active Directory met EasySSO voor BitBucket
 
@@ -50,7 +50,6 @@ Om de integratie van EasySSO voor BitBucket in Azure AD te configureren, moet u 
 1. Als u een nieuwe toepassing wilt toevoegen, selecteert u **Nieuwe toepassing**.
 1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak: **EasySSO voor BitBucket**.
 1. Selecteer **EasySSO voor BitBucket** in de resultaten en voeg de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
-
 
 ## <a name="configure-and-test-azure-ad-sso-for-easysso-for-bitbucket"></a>Eenmalige aanmelding van Azure AD configureren en testen voor EasySSO for BitBucket
 
@@ -129,9 +128,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 1. Selecteer in de Azure-portal **Bedrijfstoepassingen** > **Alle toepassingen**.
 1. Selecteer **EasySSO voor BitBucket** in de lijst met toepassingen.
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
-
 1. Selecteer **Gebruiker toevoegen**. Selecteer **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
-
 1. Selecteer in de lijst met gebruikers in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst **Gebruikers** en kies **Selecteren** onderaan het scherm.
 1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Selecteer **Toewijzen** in het dialoogvenster **Toewijzing toevoegen**.

@@ -1,6 +1,6 @@
 ---
-title: azcopy-taken opschonen | Microsoft Docs
-description: In dit artikel vindt u Naslag informatie voor de opdracht azcopy-taken opschonen.
+title: azcopy jobs clean | Microsoft Docs
+description: Dit artikel bevat naslaginformatie voor de opdracht azcopy jobs clean.
 author: normesta
 ms.service: storage
 ms.topic: reference
@@ -8,16 +8,16 @@ ms.date: 07/24/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 4a2c717601747e15556608559450b35bb934410b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 01bb7e37965abacac8105689bcb5ae52c548d647
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98879102"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107503419"
 ---
 # <a name="azcopy-jobs-clean"></a>azcopy jobs clean
 
-Alle logboek bestanden en abonnementen voor alle taken verwijderen
+Alle logboek- en planbestanden voor alle taken verwijderen
 
 ```
 azcopy jobs clean [flags]
@@ -28,7 +28,6 @@ azcopy jobs clean [flags]
 - [Aan de slag met AzCopy](storage-use-azcopy-v10.md)
 - [Gegevens overdragen met AzCopy en Blob Storage](./storage-use-azcopy-v10.md#transfer-data)
 - [Gegevens overdragen met AzCopy en bestandsopslag](storage-use-azcopy-files.md)
-- [Configureren, optimaliseren en problemen oplossen in AzCopy](storage-use-azcopy-configure.md)
 
 ## <a name="examples"></a>Voorbeelden
 
@@ -38,17 +37,17 @@ azcopy jobs clean [flags]
 
 ## <a name="options"></a>Opties
 
-**--Help**                Help voor schonen.
+**--help**                Help voor ops schonen.
 
-**--met-status** teken reeks verwijdert alleen de taken met deze status, beschik bare waarden: `Canceled` ,, `Completed` `Failed` , `InProgress` , `All` (standaard `All` )
+**--with-status** string (tekenreeks met status) Verwijder alleen de taken met deze status, beschikbare waarden: `Canceled` , , , , `Completed` `Failed` `InProgress` `All` (standaard `All` )
 
-## <a name="options-inherited-from-parent-commands"></a>Opties overgenomen van bovenliggende opdrachten
+## <a name="options-inherited-from-parent-commands"></a>Opties die zijn overgenomen van bovenliggende opdrachten
 
-**--Cap-Mbps-float**      De overdrachts frequentie in megabits per seconde. Even door Voer kan enigszins afwijken van het kapje. Als deze optie is ingesteld op nul of wordt wegge laten, wordt de door Voer niet afgetopt.
+**--cap-mbps float**      Beperk de overdrachtssnelheid, in megabits per seconde. De doorvoer per moment kan enigszins afwijken van de limiet. Als deze optie is ingesteld op nul of wordt weggelaten, wordt de doorvoer niet afgekapt.
 
-**--** de teken reeks indeling van het uitvoer type van de uitvoer van de opdracht. De opties zijn onder andere: Text, JSON. De standaard waarde is ' text '. (standaard tekst)
+**--output-type** string Format of the command's output. De keuzes zijn onder andere: text, json. De standaardwaarde is 'text'. (standaard 'text')
 
-**--vertrouwd-micro soft-achtervoegsels** teken reeks geeft aanvullende domein achtervoegsels aan waar Azure Active Directory aanmeldings tokens kunnen worden verzonden.  De standaard waarde is *. core.Windows.net;*. core.chinacloudapi.cn; *. core.cloudapi.de;*. core.usgovcloudapi.net '. Alle hier vermelde waarden worden toegevoegd aan de standaard instelling. Voor beveiliging moet u Microsoft Azure domeinen hier alleen plaatsen. Scheid meerdere vermeldingen met een punt komma.
+**--trusted-microsoft-suffixes** string Hiermee geeft u extra domeinachtervoegsels op waar Azure Active Directory aanmeldingstokens kunnen worden verzonden.  De standaardwaarde is *.core.windows.net;*. core.chinacloudapi.cn; *.core.cloudapi.de;*. core.usgovcloudapi.net'. Alle die hier worden vermeld, worden toegevoegd aan de standaardinstelling. Voor beveiliging moet u alleen de Microsoft Azure hier zetten. Scheid meerdere vermeldingen met punt-dubbele punt.
 
 ## <a name="see-also"></a>Zie ook
 

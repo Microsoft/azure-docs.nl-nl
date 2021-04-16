@@ -1,76 +1,76 @@
 ---
 title: Hoge beschikbaarheid en herstel na noodgevallen
 titleSuffix: Azure Digital Twins
-description: Hierin worden de Azure-en Azure Digital Apparaatdubbels-functies beschreven waarmee u Maxi maal beschik bare Azure IoT-oplossingen kunt bouwen met mogelijkheden voor herstel na nood gevallen.
+description: Beschrijft de Functies van Azure Azure Digital Twins die u helpen bij het bouwen van azure IoT-oplossingen met hoge beschikbare mogelijkheden voor herstel na noodgevallen.
 author: baanders
 ms.author: baanders
 ms.date: 10/14/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 3336a086fbe8f4291f752836a610cd80b773ec2d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 41edef58910fe2b772831ef083e5aca8bb52a321
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "98790813"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107482265"
 ---
-# <a name="azure-digital-twins-high-availability-and-disaster-recovery"></a>Azure Digital Apparaatdubbels hoge Beschik baarheid en herstel na nood gevallen
+# <a name="azure-digital-twins-high-availability-and-disaster-recovery"></a>Azure Digital Twins hoge beschikbaarheid en herstel na noodherstel
 
-Een belang rijk aandachtspunt voor flexibele IoT-oplossingen is bedrijfs continuïteit en herstel na nood gevallen. Ontwerpen voor **hoge Beschik baarheid (ha)** en herstel **na nood gevallen (Dr)** kan u helpen om de juiste uptime-doelen voor uw oplossing te definiëren en te bereiken.
+Een belangrijk aandachtspunt voor flexibele IoT-oplossingen is bedrijfscontinuïteit en herstel na noodherstel. Ontwerpen voor hoge **beschikbaarheid (HA)** en herstel na noodherstel **(DR)** kan u helpen bij het definiëren en bereiken van de juiste uptime-doelen voor uw oplossing.
 
-In dit artikel worden de HA-en DR-functies beschreven die specifiek worden aangeboden door de Azure Digital Apparaatdubbels-service.
+In dit artikel worden de ha- en DR-functies besproken die specifiek worden aangeboden door de Azure Digital Twins service.
 
-Azure Digital Apparaatdubbels ondersteunt deze functie opties:
-* *Intra regio ha* : ingebouwde redundantie voor het leveren van de uptime van de service
-* *Meerdere regio's van Dr* : een failover naar een geografisch gekoppelde Azure-regio in het geval van een onverwachte Data Center-fout
+Azure Digital Twins ondersteunt deze functieopties:
+* *Ha binnen regio'* s: ingebouwde redundantie om te zorgen voor uptime van de service
+* *DR voor verschillende regio's:* failover naar een geografisch gekoppelde Azure-regio in het geval van een onverwachte datacentrumfout
 
-U kunt ook het gedeelte [*Aanbevolen procedures*](#best-practices) voor algemene Azure-richt lijnen over het ontwerpen van ha/Dr bekijken.
+U kunt ook de sectie [*Best practices voor algemene*](#best-practices) Azure-richtlijnen over ontwerpen voor ha/dr bekijken.
 
-## <a name="intra-region-ha"></a>Binnenste regio HA
+## <a name="intra-region-ha"></a>Ha binnen regio's
  
-Azure Digital Apparaatdubbels voorziet in een binnenste regio HA door redundantie in de service te implementeren. Dit wordt weer gegeven in de [service-Sla](https://azure.microsoft.com/support/legal/sla/digital-twins) voor de actieve tijds duur. **Voor de ontwikkel aars van een Azure Digital Apparaatdubbels-oplossing is geen extra werk vereist om deze HA-functies te benutten.** Hoewel Azure Digital Apparaatdubbels een redelijk hoge uptime biedt, kunnen tijdelijke fouten nog steeds worden verwacht, net zoals bij een gedistribueerd computing platform. Het juiste beleid voor opnieuw proberen moet zijn ingebouwd in de onderdelen die communiceren met een Cloud toepassing om te kunnen omgaan met tijdelijke fouten.
+Azure Digital Twins biedt intraregio-HA door redundantie binnen de service te implementeren. Dit wordt weerspiegeld in de [service-SLA](https://azure.microsoft.com/support/legal/sla/digital-twins) voor uptime. **Er is geen extra werk vereist voor de ontwikkelaars van een Azure Digital Twins om te profiteren van deze ha-functies.** Hoewel Azure Digital Twins redelijk hoge uptimegarantie biedt, kunnen er nog steeds tijdelijke fouten worden verwacht, net als bij elk gedistribueerd computingplatform. Het juiste beleid voor opnieuw proberen moet worden ingebouwd in de onderdelen die communiceren met een cloudtoepassing om tijdelijke fouten op te kunnen.
 
-## <a name="cross-region-dr"></a>DR-regio tussen regio's
+## <a name="cross-region-dr"></a>Regio-overschrijdende DR
 
-Er kunnen zeldzame situaties optreden wanneer een Data Center uitvallende storingen ondervindt als gevolg van stroom storingen of andere gebeurtenissen in de regio. Dergelijke gebeurtenissen zijn zeldzaam, en tijdens dergelijke storingen is het mogelijk dat de mogelijkheden voor de intra regio HA die hierboven worden beschreven, niet kunnen helpen. Azure Digital Apparaatdubbels lost dit op met door micro soft geïnitieerde failover.
+Er kunnen enkele zeldzame situaties zijn waarin een datacenter uitgebreide storingen ervaart als gevolg van stroomstoringen of andere gebeurtenissen in de regio. Dergelijke gebeurtenissen zijn zeldzaam en tijdens dergelijke fouten kan de hierboven beschreven mogelijkheid voor een intra-regio-ha mogelijk niet helpen. Azure Digital Twins lost dit op met door Microsoft geïnitieerde failover.
 
-Door micro soft **geïnitieerde failover** wordt door micro soft in zeldzame gevallen uitgevoerd om alle Azure Digital apparaatdubbels-exemplaren van een betrokken regio over te gaan naar de overeenkomstige geografische paar regio. Dit proces is een standaard optie (zonder een manier om gebruikers te kiezen) en vereist geen tussen komst van de gebruiker. Micro soft behoudt zich het recht voor om te bepalen wanneer deze optie wordt uitgeoefend. Dit mechanisme heeft geen toestemming van een gebruiker voor het uitvoeren van een failover van het gebruikers exemplaar.
+**Door Microsoft geïnitieerde failover** wordt in zeldzame situaties door Microsoft onder meer gebruikt om een failover uit te Azure Digital Twins van een betrokken regio naar de bijbehorende geografisch gekoppelde regio. Dit proces is een standaardoptie (zonder mogelijkheid voor gebruikers om zich af te geven) en vereist geen tussenkomst van de gebruiker. Microsoft behoudt zich het recht voor om te bepalen wanneer deze optie wordt gebruikt. Dit mechanisme vereist geen toestemming van de gebruiker voordat er een failed over-overing van het exemplaar van de gebruiker wordt gedaan.
 
 >[!NOTE]
-> Sommige Azure-Services bieden ook een extra optie met de door de **klant geïnitieerde failover**, waarmee klanten een failover voor hun exemplaar kunnen initiëren, bijvoorbeeld om een Dr-analyse uit te voeren. Dit mechanisme wordt momenteel **niet ondersteund** door Azure Digital apparaatdubbels. 
+> Sommige Azure-services bieden ook een extra optie, de zogenaamde door de klant geïnitieerde **failover,** waarmee klanten alleen voor hun exemplaar een failover kunnen initiëren, zoals het uitvoeren van een dr-oefening. Dit mechanisme wordt momenteel **niet ondersteund** door Azure Digital Twins. 
 
 ## <a name="monitor-service-health"></a>Servicestatus bewaken
 
-Als er een failover wordt uitgevoerd voor Azure Digital Apparaatdubbels-exemplaren, kunt u het proces bewaken met het hulp programma [Azure service Health](../service-health/service-health-overview.md) . Service Health houdt de status van uw Azure-Services in verschillende regio's en abonnementen bij en deelt de communicatie met de service die invloed heeft op storingen en uitval tijd.
+Wanneer Azure Digital Twins exemplaren worden overgenomen en hersteld, kunt u het proces bewaken met behulp van [Azure Service Health](../service-health/service-health-overview.md) hulpprogramma. Service Health de status van uw Azure-services in verschillende regio's en abonnementen bij, en deelt communicatie die invloed heeft op de service over storingen en downtimes.
 
-Tijdens een failover-gebeurtenis kan Service Health een indicatie geven wanneer uw service niet actief is en wanneer er een back-up wordt gemaakt.
+Tijdens een failovergebeurtenis kunnen Service Health een indicatie geven van wanneer uw service uit staat en wanneer er een back-up van wordt gemaakt.
 
-Service Health gebeurtenissen weer geven...
-1. Navigeer naar [service Health](https://portal.azure.com/?feature.customportal=false#blade/Microsoft_Azure_Health/AzureHealthBrowseBlade/serviceIssues) in het Azure Portal (u kunt deze koppeling gebruiken of zoeken met de zoek balk van de portal).
-1. Gebruik het menu aan de linkerkant om over te scha kelen naar de pagina *status geschiedenis* .
-1. Zoek naar een *probleem naam* die begint met **Azure Digital apparaatdubbels** en selecteer deze.
+Als u de Service Health weergeven...
+1. [Navigeer Service Health](https://portal.azure.com/?feature.customportal=false#blade/Microsoft_Azure_Health/AzureHealthBrowseBlade/serviceIssues) in de Azure Portal (u kunt deze koppeling gebruiken of zoeken met behulp van de portalzoekbalk).
+1. Gebruik het menu links om over te schakelen naar de *pagina Statusgeschiedenis.*
+1. Zoek naar een *probleemnaam die* begint **met Azure Digital Twins** en selecteer deze.
 
-    :::image type="content" source="media/concepts-high-availability-disaster-recovery/navigate.png" alt-text="Scherm afbeelding van de Azure Portal de pagina met de status geschiedenis wordt weer gegeven. Er is een lijst met verschillende problemen van de afgelopen paar dagen en een probleem met de naam ' Azure Digital Apparaatdubbels-Europa-west-Reduced ' is gemarkeerd." lightbox="media/concepts-high-availability-disaster-recovery/navigate.png":::
+    :::image type="content" source="media/concepts-high-availability-disaster-recovery/navigate.png" alt-text="Schermopname van de Azure Portal met de pagina Statusgeschiedenis. Er is een lijst met verschillende problemen van de afgelopen dagen en een probleem met de naam 'Azure Digital Twins - Europa - west - Mitigated' is gemarkeerd." lightbox="media/concepts-high-availability-disaster-recovery/navigate.png":::
 
-1. Voor algemene informatie over de onderbreking bekijkt u het tabblad *samen vatting* .
+1. Bekijk het tabblad Samenvatting voor algemene informatie over *de* storing.
 
-    :::image type="content" source="media/concepts-high-availability-disaster-recovery/summary.png" alt-text="Op de pagina status geschiedenis is het tabblad samen vatting gemarkeerd. Op het tabblad wordt algemene informatie weer gegeven, zoals de resource die is beïnvloed, de regio en het abonnement." lightbox="media/concepts-high-availability-disaster-recovery/summary.png":::
-1. Voor meer informatie over en updates van het probleem in de loop van de tijd bekijkt u het tabblad *updates van problemen* .
+    :::image type="content" source="media/concepts-high-availability-disaster-recovery/summary.png" alt-text="Op de pagina Statusgeschiedenis is het tabblad Samenvatting gemarkeerd. Op het tabblad wordt algemene informatie weergegeven, zoals de resource die is beïnvloed, de regio en het abonnement." lightbox="media/concepts-high-availability-disaster-recovery/summary.png":::
+1. Zie het tabblad Probleemupdates voor meer informatie en updates over *het probleem gedurende een* periode.
 
-    :::image type="content" source="media/concepts-high-availability-disaster-recovery/issue-updates.png" alt-text="Op de pagina status geschiedenis is het tabblad updates van problemen gemarkeerd. Op het tabblad worden verschillende vermeldingen weer gegeven met de huidige status van een dag geleden." lightbox="media/concepts-high-availability-disaster-recovery/issue-updates.png":::
+    :::image type="content" source="media/concepts-high-availability-disaster-recovery/issue-updates.png" alt-text="Op de pagina Statusgeschiedenis is het tabblad Probleemupdates gemarkeerd. Op het tabblad worden verschillende vermeldingen weergegeven met de huidige status van een dag geleden." lightbox="media/concepts-high-availability-disaster-recovery/issue-updates.png":::
 
 
-Houd er rekening mee dat de informatie die in dit hulp programma wordt weer gegeven, niet specifiek is voor één Azure Digital-instantie. Nadat u Service Health hebt gebruikt om te begrijpen wat er gebeurt met de Azure Digital Apparaatdubbels-service in een bepaalde regio of abonnement, kunt u een stap verder volgen met behulp van het [resource Health-hulp programma](troubleshoot-resource-health.md) om in te zoomen op specifieke instanties en te controleren of ze worden beïnvloed.
+Houd er rekening mee dat de informatie die in dit hulpprogramma wordt weergegeven, niet specifiek is voor één Azure Digital-exemplaar. Nadat u Service Health hebt gebruikt om te begrijpen wat er gebeurt met de Azure Digital Twins-service in een bepaalde regio of een bepaald abonnement, kunt u de bewaking een stap verder gaan door het [hulpprogramma Resource](troubleshoot-resource-health.md) health te gebruiken om in te zoomen op specifieke exemplaren en te zien of deze worden beïnvloed.
 
 ## <a name="best-practices"></a>Aanbevolen procedures
 
-Raadpleeg de volgende Azure-richt lijnen in dit onderwerp voor aanbevolen procedures op HA/DR: 
-* In het artikel [*technische richt lijnen voor Azure-bedrijfs continuïteit*](/azure/architecture/framework/resiliency/overview) wordt een algemeen framework beschreven waarmee u rekening moet houden met bedrijfs continuïteit en herstel na nood gevallen. 
-* Het document [*nood herstel en hoge Beschik baarheid voor Azure-toepassingen*](/azure/architecture/framework/resiliency/backup-and-recovery) biedt architectuur richtlijnen voor strategieën voor Azure-toepassingen om hoge beschik BAARHEID (ha) en herstel na nood gevallen (Dr) te kunnen uitvoeren.
+Zie de volgende Azure-richtlijnen voor dit onderwerp voor best practices voor ha/dr: 
+* In het artikel [*Azure Business Continuity Technical Guidance (Technische*](/azure/architecture/framework/resiliency/overview) richtlijnen voor Azure Business Continuity) wordt een algemeen framework beschreven om u te helpen nadenken over bedrijfscontinuïteit en herstel na noodherstel. 
+* Het [*document Herstel na nood en*](/azure/architecture/framework/resiliency/backup-and-recovery) hoge beschikbaarheid voor Azure-toepassingen bevat architectuur richtlijnen voor strategieën voor Azure-toepassingen voor hoge beschikbaarheid (HA) en herstel na noodherstel (DR).
 
 ## <a name="next-steps"></a>Volgende stappen 
 
-Lees meer over aan de slag met Azure Digital Apparaatdubbels-oplossingen:
+Lees meer over hoe u aan de slag gaat Azure Digital Twins oplossingen:
  
 * [*Wat is Azure Digital Twins?*](overview.md)
-* [*Quick Start: een voorbeeld scenario verkennen*](quickstart-adt-explorer.md)
+* [*Quickstart: Een voorbeeldscenario verkennen*](quickstart-azure-digital-twins-explorer.md)

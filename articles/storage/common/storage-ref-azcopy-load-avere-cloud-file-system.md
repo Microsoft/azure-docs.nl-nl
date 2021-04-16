@@ -1,7 +1,7 @@
 ---
-title: azcopy load CLFS | Microsoft Docs
+title: azcopy load clfs | Microsoft Docs
 titleSuffix: Azure Storage
-description: In dit artikel vindt u Naslag informatie voor de azcopy load CLFS opdracht.
+description: Dit artikel bevat naslaginformatie voor de opdracht azcopy load clfs.
 author: normesta
 ms.service: storage
 ms.topic: reference
@@ -9,34 +9,34 @@ ms.date: 07/24/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: b36ea25180c31fef199aaacb10e46b3caa20f807
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ebf04531f29e18f9d120ca2efa17244c4282084c
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98878372"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107503266"
 ---
 # <a name="azcopy-load-clfs"></a>azcopy load clfs
 
-Lokale gegevens worden overgebracht naar een container en opgeslagen in de CLFS-indeling (avere Cloud file) van micro soft.
+Brengt lokale gegevens over naar een container en slaat deze op in de INDELING Avere Cloud FileSystem (CLFS) van Microsoft.
 
-## <a name="synopsis"></a>Samen vatting
+## <a name="synopsis"></a>Synopsis
 
-Met de laad opdracht kopieert u gegevens naar Azure Blob-opslag containers en slaat u die gegevens vervolgens op in de CLFS-indeling (avere Cloud file) van micro soft. De eigen CLFS-indeling wordt gebruikt door de Azure HPC-cache en avere vFXT voor Azure-producten.
+Met de laadopdracht worden gegevens gekopieerd naar Azure Blob Storage-containers en worden die gegevens vervolgens opgeslagen in de INDELING Avere Cloud FileSystem (CLFS) van Microsoft. De eigen CLFS-indeling wordt gebruikt door de Azure HPC Cache en Avere vFXT for Azure producten.
 
-Als u gebruik wilt maken van deze opdracht, installeert u de benodigde extensie via: PIP3 install clfsload ~ = 1.0.23. Zorg ervoor dat CLFSLoad.py zich in het pad bevindt. Ga voor meer informatie over deze stap naar [https://aka.ms/azcopy/clfs](https://aka.ms/azcopy/clfs) .
+Als u deze opdracht wilt gebruiken, installeert u de benodigde extensie via: pip3 install clfsload~=1.0.23. Zorg ervoor CLFSLoad.py zich in uw PAD. Ga naar voor meer informatie over deze [https://aka.ms/azcopy/clfs](https://aka.ms/azcopy/clfs) stap.
 
-Deze opdracht is een eenvoudige optie voor het verplaatsen van bestaande gegevens naar de Cloud opslag voor gebruik met specifieke micro soft High-Performance Computing-cache producten. 
+Deze opdracht is een eenvoudige optie voor het verplaatsen van bestaande gegevens naar cloudopslag voor gebruik met specifieke High Performance Computing Cache-producten van Microsoft. 
 
-Omdat deze producten een eigen indeling voor het Cloud-bestands systeem gebruiken om gegevens te beheren, kunnen deze gegevens niet worden geladen via de systeem eigen Kopieer opdracht. 
+Omdat deze producten gebruikmaken van een eigen bestandssysteemindeling in de cloud om gegevens te beheren, kunnen die gegevens niet worden geladen via de systeemeigen kopieeropdracht. 
 
-In plaats daarvan moeten de gegevens worden geladen via het cache product zelf of via deze laad opdracht, waarbij de juiste indeling wordt gebruikt.
-Met deze opdracht kunt u gegevens overdragen zonder gebruik te maken van de cache. Bijvoorbeeld om opslag vooraf in te vullen of om bestanden toe te voegen aan een werkset zonder de cache belasting te verg Roten.
+In plaats daarvan moeten de gegevens worden geladen via het cacheproduct zelf of via deze laadopdracht, die de juiste eigen indeling gebruikt.
+Met deze opdracht kunt u gegevens overdragen zonder de cache te gebruiken. Bijvoorbeeld om de opslag vooraf in te vullen of om bestanden toe te voegen aan een werkset zonder de cachebelasting te verhogen.
 
-Het doel is een lege Azure Storage-container. Wanneer de overdracht is voltooid, kan de doel container worden gebruikt met een Azure HPC-cache-instantie of avere vFXT voor Azure-cluster.
+Het doel is een lege Azure Storage Container. Wanneer de overdracht is voltooid, kan de doelcontainer worden gebruikt met een Azure HPC Cache-exemplaar of Avere vFXT for Azure cluster.
 
 > [!NOTE] 
-> Dit is een preview-versie van de laad opdracht. Meld eventuele problemen op de AzCopy github opslag plaats.
+> Dit is een preview-versie van de load-opdracht. Meld eventuele problemen in de AzCopy Github-opslagplaats.
 
 ```
 azcopy load clfs [local dir] [container URL] [flags]
@@ -47,11 +47,10 @@ azcopy load clfs [local dir] [container URL] [flags]
 - [Aan de slag met AzCopy](storage-use-azcopy-v10.md)
 - [Gegevens overdragen met AzCopy en Blob Storage](./storage-use-azcopy-v10.md#transfer-data)
 - [Gegevens overdragen met AzCopy en bestandsopslag](storage-use-azcopy-files.md)
-- [Configureren, optimaliseren en problemen oplossen in AzCopy](storage-use-azcopy-configure.md)
 
 ## <a name="examples"></a>Voorbeelden
 
-Een volledige directory laden in een container met een SAS in CLFS-indeling:
+Laad een volledige map in een container met een SAS in CLFS-indeling:
 
 ```azcopy
 azcopy load clfs "/path/to/dir" "https://[account].blob.core.windows.net/[container]?[SAS]" --state-path="/path/to/state/path"
@@ -59,27 +58,27 @@ azcopy load clfs "/path/to/dir" "https://[account].blob.core.windows.net/[contai
 
 ## <a name="options"></a>Opties
 
-**--compressie-type** teken reeks Geef het compressie type op dat moet worden gebruikt voor de overdrachten. Beschik bare waarden zijn: `DISABLED` , `LZ4` . (standaard `LZ4` )
+**--compression-type tekenreeks** geef het compressietype op dat moet worden gebruikt voor de overdrachten. Beschikbare waarden zijn: `DISABLED` , `LZ4` . `LZ4`(standaard)
 
-**--Help**    voor de `azcopy load clfs` opdracht.
+**--help**    voor de `azcopy load clfs` opdracht .
 
-**--** teken reeks op logboek niveau definiëren de logboek uitgebreidheids voor het logboek bestand, beschik bare niveaus: `DEBUG` ,, `INFO` `WARNING` , `ERROR` . (standaard `INFO` )
+**--log-level** string Define the log verbosity for the log file, available levels: `DEBUG` , , , , `INFO` `WARNING` `ERROR` . `INFO`(standaard)
 
-**--aantal-fouten** uint32 het maximum aantal overdrachts fouten opgeven dat mag worden toegestaan. Als er voldoende fouten optreden, stopt u de taak onmiddellijk.
+**--max-errors** uint32 Geef het maximum aantal te tolereren overdrachtsfouten op. Als er voldoende fouten optreden, stopt u de taak onmiddellijk.
 
-**--nieuwe sessie**   Start een nieuwe taak in plaats van een bestaand item te hervatten waarvan de tracerings gegevens worden bewaard op `--state-path` . (standaard instelling waar)
+**--new-session**   Start een nieuwe taak in plaats van door te gaan met een bestaande taak waarvan de traceringsgegevens worden bewaard op `--state-path` . (standaard true)
 
-**--pres Erve-hardlinks**    Vaste koppelings relaties behouden.
+**--preserve-hardlinks**    Behoudt harde koppelingsrelaties.
 
-**--status-padtekenreeks** vereist pad naar een lokale map voor het bijhouden van de taak status. Het pad moet verwijzen naar een bestaande map om een taak te hervatten. Deze moet leeg zijn voor een nieuwe taak.
+**--state-path string** Required path to a local directory for job state tracking. Het pad moet naar een bestaande map wijzen om een taak te hervatten. Deze moet leeg zijn voor een nieuwe taak.
 
-## <a name="options-inherited-from-parent-commands"></a>Opties overgenomen van bovenliggende opdrachten
+## <a name="options-inherited-from-parent-commands"></a>Opties die zijn overgenomen van bovenliggende opdrachten
 
 |Optie|Beschrijving|
 |---|---|
-|--Cap-Mbps-float|De overdrachts frequentie in megabits per seconde. Even door Voer kan enigszins afwijken van het kapje. Als deze optie is ingesteld op nul of wordt wegge laten, wordt de door Voer niet afgetopt.|
-|--type teken reeks voor uitvoer|De indeling van de uitvoer van de opdracht. De opties zijn onder andere: Text, JSON. De standaard waarde is "text".|
-|--vertrouwd-micro soft-achtervoegsels teken reeks   | Hiermee geeft u aanvullende domein achtervoegsels op waar Azure Active Directory aanmeldings tokens kunnen worden verzonden.  De standaard waarde is *. core.Windows.net;*. core.chinacloudapi.cn; *. core.cloudapi.de;*. core.usgovcloudapi.net '. Alle hier vermelde waarden worden toegevoegd aan de standaard instelling. Voor beveiliging moet u Microsoft Azure domeinen hier alleen plaatsen. Scheid meerdere vermeldingen met een punt komma.|
+|--cap-mbps float|Beperk de overdrachtssnelheid, in megabits per seconde. De doorvoer per moment kan enigszins afwijken van de limiet. Als deze optie is ingesteld op nul of wordt weggelaten, wordt de doorvoer niet afgekapt.|
+|--output-type string|Indeling van de uitvoer van de opdracht. De keuzes zijn onder andere: text, json. De standaardwaarde is 'text'.|
+|--trusted-microsoft-suffixes string   | Hiermee geeft u extra domeinachtervoegsels op waar Azure Active Directory aanmeldingstokens kunnen worden verzonden.  De standaardwaarde is *.core.windows.net;*. core.chinacloudapi.cn; *.core.cloudapi.de;*. core.usgovcloudapi.net'. Alle die hier worden vermeld, worden toegevoegd aan de standaardinstelling. Voor beveiliging moet u alleen de Microsoft Azure hier zetten. Scheid meerdere vermeldingen met punt-dubbele punt.|
 
 ## <a name="see-also"></a>Zie ook
 

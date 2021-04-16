@@ -15,15 +15,15 @@ ms.locfileid: "107497979"
 
 In dit artikel wordt beschreven hoe u verzamelingen met afbeeldingen of andere registerartefacten van het ene Azure-containerregister naar een ander register kunt overdragen. De bron- en doelregisters kunnen zich in dezelfde of verschillende abonnementen, Active Directory-tenants, Azure-clouds of fysiek losgekoppelde clouds. 
 
-Als u artefacten wilt  overdragen, maakt u een overdrachtspijplijn die artefacten repliceert tussen twee registers met behulp van [blob-opslag:](../storage/blobs/storage-blobs-introduction.md)
+Als u artefacten wilt  overdragen, maakt u een overdrachtspijplijn die artefacten repliceert tussen twee registers met behulp van [blobopslag:](../storage/blobs/storage-blobs-introduction.md)
 
 * Artefacten uit een bronregister worden geëxporteerd naar een blob in een bronopslagaccount 
 * De blob wordt gekopieerd van het bronopslagaccount naar een doelopslagaccount
-* De blob in het doelopslagaccount wordt geïmporteerd als artefacten in het doelregister. U kunt de importpijplijn zo instellen dat deze wordt trigger wanneer de artefact-blob wordt bijgewerkt in de doelopslag.
+* De blob in het doelopslagaccount wordt geïmporteerd als artefacten in het doelregister. U kunt de importpijplijn zo instellen dat deze wordt getriggerd wanneer de artefactblob wordt bijgewerkt in de doelopslag.
 
-Overdracht is ideaal voor het kopiëren van inhoud tussen twee Azure-containerregisters in fysiek losgekoppelde clouds, gemediateerd door opslagaccounts in elke cloud. Als u in plaats daarvan afbeeldingen wilt kopiëren uit containerregisters in verbonden [](container-registry-import-images.md) clouds, Docker Hub cloudleveranciers en andere cloudleveranciers, wordt het importeren van afbeeldingen aanbevolen.
+Overdracht is ideaal voor het kopiëren van inhoud tussen twee Azure-containerregisters in fysiek losgekoppelde clouds, gemediateerd door opslagaccounts in elke cloud. Als u in plaats daarvan afbeeldingen wilt kopiëren uit containerregisters in verbonden [](container-registry-import-images.md) clouds, waaronder Docker Hub en andere cloudleveranciers, wordt het importeren van afbeeldingen aanbevolen.
 
-In dit artikel gebruikt u sjabloonimplementaties Azure Resource Manager om de overdrachtspijplijn te maken en uit te voeren. De Azure CLI wordt gebruikt voor het inrichten van de bijbehorende resources, zoals opslaggeheimen. Azure CLI versie 2.2.0 of hoger wordt aanbevolen. Als u de CLI wilt installeren of upgraden, raadpleegt u [Azure CLI installeren][azure-cli].
+In dit artikel gebruikt u Azure Resource Manager sjabloonimplementaties om de overdrachtspijplijn te maken en uit te voeren. De Azure CLI wordt gebruikt voor het inrichten van de bijbehorende resources, zoals opslaggeheimen. Azure CLI versie 2.2.0 of hoger wordt aanbevolen. Als u de CLI wilt installeren of upgraden, raadpleegt u [Azure CLI installeren][azure-cli].
 
 Deze functie is beschikbaar in de **servicelaag Premium** Container Registry. Zie Azure Container Registry servicelagen voor meer [informatie over registerservicelagen en -limieten.](container-registry-skus.md)
 
@@ -32,17 +32,17 @@ Deze functie is beschikbaar in de **servicelaag Premium** Container Registry. Zi
 
 ## <a name="prerequisites"></a>Vereisten
 
-* **Containerregisters: u** hebt een bestaand bronregister met artefacten nodig om over te dragen en een doelregister. ACR-overdracht is bedoeld voor verplaatsing tussen fysiek losgekoppelde clouds. Voor het testen kunnen de bron- en doelregisters zich in hetzelfde of een ander Azure-abonnement, Active Directory-tenant of cloud hebben. 
+* **Containerregisters: u** hebt een bestaand bronregister met artefacten nodig om over te dragen en een doelregister. ACR-overdracht is bedoeld voor verplaatsing tussen fysiek losgekoppelde clouds. Voor het testen kunnen de bron- en doelregisters zich in hetzelfde of een ander Azure-abonnement, active directory-tenant of cloud hebben. 
 
    Als u een register wilt maken, gaat u naar [Quickstart: Een privécontainerregister maken met behulp van de Azure CLI.](container-registry-get-started-azure-cli.md) 
-* **Opslagaccounts:** maak bron- en doelopslagaccounts in een abonnement en een locatie naar keuze. Voor testdoeleinden kunt u hetzelfde abonnement of dezelfde abonnementen gebruiken als uw bron- en doelregisters. Voor scenario's in meerdere cloudomgevingen maakt u doorgaans een afzonderlijk opslagaccount in elke cloud. 
+* **Opslagaccounts:** maak bron- en doelopslagaccounts in een abonnement en locatie naar keuze. Voor testdoeleinden kunt u hetzelfde abonnement of dezelfde abonnementen gebruiken als uw bron- en doelregisters. Voor scenario's in meerdere cloudomgevingen maakt u doorgaans een afzonderlijk opslagaccount in elke cloud. 
 
-  Maak, indien nodig, de opslagaccounts met [de Azure CLI](../storage/common/storage-account-create.md?tabs=azure-cli) of andere hulpprogramma's. 
+  Maak indien nodig de opslagaccounts met de [Azure CLI](../storage/common/storage-account-create.md?tabs=azure-cli) of andere hulpprogramma's. 
 
   Maak een blobcontainer voor artefactoverdracht in elk account. Maak bijvoorbeeld een container met de naam *transfer*. Twee of meer overdrachtspijplijnen kunnen hetzelfde opslagaccount delen, maar moeten verschillende opslagcontainerbereiken gebruiken.
-* **Sleutelkluizen: sleutelkluizen** zijn nodig voor het opslaan van SAS-tokengeheimen die worden gebruikt voor toegang tot bron- en doelopslagaccounts. Maak de bron- en doelsleutelkluizen in hetzelfde Azure-abonnement of dezelfde abonnementen als uw bron- en doelregisters. Voor demonstratiedoeleinden gaan de sjablonen en opdrachten die in dit artikel worden gebruikt ook ervan uit dat de bron- en doelsleutelkluizen zich in dezelfde resourcegroepen bevinden als respectievelijk de bron- en doelregisters. Dit gebruik van algemene resourcegroepen is niet vereist, maar vereenvoudigt de sjablonen en opdrachten die in dit artikel worden gebruikt.
+* **Sleutelkluizen: sleutelkluizen** zijn nodig voor het opslaan van SAS-tokengeheimen die worden gebruikt voor toegang tot bron- en doelopslagaccounts. Maak de bron- en doelsleutelkluizen in hetzelfde Azure-abonnement of dezelfde abonnementen als uw bron- en doelregisters. Voor demonstratiedoeleinden gaan de sjablonen en opdrachten die in dit artikel worden gebruikt ook ervan uit dat de bron- en doelsleutelkluizen zich respectievelijk in dezelfde resourcegroepen bevinden als de bron- en doelregisters. Dit gebruik van algemene resourcegroepen is niet vereist, maar het vereenvoudigt de sjablonen en opdrachten die in dit artikel worden gebruikt.
 
-   Maak, indien nodig, sleutelkluizen met [de Azure CLI](../key-vault/secrets/quick-create-cli.md) of andere hulpprogramma's.
+   Maak indien nodig sleutelkluizen met de [Azure CLI](../key-vault/secrets/quick-create-cli.md) of andere hulpprogramma's.
 
 * **Omgevingsvariabelen:** stel bijvoorbeeld opdrachten in dit artikel de volgende omgevingsvariabelen in voor de bron- en doelomgevingen. Alle voorbeelden zijn opgemaakt voor de Bash-shell.
   ```console
@@ -63,13 +63,13 @@ Opslagverificatie maakt gebruik van SAS-tokens, beheerd als geheimen in sleutelk
 * **[ExportPipeline:](#create-exportpipeline-with-resource-manager)** langdurige resource die informatie op hoog niveau bevat over het *bronregister* en het opslagaccount. Deze informatie omvat de blobcontainer-URI van de bronopslag en de sleutelkluis die het SAS-bron-token beheert. 
 * **[ImportPipeline:](#create-importpipeline-with-resource-manager)** langdurige resource die informatie op hoog niveau bevat over het *doelregister* en opslagaccount. Deze informatie omvat de blobcontainer-URI van de doelopslag en de sleutelkluis die het SAS-token van het doel beheert. Een importtrigger is standaard ingeschakeld, zodat de pijplijn automatisch wordt uitgevoerd wanneer een artefact-blob in de doelopslagcontainer komt. 
 * **[PipelineRun:](#create-pipelinerun-for-export-with-resource-manager)** resource die wordt gebruikt om een ExportPipeline- of ImportPipeline-resource aan te roepen.  
-  * U kunt ExportPipeline handmatig uitvoeren door een PipelineRun-resource te maken en de artefacten op te geven die u wilt exporteren.  
-  * Als een importtrigger is ingeschakeld, wordt ImportPipeline automatisch uitgevoerd. Het kan ook handmatig worden uitgevoerd met behulp van een PipelineRun. 
+  * U kunt de ExportPipeline handmatig uitvoeren door een PipelineRun-resource te maken en de artefacten op te geven die u wilt exporteren.  
+  * Als een importtrigger is ingeschakeld, wordt De ImportPipeline automatisch uitgevoerd. Het kan ook handmatig worden uitgevoerd met behulp van een PipelineRun. 
   * Momenteel kunnen maximaal **50 artefacten** worden overgedragen met elke PipelineRun.
 
 ### <a name="things-to-know"></a>Dingen die u moet weten
 * ExportPipeline en ImportPipeline staan doorgaans in verschillende Active Directory-tenants die zijn gekoppeld aan de bron- en doelwolken. Voor dit scenario zijn afzonderlijke beheerde identiteiten en sleutelkluizen vereist voor het exporteren en importeren van resources. Voor testdoeleinden kunnen deze resources in dezelfde cloud worden geplaatst en identiteiten delen.
-* Standaard maken de sjablonen ExportPipeline en ImportPipeline elk een door het systeem toegewezen beheerde identiteit mogelijk voor toegang tot key vault-geheimen. De sjablonen ExportPipeline en ImportPipeline bieden ook ondersteuning voor een door de gebruiker toegewezen identiteit die u op verstrekt. 
+* Standaard maken de sjablonen ExportPipeline en ImportPipeline elk een door het systeem toegewezen beheerde identiteit mogelijk voor toegang tot key vault-geheimen. De ExportPipeline- en ImportPipeline-sjablonen ondersteunen ook een door de gebruiker toegewezen identiteit die u op geeft. 
 
 ## <a name="create-and-store-sas-keys"></a>SAS-sleutels maken en opslaan
 
@@ -267,7 +267,7 @@ IMPORT_RES_ID=$(az deployment group show \
 
 Maak een PipelineRun-resource voor uw broncontainerregister met behulp Azure Resource Manager sjabloonimplementatie. Deze resource voert de ExportPipeline-resource uit die u eerder hebt gemaakt en exporteert opgegeven artefacten uit het containerregister als een blob naar uw bronopslagaccount.
 
-Kopieer PipelineRun Resource Manager [sjabloonbestanden](https://github.com/Azure/acr/tree/master/docs/image-transfer/PipelineRun/PipelineRun-Export) naar een lokale map.
+Kopieer PipelineRun Resource Manager [sjabloonbestanden naar](https://github.com/Azure/acr/tree/master/docs/image-transfer/PipelineRun/PipelineRun-Export) een lokale map.
 
 Voer de volgende parameterwaarden in het bestand `azuredeploy.parameters.json` in:
 
@@ -395,7 +395,7 @@ az deployment group create \
 
 ## <a name="delete-pipeline-resources"></a>Pijplijnbronnen verwijderen
 
-In de volgende voorbeeldopdrachten wordt [az resource delete gebruikt om][az-resource-delete] de pijplijnresources te verwijderen die in dit artikel zijn gemaakt. De resource-ID's werden eerder opgeslagen in omgevingsvariabelen.
+In de volgende voorbeeldopdrachten wordt [az resource delete gebruikt om][az-resource-delete] de pijplijnresources te verwijderen die in dit artikel zijn gemaakt. De resource-ID's zijn eerder opgeslagen in omgevingsvariabelen.
 
 ```
 # Delete export resources
@@ -428,7 +428,7 @@ az resource delete \
   * Het uitvoeren van de pijplijn is mogelijk niet voltooid. Een export- of importuitvoer kan enige tijd duren. 
   * Geef voor andere pijplijnproblemen de [correlatie-id](../azure-resource-manager/templates/deployment-history.md) van de implementatie van de uitvoer- of importuitvoer naar het Azure Container Registry team.
 * **Problemen met het binnenhalen van de afbeelding in een fysiek geïsoleerde omgeving**
-  * Als er fouten optreden met betrekking tot vreemde lagen of pogingen om mcr.microsoft.com op te lossen wanneer u probeert een afbeelding op te halen in een fysiek geïsoleerde omgeving, heeft uw afbeeldingsmanifest waarschijnlijk niet-distribueerbare lagen. Vanwege de aard van een fysiek geïsoleerde omgeving, kunnen deze afbeeldingen vaak niet worden pull. U kunt controleren of dit het geval is door het afbeeldingsmanifest te controleren op verwijzingen naar externe registers. Als dit het geval is, moet u de niet-distribueerbare lagen naar uw openbare cloud-ACR pushen voordat u een exportpijplijnuitvoer voor die afbeelding implementeert. Zie Niet-distribueerbare lagen naar een register pushen Hoe kan ik u dit [kunt doen voor hulp.](./container-registry-faq.md#how-do-i-push-non-distributable-layers-to-a-registry)
+  * Als er fouten optreden met betrekking tot vreemde lagen of pogingen om mcr.microsoft.com op te lossen wanneer u probeert een afbeelding op te halen in een fysiek geïsoleerde omgeving, heeft uw afbeeldingsmanifest waarschijnlijk niet-distribueerbare lagen. Vanwege de aard van een fysiek geïsoleerde omgeving, kunnen deze afbeeldingen vaak niet worden pull. U kunt controleren of dit het geval is door het afbeeldingsmanifest te controleren op verwijzingen naar externe registers. Als dit het geval is, moet u de niet-distribueerbare lagen naar uw openbare cloud-ACR pushen voordat u een exportpijplijnuitvoer voor die afbeelding implementeert. Zie Niet-distribueerbare lagen naar een register pushen Hoe kan ik u hulp nodig [hebt bij het maken van een push-uiting.](./container-registry-faq.md#how-do-i-push-non-distributable-layers-to-a-registry)
 
 ## <a name="next-steps"></a>Volgende stappen
 

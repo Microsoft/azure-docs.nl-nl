@@ -3,17 +3,19 @@ title: Een toegewezen SQL-pool (voorheen SQL DW) maken met behulp van Azure Reso
 description: Meer informatie over het maken van een Azure Synapse Analytics SQL-pool met behulp van een Azure Resource Manager-sjabloon.
 services: azure-resource-manager
 author: julieMSFT
-ms.service: azure-resource-manager
-ms.topic: quickstart
-ms.custom: subject-armqs
 ms.author: jrasnick
 ms.date: 06/09/2020
-ms.openlocfilehash: 70adb7409c44a79345a192df173a1a073cc9b7dd
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.topic: quickstart
+ms.service: azure-resource-manager
+ms.custom:
+- subject-armqs
+- mode-arm
+ms.openlocfilehash: 3e05fda65e4383f66cf9553ee7e083c18367b937
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96460746"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107534291"
 ---
 # <a name="quickstart-create-an-azure-synapse-analytics-dedicated-sql-pool-formerly-sql-dw-by-using-an-arm-template"></a>Quickstart: Een toegewezen SQL-pool (voorheen SQL DW) van Azure Synapse Analytics maken met behulp van een ARM-sjabloon.
 

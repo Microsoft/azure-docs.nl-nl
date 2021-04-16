@@ -1,7 +1,7 @@
 ---
-title: azcopy belasting | Microsoft Docs
+title: azcopy load | Microsoft Docs
 titleSuffix: Azure Storage
-description: In dit artikel vindt u Naslag informatie voor de laad opdracht azcopy.
+description: Dit artikel bevat naslaginformatie voor de opdracht azcopy load.
 author: normesta
 ms.service: storage
 ms.topic: reference
@@ -9,31 +9,30 @@ ms.date: 07/24/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: d3d15b7dd5a44245a6a501dc4a4a324e93f3a7a6
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4c2187f52503159c8efc199cb7d09a147c2c1455
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98879034"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107503249"
 ---
 # <a name="azcopy-load"></a>azcopy load
 
-Subopdrachten die betrekking hebben op het overdragen van gegevens in specifieke indelingen
+Subcommands met betrekking tot het overdragen van gegevens in specifieke indelingen
 
-## <a name="synopsis"></a>Samen vatting
+## <a name="synopsis"></a>Synopsis
 
-Subopdrachten die betrekking hebben op het overdragen van gegevens in specifieke indelingen, zoals de CLFS-indeling (avere Cloud file) van micro soft.
+Subcommands met betrekking tot het overdragen van gegevens in specifieke indelingen, zoals de CLFS-indeling (Avere Cloud FileSystem) van Microsoft.
 
 ## <a name="related-conceptual-articles"></a>Gerelateerde conceptuele artikelen
 
 - [Aan de slag met AzCopy](storage-use-azcopy-v10.md)
 - [Gegevens overdragen met AzCopy en Blob Storage](./storage-use-azcopy-v10.md#transfer-data)
 - [Gegevens overdragen met AzCopy en bestandsopslag](storage-use-azcopy-files.md)
-- [Configureren, optimaliseren en problemen oplossen in AzCopy](storage-use-azcopy-configure.md)
 
 ## <a name="examples"></a>Voorbeelden
 
-Een volledige directory laden in een container met een SAS in CLFS-indeling:
+Laad een volledige map in een container met een SAS in CLFS-indeling:
 
 ```azcopy
 azcopy load clfs "/path/to/dir" "https://[account].blob.core.windows.net/[container]?[SAS]" --state-path="/path/to/state/path"
@@ -43,15 +42,15 @@ azcopy load clfs "/path/to/dir" "https://[account].blob.core.windows.net/[contai
 
 |Optie|Beschrijving|
 |--|--|
-|-h,--Help|Hiermee wordt Help-inhoud voor de laad opdracht weer gegeven.|
+|-h, --help|Geeft help-inhoud weer voor de opdracht laden.|
 
-## <a name="options-inherited-from-parent-commands"></a>Opties overgenomen van bovenliggende opdrachten
+## <a name="options-inherited-from-parent-commands"></a>Opties die zijn overgenomen van bovenliggende opdrachten
 
 |Optie|Beschrijving|
 |---|---|
-|--Cap-Mbps-float|De overdrachts frequentie in megabits per seconde. Even door Voer kan enigszins afwijken van het kapje. Als deze optie is ingesteld op nul of wordt wegge laten, wordt de door Voer niet afgetopt.|
-|--type teken reeks voor uitvoer|De indeling van de uitvoer van de opdracht. De opties zijn onder andere: Text, JSON. De standaard waarde is "text".|
-|--vertrouwd-micro soft-achtervoegsels teken reeks   | Hiermee geeft u aanvullende domein achtervoegsels op waar Azure Active Directory aanmeldings tokens kunnen worden verzonden.  De standaard waarde is *. core.Windows.net;*. core.chinacloudapi.cn; *. core.cloudapi.de;*. core.usgovcloudapi.net '. Alle hier vermelde waarden worden toegevoegd aan de standaard instelling. Voor beveiliging moet u Microsoft Azure domeinen hier alleen plaatsen. Scheid meerdere vermeldingen met een punt komma.|
+|--cap-mbps float|Beperk de overdrachtssnelheid, in megabits per seconde. De doorvoer per moment kan enigszins afwijken van de limiet. Als deze optie is ingesteld op nul of wordt weggelaten, wordt de doorvoer niet afgekapt.|
+|--output-type string|Indeling van de uitvoer van de opdracht. De keuzes zijn onder andere: text, json. De standaardwaarde is 'text'.|
+|--trusted-microsoft-achtervoegsels tekenreeks   | Hiermee geeft u extra domeinachtervoegsels op waar Azure Active Directory aanmeldingstokens kunnen worden verzonden.  De standaardwaarde is *.core.windows.net;*. core.chinacloudapi.cn; *.core.cloudapi.de;*. core.usgovcloudapi.net'. Alle die hier worden vermeld, worden toegevoegd aan de standaardinstelling. Voor de beveiliging moet u alleen Microsoft Azure hier. Scheid meerdere vermeldingen met punt-dubbele punt.|
 
 ## <a name="see-also"></a>Zie ook
 

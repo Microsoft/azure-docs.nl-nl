@@ -8,30 +8,31 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: quickstart
-ms.date: 01/29/2021
+ms.date: 04/14/2021
 ms.author: lajanuar
 zone_pivot_groups: programming-languages-set-formre
 ms.custom: devx-track-js, devx-track-csharp, cog-serv-seo-aug-2020
 keywords: formulierverwerking, geautomatiseerde gegevensverwerking
-ms.openlocfilehash: 43182892aa80f6226ffb5177d0be2e24d15ead5c
-ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
+ms.openlocfilehash: b4631892f1c35c665c4468a6e0b3ad481a19e8df
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "103467198"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107516396"
 ---
 # <a name="quickstart-use-the-form-recognizer-client-library-or-rest-api"></a>Quickstart: De Form Recognizer-clientbibliotheek of REST API gebruiken
 
-Ga aan de slag met de formulier herkenner met behulp van de taal van uw keuze. Azure Form Recognizer is een cognitieve service waarmee u software voor geautomatiseerde gegevensverwerking kunt bouwen met behulp van machine learning-technologie. U kunt de service gebruiken om tekst, sleutel-waardeparen, selectiemarkeringen, tabelgegevens en meer te identificeren en uit uw formulierdocumenten extraheren&mdash;. Dit levert gestructureerde gegevens op die de relaties in het oorspronkelijke bestand bevatten. U kunt Form Recognizer gebruiken via de REST API of de SDK. Volg deze stappen om het SDK-pakket te installeren en de voorbeeldcode voor basistaken te proberen. 
+Ga aan de slag met de Form Recognizer de ontwikkelingstaal van uw keuze. Azure Form Recognizer is een cognitieve service waarmee u software voor geautomatiseerde gegevensverwerking kunt bouwen met behulp van machine learning-technologie. U kunt de service gebruiken om tekst, sleutel-waardeparen, selectiemarkeringen, tabelgegevens en meer te identificeren en uit uw formulierdocumenten extraheren&mdash;. Dit levert gestructureerde gegevens op die de relaties in het oorspronkelijke bestand bevatten. U kunt Form Recognizer gebruiken via de REST API of de SDK. Volg deze stappen om het SDK-pakket te installeren en de voorbeeldcode voor basistaken te proberen.
 
 Form Recognizer gebruiken om:
 
 * [Indeling analyseren](#analyze-layout)
-* [Facturen analyseren](#analyze-invoices)
-* [Aangepast model trainen](#train-a-custom-model)
-* [Formulieren analyseren met een aangepast model](#analyze-forms-with-a-custom-model)
 * [Ontvangstbewijzen analyseren](#analyze-receipts)
 * [Visitekaartjes analyseren](#analyze-business-cards)
+* [Facturen analyseren](#analyze-invoices)
+* [Identiteitsdocumenten analyseren](#analyze-identity-documents)
+* [Aangepast model trainen](#train-a-custom-model)
+* [Formulieren analyseren met een aangepast model](#analyze-forms-with-a-custom-model)
 * [Uw aangepaste modellen beheren](#manage-your-custom-models)
 
 ::: zone pivot="programming-language-csharp"

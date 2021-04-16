@@ -1,6 +1,6 @@
 ---
-title: Externe toegang beheren met Azure Active Directory rechten beheer
-description: Azure Active Directory rechten beheer gebruiken als onderdeel van het algemene beveiligings plan voor externe toegang.
+title: Externe toegang beheren met Azure Active Directory Rechtenbeheer
+description: Het gebruik van Azure Active Directory Rechtenbeheer als onderdeel van uw algehele beveiligingsplan voor externe toegang.
 services: active-directory
 author: BarbaraSelden
 manager: daveba
@@ -13,163 +13,163 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f06a54f59405d9833194b2e7d4488bc93d2437ae
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 89744b63a555cc02d35815b4066ce572b7f77e38
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98725175"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107531890"
 ---
-# <a name="manage-external-access-with-entitlement-management"></a>Externe toegang beheren met het rechten beheer 
+# <a name="manage-external-access-with-entitlement-management"></a>Externe toegang beheren met Rechtenbeheer 
 
 
-Het [beheer van rechten](../governance/entitlement-management-overview.md) is een identiteits bestuur waarmee organisaties identiteits-en toegangs levenscyclus op schaal kunnen beheren door het automatiseren van werk stromen voor toegangs aanvragen, toegangs toewijzingen, beoordelingen en verloop tijd. Het beheer van rechten staat gedelegeerde niet-beheerders toe om [toegangs pakketten](../governance/entitlement-management-overview.md) te maken waarmee externe gebruikers van andere organisaties toegang kunnen vragen. Een werk stroom met meerdere fase goedkeuringen kan worden geconfigureerd om aanvragen te evalueren en gebruikers in te [richten](../governance/what-is-provisioning.md) voor beperkte toegang met terugkerende revisies. Het beheer van rechten maakt het op beleid gebaseerde inrichting en het ongedaan maken van de inrichting van externe accounts mogelijk.
+[Rechtenbeheer](../governance/entitlement-management-overview.md) is een functie voor identiteitsbeheer waarmee organisaties de levenscyclus van identiteiten en toegang op schaal kunnen beheren door werkstromen voor toegangsverzoeken, toegangstoewijzingen, beoordelingen en vervaldatum te automatiseren. Met rechtenbeheer kunnen gedelegeerde niet-beheerders [toegangspakketten](../governance/entitlement-management-overview.md) maken waarmee externe gebruikers van andere organisaties toegang kunnen aanvragen. Een werkstroom voor goedkeuring met meerdere fases kan [](../governance/what-is-provisioning.md) worden geconfigureerd voor het evalueren van aanvragen en het inrichten van gebruikers voor beperkte toegang met terugkerende beoordelingen. Met rechtenbeheer kunt u externe accounts inrichten en de inrichting van externe accounts op basis van beleid verwijderen.
 
-## <a name="key-concepts-for-enabling-entitlement-management"></a>Belangrijkste concepten voor het inschakelen van het beheer van rechten
+## <a name="key-concepts-for-enabling-entitlement-management"></a>Belangrijkste concepten voor het inschakelen van rechtenbeheer
 
-De volgende belang rijke concepten zijn belang rijk om te begrijpen wat het rechten beheer is.
+De volgende belangrijke concepten zijn belangrijk om te begrijpen voor rechtenbeheer.
 
-### <a name="access-packages"></a>Toegangs pakketten
+### <a name="access-packages"></a>Toegangspakketten
 
-Een [toegangs pakket](../governance/entitlement-management-overview.md) is de basis van het beheer van rechten. Toegangs pakketten zijn groeperingen van op beleid gebaseerde resources die een gebruiker nodig heeft om te kunnen samen werken aan een project of andere taken uit te voeren. Een toegangs pakket kan bijvoorbeeld het volgende bevatten:
+Een [toegangspakket](../governance/entitlement-management-overview.md) is de basis van rechtenbeheer. Toegangspakketten zijn groeperingen van door beleid beheerde resources die een gebruiker nodig heeft om samen te werken aan een project of om andere taken uit te voeren. Een toegangspakket kan bijvoorbeeld het volgende omvatten:
 
-* toegang tot specifieke share point-sites.
+* toegang tot specifieke SharePoint-sites.
 
-* zakelijke toepassingen, inclusief uw aangepaste interne en SaaS-apps zoals Sales Force.
+* bedrijfstoepassingen, waaronder uw aangepaste in-house SaaS-apps, zoals Salesforce.
 
-* Micro soft teams-kanalen.
+* Microsoft Teams-kanalen.
 
 * Microsoft 365-groepen. 
 
 ### <a name="catalogs"></a>Catalogussen
 
-Toegangs pakketten bevinden zich in [catalogussen](../governance/entitlement-management-catalog-create.md). U maakt een catalogus wanneer u gerelateerde resources en toegangs pakketten wilt groeperen en de mogelijkheid wilt delegeren om ze te beheren. Eerst voegt u resources toe aan een catalogus en vervolgens kunt u deze resources toevoegen voor toegang tot pakketten. U kunt bijvoorbeeld een ' Finance ' catalogus maken en [het beheer ervan overdragen](../governance/entitlement-management-delegate.md) aan een lid van het financiële team. Deze persoon kan vervolgens [resources toevoegen](../governance/entitlement-management-catalog-create.md), toegangs pakketten maken en de goed keuring van toegang tot deze pakketten beheren.
+Toegangspakketten bevinden zich in [catalogi](../governance/entitlement-management-catalog-create.md). U maakt een catalogus wanneer u gerelateerde resources en toegangspakketten wilt groepeert en de mogelijkheid wilt delegeren om deze te beheren. Eerst voegt u resources toe aan een catalogus en vervolgens kunt u deze resources toevoegen voor toegang tot pakketten. U kunt bijvoorbeeld een catalogus 'Financiën' maken [](../governance/entitlement-management-delegate.md) en het beheer ervan delegeren aan een lid van het financiële team. Deze persoon kan vervolgens [resources toevoegen,](../governance/entitlement-management-catalog-create.md)toegangspakketten maken en toegangsgoedkeuring voor die pakketten beheren.
 
-In het volgende diagram ziet u een typische levens cyclus van het bedrijfs beleid voor een externe gebruiker die toegang krijgt tot een toegangs pakket dat een verval datum heeft.
+In het volgende diagram ziet u een typische levenscyclus voor governance voor een externe gebruiker die toegang krijgt tot een toegangspakket met een vervaldatum.
 
-![Een diagram van de beheer cyclus voor externe gebruikers.](media/secure-external-access/6-governance-lifecycle.png)
+![Een diagram van de governancecyclus voor externe gebruikers.](media/secure-external-access/6-governance-lifecycle.png)
 
-### <a name="self-service-external-access"></a>Self-service externe toegang
+### <a name="self-service-external-access"></a>Selfservice voor externe toegang
 
-U kunt toegangs pakketten belichten via de [Azure AD My Access-Portal](../governance/entitlement-management-request-access.md) om externe gebruikers in staat te stellen toegang aan te vragen. Beleids regels bepalen wie een toegangs pakket kan aanvragen. U geeft aan wie het toegangs pakket mag aanvragen:
+U kunt toegangspakketten beschikbaar maken via de [Azure AD Mijn toegang Portal](../governance/entitlement-management-request-access.md) zodat externe gebruikers toegang kunnen aanvragen. Beleidsregels bepalen wie een toegangspakket kan aanvragen. U geeft op wie het toegangspakket mag aanvragen:
 
 * Specifieke [verbonden organisaties](../governance/entitlement-management-organization.md)
 
 * Alle geconfigureerde verbonden organisaties
 
-* Alle gebruikers van een organisatie
+* Alle gebruikers van elke organisatie
 
-* Lid of gast gebruikers al in uw Tenant
+* Lid- of gastgebruikers die al in uw tenant zijn
 
 ### <a name="approvals"></a>Approvals   
-Toegangs pakketten kunnen verplichte goed keuring voor toegang bevatten. **Implementeer altijd goedkeurings processen voor externe gebruikers**. Goed keuringen kunnen één of meerdere fasen goed keuren zijn. Goed keuringen worden bepaald door beleid. Als zowel interne als externe gebruikers toegang tot hetzelfde pakket nodig hebben, stelt u waarschijnlijk verschillende toegangs beleid in voor verschillende categorieën van verbonden organisaties en voor interne gebruikers.
+Toegangspakketten kunnen verplichte goedkeuring voor toegang bevatten. **Implementeert altijd goedkeuringsprocessen voor externe gebruikers.** Goedkeuringen kunnen een goedkeuring met één of meerdere fases zijn. Goedkeuringen worden bepaald door beleidsregels. Als zowel interne als externe gebruikers toegang moeten hebben tot hetzelfde pakket, stelt u waarschijnlijk verschillende toegangsbeleidsregels in voor verschillende categorieën verbonden organisaties en voor interne gebruikers.
 
 ### <a name="expiration"></a>Verloopdatum  
-Toegangs pakketten kunnen een verval datum bevatten. Verval datum kan worden ingesteld op een specifieke dag of de gebruiker een specifiek aantal dagen voor toegang geven. Wanneer het toegangs pakket verloopt en de gebruiker geen toegang heeft, kan het B2B-gast gebruikers object dat de gebruiker vertegenwoordigt, worden verwijderd of geblokkeerd om zich aan te melden. We raden u aan om de verval datum van toegangs pakketten voor externe gebruikers af te dwingen. Niet alle toegangs pakketten hebben verlopen. Voor degenen die dat niet doen, moet u ervoor zorgen dat u toegangs beoordelingen uitvoert.
+Toegangspakketten kunnen een vervaldatum bevatten. Vervaldatum kan worden ingesteld op een specifieke dag of de gebruiker een bepaald aantal dagen voor toegang geven. Wanneer het toegangspakket verloopt en de gebruiker geen andere toegang heeft, kan het B2B-gastgebruikersobject dat de gebruiker vertegenwoordigt, worden verwijderd of geblokkeerd voor aanmelding. U wordt aangeraden verloop af te dwingen voor toegangspakketten voor externe gebruikers. Niet alle toegangspakketten hebben een vervaldatum. Voor degenen die dat niet doen, moet u toegangsbeoordelingen uitvoeren.
 
 ### <a name="access-reviews"></a>Toegangsbeoordelingen
 
-Voor toegangs pakketten kunnen periodieke [toegangs beoordelingen](../governance/manage-guest-access-with-access-reviews.md)zijn vereist, waarvoor de eigenaar van het pakket of een beheerder moet worden verplicht om te bevestigen dat gebruikers toegang hebben. 
+Voor toegangspakketten kunnen periodieke [toegangsbeoordelingen](../governance/manage-guest-access-with-access-reviews.md)vereist zijn, waarvoor de eigenaar van het pakket of een ontwerper is vereist om aan te geven dat gebruikers nog steeds toegang nodig hebben. 
 
-Voordat u de beoordeling instelt, bepaalt u het volgende.
+Voordat u uw beoordeling in stelt, moet u het volgende bepalen.
 
-* Kopers
+* Die
 
    * Wat zijn de criteria voor voortdurende toegang?
 
    * Wie zijn de opgegeven revisoren?
 
-* Hoe vaak moeten geplande beoordelingen worden uitgevoerd?
+* Hoe vaak moeten geplande beoordelingen plaatsvinden?
 
-   * Ingebouwde opties zijn maandelijks, elk kwar taal, bi-jaarlijks of jaarlijks. 
+   * Ingebouwde opties zijn maandelijks, elk kwartaal, twee jaar of jaarlijks. 
 
-   * Voor pakketten die ondersteuning bieden voor externe toegang, wordt het per kwar taal aangeraden. 
+   * We raden elk kwartaal of vaker aan voor pakketten die externe toegang ondersteunen. 
 
  
 
 > [!IMPORTANT]
-> Toegangs beoordelingen van toegangs pakketten controleren alleen toegang via het rechten beheer. U moet daarom andere processen instellen om de toegang te controleren die wordt gegeven aan externe gebruikers buiten het beheer van rechten.
+> Toegangsbeoordelingen van toegangspakketten beoordelen alleen de toegang die wordt verleend via Rechtenbeheer. Daarom moet u andere processen instellen om alle toegang te controleren die externe gebruikers buiten Rechtenbeheer hebben.
 
-Zie [de implementatie van Azure AD-toegangs beoordelingen plannen](../governance/deploy-access-reviews.md)voor meer informatie over toegangs Beoordelingen.
+Zie Een implementatie van Azure AD-toegangsbeoordelingen plannen voor meer informatie over [toegangsbeoordelingen.](../governance/deploy-access-reviews.md)
 
-## <a name="using-automation-in-entitlement-management"></a>Automatisering gebruiken in het beheer van rechten
+## <a name="using-automation-in-entitlement-management"></a>Automatisering gebruiken in Rechtenbeheer
 
-U kunt [rechten op het beheer uitvoeren met behulp van Microsoft Graph](/graph/tutorial-access-package-api), waaronder
+U kunt [rechtenbeheerfuncties uitvoeren met behulp van Microsoft Graph](/graph/tutorial-access-package-api), waaronder
 
-* [Toegangs pakketten beheren](/graph/api/resources/accesspackage?view=graph-rest-beta)
+* [Toegangspakketten beheren](/graph/api/resources/accesspackage?view=graph-rest-beta&preserve-view=true)
 
-* [Toegangs beoordelingen beheren](/graph/api/resources/accessreviewsv2-root?view=graph-rest-beta)
+* [Toegangsbeoordelingen beheren](/graph/api/resources/accessreviewsv2-root?view=graph-rest-beta&preserve-view=true)
 
-* [Verbonden organisaties beheren](/graph/api/resources/connectedorganization?view=graph-rest-beta)
+* [Verbonden organisaties beheren](/graph/api/resources/connectedorganization?view=graph-rest-beta&preserve-view=true)
 
-* [Instellingen voor rechten beheer beheren](/graph/api/resources/entitlementmanagementsettings?view=graph-rest-beta)
+* [Instellingen voor Rechtenbeheer beheren](/graph/api/resources/entitlementmanagementsettings?view=graph-rest-beta&preserve-view=true)
 
 ## <a name="recommendations"></a>Aanbevelingen 
 
-U wordt aangeraden de procedures voor externe toegang te bepalen met het beheer van rechten.
+We raden de procedures aan voor het beheren van externe toegang met Rechtenbeheer.
 
-**Voor projecten met een of meer zaken partners [maakt en gebruikt u toegangs pakketten](../governance/entitlement-management-access-package-create.md) om de gebruikers van de partner toegang tot bronnen** te geven en in te richten. 
+**Maak en gebruik [toegangspakketten](../governance/entitlement-management-access-package-create.md) voor** projecten met een of meer zakelijke partners om de gebruikers van die partner toegang te geven tot resources en deze in te delen. 
 
-* Als u B2B-gebruikers al in uw directory hebt, kunt u ze ook rechtstreeks toewijzen aan de juiste toegangs pakketten.
+* Als u al B2B-gebruikers in uw directory hebt, kunt u ze ook rechtstreeks toewijzen aan de juiste toegangspakketten.
 
-* U kunt toegang toewijzen in de [Azure Portal](../governance/entitlement-management-access-package-assignments.md)of via [Microsoft Graph](/graph/api/resources/accesspackageassignmentrequest?view=graph-rest-beta).
+* U kunt toegang toewijzen in de [Azure Portal](../governance/entitlement-management-access-package-assignments.md)of via [Microsoft Graph](/graph/api/resources/accesspackageassignmentrequest?view=graph-rest-beta&preserve-view=true).
 
-**Gebruik uw instellingen voor identiteits beheer om gebruikers uit uw directory te verwijderen wanneer hun toegangs pakketten verlopen**.
+**Gebruik uw identity governance-instellingen om gebruikers uit uw directory te verwijderen wanneer hun toegangspakketten verlopen.**
 
-![Scherm opname van het configureren van de levens cyclus van externe gebruikers.](media/secure-external-access/6-manage-external-lifecycle.png)
+![Schermopname van het configureren van het beheren van de levenscyclus van externe gebruikers.](media/secure-external-access/6-manage-external-lifecycle.png)
 
-Deze instellingen zijn alleen van toepassing op gebruikers die zijn opgedaan via rechten beheer.
+Deze instellingen zijn alleen van toepassing op gebruikers met onboarding via Rechtenbeheer.
 
-**[Beheer van catalogi en toegangs pakketten](../governance/entitlement-management-delegate.md) aan zakelijke eigen aren overdragen, met meer informatie over wie toegang moet hebben**.
+**[Delegeer het beheer van catalogi en toegangspakketten](../governance/entitlement-management-delegate.md)** aan bedrijfseigenaren die meer informatie hebben over wie toegang moet hebben.
 
-![Scherm opname van het configureren van een catalogus.](media/secure-external-access/6-catalog-management.png)
+![Schermopname van het configureren van een catalogus.](media/secure-external-access/6-catalog-management.png)
 
-**[Afdwinging van de verval datum van toegangs pakketten](../governance/entitlement-management-access-package-lifecycle-policy.md) waartoe externe gebruikers toegang hebben.**
+**[Verval van toegangspakketten afdwingen](../governance/entitlement-management-access-package-lifecycle-policy.md) waarvoor externe gebruikers toegang hebben.**
 
 
-![Scherm opname van het configureren van het verval van het toegangs pakket.](media/secure-external-access/6-access-package-expiration.png)
+![Schermopname van het configureren van de vervaldatum van het toegangspakket.](media/secure-external-access/6-access-package-expiration.png)
 
-* Als u de eind datum van een op het project gebaseerd toegangs pakket weet, gebruikt u de op datum om de specifieke datum in te stellen. 
+* Als u de einddatum van een op een project gebaseerd toegangspakket weet, gebruikt u op de datum om de specifieke datum in te stellen. 
 
-* Anders is het raadzaam om de verval datum niet langer 365 dagen te hebben, tenzij bekend is dat deze een meerjarige betrokkenheid is.
+* Anders raden we u aan de vervaldatum niet langer dan 365 dagen te laten verlopen, tenzij bekend is dat het om een overeenkomst voor meerdere jaren gaat.
 
-* Gebruikers toestaan om toegang uit te breiden.
+* Gebruikers toestaan de toegang uit te breiden.
 
-* Goed keuring vereist om de uitbrei ding te verlenen.
+* Goedkeuring vereisen om de extensie te verlenen.
 
-**[Toegangs beoordelingen van pakketten afdwingen](../governance/manage-guest-access-with-access-reviews.md) om ongeoorloofde toegang voor gasten te voor komen.**
+**[Toegangsbeoordelingen van pakketten afdwingen om](../governance/manage-guest-access-with-access-reviews.md) ongepaste toegang voor gasten te voorkomen.**
 
-![Scherm opname van het maken van een nieuw toegangs pakket.](media/secure-external-access/6-new-access-package.png)
+![Schermopname van het maken van een nieuw toegangspakket.](media/secure-external-access/6-new-access-package.png)
 
-* Beoordelingen per kwar taal afdwingen.
+* Afdwingen van beoordelingen per kwartaal.
 
-* Stel, voor nalevings gevoelige projecten, de controleurs in op specifieke revisoren in plaats van zelf te controleren op externe gebruikers. De gebruikers die toegang hebben tot pakket beheerders zijn een goede plaats om te beginnen voor revisoren. 
+* Stel voor nalevingsgevoelige projecten de revisoren in op specifieke revisoren in plaats van zelfbeoordeling voor externe gebruikers. De gebruikers die toegangspakketbeheerders zijn, zijn een goede plek om te beginnen voor revisoren. 
 
-* Voor minder gevoelige projecten heeft de gebruiker zelf de last van de organisatie om de toegang te verminderen van gebruikers die niet meer met hun thuis organisatie zijn.
+* Voor minder gevoelige projecten vermindert de zelfbeoordeling van gebruikers de belasting voor de organisatie om toegang te verwijderen van gebruikers die niet langer bij hun thuisorganisatie zijn.
 
-Zie voor meer informatie reguleren van [toegang voor externe gebruikers in azure AD-rechts beheer](../governance/entitlement-management-external-users.md) 
+Zie Toegang voor externe gebruikers [beheren in Azure AD-rechtenbeheer](../governance/entitlement-management-external-users.md) voor meer informatie 
 
 ### <a name="next-steps"></a>Volgende stappen
 
-Raadpleeg de volgende artikelen over het beveiligen van externe toegang tot bronnen. U wordt aangeraden de acties in de vermelde volg orde uit te voeren.
+Zie de volgende artikelen over het beveiligen van externe toegang tot resources. U wordt aangeraden de acties in de vermelde volgorde uit te voeren.
 
-1. [Uw beveiligings postuur voor externe toegang bepalen](1-secure-access-posture.md)
+1. [Uw beveiligingsstatus voor externe toegang bepalen](1-secure-access-posture.md)
 
 2. [Uw huidige status ontdekken](2-secure-access-current-state.md)
 
-3. [Een governance-plan maken](3-secure-access-plan.md)
+3. [Een governanceplan maken](3-secure-access-plan.md)
 
 4. [Groepen gebruiken voor beveiliging](4-secure-access-groups.md)
 
 5. [Overgang naar Azure AD B2B](5-secure-access-b2b.md)
 
-6. [Veilige toegang met rechten beheer](6-secure-access-entitlement-managment.md) (u bent hier.)
+6. [Beveiligde toegang met Rechtenbeheer](6-secure-access-entitlement-managment.md) (u bent hier.)
 
-7. [Veilige toegang met beleid voor voorwaardelijke toegang](7-secure-access-conditional-access.md)
+7. [Toegang beveiligen met beleid voor voorwaardelijke toegang](7-secure-access-conditional-access.md)
 
-8. [Veilige toegang met gevoeligheids labels](8-secure-access-sensitivity-labels.md)
+8. [Toegang beveiligen met gevoeligheidslabels](8-secure-access-sensitivity-labels.md)
 
-9. [Beveiligde toegang tot micro soft teams, OneDrive en share point](9-secure-access-teams-sharepoint.md)
+9. [Beveiligde toegang tot Microsoft Teams, OneDrive en SharePoint](9-secure-access-teams-sharepoint.md)
 
  
 

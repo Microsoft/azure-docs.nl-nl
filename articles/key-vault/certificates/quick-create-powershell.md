@@ -1,5 +1,5 @@
 ---
-title: 'Quick Start: Stel & Azure Key Vault certificaten weer geven met Azure PowerShell'
+title: 'Quickstart: Een & weergeven Azure Key Vault certificaten instellen met Azure PowerShell'
 description: In deze quickstart wordt uitgelegd hoe u een certificaat instelt en ophaalt uit Azure Key Vault met behulp van Azure PowerShell
 services: key-vault
 author: msmbaldwin
@@ -8,15 +8,15 @@ tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: certificates
 ms.topic: quickstart
-ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019
+ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019, devx-track-azurepowershell
 ms.date: 01/27/2021
 ms.author: mbaldwin
-ms.openlocfilehash: 587815cf9628df35f1e1efdbc6a7a3c89a27ed55
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 11f463ab0ae60f489fd6b10d06402b6d27fc9930
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99071914"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107502251"
 ---
 # <a name="quickstart-set-and-retrieve-a-certificate-from-azure-key-vault-using-azure-powershell"></a>Quickstart: Een certificaat uit Azure Key Vault instellen en ophalen met behulp van Azure PowerShell
 
@@ -53,7 +53,7 @@ $Policy = New-AzKeyVaultCertificatePolicy -SecretContentType "application/x-pkcs
 Add-AzKeyVaultCertificate -VaultName "<your-unique-keyvault-name>" -Name "ExampleCertificate" -CertificatePolicy $Policy
 ```
 
-U kunt nu verwijzen naar dit certificaat dat u aan Azure Key Vault hebt toegevoegd met behulp van de bijbehorende URI. Gebruik **https://<uw-unieke kluis naam>. Vault.Azure.net/certificates/ExampleCertificate** om de huidige versie op te halen. 
+U kunt nu verwijzen naar dit certificaat dat u aan Azure Key Vault hebt toegevoegd met behulp van de bijbehorende URI. Gebruik **https://<your-unique-keyvault-name>.vault.azure.net/certificates/ExampleCertificate'** om de huidige versie op te halen. 
 
 Een eerder opgeslagen certificaat weergeven:
 
@@ -62,6 +62,18 @@ Get-AzKeyVaultCertificate -VaultName "<your-unique-keyvault-name>" -Name "Exampl
 ```
 
 U hebt nu een sleutelkluis gemaakt, een certificaat opgeslagen en dat vervolgens opgehaald.
+
+**Problemen oplossen:**
+
+Bewerking heeft een ongeldige statuscode 'Verboden' geretourneerd
+
+Als u deze foutmelding ontvangt, heeft het account dat toegang heeft tot de Azure Key Vault niet de juiste machtigingen om certificaten te maken.
+
+Voer de volgende Azure PowerShell uit om de juiste machtigingen toe te wijzen:
+
+```azurepowershell-interactive
+Set-AzKeyVaultAccessPolicy -VaultName <KeyVaultName> -ObjectId <AzureObjectID> -PermissionsToCertificates get,list,update,create
+```
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

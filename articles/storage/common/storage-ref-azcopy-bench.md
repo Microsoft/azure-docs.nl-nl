@@ -1,6 +1,6 @@
 ---
-title: azcopy Bank | Microsoft Docs
-description: In dit artikel vindt u Naslag informatie voor de azcopy bank opdracht.
+title: azcopy bench | Microsoft Docs
+description: Dit artikel bevat naslaginformatie voor de opdracht azcopy bench.
 author: normesta
 ms.service: storage
 ms.topic: reference
@@ -8,36 +8,42 @@ ms.date: 07/24/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: c1028d0a4a458746c08fd6fa4f16aa952d9962a2
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1e49e787854069c2fcea30df7a43c3aacdd21b9e
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "87282004"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107502025"
 ---
-# <a name="azcopy-benchmark"></a>azcopy-Bench Mark
+# <a name="azcopy-benchmark"></a>azcopy benchmark
 
-Voert een prestatie-benchmark door het uploaden of downloaden van test gegevens naar of van een opgegeven bestemming. Voor uploads worden de test gegevens automatisch gegenereerd.
+Voert een prestatiebenchmark uit door testgegevens te uploaden of te downloaden naar of van een opgegeven bestemming. Voor uploads worden de testgegevens automatisch gegenereerd.
 
-De Bench Mark-opdracht voert hetzelfde proces uit als ' kopie ', met uitzonde ring van: 
+Met de benchmarkopdracht wordt hetzelfde proces uitgevoerd als 'kopiëren', behalve: 
 
-  - In plaats van zowel de bron-als de doel parameters te vereisen, neemt Bench Mark slechts één. Dit is de BLOB-container, de Azure Files share of het Azure Data Lake Storage Gen2 bestands systeem dat u wilt uploaden naar of downloaden.
+  - In plaats van zowel bron- als doelparameters te vereisen, is er slechts één benchmark nodig. Dit is de blobcontainer, Azure Files Share of Azure Data Lake Storage Gen2 bestandssysteem dat u wilt uploaden naar of downloaden.
 
-  - De para meter mode beschrijft of AzCopy uploads naar of down loads van een gegeven doel moet testen. Geldige waarden zijn ' Upload ' en ' down load '. De standaard waarde is ' Upload '.
+  - De parameter 'mode' beschrijft of AzCopy uploads naar of downloads van een bepaald doel moet testen. Geldige waarden zijn Uploaden en Downloaden. De standaardwaarde is Uploaden.
 
-  - Voor het uploaden van benchmarks wordt de Payload beschreven door opdracht regel parameters, die bepalen hoeveel bestanden automatisch worden gegenereerd en hoe belang rijk de bestanden zijn. Het generatie proces vindt volledig in het geheugen plaats. De schijf wordt niet gebruikt.
+  - Voor uploadbenchmarks wordt de nettolading beschreven door opdrachtregelparameters, die bepalen hoeveel bestanden automatisch worden gegenereerd en hoe belangrijk de bestanden zijn. Het generatieproces vindt volledig in het geheugen plaats. Schijf wordt niet gebruikt.
 
-  - Voor down loads bestaat de payload uit welke bestanden al bestaan op de bron. (Zie voor beeld hieronder hoe test bestanden genereren, indien nodig).
+  - Voor downloads bestaat de nettolading uit alle bestanden die al bestaan in de bron. (Zie het onderstaande voorbeeld over het genereren van testbestanden, indien nodig).
   
-  - Slechts enkele van de optionele para meters die beschikbaar zijn voor de Kopieer opdracht worden ondersteund.
+  - Slechts enkele van de optionele parameters die beschikbaar zijn voor de kopieeropdracht worden ondersteund.
   
   - Aanvullende diagnostische gegevens worden gemeten en gerapporteerd.
   
-  - Voor uploads is het standaard gedrag om de overgebrachte gegevens aan het einde van de test uitvoering te verwijderen.  Voor down loads worden de gegevens nooit lokaal opgeslagen.
+  - Voor uploads is het standaardgedrag om de overgedragen gegevens te verwijderen aan het einde van de test.  Voor downloads worden de gegevens nooit lokaal opgeslagen.
 
-De Bench Mark-modus wordt automatisch afgestemd op het aantal parallelle TCP-verbindingen dat de maximale door Voer geeft. Het nummer wordt aan het einde weer gegeven. Stel de omgevings variabele AZCOPY_CONCURRENCY_VALUE in op een specifiek aantal verbindingen om autotuning te voor komen. 
+De benchmarkmodus wordt automatisch afgestemd op het aantal parallelle TCP-verbindingen dat de maximale doorvoer biedt. Dit getal wordt aan het einde weergegeven. Als u automatische afstemming wilt voorkomen, stelt u AZCOPY_CONCURRENCY_VALUE omgevingsvariabele in op een specifiek aantal verbindingen. 
 
-Alle gebruikelijke verificatie typen worden ondersteund. De meest geschikte benadering voor het uploaden van benchmarking is doorgaans om een lege container met een SAS-token te maken en SAS-verificatie te gebruiken. (Voor de download modus moet een set test gegevens aanwezig zijn in de doel container.)
+Alle gebruikelijke verificatietypen worden ondersteund. De handigste benadering voor het uploaden van benchmarks is echter meestal het maken van een lege container met een SAS-token en het gebruik van SAS-verificatie. (Voor de downloadmodus moet een set testgegevens aanwezig zijn in de doelcontainer.)
+
+## <a name="related-conceptual-articles"></a>Gerelateerde conceptuele artikelen
+
+- [Aan de slag met AzCopy](storage-use-azcopy-v10.md)
+- [De prestaties van AzCopy v10 optimaliseren met Azure Storage](storage-use-azcopy-optimize.md)
+
 
 ## <a name="examples"></a>Voorbeelden
 
@@ -45,29 +51,29 @@ Alle gebruikelijke verificatie typen worden ondersteund. De meest geschikte bena
 azcopy benchmark [destination] [flags]
 ```
 
-Voer een bench Mark-test uit met de standaard parameters (geschikt voor benchmarking-netwerken tot 1 Gbps): '
+Voer een benchmarktest uit met standaardparameters (geschikt voor benchmarkingnetwerken van maximaal 1 Gbps):'
 
 ```azcopy
 azcopy bench "https://[account].blob.core.windows.net/[container]?<SAS>"
 ```
-Voer een bench Mark-test uit die 100 bestanden uploadt, elk 2 GiB in grootte: (geschikt voor benchmarking op een snel netwerk, bijvoorbeeld 10 Gbps): '
+Voer een benchmarktest uit die 100 bestanden uploadt, elk 2 GiB groot: (geschikt voor benchmarking in een snel netwerk, bijvoorbeeld 10 Gbps):'
 
 ```azcopy
 azcopy bench "https://[account].blob.core.windows.net/[container]?<SAS>"--file-count 100 --size-per-file 2G
 ```
-Voer een bench Mark-test uit, maar gebruik 50.000-bestanden, elke 8 MiB in grootte en bereken de MD5-hashes (op dezelfde manier als de `--put-md5` vlag dit doet in de Kopieer opdracht). Het doel van `--put-md5` wanneer de benchmarking is om te testen of de MD5-berekening van invloed is op de door Voer voor het geselecteerde aantal bestanden en de grootte:
+Voer een benchmarktest uit, maar gebruik 50.000 bestanden, elk 8 MiB groot en bereken de MD5-hashes (op dezelfde manier als de vlag dit doet in de `--put-md5` kopieeropdracht). Het doel van het benchmarken is om te testen of MD5-berekening van invloed is op de doorvoer voor het geselecteerde aantal `--put-md5` bestanden en de geselecteerde grootte:
 
 ```azcopy
 azcopy bench --mode='Upload' "https://[account].blob.core.windows.net/[container]?<SAS>" --file-count 50000 --size-per-file 8M --put-md5
 ```
 
-Een bench Mark-test uitvoeren waarmee bestaande bestanden van een doel worden gedownload
+Een benchmarktest uitvoeren die bestaande bestanden van een doel downloadt
 
 ```azcopy
 azcopy bench --mode='Download' "https://[account].blob.core.windows.net/[container]?<SAS?"
 ```
 
-Voer een upload uit waarmee de overgebrachte bestanden niet worden verwijderd. (Deze bestanden kunnen vervolgens fungeren als de payload voor een download test)
+Voer een upload uit die de overgedragen bestanden niet verwijdert. (Deze bestanden kunnen vervolgens fungeren als de nettolading voor een downloadtest)
 
 ```azcopy
 azcopy bench "https://[account].blob.core.windows.net/[container]?<SAS>" --file-count 100 --delete-test-data=false
@@ -75,35 +81,35 @@ azcopy bench "https://[account].blob.core.windows.net/[container]?<SAS>" --file-
 
 ## <a name="options"></a>Opties
 
-**--BLOB-type** teken reeks definieert het type BLOB bij het doel. Wordt gebruikt om benchmarking van verschillende BLOB-typen toe te staan. Gelijk aan de para meter met dezelfde naam in de Kopieer opdracht (standaard ' detect ').
+**--blob-type** string Definieert het type blob op de bestemming. Wordt gebruikt om benchmarking van verschillende blobtypen toe te staan. Identiek aan de parameter met dezelfde naam in de kopieeropdracht (standaard 'Detecteren').
 
-**--block-size-MB** float gebruik deze blok grootte (opgegeven in MIB). De standaard waarde wordt automatisch berekend op basis van de bestands grootte. Decimale breuken zijn toegestaan, bijvoorbeeld 0,25. Gelijk aan de para meter met dezelfde naam in de Kopieer opdracht.
+**--block-size-mb** float Gebruik deze blokgrootte (opgegeven in MiB). De standaardwaarde wordt automatisch berekend op basis van de bestandsgrootte. Decimale breuken zijn toegestaan, bijvoorbeeld 0,25. Identiek aan de parameter met dezelfde naam in de kopieeropdracht.
 
-**--Check-length**  Controleer de lengte van een bestand op de bestemming na de overdracht. Als de bron en bestemming niet overeenkomen, wordt de overdracht als mislukt gemarkeerd. (standaard instelling waar)
+**--check-length**  Controleer de lengte van een bestand op de bestemming na de overdracht. Als de bron en het doel niet overeenkomen, wordt de overdracht gemarkeerd als mislukt. (standaard true)
 
-**--Delete-test-data**  Indien true, worden de benchmark gegevens verwijderd aan het einde van de Bench Mark-uitvoeringsrun.  Stel deze waarde in op ONWAAR als u de gegevens op het doel wilt blijven gebruiken. u kunt deze bijvoorbeeld voor hand matige tests buiten de Bench Mark-modus (standaard True).
+**--delete-test-data**  Indien waar, worden de benchmarkgegevens verwijderd aan het einde van de benchmark-run.  Stel deze in op onwaar als u de gegevens op de bestemming wilt houden, bijvoorbeeld om deze te gebruiken voor handmatige tests buiten de benchmarkmodus (standaard true).
 
-**--Bestands telling** uint.  Het aantal automatisch gegenereerde gegevens bestanden dat moet worden gebruikt (standaard 100).
+**--file-count** uint.  Het aantal automatisch gegenereerde gegevensbestanden dat moet worden gebruikt (standaard 100).
 
-**--Help**  Hulp voor Bank
+**--help**  Help voor bankje
 
-**--** teken reeks op logboek niveau definiëren de logboek uitgebreidheids voor het logboek bestand, beschik bare niveaus: info (alle aanvragen/antwoorden), waarschuwing (trage antwoorden), fout (alleen mislukte aanvragen) en geen (geen uitvoer Logboeken). (standaard INFO)
+**--log-level** string Define the log verbosity for the log file, available levels: INFO(all requests/responses), WARNING (slow responses), ERROR (only failed requests) and NONE (no output logs). (standaard 'INFO')
 
-**--modus** teken reeks definieert of Azcopy uploads of down loads van dit doel moet testen. Geldige waarden zijn ' Upload ' en ' down load '. De standaard optie is ' Upload '. (standaard ' Upload ')
+**--mode string** Defines if Azcopy should test uploads or downloads from this target. Geldige waarden zijn 'upload' en 'download'. De standaardoptie is 'uploaden'. (standaard 'uploaden')
 
-**--aantal-mappen** uint als dit groter is dan 0, kunt u mappen maken om de gegevens op te delen.
+**--aantal mappen uint** Als groter is dan 0, maakt u mappen om de gegevens te verdelen.
 
-**--put-MD5**  Maak een MD5-hash van elk bestand en sla de hash op als de content-MD5-eigenschap van de BLOB/het doel bestand. (Standaard wordt de hash niet gemaakt.) Gelijk aan de para meter met dezelfde naam in de Kopieer opdracht.
+**--put-md5**  Maak een MD5-hash van elk bestand en sla de hash op als de eigenschap Content-MD5 van de doelblob/het doelbestand. (De hash wordt standaard NIET gemaakt.) Identiek aan de parameter met dezelfde naam in de kopieeropdracht.
 
-**--grootte:** de teken reeks grootte per bestand van elk automatisch gegenereerd gegevens bestand. Dit moet een getal zijn dat onmiddellijk wordt gevolgd door K, M of G. bijv. 12k of 200G (standaard ' 250M ').
+**--size-per-file** tekenreeks Grootte van elk automatisch gegenereerd gegevensbestand. Moet een getal zijn dat direct wordt gevolgd door K, M of bijvoorbeeld 12.000 of 200 G (standaard '250 miljoen').
 
-## <a name="options-inherited-from-parent-commands"></a>Opties overgenomen van bovenliggende opdrachten
+## <a name="options-inherited-from-parent-commands"></a>Opties die zijn overgenomen van bovenliggende opdrachten
 
-**--Cap-Mbps-float**  De overdrachts frequentie in megabits per seconde. Even door Voer kan enigszins afwijken van het kapje. Als deze optie is ingesteld op nul of wordt wegge laten, wordt de door Voer niet afgetopt.
+**--cap-mbps float**  Beperk de overdrachtssnelheid, in megabits per seconde. De doorvoer per moment kan enigszins afwijken van de limiet. Als deze optie is ingesteld op nul of wordt weggelaten, wordt de doorvoer niet afgekapt.
 
-**--** de teken reeks indeling van het uitvoer type van de uitvoer van de opdracht. De opties zijn onder andere: Text, JSON. De standaard waarde is ' text '. (standaard tekst).
+**--output-type** string Format of the command's output. De keuzes zijn onder andere: text, json. De standaardwaarde is 'text'. (standaard 'text').
 
-**--vertrouwd-micro soft-achtervoegsels** teken reeks geeft aanvullende domein achtervoegsels aan waar Azure Active Directory aanmeldings tokens kunnen worden verzonden.  De standaard waarde is *. core.Windows.net;*. core.chinacloudapi.cn; *. core.cloudapi.de;*. core.usgovcloudapi.net '. Alle hier vermelde waarden worden toegevoegd aan de standaard instelling. Voor beveiliging moet u Microsoft Azure domeinen hier alleen plaatsen. Scheid meerdere vermeldingen met een punt komma.
+**--trusted-microsoft-suffixes** string Hiermee geeft u extra domeinachtervoegsels op waar Azure Active Directory aanmeldingstokens kunnen worden verzonden.  De standaardwaarde is *.core.windows.net;*. core.chinacloudapi.cn; *.core.cloudapi.de;*. core.usgovcloudapi.net'. Alle die hier worden vermeld, worden toegevoegd aan de standaardinstelling. Voor beveiliging moet u alleen de Microsoft Azure hier zetten. Scheid meerdere vermeldingen met punt-dubbele punt.
 
 
 ## <a name="see-also"></a>Zie ook

@@ -1,20 +1,20 @@
 ---
-title: 4,0 Server versie ondersteunde functies en syntaxis in de API van Azure Cosmos DB voor MongoDB
-description: Meer informatie over de API van Azure Cosmos DB voor de MongoDB 4,0-Server versie die wordt ondersteund en de syntaxis. Meer informatie over de data base-opdrachten, ondersteuning voor query talen, gegevens typen, aggregatie pijplijn opdrachten en Opera tors die worden ondersteund.
+title: 4.0-serverversie ondersteunde functies en syntaxis in Azure Cosmos DB API voor MongoDB
+description: Meer informatie over Azure Cosmos DB api voor MongoDB 4.0-serverversie ondersteunde functies en syntaxis. Meer informatie over de databaseopdrachten, ondersteuning voor querytaal, gegevenstypen, aggregatiepijplijnopdrachten en ondersteunde operators.
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.topic: overview
 ms.date: 03/02/2021
 author: gahl-levy
 ms.author: gahllevy
-ms.openlocfilehash: 9eebc77c5b3d9402c766320fddfdaf05d50b574f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 74e08cce381d173e0c5e1458ae99167a0c8c697f
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102485398"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107504507"
 ---
-# <a name="azure-cosmos-dbs-api-for-mongodb-40-server-version-supported-features-and-syntax"></a>Azure Cosmos DB-API voor MongoDB (4,0-Server versie): ondersteunde functies en syntaxis
+# <a name="azure-cosmos-dbs-api-for-mongodb-40-server-version-supported-features-and-syntax"></a>Azure Cosmos DB API voor MongoDB (serverversie 4.0): ondersteunde functies en syntaxis
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
 
 Azure Cosmos DB is de wereldwijd gedistribueerde multimodel-databaseservice van Microsoft. U kunt met de API van Azure Cosmos DB voor MongoDB communiceren via een van de open-source MongoDB-[clientstuurprogramma's](https://docs.mongodb.org/ecosystem/drivers). De API van Azure Cosmos DB voor MongoDB maakt het gebruik van bestaande clientstuurprogramma's mogelijk doordat de API functioneert conform het MongoDB-[wireprotocol](https://docs.mongodb.org/manual/reference/mongodb-wire-protocol).
@@ -23,7 +23,7 @@ Door gebruik te maken van de API van Azure Cosmos DB voor MongoDB hebt u de besc
 
 ## <a name="protocol-support"></a>Ondersteuning voor protocol
 
-De ondersteunde operators en eventuele beperkingen of uitzonderingen worden hieronder vermeld. Elk clientstuurprogramma dat deze protocollen kent, kan verbinding maken met de API van Azure Cosmos DB voor MongoDB. Wanneer u de API van Azure Cosmos DB gebruikt voor MongoDB-accounts, hebben de 3.6 +-versies van accounts het eind punt in de indeling, `*.mongo.cosmos.azure.com` terwijl de 3,2-versie van de accounts het eind punt in de indeling heeft `*.documents.azure.com` .
+De ondersteunde operators en eventuele beperkingen of uitzonderingen worden hieronder vermeld. Elk clientstuurprogramma dat deze protocollen kent, kan verbinding maken met de API van Azure Cosmos DB voor MongoDB. Wanneer u Azure Cosmos DB API voor MongoDB-accounts gebruikt, hebben de 3.6+-versies van accounts het eindpunt in de indeling, terwijl de `*.mongo.cosmos.azure.com` 3.2-versie van accounts het eindpunt heeft in de indeling `*.documents.azure.com` .
 
 > [!NOTE]
 > Dit artikel bevat alleen de ondersteunde serveropdrachten en sluit wrapper-functies aan de clientzijde uit. Wrapper-functies aan de clientzijde, zoals `deleteMany()` en `updateMany()`, maken intern gebruik van de serveropdrachten `delete()` en `update()`. Functies die gebruikmaken van ondersteunde serveropdrachten zijn compatibel met de API van Azure Cosmos DB voor MongoDB.
@@ -40,24 +40,24 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 
 | Opdracht | Ondersteund |
 |---------|---------|
-| [stroom wijzigen](mongodb-change-streams.md) | Yes |
+| [streams wijzigen](mongodb-change-streams.md) | Ja |
 | delete | Ja |
-| eval | No |
+| Eval | Nee |
 | find | Ja |
 | findAndModify | Ja |
 | getLastError | Ja |
 | getMore | Ja |
 | getPrevError | Nee |
 | insert | Ja |
-| parallelCollectionScan | No |
+| parallelCollectionScan | Nee |
 | resetError | Nee |
 | update | Ja |
 
-### <a name="transaction-commands"></a>Transactie opdrachten
+### <a name="transaction-commands"></a>Transactieopdrachten
 
 | Opdracht | Ondersteund |
 |---------|---------|
-| abortTransaction | Yes |
+| abortTransaction | Ja |
 | commitTransaction | Ja |
 
 ### <a name="authentication-commands"></a>Verificatieopdrachten
@@ -113,7 +113,7 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 | top | Nee |
 | whatsmyuri | Ja |
 
-## <a name="aggregation-pipeline"></a><a name="aggregation-pipeline"></a>Aggregatie pijplijn
+## <a name="aggregation-pipeline"></a><a name="aggregation-pipeline"></a>Aggregatiepijplijn
 
 ### <a name="aggregation-commands"></a>Samenvoegingsopdrachten
 
@@ -128,33 +128,36 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 
 | Opdracht | Ondersteund |
 |---------|---------|
-| $addFields | Yes |
+| $addFields | Ja |
 | $bucket | Nee |
 | $bucketAuto | Nee |
-| $changeStream | Yes |
+| $changeStream | Ja |
 | $collStats | Nee |
 | $count | Ja |
 | $currentOp | Nee |
-| $facet | Yes |
-| $geoNear | Yes |
-| $graphLookup | Yes |
+| $facet | Ja |
+| $geoNear | Ja |
+| $graphLookup | Ja |
 | $group | Ja |
 | $indexStats | Nee |
 | $limit | Ja |
 | $listLocalSessions | Nee |
 | $listSessions | Nee |
-| $lookup | Ja |
+| $lookup | Gedeeltelijk |
 | $match | Ja |
 | $out | Ja |
 | $project | Ja |
 | $redact | Ja |
 | $replaceRoot | Ja |
-| $replaceWith | No |
+| $replaceWith | Nee |
 | $sample | Ja |
 | $skip | Ja |
 | $sort | Ja |
 | $sortByCount | Ja |
-| $unwind | Yes |
+| $unwind | Ja |
+
+> [!NOTE]
+> `$lookup` biedt nog geen ondersteuning voor [de niet-gerelateerde subquery-functie](https://docs.mongodb.com/manual/reference/operator/aggregation/lookup/#join-conditions-and-uncorrelated-sub-queries) die is geïntroduceerd in serverversie 3.6. U ontvangt een foutmelding met een bericht met `let is not supported` als u probeert de operator te gebruiken met - en `$lookup` `let` `pipeline` -velden.
 
 ### <a name="boolean-expressions"></a>Booleaanse expressies
 
@@ -168,14 +171,14 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 
 | Opdracht | Ondersteund |
 |---------|---------|
-| $convert | Yes |
-| $toBool | Yes |
-| $toDate | Yes |
-| $toDecimal | Yes |
-| $toDouble | Yes |
-| $toInt | Yes |
-| $toLong | Yes |
-| $toObjectId | Yes |
+| $convert | Ja |
+| $toBool | Ja |
+| $toDate | Ja |
+| $toDecimal | Ja |
+| $toDouble | Ja |
+| $toInt | Ja |
+| $toLong | Ja |
+| $toObjectId | Ja |
 | $toString | Ja |
 
 ### <a name="set-expressions"></a>Expressies voor instellen
@@ -231,8 +234,8 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 | $concat | Ja |
 | $indexOfBytes | Ja |
 | $indexOfCP | Ja |
-| $ltrim | Yes |
-| $rtrim | Yes |
+| $ltrim | Ja |
+| $rtrim | Ja |
 | $trim | Ja |
 | $split | Ja |
 | $strLenBytes | Ja |
@@ -273,7 +276,7 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 
 | Opdracht | Ondersteund |
 |---------|---------|
-| $map | Yes |
+| $map | Ja |
 | $let | Ja |
 
 ### <a name="system-variables"></a>Systeemvariabelen
@@ -341,8 +344,8 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 | $min | Ja |
 | $push | Ja |
 | $addToSet | Ja |
-| $stdDevPop | Yes |
-| $stdDevSamp | Yes |
+| $stdDevPop | Ja |
+| $stdDevSamp | Ja |
 
 ### <a name="merge-operator"></a>Operator voor samenvoegen
 
@@ -352,9 +355,9 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 
 ## <a name="data-types"></a>Gegevenstypen
 
-Azure Cosmos DB-API voor MongoDB ondersteunt documenten die zijn gecodeerd in MongoDB BSON-indeling. De 4,0-API-versie breidt het interne gebruik van deze indeling uit om de prestaties te verbeteren en de kosten te verlagen. Documenten die zijn geschreven of bijgewerkt via een eind punt met 4,0, profiteren van dit voor deel.
+Azure Cosmos DB API voor MongoDB ondersteunt documenten die zijn gecodeerd in MongoDB BSON-indeling. De API-versie 4.0 verbetert het interne gebruik van deze indeling om de prestaties te verbeteren en de kosten te verlagen. Documenten die zijn geschreven of bijgewerkt via een eindpunt met 4.0 profiteren hiervan.
  
-In een [upgrade scenario](mongodb-version-upgrade.md)worden documenten die zijn geschreven vóór de upgrade naar versie 4,0 niet meer in aanmerking komen voor de verbeterde prestaties tot ze via een schrijf bewerking via het 4,0-eind punt worden bijgewerkt.
+In een [upgradescenario](mongodb-version-upgrade.md)profiteren documenten die zijn geschreven vóór de upgrade naar versie 4.0 niet van de verbeterde prestaties totdat ze worden bijgewerkt via een schrijfbewerking via het 4.0-eindpunt.
 
 | Opdracht | Ondersteund |
 |---------|---------|
@@ -533,7 +536,7 @@ Tijdens het gebruik van bewerking `findOneAndUpdate`, worden sorteerbewerkingen 
 
 ## <a name="unique-indexes"></a>Unieke indexen
 
-[Unieke indexen](mongodb-indexing.md#unique-indexes) zorgen ervoor dat een specifiek veld geen dubbele waarden bevat in alle documenten van een verzameling, net zoals dat de uniekheid van de standaard-id-sleutel behouden blijft. U kunt unieke indexen maken in Azure Cosmos DB met behulp van de `createIndex` opdracht met de `unique` para meter constraint:
+[Unieke indexen](mongodb-indexing.md#unique-indexes) zorgen ervoor dat een specifiek veld geen dubbele waarden bevat in alle documenten van een verzameling, net zoals dat de uniekheid van de standaard-id-sleutel behouden blijft. U kunt unieke indexen in Azure Cosmos DB met behulp van de `createIndex` opdracht met de `unique` beperkingsparameter:
 
 ```javascript
 globaldb:PRIMARY> db.coll.createIndex( { "amount" : 1 }, {unique:true} )
@@ -548,7 +551,7 @@ globaldb:PRIMARY> db.coll.createIndex( { "amount" : 1 }, {unique:true} )
 
 ## <a name="compound-indexes"></a>Samengestelde indexen
 
-[Samengestelde indexen](mongodb-indexing.md#compound-indexes-mongodb-server-version-36) bieden een manier om een index voor groepen velden te maken voor Maxi maal acht velden. Dit soort index verschilt van de systeemeigen samengestelde indexen in MongoDB. In Azure Cosmos DB worden samengestelde indexen gebruikt voor het sorteren van bewerkingen die op meerdere velden worden toegepast. Als u een samengestelde index wilt maken, moet u meer dan één eigenschap opgeven als de para meter:
+[Samengestelde indexen](mongodb-indexing.md#compound-indexes-mongodb-server-version-36) bieden een manier om een index te maken voor groepen velden voor maximaal acht velden. Dit soort index verschilt van de systeemeigen samengestelde indexen in MongoDB. In Azure Cosmos DB worden samengestelde indexen gebruikt voor het sorteren van bewerkingen die op meerdere velden worden toegepast. Als u een samengestelde index wilt maken, moet u meer dan één eigenschap opgeven als parameter:
 
 ```javascript
 globaldb:PRIMARY> db.coll.createIndex({"amount": 1, "other":1})
@@ -562,15 +565,15 @@ globaldb:PRIMARY> db.coll.createIndex({"amount": 1, "other":1})
 
 ## <a name="gridfs"></a>GridFS
 
-Azure Cosmos DB ondersteunt GridFS via elk GridFS-compatibel Mongo-stuur programma.
+Azure Cosmos DB ondersteuning voor GridFS via elk GridFS-compatibel Mongo-stuurprogramma.
 
 ## <a name="replication"></a>Replicatie
 
 Azure Cosmos DB biedt ondersteuning voor automatische, systeemeigen replicatie op de laagste lagen. Deze logica is uitgebreid om tevens globale replicatie met een lage latentie te bereiken. Cosmos DB biedt geen ondersteuning voor handmatige replicatieopdrachten.
 
-## <a name="retryable-writes"></a>Herhaal bare schrijf bewerkingen
+## <a name="retryable-writes"></a>Schrijfbare schrijfbare schrijfbare schrijfbare
 
-Cosmos DB biedt nog geen ondersteuning voor herstel bare schrijf bewerkingen. Client Stuur Programma's moeten de URL-para meter ' retryWrites = false ' toevoegen aan hun connection string. U kunt meer URL-para meters toevoegen door ze te voorzien van een &. 
+Cosmos DB biedt nog geen ondersteuning voor schrijfbare schrijf nieuwe poging. Client-stuurprogramma's moeten de URL-parameter 'retryWrites=false' toevoegen aan hun connection string. Meer URL-parameters kunnen worden toegevoegd door ze vooraf te laten gaan door een '&'. 
 
 ## <a name="sharding"></a>Sharding
 
@@ -582,11 +585,11 @@ Azure Cosmos DB biedt nog geen ondersteuning voor sessieopdrachten aan de server
 
 ## <a name="time-to-live-ttl"></a>TTL (time-to-live)
 
-Azure Cosmos DB ondersteunt een TTL (time-to-Live) op basis van de tijds tempel van het document. TTL kan worden ingeschakeld voor verzamelingen door naar [Azure Portal](https://portal.azure.com) te gaan.
+Azure Cosmos DB ondersteunt een time-to-live (TTL) op basis van de tijdstempel van het document. TTL kan worden ingeschakeld voor verzamelingen door naar [Azure Portal](https://portal.azure.com) te gaan.
 
 ## <a name="transactions"></a>Transacties
 
-Multi-document transacties worden ondersteund in een unsharded-verzameling. Multi-document transacties worden niet ondersteund in verzamelingen of in Shard-verzamelingen. De time-out voor trans acties is een vaste periode van 5 seconden.
+Transacties met meerdere documenten worden ondersteund binnen een niet-geharde verzameling. Transacties met meerdere documenten worden niet ondersteund in verzamelingen of in shard-verzamelingen. De time-out voor transacties is een vaste 5 seconden.
 
 ## <a name="user-and-role-management"></a>Gebruikers- en rolbeheer
 
@@ -594,7 +597,7 @@ Azure Cosmos DB biedt nog geen ondersteuning voor gebruikers en rollen. Cosmos D
 
 ## <a name="write-concern"></a>Schrijfprobleem
 
-Sommige toepassingen zijn afhankelijk van een [Schrijf probleem](https://docs.mongodb.com/manual/reference/write-concern/). Hiermee wordt het aantal antwoorden opgegeven dat is vereist tijdens een schrijf bewerking. Vanwege de manier waarop replicatie op de achtergrond in Cosmos DB wordt afgehandeld, zijn alle schrijfbewerkingen automatisch Quorum-bewerkingen. Alle schrijfproblemen die in clientcode zijn opgegeven, worden genegeerd. Zie [Consistentieniveaus gebruiken om de beschikbaarheid en prestaties te maximaliseren](consistency-levels.md) voor meer informatie.
+Sommige toepassingen zijn afhankelijk van [een schrijfbewerking](https://docs.mongodb.com/manual/reference/write-concern/), waarmee het aantal vereiste antwoorden tijdens een schrijfbewerking wordt opgegeven. Vanwege de manier waarop replicatie op de achtergrond in Cosmos DB wordt afgehandeld, zijn alle schrijfbewerkingen automatisch Quorum-bewerkingen. Alle schrijfproblemen die in clientcode zijn opgegeven, worden genegeerd. Zie [Consistentieniveaus gebruiken om de beschikbaarheid en prestaties te maximaliseren](consistency-levels.md) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

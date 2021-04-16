@@ -1,51 +1,55 @@
 ---
-title: Azure Service Bus-bericht bladeren
-description: Met Service Bus berichten bladeren en bekijken kunnen een Azure Service Bus-client alle berichten in een wachtrij of abonnement opsommen.
+title: Azure Service Bus - bladeren door berichten
+description: Door de berichten Service Bus bekijken, kan Azure Service Bus client alle berichten in een wachtrij of abonnement opsnoemen.
 ms.topic: article
 ms.date: 03/29/2021
-ms.openlocfilehash: f4943685f03eccb1c3b8da079973cf083bdcc416
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: deafe9e6ddeeebf233922aade36823ddaaede864
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106090304"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107520119"
 ---
 # <a name="message-browsing"></a>Berichten doorzoeken
+Door berichten te bladeren of te bekijken, kan een Service Bus-client alle berichten in een wachtrij of een abonnement opsnoemen voor diagnostische en debuggingsdoeleinden.
 
-Door een bericht te bladeren of weer te geven, kan een Service Bus-client alle berichten in een wachtrij of een abonnement opsommen voor diagnose-en fout opsporing.
+De bewerking Peek voor een wachtrij of een abonnement retourneert het aangevraagde aantal berichten. In de volgende tabel ziet u de typen berichten die worden geretourneerd door de bewerking Peek. 
 
-Met de Peek-bewerking voor een **wachtrij** worden alle berichten in de wachtrij geretourneerd, niet alleen de items die beschikbaar zijn voor direct ophalen. De bewerking voor het weer geven van een **abonnement** retourneert alle berichten behalve geplande berichten in het logboek voor abonnements berichten. 
+| Type berichten | Opgenomen? | 
+| ---------------- | ----- | 
+| Actieve berichten | Ja |
+| Berichten met een bericht in een dead-letter | Nee | 
+| Vergrendelde berichten | Ja |
+| Verlopen berichten |  Dit kan zijn (voordat ze in een dead-letter zijn) |
+| Geplande berichten | Ja voor wachtrijen. Nee voor abonnementen |
 
-Verbruikte en verlopen berichten worden opgeschoond door een asynchrone garbagecollection-bewerking uit te voeren. Deze stap is mogelijk niet onmiddellijk na het verlopen van berichten. Daarom is het mogelijk dat een Peek-bewerking berichten retourneert die al zijn verlopen. Deze berichten worden verwijderd of onbestelbaar wanneer een receive-bewerking de volgende keer wordt aangeroepen voor de wachtrij of het abonnement. Houd rekening met dit gedrag bij het herstellen van uitgestelde berichten uit de wachtrij. Een verlopen bericht is niet langer in aanmerking komen voor regel matige ophaal acties, zelfs wanneer dit wordt geretourneerd door Peek. Als u deze berichten retourneert, is het ontwerp als Peek een diagnostisch hulp programma dat de huidige status van het logboek weergeeft.
+## <a name="dead-lettered-messages"></a>Berichten met een bericht in een dead-letter
+Als u berichten met in wachtrijen geplaatste berichten van een wachtrij of abonnement wilt bekijken, moet de **peek-bewerking** worden uitgevoerd op de wachtrij voor inlopende letters die is gekoppeld aan de wachtrij of het abonnement. Zie Toegang tot wachtrijen voor [in wachtrijen voor inlopende berichten voor meer informatie.](service-bus-dead-letter-queues.md#path-to-the-dead-letter-queue)
 
-PEEK retourneert ook berichten die zijn vergrendeld en die momenteel worden verwerkt door andere ontvangers. Omdat Peek echter een niet-verbonden moment opname retourneert, kan de vergrendelings status van een bericht niet worden waargenomen op getoonde berichten.
+## <a name="expired-messages"></a>Verlopen berichten
+Verlopen berichten kunnen worden opgenomen in de resultaten die worden geretourneerd door de bewerking Peek. Verbruikte en verlopen berichten worden opgeschoond door een asynchrone 'garbage collection'-run. Deze stap kan niet noodzakelijkerwijs onmiddellijk plaatsvinden nadat berichten zijn verlopen. Daarom kan een peek-bewerking berichten retourneren die al zijn verlopen. Deze berichten worden verwijderd of in een impasse geplaatst wanneer een ontvangstbewerking de volgende keer wordt aangeroepen in de wachtrij of het abonnement. Houd rekening met dit gedrag wanneer u uitgestelde berichten uit de wachtrij probeert te herstellen. 
 
-## <a name="peek-apis"></a>Api's bekijken
-## <a name="azuremessagingservicebus"></a>[Azure. Messa ging. ServiceBus](#tab/dotnet)
-De methoden [PeekMessageAsync](/dotnet/api/azure.messaging.servicebus.servicebusreceiver.peekmessageasync) en [PeekMessagesAsync](/dotnet/api/azure.messaging.servicebus.servicebusreceiver.peekmessagesasync) bestaan op receiver-objecten: `ServiceBusReceiver` , `ServiceBusSessionReceiver` . Peek werkt op wacht rijen, abonnementen en hun respectieve wacht rijen voor onbestelbare berichten.
+Een verlopen bericht komt niet meer in aanmerking voor het regelmatig ophalen op een andere manier, zelfs niet wanneer het wordt geretourneerd door Peek. Het retourneren van deze berichten is een ontwerp, omdat Peek een hulpprogramma voor diagnostische gegevens is dat de huidige status van het logboek weerspiegelt.
 
-Wanneer herhaaldelijk wordt aangeroepen, worden `PeekMessageAsync` alle berichten in de wachtrij of het abonnements logboek gesorteerd op volg orde van het laagste beschik bare Volg nummer tot het hoogste niveau. Het is de volg orde waarin berichten in wachtrij worden gezet, niet in de volg orde waarin berichten uiteindelijk kunnen worden opgehaald.
-PeekMessagesAsync haalt meerdere berichten op en retourneert deze als een opsomming. Als er geen berichten beschikbaar zijn, is het opsommings object leeg, niet null.
+## <a name="locked-messages"></a>Vergrendelde berichten
+Peek retourneert ook berichten die **zijn vergrendeld** en momenteel worden verwerkt door andere ontvangers. Omdat Peek echter een niet-verbonden momentopname retourneert, kan de vergrendelingstoestand van een bericht niet worden waargenomen bij binnengekeken berichten.
 
-U kunt ook de para meter [fromSequenceNumber](/dotnet/api/microsoft.servicebus.messaging.eventposition.fromsequencenumber) vullen met een SequenceNumber waarop moet worden gestart. Vervolgens roept u de methode opnieuw aan zonder de para meter op te geven die u wilt inventariseren. `PeekMessagesAsync` werkt gelijk aan functies, maar haalt een aantal berichten tegelijk op.
+## <a name="peek-apis"></a>API's bekijken
+Peek werkt met wachtrijen, abonnementen en hun wachtrijen voor in wachtrijen zonder wachtrijen. 
 
+Wanneer deze herhaaldelijk wordt aangeroepen, worden met de peek-bewerking alle berichten in de wachtrij of het abonnement op volgorde van het laagste beschikbare volgnummer naar het hoogste opsnoemd. Het is de volgorde waarin berichten in de enqueu zijn opgeslagen, niet de volgorde waarin berichten uiteindelijk kunnen worden opgehaald.
 
-## <a name="microsoftazureservicebus"></a>[Micro soft. Azure. ServiceBus](#tab/dotnetold)
-De methoden [Peek/PeekAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.peekasync#Microsoft_Azure_ServiceBus_Core_MessageReceiver_PeekAsync) en [PeekBatch/PeekBatchAsync](/dotnet/api/microsoft.servicebus.messaging.queueclient.peekbatchasync#Microsoft_ServiceBus_Messaging_QueueClient_PeekBatchAsync_System_Int64_System_Int32_) bestaan op receiver-objecten: `MessageReceiver` , `MessageSession` . Peek werkt op wacht rijen, abonnementen en hun respectieve wacht rijen voor onbestelbare berichten.
-
-Wanneer herhaaldelijk wordt aangeroepen, worden `Peek` alle berichten in de wachtrij of het abonnements logboek gesorteerd op volg orde van het laagste beschik bare Volg nummer tot het hoogste niveau. Het is de volg orde waarin berichten in wachtrij worden gezet, niet in de volg orde waarin berichten uiteindelijk kunnen worden opgehaald.
-
-[PeekBatch](/dotnet/api/microsoft.servicebus.messaging.queueclient.peekbatch#Microsoft_ServiceBus_Messaging_QueueClient_PeekBatch_System_Int32_) haalt meerdere berichten op en retourneert deze als een opsomming. Als er geen berichten beschikbaar zijn, is het opsommings object leeg, niet null.
-
-U kunt ook een overbelasting van de methode gebruiken met een [SequenceNumber](/dotnet/api/microsoft.azure.servicebus.message.systempropertiescollection.sequencenumber#Microsoft_Azure_ServiceBus_Message_SystemPropertiesCollection_SequenceNumber) waarop u wilt starten. Vervolgens roept u de methode-overload zonder para meters aan om verdere inventarisatie uit te voeren. **PeekBatch** werkt gelijk aan, maar haalt een aantal berichten tegelijk op.
-
-
----
+U kunt ook een SequenceNumber doorgeven aan een peek-bewerking. Deze wordt gebruikt om te bepalen waar u wilt beginnen met het bekijken van de locatie. U kunt volgende aanroepen naar de peek-bewerking uitvoeren zonder de parameter op te geven die u verder wilt opsnoemen.
 
 ## <a name="next-steps"></a>Volgende stappen
+Probeer de voorbeelden in de taal van uw keuze om de functie voor het bekijken of bladeren van berichten te verkennen:
 
-Zie de volgende onderwerpen voor meer informatie over Service Bus Messa ging:
+- [Azure Service Bus-clientbibliotheekvoorbeelden voor Java](/samples/azure/azure-sdk-for-java/servicebus-samples/)  -  **Een voorbeeld van een bericht** bekijken
+- [Azure Service Bus-clientbibliotheekvoorbeelden voor Python](/samples/azure/azure-sdk-for-python/servicebus-samples/)  -  **receive_peek.py-voorbeeld**
+- [Azure Service Bus-clientbibliotheekvoorbeelden voor JavaScript](/samples/azure/azure-sdk-for-js/service-bus-javascript/)  -  **browseMessages.js** voorbeeld
+- [Azure Service Bus clientbibliotheekvoorbeelden voor TypeScript](/samples/azure/azure-sdk-for-js/service-bus-typescript/)  -  **voorbeeld browseMessages.ts**
+- [Voorbeelden van Azure.Messaging.ServiceBus voor .NET:](/samples/azure/azure-sdk-for-net/azuremessagingservicebus-samples/) bekijk de methoden voor ontvangstklassen in de [referentiedocumentatie](/dotnet/api/azure.messaging.servicebus).
 
-* [Service Bus-wachtrijen, -onderwerpen en -abonnementen](service-bus-queues-topics-subscriptions.md)
-* [Aan de slag met Service Bus-wachtrijen](service-bus-dotnet-get-started-with-queues.md)
-* [Service Bus-onderwerpen en -abonnementen gebruiken](service-bus-dotnet-how-to-use-topics-subscriptions.md)
+Zoek voorbeelden voor de oudere .NET- en Java-clientbibliotheken hieronder:
+- [Voorbeelden van Microsoft.Azure.ServiceBus voor .NET](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.Azure.ServiceBus/)  -  Voorbeeld van bladeren door berichten **(peek)** 
+- [azure-servicebus-voorbeelden voor Java](https://github.com/Azure/azure-service-bus/tree/master/samples/Java/azure-servicebus/MessageBrowse)  -  **Voorbeeld van bladeren door** berichten. 

@@ -1,131 +1,131 @@
 ---
-title: Azure Managed Disks herstellen
-description: Meer informatie over het herstellen van Azure Managed Disks vanuit de Azure Portal.
+title: Azure-Managed Disks
+description: Leer hoe u Azure-Managed Disks vanuit de Azure Portal.
 ms.topic: conceptual
 ms.date: 01/07/2021
-ms.openlocfilehash: 94adc8512987b50a8df07d295215ffcff873162f
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: c57d60047a5bcef58c721ee25bd8a0b3ed523aa4
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105108584"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107517195"
 ---
-# <a name="restore-azure-managed-disks"></a>Azure Managed Disks herstellen
+# <a name="restore-azure-managed-disks"></a>Azure-Managed Disks
 
-In dit artikel wordt uitgelegd hoe u [Azure Managed disks](../virtual-machines/managed-disks-overview.md) kunt herstellen vanaf een herstel punt dat is gemaakt door Azure backup.
+In dit artikel wordt uitgelegd hoe u [Azure-Managed Disks](../virtual-machines/managed-disks-overview.md) herstellen vanaf een herstelpunt dat is gemaakt door Azure Backup.
 
-Op dit moment wordt de optie voor het Original-Location herstellen (herstellen) van het herstellen door de bestaande bron schijf te vervangen van waar de back-ups werden gemaakt, niet ondersteund. U kunt herstellen vanaf een herstel punt om een nieuwe schijf te maken in dezelfde resource groep als die van de bron schijf waar de back-ups zijn gemaakt of in een andere resource groep. Dit staat bekend als Alternate-Location herstel (ALR) en dit helpt de bron schijf en de herstelde (nieuwe) schijf te blijven gebruiken.
+Momenteel wordt de optie Original-Location Recovery (OLR) voor herstel door de bestaande bronschijf te vervangen van waar de back-ups zijn gemaakt, niet ondersteund. U kunt vanaf een herstelpunt herstellen om een nieuwe schijf te maken in dezelfde resourcegroep als die van de bronschijf van waar de back-ups zijn gemaakt of in een andere resourcegroep. Dit staat bekend als Alternate-Location Recovery (ALR) en hiermee kunt u zowel de bronschijf als de herstelde (nieuwe) schijf behouden.
 
 In dit artikel leert u het volgende:
 
 - Herstellen om een nieuwe schijf te maken
 
-- De status van de herstel bewerking bijhouden
+- De status van de herstelbewerking bijhouden
 
 ## <a name="restore-to-create-a-new-disk"></a>Herstellen om een nieuwe schijf te maken
 
-Backup-kluis maakt gebruik van beheerde identiteit voor toegang tot andere Azure-resources. Als u wilt herstellen vanuit een back-up, moet de beheerde identiteit van de back-upkluis een set machtigingen hebben voor de resource groep waarin de schijf moet worden hersteld.
+Backup Vault maakt gebruik van beheerde identiteit voor toegang tot andere Azure-resources. Als u wilt herstellen vanuit een back-up, vereist de beheerde identiteit van de Backup-kluis een set machtigingen voor de resourcegroep waarin de schijf moet worden hersteld.
 
-Back-upkluis maakt gebruik van een door het systeem toegewezen beheerde identiteit die is beperkt tot één per resource en is verbonden met de levens cyclus van deze resource. U kunt machtigingen verlenen aan de beheerde identiteit door gebruik te maken van Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Beheerde identiteit is een service-principal van een speciaal type dat alleen kan worden gebruikt met Azure-resources. Meer informatie over [beheerde identiteiten](../active-directory/managed-identities-azure-resources/overview.md).
+Back-upkluis maakt gebruik van een door het systeem toegewezen beheerde identiteit, die beperkt is tot één per resource en is gekoppeld aan de levenscyclus van deze resource. U kunt machtigingen verlenen aan de beheerde identiteit met behulp van op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC). Beheerde identiteit is een service-principal van een speciaal type die alleen kan worden gebruikt met Azure-resources. Meer informatie over [beheerde identiteiten.](../active-directory/managed-identities-azure-resources/overview.md)
 
-De volgende vereisten zijn vereist voor het uitvoeren van een herstel bewerking:
+De volgende vereisten zijn vereist om een herstelbewerking uit te voeren:
 
-1. Wijs de rol **schijf herstel operator** toe aan de beheerde identiteit van de back-upkluis in de resource groep waar de schijf wordt hersteld door de Azure backup-service.
+1. Wijs **de rol Operator voor schijfherstel** toe aan de beheerde identiteit van de Backup Vault in de resourcegroep waar de schijf wordt hersteld door de Azure Backup service.
 
     >[!NOTE]
-    > U kunt dezelfde resource groep kiezen als die van de bron schijf waarvan back-ups worden gemaakt of voor een andere resource groep binnen hetzelfde of een ander abonnement.
+    > U kunt dezelfde resourcegroep kiezen als die van de bronschijf van waaruit back-ups worden gemaakt of naar een andere resourcegroep binnen hetzelfde of een ander abonnement.
 
-    1. Ga naar de resource groep waar de schijf moet worden hersteld. De resource groep is bijvoorbeeld *TargetRG*.
+    1. Ga naar de resourcegroep waarin de schijf moet worden hersteld. De resourcegroep is bijvoorbeeld *TargetRG.*
 
-    1. Ga naar **toegangs beheer (IAM)** en selecteer **roltoewijzingen toevoegen**
+    1. Ga naar **Toegangsbeheer (IAM)** en selecteer **Roltoewijzingen toevoegen**
 
-    1. Selecteer in het rechterdeel venster met de optie **Disk restore-operator** in de vervolg keuzelijst voor **rollen** . Selecteer de beheerde identiteit van de back-upkluis en **Sla** deze op.
+    1. Selecteer in het rechtercontextdeelvenster **Schijfhersteloperator** in **de vervolgkeuzelijst** Rol. Selecteer de beheerde identiteit van de back-upkluis en klik op **Opslaan.**
 
         >[!TIP]
         >Typ de naam van de back-upkluis om de beheerde identiteit van de kluis te selecteren.
 
-        ![De rol voor schijf herstel operator selecteren](./media/restore-managed-disks/disk-restore-operator-role.png)
+        ![Operatorrol voor schijfherstel selecteren](./media/restore-managed-disks/disk-restore-operator-role.png)
 
-1. Controleer of de beheerde identiteit van de back-upkluis de juiste set roltoewijzingen heeft voor de resource groep waar de schijf wordt hersteld.
+1. Controleer of de beheerde identiteit van de back-upkluis de juiste set roltoewijzingen heeft in de resourcegroep waarin de schijf wordt hersteld.
 
-    1. Ga naar **back-upkluis-> identiteit** en selecteer **Azure-roltoewijzingen**
+    1. Ga naar **Backup Vault - > Identity en** selecteer **Azure-roltoewijzingen**
 
         ![Azure-roltoewijzingen selecteren](./media/restore-managed-disks/azure-role-assignments.png)
 
-    1. Controleer of de rol, de resource naam en het resource type correct worden weer gegeven.
+    1. Controleer of de rol, de resourcenaam en het resourcetype correct worden weergegeven.
 
-        ![De rol, resource naam en het resource type controleren](./media/restore-managed-disks/verify-role.png)
+        ![Rol, resourcenaam en resourcetype controleren](./media/restore-managed-disks/verify-role.png)
 
     >[!NOTE]
-    >Terwijl de roltoewijzingen op de juiste manier worden weer gegeven in de portal, kan het ongeveer 15 minuten duren voordat de machtiging wordt toegepast op de beheerde identiteit van de back-upkluis.
+    >Hoewel de roltoewijzingen correct worden weergegeven in de portal, kan het ongeveer 15 minuten duren voordat de machtiging is toegepast op de beheerde identiteit van de back-upkluis.
     >
-    >Tijdens geplande back-ups of een back-upbewerking op aanvraag, Azure Backup slaat de incrementele moment opnamen van de schijf op in de momentopname resource groep die is gegeven tijdens het configureren van de back-up van de schijf. Azure Backup maakt gebruik van deze incrementele moment opnamen tijdens de herstel bewerking. Als de moment opnamen worden verwijderd of verplaatst van de resource groep voor moment opnamen of als de functie toewijzingen van de back-upkluis zijn ingetrokken voor de resource groep voor moment opnamen, mislukt de herstel bewerking.
+    >Tijdens geplande back-ups of een back-upbewerking op aanvraag slaat Azure Backup de incrementele momentopnamen van de schijf op in de momentopnameresourcegroep die is opgegeven tijdens het configureren van de back-up van de schijf. Azure Backup maakt gebruik van deze incrementele momentopnamen tijdens de herstelbewerking. Als de momentopnamen worden verwijderd of verplaatst uit de momentopnameresourcegroep of als de roltoewijzingen van de Backup-kluis zijn ingetrokken voor de momentopnameresourcegroep, mislukt de herstelbewerking.
 
-1. Als de schijf die moet worden hersteld, is versleuteld met door de [klant beheerde sleutels (CMK)](../virtual-machines/disks-enable-customer-managed-keys-portal.md) of met [dubbele versleuteling met door het platform beheerde sleutels en door de klant beheerde sleutels](../virtual-machines/disks-enable-double-encryption-at-rest-portal.md), wijst u de machtiging **Lees** functie toe aan de beheerde identiteit van de back-upkluis op de **schijf Encryption set** resource.
+1. Als de schijf die moet worden hersteld, is versleuteld met door de klant beheerde sleutels [(CMK)](../virtual-machines/disks-enable-customer-managed-keys-portal.md) of met behulp van dubbele versleuteling met behulp van door het [platform](../virtual-machines/disks-enable-double-encryption-at-rest-portal.md)beheerde sleutels en door de klant beheerde sleutels, wijst u de rollezermachtiging toe aan de beheerde identiteit van de Backup Vault op de resource  Schijfversleutelingsset. 
 
-Als aan de vereisten wordt voldaan, voert u de volgende stappen uit om de herstel bewerking uit te voeren.
+Zodra aan de vereisten is voldaan, volgt u deze stappen om de herstelbewerking uit te voeren.
 
-1. Ga in het [Azure Portal](https://portal.azure.com/)naar **Back-upcentrum**. Selecteer **back-exemplaren** onder de sectie **beheren** . Selecteer in de lijst met back-exemplaren het back-upexemplaar van de schijf waarvoor u de herstel bewerking wilt uitvoeren.
+1. Ga in [Azure Portal](https://portal.azure.com/)naar **Back-upcentrum.** Selecteer **Back-up-exemplaren** in **de sectie** Beheren. Selecteer in de lijst met back-up-exemplaren het exemplaar van de schijfback-up waarvoor u de herstelbewerking wilt uitvoeren.
 
-    ![Lijst met back-upinstanties](./media/restore-managed-disks/backup-instances.png)
+    ![Lijst met back-up-exemplaren](./media/restore-managed-disks/backup-instances.png)
 
-    U kunt deze bewerking ook uitvoeren vanuit de back-upkluis die u hebt gebruikt voor het configureren van back-ups voor de schijf.
+    U kunt deze bewerking ook uitvoeren vanuit de Backup-kluis die u hebt gebruikt om back-ups voor de schijf te configureren.
 
-1. Selecteer in het scherm **back-upexemplaar** het herstel punt dat u wilt gebruiken om de herstel bewerking uit te voeren en selecteer **herstellen**.
+1. Selecteer in **het scherm Back-up-exemplaar** het herstelpunt dat u wilt gebruiken om de herstelbewerking uit te voeren en selecteer **Herstellen.**
 
-    ![Herstel punt selecteren](./media/restore-managed-disks/select-restore-point.png)
+    ![Herstelpunt selecteren](./media/restore-managed-disks/select-restore-point.png)
 
-1. Bekijk in de werk stroom **terugzetten** de **basis beginselen** en selecteer het tabblad **herstel punt** gegevens en selecteer **volgende: herstel parameters**.
+1. Bekijk in **de werkstroom** Herstellen de tabbladgegevens **Basisbeginselen** **en** Herstelpunt selecteren en selecteer **Volgende: Parameters herstellen.**
 
-    ![Basis beginselen bekijken en herstel punt gegevens selecteren](./media/restore-managed-disks/review-information.png)
+    ![Basisbeginselen bekijken en Informatie over herstelpunt selecteren](./media/restore-managed-disks/review-information.png)
 
-1. Selecteer op het tabblad **para meters herstellen** het **doel abonnement** en de **doel resource groep** waarnaar u de back-up wilt terugzetten. Geef de naam op van de schijf die moet worden hersteld. Selecteer **volgende: controleren en herstellen**.
+1. Selecteer op **het tabblad Parameters** herstellen het **doelabonnement** en de **doelresourcegroep** waarin u de back-up wilt herstellen. Geef de naam op van de schijf die moet worden hersteld. Selecteer **Volgende: Controleren en herstellen.**
 
-    ![Para meters herstellen](./media/restore-managed-disks/restore-parameters.png)
+    ![Parameters herstellen](./media/restore-managed-disks/restore-parameters.png)
 
     >[!TIP]
-    >Schijven waarvan een back-up wordt gemaakt, kunnen ook worden gebruikt Azure Backup om een back-up te maken van Azure Backup met behulp van de back-upoplossing van Azure VM met de Recovery Services-kluis. Als u de beveiliging hebt geconfigureerd van de Azure-VM waaraan deze schijf is gekoppeld, kunt u ook de Azure VM-herstel bewerking gebruiken. U kunt ervoor kiezen om de virtuele machine, of schijven en bestanden of mappen, te herstellen vanaf het herstel punt van het bijbehorende back-upexemplaar van Azure VM. Zie [Azure VM backup](./about-azure-vm-restore.md)voor meer informatie.
+    >Van schijven die met behulp van Azure Backup schijfback-upoplossing worden back-ups gemaakt, kan ook een back-up worden gemaakt door Azure Backup met behulp van de Azure VM-back-upoplossing met de Recovery Services-kluis. Als u de beveiliging hebt geconfigureerd van de Azure-VM waaraan deze schijf is gekoppeld, kunt u ook de herstelbewerking voor azure-VM's gebruiken. U kunt ervoor kiezen om de VM te herstellen, of schijven en bestanden of mappen vanaf het herstelpunt van het bijbehorende azure-VM-back-up-exemplaar. Zie Azure VM Backup [voor meer informatie.](./about-azure-vm-restore.md)
 
-1. Zodra de validatie is voltooid, selecteert u **herstellen** om de herstel bewerking te starten.
+1. Zodra de validatie is geslaagd, selecteert **u Herstellen om** de herstelbewerking te starten.
 
-    ![Herstel bewerking initiëren](./media/restore-managed-disks/initiate-restore.png)
+    ![Herstelbewerking initiëren](./media/restore-managed-disks/initiate-restore.png)
 
     >[!NOTE]
-    > Het volt ooien van de validatie kan enkele minuten duren voordat u de herstel bewerking kunt activeren. De validatie kan mislukken als:
+    > Het kan enkele minuten duren voordat de validatiebewerking is voltooid. Validatie kan mislukken als:
     >
-    > - Er bestaat al een schijf met dezelfde naam als de naam van de **herstelde schijf** in de **doel resource groep**
-    > - de beheerde identiteit van de back-upkluis heeft geen geldige roltoewijzingen voor de **doel resource groep**
-    > - de rollen toewijzingen van de beheerde identiteit van de back-upkluis worden ingetrokken voor de **resource groep voor moment opnamen** waar incrementele moment opnamen worden opgeslagen
-    > - Als incrementele moment opnamen worden verwijderd of verplaatst uit de resource groep voor moment opnamen
+    > - een schijf met dezelfde naam die is opgegeven in **Naam herstelde schijf bestaat** al in de **doelresourcegroep**
+    > - De beheerde identiteit van de Back-upkluis heeft geen geldige roltoewijzingen voor de **doelresourcegroep**
+    > - De roltoewijzingen van de beheerde identiteit van de Backup-kluis worden ingetrokken voor de **resourcegroep Momentopname** waarin incrementele momentopnamen worden opgeslagen
+    > - Als incrementele momentopnamen worden verwijderd of verplaatst uit de momentopnameresourcegroep
 
-Met herstellen wordt een nieuwe schijf gemaakt op basis van het geselecteerde herstel punt in de doel resource groep die is opgegeven tijdens de herstel bewerking. Als u de herstelde schijf op een bestaande virtuele machine wilt gebruiken, moet u meer stappen uitvoeren:
+Herstellen maakt een nieuwe schijf van het geselecteerde herstelpunt in de doelresourcegroep die is opgegeven tijdens de herstelbewerking. Als u de herstelde schijf op een bestaande virtuele machine wilt gebruiken, moet u meer stappen uitvoeren:
 
-- Als de herstelde schijf een gegevens schijf is, kunt u een bestaande schijf koppelen aan een virtuele machine. Als de herstelde schijf een besturingssysteem schijf is, kunt u de besturingssysteem schijf van een virtuele machine uit de Azure Portal onder het deel venster **virtuele machine** >- **schijven** in het gedeelte **instellingen** .
+- Als de herstelde schijf een gegevensschijf is, kunt u een bestaande schijf koppelen aan een virtuele machine. Als de herstelde schijf een besturingssysteemschijf is, kunt u de besturingssysteemschijf van een virtuele machine wisselen van de Azure Portal onder het deelvenster Virtuele **machine** - > **Schijven** in de sectie **Instellingen.**
 
-    ![BESTURINGSSYSTEEM schijven wisselen](./media/restore-managed-disks/swap-os-disks.png)
+    ![Besturingssysteemschijven wisselen](./media/restore-managed-disks/swap-os-disks.png)
 
-- Voor virtuele Windows-machines, als de herstelde schijf een gegevens schijf is, volgt u de instructies voor [het loskoppelen van de oorspronkelijke gegevens schijf](../virtual-machines/windows/detach-disk.md#detach-a-data-disk-using-the-portal) van de virtuele machine. [Koppel vervolgens de herstelde schijf](../virtual-machines/windows/attach-managed-disk-portal.md) aan de virtuele machine. Volg de instructies voor het [wisselen van de besturingssysteem schijf](../virtual-machines/windows/os-disk-swap.md) van de virtuele machine met de herstelde schijf.
+- Als de herstelde schijf voor virtuele Windows-machines een gegevensschijf is, volgt u de instructies om de oorspronkelijke gegevensschijf los [tekoppelen](../virtual-machines/windows/detach-disk.md#detach-a-data-disk-using-the-portal) van de virtuele machine. Koppel [vervolgens de herstelde schijf](../virtual-machines/windows/attach-managed-disk-portal.md) aan de virtuele machine. Volg de instructies om de [besturingssysteemschijf van](../virtual-machines/windows/os-disk-swap.md) de virtuele machine te vervangen door de herstelde schijf.
 
-- Voor virtuele Linux-machines, als de herstelde schijf een gegevens schijf is, volgt u de instructies voor [het loskoppelen van de oorspronkelijke gegevens schijf](../virtual-machines/linux/detach-disk.md#detach-a-data-disk-using-the-portal) van de virtuele machine. [Koppel vervolgens de herstelde schijf](../virtual-machines/linux/attach-disk-portal.md#attach-an-existing-disk) aan de virtuele machine. Volg de instructies voor het [wisselen van de besturingssysteem schijf](../virtual-machines/linux/os-disk-swap.md) van de virtuele machine met de herstelde schijf.
+- Als de herstelde schijf voor virtuele Linux-machines een gegevensschijf is, volgt u de instructies om de oorspronkelijke gegevensschijf los [tekoppelen](../virtual-machines/linux/detach-disk.md#detach-a-data-disk-using-the-portal) van de virtuele machine. Koppel [vervolgens de herstelde schijf](../virtual-machines/linux/attach-disk-portal.md#attach-an-existing-disk) aan de virtuele machine. Volg de instructies om de [besturingssysteemschijf van](../virtual-machines/linux/os-disk-swap.md) de virtuele machine te vervangen door de herstelde schijf.
 
-Het is raadzaam om de roltoewijzing van de **operator voor schijf herstel** van de back-upkluis in de **doel resource groep** in te trekken nadat de herstel bewerking is voltooid.
+Het is raadzaam om  de roltoewijzing Operator voor schijfherstel in  te trekken uit de beheerde identiteit van de Back-upkluis in de doelresourcegroep nadat de herstelbewerking is voltooid.
 
-## <a name="track-a-restore-operation"></a>Een terugzet bewerking volgen
+## <a name="track-a-restore-operation"></a>Een herstelbewerking bijhouden
 
-Nadat u de herstel bewerking hebt geactiveerd, maakt de back-upservice een taak voor tracering. Azure Backup worden meldingen over de taak weer gegeven in de portal. De voortgang van de herstel taak weer geven:
+Nadat u de herstelbewerking hebt activeren, maakt de back-upservice een taak voor tracering. Azure Backup geeft meldingen weer over de taak in de portal. De voortgang van de herstelklus weergeven:
 
-1. Ga naar het scherm voor het maken van een **back-upexemplaar** . Het dash board taken wordt weer gegeven met de werking en status van de afgelopen zeven dagen.
+1. Ga naar het scherm **Back-up-exemplaar.** U ziet het takendashboard met de bewerking en de status van de afgelopen zeven dagen.
 
-    ![Taken dashboard](./media/restore-managed-disks/jobs-dashboard.png)
+    ![Takendashboard](./media/restore-managed-disks/jobs-dashboard.png)
 
-1. Als u de status van de herstel bewerking wilt weer geven, selecteert u **alles weer** geven om de lopende en eerdere taken van deze back-upinstantie weer te geven.
+1. Als u de status van de herstelbewerking wilt weergeven, selecteert **Alles weergeven** om lopende en eerdere taken van dit back-up-exemplaar weer te geven.
 
-    ![Selecteer alles weer geven](./media/restore-managed-disks/view-all.png)
+    ![Selecteer Alles weergeven](./media/restore-managed-disks/view-all.png)
 
-1. Bekijk de lijst met back-up-en herstel taken en hun status. Selecteer een taak in de lijst met taken om de taak details weer te geven.
+1. Bekijk de lijst met back-up- en hersteltaken en hun status. Selecteer een taak in de lijst met taken om taakdetails weer te geven.
 
     ![Lijst met taken](./media/restore-managed-disks/list-of-jobs.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Veelgestelde vragen over Azure Disk Backup](disk-backup-faq.md)
+- [Veelgestelde vragen over Azure Disk Backup](disk-backup-faq.yml)

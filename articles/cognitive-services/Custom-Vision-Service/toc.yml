@@ -57,6 +57,12 @@
       href: ./export-delete-data.md
     - name: Uw app bijwerken naar API-versie 3.0
       href: ./update-application-to-3.0-sdk.md
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Virtuele netwerken instellen
+          href: ../cognitive-services-virtual-networks.md?context=/azure/cognitive-services/custom-vision-service/context/context
+        - name: Door de klant beheerde sleutels gebruiken
+          href: encrypt-data-at-rest.md
 - name: Naslaginformatie
   items:
     - name: Custom Vision Training-API
@@ -81,6 +87,12 @@
           href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.1/customvision/prediction'
 - name: Resources
   items:
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Ondersteuning voor regio
+          href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+        - name: Naleving en certificering
+          href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Opties voor ondersteuning en hulp
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/custom-vision-service/context/context
     - name: Voorbeelden
@@ -89,11 +101,5 @@
       href: limits-and-quotas.md
     - name: Azure-roadmap
       href: 'https://azure.microsoft.com/updates/?product=cognitive-services'
-    - name: Regionale beschikbaarheid
-      href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
-    - name: Naleving
-      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
-    - name: Versleuteling
-      href: encrypt-data-at-rest.md
     - name: Releaseopmerkingen
       href: release-notes.md

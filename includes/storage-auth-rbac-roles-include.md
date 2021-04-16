@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/06/2020
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: f014ce55dc40723faf1b60f908814f9fa0428b8e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 18f64defbc4222b46d858cb9cfd3e9b56866a4d0
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99215294"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107511792"
 ---
 Azure bevat de volgende ingebouwde Azure-rollen voor het autoriseren van toegang tot blob- en wachtrijgegevens met behulp van Azure AD en OAuth:
 
@@ -26,9 +26,9 @@ Azure bevat de volgende ingebouwde Azure-rollen voor het autoriseren van toegang
 - [Berichtenprocessor voor opslagwachtrijgegevens](../articles/role-based-access-control/built-in-roles.md#storage-queue-data-message-processor): Gebruik om machtigingen voor weergeven, ophalen en verwijderen van berichten in Azure Storage-wachtrijen te verlenen.
 - [Berichtenverzender voor opslagwachtrijgegevens](../articles/role-based-access-control/built-in-roles.md#storage-queue-data-message-sender): Gebruik om machtigingen voor toevoegen van berichten in Azure Storage-wachtrijen te verlenen.
 
-Alleen met rollen die expliciet zijn gedefinieerd voor toegang tot gegevens, kan een beveiligingsprincipal toegang krijgen tot blob- of wachtrijgegevens. Met ingebouwde rollen zoals **Eigenaar**, **Inzender**, en **Inzender voor opslagaccounts** kan een beveiligingsprincipal een opslagaccount te beheren, maar heeft geen toegang tot de blob- of wachtrijgegevens binnen dat account via Azure AD. Als een rol echter de **Microsoft.Storage/storageAccounts/listKeys/action** bevat, heeft een gebruiker aan wie die rol is toegewezen, toegang tot gegevens in het opslagaccount via gedeelde-sleutelautorisatie met de accounttoegangssleutels. Zie [Use the Azure portal to access blob or queue data](../articles/storage/blobs/authorize-data-operations-portal.md) (De Azure-portal gebruiken om toegang te krijgen tot blob- of wachtrijgegevens) voor meer informatie.
+Alleen met rollen die expliciet zijn gedefinieerd voor toegang tot gegevens, kan een beveiligingsprincipal toegang krijgen tot blob- of wachtrijgegevens. Met ingebouwde rollen zoals **Eigenaar**, **Inzender**, en **Inzender voor opslagaccounts** kan een beveiligingsprincipal een opslagaccount te beheren, maar heeft geen toegang tot de blob- of wachtrijgegevens binnen dat account via Azure AD. Als een rol echter **Microsoft.Storage/storageAccounts/listKeys/action** bevat, heeft een gebruiker aan wie deze rol is toegewezen toegang tot gegevens in het opslagaccount via gedeelde sleutelautorisatie met de toegangssleutels van het account. Zie [Use the Azure portal to access blob or queue data](../articles/storage/blobs/authorize-data-operations-portal.md) (De Azure-portal gebruiken om toegang te krijgen tot blob- of wachtrijgegevens) voor meer informatie.
 
 Voor gedetailleerde informatie over ingebouwde rollen van Azure voor Azure Storage voor zowel de gegevensservices als de beheerservice raadpleegt u de sectie **Storage** in [Ingebouwde Azure-rollen voor Azure RBAC](../articles/role-based-access-control/built-in-roles.md#storage). Zie voor meer informatie over de verschillende soorten rollen die machtigingen bieden in Azure [Klassieke abonnementsbeheerdersrollen, Azure-rollen en Azure AD-rollen](../articles/role-based-access-control/rbac-and-directory-admin-roles.md).
 
 > [!IMPORTANT]
-> Het kan tot 30 minuten duren voordat Azure-roltoewijzingen zijn door gegeven.
+> Het kan tot 30 minuten duren voordat Azure-roltoewijzingen zijn doorgegeven.

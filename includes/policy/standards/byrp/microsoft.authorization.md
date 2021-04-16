@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 03/31/2021
+ms.date: 04/14/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: b4a89e39ec0be07a600fca4d9cf8bce32bf9bff9
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: e8d3269919f9674af5c5379c7995438a0781f58f
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106094780"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107497151"
 ---
 ## <a name="azure-security-benchmark"></a>Azure Security-benchmark
 
@@ -20,8 +20,7 @@ Raadpleeg [Naleving van Azure Policy-regelgeving - Azure Security-benchmark](../
 
 |Domain |Id van besturingselement |Titel van besturingselement |Beleid<br /><sub>(Azure-portal)</sub> |Beleidsversie<br /><sub>(GitHub)</sub>  |
 |---|---|---|---|---|
-|Uitgebreide toegang |PA-7 |Net zoveel beheer volgen (ten minste bevoegdheids beginsel) |[Het gebruik van aangepaste RBAC-regels controleren](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa451c1ef-c6ca-483d-87ed-f49761e3ffb5) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/Subscription_AuditCustomRBACRoles_Audit.json) |
-|Uitgebreide toegang |PA-7 |Net zoveel beheer volgen (ten minste bevoegdheids beginsel) |[Aangepaste rollen voor abonnementseigenaren mogen niet bestaan](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F10ee2ea2-fb4d-45b8-a7e9-a2e770044cd9) |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/CustomSubscription_OwnerRole_Audit.json) |
+|Uitgebreide toegang |PA-7 |Volg net voldoende beheer (principe met minste bevoegdheden) |[Het gebruik van aangepaste RBAC-regels controleren](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa451c1ef-c6ca-483d-87ed-f49761e3ffb5) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/Subscription_AuditCustomRBACRoles_Audit.json) |
 
 ## <a name="azure-security-benchmark-v1"></a>Azure Security Benchmark v1
 
@@ -42,23 +41,23 @@ Zie [CIS Microsoft Azure Foundations Benchmark](https://www.cisecurity.org/bench
 |---|---|---|---|---|
 |Identiteits- en toegangsbeheer |1.23 |Controleren of er geen aangepaste rollen voor abonnementseigenaren zijn gemaakt |[Aangepaste rollen voor abonnementseigenaren mogen niet bestaan](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F10ee2ea2-fb4d-45b8-a7e9-a2e770044cd9) |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/CustomSubscription_OwnerRole_Audit.json) |
 
-## <a name="cis-microsoft-azure-foundations-benchmark-130"></a>CIS Microsoft Azure Stichting-benchmark 1.3.0
+## <a name="cis-microsoft-azure-foundations-benchmark-130"></a>CIS Microsoft Azure Foundations Benchmark 1.3.0
 
-Zie [Azure Policy regelgevings naleving-CIS Microsoft Azure stichtings Bench Mark 1.3.0](../../../../articles/governance/policy/samples/cis-azure-1-3-0.md)als u wilt weten hoe de beschik bare Azure Policy ingebouwde invoeg toepassingen voor alle Azure-Services zijn gekoppeld aan deze nalevings standaard.
+Zie [Azure Policy Regulatory Compliance - CIS Microsoft Azure Foundations Benchmark 1.3.0 (Naleving van regelgeving - CIS Microsoft Azure Foundations Benchmark 1.3.0)](../../../../articles/governance/policy/samples/cis-azure-1-3-0.md)om te zien hoe de beschikbare Azure Policy-ingebouwde omgevingen voor alle Azure-services zijn toe te schrijven aan deze nalevingsstandaard.
 Zie [CIS Microsoft Azure Foundations Benchmark](https://www.cisecurity.org/benchmark/azure/)voor meer informatie over deze nalevingsstandaard.
 
 |Domain |Id van besturingselement |Titel van besturingselement |Beleid<br /><sub>(Azure-portal)</sub> |Beleidsversie<br /><sub>(GitHub)</sub>  |
 |---|---|---|---|---|
-|Identiteits- en toegangsbeheer |1,21 |Controleren of er geen aangepaste rollen voor abonnementseigenaren zijn gemaakt |[Aangepaste rollen voor abonnementseigenaren mogen niet bestaan](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F10ee2ea2-fb4d-45b8-a7e9-a2e770044cd9) |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/CustomSubscription_OwnerRole_Audit.json) |
+|Identiteits- en toegangsbeheer |1.21 |Controleren of er geen aangepaste rollen voor abonnementseigenaren zijn gemaakt |[Aangepaste rollen voor abonnementseigenaren mogen niet bestaan](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F10ee2ea2-fb4d-45b8-a7e9-a2e770044cd9) |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/CustomSubscription_OwnerRole_Audit.json) |
 
-## <a name="cmmc-level-3"></a>CMMC niveau 3
+## <a name="cmmc-level-3"></a>CMMC-niveau 3
 
-Zie [Azure Policy regelgevings naleving-CMMC niveau 3](../../../../articles/governance/policy/samples/cmmc-l3.md)als u wilt weten hoe de beschik bare Azure Policy ingebouwde invoeg toepassingen voor alle Azure-Services zijn gekoppeld aan deze nalevings standaard.
-Zie [Cyber beveiliging rijpheid-model certificering (CMMC)](https://www.acq.osd.mil/cmmc/docs/CMMC_Model_Main_20200203.pdf)voor meer informatie over deze nalevings standaard.
+Zie Azure Policy Regulatory Compliance - CMMC Level 3 (Naleving van regelgeving [- CMMC-niveau 3)](../../../../articles/governance/policy/samples/cmmc-l3.md)als u wilt zien hoe de beschikbare Azure Policy voor alle Azure-services zijn Azure Policy deze nalevingsstandaard.
+Zie Cybersecurity [Maturity Model Certification (CMMC) voor](https://www.acq.osd.mil/cmmc/docs/CMMC_Model_Main_20200203.pdf)meer informatie over deze nalevingsstandaard.
 
 |Domain |Id van besturingselement |Titel van besturingselement |Beleid<br /><sub>(Azure-portal)</sub> |Beleidsversie<br /><sub>(GitHub)</sub>  |
 |---|---|---|---|---|
-|Toegangsbeheer |AC. 3.018 |Voor komen dat gebruikers zonder privileged privileged-functies uitvoeren en de uitvoering van dergelijke functies vastleggen in audit Logboeken. |[Het gebruik van aangepaste RBAC-regels controleren](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa451c1ef-c6ca-483d-87ed-f49761e3ffb5) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/Subscription_AuditCustomRBACRoles_Audit.json) |
+|Toegangsbeheer |AC.3.018 |Voorkom dat niet-bevoegde gebruikers functies met bevoegdheden uitvoeren en leg de uitvoering van dergelijke functies vast in auditlogboeken. |[Het gebruik van aangepaste RBAC-regels controleren](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa451c1ef-c6ca-483d-87ed-f49761e3ffb5) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/Subscription_AuditCustomRBACRoles_Audit.json) |
 
 ## <a name="hipaa-hitrust-92"></a>HIPAA HITRUST 9.2
 
@@ -74,12 +73,12 @@ Zie [HIPAA HITRUST 9.2](https://www.hhs.gov/hipaa/for-professionals/security/law
 
 ## <a name="iso-270012013"></a>ISO 27001:2013
 
-Zie [Azure Policy naleving van regelgeving-ISO 27001:2013](../../../../articles/governance/policy/samples/iso-27001.md)als u wilt weten hoe de beschik bare Azure Policy ingebouwde invoeg toepassingen voor alle Azure-Services zijn gekoppeld aan deze nalevings standaard.
-Zie [ISO 27001:2013](https://www.iso.org/isoiec-27001-information-security.html)voor meer informatie over deze nalevings standaard.
+Zie [Azure Policy Regulatory Compliance - ISO 27001:2013 (Naleving van regelgeving - ISO 27001:2013)](../../../../articles/governance/policy/samples/iso-27001.md)om te zien hoe de beschikbare Azure Policy voor alle Azure-services zijn toe te schrijven aan deze nalevingsstandaard.
+Zie ISO [27001:2013](https://www.iso.org/isoiec-27001-information-security.html)voor meer informatie over deze nalevingsstandaard.
 
 |Domain |Id van besturingselement |Titel van besturingselement |Beleid<br /><sub>(Azure-portal)</sub> |Beleidsversie<br /><sub>(GitHub)</sub>  |
 |---|---|---|---|---|
-|Toegangsbeheer |9.2.3 |Beheer van privileged Access Rights |[Het gebruik van aangepaste RBAC-regels controleren](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa451c1ef-c6ca-483d-87ed-f49761e3ffb5) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/Subscription_AuditCustomRBACRoles_Audit.json) |
+|Toegangsbeheer |9.2.3 |Beheer van rechten voor bevoegde toegang |[Het gebruik van aangepaste RBAC-regels controleren](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa451c1ef-c6ca-483d-87ed-f49761e3ffb5) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/Subscription_AuditCustomRBACRoles_Audit.json) |
 
 ## <a name="nist-sp-800-53-r4"></a>NIST SP 800-53 R4
 

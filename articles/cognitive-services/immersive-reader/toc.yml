@@ -2,15 +2,15 @@
   href: index.yml
 - name: Overzicht
   items:
-    - name: Overzicht van de insluitende lezer
+    - name: Wat is Insluitende lezer?
       href: Overview.md
     - name: Taalondersteuning
       href: language-support.md
     - name: Prijzen
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/immersive-reader/'
-    - name: Releaseopmerkingen
+    - name: Opmerkingen bij de release
       href: release-notes.md
-- name: Snelstartgids voor insluitende lezer
+- name: Snelstart
   href: ./quickstarts/client-libraries.md
 - name: 'Uitleg:'
   items:
@@ -20,7 +20,7 @@
       href: how-to-launch-immersive-reader.md
     - name: HTML-inhoud voorbereiden
       href: how-to-prepare-html.md
-    - name: De knop voor het starten van de insluitende lezer bewerken
+    - name: De knop Insluitende lezer starten bewerken
       href: how-to-customize-launch-button.md
     - name: Het verificatietoken cachen
       href: how-to-cache-token.md
@@ -36,14 +36,24 @@
       href: how-to-store-user-preferences.md
     - name: Meerde resources voor Insluitende lezer gebruiken
       href: how-to-multiple-resources.md
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Virtuele netwerken instellen
+          href: ../cognitive-services-virtual-networks.md?context=/azure/cognitive-services/immersive-reader/context/context
+        - name: Azure AD-verificatie gebruiken
+          href: ../authentication.md?context=/azure/cognitive-services/immersive-reader/context/context
 - name: Naslaginformatie
   items:
     - name: JavaScript SDK
       href: reference.md
 - name: Resources
   items:
-    - name: Regionale ondersteuning
-      href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Ondersteuning voor regio
+          href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+        - name: Naleving en certificering
+          href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Opties voor ondersteuning en hulp
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/immersive-reader/context/context
     - name: Azure-updates

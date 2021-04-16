@@ -66,7 +66,7 @@
           href: create-profile-container-adds.md
         - name: Azure Files en AD DS gebruiken
           href: create-file-share.md
-        - name: Office installeren met FSLogix app-containers
+        - name: Office installeren met FSLogix-app-containers
           href: fslogix-office-app-rule-editor.md
     - name: Poolinstellingen van de host configureren
       items:
@@ -106,7 +106,7 @@
           href: app-attach-image-prep.md
         - name: Een bestandsshare instellen
           href: app-attach-file-share.md
-        - name: Het hulp programma MSIXMGR instellen
+        - name: Het HULPPROGRAMMA MSIXMGR instellen
           href: app-attach-msixmgr.md
     - name: Microsoft Teams gebruiken
       href: teams-on-wvd.md
@@ -126,12 +126,14 @@
       href: disaster-recovery.md
     - name: De KDC-proxy instellen
       href: key-distribution-center-proxy.md
-    - name: VM starten bij verbinden
+    - name: VM starten bij Verbinding maken
       items:
-        - name: Start VM instellen bij verbinden
+        - name: Een VM starten op Connect instellen
           href: start-virtual-machine-connect.md
-        - name: VM starten op veelgestelde vragen over Connect
+        - name: VM starten op Veelgestelde vragen over Verbinding maken
           href: start-virtual-machine-connect-faq.md
+    - name: De waterafvoermodus instellen
+      href: drain-mode.md
 - name: Concepten
   items:
     - name: Ingebouwde rollen
@@ -214,7 +216,7 @@
       href: linux-overview.md
     - name: Azure CLI
       href: /cli/azure/ext/desktopvirtualization/desktopvirtualization
-    - name: Azure Monitor kosten schatten
+    - name: Kosten Azure Monitor schatten
       href: azure-monitor-costs.md
     - name: Ondersteunde RDP-bestandsinstellingen
       href: /windows-server/remote/remote-desktop-services/clients/rdp-files?context=/azure/virtual-desktop/context/context

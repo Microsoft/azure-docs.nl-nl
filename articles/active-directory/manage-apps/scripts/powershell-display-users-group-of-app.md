@@ -3,7 +3,7 @@ title: 'PowerShell-voorbeeld: gebruikers en groepen voor toepassingsproxy-app ve
 description: PowerShell-voorbeeld waarin alle gebruikers en groepen worden vermeld die aan een bepaalde Azure Active Directory (Azure AD)-toepassingsproxytoepassing zijn gekoppeld.
 services: active-directory
 author: kenwith
-manager: daveba
+manager: mtillman
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 12/05/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 540df7cbe2d35cd705e9d2b88f66a82604951957
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0fdbf2ab7d33978a72e7455f3e2f5ba591cc4ab7
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102548535"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107375488"
 ---
 # <a name="display-users-and-groups-assigned-to-an-application-proxy-application"></a>Gebruikers en groepen weergeven die zijn toegewezen aan een toepassingsproxytoepassing
 

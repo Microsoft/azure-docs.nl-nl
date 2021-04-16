@@ -1,5 +1,5 @@
 ---
-title: Geneste virtualisatie voor Azure IoT Edge voor Linux op Windows | Microsoft Docs
+title: Geneste virtualisatie voor Azure IoT Edge linux in Windows | Microsoft Docs
 description: Meer informatie over het navigeren in geneste virtualisatie in Azure IoT Edge voor Linux in Windows.
 author: fcabrera
 manager: kgremban
@@ -9,44 +9,44 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 monikerRange: =iotedge-2018-06
-ms.openlocfilehash: 0e0021ec3564ca079f9ab02fe5ed3f0cfa5a1560
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4f01362fd9342c1f508f165b34e121a11e8d07e2
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104609271"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107496585"
 ---
-# <a name="nested-virtualization-for-azure-iot-edge-for-linux-on-windows"></a>Geneste virtualisatie voor Azure IoT Edge voor Linux in Windows
-Er zijn twee soorten geneste virtualisatie die compatibel is met Azure IoT Edge voor Linux in Windows. Gebruikers kunnen kiezen om te implementeren via een lokale virtuele machine of virtuele Azure-machine. In dit artikel vindt u meer informatie over de optie die het meest geschikt is voor hun scenario en om inzicht te krijgen in de configuratie vereisten.
+# <a name="nested-virtualization-for-azure-iot-edge-for-linux-on-windows"></a>Geneste virtualisatie voor Azure IoT Edge linux in Windows
+Er zijn twee vormen van geneste virtualisatie die compatibel zijn met Azure IoT Edge voor Linux in Windows. Gebruikers kunnen ervoor kiezen om te implementeren via een lokale VM of Azure-VM. Dit artikel biedt gebruikers duidelijkheid over welke optie het beste is voor hun scenario en biedt inzicht in de configuratievereisten.
 
 > [!NOTE]
 >
-> Zorg ervoor dat u één [netowrking-optie](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization#networking-options) inschakelt voor geneste virtualisatie. Als u dit niet doet, worden er EFLOW-installatie fouten geretourneerd. 
+> Zorg ervoor dat u één [netwerkoptie inschakelen](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization#networking-options) voor geneste virtualisatie. Als u dit niet doet, leidt dit tot EFLOW-installatiefouten. 
 
-## <a name="deployment-on-local-vm"></a>Implementatie op de lokale virtuele machine
-Dit is de basislijn benadering voor een Windows-VM die Azure IoT Edge voor Linux op Windows host. Voor deze aanvraag moet geneste virtualisatie worden ingeschakeld voordat de implementatie wordt gestart. Lees [Hyper-V uitvoeren in een virtuele machine met geneste virtualisatie](https://docs.microsoft.com/virtualization/hyper-v-on-windows/user-guide/nested-virtualization) voor meer informatie over het configureren van dit scenario.
+## <a name="deployment-on-local-vm"></a>Implementatie op lokale VM
+Dit is de basislijnbenadering voor elke Windows-VM die als host Azure IoT Edge linux in Windows. In dit geval moet geneste virtualisatie worden ingeschakeld voordat u de implementatie start. Lees [Hyper-V uitvoeren in een virtuele machine met geneste virtualisatie](https://docs.microsoft.com/virtualization/hyper-v-on-windows/user-guide/nested-virtualization) voor meer informatie over het configureren van dit scenario.
 
-Als u Windows Server gebruikt, moet u ervoor zorgen dat u [de Hyper-V-functie installeert](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server).
+Als u Windows Server gebruikt, moet u de [Hyper-V-functie installeren.](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server)
 
-## <a name="deployment-on-azure-vms"></a>Implementatie op virtuele machines in azure
-Als u ervoor kiest om te implementeren op virtuele machines in azure, moet u er rekening mee houden dat er geen externe switch is. Azure IoT Edge voor Linux in Windows is ook niet compatibel met een Azure-VM waarop de server-SKU wordt uitgevoerd, tenzij er een specifiek script wordt uitgevoerd dat een standaard Switch oplevert. Zie de [sectie Windows Server](#windows-server) hieronder voor meer informatie over het weer geven van een standaard Switch. 
+## <a name="deployment-on-azure-vms"></a>Implementatie op Azure-VM's
+Als u ervoor kiest om te implementeren op azure-VM's, is er geen externe switch. Azure IoT Edge voor Linux in Windows is ook niet compatibel op een Azure-VM met de Server-SKU, tenzij er een specifiek script wordt uitgevoerd dat een standaardsyteem oplevert. Zie de sectie Windows Server hieronder voor meer informatie over het instellen van een [standaardschakelaar.](#windows-server) 
 
 > [!NOTE]
 >
-> Virtuele Azure-machines die EFLOW moeten hosten, moeten een VM zijn die [ondersteuning biedt voor geneste virtualisatie](../virtual-machines/acu.md)
+> Azure-VM's die EFLOW moeten hosten, moeten een virtuele machine zijn die [geneste virtualisatie ondersteunt](../virtual-machines/acu.md)
 
 
-## <a name="limited-use-of-external-switch"></a>Beperkt gebruik van een externe switch
-In elk scenario waarbij de virtuele machine geen IP-adres kan verkrijgen via een externe switch, gebruikt de implementatie functionaliteit automatisch de interne standaard switch voor de implementatie. Dit betekent dat het beheer van de virtuele machine van de Azure IoT Edge voor Linux alleen kan worden uitgevoerd op het doel apparaat zelf (dat wil zeggen dat er verbinding wordt gemaakt met de Azure IoT Edge voor Linux VM via de WAC Power shell-uitbrei ding is alleen mogelijk op localhost).
+## <a name="limited-use-of-external-switch"></a>Beperkt gebruik van externe switch
+In elk scenario waarin de VM geen IP-adres kan verkrijgen via een externe switch, maakt de implementatiefunctionaliteit automatisch gebruik van de interne standaards switch voor de implementatie. Dit betekent dat het beheer van de Azure IoT Edge voor Linux-VM alleen kan worden uitgevoerd op het doelapparaat zelf (dat wil zeggen dat verbinding maken met de Azure IoT Edge voor Linux-VM via de WAC PowerShell SSH-extensie alleen mogelijk is op localhost).
 
 ## <a name="windows-server"></a>Windows Server
-Voor gebruikers van Windows Server houdt u er rekening mee dat Azure IoT Edge voor Linux in Windows niet automatisch de standaard switch ondersteunt.
+Voor Windows Server-gebruikers geldt dat Azure IoT Edge voor Linux in Windows niet automatisch ondersteuning biedt voor de standaardschakelaar.
 
-* Gevolgen voor de lokale VM: Controleer of de EFLOW-VM een IP-adres kan verkrijgen via de externe switch.
+* Gevolgen voor lokale VM: Zorg ervoor dat de EFLOW-VM een IP-adres kan verkrijgen via de externe switch.
 
-* Gevolgen voor Azure VM: omdat er geen externe switch op virtuele machines in Azure is, is het niet mogelijk EFLOW te implementeren voordat u een interne switch op de server instelt.
+* Gevolgen voor azure-VM: Omdat er geen externe switch op virtuele Azure-VM's is, is het niet mogelijk om EFLOW te implementeren voordat u een interne switch op de server inschakelt.
 
-Er is standaard geen standaard switch op server-Sku's (ongeacht of de server-SKU wordt uitgevoerd op een virtuele machine van Azure of niet). Wanneer u implementeert op een virtuele machine van Azure, waarbij de externe switch niet kan worden gebruikt, moet de standaard Switch hand matig worden ingesteld en geconfigureerd voordat Azure IoT Edge voor Linux op de Windows-implementatie wordt uitgevoerd. Onze implementatie functionaliteit heeft betrekking op dit omdat IP-configuratie voor de interne switch, een NAT-configuratie en het installeren en configureren van een DHCP-server vereist is. Onze implementatie functionaliteit in open bare preview geeft aan dat deze niet in staat is om de netwerk configuraties voor productieve implementaties te fiddle.
+Er is standaard geen standaardschakelaar voor Server-SKU's (ongeacht of de Server-SKU wordt uitgevoerd op een Azure-VM of niet). Wanneer u implementeert op een Azure-VM waarop de externe switch niet kan worden gebruikt, moet de standaardschakelaar handmatig worden ingesteld en geconfigureerd voordat u Azure IoT Edge voor Linux in Windows-implementatie. Onze implementatiefunctionaliteit dekt dit, omdat hiervoor IP-configuratie voor de interne switch, een NAT-configuratie en het installeren en configureren van een DHCP-server is vereist. Onze implementatiefunctionaliteit in de openbare preview geeft aan dat deze instellingen niet worden gebruikt om netwerkconfiguraties op productieve implementaties niet te verslechteren.
 
-* Relevante informatie over hoe u de standaard Switch hand matig kunt instellen, vindt u hier: [geneste virtualisatie inschakelen in Azure virtual machines](https://docs.microsoft.com/azure/virtual-machines/windows/nested-virtualization)
-* Documentatie over het instellen van een DHCP-server voor dit scenario vindt u hier: [DHCP implementeren met Windows Power shell](https://docs.microsoft.com/windows-server/networking/technologies/dhcp/dhcp-deploy-wps)
+* Relevante informatie over het handmatig instellen van de standaardschakelaar vindt u hier: Geneste [virtualisatie inschakelen in Azure Virtual Machines](https://docs.microsoft.com/azure/virtual-machines/windows/nested-virtualization)
+* Documentatie over het instellen van een DHCP-server voor dit scenario vindt u hier: [DHCP implementeren met behulp van Windows PowerShell](https://docs.microsoft.com/windows-server/networking/technologies/dhcp/dhcp-deploy-wps)

@@ -11,9 +11,9 @@
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/'
     - name: Nieuw
       href: whats-new.md
-    - name: Veelgestelde vragen over Text Analytics
+    - name: Text Analytics veelgestelde vragen
       href: text-analytics-resource-faq.md
-- name: Snelstartgids Text Analytics
+- name: Snelstart
   href: quickstarts/client-libraries-rest-api.md
 - name: Voorbeelden
   items:
@@ -27,7 +27,7 @@
           href: 'https://github.com/Azure/azure-sdk-for-java/tree/azure-ai-textanalytics_5.0.0/sdk/textanalytics/azure-ai-textanalytics/src/samples/java/com/azure/ai/textanalytics'
         - name: Javascript
           href: 'https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/textanalytics/ai-text-analytics/samples'
-    - name: v 3.1-Preview
+    - name: v3.1-preview
       items:
         - name: C#
           href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics/samples'
@@ -66,26 +66,30 @@
       href: How-tos/text-analytics-how-to-sentiment-analysis.md
     - name: Sleuteltermextractie
       href: How-tos/text-analytics-how-to-keyword-extraction.md
-    - name: Herkenning en PII van benoemde entiteiten
+    - name: Herkenning van benoemde entiteiten en PII
       href: How-tos/text-analytics-how-to-entity-linking.md
       displayName: 'NER, Named entity recognition, PII, redaction'
     - name: Text Analytics voor status
       href: How-tos/text-analytics-for-health.md
-    - name: Text Analytics implementeren
+    - name: Containers gebruiken
       items:
-        - name: Containers
-          items:
-            - name: Containers installeren en uitvoeren
-              href: how-tos/text-analytics-how-to-install-containers.md
-            - name: Containers configureren
-              href: text-analytics-resource-container-config.md
-            - name: Containerinstanties gebruiken
-              maintainContext: true
-              href: ../containers/azure-container-instance-recipe.md
-            - name: Kubernetes Service (AKS) gebruiken
-              href: how-tos/text-analytics-how-to-use-kubernetes-service.md
-            - name: Documentatie voor Cognitive Services-containers
-              href: ../containers/index.yml
+        - name: Containers installeren en uitvoeren
+          href: how-tos/text-analytics-how-to-install-containers.md
+        - name: Containers configureren
+          href: text-analytics-resource-container-config.md
+        - name: Containerinstanties gebruiken
+          maintainContext: true
+          href: ../containers/azure-container-instance-recipe.md
+        - name: Kubernetes Service (AKS) gebruiken
+          href: how-tos/text-analytics-how-to-use-kubernetes-service.md
+        - name: Documentatie voor Cognitive Services-containers
+          href: ../containers/index.yml
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Virtuele netwerken instellen
+          href: ../cognitive-services-virtual-networks.md?context=/azure/cognitive-services/text-analytics/context/context
+        - name: Azure AD-verificatie gebruiken
+          href: ../authentication.md?context=/azure/cognitive-services/text-analytics/context/context
     - name: Migreren naar versie 3 van de API
       href: migration-guide.md
 - name: Concepten
@@ -94,7 +98,7 @@
       href: text-analytics-user-scenarios.md
     - name: Typen benoemde entiteiten
       href: named-entity-types.md
-    - name: Unicode-code ringen en tekst verschuivingen
+    - name: Unicode-coderingen en tekst offsets
       href: concepts/text-offsets.md
     - name: Gegevenslimieten
       href: concepts/data-limits.md
@@ -122,11 +126,11 @@
           href: 'https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/'
         - name: v3.0
           href: 'https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0'
-        - name: v2 (buiten gebruik stellen)
+        - name: v2 (wordt gestopt)
           href: 'https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1'
     - name: SDK's
       items:
-        - name: v 3.1-Preview
+        - name: v3.1-preview
           items:
             - name: .NET
               href: /dotnet/api/azure.ai.textanalytics?view=azure-dotnet-preview
@@ -146,7 +150,7 @@
               href: /java/api/overview/azure/ai-textanalytics-readme
             - name: Node.js
               href: /javascript/api/overview/azure/ai-text-analytics-readme
-        - name: v2 (buiten gebruik stellen)
+        - name: v2 (wordt gestopt)
           items:
             - name: .NET
               href: /dotnet/api/overview/azure/cognitiveservices/client
@@ -164,13 +168,13 @@
       href: /powershell/module/azurerm.cognitiveservices/
 - name: Resources
   items:
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Ondersteuning voor regio
+          href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+        - name: Naleving en certificering
+          href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Opties voor ondersteuning en hulp
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/text-analytics/context/context
     - name: Externe en community-inhoud
       href: text-analytics-resource-external-community.md
-    - name: Regionale beschikbaarheid
-      href: 'https://azure.microsoft.com/global-infrastructure/services/'
-    - name: Naleving
-      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
-    - name: Probeer het nu!
-      href: 'https://azure.microsoft.com/services/cognitive-services/text-analytics/'

@@ -1,22 +1,22 @@
 ---
-title: Azure Policy regulerende nalevings controles voor Azure Synapse Analytics
-description: Een lijst met Azure Policy regulerende nalevings controles die beschikbaar zijn voor Azure Synapse Analytics. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 03/31/2021
+title: Azure Policy controles voor naleving van regelgeving voor Azure Synapse Analytics
+description: Een Azure Policy beschikbare besturingselementen voor naleving van regelgeving voor Azure Synapse Analytics. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
+ms.date: 04/14/2021
 ms.topic: sample
 author: julieMSFT
 ms.author: jrasnick
 ms.service: synapse-analytics
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 4da05ef1368bf927351105694b8b15923352a448
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: 68d297af078b8bc4457d5d4be9b1cc1bab009277
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106088962"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107497661"
 ---
-# <a name="azure-policy-regulatory-compliance-controls-for-azure-synapse-analytics"></a>Azure Policy regulerende nalevings controles voor Azure Synapse Analytics
+# <a name="azure-policy-regulatory-compliance-controls-for-azure-synapse-analytics"></a>Azure Policy controles voor naleving van regelgeving voor Azure Synapse Analytics
 
-[Naleving van regelgeving in Azure Policy](../governance/policy/concepts/regulatory-compliance.md) biedt door Microsoft gemaakte en beheerde initiatiefdefinities, bekend als _ingebouwde modules_, voor de **nalevingsdomeinen** en **beveiligingsmaatregelen** met betrekking tot verschillende nalevingsstandaarden. Op deze pagina vindt u de **compatibiliteits domeinen** en **beveiligings controles** voor Azure-app configuratie. U kunt de ingebouwde modules voor een **beveiligingsmaatregel** afzonderlijk toewijzen om uw Azure-resources de specifieke standaard te laten naleven.
+[Naleving van regelgeving in Azure Policy](../governance/policy/concepts/regulatory-compliance.md) biedt door Microsoft gemaakte en beheerde initiatiefdefinities, bekend als _ingebouwde modules_, voor de **nalevingsdomeinen** en **beveiligingsmaatregelen** met betrekking tot verschillende nalevingsstandaarden. Op deze pagina worden de **nalevingsdomeinen en** **beveiligingsmaatregelen voor** Azure App Configuration. U kunt de ingebouwde modules voor een **beveiligingsmaatregel** afzonderlijk toewijzen om uw Azure-resources de specifieke standaard te laten naleven.
 
 [!INCLUDE [azure-policy-compliancecontrols-introwarning](../../includes/policy/standards/intro-warning.md)]
 

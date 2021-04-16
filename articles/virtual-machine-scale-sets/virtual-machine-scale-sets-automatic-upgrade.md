@@ -1,6 +1,6 @@
 ---
-title: Automatische installatie kopieën van besturings systemen met virtuele-machine schaal sets van Azure
-description: Meer informatie over het automatisch upgraden van de installatie kopie van het besturings systeem op VM-exemplaren in een schaalset
+title: Automatische upgrades van besturingssysteemafbeeldingen met virtuele-machineschaalsets van Azure
+description: Meer informatie over het automatisch upgraden van de besturingssysteemafbeelding op VM-exemplaren in een schaalset
 author: avirishuv
 ms.author: avverma
 ms.topic: conceptual
@@ -8,103 +8,103 @@ ms.service: virtual-machine-scale-sets
 ms.subservice: automatic-os-upgrade
 ms.date: 06/26/2020
 ms.reviewer: jushiman
-ms.custom: avverma, devx-track-azurecli
-ms.openlocfilehash: 9194ab70e37c0659e77cbe9c10ffca10e1a76de8
-ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
+ms.custom: avverma
+ms.openlocfilehash: 1e32ff4bc1c39e8a3385f8037f88cedbdc17d3a6
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107011865"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107375743"
 ---
 # <a name="azure-virtual-machine-scale-set-automatic-os-image-upgrades"></a>Upgrade van Azure virtual machine-schaalsets automatische installatiekopieën van besturingssystemen
 
-Door automatische installatie kopieën van besturings systemen in te scha kelen in uw schaalset kunt u het update beheer vereenvoudigen door de besturingssysteem schijf veilig en automatisch bij te werken voor alle exemplaren in de schaalset.
+Als u automatische upgrades van besturingssysteemafbeeldingen in uw schaalset inschakelen, kunt u het updatebeheer schalen door de besturingssysteemschijf veilig en automatisch te upgraden voor alle exemplaren in de schaalset.
 
-Automatische upgrade van het besturings systeem heeft de volgende kenmerken:
+Automatische upgrade van het besturingssysteem heeft de volgende kenmerken:
 
-- Na de configuratie wordt de meest recente installatie kopie van het besturings systeem, gepubliceerd door installatie kopieën van uitgevers, automatisch toegepast op de schaalset zonder tussen komst van de gebruiker.
-- Voert een upgrade uit van batches van instanties wanneer een nieuwe installatie kopie wordt gepubliceerd door de uitgever.
-- Kan worden geïntegreerd met de status tests van toepassingen en de [uitbrei ding van de toepassings status](virtual-machine-scale-sets-health-extension.md).
-- Werkt voor alle VM-grootten en voor zowel Windows-als Linux-installatie kopieën.
-- U kunt op elk gewenst moment automatische upgrades afmelden (OS-upgrades kunnen ook hand matig worden gestart).
-- De besturingssysteem schijf van een virtuele machine wordt vervangen door de nieuwe besturingssysteem schijf die is gemaakt met de nieuwste versie van de installatie kopie. Geconfigureerde extensies en aangepaste gegevens scripts worden uitgevoerd, terwijl persistente gegevens schijven behouden blijven.
-- [Extensie volgorde bepaling](virtual-machine-scale-sets-extension-sequencing.md) wordt ondersteund.
-- Automatische upgrade van installatie kopie van besturings systeem kan worden ingeschakeld op een schaalset van elke grootte.
+- Na de configuratie wordt de meest recente afbeelding van het besturingssysteem die is gepubliceerd door uitgevers van afbeeldingen automatisch toegepast op de schaalset zonder tussenkomst van de gebruiker.
+- Batches van exemplaren worden op een rolling manier geupgraded telkens wanneer een nieuwe afbeelding wordt gepubliceerd door de uitgever.
+- Kan worden geïntegreerd met toepassings statustests en [toepassings health-extensie](virtual-machine-scale-sets-health-extension.md).
+- Werkt voor alle VM-grootten en voor zowel Windows- als Linux-afbeeldingen.
+- U kunt op elk moment kiezen voor automatische upgrades (upgrades van het besturingssysteem kunnen ook handmatig worden gestart).
+- De besturingssysteemschijf van een VM wordt vervangen door de nieuwe besturingssysteemschijf die is gemaakt met de nieuwste versie van de afbeelding. Geconfigureerde extensies en aangepaste gegevensscripts worden uitgevoerd, terwijl persistente gegevensschijven worden bewaard.
+- [Sequencing van extensies](virtual-machine-scale-sets-extension-sequencing.md) wordt ondersteund.
+- Automatische upgrade van besturingssysteemafbeeldingen kan worden ingeschakeld voor een schaalset van elke grootte.
 
-## <a name="how-does-automatic-os-image-upgrade-work"></a>Hoe werkt de automatische upgrade van de besturingssysteem installatie kopie?
+## <a name="how-does-automatic-os-image-upgrade-work"></a>Hoe werkt automatische upgrade van besturingssysteemafbeeldingen?
 
-Een upgrade werkt door de besturingssysteem schijf van een virtuele machine te vervangen door een nieuwe schijf die is gemaakt met de nieuwste versie van de installatie kopie. Geconfigureerde extensies en aangepaste gegevens scripts worden uitgevoerd op de besturingssysteem schijf, terwijl persistente gegevens schijven behouden blijven. Om de uitval tijd van de toepassing te minimaliseren, worden upgrades uitgevoerd in batches, met niet meer dan 20% van de schaalset op elk gewenst moment bijwerken. U kunt ook een Azure Load Balancer toepassings status test of een [toepassings status uitbreiding](virtual-machine-scale-sets-health-extension.md)integreren. We raden u aan een toepassings heartbeat te integreren en de upgrade voor elke batch in het upgrade proces te valideren.
+Een upgrade werkt door de besturingssysteemschijf van een VM te vervangen door een nieuwe schijf die is gemaakt met behulp van de nieuwste versie van de afbeelding. Geconfigureerde extensies en aangepaste gegevensscripts worden uitgevoerd op de besturingssysteemschijf, terwijl persistente gegevensschijven worden bewaard. Om de downtime van de toepassing te minimaliseren, vinden upgrades plaats in batches, met niet meer dan 20% van de upgrade van de schaalset op elk moment. U kunt ook een toepassings Azure Load Balancer-statustest of [toepassings health-extensie integreren.](virtual-machine-scale-sets-health-extension.md) Het is raadzaam om een toepassings-heartbeat te gebruiken en de upgrade voor elke batch in het upgradeproces te valideren.
 
-Het upgrade proces werkt als volgt:
-1. Voordat u met het upgrade proces begint, zorgt u ervoor dat niet meer dan 20% van de instanties in de gehele schaalset een slechte status heeft (om welke reden dan ook).
-2. De upgrade Orchestrator identificeert de batch van de VM-exemplaren die moeten worden bijgewerkt, met een batch van Maxi maal 20% van het totale aantal exemplaren, afhankelijk van een minimale Batch grootte van één virtuele machine.
-3. De besturingssysteem schijf van de geselecteerde serie VM-exemplaren wordt vervangen door een nieuwe besturingssysteem schijf die is gemaakt op basis van de nieuwste installatie kopie. Alle opgegeven extensies en configuraties in het model voor schaal sets worden toegepast op het bijgewerkte exemplaar.
-4. Voor schaal sets met geconfigureerde status tests voor toepassingen of de uitbrei ding van de toepassings status, wacht de upgrade tot 5 minuten voordat het exemplaar in orde is, voordat u doorgaat met het bijwerken van de volgende batch. Als een exemplaar niet binnen vijf minuten na een upgrade de status ervan herstelt, wordt de vorige besturingssysteem schijf voor het exemplaar standaard teruggezet.
-5. De upgrade Orchestrator houdt ook rekening met het percentage instanties dat een upgrade wordt uitgevoerd. De upgrade wordt gestopt als er meer dan 20% van de bijgewerkte exemplaren een slechte status krijgt tijdens het upgrade proces.
+Het upgradeproces werkt als volgt:
+1. Voordat u het upgradeproces start, zorgt de orchestrator ervoor dat niet meer dan 20% van de exemplaren in de hele schaalset een slechte status hebben (om welke reden dan ook).
+2. De upgrade-orchestrator identificeert de batch VM-exemplaren die moeten worden geupgraded, met elke batch met een maximum van 20% van het totale aantal exemplaren, afhankelijk van een minimale batchgrootte van één virtuele machine.
+3. De besturingssysteemschijf van de geselecteerde batch met VM-exemplaren wordt vervangen door een nieuwe besturingssysteemschijf die is gemaakt op basis van de meest recente afbeelding. Alle opgegeven extensies en configuraties in het schaalsetmodel worden toegepast op het bijgewerkte exemplaar.
+4. Voor schaalsets met geconfigureerde statustests voor toepassingen of de toepassings health-extensie wacht de upgrade maximaal vijf minuten totdat het exemplaar in orde is, voordat de volgende batch wordt geupgraded. Als de status van een exemplaar niet binnen vijf minuten na een upgrade wordt hersteld, wordt standaard de vorige besturingssysteemschijf voor het exemplaar hersteld.
+5. De upgrade-orchestrator houdt ook het percentage exemplaren bij dat na een upgrade niet in orde is. De upgrade wordt gestopt als meer dan 20% van de bijgewerkte exemplaren tijdens het upgradeproces niet in orde is.
 6. Het bovenstaande proces wordt voortgezet totdat alle exemplaren in de schaalset zijn bijgewerkt.
 
-De versie van het besturings systeem voor het upgraden van de schaalset controleert de algehele status van de schaalset voordat elke batch wordt geüpgraded. Tijdens het bijwerken van een batch kunnen er andere gelijktijdige geplande of niet-geplande onderhouds activiteiten optreden die van invloed kunnen zijn op de status van de instanties van uw schaalset. In dergelijke gevallen, als meer dan 20% van de instanties van de schaalset een slechte status heeft, stopt de upgrade van de schaalset aan het einde van de huidige batch.
+De orchestrator voor de upgrade van het besturingssysteem van de schaalset controleert de algehele status van de schaalset voordat elke batch wordt geupgraded. Tijdens het upgraden van een batch kunnen er andere gelijktijdige geplande of ongeplande onderhoudsactiviteiten zijn die van invloed kunnen zijn op de status van uw schaalset-exemplaren. Als in dergelijke gevallen meer dan 20% van de exemplaren van de schaalset niet in orde is, stopt de upgrade van de schaalset aan het einde van de huidige batch.
 
 > [!NOTE]
->Bij automatische upgrade van het besturings systeem wordt de SKU van de referentie-installatie kopie niet bijgewerkt op de schaalset. Als u de SKU wilt wijzigen (zoals Ubuntu 16,04-LTS naar 18,04-LTS), moet u het [model voor de schaalset](virtual-machine-scale-sets-upgrade-scale-set.md#the-scale-set-model) rechtstreeks bijwerken met de gewenste installatie kopie-SKU. Installatie kopie van uitgever en aanbieding kan niet worden gewijzigd voor een bestaande schaalset.  
+>Automatische upgrade van het besturingssysteem werkt de referentie-SKU voor de schaalset niet bij. Als u de SKU (zoals Ubuntu 16.04-LTS naar 18.04-LTS) wilt wijzigen, moet u het schaalsetmodel rechtstreeks bijwerken met de gewenste SKU voor afbeeldingen. [](virtual-machine-scale-sets-upgrade-scale-set.md#the-scale-set-model) Uitgever en aanbieding van afbeeldingen kunnen niet worden gewijzigd voor een bestaande schaalset.  
 
-## <a name="supported-os-images"></a>Ondersteunde installatie kopieën van besturings systemen
-Er worden momenteel alleen bepaalde installatie kopieën van besturings systemen ondersteund. Aangepaste installatie kopieën [worden ondersteund](virtual-machine-scale-sets-automatic-upgrade.md#automatic-os-image-upgrade-for-custom-images) als de schaalset aangepaste installatie kopieën gebruikt via de [Galerie met gedeelde afbeeldingen](../virtual-machines/shared-image-galleries.md).
+## <a name="supported-os-images"></a>Ondersteunde besturingssysteemafbeeldingen
+Alleen bepaalde platformafbeeldingen van het besturingssysteem worden momenteel ondersteund. Aangepaste afbeeldingen [worden ondersteund als](virtual-machine-scale-sets-automatic-upgrade.md#automatic-os-image-upgrade-for-custom-images) de schaalset aangepaste afbeeldingen gebruikt via [Shared Image Gallery](../virtual-machines/shared-image-galleries.md).
 
-De volgende platform-Sku's worden momenteel ondersteund (en worden regel matig toegevoegd):
+De volgende platform-SKU's worden momenteel ondersteund (en er worden periodiek meer toegevoegd):
 
-| Publisher               | OS-aanbieding      |  Sku               |
+| Publisher               | Aanbieding voor besturingssysteem      |  Sku               |
 |-------------------------|---------------|--------------------|
 | Canonical               | UbuntuServer  | 16.04-LTS          |
 | Canonical               | UbuntuServer  | 18.04-LTS          |
 | OpenLogic               | CentOS        | 7,5                |
 | MicrosoftWindowsServer  | WindowsServer | 2012-R2-Datacenter |
-| MicrosoftWindowsServer  | WindowsServer | 2016-Data Center    |
-| MicrosoftWindowsServer  | WindowsServer | 2016-Data Center-Smalldisk |
-| MicrosoftWindowsServer  | WindowsServer | 2016-Data Center-met-containers |
+| MicrosoftWindowsServer  | WindowsServer | 2016-Datacenter    |
+| MicrosoftWindowsServer  | WindowsServer | 2016-Datacenter-Smalldisk |
+| MicrosoftWindowsServer  | WindowsServer | 2016-Datacenter-with-Containers |
 | MicrosoftWindowsServer  | WindowsServer | 2019-Datacenter |
-| MicrosoftWindowsServer  | WindowsServer | 2019-Data Center-Smalldisk |
-| MicrosoftWindowsServer  | WindowsServer | 2019-Data Center-met-containers |
-| MicrosoftWindowsServer  | WindowsServer | Data Center-core-1903-with-containers-smalldisk |
+| MicrosoftWindowsServer  | WindowsServer | 2019-Datacenter-Smalldisk |
+| MicrosoftWindowsServer  | WindowsServer | 2019-Datacenter-with-Containers |
+| MicrosoftWindowsServer  | WindowsServer | Datacenter-Core-1903-with-Containers-smalldisk |
 
 
-## <a name="requirements-for-configuring-automatic-os-image-upgrade"></a>Vereisten voor het configureren van automatische upgrade van de installatie van een besturings systeem
+## <a name="requirements-for-configuring-automatic-os-image-upgrade"></a>Vereisten voor het configureren van de automatische upgrade van de besturingssysteemafbeelding
 
-- De eigenschap *Version* van de installatie kopie moet worden ingesteld op *meest recente*.
-- Gebruik de status tests van de toepassing of de [uitbrei ding van de toepassings status](virtual-machine-scale-sets-health-extension.md) voor niet-service Fabric schaal sets.
+- De *versie-eigenschap* van de afbeelding moet worden ingesteld op *de meest recente*.
+- Gebruik toepassings statustests [of toepassings health-extensie](virtual-machine-scale-sets-health-extension.md) voor niet-Service Fabric schaalsets.
 - Gebruik Compute API versie 2018-10-01 of hoger.
-- Zorg ervoor dat de opgegeven externe resources in het model voor de schaalset beschikbaar en bijgewerkt zijn. Voor beelden zijn een SAS-URI voor de Boots trap ping in eigenschappen van VM-extensies, Payload in het opslag account, verwijzing naar geheimen in het model en meer.
-- Voor schaal sets met virtuele Windows-machines, beginnend met Compute API versie 2019-03-01, moet de eigenschap *virtualMachineProfile. osProfile. windowsConfiguration. enableAutomaticUpdates* worden ingesteld op *False* in de model definitie van de schaalset. Met de bovenstaande eigenschap kunt u in-VM-upgrades gebruiken waarbij ' Windows Update ' patches van besturings systemen toepast zonder de besturingssysteem schijf te vervangen. Als automatische installatie kopieën van besturings systemen zijn ingeschakeld voor uw schaalset, is een extra update via "Windows Update" niet vereist.
+- Zorg ervoor dat externe resources die zijn opgegeven in het schaalsetmodel beschikbaar zijn en worden bijgewerkt. Voorbeelden zijn SAS-URI voor het opstarten van nettoladingen in eigenschappen van VM-extensies, nettolading in opslagaccount, verwijzing naar geheimen in het model en meer.
+- Voor schaalsets die gebruikmaken van virtuele Windows-machines, moet vanaf compute-API-versie 2019-03-01 de eigenschap *virtualMachineProfile.osProfile.windowsConfiguration.enableAutomaticUpdates* zijn ingesteld op *false* in de modeldefinitie van de schaalset. De bovenstaande eigenschap maakt in-VM-upgrades mogelijk waarbij 'Windows Update' patches van het besturingssysteem worden toegepast zonder de besturingssysteemschijf te vervangen. Als automatische upgrades voor besturingssysteemafbeeldingen zijn ingeschakeld op uw schaalset, is een extra update via 'Windows Update' niet vereist.
 
 ### <a name="service-fabric-requirements"></a>Service Fabric vereisten
 
-Als u Service Fabric gebruikt, moet u ervoor zorgen dat aan de volgende voor waarden wordt voldaan:
--   Service Fabric [duurzaamheids niveau](../service-fabric/service-fabric-cluster-capacity.md#durability-characteristics-of-the-cluster) is zilver of goud en is niet bronzen (behalve stateless nodetypes, die ondersteuning bieden voor automatische upgrades van besturings systemen).
--   De Service Fabric-extensie voor de model definitie van de schaalset moet TypeHandlerVersion 1,1 of hoger hebben.
--   Duurzaamheids niveau moet hetzelfde zijn op het Service Fabric cluster en Service Fabric extensie in de model definitie van de schaalset.
-- Een extra status test of het gebruik van de uitbrei ding van de toepassings status is niet vereist.
+Als u een Service Fabric, controleert u of aan de volgende voorwaarden wordt voldaan:
+-   Service Fabric [duurzaamheidsniveau](../service-fabric/service-fabric-cluster-capacity.md#durability-characteristics-of-the-cluster) is Silver of Gold, en niet Brons (met uitzondering van stateless knooppunttypen, die wel ondersteuning bieden voor automatische upgrades van het besturingssysteem).
+-   De Service Fabric-extensie voor de modeldefinitie van de schaalset moet TypeHandlerVersion 1.1 of hoger hebben.
+-   Het duurzaamheidsniveau moet hetzelfde zijn op het Service Fabric cluster en Service Fabric voor de definitie van het schaalsetmodel.
+- Er is geen aanvullende statustest of het gebruik van de toepassingstoestandsextensie vereist.
 
-Zorg ervoor dat de duurzaamheids instellingen niet overeenkomen met het Service Fabric cluster en de uitbrei ding Service Fabric, omdat een niet-overeenkomend resultaat is opgetreden tijdens de upgrade. Duurzaamheids niveaus kunnen worden gewijzigd volgens de richt lijnen die op [Deze pagina](../service-fabric/service-fabric-cluster-capacity.md#changing-durability-levels)worden beschreven.
+Zorg ervoor dat de duurzaamheidsinstellingen niet overeenkomen op de Service Fabric cluster en Service Fabric extensie, omdat een niet-overeenkomend upgradefouten tot gevolg heeft. Duurzaamheidsniveaus kunnen worden gewijzigd volgens de richtlijnen die op deze [pagina worden beschreven.](../service-fabric/service-fabric-cluster-capacity.md#changing-durability-levels)
 
 
-## <a name="automatic-os-image-upgrade-for-custom-images"></a>Automatische upgrade van besturings systeem installatie kopie voor aangepaste installatie kopieën
+## <a name="automatic-os-image-upgrade-for-custom-images"></a>Automatische upgrade van besturingssysteemafbeeldingen voor aangepaste afbeeldingen
 
-Automatische upgrade van besturings systeem installatie kopie wordt ondersteund voor aangepaste installatie kopieën die worden geïmplementeerd via de [Galerie met gedeelde afbeeldingen](../virtual-machines/shared-image-galleries.md). Andere aangepaste installatie kopieën worden niet ondersteund voor automatische upgrades van installatie kopieën van besturings systemen.
+Automatische upgrade van besturingssysteemafbeeldingen wordt ondersteund voor aangepaste afbeeldingen die zijn geïmplementeerd [via Shared Image Gallery](../virtual-machines/shared-image-galleries.md). Andere aangepaste afbeeldingen worden niet ondersteund voor automatische upgrades van besturingssysteemafbeeldingen.
 
-### <a name="additional-requirements-for-custom-images"></a>Aanvullende vereisten voor aangepaste installatie kopieën
-- Het installatie-en configuratie proces voor de automatische upgrade van de installatie kopie van het besturings systeem is hetzelfde voor alle schaal sets, zoals beschreven in de [sectie configuratie](virtual-machine-scale-sets-automatic-upgrade.md#configure-automatic-os-image-upgrade) van deze pagina.
-- Exemplaren van schaal sets die zijn geconfigureerd voor automatische upgrades van besturings systeem installatie kopieën worden bijgewerkt naar de nieuwste versie van de afbeelding van de galerie met gedeelde afbeeldingen wanneer een nieuwe versie van de installatie kopie wordt gepubliceerd en wordt [gerepliceerd](../virtual-machines/shared-image-galleries.md#replication) naar de regio van die schaalset. Als de nieuwe installatie kopie niet wordt gerepliceerd naar de regio waar de schaal wordt geïmplementeerd, worden de exemplaren van de schaalset niet bijgewerkt naar de meest recente versie. Met regionale afbeeldings replicatie kunt u de implementatie van de nieuwe installatie kopie voor uw schaal sets beheren.
-- De nieuwe versie van de installatie kopie mag niet worden uitgesloten van de nieuwste versie van de galerie afbeelding. Installatie kopieën die zijn uitgesloten van de meest recente versie van de galerie afbeelding, worden niet meegenomen naar de schaalset via automatische upgrade van de installatie kopie van het besturings systeem.
+### <a name="additional-requirements-for-custom-images"></a>Aanvullende vereisten voor aangepaste afbeeldingen
+- Het installatie- en configuratieproces voor de automatische upgrade van de installatie van de installatie van besturingssysteem is hetzelfde voor alle schaalsets, zoals beschreven in de [configuratiesectie](virtual-machine-scale-sets-automatic-upgrade.md#configure-automatic-os-image-upgrade) van deze pagina.
+- Exemplaren van schaalsets die zijn geconfigureerd voor automatische upgrades van besturingssysteemafbeeldingen, worden bijgewerkt naar [](../virtual-machines/shared-image-galleries.md#replication) de nieuwste versie van de Shared Image Gallery-afbeelding wanneer een nieuwe versie van de afbeelding wordt gepubliceerd en gerepliceerd naar de regio van die schaalset. Als de nieuwe afbeelding niet wordt gerepliceerd naar de regio waar de schaal is geïmplementeerd, worden de schaalset-exemplaren niet bijgewerkt naar de nieuwste versie. Met regionale replicatie van afbeeldingen kunt u de implementatie van de nieuwe afbeelding voor uw schaalsets bepalen.
+- De nieuwe versie van de afbeelding mag niet worden uitgesloten van de nieuwste versie voor die galerie-afbeelding. Versies van afbeeldingen die zijn uitgesloten van de nieuwste versie van de galerie-afbeelding, worden niet uitgerold naar de schaalset via automatische upgrade van de besturingssysteemafbeelding.
 
 > [!NOTE]
->Het kan tot drie uur duren voor een schaalset om de implementatie van de eerste installatie kopie te activeren nadat de schaalset voor het eerst is geconfigureerd voor automatische upgrades van besturings systemen. Dit is een eenmalige vertraging per schaalset. Volgende implementaties van installatie kopieën worden binnen 30-60 minuten geactiveerd op de schaalset.
+>Het kan tot drie uur duren voordat een schaalset de eerste implementatie van de upgrade van de afbeelding activeert nadat de schaalset voor het eerst is geconfigureerd voor automatische upgrades van het besturingssysteem. Dit is een een time-delay per schaalset. Volgende implementaties van afbeeldingen worden binnen 30-60 minuten op de schaalset geactiveerd.
 
 
-## <a name="configure-automatic-os-image-upgrade"></a>Automatische upgrade van installatie kopie van besturings systeem configureren
-Als u de automatische upgrade van de installatie kopie van het besturings systeem wilt configureren, controleert u of de eigenschap *automaticOSUpgradePolicy. enableAutomaticOSUpgrade* is ingesteld op *True* in de model definitie van de schaalset.
+## <a name="configure-automatic-os-image-upgrade"></a>Automatische upgrade van besturingssysteemafbeelding configureren
+Als u de automatische upgrade van de besturingssysteemafbeelding wilt configureren, moet u ervoor zorgen dat de eigenschap *automaticOSUpgradePolicy.enableAutomaticOSUpgrade* is ingesteld op *true* in de modeldefinitie van de schaalset.
 
 ### <a name="rest-api"></a>REST-API
-In het volgende voor beeld wordt beschreven hoe u automatische besturingssysteem upgrades instelt voor een schaalset-model:
+In het volgende voorbeeld wordt beschreven hoe u automatische upgrades van het besturingssysteem kunt instellen voor een schaalsetmodel:
 
 ```
 PUT or PATCH on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet?api-version=2019-12-01`
@@ -123,34 +123,34 @@ PUT or PATCH on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/p
 ```
 
 ### <a name="azure-powershell"></a>Azure PowerShell
-Gebruik de cmdlet [Update-AzVmss](/powershell/module/az.compute/update-azvmss) om automatische upgrades van de besturingssysteem installatie kopie voor uw schaalset te configureren. In het volgende voor beeld worden automatische upgrades ingesteld voor de schaalset met de naam *myScaleSet* in de resource groep met de naam *myResourceGroup*:
+Gebruik de [cmdlet Update-AzVmss](/powershell/module/az.compute/update-azvmss) om automatische upgrades van besturingssysteemafbeeldingen voor uw schaalset te configureren. In het volgende voorbeeld worden automatische upgrades geconfigureerd voor de schaalset met de *naam myScaleSet* in de resourcegroep met de *naam myResourceGroup:*
 
 ```azurepowershell-interactive
 Update-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -AutomaticOSUpgrade $true
 ```
 
 ### <a name="azure-cli-20"></a>Azure CLI 2.0
-Gebruik [AZ vmss update](/cli/azure/vmss#az-vmss-update) om automatische upgrades van besturings systemen te configureren voor uw schaalset. Gebruik Azure CLI 2.0.47 of hoger. In het volgende voor beeld worden automatische upgrades ingesteld voor de schaalset met de naam *myScaleSet* in de resource groep met de naam *myResourceGroup*:
+Gebruik [az vmss update om automatische upgrades](/cli/azure/vmss#az-vmss-update) voor besturingssysteemafbeeldingen voor uw schaalset te configureren. Gebruik Azure CLI 2.0.47 of hoger. In het volgende voorbeeld worden automatische upgrades geconfigureerd voor de schaalset met de *naam myScaleSet* in de resourcegroep met de *naam myResourceGroup:*
 
 ```azurecli-interactive
 az vmss update --name myScaleSet --resource-group myResourceGroup --set UpgradePolicy.AutomaticOSUpgradePolicy.EnableAutomaticOSUpgrade=true
 ```
 
 > [!NOTE]
->Na het configureren van de automatische upgrade van besturings systeem installatie kopieën voor uw schaalset, moet u ook de virtuele machines van de schaalset naar het meest recente model van de schaalset brengen als uw schaalset gebruikmaakt van het [beleid](virtual-machine-scale-sets-upgrade-scale-set.md#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model)' hand matig '.
+>Nadat u automatische upgrades van besturingssysteemafbeeldingen voor uw schaalset hebt geconfigureerd, moet u ook de schaalset-VM's naar het meest recente schaalsetmodel brengen als uw schaalset gebruikmaakt van het [upgradebeleid Handmatig.](virtual-machine-scale-sets-upgrade-scale-set.md#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model)
 
-## <a name="using-application-health-probes"></a>Status tests van toepassingen gebruiken
+## <a name="using-application-health-probes"></a>Toepassingstests gebruiken
 
-Tijdens een upgrade van het besturings systeem worden VM-exemplaren in een schaalset één batch tegelijk geüpgraded. De upgrade moet alleen door gaan als de toepassing van de klant in orde is op de bijgewerkte VM-exemplaren. U wordt aangeraden de toepassing status signalen te bieden voor de upgrade-engine van het besturings systeem voor de schaalset. Tijdens de upgrade van het besturings systeem wordt het platform standaard beschouwd als de status van de VM-energie status en-extensie om te bepalen of een VM-exemplaar in orde is na een upgrade. Tijdens de upgrade van het besturings systeem van een VM-exemplaar wordt de besturingssysteem schijf op een VM-exemplaar vervangen door een nieuwe schijf op basis van de nieuwste versie van de installatie kopie. Nadat de upgrade van het besturings systeem is voltooid, worden de geconfigureerde uitbrei dingen uitgevoerd op deze Vm's. De toepassing wordt alleen in orde geacht als alle uitbrei dingen van het exemplaar zijn ingericht.
+Tijdens een upgrade van het besturingssysteem worden VM-exemplaren in een schaalset batch voor batch bijgewerkt. De upgrade mag alleen worden voortgezet als de klanttoepassing in orde is op de bijgewerkte VM-exemplaren. Het is raadzaam dat de toepassing statussignalen levert aan de upgrade-engine van het besturingssysteem van de schaalset. Tijdens upgrades van het besturingssysteem overweegt het platform standaard de status van de VM-energie- en extensie-inrichting om te bepalen of een VM-exemplaar in orde is na een upgrade. Tijdens de upgrade van het besturingssysteem van een VM-exemplaar wordt de besturingssysteemschijf op een VM-exemplaar vervangen door een nieuwe schijf op basis van de meest recente versie van de afbeelding. Nadat de upgrade van het besturingssysteem is voltooid, worden de geconfigureerde extensies uitgevoerd op deze VM's. De toepassing wordt alleen als in orde beschouwd wanneer alle extensies op het exemplaar zijn ingericht.
 
-Een schaalset kan eventueel worden geconfigureerd met toepassings status tests om het platform te voorzien van nauw keurige informatie over de doorlopende status van de toepassing. De status tests van toepassingen zijn aangepaste Load Balancer tests die worden gebruikt als een status signaal. De toepassing die wordt uitgevoerd op een VM-instantie van een schaalset kan reageren op externe HTTP-of TCP-aanvragen die aangeven of deze in orde zijn. Zie voor meer informatie over hoe aangepaste Load Balancer tests werken om te [begrijpen Load Balancer tests](../load-balancer/load-balancer-custom-probe-overview.md). De status tests van toepassingen worden niet ondersteund voor Service Fabric schaal sets. Voor niet-Service Fabric schaal sets is Load Balancer toepassings status tests of een [toepassings status uitbreiding](virtual-machine-scale-sets-health-extension.md)vereist.
+Een schaalset kan eventueel worden geconfigureerd met toepassingstests om het platform nauwkeurige informatie te bieden over de lopende status van de toepassing. Statustests van toepassingen zijn aangepaste Load Balancer tests die worden gebruikt als een statussignaal. De toepassing die wordt uitgevoerd op een VM-exemplaar van een schaalset kan reageren op externe HTTP- of TCP-aanvragen die aangeven of deze in orde zijn. Zie Understand load balancer probes (Meer informatie over Load Balancer tests) voor meer informatie over hoe [aangepaste load balancer werken.](../load-balancer/load-balancer-custom-probe-overview.md) Statustests van toepassingen worden niet ondersteund voor Service Fabric schaalsets. Voor niet-Service Fabric-schaalsets zijn Load Balancer toepassings statustests of [application health-extensie vereist.](virtual-machine-scale-sets-health-extension.md)
 
-Als de schaalset is geconfigureerd voor het gebruik van meerdere plaatsings groepen, moeten tests met een [Standard Load Balancer](../load-balancer/load-balancer-overview.md) worden gebruikt.
+Als de schaalset is geconfigureerd voor het gebruik van meerdere plaatsingsgroepen, moeten tests met een [Standard Load Balancer](../load-balancer/load-balancer-overview.md) worden gebruikt.
 
-### <a name="configuring-a-custom-load-balancer-probe-as-application-health-probe-on-a-scale-set"></a>Een aangepaste Load Balancer test configureren als de status test van de toepassing in een schaalset
-Maak als best practice een load balancer test expliciet voor de status van de schaalset. Hetzelfde eind punt voor een bestaande HTTP-test of TCP-test kan worden gebruikt, maar een status test kan een ander gedrag van een traditionele Load Balancer-test vereisen. Een traditionele load balancer test kan bijvoorbeeld een slechte status retour neren als de belasting van het exemplaar te hoog is, maar dat niet geschikt zou zijn voor het bepalen van de status van het exemplaar tijdens een automatische upgrade van het besturings systeem. Stel de test zodanig in dat deze een hoge Zoek frequentie heeft van minder dan twee minuten.
+### <a name="configuring-a-custom-load-balancer-probe-as-application-health-probe-on-a-scale-set"></a>Een aangepaste test Load Balancer test als toepassings statustest voor een schaalset
+Maak als best practice een test load balancer voor de status van de schaalset. Hetzelfde eindpunt voor een bestaande HTTP-test of TCP-test kan worden gebruikt, maar een statustest kan ander gedrag vereisen dan een traditionele load balancer-test. Een traditionele test voor load balancer kan bijvoorbeeld een slechte status retourneren als de belasting van het exemplaar te hoog is, maar dat is niet geschikt voor het bepalen van de status van het exemplaar tijdens een automatische upgrade van het besturingssysteem. Configureer de test met een hoge testsnelheid van minder dan twee minuten.
 
-Naar de Load Balancer-test kan worden verwezen in de *networkProfile* van de schaalset en kan als volgt worden gekoppeld aan een interne of open bare Load Balancer:
+Er kan als volgt naar de load balancer-test worden verwezen in het *networkProfile* van de schaalset en kan als volgt worden gekoppeld aan een interne of openbare load balancer:
 
 ```json
 "networkProfile": {
@@ -163,36 +163,36 @@ Naar de Load Balancer-test kan worden verwezen in de *networkProfile* van de sch
 ```
 
 > [!NOTE]
-> Wanneer u automatische besturingssysteem upgrades met Service Fabric gebruikt, wordt de nieuwe installatie kopie van het besturings systeem bijgewerkt op basis van het update domein om hoge Beschik baarheid te behouden van de services die worden uitgevoerd in Service Fabric. Als u automatische besturingssysteem upgrades wilt gebruiken in Service Fabric moet uw cluster NodeType worden geconfigureerd voor het gebruik van de Silver-duurzaamheids categorie of hoger. Voor de duurzaamheids categorie bronzen wordt automatische upgrade van het besturings systeem alleen ondersteund voor stateless nodetypes. Raadpleeg [deze documentatie](../service-fabric/service-fabric-cluster-capacity.md#durability-characteristics-of-the-cluster)voor meer informatie over de duurzaamheids kenmerken van service Fabric clusters.
+> Wanneer u Automatische upgrades van het besturingssysteem gebruikt met Service Fabric, wordt de nieuwe besturingssysteemafbeelding door Updatedomein uitgerold om hoge beschikbaarheid te behouden van de services die worden uitgevoerd in Service Fabric. Als u automatische upgrades van het besturingssysteem in Service Fabric moet uw clusterknooppunttype worden geconfigureerd voor het gebruik van de Silver-duurzaamheidslaag of hoger. Voor de duurzaamheidslaag Brons wordt automatische upgrade van het besturingssysteem alleen ondersteund voor staatloze knooppunttypen. Raadpleeg deze documentatie voor meer informatie over de duurzaamheidskenmerken van Service Fabric [clusters.](../service-fabric/service-fabric-cluster-capacity.md#durability-characteristics-of-the-cluster)
 
 ### <a name="keep-credentials-up-to-date"></a>Referenties up-to-date houden
-Als uw schaalset referenties gebruikt voor toegang tot externe bronnen, zoals een VM-extensie die is geconfigureerd voor het gebruik van een SAS-token voor opslag account, moet u ervoor zorgen dat de referenties worden bijgewerkt. Als er referenties, inclusief certificaten en tokens, zijn verlopen, mislukt de upgrade en wordt de eerste batch van Vm's in een mislukte status gelaten.
+Als uw schaalset referenties gebruikt voor toegang tot externe resources, zoals een VM-extensie die is geconfigureerd voor het gebruik van een SAS-token voor het opslagaccount, controleert u of de referenties zijn bijgewerkt. Als referenties, inclusief certificaten en tokens, zijn verlopen, mislukt de upgrade en blijft de eerste batch VM's in de status Mislukt.
 
-De aanbevolen stappen voor het herstellen van Vm's en het opnieuw inschakelen van de automatische upgrade van het besturings systeem als er een fout is opgetreden bij de verificatie van de bron:
+De aanbevolen stappen voor het herstellen van VM's en het opnieuw inschakelen van automatische upgrade van het besturingssysteem als er een resourceverificatiefout is, zijn:
 
-* Genereer het token (of andere referenties) opnieuw die is door gegeven aan uw extensie (s).
-* Zorg ervoor dat de referenties die in de virtuele machine worden gebruikt om te communiceren met externe entiteiten up-to-date zijn.
-* Een of meer uitbrei dingen in het model met de schaalset bijwerken met nieuwe tokens.
-* Implementeer de bijgewerkte schaalset, waarmee alle VM-exemplaren met inbegrip van de mislukte taken worden bijgewerkt.
+* Regenerer het token (of andere referenties) dat is doorgegeven aan uw extensie(s).
+* Zorg ervoor dat alle referenties die vanuit de VM worden gebruikt om met externe entiteiten te praten, up-to-date zijn.
+* Werk de extensie(s) in het schaalsetmodel bij met nieuwe tokens.
+* Implementeer de bijgewerkte schaalset, waarmee alle VM-exemplaren worden bijgewerkt, inclusief de mislukte exemplaren.
 
-## <a name="using-application-health-extension"></a>De toepassings status uitbreiding gebruiken
-De uitbrei ding voor de toepassings status wordt geïmplementeerd binnen een exemplaar van een virtuele-machine schaalset en rapporten over de VM-status in het exemplaar van de schaalset. U kunt de uitbrei ding voor het testen van het eind punt van een toepassing configureren en de status van de toepassing op dat exemplaar bijwerken. Deze status van het exemplaar wordt gecontroleerd door Azure om te bepalen of een exemplaar in aanmerking komt voor upgrade bewerkingen.
+## <a name="using-application-health-extension"></a>Application Health-extensie gebruiken
+De Toepassings health-extensie wordt geïmplementeerd in een exemplaar van een virtuele-machineschaalset en rapporteert over de VM-status vanuit het exemplaar van de schaalset. U kunt de extensie configureren om te controleren op een toepassings-eindpunt en de status van de toepassing op dat exemplaar bij te werken. Deze exemplaarstatus wordt gecontroleerd door Azure om te bepalen of een exemplaar in aanmerking komt voor upgradebewerkingen.
 
-Als de uitbrei ding rapporteert over de status van binnen een virtuele machine, kan de uitbrei ding worden gebruikt in situaties waarin externe tests, zoals het controleren van de status van toepassingen (die gebruikmaken van aangepaste Azure Load Balancer [tests](../load-balancer/load-balancer-custom-probe-overview.md)), niet kunnen worden gebruikt.
+Als de extensie status rapporteert vanuit een VM, kan de extensie worden gebruikt in situaties waarin externe [](../load-balancer/load-balancer-custom-probe-overview.md)tests zoals statustests van toepassingen (die gebruikmaken van aangepaste Azure Load Balancer-tests) niet kunnen worden gebruikt.
 
-Er zijn meerdere manieren om de toepassings status extensie te implementeren op uw schaal sets, zoals beschreven in de voor beelden in [dit artikel](virtual-machine-scale-sets-health-extension.md#deploy-the-application-health-extension).
+Er zijn meerdere manieren om de Toepassings health-extensie te implementeren in uw schaalsets, zoals beschreven in de voorbeelden in [dit artikel.](virtual-machine-scale-sets-health-extension.md#deploy-the-application-health-extension)
 
-## <a name="get-the-history-of-automatic-os-image-upgrades"></a>De geschiedenis van automatische upgrades van installatie kopieën van besturings systemen ophalen
-U kunt de geschiedenis controleren van de meest recente upgrade van het besturings systeem dat is uitgevoerd op uw schaalset met Azure PowerShell, Azure CLI 2,0 of de REST-Api's. U kunt in de afgelopen twee maanden geschiedenis ontvangen voor de laatste vijf besturingssysteem upgrade pogingen.
+## <a name="get-the-history-of-automatic-os-image-upgrades"></a>De geschiedenis van automatische upgrades van besturingssysteemafbeeldingen bekijken
+U kunt de geschiedenis van de meest recente upgrade van het besturingssysteem die op uw schaalset is uitgevoerd, controleren met Azure PowerShell, Azure CLI 2.0 of de REST API's. U kunt de geschiedenis van de laatste vijf upgradepogingen van het besturingssysteem in de afgelopen twee maanden bekijken.
 
 ### <a name="rest-api"></a>REST-API
-In het volgende voor beeld wordt [rest API](/rest/api/compute/virtualmachinescalesets/getosupgradehistory) gebruikt om de status te controleren voor de schaalset met de naam *myScaleSet* in de resource groep met de naam *myResourceGroup*:
+In het volgende voorbeeld wordt [REST API](/rest/api/compute/virtualmachinescalesets/getosupgradehistory) om de status te controleren voor de schaalset met de naam *myScaleSet* in de resourcegroep met de *naam myResourceGroup:*
 
 ```
 GET on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet/osUpgradeHistory?api-version=2019-12-01`
 ```
 
-De GET-aanroep retourneert eigenschappen die vergelijkbaar zijn met de volgende voorbeeld uitvoer:
+De GET-aanroep retourneert eigenschappen die vergelijkbaar zijn met de volgende voorbeelduitvoer:
 
 ```json
 {
@@ -230,22 +230,22 @@ De GET-aanroep retourneert eigenschappen die vergelijkbaar zijn met de volgende 
 ```
 
 ### <a name="azure-powershell"></a>Azure PowerShell
-Gebruik de cmdlet [Get-AzVmss](/powershell/module/az.compute/get-azvmss) om de upgrade geschiedenis van het besturings systeem voor uw schaalset te controleren. In het volgende voor beeld wordt beschreven hoe u de upgrade status van het besturings systeem bekijkt voor een schaalset met de naam *myScaleSet* in de resource groep met de naam *myResourceGroup*:
+Gebruik de [cmdlet Get-AzVmss](/powershell/module/az.compute/get-azvmss) om de upgradegeschiedenis van het besturingssysteem voor uw schaalset te controleren. In het volgende voorbeeld ziet u hoe u de upgradestatus van het besturingssysteem controleert voor een schaalset met de naam *myScaleSet* in de resourcegroep met de *naam myResourceGroup:*
 
 ```azurepowershell-interactive
 Get-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -OSUpgradeHistory
 ```
 
 ### <a name="azure-cli-20"></a>Azure CLI 2.0
-Gebruik [AZ vmss Get-OS-upgrade-History](/cli/azure/vmss#az-vmss-get-os-upgrade-history) om de upgrade geschiedenis van het besturings systeem voor uw schaalset te controleren. Gebruik Azure CLI 2.0.47 of hoger. In het volgende voor beeld wordt beschreven hoe u de upgrade status van het besturings systeem bekijkt voor een schaalset met de naam *myScaleSet* in de resource groep met de naam *myResourceGroup*:
+Gebruik [az vmss get-os-upgrade-history](/cli/azure/vmss#az-vmss-get-os-upgrade-history) om de upgradegeschiedenis van het besturingssysteem voor uw schaalset te controleren. Gebruik Azure CLI 2.0.47 of hoger. In het volgende voorbeeld ziet u hoe u de upgradestatus van het besturingssysteem controleert voor een schaalset met de naam *myScaleSet* in de resourcegroep met de *naam myResourceGroup:*
 
 ```azurecli-interactive
 az vmss get-os-upgrade-history --resource-group myResourceGroup --name myScaleSet
 ```
 
-## <a name="how-to-get-the-latest-version-of-a-platform-os-image"></a>Hoe kunt u de nieuwste versie van een platform installatie kopie van het besturings systeem ophalen?
+## <a name="how-to-get-the-latest-version-of-a-platform-os-image"></a>Hoe kan ik de nieuwste versie van een besturingssysteem van een platform krijgen?
 
-U kunt de beschik bare installatie kopieën ophalen voor de automatische ondersteunde Sku's voor upgrades van besturings systemen met behulp van de onderstaande voor beelden:
+U kunt de beschikbare versies van de afbeelding voor ondersteunde SKU's voor automatische besturingssysteemupgrade verkrijgen met behulp van de onderstaande voorbeelden:
 
 ### <a name="rest-api"></a>REST-API
 ```
@@ -262,30 +262,30 @@ Get-AzVmImage -Location "westus" -PublisherName "Canonical" -Offer "UbuntuServer
 az vm image list --location "westus" --publisher "Canonical" --offer "UbuntuServer" --sku "16.04-LTS" --all
 ```
 
-## <a name="manually-trigger-os-image-upgrades"></a>Upgrades van OS-installatie kopieën hand matig activeren
-Als automatische installatie kopie van het besturings systeem op uw schaalset is ingeschakeld, hoeft u geen installatie kopieën van afbeeldingen hand matig te activeren in uw schaalset. De upgrade orchestrator van het besturings systeem past automatisch de meest recente versie van de installatie kopie toe op de instanties van uw schaalset zonder hand matige tussen komst.
+## <a name="manually-trigger-os-image-upgrades"></a>Handmatig upgrades van besturingssysteemafbeeldingen activeren
+Als de automatische upgrade van de besturingssysteemafbeelding is ingeschakeld in uw schaalset, hoeft u updates van afbeeldingen niet handmatig te activeren op uw schaalset. De orchestrator voor het upgraden van het besturingssysteem past automatisch de nieuwste beschikbare versie van de afbeelding toe op uw schaalset-exemplaren zonder handmatige tussenkomst.
 
-Voor specifieke gevallen waarin u niet wilt wachten totdat de Orchestrator de meest recente installatie kopie heeft toegepast, kunt u een installatie kopie van het besturings systeem hand matig activeren met behulp van de onderstaande voor beelden.
+Voor specifieke gevallen waarin u niet wilt wachten tot de orchestrator de meest recente afbeelding heeft toegepast, kunt u een upgrade van de besturingssysteemafbeelding handmatig activeren met behulp van de onderstaande voorbeelden.
 
 > [!NOTE]
-> De hand matige trigger van upgrades van installatie kopieën biedt geen automatische terugdraai mogelijkheden. Als een exemplaar de status niet herstelt na een upgrade bewerking, kan de vorige besturingssysteem schijf niet worden hersteld.
+> Handmatige trigger van upgrades van besturingssysteemafbeeldingen biedt geen mogelijkheden voor automatisch terugdraaien. Als een exemplaar de status niet herstelt na een upgradebewerking, kan de vorige besturingssysteemschijf niet worden hersteld.
 
 ### <a name="rest-api"></a>REST-API
-Gebruik de aanroep van de [OS upgrade](/rest/api/compute/virtualmachinescalesetrollingupgrades/startosupgrade) -API starten om een rolling upgrade te starten om alle exemplaren van virtuele-machine schaal sets te verplaatsen naar de meest recente versie van het besturings systeem van de installatie kopie. Exemplaren die al de meest recente beschik bare versie van het besturings systeem uitvoeren, worden niet beïnvloed. In het volgende voor beeld wordt beschreven hoe u een rolling upgrade van een besturings systeem kunt starten op een schaalset met de naam *myScaleSet* in de resource groep met de naam *myResourceGroup*:
+Gebruik de [api-aanroep Upgrade](/rest/api/compute/virtualmachinescalesetrollingupgrades/startosupgrade) van het besturingssysteem starten om een rolling upgrade om alle exemplaren van de virtuele-machineschaalset te verplaatsen naar de nieuwste versie van het besturingssysteem van de afbeelding. Exemplaren met de nieuwste versie van het besturingssysteem worden niet beïnvloed. In het volgende voorbeeld ziet u hoe u een rolling upgrade van het besturingssysteem kunt starten op een schaalset met de *naam myScaleSet* in de resourcegroep met de *naam myResourceGroup:*
 
 ```
 POST on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet/osRollingUpgrade?api-version=2019-12-01`
 ```
 
 ### <a name="azure-powershell"></a>Azure PowerShell
-Gebruik de cmdlet [Start-AzVmssRollingOSUpgrade](/powershell/module/az.compute/Start-AzVmssRollingOSUpgrade) om de upgrade geschiedenis van het besturings systeem voor uw schaalset te controleren. In het volgende voor beeld wordt beschreven hoe u een rolling upgrade van een besturings systeem kunt starten op een schaalset met de naam *myScaleSet* in de resource groep met de naam *myResourceGroup*:
+Gebruik de cmdlet [Start-AzVmssRollingOSUpgrade](/powershell/module/az.compute/Start-AzVmssRollingOSUpgrade) om de upgradegeschiedenis van het besturingssysteem voor uw schaalset te controleren. In het volgende voorbeeld ziet u hoe u een rolling upgrade van het besturingssysteem kunt starten op een schaalset met de *naam myScaleSet* in de resourcegroep met de *naam myResourceGroup:*
 
 ```azurepowershell-interactive
 Start-AzVmssRollingOSUpgrade -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet"
 ```
 
 ### <a name="azure-cli-20"></a>Azure CLI 2.0
-Gebruik [AZ vmss rolling-upgrade start](/cli/azure/vmss/rolling-upgrade#az-vmss-rolling-upgrade-start) om de upgrade geschiedenis van het besturings systeem voor uw schaalset te controleren. Gebruik Azure CLI 2.0.47 of hoger. In het volgende voor beeld wordt beschreven hoe u een rolling upgrade van een besturings systeem kunt starten op een schaalset met de naam *myScaleSet* in de resource groep met de naam *myResourceGroup*:
+Gebruik [az vmss rolling-upgrade start om](/cli/azure/vmss/rolling-upgrade#az-vmss-rolling-upgrade-start) de upgradegeschiedenis van het besturingssysteem voor uw schaalset te controleren. Gebruik Azure CLI 2.0.47 of hoger. In het volgende voorbeeld ziet u hoe u een rolling upgrade van het besturingssysteem kunt starten op een schaalset met de *naam myScaleSet* in de resourcegroep met de *naam myResourceGroup:*
 
 ```azurecli-interactive
 az vmss rolling-upgrade start --resource-group "myResourceGroup" --name "myScaleSet" --subscription "subscriptionId"
@@ -293,9 +293,9 @@ az vmss rolling-upgrade start --resource-group "myResourceGroup" --name "myScale
 
 ## <a name="deploy-with-a-template"></a>Implementeren met een sjabloon
 
-U kunt sjablonen gebruiken om een schaalset te implementeren met automatische upgrades van het besturings systeem voor ondersteunde installatie kopieën, zoals [Ubuntu 16,04-LTS](https://github.com/Azure/vm-scale-sets/blob/master/preview/upgrade/autoupdate.json).
+U kunt sjablonen gebruiken voor het implementeren van een schaalset met automatische upgrades van het besturingssysteem voor ondersteunde installatie afbeeldingen, zoals [Ubuntu 16.04-LTS.](https://github.com/Azure/vm-scale-sets/blob/master/preview/upgrade/autoupdate.json)
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fvm-scale-sets%2Fmaster%2Fpreview%2Fupgrade%2Fautoupdate.json" target="_blank"><img src="https://azuredeploy.net/deploybutton.png" alt="Button to Deploy to Azure." /></a>
 
 ## <a name="next-steps"></a>Volgende stappen
-Raadpleeg de [github opslag plaats](https://github.com/Azure/vm-scale-sets/tree/master/preview/upgrade)voor meer voor beelden over het gebruik van automatische besturingssysteem upgrades met schaal sets.
+Bekijk de GitHub-opslagplaats voor meer voorbeelden over het gebruik van automatische upgrades van besturingssystemen met [schaalsets.](https://github.com/Azure/vm-scale-sets/tree/master/preview/upgrade)

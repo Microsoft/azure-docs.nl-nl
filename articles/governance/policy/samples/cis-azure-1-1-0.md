@@ -1,25 +1,25 @@
 ---
-title: Details van de naleving van de regelgeving voor CIS Microsoft Azure Stichtings benchmark 1.1.0
-description: Details van de CIS-Microsoft Azure basis Bench Mark 1.1.0 reglementaire naleving ingebouwde initiatief. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 03/31/2021
+title: Details van naleving van regelgeving voor CIS Microsoft Azure Foundations Benchmark 1.1.0
+description: Details van het ingebouwde initiatief voor naleving van regelgeving Microsoft Azure CIS foundations Benchmark 1.1.0. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
+ms.date: 04/14/2021
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 1d21d04fe4347a2ff7735045e786520c106309c7
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: 47e59a3ba1a31fd05ab9d1d87301b41c30c8bdfd
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106091749"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107497741"
 ---
-# <a name="details-of-the-cis-microsoft-azure-foundations-benchmark-110-regulatory-compliance-built-in-initiative"></a>Details van de CIS-Microsoft Azure basis Bench Mark 1.1.0e naleving ingebouwde initiatief
+# <a name="details-of-the-cis-microsoft-azure-foundations-benchmark-110-regulatory-compliance-built-in-initiative"></a>Details van het ingebouwde initiatief voor naleving van regelgeving Microsoft Azure CIS Microsoft Azure Foundations Benchmark 1.1.0
 
-Het volgende artikel bevat informatie over de wijze waarop de Azure Policy regelgeving met betrekking tot naleving van voor Schriften is gekoppeld aan de **nalevings domeinen** en- **besturings elementen** in cis Microsoft Azure stichtings benchmark 1.1.0.
-Zie [CIS Microsoft Azure Stichting-benchmark 1.1.0](https://www.cisecurity.org/benchmark/azure/)voor meer informatie over deze nalevings standaard. Zie [Azure Policy-beleidsdefinitie](../concepts/definition-structure.md#type) en [Gedeelde verantwoordelijkheid in de Cloud](../../../security/fundamentals/shared-responsibility.md) om _Eigendom_ te begrijpen.
+In het volgende artikel wordt beschreven hoe de Azure Policy-definitie van het ingebouwde initiatief voor naleving van regelgeving wordt gebruikt voor **nalevingsdomeinen** en besturingselementen **in** CIS Microsoft Azure Foundations Benchmark 1.1.0.
+Zie [CIS Microsoft Azure Foundations Benchmark 1.1.0](https://www.cisecurity.org/benchmark/azure/)voor meer informatie over deze nalevingsstandaard. Zie [Azure Policy-beleidsdefinitie](../concepts/definition-structure.md#type) en [Gedeelde verantwoordelijkheid in de Cloud](../../../security/fundamentals/shared-responsibility.md) om _Eigendom_ te begrijpen.
 
-De volgende toewijzingen bevinden zich in de CIS-1.1.0-besturings elementen voor de **Microsoft Azure Stichting** . Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifiek **nalevingsdomein** te gaan. Veel van de beheeropties worden geïmplementeerd met een [Azure Policy](../overview.md)-initiatiefdefinitie. Als u de complete initiatiefdefinitie wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities**.
-Zoek en selecteer vervolgens de DIS-definitie van de **CIS-Microsoft Azure basis Bench Mark-benchmark v 1.1.0** -naleving.
+De volgende toewijzingen zijn voor de **cis Microsoft Azure Foundations Benchmark 1.1.0-besturingselementen.** Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifiek **nalevingsdomein** te gaan. Veel van de beheeropties worden geïmplementeerd met een [Azure Policy](../overview.md)-initiatiefdefinitie. Als u de complete initiatiefdefinitie wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities**.
+Zoek en selecteer vervolgens de definitie van het ingebouwde initiatief voor naleving van regelgeving **voor CIS Microsoft Azure Foundations Benchmark v1.1.0.**
 
-Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het CIS-voor beeld van het [dis Microsoft Azure stichtings 1.1.0e blauw](../../blueprints/samples/cis-azure-1-1-0.md)drukken.
+Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdrukvoorbeeld cis Microsoft Azure Foundations Benchmark 1.1.0.](../../blueprints/samples/cis-azure-1-1-0.md)
 
 > [!IMPORTANT]
 > Elke beheeroptie hieronder is gekoppeld aan een of meer [Azure Policy](../overview.md)-definities.
@@ -210,9 +210,9 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het CIS-voor 
 |---|---|---|---|
 |[Beveiligde overdracht naar opslagaccounts moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F404c3081-a854-4457-ae30-26a93ef643f9) |Controleer de vereiste van beveiligde overdracht in uw opslagaccount. Beveiligde overdracht is een optie die afdwingt dat uw opslagaccount alleen aanvragen van beveiligde verbindingen (HTTPS) accepteert. Het gebruik van HTTPS zorgt voor verificatie tussen de server en de service en beveiligt gegevens tijdens de overdracht tegen netwerklaagaanvallen, zoals man-in-the-middle, meeluisteren en sessie-hijacking |Controleren, Weigeren, Uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Storage/Storage_AuditForHTTPSEnabled_Audit.json) |
 
-### <a name="ensure-that-public-access-level-is-set-to-private-for-blob-containers"></a>Zorg ervoor dat ' openbaar toegangs niveau ' is ingesteld op privé voor BLOB-containers
+### <a name="ensure-that-public-access-level-is-set-to-private-for-blob-containers"></a>Zorg ervoor dat Openbaar toegangsniveau is ingesteld op Privé voor blobcontainers
 
-**Id**: CIS Azure 3,6 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 3.6: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -224,7 +224,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het CIS-voor 
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Netwerktoegang tot opslagaccounts moet zijn beperkt](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F34c877ad-507e-4c82-993e-3452a6e0ad3c) |Netwerktoegang tot opslagaccounts moet worden beperkt. Configureer netwerkregels zo dat alleen toepassingen van toegestane netwerken toegang hebben tot het opslagaccount. Om verbindingen van specifieke internet-of on-premises clients toe te staan, kan toegang worden verleend aan verkeer van specifieke Azure Virtual Networks of voor open bare IP-adresbereiken voor Internet |Controleren, Weigeren, Uitgeschakeld |[1.1.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Storage/Storage_NetworkAcls_Audit.json) |
+|[Netwerktoegang tot opslagaccounts moet zijn beperkt](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F34c877ad-507e-4c82-993e-3452a6e0ad3c) |Netwerktoegang tot opslagaccounts moet worden beperkt. Configureer netwerkregels zo dat alleen toepassingen van toegestane netwerken toegang hebben tot het opslagaccount. Om verbindingen van specifieke internet- of on-premises clients toe te staan, kan toegang worden verleend aan verkeer van specifieke virtuele Azure-netwerken of aan IP-adresbereiken van openbaar internet |Controleren, Weigeren, Uitgeschakeld |[1.1.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Storage/Storage_NetworkAcls_Audit.json) |
 
 ### <a name="ensure-trusted-microsoft-services-is-enabled-for-storage-account-access"></a>Controleren of vertrouwde Microsoft-services zijn ingeschakeld voor toegang tot het opslagaccount
 
@@ -258,7 +258,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het CIS-voor 
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[SQL-servers met controle naar het opslag account doel moeten worden geconfigureerd met een retentie van 90 dagen of hoger](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F89099bee-89e0-4b26-a5f4-165451757743) |Voor het onderzoeken van incidenten wordt aangeraden om de gegevens retentie voor uw SQL Server ' auditing to Storage account Destination ' in te stellen op ten minste 90 dagen. Bevestig dat u voldoet aan de vereiste Bewaar regels voor de regio's waarin u werkt. Dit is soms vereist om te voldoen aan de regelgevings normen. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServerAuditingRetentionDays_Audit.json) |
+|[SQL-servers met controle naar opslagaccountbestemming moeten worden geconfigureerd met een bewaarperiode van 90 dagen of hoger](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F89099bee-89e0-4b26-a5f4-165451757743) |Voor onderzoek naar incidenten raden we u aan de gegevensretentie voor de controle van uw SQL Server in te stellen op de opslagaccountbestemming op ten minste 90 dagen. Controleer of u aan de benodigde bewaarregels voor de regio's waar u werkt, na komt. Dit is soms vereist voor naleving van regelgevingsstandaarden. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServerAuditingRetentionDays_Audit.json) |
 
 ### <a name="ensure-that-advanced-data-security-on-a-sql-server-is-set-to-on"></a>Controleren of 'Advanced Data Security' op een SQL-server is ingesteld op 'Aan'
 
@@ -376,9 +376,9 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het CIS-voor 
 |---|---|---|---|
 |[Azure Monitor moet activiteitenlogboeken uit alle regio's verzamelen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F41388f1c-2db0-4c25-95b2-35d7f5ccbfa9) |Met dit beleid wordt het Azure Monitor-logboekprofiel gecontroleerd waarbij geen activiteiten worden geëxporteerd uit alle door Azure ondersteunde regio's, inclusief wereldwijd. |AuditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_CaptureAllRegions.json) |
 
-### <a name="ensure-the-storage-container-storing-the-activity-logs-is-not-publicly-accessible"></a>Zorg ervoor dat de opslag container die de activiteiten logboeken opslaat, niet openbaar toegankelijk is
+### <a name="ensure-the-storage-container-storing-the-activity-logs-is-not-publicly-accessible"></a>Zorg ervoor dat de opslagcontainer die de activiteitenlogboeken opslaat, niet openbaar toegankelijk is
 
-**Id**: CIS Azure 5.1.5 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 5.1.5: Klant 
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -398,8 +398,8 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het CIS-voor 
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Bron Logboeken in Azure Key Vault beheerde HSM moeten worden ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa2a5b911-5617-447e-a49e-59dbe0e0434b) |Als u het activiteiten spoor voor onderzoek doeleinden opnieuw wilt maken wanneer er een beveiligings incident optreedt of wanneer uw netwerk is aangetast, kunt u controleren door bron Logboeken in beheerde Hsm's in te scha kelen. Volg de instructies in dit onderwerp: [https://docs.microsoft.com/azure/key-vault/managed-hsm/logging](https://docs.microsoft.com/azure/key-vault/managed-hsm/logging) . |AuditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/ManagedHsm_AuditDiagnosticLog_Audit.json) |
-|[Bron Logboeken in Key Vault moeten worden ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fcf820ca0-f99e-4f3e-84fb-66e913812d21) |Het inschakelen van bron logboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_AuditDiagnosticLog_Audit.json) |
+|[Resourcelogboeken in Azure Key Vault beheerde HSM moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa2a5b911-5617-447e-a49e-59dbe0e0434b) |Als u activiteitentrails opnieuw wilt maken voor onderzoeksdoeleinden wanneer er een beveiligingsincident optreedt of wanneer uw netwerk is aangetast, kunt u dit controleren door resourcelogboeken in te stellen op beheerde HMS's. Volg de instructies hier: [https://docs.microsoft.com/azure/key-vault/managed-hsm/logging](https://docs.microsoft.com/azure/key-vault/managed-hsm/logging) . |AuditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/ManagedHsm_AuditDiagnosticLog_Audit.json) |
+|[Resourcelogboeken in Key Vault moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fcf820ca0-f99e-4f3e-84fb-66e913812d21) |Inschakelen van resourcelogboeken controleren. Hiermee kunt u een activiteitenspoor opnieuw maken om te gebruiken voor onderzoeksdoeleinden wanneer een beveiligingsincident optreedt of wanneer uw netwerk is aangetast |AuditIfNotExists, uitgeschakeld |[4.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_AuditDiagnosticLog_Audit.json) |
 
 ### <a name="ensure-that-activity-log-alert-exists-for-create-policy-assignment"></a>Controleren of er een waarschuwing voor een activiteitenlogboek bestaat voor het maken van beleidstoewijzing
 
@@ -551,17 +551,17 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het CIS-voor 
 
 ## <a name="other-security-considerations"></a>Andere beveiligingsoverwegingen
 
-### <a name="ensure-that-the-expiration-date-is-set-on-all-keys"></a>Zorg ervoor dat de verval datum is ingesteld op alle sleutels
+### <a name="ensure-that-the-expiration-date-is-set-on-all-keys"></a>Zorg ervoor dat de vervaldatum is ingesteld op alle sleutels
 
-**Id**: CIS Azure 8,1 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 8.1: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
 |[Key Vault-sleutels moeten een vervaldatum hebben](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F152b15f7-8e1f-4c1f-ab71-8c010ba5dbc0) |Cryptografische sleutels moeten een gedefinieerde vervaldatum hebben en mogen niet permanent zijn. Sleutels die altijd geldig zijn, bieden een potentiële aanvaller meer tijd om misbruik van de sleutel te maken. Het wordt aanbevolen vervaldatums voor cryptografische sleutels in te stellen. |Controleren, Weigeren, Uitgeschakeld |[1.0.1-preview](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/Keys_ExpirationSet.json) |
 
-### <a name="ensure-that-the-expiration-date-is-set-on-all-secrets"></a>Zorg ervoor dat de verval datum is ingesteld op alle geheimen
+### <a name="ensure-that-the-expiration-date-is-set-on-all-secrets"></a>Zorg ervoor dat de vervaldatum is ingesteld op alle geheimen
 
-**Id**: CIS Azure 8,2 **eigendom**: klant
+**Id:** Eigendom van CIS Azure 8.2: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -573,7 +573,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het CIS-voor 
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Voor Azure Key Vault beheerde HSM moet de beveiliging voor leegmaken zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc39ba22d-4428-4149-b981-70acb31fc383) |Schadelijke verwijdering van een door Azure Key Vault beheerde HSM kan leiden tot permanent gegevens verlies. Een kwaadwillende insider in uw organisatie kan Azure Key Vault beheerde HSM mogelijk verwijderen en opschonen. Met beveiliging opschonen beschermt u tegen Insider-aanvallen door een verplichte Bewaar periode af te dwingen voor het zacht verwijderen Azure Key Vault beheerde HSM. Niemand binnen uw organisatie of micro soft kan uw Azure Key Vault beheerde HSM verwijderen tijdens de tijdelijke Bewaar periode voor het verwijderen. |Controleren, Weigeren, Uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/ManagedHsm_Recoverable_Audit.json) |
+|[Azure Key Vault beheerde HSM moet opstingsbeveiliging zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc39ba22d-4428-4149-b981-70acb31fc383) |Kwaadwillende verwijdering van Azure Key Vault beheerde HSM kan leiden tot permanent gegevensverlies. Een kwaadwillende insider in uw organisatie kan mogelijk de beheerde HSM verwijderen Azure Key Vault opsleen. Beveiliging tegen opsinneren beschermt u tegen aanvallen van binnen door een verplichte bewaarperiode af te dwingen voor de Azure Key Vault beheerde HSM. Niemand binnen uw organisatie of Microsoft kan uw beheerde HSM Azure Key Vault tijdens de retentieperiode voor zacht verwijderen. |Controleren, Weigeren, Uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/ManagedHsm_Recoverable_Audit.json) |
 |[Beveiliging tegen leegmaken moet zijn ingeschakeld voor sleutelkluizen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0b60c0b2-2dc2-4e1c-b5c9-abbed971de53) |Kwaadwillende verwijdering van een sleutelkluis kan leiden tot permanent gegevensverlies. Een kwaadwillende insider in uw organisatie kan sleutelkluizen verwijderen en leegmaken. Beveiliging tegen leegmaken beschermt u tegen aanvallen van insiders door een verplichte bewaarperiode tijdens voorlopige verwijdering af te dwingen voor sleutelkluizen. Gedurende de periode van voorlopige verwijdering kan niemand binnen uw organisatie of Microsoft uw sleutelkluizen leegmaken. |Controleren, Weigeren, Uitgeschakeld |[1.1.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_Recoverable_Audit.json) |
 
 ### <a name="enable-role-based-access-control-rbac-within-azure-kubernetes-services"></a>Op rollen gebaseerd toegangsbeheer (RBAC) inschakelen in Azure Kubernetes Services

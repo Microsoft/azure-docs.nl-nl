@@ -1,6 +1,6 @@
 ---
-title: Activiteit van verificatie methoden-Azure Active Directory
-description: Overzicht van de verificatie methoden die gebruikers registreren om zich aan te melden en wacht woorden opnieuw in te stellen.
+title: Activiteit verificatiemethoden - Azure Active Directory
+description: Overzicht van de verificatiemethoden die gebruikers registreren om zich aan te melden en wachtwoorden opnieuw in te stellen.
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,27 +11,27 @@ author: sopand
 manager: daveba
 ms.reviewer: dawoo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5a1cb71917fdb30ffccda21bedffe1c7f2a428c1
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 699ff88e4181dada5eacaa3f13469722cdf7ceaa
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105557952"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107530453"
 ---
 # <a name="authentication-methods-activity"></a>Activiteit in verificatiemethoden 
 
-Met het nieuwe activiteiten dashboard voor verificatie methoden kunnen beheerders de registratie van de verificatie methode en het gebruik in hun organisatie bewaken. Deze rapportage mogelijkheid biedt uw organisatie de mogelijkheid om te begrijpen welke methoden worden geregistreerd en hoe ze worden gebruikt.
+Met het nieuwe activiteitsdashboard voor verificatiemethoden kunnen beheerders de registratie en het gebruik van verificatiemethoden binnen hun organisatie bewaken. Deze rapportagemogelijkheid biedt uw organisatie de mogelijkheid om te begrijpen welke methoden worden geregistreerd en hoe ze worden gebruikt.
 
 [!INCLUDE [GDPR-related guidance](../../../includes/gdpr-dsr-and-stp-note.md)]
 
 ## <a name="permissions-and-licenses"></a>Machtigingen en licenties
 
-Ingebouwde en aangepaste rollen met de volgende machtigingen hebben toegang tot de Blade verificatie methoden activiteit en Api's:
+Ingebouwde en aangepaste rollen met de volgende machtigingen hebben toegang tot de blade Activiteit van verificatiemethoden en API's:
 
-- Micro soft. map/audit logs bevat/allProperties/lezen
-- Micro soft. map/signInReports/allProperties/lezen
+- Microsoft.directory/auditLogs/allProperties/read
+- Microsoft.directory/signInReports/allProperties/read
 
-De vereiste machtigingen zijn voor de volgende rollen:
+De volgende rollen hebben de vereiste machtigingen:
 
 - Rapportenlezer
 - Beveiligingslezer
@@ -40,105 +40,105 @@ De vereiste machtigingen zijn voor de volgende rollen:
 - Beveiligingsbeheer
 - Hoofdbeheerder
 
- Een Azure AD Premium P1-of P2-licentie is vereist voor toegang tot het gebruik en inzichten. De licentie gegevens voor Azure AD Multi-Factor Authentication en self-service voor het opnieuw instellen van wacht woorden (SSPR) zijn te vinden op de [Azure Active Directory-prijs site](https://azure.microsoft.com/pricing/details/active-directory/).
+ Een Azure AD Premium P1- of P2-licentie is vereist voor toegang tot gebruik en inzichten. Informatie over Azure AD Multi-Factor Authentication en selfservice voor wachtwoord opnieuw instellen (SSPR) vindt u op de Azure Active Directory [de site met prijzen.](https://azure.microsoft.com/pricing/details/active-directory/)
 
 ## <a name="how-it-works"></a>Uitleg
 
-Voor toegang tot het gebruik van de verificatie methode en inzichten:
+Voor toegang tot het gebruik van de verificatiemethode en inzichten:
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-1. Klik op **Azure Active Directory**  >  **activiteit beveiligings**  >  **verificatie methoden**  >  .
-1. Het rapport bevat twee tabbladen: **registratie** en **gebruik**.
+1. Klik **Azure Active Directory**  >  **op Activiteit**  >  **beveiligingsverificatiemethoden.**  >  
+1. Het rapport heeft twee tabbladen: **Registratie** en **Gebruik.**
 
-   ![Overzicht van de activiteit verificatie methoden](media/how-to-authentication-methods-usage-insights/registration-usage-tabs.png)
+   ![Overzicht van de activiteit van verificatiemethoden](media/how-to-authentication-methods-usage-insights/registration-usage-tabs.png)
 
-## <a name="registration-details"></a>Registratie Details
+## <a name="registration-details"></a>Registratiegegevens
 
-U kunt het [**tabblad registratie**](https://portal.azure.com/#blade/Microsoft_AAD_IAM/AuthMethodsOverviewBlade) openen om het aantal gebruikers weer te geven dat geschikt is voor multi-factor Authentication, passowordless-verificatie en selfservice voor het opnieuw instellen van wacht woorden. 
+U kunt het tabblad [**Registratie openen**](https://portal.azure.com/#blade/Microsoft_AAD_IAM/AuthMethodsOverviewBlade) om het aantal gebruikers weer te geven dat geschikt is voor meervoudige verificatie, wachtwoordloze verificatie en selfservice voor wachtwoord opnieuw instellen. 
 
-Klik op een van de volgende opties om een lijst met gegevens over gebruikers registratie vooraf te filteren:
+Klik op een van de volgende opties om vooraf een lijst met gebruikersregistratiegegevens te filteren:
 
-- **Gebruikers van Azure multi-factor Authentication** tonen de uitsplitsing van de gebruikers die beide:
-  - Geregistreerd voor een sterke verificatie methode 
-  - Ingeschakeld door beleid voor het gebruik van deze methode voor MFA 
+- **Gebruikers die azure Multi-Factor Authentication kunnen gebruiken,** geven de uitsplitsing weer van gebruikers die beide zijn:
+  - Geregistreerd voor een sterke verificatiemethode 
+  - Ingeschakeld door beleid om die methode te gebruiken voor MFA 
   
-  Dit nummer weerspiegelt geen gebruikers die zijn geregistreerd voor MFA buiten Azure AD. 
-- **Gebruikers die met een wacht woord kunnen worden geauthenticeerd** , tonen de uitsplitsing van gebruikers die zijn geregistreerd om zich aan te melden zonder wacht woord met behulp van FIDO2, Windows hello voor bedrijven of aanmelding zonder wacht woord met de Microsoft Authenticator-app. 
-- **Gebruikers met wie de selfservice voor wachtwoord herstel is ingesteld,** tonen de uitsplitsing van gebruikers die hun wacht woord opnieuw kunnen instellen. Gebruikers kunnen hun wacht woord opnieuw instellen als beide:
-  - Geregistreerd voor voldoende methoden om te voldoen aan het beleid van de organisatie voor Self-service voor wachtwoord herstel 
-  - Ingeschakeld om het wacht woord opnieuw in te stellen 
+  Dit nummer geeft geen gebruikers weer die zijn geregistreerd voor MFA buiten Azure AD. 
+- Gebruikers **die** verificatie zonder wachtwoord kunnen gebruiken, geven de uitsplitsing weer van gebruikers die zijn geregistreerd om zich zonder wachtwoord aan te melden met behulp van FIDO2, Windows Hello voor Bedrijven of wachtwoordloze telefonische aanmelding met de Microsoft Authenticator-app. 
+- **Gebruikers die selfservice voor wachtwoord opnieuw instellen kunnen gebruiken,** geven de uitsplitsing weer van gebruikers die hun wachtwoord opnieuw kunnen instellen. Gebruikers kunnen hun wachtwoord opnieuw instellen als ze beide zijn:
+  - Geregistreerd voor voldoende methoden om te voldoen aan het beleid van hun organisatie voor selfservice voor wachtwoord opnieuw instellen 
+  - Ingeschakeld om het wachtwoord opnieuw in te stellen 
 
-  ![Scherm afbeelding van gebruikers die zich kunnen registreren](media/how-to-authentication-methods-usage-insights/users-capable.png)
+  ![Schermopname van gebruikers die zich kunnen registreren](media/how-to-authentication-methods-usage-insights/users-capable.png)
 
-**Gebruikers die zijn geregistreerd door de verificatie methode** laten zien hoeveel gebruikers zijn geregistreerd voor elke verificatie methode. Klik op een verificatie methode om te zien wie is geregistreerd voor die methode.
+**Gebruikers die zijn geregistreerd via de verificatiemethode,** geven aan hoeveel gebruikers er zijn geregistreerd voor elke verificatiemethode. Klik op een verificatiemethode om te zien wie is geregistreerd voor die methode.
 
-![Scherm opname van geregistreerde gebruikers](media/how-to-authentication-methods-usage-insights/users-registered.png)
+![Schermopname van geregistreerde gebruikers](media/how-to-authentication-methods-usage-insights/users-registered.png)
 
-**Met de methode recente registratie per verificatie** wordt weer gegeven hoeveel registraties zijn geslaagd en mislukt, gesorteerd op verificatie methode. Klik op een verificatie methode om recente registratie gebeurtenissen voor deze methode weer te geven.
+**Recente registratie op verificatiemethode laat** zien hoeveel registraties zijn geslaagd en mislukt, gesorteerd op verificatiemethode. Klik op een verificatiemethode om recente registratiegebeurtenissen voor die methode te bekijken.
 
-![Scherm opname van recent geregistreerde](media/how-to-authentication-methods-usage-insights/recently-registered.png)
+![Schermopname van Onlangs geregistreerd](media/how-to-authentication-methods-usage-insights/recently-registered.png)
 
 ## <a name="usage-details"></a>Gebruiksgegevens
 
-In het **gebruiks** rapport kunt u zien welke verificatie methoden worden gebruikt voor het aanmelden en opnieuw instellen van wacht woorden.
+In **het gebruiksrapport** ziet u welke verificatiemethoden worden gebruikt om u aan te melden en wachtwoorden opnieuw in te stellen.
 
-![Scherm afbeelding van gebruiks pagina](media/how-to-authentication-methods-usage-insights/usage-page.png)
+![Schermopname van de gebruikspagina](media/how-to-authentication-methods-usage-insights/usage-page.png)
 
-**Aanmeldingen op basis van de authenticatie vereisten** toont het aantal geslaagde gebruikers interactieve aanmeldingen dat is vereist voor één factor tegenover multi-factor Authentication in azure AD. Aanmeldingen waarbij MFA is afgedwongen door een MFA-provider van derden, zijn niet opgenomen.
+**Aanmeldingen op** verificatievereiste toont het aantal geslaagde interactieve aanmeldingen van gebruikers dat vereist was voor enkelvoudige versus meervoudige verificatie in Azure AD. Aanmeldingen waarbij MFA is afgedwongen door een externe MFA-provider, worden niet opgenomen.
 
-![Scherm opname van de aanmeldingen op basis van de verificatie vereiste](media/how-to-authentication-methods-usage-insights/sign-ins-protected.png)
+![Schermopname van aanmeldingen op verificatievereiste](media/how-to-authentication-methods-usage-insights/sign-ins-protected.png)
 
-**Aanmeldingen op basis van de verificatie methode** toont het aantal gebruikers interactieve aanmeldingen (geslaagd en mislukt) op basis van de gebruikte verificatie methode. Het bevat geen aanmeldingen waarvoor aan de authenticatie vereiste is voldaan door een claim in het token.
+**Aanmeldingen per verificatiemethode toont** het aantal interactieve aanmeldingen van gebruikers (geslaagd en mislukt) per gebruikte verificatiemethode. Het bevat geen aanmeldingen waar aan de verificatievereiste is voldaan door een claim in het token.
 
-![Scherm opname van de aanmeldingen per methode](media/how-to-authentication-methods-usage-insights/sign-ins-by-method.png)
+![Schermopname van aanmeldingen per methode](media/how-to-authentication-methods-usage-insights/sign-ins-by-method.png)
 
-Het **aantal wacht woord opnieuw instellen en account ontgrendelingen** toont het aantal geslaagde wachtwoord wijzigingen en het opnieuw instellen van wacht woorden (self-service en door de beheerder) in de loop van de tijd.
+**Het aantal keer dat het wachtwoord opnieuw** wordt ingesteld en het account wordt ontgrendeld, toont het aantal geslaagde wachtwoordwijzigingen en het opnieuw instellen van wachtwoorden (selfservice en door beheerder) gedurende een periode.
 
-![Scherm opname van resetten en ontgrendelingen](media/how-to-authentication-methods-usage-insights/password-changes.png)
+![Schermopname van opnieuw instellen en ontgrendelen](media/how-to-authentication-methods-usage-insights/password-changes.png)
 
-**Wacht woord opnieuw instellen op basis van de verificatie methode** toont het aantal geslaagde en mislukte authenticaties tijdens het wacht woord opnieuw instellen op basis van de verificatie methode.
+**Wachtwoord opnieuw instellen op verificatiemethode toont** het aantal geslaagde en mislukte verificaties tijdens de stroom voor wachtwoord opnieuw instellen per verificatiemethode.
 
-![Scherm opname van reset by-methode](media/how-to-authentication-methods-usage-insights/resets-by-method.png)
+![Schermopname van Resets by method](media/how-to-authentication-methods-usage-insights/resets-by-method.png)
 
-## <a name="user-registration-details"></a>Details van gebruikers registratie 
+## <a name="user-registration-details"></a>Registratiegegevens van gebruikers 
 
-Met de besturings elementen aan de bovenkant van de lijst kunt u zoeken naar een gebruiker en de lijst met gebruikers filteren op basis van de weer gegeven kolommen.
+Met behulp van de besturingselementen boven aan de lijst kunt u een gebruiker zoeken en de lijst met gebruikers filteren op basis van de weergegeven kolommen.
 
-In het rapport registratie Details wordt de volgende informatie weer gegeven voor elke gebruiker:
+Het rapport met registratiegegevens bevat de volgende informatie voor elke gebruiker:
 
-- Principal-naam van gebruiker
+- User Principal Name
 - Name
-- MFA mogelijk (mogelijk, niet mogelijk)
-- Zonder wacht woord mogelijk (mogelijk, niet mogelijk)
+- Geschikt voor MFA (geschikt, niet mogelijk)
+- Geschikt voor zonder wachtwoord (geschikt, niet mogelijk)
 - SSPR geregistreerd (geregistreerd, niet geregistreerd)
 - SSPR ingeschakeld (ingeschakeld, niet ingeschakeld)
-- SSPR mogelijk (mogelijk, niet mogelijk) 
-- Geregistreerde methoden (e-mail adres, mobiele telefoon, alternatieve mobiele telefoon, zakelijke telefoon, Microsoft Authenticator push, software One time-wachtwoord code, FIDO2, beveiligings sleutel, beveiligings vragen)
+- SSPR-geschikt (geschikt, niet mogelijk) 
+- Geregistreerde methoden (e-mail, mobiele telefoon, alternatieve mobiele telefoon, telefoon op kantoor, Microsoft Authenticator-push, Software One Time-wachtwoordcode, FIDO2, beveiligingssleutel, beveiligingsvragen)
 
-  ![Scherm opname van Details van gebruikers registratie](media/how-to-authentication-methods-usage-insights/registration-details.png)
+  ![Schermopname van details van gebruikersregistratie](media/how-to-authentication-methods-usage-insights/registration-details.png)
 
-## <a name="registration-and-reset-events"></a>Registratie en opnieuw instellen van gebeurtenissen 
+## <a name="registration-and-reset-events"></a>Registratie- en resetgebeurtenissen 
 
-In **gebeurtenissen voor registratie en opnieuw instellen** worden de registratie-en reset gebeurtenissen van de afgelopen 24 uur, afgelopen zeven dagen of afgelopen 30 dagen weer gegeven, met inbegrip van:
+**Registratie- en resetgebeurtenissen** tonen registratie- en resetgebeurtenissen van de afgelopen 24 uur, de afgelopen zeven dagen of de afgelopen 30 dagen, waaronder:
 
 - Datum
 - Gebruikersnaam
 - Gebruiker 
 - Functie (registratie, opnieuw instellen)
-- Gebruikte methode (app-melding, app-code, telefoon gesprek, kantoor oproep, alternatieve mobiele oproep, SMS, E-mail, beveiligings vragen)
+- Gebruikte methode (app-melding, app-code, telefoongesprek, kantooroproep, alternatief mobiel gesprek, sms, e-mail, beveiligingsvragen)
 - Status (geslaagd, mislukt)
 - Reden voor fout (uitleg)
 
-  ![Scherm opname van gebeurtenissen voor registratie en opnieuw instellen](media/how-to-authentication-methods-usage-insights/registration-and-reset-logs.png)
+  ![Schermopname van registratie- en resetgebeurtenissen](media/how-to-authentication-methods-usage-insights/registration-and-reset-logs.png)
 
 ## <a name="limitations"></a>Beperkingen
 
-- De gegevens in het rapport worden niet in realtime bijgewerkt en kunnen een latentie van Maxi maal een paar uur weer geven.
-- Registraties van tijdelijke toegangs doorgifte worden niet weer gegeven op het tabblad registratie van het rapport, omdat ze alleen geldig zijn voor korte tijd.
-- De methoden **PhoneAppNotification** of **PhoneAppOTP** die een gebruiker mogelijk heeft geconfigureerd, worden niet weer gegeven in het dash board. 
+- De gegevens in het rapport worden niet in realtime bijgewerkt en kunnen een latentie van enkele uren weerspiegelen.
+- Tijdelijke toegangspas registraties worden niet weergegeven op het tabblad Registratie van het rapport, omdat ze slechts korte tijd geldig zijn.
+- De **PhoneAppNotification-** of **PhoneAppOTP-methoden** die een gebruiker mogelijk heeft geconfigureerd, worden niet weergegeven in het dashboard. 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Werken met de verificatie methoden gebruiks rapport-API](/graph/api/resources/authenticationmethods-usage-insights-overview?view=graph-rest-beta)
-- [Verificatie methoden kiezen voor uw organisatie](concept-authentication-methods.md)
+- [Werken met de API voor verificatiemethoden voor gebruiksrapport](/graph/api/resources/authenticationmethods-usage-insights-overview)
+- [Verificatiemethoden kiezen voor uw organisatie](concept-authentication-methods.md)
 - [Gecombineerde registratie-ervaring](concept-registration-mfa-sspr-combined.md)

@@ -1,7 +1,6 @@
 ---
-title: Machine learning-en AI-partners
-description: Lijsten van machine learning van derden en kunst matige informatie partners met oplossingen die Azure Synapse Analytics ondersteunen.
-services: synapse-analytics
+title: Machine learning en AI-partners
+description: Lijsten met externe machine learning en kunstmatige intelligentiepartners met oplossingen die ondersteuning bieden Azure Synapse Analytics.
 author: periclesrocha
 manager: charlesf
 ms.service: synapse-analytics
@@ -11,26 +10,26 @@ ms.date: 06/22/2020
 ms.author: procha
 ms.reviewer: charlesf
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 80b01eb78d6dfb0d1629eb73bf86c76e3dc4e32f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7f6b6e2b7880a1316346f24653805948e7907163
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98249143"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107566474"
 ---
-# <a name="azure-synapse-analytics-machine-learning-and-ai-partners"></a>machine learning-en AI-partners voor Azure Synapse Analytics
+# <a name="azure-synapse-analytics-machine-learning-and-ai-partners"></a>Azure Synapse Analytics machine learning en AI-partners
 
-In dit artikel worden micro soft-partners beschreven met machine learning en kunst matige intelligentie tools en oplossingen die Azure Synapse Analytics ondersteunen.
+In dit artikel worden Microsoft-partners met machine learning en hulpprogramma's voor kunstmatige intelligentie en oplossingen voor Azure Synapse Analytics.
 
-## <a name="machine-learning-and-ai-partners"></a>Machine learning-en AI-partners
-| Partner | Description | Website/product koppeling |
+## <a name="machine-learning-and-ai-partners"></a>Machine learning en AI-partners
+| Partner | Description | Website-/productkoppeling |
 | ------- | ----------- | -------------------- |
-| ![Dataiku](./media/sql-data-warehouse-partner-machine-learning-and-ai/dataiku-logo.png) |**Dataiku**<br>Dataiku is het gecentraliseerde gegevens platform waarmee bedrijven worden verplaatst naar hun gegevens vanuit Analytics op schaal naar Enter prise AI, self-service analyses en de uitoefening van machine learning modellen in productie. |[Product pagina](https://www.dataiku.com/partners/microsoft/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/dataiku.dataiku-data-science-studio)<br> |
-| ![MATLAB](./media/sql-data-warehouse-partner-machine-learning-and-ai/mathworks-logo.png) |**MATLAB**<br>MATLAB® is een programmeer platform dat is ontworpen voor technici en wetenschappers. De oplossing combineert een bureaublad omgeving die is afgestemd op iteratieve analyse en ontwerp processen met een programmeer taal waarin de wiskunde van de matrix en de array direct worden uitgedrukt. Miljoenen wereld wijd gebruik MATLAB voor diverse toepassingen, waaronder machine learning, diep leren, het verwerken van signalen, besturings systemen en reken Financiën. |[Product pagina](https://www.mathworks.com/products/database.html)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mathworks-inc.matlab-byol?tab=Overview)<br> |
-| ![Qubole](./media/sql-data-warehouse-partner-data-integration/qubole_logo.png) |**Qubole**<br>Qubole biedt een Cloud-systeem eigen platform waarmee gebruikers ETL, analyses en AI/ML-workloads kunnen uitvoeren. Het ondersteunt verschillende soorten open source-engines: Apache Spark, tensor flow, Presto, lucht flow, Hadoop, Hive en meer. Het biedt gebruiks vriendelijke hulpprogram ma's voor eind gebruikers voor gegevens verwerking van SQL-query hulpprogramma's, voor notebooks en dash boards die gebruikmaken van krachtige open-source engines.|[Product pagina](https://www.qubole.com/company/partners/partners-microsoft-azure/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/qubole-inc.qubole-data-service?tab=Overview) 
+| ![Dataiku](./media/sql-data-warehouse-partner-machine-learning-and-ai/dataiku-logo.png) |**Dataiku**<br>Dataiku is het gecentraliseerde gegevensplatform dat bedrijven tijdens hun gegevenstraject van analyses op schaal naar Enterprise AI verplaatst, selfserviceanalyses mogelijk maakt en tegelijkertijd zorgt voor de operationalisering van machine learning-modellen in productie. |[Productpagina](https://www.dataiku.com/partners/microsoft/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/dataiku.dataiku-data-science-studio)<br> |
+| ![MATLAB](./media/sql-data-warehouse-partner-machine-learning-and-ai/mathworks-logo.png) |**Matlab**<br>MATLAB® is een programmeerplatform dat is ontworpen voor technici en wetenschappers. Het combineert een bureaubladomgeving die is afgestemd op iteratieve analyse- en ontwerpprocessen met een programmeertaal die matrix- en matrix-wiskunde rechtstreeks uitdrukken. Miljoenen wereldwijd gebruiken MATLAB voor diverse toepassingen, waaronder machine learning, deep learning, signaal- en afbeeldingsverwerking, controlesystemen en rekenkundige financiën. |[Productpagina](https://www.mathworks.com/products/database.html)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mathworks-inc.matlab-byol?tab=Overview)<br> |
+| ![Qubole](./media/sql-data-warehouse-partner-data-integration/qubole_logo.png) |**Qubole**<br>Qubole biedt een systeemeigen cloudplatform waarmee gebruikers ETL-, analyse- en AI/ML-workloads kunnen uitvoeren. Het ondersteunt verschillende soorten opensource-engines: Apache Spark, TensorFlow, Presto, Airflow, Hadoop, Hive en meer. Het biedt gebruiksvriendelijke hulpprogramma's voor eindgebruikers voor gegevensverwerking van SQL-queryhulpprogramma's, notebooks en dashboards die gebruikmaken van krachtige opensource-engines.|[Productpagina](https://www.qubole.com/company/partners/partners-microsoft-azure/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/qubole-inc.qubole-data-service?tab=Overview) 
 
 ## <a name="next-steps"></a>Volgende stappen
-Zie [Business Intelligence-partners](sql-data-warehouse-partner-business-intelligence.md), [partners voor gegevens integratie](sql-data-warehouse-partner-data-integration.md) en [Gegevensbeheer partners](sql-data-warehouse-partner-data-management.md)voor meer informatie over andere partners.
+Zie Voor meer informatie over andere partners [Business Intelligence-partners,](sql-data-warehouse-partner-business-intelligence.md) [Gegevensintegratiepartners](sql-data-warehouse-partner-data-integration.md)en [Gegevensbeheer partners.](sql-data-warehouse-partner-data-management.md)
 
 
 

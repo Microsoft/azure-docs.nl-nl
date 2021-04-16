@@ -2,22 +2,22 @@
 title: Wat is eenmalige aanmelding van Azure?
 description: Meer informatie over de werking van eenmalige aanmelding (SSO) met Azure Active Directory. Wanneer u SSO gebruikt, hoeven gebruikers geen wachtwoorden te onthouden voor elke toepassing. Wanneer u SSO gebruikt, kunt u tevens het accountbeheer vereenvoudigen.
 services: active-directory
-author: kenwith
-manager: daveba
+author: iantheninja
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: overview
 ms.date: 12/03/2019
-ms.author: kenwith
+ms.author: iangithinji
 ms.reviewer: arvindh, japere
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 36025a5a68e4c3d0de1d6b11a13df656c72745d4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 65e4b32c7c41eea6a885a09dd7ad772980595a9e
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99260194"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107379499"
 ---
 # <a name="what-is-single-sign-on-sso"></a>Wat is eenmalige aanmelding?
 

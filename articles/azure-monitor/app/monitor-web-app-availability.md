@@ -1,156 +1,162 @@
 ---
-title: De beschikbaarheid en reactiesnelheid van een website bewaken | Microsoft Docs
-description: Stel webtests in Application Insights in. Ontvang een waarschuwing wanneer een website niet meer beschikbaar is of traag reageert.
+title: De beschikbaarheid en reactiesnelheid van websites bewaken - Azure Monitor
+description: Pingtests instellen in Application Insights. Ontvang een waarschuwing wanneer een website niet meer beschikbaar is of traag reageert.
 ms.topic: conceptual
-ms.date: 03/10/2021
+ms.date: 04/15/2021
 ms.reviewer: sdash
-ms.openlocfilehash: d7c610e374dcb7b97850d815ba8bb927cdebacfc
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ecfd4ffee3582ff37411e59c75d8be8fca5e945f
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103012561"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107516597"
 ---
-# <a name="monitor-the-availability-of-any-website"></a>Beschik baarheid van alle websites bewaken
+# <a name="monitor-the-availability-of-any-website"></a>Beschikbaarheid van websites bewaken
 
-Nadat u uw web-app/website hebt geïmplementeerd, kunt u terugkerende tests instellen om de beschik baarheid en reactie snelheid te bewaken. [Azure Application Insights](./app-insights-overview.md) verzendt regelmatig webaanvragen naar uw toepassing vanaf verschillende punten over de hele wereld. U kunt hiermee een waarschuwing ontvangen als uw toepassing niet reageert of als deze te langzaam reageert.
+De naam 'URL ping test' is een beetje een verkeerde naam. Voor de duidelijkheid: deze tests maken geen gebruik van ICMP (Internet Control Message Protocol) om de beschikbaarheid van uw site te controleren. In plaats daarvan gebruiken ze geavanceerdere HTTP-aanvraagfunctionaliteit om te valideren of een eindpunt reageert. Ze meten ook de prestaties die aan dat antwoord zijn gekoppeld en bieden de mogelijkheid om aangepaste succescriteria in te stellen in combinatie met geavanceerdere functies, zoals het parseren van afhankelijke aanvragen, en het toestaan van nieuwe aanvragen.
 
-U kunt beschikbaarheidstests instellen voor alle HTTP- en HTTPS-eindpunten die toegankelijk zijn op het openbare internet. U hoeft geen wijzigingen aan te brengen op de website die u wilt testen. Eigenlijk hoeft het niet zelfs een eigen site te zijn. U kunt de beschik baarheid testen van een REST API waarvan uw service afhankelijk is.
+Er zijn twee soorten URL-pingtests die u kunt maken: eenvoudige en standaard pingtests.
 
-### <a name="types-of-availability-tests"></a>Typen beschikbaarheids tests:
+> [!NOTE]
+> Basic- en Standard-pingtests zijn momenteel beschikbaar als openbare preview. Deze preview-versies worden aangeboden zonder service level agreement. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
 
-Er zijn drie soorten beschikbaarheids tests:
+Basic versus Standard:
 
-* [URL-pingtest](#create-a-url-ping-test): een eenvoudige test die u in Azure Portal kunt instellen.
-* [Webtest met meerdere stappen](availability-multistep.md): een opname van een reeks webaanvragen, die kunnen worden afgespeeld om complexe scenario's te testen. Webtests met meerdere stappen worden gemaakt in Visual Studio Enter prise en geüpload naar de portal voor uitvoering.
-* [Aangepaste beschikbaarheids testen](/dotnet/api/microsoft.applicationinsights.telemetryclient.trackavailability): als u besluit een aangepaste toepassing te maken om beschikbaarheids tests uit te voeren, `TrackAvailability()` kunt u de methode gebruiken om de resultaten naar Application Insights te verzenden.
+- Basic is beperkt tot vijf locaties per test.
+- Standaardtests kunnen aangepaste headers of aanvraagteksten hebben.
+- Standaardtests kunnen elke HTTP-aanvraagmethode gebruiken, terwijl basic alleen kan `GET` gebruiken.
+- De controle van de levensduur van het SSL-certificaat waarschuwt u voor een bepaalde periode voordat uw certificaat verloopt.
+- Standaardtests zijn een betaalde functie.
 
-**U kunt Maxi maal 100 beschik bare beschikbaarheids tests maken per Application Insights resource.**
-
-> [!IMPORTANT]
-> Beide, [URL-ping testen](#create-a-url-ping-test) en [webtest met meerdere stappen](availability-multistep.md) zijn afhankelijk van de open bare Internet-DNS-infra structuur om de domein namen van de geteste eind punten op te lossen. Dit betekent dat als u Privé-DNS gebruikt, u ervoor moet zorgen dat elke domein naam van uw test ook kan worden omgezet door de open bare domeinnaam servers, of dat wanneer dit niet mogelijk is, u in plaats daarvan [aangepaste beschikbaarheids tests](/dotnet/api/microsoft.applicationinsights.telemetryclient.trackavailability) kunt gebruiken.
-
-## <a name="create-an-application-insights-resource"></a>Een Application Insights-resource maken
-
-Als u een beschikbaarheids test wilt maken, moet u eerst een Application Insights resource maken. Als u al een resource hebt gemaakt, gaat u door naar de volgende sectie om [een URL-ping-test te maken](#create-a-url-ping-test).
-
-Selecteer in de Azure Portal **een resource maken**  >  **Ontwikkelhulpprogramma's**  >  **Application Insights** en [Maak een Application Insights-resource](create-new-resource.md).
+> [!NOTE]
+> Er worden momenteel geen extra kosten in rekening gebracht voor de preview-functie Standard Ping-tests. Prijzen voor functies die in preview zijn, worden in de toekomst aangekondigd en er wordt een kennisgeving vóór de start van de facturering weergegeven. Als u na de kennisgevingsperiode standaard pingtests wilt blijven gebruiken, wordt u gefactureerd tegen het toepasselijke tarief.
 
 ## <a name="create-a-url-ping-test"></a>Een URL-pingtest aanmaken
 
-De naam "URL-ping testen" is een bit van een misnomer. Deze test maakt geen gebruik van ICMP (Internet Control Message Protocol) om de beschik baarheid van uw site te controleren. In plaats daarvan wordt meer geavanceerde HTTP-aanvraag functionaliteit gebruikt om te controleren of een eind punt reageert. Het meet ook de prestaties die zijn gekoppeld aan het antwoord en voegt de mogelijkheid toe om aangepaste succes criteria in te stellen, gekoppeld aan meer geavanceerde functies zoals het parseren van afhankelijke aanvragen, en het toestaan van nieuwe pogingen.
+Als u een beschikbaarheidstest wilt maken, moet u een bestaande Application Insight-resource gebruiken of een [Application Insights maken.](create-new-resource.md)
 
-Als u uw eerste beschikbaarheids aanvraag wilt maken, opent u het deel venster Beschik baarheid en selecteert u **test maken**.
+Als u uw eerste beschikbaarheidsaanvraag wilt maken, opent u het deelvenster Beschikbaarheid en selecteert u Test maken om & test-SKU te kiezen.
 
-![Vul in elk geval de URL van uw website in](./media/monitor-web-app-availability/availability-create-test-001.png)
+:::image type="content" source="./media/monitor-web-app-availability/create-basic-test.png" alt-text="Schermopname van het maken van een eenvoudige URL-pingtest in De Azure-portal":::
 
-### <a name="create-a-test"></a>Een test maken
-
-|Instelling| Uitleg
-|----|----|----|
+|Instelling | Uitleg |
+|--------|-------------|
 |**URL** |  De URL kan iedere webpagina zijn die u wilt testen, maar deze moet zichtbaar zijn vanaf het openbare internet. De URL kan een queryreeks bevatten. Zo kunt u bijvoorbeeld oefenen met uw database. Als de URL naar een omleiding is opgelost, kunnen we deze tot maximaal 10 omleidingen opvolgen.|
-|**Afhankelijke aanvragen parseren**| Test vraagt installatie kopieën, scripts, stijl bestanden en andere bestanden die deel uitmaken van de webpagina onder testen. De opgenomen reactietijd is inclusief de tijd die nodig is om deze bestanden op te halen. De test mislukt als een van deze resources niet kan worden gedownload binnen de time-out voor de volledige test. Als de optie niet is ingeschakeld, vraagt de test alleen het bestand op van de URL die u hebt opgegeven. Als u deze optie inschakelt, resulteert dit in een strikte controle. De test kan mislukken voor cases die mogelijk niet merkbaar zijn wanneer u de site hand matig bezoekt.
-|**Nieuwe pogingen inschakelen**|Wanneer de test mislukt, wordt deze na een korte interval opnieuw geprobeerd. Fouten worden pas gerapporteerd als er drie opeenvolgende pogingen mislukken. Daaropvolgende tests worden vervolgens met de gebruikelijke testfrequentie uitgevoerd. Volgende pogingen worden tijdelijk uitgesteld tot er weer een test slaagt. Deze regel wordt onafhankelijk toegepast op elke testlocatie. **We raden u aan deze optie te selecteren**. Gemiddeld verdwijnt ongeveer 80% van de fouten na het opnieuw proberen.|
-|**Test frequentie**| Hiermee stelt u in hoe vaak de test wordt uitgevoerd vanaf elke test locatie. Met een standaardfrequentie van vijf minuten en vijf testlocaties wordt uw site gemiddeld per minuut getest.|
-|**Testlocaties**| Zijn de locaties waar onze servers webaanvragen verzenden naar uw URL. Het **minimum aantal aanbevolen test locaties is vijf** om ervoor te zorgen dat u problemen in uw website kunt onderscheiden van netwerk problemen. U kunt maximaal 16 locaties selecteren.
+|**Afhankelijke aanvragen parseren**| Test aanvragen voor afbeeldingen, scripts, stijlbestanden en andere bestanden die deel uitmaken van de webpagina die wordt getest. De opgenomen reactietijd is inclusief de tijd die nodig is om deze bestanden op te halen. De test mislukt als een van deze resources niet kan worden gedownload binnen de time-out voor de hele test. Als de optie niet is ingeschakeld, vraagt de test alleen het bestand op van de URL die u hebt opgegeven. Het inschakelen van deze optie resulteert in een strengere controle. De test kan mislukken voor gevallen, die mogelijk niet zichtbaar zijn wanneer u handmatig op de site bladert. |
+|**Nieuwe proberen inschakelen**| Wanneer de test mislukt, wordt deze na een kort interval opnieuw uitgevoerd. Fouten worden pas gerapporteerd als er drie opeenvolgende pogingen mislukken. Daaropvolgende tests worden vervolgens met de gebruikelijke testfrequentie uitgevoerd. Volgende pogingen worden tijdelijk uitgesteld tot er weer een test slaagt. Deze regel wordt onafhankelijk toegepast op elke testlocatie. **We raden deze optie aan.** Gemiddeld verdwijnt ongeveer 80% van de fouten na het opnieuw proberen.|
+| **Validatietest voor SSL-certificaat** | U kunt het SSL-certificaat op uw website controleren om er zeker van te zijn dat het correct is geïnstalleerd, geldig en vertrouwd en geen fouten aan uw gebruikers geeft. |
+| **Proactieve levensduurcontrole** | Hiermee kunt u een bepaalde periode definiëren voordat uw SSL-certificaat verloopt. Zodra de test is verlopen, mislukt deze. |
+|**Frequentie testen**| Hiermee stelt u in hoe vaak de test wordt uitgevoerd vanaf elke testlocatie. Met een standaardfrequentie van vijf minuten en vijf testlocaties wordt uw site gemiddeld per minuut getest.|
+|**Testlocaties**| Zijn de plaatsen van waar onze servers webaanvragen naar uw URL verzenden. **Ons minimum aantal aanbevolen testlocaties is vijf** om ervoor te zorgen dat u problemen op uw website kunt onderscheiden van netwerkproblemen. U kunt meer dan vijf locaties met standaardtests en maximaal 16 locaties selecteren.|
 
-**Als uw URL niet zichtbaar is via het open bare Internet, kunt u ervoor kiezen om de firewall selectief te openen, zodat alleen de test transacties via worden toegestaan**. Raadpleeg de [hand leiding voor IP-adressen](./ip-addresses.md#availability-tests)voor meer informatie over de firewall uitzonderingen voor onze beschikbaarheids test agents.
+Als uw URL niet zichtbaar is vanaf het openbare internet, kunt u ervoor kiezen om uw firewall selectief te openen zodat alleen **de testtransacties via worden toegestaan.** Raadpleeg de IP-adreshandleiding voor meer informatie over de firewall-uitzonderingen voor onze [beschikbaarheidstestagents.](./ip-addresses.md#availability-tests)
 
 > [!NOTE]
-> We raden u ten zeerste aan te testen vanaf meerdere locaties met **Mini maal vijf locaties**. Dit is om te voor komen dat er valse waarschuwingen optreden die kunnen leiden tot tijdelijke problemen met een specifieke locatie. Daarnaast hebben we vastgesteld dat de optimale configuratie het **aantal test locaties moet hebben dat gelijk is aan de drempel waarde voor de waarschuwings locatie + 2**.
+> We raden u ten zeerste aan om te testen vanaf meerdere locaties **met minimaal vijf locaties.** Dit is om valse alarmen te voorkomen die kunnen leiden tot tijdelijke problemen met een specifieke locatie. Bovendien hebben we geconstateerd dat de optimale configuratie is om het aantal testlocaties gelijk te laten zijn aan de drempelwaarde voor de waarschuwingslocatie **+ 2**.
 
-### <a name="success-criteria"></a>Criteria voor geslaagde pogingen
+## <a name="standard-test"></a>Standaardtest
+
+:::image type="content" source="./media/monitor-web-app-availability/standard-test-post.png" alt-text="Schermopname van het tabblad Standaardtestgegevens." border="false":::
+
+|Instelling | Uitleg |
+|--------|-------------|
+| **Aangepaste headers** | Sleutelwaardeparen die de operationele parameters definiëren. |
+| **HTTP-aanvraagwerkwoord** | Geef aan welke actie u wilt ondernemen met uw aanvraag. Als uw gekozen werkwoord niet beschikbaar is in de gebruikersinterface, kunt u een standaardtest implementeren met behulp van Azure Broncontrole met de gewenste keuze. |
+| **Aanvraagbody** | Aangepaste gegevens die zijn gekoppeld aan uw HTTP-aanvraag. U kunt het type eigen bestandstype in uw inhoud uploaden of deze functie uitschakelen. Voor onbewerkte inhoud van de body ondersteunen we TEXT, JSON, HTML, XML en JavaScript. |
+
+## <a name="success-criteria"></a>Succescriteria
 
 |Instelling| Uitleg
 |----|----|----|
-| **Time-out testen** |Deze waarde verlagen om te worden gewaarschuwd over trage reacties. De test wordt als mislukt beschouwd als er binnen deze periode geen reactie van uw site is ontvangen. Als u **Parse onafhankelijke aanvragen** hebt geselecteerd, moeten alle afbeeldingen, stijlbestanden, scripts en andere afhankelijke resources binnen deze periode worden ontvangen.|
-| **HTTP-antwoord** | De geretourneerde status code die als geslaagd is geteld. 200 is de code die aangeeft dat er een normale webpagina is geretourneerd.|
-| **Inhouds overeenkomst** | Een teken reeks, bijvoorbeeld ' Welkom! ' Er wordt getest of er in elke respons een exacte (hoofdlettergevoelige) overeenkomst wordt gevonden. Het moet een eenvoudige tekenreeks zijn, zonder jokertekens. Als uw pagina-inhoud wordt gewijzigd, moet u deze tekenreeks mogelijk ook bijwerken. **Alleen Engelse tekens worden ondersteund met inhouds overeenkomsten** |
+| **Time-out testen** |Verklein deze waarde om te worden gewaarschuwd bij trage reacties. De test wordt als mislukt beschouwd als er binnen deze periode geen reactie van uw site is ontvangen. Als u **Parse onafhankelijke aanvragen** hebt geselecteerd, moeten alle afbeeldingen, stijlbestanden, scripts en andere afhankelijke resources binnen deze periode worden ontvangen.|
+| **HTTP-antwoord** | De geretourneerde statuscode die wordt geteld als geslaagd. 200 is de code die aangeeft dat er een normale webpagina is geretourneerd.|
+| **Inhoudsmatch** | Een tekenreeks, zoals 'Welkom!' Er wordt getest of er in elke respons een exacte (hoofdlettergevoelige) overeenkomst wordt gevonden. Het moet een eenvoudige tekenreeks zijn, zonder jokertekens. Als uw pagina-inhoud wordt gewijzigd, moet u deze tekenreeks mogelijk ook bijwerken. **Alleen Engelse tekens worden ondersteund met inhoudsmatch** |
 
-### <a name="alerts"></a>Waarschuwingen
+## <a name="alerts"></a>Waarschuwingen
 
 |Instelling| Uitleg
 |----|----|----|
-|**Bijna realtime (preview-versie)** | We raden u aan bijna realtime waarschuwingen te gebruiken. Het configureren van dit type waarschuwing wordt uitgevoerd nadat de beschikbaarheids test is gemaakt.  |
-|**Drempel waarde voor waarschuwings locatie**|We raden aan dat er mini maal 3/5 locaties zijn. De optimale relatie tussen de drempel waarde van de waarschuwings locatie en het aantal test locaties is drempel waarde voor **waarschuwings locaties**  =  **aantal test locaties-2, met een minimum van vijf test locaties.**|
+|**Bijna realtime (preview)** | We raden u aan near-realtime waarschuwingen te gebruiken. Het configureren van dit type waarschuwing wordt uitgevoerd nadat uw beschikbaarheidstest is gemaakt.  |
+|**Drempelwaarde voor waarschuwingslocatie**|We raden minimaal 3/5 locaties aan. De optimale relatie tussen de drempelwaarde voor de waarschuwingslocatie en het aantal testlocaties **is** het drempelwaardenummer van de waarschuwingslocatie van  =  **testlocaties - 2, met minimaal vijf testlocaties.**|
 
-### <a name="location-population-tags"></a>Locatie populatie Tags
+## <a name="location-population-tags"></a>Locatiepopulatietags
 
-De volgende populatie Tags kunnen worden gebruikt voor het kenmerk geo-locatie bij het implementeren van een ping-test voor de beschik baarheids-URL met Azure Resource Manager.
+De volgende populatietags kunnen worden gebruikt voor het kenmerk geolocatie bij het implementeren van een pingtest voor beschikbaarheids-URL's met behulp van Azure Resource Manager.
 
-#### <a name="azure-gov"></a>Azure-gov
+#### <a name="azure-gov"></a>Azure Gov
 
 | Weergavenaam   | Naam van populatie     |
 |----------------|---------------------|
-| USGov Virginia | USGov-VA-AZR        |
-| USGov Arizona  | USGov-PHX-AZR       |
-| USGov Texas    | USGov-TX-AZR        |
-| USDoD-Oost     | USGov-ddeast-AZR    |
-| USDoD-centraal  | USGov-ddcentral-AZR |
+| USGov Virginia | usgov-va-azr        |
+| USGov Arizona  | usgov-phx-azr       |
+| USGov Texas    | usgov-tx-azr        |
+| USDoD East     | usgov-ddeast-azr    |
+| USDoD Central  | usgov-ddcentral-azr |
 
 #### <a name="azure"></a>Azure
 
 | Weergavenaam                           | Naam van populatie   |
 |----------------------------------------|-------------------|
-| Australië - oost                         | EMEA-au-Syd-Edge  |
-| Brazilië - zuid                           | latam-BR-Gru-Edge |
-| VS - centraal                             | VS-FL-quote-Edge    |
-| Azië - oost                              | Apac-HK-hkn-AZR   |
-| VS - oost                                | US-VA-Ash-AZR     |
-| Frankrijk-zuid (voorheen Frankrijk-centraal) | EMEA-CH-ZRH-Edge  |
-| Frankrijk - centraal                         | EMEA-fr-pra-Edge  |
-| Japan - oost                             | Apac-JP-Kaw-Edge  |
-| Europa - noord                           | EMEA-GB-db3-AZR   |
-| VS - noord-centraal                       | US-Il-CH1-AZR     |
-| VS - zuid-centraal                       | VS-TX-SN1-AZR     |
-| Azië - zuidoost                         | Apac-SG-Sin-AZR   |
-| Verenigd Koninkrijk West                                | EMEA-se-waarschuwingsd-Edge  |
-| Europa -west                            | EMEA-nl-AMS-AZR   |
-| VS - west                                | US-CA-SJC-AZR     |
-| Verenigd Koninkrijk Zuid                               | EMEA-ru-MSA-Edge  |
+| Australië - oost                         | emea-au-syd-edge  |
+| Brazilië - zuid                           | latam-br-gru-edge |
+| Central US                             | us-fl-mia-edge    |
+| Azië - oost                              | apac-hk-hkn-azr   |
+| VS - oost                                | us-va-uur-azr     |
+| Frankrijk - zuid (voorheen Frankrijk - centraal) | emea-ch-zrh-edge  |
+| Frankrijk - centraal                         | emea-fr-pra-edge  |
+| Japan - oost                             | apac-jp-kaw-edge  |
+| Europa - noord                           | emea-gb-db3-azr   |
+| VS - noord-centraal                       | us-il-ch1-azr     |
+| VS - zuid-centraal                       | us-tx-sn1-azr     |
+| Azië - zuidoost                         | apac-sg-sin-azr   |
+| Verenigd Koninkrijk West                                | emea-se-sto-edge  |
+| Europa -west                            | emea-nl-ams-azr   |
+| VS - west                                | us-ca-sjc-azr     |
+| Verenigd Koninkrijk Zuid                               | emea-ru-msa-edge  |
 
 ## <a name="see-your-availability-test-results"></a>De resultaten van de beschikbaarheidstest bekijken
 
-De resultaten van de beschikbaarheids test kunnen worden gevisualiseerd met zowel de lijn-als spreidings tekening weergave.
+Resultaten van beschikbaarheidstests kunnen worden gevisualiseerd met zowel lijn- als spreidingsdiagramweergaven.
 
-Klik na een paar minuten op **vernieuwen** om de test resultaten weer te geven.
+Klik na enkele minuten op Vernieuwen **om de** testresultaten te bekijken.
 
-![Scherm afbeelding toont de beschikbaarheids pagina met de knop Vernieuwen gemarkeerd.](./media/monitor-web-app-availability/availability-refresh-002.png)
+:::image type="content" source="./media/monitor-web-app-availability/availability-refresh-002.png" alt-text="Schermopname van de pagina Beschikbaarheid met de knop Vernieuwen gemarkeerd.":::
 
-In de weer gave scatterplot ziet u voor beelden van de test resultaten met details over diagnostische test stappen. De testengine slaat diagnostische gegevens op voor tests met fouten. Bij geslaagde tests wordt diagnostische informatie voor een subset van de uitvoeringen opgeslagen. Beweeg de muis aanwijzer over een van de groene/rode stippen om de test, naam en locatie te bekijken.
+In de spreidingsdiagramweergave ziet u voorbeelden van de testresultaten met diagnostische teststapdetails. De testengine slaat diagnostische gegevens op voor tests met fouten. Bij geslaagde tests wordt diagnostische informatie voor een subset van de uitvoeringen opgeslagen. Beweeg de muisaanwijzer over een van de groene/rode punten om de test, testnaam en locatie te zien.
 
-![Regel weergave](./media/monitor-web-app-availability/availability-scatter-plot-003.png)
+:::image type="content" source="./media/monitor-web-app-availability/availability-scatter-plot-003.png" alt-text="Lijnweergave." border="false":::
 
 Selecteer een bepaalde test of locatie, of verklein de periode om meer resultaten te zien uit de periode die voor u van belang is. Gebruik Search Explorer om resultaten van alle uitvoeringen weer te geven, of gebruik Analytics-query's om aangepaste rapporten uit te voeren op deze gegevens.
 
 ## <a name="inspect-and-edit-tests"></a> Tests bekijken en bewerken
 
-Als u een test wilt bewerken, tijdelijk wilt uitschakelen of verwijderen, klikt u op de weglatings tekens naast de naam van een test. Het kan Maxi maal 20 minuten duren voordat configuratie wijzigingen zijn door gegeven aan alle agents nadat een wijziging is aangebracht.
+Als u een test wilt bewerken, tijdelijk wilt uitschakelen of verwijderen, klikt u op het beletselletselvenster naast een testnaam. Het kan tot 20 minuten duren voordat configuratiewijzigingen zijn doorgegeven aan alle testagents nadat een wijziging is aangebracht.
 
-![Test gegevens weer geven. Een webtest bewerken en uitschakelen](./media/monitor-web-app-availability/edit.png)
+:::image type="content" source="./media/monitor-web-app-availability/edit.png" alt-text="Testdetails weergeven. Een webtest bewerken en uitschakelen." border="false":::
 
 Het is verstandig beschikbaarheidstests of de regels voor waarschuwingen die eraan zijn gekoppeld uit te schakelen wanneer u onderhoud uitvoert op uw service.
 
 ## <a name="if-you-see-failures"></a>Als u mislukte tests ziet
 
-Klik op een rode punt.
+Selecteer een rode stip.
 
-![Op een rode punt klikken](./media/monitor-web-app-availability/open-instance-3.png)
+:::image type="content" source="./media/monitor-web-app-availability/end-to-end.png" alt-text="Schermopname van het tabblad End-to-end-transactiedetails." border="false":::
 
-Vanuit het resultaat van een beschikbaarheids test ziet u de transactie Details voor alle onderdelen. Hier kunt u het volgende doen:
+In een resultaat van een beschikbaarheidstest ziet u de transactiedetails voor alle onderdelen. Hier kunt u het volgende doen:
 
+* Bekijk het probleemoplossingsrapport om te bepalen waarom uw test is mislukt, maar uw toepassing nog steeds beschikbaar is.
 * De reactie inspecteren die is ontvangen van uw server.
-* Diagnose fout met gecorreleerde telemetrie aan de server zijde die is verzameld tijdens het verwerken van de mislukte beschikbaarheids test.
-* Registreer een probleem of werk item in Git-of Azure-kaarten om het probleem op te sporen. De bug bevat een koppeling naar deze gebeurtenis.
+* Diagnosefout met gecorreleerde telemetrie op de server die is verzameld tijdens het verwerken van de mislukte beschikbaarheidstest.
+* Registreer een probleem of werkitem in Git of Azure Boards om het probleem bij te houden. De bug bevat een koppeling naar deze gebeurtenis.
 * Het webtestresultaat openen in Visual Studio.
 
-Lees [hier](./transaction-diagnostics.md)meer over de diagnostische gegevens over end-to-end trans acties.
+Ga naar de documentatie voor transactiediagnose voor meer informatie over de end-to-end-ervaring voor [transactiediagnose.](./transaction-diagnostics.md)
 
-Klik op de rij met de uitzonde ring om de details van de uitzonde ring aan de server zijde te bekijken die de synthetische beschikbaarheids test heeft veroorzaakt. U kunt ook de [moment opname van de fout opsporing](./snapshot-debugger.md) vinden voor het uitgebreidere code niveau diagnoses.
+Klik op de uitzonderingsrij om de details weer te geven van de uitzondering aan de serverzijde waardoor de synthetische beschikbaarheidstest is mislukt. U kunt ook de momentopname voor [foutopsporing krijgen](./snapshot-debugger.md) voor uitgebreidere diagnostische gegevens op codeniveau.
 
-![Diagnostische gegevens aan de server zijde](./media/monitor-web-app-availability/open-instance-4.png)
+:::image type="content" source="./media/monitor-web-app-availability/open-instance-4.png" alt-text="Diagnostische gegevens aan de serverzijde.":::
 
-Naast de onbewerkte resultaten kunt u ook twee belang rijke metrische gegevens over beschik baarheid in [Metrics Explorer](../essentials/metrics-getting-started.md)bekijken:
+Naast de onbewerkte resultaten kunt u ook twee belangrijke metrische beschikbaarheidsgegevens weergeven in [Metrics Explorer:](../essentials/metrics-getting-started.md)
 
 1. Beschikbaarheid: percentage van de tests die zijn geslaagd, bekeken over alle testuitvoeringen.
 2. Testduur: gemiddelde testduur van alle testuitvoeringen.
@@ -160,12 +166,9 @@ Naast de onbewerkte resultaten kunt u ook twee belang rijke metrische gegevens o
 * Gebruik [PowerShell-scripts om automatisch een beschikbaarheidstest in te stellen](./powershell.md#add-an-availability-test).
 * Stel een [webhook](../alerts/alerts-webhooks.md) in die wordt aangeroepen wanneer er een waarschuwing wordt gegenereerd.
 
-## <a name="troubleshooting"></a>Problemen oplossen
-
-Speciaal [artikel voor probleem oplossing](troubleshoot-availability.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Beschikbaarheids waarschuwingen](availability-alerts.md)
+* [Beschikbaarheidswaarschuwingen](availability-alerts.md)
 * [Webtests met meerdere stappen](availability-multistep.md)
-
+* [Problemen oplossen](troubleshoot-availability.md)

@@ -1,7 +1,7 @@
 ---
-title: Taal ondersteuning-Text Analytics-API
+title: Taalondersteuning - Text Analytics API
 titleSuffix: Azure Cognitive Services
-description: Een lijst met natuurlijke talen die worden ondersteund door de Text Analytics-API. In dit artikel wordt uitgelegd welke talen voor elke bewerking worden ondersteund.
+description: Een lijst met natuurlijke talen die worden ondersteund door de Text Analytics API. In dit artikel wordt uitgelegd welke talen worden ondersteund voor elke bewerking.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,21 +10,22 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 02/23/2021
 ms.author: aahi
-ms.openlocfilehash: 9e257209060396fbf45a4a24c38bc6950acb5168
-ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
+ms.openlocfilehash: c0d91f803822e018f4363bb78d9138e2efe16f8a
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106387023"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107531435"
 ---
-# <a name="text-analytics-api-v3-language-support"></a>Ondersteuning voor Text Analytics-API v3-taal 
+# <a name="text-analytics-api-v3-language-support"></a>Text Analytics api v3-taalondersteuning 
 
 #### <a name="sentiment-analysis"></a>[Sentimentanalyse](#tab/sentiment-analysis)
 
-| Taal              | Taalcode | v3-ondersteuning | De versie van het v3-model wordt gestart: |              Notities |
+| Taal              | Taalcode | v3-ondersteuning | Versie van v3-model starten: |              Notities |
 |:----------------------|:-------------:|:----------:|:--------------------------:|-------------------:|
 | Chinese-Simplified    |   `zh-hans`   |     ✓      |         2019-10-01         | `zh` ook geaccepteerd |
 | Chinese-Traditional   |   `zh-hant`   |    ✓      |         2019-10-01         |                    |
+| Nederlands                 |     `nl`      |     ✓      |         2019-10-01        |                    |
 | Engels               |     `en`      |     ✓      |         2019-10-01         |                    |
 | Frans                |     `fr`      |     ✓      |         2019-10-01         |                    |
 | Duits                |     `de`      |     ✓      |         2019-10-01         |                    |
@@ -38,9 +39,9 @@ ms.locfileid: "106387023"
 | Spaans               |     `es`      |     ✓      |         2019-10-01         |                    |
 | Turks               |     `tr`      |     ✓       |         2020-07-01        |                    |
 
-### <a name="opinion-mining-v31-preview-only"></a>Opinie-analyse (alleen v 3.1-Preview-versie)
+### <a name="opinion-mining-v31-preview-only"></a>Meningmining (alleen v3.1-preview)
 
-| Taal              | Taalcode | Starten met versie van v3-model: |              Notities |
+| Taal              | Taalcode | Vanaf versie v3-model: |              Notities |
 |:----------------------|:-------------:|:------------------------------------:|-------------------:|
 | Engels               |     `en`      |              2020-04-01              |                    |
 
@@ -48,9 +49,9 @@ ms.locfileid: "106387023"
 #### <a name="named-entity-recognition-ner"></a>[Herkenning van benoemde entiteiten (NER)](#tab/named-entity-recognition)
 
 > [!NOTE]
-> * Er worden alleen entiteiten van ' persoon ', ' locatie ' en ' organisatie ' geretourneerd voor talen die zijn gemarkeerd met *.
+> * Alleen de entiteiten 'Persoon', 'Locatie' en 'Organisatie' worden geretourneerd voor talen die zijn gemarkeerd met *.
 
-| Taal               | Taalcode | v3-ondersteuning | Starten met versie van v3-model: |       Notities        |
+| Taal               | Taalcode | v3-ondersteuning | Vanaf versie v3-model: |       Notities        |
 |:-----------------------|:-------------:|:----------:|:-------------------------------:|:------------------:|
 | Arabisch                 |     `ar`      |      ✓*    |               2019-10-01        |                    |
 | Chinese-Simplified     |   `zh-hans`   |     ✓      |               2021-01-15        | `zh` ook geaccepteerd |
@@ -78,7 +79,7 @@ ms.locfileid: "106387023"
 
 #### <a name="key-phrase-extraction"></a>[Sleuteltermextractie](#tab/key-phrase-extraction)
 
-| Taal              | Taalcode |  v3-ondersteuning | Beschikbaar vanaf versie van v3-model: |       Notities        |
+| Taal              | Taalcode |  v3-ondersteuning | Beschikbaar vanaf versie v3-model: |       Notities        |
 |:----------------------|:-------------:|:----------:|:-----------------------------------------:|:------------------:|
 | Deens                |     `da`      |     ✓     |                2019-10-01                 |                    |
 | Nederlands                 |     `nl`      |     ✓      |                2019-10-01                 |                    |
@@ -99,14 +100,14 @@ ms.locfileid: "106387023"
 
 #### <a name="entity-linking"></a>[Entiteiten koppelen](#tab/entity-linking)
 
-| Taal | Taalcode |  v3-ondersteuning | Beschikbaar vanaf versie van v3-model: | Notities |
+| Taal | Taalcode |  v3-ondersteuning | Beschikbaar vanaf versie v3-model: | Notities |
 |:---------|:-------------:|:----------:|:-----------------------------------------:|:-----:|
 | Engels  |     `en`      |     ✓      |                2019-10-01                 |       |
 | Spaans  |     `es`      |    ✓      |                2019-10-01                 |       |
 
-#### <a name="personally-identifiable-information-pii"></a>[Persoonlijk identificeer bare informatie (PII)](#tab/pii)
+#### <a name="personally-identifiable-information-pii"></a>[Persoonlijk identificeerbare informatie (PII)](#tab/pii)
 
-| Taal               | Taalcode | v3-ondersteuning | Starten met versie van v3-model: |       Notities        |
+| Taal               | Taalcode | v3-ondersteuning | Vanaf versie v3-model: |       Notities        |
 |:-----------------------|:-------------:|:----------:|:-------------------------------:|:------------------:|
 | Chinese-Simplified     |   `zh-hans`   |     ✓      |               2021-01-15        | `zh` ook geaccepteerd |
 | Engels                |     `en`      |     ✓      |               2020-07-01        |                    |
@@ -121,31 +122,31 @@ ms.locfileid: "106387023"
 
 #### <a name="language-detection"></a>[Taaldetectie](#tab/language-detection)
 
-De Text Analytics-API kan een breed scala aan talen, varianten, dialecten en bepaalde regionale/culturele talen detecteren en detecteerde talen retour neren met hun naam en code. Text Analytics Taaldetectie taal code parameters voldoen aan de [bcp-47](https://tools.ietf.org/html/bcp47) -standaard, met het meren deel van de [ISO-639-1-](https://www.iso.org/iso-639-language-codes.html) id's. 
+De Text Analytics-API kan een breed scala aan talen, varianten, dialecten en sommige regionale/culturele talen detecteren en gedetecteerde talen retourneren met hun naam en code. Text Analytics Taaldetectie taalcodeparameters voldoen aan de [BCP-47-standaard,](https://tools.ietf.org/html/bcp47) met de meeste ervan conform [ISO-639-1-id's.](https://www.iso.org/iso-639-language-codes.html) 
 
-Als er inhoud in een minder vaak gebruikte taal wordt weer gegeven, kunt u Taaldetectie proberen om te zien of er een code wordt geretourneerd. Het antwoord op talen dat niet kan worden gedetecteerd is `unknown` .
+Als u inhoud hebt uitgedrukt in een minder vaak gebruikte taal, kunt u proberen Taaldetectie om te zien of er een code wordt retourneert. Het antwoord voor talen die niet kunnen worden gedetecteerd, is `unknown` .
 
-| Taal | Taalcode | v3-ondersteuning | Beschikbaar vanaf versie van v3-model: |
+| Taal | Taalcode | v3-ondersteuning | Beschikbaar vanaf versie v3-model: |
 |:-|:-:|:-:|:-:|
 |Afrikaans|`af`|✓|    |
 |Albanees|`sq`|✓|    |
-|Amhaars|`am`|✓|2021-01-05|
+|Amharic|`am`|✓|2021-01-05|
 |Arabisch|`ar`|✓|    |
 |Armeens|`hy`|✓|    |
 |Assamees|`as`|✓|2021-01-05|
-|Azerbeidzjan|`az`|✓|2021-01-05|
+|Azerbeidzjaanse|`az`|✓|2021-01-05|
 |Baskisch|`eu`|✓|    |
 |Wit-Russisch|`be`|✓|    |
 |Bengaals|`bn`|✓|    |
 |Bosnisch|`bs`|✓|2020-09-01|
 |Bulgaars|`bg`|✓|    |
-|Birmaans|`my`|✓|    |
+|Birmese|`my`|✓|    |
 |Catalaans|`ca`|✓|    |
-|Centraal-Khmer|`km`|✓|    |
+|Central Khmer|`km`|✓|    |
 |Chinees|`zh`|✓|    |
 |Chinees (vereenvoudigd)|`zh_chs`|✓|    |
 |Chinees (traditioneel)|`zh_cht`|✓|    |
-|Corsicaans|`co`|✓|2021-01-05|
+|Corsicaanse|`co`|✓|2021-01-05|
 |Kroatisch|`hr`|✓|    |
 |Tsjechisch|`cs`|✓|    |
 |Deens|`da`|✓|    |
@@ -163,7 +164,7 @@ Als er inhoud in een minder vaak gebruikte taal wordt weer gegeven, kunt u Taald
 |Duits|`de`|✓|    |
 |Grieks|`el`|✓|    |
 |Gujarati|`gu`|✓|    |
-|Haitian|`ht`|✓|    |
+|Haïtiaanse|`ht`|✓|    |
 |Hausa|`ha`|✓|2021-01-05|
 |Hebreeuws|`he`|✓|    |
 |Hindi|`hi`|✓|    |
@@ -180,15 +181,15 @@ Als er inhoud in een minder vaak gebruikte taal wordt weer gegeven, kunt u Taald
 |Kannada|`kn`|✓|    |
 |Kazachs|`kk`|✓|2020-09-01|
 |Kinyarwanda|`rw`|✓|2021-01-05|
-|Kirgisische|`ky`|✓|2021-01-05|
+|Kirghiz|`ky`|✓|2021-01-05|
 |Koreaans|`ko`|✓|    |
-|Koerdisch|`ku`|✓|    |
-|Democratische|`lo`|✓|    |
+|Koerdische|`ku`|✓|    |
+|Lao|`lo`|✓|    |
 |Latijnse|`la`|✓|    |
 |Lets|`lv`|✓|    |
 |Litouws|`lt`|✓|    |
 |Luxemburgs|`lb`|✓|2021-01-05|
-|Macedonisch|`mk`|✓|    |
+|Macedonische|`mk`|✓|    |
 |Malagassisch|`mg`|✓|2020-09-01|
 |Maleisisch|`ms`|✓|    |
 |Malayalam|`ml`|✓|    |
@@ -215,14 +216,14 @@ Als er inhoud in een minder vaak gebruikte taal wordt weer gegeven, kunt u Taald
 |Sinhala|`si`|✓|    |
 |Slowaaks|`sk`|✓|    |
 |Sloveens|`sl`|✓|    |
-|Somalisch|`so`|✓|    |
+|Somalische|`so`|✓|    |
 |Spaans|`es`|✓|    |
-|Soendanees|`su`|✓|2021-01-05|
+|Sundanese|`su`|✓|2021-01-05|
 |Swahili|`sw`|✓|    |
 |Zweeds|`sv`|✓|    |
-|Tagalog|`tl`|✓|    |
+|Philipijns|`tl`|✓|    |
 |Tahitiaans|`ty`|✓|2020-09-01|
-|Tadzjieks|`tg`|✓|2021-01-05|
+|Tajik|`tg`|✓|2021-01-05|
 |Tamil|`ta`|✓|    |
 |Tataars|`tt`|✓|2021-01-05|
 |Telugu|`te`|✓|    |
@@ -231,7 +232,7 @@ Als er inhoud in een minder vaak gebruikte taal wordt weer gegeven, kunt u Taald
 |Tigrinya|`ti`|✓|2021-01-05|
 |Tongaans|`to`|✓|2020-09-01|
 |Turks|`tr`|✓|2021-01-05|
-|Turkmeens|`tk`|✓|2021-01-05|
+|Turkmen|`tk`|✓|2021-01-05|
 |Xhosa|`xh`|✓|2021-01-05|
 |Yoruba|`yo`|✓|2021-01-05|
 |Zulu|`zu`|✓|2021-01-05|

@@ -2,7 +2,7 @@
   href: index.yml
 - name: Overzicht
   href: overview.md
-- name: Wat is er nieuw in azure Sentinel?
+- name: Wat is er nieuw in Azure Sentinel?
   href: whats-new.md
 - name: Snelstartgidsen
   expanded: true
@@ -23,7 +23,7 @@
       href: tutorial-investigate-cases.md
     - name: Automatisering gebruiken om te reageren op bedreigingen
       href: tutorial-respond-threats-playbook.md
-    - name: KQL-query's maken (module leren)
+    - name: KQL-query's maken (Learn-module)
       href: /learn/paths/sc-200-utilize-kql-for-azure-sentinel/
 - name: Concepten
   items:
@@ -35,15 +35,15 @@
           href: roles.md
         - name: Toegang beheren per resource
           href: resource-context-rbac.md
-        - name: MSSP intellectueel eigendom beveiligen
+        - name: Intellectueel eigendom van MSSP beveiligen
           href: mssp-protect-intellectual-property.md
     - name: Geavanceerde detectie van aanvallen met meerdere stappen
       href: fusion.md
-    - name: Automation (via)
+    - name: Automation (SOAR)
       items:
-        - name: VIA in azure-Sentinel
+        - name: SOAR in Azure Sentinel
           href: automation-in-azure-sentinel.md
-        - name: Automation-regels voor het verwerken van incidenten
+        - name: Automatiseringsregels voor incidentafhandeling
           href: automate-incident-handling-with-automation-rules.md
         - name: Geavanceerde automatisering met playbooks
           href: automate-responses-with-playbooks.md
@@ -96,7 +96,7 @@
               href: connect-azure-sql-logs.md
             - name: Azure Web Application Firewall (WAF)
               href: connect-azure-waf.md
-            - name: Defender voor IoT (voorheen ASC voor IoT)
+            - name: Defender for IoT (voorheen ASC voor IoT)
               href: connect-asc-iot.md
             - name: Domeinnaamserver
               href: connect-dns.md
@@ -120,15 +120,17 @@
               href: connect-windows-firewall.md
             - name: Windows-beveiligingsgebeurtenissen
               href: connect-windows-security-events.md
+            - name: Windows Virtual Desktop
+              href: connect-windows-virtual-desktop.md
         - name: Verbinding maken met externe oplossingen
           items:
-            - name: Agari phishing-verdediging en merk beveiliging
+            - name: Agari Phishing Defense and Brand Protection
               href: connect-agari-phishing-defense.md
             - name: Alcide kAudit
               href: connect-alcide-kaudit.md
             - name: Alsid voor Active Directory
               href: connect-alsid-active-directory.md
-            - name: Apache HTTP-server
+            - name: Apache HTTP Server
               href: connect-apache-http-server.md
             - name: Barracuda WAF
               href: connect-barracuda.md
@@ -150,7 +152,7 @@
               href: connect-f5-big-ip.md
             - name: Forcepoint DLP
               href: connect-forcepoint-dlp.md
-            - name: Google-werk ruimte (G suite)
+            - name: Google-werkruimte (G Suite)
               href: connect-google-workspace.md
             - name: Infoblox NIOS
               href: connect-infoblox.md
@@ -210,11 +212,11 @@
                   items:
                     - name: AI Vectra Detect
                       href: connect-ai-vectra-detect.md
-                    - name: Akamai-beveiligings gebeurtenissen
+                    - name: Akamai-beveiligingsgebeurtenissen
                       href: connect-akamai-security-events.md
                     - name: Aruba ClearPass
                       href: connect-aruba-clearpass.md
-                    - name: DLP van Broadcom Symantec
+                    - name: Broadcom Symantec DLP
                       href: connect-broadcom-symantec-dlp.md
                     - name: Check Point
                       href: connect-checkpoint.md
@@ -260,9 +262,9 @@
           href: connect-azure-stack.md
         - name: Gegevensverbindingsstatus bewaken
           href: monitor-data-connector-health.md
-    - name: Analyse van gebruikers-en entiteits gedrag inschakelen
+    - name: Analyse van gebruikers- en entiteitsgedrag inschakelen
       href: enable-entity-behavior-analytics.md
-    - name: Gegevens velden toewijzen aan entiteiten
+    - name: Gegevensvelden aan entiteiten toe te wijsen
       href: map-data-fields-to-entities.md
     - name: Meerdere tenants beheren (MSSP)
       href: multiple-tenants-service-providers.md
@@ -270,13 +272,13 @@
       href: multiple-workspace-view.md
     - name: Door de klant beheerde sleutels (CMK) instellen
       href: customer-managed-keys.md
-    - name: Aangepaste Details van het Opper vlak in waarschuwingen
+    - name: Aangepaste details weergeven in waarschuwingen
       href: surface-custom-details-in-alerts.md
     - name: Incidenten maken op basis van waarschuwingen
       href: create-incidents-from-alerts.md
     - name: Uw SOC beter beheren met metrische gegevens over incidenten
       href: manage-soc-with-incident-metrics.md
-    - name: Azure-Sentinel-query's en-activiteiten controleren
+    - name: Query Azure Sentinel en activiteiten controleren
       href: audit-sentinel-data.md
     - name: Zoeken
       href: hunting.md
@@ -291,7 +293,7 @@
       href: offboard.md
 - name: Referentie
   items:
-    - name: Belangrijkste Azure-verklikker werkmappen
+    - name: Belangrijkste Azure Sentinel werkmappen
       href: top-workbooks.md
     - name: Azure CLI
       href: /cli/azure/ext/sentinel/sentinel
@@ -299,7 +301,7 @@
       items:
         - name: Alle Azure-rollen
           href: ../role-based-access-control/built-in-roles.md#all
-        - name: Azure-Sentinel-rollen
+        - name: Azure Sentinel rollen
           href: ../role-based-access-control/built-in-roles.md#security
     - name: REST-API’s
       items:
@@ -311,29 +313,29 @@
           href: watchlist-with-rest-api.md
     - name: De Logic Apps-connector van Azure Sentinel verkennen
       href: /connectors/azuresentinel/
-    - name: Verwijzing naar entiteiten
+    - name: Naslag voor entiteiten
       href: entities-reference.md
     - name: Netwerknormalisatieschema
       href: normalization-schema.md
-    - name: Verwijzing naar gegevens bron schema
+    - name: Naslaginformatie over het gegevensbronschema
       href: data-source-schema-reference.md
     - name: Kusto-querytaal
       items:
         - name: Overzicht van Kusto-query's
           href: /azure/data-explorer/kusto/query/
-        - name: Naslag informatie voor Kusto-query taal
+        - name: Snelzoekverwijzing kusto-querytaal
           href: /azure/data-explorer/kql-quick-reference
-        - name: Query optimalisatie van Azure Monitor-logboek
+        - name: Azure Monitor van logboekquery's
           href: ../azure-monitor/logs/query-optimization.md
     - name: UEBA-verrijkingen
       href: ueba-enrichments.md
-    - name: Toewijzing van CEF-logboek veld
+    - name: Toewijzing van CEF-logboekveld
       href: cef-name-mapping.md
 - name: Resources
   items:
     - name: Nuttige informatie
       href: resources.md
-    - name: Azure-verklikker blog
+    - name: Azure Sentinel blog
       href: 'https://techcommunity.microsoft.com/t5/azure-sentinel/bg-p/AzureSentinelBlog'
     - name: Regionale beschikbaarheid
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=azure-sentinel'

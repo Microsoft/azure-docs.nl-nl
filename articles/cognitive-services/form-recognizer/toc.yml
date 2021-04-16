@@ -7,7 +7,7 @@
       href: overview.md
     - name: Taalondersteuning
       href: language-support.md
-    - name: Prijzen en beperkingen
+    - name: Prijzen
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/form-recognizer/'
     - name: Nieuwe functies
       href: whats-new.md
@@ -27,8 +27,6 @@
       href: /samples/azure/azure-sdk-for-python/formrecognizer-samples
     - name: JavaScript Form Recognizer clientbibliotheek-SDK
       href: /samples/azure/azure-sdk-for-js/ai-form-recognizer-javascript/
-    - name: REST API en cURL
-      href: 'https://github.com/Azure-Samples/cognitive-services-REST-api-samples/tree/master/curl/form-recognizer'
 - name: Instructiegidsen
   items:
     - name: Een set met trainingsgegevens samenstellen
@@ -52,6 +50,14 @@
           href: ../containers/index.yml
     - name: Back-ups maken en modellen herstellen
       href: disaster-recovery.md
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Virtuele netwerken instellen
+          href: ../cognitive-services-virtual-networks.md?context=/azure/cognitive-services/form-recognizer/context/context
+        - name: Door de klant beheerde sleutels gebruiken
+          href: encrypt-data-at-rest.md
+        - name: Azure AD-verificatie gebruiken
+          href: ../authentication.md?context=/azure/cognitive-services/form-recognizer/context/context
 - name: Concepten
   items:
     - name: Indelings-API
@@ -97,15 +103,15 @@
           href: /javascript/api/overview/azure/ai-form-recognizer-readme
 - name: Resources
   items:
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Ondersteuning voor regio
+          href: 'https://go.microsoft.com/fwlink/?linkid=2087185'
+        - name: Naleving en certificering
+          href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Opties voor ondersteuning en hulp
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/form-recognizer/context/context
     - name: Azure-roadmap
       href: 'https://azure.microsoft.com/updates/?product=cognitive-services'
-    - name: Regionale beschikbaarheid
-      href: 'https://go.microsoft.com/fwlink/?linkid=2087185'
-    - name: Naleving
-      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
-    - name: Versleuteling
-      href: encrypt-data-at-rest.md
     - name: Privacy en cookies
       href: 'https://privacy.microsoft.com/en-US/privacystatement'

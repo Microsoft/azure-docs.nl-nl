@@ -1,40 +1,40 @@
 ---
-title: Gegevens typen in sjablonen
-description: Beschrijft de gegevens typen die beschikbaar zijn in Azure Resource Manager sjablonen.
+title: Gegevenstypen in sjablonen
+description: Beschrijft de gegevenstypen die beschikbaar zijn in Azure Resource Manager sjablonen.
 ms.topic: conceptual
 ms.author: tomfitz
 author: tfitzmac
 ms.date: 03/04/2021
-ms.openlocfilehash: 7d3f15c8852e6e25c621baad9bc6f20c303ffdb9
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 4d6c8306b3dbdfe895055dc008d81cc0d85d8d6c
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102125082"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107538064"
 ---
-# <a name="data-types-in-arm-templates"></a>Gegevens typen in ARM-sjablonen
+# <a name="data-types-in-arm-templates"></a>Gegevenstypen in ARM-sjablonen
 
-In dit artikel worden de gegevens typen beschreven die worden ondersteund in Azure Resource Manager sjablonen (ARM-sjablonen). Dit omvat zowel JSON-als Bicep-gegevens typen.
+In dit artikel worden de gegevenstypen beschreven die worden ondersteund in Azure Resource Manager -sjablonen (ARM-sjablonen). Het bevat informatie over zowel JSON- als Bicep-gegevenstypen.
 
 ## <a name="supported-types"></a>Ondersteunde typen
 
-Binnen een ARM-sjabloon kunt u deze gegevens typen gebruiken:
+In een ARM-sjabloon kunt u de volgende gegevenstypen gebruiken:
 
 * matrix
 * booleaans
 * int
 * object
-* secureObject-aangegeven door modifier in Bicep
-* secureString-aangegeven door modifier in Bicep
+* secureObject - aangeduid met modifier in Bicep
+* secureString - aangeduid met modifier in Bicep
 * tekenreeks
 
 ## <a name="arrays"></a>Matrices
 
-Matrices beginnen met een haakje ( `[` ) en eindigend met een haakje ( `]` ).
+Matrices beginnen met een linkerhake ( `[` ) en eindigen met een rechterhake ( `]` ).
 
-In JSON kan een matrix worden gedeclareerd in één regel of op meerdere regels. Elk element wordt gescheiden door een komma.
+In JSON kan een matrix worden gedeclareerd in één regel of meerdere regels. Elk element wordt gescheiden door een komma.
 
-In Bicep moet een matrix worden gedeclareerd in meerdere regels. Gebruik geen komma's tussen waarden.
+In Bicep moet een matrix in meerdere regels worden gedeclareerd. Gebruik geen komma's tussen waarden.
 
 # <a name="json"></a>[JSON](#tab/json)
 
@@ -63,7 +63,7 @@ param exampleArray array = [
 
 ---
 
-De elementen van een matrix kunnen van hetzelfde type of van verschillende typen zijn.
+De elementen van een matrix kunnen hetzelfde type of verschillende typen zijn.
 
 # <a name="json"></a>[JSON](#tab/json)
 
@@ -93,7 +93,7 @@ var mixedArray = [
 
 ## <a name="booleans"></a>Booleaans
 
-Gebruik of om Booleaanse waarden op te geven `true` `false` . Plaats de waarde niet tussen aanhalings tekens.
+Gebruik of bij het opgeven van `true` booleaanse `false` waarden. Laat de waarde niet tussen aanhalingstekens staan.
 
 # <a name="json"></a>[JSON](#tab/json)
 
@@ -116,7 +116,7 @@ param exampleBool bool = true
 
 ## <a name="integers"></a>Gehele getallen
 
-Gebruik geen aanhalings tekens wanneer u waarden opgeeft voor een geheel getal.
+Gebruik geen aanhalingstekens wanneer u waarden met gehele getallen opgeeft.
 
 # <a name="json"></a>[JSON](#tab/json)
 
@@ -137,17 +137,15 @@ param exampleInt int = 1
 
 ---
 
-Voor gehele getallen die als inline-para meters worden door gegeven, kan het bereik van waarden worden beperkt door de SDK of het opdracht regel programma dat u voor implementatie gebruikt. Als u bijvoorbeeld Power shell gebruikt voor het implementeren van een sjabloon, kunnen integerwaarden variëren van-2147483648 tot 2147483647. Als u deze beperking wilt vermijden, geeft u grote waarden voor geheel getal op in een [parameter bestand](parameter-files.md). De resource typen hebben hun eigen limieten voor eigenschappen van gehele getallen.
+Voor gehele getallen die worden doorgegeven als inlineparameters, kan het bereik van waarden worden beperkt door de SDK of het opdrachtregelprogramma dat u voor de implementatie gebruikt. Wanneer u bijvoorbeeld PowerShell gebruikt om een sjabloon te implementeren, kunnen typen gehele getallen variëren van -2147483648 tot 2147483647. Om deze beperking te voorkomen, geeft u grote waarden voor gehele getallen op in een [parameterbestand](parameter-files.md). Resourcetypen passen hun eigen limieten toe voor eigenschappen van gehele getallen.
 
 ## <a name="objects"></a>Objecten
 
-Objecten beginnen met een accolade ( `{` ) en eindigend met een haakje sluiten ( `}` ). Elke eigenschap in een object bestaat uit sleutel en waarde. De sleutel en waarde worden gescheiden door een dubbele punt ( `:` ).
-
-In JSON bevindt de sleutel zich tussen dubbele aanhalings tekens. Elke eigenschap wordt gescheiden door een komma.
-
-In Bicep bevindt de sleutel zich niet tussen aanhalings tekens. Gebruik geen komma's tussen de eigenschappen.
+Objecten beginnen met een linkerbrace ( `{` ) en eindigen met een accolade ( `}` ). Elke eigenschap in een object bestaat uit sleutel en waarde. De sleutel en waarde worden gescheiden door een dubbele punt ( `:` ).
 
 # <a name="json"></a>[JSON](#tab/json)
+
+In JSON wordt de sleutel tussen dubbele aanhalingstekens ingesloten. Elke eigenschap wordt gescheiden door een komma.
 
 ```json
 "parameters": {
@@ -165,6 +163,8 @@ In Bicep bevindt de sleutel zich niet tussen aanhalings tekens. Gebruik geen kom
 
 # <a name="bicep"></a>[Bicep](#tab/bicep)
 
+In Bicep staat de sleutel niet tussen aanhalingstekens. Gebruik geen komma's tussen eigenschappen.
+
 ```bicep
 param exampleObject object = {
   name: 'test name'
@@ -174,11 +174,27 @@ param exampleObject object = {
 }
 ```
 
+Accessoires voor eigenschappen worden gebruikt om toegang te krijgen tot eigenschappen van een object. Ze worden samengesteld met behulp van de `.` operator . Bijvoorbeeld:
+
+```bicep
+var x = {
+  y: {
+    z: 'Hello`
+    a: true
+  }
+  q: 42
+}
+```
+
+Gezien de vorige declaratie, wordt de expressie x.y.z geëvalueerd als de letterlijke tekenreeks 'Hello'. Op dezelfde manier wordt de expressie x.q geëvalueerd als het letterlijke geheel getal 42.
+
+Eigenschapsaccesssoires kunnen worden gebruikt met elk object. Dit omvat parameters en variabelen van objecttypen en letterlijke waarden van objecten. Het gebruik van een eigenschapsaccess in een expressie van een niet-objecttype is een fout.
+
 ---
 
 ## <a name="strings"></a>Tekenreeksen
 
-In JSON worden teken reeksen gemarkeerd met dubbele aanhalings tekens. In Bicep zijn teken reeksen gemarkeerd met enkele aanhalings tekens.
+In JSON worden tekenreeksen gemarkeerd met dubbele aanhalingstekens. In Bicep worden tekenreeksen gemarkeerd met enkele aanhalingstekens.
 
 # <a name="json"></a>[JSON](#tab/json)
 
@@ -198,13 +214,13 @@ param exampleString string = 'test value'
 ```
 ---
 
-## <a name="secure-strings-and-objects"></a>Teken reeksen en objecten beveiligen
+## <a name="secure-strings-and-objects"></a>Tekenreeksen en objecten beveiligen
 
-De beveiligde teken reeks maakt gebruik van dezelfde indeling als teken reeks en beveiligd object gebruikt dezelfde indeling als object. Wanneer u een para meter instelt op een beveiligde teken reeks of een beveiligd object, wordt de waarde van de para meter niet opgeslagen in de implementatie geschiedenis en niet geregistreerd. Als u deze beveiligde waarde echter instelt op een eigenschap waarvoor geen beveiligde waarde wordt verwacht, is de waarde niet beveiligd. Als u bijvoorbeeld een beveiligde teken reeks instelt op een tag, wordt die waarde opgeslagen als tekst zonder opmaak. Gebruik beveiligde teken reeksen voor wacht woorden en geheimen.
+Beveiligde tekenreeks gebruikt dezelfde indeling als tekenreeks en beveiligd object gebruikt dezelfde indeling als object. Wanneer u een parameter in stelt op een beveiligde tekenreeks of beveiligd object, wordt de waarde van de parameter niet opgeslagen in de implementatiegeschiedenis en wordt deze niet geregistreerd. Als u die beveiligde waarde echter in stelt op een eigenschap die geen veilige waarde verwacht, wordt de waarde niet beveiligd. Als u bijvoorbeeld een beveiligde tekenreeks in stelt op een tag, wordt die waarde opgeslagen als tekst zonder tekst zonder tekst. Gebruik beveiligde tekenreeksen voor wachtwoorden en geheimen.
 
-Met Bicep voegt u de `@secure()` aanpassings functie toe aan een teken reeks of object.
+Met Bicep voegt u de `@secure()` modifier toe aan een tekenreeks of object.
 
-In het volgende voor beeld worden twee veilige para meters weer gegeven:
+In het volgende voorbeeld ziet u twee beveiligde parameters:
 
 # <a name="json"></a>[JSON](#tab/json)
 
@@ -233,4 +249,4 @@ param configValues object
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor meer informatie over de syntaxis van de sjabloon.
+Zie Inzicht in de structuur en syntaxis van ARM-sjablonen voor meer informatie [over de sjabloonsyntaxis.](template-syntax.md)

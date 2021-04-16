@@ -1,6 +1,6 @@
 ---
-title: Een afbeelding uit een andere galerie kopiëren met behulp van Power shell
-description: Een afbeelding uit een andere galerie kopiëren met behulp van Azure PowerShell.
+title: Een afbeelding kopiëren uit een andere galerie met behulp van PowerShell
+description: Kopieer een afbeelding uit een andere galerie met behulp van Azure PowerShell.
 author: cynthn
 ms.service: virtual-machines
 ms.subservice: shared-image-gallery
@@ -9,35 +9,35 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: d9bbe40e35bdad6fac5c5ccb0b15b909e77b938c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 35346836767bc1da8c498e23fd3b42afe7a9c350
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102564013"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107531195"
 ---
-# <a name="copy-an-image-from-another-gallery-using-powershell"></a>Een afbeelding uit een andere galerie kopiëren met behulp van Power shell
+# <a name="copy-an-image-from-another-gallery-using-powershell"></a>Een afbeelding kopiëren uit een andere galerie met behulp van PowerShell
 
-Als uw organisatie meerdere galerieën bevat, kunt u installatie kopieën maken van afbeeldingen die zijn opgeslagen in andere galerieën. U kunt bijvoorbeeld een galerie voor ontwikkelen en testen hebben voor het maken en testen van nieuwe installatie kopieën. Wanneer ze klaar zijn om te worden gebruikt in de productie, kunt u deze naar een productie galerie kopiëren met behulp van dit voor beeld. U kunt ook een installatie kopie maken van een afbeelding in een andere galerie met behulp van de [Azure cli](image-version-another-gallery-cli.md).
+Als uw organisatie meerdere galerieën heeft, kunt u afbeeldingen maken van afbeeldingen die zijn opgeslagen in andere galerieën. U hebt bijvoorbeeld een ontwikkelings- en testgalerie voor het maken en testen van nieuwe afbeeldingen. Wanneer ze klaar zijn voor gebruik in productie, kunt u ze kopiëren naar een productiegalerie met behulp van dit voorbeeld. U kunt ook een afbeelding maken van een afbeelding in een andere galerie met behulp van [de Azure CLI](image-version-another-gallery-cli.md).
 
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Om dit artikel te volt ooien, moet u een bestaande bron galerie, afbeeldings definitie en installatie kopie versie hebben. U moet ook een doel galerie hebben. 
+Als u dit artikel wilt voltooien, moet u een bestaande brongalerie, definitie van de afbeelding en versie van de afbeelding hebben. U moet ook een doelgalerie hebben. 
 
-De versie van de bron installatie kopie moet worden gerepliceerd naar de regio waar uw doel Galerie zich bevindt. 
+De versie van de bronafbeelding moet worden gerepliceerd naar de regio waar uw doelgalerie zich bevindt. 
 
-We gaan een nieuwe definitie van de installatie kopie en installatie kopie maken in de doel galerie.
-
-
-Wanneer u dit artikel doorwerkt, vervangt u de resource namen waar nodig.
+We maken een nieuwe definitie van de afbeelding en de versie van de afbeelding in uw doelgalerie.
 
 
-## <a name="get-the-source-image"></a>De bron installatie kopie ophalen 
+Wanneer u dit artikel door werkt, vervangt u waar nodig de resourcenamen.
 
-U hebt gegevens nodig van de definitie van de bron installatie kopie, zodat u een kopie ervan kunt maken in de doel galerie.
 
-Informatie weer geven over de bestaande galerieën, afbeeldings definities en installatie kopie versies met de cmdlet [Get-AzResource](/powershell/module/az.resources/get-azresource) .
+## <a name="get-the-source-image"></a>De bronafbeelding op halen 
+
+U hebt informatie uit de definitie van de bronafbeelding nodig, zodat u er een kopie van kunt maken in de doelgalerie.
+
+Maak een lijst met informatie over de bestaande galerieën, definities van afbeeldingen en versies van afbeeldingen met behulp van de cmdlet [Get-AzResource.](/powershell/module/az.resources/get-azresource)
 
 De resultaten hebben de indeling `gallery\image definition\image version` .
 
@@ -47,7 +47,7 @@ Get-AzResource `
    Format-Table -Property Name,ResourceGroupName
 ```
 
-Zodra u alle informatie hebt die u nodig hebt, kunt u de ID van de versie van de bron installatie kopie ophalen met [Get-AzGalleryImageVersion](/powershell/module/az.compute/get-azgalleryimageversion). In dit voor beeld wordt de `1.0.0` installatie kopie versie van de `myImageDefinition` definitie in de `myGallery` bron galerie in de `myResourceGroup` resource groep opgehaald.
+Zodra u alle informatie hebt die u nodig hebt, kunt u de id van de versie van de bronafbeelding verkrijgen met behulp van [Get-AzGalleryImageVersion.](/powershell/module/az.compute/get-azgalleryimageversion) In dit voorbeeld krijgen we de versie van de afbeelding, van de `1.0.0` `myImageDefinition` definitie, in de `myGallery` brongalerie, in de `myResourceGroup` resourcegroep.
 
 ```azurepowershell-interactive
 $sourceImgVer = Get-AzGalleryImageVersion `
@@ -58,9 +58,9 @@ $sourceImgVer = Get-AzGalleryImageVersion `
 ```
 
 
-## <a name="create-the-image-definition"></a>De definitie van de installatie kopie maken 
+## <a name="create-the-image-definition"></a>De definitie van de afbeelding maken 
 
-U moet een nieuwe definitie van de installatie kopie maken die overeenkomt met de definitie van de installatie kopie van de bron. U kunt alle informatie die u nodig hebt, weer geven om de definitie van de installatie kopie opnieuw te maken met behulp van [Get-AzGalleryImageDefinition](/powershell/module/az.compute/get-azgalleryimagedefinition).
+U moet een nieuwe definitie van de afbeelding maken die overeenkomt met de definitie van de afbeelding van uw bron. U kunt alle informatie zien die u nodig hebt om de definitie van de afbeelding opnieuw te maken met [behulp van Get-AzGalleryImageDefinition.](/powershell/module/az.compute/get-azgalleryimagedefinition)
 
 ```azurepowershell-interactive
 Get-AzGalleryImageDefinition `
@@ -100,10 +100,10 @@ De uitvoer ziet er ongeveer uit zoals in dit voorbeeld:
 }
 ```
 
-Maak in de doel Galerie een nieuwe definitie van de installatie kopie met behulp van de cmdlet [New-AzGalleryImageDefinition](/powershell/module/az.compute/new-azgalleryimageversion) en de informatie uit de bovenstaande uitvoer.
+Maak een nieuwe definitie van de afbeelding in de doelgalerie met behulp van de cmdlet [New-AzGalleryImageDefinition](/powershell/module/az.compute/new-azgalleryimageversion) en de informatie uit de bovenstaande uitvoer.
 
 
-In dit voor beeld heeft de definitie van de installatie kopie de naam *myDestinationImgDef* in de galerie met de naam *myDestinationGallery*.
+In dit voorbeeld heet de definitie van de afbeelding *myDestinationImgDef* in de galerie met de *naam myDestinationGallery.*
 
 
 ```azurepowershell-interactive
@@ -123,11 +123,11 @@ $destinationImgDef  = New-AzGalleryImageDefinition `
 
 ## <a name="create-the-image-version"></a>De installatiekopieversie maken
 
-Maak een installatie kopie versie met behulp van [New-AzGalleryImageVersion](/powershell/module/az.compute/new-azgalleryimageversion). U moet de ID van de bron installatie kopie door geven in de `--managed-image` para meter voor het maken van de installatie kopie versie in de doel galerie. 
+Maak een versie van de afbeelding [met New-AzGalleryImageVersion.](/powershell/module/az.compute/new-azgalleryimageversion) U moet de id van de bronafbeelding doorgeven in de parameter voor het maken van de versie van de afbeelding `-Source` in de doelgalerie. 
 
 Toegestane tekens voor een installatiekopieversie zijn cijfers en punten. Cijfers moeten binnen het bereik van een 32-bits geheel getal zijn. Indeling: *MajorVersion*.*MinorVersion*.*Patch*.
 
-In dit voor beeld heeft de doel galerie de naam *myDestinationGallery*, in de resource groep *myDestinationRG* , op de locatie *VS-West* . De versie van onze installatie kopie is *1.0.0* en we gaan 1 replica maken in de regio *Zuid-Centraal VS* en 2 REPLICA'S in de regio *VS West* . 
+In dit voorbeeld heet de doelgalerie *myDestinationGallery* in de resourcegroep *myDestinationRG* op de locatie *VS -* west. De versie van onze afbeelding is *1.0.0* en we  gaan 1 replica maken in de regio VS - zuid-centraal en 2 replica's in de regio *VS -* west. 
 
 
 ```azurepowershell-interactive
@@ -147,7 +147,7 @@ $job = $imageVersion = New-AzGalleryImageVersion `
    -asJob 
 ```
 
-Het kan even duren om de installatie kopie te repliceren naar alle doel regio's. Daarom hebben we een taak gemaakt zodat we de voortgang kunnen volgen. Als u de voortgang van de taak wilt zien, typt u `$job.State` .
+Het kan even duren voordat de afbeelding naar alle doelregio's is gerepliceerd. Daarom hebben we een taak gemaakt, zodat we de voortgang kunnen volgen. Typ om de voortgang van de taak te `$job.State` bekijken.
 
 ```azurepowershell-interactive
 $job.State
@@ -162,8 +162,8 @@ $job.State
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Een virtuele machine maken van een [gegeneraliseerde](vm-generalized-image-version-powershell.md) of een [gespecialiseerde](vm-specialized-image-version-powershell.md) installatie kopie versie.
+Maak een VM op een [ge generaliseerde of](vm-generalized-image-version-powershell.md) [gespecialiseerde versie](vm-specialized-image-version-powershell.md) van de afbeelding.
 
-Met [Azure Image Builder (preview)](./image-builder-overview.md) kunt u het maken van de installatie kopie versie automatiseren, maar u kunt deze zelfs gebruiken om [een nieuwe installatie kopie versie te maken op basis van een bestaande versie van de installatie kopie](./linux/image-builder-gallery-update-image-version.md). 
+[Azure Image Builder (preview)](./image-builder-overview.md) kan helpen bij het automatiseren van het maken van de versie van de afbeelding. U kunt deze zelfs gebruiken om een nieuwe versie van de afbeelding bij te werken en te maken van een [bestaande versie van de afbeelding.](./linux/image-builder-gallery-update-image-version.md) 
 
-Zie voor meer informatie over het verstrekken van informatie over het aankoop plan [Azure Marketplace-informatie over het aankoop plan bij het maken van installatie kopieën](marketplace-images.md).
+Zie Informatie over het aankoopplan leveren bij het maken van afbeeldingen voor Azure Marketplace informatie over het leveren van [aankoopplangegevens.](marketplace-images.md)

@@ -1,6 +1,6 @@
 ---
-title: Verificatie methode voor Microsoft Authenticator-app-Azure Active Directory
-description: Meer informatie over het gebruik van de Microsoft Authenticator-app in Azure Active Directory om aanmeldings gebeurtenissen te verbeteren en te beveiligen
+title: Microsoft Authenticator app-verificatiemethode - Azure Active Directory
+description: Meer informatie over het gebruik Microsoft Authenticator-app in Azure Active Directory om aanmeldingsgebeurtenissen te verbeteren en beveiligen
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
@@ -10,56 +10,56 @@ ms.author: justinha
 author: justinha
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8e33c87d53580d96363ba15bccbc889370f2479d
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 3175b1292a7e69506b9193d1182e184e257ebda3
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102212906"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107530505"
 ---
-# <a name="authentication-methods-in-azure-active-directory---microsoft-authenticator-app"></a>Verificatie methoden in de Azure Active Directory-Microsoft Authenticator-app
+# <a name="authentication-methods-in-azure-active-directory---microsoft-authenticator-app"></a>Verificatiemethoden in Azure Active Directory - Microsoft Authenticator app
 
-De Microsoft Authenticator-app biedt een extra beveiligings niveau voor uw Azure AD-werk-of school account of uw Microsoft-account en is beschikbaar voor [Android](https://go.microsoft.com/fwlink/?linkid=866594) en [IOS](https://go.microsoft.com/fwlink/?linkid=866594). Met de Microsoft Authenticator-app kunnen gebruikers tijdens de aanmelding of als extra verificatie optie worden geverifieerd tijdens de selfservice voor het opnieuw instellen van een wacht woord (SSPR) of Azure AD-Multi-Factor Authentication gebeurtenissen.
+De Microsoft Authenticator-app biedt een extra beveiligingsniveau voor uw Azure AD-werk- of schoolaccount of uw Microsoft-account en is beschikbaar voor [Android](https://go.microsoft.com/fwlink/?linkid=866594) en [iOS.](https://go.microsoft.com/fwlink/?linkid=866594) Met de Microsoft Authenticator-app kunnen gebruikers zich op een wachtwoordloze manier verifiëren tijdens het aanmelden of als een extra verificatieoptie tijdens selfservice voor wachtwoord opnieuw instellen (SSPR) of Azure AD Multi-Factor Authentication-gebeurtenissen.
 
-Gebruikers kunnen een melding ontvangen via de mobiele app om ze goed te keuren of te weigeren, of de verificator-app gebruiken om een OAUTH-verificatie code te genereren die kan worden ingevoerd in een aanmeldings interface. Als u zowel een melding als een verificatie code inschakelt, kunnen gebruikers die de verificator-app registreren, een van beide methoden gebruiken om hun identiteit te verifiëren.
+Gebruikers kunnen via de mobiele app een melding ontvangen om goed te keuren of te weigeren, of de Authenticator-app gebruiken om een OAUTH-verificatiecode te genereren die kan worden ingevoerd in een aanmeldingsinterface. Als u zowel een meldings- als verificatiecode inschakelen, kunnen gebruikers die de Authenticator-app registreren, een van beide methoden gebruiken om hun identiteit te verifiëren.
 
-Als u de verificator-app bij een aanmeldings prompt wilt gebruiken in plaats van een combi natie van gebruikers naam en wacht woord, raadpleegt u [aanmelden zonder wacht woord inschakelen met de app Microsoft Authenticator](howto-authentication-passwordless-phone.md).
+Als u de Authenticator-app wilt gebruiken bij een aanmeldingsprompt in plaats van een combinatie van gebruikersnaam en wachtwoord, gaat u naar Aanmelden zonder wachtwoord inschakelen met de [Microsoft Authenticator app.](howto-authentication-passwordless-phone.md)
 
 > [!NOTE]
-> Gebruikers hebben geen optie om hun mobiele app te registreren wanneer ze SSPR inschakelen. In plaats daarvan kunnen gebruikers hun mobiele app registreren op [https://aka.ms/mfasetup](https://aka.ms/mfasetup) of als onderdeel van de registratie van gecombineerde beveiligings gegevens op [https://aka.ms/setupsecurityinfo](https://aka.ms/setupsecurityinfo) .
+> Gebruikers kunnen hun mobiele app niet registreren wanneer ze SSPR inschakelen. In plaats daarvan kunnen gebruikers hun mobiele app registreren op of als onderdeel van de gecombineerde registratie van [https://aka.ms/mfasetup](https://aka.ms/mfasetup) beveiligingsgegevens op [https://aka.ms/setupsecurityinfo](https://aka.ms/setupsecurityinfo) .
 
-## <a name="passwordless-sign-in"></a>Aanmelding zonder wacht woord
+## <a name="passwordless-sign-in"></a>Aanmelden zonder wachtwoord
 
-In plaats van een prompt weer te geven voor een wacht woord na het invoeren van een gebruikers naam, ziet een gebruiker die aanmelding via de telefoon heeft ingeschakeld vanuit de app Microsoft Authenticator een bericht met een nummer in de app. Wanneer het juiste nummer is geselecteerd, is het aanmeldings proces voltooid.
+In plaats van een prompt voor een wachtwoord te zien na het invoeren van een gebruikersnaam, ziet een gebruiker die zich via de telefoon heeft aanmelden vanuit de Microsoft Authenticator-app een bericht om op een nummer in de app te tikken. Wanneer het juiste nummer is geselecteerd, is het aanmeldingsproces voltooid.
 
-![Voor beeld van een browser aanmelding waarin de gebruiker wordt gevraagd om de aanmelding goed te keuren](./media/howto-authentication-passwordless-phone/phone-sign-in-microsoft-authenticator-app.png)
+![Voorbeeld van een aanmelding in een browser waarin de gebruiker wordt gevraagd om de aanmelding goed te keuren](./media/howto-authentication-passwordless-phone/phone-sign-in-microsoft-authenticator-app.png)
 
-Deze verificatie methode biedt een hoog beveiligings niveau en de nood zaak van de gebruiker om bij het aanmelden een wacht woord op te geven. 
+Deze verificatiemethode biedt een hoog beveiligingsniveau en zorgt dat de gebruiker geen wachtwoord hoeft op te geven bij het aanmelden. 
 
-Als u aan de slag wilt met aanmelden zonder wacht woord, raadpleegt u [aanmelden zonder wacht woord inschakelen met de app Microsoft Authenticator](howto-authentication-passwordless-phone.md).
+Zie Aanmelden zonder wachtwoord inschakelen met de app Microsoft Authenticator om aan de slag [te gaan met aanmelden zonder wachtwoord.](howto-authentication-passwordless-phone.md)
 
 ## <a name="notification-through-mobile-app"></a>Melding via mobiele app
 
-De verificator-app kan helpen voor komen dat onbevoegde toegang tot accounts en frauduleuze trans acties wordt afgebroken door een melding naar uw smartphone of Tablet te pushen. Gebruikers zien de melding en als deze legitiem is, selecteert u **verifiëren**. Als dat niet het geval is, kunnen ze **weigeren** selecteren.
+De Authenticator-app kan helpen onbevoegde toegang tot accounts te voorkomen en frauduleuze transacties te stoppen door een melding naar uw smartphone of tablet te pushen. Gebruikers bekijken de melding en als deze legitiem zijn, selecteert u **Verifiëren.** Anders kunnen ze **Weigeren selecteren.**
 
-![Scherm afbeelding van voor beeld webbrowser prompt voor verificator-app-melding voor het volt ooien van het aanmeldings proces](media/tutorial-enable-azure-mfa/azure-multi-factor-authentication-browser-prompt.png)
+![Schermopname van een voorbeeld van een webbrowserprompt voor de authenticator-app-melding om het aanmeldingsproces te voltooien](media/tutorial-enable-azure-mfa/azure-multi-factor-authentication-browser-prompt.png)
 
 > [!NOTE]
-> Als uw organisatie mede werkers heeft die in China werken of onderweg zijn, werkt de *melding via de mobiele app* -methode op Android-apparaten niet in dat land/deze regio als Google Play-Services (inclusief push meldingen) in de regio geblokkeerd. IOS-meldingen zijn echter wel werk. Voor Android-apparaten moeten alternatieve verificatie methoden beschikbaar worden gesteld voor deze gebruikers.
+> Als uw organisatie medewerkers heeft die in China werken of naar China reizen, werkt de melding via de methode voor mobiele *apps* op Android-apparaten niet in dat land of die regio, omdat Google Play Services (inclusief pushmeldingen) worden geblokkeerd in de regio. iOS-meldingen werken echter wel. Voor Android-apparaten moeten alternatieve verificatiemethoden beschikbaar worden gesteld voor deze gebruikers.
 
-## <a name="verification-code-from-mobile-app"></a>Verificatie code uit de mobiele app
+## <a name="verification-code-from-mobile-app"></a>Verificatiecode van mobiele app
 
-De verificator-app kan worden gebruikt als een software token voor het genereren van een OATH-verificatie code. Nadat u uw gebruikers naam en wacht woord hebt ingevoerd, voert u de code in die is opgegeven door de verificator-app in de aanmeldings interface. De verificatiecode biedt een tweede vorm van verificatie.
+De Authenticator-app kan worden gebruikt als een software-token om een OATH-verificatiecode te genereren. Nadat u uw gebruikersnaam en wachtwoord hebt opgegeven, voert u de code van de Authenticator-app in de aanmeldingsinterface in. De verificatiecode biedt een tweede vorm van verificatie.
 
-Gebruikers kunnen een combi natie hebben van Maxi maal vijf OATH-hardware-tokens of verificator-toepassingen, zoals de app Microsoft Authenticator, die op elk gewenst moment worden geconfigureerd voor gebruik.
+Gebruikers kunnen een combinatie van maximaal vijf OATH-hardwaretokens of authenticatortoepassingen hebben, zoals de Microsoft Authenticator-app, die op elk moment is geconfigureerd voor gebruik.
 
 > [!WARNING]
-> Een verificatie code is de enige optie die beschikbaar is voor gebruikers, om ervoor te zorgen dat het hoogste beveiligings niveau voor de selfservice voor het opnieuw instellen van wacht woorden wanneer er slechts één methode vereist is voor opnieuw instellen.
+> Om het hoogste beveiligingsniveau voor selfservice voor wachtwoord opnieuw instellen te garanderen wanneer er slechts één methode is vereist voor het opnieuw instellen van wachtwoorden, is een verificatiecode de enige optie die beschikbaar is voor gebruikers.
 >
-> Wanneer twee methoden zijn vereist, kunnen gebruikers een melding of verificatie code gebruiken naast andere ingeschakelde methoden.
+> Wanneer twee methoden vereist zijn, kunnen gebruikers opnieuw instellen met behulp van een meldings- of verificatiecode naast andere ingeschakelde methoden.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u aan de slag wilt met aanmelden zonder wacht woord, raadpleegt u [aanmelden zonder wacht woord inschakelen met de app Microsoft Authenticator](howto-authentication-passwordless-phone.md).
+Zie Aanmelden zonder wachtwoord inschakelen met de app Microsoft Authenticator om aan de slag [te gaan met aanmelden zonder wachtwoord.](howto-authentication-passwordless-phone.md)
 
-Meer informatie over het configureren van verificatie methoden met behulp van de [Microsoft Graph rest API bèta](/graph/api/resources/authenticationmethods-overview?view=graph-rest-beta).
+Meer informatie over het configureren van verificatiemethoden met behulp [van Microsoft Graph REST API](/graph/api/resources/authenticationmethods-overview).

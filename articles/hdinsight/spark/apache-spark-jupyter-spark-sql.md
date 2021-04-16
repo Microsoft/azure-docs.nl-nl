@@ -1,16 +1,18 @@
 ---
 title: 'Quickstart: Een Apache Spark-cluster maken met behulp van sjabloon - Azure HDInsight'
 description: Deze snelstart laat zien hoe u met een Resource Manager-sjabloon een Apache Spark-cluster maakt in HDInsight en hoe u een Spark SQL-query uitvoert.
-ms.service: hdinsight
-ms.topic: quickstart
-ms.custom: subject-armqs
 ms.date: 03/13/2020
-ms.openlocfilehash: 1fb36b30385abc72fb0966c928e0dd6f8ea80e73
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.topic: quickstart
+ms.service: hdinsight
+ms.custom:
+- subject-armqs
+- mode-arm
+ms.openlocfilehash: 6d3f8c3313d9e6be38acdbecb683899ea8dd5376
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104865924"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107538013"
 ---
 # <a name="quickstart-create-apache-spark-cluster-in-azure-hdinsight-using-arm-template"></a>Quickstart: Een Apache Spark-cluster maken in Azure HDInsight met een ARM-sjabloon
 
@@ -94,7 +96,7 @@ SQL (Structured Query Language) is de meest voorkomende en gebruikte taal voor h
 
 1. Controleer of de kernel gereed is. Wanneer u een lege cirkel naast de naam van de kernel in de notebook ziet, is de kernel gereed. Gevulde cirkel geeft aan dat de kernel bezet is.
 
-    :::image type="content" source="./media/apache-spark-jupyter-spark-sql/jupyter-spark-kernel-status.png " alt-text="Kernel-status" border="true"::: Alt-Text = "kernel-status" Border = "True":::
+    :::image type="content" source="./media/apache-spark-jupyter-spark-sql/jupyter-spark-kernel-status.png " alt-text="Kernelstatus" border="true"::: alt-text="Kernelstatus" border="true":::
 
     Wanneer u de notebook voor het eerst start, voert de kernel enkele taken in de achtergrond uit. Wacht tot de kernel gereed is.
 
@@ -107,7 +109,7 @@ SQL (Structured Query Language) is de meest voorkomende en gebruikte taal voor h
 
     Wanneer u een Jupyter Notebook-bestand gebruikt met uw HDInsight-cluster, krijgt u een vooraf ingestelde `spark`-sessie waarmee u Hive-query's kunt uitvoeren met behulp van Apache Spark SQL. `%%sql` instrueert Jupyter Notebook om de vooraf ingestelde `spark`-sessie te gebruiken voor het uitvoeren van de Hive-query. De query haalt de bovenste tien rijen op uit een Hive-tabel (**hivesampletable**) die standaard worden meegeleverd met alle HDInsight-clusters. De eerste keer dat u de query verzendt, maakt Jupyter een Spark-toepassing voor de notebook. Dit duurt ongeveer 30 seconden. Zodra de Spark-toepassing gereed is, wordt de query uitgevoerd in ongeveer een seconde en worden de resultaten geproduceerd. De uitvoer ziet er als volgt uit:
 
-    :::image type="content" source="./media/apache-spark-jupyter-spark-sql/hdinsight-spark-get-started-hive-query.png " alt-text="Apache Hive query in hdinsight" border="true":::y in hdinsight "Border =" True ":::
+    :::image type="content" source="./media/apache-spark-jupyter-spark-sql/hdinsight-spark-get-started-hive-query.png " alt-text="Apache Hive query in HDInsight" border="true":::y in HDInsight' border="true":::
 
     Telkens wanneer u in Jupyter een query uitvoert, toont de venstertitel van uw webbrowser de status **(Bezet)** en de notebooktitel. Ook ziet u een gevulde cirkel naast de **PySpark**-tekst in de rechterbovenhoek.
 
@@ -120,7 +122,7 @@ SQL (Structured Query Language) is de meest voorkomende en gebruikte taal voor h
 
     Het scherm wordt vernieuwd om de query-uitvoer weer te geven.
 
-    :::image type="content" source="./media/apache-spark-jupyter-spark-sql/hdinsight-spark-get-started-hive-query-output.png " alt-text="Uitvoer van Hive-query in HDInsight" border="true"::: Inzicht "Border =" True ":::
+    :::image type="content" source="./media/apache-spark-jupyter-spark-sql/hdinsight-spark-get-started-hive-query-output.png " alt-text="Hive-query-uitvoer in HDInsight" border="true"::: Insight" border="true":::
 
 1. Klik in het menu **File** van het notebook op **Close and Halt**. Als de notebook wordt afgesloten, komen de clusterbronnen, waaronder de Apache Spark-toepassing, vrij.
 
@@ -130,7 +132,7 @@ Nadat u de quickstart hebt voltooid, kunt u het cluster verwijderen. Met HDInsig
 
 Ga in Azure Portal naar de cluster en selecteer **Verwijderen**.
 
-:::image type="content" source="./media/apache-spark-jupyter-spark-sql/hdinsight-azure-portal-delete-cluster.png " alt-text="Azure Portal een HDInsight-cluster verwijderen" border="true":::' Border = ' True ':::
+:::image type="content" source="./media/apache-spark-jupyter-spark-sql/hdinsight-azure-portal-delete-cluster.png " alt-text="Azure Portal hdinsight cluster" border="true":::sight cluster" border="true"::: verwijderen
 
 U kunt ook de naam van de resourcegroep selecteren om de pagina van de resourcegroep te openen en vervolgens **Resourcegroep verwijderen** selecteren. Als u de resourcegroep verwijdert, verwijdert u zowel het HDInsight-cluster als het standaardopslagaccount.
 

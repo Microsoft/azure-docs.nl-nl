@@ -1,18 +1,18 @@
 ---
 title: Nalevingscontroles van Azure Policy-regelgeving voor Azure Key Vault
 description: Een overzicht van de beschikbare nalevingscontroles van Azure Policy-regelgeving voor Azure IoT Hub. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 03/31/2021
+ms.date: 04/14/2021
 ms.topic: sample
 author: robinsh
 ms.author: robinsh
 ms.service: iot-hub
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 9fc3dbbcbd629ca182f63df982a7ec21f1e4ee05
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: 256ab00e0d070b56dadcfa7e364b5aea2056dad9
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106090496"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107499683"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-iot-hub"></a>Nalevingscontroles van Azure Policy-regelgeving voor Azure Key Vault
 

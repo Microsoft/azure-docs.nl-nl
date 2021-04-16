@@ -3,7 +3,7 @@ title: 'PowerShell-voorbeeld: toepassingsproxy-apps die gebruikmaken van jokerte
 description: PowerShell-voorbeeld waarin alle Azure Active Directory (Azure AD)-toepassingsproxytoepassingen worden vermeld die gebruikmaken van jokertekens.
 services: active-directory
 author: kenwith
-manager: daveba
+manager: mtillman
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 12/05/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 944fe9606963c4d4fb9ec41e4d1a87ab62d1bc6b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4d49ec90a428cf0718b719ec6732690c2792b107
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102548964"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107377850"
 ---
 # <a name="get-all-application-proxy-apps-using-wildcard-publishing"></a>Alle toepassingsproxy-apps ophalen die gebruikmaken van jokertekens
 

@@ -7,31 +7,31 @@
 - name: Zelfstudies
   expanded: true
   items:
-    - name: 1-de juiste certificering selecteren
+    - name: 1 - De juiste certificering selecteren
       href: tutorial-00-selecting-your-certification.md
-    - name: 2-uw project maken
+    - name: 2 - Uw project maken
       href: tutorial-01-creating-your-project.md
-    - name: 3-Details van het apparaat toevoegen
+    - name: 3 - Apparaatdetails toevoegen
       href: tutorial-02-adding-device-details.md
-    - name: 4-uw apparaat testen
+    - name: 4 - Uw apparaat testen
       href: tutorial-03-testing-your-device.md
-    - name: 5-uw apparaat publiceren
+    - name: 5 - Uw apparaat publiceren
       href: tutorial-04-publishing-your-device.md
 - name: Programmavereisten
   items:
-    - name: Azure-gecertificeerd apparaat
+    - name: Azure Certified Device
       href: program-requirements-azure-certified-device.md
     - name: IoT Plug and Play
       href: program-requirements-pnp.md
-    - name: Edge beheerd
+    - name: Door Edge beheerd
       href: program-requirements-edge-managed.md
-    - name: Edge-beveiligd-core (preview-versie)
+    - name: Edge Secured-core (preview)
       href: program-requirements-edge-secured-core.md
 - name: Concepten
   items:
     - name: Verouderde apparaten
       href: concepts-legacy.md
-    - name: Marketing concepten
+    - name: Marketingconcepten
       href: concepts-marketing.md
 - name: Instructiegidsen
   items:
@@ -39,9 +39,11 @@
       href: how-to-edit-published-device.md
     - name: Een indirect verbonden apparaat certificeren
       href: how-to-indirectly-connected-devices.md
-    - name: De functie onderdelen gebruiken
+    - name: Problemen met uw IoT-Plug en Play oplossen
+      href: how-to-troubleshoot-pnp.md
+    - name: De onderdelenfunctie gebruiken
       href: how-to-using-the-components-feature.md
 - name: Resources
   items:
-    - name: Certificerings woordenlijst
+    - name: Verklarende woordenlijst voor certificering
       href: resources-glossary.md

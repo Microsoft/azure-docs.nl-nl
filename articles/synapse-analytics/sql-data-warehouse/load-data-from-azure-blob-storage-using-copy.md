@@ -1,32 +1,32 @@
 ---
-title: "Zelf studie: over taxi's-gegevens voor New York laden"
-description: In de zelf studie worden Azure Portal en SQL Server Management Studio gebruikt voor het laden van nieuwe over taxi's-gegevens uit een Azure-Blob voor Synapse SQL.
+title: 'Zelfstudie: Taxicab-gegevens in New York laden'
+description: In de zelfstudie Azure Portal en SQL Server Management Studio gebruikt om gegevens van taxi's in New York te laden uit een Azure-blob voor Synapse SQL.
 services: synapse-analytics
-author: gaursa
+author: julieMSFT
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
 ms.date: 11/23/2020
-ms.author: gaursa
+ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 1490a0e094c6ce2665e28f7d32540ad58d53cb2a
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 7ede40aba8e2d36e4262b4bc89a35f5d67079e0e
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104600136"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107567500"
 ---
-# <a name="tutorial-load-the-new-york-taxicab-dataset"></a>Zelf studie: de over taxi's-gegevensset van New York laden
+# <a name="tutorial-load-the-new-york-taxicab-dataset"></a>Zelfstudie: De new York Taxicab-gegevensset laden
 
-In deze zelf studie wordt de [instructie Copy](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true) gebruikt voor het laden van een New York over taxi's-gegevensset vanuit een Azure Blob Storage-account. De zelfstudie gebruikt [Azure Portal](https://portal.azure.com) en [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (SSMS) voor het volgende:
+In deze zelfstudie wordt de [instructie COPY gebruikt](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true) om de gegevensset New York Taxicab te laden vanuit een Azure Blob Storage account. De zelfstudie gebruikt [Azure Portal](https://portal.azure.com) en [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (SSMS) voor het volgende:
 
 > [!div class="checklist"]
 >
 > * Een gebruiker maken die wordt aangewezen om gegevens te laden
-> * De tabellen voor de voor beeld-gegevensset maken 
-> * De instructie COPY T-SQL gebruiken om gegevens in uw data warehouse te laden
+> * De tabellen voor de voorbeeldgegevensset maken 
+> * Gebruik de T-SQL-instructie COPY om gegevens in uw datawarehouse te laden
 > * De voortgang van de gegevens weergeven terwijl deze worden geladen
 
 Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
@@ -35,17 +35,17 @@ Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.
 
 Download en installeer voordat u met deze zelfstudie begint de nieuwste versie van [SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (SQL Server Management Studio).  
 
-In deze zelf studie wordt ervan uitgegaan dat u al een toegewezen SQL-groep hebt gemaakt in de volgende [zelf studie](./create-data-warehouse-portal.md#connect-to-the-server-as-server-admin).
+In deze zelfstudie wordt ervan uitgenomen dat u al een toegewezen SQL-pool hebt gemaakt in de volgende [zelfstudie.](./create-data-warehouse-portal.md#connect-to-the-server-as-server-admin)
 
 ## <a name="create-a-user-for-loading-data"></a>Een gebruiker maken voor het laden van gegevens
 
-De serverbeheerdersaccount is bedoeld voor het uitvoeren van beheerbewerkingen en is niet geschikt voor het uitvoeren van query's op gebruikersgegevens. Het laden van gegevens is een geheugenintensieve bewerking. Geheugen limieten worden gedefinieerd op basis van de geconfigureerde [Data Warehouse-eenheden](what-is-a-data-warehouse-unit-dwu-cdwu.md) en de [resource klasse](resource-classes-for-workload-management.md) .
+De serverbeheerdersaccount is bedoeld voor het uitvoeren van beheerbewerkingen en is niet geschikt voor het uitvoeren van query's op gebruikersgegevens. Het laden van gegevens is een geheugenintensieve bewerking. De maximumgeheugens worden gedefinieerd op basis van de [geconfigureerde datawarehouse-eenheden](what-is-a-data-warehouse-unit-dwu-cdwu.md) en [resourceklasse.](resource-classes-for-workload-management.md)
 
 Het is raadzaam een aanmelding en gebruiker te maken die speciaal wordt toegewezen voor het laden van gegevens. Voeg vervolgens de ladende gebruiker toe aan een [bronklasse](resource-classes-for-workload-management.md). Hiermee wordt een maximale hoeveelheid geheugen ingesteld.
 
-Maak verbinding als server beheerder zodat u aanmeldingen en gebruikers kunt maken. Gebruik deze stappen om een aanmelding en gebruiker te maken met de naam **LoaderRC20**. Wijs de gebruiker vervolgens toe aan de bronklasse **staticrc20**.
+Maak verbinding als serverbeheerder, zodat u aanmeldingen en gebruikers kunt maken. Gebruik deze stappen om een aanmelding en gebruiker te maken met de naam **LoaderRC20**. Wijs de gebruiker vervolgens toe aan de bronklasse **staticrc20**.
 
-1. Klik in SSMS met de rechter muisknop op **model** om een vervolg keuzelijst weer te geven en kies **nieuwe query**. Een nieuwe queryvenster wordt geopend.
+1. Selecteer in SSMS de rechter hoofd **om** een vervolgkeuzelijst weer te geven en kies **Nieuwe query.** Een nieuwe queryvenster wordt geopend.
 
     ![Nieuwe query in Hoofd](./media/load-data-from-azure-blob-storage-using-polybase/create-loader-login.png)
 
@@ -76,7 +76,7 @@ Maak verbinding als server beheerder zodat u aanmeldingen en gebruikers kunt mak
 
 De eerste stap voor het laden van gegevens bestaat uit aanmelding als LoaderRC20.  
 
-1. Selecteer in Objectverkenner de vervolg keuzelijst **verbinding maken** en selecteer **Data base-engine**. Het dialoogvenster **Verbinding maken met server** wordt geopend.
+1. Selecteer Objectverkenner vervolgkeuzelijst **Verbinding** maken en selecteer **Database Engine.** Het dialoogvenster **Verbinding maken met server** wordt geopend.
 
     ![Verbinding maken met nieuwe aanmelding](./media/load-data-from-azure-blob-storage-using-polybase/connect-as-loading-user.png)
 
@@ -88,9 +88,9 @@ De eerste stap voor het laden van gegevens bestaat uit aanmelding als LoaderRC20
 
     ![Verbinding geslaagd](./media/load-data-from-azure-blob-storage-using-polybase/connected-as-new-login.png)
 
-## <a name="create-tables-for-the-sample-data"></a>Tabellen maken voor de voorbeeld gegevens
+## <a name="create-tables-for-the-sample-data"></a>Tabellen maken voor de voorbeeldgegevens
 
-U bent klaar om te beginnen met het laden van gegevens in uw nieuwe datawarehouse. In dit deel van de zelf studie ziet u hoe u de instructie COPY kunt gebruiken om de gegevens van het nieuwe taxi-CAB-bestand in de Utrecht te laden vanuit een Azure Storage-blob. Zie het [overzicht van laden](design-elt-data-loading.md)voor meer informatie over het ophalen van uw gegevens naar Azure Blob Storage of het rechtstreeks laden vanuit uw bron.
+U bent klaar om te beginnen met het laden van gegevens in uw nieuwe datawarehouse. In dit deel van de zelfstudie ziet u hoe u de copy-instructie gebruikt om de gegevensset taxi's in New York te laden uit een Azure Storage blob. Zie het laadoverzicht voor informatie over hoe u uw gegevens in de toekomst kunt Azure Blob Storage of om deze rechtstreeks vanuit uw bron [te laden.](design-elt-data-loading.md)
 
 Voer de volgende SQL-scripts uit en geef informatie op over de gegevens die u wilt laden. Deze informatie omvat de locatie waar de gegevens zich bevinden, de indeling van de inhoud van de gegevens en de tabeldefinitie voor de gegevens.
 
@@ -251,10 +251,10 @@ Voer de volgende SQL-scripts uit en geef informatie op over de gegevens die u wi
 
 ## <a name="load-the-data-into-your-data-warehouse"></a>De gegevens in uw datawarehouse laden
 
-In deze sectie wordt de [instructie Copy gebruikt om](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true) de voorbeeld gegevens van Azure Storage BLOB te laden.  
+In deze sectie wordt de [instructie COPY gebruikt om de voorbeeldgegevens](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true) uit de Azure Storage Blob.  
 
 > [!NOTE]
-> In deze zelfstudie worden de gegevens rechtstreeks in de definitieve tabel geladen. Normaal gesp roken laadt u in een faserings tabel voor de werk belasting van uw productie. U kunt alle benodigde transformaties uitvoeren wanneer de gegevens zich in de faseringstabel bevinden. 
+> In deze zelfstudie worden de gegevens rechtstreeks in de definitieve tabel geladen. Normaal gesproken laadt u in een faseringstabel voor uw productieworkloads. U kunt alle benodigde transformaties uitvoeren wanneer de gegevens zich in de faseringstabel bevinden. 
 
 1. Voer de volgende instructies uit om de gegevens te laden:
 
@@ -334,7 +334,7 @@ In deze sectie wordt de [instructie Copy gebruikt om](/sql/t-sql/statements/copy
     OPTION (LABEL = 'COPY : Load [dbo].[Trip] - Taxi dataset');
     ```
 
-2. Bekijk uw gegevens tijdens het laden. U laadt verschillende GB van gegevens en comprimeert deze in zeer krachtige, geclusterde column Store-indexen. Voer de volgende query uit, die gebruikmaakt van dynamische beheerweergaven (DMV's) om de status van de belasting weer te geven.
+2. Bekijk uw gegevens tijdens het laden. U laadt verschillende TB's aan gegevens en comprimeert deze tot zeer goed presterende geclusterde columnstore-indexen. Voer de volgende query uit, die gebruikmaakt van dynamische beheerweergaven (DMV's) om de status van de belasting weer te geven.
 
     ```sql
     SELECT  r.[request_id]                           
@@ -379,21 +379,21 @@ Er kunnen kosten in rekening worden gebracht voor rekenresources en gegevens die
 
 Volg deze stappen om de resources op te schonen zoals gewenst.
 
-1. Meld u aan bij de [Azure Portal](https://portal.azure.com)en selecteer uw data warehouse.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com), selecteer uw datawarehouse.
 
     ![Resources opschonen](./media/load-data-from-azure-blob-storage-using-polybase/clean-up-resources.png)
 
 2. Als u het berekenen wilt onderbreken, selecteert u de knop **Onderbreken**. Als het datawarehouse is onderbroken, ziet u de knop **Start**.  Als u de berekening wilt hervatten, selecteert u **Starten**.
 
-3. Selecteer **verwijderen** om het Data Warehouse te verwijderen, zodat er geen kosten in rekening worden gebracht voor berekenen of opslag.
+3. Als u het datawarehouse wilt verwijderen zodat er geen kosten in rekening worden gebracht voor rekenkracht of opslag, selecteert u **Verwijderen.**
 
-4. Als u de server die u hebt gemaakt, wilt verwijderen, selecteert u **mynewserver-20180430.database.Windows.net** in de vorige installatie kopie en selecteert u vervolgens **verwijderen**.  Wees hiermee voorzichtig. Als u de server verwijdert, worden ook alle databases verwijderd die zijn toegewezen aan de server.
+4. Als u de server wilt verwijderen die u hebt **gemaakt, selecteert mynewserver-20180430.database.windows.net** in de vorige afbeelding en selecteert u **vervolgens Verwijderen.**  Wees hiermee voorzichtig. Als u de server verwijdert, worden ook alle databases verwijderd die zijn toegewezen aan de server.
 
 5. Als u de resourcegroep wilt verwijderen, selecteert u **myResourceGroup**. Selecteer vervolgens **Resourcegroep verwijderen**.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie hebt u geleerd hoe u een datawarehouse en een gebruiker voor het laden van gegevens maakt. U hebt de [instructie Simple Copy](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true#examples) gebruikt voor het laden van gegevens in uw data warehouse.
+In deze zelfstudie hebt u geleerd hoe u een datawarehouse en een gebruiker voor het laden van gegevens maakt. U hebt de eenvoudige [copy-instructie gebruikt](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true#examples) om gegevens in uw datawarehouse te laden.
 
 U hebt het volgende gedaan:
 > [!div class="checklist"]
@@ -402,17 +402,17 @@ U hebt het volgende gedaan:
 > * Een serverfirewallregel ingesteld in Azure Portal
 > * Verbinding gemaakt met het datawarehouse met SMMS
 > * Een gebruiker gemaakt die wordt aangewezen om gegevens te laden
-> * De tabellen voor de voorbeeld gegevens zijn gemaakt
-> * De COPY T-SQL-instructie is gebruikt om gegevens in uw data warehouse te laden
+> * De tabellen voor de voorbeeldgegevens gemaakt
+> * De T-SQL-instructie COPY gebruikt om gegevens in uw datawarehouse te laden
 > * De voortgang van de gegevens weergegeven terwijl deze werden geladen
 
-Ga naar het overzicht voor ontwikkel aars voor meer informatie over het migreren van een bestaande Data Base naar Azure Synapse Analytics:
+Naar het overzicht van ontwikkeling gaan voor meer informatie over het migreren van een bestaande database naar Azure Synapse Analytics:
 
 > [!div class="nextstepaction"]
-> [Ontwerp beslissingen voor het migreren van een bestaande Data Base naar Azure Synapse Analytics](sql-data-warehouse-overview-develop.md)
+> [Ontwerpbeslissingen voor het migreren van een bestaande database naar Azure Synapse Analytics](sql-data-warehouse-overview-develop.md)
 
-Raadpleeg de volgende documentatie voor meer informatie over het laden van voor beelden en verwijzingen:
+Bekijk de volgende documentatie voor meer laadvoorbeelden en -verwijzingen:
 
-- [Naslag documentatie over het kopiëren van instructies](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true#syntax)
-- [Voor beelden kopiëren voor elke authenticatie methode](./quickstart-bulk-load-copy-tsql-examples.md)
-- [Quick start voor één tabel kopiëren](./quickstart-bulk-load-copy-tsql.md)
+- [Referentiedocumentatie voor COPY-instructie](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true#syntax)
+- [COPY-voorbeelden voor elke verificatiemethode](./quickstart-bulk-load-copy-tsql-examples.md)
+- [Snelstart copy voor één tabel](./quickstart-bulk-load-copy-tsql.md)

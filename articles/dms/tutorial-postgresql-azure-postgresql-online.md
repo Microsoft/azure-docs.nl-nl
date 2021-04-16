@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019, devx-track-azurecli
 ms.topic: tutorial
 ms.date: 04/11/2020
-ms.openlocfilehash: bb4dd08b4f30982ec4572fd4e130a89112578175
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 37f33a217467619240d3339363c6a2fcd8800a12
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102203552"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107505544"
 ---
 # <a name="tutorial-migrate-postgresql-to-azure-db-for-postgresql-online-using-dms-via-the-azure-cli"></a>Zelfstudie: PostgreSQL online migreren naar Azure DB for PostgreSQL met behulp van DMS en Azure CLI
 
@@ -58,7 +58,7 @@ Voor het voltooien van deze zelfstudie hebt u het volgende nodig:
     >
     > Deze configuratie is noodzakelijk omdat Azure Database Migration Service geen internetverbinding biedt.
 
-* Zorg ervoor dat de regels voor de uitgaande poort 443 van ServiceTag voor ServiceBus, opslag en AzureMonitor niet worden geblokkeerd door de NSG Zie het artikel [Netwerkverkeer filteren met netwerkbeveiligingsgroepen](../virtual-network/virtual-network-vnet-plan-design-arm.md) voor meer informatie over verkeer filteren van verkeer via de netwerkbeveiligingsgroep voor virtuele netwerken.
+* Zorg ervoor dat de regels voor de netwerkbeveiligingsgroep (NSG) van uw virtuele netwerk de uitgaande poort 443 van ServiceTag voor ServiceBus, Storage en AzureMonitor niet blokkeren. Zie het artikel [Netwerkverkeer filteren met netwerkbeveiligingsgroepen](../virtual-network/virtual-network-vnet-plan-design-arm.md) voor meer informatie over verkeer filteren van verkeer via de netwerkbeveiligingsgroep voor virtuele netwerken.
 * Configureer uw [Windows Firewall voor toegang tot de database-engine](/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
 * Stel uw Windows-firewall open voor toegang van Azure Database Migration Service tot de oorspronkelijke PostgreSQL Server. Standaard verloopt dit via TCP-poort 5432.
 * Wanneer u een firewallapparaat gebruikt voor de brondatabase(s), moet u mogelijk firewallregels toevoegen om voor de Azure Database Migration Service toegang tot de brondatabase(s) voor de migratie toe te staan.
@@ -155,7 +155,7 @@ Om alle databaseobjecten zoals tabelschema’s, indexen en opgeslagen procedures
 
 6. Als er tabellen zijn die ENUM-gegevenstypen bevatten, wordt u geadviseerd om deze in de doeltabel tijdelijk bij te werken naar een 'character varying'-gegevenstype. Wanneer de gegevensreplicatie is voltooid, wijzigt u het gegevenstype weer in ENUM.
 
-## <a name="provisioning-an-instance-of-dms-using-the-cli"></a>Een exemplaar van DMS inrichten met behulp van de CLI
+## <a name="provisioning-an-instance-of-dms-using-the-azure-cli"></a>Een exemplaar van DMS inrichten met behulp van de Azure CLI
 
 1. Installeer als volgt de DMS-synchronisatie-extensie:
    * Meld u aan bij Azure door de volgende opdracht uit te voeren:

@@ -1,29 +1,32 @@
 ---
-title: VM-extensie inschakelen met Azure Resource Manager sjabloon
-description: In dit artikel wordt beschreven hoe u virtuele-machine uitbreidingen implementeert voor Azure Arc-servers die worden uitgevoerd in hybride Cloud omgevingen met behulp van een Azure Resource Manager sjabloon.
-ms.date: 03/01/2021
+title: VM-extensie inschakelen met behulp Azure Resource Manager sjabloon
+description: In dit artikel wordt beschreven hoe u extensies van virtuele machines implementeert op Azure Arc servers die worden uitgevoerd in hybride cloudomgevingen met behulp van een Azure Resource Manager sjabloon.
+ms.date: 04/13/2021
 ms.topic: conceptual
-ms.openlocfilehash: 88296cd4f410defcaf7db15507ddac42e80cba2d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 095f95192a2054d34e438d8683ac9c2e20a824f1
+ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101688260"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107389635"
 ---
-# <a name="enable-azure-vm-extensions-by-using-arm-template"></a>Azure VM-extensies inschakelen met ARM-sjabloon
+# <a name="enable-azure-vm-extensions-by-using-arm-template"></a>Azure VM-extensies inschakelen met behulp van een ARM-sjabloon
 
-In dit artikel wordt beschreven hoe u een Azure Resource Manager sjabloon (ARM-sjabloon) kunt gebruiken voor het implementeren van Azure VM-extensies die worden ondersteund door Azure Arc-servers.
+In dit artikel wordt beschreven hoe u een AZURE RESOURCE MANAGER-sjabloon (ARM-sjabloon) gebruikt om Azure VM-extensies te implementeren, ondersteund door Azure Arc ingeschakelde servers.
 
-VM-extensies kunnen worden toegevoegd aan een Azure Resource Manager sjabloon en worden uitgevoerd met de implementatie van de sjabloon. Met de VM-extensies die worden ondersteund door Arc-servers, kunt u de ondersteunde VM-extensie implementeren op Linux-of Windows-computers met behulp van Azure PowerShell. Elk voor beeld hieronder bevat een sjabloon bestand en een parameter bestand met voorbeeld waarden die aan de sjabloon kunnen worden door gegeven.
+VM-extensies kunnen worden toegevoegd aan Azure Resource Manager sjabloon en worden uitgevoerd met de implementatie van de sjabloon. Met de VM-extensies die worden ondersteund door Arc-servers, kunt u de ondersteunde VM-extensie implementeren op Linux- of Windows-computers met behulp van Azure PowerShell. Elk voorbeeld hieronder bevat een sjabloonbestand en een parametersbestand met voorbeeldwaarden voor de sjabloon.
 
 >[!NOTE]
->Hoewel meerdere uitbrei dingen tegelijk kunnen worden gebatcheerd en verwerkt, worden ze serieel geïnstalleerd. Zodra de eerste installatie van de extensie is voltooid, wordt de installatie van de volgende uitbrei ding geprobeerd.
+>Hoewel meerdere extensies tegelijk kunnen worden gebatcheerd en verwerkt, worden ze serieel geïnstalleerd. Zodra de eerste installatie van de extensie is voltooid, wordt geprobeerd de volgende extensie te installeren.
+
+> [!NOTE]
+> Azure Arc-servers biedt geen ondersteuning voor het implementeren en beheren van VM-extensies op virtuele Azure-machines. Zie het volgende artikel overzicht van VM-extensies voor [Azure-VM's.](../../virtual-machines/extensions/overview.md)
 
 ## <a name="deploy-the-log-analytics-vm-extension"></a>De Log Analytics VM-extensie implementeren
 
-Om de Log Analytics-agent eenvoudig te implementeren, wordt het volgende voor beeld gegeven om de agent te installeren op Windows of Linux.
+Als u de Log Analytics-agent eenvoudig wilt implementeren, wordt het volgende voorbeeld gegeven om de agent in Windows of Linux te installeren.
 
-### <a name="template-file-for-linux"></a>Sjabloon bestand voor Linux
+### <a name="template-file-for-linux"></a>Sjabloonbestand voor Linux
 
 ```json
 {
@@ -64,7 +67,7 @@ Om de Log Analytics-agent eenvoudig te implementeren, wordt het volgende voor be
 }
 ```
 
-### <a name="template-file-for-windows"></a>Sjabloon bestand voor Windows
+### <a name="template-file-for-windows"></a>Sjabloonbestand voor Windows
 
 ```json
 {
@@ -129,25 +132,25 @@ Om de Log Analytics-agent eenvoudig te implementeren, wordt het volgende voor be
 }
 ```
 
-Sla de sjabloon en de parameter bestanden op schijf op en bewerk het parameter bestand met de juiste waarden voor uw implementatie. U kunt vervolgens de uitbrei ding installeren op alle verbonden computers in een resource groep met de volgende opdracht. De opdracht gebruikt de para meter *TemplateFile* om de sjabloon op te geven en de para meter *TemplateParameterFile* om een bestand op te geven dat para meters en parameter waarden bevat.
+Sla de sjabloon- en parameterbestanden op schijf op en bewerk het parameterbestand met de juiste waarden voor uw implementatie. U kunt de extensie vervolgens installeren op alle verbonden machines binnen een resourcegroep met de volgende opdracht. De opdracht gebruikt de *parameter TemplateFile* om de sjabloon en de parameter *TemplateParameterFile* op te geven om een bestand op te geven dat parameters en parameterwaarden bevat.
 
 ```powershell
 New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateFile "D:\Azure\Templates\LogAnalyticsAgent.json" -TemplateParameterFile "D:\Azure\Templates\LogAnalyticsAgentParms.json"
 ```
 
-## <a name="deploy-the-custom-script-extension"></a>De aangepaste script extensie implementeren
+## <a name="deploy-the-custom-script-extension"></a>De aangepaste scriptextensie implementeren
 
-Als u de aangepaste script extensie wilt gebruiken, is het volgende voor beeld van toepassing op Windows en Linux. Zie [aangepaste script extensie voor Windows](../../virtual-machines/extensions/custom-script-windows.md) of [aangepaste script extensie voor Linux](../../virtual-machines/extensions/custom-script-linux.md)als u niet bekend bent met de aangepaste script extensie. Er zijn een aantal verschillende kenmerken die u moet begrijpen wanneer u deze uitbrei ding met hybride computers gebruikt:
+Als u de aangepaste scriptextensie wilt gebruiken, wordt het volgende voorbeeld gegeven om te worden uitgevoerd in Windows en Linux. Zie Aangepaste scriptextensie voor [Windows](../../virtual-machines/extensions/custom-script-windows.md) of Aangepaste scriptextensie voor Linux als u niet bekend bent met de aangepaste [scriptextensie.](../../virtual-machines/extensions/custom-script-linux.md) Er zijn een aantal verschillende kenmerken die u moet begrijpen bij het gebruik van deze extensie met hybride machines:
 
-* De lijst met ondersteunde besturings systemen met de aangepaste script extensie van Azure VM is niet van toepassing op servers met Azure-Arc. De lijst met ondersteunde OSs voor Arc ingeschakelde servers vindt u [hier](agent-overview.md#supported-operating-systems).
+* De lijst met ondersteunde besturingssystemen met de aangepaste scriptextensie van azure-VM is niet van toepassing op Azure Arc ingeschakelde servers. De lijst met ondersteunde BES's voor Arc-servers vindt u [hier.](agent-overview.md#supported-operating-systems)
 
-* Configuratie gegevens met betrekking tot Azure-Virtual Machine Scale Sets of klassieke Vm's zijn niet van toepassing.
+* Configuratiedetails met betrekking Virtual Machine Scale Sets Azure-VM's of klassieke VM's zijn niet van toepassing.
 
-* Als uw machines een script extern moeten downloaden en alleen via een proxy server kunnen communiceren, moet u [de verbonden machine agent configureren](manage-agent.md#update-or-remove-proxy-settings) om de omgevings variabele van de proxy server in te stellen.
+* Als uw computers een script extern moeten downloaden en alleen kunnen communiceren via een proxyserver, moet u de Connected [Machine-agent](manage-agent.md#update-or-remove-proxy-settings) configureren om de omgevingsvariabele voor de proxyserver in te stellen.
 
-De configuratie van de aangepaste script extensie bevat dingen als de script locatie en de opdracht die moet worden uitgevoerd. Deze configuratie is opgegeven in een Azure Resource Manager sjabloon die hieronder wordt weer gegeven voor de hybride machines van Linux en Windows.
+De configuratie van de aangepaste scriptextensie specificeert zaken als scriptlocatie en de uit te voeren opdracht. Deze configuratie wordt opgegeven in een sjabloon Azure Resource Manager, die hieronder wordt opgegeven voor zowel Linux- als Windows-hybride machines.
 
-### <a name="template-file-for-linux"></a>Sjabloon bestand voor Linux
+### <a name="template-file-for-linux"></a>Sjabloonbestand voor Linux
 
 ```json
 {
@@ -188,7 +191,7 @@ De configuratie van de aangepaste script extensie bevat dingen als de script loc
 }
 ```
 
-### <a name="template-file-for-windows"></a>Sjabloon bestand voor Windows
+### <a name="template-file-for-windows"></a>Sjabloonbestand voor Windows
 
 ```json
 {
@@ -291,11 +294,11 @@ De configuratie van de aangepaste script extensie bevat dingen als de script loc
 }
 ```
 
-## <a name="deploy-the-dependency-agent-extension"></a>De extensie van de afhankelijkheids agent implementeren
+## <a name="deploy-the-dependency-agent-extension"></a>De afhankelijkheidsagentextensie implementeren
 
-Als u de Azure Monitor dependency agent-extensie wilt gebruiken, is het volgende voor beeld in Windows en Linux opgenomen. Als u niet bekend bent met de afhankelijkheids agent, raadpleegt u [overzicht van Azure monitor agents](../../azure-monitor/agents/agents-overview.md#dependency-agent).
+Als u de extensie Azure Monitor Dependency Agent wilt gebruiken, wordt het volgende voorbeeld gegeven om uit te voeren op Windows en Linux. Als u niet bekend bent met de afhankelijkheidsagent, zie [Overzicht van Azure Monitor agents.](../../azure-monitor/agents/agents-overview.md#dependency-agent)
 
-### <a name="template-file-for-linux"></a>Sjabloon bestand voor Linux
+### <a name="template-file-for-linux"></a>Sjabloonbestand voor Linux
 
 ```json
 {
@@ -333,7 +336,7 @@ Als u de Azure Monitor dependency agent-extensie wilt gebruiken, is het volgende
 }
 ```
 
-### <a name="template-file-for-windows"></a>Sjabloon bestand voor Windows
+### <a name="template-file-for-windows"></a>Sjabloonbestand voor Windows
 
 ```json
 {
@@ -373,17 +376,17 @@ Als u de Azure Monitor dependency agent-extensie wilt gebruiken, is het volgende
 
 ### <a name="template-deployment"></a>Sjabloonimplementatie
 
-Sla het sjabloon bestand op schijf op. U kunt de uitbrei ding vervolgens implementeren op de verbonden computer met de volgende opdracht.
+Sla het sjabloonbestand op schijf op. Vervolgens kunt u de extensie implementeren op de verbonden computer met de volgende opdracht.
 
 ```powershell
 New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateFile "D:\Azure\Templates\DependencyAgent.json"
 ```
 
-## <a name="deploy-azure-key-vault-vm-extension-preview"></a>Azure Key Vault VM-extensie implementeren (preview)
+## <a name="deploy-azure-key-vault-vm-extension-preview"></a>VM Azure Key Vault-extensie implementeren (preview)
 
-De volgende JSON toont het schema voor de extensie van de Key Vault-VM (preview). Voor de extensie zijn geen beveiligde instellingen vereist: alle instellingen ervan worden beschouwd als open bare informatie. De uitbrei ding vereist een lijst met bewaakte certificaten, polling frequentie en het doel certificaat archief. Met name:
+De volgende JSON toont het schema voor de Key Vault VM-extensie (preview). Voor de extensie zijn geen beveiligde instellingen vereist: alle instellingen worden beschouwd als openbare informatie. Voor de extensie is een lijst met bewaakte certificaten, pollingfrequentie en het doelcertificaatopslag vereist. Met name:
 
-### <a name="template-file-for-linux"></a>Sjabloon bestand voor Linux
+### <a name="template-file-for-linux"></a>Sjabloonbestand voor Linux
 
 ```json
 {
@@ -447,7 +450,7 @@ De volgende JSON toont het schema voor de extensie van de Key Vault-VM (preview)
 }
 ```
 
-### <a name="template-file-for-windows"></a>Sjabloon bestand voor Windows
+### <a name="template-file-for-windows"></a>Sjabloonbestand voor Windows
 
 ```json
 {
@@ -520,26 +523,26 @@ De volgende JSON toont het schema voor de extensie van de Key Vault-VM (preview)
 ```
 
 > [!NOTE]
-> De Url's van uw waargenomen certificaten moeten van het formulier zijn `https://myVaultName.vault.azure.net/secrets/myCertName` .
+> De URL's van uw waargenomen certificaten moeten de vorm `https://myVaultName.vault.azure.net/secrets/myCertName` hebben.
 >
-> Dit komt doordat het `/secrets` pad het volledige certificaat retourneert, inclusief de persoonlijke sleutel, terwijl het `/certificates` pad niet. Meer informatie over certificaten vindt u hier: [Key Vault certificaten](../../key-vault/general/about-keys-secrets-certificates.md)
+> Dit komt doordat het pad het volledige certificaat, met inbegrip van `/secrets` de persoonlijke sleutel, retourneert, terwijl het pad dat niet `/certificates` doet. Meer informatie over certificaten vindt u hier: [Key Vault Certificaten](../../key-vault/general/about-keys-secrets-certificates.md)
 
 ### <a name="template-deployment"></a>Sjabloonimplementatie
 
-Sla het sjabloon bestand op schijf op. U kunt de uitbrei ding vervolgens implementeren op de verbonden computer met de volgende opdracht.
+Sla het sjabloonbestand op schijf op. Vervolgens kunt u de extensie implementeren op de verbonden computer met de volgende opdracht.
 
 > [!NOTE]
-> Voor de VM-extensie moet een door het systeem toegewezen identiteit worden toegewezen om te verifiëren bij de sleutel kluis. Zie [verifiëren voor Key Vault met behulp van beheerde identiteit](managed-identity-authentication.md) voor servers met Windows-en Linux-Arc.
+> Voor de VM-extensie moet een door het systeem toegewezen identiteit worden toegewezen voor verificatie bij Key Vault. Zie [How to authenticate to Key Vault using managed identity](managed-identity-authentication.md) for Windows and Linux Arc enabled servers (Verificatie met beheerde identiteit voor Servers met Windows en Linux Arc).
 
 ```powershell
 New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateFile "D:\Azure\Templates\KeyVaultExtension.json"
 ```
 
-## <a name="deploy-the-azure-defender-integrated-scanner"></a>De geïntegreerde Azure Defender-scanner implementeren
+## <a name="deploy-the-azure-defender-integrated-scanner"></a>De Azure Defender scanner implementeren
 
-Als u de Azure Defender Integrated-scanner uitbreiding wilt gebruiken, wordt het volgende voor beeld gegeven om te worden uitgevoerd op Windows en Linux. Als u niet bekend bent met de geïntegreerde scanner, raadpleegt u [overzicht van de oplossing voor de evaluatie van beveiligings problemen van Azure Defender](../../security-center/deploy-vulnerability-assessment-vm.md) voor hybride computers.
+Als u de Azure Defender scannerextensie wilt gebruiken, wordt het volgende voorbeeld gegeven om te worden uitgevoerd in Windows en Linux. Zie Overview of Azure Defender vulnerability [assessment solution](../../security-center/deploy-vulnerability-assessment-vm.md) for hybrid machines (Overzicht van de oplossing voor Azure Defender evaluatie van beveiligingsleed voor hybride machines) als u niet bekend bent met de geïntegreerde scanner.
 
-### <a name="template-file-for-windows"></a>Sjabloon bestand voor Windows
+### <a name="template-file-for-windows"></a>Sjabloonbestand voor Windows
 
 ```json
 {
@@ -576,7 +579,7 @@ Als u de Azure Defender Integrated-scanner uitbreiding wilt gebruiken, wordt het
 }
 ```
 
-### <a name="template-file-for-linux"></a>Sjabloon bestand voor Linux
+### <a name="template-file-for-linux"></a>Sjabloonbestand voor Linux
 
 ```json
 {
@@ -615,7 +618,7 @@ Als u de Azure Defender Integrated-scanner uitbreiding wilt gebruiken, wordt het
 
 ### <a name="template-deployment"></a>Sjabloonimplementatie
 
-Sla het sjabloon bestand op schijf op. U kunt de uitbrei ding vervolgens implementeren op de verbonden computer met de volgende opdracht.
+Sla het sjabloonbestand op schijf op. Vervolgens kunt u de extensie implementeren op de verbonden computer met de volgende opdracht.
 
 ```powershell
 New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateFile "D:\Azure\Templates\AzureDefenderScanner.json"
@@ -623,6 +626,6 @@ New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateF
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* U kunt VM-extensies implementeren, beheren en verwijderen met behulp van de [Azure PowerShell](manage-vm-extensions-powershell.md), van de [Azure Portal](manage-vm-extensions-portal.md)of de [Azure cli](manage-vm-extensions-cli.md).
+* U kunt VM-extensies implementeren, beheren en verwijderen met behulp van [Azure PowerShell](manage-vm-extensions-powershell.md), vanuit [de Azure Portal](manage-vm-extensions-portal.md)of de [Azure CLI.](manage-vm-extensions-cli.md)
 
-* Informatie over probleem oplossing vindt u in de [gids voor het oplossen van problemen met VM-extensies](troubleshoot-vm-extensions.md).
+* Informatie over probleemoplossing vindt u in de handleiding Problemen met [VM-extensies oplossen.](troubleshoot-vm-extensions.md)

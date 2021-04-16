@@ -1,11 +1,11 @@
-- name: Documentatie over Translator-service
+- name: Documentatie voor Translator Service
   href: index.yml
 - name: Overzicht
   expanded: true
   items:
     - name: Taalondersteuning
       href: language-support.md
-    - name: Prijzen en beperkingen
+    - name: Prijzen
       href: 'https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator'
 - name: Tekstomzetting
   expanded: true
@@ -18,7 +18,7 @@
       href: quickstart-translator.md
     - name: Voorbeelden
       items:
-        - name: Voorbeeld pagina voor code
+        - name: Pagina Codevoorbeeld
           href: /samples/browse/?terms=microsoft%20translator
         - name: C#
           href: /samples/microsofttranslator/text-translation-api-v3-c-sharp/translator-c-sharp-v3/
@@ -134,42 +134,52 @@
           href: custom-translator/training-and-model.md
         - name: BLEU-score
           href: custom-translator/what-is-bleu-score.md
-- name: Document vertaling
+- name: Documentvertaling
   items:
-    - name: Wat is document vertalingen?
+    - name: Wat is documentvertaling?
       href: document-translation/overview.md
     - name: Snelstart
       href: document-translation/get-started-with-document-translation.md
     - name: Instructiegidsen
       items:
-        - name: SAS-tokens maken voor document vertalingen
+        - name: SAS-tokens maken voor documentvertaling
           href: document-translation/create-sas-tokens.md
     - name: Referentie
       items:
-        - name: Document indelingen ophalen
+        - name: Documentindelingen opmaken
           href: document-translation/reference/get-document-formats.md
-        - name: Woordenlijst indelingen ophalen
+        - name: Woordenlijstindelingen krijgen
           href: document-translation/reference/get-glossary-formats.md
-        - name: Bron voor document opslag ophalen
+        - name: Documentopslagbron op halen
           href: document-translation/reference/get-document-storage-source.md
-        - name: Batch-aanvraag indienen
+        - name: Batchaanvraag verzenden
           href: document-translation/reference/submit-batch-request.md
-        - name: Status van bewerkings documenten ophalen
+        - name: Status van bewerkingsdocumenten op halen
           href: document-translation/reference/get-operation-documents-status.md
-        - name: Status van documenten ophalen
+        - name: De status van documenten op halen
           href: document-translation/reference/get-document-status.md
-        - name: Get-bewerkingen
+        - name: Bewerkingen op halen
           href: document-translation/reference/get-operations.md
         - name: Bewerking annuleren
           href: document-translation/reference/cancel-operation.md
+- name: Instructiegidsen
+  items:
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Virtuele netwerken instellen
+          href: ../cognitive-services-virtual-networks.md?context=/azure/cognitive-services/translator/context/context
+        - name: Door de klant beheerde sleutels gebruiken
+          href: encrypt-data-at-rest.md
 - name: Resources
   items:
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Ondersteuning voor regio
+          href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+        - name: Naleving en certificering
+          href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Opties voor ondersteuning en hulp
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/translator/context/context
-    - name: Naleving
-      href: 'https://azure.microsoft.com/en-us/support/legal/cognitive-services-compliance-and-privacy'
-    - name: Versleuteling
-      href: encrypt-data-at-rest.md
     - name: Codevoorbeelden op GitHub
       href: 'https://aka.ms/TranslatorGitHub'
     - name: Privacy en cookies

@@ -3,12 +3,12 @@ title: Azure Messaging-services - Service Manager naar Resource Manager
 description: Dit artikel bevat de toewijzing van afgeschafte Azure Service Manager REST API & PowerShell-cmdlets voor Resource Manager REST API & PowerShell-cmdlets.
 ms.topic: article
 ms.date: 04/13/2021
-ms.openlocfilehash: 41e5e22910a5f972be57185f112544c3cde21fb3
-ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
+ms.openlocfilehash: 873ab06317088b10d3835bdd10bb31a86ad5cf12
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107388241"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107519966"
 ---
 # <a name="deprecation-of-azure-service-manager-support-for-azure-service-bus-relay-and-event-hubs"></a>Afschaffing van Azure Service Manager ondersteuning voor Azure Service Bus, Relay en Event Hubs
 
@@ -18,7 +18,7 @@ Als u Service Bus, Relay en Event Hubs wilt blijven gebruiken, gaat u naar Resou
 
 Zie de [TechNet-blog](https://blogs.technet.microsoft.com/meamcs/2016/12/22/difference-between-azure-service-manager-and-azure-resource-manager/)Azure Resource Manager meer informatie Service Manager over azure-Service Manager.
 
-Zie onze documentatie over Service Manager en Resource Manager voor Azure Service Bus, Relay en Event Hubs voor meer informatie over REST API api's:
+Voor meer informatie over Service Manager en Resource Manager API's voor Azure Service Bus, Relay en Event Hubs, zie onze REST API documentatie:
 
 - [Azure Service Bus](/rest/api/servicebus/)
 - [Azure Event Hubs](/rest/api/eventhub/)
@@ -46,7 +46,7 @@ Service Bus/Event Hub/Relay<br/>```PUT https://management.core.windows.net/{subs
 | **EventHubsCrud-ListEventHubsAsync**<br/>[Lijst Event Hubs](/rest/api/eventhub/list-event-hubs)<br/>```GET https://management.core.windows.net/{subscription ID}/services/ServiceBus/Namespaces/{namespace name}/eventhubs?$skip={skip}&$top={top}``` | &nbsp; | [list](/rest/api/servicebus/stable/eventhubs/listbynamespace) | &nbsp; | 
 | **EventHubsCrud-GetEventHubAsync**<br/>[De Event Hubs](/rest/api/eventhub/get-event-hub)<br/>```GET https://management.core.windows.net/{subscription ID}/services/ServiceBus/Namespaces/{namespace name}/eventhubs/{eventHubPath}``` | &nbsp; | [Toevoegen](/rest/api/eventhub/get-event-hub) | &nbsp; | 
 | **NamespaceAuthorizationRules-DeleteNamespaceAuthorizationRuleAsync**<br/>Service Bus/Event Hub/Relay<br/>```DELETE https://management.core.windows.net/{subscription ID}/services/ServiceBus/Namespaces/{namespace name}/AuthorizationRules/{rule name}``` | [deleteauthorizationrule](/rest/api/servicebus/stable/namespaces%20-%20authorization%20rules/deleteauthorizationrule) | [deleteauthorizationrule](/rest/api/eventhub/stable/authorization%20rules%20-%20namespaces/deleteauthorizationrule) | [deleteauthorizationrule](/rest/api/relay/namespaces/deleteauthorizationrule) |
-| **NamespaceAuthorizationRules-GetNamespaceAuthorizationRulesAsync**<br/>Service Bus/EventHub/Relay<br/>```GET https://management.core.windows.net/{subscription ID}/services/ServiceBus/Namespaces/{namespace name}/AuthorizationRules``` | [listauthorizationrules](/rest/api/relay/namespaces/listauthorizationrules) | [listauthorizationrules](/rest/api/eventhub/stable/authorization%20rules%20-%20namespaces/listauthorizationrules) | [listauthorizationrules](/rest/api/relay/namespaces/listauthorizationrules) |
+| **NamespaceAuthorizationRules-GetNamespaceAuthorizationRulesAsync**<br/>Service Bus/EventHub/Relay<br/>```GET https://management.core.windows.net/{subscription ID}/services/ServiceBus/Namespaces/{namespace name}/AuthorizationRules``` | [listauthorizationrules](/rest/api/servicebus/stable/namespaces%20-%20authorization%20rules/listauthorizationrules) | [listauthorizationrules](/rest/api/eventhub/stable/authorization%20rules%20-%20namespaces/listauthorizationrules) | [listauthorizationrules](/rest/api/relay/namespaces/listauthorizationrules) |
 | **NaamruimteAvailability-IsNamespaceAvailable**<br/>[Service Bus naamruimtebeschikbaarheid](/rest/api/servicebus/check-namespace-availability)<br/>```GET https://management.core.windows.net/{subscription ID}/services/ServiceBus/CheckNamespaceAvailability/?namespace=<namespaceValue>``` | [checknameavailability](/rest/api/servicebus/stable/namespaces%20-%20checkname%20availability/checknameavailability) | [checknameavailability](/rest/api/eventhub/stable/check%20name%20availability%20-%20namespaces/checknameavailability) | [checknameavailability](/rest/api/relay/namespaces/checknameavailability) |
 | **Naamruimten-CreateOrUpdateNamespaceAsync**<br/>Service Bus/Event Hub/Relay<br/>```PUT https://management.core.windows.net/{subscription ID}/services/ServiceBus/Namespaces/{namespace name}``` | [createorupdate](/rest/api/servicebus/stable/namespaces/createorupdate) | [createorupdate](/rest/api/eventhub/stable/namespaces/createorupdate) | [createorupdate](/rest/api/relay/namespaces/createorupdate) | 
 | **Onderwerpen-GetTopicAsync**<br/>```GET https://management.core.windows.net/{subscription ID}/services/ServiceBus/Namespaces/{namespace name}/topics/{topicPath}``` | [Toevoegen](/rest/api/servicebus/stable/topics/get) | &nbsp; | &nbsp; |

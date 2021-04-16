@@ -1,32 +1,32 @@
 ---
 title: Implementatiereferenties configureren
-description: Meer informatie over de typen implementatie referenties in Azure App Service en hoe u deze kunt configureren en gebruiken.
+description: Meer informatie over de typen implementatiereferenties in Azure App Service en hoe u deze kunt configureren en gebruiken.
 ms.topic: article
 ms.date: 02/11/2021
 ms.reviewer: byvinyal
-ms.custom: seodec18
-ms.openlocfilehash: c7d3c7c8b5da40a4e9ccd9085af5a850b9ebc3dd
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.custom: seodec18, devx-track-azurecli
+ms.openlocfilehash: ec48ec32250e271eff9e40535689f83dd9d3b60c
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102052344"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107483630"
 ---
-# <a name="configure-deployment-credentials-for-azure-app-service"></a>Implementatie referenties voor Azure App Service configureren
-Als u de implementatie van een app vanaf een lokale computer wilt beveiligen, ondersteunt [Azure app service](./overview.md) twee typen referenties voor [lokale Git-implementatie](deploy-local-git.md) en [FTP/S-implementatie](deploy-ftp.md). Deze referenties zijn niet hetzelfde als de referenties van uw Azure-abonnement.
+# <a name="configure-deployment-credentials-for-azure-app-service"></a>Implementatiereferenties configureren voor Azure App Service
+Voor het beveiligen van app-implementatie vanaf een lokale computer [ondersteunt Azure App Service](./overview.md) twee typen referenties voor lokale [Git-implementatie](deploy-local-git.md) en [FTP/S-implementatie.](deploy-ftp.md) Deze referenties zijn niet hetzelfde als de referenties van uw Azure-abonnement.
 
 [!INCLUDE [app-service-deploy-credentials](../../includes/app-service-deploy-credentials.md)]
 
 > [!NOTE]
-> De pagina **Development Center (klassiek)** in de Azure Portal, die de oude implementatie-ervaring is, wordt in maart 2021 afgeschaft. Deze wijziging is niet van invloed op bestaande implementatie-instellingen in uw app en u kunt de implementatie van apps blijven beheren op de pagina **implementatie centrum** .
+> De **pagina Development Center (klassiek)** in de Azure Portal, de oude implementatie-ervaring, wordt in maart 2021 afgeschaft. Deze wijziging heeft geen invloed op bestaande implementatie-instellingen in uw app en u kunt app-implementatie blijven beheren op de **pagina Implementatiecentrum.**
 
-## <a name="configure-user-scope-credentials"></a><a name="userscope"></a>Referenties voor gebruikers bereik configureren
+## <a name="configure-user-scope-credentials"></a><a name="userscope"></a>Referenties voor gebruikersbereik configureren
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/cli)
 
-Voer de opdracht [AZ webapp Deployment User set](/cli/azure/webapp/deployment/user#az-webapp-deployment-user-set) uit. Vervang \<username> en \<password> door de gebruikersnaam en het wachtwoord van de gebruiker van de implementatie. 
+Voer de [opdracht az webapp deployment user set](/cli/azure/webapp/deployment/user#az-webapp-deployment-user-set) uit. Vervang \<username> en \<password> door de gebruikersnaam en het wachtwoord van de gebruiker van de implementatie. 
 
-- De gebruikersnaam moet uniek zijn binnen Azure en voor lokale Git-pushes en mag het symbool @ niet bevatten. 
+- De gebruikersnaam moet uniek zijn binnen Azure en mag voor lokale Git-pushes niet het symbool â€ ̃@â€™ bevatten. 
 - Het wachtwoord moet ten minste acht tekens lang zijn en minimaal twee van de volgende drie typen elementen bevatten: letters, cijfers en symbolen. 
 
 ```azurecli-interactive
@@ -37,50 +37,50 @@ De JSON-uitvoer toont het wachtwoord als `null`.
 
 # <a name="azure-powershell"></a>[Azure PowerShell](#tab/powershell)
 
-U kunt de referenties van het gebruikers bereik niet configureren met Azure PowerShell. Gebruik een andere methode of overweeg de [referenties voor het toepassings bereik](#appscope)te gebruiken. 
+U kunt de referenties voor het gebruikersbereik niet configureren met Azure PowerShell. Gebruik een andere methode of overweeg het [gebruik van referenties voor het toepassingsbereik.](#appscope) 
 
 # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
-U kunt uw referenties voor gebruikers bereik configureren op de [resource pagina](../azure-resource-manager/management/manage-resources-portal.md#manage-resources)van elke app. Ongeacht in welke app u deze referenties configureert, is dit van toepassing op alle apps voor alle abonnementen in uw Azure-account. 
+U kunt uw referenties voor het gebruikersbereik configureren op de resourcepagina van [elke app.](../azure-resource-manager/management/manage-resources-portal.md#manage-resources) Ongeacht in welke app u deze referenties configureert, is deze van toepassing op alle apps voor alle abonnementen in uw Azure-account. 
 
-In de [Azure Portal](https://portal.azure.com)moet u ten minste één app hebben voordat u toegang kunt krijgen tot de pagina implementatie referenties. Uw referenties voor gebruikers bereik configureren:
+In de [Azure Portal](https://portal.azure.com)moet u ten minste één app hebben voordat u toegang hebt tot de pagina met implementatiereferenties. Uw referenties voor het gebruikersbereik configureren:
 
-1. Selecteer in het menu links van uw app >-referenties voor het **implementatie centrum**  >  **FTPS** of **lokale Git/FTPS-referenties**.
+1. Selecteer in het linkermenu van uw app > FTPS-referenties van het implementatiecentrum of lokale  >   **Git-/FTPS-referenties.**
 
-    ![Laat zien hoe u het FTP-dash board kunt selecteren in het implementatie centrum van Azure-app Services.](./media/app-service-deployment-credentials/access-no-git.png)
+    ![Laat zien hoe u het FTP-dashboard kunt selecteren in het implementatiecentrum in Azure-app Services.](./media/app-service-deployment-credentials/access-no-git.png)
 
-2. Schuif omlaag naar **gebruikers bereik**, Configureer de **gebruikers naam** en het **wacht woord** en selecteer vervolgens **Opslaan**.
+2. Schuif omlaag naar **Gebruikersbereik,** configureer **de gebruikersnaam** en **het wachtwoord** en selecteer **vervolgens Opslaan.**
 
-Wanneer u de referenties voor de implementatie hebt ingesteld, kunt u de gebruikers naam van de *Git* -implementatie vinden op de pagina **overzicht** van uw app.
+Zodra u uw implementatiereferenties hebt ingesteld, kunt u de gebruikersnaam van de *Git-implementatie* vinden op de pagina **Overzicht van uw** app.
 
-![Laat zien hoe u de gebruikers naam voor git-implementatie kunt vinden op de overzichts pagina van uw app.](./media/app-service-deployment-credentials/deployment_credentials_overview.png)
+![Laat zien hoe u de gebruikersnaam voor de Git-implementatie kunt vinden op de pagina Overzicht van uw app.](./media/app-service-deployment-credentials/deployment_credentials_overview.png)
 
-Als de Git-implementatie is geconfigureerd, wordt op de pagina een **Git/implementatie-gebruikers naam** weer gegeven. anders een **FTP/implementatie-gebruikers naam**.
+Als De Git-implementatie is geconfigureerd, wordt op de pagina een **Gebruikersnaam voor Git/implementatie weergegeven;** anders een **FTP-/implementatie-gebruikersnaam**.
 
 > [!NOTE]
-> Het implementatie wachtwoord voor uw gebruikers bereik wordt niet weer gegeven in Azure. Als u het wacht woord vergeet, kunt u uw referenties opnieuw instellen door de stappen in deze sectie te volgen.
+> Azure geeft uw implementatiewachtwoord voor het gebruikersbereik niet weer. Als u het wachtwoord bent vergeten, kunt u uw referenties opnieuw instellen door de stappen in deze sectie te volgen.
 >
 > 
 
 -----
 
-## <a name="use-user-scope-credentials-with-ftpftps"></a>Referenties voor gebruikers bereik gebruiken met FTP-FTPS
+## <a name="use-user-scope-credentials-with-ftpftps"></a>Referenties voor gebruikersbereik gebruiken met FTP/FTPS
 
-Verificatie bij een FTP-FTPS-eind punt met referenties voor gebruikers bereik vereist een gebruikers naam in de volgende indeling: `<app-name>\<user-name>`
+Voor de authenticatie bij een FTP/FTPS-eindpunt met referenties voor het gebruikersbereik is een gebruikersnaam in de volgende indeling vereist: `<app-name>\<user-name>`
 
-Omdat referenties voor gebruikers bereik zijn gekoppeld aan de gebruiker en niet aan een specifieke resource, moet de gebruikers naam deze indeling hebben om de aanmeldings actie naar het juiste app-eind punt te sturen.
+Omdat referenties voor het gebruikersbereik zijn gekoppeld aan de gebruiker en niet aan een specifieke resource, moet de gebruikersnaam deze indeling hebben om de aanmeldingsactie naar het juiste app-eindpunt te leiden.
 
-## <a name="get-application-scope-credentials"></a><a name="appscope"></a>Referenties voor toepassings bereik ophalen
+## <a name="get-application-scope-credentials"></a><a name="appscope"></a>Referenties voor het toepassingsbereik op te halen
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/cli)
 
-Haal de referenties voor het toepassings bereik op met de opdracht [AZ webapp Deployment List-Publishing-Profiles](/cli/azure/webapp/deployment#az_webapp_deployment_list_publishing_profiles) . Bijvoorbeeld:
+Haal de referenties voor het toepassingsbereik op met [de opdracht az webapp deployment list-publishing-profiles.](/cli/azure/webapp/deployment#az_webapp_deployment_list_publishing_profiles) Bijvoorbeeld:
 
 ```azurecli-interactive
 az webapp deployment list-publishing-profiles --resource-group <group-name> --name <app-name>
 ```
 
-Voor [lokale Git-implementatie](deploy-local-git.md)kunt u ook de opdracht [AZ webapp Deployment List-Publishing-credentials](/cli/azure/webapp/deployment#az_webapp_deployment_list_publishing_credentials) gebruiken om een externe Git-URI voor uw app op te halen, waarbij de referenties voor het toepassings bereik al zijn Inge sloten. Bijvoorbeeld:
+Voor [lokale Git-implementatie](deploy-local-git.md)kunt u ook de opdracht [az webapp deployment list-publishing-credentials](/cli/azure/webapp/deployment#az_webapp_deployment_list_publishing_credentials) gebruiken om een externe Git-URI voor uw app op te halen, met de referenties voor het toepassingsbereik al ingesloten. Bijvoorbeeld:
 
 ```azurecli-interactive
 az webapp deployment list-publishing-credentials --resource-group <group-name> --name <app-name> --query scmUri
@@ -88,7 +88,7 @@ az webapp deployment list-publishing-credentials --resource-group <group-name> -
 
 # <a name="azure-powershell"></a>[Azure PowerShell](#tab/powershell)
 
-Gebruik de opdracht [Get-AzWebAppPublishingProfile](/powershell/module/az.websites/get-azwebapppublishingprofile) om de referenties voor het toepassings bereik op te halen. Bijvoorbeeld:
+Haal de referenties voor het toepassingsbereik op met [de opdracht Get-AzWebAppPublishingProfile.](/powershell/module/az.websites/get-azwebapppublishingprofile) Bijvoorbeeld:
 
 ```azurepowershell-interactive
 Get-AzWebAppPublishingProfile -ResourceGroupName <group-name> -Name <app-name>
@@ -96,19 +96,19 @@ Get-AzWebAppPublishingProfile -ResourceGroupName <group-name> -Name <app-name>
 
 # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
-1. Selecteer in het menu links van uw app de FTPS-referenties voor het **implementatie centrum**  >   of **lokale Git/FTPS-referenties**.
+1. Selecteer ftps-referenties of lokale  >  **Git-/FTPS-referenties** in het linkermenu van uw app.
 
-    ![Laat zien hoe u het FTP-dash board kunt selecteren in het implementatie centrum van Azure-app Services.](./media/app-service-deployment-credentials/access-no-git.png)
+    ![Laat zien hoe u het FTP-dashboard kunt selecteren in het implementatiecentrum in Azure-app Services.](./media/app-service-deployment-credentials/access-no-git.png)
 
-2. Selecteer in de sectie **toepassings bereik** de **Kopieer** koppeling om de gebruikers naam of het wacht woord te kopiëren.
+2. Selecteer in **de sectie** Toepassingsbereik de **koppeling Kopiëren** om de gebruikersnaam of het wachtwoord te kopiëren.
 
 -----
 
-## <a name="reset-application-scope-credentials"></a>Referenties voor toepassings bereik opnieuw instellen
+## <a name="reset-application-scope-credentials"></a>Referenties voor toepassingsbereik opnieuw instellen
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/cli)
 
-Stel de referenties voor het toepassings bereik opnieuw in met behulp van de opdracht [AZ resource invoke-Action](/cli/azure/resource#az_resource_invoke_action) :
+Stel de referenties voor het toepassingsbereik opnieuw in met [de opdracht az resource invoke-action:](/cli/azure/resource#az_resource_invoke_action)
 
 ```azurecli-interactive
 az resource invoke-action --action newpassword --resource-group <group-name> --name <app-name> --resource-type Microsoft.Web/sites
@@ -116,7 +116,7 @@ az resource invoke-action --action newpassword --resource-group <group-name> --n
 
 # <a name="azure-powershell"></a>[Azure PowerShell](#tab/powershell)
 
-Stel de referenties voor het toepassings bereik opnieuw in met de opdracht [invoke-AzResourceAction](/powershell/module/az.resources/invoke-azresourceaction) :
+Stel de referenties voor het toepassingsbereik opnieuw in met [de opdracht Invoke-AzResourceAction:](/powershell/module/az.resources/invoke-azresourceaction)
 
 ```azurepowershell-interactive
 Invoke-AzResourceAction -ResourceGroupName <group-name> -ResourceType Microsoft.Web/sites -ResourceName <app-name> -Action newpassword
@@ -124,44 +124,44 @@ Invoke-AzResourceAction -ResourceGroupName <group-name> -ResourceType Microsoft.
 
 # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
-1. Selecteer in het menu links van uw app de FTPS-referenties voor het **implementatie centrum**  >   of **lokale Git/FTPS-referenties**.
+1. Selecteer ftps-referenties of lokale  >  **Git-/FTPS-referenties** in het linkermenu van uw app.
 
-    ![Laat zien hoe u het FTP-dash board kunt selecteren in het implementatie centrum van Azure-app Services.](./media/app-service-deployment-credentials/access-no-git.png)
+    ![Laat zien hoe u het FTP-dashboard kunt selecteren in het implementatiecentrum in Azure-app Services.](./media/app-service-deployment-credentials/access-no-git.png)
 
-2. Selecteer **opnieuw instellen** in de sectie **toepassings bereik** .
+2. Selecteer in **de sectie** Toepassingsbereik de optie **Opnieuw instellen.**
 
 -----
 
-## <a name="disable-basic-authentication"></a>Basis verificatie uitschakelen
+## <a name="disable-basic-authentication"></a>Basisverificatie uitschakelen
 
-Sommige organisaties moeten voldoen aan de beveiligings vereisten en voor komen dat de toegang via FTP of Web Deploy wordt uitgeschakeld. Op deze manier hebben de leden van de organisatie alleen toegang tot de App Services via Api's die worden beheerd door Azure Active Directory (Azure AD).
+Sommige organisaties moeten voldoen aan de beveiligingsvereisten en schakelen de toegang liever uit via FTP of WebDeploy. Op deze manier hebben de leden van de organisatie alleen toegang tot de App Services via API's die worden beheerd door Azure Active Directory (Azure AD).
 
 ### <a name="ftp"></a>FTP
 
-Voer de volgende CLI-opdracht uit om FTP-toegang tot de site uit te scha kelen. Vervang de tijdelijke aanduidingen door de resource groep en de naam van de site. 
+Voer de volgende CLI-opdracht uit om FTP-toegang tot de site uit te schakelen. Vervang de tijdelijke aanduidingen door uw resourcegroep en sitenaam. 
 
 ```azurecli-interactive
 az resource update --resource-group <resource-group> --name ftp --namespace Microsoft.Web --resource-type basicPublishingCredentialsPolicies --parent sites/<site-name> --set properties.allow=false
 ```
 
-Als u wilt controleren of FTP-toegang is geblokkeerd, kunt u proberen te verifiëren met behulp van een FTP-client, zoals FileZilla. Als u de referenties voor publiceren wilt ophalen, gaat u naar de Blade overzicht van uw site en klikt u op publicatie profiel downloaden. Gebruik de FTP-hostnaam, gebruikers naam en het wacht woord van het bestand om te verifiëren. u ontvangt een 401-fout melding die aangeeft dat u niet bent gemachtigd.
+Als u wilt controleren of FTP-toegang is geblokkeerd, kunt u proberen te verifiëren met behulp van een FTP-client zoals FileZilla. Als u de publicatiereferenties wilt ophalen, gaat u naar de overzichtsblade van uw site en klikt u op Publicatieprofiel downloaden. Gebruik de fileâ € ™ FTP hostnaam, gebruikersnaam en wachtwoord voor verificatie, en u krijgt een 401 foutbericht, waarmee wordt aangegeven dat u niet bent geautoriseerd.
 
-### <a name="webdeploy-and-scm"></a>Webdeploy en SCM
+### <a name="webdeploy-and-scm"></a>WebDeploy en SCM
 
-Voer de volgende CLI-opdracht uit om basis verificatie toegang tot de Web Deploy-poort en de SCM-site uit te scha kelen. Vervang de tijdelijke aanduidingen door de resource groep en de naam van de site. 
+Voer de volgende CLI-opdracht uit om eenvoudige toegang tot de WebDeploy-poort en SCM-site uit te schakelen. Vervang de tijdelijke aanduidingen door uw resourcegroep en sitenaam. 
 
 ```azurecli-interactive
 az resource update --resource-group <resource-group> --name scm --namespace Microsoft.Web --resource-type basicPublishingCredentialsPolicies --parent sites/<site-name> --set properties.allow=false
 ```
 
-Als u wilt controleren of de referenties van het publicatie profiel zijn geblokkeerd voor webimplementatie, kunt u [een web-app publiceren met Visual Studio 2019](/visualstudio/deployment/quickstart-deploy-to-azure).
+Als u wilt controleren of de referenties voor het publicatieprofiel zijn geblokkeerd op WebDeploy, publiceert u een [web-app met behulp Visual Studio 2019.](/visualstudio/deployment/quickstart-deploy-to-azure)
 
 ### <a name="disable-access-to-the-api"></a>Toegang tot de API uitschakelen
 
-De API in de vorige sectie is een back-up van Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Dit betekent dat u [een aangepaste rol kunt maken](../role-based-access-control/custom-roles.md#steps-to-create-a-custom-role) en gebruikers met een lagere priveldged aan de rol kan toewijzen, zodat de basis verificatie op geen enkele site kan worden ingeschakeld. [Volg deze instructies](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#create-a-custom-rbac-role)voor het configureren van de aangepaste rol.
+De API in de vorige sectie maakt gebruik van op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC). Dit betekent dat u een aangepaste rol kunt maken en gebruikers met lagere machtigingen kunt toewijzen aan de rol, zodat ze geen basisvereeniging op sites kunnen inschakelen. [](../role-based-access-control/custom-roles.md#steps-to-create-a-custom-role) Volg deze instructies om de aangepaste [rol te configureren.](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#create-a-custom-rbac-role)
 
-U kunt [Azure monitor](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#audit-with-azure-monitor) ook gebruiken om de geslaagde verificatie aanvragen te controleren en [Azure Policy](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#enforce-compliance-with-azure-policy) te gebruiken om deze configuratie af te dwingen voor alle sites in uw abonnement.
+U kunt ook [een](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#audit-with-azure-monitor) Azure Monitor om geslaagde verificatieaanvragen te controleren en Azure Policy om deze configuratie af te dwingen voor alle sites in uw abonnement. [](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#enforce-compliance-with-azure-policy)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over het gebruik van deze referenties voor het implementeren van uw app vanuit [lokale Git](deploy-local-git.md) of het gebruik van [FTP/S](deploy-ftp.md).
+Ontdek hoe u deze referenties gebruikt om uw app te implementeren vanuit lokale [Git](deploy-local-git.md) of [met FTP/S.](deploy-ftp.md)

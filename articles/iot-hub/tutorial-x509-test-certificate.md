@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: de mogelijkheid van X. 509-certificaten voor het verifiëren van apparaten bij een Azure IoT Hub | Microsoft Docs'
-description: Zelf studie-uw X. 509-certificaten testen voor verificatie bij Azure IoT Hub
+title: 'Zelfstudie: test de mogelijkheid van X.509-certificaten om apparaten te verifiëren bij een Azure IoT Hub | Microsoft Docs'
+description: 'Zelfstudie: uw X.509-certificaten testen om te verifiëren bij Azure IoT Hub'
 author: v-gpettibone
 manager: philmea
 ms.service: iot-hub
@@ -12,43 +12,42 @@ ms.custom:
 - mvc
 - 'Role: Cloud Development'
 - 'Role: Data Analytics'
-- devx-track-azurecli
-ms.openlocfilehash: 91eea344914120a396ba9465ec504a37f5844d4e
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 7d1900782fce6b84ed79014e985393f3626d171b
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105630673"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107379431"
 ---
-# <a name="tutorial-testing-certificate-authentication"></a>Zelf studie: verificatie van certificaten testen
+# <a name="tutorial-testing-certificate-authentication"></a>Zelfstudie: Certificaatverificatie testen
 
-U kunt het volgende code voorbeeld van C# gebruiken om te testen of uw apparaat kan worden geverifieerd met uw IoT Hub. Houd er rekening mee dat u het volgende moet doen voordat u de test code uitvoert:
+U kunt het volgende C#-codevoorbeeld gebruiken om te testen of uw certificaat uw apparaat kan verifiëren bij uw IoT Hub. Houd er rekening mee dat u het volgende moet doen voordat u de testcode kunt uitvoeren:
 
-* Maak een basis-CA of een onderliggend CA-certificaat.
+* Maak een basis-CA of onderliggend CA-certificaat.
 * Upload uw CA-certificaat naar uw IoT Hub.
-* Controleer of u beschikt over het CA-certificaat.
+* Bewijs dat u over het CA-certificaat beschikt.
 * Voeg een apparaat toe aan uw IoT Hub.
-* Maak een certificaat voor een apparaat met dezelfde apparaat-ID als uw apparaat.
+* Maak een apparaatcertificaat met dezelfde apparaat-id als uw apparaat.
 
-## <a name="code-example"></a>Code voorbeeld
+## <a name="code-example"></a>Codevoorbeeld
 
-In het volgende code voorbeeld ziet u hoe u een C#-toepassing maakt voor het simuleren van het X. 509-apparaat dat is geregistreerd voor uw IoT-hub. In het voor beeld worden de waarden voor de Tempe ratuur en vochtigheid van het gesimuleerde apparaat naar uw hub verzonden. In deze zelf studie maakt u alleen de apparaat-app. Het is aan de lezers te blijven om de IoT Hub-service toepassing te maken waarmee reacties worden verzonden naar de gebeurtenissen die door dit gesimuleerde apparaat worden verzonden.
+In het volgende codevoorbeeld ziet u hoe u een C#-toepassing maakt om het X.509-apparaat te simuleren dat is geregistreerd voor uw IoT-hub. In het voorbeeld worden temperatuur- en vochtigheidswaarden van het gesimuleerde apparaat naar uw hub verzendt. In deze zelfstudie maken we alleen de apparaattoepassing. Het wordt als oefening aan de lezers overgelaten om de IoT Hub-servicetoepassing te maken die antwoorden verzendt op de gebeurtenissen die door dit gesimuleerde apparaat worden verzonden.
 
-1. Open Visual Studio, selecteer **een nieuw project maken** en kies vervolgens de project sjabloon **console-app (.NET Framework)** . Selecteer **Next**.
+1. Open Visual Studio, selecteer **Een nieuw project maken** en kies vervolgens de projectsjabloon **Console-app (.NET Framework).** Selecteer **Next**.
 
-1. Geef in **uw nieuwe project** de naam project *SimulateX509Device* en selecteer vervolgens **maken**.
+1. In **Uw nieuwe project configureren** noemt u het project *SimulateX509Device* en selecteert u **vervolgens Maken.**
 
-   ![X. 509 Device-project maken in Visual Studio](./media/iot-hub-security-x509-get-started/create-device-project-vs2019.png)
+   ![Een X.509-apparaatproject maken in Visual Studio](./media/iot-hub-security-x509-get-started/create-device-project-vs2019.png)
 
-1. Klik in Solution Explorer met de rechter muisknop op het project **SimulateX509Device** en selecteer vervolgens **NuGet-pakketten beheren**.
+1. Klik Solution Explorer met de rechtermuisknop op het project **SimulateX509Device** en selecteer **vervolgens NuGet-pakketten beheren.**
 
-1. Selecteer in de **NuGet-pakket manager** **Bladeren** en zoek naar en kies **micro soft. Azure. devices. client**. Selecteer **Installeren**.
+1. Selecteer in **de NuGet Pakketbeheer** selecteer **Bladeren** en zoek naar en kies **Microsoft.Azure.Devices.Client.** Selecteer **Installeren**.
 
-   ![Het apparaat SDK NuGet-pakket toevoegen in Visual Studio](./media/iot-hub-security-x509-get-started/device-sdk-nuget.png)
+   ![Apparaat-SDK NuGet-pakket toevoegen in Visual Studio](./media/iot-hub-security-x509-get-started/device-sdk-nuget.png)
 
-    Met deze stap wordt een verwijzing naar het Azure IoT Device SDK NuGet-pakket en de bijbehorende afhankelijkheden gedownload, geïnstalleerd en toegevoegd.
+    Met deze stap worden het Azure IoT Device SDK NuGet-pakket en de afhankelijkheden ervan gedownload, geïnstalleerd en toegevoegd.
 
-    Invoer en voer de volgende code uit:
+    Voer de volgende code in en voer deze uit:
 
 ```csharp
 using System;

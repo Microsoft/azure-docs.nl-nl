@@ -6,13 +6,13 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2021
-ms.date: 04/14/2021
-ms.openlocfilehash: a0fb3488aec6761764e30b4cf8556b71e5edda15
-ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
+ms.date: 04/16/2021
+ms.openlocfilehash: 4a88ed2df74d3eebb96c42e2cdc87b14153419cd
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/15/2021
-ms.locfileid: "107515397"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107565369"
 ---
 # <a name="transform-data-in-delta-lake-using-mapping-data-flows"></a>Gegevens transformeren in Delta Lake met behulp van toewijzingsgegevensstromen
 
@@ -66,7 +66,7 @@ In deze stap maakt u een pijplijn die een gegevensstroomactiviteit bevat.
     ![Schermopname die laat zien waar u uw gegevensstroom een naam geeft wanneer u een nieuwe gegevensstroom maakt.](media/tutorial-data-flow/activity2.png)
 1. Schuif in de bovenste balk van het pijplijnvas de **schuifregelaar Gegevensstroom foutopsporing** in. Met de foutopsporingsmodus kunt u transformatielogica interactief testen op een live Spark-cluster. Gegevensstroom het 5-7 minuten duren voordat clusters zijn opgewarmd en gebruikers wordt aangeraden om eerst foutopsporing in te schakelen als ze van plan zijn om Gegevensstroom ontwikkelen. Zie Foutopsporingsmodus [voor meer informatie.](concepts-data-flow-debug-mode.md)
 
-    ![Gegevensstroom activiteit](media/tutorial-data-flow/dataflow1.png)
+    ![Schermopname die laat zien waar de schuifregelaar Foutopsporing gegevensstroom is.](media/tutorial-data-flow/dataflow1.png)
 
 ## <a name="build-transformation-logic-in-the-data-flow-canvas&quot;></a>Transformatielogica bouwen in het gegevensstroom-canvas
 
@@ -103,7 +103,7 @@ In deze zelfstudie genereert u twee gegevensstromen. De gegevensstroom van de fi
 1. Een filtertransformatie toevoegen aan uw brontransformatie in de grafiek
 1. Alleen filmrijen toestaan die overeenkomen met de drie jaar waarmee u gaat werken, zoals 1950, 1988 en 1960
 1. Werk classificaties voor elke 1988-film bij naar '1' door nu een afgeleide kolomtransformatie toe te voegen aan uw filtertransformatie
-1. Maak in diezelfde afgeleide kolom films voor 2021 door een bestaand jaar te nemen en het jaar te wijzigen in 2021. Laten we 1960 kiezen.
+1. Maak in dezelfde afgeleide kolom films voor 2021 door een bestaand jaar te nemen en het jaar te wijzigen in 2021. Laten we 1960 kiezen.
 1. Zo ziet uw drie afgeleide kolommen eruit
 
    ![Afgeleide kolom](media/data-flow/data-flow-tutorial-2.png "Afgeleide kolom")

@@ -1,6 +1,6 @@
 ---
 title: Microsoft Graph API
-description: De Microsoft Graph-API is een REST Web-API waarmee u toegang hebt tot Microsoft Cloud-service bronnen.
+description: De Microsoft Graph API is een RESTful-web-API waarmee u toegang krijgt tot Microsoft Cloud-servicebronnen.
 author: davidmu1
 services: active-directory
 manager: CelesteDG
@@ -11,50 +11,50 @@ ms.workload: identity
 ms.date: 02/13/2020
 ms.author: davidmu
 ms.custom: aaddev
-ms.openlocfilehash: a799d7c32ad632303931adf838ca8e2e715b2adc
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 2e689e620a5aeb7c5028f1a1b30dd6def8e447ab
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96860181"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107529987"
 ---
 # <a name="microsoft-graph-api"></a>Microsoft Graph API
 
-De Microsoft Graph-API is een REST Web-API waarmee u toegang hebt tot Microsoft Cloud-service bronnen. Nadat u uw app hebt geregistreerd en verificatie tokens voor een gebruiker of service hebt opgehaald, kunt u aanvragen indienen bij de Microsoft Graph-API. Zie [overzicht van Microsoft Graph](/graph/overview)voor meer informatie.
+De Microsoft Graph API is een RESTful-web-API waarmee u toegang krijgt tot Microsoft Cloud-servicebronnen. Nadat u uw app hebt geregistreerd en verificatietokens voor een gebruiker of service hebt ontvangen, kunt u aanvragen indienen bij de Microsoft Graph API. Zie Overzicht van Microsoft Graph voor [meer informatie.](/graph/overview)
 
-Microsoft Graph maakt REST-Api's en client bibliotheken beschikbaar voor toegang tot gegevens op de volgende Microsoft 365-Services:
-- Microsoft 365 Services: Delve, Excel, micro soft-boekingen, micro soft teams, OneDrive, OneNote, Outlook/Exchange, planner en share point
-- Enter prise Mobility and Security Services: Advanced Threat Analytics, Advanced Threat Protection, Azure Active Directory, Identity Manager en intune
-- Windows 10-Services: activiteiten, apparaten, meldingen
+Microsoft Graph stelt REST API's en clientbibliotheken beschikbaar voor toegang tot gegevens op de volgende Microsoft 365 services:
+- Microsoft 365 services: Delve, Excel, Microsoft Bookings, Microsoft Teams, OneDrive, OneNote, Outlook/Exchange, Planner en SharePoint
+- Enterprise Mobility and Security-services: Advanced Threat Analytics, Advanced Threat Protection, Azure Active Directory, Identity Manager en Intune
+- Windows 10 services: activiteiten, apparaten, meldingen
 - Dynamics 365 Business Central
 
 ## <a name="versions"></a>Versies
 
-Microsoft Graph ondersteunt momenteel twee versies: v 1.0 en bèta. De versie v 1.0 bevat algemeen beschik bare Api's. De v 1.0-versie gebruiken voor alle productie-apps. De bèta versie bevat Api's die momenteel als preview-versie beschikbaar zijn. We raden u aan de bèta versie alleen te gebruiken voor het testen van apps die in ontwikkeling zijn. Gebruik geen bèta-Api's in uw productie-apps. Zie voor meer informatie [versie beheer, ondersteuning en beleid voor het wijzigen van wijzigingen voor Microsoft Graph](/graph/versioning-and-support).
+Microsoft Graph ondersteunt momenteel twee versies: v1.0 en bètaversies. De versie v1.0 bevat algemeen beschikbare API's. Gebruik de versie v1.0 voor alle productie-apps. De bètaversie bevat API's die momenteel in preview zijn. Omdat we belangrijke wijzigingen kunnen introduceren in onze bèta-API's, raden we u aan de bètaversie alleen te gebruiken om apps te testen die in ontwikkeling zijn; gebruik geen bèta-API's in uw productie-apps. Zie Voor meer informatie [Versiebeleid, ondersteuning en](/graph/versioning-and-support)wijzigingsbeleid voor het Microsoft Graph.
 
-Zie [Microsoft Graph bèta-eindpunt referentie](/graph/api/overview?view=graph-rest-beta) voor meer informatie over het gebruik van de bèta-api's.
+Als u de bèta-API's wilt gaan gebruiken, zie [Microsoft Graph bèta-eindpuntreferentie](/graph/api/overview?view=graph-rest-beta&preserve-view=true)
 
-Zie [Microsoft Graph referentie rest API v 1.0](/graph/api/overview) als u de api's van v 1.0 wilt gaan gebruiken
+Als u de v1.0-API's wilt gaan gebruiken, Microsoft Graph REST API [v1.0-referentie](/graph/api/overview?view=graph-rest-1.0&preserve-view=true)
 
 ## <a name="get-started"></a>Aan de slag
 
-Als u wilt lezen uit of schrijven naar een resource zoals een gebruiker of een e-mail bericht, maakt u een aanvraag die er als volgt uitziet:
+Als u wilt lezen van of schrijven naar een resource, zoals een gebruiker of een e-mailbericht, maakt u een aanvraag die er als volgt uitziet:
 
 `{HTTP method} https://graph.microsoft.com/{version}/{resource}?{query-parameters}`
 
-Zie [de Microsoft Graph-API gebruiken](/graph/use-the-api) voor meer informatie over de elementen van de geconstrueerde aanvraag
+Zie Use the Microsoft Graph API (De api voor de Microsoft Graph gebruiken) voor meer informatie [Microsoft Graph de samengestelde aanvraag](/graph/use-the-api)
 
-Quick start-voor beelden zijn beschikbaar om u te laten zien hoe u toegang krijgt tot de kracht van de Microsoft Graph-API. De voor beelden die beschikbaar zijn, hebben toegang tot twee services met één verificatie: Microsoft-account en Outlook. Met elke Snelstartgids krijgt u toegang tot gegevens uit de profielen van Microsoft-account gebruikers en worden gebeurtenissen uit hun agenda weer gegeven.
-De Quick starts bestaan uit vier stappen:
+Quickstart-voorbeelden zijn beschikbaar om u te laten zien hoe u toegang krijgt tot de kracht van Microsoft Graph API. De voorbeelden die beschikbaar zijn, hebben toegang tot twee services met één verificatie: Microsoft-account en Outlook. Elke quickstart heeft toegang tot informatie Microsoft-account profielen van gebruikers en geeft gebeurtenissen uit hun agenda weer.
+De quickstarts bestaan uit vier stappen:
 - Uw platform selecteren
-- Uw app-ID ophalen (client-ID)
-- Het voor beeld maken
-- Meld u aan en Bekijk gebeurtenissen in uw agenda
+- Uw app-id (client-id) op te halen
+- Het voorbeeld bouwen
+- Aanmelden en gebeurtenissen in uw agenda weergeven
 
-Wanneer u de Snelstartgids hebt voltooid, hebt u een app die kan worden uitgevoerd. Zie de [Veelgestelde vragen over Microsoft Graph Quick](/graph/quick-start-faq)start voor meer informatie. Zie [Microsoft Graph Snelstartgids](https://developer.microsoft.com/graph/quick-start)om aan de slag te gaan met de voor beelden.
+Wanneer u de quickstart hebt voltooid, hebt u een app die gereed is om te worden uitgevoerd. Zie de veelgestelde vragen over de [snelstart Microsoft Graph voor meer informatie.](/graph/quick-start-faq) Zie snelstart om aan de slag [te Microsoft Graph met de voorbeelden.](https://developer.microsoft.com/graph/quick-start)
 
 ## <a name="tools"></a>Hulpprogramma's
 
-Microsoft Graph Explorer is een webgebaseerd hulp programma dat u kunt gebruiken om aanvragen te bouwen en te testen met behulp van Microsoft Graph-Api's. U hebt toegang tot Microsoft Graph Explorer op: `https://developer.microsoft.com/graph/graph-explorer` .
+Microsoft Graph Explorer is een webhulpprogramma dat u kunt gebruiken om aanvragen te bouwen en te testen met behulp Microsoft Graph API's. U hebt toegang tot Microsoft Graph Explorer op: `https://developer.microsoft.com/graph/graph-explorer` .
 
-Postman is een hulp programma dat u ook kunt gebruiken om aanvragen te maken en te testen met behulp van de Microsoft Graph-Api's. U kunt een bericht downloaden naar: `https://www.getpostman.com/` . Als u wilt werken met Microsoft Graph in Postman, gebruikt u de Microsoft Graph verzameling in postman. Zie voor meer informatie [postman gebruiken met de Microsoft Graph-API](/graph/use-postman?context=graph%2Fapi%2Fbeta&view=graph-rest-beta).
+Postman is een hulpprogramma dat u ook kunt gebruiken om aanvragen te bouwen en te testen met behulp van Microsoft Graph API's. U kunt Postman downloaden op: `https://www.getpostman.com/` . Voor interactie met Microsoft Graph in Postman gebruikt u de verzameling Microsoft Graph in Postman. Zie Postman gebruiken met [de api Microsoft Graph voor meer informatie.](/graph/use-postman)

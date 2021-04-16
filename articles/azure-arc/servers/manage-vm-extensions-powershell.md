@@ -1,36 +1,39 @@
 ---
-title: VM-extensie inschakelen met behulp van Azure PowerShell
-description: In dit artikel wordt beschreven hoe u virtuele-machine uitbreidingen implementeert voor Azure Arc-servers die worden uitgevoerd in hybride Cloud omgevingen met behulp van Azure PowerShell.
-ms.date: 01/05/2021
+title: VM-extensie inschakelen met Azure PowerShell
+description: In dit artikel wordt beschreven hoe u extensies van virtuele machines implementeert op Azure Arc servers die worden uitgevoerd in hybride cloudomgevingen met behulp van Azure PowerShell.
+ms.date: 04/13/2021
 ms.topic: conceptual
-ms.openlocfilehash: 9b1f83ad976aa3471430a912280fac25dc5c5c0c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0cb854c9745e8bd7eef35c6f6467c284a6327349
+ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97916181"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107388581"
 ---
-# <a name="enable-azure-vm-extensions-using-azure-powershell"></a>Azure VM-extensies inschakelen met behulp van Azure PowerShell
+# <a name="enable-azure-vm-extensions-using-azure-powershell"></a>Azure VM-extensies inschakelen met Azure PowerShell
 
-Dit artikel laat u zien hoe u Azure-VM-extensies, ondersteund door Azure Arc-servers, kunt implementeren en verwijderen naar een Linux-of Windows-hybride computer met Azure PowerShell.
+In dit artikel wordt beschreven hoe u Azure VM-extensies, ondersteund door Azure Arc-servers, implementeert en verwijdert op een linux- of Windows-hybride machine met behulp van Azure PowerShell.
+
+> [!NOTE]
+> Azure Arc-servers biedt geen ondersteuning voor het implementeren en beheren van VM-extensies op virtuele Azure-machines. Zie het volgende artikel overzicht van VM-extensies voor [Azure-VM's.](../../virtual-machines/extensions/overview.md)
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Een computer met Azure PowerShell. Zie [Azure PowerShell installeren en configureren](/powershell/azure/)voor instructies.
+- Een computer met Azure PowerShell. Zie Install and configure Azure PowerShell [voor instructies.](/powershell/azure/)
 
-Voordat u Azure PowerShell gebruikt om VM-extensies te beheren op uw hybride server die wordt beheerd door servers met Arc-functionaliteit, moet u de `Az.ConnectedMachine` module installeren. Voer de volgende opdracht uit op de server met Arc-functionaliteit:
+Voordat u Azure PowerShell voor het beheren van VM-extensies op uw hybride server die wordt beheerd door Servers met Arc, moet u de `Az.ConnectedMachine` module installeren. Voer de volgende opdracht uit op uw Arc-server:
 
 `Install-Module -Name Az.ConnectedMachine`.
 
-Wanneer de installatie is voltooid, wordt het volgende bericht weer gegeven:
+Wanneer de installatie is voltooid, wordt het volgende bericht geretourneerd:
 
-`The installed extension `AZ. ConnectedMachine` is experimental and not covered by customer support. Please use with discretion.`
+`The installed extension `Az.ConnectedMachine` is experimental and not covered by customer support. Please use with discretion.`
 
 ## <a name="enable-extension"></a>Extensie inschakelen
 
-Als u een VM-extensie wilt inschakelen op de server waarop u een Arc hebt ingeschakeld, gebruikt u [New-AzConnectedMachineExtension](/powershell/module/az.connectedmachine/new-azconnectedmachineextension) met de `-Name` `-ResourceGroupName` `-MachineName` `-Location` `-Publisher` `ExtensionType` `-Settings` para meters,,,,, en.
+Als u een VM-extensie op uw Arc-server wilt inschakelen, gebruikt u [New-AzConnectedMachineExtension](/powershell/module/az.connectedmachine/new-azconnectedmachineextension) met de `-Name` parameters , , , , , en `-ResourceGroupName` `-MachineName` `-Location` `-Publisher` `ExtensionType` `-Settings` .
 
-In het volgende voor beeld wordt de extensie Log Analytics VM ingeschakeld op een Linux-server die is ingeschakeld voor Arc:
+In het volgende voorbeeld wordt de Log Analytics VM-extensie ingeschakeld op een Linux-server met Arc:
 
 ```powershell
 PS C:\> $Setting = @{ "workspaceId" = "workspaceId" }
@@ -38,21 +41,21 @@ PS C:\> $protectedSetting = @{ "workspaceKey" = "workspaceKey" }
 PS C:\> New-AzConnectedMachineExtension -Name OMSLinuxAgent -ResourceGroupName "myResourceGroup" -MachineName "myMachine" -Location "eastus" -Publisher "Microsoft.EnterpriseCloud.Monitoring" -TypeHandlerVersion "1.10" -Settings $Setting -ProtectedSetting $protectedSetting -ExtensionType "OmsAgentForLinux"
 ```
 
-Wijzig de waarde voor de `-ExtensionType` para meter `"MicrosoftMonitoringAgent"` in het vorige voor beeld om de log Analytics VM-extensie in te scha kelen op een Windows Server waarop Arc is ingeschakeld.
+Als u de Log Analytics VM-extensie wilt inschakelen op een Windows-server met Arc, wijzigt u de waarde voor `-ExtensionType` de parameter in in het vorige `"MicrosoftMonitoringAgent"` voorbeeld.
 
-In het volgende voor beeld wordt de aangepaste script extensie ingeschakeld op een server met Arc-functionaliteit:
+In het volgende voorbeeld wordt de aangepaste scriptextensie ingeschakeld op een Arc-server:
 
 ```powershell
 PS C:\> $Setting = @{ "commandToExecute" = "powershell.exe -c Get-Process" }
 PS C:\> New-AzConnectedMachineExtension -Name custom -ResourceGroupName myResourceGroup -MachineName myMachineName -Location eastus -Publisher "Microsoft.Compute" -TypeHandlerVersion 1.10 -Settings $Setting -ExtensionType CustomScriptExtension
 ```
 
-### <a name="key-vault-vm-extension-preview"></a>VM-extensie Key Vault (preview-versie)
+### <a name="key-vault-vm-extension-preview"></a>Key Vault VM-extensie (preview)
 
 > [!WARNING]
-> Power shell-clients voegen vaak toe `\` aan `"` in de settings.js, waardoor akvvm_service mislukt met de volgende fout: `[CertificateManagementConfiguration] Failed to parse the configuration settings with:not an object.`
+> PowerShell-clients voegen vaak toe aan in de settings.jswaardoor de `\` akvvm_service mislukt met een `"` fout: `[CertificateManagementConfiguration] Failed to parse the configuration settings with:not an object.`
 
-In het volgende voor beeld wordt de Key Vault VM-extensie (preview) ingeschakeld op een server met Arc-functionaliteit:
+In het volgende voorbeeld wordt de Key Vault VM-extensie (preview) ingeschakeld op een Arc-server:
 
 ```powershell
 # Build settings
@@ -78,9 +81,9 @@ In het volgende voor beeld wordt de Key Vault VM-extensie (preview) ingeschakeld
     New-AzConnectedMachineExtension -ResourceGroupName $resourceGRoup -Location $location -MachineName $machineName -Name "KeyVaultForWindows or KeyVaultforLinux" -Publisher "Microsoft.Azure.KeyVault" -ExtensionType "KeyVaultforWindows or KeyVaultforLinux" -Setting (ConvertTo-Json $settings)
 ```
 
-## <a name="list-extensions-installed"></a>Lijst met geïnstalleerde uitbrei dingen
+## <a name="list-extensions-installed"></a>Lijst met geïnstalleerde extensies
 
-Gebruik [Get-AzConnectedMachineExtension](/powershell/module/az.connectedmachine/get-azconnectedmachineextension) met de `-MachineName` para meters om een lijst op te halen van de VM-extensies op de door Arc ingeschakelde server `-ResourceGroupName` .
+Gebruik [Get-AzConnectedMachineExtension](/powershell/module/az.connectedmachine/get-azconnectedmachineextension) met de parameters en om een lijst met de VM-extensies op uw `-MachineName` Arc-server op te `-ResourceGroupName` halen.
 
 Voorbeeld:
 
@@ -94,9 +97,9 @@ custom  westus2   CustomScriptExtension Succeeded
 
 ## <a name="remove-an-installed-extension"></a>Een geïnstalleerde extensie verwijderen
 
-Gebruik [Remove-AzConnectedMachineExtension](/powershell/module/az.connectedmachine/remove-azconnectedmachineextension) met de `-Name` `-MachineName` para meters om een geïnstalleerde VM-extensie op uw server met Arc-functionaliteit te verwijderen `-ResourceGroupName` .
+Als u een geïnstalleerde VM-extensie op uw Arc-server wilt verwijderen, gebruikt u [Remove-AzConnectedMachineExtension](/powershell/module/az.connectedmachine/remove-azconnectedmachineextension) met `-Name` de parameters , en `-MachineName` `-ResourceGroupName` .
 
-Als u de Log Analytics VM-extensie voor Linux bijvoorbeeld wilt verwijderen, voert u de volgende opdracht uit:
+Als u bijvoorbeeld de Log Analytics VM-extensie voor Linux wilt verwijderen, moet u de volgende opdracht uitvoeren:
 
 ```powershell
 Remove-AzConnectedMachineExtension -MachineName myMachineName -ResourceGroupName myResourceGroup -Name OmsAgentforLinux
@@ -104,6 +107,6 @@ Remove-AzConnectedMachineExtension -MachineName myMachineName -ResourceGroupName
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- U kunt VM-extensies implementeren, beheren en verwijderen met behulp van de [Azure cli](manage-vm-extensions-cli.md), via de [Azure Portal](manage-vm-extensions-portal.md)of [Azure Resource Manager sjablonen](manage-vm-extensions-template.md).
+- U kunt VM-extensies implementeren, beheren en verwijderen met behulp van de [Azure CLI](manage-vm-extensions-cli.md)vanuit de [Azure Portal](manage-vm-extensions-portal.md)of [Azure Resource Manager sjablonen.](manage-vm-extensions-template.md)
 
-- Informatie over probleem oplossing vindt u in de [gids voor het oplossen van problemen met VM-extensies](troubleshoot-vm-extensions.md).
+- Informatie over probleemoplossing vindt u in de handleiding Problemen met [VM-extensies oplossen.](troubleshoot-vm-extensions.md)

@@ -1,54 +1,54 @@
 ---
-title: Prestaties van Column store-index verbeteren voor toegewezen SQL-groep
-description: Verminder de geheugen vereisten of verg root het beschik bare geheugen om het aantal rijen binnen elke Rijg roep in de toegewezen SQL-groep te maximaliseren.
+title: Prestaties van columnstore-index verbeteren voor toegewezen SQL-pool
+description: Verminder de geheugenvereisten of verhoog het beschikbare geheugen om het aantal rijen binnen elke rijgroep in toegewezen SQL-pool te maximaliseren.
 services: synapse-analytics
-author: gaursa
+author: julieMSFT
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
 ms.date: 03/22/2019
-ms.author: gaursa
+ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: b15f71698af8c340b58f3399390857790313b8ac
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1336359bdd0768ba1d1554554d266cacfb483a43
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104585482"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107566508"
 ---
-# <a name="maximizing-rowgroup-quality-for-columnstore-indexes-in-dedicated-sql-pool"></a>Maximale Rijg roep-kwaliteit voor column Store-indexen in toegewezen SQL-groep 
+# <a name="maximizing-rowgroup-quality-for-columnstore-indexes-in-dedicated-sql-pool"></a>De kwaliteit van de rijgroep maximaliseren voor columnstore-indexen in toegewezen SQL-pool 
 
-De kwaliteit van de Rijg roep wordt bepaald door het aantal rijen in een Rijg roep. Het verg Roten van het beschik bare geheugen kan het aantal rijen dat een column store-index in elke Rijg roep wordt gecomprimeerd, maximaliseren.  Gebruik deze methoden voor het verbeteren van de compressie frequentie en de query prestaties voor column Store-indexen.
+De kwaliteit van de rijgroep wordt bepaald door het aantal rijen in een rijgroep. Door het beschikbare geheugen te vergroten, kan het aantal rijen dat een columnstore-index comprimeert in elke rijgroep worden gemaximaliseerd.  Gebruik deze methoden om de compressiesnelheden en queryprestaties voor columnstore-indexen te verbeteren.
 
-## <a name="why-the-rowgroup-size-matters"></a>Waarom de Rijg roep grootte belang rijk is
+## <a name="why-the-rowgroup-size-matters"></a>Waarom de grootte van de rijgroep belangrijk is
 
-Omdat een column store-index een tabel scant door kolom segmenten van afzonderlijke Rijg roepen te scannen, kunt u het aantal rijen in elke Rijg roep verhogen om de query prestaties te verbeteren.
+Omdat een columnstore-index een tabel scant door kolomsegmenten van afzonderlijke rijgroepen te scannen, verbetert het maximaliseren van het aantal rijen in elke rijgroep de queryprestaties.
 
-Wanneer Rijg roepen een groot aantal rijen heeft, verbetert de gegevens compressie dat betekent dat er minder gegevens kunnen worden gelezen van de schijf.
+Wanneer rijgroepen een groot aantal rijen hebben, verbetert de gegevenscompressie, wat betekent dat er minder gegevens van de schijf moeten worden gelezen.
 
-Zie [Column Store-indexen gids](/sql/relational-databases/indexes/columnstore-indexes-overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)voor meer informatie over Rijg roepen.
+Zie Columnstore Indexes Guide (Handleiding [columnstore-indexen) voor meer informatie over rijgroepen.](/sql/relational-databases/indexes/columnstore-indexes-overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 
-## <a name="target-size-for-rowgroups"></a>Doel grootte voor Rijg roepen
+## <a name="target-size-for-rowgroups"></a>Doelgrootte voor rijgroepen
 
-Voor de beste query prestaties is het doel het aantal rijen per Rijg roep in een column store-index te maximaliseren. Een Rijg roep kan Maxi maal 1.048.576 rijen bevatten.
+Voor de beste queryprestaties is het doel om het aantal rijen per rijgroep in een columnstore-index te maximaliseren. Een rijgroep kan maximaal 1.048.576 rijen hebben.
 
-Het is niet mogelijk om het maximum aantal rijen per Rijg roep te hebben. Column Store-indexen bieden goede prestaties wanneer Rijg roepen ten minste 100.000 rijen hebben.
+Het is geen probleem om niet het maximum aantal rijen per rijgroep te hebben. Columnstore-indexen leveren goede prestaties wanneer rijgroepen ten minste 100.000 rijen hebben.
 
-## <a name="rowgroups-can-get-trimmed-during-compression"></a>Rijg roepen kan worden bijgesneden tijdens compressie
+## <a name="rowgroups-can-get-trimmed-during-compression"></a>Rijgroepen kunnen worden afgekort tijdens compressie
 
-Tijdens het opnieuw opbouwen van bulksgewijs laden of column store-index is er mogelijk onvoldoende geheugen beschikbaar om alle opgegeven rijen voor elke Rijg roep te comprimeren. Wanneer geheugen druk aanwezig is, knipt column Store-indexen de Rijg roep-grootten, zodat compressie naar de column Store kan slagen.
+Tijdens het bulksgewijs laden of herbouwen van columnstore-indexen is er soms onvoldoende geheugen beschikbaar om alle rijen te comprimeren die voor elke rijgroep zijn aangewezen. Wanneer geheugendruk aanwezig is, worden de rijgroepgrootten door columnstore-indexen kleiner, zodat compressie in de columnstore kan slagen.
 
-Als er onvoldoende geheugen is om ten minste 10.000 rijen in elke Rijg roep te comprimeren, wordt er een fout gegenereerd.
+Wanneer er onvoldoende geheugen is om ten minste 10.000 rijen in elke rijgroep te comprimeren, wordt er een fout gegenereerd.
 
-Zie [bulksgewijs laden in een geclusterde column store-index](/sql/relational-databases/indexes/columnstore-indexes-data-loading-guidance?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)voor meer informatie over bulksgewijs laden.
+Zie Bulksgewijs laden in een geclusterde columnstore-index voor meer informatie over [bulksgewijs laden.](/sql/relational-databases/indexes/columnstore-indexes-data-loading-guidance?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 
-## <a name="how-to-monitor-rowgroup-quality"></a>Rijg roep-kwaliteit bewaken
+## <a name="how-to-monitor-rowgroup-quality"></a>De kwaliteit van rijgroepen controleren
 
-De DMV-sys.dm_pdw_nodes_db_column_store_row_group_physical_stats ([sys.dm_db_column_store_row_group_physical_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-column-store-row-group-physical-stats-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) bevat de weergave definitie die overeenkomt met de SQL-data base) waarmee nuttige informatie wordt weer gegeven, zoals het aantal rijen in Rijg roepen en de reden voor het verkleinen van de gegevens, als deze is bijgesneden.
+De DMV sys.dm_pdw_nodes_db_column_store_row_group_physical_stats ([sys.dm_db_column_store_row_group_physical_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-column-store-row-group-physical-stats-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) bevat de weergavedefinitie die overeenkomt met SQL DB) die nuttige informatie beschikbaar maakt, zoals het aantal rijen in rijgroepen en de reden voor het inkorten, als er is ingekort.
 
-U kunt de volgende weer gave maken als een handige manier om een query uit te geven op deze DMV om informatie op te halen over Rijg roep-bijsnijden.
+U kunt de volgende weergave maken als een handige manier om een query uit te voeren op deze DMV om informatie over het inkorten van rijengroepen op te halen.
 
 ```sql
 create view dbo.vCS_rg_physical_stats
@@ -75,77 +75,77 @@ select *
 from cte;
 ```
 
-De trim_reason_desc geeft aan of de Rijg roep is bijgesneden (trim_reason_desc = NO_TRIM impliceert dat er geen beperking is en dat de groep een optimale kwaliteit heeft). De volgende redenen voor het verkorten van de Rijg roep zijn:
+De trim_reason_desc geeft aan of de rijgroep is ingekort (trim_reason_desc = NO_TRIM impliceert dat er geen bijsnijden is en dat de rijgroep van optimale kwaliteit is). De volgende trimredenen duiden op voortijdige inkorting van de rijgroep:
 
-- BULKLOAD: deze trim reden wordt gebruikt wanneer de inkomende batch rijen voor de belasting minder dan 1.000.000 rijen bevat. De-engine maakt gecomprimeerde Rijg roepen als er meer dan 100.000 rijen worden ingevoegd (in plaats van in het Delta archief in te voegen), maar de reden voor het verkleinen van de groep wordt ingesteld op BULKLOAD. In dit scenario kunt u de batch-belasting verg Roten om meer rijen op te nemen. U kunt ook het partitie schema opnieuw evalueren om er zeker van te zijn dat het niet te nauw keurig is als Rijg roepen geen partitie grenzen kunnen omvatten.
-- MEMORY_LIMITATION: om Rijg roepen te maken met 1.000.000 rijen, wordt een bepaalde hoeveelheid werk geheugen vereist door de engine. Wanneer het beschik bare geheugen van de laad sessie kleiner is dan het vereiste werk geheugen, worden Rijg roepen voor tijdig afgekapt. In de volgende secties wordt uitgelegd hoe u het vereiste geheugen kunt schatten en meer geheugen kunt toewijzen.
-- DICTIONARY_SIZE: deze trim reden geeft aan dat de Rijg roep is inge kort omdat er ten minste één teken reeks kolom is met een brede en/of hoge kardinaliteit teken reeksen. De grootte van de woorden lijst is beperkt tot 16 MB in het geheugen en zodra deze limiet is bereikt, wordt de groep gecomprimeerd. Als u in deze situatie wordt uitgevoerd, kunt u overwegen om de problematische kolom in een afzonderlijke tabel te isoleren.
+- BULKLOAD: Deze reden voor het inkorten wordt gebruikt wanneer de binnenkomende batch met rijen voor de belasting minder dan 1 miljoen rijen heeft. De engine maakt gecomprimeerde rijgroepen als er meer dan 100.000 rijen worden ingevoegd (in plaats van in te voegen in het Delta-opslag), maar de reden van de trim-waarde in stelt op BULKLOAD. In dit scenario kunt u overwegen om de batchbelasting te verhogen om meer rijen op te nemen. Ook moet u uw partitieschema opnieuw beoordelen om ervoor te zorgen dat het niet te gedetailleerd is, omdat rijgroepen geen partitiegrenzen kunnen overspannen.
+- MEMORY_LIMITATION: voor het maken van rijgroepen met 1 miljoen rijen is een bepaalde hoeveelheid werkgeheugen vereist door de engine. Wanneer het beschikbare geheugen van de laadsessie kleiner is dan het vereiste werkgeheugen, worden rijgroepen voortijdig afgekort. In de volgende secties wordt uitgelegd hoe u het vereiste geheugen kunt schatten en meer geheugen kunt toewijzen.
+- DICTIONARY_SIZE: Deze reden voor het inkorten van de rijgroep geeft aan dat er sprake is van het inkorten van rijen omdat er ten minste één tekenreekskolom met brede en/of tekenreeksen met een hoge kardinaliteit is. De grootte van de woordenlijst is beperkt tot 16 MB in het geheugen en zodra deze limiet is bereikt, wordt de rijgroep gecomprimeerd. Als u in deze situatie komt, kunt u overwegen om de problematische kolom te isoleren in een afzonderlijke tabel.
 
-## <a name="how-to-estimate-memory-requirements"></a>Geheugen vereisten schatten
+## <a name="how-to-estimate-memory-requirements"></a>Geheugenvereisten schatten
 
 <!--
 To view an estimate of the memory requirements to compress a rowgroup of maximum size into a columnstore index, download and run the view [dbo.vCS_mon_mem_grant](). This view shows the size of the memory grant that a rowgroup requires for compression in to the columnstore.
 -->
 
-Het Maxi maal vereiste geheugen voor het comprimeren van één Rijg roep is ongeveer
+Het maximaal vereiste geheugen voor het comprimeren van één rijgroep is ongeveer
 
 - 72 MB +
-- \#rijen \* \# kolommen \* 8 bytes +
-- \#rijen \* \# korte teken reeks-kolommen \* 32 bytes +
-- \#lange-teken reeks-kolommen \* 16 MB voor de compressie woordenlijst
+- \#\* \# rijenkolommen \* 8 bytes +
+- \#rijen \* \# met korte tekenreekskolommen \* van 32 bytes +
+- \#long-string-columns \* 16 MB voor compressiewoordenlijst
 
 > [!NOTE]
-> Korte teken reeks-kolommen gebruiken teken reeks gegevens typen van <= 32 bytes en lange teken reeks kolommen gebruiken teken reeks gegevens typen van > 32 bytes.
+> Korte tekenreekskolommen gebruiken tekenreeksgegevenstypen van <= 32 bytes en kolommen met lange tekenreeksen gebruiken tekenreeksgegevenstypen van > 32 bytes.
 
-Lange teken reeksen worden gecomprimeerd met een compressie methode die is ontworpen voor het comprimeren van tekst. Deze compressie methode maakt gebruik van een *woorden lijst* om tekst patronen op te slaan. De maximale grootte van een woorden lijst is 16 MB. Er is slechts één woorden lijst voor elke lange teken reeks kolom in de Rijg roep.
+Lange tekenreeksen worden gecomprimeerd met een compressiemethode die is ontworpen voor het comprimeren van tekst. Deze compressiemethode maakt gebruik van *een woordenlijst voor* het opslaan van tekstpatronen. De maximale grootte van een woordenlijst is 16 MB. Er is slechts één woordenlijst voor elke lange tekenreekskolom in de rijgroep.
 
-Zie voor een uitgebreide beschrijving van Column Store-geheugen vereisten de video- [toegewezen SQL-pool schalen: configuratie en begeleiding](https://channel9.msdn.com/Events/Ignite/2016/BRK3291).
+Zie de video Dedicated SQL pool scaling: configuration and guidance (Schalen van [Toegewezen SQL-pool: configuratie en richtlijnen)](https://channel9.msdn.com/Events/Ignite/2016/BRK3291)voor een uitgebreide bespreking van de vereisten voor columnstore-geheugen.
 
-## <a name="ways-to-reduce-memory-requirements"></a>Manieren om geheugen vereisten te reduceren
+## <a name="ways-to-reduce-memory-requirements"></a>Manieren om geheugenvereisten te verminderen
 
-Gebruik de volgende technieken om de geheugen vereisten voor het comprimeren van Rijg roepen naar column Store-indexen te verminderen.
+Gebruik de volgende technieken om de geheugenvereisten voor het comprimeren van rijgroepen in columnstore-indexen te verminderen.
 
 ### <a name="use-fewer-columns"></a>Minder kolommen gebruiken
 
-Ontwerp, indien mogelijk, de tabel met minder kolommen. Wanneer een Rijg roep wordt gecomprimeerd naar de column Store, comprimeert de column store-index elk kolom segment afzonderlijk.
+Ontwerp indien mogelijk de tabel met minder kolommen. Wanneer een rijgroep wordt gecomprimeerd in de columnstore, comprimeert de columnstore-index elk kolomsegment afzonderlijk.
 
-Als zodanig worden de geheugen vereisten voor het comprimeren van een Rijg roep verhoogd naarmate het aantal kolommen toeneemt.
+Als zodanig nemen de geheugenvereisten voor het comprimeren van een rijgroep toe naarmate het aantal kolommen toeneemt.
 
-### <a name="use-fewer-string-columns"></a>Minder teken reeks kolommen gebruiken
+### <a name="use-fewer-string-columns"></a>Minder tekenreekskolommen gebruiken
 
-Kolommen met teken reeks gegevens typen vereisen meer geheugen dan numerieke en datum gegevens typen. Als u de geheugen vereisten wilt reduceren, kunt u overwegen om teken reeks kolommen uit feiten tabellen te verwijderen en ze in kleinere dimensie tabellen te plaatsen.
+Kolommen met tekenreeksgegevenstypen vereisen meer geheugen dan numerieke en datumgegevenstypen. Als u de geheugenvereisten wilt verminderen, kunt u tekenreekskolommen uit feitentabellen verwijderen en deze in kleinere dimensietabellen plaatsen.
 
-Aanvullende geheugen vereisten voor teken reeks compressie:
+Aanvullende geheugenvereisten voor tekenreekscompressie:
 
-- Teken reeks gegevens typen tot 32 tekens kunnen 32 extra bytes per waarde vereisen.
-- Teken reeks gegevens typen met meer dan 32 tekens worden gecomprimeerd met woordenboek methoden.  Voor elke kolom in de Rijg roep kan 16 MB extra worden vereist om de woorden lijst samen te stellen.
+- Tekenreeksgegevenstypen van maximaal 32 tekens kunnen 32 extra bytes per waarde vereisen.
+- Tekenreeksgegevenstypen met meer dan 32 tekens worden gecomprimeerd met behulp van woordenlijstmethoden.  Elke kolom in de rijgroep kan tot 16 MB extra vereisen om de woordenlijst te bouwen.
 
-### <a name="avoid-over-partitioning"></a>Vermijd overschrijdende partitionering
+### <a name="avoid-over-partitioning"></a>Overpartities voorkomen
 
-Column Store-indexen maken een of meer Rijg roepen per partitie. Voor een toegewezen SQL-groep in azure Synapse Analytics neemt het aantal partities toe, omdat de gegevens worden gedistribueerd en elke distributie wordt gepartitioneerd.
+Columnstore-indexen maken een of meer rijgroepen per partitie. Voor toegewezen SQL-pool in Azure Synapse Analytics neemt het aantal partities snel toe omdat de gegevens worden gedistribueerd en elke distributie wordt gepartitiefd.
 
-Als de tabel te veel partities heeft, zijn er mogelijk niet voldoende rijen om de Rijg roepen in te vullen. Het ontbreken van rijen maakt geen geheugen druk tijdens compressie. Maar het resulteert in Rijg roepen die de beste prestaties van Column Store-query's niet behalen.
+Als de tabel te veel partities heeft, zijn er mogelijk onvoldoende rijen om de rijgroepen te vullen. Het ontbreken van rijen zorgt niet voor geheugendruk tijdens compressie. Maar dit leidt tot rijgroepen die niet de beste prestaties van columnstore-query's bereiken.
 
-Een andere reden om te voor komen dat u partitioneert, is er een geheugen overhead voor het laden van rijen in een column store-index in een gepartitioneerde tabel.
+Een andere reden om overpartities te voorkomen, is dat er geheugenoverhead is voor het laden van rijen in een columnstore-index op een gepartitiesteerde tabel.
 
-Tijdens het laden kunnen veel partities de binnenkomende rijen ontvangen die in het geheugen worden bewaard totdat elke partitie voldoende rijen heeft om te worden gecomprimeerd. Als er te veel partities zijn, wordt extra geheugen druk gemaakt.
+Tijdens een belasting kunnen veel partities de binnenkomende rijen ontvangen, die in het geheugen worden opgeslagen totdat elke partitie voldoende rijen heeft om te worden gecomprimeerd. Te veel partities zorgen voor extra geheugendruk.
 
-### <a name="simplify-the-load-query"></a>Vereenvoudig de laad query
+### <a name="simplify-the-load-query"></a>De laadquery vereenvoudigen
 
-De data base deelt de geheugen toekenning voor een query tussen alle Opera tors in de query. Wanneer een laad query complexe sorteringen en samen voegingen heeft, wordt het geheugen dat beschikbaar is voor compressie, gereduceerd.
+De database deelt de geheugen-toekenning voor een query tussen alle operators in de query. Wanneer een laadquery complexe sorteert en joins heeft, wordt het geheugen dat beschikbaar is voor compressie verminderd.
 
-Ontwerp de laad query zodanig dat deze alleen gericht is op het laden van de query. Als u trans formaties voor de gegevens wilt uitvoeren, moet u ze gescheiden van de laad query uitvoeren. U kunt bijvoorbeeld de gegevens in een heap-tabel faseren, de trans formaties uitvoeren en de faserings tabel vervolgens laden in de column store-index.
+Ontwerp de laadquery om u alleen te richten op het laden van de query. Als u transformaties op de gegevens wilt uitvoeren, moet u deze afzonderlijk van de laadquery uitvoeren. Faseer bijvoorbeeld de gegevens in een heap-tabel, voer de transformaties uit en laad vervolgens de faseringstabel in de columnstore-index.
 
 > [!TIP]
 > U kunt de gegevens ook eerst laden en vervolgens het MPP-systeem gebruiken om de gegevens te transformeren.
 
 ### <a name="adjust-maxdop"></a>MAXDOP aanpassen
 
-Elke distributie comprimeert Rijg roepen in de column Store parallel wanneer er meer dan één CPU-kern per distributie beschikbaar is.
+Elke distributie comprimeert rijgroepen parallel in de columnstore wanneer er meer dan één CPU-kern beschikbaar is per distributie.
 
-De parallelle uitvoering vereist extra geheugen bronnen, wat kan leiden tot geheugen druk en rijg roep.
+Voor parallellisme zijn extra geheugenbronnen vereist, wat kan leiden tot geheugendruk en het inkorten van rijgroepen.
 
-Als u de geheugen druk wilt reduceren, kunt u de MAXDOP-query Hint gebruiken om de laad bewerking af te dwingen in de seriële modus binnen elke distributie.
+Om de geheugendruk te verminderen, kunt u de MAXDOP-queryhint gebruiken om af te dwingen dat de laadbewerking in seriële modus binnen elke distributie wordt uitgevoerd.
 
 ```sql
 CREATE TABLE MyFactSalesQuota
@@ -156,13 +156,13 @@ OPTION (MAXDOP 1);
 
 ## <a name="ways-to-allocate-more-memory"></a>Manieren om meer geheugen toe te wijzen
 
-De grootte van de DWU en de resource klasse van de gebruiker bepalen samen hoeveel geheugen beschikbaar is voor een gebruikers query.
+De DWU-grootte en de resourceklasse van de gebruiker bepalen samen hoeveel geheugen beschikbaar is voor een gebruikersquery.
 
-Als u de geheugen toekenning voor een laad query wilt verg Roten, kunt u het aantal Dwu's verhogen of de resource klasse verg Roten.
+Als u de geheugen-toekenning voor een belastingsquery wilt verhogen, kunt u het aantal DWUs verhogen of de resourceklasse verhogen.
 
-- Zie [Hoe kan ik schaal prestaties](quickstart-scale-compute-portal.md) om de dwu's te verg Roten?
-- Als u de resource klasse voor een query wilt wijzigen, raadpleegt u [een voor beeld van een gebruikers resource klasse wijzigen](resource-classes-for-workload-management.md#change-a-users-resource-class).
+- Als u de DWUs wilt verhogen, [Hoe kan ik u de schaalprestaties?](quickstart-scale-compute-portal.md)
+- Zie Voorbeeld van een gebruikersresourceklasse wijzigen om de resourceklasse voor een query [te wijzigen.](resource-classes-for-workload-management.md#change-a-users-resource-class)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie het [overzicht van prestaties](cheat-sheet.md)voor meer manieren om de prestaties van een toegewezen SQL-groep te verbeteren.
+Zie Prestatieoverzicht voor meer manieren om de prestaties voor toegewezen SQL-pool [te verbeteren.](cheat-sheet.md)

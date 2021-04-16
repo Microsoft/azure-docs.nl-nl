@@ -1,7 +1,7 @@
 ---
-title: Docker-pull voor de Sentimentanalyse container
+title: Docker pull voor de Sentimentanalyse container
 titleSuffix: Azure Cognitive Services
-description: Docker-pull-opdracht voor Sentimentanalyse container
+description: Docker pull-opdracht voor Sentimentanalyse container
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -9,34 +9,39 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: 549ecf940c53267db6b3caa576c4c24db414337a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 32a550e120331a8255281d51725d2d5fc8ca1e05
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "90906086"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107564616"
 ---
-#### <a name="docker-pull-for-the-sentiment-analysis-v3-container"></a>Docker-pull voor de Sentimentanalyse v3-container
+#### <a name="docker-pull-for-the-sentiment-analysis-v3-container"></a>Docker pull voor de Sentimentanalyse v3-container
 
-De V3-container van de sentiment analyse container is beschikbaar in verschillende talen. Als u de container voor de Engelse container wilt downloaden, gebruikt u de onderstaande opdracht. 
+De container sentimentanalyse v3 is beschikbaar in verschillende talen. Gebruik de onderstaande opdracht om de container voor de Engelse container te downloaden. 
 
 ```
 docker pull mcr.microsoft.com/azure-cognitive-services/textanalytics/sentiment:3.0-en
 ```
 
-Als u de container voor een andere taal wilt downloaden, vervangt u door `en` een van de onderstaande taal codes. 
+Als u de container voor een andere taal wilt downloaden, vervangt `en` u door een van de onderstaande taalcodes. 
 
-| Text Analytics-container | Taalcode |
+| Text Analytics Container | Taalcode |
 |--|--|
-| Engels | `en` |
-| Spaans | `es` |
-| Frans | `fr` |
-| Italiaans | `it` |
-| Duits | `de` |
-| Chinees-vereenvoudigd | `zh` |
-| Chinees-traditioneel | `zht` |
-| Japans | `ja` |
-| Portugees | `pt` |
-| Nederlands | `nl` |
+| Chinese-Simplified    |   `zh-hans`   |
+| Chinese-Traditional   |   `zh-hant`   |
+| Nederlands                 |     `nl`      |
+| Engels               |     `en`      |
+| Frans                |     `fr`      |
+| Duits                |     `de`      |
+| Hindi                 |    `hi`       |
+| Italiaans               |     `it`      |
+| Japans              |     `ja`      |
+| Koreaans                |     `ko`      |
+| Noors (Bokmål)   |     `no`      |
+| Portugees (Brazilië)   |    `pt-BR`    |
+| Portugees (Portugal) |    `pt-PT`    |
+| Spaans               |     `es`      |
+| Turks               |     `tr`      |
 
-Zie [docker hub](https://go.microsoft.com/fwlink/?linkid=2018654)voor een volledige beschrijving van de beschik bare labels voor de Text Analytics containers.
+Zie voor een volledige beschrijving van de beschikbare tags voor de Text Analytics containers [Docker Hub](https://go.microsoft.com/fwlink/?linkid=2018654).

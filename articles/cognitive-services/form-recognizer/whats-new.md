@@ -1,197 +1,343 @@
 ---
 title: Wat is er nieuw in Form Recognizer?
 titleSuffix: Azure Cognitive Services
-description: Meer informatie over de meest recente wijzigingen in de API voor formulier herkenning.
+description: Meer informatie over de meest recente wijzigingen in Form Recognizer API.
 author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: conceptual
-ms.date: 03/15/2021
+ms.date: 04/14/2021
 ms.author: lajanuar
-ms.openlocfilehash: 81115f5a9ed802f1d07c45ec928dc4b84ea2917b
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: e952d481daf53b1806dc3cfbb658c8c0c21f6984
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105048745"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107516294"
 ---
 <!-- markdownlint-disable MD024 -->
+<!-- markdownlint-disable MD036 -->
 # <a name="whats-new-in-form-recognizer"></a>Wat is er nieuw in Form Recognizer?
 
-De Form Recognizer-service wordt doorlopend bijgewerkt. Gebruik dit artikel om op de hoogte te blijven van de functie verbeteringen, oplossingen en documentatie-updates.
+De Form Recognizer-service wordt voortdurend bijgewerkt. Gebruik dit artikel om up-to-date te blijven met functieverbeteringen, oplossingen en documentatie-updates.
 
-## <a name="march-2021"></a>2021 maart
+## <a name="april-2021"></a>April 2021
+<!-- markdownlint-disable MD029 -->
 
-**Formulier Recognizer v 2.1 Public Preview 3 is nu beschikbaar.** v 2.1-Preview. 3 is uitgebracht, met inbegrip van de volgende functies:
+### <a name="sdk-updates-api--version-21-preview3"></a>SDK-updates (API-versie 2.1-preview.3)
 
-- **Nieuw vooraf gebouwd ID-model** Met het nieuwe vooraf gemaakte ID-model kunnen klanten Id's maken en gestructureerde gegevens retour neren om de verwerking te automatiseren. Het combineert onze krachtige functies voor optische teken herkenning (OCR) met ID-modellen voor het extra heren van belang rijke informatie uit Pass Port-en Amerikaanse Stuur Programma's, zoals de naam, de geboorte datum, de uitgifte datum, de verval datum en nog veel meer.
+### <a name="c-version-310-beta4"></a>**C#-versie 3.1.0-beta.4**
 
-  [Meer informatie over het vooraf ontwikkelde ID-model](concept-identification-cards.md)
+* **Nieuwe methoden voor het analyseren van gegevens uit identiteitsdocumenten:**
 
-   :::image type="content" source="./media/id-canada-passport-example.png" alt-text="voor beeld van Pass Port" lightbox="./media/id-canada-passport-example.png":::
+   **[StartRecognizeIdDocumentsFromUriAsync](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient.startrecognizeiddocumentsasync?view=azure-dotnet-preview&preserve-view=true)**
 
-- Het **ophalen van regel items voor een vooraf gebouwd factuur** model biedt nu ondersteuning voor het ophalen van regel items. Er worden nu volledige items en de bijbehorende onderdelen, de hoeveelheid, het aantal, de product-ID, de datum en meer geëxtraheerd. Met een eenvoudige API/SDK-aanroep kunt u nuttige gegevens ophalen uit uw facturen: tekst, tabel, sleutel-waardeparen en regel items.
+   **[StartRecognizeIdDocumentsAsync](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient.startrecognizeiddocumentsasync?view=azure-dotnet-preview&preserve-view=true)**
 
-   [Meer informatie over het vooraf gemaakte factuur model](concept-invoices.md)
+   Zie Velden die zijn  [geëxtraheerd](concept-identification-cards.md#fields-extracted) in onze Form Recognizer voor een lijst met veldwaarden.
 
-- Gelabelde **tabel labels en trainingen, lege-waarde labelen** -naast [de geavanceerde diep gaande leer mogelijkheden voor het uitpakken van de tabel](https://techcommunity.microsoft.com/t5/azure-ai/enhanced-table-extraction-from-documents-with-form-recognizer/ba-p/2058011), kunnen klanten de tabellen nu labelen en trainen. Deze nieuwe release bevat de mogelijkheid om een label en een trein te geven op regel items/tabellen (dynamisch en vast) en een aangepast model te trainen om sleutel-waardeparen en lijn items te extra heren. Zodra een model is getraind, haalt het model regel items op als onderdeel van de JSON-uitvoer in het gedeelte documentResults.
+* De set met documenttalen die kan worden opgegeven voor de **[methode StartRecognizeContent](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient.startrecognizecontent?view=azure-dotnet-preview&preserve-view=true)** is uitgebreid.
 
-    :::image type="content" source="./media/table-labeling.png" alt-text="Tabel labelen" lightbox="./media/table-labeling.png":::
+* **Nieuwe eigenschap `Pages`  die wordt ondersteund door de volgende klassen**:
 
-    Naast het labelen van tabellen, kunt u nu ook lege waarden en regio's labelen. Als sommige documenten in uw Trainingsset geen waarden voor bepaalde velden hebben, kunt u dit gebruiken zodat uw model waarden correct ophaalt van geanalyseerde documenten.
+   **[RecognizeBusinessCardsOptions](/dotnet/api/azure.ai.formrecognizer.recognizebusinesscardsoptions?view=azure-dotnet-preview&preserve-view=true)**</br>
+   **[RecognizeCustomFormsOptions](/dotnet/api/azure.ai.formrecognizer.recognizecustomformsoptions?view=azure-dotnet-preview&preserve-view=true)**</br>
+   **[RecognizeInvoicesOptions](/dotnet/api/azure.ai.formrecognizer.recognizeinvoicesoptions?view=azure-dotnet-preview&preserve-view=true)**</br>
+   **[RecognizeReceiptsOptions](/dotnet/api/azure.ai.formrecognizer.recognizereceiptsoptions?view=azure-dotnet-preview&preserve-view=true)**</br>
 
-- **Ondersteuning voor 66 nieuwe talen** -indelings-API van de formulier herkenning en aangepaste modellen bieden nu ondersteuning voor 73 talen.
+   Met `Pages` de eigenschap kunt u afzonderlijke of een reeks pagina's selecteren voor PDF- en TIFF-documenten met meerdere pagina's. Voer voor afzonderlijke pagina's het paginanummer in, bijvoorbeeld `3` . Voer voor een bereik van pagina's (zoals pagina 2 en pagina 5-7) de p-leeftijdsnummers en -reeksen in, gescheiden door komma's: `2, 5-7` .    
 
-  [Meer informatie over taal ondersteuning van de formulier herkenning](language-support.md)
+* **Nieuwe eigenschap `ReadingOrder` die wordt ondersteund voor de volgende klasse**:
 
-- **Natuurlijke Lees volgorde, hand schrift classificatie en pagina selectie** : met deze update kunt u ervoor kiezen om de tekst van de uitvoer in de natuurlijke Lees volgorde op te halen in plaats van de standaard instelling voor links naar rechts en naar beneden. Gebruik de nieuwe Reading order query-para meter en stel deze in op natuurlijke waarde voor een meer mensen vriendelijke Lees volgorde. Daarnaast classificeert de formulier herkenner voor Latijnse talen tekst regels als handgeschreven stijl of niet en geven ze een betrouwbaarheids Score.
+   **[RecognizeContentOptions](/dotnet/api/azure.ai.formrecognizer.recognizecontentoptions?view=azure-dotnet-preview&preserve-view=true)**
 
-- **Vooraf ontwikkelde kwaliteits verbeteringen van het ontvangst model** Deze update bevat een aantal kwaliteits verbeteringen voor het vooraf opgebouwde ontvangst model, met name rond het uitpakken van de regel items.
+  De eigenschap is een optionele parameter waarmee u kunt opgeven welk leesorderalgoritme, of , moet worden toegepast om de extractie `ReadingOrder` `basic` van `natural` tekstelementen te orden. Als dit niet is opgegeven, is de standaardwaarde `basic` .
+
+#### <a name="breaking-changes"></a>Wijzigingen die fouten veroorzaken
+
+* De client wordt standaard ingesteld op de meest recente ondersteunde serviceversie, momenteel **2.1-preview.3.**
+
+* **[De methode StartRecognizeCustomForms](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient.startrecognizecustomforms?view=azure-dotnet-preview&preserve-view=true#Azure_AI_FormRecognizer_FormRecognizerClient_StartRecognizeCustomForms_System_String_System_IO_Stream_Azure_AI_FormRecognizer_RecognizeCustomFormsOptions_System_Threading_CancellationToken_)** geeft nu een wanneer `RequestFailedException()` een ongeldig bestand wordt doorgegeven.
+
+### <a name="java-version-310-beta3"></a>**Java-versie 3.1.0-beta.3**
+
+* **Nieuwe methoden voor het analyseren van gegevens uit identiteitsdocumenten:**
+
+  **[beginRecognizeIdDocumentsFromUrl](/java/api/com.azure.ai.formrecognizer.formrecognizerclient.beginrecognizeiddocumentsfromurl?view=azure-java-preview&preserve-view=true)**
+
+  **[beginRecognizeIdDocuments](/java/api/com.azure.ai.formrecognizer.formrecognizerclient.beginrecognizeiddocuments?view=azure-java-preview&preserve-view=true)**
+
+   Zie Velden die zijn  [geëxtraheerd](concept-identification-cards.md#fields-extracted) in onze documentatie Form Recognizer veldwaarden voor een lijst met veldwaarden.
+
+* **Ondersteuning voor bitmap-afbeeldingsbestand (.bmp) voor aangepaste formulieren en trainingsmethoden in `FormContentType` de enum**:
+
+* `image/bmp`
+
+* **Nieuwe eigenschap `Pages`  die wordt ondersteund door de volgende klassen**:
+
+   **[RecognizeBusinessCardsOptions](/java/api/com.azure.ai.formrecognizer.models.recognizebusinesscardsoptions?view=azure-java-preview&preserve-view=true)**</br>
+   **[RecognizeCustomFormOptions](/java/api/com.azure.ai.formrecognizer.models.recognizecustomformsoptions?view=azure-java-preview&preserve-view=true)**</br>
+   **[RecognizeInvoicesOptions](/java/api/com.azure.ai.formrecognizer.models.recognizeinvoicesoptions?view=azure-java-preview&preserve-view=true)**</br>
+   **[RecognizeReceiptsOptions](/java/api/com.azure.ai.formrecognizer.models.recognizereceiptsoptions?view=azure-java-preview&preserve-view=true)**</br>
+
+  Met de eigenschap kunt u afzonderlijke of een `Pages` reeks pagina's selecteren voor PDF- en TIFF-documenten met meerdere pagina's. Voer voor afzonderlijke pagina's het paginanummer in, bijvoorbeeld `3` . Voer voor een bereik van pagina's (zoals pagina 2 en pagina 5-7) de paginanummers en -reeksen in, gescheiden door komma's: `2, 5-7` .
+
+* **Ondersteuning voor Bitmap Image File (.bmp) voor aangepaste formulieren en trainingsmethoden in de [velden FormContentType:](/java/api/com.azure.ai.formrecognizer.models.formcontenttype?view=azure-java-preview&preserve-view=true#fields)**
+
+  `image/bmp`
+
+* **Nieuw `ReadingOrder` trefwoordargument dat wordt ondersteund voor de volgende methoden:**
+
+* **[beginRecognizeContent](https://docs.microsoft.com/java/api/com.azure.ai.formrecognizer.formrecognizerclient.beginrecognizecontent?view=azure-java-preview&preserve-view=true)**</br>
+**[beginRecognizeContentFromUrl](/java/api/com.azure.ai.formrecognizer.formrecognizerclient.beginrecognizecontentfromurl?view=azure-java-preview&preserve-view=true)**</br>
+
+   Het trefwoordargument is een optionele parameter waarmee u kunt opgeven welk leesalgoritme( of ) moet worden toegepast om de extractie `ReadingOrder` `basic` van `natural` tekstelementen te orden. Als dit niet wordt opgegeven, is de standaardwaarde `basic` .
+
+* De client wordt standaard ingesteld op de meest recente ondersteunde serviceversie, momenteel **2.1-preview.3.**
+
+### <a name="javascript-version-310-beta3"></a>**JavaScript-versie 3.1.0-beta.3**
+
+* **Nieuwe methoden voor het analyseren van gegevens uit identiteitsdocumenten:**
+
+    **[beginRecognizeIdDocumentsFromUrl](/javascript/api/@azure/ai-form-recognizer/formrecognizerclient?view=azure-node-preview&preserve-view=true&branch=main#beginRecognizeIdDocumentsFromUrl_string__BeginRecognizeIdDocumentsOptions_)**
+
+    **[beginRecognizeIdDocuments](/javascript/api/@azure/ai-form-recognizer/formrecognizerclient?view=azure-node-preview&preserve-view=true&branch=main#beginRecognizeIdDocuments_FormRecognizerRequestBody__BeginRecognizeIdDocumentsOptions_)**
+
+    Zie Velden die zijn  [geëxtraheerd](concept-identification-cards.md#fields-extracted) in onze Form Recognizer voor een lijst met veldwaarden.
+
+* **Nieuwe veldwaarden toegevoegd aan de FieldValue-interface**:
+
+    `gender`: mogelijke waarden zijn `M` `F` of `X` .</br>
+   `country`: mogelijke waarden volgen de drieletterige landcodereeks iso [alpha-3.](https://www.iso.org/obp/ui/#search)
+
+* **Nieuwe optie `pages` die wordt ondersteund door alle methoden voor formulierherkenning (aangepaste formulieren en alle vooraf gebouwde modellen). Met het argument kunt u afzonderlijke of een reeks pagina's selecteren voor PDF- en TIFF-documenten met meerdere pagina's. Voer voor afzonderlijke pagina's het paginanummer in, bijvoorbeeld `3` . Voer voor een bereik van pagina's (zoals pagina 2 en pagina 5-7) de paginanummers en -reeksen in, gescheiden door komma's: `2, 5-7` .
+
+* Ondersteuning voor een **[ReadingOrder-type](/javascript/api/@azure/ai-form-recognizer/readingorder?view=azure-node-preview&preserve-view=true)** toegevoegd aan de methoden voor inhoudsherkenning. Met deze optie kunt u het algoritme bepalen dat de service gebruikt om te bepalen hoe herkende tekstregels moeten worden geordend. U kunt opgeven welk leesorderalgoritme, of , moet worden toegepast om `basic` `natural` de extractie van tekstelementen te orden. Als dit niet is opgegeven, is de standaardwaarde `basic` .
+
+* **[Formulierveldtype splitsen](/javascript/api/@azure/ai-form-recognizer/formfield?view=azure-node-preview&preserve-view=true)** in verschillende interfaces. Dit mag geen API-compatibiliteitsproblemen veroorzaken, behalve in bepaalde edge-gevallen (niet-gedefinieerd valueType).
+
+* Gemigreerd naar **het service-eindpunt 2.1-preview.3** Form Recognizer voor alle REST API aanroepen.
+
+### <a name="python-version--310b4"></a>**Python-versie 3.1.0b4**
+
+* **Nieuwe methoden voor het analyseren van gegevens uit identiteitsdocumenten:**
+
+  **[begin_recognize_id_documents_from_url](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python&preserve-view=true)**
+
+  **[begin_recognize_id_documents](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python&preserve-view=true)**
+
+  Zie Velden die zijn  [geëxtraheerd](concept-identification-cards.md#fields-extracted) in onze documentatie Form Recognizer veldwaarden voor een lijst met veldwaarden.
+
+* **Nieuwe veldwaarden toegevoegd aan de [enum FieldValueType:](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.fieldvaluetype?view=azure-python-preview&preserve-view=true)**
+
+   geslacht: mogelijke waarden zijn `M` `F` of `X` .
+
+  country: mogelijke waarden volgen [ISO alpha-3 Country Codes](https://www.iso.org/obp/ui/#search).
+
+* **Ondersteuning voor bitmap-afbeeldingsbestand (.bmp) voor aangepaste formulieren en trainingsmethoden in de enum [FormContentType:](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formcontenttype?view=azure-python-preview&preserve-view=true)**
+
+    image/bmp
+
+* **Nieuw trefwoordargument `pages` dat wordt ondersteund door de volgende methoden:**
+
+    **[begin_recognize_receipts](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python-preview&preserve-view=true&branch=main#begin-recognize-receipts-receipt----kwargs-)**
+
+    **[begin_recognize_receipts_from_url](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python-preview&preserve-view=true#begin-recognize-receipts-from-url-receipt-url----kwargs-)**
+
+   **[begin_recognize_business_cards](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python-preview&preserve-view=true#begin-recognize-business-cards-business-card----kwargs-)**
+
+   **[begin_recognize_business_cards_from_url](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python-preview&preserve-view=true#begin-recognize-business-cards-from-url-business-card-url----kwargs-)**
+
+   **[begin_recognize_invoices](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python-preview&preserve-view=true#begin-recognize-invoices-invoice----kwargs-)**
+
+   **[begin_recognize_invoices_from_url](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python-preview&preserve-view=true#begin-recognize-invoices-from-url-invoice-url----kwargs-)**
+
+   **[begin_recognize_content](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python-preview&preserve-view=true#begin-recognize-content-form----kwargs-)**
+
+  **[begin_recognize_content_from_url](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python-preview&preserve-view=true#begin-recognize-content-from-url-form-url----kwargs-)**
+
+   Met `pages` het trefwoordargument kunt u afzonderlijke of een reeks pagina's selecteren voor PDF- en TIFF-documenten met meerdere pagina's. Voer voor afzonderlijke pagina's het paginanummer in, bijvoorbeeld `3` . Voer voor een bereik van pagina's (zoals pagina 2 en pagina 5-7) de paginanummers en -reeksen in, gescheiden door komma's: `2, 5-7` .
+
+* **Nieuw trefwoordargument `readingOrder` dat wordt ondersteund voor de volgende methoden:**
+
+   **[begin_recognize_content](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python-preview&preserve-view=true#begin-recognize-content-form----kwargs-)**
+
+   **[begin_recognize_content_from_url](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python-preview&preserve-view=true#begin-recognize-content-from-url-form-url----kwargs-)**
+
+   Het trefwoordargument is een optionele parameter waarmee u kunt opgeven welk algoritme voor leesorders, of , moet worden toegepast om de extractie van tekstelementen `readingOrder` `basic` te `natural` orden. Als dit niet is opgegeven, is de standaardwaarde `basic` .
+
+## <a name="march-2021"></a>Maart 2021
+
+**Form Recognizer versie 2.1 openbare preview 3 is nu beschikbaar.** v2.1-preview.3 is uitgebracht, met inbegrip van de volgende functies:
+
+* **Nieuw vooraf gemaakt id-model** Met het nieuwe vooraf gebouwde id-model kunnen klanten id's maken en gestructureerde gegevens retourneren om de verwerking te automatiseren. Het combineert onze krachtige OCR-mogelijkheden (Optical Character Recognition) met modellen voor het begrijpen van id's om belangrijke informatie te extraheren uit paspoorten en Amerikaanse stuurprogrammalicenties, zoals naam, geboortedatum, uitgiftedatum, vervaldatum en meer.
+
+  [Meer informatie over het vooraf gebouwde id-model](concept-identification-cards.md)
+
+   :::image type="content" source="./media/id-canada-passport-example.png" alt-text="passport-voorbeeld" lightbox="./media/id-canada-passport-example.png":::
+
+* **Extractie van regelitem voor vooraf gebouwd factuurmodel:** vooraf gebouwd factuurmodel ondersteunt nu extractie van regelitem; Nu worden alle items en de onderdelen ervan geëxtraheert: beschrijving, hoeveelheid, product-id, datum en meer. Met een eenvoudige API/SDK-aanroep kunt u nuttige gegevens extraheren uit uw facturen: tekst, tabel, sleutel-waardeparen en regelitems.
+
+   [Meer informatie over het vooraf gebouwde factuurmodel](concept-invoices.md)
+
+* Labelen en trainen van tabellen onder **supervisie,** labelen met lege waarden: naast de geavanceerde deep [learning-mogelijkheden](https://techcommunity.microsoft.com/t5/azure-ai/enhanced-table-extraction-from-documents-with-form-recognizer/ba-p/2058011)van Form Recognizer kunnen klanten nu tabellen labelen en trainen. Deze nieuwe release bevat de mogelijkheid om regelitems/-tabellen te labelen en te trainen (dynamisch en vast) en een aangepast model te trainen om sleutel-waardeparen en regelitems te extraheren. Zodra een model is getraind, extraheert het model regelitems als onderdeel van de JSON-uitvoer in de sectie documentResults.
+
+    :::image type="content" source="./media/table-labeling.png" alt-text="Tabellabels" lightbox="./media/table-labeling.png":::
+
+    Naast het labelen van tabellen kunt u nu lege waarden en regio's labelen; Als sommige documenten in uw trainingsset geen waarden voor bepaalde velden hebben, kunt u ze labelen zodat uw model weet dat waarden correct moeten worden geëxtraheerd uit geanalyseerde documenten.
+
+* **Ondersteuning voor 66 nieuwe talen:** Form Recognizer indelings-API en aangepaste modellen bieden nu ondersteuning voor 73 talen.
+
+  [Meer informatie over Form Recognizer taalondersteuning van uw Form Recognizer](language-support.md)
+
+* Natuurlijke **leesorde, handschriftclassificatie** en paginaselectie: met deze update kunt u ervoor kiezen om de uitvoer van de tekstregel op te halen in de natuurlijke leesorde in plaats van de standaardinstelling van links naar rechts en van boven naar beneden. Gebruik de nieuwe queryparameter readingOrder en stel deze in op 'natuurlijke' waarde voor een meer human-friendly reading order-uitvoer. Daarnaast classificeert u voor Latijnse talen Form Recognizer als handgeschreven stijl en geeft u een betrouwbaarheidsscore.
+
+* **Kwaliteitsverbeteringen voor vooraf gebouwde bonmodellen** Deze update bevat veel kwaliteitsverbeteringen voor het vooraf gebouwde ontvangstbewijsmodel, met name wat betreft de extractie van regelitem.
 
 ## <a name="november-2020"></a>November 2020
 
 ### <a name="new-features"></a>Nieuwe functies
 
-**Formulier Recognizer v 2.1 Public Preview 2 is nu beschikbaar.** v 2.1: preview. 2 is uitgebracht, met inbegrip van de volgende functies: 
+**Form Recognizer versie 2.1 openbare preview 2 is nu beschikbaar.** v2.1-preview.2 is uitgebracht, met inbegrip van de volgende functies:
 
-- **Nieuw vooraf gebouwd factuur model** : met het nieuwe vooraf gemaakte factuur model kunnen klanten facturen in verschillende indelingen nemen en gestructureerde gegevens retour neren om de factuur verwerking te automatiseren. Het combineert onze krachtige functies voor optische teken herkenning (OCR) met factuur uitgebreide leer modellen voor het extra heren van belang rijke informatie uit facturen in het Engels. Hiermee worden de tekst, tabellen en gegevens, zoals klant, leverancier, factuur-ID, verval datum van factuur, totaal, verschuldigd bedrag, belasting bedrag, verzen ding, factuur en meer geëxtraheerd.
+- **Nieuw vooraf gebouwd factuurmodel:** met het nieuwe vooraf gebouwde factuurmodel kunnen klanten facturen in verschillende indelingen ontvangen en gestructureerde gegevens retourneren om de factuurverwerking te automatiseren. Het combineert onze krachtige OCR-mogelijkheden (Optical Character Recognition) met deep learning-modellen voor factuurbegrip om belangrijke informatie te extraheren uit facturen in het Engels. Er wordt sleuteltekst, tabellen en informatie geëxtraheerd, zoals klant, leverancier, factuur-id, factuurdatum, totaal, verschuldigd bedrag, btw-bedrag, verzenden naar en factureren aan.
 
-  > [Meer informatie over het vooraf gemaakte factuur model](concept-invoices.md)
+  > [Meer informatie over het vooraf gebouwde factuurmodel](concept-invoices.md)
 
-  :::image type="content" source="./media/invoice-example.jpg" alt-text="factuur voorbeeld" lightbox="./media/invoice-example.jpg":::
+  :::image type="content" source="./media/invoice-example.jpg" alt-text="voorbeeld van factuur" lightbox="./media/invoice-example.jpg":::
 
-- **Uitgebreide tabel extractie** : formulier Recognizer biedt nu uitgebreide tabel extractie, waarin onze krachtige OCR-mogelijkheden (optische teken herkenning) worden gecombineerd met een analyse model met uitgebreide informatie. Met de formulier herkenning kunt u gegevens ophalen uit tabellen, inclusief complexe tabellen met samengevoegde kolommen, rijen, zonder randen en meer. 
- 
+- **Verbeterde tabelextractie:** Form Recognizer biedt nu verbeterde tabelextractie, waarin onze krachtige OCR-mogelijkheden (Optical Character Recognition) worden gecombineerd met een deep learning-model voor tabelextractie. Form Recognizer kunt gegevens extraheren uit tabellen, waaronder complexe tabellen met samengevoegde kolommen, rijen, geen randen en meer.
+
   :::image type="content" source="./media/tables-example.jpg" alt-text="voorbeeld van tabellen" lightbox="./media/tables-example.jpg":::
 
- 
-  > [Meer informatie over indelings extractie](concept-layout.md)
 
-- **Update van client bibliotheek** : de nieuwste versies van de [client bibliotheken](quickstarts/client-library.md) voor .net, Python, Java en Java script bieden ondersteuning voor de API voor formulier herkenning 2,1.
-- **Nieuwe ondersteunde taal: Japans** -de volgende nieuwe talen worden nu ondersteund: voor `AnalyzeLayout` en `AnalyzeCustomForm` : Japans ( `ja` ). [Taalondersteuning](language-support.md)
-- **Tekst lijn stijl vermelding (handgeschreven/Overig) (alleen Latijnse talen)** : met formulier herkenning wordt nu een `appearance` object geclassificeerd waarin wordt aangegeven of elke tekst regel handgeschreven stijl is of niet, samen met een betrouwbaarheids Score. Deze functie wordt alleen ondersteund voor Latijnse talen.
-- **Kwaliteits verbeteringen** : extractie verbeteringen, waaronder de extractie van één cijfer.
-- **Nieuwe try-it-out-functie in de vorm van voor beeld van herkenning en labelen hulp programma** : de mogelijkheid om vooraf gemaakte factuur-, ontvangst-en visite kaart modellen en de lay-out van de indelings-API te gebruiken met behulp van het voor beeld labelen Bekijk hoe uw gegevens worden geëxtraheerd zonder dat u code hoeft te schrijven.
+  > [Meer informatie over indelingsextractie](concept-layout.md)
 
-  > [Het voorbeeld programma voor formulier herkenning uitproberen](https://fott-preview.azurewebsites.net/)
+- **Update van clientbibliotheek:** de nieuwste versies van de [clientbibliotheken](quickstarts/client-library.md) voor .NET, Python, Java en JavaScript ondersteunen de Form Recognizer 2.1 API.
+- **Nieuwe ondersteunde taal: Japans** - De volgende nieuwe talen worden nu ondersteund: `AnalyzeLayout` voor en : `AnalyzeCustomForm` Japans ( `ja` ). [Taalondersteuning](language-support.md)
+- Stijlindicatie voor tekstregel **(handgeschreven/andere) (alleen** Latijnse talen) - Form Recognizer geeft nu een object weer dat classificeert of elke tekstregel handgeschreven stijl is of niet, samen met een `appearance` betrouwbaarheidsscore. Deze functie wordt alleen ondersteund voor Latijnse talen.
+- **Kwaliteitsverbeteringen:** extractieverbeteringen, waaronder extractieverbeteringen met één cijfer.
+- **Nieuwe functie** voor uitproberen in het Form Recognizer-hulpprogramma voor voorbeeld en labelen: de mogelijkheid om vooraf ontwikkelde modellen voor facturen, ontvangstbewijzen en visitekaartjes en de indelings-API uit te proberen met behulp van het hulpprogramma Form Recognizer Sample Labeling. Bekijk hoe uw gegevens worden geëxtraheerd zonder code te schrijven.
 
-  ![FOTT-voor beeld](./media/ui-preview.jpg)
-  
-- **Feedback-lus** : bij het analyseren van bestanden via het hulp programma voor het labelen van het voor beeld kunt u dit nu ook toevoegen aan de Trainingsset en zo nodig de labels aanpassen, zodat het model kan worden verbeterd.
-- **Documenten automatisch labelen** : automatisch extra documenten labelen op basis van eerder gelabelde documenten in het project.
+  > [Het voorbeeldhulpprogramma Form Recognizer uitproberen](https://fott-preview.azurewebsites.net/)
+
+  ![FOTT-voorbeeld](./media/ui-preview.jpg)
+
+- **Feedbacklus:** wanneer u bestanden analyseert via het voorbeeldhulpprogramma voor labelen, kunt u deze nu ook toevoegen aan de trainingsset en de labels zo nodig aanpassen en trainen om het model te verbeteren.
+- **Documenten automatisch labelen:** extra documenten worden automatisch gelabeld op basis van eerdere gelabelde documenten in het project.
 
 ## <a name="august-2020"></a>Augustus 2020
 
 ### <a name="new-features"></a>Nieuwe functies
 
-**De open bare preview van de formulier Recognizer v 2.1 is nu beschikbaar.** V 2.1-Preview. 1 is uitgebracht, met inbegrip van de volgende functies: 
+**Form Recognizer openbare preview v2.1 is nu beschikbaar.** V2.1-preview.1 is uitgebracht, met inbegrip van de volgende functies:
 
 
-- **Rest API referentie is beschikbaar** : Bekijk de [referentie v 2.1-Preview. 1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/AnalyzeBusinessCardAsync) 
-- **Nieuwe talen die naast Engels worden ondersteund**, worden de volgende [talen](language-support.md) nu ondersteund: voor `Layout` en `Train Custom Model` : Engels ( `en` ), Chinees (vereenvoudigd) ( `zh-Hans` ), Nederlands ( `nl` ), Frans (), `fr` Duits ( `de` ), Italiaans ( `it` ), Portugees () `pt` en Spaans ( `es` ).
-- **Detectie van selectie vakjes/selectie markering** : formulier Recognizer ondersteunt detectie en extractie van selectie markeringen zoals selectie vakjes en keuze rondjes. De selectie markeringen worden geëxtraheerd in `Layout` en u kunt nu ook labels maken en trainen in `Train Custom Model`  -  _trein voorzien_ om paren van sleutel waarden te extra heren voor selectie markeringen. 
-- **Model opstellen** : Hiermee kunnen meerdere modellen worden samengesteld en met één model-id worden aangeroepen. Wanneer een document wordt ingediend om te worden geanalyseerd met een bestaande model-ID, wordt eerst een classificatie stap uitgevoerd om deze naar het juiste aangepaste model te routeren. Model opstellen is beschikbaar voor `Train Custom Model`  -  _trein met labels_.
-- **Model naam** : Voeg een beschrijvende naam toe aan uw aangepaste modellen voor eenvoudiger beheer en het bijhouden van wijzigingen.
-- **[Nieuw vooraf ontworpen model voor visite kaartjes](concept-business-cards.md)** voor het extra heren van algemene velden in het Engels, visite kaartjes voor talen.
-- **[Nieuwe land instellingen voor vooraf gemaakte ontvangst bevestigingen](concept-receipts.md)** naast en-us, ondersteuning is nu beschikbaar voor en-au, en-ca, en-GB, en-in
-- **Kwaliteits verbeteringen** voor `Layout` , `Train Custom Model`  -  _Train zonder labels_ en _trein met labels_.
+- **REST API-referentie is beschikbaar** - De [naslag voor v2.1-preview.1 weergeven](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/AnalyzeBusinessCardAsync)
+- Nieuwe **ondersteunde** talen Naast Engels [](language-support.md) worden nu de volgende talen ondersteund: voor en `Layout` : Engels ( ), Chinees `Train Custom Model` `en` (vereenvoudigd) ( ), Nederlands ( ), Frans ( ), Duits ( ), Italiaans `zh-Hans` ( ), Portugees ( ) en Spaans ( `nl` `fr` `de` `it` `pt` `es` ).
+- **Detectie van selectievakjes/selectiemarkeringen:** Form Recognizer detectie en extractie van selectiemarkeringen, zoals selectievakjes en keuzerondjes. Selectiemarkeringen worden geëxtraheerd in en u kunt nu ook trainen in Trainen met `Layout` `Train Custom Model`  -  _labels om_ sleutel-waardeparen voor selectiemarkeringen te extraheren.
+- **Model samenstellen: hiermee** kunnen meerdere modellen worden samengesteld en aangeroepen met één model-id. Wanneer u een document indient dat moet worden geanalyseerd met een samengestelde model-id, wordt eerst een classificatiestap uitgevoerd om het naar het juiste aangepaste model te verzenden. Model opstellen is beschikbaar voor `Train Custom Model`  -  _Trainen met labels_.
+- **Modelnaam:** voeg een gebruiksvriendelijke naam toe aan uw aangepaste modellen voor eenvoudiger beheer en tracering.
+- **[Nieuw vooraf gebouwd model voor visitekaartjes voor het](concept-business-cards.md)** extraheren van algemene velden in het Engels, taal visitekaartjes.
+- **[Nieuwe localen voor vooraf gebouwde bonnen](concept-receipts.md)** naast EN-US. Ondersteuning is nu beschikbaar voor EN-AU, EN-CA, EN-GB, EN-IN
+- **Kwaliteitsverbeteringen** `Layout` voor , Trainen zonder `Train Custom Model`  -  _labels_ en _Trainen met labels_.
 
-**v 2.0** bevat de volgende update:
+**v2.0 bevat** de volgende update:
 
-- De [client bibliotheken](quickstarts/client-library.md) voor net, Python, Java en Java script hebben algemene Beschik baarheid. 
+- De [clientbibliotheken](quickstarts/client-library.md) voor NET, Python, Java en JavaScript zijn algemeen beschikbaar.
 
-**Nieuwe voor beelden** zijn beschikbaar op github. 
+**Nieuwe voorbeelden** zijn beschikbaar op GitHub.
 
-- De [recepten voor kennis extractie: formulieren Playbook](https://github.com/microsoft/knowledge-extraction-recipes-forms) verzamelen aanbevolen procedures van de klant afspraken van Real Form Recognizer en biedt bruikbare code voorbeelden, controle lijsten en voorbeeld pijplijnen die worden gebruikt voor het ontwikkelen van deze projecten. 
-- Het [hulp programma voor het labelen](https://github.com/microsoft/OCR-Form-Tools) van het voor beeld is bijgewerkt ter ondersteuning van de nieuwe v 2.1-functionaliteit. Bekijk deze [Snelstartgids](quickstarts/label-tool.md) om aan de slag te gaan met het hulp programma. 
-- Het voor beeld van een [intelligent kiosk](https://github.com/microsoft/Cognitive-Samples-IntelligentKiosk/blob/master/Documentation/FormRecognizer.md) formulier Recognizer laat zien hoe u `Analyze Receipt` zonder labels integreert en `Train Custom Model`  -  _traint_.
+- Het playbook Knowledge [Extraction Recipes - Forms](https://github.com/microsoft/knowledge-extraction-recipes-forms) verzamelt best practices van echte Form Recognizer klantbetrokkenheid en biedt bruikbaar codevoorbeelden, controlelijsten en voorbeeldpijplijnen die worden gebruikt bij het ontwikkelen van deze projecten.
+- Het [voorbeeldhulpprogramma voor labelen](https://github.com/microsoft/OCR-Form-Tools) is bijgewerkt om de nieuwe v2.1-functionaliteit te ondersteunen. Zie deze [quickstart om](quickstarts/label-tool.md) aan de slag te gaan met het hulpprogramma.
+- In [het voorbeeld Form Recognizer](https://github.com/microsoft/Cognitive-Samples-IntelligentKiosk/blob/master/Documentation/FormRecognizer.md) Intelligent Kiosk ziet u hoe u integreert en `Analyze Receipt` `Train Custom Model`  -  _traint zonder labels._
 
 ## <a name="july-2020"></a>Juli 2020
 
 ### <a name="new-features"></a>Nieuwe functies
 <!-- markdownlint-disable MD004 -->
-* **v 2.0-verwijzing beschikbaar** : Bekijk [de API-referentie voor v 2.0](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeWithCustomForm) en de bijgewerkte sdk's voor [.net](/dotnet/api/overview/azure/ai.formrecognizer-readme), [python](/python/api/overview/azure/), [Java](/java/api/overview/azure/ai-formrecognizer-readme)en [Java script](/javascript/api/overview/azure/).
-* Verbeteringen in **tabel verbeteringen en** uitbrei dingen voor extractie: bevat nauw keurige verbeteringen en verbeteringen in tabel extractie, met name de mogelijkheid om tabellen en structuren in een _aangepaste trein zonder labels_ te leren. 
+* **v2.0-referentie** beschikbaar: bekijk de [v2.0 API-verwijzing](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeWithCustomForm) en de bijgewerkte SDK's voor [.NET,](/dotnet/api/overview/azure/ai.formrecognizer-readme) [Python,](/python/api/overview/azure/) [Java](/java/api/overview/azure/ai-formrecognizer-readme)en [JavaScript.](/javascript/api/overview/azure/)
+* **Tabelverbeteringen en** extractieverbeteringen: bevat nauwkeurigheidsverbeteringen en verbeteringen in tabelextracties, met name de mogelijkheid om tabellenheaders en -structuren te leren in aangepaste trainen zonder _labels._
 
-* **Valuta-ondersteuning** -detectie en extractie van globale valuta symbolen.
-* **Azure gov** -formulier herkenning is nu ook beschikbaar in azure gov.
-* **Verbeterde beveiligings functies**: 
-  * Als u **uw eigen sleutel** formulier Recognizer zet, worden uw gegevens automatisch versleuteld wanneer deze worden opgeslagen in de cloud om deze te beschermen en om u te helpen te voldoen aan de beveiligings-en nalevings verplichtingen van uw organisatie. Uw abonnement maakt standaard gebruik van door Microsoft beheerde versleutelingssleutels. U kunt uw abonnement nu ook beheren met uw eigen coderings sleutels. [Door de klant beheerde sleutels, ook wel bekend als uw eigen sleutel (BYOK)](./encrypt-data-at-rest.md), bieden meer flexibiliteit voor het maken, draaien, uitschakelen en intrekken van toegangs beheer. U kunt ook de versleutelingssleutels controleren die worden gebruikt voor het beveiligen van uw gegevens.  
-  * **Persoonlijke eind punten** – Hiermee kunt u een virtueel netwerk (VNet) [gebruiken om veilig toegang te krijgen tot gegevens via een privé-koppeling.](../../private-link/private-link-overview.md)
+* **Valutaondersteuning:** detectie en extractie van globale valutasymbolen.
+* **Azure Gov:** Form Recognizer is nu ook beschikbaar in Azure Gov.
+* **Verbeterde beveiligingsfuncties:**
+  * **Bring Your Own Key:** Form Recognizer uw gegevens automatisch versleuteld wanneer ze worden opgeslagen in de cloud om deze te beveiligen en om u te helpen te voldoen aan de beveiligings- en nalevingsverplichtingen van uw organisatie. Uw abonnement maakt standaard gebruik van door Microsoft beheerde versleutelingssleutels. U kunt nu ook uw abonnement beheren met uw eigen versleutelingssleutels. Door de klant beheerde sleutels, ook wel [bring your own key (BYOK)](./encrypt-data-at-rest.md)genoemd, bieden meer flexibiliteit voor het maken, draaien, uitschakelen en intrekken van toegangsbesturingselementen. U kunt ook de versleutelingssleutels controleren die worden gebruikt voor het beveiligen van uw gegevens.
+  * **Privé-eindpunten:** hiermee kunt u in een virtueel netwerk veilig toegang krijgen tot gegevens [via een Private Link.](../../private-link/private-link-overview.md)
 
 ## <a name="june-2020"></a>Juni 2020
 
 ### <a name="new-features"></a>Nieuwe functies
 
-* **CopyModel-API toegevoegd aan client-sdk's** : u kunt nu de client-sdk's gebruiken om modellen van het ene naar het andere abonnement te kopiëren. Zie [back-ups maken en modellen herstellen](./disaster-recovery.md) voor algemene informatie over deze functie.
-* **Azure Active Directory-integratie** : u kunt nu uw Azure AD-referenties gebruiken om uw formulieren Recognizer-client objecten in de sdk's te verifiëren.
-* **Specifieke SDK-wijzigingen** : Dit geldt zowel voor het toevoegen van kleine functies als voor het verbreken van wijzigingen. Raadpleeg de SDK-changelogs voor meer informatie.
-  * [C# SDK preview 3 wijzigingen logboek](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/formrecognizer/Azure.AI.FormRecognizer/CHANGELOG.md)
-  * [Python SDK preview 3 wijzigingen logboek](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/CHANGELOG.md)
-  * [Java SDK preview 3 wijzigingen logboek](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/CHANGELOG.md)
-  * [Java script SDK preview 3 wijzigingen logboek](https://github.com/Azure/azure-sdk-for-js/blob/%40azure/ai-form-recognizer_1.0.0-preview.3/sdk/formrecognizer/ai-form-recognizer/CHANGELOG.md)
+* **CopyModel-API toegevoegd aan client-SDK's:** u kunt nu de client-SDK's gebruiken om modellen van het ene naar het andere abonnement te kopiëren. Zie [Back-up en herstel van modellen](./disaster-recovery.md) voor algemene informatie over deze functie.
+* **Azure Active Directory-integratie:** u kunt nu uw Azure AD-referenties gebruiken om uw clientobjecten Form Recognizer in de SDK's te verifiëren.
+* **SDK-specifieke wijzigingen:** deze wijziging omvat zowel kleine functie-toevoegingen als belangrijke wijzigingen. Zie de SDK-changelogs voor meer informatie.
+  * [C# SDK Preview 3 changelog](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/formrecognizer/Azure.AI.FormRecognizer/CHANGELOG.md)
+  * [Python SDK Preview 3 changelog](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/CHANGELOG.md)
+  * [Java SDK Preview 3 changelog](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/CHANGELOG.md)
+  * [JavaScript SDK Preview 3 changelog](https://github.com/Azure/azure-sdk-for-js/blob/%40azure/ai-form-recognizer_1.0.0-preview.3/sdk/formrecognizer/ai-form-recognizer/CHANGELOG.md)
 
 ## <a name="april-2020"></a>April 2020
 
 ### <a name="new-features"></a>Nieuwe functies
 
-* **SDK-ondersteuning voor de open bare preview van Form Recognizer API v 2.0** -deze maand hebben we onze service ondersteuning uitgebreid tot een preview-SDK voor de versie van de formulier Recognizer v 2.0 (preview). Gebruik de onderstaande koppelingen om aan de slag te gaan met de taal van uw keuze: 
+* **SDK-ondersteuning voor Form Recognizer API v2.0 Public Preview:** deze maand hebben we onze serviceondersteuning uitgebreid met een preview-SDK voor de release van Form Recognizer v2.0 (preview). Gebruik de onderstaande koppelingen om aan de slag te gaan met de taal van uw keuze:
   * [.NET SDK](/dotnet/api/overview/azure/ai.formrecognizer-readme)
   * [Java SDK](/java/api/overview/azure/ai-formrecognizer-readme)
   * [Python SDK](/python/api/overview/azure/ai-formrecognizer-readme)
   * [JavaScript SDK](/javascript/api/overview/azure/ai-form-recognizer-readme)
 
-  De nieuwe SDK ondersteunt alle functies van de v 2.0 REST API voor de formulier herkenner. U kunt bijvoorbeeld een model trainen met of zonder labels en extra tekst, sleutel waardeparen en tabellen uit uw formulieren extra heren, gegevens uit de bevestigingen ophalen met de vooraf gemaakte ontvangst bevestigingen en tekst en tabellen met de lay-outservice uit uw documenten ophalen. U kunt uw feedback op de Sdk's delen via het [SDK-feedback formulier](https://aka.ms/FR_SDK_v1_feedback).
+  De nieuwe SDK ondersteunt alle functies van het v2.0-REST API voor Form Recognizer. U kunt bijvoorbeeld een model trainen met of zonder labels en tekst, sleutel-waardeparen en tabellen uit uw formulieren extraheren, gegevens extraheren uit ontvangstbewijzen met de vooraf gebouwde ontvangstbewijzenservice en tekst en tabellen extraheren met de indelingsservice uit uw documenten. U kunt uw feedback over de SDK's delen via het [SDK-feedbackformulier](https://aka.ms/FR_SDK_v1_feedback).
 
-* **Aangepast model kopiëren** U kunt nu modellen kopiëren tussen regio's en abonnementen met behulp van de nieuwe functie voor het kopiëren van aangepaste modellen. Voordat u de API voor het kopiëren van aangepaste modellen aanroept, moet u eerst autorisatie aanvragen voor het kopiëren naar de doel bron door de bewerking Copy Authorization aan te roepen voor het doel bron eindpunt.
+* **Aangepast model kopiëren** U kunt nu modellen kopiëren tussen regio's en abonnementen met behulp van de nieuwe functie Aangepast model kopiëren. Voordat u de API Aangepast model kopiëren aanroept, moet u eerst autorisatie verkrijgen om naar de doelresource te kopiëren door de bewerking Autorisatie kopiëren aan te roepen voor het doelresource-eindpunt.
 
-  * [Een Kopieer autorisatie genereren](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/CopyCustomFormModelAuthorization) REST API
-  * [Een aangepast model kopiëren](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/CopyCustomFormModel) REST API 
+  * [Een autorisatie voor kopiëren genereren](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/CopyCustomFormModelAuthorization) REST API
+  * [Een aangepast model kopiëren](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/CopyCustomFormModel) REST API
 
 ### <a name="security-improvements"></a>Verbeterde beveiliging
 
-* Customer-Managed sleutels zijn nu beschikbaar voor FormRecognizer. Zie voor meer informatie [gegevens versleuteling in rust voor de formulier herkenner](./encrypt-data-at-rest.md).
-* Gebruik beheerde identiteiten voor toegang tot Azure-resources met Azure Active Directory. Zie [toegang verlenen voor beheerde identiteiten](../authentication.md#authorize-access-to-managed-identities)voor meer informatie.
+* Customer-Managed sleutels zijn nu beschikbaar voor FormRecognizer. Zie Data encryption at rest voor meer [informatie Form Recognizer](./encrypt-data-at-rest.md).
+* Beheerde identiteiten gebruiken voor toegang tot Azure-resources met Azure Active Directory. Zie Toegang verlenen tot beheerde identiteiten [voor meer informatie.](../authentication.md#authorize-access-to-managed-identities)
 
 ## <a name="march-2020"></a>Maart 2020
 
 ### <a name="new-features"></a>Nieuwe functies
 
-* **Waardetypen voor labelen** U kunt nu de typen waarden opgeven die u wilt labelen met het hulp programma voor het labelen van het voor beeld van de formulier herkenning. De volgende waardetypen en variaties worden momenteel ondersteund:
+* **Waardetypen voor labelen** U kunt nu de typen waarden opgeven die u labelt met het Form Recognizer voorbeeldhulpprogramma voor labelen. De volgende waardetypen en variaties worden momenteel ondersteund:
   * `string`
     * standaard, `no-whitespaces`, `alphanumeric`
   * `number`
     * standaard, `currency`
-  * `date` 
+  * `date`
     * standaard, `dmy`, `mdy`, `ymd`
   * `time`
   * `integer`
 
-  Raadpleeg de hand leiding voor het [labelen van labels](./quickstarts/label-tool.md#specify-tag-value-types) voor meer informatie over het gebruik van deze functie.
+  Zie de [handleiding Voorbeeldhulpprogramma voor labelen](./quickstarts/label-tool.md#specify-tag-value-types) voor meer informatie over het gebruik van deze functie.
 
 
-* **Tabel visualisatie** Het hulp programma labelen wordt nu weer gegeven met tabellen die in het document zijn herkend. Met deze functie kunt u de tabellen weer geven die zijn herkend en geëxtraheerd uit het document, voorafgaand aan het labelen en analyseren. U kunt deze functie in-of uitschakelen met de optie lagen.
+* **Tabelvisualisatie** Het voorbeeldhulpprogramma voor labelen geeft nu tabellen weer die in het document zijn herkend. Met deze functie kunt u de tabellen weergeven die zijn herkend en geëxtraheerd uit het document, voordat u ze labelt en analyseert. Deze functie kan worden in- of uitgeschakeld met behulp van de optie Lagen.
 
-  De volgende afbeelding is een voor beeld van hoe tabellen worden herkend en geëxtraheerd:
+  De volgende afbeelding is een voorbeeld van hoe tabellen worden herkend en geëxtraheerd:
 
   > [!div class="mx-imgBorder"]
-  > ![Tabel visualisatie met behulp van het voor beeld-programma labelen](./media/whats-new/table-viz.png)
+  > ![Tabelvisualisatie met behulp van het voorbeeldhulpprogramma voor labelen](./media/whats-new/table-viz.png)
 
-    De uitgepakte tabellen zijn beschikbaar in de JSON-uitvoer onder `"pageResults"` .
+    De geëxtraheerde tabellen zijn beschikbaar in de JSON-uitvoer onder `"pageResults"` .
 
   > [!IMPORTANT]
-  > Labels van tabellen worden niet ondersteund. Als tabellen niet automatisch worden herkend en extrated, kunt u ze alleen labelen als sleutel/waarde-paren. Bij het labelen van tabellen als sleutel/waarde-paren, labelt u elke cel als een unieke waarde.
+  > Het labelen van tabellen wordt niet ondersteund. Als tabellen niet automatisch worden herkend en extraeerd, kunt u ze alleen labelen als sleutel-waardeparen. Wanneer u tabellen labelt als sleutel-waardeparen, labelt u elke cel als een unieke waarde.
 
-### <a name="extraction-enhancements"></a>Uitbrei dingen voor extractie
+### <a name="extraction-enhancements"></a>Extractieverbeteringen
 
-Deze release bevat verbeteringen voor extractie en nauw keurigheid, met name de mogelijkheid om meerdere sleutel-waardeparen in dezelfde tekst regel te labelen en uit te pakken. 
- 
-### <a name="sample-labeling-tool-is-now-open-source"></a>Voor beeld van labelen hulp programma is nu open-source
+Deze release bevat extractieverbeteringen en nauwkeurigheidsverbeteringen, met name de mogelijkheid om meerdere sleutel-waardeparen in dezelfde tekstregel te labelen en te extraheren.
 
-Het hulp programma voor het labelen van het voorbeeld formulier Recognizer is nu beschikbaar als een open-source project. U kunt dit integreren in uw oplossingen en klantspecifieke wijzigingen aanbrengen om aan uw behoeften te voldoen.
+### <a name="sample-labeling-tool-is-now-open-source"></a>Voorbeeldhulpprogramma voor labelen is nu opensource
 
-Raadpleeg de documentatie die beschikbaar is op [github](https://github.com/microsoft/OCR-Form-Tools/blob/master/README.md)voor meer informatie over het hulp programma voor het labelen van het voor beeld van een formulier herkenning.
+Het Form Recognizer voorbeeldhulpprogramma voor labelen is nu beschikbaar als een opensource-project. U kunt deze integreren in uw oplossingen en klantspecifieke wijzigingen aanbrengen om aan uw behoeften te voldoen.
+
+Lees de documentatie die beschikbaar is op GitHub voor Form Recognizer [voorbeeldhulpprogramma voor labelen.](https://github.com/microsoft/OCR-Form-Tools/blob/master/README.md)
 
 ### <a name="tls-12-enforcement"></a>TLS 1.2 afdwingen
 
@@ -199,45 +345,45 @@ TLS 1.2 wordt nu afgedwongen voor alle HTTP-aanvragen bij deze service. Zie [Bev
 
 ## <a name="january-2020"></a>Januari 2020
 
-Deze release introduceert de formulier Recognizer 2,0 (preview). In de volgende secties vindt u meer informatie over nieuwe functies, verbeteringen en wijzigingen. 
+In deze release wordt Form Recognizer versie 2.0 (preview) uitgebracht. In de onderstaande secties vindt u meer informatie over nieuwe functies, verbeteringen en wijzigingen.
 
 ### <a name="new-features"></a>Nieuwe functies
 
 * **Aangepast model**
-  * **Trainen met labels** U kunt nu een aangepast model trainen met hand matig gelabelde gegevens. Deze methode resulteert in betere uitvoering van modellen en kan modellen produceren die werken met complexe formulieren of formulieren met waarden zonder sleutels.
-  * **ASYNCHRONE API** U kunt asynchrone API-aanroepen gebruiken om met grote gegevens sets en bestanden te trainen en te analyseren.
-  * **Ondersteuning voor TIFF-bestanden** U kunt nu gegevens uit TIFF-documenten trainen en ophalen.
-  * **Verbeteringen in de extractie nauwkeurigheid**
+  * **Trainen met labels** U kunt nu een aangepast model trainen met handmatig gelabelde gegevens. Deze methode resulteert in beter presterende modellen en kan modellen produceren die werken met complexe formulieren of formulieren die waarden zonder sleutels bevatten.
+  * **Asynchrone API** U kunt asynsync-API-aanroepen gebruiken om grote gegevenssets en bestanden te trainen en te analyseren.
+  * **Ondersteuning voor TIFF-bestanden** U kunt nu trainen met en gegevens extraheren uit TIFF-documenten.
+  * **Nauwkeurigheidsverbeteringen bij extractie**
 
-* **Gebaseerd ontvangst model**
-  * **Fooien** U kunt nu fooie bedragen en andere handgeschreven waarden extra heren.
-  * **Extractie van regel items** U kunt waarden van het regel item extra heren uit de bevestigingen.
-  * **Betrouwbaarheids waarden** U kunt het vertrouwen van het model voor elke geëxtraheerde waarde weer geven.
-  * **Verbeteringen in de extractie nauwkeurigheid**
+* **Vooraf gebouwd ontvangstbewijsmodel**
+  * **Fooien** U kunt nu fooien en andere handgeschreven waarden extraheren.
+  * **Extractie van regelitem** U kunt regelitemwaarden extraheren uit bonnen.
+  * **Betrouwbaarheidswaarden** U kunt de betrouwbaarheid van het model voor elke geëxtraheerde waarde bekijken.
+  * **Nauwkeurigheidsverbeteringen bij extractie**
 
-* **Indelings extractie** U kunt nu de indelings-API gebruiken om tekst gegevens en tabel gegevens op te halen uit uw formulieren.
+* **Indelingsextractie** U kunt nu de indelings-API gebruiken om tekstgegevens en tabelgegevens uit uw formulieren te extraheren.
 
-### <a name="custom-model-api-changes"></a>Wijzigingen in het aangepaste model-API
+### <a name="custom-model-api-changes"></a>Aangepaste model-API-wijzigingen
 
-Alle Api's voor training en het gebruik van aangepaste modellen zijn hernoemd en sommige synchrone methoden zijn nu asynchroon. De volgende belang rijke wijzigingen zijn:
+Alle API's voor het trainen en gebruiken van aangepaste modellen zijn hernoemd en sommige synchrone methoden zijn nu asynchroon. Hier volgen belangrijke wijzigingen:
 
-* Het proces voor het trainen van een model is nu asynchroon. U initieert training via de API-aanroep van **/Custom/models** . Deze aanroep retourneert een bewerkings-ID, die u kunt door geven aan **aangepaste/modellen/{modelID}** om de resultaten van de training te retour neren.
-* De extractie van sleutel/waarde wordt nu geïnitieerd door de API-aanroep van **/Custom/models/{modelID}/analyze** . Deze aanroep retourneert een bewerkings-ID, die u kunt door geven aan **aangepaste/modellen/{modelID}/analyzeResults/{resultID}** om de resultaten van de extractie te retour neren.
-* Bewerkings-Id's voor de trein bewerking zijn nu gevonden in de **locatie** header van http-antwoorden, niet op de locatie van de **bewerking** .
+* Het proces van het trainen van een model is nu asynchroon. U start de training via de **API-aanroep /custom/models.** Deze aanroep retourneert een bewerkings-id, die u kunt doorgeven aan **custom/models/{modelID}** om de trainingsresultaten te retourneren.
+* Sleutel-waardeextractie wordt nu geïnitieerd door de API-aanroep **/custom/models/{modelID}/analyze.** Deze aanroep retourneert een bewerkings-id, die u kunt doorgeven aan **custom/models/{modelID}/analyzeResults/{resultID}** om de extractieresultaten te retourneren.
+* Bewerkings-ID's voor de Train-bewerking zijn nu te vinden in de **Location-header** van HTTP-antwoorden, niet in de **Operation-Location-header.**
 
-### <a name="receipt-api-changes"></a>Wijzigingen in de ontvangst-API
+### <a name="receipt-api-changes"></a>Wijzigingen in de ontvangstbewijs-API
 
-De naam van de Api's voor het lezen van de verkoop ontvangst is gewijzigd.
+De naam van de API's voor het lezen van verkoopbonnen is gewijzigd.
 
-* Het uitpakken van ontvangst gegevens wordt nu geïnitieerd door de API-aanroep van **/prebuilt/Receipt/analyze** . Deze aanroep retourneert een bewerkings-ID, die u kunt door geven aan **/prebuilt/Receipt/analyzeResults/{resultID}** om de resultaten van de extractie te retour neren.
+* Extractie van ontvangstgegevens wordt nu gestart door de **API-aanroep /prebuilt/receipt/analyze.** Deze aanroep retourneert een bewerkings-id, die u kunt doorgeven aan **/prebuilt/receipt/analyzeResults/{resultID}** om de extractieresultaten te retourneren.
 
-### <a name="output-format-changes"></a>Wijzigingen in de uitvoer indeling
+### <a name="output-format-changes"></a>Wijzigingen in de uitvoerindeling
 
-De JSON-antwoorden voor alle API-aanroepen hebben nieuwe notaties. Sommige sleutels en waarden zijn toegevoegd, verwijderd of de naam ervan is gewijzigd. Bekijk de Quick starts voor voor beelden van de huidige JSON-indelingen.
+De JSON-antwoorden voor alle API-aanroepen hebben nieuwe indelingen. Sommige sleutels en waarden zijn toegevoegd, verwijderd of hernoemd. Zie de quickstarts voor voorbeelden van de huidige JSON-indelingen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Maak een [Snelstartgids](quickstarts/client-library.md) om aan de slag te gaan met het schrijven van een app voor het verwerken van formulieren met een formulier herkenner in de ontwikkelings taal van uw keuze.
+Voltooi een [quickstart om](quickstarts/client-library.md) aan de slag te gaan met het schrijven van een app voor Form Recognizer in de ontwikkeltaal van uw keuze.
 
 ## <a name="see-also"></a>Zie ook
 

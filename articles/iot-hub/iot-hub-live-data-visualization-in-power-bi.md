@@ -1,52 +1,42 @@
 ---
-title: Realtime gegevens visualisatie van gegevens van Azure IoT Hub – Power BI
-description: Gebruik Power BI om de gegevens van de Tempe ratuur en de vochtigheid te visualiseren die van de sensor worden verzameld en naar uw Azure IoT hub te verzenden.
+title: Realtime gegevensvisualisatie van gegevens uit Azure IoT Hub - Power BI
+description: Gebruik Power BI om temperatuur- en vochtigheidsgegevens te visualiseren die van de sensor worden verzameld en naar uw Azure IoT-hub worden verzonden.
 author: robinsh
-keywords: realtime gegevens visualisatie, visualisatie van Live gegevens, sensor gegevens visualisatie
+keywords: realtime gegevensvisualisatie, live gegevensvisualisatie, visualisatie van sensorgegevens
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 6/08/2020
 ms.author: robinsh
-ms.openlocfilehash: 82caf13618fe8483ab8d3a622c6c0d51ab05a206
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 0b099f4ce91fd24e8d7baec054bcfc5a6cf0b032
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102177331"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107567107"
 ---
-# <a name="visualize-real-time-sensor-data-from-azure-iot-hub-using-power-bi"></a>Real-time sensor gegevens visualiseren vanuit Azure IoT Hub met behulp van Power BI
+# <a name="visualize-real-time-sensor-data-from-azure-iot-hub-using-power-bi"></a>Realtime sensorgegevens van een Azure IoT Hub visualiseren met Power BI
 
 ![End-to-end-diagram](./media/iot-hub-live-data-visualization-in-power-bi/end-to-end-diagram.png)
 
 [!INCLUDE [iot-hub-get-started-note](../../includes/iot-hub-get-started-note.md)]
 
-## <a name="what-you-learn"></a>Wat u leert
+In dit artikel leert u hoe u realtime sensorgegevens kunt visualiseren die uw Azure IoT-hub ontvangt met behulp van Power BI. Zie Use a web app to visualize real-time sensor data from Azure IoT Hub (Een web-app gebruiken om realtime sensorgegevens van uw IoT-hub te visualiseren [met een web-app) Azure IoT Hub.](iot-hub-live-data-visualization-in-web-apps.md)
 
-U leert hoe u real-time sensor gegevens visualiseren die uw Azure IoT hub ontvangt door gebruik te maken van Power BI. Als u de gegevens in uw IoT-hub wilt visualiseren met een web-app, raadpleegt u [een web-app gebruiken voor het visualiseren van real-time sensor gegevens uit Azure IOT hub](iot-hub-live-data-visualization-in-web-apps.md).
+## <a name="prerequisites"></a>Vereisten
 
-## <a name="what-you-do"></a>Wat u doet
-
-* Haal uw IoT-hub gereed voor gegevens toegang door een Consumer groep toe te voegen.
-
-* Een Stream Analytics taak maken, configureren en uitvoeren voor gegevens overdracht van uw IoT-hub naar uw Power BI-account.
-
-* Een Power BI rapport maken en publiceren om de gegevens te visualiseren.
-
-## <a name="what-you-need"></a>Wat u nodig hebt
-
-* Voltooi de zelf studie [Raspberry Pi online Simulator](iot-hub-raspberry-pi-web-simulator-get-started.md) of een van de zelf studies van het apparaat. bijvoorbeeld [Raspberry Pi met node.js](iot-hub-raspberry-pi-kit-node-get-started.md). Deze artikelen hebben betrekking op de volgende vereisten:
+* Voltooi de [onlinesimulator](iot-hub-raspberry-pi-web-simulator-get-started.md) van Raspberry Pi of een van de zelfstudies over apparaten. U kunt bijvoorbeeld naar [Raspberry Pi ](iot-hub-raspberry-pi-kit-node-get-started.md) gaan met node.jsof naar een van de [quickstarts Telemetrie](quickstart-send-telemetry-dotnet.md) verzenden. Deze artikelen hebben betrekking op de volgende vereisten:
   
   * Een actief Azure-abonnement.
-  * Een Azure IoT hub onder uw abonnement.
-  * Een client toepassing die berichten verzendt naar uw Azure IoT hub.
+  * Een Azure IoT-hub in uw abonnement.
+  * Een clienttoepassing die berichten naar uw Azure IoT-hub verzendt.
 
-* Een Power BI-account. ([Probeer Power bi gratis](https://powerbi.microsoft.com/))
+* Een Power BI-account. ([Probeer Power BI gratis](https://powerbi.microsoft.com/))
 
 [!INCLUDE [iot-hub-get-started-create-consumer-group](../../includes/iot-hub-get-started-create-consumer-group.md)]
 
-## <a name="create-configure-and-run-a-stream-analytics-job"></a>Een Stream Analytics taak maken, configureren en uitvoeren
+## <a name="create-configure-and-run-a-stream-analytics-job"></a>Een taak maken, configureren en uitvoeren Stream Analytics taak
 
 Laten we beginnen met het maken van een Stream Analytics taak. Nadat u de taak hebt gemaakt, definieert u de invoer, uitvoer en de query die wordt gebruikt om de gegevens op te halen.
 
@@ -58,41 +48,41 @@ Laten we beginnen met het maken van een Stream Analytics taak. Nadat u de taak h
 
    **Taaknaam**: de naam van de taak. De naam moet wereldwijd uniek zijn.
 
-   **Resource groep**: gebruik dezelfde resource groep als uw IOT-hub.
+   **Resourcegroep:** gebruik dezelfde resourcegroep die uw IoT-hub gebruikt.
 
-   **Locatie**: gebruik dezelfde locatie als de resource groep.
+   **Locatie:** gebruik dezelfde locatie als uw resourcegroep.
 
-   ![Een Stream Analytics-taak maken in azure](./media/iot-hub-live-data-visualization-in-power-bi/create-stream-analytics-job.png)
+   ![Een Stream Analytics maken in Azure](./media/iot-hub-live-data-visualization-in-power-bi/create-stream-analytics-job.png)
 
 3. Selecteer **Maken**.
 
 ### <a name="add-an-input-to-the-stream-analytics-job"></a>Een invoer aan de Stream Analytics-taak toevoegen
 
-1. Open de taak Stream Analytics.
+1. Open de Stream Analytics taak.
 
 2. Selecteer onder **Taaktopologie** de optie **Invoer**.
 
-3. Selecteer in het deel venster **invoer** de optie **stroom invoer toevoegen** en selecteer vervolgens **IOT hub** in de vervolg keuzelijst. Voer in het deel venster Nieuw invoer de volgende gegevens in:
+3. Selecteer in **het deelvenster Invoer** de optie **Stroominvoer toevoegen** en selecteer IoT Hub in de vervolgkeuzelijst.  Voer in het nieuwe invoerdeelvenster de volgende gegevens in:
 
-   **Invoer alias**: Voer een unieke alias in voor de invoer.
+   **Invoeralias:** voer een unieke alias in voor de invoer.
 
-   **Selecteer IOT hub uit uw abonnement**: Selecteer dit keuze rondje.
+   **Selecteer IoT Hub uw abonnement:** selecteer dit keuzerondje.
 
    **Abonnement**: Selecteer het Azure-abonnement dat u gebruikt voor deze zelfstudie.
 
-   **IOT hub**: selecteer de IOT hub die u voor deze zelf studie gebruikt.
+   **IoT Hub:** selecteer de IoT Hub u gebruikt voor deze zelfstudie.
 
    **Eindpunt**: selecteer **Berichten**.
 
-   **Naam van beleid voor gedeelde toegang**: Selecteer de naam van het gedeelde toegangs beleid dat de stream Analytics taak moet gebruiken voor uw IOT-hub. Voor deze zelf studie kunt u *service* selecteren. Het *service* beleid wordt standaard gemaakt op nieuwe IOT-hubs en verleent machtigingen voor het verzenden en ontvangen van aan de Cloud zijde beschik bare eind punten van de IOT hub. Zie [toegangs beheer en machtigingen](iot-hub-devguide-security.md#access-control-and-permissions)voor meer informatie.
+   **Naam van het beleid voor gedeelde** toegang: selecteer de naam van het beleid voor gedeelde toegang dat u wilt gebruiken Stream Analytics taak voor uw IoT-hub. Voor deze zelfstudie kunt u *service selecteren.* Het *servicebeleid* wordt standaard gemaakt op nieuwe IoT-hubs en verleent machtigingen voor het verzenden en ontvangen van eindpunten in de cloud die worden weergegeven door de IoT-hub. Zie Toegangsbeheer en [machtigingen voor meer informatie.](iot-hub-devguide-security.md#access-control-and-permissions)
 
-   **Sleutel voor gedeeld toegangs beleid**: dit veld wordt automatisch ingevuld op basis van uw selectie voor de naam van het gedeelde toegangs beleid.
+   **Beleidssleutel voor gedeelde toegang:** dit veld wordt automatisch ingevuld op basis van uw selectie voor de naam van het beleid voor gedeelde toegang.
 
-   **Consumenten groep**: Selecteer de Consumer groep die u eerder hebt gemaakt.
+   **Consumentengroep:** selecteer de consumentengroep die u eerder hebt gemaakt.
 
-   Vul alle andere velden in op de standaard waarden.
+   Laat alle andere velden op de standaardwaarden staan.
 
-   ![Een invoer toevoegen aan een Stream Analytics-taak in azure](./media/iot-hub-live-data-visualization-in-power-bi/add-input-to-stream-analytics-job.png)
+   ![Invoer toevoegen aan een Stream Analytics-taak in Azure](./media/iot-hub-live-data-visualization-in-power-bi/add-input-to-stream-analytics-job.png)
 
 4. Selecteer **Opslaan**.
 
@@ -100,23 +90,23 @@ Laten we beginnen met het maken van een Stream Analytics taak. Nadat u de taak h
 
 1. Selecteer onder **Taaktopologie** de optie **Uitvoer**.
 
-2. Selecteer in het deel venster **uitvoer** de optie **toevoegen** en **Power bi**.
+2. Selecteer in **het deelvenster Uitvoer** de optie **Toevoegen** **en Power BI.**
 
-3. Selecteer **machtigen** in het deel venster **Power bi-nieuwe uitvoer** en volg de prompts om u aan te melden bij uw Power bi-account.
+3. Selecteer in **het Power BI - Nieuwe**  uitvoer de optie Autor maken en volg de aanwijzingen om u aan te melden bij uw Power BI account.
 
 4. Nadat u zich hebt aangemeld bij Power BI, voert u de volgende gegevens in:
 
-   **Uitvoer alias**: een unieke alias voor de uitvoer.
+   **Uitvoeralias:** een unieke alias voor de uitvoer.
 
-   **Groeps werkruimte**: Selecteer de werk ruimte van uw doel groep.
+   **Groepswerkruimte:** selecteer uw doelgroepwerkruimte.
 
-   **Naam van gegevensset**: Voer een naam in voor de gegevensset.
+   **Naam van gegevensset:** Voer een naam in voor de gegevensset.
 
-   **Tabel naam**: Voer een tabel naam in.
+   **Tabelnaam:** voer een tabelnaam in.
 
-   **Verificatie modus**: Vul de standaard waarde in.
+   **Verificatiemodus:** laat de standaardwaarde staan.
 
-   ![Een uitvoer toevoegen aan een Stream Analytics-taak in azure](./media/iot-hub-live-data-visualization-in-power-bi/add-output-to-stream-analytics-job.png)
+   ![Uitvoer toevoegen aan een Stream Analytics-taak in Azure](./media/iot-hub-live-data-visualization-in-power-bi/add-output-to-stream-analytics-job.png)
 
 5. Selecteer **Opslaan**.
 
@@ -128,37 +118,37 @@ Laten we beginnen met het maken van een Stream Analytics taak. Nadat u de taak h
 
 3. Vervang `[YourOutputAlias]` door de uitvoeralias van de taak.
 
-   ![Een query toevoegen aan een Stream Analytics-taak in azure](./media/iot-hub-live-data-visualization-in-power-bi/add-query-to-stream-analytics-job.png)
+   ![Een query toevoegen aan een Stream Analytics-taak in Azure](./media/iot-hub-live-data-visualization-in-power-bi/add-query-to-stream-analytics-job.png)
 
 4. Selecteer **Query opslaan**.
 
 ### <a name="run-the-stream-analytics-job"></a>De Stream Analytics-taak uitvoeren
 
-Selecteer in de taak stream Analytics **overzicht** **en selecteer**  >  **nu** starten  >  . Zodra de taak kan worden gestart, wordt de taakstatus veranderd van **Gestopt** naar **In uitvoering**.
+Selecteer in Stream Analytics taak Overzicht **en** selecteer **vervolgens Nu**  >    >  **starten.** Zodra de taak kan worden gestart, wordt de taakstatus veranderd van **Gestopt** naar **In uitvoering**.
 
-![Een Stream Analytics-taak uitvoeren in azure](./media/iot-hub-live-data-visualization-in-power-bi/run-stream-analytics-job.png)
+![Een Stream Analytics uitvoeren in Azure](./media/iot-hub-live-data-visualization-in-power-bi/run-stream-analytics-job.png)
 
-## <a name="create-and-publish-a-power-bi-report-to-visualize-the-data"></a>Een Power BI rapport maken en publiceren om de gegevens te visualiseren
+## <a name="create-and-publish-a-power-bi-report-to-visualize-the-data"></a>Een rapport voor Power BI maken en publiceren om de gegevens te visualiseren
 
-De volgende stappen laten zien hoe u een rapport maakt en publiceert met behulp van de Power BI-service. U kunt deze stappen met een bepaalde wijziging volgen, als u het ' nieuwe uiterlijk ' wilt gebruiken in Power BI. Zie [het nieuwe uiterlijk van de Power bi-service](/power-bi/consumer/service-new-look)als u meer wilt weten over de verschillen en hoe u in het nieuwe uiterlijk kunt navigeren.
+In de volgende stappen ziet u hoe u een rapport maakt en publiceert met behulp van de Power BI-service. U kunt deze stappen, met enige aanpassing, volgen als u het nieuwe uiterlijk wilt gebruiken in Power BI. Als u de verschillen wilt begrijpen en wilt navigeren in het nieuwe uiterlijk, gaat u naar Het nieuwe uiterlijk van [de Power BI-service](/power-bi/consumer/service-new-look).
 
-1. Zorg ervoor dat de voorbeeld toepassing wordt uitgevoerd op het apparaat. Als dat niet het geval is, raadpleegt u de zelf studies onder [het instellen van uw apparaat](./iot-hub-raspberry-pi-kit-node-get-started.md).
+1. Zorg ervoor dat de voorbeeldtoepassing wordt uitgevoerd op uw apparaat. Als dat niet het beste is, raadpleegt u de zelfstudies onder [Uw apparaat instellen.](./iot-hub-raspberry-pi-kit-node-get-started.md)
 
 2. Meld u aan bij uw [Power BI](https://powerbi.microsoft.com/en-us/)-account.
 
-3. Selecteer de werk ruimte die u hebt gebruikt, **mijn werk ruimte**.
+3. Selecteer de werkruimte die u hebt gebruikt, **Mijn werkruimte.**
 
 4. Selecteer **Gegevenssets**.
 
    U ziet de gegevensset die u hebt opgegeven tijdens het maken van de uitvoer voor de Stream Analytics taak.
 
-5. Voor de gegevensset die u hebt gemaakt, selecteert u **rapport toevoegen** (het eerste pictogram rechts van de naam van de gegevensset).
+5. Selecteer rapport toevoegen (het eerste pictogram rechts van de naam van de gegevensset) voor de gegevensset die u hebt gemaakt. 
 
-   ![Een micro soft Power BI-rapport maken](./media/iot-hub-live-data-visualization-in-power-bi/power-bi-create-report.png)
+   ![Een Microsoft Power BI maken](./media/iot-hub-live-data-visualization-in-power-bi/power-bi-create-report.png)
 
 6. Maak een lijndiagram om in realtime de temperatuur gedurende een bepaalde periode weer te geven.
 
-   1. Selecteer in het deel venster **Visualisaties** van de pagina rapport maken het pictogram lijn diagram om een lijn diagram toe te voegen.
+   1. Selecteer in **het deelvenster Visualisaties** van de pagina voor het maken van het rapport het lijndiagrampictogram om een lijndiagram toe te voegen.
 
    2. Klap in het deelvenster **Velden** de tabel uit die u hebt opgegeven toen u de uitvoer voor de Stream Analytics-taak hebt gemaakt.
 
@@ -168,37 +158,37 @@ De volgende stappen laten zien hoe u een rapport maakt en publiceert met behulp 
 
       Er wordt een lijndiagram gemaakt. De x-as geeft de datum en tijd in UTC-tijdzone aan. De y-as geeft de temperatuur van de sensor aan.
 
-      ![Een lijn diagram voor de Tempe ratuur toevoegen aan een rapport van micro soft Power BI](./media/iot-hub-live-data-visualization-in-power-bi/power-bi-add-temperature.png)
+      ![Een lijndiagram voor de temperatuur toevoegen aan een Microsoft Power BI rapport](./media/iot-hub-live-data-visualization-in-power-bi/power-bi-add-temperature.png)
 
-7. Maak een ander lijndiagram om in realtime de vochtigheid gedurende een bepaalde periode weer te geven. Als u dit wilt doen, klikt u op een leeg deel van het canvas en voert u dezelfde stappen uit om **EventEnqueuedUtcTime** op de x-as en **vochtigheid** op de y-as te plaatsen.
+7. Maak een ander lijndiagram om in realtime de vochtigheid gedurende een bepaalde periode weer te geven. Klik hiervoor op een leeg deel van het canvas en volg dezelfde stappen hierboven om **EventEnqueuedUtcTime** op de x-as en vochtigheid op de y-as te plaatsen. 
 
-   ![Een lijn diagram voor de vochtigheid toevoegen aan een rapport van micro soft Power BI](./media/iot-hub-live-data-visualization-in-power-bi/power-bi-add-humidity.png)
+   ![Een lijndiagram voor vochtigheid toevoegen aan een Microsoft Power BI rapport](./media/iot-hub-live-data-visualization-in-power-bi/power-bi-add-humidity.png)
 
-8. Selecteer **Opslaan** om het rapport op te slaan.
+8. Selecteer **Opslaan om** het rapport op te slaan.
 
-9. Selecteer **rapporten** in het linkerdeel venster en selecteer vervolgens het rapport dat u zojuist hebt gemaakt.
+9. Selecteer **Rapporten** in het linkerdeelvenster en selecteer vervolgens het rapport dat u zojuist hebt gemaakt.
 
-10. Selecteer **bestand**  >  **publiceren op Internet**.
+10. Selecteer **Bestand**  >  **Publiceren op internet.**
 
-    ![Selecteer publiceren op internet voor het micro soft Power BI-rapport](./media/iot-hub-live-data-visualization-in-power-bi/power-bi-select-publish-to-web.png)
+    ![Publiceren op internet selecteren voor het Microsoft Power BI rapport](./media/iot-hub-live-data-visualization-in-power-bi/power-bi-select-publish-to-web.png)
 
     > [!NOTE]
-    > Als u een melding krijgt dat u contact opneemt met uw beheerder om het maken van code in te scha kelen, moet u mogelijk contact opnemen met de gebruikers. Het maken van code insluiten moet zijn ingeschakeld voordat u deze stap kunt volt ooien.
+    > Als u een melding ontvangt om contact op te nemen met uw beheerder om het maken van insluitcode in te kunnenschakelen, moet u mogelijk contact met de beheerder opnemen. Het maken van insluitcode moet zijn ingeschakeld voordat u deze stap kunt voltooien.
     >
-    > ![Neem contact op met de beheerder](./media/iot-hub-live-data-visualization-in-power-bi/contact-admin.png)
+    > ![Neem contact op met uw beheerdersmelding](./media/iot-hub-live-data-visualization-in-power-bi/contact-admin.png)
 
-11. Selecteer **invoeg code maken** en selecteer vervolgens **publiceren**.
+11. Selecteer **Insluitcode maken** en selecteer vervolgens **Publiceren.**
 
-U hebt de rapport koppeling die u kunt delen met iedereen voor toegang tot rapporten en een code fragment dat u kunt gebruiken om het rapport te integreren in uw blog of website.
+U krijgt de rapportkoppeling die u met iedereen kunt delen voor toegang tot het rapport en een codefragment dat u kunt gebruiken om het rapport te integreren in uw blog of website.
 
-![Een micro soft Power BI-rapport publiceren](./media/iot-hub-live-data-visualization-in-power-bi/power-bi-web-output.png)
+![Een Microsoft Power BI publiceren](./media/iot-hub-live-data-visualization-in-power-bi/power-bi-web-output.png)
 
-Micro soft biedt u ook de [Power bi mobiele apps](https://powerbi.microsoft.com/en-us/documentation/powerbi-power-bi-apps-for-mobile-devices/) voor het weer geven en communiceren met uw Power bi Dash boards en rapporten op uw mobiele apparaat.
+Microsoft biedt ook de [Power BI mobiele apps voor](https://powerbi.microsoft.com/en-us/documentation/powerbi-power-bi-apps-for-mobile-devices/) weergave en interactie met uw Power BI dashboards en rapporten op uw mobiele apparaat.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U hebt Power BI gebruikt voor het visualiseren van real-time sensor gegevens van uw Azure IoT hub.
+U hebt de Power BI om realtime sensorgegevens van uw Azure IoT-hub te visualiseren.
 
-Zie [een web-app gebruiken voor het visualiseren van gegevens van de real-time-sensor vanuit azure IOT hub](iot-hub-live-data-visualization-in-web-apps.md)voor een andere methode voor het visualiseren van data van Azure IOT hub.
+Zie Use a web app to [visualize real-time sensor data from](iot-hub-live-data-visualization-in-web-apps.md)Azure IoT Hub Azure IoT Hub (Een web-app gebruiken om realtime sensorgegevens van een Azure IoT Hub) voor een andere manier om gegevens uit uw Azure IoT Hub.
 
 [!INCLUDE [iot-hub-get-started-next-steps](../../includes/iot-hub-get-started-next-steps.md)]

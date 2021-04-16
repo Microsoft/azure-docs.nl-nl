@@ -6,14 +6,14 @@ ms.reviewer: dhgandhi
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 03/24/2021
+ms.date: 04/15/2021
 ms.author: banders
-ms.openlocfilehash: b88a5bc10afeffe7e15ad7a90e28bd8b8ff28688
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 687db46ea2f6c9c4fae6e5355e3236cde3d7a401
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105046552"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107567244"
 ---
 # <a name="transfer-azure-subscriptions-between-subscribers-and-csps"></a>Overdracht van Azure-abonnementen tussen abonnees en CSP's
 
@@ -21,7 +21,7 @@ Dit artikel bevat de algemene stappen voor het overdragen van Azure-abonnementen
 
 Voordat u een aanvraag voor een overdracht begint, moet u eventuele kosten- en factureringsgegevens downloaden of exporteren die u wilt blijven gebruiken. Facturerings- en gebruiksgegevens worden niet overgedragen met het abonnement. Zie [Geëxporteerde gegevens maken en beheren](../costs/tutorial-export-acm-data.md) voor meer informatie over het exporteren van gegevens over kostenbeheer. Zie [Uw Azure-factuurgegevens en dagelijkse gebruiksgegevens downloaden of weergeven](download-azure-invoice-daily-usage-date.md) voor meer informatie over het downloaden van uw factuur- en gebruiksgegevens.
 
-Als u bestaande reserve ringen hebt, wordt het Toep assen van 90 dagen na het overdragen van een abonnement gestopt. Zorg ervoor dat u [alle reserve ringen annuleert en terugbetaalt](../reservations/exchange-and-refund-azure-reservations.md) voordat u een abonnement overdraagt om de kosten na de respijt periode van 90 dagen te voor komen.
+Als u bestaande reserveringen hebt, worden deze 90 dagen na het overdragen van een abonnement niet meer toegepast. Zorg ervoor dat [u reserveringen annuleert en deze restituties retourneert](../reservations/exchange-and-refund-azure-reservations.md) voordat u een abonnement overdraagt om kosten te voorkomen na de respijtperiode van 90 dagen.
 
 ## <a name="transfer-ea-subscriptions-to-a-csp-partner"></a>EA-abonnementen overdragen naar een CSP-partner
 
@@ -36,7 +36,7 @@ Wanneer de aanvraag is goedgekeurd, kan de CSP een gecombineerde factuur aanbied
 
 Als u andere Azure-abonnementen wilt overdragen naar een CSP-partner, moet de abonnee resources van bronabonnementen verplaatsen naar CSP-abonnementen. Gebruik de volgende richtlijnen voor het verplaatsen van resources tussen abonnementen.
 
-1. Stel een [reseller-relatie](/partner-center/request-a-relationship-with-a-customer) in met de klant. Bekijk het [regionale autorisatie overzicht van CSP](/partner-center/regional-authorization-overview) om ervoor te zorgen dat zowel de Tenant van de klant als de partner zich binnen dezelfde gemachtigde regio's bevindt.
+1. Stel een [resellerrelatie tot](/partner-center/request-a-relationship-with-a-customer) stand met de klant. Bekijk het [overzicht van regionale CSP-autorisatie](/partner-center/regional-authorization-overview) om ervoor te zorgen dat zowel de klant- als de partner-tenant zich binnen dezelfde geautoriseerde regio's hebben.
 1. Werk samen met uw CSP-partner om Azure CSP-abonnementen te maken op de doellocatie.
 1. Zorg ervoor dat de bron- en doelabonnementen van de CSP zich in dezelfde Azure Active Directory-tenant (Azure AD) bevinden.  
     U kunt de Azure AD-tenant voor een Azure CSP-abonnement niet wijzigen. In plaats daarvan moet u het bronabonnement toevoegen of koppelen aan de CSP Azure AD-tenant. Zie [Een Azure-abonnement aan uw Azure Active Directory-tenant toevoegen of koppelen](../../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md) voor meer informatie.
@@ -55,9 +55,9 @@ Als u andere Azure-abonnementen wilt overdragen naar een CSP-partner, moet de ab
 
 ## <a name="transfer-csp-subscription-to-other-offer"></a>CSP-abonnement overdragen naar een andere aanbieding
 
-Als u andere Azure-abonnementen wilt overdragen van een CSP-partner naar een andere Azure-aanbieding, moet de abonnee resources verplaatsen tussen bron- en doelabonnementen van CSP.
+Als u andere Azure-abonnementen wilt overdragen van een CSP-partner naar een andere Azure-aanbieding, moet de abonnee resources verplaatsen tussen bron- en doelabonnementen van CSP. Dit is werk dat wordt uitgevoerd door een partner en een klant. Dit wordt niet gedaan door een Microsoft-vertegenwoordiger.
 
-1. Maak doelabonnementen voor Azure.
+1. De klant maakt Azure-doelabonnementen.
 1. Zorg ervoor dat de bron- en doelabonnementen zich in dezelfde Azure Active Directory-tenant (Azure AD) bevinden. Zie [Een Azure-abonnement aan uw Azure Active Directory-tenant toevoegen of koppelen](../../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md) voor meer informatie over het wijzigen van een Azure AD-tenant.
     Houd er rekening mee dat de optie directory voor de wijziging niet wordt ondersteund voor het CSP-abonnement. U kunt bijvoorbeeld overgaan van een CSP-abonnement naar een abonnement met betalen per gebruik. U moet de directory van het abonnement met betalen per gebruik wijzigen, zodat deze overeenkomt met de directory.
 
@@ -65,7 +65,7 @@ Als u andere Azure-abonnementen wilt overdragen van een CSP-partner naar een and
     >  - Wanneer u een abonnement aan een andere directory koppelt, verliezen gebruikers aan wie rollen zijn toegewezen met [Azure RBAC](../../role-based-access-control/role-assignments-portal.md) hun toegang. Klassieke abonnementsbeheerders, waaronder de servicebeheerder en co-beheerders, verliezen ook hun toegang.
     >  - Beleidstoewijzingen worden verwijderd uit een abonnement wanneer het abonnement wordt gekoppeld aan een andere Active Directory.
 
-1. Het gebruikersaccount dat u gebruikt om de overdracht uit te voeren, moet in beide abonnementen beschikken over [Azure RBAC](add-change-subscription-administrator.md)-eigenaarstoegang.
+1. Het gebruikersaccount van de klant dat u gebruikt voor de overdracht, moet [azure RBAC-eigenaarstoegang](add-change-subscription-administrator.md) hebben voor beide abonnementen.
 1. Voordat u begint, moet u [controleren](/rest/api/resources/resources/validatemoveresources) of alle Azure-resources kunnen worden verplaatst van het bronabonnement naar het doelabonnement.
     > [!IMPORTANT]
     >  - Sommige Azure-resources kunnen namelijk niet worden verplaatst tussen abonnementen. Als u de volledige lijst met Azure-resources wilt weergeven die wel kunnen worden verplaatst, raadpleegt u [Ondersteuning voor het verplaatsen van resources](../../azure-resource-manager/management/move-support-resources.md).

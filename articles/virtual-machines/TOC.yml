@@ -251,6 +251,8 @@
               href: hbv3-series.md
             - name: HC-serie
               href: hc-series.md
+        - name: Staten en facturering
+          href: states-billing.md
         - name: vCPU-quota
           items:
             - name: CLI
@@ -385,7 +387,7 @@
               href: ./linux/create-ssh-keys-detailed.md
             - name: SSH-sleutels maken en beheren in de portal
               href: ssh-keys-portal.md
-            - name: SSH in Linux of macOS
+            - name: SSH op Linux of macOS
               href: ./linux/mac-create-ssh-keys.md
             - name: SSH in Windows
               href: ./linux/ssh-from-windows.md
@@ -450,7 +452,7 @@
             - name: Windows
               displayName: 'Azure Key Vault, key vault, encryption'
               href: ./extensions/key-vault-windows.md
-        - name: Azure Policy gastconfiguratie configureren
+        - name: Azure Policy gastconfiguratie
           href: ./extensions/guest-configuration.md
         - name: Aangepast script
           items:
@@ -795,6 +797,8 @@
               href: 'https://azure.microsoft.com/resources/templates/101-sig-image-version-create/'
             - name: Een VM maken van een installatiekopieversie
               href: 'https://azure.microsoft.com/resources/templates/101-vm-from-sig/'
+        - name: Ansible
+          href: 'https://docs.microsoft.com/azure/developer/ansible/vm-configure-from-azure-shared-image-gallery?tabs=ansible'
         - name: Problemen met gedeelde installatiekopieën oplossen
           displayName: 'Shared Image Gallery, SIG, sig, gallery, image, troubleshooting'
           href: troubleshooting-shared-images.md
@@ -942,10 +946,8 @@
         - name: Indelingsmodi
           displayName: 'VMSS, flex, scale set, scale, virtual machine sacle set'
           href: ../virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes.md?context=/azure/virtual-machines/context/context
-    - name: Inzicht in het opnieuw opstarten van VM's
+    - name: Inzicht krijgen in het opnieuw opstarten van VM's
       href: understand-vm-reboots.md
-    - name: Staten en facturering
-      href: states-billing.md
     - name: Azure-regio's
       href: regions.md
 - name: Disks
@@ -1106,7 +1108,7 @@
         - name: Schijfprestatielagen
           href: disks-change-performance.md
           displayname: 'Performance, cost, perf, disks, disk'
-        - name: Prestatielaag van schijf wijzigen
+        - name: De prestatielaag van de schijf wijzigen
           items:
             - name: CLI en PowerShell
               href: disks-performance-tiers.md
@@ -1139,7 +1141,7 @@
           href: ./linux/snapshot-copy-managed-disk.md
         - name: Momentopname van een schijf maken - PowerShell
           href: ./windows/snapshot-copy-managed-disk.md
-        - name: Back-up maken van niet-mande schijven
+        - name: Back-up maken van niet-managede schijven
           href: ./linux/incremental-snapshots.md
     - name: Kortstondige besturingssysteemschijven
       href: ephemeral-os-disks.md
@@ -1153,7 +1155,7 @@
             - name: PowerShell
               displayName: Convert disk to another disk type
               href: ./windows/convert-disk-storage.md
-        - name: Migreren naar Premium -SSD's met Azure Site Recovery
+        - name: Migreren naar Premium-SD's met Azure Site Recovery
           items:
             - name: Linux
               displayName: Migrate to premium SSDs with Azure Site Recovery
@@ -1344,7 +1346,7 @@
           href: ./windows/security-baseline.md
     - name: Aanbevelingen
       href: security-recommendations.md
-    - name: Vertrouwde start
+    - name: Vertrouwd starten
       items:
         - name: Overzicht
           href: trusted-launch.md
@@ -1449,7 +1451,7 @@
         - name: Overzicht
           displayName: 'Automatic OS image upgrade, image, upgrade, OS'
           href: ../virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade.md?context=/azure/virtual-machines/context/context
-        - name: Onderhoudsbeheer voor upgrade van besturingssysteemafbeeldingen
+        - name: Onderhoudsbeheer voor upgrade van besturingssysteemafbeelding
           items:
             - name: Overzicht (Preview)
               displayName: 'Maintenance control for OS image upgrade, OS, image, upgrade'
@@ -1728,7 +1730,7 @@
               href: ./windows/tutorial-disaster-recovery.md
         - name: Failover van een virtuele machine naar een andere regio uitvoeren
           href: ../site-recovery/azure-to-azure-tutorial-failover-failback.md
-        - name: Failback van een VM naar de primaire regio
+        - name: Een failback van een VM naar de primaire regio
           href: ../site-recovery/azure-to-azure-tutorial-failback.md
     - name: Virtuele machines verplaatsen en migreren
       items:

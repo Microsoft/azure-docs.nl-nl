@@ -1,36 +1,32 @@
 ---
-title: IoT externe bewaking en meldingen met Azure Logic Apps | Microsoft Docs
-description: Gebruik Azure Logic Apps voor IoT-temperatuur bewaking op uw IoT-hub en verzend automatisch e-mail meldingen naar uw postvak om eventuele afwijkingen op te sporen.
+title: Externe IoT-bewaking en meldingen met Azure Logic Apps | Microsoft Docs
+description: Gebruik Azure Logic Apps voor IoT-temperatuurbewaking op uw IoT-hub en verzend automatisch e-mailmeldingen naar uw postvak voor gedetecteerde afwijkingen.
 author: robinsh
-keywords: IOT-bewaking, IOT-meldingen, IOT-temperatuur bewaking
+keywords: IOT-bewaking, ioT-meldingen, ioT-temperatuurbewaking
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 07/18/2019
 ms.author: robinsh
-ms.openlocfilehash: cd14ff0688f4230aeedac748ca4b32609bdd2938
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 74724357dea9cd6c8c89a11a9eeb3d1b2933b790
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92490319"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107564932"
 ---
-# <a name="iot-remote-monitoring-and-notifications-with-azure-logic-apps-connecting-your-iot-hub-and-mailbox"></a>IoT-externe bewaking en meldingen met Azure Logic Apps verbinding maken met uw IoT hub en Postvak
+# <a name="iot-remote-monitoring-and-notifications-with-azure-logic-apps-connecting-your-iot-hub-and-mailbox"></a>Externe IoT-bewaking en meldingen met Azure Logic Apps verbinding maken met uw IoT-hub en postvak
 
 ![End-to-end-diagram](media/iot-hub-monitoring-notifications-with-azure-logic-apps/iot-hub-e2e-logic-apps.png)
 
 [!INCLUDE [iot-hub-get-started-note](../../includes/iot-hub-get-started-note.md)]
 
-[Azure Logic apps](../logic-apps/index.yml) kan u helpen bij het organiseren van werk stromen over on-premises en Cloud Services, een of meer ondernemingen en verschillende protocollen. Een logische app begint met een trigger, gevolgd door een of meer acties die kunnen worden geordend met behulp van ingebouwde besturings elementen, zoals voor waarden en herhalingen. Deze flexibiliteit maakt het Logic Apps van een ideale IoT-oplossing voor IoT-bewakings scenario's. Bijvoorbeeld, de aankomst van telemetriegegevens van een apparaat op een IoT Hub-eind punt kan werk stromen voor logische apps initiëren voor het magazijn van de gegevens in een Azure Storage blob, e-mail waarschuwingen verzenden naar waarschuwing over gegevens afwijkingen, een technicus naar een bezoek brengen als een apparaat een fout meldt, enzovoort.
+[Azure Logic Apps](../logic-apps/index.yml) kunt u werkstromen beheren in on-premises en cloudservices, een of meer ondernemingen en in verschillende protocollen. Een logische app begint met een trigger, die vervolgens wordt gevolgd door een of meer acties die kunnen worden gesequentieerd met behulp van ingebouwde besturingselementen, zoals voorwaarden en iterators. Deze flexibiliteit maakt Logic Apps ideale IoT-oplossing voor IoT-bewakingsscenario's. De aankomst van telemetriegegevens van een apparaat op een IoT Hub-eindpunt kan bijvoorbeeld werkstromen van logische apps initiëren om de gegevens in een Azure Storage-blob te warehouseen, e-mailwaarschuwingen te verzenden om te waarschuwen voor gegevensafwijkingen, een onderhoudstechnicus te plannen om naar een storing te gaan, en meer.
 
-## <a name="what-you-learn"></a>Wat u leert
+In dit artikel leert u hoe u een logische app maakt die uw IoT-hub verbindt met uw postvak voor temperatuurbewaking en meldingen. De clientcode die op uw apparaat wordt uitgevoerd, stelt een toepassings-eigenschap in, , voor elk telemetriebericht dat naar uw `temperatureAlert` IoT-hub wordt gestuurd. Wanneer de clientcode een temperatuur van meer dan 30 C detecteert, stelt deze eigenschap in op . Anders wordt de eigenschap `true` op `false` .
 
-U leert hoe u een logische app maakt die uw IoT-hub en uw postvak verbindt voor temperatuur bewaking en meldingen.
-
-De client code die wordt uitgevoerd op uw apparaat stelt een toepassings eigenschap `temperatureAlert` in, op elke telemetrie-bericht naar uw IOT-hub. Wanneer de client code een Tempe ratuur van meer dan 30 C detecteert, wordt deze eigenschap ingesteld op. als dat `true` niet het geval is, wordt de eigenschap ingesteld op `false` .
-
-Berichten die op uw IoT-hub arriveren, zien er ongeveer als volgt uit, met de telemetriegegevens in de hoofd tekst en de `temperatureAlert` eigenschap in de toepassings eigenschappen (systeem eigenschappen worden niet weer gegeven):
+Berichten die bij uw IoT-hub aankomen, zien er ongeveer als volgt uit, met de telemetriegegevens in de hoofdtekst en de eigenschap in de toepassingseigenschappen (systeemeigenschappen worden niet `temperatureAlert` weergegeven):
 
 ```json
 {
@@ -46,211 +42,205 @@ Berichten die op uw IoT-hub arriveren, zien er ongeveer als volgt uit, met de te
 }
 ```
 
-Zie [IOT hub berichten maken en lezen](iot-hub-devguide-messages-construct.md)voor meer informatie over de indeling van IOT hub berichten.
+Zie Create and read IoT Hub messages (Berichten maken IoT Hub lezen) voor meer informatie [over IoT Hub berichtindeling.](iot-hub-devguide-messages-construct.md)
 
-In dit onderwerp stelt u route ring in op uw IoT-hub om berichten te verzenden waarin de `temperatureAlert` eigenschap `true` naar een service bus eind punt gaat. Vervolgens stelt u een logische app in die de berichten activeert die binnenkomen op het Service Bus-eind punt en ontvangt u een e-mail melding.
+In dit onderwerp stelt u routering in op uw IoT-hub om berichten te verzenden waarin de eigenschap naar een Service Bus `temperatureAlert` `true` is. Vervolgens stelt u een logische app in die wordt triggers voor de berichten die op Service Bus eindpunt aankomen en u een e-mailmelding stuurt.
 
-## <a name="what-you-do"></a>Wat u doet
+## <a name="prerequisites"></a>Vereisten
 
-* Maak een Service Bus naam ruimte en voeg er een Service Bus wachtrij aan toe.
-* Voeg een aangepast eind punt en een regel voor door sturen aan uw IoT-hub toe om berichten die een temperatuur waarschuwing bevatten, te routeren naar de Service Bus wachtrij.
-* Een logische app maken, configureren en testen om berichten uit uw Service Bus wachtrij te gebruiken en e-mail meldingen naar een gewenste ontvanger te verzenden.
-
-## <a name="what-you-need"></a>Wat u nodig hebt
-
-* Voltooi de zelf studie [Raspberry Pi online Simulator](iot-hub-raspberry-pi-web-simulator-get-started.md) of een van de zelf studies van het apparaat. bijvoorbeeld [Raspberry Pi met node.js](iot-hub-raspberry-pi-kit-node-get-started.md). Deze voldoen aan de volgende vereisten:
+* Voltooi de [zelfstudie Raspberry Pi Online Simulator](iot-hub-raspberry-pi-web-simulator-get-started.md) of een van de zelfstudies over apparaten. U kunt bijvoorbeeld naar [Raspberry Pi ](iot-hub-raspberry-pi-kit-node-get-started.md) gaan met node.jsof naar een van de quickstarts [Telemetrie](quickstart-send-telemetry-dotnet.md) verzenden. Deze artikelen hebben betrekking op de volgende vereisten:
 
   * Een actief Azure-abonnement.
-  * Een Azure IoT hub onder uw abonnement.
-  * Een client toepassing die op uw apparaat wordt uitgevoerd en dat telemetrie-berichten verzendt naar uw Azure IoT hub.
+  * Een Azure IoT-hub onder uw abonnement.
+  * Een clienttoepassing die op uw apparaat wordt uitgevoerd en die telemetrieberichten naar uw Azure IoT-hub verzendt.
 
-## <a name="create-service-bus-namespace-and-queue"></a>Service Bus naam ruimte en wachtrij maken
+## <a name="create-service-bus-namespace-and-queue"></a>Een Service Bus en wachtrij maken
 
-Maak een Service Bus-naamruimte en -wachtrij. Verderop in dit onderwerp maakt u een regel voor de route ring in uw IoT-hub om berichten te sturen die een temperatuur waarschuwing bevatten voor de Service Bus wachtrij, waar ze worden opgehaald door een logische app en deze activeren om een e-mail melding te verzenden.
+Maak een Service Bus-naamruimte en -wachtrij. Verderop in dit onderwerp maakt u een routeringsregel in uw IoT-hub om berichten met een temperatuurwaarschuwing naar de Service Bus-wachtrij te sturen, waar ze worden opgehaald door een logische app en deze activeren om een e-mailmelding te verzenden.
 
 ### <a name="create-a-service-bus-namespace"></a>Een Service Bus-naamruimte maken
 
-1. Selecteer op de [Azure Portal](https://portal.azure.com/) **+ een resource**-  >  **integratie**  >  **Service Bus** maken.
+1. Selecteer op [Azure Portal](https://portal.azure.com/)de optie **+ Een resource-integratie**  >  **maken**  >  **Service Bus**.
 
-1. Geef in het deel venster **naam ruimte maken** de volgende informatie op:
+1. Geef in **het deelvenster Naamruimte** maken de volgende informatie op:
 
-   **Naam**: de naam van de service bus-naam ruimte. De naam ruimte moet uniek zijn binnen Azure.
+   **Naam:** de naam van de Service Bus-naamruimte. De naamruimte moet uniek zijn binnen Azure.
 
-   **Prijs categorie**: Selecteer **basis** in de vervolg keuzelijst. De laag basis is voldoende voor deze zelf studie.
+   **Prijscategorie:** selecteer **Basic** in de vervolgkeuzelijst. De basic-laag is voldoende voor deze zelfstudie.
 
-   **Resource groep**: gebruik dezelfde resource groep als uw IOT-hub.
+   **Resourcegroep:** gebruik dezelfde resourcegroep die uw IoT-hub gebruikt.
 
-   **Locatie**: gebruik dezelfde locatie als uw IOT-hub.
+   **Locatie:** gebruik dezelfde locatie die uw IoT-hub gebruikt.
 
-   ![Een service bus-naam ruimte maken in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/1-create-service-bus-namespace-azure-portal.png)
+   ![Een Service Bus-naamruimte maken in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/1-create-service-bus-namespace-azure-portal.png)
 
-1. Selecteer **Maken**. Wacht tot de implementatie is voltooid voordat u verdergaat met de volgende stap.
+1. Selecteer **Maken**. Wacht tot de implementatie is voltooid voordat u verder gaat met de volgende stap.
 
-### <a name="add-a-service-bus-queue-to-the-namespace"></a>Een Service Bus wachtrij toevoegen aan de naam ruimte
+### <a name="add-a-service-bus-queue-to-the-namespace"></a>Een Service Bus toevoegen aan de naamruimte
 
-1. Open de Service Bus naam ruimte. De eenvoudigste manier om naar de Service Bus naam ruimte te gaan, is door **resource groepen** te selecteren in het deel venster Resource, de resource groep te selecteren en vervolgens de service bus naam ruimte te selecteren in de lijst met resources.
+1. Open de Service Bus naamruimte. De eenvoudigste manier om bij de Service Bus-naamruimte te komen, is door **Resourcegroepen** te selecteren in het resourcedeelvenster, uw resourcegroep te selecteren en vervolgens de Service Bus-naamruimte te selecteren in de lijst met resources.
 
-1. Selecteer in het deel venster **Service Bus naam ruimte** de optie **+ wachtrij**.
+1. Selecteer in **Service Bus deelvenster Naamruimte** + **Wachtrij**.
 
-1. Voer een naam in voor de wachtrij en selecteer vervolgens **maken**. Wanneer de wachtrij is gemaakt, wordt het deel venster **wachtrij maken** gesloten.
+1. Voer een naam in voor de wachtrij en selecteer **vervolgens Maken.** Wanneer de wachtrij is gemaakt, wordt het **deelvenster** Wachtrij maken gesloten.
 
-   ![Een service bus-wachtrij toevoegen in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/create-service-bus-queue.png)
+   ![Een Service Bus-wachtrij toevoegen in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/create-service-bus-queue.png)
 
-1. Ga terug naar het deel venster **Service Bus naam ruimte** , onder **entiteiten**, selecteer **wacht rijen**. Open de service bus wachtrij in de lijst en selecteer vervolgens **beleid voor gedeelde toegang**  >  **+ toevoegen**.
+1. Selecteer in **Service Bus deelvenster Naamruimte** onder **Entiteiten** de optie **Wachtrijen.** Open de Service Bus in de lijst en selecteer vervolgens **Gedeeld toegangsbeleid**  >  **+ Toevoegen.**
 
-1. Voer een naam in voor het beleid, Controleer **beheren** en selecteer vervolgens **maken**.
+1. Voer een naam in voor het beleid, **schakel Beheren in** en selecteer vervolgens **Maken.**
 
-   ![Een service bus-wachtrij beleid toevoegen in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/2-add-service-bus-queue-azure-portal.png)
+   ![Een Service Bus-wachtrijbeleid toevoegen in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/2-add-service-bus-queue-azure-portal.png)
 
-## <a name="add-a-custom-endpoint-and-routing-rule-to-your-iot-hub"></a>Een aangepast eind punt en een regel voor door sturen toevoegen aan uw IoT-hub
+## <a name="add-a-custom-endpoint-and-routing-rule-to-your-iot-hub"></a>Een aangepaste eindpunt- en routeringsregel toevoegen aan uw IoT-hub
 
-Voeg een aangepast eind punt voor de Service Bus wachtrij toe aan uw IoT-hub en maak een bericht routering regel om berichten te sturen die een temperatuur waarschuwing bevatten voor dat eind punt, waar ze worden opgehaald door uw logische app. De routerings regel gebruikt een routerings query `temperatureAlert = "true"` om berichten door te sturen op basis van de waarde van de `temperatureAlert` eigenschap Application die is ingesteld door de client code die op het apparaat wordt uitgevoerd. Zie [bericht routerings query op basis van bericht eigenschappen](./iot-hub-devguide-routing-query-syntax.md#message-routing-query-based-on-message-properties)voor meer informatie.
+Voeg een aangepast eindpunt voor de Service Bus-wachtrij toe aan uw IoT-hub en maak een regel voor berichtroutering om berichten met een temperatuurwaarschuwing naar dat eindpunt te sturen, waar ze worden opgehaald door uw logische app. De routeringsregel maakt gebruik van een routeringsquery, , om berichten door te sturen op basis van de waarde van de toepassings-eigenschap die is ingesteld door de clientcode die op het `temperatureAlert = "true"` `temperatureAlert` apparaat wordt uitgevoerd. Zie Query voor berichtroutering op basis van berichteigenschappen [voor meer informatie.](./iot-hub-devguide-routing-query-syntax.md#message-routing-query-based-on-message-properties)
 
-### <a name="add-a-custom-endpoint"></a>Een aangepast eind punt toevoegen
+### <a name="add-a-custom-endpoint"></a>Een aangepast eindpunt toevoegen
 
-1. Open uw IoT-hub. De eenvoudigste manier om de IoT-hub te bereiken, is door **resource groepen** te selecteren in het deel venster Resource, de resource groep te selecteren en vervolgens uw IOT-hub te selecteren in de lijst met resources.
+1. Open uw IoT-hub. De eenvoudigste manier om naar de IoT-hub te gaan, is door **Resourcegroepen** te selecteren in het resourcedeelvenster, uw resourcegroep te selecteren en vervolgens uw IoT-hub te selecteren in de lijst met resources.
 
-1. Selecteer **bericht routering** onder **Messa ging**. Selecteer in het deel venster **bericht routering** het tabblad **aangepaste eind punten** en selecteer vervolgens **+ toevoegen**. Selecteer **Service Bus-wachtrij** in de vervolg keuzelijst.
+1. Selecteer **onder Berichten** de optie **Berichtroutering.** Selecteer in **het deelvenster** Berichtroutering het tabblad **Aangepaste eindpunten** en selecteer **vervolgens + Toevoegen.** Selecteer Service Bus-wachtrij in de **vervolgkeuzelijst**.
 
-   ![Scherm afbeelding die de service bus-wachtrij optie markeert.](media/iot-hub-monitoring-notifications-with-azure-logic-apps/select-iot-hub-custom-endpoint.png)
+   ![Schermopname met de optie Service Bus-wachtrij.](media/iot-hub-monitoring-notifications-with-azure-logic-apps/select-iot-hub-custom-endpoint.png)
 
-1. Voer in het deel venster **een service bus-eind punt toevoegen** de volgende gegevens in:
+1. Voer in **het deelvenster Een Service Bus-eindpunt toevoegen** de volgende gegevens in:
 
-   **Naam van eind punt**: de naam van het eind punt.
+   **Eindpuntnaam:** de naam van het eindpunt.
 
-   **Service Bus-naam ruimte**: Selecteer de naam ruimte die u hebt gemaakt.
+   **Service Bus-naamruimte:** selecteer de naamruimte die u hebt gemaakt.
 
-   **Service Bus-wachtrij**: Selecteer de wachtrij die u hebt gemaakt.
+   **Service Bus-wachtrij:** selecteer de wachtrij die u hebt gemaakt.
 
-   ![Een eind punt toevoegen aan uw IoT-hub in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/3-add-iot-hub-endpoint-azure-portal.png)
+   ![Een eindpunt toevoegen aan uw IoT-hub in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/3-add-iot-hub-endpoint-azure-portal.png)
 
-1. Selecteer **Maken**. Nadat het eind punt is gemaakt, gaat u verder met de volgende stap.
+1. Selecteer **Maken**. Nadat het eindpunt is gemaakt, gaat u verder met de volgende stap.
 
 ### <a name="add-a-routing-rule"></a>Een routeringsregel toevoegen
 
-1. Ga terug naar het deel venster **bericht routering** , selecteer het tabblad **routes** en selecteer vervolgens **+ toevoegen**.
+1. Selecteer in het **deelvenster Berichtroutering** het **tabblad Routes** en selecteer vervolgens **+ Toevoegen.**
 
-1. Voer in het deel venster **een route toevoegen** de volgende gegevens in:
+1. Voer in **het deelvenster Een route** toevoegen de volgende gegevens in:
 
-   **Naam**: de naam van de routerings regel.
+   **Naam:** de naam van de regel voor doorsturen.
 
-   **Eind punt**: Selecteer het eind punt dat u hebt gemaakt.
+   **Eindpunt:** selecteer het eindpunt dat u hebt gemaakt.
 
-   **Gegevens bron**: Selecteer de **telemetrie-berichten van apparaten**.
+   **Gegevensbron:** selecteer **Telemetrieberichten voor apparaten.**
 
-   **Routerings query**: invoeren `temperatureAlert = "true"` .
+   **Routeringsquery:** voer `temperatureAlert = "true"` in.
 
-   ![Een regel voor door sturen toevoegen in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/4-add-routing-rule-azure-portal.png)
+   ![Voeg een regel voor doorsturen toe aan Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/4-add-routing-rule-azure-portal.png)
 
-1. Selecteer **Opslaan**. U kunt het deel venster **bericht routering** sluiten.
+1. Selecteer **Opslaan**. U kunt het deelvenster **Berichtroutering** sluiten.
 
 ## <a name="create-and-configure-a-logic-app"></a>Een logische app maken en configureren
 
-In de voor gaande sectie stelt u uw IoT-hub in voor het routeren van berichten met een temperatuur waarschuwing naar uw Service Bus wachtrij. Nu stelt u een logische app in om de Service Bus wachtrij te controleren en een e-mail melding te verzenden wanneer een bericht wordt toegevoegd aan de wachtrij.
+In de vorige sectie hebt u uw IoT-hub ingesteld om berichten met een temperatuurwaarschuwing naar uw Service Bus sturen. U stelt nu een logische app in om de Service Bus wachtrij te bewaken en een e-mailmelding te verzenden wanneer er een bericht aan de wachtrij wordt toegevoegd.
 
 ### <a name="create-a-logic-app"></a>Een logische app maken
 
-1. Selecteer **een**  >    >  **logische app** voor het integreren van resources maken.
+1. Selecteer **Een logische**  >  **resource-integratie-app**  >  **maken.**
 
 1. Voer de volgende informatie in:
 
-   **Naam**: de naam van de logische app.
+   **Naam:** de naam van de logische app.
 
-   **Resource groep**: gebruik dezelfde resource groep als uw IOT-hub.
+   **Resourcegroep:** gebruik dezelfde resourcegroep die uw IoT-hub gebruikt.
 
-   **Locatie**: gebruik dezelfde locatie als uw IOT-hub.
+   **Locatie:** gebruik dezelfde locatie die uw IoT-hub gebruikt.
 
    ![Een logische app maken in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/create-a-logic-app.png)
 
 1. Selecteer **Maken**.
 
-### <a name="configure-the-logic-app-trigger"></a>De trigger van de logische app configureren
+### <a name="configure-the-logic-app-trigger"></a>De trigger voor de logische app configureren
 
-1. Open de logische app. De eenvoudigste manier om naar de logische app te gaan, is door **resource groepen** te selecteren in het deel venster Resource, de resource groep te selecteren en vervolgens uw logische app te selecteren in de lijst met resources. Wanneer u de logische app selecteert, wordt de Logic Apps Designer geopend.
+1. Open de logische app. De eenvoudigste manier om bij de logische app te komen, is door **Resourcegroepen** te selecteren in het resourcedeelvenster, uw resourcegroep te selecteren en vervolgens uw logische app te selecteren in de lijst met resources. Wanneer u de logische app selecteert, wordt Logic Apps Designer geopend.
 
-1. Schuif in de Logic Apps Designer omlaag naar **sjablonen** en selecteer **lege logische app**.
+1. Schuif in Logic Apps Designer omlaag naar **Sjablonen** en selecteer **Lege logische app.**
 
-   ![Beginnen met een lege logische app in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/5-start-with-blank-logic-app-azure-portal.png)
+   ![Begin met een lege logische app in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/5-start-with-blank-logic-app-azure-portal.png)
 
-1. Selecteer het tabblad **alle** en selecteer vervolgens **Service Bus**.
+1. Selecteer het **tabblad** Alle en selecteer vervolgens **Service Bus**.
 
-   ![Selecteer Service Bus om de logische app te gaan maken in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/6-select-service-bus-when-creating-blank-logic-app-azure-portal.png)
+   ![Selecteer Service Bus om te beginnen met het maken van uw logische app in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/6-select-service-bus-when-creating-blank-logic-app-azure-portal.png)
 
-1. Onder **Triggers** selecteert u **Wanneer een of meer berichten binnenkomen in een wachtrij (automatisch volt ooien)**.
+1. Selecteer **onder Triggers** de optie Wanneer een of meer berichten in een wachtrij binnenkomen **(automatisch voltooien).**
 
    ![Selecteer de trigger voor uw logische app in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/select-service-bus-trigger.png)
 
-1. Een service bus-verbinding maken.
-   1. Geef een naam op voor de verbinding en selecteer uw Service Bus naam ruimte in de lijst. Het volgende scherm wordt geopend.
+1. Maak een Service Bus-verbinding.
+   1. Voer een verbindingsnaam in en selecteer Service Bus naamruimte in de lijst. Het volgende scherm wordt geopend.
 
-      ![Scherm opname van de optie wanneer een of meer berichten binnenkomen in een wachtrij (automatisch volt ooien).](media/iot-hub-monitoring-notifications-with-azure-logic-apps/create-service-bus-connection-1.png)
+      ![Schermopname met de optie Wanneer een of meer berichten in een wachtrij binnenkomen (automatisch voltooien).](media/iot-hub-monitoring-notifications-with-azure-logic-apps/create-service-bus-connection-1.png)
 
-   1. Selecteer het service bus-beleid (RootManageSharedAccessKey). Selecteer vervolgens  **maken**.
+   1. Selecteer het Service Bus-beleid (RootManageSharedAccessKey). Selecteer vervolgens **Maken.**
 
-      ![Een service bus-verbinding maken voor uw logische app in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/7-create-service-bus-connection-in-logic-app-azure-portal.png)
+      ![Maak een Service Bus-verbinding voor uw logische app in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/7-create-service-bus-connection-in-logic-app-azure-portal.png)
 
-   1. Selecteer in het laatste scherm bij **wachtrij naam** de wachtrij die u hebt gemaakt in de vervolg keuzelijst. Voer `175` in voor het **maximum aantal berichten**.
+   1. Selecteer in het laatste scherm bij **Wachtrijnaam** de wachtrij die u hebt gemaakt in de vervolgkeuzelijst. Voer `175` in bij Maximum aantal **berichten.**
 
       ![Geef het maximum aantal berichten op voor de Service Bus-verbinding in uw logische app](media/iot-hub-monitoring-notifications-with-azure-logic-apps/8-specify-maximum-message-count-for-service-bus-connection-logic-app-azure-portal.png)
 
-   1. Selecteer **Opslaan** in het menu boven aan de Logic apps Designer om uw wijzigingen op te slaan.
+   1. Selecteer **Opslaan** in het menu bovenaan de Logic Apps Designer om uw wijzigingen op te slaan.
 
 ### <a name="configure-the-logic-app-action"></a>De actie van de logische app configureren
 
-1. Een SMTP-service verbinding maken.
+1. Maak een SMTP-serviceverbinding.
 
-   1. Selecteer **Nieuwe stap**. In **Kies een actie** selecteert u het tabblad **alle** .
+   1. Selecteer **Nieuwe stap**. Selecteer **in Kies een actie** het **tabblad** Alle.
 
-   1. Typ `smtp` in het zoekvak, selecteer de **SMTP-** service in het Zoek resultaat en selecteer vervolgens **e-mail verzenden**.
+   1. Typ `smtp` in het zoekvak, selecteer de **SMTP-service** in het zoekresultaat en selecteer **vervolgens E-mail verzenden.**
 
       ![Een SMTP-verbinding maken in uw logische app in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/9-create-smtp-connection-logic-app-azure-portal.png)
 
-   1. Voer de SMTP-gegevens voor uw postvak in en selecteer **maken**.
+   1. Voer de SMTP-gegevens voor uw postvak in en selecteer **vervolgens Maken.**
 
-      ![Geef de SMTP-verbindings gegevens in uw logische app op in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/10-enter-smtp-connection-info-logic-app-azure-portal.png)
+      ![Voer smtp-verbindingsgegevens in uw logische app in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/10-enter-smtp-connection-info-logic-app-azure-portal.png)
 
-      De SMTP-informatie ophalen voor [Hotmail/Outlook. com](https://support.office.com/article/Add-your-Outlook-com-account-to-another-mail-app-73f3b178-0009-41ae-aab1-87b80fa94970), [Gmail](https://support.google.com/a/answer/176600?hl=en)en [Yahoo mail](https://help.yahoo.com/kb/SLN4075.html).
+      Haal de SMTP-informatie [op voor Hotmail/Outlook.com,](https://support.office.com/article/Add-your-Outlook-com-account-to-another-mail-app-73f3b178-0009-41ae-aab1-87b80fa94970) [Gmail](https://support.google.com/a/answer/176600?hl=en)en [Yahoo Mail.](https://help.yahoo.com/kb/SLN4075.html)
 
       > [!NOTE]
-      > Mogelijk moet u TLS/SSL uitschakelen om de verbinding tot stand te brengen. Als dit het geval is en u TLS opnieuw wilt inschakelen nadat de verbinding tot stand is gebracht, raadpleegt u de optionele stap aan het eind van deze sectie.
+      > Mogelijk moet u TLS/SSL uitschakelen om de verbinding tot stand te brengen. Als dit het geval is en u TLS opnieuw wilt inschakelen nadat de verbinding tot stand is gebracht, bekijkt u de optionele stap aan het einde van deze sectie.
 
-   1. Selecteer in de vervolg keuzelijst **nieuwe para meter toevoegen** in de stap **e-mail verzenden** de optie **van**, **naar**, **onderwerp** en **hoofd tekst**. Klik of tik op een wille keurige plaats op het scherm om het selectie vakje te sluiten.
+   1. Selecteer in **de vervolgkeuzekeuze selecteren** in de vervolgkeuze vervolgkeuzekeuze voor nieuwe parameter toevoegen in de stap **E-mail** verzenden de optie **Van**, **Naar**, **Onderwerp** en **Tekst.** Klik of tik ergens op het scherm om het selectievak te sluiten.
 
-      ![E-mail velden voor SMTP-verbindingen kiezen](media/iot-hub-monitoring-notifications-with-azure-logic-apps/smtp-connection-choose-fields.png)
+      ![E-mailvelden voor SMTP-verbinding kiezen](media/iot-hub-monitoring-notifications-with-azure-logic-apps/smtp-connection-choose-fields.png)
 
-   1. Voer uw e-mail adres **in voor van** en naar, en voor **het** `High temperature detected` **onderwerp** en de **hoofd tekst**. Als het dialoog venster **dynamische inhoud toevoegen van de apps en connectors in deze stroom** wordt geopend, selecteert u **verbergen** om het bestand te sluiten. In deze zelf studie gebruikt u geen dynamische inhoud.
+   1. Voer uw e-mailadres in **voor Van** **en Naar** en `High temperature detected` voor **Onderwerp** en **Hoofd.** Als het dialoogvenster Dynamische inhoud toevoegen uit de apps en **connectors die in** deze stroom worden gebruikt wordt geopend, selecteert u Verbergen **om** deze te sluiten. In deze zelfstudie gebruikt u geen dynamische inhoud.
 
-      ![E-mail velden voor SMTP-verbindingen invullen](media/iot-hub-monitoring-notifications-with-azure-logic-apps/fill-in-smtp-connection-fields.png)
+      ![Invullen van e-mailvelden voor SMTP-verbinding](media/iot-hub-monitoring-notifications-with-azure-logic-apps/fill-in-smtp-connection-fields.png)
 
-   1. Selecteer **Opslaan** om de SMTP-verbinding op te slaan.
+   1. Selecteer **Opslaan om** de SMTP-verbinding op te slaan.
 
-1. Beschrijving Als u TLS wilt uitschakelen om verbinding te maken met uw e-mail provider en deze opnieuw wilt inschakelen, voert u de volgende stappen uit:
+1. (Optioneel) Als u TLS moest uitschakelen om verbinding te maken met uw e-mailprovider en deze opnieuw wilt inschakelen, volgt u deze stappen:
 
-   1. Selecteer in het deel venster **logische app** onder **ontwikkelingsprogram Ma's** de optie **API-verbindingen**.
+   1. Selecteer in **het deelvenster Logische app** onder **Ontwikkelprogramma's** de **optie API-verbindingen.**
 
    1. Selecteer de SMTP-verbinding in de lijst met API-verbindingen.
 
-   1. Selecteer in het deel venster **SMTP API Connection** onder **Algemeen** de optie **API-verbinding bewerken**.
+   1. Selecteer in **het deelvenster SMTP API-verbinding** onder **Algemeen** de optie **API-verbinding bewerken.**
 
-   1. In het deel venster **API-verbinding bewerken** selecteert u **SSL inschakelen?**, voert u het wacht woord voor uw e-mail account opnieuw in en selecteert u **Opslaan**.
+   1. Selecteer in **het deelvenster API-verbinding** bewerken de optie **SSL inschakelen?**, voer het wachtwoord voor uw e-mailaccount opnieuw in en selecteer **Opslaan.**
 
-      ![Een SMTP-API-verbinding bewerken in uw logische app in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/re-enable-smtp-connection-ssl.png)
+      ![Bewerk de SMTP-API-verbinding in uw logische app in de Azure Portal](media/iot-hub-monitoring-notifications-with-azure-logic-apps/re-enable-smtp-connection-ssl.png)
 
-Uw logische app is nu gereed voor het verwerken van temperatuur waarschuwingen uit de Service Bus wachtrij en het verzenden van meldingen naar uw e-mail account.
+Uw logische app is nu gereed voor het verwerken van temperatuurwaarschuwingen vanuit Service Bus wachtrij en het verzenden van meldingen naar uw e-mailaccount.
 
 ## <a name="test-the-logic-app"></a>Test de logische app
 
-1. Start de client toepassing op het apparaat.
+1. Start de clienttoepassing op uw apparaat.
 
-1. Als u een fysiek apparaat gebruikt, dient u zorgvuldig een verwarmings bron in de buurt te brengen tot de Tempe ratuur meer dan 30 graden C overschrijdt. Als u de online Simulator gebruikt, zal de client code wille keurige telemetriegegevens uitvoeren op berichten van meer dan 30 C.
+1. Als u een fysiek apparaat gebruikt, brengt u zorgvuldig een warmtebron in de buurt van de warmtesensor totdat de temperatuur hoger is dan 30 graden C. Als u de onlinesimulator gebruikt, zal de clientcode willekeurig telemetrieberichten uitvoeren die groter zijn dan 30 C.
 
-1. U moet beginnen met het ontvangen van e-mail meldingen die worden verzonden door de logische app.
+1. U moet e-mailmeldingen ontvangen die door de logische app zijn verzonden.
 
    > [!NOTE]
-   > Uw e-mail serviceprovider moet mogelijk de identiteit van de afzender verifiëren om er zeker van te zijn dat u het e-mail bericht verzendt.
+   > Uw e-mailserviceprovider moet mogelijk de identiteit van de afzender controleren om te controleren of u de e-mail verzendt.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U hebt een logische app gemaakt die uw IoT-hub en uw postvak verbindt voor temperatuur bewaking en meldingen.
+U hebt een logische app gemaakt die uw IoT-hub en uw postvak verbindt voor temperatuurbewaking en meldingen.
 
 [!INCLUDE [iot-hub-get-started-next-steps](../../includes/iot-hub-get-started-next-steps.md)]

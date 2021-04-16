@@ -53,7 +53,7 @@
       href: reserved-instance-windows-software-costs.md?toc=/azure/cost-management-billing/reservations/toc.json
     - name: Gebruiksgegevens voor afzonderlijke abonnementen
       href: understand-reserved-instance-usage.md?toc=/azure/cost-management-billing/reservations/toc.json
-    - name: Gebruiks gegevens voor Enter prise-en micro soft-klanten overeenkomst
+    - name: Gebruiksgegevens voor enterprise Microsoft-klantovereenkomst en bedrijfsgegevens
       href: understand-reserved-instance-usage-ea.md?toc=/azure/cost-management-billing/reservations/toc.json
 - name: Instructiegidsen
   expanded: true
@@ -102,9 +102,9 @@
           href: ../../azure-sql/database/reserved-capacity-overview.md?toc=%2fazure%2fcost-management-billing%2freservations%2ftoc.json
         - name: Virtuele machines
           href: ../../virtual-machines/prepay-reserved-vm-instances.md?toc=%2fazure%2fcost-management-billing%2freservations%2ftoc.json
-    - name: 'Weergeven, beheren en optimaliseren na aankoop'
+    - name: 'Machtigingen, weergeven en beheren'
       items:
-        - name: Machtigingen voor het weer geven en beheren
+        - name: Machtigingen om weer te geven en te beheren
           href: view-reservations.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: Reserveringen bekijken als CSP
           href: how-to-view-csp-reservations.md?toc=/azure/cost-management-billing/reservations/toc.json
@@ -112,21 +112,25 @@
           href: manage-reserved-vm-instance.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: Instelling voor optimaliseren wijzigen
           href: manage-reserved-vm-instance.md#change-optimize-setting-for-reserved-vm-instances
-        - name: Reserveringen uitwisselen en restitutie
-          href: exchange-and-refund-azure-reservations.md?toc=/azure/cost-management-billing/reservations/toc.json
-    - name: Kosten rapporteren
+    - name: Rapporten over gebruik en kosten
       items:
+        - name: Reserveringsgebruik weergeven
+          href: reservation-utilization.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: Reserveringstransacties weergeven
           href: view-purchase-refunds.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: Reserveringskosten terugstorten
           href: charge-back-usage.md?toc=/azure/cost-management-billing/reservations/toc.json
+    - name: Omruilen en restitutie
+      items:
+        - name: Reserveringen uitwisselen en restitutie
+          href: exchange-and-refund-azure-reservations.md?toc=/azure/cost-management-billing/reservations/toc.json
     - name: Reserveringen verlengen
       items:
         - name: Een reservering verlengen
           href: reservation-renew.md?toc=/azure/cost-management-billing/reservations/toc.json
     - name: Problemen oplossen
       items:
-        - name: Een reserverings reservering zoeken vanuit Azure-logboeken
+        - name: Een koper van een reservering zoeken in Azure-logboeken
           href: find-reservation-purchaser-from-logs.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: Problemen met overdrachten tussen tenants oplossen
           href: troubleshoot-reservation-transfers-between-tenants.md?toc=/azure/cost-management-billing/reservations/toc.json

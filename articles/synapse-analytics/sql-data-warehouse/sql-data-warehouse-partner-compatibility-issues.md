@@ -1,46 +1,46 @@
 ---
-title: Compatibiliteits problemen met toepassingen van derden en Azure Synapse Analytics
-description: Hierin worden bekende problemen beschreven die toepassingen van derden kunnen vinden met Azure Synapse
+title: Compatibiliteitsproblemen met toepassingen en Azure Synapse Analytics
+description: Beschrijft bekende problemen die toepassingen van derden kunnen vinden met Azure Synapse
 services: synapse-analytics
 author: periclesrocha
 ms.service: synapse-analytics
 ms.topic: troubleshooting
-ms.subservice: ''
+ms.subservice: sql
 ms.date: 11/18/2020
 ms.author: procha
 ms.reviewer: jrasnick
-ms.openlocfilehash: a1031656eaa5125d07ae078773379270b26625e7
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3bad9d6464b41ff1b7ad03147d3a48c50c787cb0
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98121376"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107568111"
 ---
-# <a name="compatibility-issues-with-third-party-applications-and-azure-synapse-analytics"></a>Compatibiliteits problemen met toepassingen van derden en Azure Synapse Analytics
+# <a name="compatibility-issues-with-third-party-applications-and-azure-synapse-analytics"></a>Compatibiliteitsproblemen met toepassingen en Azure Synapse Analytics
 
-Toepassingen die zijn gebouwd voor SQL Server, werken naadloos met Azure Synapse dedicated SQL-groepen. In sommige gevallen is het echter mogelijk dat functies en taal elementen die meestal in SQL Server worden gebruikt, niet beschikbaar zijn in azure Synapse of dat ze zich anders kunnen gedragen.
+Toepassingen die zijn gebouwd SQL Server werken naadloos met Azure Synapse sql-pools. In sommige gevallen zijn functies en taalelementen die vaak worden gebruikt in SQL Server mogelijk niet beschikbaar in Azure Synapse of gedragen ze zich anders.
 
-In dit artikel vindt u bekende problemen die kunnen optreden bij het gebruik van toepassingen van derden met Azure Synapse Analytics. 
+In dit artikel vindt u bekende problemen die kunnen voorkomen bij het gebruik van toepassingen van derden met Azure Synapse Analytics. 
 
-## <a name="tableau-error-an-attempt-to-complete-a-transaction-has-failed-no-corresponding-transaction-found"></a>Tableau-fout: ' een poging tot het volt ooien van een trans actie is mislukt. Geen overeenkomende trans actie gevonden "
+## <a name="tableau-error-an-attempt-to-complete-a-transaction-has-failed-no-corresponding-transaction-found"></a>Tableau-fout: 'Een poging om een transactie te voltooien is mislukt. Geen bijbehorende transactie gevonden'
 
-Vanaf Azure Synapse dedicated SQL pool versie 10.0.11038.0 kunnen sommige tableau-query's die opgeslagen procedure aanroepen maken, mislukken met het volgende fout bericht:**[micro soft] [ODBC-stuur programma 17 voor SQL Server] [SQL Server] 111214; Een poging tot het volt ooien van een trans actie is mislukt. Er is geen overeenkomende trans actie gevonden.**"
+Vanaf Azure Synapse sql-poolversie 10.0.11038.0 kunnen sommige Tableau-query's die opgeslagen procedureoproepen doen, mislukken met het volgende foutbericht:**[Microsoft][ODBC-stuurprogramma 17 voor SQL Server][SQL Server]111214; Een poging om een transactie te voltooien is mislukt. Er is geen bijbehorende transactie gevonden.**"
 
 ### <a name="cause"></a>Oorzaak
 
-Dit is een probleem in de door Azure Synapse toegewezen SQL-pool, veroorzaakt door de introductie van nieuwe opgeslagen systeem procedures die automatisch worden aangeroepen door de ODBC-en JDBC-Stuur Programma's. Een van deze door het systeem opgeslagen procedures kan ertoe leiden dat geopende trans acties worden afgebroken als de uitvoering ervan mislukt. Dit probleem kan zich voordoen afhankelijk van de logica van de client toepassing.
+Dit is een probleem in Azure Synapse sql-pool die wordt veroorzaakt door de introductie van nieuwe opgeslagen systeemprocedures die automatisch worden aangeroepen door de ODBC- en JDBC-stuurprogramma's. Een van deze in het systeem opgeslagen procedures kan ertoe leiden dat openstaande transacties worden afgebroken als de uitvoering mislukt. Dit probleem kan zich voor doen, afhankelijk van de logica van de clienttoepassing.
 
 ### <a name="solution"></a>Oplossing
-Klanten zien dit specifieke probleem bij het gebruik van tableau die zijn verbonden met Azure Synapse dedicated SQL-groepen, moet FMTONLY instellen op Ja in de SQL-verbinding. Voor tableau Desktop en tableau server moet u een TDC-bestand (tableau data source customization) gebruiken om ervoor te zorgen dat tableau deze para meter door gegeven aan het stuur programma.  
+Klanten die dit specifieke probleem zien bij het gebruik van Tableau dat is verbonden met Azure Synapse SQL-pools, moeten FMTONLY instellen op JA in de SQL-verbinding. Voor Tableau Desktop en Tableau Server moet u een TDC-bestand (Tableau Data Source Customization) gebruiken om ervoor te zorgen dat Tableau deze parameter doorgeeft aan het stuurprogramma.  
 
 > [!NOTE] 
-> Micro soft biedt geen ondersteuning voor hulpprogram ma's van derden. Hoewel we hebben getest dat deze oplossing werkt met tableau Desktop 2020.3.2, moet u deze tijdelijke oplossing gebruiken voor uw eigen capaciteit.
+> Microsoft biedt geen ondersteuning voor hulpprogramma's van derden. Hoewel we hebben getest dat deze oplossing werkt met Tableau Desktop 2020.3.2, moet u deze tijdelijke oplossing gebruiken voor uw eigen capaciteit.
 >
 
-* [Raadpleeg tableau Desktop Documentation voor meer informatie over het maken van globale aanpassingen met een TDC-bestand op tableau bureau blad.](https://help.tableau.com/current/pro/desktop/en-us/odbc_customize.htm)
-* [Zie een gebruiken voor meer informatie over het maken van globale aanpassingen met een TDC-bestand op tableau-server. TDC-bestand met tableau-server.](https://kb.tableau.com/articles/howto/using-a-tdc-file-with-tableau-server)
+* [Raadpleeg de tableau Desktop-documentatie voor meer informatie over het maken van algemene aanpassingen met een TDC-bestand in Tableau Desktop.](https://help.tableau.com/current/pro/desktop/en-us/odbc_customize.htm)
+* [Raadpleeg Een gebruiken voor meer informatie over het maken van globale aanpassingen met een TDC-bestand op Tableau Server. TDC-bestand met Tableau Server.](https://kb.tableau.com/articles/howto/using-a-tdc-file-with-tableau-server)
 
-In het onderstaande voor beeld ziet u een tableau TDC-bestand waarin de para meter FMTONLY = YES wordt door gegeven aan de SQL connection string:
+In het onderstaande voorbeeld ziet u een Tableau TDC-bestand dat de parameter FMTONLY=YES doorgeeft aan de SQL-connection string:
 
 ```json
 <connection-customization class='azure_sql_dw' enabled='true' version='18.1'>
@@ -51,9 +51,9 @@ In het onderstaande voor beeld ziet u een tableau TDC-bestand waarin de para met
     </customizations>
 </connection-customization>
 ```
-Neem contact op met de ondersteuning van tableau voor meer informatie over het gebruik van TDC-bestanden. 
+Neem contact op met tableau-ondersteuning voor meer informatie over het gebruik van TDC-bestanden. 
 
 ## <a name="see-also"></a>Zie ook
 
-* [T-SQL-taal elementen voor een toegewezen SQL-groep in azure Synapse Analytics.](./sql-data-warehouse-reference-tsql-language-elements.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json)
-* [T-SQL-instructies die worden ondersteund voor een toegewezen SQL-groep in azure Synapse Analytics.](./sql-data-warehouse-reference-tsql-statements.md)
+* [T-SQL-taalelementen voor toegewezen SQL-pool in Azure Synapse Analytics.](./sql-data-warehouse-reference-tsql-language-elements.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json)
+* [T-SQL-instructies die worden ondersteund voor toegewezen SQL-pool in Azure Synapse Analytics.](./sql-data-warehouse-reference-tsql-statements.md)

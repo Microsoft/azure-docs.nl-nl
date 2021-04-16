@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 09/01/2020
+ms.date: 04/13/2021
 ms.author: jeedes
-ms.openlocfilehash: 13b62646728eb03a7470d9bb57741bcb90cc24fb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 02fcd8fc14a300b7031677185a91d7e6c9aa3b09
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92447701"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107518351"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-grammarly"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Grammarly
 
@@ -37,8 +37,8 @@ U hebt het volgende nodig om aan de slag te gaan:
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* Grammarly biedt ondersteuning voor met **IDP** geïnitieerde eenmalige aanmelding
-* Grammarly biedt ondersteuning voor **Just-In-Time**-inrichting van gebruikers
+* Grammarly ondersteunt door **IDP geïnitieerde** eenmalige aanmelding.
+* Grammarly biedt ondersteuning **voor Just-In-Time-inrichting** van gebruikers.
 
 > [!NOTE]
 > De id van deze toepassing is een vaste tekenreekswaarde zodat maar één instantie in één tenant kan worden geconfigureerd.
@@ -53,7 +53,6 @@ Voor het configureren van de integratie van Grammarly met Azure Active Directory
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
 1. Typ in de sectie **Toevoegen uit de galerie** **Grammarly** in het zoekvak.
 1. Selecteer **Grammarly** in het resultatenvenster en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
-
 
 ## <a name="configure-and-test-azure-ad-sso-for-grammarly"></a>Eenmalige aanmelding van Azure AD voor Grammarly configureren en testen
 
@@ -74,7 +73,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. Zoek in Azure Portal, op de integratiepagina van de toepassing **Grammarly** de sectie **Beheren** en selecteer **eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
@@ -131,12 +130,12 @@ In deze sectie wordt een gebruiker met de naam B. Simon gemaakt in Grammarly. Gr
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
-In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties.
 
-1. Klik op **Deze toepassing testen** in Azure Portal. U wordt automatisch aangemeld bij de instantie van Grammarly waarvoor u eenmalige aanmelding hebt ingesteld 
+* Klik op Deze toepassing testen in Azure Portal en u wordt automatisch aangemeld bij de grammarly waarvoor u eenmalige aanmelding hebt ingesteld.
 
-2. U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u op de tegel Grammarly in het toegangsvenster klikt, wordt u automatisch aangemeld bij de instantie van Grammarly waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Grammarly in het Mijn apps, wordt u automatisch aangemeld bij de tegel Grammarly waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u Grammarly hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
+Zodra u Grammarly hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

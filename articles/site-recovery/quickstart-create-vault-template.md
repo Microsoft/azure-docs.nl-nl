@@ -1,15 +1,17 @@
 ---
 title: Quickstart voor het maken van een Azure Recovery Services-kluis met behulp van een Azure Resource Manager-sjabloon.
 description: In deze quickstart leert u hoe u met een sjabloon van Azure Resource Manager (ARM-sjabloon) een Azure Recovery Services-kluis maakt.
-ms.topic: quickstart
-ms.custom: subject-armqs
 ms.date: 04/29/2020
-ms.openlocfilehash: 62bfe71c397367282c696eecdf55ab9c900c69a1
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.topic: quickstart
+ms.custom:
+- subject-armqs
+- mode-arm
+ms.openlocfilehash: 11a88b5485ad970802a65af31daccdb30a1c86df
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92745873"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107533253"
 ---
 # <a name="quickstart-create-a-recovery-services-vault-using-an-arm-template"></a>Quickstart: Een Recovery Services-kluis maken met behulp van een ARM-sjabloon
 

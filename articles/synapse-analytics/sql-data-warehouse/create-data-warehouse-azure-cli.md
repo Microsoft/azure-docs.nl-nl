@@ -2,19 +2,19 @@
 title: 'Quickstart: Een Synapse SQL-pool maken met Azure CLI'
 description: Met een firewallregel op serverniveau en de Azure CLI kunt u snel een Synapse SQL-pool maken.
 services: synapse-analytics
-author: gaursa
+author: julieMSFT
 ms.service: synapse-analytics
 ms.topic: quickstart
 ms.subservice: sql-dw
 ms.date: 11/20/2020
-ms.author: gaursa
-ms.custom: azure-synapse
-ms.openlocfilehash: c17bfc06e76bad7730707530001ebeccea539c37
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.author: jrasnick
+ms.custom: azure-synapse, devx-track-azurecli
+ms.openlocfilehash: 532c06cc49f9fddab09c6678ee5fff9fe32347cb
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104602261"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107565930"
 ---
 # <a name="quickstart-create-a-synapse-sql-pool-with-azure-cli"></a>Quickstart: Een Synapse SQL-pool maken met Azure CLI
 

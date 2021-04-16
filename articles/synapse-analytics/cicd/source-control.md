@@ -1,174 +1,174 @@
 ---
-title: Broncode beheer in Synapse Studio
-description: Meer informatie over het configureren van broncode beheer in azure Synapse Studio
-services: synapse-analytics
+title: Broncodebeheer in Synapse Studio
+description: Informatie over het configureren van broncodebeheer in Azure Synapse Studio
 author: liud
 ms.service: synapse-analytics
+ms.subservice: workspace
 ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: liud
 ms.reviewer: pimorano
-ms.openlocfilehash: 3564609d869bef090f0a3db5e6040ba0f5ad80b0
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8f1b459c2644472463004c231f5827ff653d2da1
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98796958"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107567839"
 ---
-# <a name="source-control-in-azure-synapse-studio"></a>Broncode beheer in azure Synapse Studio
+# <a name="source-control-in-azure-synapse-studio"></a>Broncodebeheer in Azure Synapse Studio
 
-Standaard worden auteurs van Azure Synapse Studio direct vergeleken met de Synapse-service. Als u behoefte hebt aan samen werking met git voor broncode beheer, kunt u Synapse Studio gebruiken om uw werk ruimte te koppelen aan een Git-opslag plaats, Azure DevOps of GitHub. 
+Standaard worden Azure Synapse Studio-auteurs rechtstreeks tegen de Synapse-service gebruikt. Als u behoefte hebt aan samenwerking met Git voor broncodebeheer, kunt Synapse Studio uw werkruimte koppelen aan een Git-opslagplaats, Azure DevOps of GitHub. 
 
-In dit artikel wordt beschreven hoe u een Synapse-werk ruimte configureert en werkt met git-opslag plaats ingeschakeld. En we hebben ook een aantal aanbevolen procedures en een hand leiding voor het oplossen van problemen gemarkeerd.
-
-> [!NOTE]
-> Azure Synapse Studio Git-integratie is niet beschikbaar in de Azure Government Cloud.
-
-## <a name="configure-git-repository-in-synapse-studio"></a>Git-opslag plaats configureren in Synapse Studio 
-
-Nadat u uw Synapse Studio hebt gestart, kunt u een Git-opslag plaats in uw werk ruimte configureren. Een Synapse studio-werk ruimte kan slechts worden gekoppeld aan één Git-opslag plaats. 
-
-### <a name="configuration-method-1-global-bar"></a>Configuratie methode 1: algemene balk
-
-Selecteer in de Synapse Studio Global-balk de vervolg keuzelijst **Synapse Live** en selecteer vervolgens **code opslagplaats instellen**.
-
-![De instellingen van de code opslagplaats configureren vanuit ontwerpen](media/configure-repo-1.png)
-
-### <a name="configuration-method-2-manage-hub"></a>Configuratie methode 2: hub beheren
-
-Ga naar de Managed hub van Synapse Studio. Selecteer **Git-configuratie** in de sectie **bron beheer** . Als u geen opslag plaats hebt verbonden, klikt u op **configureren**.
-
-![De instellingen van de code opslagplaats van de Management hub configureren](media/configure-repo-2.png)
+In dit artikel wordt beschreven hoe u kunt configureren en werken in een Synapse-werkruimte met git-opslagplaats ingeschakeld. Daarnaast worden enkele best practices en een gids voor probleemoplossing belicht.
 
 > [!NOTE]
-> Gebruikers die worden verleend als Inzender voor werk ruimten, eigenaar of hoger niveau kunnen worden geconfigureerd, instellingen bewerken en git-opslag verbreken in azure Synapse Studio 
+> Azure Synapse Studio Git-integratie is niet beschikbaar in Azure Government Cloud.
 
-U kunt verbinding maken met een Azure DevOps-of GitHub Git-opslag plaats in uw werk ruimte.
+## <a name="configure-git-repository-in-synapse-studio"></a>Git-opslagplaats configureren in Synapse Studio 
 
-## <a name="connect-with-azure-devops-git"></a>Verbinding maken met Azure DevOps git 
+Nadat u uw Synapse Studio, kunt u een Git-opslagplaats configureren in uw werkruimte. Een Synapse Studio kan slechts aan één Git-opslagplaats tegelijk worden gekoppeld. 
 
-U kunt een Synapse-werk ruimte koppelen aan een Azure DevOps-opslag plaats voor broncode beheer, samen werking, versies, enzovoort. Als u geen Azure DevOps-opslag plaats hebt, volgt u [deze instructies](/azure/devops/organizations/accounts/create-organization-msa-or-work-student) voor het maken van uw opslag plaats-resources.
+### <a name="configuration-method-1-global-bar"></a>Configuratiemethode 1: globale balk
 
-### <a name="azure-devops-git-repository-settings"></a>Instellingen voor Azure DevOps Git-opslag plaats
+Selecteer in Synapse Studio algemene balk de **vervolgkeuzelijst Synapse Live** en selecteer **vervolgens Codeopslagplaats instellen.**
 
-Wanneer u verbinding maakt met uw Git-opslag plaats, selecteert u eerst uw opslagplaats type als Azure DevOps Git en selecteert u vervolgens een Azure AD-Tenant in de vervolg keuzelijst en klikt u op **door gaan**.
+![De instellingen voor de codeopslagplaats configureren vanuit het ontwerp](media/configure-repo-1.png)
 
-![De instellingen voor de code opslagplaats configureren](media/connect-with-azuredevops-repo-selected.png)
+### <a name="configuration-method-2-manage-hub"></a>Configuratiemethode 2: Hub beheren
 
-In het configuratie venster worden de volgende instellingen voor Azure DevOps Git weer gegeven:
+Ga naar de hub Beheren van Synapse Studio. Selecteer **Git-configuratie** in de **sectie Broncodebeheer.** Als u geen opslagplaats hebt verbonden, klikt u op **Configureren.**
+
+![De instellingen voor de codeopslagplaats configureren vanuit de beheerhub](media/configure-repo-2.png)
+
+> [!NOTE]
+> Gebruikers die zijn toegewezen als inzender, eigenaar of hoger niveau van de werkruimte kunnen de Git-opslagplaats in Azure Synapse Studio configureren, bewerken en de verbinding met de opslagplaats verbreken 
+
+U kunt verbinding maken met de Git-opslagplaats van Azure DevOps of GitHub in uw werkruimte.
+
+## <a name="connect-with-azure-devops-git"></a>Verbinding maken met Azure DevOps Git 
+
+U kunt een Synapse-werkruimte koppelen aan een Azure DevOps-opslagplaats voor broncodebeheer, samenwerking, versiebeheer, en meer. Als u geen Azure DevOps-opslagplaats hebt, volgt u deze [instructies om](/azure/devops/organizations/accounts/create-organization-msa-or-work-student) uw opslagplaatsbronnen te maken.
+
+### <a name="azure-devops-git-repository-settings"></a>Instellingen voor Git-opslagplaats voor Azure DevOps
+
+Wanneer u verbinding maakt met uw Git-opslagplaats, selecteert u eerst uw opslagplaatstype als Azure DevOps git, selecteert u vervolgens één Azure AD-tenant in de vervolgkeuzelijst en klikt u **op Doorgaan.**
+
+![De instellingen voor de codeopslagplaats configureren](media/connect-with-azuredevops-repo-selected.png)
+
+In het configuratiedeelvenster worden de volgende Git-instellingen van Azure DevOps weergegeven:
 
 | Instelling | Beschrijving | Waarde |
 |:--- |:--- |:--- |
-| **Type opslag plaats** | Het type van de Azure opslag plaatsen code-opslag plaats.<br/> | Azure DevOps git of GitHub |
-| **Azure Active Directory** | De naam van uw Azure AD-Tenant. | `<your tenant name>` |
-| **Azure DevOps-account** | De naam van uw Azure opslag plaatsen-organisatie. U kunt de naam van uw Azure opslag plaatsen-organisatie vinden op `https://{organization name}.visualstudio.com` . U kunt [zich aanmelden bij uw Azure opslag plaatsen-organisatie](https://www.visualstudio.com/team-services/git/) om toegang te krijgen tot uw Visual Studio-profiel en uw opslag plaatsen en projecten te bekijken. | `<your organization name>` |
-| **ProjectName** | De naam van uw Azure opslag plaatsen-project. U kunt de naam van uw Azure opslag plaatsen-project vinden op `https://{organization name}.visualstudio.com/{project name}` . | `<your Azure Repos project name>` |
-| **Opslagplaats** | De naam van de opslag plaats van uw Azure opslag plaatsen-code. Azure opslag plaatsen-projecten bevatten Git-opslag plaatsen om uw bron code te beheren naarmate uw project groeit. U kunt een nieuwe opslag plaats maken of een bestaande opslag plaats gebruiken die al in uw project voor komt. | `<your Azure Repos code repository name>` |
-| **Collaboration Branch** | Uw Azure opslag plaatsen Collaboration-vertakking die wordt gebruikt voor het publiceren. Standaard zijn dit `master` . Wijzig deze instelling als u resources wilt publiceren vanuit een andere vertakking. U kunt bestaande branches selecteren of nieuwe maken | `<your collaboration branch name>` |
-| **Hoofdmap** | Uw hoofdmap in uw Azure opslag plaatsen Collaboration-vertakking. | `<your root folder name>` |
-| **Bestaande resources importeren in opslag plaats** | Hiermee geeft u op of bestaande resources van de Synapse Studio moeten worden geïmporteerd in een Git-opslag plaats van Azure opslag plaatsen. Schakel het selectie vakje in om uw werkruimte resources (met uitzonde ring van groepen) te importeren in de bijbehorende Git-opslag plaats in JSON-indeling. Deze actie exporteert elke resource afzonderlijk. Als dit selectie vakje niet is ingeschakeld, worden de bestaande resources niet geïmporteerd. | Ingeschakeld (standaard) |
-| **Resource importeren in deze vertakking** | Selecteer de vertakking waarin de resources (SQL-script, notebook, Spark-taak definitie, gegevensset, gegevens stroom, enzovoort) worden geïmporteerd. 
+| **Type opslagplaats** | Het type codeopslagplaats van Azure Repos.<br/> | Azure DevOps Git of GitHub |
+| **Azure Active Directory** | De naam van uw Azure AD-tenant. | `<your tenant name>` |
+| **Azure DevOps-account** | De naam van uw Azure-repos-organisatie. U kunt de naam van uw Azure-repos-organisatie vinden op `https://{organization name}.visualstudio.com` . U kunt [zich aanmelden bij uw Azure-opslagplaatsorganisatie](https://www.visualstudio.com/team-services/git/) om toegang te krijgen tot uw Visual Studio en uw opslagplaatsen en projecten te bekijken. | `<your organization name>` |
+| **Projectname** | De naam van uw Azure Repos-project. U kunt de naam van uw Azure Repos-project vinden op `https://{organization name}.visualstudio.com/{project name}` . | `<your Azure Repos project name>` |
+| **RepositoryName** | De naam van uw Opslagplaats voor Azure-opslagplaatsen. Azure-opslagplaatsprojecten bevatten Git-opslagplaatsen om uw broncode te beheren naarmate uw project groeit. U kunt een nieuwe opslagplaats maken of een bestaande opslagplaats gebruiken die al in uw project staat. | `<your Azure Repos code repository name>` |
+| **Samenwerkingstak** | Uw Azure Repos-samenwerkingsvertakking die wordt gebruikt voor publicatie. De standaardwaarde is `master` . Wijzig deze instelling voor het geval u resources wilt publiceren vanuit een andere vertakking. U kunt bestaande vertakkingen selecteren of nieuwe maken | `<your collaboration branch name>` |
+| **Hoofdmap** | Uw hoofdmap in de samenwerkingsvertakking van Uw Azure-repos. | `<your root folder name>` |
+| **Bestaande resources importeren in de opslagplaats** | Hiermee geeft u op of bestaande resources uit de Synapse Studio in een Git-opslagplaats van Azure Repos. Vink het selectievakje aan om uw werkruimte-resources (met uitzondering van pools) te importeren in de bijbehorende Git-opslagplaats in JSON-indeling. Met deze actie exporteert u elke resource afzonderlijk. Als dit selectievakje niet is ingeschakeld, worden de bestaande resources niet geïmporteerd. | Ingeschakeld (standaard) |
+| **Resource importeren in deze vertakking** | Selecteer in welke vertakking de resources (SQL-script, Notebook, Spark-taakdefinitie, gegevensset, gegevensstroom, enzovoort) worden geïmporteerd. 
 
-U kunt ook een opslagplaats koppeling gebruiken om snel te verwijzen naar de Git-opslag plaats waarmee u verbinding wilt maken. 
+U kunt ook de koppeling naar de opslagplaats gebruiken om snel te verwijzen naar de Git-opslagplaats waar u verbinding mee wilt maken. 
 
-### <a name="use-a-different-azure-active-directory-tenant"></a>Een andere Azure Active Directory Tenant gebruiken
+### <a name="use-a-different-azure-active-directory-tenant"></a>Een andere tenant Azure Active Directory gebruiken
 
-De Azure opslag plaatsen Git opslag plaats kan zich in een andere Azure Active Directory Tenant bevindt. Als u een andere Azure AD-tenant wilt opgeven, moet u beheerdersmachtigingen hebben voor het Azure-abonnement dat u gebruikt. Zie de [abonnements beheerder wijzigen](../../cost-management-billing/manage/add-change-subscription-administrator.md#assign-a-subscription-administrator) voor meer informatie
+De Git-repo voor Azure-repo's kan zich in een andere Azure Active Directory tenant. Als u een andere Azure AD-tenant wilt opgeven, moet u beheerdersmachtigingen hebben voor het Azure-abonnement dat u gebruikt. Zie Abonnementsbeheerder wijzigen [voor meer informatie](../../cost-management-billing/manage/add-change-subscription-administrator.md#assign-a-subscription-administrator)
 
 > [!IMPORTANT]
-> Als u verbinding wilt maken met een andere Azure Active Directory, moet de aangemelde gebruiker deel uitmaken van die Active Directory. 
+> Als u verbinding wilt maken met Azure Active Directory, moet de aangemelde gebruiker deel uitmaken van die Active Directory. 
 
-### <a name="use-your-personal-microsoft-account"></a>Uw persoonlijke Microsoft-account gebruiken
+### <a name="use-your-personal-microsoft-account"></a>Uw persoonlijke Microsoft-account
 
-Als u een persoonlijk Microsoft-account wilt gebruiken voor git-integratie, kunt u uw persoonlijke Azure-opslag plaats koppelen aan de Active Directory van uw organisatie.
+Als u een persoonlijk Microsoft-account git-integratie wilt gebruiken, kunt u uw persoonlijke Azure-repo koppelen aan de Active Directory van uw organisatie.
 
-1. Voeg uw persoonlijke Microsoft-account toe aan de Active Directory van uw organisatie als gast. Zie [Azure Active Directory B2B-samenwerkings gebruikers toevoegen in de Azure Portal](../../active-directory/external-identities/add-users-administrator.md)voor meer informatie.
+1. Voeg uw persoonlijke Microsoft-account als gast toe aan de Active Directory van uw organisatie. Zie Add [Azure Active Directory B2B collaboration users in the Azure Portal (Gebruikers van B2B-samenwerking toevoegen in de Azure Portal) voor meer informatie.](../../active-directory/external-identities/add-users-administrator.md)
 
 2. Meld u aan bij de Azure Portal met uw persoonlijke Microsoft-account. Schakel vervolgens over naar de Active Directory van uw organisatie.
 
-3. Ga naar de sectie Azure DevOps, waar u nu uw persoonlijke opslag plaats ziet. Selecteer de opslag plaats en maak verbinding met Active Directory.
+3. Ga naar de sectie Azure DevOps, waar u nu uw persoonlijke repo ziet. Selecteer de repo en maak verbinding met Active Directory.
 
-Na deze configuratie stappen is uw persoonlijke opslag plaats beschikbaar wanneer u Git-integratie instelt in de Synapse Studio.
+Na deze configuratiestappen is uw persoonlijke repo beschikbaar wanneer u Git-integratie in de Synapse Studio.
 
-Zie [verbinding maken tussen uw organisatie en Azure Active Directory](/azure/devops/organizations/accounts/connect-organization-to-azure-ad)voor meer informatie over het verbinden van Azure opslag plaatsen met de Active Directory van uw organisatie.
+Zie Connect your organization to Azure Active Directory (Uw organisatie verbinden met een Azure Active Directory) voor meer informatie over het verbinden van [Azure-Azure Active Directory.](/azure/devops/organizations/accounts/connect-organization-to-azure-ad)
 
 ## <a name="connect-with-github"></a>Verbinding maken met GitHub 
 
- U kunt een werk ruimte koppelen aan een GitHub-opslag plaats voor broncode beheer, samen werking, het beheren van versies. Als u geen GitHub-account of-opslag plaats hebt, volgt u [deze instructies](https://github.com/join) om uw resources te maken.
+ U kunt een werkruimte koppelen aan een GitHub-opslagplaats voor broncodebeheer, samenwerking en versiebeheer. Als u geen GitHub-account of -opslagplaats hebt, volgt u [deze instructies om](https://github.com/join) uw resources te maken.
 
-De GitHub-integratie met Synapse Studio ondersteunt zowel open bare GitHub (dat wil zeggen [https://github.com](https://github.com) ) als github-onderneming. U kunt zowel open bare als privé GitHub-opslag plaatsen gebruiken als u lees-en schrijf machtigingen hebt voor de opslag plaats in GitHub.
+De GitHub-integratie Synapse Studio ondersteuning voor zowel openbare GitHub (dat wil [https://github.com](https://github.com) zeggen) als GitHub Enterprise. U kunt zowel openbare als persoonlijke GitHub-opslagplaatsen gebruiken zolang u lees- en schrijfmachtigingen hebt voor de opslagplaats in GitHub.
 
 ### <a name="github-settings"></a>GitHub-instellingen
 
-Wanneer u verbinding maakt met uw Git-opslag plaats, selecteert u eerst uw opslagplaats als GitHub en geeft u vervolgens uw GitHub-account of GitHub Enter prise server-URL op als u GitHub Enter prise server gebruikt en klikt u op **door gaan**.
+Wanneer u verbinding maakt met uw Git-opslagplaats, selecteert u eerst het type opslagplaats als GitHub en geeft u vervolgens uw GitHub-account of GitHub Enterprise Server-URL op als u GitHub Enterprise Server gebruikt. Klik vervolgens op **Doorgaan.**
 
-![Instellingen voor GitHub-opslag plaats](media/connect-with-github-repo-1.png)
+![Instellingen voor GitHub-opslagplaats](media/connect-with-github-repo-1.png)
 
-In het deel venster configuratie worden de volgende instellingen voor de GitHub-opslag plaats weer gegeven:
+In het configuratiedeelvenster worden de volgende instellingen voor de GitHub-opslagplaats weergegeven:
 
 | **Instelling** | **Beschrijving**  | **Waarde**  |
 |:--- |:--- |:--- |
-| **Type opslag plaats** | Het type van de Azure opslag plaatsen code-opslag plaats. | GitHub |
-| **GitHub Enter prise gebruiken** | Selectie vakje om GitHub Enter prise te selecteren | selectie opheffen (standaard) |
-| **GitHub Enter prise-URL** | De GitHub van de Enter prise-basis-URL (moet HTTPS zijn voor lokale GitHub Enter prise-server). Bijvoorbeeld: `https://github.mydomain.com`. Alleen vereist als **use github Enter prise** is geselecteerd | `<your GitHub enterprise url>` |                                                           
-| **GitHub-account** | De naam van uw GitHub-account. Deze naam kan worden gevonden vanuit https: \/ /github.com/{account name}/{repository name}. Als u naar deze pagina navigeert, wordt u gevraagd om GitHub OAuth-referenties in te voeren voor uw GitHub-account. | `<your GitHub account name>` |
-| **Naam van opslag plaats**  | De naam van de opslag plaats van uw GitHub-code. GitHub-accounts bevatten Git-opslag plaatsen voor het beheren van de bron code. U kunt een nieuwe opslag plaats maken of een bestaande opslag plaats gebruiken die al in uw account is. | `<your repository name>` |
-| **Collaboration Branch** | Uw GitHub-samenwerkings vertakking die wordt gebruikt voor het publiceren. Standaard is dit het hoofd. Wijzig deze instelling als u resources wilt publiceren vanuit een andere vertakking. | `<your collaboration branch>` |
-| **Hoofdmap** | Uw hoofdmap in uw GitHub-samenwerkings vertakking. |`<your root folder name>` |
-| **Bestaande resources importeren in opslag plaats** | Hiermee geeft u op of bestaande resources van de Synapse Studio moeten worden geïmporteerd in een Git-opslag plaats. Schakel het selectie vakje in om uw werkruimte resources (met uitzonde ring van groepen) te importeren in de bijbehorende Git-opslag plaats in JSON-indeling. Deze actie exporteert elke resource afzonderlijk. Als dit selectie vakje niet is ingeschakeld, worden de bestaande resources niet geïmporteerd. | Geselecteerd (standaard) |
-| **Resource importeren in deze vertakking** | Selecteer welke vertakking de resources (SQL-script, notebook, Spark-taak definitie, gegevensset, gegevens stroom, enzovoort) worden geïmporteerd. 
+| **Type opslagplaats** | Het type codeopslagplaats van Azure Repos. | GitHub |
+| **GitHub Enterprise gebruiken** | Selectievakje om GitHub Enterprise te selecteren | uitgeschakeld (standaard) |
+| **GitHub Enterprise-URL** | De GitHub Enterprise-hoofd-URL (moet HTTPS zijn voor lokale GitHub Enterprise-server). Bijvoorbeeld: `https://github.mydomain.com`. Alleen vereist als **GitHub Enterprise** gebruiken is geselecteerd | `<your GitHub enterprise url>` |                                                           
+| **GitHub-account** | De naam van uw GitHub-account. Deze naam vindt u op https: \/ /github.com/{account name}/{repository name}. Als u naar deze pagina navigeert, wordt u gevraagd GitHub OAuth-referenties in te voeren voor uw GitHub-account. | `<your GitHub account name>` |
+| **Naam van opslagplaats**  | De naam van uw GitHub-codeopslagplaats. GitHub-accounts bevatten Git-opslagplaatsen om uw broncode te beheren. U kunt een nieuwe opslagplaats maken of een bestaande opslagplaats gebruiken die al in uw account staat. | `<your repository name>` |
+| **Samenwerkingstak** | Uw GitHub-samenwerkingstak die wordt gebruikt voor publicatie. Standaard is dit de master. Wijzig deze instelling voor het geval u resources wilt publiceren vanuit een andere vertakking. | `<your collaboration branch>` |
+| **Hoofdmap** | Uw hoofdmap in uw GitHub-samenwerkingstak. |`<your root folder name>` |
+| **Bestaande resources importeren in de opslagplaats** | Hiermee geeft u op of bestaande resources uit de Synapse Studio in een Git-opslagplaats. Vink het selectievakje aan om uw werkruimte-resources (met uitzondering van pools) te importeren in de bijbehorende Git-opslagplaats in JSON-indeling. Met deze actie exporteert u elke resource afzonderlijk. Als dit selectievakje niet is ingeschakeld, worden de bestaande resources niet geïmporteerd. | Geselecteerd (standaard) |
+| **Resource importeren in deze vertakking** | Selecteer welke vertakking de resources (SQL-script, Notebook, Spark-taakdefinitie, gegevensset, gegevensstroom, enzovoort) worden geïmporteerd. 
 
-### <a name="github-organizations"></a>GitHub organisaties
+### <a name="github-organizations"></a>GitHub-organisaties
 
-Als u verbinding wilt maken met een GitHub-organisatie, moet de organisatie toestemming geven voor Synapse Studio. Een gebruiker met beheerders machtigingen voor de organisatie moet de onderstaande stappen uitvoeren.
+Voor het maken van verbinding met een GitHub-organisatie moet de organisatie machtigingen verlenen aan Synapse Studio. Een gebruiker met BEHEERDERSmachtigingen voor de organisatie moet de onderstaande stappen uitvoeren.
 
 #### <a name="connecting-to-github-for-the-first-time"></a>De eerste keer verbinding maken met GitHub
 
-Als u voor de eerste keer verbinding maakt met GitHub vanuit Synapse Studio, volgt u deze stappen om verbinding te maken met een GitHub-organisatie.
+Als u voor het eerst verbinding maakt met GitHub vanuit Synapse Studio, volgt u deze stappen om verbinding te maken met een GitHub-organisatie.
 
-1. Voer in het deel venster Git-configuratie de naam van de organisatie in het veld *github-account* in. Er verschijnt een prompt om u aan te melden bij GitHub. 
+1. Voer in het deelvenster Git-configuratie de organisatienaam in het *veld GitHub-account* in. Er wordt een prompt weergegeven om u aan te melden bij GitHub. 
 
-1. Meld u aan met uw gebruikers referenties.
+1. Meld u aan met uw gebruikersreferenties.
 
-1. U wordt gevraagd om Synapse te autoriseren als een toepassing met de naam *Azure Synapse*. In dit scherm ziet u een optie voor het verlenen van machtigingen voor Synapse om toegang te krijgen tot de organisatie. Als u de optie om toestemming te verlenen niet ziet, vraagt u een beheerder om de machtiging hand matig via GitHub toe te kennen.
+1. U wordt gevraagd Synapse te autoreren als een toepassing met de *naam Azure Synapse*. In dit scherm ziet u een optie voor het verlenen van machtigingen aan Synapse voor toegang tot de organisatie. Als u de optie voor het verlenen van machtigingen niet ziet, vraagt u een beheerder om de machtiging handmatig te verlenen via GitHub.
 
-Zodra u deze stappen hebt uitgevoerd, kan uw werk ruimte verbinding maken met zowel open bare als privé-opslag plaatsen binnen uw organisatie. Als u geen verbinding kunt maken, probeert u de cache van de browser te wissen en opnieuw te proberen.
+Nadat u deze stappen hebt doorlopen, kan uw werkruimte verbinding maken met zowel openbare als privé-opslagplaatsen binnen uw organisatie. Als u geen verbinding kunt maken, wist u de browsercache en probeert u het opnieuw.
 
-#### <a name="already-connected-to-github-using-a-personal-account"></a>Al verbonden met GitHub met een persoonlijk account
+#### <a name="already-connected-to-github-using-a-personal-account"></a>Al verbonden met GitHub met behulp van een persoonlijk account
 
-Als u al verbinding hebt gemaakt met GitHub en alleen machtigingen hebt verleend voor toegang tot een persoonlijk account, volgt u de onderstaande stappen om machtigingen toe te kennen aan een organisatie.
+Als u al verbinding hebt gemaakt met GitHub en alleen toestemming hebt verleend voor toegang tot een persoonlijk account, volgt u de onderstaande stappen om machtigingen te verlenen aan een organisatie.
 
-1. Ga naar GitHub en open **instellingen**.
+1. Ga naar GitHub en open **Instellingen.**
 
-    ![Instellingen voor GitHub openen](media/github-settings.png)
+    ![GitHub-instellingen openen](media/github-settings.png)
 
-1. Selecteer **toepassingen**. Op het tabblad **geautoriseerde OAuth-apps** ziet u *Azure Synapse*.
+1. Selecteer **Toepassingen**. Op het **tabblad Geautoriseerde OAuth-apps** ziet u *Azure Synapse.*
 
-    ![OAuth-apps autoriseren](media/authorize-app.png)
+    ![OAuth-apps machtigen](media/authorize-app.png)
 
-1. Selecteer de *Azure-Synapse* en verleen de toegang tot uw organisatie.
+1. Selecteer de *Azure Synapse* en verleen de toegang tot uw organisatie.
 
-    ![Organisatie machtiging verlenen](media/grant-organization-permission.png)
+    ![Organisatiemachtigingen verlenen](media/grant-organization-permission.png)
 
-Zodra u deze stappen hebt voltooid, kan uw werk ruimte verbinding maken met zowel open bare als privé-opslag plaatsen binnen uw organisatie.
+Nadat u deze stappen hebt voltooid, kan uw werkruimte verbinding maken met zowel openbare als privé-opslagplaatsen binnen uw organisatie.
 
 ## <a name="version-control"></a>Versiebeheer
 
-Met versie besturings systemen (ook wel bekend als _broncode beheer_) kunnen ontwikkel aars samen werken aan code en wijzigingen bijhouden. Broncode beheer is een essentieel hulp programma voor projecten met meerdere ontwikkel aars.
+Met versiebeheersystemen (ook wel _broncodebeheer genoemd)_ kunnen ontwikkelaars samenwerken aan code en wijzigingen bijhouden. Broncodebeheer is een essentieel hulpprogramma voor projecten voor meerdere ontwikkelaars.
 
-### <a name="creating-feature-branches"></a>Functie vertakkingen maken
+### <a name="creating-feature-branches"></a>Functie-vertakkingen maken
 
-Elke Git-opslag plaats die is gekoppeld aan een Synapse Studio heeft een Collaboration Branch. ( `main` of `master` is de standaard vertakking voor samen werking). Gebruikers kunnen ook onderdeel vertakkingen maken door op **+ nieuwe vertakking** in de vervolg keuzelijst vertakking te klikken. Zodra het deel venster nieuwe vertakking wordt weer gegeven, voert u de naam van uw functie vertakking in.
+Elke Git-opslagplaats die is gekoppeld aan een Synapse Studio heeft een samenwerkingstak. ( `main` of is de standaard `master` collaboration-vertakking). Gebruikers kunnen ook functievertakkingen maken door te klikken **op + Nieuwe vertakking** in de vervolgkeuzepagina van de vertakking. Zodra het nieuwe vertakkingsdeelvenster wordt weergegeven, voert u de naam van de functie branch in.
 
 ![Een nieuwe vertakking maken](media/create-new-branch.png)
 
-Wanneer u klaar bent om de wijzigingen van uw functie vertakking samen te voegen met uw vertakking voor samen werking, klikt u op de vervolg keuzelijst vertakking en selecteert u **pull-aanvraag maken**. Met deze actie gaat u naar een Git-provider waar u pull-aanvragen kunt genereren, code beoordelingen moet uitvoeren en wijzigingen kunt samen voegen in uw samenwerkings vertakking. U mag alleen publiceren naar de Synapse-service vanuit uw vertakking voor samen werking. 
+Wanneer u klaar bent om de wijzigingen van uw functie-vertakking samen te voegen met uw samenwerkingstak, klikt u op de vervolgkeuzepagina van de vertakking en **selecteert u Pull-aanvraag maken.** Met deze actie gaat u naar de Git-provider waar u pull-aanvragen kunt doen, codebeoordelingen kunt uitvoeren en wijzigingen kunt samenvoegen in uw samenwerkingsvertakking. U mag alleen publiceren naar de Synapse-service vanuit uw samenwerkingsvertakking. 
 
 ![Een nieuwe pull-aanvraag maken](media/create-pull-request.png)
 
 ### <a name="configure-publishing-settings"></a>Publicatie-instellingen configureren
 
-Standaard worden in Synapse Studio de werkruimte sjablonen gegenereerd en opgeslagen in een vertakking met de naam `workspace_publish` . Als u een aangepaste publicatie vertakking wilt configureren, voegt `publish_config.json` u een bestand toe aan de hoofdmap in de vertakking voor samen werking. Wanneer het wordt gepubliceerd, wordt dit bestand door Synapse Studio gelezen, wordt gezocht naar het veld `publishBranch` en worden de werkruimte sjabloon bestanden opgeslagen op de opgegeven locatie. Als de vertakking niet bestaat, wordt deze automatisch door Synapse Studio gemaakt. Hieronder ziet u een voor beeld van hoe dit bestand eruitziet:
+Standaard genereert Synapse Studio werkruimtesjablonen en slaat deze op in een vertakking met de naam `workspace_publish` . Als u een aangepaste publicatie branch wilt configureren, voegt u een bestand `publish_config.json` toe aan de hoofdmap in de samenwerkingstak. Wanneer u publiceert, Synapse Studio dit bestand gelezen, zoekt naar het veld en slaat u werkruimtesjabloonbestanden op `publishBranch` de opgegeven locatie op. Als de vertakking niet bestaat, Synapse Studio automatisch een vertakking. Hieronder ziet u een voorbeeld van hoe dit bestand eruitziet:
 
 ```json
 {
@@ -176,68 +176,68 @@ Standaard worden in Synapse Studio de werkruimte sjablonen gegenereerd en opgesl
 }
 ```
 
-Azure Synapse Studio kan slechts één Publiceer vertakking tegelijk hebben. Wanneer u een nieuwe publicatie vertakking opgeeft, zou de vorige publicatie vertakking niet worden verwijderd. Als u de vorige Publish-vertakking wilt verwijderen, moet u deze hand matig verwijderen.
+Azure Synapse Studio kan slechts één publicatie-vertakking tegelijk hebben. Wanneer u een nieuwe publicatie-vertakking opgeeft, wordt de vorige publicatie-vertakking niet verwijderd. Als u de vorige publicatie-vertakking wilt verwijderen, verwijdert u deze handmatig.
 
 
-### <a name="publish-code-changes"></a>Code wijzigingen publiceren
+### <a name="publish-code-changes"></a>Codewijzigingen publiceren
 
-Na het samen voegen van de wijzigingen in de vertakking voor samen werking, klikt u op **publiceren** om de wijzigingen in de code hand matig te publiceren in de vertakking samen werking met de Synapse-service.
+Nadat u wijzigingen in de  samenwerkingsvertakking hebt samengevoegd, klikt u op Publiceren om uw codewijzigingen in de samenwerkingsvertakking handmatig te publiceren naar de Synapse-service.
 
 ![Wijzigingen publiceren](media/gitmode-publish.png)
 
-Er wordt een deel venster geopend waarin u bevestigt dat de publicatie vertakking en in behandeling zijnde wijzigingen juist zijn. Nadat u uw wijzigingen hebt gecontroleerd, klikt u op **OK** om de publicatie te bevestigen.
+Er wordt een zijdeelvenster geopend waarin u bevestigt dat de wijzigingen in de publicatie-vertakking en in behandeling juist zijn. Zodra u uw wijzigingen hebt gecontroleerd, klikt u **op OK** om de publicatie te bevestigen.
 
-![De juiste publicatie vertakking bevestigen](media/publish-change.png)
+![Bevestig de juiste publicatie-vertakking](media/publish-change.png)
 
 > [!IMPORTANT]
-> De samenwerkings vertakking is niet representatief voor wat er in de service is geïmplementeerd. De wijzigingen in de samenwerkings vertakking *moeten* hand matig worden gepubliceerd.
+> De samenwerkingsvertakking vertegenwoordigt niet wat er in de service is geïmplementeerd. De wijzigingen in de *samenwerkingsvertakking* moeten handmatig worden gepubliceerd.
 
-## <a name="switch-to-a-different-git-repository"></a>Overschakelen naar een andere Git-opslag plaats
+## <a name="switch-to-a-different-git-repository"></a>Overschakelen naar een andere Git-opslagplaats
 
-Als u wilt overschakelen naar een andere Git-opslag plaats, gaat u naar de pagina Git-configuratie in de beheer hub onder **broncode beheer**. Selecteer **verbinding verbreken**. 
+Als u wilt overschakelen naar een andere Git-opslagplaats, gaat u naar de git-configuratiepagina in de beheerhub onder **Broncodebeheer.** Selecteer **Verbinding verbreken.** 
 
 ![Git-pictogram](media/remove-repository.png)
 
-Voer de naam van uw werk ruimte in en klik op **verbinding verbreken** om de Git-opslag plaats te verwijderen die is gekoppeld aan uw werk
+Voer de naam van uw werkruimte in en klik **op Verbinding** verbreken om de Git-opslagplaats te verwijderen die aan uw werkruimte is gekoppeld.
 
-Nadat u de koppeling met de huidige opslag plaats hebt verwijderd, kunt u uw Git-instellingen configureren voor het gebruik van een andere opslag plaats en vervolgens bestaande resources importeren in de nieuwe opslag plaats.
+Nadat u de associatie met de huidige repo hebt verwijderd, kunt u uw Git-instellingen configureren voor het gebruik van een andere repo en vervolgens bestaande resources importeren in de nieuwe repo.
 
 > [!IMPORTANT]
-> Het verwijderen van de Git-configuratie uit een werk ruimte verwijdert niets uit de opslag plaats. De Synapse-werk ruimte bevat alle gepubliceerde resources. U kunt de werk ruimte rechtstreeks bewerken met de service.
+> Als u de Git-configuratie uit een werkruimte verwijdert, wordt er niets verwijderd uit de opslagplaats. De Synapse-werkruimte bevat alle gepubliceerde resources. U kunt de werkruimte rechtstreeks op de service blijven bewerken.
 
-## <a name="best-practices-for-git-integration"></a>Aanbevolen procedures voor git-integratie
+## <a name="best-practices-for-git-integration"></a>Best practices voor Git-integratie
 
--   **Machtigingen**. Nadat u een Git-opslag plaats hebt verbonden met uw werk ruimte, kan iedereen die toegang heeft tot uw Git-opslag plaats met een wille keurige rol in uw werk ruimte, artefacten, zoals SQL-script, notebook, Spark-taak definitie, gegevensset, gegevens stroom en pijp lijn, in Git-modus bijwerken. Doorgaans wilt u niet dat elk teamlid gemachtigd is om werk ruimte bij te werken. Ken alleen machtigingen voor git-opslag plaats toe voor auteurs van Synapse-werk ruimte artefacten. 
--   **Samen werking**. Het is raadzaam om directe incheckers niet toe te staan voor de vertakking voor samen werking. Deze beperking kan helpen te voor komen dat er fouten optreden bij elke check-in om een pull-aanvraag beoordelings proces te door lopen dat wordt beschreven in [functie vertakkingen maken](source-control.md#creating-feature-branches).
--   **Live-modus Synapse**. Nadat de publicatie in de Git-modus is uitgevoerd, worden alle wijzigingen weer gegeven in de Live-modus Synapse. In de Live-modus van Synapse is publiceren uitgeschakeld. En u kunt artefacten weer geven in de modus Live als u de juiste machtiging hebt gekregen. 
--   **Artefacten bewerken in Studio**. Synapse Studio is de enige plaats waar u het besturings element voor de werk ruimte kunt inschakelen en wijzigingen in Git automatisch wilt synchroniseren. Wijzigingen via SDK, Power shell, worden niet gesynchroniseerd met git. Het is raadzaam om artefacten in Studio altijd te bewerken als Git is ingeschakeld.
+-   **Machtigingen**. Nadat u een Git-opslagplaats hebt verbonden met uw werkruimte, kan iedereen die toegang heeft tot uw Git-opslagplaats met elke rol in uw werkruimte artefacten bijwerken, zoals sql-script, notebook, spark-taakdefinitie, gegevensset, gegevensstroom en pijplijn in de Git-modus. Normaal gesproken wilt u niet dat elk teamlid machtigingen heeft om de werkruimte bij te werken. Verleen alleen machtigingen voor git-opslagplaatsen aan auteurs van Synapse-werkruimteartefacten. 
+-   **Samenwerking**. Het is raadzaam om geen directe check-ins naar de samenwerkingsvertakking toe te staan. Deze beperking kan helpen fouten te voorkomen, omdat bij elke check-in een controleproces voor pull-aanvragen wordt doorlopen dat wordt beschreven in [Functievertakkingen maken.](source-control.md#creating-feature-branches)
+-   **Synapse-livemodus**. Na publicatie in de Git-modus worden alle wijzigingen doorgevoerd in de synapse-livemodus. In de Synapse-livemodus is publiceren uitgeschakeld. En u kunt artefacten weergeven en uitvoeren in de livemodus als u de juiste machtiging hebt gekregen. 
+-   **Artefacten bewerken in Studio**. Synapse Studio is de enige plek waar u broncodebeheer voor werkruimten kunt inschakelen en automatisch wijzigingen naar Git kunt synchroniseren. Elke wijziging via SDK, PowerShell, wordt niet gesynchroniseerd met Git. We raden u aan artefacten altijd te bewerken in Studio wanneer Git is ingeschakeld.
 
-## <a name="troubleshooting-git-integration"></a>Problemen met git-integratie oplossen
+## <a name="troubleshooting-git-integration"></a>Problemen met Git-integratie oplossen
 
-### <a name="access-to-git-mode"></a>Toegang tot de Git-modus 
+### <a name="access-to-git-mode"></a>Toegang tot git-modus 
 
-Als u de machtiging hebt gekregen voor de GitHub Git-opslag plaats die is gekoppeld aan uw werk ruimte, maar u geen toegang hebt tot de Git-modus: 
+Als u de machtiging hebt gekregen voor de GitHub Git-opslagplaats die is gekoppeld aan uw werkruimte, maar u geen toegang hebt tot de Git-modus: 
 
-1. Wis de cache en vernieuw de pagina. 
+1. De cache wissen en de pagina vernieuwen. 
 
 1. Meld u aan bij uw GitHub-account.
 
-### <a name="stale-publish-branch"></a>Verouderde publicatie vertakking
+### <a name="stale-publish-branch"></a>Verouderde publicatie-vertakking
 
-Als de publicatie vertakking niet is gesynchroniseerd met de vertakking voor samen werking en verouderde bronnen bevat ondanks een recente publicatie, voert u de volgende stappen uit:
+Als de publicatievertakking niet synchroon is met de samenwerkingsvertakking en ondanks een recente publicatie niet-bijgewerkte resources bevat, volgt u deze stappen:
 
-1. Uw huidige Git-opslag plaats verwijderen
+1. Uw huidige Git-opslagplaats verwijderen
 
-1. Configureer Git opnieuw met dezelfde instellingen, maar zorg ervoor dat **bestaande resources importeren in opslag plaats** is ingeschakeld en kies dezelfde vertakking.  
+1. Configureer Git opnieuw met dezelfde instellingen, maar zorg ervoor dat Het importeren **van bestaande resources** in de opslagplaats is ingeschakeld en kies dezelfde vertakking.  
 
 1. Een pull-aanvraag maken om de wijzigingen in de samenwerkingsvertakking samen te voegen 
 
 ## <a name="unsupported-features"></a>Niet-ondersteunde functies
 
-- Synapse studio staat geen kers toe voor het verzamelen van door voeringen of selectief publiceren van resources. 
-- Synapse Studio biedt geen ondersteuning voor het aanpassen van commit-berichten.
-- Op basis van het ontwerp wordt de actie verwijderen in Studio direct doorgevoerd in de git
+- Synapse Studio selectief kiezen van door commits of selectief publiceren van resources is niet toegestaan. 
+- Synapse Studio biedt geen ondersteuning voor het aanpassen van het commit-bericht.
+- De verwijderactie in Studio wordt per ongeluk rechtstreeks in Git vastgelegd
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [continue integratie en levering (CI/cd)](continuous-integration-deployment.md)voor meer informatie over het implementeren van continue integratie en implementatie.
+* Zie Continue integratie en levering [(CI/CD)](continuous-integration-deployment.md)voor het implementeren van continue integratie en implementatie.

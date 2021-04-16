@@ -2,19 +2,19 @@
 title: Verificatiemechanismen met de COPY-instructie
 description: Geeft een overzicht van de verificatiemechanismen voor het bulksgewijs laden van gegevens
 services: synapse-analytics
-author: gaursa
+author: julieMSFT
 ms.service: synapse-analytics
 ms.topic: quickstart
 ms.subservice: sql-dw
 ms.date: 07/10/2020
-ms.author: gaursa
+ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: 70e8f15b2b02008f24c87cfe70372fccbf0506fd
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 510f2556fba42176817b782fe48d01d76eaa3fd7
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104600119"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107568451"
 ---
 # <a name="securely-load-data-using-synapse-sql"></a>Gegevens veilig laden met Synapse SQL
 

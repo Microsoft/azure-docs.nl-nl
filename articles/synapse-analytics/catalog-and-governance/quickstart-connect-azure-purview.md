@@ -1,19 +1,19 @@
 ---
 title: Verbinding maken met een Azure Purview-account 
 description: Een Azure Purview-account verbinden met een Synapse-werkruimte.
-services: synapse-analytics
 author: julieMSFT
 ms.service: synapse-analytics
+ms.subservice: ''
 ms.topic: quickstart
 ms.date: 12/16/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: 73ea2f43591d1c7ca2d42591e14b4ff04eb7e496
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: ad9250d022f02db06c9c5251c1fccfbfb730af67
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105628625"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107567873"
 ---
 # <a name="quickstartconnect-an-azure-purview-account-to-a-synapse-workspace"></a>Snelstartgids: Een Azure Purview-account verbinden met een Synapse-werkruimte 
 
@@ -32,11 +32,11 @@ U kunt de volgende taken uitvoeren in Synapse:
 
 ## <a name="signin-toa-synapse-workspace"></a>Aanmelden bij een Synapse-werkruimte 
 
-Ga naar  [https://web.azuresynapse.net](https://web.azuresynapse.net) en meld u aan bij uw werk ruimte. 
+Ga naar  [https://web.azuresynapse.net](https://web.azuresynapse.net) en meld u aan bij uw werkruimte. 
 
 ## <a name="permissions-for-connecting-an-azure-purview-account"></a>Machtigingen voor verbinding maken met een Azure Purview-account 
 
-- Als u een Azure Purview-account wilt verbinden met een Synapse-werkruimte, moet de rol **Inzender** aan u zijn toegewezen in de Synapse-werkruimte, via IAM in de Azure-portal, en hebt u toegang nodig tot dit Azure Purview-account. Zie [machtigingen voor Azure controle sfeer liggen](../../purview/catalog-permissions.md)voor meer informatie.
+- Als u een Azure Purview-account wilt verbinden met een Synapse-werkruimte, moet de rol **Inzender** aan u zijn toegewezen in de Synapse-werkruimte, via IAM in de Azure-portal, en hebt u toegang nodig tot dit Azure Purview-account. Zie Azure [Purview-machtigingen voor meer informatie.](../../purview/catalog-permissions.md)
 
 ## <a name="connect-an-azure-purview-account"></a>Verbinding maken met een Azure Purview-account  
 

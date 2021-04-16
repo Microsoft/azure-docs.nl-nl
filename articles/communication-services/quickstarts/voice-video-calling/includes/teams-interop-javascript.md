@@ -1,23 +1,23 @@
 ---
-title: 'Snelstartgids: deel nemen aan een team vergadering vanuit een web-app'
-description: In deze zelf studie leert u hoe u aan een team vergadering kunt deel nemen met de Azure Communication Services Call SDK voor Java script
+title: 'Quickstart: deelnemen aan een Teams-vergadering vanuit een web-app'
+description: In deze zelfstudie leert u hoe u deel kunt nemen aan een Teams-vergadering met behulp van de Azure Communication Services Calling SDK voor JavaScript
 author: chpalm
 ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 4b6cf48c577bb6f22f497007c4b1c1b57ab6f187
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 6747d1d3cfba1c9e2bee7a8a7a48d67d6bed9f8e
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105108174"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107564633"
 ---
-In deze Quick Start leert u hoe u kunt deel nemen aan een team vergadering met behulp van de Azure Communication Services-SDK voor Java script.
+In deze quickstart leert u hoe u deel kunt nemen aan een Teams-vergadering met behulp van de Azure Communication Services Calling SDK voor JavaScript.
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Een werkende [communicatie dienst die web-app aanroept](../getting-started-with-calling.md).
+- Een werkende Communication Services [aanroepen van web-app](../getting-started-with-calling.md).
 - Een [Teams implementatie](/deployoffice/teams-install).
 
 
@@ -112,8 +112,8 @@ teamsMeetingJoinButton.addEventListener("click", () => {
 
 ## <a name="get-the-teams-meeting-link"></a>Koppeling naar de Teams-vergadering ophalen
 
-De koppeling naar de Teams-vergadering kan worden opgehaald met behulp van Graph API’s. Dit wordt beschreven in [Graph-documentatie](/graph/api/onlinemeeting-createorget?tabs=http&view=graph-rest-beta).
-The aanroepende SDK voor Communication Services accepteert een volledige koppeling naar een Teams-vergadering. Deze koppeling wordt geretourneerd als onderdeel van de `onlineMeeting`-resource, die toegankelijk is bij de [eigenschap `joinWebUrl`](/graph/api/resources/onlinemeeting?view=graph-rest-beta). U kunt de vereiste vergaderingsgegevens ook ophalen via de **URL** in de uitnodiging voor de Teams-vergadering zelf.
+De koppeling naar de Teams-vergadering kan worden opgehaald met behulp van Graph API’s. Dit wordt beschreven in [Graph-documentatie](/graph/api/onlinemeeting-createorget?tabs=http&view=graph-rest-beta&preserve-view=true).
+The aanroepende SDK voor Communication Services accepteert een volledige koppeling naar een Teams-vergadering. Deze koppeling wordt geretourneerd als onderdeel van de `onlineMeeting`-resource, die toegankelijk is bij de [eigenschap `joinWebUrl`](/graph/api/resources/onlinemeeting?view=graph-rest-beta&preserve-view=true). U kunt de vereiste vergaderingsgegevens ook ophalen via de **URL** in de uitnodiging voor de Teams-vergadering zelf.
 
 ## <a name="run-the-code"></a>De code uitvoeren
 

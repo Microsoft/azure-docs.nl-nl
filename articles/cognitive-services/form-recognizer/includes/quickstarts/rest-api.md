@@ -1,6 +1,6 @@
 ---
 title: 'Quickstart: Form Recognizer REST API'
-description: Gebruik de Form Recognizer REST API een app voor het verwerken van formulieren te maken waarmee sleutel-waardeparen en tabelgegevens uit uw aangepaste documenten worden geëxtraheert.
+description: Gebruik de Form Recognizer REST API een app voor formulierverwerking te maken waarmee sleutel-waardeparen en tabelgegevens uit uw aangepaste documenten worden geëxtraheert.
 services: cognitive-services
 author: laujan
 manager: nitinme
@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 04/14/2021
 ms.author: lajanuar
-ms.openlocfilehash: 8f729d3d2ebc41552919634c68557042a95649ec
-ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
+ms.openlocfilehash: cd9cf0e4a2abec1ad29d5b34f3d6f473ca5bf71d
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/15/2021
-ms.locfileid: "107516423"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107564728"
 ---
 <!-- markdownlint-disable MD001 -->
 <!-- markdownlint-disable MD024 -->
@@ -23,7 +23,7 @@ ms.locfileid: "107516423"
 > [!NOTE]
 > In deze handleiding wordt gebruikgemaakt van cURL om REST API-aanroepen uit te voeren.
 
-| [Form Recognizer REST API](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/AnalyzeWithCustomForm) | [Naslag REST API Azure-gegevens](/rest/api/azure/) | [Voorbeelden](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/tree/master/curl/form-recognizer)|
+|[Form Recognizer REST API](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/AnalyzeWithCustomForm) | [Naslag REST API Azure-gegevens](/rest/api/azure/)|
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -40,7 +40,7 @@ ms.locfileid: "107516423"
 
 ## <a name="analyze-layout"></a>Indeling analyseren
 
-U kunt deze Form Recognizer tabellen, selectiemarkeringen, tekst en structuur in documenten te analyseren en te extraheren, zonder dat u een model hoeft te trainen. Zie de conceptuele handleiding indeling voor meer informatie over [indelingsextractie.](../../concept-layout.md) Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
+U kunt Form Recognizer gebruiken om tabellen, selectiemarkeringen, tekst en structuur in documenten te analyseren en te extraheren, zonder dat u een model hoeft te trainen. Zie de conceptuele handleiding indeling voor meer informatie over [indelingextractie.](../../concept-layout.md) Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
 
 1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnement.
 1. Vervang `{subscription key}` door de abonnementssleutel die u uit de vorige stap hebt gekopieerd.
@@ -96,7 +96,7 @@ U ontvangt een `200 (success)`-antwoord met JSON-inhoud.
 Bekijk de volgende factuurafbeelding en de bijbehorende JSON-uitvoer.
 * Het knooppunt `"readResults"` bevat elke tekstregel met het bijbehorende begrenzingsvak op de pagina.
 * Het knooppunt `"selectionMarks"` (in preview 2.1) toont elke selectiemarkering (selectievakje, keuzerondje) en of de status ervan 'ingeschakeld' of 'niet ingeschakeld' is.
-* De `"pageResults"` sectie bevat de tabellen die zijn geëxtraheerd. Voor elke tabel worden de tekst-, rij- en kolomindex, de rij- en kolom-spanning, het begrensingsvak en meer geëxtraheerd.
+* De `"pageResults"` sectie bevat de tabellen die zijn geëxtraheerd. Voor elke tabel worden de tekst-, rij- en kolomindex, de rij- en kolom-spanning, het begrenzesvak en meer geëxtraheerd.
 
 :::image type="content" source="../../media/contoso-invoice.png" alt-text="Document met een Contoso-projectinstructie met een tabel.":::
 
@@ -332,7 +332,7 @@ Deze uitvoer is voor het gemak ingekort. Bekijk de [volledige voorbeelduitvoer o
 
 ## <a name="analyze-receipts"></a>Ontvangstbewijzen analyseren
 
-In deze sectie wordt gedemonstreerd hoe u algemene velden kunt analyseren en extraheren uit Amerikaanse ontvangstbewijzen met behulp van een vooraf getraind ontvangstbewijsmodel. Zie de conceptuele handleiding voor ontvangstbewijzen voor meer informatie over [bonanalyse.](../../concept-receipts.md) Als u wilt beginnen met het analyseren van een ontvangstbewijs, roept u de **[Ontvangstbewijs analyseren](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/AnalyzeReceiptAsync)** -API aan met de cURL-opdracht hieronder. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
+In deze sectie wordt gedemonstreerd hoe u algemene velden kunt analyseren en extraheren uit Amerikaanse ontvangstbewijzen met behulp van een vooraf getraind ontvangstbewijsmodel. Zie de conceptuele handleiding voor ontvangstbewijzen voor meer informatie over [de ontvangstbewijsanalyse.](../../concept-receipts.md) Als u wilt beginnen met het analyseren van een ontvangstbewijs, roept u de **[Ontvangstbewijs analyseren](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/AnalyzeReceiptAsync)** -API aan met de cURL-opdracht hieronder. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
 
 1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnement.
 1. Vervang `{your receipt URL}` door het URL-adres van een afbeelding van het ontvangstbewijs.
@@ -721,7 +721,7 @@ Deze uitvoer is ingekort voor de leesbaarheid. Bekijk de [volledige voorbeelduit
 
 ### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
 
-In deze sectie wordt gedemonstreerd hoe u algemene velden kunt analyseren en extraheren uit Engelse visitekaartjes met behulp van een vooraf getraind model. Zie de conceptuele handleiding visitekaartjes voor meer informatie over [visitekaartjesanalyse.](../../concept-business-cards.md) Als u wilt beginnen met het analyseren van een visitekaartje, roept u de **[Visitekaartje analyseren](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/AnalyzeBusinessCardAsync)** -API aan met het cURL-opdracht hieronder. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
+In deze sectie wordt gedemonstreerd hoe u algemene velden kunt analyseren en extraheren uit Engelse visitekaartjes met behulp van een vooraf getraind model. Zie de conceptuele handleiding voor visitekaartjes voor meer informatie [over visitekaartjesanalyse.](../../concept-business-cards.md) Als u wilt beginnen met het analyseren van een visitekaartje, roept u de **[Visitekaartje analyseren](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/AnalyzeBusinessCardAsync)** -API aan met het cURL-opdracht hieronder. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
 
 1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnement.
 1. Vervang `{your business card URL}` door het URL-adres van een afbeelding van het ontvangstbewijs.
@@ -903,7 +903,7 @@ https://cognitiveservice/formrecognizer/v2.1-preview.3/prebuilt/invoice/analyzeR
 
 ### <a name="get-invoice-results"></a>Factuurresultaten ophalen
 
-Nadat u de Factuur-API analyseren hebt **[](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/5ed8c9acb78c40a2533aee83)** aangeroepen, roept u de API Factuurresultaat analyseren op om de status van de bewerking en de geëxtraheerde gegevens op te halen. **[](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/5ed8c9843c2794cbb1a96291)** Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
+Nadat u de **[](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/5ed8c9843c2794cbb1a96291)** API Factuur analyseren hebt **[](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/5ed8c9acb78c40a2533aee83)** aangeroepen, roept u de API Factuurresultaat analyseren op om de status van de bewerking en de geëxtraheerde gegevens op te halen. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
 
 1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnementssleutel. U vindt deze op het tabblad **Overzicht** van uw Form Recognizer-resource.
 1. Vervang `{resultId}` door de bewerkings-id uit de vorige stap.
@@ -919,7 +919,7 @@ U ontvangt een `200 (Success)` antwoord met JSON-uitvoer.
 
 * Het `"readResults"` veld bevat elke regel tekst die is geëxtraheerd uit de factuur.
 * De `"pageResults"` bevat de tabellen en selectiemarkeringen die zijn geëxtraheerd uit de factuur.
-* Het `"documentResults"` veld bevat sleutel-/waardegegevens voor de meest relevante onderdelen van de factuur.
+* Het `"documentResults"` veld bevat sleutel-waardegegevens voor de meest relevante onderdelen van de factuur.
 
 Bekijk het volgende factuurdocument en de bijbehorende JSON-uitvoer.
 
@@ -1092,7 +1092,7 @@ Deze JSON-inhoud is ingekort voor leesbaarheid. Bekijk de [volledige voorbeeldui
 
 ### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
 
-Gebruik de onderstaande cURL-opdracht om te beginnen met het analyseren van een identificatiedocument. Zie de conceptuele handleiding identiteitsdocumenten voor meer informatie over de analyse van [identiteitsdocumenten.](../../concept-identification-cards.md) Als u een identiteitsdocument wilt analyseren, roept u de **API [Analyze ID Document] https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/5f74a7738978e467c5fb8707)** aan met behulp van de onderstaande cURL-opdracht. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
+Gebruik de onderstaande cURL-opdracht om te beginnen met het analyseren van een identificatiedocument. Zie de conceptuele handleiding Identiteitsdocumenten voor meer informatie over de analyse van [identiteitsdocumenten.](../../concept-identification-cards.md) Als u een identiteitsdocument wilt analyseren, roept u de **API [Analyze ID Document] https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/5f74a7738978e467c5fb8707)** aan met behulp van de onderstaande cURL-opdracht. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
 
 1. Vervang `{endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnement.
 1. Vervang `{your ID document URL}` door het URL-adres van een afbeelding van het ontvangstbewijs.
@@ -1111,13 +1111,13 @@ curl -i -X POST "https://{endpoint}/formrecognizer/v2.1-preview.3/prebuilt/idDoc
 
 ---
 
-U ontvangt een antwoord `202 (Success)` met een **Operation-Location-header.** De waarde van deze header bevat een resultaat-id die u kunt gebruiken om de status van de asynchrone bewerking op te vragen en de resultaten op te halen. In het volgende voorbeeld is de tekenreeks na `analyzeResults/` de resultaat-id.
+U ontvangt een antwoord `202 (Success)` met een **Bewerkingslocatie-header.** De waarde van deze header bevat een resultaat-id die u kunt gebruiken om de status van de asynchrone bewerking op te vragen en de resultaten op te halen. In het volgende voorbeeld is de tekenreeks na `analyzeResults/` de resultaat-id.
 
 ```console
 https://westus.api.cognitive.microsoft.com/formrecognizer/v2.1-preview.3/prebuilt/idDocument/analyzeResults/0c6cb19e-538f-4b8d-98b7-e105c9995ba6
 ```
 
-### <a name="get-the-analyze-id-document-result"></a>Het resultaat van het document analyseren-id op halen
+### <a name="get-the-analyze-id-document-result"></a>Het resultaat van het analyse-id-document op halen
 
 Nadat u de Document-API voor **analyse-id's** hebt aangeroepen, roept u de Documentresultaat-API voor **[analyse-id's](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/5f74a7daad1f2612c46f5822)** op om de status van de bewerking en de geëxtraheerde gegevens op te halen.  Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
 
@@ -1133,7 +1133,7 @@ curl -X GET "https://{endpoint}/formrecognizer/v2.1-preview.3/prebuilt/idDocumen
 
 ### <a name="examine-the-response"></a>Het antwoord bekijken
 
-U ontvangt een `200 (Success)` antwoord met JSON-uitvoer. Het eerste veld, `"status"`, geeft de status van de bewerking aan. Als de bewerking niet is voltooid, wordt de waarde van of en moet u de API opnieuw aanroepen, handmatig of via een script totdat u `"status"` `"running"` de waarde `"notStarted"` `succeeded` ontvangt. Een interval van één seconde of meer tussen oproepen wordt aanbevolen.
+U ontvangt een `200 (Success)` antwoord met JSON-uitvoer. Het eerste veld, `"status"`, geeft de status van de bewerking aan. Als de bewerking niet is voltooid, is de waarde van of en moet u de API opnieuw aanroepen, handmatig of via een script totdat u de `"status"` `"running"` waarde `"notStarted"` `succeeded` ontvangt. Een interval van één seconde of meer tussen oproepen wordt aanbevolen.
 
 * Het `"readResults"` veld bevat elke regel tekst die is geëxtraheerd uit het identiteitsdocument.
 * Het `"documentResults"` veld bevat een matrix met objecten, die elk een id-document vertegenwoordigen dat in het invoerdocument is gedetecteerd.
@@ -1348,7 +1348,7 @@ U ontvangt een `201 (Success)` antwoord met een **Locatie**-header. De waarde va
 
 ### <a name="train-a-model-with-labels"></a>Een model trainen met labels
 
-Als u met labels wilt trainen, moet uw Blob Storage-container naast de trainingsdocumenten ook speciale bestanden met labelinformatie (`\<filename\>.pdf.labels.json`) bevatten. Het [hulpprogramma voor labelen van Form Recognizer](../../quickstarts/label-tool.md) beschikt over een gebruikersinterface die u kan helpen bij het maken van deze labelbestanden. Zodra u deze hebt, kunt u de API Aangepast **[model](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/TrainCustomModelAsync)** trainen aanroepen, met de `"useLabelFile"` parameter ingesteld op in de `true` JSON-body.
+Als u met labels wilt trainen, moet uw Blob Storage-container naast de trainingsdocumenten ook speciale bestanden met labelinformatie (`\<filename\>.pdf.labels.json`) bevatten. Het [hulpprogramma voor labelen van Form Recognizer](../../quickstarts/label-tool.md) beschikt over een gebruikersinterface die u kan helpen bij het maken van deze labelbestanden. Zodra u deze hebt, kunt u de **[API Aangepast model](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/TrainCustomModelAsync)** trainen aanroepen, met de parameter ingesteld op in de `"useLabelFile"` `true` JSON-body.
 
 Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
 
@@ -1515,7 +1515,7 @@ curl -X GET "https://{Endpoint}/formrecognizer/v2.0/custom/models/{model ID}/ana
 
 U ontvangt een `200 (Success)`-antwoord met een JSON-hoofdtekst in de volgende indeling. De uitvoer is voor het gemak ingekort. U ziet het veld `"status"` onderaan. Dit heeft de waarde `"succeeded"` wanneer de analysebewerking is voltooid. Als de bewerking Analyse niet is voltooid, moet u opnieuw een query uitvoeren op de service door de opdracht opnieuw uit te voeren. Een interval van één seconde of meer tussen oproepen wordt aanbevolen.
 
-In aangepaste modellen die zijn getraind zonder labels, staan de koppelingen tussen sleutel-waardeparen en tabellen in het `"pageResults"` knooppunt van de JSON-uitvoer. In aangepaste modellen die zijn getraind met labels, zijn de koppelingen tussen sleutel-waardeparen in het `"documentResults"` knooppunt. Als u ook extractie voor tekst zonder opmaak hebt opgegeven via de URL-parameter *includeTextDetails*, worden in het knooppunt `"readResults"` de inhoud en posities van alle tekst in het document weergegeven.
+In aangepaste modellen die zijn getraind zonder labels, zijn de koppeling tussen sleutel-waardeparen en tabellen in het `"pageResults"` knooppunt van de JSON-uitvoer. In aangepaste modellen die zijn getraind met labels, zijn de koppeling tussen sleutel-waardeparen in het `"documentResults"` knooppunt. Als u ook extractie voor tekst zonder opmaak hebt opgegeven via de URL-parameter *includeTextDetails*, worden in het knooppunt `"readResults"` de inhoud en posities van alle tekst in het document weergegeven.
 
 Dit voorbeeld van een JSON-bestand is voor het gemak ingekort. Bekijk de [volledige voorbeelduitvoer op GitHub.](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/analyze-result-invoice-6.pdf.json)
 
@@ -1803,7 +1803,7 @@ Dit voorbeeld van een JSON-bestand is voor het gemak ingekort. Bekijk de [volled
 
 ### <a name="get-a-list-of-custom-models"></a>Een lijst met aangepaste modellen ophalen
 
-Gebruik de **[API Aangepaste modellen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/GetCustomModels)** lijst in de volgende opdracht om een lijst met alle aangepaste modellen te retourneren die deel uitmaken van uw abonnement.
+Gebruik de **[API List Custom Models](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/GetCustomModels)** in de volgende opdracht om een lijst met alle aangepaste modellen te retourneren die deel uitmaken van uw abonnement.
 
 1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnement.
 1. Vervang `{subscription key}` door de abonnementssleutel die u uit de vorige stap hebt gekopieerd.
@@ -1847,7 +1847,7 @@ U ontvangt een `200`-bericht dat aangeeft dat de bewerking is geslaagd. Dit beri
 
 ### <a name="get-a-specific-model"></a>Een specifiek model ophalen
 
-Als u gedetailleerde informatie over een specifiek aangepast model wilt ophalen, gebruikt u de **[API Aangepast model](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/GetCustomModel)** ophalen in de volgende opdracht.
+Als u gedetailleerde informatie over een specifiek aangepast model wilt ophalen, gebruikt u **[de API Aangepast model](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/GetCustomModel)** ophalen in de volgende opdracht.
 
 1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnement.
 1. Vervang `{subscription key}` door de abonnementssleutel die u uit de vorige stap hebt gekopieerd.
@@ -1929,7 +1929,7 @@ curl -v -X DELETE "https://{Endpoint}/formrecognizer/v2.0/custom/models/{modelId
 
 ---
 
-U ontvangt een geslaagd antwoord dat aangeeft dat `204` uw model is gemarkeerd voor verwijdering. Modelartefacten worden binnen 48 uur verwijderd.
+U ontvangt een geslaagd `204` antwoord dat aangeeft dat uw model is gemarkeerd voor verwijdering. Modelartefacten worden binnen 48 uur verwijderd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

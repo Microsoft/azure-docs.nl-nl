@@ -5,16 +5,16 @@ services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
 ms.topic: overview
-ms.subservice: ''
+ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 6b039d934993d2acee630205c5b5e5d8e0f6145e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1529e45bd7f799a727a29c8c2e26f7ed77c4e2a0
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101667603"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107565590"
 ---
 # <a name="connect-to-synapse-sql-with-azure-data-studio"></a>Verbinding maken met Synapse SQL met Azure Data Studio
 
@@ -26,7 +26,7 @@ ms.locfileid: "101667603"
 > * [sqlcmd](get-started-connect-sqlcmd.md)
 > * [SSMS](get-started-ssms.md)
 
-U kunt [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio?view=azure-sqldw-latest&preserve-view=true) gebruiken om verbinding te maken met en query's uit te Synapse SQL in azure Synapse Analytics. 
+U kunt [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio?view=azure-sqldw-latest&preserve-view=true) gebruiken om verbinding te maken met en query's uit te voeren Synapse SQL in Azure Synapse Analytics. 
 
 ## <a name="connect"></a>Verbinding maken
 

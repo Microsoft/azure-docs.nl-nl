@@ -1,5 +1,5 @@
 ---
-title: Quick Start-telemetrie verzenden naar Azure IoT Hub Snelstartgids (python) | Microsoft Docs
+title: 'Quickstart: Telemetrie verzenden naar Azure IoT Hub quickstart (Python) | Microsoft Docs'
 description: In deze snelstart voert u een Python-voorbeeldtoepassing uit om gesimuleerde telemetrie te verzenden naar een IoT-hub en gebruikt u vervolgens een hulpprogramma om telemetrie uit de IoT-hub te lezen.
 author: wesmc7777
 manager: philmea
@@ -15,12 +15,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - devx-track-azurecli
 ms.date: 06/16/2020
-ms.openlocfilehash: bb86ccafaa0b9eac5ef35e96bbe3031a40f350ee
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: 18163c3e5cdf83d736cdb52a3de028bf8890e728
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106067517"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107568570"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-python"></a>Quickstart: Telemetrie vanaf een apparaat verzenden naar een IoT-hub en lezen met een back-endtoepassing (Python)
 
@@ -34,7 +34,7 @@ In deze quickstart verzendt u telemetrie vanuit een toepassing voor een gesimule
 
 * [Python 3.7+](https://www.python.org/downloads/). Zie [Functies van Azure IoT-apparaten](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device#azure-iot-device-features) voor andere versies van Python die worden ondersteund.
 
-* [Een voorbeeld van een Python-project](https://github.com/Azure-Samples/azure-iot-samples-python/archive/master.zip).
+* [Een Python-voorbeeldproject](https://github.com/Azure-Samples/azure-iot-samples-python/) vanuit github. Download of kloon de voorbeelden met behulp van **de knop Code** in de github-opslagplaats.
 
 * Poort 8883 is geopend in de firewall. In het apparaatvoorbeeld in deze quickstart wordt het MQTT-protocol gebruikt, dat communiceert via poort 8883. Deze poort is in sommige netwerkomgevingen van bedrijven en onderwijsinstellingen mogelijk geblokkeerd. Zie [Verbinding maken met IoT Hub (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub) voor meer informatie en manieren om dit probleem te omzeilen.
 
@@ -91,6 +91,8 @@ Een apparaat moet zijn geregistreerd bij uw IoT-hub voordat het verbinding kan m
 ## <a name="send-simulated-telemetry"></a>Gesimuleerde telemetrie verzenden
 
 De toepassing voor het gesimuleerde apparaat maakt verbinding met een apparaatspecifiek eindpunt op uw IoT-hub en verstuurt gesimuleerde telemetrie over temperatuur en luchtvochtigheid.
+
+1. Download of kloon de opslagplaats azure-iot-samples-python met behulp van de **knop Code** op de pagina [azure-iot-samples-python repository](https://github.com/Azure-Samples/azure-iot-samples-python/).
 
 1. Navigeer in een lokaal terminalvenster naar de hoofdmap van het voorbeeldproject in Python. Navigeer vervolgens naar de map **iot-hub\Quickstarts\simulated-device**.
 

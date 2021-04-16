@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: c37f6d89d5ebd3e18177db8add048739a62c883f
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: 28c54865ab9c2876d998896f5f536a11088962f8
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107307942"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107566423"
 ---
 # <a name="how-to-use-openrowset-using-serverless-sql-pool-in-azure-synapse-analytics"></a>OPENROWSET gebruiken met behulp van serverloze SQL-pool in Azure Synapse Analytics
 
@@ -138,9 +138,9 @@ Als u opgeeft dat unstructured_data_path een map is, haalt een serverloze SQL-po
 U kunt een serverloze SQL-pool instrueren om mappen te doorlopen door /* toe te voegen aan het einde van het pad, zoals in het voorbeeld: `https://sqlondemandstorage.blob.core.windows.net/csv/population/**`
 
 > [!NOTE]
-> In tegenstelling tot Hadoop en PolyBase, retourneert een serverloze SQL-pool geen submappen tenzij u /* * aan het einde van het pad toevoegt.
+> In tegenstelling tot Hadoop en PolyBase, retourneert een serverloze SQL-pool geen submappen tenzij u /* * aan het einde van het pad toevoegt. Net als Bij Hadoop en PolyBase worden er geen bestanden retourneerd waarvoor de bestandsnaam begint met een onderstreping (_) of een punt (.).
 
-Als in het onderstaande voor beeld = de unstructured_data_path = `https://mystorageaccount.dfs.core.windows.net/webdata/` , wordt in een query van een serverloze SQL-groep rijen geretourneerd van mydata.txt. Het retourneert niet mydata2.txt en mydata3.txt omdat deze bestanden zich in een submap bevinden.
+In het onderstaande voorbeeld, als de unstructured_data_path= , retournt een `https://mystorageaccount.dfs.core.windows.net/webdata/` serverloze SQL-poolquery rijen van mydata.txt. Het retourneert niet mydata2.txt en mydata3.txt omdat deze bestanden zich in een submap bevinden.
 
 ![Recursieve gegevens voor externe tabellen](./media/develop-openrowset/folder-traversal.png)
 
@@ -223,7 +223,7 @@ Kenmerken van parser-versie 1.0 voor CSV:
 Kenmerken van parser-versie 2.0 voor CSV:
 
 - Niet alle gegevenstypen worden ondersteund.
-- De maximum lengte van de teken kolom is 8000.
+- De maximale tekenkolomlengte is 8000.
 - De maximale limiet voor de rijgrootte is 8 MB.
 - De volgende opties worden niet ondersteund: DATA_COMPRESSION.
 - Een lege tekenreeks tussen aanhalingstekens (&quot;") wordt geïnterpreteerd als een lege tekenreeks.
@@ -239,9 +239,9 @@ DATAFILETYPE = { 'char' | 'widechar' }
 
 Hiermee geeft u de codering op: char wordt gebruikt voor UTF8, widechar wordt gebruikt voor UTF16-bestanden.
 
-CODE TABEL = {' ACS ' | OEM | RAW | ' code_page '}
+CODEPAGE = { 'ACS' | OEM-| 'RAW' | 'code_page' }
 
-Hiermee geeft u de code tabel van de gegevens in het gegevens bestand. De standaard waarde is 65001 (UTF-8-code ring). Bekijk [hier](/sql/t-sql/functions/openrowset-transact-sql?view=sql-server-ver15&preserve-view=true#codepage)meer informatie over deze optie.
+Hiermee geeft u de codepagina van de gegevens in het gegevensbestand op. De standaardwaarde is 65001 (UTF-8-codering). Meer informatie over deze optie kunt u [hier bekijken.](/sql/t-sql/functions/openrowset-transact-sql?view=sql-server-ver15&preserve-view=true#codepage)
 
 ## <a name="fast-delimited-text-parsing"></a>Snel parseren van tekstbestand met scheidingstekens
 

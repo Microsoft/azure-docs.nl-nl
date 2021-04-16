@@ -5,20 +5,20 @@ ms.author: askaur
 ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 773bca81694534346019e30e9d55190af6f51e74
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 49f9bac40ae803f980a22c19fd5d44d85fa99e9e
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105106787"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107564493"
 ---
-## <a name="joining-the-meeting-chat"></a>Deel nemen aan de chat functie van de vergadering 
+## <a name="joining-the-meeting-chat"></a>Deelnemen aan de vergaderingschat 
 
-Zodra teams interoperabiliteit is ingeschakeld, kan een communicatie Services-gebruiker worden toegevoegd als een externe gebruiker via de aanroepende SDK. Als een gebruiker wordt toegevoegd aan de oproep, wordt deze ook deelnemer aan de vergaderchat. Hier kan de gebruiker vervolgens berichten verzenden naar en ontvangen van andere gebruikers in de oproep. De gebruiker heeft geen toegang tot de chatberichten die zijn verzonden vóór deelname aan de oproep. U kunt de volgende stappen volgen om deel te nemen aan de vergadering en te beginnen met chatten.
+Zodra De interoperabiliteit van Teams is ingeschakeld, kan Communication Services lid worden van de Teams-aanroep als een externe gebruiker met behulp van de aanroepen van de SDK. Als een gebruiker wordt toegevoegd aan de oproep, wordt deze ook deelnemer aan de vergaderchat. Hier kan de gebruiker vervolgens berichten verzenden naar en ontvangen van andere gebruikers in de oproep. De gebruiker heeft geen toegang tot de chatberichten die zijn verzonden vóór deelname aan de oproep. Als u wilt deelnemen aan de vergadering en wilt beginnen met chatten, kunt u de volgende stappen volgen.
 
-## <a name="install-the-chat-packages"></a>Chat-pakketten installeren
+## <a name="install-the-chat-packages"></a>De chatpakketten installeren
 
-Gebruik de `npm install` opdracht om de benodigde communicatie Services-sdk's voor Java script te installeren.
+Gebruik de `npm install` opdracht om de benodigde SDK Communication Services voor JavaScript te installeren.
 
 ```console
 npm install @azure/communication-common --save
@@ -36,9 +36,9 @@ Met de optie `--save` wordt de bibliotheek als een afhankelijkheid in bestand **
 
 ## <a name="add-the-teams-ui-controls"></a>De besturingselementen voor de gebruikersinterface van Teams toevoegen
 
-Vervang de code in index.html door het volgende fragment.
-De tekst vakken boven aan de pagina worden gebruikt voor het invoeren van de context van teams en de thread-ID van de vergadering. De knop deel nemen aan de vergadering wordt gebruikt om deel te nemen aan de opgegeven vergadering.
-Er wordt een pop-upvenster met chatten onder aan de pagina weer gegeven. Het kan worden gebruikt om berichten te verzenden naar de thread van de vergadering en wordt weer gegeven in real-time berichten die worden verzonden via de thread terwijl de ACS-gebruiker lid is.
+Vervang de code in index.html door het volgende codefragment.
+De tekstvakken boven aan de pagina worden gebruikt om de context van de Teams-vergadering en de thread-id van de vergadering in te voeren. De knop Deelnemen aan teamsvergadering wordt gebruikt om deel te nemen aan de opgegeven vergadering.
+Onder aan de pagina wordt een chatpop-up weergegeven. Het kan worden gebruikt om berichten te verzenden op de vergaderingsthread en alle berichten die op de thread worden verzonden terwijl de ACS-gebruiker lid is, worden in realtime weergegeven.
 
 ```html
 <!DOCTYPE html>
@@ -142,11 +142,11 @@ Er wordt een pop-upvenster met chatten onder aan de pagina weer gegeven. Het kan
 
 ## <a name="enable-the-teams-ui-controls"></a>De besturingselementen voor de gebruikersinterface van Teams inschakelen
 
-Vervang de inhoud van het client.js bestand door het volgende code fragment.
+Vervang de inhoud van het client.js bestand door het volgende codefragment.
 
-Vervang in het code fragment 
-- `SECRET CONNECTION STRING` met de connection string van de communicatie service 
-- `ENDPOINT URL` met de eind punt-URL van uw communicatie service
+Vervang in het codefragment 
+- `SECRET CONNECTION STRING` met de connection string van uw Communication Service 
+- `ENDPOINT URL` door de eindpunt-URL van uw Communication Service
 
 ```javascript
 // run using
@@ -286,10 +286,10 @@ sendMessageButton.addEventListener("click", async () =>
 
 ## <a name="get-a-teams-meeting-chat-thread-for-a-communication-services-user"></a>Een chatgesprek in een Teams-vergadering ophalen voor een Communication Services-gebruiker
 
-De koppelingen en chatten van teams kunnen worden opgehaald met behulp van Graph-Api's, die worden beschreven in [Graph-documentatie](/graph/api/onlinemeeting-createorget?tabs=http&view=graph-rest-beta). The aanroepende SDK voor Communication Services accepteert een volledige koppeling naar een Teams-vergadering. Deze koppeling wordt geretourneerd als onderdeel van de `onlineMeeting` resource, toegankelijk via de [ `joinWebUrl` eigenschap](/graph/api/resources/onlinemeeting?view=graph-rest-beta) met de [Graph api's](/graph/api/onlinemeeting-createorget?tabs=http&view=graph-rest-beta), u kunt ook de `threadId` . Het antwoord heeft een `chatInfo` object dat de bevat `threadID` . 
+De koppeling en chat van de Teams-vergadering kunnen worden opgehaald met behulp van Graph API's, zoals beschreven in [graph-documentatie.](/graph/api/onlinemeeting-createorget?tabs=http&view=graph-rest-beta&preserve-view=true) The aanroepende SDK voor Communication Services accepteert een volledige koppeling naar een Teams-vergadering. Deze koppeling wordt geretourneerd als onderdeel van de resource, toegankelijk onder de eigenschap Met de `onlineMeeting` [Graph API's](/graph/api/onlinemeeting-createorget?tabs=http&view=graph-rest-beta&preserve-view=true)kunt u ook de [ `joinWebUrl` ](/graph/api/resources/onlinemeeting?view=graph-rest-beta&preserve-view=true) `threadId` verkrijgen. Het antwoord heeft een `chatInfo` -object dat de `threadID` bevat. 
 
-U kunt ook de vereiste gegevens voor de vergadering en de thread-ID ophalen van de URL voor **deelname aan** de vergadering zelf uitnodigen.
-De koppeling naar een Teams-vergadering ziet er ongeveer zo uit: `https://teams.microsoft.com/l/meetup-join/meeting_chat_thread_id/1606337455313?context=some_context_here`. De `threadId` gaat `meeting_chat_thread_id` in de koppeling. Zorg ervoor dat de `meeting_chat_thread_id` is ontsnapt vóór gebruik. Deze moet de volgende indeling hebben: `19:meeting_ZWRhZDY4ZGUtYmRlNS00OWZaLTlkZTgtZWRiYjIxOWI2NTQ4@thread.v2`
+U kunt ook de vereiste informatie over de vergadering en de thread-id verkrijgen via de URL van **de join-vergadering** in de teamsvergadering uitnodiging zelf.
+De koppeling naar een Teams-vergadering ziet er ongeveer zo uit: `https://teams.microsoft.com/l/meetup-join/meeting_chat_thread_id/1606337455313?context=some_context_here`. De `threadId` is waar zich in de `meeting_chat_thread_id` koppeling. Zorg ervoor dat `meeting_chat_thread_id` de niet is opgeslagen voordat u deze gebruikt. Deze moet de volgende indeling hebben: `19:meeting_ZWRhZDY4ZGUtYmRlNS00OWZaLTlkZTgtZWRiYjIxOWI2NTQ4@thread.v2`
 
 
 ## <a name="run-the-code"></a>De code uitvoeren
@@ -304,7 +304,7 @@ Open uw browser en ga naar http://localhost:8080/. U ziet nu het volgende:
 
 :::image type="content" source="../acs-join-teams-meeting-chat-quickstart.png" alt-text="Schermopname van de voltooide JavaScript-toepassing.":::
 
-Plaats de koppeling teams en thread-ID in de tekst vakken. Klik op *deel nemen teams* om deel te nemen aan de vergadering van teams. Nadat de ACS-gebruiker in de vergadering is toegelaten, kunt u chatten vanuit uw communicatie Services-toepassing. Ga naar het vak onder aan de pagina om te beginnen met chatten.
+Voeg de koppeling Teams meeting en thread-ID in de tekstvakken in. Druk *op Deelnemen aan Teams-vergadering om* deel te nemen aan de Teams-vergadering. Nadat de ACS-gebruiker is opgenomen in de vergadering, kunt u chatten vanuit uw Communication Services toepassing. Navigeer naar het vak onder aan de pagina om de chat te starten.
 
 > [!NOTE] 
-> Momenteel worden alleen berichten verzonden, ontvangen en bewerkt die worden ondersteund voor interoperabiliteits scenario's met teams. Andere functies zoals het typen van indicatoren en Communication Services-gebruikers die andere gebruikers toevoegen aan of verwijderen uit de Teams-vergadering, worden nog niet ondersteund.  
+> Momenteel wordt alleen het verzenden, ontvangen en bewerken van berichten ondersteund voor interoperabiliteitsscenario's met Teams. Andere functies zoals het typen van indicatoren en Communication Services-gebruikers die andere gebruikers toevoegen aan of verwijderen uit de Teams-vergadering, worden nog niet ondersteund.  

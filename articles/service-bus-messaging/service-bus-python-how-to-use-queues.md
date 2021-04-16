@@ -1,19 +1,22 @@
 ---
 title: Azure Service Bus-wachtrijen met Azure Service Bus-pakketversie 7.0.0 voor Python gebruiken
 description: In dit artikel wordt beschreven hoe u met Python berichten verzendt naar en ontvangt van Azure Service Bus-wachtrijen.
-author: spelluru
 documentationcenter: python
-ms.devlang: python
-ms.topic: quickstart
-ms.date: 11/18/2020
+author: spelluru
 ms.author: spelluru
-ms.custom: seo-python-october2019, devx-track-python
-ms.openlocfilehash: 0553062032a58ec9eb9cf3c474ee7c8f19fc544d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 11/18/2020
+ms.topic: quickstart
+ms.devlang: python
+ms.custom:
+- seo-python-october2019
+- devx-track-python
+- mode-api
+ms.openlocfilehash: e982b3f36dbfe2144170d53d07473201abb014ef
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98631552"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107534963"
 ---
 # <a name="send-messages-to-and-receive-messages-from-azure-service-bus-queues-python"></a>Berichten verzenden naar en berichten ontvangen van Azure Service Bus-wachtrijen (Python)
 In dit artikel wordt beschreven hoe u met Python berichten verzendt naar en ontvangt van Azure Service Bus-wachtrijen. 

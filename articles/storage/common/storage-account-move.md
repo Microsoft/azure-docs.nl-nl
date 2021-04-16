@@ -1,6 +1,6 @@
 ---
-title: Een Azure Storage-account naar een andere regio verplaatsen | Microsoft Docs
-description: Laat zien hoe u een Azure Storage account naar een andere regio kunt verplaatsen.
+title: Een account Azure Storage naar een andere regio | Microsoft Docs
+description: Laat zien hoe u een account Azure Storage verplaatsen naar een andere regio.
 services: storage
 author: normesta
 ms.service: storage
@@ -9,39 +9,39 @@ ms.topic: how-to
 ms.date: 05/11/2020
 ms.author: normesta
 ms.reviewer: dineshm
-ms.openlocfilehash: d894ce71e0ffa5a0894a1f6b0035efe66271ded8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1900326bf03c6a32f25c7a019d8bd1e460735bd6
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100591476"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107505595"
 ---
-# <a name="move-an-azure-storage-account-to-another-region"></a>Een Azure Storage-account naar een andere regio verplaatsen
+# <a name="move-an-azure-storage-account-to-another-region"></a>Een account Azure Storage verplaatsen naar een andere regio
 
-Als u een opslagaccount wilt verplaatsen, maak dan een kopie van uw opslagaccount in een andere regio. Verplaats uw gegevens vervolgens naar het account met behulp van AzCopy of een ander hulp programma van uw keuze.
+Als u een opslagaccount wilt verplaatsen, maak dan een kopie van uw opslagaccount in een andere regio. Verplaats vervolgens uw gegevens naar dat account met behulp van AzCopy of een ander hulpprogramma naar keuze.
 
 In dit artikel leert u het volgende:
 
 > [!div class="checklist"]
 > 
 > * Een sjabloon exporteren.
-> * Wijzig de sjabloon door de doel regio en de naam van het opslag account toe te voegen.
-> * Implementeer de sjabloon om het nieuwe opslag account te maken.
-> * Configureer het nieuwe opslag account.
-> * Verplaats gegevens naar het nieuwe opslag account.
-> * Verwijder de resources in de bron regio.
+> * Wijzig de sjabloon door de naam van de doelregio en het opslagaccount toe te voegen.
+> * Implementeer de sjabloon om het nieuwe opslagaccount te maken.
+> * Configureer het nieuwe opslagaccount.
+> * Gegevens verplaatsen naar het nieuwe opslagaccount.
+> * Verwijder de resources in de bronregio.
 
 ## <a name="prerequisites"></a>Vereisten
 
 - Zorg ervoor dat de services en functies die uw account gebruikt, worden ondersteund in de doelregio.
 
-- Zorg ervoor dat uw abonnement allowlisted is voor de doel regio voor preview-functies.
+- Zorg ervoor dat uw abonnement is toegestaan voor de doelregio voor preview-functies.
 
 <a id="prepare"></a>
 
 ## <a name="prepare"></a>Voorbereiden
 
-Om aan de slag te gaan, een resource manager-sjabloon te exporteren en vervolgens te wijzigen. 
+Om aan de slag te gaan, exporteert en wijzigt u vervolgens een Resource Manager sjabloon. 
 
 ### <a name="export-a-template"></a>Een sjabloon exporteren
 
@@ -53,33 +53,33 @@ Een sjabloon exporteren via de Azure-portal:
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
-2. Selecteer **alle resources** en selecteer vervolgens uw opslag account.
+2. Selecteer **Alle resources** en selecteer vervolgens uw opslagaccount.
 
-3. Selecteer > **instellingen**  >  **sjabloon exporteren**.
+3. Selecteer >   >  **Automation-exportsjabloon**.
 
-4. Kies **downloaden** in de Blade **sjabloon exporteren** .
+4. Kies **Downloaden** op de **blade Sjabloon** exporteren.
 
-5. Zoek het zip-bestand dat u hebt gedownload van de portal en pak het bestand uit naar een map van uw keuze.
+5. Zoek het ZIP-bestand dat u hebt gedownload uit de portal en open het bestand in een map naar keuze.
 
-   Dit zip-bestand bevat de. json-bestanden waaruit de sjabloon en scripts bestaan voor het implementeren van de sjabloon.
+   Dit zip-bestand bevat de .json-bestanden die de sjabloon en scripts vormen voor het implementeren van de sjabloon.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Een sjabloon exporteren met behulp van Power shell:
+Een sjabloon exporteren met behulp van PowerShell:
 
-1. Meld u aan bij uw Azure-abonnement met de opdracht [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) en volg de instructies op het scherm:
+1. Meld u aan bij uw [Azure-abonnement met de opdracht Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) en volg de instructies op het scherm:
 
    ```azurepowershell-interactive
    Connect-AzAccount
    ```
-2. Als uw identiteit is gekoppeld aan meer dan één abonnement, stelt u uw actieve abonnement in op het abonnement van het opslag account dat u wilt verplaatsen.
+2. Als uw identiteit is gekoppeld aan meer dan één abonnement, stelt u uw actieve abonnement in op het abonnement van het opslagaccount dat u wilt verplaatsen.
 
    ```azurepowershell-interactive
    $context = Get-AzSubscription -SubscriptionId <subscription-id>
    Set-AzContext $context
    ```
 
-3. Exporteer de sjabloon van uw bron-opslag account. Met deze opdrachten wordt een JSON-sjabloon opgeslagen in de huidige map.
+3. Exporteert de sjabloon van uw bronopslagaccount. Met deze opdrachten wordt een json-sjabloon opgeslagen in uw huidige map.
 
    ```azurepowershell-interactive
    $resource = Get-AzResource `
@@ -101,9 +101,9 @@ Wijzig de sjabloon door de naam en regio van het opslagaccount te wijzigen.
 
 De sjabloon implementeren met behulp van Azure Portal:
 
-1. Selecteer in de Azure Portal **een resource maken**.
+1. Selecteer in Azure Portal de optie **Een resource maken.**
 
-2. Typ in **de Marketplace zoeken de** **sjabloon implementatie** en druk vervolgens op **Enter**.
+2. In **Marketplace doorzoeken typt** u **sjabloonimplementatie** en drukt u op **ENTER.**
 
 3. Selecteer **Sjabloonimlementatie**.
 
@@ -113,9 +113,9 @@ De sjabloon implementeren met behulp van Azure Portal:
 
 5. Selecteer **Bouw uw eigen sjabloon in de editor**.
 
-6. Selecteer **bestand laden** en volg de instructies voor het laden van de **template.jsin** het bestand dat u in de laatste sectie hebt gedownload.
+6. Selecteer **Bestand laden** en volg de instructies voor het laden van **template.js** bestand dat u in de laatste sectie hebt gedownload.
 
-7. Geef in het **template.js** bestand de naam van het doel-opslag account op door de standaard waarde van de naam van het opslag account in te stellen. In dit voor beeld wordt de standaard waarde van de naam van het opslag account ingesteld op `mytargetaccount` .
+7. In het **template.jsbestand, noemt** u het doelopslagaccount door de standaardwaarde van de naam van het opslagaccount in te stellen. In dit voorbeeld wordt de standaardwaarde van de naam van het opslagaccount ingesteld op `mytargetaccount` .
     
     ```json
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -137,13 +137,13 @@ De sjabloon implementeren met behulp van Azure Portal:
          "location": "centralus"
          }]          
     ```
-    Zie [Azure-locaties](https://azure.microsoft.com/global-infrastructure/locations/)voor het verkrijgen van regio-locatie codes.  De code voor een regio is de naam van de regio zonder spaties, **Central VS**-  =  **Midden**.
+    Zie Azure-locaties voor het verkrijgen van [regiolocatiecodes.](https://azure.microsoft.com/global-infrastructure/locations/)  De code voor een regio is de regionaam zonder spaties, **VS -**  =  **centraalus**.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-De sjabloon implementeren met behulp van Power shell:
+De sjabloon implementeren met behulp van PowerShell:
 
-1. Geef in het **template.js** bestand de naam van het doel-opslag account op door de standaard waarde van de naam van het opslag account in te stellen. In dit voor beeld wordt de standaard waarde van de naam van het opslag account ingesteld op `mytargetaccount` .
+1. In het **template.jsbestand, noemt** u het doelopslagaccount door de standaardwaarde van de naam van het opslagaccount in te stellen. In dit voorbeeld wordt de standaardwaarde van de naam van het opslagaccount ingesteld op `mytargetaccount` .
     
     ```json
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -156,7 +156,7 @@ De sjabloon implementeren met behulp van Power shell:
     },
     ``` 
 
-2. Bewerk de eigenschap **Location** in de **template.jsop** bestand naar de doel regio. In dit voor beeld wordt de doel regio ingesteld op `eastus` .
+2. Bewerk **de eigenschap location** intemplate.js **on** file naar de doelregio. In dit voorbeeld wordt de doelregio op `eastus` .
 
     ```json
     "resources": [{
@@ -167,7 +167,7 @@ De sjabloon implementeren met behulp van Power shell:
          }]          
     ```
 
-    U kunt regio codes verkrijgen door de opdracht [Get-AzLocation](/powershell/module/az.resources/get-azlocation) uit te voeren.
+    U kunt regiocodes verkrijgen door de opdracht [Get-AzLocation uit te](/powershell/module/az.resources/get-azlocation) voeren.
 
     ```azurepowershell-interactive
     Get-AzLocation | format-table 
@@ -182,27 +182,27 @@ Implementeer de sjabloon om een nieuw opslagaccount te maken in de doelregio.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-1. Sla de **template.jsop in** het bestand.
+1. Sla de **template.jsop in het** bestand.
 
-2. Voer de eigenschaps waarden in of Selecteer deze:
+2. Voer de eigenschapswaarden in of selecteer deze:
 
 - **Abonnement**: Selecteer een Azure-abonnement.
 
 - **Resourcegroep**: selecteer **Nieuwe maken** en geef de resourcegroep een naam.
 
-- **Locatie**: Selecteer een Azure-locatie.
+- **Locatie:** selecteer een Azure-locatie.
 
-3. Klik op het selectie vakje **Ik ga akkoord met de bovenstaande voor waarden** en klik vervolgens op de knop **aankoop selecteren** .
+3. Klik op het selectievakje Ik ga akkoord met de **bovenstaande** voorwaarden en klik vervolgens op de **knop Aankoop** selecteren.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-1. Vraag de abonnements-ID op waar u het doel-open bare IP-adres wilt implementeren met [Get-AzSubscription](/powershell/module/az.accounts/get-azsubscription):
+1. Haal de abonnements-id op waar u het openbare IP-adres van het doel wilt implementeren met [Get-AzSubscription](/powershell/module/az.accounts/get-azsubscription):
 
    ```azurepowershell-interactive
    Get-AzSubscription
    ```
 
-2. Gebruik de volgende opdrachten om uw sjabloon te implementeren:
+2. Gebruik deze opdrachten om uw sjabloon te implementeren:
 
    ```azurepowershell-interactive
    $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
@@ -221,20 +221,20 @@ De volgende tabel bevat een overzicht van deze functies en richtlijnen voor het 
 
 | Functie    | Hulp    |
 |--------|-----------|
-| **Levenscyclus beheer beleid** | [De levenscyclus van Azure Blob-opslag beheren](../blobs/storage-lifecycle-management-concepts.md) |
+| **Beleid voor levenscyclusbeheer** | [De levenscyclus van Azure Blob-opslag beheren](../blobs/storage-lifecycle-management-concepts.md) |
 | **Statische websites** | [Een statische website hosten in Azure Storage](../blobs/storage-blob-static-website-how-to.md) |
 | **Gebeurtenisabonnementen** | [Reageren op gebeurtenissen van Blob Storage](../blobs/storage-blob-event-overview.md) |
-| **Waarschuwingen** | [Waarschuwingen voor activiteiten logboek maken, weer geven en beheren met behulp van Azure Monitor](../../azure-monitor/alerts/alerts-activity-log.md) |
-| **Content Delivery Network (CDN)** | [Azure CDN gebruiken om toegang te krijgen tot blobs met aangepaste domeinen via HTTPS](../blobs/storage-https-custom-domain-cdn.md) |
+| **Waarschuwingen** | [Waarschuwingen voor activiteitenlogboek maken, weergeven en beheren met behulp van Azure Monitor](../../azure-monitor/alerts/alerts-activity-log.md) |
+| **Content Delivery Network (CDN)** | [Gebruik Azure CDN voor toegang tot blobs met aangepaste domeinen via HTTPS](../blobs/storage-https-custom-domain-cdn.md) |
 
 > [!NOTE] 
-> Als u een CDN hebt ingesteld voor het bron-opslag account, wijzigt u alleen de oorsprong van uw bestaande CDN in het eind punt van de primaire BLOB-service (of het primaire eind punt van een statische website) van uw nieuwe account. 
+> Als u een CDN voor het bronopslagaccount hebt ingesteld, wijzigt u de oorsprong van uw bestaande CDN in het primaire blobservice-eindpunt (of het primaire statische website-eindpunt) van uw nieuwe account. 
 
 ### <a name="move-data-to-the-new-storage-account"></a>Gegevens verplaatsen naar het nieuwe opslagaccount
 
-AzCopy is het voorkeurs programma waarmee u uw gegevens kunt verplaatsen. Deze is geoptimaliseerd voor prestaties.  Een van de manieren waarop het sneller gaat, is gegevens rechtstreeks tussen opslagservers kopiëren, zodat AzCopy niet de netwerkbandbreedte van uw computer gebruikt. Gebruik AzCopy bij de opdrachtregel of als onderdeel van een aangepast script. Raadpleeg [Aan de slag met AzCopy](/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
+AzCopy is het voorkeurshulpprogramma om uw gegevens over te verplaatsen. Deze is geoptimaliseerd voor prestaties.  Een van de manieren waarop het sneller gaat, is gegevens rechtstreeks tussen opslagservers kopiëren, zodat AzCopy niet de netwerkbandbreedte van uw computer gebruikt. Gebruik AzCopy bij de opdrachtregel of als onderdeel van een aangepast script. Raadpleeg [Aan de slag met AzCopy](/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
-U kunt Azure Data Factory ook gebruiken om uw gegevens te verplaatsen. Het biedt een intuïtieve gebruikers interface. Als u Azure Data Factory wilt gebruiken, raadpleegt u een van de volgende koppelingen:. 
+U kunt ook Azure Data Factory om uw gegevens te verplaatsen. Het biedt een intuïtieve gebruikersinterface. Als u Azure Data Factory wilt gebruiken, bekijkt u een van deze koppelingen:. 
 
   - [Gegevens kopiëren naar of uit Azure Blob Storage met behulp van Azure Data Factory](/azure/data-factory/connector-azure-blob-storage)
   - [Gegevens kopiëren naar of vanuit Azure Data Lake Storage Gen2 met behulp van Azure Data Factory](/azure/data-factory/connector-azure-data-lake-storage)
@@ -245,7 +245,7 @@ U kunt Azure Data Factory ook gebruiken om uw gegevens te verplaatsen. Het biedt
 
 ## <a name="discard-or-clean-up"></a>Verwijderen of opschonen
 
-Als u na de implementatie wilt beginnen, kunt u het doel opslag account verwijderen en de stappen herhalen die worden beschreven in de secties [voorbereiden](#prepare) en [verplaatsen](#move) van dit artikel.
+Als u na de implementatie opnieuw wilt beginnen, kunt u het doelopslagaccount [](#prepare) verwijderen [](#move) en de stappen herhalen die worden beschreven in de secties Voorbereiden en Verplaatsen van dit artikel.
 
 Voor het doorvoeren van de wijzigingen en het verplaatsen van een opslagaccount moet u het bronopslagaccount verwijderen.
 
@@ -253,15 +253,15 @@ Voor het doorvoeren van de wijzigingen en het verplaatsen van een opslagaccount 
 
 Een opslagaccount verwijderen via de Azure-portal:
 
-1. Vouw in het Azure Portal het menu aan de linkerkant uit om het menu met services te openen en kies **opslag accounts** om de lijst met uw opslag accounts weer te geven.
+1. Vouw in Azure Portal het menu aan de linkerkant uit om het menu met services te openen en kies Opslagaccounts **om** de lijst met opslagaccounts weer te geven.
 
-2. Zoek het doel-opslag account dat u wilt verwijderen en klik met de rechter muisknop op de knop **meer** (**...**) aan de rechter kant van de vermelding.
+2. Zoek het doelopslagaccount dat u wilt verwijderen en klik met de rechtermuisknop op de knop **Meer** (**...**) aan de rechterkant van de vermelding.
 
-3. Selecteer **verwijderen** en bevestigen.
+3. Selecteer **Verwijderen** en bevestig dit.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Als u de resource groep en de bijbehorende resources wilt verwijderen, met inbegrip van het nieuwe opslag account, gebruikt u de opdracht [Remove-AzStorageAccount](/powershell/module/az.storage/remove-azstorageaccount) :
+Als u de resourcegroep en de bijbehorende resources wilt verwijderen, met inbegrip van het nieuwe opslagaccount, gebruikt u de [opdracht Remove-AzStorageAccount:](/powershell/module/az.storage/remove-azstorageaccount)
 
 ```powershell
 Remove-AzStorageAccount -ResourceGroupName  $resourceGroup -AccountName $storageAccount
@@ -270,7 +270,7 @@ Remove-AzStorageAccount -ResourceGroupName  $resourceGroup -AccountName $storage
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelf studie hebt u een Azure Storage-account verplaatst van de ene regio naar een andere en de bron resources opgeschoond.  Raadpleeg voor meer informatie over het verplaatsen van resources tussen regio's en herstel na nood gevallen in Azure:
+In deze zelfstudie hebt u een Azure-opslagaccount van de ene regio naar de andere verplaatst en de bronbronnen opgeschoond.  Raadpleeg voor meer informatie over het verplaatsen van resources tussen regio's en herstel na noodherstel in Azure:
 
 
 - [Resources verplaatsen naar een nieuwe resourcegroep of een nieuw abonnement](../../azure-resource-manager/management/move-resource-group-and-subscription.md)
